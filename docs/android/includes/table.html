@@ -1,0 +1,293 @@
+<table width="100%" border="1px">
+<tr>
+    <td><b>プロパティ</b></td>
+    <td><b>説明</b></td>
+    <td><b>オプション</b></td>
+</tr>
+<tr>
+    <td><code> abi.type </code></td>
+    <td><strong>ABI の種類</strong> – エミュレートされたデバイスの ABI (アプリケーション バイナリ インターフェイス) の種類を指定します。<code>X86</code> オプションは、一般に "x86" または "IA-32" と呼ばれる命令セット用です。 <code>x86_64</code> オプションは、64 ビットの x86 命令セット用です。<code>armeabi-v7a</code> オプションは、v7-a ARM 拡張機能を持つ ARM 命令セット用です。<code>arm64-v8a</code> オプションは、AArch64 をサポートする ARM 命令セット用です。 </td>
+    <td> x86、x86_64、armeabi-v7a、arm64-v8a </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition </code></td>
+    <td><strong>キャッシュ パーティション</strong> – エミュレートされたデバイスがそのデバイス上で <strong>/cache</strong> パーティションを使用するかどうかを判別します。<strong>/cache</strong> パーティション (最初は空) は、Android が頻繁にアクセスされるデータとアプリ コンポーネントを格納する場所です。<code>no</code> に設定されている場合、エミュレーターは <strong>/cache</strong> パーティションを使用せず、<code>disk.cache</code> 設定は無視されます。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition.path </code></td>
+    <td><strong>キャッシュ パーティション パス</strong> – 開発コンピューターでキャッシュ パーティション イメージ ファイルを指定します。エミュレーターは、<strong>/cache</strong> パーティションに対してこのファイルを使用します。エミュレーターの <strong>data</strong> ディレクトリへの絶対パスまたは相対パスを入力します。設定されていない場合、エミュレーターは、開発コンピューターで <strong>cache.img</strong> という空の一時ファイルを作成します。ファイルが存在しない場合は、空のファイルとして作成されます。<code>disk.cachePartition</code> が <code>no</code> に設定されている場合、このオプションは無視されます。</td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition.size </code></td>
+    <td><strong>キャッシュ パーティション サイズ</strong> – キャッシュ パーティション ファイルのサイズ (メガバイト単位)。通常は、既定のキャッシュ サイズである 66 メガバイトを超える非常に大きなファイルをアプリがダウンロードする場合を除き、このオプションを設定する必要はありません。<code>disk.cachePartition</code> が <code>no</code> に設定されている場合、このオプションは無視されます。</td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.initPath </code></td>
+    <td><strong>データ パーティションへの最初のパス</strong> – データ パーティションの初期コンテンツを指定します。ユーザー データをワイプした後、エミュレーターは、初期バージョンとして <strong>userdata.img</strong> を使用する代わりに、ユーザー データに指定されたファイル (既定では、<strong>userdata-qemu.img</strong>) の内容をコピーします。</td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.path </code></td>
+    <td><strong>データ パーティションへのパス</strong> – ユーザー データ パーティション ファイルを指定します。永続的なユーザー データ ファイルを構成するには、開発コンピューターでファイル名とパスを入力します。ファイルが存在しない場合、エミュレーターは既定のファイルの <strong>userdata.img</strong> からイメージを作成し、<code>disk.dataPartition.path</code> で指定されたファイル名で格納し、エミュレーターがシャットダウンしたときにユーザー データをそこで保持します。パスを指定しない場合、既定のファイルは <strong>userdata-qemu.img</strong> という名前になります。特殊な値 <code>&lt;temp></code> を指定すると、エミュレーターは一時ファイルを作成して使用します。<code>disk.dataPartition.initPath</code> が設定されている場合、その内容は起動時に <code>disk.dataPartition.path</code> ファイルにコピーされます。このオプションを空白のままにすることはできないことに注意してください。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.size </code></td>
+    <td><strong>データ パーティション サイズ</strong> – ユーザー データ パーティションのサイズをメガバイト単位で指定します。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.ramdisk.path </code></td>
+    <td><strong>ramdisk パス</strong> – ブート パーティション (ramdisk) イメージへのパス。ramdisk イメージは、システム イメージがマウントされる前にカーネルによって読み込まれるシステム イメージのサブセットです。通常、ramdisk イメージには、起動時のバイナリと初期化スクリプトが含まれます。このオプションが指定されていない場合、既定値はエミュレーターのシステム ディレクトリの <strong>ramdisk.img</strong> となります。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.snapStorage.path </code></td>
+    <td><strong>スナップショットの記憶域パス</strong> – すべてのスナップショットが格納される<i>スナップショットの記憶域ファイル</i>へのパス。実行中に作成されたスナップショットはすべてこのファイルに保存されます。エミュレーターの実行中に復元できるのは、このファイルに保存されているスナップショットのみです。このオプションが指定されていない場合、既定値はエミュレーターのデータ ディレクトリの <strong>snapshots.img</strong> となります。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.initPath </code></td>
+    <td><strong>システム パーティションの init パス</strong> – システム イメージ ファイルの読み取り専用コピーへのパス。具体的には、API レベルおよびすべてのバリアントに対応するシステム ライブラリとデータを含むパーティションです。このパスが指定されていない場合、既定値はエミュレーターのシステム ディレクトリの <strong>system.img</strong> となります。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.path </code></td>
+    <td><strong>システム パーティション パス</strong> – 読み取り/書き込みのシステム パーティション イメージへのパス。このパスが設定されていない場合、<code>disk.systemPartition.initPath</code> で指定されたファイルの内容から一時ファイルが作成されて初期化されます。</td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.size </code></td>
+    <td><strong>システム パーティション サイズ</strong> – システム パーティションに最適なサイズ (メガバイト単位)。実際のシステム パーティション イメージがこの設定よりも大きい場合、サイズは無視されます。それ以外の場合は、システム パーティション ファイルを拡大できる最大サイズが指定されます。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.accelerometer </code></td>
+    <td><strong>加速度計</strong> – エミュレートされたデバイスに加速度計センサーが含まれるかどうかを判別します。加速度計は、デバイスが (自動回転で使用される) 向きを判別するのに役立ちます。加速度計は、3 つのセンサー軸に沿ってデバイスのアクセラレーションを報告します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.audioInput </code></td>
+    <td><strong>オーディオ録音サポート</strong> – エミュレートされたデバイスでオーディオを録音できるかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.audioOutput </code></td>
+    <td><strong>オーディオ再生サポート</strong> – エミュレートされたデバイスでオーディオを再生できるかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.battery </code></td>
+    <td><strong>バッテリ サポート</strong> – エミュレートされたデバイスがバッテリで作動できるかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.camera </code></td>
+    <td><strong>カメラ サポート</strong> – エミュレートされたデバイスにカメラがあるかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.camera.back </code></td>
+    <td><strong>背面カメラ</strong> – 背面カメラ (レンズがユーザーとは逆の方を向いている) を構成します。開発コンピューターで Web カメラを使用して、エミュレートされたデバイスでの背面カメラをシミュレートする場合は、この値を <code>webcam<i>n</i></code> に設定する必要があります。この <i>n</i> で Web カメラを選択します (Web カメラが 1 つのみの場合は、<code>webcam0</code> を選択します)。<code>emulated</code> に設定した場合、エミュレーターはソフトウェアでカメラをシミュレートします。背面カメラを無効にするには、この値を <code>none</code> に設定します。背面カメラを有効にする場合は、必ず、<code>hw.camera</code> も有効にしてください。 </td>
+    <td> emulated、none、webcam0 </td>
+</tr>
+<tr>
+    <td><code> hw.camera.front </code></td>
+    <td><strong>前面カメラ</strong> – 前面カメラ (レンズがユーザーの方を向いている) を構成します。開発コンピューターで Web カメラを使用して、エミュレートされたデバイスでの前面カメラをシミュレートする場合は、この値を <code>webcam<i>n</i></code> に設定する必要があります。この <i>n</i> で Web カメラを選択します (Web カメラが 1 つのみの場合は、<code>webcam0</code> を選択します)。<code>emulated</code> に設定した場合、エミュレーターはソフトウェアでカメラをシミュレートします。前面カメラを無効にするには、この値を設定 <code>none</code> に設定します。前面カメラを有効にする場合は、必ず、<code>hw.camera</code> も有効にしてください。 </td>
+    <td> emulated、none、webcam0 </td>
+</tr>
+<tr>
+    <td><code> hw.camera.maxHorizontalPixels </code></td>
+    <td><strong>カメラの水平方向の最大ピクセル数</strong> – エミュレートされたデバイスのカメラの最大水平解像度 (ピクセル単位) を構成します。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.camera.maxVerticalPixels </code></td>
+    <td><strong>カメラの垂直方向の最大ピクセル数</strong> – エミュレートされたデバイスのカメラの最大垂直解像度 (ピクセル単位) を構成します。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.cpu.arch </code></td>
+    <td><strong>CPU アーキテクチャ</strong> – 仮想デバイスでエミュレートされる CPU アーキテクチャ。ハードウェア アクセラレータで Intel HAXM 使用している場合は、32 ビット CPU に対して <code>x86</code> を選択します。64 ビットの HAXM アクセラレーション デバイスには <code>x86_64</code> を選択します (必ず、SDK Manager に対応する Intel x86 システム イメージをインストールしてください。例: <strong>Intel x86 Atom</strong> または <strong>Intel x86 Atom_64</strong>)。 ARM CPU をシミュレートするには、<code>arm</code> (32 ビットの場合) または <code>arm64</code> (64 ビットの ARM CPU の場合) を選択します。ARM ではハードウェア アクセラレータを使用できないため、ARM ベースの仮想デバイスは x86 ベースのものよりかなり遅く実行されることに留意してください。 </td>
+    <td> x86、x86_64、arm、arm64 </td>
+</tr>
+<tr>
+    <td><code> hw.cpu.model </code></td>
+    <td><strong>CPU モデル</strong> – 通常、この値は未設定のままです (明示的に設定されていない場合、<code>hw.cpu.arch</code> から派生した値に設定されます)。ただし、実験用にエミュレーター固有の文字列に設定することはできます。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.dPad </code></td>
+    <td><strong>DPad キー</strong> – エミュレートされたデバイスが方向パッド (DPad) キーをサポートするかどうかを判別します。通常、DPad には方向制御を示す 4 つのキーがあります。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.gps </code></td>
+    <td><strong>GPS サポート</strong> – エミュレートされたデバイスに GPS (Global Positioning System) 受信機があるかどうかを判別します。 </td>
+    <td> yes、no </td>
+<tr>
+</tr>
+<tr>
+    <td><code> hw.gpu.enabled </code></td>
+    <td><strong>GPU エミュレーション</strong> – エミュレートされたデバイスが GPU エミュレーションをサポートするかどうかを判別します。有効な場合、GPU エミュレーションでは、画面上で 2D と 3D の両方のグラフィックをレンダリングするために OpenGL ES (Open GL for Embedded Systems) を使用し、関連付けられている GPU エミュレーション モード設定で GPU エミュレーションの実装方法を決定します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.gpu.mode </code></td>
+    <td><strong>GPU エミュレーション モード</strong> – エミュレーターで GPU エミュレーションを実装する方法を決定します。<code>auto</code> を選択した場合、エミュレーターは、開発コンピューターの設定に基づいて、ハードウェアとソフトウェアのアクセラレータを選択します。<code>host</code> を選択した場合、エミュレーターは、開発コンピューターのグラフィック プロセッサを使用して、高速レンダリングのために GPU エミュレーションを実行します。GPU がエミュレーターと互換性がなく、Windows で作業している場合は、<code>host</code> の代わりに <code>angle</code> を試すことができます。<code>angle</code> モードの場合、DirectX を使用して、<code>host</code> と同様のパフォーマンスが提供されます。<code>mesa</code> を選択した場合、エミュレーターは Mesa 3D ソフトウェア ライブラリを使用して、グラフィックをレンダリングします。開発コンピューターのグラフィック プロセッサでのレンダリングに問題がある場合は、<code>mesa</code> を選択してください。コンピューターの GPU を使用する場合よりパフォーマンスが若干低いソフトウェアでグラフィックをレンダリングする場合は、<code>swiftshader</code> モードを使用できます。<code>off</code> オプション (グラフィック ハードウェア エミュレーションを無効にする) は推奨されてないオプションです。このオプションを指定すると、一部のアイテムのレンダリングが不適切なものになるため、お勧めできません。</td>
+    <td> auto、host、mesa、angle、swiftshader、off </td>
+</tr>
+<tr>
+    <td><code> hw.gsmModem </code></td>
+    <td><strong>GSM モデム サポート</strong> – エミュレートされたデバイスに、GSM (Global System for Mobile Communications) テレフォニー ラジオ システムをサポートするモデムが含まれるかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.initialOrientation </code></td>
+    <td><strong>最初の画面の向き</strong> – エミュレートされたデバイスの画面の最初の向きを構成します (縦または横モード)。縦モードの場合、画面は縦長になります。横モードの場合、画面は横長になります。エミュレートされたデバイスを実行するときに、デバイス プロファイルで縦と横の両方がサポートされている場合は、向きを変更できます。 </td>
+    <td> portrait、landscape </td>
+</tr>
+<tr>
+    <td><code> hw.keyboard </code></td>
+    <td><strong>キーボード サポート</strong> – エミュレートされたデバイスが QWERTY キーボードをサポートするかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.keyboard.charmap </code></td>
+    <td><strong>キーボード charmap 名</strong> – このデバイスのハードウェア charmap の名前。注: システム イメージを適宜変更した場合を除き、これは常に既定値の <code>qwerty2</code> である必要があります。この名前は起動時にカーネルに送信されます。正しくない名前を使用すると、仮想デバイスが使用できなくなります。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.keyboard.lid </code></td>
+    <td><strong>キーボードの表示/非表示サポート</strong> – キーボード サポートが有効な場合、この設定で、QWERTY キーボードを閉じる/非表示にできるか、開く/表示できるかを判別します。<code>hw.keyboard</code> が <code>false</code> に設定されている場合、この設定は無視されます。注: エミュレートされたデバイスの対象が API レベル 12 以上の場合、既定値は <code>false</code> になります。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.backlight </code></td>
+    <td><strong>LCD バックライト</strong> – エミュレートされたデバイスで LCD バックライトがシミュレートされるかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.density </code></td>
+    <td><strong>LCD の密度</strong> – エミュレートされた LCD ディスプレイの密度。密度に依存しないピクセル、または <i>dp</i> (dp は仮想ピクセル単位です) で測定されます。設定が 160 dp の場合、各 dp は 1 物理ピクセルに対応します。実行時に、Android はこの値を使用して、正しいディスプレイ レンダリングに適切なリソース/アセットを選択してスケーリングします。 </td>
+    <td> 120、160、240、213、320 </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.depth </code></td>
+    <td><strong>LCD の色深度</strong> – LCD ディスプレイを駆動するためのビットマップを保持する、エミュレートされたフレームバッファの色ビット深度。この値には 16 ビット (65,536 色表示可能) または 32 ビット (16,777,216 色と透明) を指定できます。32 ビットを設定すると、エミュレーターの実行速度が若干低下しますが、色の精度が向上します。 </td>
+    <td> 16, 32 </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.height </code></td>
+    <td><strong>LCD のピクセルの高さ</strong> – エミュレートされた LCD ディスプレイの垂直ディメンションを構成するピクセル数。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.width </code></td>
+    <td><strong>LCD のピクセル幅</strong> – エミュレートされた LCD ディスプレイの水平ディメンションを構成するピクセル数。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.mainKeys </code></td>
+    <td><strong>ハードウェアの Back/Home キー</strong> – エミュレートされたデバイスがハードウェアの Back および Home ナビゲーション ボタンをサポートするかどうかを判別します。ボタンがソフトウェアにのみ実装されている場合は、この値を <code>yes</code> に設定できます。<code>hw.mainKeys</code> が <code>yes</code> に設定されている場合、エミュレーターは画面にナビゲーション ボタンを表示しませんが、エミュレーター側のパネルを使用して、これらのボタンを "押す" ことはできます。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.ramSize </code></td>
+    <td><strong>デバイスの RAM サイズ</strong> – エミュレートされたデバイス上の物理 RAM の容量 (メガバイト単位)。既定値は、画面のサイズまたはスキン バージョンから計算されます。サイズを増やすことでエミュレーターの操作速度を上げることはできますが、その代わり、開発コンピューターからのリソース要求が増えます。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.screen </code></td>
+    <td><strong>タッチスクリーンの種類</strong> – エミュレートされたデバイスの画面の種類を定義します。<code>multi-touch</code> スクリーンでは、タッチ インターフェイスでの 2 本以上の指を追跡できます。<code>touch</code> スクリーンでは、1 本の指のタッチ イベントのみを検出できます。<code>no-touch</code> スクリーンではタッチ イベントは検出されません。 </td>
+    <td> touch、multi-touch、no-touch </td>
+</tr>
+<tr>
+    <td><code> hw.sdCard </code></td>
+    <td><strong>SDCard サポート</strong> – エミュレートされたデバイスが仮想 SD (セキュア デジタル) カードの挿入と削除をサポートするかどうかを判別します。エミュレーターでは開発コンピューターに格納されているマウント可能なディスク イメージを使用して、実際の SD カード デバイスのパーティションをシミュレートします (<code>hw.sdCard.path</code> を参照)。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> sdcard.size </code></td>
+    <td><strong>SDCard サイズ</strong> – デバイスで使用可能な、<code>hw.sdCard.path</code> で指定された場所で仮想 SD カード ファイルのサイズ (バイト単位) を指定します。サイズが単純な整数の場合は、バイト単位でサイズが指定されます。サイズに K、M、G を追加することで、キロバイト、メガバイト、ギガバイト単位でサイズを指定することもできます。最小サイズは 9 M で、最大サイズは 1023 G です。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.sdCard.path </code></td>
+    <td><strong>SDCard イメージ パス</strong> – 開発コンピューターで SD カード パーティション イメージ ファイルのファイル名とパスを指定します。たとえば、Windows の場合は、このパスを <strong>C:\sd\sdcard.img</strong> に設定することができます。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.sensors.magnetic_field </code></td>
+    <td><strong>磁場センサー</strong> – エミュレートされたデバイスが磁場センサーをサポートするかどうかを判別します。磁場センサー (磁力計ともいう) は、3 つのセンサー軸に沿って測定されたアンビエント磁場を報告します。コンパス読み取り値へのアクセスが必要なアプリに対して、この設定を有効にします。たとえば、ナビゲーション アプリではこの設定を使用して、ユーザーがどの方向を向いているかを検出する場合があります。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.sensors.orientation </code></td>
+    <td><strong>方向センサー</strong> – エミュレートされたデバイスが方向センサー値を提供するかどうかを判別します。方向センサーは、デバイスが 3 つすべての物理軸 (x、y、z) を中心に回転する角度を測定します。方向センサーは、Android 2.2 (API レベル 8) の時点で推奨されなくなったことに注意してください。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.sensors.proximity </code></td>
+    <td><strong>近接センサー</strong> – エミュレートされたデバイスが近接センサーをサポートするかどうかを判別します。このセンサーは、デバイスの表示画面を基準にオブジェクトの近接度を測定します。通常、このセンサーは、ハンドセットがユーザーの耳に当てられているかどうかを判別するために使用されます。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.sensors.temperature </code></td>
+    <td><strong>温度センサー</strong> – エミュレートされたデバイスが温度センサーをサポートするかどうかを判別します。このセンサーでは、摂氏 (°C) でデバイスの温度を測定します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.touchScreen </code></td>
+    <td><strong>タッチスクリーン サポート</strong> – エミュレートされたデバイスがタッチスクリーンをサポートするかどうかを判別します。タッチ スクリーンは、スクリーン上のオブジェクトを直接操作する場合に使用されます。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.trackBall </code></td>
+    <td><strong>トラックボール サポート</strong> – エミュレートされたデバイスがトラックボールをサポートするかどうかを判別します。 </td>
+    <td> yes、no </td>
+</tr>
+<tr>
+    <td><code> hw.useext4 </code></td>
+    <td><strong>EXT4 ファイル システムのサポート</strong> – エミュレートされたデバイスがパーティションで Linux EXT4 ファイル システムを使用するかどうかを判別します。現在、ファイル システムの種類は自動検出されるため、このオプションは推奨されておらず、無視されます。 </td>
+    <td> Ｘ </td>
+</tr>
+<tr>
+    <td><code> kernel.newDeviceNaming </code></td>
+    <td><strong>カーネルの新しいデバイスの名前付け</strong> – カーネルが新しいデバイスの名前付けスキームを必要とするかどうかを指定する場合に使用します。通常、これは Linux 3.10 カーネル以降で使用されます。<code>autodetect</code> に設定した場合、エミュレーターは、カーネルが新しいデバイスの名前付けスキームを必要とするかどうかを自動的に検出します。 </td>
+    <td> autodetect、yes、no </td>
+</tr>
+<tr>
+    <td><code> kernel.parameters </code></td>
+    <td><strong>カーネル パラメーター</strong> – Linux カーネルのブート パラメーターの文字列を指定します。既定では、この設定は空白のままになります。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> kernel.path </code></td>
+    <td><strong>カーネル パス</strong> – Linux カーネルへのパスを指定します。このパスが指定されていない場合、エミュレーターは、エミュレーターのシステム ディレクトリで <code>kernel-ranchu</code> を調べます。 </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> kernel.supportsYaffs2 </code></td>
+    <td><strong>YAFFS2 パーティション サポート</strong> – カーネルが YAFFS2 (Yet Another Flash File System 2) パーティションをサポートするかどうかを判別します。通常、これは Linux 3.10 より前のカーネルにのみ適用されます。<code>autodetect</code> に設定した場合、エミュレーターは、カーネルで YAFFS2 ファイル システムをマウントできるかどうかを自動的に検出します。 </td>
+    <td> autodetect、yes、no </td>
+</tr>
+<tr>
+    <td><code> skin.name </code></td>
+    <td><strong>スキン名</strong> – Android エミュレーター スキンの名前。スキンは、エミュレーター ディスプレイの視覚および制御要素を定義するファイルのコレクションです。開発コンピューターでの AVD のウィンドウの外観を説明します。スキンは画面のサイズ、ボタン、全体のデザインを説明しますが、アプリの操作には影響しません。</td>
+    <td> </td>
+</tr>
+<tr>
+    <td><code> skin.path </code></td>
+    <td><strong>スキン パス</strong> – <code>skin.name</code> で指定されたエミュレーターのスキン ファイルを含むディレクトリへのパス。このディレクトリには、<code>hardware.ini</code> レイアウト ファイルと、スキンの表示要素に対するイメージ ファイルが含まれます。</td>
+    <td> </td>
+</tr>
+<tr>
+    <td><code> skin.dynamic </code></td>
+    <td><strong>スキンが動的</strong>– スキンが動的であるかどうか。エミュレーターが指定された幅と高さに基づいて特定のサイズのスキンを構築する場合、エミュレーター スキンは動的スキンとなります。</td>
+    <td> Ｘ </td>
+</tr>
+</table>
