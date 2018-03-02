@@ -1,0 +1,20 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Xamarin.iOS サンプル"
+metadata:
+  description: "モバイル開発者向けのクロスプラットフォーム Xamarin.iOS サンプル アプリです。"
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: article
+  ms.openlocfilehash: 3a17dbc3fad1f32845912c76835dd401b4e5ee72
+  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 02/27/2018
+abstract:
+  description: "Xamarin クロスプラットフォーム サンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。"
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/ios/all/
+      text: "すべての Xamarin.iOS サンプル"
