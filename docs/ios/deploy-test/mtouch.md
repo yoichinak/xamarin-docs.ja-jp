@@ -1,0 +1,117 @@
+---
+title: mtouch
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
+ms.technology: xamarin-ios
+author: bradumbaugh
+ms.author: brumbaug
+ms.openlocfilehash: b1b61e7ce1bae413f132cfe1e6c051a53b786f98
+ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/27/2018
+---
+# <a name="mtouch"></a>mtouch
+
+
+iPhone アプリケーションはアプリケーション バンドルとして出荷されています。 これは拡張子 `.app` を持つディレクトリであり、コード、データ、構成ファイル、ユーザーのアプリケーションを iPhone が認識するためのマニフェストが含まれます。
+
+.NET 実行可能ファイルをアプリケーションに変換するプロセスは主に `mtouch` コマンドで行われます。これは、アプリケーションをバンドルに変換するために必要なさまざまな手順を統合するツールです。 このツールは、シミュレーターのアプリケーションを起動するときや実際の iPhone または iPod Touch デバイスにソフトウェアを展開するときにも利用されます。
+
+
+## <a name="detailed-instructions"></a>詳しい手順
+
+[mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) のマニュアル ページをご覧ください。mtouch ツールのあらゆる利用方法が紹介されています。
+
+
+## <a name="building"></a>ビルド
+
+`mtouch` コマンドは 3 とおりの方法でコードをコンパイルできます。
+
+-  シミュレーター テストのためにコンパイルします。
+-  デバイス配置のためにコンパイルします。
+-  実行可能ファイルをデバイスに配置します。
+
+
+### <a name="building-for-the-simulator"></a>シミュレーターのビルド
+
+使用を開始するときに、最も一般的に利用されるシナリオは、シミュレーターでアプリケーションを試すことです。`mtouch -sim` を利用し、コードをシミュレーター パッケージにコンパイルします。 これは次のように行われます。
+
+```bash
+$ mtouch -sim Hello.app hello.exe
+```
+
+### <a name="building-for-the-device"></a>デバイスのビルド
+
+デバイスのソフトウェアをビルドするには、`mtouch -dev` オプションを利用してアプリケーションをビルドします。また、アプリケーションの署名に利用する証明書の名前を指定する必要があります。 次は、デバイス用のアプリケーションをビルドする方法を示したものです。
+
+```bash
+$ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
+```
+
+この事例では、"iPhone Developer: Miguel de Icaza" という証明書でアプリケーションに署名します。 この手順は非常に重要です。この手順がなければ、物理デバイスはアプリケーションの読み込みを拒否します。
+
+ <a name="Running_your_Application" />
+
+
+## <a name="running-your-application"></a>アプリケーションを実行する
+
+
+### <a name="launching-on-the-simulator"></a>シミュレーターで起動する
+
+アプリケーション バンドルがあれば、シミュレーターでの起動は非常に簡単です。
+
+```bash
+$ mtouch --sdkroot /Applications/Xcode.app -launchsim Hello.app 
+```
+
+`--sdkroot` フラグが設定されていない場合、既定で xcode-select パスに設定され、次の警告が表示されます。
+
+> eg: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+
+このコマンド ラインで次のような出力が生成されます。
+
+```bash
+Launching application
+Application launched
+PID: 98460
+Press enter to terminate the application
+```
+
+
+
+標準出力のログと標準エラー ファイルも保存しておくことを強くお勧めします。デバッグに役に立ちます。 `Console.WriteLine` は `stdout` に出力され、`Console.Error.WriteLine` とその他の実行時エラー メッセージは `stderr` に出力されます。
+
+これを行うには、`--stdout` フラグと `--stderr` フラグを使用します。
+
+```bash
+../../tools/mtouch/mtouch --launchsim=Hello.app --stdout=output --stderr=error
+```
+
+アプリケーションにエラーが発生した場合、出力とエラーを表示し、問題を診断できます。
+
+
+### <a name="deploying-to-a-device"></a>デバイスの展開
+
+デバイスに配置するには、Apple の[デバイスの管理](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html)に関するドキュメントに基づいてデバイスをプロビジョニングする必要があります。 デバイスが適切にプロビジョニングされると、mtouch コマンドを利用し、コンパイル済みの ".app" をデバイスに配置できます。 これは次のコマンドで行います。
+
+```bash
+$ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
+```
+
+`--sdkroot` フラグが設定されていない場合、既定で xcode-select パスに設定され、次の警告が表示されます。
+
+> eg: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+
+以上の手順は通常、Visual Studio for Mac で実行されます。
+
+## <a name="reference"></a>参照
+
+その他のコマンド ライン オプションについては、[mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) マニュアル ページをご覧ください。
+
+
+
+## <a name="related-links"></a>関連リンク
+
+- [mtouch(1)](http://iosapi.xamarin.com/?link=man%3amtouch(1))
