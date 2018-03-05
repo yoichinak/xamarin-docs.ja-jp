@@ -1,0 +1,126 @@
+---
+title: "NuGet コンポーネント参照の更新"
+description: "アプリを将来の NuGet パッケージで、コンポーネントが参照に置き換えます。"
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
+ms.technology: xamarin-cross-platform
+author: asb3993
+ms.author: amburns
+ms.date: 11/22/2017
+ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
+ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/27/2018
+---
+# <a name="updating-component-references-to-nuget"></a>NuGet コンポーネント参照の更新
+
+_アプリを将来の NuGet パッケージで、コンポーネントが参照に置き換えます。_
+
+このガイドでは、NuGet パッケージへのコンポーネントの参照を変更する既存の Xamarin ソリューションを更新する方法について説明します。
+
+- [NuGet パッケージを含むコンポーネント](#contain)
+- [NuGet の置換コンポーネント](#replace)
+
+ほとんどのコンポーネントは、上記のカテゴリのいずれかに分類されます。
+同等の NuGet パッケージ、読み取り表示されていないコンポーネントを使用している場合、 [NuGet 移行パスを持たないコンポーネント](#require-update)以下のセクションです。
+
+NuGet パッケージを追加する方法についての詳細については、これらのページを参照してください[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)または[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。
+
+<a name="contain" />
+
+## <a name="components-that-contain-nuget-packages"></a>NuGet パッケージを含むコンポーネント
+
+多くのコンポーネントでは、NuGet パッケージの場合は、既に含まれてし、移行パスを単にコンポーネントの参照を削除します。
+
+ソリューション内のコンポーネントをダブルクリックすると、NuGet パッケージをコンポーネントが既に含まれるかどうかを判断できます。
+
+![コンポーネント ノードの展開](component-nuget-images/solution-sml.png)
+
+**パッケージ** タブがコンポーネントに含まれるすべての NuGet パッケージを一覧表示します。
+
+![[パッケージ] タブには、NuGet が含まれています。](component-nuget-images/packages-tab-sml.png)
+
+なお、**アセンブリ** タブは空になります。
+
+![[アセンブリ] タブが空](component-nuget-images/assemblies-tab-empty-sml.png)
+
+### <a name="updating-the-solution"></a>ソリューションの更新
+
+ソリューションを更新するには、削除、**コンポーネント**ソリューションからのエントリ。
+
+![コンポーネントを削除します。](component-nuget-images/delete-component-sml.png)
+
+NuGet パッケージがで表示されたままになり、**パッケージ**ノードと、アプリがコンパイルされ、通常どおり実行します。 経由でこのパッケージの更新を行うは将来的に、 **Nuget**更新機能。
+
+![NuGet パッケージを更新します。](component-nuget-images/nuget-update-sml.png)
+
+
+<a name="replace" />
+
+## <a name="components-with-nuget-replacements"></a>NuGet の置換コンポーネント
+
+場合、コンポーネントの情報ページ**アセンブリ** タブは、次に示すようにエントリは、同等の NuGet パッケージを手動で検索する必要があります。
+
+![アセンブリが含まれます](component-nuget-images/assemblies-tab-sml.png)
+
+なお、**パッケージ** タブはおそらく空になります。
+
+![](component-nuget-images/packages-tab-empty-sml.png)
+
+_NuGet の依存関係を含めることがありますが、これらは無視できます。_
+
+
+代わりに NuGet パッケージが存在することを確認、検索して[NuGet.org](https://www.nuget.org/packages)コンポーネント名を使用してまたは作成者によってです。
+
+たとえば、表示、人気の高い**sqlite net pcl**を検索してパッケージ。
+
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) -製品名。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – 作成者のプロファイルです。
+
+
+### <a name="updating-the-solution"></a>ソリューションの更新
+
+コンポーネントは NuGet で使用できることを確認、したら、次の手順を行います。
+
+#### <a name="delete-the-component"></a>コンポーネントを削除します。
+
+ソリューション内のコンポーネントを右クリックし、選択**削除**:
+
+![コンポーネントを削除します。](component-nuget-images/remove-component-sml.png)
+
+これは、コンポーネントと参照をすべて削除されます。 置き換えると同等の NuGet パッケージを追加するまで、ビルドが壊れます。
+
+#### <a name="add-the-nuget-package"></a>NuGet パッケージを追加します。
+
+1. 右クリックし、**パッケージ**ノードを選択して**パッケージを追加しています.**.
+2. 名前または作成者によって NuGet 置換を検索します。
+
+  ![](component-nuget-images/nuget-search-sml.png)
+
+3. キーを押して**パッケージを追加**です。
+
+NuGet パッケージは、任意の依存関係と共に、プロジェクトに追加されます。
+これは、問題を修正、ビルドします。 ビルドが失敗が続く場合は、コンポーネントと、NuGet パッケージの間の API の相違点があったかどうかに表示するには、各エラーを調査します。
+
+<a name="require-update" />
+
+## <a name="components-without-a-nuget-migration-path"></a>NuGet の移行パスを持たないコンポーネント
+
+アプリケーションで使用されるコンポーネントの代わりにすぐに見つからない場合は、心配必要はありません。 既存のコンポーネントは引き続き Visual Studio 15.5 で動作し、**コンポーネント**ソリューションにはノードが通常どおりに表示されます。
+
+ただし、Visual Studio の今後のリリースは_いない_復元またはコンポーネントを更新します。
+つまりを新しいコンピューターにソリューションを開いた場合、コンポーネントはいないダウンロードしてインストールです。作成者は、更新プログラムを提供できません。 計画する必要があります。
+
+* コンポーネントからアセンブリを抽出し、それらをプロジェクトに直接参照します。
+* コンポーネントの作成者に連絡して、NuGet に移行するプランに関する依頼してください。
+* 代替の NuGet パッケージを調査またはコンポーネントがオープン ソースの場合は、ソース コードをシークします。
+
+コンポーネントの多くのベンダーは、NuGet への移行で引き続き作業して、他のユーザー (商習慣に基づく利用可能な製品など) その他の配信オプションが調査可能性があります。
+
+
+## <a name="related-links"></a>関連リンク
+
+- [インストールして、NuGet パッケージ (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
+- [NuGet パッケージ (Mac) を含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

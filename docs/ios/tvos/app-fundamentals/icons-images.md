@@ -1,0 +1,444 @@
+---
+title: "アイコンとイメージの操作"
+description: "この記事では、設計と、アイコンと Xamarin.tvOS アプリ内でイメージ処理について説明します。"
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.technology: xamarin-ios
+author: bradumbaugh
+ms.author: brumbaug
+ms.date: 03/16/2017
+ms.openlocfilehash: 670c990fb4f2e4d2a01ada83ea98e8e589b5c473
+ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/27/2018
+---
+# <a name="working-with-icons-and-images"></a>アイコンとイメージの操作
+
+_この記事では、設計と、アイコンと Xamarin.tvOS アプリ内でイメージ処理について説明します。_
+
+魅了を作成するアイコンおよび画像は、Apple TV のアプリの実体験のユーザー エクスペリエンスの開発の重要な部分です。 このガイドを作成し、Xamarin.tvOS アプリに必要なグラフィック アセットを挿入するための手順を取り上げます。
+
+- [イメージを起動して](#Launch-Image)-起動イメージを表示すると、アプリが最初に起動は、起動が完了したら、アプリの最初の画面で置き換えられます。
+- [画像上層](#Layered-Images)- Apple TV、視差効果が選択された項目の 3D 効果を作成する新しいイメージの層の作業を Apple を特定します。 いくつかの方法がある[層イメージの作成](#Creating-Layered-Images)です。
+- [アプリのアイコン](#App-Icons)-だけでなく、Apple TV ホーム画面が、App Store のアイコンが必要です。 階層型のイメージとして指定しなければなりません。
+- [棚のイメージの上位](#Top-Shelf-Image)-アプリの機能を強調表示する上位棚イメージは必要がありますのホーム画面の上部の行で、アプリを配置している場合。 必要に応じて、使用できる[上部棚の動的コンテンツ](#Dynamic-Top-Shelf-Content)をアプリのコンテンツを強調表示します。
+- [ゲーム センターの画像](#Game-Center-Images)の場合は、アプリでは、ゲームをゲーム センターを使用してその他のいくつかのイメージが必要になります。
+- [Xamarin.tvOS プロジェクト イメージを設定](#Setting-Xamarin.tvOS-Project-Images)-Xamarin.tvOS アプリのイメージを起動し、アプリ アイコンを設定するために必要な手順について説明します。
+
+> [!IMPORTANT]
+> **注:** 1 x の解像度で Apple TV のすべてのイメージは、(`@1x`) する必要がありますと_のみ_このサイズのイメージを使用します。 大きなを含む、高解像度のグラフィックスだけでなく時間のダウンロードし、使用の詳細のメモリと記憶域を実行時に動的に再スケーリングされますが、描画のパフォーマンスに悪影響を及ぼすです。
+
+<a name="Launch-Image" />
+
+## <a name="launch-image"></a>イメージを起動します。
+
+起動は、イメージは、まず Xamarin.tvOS アプリは Apple テレビで最初に起動したときに表示され、ような場合すべて tvOS アプリが起動イメージを指定する必要があります。 
+
+起動イメージは、迅速に表示され、アプリが高速で応答するような印象を示します。 Apple TV で置き換えられます起動イメージ、アプリの最初の画面間もなくあります後。
+
+起動イメージが広告またはアートの式の機会ではない、印象アプリが迅速に起動し、準備ができている場合にのみ存在するを使用します。
+
+<table width="100%" border="1px">
+<tr>
+    <td colspan="2"><b>イメージを起動します。</b></td>
+</tr>
+<tr>
+    <td><b>Size</b></td>
+    <td>1920px x 1080px
+
+    Non-layered `.png` files only</td>
+</tr>
+</table>
+
+Apple では、アプリの起動イメージをデザインするための次の提案を加えます。
+
+- **最初の画面と同じでほぼ**-Your 起動画面が可能なアプリの最初の画面に近くする必要があります。 別のグラフィック要素などになります、いたずら「ときに、点滅」最初の画面が表示されます。
+- **使用してテキストを避けるため**-起動イメージは静的ありような場合、表示される前にローカライズされません。
+- **起動の downplay** -Apple TV のためのユーザーがアプリを頻繁に切り替える、アプリの起動プロセスに注意を描画するべきではありません。
+- **なし、広告またはブランド**-Your 起動イメージ、バージョン情報 画面として使用しないでまたはアプリの最初の画面の静的部分である場合を除き、ブランド化が含まれます。 広告が厳密に禁止されています。
+
+<a name="Setting-the-Launch-Image" />
+
+### <a name="setting-the-launch-image"></a>起動イメージの設定
+
+TvOS プロジェクトを起動してイメージを設定するには、次を行ってください。
+
+1. **ソリューション エクスプ ローラー**、ダブルクリック`Assets.xcassets`ファイルを開いて編集します。 
+
+    [ ![](icons-images-images/asset01.png "Assets.xcassets ファイル")](icons-images-images/asset01.png)
+2. **資産エディター**、をクリックして、`LaunchImages`資産。 
+
+    [ ![](icons-images-images/asset02.png "LaunchImages 資産")](icons-images-images/asset02.png)
+3. をクリックして、 **Apple TV x 1**エントリを起動してイメージを選択するか、必要に応じて、ファイル システムから新しいイメージをドラッグします。 
+
+    [ ![](icons-images-images/asset03.png "起動イメージを選択します。")](icons-images-images/asset03.png)
+4. 変更内容を保存します。
+
+<a name="Layered-Images" />
+
+## <a name="layered-images"></a>複数層の画像
+
+初めて使用する Apple TV、心部屋の画面上のコンテンツに接続されている、ソファにユーザーを保持するのに役立つ 3D 効果を生成するために、視差効果の画像上層作業します。
+
+複数層のイメージが含まれてから 2 つ (2) を 5 (5) がイメージの完了に組み合わされた層を分離します。 背景レイヤーを除く各レイヤーは、奥行を作成するのに透明度と共に重ね順を使用します。 ユーザーは、階層化のイメージを使用して、ときに高い Z オーダーのレイヤーが拡大縮小され、この特殊効果を作成する重複しました。
+
+[ ![](icons-images-images/layered01.png "複数層の画像の Z オーダーのダイアグラム")](icons-images-images/layered01.png)
+
+> [!IMPORTANT]
+> **注:**階層イメージが、アプリのアイコンに必要なおよびその他のオプションは[フォーカス可能な項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)(、上部棚イメージなど)。 ただし、Apple は、アプリでフォーカスを取得できるすべてのイメージのイメージの階層型の使用をお勧めします。
+
+
+
+
+Apple では、階層化の画像をデザインするための次の提案を加えます。
+
+- **背景レイヤー不透明**-背景レイヤー (層 1)**必要があります**不透明または Apple TV の上層イメージを使用しようとしたときにエラーが表示されます。 その他のすべてのレイヤーには、3 D 効果を強化するために透過性の複数のレベルを含めることができます。
+- **前景色、中間色、およびバック グラウンドの要素を分離**-フォア グラウンドでの目立つ要素 (ゲーム文字) などの発生は、セカンダリ要素またはシャドウの中央を使用します。 最後に、ニュートラルの背景、上位層のステージを提供するが含まれます。
+- **フォア グラウンドでテキストを保持**-しない場合は、テキストより高いレベルに隠されるをそれが必要になる、最上位層でします。
+- **単純な階層構造を使用して**-視差効果の設計は、微妙なを少し目障りな感じ、現実的ではない効果を防ぐために最小限にしておいて、レイヤー。
+- **安全なゾーンを含む**-視差効果の中にトリミングされるは、上位の層、ため各レイヤーに安全な領域の枠線をビルドする必要があります。 近すぎるのレイヤー エッジで、コンテンツを取得する場合からトリミングになることができます。 上位の層には、詳細スケーリングしてより下位の層がトリミングされる点が発生します。 参照してください、[イメージ レイヤーのサイズ変更](#Sizing-Image-Layers)以下のセクションです。
+- **多くの場合、プレビュー** -イメージの階層化の目的の 3D 効果が発生することと、個々 のレイヤー上のコンテンツの [なし] をトリミングされていることを確認するには、多くの場合、プレビューを表示する必要があります。 期待どおりに表示されるかどうかを確認する実際のハードウェアに Apple TV の階層型イメージを確認してください。
+
+組み込みを使用するように、可能な限り`UIKit`ように自動的に取得することが視差効果にフォーカスが移ります送られてきたときに、階層化の画像を表示するコントロール。
+
+<a name="Sizing-Image-Layers" />
+
+### <a name="sizing-image-layers"></a>イメージ レイヤーのサイズ変更
+
+必ず含めてすることが重要な_セーフ ゾーン_レイヤーのイメージを構成する各レイヤーに罫線。 個々 のレイヤーを拡張し、視差効果の中にトリミング、ため、レイヤーのコンテンツできますトリミングされますレイヤーのエッジに近すぎる場合。
+
+[ ![](icons-images-images/layered02.png "35 ピクセルの境界線")](icons-images-images/layered02.png)
+
+<a name="Creating-Layered-Images" />
+
+### <a name="creating-layered-images"></a>画像を上層を作成します。
+
+tvOS は、次の形式で、イメージの階層で動作します。
+
+- **車ファイル**-これは、Apple が作成した専用のアセット カタログ形式です。 自動車ファイルを直接作成しない、LSR ファイルからコンパイル時に作成され、アプリ バンドルに含まれています。
+- **LSR イメージ**-これは、Apple が作成した独自のイメージ形式。 使用して、[視差エクスポーター Adobe Photoshop プラグイン](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip)または[視差プレビューアー](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) LSR 形式でプレビュー イメージのレイヤーを作成します。
+- **Assets.xcassets** - 2 つ (2) を 5 (5) から標準`.png`自動車または LSR にコンパイルされるアセット カタログに含まれている書式設定されたイメージがコンパイル時に階層型のイメージを書式設定します。
+- **LCR ファイル**-これは、Apple が作成した独自のファイル形式。 LCR ファイルは、コンテンツ サーバーの 1 つからダウンロードした追加のコンテンツとして使用するためのものです。 LCR ファイルは、アプリ バンドルに含まれること必要があります。 使用して LSR または Photoshop ファイルの LCR ファイルを生成、 `layerutil` Xcode に含まれているコマンド ライン ツールです。
+
+<a name="The-Parallax-Previewer" />
+
+### <a name="the-parallax-previewer"></a>視差プレビュー用のプログラム
+
+作成された Apple、[視差プレビューアー](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)プレビューを作成したアプリのアイコンと省略可能なフォーカス可能な項目に必要なイメージの階層化します。 プレビュー用のプログラムは、階層化の完了のイメージを形成するすべてのレイヤーを示しています。
+
+[ ![](icons-images-images/layered03.png "視差プレビュー用のプログラム")](icons-images-images/layered03.png)
+
+階層化の画像をプレビューしながら、イメージの回転し、視差効果のプレビューにマウスを使用できます。 使用して、  **+**  (正符号 +) と **-**  (マイナス記号) ボタンを追加およびレイヤーを削除します。
+
+新しい層のイメージを作成するときに LSR 形式でエクスポートして、アプリのバンドルに含まれます。
+
+作成して、イメージの層のプレビューの詳細については、Apple を参照してください[視差のアートワークを作成する](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/CreatingParallaxArtwork.html#//apple_ref/doc/uid/TP40015241-CH19-SW1)のセクションで、 [tvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)です。
+
+<a name="App-Icons" />
+
+## <a name="app-icons"></a>アプリのアイコン
+
+Xamarin.tvOS アプリでは、Apple テレビ ホーム画面も、アプリ ストアのアイコンのだけでなくアプリのアイコンが必要です。 アプリのアイコンは、最初の潜在的なユーザーに最適な印象を与える変更し、一目でアプリの目的を伝える必要があります。
+
+[ ![](icons-images-images/icon01.png "アプリのアイコン")](icons-images-images/icon01.png)
+
+すべてのアプリには、小さなと、アプリ アイコンのサイズの大きいバージョンの両方を指定する必要があります。 小さいアイコンは、アプリがインストールされているときに、Apple テレビ ホーム画面で使用されます。 大規模なバージョンは、アプリ ストアによって使用されます。 大規模なアプリのアイコンは、小さいアイコンのバージョンのルック アンド フィールを模倣する必要があります。
+
+<table width="100%" border="1px">
+<tr>
+    <td colspan="2"><b>小さいアイコン</b></td>
+    <td colspan="2"><b>大きいアイコン</b></td>
+</tr>
+<tr>
+    <td><b>実際のサイズ</b></td>
+    <td>400px x 240px</td>
+    <td><b>Size</b></td>
+    <td>1280px x 768px</td>
+</tr>
+<tr>
+    <td><b>安全なゾーンのサイズ</b></td>
+    <td>370px x 222px</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><b>フォーカスされていないサイズ</b></td>
+    <td>300px x 180px</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td><b>フォーカスのあるサイズ</b></td>
+    <td>370px x 222px</td>
+    <td></td>
+    <td></td>
+</tr>
+</table>
+
+> [!IMPORTANT]
+> **注:**として、アプリ アイコンを指定する必要があります**層イメージ**です。 参照してください、[層イメージ](#Layered-Images)の詳細については、上記「します。
+
+
+
+
+Apple では、アプリのアイコンを作成するための次の提案を提供します。
+
+- **1 つのフォーカス ポイントを提供**– デザインの単一のフォーカス ポイントとのアイコンがアイコンの中央に直接配置します。
+- **単純な背景を使用して**– シンプルに、アイコンの背景上のレイヤーが目立つようにします。単純な色または微妙なグラデーションを使用してください。
+- **テキストの量を制限する**– アイコンのデザインに必要なときのテキストを記載するアプリの名前が表示されるので、アイコンの下、ユーザーが選択されている、のみ必要があります。
+- **スクリーン ショットを使用しない**– スクリーン ショットが複雑すぎるため、アイコンや表示するアプリの概要の目的は、ユーザーに許可しません。
+- **維持するアイコンの正方形**– tvOS 微妙に、アイコンの角を丸くマスクを自動的に適用されます。 自分でこの丸めを含めないでください。
+- **分離のレイヤー慎重に**– ほとんどのレイヤーの中央と、上位の層に光を許可するニュートラル背景セカンダリ アイテム、テキストが上にする必要があります。
+- **グラデーションおよび慎重に影を使用して**– グラデーションおよび影、競合が発生視差効果のあるため、慎重に使用する必要があります。 単純な上部から下へ、薄い-濃いグラデーションのスタイルが最適です。 Shadows 通常最適シャープではっきりとした濃淡としてです。
+- **レイヤーの透明度を異なる**– を 3D 効果を増やすには、アプリ アイコンの上位レベルの透過性のレベルをさまざまな使用します。 背景レイヤーは不透明である必要があります。 またはエラーが発生します。
+
+<a name="Setting-the-App-Icons" />
+
+### <a name="setting-the-app-icons"></a>アプリのアイコンを設定
+
+TvOS プロジェクトに必要なアプリのアイコンを設定するには、次を行ってください。
+
+1. **ソリューション エクスプ ローラー**、ダブルクリック`Assets.xcassets`ファイルを開いて編集します。 
+
+    [ ![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png)
+2. **資産エディター**、展開、`App Icon & Top Shelf Image`資産。 
+
+    [ ![](icons-images-images/asset04.png "上部の棚のイメージ資産を展開します。")](icons-images-images/asset04.png)
+3. 次に、展開、`App Icon - Small`資産。 
+
+    [ ![](icons-images-images/asset05.png "アプリ アイコンの小さな資産を展開します。")](icons-images-images/asset05.png)
+4. 展開し、`Back`資産およびをクリックして、`Contents`エントリ。 
+
+    [ ![](icons-images-images/asset06.png "戻る資産の順に展開します。")](icons-images-images/asset06.png)
+5. をクリックして、 **Apple TV エントリ x 1**イメージ ファイルを選択します。
+6. 上記の手順を繰り返します、`Front`と`Middle`資産です。
+7. 定義に同じ手順を繰り返して、`App Icon - Large`資産です。
+4. 変更内容を保存します。
+
+<a name="Top-Shelf-Image" />
+
+## <a name="top-shelf-image"></a>上段イメージ
+
+ユーザーに、Apple テレビ ホーム画面上の行で Xamarin.tvOS アプリが配置されている場合、アプリがユーザーによって選択されたとき、大規模な上位棚イメージが表示されます。 このイメージは、アプリの機能を強調表示したり、そのコンテンツへの直接のリンクを提供しないでください。
+
+[ ![](icons-images-images/topshelf01.png "最上位の棚のイメージの例")](icons-images-images/topshelf01.png)
+
+上部棚のイメージを 1 つの静的として指定するか、できます`.png`または`.lsr`ファイル (を参照してください[層イメージの作成](#Creating-Layered-Images)) 動的に作成できます実行時にフォーカスを設定できるアイテムの単一の行として、または (を参照してください[動的上段コンテンツ](#Dynamic-Top-Shelf-Content)下)。
+
+<table width="100%" border="1px">
+<tr>
+    <td colspan="2"><b>上段イメージ</b></td>
+</tr>
+<tr>
+    <td><b>Size</b></td>
+    <td>1920px x 720px
+
+    Static `.png` or layered `.lsr` file</td>
+</tr>
+</table>
+
+Apple では、上部棚イメージを作成するため次の推奨事項を提供します。
+
+- **リッチ静的イメージを使用して**– アプリに動的なコンテンツが提供していない場合、上部棚イメージがされるフォーカスを設定します。 このイメージを使用して、アプリまたは会社をブランド化の機能を強調表示します。
+- **アプリのコンテンツへのリンク**– 動的上部棚のレイアウトは、ユーザーがアプリで最も重要なを検索するコンテンツへのクイック リンクを提供します。 この領域を使用すると、アプリを起動し、指定されたコンテンツへのジャンプはすぐにへのクイック リンクを提供します。
+- **最新のコンテンツがわかり**– 上部棚の豊富なコンテンツがアプリにユーザーを描画し、さらにこれを使用するようにします。 これを使用して、領域として、最高定格または最新のコンテンツを紹介します。
+- **コンテンツを個人用**–、最もよく使用するユーザーの場所またはお気に入りのアプリのホーム画面の上部の行にします。 最も関心があるがコンテンツを表示するのにには、上部の棚を使用します。
+- **広告が許可されていません**– 広告が禁止上部棚に表示されています。 最新購入、コンテンツを表示することがありますが、価格情報は表示されません。
+
+### <a name="setting-the-top-shelf-image"></a>上段イメージの設定
+
+TvOS プロジェクトに必要な上位棚のイメージを設定するには、次を行ってください。
+
+1. **ソリューション エクスプ ローラー**、ダブルクリック`Assets.xcassets`ファイルを開いて編集します。 
+
+    [ ![](icons-images-images/asset01.png "Assets.xcassets ファイル")](icons-images-images/asset01.png)
+2. **資産エディター**、展開、`App Icon & Top Shelf Image`資産。 
+
+    [ ![](icons-images-images/asset04.png "上部の棚のイメージ資産を展開します。")](icons-images-images/asset04.png)
+3. をクリックして、`Top Shelf Image`資産。 
+
+    [ ![](icons-images-images/asset07.png "上部棚のイメージ アセット")](icons-images-images/asset07.png)
+5. をクリックして、 **Apple TV エントリ x 1**イメージ ファイルを選択します。
+6. 変更内容を保存します。
+
+<a name="Dynamic-Top-Shelf-Content" />
+
+### <a name="dynamic-top-shelf-content"></a>上段の動的なコンテンツ
+
+上部の棚上部棚に静的な画像を表示するには、代わりの動的な行を含めることができます[フォーカス可能な項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)または動的なセットのバナーをスクロールします。 アプリまたはその最も使用されている機能へのジャンプで提供されているコンテンツを強調表示をこれらの動的なスタイルの両方ができます。
+
+<a name="Sectioned-Content-Row" />
+
+#### <a name="sectioned-content-row"></a>区分けされ、コンテンツの行
+
+この動的上部棚コンテンツの種類は、単一の行方向にスクロールして、必要に応じてセクションに分かれてフォーカス可能な項目を表示します。 通常は、新しいお気に入りを強調表示に使用または、最近アプリのコンテンツを表示します。
+
+コンテンツは、(フォーカスされている) 現在の選択したコンテンツの下に表示されるラベルを持つコンテンツの 1 つの水平スクロール リストとして表示されます。 ユーザーは、特定のコンテンツを選択する場合は、アプリが起動され、そのコンテンツに直接これらを実行してください。
+
+次のコンテンツのサイズは、必要になります。
+
+<table width="100%" border="1px">
+<tr>
+    <td><b>&nbsp;</b></td>
+    <td><b>ポスター (2:3)</b></td>
+    <td><b>正方形 (1:1)</b></td>
+    <td><b>HDTV (16:9)</b></td>
+</tr>
+<tr>
+    <td><b>実際のサイズ</b></td>
+    <td>404px x 608px</td>
+    <td>608px x 608px</td>
+    <td>908px x 512px</td>
+</tr>
+<tr>
+    <td><b>安全なゾーンのサイズ</b></td>
+    <td>380px x 570px</td>
+    <td>570px x 570px</td>
+    <td>852px x 479px</td>
+</tr>
+<tr>
+    <td><b>フォーカスされていないサイズ</b></td>
+    <td>333px x 500px</td>
+    <td>500px x 500px</td>
+    <td>782px x 440px</td>
+</tr>
+<tr>
+    <td><b>フォーカスのあるサイズ</b></td>
+    <td>380px x 570px</td>
+    <td>570px x 570px</td>
+    <td>852px x 479px</td>
+</tr>
+</table>
+
+Apple では、コンテンツの断面行の次の方法を提供します。
+
+- **行を完成**– 画面の幅全体にわたるための十分なコンテンツを提供する必要があります。
+- **混合イメージをスケーリング**– 断面コンテンツの行は、リストの上に示した) イメージのサイズの組み合わせを保持するように設計されました。 ただし画像のサイズが混在するは場合、コンテンツの表示を正規化する追加のスケーリングを適用はことに注意してください。
+
+<a name="Scrolling-Inset-Banners" />
+
+#### <a name="scrolling-inset-banners"></a>スクロールのマージン バナー
+
+必要に応じて、Xamarin.tvOS アプリは自動的にスクロールおよび画面がほぼいっぱいバナーのコレクションをループとして上部の棚にその内容を表示できます。 このスタイルは通常、テレビ番組を録画などの豊富な新しいコンテンツに使用されます。
+
+自動スクロールだけでなくユーザーで、バナーのコントロールを作成し、Siri リモコンを使用していずれかの方向にスクロールすることができます。 バナーのフォーカスがあるときに Siri リモート循環ジェスチャの小さなを行った、そのバナーの視差効果が有効になります。
+
+<table width="100%" border="1px">
+<tr>
+    <td colspan="2"><b>バナー イメージ (余分な全体)</b></td>
+</tr>
+<tr>
+    <td><b>実際のサイズ</b></td>
+    <td>1940px x 624px</td>
+</tr>
+<tr>
+    <td><b>安全なゾーンのサイズ</b></td>
+    <td>1740px x 620px</td>
+</tr>
+<tr>
+    <td><b>フォーカスされていないサイズ</b></td>
+    <td>1740px x 560px</td>
+</tr>
+<tr>
+    <td><b>フォーカスのあるサイズ</b></td>
+    <td>1740px x 620px</td>
+</tr>
+</table>
+
+埋め込みバナーをスクロールするかを指定できます。 静的な`.png`層または`.lsr`ファイル。
+
+Apple では、スクロールのマージン バナーの次の方法を提供します。
+
+- **コンテンツの量**の自然な感覚にスクロールする 3 つ (3) バナーの最小値を提供する必要があります。 バナー個 8 (8) を含める必要がありますか、エンドユーザーのナビゲーションをハードにします。
+- **テキストをコンテンツ**- 場合は、バナーは、バナー イメージに含める必要があります内のテキストが必要です。 階層型のイメージを使用している場合、テキストが、最上位層でなければなりません。
+
+Apple を参照してください[TVServices フレームワーク参照](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412)上部棚の動的なコンテンツを提供するアプリを上部棚の拡張機能を追加する方法の詳細についてです。
+
+<a name="Game-Center-Images" />
+
+## <a name="game-center-images"></a>ゲーム センターの画像
+
+Xamarin.tvOS アプリは、ゲーム、ゲーム センターのサポートが含まれている場合は、いくつかのイメージ アセットが必要になります。
+
+- **達成アイコン**-非透過のイメージが円に自動的にトリミングされる各の達成に必要です。 フォーカスを設定できるアイテムはします。
+- **ダッシュ ボードのアートワーク**-Game Center アプリのダッシュ ボードの上部に表示される提供される、省略可能なイメージを指定できます。 これらのイメージは、フォーカスを設定します。
+- **スコアボード アートワーク**-入力してください間で 1 つ (1) に 3 つ (3) 16:9 の縦横比イメージ、アプリでサポートされる各スコアボードにします。 静的あります`.png`層または`.lsr`ファイル。 スコアボード アートワークは、フォーカスを設定します。
+
+<table width="100%" border="1px">
+<tr>
+    <td><b>&nbsp;</b></td>
+    <td><b>達成アイコン</b></td>
+    <td><b>ダッシュ ボードのアートワーク</b></td>
+    <td><b>スコアボードのアートワーク</b></td>
+</tr>
+<tr>
+    <td><b>表示サイズ</b></td>
+    <td>200px x 200px</td>
+    <td>923px x 150px</td>
+    <td>N/A</td>
+</tr>
+<tr>
+    <td><b>実際のサイズ</b></td>
+    <td>320px x 320px</td>
+    <td>N/A</td>
+    <td>659px x 371px</td>
+</tr>
+<tr>
+    <td><b>安全なゾーンのサイズ</b></td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>618px x 348px</td>
+</tr>
+<tr>
+    <td><b>フォーカスされていないサイズ</b></td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>548px x 309px</td>
+</tr>
+<tr>
+    <td><b>フォーカスのあるサイズ</b></td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>618px x 348px</td>
+</tr>
+</table>
+
+ゲーム センターの操作の詳細については、Apple を参照してください[ゲーム センターのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)です。
+
+<a name="Working-with-Images" />
+
+## <a name="working-with-images"></a>イメージの処理
+
+TvOS 9 が iOS 9 のサブセットであるため、含めるし、Xamarin.iOS アプリにイメージを表示するために使用する同じ手法も Xamarin.tvOS アプリの機能します。 参照してください、[イメージを表示する](~/ios/app-fundamentals/images-icons/displaying-an-image.md)詳細についてはドキュメントです。
+
+<a name="Setting-Xamarin.tvOS-Project-Images" />
+
+## <a name="setting-xamarintvos-project-images"></a>Xamarin.tvOS プロジェクト イメージの設定
+
+TvOS のすべてのアプリが必要な前述のような[起動イメージ](#Launch-Image)と[アプリ アイコン](#App-Icons)。 このセクションでは、アセット カタログに設定した後、イメージの起動とアプリのアイコンの Xamarin.tvOS アプリ プロジェクトの選択について説明します。
+
+次の手順で行います。
+
+1. **ソリューション エクスプ ローラー**をダブルクリックして、`Info.plist`ファイルを開いて編集します。 
+
+    [ ![](icons-images-images/info01.png "Info.plist ファイル")](icons-images-images/info01.png)
+2. **Info.Plist エディター**、資産カタログを選択 (上で構成された、[アプリ アイコンを設定](#Setting-the-App-Icons)セクション) の**アプリ アイコン**: 
+
+    [ ![](icons-images-images/info02.png "Info.Plist エディター")](icons-images-images/info02.png)
+3. 次に、資産カタログを選択 (上で構成された、[を起動してイメージを設定する](#Setting-the-Launch-Image)セクション) の**起動イメージ**です。
+4. 変更内容を保存します。
+
+<a name="Summary" />
+
+## <a name="summary"></a>まとめ
+
+この記事では、すべてのイメージの種類と Xamarin.tvOS アプリで使用されるサイズをについて説明しました。 最初に、起動イメージ、イメージの階層化、アプリのアイコン、上部棚のイメージおよびゲーム センターのイメージを説明します。 Xamarin.tvOS アプリでの画像の作業を説明します。
+
+## <a name="related-links"></a>関連リンク
+
+- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS](https://developer.apple.com/tvos/)
+- [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
