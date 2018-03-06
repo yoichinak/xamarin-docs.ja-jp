@@ -177,7 +177,7 @@ IOS 9 バージョン Xamarin.iOS アプリの実際の iOS のハードウェ�
 
 コンパイルして、iOS 9 の既存の Xamarin.iOS アプリを実行しているときに、フォームでエラーが発生する可能性があります。
 
-> Objective C の例外がスローされます。  [名前]: NSInternalInconsistencyException 理由: アプリケーションの起動の最後に、ルート ビュー コント ローラーに windows アプリケーションは必要
+> Objective C の例外がスローされます。  名前: NSInternalInconsistencyException 理由: アプリケーションの起動の最後に、ルート ビュー コント ローラーに windows アプリケーションは必要
 
 これは、エラーがアプリの Windows がアプリケーションの起動の最後に、ルート ビュー コント ローラーをいる必要があり、既存のアプリはために発生します。
 
