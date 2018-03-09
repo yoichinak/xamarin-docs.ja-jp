@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/19/2017
 ms.openlocfilehash: 50684d82726a398aabe77d09ff62eac40e277f02
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -67,7 +67,7 @@ IOS アプリのプロビジョニングに関する詳細を確認する、[デ
 
 明示的な作成**アプリ ID**と適切な**プロビジョニング プロファイル**Apple の操作は実行[iOS Dev Center](https://developer.apple.com/devcenter/ios/index.action)です。 
 
-現在**のアプリ Id**に記載されて、[証明書、識別子、およびプロファイル](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)デベロッパー センターの「します。 多くの場合、このリストに表示されます**ID**値`*`を示すを **アプリ ID*- **名前**任意の数のサフィックスで使用できます。 このような*ワイルドカードのアプリ Id*ヘルス キットでは使用できません。
+現在**のアプリ Id**に記載されて、[証明書、識別子、およびプロファイル](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)デベロッパー センターの「します。 多くの場合、このリストに表示されます **ID** 値 `*` を示すを* *アプリ ID*- **名前** 任意の数のサフィックスで使用できます。 このような*ワイルドカードのアプリ Id*ヘルス キットでは使用できません。
  
 明示的な作成を**アプリ ID**をクリックして、  **+** する右のボタン、 **iOS アプリ ID を登録**ページ。
 
@@ -99,7 +99,7 @@ Xamarin iOS 8 のプロジェクトを手動で作成するプロセスを案内
 
 [![](healthkit-images/image06.png "明示的なアプリ ID を入力してください。")](healthkit-images/image06.png)
 
-今すぐに切り替え、 **iOS バンドル署名 ***パネルです。 最近インストールされた**プロビジョニング プロファイル**、明示的なへの関連付けを**アプリ ID**、として使用できるようになりました、**プロビジョニング プロファイル**:
+今すぐに切り替え、 **iOS バンドル署名** パネルです。 最近インストールされた**プロビジョニング プロファイル**、明示的なへの関連付けを**アプリ ID**、として使用できるようになりました、**プロビジョニング プロファイル**:
 
 [![](healthkit-images/image07.png "プロビジョニング プロファイルを選択します。")](healthkit-images/image07.png)
 

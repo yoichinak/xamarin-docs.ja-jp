@@ -9,7 +9,7 @@ ms.author: amburns
 ms.date: 04/05/2017
 ms.openlocfilehash: 0cf7456cec2e934516e15ac6cbc57109e6b57a79
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -26,7 +26,7 @@ Visual Studio for Mac の Apple アカウント ダイアログでは、次の�
 
 これを行う方法の詳細については、このガイドで説明します。
 
-次の iOS バンドル署名 * ツールを使用することもできます。
+次の iOS バンドル署名ツールを使用することもできます。
 
 * **既存のプロファイルに新しい署名 id を追加します。** 
 * **新しいデバイスをプロビジョニングします。** 
@@ -98,7 +98,7 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
 
 ![](apple-account-management-images/image9.png)
 
-## <a name="ios-bundle-signing"></a>iOS バンドル署名*
+## <a name="ios-bundle-signing"></a>iOS バンドル署名
 
 デバイスにアプリを配置する方法の詳細についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
 

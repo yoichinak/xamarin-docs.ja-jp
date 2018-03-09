@@ -27,7 +27,7 @@ MonoGame は、コードの再利用の大部分を使用したクロスプラ�
 
 # <a name="adding-monogame-to-visual-studio-for-mac"></a>Visual studio for Mac MonoGame を追加します。
 
-MonoGame として追加できる追加の Visual studio for mac Mac で次のように選択します**Visual Studio for Mac** > **アドイン マネージャー.。** . Windows では、ツールを選択 * * * * >**アドイン マネージャー.** . 選択、**ギャラリー** タブで、展開、**ゲーム開発**カテゴリを選択**MonoGame Addin**をクリックし、**インストール**:
+MonoGame として追加できる追加の Visual studio for mac Mac で次のように選択します**Visual Studio for Mac** > **アドイン マネージャー...** . Windows では、ツールを選択 * * * * >**アドイン マネージャー...** . 選択、**ギャラリー** タブで、展開、**ゲーム開発**カテゴリを選択**MonoGame Addin**をクリックし、**インストール**:
 
 ![](part1-images/image2.png "ギャラリータブを選択、ゲーム開発のカテゴリを展開し、MonoGame アドインを選択し、[インストール] をクリックしてください")
 
@@ -43,7 +43,7 @@ MonoGame として追加できる追加の Visual studio for mac Mac で次の�
 
 Mac を Visual Studio で**ファイル > 新しいソリューション**です。 **新しいプロジェクト**ダイアログ ボックスで、をクリック**[その他]**、までスクロール、**全般** セクションで、選択、* * ユニバーサル MonoGame モバイル アプリケーション * * オンにして、[次へ] をクリックします。
 
-![](part1-images/image3.png "新しいプロジェクトダイアログ ボックスで [その他] をクリックしてください、ユニバーサル MonoGame モバイル アプリケーション オプションを [全般] セクションまでスクロールして [次へ] をクリックしてください")
+![](part1-images/image3.png "新しいプロジェクト ダイアログ ボックスで [その他] をクリックしてください、ユニバーサル MonoGame モバイル アプリケーション オプションを [全般] セクションまでスクロールして [次へ] をクリックしてください")
 
 WalkingGame プロジェクトの名前し、[作成] をクリックします。
 

@@ -10,7 +10,7 @@ ms.author: toopge
 ms.date: 03/29/2017
 ms.openlocfilehash: bd6d47f98435cc68ecf4156423526c31dbac09da
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/27/2018
 
 1. いずれかを開いて[アプリ プロジェクトはサポートされて](~/tools/inspector/install.md#supported-platforms)Mac または Visual Studio の Visual Studio でします。
 1. デバッグ モードでアプリケーションを実行します。
-1. をクリックして、**検査**IDE ツールバーのボタン (Visual Studio で、**検査現在アプリ..。**から使用可能なメニュー項目も、**ツール**または**デバッグ**メニュー)。
+1. をクリックして、**検査**IDE ツールバーのボタン (Visual Studio で、**検査現在アプリ...**から使用可能なメニュー項目も、**ツール**または**デバッグ**メニュー)。
 
 
 

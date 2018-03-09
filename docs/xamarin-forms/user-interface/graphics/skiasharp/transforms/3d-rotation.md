@@ -9,7 +9,7 @@ ms.author: chape
 ms.date: 04/14/2017
 ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -27,7 +27,7 @@ _非アフィン変換を使用して、3 D 空間に 2 D のオブジェクト�
 
 3 次元座標系が概念的には z までと呼ばれる 3 番目の軸を追加し、Z 軸は直角の画面に、します。 3D スペースで座標の点は 3 つの数値で示されます。 (x、y、z)。 3D で x 軸の値を増やすと、この記事で使用される座標系は右側があり、Y の増加する値が 2 つのディメンションと同様、移動します。 正の値の増加する Z 値は、画面から復帰します。 原点は、左上隅の 2 次元グラフィックと同様です。 この平面に直角に Z 軸を持つ、XY 平面として画面の考えることができます。
 
-これは、左側の座標系と呼ばれます。 ポイントする場合 (右) に正の X の方向で、左側の人差し指を調整し、増加する Y の方向に中央の指の座標 (ダウン)、Z 座標 & #x 2014; を増加させる方向で、thumb ポイントし、画面からを拡張します。
+これは、左側の座標系と呼ばれます。 ポイントする場合 (右) に正の X の方向で、左側の人差し指を調整し、増加する Y の方向に中央の指の座標 (ダウン)、Z 座標 &#x2014; を増加させる方向で、thumb ポイントし、画面からを拡張します。
 
 3D グラフィックで変換は、4-4 でマトリックスに基づいています。 4-4 を単位行列を次に示します。
 
@@ -109,7 +109,7 @@ Z 軸の周りの回転は、2 D グラフィックスの場合と同様です�
 |    0       0     0  1  |
 </pre>
 
-回転方向は、座標系のき手によって暗黙的に指定します。 左ききシステムでは、これは、左側にある特定の軸 & #x 2014; の値を増やすに向かってのつまみをポイントするためX 軸の周りの回転の右側に Z 軸 & #x 2014; 周りの回転角度の Y 軸を中心と手前の回転の下矢印その他の指の曲線は、回転の角度に正の値の方向を示します。
+回転方向は、座標系のき手によって暗黙的に指定します。 左ききシステムでは、これは、左側にある特定の軸 &#x2014; の値を増やすに向かってのつまみをポイントするためX 軸の周りの回転の右側に Z 軸 &#x2014; 周りの回転角度の Y 軸を中心と手前の回転の下矢印その他の指の曲線は、回転の角度に正の値の方向を示します。
 
 `SKMatrix44` 静的が汎用された[ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/)と[ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/)を対象となる、回転が発生した軸を指定できるようにするメソッド。
 
@@ -442,7 +442,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`上書き定義の 3 つの Xamarin.Forms`Animation`アニメーション化するオブジェクト、 `xRotationDegrees`、 `yRotationDegrees`、および`zRotationDegrees`異なるレートでフィールドです。 これらのアニメーションの期間が含まれる素数 & #x 2014; に設定されていることを確認します。5 秒、7 秒、および 11 秒 & #x 2014 です。全体的な組み合わせは、すべて 385 秒、または 10 分以上にのみ繰り返されます。
+`OnAppearing`上書き定義の 3 つの Xamarin.Forms`Animation`アニメーション化するオブジェクト、 `xRotationDegrees`、 `yRotationDegrees`、および`zRotationDegrees`異なるレートでフィールドです。 これらのアニメーションの期間が含まれる素数 &#x2014; に設定されていることを確認します。5 秒、7 秒、および 11 秒 & #x 2014 です。全体的な組み合わせは、すべて 385 秒、または 10 分以上にのみ繰り返されます。
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage

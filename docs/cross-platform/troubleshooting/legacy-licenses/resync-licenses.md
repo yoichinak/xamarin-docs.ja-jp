@@ -49,7 +49,7 @@ Windows 上の iOS 開発者可能性があります。 も for Visual Studio fo
 
 4.  重複したコンピューター名のペアがある場合を使用して、 **Deactivate**ドロップ ダウン メニュー項目を削除する_両方_の組み合わせのメンバー。
     
-    ![ライセンスの https://store.xamarin.com/account/my/subscription/computers で非アクティブ化]-> [](resync-licenses-images/deactivate.png "非アクティブ化するドロップダウン メニュー項目を使用して、ペアの両方のメンバーを削除するには")
+    ![ライセンスの https://store.xamarin.com/account/my/subscription/computers で非アクティブ化->](resync-licenses-images/deactivate.png "非アクティブ化するドロップダウン メニュー項目を使用して、ペアの両方のメンバーを削除するには")
 
 5.  ディスク上にまだ存在しているライセンス ファイルの残りのコピーを削除します。
     -   Windows

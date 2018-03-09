@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/20/2017
 ms.openlocfilehash: 6ea274ca198a4ca76a87198b02b6229e0e1c88b2
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -42,7 +42,7 @@ IOS 8 (および前)、ストーリー ボードでの UI 要素が両方の組�
 
 IOS 9 内で同じストーリー ボードで実行する場合は、次の形式での例外で決定されます。
 
-> キャッチされない例外 'NSInvalidArgumentException' のためのアプリを終了するには、理由: ' * * * + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: 制約を先頭または末尾の間にすることはできません属性と右/左属性。 先頭および末尾の両方またはどちらも使用します '。
+> キャッチされない例外 'NSInvalidArgumentException' のためのアプリを終了するには、理由: '*** + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: 制約を先頭または末尾の間にすることはできません属性と右/左属性。 先頭および末尾の両方またはどちらも使用します '。
 
 iOS 9 を適用するかを使用するレイアウト**右** & **左**_または_**先頭** &  **末尾の**属性が、*いない*両方です。 この問題を解決するには、同じ属性、ストーリー ボード ファイル内で設定を使用するすべてのレイアウト制約を変更します。
 

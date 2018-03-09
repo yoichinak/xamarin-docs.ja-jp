@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: cf43cfe31811e91524af7894ea347e3dba784d92
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/28/2018
 ---
@@ -489,7 +489,7 @@ Delete キーを押すか、バック スペース、メニューを削除しま
 
 下に見ていきましょう、**形式**メニューと削除、**フォント**サブメニュー項目。 次に、選択、**形式**メニュー「フォント」名前を変更します。
 
-[![[フォント] メニュー](menu-images/maint07.png "[フォント] メニュー")](menu-images/maint07-large.png)
+[![フォント メニュー](menu-images/maint07.png "フォント メニュー")](menu-images/maint07-large.png)
 
 次が自動的に取得付加テキスト ビュー内のテキストには、選択したときに事前に定義されるフレーズのカスタム メニューを作成してみましょう。 下部の [検索] ボックスに、**ライブラリ インスペクター** 「メニュー」の種類 これは容易にできるようにすべてのメニューの UI 要素の検索し、操作します。
 

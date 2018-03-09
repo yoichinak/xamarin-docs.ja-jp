@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/17/2017
 ms.openlocfilehash: eed12c84b9952ef5c3dd27847071f05392bc16c4
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -39,7 +39,7 @@ ms.lasthandoff: 02/27/2018
   - 移動して、**ウィンドウ > オーガナイザー**選択**アーカイブ**です。
   - 一覧からアプリケーションおよびアーカイブを選択します。
   - (省略可能)**を検証しています.**アーカイブします。
-  - **送信。。。** archive and を iTunes にアップロードする手順を確認および承認の接続に従ってください。
+  - **送信...** archive and を iTunes にアップロードする手順を確認および承認の接続に従ってください。
 
 次にこれらの項目に関連する特定のヒントを参照します。 参照してください、[トラブルシューティング](#Troubleshooting)セクションの問題がある場合。
 
@@ -57,7 +57,7 @@ App Store の展開を作成する必要がありますを構築する、**分�
 
 ![](appstore-images/provisioningprofiles-sml.png "使用可能なプロファイルの一覧")
 
-プロビジョニング プロファイルを確認することができます、**プロジェクト オプション**を選択して、**ビルド > iOS バンドル署名 ***画面を選択して、 **AppStore | iPhone**構成します。
+プロビジョニング プロファイルを確認することができます、**プロジェクト オプション** を選択して、**ビルド > iOS バンドル署名** 画面を選択して、 **AppStore | iPhone**構成します。
 
 **プロビジョニング プロファイル**リストが一致するすべてのプロファイルを表示する - このドロップダウン リストで作成した一致のプロファイルが表示されます。
 

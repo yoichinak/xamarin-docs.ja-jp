@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/20/2017
 ms.openlocfilehash: 077be02aacb9d4200db2d2eadf6f7388842b8e29
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -798,7 +798,7 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 2. **ソリューション エクスプ ローラー**を右クリックし、`MainStoryboard.storyboard`ファイルおよび選択した**ファイルを開く** > **Xcode インターフェイス ビルダー**:
 
     [![](unified-storyboards-images/dls01.png "Xcode インターフェイス ビルダーで開く")](unified-storyboards-images/dls01.png)
-3. Xcode で次のように選択します**ファイル** > **新規** > **ファイル.。**:
+3. Xcode で次のように選択します**ファイル** > **新規** > **ファイル...**:
 
     [![](unified-storyboards-images/dls02.png "ファイルを選択/新規")](unified-storyboards-images/dls02.png)
 4. 選択**iOS** > **ユーザー インターフェイス** > **起動画面** をクリックし、**次**ボタン。

@@ -9,7 +9,7 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.openlocfilehash: a10dcbbdcd7792cb7c54c883566911264b6d81e6
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -460,7 +460,7 @@ Xamarin.iOS アプリケーションでは、ドキュメント ピッカーを�
 1.  Mac または Visual Studio の Visual Studio でプロジェクトを開きます。
 2.  **ソリューション エクスプ ローラー**プロジェクトを右クリックし、オプションを選択します。
 3.  オプション ダイアログ ボックスの選択で**iOS アプリケーション**、いることを確認、**バンドル Id**で定義されているものと一致する**アプリ ID**アプリケーション用の上に作成します。 
-4.  選択**iOS バンドル署名 ***を選択、**開発者 Identity**と**プロビジョニング プロファイル**上記で作成しました。
+4.  選択 **iOS バンドル署名** を選択、**開発者 Identity** と **プロビジョニング プロファイル** 上記で作成しました。
 5.  をクリックして、 **OK**変更を保存し、ダイアログ ボックスを閉じるボタンをクリックします。
 6.  右クリックして`Entitlements.plist`で、**ソリューション エクスプ ローラー**をエディターで開きます。
 

@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 05/11/2016
 ms.openlocfilehash: f55620720bb986142a56de7e8602be56280006d4
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -61,7 +61,7 @@ Xamarin アプリケーションは、CloudKit フレームワークを利用で
 
     [ ![](intro-to-cloudkit-images/image27a.png "選択には、バック グラウンド モード、場所の更新およびリモートの通知が有効になっています。")](intro-to-cloudkit-images/image27a-orig.png "Info.plist file displaying background modes")
 4.  クリックし、ソリューションに iOS プロジェクトを右クリックして**オプション**です。
-5.  選択**iOS バンドル署名 ***を選択、**開発者 Identity**と**プロビジョニング プロファイル**上記で作成しました。
+5.  選択**iOS バンドル署名**を選択、**開発者 Identity**と**プロビジョニング プロファイル**上記で作成しました。
 6.  確認してください、 **Entitlements.plist**が含まれています**iCloud を有効にする**、**キーと値の記憶域**と**CloudKit**です。
 7.  確認してください、**偏在性に関して最近コンテナー** (上記で作成した) と、アプリケーションに存在します。 例 : `iCloud.com.your-company.CloudKitAtlas`
 8.  変更内容をファイルに保存します。

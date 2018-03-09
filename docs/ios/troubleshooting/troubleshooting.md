@@ -9,7 +9,7 @@ ms.author: brumbaug
 ms.date: 05/22/0201
 ms.openlocfilehash: d9859f4e705f74e490b50443870f71f049adeaf8
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -207,7 +207,7 @@ Visual Studio for Mac ソース エディターなる非常に遅く、数秒間
 
 
 
-XS ログをアタッチしてください**~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **AndroidTools-{のタイムスタンプ} .log**、および * * コンポーネント-{のタイムスタンプ} .log * * (XS の旧バージョンで/。MonoDevelop、単なる送信**~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**)。
+XS ログをアタッチしてください**~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **AndroidTools-{のタイムスタンプ} .log**、および **コンポーネント-{のタイムスタンプ} .log** (XS の旧バージョンで/。MonoDevelop、単なる送信**~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**)。
 
  **メモ: 上の問題は、XS 2.2 最終で修正されました**
 
