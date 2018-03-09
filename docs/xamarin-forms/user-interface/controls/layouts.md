@@ -10,7 +10,7 @@ ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ecea0f55360fcde7a50c52bb33c45a2c5fff5eeb
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/28/2018
 ---
@@ -22,7 +22,7 @@ _Xamarin.Forms のレイアウトを使用して、論理構造体にユーザ�
 
 ## <a name="layouts"></a>レイアウト
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Xamarin.Forms 内のクラス ビューのレイアウトまたはその他のコンテナーとして機能するビューの特殊なサブタイプであります。 通常、Xamarin.Forms アプリケーションで、子要素のサイズと位置を設定するためのロジックが含まれています。
+[`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Xamarin.Forms 内のクラス ビューのレイアウトまたはその他のコンテナーとして機能するビューの特殊なサブタイプであります。 通常、Xamarin.Forms アプリケーションで、子要素のサイズと位置を設定するためのロジックが含まれています。
 
  [ ![](layouts-images/layouts-sml.png "Xamarin.Forms レイアウト型")](layouts-images/layouts.png "Xamarin.Forms レイアウトの種類")
 

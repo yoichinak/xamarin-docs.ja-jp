@@ -10,7 +10,7 @@ ms.author: toopge
 ms.date: 03/23/2017
 ms.openlocfilehash: eb1602a96b304919fe563d1bb9ea0a15722e436b
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -103,7 +103,7 @@ Jenkins が実行されている、起動するたびにでコンピューター
 
 ## <a name="installing-plugins"></a>プラグインのインストール
 
-Jenkins.App インストーラーが完了したら、Jenkins の開始し、http://localhost:8080、URL を使用して web ブラウザーを起動して、次のスクリーン ショットに示すようにします。
+Jenkins.App インストーラーが完了したら、Jenkins の開始し、 http://localhost:8080、URL を使用して web ブラウザーを起動して、次のスクリーン ショットに示すようにします。
 
  [ ![](jenkins-walkthrough-images/image10.png "このスクリーン ショットに示すように、8080")](jenkins-walkthrough-images/image10.png)
 
