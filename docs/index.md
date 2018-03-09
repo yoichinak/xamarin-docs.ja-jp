@@ -1065,7 +1065,7 @@ ms.lasthandoff: 02/27/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Xamarin Inspector</h3>
-                                                    <p>作成したユーザー インターフェイスを把握し、デバッグすることができます。</p>
+                                                    <p>ユーザー インターフェイスの理解とデバッグ</p>
                                                 </div>
                                             </div>
                                         </div>
