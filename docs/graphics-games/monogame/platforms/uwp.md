@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 3990b226b74c17fb5cccc907dd50b46578c3ef6b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d8f805d8a3fcadd9c2a6758f1dc5592c03fe3ed4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>MonoGame UWP プロジェクトの作成
 
@@ -45,15 +45,11 @@ Xbox One ゲームは、小売 Xbox One ハードウェアで開発できます�
 1. 選択**ファイル** > **新しい** > **プロジェクト.**
 1. 選択、**インストール** > **テンプレート** > **Visual c#** > **MonoGame**カテゴリ。 
 
-
     ![](uwp-images/image1.png "MonoGame カテゴリ")
-
 
 1. 選択、 **MonoGame Windows 10 のユニバーサル プロジェクト**オプション。 
 
-
     ![](uwp-images/image2.png "MonoGame Windows 10 のユニバーサル プロジェクト オプションを選択します。")
-
 
 1. 新しいプロジェクトの名前を入力し、クリックして**OK**です。
 Visual Studio では、[ok] をクリックすると、エラーが表示されている場合は、Windows 10 のツールがインストールされていることと、デバイスが開発者モードであるを確認します。 
