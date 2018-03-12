@@ -8,7 +8,7 @@ ms.author: chape
 ms.date: 11/07/2017
 ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2018
 ---
@@ -30,7 +30,7 @@ MVVM アプリケーションを使用するが一般的、`ListView`オブジ�
 
 [ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo)サンプルでは XAML を使用して設定する方法、 `Picker` [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/)プロパティを追加および`string`項目[ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/)コレクション。 ユーザーが選択すると、 `Picker`、内の項目が表示されます、`Items`プラットフォームに依存する形でコレクション。
 
-[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)イベントは、ユーザーが項目を選択した場合を示します。 0 から始まる[ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)プロパティは、選択した項目を示します。 項目が選択されていない場合`SelectedIndex`equals & #x 2013; 1 です。
+[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)イベントは、ユーザーが項目を選択した場合を示します。 0 から始まる[ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)プロパティは、選択した項目を示します。 項目が選択されていない場合`SelectedIndex`equals &#x2013; 1 です。
 
 使用することも`SelectedIndex`後に設定する必要がありますが、選択したアイテムを初期化するために、`Items`コレクションを格納します。 XAML では、つまりを設定するプロパティ要素を使用すること可能性あります`SelectedIndex`です。
 
@@ -81,11 +81,11 @@ IOS および Android の表示では、細い線は、行を区切ります。 
 
 `ListView` これらの項目を表示するテンプレートが必要です。 コードでは、設定することができます、 [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/)プロパティによって定義された`ItemsView<TVisual>`を[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)オブジェクトを使用して、 [ `DataTemplate`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/)です派生物を参照して、 [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/)クラスです。 `Cell` 5 つの派生クラスがあります。
 
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) & #x 2014 です。2 つ`Label`ビュー (概念的に)
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) & #x 2014 です。追加、`Image`を表示 `TextCell`
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) & #x 2014 です。含まれています、`Entry`で表示します。 `Label`
-- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) & #x 2014 です。含まれています、`Switch`で、 `Label`
-- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) & #x 2014 です。`View` (子を伴う可能性があります)
+- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &#x2014; です。2 つ`Label`ビュー (概念的に)
+- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &#x2014; です。追加、`Image`を表示 `TextCell`
+- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &#x2014; です。含まれています、`Entry`で表示します。 `Label`
+- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &#x2014; です。含まれています、`Switch`で、 `Label`
+- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &#x2014; です。`View` (子を伴う可能性があります)
 
 呼び出す[ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/)と[ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)上、`DataTemplate`値とを関連付けるためのオブジェクト、`Cell`プロパティ、またはへのデータ バインディングの設定、 `Cell`プロパティ内の項目のプロパティを参照する、`ItemsSource`コレクション。 これに示されている、 [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode)サンプルです。
 

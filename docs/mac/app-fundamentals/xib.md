@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: 8ca187b86126c9a0f2d9931f63d75e99ac4d2b23
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/28/2018
 ---
@@ -23,7 +23,7 @@ _この記事では、Xcode のインターフェイスのビルダーを作成�
 
 ## <a name="overview"></a>概要
 
-同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき*OBJECTIVE-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、ユーザー インターフェイスを維持 (または必要に応じて c# コードで直接作成すること)。
+同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき*Objective-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、ユーザー インターフェイスを維持 (または必要に応じて c# コードで直接作成すること)。
 
 Xcode のインターフェイスのビルダーで作成および管理される (メニュー、Windows、ビュー、ラベルのテキスト フィールドなど)、アプリケーションのユーザー インターフェイスの要素をグラフィカルに定義する、macOS によっては、.xib ファイルを使用します。
 
@@ -31,12 +31,12 @@ Xcode のインターフェイスのビルダーで作成および管理され�
 
 この記事でしれません .xib ファイル Xamarin.Mac アプリケーションでの操作の基礎をについて説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)最初に、アーティクルのように主要な概念とこの記事で使用する手法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを OBJECTIVE-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode と Interface Builder の概要
 
-Xcode の一環として、Apple がインターフェイスのビルダーは、デザイナーで、ユーザー インターフェイスを視覚的に作成することができますをというツールを作成します。 Xamarin.Mac æ˜aœg ' µ fluently インターフェイス ビルダー、Objective C のユーザーが実行する同じツールを使用して、UI を作成することができます。
+Xcode の一環として、Apple がインターフェイスのビルダーは、デザイナーで、ユーザー インターフェイスを視覚的に作成することができますをというツールを作成します。 Xamarin.MacはInterface Builderとうまく統合されており、Objective-Cユーザーと同じツールでUIを作成することができます。
 
 
 ### <a name="components-of-xcode"></a>Xcode のコンポーネント
@@ -134,9 +134,9 @@ Xamarin.Mac アプリのユーザー インターフェイスを作成するた�
 15. 選択**ファイルの所有者**から、**インターフェイス階層**に切り替え、**接続インスペクター**をデリゲートから線をドラッグし、 `AppDelegate` **オブジェクト**だけがプロジェクトに追加します。
 
     [![アプリのデリゲートを接続する](xib-images/setup08.png "アプリ デリゲートを接続します。")](xib-images/setup08-large.png)
-16. 変更を保存し、for mac を Visual Studio に戻る
+16. 変更を保存し、for Mac を Visual Studio に戻る
 
-これらすべての変更にでは、編集、 **<code>appdelegate.cs</code>**ファイルし、次のように表示します。
+これらすべての変更にでは、編集、 **AppDelegate.cs**ファイルし、次のように表示します。
 
 ```csharp
 using AppKit;
@@ -276,7 +276,7 @@ C# コードを UI 要素を公開するには、コンセントとアクショ�
 
 Xcode を使用してコードで直接コンセントとアクションを追加します。*コントロール ドラッグ*です。 具体的には、つまり、コンセントまたはアクションを作成するを押しながらコンセントまたはアクションを追加するコントロール要素を選択すること、**コントロール**キーボードのボタンをクリックし、コードに直接そのコントロールをドラッグします。
 
-Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#) ファイルに対応する OBJECTIVE-C スタブ ファイルにドラッグすることを意味します。 Visual Studio for Mac という名前のファイルを作成した**MainWindow.h** shim Xcode プロジェクトの一部として、インターフェイスのビルダーを使用して生成します。
+Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#) ファイルに対応する Objective-C スタブ ファイルにドラッグすることを意味します。 Visual Studio for Mac という名前のファイルを作成した**MainWindow.h** shim Xcode プロジェクトの一部として、インターフェイスのビルダーを使用して生成します。
 
 [![Xcode で .h ファイルの例を](xib-images/xcode16.png "Xcode で .h ファイルの例")](xib-images/xcode16-large.png)
 
@@ -453,7 +453,7 @@ partial void ClickedButton (Foundation.NSObject sender);
     [![ウィンドウ レイアウトのデザイン](xib-images/new03.png "windows レイアウトのデザイン")](xib-images/new03-large.png)
 6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
-次のコードを追加**<code>appdelegate.cs</code>**新しいウィンドウを表示します。
+次のコードを追加**AppDelegate.cs**新しいウィンドウを表示します。
 
 ```csharp
 [Export("applicationPreferences:")]
