@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3ff8800f4e8690069f5394193d11552d917baffe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e699fdc2092d17834c348c07f2440e40441ad86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-settings"></a>設定の操作
 
@@ -27,7 +27,7 @@ Apple Watch アプリは iOS アプリとして設定と同じ機能を使用で
 
 1. 右クリック**追加 > 新しいファイル.**選択**Settings.bundle** (内の名前を編集することはできません、**新しいファイル**ダイアログ)。
 
-   [ ![](settings-images/settings-add-sml.png "新しい設定バンドルを追加します。")](settings-images/settings-add.png)
+   [![](settings-images/settings-add-sml.png "新しい設定バンドルを追加します。")](settings-images/settings-add.png#lightbox)
 
 2. 名前を変更**設定 Watch.bundle** (を選択し、入力**コマンド + R**名前を変更する)。
 
@@ -35,12 +35,12 @@ Apple Watch アプリは iOS アプリとして設定と同じ機能を使用で
 
 3. 新しいキーを追加`ApplicationGroupContainerIdentifier`を**Root.plist**値を構成したら、(アプリ グループを設定して `group.com.xamarin.WatchSettings` サンプルでは、)。
 
-   [ ![](settings-images/settings-appgroup-sml.png "ApplicationGroupContainerIdentifier キー、Root.plist への追加します。")](settings-images/settings-appgroup.png)
+   [ ![](settings-images/settings-appgroup-sml.png "ApplicationGroupContainerIdentifier キー、Root.plist への追加します。")](settings-images/settings-appgroup.png#lightbox)
 
 4. 編集、 **Settings-Watch.bundle/Root.plist**テンプレート ファイルには - 使用するオプションを格納するには、グループが含まれています。
   textfield、トグル スイッチおよびスライダーを既定では (これを削除して、独自の設定を置き換えます):
 
-  [ ![](settings-images/rootplist-sml.png "Settings-Watch.bundle/Root.plist を編集します。")](settings-images/rootplist.png)
+  [![](settings-images/rootplist-sml.png "Settings-Watch.bundle/Root.plist を編集します。")](settings-images/rootplist.png#lightbox)
 
 
 ## <a name="use-settings-in-the-watch-app"></a>Watch アプリの設定を使用します。
@@ -58,7 +58,7 @@ var userName = shared.StringForKey ("name_preference");
 
 ## <a name="apple-watch-app"></a>Apple Watch App
 
-[ ![](settings-images/settings-app-sml.png "IPhone 上の新しい Apple Watch アプリ")](settings-images/settings-app.png)
+[![](settings-images/settings-app-sml.png "IPhone 上の新しい Apple Watch アプリ")](settings-images/settings-app.png#lightbox)
 
 ユーザーが新しいを介して設定**Apple Watch** iPhone 上のアプリです。 このアプリがユーザーに視聴、およびもを使用して、設定が公開される編集上のアプリの表示/非表示を許可、**設定 Watch.bundle**です。
 

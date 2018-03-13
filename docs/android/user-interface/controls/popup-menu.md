@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 54b6809b7e27dc87be6d510e4a4b6071e4ae22e7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f976d798ae1b1279fc8f82d3cf1d738bb2c93911
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="popup-menu"></a>ポップアップ メニュー
 
 `PopupMenu`クラスは、特定のビューに関連付けられているポップアップ メニューを表示するためのサポートを追加します。 次の図は、2 番目の項目が選択されているのと同じように強調表示を伴うこのボタンをクリックするには、ポップアップ メニューを示しています。
 
- [ ![3 つの項目を 3 つ PopopMenu の例](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png)
+ [![3 つの項目を 3 つ PopopMenu の例](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
 
 Android 4 は、いくつかの新機能を追加`PopupMenu`ビットを容易に操作、つまりを作成します。
 
@@ -26,9 +26,8 @@ Android 4 は、いくつかの新機能を追加`PopupMenu`ビットを容易�
 
 これらの機能強化を見てみましょう。 この例では、ボタンを含む 1 つのアクティビティがあります。 ユーザーには、ボタンがクリックすると、次に示すようにポップアップ メニューが表示されます。
 
- [ ![ボタンとポップアップ メニューの項目 3 に、エミュレーターで実行されているアプリの例](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png)
+ [![ボタンとポップアップ メニューの項目 3 に、エミュレーターで実行されているアプリの例](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
 
-<a name="Creating_a_Popup_Menu" />
 
 ## <a name="creating-a-popup-menu"></a>ポップアップ メニューを作成します。
 
@@ -62,7 +61,6 @@ showPopupMenu.Click += (s, arg) => {
 
 上記のコードで、メニューを膨張させる後を呼び出して`menu.Show`を画面に表示します。
 
-<a name="Handling_Menu_Events" />
 
 ## <a name="handling-menu-events"></a>メニュー イベントを処理します。
 

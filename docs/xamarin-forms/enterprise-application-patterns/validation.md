@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5a5072d7f07fa7e426a14d3ac841e775d872acff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cb87593b63e28c01beacdea479cc9d6ec4aceb9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="validation"></a>検証
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/28/2018
 
 コンテキストの ViewModel モデル (MVVM) のビュー モデルのパターンまたはモデルがデータ検証を行い、ユーザーが修正できるように、ビューに検証エラーを通知する必要多くの場合があります。 EShopOnContainers モバイル アプリは、モデルのプロパティの表示の同期のクライアント側検証を実行して、ユーザーに通知するエラー メッセージを表示したりして、無効なデータを格納しているコントロールが強調表示され、検証エラーのユーザーに通知理由のデータが正しくありません。 図 6-1 は、eShopOnContainers モバイル アプリでの検証の実行に関連するクラスを示しています。
 
-[![](validation-images/validation.png "検証クラス eShopOnContainers モバイル アプリで")](validation-images/validation-large.png "eShopOnContainers モバイル アプリで検証クラス")
+[![](validation-images/validation.png "検証クラス eShopOnContainers モバイル アプリで")](validation-images/validation-large.png#lightbox "eShopOnContainers モバイル アプリで検証クラス")
 
 **図 6-1**: eShopOnContainers モバイル アプリで検証クラス
 

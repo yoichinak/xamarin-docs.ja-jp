@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 3b54ed876857f0cd04d7a304ff05b9710fbd9e04
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6735e9c03bee981f048231b53539c3b239f64484
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="string-formatting"></a>文字列の書式設定
 
@@ -121,7 +121,7 @@ XAML ファイルで次のセクションは、`StackLayout`で、`BindingContex
 
 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
 
-[![書式設定文字列](string-formatting-images/stringformatting-small.png "書式設定文字列")](string-formatting-images/stringformatting-large.png "文字列の書式設定")
+[![書式設定文字列](string-formatting-images/stringformatting-small.png "書式設定文字列")](string-formatting-images/stringformatting-large.png#lightbox "文字列の書式設定")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModels と文字列の書式設定
 
@@ -174,7 +174,7 @@ XAML ファイルで次のセクションは、`StackLayout`で、`BindingContex
 
 ペアがあります。 今すぐ次の 3 つの`Slider`と`Label`を同じバインドされている要素のソースのプロパティ、`HslColorViewModel`オブジェクト。 唯一の違いは`Label`が、`StringFormat`プロパティを表示する各`Slider`値。
 
-[![色セレクターのより](string-formatting-images/bettercolorselector-small.png "色セレクターのより")](string-formatting-images/bettercolorselector-large.png "色セレクターの向上")
+[![色セレクターのより](string-formatting-images/bettercolorselector-small.png "色セレクターのより")](string-formatting-images/bettercolorselector-large.png#lightbox "色セレクターの向上")
 
 だろう、従来の 2 桁の 16 進数形式の RGB (赤、緑、青) 値の表示方法できます。 これらの整数値がない直接から、`Color`構造体。 1 つのソリューションは、ViewModel 内の色要素の整数値を計算し、プロパティとして公開することです。 フォーマットする可能性がありますを使用して、`X2`仕様を書式設定します。
 

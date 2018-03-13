@@ -2,27 +2,29 @@
 title: "SQLite.NET を使用します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
+ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2018
-ms.openlocfilehash: d18fe5960a44153626fbf0bda30e3485faf5b9fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b29826f1a7acc6bb8dcd0594c69a5cb7ff6db42
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="using-sqlitenet"></a>SQLite.NET を使用します。
 
 Xamarin で推奨される SQLite.NET ライブラリとは、格納および iOS デバイス上のローカル SQLite データベース内のオブジェクトを取得できる基本的な ORM です。
 オブジェクト リレーショナル マッピング用 -保存し、「オブジェクト」を SQL ステートメントを記述することがなく、データベースから取得できる API ORM を意味します。
 
-## <a name="using-sqlitenet"></a>SQLite.NET を使用します。
+<a name="Usage"/>
+
+## <a name="usage"></a>使用法
 
 追加、 [SQLite.net PCL NuGet パッケージ](https://www.nuget.org/packages/sqlite-net-pcl/)、- プロジェクトにプラットフォームが iOS、Android、Windows などのさまざまなをサポートします。
 
-  [ ![](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet パッケージ")](using-sqlite-orm-images/image1a.png)
+  [![](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet パッケージ")](using-sqlite-orm-images/image1a.png#lightbox)
 
 SQLite.NET ライブラリを使用した後は、データベースへのアクセスに使用するこれら 3 つの手順に従います。
 
@@ -68,7 +70,7 @@ SQLite.NET ライブラリを使用した後は、データベースへのアク
 using SQLite; // from the github SQLite.cs class
 ```
 
-強調表示されているプロジェクトに SQLite を追加する必要があります[ここ](#Using_SQLite.NET)です。 SQLite データベース テーブルがクラスに属性を追加することによって定義されることに注意してください (、`Stock`クラス) CREATE TABLE コマンドではなくです。
+強調表示されているプロジェクトに SQLite を追加する必要があります[ここ](#Usage)です。 SQLite データベース テーブルがクラスに属性を追加することによって定義されることに注意してください (、`Stock`クラス) CREATE TABLE コマンドではなくです。
 
 ```csharp
 [Table("Items")]

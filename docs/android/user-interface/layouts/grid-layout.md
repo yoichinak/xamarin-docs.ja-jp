@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 013db64add615e94ef3494f14bc82fc17ec2dca1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a8a9735845139da700959caf3639defa6594f307
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="gridlayout"></a>GridLayout
 
 `GridLayout`は、新しい`ViewGroup`サブクラス次に示すように、HTML テーブルのような 2 次元のグリッド内のビューのレイアウトをサポートします。
 
- [ ![次の 4 つのセルを表示する GridLayout のトリミング](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png)
+ [![次の 4 つのセルを表示する GridLayout のトリミング](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
  `GridLayout` ここで子ビューの場所のグリッドで設定の行と列である必要がありますを指定することでフラット ビュー階層で動作します。 このように、 *GridLayout*レイアウトで使用されるテーブルの行に見られるよう、中級者向けのすべてのビューが、テーブル構造を提供することを必要とせず、グリッド内のビューを配置することができます。 フラットな階層を維持することにより*GridLayout*レイアウトより迅速には、子ビュー。 この概念実際に意味のコードに示すために例を見てをみましょう。
 
-<a name="Creating_a_Grid_Layout" />
 
 ## <a name="creating-a-grid-layout"></a>グリッド レイアウトの作成
 
@@ -51,13 +50,12 @@ ms.lasthandoff: 02/27/2018
 
 レイアウトは調整行と列のサイズ、セルがそのコンテンツに収まるように次の図に示すように。
 
- [ ![左側の 2 つのセルを右によりも小さいを表示するレイアウトの図](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png)
+ [![左側の 2 つのセルを右によりも小さいを表示するレイアウトの図](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
 これは、結果、アプリケーション内で実行時に、次のユーザー インターフェイスになります。
 
- [ ![次の 4 つのセルを表示するスクリーン ショットの GridLayoutDemo アプリ](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png)
+ [![次の 4 つのセルを表示するスクリーン ショットの GridLayoutDemo アプリ](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
- <a name="Specifying_Orientation" />
 
 
 ## <a name="specifying-orientation"></a>印刷の向きを指定します。
@@ -76,13 +74,12 @@ ms.lasthandoff: 02/27/2018
 
 ここで、`GridLayout`次に示すように左から右、代わりに、各列の下に上からセルを配置します。
 
- [ ![垂直方向のセルを配置する方法を示すダイアグラム](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png)
+ [![垂直方向のセルを配置する方法を示すダイアグラム](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
 これは、結果は、実行時に次のユーザー インターフェイスになります。
 
- [ ![垂直方向に配置されているセルを持つ GridLayoutDemo のスクリーン ショット](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png)
+ [![垂直方向に配置されているセルを持つ GridLayoutDemo のスクリーン ショット](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
- <a name="Specifying_Explicit_Position" />
 
 
 ### <a name="specifying-explicit-position"></a>明示的な位置を指定します。
@@ -119,7 +116,6 @@ ms.lasthandoff: 02/27/2018
 </GridLayout>
 ```
 
- <a name="Specifying_spacing" />
 
 
 ### <a name="specifying-spacing"></a>間隔を指定します。
@@ -176,11 +172,10 @@ ms.lasthandoff: 02/27/2018
 
 この XML で表される間隔を作成する、`GridLayout`次のようにします。
 
- [ ![間隔を持つ大規模なセルを示す GridLayoutDemo のスクリーン ショット](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png)
+ [![間隔を持つ大規模なセルを示す GridLayoutDemo のスクリーン ショット](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
 新しいを使用する利点`Space`ビューは、その間隔を必要し、しないすべての子ビューに属性を設定することです。
 
- <a name="Spanning_Columns_and_Rows" />
 
 
 ### <a name="spanning-columns-and-rows"></a>列と行のまたがりメモリ割り当てください。
@@ -230,7 +225,7 @@ ms.lasthandoff: 02/27/2018
 
 最初の列と、これが、`GridLayout`ここでわかるように、ボタンのサイズに合わせて伸縮しません。
 
-[ ![最初の列のみのまたがりメモリ割り当てのボタンで GridLayoutDemo のスクリーン ショット](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png)
+[![最初の列のみのまたがりメモリ割り当てのボタンで GridLayoutDemo のスクリーン ショット](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
 最初の列が、拡大をするを防止するには、ことができますにするには次のように、そのうち 2 つの列をまたがる ボタンを設定します。
 
@@ -245,7 +240,7 @@ ms.lasthandoff: 02/27/2018
 
 結果のレイアウトにこれを行う、`TextViews`が発生しました。 以前の下部に追加のボタンでレイアウトに似た、`GridLayout`次のようにします。
 
- [ ![両方の列のまたがりメモリ割り当てのボタンで GridLayoutDemo のスクリーン ショット](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png)
+ [![両方の列のまたがりメモリ割り当てのボタンで GridLayoutDemo のスクリーン ショット](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 
 ## <a name="related-links"></a>関連リンク

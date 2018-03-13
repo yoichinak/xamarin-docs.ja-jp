@@ -7,30 +7,22 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ea4489cd6f9839d5d32c97aa7ded41e4f15538a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb8bae676a4b5c682cdb204c6d38ffc1112b483a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing"></a>編集
 
 内のメソッドをオーバーライドすることでテーブルの編集機能が有効になっている、`UITableViewSource`サブクラスです。 最も簡単な編集の動作は、1 つのメソッドのオーバーライドで実装できるスワイプ-delete ジェスチャです。
 複雑な編集 (移動行を含む) は、編集モードでテーブルを実行できます。
 
-このガイドは、次になります。
-
-- [削除へスワイプし](#Swipe_to_Delete)
-- [編集モード](#Edit_Mode)
-- [行挿入の編集スタイル](#row_insertion_editing_style)
-
-<a name="Swipe_to_delete" />
-
 ## <a name="swipe-to-delete"></a>削除へスワイプし
 
 スワイプして機能を削除するのには、ユーザーが期待 iOS で自然なジェスチャです。 
 
- [ ![](editing-images/image10.png "Delete にスワイプしての例")](editing-images/image10.png)
+ [![](editing-images/image10.png "Delete にスワイプしての例")](editing-images/image10.png#lightbox)
 
 スワイプ ジェスチャを表示するには影響が 3 つのメソッドのオーバーライドがある、**削除**セルのボタン。
 
@@ -68,14 +60,13 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 この例については、`UITableViewSource`を使用するが更新されて、 `List<TableItem>` (配列の代わりに、文字列) をサポートするために、データがソースとしての追加と削除の項目コレクションからです。
 
-<a name="Edit_mode" />
 
 ## <a name="edit-mode"></a>編集モード
 
 テーブルが編集モードの場合、ユーザーは、行ごとに、触れると削除 ボタンを明らかに赤の 'stop' ウィジェットを表示できます。 テーブルには、順序を変更する行をドラッグできることを示すために 'ハンドル' アイコンも表示されます。
 **TableEditMode**サンプルが示すように、これらの機能を実装します。
 
- [ ![](editing-images/image11.png "TableEditMode サンプルが示すように、これらの機能を実装します。")](editing-images/image11.png)
+ [![](editing-images/image11.png "TableEditMode サンプルが示すように、これらの機能を実装します。")](editing-images/image11.png#lightbox)
 
 さまざまな方法の数がある`UITableViewSource`テーブルの編集モードの動作に影響を与えます。
 
@@ -136,13 +127,12 @@ table.SetEditing (true, true);
 table.SetEditing (false, true);
 ```
 
-<a name="Edit_mode_–_row_insertion_editing_style" />
 
 ## <a name="row-insertion-editing-style"></a>行挿入編集スタイル
 
 テーブル内の行の挿入は珍しいことでユーザー インターフェイス: 標準的な iOS アプリの主要な例は、 **Edit Contact**画面。 このスクリーン ショットは、行の挿入機能のしくみを示しています: 編集モードは、追加の行を (がクリックされたとき) は、データに追加行を挿入します。 編集が完了すると、一時的な**(新規追加)**行は削除されます。
 
- [ ![](editing-images/image12.png "一時的なが新規に追加の編集が完了したら、行が削除されます。")](editing-images/image12.png)
+ [![](editing-images/image12.png "一時的なが新規に追加の編集が完了したら、行が削除されます。")](editing-images/image12.png#lightbox)
 
 さまざまな方法の数がある`UITableViewSource`テーブルの編集モードの動作に影響を与えます。 これらのメソッドは、コード例に次のように実装されています。
 

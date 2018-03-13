@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0bc039385a6b2077c3b5fa5114b35b586a14a150
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-command-interface"></a>コマンド インターフェイス
 
@@ -279,7 +279,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 有効な経過日数を入力する前に、左側にある iOS の画面はレイアウトを示します。 Android および UWP 画面表示、**送信**有効期間が設定された後に有効になっているボタン。
 
-[![ユーザー エントリ](commanding-images/personentry-small.png "人記事")](commanding-images/personentry-large.png "Person エントリ")
+[![ユーザー エントリ](commanding-images/personentry-small.png "人記事")](commanding-images/personentry-large.png#lightbox "Person エントリ")
 
 プログラムでは、既存のエントリを編集するための機能はありませんし、ページから移動するときに、エントリは保存されません。
 
@@ -531,7 +531,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 アクションで、プログラムを次に示します。
 
-[![10 進数のキーボード](commanding-images/decimalkeyboard-small.png "10 進数のキーボード")](commanding-images/decimalkeyboard-large.png "10 進数のキーボード")
+[![10 進数のキーボード](commanding-images/decimalkeyboard-small.png "10 進数のキーボード")](commanding-images/decimalkeyboard-large.png#lightbox "10 進数のキーボード")
 
 入力した数に既に小数点が含まれているために次の 3 つすべてのスクリーン ショットの中で小数点のボタンが無効になっていることを確認します。 
 

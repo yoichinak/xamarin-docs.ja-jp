@@ -7,18 +7,17 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 5a8b51f6c63d8632e71d1cddabb0c37758ee02f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-android-api-levels"></a>Android API レベルを理解します。
 
 _Xamarin.Android には、複数のバージョンの Android アプリの互換性を確認するいくつかの Android API レベル設定があります。このガイドは、これらの設定の意味、これらを構成する方法およびどのような影響について説明します。 実行時に、アプリであります。_
 
-<a name="quick" />
 
 ## <a name="quick-start"></a>クイック スタート
 
@@ -37,30 +36,30 @@ API レベルを構成するには、プロジェクトの前に、その API �
 通常、3 つすべての Xamarin.Android API レベルは、同じ値に設定されます。 **アプリケーション** ページで、設定**Android バージョン (ターゲット フレームワーク) を使用してコンパイル**を最新の安定した API バージョン (または、すべての必要な機能を備えている Android バージョンを少なくとも)。
 次のスクリーン ショットでは、ターゲット フレームワークが に設定されている**Android 7.1 (API レベル 25 - Nougat)**:
 
-[![Android バージョンを使用してコンパイルするフレームワークのバージョンの既定値をターゲットします。](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png)
+[![Android バージョンを使用してコンパイルするフレームワークのバージョンの既定値をターゲットします。](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png#lightbox)
 
 **Android マニフェスト**に最低限の Android バージョンを設定 ページで、**を使用してコンパイル SDK バージョンを使用して**し (次のターゲット フレームワークのバージョンと同じ値にターゲット Android バージョンを設定スクリーン ショット、Android ターゲット フレームワークに設定されている**Android 7.1 (Nougat)**)。
 
-[![最小値とターゲットの Android のバージョンがターゲット フレームワークのバージョンに設定します。](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png)
+[![最小値とターゲットの Android のバージョンがターゲット フレームワークのバージョンに設定します。](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
 Android の以前のバージョンと旧バージョンとの互換性を維持する場合は、設定**対象とする最低限の Android バージョン**最も古いバージョンの Android アプリをサポートすることにします。 (API レベル 14 に必要な最小 API レベルでは[Google Play サービスと Firebase サポート](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html))。次の例の構成には、API レベル 25 を通じて API レベル 14 から Android バージョンがサポートされています。
 
-[![API レベル 25 を使用してコンパイル Nougat、API レベル 14 に設定されている最低限の Android バージョン](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png)
+[![API レベル 25 を使用してコンパイル Nougat、API レベル 14 に設定されている最低限の Android バージョン](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 通常、3 つすべての Xamarin.Android API レベルは、同じ値に設定されます。 設定**ターゲット フレームワーク**を最新の安定した API バージョン (または、すべての必要な機能を備えている Android バージョンを少なくとも)。 設定する、**ターゲット フレームワーク**に移動**ビルド > 全般**で、**プロジェクト オプション**です。 次のスクリーン ショットでは、ターゲット フレームワークが に設定されている**プラットフォームを使用して、最新インストールされている (8.0)**:
 
-[![ターゲット フレームワークがインストールされている最新バージョンを使用するプラットフォームを既定とします](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png)
+[![ターゲット フレームワークがインストールされている最新バージョンを使用するプラットフォームを既定とします](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
 最小値とターゲットの Android バージョン設定は「**ビルド > Android アプリケーション**で**プロジェクト オプション**です。 最低限の Android バージョンを設定**自動: ターゲット フレームワークのバージョンを使用して**ターゲット Android バージョンをターゲット フレームワークのバージョンと同じ値に設定します。 次のスクリーン ショットでは、Android ターゲット フレームワークが に設定されている**Android 8.0 (API レベル 26)**上のターゲット フレームワークの設定と一致します。
 
-[![プロジェクトのオプションで、ターゲットおよびフレームワーク レベルの設定](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png)
+[![プロジェクトのオプションで、ターゲットおよびフレームワーク レベルの設定](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
 Android の以前のバージョンと旧バージョンとの互換性を維持する場合は、変更**最低限の Android バージョン**最も古いバージョンの Android アプリをサポートすることにします。 必要な最小 API レベルは API レベル 14、 [Google Play サービスと Firebase サポート](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html)です。
 たとえば、次の構成をサポートしている Android バージョン API レベル 14 できるだけ早く。
 
-[ ![最小値とターゲット バージョンを自動に設定は、ターゲット フレームワークのバージョンを使用します。](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png)
+[![最小値とターゲット バージョンを自動に設定は、ターゲット フレームワークのバージョンを使用します。](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png#lightbox)
 
 -----
 
@@ -68,13 +67,11 @@ Android の以前のバージョンと旧バージョンとの互換性を維持
 アプリでは、複数の Android バージョンをサポートする場合、コードが最低限の Android のバージョンの設定で、アプリが動作するためにランタイム チェックを含める必要があります (を参照してください[ランタイムは Android バージョンをチェック](#runtimechecks)以下詳細)。 消費またはライブラリを作成する場合は、次を参照してください。 [API レベルおよびライブラリ](#libraries)下 API の構成に関するベスト プラクティスのレベルのライブラリの設定。
 
 
-<a name="verslevels" />
 
 ## <a name="android-versions-and-api-levels"></a>Android バージョンと API レベル
 
 Android バージョンごとと呼ばれる、一意の整数識別子が割り当てられている Android プラットフォームの発展し、新しい Android バージョンがリリースされた、 *API レベル*です。 したがって、各 Android バージョンは、1 つの Android API レベルに対応します。 ユーザーは、古い同様に、最新バージョンの Android にアプリをインストール、ため複数 Android API レベルを使用する実際の Android アプリを設計しなければなりません。
 
-<a name="versions" />
 
 ### <a name="android-versions"></a>Android バージョン
 
@@ -145,7 +142,6 @@ Xamarin.Android をさらに、定義*バージョン コードをビルド*現�
 
 新しい Android バージョンが頻繁にリリースされたこの一覧が示されているように&ndash;年間のいくつかリリース場合があります。 その結果、さまざまな Android バージョンのアプリの実行が Android デバイスの universe が含まれます。 アプリで実行される継続的かつ確実に非常に多くの異なるバージョンの Android を保証するにはどうできますか。 Android の API レベルでは、この問題を管理できます。
 
-<a name="apilevels" />
 
 ### <a name="android-api-levels"></a>Android API レベル
 
@@ -159,13 +155,11 @@ Android デバイスごとに正確に実行*1 つ*API レベル&ndash;この AP
 
 これらの設定は、インストール時にアプリケーションを正しく実行するために必要な機能が Android デバイスで利用できるように使用されます。 それ以外の場合は、そのデバイスで実行がブロックされるアプリ。 たとえば、Android デバイスの API レベルが低い場合、アプリの指定した最小 API レベルよりも、Android デバイスできなくなりますユーザー アプリをインストールします。
 
-<a name="settings" />
 
 ## <a name="project-api-level-settings"></a>API レベルのプロジェクト設定
 
 次のセクションでは、SDK Manager を使用しての対象とする API レベルを構成する方法の詳細な説明後に、開発環境を準備する方法を説明する*ターゲット フレームワーク*、*最小値Android バージョン*、および*ターゲット Android バージョン*Xamarin.Android で設定します。
 
-<a name="sdk" />
 
 ### <a name="android-sdk-platforms"></a>Android SDK プラットフォーム
 
@@ -182,7 +176,7 @@ Xamarin.Android でターゲットまたは最小 API レベルを選択する�
 常に使用してコンパイルすることをお勧め、*最新*使用可能なターゲット フレームワークのバージョン。 これにより、コードによって呼び出される可能性がありますすべての非推奨 Api 用の便利な警告メッセージと共に提供します。 最新のサポート ライブラリのリリースを使用する場合に特に重要はターゲット フレームワークの最新バージョンを使用して&ndash;各ライブラリはそのサポート ライブラリの最小 API レベルでのコンパイル以上でなければアプリが必要です。 
 
 > [!NOTE]
-> **注:**年 2018年 8 月以降、Google プレイ コンソールが必要になります API レベル 26 (Android 8.0) を対象とする新しいアプリまたはそれ以降。
+> 年 2018年 8 月以降、Google プレイ コンソールが必要になります API レベル 26 (Android 8.0) を対象とする新しいアプリまたはそれ以降。
 既存のアプリは、API レベル 26 または年 2018年 11 月高い以降を対象とする必要があります。 詳細については、次を参照してください。[アプリのセキュリティとになる年の Google Play のパフォーマンスの向上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)です。
 
 
@@ -190,7 +184,7 @@ Xamarin.Android でターゲットまたは最小 API レベルを選択する�
 
 Visual Studio でのターゲット フレームワークの設定にアクセスするでのプロジェクト プロパティを開きます**ソリューション エクスプ ローラー**を選択し、**アプリケーション**ページ。
 
-[![プロジェクトのプロパティのアプリケーション ページ](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png)
+[![プロジェクトのプロパティのアプリケーション ページ](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png#lightbox)
 
 下にあるドロップダウン メニューの API レベルを選択して、ターゲット フレームワークを設定**Android バージョンを使用してコンパイル**上記のようにします。
 
@@ -198,7 +192,7 @@ Visual Studio でのターゲット フレームワークの設定にアクセ�
 
 Mac 用 Visual Studio でターゲット フレームワークの設定にアクセスするには、プロジェクト名を右クリックして**オプション**以外の場合はこの開きます、**プロジェクト オプション**ダイアログ。 このダイアログ ボックスに移動**ビルド > 全般**次のように。
 
-[![プロジェクトのオプション ページの [全般] セクションをビルドします。](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png)
+[![プロジェクトのオプション ページの [全般] セクションをビルドします。](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
 
 右側にドロップダウン メニューで API レベルを選択して、ターゲット フレームワークを設定**ターゲット フレームワーク**上記のようにします。
 
@@ -219,7 +213,7 @@ Mac 用 Visual Studio でターゲット フレームワークの設定にアク
 
 Visual Studio での最低限の Android バージョンの設定にアクセスするでのプロジェクト プロパティを開きます**ソリューション エクスプ ローラー**を選択し、 **Android マニフェスト**ページ。 下にあるドロップダウン メニューで**最低限の Android バージョン**アプリケーションの最低限の Android バージョンを選択することができます。
 
-[![ターゲット オプションの SDK バージョンを使用してコンパイルする設定に最低限の Android](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png)
+[![ターゲット オプションの SDK バージョンを使用してコンパイルする設定に最低限の Android](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png#lightbox)
 
 選択した場合**を使用してコンパイル SDK バージョンを使用して**、最低限の Android のバージョンはターゲット フレームワークの設定と同じになります。
 
@@ -228,7 +222,7 @@ Visual Studio での最低限の Android バージョンの設定にアクセス
 Mac 用 Visual Studio でターゲット フレームワークの設定にアクセスするには、プロジェクト名を右クリックして**オプション**以外の場合はこの開きます、**プロジェクト オプション**ダイアログ。 移動**ビルド > Android アプリケーション**です。
 右側にドロップダウン メニューを使用して**最低限の Android バージョン**アプリケーションの最低限の Android バージョンを設定することができます。
 
-[ ![自動: ターゲット フレームワークのバージョンを使用する最低限の Android バージョンを設定](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png)
+[![自動: ターゲット フレームワークのバージョンを使用する最低限の Android バージョンを設定](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png#lightbox)
 
 選択した場合**自動&ndash;ターゲット フレームワークのバージョンを使用して**、最低限の Android のバージョンはターゲット フレームワークの設定と同じになります。
 
@@ -247,7 +241,7 @@ Mac 用 Visual Studio でターゲット フレームワークの設定にアク
 
 Visual Studio でこの設定にアクセスするでのプロジェクト プロパティを開きます**ソリューション エクスプ ローラー**を選択し、 **Android マニフェスト**ページ。 下にあるドロップダウン メニューで**ターゲット Android バージョン**アプリケーションのターゲットの Android バージョンを選択することができます。
 
-[![ターゲットの Android バージョンの SDK バージョンを使用してコンパイルする設定](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png)
+[![ターゲットの Android バージョンの SDK バージョンを使用してコンパイルする設定](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png#lightbox)
 
 明示的にアプリをテストするために使用する Android の最新バージョンをターゲット Android バージョンを設定することをお勧めします。 理想的には、最新の Android SDK のバージョンに設定する必要がある&ndash;動作の変更に進む前に新しい Api を使用できます。 ほとんどの開発者にとってお*しない*ターゲット Android バージョンを設定することを勧め**を使用してコンパイル SDK バージョンを使用して**です。
 
@@ -256,7 +250,7 @@ Visual Studio でこの設定にアクセスするでのプロジェクト プ�
 Mac 用 Visual Studio でターゲット フレームワークの設定にアクセスするには、プロジェクト名を右クリックして**オプション**以外の場合はこの開きます、**プロジェクト オプション**ダイアログ。 移動**ビルド > Android アプリケーション**です。
 右側にドロップダウン メニューを使用して**ターゲット Android バージョン**アプリケーションのターゲット Android バージョンを設定することができます。
 
-[![自動: ターゲット フレームワークのバージョンを使用するターゲット Android バージョンを設定](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png)
+[![自動: ターゲット フレームワークのバージョンを使用するターゲット Android バージョンを設定](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png#lightbox)
 
 明示的にアプリをテストするために使用する Android の最新バージョンをターゲット Android バージョンを設定することをお勧めします。 理想的には、最新 Android SDK のバージョンに設定する必要がある&ndash;動作の変更に進む前に新しい Api を使用できます。 ほとんどの開発者にとってはお勧めしませんターゲット Android バージョンを設定**自動: ターゲット フレームワークのバージョンを使用して**です。
 
@@ -311,14 +305,14 @@ else
 
 ターゲット フレームワークの設定のみを構成することができます (など、クラス ライブラリまたはライブラリにバインド) Xamarin.Android ライブラリ プロジェクトを作成するときに&ndash;最低限の Android バージョンおよびターゲットの Android バージョン設定は使用できません。 これがあるためありません**Android マニフェスト**ページ。
 
-[![Android バージョン オプションを使用してコンパイルのみが使用可能です](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png)
+[![Android バージョン オプションを使用してコンパイルのみが使用可能です](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Xamarin.Android ライブラリ プロジェクトを作成するときにない**Android アプリケーション**最低限の Android バージョンおよびターゲット Android バージョンを構成するページ&ndash;最低限の Android バージョンとターゲットAndroid バージョン設定は、ご利用いただけません。
 これがあるためありません**ビルド > Android アプリケーション**ページ)。
 
-[ ![最小値とターゲットのバージョンのオプションを [全般] ページをビルドします。](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png)
+[![最小値とターゲットのバージョンのオプションを [全般] ページをビルドします。](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png#lightbox)
 
 -----
 

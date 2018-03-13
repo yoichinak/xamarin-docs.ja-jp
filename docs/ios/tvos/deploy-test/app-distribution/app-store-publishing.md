@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a3c9c76ce173606d206166b2bcfb9760eb5634ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV のアプリ ストアに発行します。
 
@@ -154,12 +154,12 @@ Xamarin.tvOS アプリを正しく構成されているを確認して、Apple �
     ![](app-store-publishing-images/buildxs01new.png "リリース構成を選択します。")
 2. **[ビルド]** メニューから **[発行のためのアーカイブ]** を選択します。
 
-    [ ![](app-store-publishing-images/buildxs02new.png "[発行のためのアーカイブ] を選択します")](app-store-publishing-images/buildxs02new.png)
+    [![](app-store-publishing-images/buildxs02new.png "発行用のアーカイブ を選択します。")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. アーカイブが作成されると、**[アーカイブ]** ビューが表示されます。
 
-    [ ![](app-store-publishing-images/buildxs03new.png "アーカイブ ビュー")](app-store-publishing-images/buildxs03new.png)
+    [![](app-store-publishing-images/buildxs03new.png "アーカイブ ビュー")](app-store-publishing-images/buildxs03new.png#lightbox)
 
-#<a name="3-sign-and-distribute-your-app"></a>&#3;# の署名し、アプリの配布
+### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
 アーカイブのためにアプリケーションをビルドするたびに、*アーカイブ ビュー*が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 既定では、このビューには現在開いているソリューションのみが表示されます。 アーカイブのあるソリューションをすべて表示するには、**[アーカイブをすべて表示]** オプションをクリックします。
 
@@ -169,19 +169,19 @@ Xamarin.tvOS アプリを正しく構成されているを確認して、Apple �
 
 1. 選択、**サインインし、配布しています.**、以下を参照します。
 
-    [ ![](app-store-publishing-images/buildxs04new.png "、TheSign と配布を選択しています.")](app-store-publishing-images/buildxs04new.png)
+    [![](app-store-publishing-images/buildxs04new.png "、TheSign と配布を選択しています.")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選択してパッケージを作成し、アプリケーション ローダーを開きます。
 
-    [ ![](app-store-publishing-images/distribute01.png "アプリ ストアの配布チャネルを選択します。")](app-store-publishing-images/distribute01.png)
+    [![](app-store-publishing-images/distribute01.png "アプリ ストアの配布チャネルを選択します。")](app-store-publishing-images/distribute01.png#lightbox)
 3. プロビジョニング プロファイル画面で、署名 id とプロビジョニング プロファイルが、対応するを選択するか、別の id を使って再度署名します。
 
-    [ ![](app-store-publishing-images/distribute02.png "署名 id と対応するプロビジョニング プロファイルを選択します。")](app-store-publishing-images/distribute02.png)
+    [![](app-store-publishing-images/distribute02.png "署名 id と対応するプロビジョニング プロファイルを選択します。")](app-store-publishing-images/distribute02.png#lightbox)
 4. パッケージの詳細を確認し、**[発行]** をクリックして `.ipa` パッケージを保存します。
 
-    [ ![](app-store-publishing-images/distribute03.png "パッケージの詳細を確認してください。")](app-store-publishing-images/distribute03.png)
+    [![](app-store-publishing-images/distribute03.png "パッケージの詳細を確認してください。")](app-store-publishing-images/distribute03.png#lightbox)
 5. `.ipa` が保存されたら、アプリケーション ローダーを使用して、アプリを iTunes Connect にアップロードできます。
 
-    [ ![](app-store-publishing-images/distribute04.png "アプリケーション ローダーを使用して接続を iTunes にアップロード")](app-store-publishing-images/distribute04.png)
+    [![](app-store-publishing-images/distribute04.png "アプリケーション ローダーを使用して接続を iTunes にアップロード")](app-store-publishing-images/distribute04.png#lightbox)
 
 配布ビルドが作成され、アーカイブされたら、アプリケーションを iTunes Connect に提出できます。
 
@@ -196,15 +196,15 @@ Mac 用の Visual Studio で、アーカイブ ワークフローはアプリケ
 
 2. *[Deliver Your App]\(アプリの配信\)* を選択して、*[選択]* ボタンをクリックします。
 
-    [ ![](app-store-publishing-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) を選択します")](app-store-publishing-images/publishvs01.png)
+    [![](app-store-publishing-images/publishvs01.png "選択、アプリを配信します。")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. 前の手順で作成した IPA ファイルまたは zip ファイルを選択し、**[OK]** ボタンをクリックします。
 4. アプリケーション ローダーはファイルを検証します。
 
-    [ ![](app-store-publishing-images/publishvs02.png "アプリケーション ローダー検証画面")](app-store-publishing-images/publishvs02.png)
+    [![](app-store-publishing-images/publishvs02.png "アプリケーション ローダー検証画面")](app-store-publishing-images/publishvs02.png#lightbox)
 5. *[次へ]* ボタンをクリックすると、アプリケーションは App Store に対して検証されます。
 
-    [ ![](app-store-publishing-images/publishvs03.png "アプリ ストアに対して検証されるアプリケーション")](app-store-publishing-images/publishvs03.png)
+    [![](app-store-publishing-images/publishvs03.png "アプリ ストアに対して検証されるアプリケーション")](app-store-publishing-images/publishvs03.png#lightbox)
 6. **[送信]** ボタンをクリックして、審査のために Apple にアプリケーションを送信します。
 7. アプリケーション ローダーは、ファイルが正常にアップロードされたときに通知します。
 
@@ -214,7 +214,7 @@ Mac 用の Visual Studio で、アーカイブ ワークフローはアプリケ
 
 ITunes Connect に再度ログインし、使用可能なアプリの一覧からアプリを選択して場合、iTunes Connect でステータス表示されるはずである**確認を待機している**(これは一時的に読み取ることが**受信アップロード**処理中には)。
 
-[ ![](app-store-publishing-images/image21.png "ITunes で状態の接続確認の待機を表示")](app-store-publishing-images/image21.png)
+[![](app-store-publishing-images/image21.png "ITunes で状態の接続確認の待機を表示")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 36d8e27ce06e38e1cf652558bfb5a83f572e4403
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>SiriKit 概念を理解します。
 
@@ -57,7 +57,7 @@ Siri とマップの両方のすべてのユーザーの操作を管理し、標
 
 このセクションで Siri を使用するアプリと対話するユーザーを SiriKit ができるようにする方法の概要が表示されます。 この例で使用する、偽の MonkeyChat アプリ。
 
-[ ![](understanding-sirikit-images/monkeychat01.png "MonkeyChat アイコン")](understanding-sirikit-images/monkeychat01.png)
+[![](understanding-sirikit-images/monkeychat01.png "MonkeyChat アイコン")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat がユーザーの友人の連絡先独自書籍を維持、それぞれ (Bobo など) のような画面名に関連付けられているユーザーの画面名が各友人にテキスト チャットを送信することができます。
 
@@ -179,7 +179,7 @@ Siri はユーザーのユーザー補助機能のニーズを満たすとは対
 
 ユーザーが siri 口頭での要求を行ったとき、Siri が従うステップを次に示します。
 
-[ ![](understanding-sirikit-images/monkeychat02.png "Siri が以下の手順")](understanding-sirikit-images/monkeychat02.png)
+[![](understanding-sirikit-images/monkeychat02.png "Siri が以下の手順")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. Siri が最初に、ユーザーのオーディオを受け取る**音声**テキストに変換します。
 2. 次に、テキストに変換、**インテント**ユーザーの要求の表現を構造化します。
@@ -188,7 +188,7 @@ Siri はユーザーのユーザー補助機能のニーズを満たすとは対
 
 次の 3 つメインする方法は、アプリを Siri でユーザーのメッセージ交換で行うことができます。
 
-[ ![](understanding-sirikit-images/monkeychat03.png "Siri とユーザーのメッセージ交換で、アプリが参加する 3 つの主な方法")](understanding-sirikit-images/monkeychat03.png)
+[![](understanding-sirikit-images/monkeychat03.png "Siri とユーザーのメッセージ交換で、アプリが参加する 3 つの主な方法")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **ボキャブラリ**-これは、どのアプリに通知 Siri という語とのやり取りを認識している必要があります。
 2. **アプリケーション ロジック**- これらは、アクションと、アプリを実行する応答が特定の意図的に基づきます。
@@ -219,7 +219,7 @@ Siri はユーザーのユーザー補助機能のニーズを満たすとは対
 
 アプリは、メッセージ交換の最初のロールは、Siri がユーザーの音声を理解するためです。
 
-[ ![](understanding-sirikit-images/monkeychat04.png "ユーザーの音声を理解 Siri の支援")](understanding-sirikit-images/monkeychat04.png)
+[![](understanding-sirikit-images/monkeychat04.png "ユーザーの音声を理解 Siri の支援")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri、そのデータベースに名前"Bobo"はありませんが、アプリしが語彙を介して Siri でこの情報を共有します。 アプリにも役立ちます Siri はあると認識 Bobo、受信者として Siri に指定したので、*連絡先*です。
 
@@ -227,7 +227,7 @@ Siri の詳細が、すばやくをチェックして、メッセージがコン
 
 上記の例では、ユーザーが応答した、 *「複数バナナを送信してください」*、構造化されたに組み込みます Siri が**インテント**:
 
-[ ![](understanding-sirikit-images/monkeychat05.png "Siri を使用して、ユーザーの応答を構造化のインテントにバンドルされます。")](understanding-sirikit-images/monkeychat05.png)
+[![](understanding-sirikit-images/monkeychat05.png "Siri を使用して、ユーザーの応答を構造化のインテントにバンドルされます。")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 構造化のインテント、次の情報が含まれます。
 
@@ -248,7 +248,7 @@ Siri が自動的に適切なビルド`NSUserActivity`アプリを起動して�
 
 アプリは、目的が処理され、Siri への応答が返されますが後を提示結果をユーザーに (口頭でおよび視覚的に)。
 
-[ ![](understanding-sirikit-images/monkeychat06.png "口頭と視覚的に、ユーザーに表示結果")](understanding-sirikit-images/monkeychat06.png)
+[![](understanding-sirikit-images/monkeychat06.png "口頭と視覚的に、ユーザーに表示結果")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Siri のアプリに使用可能なドメインのそれぞれのいくつかの組み込み応答ユーザー インターフェイスがあります。 ただし、ため MonkeyChat が任意の目的とした UI 拡張機能を指定すると、上記の例では、ユーザーに、メッセージ交換の結果を表示する使用されます。
 
@@ -256,7 +256,7 @@ Siri のアプリに使用可能なドメインのそれぞれのいくつかの
 
 アプリ拡張機能が意図的に処理するときに実行する必要がある 3 つの主なタスクがあります。
 
-[ ![](understanding-sirikit-images/monkeychat07.png "インテントのライフ サイクル")](understanding-sirikit-images/monkeychat07.png)
+[![](understanding-sirikit-images/monkeychat07.png "インテントのライフ サイクル")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. アプリにする必要があります**解決**イベント上のすべてのパラメーターです。 結果として、アプリでが呼び出す解決複数回 (1 回、各パラメーター) とも複数回、同じパラメーター アプリとユーザー要求されている内容に同意するまでです。
 2. アプリにする必要があります**確認**ことは、要求の目的を処理し、Siri を予想される結果に知らせることできます。
@@ -329,7 +329,7 @@ Ios 10 SiriKit、Apple は 2 つの新しい拡張ポイントを作成しまし
 
 インテント拡張機能は、アプリと Siri 間の主な相互作用を次のように処理を担当します。
 
-[ ![](understanding-sirikit-images/intents01.png "目的の拡張機能")](understanding-sirikit-images/intents01.png)
+[![](understanding-sirikit-images/intents01.png "目的の拡張機能")](understanding-sirikit-images/intents01.png#lightbox)
 
 目的とした拡張機能は、1 つまたは複数のインテントをサポートできますが、アプリで SiriKit を実装する方法を決定する開発者をします。 開発者は、処理する必要がある各目的の別個の目的とした拡張機能を追加する可能性がありますもできます。  ただし、Apple 要求 Siri が複数のプロセスを処理する複数のメモリと時間を必要とする、アプリで開く必要があるないように、開発者が目的とした拡張機能の数を制限します。
 
@@ -355,7 +355,7 @@ Apple には、ユーザーを使用して、このため、自然、流体の�
 
 インテント UI 拡張機能では、アプリの UI と Siri エクスペリエンスにブランド化する機会が表示され、アプリに接続されていると思われるユーザーにすること。 この拡張機能では、アプリは、ブランドだけでなく、トラン スクリプトにビジュアルと他の情報を表示できます。
 
-[ ![](understanding-sirikit-images/intents02.png "UI 拡張機能の目的の出力の例")](understanding-sirikit-images/intents02.png)
+[![](understanding-sirikit-images/intents02.png "UI 拡張機能の目的の出力の例")](understanding-sirikit-images/intents02.png#lightbox)
 
 インテント UI 拡張機能は常に返します、`UIViewController`できますビュー コント ローラーが初回の応答を超える追加の情報を示すなどの内部で何も、アプリを追加したりできます。 インテント UI では、作業がどの程度場合がその場所まで自動車を共有素敵など、長時間実行されるイベントの状態でも、ユーザーを更新できます。
 

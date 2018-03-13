@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f1d968dcee0cb9b6cd0cee8fa60be4f4dbb2833
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 600d651eae1f470f17511afaf9bc86c80ffc1a75
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications"></a>通知
 
@@ -99,17 +99,17 @@ Watch で通知が表示されることを確認するには、するには、(1
 Visual Studio for Mac としてウォッチ拡張機能を設定すると追加のオプションが表示されます、**スタートアップ プロジェクト**です。
 ウォッチ拡張機能プロジェクトを右クリックし、選択**実行 > カスタム パラメーターしています.**:
     
-[![](notifications-images/runwith-customparams-sml.png "カスタム プロパティを持つを実行しています。")](notifications-images/runwith-customparams.png)
+[![](notifications-images/runwith-customparams-sml.png "カスタム プロパティを持つを実行しています。")](notifications-images/runwith-customparams.png#lightbox)
     
 開き、**実行時引数**ウィンドウが含まれていますが、 **WatchKit**タブです。選択**通知**、JSON ペイロードを提供し、キーを押します**Execute** watch アプリをシミュレーターで起動します。
     
-[![](notifications-images/runwith-execargs-sml.png "通知ペイロードの既定を選択します。")](notifications-images/runwith-execargs.png)
+[![](notifications-images/runwith-execargs-sml.png "通知ペイロードの既定を選択します。")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Visual Studio を右クリックを編集するウォッチ拡張機能をテスト通知のペイロードを設定する、**プロジェクト プロパティ**です。 移動して、**デバッグ**セクションし、(これは自動的に一覧表示、プロジェクトに含まれるすべての JSON ファイル) の一覧から通知 JSON ファイルを選択します。
     
-[![](notifications-images/runwith-execargs-sml-vs.png "通知の JSON ファイルを選択します。")](notifications-images/runwith-execargs-vs.png)
+[![](notifications-images/runwith-execargs-sml-vs.png "通知の JSON ファイルを選択します。")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 ウォッチ拡張機能の場合は、**スタートアップ プロジェクト**、Visual Studio では、次に示すように追加のオプションが表示されます。 いずれかを選択、**通知**で watch アプリを起動するオプション**通知**モード (ファイルを使用して、JSON のプロパティ ウィンドウで選択)。
     

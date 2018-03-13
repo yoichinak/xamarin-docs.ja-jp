@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f7ded8fdc1274f7c98d8f7134f6a87c7ba767646
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b0d757c951f9244beb093a0a9b13ac1d069b507
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reporting-bugs"></a>バグの報告
 
@@ -70,7 +70,7 @@ ms.lasthandoff: 02/27/2018
 
 既定では、サンド ボックス化を有効にすることができないことアプリへの接続には、TCP を介して Xamarin.Mac アプリにデバッガーが接続するため、エラーが発生した場合は有効になっている適切な権限がない場合、アプリを実行しようとすると、 *"に接続できません。デバッガー"*です。 
 
-[![権利を編集](troubleshooting-images/debug01.png "と権利の編集")](troubleshooting-images/debug01-large.png)
+[![権利を編集](troubleshooting-images/debug01.png "と権利の編集")](troubleshooting-images/debug01-large.png#lightbox)
 
 **送信ネットワーク接続を許可する (クライアント)**権限は、デバッガーのために必要な 1 つは、この許可すると、通常どおりにデバッグします。 更新したなしでデバッグすることはできませんので、`CompileEntitlements`対象の`msbuild`ビルドでのみデバッグのセキュリティで保護されているすべてのアプリの権利にそのアクセス許可を自動的に追加します。 リリース ビルドでは、未変更の状態、権利ファイルで指定された権限を使用してください。
 
@@ -80,7 +80,7 @@ Xamarin.Mac アプリでは、サード パーティ製ライブラリを含む�
 
 これは、問題を Xamarin.Mac プロジェクトのオプションを開くことによって解決できます**Mac をビルド** > **国際化**をチェックし、**西部**国際化:
 
-[![ビルド オプションを編集](troubleshooting-images/issue01.png "ビルド オプションの編集")](troubleshooting-images/issue01-large.png)
+[![ビルド オプションの編集](troubleshooting-images/issue01.png "ビルド オプションの編集")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>(Mm5103) のコンパイルに失敗しました
 
@@ -100,7 +100,7 @@ Visual Studio for Mac の最新バージョンから権利セクションが削�
 
 ダブルクリックする場合、 **Entitlements.plist**ファイル、権利エディターが表示されます。
 
-[![権利を編集](troubleshooting-images/entitlements02.png "と権利の編集")](troubleshooting-images/entitlements02-large.png)
+[![権利を編集](troubleshooting-images/entitlements02.png "と権利の編集")](troubleshooting-images/entitlements02-large.png#lightbox)
 
 既存の Xamarin.Mac プロジェクトに、手動で作成する必要があります、 **Entitlements.plist**ファイルでプロジェクトを右クリックして、**ソリューション パッド**を選択して**追加**  > **新しいファイル.**.次に、選択**Xamarin.Mac** > **空のプロパティ リスト**:
 
@@ -108,7 +108,7 @@ Visual Studio for Mac の最新バージョンから権利セクションが削�
 
 入力`Entitlements`クリックと名前の**新規**ボタンをクリックします。 プロジェクトには、権利ファイルが含まれていた場合、は、新しいファイルを作成する代わりにプロジェクトに追加するよう求められます。
 
-[![ファイルの上書きを確認する](troubleshooting-images/entitlements04.png "ファイルの上書きを確認しています")](troubleshooting-images/entitlements04-large.png)
+[![ファイルの上書きを確認する](troubleshooting-images/entitlements04.png "ファイルの上書きを確認しています")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="contacting-support-business-or-enterprise-licenses"></a>(Business または enterprise のライセンス) のサポートに連絡
 
@@ -124,14 +124,14 @@ Xamarin の製品を使用する開発者コミュニティとは、すばらし
 
 お客様のフィードバックは弊社にとって重要です。 : Xamarin.Mac で問題が見つかった場合
 
-- 検索、[問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues) 
-- GitHub の問題に切り替えるには、前に、Xamarin の問題がで追跡された[Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)です。 照合の問題がある検索してください。
-- 一致する問題が見つからない場合で新しい懸案事項を送信してください、[問題の GitHub リポジトリ](https://github.com/xamarin/xamarin-macios/issues/new)です。
+- [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する 
+- GitHub の問題に切り替わる前に、Xamarin の問題は [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) で追跡されていました。 そこで一致する問題を検索してください。
+- 一致する問題が見つからない場合は、[GitHub の問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues/new)に新しい問題を提出してください。
 
-GitHub の問題は、すべてのパブリックです。 コメントまたは添付ファイルを非表示にすることはできません。 
+GitHub の問題はすべて公開されています。 コメントまたは添付ファイルを非表示にすることはできません。 
 
-可能性として、次の大半を含めてください。                                                                                                                                          
+次の情報について、できるだけ多くを含めてください。                                                                                                                                          
 
-- この問題を再現する簡単な例です。 これは**貴重な**可能な限りです。 
+- 問題を再現する簡単な例。 これは**重要**です (可能な場合)。 
 - クラッシュの完全なスタック トレース。
-- C# コードのクラッシュを囲むです。 
+- クラッシュの周囲の C# コード。 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 992e6583d64f078c0cd693765a1512c3e41a620a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c7edf0c8e563dad25693d184d3a44a3e66466126
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-information-and-enumeration"></a>パス情報は、列挙型
 
@@ -110,7 +110,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length`プロパティの新しく作成した`SKPathMeasure`オブジェクトは、パスの長さを取得します。 割った値がこの、 `baseTextWidth` (これは、基にテキストを 10 文字のテキスト サイズの幅) を値し、し、基本のテキストのサイズが 10 を乗算します。 結果は、そのパスに沿ってテキストを表示するための新しいテキスト サイズです。
 
-[![](information-images/pathlength-small.png "パスの長さ ページのスクリーン ショットをトリプル")](information-images/pathlength-large.png "パスの長さ ページのトリプル スクリーン ショット")
+[![](information-images/pathlength-small.png "パスの長さ ページのスクリーン ショットをトリプル")](information-images/pathlength-large.png#lightbox "パスの長さ ページのトリプル スクリーン ショット")
 
 長いまたは短い、ベジエ曲線を取得、テキストのサイズ変更を確認できます。
 
@@ -136,7 +136,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **一輪車半分パイプ**ページ 3 次ベジエ曲線に沿った前後にオーバーライドすると思われる一輪車上にスティック図形をアニメーション化します。
 
-[![](information-images/unicyclehalfpipe-small.png "一輪車半分パイプ ページのスクリーン ショットをトリプル")](information-images/unicyclehalfpipe-large.png "一輪車半分パイプ ページのトリプル スクリーン ショット")
+[![](information-images/unicyclehalfpipe-small.png "一輪車半分パイプ ページのスクリーン ショットをトリプル")](information-images/unicyclehalfpipe-large.png#lightbox "一輪車半分パイプ ページのトリプル スクリーン ショット")
 
 `SKPaint`半分パイプと、一輪車線の描画に使用されるオブジェクトがフィールドとして定義されている、 [ `UnicycleHalfPipePage` ]()クラスです。 定義されても、`SKPath`一輪車のオブジェクト。
 
@@ -425,7 +425,7 @@ static class PathExtensions
 
 **GlobularText**サンプルでは、見かけ上のテキストを折り返す半球の周囲に 3D 効果この拡張メソッドを使用します。
 
-[![](information-images/globulartext-small.png "Globular テキスト ページのスクリーン ショットをトリプル")](information-images/globulartext-large.png "Globular テキスト ページのトリプル スクリーン ショット")
+[![](information-images/globulartext-small.png "Globular テキスト ページのスクリーン ショットをトリプル")](information-images/globulartext-large.png#lightbox "Globular テキスト ページのトリプル スクリーン ショット")
 
 [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスのコンス トラクターは、この変換を実行します。 作成、 `SKPaint` 、テキストのオブジェクトし、を取得し、`SKPath`オブジェクトから、`GetTextPath`メソッドです。 渡されるパスは、`CloneWithTransform`変換関数と共に拡張メソッド。 
 

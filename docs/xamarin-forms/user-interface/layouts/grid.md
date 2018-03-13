@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 4d074dce06d5737bd6589efbc559c611425e5f19
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 18df6082f634d633d3f1ca8ea1e8d3f493532f47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="grid"></a>グリッド
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) ビューの行と列に配置をサポートします。 比例してサイズまたは絶対サイズを持つ行と列を設定できます。 `Grid`レイアウトは、従来のテーブルと混同しないでし、表形式のデータを表示するものではありません。 `Grid` 行、列またはセルの書式設定の概念はありません。 HTML テーブルとは異なり`Grid`コンテンツをレイアウトするため、純粋な目的としています。
 
-[ ![](grid-images/layouts-sml.png "Xamarin.Forms レイアウト")](grid-images/layouts.png "Xamarin.Forms レイアウト")
+[![](grid-images/layouts-sml.png "Xamarin.Forms レイアウト")](grid-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
 
 この記事を取り上げます。
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/28/2018
 - **絶対**&ndash;固定、特定の高さと幅の値を持つ行と列のサイズを設定します。 値として指定し、 `GridUnitType.Absolute` C# の場合と`#`XAML で`#`目的の値をされています。
 
 > [!NOTE]
-> **注**: として列の幅の値が設定されて '*' Xamarin.Forms で既定では、これにより、列が使用可能な領域いっぱいになります。
+> 列の幅の値として設定は、' * ' Xamarin.Forms で既定では、これにより、列が使用可能な領域いっぱいになります。
 
 3 つの行と 2 つの列が必要とするアプリを検討してください。 一番下の行が縦 200px 正確である必要があり、先頭の行が中央の行と高さが同じ 2 回クリックする必要があります。 左の列が、コンテンツに合わせて十分な幅にする必要があり、右側の列が残りの領域を入力する必要があります。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ba5249a275d3aa695ccc6527805c56907bbda0ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="enhanced-user-notifications"></a>強化されたユーザーへの通知
 
@@ -168,11 +168,11 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 1. ダブルクリックして、`Entitlements.plist`ファイルで、**ソリューション パッド**編集用に開きます。
 2. 切り替えて、**ソース**ビュー。 
 
-    [ ![](enhanced-user-notifications-images/setup01.png "ソース ビュー")](enhanced-user-notifications-images/setup01.png)
+    [![](enhanced-user-notifications-images/setup01.png "ソース ビュー")](enhanced-user-notifications-images/setup01.png#lightbox)
 3. クリックして、  **+** 新しいキーを追加するボタンをクリックします。
 4. 入力`aps-environment`の**プロパティ**のままにして、**型**として`String`いずれかを入力および`development`または`production`の**値**: 
 
-    [ ![](enhanced-user-notifications-images/setup02.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. 変更内容をファイルに保存します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -181,7 +181,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 3. クリックして、  **+** 新しいキーを追加するボタンをクリックします。
 4. 入力`aps-environment`の**プロパティ**のままにして、**型**として`String`いずれかを入力および`development`または`production`の**値**: 
 
-    [ ![](enhanced-user-notifications-images/setup02w.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02w.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. 変更内容をファイルに保存します。
 
 -----
@@ -190,7 +190,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 
 実行する必要があります、アプリは送信すると、リモートの通知を受け取る、_トークン登録_既存を使用して`UIApplication`API です。 この登録には、デバイスには、ライブ ネットワーク接続のアクセス、APNs、アプリに送信されるために必要なトークンを生成する必要があります。 アプリは、開発者のサーバー側のアプリをリモートの通知を登録するには、このトークンを転送する必要があります。
 
-[ ![](enhanced-user-notifications-images/token01.png "トークンの登録の概要")](enhanced-user-notifications-images/token01.png)
+[![](enhanced-user-notifications-images/token01.png "トークンの登録の概要")](enhanced-user-notifications-images/token01.png#lightbox)
 
 必要な登録を初期化するために、次のコードを使用します。
 
@@ -200,7 +200,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 開発者のサーバー側のアプリに送信されるトークンは、通知のペイロードの get の一部に送信されるとき、サーバーから APNs リモート通知を送信するときに含まれる必要があります。
 
-[ ![](enhanced-user-notifications-images/token02.png "通知のペイロードの一部として含まれているトークン")](enhanced-user-notifications-images/token02.png)
+[![](enhanced-user-notifications-images/token02.png "通知のペイロードの一部として含まれているトークン")](enhanced-user-notifications-images/token02.png#lightbox)
 
 トークンは、通知と開くか、通知に応答するために使用するアプリに一緒に結合するキーとして機能します。
 
@@ -519,7 +519,7 @@ namespace MonkeyNotification
 
 リモートの通知を使用するときに_サービス拡張_通知のペイロード内のエンド ツー エンドの暗号化を有効にする方法を提供します。 サービス拡張は、ユーザー インターフェイスでない拡張子 (iOS 10 で使用可能) の拡張、またはユーザーに表示する前に、通知の表示されているコンテンツを交換の主な目的でバック グラウンドで実行されています。 
 
-[ ![](enhanced-user-notifications-images/extension01.png "サービスの拡張機能の概要")](enhanced-user-notifications-images/extension01.png)
+[![](enhanced-user-notifications-images/extension01.png "サービスの拡張機能の概要")](enhanced-user-notifications-images/extension01.png#lightbox)
 
 サービス拡張機能は迅速に実行するものし、システムで実行にかかる時間のわずかな時間がのみ与えられます。 イベントで、サービス拡張できない場合は、割り当てられた時間内のタスクが完了、フォールバック メソッドが呼び出されます。 フォールバックが失敗した場合、元の通知のコンテンツが表示されますをユーザーにします。
 
@@ -538,13 +538,13 @@ Xamarin.iOS アプリでは、サービス拡張機能を実装するには、�
 2. ソリューション名を右クリックし、**ソリューション パッド**選択**追加** > **新しいプロジェクトの追加**です。
 3. 選択**iOS** > **拡張機能** > **通知サービスの拡張機能** をクリックし、**次**ボタン。 
 
-    [ ![](enhanced-user-notifications-images/extension02.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension02.png)
+    [![](enhanced-user-notifications-images/extension02.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension02.png#lightbox)
 4. 入力、**名前**拡張機能とクリック、 **[次へ]**ボタン。 
 
-    [ ![](enhanced-user-notifications-images/extension03.png "拡張機能の名前を入力します。")](enhanced-user-notifications-images/extension03.png)
+    [![](enhanced-user-notifications-images/extension03.png "拡張機能の名前を入力します。")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. 調整、**プロジェクト名**や**ソリューション名**要求されて、をクリックして、**作成**ボタン。 
 
-    [ ![](enhanced-user-notifications-images/extension04.png "プロジェクトの名前、およびソリューション名を調整します。")](enhanced-user-notifications-images/extension04.png) 
+    [![](enhanced-user-notifications-images/extension04.png "プロジェクトの名前、およびソリューション名を調整します。")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -552,7 +552,7 @@ Xamarin.iOS アプリでは、サービス拡張機能を実装するには、�
 2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加**です。
 3. 選択**iOS** > **拡張** > **通知サービスの拡張機能**: 
 
-    [ ![](enhanced-user-notifications-images/extension01w.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension01w.png)
+    [![](enhanced-user-notifications-images/extension01w.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension01w.png#lightbox)
 4. 入力してください、**名**をクリックして、拡張機能の**OK**ボタンをクリックします。
 
 -----

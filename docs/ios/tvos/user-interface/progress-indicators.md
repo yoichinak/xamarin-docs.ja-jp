@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b5d3a03324e73b06bd3defe7e6610163c3d1b26d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c021550e17cf8206d59102856a11c72000ad06aa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-progress-indicators"></a>進行状況インジケーターの操作
 
@@ -21,7 +21,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内での進行状況イ�
 
 Xamarin.tvOS アプリが新しいコンテンツの読み込みまたは時間のかかる処理操作を実行する必要がある場合があります。 その時間帯に、アクティビティのインジケーターまたは進行状況バー ユーザーにアプリがまだ実行されていることを通知し、実行中のタスクの長さに関するいくつかを示す値を与えるを提示する必要があります。
 
-[ ![](progress-indicators-images/intro01.png "サンプルの進行状況インジケーター")](progress-indicators-images/intro01.png)
+[![](progress-indicators-images/intro01.png "サンプルの進行状況インジケーター")](progress-indicators-images/intro01.png#lightbox)
 
 <a name="About-Activity-Indicators" />
 
@@ -57,19 +57,19 @@ Xamarin.tvOS アプリでは、プログレス インジケーターを使用す
 1. **ソリューション パッド**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**アクティビティのインジケーター**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](progress-indicators-images/activity01.png "アクティビティのインジケーター")](progress-indicators-images/activity01.png)
+    [![](progress-indicators-images/activity01.png "アクティビティのインジケーター")](progress-indicators-images/activity01.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ パッド**など、アクティビティのインジケーターのいくつかのプロパティを調整することができます、**スタイル**と**動作**: 
 
-    [ ![](progress-indicators-images/activity02.png "ウィジェット タブ ")](progress-indicators-images/activity02.png)
+    [![](progress-indicators-images/activity02.png "ウィジェット タブ ")](progress-indicators-images/activity02.png#lightbox)
 1. ドラッグ、**進行状況のビュー**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](progress-indicators-images/activity03.png "進行状況の表示")](progress-indicators-images/activity03.png)
+    [![](progress-indicators-images/activity03.png "進行状況の表示")](progress-indicators-images/activity03.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ エクスプ ローラー**など、進行状況のビューのいくつかのプロパティを調整することができます、**スタイル**と**の進行状況**(% 完了)。 
 
-    [ ![](progress-indicators-images/activity04.png "ウィジェット タブ")](progress-indicators-images/activity04.png)
+    [![](progress-indicators-images/activity04.png "ウィジェット タブ")](progress-indicators-images/activity04.png#lightbox)
 1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
 
-    [ ![](progress-indicators-images/activity05.png "名前を割り当てる")](progress-indicators-images/activity05.png)
+    [![](progress-indicators-images/activity05.png "名前を割り当てる")](progress-indicators-images/activity05.png#lightbox)
 1. 変更内容を保存します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -77,19 +77,19 @@ Xamarin.tvOS アプリでは、プログレス インジケーターを使用す
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**アクティビティのインジケーター**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](progress-indicators-images/activity01-vs.png "アクティビティのインジケーター")](progress-indicators-images/activity01-vs.png)
+    [![](progress-indicators-images/activity01-vs.png "アクティビティのインジケーター")](progress-indicators-images/activity01-vs.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ エクスプ ローラー**など、アクティビティのインジケーターのいくつかのプロパティを調整することができます、**スタイル**と**の動作**: 
 
-    [ ![](progress-indicators-images/activity02-vs.png "ウィジェット タブ")](progress-indicators-images/activity02-vs.png)
+    [![](progress-indicators-images/activity02-vs.png "ウィジェット タブ")](progress-indicators-images/activity02-vs.png#lightbox)
 1. ドラッグ、**進行状況のビュー**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](progress-indicators-images/activity03-vs.png "進行状況の表示")](progress-indicators-images/activity03-vs.png)
+    [![](progress-indicators-images/activity03-vs.png "進行状況の表示")](progress-indicators-images/activity03-vs.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ エクスプ ローラー**など、進行状況のビューのいくつかのプロパティを調整することができます、**スタイル**と**の進行状況**(% 完了)。 
 
-    [ ![](progress-indicators-images/activity04-vs.png "ウィジェット タブ")](progress-indicators-images/activity04-vs.png)
+    [![](progress-indicators-images/activity04-vs.png "ウィジェット タブ")](progress-indicators-images/activity04-vs.png#lightbox)
 1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
 
-    [ ![](progress-indicators-images/activity05-vs.png "名前を割り当てる")](progress-indicators-images/activity05-vs.png)
+    [![](progress-indicators-images/activity05-vs.png "名前を割り当てる")](progress-indicators-images/activity05-vs.png#lightbox)
 1. 変更内容を保存します。
 
 -----

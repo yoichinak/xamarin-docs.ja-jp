@@ -7,23 +7,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 01c390af08e59f3b10888a183df7fa6758c2609c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5d1de42a398affc1b6b6c9b863df5bc86a016c08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>作業の開始
-
-<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
-
 
 > [!IMPORTANT]
 > **警告:**目標ペンを使わず、Objective C の (および C の拡張機能によって) 高度な知識と経験を積んだ開発者向けツールです。 Objective C ライブラリをバインドする前に、コマンドライン (およびのネイティブ ライブラリのしくみをよく理解) ネイティブ ライブラリを構築する方法を十分に理解が必要です。
 
 <a name="installing" />
 
-# <a name="installing-objective-sharpie"></a>目標ペンを使わずにインストールします。
+## <a name="installing-objective-sharpie"></a>目標ペンを使わずにインストールします。
 
 目標ペンを使わず Mac OS X 10.10 を以降のバージョンではスタンドアロンのコマンド ライン ツールでは現在、_完全にサポートされている Xamarin 製品ではない_です。 する必要がありますしか使えません上級開発者によって、サード パーティの Objective C のライブラリにバインド プロジェクトの作成を支援します。
 
@@ -34,9 +31,10 @@ ms.lasthandoff: 02/27/2018
   - [最新のリリースをダウンロードします。](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [フォーラムのお知らせ](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
-> 💡 **ヒント:**を使用して、`sharpie update`コマンドを最新バージョンに更新します。
+> [!TIP]
+> 使用して、`sharpie update`コマンドを最新バージョンに更新します。
 
-# <a name="basic-walkthrough"></a>基本的なチュートリアル
+## <a name="basic-walkthrough"></a>基本的なチュートリアル
 
 目標ペンを使わずはコマンド ライン ツールで作成するために役立ちます Xamarin 定義には必要サード パーティ製 Objective C のライブラリを c# にバインドします。
 目標ペンを使わず、開発者を使用する場合でも*は*目標ペンを使わずがツールによって自動的に処理できなかったすべての問題に対処が完了したら、生成されたファイルを変更する必要があります。

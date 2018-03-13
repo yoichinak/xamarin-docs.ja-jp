@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 482358b0ccbedf926cd9182065a1eb8f4c12683c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57f19d1eb66e22badb418d4584f5654904c7ade
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="style-inheritance"></a>スタイルの継承
 
@@ -62,10 +62,10 @@ _スタイルは、重複を減らすし、再利用できるようにするに�
 
 `baseStyle`ターゲット[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)インスタンスし、設定、 [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/)と[ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/)プロパティです。 `baseStyle`が直接コントロールに対して設定されていません。 代わりに、`labelStyle`と`buttonStyle`追加のバインド可能なプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`が適用されます、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンスと[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)を設定して、インスタンス、 [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)プロパティです。 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png)
+[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> **注**: 暗黙的なスタイルは、明示的なスタイルから派生することができますが、明示的なスタイルは、暗黙的なスタイルから派生することはできません。
+> 暗黙的なスタイルは、明示的なスタイルから派生することができますが、明示的なスタイルは、暗黙的なスタイルから派生することはできません。
 
 ### <a name="respecting-the-inheritance-chain"></a>継承チェーンを考慮し
 
@@ -106,7 +106,7 @@ _スタイルは、重複を減らすし、再利用できるようにするに�
 
 この例では`labelStyle`と`buttonStyle`コントロール レベルのリソースは、中に`baseStyle`ページ レベル リソースがします。 しかし、`labelStyle`と`buttonStyle`から継承`baseStyle`のことはできません`baseStyle`から継承する`labelStyle`または`buttonStyle`ビュー階層内ではそれぞれの場所にします。
 
-## <a name="style-inheritance-in-c35"></a>C &#35; スタイルの継承
+## <a name="style-inheritance-in-c35"></a>C スタイルの継承&#35;
 
 等価 (C#) ページで、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)インスタンスに直接割り当てられた、 [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)次のコード例に、必要なコントロールのプロパティが表示されます。
 
@@ -160,7 +160,7 @@ public class StyleInheritancePageCS : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [基本的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

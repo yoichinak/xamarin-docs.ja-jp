@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: d68d84671028ded14b4b885f2c134656fc639f9e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b5e9a4c449bc99bd88fc415f5ebb969d2c2a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-features"></a>Android プラットフォームの機能
 
@@ -28,14 +28,14 @@ Xamarin.Forms も省略可能な`FormsAppCompatActivity`を使用して**AppComp
 
 ここでは、 **Todo** 、既定値はサンプル`FormsApplicationActivity`:
 
-[ ![](images/before-appcompat-sml.png "AppCompat なしの Todo サンプル アプリケーション")](images/before-appcompat.png "AppCompat なしの Todo サンプル アプリケーション")
+[![](images/before-appcompat-sml.png "AppCompat なしの Todo サンプル アプリケーション")](images/before-appcompat.png#lightbox "AppCompat なしの Todo サンプル アプリケーション")
 
 これとは、同じコードを使用するプロジェクトをアップグレードした後`FormsAppCompatActivity`(およびその他のテーマ情報を追加する)。
 
-[ ![](images/post-appcompat-sml.png "AppCompat とテーマでの Todo サンプル アプリケーション")](images/post-appcompat.png "AppCompat とテーマでの Todo サンプル アプリケーション")
+[![](images/post-appcompat-sml.png "AppCompat とテーマでの Todo サンプル アプリケーション")](images/post-appcompat.png#lightbox "AppCompat とテーマでの Todo サンプル アプリケーション")
 
 > [!NOTE]
-> **注**: を使用する場合`FormsAppCompatActivity`、[一部 Android のカスタム レンダラーの基本クラス](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)異なるになります。
+> 使用する場合`FormsAppCompatActivity`、[一部 Android のカスタム レンダラーの基本クラス](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)異なるになります。
 
 
 ## <a name="related-links"></a>関連リンク

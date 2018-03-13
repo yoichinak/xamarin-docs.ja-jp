@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: a9908429994f4575a9e41936d500bfd8906a843b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
 
@@ -52,7 +52,7 @@ public class MyEntry : Entry
 `local`名前空間プレフィックスでは、あらゆるものがあります。 ただし、`namespace`と`assembly`値がカスタム コントロールの詳細情報と一致する必要があります。 名前空間が宣言されると、カスタム コントロールを参照する、プレフィックスを使用します。
 
 > [!NOTE]
-> **注**: 定義する、`xmlns`共有プロジェクトよりも Pcl に非常に簡単です。 PCL がアセンブリにコンパイルされるため、簡単に何かを判断、`assembly=CustomRenderer`値でなければなりません。 共有プロジェクトを使用する場合 (XAML を含む) すべての共有アセットまとめられ、参照元のプロジェクトは、つまり、iOS、Android、および Windows Phone の各プロジェクトがある独自*アセンブリ名*ことはできません記述するため、`xmlns`宣言値は、アプリケーションごとに別にする必要があるためです。 プロジェクトの共有については XAML でカスタム コントロールは、すべてのアプリケーション プロジェクトを同じアセンブリ名で構成する必要があります。
+> 定義する、`xmlns`共有プロジェクトよりも Pcl に非常に簡単です。 PCL がアセンブリにコンパイルされるため、簡単に何かを判断、`assembly=CustomRenderer`値でなければなりません。 共有プロジェクトを使用する場合 (XAML を含む) すべての共有アセットまとめられ、参照元のプロジェクトは、つまり、iOS、Android、および Windows Phone の各プロジェクトがある独自*アセンブリ名*ことはできません記述するため、`xmlns`宣言値は、アプリケーションごとに別にする必要があるためです。 プロジェクトの共有については XAML でカスタム コントロールは、すべてのアプリケーション プロジェクトを同じアセンブリ名で構成する必要があります。
 
 `MyEntry`背景が灰色で、各プラットフォームでは、次のスクリーン ショットに示すようにカスタム コントロールを表示し、します。
 
@@ -69,7 +69,7 @@ public class MyEntry : Entry
 1. 追加、`ExportRenderer`属性をカスタム レンダラー クラス Xamarin.Forms コントロールを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
 
 > [!NOTE]
-> **注**: Xamarin.Forms のほとんどの要素は、各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラーが必要に各プラットフォームのプロジェクトでレンダリングするときに、[ビュー](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)または[ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)要素。
+> Xamarin.Forms のほとんどの要素は各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラーが必要に各プラットフォームのプロジェクトでレンダリングするときに、[ビュー](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)または[ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)要素。
 
 この一連のトピックは、デモンストレーションと Xamarin.Forms のさまざまな要素のこのプロセスの説明に表示されます。
 
@@ -96,4 +96,4 @@ var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
 
 ## <a name="related-links"></a>関連リンク
 
-- [効果](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)

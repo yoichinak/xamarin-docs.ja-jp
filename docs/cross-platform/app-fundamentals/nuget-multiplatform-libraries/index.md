@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 66bf9c215e3d30687fa8037220b8b35409ca285d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 49e7c00feb697d25d61a5e09b051c41945c260c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="nuget-projects-nugetizer-3000"></a>NuGet のプロジェクト (Nugetizer 3000)
 
@@ -21,14 +21,18 @@ _' Nugetizer 3000' を使用してプラットフォーム間でコードを共�
 使用してプラットフォーム間でコードを共有する NuGet パッケージを自動的に作成することは、 _Nugetizer 3000_です。 これにより、作成することは NuGet パッケージの既存のライブラリ プロジェクトから、または新しいを作成して**マルチプラット フォーム ライブラリ プロジェクト**です。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
 Nugetizer 3000 は Mac 6.2 用の Visual Studio に含まれています。
+
+[![](images/mulitplatform-library-sml.png "マルチプラット フォーム ライブラリの新しいウィンドウを作成します。")](images/mulitplatform-library.png#lightbox)
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-<a name="to-use-the-nugetizer-3000-in-visual-studio-please-download-and-run-the-vsix-installerhttpbitlynugetizer-2017"></a>Visual Studio で Nugetizer 3000 を使用する次のようにしてください。 [VSIX インストーラーをダウンロードして](http://bit.ly/nugetizer-2017)です。
+
+Visual Studio で Nugetizer 3000 を使用する次のようにしてください。 [VSIX インストーラーをダウンロードして](http://bit.ly/nugetizer-2017)です。
+
 -----
 
-
-
-[ ![](images/mulitplatform-library-sml.png "マルチプラット フォーム ライブラリの新しいウィンドウを作成します。")](images/mulitplatform-library.png)
+## <a name="building-nuget-packages"></a>NuGet パッケージの構築
 
 その他のアプリを使用して内部的にコードを共有するために使用したりにアップロードする、完全な NuGet パッケージのプロジェクトのすべてのビルドの出力構成されると、 [NuGet.org](https://www.nuget.org)です。
 
@@ -49,7 +53,7 @@ Nugetizer 3000 は Mac 6.2 用の Visual Studio に含まれています。
 参照してください、[メタデータ ガイド](metadata.md)詳細については、必須および省略可能なメタデータ、NuGet パッケージに追加する必要があります。
 
 
-## <a name="further-nuget-information"></a>NuGet の詳細
+## <a name="further-nuget-information"></a>NuGet を詳細します。
 
 詳細について[Xamarin 用 NuGets を手動で作成する](~/cross-platform/app-fundamentals/nuget-manual.md)する方法と[アプリ内で NuGet パッケージが含まれて](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。
 

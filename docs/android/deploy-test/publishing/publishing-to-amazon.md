@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6b4958c6a82b824f19cc041b124e79034eba4c86
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9bae3c56c5f6c445618f41d877c3188a86167be1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Amazon App Store に公開する
 
 Amazon のモバイル アプリ配信プログラムでは、モバイル アプリ開発者は Amazon でアプリケーションを公開できます。 このセクションでは、Amazon App Store for Android について簡単に取り上げます。 
 
-[![Amazon App Store の画面](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png)
+[![Amazon App Store の画面](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon では、APK のサイズに上限を課していません。 ただし、APK が 30MB より大きいと、Amazon Mobile App Distribution Portal ではなく、FTP が配信に利用されます。
 
-<a name="Submitting_Apps:_Binary_Info" />
 
 ## <a name="submitting-apps-binary-info"></a>アプリの提出: バイナリ情報
 
@@ -34,7 +33,6 @@ Amazon App Store にアプリケーションを提出する作業は、Google Pl
 -  5 つの動画の更新を指定できます。
 
 
-<a name="Approval_Process" />
 
 ## <a name="approval-process"></a>承認プロセス
 

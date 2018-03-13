@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: 7e02c92f9c1aafeb97da4905c17898b02362c960
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -48,7 +48,7 @@ ICloud にアクセスするアプリケーションを正しく構成するに�
 
 -   **新しいアプリ ID の作成**アプリ ID を作成、」の手順を次に、[ストア テクノロジ ガイドのセクションで、デバイスのプロビジョニング用にプロビジョニング](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)を必ず確認して**iCloud**として、サービスを使用できます。
 
- [ ![](introduction-to-icloud-images/icloud-sml.png "許可されているサービスとしての iCloud を確認します。")](introduction-to-icloud-images/icloud.png)
+ [![](introduction-to-icloud-images/icloud-sml.png "許可されているサービスとしての iCloud を確認します。")](introduction-to-icloud-images/icloud.png#lightbox)
 
 - **新しいプロビジョニング プロファイルを作成**-、プロビジョニング プロファイルを作成する」の手順に従って、[ガイドのデバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile)です。
 
@@ -83,7 +83,7 @@ ICloud にアクセスするアプリケーションを正しく構成するに�
 
 
 
- [ ![](introduction-to-icloud-images/icloud-kv-arrows.png "デバイスの間でメッセージ フロー")](introduction-to-icloud-images/icloud-kv-arrows.png)
+ [![](introduction-to-icloud-images/icloud-kv-arrows.png "デバイスの間でメッセージ フロー")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
 ### <a name="setting-and-retrieving-data"></a>設定とデータの取得
 
@@ -151,13 +151,13 @@ iCloud ドキュメントの格納はアプリ (およびユーザー) に重要
 
 この図では、すべてに収まるかを一緒に示しています。 各デバイスでは、ローカル ストレージ (UbiquityContainer) とデーモンは、クラウド内のデータの送受信の対処、オペレーティング システムの iCloud に保存されたデータがあります。 FilePresenter/FileCoordinator の同時アクセスを防ぐために使用して、UbiquityContainer へのすべてのファイル アクセスを行う必要があります。 `UIDocument`クラスを実装するものです。 UIDocument を使用する方法を示します。
 
- [ ![](introduction-to-icloud-images/icloud-overview.png "ドキュメントの記憶域の概要")](introduction-to-icloud-images/icloud-overview.png)
+ [![](introduction-to-icloud-images/icloud-overview.png "ドキュメントの記憶域の概要")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
 ICloudUIDoc 例では、実装、単純な`UIDocument`1 つのテキスト フィールドを含むサブクラスです。 テキストが表示されます、`UITextView`と赤で表示される通知メッセージでその他のデバイスを iCloud での編集が反映されます。 サンプル コードは、競合の解決などのより高度な iCloud 機能では扱いません。
 
 このスクリーン ショットは、テキストを変更し、キーを押しての後に、サンプル アプリケーションを示しています。 **UpdateChangeCount**ドキュメントがその他のデバイスを iCloud 経由で同期されています。
 
- [ ![](introduction-to-icloud-images/iclouduidoc.png "このスクリーン ショットは、UpdateChangeCount を押し、テキストの変更後のサンプル アプリケーションを示しています。")](introduction-to-icloud-images/iclouduidoc.png)
+ [![](introduction-to-icloud-images/iclouduidoc.png "このスクリーン ショットは、UpdateChangeCount を押し、テキストの変更後のサンプル アプリケーションを示しています。")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
 これには、iCloudUIDoc サンプルに 5 つの部分があります。
 
@@ -403,15 +403,15 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 ユーザーが iCloud ドキュメントを管理できます、**ドキュメント**; の設定を使用してアプリケーションの外部で「ユビキタス コンテナー」のディレクトリを削除する方向にスワイプとファイルの一覧を表示できます。 アプリケーション コードでは、ユーザーがドキュメントを削除する場所の状況を処理できる必要があります。 内部アプリケーションのデータを格納しないでください、**ドキュメント**ディレクトリ。
 
- [ ![](introduction-to-icloud-images/icloudstorage.png "ICloud ドキュメント ワークフローの管理")](introduction-to-icloud-images/icloudstorage.png)
+ [![](introduction-to-icloud-images/icloudstorage.png "ICloud ドキュメント ワークフローの管理")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
 ユーザーは、そのアプリケーションに関連するドキュメントを iCloud の状態のことを通知するために、自分のデバイスから iCloud 対応のアプリケーションを削除しようとするときに、各種の警告を表示もされます。
 
- [ ![](introduction-to-icloud-images/icloud-delete1.png "ユーザーが iCloud を有効にしたアプリケーションを自分のデバイスから削除しようとした場合のサンプル ダイアログ")](introduction-to-icloud-images/icloud-delete1.png)
+ [![](introduction-to-icloud-images/icloud-delete1.png "ユーザーが iCloud を有効にしたアプリケーションを自分のデバイスから削除しようとした場合のサンプル ダイアログ")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [ ![](introduction-to-icloud-images/icloud-delete2.png "ユーザーが iCloud を有効にしたアプリケーションを自分のデバイスから削除しようとした場合のサンプル ダイアログ")](introduction-to-icloud-images/icloud-delete2.png)
+ [![](introduction-to-icloud-images/icloud-delete2.png "ユーザーが iCloud を有効にしたアプリケーションを自分のデバイスから削除しようとした場合のサンプル ダイアログ")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>iCloud のバックアップ
 

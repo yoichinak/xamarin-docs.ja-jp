@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: da096c8575896bc9f522a92b3fb94b81f9e772df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="social-framework"></a>ソーシャル フレームワーク
 
@@ -30,7 +30,7 @@ _ソーシャル フレームワークでは、Twitter、Facebook、とともに
 
 Twitter のソーシャル フレームワークを使用してに接続するには、アカウントを次に示すように、デバイスの設定で構成する必要があります。
 
- [ ![](social-framework-images/twitter01.png "Twitter アカウントの設定")](social-framework-images/twitter01.png)
+ [![](social-framework-images/twitter01.png "Twitter アカウントの設定")](social-framework-images/twitter01.png#lightbox)
 
 アカウントが入力され、Twitter で検証されて、Twitter のアクセスに、ソーシャル Framework のクラスを使用するデバイス上のアプリケーションはこのアカウントを使用します。
 
@@ -38,7 +38,7 @@ Twitter のソーシャル フレームワークを使用してに接続する�
 
 ソーシャル フレームワークと呼ばれるコント ローラーが含まれています。`SLComposeViewController`を編集し、ツイートを送信する用意されたシステム ビューを表示します。 次のスクリーン ショットは、このビューの例を示します。
 
- [ ![](social-framework-images/twitter02.png "このスクリーン ショットは、SLComposeViewController の例を示しています。")](social-framework-images/twitter02.png)
+ [![](social-framework-images/twitter02.png "このスクリーン ショットは、SLComposeViewController の例を示しています。")](social-framework-images/twitter02.png#lightbox)
 
 使用する、 `SLComposeViewController` Twitter とには、呼び出すことによって、コント ローラーのインスタンスを作成、`FromService`メソッドを`SLServiceType.Twitter`次のようにします。
 
@@ -284,7 +284,7 @@ request.PerformRequest ((data, response, error) => {
 
 データが正常に読み込まれた、(次の例の出力) のように、生の JSON データが表示されます。
 
-[ ![](social-framework-images/twitter03.png "生の JSON データの表示の例")](social-framework-images/twitter03.png)
+[![](social-framework-images/twitter03.png "生の JSON データの表示の例")](social-framework-images/twitter03.png#lightbox)
 
 実際のアプリに JSON の結果が、標準と、ユーザーに対して表示される結果として解析できませんでした。 参照してください[Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)JSON を解析する方法についてはします。
 
@@ -294,7 +294,7 @@ request.PerformRequest ((data, response, error) => {
 
 ソーシャル フレームワークと Facebook への接続は、前に示した Twitter を使用するプロセスとほぼ同じです。 Facebook ユーザー アカウントは、次に示すよう、デバイスの設定で構成する必要があります。
 
-[ ![](social-framework-images/facebook01.png "Facebook アカウントの設定")](social-framework-images/facebook01.png)
+[![](social-framework-images/facebook01.png "Facebook アカウントの設定")](social-framework-images/facebook01.png#lightbox)
 
 構成されると、ソーシャル Framework を使用するデバイス上の任意のアプリケーションは Facebook に接続するこのアカウントを使用します。
 
@@ -368,7 +368,7 @@ namespace SocialFrameworkDemo
 
 Facebook で使用する場合、`SLComposeViewController`を示す、Twitter 例とほぼ同じ検索をビューを表示**Facebook**ここでは、タイトルとして。
 
-[ ![](social-framework-images/facebook02.png "SLComposeViewController 表示")](social-framework-images/facebook02.png)
+[![](social-framework-images/facebook02.png "SLComposeViewController 表示")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>Facebook Graph API の呼び出し
 

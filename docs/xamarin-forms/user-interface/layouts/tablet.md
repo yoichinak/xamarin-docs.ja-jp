@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 053696ebf37e73e3b121e2aa52b80b7ea1b8ed64
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f870cda73625197fb15bf19be1cdabbd675124d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>タブレットおよびデスクトップ アプリのレイアウト
 
@@ -41,7 +41,7 @@ Xamarin.Forms テンプレート iPad サポートを構成することによっ
 IOS 9 の前に、すべてのアプリがデバイスで、全画面表示をしたが、一部 Ipad を実行できるようになりました[画面マルチタスクを分割](~/ios/platform/multitasking.md)です。
 つまり、アプリが画面では、50% の幅 画面で、または全画面の片側スリム列だけをかかる場合があります。
 
-[ ![](tablet-images/ipad-sml.png "iPad 分割画面例")](tablet-images/ipad.png "iPad 分割画面の例")
+[![](tablet-images/ipad-sml.png "iPad 分割画面例")](tablet-images/ipad.png#lightbox "iPad 分割画面の例")
 
 分割画面機能により、幅、または限り 1366 ピクセルをわずか 320 ピクセルでうまく機能するアプリを設計する必要があります。
 
@@ -63,7 +63,7 @@ Android のエコシステムでは、さまざまな大規模なタブレット
 
 Windows タブレットやデスクトップで実行されているアプリ サイズを変更できる任意のディメンションをさらに実行されている全画面表示にします。
 
-[ ![](tablet-images/splitscreen-sml.png "Windows は、画面の例を分割")](tablet-images/splitscreen.png "Windows 分割画面の例")
+[![](tablet-images/splitscreen-sml.png "Windows は、画面の例を分割")](tablet-images/splitscreen.png#lightbox "Windows 分割画面の例")
 
 
 <a name="optimize" />

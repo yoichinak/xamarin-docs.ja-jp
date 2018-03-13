@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 722bedd039a53d1244972ac9f0b98d87cc5d386a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: eb4cf0285585351db5c45dc34a382236e6805c99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
@@ -149,7 +149,7 @@ public class MainPageCS : ContentPage
 1. 追加、`ExportRenderer`属性をカスタム レンダラー クラス Xamarin.Forms のカスタム コントロールを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
 
 > [!NOTE]
-> **注**: は各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、セルの基本クラスの既定のレンダラーが使用されます。
+> 各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能であります。 カスタム レンダラーが登録されていない場合は、セルの基本クラスの既定のレンダラーが使用されます。
 
 次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
 
@@ -461,7 +461,7 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
   base.OnElementPropertyChanged (sender, e);
 
   if (e.PropertyName == NativeListView.ItemsProperty.PropertyName) {
-    Control.Adapter = new NativeAndroidListViewAdapter (Forms.Context as Android.App.Activity, Element as NativeListView);
+    Control.Adapter = new NativeAndroidListViewAdapter (_context as Android.App.Activity, Element as NativeListView);
   }
 }
 ```

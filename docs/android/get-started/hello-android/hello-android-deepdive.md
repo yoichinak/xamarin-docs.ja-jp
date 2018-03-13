@@ -3,16 +3,16 @@ title: "Hello, Android: 詳細説明"
 description: "このガイドは 2 つに分かれています。最初に、Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: de6037b9cfeb66ee1c26c12c2e81913a4a2f1e79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9e554da80218d2e89ff79c6e89886d707b1ed95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: 詳細説明
 
@@ -83,13 +83,13 @@ Visual Studio for Mac は、コードを_ソリューション_と_プロジェ�
 
 次のスクリーン ショットは、ソリューションの内容を一覧表示します。 これは、ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含むソリューション エクスプローラーです。
 
-[![ソリューション エクスプローラー](hello-android-deepdive-images/vs/02-solution-structure-sml.png )](hello-android-deepdive-images/vs/02-solution-structure.png)
+[![ソリューション エクスプローラー](hello-android-deepdive-images/vs/02-solution-structure-sml.png)](hello-android-deepdive-images/vs/02-solution-structure.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 次のスクリーン ショットは、ソリューションの内容を一覧表示します。 これは、ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含む Solution Pad です。
 
-[![Solution Pad](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png)
+[![Solution Pad](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
 
 -----
 
@@ -135,11 +135,11 @@ Android のこの固有の機能は、複雑なアプリケーションの設計
 
 **Phoneword** アプリケーションをエミュレーターまたはデバイスで最初に開いたときに、オペレーティング システムで最初の *Activity* が作成されます。 Activity は、1 つのアプリケーションの画面に対応する特殊な Android クラスであり、ユーザー インターフェイスの描画と稼働を担当します。 Android は、アプリケーションの最初の Activity を作成するときに、アプリケーション全体を読み込みます。
 
-[![Activity の読み込み](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png)
+[![Activity の読み込み](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
 
 Android アプリケーションは直線的に進行しないため (いくつかのポイントからアプリケーションを起動できます)、Android には、アプリケーションを構成するクラスとファイルを追跡するユニークな方法があります。 **Phoneword** の例では、アプリケーションを構成するすべてのパーツが、**Android マニフェスト**と呼ばれる特別な XML ファイルに登録されます。 **Android マニフェスト**の役割は、アプリケーションのコンテンツ、プロパティ、およびアクセス許可を追跡し、Android オペレーティング システムにそれらを開示することです。 下の図に示すように、**Phoneword** アプリケーションは、1 つの Activity (画面) と、Android マニフェスト ファイルによって結合されるリソースとヘルパー ファイルのコレクションとして考えることができます。
 
-[![リソース ヘルパー](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png)
+[![リソース ヘルパー](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
 
 次のいくつかのセクションでは、**Phoneword** アプリケーションのさまざまなパーツ間の関係について詳しく説明します。これにより、上記の図の理解を深めることができます。 最初に、ユーザー インターフェイスについて説明し、Android デザイナーとレイアウト ファイルについて説明します。
 
@@ -150,11 +150,11 @@ Android アプリケーションは直線的に進行しないため (いくつ�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png)
+[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Android Designer](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png)
+[![Android Designer](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
 
 -----
 
@@ -162,11 +162,11 @@ Android アプリケーションは直線的に進行しないため (いくつ�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![TranslateButton ID の設定](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton ID の設定")](hello-android-deepdive-images/vs/04-translatebutton.png)
+[![TranslateButton ID の設定](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton ID の設定")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![TranslateButton ID の設定](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png)
+[![TranslateButton ID の設定](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png#lightbox)
 
 -----
 
@@ -179,11 +179,11 @@ Android アプリケーションは直線的に進行しないため (いくつ�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Designer のソース ビュー](hello-android-deepdive-images/vs/05-source-view-sml.png "Designer のソース ビュー")](hello-android-deepdive-images/vs/05-source-view.png)
+[![Designer のソース ビュー](hello-android-deepdive-images/vs/05-source-view-sml.png "Designer のソース ビュー")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Designer のソース ビュー](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png)
+[![Designer のソース ビュー](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
 
 -----
 
@@ -223,7 +223,7 @@ public class MainActivity : Activity
 
 Android では、アクティビティは、ユーザーとの対話に応じて、ライフ サイクルのさまざまな段階を通過します。 アクティビティの作成、開始、一時停止、再開、破棄などを行うことができます。 `Activity` クラスには、画面のライフサイクルの特定の時点でシステムが呼び出すメソッドが含まれています。 次の図は、アクティビティの一般的な有効期間だけでなく、対応するライフサイクル メソッドの一部を示しています。
 
-[![アクティビティのライフサイクル](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png)
+[![アクティビティのライフサイクル](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
 
 `Activity` ライフサイクル メソッドをオーバーライドすることで、アクティビティを読み込む方法、ユーザーに反応する方法、さらにデバイスの画面に表示されなくなった後の動作まで制御できます。 たとえば、上の図でライフサイクル メソッドをオーバーライドして、いくつかの重要なタスクを実行することができます。
 
@@ -320,21 +320,20 @@ Android デバイスを使用してアプリケーションをテストできる
 
 デバイスを構成した後で、デバイスをプラグインし、**[開始 (再生)]** を押してから、**[デバイスの選択]** ダイアログからデバイスを選択し、**[OK]** を押してデバイスを展開できます。
 
-[![デバッグ デバイスの選択](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png)
+[![デバッグ デバイスの選択](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
 -----
 
 これにより、デバイス上のアプリケーションを起動します。
 
-[![Phoneword の入力](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png)
+[![Phoneword の入力](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
 
-<a name="densities" />
 
 ### <a name="set-icons-for-different-screen-densities"></a>さまざまな画面密度のアイコンを設定する
 
 Android デバイスにはさまざまな画面サイズと解像度があり、すべての画像がすべての画面に適切に表示されるとは限りません。 たとえば、高密度の Nexus 5 上の低密度アイコンのスクリーン ショットを次に示します。 周囲のアイコンと比較してどれだけぼやけているか見てください。
 
-[![ぼやけたアイコン](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png)
+[![ぼやけたアイコン](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png#lightbox)
 
 これに対応するには、さまざまな種類の解像度のアイコンを **Resources** フォルダーに追加することをお勧めします。 Android では、異なる密度の起動アイコンを処理するためのさまざまなバージョンの **mipmap** フォルダーが用意されています。これには、中密度の画面用の *mdpi*、高密度用の *hdpi*、非常に高密度用の *xhdpi*、*xxhdpi*、*xxxhdpi* が含まれます。 さまざまなサイズのアイコンが、適切な **mipmap-** フォルダーに格納されます。
 
@@ -344,13 +343,13 @@ Android デバイスにはさまざまな画面サイズと解像度があり、
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![mipmap フォルダー](hello-android-deepdive-images/xs/07-mipmap-folders-sml.png)](hello-android-deepdive-images/xs/07-mipmap-folders.png)
+[![mipmap フォルダー](hello-android-deepdive-images/xs/07-mipmap-folders-sml.png)](hello-android-deepdive-images/xs/07-mipmap-folders.png#lightbox)
 
 -----
 
 Android では、適切な密度のアイコンを取得します。
 
-[![適切な密度のアイコン](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png)
+[![適切な密度のアイコン](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png#lightbox)
 
 ### <a name="generate-custom-icons"></a>カスタム アイコンを生成する
 
@@ -393,15 +392,15 @@ _Google Play Services_ は、アドオン ライブラリのセットであり�
 
 1 つまたは複数の Google Play Service ライブラリを追加するには、プロジェクト ツリーで**パッケージ** ノードを右クリックし、**[Google Play Services の追加...]** をクリックします。
 
-[![Google Play Service を追加する](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png)
+[![Google Play Service を追加する](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
 **[Google Play Services の追加]** ダイアログが表示されているときに、プロジェクトに追加するパッケージ (nugets) を選択します。
 
-[![パッケージの選択](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png)
+[![パッケージの選択](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
 サービスを選択して **[パッケージの追加]** をクリックすると、Visual Studio for Mac によって、選択したパッケージ、およびそのために必要な依存 Google Play 開発者サービス パッケージがダウンロードおよびインストールされます。 場合によっては、**[ライセンスの同意]** ダイアログが表示され、パッケージをインストールする前に **[同意]** をクリックする必要があります。
 
-[![ライセンスの同意](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png)
+[![ライセンスの同意](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
 -----
 

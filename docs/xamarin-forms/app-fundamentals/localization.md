@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ad9129e06f43eea69518c4d876edc7cfd462f4e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -71,7 +71,7 @@ Xamarin.Forms PCL アプリケーションのグローバル化の最初の手�
 
 などのわかりやすい名前を選択**AppResources**とキーを押します**OK**です。
 
-[ ![リソース ファイルを追加](localization-images/resx-new-file-sml.png "新しいファイル ダイアログ ボックス")](localization-images/resx-new-file.png "新しいファイル ダイアログ ボックス")
+[![リソース ファイルを追加](localization-images/resx-new-file-sml.png "新しいファイル ダイアログ ボックス")](localization-images/resx-new-file.png#lightbox "新しいファイル ダイアログ ボックス")
 
 2 つのファイルは、プロジェクトに追加されます。
 
@@ -88,32 +88,32 @@ Xamarin.Forms PCL アプリケーションのグローバル化の最初の手�
 
 選択、 **AppResources.resx**ファイルし、表示、**プロパティ**このビルド ツールは、場所を表示するパッドを構成します。 次のスクリーン ショット、**カスタム ツール: ResXFileCodeGenerator**です。
 
-[[ide name="xs]]
 
-[ ![](localization-images/xs-resx-internal-sml.png "AppResources.Resx のプロパティの埋め込み")](localization-images/xs-resx-internal.png)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[/ide]]
+[![](localization-images/vs-resx-internal-sml.png "AppResources.Resx のプロパティ ウィンドウ")](localization-images/vs-resx-internal.png#lightbox)
 
-[[ide name="vs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](localization-images/vs-resx-internal-sml.png "AppResources.Resx のプロパティ ウィンドウ")](localization-images/vs-resx-internal.png)
+[![](localization-images/xs-resx-internal-sml.png "AppResources.Resx のプロパティの埋め込み")](localization-images/xs-resx-internal.png#lightbox)
 
-[[/ide]]
+-----
 
 厳密に型指定された文字列プロパティ`public`、構成を手動で変更する必要があります**カスタム ツール: PublicResXFileCodeGenerator**次のスクリーン ショットに示すように。
 
 
-[[ide name="xs]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](localization-images/xs-resx-public-sml.png "AppResources.Resx のプロパティの埋め込み")](localization-images/xs-resx-public.png)
+[![](localization-images/vs-resx-public-sml.png "AppResources.Resx のプロパティ ウィンドウ")](localization-images/vs-resx-public.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[[ide name="vs]]
+[![](localization-images/xs-resx-internal-sml.png "AppResources.Resx のプロパティの埋め込み")](localization-images/xs-resx-internal.png#lightbox)
 
-[ ![](localization-images/vs-resx-public-sml.png "AppResources.Resx のプロパティ ウィンドウ")](localization-images/vs-resx-public.png)
 
-[[/ide]]
+[![](localization-images/xs-resx-public-sml.png "AppResources.Resx のプロパティの埋め込み")](localization-images/xs-resx-public.png#lightbox)
+
+-----
 
 この変更は省略可能であり、のみ (たとえば、配置した場合、RESX ファイルを別のアセンブリをコードに) 異なるアセンブリ全体でローカライズされた文字列を参照する必要があるかどうかに必要です。 このトピックのサンプルは、文字列のまま`internal`が使用されている同じ Xamarin.Forms PCL アセンブリで定義されているためです。
 
@@ -605,13 +605,13 @@ Windows Phone 8.0 のプロジェクトは、ローカライズされたテキ�
 
 Windows Phone プロジェクトを右クリックし、選択**プロパティ**です。 **アプリケーション**ティックのタブ、**サポートされているカルチャ**アプリケーションがサポートします。
 
-[ ![](localization-images/winphone-projectproperties-sml.png "プロジェクトのプロパティ - サポートされているカルチャ")](localization-images/winphone-projectproperties.png "プロジェクト プロパティでサポートされているカルチャ")
+[![](localization-images/winphone-projectproperties-sml.png "プロジェクトのプロパティ - サポートされているカルチャ")](localization-images/winphone-projectproperties.png#lightbox "プロジェクト プロパティでサポートされているカルチャ")
 
 ##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
 
 Windows Phone プロジェクトの [プロパティ] ノードを展開し、ダブルクリック、 **WMAppManifest.xml**ファイル。 をクリックして、**パッケージング**タブし、目盛りをアプリケーションでサポートされているすべての言語です。
 
-[ ![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - サポートされる言語")](localization-images/winphone-wmappmanifest.png "WMAppManifest.xml - サポートされる言語")
+[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - サポートされる言語")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml - サポートされる言語")
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 

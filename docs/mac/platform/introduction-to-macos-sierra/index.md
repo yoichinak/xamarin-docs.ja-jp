@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d81776dcb48d33927ffde4087ceb3f408b38d16f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS Sierra の概要
 
@@ -52,7 +52,7 @@ macOS Sierra には、iOS や macOS Safari ベースの web サイトに直接 A
 
 Apple の Safari web ブラウザー、ページのワード プロセッサ番号スプレッド シートを使用してフローティング パネルなどの従来の UI 要素を削除する、統一された、状況依存のユーザー インターフェイスを提供する多数の新しいテクノロジおよび複数開くなど最新 macOS アプリwindows です。
 
-[ ![Mac のタブ付きウィンドウの例](images/content08.png)](images/content08.png)
+[![Mac のタブ付きウィンドウの例](images/content08.png)](images/content08.png#lightbox)
 
 当社[構築最新 macOS アプリ](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md)ガイドには、いくつかのヒント、機能と手法、開発者が Xamarin.Mac で最新 macOS アプリのビルドに使用できますがについて説明します。
 
@@ -152,5 +152,5 @@ Apple を参照してください[OS X v10.12 API の Diff](https://developer.ap
 
 ## <a name="related-links"></a>関連リンク
 
-- [Mac のサンプル](https://developer.xamarin.com/samples/mac/)
+- [Mac サンプル](https://developer.xamarin.com/samples/mac/)
 - [OS X 10.12 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

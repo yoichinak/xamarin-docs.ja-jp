@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7bab512ef11f8e0f553a00f0240d82f860fe2676
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 461430ba27b5d6008338019e5feaebed7b09d4cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="margin-and-padding"></a>マージンと埋め込み
 
@@ -27,7 +27,7 @@ _マージンと埋め込みのプロパティは、要素がユーザー イン
 
 次の図は、2 つの概念を示しています。
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "マージンと埋め込み概念")](margin-and-padding-images/margins-and-padding.png "マージンと埋め込みの概念")
+[![](margin-and-padding-images/margins-and-padding-sml.png "マージンと埋め込み概念")](margin-and-padding-images/margins-and-padding.png#lightbox "マージンと埋め込みの概念")
 
 なお[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)値は加法です。 したがって、2 つの隣接する要素は、20 ピクセルの余白を指定する、要素間の距離は 40 ピクセルになります。 さらに、余白とスペースは加算的で両方が適用されると、要素とそのコンテンツ間の距離は、マージンと埋め込みとなることです。
 
@@ -63,7 +63,7 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> **注**:`Thickness`値は、負の値が通常にクリップまたは overdraws コンテンツ。
+> `Thickness` 値は、通常クリップまたはコンテンツを overdraws 負の値を指定できます。
 
 ## <a name="summary"></a>まとめ
 

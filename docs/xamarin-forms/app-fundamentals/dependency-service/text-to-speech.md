@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: c5bd753aaa3a9e807a03a9fb05b233cfa39d0dc3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6ac9ca7bae517602c33729134eb0bd48359afbc7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-text-to-speech"></a>音声合成の実装
 
@@ -44,7 +44,7 @@ public interface ITextToSpeech
 共有コードでは、このインターフェイスに対するコーディングすると、各プラットフォームでの音声 Api にアクセスする Xamarin.Forms アプリが許可されます。
 
 > [!NOTE]
-> **注**: インターフェイスを実装するクラスを使用するパラメーターなしのコンス トラクターを持つ必要があります、`DependencyService`です。
+> インターフェイスを実装するクラスを使用するパラメーターなしのコンス トラクターを持つ必要があります、`DependencyService`です。
 
 <a name="iOS_Implementation" />
 
@@ -84,15 +84,12 @@ namespace DependencyServiceSample.iOS
 
 ## <a name="android-implementation"></a>Android の実装
 
-Android のコードは、iOS のバージョンよりも複雑: 実装するクラスを Android 固有から継承する必要があります`Java.Lang.Object`を実装して、`IOnInitListener`インターフェイスもします。
-
-Xamarin.Forms も用意されています、`Forms.Context`現在 Android のコンテキストのインスタンスであるオブジェクト。 多くの Android SDK メソッド必要性に応じて、中に呼び出す機能良い例`StartActivity()`です。
+Android のコードは、iOS のバージョンよりも複雑: 実装するクラスを Android 固有から継承する必要があります`Java.Lang.Object`を実装して、`IOnInitListener`インターフェイスもします。 現在のコンテキストによって公開されている Android へのアクセスも必要です、`MainActivity.Instance`プロパティです。
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
 namespace DependencyServiceSample.Droid
 {
-
     public class TextToSpeechImplementation : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         TextToSpeech speaker;
@@ -103,7 +100,7 @@ namespace DependencyServiceSample.Droid
             toSpeak = text;
             if (speaker == null)
             {
-                speaker = new TextToSpeech(Forms.Context, this);
+                speaker = new TextToSpeech(MainActivity.Instance, this);
             }
             else
             {

@@ -6,12 +6,12 @@ ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b1ddcca25fd83a806e8383a5717462b518b46d0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 89679f7d825422ab34dd77b31a7a3fde60f36e99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView パーツおよび機能
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 02/27/2018
 
 `RecyclerView` item ビューは、データ ソース内のすべての項目に割り当てられません。 代わりに、画面に収まる項目ビューの数のみを割り当てるし、ユーザーがスクロールそれらの項目のレイアウトを再利用します。 ビューは、まず見えないスクロールするときに、次の図に示したリサイクル プロセスをたどります。
 
-[ ![ビューのリサイクルの 6 つの手順を示すダイアグラム](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png)
+[![ビューのリサイクルの 6 つの手順を示すダイアグラム](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
 1.  ビューは見えないまでスクロールし、表示されなくなりますがと、になります、*ビューを破棄*です。
 
@@ -75,7 +75,6 @@ ms.lasthandoff: 02/27/2018
 Item ビューを再利用、に加えて`RecyclerView`別の効率性の最適化を使用して、また: 保持者を表示します。 A*ビュー所有者*キャッシュ参照の表示を単純なクラスです。 アダプターが、項目のレイアウト ファイルを拡張するたびにも作成、対応する表示者です。 ビューの所有者を使用して`FindViewById`を高めの項目のレイアウト ファイル内のビューへの参照を取得します。 これらの参照は、レイアウトが新しいデータを表示するリサイクルされるたびに、ビューに新しいデータの読み込みに使用されます。
  
 
-<a name="layoutmanager" />
 
 ### <a name="the-layout-manager"></a>レイアウト マネージャー
 
@@ -96,7 +95,6 @@ Item ビューを再利用、に加えて`RecyclerView`別の効率性の最適�
 
 レイアウト マネージャーの詳細については、次を参照してください。、 [RecyclerView.LayoutManager クラス参照](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)です。
 
-<a name="viewholder" />
 
 ### <a name="the-view-holder"></a>ビューの所有者
 
@@ -109,7 +107,6 @@ Item ビューを再利用、に加えて`RecyclerView`別の効率性の最適�
 詳細な例、`ViewHolder`で実装が表示される[A の基本的な RecyclerView 例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)です。
 詳細については`RecyclerView.ViewHolder`を参照してください、 [RecyclerView.ViewHolder クラス参照](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)です。
 
-<a name="adapter" />
 
 ### <a name="the-adapter"></a>アダプター
 
@@ -118,7 +115,7 @@ Item ビューを再利用、に加えて`RecyclerView`別の効率性の最適�
 
 次の図は、アダプターが、ビューの所有者によってデータ ソース内のコンテンツを内の各の行項目内の個々 のビューにマップする方法を示しています、 `RecyclerView`:
 
-[ ![アダプター ViewHolders にデータ ソースを接続する方法を示す図](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png)
+[![アダプター ViewHolders にデータ ソースを接続する方法を示す図](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
 アダプターが読み込む各`RecyclerView`特定の行アイテムのデータを含む行です。 行の位置の*P*、アダプターが関連付けられている位置にあるデータを検索するなど、 *P*位置にある行にこのデータ項目のデータ ソースおよびコピー内で*P*で、`RecyclerView`コレクション。
 上記の図でなど、アダプターを使用して、ビューの所有者の参照を検索、`ImageView`と`TextView`を繰り返し呼び出すしないように、その位置にある`FindViewById`ユーザーとしてこれらのビューのコレクションをスクロールし、ビューを再利用します。
@@ -134,7 +131,6 @@ Item ビューを再利用、に加えて`RecyclerView`別の効率性の最適�
 レイアウト マネージャー内のアイテムを配置には、メソッドが呼び出される、`RecyclerView`です。 
 
 
-<a name="datachanges" />
 
 ### <a name="notifying-recyclerview-of-data-changes"></a>RecyclerView データの変更を通知します。
 

@@ -3,16 +3,16 @@ title: "カスタム コントロールの作成"
 description: "この記事では、カスタム コントロールを作成し、インターフェイスのビルダーに処理する方法について説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f3d6301bc2c0237a268669fff437801bfb2657d1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-custom-controls"></a>カスタム コントロールの作成
 
@@ -22,7 +22,7 @@ _この記事では、カスタム コントロールを作成し、インター
 
 MacOS には、さまざまな組み込みのユーザー コントロールが用意されています、機能が指定されていないボックスを提供するか (ゲーム インターフェイス) などのカスタム UI テーマを一致するようにカスタム コントロールを作成する必要のある時刻である可能性があります。
 
-[ ![](custom-controls-images/intro01.png "カスタムの UI コントロールの例")](custom-controls-images/intro01.png)
+[![](custom-controls-images/intro01.png "カスタムの UI コントロールの例")](custom-controls-images/intro01.png#lightbox)
 
 この記事で Xamarin.Mac アプリケーションで再利用可能なカスタム ユーザー インターフェイス コントロールの作成の基本について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
@@ -50,7 +50,7 @@ MacOS には、さまざまな組み込みのユーザー コントロールが�
 
 Mac 用 Visual Studio でのカスタム ユーザー インターフェイス コントロールを作成 (または新規作成) する Xamarin.Mac プロジェクトを開きます。 新しいクラスを追加し、それを呼び出す`NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom01.png "新しいクラスの追加")](custom-controls-images/custom01.png)
+[![](custom-controls-images/custom01.png "新しいクラスの追加")](custom-controls-images/custom01.png#lightbox)
 
 次に、編集、`NSFlipSwitch.cs`クラスし、次のようになります。
 
@@ -336,19 +336,19 @@ if (this.Action !=null)
 
 インターフェイスのビルダーを使用してコントロールを追加するには、まず Xamarin.Mac プロジェクトのクリーン ビルドを実行し、ダブルクリック、`Main.storyboard`編集用のインターフェイスのビルダーで開くファイル。
 
-[ ![](custom-controls-images/custom02.png "Xcode でストーリー ボードの編集")](custom-controls-images/custom02.png)
+[![](custom-controls-images/custom02.png "Xcode でストーリー ボードの編集")](custom-controls-images/custom02.png#lightbox)
 
 次に、ドラッグ、`Custom View`ユーザー インターフェイスの設計に。
 
-[ ![](custom-controls-images/custom03.png "ライブラリから、カスタム ビューを選択します。")](custom-controls-images/custom03.png)
+[![](custom-controls-images/custom03.png "ライブラリから、カスタム ビューを選択します。")](custom-controls-images/custom03.png#lightbox)
 
 カスタム ビューを選択したままに切り替え、 **Identity インスペクター**ビューの変更と**クラス**に`NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom04.png "設定すると、ビューのクラス")](custom-controls-images/custom04.png)
+[![](custom-controls-images/custom04.png "設定すると、ビューのクラス")](custom-controls-images/custom04.png#lightbox)
 
 切り替えて、**アシスタント エディター**を作成し、**コンセント**カスタム コントロールの (でバインドすることを確認、`ViewControler.h`ファイルおよび not、`.m`ファイル)。
 
-[ ![](custom-controls-images/custom05.png "新しいコンセントを構成します。")](custom-controls-images/custom05.png)
+[![](custom-controls-images/custom05.png "新しいコンセントを構成します。")](custom-controls-images/custom05.png#lightbox)
 
 Mac 用の Visual Studio に戻り、変更を保存し、変更を同期できるようにします。編集、`ViewController.cs`ファイルし、`ViewDidLoad`次のようなメソッドの検索。
 
@@ -369,7 +369,7 @@ public override void ViewDidLoad ()
 
 必要に応じて、インターフェイスのビルダーに戻りを定義することが、**アクション**コントロールに。
 
-[ ![](custom-controls-images/custom06.png "新しいアクションを構成します。")](custom-controls-images/custom06.png)
+[![](custom-controls-images/custom06.png "新しいアクションを構成します。")](custom-controls-images/custom06.png#lightbox)
 
 再度、編集、`ViewController.cs`ファイルし、次のメソッドを追加します。
 
@@ -394,5 +394,5 @@ partial void OptionTwoFlipped (Foundation.NSObject sender) {
 - [MacCustomControl (サンプル)](https://developer.xamarin.com/samples/mac/MacCustomControl/)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)
-- [OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [マウス イベントの処理](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/HandlingMouseEvents/HandlingMouseEvents.html)

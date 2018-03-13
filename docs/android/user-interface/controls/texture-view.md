@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/30/2017
-ms.openlocfilehash: 7048962a93f5bd99f4a27062ecc6cc2d5b2d3398
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d2d9c455f2ddd652a76177527586673901edd012
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="textureview"></a>TextureView
 
 `TextureView`クラスは、ビデオまたは表示する OpenGL のコンテンツ ストリームを有効にするハードウェア アクセラレータの 2D レンダリングを使用するビュー。 たとえば、次のスクリーン ショットを示しています、`TextureView`デバイスのカメラからライブ フィードを表示します。
 
-[![デバイスのカメラからライブのイメージの例のスクリーン ショット](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png)
+[![デバイスのカメラからライブのイメージの例のスクリーン ショット](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
 
 異なり、 `SurfaceView` OpenGL またはビデオ コンテンツを表示する使用することもできる、クラス、TextureView は別のウィンドウに表示されません。
 したがって、`TextureView`を他のビューのような表示変換をサポートすることができます。 たとえば、回転、`TextureView`を設定するだけで実現できますその`Rotation`プロパティを設定して、透過性、`Alpha`プロパティ、およびなです。
@@ -67,7 +67,7 @@ public class TextureViewActivity : Activity,
 
 上記のコードを作成、`TextureView`アクティビティのインスタンス`OnCreate`メソッドとしてアクティビティを設定し、`TextureView`の`SurfaceTextureListener`します。 ある、 `SurfaceTextureListener`、アクティビティの実装、`TextureView.ISurfaceTextureListener`インターフェイスです。 システムが呼び出す、`OnSurfaceTextAvailable`メソッドと、`SurfaceTexture`が使用できる状態です。 このメソッドで、`SurfaceTexture`に渡され、カメラのプレビューのテクスチャに設定するがします。 自由に設定するなど、通常のビューに基づく操作を実行し、`Rotation`と`Alpha`上記の例のように、します。 デバイスで実行されている、結果として得られるアプリケーションは、次に示します。
 
-[![イメージを表示する、デバイスで実行されているアプリの例](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png)
+[![イメージを表示する、デバイスで実行されているアプリの例](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
 使用する、 `TextureView`、ハードウェア アクセラレータ必要がある有効な既定では API レベル 14 ことができます。 この例は、カメラを使用するため、両方、`android.permission.CAMERA`権限および`android.hardware.camera`機能を設定する必要があります、 **AndroidManifest.xml**です。
 

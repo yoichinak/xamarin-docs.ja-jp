@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 67bd1caf26c441e2a89def41ce3189b0dd67d7b1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc41c70495e40235d7acffa56c1255bfd074ca0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-manual-real-world-example"></a>(手動) の実際の例の詳細
 
@@ -130,7 +130,7 @@ Done.
 
 さらに、指定した`-c -Ibuild/headers`です。 まず、`-c`引数をコマンドライン引数を解釈を停止し、後続の引数を渡す目標ペンを使わずに対し指定_clang コンパイラに直接_です。 したがって、`-Ibuild/Headers`は下にある clang を検索するよう指示する clang コンパイラ引数が含まれます`build/Headers`、POP ヘッダーが住んでいる場所があります。 この引数なし clang はわからないファイルを配置する場所を`POP.h`は`#import`しています。 _ほぼすべて「の問題」目標ペンを使わずを使用して別に clang に渡す把握_です。
 
-###<a name="completing-the-binding"></a>バインディングの完了
+### <a name="completing-the-binding"></a>バインディングの完了
 
 目標ペンを使わずが生成されるようになりました`Binding/ApiDefinitions.cs`と`Binding/StructsAndEnums.cs`ファイル。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: eec352264d918730e68a925f2a1e3796d9125c88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4be12c5530f59dc027672d8db72b966711a531d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-distribution-overview"></a>アプリの配布の概要
 
@@ -21,7 +21,7 @@ _ここでは、Xamarin.iOS アプリケーションで使用できる配布手�
 Xamarin.iOS アプリを開発したら、ソフトウェア開発ライフサイクルの次の手順は、下図で強調表示されているセクションのように、ユーザーにアプリを配布することです。
 
 
-[![](images/publishingdiagram.png "iOS アプリを開発したら、次の手順は下図で強調表示されているセクションのように、ユーザーにアプリを配布することです")](images/publishingdiagram.png)
+[![](images/publishingdiagram.png "iOS アプリを開発したら、次の手順は下図で強調表示されているセクションのように、ユーザーにアプリを配布することです")](images/publishingdiagram.png#lightbox)
 
 
 Apple は、次のように Xamarin.iOS でサポートされる iOS アプリケーションを配布する方法を提供しています。
@@ -31,6 +31,8 @@ Apple は、次のように Xamarin.iOS でサポートされる iOS アプリ�
 2. [**アドホック**](#Ad_Hoc_Distribution)
 
 これらいずれのシナリオでも、適切な*プロビジョニング プロファイル*を使用してアプリケーションをプロビジョニングする必要があります。 プロビジョニング プロファイルは、コード署名情報だけでなく、アプリケーションの ID と使用する配布メカニズムも含むファイルです。 App Store 以外の配布には、アプリを展開できるデバイスに関する情報も含まれています。
+
+<a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>App Store 配布
 
@@ -42,12 +44,15 @@ iOS デバイスのユーザーに iOS アプリケーションを配布する�
 
 詳細については、「[App Store Distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)」(App Store の配布) ガイドを参照してください。
 
+<a name="In-House_Distribution"/>
+
 ## <a name="in-house-distribution"></a>社内配布
 
 社内配布は、*エンタープライズ配布*とも呼ばれます。社内配布の場合、**Apple Developer Enterprise Program** のメンバーは、同じ組織内の他のメンバーにアプリを配布できます。 社内配布には、App Store のレビューを必要としないという利点があります。また、アプリケーションをインストールできるデバイス数に制限がありません。 ただし、**Apple Developer Enterprise Program** メンバーは iTunes Connect に**アクセスできない**ため、ライセンシーがアプリを配布する必要があります。
 
 社内でアプリケーションをセットアップし、配布する方法については、「[In-House Distribution guide](~/ios/deploy-test/app-distribution/in-house-distribution.md)」(社内配布ガイド) を参照してください。
 
+<a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>アドホック配布
 

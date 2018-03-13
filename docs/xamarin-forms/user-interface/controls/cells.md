@@ -3,94 +3,63 @@ title: "Xamarin.Forms セル"
 description: "Xamarin.Forms のセルは、Listview および TableViews に追加できます。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
+ms.assetid: 77DA0C89-35D6-4C09-A072-3ADE53FD56CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 509ecc509754bba544115c140e619f634bd64eae
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0f8886546004702adbdbca7d991c67d5700e453e
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms セル
 
 _Xamarin.Forms のセルは、Listview および TableViews に追加できます。_
 
-<style>.tableimg { max-width: none !important;}</style>
+A*セル*テーブル内の項目に使用される特殊な要素があり、一覧内の各項目の表示方法について説明します。 [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/)クラスから派生[ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)、元の[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)も派生します。 セル自体ではなく視覚的要素視覚的要素を作成するためのテンプレートでは代わりにします。 
+
+`Cell` 排他的に使用される[ `ListView` ](views.md#listView)と[ `TableView` ](views.md#tableView)コントロール。 使用して、セルをカスタマイズする方法についてを参照してください、 [ `ListView` ](~/xamarin-forms/user-interface/listview/index.md)と[ `TableView` ](~/xamarin-forms/user-interface/tableview.md)ドキュメント。
 
 ## <a name="cells"></a>セル
 
-セルは、テーブル内の項目に使用される特殊な要素であり、リスト内の各項目を描画する方法について説明します。 派生したセル[ `Element`](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)から VisualElement も派生しています。 セルが視覚的要素ではありません、ただし同様、視覚的要素を作成するためのテンプレートを説明します。 [`Cell`](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) Xamarin.Forms のすべてのセルの基本クラスと機能を提供します。 セルに追加するように設計要素は、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)または[ `TableView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/)コントロール。
+Xamarin.Forms では、次のセルの種類をサポートします。
 
-使用して、セルをカスタマイズする方法についてを参照してください、 [ListView](~/xamarin-forms/user-interface/listview/index.md)と[テーブル](~/xamarin-forms/user-interface/tableview.md)ドキュメント。
+<a name="textCell" />
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-<thead>
-    <th>
-      <strong>型</strong>
-    </th>
-    <th>
-      <strong>説明</strong>
-    </th>
-    <th style="min-width:400px">
-      <strong>スクリーン ショット</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/">EntryCell</a>
-    </td>
-    <td valign="top">
-A <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/">Xamarin.Forms.Cell</a>ラベルと 1 つの行テキスト入力フィールドを使用します。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/EntryDemoPage.cs"><img src="cells-images/EntryCell.png" title="EntryCell 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/">SwitchCell</a>
-    </td>
-    <td valign="top">
-A <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/">Xamarin.Forms.Cell</a>ラベルとオン/オフの切り替えを使用します。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/SwitchCellDemoPage.cs"><img src="cells-images/SwitchCell.png" title="SwitchCell 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/">TextCell</a>
-    </td>
-    <td valign="top">
-A <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/">Xamarin.Forms.Cell</a>プライマリおよびセカンダリのテキスト。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/TextCellDemoPage.cs"><img src="cells-images/TextCell.png" title="TextCell 例" class="tableimg">
-    </a></td>
-  </tr>
-      <tr>
-    <td>
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/">ImageCell</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/">テキスト セル</a>ことも、イメージが含まれています。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ImageCellDemoPage.cs"><img src="cells-images/ImageCell.png" title="ImageCell 例" class="tableimg">
-    </a></td>
-  </tr>
-  </tbody>
-</table>
+### <a name="textcell"></a>TextCell
 
+|     |     |
+| --- | --- |
+| A [ `TextCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell) 1 つまたは 2 つのテキスト文字列が表示されます。 設定、 [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TextCell.Text/)プロパティし、必要に応じて、 [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TextCell.Detail/)プロパティをこれらのテキスト文字列。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell) / [ガイド](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell) | [![TextCell 例](cells-images/TextCell.png "TextCell 例")](cells-images/TextCell-Large.png#lightbox "TextCell 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TextCellDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TextCellDemoPage.xaml) |
+|     |     |
+
+### <a name="imagecell"></a>ImageCell
+
+|     |     |
+| --- | --- |
+| [ `ImageCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell)と同じ情報が表示されます[ `TextCell` ](#textCell)で設定したビットマップが含まれていますが、 [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell) / [ガイド](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell) | [![ImageCell 例](cells-images/ImageCell.png "ImageCell 例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
+|     |     |
+
+### <a name="switchcell"></a>SwitchCell
+
+|     |     |
+| --- | --- |
+| [ `SwitchCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell)で設定されたテキストを含む、 [ `Text`'](https://developer.xamarin.com/api/property/Xamarin.Forms.SwitchCellText/)プロパティおよびとオン/オフの切り替え、ブール値に初期設定[ `On` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SwitchCell.On/)プロパティです。 処理、 [ `OnChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.SwitchCell.OnChanged/)イベント通知を受けるときに、`On`プロパティが変更されました。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell) / [ガイド](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 例](cells-images/SwitchCell.png "SwitchCell 例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+|     |     |
+
+### <a name="entrycell"></a>EntryCell
+
+|     |     |
+| --- | --- |
+| [ `EntryCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell)定義、 [ `Label` ](https://developer.xamarin.com/api/property/Xamarin.Forms.EntryCell.Label/)セルと編集可能なテキストの 1 行を識別するプロパティ、 [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.EntryCell.Text/)プロパティです。 処理、 [ `Completed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.EntryCell.Completed/)ユーザーが入力したテキストを完了したときに通知するイベントです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell) / [ガイド](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell 例](cells-images/EntryCell.png "EntryCell 例")](cells-images/EntryCell-Large.png#lightbox "EntryCell 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
+|     |     |
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Forms の概要](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms ギャラリー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+- [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
-- [Xamarin.Forms API ドキュメント](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)
+- [Xamarin.Forms API ドキュメント](https://developer.xamarin.com/api/root/Xamarin.Forms/)

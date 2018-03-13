@@ -3,16 +3,16 @@ title: "高度なユーザーへの通知"
 description: "この記事では、新しいユーザーへの通知フレームワークについて詳しく説明し、Xamarin.iOS アプリでこれを最大限に活用する方法です。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4e1ff652-28f0-4566-b383-9d12664401a4
+ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6408f3b45f93413fa814e410f07e7b71179b7338
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="advanced-user-notifications"></a>高度なユーザーへの通知
 
@@ -81,7 +81,7 @@ Apple が 3 D Touch、ここでの通知を押すし、カスタム ユーザー
 
 プロセスの次の概要を参照してください。
 
-[ ![](advanced-user-notifications-images/extension02.png "メディアの添付ファイルのプロセスを追加します。")](advanced-user-notifications-images/extension02.png)
+[![](advanced-user-notifications-images/extension02.png "メディアの添付ファイルのプロセスを追加します。")](advanced-user-notifications-images/extension02.png#lightbox)
 
 サービス拡張機能が必要なすべての手段を使用して必要なイメージをダウンロードできますし、(APNs) を使用してデバイスをリモートの通知を配信すると、一度 (など、 `NSURLSession`) および通知と表示の内容を変更できるイメージを受信した後これをユーザーにします。
 
@@ -157,7 +157,7 @@ APNs からの通知を受け取ったときに、イメージのカスタムの
 
 カスタム UI を使用したユーザーの通知がユーザーに表示されたら、次の要素になります。
 
-[ ![](advanced-user-notifications-images/customui01.png "カスタム UI 要素を持つユーザー通知")](advanced-user-notifications-images/customui01.png)
+[![](advanced-user-notifications-images/customui01.png "カスタム UI 要素を持つユーザー通知")](advanced-user-notifications-images/customui01.png#lightbox)
 
 場合は、ユーザーが対話 (通知を記載) カスタム動作、ユーザー インターフェイスは、特定のアクションが呼び出されたときに発生した、新機能とユーザー フィードバックを更新できます。
 
@@ -171,13 +171,13 @@ Xamarin.iOS アプリでは、カスタム ユーザー通知 UI を実装する
 2. ソリューション名を右クリックし、**ソリューション パッド**選択**追加** > **新しいプロジェクトの追加**です。
 3. 選択**iOS** > **拡張機能** > **通知コンテンツの拡張機能** をクリックし、**次**ボタン。 
 
-    [ ![](advanced-user-notifications-images/notify01.png "通知のコンテンツの拡張機能を選択します。")](advanced-user-notifications-images/notify01.png)
+    [![](advanced-user-notifications-images/notify01.png "通知のコンテンツの拡張機能を選択します。")](advanced-user-notifications-images/notify01.png#lightbox)
 4. 入力、**名前**拡張機能とクリック、 **[次へ]**ボタン。 
 
-    [ ![](advanced-user-notifications-images/notify02.png "拡張機能の名前を入力します。")](advanced-user-notifications-images/notify02.png)
+    [![](advanced-user-notifications-images/notify02.png "拡張機能の名前を入力します。")](advanced-user-notifications-images/notify02.png#lightbox)
 5. 調整、**プロジェクト名**や**ソリューション名**要求されて、をクリックして、**作成**ボタン。 
 
-    [ ![](advanced-user-notifications-images/notify03.png "プロジェクトの名前、およびソリューション名を調整します。")](advanced-user-notifications-images/notify03.png)
+    [![](advanced-user-notifications-images/notify03.png "プロジェクトの名前、およびソリューション名を調整します。")](advanced-user-notifications-images/notify03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -185,7 +185,7 @@ Xamarin.iOS アプリでは、カスタム ユーザー通知 UI を実装する
 2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加**です。
 3. 選択**iOS** > **拡張** > **通知コンテンツの拡張機能**: 
 
-    [ ![](advanced-user-notifications-images/notify01w.png "通知のコンテンツの拡張機能を選択します。")](advanced-user-notifications-images/notify01w.png)
+    [![](advanced-user-notifications-images/notify01w.png "通知のコンテンツの拡張機能を選択します。")](advanced-user-notifications-images/notify01w.png#lightbox)
 4. 入力してください、**名**をクリックして、拡張機能の**OK**ボタンをクリックします。
 
 -----
@@ -254,7 +254,7 @@ namespace MonkeyChatNotifyExtension
 3. 展開して、`NSExtension`キー。
 4. 追加、`UNNotificationExtensionCategory`型としてキー**文字列**拡張機能が属するカテゴリの値は、(この例では ' イベント招待)。 
 
-    [ ![](advanced-user-notifications-images/customui02.png "UNNotificationExtensionCategory キーを追加します。")](advanced-user-notifications-images/customui02.png)
+    [![](advanced-user-notifications-images/customui02.png "UNNotificationExtensionCategory キーを追加します。")](advanced-user-notifications-images/customui02.png#lightbox)
 5. 変更内容を保存します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -263,7 +263,7 @@ namespace MonkeyChatNotifyExtension
 3. 展開して、`NSExtension`キー。
 4. 追加、`UNNotificationExtensionCategory`型としてキー**文字列**拡張機能が属するカテゴリの値は、(この例では ' イベント招待)。 
 
-    [ ![](advanced-user-notifications-images/customui02w.png "UNNotificationExtensionCategory キーを追加します。")](advanced-user-notifications-images/customui02w.png)
+    [![](advanced-user-notifications-images/customui02w.png "UNNotificationExtensionCategory キーを追加します。")](advanced-user-notifications-images/customui02w.png#lightbox)
 5. 変更内容を保存します。
 
 -----
@@ -272,11 +272,11 @@ namespace MonkeyChatNotifyExtension
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui03.png "通知のコンテンツの拡張カテゴリ")](advanced-user-notifications-images/customui03.png)
+[![](advanced-user-notifications-images/customui03.png "通知のコンテンツの拡張カテゴリ")](advanced-user-notifications-images/customui03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui03w.png "通知のコンテンツの拡張カテゴリ")](advanced-user-notifications-images/customui03w.png)
+[![](advanced-user-notifications-images/customui03w.png "通知のコンテンツの拡張カテゴリ")](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
@@ -286,11 +286,11 @@ namespace MonkeyChatNotifyExtension
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui04.png "既定の情報を検索します。")](advanced-user-notifications-images/customui04.png)
+[![](advanced-user-notifications-images/customui04.png "既定の情報を検索します。")](advanced-user-notifications-images/customui04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui04w.png "既定の情報を検索します。")](advanced-user-notifications-images/customui04w.png)
+[![](advanced-user-notifications-images/customui04w.png "既定の情報を検索します。")](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
@@ -367,11 +367,11 @@ namespace MonkeyChatNotifyExtension
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui05.png "UNNotificationExtensionInitialContentSizeRatio キー")](advanced-user-notifications-images/customui05.png)
+[![](advanced-user-notifications-images/customui05.png "UNNotificationExtensionInitialContentSizeRatio キー")](advanced-user-notifications-images/customui05.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui05w.png "UNNotificationExtensionInitialContentSizeRatio キー")](advanced-user-notifications-images/customui05w.png)
+[![](advanced-user-notifications-images/customui05w.png "UNNotificationExtensionInitialContentSizeRatio キー")](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 

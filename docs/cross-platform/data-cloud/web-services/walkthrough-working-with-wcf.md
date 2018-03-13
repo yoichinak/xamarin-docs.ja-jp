@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 6aee83cd07a52d667c24c3e70fced2e291ed99c8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>チュートリアル - WCF の使用
 
@@ -158,7 +158,7 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
 
 1. 外部からの要求をリッスンするように IIS が Express の構成を見てみましょう。 IIS Express の構成ファイルを編集することによってこの作業を行うことができます`[solutiondirectory]\.vs\config\applicationhost.config`の次のスクリーン ショットに示すようにします。
 
-    [![](walkthrough-working-with-wcf-images/image05.png "そのため、solutiondirectory.vsconfigapplicationhost.config に IIS Express の構成ファイルを編集してこのスクリーン ショットに示すように")](walkthrough-working-with-wcf-images/image05.png)
+    [![](walkthrough-working-with-wcf-images/image05.png "そのため、solutiondirectory.vsconfigapplicationhost.config に IIS Express の構成ファイルを編集してこのスクリーン ショットに示すように")](walkthrough-working-with-wcf-images/image05.png#lightbox)
 
 
     検索、`site`という名前の要素`HelloWorldWcfHost`です。 次の XML スニペットのように表示する必要があります。
@@ -270,7 +270,7 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
 
     次のスクリーン ショットは、デザイナーで UI を示しています。
 
-    [![](walkthrough-working-with-wcf-images/image09.png "これは、デザイナーで、この UI はのようになりますのスクリーン ショット")](walkthrough-working-with-wcf-images/image09.png)
+    [![](walkthrough-working-with-wcf-images/image09.png "これは、デザイナーで、この UI はのようになりますのスクリーン ショット")](walkthrough-working-with-wcf-images/image09.png#lightbox)
 
 1. **ソリューション エクスプ ローラー**、開かれている`Resources/values/Strings.xml`し、次の XML を追加します。
 
@@ -382,7 +382,7 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
 
 1. アプリケーションを実行することを確認して、WCF サービスが実行されている、2 つのボタンをクリックします。 アプリケーションは、WCF を非同期で呼び出すこと、`Endpoint`フィールドが正しく設定されています。
 
-  [![](walkthrough-working-with-wcf-images/image08.png "30 秒以内は、各 WCF メソッドから応答を受信して、アプリケーションはこのスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image08.png)
+  [![](walkthrough-working-with-wcf-images/image08.png "30 秒以内は、各 WCF メソッドから応答を受信して、アプリケーションはこのスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -428,7 +428,7 @@ WCF サービス プロキシは、Xamarin.iOS のアプリケーションで使
 
     コントロールを追加した後、UI は、次のスクリーン ショットをようになります。
 
-    [![](walkthrough-working-with-wcf-images/image12.png "UI は、コントロールを追加すると、このスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image12.png)
+    [![](walkthrough-working-with-wcf-images/image12.png "UI は、コントロールを追加すると、このスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image12.png#lightbox)
 
 1. **ソリューション エクスプ ローラー**、開かれている`ViewController.cs`し、次のコードを追加します。
 
@@ -515,7 +515,7 @@ WCF サービス プロキシは、Xamarin.iOS のアプリケーションで使
 
 1. アプリケーションを実行することを確認して、WCF サービスが実行されている、2 つのボタンをクリックします。 アプリケーションは、WCF を非同期で呼び出すこと、`Endpoint`フィールドが正しく設定されています。
 
-    [![](walkthrough-working-with-wcf-images/image10.png "30 秒以内は、各 WCF メソッドから応答を受信して、アプリケーションはこのスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image10.png)
+    [![](walkthrough-working-with-wcf-images/image10.png "30 秒以内は、各 WCF メソッドから応答を受信して、アプリケーションはこのスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image10.png#lightbox)
 
 <a name="Summary" />
 

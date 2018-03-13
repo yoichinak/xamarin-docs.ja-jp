@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e46520122b54fabfe27f73370e2ab736a349f7f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>IOS で Backgrounding の概要
 
@@ -27,7 +27,7 @@ iOS では、バック グラウンド処理が非常に制御およびそれを
 
 IOS アプリケーションのライフ サイクルは、アプリケーションの状態とそれらの間を移動するためのメソッドのコレクションです。 アプリケーションは、ユーザーの動作と、アプリケーションの backgrounding 要件に基づいて状態の間で移行します。 移動は次の図で例を示します。
 
- [ ![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "アプリケーションの状態とアプリケーション デリゲート メソッドのダイアグラム")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "アプリケーションの状態とアプリケーション デリゲート メソッドのダイアグラム")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 -  **実行されていない**-アプリケーションがデバイスに起動されていません。
 -  **実行/アクティブ**-アプリケーションが、画面上にありフォア グラウンドでコードが実行されています。
@@ -52,7 +52,7 @@ IOS アプリケーションのライフ サイクルは、アプリケーショ
 
 次の図は、アプリケーションの状態し、ライフ サイクル メソッドが継ぎ合わさ。
 
- [ ![](introduction-to-backgrounding-in-ios-images/image2.png "この図では、アプリケーションの状態し、ライフ サイクル メソッドの連携")](introduction-to-backgrounding-in-ios-images/image2.png)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "この図では、アプリケーションの状態し、ライフ サイクル メソッドの連携")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>IOS で Backgrounding 用のユーザー コントロール
 
@@ -62,7 +62,7 @@ iOS 7 では、ユーザーがアプリケーションの backgrounded 状態よ
 
 アプリの切り替えは、iOS 7 で導入された重要な管理機能です。 ダブルタップによって起動された、**ホーム**ボタンをクリックし、保持されているプロセスのアプリケーションを示します。
 
- [ ![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "アプリのスイッチャーを使用してアプリ間での移動")](introduction-to-backgrounding-in-ios-images/app-switcher-.png)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "アプリのスイッチャーを使用してアプリ間での移動")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 ユーザーはアプリのスイッチャーを使用すると、すべて backgrounded および中断されているアプリケーションのスナップショットをスクロールできます。 アプリケーションの順にタップは、フォア グラウンドに起動します。 そのプロセスを終了して、バック グラウンドからアプリケーションを削除するをスワイプします。 詳しく見てでアプリのスイッチャーが取得、 [iOS アプリケーション ライフ サイクルのデモ](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)次のセクションでします。
 
@@ -77,7 +77,7 @@ iOS 7 は、ユーザーがアプリケーションの backgrounding から除�
 
 ユーザーに移動してこの設定を変更できます<span class="uiitem">設定 > [全般] > 背景アプリの更新</span>と選択したアプリケーションの backgrounding 特権を編集します。 背景アプリの更新は、オフに設定されているアプリケーションが、バック グラウンドの入力時に即座に中断されし、バック グラウンド処理を実行できませんでした。
 
- [ ![](introduction-to-backgrounding-in-ios-images/settings-.png "バック グラウンド アプリの更新の設定")](introduction-to-backgrounding-in-ios-images/settings-.png)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "バック グラウンド アプリの更新の設定")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
 開発者は、バック グラウンド更新アプリケーションの状態を確認できます、 `BackgroundRefreshStatus` API です。 例についてを参照してください、[バック グラウンド更新設定の確認のレシピ](https://developer.xamarin.com/recipes/ios/multitasking/check_background_refresh_setting/)です。
 

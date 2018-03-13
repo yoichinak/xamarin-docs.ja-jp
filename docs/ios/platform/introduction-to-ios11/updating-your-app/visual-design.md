@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2904a7da73f5bf6e8960f65239d1f8dc52ab1aba
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d66d8cd722aa9a7b6fe27db3f6128ee24309a1de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-design-updates"></a>ビジュアル デ ザインの更新プログラム
 
@@ -51,7 +51,7 @@ iOS 11 は、容易になります、ナビゲーション バーに直接検索
 NavigationItem.SearchController = searchController;
 ```
 
-[![検索バーのタイトルが大規模なナビゲーション](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png)
+[![検索バーのタイトルが大規模なナビゲーション](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 アプリの機能、によっては、ユーザーの一覧がスクロールされたときに非表示にするには、検索バーは好ましくありません。 使用しても変更できます、`HidesSearchBarWhenScrolling`プロパティです。
 
@@ -75,7 +75,7 @@ iOS 7[導入](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen)`topLayo
 
 安全な領域は、アプリケーションと、ビューとスーパー ビューの間の制約を追加する方法の表示スペース考えたの新しい方法です。 たとえば、次の図があるとします。
 
-[![セーフ エリア vs 上部と下部にあるレイアウト ガイド](visual-design-images/image10-sml.png)](visual-design-images/image10.png)
+[![セーフ エリア vs 上部と下部にあるレイアウト ガイド](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
 以前は、ビューを追加が必要な上記の緑色の領域に表示する場合は制約することを_下部_の`TopLayoutGuide`と_上部_の`BottomLayoutGuide`です。 11、iOS では代わりに制約することを_上部_と_下部_セーフ エリアのです。 以下に例を示します。
 

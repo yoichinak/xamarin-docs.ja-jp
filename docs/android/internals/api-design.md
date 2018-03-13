@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b0b1db6bf73b03eed99c5ede038d07bb3ccf284
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23aa944b88fe3e743b6b29810c29d1843f2efc29
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="api-design"></a>API の設計
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -23,7 +22,6 @@ ms.lasthandoff: 02/27/2018
 
 中核 Xamarin.Android がありますが、相互運用機能のエンジン Java 世界中でそのブリッジ c# 世界し、(C#) または他の .NET 言語から、Java Api にアクセス権を持つ開発者を提供します。
 
-<a name="Design_Principles" />
 
 ## <a name="design-principles"></a>デザインの原則
 
@@ -64,7 +62,6 @@ ms.lasthandoff: 02/27/2018
     - 任意の Java ライブラリを呼び出すための機構を提供 ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/))。
 
 
-<a name="Assemblies" />
 
 ## <a name="assemblies"></a>アセンブリ
 
@@ -72,11 +69,9 @@ Xamarin.Android には形成するアセンブリの数が含まれています�
 
 Android プラットフォームへのバインドに含まれる、`Mono.Android.dll`アセンブリ。 このアセンブリには、使用の Android api 全体のバインディングと Android ランタイム VM との通信が含まれています。
 
-<a name="Binding_Design" />
 
 ## <a name="binding-design"></a>バインディングのデザイン
 
-<a name="Collections" />
 
 ### <a name="collections"></a>コレクション
 
@@ -112,7 +107,6 @@ if (goodSource.Count != 4) // false
     throw new InvalidOperationException ("should not be reached.");
 ```
 
-<a name="Properties" />
 
 ### <a name="properties"></a>プロパティ
 
@@ -127,7 +121,6 @@ Java メソッドは、該当する場合のプロパティに変換されます
 -  プロパティは、*いない*プロパティの型が配列の場合に生成します。
 
 
-<a name="Events_and_Listeners" />
 
 ### <a name="events-and-listeners"></a>イベントとリスナー
 
@@ -177,7 +170,6 @@ C# の場合は、イベントまたはプロパティのみ自動的に生成�
 
 すべてのリスナー インターフェイスを実装、 [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)リスナー クラスは、このインターフェイスを実装する必要がありますので、バインディングの実装の詳細のためのインターフェイスです。 サブクラスでリスナー インターフェイスを実装することによってこれ行う[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)またはその他の Android アクティビティなどの Java オブジェクトをラップします。
 
-<a name="Runnables" />
 
 ### <a name="runnables"></a>実行可能オブジェクト
 
@@ -188,7 +180,6 @@ Java を利用、 [java.lang.Runnable](https://developer.xamarin.com/api/type/Ja
 
 め、 [IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/)いくつかの型がインターフェイスを実装し、そのため、それらを置換ではなく位置でのオーバー ロードが実行可能コードとして直接渡されます。
 
-<a name="Inner_Classes" />
 
 ### <a name="inner-classes"></a>内部クラス
 
@@ -227,7 +218,6 @@ class CubeWallpaper : WallpaperService {
 
 注方法`CubeWallpaper.CubeEngine`内で入れ子に`CubeWallpaper`、`CubeWallpaper`の外側のクラスから継承`WallpaperService.Engine`、および`CubeWallpaper.CubeEngine`を宣言する型--を受け取るコンス トラクターを持つ`CubeWallpaper`上記としてすべての場合。
 
-<a name="Interfaces" />
 
 ### <a name="interfaces"></a>インターフェイス
 
@@ -254,7 +244,7 @@ Java インターフェイスは、2 つの型に変換されます。
 
 
 > [!NOTE]
-> **注:** Xamarin.Android 1.9 から始まり、Java インターフェイス定数は、<em>複製</em>Java の移植を簡略化するためにコードします。 これにより、依存している Java コードの移植を向上させるために[android プロバイダー](http://developer.android.com/reference/android/provider/package-summary.html)定数のインターフェイスです。
+> Xamarin.Android 1.9 から始まり、Java インターフェイス定数は、<em>複製</em>Java の移植を簡略化するためにコードします。 これにより、依存している Java コードの移植を向上させるために[android プロバイダー](http://developer.android.com/reference/android/provider/package-summary.html)定数のインターフェイスです。
 
 上記の種類に加えて、さらに 4 つの変更があります。
 
@@ -277,7 +267,6 @@ Java インターフェイスは、2 つの型に変換されます。
 
 最後に、型は、*定数*などサフィックス*Android.OS.ParcelableConsts* Obsolete、新しく導入された InterfaceConsts 以外の入れ子になった型ようになりました。 Xamarin.Android 3.0 では削除されます。
 
-<a name="Resources" />
 
 ## <a name="resources"></a>リソース
 
@@ -323,7 +312,6 @@ public class Resource {
 
 使用して`Resource.Drawable.icon`参照に、`drawable/icon.png`ファイル、または`Resource.Layout.main`参照に、`layout/main.xml`ファイル、または`Resource.String.first_string`ディクショナリ ファイル内の最初の文字列を参照する`values/strings.xml`です。
 
-<a name="Constants_and_Enumerations" />
 
 ## <a name="constants-and-enumerations"></a>定数と列挙体
 

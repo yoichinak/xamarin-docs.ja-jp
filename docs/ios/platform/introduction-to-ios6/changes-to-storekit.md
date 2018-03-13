@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: cbaa389e4a115be2face2b72db6108c836676dc7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="changes-to-storekit"></a>StoreKit への変更
 
@@ -36,7 +36,7 @@ IOS6 ストア キットの主な変更は、これら 2 つの新機能です�
 アプリ内購入の新機能で iOS では、製品情報を表示し、購入またはアプリ内から製品をダウンロードすることができます。
 以前のアプリケーションは、iTunes、App Store、または、ユーザーが元のアプリケーションのままになります iBookstore を起動する必要があります。 この新しい機能は、操作が完了自動的にユーザーとアプリに返します。
 
- [ ![](changes-to-storekit-images/image1.png "購入後、アプリに自動的に返す")](changes-to-storekit-images/image1.png)
+ [![](changes-to-storekit-images/image1.png "購入後、アプリに自動的に返す")](changes-to-storekit-images/image1.png#lightbox)
 
 さまざまな場所があります、シナリオがあります (これらに限定されません) が含まれます。
 
@@ -92,7 +92,7 @@ void Buy (int productId)
 
 実行する – ダウンロードまたは購入内に完全が発生したときに次のように、アプリの外観、 `SKStoreProductViewController`:
 
- [ ![](changes-to-storekit-images/image2.png "実行時に次のように、アプリを外観します。")](changes-to-storekit-images/image2.png)
+ [![](changes-to-storekit-images/image2.png "実行時に次のように、アプリを外観します。")](changes-to-storekit-images/image2.png#lightbox)
 
 ### <a name="supporting-older-operating-systems"></a>以前のオペレーティング システムをサポートします。
 
@@ -130,7 +130,7 @@ Apple の開発者ポータルでのストア キットに関する読み取り�
 
 パブリッシュするアプリケーションでは、簡単に見つけ、 **Apple ID** iTunes Connect で。
 
- [ ![](changes-to-storekit-images/image3.png "ITunes Connect で Apple ID を検索します。")](changes-to-storekit-images/image3.png)
+ [![](changes-to-storekit-images/image3.png "ITunes Connect で Apple ID を検索します。")](changes-to-storekit-images/image3.png#lightbox)
 
  <a name="Search_API" />
 
@@ -194,11 +194,11 @@ IOS 6、前に、製品を提供する 2 つの方法が (で詳しく説明さ�
 
 6 Apple ios には、サーバーによって提供される製品のバリエーションが提供しています。 それぞれのサーバーでコンテンツ ファイルをホストします。 これにより、別のサーバーを操作する必要はありませんし、ストア キットが以前に配置を自分で作成したバック グラウンドでダウンロードの機能を提供するために、サーバーによって提供される製品をビルドするとはるかにします。 活用するために Apple のホスト、新しい製品のアプリ内購入をホストするコンテンツを有効にし、活用するためにストア キット コードを変更します。 製品のコンテンツ ファイルは Xcode を使用して作成しを確認して、Apple のサーバーにアップロードします。
 
- [ ![](changes-to-storekit-images/image4.png "ビルドおよび配信のプロセス")](changes-to-storekit-images/image4.png)
+ [![](changes-to-storekit-images/image4.png "ビルドおよび配信のプロセス")](changes-to-storekit-images/image4.png#lightbox)
 
 アプリ内購入を提供する、アプリ ストアを使用して*でコンテンツをホスト*次のセットアップと構成が必要です。
 
--   **iTunes Connect** – する*必要があります*情報を指定銀行および税を Apple に資金を自動的に収集されたを依頼するようにします。 販売、および購入をテストするサンド ボックスのユーザー アカウントを設定するように製品を構成することができます。  *ホストされているコンテンツも構成してあります**Apple でホストするこれらの非が使用できる製品**です。*  
+-   **iTunes Connect** – する*必要があります*情報を指定銀行および税を Apple に資金を自動的に収集されたを依頼するようにします。 販売、および購入をテストするサンド ボックスのユーザー アカウントを設定するように製品を構成することができます。  *ホストされているコンテンツも構成してあります**Apple でホストするこれらの非が使用できる製品**です。* 
 -   **iOS プロビジョニング ポータル**– バンドル Id を作成し、アプリ内購入をサポートするアプリケーションの場合と同様に、アプリのアプリ ストアへのアクセスを有効にします。 
 -   **キットを格納**– 製品を表示する、製品の購入、およびトランザクションを復元するため、アプリにコードを追加します。  *Ios 6 ストア キットも管理、コンテンツのダウンロード、製品、バック グラウンドで進行状況の更新プログラムにします。* 
 -   **カスタム コード**– を顧客による購入を追跡し、製品や購入したサービスを提供します。 ような新しい iOS 6 ストア キット クラスを利用して`SKDownload`Apple によってホストされているコンテンツを取得します。 
@@ -213,7 +213,7 @@ IOS 6、前に、製品を提供する 2 つの方法が (で詳しく説明さ�
 
 アプリは、前に、中、および、購入後に、このようになります。
 
- [ ![](changes-to-storekit-images/image5.png "前に、中、および、購入後に次のように、アプリの外観します。")](changes-to-storekit-images/image5.png)
+ [![](changes-to-storekit-images/image5.png "前に、中、および、購入後に次のように、アプリの外観します。")](changes-to-storekit-images/image5.png#lightbox)
 
 テキスト ファイルとイメージがダウンロードされ、アプリケーションの Documents ディレクトリにコピーします。 参照してください、[ファイル システムのドキュメントを扱う](~/ios/app-fundamentals/file-system.md)アプリケーション記憶域の使用可能な別のディレクトリについての詳細。
 
@@ -221,19 +221,19 @@ IOS 6、前に、製品を提供する 2 つの方法が (で詳しく説明さ�
 
 Apple で使用する新しい製品を作成するのコンテンツをホストしている場合を選択することを確認して、**以外が使用できる**製品の種類。 その他の製品の種類では、コンテンツをホストすることはできません。 また、許可しないでのコンテンツをホストしている*既存*製品を販売する; 新製品のコンテンツをホストにのみ、オンにします。
 
- [ ![](changes-to-storekit-images/image6.png "非が使用できる製品の種類を選択します。")](changes-to-storekit-images/image6.png)
+ [![](changes-to-storekit-images/image6.png "非が使用できる製品の種類を選択します。")](changes-to-storekit-images/image6.png#lightbox)
 
 入力、**プロダクト ID**です。 これに必要になる後でこの製品のコンテンツを作成します。
 
- [ ![](changes-to-storekit-images/image7.png "製品 ID を入力してください。")](changes-to-storekit-images/image7.png)
+ [![](changes-to-storekit-images/image7.png "製品 ID を入力してください。")](changes-to-storekit-images/image7.png#lightbox)
 
 コンテンツ ホストは、[詳細] セクションで設定されます。 運用開始アプリ内購入する前に、(テスト内容をアップロードした) 場合でもをキャンセルする場合、"ホストのコンテンツを Apple"チェック ボックスをオフします。 ただしコンテンツをホストしている後に削除できません、アプリ内購入をライブになりました。
 
- [ ![](changes-to-storekit-images/image8.png "Apple でコンテンツをホストしています。")](changes-to-storekit-images/image8.png)
+ [![](changes-to-storekit-images/image8.png "Apple でコンテンツをホストしています。")](changes-to-storekit-images/image8.png#lightbox)
 
 コンテンツをホストしている、製品入力**のアップロードを待機している**状態と、このメッセージを表示。
 
- [ ![](changes-to-storekit-images/image9.png "製品はアップロードのステータスの待機を入力して、このメッセージを表示")](changes-to-storekit-images/image9.png)
+ [![](changes-to-storekit-images/image9.png "製品はアップロードのステータスの待機を入力して、このメッセージを表示")](changes-to-storekit-images/image9.png#lightbox)
 
 コンテンツを使用して、必要があります、今すぐ Xcode で作成され、アーカイブ ツールを使用してアップロードします。 コンテンツのパッケージを作成する方法については、次のセクションで示されます**作成します。パッケージ ファイル**です。
 
@@ -262,17 +262,17 @@ Apple にアップロードしたコンテンツのファイルには、次の�
 
 選択して開始**ファイル > 新しいプロジェクト**、メニューから選択して**アプリ内購入コンテンツ**:
 
- [ ![](changes-to-storekit-images/image10.png "コンテンツをアプリ内購入を選択します。")](changes-to-storekit-images/image10.png)
+ [![](changes-to-storekit-images/image10.png "コンテンツをアプリ内購入を選択します。")](changes-to-storekit-images/image10.png#lightbox)
 
 入力、**製品名**と**会社 Id**になるよう、**バンドル Id**と一致する、**プロダクト ID** iTunes で入力しました。この製品に接続します。
 
- [ ![](changes-to-storekit-images/image11.png "識別子と名前を入力してください。")](changes-to-storekit-images/image11.png)
+ [![](changes-to-storekit-images/image11.png "識別子と名前を入力してください。")](changes-to-storekit-images/image11.png#lightbox)
 
 これは空白では**アプリ内購入コンテンツ**プロジェクト。 右クリックし、**ファイルを追加しています.** ドラッグまたは、**プロジェクト ナビゲーター**です。 いることを確認、 **ContentVersion** (にする必要があります 1.0 では、開始が、後で、コンテンツの更新を選択する場合はそれをインクリメントしてください) が正しくです。
 
 このスクリーン ショットは、Xcode をプロジェクトとメイン ウィンドウに表示されている plist エントリに含まれるコンテンツ ファイルを示します。
 
- [ ![](changes-to-storekit-images/image12.png "このスクリーン ショットは、プロジェクトとメイン ウィンドウに表示されている plist エントリに含まれるコンテンツ ファイルで Xcode を示しています")](changes-to-storekit-images/image12.png)
+ [![](changes-to-storekit-images/image12.png "このスクリーン ショットは、プロジェクトとメイン ウィンドウに表示されている plist エントリに含まれるコンテンツ ファイルで Xcode を示しています")](changes-to-storekit-images/image12.png#lightbox)
 
 すべてのコンテンツ ファイルを追加するとこのプロジェクトを保存し、後でもう一度編集したり、アップロード プロセスを開始できます。
 
@@ -284,15 +284,15 @@ Apple にアップロードしたコンテンツのファイルには、次の�
 
 コンテンツのパッケージは、次に示すように、アーカイブに表示されます。 アーカイブの種類とアイコンを表示するこれは、通知、**アプリ内購入コンテンツ アーカイブ**です。 をクリックして**を検証しています.** 実際には、アップロードを preforming せず、コンテンツのパッケージのエラーを確認します。
 
- [ ![](changes-to-storekit-images/image14.png "パッケージを検証します。")](changes-to-storekit-images/image14.png)
+ [![](changes-to-storekit-images/image14.png "パッケージを検証します。")](changes-to-storekit-images/image14.png#lightbox)
 
 ITunes、接続の資格情報でログインします。
 
- [ ![](changes-to-storekit-images/image15.png "接続の資格情報、iTunes を持つログイン")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "接続の資格情報、iTunes を持つログイン")](changes-to-storekit-images/image15.png#lightbox)
 
 このコンテンツを関連付けるには、正しいアプリケーションとアプリ内購入を選択します。
 
- [ ![](changes-to-storekit-images/image16.png "このコンテンツを関連付けるには、正しいアプリケーションとアプリ内購入を選択します。")](changes-to-storekit-images/image16.png)
+ [![](changes-to-storekit-images/image16.png "このコンテンツを関連付けるには、正しいアプリケーションとアプリ内購入を選択します。")](changes-to-storekit-images/image16.png#lightbox)
 
 このようなメッセージが表示されます。
 
@@ -300,7 +300,7 @@ ITunes、接続の資格情報でログインします。
 
 これで同様のプロセスをクリックすると**配布しています.** 実際には、コンテンツをアップロードします。
 
- [ ![](changes-to-storekit-images/image18.png "アプリを配布します。")](changes-to-storekit-images/image18.png)
+ [![](changes-to-storekit-images/image18.png "アプリを配布します。")](changes-to-storekit-images/image18.png#lightbox)
 
 コンテンツをアップロードする、最初のオプションを選択します。
 
@@ -308,23 +308,23 @@ ITunes、接続の資格情報でログインします。
 
 もう一度ログイン:
 
- [ ![](changes-to-storekit-images/image15.png "ログイン")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "ログイン")](changes-to-storekit-images/image15.png#lightbox)
 
 コンテンツをアップロードすると、正しいアプリケーションやアプリ内購入レコードを選択します。
 
- [ ![](changes-to-storekit-images/image20.png "アプリケーションとアプリ内の注文書レコードを選択します。")](changes-to-storekit-images/image20.png)
+ [![](changes-to-storekit-images/image20.png "アプリケーションとアプリ内の注文書レコードを選択します。")](changes-to-storekit-images/image20.png#lightbox)
 
 待ちを設定すると、ファイルがアップロードされます。
 
- [ ![](changes-to-storekit-images/image21.png "コンテンツのアップロード ダイアログ")](changes-to-storekit-images/image21.png)
+ [![](changes-to-storekit-images/image21.png "コンテンツのアップロード ダイアログ")](changes-to-storekit-images/image21.png#lightbox)
 
 アップロードが完了したら、コンテンツがアプリ ストアに送信されたことを通知するメッセージが表示されます。
 
- [ ![](changes-to-storekit-images/image22.png "アップロードの成功のメッセージの例")](changes-to-storekit-images/image22.png)
+ [![](changes-to-storekit-images/image22.png "アップロードの成功のメッセージの例")](changes-to-storekit-images/image22.png#lightbox)
 
 行った後に戻ったら、製品ページ iTunes Connect パッケージの詳細を表示し、であることに**送信準備ができて**状態です。 製品は、この状態では、サンド ボックス環境でテストを開始できます。 サンド ボックスにテストのための製品を送信する必要はありません。
 
- [ ![](changes-to-storekit-images/image23.png "iTunes Connect パッケージ詳細を表示し、送信の状態を準備するには")](changes-to-storekit-images/image23.png)
+ [![](changes-to-storekit-images/image23.png "iTunes Connect パッケージ詳細を表示し、送信の状態を準備するには")](changes-to-storekit-images/image23.png#lightbox)
 
 時間がかかるいくつか。 数分後に) 間、アーカイブと iTunes Connect ステータスの更新中にアップロードします。 レビューの製品を個別に、送信したり、アプリケーションのバイナリ ファイルと共に送信することができます。 Apple が正式にコンテンツを承認された後にのみ、されます App Store アプリ内購入を実稼働環境で使用できます。
 
@@ -332,7 +332,7 @@ ITunes、接続の資格情報でログインします。
 
 Xcode およびアーカイブ ツールを使用して作成してホストされているコンテンツのパッケージをアップロードする、パッケージ自体の内容は表示されないことを意味します。 ファイルとサンプル アプリを作成したパッケージのディレクトリは、次のように、`plist`ルートと製品内のファイル内のファイル、`Contents`サブディレクトリ。
 
- [ ![](changes-to-storekit-images/image24.png "ルートとその内容のサブディレクトリ内の製品ファイル形式の .plist ファイル")](changes-to-storekit-images/image24.png)
+ [![](changes-to-storekit-images/image24.png "ルートとその内容のサブディレクトリ内の製品ファイル形式の .plist ファイル")](changes-to-storekit-images/image24.png#lightbox)
 
 パッケージのディレクトリ構造に注意してください (内のファイルの場所では特に、`Contents`サブディレクトリ) ため、デバイス上のパッケージからファイルを抽出するには、この情報を理解する必要があります。
 
@@ -352,7 +352,7 @@ Xcode およびアーカイブ ツールを使用して作成してホストさ�
 
 ホストされているコンテンツを持つ製品ときに発生するイベントのシーケンスを購入し、ダウンロードがこの図に示します。
 
- [ ![](changes-to-storekit-images/image25.png "ホストされているコンテンツを持つ製品ときに発生するイベントのシーケンスを購入し、ダウンロード")](changes-to-storekit-images/image25.png)
+ [![](changes-to-storekit-images/image25.png "ホストされているコンテンツを持つ製品ときに発生するイベントのシーケンスを購入し、ダウンロード")](changes-to-storekit-images/image25.png#lightbox)
 
 1.  新しい製品は、iTunes を使用してホストするコンテンツの有効な接続で作成できます。 実際のコンテンツが (フォルダーに単に、ドラッグ ファイル) として Xcode で個別に構築された後、アーカイブ、iTunes (コーディングは必要ありません) にアップロードします。 各製品を使用可能になったら発注の承認を得るのため、送信されます。 サンプル コードでこれらの製品 Id は、ハードコードされたが、新しい製品と iTunes Connect にコンテンツを送信するときに更新できるように、リモート サーバーで使用可能な製品の一覧を格納する場合より柔軟なは Apple でコンテンツをホストしています。 
 1.  ユーザーが製品を購入するとトランザクションは支払い処理キューに配置されます。 
@@ -392,7 +392,7 @@ Xcode およびアーカイブ ツールを使用して作成してホストさ�
 
 (ホストされているコンテンツの購入に固有のコードは緑で表示) このダイアグラムは、サンプル コードでクラスの間のやり取りを示したものです。
 
- [ ![](changes-to-storekit-images/image26.png "この図で緑でホストされているコンテンツの購入記録が表示されます。")](changes-to-storekit-images/image26.png)
+ [![](changes-to-storekit-images/image26.png "この図で緑でホストされているコンテンツの購入記録が表示されます。")](changes-to-storekit-images/image26.png#lightbox)
 
 これらのクラスが使用されているサンプル コードは、このセクションの残りの部分で示されます。
 

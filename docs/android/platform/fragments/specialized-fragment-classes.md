@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: e7b4349ee2664a94ef6dff3c6a58d5f8f97682a1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f962f4619352dbaaed8c8ffcf5d8c8305cb6ad62
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="specialized-fragment-classes"></a>特殊化されたフラグメント クラス
 
@@ -24,15 +24,13 @@ ms.lasthandoff: 02/27/2018
 -   **PreferenceFragment** &ndash;リストとしてユーザー設定オブジェクトを表示するこのフラグメントを使用します。
 
 
-<a name="The_ListFragment" />
 
 ## <a name="the-listfragment"></a>ListFragment
 
 `ListFragment`は概念と機能を非常に似ていますが、 `ListActivity`; をホストするラッパーである、`ListView`フラグメント。 次のイメージ、`ListFragment`電話とタブレットで実行されています。
 
-[![スクリーン ショットの ListFragment、携帯電話とタブレットで](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png)
+[![スクリーン ショットの ListFragment、携帯電話とタブレットで](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
 
-<a name="Binding_Data_With_The_ListAdapter" />
 
 ### <a name="binding-data-with-the-listadapter"></a>ListAdapter とデータのバインド
 
@@ -51,7 +49,6 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 
 設定するときに、`ListAdapter`を使用することが重要、`ListFragment.ListAdapter`プロパティ、および not、`ListView.ListAdapter`プロパティです。 使用して`ListView.ListAdapter`がスキップされる重要な初期化コードが発生します。
 
-<a name="Responding_to_User_Selection" />
 
 
 ### <a name="responding-to-user-selection"></a>ユーザーが選択した場合の対処
@@ -84,14 +81,13 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 ユーザーが内の項目を選択すると前のコードで、 `ListFragment`、選択された項目に関する詳細情報を示すホスティングの活動に、新しいフラグメントが表示されます。
 
-<a name="DialogFragment" />
 
 
 ## <a name="dialogfragment"></a>DialogFragment
 
 *DialogFragment*フラグメント、アクティビティのウィンドウの上にフロートされるフラグメントの内部でダイアログ ボックスのオブジェクトを表示するために使用します。 管理されているダイアログ (3.0 以降では Android) Api を置き換えるものではします。 次のスクリーン ショットの例を示しています、 `DialogFragment`:
 
-[![DialogFragment のスクリーン ショットは新しい自動車エディット ボックスの追加を表示します。](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png)
+[![DialogFragment のスクリーン ショットは新しい自動車エディット ボックスの追加を表示します。](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
 
 A`DialogFragment`によりフラグメントとダイアログ ボックスの状態が一貫します。 すべての相互作用と、ダイアログ オブジェクトのコントロールは、によって行われる必要があります、 `DialogFragment` API、およびダイアログ オブジェクトの直接の呼び出しを確立できません。 `DialogFragment` API では、各インスタンスを提供する、`Show()`フラグメントを表示するために使用するメソッド。 これにはフラグメントを処分する 2 つの方法があります。
 
@@ -106,13 +102,12 @@ A`DialogFragment`によりフラグメントとダイアログ ボックスの�
 - **OnCreateDialog** &ndash;これがカスタム ダイアログを作成します。 通常の表示に使用する*AlertDialog*です。 このメソッドをオーバーライドする場合は、オーバーライドする必要はありません`OnCreateView`です。
 
 
-<a name="A_Simple_DialogFragment" />
 
 ### <a name="a-simple-dialogfragment"></a>単純な DialogFragment
 
 次のスクリーン ショットに示しています、単純な`DialogFragment`を持つ、`TextView`と 2 つ`Button`s:
 
-[![例 DialogFragment、TextView と 2 つのボタン](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png)
+[![例 DialogFragment、TextView と 2 つのボタン](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
 
 `TextView`ユーザーでの 1 つのボタンがクリックされた回数が表示されます、`DialogFragment`フラグメントは、その他のボタンをクリックすると閉じられます。 コードを`DialogFragment`は。
 
@@ -145,7 +140,6 @@ public class MyDialogFragment : DialogFragment
 }
 ```
 
-<a name="Displaying_a_Fragment" />
 
 ### <a name="displaying-a-fragment"></a>フラグメントを表示します。
 
@@ -164,14 +158,12 @@ public void ShowDialog()
 }
 ```
 
-<a name="Dismissing_a_Fragment" />
 
 ### <a name="dismissing-a-fragment"></a>フラグメントを閉じる
 
 呼び出す`Dismiss()`のインスタンスで、`DialogFragment`アクティビティから削除するフラグメントの原因し、そのトランザクションをコミットします。
 フラグメントの破棄に関連する標準のフラグメントのライフ サイクル メソッドが呼び出されます。
 
-<a name="Alert_Dialog" />
 
 ### <a name="alert-dialog"></a>警告のダイアログ
 
@@ -195,7 +187,6 @@ public class AlertDialogFragment : DialogFragment
 }
 ```
 
- <a name="PreferenceFragment" />
 
 
 ## <a name="preferencefragment"></a>PreferenceFragment
@@ -204,9 +195,8 @@ public class AlertDialogFragment : DialogFragment
 ) &ndash;フラグメント内のユーザー設定の階層が表示されます。 ユーザーは、環境設定を使用して、として自動的に保存されますを[SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html)です。
 Android 3.0 またはの高いアプリケーションを使用して、`PreferenceFragment`アプリケーションの設定に対処します。 次の図の例を示しています、 `PreferenceFragment`:
 
-[![例 PreferencesFragment インライン、ダイアログ ボックスと起動設定を使用](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png)
+[![例 PreferencesFragment インライン、ダイアログ ボックスと起動設定を使用](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
 
-<a name="Create_A_Preference_Fragment_from_a_Resource" />
 
 ### <a name="create-a-preference-fragment-from-a-resource"></a>リソースから優先フラグメントを作成します。
 
@@ -278,7 +268,6 @@ public class PrefFragment : PreferenceFragment
 }
 ```
 
- <a name="Querying_Activities_to_Create_a_Preference_Fragment" />
 
 
 ### <a name="querying-activities-to-create-a-preference-fragment"></a>基本設定のフラグメントを作成するアクティビティのクエリを実行します。
@@ -316,4 +305,4 @@ public class MyActivityWithPreferences : Activity
 
 `MetaDataAttribute` XML リソース ファイルの宣言、 `PreferenceFragment`  基本設定の階層を拡大するために使用されます。 場合、`MetatDataAttribute`は指定しないと、実行時に例外がスローされます。 このコードを実行すると、`PreferenceFragment`次のスクリーン ショットのように表示されます。
 
-[![表示される PreferenceFragment 例のアプリのスクリーン ショット](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)
+[![表示される PreferenceFragment 例のアプリのスクリーン ショット](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)

@@ -3,14 +3,15 @@ title: "第 1 章の概要です。 Xamarin.Forms どのように適合します
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c0f3313fa3c4d1075be7deeb871e303006c533e8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要です。 Xamarin.Forms どのように適合しますか。
 
@@ -44,7 +45,7 @@ OBJECTIVE-C、Java、および C# の場合はすべて、C プログラミン�
 
 Xamarin.Forms プログラムの大半は、PCL または SAP に存在します。 サイズの小さいアプリケーション スタブ PCL を呼び出すの各プラットフォームで構成されます。 Xamarin.Forms Api は、各プラットフォームは、その特性のルック アンド フィールを維持できるように、各プラットフォームでネイティブ コントロールにマップします。
 
-[![共有プラットフォーム ビジュアルのトリプル スクリーン ショット](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png "Xamarin.Forms Controls on Each Platform")
+[![共有プラットフォーム ビジュアルのトリプル スクリーン ショット](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png#lightbox "Xamarin.Forms Controls on Each Platform")
 
 左から右にスクリーン ショットは、iPhone、Android フォンの場合、および Windows 10 Mobile の電話を表示します。 各画面で、ページには、Xamarin.Forms [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) 、テキストを表示するため、 [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 、アクションを開始するため、 [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)のオン/オフ値を選択して、 [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)を継続的な範囲内の値を指定します。 これらのビューの 4 つのすべての子である、 [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)上、 [ `ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)です。
 

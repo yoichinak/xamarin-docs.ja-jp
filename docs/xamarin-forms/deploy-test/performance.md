@@ -8,19 +8,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: b7b5093f9a564c0711ddc8a711f9b609d44e7dad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a750167cb9e6bde3a4a9abe11c5386497f9a12ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms のパフォーマンス
 
 _Xamarin.Forms アプリケーションのパフォーマンスを高めるための方法は多数あります。これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。この記事では、これらの方法について説明します。_
 
-[ ![](performance-images/evolve-jason-perf-sml.png "Xamarin.Forms でアプリのパフォーマンスを最適化する")](https://evolve.xamarin.com/session/56e205b0bad314273ca4d817)
+> [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-[Evolve 2016: Xamarin.Forms でアプリのパフォーマンスを最適化する](https://evolve.xamarin.com/session/56e205b0bad314273ca4d817)
+**Evolve 2016: Xamarin.Forms でアプリのパフォーマンスを最適化する**
 
 ## <a name="overview"></a>概要
 

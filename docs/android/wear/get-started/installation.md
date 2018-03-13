@@ -7,18 +7,16 @@ ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/24/2018
-ms.openlocfilehash: 5f583fa78674b1b07d362e5171877e4ec3c861a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
 _この記事では、インストール手順と、コンピューターとデバイス開発を Android 着用を準備するために必要な構成の詳細について説明します。この記事の目的は、最初 Xamarin.Android 消耗アプリケーションのビルドを開始する準備ができるし、Xamarin.Android 消耗インストールが Mac や Microsoft Visual Studio、Visual Studio に統合されて作業を必要があります。_
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>必要条件
 
@@ -35,9 +33,7 @@ Android 着用して Xamarin ベースのアプリを作成する、次が必要
 使用を続行できます[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) API level 23 専用の開発または以前の場合。
 
 > [!IMPORTANT]
-> **注:** Xamarin.Android は JDK 9 をサポートしていません。
-
-<a name="installation" />
+> Xamarin.Android は JDK 9 をサポートしていません。
 
 ## <a name="installation"></a>インストール
 
@@ -49,7 +45,6 @@ Xamarin.Android をインストールした後は、ビルドし、着用して 
 
 次の手順については、次のセクションで説明します。
 
-<a name="sdktools" />
 
 ### <a name="install-android-sdk-and-tools"></a>Android SDK とツールをインストールします。 
 

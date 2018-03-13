@@ -7,12 +7,12 @@ ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 36cabddc2439d64ad2d1135bbd0d453a7f411750
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d8b44fb7f0e60db407271fd84899489bf8e65694
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>チュートリアル - アクティビティの状態の保存
 
@@ -22,7 +22,7 @@ _アクティビティのライフ サイクル番組ガイドの状態の保存
 
 開いてみましょう、 **ActivityLifecycle_Start**プロジェクト (で、 [ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)サンプル)、ビルド、およびそれを実行します。 これは、アクティビティのライフ サイクルとライフ サイクルのさまざまなメソッドを呼び出す方法を説明する 2 つの活動を非常に単純なプロジェクトです。 アプリケーションの画面を起動するときに`MainActivity`が表示されます。 
 
-[ ![アクティビティ A 画面](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png)
+[![アクティビティ A 画面](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>表示状態遷移
 
@@ -48,7 +48,7 @@ _アクティビティのライフ サイクル番組ガイドの状態の保存
 
 その結果、*アクティビティ B*が開始およびの代わりに表示される*アクティビティ A*: 
 
-[ ![アクティビティ B 画面](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png)
+[![アクティビティ B 画面](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
 クリックしたとき、**戻る**ボタン、*アクティビティ B*が破棄されると*アクティビティ A*が再開します。 
 
@@ -62,7 +62,7 @@ _アクティビティのライフ サイクル番組ガイドの状態の保存
 ```
 ### <a name="adding-a-click-counter"></a>クリックしてカウンターの追加
 
-次に、ここでアプリケーションを変更する、カウントがクリックされた回数を表示するボタンがあるようにします。 最初に、追加してみましょう、`_counter`インスタンス変数を`MainActivity`:。 
+次に、ここでアプリケーションを変更する、カウントがクリックされた回数を表示するボタンがあるようにします。 最初に、追加してみましょう、`_counter`インスタンス変数を`MainActivity`:。
 
 ```csharp
 int _counter = 0;
@@ -105,11 +105,11 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 
 構築して、アプリケーションを再実行するには、新しいボタンが表示されますをインクリメントし、値を表示`_counter`でそれぞれをクリックします。
 
-[![タッチ カウントを追加します。](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png)
+[![タッチ カウントを追加します。](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 このカウント横向きモードにデバイスを回転させることが失われます。
 
-[ ![0 に、カウントを設定する横に回転させる](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png)
+[![0 に、カウントを設定する横に回転させる](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 アプリケーションの出力を確認するには、それが表示されて*アクティビティ A*が一時停止、停止、破棄、再作成、再起動、し、縦から横モードの回転時に再開します。 
 
@@ -152,7 +152,7 @@ if (bundle != null)
 
 ビルドし、アプリを再実行し、何回か 2 番目のボタンをクリックします。 横向きモードにデバイスを回転お場合カウントが保持されます。
 
-[ ![保持 4 つの数を示す、画面の回転](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png)
+[![保持 4 つの数を示す、画面の回転](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
 
 何が起こった確認には、出力ウィンドウを見てをみましょう。

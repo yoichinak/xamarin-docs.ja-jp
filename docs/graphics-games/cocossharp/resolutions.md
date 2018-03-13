@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0c79e982e7f6543c6dc34885b0afcd7056989a96
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b76376bdbcf10bf35768cfdb79b6823388e303c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>CocosSharp で複数の解像度の処理
 
@@ -22,33 +22,12 @@ CocosSharp は、物理デバイスのディスプレイ上のピクセル数に
 
 CocosSharp の既定の解像度の動作は、物理的なピクセルをゲームの座標と一致します。 次の表では、さまざまなデバイスが 368 x 240 の幅と高さでバック グラウンド環境スプライトをレンダリングとを示します。 最初の行があるが技術的にはありません、実際のデバイス、デバイスの解像度に関係なく、スプライトの予想されるレンダリングではなくです。
 
-<table>
-    <thead>
-        <tr>
-            <th>デバイス</th>
-            <th>ディスプレイの解像度</th>
-            <th>サンプルのスクリーン ショット</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>希望の表示</td>
-            <td>368 x 240 (の縦横比に黒のバー)</td>
-            <td><img src="resolutions-images/image1.png" title="368 x 240 (の縦横比に黒のバー)" /></td>
-        </tr>
-        <tr>
-            <td>iPhone 4s</td>
-            <td>960 x 640</td>
-            <td><img src="resolutions-images/image2.png" title="iPhone 4s 960x640" /></td>
-        </tr>
-        <tr>
-            <td>iPhone 6 Plus</td>
-            <td>1920 x 1080</td>
-            <td><img src="resolutions-images/image3.png" title="iPhone 6 Plus 1920 x 1080" /></td>
-        </tr>
-    </tbody>
-</table>
 
+| **デバイス** | **ディスプレイの解像度** | **サンプルのスクリーン ショット** |
+|--- | --- |--- |
+|希望の表示|368 x 240 (の縦横比に黒のバー)| ![368 x 240 (の縦横比に黒のバー)](resolutions-images/image1.png) |
+|iPhone 4s|960 x 640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920 x 1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
 
 このドキュメントでは、CocosSharp を使用して、上記の表に示すように問題を解決する方法について説明します。 つまり、任意のデバイスの画面の解像度に関係なく – 最初の行に示すように表示する方法をしれませんについて説明します。
 

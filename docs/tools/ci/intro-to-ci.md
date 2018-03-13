@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 94d88246090208913c4b340eaed221ab64b78f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8849a75f3c26a83a030700878a3195fde7515f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的な統合の概要
 
@@ -33,13 +33,13 @@ _継続的インテグレーションは、ソフトウェア エンジニア �
 
 次の図は、このプロセスを示します。
 
-[![](intro-to-ci-images/intro01-small.png "この図では、このプロセスを示しています。")](intro-to-ci-images/intro01.png)
+[![](intro-to-ci-images/intro01-small.png "この図では、このプロセスを示しています。")](intro-to-ci-images/intro01.png#lightbox)
 
 モバイル アプリでは、継続的インテグレーションの特異な課題を紹介します。 アプリには、物理デバイスで使用できる、GPS やカメラなどのセンサーが必要です。 さらに、シミュレーターまたはエミュレーターはハードウェアの近似にすぎません可能性がありますを非表示や問題がわかりにくくなります。 最後に、実際にお客様の準備完了であることを保証する実際のハードウェアでのモバイル アプリをテストする必要があります。
 
 [アプリ Center Test](https://docs.microsoft.com/en-us/appcenter/test-cloud)数百台の物理デバイスに直接アプリのテストでこの特定の問題に対処します。 開発者は、強力な UI テストのため、自動承諾テストを記述します。 これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部として次の図に示すように。
 
-[![](intro-to-ci-images/intro02-small.png "これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部としてこの図に示すように")](intro-to-ci-images/intro02.png)
+[![](intro-to-ci-images/intro02-small.png "これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部としてこの図に示すように")](intro-to-ci-images/intro02.png#lightbox)
 
 # <a name="components-of-continuous-integration"></a>継続的インテグレーションのコンポーネント
 
@@ -72,7 +72,7 @@ Visual Studio、Visual Studio Team Services、および Team Foundation Server �
 
 完全 web ブラウザー、または Git を操作できる[GUI クライアント](http://git-scm.com/downloads/guis)Linux、Mac os X、および Windows 上で実行します。 パブリック リポジトリの無料です。プライベート リポジトリが必要な[有料プラン](https://github.com/pricing)です。
 
-Visual Studio 2015 と Visual Studio for Mac Git; に対するネイティブ サポートを提供します。Visual Studio 2013 および前に、Microsoft が提供する[Git のダウンロード可能な拡張](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)です。 前述のようは、TFVC の代わりにバージョン管理の Visual Studio Team Services と TFS が Git を使用できます。
+Visual Studio 2015 と Visual Studio for Mac Git; に対するネイティブ サポートを提供します。以前のバージョン、Microsoft が提供しています、 [Git のダウンロード可能な拡張](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)です。 前述のようは、TFVC の代わりにバージョン管理の Visual Studio Team Services と TFS が Git を使用できます。
 
 
 ### <a name="subversion"></a>subversion
@@ -102,7 +102,7 @@ Team Foundation Server では、特定のターゲット プラットフォー�
 
 次の図は、このトポロジを示しています。
 
-[![](intro-to-ci-images/intro03-small.png "この図では、このトポロジを示しています。")](intro-to-ci-images/intro03.png)
+[![](intro-to-ci-images/intro03-small.png "この図では、このトポロジを示しています。")](intro-to-ci-images/intro03.png#lightbox)
 
 VSTS ビルドは、ローカル サーバーに委任するように、Visual Studio Team Services プロジェクトにローカル TFS サーバーをリンクすることもできます。 詳細については、次を参照してください。[配置ビルド サーバーを構成および](http://msdn.microsoft.com/en-us/library/ms181712.aspx)msdn です。
 
@@ -110,13 +110,13 @@ VSTS ビルドは、ローカル サーバーに委任するように、Visual S
 
 Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納しを引き続き使用する Jenkins CI ビルドできます。 チーム プロジェクトの Git リポジトリまたはチェックインするときにコードを TFVC にコードをプッシュするときに、Jenkins ビルドをトリガーできます。 詳細については、「[の Visual Studio Team Services Jenkins](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins)です。
 
-[![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納およびを引き続き使用する Jenkins CI ビルド")](intro-to-ci-images/intro04.png)
+[![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納およびを引き続き使用する Jenkins CI ビルド")](intro-to-ci-images/intro04.png#lightbox)
 
 ### <a name="git-and-jenkins"></a>Git と Jenkins
 
 別の一般的な CI 環境は、完全 OS X ベースで指定できます。 このシナリオには、Git およびを使用したソース コード管理 Jenkins ビルド サーバーが含まれます。 インストールされている Mac 用 Visual Studio での単一の Mac OS X コンピューターにこれらの両方の実行しています。 これは、Visual Studio Team Services + 前のセクションで説明する Jenkins 環境によく似ています。
 
-[![](intro-to-ci-images/intro05-small.png "これは、Visual Studio Team Services と、前のセクションで説明する Jenkins 環境によく似ています、")](intro-to-ci-images/intro05.png)
+[![](intro-to-ci-images/intro05-small.png "これは、Visual Studio Team Services と、前のセクションで説明する Jenkins 環境によく似ています、")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **注: Jenkins は[Xamarin でサポートされていない](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)です。**

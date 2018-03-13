@@ -6,11 +6,11 @@ ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 2801fd74e9f5f8f2927b06dc7b68cdf004faa104
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a1e28bc9a8a17b4b06ec45746a6ce60ddd129ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cocossharp"></a>CocosSharp
 
@@ -22,9 +22,9 @@ CocosSharp は 2D のゲームを c# および f# を使用して簡単に使用
 
 このハンズオン ビデオは、ゲームの単純なクロスプラット フォーム CocosSharp を作成する方法を示します。
 
-<iframe src="//channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player" width="800" height="450" allowFullScreen frameBorder="0"></iframe>
+> [!Video https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player]
 
-###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[CocosSharp を使用したゲームの開発の概要](~/graphics-games/cocossharp/first-game/index.md)
+###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[CocosSharp によるゲーム開発の概要](~/graphics-games/cocossharp/first-game/index.md)
 
 ![](images/first-game.png "単純な 2D を使用するゲーム CocosSharp")
 
@@ -32,7 +32,7 @@ CocosSharp は 2D のゲームを c# および f# を使用して簡単に使用
 
 
 
-##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Fruity がゲームの詳細](~/graphics-games/cocossharp/fruity-falls.md)
+##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Fruity Falls Game の詳細](~/graphics-games/cocossharp/fruity-falls.md)
 
 ![](images/fruity-falls.png "このガイド Fruity がゲームをレビューします。")
 
@@ -56,7 +56,7 @@ CCDrawNode は、線、円、および三角形などの描画プリミティブ
 
 
 
-## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[CCAction をアニメーション化します。](~/graphics-games/cocossharp/ccaction.md)
+## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[CCAction によるアニメーション](~/graphics-games/cocossharp/ccaction.md)
 
 ![](images/ccaction.png "CCAction は、CocosSharp オブジェクトをアニメーション化するために使用する基本クラスであります。")
 
@@ -64,13 +64,13 @@ CCDrawNode は、線、円、および三角形などの描画プリミティブ
 
 
 
-## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[使用して CocosSharp を並べて表示](~/graphics-games/cocossharp/tiled.md)
+## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[CocosSharp によるタイル表示の使用](~/graphics-games/cocossharp/tiled.md)
 
 ![](images/tiled.png "並べて表示は、強力な柔軟であり直交と等角 タイルを作成するための完成度の高いアプリケーション マップのゲーム")並べて表示、強力な柔軟性があり、ゲーム直交と等角 タイルを作成するための完成度の高いアプリケーションにマップします。 CocosSharp は、並べてのネイティブのファイル形式の組み込みの統合を提供します。
 
 
 
-##  <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[CocosSharp 内のエンティティ](~/graphics-games/cocossharp/entities.md)
+##  <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[CocosSharp のエンティティ](~/graphics-games/cocossharp/entities.md)
 
 ![](images/entities.png "エンティティのパターンは、ゲーム コードを整理する強力な方法")
 
@@ -78,7 +78,7 @@ CCDrawNode は、線、円、および三角形などの描画プリミティブ
 
 
 
-##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[CocosSharp で複数の解像度の処理](~/graphics-games/cocossharp/resolutions.md)
+##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[CocosSharp で複数の解像度を処理する](~/graphics-games/cocossharp/resolutions.md)
 
 ![](images/resolutions.png "このガイドは、さまざまな解像度のデバイスに正しく表示するゲームを開発する CocosSharp を操作する方法を示しています。")
 
@@ -86,7 +86,7 @@ CCDrawNode は、線、円、および三角形などの描画プリミティブ
 
 
 
-##  <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[CocosSharp コンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md)
+##  <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[CocosSharp のコンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md)
 
 ![](images/content-pipeline.png "コンテンツのパイプラインでよく使用されますゲーム開発内容と形式を最適化するには")
 
@@ -94,7 +94,7 @@ CCDrawNode は、線、円、および三角形などの描画プリミティブ
 
 
 
-## <a name="improving-framerate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[CCSpriteSheet にフレーム レートの向上](~/graphics-games/cocossharp/ccspritesheet.md)
+## <a name="improving-framerate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[CCSpriteSheet でフレームレートを改善する](~/graphics-games/cocossharp/ccspritesheet.md)
 
 ![](images/ccspritesheet.png "CCSpriteSheet 結合および 1 つのテクスチャで多数のイメージ ファイルを使用するための機能を提供します")
 
@@ -110,7 +110,7 @@ CocosSharp の CCTextureCache クラスは、整理、キャッシュ、およ�
 
 
 
-## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[CocosSharp による 2D 数学的演算](~/graphics-games/cocossharp/math.md)
+## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[CocosSharp による 2 次元数値演算](~/graphics-games/cocossharp/math.md)
 
 ![](images/math.png "このガイドには、ゲームの開発のための 2D 数学がについて説明します")
 

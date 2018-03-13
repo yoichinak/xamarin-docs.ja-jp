@@ -4,14 +4,15 @@ description: "データ バインディングを使用すると、変更を他�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 46e0c1f9b2aff52c1d31774a15e818c78a70056a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dbbbe051aab065a5b71905459f577fcacefd8bc5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データのバインドの基礎
 
@@ -99,7 +100,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 実行中のプログラムを次に示します。
 
-[ ![](data-binding-basics-images/sliderbinding.png "ビューをバインド")](data-binding-basics-images/sliderbinding-large.png "ビューをバインド ")
+[![](data-binding-basics-images/sliderbinding.png "ビューをバインド")](data-binding-basics-images/sliderbinding-large.png#lightbox "ビューをバインド ")
 
 ## <a name="the-binding-mode"></a>バインド モード 
 
@@ -197,7 +198,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 ただし、バインドを`Scale`プロパティは`TwoWay`します。 これは、ため、`Scale`プロパティには、既定値を使用して、1 は、`TwoWay`原因のバインド、`Slider`初期値を 0 ではなく、1 に設定してです。 バインディングが場合`OneWayToSource`、`Scale`プロパティから 0 に初期設定は、`Slider`既定値です。 `Label`見えない、およびユーザーには混乱を招く可能性があります。
 
- [ ![](data-binding-basics-images/slidertransforms.png "旧バージョンとのバインド")](data-binding-basics-images/slidertransforms-large.png "逆方向のバインド")
+ [![](data-binding-basics-images/slidertransforms.png "旧バージョンとのバインド")](data-binding-basics-images/slidertransforms-large.png#lightbox "逆方向のバインド")
 
 ## <a name="bindings-and-collections"></a>バインドとコレクション
 
@@ -227,7 +228,7 @@ XAML とデータ バインディングは、テンプレートのより強力�
 
 型の真の項目が結果の表示を確立`XamlSamples.NamedColor`:
 
-[ ![](data-binding-basics-images/listview1.png "コレクションへのバインド")](data-binding-basics-images/listview1-large.png "コレクションへのバインド")
+[![](data-binding-basics-images/listview1.png "コレクションへのバインド")](data-binding-basics-images/listview1-large.png#lightbox "コレクションへのバインド")
 
 多くの情報ではありませんが、`ListView`はスクロール可能なと選択可能です。
 
@@ -249,7 +250,7 @@ XAML とデータ バインディングは、テンプレートのより強力�
 
 `Label`要素に設定されて、`View`のプロパティ、`ViewCell`です。 (、`ViewCell.View`タグ不要なため、`View`プロパティのコンテンツ プロパティは、 `ViewCell`)。このマークアップを表示、`FriendlyName`の各プロパティ`NamedColor`オブジェクト。
 
-[ ![](data-binding-basics-images/listview2.png "DataTemplate を含むコレクションへのバインド")](data-binding-basics-images/listview2-large.png "DataTemplate を含むコレクションへのバインド")
+[![](data-binding-basics-images/listview2.png "DataTemplate を含むコレクションへのバインド")](data-binding-basics-images/listview2-large.png#lightbox "DataTemplate を含むコレクションへのバインド")
 
 ずっといいです。 今すぐ必要な詳細については、実際の色と項目テンプレートを一新します。 このテンプレートをサポートするには、いくつかの値とオブジェクトをページのリソース ディクショナリで定義されています。
 
@@ -385,7 +386,7 @@ namespace XamlSamples
 
 結果を次に示します。
 
-[ ![](data-binding-basics-images/listview3.png "DataTemplate とコンバーター コレクションへのバインド")](data-binding-basics-images/listview3-large.png "DataTemplate とコンバーター コレクションへのバインド")
+[![](data-binding-basics-images/listview3.png "DataTemplate とコンバーター コレクションへのバインド")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate とコンバーター コレクションへのバインド")
 
 `ListView`は、基になるで動的に発生する可能性の変更の処理に非常に高度な場合に限り、データは、特定の手順を実行します。 項目のコレクションに割り当てられている場合、`ItemsSource`のプロパティ、`ListView`実行時に変更 — に項目を追加できる場合は、またはコレクションから削除する: を使用して、`ObservableCollection`これらのアイテムのクラスです。 `ObservableCollection` 実装する、`INotifyCollectionChanged`インターフェイス、および`ListView`のハンドラーをインストール、`CollectionChanged`イベント。
 

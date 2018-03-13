@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 51cc7a4700e8cb3ece556b0ada841d70d5f2bb8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 486df3bbee3f8af511140e2d287f9f95571c7b3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator-troubleshooting"></a>Android SDK エミュレーターのトラブルシューティング
 
@@ -83,7 +83,7 @@ SERVICE_NAME: intelhaxm
 
 パフォーマンスに関する警告を表示したくない場合は、それを無効にすることができます。 Visual Studio で、**[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして、**[AVD アクセラレータがサポートされていない場合に警告する (HAXM)]** オプションを無効にします。
 
-[![AVD アクセラレーションに関する警告を無効にする](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png)
+[![AVD アクセラレーションに関する警告を無効にする](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -110,13 +110,11 @@ HAXM のインストール手順については、「[Installing HAXM](~/android
 
 -----
 
-<a name="solutions" />
 
 ## <a name="solutions-to-common-problems"></a>一般的な問題の解決策
 
 Android SDK エミュレーターの一般的な問題の多くは、コンピューターの構成に変更を加えるか、または他のソフトウェアをインストールすることによって解決できます。 次のセクションでは、該当する問題と、解決策を説明します。
 
-<a name="deployment" />
 
 ### <a name="deployment-issues"></a>展開に関する問題
 
@@ -142,7 +140,6 @@ Android SDK エミュレーターの一般的な問題の多くは、コンピ�
 5. この一覧にエミュレーターが表示されない場合は、**Android SDK マネージャー**を起動し、すべての更新プログラムを適用し、エミュレーターをもう一度起動してみてください。
 
 
-<a name="haxm-issues" />
 
 ### <a name="haxm-issues"></a>HAXM の問題
 
@@ -162,7 +159,6 @@ HAXM が、仮想化を使用する他のテクノロジ (Hyper-V、Windows Devi
 
 - **ウイルス対策ソフトウェア** &ndash; (Avast など) ハードウェア補助による仮想化を使用するウイルス対策ソフトウェアを実行している場合は、そのソフトウェアを無効にするかアンインストールしてから、Android SDK エミュレーターを再起動してみてください。
 
-<a name="bios" />
 
 #### <a name="incorrect-bios-settings"></a>不適切な BIOS 設定
 

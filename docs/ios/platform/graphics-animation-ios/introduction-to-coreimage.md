@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 2d9c2b27de7addc0ed1faeed038db81e2470087f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: da9b9230a466c70cd584a00af848ffe87dacbc5b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="coreimage"></a>CoreImage
 
@@ -214,7 +214,7 @@ foreach (var filter in filters){
 
 リストのカテゴリの出力は、シミュレーターでは次のよう – すべてのフィルターとそのパラメーターを表示するリストをスクロールすることができます。
 
- [ ![](introduction-to-coreimage-images/coreimage05.png "リストのカテゴリの出力は、シミュレーターでは次のよう")](introduction-to-coreimage-images/coreimage05.png)
+ [![](introduction-to-coreimage-images/coreimage05.png "リストのカテゴリの出力は、シミュレーターでは次のよう")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
 表示されている各フィルターは、アセンブリ ブラウザーまたは Mac 用の Visual Studio または Visual Studio のいずれかでオートコンプリートを使用して、Xamarin.iOS.CoreImage API を表示することも、Xamarin.iOS、内のクラスとして公開されています。 
 

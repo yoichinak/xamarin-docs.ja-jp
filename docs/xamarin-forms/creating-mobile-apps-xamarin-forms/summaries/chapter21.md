@@ -3,14 +3,15 @@ title: "21 章の概要です。 変換"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 378ce3fb39cfb5c42d5ec7611415f5420146a9cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>21 章の概要です。 変換
 
@@ -49,7 +50,7 @@ Xamarin.Forms でスケーリングはアイソトロ ピックです。影響�
 
 変換のプロパティの 1 つの一般的な用途では、テキストのレンダリングでオフセットわずかです。 これに示されている、 [ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets)サンプル。
 
-[![テキストのオフセットのトリプル スクリーン ショット](images/ch21fg03-small.png "テキスト オフセット")](images/ch21fg03-large.png "テキスト オフセット")
+[![テキストのオフセットのトリプル スクリーン ショット](images/ch21fg03-small.png "テキスト オフセット")](images/ch21fg03-large.png#lightbox "テキスト オフセット")
 
 別の効果はの複数のコピーを表示するためには、`Label`に示されているなど、3 D のブロックと同じように、 [ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText)サンプルです。
 
@@ -101,7 +102,7 @@ Ios の場合の既定以外の値を使用して`AnchorX`と`AnchorY`プロパ�
 
 [ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock)使用`BoxView`より広範な画像のティックを含む、クロックの顔周りをマークし、それぞれの端からほとんど距離を回転を渡しません。
 
-[![BoxView クロックのスクリーン ショットをトリプル](images/ch21fg17-small.png "アナログ時計の表面")](images/ch21fg17-large.png "アナログ時計の表面")
+[![BoxView クロックのスクリーン ショットをトリプル](images/ch21fg17-small.png "アナログ時計の表面")](images/ch21fg17-large.png#lightbox "アナログ時計の表面")
 
 さらに、 [ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs)クラス**Xamarin.FormsBook.Toolkit**秒針を引き出せなかった少し先、見る前に表示すると、し、正しい位置に戻します。
 

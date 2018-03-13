@@ -3,24 +3,25 @@ title: "Xamarin.Forms を使用して Visual Basic.NET"
 description: "Xamarin.Forms PCL プロジェクト テンプレートは、実質的に VB.NET を使ったクロスプラット フォーム モバイル アプリをビルドすることができます、メイン アセンブリの Visual Basic を使用して変更できます。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
+ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 332882bcef9563ef060c5151c2997ac3b4c8497c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84240b6ac384c79c732abc783de84bfa1289f599
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms を使用して Visual Basic.NET
 
 Xamarin に Visual Basic が直接サポートされていません - c# Xamarin.Forms PCL ソリューションを作成し、Visual Basic を使用して、一般的なコードの PCL プロジェクトを置換するには、このページに、指示に従います。
 
-[ ![](xamarin-forms-images/hero-sml.png "Xamarin.Forms PCL ソリューションを作成し、Visual Basic を使用して、一般的なコードの PCL プロジェクトを置き換えます")](xamarin-forms-images/hero.png)
+[![](xamarin-forms-images/hero-sml.png "Xamarin.Forms PCL ソリューションを作成し、Visual Basic を使用して、一般的なコードの PCL プロジェクトを置き換えます")](xamarin-forms-images/hero.png#lightbox)
 
-> ℹ️ **注:** Visual Studio は、Windows で Visual Basic を使用してプログラムを使用する必要があります。
+> [!NOTE]
+> Visual Basic を使用してプログラムを Windows で Visual Studio を使用する必要があります。
 
 ## <a name="xamarinforms-with-visual-basic-walkthrough"></a>Visual Basic チュートリアルと Xamarin.Forms
 
@@ -33,7 +34,7 @@ Visual Basic を使用する単純な Xamarin.Forms プロジェクトを作成�
 
 3. 選択、 **Visual Basic > クラス ライブラリ (ポータブル)**プロジェクトの種類。
 
-   [ ![](xamarin-forms-images/add-vb-2-sml.png "新しいのポータブル クラス ライブラリ プロジェクトを追加します。")](xamarin-forms-images/add-vb-2.png)
+   [![](xamarin-forms-images/add-vb-2-sml.png "新しいのポータブル クラス ライブラリ プロジェクトを追加します。")](xamarin-forms-images/add-vb-2.png#lightbox)
 
 4. ように、適切な PCL プロファイルを構成するのには、プラットフォームを選択します (を必ず含めて、Xamarin.iOS および Xamarin.Android)。
 
@@ -45,11 +46,11 @@ Visual Basic を使用する単純な Xamarin.Forms プロジェクトを作成�
 
 6. 新しい Visual Basic プロジェクトを右クリックして選択**Nuget パッケージの管理**、インストールし、 **Xamarin.Forms**パッケージ マネージャー ウィンドウを閉じます。
 
-   [ ![](xamarin-forms-images/add-vb-4-sml.png "フォームとパッケージ マネージャー ウィンドウを閉じる")](xamarin-forms-images/add-vb-4.png)
+   [![](xamarin-forms-images/add-vb-4-sml.png "フォームとパッケージ マネージャー ウィンドウを閉じる")](xamarin-forms-images/add-vb-4.png#lightbox)
 
 7. 既定値の名前を変更**Class1**ファイル*と*クラスを`App`:
 
-   [ ![](xamarin-forms-images/add-vb-5-sml.png "アプリを既定の Class1 ファイルとクラスの名前を変更します。")](xamarin-forms-images/add-vb-5.png)
+   [![](xamarin-forms-images/add-vb-5-sml.png "アプリを既定の Class1 ファイルとクラスの名前を変更します。")](xamarin-forms-images/add-vb-5.png#lightbox)
 
 8. 次のコードを貼り付け、 **App.vb** Xamarin.Forms アプリの開始点となるファイル。 必ず含めて`Imports Xamarin.Forms`追加`Inherits Application`クラスに。
 
@@ -81,7 +82,7 @@ Visual Basic を使用する単純な Xamarin.Forms プロジェクトを作成�
 9. 新しい Visual Basic プロジェクトで、iOS と Android プロジェクトをポイントする必要があります。
 右クリックし、**参照**iOS および Android のプロジェクトを開くにはノード、**参照マネージャー**です。 チェック マークの解除、c# ポータブル ライブラリとティック VB ポータブル ライブラリ (しない忘れた、こうと、iOS と Android プロジェクトの両方で)。
 
-   [ ![](xamarin-forms-images/add-vb-8-sml.png "古いプロジェクト参照を削除する、Visual Basic リファレンスの追加")](xamarin-forms-images/add-vb-8.png)
+   [![](xamarin-forms-images/add-vb-8-sml.png "古いプロジェクト参照を削除する、Visual Basic リファレンスの追加")](xamarin-forms-images/add-vb-8.png#lightbox)
 
 10. C# ポータブル プロジェクトを削除します。 新規追加**.vb**ビルドするファイルは、Xamarin.Forms アプリケーションを出力します。 新しいテンプレート`ContentPage`Visual Basic での s を次に示します。
 
@@ -108,7 +109,7 @@ Visual Basic を使用する単純な Xamarin.Forms プロジェクトを作成�
 
 ## <a name="limitations-of-visual-basic-in-xamarinforms"></a>Xamarin.Forms で Visual Basic の制限事項
 
-説明したように、[ポータブル Visual Basic.NET ページ](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/)Xamarin は、Visual Basic 言語をサポートしていません。 これは、Visual Basic を使用することができますをいくつかの制限があることを意味します。
+説明したように、[ポータブル Visual Basic.NET ページ](~/cross-platform/platform/visual-basic/index.md)Xamarin は、Visual Basic 言語をサポートしていません。 これは、Visual Basic を使用することができますをいくつかの制限があることを意味します。
 
  - カスタム レンダラーは、Visual Basic で記述することはできません、書き込む必要があります (C#) のネイティブ プラットフォーム プロジェクトでします。
 

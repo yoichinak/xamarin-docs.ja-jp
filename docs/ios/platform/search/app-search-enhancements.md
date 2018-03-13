@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 95f7ad5069abfe4dff82659c0fbc79eef2125e15
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af124c2ae0390c5321e9dd34158c7b53b33b2c48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-search-enhancements"></a>アプリの検索の機能強化
 
@@ -54,17 +54,15 @@ IOS 10 Apple は、メディアまたは Safari、検索を開始し、アプリ
 
 この機能を実装するには、編集、アプリの`Info.plist`ファイルに追加し、`CoreSpotlightContinuation`型のキー**ブール**にその値を設定および`YES`:
 
-[[ide name="xs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](app-search-enhancements-images/search01.png "CoreSpotlightContinuation Info.plist ファイルを編集")](app-search-enhancements-images/search01.png)
+[![](app-search-enhancements-images/search01.png "CoreSpotlightContinuation Info.plist ファイルを編集")](app-search-enhancements-images/search01.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[ide name="vs]]
+[![](app-search-enhancements-images/searchw01.png "CoreSpotlightContinuation Info.plist ファイルを編集")](app-search-enhancements-images/search01.png#lightbox)
 
-[ ![](app-search-enhancements-images/searchw01.png "CoreSpotlightContinuation Info.plist ファイルを編集")](app-search-enhancements-images/search01.png)
-
-[[/ide]]
+-----
 
 表示するには、検索結果の操作を続行する (`NSUserActivity`)、編集、`AppDelegate.cs`ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例:
 

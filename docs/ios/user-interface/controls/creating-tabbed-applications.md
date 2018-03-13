@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2a10c161c49e7cd0d45d29522a98c0dc78f7adb7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>タブ バーおよびタブ バー コント ローラー
 
@@ -42,7 +42,7 @@ _タブ ナビゲーション UI を使用して iOS アプリケーションは
 
 このチュートリアルでは、次のアプリケーションを作成しましょう。
 
-[ ![](creating-tabbed-applications-images/00-app.png "タブ付きのサンプル アプリ")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "タブ付きのサンプル アプリ")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 この例で、Mac を Visual Studio で使用可能なタブ付きのアプリケーション テンプレートに既にがしようとして、アプリケーションを構築する方法の理解に空のプロジェクトから作業します。
 
@@ -55,9 +55,9 @@ _タブ ナビゲーション UI を使用して iOS アプリケーションは
 
 選択、**ファイル > 新規 > ソリューション**Mac と選択の Visual Studio のメニュー項目、 **iOS > アプリ > 空のプロジェクト**名では、プロジェクト テンプレートは、`TabbedApplication`次のように。
 
-[ ![](creating-tabbed-applications-images/newsolution1.png "空のプロジェクト テンプレートを選択します。")](creating-tabbed-applications-images/newsolution1.png)
+[![](creating-tabbed-applications-images/newsolution1.png "空のプロジェクト テンプレートを選択します。")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
-[ ![](creating-tabbed-applications-images/newsolution2.png "TabbedApplication プロジェクトを名前します。")](creating-tabbed-applications-images/newsolution2.png)
+[![](creating-tabbed-applications-images/newsolution2.png "TabbedApplication プロジェクトを名前します。")](creating-tabbed-applications-images/newsolution2.png#lightbox)
 
 
 
@@ -65,7 +65,7 @@ _タブ ナビゲーション UI を使用して iOS アプリケーションは
 
 次に、空のクラスを追加 を選択して**ファイル > 新しいファイル**を選択して、**全般: 空のクラス**テンプレート。 ファイルの名前を付けます`TabController`次のようにします。
 
-[ ![](creating-tabbed-applications-images/02-newclass.png "TabController クラスを追加します。")](creating-tabbed-applications-images/02-newclass.png)
+[![](creating-tabbed-applications-images/02-newclass.png "TabController クラスを追加します。")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
 `TabController`クラスの実装に含まれる、`UITabBarController`の配列を管理する`UIViewControllers`です。 ユーザーは、タブを選択したときに、`UITabBarController`は、適切なビュー コント ローラーのビューを表示するように注意します。
 
@@ -113,7 +113,7 @@ namespace TabbedApplication {
 
 各ことに注意して`UIViewController`設定は、インスタンス、`Title`のプロパティ、`UIViewController`です。 コント ローラーを追加するときに、 `UITabBarController`、`UITabBarController`は読み取り、`Title`各コント ローラーにし、次のように、関連付けられているタブのラベルに表示。
 
-[ ![](creating-tabbed-applications-images/00-app.png "実行するサンプル アプリ")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "実行するサンプル アプリ")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 #### <a name="setting-the-tabcontroller-as-the-rootviewcontroller"></a>RootViewController として、TabController を設定します。
 
@@ -144,7 +144,7 @@ namespace TabbedApplication {
 
 今すぐ、アプリケーションを実行している場合、`UITabBarController`既定で選択されている最初のタブでの読み込みになります。 関連付けられたコント ローラーの結果ビューを選択すると、その他のタブのいずれかで表示されている、`UITabBarController,`エンドユーザーが 2 番目のタブを選択する、次のようにします。
 
-[ ![](creating-tabbed-applications-images/03-secondtab.png "2 番目のタブが表示されます。")](creating-tabbed-applications-images/03-secondtab.png)
+[![](creating-tabbed-applications-images/03-secondtab.png "2 番目のタブが表示されます。")](creating-tabbed-applications-images/03-secondtab.png#lightbox)
 
  <a name="Modifying_TabBarItems" />
 
@@ -185,7 +185,7 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
 上記のコードには、という名前のイメージが前提としています`second.png`for mac を Visual Studio でプロジェクトのルートが追加されました 3 つのイメージは、次に示すようにすべてのデバイスの解像度をカバーする、プロジェクトには実際に追加されました。
 
- [ ![](creating-tabbed-applications-images/tabbedimages7new.png "プロジェクトに追加のイメージ")](creating-tabbed-applications-images/tabbedimages7new.png)
+ [![](creating-tabbed-applications-images/tabbedimages7new.png "プロジェクトに追加のイメージ")](creating-tabbed-applications-images/tabbedimages7new.png#lightbox)
 
 透過性は、通常の解決、60 倍高解像度の 60 と 90 x 90 iPhone 6 用に 30 × 30 png をする必要があります タブの画像解像度とします。 このコードでのみ必要がありますをという名前のファイルを読み込む`second.png`iOS は、高解像度いずれかの Retina ディスプレイを持つデバイスに自動的に読み込むとします。 詳細を読み取ることができますにこれは、[イメージを操作](~/ios/app-fundamentals/images-icons/index.md)ガイドです。 既定では、タブ バーの項目は、選択されているときに青の色の灰色をされます。
 
@@ -193,13 +193,13 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
 上の図にも追加でした、**リソース**ディレクトリで、特別なディレクトリの内容は、アプリケーション バンドルのルートに自動的にコピーされます。
 
-[ ![](creating-tabbed-applications-images/tabbedapplication8.png "リソースとしてイメージ")](creating-tabbed-applications-images/tabbedapplication8.png)
+[![](creating-tabbed-applications-images/tabbedapplication8.png "リソースとしてイメージ")](creating-tabbed-applications-images/tabbedapplication8.png#lightbox)
 
 さらに設定すると、`Title`プロパティに直接、 `TabBarItem`、任意の値の設定をオーバーライドは`Title`コント ローラー自体にします。
 
 今すぐアプリケーションを実行したときに 2 番目のタブ イメージを示しています、カスタムのタイトルの下に示すように。
 
-[ ![](creating-tabbed-applications-images/05-customtab.png "四角形のアイコンと 2 番目のタブ")](creating-tabbed-applications-images/05-customtab.png)
+[![](creating-tabbed-applications-images/05-customtab.png "四角形のアイコンと 2 番目のタブ")](creating-tabbed-applications-images/05-customtab.png#lightbox)
 
  <a name="Setting_the_Badge_Value" />
 
@@ -214,7 +214,7 @@ tab3.TabBarItem.BadgeValue = "Hi";
 
 これを実行すると、次のように、タブの左上隅で、文字列"Hi"で赤色のラベルで得られます。
 
-[ ![](creating-tabbed-applications-images/06-badge.png "Hi バッジと 2 番目のタブ")](creating-tabbed-applications-images/06-badge.png)
+[![](creating-tabbed-applications-images/06-badge.png "Hi バッジと 2 番目のタブ")](creating-tabbed-applications-images/06-badge.png#lightbox)
 
 未読、番号の示す値を表示するバッジが使用される多くの場合、新しい項目。 バッジを削除するには、設定、`BadgeValue`を次に示すように null にします。
 
@@ -236,7 +236,7 @@ tab3.TabBarItem.BadgeValue = null;
 
 このシナリオでは、最初の画面を読み込みますがコント ローラーから、`UITabBarController`です。 同じビュー コント ローラーに読み込まれる、ユーザーを操作する画面にボタンをタップしたときに、`UITabBarController`ユーザーに提示されています。 次のスクリーン ショットは、アプリケーションのフローを示しています。
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "このスクリーン ショットは、アプリケーションのフローを示しています。")](creating-tabbed-applications-images/inital-screen-application.png)
+[![](creating-tabbed-applications-images/inital-screen-application.png "このスクリーン ショットは、アプリケーションのフローを示しています。")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 この例は、新しいアプリケーションを起動してみましょう。 使用して、もう一度、 **iPhone > アプリ > 空のプロジェクト (c#)**テンプレート今度は、プロジェクトの名前付け`InitialScreenDemo`です。
 
@@ -249,14 +249,14 @@ tab3.TabBarItem.BadgeValue = null;
 
 この新しいストーリー ボードをとしましょう**MainStoryboard**下図のように、します。 
 
-[ ![](creating-tabbed-applications-images/new-file-dialog.png "MainStoryboard ファイルをプロジェクトに追加します。")](creating-tabbed-applications-images/new-file-dialog.png)
+[![](creating-tabbed-applications-images/new-file-dialog.png "MainStoryboard ファイルをプロジェクトに追加します。")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
 いくつかの重要な手順で説明する以前ストーリー ボード ファイルに、ストーリー ボードを追加する場合に注意してください、[ストーリー ボードの概要](~/ios/user-interface/storyboards/index.md)ガイドです。 これらの数値は、次のとおりです。
 
  
 1. ストーリー ボード名を追加、 **Main インターフェイス**のセクションで、 `Info.plist`:
 
-    [![](creating-tabbed-applications-images/project-options.png "MainStoryboard にメインのインターフェイスを設定します。")](creating-tabbed-applications-images/project-options.png)
+    [![](creating-tabbed-applications-images/project-options.png "MainStoryboard にメインのインターフェイスを設定します。")](creating-tabbed-applications-images/project-options.png#lightbox)
 1. `App Delegate`、次のコード ウィンドウ メソッドをオーバーライドします。
 
     ```csharp
@@ -270,11 +270,11 @@ tab3.TabBarItem.BadgeValue = null;
 
 MainStoryboard.storyboard ファイルをダブルクリックしてデザイナーを開き、デザイン サーフェイスにコント ローラーを次の 3 つの表示をドラッグします。 たい各コント ローラーのこれらの表示、上記の名前に対応する、独自のクラスには、下にある**Identity > クラス**、次のスクリーン ショットに示すように、その名前で入力します。
 
-[ ![](creating-tabbed-applications-images/class-name.png "クラスを ViewController1 に設定します。")](creating-tabbed-applications-images/class-name.png)
+[![](creating-tabbed-applications-images/class-name.png "クラスを ViewController1 に設定します。")](creating-tabbed-applications-images/class-name.png#lightbox)
 
 クラスとデザイナーのファイルが必要な visual Studio for Mac が自動的に生成、発生することはソリューション パッドでは、次のようにします。
 
-[ ![](creating-tabbed-applications-images/solution-pad2.png "プロジェクト内のファイルの自動生成")](creating-tabbed-applications-images/solution-pad2.png)
+[![](creating-tabbed-applications-images/solution-pad2.png "プロジェクト内のファイルの自動生成")](creating-tabbed-applications-images/solution-pad2.png#lightbox)
 
  <a name="Creating_the_UI" />
 
@@ -291,11 +291,11 @@ MainStoryboard.storyboard ファイルをダブルクリックしてデザイナ
 
 ボタンの表示を制御して、`TouchUpInside`イベント、およびおを分離コード内で参照する必要があります。 みましょう識別するために、**名前**`aButton`パッドでは、プロパティ、次のスクリーン ショットに示されています。
 
-[ ![](creating-tabbed-applications-images/abutton-properties.png "名前プロパティ パッドでボタンを設定します")](creating-tabbed-applications-images/abutton-properties.png)
+[![](creating-tabbed-applications-images/abutton-properties.png "名前プロパティ パッドでボタンを設定します")](creating-tabbed-applications-images/abutton-properties.png#lightbox)
 
 デザイン画面は次のスクリーン ショットのようになります。
 
-[ ![](creating-tabbed-applications-images/design-surface1.png "デザイン画面はこのスクリーン ショットのようになります")](creating-tabbed-applications-images/design-surface1.png)
+[![](creating-tabbed-applications-images/design-surface1.png "デザイン画面はこのスクリーン ショットのようになります")](creating-tabbed-applications-images/design-surface1.png#lightbox)
 
 もう少し詳しくを追加してみましょう。`ViewController2`と`ViewController3`では、各グループにラベルを追加すると、'2' と '3' にテキストを変更すると、それぞれします。 これを強調表示をユーザーに見ているタブ/ビュー。
 
@@ -305,7 +305,7 @@ MainStoryboard.storyboard ファイルをダブルクリックしてデザイナ
 
 ユーザーを離したときに、 `aButton`、TouchUpInside イベントを起動させるします。 ボタンを選択し、[、**イベント] タブ**プロパティ パッドのイベント ハンドラーを宣言 – `InitialActionCompleted` : コード内を参照するようにします。 これは、次のスクリーン ショットに示します。
 
-[ ![](creating-tabbed-applications-images/event-handler.png "ユーザーが、ボタンを離したときに、TouchUpInside イベントをトリガーします。")](creating-tabbed-applications-images/event-handler.png)
+[![](creating-tabbed-applications-images/event-handler.png "ユーザーが、ボタンを離したときに、TouchUpInside イベントをトリガーします。")](creating-tabbed-applications-images/event-handler.png#lightbox)
 
 ここで、イベントの発生時に、ボタンを非表示にするビュー コント ローラーを確認する必要があります`InitialActionCompleted`です。 `ViewController1`、次の部分的なメソッドを追加します。
 
@@ -324,7 +324,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 **ツールボックス**、検索、**タブ バーのコント ローラー** コント ローラーとオブジェクトをデザイン画面にドラッグします。 タブ バー コント ローラーは、次のスクリーン ショットに示すように、UI のない 2 コント ローラーの表示で、既定ではそのためとします。
 
-[ ![](creating-tabbed-applications-images/tabbarcontroller.png "タブ バー コント ローラーをレイアウトに追加します。")](creating-tabbed-applications-images/tabbarcontroller.png)
+[![](creating-tabbed-applications-images/tabbarcontroller.png "タブ バー コント ローラーをレイアウトに追加します。")](creating-tabbed-applications-images/tabbarcontroller.png#lightbox)
 
 下部の黒のバーを選択し、del キーを押してしてこれらの新しいビューのコント ローラーを削除します。
 
@@ -334,15 +334,15 @@ partial void InitialActionCompleted (UIButton sender)
  
 それぞれのタブの設定を**Ctrl キーを押し**1 ~ 3、およびリレーションシップを選択する順序でコント ローラーの表示の各 TabBarController から**タブ**以下に示すように、コンテキスト メニューから。
 
-[ ![](creating-tabbed-applications-images/context-menu.png "タブのリレーションシップを選択します。")](creating-tabbed-applications-images/context-menu.png)
+[![](creating-tabbed-applications-images/context-menu.png "タブのリレーションシップを選択します。")](creating-tabbed-applications-images/context-menu.png#lightbox)
 
 ストーリー ボードは次のスクリーン ショットのようになります。
 
-[ ![](creating-tabbed-applications-images/segue-layout.png "ストーリー ボードこのスクリーン ショットのようになります")](creating-tabbed-applications-images/segue-layout.png)
+[![](creating-tabbed-applications-images/segue-layout.png "ストーリー ボードこのスクリーン ショットのようになります")](creating-tabbed-applications-images/segue-layout.png#lightbox)
 
 タブ バー項目のいずれかをクリックすると、[プロパティ] パネルの探索は、以下に示すように、各種のオプションの数を確認できます。
 
-[ ![](creating-tabbed-applications-images/properties-panel.png "プロパティ エクスプ ローラー タブのオプションを設定します。")](creating-tabbed-applications-images/properties-panel.png)
+[![](creating-tabbed-applications-images/properties-panel.png "プロパティ エクスプ ローラー タブのオプションを設定します。")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
 これを使用して、バッジ、タイトルや iOS などの特定の属性を編集[識別子](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html)、その他
 
@@ -360,11 +360,11 @@ public override void ViewDidLoad ()
 
 アプリケーションの実行時とユーザーの最初の画面で、UITabBarController 上のボタンをタップした読み込まれると、ビューを次に示すように、最初のタブに配置する最初の画面から。
 
-[ ![](creating-tabbed-applications-images/first-view.png "アプリのサンプル出力")](creating-tabbed-applications-images/first-view.png)
+[![](creating-tabbed-applications-images/first-view.png "アプリのサンプル出力")](creating-tabbed-applications-images/first-view.png#lightbox)
 
 <!--Save the files and run the application:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png)-->
+[![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)-->
 
 ## <a name="summary"></a>まとめ
 

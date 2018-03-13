@@ -3,14 +3,15 @@ title: "20 章の概要です。 Async およびファイル I/O"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: f7c81cfb77772af219fe28f081e7f8636e118fb1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>20 章の概要です。 Async およびファイル I/O
 
@@ -150,7 +151,7 @@ Windows ランタイムで実行されるプログラム クラスを使用し�
 
 [ **MandelbrotXF** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotXF)サンプルより広範なユーザー インターフェイスと、これはほとんどの場合に基づいて、 [ `MandelbrotModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotModel.cs)と[ `MandelbrotViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotViewModel.cs)クラス。
 
-[![マンデルブロ X F のトリプル スクリーン ショット](images/ch20fg13-small.png "MVVM マンデルブロ")](images/ch20fg13-large.png "MVVM マンデルブロ")
+[![マンデルブロ X F のトリプル スクリーン ショット](images/ch20fg13-small.png "MVVM マンデルブロ")](images/ch20fg13-large.png#lightbox "MVVM マンデルブロ")
 
 ## <a name="back-to-the-web"></a>Web に戻る
 

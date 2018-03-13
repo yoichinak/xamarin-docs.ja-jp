@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 040a5979339ed12f212f932f3b7e51cf48a9d382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin デザイナーに自動レイアウト
 
@@ -54,7 +54,7 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 ## <a name="constraints-toolbar"></a>制約のツールバー
 
- [ ![](designer-auto-layout-images/toolbarnew.png "コンテキスト メニュー コマンド")](designer-auto-layout-images/toolbarnew.png)
+ [![](designer-auto-layout-images/toolbarnew.png "コンテキスト メニュー コマンド")](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 制約ツールバーが更新されており、ここでは 2 つの主要な部分で構成されます。
 
@@ -83,7 +83,7 @@ IOS デザイナー ツールには、デザイン サーフェイス上の要�
 
 制約を作成するには、ハンドルを選択し、デザイン画面上の任意の場所にドラッグします。 新機能を示す画面で、一連の緑の線/ボックスが表示されます、ドラッグを開始するときに制約することができます。 たとえば、次のスクリーン ショットの中央ボタンの上にあるを制約お。
 
- [ ![](designer-auto-layout-images/image07.png "中央のボタンの上側の制約")](designer-auto-layout-images/image07.png)
+ [![](designer-auto-layout-images/image07.png "中央のボタンの上側の制約")](designer-auto-layout-images/image07.png#lightbox)
 
 他の 2 つのボタンの間で、次の 3 つ緑破線に注意してください。 緑の線を示す*ドロップ エリア*、またはおを制限するその他の要素の属性です。 他の 2 つのボタンが 3 の垂直方向のドロップ領域を提供する上記のスクリーン ショット (*下部*、 *centerY*、*上部*) ボタンを制限します。 ビューの上部にある緑の点線は、ビュー コント ローラーには、ビューの上部にある、制約と純色の緑色のボックスでは、ビュー コント ローラーには、最上位レイアウト ガイドの下の制約は意味を意味します。
 
@@ -98,13 +98,13 @@ IOS デザイナー ツールには、デザイン サーフェイス上の要�
 
 サイズ制約 -*高さ*と*幅*-2 つのオプションがあります。 最初のオプションでは、上記の例で示すように、近隣ノードと要素のサイズを制限するハンドルをドラッグします。 その他のオプションでは、自己制約を作成するハンドルをダブルクリックします。 これにより、定数のサイズの値を指定する次のスクリーン ショットに示すようにします。
 
- [ ![](designer-auto-layout-images/sizec.png "次に示すように、近隣ノードと要素のサイズを制限するハンドルをドラッグします。")](designer-auto-layout-images/sizec.png)
+ [![](designer-auto-layout-images/sizec.png "次に示すように、近隣ノードと要素のサイズを制限するハンドルをドラッグします。")](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>Center の制約
 
 四角形のハンドルが作成されます、 *centerX*または*centerY*コンテキストに応じて、制約。 四角形のハンドルをドラッグすることが点灯で次のスクリーン ショットに示すように両方の垂直および水平方向のドロップ領域を提供するその他の要素。
 
- [ ![](designer-auto-layout-images/centerc.png "Center の制約")](designer-auto-layout-images/centerc.png)
+ [![](designer-auto-layout-images/centerc.png "Center の制約")](designer-auto-layout-images/centerc.png#lightbox)
 
 垂直方向のドロップ領域を選択した場合、 *centerY*制約が作成されます。 水平方向のドロップ領域を選択した場合、制約は、に基づいて*centerX*です。
 
@@ -112,17 +112,17 @@ IOS デザイナー ツールには、デザイン サーフェイス上の要�
 
 アラインメントと 2 つの要素間の等値制約のサイズの両方を作成するには、次のスクリーン ショットに示すように、上部のツールバーの水平方向の配置、垂直方向の配置およびサイズの等号の順序で指定するから項目を選択できます。
 
- [ ![](designer-auto-layout-images/image06.png "Combinational 制約")](designer-auto-layout-images/image06.png)
+ [![](designer-auto-layout-images/image06.png "Combinational 制約")](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>視覚表示や制約を編集
 
 制約を追加するときにそれが表示されますデザイン サーフェイスに青い線として項目を選択するときに。
 
- [ ![](designer-auto-layout-images/image09.png "制約を視覚化します。")](designer-auto-layout-images/image09.png)
+ [![](designer-auto-layout-images/image09.png "制約を視覚化します。")](designer-auto-layout-images/image09.png#lightbox)
 
 青い線をクリックし、[プロパティ] パネルで直接制約条件の値を編集する制約を選択します。 代わりに、青い線をダブルクリックするとは、デザイン画面に直接値を編集できる重なってが表示されます。
 
- [ ![](designer-auto-layout-images/image08.png "制約の編集")](designer-auto-layout-images/image08.png)
+ [![](designer-auto-layout-images/image08.png "制約の編集")](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>制約の問題
 
@@ -139,27 +139,27 @@ IOS デザイナー ツールには、デザイン サーフェイス上の要�
 
 競合する制約は赤でマークされに警告シンボルがあります。 競合に関する情報を含む重なって警告記号の上にマウスが表示されます。
 
- [ ![](designer-auto-layout-images/image11.png "競合する制約の警告")](designer-auto-layout-images/image11.png)
+ [![](designer-auto-layout-images/image11.png "競合する制約の警告")](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>不完全拘束項目
 
 不完全拘束項目は、オレンジ色で表示され、ビュー コント ローラー オブジェクトのバーに、オレンジ色のマーカーのアイコンの外観をトリガーします。
 
- [ ![](designer-auto-layout-images/image02.png "不完全拘束項目がオレンジ色を表示します。")](designer-auto-layout-images/image02.png)
+ [![](designer-auto-layout-images/image02.png "不完全拘束項目がオレンジ色を表示します。")](designer-auto-layout-images/image02.png#lightbox)
 
 マーカー アイコンをクリックした場合は、シーンの不完全拘束項目に関する情報を取得および次のスクリーン ショットに示すように、またはそれらの制約を削除することでいずれか完全に制限することでそれらの問題を解決できます。
 
- [ ![](designer-auto-layout-images/image10.png "不完全拘束項目を修正します。")](designer-auto-layout-images/image10.png)
+ [![](designer-auto-layout-images/image10.png "不完全拘束項目を修正します。")](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>フレームの存在
 
 フレームの存在は、不完全拘束項目として、同じ色コードを使用します。 ネイティブ フレームを使用して、画面には、アイテムが常に表示されますが、フレームの存在の場合、赤色の四角形としてマークされますがどこアイテムで終了アプリケーションの実行時に次のスクリーン ショットに示すように。
 
- [ ![](designer-auto-layout-images/image05.png "サンプルのフレームの存在の表示")](designer-auto-layout-images/image05.png)
+ [![](designer-auto-layout-images/image05.png "サンプルのフレームの存在の表示")](designer-auto-layout-images/image05.png#lightbox)
 
 フレーム存在エラーを解決するには、選択、**制約に基づいてフレームを更新**(一番右のボタン) は、制約ツールバーからボタンをクリックします。
 
- [ ![](designer-auto-layout-images/image03.png "ツール バー ボタンの制約に基づくフレームを更新します。")](designer-auto-layout-images/image03.png)
+ [![](designer-auto-layout-images/image03.png "ツール バー ボタンの制約に基づくフレームを更新します。")](designer-auto-layout-images/image03.png#lightbox)
 
 これにより、コントロールで定義されている位置に一致する要素のフレームは自動的に調整します。
 
@@ -174,10 +174,10 @@ IOS デザイナー ツールには、デザイン サーフェイス上の要�
 1. (上記のいずれかを使用) が通常どおり、制約を作成します。
 2. **ドキュメント アウトラインのエクスプ ローラー**目的の制約を見つけて、それを選択します。
 
-    [ ![](designer-auto-layout-images/modify01.png "ドキュメント アウトラインのエクスプ ローラー")](designer-auto-layout-images/modify01.png)
+    [![](designer-auto-layout-images/modify01.png "ドキュメント アウトラインのエクスプ ローラー")](designer-auto-layout-images/modify01.png#lightbox)
 3. 次に、割り当て、**名前**で、この制約に、**ウィジェット**のタブ、**プロパティ エクスプ ローラー**:
 
-    [ ![](designer-auto-layout-images/modify02.png "ウィジェット タブ")](designer-auto-layout-images/modify02.png)
+    [![](designer-auto-layout-images/modify02.png "ウィジェット タブ")](designer-auto-layout-images/modify02.png#lightbox)
 4. 変更内容を保存します。
 
 場所で上記の変更、コード内の制約にアクセスでき、そのプロパティを変更できます。 たとえば、次を使用して、0 に接続されているビューの高さを設定することができます。
@@ -188,7 +188,7 @@ ViewInfoHeight.Constant = 0;
 
 IOS デザイナーで制約の次の設定を指定します。
 
-[ ![](designer-auto-layout-images/modify03.png "制約プロパティ エクスプ ローラーでの編集")](designer-auto-layout-images/modify03.png)
+[![](designer-auto-layout-images/modify03.png "制約プロパティ エクスプ ローラーでの編集")](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>遅延のレイアウト パス
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 396ed31cba336976342a8dfb26f31eeda20cf494
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe76c93afc149553e44b5e8fa29a21767becf5c5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="navigation-bar"></a>ナビゲーション バー
 
 Android 4 と呼ばれる新しいシステム ユーザー インターフェイス機能を導入された、*ナビゲーション バー*、ハードウェア ボタンが含まれていないデバイス上のナビゲーション コントロールを提供する**ホーム**、**戻る**、および**メニュー**です。
 次のスクリーン ショットは、素数の Nexus デバイスからナビゲーション バーを示しています。
 
- [ ![Android のナビゲーション バーの例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png)
+ [![Android のナビゲーション バーの例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
 いくつかの新しいフラグが使用可能なナビゲーション バーと、そのコントロールの表示だけでなく Android 3 で導入されたシステム バーの可視性を制御します。 フラグが定義されている、`Android.View.View`クラスし、以下に示します。
 
@@ -31,7 +31,7 @@ Android 4 と呼ばれる新しいシステム ユーザー インターフェ�
 
 次の例は、単純なアプリケーションで変更のボタンをクリックすると、 `SystemUiVisibility`:
 
- [ ![Visible、低プロファイル、および SystemUiVisibility の非表示を示すスクリーン ショット](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png)
+ [![Visible、低プロファイル、および SystemUiVisibility の非表示を示すスクリーン ショット](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
 変更するコード、`SystemUiVisibility`でプロパティを設定、`TextView`から各ボタンのクリック イベント ハンドラーを次のようにします。
 

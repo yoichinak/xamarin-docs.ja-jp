@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 75a8e807a68a3fccfa76fc7ba1f260818b25174d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>WatchOS 3 のクイックの相互作用手法
 
@@ -77,7 +77,7 @@ watchOS 3、4 つの次のジェスチャ レコグナイザーをサポート�
 
 ジェスチャが認識されると、状態、不連続のジェスチャでは、アクションが呼び出されます (`WKGestureRecognizerState`) として割り当てられます。
 
-[ ![](quick-interaction-techniques-images/quick01.png "個別のジェスチャ状態")](quick-interaction-techniques-images/quick01.png)
+[![](quick-interaction-techniques-images/quick01.png "個別のジェスチャ状態")](quick-interaction-techniques-images/quick01.png#lightbox)
 
 すべての不連続ジェスチャ作業を開始、`Possible`状態および遷移にするか、`Failed`または`Recognized`状態です。 不連続のジェスチャを使用する場合、開発者、通常しないを直接処理状態。 代わりに、依存しているジェスチャがのみ認識されるときに呼び出されるアクション。
 
@@ -85,7 +85,7 @@ watchOS 3、4 つの次のジェスチャ レコグナイザーをサポート�
 
 継続的なジェスチャは不連続ジェスチャをジェスチャが認識されているように、アクションで複数回に呼び出されてから若干異なります。
 
-[ ![](quick-interaction-techniques-images/quick02.png "継続的なジェスチャの状態")](quick-interaction-techniques-images/quick02.png)
+[![](quick-interaction-techniques-images/quick02.png "継続的なジェスチャの状態")](quick-interaction-techniques-images/quick02.png#lightbox)
 
 ここでも、継続的なジェスチャで開始、`Possible`状態が、複数の更新プログラムの進捗します。 開発者は認識エンジンの状態を考慮し、中に、アプリの UI を更新する必要がありますここで、`Changed`ジェスチャが最後になるまでのフェーズ`Recognized`または`Canceled`です。
 
@@ -168,7 +168,7 @@ Apple がのための状態で更新されている UI 要素の変更の秘密�
 
 符号 (`+/-`) 回転デルタのユーザーがデジタル クラウンを回転する方向を示します。
 
-[ ![](quick-interaction-techniques-images/quick03.png "回転の差分の符号は、ユーザーがデジタル クラウンを回転する方向を示します")](quick-interaction-techniques-images/quick03.png)
+[![](quick-interaction-techniques-images/quick03.png "回転の差分の符号は、ユーザーがデジタル クラウンを回転する方向を示します")](quick-interaction-techniques-images/quick03.png#lightbox)
 
 
 ユーザーは、上方向にスクロール、WatchKit では、正の値のデルタと下方向にスクロールし、負のデルタが返されます、向きユーザー影響でウォッチに関係なくを返します。
@@ -189,15 +189,15 @@ Apple がのための状態で更新されている UI 要素の変更の秘密�
 
 標準的な方法、ユーザーが watchOS アプリ内のテーブル ビューを移動することは、目的のデータまでスクロールし、詳細ビューを表示するのには、詳細を確認したら、戻る をタップして特定の行をタップし、その他の情報の処理を繰り返しますをy に関心のあるから、テーブル内で。
 
-[ ![](quick-interaction-techniques-images/quick04.png "テーブルや詳細ビュー間を移動")](quick-interaction-techniques-images/quick04.png)
+[![](quick-interaction-techniques-images/quick04.png "テーブルや詳細ビュー間を移動")](quick-interaction-techniques-images/quick04.png#lightbox)
 
 新しい watchOS 3、開発者を有効に垂直方向のページングのテーブル ビュー コントロールにします。 この機能を有効にすると、ユーザーは、テーブル ビューの行を見つけて、前にその詳細を表示する行をタップしてスクロールできます。 ただしができるようになりました上方向にスワイプの表に、または前の行を選択するように、次の行を選択 (またはデジタル クラウン)、テーブルのビューに戻るにことがなくすべて最初。
 
-[ ![](quick-interaction-techniques-images/quick05.png "テーブルや詳細ビュー間を移動およびスワイプ上または下の他の行に移動するには")](quick-interaction-techniques-images/quick05.png)
+[![](quick-interaction-techniques-images/quick05.png "テーブルや詳細ビュー間を移動およびスワイプ上または下の他の行に移動するには")](quick-interaction-techniques-images/quick05.png#lightbox)
 
 このモードを有効にするを Xcode で watchOS アプリのストーリー ボードを開いて編集テーブル ビューを選択し、確認、**垂直詳細ページング** チェック ボックス。
 
-[ ![](quick-interaction-techniques-images/quick06.png "チェック ボックスを垂直方向の詳細のページング")](quick-interaction-techniques-images/quick06.png)
+[![](quick-interaction-techniques-images/quick06.png "チェック ボックスを垂直方向の詳細のページング")](quick-interaction-techniques-images/quick06.png#lightbox)
 
 詳細なビューを表示し、ストーリー ボードに変更を保存して同期する Mac 用の Visual Studio に戻り、テーブルが Segues を使用していることを確認します。
 
@@ -313,7 +313,7 @@ Apple では、すべて watchOS 豊富な簡単かつ watchOS アプリのイ�
 
 具体的になります問題 watch アプリが任意の種類のネットワーク接続を行うか、コンパニオン iPhone アプリでの情報共有です。 多くの場合につながります待機インジケーター、トランザクションの実行中、これは、クイック対話中に望ましくないです。 次の例を参照してください。
 
-[ ![](quick-interaction-techniques-images/quick07.png "ネットワーク接続を行い、そのガイド 』 の iPhone アプリでの情報共有、watch アプリのダイアグラム")](quick-interaction-techniques-images/quick07.png)
+[![](quick-interaction-techniques-images/quick07.png "ネットワーク接続を行い、そのガイド 』 の iPhone アプリでの情報共有、watch アプリのダイアグラム")](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. ユーザーは、ウォッチ上を購入する項目を選択します。
 2. これらは、購入ボタンをタップします。
@@ -325,7 +325,7 @@ Apple では、すべて watchOS 豊富な簡単かつ watchOS アプリのイ�
 
 Apple の推奨モデルを使用して、見て同じクイック操作をもう一度。
 
-[ ![](quick-interaction-techniques-images/quick08.png "リンゴの推奨モデル ダイアグラム")](quick-interaction-techniques-images/quick08.png)
+[![](quick-interaction-techniques-images/quick08.png "リンゴの推奨モデル ダイアグラム")](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. ユーザーは、ウォッチ上を購入する項目を選択します。
 2. これらは、購入ボタンをタップします。

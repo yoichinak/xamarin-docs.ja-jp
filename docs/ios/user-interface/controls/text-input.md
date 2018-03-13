@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: ce1014616d0cf5f6cd5228d69976dfeca546b382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c45ea8cb7c0e3d12e94666d61c6fdf7e5828264e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="text-input"></a>テキスト入力
 
@@ -19,9 +19,9 @@ ms.lasthandoff: 02/27/2018
 
 次のスクリーン ショットは、Mac の Visual Studio のツールボックス パッドにあるこれらのコントロールのアイコンを表示します。
 
- [ ![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png)
+ [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
 
- [ ![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png)
+ [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
 コンセントをという名前が付いてし、ストーリー ボード ファイルを保存するには、Visual Studio for Mac は更新、`.designer.cs`部分クラスとする c# クラス ファイルにコントロールを参照するコードを追加できます。 各コントロールには、独自の固有のプロパティと c# コードでアクセスできるイベントがあります。
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 02/27/2018
 
 `UITextField`を 1 行のユーザー名やパスワードなどのテキスト入力を受け付けるようにコントロールを最も頻繁に使用します。 コントロールのカスタマイズに使用できるオプションの一部を次に示します。
 
- [ ![](text-input-images/image15a.png "UITextField プロパティ")](text-input-images/image15a.png)
+ [![](text-input-images/image15a.png "UITextField プロパティ")](text-input-images/image15a.png#lightbox)
 
 これらのコントロールについて詳しく説明します。
 
@@ -76,7 +76,7 @@ View.Add(textfield1);
 
 `UITextView`読み取り専用のテキストを表示するか、複数行テキスト入力を受け入れるように、コントロールを使用できます。 同様のオプションの多くがある、 `UITextField` (など、修正、大文字と小文字など)。
 
- [ ![](text-input-images/image16a.png "UITextView プロパティ")](text-input-images/image16a.png)
+ [![](text-input-images/image16a.png "UITextView プロパティ")](text-input-images/image16a.png#lightbox)
 
 特定のプロパティは次のとおりです。
 

@@ -8,15 +8,15 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
-ms.openlocfilehash: b6054b4037b14a73cb5bfe50b619e805fdcf1737
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: caee0d685838f7c0a54e19611fdf72df5730c037
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>Xamarin.Forms 書籍の最初のエディションでモバイル アプリの作成
 
-<p><img src="Images/Cover-sml.png" title="Xamarin.Forms 帳を使用してモバイル アプリの作成" align="left"/>Charles Petzold 最新 book - <i>Xamarin.Forms を使用したモバイル アプリを作成する</i> - (電子) を押してが送信され、ダウンロードするようになりました。</p>
+<p><img src="Images/Cover-sml.png" title="Xamarin.Forms 帳を使用してモバイル アプリの作成" align="left" />Charles Petzold 最新 book - <i>Xamarin.Forms を使用したモバイル アプリを作成する</i> - (電子) を押してが送信され、ダウンロードするようになりました。</p>
 
 これは、*初版*27 のチャプターがあり、Xamarin.Forms をカバー&nbsp;2.x アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタムのレンダラーでいっそうなどです。
 28 章も現在オンライン以下に示す個々 のチャプター間できます。

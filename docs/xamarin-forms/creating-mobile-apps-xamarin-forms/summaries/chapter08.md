@@ -3,14 +3,15 @@ title: "第 8 章の概要です。 コードと調和で XAML"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e95d6a20e828c92deb0e03fe1bcbcf18aac9e508
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 452a7835bcb54501edffe7a2467544c6677616ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要です。 コードと調和で XAML
 
@@ -69,7 +70,7 @@ XAML のマークアップの繰り返しを避けるためにいくつかの方
 
 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)生成[ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/)イベント。 [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap)プログラムは、アタッチする方法を示します`TapGestureRecognizer`4 オブジェクト`BoxView`装ってゲームを作成する要素。
 
-[![サル タップのトリプル スクリーン ショット](images/ch08fg07-small.png "模倣ゲーム")](images/ch08fg07-large.png "模倣ゲーム")
+[![サル タップのトリプル スクリーン ショット](images/ch08fg07-small.png "模倣ゲーム")](images/ch08fg07-large.png#lightbox "模倣ゲーム")
 
 **MonkeyTap**プログラムは、サウンドを本当に必要です。 (を参照してください[次のチャプター](chapter09.md))。
 

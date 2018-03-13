@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 0c2765551c16be605bc78d9ef32a91fd2c4ead8c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -83,10 +83,10 @@ XAML では、リソースが定義されている、 [ `ResourceDictionary` ](h
 
 最初の[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンスを取得し、使用、`LabelPageHeadingStyle`アプリケーション レベルで定義されているリソース[ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)と 2 番目`Label`インスタンス取得して、利用、`LabelNormalStyle`制御レベルで定義されているリソース`ResourceDictionary`です。 同様に、 [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)インスタンスを取得し、使用、`NormalTextColor`アプリケーション レベルで定義されているリソース`ResourceDictionary`、および`MediumBoldText`制御レベルで定義されているリソース`ResourceDictionary`です。 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](resource-dictionaries-images/screenshots-sml.png "ResourceDictionary リソースを消費")](resource-dictionaries-images/screenshots.png "ResourceDictionary リソースを消費")
+[![](resource-dictionaries-images/screenshots-sml.png "ResourceDictionary リソースを消費")](resource-dictionaries-images/screenshots.png#lightbox "ResourceDictionary リソースを消費")
 
 > [!NOTE]
-> **注**: アプリケーション レベルのリソース ディクショナリには 1 つのページに固有のリソースを含めることはできません、ようリソースは、解析の代わりにアプリケーションの起動時にページで必要なとき。 詳細については、次を参照してください。[アプリケーション リソース ディクショナリのサイズを小さく](~/xamarin-forms/deploy-test/performance.md)です。
+> 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリ、そのため、ページで必要なときに、リソースの代わりにアプリケーションの起動時に解析されますに含めるべきではありません。 詳細については、次を参照してください。[アプリケーション リソース ディクショナリのサイズを小さく](~/xamarin-forms/deploy-test/performance.md)です。
 
 ## <a name="overriding-resources"></a>リソースをオーバーライドします。
 
@@ -118,7 +118,7 @@ XAML では、リソースが定義されている、 [ `ResourceDictionary` ](h
 
 元の`PageBackgroundColor`と`NormalTextColor`アプリケーション レベルで定義されているインスタンスはによってオーバーライドされる、`PageBackgroundColor`と`NormalTextColor`ページ レベルで定義されているインスタンス。 そのため、ページの背景色青になり、次のスクリーン ショットで示したように、ページ上のテキストは、黄色になります。
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "ResourceDictionary リソースをオーバーライドする")](resource-dictionaries-images/overridding-screenshots.png "ResourceDictionary リソースをオーバーライドします。")
+[![](resource-dictionaries-images/overridding-screenshots-sml.png "ResourceDictionary リソースをオーバーライドする")](resource-dictionaries-images/overridding-screenshots.png#lightbox "ResourceDictionary リソースをオーバーライドします。")
 
 しかし、なおのバック グラウンド バー、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)がまだ黄色のため、 [ `BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/)の値に設定されて、`PageBackgroundColor`アプリケーションで定義されているリソースレベル[ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)です。
 
@@ -175,7 +175,7 @@ XAML コード例を次に、 [ `ResourceDictionary` ](https://developer.xamarin
 1. 使用してマージされたリソース ディクショナリに含まれるリソース、`MergedDictionaries`に登録されている順序でのコレクション、`MergedDictionaries`プロパティです。
 
 > [!NOTE]
-> **注**: リソース ディクショナリの検索は、負荷の高い作業アプリケーションが複数含まれている場合の大規模なリソース ディクショナリ。 そのため、アプリケーション内の各ページだけのページに、不要な検索を回避するには、該当するリソース ディクショナリを使用することを確認します。
+> リソース ディクショナリの検索は、負荷の高い作業アプリケーションが複数含まれている場合の大規模なリソース ディクショナリ。 そのため、アプリケーション内の各ページだけのページに、不要な検索を回避するには、該当するリソース ディクショナリを使用することを確認します。
 
 ## <a name="summary"></a>まとめ
 

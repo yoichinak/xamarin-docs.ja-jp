@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: edc1dd9f9544d1ab03781e7f3181a78b72f53909
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fea2e2f7210e282fa1e27ad3a1203da2216791e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-live-player"></a>Xamarin Live Player
 
 Xamarin Live Player には、アプリにライブの編集を行うことができ、それらの変更反映ライブ デバイスにします。 Xamarin Player のライブ アプリ内で、コードの実行 – エミュレーターを設定するか、ケーブルを使用して、コードを展開する必要はありません。
 
-[ ![Xamarin ライブ プレーヤー: コード、テストをスキャンします。](images/xamarin-live.png)](images/xamarin-live-sml.png)
+[![Xamarin ライブ プレーヤー: コード、テストをスキャンします。](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. 有効にする、 *Xamarin Live Player*で**設定**から選択してから、**デバイス** ボックスの一覧です。
 2. デバッグまたは実行、および、QRCodeto ペアにデバイスをスキャンします。
@@ -28,11 +28,11 @@ Xamarin Live Player には、アプリにライブの編集を行うことがで
 
 Player を使用して Xamarin Live Visual Studio 2017 または Visual Studio for mac IDE を構成します。 Xamarin Live Player には、Android、iOS、および Xamarin.Forms のプロジェクトがサポートしています。
 
-## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Player がライブ アプリ](player.md)
+## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Live Player アプリ](player.md)
 
 プレーヤーのアプリのライブ、Xamarin を使用します。
 
-## <a name="xaml-live-previewinglive-viewmd"></a>[XAML ライブ プレビュー](live-view.md)
+## <a name="xaml-live-previewinglive-viewmd"></a>[XAML Live プレビュー](live-view.md)
 
 "ライブ実行現在の表示"機能を使用します。
 

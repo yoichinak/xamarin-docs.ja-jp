@@ -3,14 +3,15 @@ title: "7 章の概要です。 XAML コードとの比較"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1263328a748ac0bacd368da361aeaff57c4cfa20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1104f7576cabfed9988154f3b6a8beb429136fb3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>7 章の概要です。 XAML コードとの比較
 
@@ -68,7 +69,7 @@ XAML では、 [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.F
 
  複数行文字列を設定すると、`Text`プロパティは、行末の文字は、空白文字に変換されますのコンテンツとして複数行文字列が表示されたら、行末の文字は保持されます、`Label`または`Label.Text`タグ。
 
- [![テキストのバリエーションが共有のトリプル スクリーン ショット](images/ch07fg03-small.png "書式設定テキスト バリエーション")](images/ch07fg03-large.png "テキスト バリエーションの書式設定")
+ [![テキストのバリエーションが共有のトリプル スクリーン ショット](images/ch07fg03-small.png "書式設定テキスト バリエーション")](images/ch07fg03-large.png#lightbox "テキスト バリエーションの書式設定")
 
 
 

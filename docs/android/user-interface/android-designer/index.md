@@ -7,17 +7,17 @@ ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: c06dab9bf280a2543585d36147c7c3311f6445ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-designer"></a>Android Designer
 
 _この記事では、Xamarin.Android デザイナーの機能について説明します。デザイナーを使用してウィジェットを視覚的にレイアウトする方法とプロパティを編集する方法を示す、デザイナーの基本を説明します。デザイナーを使用して、複数のテーマ、言語、およびデバイスの構成などのさまざまな構成ユーザー インターフェイスとリソースを使用する方法と、横、縦など別のビューを設計する方法も示しています。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -37,7 +37,6 @@ Xamarin.Android には、ユーザー インターフェイスのデザインに
 9.  素材の設計に準拠したアプリをビルドする資料デザイン ツールを使用する方法です。
 
 
-<a name="Sections" />
 
 ## <a name="sections"></a>セクション
 
@@ -52,7 +51,6 @@ Xamarin.Android には、ユーザー インターフェイスのデザインに
  [素材のデザイン機能](~/android/user-interface/android-designer/material-design-features.md)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

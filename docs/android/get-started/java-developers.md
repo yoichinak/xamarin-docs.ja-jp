@@ -7,17 +7,17 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: fb74e0efd62c6347534e6f301953325bd4d378d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
 _Java 開発者は、C# のコードを再利用できる利点を活かしながら、Xamarin プラットフォームでの自分のスキルと既存の Java コードの活用方法について学びます。C# の構文が Java の構文とよく似ていることと、両方の言語でよく似た機能が提供されていることがわかります。さらに、開発が容易になる C# 固有の機能についても説明します。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -91,7 +91,6 @@ Java と C# はどちらも、マネージ実行環境で実行される中間�
 以下のセクションでは、C# と Java を "使い始める" ときの基本的な違いの概要を説明し、後のセクションでは、これらの言語でのオブジェクト指向の相違点について説明します。
 
 
-<a name="assemblies" />
 
 ### <a name="libraries-vs-assemblies"></a>ライブラリとアセンブリ
 
@@ -99,7 +98,6 @@ Java では、通常、関連するクラスを **.jar** ファイルにパッ�
 
 アセンブリについて詳しくは、MSDN の「[Assemblies and the Global Assembly Cache](https://msdn.microsoft.com/en-us/library/ms173099.aspx)」 (アセンブリとグローバル アセンブリ キャッシュ (C# および Visual Basic)) のトピックをご覧ください。
 
-<a name="namespaces" />
 
 ### <a name="packages-vs-namespaces"></a>パッケージと名前空間
 
@@ -111,7 +109,6 @@ namespace WeatherApp
     ...
 ```
 
-<a name="imports" />
 
 ### <a name="importing-types"></a>型のインポート
 
@@ -146,7 +143,6 @@ using System.Threading.Tasks;
 これらのステートメントは、`System`、`Android.App`、`Android.Content` などの名前空間から機能をインポートします。
 
 
-<a name="generics" />
 
 ### <a name="generics"></a>ジェネリック
 
@@ -197,7 +193,6 @@ Java と C# では、非常によく似たオブジェクト指向プログラ�
 -   C# では、C++ スタイルのデストラクター構文を使ってファイナライザーを表現します。 構文は Java の `finalize` メソッドと異なりますが、セマンティクスはほぼ同じです (C# のデストラクターは基底クラスのデストラクターを自動的に呼び出すのに対し、Java では `super.finalize` の明示的な呼び出しを使うことに注意してください)。
 
 
-<a name="inheritance" />
 
 ### <a name="class-inheritance"></a>クラスの継承
 
@@ -251,7 +246,6 @@ rulerView.DrawingCacheEnabled = true;
 C# のプロパティについて詳しくは、MSDN の「[プロパティ (C# プログラミング ガイド)](https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx)」トピックをご覧ください。
 
 
-<a name="basemethods" />
 
 ### <a name="calling-base-class-methods"></a>基底クラスのメソッドの呼び出し
 
@@ -287,7 +281,6 @@ public class MainActivity : Activity
 この場合、派生クラス (`MainActivity`) によって定義されている `OnCreate` メソッドは、基底クラス (`Activity`) の `OnCreate` メソッドを呼び出します。
 
 
-<a name="accessmodifiers" />
 
 ### <a name="access-modifiers"></a>アクセス修飾子
 
@@ -300,7 +293,6 @@ Java と C# はどちらも、`public`、`private`、`protected` の各アクセ
 C# のアクセス修飾子について詳しくは、MSDN の「[アクセス修飾子 (C# プログラミング ガイド)](https://msdn.microsoft.com/en-us/library/ms173121.aspx)」トピックをご覧ください。
 
 
-<a name="virtualoverride" />
 
 ### <a name="virtual-and-override-methods"></a>仮想メソッドとオーバーライド メソッド
 
@@ -792,7 +784,6 @@ C# に変換したくない既存の Java 機能がある場合は、2 つの方
 これらの手法について詳しくは、「[Java Integration Overview](~/android/platform/java-integration/index.md)」(Java 統合の概要) をご覧ください。
 
 
-<a name="further" />
 
 ## <a name="for-further-reading"></a>関連項目
 
@@ -803,7 +794,6 @@ Java の知識には、少なくとも Java 言語の知識と同程度の Java 
 C# で最初の Xamarin.Android プロジェクトに取り組む準備ができたら、Microsoft の「[Hello, Android](~/android/get-started/hello-android/index.md)」シリーズが、初めての Xamarin.Android アプリケーションの作成と、Xamarin での Android アプリケーション開発に関する基本事項の理解のさらなる前進に役立ちます。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

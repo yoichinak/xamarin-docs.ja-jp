@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 11a7c9dcbe9481209d2eb90ff9d981f7437a1c99
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b970432d7cd5b6a84b8af72ab616493f3cd36a7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="limitations"></a>制限事項
 
@@ -19,13 +19,11 @@ Android でのアプリケーションでは、ビルド処理中に Java プロ
 
 デスクトップ モノラルと比較して Xamarin.Android 制限事項を次に示します。
 
-<a name="Limited_Dynamic_Language_Support" />
 
 ## <a name="limited-dynamic-language-support"></a>制限付きの動的言語サポート
 
  [Android の呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md) Android ランタイムがマネージ コードを呼び出すために必要な任意の時間が必要です。 Android の呼び出し可能ラッパーは、IL のスタティック分析に基づいて、コンパイル時に生成されます。 この最終的な結果: する*できません*言語を使用して動的 (IronPython、IronRuby など) どのような状況で Java 型のサブクラス化を (間接的なサブクラス化) を含む必要があるこれらの動的な型を抽出するための手段がないです。コンパイル時に必要な Android 呼び出し可能ラッパーを生成します。
 
-<a name="Limited_Java_Generation_Support" />
 
 ## <a name="limited-java-generation-support"></a>限られた Java 生成のサポート
 
@@ -88,7 +86,6 @@ class MyIntentService : IntentService {
 }
 ```
 
-<a name="Generic_Csharp_classes" />
 
 ### <a name="generic-c-classes"></a>ジェネリック クラス (C#)
 
@@ -150,7 +147,6 @@ class MyIntentService : IntentService {
     }
     ```
 
-<a name="Partial_Java_Generics_Support" />
 
 ## <a name="partial-java-generics-support"></a>部分的な Java ジェネリックのサポート
 
@@ -160,7 +156,7 @@ class MyIntentService : IntentService {
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android の呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)
+- [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)
 - [JNI の操作](~/android/platform/java-integration/working-with-jni.md)
 - [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
 - [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)

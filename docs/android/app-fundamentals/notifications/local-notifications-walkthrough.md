@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: 4728b50446033c02d33ccf8273f1dc2e50d66906
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>チュートリアル - Xamarin.Android でローカルの通知の使用
 
 _このチュートリアルでは、Xamarin.Android アプリケーションでローカルの通知を使用する方法を示します。作成して、ローカルの通知の発行の基礎を示しています。ユーザーは、通知領域に通知をクリックすると、2 番目のアクティビティを開始します。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -26,16 +25,14 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 
 次のスクリーン ショットは、このアプリケーションの例をいくつかを示しています。
 
-[![通知の使用例のスクリーン ショット](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png)
+[![通知の使用例のスクリーン ショット](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>チュートリアル
 
 最初に、作成しましょう、Android プロジェクトを使用して新しい、 **Android アプリ**テンプレート。 このプロジェクトをとしましょう**LocalNotifications**です。 (Xamarin.Android プロジェクトの作成に慣れていない場合は、次を参照してください[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md)。)。
 
-<a name="add-v4-support" />
 
 ### <a name="add-the-androidsupportv4app-component"></a>Android.Support.V4.App コンポーネントを追加します。
 
@@ -53,7 +50,6 @@ using Android.Support.V4.App;
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 ```
 
-<a name="define-id" />
 
 ### <a name="define-the-notification-id"></a>通知 ID を定義します
 
@@ -63,7 +59,6 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 private static readonly int ButtonClickNotificationId = 1000;
 ```
 
-<a name="add-code" />
 
 ### <a name="add-code-to-generate-the-notification"></a>通知を生成するコードを追加します。
 
@@ -117,7 +112,6 @@ private void ButtonOnClick (object sender, EventArgs eventArgs)
 button.Click += ButtonOnClick;
 ```
 
-<a name="second-activity" />
 
 ### <a name="create-a-second-activity"></a>2 番目のアクティビティを作成します。
 
@@ -174,36 +168,33 @@ namespace LocalNotifications
 </LinearLayout>
 ```
 
-<a name="add-icon" />
 
 ### <a name="add-a-notification-icon"></a>通知アイコンを追加します。
 
 最後に、この通知が起動されたときに、通知領域に表示される小さいアイコンを追加してみましょう。 コピーすることができます[このアイコン](local-notifications-walkthrough-images/ic-stat-button-click.png)をプロジェクトにするか、独自のカスタム アイコンを作成します。 という名前をアイコン ファイル**ic\_stat\_ボタン\_click.png**にコピーし、**リソース/描画**フォルダーです。 使用してください**追加 > 既存アイテム.**にこのアイコン ファイルをプロジェクトに含めます。
 
-<a name="run-app" />
 
 ### <a name="run-the-application"></a>アプリケーションを実行する
 
 ビルドして、アプリケーションを実行してみましょう。 次のスクリーン ショットに類似の最初のアクティビティが表示する必要があります。
 
-[ ![最初のアクティビティのスクリーン ショット](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png)
+[![最初のアクティビティのスクリーン ショット](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
 ボタンをクリックすると、通知領域に表示される通知の小さいアイコンのことを確認する必要があります。
 
-[ ![通知アイコンが表示されます。](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png)
+[![通知アイコンが表示されます。](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 ダウン スワイプして通知ドロワーを公開した場合、通知が表示されます。
 
-[ ![通知メッセージ](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png)
+[![通知メッセージ](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
 通知をクリックして、表示されなくなりますされ、その他のアクティビティを起動する必要があります&ndash;次のスクリーン ショットのようなものを検索します。
 
-[ ![2 つ目のアクティビティのスクリーン ショット](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png)
+[![2 つ目のアクティビティのスクリーン ショット](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
 おめでとうございます!  Android のローカル通知チュートリアルを完了するこの時点でを使用して実際のサンプルを参照することができます。 通知により、ここで紹介したよりもため詳細については、する場合を見て多くは[通知に Google のドキュメント](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)と Android[通知](http://developer.android.com/design/patterns/notifications.html)設計のガイドです。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

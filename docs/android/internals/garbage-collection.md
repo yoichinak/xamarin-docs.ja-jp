@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d2298cf3edcadcc8a4d781e3e121852886fbf1d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="garbage-collection"></a>ガベージ コレクション
 
@@ -21,7 +21,7 @@ Xamarin.Android 使用モノラルの[世代単純なガベージ コレクタ�
 -   (Gen1 を収集し、ラージ オブジェクト スペース ヒープ) の主なコレクション。 
 
 > [!NOTE]
-> **注:**経由での明示的なコレクションがない場合は、 [GC です。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)コレクションは*オンデマンド*ヒープの割り当てに基づいて、します。 *これは参照カウントのシステムではありません*; オブジェクト*未解決の参照がないとすぐには収集されません*スコープが終了した場合またはします。 GC は、マイナーのヒープが新しい割り当て用のメモリを使い果たしたときに実行されます。 割り当てがない場合は実行されません。
+> 使用して明示的なコレクションがない場合は、 [GC です。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)コレクションは*オンデマンド*ヒープの割り当てに基づいて、します。 *これは参照カウントのシステムではありません*; オブジェクト*未解決の参照がないとすぐには収集されません*スコープが終了した場合またはします。 GC は、マイナーのヒープが新しい割り当て用のメモリを使い果たしたときに実行されます。 割り当てがない場合は実行されません。
 
 
 マイナー コレクションは低コストな頻繁に行われると、最近割り当てられ、死んだ状態のオブジェクトを収集するために使用します。 マイナー コレクションは、割り当てられたオブジェクトの数 MB ごとの後に実行されます。 呼び出して、マイナー コレクションを手動で実行する可能性があります[GC です。(0) の収集します。](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
@@ -29,7 +29,6 @@ Xamarin.Android 使用モノラルの[世代単純なガベージ コレクタ�
 主要なコレクションは、コストがかかり、頻度が低いと、停止しているすべてのオブジェクトの再利用するために使用します。 メジャーのコレクションは、(の前に、ヒープのサイズを変更するには)、現在のヒープ サイズのメモリが不足したり後に実行されます。 呼び出して、メジャーのコレクションを手動で実行する可能性があります[GC です。() を収集](https://developer.xamarin.com/api/member/System.GC.Collect/)または呼び出すことによって[GC です。(Int) の収集](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32)引数と共に[GC です。MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/)です。 
 
 
-<a name="Cross-VM_Object_Collections" />
 
 ## <a name="cross-vm-object-collections"></a>クロス VM オブジェクトのコレクション
 
@@ -67,7 +66,6 @@ Android ランタイム コレクション通常が、注意の動作: グロー
 
 その結果、これは、いずれかで参照されている限り、ピア オブジェクトのインスタンスが存在するすべてのマネージ コード (例: に格納されている、`static`変数) または Java コードによって参照されます。 それ以外の場合は、何を超えるネイティブ ピアの有効期間を拡張するさらに、ネイティブのピアことはない収集可能なネイティブのピアと管理されているピアの両方が回収可能になるまでにライブでします。
 
-<a name="Object_Cycles" />
 
 ## <a name="object-cycles"></a>オブジェクトのサイクル
 
@@ -77,7 +75,6 @@ Android ランタイム コレクション通常が、注意の動作: グロー
 
 オブジェクトの有効期間を短縮する[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)呼び出す必要があります。 これは、手動で"接続は切断されます"できるので、高速で収集されるオブジェクトにより、グローバルの参照を解放して、2 つの Vm 間でオブジェクトにします。 
 
-<a name="Automatic_Collections" />
 
 ## <a name="automatic-collections"></a>自動コレクション
 
@@ -135,7 +132,6 @@ MONO_GC_PARAMS=bridge-implementation=tarjan
 メモリの使用およびコレクションの時間を短縮するには、GC を支援するさまざまな方法があります。
 
 
-<a name="Disposing_of_Peer_instances" />
 
 ### <a name="disposing-of-peer-instances"></a>ピアのインスタンスの破棄
 
@@ -148,7 +144,7 @@ GC が不完全なプロセスと実行されない可能性がありますの�
 
 
 > [!NOTE]
-> **注:**おく必要があります*非常に高く*を破棄するときは注意が必要`Java.Lang.Object`サブクラス インスタンス。
+> 必要があります*非常に高く*を破棄するときは注意が必要`Java.Lang.Object`サブクラス インスタンス。
 
 メモリの破損の可能性を最小限に抑えるためには、次のガイドラインを呼び出すときに守って`Dispose()`です。
 
@@ -243,7 +239,6 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-<a name="Reduce_Referenced_Instances" />
 
 ### <a name="reduce-referenced-instances"></a>参照先のインスタンスを減らす
 
@@ -316,7 +311,6 @@ class BetterActivity : Activity {
 }
 ```
 
-<a name="Minor_Collections" />
 
 ## <a name="minor-collections"></a>マイナー コレクション
 
@@ -329,7 +323,6 @@ class BetterActivity : Activity {
 -  ネットワークのグループは、アプリのデータの更新/同期を要求します。
 
 
-<a name="Major_Collections" />
 
 ## <a name="major-collections"></a>主要なコレクション
 
@@ -344,14 +337,12 @@ class BetterActivity : Activity {
 -   内でオーバーライドされた[Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/)メソッドです。 
 
 
-<a name="Diagnostics" />
 
 ## <a name="diagnostics"></a>診断
 
 グローバル参照の作成および破棄される場合を追跡するために設定することができます、 [debug.mono.log](~/android/troubleshooting/index.md)システム プロパティを含む[ *gref* ](~/android/troubleshooting/index.md)や[ *gc*](~/android/troubleshooting/index.md)です。 
 
 
-<a name="Configuration" />
 
 ## <a name="configuration"></a>構成
 

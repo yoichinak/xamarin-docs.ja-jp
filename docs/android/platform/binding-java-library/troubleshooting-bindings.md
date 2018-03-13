@@ -7,18 +7,17 @@ ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 84ef87f5ed84fcd0a9aa2504c52a0fec17404e1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting-bindings"></a>バインディングのトラブルシューティング
 
 _この記事は、バインディング、および考えられる原因と問題を解決する方法をお勧めを生成するときに発生する可能性のあるいくつかの一般的なエラーをまとめたものです。_
 
-<a name="OVERVIEW" />
 
 ## <a name="overview"></a>概要
 
@@ -38,7 +37,6 @@ Android ライブラリのバインド (、 **.aar**または**.jar**) ファイ
 
 Android ライブラリをコンパイルし、種類とバインドしようとして Xamarin.Android メソッドを確認すると役立つことがも検証します。 これについては、このガイドで後で詳しく説明します。
 
-<a name="DECOMPILING_AN_ANDROID_LIBRARY" />
 
 ## <a name="decompiling-an-android-library"></a>逆 Android ライブラリ
 
@@ -59,9 +57,8 @@ Android ライブラリをデコンパイルしたが後、は、ソース コ�
 - **`import` 参照されていないライブラリ ステートメント**&ndash;未参照のライブラリを識別し、Xamarin.Android バインディングでプロジェクトにこれらの依存関係を追加、**ビルド アクション**の**ReferenceJar**または**EmbedddedReferenceJar**です。
 
 > [!NOTE]
-> **注:** Java ライブラリを逆が禁止されているかまたは法的制限の下の 現地の法律または Java ライブラリが公開されたライセンスに基づきます。 必要に応じて、Java ライブラリをコンパイルし、ソース コードを調査する前に有効な professional のサービスを登録します。
+> Java ライブラリを逆が禁止されていますかまたは法的制限の下の 現地の法律または Java ライブラリが公開されたライセンスに基づきます。 必要に応じて、Java ライブラリをコンパイルし、ソース コードを調査する前に有効な professional のサービスを登録します。
 
-<a name="INSPECTING_API_XML" />
 
 ## <a name="inspect-apixml"></a>API を検査します。XML
 
@@ -71,19 +68,16 @@ Xamarin.Android が XML ファイル名を生成、バインディングのプ�
 
 このファイルは、バインドを Xamarin.Android が試行されているすべての Java Api の一覧を提供します。 このファイルの内容は、不足している型またはメソッドを識別、バインドを複製できます。 このファイルの調査には、手間と時間がかかりますが、任意のバインドの問題の原因の手掛かりを提供できます。 たとえば、 **api.xml**プロパティが、不適切な型を返すことや、同じマネージ名を持つことがある 2 つの型を明らかに可能性があります。
 
-<a name="KNOWN_ISSUES" />
 
 ## <a name="known-issues"></a>既知の問題
 
 このセクションでは、いくつかの一般的なエラー メッセージまたは現象は一覧を my Android ライブラリをバインドしようとするときに発生します。
 
-<a name="PROBLEM_JAVA_VERSION_MISMATCH" />
 
 ### <a name="problem-java-version-mismatch"></a>問題: Java バージョンが一致しません
 
 場合によって、型は生成されませんまたはいずれかでコンパイルされたライブラリと比較して Java の古いバージョンを使用しているために、予期しないクラッシュが発生する可能性です。 Xamarin.Android プロジェクトを使用している JDK の同じバージョンの Android ライブラリを再コンパイルします。
 
-<a name="PROBLEM_AT_LEAST_ONE_JAVA_LIBRARY_IS_REQUIRED" />
 
 ### <a name="problem-at-least-one-java-library-is-required"></a>問題: 少なくとも 1 つの Java ライブラリが必要
 
@@ -93,7 +87,6 @@ Xamarin.Android が XML ファイル名を生成、バインディングのプ�
 
 必ず、ビルド アクションに設定されている`EmbeddedJar`です。 複数のビルド アクションがあるためです。JAR ファイル (など`InputJar`、 `EmbeddedJar`、`ReferenceJar`と`EmbeddedReferenceJar`)、バインド ジェネレーターは、既定で使用するを推測できない自動的にします。 ビルド アクションの詳細については、次を参照してください。[構築アクション](~/android/platform/binding-java-library/index.md)です。
 
-<a name="PROBLEM_BINDING_TOOLS_CANNOT_LOAD_THE_JAR_LIBRARY" />
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題: を読み込むことができませんツールをバインドします。JAR ライブラリ
 
@@ -104,7 +97,6 @@ Xamarin.Android が XML ファイル名を生成、バインディングのプ�
 いくつか。(Proguard などのツール) を使用してコード難読化を使用するための JAR ライブラリは、Java のツールで読み込むことができません。 当社のツールは、Java のリフレクションを使用およびライブラリをエンジニア リング ASM バイトのコードでこれらのツールが依存している可能性があります reject 難読化されたライブラリには、Android ランタイム ツールを渡すことがあります。 この回避策は、手のバインド、バインドのジェネレーターを使用する代わりにこれらのライブラリにです。
 
 
-<a name="PROBLEM_MISSING_C_TYPES_IN_GENERATED_OUTPUT_" />
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>問題: では、c# で生成された出力の種類がありません。
 
@@ -253,8 +245,6 @@ Java では、必須ではありませんが、派生クラスは、その親と
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
-
-<a name=summary />
 
 ## <a name="summary"></a>まとめ
 

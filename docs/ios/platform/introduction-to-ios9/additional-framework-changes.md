@@ -3,21 +3,21 @@ title: "その他の iOS 9 のフレームワークの変更"
 description: "この記事では、追加、マイナーの変更や iOS 9 の既存のフレームワークの機能強化について説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 82c6c2451deafb8a4314254a8138804d927c9bbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 773df1eec7c8694143ad6c31044ce281c1265282
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>その他の iOS 9 のフレームワークの変更
 
 _この記事では、追加、マイナーの変更や iOS 9 の既存のフレームワークの機能強化について説明します。_
 
-[ ![](additional-framework-changes-images/ios9-sml.png "iOS 9 のロゴ")](additional-framework-changes-images/ios9.png)
+[![](additional-framework-changes-images/ios9-sml.png "iOS 9 のロゴ")](additional-framework-changes-images/ios9.png#lightbox)
 
 IOS に主要な変更だけでなく Apple 修正といくつかの既存のフレームワークの機能強化に向けた iOS 9 です。
 

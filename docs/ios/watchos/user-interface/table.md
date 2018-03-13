@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4887b9a42c5a855353b5a4e422559aafcdc68173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="table-control"></a>テーブル コントロール
 
@@ -24,7 +24,7 @@ WatchOS`WKInterfaceTable`コントロールが iOS、対応するものよりも
 
 ドラッグ、**テーブル**シーンを制御します。 既定ではこの (表示される 1 つ指定されていない行のレイアウト) のようになります。
 
-[ ![](table-images/add-table-sml.png "テーブルを追加します。")](table-images/add-table.png)
+[![](table-images/add-table-sml.png "テーブルを追加します。")](table-images/add-table.png#lightbox)
 
 テーブルの名前、**プロパティ**パッドの**名前**ボックスで、コード内を参照するようにします。
 
@@ -34,7 +34,7 @@ WatchOS`WKInterfaceTable`コントロールが iOS、対応するものよりも
 
 設定する、**クラス**行コント ローラー内の行を選択、 **ドキュメント アウトライン**にクラス名を入力し、**プロパティ**パッド。
 
-[ ![](table-images/add-row-controller-sml.png "プロパティのパッドにクラス名を入力します。")](table-images/add-row-controller.png)
+[![](table-images/add-row-controller-sml.png "プロパティのパッドにクラス名を入力します。")](table-images/add-row-controller.png#lightbox)
 
 行のコント ローラーのクラスを設定すると、IDE は、プロジェクトに対応する c# ファイルを作成します。 (ラベルなど) のコントロールの行にドラッグし、コード内に参照できるように、名前を付けておく。
 

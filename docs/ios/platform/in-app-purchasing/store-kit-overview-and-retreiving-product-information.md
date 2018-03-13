@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a636a5ee2b027a2b2889c375f1fef5be67c379b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bafada037f912007201fd5e81b17302b21de3092
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="store-kit-overview-and-retrieving-product-information"></a>キットの概要と取得の製品情報を保存します。
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 任意のトランザクションの実行前にアプリケーションは、製品の価格と表示の説明を取得する必要があります。 ユーザーが押したときに、**購入**アプリケーションが要求を送信、確認のダイアログ ボックスと Apple ID でのログインを管理する StoreKit です。 トランザクションは、成功すると、StoreKit 通知、アプリケーション コードと仮定するとトランザクションの結果を格納の購入へのアクセスをユーザーに提供し、する必要があります。   
 
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 通知、アプリケーション コードは、トランザクションの結果を格納しの購入へのアクセスをユーザーに提供する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image14.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 通知、アプリケーション コードは、トランザクションの結果を格納しの購入へのアクセスをユーザーに提供する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
 ## <a name="classes"></a>クラス
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image15.png "アプリでさまざまな StoreKit クラスの抽象クラス間の関係を実装する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image15.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image15.png "アプリでさまざまな StoreKit クラスの抽象クラス間の関係を実装する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
    
    
    
@@ -64,7 +64,7 @@ ms.lasthandoff: 02/27/2018
 
 StoreKit コードをテストするには、は、正規 iTunes テスト アカウントとログインのログアウトをテストのストアにリンクされている特殊なテスト アカウント (iTunes Connect で作成される) が必要です。 現在のアカウントのアクセスからサインアウト**設定 > iTunes と App Store**次のように。
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image16.png "現在のアカウントのアクセス設定 iTunes と App Store からサインアウトするには")](store-kit-overview-and-retreiving-product-information-images/image16.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image16.png "現在のアカウントのアクセス設定 iTunes と App Store からサインアウトするには")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
  
 テスト用のアカウントでサインインし*StoreKit によって要求されると、アプリ内で*:
 
@@ -72,19 +72,19 @@ StoreKit コードをテストするには、は、正規 iTunes テスト ア�
 
 作成するテスト ユーザー iTunes Connect でをクリックして**ユーザーおよびロール**メイン ページで、します。
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image17.png "ITunes でテスト ユーザーを作成するには、接続をクリックしてユーザーおよびロールのメイン ページで、")](store-kit-overview-and-retreiving-product-information-images/image17.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image17.png "ITunes でテスト ユーザーを作成するには、接続をクリックしてユーザーおよびロールのメイン ページで、")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
 
 選択**サンド ボックスのテスト担当者**
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image18.png "サンド ボックスのテスト担当者を選択します。")](store-kit-overview-and-retreiving-product-information-images/image18.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image18.png "サンド ボックスのテスト担当者を選択します。")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
 
 既存のユーザーの一覧が表示されます。 新しいユーザーを追加したり、既存のレコードを削除することができます。 ポータルがしません (現在) を表示または編集既存ため (特に、パスワードを割り当てる) を作成した各テスト ユーザーの適切なレコードを保持することをお勧めのテスト ユーザーを使用します。 テスト ユーザーを削除すると、電子メール アドレスが別のテスト アカウント用に再利用することはできません。  
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image19.png "既存のユーザーの一覧が表示されます。")](store-kit-overview-and-retreiving-product-information-images/image19.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image19.png "既存のユーザーの一覧が表示されます。")](store-kit-overview-and-retreiving-product-information-images/image19.png#lightbox)   
    
  テスト用の新しいユーザーには、実際の Apple ID (名前、パスワード、秘密の質問および答え) などのような属性を持ちます。 ここに入力したすべての詳細のレコードを保持します。 **ITunes ストアの選択**フィールドは通貨を決定し、アプリ内購入言語には、ときに使用されますそのユーザーとしてのログに記録します。
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image20.png "ユーザーの通貨とアプリ内購入金額の言語、iTunes ストアの選択フィールドが決定されます。")](store-kit-overview-and-retreiving-product-information-images/image20.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image20.png "ユーザーの通貨とアプリ内購入金額の言語、iTunes ストアの選択フィールドが決定されます。")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
 
 ## <a name="retrieving-product-information"></a>製品情報の取得
 
@@ -102,7 +102,7 @@ StoreKit コードをテストするには、は、正規 iTunes テスト ア�
 
 全体の相互作用が次のよう ( **StoreKit**は iOS に組み込まれて、 **App Store** Apple のサーバーを表します)。
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image21.png "グラフの製品情報を取得します。")](store-kit-overview-and-retreiving-product-information-images/image21.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image21.png "グラフの製品情報を取得します。")](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
 
 ### <a name="displaying-product-information-example"></a>製品の情報の例を表示します。
 
@@ -110,7 +110,7 @@ StoreKit コードをテストするには、は、正規 iTunes テスト ア�
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image23.png "メイン画面には、アプリ ストアから取得した情報製品が表示されます。")](store-kit-overview-and-retreiving-product-information-images/image23.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image23.png "メイン画面には、アプリ ストアから取得した情報製品が表示されます。")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
    
    
    
@@ -235,7 +235,7 @@ public override void RequestFailed (SKRequest request, NSError error)
 
 このスクリーン ショットは、読み込み (製品情報を使用できない場合) の直後に、サンプル アプリケーションを示しています。
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image24.png "製品情報が利用できない場合の読み込み直後のサンプル アプリ")](store-kit-overview-and-retreiving-product-information-images/image24.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image24.png "製品情報が利用できない場合の読み込み直後のサンプル アプリ")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
 
 ## <a name="invalid-products"></a>無効な製品
 
@@ -296,7 +296,7 @@ buy5Button.SetTitle(String.Format(Buy, product.LocalizedPrice()), UIControlState
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image25.png "2 つの異なる iTunes 言語の特定の結果を表示してアカウントをテストします。")](store-kit-overview-and-retreiving-product-information-images/image25.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image25.png "2 つの異なる iTunes 言語の特定の結果を表示してアカウントをテストします。")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
    
    
    

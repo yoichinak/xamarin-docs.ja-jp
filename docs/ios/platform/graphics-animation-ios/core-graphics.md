@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: fe1796839524a271760a9beb82895fd6e93c7ad0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d53494e61d702b83a28534c644f33fb5327b5958
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-graphics"></a>コア グラフィック
 
@@ -40,6 +40,7 @@ iOS を含む、 [*コア グラフィックス*](https://developer.apple.com/li
 -  アプリケーション バンドルの静的なイメージが減少すると、アプリケーションのサイズを小さきます。
 -  グラフィックスは、デバイス間で解像度の変更を回復可能になります。
 
+<a name="Drawing_in_a_UIView_Subclass"/>
 
 ## <a name="drawing-in-a-uiview-subclass"></a>描画 (UIView サブクラスで)
 
@@ -182,6 +183,8 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
  ![](core-graphics-images/02-dashed-stroke.png "破線のストロークで描画操作結果の前にこのコードを追加します。")
  
 Xamarin.iOS で Unified API を使用している場合、配列の型する必要があります、`nfloat`も Math.PI を明示的にキャストする必要があります。
+
+<a name="Drawing_Images_and_Text"/>
 
 ## <a name="drawing-images-and-text"></a>描画画像とテキスト
 

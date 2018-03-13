@@ -3,16 +3,16 @@ title: "パート 1 です。 XAML の概要"
 description: "Xamarin.Forms アプリケーションでは、XAML はページのビジュアルの内容を定義するほとんどの場合に使用されます。 XAML ファイルは、マークアップのコードのサポートを提供する c# コード ファイルに関連付けでは常にします。 同時に、これら 2 つのファイルは、子ビューおよびプロパティの初期化を含む新しいクラス定義に影響します。 XAML ファイル内でクラスとプロパティが、XML 要素と属性、参照されているし、マークアップとコード間のリンクが確立されます。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 8e02dbd8687fc10582874710db7ca6848f546751
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>パート 1 です。 XAML の概要
 
@@ -195,7 +195,7 @@ Visual Studio for Mac は、プロジェクトをビルド、c# コード ファ
 
 コンパイルして、このプログラムを実行するときに、`Label`が示すように、XAML 要素は、ページの中央に表示されます。 左から右への 3 つのプラットフォームは、iOS、Android、および Windows 10 Mobile には。
 
-[![](get-started-with-xaml-images/xamlsamples.png "既定の Xamarin.Forms 表示")](get-started-with-xaml-images/xamlsamples-large.png "Xamarin.Forms の既定の表示")
+[![](get-started-with-xaml-images/xamlsamples.png "既定の Xamarin.Forms 表示")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms の既定の表示")
 
 さらに興味深いビジュアルは、必要な詳細は XAML の興味深いです。
 
@@ -354,7 +354,7 @@ public MainPage()
 
 設定、`Content`ページのプロパティの設定の置換、 `Content` XAML ファイルのプロパティです。 コンパイルして、このプログラムの新しいバージョンを配置するときに画面にボタンが表示されます。 移動を押しても`HelloXamlPage`します。 ここでは、iPhone、Android、および Windows 10 Mobile の結果ページのデバイス。
 
-[ ![](get-started-with-xaml-images/helloxaml1.png "ラベルのテキストを回転")](get-started-with-xaml-images/helloxaml1-large.png "ラベルのテキストの回転")
+[![](get-started-with-xaml-images/helloxaml1.png "ラベルのテキストを回転")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "ラベルのテキストの回転")
 
 場所に戻ることができます`MainPage`を使用して、 **< 戻る**ios の場合、ページの上部にある、または android で電話の下部にある左向きの矢印を使用して、または Windows 10 Mobile のページの下部にある左向きの矢印を使用してボタンをクリックします。
 
@@ -364,7 +364,7 @@ public MainPage()
 
 外観を次に示します。
 
-[ ![](get-started-with-xaml-images/helloxaml2.png "Unicode 文字がラベルのテキストを回転")](get-started-with-xaml-images/helloxaml2-large.png "Unicode 文字がラベルのテキストの回転")
+[![](get-started-with-xaml-images/helloxaml2.png "Unicode 文字がラベルのテキストを回転")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "Unicode 文字がラベルのテキストの回転")
 
 ## <a name="xaml-and-code-interactions"></a>XAML およびコードの相互作用
 
@@ -392,7 +392,7 @@ public MainPage()
 
 この XAML ファイルが構文的に完了しての外観を次に示します。
 
-[ ![](get-started-with-xaml-images/xamlpluscode1.png "ページ上の複数のコントロール")](get-started-with-xaml-images/xamlpluscode1-large.png "ページ上の複数のコントロール")
+[![](get-started-with-xaml-images/xamlpluscode1.png "ページ上の複数のコントロール")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "ページ上の複数のコントロール")
 
 ただしが不十分な機能的にするには、このプログラムを検討する可能性があります。 おそらく、`Slider`が発生することになって、`Label`を現在の値を表示して、`Button`プログラム内で処理を行うためのものが可能性があります。
 
@@ -483,7 +483,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 最初に、プログラムを実行すると、`Label`が表示されない、`Slider`値のため、`ValueChanged`イベントが発生していないまだです。 操作ですが、`Slider`により表示される値。
 
-[ ![](get-started-with-xaml-images/xamlpluscode2.png "表示される値をスライダー")](get-started-with-xaml-images/xamlpluscode2-large.png "スライダーの値が表示されます")
+[![](get-started-with-xaml-images/xamlpluscode2.png "表示される値をスライダー")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "スライダーの値が表示されます")
 
 ようになりました、`Button`です。 応答をシミュレートしてみましょう、`Clicked`イベントのアラートを表示することによって、`Text`ボタンのです。 イベント ハンドラーは安全にキャストできます、`sender`への引数、`Button`し、そのプロパティにアクセスします。
 

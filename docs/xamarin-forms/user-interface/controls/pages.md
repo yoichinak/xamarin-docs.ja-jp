@@ -1,122 +1,78 @@
 ---
 title: "Xamarin.Forms ページ"
-description: "Xamarin.Forms ページは、クロス プラットフォーム モバイル アプリの画面を表します。"
+description: "Xamarin.Forms ページは、クロス プラットフォーム モバイル アプリケーションの画面を表します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
+ms.assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 35822dbbb7d5694e7f1f0a3f35f10df404206af9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f979d2dbb894107d8d606ec1f41de44c294cdd3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms ページ
 
-_Xamarin.Forms ページは、クロス プラットフォーム モバイル アプリの画面を表します。_
+_Xamarin.Forms ページは、クロス プラットフォーム モバイル アプリケーションの画面を表します。_
 
-<style>.tableimg { max-width: none !important;}</style>
+以下に説明したすべてのページの種類は、Xamarin.Forms から派生[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)クラスです。 これらのビジュアル要素は、すべてまたはほとんどの画面を占有します。 A`Page`オブジェクトが表す、 `ViewController` ios、および`Page`ユニバーサル Windows プラットフォームにします。 Android での各ページは、画面のように、`Activity`が Xamarin.Forms ページ*いない*`Activity`オブジェクト。
+
+[ ![](pages-images/pages-sml.png "Xamarin.Forms ページの種類")](pages-images/pages.png#lightbox "Xamarin.Forms ページの種類")
 
 ## <a name="pages"></a>ページ数
 
-[ `Page` ](http://iosapi.xamarin.com/?link=T%3aXamarin.Forms.Page)クラスはビジュアル要素を画面のほとんどまたはすべてを占有し、1 つの子が含まれています。 A `Xamarin.Forms.Page` ios ビュー コント ローラーまたは Windows Phone でのページを表します。 Android の各ページは、画面のアクティビティと同様が Xamarin.Forms ページ*いない*アクティビティ。
+Xamarin.Forms は、次のページの種類をサポートします。
 
- [ ![](pages-images/pages-sml.png "Xamarin.Forms ページの種類")](pages-images/pages.png "Xamarin.Forms ページの種類")
+<a name="contentPage" />
 
-<br clear="all" />
+### <a name="contentpage"></a>ContentPage
 
-Xamarin.Forms をサポートします。
+|     |     | 
+| --- | --- | 
+| [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) ページの最も一般的な単純型です。 設定、 [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentPage.Content/)を 1 つのプロパティ[ `View` ](views.md)オブジェクトで、ほとんどの場合、 [ `Layout` ](layouts.md)など[ `StackLayout`](layouts.md#stackLayout)、 [ `Grid` ](layouts.md#grid)、または[ `ScrollView`](layouts.md#scrollView)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) | [![コンテンツ ページ例](pages-images/ContentPage.png "コンテンツ ページ例")](pages-images/ContentPage-Large.png#lightbox "コンテンツ ページの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentPageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentPageDemoPage.xaml) |
+|     |     |
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <tr>
-  <thead>
-    <th>
-      <strong>型</strong>
-    </th>
-    <th>
-      <strong>説明</strong>
-    </th>
-    <th style="min-width:400px">
-      <strong>スクリーン ショット</strong>
-    </th>
-  </thead></tr>
-  <tbody>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/">ContentPage</a>
-    </td>
-    <td align="center" valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/">コンテンツ ページ</a>、1 つが表示されます<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>のコンテナーなど、多くの場合、 <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/">StackLayout</a>または<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/">ScrollView</a>です。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ContentPageDemoPage.cs"><img src="pages-images/ContentPage.png" title="コンテンツ ページの例" class="tableimg">
-    </a></td>
-  </tr><tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/">MasterDetailPage</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Page/">ページ</a>情報の 2 つのペインを管理します。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/MasterDetailPageDemoPage.cs"><img src="pages-images/MasterDetailPage.png" title="MasterDetailPage 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/">NavigationPage</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Page/">ページ</a>ナビゲーションおよびその他のページのスタックのユーザー エクスペリエンスを管理します。  
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/NavigationPageDemoPage.cs"><img src="pages-images/NavigationPage.png" title="NavigationPage 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/">TabbedPage</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Page/">ページ</a>タブを使用して、ページが子間のナビゲーションことができます。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/TabbedPageDemoPage.cs"><img src="pages-images/TabbedPage.png" title="TabbedPage 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/">TemplatedPage</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Page/">ページ</a>コントロール テンプレートとの基本クラスの全画面表示のコンテンツを表示する<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/">コンテンツ ページ</a>です。
-    </td>
-    <td valign="top">
-    <a href="https://github.com/xamarin/xamarin-forms-samples/tree/master/Templates/ControlTemplates/"><img src="pages-images/TemplatedPage.png" title="TemplatedPage 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/">CarouselPage</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Page/">ページ</a>ギャラリーと同様に、サブページ間スワイプ ジェスチャを許可します。
-    </td>
-    <td valign="top">
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CarouselPageDemoPage.cs"><img src="pages-images/CarouselPage.png" title="CarouselPage 例" class="tableimg">
-    </a></td>
-  </tr>
-  </tbody>
-</table>
+### <a name="masterdetailpage"></a>MasterDetailPage
 
+|     |     | 
+| --- | --- | 
+| A [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)情報の 2 つのペインを管理します。 設定、 [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/)一般に、リストやメニューを表示するページにプロパティです。 設定、 [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)マスター ページから、選択した項目を表示するページにプロパティです。 [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/)プロパティは、マスターまたは詳細ページが表示されているかどうかを制御します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) / [ガイド](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/) | [![MasterDetailPage 例](pages-images/MasterDetailPage.png "MasterDetailPage 例")](pages-images/MasterDetailPage-Large.png#lightbox "MasterDetailPage 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MasterDetailPageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MasterDetailPageDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MasterDetailPageDemoPage.xaml.cs) |
+|     |     |
 
+### <a name="navigationpage"></a>NavigationPage
+
+|     |     | 
+| --- | --- | 
+| [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)スタック ベースのアーキテクチャを使用して他のページ間のナビゲーションを管理します。 コンス トラクターをアプリケーションのページ ナビゲーションを使用する場合、ホーム ページのインスタンスを渡す必要があります、`NavigationPage`オブジェクト。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) / [ガイド](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)、 [2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)、および[3](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)  | [![NavigationPage 例](pages-images/NavigationPage.png "NavigationPage 例")](pages-images/NavigationPage-Large.png#lightbox "NavigationPage 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/NavigationPageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml)で[コードの背後にある =](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml.cs) |
+|     |     |
+
+### <a name="tabbedpage"></a>TabbedPage
+
+|     |     | 
+| --- | --- | 
+| [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) 抽象から派生した[ `MultiPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/)クラスし、子間のナビゲーション タブを使用して、ページをできるようにします。 設定、 [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/)プロパティ ページ、またはセットのコレクションを[ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/)データ オブジェクトのコレクションにプロパティと[ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/)プロパティを[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)視覚的に表現されている各オブジェクトは、方法を説明します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) / [ガイド](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPage/)と[2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage) | [![TabbedPage 例](pages-images/TabbedPage.png "TabbedPage 例")](pages-images/TabbedPage-Large.png#lightbox "TabbedPage 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TabbedPageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TabbedPageDemoPage.xaml) |
+|     |     |
+
+### <a name="carouselpage"></a>CarouselPage
+
+|     |     | 
+| --- | --- | 
+| [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) 抽象から派生した[ `MultiPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/)クラスし、子間のナビゲーションに指を読み取ることによって、ページを使用します。 設定、 [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/)プロパティのコレクションを[ `ContentPage` ](#contentPage)オブジェクト、またはセット、 [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/)データ オブジェクトのコレクションにプロパティと、[ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/)プロパティを[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)視覚的に表現されている各オブジェクトは、方法を説明します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) / [ガイド](~/xamarin-forms/app-fundamentals/navigation/carousel-page.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPage/)と[2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPageTemplate/) | [![CarouselPage 例](pages-images/CarouselPage.png "CarouselPage 例")](pages-images/CarouselPage-Large.png#lightbox "CarouselPage 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CarouselPageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CarouselPageDemoPage.xaml) |
+|     |     |
+
+### <a name="templatedpage"></a>TemplatedPage
+
+|     |     | 
+| --- | --- | 
+| [`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/) コントロール テンプレート付きの全画面表示のコンテンツを表示しの基本クラスは、 [ `ContentPage`](#contentPage)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/) / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![TemplatedPage 例](pages-images/TemplatedPage.png "TemplatedPage 例")](pages-images/TemplatedPage.png "TemplatedPage 例") |
+|     |     |
 
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Forms の概要](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms ギャラリー (サンプル)](https://developer.xamarin.com/samples/FormsGallery/)
-- [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/tag/Xamarin.Forms/)
-- [Xamarin.Forms API ドキュメント](http://iosapi.xamarin.com/?link=N%3aXamarin.Forms)
+- [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms API ドキュメント](https://developer.xamarin.com/api/root/Xamarin.Forms/)

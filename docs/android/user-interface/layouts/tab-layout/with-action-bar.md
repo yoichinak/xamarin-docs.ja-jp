@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 14abb7a4b85b493bb0ab96a982d989fad783fabd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afaa02168dcac54115e8fca53683725926e4baed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>アクションバーを持つタブ付きレイアウト
 
 _このガイドでは、紹介し、アクションバー Api を使用して Xamarin.Android アプリケーションで、タブ付きのユーザー インターフェイスを作成する方法について説明します。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -27,7 +26,6 @@ _このガイドでは、紹介し、アクションバー Api を使用して X
 なお`Toolbar`の代わりに使用する新しいおよびより汎用的なアクション バー コンポーネント`ActionBar`(`Toolbar`を交換できるように設計されました`ActionBar`)。 詳細については、次を参照してください。[ツールバー](~/android/user-interface/controls/tool-bar/index.md)です。 
 
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>必要条件
 
@@ -36,7 +34,6 @@ _このガイドでは、紹介し、アクションバー Api を使用して X
 API レベル (Android 2.1) を 7 に戻る移植されたアクションバー Api の一部であり経由で入手できますが、 [V7 AppCompat ライブラリ](http://developer.android.com/tools/support-library/features.html#v7-appcompat)が可能な Xamarin.Android アプリを使用して、 [Xamarin Android サポート ライブラリ - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)パッケージです。
 
 
-<a name="Introducing_tabs_in_the_ActionBar" />
 
 ## <a name="introducing-tabs-in-the-actionbar"></a>アクションバーのタブの概要
 
@@ -63,7 +60,6 @@ Xamarin.Android ラップ、`ActionBar.ITabListener`のイベントに、`Action
 -  TabUnselected
 
 
-<a name="Adding_Tabs_to_the_ActionBar" />
 
 ### <a name="adding-tabs-to-the-actionbar"></a>アクションバーへのタブの追加
 
@@ -111,7 +107,6 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-<a name="Event_Handlers_vs_ActionBar.ITabListener" />
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>イベント ハンドラーと ActionBar.ITabListener
 
@@ -120,7 +115,6 @@ protected override void OnCreate(Bundle bundle)
 多くのタブを処理する場合またはアクションバー タブの間で共通の機能を共有するには、メモリおよびを実装するカスタム クラスを作成するパフォーマンスの観点から効率`ActionBar.ITabListener`、およびクラスの 1 つのインスタンスを共有します。 これにより、Xamarin.Android アプリケーションを使用して GREF の数が減ります。 
 
 
-<a name="Backwards_Compatibility_for_Older_Devices" />
 
 ### <a name="backwards-compatibility-for-older-devices"></a>旧バージョンと古いデバイスの互換性
 
@@ -177,7 +171,6 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

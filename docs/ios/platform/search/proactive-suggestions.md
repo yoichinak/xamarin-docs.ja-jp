@@ -3,16 +3,16 @@ title: "プロアクティブな推奨事項の概要"
 description: "ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、ドライブ エンゲージメントを Xamarin.iOS アプリでプロアクティブな提案を使用する方法を説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2762487d25befd15d8b57a002c5da4e9dcb15bb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>プロアクティブな推奨事項の概要
 
@@ -63,7 +63,7 @@ Siri を使用して簡単に現在表示しているアプリで、後で、コ
 
 ## <a name="ride-sharing-based-suggestions"></a>車に基づいて推奨事項の共有
 
-飛行共有アプリで使用する場合、 [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API、iOS 10 が表示されますが、アプリのスイッチャーのオプションとしてときに、ユーザーは素敵する可能性があります。 指定して、飛行共有アプリとしてアプリが登録もする必要があります、`MKDirectionsModeRideShare`の[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW33)キーをその`Info.plist`ファイル。
+飛行共有アプリで使用する場合、 [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API、iOS 10 が表示されますが、アプリのスイッチャーのオプションとしてときに、ユーザーは素敵する可能性があります。 指定して、飛行共有アプリとしてアプリが登録もする必要があります、`MKDirectionsModeRideShare`の[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)キーをその`Info.plist`ファイル。
 
 アプリのみをサポートしている変更を共有する場合、その提案をシステムで開始*"に変更を Get..."*、ルーティングの方向 (ウォーキングまたは自転車) などの他の種類はサポートされている場合、システムが使用*「するための指示を取得しています...」*
 
@@ -95,7 +95,7 @@ Xamarin.iOS アプリには、サポートは事前対応型の候補を追加�
 
 、前に述べたよう`NSUserActivity`、システムが画面上で、ユーザーが現在処理してどのような情報を理解するのに役立ちます。 `NSUserActivity` 軽量状態は、アプリ間を移動できるように、ユーザーのアクティビティをキャプチャするためのメカニズムをキャッシュします。 たとえば、レストランのアプリを確認します。
 
-[ ![](proactive-suggestions-images/activity02.png "キャッシュ メカニズム NSUserActivity 軽量の状態")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "キャッシュ メカニズム NSUserActivity 軽量の状態")](proactive-suggestions-images/activity02.png#lightbox)
 
 次の相互作用: と
 
@@ -105,7 +105,7 @@ Xamarin.iOS アプリには、サポートは事前対応型の候補を追加�
 
 最後の画面で詳しく見てをみましょう。
 
-[ ![](proactive-suggestions-images/activity03.png "NSUserActivity 詳細")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "NSUserActivity 詳細")](proactive-suggestions-images/activity03.png#lightbox)
 
 ここで、アプリを作成する、`NSUserActivity`情報と共に、状態を後で再作成に値が表示されているとします。 アプリが、この場所の名前やアドレスなど一部のメタデータにはとも含まれます。 このアクティビティを作成すると、アプリに iOS のユーザーの現在の状態を表すことを知ることができます。
 
@@ -324,7 +324,7 @@ attributes.SupportsNavigation = true;
 
 アプリが相互作用を寄付する方法を参照してください。
 
-[ ![](proactive-suggestions-images/activity04.png "寄付の相互作用の概要")](proactive-suggestions-images/activity04.png)
+[![](proactive-suggestions-images/activity04.png "寄付の相互作用の概要")](proactive-suggestions-images/activity04.png#lightbox)
 
 アプリを作成、`INInteraction`オブジェクトを含む、**インテント**(`INIntent`)、**参加者**と**メタデータ**です。 **インテント**映像通話またはテキスト メッセージを送信するなどのユーザー アクションを表します。 **参加者**通信を受信する人が含まれます。 **メタデータ**メッセージなどを正常に送信するなどの追加情報を定義します。
 
@@ -334,7 +334,7 @@ attributes.SupportsNavigation = true;
 
 相互作用を取得にバンドルされているユーザーが連絡先カードからアプリケーションを操作するときに、 `NSUserActivity`、アプリの起動に使用されます。
 
-[ ![](proactive-suggestions-images/activity05.png "相互作用を取得、アプリの起動に使用される NSUserActivity にバンドルされています。")](proactive-suggestions-images/activity05.png)
+[![](proactive-suggestions-images/activity05.png "相互作用を取得、アプリの起動に使用される NSUserActivity にバンドルされています。")](proactive-suggestions-images/activity05.png#lightbox)
 
 送信メッセージの目的の次の例を参照してください。
 
@@ -449,7 +449,7 @@ Schema.org には、同じ種類の web サイトに基づく位置の相互作�
 - 使用可能なさまざまな概念を表す 500 以上のスキーマがあります。
 - 実装すると、web サイトで、開発者を取得できます。 使用する利点のいくつか`NSUserActivity`ネイティブ アプリでします。
 
-スキーマがツリー構造に固有の仕様がなど型、構造体と同様に*レストラン*などのよりジェネリック型から継承*ローカル ビジネス*です。 詳細についてを参照してください[Schema.org](#http://schema.org)です。
+スキーマがツリー構造に固有の仕様がなど型、構造体と同様に*レストラン*などのよりジェネリック型から継承*ローカル ビジネス*です。 詳細についてを参照してください[Schema.org](http://schema.org)です。
 
 たとえば、web ページには、次のデータが含まれているとします。
 

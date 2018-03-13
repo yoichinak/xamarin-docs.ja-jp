@@ -7,11 +7,11 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0b3471f607bbde6560af597b6b901e6fbd1ec0b0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handoff"></a>ハンドオフ
 
@@ -19,7 +19,7 @@ _この記事では、カバーを転送する Xamarin.iOS アプリでハンド
 
 Apple には、同じアプリか、同じアクティビティをサポートする別のアプリを実行している別のデバイスに iOS 8 および OS X Yosemite (10.10) で自分のデバイスのいずれかの開始アクティビティを転送するユーザーの一般的なメカニズムを提供するハンドオフが導入されました。
 
-[ ![](handoff-images/handoff02.png "ハンドオフ操作の実行の例")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "ハンドオフ操作の実行の例")](handoff-images/handoff02.png#lightbox)
 
 この記事は見てクイック アクティビティ Xamarin.iOS アプリでの共有を有効にして、詳しくハンドオフ フレームワークをカバーします。
 
@@ -45,7 +45,7 @@ Handoff が強化された検索機能で iOS 9 サポートすることも、�
 
 受信デバイスで、ユーザー通知を受信するアクティビティが継続を使用できること。 (実行中でない場合、指定したアプリが起動した場合は、ユーザーは、新しいデバイスをアクティビティを続行するが、およびからペイロード、`NSUserActivity`活動の再開に使用します。
 
-[ ![](handoff-images/handoffinteractions.png "継続のユーザー アクティビティの概要")](handoff-images/handoffinteractions.png)
+[![](handoff-images/handoffinteractions.png "継続のユーザー アクティビティの概要")](handoff-images/handoffinteractions.png#lightbox)
 
 開発者が同じチーム ID を共有しに対応するアプリにのみ、指定された_アクティビティ タイプ_は継続タスクの対象にします。 アプリでサポートされているアクティビティの種類を定義する、`NSUserActivityTypes`のキーの**Info.plist**ファイル。 継続的デバイスそのため、チームの ID、アクティビティの種類に基づいて継続タスクを実行するアプリを選択し、必要に応じて、_活動のタイトル_です。
 
@@ -114,21 +114,21 @@ Handoff によって課せられるセキュリティ要件、により Xamarin.
 3. 完了していない場合は、をクリックして**識別子**、アプリの ID を作成し、(例: `com.company.appname`)、それ以外の場合、既存の ID を編集
 4. いることを確認、 **iCloud**サービスは、指定された ID のチェックが完了します。 
 
-    [ ![](handoff-images/provision01.png "指定した ID の iCloud サービスを有効にします。")](handoff-images/provision01.png)
+    [![](handoff-images/provision01.png "指定した ID の iCloud サービスを有効にします。")](handoff-images/provision01.png#lightbox)
 5. 変更内容を保存します。
 4. をクリックして**プロビジョニング プロファイル** > **開発**プロファイルをプロビジョニングする新しい開発用アプリを作成するとします。 
 
-    [ ![](handoff-images/provision02.png "プロビジョニング プロファイル、アプリを新規の開発を作成します。")](handoff-images/provision02.png)
+    [![](handoff-images/provision02.png "プロビジョニング プロファイル、アプリを新規の開発を作成します。")](handoff-images/provision02.png#lightbox)
 5. ダウンロードし、新しいプロビジョニング プロファイルをインストールするか、Xcode を使用してダウンロードし、プロファイルをインストールしてください。
 6. Xamarin.iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニング プロファイルを使用していることを確認します。 
 
-    [ ![](handoff-images/provision03.png "先ほど作成したプロビジョニング プロファイルを選択します。")](handoff-images/provision03.png)
+    [![](handoff-images/provision03.png "先ほど作成したプロビジョニング プロファイルを選択します。")](handoff-images/provision03.png#lightbox)
 7. 次に、編集、 **Info.plist**ファイルをプロビジョニング プロファイルの作成に使用されたアプリ ID を使用していることを確認してください。 
 
-    [ ![](handoff-images/provision04.png "アプリ ID を設定します。")](handoff-images/provision04.png)
+    [![](handoff-images/provision04.png "アプリ ID を設定します。")](handoff-images/provision04.png#lightbox)
 8. スクロール、**バック グラウンド モード**セクションし、次の項目を確認します。 
 
-    [ ![](handoff-images/provision05.png "必要なバック グラウンド モードを有効にします。")](handoff-images/provision05.png)
+    [![](handoff-images/provision05.png "必要なバック グラウンド モードを有効にします。")](handoff-images/provision05.png#lightbox)
 9. すべてのファイルに変更を保存します。
 
 これらの設定で、アプリケーションはハンドオフ フレームワーク Api にアクセスする準備ができてようになりました。 プロビジョニングの詳細についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)と[してアプリをプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
@@ -155,7 +155,7 @@ _アクティビティ型識別子_短い文字列を追加、`NSUserActivityTyp
 
 この動作をサポートするために必要なアクティビティの型識別子を作成するには、編集、 **Info.plist**ファイルに切り替えると、**ソース**ビュー。 追加、`NSUserActivityTypes`キーし、次の識別子を作成します。
 
-[ ![](handoff-images/type01.png "NSUserActivityTypes キーと plist エディターで必要な識別子")](handoff-images/type01.png)
+[![](handoff-images/type01.png "NSUserActivityTypes キーと plist エディターで必要な識別子")](handoff-images/type01.png#lightbox)
 
 4 つ新しいアクティビティの種類の識別子、例ではタブごとに 1 つを作成した**MonkeyBrowser**アプリ。 内容を置き換える独自のアプリを作成するときに、`NSUserActivityTypes`アプリのアクティビティに固有のアクティビティ型の識別子を持つ配列をサポートしています。
 
@@ -610,15 +610,15 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 [すべて] タブで、ユーザーは、新しい URL とタップが入ったときに、**移動**ボタンを新しい`NSUserActivity`は、ユーザーが現在を参照する URL を含むタブの作成します。
 
-[ ![](handoff-images/handoff01.png "例ハンドオフ アプリ")](handoff-images/handoff01.png)
+[![](handoff-images/handoff01.png "例ハンドオフ アプリ")](handoff-images/handoff01.png#lightbox)
 
 別のユーザーのデバイスの場合、 **MonkeyBrowser**アプリをインストールするには、同じユーザー アカウントを使用して iCloud に署名であり、同じネットワーク上のデバイスに近接ホーム ハンドオフ アクティビティが表示されます画面で、左下隅):
 
-[ ![](handoff-images/handoff02.png "左下隅で、ホーム画面に表示されるハンドオフ アクティビティ")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "左下隅で、ホーム画面に表示されるハンドオフ アクティビティ")](handoff-images/handoff02.png#lightbox)
 
 ユーザーは、ハンドオフ アイコンの上方向へドラッグ、する場合、アプリを起動してで指定されたユーザーの利用状況、`NSUserActivity`新しいデバイスを継続します。
 
-[ ![](handoff-images/handoff03.png "新しいデバイスに続き、ユーザー アクティビティ")](handoff-images/handoff03.png)
+[![](handoff-images/handoff03.png "新しいデバイスに続き、ユーザー アクティビティ")](handoff-images/handoff03.png#lightbox)
 
 ときに、ユーザー アクティビティが送信されました別 Apple のデバイスに、送信側のデバイスの`NSUserActivity`への呼び出しを受信、`UserActivityWasContinued`メソッドをその`NSUserActivityDelegate`別、ユーザー アクティビティが正常に転送されたことを認識できるようにするにはデバイス。
 

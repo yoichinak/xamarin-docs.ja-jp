@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 30b7e322d618492164fac5e439c5187616d61717
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 32326eb472b1bb8b4fbaf4066edc36255f5948ca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dots-and-dashes"></a>ドットとダッシュ
 
@@ -155,7 +155,7 @@ float[] GetPickerArray(Picker picker)
 
 次のスクリーン ショットでは、左端の iOS の画面には、点線が表示されます。
 
-[![](dots-images/dotsanddashes-small.png "ドットとダッシュのページのスクリーン ショットをトリプル")](dots-images/dotsanddashes-large.png "ドットとダッシュのページのトリプル スクリーン ショット")
+[![](dots-images/dotsanddashes-small.png "ドットとダッシュのページのスクリーン ショットをトリプル")](dots-images/dotsanddashes-large.png#lightbox "ドットとダッシュのページのトリプル スクリーン ショット")
 
 ただし、Android の画面は {10, 10} の配列を使用して、点線を表示する必要がありますも行は純色です。 代わりにします。 どうなっているのでしょうか。 問題は、Android 画面も、ストローク cap の設定は`Square`します。 これは、線幅の半分だけ、発生すると、ギャップを埋めるすべてのダッシュを拡張します。
 
@@ -213,7 +213,7 @@ protected override void OnAppearing()
 
 もちろん、実際には、アニメーションを表示するプログラムを実行する必要があります。
 
-[![](dots-images/animatedspiral-small.png "アニメーションなるページのスクリーン ショットをトリプル")](dots-images/animatedspiral-large.png "アニメーションなるページのトリプル スクリーン ショット")
+[![](dots-images/animatedspiral-small.png "アニメーションなるページのスクリーン ショットをトリプル")](dots-images/animatedspiral-large.png#lightbox "アニメーションなるページのトリプル スクリーン ショット")
 
 パラメーター型方程式を使用して曲線を定義する線を描画する方法を確認したようになりました。 後で発行するためのセクションが含まれる曲線のさまざまな種類をカバーする`SKPath`をサポートしています。
 

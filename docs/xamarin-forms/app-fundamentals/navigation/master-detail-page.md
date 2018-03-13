@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f7e949902e2f960a9aa68c600514b7fefc8ae30d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9d774870a541630d8c6519f9dfeaeb21cacb98e8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="master-detail-page"></a>マスター/詳細 ページ
 
@@ -22,7 +22,7 @@ _Xamarin.Forms MasterDetailPage は、ページ、項目を表示するマスタ
 
 通常、次のスクリーン ショットに示すように、同様に、マスター ページで、項目のリストが表示されます。
 
-[![](master-detail-page-images/masterpage-components.png "マスター ページ コンポーネント")](master-detail-page-images/masterpage-components-large.png "マスター ページのコンポーネント")
+[![](master-detail-page-images/masterpage-components.png "マスター ページ コンポーネント")](master-detail-page-images/masterpage-components-large.png#lightbox "マスター ページのコンポーネント")
 
 項目のリストの場所は各プラットフォームのと同じを選択すると、項目のいずれかを対応する詳細ページに移動します。 さらに、マスター ページでは、アクティブな詳細ページへの移動に使用できるボタンを含むナビゲーション バーを機能も。
 

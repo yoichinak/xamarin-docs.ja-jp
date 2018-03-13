@@ -4,14 +4,15 @@ description: "SkiaSharp グラフィックスをシフトする平行移動の�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 491c82406dafceb876ddbb4a0a7204447b95f57d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cac2479af2778af6043a85583f9d7b518748d7da
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-translate-transform"></a>平行移動の変換
 
@@ -68,7 +69,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 一連の四角形は、ページの下方トリクルします。
 
-[![](translate-images/accumulatedtranslate-small.png "トリプル ページのスクリーン ショット、翻訳蓄積")](translate-images/accumulatedtranslate-large.png "トリプル ページのスクリーン ショット、蓄積された変換")
+[![](translate-images/accumulatedtranslate-small.png "トリプル ページのスクリーン ショット、翻訳蓄積")](translate-images/accumulatedtranslate-large.png#lightbox "トリプル ページのスクリーン ショット、蓄積された変換")
 
 場合、蓄積された翻訳要素は、`dx`と`dy`、描画関数で指定した点と (`x`、 `y`)、ポイントでグラフィック オブジェクトを表示し、(`x'`、 `y'`) ここで。
 
@@ -125,7 +126,7 @@ using (SKPaint textPaint = new SKPaint())
 
 次の 3 つの例については、の各`Translate`で指定した位置からオフセットするテキストを表示するために呼び出されますが、`x`と`y`変数。 テキストを翻訳の効果がない別の色でもう一度表示されます。
 
-[![](translate-images/translatetexteffects-small.png "テキスト効果の変換 ページのスクリーン ショットをトリプル")](translate-images/translatetexteffects-large.png "テキスト効果の変換 ページのトリプル スクリーン ショット")
+[![](translate-images/translatetexteffects-small.png "テキスト効果の変換 ページのスクリーン ショットをトリプル")](translate-images/translatetexteffects-large.png#lightbox "テキスト効果の変換 ページのトリプル スクリーン ショット")
 
 役に立たなくさまざまな方法を示していますの 3 つの例では、それぞれ、`Translate`呼び出し。
 
@@ -209,7 +210,7 @@ public class HendecagramArrayPage : ContentPage
 
 結果を次に示します。
 
-[![](translate-images/hendecagramarray-small.png "Hendecagram アレイのページのスクリーン ショットをトリプル")](translate-images/hendecagramarray-large.png "Hendecagram アレイのページのトリプル スクリーン ショット")
+[![](translate-images/hendecagramarray-small.png "Hendecagram アレイのページのスクリーン ショットをトリプル")](translate-images/hendecagramarray-large.png#lightbox "Hendecagram アレイのページのトリプル スクリーン ショット")
 
 アニメーションには、多くの場合、変換が含まれます。 **Hendecagram アニメーション**ページ内を移動 11 星円です。 [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)クラスがいくつかのフィールドで始まり、かつの上書きが、`OnAppearing`と`OnDisappearing`開始および Xamarin.Forms タイマーを停止する方法。
 
@@ -294,7 +295,7 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface`ハンドラーの呼び出し、`Translate`キャンバスの中央に変換するには、最初にメソッドを 2 回、しを中心とした円の円周に変換する (0, 0) です。 ページの境界内にスターしたまま、可能な限り大きくする円の半径が設定されます。
 
-[![](translate-images/hendecagramanimation-small.png "Hendecagram アニメーション ページのスクリーン ショットをトリプル")](translate-images/hendecagramanimation-large.png "Hendecagram アニメーション ページのトリプル スクリーン ショット")
+[![](translate-images/hendecagramanimation-small.png "Hendecagram アニメーション ページのスクリーン ショットをトリプル")](translate-images/hendecagramanimation-large.png#lightbox "Hendecagram アニメーション ページのトリプル スクリーン ショット")
 
 ページの中央を中心として、星が同じ方向が維持されることを確認します。 すべての回転しません。 回転変換用のジョブです。
 

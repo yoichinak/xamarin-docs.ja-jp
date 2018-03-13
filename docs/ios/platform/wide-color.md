@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ab6124e2b11d26d4c10330e7b824e4761ebf4603
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="wide-color"></a>広色
 
@@ -38,19 +38,19 @@ MacOS Sierra で広色と iOS 10 では、Apple は macOS と iOS の両方が�
 
 色空間とは、環境の色を表すし、比較します。 色成分の強度によって定義されている、1 ~ 4 次元空間があります。 
 
-[ ![](wide-color-images/color00.png "色空間")](wide-color-images/color00.png)
+[![](wide-color-images/color00.png "色空間")](wide-color-images/color00.png#lightbox)
 
 ### <a name="color-channels"></a>カラー チャネル
 
 色の要素は、カラー チャネルと呼びますことができます。 使い慣れた表記の一部は、RGB スペース、灰色のスペース、CMYK スペースまたはデバイスの独立したスペースになります。 
 
-[ ![](wide-color-images/color02.png "色の要素も呼ばれますにカラー チャネルとして")](wide-color-images/color02.png)
+[![](wide-color-images/color02.png "色の要素も呼ばれますにカラー チャネルとして")](wide-color-images/color02.png#lightbox)
 
 ### <a name="color-primaries"></a>色のプライマリ
 
 色のプライマリを比較し、色を計算するために使用する座標系を提供します。 通常、色のプライマリには、カラー チャネル内で生成できる、指定された色の最も負荷の高いバージョンが分けられます。
 
-[ ![](wide-color-images/color01.png "色のプライマリを比較し、色を計算するために使用する座標系の指定します。")](wide-color-images/color01.png)
+[![](wide-color-images/color01.png "色のプライマリを比較し、色を計算するために使用する座標系の指定します。")](wide-color-images/color01.png#lightbox)
 
 場合は上で表される、RGB 色空間では、色のプライマリが where、`1.0`座標はアンカー (など`[1.0, 0.0, 0.0]`赤の)。
 
@@ -58,7 +58,7 @@ MacOS Sierra で広色と iOS 10 では、Apple は macOS と iOS の両方が�
 
 色域は、すべての付与色空間内の個々 のカラー チャネルの組み合わせとして定義できるカラーを指します。
 
-[ ![](wide-color-images/color03.png "色域例")](wide-color-images/color03.png)
+[![](wide-color-images/color03.png "色域例")](wide-color-images/color03.png#lightbox)
 
 ## <a name="what-is-wide-color"></a>広色は、新機能
 
@@ -80,7 +80,7 @@ RAW 形式でデジタル画像がキャプチャされているユーザーは�
 
 2015 は、Apple は、新しい (ラップトップ サポートおよび iPad Pro 9.7") を提供する製品の色空間 sRGB によって作成された問題を処理する新しい表示 P3 色空間を解放します。
 
-[ ![](wide-color-images/color04.png "新しい表示 P3 色空間")](wide-color-images/color04.png)
+[![](wide-color-images/color04.png "新しい表示 P3 色空間")](wide-color-images/color04.png#lightbox)
 
 表示 P3 の色領域には、次のプロパティがあります。
 
@@ -112,7 +112,7 @@ Apple にに従ってときは、自分のモバイル プラットフォーム�
 
 拡張範囲 sRGB 色空間内の 0 と 1 つの外部の値の動作を表示するには、次の例を実行、表示 P3 色空間の使用可能な最も彩度の高い赤の。
 
-[ ![](wide-color-images/color05.png "拡張範囲 sRGB 色空間内の 0 と 1 つの外部の値のしくみ")](wide-color-images/color05.png)
+[![](wide-color-images/color05.png "拡張範囲 sRGB 色空間内の 0 と 1 つの外部の値のしくみ")](wide-color-images/color05.png#lightbox)
 
 表示 P3 としてこの色が表されます`[1.0, 0.0, 0.0]`となります拡張範囲 sRGB`[1.358, -0.074, -0.012]`です。 SRGB 値がいっぱいになるため表示 P3 の内部で含まれていると、表示 P3 値レイアウト「外部」sRGB 範囲のします。
 

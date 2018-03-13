@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a6749ca9d8a793372ec088433780d622f2f05b41
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7ca863b92d8d7af46f4ce18f5d088347b9ca04ee
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-and-home-screen-widget-enhancements"></a>検索とホーム画面ウィジェットの機能強化
 
@@ -25,7 +25,7 @@ Apple はウィジェットが優れた上にある新しい iOS 10 個のロッ
 
 ウィジェットは自由にカスタマイズし、テキスト、イメージ、ボタンなどの UI 要素を含めることがあります。さらに、開発者は、ウィジェットのレイアウトをさらにカスタマイズすることができます。
 
-[ ![](widgets-images/widgets01.png "例のウィジェット")](widgets-images/widgets01.png)
+[![](widgets-images/widgets01.png "例のウィジェット")](widgets-images/widgets01.png#lightbox)
 
 ユーザーを表示したり、アプリのウィジェットと対話できる 2 つの主な場所があります。
 

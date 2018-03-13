@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 73b0a3292d7b1681b4086e8366e8b813194969a9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8901bb57ace4f05e8c26fdc43dfe8c476927903a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alerts"></a>アラート
 
@@ -22,7 +22,7 @@ _この記事では、Xamarin.Mac アプリケーションでアラートの使�
 
 警告は、特殊な種類 (エラー) など、深刻な問題が発生したときに表示されるダイアログ ボックスのまたは (ファイルを削除する準備をしています) などの警告として。 アラートは、ダイアログ ボックスであるため、必要もありますユーザーからの応答を終了する前にします。
 
-[ ![](alert-images/alert06.png "例アラート")](alert-images/alert06.png)
+[![](alert-images/alert06.png "例アラート")](alert-images/alert06.png#lightbox)
 
 この記事で Xamarin.Mac アプリケーションでアラートの操作の基礎について説明します。 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 上記のコードの警告アイコン、タイトル、警告メッセージと、1 つに重ね合わせて示す、アプリケーションのアイコンで警告が表示されます**OK**ボタンをクリックします。
 
-[ ![](alert-images/alert01.png "[Ok] ボタンのアラート")](alert-images/alert01.png)
+[![](alert-images/alert01.png "[Ok] ボタンのアラート")](alert-images/alert01.png#lightbox)
 
 Apple では、アラートをカスタマイズするために使用できるいくつかのプロパティを提供します。
 
@@ -92,7 +92,7 @@ alert.RunModal ();
 ```
 このコードを実行すると、次が表示されます。
 
-[ ![](alert-images/alert02.png "単純なアラート")](alert-images/alert02.png)
+[![](alert-images/alert02.png "単純なアラート")](alert-images/alert02.png#lightbox)
 
 次のコードでは、シートとして同じアラートが表示されます。
 
@@ -107,7 +107,7 @@ alert.BeginSheet (this);
 
 このコードを実行すると場合、次が表示されます。
 
-[ ![](alert-images/alert03.png "シートとして表示されるアラート")](alert-images/alert03.png)
+[![](alert-images/alert03.png "シートとして表示されるアラート")](alert-images/alert03.png#lightbox)
 
 
 <a name="Working_with_Alert_Buttons" />
@@ -136,7 +136,7 @@ var result = alert.RunModal ();
 
 コードを実行する場合、次が表示されます。
 
-[ ![](alert-images/alert04.png "次の 3 つのボタンのオプションのアラート")](alert-images/alert04.png)
+[![](alert-images/alert04.png "次の 3 つのボタンのオプションのアラート")](alert-images/alert04.png#lightbox)
 
 シートとして同じ警告のコードを次に示します。
 
@@ -155,7 +155,7 @@ alert.BeginSheetForResponse (this, (result) => {
 ```
 このコードを実行すると場合、次が表示されます。
 
-[ ![](alert-images/alert05.png "シートとして表示されるボタンの 3 つのアラート")](alert-images/alert05.png)
+[![](alert-images/alert05.png "シートとして表示されるボタンの 3 つのアラート")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > アラートには、複数の 3 つのボタンを追加しないでです。
@@ -184,7 +184,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 コードを実行すると場合、次が表示されます。
 
-[ ![](alert-images/alert06.png "アラートと非表示ボタン")](alert-images/alert06.png)
+[![](alert-images/alert06.png "アラートと非表示ボタン")](alert-images/alert06.png#lightbox)
 
 シートとして同じ警告のコードを次に示します。
 
@@ -205,7 +205,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 このコードを実行すると場合、次が表示されます。
 
-[ ![](alert-images/alert07.png "アラートと非表示ボタンがシートとして表示します。")](alert-images/alert07.png)
+[![](alert-images/alert07.png "アラートと非表示ボタンがシートとして表示します。")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
@@ -235,7 +235,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 コードを実行する場合、次が表示されます。
 
-[ ![](alert-images/alert08.png "コードを実行して、次が表示されます。")](alert-images/alert08.png)
+[![](alert-images/alert08.png "コードを実行して、次が表示されます。")](alert-images/alert08.png#lightbox)
 
 シートとして同じアラートを次に示します。
 
@@ -260,7 +260,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 このコードを実行する場合、次が表示されます。
 
-[ ![](alert-images/alert09.png "カスタム ビューのアラート")](alert-images/alert09.png)
+[![](alert-images/alert09.png "カスタム ビューのアラート")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 
@@ -273,6 +273,6 @@ alert.BeginSheetForResponse (this, (result) => {
 - [MacWindows (サンプル)](https://developer.xamarin.com/samples/mac/MacWindows/)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [ウィンドウの操作](~/mac/user-interface/window.md)
-- [OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows の概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)
 - [NSAlert](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSAlert_Class/index.html#//apple_ref/doc/uid/TP40004001)

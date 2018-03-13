@@ -3,14 +3,15 @@ title: "27 章の概要です。 カスタム レンダラー"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0c1dc9ba5cf382551a1142110c68d16421db07e4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6d7c2b17e9596b7d2dd26aaf77cf13f7f8086cd5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>27 章の概要です。 カスタム レンダラー
 
@@ -66,7 +67,7 @@ Windows ランタイム[ `ViewRenderer<TElement, TNativeElement>` ](https://gith
 
 すべて、`ViewRenderer`派生物を含む、`ExportRenderer`を関連付けるアセンブリ レベルの属性、`HelloView`特定した`HelloViewRenderer`クラスです。 これは、個々 のプラットフォーム プロジェクトでは、Xamarin.Forms がレンダラーを検索する方法です。
 
-[![こんにちはビューのスクリーン ショットをトリプル](images/ch27fg02-small.png "カスタム レンダラー")](images/ch27fg02-large.png "カスタム レンダラー")
+[![こんにちはビューのスクリーン ショットをトリプル](images/ch27fg02-small.png "カスタム レンダラー")](images/ch27fg02-large.png#lightbox "カスタム レンダラー")
 
 ## <a name="renderers-and-properties"></a>レンダラーとプロパティ
 
@@ -89,7 +90,7 @@ Windows ランタイム[ `ViewRenderer<TElement, TNativeElement>` ](https://gith
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo)クラスは、これらのいくつか表示`EllipseView`オブジェクト。
 
-[![楕円デモのトリプル スクリーン ショット](images/ch27fg03-small.png "EllipseView カスタム レンダラー")](images/ch27fg03-large.png "EllipseView カスタム レンダラー")
+[![楕円デモのトリプル スクリーン ショット](images/ch27fg03-small.png "EllipseView カスタム レンダラー")](images/ch27fg03-large.png#lightbox "EllipseView カスタム レンダラー")
 
 [ **BouncingBall** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall) bounces、`EllipseView`画面の辺はオフです。
 

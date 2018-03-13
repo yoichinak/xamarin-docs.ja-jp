@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: b8d8aed397f72df53fdca7e455b8ef723e48e0a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction"></a>はじめに
 
@@ -88,7 +88,7 @@ Web アプリケーションについては、次を参照してください。[
 
 このガイドでは、Xamarin.Forms を使用してクロスプラット フォームのエンタープライズ アプリの構築に焦点を当てていて、例として eShopOnContainers モバイル アプリを使用します。 図 1-2 では、先に説明した機能を提供する eShopOnContainers モバイル アプリからページを表示します。
 
-[![](introduction-images/screenshots.png "EShopOnContainers モバイル アプリ")](introduction-images/screenshots-large.png "eShopOnContainers モバイル アプリ")
+[![](introduction-images/screenshots.png "EShopOnContainers モバイル アプリ")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers モバイル アプリ")
 
 **図 1-2**: eShopOnContainers モバイル アプリ
 

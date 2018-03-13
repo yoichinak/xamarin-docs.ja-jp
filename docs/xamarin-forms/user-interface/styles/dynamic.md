@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2088ae055fb18b3b00712f063d2178f759021088
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dynamic-styles"></a>動的なスタイル
 
@@ -81,8 +81,8 @@ public partial class DynamicStylesPage : ContentPage
 
 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`切り替えることは`blueSearchBarStyle`と`greenSearchBarStyle`です。 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](dynamic-images/dynamic-style-blue.png "青の動的スタイル例")](dynamic-images/dynamic-style-blue-large.png "青の動的なスタイルの使用例")
-[![](dynamic-images/dynamic-style-green.png "緑色の動的スタイル例")](dynamic-images/dynamic-style-green-large.png "緑色の動的なスタイルの例")
+[![](dynamic-images/dynamic-style-blue.png "青の動的スタイル例")](dynamic-images/dynamic-style-blue-large.png#lightbox "青の動的なスタイルの使用例")
+[![](dynamic-images/dynamic-style-green.png "緑色の動的スタイル例")](dynamic-images/dynamic-style-green-large.png#lightbox "緑色の動的なスタイルの例")
 
 次のコード例では、C# の場合と同じページを示しています。
 
@@ -162,8 +162,8 @@ C# で、 [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.S
 
 分離コード ファイルでは、コンス トラクターを作成、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)キーを持つエントリ`searchBarStyle`、動的なスタイルを例示されている前の例としてごとです。 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`切り替えることは`blueSearchBarStyle`と`greenSearchBarStyle`です。 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "青の動的なスタイルの継承の例")](dynamic-images/dynamic-style-inheritance-blue-large.png "動的スタイルの継承の例の青")
-[![](dynamic-images/dynamic-style-inheritance-green.png "緑色の動的なスタイル継承の例")](dynamic-images/dynamic-style-inheritance-green-large.png "緑色の動的なスタイルの継承の例")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "青の動的なスタイルの継承の例")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "動的スタイルの継承の例の青")
+[![](dynamic-images/dynamic-style-inheritance-green.png "緑色の動的なスタイル継承の例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "緑色の動的なスタイルの継承の例")
 
 次のコード例では、C# の場合と同じページを示しています。
 
@@ -215,7 +215,7 @@ public class DynamicStylesInheritancePageCS : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [動的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

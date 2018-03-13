@@ -7,19 +7,17 @@ ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: cf2211a572d45b7c29018d00f36cb8408484483f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar"></a>ツール バー
 
 _ツールバーは、既定のアクションのバーより高い柔軟性を提供するアクション バー コンポーネント。 アプリで任意の場所に配置できるため、そのサイズを変更することができます、およびアプリのテーマとは異なる色スキームを使用できます。また、各アプリの画面は、複数のツールバーを持つことができます。_
 
-
-<a name="overview" />
  
 ## <a name="overview"></a>概要
 
@@ -27,7 +25,7 @@ Android のアクティビティの主要な設計要素は、*操作バー*で�
 
 `Toolbar` (Android 5.0 ロリポップで導入) ウィジェットはようなもののアクション バー インターフェイスの汎化&ndash;操作バーを置き換えるためのものにします。 `Toolbar`レイアウトでは、アプリ、どこでも使用できますであり、アクション バーよりもはるかにカスタマイズ可能な。 次のスクリーン ショットに示しています、カスタマイズされた`Toolbar`このガイドの作成の例。 
 
-[![編集、ツールバーのサンプルのスクリーン ショットは、保存、およびオーバーフロー メニュー項目](images/01-toolbar-sml.png)](images/01-toolbar.png)
+[![編集、ツールバーのサンプルのスクリーン ショットは、保存、およびオーバーフロー メニュー項目](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
 
 重要な相違がある、`Toolbar`と操作バー。 
 
@@ -72,7 +70,6 @@ Google の[マテリアルのデザイン ガイドライン](https://material.g
 -   使用して、 **Android のサポート ライブラリ v7 AppCompat**ライブラリ (と呼ばれる*AppCompat*このガイドの残りの部分) を展開する`Toolbar`Android の以前のバージョン。 
 
  
-<a name="requirements" />
  
 ## <a name="requirements"></a>必要条件
 

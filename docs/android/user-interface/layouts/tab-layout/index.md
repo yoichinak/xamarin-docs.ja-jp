@@ -8,15 +8,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/23/2017
-ms.openlocfilehash: f8680cde2e5536495f33d571adea9980020a72fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 02a425c8276524accc088b53c1099e7c2e28d828
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts"></a>タブ付きレイアウト
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -45,7 +44,6 @@ ms.lasthandoff: 02/27/2018
 `TabHost` API と互換性が Android のすべてのバージョンでは使用する多くの労力が必要です、現在の整合性がありません[Android の UI ガイドライン](http://developer.android.com/design/index.html)です。 開発者は、この API の使用を避け、Xamarin.Android アプリケーションに対して新しいアクションバーを種類別する必要があります。 
 
 
-<a name="Introducing_ActionBarSherlock" />
 
 ## <a name="actionbarsherlock"></a>ActionBarSherlock
 

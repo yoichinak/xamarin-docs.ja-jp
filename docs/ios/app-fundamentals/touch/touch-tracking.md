@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c096e211bc29e94dbff0202c50ca69780cb6849e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a9e3842611aab86d23a2b0c2a832efce18c22465
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="multi-touch-finger-tracking"></a>マルチタッチ本の指の追跡
 
@@ -184,7 +184,7 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 
 この処理により、完全に、[フィンガー ペイント](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)プログラムを個々 の本の指を追跡し、画面に結果を描画します。
 
-[ ![](touch-tracking-images/image01.png "個々 の本の指の追跡と画面に結果の絵")](touch-tracking-images/image01.png)
+[![](touch-tracking-images/image01.png "個々 の本の指の追跡と画面に結果の絵")](touch-tracking-images/image01.png#lightbox)
 
 画面上の個々 の本の指を追跡し、それらを区別する方法を見てきましたようになりました。
 

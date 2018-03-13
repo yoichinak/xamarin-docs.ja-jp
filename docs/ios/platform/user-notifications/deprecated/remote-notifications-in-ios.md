@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c4a88f875b4082f85b1c5565de2a24548e7b8874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="push-notifications-in-ios"></a>IOS でのプッシュ通知
 
@@ -45,37 +45,37 @@ Apple APNS の 2 つの環境の保持:*サンド ボックス*と*運用*環境
 
 1.  作成するには、証明書に移動し、iOS プロビジョニング ポータル Apple の web サイトで、次のスクリーン ショット (左上のアプリ Id のメニュー項目に注意してください) で示すように。
 
-    [ ![](remote-notifications-in-ios-images/image5new.png "IOS プロビジョニング ポータル リンゴの web サイトでは、")](remote-notifications-in-ios-images/image5new.png)
+    [![](remote-notifications-in-ios-images/image5new.png "IOS プロビジョニング ポータル リンゴの web サイトでは、")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2.  次に、アプリ ID のセクションに移動し、次のスクリーン ショットに示すように新しいアプリ ID を作成します。
 
-    [ ![](remote-notifications-in-ios-images/image6new.png "アプリ Id に移動し、新しいアプリ ID の作成")](remote-notifications-in-ios-images/image6new.png)
+    [![](remote-notifications-in-ios-images/image6new.png "アプリ Id に移動し、新しいアプリ ID の作成")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
 3.  クリックすると、  **+** ボタン、ことができますアプリ id、説明、およびバンドル Id を入力するように次のスクリーン ショットに示すようにします。
 
-    [ ![](remote-notifications-in-ios-images/image7new.png "アプリ id、説明、およびバンドル Id を入力します。")](remote-notifications-in-ios-images/image7new.png)
+    [![](remote-notifications-in-ios-images/image7new.png "アプリ id、説明、およびバンドル Id を入力します。")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
 4. 選択することを確認**アプリ ID の明示的な**、バンドル Id が付いていないことと、`*`です。 これは、複数のアプリケーションに適している識別子が作成され、1 つのアプリケーションのプッシュ通知証明書がある必要があります。
 
 1. [アプリ サービス]、次のように選択します**Push Notifications**:。
 
-    [ ![](remote-notifications-in-ios-images/image8new.png "プッシュ通知を選択します。")](remote-notifications-in-ios-images/image8new.png)
+    [![](remote-notifications-in-ios-images/image8new.png "プッシュ通知を選択します。")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 2. キーを押します**送信**を新しいアプリ ID の登録を確認します。
 
-    [ ![](remote-notifications-in-ios-images/image9new.png "新しいアプリ ID の登録を確認します。")](remote-notifications-in-ios-images/image9new.png)
+    [![](remote-notifications-in-ios-images/image9new.png "新しいアプリ ID の登録を確認します。")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
 3.  次に、アプリ ID の証明書を作成する必要があります。 左側にあるナビゲーション ウィンドウを参照**証明書 > すべて**を選択し、 `+`  ボタン、次のスクリーン ショットに示すようにします。
 
-    [ ![](remote-notifications-in-ios-images/image10new.png "アプリ ID の証明書を作成します。")](remote-notifications-in-ios-images/image8.png)
+    [![](remote-notifications-in-ios-images/image10new.png "アプリ ID の証明書を作成します。")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 4.  開発または運用証明書を使用するかどうかを選択します。
 
-    [ ![](remote-notifications-in-ios-images/image11new.png "開発または運用証明書を選択します。")](remote-notifications-in-ios-images/image11new.png)
+    [![](remote-notifications-in-ios-images/image11new.png "開発または運用証明書を選択します。")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 5. 先ほど作成した新しいアプリ ID を選択します。
 
-    [ ![](remote-notifications-in-ios-images/image12new.png "先ほど作成した新しいアプリ ID を選択します")](remote-notifications-in-ios-images/image12new.png)
+    [![](remote-notifications-in-ios-images/image12new.png "先ほど作成した新しいアプリ ID を選択します")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 6.  これを作成するプロセスを実行する手順が表示されます、*証明書署名要求*を使用して、**キーチェーン アクセス**mac アプリケーション
 
@@ -85,11 +85,11 @@ Apple APNS の 2 つの環境の保持:*サンド ボックス*と*運用*環境
 
 9.  プロビジョニング プロファイルを作成すると開きます**Xcode オーガナイザー**し、それを更新します。 プロビジョニング プロファイルを作成した場合は表示されません iOS プロビジョニング ポータルから、プロファイルをダウンロードして、手動でインポートする必要がある可能性があります。 次のスクリーン ショットは、追加されたプロビジョニング プロファイルで開催者の例を示します。
 
-    [ ![](remote-notifications-in-ios-images/image13new.png "このスクリーン ショットは、追加のプロビジョニング プロファイルで開催者の例を示します")](remote-notifications-in-ios-images/image13new.png)
+    [![](remote-notifications-in-ios-images/image13new.png "このスクリーン ショットは、追加のプロビジョニング プロファイルで開催者の例を示します")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 10.  この時点で作成したプロビジョニング プロファイルを使用する Xamarin.iOS プロジェクトを構成する必要があります。 これから**プロジェクト オプション**ダイアログ **[iOS バンドル署名 *]** タブで、次のスクリーン ショットに示すとして。
 
-    [ ![](remote-notifications-in-ios-images/image11.png "新しくプロビジョニング プロファイルを作成してこれを使用する Xamarin.iOS プロジェクトを構成します。")](remote-notifications-in-ios-images/image11.png)
+    [![](remote-notifications-in-ios-images/image11.png "新しくプロビジョニング プロファイルを作成してこれを使用する Xamarin.iOS プロジェクトを構成します。")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 
 

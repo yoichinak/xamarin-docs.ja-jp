@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e8a37816e28120392f550376807e91fb3b5d458
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cee93f082386e78a643b8c07dd48d0196e8ecd6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
@@ -164,7 +164,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 通常、パスの塗りつぶしの種類には影響はのみですがいっぱいになったと線ではありませんが、2 つ`Inverse`モードは、塗りつぶしとストロークの両方に影響します。 いっぱいになった 2 つの`Inverse`型領域を塗りつぶす oppositely 星の外側の領域が入力されるようにします。 2 つのストロークの`Inverse`色の線を除くすべての種類。 これら逆フィルの型を使用すると、iOS スクリーン ショットに示すようにいくつか奇数効果を生成できます。
 
-[![](fill-types-images/fivepointedstar-small.png "Five-Pointed スター ページのスクリーン ショットをトリプル")](fill-types-images/fivepointedstar-large.png "Five-Pointed スター ページのトリプル スクリーン ショット")
+[![](fill-types-images/fivepointedstar-small.png "Five-Pointed スター ページのスクリーン ショットをトリプル")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed スター ページのトリプル スクリーン ショット")
 
 Android および Windows のモバイル スクリーン ショット、典型的な偶ワインディングとの効果を表示するには塗りつぶし、ストロークの順序にも影響結果。
 
@@ -217,7 +217,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 最小限のコードで作成した興味深いイメージです。
 
-[![](fill-types-images/overlappingcircles-small.png "円の重複するページのスクリーン ショットをトリプル")](fill-types-images/overlappingcircles-large.png "円の重複するページのトリプル スクリーン ショット")
+[![](fill-types-images/overlappingcircles-small.png "円の重複するページのスクリーン ショットをトリプル")](fill-types-images/overlappingcircles-large.png#lightbox "円の重複するページのトリプル スクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク

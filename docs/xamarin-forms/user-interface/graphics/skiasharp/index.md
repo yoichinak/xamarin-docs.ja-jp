@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: a49c442fcce31fb6b853359ddfafc9a43d0a2114
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eaebd8cbae996e9a5792d0a4898fafb72bdded47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>Xamarin.Forms で SkiaSharp の使用
 
@@ -22,10 +22,9 @@ SkiaSharp は、.NET と c# Google 製品で広範囲に使用されるオープ
 
 このガイドでは、Xamarin.Forms プログラミングに慣れていることを前提としています。
 
-## <a name="webinar"></a>ウェビナー
+> [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-[![](images/skiasharpwebinarscreen.png "Xamarin.Forms ウェビナーに SkiaSharp")](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)  
-["SkiaSharp Xamarin.Forms"ウェビナーを見る](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)
+**Xamarin.Forms のウェビナー: SkiaSharp**
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp 準備
 

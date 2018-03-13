@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/03/2017
-ms.openlocfilehash: a13de7fbb4b6e1f9fa2853ce599f3a038a5e4040
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: affe58d9276bd0b687089fb42a14ca964c570c9c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="complications"></a>複雑な問題
 
@@ -24,7 +24,7 @@ _watchOS により、開発者はウォッチ面のカスタム複雑さの一�
 
 参照して[Apple のドキュメント](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)をアプリは問題に適しているかどうかを判断します。 5 がある`CLKComplicationFamily`種類の表示を選択します。
 
-[ ![](complications-images/all-complications-sml.png "使用可能な 5 CLKComplicationFamily 型: 循環小さな、小さなモジュール型、モジュール、大規模な実用的小さな実用的大きな")](complications-images/all-complications.png)
+[![](complications-images/all-complications-sml.png "使用可能な 5 CLKComplicationFamily 型: 循環小さな、小さなモジュール型、モジュール、大規模な実用的小さな実用的大きな")](complications-images/all-complications.png#lightbox)
 
 アプリには、1 つのスタイル、または 5 つすべてを表示するデータに応じてを実装できます。
 過去または将来の時刻の値を提供するように、ユーザーがデジタル クラウンをオンに、タイム トラベルをサポートすることもできます。
@@ -83,7 +83,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 ウォッチ拡張機能の**Info.plist**ファイルの名前を指定する必要があります、`CLKComplicationDataSource`サポートするどのコンプリケーションのファミリとします。
 
-[ ![](complications-images/complications-config-sml.png "コンプリケーションのファミリ型")](complications-images/complications-config.png)
+[![](complications-images/complications-config-sml.png "コンプリケーションのファミリ型")](complications-images/complications-config.png#lightbox)
 
 **データ ソース クラス**エントリの一覧はそのサブクラスにクラス名に表示`CLKComplicationDataSource`複雑なロジックを含むサブクラスです。
 

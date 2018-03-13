@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a219a5ed4045bff639f29fd49ef5288139140135
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0eec51a6c95894482a57bfe3bb1f95aec2045af4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessing-remote-data"></a>リモート データへのアクセス
 
@@ -52,7 +52,7 @@ EShopOnContainers モバイル アプリの使用、`HttpClient`メディアの�
 
 図 10-1 で表示するためのカタログ マイクロ サービスからカタログ データを読み取るクラスの相互作用を示しています、`CatalogView`です。
 
-[![](accessing-remote-data-images/catalogdata.png "カタログ マイクロ サービスからデータを取得する")](accessing-remote-data-images/catalogdata-large.png "カタログ マイクロ サービスからデータを取得します。")
+[![](accessing-remote-data-images/catalogdata.png "カタログ マイクロ サービスからデータを取得する")](accessing-remote-data-images/catalogdata-large.png#lightbox "カタログ マイクロ サービスからデータを取得します。")
 
 **図 10-1**: カタログ マイクロ サービスからデータを取得します。
 
@@ -157,7 +157,7 @@ JSON のコレクションが書式設定し、このメソッドは、ある En
 
 図 10-2 に表示されるバスケット データを送信するクラスの相互作用を示しています、 `BasketView`、バスケット マイクロ サービスをします。
 
-[![](accessing-remote-data-images/basketdata.png "バスケット マイクロ サービスへのデータ送信")](accessing-remote-data-images/basketdata-large.png "データ バスケット マイクロ サービスを送信します。")
+[![](accessing-remote-data-images/basketdata.png "バスケット マイクロ サービスへのデータ送信")](accessing-remote-data-images/basketdata-large.png#lightbox "データ バスケット マイクロ サービスを送信します。")
 
 **図 10-2**: バスケット マイクロ サービスにデータを送信します。
 

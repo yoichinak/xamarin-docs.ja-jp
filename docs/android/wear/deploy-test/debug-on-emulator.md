@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1ad3c193261bf22b7ee344aa1ccabb226533b907
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc6146670c4b5f7d29491335b4719e032487dcce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Android の消耗エミュレーターでのデバッグします。
 
@@ -28,14 +28,14 @@ Android 着用アプリケーションを開発するには、物理ハードウ
 
 消耗仮想デバイスを作成するときに、Android を着用デバイス プロファイルを選択 (など**Android 消耗角**)。 パフォーマンス向上のための使用、消耗**x86** CPU/ABI この例のように。
 
-[![消耗仮想デバイス構成の例](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png)
+[![消耗仮想デバイス構成の例](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 
 ## <a name="launch-the-wear-virtual-device"></a>消耗仮想デバイスを起動します。 
 
 着用して Android 仮想デバイスを作成した後に選択できますが、IDE でデバイスのプルダウン メニューからデバッグを開始する前に。 仮想デバイスがデバイスのドロップダウン リストで使用できない場合は、プロジェクトが Android であることを確認*着用*仮想デバイスとアプリのプロジェクト (、Android アプリ プロジェクトではなく) と同じ API に、ターゲット API レベルが設定されているレベルします。 例:
 
-[ ![Visual Studio デバイス メニューに着け AVD を選択します。](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png)
+[![Visual Studio デバイス メニューに着け AVD を選択します。](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
 Android エミュレーターが起動したら、Xamarin.Android は、エミュレーターを消耗アプリを展開します。 エミュレーターは、構成済みの仮想デバイス イメージを使用してアプリを実行します。
 

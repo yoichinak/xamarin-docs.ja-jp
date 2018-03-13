@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/16/2017
-ms.openlocfilehash: a95b49fa3f090339773233dada46a14e69c8bb43
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 798bb2b15534a620acbe76080e171af1a548ac25
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
@@ -180,10 +180,10 @@ On<iOS>().SetUseSafeArea(true);
 
 結果はすべての Iphone 安全では、画面の領域をページのコンテンツを配置することができます。
 
-[![](ios-images/safe-area-layout.png "安全な領域のレイアウト ガイド")](ios-images/safe-area-layout-large.png "セーフ エリア レイアウト ガイド")
+[![](ios-images/safe-area-layout.png "安全な領域のレイアウト ガイド")](ios-images/safe-area-layout-large.png#lightbox "セーフ エリア レイアウト ガイド")
 
 > [!NOTE]
-> **注**: Apple によって定義された安全な領域は、Xamarin.Forms で設定に使用される、 [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/)プロパティ、およびそれまでの値のこのプロパティが設定されているよりも優先されます。
+> Apple で定義された安全な領域は、Xamarin.Forms で設定に使用される、 [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/)プロパティ、およびそれまでの値のこのプロパティが設定されているよりも優先されます。
 
 取得することによって、安全な領域をカスタマイズすることができます、 [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)値と、`Page.SafeAreaInsets`メソッドから、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間。 として変更することができますし、必須であり、再割り当て、`Padding`ページのコンス トラクター内のプロパティまたは[ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/)オーバーライドします。
 
@@ -385,7 +385,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 結果は、指定した`UpdateMode`に適用される、 [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)項目の選択が発生したときを制御します。
 
-[![](ios-images/picker-updatemode.png "ピッカー UpdateMode プラットフォーム固有")](ios-images/picker-updatemode-large.png "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "ピッカー UpdateMode プラットフォーム固有")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
 <a name="set_status_bar_visibility" />
 
@@ -468,7 +468,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 結果は、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)遅延コンテンツの調整のため受信を無効にすることができますをこのシナリオでは、 [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)ジェスチャの受信ではなく、 [ `Detail`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)のページ、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
-[![](ios-images/scrollview-delay-content-touches.png "ScrollView 遅延コンテンツ接してプラットフォーム固有の仕様")](ios-images/scrollview-delay-content-touches-large.png "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "ScrollView 遅延コンテンツ接してプラットフォーム固有の仕様")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
 ## <a name="summary"></a>まとめ
 

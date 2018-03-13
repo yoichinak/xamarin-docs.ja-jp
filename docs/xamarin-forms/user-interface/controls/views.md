@@ -8,286 +8,187 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: df8c8463b2556035c5369c70cb10dbc3dc6b6743
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c5bafe12c2cf8c5f8d75757b22223c708ae248dc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms ビュー
 
 _Xamarin.Forms ビューは、クロスプラット フォーム モバイル ユーザー インターフェイスのビルド ブロックです。_
 
-<style>.tableimg { max-width: none !important;}</style>
+ビューは、ラベル、ボタン、およびとしてよく知られているスライダーなどのユーザー インターフェイス オブジェクト*コントロール*または*ウィジェット*グラフィカル他のプログラミング環境でします。 すべて派生 Xamarin.Forms でサポートされているビュー、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)クラスです。 これらは、複数のカテゴリに分類できます。
 
-## <a name="views"></a>ビュー
+## <a name="views-for-presentation"></a>プレゼンテーションのビュー
 
-Xamarin.Forms は、word を使用*ビュー*にボタン、ラベルまたはウィジェットのコントロールとよく呼ばれる場合があります - テキスト入力ボックスなどのビジュアル オブジェクトを参照してください。
+### <a name="label"></a>group1
 
-これらの UI 要素は、通常のサブクラス[ `View`](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)です。
+|     |     |
+| --- | --- |
+| [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) 単一行のテキスト文字列または複数行のテキスト ブロック、定数または変数の書式設定のいずれかが表示されます。 設定、 [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)プロパティを定数の書式設定、または一連の文字列に、 [ `FormattedText` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FormattedText/)プロパティを[ `FormattedString` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/)変数に対するオブジェクト書式設定します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) / [ガイド](~/xamarin-forms/user-interface/text/label.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text/) | [![例のラベルを付ける](views-images/Label.png "例ラベルを付ける")](views-images/Label-Large.png#lightbox "例ラベルを付ける")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml) |
+|     |     |
 
-<br clear="right" />
+### <a name="image"></a>イメージ
 
-Xamarin.Forms をサポートします。
+|     |     |
+| --- | --- |
+| [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) ビットマップを表示します。 ビットマップは、一般的なプロジェクトまたはプラットフォームのプロジェクトにリソースとして埋め込ままたは .NET を使用して作成された、Web 経由でダウンロードできます`Stream`オブジェクト。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) / [ガイド](~/xamarin-forms/user-interface/images.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/) | [![例 画像の](views-images/Image.png "例のイメージ")](views-images/Image-Large.png#lightbox "画像の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageDemoPage.xaml) |
+|     |     |
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-<thead>
-    <th>
-      <strong>型</strong>
-    </th>
-    <th>
-      <strong>説明</strong>
-    </th>
-    <th style="min-width:400px">
-      <strong>スクリーン ショット</strong>
-    </th>
+### <a name="boxview"></a>BoxView
 
-  </thead>
-  <tbody>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/">ActivityIndicator</a>
-    </td>
-    <td valign="top">
-何かが継続的なことを示すために使用される visual コントロールです。 このコントロールは、問題が起こっているか、その進行状況に関する情報がないことをユーザーに視覚的な手掛かりを持ちます。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ActivityIndicatorDemoPage.cs"><img src="views-images/ActivityIndicator.png" title="ActivityIndicator 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/">BoxView</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>純色の四角形を描画するために使用します。 BoxView は初期プロトタイピングを実施する際に、画像またはカスタムの要素に役立ちます代替です。 BoxView が 40 x 40 の既定のサイズの要求です。 サイズが異なる場合は、割り当て、 <a href="https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/">VisualElement.WidthRequest</a>と<a href="https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/">VisualElement.HeightRequest</a>です。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/BoxViewDemoPage.cs"><img src="views-images/BoxView.png" title="BoxView 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Button/">ボタン</a>
-    </td>
-    <td align="center" valign="top">
-ボタン<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>タッチ イベントに反応をします。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ButtonDemoPage.cs"><img src="views-images/Button.png" title="ボタンの例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/">DatePicker</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>日付選択ことができます。 DatePicker のビジュアル表現は、のいずれかによく似ています<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">エントリ</a>日付を選択するための特別なコントロールがキーボードの代わりに表示される点を除いて、 </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/DatePickerDemoPage.cs"><img src="views-images/DatePicker.png" title="DatePicker 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/">エディター</a>
-    </td>
-    <td valign="top">
-複数行のテキストを編集できるコントロールです。 1 つの行エントリに、次を参照してください。<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">エントリ</a>です。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/EditorDemoPage.cs"><img src="views-images/Editor.png" title="エディターの使用例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">Entry</a>
-    </td>
-    <td valign="top">
-1 行のテキストを編集できるコントロールです。 エントリは、1 つの行テキスト入力です。 不連続小さなユーザー名とパスワードなどの情報を収集するためには適しています。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/EntryDemoPage.cs"><img src="views-images/Entry.png" title="エントリの例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Image/">イメージ</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>イメージを保持します。
-    <br />
-    <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Image/">イメージ API</a>
-    <br />
-    <a href="~/xamarin-forms/user-interface/images.md">画像の操作</a>
-    <br />
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ImageDemoPage.cs">デモ ソース</a>
-    </td>
-    <td>
-    <img src="views-images/Image.png" title="イメージの例" class="tableimg">
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Label/">ラベル</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>読み取り唯一の形式のテキストを表示する表示します。 ラベルを使用して、複数の行のテキスト ブロックと同様に 1 行のテキスト要素を表示できます。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/LabelDemoPage.cs"><img src="views-images/Label.png" title="ラベルの例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/">ListView</a>
-    </td>
-    <td valign="top">
-<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/">ItemView</a>垂直方向の一覧としてデータのコレクションを表示します。
-    <br />
-    <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/">ListView API</a>
-    <br />
-    <a href="~/xamarin-forms/user-interface/listview/index.md">ListView のドキュメント</a>
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ListViewDemoPage.cs"><img src="views-images/ListView.png" title="ListView の例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/">OpenGLView</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a> OpenGL のコンテンツを表示します。
-    <ul>
-      <li>IOS および Android のプロジェクト (Windows Phone はサポートされません) に対してのみ機能します。
-      <li>参照が必要です、 <b>OpenTK 1.0</b> iOS および Android のプロジェクト内のアセンブリ。</li>
-      <li>共有プロジェクトで使用するに最適な場合は、PCL に使用し、DependencyService も必要になります。</li>
-    </ul>
-    </td>
-    <td>
-    <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/"><img src="views-images/OpenGL.png" title="OpenGlView 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/">ピッカー</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>コントロール リストの要素を取得します。 ピッカーのビジュアル表現がに似ていますが、<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">エントリ</a>、ピッカー コントロールがキーボードの代わりに表示されます。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/PickerDemoPage.cs"><img src="views-images/Picker.png" title="ピッカーの例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/">ProgressBar</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>する進行状況を示すコントロール。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ProgressBarDemoPage.cs"><img src="views-images/ProgressBar.png" title="ProgressBar の使用例のクラス ="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/">SearchBar</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>検索ボックスを提供するコントロール。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/SearchBarDemoPage.cs"><img src="views-images/SearchBar.png" title="SearchBar 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/">スライダー</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>線形の値を入力するコントロール。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/SliderDemoPage.cs"><img src="views-images/Slider.png" title="スライダーの例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/">ステッパ</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>不連続の値を入力するコントロールは、範囲に制限します。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/StepperDemoPage.cs"><img src="views-images/Stepper.png" title="ステッパ例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/">スイッチ</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>切り替えられた値を提供するコントロール。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/SwitchDemoPage.cs"><img src="views-images/Switch.png" title="スイッチの例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/">TableView</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>の行を保持する<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/">セル</a>s。
-    <br />
-    <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/">TableView API</a>
-    <br />
-    <a href="~/xamarin-forms/user-interface/tableview.md">テーブルのドキュメント</a>
-    <br />
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/TableViewFormDemoPage.cs">デモ ソース</a>
-    </td>
-    <td>
-    <img src="views-images/TableViewNewest.png" title="テーブルの例" class="tableimg">
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/">TimePicker</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a>時間ピッキングを提供するコントロール。 TimePicker のビジュアル表現は、のいずれかによく似ています<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">エントリ</a>キーボードの代わりに、時間を取得する特殊なコントロールが表示されます。
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/TimePickerDemoPage.cs"><img src="views-images/TimePicker.png" title="TimePicker 例" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/">WebView</a>
-    </td>
-    <td valign="top">
-A<a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">ビュー</a> HTML コンテンツを表示します。
-    <br />
-    <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/">WebView API</a>
-    <br />
-    <a href="~/xamarin-forms/user-interface/webview.md">WebView のドキュメント</a>
-    <br />
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/WebViewDemoPage.cs">デモ ソース</a>
-    </td>
-    <td>
-    <img src="views-images/WebView.png" title="WebView の例" class="tableimg">
-    </td>
-  </tr>
-  </tbody>
-</table>
+|     |    |
+| --- | ---|
+| [`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) 色を純色の四角形を表示、 [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/)プロパティです。 `BoxView` 40 x 40 の既定のサイズの要求がします。 他のサイズを割り当てる、 [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)と[ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) / [ガイド](~/xamarin-forms/user-interface/boxview.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)、 [2](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)、 [3](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)、 [4](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)、 [5](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)、および[6](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock) | [![BoxView 例](views-images/BoxView.png "BoxView 例")](views-images/BoxView-Large.png#lightbox "BoxView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/BoxViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/BoxViewDemoPage.xaml) |
+|     |     |
 
+### <a name="webview"></a>WebView
 
+|     |     |
+| --- | --- |
+| [`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) かどうかに基づいて Web ページまたは HTML コンテンツを表示、 [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.Source/)プロパティに設定されている、 [ `UriWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UrlWebViewSource/)または[ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/)オブジェクト。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) / [ガイド](~/xamarin-forms/user-interface/webview.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)と[2](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView) | [![WebView 例](views-images/WebView.png "WebView 例")](views-images/WebView-Large.png#lightbox "WebView の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/WebViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/WebViewDemoPage.xaml) |
+|     |     |
+
+### <a name="openglview"></a>OpenGLView
+
+|     |     |
+| --- | --- |
+| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) iOS および Android のプロジェクトでは、OpenGL のグラフィックを表示します。 ユニバーサル Windows プラットフォームのサポートされていません。 IOS および Android のプロジェクトへの参照が必要、 **OpenTK 1.0**アセンブリまたは**OpenTK**バージョン 1.0.0.0 アセンブリ。 `OpenGLView` 共有プロジェクトで使用する方が簡単です。PCL または .NET 標準ライブラリで使用されている場合、依存関係サービスも必要になります (示すように、サンプル コードで)。<br /><br />これは、Xamarin.Forms に組み込まれているのみグラフィックス機能が Xamarin.Forms アプリケーションは、グラフィックスを使用しても表示できる[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)、 [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、または[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![OpenGLView 例](views-images/OpenGLView.png "OpenGLView 例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+|     |     |
+
+### <a name="map"></a>マップ
+
+|     |     |
+| --- | --- |
+| [`Map`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) マップを表示します。 **Xamarin.Forms.Maps** Nuget パッケージをインストールする必要があります。 Android ユニバーサル Windows プラットフォーム マップ承認キーが必要とします。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) / [ガイド](~/xamarin-forms/user-interface/map.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithMaps/) | [![マップの使用例](views-images/Map.png "例のマップ")](views-images/Map-Large.png#lightbox "例のマップ")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) |
+|     |     |
+
+## <a name="views-that-initiate-commands"></a>コマンドを開始するビュー
+
+### <a name="button"></a>ボタン
+
+|     |     |
+| --- | --- |
+| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) テキストを表示する四角形のオブジェクトは、発生して、 [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/)イベントが押されるとします。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) | [![ボタンの例](views-images/Button.png "例をボタン")](views-images/Button-Large.png#lightbox "ボタンの例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+|     |     |
+
+### <a name="searchbar"></a>SearchBar
+
+|     |     |
+| --- | --- |
+| [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 検索を実行するアプリケーションのことを通知する型、文字列およびボタン (または、キーボードのキー) にユーザーの領域が表示されます。 [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.Text/)プロパティは、テキストへのアクセスを提供し、 [ `SearchButtonPressed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/)イベントは、ボタンが押されたことを示します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) | [![SearchBar 例](views-images/SearchBar.png "SearchBar 例")](views-images/SearchBar-Large.png#lightbox "SearchBar 例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
+|     |     |
+
+## <a name="views-for-setting-values"></a>値の設定のビュー 
+
+### <a name="slider"></a>スライダー
+
+|     |     |
+| --- | --- |
+| [`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) 選択することができます、`double`を連続する範囲で指定された値、 [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/)と[ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) | [![スライダーの使用例](views-images/Slider.png "スライダー例")](views-images/Slider-Large.png#lightbox "スライダーの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SliderDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SliderDemoPage.xaml) |
+|     |     |
+
+### <a name="stepper"></a>ステッパ
+
+|     |     |
+| --- | --- |
+| [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) 選択することができます、`double`で指定された増分値の範囲から値を[ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Minimum/)、 [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Maximum/)、および[ `Increment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) | [![ステッパ例](views-images/Stepper.png "ステッパ例")](views-images/Stepper-Large.png#lightbox "ステッパ例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
+|     |     |
+
+### <a name="switch"></a>切り替え 
+
+|     |     |
+| --- | --- |
+| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) 使用するブール値を選択するユーザーのオン/オフ スイッチの形式をとります。 [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/)プロパティは、スイッチの状態と[ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/)状態が変更されたときに発生します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![例を切り替える](views-images/Switch.png "スイッチの例")](views-images/Stepper-Large.png#lightbox "スイッチの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+|     |     |
+
+### <a name="datepicker"></a>DatePicker
+
+|     |     |
+| --- | --- |
+| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) プラットフォームの日付選択カレンダーで日付を選択することができます。 許容される日付の範囲を設定、 [ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/)と[ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/)プロパティです。 [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/)プロパティは、選択した日付と[ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/)イベントは、そのプロパティが変更されたときに発生します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) | [![DatePicker 例](views-images/DatePicker.png "DatePicker 例")](views-images/DatePicker-Large.png#lightbox "DatePicker 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
+|     |     |
+
+### <a name="timepicker"></a>TimePicker
+
+|     |     |
+| --- | --- |
+| [`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) プラットフォーム時間ピッカーを使用して時刻を選択することができます。 [ `Time` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Time/)プロパティは、選択された時刻。 アプリケーションでの変更を監視できます、`Time`プロパティのハンドラーをインストールすることによって、 [ `PropertyChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.PropertyChanged/)イベント。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) | [![TimePicker 例](views-images/TimePicker.png "TimePicker 例")](views-images/TimePicker-Large.png#lightbox "TimePicker 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
+|     |     |
+
+## <a name="views-for-editing-text"></a>テキストを編集するためのビュー
+
+これら 2 つのクラスから派生し、 [ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/)を定義するクラス、 [ `Keyboard` ](https://developer.xamarin.com/api/property/Xamarin.Forms.InputView.Keyboard/)プロパティです。
+
+<a name="entry" />
+
+### <a name="entry"></a>入力
+
+|     |     |
+| --- | --- |
+| [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) 入力し、1 行のテキストを編集することができます。 テキストは、 [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/)プロパティ、および[ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/)と[ `Completed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/)イベントが発生したときにテキストの変更、またはユーザー完了を通知するには、enter キーをタップします。<br /><br />使用して、 [ `Editor` ](#editor)の入力と複数行のテキストを編集します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) / [ガイド](~/xamarin-forms/user-interface/text/entry.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text) | [![エントリの例](views-images/Entry.png "エントリ例")](views-images/Entry-Large.png#lightbox "エントリの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryDemoPage.xaml) |
+|     |     |
+
+<a name="editor" />
+
+### <a name="editor"></a>エディター
+
+|     |     |
+| --- | --- |
+| [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) 入力し、複数行のテキストを編集することができます。 テキストは、 [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Editor.Text/)プロパティ、および[ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Editor.TextChanged/)と[ `Completed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Editor.Completed/)イベントが発生したときにテキストの変更、またはユーザー完了を通知します。<br /><br />使用して、 [ `Entry` ](#entry)の入力と 1 つの行のテキストを編集用のビューです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) / [ガイド](~/xamarin-forms/user-interface/text/editor.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text) | [![エントリの例](views-images/Editor.png "エディター例")](views-images/Editor-Large.png#lightbox "エディターの使用例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EditorDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EditorDemoPage.xaml) |
+|     |     |
+
+## <a name="views-to-indicate-activity"></a>アクティビティを示すためにビュー
+
+<a name="activityindicator" />
+
+### <a name="activityindicator"></a>ActivityIndicator
+
+|     |     |
+| --- | --- |
+| [`ActivityIndicator`](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/) アニメーションを使用しているアプリケーションが進行中で時間がかかる作業の進行状況の兆候を与えることがなくを示します。 [ `IsRunning` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)プロパティは、アニメーションを制御します。<br /><br />アクティビティの進行状況がわかっている場合を使用して、 [ `ProgressBar` ](#progressbar)代わりにします。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/) | [![ActivityIndicator 例](views-images/ActivityIndicator.png "ActivityIndicator 例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
+|     |     |
+
+<a name="progressbar" />
+
+### <a name="progressbar"></a>ProgressBar
+
+|     |     |
+| --- | --- |
+| [`ProgressBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/) アニメーションを使用して、時間がかかる作業を通じて、アプリケーションの進行状況を表示します。 設定、 [ `Progress` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ProgressBar.Progress/)プロパティを 0 ~ 1 に、進行状況を示す値。<br /><br />使用して、アクティビティの進行状況が不明の場合、 [ `ActivityIndicator` ](#activityindicator)代わりにします。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/) | [![ProgressBar の使用例](views-images/ProgressBar.png "ProgressBar 例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar の使用例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
+|     |     |
+
+## <a name="views-that-display-collections"></a>コレクションを表示するビュー
+
+### <a name="picker"></a>ピッカー
+
+|     |     |
+| --- | --- |
+| [`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) テキスト文字列の一覧から選択した項目を表示でき、ビューがタップされたときに、その項目を選択できます。 設定、 [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) 、文字列のリストにプロパティまたは[ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/)プロパティ オブジェクトのコレクションをします。 [ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)イベント項目が選択されているときに発生します。<br /><br />`Picker`が選択されている場合にのみ、項目の一覧を表示します。 使用して、 [ `ListView` ](#listView)または[ `TableView` ](#tableView)ページに残っているスクロール可能な一覧についてはします。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) / [ガイド](~/xamarin-forms/user-interface/picker/index.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/) | [![ピッカー例](views-images/Picker.png "ピッカー例")](views-images/Picker-Large.png#lightbox "ピッカーの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PickerDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml.cs) |
+|     |     |
+
+<a name="listView" />
+
+### <a name="listview"></a>ListView
+
+|     |     |
+| --- | --- |
+| [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) 派生した[ `ItemsView[Cell]` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/)選択可能なデータ項目のスクロール可能な一覧が表示されます。 設定、 [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/)プロパティ オブジェクト、およびセットのコレクションを[ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/)プロパティを[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)アイテムがどのようにを表すオブジェクトです。書式設定します。 [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/)イベントとしては、選択が行われたことを通知する、 [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) / [ガイド](~/xamarin-forms/user-interface/listview/index.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView の例](views-images/ListView.png "ListView 例")](views-images/ListView-Large.png#lightbox "ListView の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+|     |     |
+
+<a name="tableView" />
+
+### <a name="tableview"></a>TableView
+
+|     |     |
+| --- | --- |
+| [`TableView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) 型の行の一覧を表示[ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/)省略可能なヘッダーと含むサブ ヘッダーを使用します。 設定、 [ `Root` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.Root/)プロパティ型のオブジェクトを[ `TableRoot` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableRoot/)、し、追加[ `TableSection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableSection/)にオブジェクト`TableRoot`です。 各`TableSection`のコレクションは、`Cell`オブジェクト。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) / [ガイド](~/xamarin-forms/user-interface/tableview.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView) | [![テーブルの使用例](views-images/TableView.png "テーブル例")](views-images/TableView-Large.png#lightbox "テーブルの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TableViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TableViewDemoPage.xaml) |
+|     |     |
 
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Forms の概要](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms ギャラリー (サンプル)](https://developer.xamarin.com/samples/FormsGallery/)
-- [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/tag/Xamarin.Forms/)
+- [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API ドキュメント](https://developer.xamarin.com/api/root/Xamarin.Forms/)

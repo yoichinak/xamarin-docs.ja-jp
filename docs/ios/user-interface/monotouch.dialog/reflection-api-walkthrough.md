@@ -7,11 +7,11 @@ ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 44df6fce4ec6d667c096da01cfc339ec2afdb077
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>チュートリアル: リフレクション API を使用してアプリケーションの作成
 
@@ -34,7 +34,7 @@ _要素の API、MonoTouch.Dialog (山に加えて属性ベースのリフレク
 
 リフレクション API を使用する方法を説明する例を見てみましょう。 この例では次のように単純なデータ入力画面を構築します。
 
- [ ![](reflection-api-walkthrough-images/01-expense-entry.png "この例でビルドします単純なデータ入力画面は、ここに示すように")](reflection-api-walkthrough-images/01-expense-entry.png)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "この例でビルドします単純なデータ入力画面は、ここに示すように")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
 
@@ -119,7 +119,7 @@ window.RootViewController = nav;
 
 アプリケーションを実行おにタイトルが表示されます。 これで、`UINavigationController’s`下の例のスクリーン ショットとしてナビゲーション バー。
 
- [ ![](reflection-api-walkthrough-images/02-create-task.png "今すぐアプリケーションを実行したときに、タイトルは UINavigationControllers ナビゲーション バーに表示されます。")](reflection-api-walkthrough-images/02-create-task.png)
+ [![](reflection-api-walkthrough-images/02-create-task.png "今すぐアプリケーションを実行したときに、タイトルは UINavigationControllers ナビゲーション バーに表示されます。")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 含めることによって、 `UINavigationController`、して利用できるよう山の他の機能ナビゲーションのために必要な D. たとえば、列挙を追加できる、`Expense`経費、および山のカテゴリを定義するクラスD は、選択画面を自動的に作成されます。 示すために、変更、`Expense`クラスに含める、`ExpenseCategory`ようフィールドします。
 
@@ -142,11 +142,11 @@ public class Expense
 
 今すぐアプリケーションを実行している結果、新しい行のカテゴリの表に示すように。
 
- [ ![](reflection-api-walkthrough-images/03-set-details.png "今すぐアプリケーションを実行している結果のカテゴリのテーブルの新しい行に示すよう")](reflection-api-walkthrough-images/03-set-details.png)
+ [![](reflection-api-walkthrough-images/03-set-details.png "今すぐアプリケーションを実行している結果のカテゴリのテーブルの新しい行に示すよう")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 行を選択すると結果、アプリケーションを移動する新しい画面へ、列挙型に対応する行を含む次のようになります。
 
- [ ![](reflection-api-walkthrough-images/04-set-category.png "行を選択すると、アプリケーション内を移動する新しい画面に、列挙型に対応する行の結果します。")](reflection-api-walkthrough-images/04-set-category.png)
+ [![](reflection-api-walkthrough-images/04-set-category.png "行を選択すると、アプリケーション内を移動する新しい画面に、列挙型に対応する行の結果します。")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 

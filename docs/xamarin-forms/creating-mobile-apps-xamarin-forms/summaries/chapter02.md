@@ -3,14 +3,15 @@ title: "第 2 章の概要です。 アプリの構造"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 893030170175403c7f7d6885e924e425b4f73c05
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1569911eb47f28ea6aee2313d01e07c801746df
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要です。 アプリの構造
 
@@ -186,7 +187,7 @@ IOS および Android、間カットオフ`Tablet`と`Phone`600 ユニットの�
 
 ここでは、結果を`HorizontalOptions`と`VerticalOptions`プロパティの`Label`の両方に設定`LayoutOptions.Center`:
 
-[![Greetings プログラムの 3 倍のスクリーン ショット](images/ch02fg05-small.png "水平方向および垂直方向に中央揃えのラベル付け")](images/ch02fg05-large.png "水平方向および垂直方向に中央揃えのラベル付け")
+[![Greetings プログラムの 3 倍のスクリーン ショット](images/ch02fg05-small.png "水平方向および垂直方向に中央揃えのラベル付け")](images/ch02fg05-large.png#lightbox "水平方向および垂直方向に中央揃えのラベル付け")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>5 のソリューションです。 ラベル内でテキストを中央揃え
 

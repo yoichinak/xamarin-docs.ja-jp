@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 18c53ed6428eff911420c696d45b341d8e0fa5c1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1bf481e4999365f4afc52cb9dda83c6e627950e1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>リスト ビューの外観のカスタマイズ
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
 ListView の外観は、表示されている行のレイアウトによって決まります。 外観を変更する、 `ListView`、別の行のレイアウトを使用します。
 
-<a name="Built-in_Row_Views" />
 
 ## <a name="built-in-row-views"></a>組み込みの行ビュー
 
@@ -53,11 +51,11 @@ ListView の外観は、表示されている行のレイアウトによって�
 
 各組み込みの行のビューには、関連付けられている組み込みスタイルがあります。 これらのスクリーン ショットは、各ビューの表示方法を示しています。
 
-[![TestListItem、SimpleSelectableListItem、SimpleListitem1、および SimpleListItem2 のスクリーン ショット](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png)
+[![TestListItem、SimpleSelectableListItem、SimpleListitem1、および SimpleListItem2 のスクリーン ショット](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![SimpleListItemActivated1、SimpleListItemActivated2、SimpleListItemChecked、および SimpleListItemMultipleChecked のスクリーン ショット](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png)
+[![SimpleListItemActivated1、SimpleListItemActivated2、SimpleListItemChecked、および SimpleListItemMultipleChecked のスクリーン ショット](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![SimpleListItemSingleChoice、TwoLineListItem、ActivityListItem、および SimpleExpandableListItem のスクリーン ショット](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png)
+[![SimpleListItemSingleChoice、TwoLineListItem、ActivityListItem、および SimpleExpandableListItem のスクリーン ショット](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
 **BuiltInViews/HomeScreenAdapter.cs**サンプル ファイル (で、 **BuiltInViews**ソリューション) 展開不可能なリスト項目の画面表示を生成するためにコードが含まれています。 ビュー設定されて、`GetView`次のようなメソッド。
 
@@ -88,7 +86,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 標準を参照することで、グループのビューと、子ビューのプロパティを設定することができますし、`Text1`と`Text2`上記のように、識別子を制御します。 (上記) SimpleExpandableListItem スクリーン ショットは、1 行のグループの表示 (SimpleExpandableListItem1) と 2 行の子ビュー (SimpleExpandableListItem2) の例を示します。 代わりに、グループ ビューは、2 つの行 (SimpleExpandableListItem2) 用に構成できますと、子ビューは、1 つの行 (SimpleExpandableListItem1) 用に構成できますまたは両方のグループ化ビューと子ビューは、同じ数の行を持つことができます。 
 
 
-<a name="Accessories" />
 
 ## <a name="accessories"></a>アクセサリ
 
@@ -102,7 +99,7 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 
 ここに挙げたアクセサリは、それぞれの順序で、次の画面の例を示します。
 
-[![スクリーン ショットの SimpleListItemChecked、SimpleListItemSingleChoice、およびアクセサリと SimpleListItemMultipleChoice](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png)
+[![スクリーン ショットの SimpleListItemChecked、SimpleListItemSingleChoice、およびアクセサリと SimpleListItemMultipleChoice](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
 これらのアクセサリ パスのいずれかを表示するには、アダプターに必要なレイアウトのリソース ID し、手動で設定、必要な行の選択状態。 次のコード行を作成して割り当てる方法を示しています、`Adapter`これらのレイアウトのいずれかを使用します。
 
@@ -112,7 +109,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 
 `ListView`自体が表示されているアクセサーに関係なく、別の選択モードをサポートしています。 混乱を避けるためには、次のように使用します。`Single`選択モードと`Checked`と`SingleChoice`アクセサリと`Multiple`モードと、`MultipleChoice`スタイル。 選択モードがによって制御される、`ChoiceMode`のプロパティ、`ListView`です。
 
-<a name="Handling_API_Level" />
 
 ### <a name="handling-api-level"></a>処理 API レベル
 
@@ -137,7 +133,6 @@ lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // Single
 */
 ```
 
-<a name="Selecting_Items_Programmatically" />
 
 ### <a name="selecting-items-programmatically"></a>プログラムで項目を選択します。
 
@@ -165,7 +160,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-<a name="Creating_Custom_Row_Layouts" />
 
 ## <a name="creating-custom-row-layouts"></a>カスタムの行のレイアウトを作成します。
 
@@ -188,7 +182,6 @@ Console.WriteLine();
 
 以降で、アクティビティの表示と、行のカスタム ビューを作成して、それらを表示するためには、アダプターとアクティビティへの変更に対応し、以下、これらの変更で説明します。
 
-<a name="Adding_a_ListView_to_an_Activity_Layout" />
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>アクティビティのレイアウトに ListView を追加します。
 
@@ -220,7 +213,6 @@ Console.WriteLine();
 
 使用する利点、`Activity`カスタム レイアウトを持つ (の代わりに、 `ListActivity`) 見出しなどの画面に追加のコントロールを追加できることにあります`TextView`この例ではします。
 
-<a name="Creating_a_Custom_Row_Layout" />
 
 ### <a name="creating-a-custom-row-layout"></a>カスタムの行のレイアウトの作成
 
@@ -267,7 +259,6 @@ Console.WriteLine();
 
 カスタムの行のレイアウトは、多くの異なるコントロールを含めることができます、スクロールのパフォーマンスが影響を受ける複雑なデザインし、(特に、ネットワーク経由で読み込まれる必要がある) 場合にイメージを使用します。 スクロールのパフォーマンスの問題に対処の詳細については、Google の資料を参照してください。
 
-<a name="Referencing_a_Custom_Row_View" />
 
 ### <a name="referencing-a-custom-row-view"></a>行のカスタム ビューを参照します。
 
@@ -309,7 +300,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-<a name="Referencing_the_Custom_ListView_in_the_Activity" />
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>カスタム アクティビティで ListView を参照します。
 
@@ -343,10 +333,9 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 次のような結果として得られる画面が表示。
 
-[![結果として得られる CustomRowView のスクリーン ショット](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png)
+[![結果として得られる CustomRowView のスクリーン ショット](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
-<a name="Customizing_the_Row_Selector_Color" />
 
 ### <a name="customizing-the-row-selector-color"></a>行セレクターの色をカスタマイズします。
 
@@ -386,10 +375,9 @@ android:background="@drawable/CustomSelector"
 
 選択した行と、対応する`Toast`今すぐ次のようにメッセージします。
 
-[![選択した行の名前が表示されるトースト メッセージと共に、オレンジ色の選択した行](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png)
+[![選択した行の名前が表示されるトースト メッセージと共に、オレンジ色の選択した行](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
-<a name="Preventing_Flickering_on_Custom_Layouts" />
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>カスタム レイアウトのちらつきを防止
 

@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: de4683ca660224aa3cf17398ac649086b7e4ad88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6c0f2b92b34ce4d446e51b0aafa56f6283701dd1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="extending-the-recyclerview-example"></a>RecyclerView 例を拡張します。
 
 
 基本的なアプリの記載[A の基本的な RecyclerView 例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)実際にほとんど意味がありません&ndash;単にスクロールし、固定見やすくために写真の項目の一覧を表示します。 実際のアプリケーションで、ユーザーは表示内の項目をタップして、アプリを操作できると想定します。 また、基になるデータ ソースを変更することができます (または、アプリによって変更する)、表示内容をこれらの変更一貫性を維持する必要があります。 次のセクションで項目をクリックしてイベントを処理し、更新する方法を学習`RecyclerView`基になるデータ ソースの変更。
 
-<a name="itemclick" />
 
 ### <a name="handling-item-click-events"></a>アイテムのクリック イベントの処理
 
@@ -91,7 +90,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 
 ようになりましたビルド写真表示のサンプル アプリを実行すると、ディスプレイの写真をタップすると、どの写真が影響を受けるにレポートを表示するトースト。
 
-[ ![フォト カードときに表示される例トーストをタップします。](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png)
+[![フォト カードときに表示される例トーストをタップします。](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
 この例でイベント ハンドラーを実装するための 1 つのアプローチ`RecyclerView`です。 ここで使用可能な方法は、ビューの所有者にイベントを設定して、これらのイベントに定期受信アダプターです。 別々 のイベントを必要とする場合は、写真のサンプル アプリでは、写真編集機能が提供される、`ImageView`と`TextView`各`CardView`: 接して、`TextView`を起動、`EditView`ユーザーが編集できるダイアログキャプション、およびで、`ImageView`ユーザーがトリミングし、写真を回転できるフォト補正ツールを起動します。 ニーズに応じて、アプリ、タッチ イベントに応答の処理と最適な方法を設計する必要があります。
 
@@ -159,7 +158,7 @@ randomPickBtn.Click += delegate
 
 これで、**ランダムな選択** ボタンをタップすると、`RecyclerView`こと、写真をさらにダウン コレクション内ではスワップ済みコレクション内の最初の写真を表示する表示を更新します。
 
-[ ![実行前に、2 番目のスクリーン ショットをスワップした後の最初のスクリーン ショット](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png)
+[![実行前に、2 番目のスクリーン ショットをスワップした後の最初のスクリーン ショット](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 もちろん、`NotifyDataSetChanged`でしたが、2 つを呼び出すことではなく呼び出された`NotifyItemChanged`が実行を強制ため`RecyclerView`コレクション内の 2 つの項目が変更された場合でも、コレクション全体を更新します。 呼び出す`NotifyItemChanged`は呼び出し元よりも大幅に効率的`NotifyDataSetChanged`です。
 

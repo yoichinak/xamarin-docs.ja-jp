@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e0f5b24ff6790aa3bf63eb9112790e0a62ce0a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>アプリ内購入の基本と構成
 
 アプリ内購入を実装するには、デバイスで StoreKit API を利用するアプリケーションが必要です。 StoreKit では、Apple の iTunes サーバー製品の情報を取得し、トランザクションを実行するとすべての通信を管理します。 アプリ内購入するため、プロビジョニング プロファイルを構成する必要があり、iTunes Connect では、製品情報を入力する必要があります。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image1.png "この表に示すように、StoreKit と Apple のすべての通信を管理します。")](in-app-purchase-basics-and-configuration-images/image1.png)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "この表に示すように、StoreKit と Apple のすべての通信を管理します。")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 アプリ ストアを使用して、アプリ内購入を提供するには、次のセットアップと構成が必要です。
 
@@ -58,11 +58,11 @@ ms.lasthandoff: 02/27/2018
 
 ビルドと無料のアプリを配布するのにはほとんど構成は必要[iTunes Connect](https://itunesconnect.apple.com)、有料を販売するアプリまたはアプリ内購入する必要があります銀行および課税の情報を Apple に提供します。 をクリックして**契約、税およびバンキング**ここで示すように、メイン メニューから。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image2.png "アグリーメント、税やオンライン バンキングのメイン メニューからをクリックします。")](in-app-purchase-basics-and-configuration-images/image2.png)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "アグリーメント、税やオンライン バンキングのメイン メニューからをクリックします。")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 開発者アカウントである必要があります、 **iOS 有料アプリケーション**実際には、このスクリーン ショットに示すようにコントラクトします。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image3.png "IOS アプリケーションの支払いが有効でコントラクトを開発者アカウントが必要")](in-app-purchase-basics-and-configuration-images/image3.png)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "IOS アプリケーションの支払いが有効でコントラクトを開発者アカウントが必要")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 なるまで、StoreKit 機能をテストすることはできません、 **iOS 有料アプリケーション**コントラクト – StoreKit 呼び出し、コードでは失敗 Apple が処理されるまで、**コントラクト、税、およびバンキング**情報です。
 
@@ -75,7 +75,7 @@ ms.lasthandoff: 02/27/2018
 
  次のようになります。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image4.png "新しいアプリ Id を作成するためのフォーム")](in-app-purchase-basics-and-configuration-images/image4.png)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "新しいアプリ Id を作成するためのフォーム")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 適切な名前を入力してください、*説明*リスト内のこのアプリ ID を簡単に識別できるようにします。 *アプリ ID のプレフィックス*、選択、チームの ID
 
@@ -90,7 +90,7 @@ ms.lasthandoff: 02/27/2018
 
 なお**アプリ内購入**サービスの一覧で自動的に有効にします。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image5.png "サービスの一覧でアプリ内購入は自動的に有効になって")](in-app-purchase-basics-and-configuration-images/image5.png)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "サービスの一覧でアプリ内購入は自動的に有効になって")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>プロビジョニング プロファイル
 
@@ -100,16 +100,16 @@ ms.lasthandoff: 02/27/2018
 
 をクリックして**My Apps** iTunes iOS アプリケーションのエントリを作成またはへの接続にします。 アプリケーションの概要 ページを次に示します。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image6.png "アプリケーションの概要 ページ")](in-app-purchase-basics-and-configuration-images/image6.png)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "アプリケーションの概要 ページ")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 をクリックして**アプリ内購入**を作成または販売製品を編集します。 このスクリーン ショットは、既にいくつかの製品とサンプル アプリを示しています。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image7.png "既にいくつかの製品とサンプル アプリ")](in-app-purchase-basics-and-configuration-images/image7.png)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "既にいくつかの製品とサンプル アプリ")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 新しい製品を追加するプロセスには、2 つの手順があります。
 
-1.   製品の種類を選択します[ ![ ](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類の選択。")](in-app-purchase-basics-and-configuration-images/image8.png) 
-2.   製品の属性、製品 Id を含む、価格レベルとローカライズされた説明を入力: [ ![ ](in-app-purchase-basics-and-configuration-images/image9.png "製品属性を入力します。")](in-app-purchase-basics-and-configuration-images/image9.png)
+1.   製品の種類を選択します[ ![ ](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類の選択。")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   製品の属性、製品 Id を含む、価格レベルとローカライズされた説明を入力: [ ![ ](in-app-purchase-basics-and-configuration-images/image9.png "製品属性を入力します。")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 アプリ内購入製品ごとに必要なフィールドを以下に示します。
 
@@ -158,13 +158,13 @@ com.xamarin.storekit.testing.greyscale
 
 Apple では、簡単にする通貨/価格の適切な層を選択できる価格マトリックスを提供します。 価格マトリックス (2012 年 8 月) の抜粋を次に示します。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image10.png "価格マトリックス 2012 年 8 月の抜粋")](in-app-purchase-basics-and-configuration-images/image10.png)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "価格マトリックス 2012 年 8 月の抜粋")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
 (2013 年 6 月) の書き込み時に、USD から 87 階層 USD 999.99 0.99 です。 料金のマトリックスで表示価格される、顧客が得られますとも量 Apple – を受け取ることはこれは、30% 充電以下およびもローカル税金が必要な (例では米国とカナダ sellers が 99 c p 70 c を受信する通知を収集するにはroduct、オーストラリア sellers 63 c だけの理由のための受信中に '商品&amp;Services 税' 徴収販売価格で)。
 
 製品の価格は、将来の日付で有効にするスケジュールの価格変更も含め、いつでも更新できます。 このスクリーン ショットは、将来日の価格の変更を追加する方法を示しています。 – 価格は一時的にから変更されている第 1 層階層 3 を 9 月ののみ。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image11.png "ここで価格が一時的にから変更されている第 1 層第 3 層を 9 月ののみ将来日の価格の変更")](in-app-purchase-basics-and-configuration-images/image11.png)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "ここで価格が一時的にから変更されている第 1 層第 3 層を 9 月ののみ将来日の価格の変更")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>無料の製品がサポートされていません
 
@@ -174,7 +174,7 @@ Apple Newsstand アプリ用の特別な無料のサブスクリプション オ
 
 ITunes Connect では、任意の数のサポートされている言語の別の名前と説明テキストを入力できます。 各言語を追加/編集、ポップアップを使用して指定できます。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image12.png "各言語が追加/編集、ポップアップを使用して指定できます。")](in-app-purchase-basics-and-configuration-images/image12.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "各言語が追加/編集、ポップアップを使用して指定できます。")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
@@ -186,7 +186,7 @@ ITunes Connect では、任意の数のサポートされている言語の別�
 
 アプリ内購入 (はアプリを新規または既存の機能が追加されました) かどうかを有効になっているアプリが送信された最初の時刻は、また、と共に送信するためのいくつかの製品を選択する必要があります。 ITunes Connect ポータルには、このスクリーン ショットに示すようにするを求められます。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect ポータルには、いくつかの製品もを送信するように求められます")](in-app-purchase-basics-and-configuration-images/image13.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect ポータルには、いくつかの製品もを送信するように求められます")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    

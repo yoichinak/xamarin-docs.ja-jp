@@ -7,28 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 2f29851f9de410183c6f35d19486e7da8017566a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d3a39070e17729e99614e26e0a8892c6314512af
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-mobile-development"></a>モバイル開発の概要
 
-
-IDE を起動して何かをまとめてスローし、ちょっとしたテストを行って App Store に公開するのと同じくらい、モバイル アプリケーションのビルドが簡単になります。すべてが半日で終わります。 さもなければ、事前の設計を正確に行い、ユーザビリティをテストし、何千ものデバイスで QA テストを行い、ベータ ライフサイクルを十分に経て、何通りもの方法で展開することになるでしょう。
-
-このガイドでは、次のような Xamarin モバイル アプリケーションの構築に関する初期段階の検査について説明します。
-
-1.   [ **Xamarin の概要**](#Introduction_to_Xamarin) – Xamarin プラットフォームの機能の一覧を示します。
-1.   [ **Xamarin のしくみ**](#How_Does_Xamarin_Work) – Xamarin が C# を iOS および Android に導入するしくみについて簡単に示します。
-1.   [ **作業の開始**](#Sample_App) – iOS、Android、または Xamarin.Forms を使用するすべてのプラットフォームを対象とする Xamarin アプリのビルドについて詳しく説明します。
-
+IDE を起動して何かをまとめてスローし、ちょっとしたテストを行って App Store に公開するのと同じくらい、モバイル アプリケーションのビルドが簡単になります。すべてが半日で終わります。 さもなければ、事前のデザインを正確に行い、ユーザビリティをテストし、何千ものデバイスで QA テストを行い、ベータ ライフサイクルを十分に経て、何通りもの方法で配置することになるでしょう。
 
 このドキュメントは、Xamarin プラットフォームを導入することを目的としています。 モバイル アプリケーションの設計からテストまでの構築*プロセス*の詳細については、「[Introduction to the Mobile Software Development Lifecycle](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)」(モバイル ソフトウェア開発ライフサイクルの概要) ドキュメントを参照してください。
 
 [システム要件](~/cross-platform/get-started/requirements.md#mac)を参照して、Xamarin をインストールできることを確認してください。
-
 
 ## <a name="introduction-to-xamarin"></a>Xamarin の概要
 

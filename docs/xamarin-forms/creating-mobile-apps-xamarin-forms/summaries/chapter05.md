@@ -3,14 +3,15 @@ title: "第 5 章の概要です。 サイズを処理します。"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 4454150b4caad86eb063ab7fcf8a721cbab9b5ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要です。 サイズを処理します。
 
@@ -62,7 +63,7 @@ Windows ランタイムでは、1 インチの 160 デバイス非依存単位�
 
 [ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize)サンプルは、この手法を示します。 このプログラムが以前に作成された、 [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)を使うようにプロパティが、使用可能な[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)で、 [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)をシミュレートするには設定、マージンです。
 
-[![推定のフォント サイズの 3 倍のスクリーン ショット](images/ch05fg07-small.png "テキストが利用可能なサイズに合わせる")](images/ch05fg07-large.png "テキストが利用可能なサイズに合わせる")
+[![推定のフォント サイズの 3 倍のスクリーン ショット](images/ch05fg07-small.png "テキストが利用可能なサイズに合わせる")](images/ch05fg07-large.png#lightbox "テキストが利用可能なサイズに合わせる")
 
 ## <a name="a-fit-to-size-clock"></a>サイズに合わせる-クロック
 

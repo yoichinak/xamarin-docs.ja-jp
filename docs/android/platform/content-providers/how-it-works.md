@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 142ef16606bbf47de073122791fa2509ed6b6353
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7802988833563469fcc25e03ee1bda2046591681
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="how-content-providers-work"></a>コンテンツ プロバイダーの作業
 
@@ -23,14 +23,12 @@ ms.lasthandoff: 02/27/2018
 
 コンテンツ プロバイダーは通常、SQLite データベースでバックアップが、API は、コードを実行する必要はありません、基になる SQL に関する知識がまったくを意味します。 (基になるデータ構造体への依存関係を減らす) に列名を参照する定数を使用する Uri を使用して行う、クエリと`ICursor`を繰り返し処理するコンシューマー コードが返されます。
 
-<a name="Consuming_a_ContentProvider" />
 
 ## <a name="consuming-a-contentprovider"></a>ContentProvider の使用
 
 `ContentProviders` 登録されている Uri を介して機能を公開、 **AndroidManifest.xml**のデータを発行するアプリケーション。 規則、Uri とは、公開されるデータ列される必要のあるデータにバインドするが簡単に定数として使用できます。 Android の組み込み`ContentProviders`内のデータ構造を参照する定数を使用して利便性のためのクラスを提供すべて、 [ `Android.Providers` ](https://developer.xamarin.com/api/namespace/Android.Provider/)名前空間。
 
 
-<a name="Built-In_Providers" />
 
 ### <a name="built-in-providers"></a>組み込みプロバイダー
 
@@ -51,13 +49,12 @@ Android のシステムとユーザー データを使用して広範なへの�
 - *ボイスメール*&ndash;ボイス メール メッセージの履歴。
 
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>クラスの概要
 
 使用する場合に使用される主要なクラス、`ContentProvider`を挙げています。
 
-[![コンテンツ プロバイダーのアプリケーションとがかかりますアプリケーションの相互作用のクラス図](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png)
+[![コンテンツ プロバイダーのアプリケーションとがかかりますアプリケーションの相互作用のクラス図](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
 
 この図で、`ContentProvider`クエリを実装し、その他のアプリケーション データを検索に使用する URI を登録します。 `ContentResolver`を 'proxy' として機能、 `ContentProvider` (クエリ、挿入、更新、およびメソッドを削除) します。 `SQLiteOpenHelper`によって使用されるデータが含まれています、`ContentProvider`は、アプリを使用する直接公開されていません。
 `CursorAdapter`によって返されるカーソルを渡す、`ContentResolver`に表示する、`ListView`です。 `UriMatcher`クエリを処理するときに、Uri を解析するヘルパー クラスです。

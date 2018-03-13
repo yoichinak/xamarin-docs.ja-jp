@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0600a4ca1f26fd034679619c1427821e9c7a12b8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b96b306c882eb30aaf8c81604afb9b6a547d715b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implicit-styles"></a>暗黙的なスタイル
 
@@ -51,7 +51,7 @@ _暗黙的なスタイルは、スタイルを参照するには、各コント�
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) 、1 つの定義*暗黙的な*をページの適用されるスタイル[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)インスタンス。 `Style`も他の外観のオプションを設定中に、黄色の背景に青色のテキストを表示するために使用します。 `Style`をページの追加は[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)を指定せず、`x:Key`属性。 したがって、`Style`すべてに適用されます、`Entry`インスタンスを暗黙的に一致している、 [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/)のプロパティ、`Style`正確にします。 ただし、`Style`にも適用されず、 `CustomEntry` 、サブクラスは、このインスタンスは`Entry`します。 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](implicit-images/implicit-styles.png "暗黙的なスタイル例")](implicit-images/implicit-styles-large.png "暗黙的なスタイルの例")
+[![](implicit-images/implicit-styles.png "暗黙的なスタイル例")](implicit-images/implicit-styles-large.png#lightbox "暗黙的なスタイルの例")
 
 さらに、4 番目[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)よりも優先、 [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)と[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/)異なるする暗黙的なスタイルのプロパティ`Color`値。
 
@@ -82,7 +82,7 @@ _暗黙的なスタイルは、スタイルを参照するには、各コント�
 
 アプリケーションのスタイルを作成する方法について[ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)を参照してください[グローバル スタイル](~/xamarin-forms/user-interface/styles/application.md)です。
 
-## <a name="creating-an-implicit-style-in-c35"></a>C &#35; 暗黙的なスタイルを作成します。
+## <a name="creating-an-implicit-style-in-c35"></a>C での暗黙的なスタイルの作成&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) ページのインスタンスを追加することができます[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)新しいを作成して c# でのコレクション[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)、追加してから、`Style`インスタンスを`ResourceDictionary`のように、次のコード例:
 

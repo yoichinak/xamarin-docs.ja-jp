@@ -6,12 +6,12 @@ ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/31/2018
-ms.openlocfilehash: 0cf1557cea8d5adb3678ba5e424f9f23375e32bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 2dea77b4c52db0c032aba9bde471e76eb36ba3ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-android"></a>Android でのユーザー補助機能
 
@@ -171,14 +171,12 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 別のファイルにテキストを格納する利点は、アプリでファイルの複数の言語の翻訳を指定することができますです。 参照してください、 [Android ローカリゼーション ガイド](~/android/app-fundamentals/localization.md)については、アプリケーション プロジェクトにローカライズされた文字列のファイルを追加する方法です。
 
-<a name="testing" />
 
 ## <a name="testing-accessibility"></a>ユーザー補助のテスト
 
 次の[手順](http://developer.android.com/training/accessibility/testing.html#how-to)Android デバイスでユーザー補助機能をテストするには、応答とタッチで探索を有効にします。
 
 インストールする必要があります[応答](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)が表示されない場合、Google Play から**設定 > アクセシビリティ**です。
-
 
 
 ## <a name="related-links"></a>関連リンク

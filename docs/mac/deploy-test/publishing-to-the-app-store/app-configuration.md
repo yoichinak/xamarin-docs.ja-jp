@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 8f9294c10f8d3287a2985ede9aadf84ce663c38a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0bc64d0b03aa4f80b19ea098904dc1e2155313f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="mac-app-configuration"></a>Mac アプリの構成
 
@@ -32,7 +32,7 @@ Xamarin.Mac アプリのアプリケーションの設定を変更するには�
 
 これにより、アプリの使用可能なオプションが表示されます。
 
- [![Info.plist ファイルの編集](app-configuration-images/config01.png "Info.plist ファイルの編集")](app-configuration-images/config01-large.png)
+ [![Info.plist ファイルの編集](app-configuration-images/config01.png "Info.plist ファイルの編集")](app-configuration-images/config01-large.png#lightbox)
 
 Xamarin.Mac で作成された Mac アプリケーションを実行するには、次のシステム要件があります。
 
@@ -43,7 +43,7 @@ Xamarin.Mac で作成された Mac アプリケーションを実行するには
 
 **[プロジェクト オプション]** ダイアログ ボックスの **[Mac 署名]** セクションを使用して、開発者は、テスト用、自己リリース用、または Apple App Store からのリリース用に Xamarin.Mac アプリに署名することができます。
 
-[![Mac Signing エディター](app-configuration-images/config02.png "Mac Signing エディター")](app-configuration-images/config02-large.png)
+[![Mac Signing エディター](app-configuration-images/config02.png "Mac Signing エディター")](app-configuration-images/config02-large.png#lightbox)
 
 ここで選択、ID、プロビジョニング プロファイル、コンパイル時にアプリに署名するために使用するカスタム権利を選択します。 開発者は、オプションで、他の Mac 上でアプリをインストールするために使用されるインストーラーに署名することができます。
 
@@ -52,7 +52,7 @@ Xamarin.Mac で作成された Mac アプリケーションを実行するには
 
 **[プロジェクト オプション]** ダイアログ ボックスの **[Mac ビルド]** セクションを使用して、開発者は、Xamarin.Mac アプリのアーキテクチャを選択し、アプリがサポートする macOS のバージョンを制御し、オプションでアプリが正常にコンパイルされたときのインストール パッケージを作成することができます。
 
- [![ビルド設定の編集](app-configuration-images/config03.png "ビルド設定の編集")](app-configuration-images/config03-large.png)
+ [![ビルド設定の編集](app-configuration-images/config03.png "ビルド設定の編集")](app-configuration-images/config03-large.png#lightbox)
 
 
 ## <a name="related-links"></a>関連リンク

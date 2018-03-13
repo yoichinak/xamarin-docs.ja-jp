@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: acdcdc2b76a995ca324532c6a034b2fdf8e21db5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS のセキュリティとプライバシーの機能
 
@@ -76,7 +76,7 @@ IOS 10 (またはそれ以降) で実行されている必要があります静�
 
 IOS 10 (以降) で HomeKit をアクセスするための次の例を実行、開発者は追加する必要があります、`NSHomeKitUsageDescription`キーをアプリの`Info.plist`ファイルし、文字列を宣言する、アプリがユーザーの HomeKit データベースにアクセスしようとした理由を提供します。 この文字列は、ユーザーが初めて実行するとき、アプリに表示されます。
 
-[ ![](security-privacy-images/info01.png "例 NSHomeKitUsageDescription アラート")](security-privacy-images/info01.png)
+[![](security-privacy-images/info01.png "例 NSHomeKitUsageDescription アラート")](security-privacy-images/info01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -87,7 +87,7 @@ Visual Studio の現在の Xamarin.iOS がセキュリティ拡張機能の編�
 3. 必須の説明を提供する次のノードを追加します。 `<string>Allows the app to control HomeKit enabled devices.</string>`
 4. `Info.plist`ファイルは次のようになります。 
 
-    [ ![](security-privacy-images/info02vs.png "Info.plist ファイルは、次のようになります")](security-privacy-images/info02vs.png)
+    [![](security-privacy-images/info02vs.png "Info.plist ファイルは、次のようになります")](security-privacy-images/info02vs.png#lightbox)
 4. 変更内容をファイルに保存します。
 5. Visual Studio に戻り、再コンパイルのアプリ。
 
@@ -100,10 +100,10 @@ Visual Studio の現在の Xamarin.iOS がセキュリティ拡張機能の編�
 3. 新しい**エントリ**一覧にします。
 4. ドロップダウン リストから秘密キーを選択します (など**プライバシー - HomeKit 用途説明**)。 
 
-    [ ![](security-privacy-images/info02.png "プライバシー キーを選択します")](security-privacy-images/info02.png)
+    [![](security-privacy-images/info02.png "プライバシー キーを選択します")](security-privacy-images/info02.png#lightbox)
 5. アプリが特定の機能またはユーザーの情報にアクセスしようとした理由の説明を入力します。 
 
-    [ ![](security-privacy-images/info03.png "説明を入力します")](security-privacy-images/info03.png)
+    [![](security-privacy-images/info03.png "説明を入力します")](security-privacy-images/info03.png#lightbox)
 6. 変更内容をファイルに保存します。
 
 -----

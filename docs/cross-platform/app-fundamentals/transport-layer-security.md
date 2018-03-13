@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/10/2017
-ms.openlocfilehash: 5237ed35116e5f8983df579d0ab68363996fb06f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b0f205c5ab2c65f0e2a99f912f3961f12a4f2b7a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transport-layer-security-tls"></a>トランスポート層セキュリティ (TLS)
 
@@ -41,12 +41,12 @@ TLS 1.2 サポートで使用できるようになりました。
 
 これらの設定は含まれて**プロジェクトのオプション > Android オプション**をクリックし、 **[詳細設定]**ボタン。 
 
-[![Visual Studio での HttpClient および TLS を構成します。](transport-layer-security-images/properties-vs-sml.png)](transport-layer-security-images/properties-vs.png)
+[![Visual Studio での HttpClient および TLS を構成します。](transport-layer-security-images/properties-vs-sml.png)](transport-layer-security-images/properties-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 これらの設定は含まれて**プロジェクト プロパティ > ビルド オプション > 詳細設定**  タブ。
 
-[![Mac 用 Xamarin Studio および Visual Studio で HttpClient と TLS を構成します。](transport-layer-security-images/properties-xs-sml.png)](transport-layer-security-images/properties-xs.png)
+[![Mac 用 Xamarin Studio および Visual Studio で HttpClient と TLS を構成します。](transport-layer-security-images/properties-xs-sml.png)](transport-layer-security-images/properties-xs.png#lightbox)
 
 -----
 
@@ -79,7 +79,7 @@ Xamarin の開発者は、コードでネイティブのネットワークのク
 >
 > ネイティブのオプションをお勧めします。
 
-# <a name="platform-specific-details"></a>プラットフォーム固有の詳細
+## <a name="platform-specific-details"></a>プラットフォーム固有の詳細
 
 上記の概要では、Xamarin のプロジェクトで HttpClient および SSL や TLS の実装のプロジェクト レベルの設定について説明します。 HttpClient の実装がコードでは、動的に設定することもでき、iOS では、次の 2 つのネイティブ オプションを選択します。
 
@@ -87,7 +87,7 @@ Xamarin の開発者は、コードでネイティブのネットワークのク
 - [**iOS および Mac**](~/cross-platform/macios/http-stack.md)
 
 
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 アプリケーションは、可能な限り、トランスポート層セキュリティ (TLS) 1.2 を使用する必要があります。
 この記事の説明に従って既存のアプリケーションの設定を更新する必要がありますが、この構成に新しいアプリが既定でします。

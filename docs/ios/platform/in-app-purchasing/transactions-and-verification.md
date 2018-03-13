@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 332ce13b08f3d021553be5747b21b05d62aba6ea
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 21f8c6738c00d5738c02962ee95b415e3855d740
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transactions-and-verification"></a>トランザクションと検証
 
@@ -148,7 +148,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
    
    
    
- [ ![](transactions-and-verification-images/image38.png "サーバーによって提供される製品の価格を取得します。")](transactions-and-verification-images/image38.png)   
+ [![](transactions-and-verification-images/image38.png "サーバーによって提供される製品の価格を取得します。")](transactions-and-verification-images/image38.png#lightbox)   
    
    
    
@@ -170,7 +170,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 リモート サーバーが何らかの方法がコンテンツ要求が有効なことを検証する必要があるため (ie。 のために支払わ)、認証用に受信確認情報が渡されます。 リモート サーバーでは、検証を iTunes にそのデータを転送し、成功した場合、アプリケーションへの応答で製品のコンテンツが含まれています。   
    
- [ ![](transactions-and-verification-images/image39.png "サーバーによって提供される製品の購入")](transactions-and-verification-images/image39.png)   
+ [![](transactions-and-verification-images/image39.png "サーバーによって提供される製品の購入")](transactions-and-verification-images/image39.png#lightbox)   
    
  1. アプリを追加、`SKPayment`をキューにします。 ユーザーの Apple ID の入力を求めし、する、支払いの確認を求めに必要な場合です。   
    

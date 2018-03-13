@@ -4,14 +4,15 @@ description: "XAML マークアップ拡張機能は、オブジェクトやそ�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 7aea7b1536efc952378c6a1df63640af191f1ebe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>パート 3 です。 XAML マークアップ拡張機能
 
@@ -298,7 +299,7 @@ XAML では、1 つの一般的なソリューションは、このような値�
 
 スクリーン ショットでは、一貫したスタイル、およびプラットフォームに依存するスタイル設定を確認します。
 
-[ ![](xaml-markup-extensions-images/sharedresources.png "スタイルのコントロールを")](xaml-markup-extensions-images/sharedresources-large.png "スタイルのコントロール")
+[![](xaml-markup-extensions-images/sharedresources.png "スタイルのコントロールを")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "スタイルのコントロール")
 
 定義する最も一般的な`Resources`点に注意して、ページの上部にあるコレクションを`Resources`によってプロパティが定義されている`VisualElement`、持つことができます`Resources`ページ上の他の要素のコレクション。 たとえば、を 1 つを追加してみてください、`StackLayout`この例では。
 
@@ -436,7 +437,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 結果のサイズ`BoxView`画面に対して相対的には、プラットフォームに依存します。
 
- [ ![](xaml-markup-extensions-images/staticconstants.png "X:static マークアップ拡張機能を使用して、コントロール")](xaml-markup-extensions-images/staticconstants-large.png "X:static マークアップ拡張機能を使用して、コントロール")
+ [![](xaml-markup-extensions-images/staticconstants.png "X:static マークアップ拡張機能を使用して、コントロール")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "X:static マークアップ拡張機能を使用して、コントロール")
 
 ## <a name="other-standard-markup-extensions"></a>他の標準のマークアップ拡張機能
 
@@ -552,7 +553,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 実行中のプログラムを次に示します。
 
-[ ![](xaml-markup-extensions-images/relativelayout.png "制約を使用して、相対的なレイアウト")](xaml-markup-extensions-images/relativelayout-large.png "制約を使用して、相対的なレイアウト")
+[![](xaml-markup-extensions-images/relativelayout.png "制約を使用して、相対的なレイアウト")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "制約を使用して、相対的なレイアウト")
 
 ## <a name="summary"></a>まとめ
 

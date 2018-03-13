@@ -5,20 +5,24 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: b2decf1331764ed6b1696126d8b23318e329e0c7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 38d3b6da0dd33e038f2d50209280f2983faf6013
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーションがインデックス作成とディープ リンク
 
 _いくつかを使用して検索結果に表示される関連を把握して後忘れてそれ以外の場合はアプリケーションをアプリケーションがインデックス作成できます。ディープ リンクをディープ リンクから参照されているページに移動して、通常、アプリケーションのデータを含む検索結果に応答するアプリケーションはできます。この記事では、アプリケーションのインデックスを使用する方法、および Xamarin.Forms アプリケーション コンテンツを iOS および Android デバイスで検索できるようにするディープ リンクを示します。_
 
-## <a name="overview"></a>概要
+> [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
+
+**深層で Xamarin.Forms と Azure を使ってリンクする[Xamarin 大学](https://university.xamarin.com/)**
+
 
 Xamarin.Forms アプリケーション インデックスとディープ リンクは、ユーザー アプリケーション間を移動すると、アプリケーションがインデックス作成のためのメタデータの公開の API を提供します。 Spotlight 検索で、Google 検索、または web の検索のインデックス付きコンテンツを検索し、できます。 ディープ リンクを含む検索結果をタップして、アプリケーションによって処理できるし、は、通常のディープ リンクから参照されているページへの移動に使用するイベントが開始されます。
 
@@ -31,7 +35,7 @@ Xamarin.Forms アプリケーション インデックスとディープ リン�
 詳細については、SQLite データベースを使用して、次を参照してください。[ローカル データベースで作業](~/xamarin-forms/app-fundamentals/databases.md)です。
 
 > [!NOTE]
-> **注**: Xamarin.Forms アプリケーション インデックスの作成と機能の深いリンクは、iOS や Android プラットフォームでのみ使用し、iOS 9 と API 23 をそれぞれが必要です。
+> Xamarin.Forms アプリケーション インデックス ディープ リンクの機能は、iOS や Android プラットフォームでのみ使用および iOS 9 と API 23 をそれぞれが必要です。
 
 ## <a name="setup"></a>セットアップ
 
@@ -106,7 +110,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 これを追加、 [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)をアプリケーションのインスタンス[ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/)コレクション。
 
 > [!NOTE]
-> **注**:`RegisterLink`メソッドは、ページのインデックスが設定されて、コンテンツを更新するも使用できます。
+> `RegisterLink`メソッドは、ページのインデックスが設定されて、コンテンツを更新するも使用できます。
 
 1 回、 [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)検索結果に表示するに対して、インデックス作成、インスタンスに登録されています。 次のスクリーン ショットは、iOS プラットフォームでは検索結果に表示されるインデックス付きコンテンツを示しています。
 
@@ -123,7 +127,7 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 これにより、削除、 [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)インスタンスから、アプリケーションの[ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/)コレクション。
 
 > [!NOTE]
-> **注**: Android での検索結果でインデックス付けされたコンテンツを削除することはできません。
+> Android では、検索結果から、インデックス付きコンテンツを削除することはありません。
 
 <a name="responding" />
 
@@ -211,7 +215,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 - `shouldAddToPublicIndex` –、`string`いずれかの`true`または`false`を提示することにより、iOS デバイスにアプリケーションをインストールしていないユーザーに、Apple のパブリック クラウド インデックスにインデックス付きコンテンツを追加するかどうかを制御します。 ただし、パブリックのインデックス作成のためコンテンツが設定されているからといってとは限りませんを自動的に追加されますを Apple のパブリック クラウドのインデックス。 詳細については、次を参照してください。[パブリック検索インデックス](~/ios/platform/search/nsuseractivity.md)です。 このキーに設定する必要がありますを`false`個人データを追加するときに、 [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/)コレクション。
 
 > [!NOTE]
-> **注**:`KeyValues`コレクションは、Android プラットフォームでは使用されません。
+> `KeyValues`コレクションは、Android プラットフォームでは使用されません。
 
 ハンドオフの詳細については、次を参照してください。[ハンドオフの概要](~/ios/platform/handoff.md)です。
 

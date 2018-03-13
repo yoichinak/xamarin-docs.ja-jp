@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 372ea9a20e9f67c41c74fb01afb8110ee741a709
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5cf194dce9bf4d0af23ba663ab00cf94a8a1766c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用
 
@@ -76,7 +76,7 @@ WCF サービスでは、次の操作を提供します。
 アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。[データ モデリング](~/xamarin-forms/data-cloud/walkthrough.md)です。
 
 > [!NOTE]
-> **注**: サンプル アプリケーションが web サービスへの読み取り専用のアクセスを提供する Xamarin でホストされる WCF サービスを利用します。 そのため、作成、更新、およびデータを削除する操作では、アプリケーションで使用するデータは変更されません。 ただし、ASMX サービスのホスト可能なバージョンは利用で、 **TodoWCFService**付随するサンプル アプリケーション内のフォルダーです。 このホスト可能なバージョン完全 WCF サービスの許可の作成、更新、読み取り、およびデータへのアクセスを削除します。
+> サンプル アプリケーションは、web サービスへの読み取り専用のアクセスを提供する Xamarin でホストされる WCF サービスを使用します。 そのため、作成、更新、およびデータを削除する操作では、アプリケーションで使用するデータは変更されません。 ただし、ASMX サービスのホスト可能なバージョンは利用で、 **TodoWCFService**付随するサンプル アプリケーション内のフォルダーです。 このホスト可能なバージョン完全 WCF サービスの許可の作成、更新、読み取り、およびデータへのアクセスを削除します。
 
 A*プロキシ*を使用した WCF サービス、により、アプリケーション、サービスへの接続を生成する必要があります。 メソッドと関連付けられているサービス構成を定義するサービス メタデータを使用して、プロキシが構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 .NET 標準ライブラリに、web サービスのサービス参照を追加する Visual Studio 2017 で Microsoft WCF Web サービス参照のプロバイダーを使用して、プロキシを構築できます。 Visual Studio 2017 で Microsoft WCF Web サービス参照のプロバイダーを使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)です。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 951de7c134e6882d621b015456d5d40a7cf2b8d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6512387738217259067e7b9ae8076f73b4fbeb07
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>NuGet の新しいプラットフォーム固有のライブラリ プロジェクトを作成します。
 
@@ -27,11 +27,11 @@ NuGet は、.NET コードの両方に共通するだけでなく、iOS およ�
 
 2. 選択**マルチプラット フォーム ライブラリ**から、**マルチプラット フォーム > ライブラリ**セクション。
 
-  [ ![](platform-specific-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](platform-specific-images/multiplatform-library.png)
+  [![](platform-specific-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](platform-specific-images/multiplatform-library.png#lightbox)
 
 3. 入力、**名前**と**説明**を選択して**プラットフォーム固有**:
 
-  [ ![](platform-specific-images/specific-configure-sml.png "IOS および Android 用のプラットフォーム固有のライブラリを構成します。")](platform-specific-images/specific-configure.png)
+  [![](platform-specific-images/specific-configure-sml.png "IOS および Android 用のプラットフォーム固有のライブラリを構成します。")](platform-specific-images/specific-configure.png#lightbox)
 
 4. ウィザードを完了します。 次のプロジェクトがソリューションに追加されます。
 
@@ -42,7 +42,7 @@ NuGet は、.NET コードの両方に共通するだけでなく、iOS およ�
 
 5. NuGet のプロジェクトを右クリックし、選択**オプション**を開き、 **NuGet パッケージ > メタデータ**セクションし、入力、[必要なメタデータ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)(としてその適切に省略可能なメタデータ):
 
-  [ ![](platform-specific-images/specific-metadata-sml.png "必要なメタデータを入力してください。")](platform-specific-images/specific-metadata.png)
+  [![](platform-specific-images/specific-metadata-sml.png "必要なメタデータを入力してください。")](platform-specific-images/specific-metadata.png#lightbox)
 
 6. また、**プロジェクト オプション**ウィンドウを開いた、**参照アセンブリ**セクションし、共有ライブラリは、「お連絡とり」を通じてサポートするために PCL をプロファイルの選択。
 
@@ -67,4 +67,4 @@ NuGet は、.NET コードの両方に共通するだけでなく、iOS およ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [メタデータのガイド](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [メタデータ ガイド](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

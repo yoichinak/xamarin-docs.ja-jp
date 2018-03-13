@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 605374c0f2bfe656e564e48d14ffe18ce5b7dfe5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c6d10025ccc038ba160fe3c09f6ce92e97d916d2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="files"></a>ファイル
 
@@ -40,18 +40,18 @@ Xamarin.Forms コードは複数のプラットフォームで実行されます
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![リソースのビルド アクションが埋め込まれている構成](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource"ビルド アクション"")](files-images/vs-embeddedresource.png "設定埋め込まれたリソースのビルド アクション")
+[![リソースのビルド アクションが埋め込まれている構成](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource"ビルド アクション"")](files-images/vs-embeddedresource.png#lightbox "設定埋め込まれたリソースのビルド アクション")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![テキスト ファイルがビルド アクションが埋め込まれたリソースを構成するために、PCL に埋め込まれた](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource"ビルド アクション"")](files-images/xs-embeddedresource.png "設定埋め込まれたリソースのビルド アクション")
+[![テキスト ファイルがビルド アクションが埋め込まれたリソースを構成するために、PCL に埋め込まれた](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource"ビルド アクション"")](files-images/xs-embeddedresource.png#lightbox "設定埋め込まれたリソースのビルド アクション")
 
 -----
 
 `GetManifestResourceStream` 埋め込みファイルを使用して、アクセスに使用されるその**リソース ID**です。 既定では、リソース ID で埋め込まれているプロジェクトの既定の名前空間の付いたファイル名は、ここでは、アセンブリは**WorkingWithFiles** 、ファイル名は**PCLTextResource.txt**、リソース ID はように`WorkingWithFiles.PCLTextResource.txt`です。
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
 string text = "";
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -61,12 +61,12 @@ using (var reader = new System.IO.StreamReader (stream)) {
 
 `text`し、テキストの表示や、それ以外の場合、コード内で使用する変数を使用できます。 このスクリーン ショット、[サンプル アプリ](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)で表示されるテキストを表示、`Label`コントロール。
 
- [ ![テキスト ファイルは、PCL に埋め込まれている](files-images/pcltext-sml.png "PCL アプリに表示される埋め込みのテキスト ファイル")](files-images/pcltext.png "PCL アプリに表示される埋め込みのテキスト ファイル")
+ [![テキスト ファイルは、PCL に埋め込まれている](files-images/pcltext-sml.png "PCL アプリに表示される埋め込みのテキスト ファイル")](files-images/pcltext.png#lightbox "PCL アプリに表示される埋め込みのテキスト ファイル")
 
 読み込みの XML をシリアル化とは、同様に単純です。 次のコードが読み込まれたし、リソースから逆シリアル化にバインドされている XML ファイルを示します、`ListView`表示用です。 XML ファイルには、配列が含まれています。`Monkey`オブジェクト (クラスは、サンプル コードで定義されます)。
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -77,7 +77,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [ ![Xml ファイルは、ListView に表示される、PCL に埋め込まれている](files-images/pclxml-sml.png "PCL がリスト ビューに表示される埋め込み XML ファイル")](files-images/pclxml.png "PCL がリスト ビューに表示される埋め込み XML ファイル")
+ [![Xml ファイルは、ListView に表示される、PCL に埋め込まれている](files-images/pclxml-sml.png "PCL がリスト ビューに表示される埋め込み XML ファイル")](files-images/pclxml.png#lightbox "PCL がリスト ビューに表示される埋め込み XML ファイル")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -106,7 +106,7 @@ var resourcePrefix = "WorkingWithFiles.WinPhone.";
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
@@ -129,7 +129,7 @@ Stream stream = assembly.GetManifestResourceStream
 using System.Reflection;
 // ...
 // use for debugging, not in released app code!
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 foreach (var res in assembly.GetManifestResourceNames()) {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);
 }
@@ -141,7 +141,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 Xamarin.Forms は、それぞれ独自のファイル システムに複数のプラットフォームで実行されるため、ユーザーによって作成されたファイルの読み込みと保存の 1 つのアプローチはありません。 保存し、サンプル アプリには、表示する画面保存し、読み込む - 一部のユーザー入力にはが含まれています。 テキスト ファイルを読み込む方法を示すために、完成した画面は次に示します。
 
- [ ![保存とテキストを読み込み](files-images/saveandload-sml.png "を保存し、アプリでのファイルの読み込み")](files-images/saveandload.png "を保存し、アプリでのファイルの読み込み")
+ [![保存とテキストを読み込み](files-images/saveandload-sml.png "を保存し、アプリでのファイルの読み込み")](files-images/saveandload.png#lightbox "を保存し、アプリでのファイルの読み込み")
 
 各プラットフォームには、若干異なるディレクトリ構造、および異なる filesystem 機能 - たとえば、Xamarin.iOS および Xamarin.Android ほとんどがサポート`System.IO`のみをサポート機能しますが、Windows Phone`IsolatedStorage`と[`Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) Api です。
 

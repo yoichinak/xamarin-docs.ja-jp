@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 92cacd7ca5ff52a2bfe9060f47332b57d637609e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-an-aar"></a>バインドにします。[AAR]
 
@@ -35,7 +35,6 @@ _このチュートリアルでは、Android から Xamarin.Android Java バイ�
 > [!IMPORTANT]
 > バインディングのプロジェクトでは、1 つ含めることができますのみです。[Aar] ファイルです。 場合、します。[Aar] 他の依存関係。AAR、し、それらの依存関係を独自のバインディング プロジェクトに含まれているされ、参照する必要があります。 参照してください[バグの 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)です。
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>チュートリアル
 
@@ -72,12 +71,11 @@ public class TextCounter
 
 さらに、このサンプル アプリでは取得し、パッケージ化されている画像リソースを表示**textanalyzer.aar**:
 
-[ ![Xamarin サル イメージ](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png)
+[![Xamarin サル イメージ](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
 このイメージ リソースが存在する**res/drawable/monkey.png**で**textanalyzer.aar**です。
 
 
-<a name="creating" />
 
 ### <a name="creating-the-bindings-library"></a>バインドのライブラリを作成します。
 
@@ -85,36 +83,35 @@ public class TextCounter
 
 1.  以降、Android のバインドのライブラリ テンプレートで新しいバインドのライブラリ プロジェクトを作成します。 Visual Studio for Mac または Visual Studio (次のスクリーン ショットに表示する、Visual Studio ですが Visual Studio for Mac とよく似ています) を使用することができます。 ソリューションの名前を付けます**AarBinding**:
 
-    [ ![AarBindings プロジェクトを作成します。](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png)
+    [![AarBindings プロジェクトを作成します。](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png#lightbox)
 
 2.  テンプレートに含まれる、 **Jar**フォルダーを追加する場所、します。バインドのライブラリ プロジェクトへ AAR(s) です。 右クリックし、 **Jar**フォルダーと選択**追加 > 既存の項目**:
 
-    [ ![既存項目を追加します。](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png)
+    [![既存の項目を追加する](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
 
 3.  移動し、 **textanalyzer.aar**ファイルは事前にダウンロードを選択し、をクリックして**追加**:
 
-    [ ![Textanalayzer.aar を追加します。](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png)
+    [![Textanalayzer.aar を追加します。](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 
 4.  いることを確認、 **textanalyzer.aar**プロジェクトにファイルを正常に追加します。
 
-    [ ![Textanalyzer.aar ファイルが追加されました](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png)
+    [![Textanalyzer.aar ファイルが追加されました](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
 5.  ビルド アクションは、設定**textanalyzer.aar**に`LibraryProjectZip`です。 Mac 用 Visual Studio で、右クリック**textanalyzer.aar**ビルド アクションを設定します。 Visual Studio では、ビルド アクション 設定することができます、**プロパティ**ペイン)。
 
-    [ ![LibraryProjectZip に textanalyzer.aar ビルド アクションを設定します。](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png)
+    [![LibraryProjectZip に textanalyzer.aar ビルド アクションを設定します。](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
 6.  プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*です。 場合、します。[Aar] は、Android Api を使用して、API レベルにターゲット フレームワークを設定します。[Aar] が必要です。 (ターゲット フレームワークの設定と全般の Android API レベルの詳細については、次を参照してください[Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)。)。
 
     バインド ライブラリのターゲット API レベルを設定します。 この例では、ために、最新のプラットフォームでは、API レベル (API level 23) を使用するために解放は、 **textanalyzer** Android Api に依存関係はありません。
 
-    [ ![ターゲット レベル API 23 を設定します。](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png)
+    [![ターゲット レベル API 23 を設定します。](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
 7.  バインドのライブラリをビルドします。 バインドのライブラリ プロジェクトは、正常にビルドされ、出力が生成する必要があります。次の場所に DLL: **AarBinding/bin/Debug/AarBinding.dll**
 
 
-<a name="using" />
 
 ### <a name="using-the-bindings-library"></a>バインドのライブラリを使用します。
 
@@ -122,29 +119,28 @@ public class TextCounter
 
 1.  このチュートリアルを簡略化するライブラリをバインドと同じソリューションでこのアプリを作成しています。 (バインド ライブラリを使用するアプリでしたにも置くを別のソリューションです。)Xamarin.Android アプリを新規作成: ソリューションを右クリックし **新しいプロジェクトの追加**です。 新しいプロジェクトの名前**BindingTest**:
 
-    [ ![新しい BindingTest プロジェクトを作成します。](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png)
+    [![新しい BindingTest プロジェクトを作成します。](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png#lightbox)
 
 2.  右クリックし、**参照**のノード、 **BindingTest**プロジェクトし、選択**の参照を追加しています.**:
 
-    [ ![参照を追加します。](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png)
+    [![参照を追加します。](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
 
 3.  選択、 **AarBinding**先ほど作成したプロジェクトとクリック**OK**:
 
-    [ ![[Aar] バインド プロジェクトをチェック アウトします。](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png)
+    [![[Aar] バインド プロジェクトをチェック アウトします。](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
 4.  開く、**参照**のノード、 **BindingTest**ことを確認するプロジェクト、 **AarBinding**参照が存在します。
 
-    [ ![AarBinding 参照に表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png)
+    [![AarBinding 参照に表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
 
 開くへの参照をダブルクリックする場合は、バインドのライブラリ プロジェクトの内容を表示するには、**オブジェクト ブラウザー**です。 マップされたコンテンツを表示できる、`Com.Xamarin.Textcounter`名前空間 (Java からマップされた`com.xamarin.textanalyzezr`パッケージ) のメンバーを表示して、`TextCounter`クラス。
 
-[ ![オブジェクト ブラウザーの表示](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png)
+[![オブジェクト ブラウザーの表示](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
 
 上のスクリーン ショットには、2 つが強調表示`TextAnalyzer`例のアプリが呼び出すメソッド: `NumConsonants` (をラップする、基になる Java`numConsonants`メソッド)、および`NumVowels`(をラップする、基になる Java`numVowels`メソッド)。
 
 
-<a name="accessing_types" />
 
 ### <a name="accessing-aar-types"></a>アクセスします。[Aar] の種類
 
@@ -264,12 +260,11 @@ namespace BindingTest
 
 コンパイルし、実行、 **BindingTest**プロジェクト。 アプリが起動し、左側のスクリーン ショットを提示 (、`EditText`はいくつかのテキストで初期化を変更することをタップすることができますが、)。 タップすると**カウント母音**トーストが右側のように、母音の数を表示します。
 
-[ ![実行中の BindingTest からスクリーン ショット](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png)
+[![実行中の BindingTest からスクリーン ショット](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
 タップしてください、**カウント子音**ボタンをクリックします。 また、行のテキストを変更して別の母音をテストするには、もう一度これらのボタンをタップして、子音カウントします。
 
 
-<a name="accessing_resources" />
 
 ### <a name="accessing-aar-resources"></a>アクセスします。[Aar] リソース
 
@@ -305,13 +300,12 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 コンパイルし、実行、 **BindingTest**プロジェクト。 アプリが起動し、左側のスクリーン ショットを提示&ndash;タップすると**カウント子音**右に示すように、結果が表示されます。
 
-[ ![BindingTest 子音カウントを表示します。](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png)
+[![BindingTest 子音カウントを表示します。](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 
 おめでとうございます!  Java ライブラリを正常に連結されています。[AAR] です。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

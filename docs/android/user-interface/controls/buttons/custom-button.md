@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f77a9b8d3bb69bb47d973a56aed5ad1d49f9a02d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5131b4d09f01af6a6e8bed28a2df27bc801dfb80
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="custom-button"></a>カスタム ボタン
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 
 右クリックし、下の 3 つのイメージをダウンロードするこれらのコピー、**リソース/描画**プロジェクトのディレクトリ。 これらは、さまざまなボタンの状態に対して使用されます。
 
- [![通常の状態の Android 緑のアイコン](custom-button-images/android-normal.png)](custom-button-images/android-normal.png) [![フォーカスのある状態の Android オレンジ色のアイコン](custom-button-images/android-focused.png)](custom-button-images/android-focused.png) [![押された状態の Android 黄色のアイコン](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png)
+ [![通常の状態の Android 緑のアイコン](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [![フォーカスのある状態の Android オレンジ色のアイコン](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [![押された状態の Android 黄色のアイコン](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
 
 新しいファイルを作成、**リソース/描画**という名前のディレクトリ**android_button.xml**です。 次の XML を挿入します。
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 02/27/2018
 
 
 > [!NOTE]
-> **注:**の順序、`<item>`要素が重要です。 このドロウアブルが参照されたとき、`<item>`は順序どおりのどれがボタンの現在の状態の適切な決定を走査します。
+> 順序、`<item>`要素が重要です。 このドロウアブルが参照されたとき、`<item>`は順序どおりのどれがボタンの現在の状態の適切な決定を走査します。
 > 場合のみ適用されますが、"normal"イメージは最後であるため、条件`android:state_pressed`と`android:state_focused`false 両方評価します。
 
 開く、 **Resources/layout/Main.axml**ファイルを追加、 [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/)要素。

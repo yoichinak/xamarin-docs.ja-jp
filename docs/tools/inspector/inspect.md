@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: bd6d47f98435cc68ecf4156423526c31dbac09da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: c923208b7ca4d41914504b4b0aa0687db1d49f01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="inspecting-live-applications"></a>ライブ アプリケーションの検査
 
@@ -27,11 +27,11 @@ ms.lasthandoff: 02/27/2018
 
 
 
-[ ![](inspect-images/mac-heres-the-button.png "IDE、ツールバーの [検査] ボタンをクリックします。")](inspect-images/mac-heres-the-button.png)
+[![](inspect-images/mac-heres-the-button.png "IDE、ツールバーの [検査] ボタンをクリックします。")](inspect-images/mac-heres-the-button.png#lightbox)
 
 新しい Xamarin インスペクター クライアント ウィンドウが開き、新しい REPL プロンプトされます。
 
-[ ![](inspect-images/inspector-0.7.0-map-inspect-small.png "新しい Xamarin インスペクター クライアント ウィンドウが開き、新しい REPL プロンプト")](inspect-images/inspector-0.7.0-map-inspect.png)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "新しい Xamarin インスペクター クライアント ウィンドウが開き、新しい REPL プロンプト")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
 このウィンドウが表示されたら、対話的な c# プロンプトを実行し、C# の場合は、ステートメントよぶ式の評価に使用できる必要があります。 どうしてこんなことが一意では、コードがターゲット プロセスのコンテキストで評価されることです。 この場合、表示される iOS アプリケーションに対して実行されているコードを示します。
 

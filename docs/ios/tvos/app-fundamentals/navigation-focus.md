@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 82151599b92094b816f4763c533ed7746db37920
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>ナビゲーションとフォーカスの操作
 
@@ -21,7 +21,7 @@ _この記事では、フォーカス イベントとその使用を提示して
 
 この記事の概念を説明する[フォーカス](#Focus-and-Selection)の処理に使用する方法と[ナビゲーション](#Navigation)Xamarin.tvOS アプリのユーザー インターフェイスにします。 Xamarin.tvOS アプリのユーザー インターフェイスのナビゲーションを提供する、組み込み tvOS ナビゲーション コントロールがフォーカスを強調表示と選択を使用する方法を説明します。
 
-[ ![](navigation-focus-images/intro01.png "tvOS アプリ ユーザー インターフェイスのナビゲーション")](navigation-focus-images/intro01.png)
+[![](navigation-focus-images/intro01.png "tvOS アプリ ユーザー インターフェイスのナビゲーション")](navigation-focus-images/intro01.png#lightbox)
 
 フォーカスを使用する方法を見てみましょう次に、[視差](#Focus-and-Parallax)と*層イメージ*エンドユーザーに現在のナビゲーション状態を視覚的手がかりを提供します。
 
@@ -35,7 +35,7 @@ Xamarin.tvOS アプリのユーザーがいないするインターフェイス�
 
 成功した tvOS アプリでは、スムーズにアプリの目的は、およびナビゲーション自体に注意を呼び出さずに提示データの構造をサポートする方法のナビゲーションを実装します。 自然な使い慣れたユーザー インターフェイスを占有しているか、コンテンツとアプリケーションのユーザー エクスペリエンスからフォーカスを描画なしを感じるようには、ナビゲーションをデザインします。
 
-[ ![](navigation-focus-images/nav01.png "TvOS 設定アプリ")](navigation-focus-images/nav01.png)
+[![](navigation-focus-images/nav01.png "TvOS 設定アプリ")](navigation-focus-images/nav01.png#lightbox)
 
 中に、通常、Apple テレビ]、[ユーザーを使用する移動、画面のスタックされたセットを通じて、特定のコンテンツのセットを表示する各します。 さらに、新しい画面のすべてが生じるなどの標準的な UI コントロールを使用するコンテンツを 1 つまたは複数のサブ画面[ボタン](~/ios/tvos/user-interface/buttons.md)、[タブ バー](~/ios/tvos/user-interface/tab-bars.md)、テーブル、[コレクション ビュー](~/ios/tvos/user-interface/collection-views.md)または[分割ビュー](~/ios/tvos/user-interface/split-views.md)です。
 
@@ -58,7 +58,7 @@ Apple では、tvOS アプリのナビゲーションを設計するとき、次
 
 Apple TV のイメージ、ボタンまたは他の UI 要素と見なされます_フォーカス_現在のナビゲーションのターゲットである場合。
 
-[ ![](navigation-focus-images/focus01.png "フォーカスと選択の例")](navigation-focus-images/focus01.png)
+[![](navigation-focus-images/focus01.png "フォーカスと選択の例")](navigation-focus-images/focus01.png#lightbox)
 
 異なり、ここでそのユーザーがデバイスのタッチ スクリーン上の要素と直接やり取りする iOS デバイス Siri リモコンを使用して、部屋の向こう側のユーザーが対話 tvOS 要素を使用します。 Apple TV を使用するには存在し、このユーザーの対話処理を_フォーカス_ベース モデルです。
 
@@ -138,7 +138,7 @@ TvOS に組み込まれたフォーカス エンジンは、水平方向およ�
 
 例については、次の UI のレイアウトを実行します。
 
- [ ![](navigation-focus-images/guide01.png "フォーカス ガイドの例の操作")](navigation-focus-images/guide01.png)
+ [![](navigation-focus-images/guide01.png "フォーカス ガイドの例の操作")](navigation-focus-images/guide01.png#lightbox)
  
 **詳細**ボタンと水平および垂直のグリッドには当てはまらない、**購入**ではない、ユーザーがアクセスできるボタンをクリックします。 ただし、これを簡単に修正するを使用して、_フォーカス ガイド_フォーカス エンジンへの移動のヒントを提供します。 
 
@@ -170,7 +170,7 @@ public override void ViewDidLoad ()
 
 に対して相対的なフォーカス ガイドの Top、Left、幅、高さアンカーを次に、調整、**詳細**と**購入**それらの間に配置するためにボタン。 参照トピック
 
-[ ![](navigation-focus-images/guide02.png "例のフォーカス ガイド")](navigation-focus-images/guide02.png)
+[![](navigation-focus-images/guide02.png "例のフォーカス ガイド")](navigation-focus-images/guide02.png#lightbox)
 
 新しい制約されているアクティブ化されるように設定して作成されたに注意する必要も、`Active`プロパティを`true`:
 

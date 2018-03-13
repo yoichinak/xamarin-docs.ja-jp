@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 1a5120f088fca6997eef3a1bc27126b442380cac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b54adc28e318b263052bb6073390556a198cffe7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-provisioning"></a>デバイスのプロビジョニング
 
@@ -22,7 +22,7 @@ Xamarin.iOS アプリケーションを開発する場合、シミュレータ�
 
 下図で強調表示されているセクションは、iOS のプロビジョニングの設定に必要な手順を示しています。
 
-[![](images/provisioningdiagram.png "この図で強調表示されているセクションは、iOS のプロビジョニングの設定に必要な手順を示しています")](images/provisioningdiagram.png)
+[![](images/provisioningdiagram.png "この図で強調表示されているセクションは、iOS のプロビジョニングの設定に必要な手順を示しています")](images/provisioningdiagram.png#lightbox)
 
 次の手順は、アプリケーションの配布です。 展開の詳細については、「[App Distribution](~/ios/deploy-test/app-distribution/index.md)」(アプリの配布) ガイドを参照してください。
 

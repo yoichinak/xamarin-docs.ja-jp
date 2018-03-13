@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: bf382f380876e85db46226fb3586382f20d630f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b22cebf8ca5804884c559da687fe90236c7af44d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="paths-and-text"></a>パスとテキスト
 
@@ -44,7 +44,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 これらのタスクのいずれかがクリッピングされます。 **クリッピング テキスト**ページは、単語"CODE"の文字のアウトラインに基づいてクリッピング パスを作成します。 このパスのイメージを含むビットマップをクリップするページのサイズに合わせて引き伸ばされます、**クリッピング テキスト**ソース コード。
 
-[![](text-paths-images/clippingtext-small.png "領域のテキスト ページのスクリーン ショットをトリプル")](text-paths-images/clippingtext-large.png "クリッピング テキスト ページのトリプル スクリーン ショット")
+[![](text-paths-images/clippingtext-small.png "領域のテキスト ページのスクリーン ショットをトリプル")](text-paths-images/clippingtext-large.png#lightbox "クリッピング テキスト ページのトリプル スクリーン ショット")
 
 [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)クラスのコンス トラクターが内の埋め込みリソースとして格納されているビットマップを読み込み、**メディア**ソリューションのフォルダー。
 
@@ -125,7 +125,7 @@ public class ClippingTextPage : ContentPage
 
 **パスのテキスト効果**ページ 1 D パス効果を作成するパスを単一のアンパサンド文字を変換します。 大きなバージョンの同じ文字のアウトラインを描画する効果がこのパスの描画オブジェクトを使用しています。
 
-[![](text-paths-images/textpatheffect-small.png "パスのテキスト効果 ページのスクリーン ショットをトリプル")](text-paths-images/textpatheffect-large.png "パスのテキスト効果 ページのトリプル スクリーン ショット")
+[![](text-paths-images/textpatheffect-small.png "パスのテキスト効果 ページのスクリーン ショットをトリプル")](text-paths-images/textpatheffect-large.png#lightbox "パスのテキスト効果 ページのトリプル スクリーン ショット")
 
 含まれる作業の量、 [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)クラスは、フィールドとコンス トラクターで発生します。 2 つ`SKPaint`2 つの異なる目的のために使用されるフィールドが定義されているオブジェクト: 最初の (という名前`textPathPaint`) でアンパサンドを変換するために使用、`TextSize`の 1 D パス効果のパスを 50 です。 2 番目 (`textPaint`)、アンパサンドとそのパスの効果の大きいバージョンを表示するために使用します。 そのため、`Style`に設定されているオブジェクトのこの 2 つ目のペイント`Stroke`、ですが、`StrokeWidth`プロパティが設定されていないため、1 D パス効果を使用したときにそのプロパティが必要はありません。
 
@@ -270,7 +270,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `PaintSurface`ハンドラーという名前の新しいパスを作成し`outlinePath`です。 これは、呼び出しでは、移行先パスになります`GetFillPath`です。 `StrokeWidth` 25 原因のプロパティ`outlinePath`テキスト文字の描画、ピクセル幅の 25 パスのアウトラインを記述します。 このパスが 5 のストロークの幅が赤で表示されます。
 
-[![](text-paths-images/characteroutlineoutlines-small.png "文字のアウトライン アウトライン ページのスクリーン ショットをトリプル")](text-paths-images/characteroutlineoutlines-large.png "文字アウトライン アウトライン ページのトリプル スクリーン ショット")
+[![](text-paths-images/characteroutlineoutlines-small.png "文字のアウトライン アウトライン ページのスクリーン ショットをトリプル")](text-paths-images/characteroutlineoutlines-large.png#lightbox "文字アウトライン アウトライン ページのトリプル スクリーン ショット")
 
 詳しく調べるし、わかります overlaps パス アウトラインが鋭い角をによりします。 これらは、このプロセスの標準の成果物です。
 
@@ -323,7 +323,7 @@ public class CircularTextPage : ContentPage
 
 `TextSize`プロパティ`textPaint`テキストの幅が、円の円周と一致するようには、調整。
 
-[![](text-paths-images/circulartext-small.png "循環テキスト ページのスクリーン ショットをトリプル")](text-paths-images/circulartext-large.png "循環テキスト ページのトリプル スクリーン ショット")
+[![](text-paths-images/circulartext-small.png "循環テキスト ページのスクリーン ショットをトリプル")](text-paths-images/circulartext-large.png#lightbox "循環テキスト ページのトリプル スクリーン ショット")
 
 ある程度循環させることに、テキスト自体が選択されました:"circle"という単語が両方の文の件名と前置詞句のオブジェクト。 
 

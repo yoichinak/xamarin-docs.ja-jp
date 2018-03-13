@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 593e17096d92d9a9764545149991817fa616e2fc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6dabba30c5242d6e7e9ef42a4025f87826a5b89e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-alerts"></a>アラートの使用
 
@@ -21,7 +21,7 @@ _この記事では、Xamarin.tvOS でユーザーに警告メッセージを表
 
 使用して、警告メッセージを表示するには、tvOS のユーザーの注目を取得または (ファイルを削除する) などの破壊的な操作を実行するアクセス許可を依頼する必要がある場合、 `UIAlertViewController`:
 
-[ ![](alerts-images/alert01.png "たとえば UIAlertViewController")](alerts-images/alert01.png)
+[![](alerts-images/alert01.png "たとえば UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 かどうかのメッセージの表示をさらに、追加できますボタンとテキスト フィールドを操作に応答し、フィードバックを提供できるようにするアラートにします。
 
@@ -31,7 +31,7 @@ _この記事では、Xamarin.tvOS でユーザーに警告メッセージを表
 
 前述のように、ユーザーの注意を引くために連絡して、アプリまたは要求に関するフィードバックの状態のアラートが使用されます。 アラートは、タイトルを表示する必要があります、できます必要に応じてがメッセージ 1 つまたは複数のボタンやテキスト フィールド。
 
-[ ![](alerts-images/alert04.png "例アラート")](alerts-images/alert04.png)
+[![](alerts-images/alert04.png "例アラート")](alerts-images/alert04.png#lightbox)
 
 Apple では、アラートの操作の次の方法があります。
 
@@ -118,11 +118,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 に、アラートをアクション (ボタン) を追加するだけでなく、この警告を使用するユーザー Id やパスワードなどの情報を入力するユーザーにテキスト フィールドを追加できます。
 
-[ ![](alerts-images/alert02.png "アラートのテキスト フィールド")](alerts-images/alert02.png)
+[![](alerts-images/alert02.png "アラートのテキスト フィールド")](alerts-images/alert02.png#lightbox)
 
 ユーザーは、テキスト フィールドを選択する場合、フィールドの値を入力すること、tvOS の標準キーボードが表示されます。
 
-[ ![](alerts-images/alert03.png "テキストを入力します。")](alerts-images/alert03.png)
+[![](alerts-images/alert03.png "テキストを入力します。")](alerts-images/alert03.png#lightbox)
 
 次のコードは、値を入力するため、[ok]/[キャンセル] アラートを 1 つのテキスト フィールドが表示されます。
 

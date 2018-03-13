@@ -8,36 +8,32 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a05e30f911e46613fe5c567f148b37833bf88306
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 21245d741ff025cb8c2a680642ec0226369540cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unified-api-overview"></a>統一された API の概要
 
 _新しいスタイルの API よりも簡単にこれまで Mac と iOS だけでなくできると、同じ 32 と 64 ビットのアプリケーションをサポートするバイナリ間でコードを共有します。_
-
 
 Mac と iOS の間で共有コードを改善し、32 と 64 ビット、上で動作する基本の 1 つのコードがある開発者を有効にする早期 2015 紹介 Unified API を呼び出す Xamarin.Mac と Xamarin.iOS の両方の製品の新しい API です。
 
 > [!IMPORTANT]
 > **プロファイル非推奨のクラシック:**クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に削除は、Xamarin.iOS 10.0 のリリースで [次へ] の秋にスケジュールされます。
 
-
-
-
-# <a name="ios"></a>iOS
+## <a name="ios"></a>iOS
 
 `Xamarin.iOS.dll` Xamarin.iOS 8.6 と共に出荷されたアセンブリは、**最初の安定性とサポートされているバージョン**iOS 用、統合 API のです。
 統合 API の以前のプレビュー バージョンは、閉じるが完全に互換性がありません。
 
-# <a name="mac"></a>Mac
+## <a name="mac"></a>Mac
 
 `Xamarin.Mac.dll` Xamarin.Mac の安定したチャネル内のアセンブリは、**最初の安定性とサポートされているバージョン**for mac 統合 API の
 統合 API の以前のプレビュー バージョンは、閉じるが完全に互換性がありません。
 
-# <a name="runtime-defaults"></a>ランタイムの既定値
+## <a name="runtime-defaults"></a>ランタイムの既定値
 
 既定値は、Unified API、 **SGen**ガベージ コレクターおよび[新しい参照カウント](~/ios/internals/newrefcount.md)オブジェクトの所有権を追跡するためのシステムです。 この同じ機能が Xamarin.Mac に移植されています。
 
@@ -47,7 +43,7 @@ Mac と iOS の間で共有コードを改善し、32 と 64 ビット、上で�
 
 <a name="namespace-changes" />
 
-# <a name="library-split"></a>ライブラリの分割
+## <a name="library-split"></a>ライブラリの分割
 
 この時点から、2 つの方法で、Api が提示されます。
 
@@ -56,7 +52,7 @@ Mac と iOS の間で共有コードを改善し、32 と 64 ビット、上で�
 
 つまり、企業の開発者 (いない対象とするアプリ ストア) を引き続き使用できる既存の従来の Api おは保持を保持する永久にしたりするは、新しい Api にアップグレードできます。
 
-## <a name="namespace-changes"></a>Namespace 変更
+### <a name="namespace-changes"></a>Namespace 変更
 
 Mac および iOS 製品間でコードを共有する摩擦を減らすためには、製品の Api の名前空間を変更しています。
 
@@ -67,7 +63,7 @@ Mac および iOS 製品間でコードを共有する摩擦を減らすため�
 -  **クラシック API:**名前空間を使用して`MonoTouch.`または`MonoMac.`プレフィックス。
 -  **統一された API:**名前空間プレフィックスなし
 
-## <a name="api-changes"></a>API の変更
+### <a name="api-changes"></a>API の変更
 
 Unified API が非推奨のメソッドを削除し、いくつかのインスタンスがある場所が入力ミス API 名で、従来の Api で元 MonoTouch と MonoMac 名前空間にバインドされているときにします。 これらのインスタンスが、新しい Unified Api で修正され、コンポーネント、iOS および Mac のアプリケーションで更新する必要があります。 次に遭遇する最も一般的なものの一覧を示します。
 
@@ -104,8 +100,7 @@ Unified API が非推奨のメソッドを削除し、いくつかのインス�
 
 クラシックから Unified API に切り替えると、変更の一覧についてを参照してください、[クラシック (monotouch.dll) と統合 (Xamarin.iOS.dll) API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)ドキュメント。
 
-
-## <a name="updating-to-unified"></a>統合された更新
+### <a name="updating-to-unified"></a>統合された更新
 
 内のいくつかの古い/切断/非推奨 API**クラシック**では使用できない、**統合**API です。 修正が簡単になります、 `CS0616` 、(手動または自動) を開始する前に警告をアップグレードする必要があるありますので、`[Obsolete]`右 API に説明するメッセージ (警告の一部) の属性です。
 
@@ -114,20 +109,18 @@ Unified API が非推奨のメソッドを削除し、いくつかのインス�
 次の手順に従って[既存の iOS アプリを更新する](~/cross-platform/macios/unified/updating-ios-apps.md)、または[Mac アプリ](~/cross-platform/macios/unified/updating-mac-apps.md)Unified API にします。
 このページの残りの部分を確認し、[これらのヒント](~/cross-platform/macios/unified/updating-tips.md)コードの移行の詳細についてはします。
 
-
-
-# <a name="components-and-nuget"></a>コンポーネントと NuGet
+## <a name="components-and-nuget"></a>コンポーネントと NuGet
 
 ほとんどの既存のコンポーネントと NuGet パッケージは、Unified API をサポートするために更新する必要があります。
 従来の API に対して作成されたコンポーネントは、Unified API プロジェクトから参照できません。
 
 既存のコンポーネントへの参照がありませんでしたを`monotouch.dll`(または`XamMac.dll`) 更新プログラムは必要ありません。
 
-## <a name="components"></a>コンポーネント
+### <a name="components"></a>コンポーネント
 
 iOS のコンポーネントで、 [Xamarin コンポーネント ストア](https://components.xamarin.com/)Unified API プロジェクトの作業を更新する必要があります。 Xamarin では、発行およびその他の作成者が同じ操作を実行するように促すおのコンポーネントを更新中です。
 
-## <a name="nuget"></a>NuGet
+### <a name="nuget"></a>NuGet
 
 従来の API を使用して Xamarin.iOS 以前がサポートされている NuGet パッケージを使用して、アセンブリの公開、 **Monotouch10**プラットフォーム モニカーです。
 
@@ -136,14 +129,9 @@ Unified API の互換性のあるパッケージは、新しいプラットフ�
 > [!IMPORTANT]
 > **注:**形式でエラーがあれば_"エラー 3 は、同じ Xamarin.iOS プロジェクトに 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を含めることはできません - 'Xamarin.iOS.dll' は 'monotouch.dll' によって参照されますが、明示的に参照される ' xxx、バージョン = 0.0.000、Culture = neutral, PublicKeyToken = null'"_ Unified Api にアプリを変換した後は、通常、統合 API が更新されていないプロジェクトで、コンポーネントまたは NuGet パッケージを持つためです。 削除する既存のコンポーネント/NuGet Unified Api をサポートするバージョンに更新して、クリーン ビルドを行う必要があります。
 
-
-
-
-
-
 <a name="deprecated-apis" />
 
-#<a name="arrays-and-systemcollectionsgeneric"></a>配列と System.Collections.Generic
+## <a name="arrays-and-systemcollectionsgeneric"></a>配列と System.Collections.Generic
 
 C# のインデクサーには、型が想定しているため`int`、明示的にキャストする必要があります`nint`値`int`コレクションまたは配列要素にアクセスします。 例:
 
@@ -159,7 +147,7 @@ public string GetName(nint index) {
 
 これは想定される動作は、ためからキャスト`int`に`nint`は、64 ビットのデータの損失、暗黙的な変換が完了していません。
 
-# <a name="converting-datetime-to-nsdate"></a>NSDate DateTime に変換します。
+## <a name="converting-datetime-to-nsdate"></a>NSDate DateTime に変換します。
 
 統合 Api の暗黙的な変換を使用するときに`DateTime`に`NSDate`値は実行できなくします。 これらの値は、別に 1 つの型から明示的に変換する必要があります。 次の拡張メソッドは、このプロセスの自動化に使用できます。
 
@@ -185,7 +173,7 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 ```
 
-# <a name="deprecated-apis-and-typos"></a>非推奨 Api や入力ミス
+## <a name="deprecated-apis-and-typos"></a>非推奨 Api や入力ミス
 
 内部 Xamarin.iOS classic API (monotouch.dll)、`[Obsolete]`属性は、2 つの方法で使用されました。
 
@@ -193,12 +181,11 @@ public static NSDate DateTimeToNSDate(this DateTime date)
  このような API (および`[Obsolete]`属性) 新しい Xamarin.iOS アセンブリに組み込まれます。
 -  **無効な API**一部 API では、入力ミスが、名前にします。
 
-
 古いコードの互換性のために使用できるが保たれてお (monotouch.dll および XamMac.dll) は、元のアセンブリが、Unified API アセンブリ (Xamarin.iOS.dll および Xamarin.Mac) から削除されています
 
 <a name="NSObject_ctor" />
 
-# <a name="nsobject-subclasses-ctorintptr"></a>NSObject サブクラス .ctor(IntPtr)
+## <a name="nsobject-subclasses-ctorintptr"></a>NSObject サブクラス .ctor(IntPtr)
 
 各`NSObject`サブクラスを受け付けるコンス トラクターがある、`IntPtr`です。 これは、ネイティブ ObjC ハンドルから新しいマネージ インスタンスをインスタンス化お方法です。
 
@@ -214,7 +201,7 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 <a name="NSAction" />
 
-# <a name="nsaction-replaced-with-action"></a>アクションに置き換えられ NSAction
+## <a name="nsaction-replaced-with-action"></a>アクションに置き換えられ NSAction
 
 Api を使用した、統合、`NSAction`が標準の .NET 優先して削除された`Action`です。 これは、ためにの大きな改善`Action`共通の .NET 型がありますが`NSAction`to Xamarin.iOS 特定されました。 どちらもまったく同じことが異なると互換性のない型およびその他のコードが同じ結果を得るために書き込まれることが発生しました。
 
@@ -233,22 +220,21 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 コンパイラ エラーになるためを以前、`Action`に割り当てることができません`NSAction`が`UITapGestureRecognizer`与えるようになりました、`Action`の代わりに、 `NSAction` Unified Api で有効です。
 
-# <a name="custom-delegates-replaced-with-actiont"></a>アクションに置き換えられ、カスタム デリゲート<T>
+## <a name="custom-delegates-replaced-with-actiont"></a>アクションに置き換えられ、カスタム デリゲート<T>
 
-**統一された**(1 つのパラメーターなど) 簡単なものに置き換えられました .net デリゲート`Action<T>`です。 例。
+**統一された**(1 つのパラメーターなど) 簡単なものに置き換えられました .net デリゲート`Action<T>`です。 たとえば、
 
     public delegate void NSNotificationHandler (NSNotification notification);
 
 として使用するようになりました、`Action<NSNotification>`です。 このプロモート コードでは、再利用し、Xamarin.iOS と独自のアプリケーションの両方の内部コードの重複を低減できます。
 
-
-# <a name="taskbool-replaced-with-taskbooleannserror"></a>タスク<bool>< ブール値、NSError >> タスクに置き換え
+## <a name="taskbool-replaced-with-taskbooleannserror"></a>タスク<bool>< ブール値、NSError >> タスクに置き換え
 
 **クラシック**いくつかの非同期 Api が返す`Task<bool>`です。 ただし一部それらの場所ときに使用するには、`NSError`つまり、シグネチャの一部であった、`bool`が既に`true`を取得する例外をキャッチしなければ、`NSError`です。
 
 このパターンが変更された一部のエラーは非常に一般的であり、戻り値に役立たないため**統一された**を返す、`Task<Tuple<Boolean,NSError>>`です。 これにより、成功とエラーの非同期呼び出し中に発生した可能性がありますの両方を確認できます。
 
-# <a name="nsstring-vs-string"></a>NSString vs 文字列
+## <a name="nsstring-vs-string"></a>NSString vs 文字列
 
 一部の定数をいくつかのケースから変更する必要がある`string`に`NSString`、例。 `UITableViewCell`
 
@@ -262,10 +248,9 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 一般に、.NET を優先して`System.String`型です。 ただし、一部のネイティブ API、Apple ガイドラインに関係なく定数ポインター (文字列自体ではありません) の比較は、これが機能する場合のみとして定数を公開して`NSString`です。
 
-
  <a name="protocols" />
 
-# <a name="objective-c-protocols"></a>Objective C のプロトコル
+## <a name="objective-c-protocols"></a>Objective C のプロトコル
 
 元の MonoTouch 最適ではない完全なサポート ObjC プロトコルと、一部がありませんでした、API は、最も一般的なシナリオをサポートするために追加されました。 この制限はもう存在しませんが、旧バージョンと互換性のため、いくつかの Api の場所に内部`monotouch.dll`と`XamMac.dll`です。
 
@@ -293,7 +278,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 このような API のドキュメントを参照することがなく、しやすいようになりましたし、プロトコル/インターフェイスに基づく役に立つの提案と、IDE のコード補完機能が提供されます。
 
-## <a name="nscoding-protocol"></a>NSCoding プロトコル
+### <a name="nscoding-protocol"></a>NSCoding プロトコル
 
 当社の元のバインドをサポートしなかった場合でも、.ctor(NSCoder) - すべての型が含まれる、`NSCoding`プロトコルです。  1 つ`Encode(NSCoder)`メソッドが、`NSObject`オブジェクトをエンコードします。
 このメソッドはインスタンスが NSCoding プロトコルに準拠している場合にのみ機能します。
@@ -302,18 +287,15 @@ Unified API でこれが解決されました。  のみ、新しいアセンブ
 
 影響が少ない: ほとんどの場合にこの変更は影響しませんアプリケーション古い、削除、コンス トラクターを使用することもできません。
 
-
 ## <a name="further-tips"></a>他のヒント
 
 注意すべき追加の変更が記載されて、 [Unified API にアプリを更新するためのヒント](~/cross-platform/macios/unified/updating-tips.md)です。
 
-# <a name="sample-code"></a>サンプル コード
+## <a name="sample-code"></a>サンプル コード
 
 年 7 月 31日の時点でのこの新しい API に iOS サンプルのポートを公開しましたが、`magic-types`で分岐[monotouch サンプル](https://github.com/xamarin/monotouch-samples/commits/magic-types)です。
 
 Mac でのデータベースの両方のサンプルをチェック、 [mac サンプル](https://github.com/xamarin/mac-samples)リポジトリ (Mavericks または Yosemite での新しい Api を表示する) だけでなくマジック型分岐での 32/64 ビット サンプル[mac サンプル](https://github.com/xamarin/monotouch-samples/commits/magic-types)です。
-
-
 
 ## <a name="related-links"></a>関連リンク
 
@@ -321,6 +303,6 @@ Mac でのデータベースの両方のサンプルをチェック、 [mac サ�
 - [Mac アプリケーションの更新](~/cross-platform/macios/unified/updating-mac-apps.md)
 - [Xamarin.Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [バインドの更新](~/cross-platform/macios/unified/update-binding.md)
-- [クロスプラット フォーム アプリでネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md)
+- [クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md)
 - [ヒントの更新](~/cross-platform/macios/unified/updating-tips.md)
 - [従来の vs Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

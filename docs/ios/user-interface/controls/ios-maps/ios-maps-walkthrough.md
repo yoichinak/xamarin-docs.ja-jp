@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 7eea7231ec4300a368e4612cbed2ba4ebc044a26
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 807ae6554d029120ad28f8fb8cc6c57ba3b58c8c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="annotations-and-overlays--walkthrough"></a>注釈とオーバーレイ – チュートリアル
 
 このチュートリアルで構築するアプリケーションは、次に示します。
 
- [![](ios-maps-walkthrough-images/00-map-overlay.png "MapKit のサンプル アプリ")](ios-maps-walkthrough-images/00-map-overlay.png)
+ [![](ios-maps-walkthrough-images/00-map-overlay.png "MapKit のサンプル アプリ")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
  
 完全なコードを見つけることができます、 **MapsWalkthroughComplete**内のフォルダー、[マップ デモ サンプル](https://developer.xamarin.com/samples/monotouch/MapDemo/)です。
 
@@ -279,7 +279,7 @@ ms.lasthandoff: 02/27/2018
 
 アプリケーションを実行します。 カスタム注釈とオーバーレイ対話型のマップがあるようになりました。 注釈をタップし、次のように、オースティンのイメージが表示されます。
 
- [![](ios-maps-walkthrough-images/01-map-image.png "注釈をタップし、オースティンのイメージが表示されます。")](ios-maps-walkthrough-images/01-map-image.png)
+ [![](ios-maps-walkthrough-images/01-map-image.png "注釈をタップし、オースティンのイメージが表示されます。")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 

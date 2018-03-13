@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: e9d3e2eecd4c03e7b3046e1ad86dd8a0d70a7f73
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23a8fcd0633757bfffdb1761c3fc811268341b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-row-actions"></a>行の操作の操作
 
@@ -177,7 +177,7 @@ table.Delegate = tableDelegate;
 
 上記のコードを実行すると、ユーザー スワイプといった左テーブルの行に、 **Hi**の代わりにボタンが表示されます、**削除**既定で表示されるボタン。
 
-[ ![](row-action-images/action01.png "[削除] ボタンの代わりに表示されている、Hi ボタン")](row-action-images/action01.png)
+[![](row-action-images/action01.png "[削除] ボタンの代わりに表示されている、Hi ボタン")](row-action-images/action01.png#lightbox)
 
 ユーザーがタップした場合、 **Hi**ボタン、`Hello World!`が書き込まれる Visual Studio でのコンソールへの Mac または Visual Studio アプリケーションをデバッグ モードで実行するとします。
 

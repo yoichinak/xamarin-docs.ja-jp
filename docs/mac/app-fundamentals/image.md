@@ -3,16 +3,16 @@ title: "イメージ"
 description: "この記事では、イメージやアイコン Xamarin.Mac アプリケーションでの操作について説明します。 作成し、アプリケーションのアイコンを作成するために必要し、c# コードと Xcode のインターフェイスのビルダーの両方でイメージを使用して、イメージの管理について説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f12b2af0c9325796db63fcd65af135f54277ece0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="images"></a>イメージ
 
@@ -34,7 +34,7 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 
 さらに、macOS は、アプリケーション全体で使用できる定義済みのイメージのセットを提供します。
 
-[![例は、アプリの実行](image-images/intro01.png "例は、アプリの実行")](image-images/intro01-large.png)
+[![例は、アプリの実行](image-images/intro01.png "例は、アプリの実行")](image-images/intro01-large.png#lightbox)
 
 この記事で Xamarin.Mac アプリケーションでイメージやアイコンの操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
@@ -59,18 +59,18 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
     ![選択、Assets.xcassets](image-images/imageset01.png "Assets.xcassets を選択します。")
 2. 右クリックし、**資産一覧**選択**イメージは新しい設定**: 
 
-    [![新しいイメージ セットを追加する](image-images/imageset02.png "新しいイメージ セットを追加します。")](image-images/imageset02-large.png)
+    [![新しいイメージ セットを追加する](image-images/imageset02.png "新しいイメージ セットを追加します。")](image-images/imageset02-large.png#lightbox)
 3. 新しいイメージ セットを選択し、エディターが表示されます。 
 
-    [![新しいイメージ セットを選択する](image-images/imageset03.png "新しいイメージ セットを選択します。")](image-images/imageset03-large.png)
+    [![新しいイメージ セットを選択する](image-images/imageset03.png "新しいイメージ セットを選択します。")](image-images/imageset03-large.png#lightbox)
 4. ここでは異なるデバイスや必要な解像度の各イメージでおドラッグできます。 
 5. 新しいイメージ セットをダブルクリックして**名前**で、**資産一覧**編集します。 
 
-    [![名前を設定、画像を編集](image-images/imageset04.png "名の設定、画像の編集")](image-images/imageset04-large.png)
+    [![名前を設定、画像を編集](image-images/imageset04.png "名の設定、画像の編集")](image-images/imageset04-large.png#lightbox)
     
 特殊な**ベクター**クラスに追加された**イメージ セット**を含めることができます、 _PDF_形式の代わりに個々 のビットマップ ファイルを含む casset でベクター イメージ別の解像度。 1 つのベクトル ファイルを指定するためにこのメソッドを使用して、  **@1x**  (ベクター PDF ファイル形式) の解決と **@2x** と **@3x** のバージョンのファイルがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
 
-[![イメージ エディターのインターフェイスを設定する](image-images/imageset05.png "イメージ エディターのインターフェイスを設定します。")](image-images/imageset05-large.png)
+[![イメージ エディターのインターフェイスを設定する](image-images/imageset05.png "イメージ エディターのインターフェイスを設定します。")](image-images/imageset05-large.png#lightbox)
 
 含めた場合など、 `MonkeyIcon.pdf` 150px x 150px、コンパイルされたときに、最終的なアプリのバンドルに含まれます資産次ビットマップの解像度を持つアセット カタログのベクトルとしてファイル。
 
@@ -115,7 +115,7 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
     ![ファイルを追加する](image-images/add01.png "ファイルを追加します。")
 2. **ファイルの追加** ダイアログ ボックスで、イメージは、プロジェクトに追加するファイルを選択`BundleResource`の**上書きビルド アクション** をクリックし、**開く**ボタン。
 
-    [![追加するファイルを選択すると](image-images/add02.png "を追加するファイルの選択")](image-images/add02-large.png)
+    [![追加するファイルを選択すると](image-images/add02.png "を追加するファイルの選択")](image-images/add02-large.png#lightbox)
 3. ファイルがでない場合、**リソース**フォルダー、たずねられますたいかどうか**コピー**、**移動**または**リンク**ファイル。 すべてのスイートを選択すると、必要に応じて通常は**コピー**:
 
     ![アクションの追加 を選択すると](image-images/add04.png "アクションの追加 を選択します。")
@@ -164,13 +164,13 @@ Mac では、する Xamarin.Mac アプリケーションを実行すると、 _I
      ![ソリューションのパッド内のイメージ リソース](image-images/ib00.png "ソリューション パッド内のイメージ リソース")
 2. ダブルクリックして、 **Main.storyboard**編集のためインターフェイス ビルダーで開くファイル。 
 
-     [![メインのストーリー ボードの編集](image-images/ib01.png "メインのストーリー ボードの編集")](image-images/ib01-large.png)
+     [![メインのストーリー ボードの編集](image-images/ib01.png "メインのストーリー ボードの編集")](image-images/ib01-large.png#lightbox)
 3. デザイン サーフェイスにイメージとなる UI 要素をドラッグして (たとえば、**イメージ ツールバー項目**)。 
 
      ![ツール バー アイテムの編集](image-images/ib02.png "ツールバー項目の編集")
 4. 追加したイメージを選択、**リソース**内のフォルダー、**イメージ名**ドロップダウンします。 
 
-     [![ツールバー項目のイメージを選択する](image-images/ib03.png "はツールバー項目のイメージを選択します。")](image-images/ib03-large.png)
+     [![ツールバー項目のイメージを選択する](image-images/ib03.png "はツールバー項目のイメージを選択します。")](image-images/ib03-large.png#lightbox)
 5. 選択したイメージがデザイン画面に表示されます。 
 
      ![ツール バー エディターに表示されるイメージ](image-images/ib04.png "ツール バー エディターに表示されるイメージ")
@@ -205,7 +205,7 @@ MacOS アプリの設計に基づき、ありますアイコンまたは画面�
 
 この特殊効果を実現するために切り替え、_レンダリング モード_イメージ資産の**テンプレート イメージ**:
 
-[![テンプレート イメージを設定する](image-images/templateimage01.png "テンプレート イメージを設定します。")](image-images/templateimage01-large.png)
+[![テンプレート イメージを設定する](image-images/templateimage01.png "テンプレート イメージを設定します。")](image-images/templateimage01-large.png#lightbox)
 
 Xcode のインターフェイスのビルダーからは、UI コントロールにイメージ アセットを割り当てます。
 
@@ -337,7 +337,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 出力例:
 
-[![アプリで画像を表示する例](image-images/tables01.png "アプリでのイメージの表示の例")](image-images/tables01-large.png)
+[![アプリで画像を表示する例](image-images/tables01.png "アプリでのイメージの表示の例")](image-images/tables01-large.png#lightbox)
 
 テーブルのビューの操作の詳細についてを参照してください、[テーブル ビュー](~/mac/user-interface/table-view.md)ドキュメント。
 
@@ -440,7 +440,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 出力例:
 
-[![アウトライン表示で表示されるイメージの例](image-images/outline01.png "アウトライン ビューで表示されるイメージの例")](image-images/outline01-large.png)
+[![アウトライン表示で表示されるイメージの例](image-images/outline01.png "アウトライン ビューで表示されるイメージの例")](image-images/outline01-large.png#lightbox)
 
 アウトライン ビューの使用の詳細についてを参照してください、[アウトライン ビュー](~/mac/user-interface/outline-view.md)ドキュメント。
 

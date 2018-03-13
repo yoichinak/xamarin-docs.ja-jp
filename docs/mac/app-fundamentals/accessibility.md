@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0117364f02302add1f8788de1a79e4c4210fd07b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4363258a9047ee4e2de4f53595a6eedc5dfe5861
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-macos"></a>MacOS でユーザー補助
 
@@ -30,7 +30,7 @@ AppKit を使用して、`NSAccessibility`のに役立つ、ユーザー イン�
 Xamarin.Mac では、Xcode インターフェイスのビルダーを使用して、ストーリー ボード ファイルを編集します。
 ユーザー補助情報で編集できる、 **Identity インスペクター**コントロールを選択すると、デザイン サーフェイスに示すように次のスクリーン ショット)。
 
-[![Xcode のインターフェイスのビルダーでのユーザー補助機能の追加](accessibility-images/xcode.png "Xcode のインターフェイスのビルダーでのユーザー補助機能の追加")](accessibility-images/xcode-large.png)
+[![Xcode のインターフェイスのビルダーでのユーザー補助機能の追加](accessibility-images/xcode.png "Xcode のインターフェイスのビルダーでのユーザー補助機能の追加")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>コード
 
@@ -80,7 +80,7 @@ macOS 提供、**アクセシビリティ インスペクター**できますが
 
 有効にすると、インスペクターが画面上を移動できるフローティング ウィンドウとして表示されます。 次のスクリーン ショットは、サンプルの Mac アプリケーションの横にある実行されているインスペクターを示しています。 カーソルがウィンドウの上で移動するときに、インスペクターには、各コントロールのすべてのアクセス可能なプロパティが表示されます。
 
-[![例を実行中のユーザー補助インスペクターの](accessibility-images/accessibility-example.png "アクセシビリティ インスペクターの例の実行")](accessibility-images/accessibility-example-large.png)
+[![例を実行中のユーザー補助インスペクターの](accessibility-images/accessibility-example.png "アクセシビリティ インスペクターの例の実行")](accessibility-images/accessibility-example-large.png#lightbox)
 
 詳細については、読み取り、 [OS X のガイドのユーザー補助機能をテスト](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)です。
 

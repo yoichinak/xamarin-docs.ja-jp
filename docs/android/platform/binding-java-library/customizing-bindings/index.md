@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 09/25/2017
-ms.openlocfilehash: e71d497201cc2d8f2b3e2b8b252e5f963806a75b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 14372c3ca42d1ba4a8ade1248f3c5f3210cc7e46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-bindings"></a>バインドのカスタマイズ
 
 _Xamarin.Android バインディングをカスタマイズするには、バインディング プロセスを制御するメタデータを編集します。これらを手動で変更がビルド エラーを解決するため、c# を使用してより一貫性のあるされるように、結果として得られる API を整えるために必要な多くの場合、または .NET です。これらのガイドは、このメタデータの構造、メタデータを変更する方法、および JavaDoc を使用して、メソッドのパラメーターの名前を回復する方法について説明します。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
  
@@ -34,7 +33,6 @@ _Xamarin.Android バインディングをカスタマイズするには、バイ
 
 バインディング プロセスを制御するメタデータを変更することにより、これらの変更の一部またはすべてを行うことができます。
 
-<a name="guides" />
 
 ## <a name="guides"></a>ガイド
 

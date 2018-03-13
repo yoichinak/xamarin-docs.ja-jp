@@ -8,25 +8,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 99a35705c408d16f5b4b0e71e53dd453ae377341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2dd397e824ce7735be4421c3f258852de3f77ecb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---creating-a-tabbed-ui-with-tabhost"></a>チュートリアル - TabHost をタブの UI を作成します。
 
 _この記事は TabHost API を使用して Xamarin.Android にタブ付き UI の作成について説明します。_
 
 > [!NOTE]
-> **注:** `TabHost`は Google によって推奨されていませんする古い API です。 使用してタブ付きのアプリケーションを構築する開発者は、[アクションバー](~/android/user-interface/controls/action-bar.md)です。 `ActionBar`は Android のすべてのバージョンで使用できます。 Android 3.0 (API レベル 11) で初めて導入されました、Android 2.2 (API レベル 8) および Android 2.3 (API レベル 10) に移植された戻る、 [V7 AppCompat ライブラリ](http://developer.android.com/tools/support-library/features.html#v7-appcompat)、を介して Xamarin.Android に利用できる、 [XamarinAndroid のサポート ライブラリ - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)パッケージです。
+> `TabHost` Google によっては廃止されている古い API です。 使用してタブ付きのアプリケーションを構築する開発者は、[アクションバー](~/android/user-interface/controls/action-bar.md)です。 `ActionBar`は Android のすべてのバージョンで使用できます。 Android 3.0 (API レベル 11) で初めて導入されました、Android 2.2 (API レベル 8) および Android 2.3 (API レベル 10) に移植された戻る、 [V7 AppCompat ライブラリ](http://developer.android.com/tools/support-library/features.html#v7-appcompat)、を介して Xamarin.Android に利用できる、 [XamarinAndroid のサポート ライブラリ - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)パッケージです。
 
 この記事は Xamarin.Android でを使用してタブの UI を作成する手順について説明、 `TabHost` API です。 これは、Android のすべてのバージョンで使用可能な古い API です。 この例では、各タブがアクティビティでカプセル化されたロジックを持つ、3 つのタブで、アプリケーションを作成します。
 次のスクリーン ショットは、作成したアプリケーションの例を示します。
 
 ![複数のタブを使用してアプリのサンプルのスクリーン ショット](creating-a-tabbed-ui-images/image02.png)
 
-<a name="Creating_the_Application" />
 
 ## <a name="creating-the-application"></a>アプリケーションの作成
 
@@ -61,7 +60,7 @@ _この記事は TabHost API を使用して Xamarin.Android にタブ付き UI 
 
 次のスクリーン ショットは、Xamarin デザイナー レイアウトを示しています。
 
-[![Xamarin デザイナーで TabHost レイアウトのスクリーン ショット](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png)
+[![Xamarin デザイナーで TabHost レイアウトのスクリーン ショット](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png#lightbox)
 
 TabHost がその内部の 2 つの子ビューを持つ必要があります。`TabWidget`と`FrameLayout`です。 位置に、`TabWidget`と`FrameLayout`垂直方向に内側、 `TabHost`、`LinearLayout`を使用します。 FrameLayout はどこのコンテンツの各タブを移動、空であるため、`TabHost`は自動的に実行時に、各アクティビティを埋め込みます。 これにはタブ付きのユーザー インターフェイスのレイアウトを作成する際に従う必要がありますをいくつかのルールがあります。
 
@@ -203,7 +202,6 @@ protected override void OnCreate(Bundle bundle)
 これで完了です。 アプリケーションのさまざまな部分に簡単に移動するユーザーに与えますタブ付きアプリケーションを作成しました。
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

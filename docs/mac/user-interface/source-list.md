@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1cc74fb30e59ecd5f6be3cf3e1c84f60cd5ca0a6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1fba2219a10a83043097d1b5ca6fb293de4d6c70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="source-lists"></a>ソース リスト
 
@@ -22,7 +22,7 @@ _この記事では、ソース リスト Xamarin.Mac アプリケーション�
 
 ソースの一覧は、特殊な種類のアウトライン表示 Finder または iTunes でサイド バーと同様に、操作のソースを表示するために使用します。
 
-[ ![](source-list-images/source05.png "ソース一覧の例")](source-list-images/source05.png)
+[![](source-list-images/source05.png "ソース一覧の例")](source-list-images/source05.png#lightbox)
 
 この記事で Xamarin.Mac アプリケーションのソースを一覧表示の操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
@@ -50,7 +50,7 @@ _この記事では、ソース リスト Xamarin.Mac アプリケーション�
 
 最初に、新しいを作成してみましょう`SourceListItem`ソース リストからデータを保持するクラス。 **ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.**選択**全般** > **空のクラス**、入力`SourceListItem`の**名前**] をクリック、**新規**ボタン。
 
-[ ![](source-list-images/source01.png "空のクラスを追加します。")](source-list-images/source01.png)
+[![](source-list-images/source01.png "空のクラスを追加します。")](source-list-images/source01.png#lightbox)
 
 ように、`SourceListItem.cs`次のようなファイルの内容。 
 
@@ -532,19 +532,19 @@ namespace MacOutlines
 
 ここで、インターフェイスのビルダーで、ソース リストを設計してみましょう。 ダブルクリックして、`Main.storyboard`ファイルをインターフェイスのビルダーで編集してファイルを開いてから分割ビューをドラッグして、**ライブラリ インスペクター**ビュー コント ローラーを追加、およびビューでのサイズを変更するように設定、**制約エディター**:
 
-[ ![](source-list-images/source00.png "制約の編集")](source-list-images/source00.png)
+[![](source-list-images/source00.png "制約の編集")](source-list-images/source00.png#lightbox)
 
 次に、ソースの一覧からドラッグして、**ライブラリ インスペクター**、分割ビューの左側に追加しとで、ビューのサイズを変更するように設定、**制約エディター**:
 
-[ ![](source-list-images/source02.png "制約の編集")](source-list-images/source02.png)
+[![](source-list-images/source02.png "制約の編集")](source-list-images/source02.png#lightbox)
 
 次に切り替え、 **Identity ビュー**ソース リストを選択し、変更の**クラス**に`SourceListView`:
 
-[ ![](source-list-images/source03.png "クラス名を設定します。")](source-list-images/source03.png)
+[![](source-list-images/source03.png "クラス名を設定します。")](source-list-images/source03.png#lightbox)
 
 最後に、作成、**コンセント**、ソース リストと呼ばれる`SourceList`で、`ViewController.h`ファイル。
 
-[ ![](source-list-images/source04.png "コンセントを構成します。")](source-list-images/source04.png)
+[![](source-list-images/source04.png "コンセントを構成します。")](source-list-images/source04.png#lightbox)
 
 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 アプリケーションを実行する場合、次が表示されます。
 
-[ ![](source-list-images/source05.png "実行のサンプル アプリ")](source-list-images/source05.png)
+[![](source-list-images/source05.png "実行のサンプル アプリ")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 
@@ -628,7 +628,7 @@ public override void DidFinishLaunching (NSNotification notification)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [テーブル ビュー](~/mac/user-interface/table-view.md)
 - [アウトライン ビュー](~/mac/user-interface/outline-view.md)
-- [OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [ビューを説明する概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)

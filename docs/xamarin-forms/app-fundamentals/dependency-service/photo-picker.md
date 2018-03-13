@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6ac228f85f3f717ddf95e0dc2e434b13bfec5d06
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: db7f5058983195c0dcea9505f5adcd0fd03f905d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択
 
@@ -200,25 +200,22 @@ namespace DependencyServiceSample.Droid
             intent.SetType("image/*");
             intent.SetAction(Intent.ActionGetContent);
 
-            // Get the MainActivity instance
-            MainActivity activity = Forms.Context as MainActivity;
-
             // Start the picture-picker activity (resumes in MainActivity.cs)
-            activity.StartActivityForResult(
+            MainActivity.Instance.StartActivityForResult(
                 Intent.CreateChooser(intent, "Select Picture"),
                 MainActivity.PickImageId);
 
             // Save the TaskCompletionSource object as a MainActivity property
-            activity.PickImageTaskCompletionSource = new TaskCompletionSource<Stream>();
+            MainActivity.Instance.PickImageTaskCompletionSource = new TaskCompletionSource<Stream>();
 
             // Return Task object
-            return activity.PickImageTaskCompletionSource.Task;
+            return MainActivity.Instance.PickImageTaskCompletionSource.Task;
         }
     }
 }
 ```
 
-メソッドにアクセスする、`MainActivity`いくつかの目的のクラス: の`PickImageId`フィールドを`TaskCompletionSource`プロパティ、およびを呼び出す`StartActivityForResult`です。 このメソッドは、`FormsApplicationActivity`クラスの基底クラスでは`MainActivity`します。
+このメソッドにアクセスする、`MainActivity`いくつかの目的のクラス: の`Instance`プロパティの`PickImageId`フィールドを`TaskCompletionSource`プロパティ、およびを呼び出す`StartActivityForResult`です。 このメソッドは、`FormsApplicationActivity`クラスの基底クラスでは`MainActivity`します。
 
 <a name="UWP_Implementation" />
 

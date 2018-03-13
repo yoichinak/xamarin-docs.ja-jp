@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e09ac502298296277d9264bcd18f1ce1cbbf0c55
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-controltemplate"></a>ControlTemplate の作成
 
@@ -100,7 +100,7 @@ void OnButtonClicked (object sender, EventArgs e)
 ![](creating-images/aqua-theme.png "水色コントロール テンプレート")
 
 > [!NOTE]
-> **注**: で、 `ContentPage`、`Content`プロパティを割り当てることができると`ControlTemplate`プロパティを設定することもします。 この場合する場合、`ControlTemplate`が含まれています、`ContentPresenter`に割り当てられるコンテンツのインスタンス、`Content`によってプロパティが表示されます、`ContentPresenter`内で、`ControlTemplate`です。
+> `ContentPage`では、`Content`プロパティを割り当てることができますと`ControlTemplate`プロパティを設定することもできます。 この場合する場合、`ControlTemplate`が含まれています、`ContentPresenter`に割り当てられるコンテンツのインスタンス、`Content`によってプロパティが表示されます、`ContentPresenter`内で、`ControlTemplate`です。
 
 ### <a name="setting-a-controltemplate-with-a-style"></a>スタイルと ControlTemplate の設定
 
@@ -148,7 +148,7 @@ A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Con
 
 追加するときに、 [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)ページ レベルで、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)に追加、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)、し、`ControlTemplate`インスタンスが含まれます`ResourceDictionary`です。
 
-## <a name="creating-a-controltemplate-in-c35"></a>C &#35; で、ControlTemplate の作成
+## <a name="creating-a-controltemplate-in-c35"></a>C では、ControlTemplate の作成&#35;
 
 定義する、 [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)アプリケーション レベルで、`class`を表すを作成する必要があります、`ControlTemplate`です。 クラスの派生元の[レイアウト](~/xamarin-forms/user-interface/layouts/index.md)の次のコード例に示すように、テンプレートの使用されています。
 

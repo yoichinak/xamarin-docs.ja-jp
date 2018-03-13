@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 004f7c815a1629310ba4c0f4c6f4219581a12366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成します。
 
@@ -20,13 +20,13 @@ _このガイドでは、Android を着用のカスタム ウォッチ フェイ
 
 ## <a name="overview"></a>概要 
 
-このチュートリアルでは、ウォッチ式の基本的な面サービスが、カスタム Android 着用ウォッチの文字盤の作成の基礎を説明するために作成されます。 初期ウォッチ フェイス サービスには、時間と分で、現在の時刻を表示する簡単なデジタル ウォッチが表示されます。 
+このチュートリアルでは、[ウォッチ式の基本的な面サービスが、カスタム Android 着用ウォッチの文字盤の作成の基礎を説明するために作成されます。 初期ウォッチ フェイス サービスには、時間と分で、現在の時刻を表示する簡単なデジタル ウォッチが表示されます。 
 
-[![デジタル ウォッチの文字盤](creating-a-watchface-images/01-initial-face.png "初期デジタル ウォッチの文字盤の例のスクリーン ショット")](creating-a-watchface-images/01-initial-face.png)
+[![デジタル ウォッチの文字盤](creating-a-watchface-images/01-initial-face.png "初期デジタル ウォッチの文字盤の例のスクリーン ショット")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
 このデジタル ウォッチの文字盤を開発およびテストされた後よりにアップグレードする、3 つの手でアナログ ウォッチの文字盤を高度なコードが追加されます。 
 
-[ ![アナログ ウォッチの文字盤](creating-a-watchface-images/02-example-watchface.png "最終的なアナログ ウォッチの文字盤の例のスクリーン ショット")](creating-a-watchface-images/02-example-watchface.png)
+[![アナログ ウォッチの文字盤](creating-a-watchface-images/02-example-watchface.png "最終的なアナログ ウォッチの文字盤の例のスクリーン ショット")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
 ウォッチ フェイス サービスは組み込まれ、消耗アプリの一部としてインストールされます。 次の例についてで`MainActivity`ウォッチ フェイス サービスをパッケージ化したり、アプリの一部としてスマート ウォッチに展開できるように消耗アプリ テンプレートからのコードよりも詳細 nothing が含まれます。 実際には、このアプリは、デバッグとテストの損傷、デバイス エミュレーター) に読み込まれるウォッチ フェイス サービスを取得するための手段として純粋使用されます。 
 
@@ -47,11 +47,11 @@ Android 5.0 が、最小 API レベル ウォッチ フェイス サービス、
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![新しいプロジェクト ダイアログ](creating-a-watchface-images/03-wear-project-vs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-vs.png)
+[![新しいプロジェクト] ダイアログ](creating-a-watchface-images/03-wear-project-vs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![新しいプロジェクト ダイアログ](creating-a-watchface-images/03-wear-project-xs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-xs.png)
+[![新しいプロジェクト] ダイアログ](creating-a-watchface-images/03-wear-project-xs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -60,11 +60,11 @@ Android 5.0 が、最小 API レベル ウォッチ フェイス サービス、
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![パッケージの名前の設定](creating-a-watchface-images/04-package-name-vs.png "com.xamarin.watchface にパッケージ名を設定")](creating-a-watchface-images/04-package-name-vs.png)
+[![パッケージの名前の設定](creating-a-watchface-images/04-package-name-vs.png "com.xamarin.watchface にパッケージ名を設定")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![パッケージの名前の設定](creating-a-watchface-images/04-package-name-xs.png "com.xamarin.watchface にパッケージ名を設定")](creating-a-watchface-images/04-package-name-xs.png)
+[![パッケージの名前の設定](creating-a-watchface-images/04-package-name-xs.png "com.xamarin.watchface にパッケージ名を設定")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
 
 -----
 
@@ -72,13 +72,13 @@ Android 5.0 が、最小 API レベル ウォッチ フェイス サービス、
 
 さらに、下にスクロールし、有効にする、**インターネット**と**WAKE_LOCK**アクセス許可。 
 
-[ ![アクセス許可を必要な](creating-a-watchface-images/05-required-permissions-vs.png "を有効にするインターネットおよび WAKE_LOCK のアクセス許可")](creating-a-watchface-images/05-required-permissions-vs.png)
+[![アクセス許可を必要な](creating-a-watchface-images/05-required-permissions-vs.png "を有効にするインターネットおよび WAKE_LOCK のアクセス許可")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 最低限の Android バージョンを設定**Android 5.1 (API レベル 22)**です。 また、有効にする、**インターネット**と**WakeLock**アクセス許可。
 
-[ ![アクセス許可を必要な](creating-a-watchface-images/05-required-permissions-xs.png "を有効にするインターネットおよび WakeLock のアクセス許可")](creating-a-watchface-images/05-required-permissions-xs.png)
+[![アクセス許可を必要な](creating-a-watchface-images/05-required-permissions-xs.png "を有効にするインターネットおよび WakeLock のアクセス許可")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 
@@ -91,24 +91,24 @@ Android 5.0 が、最小 API レベル ウォッチ フェイス サービス、
 
 NuGet パッケージ マネージャーを起動 (Visual Studio を右クリックし**参照**で、**ソリューション エクスプ ローラー**選択と**NuGet パッケージの管理.**).プロジェクトの最新の安定したバージョンを更新して**Xamarin.Android.Wear**: 
 
-[ ![NuGet パッケージ マネージャーを追加](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "Xamarin.Android.Wear パッケージの追加")](creating-a-watchface-images/06-add-wear-pkg-vs.png)
+[![NuGet パッケージ マネージャーを追加](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "Xamarin.Android.Wear パッケージの追加")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
 次に、 **Xamarin.Android.Support.v13**はこれをアンインストールして、インストールされています。
 
-[ ![NuGet Package Manager 削除](creating-a-watchface-images/07-uninstall-v13-sml.png "Xamarin.Support.v13 の削除")](creating-a-watchface-images/07-uninstall-v13.png)
+[![NuGet Package Manager 削除](creating-a-watchface-images/07-uninstall-v13-sml.png "Xamarin.Support.v13 の削除")](creating-a-watchface-images/07-uninstall-v13.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-NuGet パッケージ マネージャーを起動 (Mac を Visual Studio で、右クリック**パッケージ**で、**ソリューション ペイン**選択**パッケージの追加...**).プロジェクトの最新の安定したバージョンを更新して**Xamarin.Android.Wear**: 
+NuGet パッケージ マネージャーを起動 (Mac を Visual Studio で、右クリック**パッケージ**で、**ソリューション ペイン**選択**パッケージの追加...]**).プロジェクトの最新の安定したバージョンを更新して**Xamarin.Android.Wear**: 
 
-[ ![NuGet パッケージ マネージャーを追加](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin.Android.Wear パッケージの追加")](creating-a-watchface-images/06-add-wear-pkg-xs.png)
+[![NuGet パッケージ マネージャーを追加](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin.Android.Wear パッケージの追加")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
 -----
 
 
 ビルドし、ウェア デバイスまたはエミュレーターでアプリを実行 (これを行う方法の詳細については、次を参照してください。、[作業の開始](~/android/wear/get-started/index.md)ガイド)。 消耗デバイスで次のアプリ画面が表示されます。
 
-[ ![アプリのスクリーン ショット](creating-a-watchface-images/08-app-screen.png "消耗デバイスでアプリの画面")](creating-a-watchface-images/08-app-screen.png)
+[![アプリのスクリーン ショット](creating-a-watchface-images/08-app-screen.png "消耗デバイスでアプリの画面")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
 この時点では、ウォッチ フェイス サービス実装がまだ用意されていないために、基本の消耗アプリにはウォッチ フェイス機能はありません。 このサービスは、次に追加されます。 
 
@@ -117,7 +117,7 @@ NuGet パッケージ マネージャーを起動 (Mac を Visual Studio で、�
 
 Android の消耗を実装を介して面の視聴、`CanvasWatchFaceService`クラスです。 `CanvasWatchFaceService` 派生した`WatchFaceService`、自体はから派生`WallpaperService`次の図に示すようにします。 
 
-[ ![継承図](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService 継承図")](creating-a-watchface-images/09-inheritance-diagram.png)
+[![継承図](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService 継承図")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
 `CanvasWatchFaceService` 入れ子になったが含まれています`CanvasWatchFaceService.Engine`; がインスタンス化、`CanvasWatchFaceService.Engine`ウォッチの文字盤の描画の実際の処理を行うオブジェクト。 `CanvasWatchFaceService.Engine` 派生した`WallpaperService.Engine`上の図に示すようにします。 
 
@@ -146,11 +146,11 @@ Android の消耗を実装を介して面の視聴、`CanvasWatchFaceService`ク
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-という名前の新しいファイルを追加**MyWatchFaceService.cs** (Visual Studio を右クリックして**WatchFace**で、**ソリューション エクスプ ローラー**をクリックして**追加 > 新しい項目**を選択して**クラス**)。
+という名前の新しいファイルを追加**MyWatchFaceService.cs** (Visual Studio を右クリックして**WatchFace**で、**ソリューション エクスプ ローラー**をクリックして**追加 > 新しい項目]**を選択して**クラス**)。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-という名前の新しいファイルを追加**MyWatchFaceService.cs** (Mac を Visual Studio で右クリックし、 **WatchFace**プロジェクトで、をクリックして**追加 > 新しいファイル**を選択して**空のクラス**)。 
+という名前の新しいファイルを追加**MyWatchFaceService.cs** (Mac を Visual Studio で右クリックし、 **WatchFace**プロジェクトで、をクリックして**追加 > 新しいファイル]**を選択して**空のクラス**)。 
 
 -----
 
@@ -297,7 +297,7 @@ public override void OnTimeTick()
 
 2.  定義、`watch_face`リソース。 このリソースは短い XML ファイルを宣言する、`wallpaper`リソース (このファイルは、次のセクションで作成されます)。 
 
-3.  宣言と呼ばれるドロウアブル イメージ`preview`ウォッチ ピッカーの選択 画面で表示されます。 
+3.  宣言と呼ばれるドロウアブル イメージ`preview`ウォッチ ピッカーの選択] 画面で表示されます。 
 
 4.  含まれています、`intent-filter`させることに注意して Android`MyWatchFaceSevice`ウォッチの文字盤を表示します。 
 
@@ -317,11 +317,11 @@ Basic の場合、コードを完了する`WatchFace`例です。 次の手順�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ビルド アクション](creating-a-watchface-images/10-android-resource-vs.png "セット ビルド AndroidResource するアクション")](creating-a-watchface-images/10-android-resource-vs.png)
+[![ビルド アクション](creating-a-watchface-images/10-android-resource-vs.png "セット ビルド AndroidResource するアクション")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ビルド アクション](creating-a-watchface-images/10-android-resource-xs.png "セット ビルド AndroidResource するアクション")](creating-a-watchface-images/10-android-resource-xs.png)
+[![ビルド アクション](creating-a-watchface-images/10-android-resource-xs.png "セット ビルド AndroidResource するアクション")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 
@@ -342,13 +342,13 @@ Basic の場合、コードを完了する`WatchFace`例です。 次の手順�
 
 4.  選択、 **Xamarin サンプル**フェイス (右側に表示) を監視します。 
 
-    [ ![Watchface ピッカー](creating-a-watchface-images/11-watchface-picker.png "スワイプ Xamarin サンプル ウォッチの文字盤を検索するには")](creating-a-watchface-images/11-watchface-picker.png)
+    [![Watchface ピッカー](creating-a-watchface-images/11-watchface-picker.png "スワイプ Xamarin サンプル ウォッチの文字盤を検索するには")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
 5.  タップして、 **Xamarin サンプル**視聴フェイスをオンにします。 
 
 これは、これまでに実装されたカスタム ウォッチ フェイス サービスを使用する消耗デバイスのウォッチの文字盤を変更します。 
 
-[ ![デジタル ウォッチの文字盤](creating-a-watchface-images/12-digital-watchface.png "消耗デバイスで実行されているカスタム デジタル ウォッチ")](creating-a-watchface-images/12-digital-watchface.png)
+[![デジタル ウォッチの文字盤](creating-a-watchface-images/12-digital-watchface.png "消耗デバイスで実行されているカスタム デジタル ウォッチ")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 これは、アプリの実装がように最小限に抑えるためにの比較的粗雑ウォッチの文字盤 (たとえば、ウォッチ表面の背景に含まれていないことを呼び出しません`Paint`を見やすくするために、アンチ エイリアス メソッド)。 ただし、カスタム ウォッチの文字盤の作成に必要な最低限機能が実装されます。 
 
@@ -476,7 +476,7 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 ビルドし、もう一度消耗デバイスにアプリを展開します。 として前に、ウォッチ フェイス ピッカーからウォッチの文字盤を選択します。 ウォッチ ピッカーでプレビューは、左側に表示され、新しいウォッチの文字盤が右側に表示されます。
 
-[ ![アナログ ウォッチの文字盤](creating-a-watchface-images/13-analog-watchface.png "アナログ フェイス ピッカー、およびデバイス上の向上")](creating-a-watchface-images/13-analog-watchface.png)
+[![アナログ ウォッチの文字盤](creating-a-watchface-images/13-analog-watchface.png "アナログ フェイス ピッカー、およびデバイス上の向上")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
 このスクリーン ショットでは、秒針を毎秒 1 回移動です。 消耗デバイスでこのコードを実行すると、ウォッチ アンビエント モードに入る秒針表示されなくなります。
 

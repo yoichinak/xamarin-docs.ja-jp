@@ -6,17 +6,13 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 165313fb0150c2d9832566d5bc32842722b0a039
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>どのようなサポート オプションは、Xamarin を使用しますか。
-
-## <a name="overview"></a>概要
-- [サポート オプションの概要](#Summary_of_Support_Options)
-- [詳細な推奨事項](#Detailed_Recommendations)
 
 ## <a name="summary-of-support-options"></a>サポート オプションの概要
 
@@ -46,6 +42,8 @@ ms.lasthandoff: 02/27/2018
 </table>
 
 Xamarin のサポート チームは、これらの各オプションを監視することができます。  すべてのユーザーが、よく考えられた質問やレポートを有効に活用知識 Xamarin 開発者コミュニティを拡大を投稿することをお勧めします。  疑いのある障害は、必ずバグの報告を問題は、Xamarin のエンジニア リング チームによって正式に追跡を確認できる場合にします。
+
+<a name="Visual_Studio_email_support_incidents_for_Xamarin_topics"/>
 
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Xamarin についてサポート インシデントを visual Studio の電子メール
 

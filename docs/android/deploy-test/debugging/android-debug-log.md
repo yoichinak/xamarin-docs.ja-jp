@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99b9ed9e3c71766f483f7b00996137aae7a247d1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 26ac42e4b7acbe19dee746130fc335fdf18ffc46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
 
@@ -36,7 +36,6 @@ Visual Studio 用の新しい [デバイス ログ] ツール ウィンドウに
 このツール ウィンドウでは、ログ エントリのテーブル、デバイス選択用のコンボ ボックス、ログ エントリをクリアする方法、検索ボックス、および再生/停止/一時停止ボタンが提供されます。 
 
 
-<a name="Accessing_from_the_Command_Line" />
 
 ## <a name="accessing-from-the-command-line"></a>コマンド ラインからのアクセス
 
@@ -52,7 +51,6 @@ $ adb logcat
 
 その他のコマンドは、**adb** を実行すると表示されます。
 
-<a name="Writing_to_the_Debug_Log" />
 
 
 ## <a name="writing-to-the-debug-log"></a>デバッグ ログへの書き込み
@@ -75,7 +73,6 @@ W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
 ```
 
-<a name="Interesting_Messages" />
 
 ## <a name="interesting-messages"></a>興味深いメッセージ
 

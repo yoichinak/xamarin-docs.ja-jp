@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: edc724eb73b314c0accd3e8775b9b26b6eac16d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc1aaffe4e31b596d57b5de30c87217ffba3772e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="picker"></a>ピッカー
 
@@ -20,11 +20,11 @@ _ピッカー ビューは、データの一覧からテキスト アイテム�
 
 A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)ユーザーが選択できる項目の短い一覧が表示されます。 ただし、 [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)が最初に表示される場合、データを表示しません。 代わりの値、 [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) iOS と Android プラットフォームでプレース ホルダーとして表示されるプロパティです。
 
-[![](images/picker-initial.png "ピッカーの表示の初期")](images/picker-initial-large.png "ピッカーの表示の初期")
+[![](images/picker-initial.png "ピッカーの表示の初期")](images/picker-initial-large.png#lightbox "ピッカーの表示の初期")
 
 ときに、 [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)向上フォーカス、そのデータが表示され、ユーザーが項目を選択できます。
 
-[![](images/picker-selection.png "項目を選択するピッカー")](images/picker-selection-large.png "ピッカーの項目を選択します。")
+[![](images/picker-selection.png "項目を選択するピッカー")](images/picker-selection-large.png#lightbox "ピッカーの項目を選択します。")
 
 次の選択、選択した項目を表示するを[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/):
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c9032b3206fa35d264bd69c94b7882e877b334f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS トラブルシューティング
 
@@ -61,7 +61,7 @@ ms.lasthandoff: 02/27/2018
 - 2 つ追加することはできません`WKNotificationControllers`ストーリー ボードにします。
     回避策:`notificationCategory`ストーリー ボード XML 内の要素は必ず同じ挿入`id`です。 2 つ (以上) の通知コント ローラーを追加、テキスト エディターで、ストーリー ボード ファイルを開くし、手動で変更は、この問題を回避する、`id`一意である要素。
 
-    [ ![](troubleshooting-images/duplicate-id-sml.png "テキスト エディターでファイルを手動で一意である id 要素を変更、ストーリー ボードを開く")](troubleshooting-images/duplicate-id.png)
+    [![](troubleshooting-images/duplicate-id-sml.png "テキスト エディターでファイルを手動で一意である id 要素を変更、ストーリー ボードを開く")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - エラーが表示、"アプリケーションがビルドされていない"アプリを起動しようとしています。 これが発生した後、**クリーン**ウォッチ拡張機能プロジェクトをスタートアップ プロジェクトを設定するとします。
     修正プログラムは、選択**ビルド > すべてリビルド**し、再度アプリを起動します。

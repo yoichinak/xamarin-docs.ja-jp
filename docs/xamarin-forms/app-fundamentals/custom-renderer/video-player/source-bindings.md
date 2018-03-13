@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d0842a54f725e5a9504668f977ba06648a96ee6d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 209b301c44da9bbb52ad8bf7fe867811a9b7617f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-video-sources-to-the-player"></a>プレーヤーへのビデオ ソースのバインド
 
@@ -72,7 +72,7 @@ namespace VideoPlayerDemos
 
 内の項目が選択されていないページが初めて読み込まれるときに、`ListView`ので、再生を開始するビデオのいずれかを選択する必要があります。
 
-[![Web のビデオを選択して](source-bindings-images/selectwebvideo-small.png "Web ビデオを選択して")](source-bindings-images/selectwebvideo-large.png "Web ビデオ を選択")
+[![Web のビデオを選択して](source-bindings-images/selectwebvideo-small.png "Web ビデオを選択して")](source-bindings-images/selectwebvideo-large.png#lightbox "Web ビデオ を選択")
 
 `Source`プロパティ`VideoPlayer`バインド可能なプロパティは、データ バインディングのターゲットができることを意味によってサポートされます。 示されるこれは、 **VideoPlayer にバインド**ページ。 内のマークアップ、 **BindToVideoPlayer.xaml**ファイルは、次のビデオとそれに対応するタイトルをカプセル化するクラスでサポートされて`VideoSource`オブジェクト。
 

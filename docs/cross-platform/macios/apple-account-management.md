@@ -2,16 +2,16 @@
 title: "Apple アカウント管理"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
+ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 0cf7456cec2e934516e15ac6cbc57109e6b57a79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-account-management"></a>Apple アカウント管理
 
@@ -44,7 +44,7 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
 - 最新のありませんツールがあることを確認[https://download.fastlane.tools](https://download.fastlane.tools)です。
 - 開始する前に確認で、ユーザーのライセンス契約を受け入れるように、[開発者ポータル](https://developer.apple.com/account/)です。
 
-# <a name="adding-an-apple-developer-account"></a>Apple 開発者アカウントを追加します。
+## <a name="adding-an-apple-developer-account"></a>Apple 開発者アカウントを追加します。
 
 1. 移動するアカウントの管理 ダイアログを開くには**Visual Studio > 設定 > Apple の開発者アカウント**:
 
@@ -68,8 +68,11 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
 
     ![](apple-account-management-images/image6.png)
 
-<a name="managing">
+
+<a name="managing"/>
     
+
+
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>署名 Id の管理とプロビジョニング プロファイル
 
 チームの詳細 ダイアログには、型ごとに構成された署名 Id の一覧が表示されます。 **ステータス**列するように勧めるかどうか、証明書は。 
@@ -84,7 +87,7 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
 
   ![](apple-account-management-images/image7.png)
 
-### <a name="create-a-signing-identities"></a>署名 Id を作成します。
+## <a name="create-a-signing-identities"></a>署名 Id を作成します。
 
 新しい署名 id を作成するには、選択、**新しい証明書を作成する**ドロップダウン ボタンをクリックし、必要な型を選択します。 新しい署名適切なアクセス許可がある場合は、identity が数秒後に表示されます。
 
@@ -92,7 +95,7 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
 
 ![](apple-account-management-images/image8.png)
 
-### <a name="download-provisioning-profiles"></a>プロビジョニング プロファイルをダウンロードします。
+## <a name="download-provisioning-profiles"></a>プロビジョニング プロファイルをダウンロードします。
 
 チームの詳細 ダイアログには、開発者アカウントに接続されているすべてのプロビジョニング プロファイルの一覧も表示されます。 すべてのプロビジョニング プロファイルをローカル コンピューターにダウンロードするにはキーを押して、**すべてのプロファイルをダウンロード**ボタン
 
@@ -102,29 +105,28 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
 
 デバイスにアプリを配置する方法の詳細についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
 
-
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-#### <a name="view-details-dialog-is-empty"></a>ビューの詳細 ダイアログ ボックスが空
+### <a name="view-details-dialog-is-empty"></a>ビューの詳細 ダイアログ ボックスが空
 
 これは、バグに関連する既知の問題では現在[#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906)です。 Mac の最新の安定したバージョンの Visual Studio を使用していることを確認してください。
 
-#### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>自分のアカウントでのログ記録の問題が発生する場合は、次の点をやり直してください。
+### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>自分のアカウントでのログ記録の問題が発生する場合は、次の点をやり直してください。
 
 * キーチェーン アプリケーションを開き、カテゴリ で *パスワード*です。 検索`deliver.`、およびすべてのエントリを削除します。
 
-#### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"アカウントの追加のエラーです。 特定のアプリ パスワードでサインインしてください。"
+### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"アカウントの追加のエラーです。 特定のアプリ パスワードでサインインしてください。"
 
 これは、アカウントの 2 要素認証が有効になっているためです。 Mac の最新の安定したバージョンの Visual Studio を使用していることを確認してください。
 
-#### <a name="failed-to-create-new-certificate"></a>新しい証明書を作成できませんでした。
+### <a name="failed-to-create-new-certificate"></a>新しい証明書を作成できませんでした。
 「この種類の証明書の上限に達しました」
 
 ![](apple-account-management-images/image10.png)
 
 許可される証明書の最大数が生成されました。 この問題を解決する」を参照、 [Apple Developer Center](https://developer.apple.com/account/ios/certificate/distribution)運用証明書のいずれかを取り消すとします。
 
-#### <a name="known-issues"></a>既知の問題:
+## <a name="known-issues"></a>既知の問題
 
 * 場合がありますの詳細の表示 ダイアログには、膨大な署名 id とプロファイルをフェッチする時間がかかります。
 * 多くの場合、フォーカスがある可能性がありますを返しません Visual Studio for Mac アカウントを追加できませんが、詳細情報を入力した後。 大文字と小文字の場合は、プロセスをもう一度やり直してください。

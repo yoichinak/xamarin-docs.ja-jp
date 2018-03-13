@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: bda207796d1019f8188176acce055d782cb9e32d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e8487dc06b3512a0ec0bb1b30393faeab506df60
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="mac-platform-setup"></a>Mac プラットフォームのセットアップ
 
@@ -20,6 +21,10 @@ ms.lasthandoff: 02/27/2018
 
 始める前に、作成 (または既存の使用) Xamarin.Forms プロジェクト。
 ファルダ for Visual Studio を使用して Mac アプリのみを追加することができます。
+
+> [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
+
+**Xamarin.forms、macOS プロジェクトを追加すると、によって[Xamarin 大学](https://university.xamarin.com/)**
 
 ## <a name="adding-a-mac-app"></a>Mac アプリケーションを追加します。
 
@@ -92,7 +97,7 @@ Sierra および Mac OS X 許可されて macOS で実行する Mac アプリケ
 
 9. ダブルクリックして**Main.storyboard** Xcode で編集します。 選択、**ウィンドウ**と_をオフに_、**は最初のコント ローラー** (これは上記のコード ウィンドウを作成するため) チェック ボックス。
 
-  [ ![Xcode では、最初のコント ローラー チェック ボックスをオフに](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png)
+  [![Xcode では、最初のコント ローラー チェック ボックスをオフに](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
   望ましくない項目を削除するストーリー ボードにメニュー システムを編集することができます。
 

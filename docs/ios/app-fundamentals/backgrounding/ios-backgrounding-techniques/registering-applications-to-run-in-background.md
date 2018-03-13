@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dddd1ad4ae70b97f17ba71a7e96b553759e35695
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5fcb41f4f60adc8ca5be761c2b9a7449387a89d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="registering-applications-to-run-in-the-background"></a>バック グラウンドで実行するアプリケーションを登録します。
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 02/27/2018
 
 設定してアプリケーションを登録することができます、**バック グラウンド モードのために必要な**アプリケーションのプロパティ*Info.plist*です。 必要な数のカテゴリにアプリケーションを登録できます。
 
- [ ![](registering-applications-to-run-in-background-images/bgmodes.png "バック グラウンド モードを設定")](registering-applications-to-run-in-background-images/bgmodes.png)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "バック グラウンド モードを設定")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 バック グラウンドの場所の更新プログラムのアプリケーションを登録する手順については、次を参照してください。、[背景場所チュートリアル](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)です。
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 02/27/2018
 
 別のプロパティで設定できる*Info.plist*は、*アプリケーションがバック グラウンドで実行されない*、または`UIApplicationExitsOnSuspend`プロパティ。
 
- [ ![](registering-applications-to-run-in-background-images/plist.png "実行しているバック グラウンドの無効化")](registering-applications-to-run-in-background-images/plist.png)
+ [![](registering-applications-to-run-in-background-images/plist.png "実行しているバック グラウンドの無効化")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 この、正確な背景アプリの更新設定を iOS 7 以降では、開発者側でのみ変更できます点を除いてオフに設定と同じ効果があり ios 4 および上で利用できます。 アプリケーションでは、バック グラウンドでの入力の直後後が中断され、処理を実行することはできません。
 

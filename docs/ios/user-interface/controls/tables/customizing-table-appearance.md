@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 12314e6ec5951a5a094ed8b0a5536b450853c5fb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a3f8ca8f4502b9585536815aef81f66cacd214f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-tables-appearance"></a>テーブルの外観のカスタマイズ
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 02/27/2018
 
 これらのスクリーン ショットは、各スタイルの表示方法を示しています。
 
- [ ![](customizing-table-appearance-images/image7.png "これらのスクリーン ショットは、各スタイルの外観を表示します。")](customizing-table-appearance-images/image7.png)
+ [![](customizing-table-appearance-images/image7.png "これらのスクリーン ショットは、各スタイルの外観を表示します。")](customizing-table-appearance-images/image7.png#lightbox)
 
 サンプル**CellDefaultTable**これらの画面を生成するためにコードが含まれています。 セルのスタイルを設定、`UITableViewCell`コンス トラクターには、次のようにします。
 
@@ -60,7 +60,7 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 
 これは、どのように見えます。
 
- [ ![](customizing-table-appearance-images/image8.png "サンプルのアクセサリ")](customizing-table-appearance-images/image8.png)
+ [![](customizing-table-appearance-images/image8.png "サンプルのアクセサリ")](customizing-table-appearance-images/image8.png#lightbox)
 
 設定できるアクセサリのいずれかを表示する、`Accessory`プロパティに、`GetCell`メソッド。
 
@@ -119,7 +119,7 @@ TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 
 CellCustomTable 例では、実装、`UITableViewCell`のカスタム レイアウトを定義するサブクラス`UILabel`s と`UIImage`のフォントと色。 結果として得られるセルは、次のようになります。
 
- [ ![](customizing-table-appearance-images/image9.png "セルのカスタム レイアウト")](customizing-table-appearance-images/image9.png)
+ [![](customizing-table-appearance-images/image9.png "セルのカスタム レイアウト")](customizing-table-appearance-images/image9.png#lightbox)
 
 カスタム セル クラスは、のみの 3 つの方法で構成されます。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 28c8ecc77aaeb00eff6f343ad41fed1c653362db
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 78832c396f8968769f3134728cd435555aecbc8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-battery-status"></a>バッテリの状態を確認しています
 
@@ -70,7 +70,7 @@ namespace DependencyServiceSample
 共有コードでは、このインターフェイスに対するコーディングすると、各プラットフォームで電源管理 Api にアクセスする Xamarin.Forms アプリが許可されます。
 
 > [!NOTE]
-> **注**: インターフェイスを実装するクラスを使用するパラメーターなしのコンス トラクターを持つ必要があります、`DependencyService`です。 コンス トラクターは、インターフェイスによって定義することはできません。
+> インターフェイスを実装するクラスを使用するパラメーターなしのコンス トラクターを持つ必要があります、`DependencyService`です。 コンス トラクターは、インターフェイスによって定義することはできません。
 
 <a name="iOS_Implementation" />
 

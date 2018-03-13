@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: c1dd3495b0d7f76197126094cfd10e50d0ca760d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 415c3a5e9446c5db545b62272f3b90a9ac73e401
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-fragment"></a>フラグメントの作成
 
@@ -28,7 +28,7 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 
 > [!NOTE]
-> **注:**フラグメント サブ クラス、パブリックの既定値なし引数コンス トラクターがあります。
+> フラグメントのサブクラスでは、コンス トラクターの引数がない、パブリックの既定値が必要です。
 
 ## <a name="adding-a-fragment-to-an-activity"></a>アクティビティにフラグメントを追加します。
 
@@ -108,7 +108,7 @@ OR
 フラグメントは、多少の独立したが、によっても影響を受ける、独自のライフ サイクルがある、[ホスティングのアクティビティのライフ サイクル](~/android/app-fundamentals/activity-lifecycle/index.md)です。
 たとえば、アクティビティが一時停止、その関連付けられているフラグメントのすべてが一時停止します。 次の図では、フラグメントのライフ サイクルについて説明します。
 
-[![フラグメントのライフ サイクルを示すフロー ダイアグラム](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png)
+[![フラグメントのライフ サイクルを示すフロー ダイアグラム](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 
 ### <a name="fragment-creation-lifecycle-methods"></a>フラグメントの作成のライフ サイクル メソッド
@@ -238,4 +238,4 @@ public override void OnCreate(Bundle savedState)
 
 このメニューの外観は、次の画面を示しています。
 
-[![メニュー項目を表示する個人用トリップ アプリのサンプルのスクリーン ショット](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png)
+[![メニュー項目を表示する個人用トリップ アプリのサンプルのスクリーン ショット](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

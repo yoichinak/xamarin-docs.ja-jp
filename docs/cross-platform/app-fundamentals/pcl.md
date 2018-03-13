@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e3701960f246a8f627d991edf244656b5fd8958e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>ポータブル クラス ライブラリの概要
 
@@ -29,10 +29,6 @@ _この記事では、ポータブル クラス ライブラリ (PCL) プロジ�
 
 
 このページを作成する方法を説明する、 **PCL**プラットフォーム固有の複数のプロジェクトで参照できます、特定のプロファイルを対象とするプロジェクトです。
-
-## <a name="requirements"></a>必要条件
-
-ポータブル ライブラリ プロジェクトは自動的に有効になっている Visual Studio で for Mac macOS などの組み込み Visual Studio 2013 以降。
 
 
 ## <a name="what-is-a-portable-class-library"></a>ポータブル クラス ライブラリとは何ですか。
@@ -132,7 +128,7 @@ Y </td>
   </tbody>
 </table>
 
-Xamarin の列が反映されてを作成するすべてのライブラリの機能の可用性は、選択したその他のプラットフォームによってのみ制限されます、Xamarin.iOS および Xamarin.Android を Visual Studio 2013 以降に出荷されたすべてのプロファイルをサポートしています。サポートしてください。
+Xamarin の列には、Xamarin.iOS および Xamarin.Android は、Visual Studio に付属のすべてのプロファイルをサポートしているいて作成するすべてのライブラリの機能の可用性をサポートするその他のプラットフォームによってのみ制限されますが反映されます。
 
 これには、組み合わせのプロファイルが含まれます。
 
@@ -170,7 +166,7 @@ Xamarin の列が反映されてを作成するすべてのライブラリの機
 
 
 
-[![](pcl-images/image1.png "このダイアグラムは、ポータブル クラス ライブラリを使用して、コードを共有するが、依存関係の挿入を使用してもプラットフォームに依存する機能に渡す、クロス プラットフォーム アプリケーションのアーキテクチャを示しています。")](pcl-images/image1.png)
+[![](pcl-images/image1.png "このダイアグラムは、ポータブル クラス ライブラリを使用して、コードを共有するが、依存関係の挿入を使用してもプラットフォームに依存する機能に渡す、クロス プラットフォーム アプリケーションのアーキテクチャを示しています。")](pcl-images/image1.png#lightbox)
 
 
 
@@ -212,7 +208,7 @@ PCL は、コードを追加する準備ができました。 これは、他の
 
 
 
-[![](pcl-images/image4.png "表示し、このプロジェクトの PCL 設定を変更する、プロジェクトを右クリックし、次に示す画面を表示するオプションを構築全般 を選択")](pcl-images/image4.png)
+[![](pcl-images/image4.png "表示し、このプロジェクトの PCL 設定を変更する、プロジェクトを右クリックし、次に示す画面を表示するオプションを構築全般 を選択")](pcl-images/image4.png#lightbox)
 
 
 
@@ -224,7 +220,7 @@ PCL は、コードを追加する準備ができました。 これは、他の
 
 
 
-[![](pcl-images/image5.png "現在のプロファイルを更新するターゲット フレームワークのオプションのいずれかを自動的に変更する画面も警告が表示されます、互換性のないオプションが選択されている場合")](pcl-images/image5.png)
+[![](pcl-images/image5.png "現在のプロファイルを更新するターゲット フレームワークのオプションのいずれかを自動的に変更する画面も警告が表示されます、互換性のないオプションが選択されている場合")](pcl-images/image5.png#lightbox)
 
 
 
@@ -238,7 +234,7 @@ PCL は、コードを追加する準備ができました。 これは、他の
 
 
 
-[![](pcl-images/image6.png "Profile136 Mac は、実際に存在可能なクラスの約半分表示されることを示しますが、スクロール バーは 14 クラスの使用可能なのみに注意してください。 の Visual Studio で使用される既定のプロファイルを使用する IO")](pcl-images/image6.png)
+[![](pcl-images/image6.png "Profile136 Mac は、実際に存在可能なクラスの約半分表示されることを示しますが、スクロール バーは 14 クラスの使用可能なのみに注意してください。 の Visual Studio で使用される既定のプロファイルを使用する IO")](pcl-images/image6.png#lightbox)
 
 
 
@@ -246,7 +242,7 @@ Xamarin.iOS または Xamarin.Android プロジェクト – で自動完了 Sys
 
 
 
-[![](pcl-images/image7.png "任意の PCL プロファイルではないファイルやディレクトリなどのクラスを使用する利用可能ななど一般的 40 のクラスがあります。")](pcl-images/image7.png)
+[![](pcl-images/image7.png "任意の PCL プロファイルではないファイルやディレクトリなどのクラスを使用する利用可能ななど一般的 40 のクラスがあります。")](pcl-images/image7.png#lightbox)
 
 
 
@@ -261,7 +257,7 @@ PCL プロジェクトを作成すると、通常の参照を追加する同じ�
 
 
 
-[![](pcl-images/image8.png "Mac 用 Visual Studio で参照ノードを右クリックし、参照の編集をクリックしてように、[プロジェクト] タブに切り替えます")](pcl-images/image8.png)
+[![](pcl-images/image8.png "Mac 用 Visual Studio で参照ノードを右クリックし、参照の編集をクリックしてように、[プロジェクト] タブに切り替えます")](pcl-images/image8.png#lightbox)
 
 
 
@@ -269,7 +265,7 @@ PCL プロジェクトを作成すると、通常の参照を追加する同じ�
 
 
 
-[![](pcl-images/image9.png "TaskyPortable サンプル アプリのソリューション パッド")](pcl-images/image9.png)
+[![](pcl-images/image9.png "TaskyPortable サンプル アプリのソリューション パッド")](pcl-images/image9.png#lightbox)
 
 
 
@@ -325,7 +321,7 @@ PCL 設定を表示し、プロジェクトを右クリックして を選択し
 
 
 
-[![](pcl-images/image13.png "PCL 設定を表示およびこのスクリーン ショットに示すようにプロジェクトを右クリックして、プロパティのライブラリ を選択して変更できます。")](pcl-images/image13.png)
+[![](pcl-images/image13.png "PCL 設定を表示およびこのスクリーン ショットに示すようにプロジェクトを右クリックして、プロパティのライブラリ を選択して変更できます。")](pcl-images/image13.png#lightbox)
 
 
 
@@ -340,7 +336,7 @@ PCL 設定を表示し、プロジェクトを右クリックして を選択し
 
 
 
-[![](pcl-images/image14.png "既定のプロファイル Profile136 を使用する IO")](pcl-images/image14.png)
+[![](pcl-images/image14.png "既定のプロファイル Profile136 を使用する IO")](pcl-images/image14.png#lightbox)
 
 
 
@@ -348,7 +344,7 @@ PCL 設定を表示し、プロジェクトを右クリックして を選択し
 
 
 
-[![](pcl-images/image15.png "通常のプロジェクトのオート コンプリート")](pcl-images/image15.png)
+[![](pcl-images/image15.png "通常のプロジェクトのオート コンプリート")](pcl-images/image15.png#lightbox)
 
 
 
@@ -363,7 +359,7 @@ PCL プロジェクトを作成すると、通常の参照を追加する同じ�
 
 
 
-[![](pcl-images/image16.png "プロジェクトの タブを表示")](pcl-images/image16.png)
+[![](pcl-images/image16.png "プロジェクトの タブを表示")](pcl-images/image16.png#lightbox)
 
 
 
@@ -371,7 +367,7 @@ PCL プロジェクトを作成すると、通常の参照を追加する同じ�
 
 
 
-[![](pcl-images/image17.png "TaskyPortable サンプル アプリのソリューション ペイン")](pcl-images/image17.png)
+[![](pcl-images/image17.png "TaskyPortable サンプル アプリのソリューション ペイン")](pcl-images/image17.png#lightbox)
 
 
 
@@ -393,7 +389,7 @@ IOS、Android、Windows Phone で実行されている結果として得られ�
 
 
 
-[![](pcl-images/image18.png "ここでは、iOS、Android、Windows Phone で実行されている結果として得られるアプリの一部のスクリーン ショットです。")](pcl-images/image18.png)
+[![](pcl-images/image18.png "ここでは、iOS、Android、Windows Phone で実行されている結果として得られるアプリの一部のスクリーン ショットです。")](pcl-images/image18.png#lightbox)
 
 
 
@@ -406,7 +402,7 @@ IOS、Android、Windows Phone で実行されている結果として得られ�
 
 
 
-[![](pcl-images/image19.png "ソリューションの構造は、次に示す Visual Studio で Mac と Visual Studio のそれぞれ")](pcl-images/image19.png)
+[![](pcl-images/image19.png "ソリューションの構造は、次に示す Visual Studio で Mac と Visual Studio のそれぞれ")](pcl-images/image19.png#lightbox)
 
 
 

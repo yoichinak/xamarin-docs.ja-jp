@@ -3,16 +3,16 @@ title: "ユニバーサル Windows プラットフォーム (UWP) アプリを�
 description: "この記事は、Xamarin.Forms 作成されたソリューションを Visual studio for mac を UWP アプリ プロジェクトを追加する方法を説明します"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: ADF99B78-F1BC-48DF-9128-01B93C4411C1
+ms.assetid: 34AAA045-64B8-4FDE-BB49-3FF0B4FFA17C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: a3746165db83b5b8adba9adb862f9ea09f7069b9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 36865dac6bd2ad13b9d3e286ab18a035c1edb3d8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリを追加します。
 
@@ -38,7 +38,7 @@ Windows 10 の携帯電話、タブレット、およびデスクトップで実
 
  4 . 新しい UWP プロジェクトがビルドされることを確認してください、**ビルド > Configuration Manager**ウィンドウ (この可能性がありますしない起きた既定)。 ティック、**ビルド**と**展開**ユニバーサル プロジェクトのボックス。
 
-  [ ![](universal-images/configuration-sml.png "構成マネージャー ウィンドウ")](universal-images/configuration.png "構成マネージャー ウィンドウ")
+  [![](universal-images/configuration-sml.png "構成マネージャー ウィンドウ")](universal-images/configuration.png#lightbox "構成マネージャー ウィンドウ")
 
  5 . クリックし、プロジェクトを右クリックして**追加 > 参照**Xamarin.Forms アプリケーション プロジェクト (PCL、.NET Standard、またはプロジェクトの共有) への参照を作成します。
 

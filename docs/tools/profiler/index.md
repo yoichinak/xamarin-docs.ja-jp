@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9c95a1b71f83ee810b775420aab3ceafeeca0379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -212,11 +212,11 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/profiler-mac-sml.png "Mac 用の Visual Studio でのセクションではプロファイラー")](images/profiler-mac.png) 
+[![](images/profiler-mac-sml.png "Mac 用の Visual Studio でのセクションではプロファイラー")](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/profiler-vs.png "Visual Studio でのセクションではプロファイラー")](images/profiler-vs.png)
+[![](images/profiler-vs.png "Visual Studio でのセクションではプロファイラー")](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -234,11 +234,11 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/allocations1.png "割り当てのインストルメント化")](images/allocations1.png) 
+[![](images/allocations1.png "割り当てのインストルメント化")](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/allocations1-vs.png "割り当てのインストルメント化")](images/allocations1-vs.png)
+[![](images/allocations1-vs.png "割り当てのインストルメント化")](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations3.png "割り当て タブ")](images/allocations3.png) 
+  [![](images/allocations3.png "割り当て タブ")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations2-vs.png "割り当て タブ")](images/allocations2-vs.png)
+  [![](images/allocations2-vs.png "割り当て タブ")](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -264,11 +264,11 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations2.png "コール ツリー タブ")](images/allocations2.png) 
+  [![](images/allocations2.png "コール ツリー タブ")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations3-vs.png "コール ツリー タブ")](images/allocations3-vs.png)
+  [![](images/allocations3-vs.png "コール ツリー タブ")](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -276,11 +276,11 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations4.png "スナップショット タブ")](images/allocations4.png) 
+  [![](images/allocations4.png "スナップショット タブ")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations4-vs.png "スナップショット タブ")](images/allocations4-vs.png)
+  [![](images/allocations4-vs.png "スナップショット タブ")](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -292,15 +292,15 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![時間のプロファイラーのインストルメント化](images/time1.png)](images/time1.png) 
+[![時間のプロファイラーのインストルメント化](images/time1.png)](images/time1.png#lightbox) 
 
-[![プロファイラーのインストルメント化 – のサンプル一覧を時刻します。](images/time3.png)](images/time3.png) 
+[![プロファイラーのインストルメント化 – のサンプル一覧を時刻します。](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![時間のプロファイラーのインストルメント化](images/time1-vs.png)](images/time1-vs.png) 
+[![時間のプロファイラーのインストルメント化](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![プロファイラーのインストルメント化 – のサンプル一覧を時刻します。](images/time3-vs.png)](images/time3-vs.png) 
+[![プロファイラーのインストルメント化 – のサンプル一覧を時刻します。](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -309,11 +309,11 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/time2.png "時間プロファイラー インストルメント – コール ツリー")](images/time2.png) 
+  [![](images/time2.png "時間プロファイラー インストルメント – コール ツリー")](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/time2-vs.png "時間プロファイラー インストルメント – コール ツリー")](images/time2-vs.png) 
+  [![](images/time2-vs.png "時間プロファイラー インストルメント – コール ツリー")](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -325,7 +325,7 @@ C# および f# マネージ コードを使用して、非常に一般的でお
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![サイクルのインストルメント化](images/cycles-vs.png)](images/time1-vs.png) 
+[![サイクルのインストルメント化](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
 
 -----
 
@@ -338,11 +338,11 @@ C# および f# マネージ コードを使用して、非常に一般的でお
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![エラー ダイアログのプロファイリング](images/image001.png)](images/image001.png) 
+[![エラー ダイアログのプロファイリング](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/image1vs.png "エラー ダイアログのプロファイリング")](images/image1vs.png) 
+[![](images/image1vs.png "エラー ダイアログのプロファイリング")](images/image1vs.png#lightbox) 
 
 -----
 
@@ -350,7 +350,7 @@ C# および f# マネージ コードを使用して、非常に一般的でお
 選択**更新**を続行します。
 
 <!---
-##Profiling Android Applications
+## Profiling Android Applications
 
 
 Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
@@ -358,7 +358,7 @@ Due to the recent inclusion of the profiling libraries into any new Android proj
 You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
 
 
-##Profiling iOS Applications
+## Profiling iOS Applications
 
 ### Profiling tvOS
 

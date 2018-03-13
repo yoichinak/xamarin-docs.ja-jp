@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 707ba5874c939fbd25f4e25a7cefd3dc5fc75131
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>リモート iOS シミュレーター (Windows 用)
 
 _Windows 上の Visual Studio 内に完全にテストおよびデバッグの iOS アプリ_
 
-[ ![](ios-simulator-images/hero-sml.png "iOS シミュレーター Windows で実行されています。")](ios-simulator-images/hero.png)
+[![](ios-simulator-images/hero-sml.png "iOS シミュレーター Windows で実行されています。")](ios-simulator-images/hero.png#lightbox)
 
 ## <a name="download-and-install"></a>ダウンロードとインストール
 
@@ -36,7 +36,7 @@ _Windows 上の Visual Studio 内に完全にテストおよびデバッグの i
 
 リモート iOS シミュレーターを無効にすることができます**ツール > オプション > Xamarin > iOS 設定**のボックスをオフにして**リモート Windows Simulator**ここで示すようにします。
 
-[ ![](ios-simulator-images/options-sml.png "シミュレーターを使用する チェック ボックス")](ios-simulator-images/options.png)
+[![](ios-simulator-images/options-sml.png "シミュレーターを使用する チェック ボックス")](ios-simulator-images/options.png#lightbox)
 
 接続されている Mac コンピューターでは、iOS シミュレーターを開きです。 リモート iOS シミュレーターをオンにするには、このオプションを確認します。
 
@@ -54,14 +54,14 @@ _Windows 上の Visual Studio 内に完全にテストおよびデバッグの i
 - [**設定**](#settings) – キーボードと場所を構成します。
  - その他の[**オプション**](#options) – のさまざまなシミュレーターのオプションが使用できる、回転のシェイクなど他の状態は、シミュレーターを起動します。 いくつかのオプションは、隠されている場合は、ツールバーで、またはウィンドウを右クリックして表示される省略記号アイコンからアクセスできます。
 
-    [ ![](ios-simulator-images/maps-app-sml.png "iOS シミュレーターの使用例をマップします。")](ios-simulator-images/maps-app.png)
+    [![](ios-simulator-images/maps-app-sml.png "iOS シミュレーターの使用例をマップします。")](ios-simulator-images/maps-app.png#lightbox)
 
 
 ### <a name="settings"></a>設定
 
 「歯車」アイコンを開く、**設定**ウィンドウ。
 
-[ ![](ios-simulator-images/settings-sml.png "iOS シミュレーターの設定")](ios-simulator-images/settings.png)
+[![](ios-simulator-images/settings-sml.png "iOS シミュレーターの設定")](ios-simulator-images/settings.png#lightbox)
 
 これにより、シミュレーターでのハードウェア キーボードを有効化し、のどの場所が、デバイス (静的な場所、または他の移動の場所のオプションを含む) に報告を選択することができます。
 
@@ -71,7 +71,7 @@ _Windows 上の Visual Studio 内に完全にテストおよびデバッグの i
 
 シェイク ジェスチャをトリガーして、シミュレーターの再起動の回転など、シミュレーター内で使用可能なすべてのオプションを表示するシミュレーター ウィンドウ内を右クリックします。
 
-[ ![](ios-simulator-images/more-sml.png "iOS シミュレーターの追加の設定")](ios-simulator-images/more.png)
+[![](ios-simulator-images/more-sml.png "iOS シミュレーターの追加の設定")](ios-simulator-images/more.png#lightbox)
 
 ### <a name="touchscreen-support"></a>タッチ スクリーンのサポート
 

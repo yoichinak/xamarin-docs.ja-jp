@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0f270111ad4e10f035a3cb695564d789f40097fd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストを伴う作業
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -24,7 +23,6 @@ ms.lasthandoff: 02/27/2018
 **AndroidManifest.xml**ビルド プロセスと内の XML の一部として生成される**Properties/AndroidManifest.xml**カスタム属性から生成される XML のトピックとマージされます。 結合の結果として得られる**AndroidManifest.xml**に存在する、 **obj**サブディレクトリ; に配置されているなど、 **obj/Debug/android/AndroidManifest.xml**デバッグ ビルドの. マージ プロセスは単純な: コード内でカスタム属性を使用して、XML 要素を生成することと*挿入*にそれらの要素**AndroidManifest.xml**です。 
 
 
-<a name="The_Basics" />
 
 ## <a name="the-basics"></a>基本事項
 
@@ -60,7 +58,6 @@ namespace Demo
 `[Activity]`属性も何も起こりません`abstract`型です。`abstract`型は無視されます。
 
 
-<a name="Activity_Name" />
 
 ### <a name="activity-name"></a>活動名
 
@@ -83,7 +80,6 @@ public class MyActivity : Activity
 
 *注*: 使用する必要があります、`Name`旧バージョンと互換性のため、名前を変更するように対してのみプロパティは、実行時に型の検索速度が低下します。 小文字に変換した名前空間に基づく活動の既定値の型名とクラス名を参照してください。 必要とするレガシ コードがあれば[Android 呼び出し可能ラッパーの名前付け](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming)ヒントについては、互換性を維持することにします。 
 
-<a name="Activity_Title_Bar" />
 
 ### <a name="activity-title-bar"></a>活動のタイトル バー
 
@@ -104,7 +100,6 @@ public class MyActivity : Activity
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
 
-<a name="Launchable_from_Application_Chooser" />
 
 ### <a name="launchable-from-application-chooser"></a>アプリケーションの選択 ウィンドウから起動可能です
 
@@ -130,7 +125,6 @@ public class MyActivity : Activity
 ```
 
 
-<a name="Activity_Icon" />
 
 ### <a name="activity-icon"></a>[アクティビティ] アイコン
 
@@ -155,7 +149,6 @@ public class MyActivity : Activity
 </activity>
 ```
 
-<a name="Permissions" />
 
 ### <a name="permissions"></a>アクセス許可
 
@@ -178,11 +171,9 @@ Android マニフェストへのアクセス許可を追加すると (」の説�
 
 
 
-<a name="Advanced_Features" />
 
 ## <a name="advanced-features"></a>高度な機能
 
-<a name="Intent_Actions_and_Features" />
 
 ### <a name="intent-actions-and-features"></a>インテントの動作と機能
 
@@ -214,7 +205,6 @@ public class MyActivity : Activity
 </activity>
 ```
 
-<a name="Application_Element" />
 
 ### <a name="application-element"></a>Application 要素
 
@@ -243,7 +233,6 @@ Android マニフェストでは、アプリケーション全体のプロパテ
 構成できる多くのアプリケーション全体属性がある、`<application>`要素ですこれらの設定に関する詳細については、次を参照してください。、[パブリック プロパティ](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties)のセクション[ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
-<a name="List_of_Custom_Attributes" />
 
 ## <a name="list-of-custom-attributes"></a>カスタム属性の一覧
 

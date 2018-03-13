@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7366a4ce5cbb6a3026a7445a03f03b45d89d9210
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e5875249d7a84412b1c30580c3a8038cb53892f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="purchasing-consumable-products"></a>利用できる製品の購入
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 このドキュメントに付属するサンプル コードは、組み込みの製品を示します: 'ロックを解除する ' 機能は、支払いの後のコードに密に結合するため、製品 Id は、アプリケーションにハードコーディングします。 購入プロセスは、次のように視覚化できます。   
    
-[ ![購買プロセスの視覚化](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png)     
+[![購買プロセスの視覚化](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  基本的なワークフローとは。   
    
@@ -49,7 +49,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![各注文書残数のユーザーに複数のサル クレジットを追加します。](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png)   
+ [![各注文書残数のユーザーに複数のサル クレジットを追加します。](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
    
    
    
@@ -57,7 +57,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![StoreKit と、アプリ ストアのカスタムのクラス間の相互作用](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png)
+ [![StoreKit と、アプリ ストアのカスタムのクラス間の相互作用](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 &nbsp;
 
@@ -214,7 +214,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 ユーザーが複数の数量を購入すると StoreKit 確認のアラートが反映されます数量、単価、および合計金額が課金されます、次のスクリーン ショットに示すように。
 
-[ ![購入のことを確認します。](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png)
+[![購入のことを確認します。](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>処理ネットワークの停止
 
@@ -328,7 +328,7 @@ public bool CanMakePayments()
    
    
    
- [ ![IOS の制限機能を使用して、アプリ内購入を無効にします。](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png)   
+ [![IOS の制限機能を使用して、アプリ内購入を無効にします。](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
    
    
    
@@ -352,7 +352,7 @@ if (iap.CanMakePayments()) {
    
    
    
- [ ![機能は、アプリ内購入には、ボタンが無効になっている注文書が制限されているときに、アプリケーションが次のよう](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png)   
+ [![機能は、アプリ内購入には、ボタンが無効になっている注文書が制限されているときに、アプリケーションが次のよう](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
    
    
    
@@ -361,7 +361,7 @@ if (iap.CanMakePayments()) {
    
    
    
- [ ![アプリ内購入が許可されていません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png)   
+ [![アプリ内購入が許可されていません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
    
    
    

@@ -4,14 +4,15 @@ description: "汎用性の変換行列と SkiaSharp 変換をさらに深く"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 85402768990869a2121cdea5ab7d232d80d64ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9d5e65abe675ded48e9239f2cd10ceed4a7c3a52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="matrix-transforms"></a>行列変換
 
@@ -401,7 +402,7 @@ public class PathTransformPage : ContentPage
 
 これは、キャンバスの左上隅に表示されます。
 
-[![](matrix-images/pathtransform-small.png "パスの変換 ページのスクリーン ショットをトリプル")](matrix-images/pathtransform-large.png "トリプル ページのスクリーン ショット、パスの変換")
+[![](matrix-images/pathtransform-small.png "パスの変換 ページのスクリーン ショットをトリプル")](matrix-images/pathtransform-large.png#lightbox "トリプル ページのスクリーン ショット、パスの変換")
 
 このプログラムのコンス トラクターには、次の呼び出しを使用してパスに、マトリックスが適用されます。
 
@@ -588,7 +589,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 次の iOS の画面は、ページが最初に読み込まれるときに、他の 2 つの画面にいくつかの操作後にこれを表示中に、ビットマップを示しています。
 
-[![](matrix-images/showaffinematrix-small.png "アフィン変換行列の表示 ページのスクリーン ショットをトリプル")](matrix-images/showaffinematrix-large.png "アフィン変換行列の表示 ページのトリプル スクリーン ショット")
+[![](matrix-images/showaffinematrix-small.png "アフィン変換行列の表示 ページのスクリーン ショットをトリプル")](matrix-images/showaffinematrix-large.png#lightbox "アフィン変換行列の表示 ページのトリプル スクリーン ショット")
 
 これは、タッチ ポイントがフィルターの種類のみであると、ビットマップの角をドラッグするかのように見えます。 タッチ ポイントから計算されたマトリックスは、角がタッチ ポイントと一致するように、ビットマップを変換します。
 

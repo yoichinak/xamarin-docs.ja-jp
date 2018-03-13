@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9dc50aeec88131a1ce49c7e3357382c019774450
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7f42d6e36638bf5c7e98b9363295e37997ee067
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-nunit-264-using-nuget"></a>NuGet を使用する NUnit 2.6.4 のインストール
 
@@ -43,16 +43,16 @@ Visual Studio for Mac または Xamarin.UITest を使用してテストを作成
 
 1. **パッケージ マネージャーを開く** - **[パッケージ]** を右クリックし、ポップアップ メニューから **[パッケージの追加]** を選択します。
 
-    [![](installing-nunit-using-nuget-images/add-packages-xs.png "[パッケージ] を右クリックし、ポップアップ メニューから [パッケージの追加] を選択します。")](installing-nunit-using-nuget-images/add-packages-xs.png)
+    [![](installing-nunit-using-nuget-images/add-packages-xs.png "[パッケージ] を右クリックし、ポップアップ メニューから [パッケージの追加] を選択します。")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
     
 1. **`NUnit version:2.6.4` を検索する** - Visual Studio for Mac では、(必要に応じて) NUnit 3.0 をアンインストールしてから NUnit 2.6.4 をダウンロードしてインストールします。 **[パッケージの追加]** ダイアログで、右上隅にある**検索**フィールドに `nunit version:2.6.4` というテキストを入力します。 検索結果から **NUnit** を選択して、**[パッケージの追加]** ボタンをクリックします。
 
-    [![](installing-nunit-using-nuget-images/nunit-search-xs.png "検索結果から NUnit を選択して、[パッケージの追加] ボタンをクリックします。")](installing-nunit-using-nuget-images/nunit-search-xs.png)
+    [![](installing-nunit-using-nuget-images/nunit-search-xs.png "検索結果から NUnit を選択して、[パッケージの追加] ボタンをクリックします。")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
 
 
 Solution Pad で NUnit パッケージのバージョン番号を調べ、NUnit 2.6.4 がインストールされていることを確認できます。
 
-[![](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png "Solution Pad で NUnit パッケージのバージョン番号を調べます。")](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png)
+[![](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png "Solution Pad で NUnit パッケージのバージョン番号を調べます。")](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
@@ -68,7 +68,7 @@ Solution Pad で NUnit パッケージのバージョン番号を調べ、NUnit 
 
 1. **NuGet パッケージ マネージャー コンソールを起動する** - **[ツール]、[NuGet パッケージ マネージャー]、[パッケージ マネージャー コンソール]** の順に選択します。
 
-    [![](installing-nunit-using-nuget-images/package-manager-console.png "NuGet パッケージ マネージャー コンソールを起動する - [ツール]、[NuGet パッケージ マネージャー]、[パッケージ マネージャー コンソール] の順に選択します。")](installing-nunit-using-nuget-images/package-manager-console.png)
+    [![](installing-nunit-using-nuget-images/package-manager-console.png "NuGet パッケージ マネージャー コンソールを起動する - [ツール]、[NuGet パッケージ マネージャー]、[パッケージ マネージャー コンソール] の順に選択します。")](installing-nunit-using-nuget-images/package-manager-console.png#lightbox)
     
 1. **NUnit のバージョンを確認する** - 必要に応じて、`Get-Package -Project <UITEST PROJECT>` というコマンドを実行してインストールされている NUnit のバージョンを確認することができます。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: 66b956eddc48699c6fd61e9cb52a7fbc3fa70a51
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9fac4a233cecd9332602047bc83830d145b5fb08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-custom-contentprovider"></a>カスタム ContentProvider を作成します。
 
@@ -28,7 +28,6 @@ _前のセクションでは、組み込み ContentProvider 実装からのデ�
 
 Android 用の Mono でのコンテンツ プロバイダー クラスがあります、 `[ContentProvider]` 、Uri (Uri) を指定する属性に追加する必要がありますを**AndroidManifest.xml**です。
 
-<a name="Mime_Type" />
 
 ### <a name="mime-type"></a>Mime の種類
 
@@ -40,7 +39,6 @@ MIME の種類の一般的な形式は、2 つの部分で構成されます。 
 
 MIME の種類の 2 番目の部分は、アプリケーションに固有でありと逆引き DNS 標準を使用する必要があります、`vnd.`プレフィックス。 使用するサンプル コード`vnd.com.xamarin.sample.Vegetables`です。
 
-<a name="Data_Model_Metadata" />
 
 ### <a name="data-model-metadata"></a>データ モデルのメタデータ
 
@@ -50,7 +48,6 @@ MIME の種類の 2 番目の部分は、アプリケーションに固有であ
 
 前の例で、`android.provider.ContactsContract`クラスは、連絡先データのメタデータを公開します。 カスタムの`ContentProvider`クラス自体の定数でのみ公開されます。
 
-<a name="Implementation" />
 
 ## <a name="implementation"></a>実装
 
@@ -64,7 +61,6 @@ MIME の種類の 2 番目の部分は、アプリケーションに固有であ
 
 既に説明したよう`ContentProviders`が定義されている以外のアプリケーションから使用できます。 この例では、データが、同じアプリケーションで使用されたが、他のアプリケーションもアクセスできます (これは通常、定数値として公開) スキーマについては、Uri が知っている場合に限り注意してください。
 
-<a name="Create_a_database" />
 
 ## <a name="create-a-database"></a>データベースを作成します。
 
@@ -98,13 +94,11 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 データベースの実装自体には、特別な配慮を公開する必要はありません、 `ContentProvider`、ただしをバインドする場合、`ContentProvider's`にデータを`ListView`という名前の一意の整数列を制御し、`_id`の一部にする必要があります、結果セットです。 参照してください、[の Listview およびアダプター](~/android/user-interface/layouts/list-view/index.md)使用に関する詳細については、ドキュメント、`ListView`コントロール。
 
-<a name="Create_the_ContentProvider" />
 
 ## <a name="create-the-contentprovider"></a>ContentProvider を作成します。
 
 このセクションの残りの部分では、手順を説明する方法  **SimpleContentProvider/VegetableProvider.cs**クラスの例でビルドされました。
 
-<a name="Initialize_the_Database" />
 
 ### <a name="initialize-the-database"></a>データベースを初期化します。
 
@@ -124,7 +118,6 @@ public class VegetableProvider : ContentProvider
 
 コードの残りの部分は、データが検出され、クエリを実行できるようにする実際のコンテンツ プロバイダーの実装を形成します。
 
-<a name="Add_Metadata_for_Consumers" />
 
 
 ## <a name="add-metadata-for-consumers"></a>コンシューマーのメタデータを追加します。
@@ -165,7 +158,6 @@ public class VegetableProvider : ContentProvider
 }
 ```
 
-<a name="Implement_the_URI_Parsing_Helper" />
 
 ## <a name="implement-the-uri-parsing-helper"></a>ヘルパーを解析する URI を実装します。
 
@@ -195,7 +187,6 @@ static UriMatcher BuildUriMatcher()
 
 このコードはすべてのプライベート、`ContentProvider`クラスです。 参照してください[Google の UriMatcher ドキュメント](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/)についてさらにします。
 
-<a name="Implement_the_QueryMethod" />
 
 ## <a name="implement-the-querymethod"></a>実装、QueryMethod
 
@@ -241,7 +232,6 @@ public override String GetType(Android.Net.Uri uri)
 }
 ```
 
-<a name="Implement_the_Other_Overrides" />
 
 ## <a name="implement-the-other-overrides"></a>その他のオーバーライドを実装します。
 
@@ -264,13 +254,11 @@ public override int Update(Android.Net.Uri uri, ContentValues values, string sel
 
 基本的なを完了する`ContentProvider`実装します。 公開データが使用できるアプリケーションをインストールすると、アプリケーションの内部は、参照する Uri を知っているその他のアプリケーションにも両方です。
 
-<a name="Access_the_ContentProvider" />
 
 ## <a name="access-the-contentprovider"></a>アクセス、ContentProvider
 
 1 回、`VegetableProvider`が実装されるにアクセスするときはこのドキュメントの先頭のアドレス帳プロバイダーと同じ方法: 指定した Uri を使用してカーソルを取得し、アダプターを使用してデータにアクセスします。
 
-<a name="Bind_a_ListView_to_a_ContentProvider" />
 
 ## <a name="bind-a-listview-to-a-contentprovider"></a>ListView を ContentProvider にバインドします。
 
@@ -296,10 +284,9 @@ listView.Adapter = adapter;
 
 次のような結果として得られるアプリケーションが表示。
 
-[![野菜、くだもの、花バッド、Legumes、電球、Tubers を一覧表示するアプリのスクリーン ショット](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png)
+[![野菜、くだもの、花バッド、Legumes、電球、Tubers を一覧表示するアプリのスクリーン ショット](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
 
 
-<a name="Retrieve_a_Single_Item_from_a_ContentProvider" />
 
 ## <a name="retrieve-a-single-item-from-a-contentprovider"></a>ContentProvider から 1 つの項目を取得します。
 

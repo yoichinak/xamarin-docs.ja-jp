@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f02c5cfd75fd9d9cd97d28ca276b32808f7a45ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-basics"></a>パスの基礎
 
@@ -99,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 最初の輪郭への呼び出しから成る[ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) X と Y 座標を使用してではなく、`SKPoint`値の 3 つの呼び出し後に[ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/)の 3 つの辺を描画する、三角形です。 2 番目の輪郭への 2 つの呼び出しがある`LineTo`線への呼び出しを完了するが、 [ `Close`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/)輪郭を終了します。 違いは重要では。
 
-[![](paths-images/twotrianglecontours-small.png "2 つの三角形の輪郭のページのスクリーン ショットをトリプル")](paths-images/twotrianglecontours-large.png "2 つの三角形輪郭ページのトリプル スクリーン ショット")
+[![](paths-images/twotrianglecontours-small.png "2 つの三角形の輪郭のページのスクリーン ショットをトリプル")](paths-images/twotrianglecontours-large.png#lightbox "2 つの三角形輪郭ページのトリプル スクリーン ショット")
 
 ご覧のように、最初の輪郭明らかに一連の 3 つの接続された線は先頭と末尾にアクセスできなかった。 上部にある 2 つの行が重複します。 2 番目の輪郭が明らかに閉じられ、以下のいずれかで完了しました`LineTo`ためにを呼び出し、`Close`メソッドが自動的に輪郭を閉じるには最後の行を追加します。
 
@@ -189,7 +189,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 3 つのプラットフォームで実行されているプログラムを次に示します。
 
-[![](paths-images/strokejoins-small.png "トリプル ページのスクリーン ショット、ストロークの結合")](paths-images/strokejoins-large.png "トリプル ページのスクリーン ショット、ストロークの結合")
+[![](paths-images/strokejoins-small.png "トリプル ページのスクリーン ショット、ストロークの結合")](paths-images/strokejoins-large.png#lightbox "トリプル ページのスクリーン ショット、ストロークの結合")
 
 マイター結合は、行の接続先シャープなポイントで構成されます。 2 つの行は、小さな角度で参加するときにマイター結合がかなり長くなることができます。 極端に長くマイター結合を回避するのには、マイター結合の長さの値によって制限されます、 [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/)プロパティ`SKPaint`です。 この長さを超えるマイター結合が切り取られるベベルにします。
 

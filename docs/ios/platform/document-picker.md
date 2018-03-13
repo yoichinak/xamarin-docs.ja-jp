@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a10dcbbdcd7792cb7c54c883566911264b6d81e6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="document-picker"></a>ドキュメントの選択
 
@@ -54,7 +54,7 @@ ICloud でのドキュメントを参照するとき、には、単一のスタ�
 
 複数の場所から、ファイルを変更することができます、ために、データ損失を防ぐための調整を使用する必要があります。
 
- [ ![](document-picker-images/image1.png "ファイルの調整を使用します。")](document-picker-images/image1.png)
+ [![](document-picker-images/image1.png "ファイルの調整を使用します。")](document-picker-images/image1.png#lightbox)
 
 上の図を見てをみましょう。
 
@@ -193,7 +193,7 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 
 IOS 8 の前に`NSMetadataQuery`などがピックアップするファイルにローカルの変更に遅く: 削除を作成し、名前を変更します。
 
- [ ![](document-picker-images/image2.png "NSMetadataQuery ローカル ファイルの変更の概要")](document-picker-images/image2.png)
+ [![](document-picker-images/image2.png "NSMetadataQuery ローカル ファイルの変更の概要")](document-picker-images/image2.png#lightbox)
 
 上記の図の説明。
 
@@ -208,7 +208,7 @@ IOS 8 の前に`NSMetadataQuery`などがピックアップするファイルに
 
 Ios 8、`NSMetadataQuery`合成と呼ばれる新しい機能を直接使用する方が簡単です。
 
- [ ![](document-picker-images/image3.png "新機能により、NSMetadataQuery に合成が呼び出されます")](document-picker-images/image3.png)
+ [![](document-picker-images/image3.png "新機能により、NSMetadataQuery に合成が呼び出されます")](document-picker-images/image3.png#lightbox)
 
 上の図では、合成を使用します。
 
@@ -824,7 +824,7 @@ IOS 8 の場合は、前に、ドキュメントにアクセスする別のア�
 
 ### <a name="existing-behavior"></a>既存の動作
 
- [ ![](document-picker-images/image31.png "既存の動作の概要")](document-picker-images/image31.png)
+ [![](document-picker-images/image31.png "既存の動作の概要")](document-picker-images/image31.png#lightbox)
 
 IOS 8 の前に外部のドキュメントへのアクセスを見てをみましょう。
 
@@ -839,7 +839,7 @@ IOS 8 の前に外部のドキュメントへのアクセスを見てをみま�
 
 8、iOS では、アプリケーションがアプリケーション コンテナー外のドキュメントを簡単にアクセスできません。
 
- [ ![](document-picker-images/image32.png "アプリのコンテナーの外部でドキュメントを検出します。")](document-picker-images/image32.png)
+ [![](document-picker-images/image32.png "アプリのコンテナーの外部でドキュメントを検出します。")](document-picker-images/image32.png#lightbox)
 
 新しい iCloud ドキュメント ピッカーを使用して ( `UIDocumentPickerViewController`)、iOS アプリケーションを直接検出し、アプリケーションのコンテナーの外部でアクセスします。 `UIDocumentPickerViewController`提供アクセス許可を使用して、ユーザーへのアクセスを付与し、それらを編集するためのメカニズムがドキュメントを検出します。
 
@@ -910,16 +910,16 @@ if (presentationPopover!=null) {
 
 1.  ユーザーがアプリケーションを起動し、メインのインターフェイスが表示されます。   
  
-    [ ![](document-picker-images/image33.png "メインのインターフェイスが表示されます。")](document-picker-images/image33.png)
+    [![](document-picker-images/image33.png "メインのインターフェイスが表示されます。")](document-picker-images/image33.png#lightbox)
 1.  ユーザー 2 回のタップ、**アクション**画面の上部にあるボタンを指定して、**ドキュメント プロバイダー**利用可能なプロバイダーの一覧から。   
  
-    [ ![](document-picker-images/image34.png "ドキュメント プロバイダーを使用可能なプロバイダーの一覧から選択します。")](document-picker-images/image34.png)
+    [![](document-picker-images/image34.png "ドキュメント プロバイダーを使用可能なプロバイダーの一覧から選択します。")](document-picker-images/image34.png#lightbox)
 1.  **ドキュメント ピッカー ビュー コント ローラー**表示は、選択した**ドキュメント プロバイダー**:   
  
-    [ ![](document-picker-images/image35.png "ドキュメントの選択ビュー コント ローラーが表示されます。")](document-picker-images/image35.png)
+    [![](document-picker-images/image35.png "ドキュメントの選択ビュー コント ローラーが表示されます。")](document-picker-images/image35.png#lightbox)
 1.  ユーザーはタップ操作で、**ドキュメント フォルダー**内容を表示します。   
  
-    [ ![](document-picker-images/image36.png "ドキュメント フォルダーの内容")](document-picker-images/image36.png)
+    [![](document-picker-images/image36.png "ドキュメント フォルダーの内容")](document-picker-images/image36.png#lightbox)
 1.  ユーザーが選択、**ドキュメント**と**ドキュメント ピッカー**が閉じられます。
 1.  メインのインターフェイスが再表示されます、**ドキュメント**外部のコンテナーとその内容の表示から読み込まれます。
 
@@ -930,7 +930,7 @@ if (presentationPopover!=null) {
 
 IOS 8 の前に、前述のとおり、アプリケーションにアプリケーション コンテナーの一部であったドキュメント アクセスのみでした。 IOS 8 でアプリケーションの外部ソースからドキュメントにアクセスできます。
 
- [ ![](document-picker-images/image37.png "外部のドキュメントの管理の概要")](document-picker-images/image37.png)
+ [![](document-picker-images/image37.png "外部のドキュメントの管理の概要")](document-picker-images/image37.png#lightbox)
 
 ユーザーは、外部ソースからドキュメントを選択するときに、参照ドキュメントは、元のドキュメントを参照するアプリケーションのコンテナーに書き込まれます。
 
@@ -1021,10 +1021,10 @@ if (Bookmark != null) {
 
 1.  **モードを開く**– このモードでユーザーを選択し、外部ドキュメントは、ドキュメントの選択はブックマークを作成、セキュリティ スコープ アプリケーション コンテナーでとき。   
  
-    [ ![](document-picker-images/image37.png "セキュリティのアプリケーションのコンテナー内のブックマークのスコープ")](document-picker-images/image37.png)
+    [![](document-picker-images/image37.png "セキュリティのアプリケーションのコンテナー内のブックマークのスコープ")](document-picker-images/image37.png#lightbox)
 1.  **インポート モード**– このモードでと、ユーザーを選択し、外部ドキュメント、ドキュメントの選択はいないブックマークを作成が、代わりに、一時的な場所にファイルをコピーおよびアプリケーションのドキュメント内のこの位置へのアクセスを提供します。   
  
-    [ ![](document-picker-images/image38.png "ドキュメントの選択は、一時的な場所にファイルをコピーし、ドキュメント内のこの場所にアプリケーションへのアクセスを提供")](document-picker-images/image38.png)   
+    [![](document-picker-images/image38.png "ドキュメントの選択は、一時的な場所にファイルをコピーし、ドキュメント内のこの場所にアプリケーションへのアクセスを提供")](document-picker-images/image38.png#lightbox)   
  何らかの理由で、アプリケーションを終了後一時的な場所が空になり、ファイルを削除します。 アプリケーション ファイルへのアクセスを維持する場合は、コピーを作成し、アプリケーション コンテナーに配置することが必要があります。
 
 
@@ -1069,7 +1069,7 @@ Ios 8、Apple は、エンドユーザーが実際に存在する場合に関係
 
 ドキュメント プロバイダー拡張機能を使用する場合、次の図は、一般的なデータ フローを示しています。
 
- [ ![](document-picker-images/image39.png "この図は、ドキュメント プロバイダー拡張機能を使用する場合に、一般的なデータ フローを示しています")](document-picker-images/image39.png)
+ [![](document-picker-images/image39.png "この図は、ドキュメント プロバイダー拡張機能を使用する場合に、一般的なデータ フローを示しています")](document-picker-images/image39.png#lightbox)
 
 次の処理が行われます。
 
@@ -1095,7 +1095,7 @@ Ios 8、Apple は、エンドユーザーが実際に存在する場合に関係
 
 次の図は、ブックマークおよびドキュメント プロバイダー拡張機能を使用する場合に、データ フローを示しています。
 
- [ ![](document-picker-images/image40.png "この図は、ブックマークおよびドキュメント プロバイダー拡張機能を使用する場合に、データ フローを示しています")](document-picker-images/image40.png)
+ [![](document-picker-images/image40.png "この図は、ブックマークおよびドキュメント プロバイダー拡張機能を使用する場合に、データ フローを示しています")](document-picker-images/image40.png#lightbox)
 
 次の処理が行われます。
 

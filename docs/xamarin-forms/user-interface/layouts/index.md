@@ -5,18 +5,25 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1fe290983bf7b130dee6f1a1878a32dce3efc4c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layouts"></a>レイアウト
 
-Xamarin.Forms では、いくつかのレイアウトと画面上のコンテンツを整理するための機能があります。 各レイアウト コントロールは画面の向きの変更を処理する方法の詳細だけでなく、以下について説明します。
+Xamarin.Forms では、いくつかのレイアウトと画面上のコンテンツを整理するための機能があります。 
+
+> [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
+
+**Xamarin.Forms レイアウトにより、 [Xamarin 大学](https://university.xamarin.com/)**
+
+各レイアウト コントロールは画面の向きの変更を処理する方法の詳細だけでなく、以下について説明します。
 
 * **[StackLayout](stack-layout.md)**  &ndash;直線的に、ビューを配置に使用される、水平方向または垂直方向にします。 StackLayout 内のビューは、左または右のレイアウトの中央に配置できます。
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash;座標の設定によってビューを整列 & 絶対値または比率の単位でサイズを変更するために使用します。 レイヤーのビューだけでなく左、右、または center に固定するには、AbsoluteLayout を使用できます。
@@ -35,7 +42,7 @@ Xamarin.Forms では、いくつかのレイアウトと画面上のコンテン
 
 次の図は、レイアウト コントロールを視覚化します。
 
-[ ![](images/layouts-sml.png "Xamarin.Forms レイアウト")](images/layouts.png "Xamarin.Forms レイアウト")
+[![](images/layouts-sml.png "Xamarin.Forms レイアウト")](images/layouts.png#lightbox "Xamarin.Forms レイアウト")
 
 ## <a name="choosing-the-right-layout"></a>右のレイアウトを選択します。
 
@@ -156,7 +163,7 @@ XAML:
 
 [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/)アラインメントとその親のビューでの展開を定義する構造体を使用することができます。
 
-### <a name="margin-and-paddingmargin-and-paddingmd"></a>[マージンと埋め込み](margin-and-padding.md)
+### <a name="margin-and-paddingmargin-and-paddingmd"></a>[余白とスペース](margin-and-padding.md)
 
 [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)と[ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)要素がユーザー インターフェイスに表示される場合、プロパティがレイアウトの動作を制御します。
 

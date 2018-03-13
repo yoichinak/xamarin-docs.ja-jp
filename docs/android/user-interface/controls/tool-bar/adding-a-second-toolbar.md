@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: b471742ae9fb365d75e8dd3ca0f93f5e55208f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 343694163c79ab4d7e8b78875282e7077db979e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="adding-a-second-toolbar"></a>2 番目のツールバーを追加します。
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要 
 
 `Toolbar`行える置換を超える操作バー&ndash;アクティビティ内で複数回を使用することできます、だということで、画面上のどこにでも配置用にカスタマイズし、画面の部分の幅のみをまたがるするように構成できます。 次の例は、1 秒あたりに作成する方法を示しています。`Toolbar`し、画面の下部に配置します。 これは、`Toolbar`実装**コピー**、**切り取り**、および**貼り付け**メニュー項目。 
 
-<a name="define_second" />
 
 ## <a name="define-the-second-toolbar"></a>2 番目のツールバーを定義します。 
 
@@ -78,10 +76,9 @@ android:background="?android:attr/colorAccent
 
 これにより、下部のツールバーは濃いオレンジ色にします。 ビルドと、アプリを実行して、画面の下部にある空白 2 番目ツールバーが表示されます。 
 
-[![画面の下部にある黄色の 2 番目のツールバーでアプリのスクリーン ショット](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png)
+[![画面の下部にある黄色の 2 番目のツールバーでアプリのスクリーン ショット](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
-<a name="second_menus" />
  
 ## <a name="add-edit-menu-items"></a>編集メニュー項目を追加します。 
 
@@ -100,7 +97,6 @@ android:background="?android:attr/colorAccent
 次のセクションでは、このプロセスの詳細を示す:**切り取り**、**コピー**、および**貼り付け**メニュー項目を下に追加されます`Toolbar`です。 
 
 
-<a name="second_resource" />
 
 ### <a name="define-the-edit-menu-resource"></a>編集メニュー リソースを定義します。
 
@@ -130,7 +126,6 @@ android:background="?android:attr/colorAccent
 この XML を作成、**切り取り**、**コピー**、および**貼り付け**メニュー項目 (に追加されたアイコンを使用して、`mipmap-`フォルダーに[操作バーを置き換える](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
 
-<a name="inflate_menus" />
 
 ### <a name="inflate-the-menus"></a>メニューを展開します。
 
@@ -149,18 +144,17 @@ editToolbar.MenuItemClick += (sender, e) => {
 
 アプリケーションをビルドし、実行します。 アプリの実行時に、次のように、テキストとアイコンの上に追加は表示されます。 
 
-[![下部のツールバーには、切り取り、コピー、および貼り付けのアイコンの図](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png)
+[![下部のツールバーには、切り取り、コピー、および貼り付けのアイコンの図](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
 タップすると、**切り取り**メニュー アイコンにより、次のトーストを表示します。 
 
-[![メニューの切り取り アイコンがタップされたことを示すトーストのスクリーン ショット](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png)
+[![メニューの切り取り アイコンがタップされたことを示すトーストのスクリーン ショット](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
 いずれかのツールバーのメニュー項目をタップすると、結果として得られるトーストが表示されます。 
 
-[![スクリーン ショットのトーストのコピーを保存し、メニュー項目のタップを貼り付けます](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png)
+[![スクリーン ショットのトーストのコピーを保存し、メニュー項目のタップを貼り付けます](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
-<a name="up_button" />
 
 ## <a name="the-up-button"></a>印ボタン 
 
@@ -187,7 +181,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 ユーザーの操作から`MainActivity`に`DetailActivity`、`DetailActivity`が表示されます、**を**ボタン (左矢印) のスクリーン ショットに示すように。
 
-[![ツールバーに上向きボタン左矢印のスクリーン ショットの例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png)
+[![ツールバーに上向きボタン左矢印のスクリーン ショットの例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
 これをタップ**を**ボタンで、アプリに戻るには`MainActivity`します。 アプリではより複雑な階層の複数のレベルで、このボタンをタップする戻ったら、ユーザー、前の画面ではなく、アプリで次に高いレベルにします。 
 

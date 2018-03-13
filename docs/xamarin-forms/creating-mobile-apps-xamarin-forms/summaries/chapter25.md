@@ -3,14 +3,15 @@ title: "第 25 章の概要です。 ページの種類"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: bbe960357d9180df90a4423d6acfdf3f869d1b77
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30642709519fc809d30da9a437728112f56a64d6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章の概要です。 ページの種類
 
@@ -54,11 +55,11 @@ Windows 8.1 および Windows Phone 8.1 のプラットフォームでは、ビ�
 
 XAML ファイルも設定される、 [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/)プロパティ`MasterDetailPage`に`True`です。 これが原因でスタートアップ; に表示されるマスター ページ既定では、[詳細] ページが表示されます。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)ファイルのセットを`IsPresented`に`false`から項目を選択すると、`ListView`がマスター ページ。 詳細ページが表示されます。
 
-[![学校と詳細のスクリーン ショットをトリプル](images/ch25fg09-small.png "詳細ページ、MasterDetailPage から")](images/ch25fg09-large.png "MasterDetailPage から詳細ページ")
+[![学校と詳細のスクリーン ショットをトリプル](images/ch25fg09-small.png "詳細ページ、MasterDetailPage から")](images/ch25fg09-large.png#lightbox "MasterDetailPage から詳細ページ")
 
 ### <a name="your-own-user-interface"></a>独自のユーザー インターフェイス
 
-Xamarin.Forms では、マスター/詳細ビューを切り替えるためのユーザー インターフェイスを提供しますが、指定できます独自です。 これを行うには。
+Xamarin.Forms では、マスター/詳細ビューを切り替えるためのユーザー インターフェイスを提供しますが、指定できます独自です。 次の手順に従います。
 
 - 設定、 [ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/)プロパティを`false`スワイプを無効にするには
 - 上書き、 [ `ShouldShowToolbarButton` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton()/)メソッドと戻り値`false`Windows 8.1 および Windows Phone 8.1 のツール バー ボタンを非表示にします。
@@ -98,7 +99,7 @@ Xamarin.Forms では、マスター/詳細ビューを切り替えるための�
 
 表示されるページごとに、 `TabbedPage`、 `Title`  タブで、テキストを指定するプロパティは必要であり、Apple ストアは、アイコンが同様に、使用することが必要ですので、`Icon`プロパティが iOS の設定。
 
-[![個別のタブ付きの色のトリプル スクリーン ショット](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png "TabbedPage")
+[![個別のタブ付きの色のトリプル スクリーン ショット](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
 
 [ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes)サンプルでは、すべての受講者を一覧するホーム ページです。 受講者をタップすると、これが移動する、`TabbedPage`から派生した、 [ `StudentNotesDataPage` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml)、3 を組み込んだ`ContentPage`そのビジュアル ツリー内のうちの 1 つにより、その受講者のいくつかの注意事項を入力するオブジェクトします。
 

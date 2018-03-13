@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 7441fbe1fc686dc4fa5cb67cbfc5ae6353f32c93
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c058f173f64efe4a5c777872e9ea67120115f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough"></a>チュートリアル
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 いう新しい Xamarin.Android プロジェクトの作成**FragmentSample**です。 **最低限の Android**バージョン必要があります設定する Android 3.1 以降に、次の図に示すようにします。
 
-[![最低限の Android バージョンを設定](walkthrough-images/00.png)](walkthrough-images/00.png)
+[![最低限の Android バージョンを設定](walkthrough-images/00.png)](walkthrough-images/00.png#lightbox)
 
 
 ## <a name="2-create-the-mainactivity"></a>2.MainActivity を作成します。
@@ -47,7 +47,7 @@ public class MainActivity : Activity
 
 2 つの異なる画面サイズでは、2 つの異なるレイアウト ファイルが必要です。 新しいフォルダーを作成しましょう**リソース/レイアウト大きな**と呼ばれる新しいレイアウトを作成および**activity_main.axml**です。 として既定のレイアウト ファイルの名前を変更も**Resources/Layout/activity_main.axml**です。 これらの変更後にレイアウト フォルダーは、次のスクリーン ショットのようになります。
 
-[![IDE でレイアウト フォルダーのスクリーン ショット](walkthrough-images/01.png)](walkthrough-images/01.png)
+[![IDE でレイアウト フォルダーのスクリーン ショット](walkthrough-images/01.png)](walkthrough-images/01.png#lightbox)
 
 
 すべてのデバイスは読み込まれてレイアウト ファイルを使用して**リソース/レイアウト**です。
@@ -92,7 +92,7 @@ Android 3.2 では、画面のレイアウトを指定する新しい方法が�
 
 `TitlesFragment` さまざまなアプローチのタイトルを表示、プロジェクトに新しいフラグメントと呼ばれてでは追加`TitlesFragment`:
 
-[![TitlesFragment プロジェクトに、新しいフラグメントを追加します。](walkthrough-images/02.png)](walkthrough-images/02.png)
+[![TitlesFragment プロジェクトに、新しいフラグメントを追加します。](walkthrough-images/02.png)](walkthrough-images/02.png#lightbox)
 
 後に`TitlesFragment`追加されて、クラスから継承するように変更する必要があります`Android.App.ListFragment`です。 `ListFragment` 機能の一覧を含む特殊なフラグメント型です。
 `TitlesFragment` また、無効`OnActivityCreated`(別のフラグメントのライフ サイクル メソッド) を提供し、`Adapter`を`ListFragment`リストの生成に使用されます。
@@ -162,7 +162,6 @@ private void ShowDetails(int playId)
 
 コードは、デバイスから書式設定して、選択した再生から見積もりを表示する方法を決定します。 場合は、タブレット、`_isDualPane`フラグが設定されます`true`、見積もりが横に表示されるようにし、`TitlesFragment`です。 場合、選択した再生`id`まだ表示されていない、し、新しい`DetailsFragment`が作成され、しに読み込まれる、`FrameLayout`アクティビティにします。 他のデバイス、大きなディスプレイがない&ndash;フォン、たとえば&ndash;`isDualPane`に設定されます`false`ように新しい`DetailsActivity`が開始されます。
 
-<a name="5. Create_the_DetailsActivity" />
 
 ## <a name="5-create-the-detailsactivity"></a>5.DetailsActivity を作成します。
 
@@ -187,7 +186,6 @@ public class DetailsActivity : Activity
 
 レイアウト ファイルが読み込まれていないことを確認`DetailsActivity`です。 代わりに、`DetailsFragment`はアクティビティのルート ビューに読み込まれます。 このルート ビューは、特別な ID を持つ`Android.Resource.Id.Content`します。 新しい`DetailFragment`が作成され、このルート内のビューに追加し、`FragmentTransaction`によってアクティビティの作成`FragmentManager`です。
 
-<a name="6. Create_the_DetailsFragment" />
 
 ## <a name="6-create-the-detailsfragment"></a>6.DetailsFragment を作成します。
 

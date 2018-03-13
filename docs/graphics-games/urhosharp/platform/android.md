@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp Android のサポート"
-description: "特定の android のセットアップと機能"
+description: "特定の android のセットアップと UrhoSharp の機能です。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 5100fd4ac573021e088a88446f5f6559d49c4972
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f99b8d2d9f779bc0cf14d76c110d9769ec49ad53
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-android-support"></a>UrhoSharp Android のサポート
 
@@ -21,11 +21,11 @@ Urho、ポータブル クラス ライブラリで、さまざまなプラッ�
 
 次のページであると想定`MyGame`のサブクラスは、`Application`クラスです。
 
-# <a name="architectures"></a>アーキテクチャ
+## <a name="architectures"></a>アーキテクチャ
 
 **サポートされているアーキテクチャ**: x86、armeabi、armeabi v7a
 
-# <a name="create-a-project"></a>プロジェクトの作成
+## <a name="create-a-project"></a>プロジェクトの作成
 
 Android プロジェクトを作成し、UrhoSharp NuGet パッケージを追加します。
 
@@ -33,7 +33,7 @@ Android プロジェクトを作成し、UrhoSharp NuGet パッケージを追�
 
 ![プロジェクトのセットアップ](android-images/image-3.png "資産ディレクトリに資産を含むデータの追加")
 
-# <a name="configure-and-launching-urho"></a>構成および Urho を起動します。
+## <a name="configure-and-launching-urho"></a>構成および Urho を起動します。
 
 追加のステートメントを使用して、`Urho`と`Urho.Android`名前空間、Urho、初期化中だけでなく、アプリケーションを起動するのには、このコードを追加します。
 
@@ -45,7 +45,7 @@ UrhoSurface.RunInActivity<MyGame>();
 
 ゲームと、コンテンツとしてフルスクリーン アクティビティが開きます。
 
-# <a name="custom-embedding-of-urho"></a>カスタムの埋め込み Urho の
+## <a name="custom-embedding-of-urho"></a>カスタムの埋め込み Urho の
 
 引き継ぐことができる別の方法としてを持つように Urho アプリケーション全体 画面とこれを使用するアプリケーションのコンポーネントとして作成することができます、`SurfaceView`経由。
 

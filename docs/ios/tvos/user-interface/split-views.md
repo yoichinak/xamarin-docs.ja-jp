@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8787913c04b11a84828cd98960407f0cc27aa391
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86a7690d4cf7291a4e44507a6250e3469c8f7ed2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-split-view-controllers"></a>分割ビュー コント ローラーの使用
 
@@ -21,7 +21,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でコント ローラ�
 
 分割ビュー コント ローラーは、表示し、マスターと詳細ビューのコント ローラーによってサイドで、同時に画面上を管理します。 分割ビューのコント ローラーはマスター ビュー (左側の小さなセクション) に永続的にフォーカス可能なコンテンツを表示するために、関連する詳細ビュー (右側の大規模なセクション) の詳細。
 
-[ ![](split-views-images/intro01.png "分割ビューのサンプル")](split-views-images/intro01.png)
+[![](split-views-images/intro01.png "分割ビューのサンプル")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -31,7 +31,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でコント ローラ�
 
 マスター ビューのコント ローラーはの非表示または表示されているさらに、必要に応じて。 
 
-[ ![](split-views-images/intro02.png "非表示にマスター ビュー コント ローラー")](split-views-images/intro02.png)
+[![](split-views-images/intro02.png "非表示にマスター ビュー コント ローラー")](split-views-images/intro02.png#lightbox)
 
 分割ビュー コント ローラーは、マスター ビューのカテゴリと詳細ビューで、フィルター選択された結果を含む、フィルターを適用できるコンテンツの一覧を提供するよく使用します。 これが通常、左側のテーブル ビューとして表示されます、[コレクション ビュー](~/ios/tvos/user-interface/collection-views.md)右側にします。
 
@@ -54,18 +54,18 @@ Xamarin.tvOS アプリでは、コント ローラーの表示の分割を使用
 1. **ソリューション パッド**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**コント ローラーの表示の分割**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](split-views-images/activity01.png "分割ビュー コント ローラー")](split-views-images/activity01.png)
+    [![](split-views-images/activity01.png "分割ビュー コント ローラー")](split-views-images/activity01.png#lightbox)
 1. 既定では、iOS デザイナーは、マスター ビューでナビゲーション コント ローラーとビューのコント ローラーがインストールされます。 これは、アプリの要件には一致しない、単に削除してください。
 1. 既定のマスター ビューを削除すると、デザイン サーフェイスに新しいビュー コント ローラーをドラッグします。 
 
-    [ ![](split-views-images/activity02.png "ビューのコント ローラー")](split-views-images/activity02.png)
+    [![](split-views-images/activity02.png "ビューのコント ローラー")](split-views-images/activity02.png#lightbox)
 1. コントロールをクリックし、分割ビュー コント ローラーから、新しいマスター ビュー コント ローラーにドラッグします。 
 1. 選択**マスター**から、**ポップアップ メニュー**: 
 
-    [ ![](split-views-images/activity03.png "ポップアップ メニューからマスターを選択します。")](split-views-images/activity03.png)
+    [![](split-views-images/activity03.png "ポップアップ メニューからマスターを選択します。")](split-views-images/activity03.png#lightbox)
 1. マスターと詳細ビューの内容をデザインします。 
 
-    [ ![](split-views-images/activity04.png "レイアウトの例")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "レイアウトの例")](split-views-images/activity04.png#lightbox)
 1. 割り当てる**名**で、**ウィジェット タブ**の**プロパティ パッド**c# コードで UI コントロールを使用します。
 1. 変更を保存し、for mac を Visual Studio に戻る
 
@@ -74,18 +74,18 @@ Xamarin.tvOS アプリでは、コント ローラーの表示の分割を使用
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**コント ローラーの表示の分割**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](split-views-images/activity01-vs.png "分割ビュー コント ローラー")](split-views-images/activity01-vs.png)
+    [![](split-views-images/activity01-vs.png "分割ビュー コント ローラー")](split-views-images/activity01-vs.png#lightbox)
 1. 既定では、iOS デザイナーは、マスター ビューでナビゲーション コント ローラーとビューのコント ローラーが追加されます。 これは、アプリの要件には一致しない、単に削除してください。
 1. 既定のマスター ビューを削除すると、デザイン サーフェイスに新しいビュー コント ローラーをドラッグします。 
 
-    [ ![](split-views-images/activity02-vs.png "ビューのコント ローラー")](split-views-images/activity02-vs.png)
+    [![](split-views-images/activity02-vs.png "ビューのコント ローラー")](split-views-images/activity02-vs.png#lightbox)
 1. コントロールをクリックし、分割ビュー コント ローラーから、新しいマスター ビュー コント ローラーにドラッグします。 
 1. 選択**マスター**から、**ポップアップ メニュー**: 
 
-    [ ![](split-views-images/activity03-vs.png "ポップアップ メニューからマスターを選択します。")](split-views-images/activity03-vs.png)
+    [![](split-views-images/activity03-vs.png "ポップアップ メニューからマスターを選択します。")](split-views-images/activity03-vs.png#lightbox)
 1. マスターと詳細ビューの内容をデザインします。 
 
-    [ ![](split-views-images/activity04.png "コンテンツのレイアウト")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "コンテンツのレイアウト")](split-views-images/activity04.png#lightbox)
 1. 割り当てる**名**で、**ウィジェット タブ**の**プロパティ エクスプ ローラー** c# コードで UI コントロールを使用します。
 1. 変更内容を保存します。
     

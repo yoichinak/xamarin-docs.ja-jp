@@ -7,12 +7,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 4e5bf2b24845fa008c6f97a6d55e18a51bc82164
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7e107fc9ced62027bc793c97a388344d74becd66
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート Firebase 通知クラウド メッセージング
 
@@ -22,7 +22,7 @@ _このチュートリアルでは、アプリケーションで Xamarin.Android
 
 このチュートリアルで基本的なアプリと呼ばれる**FCMClient** FCM メッセージングの基礎を説明するために作成されます。 **FCMClient** Google Play サービスの存在を確認、FCM から登録トークンを受信、Firebase コンソールから送信するリモートの通知を表示およびトピックのメッセージをサブスクライブします。
 
-[![アプリのサンプルのスクリーン ショット](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png)
+[![アプリのサンプルのスクリーン ショット](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png#lightbox)
 
 次のトピックを取り上げたはとおりです。
 
@@ -56,7 +56,7 @@ _このチュートリアルでは、アプリケーションで Xamarin.Android
 
 次の例では、パッケージ名が に設定されている`com.xamarin.fcmexample`: 
 
-[![パッケージ名を設定します。](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png)
+[![パッケージ名を設定します。](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png#lightbox)
 
 更新するときに、 **Android マニフェスト**、ことを確認のチェックも、`Internet`アクセス許可を有効にします。 
 
@@ -68,7 +68,7 @@ _このチュートリアルでは、アプリケーションで Xamarin.Android
 
 次の例では、パッケージ名が に設定されている`com.xamarin.fcmexample`: 
 
-[![パッケージ名を設定します。](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png)
+[![パッケージ名を設定します。](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png#lightbox)
 
 更新するときに、 **Android マニフェスト**、ことを確認のチェックも、`INTERNET`アクセス許可が有効になっている (**アクセス許可を必要な**)。 
 
@@ -88,7 +88,7 @@ Firebase Cloud Messaging Google Play サービス、依存するため、 [Xamar
 
 3.  このパッケージをインストール、 **FCMClient**プロジェクト。 
 
-    [ ![Google Play サービス ベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png)
+    [![Google Play サービス ベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -98,7 +98,7 @@ Firebase Cloud Messaging Google Play サービス、依存するため、 [Xamar
 
 3.  このパッケージをインストール、 **FCMClient**プロジェクト。 
 
-    [ ![Google Play サービス ベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png)
+    [![Google Play サービス ベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
 -----
 
@@ -125,7 +125,7 @@ FCM からメッセージを受信する、 [Xamarin Firebase - メッセージ�
 
 3.  このパッケージをインストール、 **FCMClient**プロジェクト。 
 
-    [ ![Xamarin Firebase メッセージングをインストールします。](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png)
+    [![Xamarin Firebase メッセージングをインストールします。](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -135,7 +135,7 @@ FCM からメッセージを受信する、 [Xamarin Firebase - メッセージ�
 
 3.  このパッケージをインストール、 **FCMClient**プロジェクト。 
 
-    [ ![Xamarin Firebase メッセージングをインストールします。](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png)
+    [![Xamarin Firebase メッセージングをインストールします。](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
 -----
  
@@ -166,7 +166,7 @@ using Android.Util;
 
 4.  **プロパティ**ペインで、設定、**ビルド アクション**に**GoogleServicesJson** (場合、 **GoogleServicesJson**ビルド アクションは表示されませんが、保存し、ソリューションを閉じて再び開く)。
 
-    [![ビルド アクションを GoogleServicesJson に設定します。](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png)
+    [![ビルド アクションを GoogleServicesJson に設定します。](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -178,7 +178,7 @@ using Android.Util;
 
 4.  設定、**ビルド アクション**に**GoogleServicesJson**: 
 
-    [![ビルド アクションを GoogleServicesJson に設定します。](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png)
+    [![ビルド アクションを GoogleServicesJson に設定します。](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
  
 -----
  
@@ -254,7 +254,7 @@ protected override void OnCreate (Bundle bundle)
 
 `IsPlayServicesAvailable` 最後に呼び出されます`OnCreate`Google Play サービスは、それぞれの実行時間、アプリが起動を確認できるようにします。 アプリがある場合、`OnResume`メソッドを呼び出して`IsPlayServicesAvailable`から`OnResume`もします。 完全に再構築し、アプリを実行します。 すべてが正しく構成されて、次のスクリーン ショットのような画面が表示されます。 
 
-[![アプリは、Google Play サービスが利用可能なであることを示します](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png)
+[![アプリは、Google Play サービスが利用可能なであることを示します](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png#lightbox)
 
 この結果が得られない場合は、Google プレイ サービス APK がデバイスにインストールされていることを確認してください (詳細については、次を参照してください。[設定を Google Play サービス](https://developers.google.com/android/guides/setup))。 追加されていることを確認してください、 **Xamarin.Google.Play.Services.Base**をパッケージ化、 **FCMClient**プロジェクトの前に説明したようです。
 
@@ -365,7 +365,7 @@ void SendRegistrationToAppServer (string token)
 
 受信側サービスがあると、これで、これらのサービスを活用するためにクライアント アプリ コードを記述できます。 次のセクションで、ボタンが登録トークンをログオン UI に追加 (とも呼ばれる、*インスタンス ID トークン*) にさらにコードを追加および`MainActivity`を表示する`Intent`からアプリを起動したときに情報、通知: 
 
-[![アプリの画面に追加ログ トークン ボタン](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png)
+[![アプリの画面に追加ログ トークン ボタン](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
 ### <a name="log-tokens"></a>ログのトークン
 
@@ -419,11 +419,11 @@ if (Intent.Extras != null)
 
 ビルドおよび実行する、 **FCMClient**アプリ。 **ログ トークン**ボタンが表示されます。
 
-[![トークン [ログ] ボタンが表示されます。](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png)
+[![トークン [ログ] ボタンが表示されます。](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
 タップして、**ログ トークン**ボタンをクリックします。 次のようなメッセージは、IDE は、出力ウィンドウに表示する必要があります。 
 
-[![[出力] ウィンドウに表示されるインスタンス ID トークン](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png)
+[![[出力] ウィンドウに表示されるインスタンス ID トークン](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png#lightbox)
 
 長い文字列が付いた**トークン**Firebase コンソールに貼り付け、インスタンス ID のトークン&ndash;を選択し、この文字列をクリップボードにコピーします。 インスタンス ID トークンが表示されない場合は、先頭に次の行を追加、`OnCreate`ことを確認するメソッド**google services.json**正しく解析されました。
 
@@ -437,34 +437,34 @@ Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
 
 サインイン、 [Firebase コンソール](https://console.firebase.google.com)、プロジェクトを選択してをクリックし、**通知**、 をクリック**最初のメッセージを送信**: 
 
-[![送信の最初のメッセージ ボタン](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png)
+[![送信の最初のメッセージ ボタン](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png#lightbox)
 
 **作成メッセージ** ページで、メッセージのテキストを入力し、選択**1 つのデバイス**です。 IDE は、出力ウィンドウからインスタンス ID トークンをコピーして貼り付けます、 **FCM 登録トークン**Firebase コンソール フィールド。 
 
-[![メッセージ ダイアログ ボックスを作成します。](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png)
+[![メッセージ ダイアログ ボックスを作成します。](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png#lightbox)
 
 Android デバイス (またはエミュレーター)、Android をタップして、アプリのバック グラウンド**概要**ボタンをクリックし、ホーム画面を変更することです。 デバイスが準備完了 をクリックして**メッセージの送信**Firebase コンソール。 
 
-[![送信メッセージ ボタン](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png)
+[![送信メッセージ ボタン](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png#lightbox)
 
 ときに、**レビュー メッセージ**ダイアログが表示されたら、をクリックして**送信**です。
 通知アイコンは、デバイス (またはエミュレーター) の通知領域に表示する必要があります。 
 
-[![通知アイコンが表示されます。](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png)
+[![通知アイコンが表示されます。](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png#lightbox)
 
 メッセージを表示する通知アイコンを開きます。 通知メッセージにどのような入力が正確にする必要があります、**メッセージ テキスト**Firebase コンソール フィールド。 
 
-[![デバイスに通知メッセージが表示されます。](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png)
+[![デバイスに通知メッセージが表示されます。](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png#lightbox)
 
 戻るには、通知アイコンをタップして、 **FCMClient**アプリ。 `Intent`に送信される extras **FCMClient** IDE の出力ウィンドウに表示されます。 
 
-[![キー、メッセージ ID、および折りたたみキーからインテント extras が一覧表示します。](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png)
+[![キー、メッセージ ID、および折りたたみキーからインテント extras が一覧表示します。](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png#lightbox)
 
 この例では、**から**Firebase プロジェクトの数、アプリにキーが設定されている (この例では`41590732`)、および**collapse_key**パッケージの名前に設定されている (**com.xamarin.fcmexample**)。 メッセージを受け取らない場合は、削除してください。、 **FCMClient**デバイス (またはエミュレーター) 上のアプリ、上記の手順を繰り返します。 
 
 
 > [!NOTE]
-> **注:**キューブを強制終了アプリとして設定すると、FCM は停止通知を配信します。 Android では、バック グラウンド サービス ブロードキャストが不必要にまたは誤ってが停止状態のアプリケーションのコンポーネントを起動することを防止します。 (この動作の詳細については、次を参照してください[停止状態のアプリケーション上のコントロールを起動して](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)。)。このため、必要があるたびにアプリを手動でアンインストールを実行し、デバッグ セッションから停止&ndash;これにより、受信するメッセージが継続されるように、新しいトークンを生成する FCM です。
+> キューブを強制終了アプリとして設定すると、FCM は停止通知を配信します。 Android では、バック グラウンド サービス ブロードキャストが不必要にまたは誤ってが停止状態のアプリケーションのコンポーネントを起動することを防止します。 (この動作の詳細については、次を参照してください[停止状態のアプリケーション上のコントロールを起動して](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)。)。このため、必要があるたびにアプリを手動でアンインストールを実行し、デバッグ セッションから停止&ndash;これにより、受信するメッセージが継続されるように、新しいトークンを生成する FCM です。
 
 ### <a name="add-a-custom-default-notification-icon"></a>カスタムの既定の通知アイコンを追加します。
 
@@ -515,11 +515,11 @@ subscribeButton.Click += delegate {
 
 アプリをアンインストール、再度実行して、再構築します。 クリックして、**通知にサブスクライブする**ボタンをクリックします。
 
-[![ボタンの通知をサブスクライブします。](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png)
+[![ボタンの通知をサブスクライブします。](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png#lightbox)
 
 アプリが正常にサブスクライブしているはず**トピックの同期が成功した**IDE では、出力ウィンドウ。 
 
-[![[出力] ウィンドウは、トピックの同期が成功したメッセージを示しています。](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png)
+[![[出力] ウィンドウは、トピックの同期が成功したメッセージを示しています。](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png#lightbox)
 
 トピックのメッセージを送信するのにには、次の手順を使用します。
 
@@ -529,7 +529,7 @@ subscribeButton.Click += delegate {
 
 3.  **トピック**プルダウン メニューでは、組み込みのトピックを選択して**ニュース**: 
 
-    [ ![ニュースのトピックを選択します。](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png)
+    [![ニュースのトピックを選択します。](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
 4.  Android デバイス (またはエミュレーター)、Android をタップして、アプリのバック グラウンド**概要**ボタンをクリックし、ホーム画面を変更することです。 
 
@@ -537,11 +537,11 @@ subscribeButton.Click += delegate {
 
 6.  チェック、IDE の出力を表示するウィンドウ**/トピック/ニュース**ログの出力。 
 
-    [ ![/Topic/news からメッセージが表示されます。](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png)
+    [![/Topic/news からメッセージが表示されます。](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
 このメッセージは、出力ウィンドウに表示されますが、ときに通知アイコンも Android デバイスで通知領域に表示されます。 トピックのメッセージを表示する通知アイコンを開きます。 
 
-[![通知としてトピックのメッセージが表示されます。](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png)
+[![通知としてトピックのメッセージが表示されます。](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png#lightbox)
 
 メッセージを受け取らない場合は、削除してください。、 **FCMClient**デバイス (またはエミュレーター) 上のアプリ、上記の手順を繰り返します。 
 
@@ -593,7 +593,7 @@ Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
 ```
 
 > [!NOTE]
-> **注:**でブレークポイントを設定した場合`FirebaseMessagingService`、デバッグ セッションはまたは FCM がメッセージを配信する方法のためのこれらのブレークポイントをヒットしない可能性があります。
+> ブレークポイントを設定した場合`FirebaseMessagingService`、デバッグ セッションはまたは FCM がメッセージを配信する方法のためのこれらのブレークポイントをヒットしない可能性があります。
  
 
 ### <a name="send-another-message"></a>別のメッセージを送信します。
@@ -608,13 +608,13 @@ Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
 
 4.  アプリがフォア グラウンドで実行されていることを確認し、クリックして**メッセージの送信**Firebase コンソール。 
 
-    [ ![コンソールから別のメッセージを送信します。](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png)
+    [![コンソールから別のメッセージを送信します。](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
 5.  ときに、**レビュー メッセージ**ダイアログが表示されたら、をクリックして**送信**です。
 
 6.  IDE は、出力ウィンドウには、受信メッセージが記録されます。
 
-    [ ![メッセージ本文は、出力ウィンドウに出力](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png)
+    [![メッセージ本文は、出力ウィンドウに出力](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
 
 ### <a name="add-a-local-notifications-sender"></a>ローカルの通知の送信側を追加します。
@@ -675,15 +675,15 @@ SendNotification(message.GetNotification().Body, message.Data);
 
 4.  アプリがフォア グラウンドで実行されていることを確認し、クリックして**メッセージの送信**Firebase コンソール。 
 
-    [ ![フォア グラウンド メッセージを送信します。](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png)
+    [![フォア グラウンド メッセージを送信します。](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 
 このとき、出力ウィンドウに記録されたメッセージは、新しい通知にパッケージも&ndash;アプリがフォア グラウンドで実行されているときに、通知のトレイに通知アイコンが表示されます。 
 
-[![フォア グラウンド メッセージの通知アイコン](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png)
+[![フォア グラウンド メッセージの通知アイコン](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png#lightbox)
 
 開くと、通知、Firebase コンソール通知 GUI から送信された最後のメッセージが表示されます。 
 
-[![フォア グラウンドのアイコンが示すようにフォア グラウンド通知](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png)
+[![フォア グラウンドのアイコンが示すようにフォア グラウンド通知](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
 
  
 ## <a name="troubleshooting"></a>トラブルシューティング
@@ -710,4 +710,4 @@ Make sure to call FirebaseApp.initializeApp(Context) first.
 ## <a name="related-links"></a>関連リンク
 
 - [FCMNotifications (サンプル)](https://developer.xamarin.com/samples/monodroid/Firebase/FCMNotifications)
-- [Firebase クラウド メッセージング](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
+- [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)

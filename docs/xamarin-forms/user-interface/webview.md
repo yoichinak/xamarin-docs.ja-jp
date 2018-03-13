@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 67caa11b23f5651a6b851c1e9baf16c2adca422a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a077a3dcc47de8416abb0c51b23dc07fc1f1f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="webview"></a>WebView
 
@@ -38,7 +38,8 @@ WebView は、次の種類のコンテンツがサポートされています。
 - HTML 文字列&ndash;WebView がメモリから HTML 文字列を表示することができます。
 - ローカル ファイル&ndash;WebView は上記のコンテンツの種類のいずれかのアプリに埋め込むを提示できます。
 
-**注**: `WebView` Windows および Windows Phone ではサポートしていません Silverlight、Flash またはすべての ActiveX コントロールでは、場合でも、そのプラットフォームで Internet Explorer ではサポートされています。
+> [!NOTE]
+> `WebView` Windows および Windows Phone ではサポートしません Silverlight、Flash またはすべての ActiveX コントロールでは、そのプラットフォームで Internet Explorer ではサポートされている場合でも。
 
 ### <a name="websites"></a>Websites
 
@@ -50,14 +51,15 @@ var browser = new WebView {
 };
 ```
 
-**注**: Url は、指定されたプロトコルに完全な形式でなければなりません (つまりが必要"http://"または"https://"に付加される)。
+> [!NOTE]
+> Url は、指定されたプロトコルに完全な形式でなければなりません (つまりが必要"http://"または"https://"に付加される)。
 
 #### <a name="ios-and-ats"></a>iOS および ATS
 
 バージョン 9、iOS のみにより、アプリケーションは既定でセキュリティのベスト プラクティスを実装しているサーバーと通信します。 値を設定する必要があります`Info.plist`安全でないサーバーとの通信を有効にします。
 
 > [!NOTE]
-> **注:**を使用して、例外として、ドメインを入力する、アプリケーションでは、安全ではないの web サイトへの接続を必要とする場合は、常にする必要があります`NSExceptionDomains`ATS を使用して完全にオフではなく`NSAllowsArbitraryLoads`です。 `NSAllowsArbitraryLoads` 緊急の極端な状況でのみ使用する必要があります。
+> 使用して、例外として、ドメインを入力する、アプリケーションでは、安全ではないの web サイトへの接続を必要とする場合は、常にする必要があります`NSExceptionDomains`ATS を使用して完全にオフではなく`NSAllowsArbitraryLoads`です。 `NSAllowsArbitraryLoads` 緊急の極端な状況でのみ使用する必要があります。
 
 ATS 要件をバイパスする (このケース xamarin.com) で特定のドメインを有効にする方法を次に示します。
 
@@ -221,10 +223,10 @@ namespace WorkingWithWebview.Android {
 }
 ```
 
-Android でのファイル、**資産**フォルダーは、を介してアクセスすることも、`Forms.Context.Assets`プロパティ、次のコード例で示したように。
+Android でのファイル、**資産**フォルダーは、によって公開される現在の Android コンテキストを通じてアクセスすることも、`MainActivity.Instance`プロパティ。
 
 ```csharp
-var assetManager = Xamarin.Forms.Forms.Context.Assets;
+var assetManager = MainActivity.Instance.Assets;
 using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
   var html = streamReader.ReadToEnd ();
 }

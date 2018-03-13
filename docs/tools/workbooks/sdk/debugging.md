@@ -6,11 +6,11 @@ ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4a83afca753d1131e3486004443f9c4a895f6fbc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0873c6b902e29174da5e27a09e8f580d6d69eb7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging-integrations"></a>デバッグの統合
 
@@ -43,11 +43,11 @@ defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
 
 Xamarin ブックを再起動します。 ようにを設定すると表示されます**検査要素**、右クリック コンテキスト メニューおよび新しいに表示される**開発者**ペインはブックの設定 で使用可能になります。 このオプションでは、開発者ツールの起動時に開かれたかどうかに選択することができます。
 
-[![Developer ウィンドウ](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png)
+[![Developer ウィンドウ](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 この優先順位も再起動専用に、新しいブックに有効にするためにブックは、クライアントを再起動する必要があります。 コンテキスト メニューまたは環境設定を使用して開発者ツールをアクティブ化すると、使い慣れた Safari UI が表示されます。
 
-[![Safari の開発ツール](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png)
+[![Safari の開発ツール](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 Safari 開発者ツールを使用する方法の詳細については、次を参照してください。、 [WebKit インスペクター ドキュメント][webkit-docs]です。
 
@@ -61,6 +61,6 @@ C:\Windows\System32\F12\F12Chooser.exe
 
 実行の F12 選択して、一覧で、ブック クライアント画面を利用する埋め込みインスタンスが表示されます。 クライアントに接続し、Internet Explorer からデバッグ ツールが表示され、使い慣れた f12 キーを選択します。
 
-[![F12 ツール](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png)
+[![F12 ツール](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

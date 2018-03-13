@@ -3,16 +3,16 @@ title: "アプリのトランスポート セキュリティ"
 description: "アプリのトランスポート セキュリティ (ATS) は、インターネット リソースの (アプリのバック エンド サーバーなど) と、アプリ間でセキュリティで保護された接続を強制します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 60858e05e222725f05eb67bd7aaa4e56d2ff3880
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-transport-security"></a>アプリのトランスポート セキュリティ
 
@@ -69,7 +69,7 @@ IOS のインターネット通信のクラスの扱いの詳細については�
 
 Xamarin.iOS アプリまたはライブラリや使用されているサービスがインターネットに接続する場合、既定では、iOS 9 および OS X 許可されて、ATS が有効に何らかのアクションを実行する必要があります。 またはの接続に例外がスローされます。
 
-サポートするを Apple、既存のアプリの提案、`HTTPS`できるだけ早くプロトコルです。 できない場合はいずれかのサード パーティがサポートされていない web サービスに接続しているため`HTTPS`をサポートする場合または`HTTPS`非現実的、することができますオプトアウト ATS です。 参照してください、 [ATS の Opting アウト](#Opting-Out-of-ATS)詳細については、後述の「します。
+サポートするを Apple、既存のアプリの提案、`HTTPS`できるだけ早くプロトコルです。 できない場合はいずれかのサード パーティがサポートされていない web サービスに接続しているため`HTTPS`をサポートする場合または`HTTPS`非現実的、することができますオプトアウト ATS です。 参照してください、 [ATS の Opting アウト](#optout)詳細については、後述の「します。
 
 新しい Xamarin.iOS アプリで使用する必要があります`HTTPS`インターネット リソースと通信するときに排他的です。 ここでも、ある可能性があります (サード パーティの web サービスを使用して) などの状況ですることはできず、ATS の脱退する必要があります。
 
@@ -144,7 +144,7 @@ IOS9 では、アプリのトランスポート セキュリティ (ATS) は、�
 
 使用するすべての接続を iOS 9 および OS X 10.11 (許可されて El) 用に開発されたアプリの既定で有効になって ATS のため`NSURLConnection`、`CFURL`または`NSURLSession`ATS セキュリティ要件に従うことになります。 接続にはこれらの要件を満たしていない場合は、例外で失敗します。
 
-Apple にも用意されています、 [TLSTool サンプル アプリ](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)をコンパイルすることができます (または Xamarin と C# の場合にトランス コード必要に応じて) ATS/TLS の問題を診断するために使用します。 参照してください、 [ATS の Opting アウト](#Opting-Out_of_ATS)この問題を解決する方法については、後述の「します。
+Apple にも用意されています、 [TLSTool サンプル アプリ](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)をコンパイルすることができます (または Xamarin と C# の場合にトランス コード必要に応じて) ATS/TLS の問題を診断するために使用します。 参照してください、 [ATS の Opting アウト](#optout)この問題を解決する方法については、後述の「します。
 
 
 <a name="config" />
@@ -215,7 +215,7 @@ NSAppTransportSecurity
 
 Mac 用 Visual Studio 内をダブルクリックして、`Info.plist`ファイルで、**ソリューション エクスプ ローラー**に切り替え、**ソース**表示し、上記のキーを追加。
 
-[ ![](ats-images/ats01.png "Info.plist ファイルのソース ビュー")](ats-images/ats01.png)
+[![](ats-images/ats01.png "Info.plist ファイルのソース ビュー")](ats-images/ats01.png#lightbox)
 
 
 アプリを読み込んで、セキュリティで保護されたサイトから web コンテンツを表示する場合は、次をアプリに追加の**Info.plist**ファイルを Apple のトランスポート セキュリティ (ATS) 保護は引き続き有効の残りの部分の中に正しく読み込む web ページを許可するにはアプリ。
@@ -240,7 +240,7 @@ Mac 用 Visual Studio 内をダブルクリックして、`Info.plist`ファイ�
 
 Mac 用 Visual Studio 内をダブルクリックして、`Info.plist`ファイルで、**ソリューション エクスプ ローラー**に切り替え、**ソース**表示し、上記のキーを追加。
 
-[ ![](ats-images/ats02.png "Info.plist ファイルのソース ビュー")](ats-images/ats02.png)
+[![](ats-images/ats02.png "Info.plist ファイルのソース ビュー")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > **注:** 、アプリケーションでは、安全ではないの web サイトへの接続を必要とする場合**常に**を使用して、例外として、ドメインを入力`NSExceptionDomains`ATS を使用して完全にオフではなく`NSAllowsArbitraryLoads`です。 `NSAllowsArbitraryLoads` 緊急の極端な状況でのみ使用する必要があります。

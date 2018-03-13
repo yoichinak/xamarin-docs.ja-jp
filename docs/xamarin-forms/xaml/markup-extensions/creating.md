@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: eb7189226e4f5d7eb2b55bf61728e65db44ba57b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 737c55aea087094ceb5e6070261d0a3d724e8a01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張機能の作成
 
@@ -117,7 +117,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 場合に`HslColorExtension`XML タグには、4 つのプロパティは、属性として設定されます。 ただし 4 つのプロパティが引用符で囲まずにコンマで区切られます中かっこの間にが表示されたら、します。 に対して、既定値`H`、 `S`、および`L`は 0、および既定値の`A`1 の場合は既定値に設定したい場合は、これらのプロパティを省略できます。 最後の例は、ここで明るさ黒での結果、通常、0 がアルファ チャネルが 0.5、ため、透過的半分が表示されます例を示しています。 ページの背景色は白に対して灰色。
 
-[![HSL の色のデモ](creating-images/hslcolordemo-small.png "HSL の色のデモ")](creating-images/hslcolordemo-large.png "HSL の色のデモ")
+[![HSL の色のデモ](creating-images/hslcolordemo-small.png "HSL の色のデモ")](creating-images/hslcolordemo-large.png#lightbox "HSL の色のデモ")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>ビットマップにアクセスするためのマークアップ拡張機能
 
@@ -180,7 +180,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
 
-[![イメージのリソースのデモ](creating-images/imageresourcedemo-small.png "イメージ リソース デモ")](creating-images/imageresourcedemo-large.png "イメージのリソースのデモ")
+[![イメージのリソースのデモ](creating-images/imageresourcedemo-small.png "イメージ リソース デモ")](creating-images/imageresourcedemo-large.png#lightbox "イメージのリソースのデモ")
 
 ## <a name="service-providers"></a>サービス プロバイダー
 

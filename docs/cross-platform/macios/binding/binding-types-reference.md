@@ -4,26 +4,22 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 ms.technology: xamarin-cross-platform
-author: asb3993
-ms.author: amburns
-ms.date: 06/26/2017
-ms.openlocfilehash: c79b2277073996a580b455bde519ea959795d7ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: bradumbaugh
+ms.author: brumbaug
+ms.date: 03/06/2018
+ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-types-reference-guide"></a>バインディングの種類のリファレンス ガイド
-
-[//]: # (Https://github.com/xamarin/xamarin-macios/tree/master/docs/website/ 下にある元のファイルが存在します。)
-[//]: (これは、ツールの変更に一致するドキュメントをプログラムにより、(外部を含む) すべてのコントリビューターを送信して、使用して、PR) # [ // ]: (xamarin macios/マスターの外部で変更はすべて失われます将来に #更新プログラム))
 
 このドキュメントには、バインディングをドライブにファイルを API コントラクトに注釈を付けるに使用して、コードが生成される属性の一覧がについて説明します
 
 Xamarin.iOS と Xamarin.Mac API コントラクトは c# で記述された方法を定義するインターフェイス定義としてほとんどの場合 Objective C コードは、c# に提示されます。 プロセスには、さまざまなインターフェイスの宣言と API コントラクトを必要とする一部の基本的な型定義が含まれます。 バインドの種類の概要については、この必携ガイドを参照してください。[バインディング Objective C ライブラリ](~/cross-platform/macios/binding/objective-c-libraries.md)です。
 
-
-# <a name="type-definitions"></a>型定義
+## <a name="type-definitions"></a>型定義
 
 構文:
 
@@ -41,7 +37,7 @@ interface MyType [: Protocol1, Protocol2] {
 
 次に示す方法の Objective C 宣言`UITextField`が Xamarin.iOS コントラクトで定義されます。
 
-```csharp
+```objc
 @interface UITextField : UIControl <UITextInput> {
 
 }
@@ -57,10 +53,8 @@ interface UITextField : UITextInput {
 
 インターフェイスにその他の属性を適用するだけでなく、BaseType 属性を構成して、コード生成の他の多くの側面を制御できます。
 
- <a name="Generating_Events" />
 
-
-## <a name="generating-events"></a>イベントを生成します。
+### <a name="generating-events"></a>イベントを生成します。
 
 Xamarin.iOS および Xamarin.Mac API の設計の 1 つの機能は、c# イベントやコールバックと OBJECTIVE-C デリゲート クラスをマップおです。 ユーザーを選択できますのインスタンスごとのようなプロパティに割り当てることによって、Objective C のプログラミング パターンを採用するかどうか**デリゲート**さまざまなメソッドを実装するクラスのインスタンスを Objective Cランタイムが呼び出すには、または c# を選択して、イベントおよびプロパティのスタイルを設定します。
 
@@ -162,10 +156,8 @@ public interface UIScrollViewDelegate {
 
 加え、`DefaultValue`属性を使用することも、`DefaultValueFromArgument`呼び出しで指定されたパラメーターの値を返すジェネレーターを指示する、または`NoDefaultValue`既定値はありません、ジェネレーターに指示するパラメーターです。
 
- <a name="BaseTypeAttribute" />
 
-
-## <a name="basetypeattribute"></a>BaseTypeAttribute
+### <a name="basetypeattribute"></a>BaseTypeAttribute
 
 構文:
 
@@ -182,7 +174,7 @@ public class BaseTypeAttribute : Attribute {
 }
 ```
 
-### <a name="basetypename"></a>BaseType.Name
+#### <a name="basetypename"></a>BaseType.Name
 
 使用する、 `Name` Objective C の世界でこの型にバインドされる名前を制御するプロパティです。 これは通常、c# 型は、.NET Framework デザイン ガイドラインに準拠しているが、その規則に従っていない Objective C の名前に対応する名前の指定を使用します。
 
@@ -196,8 +188,7 @@ interface NSUrlConnection {
 
 生成される値として使用される、指定した名前が指定された`[Register]`バインディング内の属性です。 場合`Name`が指定されていない、型の短い名前がの値として使用される、`Register`生成された出力内の属性です。
 
-
-### <a name="basetypeevents-and-basetypedelegates"></a>BaseType.Events と BaseType.Delegates
+#### <a name="basetypeevents-and-basetypedelegates"></a>BaseType.Events と BaseType.Delegates
 
 これらのプロパティを使用して、ドライブの C# コードの生成-生成されたクラスでイベントのスタイルを設定します。 その OBJECTIVE-C デリゲート クラスで指定されたクラスをリンクに使用されます。 多くの場合、クラスは、デリゲート クラスを使用して、通知およびイベントを送信する場所が発生します。 たとえば、`BarcodeScanner`コンパニオンが`BardodeScannerDelegate`クラスです。 `BarcodeScanner`クラスには通常のインスタンスを割り当てるよう「代理」プロパティが存在`BarcodeScannerDelegate`すると共に、このしくみ、可能性があります公開する、ユーザーに、c# のスタイルのイベント インターフェイスのように、使用するような場合、 `Events`および`Delegates`のプロパティ、`BaseType`属性。
 
@@ -216,10 +207,8 @@ public interface UIAccelerometerDelegate {
 }
 ```
 
- <a name="BaseType.KeepRefUntil" />
 
-
-### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
+#### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
 
 によって参照されるメソッドまで周囲そのオブジェクトのインスタンスで保持されるこのクラスの新しいインスタンスを作成するときにこの属性を適用する場合、`KeepRefUntil`呼び出されています。 これは、ユーザーのコードを使用するオブジェクトの周囲への参照を保持するしたくない場合に、独自の Api の使いやすさを向上させるために役立ちます。 このプロパティの値は内のメソッドの名前、`Delegate`イベントと組み合わせて、これを使用する必要がありますので、クラスと`Delegates`プロパティもします。
 
@@ -242,25 +231,20 @@ public interface UIActionSheetDelegate {
 }
 ```
 
- <a name="DisableDefaultCtorAttribute" />
 
-
-## <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
+### <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
 
 この属性をインターフェイス定義に適用すると、ジェネレーターを既定のコンス トラクターを生成できなくなります。
 
 オブジェクトのクラスの他のコンス トラクターのいずれかで初期化する必要がある場合は、この属性を使用します。
 
- <a name="PrivateDefaultCtorAttribute" />
 
-
-## <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
+### <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
 
 インターフェイス定義にこの属性が適用されるときに、フラグが設定される既定のコンス トラクターにプライベートです。 つまり、拡張ファイルから内部的にこのクラスのオブジェクトをインスタンスことができますが、クラスのユーザーにアクセスできるようにしてだけしないことです。
 
-<a name="CategoryAttribute" />
 
-## <a name="categoryattribute"></a>CategoryAttribute
+### <a name="categoryattribute"></a>CategoryAttribute
 
 Objective C のカテゴリをバインドして OBJECTIVE-C 機能を公開する方法を反映する c# 拡張メソッドとしてのこれらの公開を型定義でこの属性を使用します。
 
@@ -268,7 +252,7 @@ Objective C のカテゴリをバインドして OBJECTIVE-C 機能を公開す�
 
 これは、カテゴリがでどのように目標 c:
 
-```csharp
+```objc
 @interface UIView (MyUIViewExtension)
 -(void) makeBackgroundRed;
 @end
@@ -335,9 +319,8 @@ interface FooObject {
 
 発行される警告 (BI1117) おを見つける場合に、`[Static]`内のメンバー、`[Category]`定義します。 本当にする場合`[Static]`内のメンバー、`[Category]`定義を使用して、警告を無音ことができます`[Category (allowStaticMembers: true)]`またはいずれかを修飾することによって、メンバーまたは`[Category]`インターフェイスで定義`[Internal]`です。
 
-<a name="StaticAttribute" />
 
-## <a name="staticattribute"></a>StaticAttribute
+### <a name="staticattribute"></a>StaticAttribute
 
 静的クラスから派生していないものが生成されますだけこの属性がクラスに適用されるときに`NSObject`ため、`[BaseType]`属性は無視されます。 静的クラスは、ホストに公開するパブリック変数の C に使用されます。
 
@@ -358,11 +341,8 @@ public partial class CBAdvertisement  {
 }
 ```
 
-<a name="Model_Definitions" />
 
-# <a name="model-definitions"></a>モデルの定義
-
-###<a name="protocol-definitionsmodel"></a>モデル/プロトコルの定義
+## <a name="protocol-definitionsmodel"></a>モデル/プロトコルの定義
 
 モデルは、プロトコルの実装で用いられます。
 ランタイムのみに登録される OBJECTIVE-C メソッドを実際には、上書きされている点で異なります。
@@ -370,9 +350,8 @@ public partial class CBAdvertisement  {
 
 一般つまりサブクラスとしてマークされているクラス、 `ModelAttribute`、基本メソッドを呼び出す必要はありません。   例外をスローするメソッドを呼び出すと、オーバーライドするメソッドに対して、サブクラスに全体の動作を実装することになっています。
 
-<a name="AbstractAttribute" />
 
-## <a name="abstractattribute"></a>AbstractAttribute
+### <a name="abstractattribute"></a>AbstractAttribute
 
 既定では、プロトコルの一部であるメンバーの使用は必須ではありません。 これにより、ユーザーのサブクラスを作成する、`Model`オブジェクトだけを実行 (C#) クラスから派生するメソッドをオーバーライドのみ気をします。 Objective C コントラクトに、ユーザーがこのメソッドの実装を提供する必要な場合があります (フラグが付いたもの、@requiredディレクティブ Objective C で)。 ような場合、これらのメソッドでのフラグを設定する必要があります、`Abstract`属性。
 
@@ -390,10 +369,9 @@ public interface UITableViewDataSource {
 }
 ```
 
- <a name="DefaultValueAttribute" />
+<a name="DefaultValueAttribute" />
 
-
-## <a name="defaultvalueattribute"></a>DefaultValueAttribute
+### <a name="defaultvalueattribute"></a>DefaultValueAttribute
 
 ユーザーがモデル オブジェクトでこの特定のメソッドのメソッドを指定しない場合、モデルのメソッドによって返される既定値を指定します
 
@@ -424,12 +402,11 @@ var camera = new Camera ();
 camera.ShouldUploadToServer = (camera, action) => return SomeDecision ();
 ```
 
-
-
 関連項目: [NoDefaultValueAttribute](#NoDefaultValueAttribute)、 [DefaultValueFromArgumentAttribute](#DefaultValueFromArgumentAttribute)です。
 
+<a name="DefaultValueFromArgumentAttribute" />
 
-## <a name="defaultvaluefromargumentattribute"></a>DefaultValueFromArgumentAttribute
+### <a name="defaultvaluefromargumentattribute"></a>DefaultValueFromArgumentAttribute
 
 構文:
 
@@ -455,11 +432,9 @@ public interface NSAnimationDelegate {
 
 上記の場合でのユーザー、`NSAnimation`クラス、c# イベント/プロパティのいずれかを使用することを選択し、設定しなかった`NSAnimation.ComputeAnimationCurve`メソッドまたはラムダでは、戻り値になります、進行状況のパラメーターに渡された値。
 
-
-
 関連項目: [NoDefaultValueAttribute](#NoDefaultValueAttribute)、 [DefaultValueAttribute](#DefaultValueAttribute)
 
-## <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
+### <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
 
 場合もありますが合理的イベントを公開またはため、この属性を追加するように指示することで、修飾された任意のメソッドの生成を回避するコード ジェネレーターは、ホスト クラスに、モデル クラスからプロパティをデリゲートにありません。
 
@@ -475,8 +450,7 @@ public interface UIImagePickerControllerDelegate {
 }
 ```
 
-
-## <a name="delegatenameattribute"></a>DelegateNameAttribute
+### <a name="delegatenameattribute"></a>DelegateNameAttribute
 
 この属性は、モデルのメソッドを使用するデリゲートのシグネチャの名前を設定する値を返すことで使用されます。
 
@@ -497,7 +471,7 @@ public interface NSAnimationDelegate {
 public delegate float NSAnimationProgress (MonoMac.AppKit.NSAnimation animation, float progress);
 ```
 
-## <a name="delegateapinameattribute"></a>DelegateApiNameAttribute
+### <a name="delegateapinameattribute"></a>DelegateApiNameAttribute
 
 この属性は、ホスト クラスで生成されるプロパティの名前を変更するコード ジェネレーターを許可する使用されます。 場合があります便利 FooDelegate クラスのメソッドの名前は、デリゲート クラスの意味をなさなくが不自然プロパティとして、ホスト クラスになります。
 
@@ -520,8 +494,7 @@ public interface NSAnimationDelegate {
 public Func<NSAnimation, float, float> ComputeAnimationCurve { get; set; }
 ```
 
-
-## <a name="eventargsattribute"></a>EventArgsAttribute
+### <a name="eventargsattribute"></a>EventArgsAttribute
 
 パラメーターを 1 つ以上のイベント (OBJECTIVE-C、規則は、デリゲート クラスの最初のパラメーターが送信元オブジェクトのインスタンスである) に使用する生成された EventArgs クラスを使用する名前を指定する必要があります。 これは、`EventArgs`メソッド宣言での属性、`Model`クラスです。
 
@@ -552,9 +525,8 @@ UIImagePickerController クラスでは、次を公開します。
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
 ```
 
-<a name="EventNameAttribute" />
 
-## <a name="eventnameattribute"></a>EventNameAttribute
+### <a name="eventnameattribute"></a>EventNameAttribute
 
 この属性はイベント メッセージまたはクラスで生成されるプロパティの名前を変更するジェネレーターを使用します。 場合によっては便利ときの名前、`Model`クラスのメソッドは、モデル クラスの意味をなさなくが、イベントまたはプロパティとして、元のクラスに奇数になります。
 
@@ -572,19 +544,14 @@ var webView = new UIWebView (...);
 webView.LoadFinished += delegate { Console.WriteLine ("done!"); }
 ```
 
- <a name="ModelAttribute" />
 
-
-## <a name="modelattribute"></a>ModelAttribute
+### <a name="modelattribute"></a>ModelAttribute
 
 適用すると、 `Model` API、ランタイム、コントラクトの型定義を属性では、のみ現れます呼び出し、クラスのメソッドに、ユーザーが、クラスのメソッドを上書きされた場合の特殊なコードを生成します。 この属性は通常、OBJECTIVE-C デリゲート クラスをラップするすべての Api に適用されます。
 
- <a name="NoDefaultValueAttribute" />
+<a name="NoDefaultValueAttribute" />
 
-
-## <a name="nodefaultvalueattribute"></a>NoDefaultValueAttribute
-
-
+### <a name="nodefaultvalueattribute"></a>NoDefaultValueAttribute
 
 モデルのメソッドが既定の戻り値を提供しないことを指定します。
 
@@ -601,8 +568,7 @@ interface CameraDelegate {
 
 関連項目: [DefaultValueAttribute](#DefaultValueAttribute)と[DefaultValueAttribute](#DefaultValueAttribute)です。
 
-
-# <a name="protocols"></a>プロトコル
+## <a name="protocols"></a>プロトコル
 
 Objective C プロトコルの概念が本当にありません (C#)。 プロトコルは c# のインターフェイスに似ていますが、それらとは異なり、すべてのメソッドおよびプロトコルで宣言されたプロパティは、これを採用するクラスによって実装する必要があります。 代わりにメソッドおよびプロパティの一部は省略できます。
 
@@ -680,7 +646,7 @@ interface MyTool {
 
 上記の必要なためにバインド時に、`IMyProtocol`が存在しない、つまり理由を空のインターフェイスを提供する必要があります。
 
-## <a name="adopting-protocol-generated-interfaces"></a>インターフェイスを生成するプロトコルを採用します。
+### <a name="adopting-protocol-generated-interfaces"></a>プロトコルが生成したインターフェイスを採用します。
 
 ときに実装するプロトコルは、次のように、生成されたインターフェイスのいずれか。
 
@@ -705,7 +671,7 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 
 インターフェイスを実装すると、暗黙的または明示的には、関係ありません。
 
-## <a name="protocol-inlining"></a>プロトコルのインライン展開
+### <a name="protocol-inlining"></a>プロトコルのインライン展開
 
 プロトコルを採用するとして宣言されている既存の Objective C 型をバインドするときにするインライン化、プロトコル直接できます。 これを行うことがなく、インターフェイスとしてだけで、プロトコルを宣言`[BaseType]`属性し、インターフェイスの基本インターフェイスのリストにプロトコルを一覧表示します。
 
@@ -724,17 +690,13 @@ interface Robot : SpeakProtocol {
 }
 ```
 
- <a name="Member_Definitions" />
 
-
-# <a name="member-definitions"></a>メンバーの定義
+## <a name="member-definitions"></a>メンバーの定義
 
 このセクションの属性の型の個々 のメンバーに適用されます: プロパティとメソッドの宣言。
 
- <a name="AlignAttribute" />
 
-
-## <a name="alignattribute"></a>AlignAttribute
+### <a name="alignattribute"></a>AlignAttribute
 
 プロパティの戻り値の型のアラインメント値を指定するために使用します。 特定のプロパティが特定の境界に配置する必要がありますアドレスへのポインターを受け取る (この例で起こります一部 Xamarin.iOS で`GLKBaseEffect`16 バイトにする必要があるプロパティの配置) します。 Get アクセス操作子の装飾にこのプロパティを使用して、配置の値を使用できます。 これは通常使用、`OpenTK.Vector4`と`OpenTK.Matrix4`Objective C Api と統合されたときの型します。
 
@@ -747,10 +709,8 @@ public interface GLKBaseEffect {
 }
 ```
 
- <a name="AppearanceAttribute" />
 
-
-## <a name="appearanceattribute"></a>AppearanceAttribute
+### <a name="appearanceattribute"></a>AppearanceAttribute
 
 `Appearance`属性は、外観マネージャーが導入された iOS5 に制限されます。
 
@@ -785,8 +745,7 @@ public partial class UIToolbar {
 }
 ```
 
-
-## <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin.iOS 5.4)
+### <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin.iOS 5.4)
 
 使用して、`AutoReleaseAttribute`内のメソッドにメソッドの呼び出しをラップするメソッドとプロパティに、`NSAutoReleasePool`です。
 
@@ -794,8 +753,7 @@ Objective C では、既定値に追加される値を返す方法をいくつ�
 
 たとえば大量のプロパティでこの属性は適用 (たとえば`UIImage.FromFile`)、既定値に追加されているオブジェクトを返す`NSAutoReleasePool`です。 この属性を持たないイメージは保持されますとしてメイン ループにコントロールが、スレッドでは返されませんでした。 Uf、スレッドが有効では常にバック グラウンド ダウンローダーのいくつかの並べ替えと、作業を待機しているイメージは解放されません。
 
-
-## <a name="forcedtypeattribute"></a>ForcedTypeAttribute
+### <a name="forcedtypeattribute"></a>ForcedTypeAttribute
 
 `ForcedTypeAttribute`返されるアンマネージ オブジェクトでバインディングの定義で示される型が一致しない場合でも、マネージ型の作成を強制するために使用します。
 
@@ -821,9 +779,7 @@ interface NSUrlSession {
 
 `ForcedTypeAttribute`でのみ有効です`parameters`、`properties`と`return value`です。
 
-
-
-## <a name="bindasattribute"></a>BindAsAttribute
+### <a name="bindasattribute"></a>BindAsAttribute
 
 `BindAsAttribute`により、バインド`NSNumber`、`NSValue`と`NSString`(列挙) より正確な c# の型にします。 属性を作成も優れたより正確に使用できる、ネイティブの API 経由での .NET API です。
 
@@ -852,7 +808,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 * `NSNumber`
 * `NSString`
 
-### <a name="nsvalue"></a>NSValue
+#### <a name="nsvalue"></a>NSValue
 
 次の c# のデータ型はから/にカプセル化するサポート`NSValue`:
 
@@ -874,7 +830,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 * CMTimeMapping
 * CATransform3D
 
-### <a name="nsnumber"></a>NSNumber
+#### <a name="nsnumber"></a>NSNumber
 
 次の c# のデータ型はから/にカプセル化するサポート`NSNumber`:
 
@@ -894,7 +850,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 * nuint
 * 列挙体
 
-### <a name="nsstring"></a>NSString
+#### <a name="nsstring"></a>NSString
 
 `[BindAs]` と一緒に動作[列挙型に支えられて NSString 定数](#enum-attributes)のため、たとえば向上の .NET API を作成することができます。
 
@@ -913,7 +869,7 @@ CAScroll SupportedScrollMode { get; set; }
 
 処理されるため、 `enum`  <->  `NSString`変換指定の列挙型を入力する場合にのみ`[BindAs]`は[NSString 定数によってバックアップ](#enum-attributes)です。
 
-### <a name="arrays"></a>配列
+#### <a name="arrays"></a>配列
 
 `[BindAs]` 配列をサポートもサポートされている型のいずれか、例としては、次の API 定義を持つことができます。
 
@@ -932,8 +888,7 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 `rects`にパラメーターをカプセル化されます、`NSArray`を格納している、`NSValue`各`CGRect`され、戻り値の配列を取得`CAScroll?`これが作成されて、返された値を使用して`NSArray`含む`NSStrings`です。
 
-
-## <a name="bindattribute"></a>BindAttribute
+### <a name="bindattribute"></a>BindAttribute
 
 `Bind`属性が 2 つの用途メソッドまたはプロパティの宣言、および個々 の get アクセス操作子またはプロパティに setter を適用するときに、もう 1 つに適用されるときに 1 つです。
 
@@ -963,10 +918,8 @@ bool Active { get; set; }
 bool Visible { [Bind ("isVisible")] get; set; }
 ```
 
- <a name="AsyncAttribute" />
 
-
-## <a name="asyncattribute"></a>AsyncAttribute
+### <a name="asyncattribute"></a>AsyncAttribute
 
 のみ Xamarin.iOS 6.3 でご確認いただけます、新しいです。
 
@@ -1018,26 +971,19 @@ Task<string> UploadAsync (string file);
 
 エラーの場合、結果のタスクが例外に設定し、 `NSErrorException` 、その結果をラップする`NSError`です。
 
-### <a name="asyncattributeresulttype"></a>AsyncAttribute.ResultType
-
-
+#### <a name="asyncattributeresulttype"></a>AsyncAttribute.ResultType
 
 このプロパティを使用して、返される値を指定する`Task`オブジェクト。   このパラメーターは、既存の種類、そのため、主要な api 定義のいずれかで定義する必要があります。
 
-
-### <a name="asyncattributeresulttypename"></a>AsyncAttribute.ResultTypeName
+#### <a name="asyncattributeresulttypename"></a>AsyncAttribute.ResultTypeName
 
 このプロパティを使用して、返される値を指定する`Task`オブジェクト。   このパラメーターには、目的の型名の名前、一連のコールバックを受け取るパラメーターごとに 1 つのプロパティをジェネレーターが生成されます。
 
-
-### <a name="asyncattributemethodname"></a>AsyncAttribute.MethodName
-
-
+#### <a name="asyncattributemethodname"></a>AsyncAttribute.MethodName
 
 このプロパティを使用すると、生成される非同期メソッドの名前をカスタマイズできます。   既定値が、メソッドの名前を使用し、「Async」というテキストを追加するには、これを使用して、この既定を変更することができます。
 
-
-## <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
+### <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
 
 この属性は、文字列パラメーターまたは文字列のプロパティに適用されてとコード ジェネレーターは、このパラメーターのマーシャ リング 0 コピー文字列を使用するよう指示、代わりに、c# の文字列から新しい NSString インスタンスを作成します。
 文字列をゼロ コピーのいずれかを使用してマーシャ リングを使用するコード ジェネレーターを指示する場合、この属性は文字列に必要のみ、`--zero-copy`またはアセンブリ レベル属性を設定するコマンド ライン オプション`ZeroCopyStringsAttribute`です。
@@ -1051,10 +997,8 @@ C: の目的でこのような 2 つのプロパティを次に示します
 @property(nonatomic,assign) NSString *name2;
 ```
 
- <a name="DisposeAttribute" />
 
-
-## <a name="disposeattribute"></a>DisposeAttribute
+### <a name="disposeattribute"></a>DisposeAttribute
 
 適用すると、`DisposeAttribute`に追加されるコード スニペットを提供するクラスに、`Dispose()`クラスのメソッドの実装です。
 
@@ -1069,10 +1013,8 @@ interface DatabaseConnection {
 }
 ```
 
- <a name="ExportAttribute" />
 
-
-## <a name="exportattribute"></a>ExportAttribute
+### <a name="exportattribute"></a>ExportAttribute
 
 `Export`メソッドまたは Objective C のランタイムに公開するプロパティ フラグを設定する属性を使用します。 この属性は、バインド ツールと実際の Xamarin.Mac、Xamarin.iOS およびランタイムの間で共有されます。 メソッドの場合は渡されたパラメーター生成されたコードに逐語的プロパティ、get アクセス操作子および set アクセス操作子のエクスポートが基本宣言に基づいて生成されるため (を参照してください、`BindAttribute`バインド ツールの動作を変更する方法について)。
 
@@ -1095,15 +1037,11 @@ public class ExportAttribute : Attribute {
 
 [セレクター](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/objectivec/Chapters/ocSelectors.html)メソッドまたはバインドされているプロパティの基になる Objective C の名前を表します。
 
- <a name="ExportAttribute.ArgumentSemantic" />
+
+#### <a name="exportattributeargumentsemantic"></a>ExportAttribute.ArgumentSemantic
 
 
-### <a name="exportattributeargumentsemantic"></a>ExportAttribute.ArgumentSemantic
-
- <a name="FieldAttribute" />
-
-
-## <a name="fieldattribute"></a>FieldAttribute
+### <a name="fieldattribute"></a>FieldAttribute
 
 この属性は要求時に読み込まれ、c# コードに公開するフィールドとして C グローバル変数を公開に使用します。 通常これは C または OBJECTIVE-C で定義されているとなる可能性が一部の Api で使用されているいずれかのトークンや値を持つは不透明として使用する必要がありますの定数の値を取得する必要が、ユーザー コードでは、します。
 
@@ -1122,7 +1060,19 @@ public class FieldAttribute : Attribute {
 
 生成されたプロパティは、常に静的です。
 
-型のフィールドの属性を持つフラグが設定されたプロパティを指定できます`NSString`、 `NSArray`、 `nint`、 `double`、`nfloat`または`System.IntPtr`です。
+次の種類のフィールドの属性を持つフラグが設定されたプロパティになります。
+
+* `NSString`
+* `NSArray`
+* `nint` / `int` / `long`
+* `nuint` / `uint` / `ulong`
+* `nfloat` / `float`
+* `double`
+* `CGSize`
+* `System.IntPtr`
+* 列挙体
+
+Set アクセス操作子はサポートされていません[NSString 定数によってバックアップされた列挙型](#enum-attributes)、手動でバインドが必要な場合は。
 
 例:
 
@@ -1134,14 +1084,11 @@ interface CameraEffects {
 }
 ```
 
-
-
-
-## <a name="internalattribute"></a>InternalAttribute
+### <a name="internalattribute"></a>InternalAttribute
 
 `Internal`属性は、メソッドまたはプロパティに適用でき、「内部」c# キーワードで生成されたアセンブリでコードをコードにのみアクセスできるように、生成されたコードに対するフラグの設定の効果があります。 これは通常、非常に低レベルの Api を非表示に、時またはジェネレーターでサポートされていない api を向上させる最適のパブリック API を提供またはいくつか手動コーディングを必要として使用します。
 
-基になる、c# 補完的なサポート ファイルに追加し、厳密に型指定されたラッパーと、通常はメソッドまたはこの属性を使用してプロパティを非表示にし、メソッドまたはプロパティに別の名前を提供するバインドをデザインするときに公開します。機能します。
+C# 補完的なサポート ファイルに追加し公開する厳密に型指定されたラッパーと、通常はメソッドまたはこの属性を使用してプロパティを非表示にし、メソッドまたはプロパティに別の名前を提供するバインドをデザインするときに、基になる機能です。
 
 例:
 
@@ -1168,34 +1115,26 @@ public NSObject this [NSObject idx] {
 }
 ```
 
-
-## <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
+### <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
 
 この属性は、.NET を使用して注釈が付けられるプロパティのバッキング フィールドをフラグ`[ThreadStatic]`属性。 これは、フィールドが、スレッドの静的変数である場合に便利です。
 
- <a name="MarshalNativeExceptions_(Xamarin.iOS_6.0.6)" />
-
-
-## <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
+### <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
 
 この属性には、メソッドのサポートにネイティブ (も) 例外となります。
 呼び出し元ではなく`objc_msgSend`を直接呼び出しにも例外をキャッチし、それらをマネージ コードの例外をマーシャ リングするカスタム トランポリンです。
 
 現在は少量のみ`objc_msgSend`署名はサポートされて (学びます不足している monotouch_ でバインディングを使用したアプリのネイティブのリンクが失敗した場合、署名はサポートされていませんかどうか*_objc_msgSend*シンボル)、詳細を指定できますが、要求に追加されます。
 
- <a name="NewAttribute" />
 
-
-## <a name="newattribute"></a>NewAttribute
+### <a name="newattribute"></a>NewAttribute
 
 この属性は、メソッドとプロパティに、宣言の前に、"new"キーワードを生成するジェネレーターに適用されます。
 
 同じメソッドまたはプロパティ名が基本クラスに既に存在していたサブクラスで導入されたときに、コンパイラの警告を避けるために使用されます。
 
- <a name="NotificationAttribute" />
 
-
-## <a name="notificationattribute"></a>NotificationAttribute
+### <a name="notificationattribute"></a>NotificationAttribute
 
 この属性は、ジェネレーター生成厳密に型指定されたヘルパー通知クラスを持つようにフィールドに適用できます。
 
@@ -1244,7 +1183,6 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 ```csharp
 token.Dispose ();
 ```
-
 
 呼び出すか、または[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject//)トークンを渡します。 パラメーターが、通知に含まれる場合は、ヘルパーを指定する必要があります`EventArgs`インターフェイスは、次のようにします。
 
@@ -1306,8 +1244,7 @@ interface MyClass {
 }
 ```
 
-
-## <a name="nullallowedattribute"></a>NullAllowedAttribute
+### <a name="nullallowedattribute"></a>NullAllowedAttribute
 
 これをプロパティに適用すると、プロパティに割り当てられるに null 値を許可するようにフラグを設定します。 これは参照型の有効なだけです。
 
@@ -1327,14 +1264,14 @@ UIImage IconFile { get; set; }
 void SetImage ([NullAllowed] UIImage image, State forState);
 ```
 
-## <a name="overrideattribute"></a>OverrideAttribute
+<a name="OverrideAttribute"/>
+
+### <a name="overrideattribute"></a>OverrideAttribute
 
 この属性を使用して、この特定のメソッドのバインディングが、「上書き」キーワードを使用してフラグが付けられますがバインド ジェネレーターに指示します。
 
- <a name="PreSnippetAttribute" />
 
-
-## <a name="presnippetattribute"></a>PreSnippetAttribute
+### <a name="presnippetattribute"></a>PreSnippetAttribute
 
 この属性を使用して、Objective C コードの呼び出しの前に、入力パラメーターが検証されると後に、挿入するためのコードを注入することができます。
 
@@ -1346,10 +1283,8 @@ void SetImage ([NullAllowed] UIImage image, State forState);
 void Demo ();
 ```
 
- <a name="PrologueSnippetAttribute" />
 
-
-## <a name="prologuesnippetattribute"></a>PrologueSnippetAttribute
+### <a name="prologuesnippetattribute"></a>PrologueSnippetAttribute
 
 この属性を使用して、生成されたメソッドのパラメーターのいずれかが検証する前に挿入するためのコードを挿入することができます。
 
@@ -1361,10 +1296,8 @@ void Demo ();
 void Demo ();
 ```
 
- <a name="PostGetAttribute" />
 
-
-## <a name="postgetattribute"></a>PostGetAttribute
+### <a name="postgetattribute"></a>PostGetAttribute
 
 値をフェッチするには、このクラスから指定したプロパティを呼び出し、バインド ジェネレーターに指示します。
 
@@ -1389,10 +1322,8 @@ public interface NSOperation {
 
 ここで、`Dependencies`プロパティを追加またはから依存関係を削除後に呼び出される、`NSOperation`オブジェクトを表す実際グラフがあることを確認するには、メモリの破損だけでなく、メモリ リークの防止、オブジェクトが読み込まれています。
 
- <a name="PostSnippetAttribute" />
 
-
-## <a name="postsnippetattribute"></a>PostSnippetAttribute
+### <a name="postsnippetattribute"></a>PostSnippetAttribute
 
 この属性を使用するには、コードが、基になる OBJECTIVE-C メソッドを呼び出した後に挿入するのに c# ソース コードを挿入するには
 
@@ -1404,17 +1335,13 @@ public interface NSOperation {
 void Demo ();
 ```
 
- <a name="ProxyAttribute" />
 
-
-## <a name="proxyattribute"></a>ProxyAttribute
+### <a name="proxyattribute"></a>ProxyAttribute
 
 この属性は、プロキシ オブジェクトとそれらにフラグを設定する値を返すに適用されます。 いくつか Objective C Api 戻りプロキシ オブジェクトにユーザーのバインディングとは区別されないことができます。 この属性の効果がオブジェクトに付けるのフラグを設定するには、`DirectBinding`オブジェクト。 Xamarin.Mac のシナリオを参照してください、[このバグのディスカッション](https://bugzilla.novell.com/show_bug.cgi?id=670844)です。
 
- <a name="RetainListAttribute" />
 
-
-## <a name="retainlistattribute"></a>RetainListAttribute
+### <a name="retainlistattribute"></a>RetainListAttribute
 
 パラメーターへの参照をマネージを残すか、パラメーターに、内部参照を削除するジェネレーターに指示します。 参照されるオブジェクトの保持に使用されます。
 
@@ -1430,10 +1357,7 @@ public class RetainListAttribute: Attribute {
 
 例については、次を参照してください[foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs)と[NSNotificationCenter.cs。](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
- <a name="ReleaseAttribute_(Xamarin.iOS_6.0)" />
-
-
-## <a name="releaseattribute-xamarinios-60"></a>ReleaseAttribute (Xamarin.iOS 6.0)
+### <a name="releaseattribute-xamarinios-60"></a>ReleaseAttribute (Xamarin.iOS 6.0)
 
 これが返すジェネレーターを呼び出す必要がありますを示す型を適用できる`Release`の返送前に、オブジェクトにします。 これが必要になるだけメソッドは、(最も一般的なシナリオでは、自動発行オブジェクト) ではなく保持されているオブジェクトを提供します。
 
@@ -1447,35 +1371,27 @@ NSObject GetAndRetainObject ();
 
 さらにこの属性は、Xamarin.iOS ランタイムは、このような関数から Objective C に戻ったときにオブジェクトを保持する必要がありますを認識できるように、生成されたコードに反映されます。
 
- <a name="SealedAttribute" />
 
-
-## <a name="sealedattribute"></a>SealedAttribute
+### <a name="sealedattribute"></a>SealedAttribute
 
 ジェネレーターに、生成されたメソッドをシール済みとしてフラグを設定するように指示します。 この属性が指定されていない場合、既定では、(仮想メソッド、抽象メソッドまたはその他の属性の使用方法に応じて、上書き) の仮想メソッドを生成します。
 
- <a name="StaticAttribute" />
 
-
-## <a name="staticattribute"></a>StaticAttribute
+### <a name="staticattribute"></a>StaticAttribute
 
 ときに、`Static`属性が適用されるメソッドまたはプロパティには、静的メソッドまたはプロパティこれが生成されます。 この属性が指定されていないインスタンス メソッドまたはプロパティ、ジェネレーターが生成されます。
 
- <a name="TransientAttribute" />
 
-
-## <a name="transientattribute"></a>TransientAttribute
+### <a name="transientattribute"></a>TransientAttribute
 
 フラグのプロパティには、値が一時的なものでは、iOS で一時的に作成されますが、長く続かないされていないオブジェクトには、この属性を使用します。 この属性を適用するプロパティに、ジェネレーターはこのプロパティは、マネージ クラスが、オブジェクトへの参照を保持しないことを意味のバッキング フィールドを作成できません。
 
- <a name="WrapAttribute" />
 
+### <a name="wrapattribute"></a>WrapAttribute
 
-## <a name="wrapattribute"></a>WrapAttribute
+Xamarin.iOS/Xamarin.Mac バインドの設計では、`Wrap`弱い型指定のオブジェクトと厳密に型指定されたオブジェクトをラップする属性を使用します。 Objective C「委任」は、通常型として宣言されているオブジェクトを使用するほとんどの場合に、この`id`または`NSObject`です。 Xamarin.iOS および Xamarin.Mac で使用される規則は、型としてのこれらのデリゲートまたはデータ ソースを公開する`NSObject`し、名前には、規則の"Weak"+ 公開されている名前を使用します。 Objective C から、「id デリゲート」プロパティとして公開できる、 `NSObject WeakDelegate { get; set; }` API コントラクト ファイルのプロパティです。
 
-Xamarin.iOS/Xamarin.Mac バインドの設計では、`Wrap`弱く型指定されたオブジェクトと厳密に型指定されたオブジェクトをラップする属性を使用します。 Objective C「委任」は、通常型として宣言されているオブジェクトを使用するほとんどの場合に、この`id`または`NSObject`です。 Xamarin.iOS および Xamarin.Mac で使用される規則は、型としてのこれらのデリゲートまたはデータ ソースを公開する`NSObject`し、名前には、規則の"Weak"+ 公開されている名前を使用します。 Objective C から、「id デリゲート」プロパティとして公開できる、 `NSObject WeakDelegate { get; set; }` API コントラクト ファイルのプロパティです。
-
-通常このデリゲートに割り当てられている値を厳密な型のため、厳密な型を提示して適用して、`Wrap`属性、つまり、ユーザーはいくつかの細かい制御が必要な場合、または低レベル tric に頼る必要がある場合は、弱い型を使用できますks、またはこれらは、その作業のほとんどの厳密に型指定のプロパティを使用できます。
+通常このデリゲートに割り当てられている値を厳密な型のため、厳密な型を提示して適用して、`Wrap`属性、つまり、ユーザーはいくつかの細かい制御が必要な場合、または低レベル tric に頼る必要がある場合は、弱い型を使用できますks、またはこれらは、作業のほとんどの厳密に型指定されたプロパティを使用することができます。
 
 例:
 
@@ -1511,7 +1427,7 @@ var demo = new Demo ();
 demo.WeakDelegate = new SomeObject ();
 ```
 
-これは、ユーザーは、厳密に型指定されたバージョンを使用して、彼はないことを手動でと、ユーザーが # の型システムを活用し、彼の目的を宣言する、override キーワードを使用していることを確認する方法を装飾を使用してメソッドおよび`Export`その w を行ったため、ユーザーのバインドでのバージョン:
+これは、ユーザーは、厳密に型指定されたバージョンを使用して、彼はないことを手動でと、ユーザーが # の型システムを活用し、彼の目的を宣言する、override キーワードを使用していることを確認する方法を装飾を使用してメソッドおよび`Export`ですので、ユーザーのバインディングで使用できます。
 
 ```csharp
 // This is the strong case,
@@ -1519,14 +1435,12 @@ class MyDelegate : DemoDelegate {
    override void Demo DoDemo () {}
 }
 
-
 var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
- <a name="Parameter_Attributes" />
 
-別の使用、`Wrap`属性は、厳密に型指定のバージョンのメソッドをサポートします。   例:
+別の使用、`Wrap`属性は、厳密に型指定されたバージョンのメソッドをサポートします。   例:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1552,14 +1466,13 @@ interface FooExplorer {
 }
 ```
 
-# <a name="parameter-attributes"></a>パラメーター属性
+## <a name="parameter-attributes"></a>パラメーター属性
 
 このセクションには、メソッド定義のパラメーターに適用できる属性がについて説明しますだけでなく、`NullAttribute`全体のプロパティを適用します。
 
+<a name="BlockCallback" />
 
-## <a name="blockcallback"></a>BlockCallback
-
-
+### <a name="blockcallback"></a>BlockCallback
 
 この属性は、対象のパラメーターが呼び出し規約、OBJECTIVE-C ブロックに準拠し、この方法でマーシャ リングする必要があります、バインダーに通知する (C#) デリゲートの宣言のパラメーターの型に適用されます。
 
@@ -1571,10 +1484,9 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 関連項目: [CCallback](#CCallback)です。
 
+<a name="CCallback" />
 
-## <a name="ccallback"></a>CCallback
-
-
+### <a name="ccallback"></a>CCallback
 
 この属性は、対象のパラメーターは C ABI 関数ポインターの呼び出し規約に準拠しているし、この方法でマーシャ リングする必要があります、バインダーに通知する (C#) デリゲートの宣言のパラメーターの型に適用されます。
 
@@ -1584,10 +1496,7 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 関連項目: [BlockCallback](#BlockCallback)です。
 
-
-## <a name="params"></a>params
-
-
+### <a name="params"></a>params
 
 使用することができます、`[Params]`定義で"params"を挿入ジェネレーターにメソッド定義の最後の配列パラメーターの属性です。   これにより、簡単にできるようにする省略可能なパラメーターにバインドできます。
 
@@ -1605,7 +1514,7 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 <a name="plainstring" />
 
-## <a name="plainstring"></a>PlainString
+### <a name="plainstring"></a>PlainString
 
 使用することができます、`[PlainString]`属性、バインド ジェネレーターとしてパラメーターを渡す代わりに、C の文字列として文字列を渡すよう指示するための文字列パラメーターの前に、`NSString`です。
 
@@ -1629,10 +1538,8 @@ void SetText (string theText);
 void LogMessage ([PlainString] string theText);
 ```
 
- <a name="RetainAttribute" />
 
-
-## <a name="retainattribute"></a>RetainAttribute
+### <a name="retainattribute"></a>RetainAttribute
 
 指定されたパラメーターの参照を保持するジェネレーターに指示します。 ジェネレーターは、このフィールドをバッキング ストアを提供するか、名前を指定できます (、 `WrapName`) に値を格納します。 Objective C にパラメーターとして渡され、わかっている場合に Objective C でこのオブジェクトのコピーでのみ保持することは、マネージ オブジェクトへの参照を保持するために便利です。 ような API のインスタンス、`SetDisplay (SomeObject)`可能性のある、SetDisplay でしたのみ 1 つのオブジェクトを同時に表示されているこの属性を使用します。 複数のオブジェクト (たとえば、スタックのような API) の追跡に必要な場合は使用、`RetainList`属性。
 
@@ -1646,10 +1553,8 @@ public class RetainAttribute {
 }
 ```
 
- <a name="RetainListAttribute" />
 
-
-## <a name="retainlistattribute"></a>RetainListAttribute
+### <a name="retainlistattribute"></a>RetainListAttribute
 
 パラメーターへの参照をマネージを残すか、パラメーターに、内部参照を削除するジェネレーターに指示します。 参照されるオブジェクトの保持に使用されます。
 
@@ -1665,12 +1570,8 @@ public class RetainListAttribute: Attribute {
 
 例については、次を参照してください[foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs)と[NSNotificationCenter.cs。](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
- <a name="TransientAttribute" />
 
-
-## <a name="transientattribute"></a>TransientAttribute
-
-
+### <a name="transientattribute"></a>TransientAttribute
 
 この属性は、パラメーターに適用し、OBJECTIVE-C (C#) を移行する場合にのみ使用されます。  パラメーターは、さまざまな OBJECTIVE-C NSObjects その遷移中にマネージ オブジェクトの表現にラップされます。
 
@@ -1682,11 +1583,12 @@ public class RetainListAttribute: Attribute {
 
 ルールは、単純な: かどうか、ランタイムはネイティブのオブジェクトから新しいマネージ表現を作成する必要があるし、関数の最後に、ネイティブ オブジェクトの保持数は削除、され、マネージ オブジェクトのハンドル プロパティはクリアされます。   つまり、マネージ オブジェクトへの参照を保持する場合は、その参照が無駄になること (にメソッドを呼び出す例外がスローされます)。
 
-渡されたオブジェクトが作成されなかった場合、またはオブジェクトの未処理のマネージ表現が既に存在する場合は、強制 dispose は行われません。 <a name="Global_Attributes" />
+渡されたオブジェクトが作成されなかった場合、またはオブジェクトの未処理のマネージ表現が既に存在する場合は、強制 dispose は行われません。 
 
-# <a name="property-attributes"></a>プロパティの属性
 
-## <a name="notimplementedattribute"></a>NotImplementedAttribute
+## <a name="property-attributes"></a>プロパティの属性
+
+### <a name="notimplementedattribute"></a>NotImplementedAttribute
 
 この属性は、get アクセス操作子を持つプロパティは、基底クラスで導入された、変更可能なサブクラスには、set アクセス操作子が導入されています、Objective C の表現形式をサポートするために使用されます。
 
@@ -1719,7 +1621,9 @@ interface MyMutableString {
 }
 ```
 
-# <a name="enum-attributes"></a>列挙型の属性
+<a name="enum-attributes"/>
+
+## <a name="enum-attributes"></a>列挙型の属性
 
 マッピング`NSString`列挙値に定数が簡単に向上 .NET API を作成します。 これには:
 
@@ -1760,7 +1664,7 @@ var constant = CallApiReturningAnNSString ();
 CallApiWithEnum (NSRunLoopModeExtensions.GetValue (constant));
 ```
 
-## <a name="defaultenumvalueattribute"></a>DefaultEnumValueAttribute
+### <a name="defaultenumvalueattribute"></a>DefaultEnumValueAttribute
 
 装飾できます**1**この属性を持つ列挙型値。 これには、列挙型の値が不明でかどうかに返される定数になります。
 
@@ -1773,7 +1677,7 @@ Call (x.GetConstant ()); // NSDefaultRunLoopMode will be used
 
 列挙値が修飾されていない場合、`NotSupportedException`がスローされます。
 
-## <a name="errordomainattribute"></a>ErrorDomainAttribute
+### <a name="errordomainattribute"></a>ErrorDomainAttribute
 
 エラー コードは、列挙値としてバインドされます。 一般にそれらのドメインのエラーがあるし、常に検索のうち、どれが適用されます (またはも存在するかどうか) に簡単ではありません。
 
@@ -1793,8 +1697,7 @@ Call (x.GetConstant ()); // NSDefaultRunLoopMode will be used
 
 拡張メソッドを呼び出すことができますし、`GetDomain`ドメインのすべてのエラーの定数を取得します。
 
-
-## <a name="fieldattribute"></a>FieldAttribute
+### <a name="fieldattribute"></a>FieldAttribute
 
 これは、同じ`[Field]`定数型の中に使用する属性。 これは、こともできます列挙型の内部と特定の定数値をマップします。
 
@@ -1809,14 +1712,12 @@ Call (NSRunLoopModeExtensions.GetValue (constant)); // will return 1000
 
 ない場合は`null`値が存在し、`ArgumentNullException`がスローされます。
 
-# <a name="global-attributes"></a>グローバル属性
+## <a name="global-attributes"></a>グローバル属性
 
 グローバル属性を使用して適用するか、`[assembly:]`属性の修飾子と同様に、`LinkWithAttribute`することもできますと同様に、どこでも使用、`Lion`と`Since`属性。
 
- <a name="LinkWithAttribute" />
 
-
-## <a name="linkwithattribute"></a>LinkWithAttribute
+### <a name="linkwithattribute"></a>LinkWithAttribute
 
 これは、開発者が、gcc_flags を手動で構成するライブラリのコンシューマーを強制することがなく、バインドされたライブラリを再利用するために必要なリンクのフラグとをライブラリに渡された mtouch 余分な引数を指定するアセンブリ レベル属性。
 
@@ -1864,10 +1765,8 @@ public class LinkWithAttribute : Attribute {
 [assembly: LinkWith (LinkerFlags = "-lsqlite3")]
  ```
 
- <a name="LinkWithAttribute_Constructors" />
 
-
-### <a name="linkwithattribute-constructors"></a>LinkWithAttribute コンス トラクター
+#### <a name="linkwithattribute-constructors"></a>LinkWithAttribute コンス トラクター
 
 これらのコンス トラクターを使用するとリンクし、結果として得られるアセンブリ、サポートされているターゲット ライブラリをサポートして、ライブラリとリンクするために必要な任意の省略可能なライブラリ フラグに埋め込むライブラリを指定できます。
 
@@ -1889,69 +1788,51 @@ LinkTarget 引数が Xamarin.iOS によって推論され、設定する必要�
 [assembly: LinkWith ("libDemo.a", LinkTarget.Thumb | LinkTarget.Simulator, SmartLink = true, ForceLoad = true, IsCxx = true);
 ```
 
- <a name="LinkWithAttribute.ForceLoad" />
 
-
-### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
+#### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
 
 `ForceLoad`を決定するプロパティを使用するかどうか、`-force_load`リンク フラグは、ネイティブ ライブラリをリンクするために使用します。 ここでは、これは常に true です。
 
- <a name="LinkWithAttribute.Frameworks" />
 
-
-### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
+#### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
 
 バインドされているライブラリがいずれのフレームワークでもハードの要件を持つかどうか (以外の`Foundation`と`UIKit`) を設定する必要があります、`Frameworks`プロパティを必要なプラットフォーム フレームワークのスペースで区切られた一覧を含む文字列にします。 たとえば、ライブラリにバインドするかどうかを必要とする`CoreGraphics`と`CoreText`、設定すると、`Frameworks`プロパティを`"CoreGraphics CoreText"`です。
 
- <a name="LinkWithAttribute.IsCxx" />
 
-
-### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
+#### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
 
 結果の実行可能ファイルを C コンパイラは、既定値ではなく、C++ コンパイラを使用してコンパイルする必要がある場合は true には、このプロパティを設定します。 バインドする、ライブラリは、C++ で記述された場合は、これを使用します。
 
- <a name="LinkWithAttribute.LibraryName" />
 
-
-### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
+#### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
 
 バンドルにアンマネージ ライブラリの名前。 これは".a"の拡張子を持つファイルであり、複数のプラットフォーム (例、ARM および x86、シミュレーターの場合) 用のオブジェクト コードを含めることができます。
 
 Xamarin.iOS の以前のバージョンのチェック、`LinkTarget`プラットフォームをサポートするには、ライブラリを決定するプロパティが、これが、自動的に検出され、`LinkTarget`プロパティは無視されます。
 
- <a name="LinkWithAttribute.LinkerFlags" />
 
-
-### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
+#### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
 
 `LinkerFlags`文字列は、アプリケーションにネイティブ ライブラリをリンクするときに、その他のリンカー フラグのいずれかが必要なを指定するバインディングの作成者の方法を提供します。
 
 たとえば、libxml2 と zlib ネイティブ ライブラリを必要とする場合は設定する、`LinkerFlags`文字列`"-lxml2 -lz"`です。
 
- <a name="LinkWithAttribute.LinkTarget" />
 
-
-### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
+#### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
 
 Xamarin.iOS の以前のバージョンのチェック、`LinkTarget`プラットフォームをサポートするには、ライブラリを決定するプロパティが、これが、自動的に検出され、`LinkTarget`プロパティは無視されます。
 
-
-
-### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute.NeedsGccExceptionHandling
+#### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute.NeedsGccExceptionHandling
 
 このプロパティは、リンク、ライブラリには、GCC 例外処理 (gcc_eh) ライブラリが必要な場合は、true に設定します。
 
- <a name="LinkWithAttribute.SmartLink" />
 
-
-### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
+#### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
 
 `SmartLink`プロパティは、Xamarin.iOS を決定できるようにする場合は true に設定する必要があるかどうか`ForceLoad`が必要か。
 
- <a name="LinkWithAttribute.WeakFrameworks" />
 
-
-### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
+#### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
 
 `WeakFrameworks`プロパティと同じように機能、`Frameworks`プロパティ、リンク時に、点を除いて、`-weak_framework`指定子が表示されているフレームワークの各 gcc に渡されます。
 
@@ -1959,10 +1840,7 @@ Xamarin.iOS の以前のバージョンのチェック、`LinkTarget`プラッ�
 
 脆弱なリンクの適切な候補になる`Frameworks`などのアカウント、 `CoreBluetooth`、 `CoreImage`、 `GLKit`、`NewsstandKit`と`Twitter`だけでは使用 iOS 5 以降。
 
- <a name="SinceAttribute_(iOS)_and_LionAttribute_(MacOS_X)" />
-
-
-## <a name="sinceattribute-ios-and-lionattribute-macos-x"></a>SinceAttribute (iOS) および LionAttribute (MacOS X)
+### <a name="sinceattribute-ios-and-lionattribute-macos"></a>SinceAttribute (iOS) および LionAttribute (macOS)
 
 使用する、`Since`時刻に特定の時点で導入されたを持つものとして属性フラグ Api にします。 属性は、フラグの型および基になるクラス、メソッドまたはプロパティが使用できない場合、実行時に問題が原因となるメソッドにのみ使用する必要があります。
 
@@ -2004,19 +1882,14 @@ public interface UITableViewController {
 
 `Lion` Lion で導入された型のですが、同じ方法で属性を適用します。 使用する理由`Lion`iOS で使用されている特定のバージョン番号とは、その iOS が非常に多くの場合は、OS X のメジャー リリースはほとんど発生であり、そのバージョン番号でよりもそのコードネームによって、オペレーティング システムを覚えやすく中に改訂
 
- <a name="AdviceAttribute" />
 
+### <a name="adviceattribute"></a>AdviceAttribute
 
-## <a name="adviceattribute"></a>AdviceAttribute
+この属性を使用して、使用するようの方が便利になる可能性があるその他の Api についてのヒントを開発者に提供します。   など、厳密に型指定されたバージョンの API を提供する場合、厳密に型指定された属性にこの属性を使用でしたより優れた API を開発者に知らせます。
 
+ドキュメントのこの属性からの情報が表示され、向上する方法に関するユーザーの推奨事項を提供するツールを開発できます。
 
-
-この属性を使用して、使用するようの方が便利になる可能性があるその他の Api についてのヒントを開発者に提供します。   たとえば、API の厳密に型指定されたバージョンを提供する場合、弱く型指定された属性にこの属性を使用でした向上 API を開発者に知らせます。
-
-ドキュメントのこの属性からの情報が表示され、自分のコードを改善する方法のユーザーの推奨事項を提供するツールを開発できます。 <a name="ZeroCopyStringsAttribute" />
-
-
-## <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
+### <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
 
 のみ Xamarin.iOS 5.4 で使用できると新しいです。
 
@@ -2047,17 +1920,16 @@ interface MyBinding {
 
     [assembly:ZeroCopyStrings]
 
-# <a name="strongly-typed-dictionaries"></a>厳密に型指定された辞書
+## <a name="strongly-typed-dictionaries"></a>厳密に型指定された辞書
 
-Xamarin.iOS 8.0 でラップするクラスを厳密に型指定を容易に作成できるようになりました`NSDictionaries`です。
+Xamarin.iOS 8.0 でラップする厳密に型指定されたクラスを簡単に作成できるようになりました`NSDictionaries`です。
 
 使用することが常にきましたが、 [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)データ型の手動の API と共にこれでこれを行うはるかに簡単です。  詳細については、次を参照してください。[厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)です。
 
-<a name="StrongDictionar"/>
 
-## <a name="strongdictionary"></a>StrongDictionary
+### <a name="strongdictionary"></a>StrongDictionary
 
-ジェネレーターがから派生するインターフェイスと同じ名前のクラスを生成するインターフェイスにこの属性を適用[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)厳密に型指定の get アクセス操作子に、インターフェイスで定義されている各プロパティをオンにし、およびディクショナリの set アクセス操作子。
+ジェネレーターがから派生するインターフェイスと同じ名前のクラスを生成するインターフェイスにこの属性を適用[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)厳密に型指定に、インターフェイスで定義されている各プロパティをオンにし、get アクセス操作子と set アクセス操作子、辞書のです。
 
 既存のインスタンス化できるクラスを自動生成この`NSDictionary`または新規作成されています。
 
@@ -2111,7 +1983,7 @@ interface MyColoringKeys {
 }
 ```
 
-### <a name="strong-dictionary-types"></a>ディクショナリの厳密な型
+#### <a name="strong-dictionary-types"></a>ディクショナリの厳密な型
 
 次のデータ型はサポートされて、`StrongDictionary`定義。
 

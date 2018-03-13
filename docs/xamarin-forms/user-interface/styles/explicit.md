@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 43a1a5ee6a8bd9d53f6fd44be935ae7573db6812
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fbc12288527c053a24041aa6c49cc1a4abdde55
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="explicit-styles"></a>明示的なスタイル
 
@@ -64,7 +64,7 @@ _明示的なスタイルは、そのスタイル プロパティを設定して
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)定義 3*明示的な*をページの適用されるスタイル[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンス。 各`Style`も、フォント サイズと水平および垂直方向のレイアウト オプションを設定中に別の色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)プロパティを使用して、`StaticResource`マークアップ拡張機能です。 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](explicit-images/explicit-styles.png "明示的なスタイル例")](explicit-images/explicit-styles-large.png "明示的なスタイルの例")
+[![](explicit-images/explicit-styles.png "明示的なスタイル例")](explicit-images/explicit-styles-large.png#lightbox "明示的なスタイルの例")
 
 さらに、最終的な[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)が、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)適用されているもオーバーライド、 [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)プロパティをさまざまな`Color`値。
 
@@ -95,7 +95,7 @@ _明示的なスタイルは、そのスタイル プロパティを設定して
 
 アプリケーションのスタイルを作成する方法について[ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)を参照してください[グローバル スタイル](~/xamarin-forms/user-interface/styles/application.md)です。
 
-## <a name="creating-an-explicit-style-in-c35"></a>C &#35;の明示的なスタイルを作成します。
+## <a name="creating-an-explicit-style-in-c35"></a>C では、明示的なスタイルを作成します。&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) ページのインスタンスを追加することができます[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)新しいを作成して c# でのコレクション[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)、追加してから、`Style`インスタンスを`ResourceDictionary`のように、次のコード例:
 

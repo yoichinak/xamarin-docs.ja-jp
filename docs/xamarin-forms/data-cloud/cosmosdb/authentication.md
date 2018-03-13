@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a16f72e6aaee93aa313aff0aba23887b51acf701
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Azure Cosmos DB ドキュメント データベースとユーザーの認証
 
@@ -81,7 +81,7 @@ Azure App Service でリソース トークン ブローカーをホストする
 
     次のスクリーン ショットは、この構成を示しています。
 
-    [![](authentication-images/azure-web-app-settings.png "App Service Web アプリ設定")](authentication-images/azure-web-app-settings-large.png "App Service Web アプリ設定")
+    [![](authentication-images/azure-web-app-settings.png "App Service Web アプリ設定")](authentication-images/azure-web-app-settings-large.png#lightbox "App Service Web アプリ設定")
 
 1. リソース トークンのブローカー ソリューションを Azure App Service web アプリに発行します。
 
@@ -117,7 +117,7 @@ App Service 容易に認証を構成する手順は次のとおりです。
 
   次のスクリーン ショットは、この構成を示しています。
 
-  [![](authentication-images/app-service-authentication-settings.png "App Service Web アプリの認証設定")](authentication-images/app-service-authentication-settings-large.png "App Service Web アプリの認証設定")
+  [![](authentication-images/app-service-authentication-settings.png "App Service Web アプリの認証設定")](authentication-images/app-service-authentication-settings-large.png#lightbox "App Service Web アプリの認証設定")
 
 App Service web アプリは、認証フローを有効にする Facebook アプリとの通信にも構成する必要があります。 これには、Facebook id プロバイダーを選択し、入力して、**アプリ ID**と**アプリ シークレット**Facebook デベロッパー センターで Facebook アプリ設定の値。 詳細については、次を参照してください。 [Facebook の追加情報を、アプリケーションに](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)です。
 

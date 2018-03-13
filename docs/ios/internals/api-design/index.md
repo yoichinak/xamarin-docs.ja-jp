@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5fab7579be256e478c69b76b5e41b8c1b0568ba6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9bebc33affef4a1a25667039dfcdbe345dbd2cd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="api-design"></a>API の設計
 
@@ -25,7 +25,6 @@ Objective C コードとの通信に低レベルのランタイムは、 [MonoTo
 ## <a name="design-principles"></a>デザインの原則
 
 (これらにも適用 Xamarin.Mac、OBJECTIVE-C OS X 上の Mono バインド) Xamarin.iOS バインド用の設計原則のいくつか次に示します。
-
 
 - Framework デザイン ガイドラインに従ってください。
 - 開発者はサブクラス Objective C のクラスを使用するには。
@@ -78,15 +77,14 @@ Xamarin.iOS には形成するアセンブリの数が含まれています、 *
 
 ### <a name="major-namespaces"></a>メジャーの名前空間 
 
- <a name="MonoTouch.ObjCRuntime" />
+<a name="MonoTouch.ObjCRuntime" />
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
 [ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/)名前空間により、c# と目標 C. の長所をブリッジする開発者
 これは、Cocoa # と Gtk # から経験に基づいて、iOS 向けに設計された、新しいバインディングです。
 
- <a name="MonoTouch.Foundation" />
-
+<a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>Foundation
 
@@ -100,10 +98,7 @@ Xamarin.iOS ミラーリング (C#) 目標 C からのクラス階層です。 O
 
 - さまざまなヘルパー Api は、開発者はサード パーティ Objective C Api では、Api または Api Xamarin.iOS によって現在バインドされていないその他の iOS のバインドを使用できるようにここで公開されます。
 
-
 Api のバインドの詳細については、次を参照してください。、 [Xamarin.iOS バインディング ジェネレーター](~/cross-platform/macios/binding/binding-types-reference.md)セクションです。
-
- <a name="NSObject" />
 
 
 ##### <a name="nsobject"></a>NSObject
@@ -116,7 +111,6 @@ Api のバインドの詳細については、次を参照してください。�
 
 場合は、型は、決定的な終了処理を実行する必要があります、オーバーライド、 [NSObject.Dispose(bool) メソッド](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose)Dispose のパラメーターが"bool disposing"かどうか、設定には、true に呼び出すことを意味、Dispose メソッドはされているため、ユーザーオブジェクトで明示的に呼び出す Dispose () です。 値が false の場合は、Dispose (bool disposing) メソッドがファイナライザーからファイナライザー スレッドで呼び出されることを意味します。 []()
 
-<a name="Categories" />
 
 ##### <a name="categories"></a>カテゴリ
 
@@ -185,20 +179,18 @@ class Rotation_IOS6 {
 }
 ```
 
-<a name="PreserveAttribute" />
 
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
 PreserveAttribute は、そのサイズを小さく、アプリケーションが処理されるタイミング フェーズ中にへの通知 mtouch – Xamarin.iOS 配置ツール –、型、または、型のメンバーを保持するために使用されるカスタム属性です。
 
-アプリケーションによって静的にリンクされていないすべてのメンバーが対象には削除されます。 そのため、この属性はメンバーを静的に参照されないが、アプリケーションで引き続き必要なことを示すために使用されます。
+アプリケーションで静的にリンクされないメンバーはすべて、削除の対象となります。 そのため、この属性はメンバーを静的に参照されないが、アプリケーションで引き続き必要なことを示すために使用されます。
 
-たとえば、型を動的にインスタンス化する場合、型の既定のコンス トラクターを保持します。 XML シリアル化を使用する場合、型のプロパティを残しておきたい場合があります。
+たとえば、型を動的にインスタンス化する場合、型の既定のコンストラクターを保存することもできます。 XML シリアル化を利用する場合、型のプロパティを保持することもできます。
 
-型のすべてのメンバーまたは型自体では、この属性を適用することができます。 構文を使用するには型全体を保持する場合は、[を保持する (AllMembers = true)] の型にします。
+この属性は、ある型のすべてのメンバーに適用するか、型自体に適用できます。 構文を使用するには型全体を保持する場合は、[を保持する (AllMembers = true)] の型にします。
 
- <a name="MonoTouch.UIKit" />
-
+<a name="MonoTouch.UIKit" />
 
 #### <a name="uikit"></a>UIKit
 
@@ -206,8 +198,7 @@ PreserveAttribute は、そのサイズを小さく、アプリケーション�
 
 C# のデリゲートは、一般的な操作に提供されます。 参照してください、[デリゲート](#Delegates)詳細についてはします。
 
- <a name="OpenGLES" />
-
+<a name="OpenGLES" />
 
 #### <a name="opengles"></a>OpenGLES
 
@@ -219,8 +210,6 @@ OpenGLES 2.0 の機能が記載されている、ES20.GL 型を介して使用�
 
 OpenGLES 3.0 の機能が記載されている、ES30.GL 型を介して使用できる[ここ](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/)型です。
 
- <a name="Binding_Design" />
-
 
 ### <a name="binding-design"></a>バインディングのデザイン
 
@@ -230,8 +219,6 @@ P/invoke は Windows および Linux でのネイティブ ライブラリを呼
 
 いくつかのセクションでは、Xamarin.iOS アプリケーションを作成するが、開発者を支援するユーザーの必要はありません、次の説明を理解する方法とという点はより複雑なアプリケーションを作成するときに役立ちます。
 
-
- <a name="Types" />
 
 
 #### <a name="types"></a>種類
@@ -254,16 +241,13 @@ UIView [] GetViews ();
 
 さらに、 **Classic API**を公開するのではなく`CGRect`、`CGPoint`と`CGSize`CoreGraphics API から置き換えましたを持つ、`System.Drawing`実装`RectangleF`、 `PointF`と`SizeF`開発者が OpenTK を使用する既存の OpenGL コードを保持するように、役立つ情報を入手します。 新しい 64 ビットを使用するときに**Unified API**、CoreGraphics API を使用する必要があります。
 
- <a name="Inheritance" />
-
+<a name="Inheritance" />
 
 #### <a name="inheritance"></a>継承
 
 Xamarin.iOS API の設計では、c# の型、派生クラスで"override"キーワードを使用するだけでなく、基底の実装に「基本」の c# のキーワードを使用してチェーンを拡張することと同じ方法でネイティブ Objective C 型を拡張するをすることができます。
 
 この設計では、開発プロセスの一部として、OBJECTIVE-C セレクターと処理を避けるために開発者 OBJECTIVE-C システム全体は、Xamarin.iOS ライブラリ内にラップされた既にあるためです。
-
- <a name="Types_and_Interface_Builder" />
 
 
 #### <a name="types-and-interface-builder"></a>型およびインターフェイスのビルダー
@@ -279,8 +263,7 @@ public partial class void MyView : UIView {
 }
 ```
 
-
- <a name="Delegates" />
+<a name="Delegates" />
 
 
 #### <a name="delegates"></a>デリゲート
@@ -302,15 +285,13 @@ Objective C のクラスに表示されますこのプログラミング パタ�
 
 Xamarin.iOS でこれらのデリゲートにバインドする 3 つの相互に排他的なメカニズムが提供されています。
 
-1.  [イベントを介して](#Events)です。
-2.  [厳密に型を使用して、`Delegate`プロパティ](#StrongDelegate)です。
-3.  [弱い型定義を介して、`WeakDelegate`プロパティ](#WeakDelegate)です。
-
+1.  [イベントを介して](#Via_Events)です。
+2.  [厳密に型を使用して、`Delegate`プロパティ](#StrongDelegate)
+3.  [弱い型定義を介して、`WeakDelegate`プロパティ](#WeakDelegate)
 
 たとえば、 [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)クラスです。 ディスパッチしてこれを[UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)に割り当てられているインスタンス、[委任](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)プロパティです。
 
- <a name="Via_Events" />
-
+<a name="Via_Events" />
 
 ##### <a name="via-events"></a>イベントを介して
 
@@ -320,7 +301,6 @@ Xamarin.iOS でこれらのデリゲートにバインドする 3 つの相互�
 -  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)メソッドのマップ先、 [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/)イベント。
 -  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)メソッドのマップ先、 [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/)イベント。
 
-
 たとえば、この単純なプログラムは、web の読み込みを表示するときに開始および終了時刻を記録します。
 
 ```csharp
@@ -329,8 +309,6 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
-
- <a name="Via_Properties" />
 
 
 ##### <a name="via-properties"></a>Via のプロパティ
@@ -353,6 +331,7 @@ void SetupTextField (UITextField tf)
 
 `UITextField`の`ShouldReturn`プロパティここでは、引数としてブール値を返し、かどうか、テキスト フィールドが操作を行います戻り値のボタンが押されるとを決定するデリゲート。 このメソッドで戻り*true* 、呼び出し元に削除する必要も、キーボードの画面が (テキスト フィールドを呼び出すときに発生`ResignFirstResponder`)。
 
+<a name="StrongDelegate"/>
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>デリゲート プロパティ経由で厳密に型指定
 
@@ -389,8 +368,9 @@ UIWebView ケースの例では、特定のコントロールの動作を制御�
 
 パターンは、必要に応じて、いくつかのコントロールにデータを提供するも使用されます。 たとえば、 [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/)コントロールは、強力なテーブルの描画コントロール – と外観と内容の両方が存在する背景のインスタンス、 [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
 
+<a name="WeakDelegate"/>
 
-@### WeakDelegate プロパティ経由で弱い型定義
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由で弱い型定義
 
 厳密に型指定のプロパティだけでなく弱い型指定されたデリゲートにより、開発者は必要な場合は、異なる方法で処理をバインドすることもできます。
 厳密に型指定されたすべての場所で`Delegate`で Xamarin.iOS のバインディングを対応するプロパティが公開される`WeakDelegate`プロパティが公開されるもします。
@@ -423,7 +403,7 @@ web.WeakDelegate = new Notifier ();
 2 回に注意してください、`WeakDelegate`プロパティが割り当てられて、`Delegate`プロパティは使用されません。 さらに、[エクスポート] する継承された基本クラスのメソッドを実装する場合は、する必要がありますが、パブリック メソッド。
 
 
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>C &#35; OBJECTIVE-C デリゲート パターンのマッピング
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>Objective C デリゲート パターンから C へのマッピング&#35;
 
 ときに次のような Objective C のサンプルを参照してください。
 
@@ -440,7 +420,7 @@ foo.Delegate = new SomethingDelegate ();
 Xamarin.iOS で Objective C にマップされる厳密に型指定されたクラスにデリゲート クラスの指定があります。 を使用するには、サブクラス化およびする Xamarin.iOS の実装によって定義されたメソッドをオーバーライドします。 これらの動作方法の詳細については、セクション「モデル」以下を参照してください。
 
 
-##### <a name="mapping-delegates-to-c35"></a>マッピング デリゲート C と #35 です。
+##### <a name="mapping-delegates-to-c35"></a>C へのデリゲートのマッピング&#35;
 
 UIKit は一般に、2 つの形式で Objective C のデリゲートを使用します。
 
@@ -575,12 +555,12 @@ public class AppController : UIApplicationDelegate {
 利点は、セレクター、引数、または C# の場合へのマッピングの種類を検索する Objective C ヘッダー ファイルを詳しく調べをする必要がないことになる intellisense から Visual Studio for Mac、厳密な型と共に
 
 
-#### <a name="xib-outlets-and-c35"></a>XIB コンセントと C &#35;です。
+#### <a name="xib-outlets-and-c35"></a>XIB コンセントと C&#35;
 
 > [!IMPORTANT]
 > XIB ファイルを使用する場合は、IDE との統合をコンセントを説明します。 Xamarin デザイナーを使用して、iOS 用、これはすべて置き換えられますで名前を入力して**Identity > 名前**で次のように、IDE の Properties セクション。
 >
-> [![](images/designeroutlet.png "IOS デザイナー内で項目名を入力します。")](images/designeroutlet.png)
+> [![](images/designeroutlet.png "IOS デザイナー内で項目名を入力します。")](images/designeroutlet.png#lightbox)
 >
 >IOS デザイナーの詳細についてを参照してください、 [iOS デザイナーの概要](~/ios/user-interface/designer/introduction.md#how-it-works)ドキュメント。
 

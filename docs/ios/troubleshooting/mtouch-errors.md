@@ -6,19 +6,18 @@ ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/26/2017
-ms.openlocfilehash: 5a11ca19de7ce06088478f1a39dae5a246d701a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/06/2018
+ms.openlocfilehash: 32a73232667e54eef7536f0bb0d1baa190269d8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS エラー
 
-
 ## <a name="mt0xxx-mtouch-error-messages"></a>MT0xxx: mtouch エラー メッセージ
 
-例。 パラメーター、環境、ツールがありません。
+たとえば、 パラメーター、環境、ツールがありません。
 
 <!--
  MT0xxx mtouch itself, e.g. parameters, environment (e.g. missing tools)
@@ -102,7 +101,6 @@ SGen (--sgen) プロファイリングする場合に有効にする必要があ
 *  ARMv6 が有効になっているし、Xcode 4.5 以降がインストールされています。
 *  ARMv7s が有効になっているし、Xcode 4.4 以降がインストールされています。
 
-
 Xcode のインストールされたバージョンが選択されているアーキテクチャをサポートしていることを確認してください。
 
 ### <a name="a-namemt0015mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a><a name="MT0015"/>MT0015: 無効な ABI: * です。 サポートされている ABIs されます: i386、x86_64、常に armv7、常に armv7 + ある llvm、常に armv7 ある llvm + thumb2、armv7s、armv7s + ある llvm、armv7s + ある llvm + thumb2、arm64 と arm64 + ある llvm です。
@@ -132,16 +130,9 @@ Mtouch では、エラー メッセージに記載されているコマンドラ
 -  --launchdebug
 -  --launchsim
 
-
-
-
 ### <a name="a-namemt0020mt0020-the-valid-options-for--are-"></a><a name="MT0020"/>MT0020 に対して有効なオプション '\*'は'\*' です。
 
-
-
 ### <a name="a-namemt0021mt0021-cannot-compile-using-gccg---use-gcc-when-using-the-static-registrar-this-is-the-default-when-compiling-for-device-either-remove-the---use-gcc-flag-or-use-the-dynamic-registrar---registrardynamic"></a><a name="MT0021"/>Gcc MT0021 できませんコンパイル/g++ (--使用 gcc) (これは既定のデバイス用にコンパイルするときに) 静的なレジストラーを使用する場合。 削除するか、--使用 gcc フラグまたは動的なレジストラーを使用して (--レジストラー: ダイナミック)。
-
-
 
 ### <a name="a-namemt0022mt0022-the-options---unsupported--enable-generics-in-registrar-and---registrar-are-not-compatible"></a><a name="MT0022"/>MT0022 オプション '- サポートされていない--有効にする-ジェネリック-で-レジストラー' および '--レジストラー' は互換性がありません。
 
@@ -155,23 +146,13 @@ Mtouch では、エラー メッセージに記載されているコマンドラ
 
 ### <a name="a-namemt0024mt0024-could-not-find-required-file-"></a><a name="MT0024"/>MT0024 見つかりませんでした。 必要なファイル ' *'。
 
-
-
 ### <a name="a-namemt0025mt0025-no-sdk-version-was-provided-please-add---sdkxy-to-specify-which-ios-sdk-should-be-used-to-build-your-application"></a><a name="MT0025"/>MT0025 いいえ SDK バージョンが指定されました。 追加してください。`--sdk=X.Y`を指定する iOS アプリケーションをビルドする SDK を使用する必要があります。
-
-
 
 ### <a name="a-namemt0026mt0026-could-not-parse-the-command-line-argument--"></a><a name="MT0026"/>コマンドラインの引数を解析できません MT0026 でした ' *': *
 
-
-
 ### <a name="a-namemt0027mt0027-the-options--and--are-not-compatible"></a><a name="MT0027"/>MT0027、オプション\*'および'\*' は互換性がありません。
 
-
-
 ### <a name="a-namemt0028mt0028-cannot-enable-pie--pie-when-targeting-ios-41-or-earlier-please-disable-pie--piefalse-or-set-the-deployment-target-to-at-least-ios-42"></a><a name="MT0028"/>円グラフを有効にする MT0028 ことはできません (の円) iOS 4.1 またはそれ以前を対象とする場合。 円グラフを無効にしてください (-円: false) に、少なくとも、配置ターゲットを設定または iOS 4.2
-
-
 
 ### <a name="a-namemt0029mt0029-repl---enable-repl-is-only-supported-in-the-simulator---sim"></a><a name="MT0029"/>MT0029: REPL (--有効 repl) は、シミュレーターでのみサポート (--sim)。
 
@@ -486,7 +467,6 @@ Bitcode が有効になって自動的にこのバージョンの Xamarin.iOS �
 
 ネイティブ コードを共有する場合は、マネージ リンカーのカスタムの xml 定義を使用するプロジェクトではサポートされていませんする必要があります。
 
-
 ### <a name="a-namemt0113mt0113-native-code-sharing-has-been-disabled-for-the-extension--because-"></a><a name="MT0113"/>MT0113: ネイティブ コードの共有が無効になっている拡張機能の ' *' ため * です。
 
 * bitcode オプションは、コンテナー アプリ間のみが異なるため (\*) と拡張機能 (\*)。
@@ -561,6 +541,49 @@ Xamarin.iOS が代替ソリューションを実装します。 これらのシ�
 
 <!-- 0116 - 0124: free to use -->
 
+### <a name="a-namemt0116mt0116-invalid-architecture-arch-32-bit-architectures-are-not-supported-when-deployment-target-is-11-or-later-make-sure-the-project-does-not-build-for-a-32-bit-architecture"></a><a name="MT0116"/>MT0116: 無効なアーキテクチャ: {arch}。 配置ターゲットが 11 以降の場合は、32 ビット アーキテクチャはサポートされていません。 32 ビット アーキテクチャ用のプロジェクトがビルドできないことを確認してください。
+
+iOS 11 では、配置ターゲットが iOS 11 以降である場合、32 ビット アプリケーションをビルドすることはできませんので、32 ビット アプリケーションのサポートは含まれません。
+
+Arm64 をプロジェクトの iOS のビルド オプションで、ターゲット アーキテクチャを変更するか、以前の iOS バージョンに、プロジェクトの Info.plist で配置ターゲットを変更します。
+
+### <a name="a-namemt0117mt0117-cant-launch-a-32-bit-app-on-a-simulator-that-only-supports-64-bit"></a><a name="MT0117"/>MT0117:、64 ビットのみをサポートするシミュレーター上の 32 ビット アプリケーションを起動できません。
+
+### <a name="a-namemt0118mt0118-aot-files-could-not-be-found-at-the-expected-directory-msymdir"></a><a name="MT0118"/>MT0118: Aot ファイル見つかりませんでした '{msymdir}' の予期されるディレクトリにします。
+
+<!-- 0119 - 0123: free to use -->
+
+### <a name="a-namemt0123mt0123-the-executable-assembly--does-not-reference-"></a><a name="MT0123"/>MT0123: 実行可能アセンブリ * を参照していません * です。
+
+プラットフォーム アセンブリへの参照が見つかりませんでした (Xamarin.iOS.dll/Xamarin.TVOS.dll/Xamarin.WatchOS.dll)、実行可能アセンブリにします。
+
+これは通常発生プラットフォーム アセンブリから何かを使用する実行可能プロジェクトでコードがないです。インスタンスのこのエラーは、空の Main メソッド (およびその他のコードはなし) には表示。
+
+```csharp
+class Program {
+    void Main (string[] args)
+    {
+    }
+}
+```
+
+プラットフォーム アセンブリの API を使用すると、エラーを解決します。
+
+```csharp
+class Program {
+    void Main (string[] args)
+    {
+        System.Console.WriteLine (typeof (UIKit.UIWindow));
+    }
+}
+```
+
+### <a name="a-namemt0124mt0124-could-not-set-the-current-language-to-lang-according-to-langlang-exception"></a><a name="MT0124"/>MT0124: '{lang}' を現在の言語を設定できませんでした (LANG に従って = {LANG}): {例外}
+
+これは、警告、エラー メッセージの言語に現在の言語を設定できなかったことを示すです。
+
+現在の言語は、システムの言語に設定されます。
+
 ### <a name="a-namemt0125mt0125-the---assembly-build-target-command-line-argument-is-ignored-in-the-simulator"></a><a name="MT0125"/>MT0125:-アセンブリのビルド ターゲットをシミュレーターでコマンドライン引数は無視されます。
 
 操作は必要ありません、このメッセージは単なる情報。
@@ -577,6 +600,12 @@ Xamarin.iOS のこのバージョンは常に正常にビルドされないサ�
 
 詳細については、次を参照してください。 bug #[52727](https://bugzilla.xamarin.com/show_bug.cgi?id=52727)です。
 
+### <a name="a-namemt0128mt0128-could-not-touch-the-file--"></a><a name="MT0128"/>MT0128:、ファイルでした触れないで ' *': *
+
+(これは部分的なビルドが正しく行われることを確認する) ファイルに触れたときにエラーが発生しました。
+
+この警告は無視できます可能性があります。問題が発生した場合バグ (https://bugzilla.xamarin.com] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) と、調査されます。
+
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx: プロジェクトに関連するエラー メッセージ
 
 ### <a name="mt10xx-installer--mtouch"></a>MT10xx: インストーラー/mtouch
@@ -588,35 +617,19 @@ Xamarin.iOS のこのバージョンは常に正常にビルドされないサ�
 
 ### <a name="a-namemt1001mt1001-could-not-find-an-application-at-the-specified-directory"></a><a name="MT1001"/>指定されたディレクトリにアプリケーションを見つけることができません MT1001 でした。
 
-
-
 ### <a name="a-namemt1002mt1002-could-not-create-symlinks-files-were-copied"></a><a name="MT1002"/>シンボリック リンクを作成できません MT1002 でした、ファイルがコピーされました。
-
-
 
 ### <a name="a-namemt1003mt1003-could-not-kill-the-application--you-may-have-to-kill-the-application-manually"></a><a name="MT1003"/>アプリケーションを中止しません MT1003 でした ' *'。 アプリケーションを手動で強制終了する必要があります。
 
-
-
 ### <a name="a-namemt1004mt1004-could-not-get-the-list-of-installed-applications"></a><a name="MT1004"/>インストールされているアプリケーションの一覧を取得できません MT1004 でした。
-
-
 
 ### <a name="a-namemt1005mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a><a name="MT1005"/>アプリケーションを中止しません MT1005 でした '\*'on 'デバイス\*': *-アプリケーションを手動で強制終了する必要があります。
 
-
-
 ### <a name="a-namemt1006mt1006-could-not-install-the-application--on-the-device--"></a><a name="MT1006"/>アプリケーションをインストールできません MT1006 でした '\*'on 'デバイス\*': * です。
-
-
 
 ### <a name="a-namemt1007mt1007-failed-to-launch-the-application--on-the-device---you-can-still-launch-the-application-manually-by-tapping-on-it"></a><a name="MT1007"/>MT1007 がアプリケーションの起動に失敗しました '\*'on 'デバイス\*': * です。 タップして手動でアプリケーションを起動することができますも。
 
-
-
 ### <a name="a-namemt1008mt1008-failed-to-launch-the-simulator"></a><a name="MT1008"/>MT1008: シミュレーターを起動できませんでした。
-
-
 
 Mtouch がシミュレーターの起動に失敗した場合、このエラーは報告されます。   これ場合もありますシミュレーターが古い場合または停止しているプロセスの実行が既に存在します。
 
@@ -632,7 +645,7 @@ $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
 
 このような場合は、次の回避策を試してください。
 
-```csharp
+```bash
 sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/*/*.mdb
 ```
 
@@ -640,23 +653,15 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="a-namemt1010mt1010-could-not-load-the-assembly--"></a><a name="MT1010"/>アセンブリを読み込むことができません MT1010 でした ' *': *
 
-
-
 ### <a name="a-namemt1011mt1011-could-not-add-missing-resource-file-"></a><a name="MT1011"/>不足しているリソース ファイルを追加できません MT1011 でした: ' *'
 
-
-
 ### <a name="a-namemt1012mt1012-failed-to-list-the-apps-on-the-device--"></a><a name="MT1012"/>デバイスでアプリを一覧表示できませんでした MT1012 ' *': *
-
-
 
 ### <a name="a-namemt1013mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a><a name="MT1013"/>MT1013 依存関係のエラーを追跡します。 比較するファイルがありません。 テスト_ケースに http://bugzilla.xamarin.com でバグのレポートを送信してください。
 
 これは、Xamarin.iOS のバグを示します。 バグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)テスト caes とします。
 
 ### <a name="a-namemt1014mt1014-failed-to-re-use-cached-version-of--"></a><a name="MT1014"/>キャッシュされたバージョンを再利用を MT1014 ができませんでした。 ' *': * です。
-
-
 
 ### <a name="a-namemt1015mt1015--failed-to-create-the-executable--"></a><a name="MT1015"/>MT1015 を実行可能ファイルを作成できませんでした ' *': *
 
@@ -681,7 +686,6 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
   考えられる解決策:
   - Xcode でのテンプレートから新しいアプリを作成、同じプロビジョニング プロファイルを選択して同じデバイスに展開します。、 場合もあります Xcode が (それ以外の場合は、Xcode するを依頼を行うには新機能) に新しいデバイスにプロビジョニング プロファイルを自動的に更新することができます。
   -IOS デベロッパー センターに移動します。 新しいデバイスが、プロビジョニング プロファイルを更新し、コンピューターに更新されたプロビジョニング プロファイルをダウンロードします。
-
 
 エラーの詳細については、iOS デバイスのログを印刷するほとんどの場合、問題の診断することができます。
 
@@ -784,27 +788,15 @@ Xcode の古いバージョンを使用するか、それを起動するには�
 
 ### <a name="a-namemt1101mt1101-could-not-start-app"></a><a name="MT1101"/>アプリを起動できません MT1101 でした。
 
-
-
 ### <a name="a-namemt1102mt1102-could-not-attach-to-the-app-to-kill-it-"></a><a name="MT1102"/>(強制終了) をアプリにアタッチできません MT1102 でした *。
-
-
 
 ### <a name="a-namemt1103mt1103-could-not-detach"></a><a name="MT1103"/>デタッチできません MT1103 でした。
 
-
-
 ### <a name="a-namemt1104mt1104-failed-to-send-packet-"></a><a name="MT1104"/>MT1104 がパケットの送信に失敗しました *。
-
-
 
 ### <a name="a-namemt1105mt1105-unexpected-response-type"></a><a name="MT1105"/>MT1105 予期しない応答の種類
 
-
-
 ### <a name="a-namemt1106mt1106-could-not-get-list-of-applications-on-the-device-request-timed-out"></a><a name="MT1106"/>デバイスに対するアプリケーションの一覧を取得できません MT1106 でした。 要求がタイムアウトしました。
-
-
 
 ### <a name="a-namemt1107mt1107-application-failed-to-launch-"></a><a name="MT1107"/>MT1107: アプリケーションを起動できませんでした *。
 
@@ -818,7 +810,6 @@ Mtouch からいくつかの操作が必要、 <tt>DeveloperDiskImage.dmg</tt>�
 
 このエラーは、接続されているデバイスに一致する DeveloperDiskImage.dmg があるないため、発生します。
 
-
 ### <a name="a-namemt1109mt1109-application-failed-to-launch-because-the-device-is-locked-please-unlock-the-device-and-try-again"></a><a name="MT1109"/>MT1109: アプリケーションは、デバイスがロックされているため、起動に失敗しました。 デバイスのロックを解除してから、再試行してください。
 
 デバイスがロックされていることを確認してください。
@@ -826,6 +817,8 @@ Mtouch からいくつかの操作が必要、 <tt>DeveloperDiskImage.dmg</tt>�
 ### <a name="a-namemt1110mt1110-application-failed-to-launch-because-of-ios-security-restrictions-please-ensure-the-developer-is-trusted"></a><a name="MT1110"/>MT1110: アプリケーションは iOS セキュリティ制限があるため起動できませんでした。 開発者が信頼されていることを確認してください。
 
 信頼開発者の場合は、エンタープライズ アプリケーションを配置するか、無料のプロビジョニング プロファイルを使用する必要があります (詳細については<a href="http://stackoverflow.com/a/30726375/183422">ここ</a>)。
+
+### <a name="a-namemt1111mt1111-application-launched-successfully-but-its-not-possible-to-wait-for-the-app-to-exit-as-requested-because-its-not-possible-to-detect-app-termination-when-launching-using-gdbserver"></a><a name="MT1111"/>MT1111: アプリケーションが正常に起動されるが、アプリを gdbserver を使用してを起動するときに、アプリの終了を検出することはできないために要求を終了するまで待機することはできません。
 
 ### <a name="mt12xx-simulator"></a>MT12xx: シミュレーター
 
@@ -874,10 +867,7 @@ WatchOS シミュレーター WatchOS アプリを起動するときに、対に
   MT13xx [LinkWith]
   -->
 
-
 ### <a name="a-namemt1301mt1301-native-library---was-ignored-since-it-does-not-match-the-current-build-architectures-"></a><a name="MT1301"/>MT1301 ネイティブ ライブラリ`*`(\*) 現在のビルド ミラーサイトが一致しないので無視されました (\*)
-
-
 
 ### <a name="a-namemt1302mt1302-could-not-extract-the-native-library--from--please-ensure-the-native-library-was-properly-embedded-in-the-managed-assembly-if-the-assembly-was-built-using-a-binding-project-the-native-library-must-be-included-in-the-project-and-its-build-action-must-be-objcbindingnativelibrary"></a><a name="MT1302"/>ネイティブ ライブラリを抽出できません MT1302 でした ' *' から '+' です。 ネイティブ ライブラリが適切に埋め込まれているマネージ アセンブリを (場合バインド プロジェクトを使用して、アセンブリがビルドされたネイティブ ライブラリをプロジェクトに含める必要がある、そのビルド アクションは 'ObjcBindingNativeLibrary' である必要があります) を確認してください。
 
@@ -1058,7 +1048,7 @@ Fat アーカイブが有効であることを確認してください。
 
 このエラー マネージ リンカーが、例外など、予期しないエラーが発生したことを意味し、完了またはできなかった処理されているアセンブリを保存します。 正確なエラーの詳細については、ビルド ログの一部をなどになります
 
-``` 
+```
 error MT2001: Could not link assemblies.
     Method: `System.Void Todo.TodoListPageCS/<<-ctor>b__1_0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)`
     Assembly: `QuickTodo, Version=1.0.6297.28241, Culture=neutral, PublicKeyToken=null`
@@ -1068,22 +1058,13 @@ Parameter name: instruction
 
 このような問題のバグのレポートをファイルに重要です。 ほとんどの場合は、回避策を適切な修正プログラムが公開されるまでに指定できます。 上記の情報が、問題を解決する (テスト ケースやアセンブリ binairy) と共に重要です。
 
-
 ### <a name="a-namemt2002mt2002-can-not-resolve-reference-"></a><a name="MT2002"/>参照を解決できません MT2002 ことができます *。
-
-
 
 ### <a name="a-namemt2003mt2003-option--will-be-ignored-since-linking-is-disabled"></a><a name="MT2003"/>MT2003 オプション ' *' はリンクが無効になるので無視されます
 
-
-
 ### <a name="a-namemt2004mt2004-extra-linker-definitions-file--could-not-be-located"></a><a name="MT2004"/>リンカーの定義ファイルの MT2004 余分な ' *' に見つかりませんでした。
 
-
-
 ### <a name="a-namemt2005mt2005-definitions-from--could-not-be-parsed"></a><a name="MT2005"/>MT2005 の定義 ' *' を解析できませんでした。
-
-
 
 ### <a name="a-namemt2006mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a><a name="MT2006"/>MT2006: から mscorlib.dll を読み込むことはできません: * です。 Xamarin.iOS を再インストールしてください。
 
@@ -1168,9 +1149,17 @@ Parameter name: instruction
 
 マークするときに予期しない問題が発生しました`NSObject`アプリケーションからサブクラスです。 問題の原因で、アセンブリは、エラー メッセージにという名前です。 アセンブリにこの問題を解決する必要がありますで提供される、[バグ レポート](http://bugzilla.xamarin.com)有効になっている詳細度で完全なビルド ログと共に (つまり`-v -v -v -v`で、**追加 mtouch 引数**)。
 
+### <a name="a-namemt2090mt2090-inliner-failed-processing-"></a><a name="MT2090"/>MT2090: このインライナは処理が失敗しました`...`です。
+
+予期しない問題には、インライン コードをアプリケーションからときが発生しました。 問題の原因で、アセンブリは、エラー メッセージにという名前です。 アセンブリにこの問題を修正するのにはで指定する必要があります、[バグ レポート](https://bugzilla.xamarin.com)有効になっている詳細度で完全なビルド ログと共に (つまり`-v -v -v -v`で、**追加 mtouch 引数**)。
+
 <!-- MT21xx: more linker errors -->
 
 <!--- 2100 used by mmp -->
+
+### <a name="a-namemt2100mt2100-smart-enum-conversion-preserver-failed-processing-"></a><a name="MT2100"/>MT2100: スマート列挙型の変換の保持に失敗しました処理`...`です。
+
+予期しない問題には、アプリケーションからスマート列挙型の変換メソッドをマークするときが発生しました。 問題の原因で、アセンブリは、エラー メッセージにという名前です。 アセンブリにこの問題を修正するのにはで指定する必要があります、[バグ レポート](https://bugzilla.xamarin.com)有効になっている詳細度で完全なビルド ログと共に (つまり`-v -v -v -v`で、**追加 mtouch 引数**)。
 
 ### <a name="a-namemt2101mt2101-cant-resolve-the-reference--referenced-from-the-method--in-"></a><a name="MT2101"/>MT2101: は、参照を解決できない '\*'、メソッドから参照されている'\*' に ' *'。
 
@@ -1183,6 +1172,18 @@ Parameter name: instruction
 予期しない問題が発生しました、エラー メッセージに記載されているメソッドをマークするしようとしています。
 
 問題の原因で、アセンブリは、エラー メッセージにという名前です。 アセンブリにこの問題を解決する必要がありますで提供される、[バグ レポート](https://bugzilla.xamarin.com)有効になっている詳細度で完全なビルド ログと共に (つまり`-v -v -v -v`で、**追加 mtouch 引数**)。
+
+### <a name="a-namemt2103mt2103-error-processing-assembly--"></a><a name="MT2103"/>MT2103: エラー処理のアセンブリ '\*': *
+
+アセンブリを処理するときに、予期しないエラーが発生しました。
+
+問題の原因で、アセンブリは、エラー メッセージにという名前です。 アセンブリにこの問題を修正するのにはで指定する必要があります、[バグ レポート](https://bugzilla.xamarin.com)有効になっている詳細度で完全なビルド ログと共に (つまり`-v -v -v -v`で、**追加 mtouch 引数**)。
+
+### <a name="a-namemt2104mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a><a name="MT2104"/>MM2104: 混合モードは、アセンブリ ' 0'} をリンクできません。
+
+混合モード アセンブリは、リンカーによっては処理できません。
+
+混合モードのアセンブリの詳細については https://msdn.microsoft.com/en-us/library/x0w2664k.aspx を参照してください。
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT エラー メッセージ
 
@@ -1201,15 +1202,11 @@ Parameter name: instruction
 
 このエラー メッセージ、AOT コンパイラに由来します。
 
-
-
 ### <a name="a-namemt3003mt3003-conflicting---debug-and---llvm-options-soft-debugging-is-disabled"></a><a name="MT3003"/>MT3003 競合している--デバッグと--ある llvm オプション。 ソフト デバッグは無効です。
 
 ある LLVM が有効にすると、デバッグはサポートされていません。 アプリをデバッグする必要がある場合は、まずある LLVM を無効にします。
 
 ### <a name="a-namemt3004mt3004-could-not-aot-the-assembly--because-it-doesnt-exist"></a><a name="MT3004"/>MT3004 でした AOT アセンブリではない ' *' が存在しないためです。
-
-
 
 ### <a name="a-namemt3005mt3005-the-dependency--of-the-assembly--was-not-found-please-review-the-projects-references"></a><a name="MT3005"/>MT3005 依存関係 '\*'assembly' の\*' が見つかりませんでした。 プロジェクトの参照を確認してください。
 
@@ -1305,39 +1302,21 @@ Xamarin.iOS が該当するタイプをサポートすると思われる場合�
 
 ### <a name="a-namemt4110mt4110-the-registrar-cannot-marshal-the-out-parameter-of-type--in-signature-for-method-"></a><a name="MT4110"/>MT4110 レジストラーをマーシャ リングできない型の out パラメーター`*`メソッドのシグネチャで`*`です。
 
-
-
 ### <a name="a-namemt4111mt4111-the-registrar-cannot-build-a-signature-for-type--in-method-"></a><a name="MT4111"/>MT4111 レジストラーは型のシグネチャを作成できない`*`メソッドで`*`です。
-
-
 
 ### <a name="a-namemt4112mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrarhttpsdeveloperxamarincomguidesiosadvancedtopicsregistrar-for-more-information"></a><a name="MT4112"/>MT4112 レジストラーに無効な型が見つかった`*`です。 Objective C にジェネリック型を登録することはサポートされていませんし、ランダムな動作やクラッシュする可能性があります (の後方 Xamarin.iOS の古いバージョンとの互換性を可能であればを渡すことによってこのエラーを無視する`--unsupported--enable-generics-in-registrar`追加 mtouch としてプロジェクトの iOS ビルド オプション ページに渡す引数。 参照してください[developer.xamarin.com/guides/ios/advanced_topics/registrar](https://developer.xamarin.com/guides/ios/advanced_topics/registrar)詳細については)。
 
-
-
 ### <a name="a-namemt4113mt4113-the-registrar-found-a-generic-method--exporting-generic-methods-is-not-supported-and-will-lead-to-random-behavior-andor-crashes"></a><a name="MT4113"/>MT4113 レジストラーにジェネリック メソッドが見つかりました: '\*.\*' です。 ジェネリック メソッドのエクスポートはサポートされていませんし、ランダムな動作やクラッシュにつながります。
-
-
 
 ### <a name="a-namemt4114mt4114-unexpected-error-in-the-registrar-for-the-method----please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4114"/>メソッドのレジストラーで MT4114 予期しないエラー '\*.\*'-http://bugzilla.xamarin.com でバグ報告を送信してください
 
-
-
 ### <a name="a-namemt4116mt4116-could-not-register-the-assembly--"></a><a name="MT4116"/>アセンブリを登録できません MT4116 でした ' *': *
-
-
 
 ### <a name="a-namemt4117mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a><a name="MT4117"/>MT4117、レジストラーで、メソッドの署名の不一致が検出された '*.*'-メソッドは、セレクターを示します * パラメーター、マネージ メソッドがあるときに * パラメーター。
 
-
-
 ### <a name="a-namemt4118mt4118-cannot-register-two-managed-types--and--with-the-same-native-name-"></a><a name="MT4118"/>2 つのマネージ型を登録 MT4118 できません ('\*'および'\*') と同じネイティブ名前 ('* ')。
 
-
-
 ### <a name="a-namemt4119mt4119-could-not-register-the-selector--of-the-member--because-the-selector-is-already-registered-on-a-different-member"></a><a name="MT4119"/>セレクターを登録できません MT4119 でした '\*'のメンバー'\*。 *'、セレクターが既に別のメンバーに登録されているためです。
-
-
 
 ### <a name="a-namemt4120mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4120"/>MT4120 レジストラーが検出された不明なフィールド型 '\*'field' in\*。 *'。 Http://bugzilla.xamarin.com でバグ報告を送信してください。
 
@@ -1345,15 +1324,9 @@ Xamarin.iOS が該当するタイプをサポートすると思われる場合�
 
 ### <a name="a-namemt4121mt4121-cannot-use-gccg-to-compile-the-generated-code-from-the-static-registrar-when-using-the-accounts-framework-the-header-files-provided-by-apple-used-during-the-compilation-require-clang-either-use-clang---compilerclang-or-the-dynamic-registrar---registrardynamic"></a><a name="MT4121"/>MT4121 は使えません GCC/g++ (コンパイル時に使用する Apple によって提供されるヘッダー ファイルで必要な Clang) アカウント フレームワークを使用するときに、静的レジストラーによって生成されたコードをコンパイルします。 Clang を使用するか (--コンパイラ: clang) または動的レジストラー (--レジストラー: ダイナミック)。
 
-
-
 ### <a name="a-namemt4122mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a><a name="MT4122"/>提供される Clang コンパイラを使用して MT4122 ことはできません、*です。* ASCII 以外の場合に、静的レジストラーから生成されたコードをコンパイルする SDK の名前を入力 ('* ') が、アプリケーション内に存在します。 GCC を使用するか/g++ (--コンパイラ: gcc | g++)、動的レジストラー (--レジストラー: 動的) または新しい SDK。
 
-
-
 ### <a name="a-namemt4123mt4123-the-type-of-the-variadic-parameter-in-the-variadic-function--must-be-systemintptr"></a><a name="MT4123"/>MT4123 可変個引数関数の可変個引数パラメーターの型 ' *' System.IntPtr をする必要があります。
-
-
 
 ### <a name="a-namemt4124mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4124"/>MT4124 無効な * で見つかった ' *'。 Http://bugzilla.xamarin.com でバグ報告を送信してください。
 
@@ -1361,15 +1334,9 @@ Xamarin.iOS が該当するタイプをサポートすると思われる場合�
 
 ### <a name="a-namemt4125mt4125-the-registrar-found-an-invalid-type--in-signature-for-method--the-interface-must-have-a-protocol-attribute-specifying-its-wrapper-type"></a><a name="MT4125"/>MT4125 レジストラーが検出された無効な型 '\*'メソッドのシグネチャは' in\*': インターフェイスは、そのラッパー型を指定するプロトコル属性を持つ必要があります。
 
-
-
 ### <a name="a-namemt4126mt4126-cannot-register-two-managed-protocols--and--with-the-same-native-name-"></a><a name="MT4126"/>マネージの 2 つのプロトコルを登録 MT4126 できません ('\*'および'\*') と同じネイティブ名前 ('* ')。
 
-
-
 ### <a name="a-namemt4127mt4127-cannot-register-more-than-one-interface-method-for-the-method--which-is-implementing-"></a><a name="MT4127"/>メソッドの 1 つ以上のインターフェイス メソッドを登録 MT4127 できません '\*' (これは、実装する '\*')。
-
-
 
 ### <a name="a-namemt4128mt4128--the-registrar-found-an-invalid-generic-parameter-type--in-the-method--the-generic-parameter-must-have-an-nsobject-constraint"></a><a name="MT4128"/>MT4128 レジストラーが検出された無効なジェネリック パラメーター型 '\*'method' の\*' です。 ジェネリック パラメーター 'NSObject' 制約があります。
 
@@ -1506,6 +1473,30 @@ Xcode をアップグレードしてください。
 
 Objective C の有効な識別子を使用してください。
 
+### <a name="a-namemt4169mt4169-failed-to-generate-a-pinvoke-wrapper-for-method-message"></a><a name="MT4169"/>MT4169: {メソッド} の P/invoke ラッパーを生成できませんでした {message}。
+
+Xamarin.iOS した P/invoke のラッパー関数を生成できませんでした。
+基になる原因の報告されたエラー メッセージを確認してください。
+
+### <a name="a-namemt4170mt4170-the-registrar-cant-convert-from-managed-type-to-native-type-for-the-return-value-in-the-method-method"></a><a name="MT4170"/>MT4170: レジストラーに変換できません '{マネージ型}' から 'ネイティブ {type}' {メソッド} メソッドの戻り値の。
+
+エラーの説明を参照してください<a href="#MT4172">MT4172</a>です。
+
+### <a name="a-namemt4171mt4171-the-bindas-attribute-on-the-member-member-is-invalid-the-bindas-type-type-is-different-from-the-property-type-type"></a><a name="MT4171"/>MT4171: メンバー {member} で BindAs 属性が正しくありません: BindAs 型 {type} は {type} プロパティ型と異なります。
+
+BindAs 属性内の型にアタッチされているメンバーの種類に対応を確認してください。
+
+### <a name="a-namemt4172mt4172-the-registrar-cant-convert-from-native-type-to-managed-type-for-the-parameter-parameter-name-in-the-method-method"></a><a name="MT4172"/>MT4172: レジストラーに変換できません '{ネイティブ型}' から '{マネージ型}' {メソッド} 内のパラメーター '{parameter name}' にします。
+
+レジストラーでは、上記の種類間の変換はサポートされていません。
+
+これは、対象の API は、Xamarin.iOS; によって提供される場合の Xamarin.iOS のバグバグを送信してください[http://bugzilla.xamarin.com][1]です。
+
+ネイティブ ライブラリ用のバインド プロジェクトの開発中に、これを実行する場合があれば型の新しい組み合わせのサポートを追加します。 大文字と小文字の場合は、拡張機能により要求を送信してください ([http://bugzilla.xamarin.com][2]) テストでケース テーブルとおを評価します。
+
+[1]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS
+[2]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS&component=General&bug_severity=enhancement
+
 ## <a name="mt5xxx-gcc-and-toolchain-error-messages"></a>MT5xxx: GCC ツール チェーンのエラー メッセージ
 
 ### <a name="mt51xx-compilation"></a>MT51xx: コンパイル
@@ -1517,15 +1508,9 @@ Objective C の有効な識別子を使用してください。
 
 ### <a name="a-namemt5101mt5101-missing--compiler-please-install-xcode-command-line-tools-component"></a><a name="MT5101"/>MT5101 ありません ' *' コンパイラです。 Xcode コマンド ライン ツール コンポーネントをインストールしてください。
 
-
-
 ### <a name="a-namemt5102mt5102-failed-to-assemble-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT5102"/>ファイルの作成に失敗しました MT5102 ' *'。 Http://bugzilla.xamarin.com でバグ報告を送信してください。
 
-
-
 ### <a name="a-namemt5103mt5103-failed-to-compile-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT5103"/>ファイルをコンパイルできませんでした MT5103 ' *'。 Http://bugzilla.xamarin.com でバグ報告を送信してください。
-
-
 
 ### <a name="a-namemt5104mt5104-could-not-find-neither-the--nor-the--compiler-please-install-xcode-command-line-tools-component"></a><a name="MT5104"/>MT5104 見つかりませんでした。 どちらも、'\*'も'\*' コンパイラです。 Xcode コマンド ライン ツール コンポーネントをインストールしてください。
 
@@ -1572,8 +1557,6 @@ Objective C の有効な識別子を使用してください。
 
   - 渡すことによって同等のフラグを設定するには、サードパーティのバインドを変更することはできません、またはサード パーティ製ライブラリを手動でリンクしている場合、 <code>-cxx</code> mtouch (これは、プロジェクトの iOS のビルド オプション ページの追加 mtouch 引数を変更するには. 注意してくださいこれ必要がありますすべてのプロジェクト構成に対して実行すること)。
 
-
-
 ### <a name="a-namemt5211mt5211-native-linking-failed-undefined-objective-c-class--the-symbol--could-not-be-found-in-any-of-the-libraries-or-frameworks-linked-with-your-application"></a><a name="MT5211"/>MT5211: ネイティブ リンクに失敗しました、未定義の OBJECTIVE-C クラス:\*です。 シンボル '\*' ライブラリまたはアプリケーションを使用してリンクされているフレームワークのいずれかで見つかりませんでした。
 
 これは、ネイティブのリンカーには、任意の場所が参照する OBJECTIVE-C クラスが見つけられない場合に発生します。 これが発生するいくつかの理由がある: 同じである[MT5210](#MT5210)し、さらに。
@@ -1587,12 +1570,9 @@ Objective C の有効な識別子を使用してください。
               {
               }
 
-
-
 ### <a name="a-namemt5212mt5212-native-linking-failed-duplicate-symbol-"></a><a name="MT5212"/>MT5212: ネイティブ リンクに失敗しました、重複するシンボル: * です。
 
 これは、ネイティブのリンカーには、すべてのネイティブ ライブラリ間で重複したシンボルが発生した場合に発生します。 次のこのエラーがあります 1 つまたは複数[MT5213](#MT5213)エラーが発生するたびに、シンボルの場所を使用します。 このエラーの考えられる理由:
-
 
 * 2 回は、同じネイティブ ライブラリです。
 * 同じシンボルを定義する 2 つの個別のネイティブ ライブラリに発生します。
@@ -1616,7 +1596,6 @@ Objective C の有効な識別子を使用してください。
   - ネイティブ ライブラリのプロバイダーが問題を修正し、更新されたバージョンの提供を要求します。
   - (この場合にのみ機能、問題が重複しているオブジェクト ファイルでは実際には) 余分なオブジェクト ファイルを削除して自分で解決すること
 
-
             # Find out if the library is a fat library, and which
             # architectures it contains.
             lipo -info libNative.a
@@ -1638,7 +1617,6 @@ Objective C の有効な識別子を使用してください。
             # Reassemble the fat library
             lipo *.a -create -output libNative.a
 
-
   - 未使用のコードを削除するようにリンカーを依頼します。 Xamarin.iOS は、この処理に自動的に次の条件をすべて満たしている場合。
     - すべてのサードパーティのバインドの`[LinkWith]`SmartLink 属性を有効にします。
 
@@ -1646,7 +1624,6 @@ Objective C の有効な識別子を使用してください。
 
     - いいえ`-gcc_flags`mtouch でプロジェクトの iOS のビルド オプションの追加 mtouch 引数フィールド) に渡されます。
     - 追加することで未使用のコードを削除するには、直接リンカーを依頼することも`-gcc_flags -dead_strip`追加 mtouch 引数は、プロジェクトの iOS にビルド オプション。
-
 
 ### <a name="a-namemt5213mt5213-duplicate-symbol-in--location-related-to-previous-error"></a><a name="MT5213"/>MT5213: 内のシンボルを複製: * (場所は、前のエラーに関連する)
 
@@ -1723,11 +1700,7 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 ### <a name="a-namemt5301mt5301-missing-strip-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5301"/>MT5301:、'削除' のツールが不足しています。 Xcode コマンド ライン ツール コンポーネントをインストールしてください。
 
-
-
 ### <a name="a-namemt5302mt5302-missing-dsymutil-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5302"/>MT5302: 不足している 'dsymutil' するツールです。 Xcode コマンド ライン ツール コンポーネントをインストールしてください。
-
-
 
 ### <a name="a-namemt5303mt5303-failed-to-generate-the-debug-symbols-dsym-directory-please-review-the-build-log"></a><a name="MT5303"/>MT5303: (dSYM ディレクトリ) のデバッグ シンボルを生成できませんでした。 ビルド ログを確認してください。
 
@@ -1738,8 +1711,6 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 アプリケーションからデバッグ情報を削除する 'ストリップ' ツールの実行中にエラーが発生しました。
 
 ### <a name="a-namemt5305mt5305-missing-lipo-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5305"/>MT5305: 不足している 'lipo' するツールです。 Xcode コマンド ライン ツール コンポーネントをインストールしてください。
-
-
 
 ### <a name="a-namemt5306mt5306-failed-to-create-the-a-fat-library-please-review-the-build-log"></a><a name="MT5306"/>: MT5306 作成できませんでした、fat ライブラリです。 ビルド ログを確認してください。
 
@@ -2064,7 +2035,6 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 *MSBuild タスク: PropertyListEditorTaskBase*
 
-
 ## <a name="mt8xxx-runtime-error-messages"></a>MT8xxx: 実行時のエラー メッセージ
 
 <!--
@@ -2157,5 +2127,9 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 これは、Xamarin.iOS のバグを示します。 バグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 ### <a name="a-namemt8023mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT8023"/>MT8023: インスタンス オブジェクトがオープン ジェネリック メソッドのクローズ ジェネリック メソッドを構築するために必要な: * (トークンの参照: *)。 Http://bugzilla.xamarin.com でバグ報告を送信してください。
+
+これは、Xamarin.iOS のバグを示します。 バグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+
+### <a name="a-namemt8024mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a><a name="MT8024"/>MT8024: は、スマート enum '{smart_type}' の拡張機能の有効な型を見つけられませんでした。 Https://bugzilla.xamarin.com でバグを送信してください。
 
 これは、Xamarin.iOS のバグを示します。 バグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。

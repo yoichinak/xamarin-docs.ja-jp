@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp iOS および tvOS のサポート"
-description: "iOS および tvOS と機能の特定のセットアップ"
+description: "iOS および tvOS 特定のセットアップと UrhoSharp に対して機能します。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 9cf779b23ed830c07af0100152a44d6c3c4e317b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 465fed25f360f29ad0b63146add8de939fa8924e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS および tvOS のサポート
 
@@ -21,17 +21,17 @@ Urho、ポータブル クラス ライブラリで、さまざまなプラッ�
 
 次のページであると想定`MyGame`の sublcass は、`Application`クラスです。
 
-# <a name="ios-and-tvos"></a>iOS および tvOS
+## <a name="ios-and-tvos"></a>iOS および tvOS
 
 **サポートされているアーキテクチャ:** armv7、arm64、i386
 
-# <a name="creating-a-project"></a>Visual C++ プロジェクト
+## <a name="creating-a-project"></a>Visual C++ プロジェクト
 
 IOS プロジェクトを作成し、リソース ディレクトリにデータを追加し、すべてのファイルがあるかどうかを確認**BundleResource**として、**ビルド アクション**です。
 
 ![プロジェクトのセットアップ](ios-images/image-4.png "リソース ディレクトリにデータの追加")
 
-# <a name="configuring-and-launching-urho"></a>構成および Urho を起動します。
+## <a name="configuring-and-launching-urho"></a>構成および Urho を起動します。
 
 ステートメントを使用して追加、`Urho`と`Urho.iOS`名前空間、Urho、初期化中だけでなく、アプリケーションを起動するのには、このコードを追加します。
 
@@ -57,7 +57,7 @@ async void LaunchGame()
 
 既定の iOS PNG オプティマイザーが Urho いない現在正しく使用することがイメージを生成するため PNG の最適化を無効にすることが重要であります。
 
-# <a name="custom-embedding-of-urho"></a>カスタムの埋め込み Urho の
+## <a name="custom-embedding-of-urho"></a>カスタムの埋め込み Urho の
 
 引き継ぐことができる別の方法としてを持つように Urho アプリケーション全体 画面とこれを使用するアプリケーションのコンポーネントとして作成することができます、`UrhoSurface`これは、`UIView`既存のアプリケーションに埋め込むことができます。
 

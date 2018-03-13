@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 83e01bba82713b55a0a69858c2a83aa243f71588
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 70703797792a2f667a2eb20cbc45d1736e5e6b9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-views"></a>Web ビュー
 
@@ -40,7 +40,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 これには、次の web ビューが生成されます。
 
-[ ![](uiwebview-images/webview.png "ScalesPagesToFit の効果")](uiwebview-images/webview.png)
+[![](uiwebview-images/webview.png "ScalesPagesToFit の効果")](uiwebview-images/webview.png#lightbox)
 
 使用する方法についての`UIWebView`、次のレシピを参照してください。
 
@@ -68,7 +68,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 これには、次の web ビューが生成されます。
 
-[ ![](uiwebview-images/wkwebview.png "ScalesPagesToFit せず、例の web ビュー")](uiwebview-images/wkwebview.png)
+[![](uiwebview-images/wkwebview.png "ScalesPagesToFit せず、例の web ビュー")](uiwebview-images/wkwebview.png#lightbox)
 
 重要な点は`WKWebView`WebKit 名前空間には、クラスの先頭にディレクティブを使用してこれを追加する必要がためです。
 
@@ -98,7 +98,7 @@ PresentViewController(sfViewController, true, null);
 
 これには、次の web ビューが生成されます。
 
-[ ![](uiwebview-images/sfsafariviewcontroller.png "SFSafariViewController 例 web ビュー")](uiwebview-images/sfsafariviewcontroller.png)
+[![](uiwebview-images/sfsafariviewcontroller.png "SFSafariViewController 例 web ビュー")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
@@ -113,7 +113,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 これには、次の web ビューが生成されます。
 
-[ ![](uiwebview-images/safari.png "Safari で提供される web ページ")](uiwebview-images/safari.png)
+[![](uiwebview-images/safari.png "Safari で提供される web ページ")](uiwebview-images/safari.png#lightbox)
 
 Safari にアプリからユーザーを移動する一般に常に避けてください。 ほとんどのユーザーは、アプリケーションの外部でナビゲーションが予期しないアプリから移動する場合のユーザー可能性がありますしないを返すよう、エンゲージメントを本質的に強制終了します。
 

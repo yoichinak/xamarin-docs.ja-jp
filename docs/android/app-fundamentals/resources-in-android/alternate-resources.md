@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e421a52b1ae97b0beef59352a756401ed661051e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternate-resources"></a>代替のリソース
 
@@ -142,7 +142,7 @@ Android では、ルールの次のテストを反復処理して基本のリソ
 
 これらの規則にも次のフローチャートで示します。
 
-[![リソースのフローチャート](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png)
+[![リソースのフローチャート](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
 
 システムでは、密度固有のリソースは検索と、それらを見つけることができません、他の密度の特定のリソースを見つけて、それらのスケールを試みます。 Android では、既定のリソースは必ずしも使用ことはできません。
 たとえば、低密度リソースや、検索を使用できないときに Android 可能性があります高密度のバージョンのリソース既定のインスタンスまたはメディア密度のリソースを選択します。 これは、高密度のリソースを 0.75 係数を必要となります中密度リソースを縮小する場合よりも少ないの可視性問題の原因となる 0.5 の率をスケール ダウンできるためです。
@@ -196,4 +196,4 @@ Android では、ルールの次のテストを反復処理して基本のリソ
 このプロセスの結果として Android リソースが使用されます、ドロウアブル リソース ディレクトリに`drawable-en-port-ldpi`デバイス用です。
 
 > [!NOTE]
-> **注:**画面サイズ修飾子は、この選択プロセスの 1 つの例外を提供します。 For Android は、現在のデバイスより小さい画面のように設計されているリソースを選択することができます。 たとえば、大型画面デバイスは可能性があります、リソースを使用して通常のサイズが設定された画面を提供します。 ただしこの逆はできません。 同じ大きな画面デバイスは xlarge 画面に対して提供されるリソースを使用しません。 Android では、特定の画面サイズに一致するリソース セットを見つけることはできません、アプリケーションがクラッシュします。
+> 画面サイズ修飾子では、この選択プロセスの 1 つの例外を提供します。 For Android は、現在のデバイスより小さい画面のように設計されているリソースを選択することができます。 たとえば、大型画面デバイスは可能性があります、リソースを使用して通常のサイズが設定された画面を提供します。 ただしこの逆はできません。 同じ大きな画面デバイスは xlarge 画面に対して提供されるリソースを使用しません。 Android では、特定の画面サイズに一致するリソース セットを見つけることはできません、アプリケーションがクラッシュします。

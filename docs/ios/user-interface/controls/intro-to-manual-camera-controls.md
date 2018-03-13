@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e5ff4e3732476415ff32e98b8281f3cb6e03e332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7111c1716ef3a8869f8b2401a7653d9e9941977b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manual-camera-controls"></a>手動のカメラのコントロール
 
@@ -26,7 +26,7 @@ _AVFoundation Framework やすくよりも優れた写真が撮影すること�
 
 ビデオや静止 iOS デバイスでカメラを使用してイメージを使用すると、かどうかそれらのイメージをキャプチャするために使用するプロセス、ほぼ同じです。 既定の自動カメラのコントロールまたは新規の手動カメラの制御を利用したもの使用するアプリケーションの場合は true。 次に示します。
 
- [ ![](intro-to-manual-camera-controls-images/image1.png "AVFoundation キャプチャ オブジェクトの概要")](intro-to-manual-camera-controls-images/image1.png)
+ [![](intro-to-manual-camera-controls-images/image1.png "AVFoundation キャプチャ オブジェクトの概要")](intro-to-manual-camera-controls-images/image1.png#lightbox)
 
 入力がから取得した、`AVCaptureDeviceInput`に、`AVCaptureSession`によって、`AVCaptureConnection`です。 静止画像またはビデオをストリームとして、出力になります。 プロセス全体がによって制御されます、`AVCaptureDevice`です。
 
@@ -280,11 +280,11 @@ AV キャプチャ セッションは、iOS デバイスのカメラからライ
 
 たとえば、プロ カメラマンが実現するためにイメージの焦点を和らげますことができます、 [Bokeh 効果](http://en.wikipedia.org/wiki/Bokeh):
 
-[ ![](intro-to-manual-camera-controls-images/image2.png "Bokeh 効果")](intro-to-manual-camera-controls-images/image2.png)
+[![](intro-to-manual-camera-controls-images/image2.png "Bokeh 効果")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
 または、作成、[フォーカス プル効果](http://www.mediacollege.com/video/camera/focus/pull.html)など。
 
-[ ![](intro-to-manual-camera-controls-images/image3.png "フォーカス プル効果")](intro-to-manual-camera-controls-images/image3.png)
+[![](intro-to-manual-camera-controls-images/image3.png "フォーカス プル効果")](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
 科学者や医療アプリケーションのライター、アプリケーションがプログラムによって、レンズを実験に移動しようとする可能性があります。 どちらの方法でも、新しい API により、エンドユーザーまたはイメージ時のフォーカスに制御を実行するアプリケーションのいずれかを取得できます。
 
@@ -292,7 +292,7 @@ AV キャプチャ セッションは、iOS デバイスのカメラからライ
 
 IOS 8 アプリケーションでのフォーカスの制御の詳細を説明する前にします。 IOS デバイスでフォーカスがどのように動作するか見てをみましょう。
 
-[ ![](intro-to-manual-camera-controls-images/image4.png "IOS デバイスでのフォーカスの動作方法")](intro-to-manual-camera-controls-images/image4.png)
+[![](intro-to-manual-camera-controls-images/image4.png "IOS デバイスでのフォーカスの動作方法")](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
 ライトでは、iOS デバイスでカメラのレンズを入力し、イメージ センサーにフォーカスが移動します。 センサーへのリレーションシップで、中心点 (イメージを最も鮮明な表示領域) は、ここで、レンズ センサー コントロールからの距離。 レンズは、センサーから遠いほど、距離オブジェクト見える鮮明およびオブジェクトの近くの近くに見える最も鮮明なです。
 
@@ -358,7 +358,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 代わりに、一般的な AV キャプチャ セットアップ コードで、`UIViewController`アプリケーションのストーリー ボードに追加され、次のように構成されていることができます。
 
-[ ![](intro-to-manual-camera-controls-images/image5.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image5.png)
+[![](intro-to-manual-camera-controls-images/image5.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 
@@ -491,10 +491,10 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
   
 1. Auto モードでカメラをスライダーが移動します自動的にカメラを調整します。 フォーカス。
 
-    [![](intro-to-manual-camera-controls-images/image6.png "カメラを調整します。 このサンプル アプリでフォーカスとスライダーが自動的に移動します。")](intro-to-manual-camera-controls-images/image6.png)
+    [![](intro-to-manual-camera-controls-images/image6.png "カメラを調整します。 このサンプル アプリでフォーカスとスライダーが自動的に移動します。")](intro-to-manual-camera-controls-images/image6.png#lightbox)
 1. ロック済みセグメントをタップし、レンズの位置を手動で調整する位置のスライダーをドラッグします。
 
-    [![](intro-to-manual-camera-controls-images/image7.png "手動でレンズ位置の調整")](intro-to-manual-camera-controls-images/image7.png)
+    [![](intro-to-manual-camera-controls-images/image7.png "手動でレンズ位置の調整")](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. アプリケーションを停止します。
 
 
@@ -506,7 +506,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 手動露出コントロールを使用して、ユーザーは非現実的明るい色から暗いとムーディにイメージを実行できます。
 
-[ ![](intro-to-manual-camera-controls-images/image8.png "サンプルに濃い色とムーディ非現実的明るい色から露出が表示された画像")](intro-to-manual-camera-controls-images/image8.png)
+[![](intro-to-manual-camera-controls-images/image8.png "サンプルに濃い色とムーディ非現実的明るい色から露出が表示された画像")](intro-to-manual-camera-controls-images/image8.png#lightbox)
 
 ここでも、これ行う科学アプリケーションまたはアプリケーションのユーザー インターフェイスで提供される手動のコントロールを使用して、プログラムによる制御が自動的に使用します。 どちらにしても、新しい iOS 8 の公開 Api を提供、カメラの危険度の設定をきめ細かく制御します。
 
@@ -514,7 +514,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 前の IOS 8 アプリケーションでリスクの度合いを制御する詳細を説明します。 危険度のしくみの概要を見てみましょう。
 
-[ ![](intro-to-manual-camera-controls-images/image9.png "危険度のしくみ")](intro-to-manual-camera-controls-images/image9.png)
+[![](intro-to-manual-camera-controls-images/image9.png "危険度のしくみ")](intro-to-manual-camera-controls-images/image9.png#lightbox)
 
 露出の制御を一緒に付属している 3 つの基本的な要素は次のとおりです。
 
@@ -527,7 +527,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 学習する前に、手動露出の動作は適切な iOS デバイスで動作するか自動露出を継続的な方法を理解することを勧めします。
 
-[ ![](intro-to-manual-camera-controls-images/image10.png "継続的な自動露出の iOS デバイスで動作")](intro-to-manual-camera-controls-images/image10.png)
+[![](intro-to-manual-camera-controls-images/image10.png "継続的な自動露出の iOS デバイスで動作")](intro-to-manual-camera-controls-images/image10.png#lightbox)
 
 自動露出ブロックを 1 つ目は、ジョブの計算に最適な露出を持ち、統計の使用状況測定が継続的にフィードされます。この情報を使っても点灯シーンを取得するには、ISO とシャッター スピードの最適な組み合わせを計算します。 このサイクルは、"AE ループ"と呼ばれます。
 
@@ -535,7 +535,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 次に、iOS デバイスでどのようにロックの露出 works 見ていきましょう。
 
-[ ![](intro-to-manual-camera-controls-images/image11.png "露出で iOS デバイスの機能はロックされている方法")](intro-to-manual-camera-controls-images/image11.png)
+[![](intro-to-manual-camera-controls-images/image11.png "露出で iOS デバイスの機能はロックされている方法")](intro-to-manual-camera-controls-images/image11.png#lightbox)
 
 もう一度、最適な iOS および期間の値を計算しようとする自動露出ブロックがあります。 ただし、このモードでは、AE ブロックは、統計の使用状況測定のエンジンから切断されます。
 
@@ -589,7 +589,7 @@ CaptureDevice.UnlockForConfiguration();
 
 代わりに、一般的な AV キャプチャ セットアップ コードで、`UIViewController`アプリケーションのストーリー ボードに追加され、次のように構成されていることができます。
 
-[ ![](intro-to-manual-camera-controls-images/image12.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image12.png)
+[![](intro-to-manual-camera-controls-images/image12.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 
@@ -791,13 +791,13 @@ CaptureDevice.UnlockForConfiguration();
   
 1. Auto モードでカメラをスライダーが移動します自動的にカメラ露出の調整。
 
-    [![](intro-to-manual-camera-controls-images/image13.png "カメラ露出の調整とスライダーが自動的に移動します。")](intro-to-manual-camera-controls-images/image13.png)
+    [![](intro-to-manual-camera-controls-images/image13.png "カメラ露出の調整とスライダーが自動的に移動します。")](intro-to-manual-camera-controls-images/image13.png#lightbox)
 1. ロックのセグメントをタップし、バイアス スライダーを自動公開のバイアスを手動で調整します。
 
-    [![](intro-to-manual-camera-controls-images/image14.png "自動の露出のバイアスを手動で調整します。")](intro-to-manual-camera-controls-images/image14.png)
+    [![](intro-to-manual-camera-controls-images/image14.png "自動の露出のバイアスを手動で調整します。")](intro-to-manual-camera-controls-images/image14.png#lightbox)
 1. カスタム セグメントをタップし、露出を手動で制御する期間と ISO のスライダーをドラッグします。
 
-    [![](intro-to-manual-camera-controls-images/image15.png "期間と ISO スライダーをドラッグして、手動で公開を制限する")](intro-to-manual-camera-controls-images/image15.png)
+    [![](intro-to-manual-camera-controls-images/image15.png "期間と ISO スライダーをドラッグして、手動で公開を制限する")](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. アプリケーションを停止します。
 
 
@@ -807,7 +807,7 @@ CaptureDevice.UnlockForConfiguration();
 
 ホワイト バランス コントロールをより現実的な見えるように、画像の colosr のバランスを調整できるようにします。 異なる光源は別の色温度を持ち、これらの相違点を補正するイメージをキャプチャするために使用カメラ設定を調整する必要があります。 ここでも、ユーザーを制御するホワイト バランスを許可することでようにアートの効果を実現する、自動ルーチンのサポートされていないプロフェッショナル向けの調整します。
 
-[ ![](intro-to-manual-camera-controls-images/image16.png "手動ホワイト バランス調整を示すサンプル画像")](intro-to-manual-camera-controls-images/image16.png)
+[![](intro-to-manual-camera-controls-images/image16.png "手動ホワイト バランス調整を示すサンプル画像")](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
 たとえば、夏時間では、タングステン白熱ライト ウォーマー、黄、オレンジ色の濃淡がある一方、青のキャストがあります。 (当惑させるように、「クール」色が、「ウォーム」色より上位の色温度があります。 色温度は、物理メジャーを 1 つは知覚的されません)。
 
@@ -821,7 +821,7 @@ IOS 8 アプリケーションのホワイト バランスの制御の詳細を�
 
 色の認識の調査で、 [CIE 1931 RGB 色空間と CIE 1931 XYZ 色空間](http://en.wikipedia.org/wiki/CIE_1931_color_space)は最初は数学的にカラー スペースを定義します。 1931 照明 (CIE) 国際委員会によって作成されました。
 
-[ ![](intro-to-manual-camera-controls-images/image17.png "領域をカラー CIE 1931 RGB 色空間と CIE 1931"xyz"")](intro-to-manual-camera-controls-images/image17.png)
+[![](intro-to-manual-camera-controls-images/image17.png "領域をカラー CIE 1931 RGB 色空間と CIE 1931"xyz"")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
 上のグラフが表示すべての色の濃い青明るい赤に明るい緑から人間の目に表示されます。 上の図に示すように、X と Y 値を持つ図上の任意の時点をプロットすることができます。
 
@@ -900,7 +900,7 @@ Apple では、という用語は、灰色の世界を使用して、iOS 8 に�
 
 代わりに、一般的な AV キャプチャ セットアップ コードで、`UIViewController`アプリケーションのストーリー ボードに追加され、次のように構成されていることができます。
 
-[ ![](intro-to-manual-camera-controls-images/image18.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image18.png)
+[![](intro-to-manual-camera-controls-images/image18.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 
@@ -1111,13 +1111,13 @@ Apple では、という用語は、灰色の世界を使用して、iOS 8 に�
 1. 変更を保存、コードおよびアプリケーションを実行します。
 1. Auto モードでカメラをスライダーが移動します自動的にカメラ ホワイト バランスを調整します。
 
-    [![](intro-to-manual-camera-controls-images/image19.png "カメラ ホワイト バランスを調整すると、スライダーが自動的に移動します。")](intro-to-manual-camera-controls-images/image19.png)
+    [![](intro-to-manual-camera-controls-images/image19.png "カメラ ホワイト バランスを調整すると、スライダーが自動的に移動します。")](intro-to-manual-camera-controls-images/image19.png#lightbox)
 1. ロック済みセグメントをタップし、ホワイト バランスを手動で調整する Temp と濃淡スライダーをドラッグします。
 
-    [![](intro-to-manual-camera-controls-images/image20.png "ホワイト バランスを手動で調整する Temp と濃淡スライダーをドラッグします。")](intro-to-manual-camera-controls-images/image20.png)
+    [![](intro-to-manual-camera-controls-images/image20.png "ホワイト バランスを手動で調整する Temp と濃淡スライダーをドラッグします。")](intro-to-manual-camera-controls-images/image20.png#lightbox)
 1. ロック セグメントは、選択したまま、カメラの前面に物理灰色カードを配置し、その灰色の世界にホワイト バランスを調整する灰色のカード ボタンをタップします。
 
-    [![](intro-to-manual-camera-controls-images/image21.png "ボタンをタップします灰色のカードを灰色の世界ホワイト バランスを調整するには")](intro-to-manual-camera-controls-images/image21.png)
+    [![](intro-to-manual-camera-controls-images/image21.png "ボタンをタップします灰色のカードを灰色の世界ホワイト バランスを調整するには")](intro-to-manual-camera-controls-images/image21.png#lightbox)
 1. アプリケーションを停止します。
 
 上記のコードでは、カメラが自動モードの場合は、ホワイト バランス設定を監視またはスライダーを使用して、ロック モードの場合は、ホワイト バランスを制御する方法を説明しました。
@@ -1128,7 +1128,7 @@ Apple では、という用語は、灰色の世界を使用して、iOS 8 に�
 
 簡単に言うと、さまざまな画像に画像の設定で撮影された画像を静止のバーストは、角かっこをキャプチャします。
 
-[ ![](intro-to-manual-camera-controls-images/image22.png "角かっこのキャプチャのしくみ")](intro-to-manual-camera-controls-images/image22.png)
+[![](intro-to-manual-camera-controls-images/image22.png "角かっこのキャプチャのしくみ")](intro-to-manual-camera-controls-images/image22.png#lightbox)
 
 IOS 8 の角かっこのキャプチャを使用して、アプリケーション一連の手動のカメラ コントロールを事前設定、1 つのコマンドを発行および手動のプリセットのそれぞれの一連のイメージを返す現在のシーンがあります。
 
@@ -1187,7 +1187,7 @@ IOS 8 の角かっこのキャプチャを使用して、アプリケーショ�
 
 代わりに、一般的な AV キャプチャ セットアップ コードで、`UIViewController`アプリケーションのストーリー ボードに追加され、次のように構成されていることができます。
 
-[ ![](intro-to-manual-camera-controls-images/image23.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image23.png)
+[![](intro-to-manual-camera-controls-images/image23.png "UIViewController をストーリー ボードのアプリケーションに追加し、次のように構成されています。")](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 
@@ -1345,10 +1345,10 @@ IOS 8 の角かっこのキャプチャを使用して、アプリケーショ�
 1. 変更を保存、コードおよびアプリケーションを実行します。
 1. 枠をシーンおよび角かっこのキャプチャ ボタンをタップします。
 
-    [![](intro-to-manual-camera-controls-images/image24.png "シーンのフレームし、キャプチャの角かっこボタンをタップします。")](intro-to-manual-camera-controls-images/image24.png)
+    [![](intro-to-manual-camera-controls-images/image24.png "シーンのフレームし、キャプチャの角かっこボタンをタップします。")](intro-to-manual-camera-controls-images/image24.png#lightbox)
 1. 右から左角かっこキャプチャによって使用された 3 つのイメージを表示する方向にスワイプします。
 
-    [![](intro-to-manual-camera-controls-images/image25.png "右から左角かっこキャプチャによって使用された 3 つのイメージを表示する方向にスワイプ")](intro-to-manual-camera-controls-images/image25.png)
+    [![](intro-to-manual-camera-controls-images/image25.png "右から左角かっこキャプチャによって使用された 3 つのイメージを表示する方向にスワイプ")](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. アプリケーションを停止します。
 
 

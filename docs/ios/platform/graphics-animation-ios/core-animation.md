@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 80fe298f3dd24aac7f84213aee96499dd369d16d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0cb4e00abffead854c2590bde6df45c200ff0bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-animation"></a>コア アニメーション
 
@@ -23,12 +23,16 @@ iOS を含む[*コア アニメーション*](https://developer.apple.com/librar
 
 コア アニメーションとコア グラフィックス フレームワークは連携して、すばらしいを作成する 2 次元グラフィックスをアニメーション化します。 実際にはコア アニメーションでも変換できます 3D 空間で 2 次元グラフィックスすばらしい、映画のようなエクスペリエンスを作成します。 ただし、3 D グラフィックスの場合は true を作成するにする必要があります OpenGL ES と同様に、またはゲームを有効にする MonoGame などの API を使用する 3D は、この記事の範囲外ですが。
 
+<a name="Using_Core_Animation" />
+
 ## <a name="core-animation"></a>コア アニメーション
 
 iOS では、アニメーションのコア フレームワークを使用して、ビューの間で移行中、メニューをスライドさせて、いくつかの例の効果をスクロールなどのアニメーション効果を作成します。 これにはアニメーションを使用する 2 つの方法があります。
 
--  [UIKit を介して](#Using_UIKit_Animation)アニメーションのビューをベースとコント ローラー間のアニメーション効果が含まれます。
--   [コア アニメーションを介して](#Using_Core_Animation)、細かい制御を許可する、直接レイヤー。
+- [UIKit を介して](#Using_UIKit_Animation)アニメーションのビューをベースとコント ローラー間のアニメーション効果が含まれます。
+- [コア アニメーションを介して](#Using_Core_Animation)、細かい制御を許可する、直接レイヤー。
+
+<a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>UIKit アニメーションを使用します。
 
@@ -237,6 +241,6 @@ public override void ViewDidAppear (bool animated)
 ## <a name="related-links"></a>関連リンク
 
 - [コア アニメーションのサンプル](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [コア グラフィック](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [コア グラフィックス](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [グラフィックスおよびアニメーションのチュートリアル](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [コア アニメーション](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

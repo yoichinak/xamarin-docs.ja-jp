@@ -4,14 +4,15 @@ description: "キャンバスとペイントを含め、SkiaSharp 図面の基�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 63314efdd29c8da0273459de2d12f7b807968a04
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="drawing-a-simple-circle"></a>単純な円を描画
 
@@ -139,7 +140,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 IOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
 
-[![](circle-images/simplecircle-small.png "単純な円ページのスクリーン ショットをトリプル")](circle-images/simplecircle-large.png "単純な円ページのトリプル スクリーン ショット")
+[![](circle-images/simplecircle-small.png "単純な円ページのスクリーン ショットをトリプル")](circle-images/simplecircle-large.png#lightbox "単純な円ページのトリプル スクリーン ショット")
 
 プログラムを自分で実行するときに、電話またはグラフィックが再描画される方法を表示する、シミュレーターを横有効にすることができます。 グラフィックは、再描画する必要があるたびに、`PaintSurface`イベント ハンドラーが再度呼び出されます。
 

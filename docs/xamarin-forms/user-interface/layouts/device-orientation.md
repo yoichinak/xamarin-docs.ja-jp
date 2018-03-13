@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: d18cf055bb206099eecea0d9f417af571f3819e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8b266640bb0e1aa2bc584197e5fd7cbf4ab48e88
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 02/28/2018
 Xamarin.Forms を使用する場合、デバイスの方向を制御するサポートされているメソッドは、それぞれのプロジェクトの設定を使用するです。
 
 > [!NOTE]
-> **注**: の Xamarin.Forms 1.5.0 が原因で失敗する方向を制御するカスタムのレンダラーに基づく試行バグがあります。 参照してください[このディスカッション](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)詳細については、Xamarin のフォーラムでは、この説明します。
+> Xamarin.Forms 1.5.0 が原因でバグがある時点で、カスタム レンダラー ベースは失敗する方向を制御しようとします。 参照してください[このディスカッション](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)詳細については、Xamarin のフォーラムでは、この説明します。
 
 ### <a name="ios"></a>iOS
 
@@ -123,7 +123,7 @@ SupportedOrientations = SupportedPageOrientation.Landscape; // landscape only
 Xamarin.Forms では、共有コードで向きの変更のアプリに通知するため、ネイティブのイベントを提供していません。 ただし、`SizeChanged`のイベント、`Page`ときに発生幅または高さのいずれか、`Page`変更します。 ときの幅、`Page`が高さよりも大きい、デバイスが横モードにします。 詳細については、次を参照してください。[画像を画面の向きに基づく表示](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)です。
 
 > [!NOTE]
-> **注**: 共有コードで印刷の向きの変更の通知を受信するため、既存の無料の NuGet パッケージがあります。 参照してください、 [GitHub リポジトリの](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
+> 共有コードで印刷の向きの変更の通知を受信するため、既存の無料の NuGet パッケージがあります。 参照してください、 [GitHub リポジトリの](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
 
 代わりに、オーバーライドされる可能性が、 [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/)メソッドを`Page`ロジックがありますを変更して任意のレイアウトを挿入します。 `OnSizeAllocated`メソッドが呼び出されるたびに、 `Page` whenver デバイスの回転で発生する、新しいサイズが割り当てられます。 なおの基本実装`OnSizeAllocated`するオーバーライドの基本実装を呼び出すことが重要であるため、重要なレイアウト機能を実行します。
 
@@ -176,7 +176,7 @@ protected override void OnSizeAllocated(double width, double height)
 上記の規則は、ベスト プラクティスと見なされる一般的な複数の画面サイズとは、インターフェイスを実装するときにも適用されます。 このガイドの残りの部分では、xamarin.forms を使用して、プライマリのレイアウトの各応答のレイアウトの具体的な例についてを説明します。
 
 > [!NOTE]
-> **注**: 次のセクションでは、デモンストレーションの 1 つの種類を使用して応答のレイアウトを実装する方法をわかりやすくするため、`Layout`一度にです。 実際はできるだけを混在させる`Layout`単純または最も直観的なを使用して目的のレイアウトを実現するために s`Layout`コンポーネントごとにします。
+> 次のセクションでは、デモンストレーションの 1 つの種類を使用して応答のレイアウトを実装する方法をわかりやすくするため、`Layout`一度にです。 実際はできるだけを混在させる`Layout`単純または最も直観的なを使用して目的のレイアウトを実現するために s`Layout`コンポーネントごとにします。
 
 ### <a name="stacklayout"></a>StackLayout
 

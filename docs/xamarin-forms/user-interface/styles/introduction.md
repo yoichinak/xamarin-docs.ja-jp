@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6b4d63637eae7c1719f3f6e525327d416ddff59d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce5a7976f5bac68ca01b30a8d437aa83b8360580
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-styles"></a>スタイルの概要
 
@@ -84,7 +84,7 @@ public class NoStylesPageCS : ContentPage
 
 各[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンスによって表示されるテキストの外観を制御するのと同じプロパティ値には、`Label`です。 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](introduction-images/no-styles.png "表示スタイルをせずにラベルを付ける")](introduction-images/no-styles-large.png "スタイルせず外観にラベルを付ける")
+[![](introduction-images/no-styles.png "表示スタイルをせずにラベルを付ける")](introduction-images/no-styles-large.png#lightbox "スタイルせず外観にラベルを付ける")
 
 繰り返し発生することができます個々 のコントロールの外観を設定し、エラーが発生します。 代わりに、スタイルを作成できます、外観を定義し、必要なコントロールに適用します。
 

@@ -4,14 +4,15 @@ description: "線の描画と、入力に使用するパスを許可するさま
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4344559c85ad637ad198b3afc28b17e694a14f82
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 60d60939c0f7bd3961400a3e8d769fdfa17184a2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="path-effects"></a>パスの効果
 
@@ -48,7 +49,7 @@ public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 
 **ドットで区切られたテキストのアニメーション**ページがに似ていますが、**記載されているテキスト**、資料に記載されたページ[**を統合するテキストとグラフィックス**](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)で設定してテキストの文字が表示される説明されている、`Style`のプロパティ、`SKPaint`オブジェクトを`SKPaintStyle.Stroke`です。 さらに、**ドットで区切られたテキストのアニメーション**使用`SKPathEffect.CreateDash`点線の外観を説明これに付与し、プログラムをアニメーション化も、`phase`の引数、`SKPathEffect.CreateDash`を旅行のテキストを囲むドットを作成するメソッド文字があります。 横モードでページを次に示します。
 
-[![](effects-images/animateddottedtext-small.png "ドットで区切られたテキストのアニメーションをページのスクリーン ショットをトリプル")](effects-images/animateddottedtext-large.png "ドットで区切られたテキストのアニメーションをページのトリプル スクリーン ショット")
+[![](effects-images/animateddottedtext-small.png "ドットで区切られたテキストのアニメーションをページのスクリーン ショットをトリプル")](effects-images/animateddottedtext-large.png#lightbox "ドットで区切られたテキストのアニメーションをページのトリプル スクリーン ショット")
 
 [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスは、一部の定数を定義することで開始しもオーバーライド、`OnAppearing`と`OnDisappearing`アニメーションのメソッド。
 
@@ -156,7 +157,7 @@ public class AnimatedDottedTextPage : ContentPage
 
 **ドット (.)/ダッシュ Morph**ダッシュように点線で、もう一度を組み合わせてフォーム ダッシュを分割できるように、プログラムが、dash パターン自体をアニメーション化します。
 
-[![](effects-images/dotdashmorph-small.png "ドット Dash Morph ページのスクリーン ショットをトリプル")](effects-images/dotdashmorph-large.png "ドット Dash Morph ページのトリプル スクリーン ショット")
+[![](effects-images/dotdashmorph-small.png "ドット Dash Morph ページのスクリーン ショットをトリプル")](effects-images/dotdashmorph-large.png#lightbox "ドット Dash Morph ページのトリプル スクリーン ショット")
 
 [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスのオーバーライド、`OnAppearing`と`OnDisappearing`メソッドの前のプログラムがでしたが、定義されているクラスと同様、`SKPaint`フィールドとしてオブジェクト。
 
@@ -396,7 +397,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `PaintSurface`ハンドラー自体でループ処理を決定するため、ピッカーにアクセスするベジエ曲線を作成する`PathEffect`に線を使用する必要があります。 3 つのオプション- `Translate`、 `Rotate`、および`Morph`-左から右に表示されます。
 
-[![](effects-images/1dpatheffect-small.png "トリプル ページのスクリーン ショットの 1 D パス効果")](effects-images/1dpatheffect-large.png "トリプル ページのスクリーン ショットの 1 D パスの効果")
+[![](effects-images/1dpatheffect-small.png "トリプル ページのスクリーン ショットの 1 D パス効果")](effects-images/1dpatheffect-large.png#lightbox "トリプル ページのスクリーン ショットの 1 D パスの効果")
 
 指定されたパス、`SKPathEffect.Create1DPath`メソッドは常に入力します。 指定されたパス、`DrawPath`メソッド常にストロークを付ける場合、`SKPaint`オブジェクトがその`PathEffect`プロパティの 1 D パス効果に設定します。 注意して、`pathPaint`オブジェクトを持たない`Style`設定は、通常の既定値は`Fill`、パス ストロークを付けるかに関係なく、します。
 
@@ -408,7 +409,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 場合、`advance`パスのサイズより小さい引数は、レプリケートされたパスが重なることができます。 これにより、いくつかおもしろい効果。 **リンク チェーン**ページには、一連の重複を catenary の個性的な形でハングするリンクのチェーンのように見える円が表示されます。
 
-[![](effects-images/linkedchain-small.png "リンクされたチェーン ページのスクリーン ショットをトリプル")](effects-images/linkedchain-large.png "リンク チェーン ページのトリプル スクリーン ショット")
+[![](effects-images/linkedchain-small.png "リンクされたチェーン ページのスクリーン ショットをトリプル")](effects-images/linkedchain-large.png#lightbox "リンク チェーン ページのトリプル スクリーン ショット")
 
 非常に見るし、実際には円をされないものが表示されます。 チェーン内の各リンクは、2 つの円弧、サイズし、置か隣接リンクで接続しているようです。
 
@@ -547,7 +548,7 @@ public class LinkedChainPage : ContentPage
 
 **コンベヤ ベルト**ページは、長方形コンベヤ ベルト曲線の上部と下部のウィンドウの次元のサイズがこのようなパスを作成します。 シンプルなそのパスのストロークを付ける`SKPaint`20 ピクセル幅の広いと、灰色のオブジェクトを別の再描画`SKPaint`オブジェクトを`SKPathEffect`ほとんどバケットのようなパスを参照するオブジェクト。
 
-[![](effects-images/conveyorbelt-small.png "コンベヤ ベルトのページのスクリーン ショットをトリプル")](effects-images/conveyorbelt-large.png "コンベヤ ベルトのページのトリプル スクリーン ショット")
+[![](effects-images/conveyorbelt-small.png "コンベヤ ベルトのページのスクリーン ショットをトリプル")](effects-images/conveyorbelt-large.png#lightbox "コンベヤ ベルトのページのトリプル スクリーン ショット")
 
 (0, 0) のバケットのパスのポイントは、ハンドル、ため、`phase`引数はアニメーション、コンベヤ ベルト、おそらく下部水をスコープとアウトを上部にあるダンプ中心となるように、バケット。
 
@@ -796,7 +797,7 @@ public class HatchFillPage : ContentPage
 
 `PaintSurface`ハンドラーの呼び出しだけを赤と青の陰影の行では、不一致を確認できるように角の丸い四角形の境界線の描画を終了します。
 
-[![](effects-images/hatchfill-small.png "トリプル ページのスクリーン ショット、ハッチ塗りつぶし")](effects-images/hatchfill-large.png "陰影の塗りつぶし ページのトリプル スクリーン ショット")
+[![](effects-images/hatchfill-small.png "トリプル ページのスクリーン ショット、ハッチ塗りつぶし")](effects-images/hatchfill-large.png#lightbox "陰影の塗りつぶし ページのトリプル スクリーン ショット")
 
 Android の画面に表示されない本当にそのような: スクリーン ショットのスケーリング、赤の細い線とシン広くするように見える赤色の線に統合するおよび幅のスペースが原因です。
 
@@ -850,7 +851,7 @@ public class PathTileFillPage : ContentPage
 
 `PaintSurface`ハンドラー、`SKPathEffect.Create2DPath`呼び出しがオーバー ラップする 80 ピクセルの四角形タイルが 64 水平および垂直方向の間隔を設定します。 さいわい、パスには、部分のピース、隣接するタイルで適切にメッシュがようになります。
 
-[![](effects-images/pathtilefill-small.png "パスのタイルの塗りつぶし ページのスクリーン ショットをトリプル")](effects-images/pathtilefill-large.png "パス タイルの塗りつぶし ページのトリプル スクリーン ショット")
+[![](effects-images/pathtilefill-small.png "パスのタイルの塗りつぶし ページのスクリーン ショットをトリプル")](effects-images/pathtilefill-large.png#lightbox "パス タイルの塗りつぶし ページのトリプル スクリーン ショット")
 
 元のスクリーン ショットからのスケーリングと、Android の画面上特に、ゆがみが行われます。
 
@@ -923,7 +924,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 この特殊効果を使用するには、線の描画またはに基づいていっぱいになると、`Style`のプロパティ、`SKPaint`オブジェクト。 ここで 3 つすべてのプラットフォームには。
 
-[![](effects-images/anotherroundedheptagon-small.png "別の丸め七角形ページのスクリーン ショットをトリプル")](effects-images/anotherroundedheptagon-large.png "別丸め七角形ページのトリプル スクリーン ショット")
+[![](effects-images/anotherroundedheptagon-small.png "別の丸め七角形ページのスクリーン ショットをトリプル")](effects-images/anotherroundedheptagon-large.png#lightbox "別丸め七角形ページのトリプル スクリーン ショット")
 
 この丸められた七角形が以前のバージョンのプログラムと同じことが表示されます。 詳細納得させる必要がある場合、角の半径は 100 では完全ではなくで指定された、50、`SKPathEffect.CreateCorner`呼び出しできますコメントを解除する、コーナーに重ね合わせて示す最後のステートメントで、プログラムと 100 radius 円を参照してください。
 
@@ -942,7 +943,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 
 **実験ジッター**  ページでは、四角形を描画のさまざまな値をテストすることができます。
 
-[![](effects-images/jitterexperiment-small.png "3 つのジッター実験ページのスクリーン ショット")](effects-images/jitterexperiment-large.png "Triple screenshot of the JitterExperiment page")
+[![](effects-images/jitterexperiment-small.png "3 つのジッター実験ページのスクリーン ショット")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
 プログラムは、直接的なです。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)ファイルでは、2 つをインスタンス化`Slider`要素および`SKCanvasView`:
 
@@ -1068,7 +1069,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで 3 つすべてのプラットフォームで横モードで実行されています。
 
-[![](effects-images/jittertext-small.png "3 つのテキストのジッターのページのスクリーン ショット")](effects-images/jittertext-large.png "Triple screenshot of the JitterText page")
+[![](effects-images/jittertext-small.png "3 つのテキストのジッターのページのスクリーン ショット")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 
 ## <a name="path-outlining"></a>パスのアウトライン表示
 
@@ -1169,11 +1170,11 @@ public partial class TapToOutlineThePathPage : ContentPage
 
 円が入力し、想定されるように描画します。
 
-[![](effects-images/taptooutlinethepathnormal-small.png "通常、タップをアウトライン Path ページのトリプル スクリーン ショット")](effects-images/taptooutlinethepathnormal-large.png "標準をタップするアウトライン Path ページのトリプル スクリーン ショット")
+[![](effects-images/taptooutlinethepathnormal-small.png "通常、タップをアウトライン Path ページのトリプル スクリーン ショット")](effects-images/taptooutlinethepathnormal-large.png#lightbox "標準をタップするアウトライン Path ページのトリプル スクリーン ショット")
 
 画面をタップしたときに`outlineThePath`に設定されている`true`、および`PaintSurface`ハンドラーを作成新規`SKPath`オブジェクトおよびへの呼び出しで、移行先パスとして使用する`GetFillPath`上、`redThickStroke`ペイント オブジェクト。 移行先パスを入力し、線に適用した`redThinStroke`、その結果、次に。
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "アウトライン表示 をタップするアウトライン Path ページのトリプル スクリーン ショット")](effects-images/taptooutlinethepathoutlined-large.png "アウトライン表示 をタップするアウトライン Path ページのトリプル スクリーン ショット")
+[![](effects-images/taptooutlinethepathoutlined-small.png "アウトライン表示 をタップするアウトライン Path ページのトリプル スクリーン ショット")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "アウトライン表示 をタップするアウトライン Path ページのトリプル スクリーン ショット")
 
 2 つの赤い円では、明確に元の円形パスが 2 つの循環配分に変換されたことを示します。
 
@@ -1237,7 +1238,7 @@ public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner
 
 明らかな用途の 1 つ`CreateSum`を定義するのには、`SKPaint`効果が 1 つのパス、パスを入力し、別のパスの効果を使用してパスの線にするオブジェクト。 これに示されている、**フレーム Cats**サンプルについては、キャプション、縁 cats フレーム内の配列を表示します。
 
-[![](effects-images/catsinframe-small.png "Cats のフレームのページのスクリーン ショットをトリプル")](effects-images/catsinframe-large.png "Cats のフレームのページのトリプル スクリーン ショット")
+[![](effects-images/catsinframe-small.png "Cats のフレームのページのスクリーン ショットをトリプル")](effects-images/catsinframe-large.png#lightbox "Cats のフレームのページのトリプル スクリーン ショット")
 
 [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)クラスがいくつかのフィールドを定義することで開始します。 最初のフィールドを認識する可能性があります、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラス、 [ **SVG パス データ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)資料です。 2 番目のパスは、直線およびフレームのひだパターンを円弧に基づきます。
 
@@ -1405,7 +1406,7 @@ public class DashedHatchLinesPage : ContentPage
 
 した既に説明したように、ハッチ行が、領域の内部に正確に制限はなく、この例では、常に始まる左側全体をダッシュに。
 
-[![](effects-images/dashedhatchlines-small.png "陰影の破線のページのスクリーン ショットをトリプル")](effects-images/dashedhatchlines-large.png "ハッチ破線ページのトリプル スクリーン ショット")
+[![](effects-images/dashedhatchlines-small.png "陰影の破線のページのスクリーン ショットをトリプル")](effects-images/dashedhatchlines-large.png#lightbox "ハッチ破線ページのトリプル スクリーン ショット")
 
 これで、単純なパスの効果を確認したドットと、予想外の組み合わせにダッシュを想像して作成することができますを参照してください。
 

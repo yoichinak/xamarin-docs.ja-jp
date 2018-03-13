@@ -7,11 +7,11 @@ ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b279f3e643e008e88b8ad086c400d992427c6df4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog の概要
 
@@ -20,7 +20,7 @@ _MonoTouch.Dialog (mt.D) toolkit は、アプリケーションの迅速な Xama
 
 山と呼ばれる MonoTouch.Dialog短い、D はアプリケーション画面およびコント ローラーの表示、テーブルなどを作成する面倒ではなく、情報を使用してナビゲーションを構築する開発者ができる、迅速な開発の UI ツールキットです。そのため、UI の開発およびコードの削減の大幅な簡略化バージョンを提供します。 たとえば、次のスクリーン ショットがあるとします。
 
- [ ![](images/image1.png "たとえば、このスクリーン ショット")](images/image1.png)
+ [![](images/image1.png "たとえば、このスクリーン ショット")](images/image1.png#lightbox)
 
 次のコードは、この画面全体の定義に使用されました。
 
@@ -57,7 +57,7 @@ IOS でのテーブルを使用する場合がある多くの場合、さまざ�
 MT.D によってテーブルの作成用の汎用的な API にカプセル化するすべてのコードを簡略化されます。 宣言型のオブジェクトでも見やすくするための構文をバインディングでは、その API の上に抽象化を用意します。 そのため、2 つの Api では使用 mt. です。D:
 
 -   **低レベルの要素 API** –*要素 API*画面とそのコンポーネントを表す要素の階層ツリーの作成に基づきます。 最大限の柔軟性と制御の Ui を作成する開発者は要素の API を使用します。 さらに、要素 API では、サーバーから動的 UI 生成だけでなく、非常に高速の宣言は、JSON を使用して宣言型の定義のサポートに進んでいます。 
--   **高度なリフレクション API** – とも呼ばれる、*バインド**API*クラスに注釈を付けると、UI のヒント、山でD は自動的にオブジェクトに基づく画面を作成して、基になるオブジェクトのバックアップと新機能の間のバインドを表示 (および必要に応じて編集) 画面で、提供します。   上記の例では、リフレクション API の使用を示します。 この API は、詳細に API 要素は、制御を提供しませんが、クラスの属性に基づいて要素の階層を自動的に作成して、さらに複雑さが軽減こと。 
+-   **高度なリフレクション API** – とも呼ばれる、*バインド**API*クラスに注釈を付けると、UI のヒント、山でD は自動的にオブジェクトに基づく画面を作成して、基になるオブジェクトのバックアップと新機能の間のバインドを表示 (および必要に応じて編集) 画面で、提供します。 上記の例では、リフレクション API の使用を示します。 この API は、詳細に API 要素は、制御を提供しませんが、クラスの属性に基づいて要素の階層を自動的に作成して、さらに複雑さが軽減こと。 
 
 
 MT.D は、画面を作成するための UI 要素に組み込まれている大きなセットでパックされたが、必要なカスタマイズされた要素および高度な画面レイアウトとも認識します。 そのため、機能拡張では、最上位機能を備えた API に手作りです。 開発者は、既存の要素を拡張または新たに作成してシームレスに統合し、ことができます。
@@ -94,13 +94,13 @@ A *RootElement* DVC に移動するアイテムの最上位のコンテナーで
 
 セクションは、テーブル内のセルのグループです。 通常のテーブル セクションで、オプションで持つことができます、ヘッダーとフッターするかをテキスト、または次のスクリーン ショットのように、カスタム ビューをします。
 
- [ ![](images/image2.png "ヘッダーとフッターするかをするテキスト、またはこのスクリーン ショットのように、カスタム ビューで通常のテーブル セクションで、オプションで持つことができます、")](images/image2.png)
+ [![](images/image2.png "ヘッダーとフッターするかをするテキスト、またはこのスクリーン ショットのように、カスタム ビューで通常のテーブル セクションで、オプションで持つことができます、")](images/image2.png#lightbox)
 
 ### <a name="element"></a>要素
 
 要素は、テーブル内の実際のセルを表します。 MT.D は、さまざまな異なるデータ型または異なる入力を表す要素にパックされたものです。 たとえば、次のスクリーン ショットでは、利用可能な要素の一部を示しています。
 
- [ ![](images/image3.png "たとえば、このスクリーン ショットが利用可能な要素の一部を示しています")](images/image3.png)
+ [![](images/image3.png "たとえば、このスクリーン ショットが利用可能な要素の一部を示しています")](images/image3.png#lightbox)
 
 ## <a name="more-on-sections-and-rootelements"></a>セクションと RootElements on
 
@@ -112,7 +112,7 @@ MonoTouch.Dialog プロセスを開始するには、少なくとも 1 つ RootE
 
 セクションまたは要素値を持つ、RootElement が初期化された場合、この値は、子は、画面の右側に表示されると、構成の概要を提供する要素を検索する使用されます。 たとえば、次のスクリーン ショットには、右側の「デザート」選択した desert の値と一緒に詳細画面のタイトルを含むセルが左側のテーブルを示します。
 
- [ ![](images/image4.png "このスクリーン ショットには、右側のデザート、選択した desert の値と一緒に詳細画面のタイトルを含むセルが左側のテーブルを示しています")](images/image4.png) [ ![ ](images/image5.png "これは、次のスクリーン ショットには、右側のデザート、選択した desert の値と一緒に詳細画面のタイトルを含むセルが左側のテーブルを示しています")](images/image5.png)
+ [![](images/image4.png "このスクリーン ショットには、右側のデザート、選択した desert の値と一緒に詳細画面のタイトルを含むセルが左側のテーブルを示しています")](images/image4.png#lightbox) [ ![ ](images/image5.png "これは、次のスクリーン ショットには、右側のデザート、選択した desert の値と一緒に詳細画面のタイトルを含むセルが左側のテーブルを示しています")](images/image5.png#lightbox)
 
 ルート要素こともできます内のセクションでは、新しい入れ子になった構成ページの読み込みをトリガーする上記のようにします。 このモードで使用されている場合、指定されたキャプションはセクション内にレンダリングされるときに使用し、サブページのタイトルとしても使用します。 例:
 
@@ -195,7 +195,7 @@ var taskElement = new RootElement (task.Name){
 
 このコードは、次に示すように、UI を作成します。 この例の完全なチュートリアルについては、次を参照してください。、[要素 API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)チュートリアルです。
 
- [ ![](images/image6.png "Element.Value プロパティと組み合わせると、コールバックはその他の要素に設定された値を取得できます。")](images/image6.png)
+ [![](images/image6.png "Element.Value プロパティと組み合わせると、コールバックはその他の要素に設定された値を取得できます。")](images/image6.png#lightbox)
 
 ユーザーは、表の下のセルを押すと、匿名関数のコードが実行されるから値を書き込み、`element`インスタンスを**アプリケーション出力**Visual Studio for mac のパッド
 
@@ -216,7 +216,7 @@ MT.D、要素と呼ばれる、組み込みのテーブル セル アイテム�
 
 A`StringElement`左側にある表のセルとセルの右側にある文字列値のキャプションを表示します。
 
- [ ![](images/image7.png "StringElement 左側にある表のセルとセルの右側にある文字列値のキャプションを表示します。")](images/image7.png)
+ [![](images/image7.png "StringElement 左側にある表のセルとセルの右側にある文字列値のキャプションを表示します。")](images/image7.png#lightbox)
 
 使用する、`StringElement`ボタンとデリゲートを指定します。
 
@@ -227,25 +227,25 @@ new StringElement (
 , null, "ok", null).Show(); })
 ```
 
- [ ![](images/image8.png "使用するには、StringElement ボタンとしてデリゲートを指定します")](images/image8.png)
+ [![](images/image8.png "使用するには、StringElement ボタンとしてデリゲートを指定します")](images/image8.png#lightbox)
 
 ### <a name="styled-string-element"></a>スタイル設定された文字列の要素
 
 A`StyledStringElement`により、いずれかの組み込みのテーブル セルのスタイルを使用して表示する文字列またはカスタムの書式設定します。
 
- [ ![](images/image9.png "StyledStringElement により、いずれかの組み込みのテーブル セルのスタイルを使用して表示する文字列またはカスタムの書式設定")](images/image9.png)
+ [![](images/image9.png "StyledStringElement により、いずれかの組み込みのテーブル セルのスタイルを使用して表示する文字列またはカスタムの書式設定")](images/image9.png#lightbox)
 
 `StyledStringElement`クラスから派生`StringElement`、ことができますが、開発者は、いくつかのテキストの色、背景セル色、行区切りモード、行数を表示するには、フォントなどのプロパティをカスタマイズおよびアクセサリを表示するかどうか。
 
 ### <a name="multiline-element"></a>複数行の要素
 
- [ ![](images/image10.png "複数行の要素")](images/image10.png)
+ [![](images/image10.png "複数行の要素")](images/image10.png#lightbox)
 
 ### <a name="entry-element"></a>Entry 要素
 
 `EntryElement`名前と意味、ユーザー入力を取得するために使用します。 通常の文字列または文字を非表示、パスワードのいずれかをサポートします。
 
- [ ![](images/image11.png "ユーザー入力を取得する、EntryElement が使用されます。")](images/image11.png)
+ [![](images/image11.png "ユーザー入力を取得する、EntryElement が使用されます。")](images/image11.png#lightbox)
 
 3 つの値で初期化されます。
 
@@ -268,11 +268,11 @@ A`StyledStringElement`により、いずれかの組み込みのテーブル セ
 
 ### <a name="boolean-element"></a>ブール型要素
 
- [ ![](images/image12.png "ブール型要素")](images/image12.png)
+ [![](images/image12.png "ブール型要素")](images/image12.png#lightbox)
 
 ### <a name="checkbox-element"></a>チェック ボックス要素
 
- [ ![](images/image13.png "チェック ボックス要素")](images/image13.png)
+ [![](images/image13.png "チェック ボックス要素")](images/image13.png#lightbox)
 
 ### <a name="radio-element"></a>ラジオ要素
 
@@ -282,7 +282,7 @@ A`RadioElement`が必要です、`RadioGroup`で指定する、`RootElement`で�
 mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
 ```
 
- [ ![](images/image14.png "RadioElement、RootElement で指定する RadioGroup が必要です。")](images/image14.png)
+ [![](images/image14.png "RadioElement、RootElement で指定する RadioGroup が必要です。")](images/image14.png#lightbox)
 
  `RootElements` ラジオ要素の調整に使用されます。 `RadioElement`メンバーが複数のセクションでは (たとえばリング トーン セレクターとカスタムの個別の着信音に着信音にシステムからのようなものを導入するなど) にまたがることができます。 概要ビューは、現在選択されているオプションの要素に表示されます。 これを使用する、作成、`RootElement`グループのコンス トラクターで、次のようにします。
 
@@ -294,15 +294,15 @@ var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0))
 
 ### <a name="badge-element"></a>バッジ要素
 
- [ ![](images/image15.png "バッジ要素")](images/image15.png)
+ [![](images/image15.png "バッジ要素")](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>浮動小数点数の要素
 
- [ ![](images/image16.png "浮動小数点数の要素")](images/image16.png)
+ [![](images/image16.png "浮動小数点数の要素")](images/image16.png#lightbox)
 
 ### <a name="activity-element"></a>アクティビティ要素
 
- [ ![](images/image17.png "アクティビティ要素")](images/image17.png)
+ [![](images/image17.png "アクティビティ要素")](images/image17.png#lightbox)
 
 ### <a name="date-element"></a>日付要素
 
@@ -310,35 +310,35 @@ var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0))
 
 DateElement に対応するセルを選択すると、次に示すように日付選択カレンダーが表示されます。
 
- [ ![](images/image19.png "ように、DateElement に対応するセルを選択すると、日付選択カレンダーが表示されます。")](images/image19.png)
+ [![](images/image19.png "ように、DateElement に対応するセルを選択すると、日付選択カレンダーが表示されます。")](images/image19.png#lightbox)
 
 ### <a name="time-element"></a>Time 要素
 
- [ ![](images/image20.png "Time 要素")](images/image20.png)
+ [![](images/image20.png "Time 要素")](images/image20.png#lightbox)
 
 TimeElement に対応するセルを選択すると、次に示すように時刻の選択が表示されます。
 
- [ ![](images/image21.png "ように、TimeElement に対応するセルを選択すると、時刻の選択が表示されます。")](images/image21.png)
+ [![](images/image21.png "ように、TimeElement に対応するセルを選択すると、時刻の選択が表示されます。")](images/image21.png#lightbox)
 
 ### <a name="datetime-element"></a>DateTime 要素
 
- [ ![](images/image22.png "DateTime 要素")](images/image22.png)
+ [![](images/image22.png "DateTime 要素")](images/image22.png#lightbox)
 
 DateTimeElement に対応するセルを選択すると、次に示すように datetime ピッカーが表示されます。
 
- [ ![](images/image23.png "ように datetime ピッカーを表示、DateTimeElement に対応するセルを選択すると、")](images/image23.png)
+ [![](images/image23.png "ように datetime ピッカーを表示、DateTimeElement に対応するセルを選択すると、")](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML 要素
 
- [ ![](images/image24.png "HTML 要素")](images/image24.png)
+ [![](images/image24.png "HTML 要素")](images/image24.png#lightbox)
 
 `HTMLElement`の値を表示、`Caption`テーブル セル内のプロパティです。 選択すると、Whe、`Url`要素に割り当てられているに読み込まれる、`UIWebView`次に示すように制御します。
 
- [ ![](images/image25.png "Whe が選択されている場合、次のように UIWebView コントロール内の要素に割り当てられている Url が読み込まれる")](images/image25.png)
+ [![](images/image25.png "Whe が選択されている場合、次のように UIWebView コントロール内の要素に割り当てられている Url が読み込まれる")](images/image25.png#lightbox)
 
 ### <a name="message-element"></a>メッセージ要素
 
- [ ![](images/image26.png "メッセージ要素")](images/image26.png)
+ [![](images/image26.png "メッセージ要素")](images/image26.png#lightbox)
 
 ### <a name="load-more-element"></a>複数の要素を読み込む
 

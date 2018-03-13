@@ -4,14 +4,15 @@ description: "傾斜変換が SkiaSharp で割引グラフィカル オブジェ
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: b8bb4db49d3800d694724d6be8fe949b55060c21
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a18b60d486a911e4a76298fd20a70f16ac392881
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-skew-transform"></a>傾斜変換
 
@@ -69,7 +70,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 値、`xSkew`引数は正の値のテキストまたは負の値は、左の下をシフトします。 値`ySkew`または負の値に正の値の下のテキストの右側にシフトします。
 
-[![](skew-images/skewexperiment-small.png "傾斜実験 ページのスクリーン ショットをトリプル")](skew-images/skewexperiment-large.png "傾斜実験 ページのトリプル スクリーン ショット")
+[![](skew-images/skewexperiment-small.png "傾斜実験 ページのスクリーン ショットをトリプル")](skew-images/skewexperiment-large.png#lightbox "傾斜実験 ページのトリプル スクリーン ショット")
 
 場合`xSkew`の負の値は、`ySkew`結果の回転が拡張することも多少として、Windows の表示を示します。
 
@@ -152,7 +153,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 角度に近づくと正または負の値の 90 °、タンジェント近づく無限大の場合は、約 80 度またはこれまでの角度は、使用可能です。
 
-[![](skew-images/skewangleexperiment-small.png "傾斜角度実験 ページのスクリーン ショットをトリプル")](skew-images/skewangleexperiment-large.png "傾斜角度実験 ページのトリプル スクリーン ショット")
+[![](skew-images/skewangleexperiment-small.png "傾斜角度実験 ページのスクリーン ショットをトリプル")](skew-images/skewangleexperiment-large.png#lightbox "傾斜角度実験 ページのトリプル スクリーン ショット")
 
 水平方向の負の値の小さいゆがみとして斜投影または斜体のテキストを模倣、**斜投影テキスト**ページを示しています。 [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)クラスは、その方法を示しています。
 
@@ -188,7 +189,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 `TextAlign`プロパティ`SKPaint`に設定されている`Center`です。 任意の変換を行わず、`DrawText`の座標を使用して呼び出す (0, 0) 左上隅にあるベースラインの水平方向に中央揃えのテキストを配置するとします。 `SkewDegrees`水平方向に 20 度ベースラインの基準とした、テキストのずれ。 `Translate`呼び出し、キャンバスの中央にテキストのベースラインの水平方向の中央に移動します。
 
-[![](skew-images/obliquetext-small.png "斜体のテキスト ページのスクリーン ショットをトリプル")](skew-images/obliquetext-large.png "斜体のテキスト ページのトリプル スクリーン ショット")
+[![](skew-images/obliquetext-small.png "斜体のテキスト ページのスクリーン ショットをトリプル")](skew-images/obliquetext-large.png#lightbox "斜体のテキスト ページのトリプル スクリーン ショット")
 
 **シャドウ テキストの傾斜**ページが 45 度のずれおよび垂直方向のスケールの組み合わせを使用して、テキストから離れて傾けますテキストの影を作成する方法を示します。 ここで、関連の一部である、`PaintSurface`ハンドラー。
 
@@ -221,11 +222,11 @@ using (SKPaint textPaint = new SKPaint())
 
 影は、表示されている最初、テキスト。
 
-[![](skew-images/skewshadowtext1-small.png "傾斜シャドウ テキスト ページのスクリーン ショットをトリプル")](skew-images/skewshadowtext1-large.png "傾斜シャドウ テキスト ページのトリプル スクリーン ショット")
+[![](skew-images/skewshadowtext1-small.png "傾斜シャドウ テキスト ページのスクリーン ショットをトリプル")](skew-images/skewshadowtext1-large.png#lightbox "傾斜シャドウ テキスト ページのトリプル スクリーン ショット")
 
 渡される、垂直座標、`DrawText`メソッド ベースラインの基準としたテキストの位置を示します。 傾斜のセンターに使用される同じ垂直方向の座標です。 テキスト文字列にディセンダーが含まれている場合、この手法は使用できません。 たとえば、代用および「影」を「特異な」という単語は、結果の。
 
-[![](skew-images/skewshadowtext2-small.png "トリプル ページのスクリーン ショット、傾斜シャドウ テキスト ディセンダーと代替の言葉で始まる")](skew-images/skewshadowtext2-large.png "トリプル ページのスクリーン ショット、傾斜シャドウ テキスト ディセンダーと代替の言葉で始まる")
+[![](skew-images/skewshadowtext2-small.png "トリプル ページのスクリーン ショット、傾斜シャドウ テキスト ディセンダーと代替の言葉で始まる")](skew-images/skewshadowtext2-large.png#lightbox "トリプル ページのスクリーン ショット、傾斜シャドウ テキスト ディセンダーと代替の言葉で始まる")
 
 シャドウとテキストも、ベースラインに揃えられますが、効果はだけが正しく表示します。 これを修正するには、テキストの境界を取得する必要があります。
 
@@ -245,7 +246,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 今すぐこれらディセンダーの下端から影を拡張します。
 
-[![](skew-images/skewshadowtext3-small.png "トリプル ページのスクリーン ショット、傾斜シャドウ テキストが、ディセンダー用の調整")](skew-images/skewshadowtext3-large.png "トリプル ページのスクリーン ショット、傾斜シャドウ テキストが、ディセンダー用の調整")
+[![](skew-images/skewshadowtext3-small.png "トリプル ページのスクリーン ショット、傾斜シャドウ テキストが、ディセンダー用の調整")](skew-images/skewshadowtext3-large.png#lightbox "トリプル ページのスクリーン ショット、傾斜シャドウ テキストが、ディセンダー用の調整")
 
 
 ## <a name="related-links"></a>関連リンク

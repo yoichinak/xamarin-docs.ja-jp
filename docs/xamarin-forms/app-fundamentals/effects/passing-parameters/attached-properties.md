@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: df1287d2389d7645ee3f17b166af790f79aa70e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 585d0422b4dc2b35fc8ba50ed82d2d34e53a784e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>添付プロパティとして効果のパラメーターの引き渡し
 
@@ -29,7 +29,7 @@ _ランタイム プロパティの変更に応答する効果パラメーター
 パラメーターは、適切なコントロールに接続されているプロパティは、およびプロパティの値を追加することによって効果に渡すことができます。 さらに、新しい添付プロパティの値を指定することによって、実行時にパラメーターを変更できます。
 
 > [!NOTE]
-> **注**: 添付プロパティは、特殊な種類のバインド可能なプロパティを 1 つのクラスが他のオブジェクトにアタッチされ、XAML で認識可能なクラスとピリオドで区切ったプロパティ名を含む属性として定義します。 詳細については、次を参照してください。[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)です。
+> 添付プロパティは、特殊な種類のクラスとピリオドで区切ったプロパティ名を含む属性として、他のオブジェクトにアタッチされ、XAML で認識可能な 1 つのクラスで定義されているバインド可能なプロパティです。 詳細については、次を参照してください。[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)です。
 
 サンプル アプリケーションは、`ShadowEffect`によって表示されるテキストに影を追加する、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)コントロール。 さらに、実行時に影の色を変更できます。 次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
 

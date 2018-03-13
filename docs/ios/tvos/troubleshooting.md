@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 278b9e782073a26dc04bac9418613ea4c09db445
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>トラブルシューティング
 
@@ -46,7 +46,7 @@ Apple TV の App Store に Xamarin.tvOS アプリを送信しようとすると�
 1. Mac 用 Visual Studio で、Xamarin.tvOS プロジェクト ファイルでを右クリックし、**ソリューション エクスプ ローラー**選択**オプション**です。
 2. 選択**tvOS ビルド**にあることを確認して、**リリース**構成。 
 
-    [ ![](troubleshooting-images/ts01.png "TvOS ビルド オプションを選択します。")](troubleshooting-images/ts01.png)
+    [![](troubleshooting-images/ts01.png "TvOS ビルド オプションを選択します。")](troubleshooting-images/ts01.png#lightbox)
 3. 追加`--bitcode=asmonly`を**追加 mtouch 引数**フィールドでをクリックし、 **[ok]**ボタンをクリックします。
 4. アプリを再構築、**リリース**構成します。
 
@@ -124,7 +124,7 @@ _「アプリのみ arm64 スライスを含むことも必要があります"ar
 
 (MonoGame) などのサード パーティ ライブラリを使用するいるし、長い一連ので終わるエラー メッセージが、リリース コンパイルが失敗`Task "MTouch" execution -- FAILED`を追加してみてください`-gcc_flags="-framework OpenAL"`を**追加タッチ引数**:
 
-[ ![](troubleshooting-images/mtouch01.png "タスクの MTouch 実行")](troubleshooting-images/mtouch01.png)
+[![](troubleshooting-images/mtouch01.png "タスクの MTouch 実行")](troubleshooting-images/mtouch01.png#lightbox)
 
 含めます`--bitcode=asmonly`で、**追加タッチ引数**、リンカー オプション設定**リンクすべて**クリーン コンパイルを行うとします。
 

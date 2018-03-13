@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3362744d0d201ef82c846c80b0e1a87426953c85
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) の使用
 
@@ -74,7 +74,7 @@ ASMX サービスでは、次の操作を提供します。
 アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。[データ モデリング](~/xamarin-forms/data-cloud/walkthrough.md)です。
 
 > [!NOTE]
-> **注**: サンプル アプリケーションが web サービスへの読み取り専用のアクセスを提供する Xamarin でホストされる ASMX サービスを利用します。 そのため、作成、更新、およびデータを削除する操作では、アプリケーションで使用するデータは変更されません。 ただし、ASMX サービスのホスト可能なバージョンは利用で、 **TodoASMXService**付随するサンプル アプリケーション内のフォルダーです。 このホスト可能なバージョン完全 ASMX サービス許可の作成、更新、読み取り、およびデータへのアクセスを削除します。
+> サンプル アプリケーションは、web サービスへの読み取り専用のアクセスを提供する Xamarin でホストされる ASMX サービスを使用します。 そのため、作成、更新、およびデータを削除する操作では、アプリケーションで使用するデータは変更されません。 ただし、ASMX サービスのホスト可能なバージョンは利用で、 **TodoASMXService**付随するサンプル アプリケーション内のフォルダーです。 このホスト可能なバージョン完全 ASMX サービス許可の作成、更新、読み取り、およびデータへのアクセスを削除します。
 
 A*プロキシ*により、アプリケーションは、サービスに接続する、ASMX サービスを使用するを生成する必要があります。 メソッドと関連付けられているサービス構成を定義するサービス メタデータを使用して、プロキシが構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシは、プラットフォーム固有のプロジェクトに web サービスの web 参照を追加することによって作成されています。
 

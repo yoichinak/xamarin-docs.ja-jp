@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 70a7abb186c102fb803c0ab6fa38c7b2d8222292
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="listview"></a>ListView
 
 _ListView が Android アプリケーションの重要な UI 要素です。使用されます everywhere メニュー オプションの短い一覧から連絡先またはインターネットのお気に入りの長い一覧です。いずれかの組み込みスタイルで書式設定したりできる広範なカスタマイズされた行のスクロール ボックスの一覧を表示する簡単な方法を提供します。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -30,10 +29,9 @@ Android アプリケーションの最も基本的なビルド ブロックで�
 
 
 > [!NOTE]
-> **注**:`RecyclerView`ウィジェットより高度で柔軟なバージョンの`ListView`します。 `RecyclerView`に代わるものであるように設計された`ListView`(および`GridView`) を使用することをお勧め`RecyclerView`なく`ListView`新規のアプリ開発します。 詳細については、次を参照してください。 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)です。
+> `RecyclerView`ウィジェットより高度で柔軟なバージョンの`ListView`します。 `RecyclerView`に代わるものであるように設計された`ListView`(および`GridView`) を使用することをお勧め`RecyclerView`なく`ListView`新規のアプリ開発します。 詳細については、次を参照してください。 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)です。
 
 
-<a name="tutorial" />
 
 ## <a name="listview-tutorial"></a>ListView のチュートリアル
 
@@ -147,7 +145,7 @@ static readonly string[] countries = new String[] {
 
 アプリケーションを実行します。 一覧をスクロールし、入力をフィルター処理、またはメッセージを表示する項目をクリックすることができます。 次のように表示されます。
 
-[ ![国の名前を持つ ListView の例のスクリーン ショット](images/helloviews6.png)](images/helloviews6.png)
+[![国の名前を持つ ListView の例のスクリーン ショット](images/helloviews6.png)](images/helloviews6.png#lightbox)
 
 ただし、ハード コーディングされた文字列配列を使用して、デザインのベスト プラクティスではありません。 いずれかを示すためにわかりやすくするため、このチュートリアルを使用は、 [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)ウィジェット。 参照によって定義されている外部のリソースなどの文字列配列にすることをお勧め、`string-array`プロジェクトのリソース**Resources/Values/Strings.xml**ファイル。 例:
 
@@ -173,7 +171,6 @@ string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
 
-<a name="going_further" />
 
 ## <a name="going-further-with-listview"></a>ListView に進む
 
@@ -200,7 +197,6 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 -   [ContentProvider の使用](~/android/user-interface/layouts/list-view/content-provider.md)
 -   [ListView とアクティビティのライフサイクル](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

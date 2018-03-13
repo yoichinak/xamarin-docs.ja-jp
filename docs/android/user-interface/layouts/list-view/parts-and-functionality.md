@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: a963922dfdc07164b7c20f84be4f0b87440bff13
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a7947c40d80c0ff8cb35dab54a11907280335d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-parts-and-functionality"></a>ListView の部分と機能
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -31,41 +30,36 @@ A`ListView`は次の部分で構成されています。
 
 これらのスクリーン ショットは、基本的なを使用して`ListView`を高速スクロールとセクション インデックスがどのように表示されるかを表示するコントロール。
 
-[![スクロール、およびインデックスに高速プレーンな古い行を使用するアプリのスクリーン ショット](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png)
+[![スクロール、およびインデックスに高速プレーンな古い行を使用するアプリのスクリーン ショット](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
 構成する要素、`ListView`で詳しく説明します。
 
-<a name="Rows" />
 
 ## <a name="rows"></a>行
 
 行のそれぞれが独自`View`です。 ビューで定義されている組み込みのビューのいずれかを指定できます`Android.Resources`、またはカスタム ビューです。 これらが異なる場合がや各行は、同じビューのレイアウトを使用できます。 組み込みのレイアウトとカスタム レイアウトを定義する方法を説明する他のユーザーを使用するには、このドキュメントでは、例です。
 
-<a name="Adapter" />
 
 ## <a name="adapter"></a>アダプター
 
 `ListView`コントロールに必要な`Adapter`、書式設定を指定する`View`行ごとにします。 Android には、組み込みのアダプターと、使用できるビューまたはカスタム クラスを作成することができます。
 
-<a name="Fast_Scrolling" />
 
 ## <a name="fast-scrolling"></a>高速スクロール
 
 ときに、`ListView`多数の行を含むデータの fast スクロールできるように、一覧の任意の部分に移動するユーザーを支援します。 Fast-スクロール 'スクロール バー' オプションで有効になっている (と API レベル 11 でカスタマイズ以上できます)。
 
-<a name="Section_Index" />
 
 ## <a name="section-index"></a>セクションのインデックス
 
 長い一覧をスクロール中には、省略可能なセクション インデックスは、上のどの部分リストの現在表示しているユーザーのフィードバックを提供します。 高速のスクロールと組み合わせて通常の長い一覧の適切なはのみです。
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>クラスの概要
 
 表示に使用されるプライマリ クラス`ListViews`を挙げています。
 
-[![ListView コントロールと関連付けられているクラス間のリレーションシップを示す UML 図](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png)
+[![ListView コントロールと関連付けられているクラス間のリレーションシップを示す UML 図](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
 各クラスの目的は、次のとおりです。
 

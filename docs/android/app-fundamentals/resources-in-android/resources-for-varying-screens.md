@@ -6,18 +6,17 @@ ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 10/12/2017
-ms.openlocfilehash: aeb7115e3c7521f6679e8802eb759d7e56ba1cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: fcd77d97d492baee441cfd428e58ea83525f927e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-resources-for-varying-screens"></a>さまざまな画面のリソースの作成
 
 Android 自体で実行されます多数の異なるデバイスでは、それぞれさまざまな解像度、画面サイズと画面ごとに密度が。 Android は実行のスケーリングと、アプリケーションがこれらのデバイスで作業するサイズを変更しますが、最適のユーザー エクスペリエンスの可能性があります。 たとえば、画像がぼやけて表示される可能性があります、イメージが発生するレイアウト内の UI 要素の位置が重複または離れすぎているが多すぎる (十分ではありません) 画面の領域を占有可能性があります。
 
-<a name="Concepts" />
 
 ## <a name="concepts"></a>概念
 
@@ -39,7 +38,6 @@ Android 自体で実行されます多数の異なるデバイスでは、それ
 
 このような複雑さに対処するために Android framework 優先的に使用して*密度非依存ピクセル (dp)*画面レイアウトの場合。 非依存のピクセルの密度を使用すると、UI 要素は、異なる密度の画面で、同じ物理サイズをユーザーに表示されます。
 
-<a name="Supporting_Various_Screen_Sizes_and_Densities" />
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>さまざまな画面サイズと密度のサポート
 
@@ -49,7 +47,6 @@ Android では、ほとんどの各画面構成用に正しくレイアウトを
 Android には、実行時に、適切なサイズ ドロウアブルは拡大縮小します。
 ただし、している可能性このスケーリングはビットマップがぼやけて見えるを勧めします。 これを回避するのには、代替のリソースを別の密度を指定する必要があります。 複数の解像度および画面の密度が簡単に証明するためにデバイスを設計するとき最初に、高解像度または密度のイメージおよびスケール ダウンし。 こうと、ぼかしやゆがみのサイズを変更する可能性があります。
 
-<a name="Declare_the_Screen_Size_the_Application_Supports" />
 
 ### <a name="declare-the-screen-size-the-application-supports"></a>画面のサイズをサポートするアプリケーションを宣言します。
 
@@ -59,29 +56,21 @@ Android には、実行時に、適切なサイズ ドロウアブルは拡大�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android マニフェスト](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![Android マニフェスト](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png)
-
------
-
+[![Android マニフェスト](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png#lightbox)
 
 **AndroidManifest.xml**に追加、**プロパティ**ディレクトリ。 含めるファイルを編集し、[サポート画面](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![サポートする画面を追加します。](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png)
+[![サポートする画面を追加します。](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![サポートする画面を追加します。](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png)
+[![Android マニフェスト](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png#lightbox)
+
+**AndroidManifest.xml**に追加、**プロパティ**ディレクトリ。 含めるファイルを編集し、[サポート画面](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+
+[![サポートする画面を追加します。](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png#lightbox)
 
 -----
-
-
-<a name="Provide_Alternate_Layouts_for_Different_Screen_Sizes" />
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>代替レイアウトは、さまざまな画面サイズ
 
@@ -148,7 +137,6 @@ API レベル 13 (Android 3.2) から始めて、画面のサイズは、非推�
 -----
 
 
-<a name="Provide_Different_Bitmaps_for_Different_Screen_Densities" />
 
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>さまざまな画面密度の異なるビットマップを指定します。
 
@@ -162,17 +150,15 @@ Android デバイスの必要に応じて、ビットマップのスケーラビ
 
 ![密度固有のリソースとスクリーン ショット](resources-for-varying-screens-images/07-density-specific-resources.png)
 
-<a name="Create_Varying_Density_Resources_with_Android_Asset_Studio" />
 
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>資産の Android Studio のさまざまな密度リソースを作成します。
 
 さまざまな密度のこれらのビットマップの作成をビット面倒になることができます。 Google が減らすことができますと呼ばれるこれらのビットマップの作成に関連する面倒なオンラインのユーティリティを作成するような場合、 [ **Android 資産 Studio**](https://romannurik.github.io/AndroidAssetStudio/)です。
 
-[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png)
+[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 この web サイトを 1 つのイメージを提供することで 4 つの一般的な画面の密度を対象とするビットマップの作成に役立ちます。 資産の android Studio はいくつかのカスタマイズを含む、ビットマップを作成し、zip ファイルとしてダウンロードすることを許可します。
 
-<a name="Tips_for_Multiple_Screens" />
 
 ## <a name="tips-for-multiple-screens"></a>複数の画面のヒント
 
@@ -189,7 +175,6 @@ Android デバイスの必要に応じて、ビットマップのスケーラビ
 
 - **高さと幅を LayoutParams を使用して**XML レイアウト ファイルの UI 要素を定義するときに Android アプリケーションを使用して、 **wrap_content**と**fill_parent**値によって複数の成功を行うピクセルまたは密度の独立した単位を使用するよりもさまざまなデバイスでは、適切な外観を確認してください。 これらのディメンション値では、適切なビットマップ リソースの規模を Android が発生します。 この同じ理由から、密度に依存しない単位は最適な予約されている場合の余白を指定して、UI 要素のパディングです。
 
-<a name="Testing_Multiple_Screens" />
 
 ## <a name="testing-multiple-screens"></a>複数の画面のテスト
 

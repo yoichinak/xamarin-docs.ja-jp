@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fd31413b777e1179e7f4faf6f91f91bc6c41e82b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-segmented-controls"></a>セグメント化されたコントロールの操作
 
@@ -21,7 +21,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でセグメント化�
 
 セグメント化されたコントロールは、それぞれのアイコンまたはテキストを含めることができ、ユーザーに関連する選択肢を提供するための線形の要素のセットを提供します。
 
-[ ![](segmented-controls-images/segment01.png "セグメント コントロールのサンプル")](segmented-controls-images/segment01.png)
+[![](segmented-controls-images/segment01.png "セグメント コントロールのサンプル")](segmented-controls-images/segment01.png#lightbox)
 
 Apple では、セグメント化されたコントロールの操作の次の方法があります。
 
@@ -57,36 +57,36 @@ Apple では、セグメントのテキストを操作する次の提案を加�
 
 Xamarin.tvOS アプリでは、セグメントのコントロールを使用する最も簡単な方法では、iOS デザイナーを使用して、アプリの UI に追加します。
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **ソリューション パッド**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**セグメント コントロール**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](segmented-controls-images/segment02.png "セグメントの制御")](segmented-controls-images/segment02.png)
+    [![](segmented-controls-images/segment02.png "セグメントの制御")](segmented-controls-images/segment02.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ パッド**など、セグメント コントロールのいくつかのプロパティを調整することができます、**スタイル**と**状態**: 
 
-    [ ![](segmented-controls-images/segment03.png "ウィジェット タブ")](segmented-controls-images/segment03.png)
+    [![](segmented-controls-images/segment03.png "ウィジェット タブ")](segmented-controls-images/segment03.png#lightbox)
 1. 使用して、**セグメント**コント ローラーのセグメントの数を制御するフィールドです。
 1. 指定されたセグメントを選択、**セグメント ドロップダウン**など、その個々 のプロパティを調整する**タイトル**または**イメージ**とコントロールの場合は、指定されたセグメントに**有効になっている**または**選択**コントロールが表示される場合。
 1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
 
-    [ ![](segmented-controls-images/segment04.png "名前を割り当てる")](segmented-controls-images/segment04.png)
+    [![](segmented-controls-images/segment04.png "名前を割り当てる")](segmented-controls-images/segment04.png#lightbox)
 1. 変更内容を保存します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**セグメント コントロール**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](segmented-controls-images/segment02-vs.png "セグメントの制御")](segmented-controls-images/segment02-vs.png)
+    [![](segmented-controls-images/segment02-vs.png "セグメントの制御")](segmented-controls-images/segment02-vs.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ エクスプ ローラー**など、セグメント コントロールのいくつかのプロパティを調整することができます、**スタイル**と**状態**: 
 
-    [ ![](segmented-controls-images/segment03-vs.png "ウィジェット タブ")](segmented-controls-images/segment03-vs.png)
+    [![](segmented-controls-images/segment03-vs.png "ウィジェット タブ")](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用して、**セグメント**コント ローラーのセグメントの数を制御するフィールドです。
 1. 指定されたセグメントを選択、**セグメント ドロップダウン**など、その個々 のプロパティを調整する**タイトル**または**イメージ**とコントロールの場合は、指定されたセグメントに**有効になっている**または**選択**コントロールが表示される場合。
 1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
 
-    [ ![](segmented-controls-images/segment04-vs.png "名前を割り当てる")](segmented-controls-images/segment04-vs.png)
+    [![](segmented-controls-images/segment04-vs.png "名前を割り当てる")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 変更内容を保存します。
     
 -----

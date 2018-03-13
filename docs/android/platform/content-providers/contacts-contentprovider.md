@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 677d672b3f00d4c3f3505ab2adf977f16fca4de5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 730cc1f815641d79350784790e3b33b743d1aebe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-the-contacts-contentprovider"></a>連絡先 ContentProvider を使用します。
 
@@ -40,7 +40,6 @@ ms.lasthandoff: 02/27/2018
 -  **SortOrder** &ndash;列で並べ替えを行う。
 
 
-<a name="Creating_Inputs_for_a_Query" />
 
 ## <a name="creating-inputs-for-a-query"></a>クエリの入力の作成
 
@@ -60,14 +59,12 @@ string[] projection = {
 この例で、 `selection`、`selectionArgs`と`sortOrder`設定することにより無視されます`null`です。
 
 
-<a name="Creating_a_Cursor_from_a_Content_Provider_Uri" />
 
 ## <a name="creating-a-cursor-from-a-content-provider-uri"></a>コンテンツ プロバイダーの Uri からカーソルを作成します。
 
 パラメーター オブジェクトが作成された後は、次の 3 つの方法のいずれかで使用できます。
 
 
-<a name="Using_a_Managed_Query" />
 
 ### <a name="using-a-managed-query"></a>管理対象のクエリを使用します。
 
@@ -80,7 +77,6 @@ var cursor = activity.ManagedQuery(uri, projection, null, null, null);
 このカーソルを閉じるには必要はありませんので、Android によって管理されます。
 
 
-<a name="Using_ContentResolver" />
 
 ### <a name="using-contentresolver"></a>ContentResolver を使用します。
 
@@ -100,7 +96,6 @@ cursor.Close();
 代わりに、呼び出すことができます`StartManagingCursor()`と`StopManagingCursor()`カーソルを管理します。 管理対象のカーソルは自動的に非アクティブ化され、アクティビティを停止して再起動するときに再度クエリを実行します。
 
 
-<a name="Using_CursorLoader" />
 
 ### <a name="using-cursorloader"></a>CursorLoader を使用します。
 
@@ -116,7 +111,6 @@ var cursor = (ICursor)loader.LoadInBackground();
 以前の Android バージョンを使用できますも、`CursorLoader`クラスを使用して、 [v4 サポート ライブラリ](http://developer.android.com/tools/support-library/index.html)です。
 
 
-<a name="Displaying_the_Cursor_Data_with_a_Custom_Adapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>カスタム アダプターでカーソル データの表示
 
@@ -189,13 +183,12 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 
 (存在する場合、イメージが表示されます、デバイス上の画像ファイルを Uri を使用します。 アプリケーションは、次のようになります。
 
-[![ListView; で連絡先を表示するアプリのスクリーン ショットイメージが 1 つのエントリの左側に表示されます。](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png)
+[![ListView; で連絡先を表示するアプリのスクリーン ショットイメージが 1 つのエントリの左側に表示されます。](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
 
 同様のコード パターンを使用して、アプリケーションは、さまざまなユーザーの写真、ビデオ、音楽を含むシステム データにアクセスできます。
 一部のデータ型は、プロジェクトの要求する特殊なアクセス許可を必要と**AndroidManifest.xml**です。
 
 
-<a name="Displaying_the_Cursor_Data_with_a_SimpleCursorAdapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>SimpleCursorAdapter カーソル データの表示
 

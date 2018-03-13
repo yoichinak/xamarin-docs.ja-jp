@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: 402b17ddbb28fb8896ad0f158fe8dbcd17689f40
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 3418d0b7946e1da68380512d64bdfc8b13d1d784
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="picker"></a>ピッカー
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 02/27/2018
 
 実装して使用を取り上げて、[ピッカー](#picker)と[日付選択カレンダー](#datepicker)コントロール。
 
-<a name="picker">
+<a name="picker"/>
 
 ## <a name="picker"></a>ピッカー
 
@@ -143,7 +143,7 @@ public override nint GetComponentCount(UIPickerView pickerView)
 外観、`UIPickerView`を使用してカスタマイズすることができます、`UIPickerView.UIPickerViewAppearance`クラスやオーバーライドによって、`UIPickerViewModel.GetView`と`UIPickerViewModel.GetRowHeight`内のメソッド、`UIPickerViewModel`です。
 
 
-<a name="datepicker">
+<a name="datepicker"/>
 
 ## <a name="date-picker"></a>日付の選択
 

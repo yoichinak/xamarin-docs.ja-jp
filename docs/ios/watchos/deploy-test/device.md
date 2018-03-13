@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fab2092837f9b9ca8ada53274c9644f131fb5659
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="testing-on-watch-devices"></a>ウォッチ デバイスでのテスト
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 02/27/2018
 
 監視ではありません - 今すぐアプリを展開する前に、Apple Watch デバイスを追加する必要があります。 ウォッチの UDID を使用して検索**Xcode** (**Windows > デバイス**リスト)。 ペアの電話が接続されている場合、ウォッチの情報も表示されます。
 
-[ ![](device-images/xcode-devices-sml.png "ウォッチ式のペアについて")](device-images/xcode-devices.png)
+[![](device-images/xcode-devices-sml.png "ウォッチ式のペアについて")](device-images/xcode-devices.png#lightbox)
 
 わかっている場合、ウォッチの UDID、デベロッパー センター内のデバイスの一覧に追加します。
 
@@ -99,12 +99,12 @@ ms.lasthandoff: 02/27/2018
 
 *一時的に*この問題を回避するには、無効にする**インクリメンタル ビルド**ウォッチ拡張機能で**プロジェクトのオプション > ビルド > watchOS ビルド**ウィンドウ。
 
-[ ![](device-images/disable-incremental-sml.png "インクリメンタル ビルドのチェック ボックス")](device-images/disable-incremental.png)
+[![](device-images/disable-incremental-sml.png "インクリメンタル ビルドのチェック ボックス")](device-images/disable-incremental.png#lightbox)
 
 これは、その後インクリメンタル ビルドを有効にできます活用ビルド時間を短縮するために将来のリリースで修正されます。
 
 
-#<a name="3-watch-app-fails-to-start-while-debugging-on-device"></a>&#3; watch アプリ起動が失敗するデバイスでのデバッグ中には
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>Watch アプリはデバイスでデバッグ中に起動に失敗しました。
 
 ときに表示されるアイコンと読み込みのスピン ボタンのみ、物理デバイスで watch アプリをデバッグしようとしています (と最終的にタイムアウト)。 これは今後のリリースでアドレス指定すること回避策では、(デバッグを許可しないされます) をリリース ビルドを実行します。
 

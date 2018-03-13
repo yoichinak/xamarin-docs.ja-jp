@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 05a162dab3b427ec345f22818b6c6d9df82c498b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-buttons"></a>ボタンの操作
 
@@ -21,7 +21,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でのボタンの操�
 
 インスタンスを使用して、 `UIButton` tvOS ウィンドウにフォーカスを設定できる、選択可能なボタンを作成するクラス。 ターゲット オブジェクトに、アクション メッセージを送信、ユーザーがボタンを選択すると、ユーザーに、Xamarin.tvOS アプリの応答の入力を許可します。
 
-[ ![](buttons-images/buttons01.png "ボタンの例")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "ボタンの例")](buttons-images/buttons01.png#lightbox)
 
 フォーカスのある操作と Siri リモコンを使用した移動の詳細についてを参照してください、[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)と[Siri リモート コンピューターと Bluetooth コント ローラー](~/ios/tvos/platform/remote-bluetooth.md)ドキュメント。
 
@@ -31,7 +31,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でのボタンの操�
 
 TvOS、ボタンは、アプリ固有のアクションの使用され、タイトル、アイコン、またはその両方を含めることがあります。 アプリのユーザー インターフェイスを使用して、ユーザーが移動したときに、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)テキスト色と背景色を変更することが、指定したボタンにフォーカスを移動します。 影は、ユーザー インターフェイスの残りの部分を超えるように表示する 3D 効果の追加 ボタンにも適用されます。
 
-[ ![](buttons-images/buttons01.png "ボタンの例")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "ボタンの例")](buttons-images/buttons01.png#lightbox)
 
 Apple では、ボタンの操作の次の方法があります。
 
@@ -70,19 +70,19 @@ Xamarin.tvOS アプリ内のボタンを使用する最も簡単な方法では�
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**ボタン**から、**ライブラリ**し、ビュー上にドロップします。 
 
-    [ ![](buttons-images/storyboard01.png "ボタン")](buttons-images/storyboard01.png)
+    [![](buttons-images/storyboard01.png "ボタン")](buttons-images/storyboard01.png#lightbox)
 1. **プロパティ エクスプ ローラー**などのボタンのいくつかのプロパティを調整することができます、**タイトル**と**テキストの色**: 
 
-    [ ![](buttons-images/storyboard02.png "ボタンのプロパティ")](buttons-images/storyboard02.png)
+    [![](buttons-images/storyboard02.png "ボタンのプロパティ")](buttons-images/storyboard02.png#lightbox)
 1. 次に、スイッチ、**イベント タブ**およびワイヤ アップ、**イベント**から、**ボタン**および呼び出し`ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03.png "[イベント] タブ")](buttons-images/storyboard03.png)
+    [![](buttons-images/storyboard03.png "[イベント] タブ")](buttons-images/storyboard03.png#lightbox)
 1. 自動的に切り替わりますが、`ViewController.cs`ビューを使用して、コードで新しいアクションを配置することができます、**を**と**ダウン**方向キー。 
 
-    [ ![](buttons-images/storyboard04.png "コードで、新しいアクションを配置します。")](buttons-images/storyboard04.png)
+    [![](buttons-images/storyboard04.png "コードで、新しいアクションを配置します。")](buttons-images/storyboard04.png#lightbox)
 1. キーを押して、 **Enter**場所を選択します。 
 
-    [ ![](buttons-images/storyboard05.png "コード エディター")](buttons-images/storyboard05.png)
+    [![](buttons-images/storyboard05.png "コード エディター")](buttons-images/storyboard05.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
 
@@ -91,13 +91,13 @@ Xamarin.tvOS アプリ内のボタンを使用する最も簡単な方法では�
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**ボタン**から、**ライブラリ**し、ビュー上にドロップします。 
 
-    [ ![](buttons-images/storyboard01vs.png "ボタン")](buttons-images/storyboard01vs.png)
+    [![](buttons-images/storyboard01vs.png "ボタン")](buttons-images/storyboard01vs.png#lightbox)
 1. **プロパティ エクスプ ローラー**などのボタンのいくつかのプロパティを調整することができます、**タイトル**と**テキストの色**: 
 
-    [ ![](buttons-images/storyboard02vs.png "プロパティ エクスプ ローラー")](buttons-images/storyboard02vs.png)
+    [![](buttons-images/storyboard02vs.png "プロパティ エクスプ ローラー")](buttons-images/storyboard02vs.png#lightbox)
 1. 次に、スイッチ、**イベント タブ**およびワイヤ アップ、**イベント**から、**ボタン**および呼び出し`ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03vs.png "[イベント] タブ")](buttons-images/storyboard03vs.png)
+    [![](buttons-images/storyboard03vs.png "[イベント] タブ")](buttons-images/storyboard03vs.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
 
@@ -270,7 +270,7 @@ button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS サンプル](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

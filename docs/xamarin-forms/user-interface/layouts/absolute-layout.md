@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 227a636db370b2dd3d132c49ad7c39ef42c5f30c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 90f1394103b5a3996029355a8ef260817b14a697
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="absolutelayout"></a>AbsoluteLayout
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) 配置し、子要素のサイズと位置または絶対値によって比例のサイズします。 静的な値を混在させることができます、位置指定と相対値または静的な値を使用してサイズおよび比例して、子ビューがあります。
 
-[ ![](absolute-layout-images/layouts-sml.png "Xamarin.Forms レイアウト")](absolute-layout-images/layouts.png "Xamarin.Forms レイアウト")
+[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms レイアウト")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
 
 この記事を取り上げます。
 

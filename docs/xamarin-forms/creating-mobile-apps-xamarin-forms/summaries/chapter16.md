@@ -3,14 +3,15 @@ title: "16 章の概要です。 データ バインディング"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 954d5d9e270db156f5ef2577706c667e05ab544c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf08874f66c9ab21cd0ede642c8c94821b6c5a2a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>16 章の概要です。 データ バインディング
 
@@ -95,7 +96,7 @@ ms.lasthandoff: 02/27/2018
 
 [ **ReverseBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ReverseBinding)サンプルでのバインディングの設定、`Value`のプロパティ、`Slider`を参照する、`FontSize`の各プロパティ`Label`です。 逆の順序で表示されますが、初期化でより適切に動作が、`Slider`要素のため、`Value`のプロパティ、`Slider`が、`DefaultBindingMode`の`TwoWay`します。
 
-[![バインドを逆のトリプル スクリーン ショット](images/ch16fg06-small.png "バインド反転")](images/ch16fg06-large.png "バインド反転")
+[![バインドを逆のトリプル スクリーン ショット](images/ch16fg06-small.png "バインド反転")](images/ch16fg06-large.png#lightbox "バインド反転")
 
 これは MVVM でのバインディングを定義する方法に似ています、この種類のバインドを頻繁に使用します。
 

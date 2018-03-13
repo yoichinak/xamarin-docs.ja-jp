@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 8bfa599ce0a85897ecaf655c1d4da00fe898bc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cf1c4d749eb85a7e0f4c035e10e2e7a40e0c711
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="switch"></a>切り替え
 
 `Switch`ウィジェット (下図参照) など、2 つの状態間を切り替える] または [オフをユーザーに許可します。 `Switch`既定値は OFF です。 ウィジェットは、両方の ON、OFF の状態で、次に示します。
 
-[ ![オンとオフの状態でスイッチ ウィジェットのスクリーン ショット](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png)
+[![オンとオフの状態でスイッチ ウィジェットのスクリーン ショット](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
-<a name="Creating_a_Switch" />
 
 ## <a name="creating-a-switch"></a>スイッチを作成します。
 
@@ -32,9 +31,8 @@ ms.lasthandoff: 02/27/2018
 
 次のように、スイッチの基本的なが作成されます。
 
-[ ![スイッチをオフの状態で表示するデモ アプリのスクリーン ショット](switch-images/07-switch.png)](switch-images/07-switch.png)
+[![スイッチをオフの状態で表示するデモ アプリのスクリーン ショット](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
-<a name="Changing_Default_Values" />
 
 ## <a name="changing-default-values"></a>既定値を変更します。
 
@@ -48,7 +46,6 @@ ON、OFF の状態のコントロールによって表示されるテキスト�
         android:textOff="NO" />
 ```
 
- <a name="Providing_a_Title" />
 
 
 ## <a name="providing-a-title"></a>タイトルを提供します。
@@ -66,7 +63,7 @@ ON、OFF の状態のコントロールによって表示されるテキスト�
 
 このマークアップでは、実行時に次のスクリーン ショットが生成されます。
 
-[![テキストの水平方向にスイッチ ウィジェットの前に、デモ アプリのスクリーン ショット](switch-images/08-switch.png)](switch-images/08-switch.png)
+[![テキストの水平方向にスイッチ ウィジェットの前に、デモ アプリのスクリーン ショット](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
 ときに、`Switch`の値の変更が発生、`CheckedChange`イベント。
 たとえば、次のコードでおこのイベントをキャプチャして提示、`Toast`メッセージとウィジェットがに基づいて、`isChecked`値`Switch`の一部として、イベント ハンドラーに渡される、`CompoundButton.CheckedChangeEventArg`引数。

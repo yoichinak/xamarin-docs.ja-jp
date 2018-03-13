@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eb310b13a97e345bab68bf4e878f81a6187da691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c31dbfeea3134de95f3275a7fa79c508a94d6a91
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handling-rotation"></a>回転の処理
 
 _このトピックでは、Xamarin.Android でデバイスの向きの変更を処理する方法について説明します。自動的に変更をプログラムによって印刷の向きを処理する方法と同様、特定のデバイスの向きのリソースを読み込む Android リソース システムを操作する方法を説明します。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -30,7 +29,6 @@ _このトピックでは、Xamarin.Android でデバイスの向きの変更を
 
 -   **プログラムによるレイアウト回転**&ndash;コントロールをプログラムで追加する方法と印刷の向きの変更を手動で処理する方法です。
 
-<a name="Handling_Rotation_Declaratively_with_Layouts" />
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>レイアウトを使用して宣言によって処理回転
 
@@ -41,13 +39,12 @@ _このトピックでは、Xamarin.Android でデバイスの向きの変更を
 
 -   *ドロウアブル リソース*&ndash;の向きごとに読み込まれるどのドロウアブルを指定します。
 
-<a name="Layout_Resources" />
 
 ### <a name="layout-resources"></a>レイアウトのリソース
 
 既定では、Android XML (AXML) ファイルが含まれている、**リソース/レイアウト**アクティビティのフォルダー ビューのレンダリングのために使用されます。 このフォルダーのリソースは、ランドス ケープの専用のリソースの追加のレイアウトが指定されていない場合、方向を縦長と横長の両方に使用されます。 既定のプロジェクト テンプレートによって作成されたプロジェクトの構造を考慮してください。
 
-[ ![既定のプロジェクト テンプレートの構造](handling-rotation-images/00.png)](handling-rotation-images/00.png)
+[![既定のプロジェクト テンプレートの構造](handling-rotation-images/00.png)](handling-rotation-images/00.png#lightbox)
 
 このプロジェクトは 1 つ作成**Main.axml**ファイルで、**リソース/レイアウト**フォルダーです。 ときに、アクティビティの`OnCreate`メソッドが呼び出されるで定義されているビューを拡張**Main.axml、** XML を次に示すように宣言ボタン。
 
@@ -67,9 +64,8 @@ _このトピックでは、Xamarin.Android でデバイスの向きの変更を
 
 横向きに、アクティビティのかどうか、デバイスを回転`OnCreate`メソッドが再度呼び出さと同じ**Main.axml**次のスクリーン ショットに示すように、ファイルが大ききます。
 
-[ ![しかし、同じ画面の向きを横](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png)
+[![しかし、同じ画面の向きを横](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
 
-<a name="Orientation-Specific_Layouts" />
 
 #### <a name="orientation-specific-layouts"></a>印刷の向きに固有のレイアウト
 
@@ -105,9 +101,8 @@ _このトピックでは、Xamarin.Android でデバイスの向きの変更を
 
 このコードを実行し、縦から横に、デバイスの回転は、次のように、新しい XML を読み込みを示しています。
 
-[ ![縦向きモードの印刷縦長と横長のスクリーン ショット](handling-rotation-images/02.png)](handling-rotation-images/02.png)
+[![縦向きモードの印刷縦長と横長のスクリーン ショット](handling-rotation-images/02.png)](handling-rotation-images/02.png#lightbox)
 
-<a name="Drawable_Resources" />
 
 ### <a name="drawable-resources"></a>ドロウアブル リソース
 
@@ -126,15 +121,13 @@ _このトピックでは、Xamarin.Android でデバイスの向きの変更を
 
 さらにあると仮定しましょう別のバージョンの**Monkey.png**下を含める**リソース/ドロウアブル土地**です。 レイアウト ファイルが、デバイスが場合と同様、回転ドロウアブル変更の特定の向きでは、次のように。
 
-[ ![別のバージョンの縦方向と横モードで表示される Monkey.png](handling-rotation-images/03.png)](handling-rotation-images/03.png)
+[![別のバージョンの縦方向と横モードで表示される Monkey.png](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
 
-<a name="Handling_Rotation_Programmatically" />
 
 ## <a name="handling-rotation-programmatically"></a>回転をプログラムで処理
 
 場合によってコードでのレイアウトを定義します。 さまざまな理由により、技術的な制限により、開発者の基本設定などを含む可能性があります。プログラムによってコントロールを追加する際、アプリケーションがデバイスの方向は、XML リソースを使用する場合は自動的に処理を考慮手動で必要があります。
 
-<a name="Adding_Controls_in_Code" />
 
 ### <a name="adding-controls-in-code"></a>コードでコントロールを追加します。
 
@@ -178,9 +171,8 @@ protected override void OnCreate (Bundle bundle)
 
 このコードのインスタンスを作成、`RelativeLayout`クラスとセットをその`LayoutParameters`プロパティです。 `LayoutParams`クラスは、Android の再利用可能な方法でコントロールを配置する方法をカプセル化する方法です。 レイアウトのインスタンスが作成されると、コントロールを作成および追加できます。 コントロールが持つも`LayoutParameters`、ように、`TextView`この例ではします。 後に、`TextView`作成されるに追加すること、`RelativeLayout`と設定、`RelativeLayout`でアプリケーションを表示して、コンテンツ ビューの結果として、`TextView`ように。
 
-[ ![縦長と横長の両方のモードで示す増分カウンター ボタン](handling-rotation-images/04.png)](handling-rotation-images/04.png)
+[![縦長と横長の両方のモードで示す増分カウンター ボタン](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
 
-<a name="Detecting_Orientation_in_Code" />
 
 ### <a name="detecting-orientation-in-code"></a>コード内の方向を検出します。
 
@@ -226,9 +218,8 @@ protected override void OnCreate (Bundle bundle)
 
 このコードを設定、`TextView`最上部からピクセルが、新しいレイアウトを次に示すように、横に回転したときに自動的にアニメーション化、画面の左位置指定の 100 にします。
 
-[ ![縦方向と横モード ビュー状態が保持されます。](handling-rotation-images/05.png)](handling-rotation-images/05.png)
+[![縦方向と横モード ビュー状態が保持されます。](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
 
-<a name="Preventing_Activity_Restart" />
 
 ### <a name="preventing-activity-restart"></a>アクティビティの再起動の回避
 
@@ -292,7 +283,6 @@ public class CodeLayoutActivity : Activity
 
 アプリケーションを実行したときに、Android は、デバイスの回転が発生し、アクティビティが再起動しないと、ユーザー インターフェイスの変更を読み込みます。
 
-<a name="Preventing_Activity_Restart_for_Declarative_Layouts" />
 
 ## <a name="preventing-activity-restart-for-declarative-layouts"></a>レイアウトの宣言型アクティビティの再起動の回避
 
@@ -300,7 +290,6 @@ XML のレイアウトを定義している場合、デバイスの回転によ�
 
 これを行うをプログラムでのレイアウトで使用する同じ手順に従います。 設定するだけ`ConfigurationChanges`で、`ActivityAttribute`行ったように、`CodeLayoutActivity`前です。 すべてのコードをでもう一度向きの変更を実装するを実行する必要がありますが、`OnConfigurationChanged`メソッドです。
 
-<a name="Maintaining_State_During_Orientation_Changes" />
 
 ## <a name="maintaining-state-during-orientation-changes"></a>印刷の向きの変更時に状態を維持します。
 
@@ -308,7 +297,6 @@ XML のレイアウトを定義している場合、デバイスの回転によ�
 
 Android での永続化の状態の詳細についてを参照してください、[アクティビティのライフ サイクル](~/android/app-fundamentals/activity-lifecycle/index.md)ガイドです。
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

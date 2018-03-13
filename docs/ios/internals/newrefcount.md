@@ -6,11 +6,11 @@ ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: dd4aff683b0cfb797147d32f282be1aab4c30667
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 43b357eecb0974884db645a0b2e5c8467ddf3b5d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-reference-counting-system"></a>新しい参照カウントのシステム
 
@@ -36,7 +36,7 @@ Xamarin.iOS 7.2.1 および上機能拡張のプレビュー、新しい参照�
 
 この新しい参照カウント システムを有効にするには確認、**参照カウントの拡張機能を使用して**については、チェック ボックスをオン、**詳細** タブ、プロジェクトの**iOS のビルド オプション**、次のようにします。 
 
-[ ![](newrefcount-images/image1.png "新しい参照カウント システムを有効にします。")](newrefcount-images/image1.png)
+[![](newrefcount-images/image1.png "新しい参照カウント システムを有効にします。")](newrefcount-images/image1.png#lightbox)
 
 For mac、これらのオプションを Visual Studio の新しいバージョンで削除されていることに注意してください。
 

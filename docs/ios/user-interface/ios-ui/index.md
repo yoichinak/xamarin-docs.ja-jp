@@ -3,24 +3,24 @@ title: "IOS のユーザー インターフェイス"
 description: "Xamarin.iOS アプリでは、iOS ユーザー インターフェイスの操作について説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 2B3E45FA-C30F-D708-0E8F-3EE02BD1A867
+ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 831ddfff7e05c391472b280095564f90528369ff
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f456b54180d50cfc4b6b98ed8f3d4118c8397b37
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-interface-in-ios"></a>IOS のユーザー インターフェイス
 
-## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[API の外観](introduction-to-the-appearance-api.md)
+## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[外観 API](introduction-to-the-appearance-api.md)
 
 iOS では、UIAppearance Api を使用してテーマを指定するユーザー インターフェイス コントロールの多くの視覚属性を使用できます。
 
-## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[ユーザー インターフェイス オブジェクトを作成します。](~/ios/user-interface/ios-ui/creating-ui-objects.md)
+## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[ユーザー インターフェイス オブジェクトの作成](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
 機能と同じで Xamarin.iOS 名前空間の「フレームワーク」を使用する Apple のグループの関連部分です。 `UIKit` iOS 用のすべてのユーザー インターフェイス コントロールを含む名前空間がします。
 
@@ -28,7 +28,7 @@ iOS では、UIAppearance Api を使用してテーマを指定するユーザ�
 
 ビューがサイズ変更、または回転したときに、レイアウトを制御するための 2 つの異なるメカニズムがある: サイズの自動変更し、自動レイアウトです。
 
-## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Haptic フィードバックを提供します。](~/ios/user-interface/ios-ui/haptic-feedback.md)
+## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Haptic フィードバックの提供](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 この記事では、Xamarin.iOS でそれらを実装する方法と iOS 10 で使用できる haptic フィードバックの新しい型について説明します。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 85413cf223e794ad2fda093601f9221d0261af39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac4c788b4bd48991d7628d892ad1ece3d2451228
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>Amazon SimpleDB サービスとユーザーの認証
 
@@ -61,7 +61,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 `SelectAsync`項目およびクエリ式に一致する関連付けられた属性のコレクションを含む応答を返します。 クエリ式では、ユーザーの電子メール アドレスに一致する項目のみを取得することにより、します。 クエリ式の詳細については、次を参照してください。 [Amazon SimpleDB クエリの作成に使用して選択](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html)Amazon の web サイトです。
 
 > [!NOTE]
-> **注**: クエリ式を構築するときに引用符の規則に従うように注意してください。 詳細については、次を参照してください。 [引用符で囲むルール](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html)Amazon の web サイトです。
+> クエリ式を構築するときに引用符の規則に従うように注意します。 詳細については、次を参照してください。 [引用符で囲むルール](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html)Amazon の web サイトです。
 
 ## <a name="summary"></a>まとめ
 

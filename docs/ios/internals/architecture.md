@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: bf9d292acf43bbbe3e4ba76b5a264a11288b7225
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 732f60a413077bc15018679fe8f8bc0a18227246
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-architecture"></a>iOS のアーキテクチャ
 
@@ -20,7 +20,7 @@ Xamarin.iOS アプリケーションでは、Mono 実行環境内で実行およ
 
 次の図は、このアーキテクチャの基本的な概要を示しています。
 
-[ ![](architecture-images/ios-arch-small.png "この図は、基本的なアーキテクチャの概要、今後の時間 (AOT) コンパイル")](architecture-images/ios-arch.png)
+[ ![](architecture-images/ios-arch-small.png "この図は、基本的なアーキテクチャの概要、今後の時間 (AOT) コンパイル")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>ネイティブおよびマネージ コード: の説明
 
@@ -36,7 +36,7 @@ Xamarin プラットフォーム アプリケーションをコンパイルす�
 ただし、ios の場合、apple によってデバイスに動的に生成されたコードの実行を禁止されている設定のセキュリティの制限があります。
 これらの安全性のプロトコルに従っていることを確認してくださいするには、Xamarin.iOS はマネージ コードをコンパイルするのに代わりにデータの前方の時間 (AOT) コンパイラを使用します。 必要に応じてデバイス、Apple の ARM ベースのプロセッサ上で展開されることがある LLVM と最適化、バイナリのネイティブの iOS が生成されます。 これが適合するしくみまとめての大まかなダイアグラムを次に示します。
 
-[ ![](architecture-images/aot.png "これが適合するしくみ化の概要図")](architecture-images/aot-large.png)
+[![](architecture-images/aot.png "これが適合するしくみ化の概要図")](architecture-images/aot-large.png#lightbox)
 
 詳細については、制限事項の数を持つ AOT を使用して、[制限](~/ios/internals/limitations.md)ガイドです。 提供多数の機能強化 JIT 経由でスタートアップ時間、およびさまざまなパフォーマンスの最適化でのリダクション経由
 
@@ -101,7 +101,7 @@ Xamarin.iOS – 動的および静的で使用されるレジストラーの 2 �
 
 - **静的レジストラー** – 静的レジストラーはスタティック ライブラリにコンパイルし、実行可能ファイルにリンクすると、ビルド時に Objective C コードが生成されます。 これが迅速に開始できますが、ビルド時に時間がかかります。 デバイスのビルドの既定で使用されます。 静的レジストラーこともできます、iOS シミュレーターに渡すことによって`--registrar:static`として、`mtouch`次に示すように、プロジェクトのビルド オプションでは、属性します。
 
-    [ ![](architecture-images/image1.png "追加 mtouch 引数の設定")](architecture-images/image1.png)
+    [![](architecture-images/image1.png "追加 mtouch 引数の設定")](architecture-images/image1.png#lightbox)
 
 IOS Xamarin.iOS で使用する型の登録のシステムの仕様の詳細についてを参照してください、[型レジストラー](~/ios/internals/registrar.md)ガイドです。
 
@@ -179,7 +179,7 @@ Xamarin.iOS.dll が作成されたら、mtouch はすべてのコンポーネン
 ## <a name="related-links"></a>関連リンク
 
 - [制限事項](~/ios/internals/limitations.md)
-- [Objective C のバインド](~/cross-platform/macios/binding/overview.md)
+- [Objective-C のバインド](~/cross-platform/macios/binding/overview.md)
 - [Objective C セレクター](~/ios/internals/objective-c-selectors.md)
 - [型のレジストラー](~/ios/internals/registrar.md)
 - [リンカー](~/ios/deploy-test/linker.md)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7da0f52816d4efc102e830411589e0ac38a73574
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d9b6b5a778e0e4d5092d1036109f82896acf639b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="message-app-extension-basics"></a>メッセージ アプリ拡張機能の基礎
 
@@ -121,13 +121,13 @@ Xcode の属性のインスペクターをステッカー パック全体のサ�
 2. メッセージ アプリ拡張機能を追加するソリューションを開きます。 
 3. 選択**iOS** > **拡張機能** > **iMessage 拡張子** をクリックし、 **次へ**ボタン。 
 
-    [ ![](intro-to-message-app-extensions-images/message01.png "IMessage 拡張機能を選択します。")](intro-to-message-app-extensions-images/message01.png)
+    [![](intro-to-message-app-extensions-images/message01.png "IMessage 拡張機能を選択します。")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. 入力、**拡張機能の名前** をクリックし、**次**ボタン。 
 
-    [ ![](intro-to-message-app-extensions-images/message02.png "拡張機能の名前を入力してください。")](intro-to-message-app-extensions-images/message02.png)
+    [![](intro-to-message-app-extensions-images/message02.png "拡張機能の名前を入力してください。")](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. クリックして、**作成**拡張機能をビルドするにはボタン。 
 
-    [ ![](intro-to-message-app-extensions-images/message03.png "作成する をクリックします。")](intro-to-message-app-extensions-images/message03.png)
+    [![](intro-to-message-app-extensions-images/message03.png "作成する をクリックします。")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -135,7 +135,7 @@ Xcode の属性のインスペクターをステッカー パック全体のサ�
 2. メッセージ アプリ拡張機能を追加するソリューションを開きます。 
 3. 選択**iOS** > **拡張機能** > **iMessage 拡張子** をクリックし、 **次へ**ボタン。 
 
-    [ ![](intro-to-message-app-extensions-images/message01w.png "IMessage 拡張機能を選択します。")](intro-to-message-app-extensions-images/message01.png)
+    [![](intro-to-message-app-extensions-images/message01w.png "IMessage 拡張機能を選択します。")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. 入力、**拡張機能の名前** をクリックし、 **OK**ボタン
 
 -----
@@ -159,7 +159,7 @@ Xcode の属性のインスペクターをステッカー パック全体のサ�
 1. **ソリューション パッド**拡張機能のプロジェクト名を右クリックし、選択、**追加** > **新しいファイル.**  >  **iOS |Apple Watch** > **コント ローラーのインターフェイス**です。
 2. 入力`StickerBrowserViewController`の**名前** をクリックし、**新規**ボタン。 
 
-    [ ![](intro-to-message-app-extensions-images/browser01.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.png)
+    [![](intro-to-message-app-extensions-images/browser01.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. 開く、`StickerBrowserViewController.cs`ファイルを編集します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -167,7 +167,7 @@ Xcode の属性のインスペクターをステッカー パック全体のサ�
 1. **ソリューション エクスプ ローラー**拡張機能のプロジェクト名を右クリックし、選択、**追加** > **新しいファイル.**  >  **iOS |Apple Watch** > **コント ローラーのインターフェイス**です。
 2. 入力`StickerBrowserViewController`の**名前** をクリックし、**新規**ボタン。 
 
-    [ ![](intro-to-message-app-extensions-images/browser01w.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.png)
+    [![](intro-to-message-app-extensions-images/browser01w.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. 開く、`StickerBrowserViewController.cs`ファイルを編集します。
 
 -----

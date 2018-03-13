@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 88db45135104f14ca3a4b18e466e95288853a6df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-pay-capabilities"></a>Apple Pay 機能
 
@@ -79,8 +79,8 @@ Developer Center から新しいアプリをプロビジョニングするとき
 7.  この拡張されたセクションの下部までスクロールし、**[Edit]\(編集\)** をクリックします。
 8.  Apple Pay までリストを下にスクロールして、**[Edit]\(編集\)** ボタンをクリックします。  
     
-    
     ![Apple Pay の App ID 詳細の編集](apple-pay-capabilities-images/image39.png)
+
 9.  この App ID で使用するマーチャント ID を選択し、**[Continue]\(続行\)** をクリックします。  
     
     ![App ID に使用するマーチャント ID の選択](apple-pay-capabilities-images/image40.png)

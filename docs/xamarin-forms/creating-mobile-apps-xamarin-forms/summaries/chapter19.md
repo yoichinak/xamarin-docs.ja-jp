@@ -3,14 +3,15 @@ title: "19 章の概要です。 コレクション ビュー"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>19 章の概要です。 コレクション ビュー
 
@@ -97,7 +98,7 @@ IOS および Android の表示では、細い線は、行を区切ります。 
 
 XAML で設定することは、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)を`DataTemplate`としてカスタム ビジュアル ツリーを定義し、 [ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/)プロパティ`ViewCell`です。 (`View`のコンテンツ プロパティは、`ViewCell`ため、`ViewCell.View`タグは必要ありません)。[ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList)サンプルは、この手法を示します。
 
-[![カスタム名前付きの色の一覧のスクリーン ショットをトリプル](images/ch19fg11-small.png "カスタム色リストの名前付き")](images/ch19fg11-large.png "カスタム名前付きの色の一覧")
+[![カスタム名前付きの色の一覧のスクリーン ショットをトリプル](images/ch19fg11-small.png "カスタム色リストの名前付き")](images/ch19fg11-large.png#lightbox "カスタム名前付きの色の一覧")
 
 すべてのプラットフォームの権利をサイズ変更の取得は複雑になることができます。 [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/)プロパティ役に立つ場合によっては必要がありますに頼る、 [ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/)効率が悪いプロパティが強制的に実行、`ListView`行のサイズを変更します。 IOS と Android の場合は、これら 2 つのプロパティのいずれかを使用する必要があります、適切な行のサイズ変更を取得します。
 
@@ -127,7 +128,7 @@ XAML で設定することは、 [ `ViewCell` ](https://developer.xamarin.com/ap
 
 [ **StudentList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList)プログラムの使用、`ImageCell`受講者とでは、そのイメージを表示する、 `ListView`:
 
-[![学生のリストのスクリーン ショットをトリプル](images/ch19fg18-small.png "学生リスト")](images/ch19fg18-large.png "学生一覧")
+[![学生のリストのスクリーン ショットをトリプル](images/ch19fg18-small.png "学生リスト")](images/ch19fg18-large.png#lightbox "学生一覧")
 
 [ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader)サンプルを追加、 [ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/)プロパティ、のみ現れる Android でします。
 

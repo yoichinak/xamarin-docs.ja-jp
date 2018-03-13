@@ -8,34 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 225662fe64c92b77af3e75cbee865561118692a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f44899ecf5ba2d904333b71226cdd6c7dcea8db0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
 _Google Cloud Messaging (GCM) は、モバイル アプリとサーバー アプリケーション間のメッセージングを容易にするサービスです。この記事は、GCM のしくみの概要を説明し、GCM をアプリケーションで使用できるように、Google サービスを構成する方法についても説明します。_
 
-[![Google Cloud Messaging のロゴ](google-cloud-messaging-images/preview-sml.png)](google-cloud-messaging-images/preview.png)
+[![Google Cloud Messaging のロゴ](google-cloud-messaging-images/preview-sml.png)](google-cloud-messaging-images/preview.png#lightbox)
 
 このトピックでは、アプリと、アプリ サーバーの間でメッセージをルーティングする Google Cloud Messaging 方法の概要を説明し、アプリは、GCM サービスを使用できるように、資格情報を取得するための手順を追って説明を提供します。
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
 Google Cloud Messaging (GCM) は、処理、送信する、ルーティング、およびサーバー アプリケーションとモバイル クライアント アプリの間でメッセージをキュー処理するサービスです。 A*クライアント アプリ*デバイスで実行されている GCM を有効にしたアプリです。 *アプリ サーバー* (またはお客様の会社によって提供される) は、GCM 経由でクライアント アプリで通信する GCM が有効なサーバー。
 
-[![GCM がクライアント アプリケーションと、アプリ サーバーの間に存在します。](google-cloud-messaging-images/01-server-gcm-app-sml.png)](google-cloud-messaging-images/01-server-gcm-app.png)
+[![GCM がクライアント アプリケーションと、アプリ サーバーの間に存在します。](google-cloud-messaging-images/01-server-gcm-app-sml.png)](google-cloud-messaging-images/01-server-gcm-app.png#lightbox)
 
 GCM では、アプリ サーバーは、1 台のデバイス、デバイスのグループまたはトピックにサブスクライブしているデバイスの数にメッセージを送信できます。 クライアント アプリは、GCM を使用して、(たとえば、リモートの通知を受信する場合)、アプリ サーバーからのダウン ストリーム メッセージをサブスクライブすることができます。 また、GCM できるようになりますクライアント アプリをアップ ストリームのメッセージをアプリケーション サーバーに送信します。
 
 GCM 用のアプリ サーバーの実装方法の詳細については、次を参照してください。 [GCM 接続サーバーに関する](https://developers.google.com/cloud-messaging/server)です。
 
 
-<a name="inaction" />
 
 ## <a name="google-cloud-messaging-in-action"></a>Google Cloud アクションでのメッセージング
 
@@ -58,13 +56,12 @@ GCM では、次の資格情報を使用して、アプリ サーバーとクラ
 次のセクションでは、これらの資格情報を使用してクライアント アプリは、GCM を通じてアプリ サーバーと通信する方法について説明します。
 
 
-<a name="registration" />
 
 ### <a name="registration-with-gcm"></a>GCM との登録
 
 メッセージングを行う前に、デバイスにインストールされているクライアント アプリの登録は GCM と最初必要があります。 クライアント アプリでは、次の図に示すように登録手順を実行する必要があります。
 
-[![アプリの登録ステップ](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png)
+[![アプリの登録ステップ](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1.  クライアント アプリ連絡先 GCM 登録トークン、GCM する送信者 ID を渡すことを取得します。
 
@@ -80,13 +77,12 @@ GCM では、次の資格情報を使用して、アプリ サーバーとクラ
 Google の[クライアント アプリを登録する](https://developers.google.com/cloud-messaging/registration)さらに詳しくは、登録プロセスを説明します。 登録を解除し、サブスクリプションの解除、それについて説明し、クライアント アプリがアンインストールされるときに登録解除のプロセスについて説明します。
 
 
-<a name="downstream" />
 
 ### <a name="downstream-messaging"></a>ダウン ストリームのメッセージング
 
 アプリケーション サーバーは、クライアント アプリをダウン ストリーム メッセージを送信するときに、次の図に示す手順が次に示します。
 
-[![ダウン ストリームのメッセージング ストアと転送の図](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png)
+[![ダウン ストリームのメッセージング ストアと転送の図](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
 
 1.  アプリケーション サーバーは、GCM にメッセージを送信します。
 
@@ -101,27 +97,22 @@ Google の[クライアント アプリを登録する](https://developers.googl
 詳細については (コード サンプルを含む) で Android のダウン ストリームの GCM メッセージを受信を参照してください。[リモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-gcm.md)です。
 
 
-<a name="topic" />
-
 #### <a name="topic-messaging"></a>トピックのメッセージング
 
 *トピックのメッセージング*ダウン ストリーム メッセージの種類は、アプリケーション サーバーが (天気予報) などのトピックを定期受信する複数のクライアント アプリ デバイスを 1 つのメッセージを送信します。 アプリごとの最大 100万サブスクリプションをサポートしているトピックのメッセージング、トピック メッセージは 2 KB までの長さにできます。 GCM をメッセージング トピックに対してのみ使用されている場合、クライアント アプリでは、アプリ サーバーに登録トークンを送信する必要はありません。 Google の[トピックのメッセージングを実装する](https://developers.google.com/cloud-messaging/topic-messaging)特定のトピックを定期受信する複数のデバイスにアプリのサーバーからメッセージを送信する方法について説明します。
 
 
-<a name="group" />
 
 #### <a name="group-messaging"></a>グループのメッセージング
 
 *メッセージをグループ化*ダウン ストリーム メッセージの種類は、アプリケーション サーバーが、グループ (たとえば、1 人のユーザーに属しているデバイスのグループ) に属している複数のクライアント アプリのデバイスに 1 つのメッセージを送信します。 グループのメッセージは、iOS デバイス用の長さは最大 2 KB、最大で 4 KB の Android デバイス用の長さとします。 グループは、最大 20 のメンバーに制限されます。 Google の[デバイス グループのメッセージング](https://developers.google.com/cloud-messaging/notifications)グループに属しているデバイスで実行されている複数のクライアント アプリのインスタンスに、アプリ サーバーが 1 つのメッセージを送信する方法について説明します。
 
 
-<a name="upstream" />
-
 ### <a name="upstream-messaging"></a>アップ ストリームのメッセージング
 
 クライアント アプリはサポートしているサーバーに接続[XMPP](https://developers.google.com/cloud-messaging/ccs)、次の図に示すように、アプリ サーバーにメッセージを送信できます。
 
-[![アップ ストリームのメッセージング ダイアグラム](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png)
+[![アップ ストリームのメッセージング ダイアグラム](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
 1.  クライアント アプリでは、GCM XMPP 接続のサーバーにメッセージを送信します。
 
@@ -143,50 +134,47 @@ Google の[上流メッセージ](https://developers.google.com/cloud-messaging/
 GCM サービスを使用するには、アプリで、前に、最初に Google の GCM サーバーにアクセスするための資格情報を取得する必要があります。 次のセクションでは、このプロセスを完了に必要な手順について説明します。
 
 
-<a name="googleservices" />
 
 ### <a name="enable-google-services-for-your-app"></a>アプリが Google サービスを有効にします。
 
 1.  サインイン、 [Google Developers Console](https://developers.google.com/mobile/add?platform=android)アカウント (つまり、gmail アドレス)、Google にし、新しいプロジェクトを作成します。 既存のプロジェクトがある場合は、するのには、GCM を有効にしたプロジェクトを選択します。 次の例では、新しいプロジェクトと呼ばれる**XamarinGCM**を作成します。
 
-    [![XamarinGCM プロジェクトを作成します。](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png)
+    [![XamarinGCM プロジェクトを作成します。](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
 
 2.  次に、アプリのパッケージ名を入力 (この例では、パッケージ名は**com.xamarin.gcmexample**) をクリック**の選択を続行するサービスを構成および**:
 
-    [![パッケージ名を入力します。](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png)
+    [![パッケージ名を入力します。](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
 
     このパッケージ名は、アプリのアプリケーション ID でも注意してください。
 
 3.  **を選択してサービスを構成および**セクションには、アプリに追加できる Google サービスが一覧表示します。 をクリックして**メッセージング クラウド**:
 
-    [![クラウドを選択メッセージング](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png)
+    [![クラウドを選択メッセージング](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png#lightbox)
 
 4.  次に、をクリックして**GOOGLE CLOUD MESSAGING を有効にする**:
 
-    [![Google Cloud Messaging を有効にします。](google-cloud-messaging-images/08-enable-gcm-sml.png)](google-cloud-messaging-images/08-enable-gcm.png)
+    [![Google Cloud Messaging を有効にします。](google-cloud-messaging-images/08-enable-gcm-sml.png)](google-cloud-messaging-images/08-enable-gcm.png#lightbox)
 
 5.  A**サーバー API キー**と**送信者 ID**アプリ用に生成されます。 これらの値を記録し、をクリックして**閉じる**:
 
-    [![サーバーの API キーと送信者 ID が表示されます。](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png)
+    [![サーバーの API キーと送信者 ID が表示されます。](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
     API キーを保護する&ndash;一般的な使用をものではありません。 API キーが侵害された場合、承認されていないサーバーは、クライアント アプリケーションにメッセージを公開する可能性があります。
     [ベスト プラクティスの API キーを使用した安全な](https://support.google.com/cloud/answer/6310037?hl=en)API キーを保護するため役立つガイドラインを提供します。
 
 
-<a name="projectsettings" />
 
 ### <a name="view-your-project-settings"></a>プロジェクト設定を表示します。
 
 サインインして、いつでもプロジェクトの設定を表示することができます、 [Google Cloud コンソール](https://console.cloud.google.com/)プロジェクトを選択するとします。 たとえば、表示することができます、**送信者 ID**ページの上部にあるドロップダウン リスト ボックスで、プロジェクトを選択して (この例では、プロジェクトと呼ばれる**XamarinGCM**)。 送信者 ID はこのスクリーン ショットに示すようにプロジェクトの数値 (送信者 ID をここでは、 **9349932736**)。
 
-[![送信者 ID を表示します。](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png)
+[![送信者 ID を表示します。](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
 
 表示する、 **API キー**をクリックして**API マネージャー**  をクリックし、**資格情報**:
 
-[![API キーを表示します。](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png)
+[![API キーを表示します。](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
 
 
-<a name="furtherreading" />
 
 ## <a name="for-further-reading"></a>関連項目
 
@@ -195,7 +183,6 @@ GCM サービスを使用するには、アプリで、前に、最初に Google
 -   [RFC 6120](https://tools.ietf.org/html/rfc6120)と[RFC 6121](https://tools.ietf.org/html/rfc6121)について説明し、拡張可能なメッセージングおよびプレゼンス プロトコル (XMPP) を定義します。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

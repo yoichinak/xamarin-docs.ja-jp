@@ -3,16 +3,16 @@ title: Xamarin Workbooks
 description: "Xamarin ブックは、学習、およびガイドを作成して補助を教えるにドキュメントとは、実験に最適なコードの blend を提供します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
+ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 3d01d157fde1e69c7180c07adfd52e259cdddf14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04d6110ea9d0f2c10cf0c3d17182cd06b88e7708
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
@@ -26,13 +26,13 @@ Xamarin のブックは、オープン ソース ソフトウェアです。 開
 
 試してみ、知らせご意見、またはする[バグに](~/tools/workbooks/install.md#reporting-bugs)です。 お、[フォーラム](https://forums.xamarin.com/categories/inspector)すぎます。
 
-[ ![](images/interactive-1.0.0-urho-planet-earth-small.png "サンプル ベース UrhoSharp ブック")](images/interactive-1.0.0-urho-planet-earth.png)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "サンプル ベース UrhoSharp ブック")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[インストールと要件](install.md)
 
 Mac または Windows コンピューターにインストールされているブックを取得する方法の詳細については説明します。
 
-## <a name="interactive-workbooksworkbookmd"></a>[対話型のブック](workbook.md)
+## <a name="interactive-workbooksworkbookmd"></a>[対話型 Workbooks](workbook.md)
 
 Xamarin のブックを使用する方法の概要です。
 
@@ -40,7 +40,7 @@ Xamarin のブックを使用する方法の概要です。
 
 さまざまな[サンプル ブック](https://developer.xamarin.com/workbooks/)強調表示されているものを含む[ここ](samples/index.md)です。
 
-## <a name="integration-sdksdkindexmd"></a>[Integration SDK](sdk/index.md)
+## <a name="integration-sdksdkindexmd"></a>[統合 SDK](sdk/index.md)
 
 カスタム データ表現とレンダラー Xamarin ブックを拡張することができます。 統合は、c# と TypeScript と JavaScript に書き込まれます。
 

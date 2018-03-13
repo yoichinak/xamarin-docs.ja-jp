@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c5deb294aac679d60535f3f3bd6c9745e8bff358
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-sizing-row-height"></a>自動サイズ変更行の高さ
 
@@ -23,25 +23,25 @@ iOS 11 では、自動的に展開する行の機能を追加しました。 ヘ
 
 開いている行の自動サイズ変更用 iOS デザイナーでテーブル ビューのストーリー ボードのセルを選択の*プロトタイプ*セルのレイアウトをデザインします。 例:
 
-[ ![](autosizing-row-height-images/table01.png "セルのプロトタイプのデザイン")](autosizing-row-height-images/table01.png)
+[![](autosizing-row-height-images/table01.png "セルのプロトタイプのデザイン")](autosizing-row-height-images/table01.png#lightbox)
 
 プロトタイプに各要素に対して回転または別の iOS デバイスの画面サイズのテーブル ビューのサイズが変更されると、正しい位置に要素を保持する制約を追加します。 たとえば、ピン留め、`Title`セルの右と左上に*コンテンツ ビュー*:
 
-[ ![](autosizing-row-height-images/table02.png "Top、left、セルのコンテンツ ビューの右側にタイトルをピン留め")](autosizing-row-height-images/table02.png)
+[![](autosizing-row-height-images/table02.png "Top、left、セルのコンテンツ ビューの右側にタイトルをピン留め")](autosizing-row-height-images/table02.png#lightbox)
 
 この例のテーブルを小さな場合`Label`(下にある、 `Title`) は、フィールドを行の高さを増減させて拡大および縮小できます。 この効果を実現するには、左、右、上部と下部のラベルをピン留めする次の制約を追加します。
 
-[ ![](autosizing-row-height-images/table03.png "これらの制約を左、右、上部と下部のラベルをピン留めするには")](autosizing-row-height-images/table03.png)
+[![](autosizing-row-height-images/table03.png "これらの制約を左、右、上部と下部のラベルをピン留めするには")](autosizing-row-height-images/table03.png#lightbox)
 
 なったので、セル内の要素を完全に拘束おのどの要素を拡大するかを明確にする必要があります。 これを行うには、次のように設定します。、**コンテンツ Hugging の優先度**と**コンテンツ圧縮の耐性を確保する優先順位**で必要に応じて、**レイアウト**パッドのプロパティのセクション。
 
-[ ![](autosizing-row-height-images/table03a.png "プロパティのパッドのレイアウト セクション")](autosizing-row-height-images/table03a.png)
+[![](autosizing-row-height-images/table03a.png "プロパティのパッドのレイアウト セクション")](autosizing-row-height-images/table03a.png#lightbox)
 
 拡張する要素の設定、**低い**Hugging 優先度の値、および**低い**圧縮耐性を確保する優先度の値。
 
 次に、セル プロトタイプを選択し、一意なを指定する必要があります**識別子**:
 
-[ ![](autosizing-row-height-images/table04.png "セルのプロトタイプの一意の識別子を与える")](autosizing-row-height-images/table04.png)
+[![](autosizing-row-height-images/table04.png "セルのプロトタイプの一意の識別子を与える")](autosizing-row-height-images/table04.png#lightbox)
 
 この例の場合`GrowCell`です。 後で、テーブルの作成時にこの値が使用されます。
 
@@ -50,19 +50,19 @@ iOS 11 では、自動的に展開する行の機能を追加しました。 ヘ
 
 このセルのプロトタイプの各要素に対して割り当てる、**名前**c# コードに公開します。 例:
 
-[ ![](autosizing-row-height-images/table05.png "C# コードに公開する名前を割り当てる")](autosizing-row-height-images/table05.png)
+[![](autosizing-row-height-images/table05.png "C# コードに公開する名前を割り当てる")](autosizing-row-height-images/table05.png#lightbox)
 
 カスタム クラスを次に、追加、 `UITableViewController`、`UITableView`と`UITableCell`(プロトタイプ)。 例: 
 
-[ ![](autosizing-row-height-images/table06.png "UITableViewController や、UITableView、UITableCell カスタム クラスを追加します。")](autosizing-row-height-images/table06.png)
+[![](autosizing-row-height-images/table06.png "UITableViewController や、UITableView、UITableCell カスタム クラスを追加します。")](autosizing-row-height-images/table06.png#lightbox)
 
 最後に、必要なすべてのコンテンツのラベルに表示されることを確認、設定、**行**プロパティを`0`:
 
-[ ![](autosizing-row-height-images/table06.png "行のプロパティが 0 に設定")](autosizing-row-height-images/table06a.png)
+[![](autosizing-row-height-images/table06.png "行のプロパティが 0 に設定")](autosizing-row-height-images/table06a.png#lightbox)
 
 UI が定義されているを使用した自動行の高さのサイズ変更を有効にするコードを追加してみましょう。
 
-##<a name="enabling-auto-resizing-height"></a>高さの自動サイズ変更を有効にします。
+## <a name="enabling-auto-resizing-height"></a>高さの自動サイズ変更を有効にします。
 
 いずれかで、テーブル ビューのデータ ソース (`UITableViewDatasource`) またはソース (`UITableViewSource`) を使用する必要がありますのセルをデキューおときに、`Identifier`デザイナーで選択しました。 例:
 
@@ -106,7 +106,7 @@ public override void ViewWillAppear (bool animated)
 
 場所でこのコードでは、アプリを実行すると、各行は圧縮し、セルのプロトタイプの最後のラベルの高さに基づいて、拡張されます。 例:
 
-[ ![](autosizing-row-height-images/table07.png "実行のサンプル テーブル")](autosizing-row-height-images/table07.png)
+[![](autosizing-row-height-images/table07.png "実行のサンプル テーブル")](autosizing-row-height-images/table07.png#lightbox)
 
 
 ## <a name="related-links"></a>関連リンク

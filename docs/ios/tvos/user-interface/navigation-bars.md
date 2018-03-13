@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3d5b4b0d3e6e9388906efa3bff2db0ea38fa8605
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-controllers"></a>ナビゲーションのコント ローラーの使用
 
@@ -20,7 +20,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でのナビゲーシ�
 
 ナビゲーション バーは、タイトルと省略可能なナビゲーション バーのボタンを表示するビューの先頭に追加できます。 通常、ユーザーがテーブルのビュー、コレクションまたは選択した項目の詳細を示すサブビュー メニューのように、メイン ページから移動するときに使用します。
 
-[ ![](navigation-bars-images/navbar01.png "サンプルのナビゲーション バー")](navigation-bars-images/navbar01.png)
+[![](navigation-bars-images/navbar01.png "サンプルのナビゲーション バー")](navigation-bars-images/navbar01.png#lightbox)
 
 ナビゲーション バーの見出し (中央に表示されます) をさらに、1 つまたは複数のナビゲーション バーのボタンを含めることができます (`UIBarButtonItem`) 左およびバーの右側にします。
 
@@ -42,16 +42,16 @@ Xamarin.tvOS アプリでのナビゲーション バーを使用する最も簡
 1. **ソリューション パッド**、ダブルクリック`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**ナビゲーション バー**から、**ツールボックス**し、画面の上部にあるビュー上にドロップします。 
 
-    [ ![](navigation-bars-images/navbar02.png "ナビゲーション バー")](navigation-bars-images/navbar02.png)
+    [![](navigation-bars-images/navbar02.png "ナビゲーション バー")](navigation-bars-images/navbar02.png#lightbox)
 1. ダブルクリックして、**ナビゲーション バー**に選択する**ナビゲーション項目**です。 **ウィジェット**のタブ、**プロパティ パッド**、設定することができます、**タイトル**: 
 
-    [ ![](navigation-bars-images/navbar03.png "タイトルを設定します。")](navigation-bars-images/navbar03.png)
+    [![](navigation-bars-images/navbar03.png "タイトルを設定します。")](navigation-bars-images/navbar03.png#lightbox)
 1. 次に、1 つまたは複数を追加できる**バー ボタン項目**バーのいずれかの端に。 
 
-    [ ![](navigation-bars-images/navbar04.png "バーのボタン アイテム A")](navigation-bars-images/navbar04.png)
+    [![](navigation-bars-images/navbar04.png "バーのボタン アイテム A")](navigation-bars-images/navbar04.png#lightbox)
 1. 最後に、ネットワーク上、**バー ボタン項目**のアクションに、**イベント**のタブ、**プロパティ エクスプ ローラー**: 
 
-    [ ![](navigation-bars-images/navbar05.png "バーのボタン アイテム操作 A")](navigation-bars-images/navbar05.png)
+    [![](navigation-bars-images/navbar05.png "バーのボタン アイテム操作 A")](navigation-bars-images/navbar05.png#lightbox)
 1. 変更内容を保存します。
 
 
@@ -61,16 +61,16 @@ Xamarin.tvOS アプリでのナビゲーション バーを使用する最も簡
 1. **ソリューション エクスプ ローラー**、ダブルクリック`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**ナビゲーション バー**から、**ツールボックス**し、画面の上部にあるビュー上にドロップします。 
 
-    [ ![](navigation-bars-images/navbar02-vs.png "ナビゲーション バー")](navigation-bars-images/navbar02-vs.png)
+    [![](navigation-bars-images/navbar02-vs.png "ナビゲーション バー")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. ダブルクリックして、**ナビゲーション バー**に選択する**ナビゲーション項目**です。 **ウィジェット**のタブ、**プロパティ エクスプ ローラー**、設定することができます、**タイトル**: 
 
-    [ ![](navigation-bars-images/navbar03-vs.png "タイトルを設定します。")](navigation-bars-images/navbar03-vs.png)
+    [![](navigation-bars-images/navbar03-vs.png "タイトルを設定します。")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. 次に、1 つまたは複数を追加できる**バー ボタン項目**バーのいずれかの端に。 
 
-    [ ![](navigation-bars-images/navbar04-vs.png "バーのボタン アイテム A")](navigation-bars-images/navbar04-vs.png)
+    [![](navigation-bars-images/navbar04-vs.png "バーのボタン アイテム A")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最後に、ネットワーク上、**バー ボタン項目**のアクションに、**イベント**のタブ、**プロパティ エクスプ ローラー**: 
 
-    [ ![](navigation-bars-images/navbar05-vs.png "バーのボタンの動作のアイテム A")](navigation-bars-images/navbar05-vs.png)
+    [![](navigation-bars-images/navbar05-vs.png "バーのボタンの動作のアイテム A")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 変更内容を保存します。
 
 
@@ -147,7 +147,7 @@ namespace MySingleView
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS サンプル](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

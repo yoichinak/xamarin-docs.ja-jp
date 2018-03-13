@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4e640979305a568649c59f6c75033296153b99de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 838a11f078d735759eda1d45a082ccbad51e2779
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-ios"></a>IOS でタッチします。
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/27/2018
 
 ただし、多くのビューの`UIKit`タッチが既定で有効になっている必要はありません。 コントロールでのタッチを有効にする 2 つの方法ができます。 最初の方法は、次のスクリーン ショットに示すように、iOS デザイナーのプロパティ パッドでユーザーの対話を有効にチェック ボックスをオンには。
 
- [ ![](touch-in-ios-images/image1.png "チェック ボックスをユーザーの対話を有効に iOS デザイナーのプロパティ パッド")](touch-in-ios-images/image1.png)
+ [![](touch-in-ios-images/image1.png "チェック ボックスをユーザーの対話を有効に iOS デザイナーのプロパティ パッド")](touch-in-ios-images/image1.png#lightbox)
 
 コント ローラー設定にも使用できます、`UserInteractionEnabled`プロパティは true を`UIView`クラスです。 コードで UI を作成する場合に必要です。
 
@@ -81,7 +81,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 マルチタッチには、コントロールでは既定では無効です。 マルチタッチは、次のスクリーン ショットに示すように、iOS、デザイナーで有効にすることができます。
 
- [ ![](touch-in-ios-images/image2.png "IOS デザイナーで有効になっているマルチタッチ")](touch-in-ios-images/image2.png)
+ [![](touch-in-ios-images/image2.png "IOS デザイナーで有効になっているマルチタッチ")](touch-in-ios-images/image2.png#lightbox)
 
 設定して、マルチタッチをコードから設定することも、`MultipleTouchEnabled`プロパティの次のコード行に示すようにします。
 

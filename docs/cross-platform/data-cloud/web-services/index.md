@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 76934b56503c381b40081d2ac82a785a7bb86fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -305,7 +305,7 @@ Web サービスの URL には、ホストされているリモート ソース�
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[ ![](images/add-webreference-dialog.png "Web サービスの URL には、ホストされているリモート ソースまたはファイルのパス プレフィックスを使用してアクセスできるローカル ファイル システム リソースかを指定できます。")](images/add-webreference-dialog.png)
+[![](images/add-webreference-dialog.png "Web サービスの URL には、ホストされているリモート ソースまたはファイルのパス プレフィックスを使用してアクセスできるローカル ファイル システム リソースかを指定できます。")](images/add-webreference-dialog.png#lightbox)
 
 これには、プロジェクトの Web またはサービス参照 フォルダーに、プロキシが生成されます。 プロキシが生成されるので、コードには変更できません。
 

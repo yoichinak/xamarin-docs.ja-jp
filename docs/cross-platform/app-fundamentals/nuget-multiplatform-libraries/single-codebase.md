@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e95cf18c281732c85c2029e4ff35e8dd8be0f5e2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a56cc080ac04c45ef3f0fcc6c7c89096a08beddf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>NuGet の新しいマルチプラット フォーム ライブラリを作成します。
 
@@ -30,21 +30,21 @@ PCL を使用する、マルチプラット フォーム ライブラリ プロ�
 
 2. 選択**マルチプラット フォーム ライブラリ**から、**マルチプラット フォーム > ライブラリ**セクション。
 
-  [ ![](single-codebase-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/mulitplatform-library.png)
+  [![](single-codebase-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. 入力、**名前**と**説明**を選択して**すべてのプラットフォームの 1 つ**:
 
-  [ ![](single-codebase-images/single-configure-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/single-configure.png)
+  [![](single-codebase-images/single-configure-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/single-configure.png#lightbox)
 
 4. ウィザードを完了します。 1 つのライブラリ プロジェクトはソリューションに作成されます。
 
 5. 新しいライブラリ プロジェクトを右クリックし、**オプション**です。 **ビルド > 全般**セクションでは、**ターゲット フレームワーク**– 設定する .NET ポータブル PCL プロファイルまたは .NET の Standard バージョンを選択します。
 
-  [ ![](single-codebase-images/single-choose-type-sml.png "PCL または .NET 標準ライブラリの種類を選択します。")](single-codebase-images/single-choose-type.png)
+  [![](single-codebase-images/single-choose-type-sml.png "PCL または .NET 標準ライブラリの種類を選択します。")](single-codebase-images/single-choose-type.png#lightbox)
 
 6. また、**プロジェクト オプション**ウィンドウを開いた、 **NuGet パッケージ > メタデータ**セクションし、入力、[必要なメタデータ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)(および省略可能なメタデータ)。
 
-  [ ![](single-codebase-images/single-metadata-sml.png "必要なメタデータを入力してください。")](single-codebase-images/single-metadata.png)
+  [![](single-codebase-images/single-metadata-sml.png "必要なメタデータを入力してください。")](single-codebase-images/single-metadata.png#lightbox)
 
 7. ライブラリ プロジェクトを右クリックし、選択**NuGet パッケージの作成**(またはビルドまたはソリューションを展開する) および**これは .nupkg** NuGet パッケージのファイルに保存されます、 **/bin/**フォルダー (デバッグまたはリリースでは、構成によっては):
 
@@ -61,17 +61,17 @@ PCL を使用する、マルチプラット フォーム ライブラリ プロ�
 
 <a name="add-platforms" />
 
-# <a name="adding-platform-specific-code"></a>プラットフォーム固有のコードを追加します。
+## <a name="adding-platform-specific-code"></a>プラットフォーム固有のコードを追加します。
 
 PCL ベースのプロジェクトと標準 .NET ベースのプロジェクトは、(iOS または Android の機能) などのプラットフォーム固有の参照を含めることはできません。
 
 既存の PCL プロジェクトまたは .NET 標準プロジェクトは、展開すると、プラットフォーム固有のコードを追加する必要があります場合、これ行うプロジェクトを右クリックしを選択すると**追加 > プラットフォームの実装を追加しています.**:
 
-[ ![](single-codebase-images/add-later-sml.png "プラットフォームの実装のメニューに追加します。")](single-codebase-images/add-later.png)
+[![](single-codebase-images/add-later-sml.png "プラットフォームの実装のメニューに追加します。")](single-codebase-images/add-later.png#lightbox)
 
 1 つまたは複数のプラットフォーム プロジェクトをソリューションに追加できるし、既存の PCL または標準の .NET ライブラリは、共有プロジェクトに必要に応じて変換できます。
 
-[ ![](single-codebase-images/add-later-platforms-sml.png "IOS、Android、およびプロジェクトの共有などのプラットフォームのオプションを追加します。")](single-codebase-images/add-later-platforms-sml.png)
+[![](single-codebase-images/add-later-platforms-sml.png "IOS、Android、およびプロジェクトの共有などのプラットフォームのオプションを追加します。")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 共有プロジェクトへの変換後に、次を参照してください、**プロジェクトのオプション > NuGet パッケージ > 参照アセンブリ**
 [セクション](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)いずれかの必要なプロファイルが選択されていることを確認してください (できるように、。NuGet は引き続き使用されていたプロジェクトと互換性がある)。
@@ -79,4 +79,4 @@ PCL ベースのプロジェクトと標準 .NET ベースのプロジェクト�
 
 ## <a name="related-links"></a>関連リンク
 
-- [メタデータのガイド](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [メタデータ ガイド](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

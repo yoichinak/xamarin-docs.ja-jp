@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/30/2017
-ms.openlocfilehash: bbf20155fe097f0229aa28c1f0d046cb3ef31a63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83e58625438a0b50d89ca8dac3e940c8742e5aec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-android-assets"></a>Android のアセットを使用してください。
 
@@ -20,7 +20,6 @@ _資産_アプリケーションにテキスト、xml、フォント、音楽、
 使用して、アプリケーションによってから読み取ることができるファイル システムと同じように、プロジェクトに追加された資産が表示されます[AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/)です。
 この簡単なデモでは、プロジェクトにテキスト ファイルのアセットを追加しようとしての読み取りを使用して`AssetManager`の TextView に表示します。
 
-<a name="Add_Asset_to_Project" />
 
 ## <a name="add-asset-to-project"></a>資産をプロジェクトに追加します。
 
@@ -36,13 +35,12 @@ Visual Studio を設定する必要がありますが、**ビルド アクショ
 
 Visual Studio for Mac を設定する必要がありますが、**ビルド アクション**にこのファイルの**AndroidAsset**:
 
-[![ビルド アクションを AndroidAsset に設定します。](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png)
+[![ビルド アクションを AndroidAsset に設定します。](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
 
 -----
 
 適切な選択**"ビルド アクション"**により、コンパイル時に、APK にファイルをパッケージ化されます。
 
-<a name="Reading_Assets" />
 
 ## <a name="reading-assets"></a>資産の読み取り
 
@@ -71,7 +69,6 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-<a name="Running_the_Application" />
 
 ## <a name="running-the-application"></a>アプリケーションの実行
 

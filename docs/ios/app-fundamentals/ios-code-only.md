@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e4b0e7bbad94976b23e58d4248cb2ea1a6f2b0f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>コードで iOS のユーザー インターフェイスの作成
 
@@ -24,7 +24,7 @@ IOS アプリのユーザー インターフェイス、storefront のように 
 
 次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。 
 
-[ ![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間の関係を示しています。")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間の関係を示しています。")](ios-code-only-images/image9.png#lightbox)
 
 使用してこれらのビュー階層を構築することができます、 [iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md) Visual Studio で、ただし方が便利なコードでまったく作業する方法の基本的な知識があります。 この記事は、一部の基本的なポイント取得して実行コードのみのユーザー インターフェイスの開発の手順について説明します。
 
@@ -32,7 +32,7 @@ IOS アプリのユーザー インターフェイス、storefront のように 
 
 次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。 
 
-[ ![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間の関係を示しています。")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間の関係を示しています。")](ios-code-only-images/image9.png#lightbox)
 
 
 使用してこれらのビュー階層を構築することができます、 [iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md) Mac 用 Visual Studio でただし方が便利なコードでまったく作業する方法の基本的な知識があります。 この記事は、一部の基本的なポイント取得して実行コードのみのユーザー インターフェイスの開発の手順について説明します。
@@ -49,13 +49,13 @@ IOS アプリのユーザー インターフェイス、storefront のように 
 最初に、iPhone を使用して Visual Studio で、iOS プロジェクトを作成**空のプロジェクト**以下に示すテンプレートをコント ローラーとビューを追加する拡張します。
 
 
-[ ![](ios-code-only-images/blankapp-vs.png "新しいプロジェクト ダイアログ ボックス")](ios-code-only-images/blankapp-vs.png)
+[![](ios-code-only-images/blankapp-vs.png "新しいプロジェクト ダイアログ ボックス")](ios-code-only-images/blankapp-vs.png#lightbox)
 
 
 空のプロジェクト テンプレートは、4 つのファイルをプロジェクトに追加します。
 
 
-[ ![](ios-code-only-images/empty-project.png "プロジェクト ファイル")](ios-code-only-images/empty-project.png)
+[![](ios-code-only-images/empty-project.png "プロジェクト ファイル")](ios-code-only-images/empty-project.png#lightbox)
 
 
 1. **<code>appdelegate.cs</code>** -が含まれています、`UIApplicationDelegate`サブクラスは、 `AppDelegate` 、iOS からのアプリケーション イベントの処理に使用されます。 アプリケーション ウィンドウを作成、`AppDelegate`の`FinishedLaunching`メソッドです。
@@ -76,16 +76,16 @@ Mac 用の visual Studio では、空のテンプレートは提供されませ�
 
 1. 新しい iOS プロジェクトを作成するのにには、1 つのアプリの表示テンプレートを使用します。
     
-    [ ![](ios-code-only-images/single-view-app.png "1 つのアプリの表示テンプレートを使用します。")](ios-code-only-images/single-view-app.png)
+    [![](ios-code-only-images/single-view-app.png "1 つのアプリの表示テンプレートを使用します。")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. 削除、`Main.Storyboard`と`ViewController.cs`ファイル。 **いない**削除、`LaunchScreen.Storyboard`です。 ストーリー ボードで作成されるビュー コント ローラーの分離コードがあるために、ビュー コント ローラーを削除する必要があります。
 1. 選択することを確認**削除**ポップアップ ダイアログ ボックス。
     
-    [ ![](ios-code-only-images/delete.png "ポップアップ ダイアログ ボックスから削除 を選択します。")](ios-code-only-images/delete.png)
+    [![](ios-code-only-images/delete.png "ポップアップ ダイアログ ボックスから削除 を選択します。")](ios-code-only-images/delete.png#lightbox)
 
 1. Info.plist で内の情報を削除、**展開情報 > Main インターフェイス**オプション。
     
-    [ ![](ios-code-only-images/main-interface.png "メイン インターフェイス オプション内の情報を削除します。")](ios-code-only-images/main-interface.png)
+    [![](ios-code-only-images/main-interface.png "メイン インターフェイス オプション内の情報を削除します。")](ios-code-only-images/main-interface.png#lightbox)
 
 1. 最後に、次のコードを追加、 `FinishedLaunching` AppDelegate クラスのメソッド。
         
@@ -176,7 +176,7 @@ public class AppDelegate : UIApplicationDelegate
 
 すべてのコント ローラーからアクセス可能な関連のビューがあります、`View`プロパティです。 上記のコードの変更、ビューの`BackgroundColor`プロパティを`UIColor.LightGray`表示されるように、次のようにできるようにします。
 
- [ ![](ios-code-only-images/image1.png "表示の明るい灰色では、ビューの背景")](ios-code-only-images/image1.png)
+ [![](ios-code-only-images/image1.png "表示の明るい灰色では、ビューの背景")](ios-code-only-images/image1.png#lightbox)
 
 いずれかの設定でした`UIViewController`サブクラスとして、`RootViewController`この方法で UIKit だけでなくおを自分で書くからコント ローラーを含む同様に、します。 たとえば、次のコードを追加、`UINavigationController`として、 `RootViewController`:
 
@@ -214,7 +214,7 @@ public class AppDelegate : UIApplicationDelegate
 
 これには、次に示すように、ナビゲーション コント ローラー内で入れ子になったコント ローラーが生成されます。
 
- [ ![](ios-code-only-images/image2.png "ナビゲーション コント ローラー内で入れ子になったコント ローラー")](ios-code-only-images/image2.png)
+ [![](ios-code-only-images/image2.png "ナビゲーション コント ローラー内で入れ子になったコント ローラー")](ios-code-only-images/image2.png#lightbox)
 
 ## <a name="creating-a-view-controller"></a>ビューのコント ローラーを作成します。
 
@@ -224,11 +224,11 @@ public class AppDelegate : UIApplicationDelegate
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](ios-code-only-images/customviewcontroller.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/customviewcontroller.png)
+[![](ios-code-only-images/customviewcontroller.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/customviewcontroller.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](ios-code-only-images/new-file.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/new-file.png)
+[![](ios-code-only-images/new-file.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/new-file.png#lightbox)
 
 -----
 
@@ -245,6 +245,8 @@ namespace CodeOnlyDemo
     }
 }
 ```
+
+<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>ビューの初期化
 
@@ -302,11 +304,11 @@ Window.RootViewController = navController;
 
 これで読み込むときに、アプリケーション、`CustomViewController`ナビゲーション コント ローラー内に読み込まれます。
 
- [ ![](ios-code-only-images/customvc.png "ナビゲーションのコント ローラー内で読み込まれる、CustomViewController")](ios-code-only-images/customvc.png)
+ [![](ios-code-only-images/customvc.png "ナビゲーションのコント ローラー内で読み込まれる、CustomViewController")](ios-code-only-images/customvc.png#lightbox)
  
 ボタンをクリックすると_プッシュ_ナビゲーション スタックに新しいビューのコント ローラー。
 
-[ ![](ios-code-only-images/customvca.png "新しいビュー コント ローラーがナビゲーション スタックにプッシュされます。")](ios-code-only-images/customvca.png)
+[![](ios-code-only-images/customvca.png "新しいビュー コント ローラーがナビゲーション スタックにプッシュされます。")](ios-code-only-images/customvca.png#lightbox)
 
 ## <a name="building-the-view-hierarchy"></a>ビューの階層構造の構築
 
@@ -352,7 +354,7 @@ class CustomViewController : UIViewController
 
 使用してアプリケーションを`UITextField`含まれているを次に示します。
 
- [ ![](ios-code-only-images/image4.png "アプリケーションに含まれている UITextField")](ios-code-only-images/image4.png)
+ [![](ios-code-only-images/image4.png "アプリケーションに含まれている UITextField")](ios-code-only-images/image4.png#lightbox)
 
 追加できる、`UITextField`同様の方法でパスワードをこの時点のみ設定、`SecureTextEntry`プロパティを true、次に示すようにします。
 
@@ -380,7 +382,7 @@ public class CustomViewController : UIViewController
 
 設定`SecureTextEntry = true`で入力したテキストを非表示に、`UITextField`次に示すように、ユーザーによって。
 
- [ ![](ios-code-only-images/image4a.png "True は、SecureTextEntry を設定、ユーザーが入力したテキストを非します。")](ios-code-only-images/image4a.png)
+ [![](ios-code-only-images/image4a.png "True は、SecureTextEntry を設定、ユーザーが入力したテキストを非します。")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>ボタンの追加
 
@@ -403,7 +405,7 @@ View.AddSubview(submitButton);
 
 こうすると、ログイン画面が表示されます次に示すよう。
 
- [ ![](ios-code-only-images/image5.png "ログイン画面")](ios-code-only-images/image5.png)
+ [![](ios-code-only-images/image5.png "ログイン画面")](ios-code-only-images/image5.png#lightbox)
 
 異なり、iOS の以前のバージョンで既定のボタンの背景は透過的です。 変更、ボタンの`BackgroundColor`プロパティに変更します。
 
@@ -419,7 +421,7 @@ submitButton.Layer.CornerRadius = 5f;
 
 これらの変更、ビューは次のようになります。
 
-[ ![](ios-code-only-images/image6.png "ビューの例の実行")](ios-code-only-images/image6.png)
+[![](ios-code-only-images/image6.png "ビューの例の実行")](ios-code-only-images/image6.png#lightbox)
  
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>ビュー階層に複数のビューを追加します。
 
@@ -452,7 +454,7 @@ submitButton.TouchUpInside += (sender, e) => {
 
 ナビゲーションは、次に示します。
 
-[ ![](ios-code-only-images/navigation.png "このグラフで、ナビゲーションを示します")](ios-code-only-images/navigation.png)
+[![](ios-code-only-images/navigation.png "このグラフで、ナビゲーションを示します")](ios-code-only-images/navigation.png#lightbox)
 
 既定では、ナビゲーションのコント ローラーを使用する場合に iOS アプリケーションに提供、ナビゲーション バーとスタック後方へ移動できるようにするには、[戻る] ボタンに注意してください。
 
@@ -477,7 +479,7 @@ foreach(var subview in View.Subviews)
 
 ユーザーが横向きにデバイスを回転させる場合、コントロール サイズを変更しないで適切に、次のスクリーン ショットに示すように。
 
- [ ![](ios-code-only-images/image7.png "ユーザーが横向きにデバイスを回転させる場合、コントロール サイズを変更しないで適切に")](ios-code-only-images/image7.png)
+ [![](ios-code-only-images/image7.png "ユーザーが横向きにデバイスを回転させる場合、コントロール サイズを変更しないで適切に")](ios-code-only-images/image7.png#lightbox)
 
 これを解決する方法の 1 つは、設定して、`AutoresizingMask`各ビューのプロパティです。 このケースで必要なコントロールを水平方向にストレッチするため、各設定`AutoresizingMask`です。 次の例は、`usernameField`が、同じ階層の表示では、各ガジェットに適用する必要があります。
 
@@ -487,7 +489,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 今すぐおは、デバイスまたはシミュレーターを回転するときにすべて全体に引き伸ばす追加の領域では、次のように。
 
- [ ![](ios-code-only-images/image8.png "すべてのコントロールを追加の領域がいっぱいに拡大します。")](ios-code-only-images/image8.png)
+ [![](ios-code-only-images/image8.png "すべてのコントロールを追加の領域がいっぱいに拡大します。")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>カスタム ビューを作成します。
 
@@ -592,7 +594,7 @@ submitButton.TouchUpInside += delegate
 
 ここで、[アプリケーションを実行して送信] ボタンをタップして、円に新しいビューが表示されます。
 
- [ ![](ios-code-only-images/circles.png "円に新しいビューが表示されます。")](ios-code-only-images/circles.png)
+ [![](ios-code-only-images/circles.png "円に新しいビューが表示されます。")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>起動画面を作成します。
 

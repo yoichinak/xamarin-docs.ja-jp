@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 742780ad87672bd8a3e2bb3cb66ca582a680d44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28218bcbf6527c818fdf2988375d1c353e9f1d27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icon"></a>アプリケーション アイコン
 
@@ -122,7 +122,7 @@ Xamarin.Mac アプリのアイコンをデザインする前に、[Apple アプ�
     ![AppIcons.appiconset の編集](app-icon-images/intro01.png "AppIcons.appiconset の編集")
 2. 必要な各アイコン サイズについて、アイコンをクリックし、上で作成した対応する画像ファイルを選択します。 
 
-    [![アイコン画像の選択](app-icon-images/intro02.png "アイコン画像の選択")](app-icon-images/intro02-large.png)
+    [![アイコン画像の選択](app-icon-images/intro02.png "アイコン画像の選択")](app-icon-images/intro02-large.png#lightbox)
 3. 変更内容を保存します。
 
 
@@ -135,7 +135,7 @@ Xamarin.Mac アプリのアイコンをデザインする前に、[Apple アプ�
 1. **Solution Pad** で **Info.plist** をダブルクリックし、**[プロジェクト オプション]** を開きます。
 2. **[Mac OS X アプリケーション ターゲット]** セクションで、をクリックして、**アプリ アイコン**をクリックし、`AppIcons.appiconset` ファイルを選択します。 
 
-    [![アイコン セットの設定](app-icon-images/icon01.png "アイコン セットの設定")](app-icon-images/icon01-large.png)
+    [![アイコン セットの設定](app-icon-images/icon01.png "アイコン セットの設定")](app-icon-images/icon01-large.png#lightbox)
 3. 変更を保存します。
 
 アプリの実行時に、ドックに新しいアイコンが表示されます。

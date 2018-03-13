@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1665168344a1e1da4f5b07909a8119d77ef2583a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 540a459be24296c8446c2136773ddde59f9d4dd7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps"></a>マップ
 
@@ -234,6 +234,8 @@ iOS には、ローカル検索マップ キットは、指定した地理的領
 
 
 ローカルの検索 API 自体は、ユーザー インターフェイスを提供されません。 使用するマップには必要ありません。 ただし、実用的なを使用するローカルの検索、アプリケーションが、検索クエリを指定し、結果を表示する手段を提供する必要があります。 さらに、結果には、場所データが含まれているが、のでさせることが多くの場合、マップで表示することです。
+
+<a name="Adding_a_Local_Search_UI"/>
 
 ### <a name="adding-a-local-search-ui"></a>ローカル検索 UI を追加します。
 

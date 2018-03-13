@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: f6884260315f8846720370c558f7435d2c5a9d91
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternative-layout-views"></a>別のレイアウト ビュー
 
 _このトピックでは、どのようにレイアウト バージョン管理できるリソース修飾子を使用して説明します。たとえばがありますが、デバイスを横モードでのみ使用されるレイアウトのバージョンとの縦モードのみであるレイアウト バージョン。_
 
-<a name="creating_alternative_layouts" />
 
 ## <a name="creating-alternative-layouts"></a>別のレイアウトを作成します。
 
@@ -26,11 +25,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![代替レイアウト ビュー ペイン](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "代替レイアウト ビュー ペイン")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png)
+[![代替レイアウト ビュー ペイン](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "代替レイアウト ビュー ペイン")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![代替レイアウト ビュー ペイン](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png)
+[![代替レイアウト ビュー ペイン](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
 
 -----
 
@@ -38,11 +37,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![レイアウトのバリエーションの作成](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "レイアウトのバリエーションの作成")](alternative-layout-views-images/vs/02-create-layout-variation.png)
+[![レイアウトのバリエーションの作成](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "レイアウトのバリエーションの作成")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![レイアウトのバリエーションを作成します。](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png)
+[![レイアウトのバリエーションを作成します。](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
 
 -----
 
@@ -51,11 +50,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![大土地バリエーション](alternative-layout-views-images/vs/03-large-land-sml.png "大土地のバリエーション")](alternative-layout-views-images/vs/03-large-land.png)
+[![大土地バリエーション](alternative-layout-views-images/vs/03-large-land-sml.png "大土地のバリエーション")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![大土地のバリエーション](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png)
+[![大土地のバリエーション](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
 
 -----
 
@@ -64,16 +63,15 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![読み込まれたレイアウト インジケーター](alternative-layout-views-images/vs/04-new-layout-sml.png "読み込まれたレイアウトのインジケーター")](alternative-layout-views-images/vs/04-new-layout.png)
+[![読み込まれたレイアウト インジケーター](alternative-layout-views-images/vs/04-new-layout-sml.png "読み込まれたレイアウトのインジケーター")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![読み込まれたレイアウトのインジケーター](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png)
+[![読み込まれたレイアウトのインジケーター](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
 
 -----
 
 
-<a name="editing_alternative_layouts" />
 
 ## <a name="editing-alternative-layouts"></a>別のレイアウトを編集
 
@@ -83,11 +81,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![複数の編集 アイコン](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "複数の編集 アイコン")](alternative-layout-views-images/vs/05-multi-layout-icon.png)
+[![複数の編集 アイコン](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "複数の編集 アイコン")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![複数の編集 アイコン](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png)
+[![複数の編集 アイコン](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
 
 -----
 
@@ -96,11 +94,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![すべてのレイアウトのリンクを解除](alternative-layout-views-images/vs/06-multi-linked-sml.png "すべてのレイアウトのリンクを解除")](alternative-layout-views-images/vs/06-multi-linked.png)
+[![すべてのレイアウトのリンクを解除](alternative-layout-views-images/vs/06-multi-linked-sml.png "すべてのレイアウトのリンクを解除")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![すべてのレイアウトのリンクを解除します。](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png)
+[![すべてのレイアウトのリンクを解除します。](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
 
 -----
 
@@ -109,11 +107,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Unlink 中間レイアウト](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "Unlink 中間レイアウト")](alternative-layout-views-images/vs/07-unlink-middle-layout.png)
+[![Unlink 中間レイアウト](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "Unlink 中間レイアウト")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![中央のレイアウトのリンクを解除します。](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png)
+[![中央のレイアウトのリンクを解除します。](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
  
 -----
  
@@ -121,7 +119,6 @@ _このトピックでは、どのようにレイアウト バージョン管理
 この例では、変更が加えいずれかに、**既定**または**長い**を他のレイアウトにはレイアウトが反映される、**大きな土地**レイアウトです。 
 
 
-<a name="multi_edit_example" />
 
 ### <a name="multi-edit-example"></a>複数の編集の例 
 
@@ -129,11 +126,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![TextView を追加](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView を追加")](alternative-layout-views-images/vs/08-add-textview.png)
+[![TextView を追加](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView を追加")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![TextView を追加します。](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png)
+[![TextView を追加します。](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
  
 -----
  
@@ -142,11 +139,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![TextView を横](alternative-layout-views-images/vs/09-landscape-textview-sml.png "TextView を横向き")](alternative-layout-views-images/vs/09-landscape-textview.png)
+[![TextView を横](alternative-layout-views-images/vs/09-landscape-textview-sml.png "TextView を横向き")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ランドス ケープ TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png)
+[![ランドス ケープ TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
  
 -----
  
@@ -154,7 +151,6 @@ _このトピックでは、どのようにレイアウト バージョン管理
 ローカルのみ 1 つのレイアウトになっている変更を行う場合は (つまり、たくないその他のレイアウトのいずれかに反映されるまで変更)? これを行うには、次に説明したように、変更する前に、それを変更するレイアウトにリンクを解除する必要があります。 
 
 
-<a name="making_local_changes" />
 
 ### <a name="making-local-changes"></a>ローカルの変更を行う 
 
@@ -162,11 +158,11 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![ローカルの変更](alternative-layout-views-images/vs/10-local-change-sml.png "ローカルの変更")](alternative-layout-views-images/vs/10-local-change.png)
+[![ローカルの変更](alternative-layout-views-images/vs/10-local-change-sml.png "ローカルの変更")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ローカルの変更](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png)
+[![ローカルの変更](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
  
 -----
  
@@ -174,7 +170,6 @@ _このトピックでは、どのようにレイアウト バージョン管理
 クリックすると、**既定**表示するため、レイアウト、`TextView`テキスト文字列が設定されている`Portrait`です。 
 
 
-<a name="handling_conflicts" />
 
 ## <a name="handling-conflicts"></a>競合の処理 
 
@@ -182,22 +177,21 @@ _このトピックでは、どのようにレイアウト バージョン管理
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![競合する変更](alternative-layout-views-images/vs/11-conflicting-change-sml.png "競合する変更")](alternative-layout-views-images/vs/11-conflicting-change.png)
+[![競合する変更](alternative-layout-views-images/vs/11-conflicting-change-sml.png "競合する変更")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![変更が競合してください。](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png)
+[![変更が競合してください。](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
  
 -----
  
 
 A*競合ボックス*が競合を説明する、ウィジェットの右側に表示されます。 
 
-[ ![競合に関する警告](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png)
+[![競合に関する警告](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
 競合ボックスは、変更されたプロパティが一覧表示し、その値を一覧表示します。 クリックすると**無視競合**プロパティの変更をこのウィジェットにのみ適用されます。 クリックすると**適用**に関して、リンクに対応するウィジェットでもこのウィジェットにプロパティの変更を適用**既定**レイアウトです。 すべてのプロパティ変更が適用されている場合、競合は自動的に破棄されます。 
 
-<a name="view_group_conflicts" />
 
 ### <a name="view-group-conflicts"></a>グループの表示の競合 
 
@@ -205,11 +199,11 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![グループの競合を表示](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "グループ競合の表示")](alternative-layout-views-images/vs/12-view-group-conflict.png)
+[![グループの競合を表示](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "グループ競合の表示")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ビューのグループの競合](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png)
+[![ビューのグループの競合](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
  
 -----
  
@@ -220,11 +214,11 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![チェック ボックスをオン競合](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "競合のチェック ボックス")](alternative-layout-views-images/vs/13-checkbox-conflict.png)
+[![チェック ボックスをオン競合](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "競合のチェック ボックス")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![競合のチェック ボックス](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png)
+[![競合のチェック ボックス](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
 -----
  
@@ -233,18 +227,18 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alt レイアウト競合](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt レイアウトの競合")](alternative-layout-views-images/vs/14-alt-layout-conflict.png)
+[![Alt レイアウト競合](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt レイアウトの競合")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Alt レイアウトの競合](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png)
+[![Alt レイアウトの競合](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  
 -----
  
 
 さらに、競合のボックスには、次のメッセージが表示されます。
 
-[ ![競合のメッセージ](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png)
+[![競合のメッセージ](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
 追加する、`CheckBox`ため、競合が原因で、**大規模な領土に関する**レイアウト変更には、`LinearLayout`含まれています。 ただし、ここでは競合ボックスが表示されます、ウィジェットに挿入した、**既定**レイアウト (、 `CheckBox`)。
 
@@ -252,11 +246,11 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![グループの競合を解決](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "グループ競合の解決")](alternative-layout-views-images/vs/15-resolved-group-conflict.png)
+[![グループの競合を解決](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "グループ競合の解決")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![グループの競合の解決](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png)
+[![グループの競合の解決](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
  
 -----
  
@@ -264,7 +258,6 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 前の例のように、 `Button`、`CheckBox`ため赤い変更マーカーがありませんのみ、`LinearLayout`で適用された変更が、**大規模な領土に関する**レイアウトです。
 
 
-<a name="Conflict_Persistence" />
 
 ### <a name="conflict-persistence"></a>競合の永続化
 

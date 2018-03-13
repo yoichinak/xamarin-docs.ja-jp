@@ -3,14 +3,15 @@ title: "24 章の概要です。 ページのナビゲーション"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8eac45c52093dea23c08a19d219fa0bbd8d55ab
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>24 章の概要です。 ページのナビゲーション
 
@@ -99,7 +100,7 @@ ms.lasthandoff: 02/27/2018
 
 [ **ViewGalleryType** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType)サンプルの使用例、`TableView`のリスト メニュー項目にします。 各項目に関連付けられている、`Type`特定のページのオブジェクト。 その項目を選択すると、プログラムは、ページをインスタンス化しに移動します。
 
-[![ギャラリー ビューの種類のトリプル スクリーン ショット](images/ch24fg21-small.png "テーブルを一覧表示するメニュー項目")](images/ch24fg21-large.png "テーブルを一覧表示するメニュー項目")
+[![ギャラリー ビューの種類のトリプル スクリーン ショット](images/ch24fg21-small.png "テーブルを一覧表示するメニュー項目")](images/ch24fg21-large.png#lightbox "テーブルを一覧表示するメニュー項目")
 
 [ **ViewGalleryInst** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst)サンプルは、メニューには、型ではなく各ページのインスタンスが含まれているという点では少し異なります。 これにより、各ページの情報を保持しますが、プログラムの起動時に、すべてのページをインスタンス化する必要があります。
 

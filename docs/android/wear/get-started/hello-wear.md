@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: bac9402df544a57cceb98e816e268eb2dcb99c72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-wear"></a>こんにちは, 損傷
 
@@ -30,11 +30,11 @@ _最初の Android 着用アプリを作成し、損傷のエミュレーター�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![新しいプロジェクト ダイアログで新しい Android 着用アプリケーションの作成](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png)
+[![新しいプロジェクト ダイアログで新しい Android 着用アプリケーションの作成](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![新しいソリューション ダイアログ ボックスで新しい Android 着用アプリケーションの作成](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png)
+[![新しいソリューション ダイアログ ボックスで新しい Android 着用アプリケーションの作成](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
@@ -47,13 +47,13 @@ _最初の Android 着用アプリを作成し、損傷のエミュレーター�
 
 いることを確認**ターゲットに最低限の Android**に設定されている**Android 5.0 (ロリポップ)**以降。 
 
-[![Visual Studio での Android 5.0 にターゲット フレームワークを設定](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png)
+[![Visual Studio での Android 5.0 にターゲット フレームワークを設定](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ターゲット フレームワークに設定されていることを確認**Android 5.0 (ロリポップ)**以降。
 
-[ ![Mac 用 Visual Studio での Android 5.0 にターゲット フレームワークを設定](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png)
+[![Mac 用 Visual Studio での Android 5.0 にターゲット フレームワークを設定](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
@@ -144,11 +144,11 @@ Android を着用デバイスは、デバイスのプルダウン メニュー�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Visual Studio デバイス メニューに着け AVD を選択します。](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png)
+[![Visual Studio デバイス メニューに着け AVD を選択します。](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Mac のデバイス メニューの Visual Studio で着用 AVD の選択](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png)
+[![Mac のデバイス メニューの Visual Studio で着用 AVD の選択](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -160,11 +160,11 @@ Android を着用デバイスは、デバイスのプルダウン メニュー�
 
 アプリが正常に展開した後に、損傷、デバイスの画面は次のように画面を表示する必要があります。
 
-[![消耗アプリの初期画面](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png)
+[![消耗アプリの初期画面](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 タップして、**します をクリックします。** ボタン表面消耗デバイスと各 tap カウントの増加を参照してください:
 
-[![3 回のクリック後にアプリを着用のスクリーン ショット](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png)
+[![3 回のクリック後にアプリを着用のスクリーン ショット](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>次の手順

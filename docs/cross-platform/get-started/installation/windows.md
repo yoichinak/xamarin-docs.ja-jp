@@ -7,27 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: b68e03251b83192bdc5836af6ea54446ddaad24a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bffc6bb1bc6537745fe9603906b5938fc3c34fe1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>Windows の Visual Studio への Xamarin のインストール
 
 Xamarin がすべてのバージョンの Visual Studio に追加料金なしで含まれるようになり、別個のライセンスが必要なくなったため、Visual Studio インストーラーを使用して Xamarin ツールをダウンロードおよびインストールできるようになりました。
 
--   [Requirements](#requirements)
--   [インストール](#installation)
--   [Visual Studio 2017 への Xamarin の追加](#vs2017)
--   [Visual Studio 2015 への Xamarin の追加](#vs2015)
--   [インストールの確認](#verifying)
--   [次の手順](#nextsteps)
-
-
 <a name="requirements" />
 
-# <a name="requirements"></a>必要条件
+## <a name="requirements"></a>必要条件
 
 Xamarin 向けの Visual Studio Tools をインストールするには、以下が必要です。
 
@@ -44,7 +36,7 @@ Xamarin をインストールして使用するための前提条件の詳細に
 
 <a name="installation" />
 
-# <a name="installation"></a>インストール
+## <a name="installation"></a>インストール
 
 Xamarin は、新しい Visual Studio の一部としてインストールできます。
 そのためには、次の手順を使用します。
@@ -55,7 +47,7 @@ Xamarin は、新しい Visual Studio の一部としてインストールでき
 
 3. インストール画面で **[.NET によるモバイル開発]** ワークロードを選択します。 
 
-    [![ワークロード画面での [.NET によるモバイル開発] の選択](windows-images/01-mobile-dev-workload-sml.png)](windows-images/01-mobile-dev-workload.png)
+    [![ワークロード画面での [.NET によるモバイル開発] の選択](windows-images/01-mobile-dev-workload-sml.png)](windows-images/01-mobile-dev-workload.png#lightbox)
 
 4. **[.NET によるモバイル開発]** が選択されている間に、右側の **[概要]** パネルを確認します。 ここで、インストールしないモバイル開発オプションの選択を解除することができます。 既定では、次のスクリーン ショットに示されているすべてのオプション (**Xamarin Workbooks**、**Xamarin Profiler**、**Xamarin Remoted Simulator**、**Android NDK**、**Android SDK**、**Java SE Development Kit**、**Google Android エミュレーター**、**F# サポート**、および **Intel HAXM**) がインストールされます。
 
@@ -76,7 +68,7 @@ Xamarin は、新しい Visual Studio の一部としてインストールでき
 
 <a name="vs2017" />
 
-## <a name="adding-xamarin-to-visual-studio-2017"></a>Visual Studio 2017 への Xamarin の追加
+### <a name="adding-xamarin-to-visual-studio-2017"></a>Visual Studio 2017 への Xamarin の追加
 
 Visual Studio 2017 が既にインストールされている場合は、Visual Studio インストーラーを再実行し、ワークロードを変更することで、Xamarin を追加できます (詳細については、[Visual Studio の変更](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)に関するページを参照してください)。 次に、前述の手順に従って、Xamarin をインストールします。
 
@@ -85,7 +77,7 @@ Visual Studio 2017 のダウンロードとインストールの詳細につい�
 
 <a name="vs2015" />
 
-## <a name="adding-xamarin-to-visual-studio-2015"></a>Visual Studio 2015 への Xamarin の追加
+### <a name="adding-xamarin-to-visual-studio-2015"></a>Visual Studio 2015 への Xamarin の追加
 
 Xamarin.Android を Visual Studio 2015 の既存のインストールに追加するには、以下の手順を使用します。
 
@@ -104,7 +96,7 @@ Xamarin.Android を Visual Studio 2015 の既存のインストールに追加�
 
 <a name="verifying" />
 
-## <a name="verifying-installation"></a>インストールの確認
+### <a name="verifying-installation"></a>インストールの確認
 
 Visual Studio 2017 で、**[ヘルプ]** メニューをクリックして、Xamarin がインストールされていることを確認できます。 Xamarin がインストールされている場合は、以下のスクリーン ショットのように、**Xamarin** のメニュー項目が表示されます。
 
@@ -118,11 +110,11 @@ Visual Studio 2017 で、**[ヘルプ]** メニューをクリックして、Xam
 
 <a name="nextsteps" />
 
-# <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次の手順
 
 Xamarin 向けの Visual Studio Tools をインストールすることで、アプリのコードの記述を開始できるようになりますが、シミュレーター、エミュレーター、デバイスにアプリを構築および展開するための追加のセットアップは必要ありません。 インストールを完了し、クロス プラットフォームのアプリの構築を開始するには、以下のガイドを参照してください。
 
-## <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 詳細については、「[Installing Xamarin.iOS on Windows](~/ios/get-started/installation/windows/index.md)」(Windows への Xamarin.iOS のインストール) ガイドを参照してください。 
 
@@ -133,7 +125,7 @@ Xamarin 向けの Visual Studio Tools をインストールすることで、ア
 5. [リモートの iOS シミュレーター](~/tools/ios-simulator.md)
 6. [Xamarin.iOS for Visual Studio の概要](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 
-## <a name="android"></a>Android
+### <a name="android"></a>Android
 
 詳細については、「[Installing Xamarin.Android on Windows](~/android/get-started/installation/windows.md)」(Windows への Xamarin.Android のインストール) ガイドを参照してください。
 

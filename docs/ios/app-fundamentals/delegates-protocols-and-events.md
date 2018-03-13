@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5df7c2bbc7be1089795c94b6f639bd4556b49366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="events-protocols-and-delegates"></a>イベント、プロトコルとデリゲート
 
@@ -32,7 +32,7 @@ Xamarin.iOS アプリケーションでは、従来の .NET アプリケーシ�
 
 プロトコルとバリアント汎用デリゲートを示すため、ここには、次に示すように、マップに注釈を追加する単純なマップ アプリケーションを構築します。
 
- [ ![](delegates-protocols-and-events-images/01-map.png "マップに注釈を追加する単純なマップ アプリケーションの一例")](delegates-protocols-and-events-images/01-map.png) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "マップに追加された例注釈")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/01-map.png "マップに注釈を追加する単純なマップ アプリケーションの一例")](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "マップに追加された例注釈")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 このアプリへの取り組み、前に開始しましょう、UIKit の下にある .NET イベントを確認しています。
 
@@ -59,15 +59,15 @@ aButton.TouchUpInside += delegate {
 
 上記のコードは、UIViewContoller の ViewDidLoad メソッド内でのワイヤード (有線) します。 ボタンの変数は、iOS デザイナーまたはコードを追加する可能性があります ボタンを参照します。 次の図は、この記事に付属するサンプルから引用した iOS デザイナーに追加されるには、このボタンを示します。
 
- [ ![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "IOS デザイナーで追加ボタン")](delegates-protocols-and-events-images/02-interface-builder-outlet.png)
+ [![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "IOS デザイナーで追加ボタン")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
 Xamarin.iOS には、ターゲット アクション スタイル コントロールで発生する相互作用に、コードを接続するのもサポートしています。 こんにちはボタンのターゲット アクションを作成するには、これをダブルクリックして、iOS デザイナーにします。 UIViewController の分離コード ファイルが表示され、開発者は、接続元のメソッドを挿入する場所を選択するように求められます。
 
- [ ![](delegates-protocols-and-events-images/03-interface-builder-action.png "UIViewControllers 分離コード ファイル")](delegates-protocols-and-events-images/03-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/03-interface-builder-action.png "UIViewControllers 分離コード ファイル")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
 場所を選択すると、新しいメソッドが作成されコントロールにワイヤード (有線) アップします。 次の例では、メッセージが書き込まれますコンソールに、ボタンがクリックされたとき。
 
- [ ![](delegates-protocols-and-events-images/05-interface-builder-action.png "ボタンがクリックされたときにそのメッセージがコンソールに書き込まれます")](delegates-protocols-and-events-images/05-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/05-interface-builder-action.png "ボタンがクリックされたときにそのメッセージがコンソールに書き込まれます")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
 IOS ターゲット アクションのパターンの詳細については、のターゲット アクションを参照してください" [iOS 用の核となるアプリケーション機能](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)"Apple の ios 開発者ライブラリです。
 
@@ -170,7 +170,7 @@ Xamarin.iOS から OBJECTIVE-C プロトコルを使用して例を見てをみ�
 
 この方法で、`MKAnnotation`プロトコルを使用して注釈を伴う関連するデータを提供します。 注釈自体の実際のビューが採用するオブジェクトのデータから作成されて、`MKAnnotation`プロトコルです。 示すように次のスクリーン ショット) 注釈でユーザーをタップしたときに表示される引き出し線のテキストを取得するなど、`Title`プロトコルを実装するクラスのプロパティ。
 
- [ ![](delegates-protocols-and-events-images/04-annotation-with-callout.png "注釈で、ユーザーがタップしたときに使用する引き出しのテキストの例")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "注釈で、ユーザーがタップしたときに使用する引き出しのテキストの例")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 次のセクションでは、プロトコル Deep Dive、」の説明に従って、Xamarin.iOS はプロトコルを抽象クラスにバインドします。 `MKAnnotation`プロトコル、バインドされている c# クラスの名前は`MKAnnotation`の名前、プロトコル、およびそれを模倣するためには、サブクラス`NSObject`CocoaTouch のルートの基本クラスです。 プロトコルは、getter と setter; 座標を実装する必要があります。ただし、タイトルとサブタイトルはオプションです。 したがって、`MKAnnotation`クラス、`Coordinate`プロパティは*抽象*、実装することを必要として`Title`と`Subtitle`プロパティがマークされている*仮想*、ように省略可能で、次のようにします。
 

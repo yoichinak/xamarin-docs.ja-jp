@@ -7,11 +7,11 @@ ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e20015d1872cbaea21dd8b8e5431981e463c33
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>チュートリアル - 要素 API を使用してアプリケーションを作成します。
 
@@ -19,7 +19,7 @@ _この記事は、MonoTouch ダイアログ記事の概要に表示される情
 
 このチュートリアルでは、山を使用しますタスク一覧を表示するアプリケーションのマスター/詳細形式のスタイルを作成する D 要素 API です。 ユーザーが選択すると、 <span class="ui"> + </span>ボタン ナビゲーション バーで、新しい行をタスクのテーブルに追加されます。 行を選択するとは、以下に示すように、タスクの説明と期限の日付を更新することを許可する詳細画面に移動します。
 
- [ ![](elements-api-walkthrough-images/01-task-list-app.png "タスクの説明と、期限を更新することができる詳細画面に移動は、行を選択")](elements-api-walkthrough-images/01-task-list-app.png)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "タスクの説明と、期限を更新することができる詳細画面に移動は、行を選択")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
  <a name="Elements_API_Walkthrough" />
 
@@ -72,7 +72,7 @@ public override bool FinishedLaunching (UIApplication app,
 
 上記のコードがのインスタンスを作成、`RootElement`に渡すと、`DialogViewController`です。 `DialogViewController`が常に、`RootElement`その階層の最上位にします。 この例では、 `RootElement` 「作業の一覧、」ナビゲーション コント ローラーのナビゲーション バーのタイトルとして機能する文字列を作成します。 この時点では、アプリケーションを実行するには、次に示す画面があります。
 
- [ ![](elements-api-walkthrough-images/02-to-do-list-screen-.png "次に示す画面が表示されます、アプリケーションを実行します。")](elements-api-walkthrough-images/02-to-do-list-screen-.png)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "次に示す画面が表示されます、アプリケーションを実行します。")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
 MonoTouch.Dialog の階層構造を使用する方法を見てみましょう`Sections`と`Elements`を他の画面を追加します。
 
@@ -148,11 +148,11 @@ public class Task
 
 タスクの詳細画面自体は 2 つのセクションで構成されます。これらのセクションには、1 つの要素が含まれています。 最初の要素が作成された、`EntryElement`のタスクの編集可能な行を提供する`Description`プロパティです。 要素を選択すると、次に示すようにテキストを編集するためのキーボードが表示されます。
 
- [ ![](elements-api-walkthrough-images/03-create-task.png "ように、要素が選択されているときにテキストを編集するためのキーボードが表示されます。")](elements-api-walkthrough-images/03-create-task.png)
+ [![](elements-api-walkthrough-images/03-create-task.png "ように、要素が選択されているときにテキストを編集するためのキーボードが表示されます。")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
 2 番目のセクションが含まれています、`DateElement`ことにより、管理タスクの`DueDate`プロパティです。 ように、日付選択カレンダーをロード日付を自動的に選択します。
 
- [ ![](elements-api-walkthrough-images/04-date-picker.png "日付を自動的に選択として日付選択カレンダーを読み込みます")](elements-api-walkthrough-images/04-date-picker.png)
+ [![](elements-api-walkthrough-images/04-date-picker.png "日付を自動的に選択として日付選択カレンダーを読み込みます")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
 両方で、`EntryElement`と`DateElement`場合 (または MonoTouch.Dialog 内のデータ入力要素の) 値に変更が自動的に保持されます。 これは、日付を編集して、ルート画面と詳細画面内の値が保持されます、さまざまなタスクの詳細の間で前後の移動おデモンストレーションできます。
 

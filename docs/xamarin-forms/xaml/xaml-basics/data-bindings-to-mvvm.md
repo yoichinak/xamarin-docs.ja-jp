@@ -3,16 +3,16 @@ title: "パート 5 です。 MVVM へのデータ バインディング"
 description: "モデル View-viewmodel (MVVM) アーキテクチャ パターンは、注意を XAML 考案されました。 パターンは、次の 3 つのソフトウェア レイヤー間の分離を強制: ビューと呼ばれる、XAML ユーザー インターフェイスは、モデルと呼ばれる、基になるデータされ、ビューと、モデル間の媒介には、ViewModel が呼び出されます。 ビューと、ViewModel は、多くの場合、XAML ファイルで定義されているデータ バインディングを通じて接続されます。 BindingContext のビューは、通常、ViewModel のインスタンスです。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: b16aa2456cdae7a08f8f9ee8adbc32c124e78e18
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディング
 
@@ -59,7 +59,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 もちろん、大きな問題は日付と時刻が、ページを最初にビルド後のセットと決して変更。
 
-[ ![](data-bindings-to-mvvm-images/oneshotdatetime.png "日付と時刻を表示するビュー")](data-bindings-to-mvvm-images/oneshotdatetime-large.png "日付と時刻を表示するビュー")
+[![](data-bindings-to-mvvm-images/oneshotdatetime.png "日付と時刻を表示するビュー")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "日付と時刻を表示するビュー")
 
 XAML ファイルは、現在の時刻が常に表示される時計を表示できますが、一部のコードを使用すればが必要があります。ときに MVVM、モデルおよび ViewModel の観点から考えることには、すべてコードで記述されたクラスです。 ビューは、データ バインディングによって、ViewModel で定義されたプロパティを参照する XAML ファイルでは多くの場合です。
 
@@ -142,7 +142,7 @@ namespace XamlSamples
 
 `Binding`でマークアップ拡張機能、`Text`のプロパティ、`Label`形式、`DateTime`プロパティです。 表示を次に示します。
 
-[ ![](data-bindings-to-mvvm-images/clock.png "ViewModel を介しての日時を表示するビュー")](data-bindings-to-mvvm-images/clock-large.png "ViewModel を介しての日時を表示するビュー")
+[![](data-bindings-to-mvvm-images/clock.png "ViewModel を介しての日時を表示するビュー")](data-bindings-to-mvvm-images/clock-large.png#lightbox "ViewModel を介しての日時を表示するビュー")
 
 個々 のプロパティにアクセスすることも、`DateTime`プロパティをピリオドで区切って ViewModel のプロパティ。
 
@@ -292,7 +292,7 @@ namespace XamlSamples
 
 各バインド`Label`既定値は、`OneWay`です。 のみ値を表示する必要があります。 各バインディングが、`Slider`は`TwoWay`します。 これにより、 `Slider` ViewModel から初期化されるようにします。 注意して、`Color`プロパティに設定されている`Blue`ViewModel がインスタンス化されるときです。 変更は、`Slider`で新しい色を計算すると、ViewModel プロパティの新しい値を設定する必要もあります。
 
-[ ![](data-bindings-to-mvvm-images/hslcolorscroll.png "双方向データ バインドを使用して MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png "MVVM 双方向データ バインディングの使用")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "双方向データ バインドを使用して MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM 双方向データ バインディングの使用")
 
 ## <a name="commanding-with-viewmodels"></a>ViewModels とコマンド実行
 
@@ -553,7 +553,7 @@ namespace XamlSamples
 
 `Command`最初の`Button`これに表示されるマークアップにバインドされて、 `DeleteCharCommand`; に残りの部分がバインドされて、`AddCharCommand`で、`CommandParameter`は、文字と同じに表示される、`Button`面。 アクションで、プログラムを次に示します。
 
-[ ![](data-bindings-to-mvvm-images/keypad.png "MVVM とコマンドを使用して、電卓")](data-bindings-to-mvvm-images/keypad-large.png "MVVM とコマンドを使用して、電卓")
+[![](data-bindings-to-mvvm-images/keypad.png "MVVM とコマンドを使用して、電卓")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "MVVM とコマンドを使用して、電卓")
 
 ### <a name="invoking-asynchronous-methods"></a>非同期メソッドの呼び出し
 
@@ -678,7 +678,7 @@ XAML ファイル`MainPage`定義、`ListBox`が`ItemsSource`プロパティに�
 
 ページは、スクロール可能な一覧に表示されます。
 
-[ ![](data-bindings-to-mvvm-images/mainpage.png "ページの一覧をスクロール可能な")](data-bindings-to-mvvm-images/mainpage-large.png "ページのスクロール可能な一覧")
+[![](data-bindings-to-mvvm-images/mainpage.png "ページの一覧をスクロール可能な")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "ページのスクロール可能な一覧")
 
 ユーザーが項目を選択したときに、分離コード ファイル内のハンドラーがトリガーされます。 ハンドラーを設定、`SelectedItem`のプロパティ、`ListBox`に`null`選択したページをインスタンス化して、移動しました。
 
@@ -695,6 +695,12 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
     }
 }
 ```
+
+## <a name="video"></a>ビデオ
+
+> [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
+
+**Xamarin.Forms およびプリズムで簡単に行う Xamarin では、2016 を発展: MVVM**
 
 ## <a name="summary"></a>まとめ
 

@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: 56fee71f2ed36b682d323bae1225430ff991f140
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>リソース修飾子と視覚エフェクト オプション
 
 _このトピックでは、いくつかの修飾子の値が一致する場合にのみ使用されるリソースを定義する方法について説明します。単純な例は、文字列の言語で修飾されたリソースです。文字列リソースは、その他の代替のリソース定義に追加の言語を使用すると、既定値として定義できます。レイアウトの種類を含む、すべてのリソース型を修飾できます。_
 
-<a name="Custom_Device_Configurations" />
 
 ## <a name="custom-device-configurations"></a>カスタムのデバイスの構成
 
@@ -30,11 +29,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![デバイスのセレクター メニュー](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png)
+[![デバイスのセレクター メニュー](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![デバイスのセレクター メニュー](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png)
+[![デバイスのセレクター メニュー](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png#lightbox)
 
 -----
 
@@ -43,11 +42,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![AVD Manager](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png)
+[![AVD Manager](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![AVD Manager](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png)
+[![AVD Manager](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
 
 -----
 
@@ -57,11 +56,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![デバイスを複製します。](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png)
+[![デバイスを複製します。](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![デバイスを複製します。](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png)
+[![デバイスを複製します。](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
 
 -----
 
@@ -70,11 +69,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![カスタムのデバイス](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png)
+[![カスタムのデバイス](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![カスタムのデバイス](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png)
+[![カスタムのデバイス](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
 
 -----
 
@@ -83,11 +82,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![更新されたデバイスの定義](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png)
+[![更新されたデバイスの定義](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![更新されたデバイスの定義](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png)
+[![更新されたデバイスの定義](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
 
 -----
 
@@ -96,11 +95,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![カスタムのデバイスがデバイスの一覧に表示されます。](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png)
+[![カスタムのデバイスがデバイスの一覧に表示されます。](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![カスタムのデバイスがデバイスの一覧に表示されます。](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png)
+[![カスタムのデバイスがデバイスの一覧に表示されます。](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
 
 -----
 
@@ -109,16 +108,15 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![使用中のカスタムのデバイス](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png)
+[![使用中のカスタムのデバイス](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![使用中のカスタムのデバイス](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png)
+[![使用中のカスタムのデバイス](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
 
 -----
 
 
-<a name="resource_qualifier_options" />
 
 ## <a name="resource-qualifier-options"></a>リソース修飾子のオプション
 
@@ -126,11 +124,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![リソース修飾子のオプション](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png)
+[![リソース修飾子のオプション](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![リソース修飾子のオプション](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png)
+[![リソース修飾子のオプション](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
 
 -----
 
@@ -144,7 +142,6 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 このプルダウン メニューの各は、新しいダイアログ ボックスを選択して、(次に説明されている) とリソース修飾子を構成する場所を開きます。
 
 
-<a name="Language_and_Region" />
 
 ### <a name="language"></a>言語
 
@@ -152,11 +149,11 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![言語/地域を追加します。](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png)
+[![言語/地域を追加します。](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![言語/地域を追加します。](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png)
+[![言語/地域を追加します。](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
 
 -----
 
@@ -169,7 +166,7 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![言語の一覧](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png)
+[![言語の一覧](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png#lightbox)
 
 -----
 
@@ -182,7 +179,7 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![言語および地域の選択](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png)
+[![言語および地域の選択](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
 
 -----
 
@@ -190,7 +187,6 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 新しい言語を追加しても、表示は、不要になったに追加した言語は、次回の新しいリソースを作成しない場合は、プロジェクトが開くことに注意してください。
 
 
-<a name="ui_mode" />
 
 ### <a name="ui-mode"></a>UI モード
 
@@ -198,7 +194,7 @@ Android では、多種多様なデバイスと画面解像度でご確認いた
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![UI モード メニュー](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png)
+[![UI モード メニュー](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
 夜間モードは、この一覧の下**いない夜**と**夜**レイアウトの方向と、その後**左から右に**と**右から左へ**(について**左から右に**と**右から左へ**オプションを参照してください[LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/)です。
 最後の項目を**リソース修飾子のオプション**ダイアログ ボックスは、**画面を丸める**(用、Android を着用で使用) または**画面丸められない**(ラウンドについてと非ラウンド スクリーンを参照してください[レイアウト](https://developer.android.com/training/wearables/ui/layouts.html))。
@@ -206,7 +202,7 @@ Android の UI モードの詳細については、次を参照してくださ�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![UI モード メニュー](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png)
+[![UI モード メニュー](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
 
 夜間モードは、この一覧の下**いない夜**と**夜**レイアウトの方向と、その後**左から右に**と**右から左へ**です。 Android の UI モードの詳細については、次を参照してください。 [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/)です。
 について**左から右に**と**右から左へ**オプションを参照してください[LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/)です。
@@ -215,12 +211,11 @@ Android の UI モードの詳細については、次を参照してくださ�
 
 最後の項目、**リソース修飾子のオプション**ダイアログは、**画面ラウンド**メニュー。 このメニューでは、いずれかを選択することができます**画面を丸める**(用、Android を着用で使用) または**四角形の画面**:
 
-[ ![Round 画面メニュー](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png)
+[![Round 画面メニュー](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
 
 -----
 
 
-<a name="Action_Bar" />
 
 ## <a name="action-bar-settings"></a>アクションのバーの設定
 
@@ -232,7 +227,7 @@ Android の UI モードの詳細については、次を参照してくださ�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![アクションのバーの設定](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png)
+[![アクションのバーの設定](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png#lightbox)
 
 -----
 
@@ -246,7 +241,6 @@ Android の UI モードの詳細については、次を参照してくださ�
 -   **タブ**&ndash;タブ ナビゲーション モード。 静的なタイトルのテキストの代わりには、このモードは、一連のアクティビティ内のナビゲーションのタブを表示します。
 
 
-<a name="Themes" />
 
 ## <a name="themes"></a>テーマ
 
@@ -254,11 +248,11 @@ Android の UI モードの詳細については、次を参照してくださ�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![複数のテーマ リスト](resource-qualifiers-images/vs/15-theme-menu-sml.png "よりテーマ ボックスの一覧")](resource-qualifiers-images/vs/15-theme-menu.png)
+[![複数のテーマ リスト](resource-qualifiers-images/vs/15-theme-menu-sml.png "よりテーマ ボックスの一覧")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![複数のテーマのリスト](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png)
+[![複数のテーマのリスト](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
 
 -----
 
@@ -271,12 +265,11 @@ Android の UI モードの詳細については、次を参照してくださ�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ライト テーマが利用できるようになりました](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png)
+[![ライト テーマが利用できるようになりました](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
 
 -----
 
 
-<a name="Android_Version" />
 
 ## <a name="android-version"></a>Android バージョン
 
@@ -293,7 +286,7 @@ Android**バージョン**セレクターは、デザイナーのレイアウト
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Android のバージョンの一覧](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png)
+[![Android のバージョンの一覧](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
 
 プロジェクトの設定でターゲット フレームワークのバージョンを設定することができます、**プロジェクトのオプション > ビルド > 全般**セクションです。 ターゲット フレームワークのバージョンの詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。
 

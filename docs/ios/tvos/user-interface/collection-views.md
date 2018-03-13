@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f0201e114f55e0610aceb68f98fae60a801afc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f943d6b88d2fd7f38759fb32ecb612e102266657
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-collection-views"></a>コレクション ビューの操作
 
@@ -20,7 +20,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でコレクション �
 
 コレクション ビューは、任意のレイアウトを使用して表示するコンテンツのグループにすること。 組み込みサポートを使用して、これにより、簡単に作成のグリッドのようなまたは線形レイアウトもカスタム レイアウトをサポートします。
 
-[ ![](collection-views-images/collection01.png "コレクション ビューのサンプル")](collection-views-images/collection01.png)
+[![](collection-views-images/collection01.png "コレクション ビューのサンプル")](collection-views-images/collection01.png#lightbox)
 
 コレクション ビューは、ユーザーとのやり取り、およびコレクションの内容を提供する、デリゲートと、データ ソースの両方を使用して項目のコレクションを保持します。 コレクション ビューはビュー自体から独立しているレイアウト サブシステムに基づいているため、別のレイアウトを提供する簡単に変更できますコレクション ビューのデータの場でのプレゼンテーションです。
 
@@ -103,36 +103,36 @@ Xamarin.tvOS アプリでは、コレクション ビューを使用する最も
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、iOS デザイナーで開きます。
 1. 既存のビューにイメージの表示、ラベル、およびボタンを追加し、次のようにするように構成します。 
 
-    [ ![](collection-views-images/collection02.png "サンプルのレイアウト")](collection-views-images/collection02.png)
+    [![](collection-views-images/collection02.png "サンプルのレイアウト")](collection-views-images/collection02.png#lightbox)
 1. 割り当てる、**名前**イメージ ビューとのラベルに、**ウィジェット タブ**の**プロパティ エクスプ ローラー**です。 例: 
 
-    [ ![](collection-views-images/collection03.png "名の設定")](collection-views-images/collection03.png)
+    [![](collection-views-images/collection03.png "名の設定")](collection-views-images/collection03.png#lightbox)
 1. 次に、コレクション ビューのコント ローラーをストーリー ボード上にドラッグします。 
 
-    [ ![](collection-views-images/collection04.png "コレクション ビューのコント ローラー")](collection-views-images/collection04.png)
+    [![](collection-views-images/collection04.png "コレクション ビューのコント ローラー")](collection-views-images/collection04.png#lightbox)
 1. コレクション ビューのコント ローラーに、ボタン コントロール ドラッグ アンド選択**プッシュ**ポップアップから。 
 
-    [ ![](collection-views-images/collection05.png "ポップアップからのプッシュを選択します。")](collection-views-images/collection05.png)
+    [![](collection-views-images/collection05.png "ポップアップからのプッシュを選択します。")](collection-views-images/collection05.png#lightbox)
 1. アプリの実行時にこれをユーザーがボタンをクリックするたびに、表示をする、コレクション ビューとなります。
 1. コレクション ビューを選択しの次の値を入力、**レイアウト タブの**の**プロパティ エクスプ ローラー**: 
 
-    [ ![](collection-views-images/collection06.png "プロパティ エクスプ ローラー")](collection-views-images/collection06.png)
+    [![](collection-views-images/collection06.png "プロパティ エクスプ ローラー")](collection-views-images/collection06.png#lightbox)
 1. これは、個々 のセルとセルと外側のエッジ コレクション ビューの間の境界線のサイズを制御します。
 1. コレクション ビューのコント ローラーを選択し、そのクラスに設定`CityCollectionViewController`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection07.png "クラスを CityCollectionViewController に設定します。")](collection-views-images/collection07.png)
+    [![](collection-views-images/collection07.png "クラスを CityCollectionViewController に設定します。")](collection-views-images/collection07.png#lightbox)
 1. コレクション ビューを選択し、そのクラスに設定`CityCollectionView`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection08.png "クラスを CityCollectionView に設定します。")](collection-views-images/collection08.png)
+    [![](collection-views-images/collection08.png "クラスを CityCollectionView に設定します。")](collection-views-images/collection08.png#lightbox)
 1. コレクション ビューのセルを選択し、そのクラスに設定`CityCollectionViewCell`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection09.png "クラスを CityCollectionViewCell に設定します。")](collection-views-images/collection09.png)
+    [![](collection-views-images/collection09.png "クラスを CityCollectionViewCell に設定します。")](collection-views-images/collection09.png#lightbox)
 1. **ウィジェット タブ**いることを確認、**レイアウト**は`Flow`と**方向にスクロールする**は`Vertical`コレクション ビューの。 
 
-    [ ![](collection-views-images/collection10.png "ウィジェット タブ")](collection-views-images/collection10.png)
+    [![](collection-views-images/collection10.png "ウィジェット タブ")](collection-views-images/collection10.png#lightbox)
 1. コレクション ビューのセルを選択し、設定、 **Identity**に`CityCell`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection11.png "CityCell に Id を設定します。")](collection-views-images/collection11.png)
+    [![](collection-views-images/collection11.png "CityCell に Id を設定します。")](collection-views-images/collection11.png#lightbox)
 1. 変更内容を保存します。
     
 
@@ -143,34 +143,34 @@ Xamarin.tvOS アプリでは、コレクション ビューを使用する最も
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、iOS デザイナーで開きます。
 1. 既存のビューにイメージの表示、ラベル、およびボタンを追加し、次のようにするように構成します。 
 
-    [ ![](collection-views-images/collection02vs.png "レイアウトを構成します。")](collection-views-images/collection02vs.png)
+    [![](collection-views-images/collection02vs.png "レイアウトを構成します。")](collection-views-images/collection02vs.png#lightbox)
 1. 割り当てる、**名前**イメージ ビューとのラベルに、**ウィジェット タブ**の**プロパティ エクスプ ローラー**です。 例: 
 
-    [ ![](collection-views-images/collection03vs.png "プロパティ エクスプ ローラー")](collection-views-images/collection03vs.png)
+    [![](collection-views-images/collection03vs.png "プロパティ エクスプ ローラー")](collection-views-images/collection03vs.png#lightbox)
 1. 次に、コレクション ビューのコント ローラーをストーリー ボード上にドラッグします。 
 
-    [ ![](collection-views-images/collection04vs.png "コレクション ビューのコント ローラー")](collection-views-images/collection04vs.png)
+    [![](collection-views-images/collection04vs.png "コレクション ビューのコント ローラー")](collection-views-images/collection04vs.png#lightbox)
 1. コレクション ビューのコント ローラーに、ボタン コントロール ドラッグ アンド選択**プッシュ**ポップアップから。 
 
-    [ ![](collection-views-images/collection05vs.png "ポップアップからのプッシュを選択します。")](collection-views-images/collection05vs.png)
+    [![](collection-views-images/collection05vs.png "ポップアップからのプッシュを選択します。")](collection-views-images/collection05vs.png#lightbox)
 1. アプリの実行時にこれをユーザーがボタンをクリックするたびに、表示をする、コレクション ビューとなります。
 1. コレクション ビューを選択し、[、**レイアウト] タブの**の**プロパティ エクスプ ローラー**入力、**幅**として_361_と**高さ**として_256_ 
 1. これは、個々 のセルとセルと外側のエッジ コレクション ビューの間の境界線のサイズを制御します。
 1. コレクション ビューのコント ローラーを選択し、そのクラスに設定`CityCollectionViewController`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection07vs.png "クラスを CityCollectionViewController に設定します。")](collection-views-images/collection07vs.png)
+    [![](collection-views-images/collection07vs.png "クラスを CityCollectionViewController に設定します。")](collection-views-images/collection07vs.png#lightbox)
 1. コレクション ビューを選択し、そのクラスに設定`CityCollectionView`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection08vs.png "クラスを CityCollectionView に設定します。")](collection-views-images/collection08vs.png)
+    [![](collection-views-images/collection08vs.png "クラスを CityCollectionView に設定します。")](collection-views-images/collection08vs.png#lightbox)
 1. コレクション ビューのセルを選択し、そのクラスに設定`CityCollectionViewCell`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection09vs.png "クラスを CityCollectionViewCell に設定します。")](collection-views-images/collection09vs.png)
+    [![](collection-views-images/collection09vs.png "クラスを CityCollectionViewCell に設定します。")](collection-views-images/collection09vs.png#lightbox)
 1. **ウィジェット タブ**いることを確認、**レイアウト**は`Flow`と**方向にスクロールする**は`Vertical`コレクション ビューの。 
 
-    [ ![](collection-views-images/collection10vs.png "%T ウィジェット タブ")](collection-views-images/collection10vs.png)
+    [![](collection-views-images/collection10vs.png "%T ウィジェット タブ")](collection-views-images/collection10vs.png#lightbox)
 1. コレクション ビューのセルを選択し、設定、 **Identity**に`CityCell`で、**ウィジェット タブ**: 
 
-    [ ![](collection-views-images/collection11vs.png "CityCell に Id を設定します。")](collection-views-images/collection11vs.png)
+    [![](collection-views-images/collection11vs.png "CityCell に Id を設定します。")](collection-views-images/collection11vs.png#lightbox)
 1. 変更内容を保存します。
     
 
@@ -806,17 +806,17 @@ public override void ViewWillAppear (bool animated)
 
 配置内のすべての場合をビルドしてアプリを実行のメイン ビューが表示され、既定の市区町村。
 
-[ ![](collection-views-images/run01.png "メイン画面")](collection-views-images/run01.png)
+[![](collection-views-images/run01.png "メイン画面")](collection-views-images/run01.png#lightbox)
 
 場合は、ユーザーがクリックして、**ビューの選択**ボタン、コレクション ビューが表示されます。
 
-[ ![](collection-views-images/run02.png "コレクション ビュー")](collection-views-images/run02.png)
+[![](collection-views-images/run02.png "コレクション ビュー")](collection-views-images/run02.png#lightbox)
 
 持つ都市はすべてその`CanSelect`プロパティに設定`false`が表示されます淡色表示にし、ユーザーは、フォーカスを設定するにはできません。 ユーザーが項目を強調表示 (ようにフォーカス設定) タイトルが表示され、3 D、視差効果注意傾き、イメージを使用できます。
 
 ユーザーをクリックすると、イメージを選択してください、コレクション ビューが閉じられのメイン ビューには、新しいイメージが再表示されます。
 
-[ ![](collection-views-images/run03.png "ホーム画面で、新しいイメージ")](collection-views-images/run03.png)
+[![](collection-views-images/run03.png "ホーム画面で、新しいイメージ")](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items" />
 

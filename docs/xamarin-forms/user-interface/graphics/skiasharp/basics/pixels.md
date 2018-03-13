@@ -4,14 +4,15 @@ description: "SkiaSharp 座標と Xamarin.Forms の座標の違いを調べる"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 2643e06474ffe0fd60830db3f315bf525c2f84eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>デバイス非依存単位、ピクセル
 
@@ -98,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
 
-[![](pixels-images/surfacesize-small.png "画面のサイズのページのスクリーン ショットをトリプル")](pixels-images/surfacesize-large.png "画面のサイズのページのトリプル スクリーン ショット")
+[![](pixels-images/surfacesize-small.png "画面のサイズのページのスクリーン ショットをトリプル")](pixels-images/surfacesize-large.png#lightbox "画面のサイズのページのトリプル スクリーン ショット")
 
 わかります、`CanvasSize`のプロパティ、`SKCanvasView`と`Size`のプロパティ、`SKImageInfo`値がピクセルのサイズをレポートに一致します。 `Height`と`Width`のプロパティ、 `SKCanvasView` Xamarin.Forms のプロパティと、ビュー、プラットフォームで定義されているデバイスに依存しない単位のサイズを報告します。
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで、次の 3 つのプラットフォームで実行されています。
 
-[![](pixels-images/ellipsefill-small.png "画面のサイズのページのスクリーン ショットをトリプル")](pixels-images/ellipsefill-large.png "画面のサイズのページのトリプル スクリーン ショット")
+[![](pixels-images/ellipsefill-small.png "画面のサイズのページのスクリーン ショットをトリプル")](pixels-images/ellipsefill-large.png#lightbox "画面のサイズのページのトリプル スクリーン ショット")
 
 [他`DrawOval`メソッド](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/)が、 [ `SGRect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRect/)引数は、四角形の左上隅および右下隅の X および Y 座標の観点で定義します。 楕円を塗りつぶしますが推奨することができる可能性がありますで使用する四角形、**楕円塗りつぶし**次のようにページ。
 

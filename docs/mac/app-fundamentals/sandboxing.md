@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e64f1962e35372a6058f4b515efa5a61c1c9e45
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>サンド ボックス Xamarin.Mac アプリ
 
@@ -22,11 +22,11 @@ _この記事では、サンド ボックスでは、アプリ ストアのリ�
 
 Xamarin.Mac アプリケーションでは、c# と .NET を使用する場合、OBJECTIVE-C または Swift を使用する場合と同様にサンド ボックス アプリケーションに同じ機能があります。
 
-[![実行中のアプリの使用例](sandboxing-images/intro01.png "実行中のアプリの例")](sandboxing-images/intro01-large.png)
+[![実行中のアプリの使用例](sandboxing-images/intro01.png "実行中のアプリの例")](sandboxing-images/intro01-large.png#lightbox)
 
 この記事では、Xamarin.Mac アプリケーションと、サンド ボックスに移動した要素のすべてのサンド ボックス化の操作の基礎をについて説明します。 コンテナー ディレクトリ、資格、ユーザー指定のアクセス許可、特権の分離、およびカーネル実施します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを OBJECTIVE-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 ## <a name="about-the-app-sandbox"></a>アプリのサンド ボックスについて
 
@@ -70,19 +70,19 @@ Xamarin.Mac アプリケーションでは、c# と .NET を使用する場合�
 1. Mac とクリックの Visual Studio を起動、**新しいソリューション.** リンクをクリックしてください。
 2. **新しいプロジェクト**ダイアログ ボックスで、 **Mac** > **アプリ** > **Cocoa アプリ**: 
 
-    [![新しい Cocoa アプリを作成する](sandboxing-images/sample01.png "新しい Cocoa アプリの作成")](sandboxing-images/sample01-large.png)
+    [![新しい Cocoa アプリを作成する](sandboxing-images/sample01.png "新しい Cocoa アプリの作成")](sandboxing-images/sample01-large.png#lightbox)
 3. をクリックして、 **次へ**ボタンを入力`MacSandbox`のプロジェクトの名前と をクリック、**作成**ボタン。 
 
-    [![アプリ名を入力する](sandboxing-images/sample02.png "アプリ名を入力します。")](sandboxing-images/sample02-large.png)
+    [![アプリ名を入力する](sandboxing-images/sample02.png "アプリ名を入力します。")](sandboxing-images/sample02-large.png#lightbox)
 4. **ソリューション パッド**をダブルクリックして、 **Main.storyboard**ファイルを開いて Xcode で編集するファイル。 
 
-    [![メインのストーリー ボードの編集](sandboxing-images/sample03.png "メインのストーリー ボードの編集")](sandboxing-images/sample03-large.png)
+    [![メインのストーリー ボードの編集](sandboxing-images/sample03.png "メインのストーリー ボードの編集")](sandboxing-images/sample03-large.png#lightbox)
 5. ドラッグ、 **Web ビュー**ウィンドウのサイズをコンテンツ領域を入力し、拡大および縮小ウィンドウを使用するように設定します。 
 
-    [![Web ビューを追加する](sandboxing-images/sample04.png "web ビューを追加します。")](sandboxing-images/sample04-large.png)
+    [![Web ビューを追加する](sandboxing-images/sample04.png "web ビューを追加します。")](sandboxing-images/sample04-large.png#lightbox)
 6. という名前の web ビューのコンセントを作成する`webView`: 
 
-    [![新しいコンセントを作成する](sandboxing-images/sample05.png "新しいコンセントを作成します。")](sandboxing-images/sample05-large.png)
+    [![新しいコンセントを作成する](sandboxing-images/sample05.png "新しいコンセントを作成します。")](sandboxing-images/sample05-large.png#lightbox)
 7. Mac とダブルクリックの Visual Studio に戻り、 **ViewController.cs**ファイルで、**ソリューション パッド**編集用に開きます。
 8. 次の追加ステートメントを使用します。 `using WebKit;`
 9. ように、`ViewDidLoad`次のようなメソッドの検索。 
@@ -99,7 +99,7 @@ public override void AwakeFromNib ()
 
 アプリケーションを実行し、Apple web サイトが次のように、ウィンドウに表示されていることを確認します。
 
-[![例のアプリの実行を示す](sandboxing-images/sample06.png "例のアプリの実行を表示")](sandboxing-images/sample06-large.png)
+[![例のアプリの実行を示す](sandboxing-images/sample06.png "例のアプリの実行を表示")](sandboxing-images/sample06-large.png#lightbox)
 
 <a name="Signing_and_Provisioning_the_App" />
 
@@ -111,34 +111,34 @@ public override void AwakeFromNib ()
 
 1. Apple 開発者ポータルにログインします。 
 
-    [![Apple 開発者ポータルにログイン](sandboxing-images/sign01.png "Apple 開発者ポータルにログインします。")](sandboxing-images/sign01-large.png)
+    [![Apple 開発者ポータルにログイン](sandboxing-images/sign01.png "Apple 開発者ポータルにログインします。")](sandboxing-images/sign01-large.png#lightbox)
 2. 選択**証明書、識別子、およびプロファイル**: 
 
-    [![証明書、識別子、およびプロファイルを選択すると](sandboxing-images/sign02.png "証明書、識別子、およびプロファイルを選択します。")](sandboxing-images/sign02-large.png)
+    [![証明書、ID、プロファイルの選択](sandboxing-images/sign02.png "証明書、ID、プロファイルの選択")](sandboxing-images/sign02-large.png#lightbox)
 3. **Mac アプリ****識別子**: 
 
-    [![識別子を選択すると](sandboxing-images/sign03.png "識別子を選択します。")](sandboxing-images/sign03-large.png)
+    [![識別子を選択すると](sandboxing-images/sign03.png "識別子を選択します。")](sandboxing-images/sign03-large.png#lightbox)
 4. アプリケーションの新しい ID を作成します。 
 
-    [![新しいアプリ ID を作成する](sandboxing-images/sign04.png "新しいアプリ ID を作成します。")](sandboxing-images/sign04-large.png)
+    [![新しいアプリ ID を作成する](sandboxing-images/sign04.png "新しいアプリ ID を作成します。")](sandboxing-images/sign04-large.png#lightbox)
 5. **プロビジョニング プロファイル****開発**: 
 
-    [![開発を選択すると](sandboxing-images/sign05.png "開発を選択します。")](sandboxing-images/sign05-large.png)
+    [![開発を選択すると](sandboxing-images/sign05.png "開発を選択します。")](sandboxing-images/sign05-large.png#lightbox)
 6. 新しいプロファイルを作成し、選択**Mac アプリの開発**: 
 
-    [![新しいプロファイルを作成する](sandboxing-images/sign06.png "新しいプロファイルを作成します。")](sandboxing-images/sign06-large.png)
+    [![新しいプロファイルを作成する](sandboxing-images/sign06.png "新しいプロファイルを作成します。")](sandboxing-images/sign06-large.png#lightbox)
 7. 上で作成したアプリ ID を選択します。 
 
-    [![アプリ ID を選択すると](sandboxing-images/sign07.png "アプリ ID を選択します。")](sandboxing-images/sign07-large.png)
+    [![アプリ ID を選択すると](sandboxing-images/sign07.png "アプリ ID を選択します。")](sandboxing-images/sign07-large.png#lightbox)
 8. このプロファイルの開発者を選択します。 
 
-    [![追加する開発者](sandboxing-images/sign08.png "追加開発者")](sandboxing-images/sign08-large.png)
+    [![追加する開発者](sandboxing-images/sign08.png "追加開発者")](sandboxing-images/sign08-large.png#lightbox)
 9. このプロファイルのコンピューターを選択します。 
 
-    [![許可されているコンピューターを選択すると](sandboxing-images/sign09.png "許可されているコンピューターの選択")](sandboxing-images/sign09-large.png)
+    [![許可されているコンピューターを選択すると](sandboxing-images/sign09.png "許可されているコンピューターの選択")](sandboxing-images/sign09-large.png#lightbox)
 10. プロファイルに名前を付けます。 
 
-    [![プロファイルの名前を付ける](sandboxing-images/sign10.png "プロファイルの名前を付ける")](sandboxing-images/sign10-large.png)
+    [![プロファイルの名前を付ける](sandboxing-images/sign10.png "プロファイルの名前を付ける")](sandboxing-images/sign10-large.png#lightbox)
 11. クリックして、**完了**ボタンをクリックします。
 
 > [!IMPORTANT]
@@ -160,10 +160,10 @@ public override void AwakeFromNib ()
 1. **ソリューション パッド**をダブルクリックして、 **Info.plist**ファイルを開いて編集するファイル。
 2. いることを確認、**バンドル Id**上で作成した、アプリ ID と一致する (例: `com.appracatappra.MacSandbox`)。 
 
-    [![バンドル Id を編集](sandboxing-images/sign13.png "バンドル Id の編集")](sandboxing-images/sign13-large.png)
+    [![バンドル Id を編集](sandboxing-images/sign13.png "バンドル Id の編集")](sandboxing-images/sign13-large.png#lightbox)
 3. 次をダブルクリックして、 **Entitlements.plist**ファイルを確認して、 **iCloud キー値ストア**と**iCloud コンテナー**上で作成したアプリ ID は、すべて一致 (例。`com.appracatappra.MacSandbox`): 
 
-    [![Entitlements.plist ファイルを編集](sandboxing-images/sign17.png "Entitlements.plist ファイルの編集")](sandboxing-images/sign17-large.png)
+    [![Entitlements.plist ファイルを編集](sandboxing-images/sign17.png "Entitlements.plist ファイルの編集")](sandboxing-images/sign17-large.png#lightbox)
 3. 変更内容を保存します。
 4. **ソリューション パッド**、プロジェクト ファイルを編集するためのオプションを開く をダブルクリックします。  
 
@@ -180,7 +180,7 @@ public override void AwakeFromNib ()
 
 この時点でをアプリケーションを実行し、すべてしを正しくプロビジョニングされていることを確認してください。 実行する場合、アプリが以前と同様、すべてのものをお勧めします。 障害が発生した場合は、次のようなダイアログ ボックスをする可能性があります。
 
-[![問題のダイアログをプロビジョニング例](sandboxing-images/sign16.png "問題ダイアログをプロビジョニングする例")](sandboxing-images/sign16-large.png)
+[![問題のダイアログをプロビジョニング例](sandboxing-images/sign16.png "問題ダイアログをプロビジョニングする例")](sandboxing-images/sign16-large.png#lightbox)
 
 プロビジョニングおよび署名に関する問題についての最も一般的な原因を次に示します。
 
@@ -197,12 +197,12 @@ public override void AwakeFromNib ()
 1. **ソリューション パッド**をダブルクリックして、 **Entitlements.plist**ファイルを開いて編集するファイル。
 2. 両方を確認**権利を有効にする**と**アプリ サンド ボックス化を有効にする**: 
 
-    [![権利を編集し、サンド ボックス化を有効にする](sandboxing-images/sign17.png "権利を編集し、サンド ボックス化を有効にします。")](sandboxing-images/sign17-large.png)
+    [![権利を編集し、サンド ボックス化を有効にする](sandboxing-images/sign17.png "権利を編集し、サンド ボックス化を有効にします。")](sandboxing-images/sign17-large.png#lightbox)
 3. 変更内容を保存します。
 
 この時点では、アプリのサンド ボックスが有効になっているが、Web ビューに必要なネットワーク アクセスが指定されていません。 今すぐアプリケーションを実行する場合は、空白のウィンドウを取得する必要があります。
 
-[![Web アクセスがブロックされていることを示す](sandboxing-images/sample08.png "web アクセスがブロックされていることを示す")](sandboxing-images/sample08-large.png)
+[![Web アクセスがブロックされていることを示す](sandboxing-images/sample08.png "web アクセスがブロックされていることを示す")](sandboxing-images/sample08-large.png#lightbox)
 
 ### <a name="verifying-that-the-app-is-sandboxed"></a>アプリがサンド ボックス化されたことを確認しています
 
@@ -210,25 +210,25 @@ public override void AwakeFromNib ()
 
 1. Finder での内容を確認、`~/Library/Containers/`フォルダーの場合は、アプリは、サンド ボックスがあります、アプリのバンドル Id などという名前のフォルダー (例: `com.appracatappra.MacSandbox`)。 
 
-    [![アプリのバンドルを開く](sandboxing-images/sample09.png "アプリのバンドルを開く")](sandboxing-images/sample09-large.png)
+    [![アプリのバンドルを開く](sandboxing-images/sample09.png "アプリのバンドルを開く")](sandboxing-images/sample09-large.png#lightbox)
 2. システムでは、利用状況モニターでサンド ボックスとして、アプリが表示されます。
     - 利用状況モニターを起動して ( `/Applications/Utilities`)。 
     - 選択**ビュー** > **列**ことを確認して、**サンド ボックス**メニュー項目をチェックします。
     - サンド ボックスの列を読み取っていることを確認してください。`Yes`アプリケーション。 
 
-    [![アプリの利用状況モニターをチェック](sandboxing-images/sample10.png "アプリの利用状況モニターを確認しています")](sandboxing-images/sample10-large.png)
+    [![アプリの利用状況モニターをチェック](sandboxing-images/sample10.png "アプリの利用状況モニターを確認しています")](sandboxing-images/sample10-large.png#lightbox)
 3. バイナリのアプリがサンド ボックス化されたことを確認します。
     - ターミナル アプリを起動します。
     - アプリケーションに移動`bin`ディレクトリ。
     - このコマンドを発行: `codesign -dvvv --entitlements :- executable_path` (ここで`executable_path`アプリケーションへのパスです)。 
 
-    [![コマンドライン上でのアプリをチェック](sandboxing-images/sample11.png "コマンドライン上でのアプリを確認しています")](sandboxing-images/sample11-large.png)
+    [![コマンドライン上でのアプリをチェック](sandboxing-images/sample11.png "コマンドライン上でのアプリを確認しています")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>サンド ボックス化されたアプリのデバッグ
 
 既定では、サンド ボックス化を有効にすることができないことアプリへの接続には、TCP を介して Xamarin.Mac アプリにデバッガーが接続するため、エラーが発生した場合は有効になっている適切な権限がない場合、アプリを実行しようとすると、 *"に接続できません。デバッガー"*です。 
 
-[![必要なオプションを設定する](sandboxing-images/debug01.png "必要なオプションの設定")](sandboxing-images/debug01-large.png)
+[![必要なオプションを設定する](sandboxing-images/debug01.png "必要なオプションの設定")](sandboxing-images/debug01-large.png#lightbox)
 
 **送信ネットワーク接続を許可する (クライアント)**権限は、デバッガーのために必要な 1 つは、この許可すると、通常どおりにデバッグします。 更新したなしでデバッグすることはできませんので、`CompileEntitlements`対象の`msbuild`ビルドでのみデバッグのセキュリティで保護されているすべてのアプリの権利にそのアクセス許可を自動的に追加します。 リリース ビルドでは、未変更の状態、権利ファイルで指定された権限を使用してください。
 
@@ -248,7 +248,7 @@ public override void AwakeFromNib ()
 2. 開く、**コンソール**アプリケーション (から`/Applications/Utilties/`)。
 3. 選択**すべてのメッセージ**、サイドバーで入力および`sandbox`検索に。 
 
-    [![コンソールで、サンド ボックス上の問題の例](sandboxing-images/resolve01.png "コンソールで、サンド ボックス上の問題の例")](sandboxing-images/resolve01-large.png)
+    [![コンソールで、サンド ボックス上の問題の例](sandboxing-images/resolve01.png "コンソールで、サンド ボックス上の問題の例")](sandboxing-images/resolve01-large.png#lightbox)
 
 この例のアプリ上を参照してください、Kernal をブロックしている、`network-outbound`トラフィック アプリ サンド ボックス、権限がない要求しているためです。
 
@@ -261,7 +261,7 @@ public override void AwakeFromNib ()
 1. **ソリューション パッド**をダブルクリックして、 **Entitlements.plist**ファイルを開いて編集するファイル。
 2. 下にある、**権利** セクションで、チェック、**送信ネットワーク接続を許可する (クライアント)**  チェック ボックス。 
 
-    [![権利を編集](sandboxing-images/sign17.png "と権利の編集")](sandboxing-images/sign17-large.png)
+    [![権利を編集](sandboxing-images/sign17.png "と権利の編集")](sandboxing-images/sign17-large.png#lightbox)
 3. アプリケーションに変更を保存します。
 
 例のアプリの前述の処理、し、ビルドを実行する場合、web コンテンツは期待どおりに表示されます。
@@ -284,7 +284,7 @@ public override void AwakeFromNib ()
 
 編集して、アプリケーションのアプリのサンド ボックスのリソースを変更するその**Entitlements.plist**ファイル、またはエディターのドロップダウン ボックスから必要な権限を選択します。
 
-[![権利を編集](sandboxing-images/sign17.png "と権利の編集")](sandboxing-images/sign17-large.png)
+[![権利を編集](sandboxing-images/sign17.png "と権利の編集")](sandboxing-images/sign17-large.png#lightbox)
 
 ### <a name="container-directories-and-file-system-access"></a>コンテナー ディレクトリおよびファイル システム アクセス
 

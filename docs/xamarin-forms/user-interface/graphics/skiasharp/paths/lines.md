@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a3090873569db2466db9ab25cc105ea59401df3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lines-and-stroke-caps"></a>行とストローク キャップ
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 各メンバーに対して、`SKStrokeCap`列挙型、ハンドラーが 50 ピクセルと 2 ピクセルのストロークの太さの一番上に配置されている別の行のストロークの太さを持つ 2 つの行を描画します。 この 2 行目は、幾何学模様の開始と終了の線の太さと線の幅からの行を示すために対象としています。
 
-[![](lines-images/strokecaps-small.png "キャップのストロークのページのスクリーン ショットをトリプル")](lines-images/strokecaps-large.png "ストローク線端 ページのトリプル スクリーン ショット")
+[![](lines-images/strokecaps-small.png "キャップのストロークのページのスクリーン ショットをトリプル")](lines-images/strokecaps-large.png#lightbox "ストローク線端 ページのトリプル スクリーン ショット")
 
 ご覧のように、`Square`と`Round`ストローク cap がストローク幅の半分だけ行の先頭に、最後にもう一度、行の長さを効果的に拡張します。 この拡張機能は、レンダリングされたグラフィック オブジェクトのサイズを決定する必要がある場合に重要になります。
 
@@ -230,7 +230,7 @@ T GetPickerItem<T>(Picker picker)
 
 このスクリーン ショットに、さまざまな`Picker`3 つのプラットフォームを選択します。
 
-[![](lines-images/multiplelines-small.png "複数行のページのスクリーン ショットをトリプル")](lines-images/multiplelines-large.png "複数行のページのトリプル スクリーン ショット")
+[![](lines-images/multiplelines-small.png "複数行のページのスクリーン ショットをトリプル")](lines-images/multiplelines-large.png#lightbox "複数行のページのトリプル スクリーン ショット")
 
 左側には iPhone 方法、`SKPointMode.Points`列挙体メンバーにより`DrawPoints`内の地点のそれぞれを表示するために、`SKPoint`ライン キャップの場合、四角形配列`Butt`または`Square`です。 ライン キャップの場合、円が表示される`Round`です。
 

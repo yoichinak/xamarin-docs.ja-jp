@@ -4,14 +4,15 @@ description: "タッチ ドラッグ、はさむ、および回転の実装を�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: b418e0179c95a424c88d5f5063a09f984bb13ec0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="touch-manipulations"></a>タッチ操作
 
@@ -545,7 +546,7 @@ public partial class TouchManipulationPage : ContentPage
 
 `PaintSurface`ハンドラーの終了を表示して、`MatrixDisplay`累積タッチ マトリックスを表示するオブジェクト。
 
-[![](touch-images/touchmanipulation-small.png "タッチ操作ページのスクリーン ショットをトリプル")](touch-images/touchmanipulation-large.png "タッチ操作ページのトリプル スクリーン ショット")
+[![](touch-images/touchmanipulation-small.png "タッチ操作ページのスクリーン ショットをトリプル")](touch-images/touchmanipulation-large.png#lightbox "タッチ操作ページのトリプル スクリーン ショット")
 
 ## <a name="manipulating-multiple-bitmaps"></a>複数のビットマップを操作します。
 
@@ -684,7 +685,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 コードでは、コレクションをループし、コレクションの先頭から末尾までのビットマップの積み上がりを表示します。
 
-[![](touch-images/bitmapscatterview-small.png "ビットマップの散布図の表示 ページのスクリーン ショットをトリプル")](touch-images/bitmapscatterview-large.png "ビットマップ散布図の表示 ページのトリプル スクリーン ショット")
+[![](touch-images/bitmapscatterview-small.png "ビットマップの散布図の表示 ページのスクリーン ショットをトリプル")](touch-images/bitmapscatterview-large.png#lightbox "ビットマップ散布図の表示 ページのトリプル スクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク

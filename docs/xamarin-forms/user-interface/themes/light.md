@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 21d5478c7e8317510a6f46b72a261582c9432301
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9918c7e54f443477006ad40931c24d814f7171ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="light-theme"></a>ライト テーマ
 
@@ -50,7 +50,7 @@ XAML ファイルの例は、次に示します。
 
 ボタンおよびマークアップを生成すると共に、ライト テーマでのラベルの例を次に示します。
 
-[ ![](light-images/light-theme-sml.png "ライト テーマでラベルを印刷] ボタンと [")](light-images/light-theme.png "ボタンをクリックし、ライト テーマでのラベル")
+[![](light-images/light-theme-sml.png "ライト テーマでラベルを印刷] ボタンと [")](light-images/light-theme.png#lightbox "ボタンをクリックし、ライト テーマでのラベル")
 
 ```xaml
 <StackLayout Padding="20">

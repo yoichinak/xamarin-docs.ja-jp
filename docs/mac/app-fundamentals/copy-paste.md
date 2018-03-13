@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 115f3340c5678c0ead06cf773e193fbdc4ba3d07
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="copy-and-paste"></a>コピーして貼り付ける
 
@@ -27,11 +27,11 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 1. **標準データ型**-ペースト ボードの操作が通常実行されます。 関連付けられていない 2 つのアプリ間で、ため、どちらのアプリは、他のをサポートするデータの種類を認識します。 共有する可能性を最大化するには、(一般的なデータ型の標準セットを使用して) 指定した項目の複数の表現を保持できるペースト、かかるアプリがニーズに最適なであるバージョンを選択を許可このします。
 2. **カスタム データ**- コピーとペーストによって処理されるカスタム データ型を定義することができます、Xamarin.Mac 内で複雑なデータの貼り付けをサポートするためにします。 たとえば、ベクター描画アプリケーションでは、ユーザーをコピーして、複数のデータ型とポイントで構成される複雑な図形を貼り付けます。
 
-[![実行中のアプリの使用例](copy-paste-images/intro01.png "実行中のアプリの例")](copy-paste-images/intro01-large.png)
+[![実行中のアプリの使用例](copy-paste-images/intro01.png "実行中のアプリの例")](copy-paste-images/intro01-large.png#lightbox)
 
 この記事でしれませんにはペースト Xamarin.Mac アプリケーション サポート コピーと貼り付けの操作での操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを OBJECTIVE-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 ## <a name="getting-started-with-the-pasteboard"></a>ペースト ボードの概要
 
@@ -50,14 +50,14 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 1. Mac とクリックの Visual Studio を起動、**新しいプロジェクト.**リンクします。
 2. 選択**Mac** > **アプリ** > **Cocoa アプリ**、をクリックして、**次**ボタン。 
 
-    [![新しい Cocoa アプリ プロジェクトを作成する](copy-paste-images/sample01.png "Cocoa アプリ プロジェクトを新規作成")](copy-paste-images/sample01-large.png)
+    [![新しい Cocoa アプリ プロジェクトを作成する](copy-paste-images/sample01.png "Cocoa アプリ プロジェクトを新規作成")](copy-paste-images/sample01-large.png#lightbox)
 3. 入力`MacCopyPaste`の**プロジェクト名**し、既定値として他のすべてを保持します。 [次へ] をクリックします。 
 
-    [![プロジェクトの名前を設定](copy-paste-images/sample01a.png "プロジェクトの名前を設定")](copy-paste-images/sample01a-large.png)
+    [![プロジェクトの名前を設定](copy-paste-images/sample01a.png "プロジェクトの名前を設定")](copy-paste-images/sample01a-large.png#lightbox)
 
 4. クリックして、**作成**ボタンをクリックします。 
 
-    [![新しいプロジェクトの設定を確認する](copy-paste-images/sample02.png "新しいプロジェクトの設定を確認します。")](copy-paste-images/sample02-large.png)
+    [![新しいプロジェクトの設定を確認する](copy-paste-images/sample02.png "新しいプロジェクトの設定を確認します。")](copy-paste-images/sample02-large.png#lightbox)
 
 ### <a name="add-an-nsdocument"></a>NSDocument を追加します。
 
@@ -265,7 +265,7 @@ public void PasteImage(NSObject sender) {
 
 ダブルクリックして、 **Main.storyboard**ファイルを Xcode で開きます。 次に、ツールバーとイメージに追加し、ように構成します。
 
-[![ツールバーを編集](copy-paste-images/sample04.png "編集ツールバー")](copy-paste-images/sample04-large.png)
+[![ツールバーを編集](copy-paste-images/sample04.png "編集ツールバー")](copy-paste-images/sample04-large.png#lightbox)
 
 コピーを追加し、貼り付けます**イメージ ツールバー項目**ツールバーの左側にします。 使用するショートカットとしてのこれらを編集 メニューからコピーして貼り付けます。 次に、4 つの追加**イメージ ツールバー項目**ツールバーの右側にします。 これらもいくつかの既定のイメージのイメージの設定に使用されます。
 
@@ -273,7 +273,7 @@ public void PasteImage(NSObject sender) {
 
 次に、みましょう以下のコンセントと、ツールバーの項目とイメージのアクションにも公開します。
 
-[![コンセントとアクションの作成](copy-paste-images/sample05.png "コンセントとアクションの作成")](copy-paste-images/sample05-large.png)
+[![コンセントとアクションの作成](copy-paste-images/sample05.png "コンセントとアクションの作成")](copy-paste-images/sample05-large.png#lightbox)
 
 コンセントとアクションの詳細についてを参照してください、[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)のセクションで、[こんにちは, Mac](~/mac/get-started/hello-mac.md)ドキュメント。
 

@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66cc67b38d70992fe815732407317fab3dc52528
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-3d-touch"></a>3 D Touch の概要
 
 _この記事で説明、new を使用して、アプリで iPhone 6 s と iPhone 6 s Plus 3D タッチ ジェスチャします。_
 
-[ ![](3d-touch-images/info01.png "3 D Touch の例には、アプリが有効になっています。")](3d-touch-images/info01.png)
+[![](3d-touch-images/info01.png "3 D Touch の例には、アプリが有効になっています。")](3d-touch-images/info01.png#lightbox)
 
 この記事とで実行されている新しい iPhone 6 s および iPhone 6 s Xamarin.iOS アプリに不足機密性の高いジェスチャを追加する新しい 3 D Touch Api の使用の概要のデバイスとします。
 
@@ -29,7 +29,7 @@ _この記事で説明、new を使用して、アプリで iPhone 6 s と iPhon
 - [小文字の区別を圧迫](#Pressure-Sensitivity)- アプリがどの程度厳密測定できるようになりましたかライト、ユーザーはその情報の画面と take 利点に触れることです。
   たとえば、ペイント アプリは太くまたは薄型画面をユーザーがどの程度厳密に触れることに基づいて線になります。
 - [ここに表示およびポップ](#Peek-and-Pop)-アプリが、現在のコンテキスト外に移動することがなく、データとやり取りするようになりました。 キーを押して、画面には、(メッセージのプレビュー) と同様の関心のある項目をピークすることができます。 困難を押して、アイテムに表示されることができます。
-- [クイック アクション](#Quick-Action)-と考えるのクイック操作をするポップ アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのようにします。
+- [クイック アクション](#Quick-Actions)-と考えるのクイック操作をするポップ アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのようにします。
   クイック操作を使用して、するショートカットを追加できます関数アプリのホーム画面で、アプリ アイコンから直接です。
 - [シミュレーターで、3 D Touch をテスト](#Testing-3D-Touch-in-the-Simulator)-正しい Mac のハードウェアでは、iOS シミュレーターで 3D のタッチを有効になっているアプリをテストできます。
 
@@ -39,7 +39,7 @@ _この記事で説明、new を使用して、アプリで iPhone 6 s と iPhon
 
 新しいプロパティを使用して前に、述べたよう、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)クラス、ユーザーが iOS デバイスの画面に適用する負荷の量を測定して、ユーザー インターフェイスでこの情報を使用します。 たとえば、ブラシ ストロークより透明または不透明なベースで早い負荷の量。
 
-[ ![](3d-touch-images/pressure01.png "レンダリングより透明または不透明ブラシ ストロークは、負荷の量に基づく")](3d-touch-images/pressure01.png)
+[![](3d-touch-images/pressure01.png "レンダリングより透明または不透明ブラシ ストロークは、負荷の量に基づく")](3d-touch-images/pressure01.png#lightbox)
 
 3 D Touch は、結果として、アプリが iOS 9 (またはそれ以上) で実行されると、iOS デバイスがサポートの 3 D Touch をできるプレッシャ内の変更により、`TouchesMoved`イベントが発生します。
 
@@ -80,7 +80,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 たとえば、アプリは、メッセージの表を表示するが、ユーザー キーを押しますアイテムを重ねて表示には、その内容のプレビューでハード (Apple を参照すると、*ピーク*)。
 
-[ ![](3d-touch-images/peekandpop01.png "コンテンツにピークの例")](3d-touch-images/peekandpop01.png)
+[![](3d-touch-images/peekandpop01.png "コンテンツにピークの例")](3d-touch-images/peekandpop01.png#lightbox)
 
 通常のメッセージ ビューを入力することが困難としたときに、ユーザーが押すと、(これと呼ば*Pop*-ビューに ping)。
 
@@ -208,9 +208,8 @@ public override void ViewDidLoad ()
 
 前述のようをするポップ アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのように、クイック操作の考えることができます。 クイック アクションを使用すると、最も一般的な関数や、アプリの機能へのショートカットを提供するのに必要があります。
 
-[ ![](3d-touch-images/quickactions01.png "クイック アクション メニューの例")](3d-touch-images/quickactions01.png)
+[![](3d-touch-images/quickactions01.png "クイック アクション メニューの例")](3d-touch-images/quickactions01.png#lightbox)
 
-<a name="Defining-Static-Quick-Actions" />
 
 ### <a name="defining-static-quick-actions"></a>静的なクイック アクションを定義します。
 
@@ -287,7 +286,6 @@ public override void ViewDidLoad ()
 
 
 
-<a name="Identifying-Quick-Action-Items" />
 
 ### <a name="identifying-quick-action-items"></a>クイック アクション項目を識別します。
 
@@ -389,7 +387,6 @@ public override void PerformActionForShortcutItem (UIApplication application, UI
 
 最後に、アプリが既に実行されている場合、`PerformActionForShortcutItem`をこのメソッドをオーバーライドし、呼び出す必要がありますので、クイック アクション項目を処理するメソッドが呼び出されます、`HandleShortcutItem`メソッドもします。
 
-<a name="Creating-Dynamic-Quick-Action-Items" />
 
 ### <a name="creating-dynamic-quick-action-items"></a>動的なクイック アクション項目を作成します。
 
@@ -442,7 +439,7 @@ Force タッチと互換性のある Mac で Xcode および iOS Simulator の�
 
 この機能を有効にするには、3 D Touch をサポートする iPhone のシミュレートされたハードウェアですべてのアプリを実行 (iPhone 6 s およびそれ以降)。 次に、選択、**ハードウェア**、ios シミュレーターと有効化 メニュー、 **3D タッチのトラック パッド強制**メニュー項目。
 
-[ ![](3d-touch-images/simulator01.png "IOS シミュレーターで、[ハードウェア] メニューを選択し、3 D touch メニュー項目を使用してトラック パッド強制を有効にします。")](3d-touch-images/simulator01.png)
+[![](3d-touch-images/simulator01.png "IOS シミュレーターで、[ハードウェア] メニューを選択し、3 D touch メニュー項目を使用してトラック パッド強制を有効にします。")](3d-touch-images/simulator01.png#lightbox)
 
 この機能を使用するアクティブなをキーが困難になりますを Mac のトラック パッドを実際の iPhone ハードウェア上と同様、3 D Touch を有効にします。
 

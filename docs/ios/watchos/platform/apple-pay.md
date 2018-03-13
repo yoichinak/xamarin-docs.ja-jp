@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e10a34bc5de16c19f48fa1b869daca9670f37804
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53c2c3e3866cb782eea0cc9514c0c35379e48b5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apple-pay-on-watchos"></a>Apple watchOS に料金を支払う
 
@@ -31,7 +31,7 @@ Apple の外部の支払いをサポートするために 10、iOS で PassKit �
 
 ### <a name="supporting-apple-pay-outside-of-uikit"></a>UIKit の外部で Apple 支払をサポートします。
 
-使用して[PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller)と[PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate)、アプリによって提供されるのと同じ機能をサポートできる[PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) UIKit を使用せずします。 この新しい API では、Apple Watch で (または特定の目的にも)、Apple Pay をサポートするために必要なは、(既存のアプリ) などその他の状況では省略可能です。 ただし、Apple は提案をサポートする広範な Apple Pay 全体での開発者向けのアプリをすべて 1 つのコード ベースをできるだけ早く新しい API を移動します。 インテントの詳細については、Siri 統合を参照してください、 [SiriKit の概要](/~/ios/platform/sirikit/index.md)ドキュメント。
+使用して[PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller)と[PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate)、アプリによって提供されるのと同じ機能をサポートできる[PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) UIKit を使用せずします。 この新しい API では、Apple Watch で (または特定の目的にも)、Apple Pay をサポートするために必要なは、(既存のアプリ) などその他の状況では省略可能です。 ただし、Apple は提案をサポートする広範な Apple Pay 全体での開発者向けのアプリをすべて 1 つのコード ベースをできるだけ早く新しい API を移動します。 インテントの詳細については、Siri 統合を参照してください、 [SiriKit の概要](~/ios/platform/sirikit/index.md)ドキュメント。
 
 ### <a name="presenting-issuer-cards-from-within-apps"></a>アプリ内の発行者のカードを表示します。
 

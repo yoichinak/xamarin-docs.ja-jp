@@ -3,16 +3,16 @@ title: "Nougat 機能"
 description: "Android Nougat 用アプリを開発する Xamarin.Android を使用して作業を開始する方法。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
+ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 60879273b5a736d4834bd6ba1685d5685fd05e67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c666b7d5b680eab3c990950569868eacdb6f30af
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="nougat-features"></a>Nougat 機能
 
@@ -20,13 +20,12 @@ _Android Nougat 用アプリを開発する Xamarin.Android を使用して作�
 
 この記事は Android Nougat で導入された機能の概要が Android Nougat 開発では、Xamarin.Android を準備する方法について説明し、Android Nougat 機能を使用する方法を示すサンプル アプリケーションへのリンクを示しますXamarin.Android アプリ。
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
 [Android Nougat](https://developer.android.com/about/versions/nougat/android-7.0.html) Android 6.0 Marshmallow に Google のフォロー アップがします。 サポートを提供する Xamarin.Android **Android 7.x バインド**Xamarin Android 7.0 以降。 Android Nougat; 以下に示す Nougat 機能の多くの新しい Api を追加します。Xamarin.Android 7.0 を使用する場合は、これらの Api が Xamarin.Android アプリで利用できます。
 
-[![Android タブレットと携帯電話の Android Nougat を実行しているのヒーローの画像](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png)
+[![Android タブレットと携帯電話の Android Nougat を実行しているのヒーローの画像](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
 Android 7.x Api の詳細については、次を参照してください。[開発者用の Android 7.1](http://developer.android.com/preview/api-overview.html)です。
 Xamarin.Android 7.0 の既知の問題の一覧を参照してください、[リリース ノート](https://developer.xamarin.com/releases/android/xamarin.android_7/xamarin.android_7.0/)です。
@@ -44,8 +43,6 @@ Android Nougat Xamarin.Android 開発者にとって関心のある多くの新�
 この記事では、新しい機能を試すし、新しい Android Nougat プラットフォームを対象の移行または機能の作業を計画する Android Nougat を使ったアプリの構築を開始する方法について説明します。
 
 
-<a name="requirements" />
-
 ## <a name="requirements"></a>必要条件
 
 次が機能を使用する、新しい Android Nougat Xamarin ベースのアプリに必要です。
@@ -59,12 +56,11 @@ Android Nougat Xamarin.Android 開発者にとって関心のある多くの新�
 -   **Java Developer Kit** &ndash; Xamarin Android 7.0 開発が必要です[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)または API レベルの場合 24 開発している場合は、以降、または大きい (JDK 8 もサポートしている API レベル 24 より前)。 カスタム コントロールまたはフォーム プレビュー用のプログラムを使用している場合、JDK 8 の 64 ビット バージョンが必要です。
 
 > [!IMPORTANT]
-> **注:** Xamarin.Android は JDK 9 をサポートしていません。
+> Xamarin.Android は JDK 9 をサポートしていません。
 
 アプリ必要がありますに再構築する Xamarin C6SR4 以降 Android Nougat で確実に動作に注意してください。 Android Nougat にのみリンクできますので[NDK が提供するネイティブ ライブラリ](https://developer.android.com/about/versions/nougat/android-7.0-changes.html)などのライブラリを使用して既存のアプリ、 **Mono.Data.Sqlite.dll**ない場合は正しく Android Nougat で実行されているときにクラッシュする可能性があります再構築されます。
 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -80,14 +76,12 @@ Xamarin.Android での Android Nougat の使用開始するには、ダウンロ
 
 次のセクションでは、これらの各手順について説明します。
 
-<a name="updates" />
 
 ### <a name="install-xamarin-updates"></a>Xamarin の更新プログラムをインストールします。
 
 Android Nougat の Xamarin のサポートを追加するには、Mac の安定したチャネルを Visual Studio または Visual Studio での更新チャネルに変更し、最新の更新プログラムを適用します。 現在、英数字またはベータ版のチャネルでのみ利用可能な機能も必要がある場合は、(アルファとベータ版のチャネルに対するサポートも提供 Android 7.x)、英数字またはベータ チャネルに切り替えることができます。 更新プログラム (リリース) チャンネルを変更する方法については、次を参照してください。[更新チャネルを変更する](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/)です。
 
 
-<a name="sdk" />
 
 ### <a name="install-the-android-sdk"></a>Android SDK をインストールします。
 
@@ -97,22 +91,21 @@ Xamarin Android 7.0 でプロジェクトを作成する必要があります最
 
 2.  インストール**Android 7.0 (API 24)**以降。
 
-    [![Android SDK Manager で Android 7.0 パッケージを選択します。](nougat-images/preview-packages.png)](nougat-images/preview-packages.png)
+    [![Android SDK Manager で Android 7.0 パッケージを選択します。](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
 3.  最新の Android SDK ツールをインストールします。
 
-    [![Android SDK Manager での最新の Android SDK ツールを選択します。](nougat-images/preview-tools.png)](nougat-images/preview-tools.png)
+    [![Android SDK Manager での最新の Android SDK ツールを選択します。](nougat-images/preview-tools.png)](nougat-images/preview-tools.png#lightbox)
 
     Android SDK ツール リビジョン 25.2.2 またはそれ以降、Android SDK プラットフォーム ツール 24.0.3 またはその後、および Android SDK ビルド ツール 24.0.2 をインストールする必要がありますまたはそれ以降。
 
 4.  いることを確認、 **Java Development Kit 場所**JDK 1.8 用に構成されました。
 
-    [![[ツール オプション] で JDK 8 パスの構成](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png)
+    [![[ツール オプション] で JDK 8 パスの構成](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
 
     Visual Studio でこの設定を表示するクリックして**ツール > オプション > Xamarin > Android 設定**です。 Mac 用 Visual Studio で **設定 > プロジェクト > SDK の場所 > Android**です。
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
 
@@ -122,10 +115,9 @@ Android プロジェクトを作成するときに、Android 7.0 以降をター
 
 
 > [!NOTE]
-> **注:**現在設定する必要があります、**最低限の Android バージョン**に**Android 7.0 (API 24 - Nougat)** Android Nougat デバイスまたはエミュレーターにアプリを配置します。
+> 現在設定する必要があります、**最低限の Android バージョン**に**Android 7.0 (API 24 - Nougat)** Android Nougat デバイスまたはエミュレーターにアプリを配置します。
 
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>エミュレーターまたはデバイスを構成します。
 
@@ -137,28 +129,26 @@ Android プロジェクトを作成するときに、Android 7.0 以降をター
 
 たとえば、この仮想デバイスは、Nexus 6 をエミュレートするために構成されます。
 
-[![Nexus 6 デバイス、Android 7.0 ターゲット、および Intel Atom x86 CPU/ABI を使用して、AVD を構成します。](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png)
+[![Nexus 6 デバイス、Android 7.0 ターゲット、および Intel Atom x86 CPU/ABI を使用して、AVD を構成します。](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png#lightbox)
 
 X 5、6、または 9 Nexus などの物理デバイスを使用している場合か、無線 (OTA) 更新プログラムを自動でデバイスを更新またはシステム イメージをダウンロードでき、デバイスを直接フラッシュできます。 Android Nougat にデバイスを手動で更新の詳細については、次を参照してください。 [OTA デバイス用のイメージ Nexus](https://developers.google.com/android/nexus/ota)です。
 
 Nexus 5 デバイスが Android Nougat によってサポートされていないことに注意してください。
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>新機能
 
 Android Nougat には、さまざまな新機能および複数ウィンドウのサポート、通知機能拡張、およびデータ セーバーなどの機能が導入されています。 次のセクションでは、これらの機能を強調表示し、アプリで使用を開始に役立つリンクを提供します。
 
 
-<a name="multiwindow" />
 
 ### <a name="multi-window-mode"></a>複数のウィンドウ モード
 
 複数のウィンドウ モードによりユーザー完全マルチタスク サポートで一度に 2 つのアプリを開くためにできます。 これらのアプリでは、サイド バイ サイド (横) または 1-上-、-その他 (縦) を分割画面表示モードで実行できます。
 ユーザーは、区分線をドラッグしてサイズを変更するには、アプリ間で、切り取り、内容を貼り付けます、アプリ間でします。 マルチ ウィンドウ モードでは、2 個のアプリが表示されたら、選択したアクティビティが引き続きが一時停止しているがまだ表示されて選択されていないアクティビティを実行します。 複数のウィンドウ モードでは、Android のアクティビティのライフ サイクルは変更されません。
 
-[![縦長と横長の両方で、複数のウィンドウ モードで実行されている例のアプリ](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png)
+[![縦長と横長の両方で、複数のウィンドウ モードで実行されている例のアプリ](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
 Xamarin.Android アプリのアクティビティが複数のウィンドウのモードをサポートする方法を構成することができます。 たとえば、複数のウィンドウ モードの最小サイズと、既定の高さと幅、アプリを設定する属性を構成できます。 新しいを使用する`Activity.IsInMultiWindowMode`プロパティ、アクティビティが複数のウィンドウ モードのかを判断します。 例:
 
@@ -175,20 +165,18 @@ if (!IsInMultiWindowMode) {
 複数のウィンドウ モードの詳細については、次を参照してください。、[マルチ ウィンドウ サポート](https://developer.android.com/guide/topics/ui/multi-window.html)です。
 
 
-<a name="enhanced_notifications" />
 
 ### <a name="enhanced-notifications"></a>強化された通知
 
 Android Nougat には、再設計された通知システムが導入されています。 ユーザー通知の受信のテキスト メッセージ通知 UI 内で直接すばやく応答するできるようにする新しい直接応答機能を備えています。 Android 7.0 では、メッセージまとめて、1 つのグループとして複数のメッセージが受信したときに通知を開始しています。 また、開発者は、ビュー、通知では、システムの文字装飾を活用し、通知を生成するときに、新しい通知テンプレートの利用の通知をカスタマイズできます。
 
-<a name="direct_reply" />
 
 #### <a name="direct-reply"></a>直接応答
 
 ユーザーには、受信メッセージの通知が受信したときに Android Nougat できるようになります通知内でのメッセージに返信 (なく応答を送信するメッセージ アプリを開きます)。
 このインライン応答機能により、ユーザーが、SMS またはテキスト メッセージ通知インターフェイス内で直接に迅速に対応します。
 
-[![直接応答フィールドがインラインの通知のスクリーン ショット](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png)
+[![直接応答フィールドがインラインの通知のスクリーン ショット](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png#lightbox)
 
 アプリでこの機能をサポートするために追加する必要があります*インライン応答アクション*を使用してアプリを[RemoteInput](https://developer.xamarin.com/api/type/Android.App.RemoteInput/)オブジェクトのユーザーがテキストを使用して、通知 UI から直接返信できるようにします。
 たとえば、次のコードのビルド、`RemoteInput`テキスト入力を受け取ると、ビルドの応答アクションの保留中のインテントとリモートの入力の有効なアクションを作成します。
@@ -224,25 +212,22 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
 
 [メッセージング サービス](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/)サンプル アプリには使用して通知を拡張する方法を示す c# コードが含まれています、`RemoteInput`オブジェクト。 インライン応答の追加の詳細については、アプリを操作 Android 7.0 またはそれ以降を参照してください、Android[通知に応答する](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)トピックです。
 
-<a name="bundled_notifications" />
 
 #### <a name="bundled-notifications"></a>バンドルされている通知
 
 Android Nougat は (たとえば、メッセージのトピック) によって通知メッセージをグループ化し、各メッセージではなく、グループを表示できます。
 これは、*通知をバンドル*機能により、ユーザーを消去または 1 つのアクションでの通知のグループをアーカイブすることも可能です。 ユーザーは、展開の詳細の各通知の表示への通知のバンドルをダウン スライドできます。
 
-[![バンドルされている通知のスクリーン ショットの例](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png)
+[![バンドルされている通知のスクリーン ショットの例](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png#lightbox)
 
 バンドルされている通知をサポートするアプリケーションで使用できる、 [Builder.SetGroup](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetGroup/p/System.String/)のような通知をバンドルする方法です。 Android N でバンドルされた通知グループの詳細については、Android を参照してください。[バンドル通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#bundle)トピックです。
 
-<a name="custom_views" />
 
 #### <a name="custom-views"></a>カスタム ビュー
 
 Android Nougat によりシステム通知ヘッダーは、アクション、および展開可能なレイアウトを使用してカスタムの通知ビューを作成します。 Android Nougat でカスタムの通知ビューの詳細については、Android を参照してください。[通知の機能強化](https://developer.android.com/about/versions/nougat/android-7.0.html#notification_enhancements)トピックです。
 
 
-<a name="datasaver" />
 
 ### <a name="data-saver"></a>データ セーバー
 
@@ -251,7 +236,6 @@ Android Nougat から始まり、ユーザーが有効にする新しい*デー�
 新しい Android Nougat データ セーバー機能に関する詳細については、Android を参照してください。[ネットワーク データの使用状況を最適化する](https://developer.android.com/training/basics/network-ops/data-saver.html)トピックです。
 
 
-<a name="app_shortcuts" />
 
 ### <a name="app-shortcuts"></a>アプリのショートカット
 
@@ -259,12 +243,11 @@ Android Nougat から始まり、ユーザーが有効にする新しい*デー�
 ショートカット メニューをアクティブ化する、ユーザー時間の長い-が、アプリ アイコン秒以上&ndash;クイック振動でメニューが表示されます。
 ままにして、メニューをにより、キーを押してを解放します。
 
-[![メッセージング アプリケーションのアプリのショートカット メニューは、画面の例](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png)
+[![メッセージング アプリケーションのアプリのショートカット メニューは、画面の例](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
 
 この機能は、使用可能な API レベルのみ 25 以上です。
 Android 7.1 の新機能でアプリのショートカットの詳細については、Android を参照してください。[アプリ ショートカット](https://developer.android.com/guide/topics/ui/shortcuts.html)トピックです。
 
-<a name="sample_code" />
 
 ### <a name="sample-code"></a>サンプル コード
 
@@ -280,7 +263,6 @@ Xamarin.Android サンプルがいくつかは Android Nougat 機能を活用す
 
 -   [ブートの直接](https://developer.xamarin.com/samples/monodroid/android-n/DirectBoot/)常に使用される、デバイスがブートされる両方前に、と後、ユーザー credentials(PIN/Pattern/Password) が入力中にデバイスで暗号化された記憶域にデータを格納する方法を示しています。
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

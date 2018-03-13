@@ -4,14 +4,15 @@ description: "SkiaSharp グラフィックスをアニメーション化する�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: c91cb064ea3973294c3a9dd8e07f3c4b0627fe34
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="basic-animation"></a>基本的なアニメーション
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 メソッドは、表示領域のサイズに基づく最大 radius および最大半径に基づく最小 radius を計算します。 `scale`を計算するメソッドを使用するため、値を 0 ~ 1 の間、および 0 にはアニメーション、`xRadius`と`yRadius`間の範囲を`minRadius`と`maxRadius`です。 塗りつぶし楕円を描画し、これらの値が使用されます。
 
-[![](animation-images/pulsatingellipse-small.png "点滅するフロッピー楕円ページのスクリーン ショットをトリプル")](animation-images/pulsatingellipse-large.png "点滅するフロッピー楕円ページのトリプル スクリーン ショット")
+[![](animation-images/pulsatingellipse-small.png "点滅するフロッピー楕円ページのスクリーン ショットをトリプル")](animation-images/pulsatingellipse-large.png#lightbox "点滅するフロッピー楕円ページのトリプル スクリーン ショット")
 
 注意して、`SKPaint`でオブジェクトを作成、`using`ブロックします。 などの多くの SkiaSharp クラス`SKPaint`から派生した`SKObject`から派生した`SKNativeObject`を実装する、 [ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/)インターフェイスです。 `SKPaint` 上書き、`Dispose`アンマネージ リソースを解放します。
 
@@ -244,7 +245,7 @@ public class ExpandingCirclesPage : ContentPage
 
 結果は同じときに、画質`t`場合に 0 に等しい`t`1 と等しいし、円が永久に展開を続行しましょう。
 
-[![](animation-images/expandingcircles-small.png "円の展開 ページのスクリーン ショットをトリプル")](animation-images/expandingcircles-large.png "円の展開 ページのトリプル スクリーン ショット")
+[![](animation-images/expandingcircles-small.png "円の展開 ページのスクリーン ショットをトリプル")](animation-images/expandingcircles-large.png#lightbox "円の展開 ページのトリプル スクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク

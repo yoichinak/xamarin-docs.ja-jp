@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e138fc1176c646a2e4e9caf94462028dd7c68e9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Mac App Store 用のバンドル
 
@@ -25,11 +25,11 @@ ms.lasthandoff: 02/27/2018
 
 コードの署名とパッケージ化のオプションを更新する前に、**[構成]** を **[リリース]** に変更してください。 開発者は、App Store でのリリース用にアプリケーションに署名するときに、前に作成した **ID** とプロビジョニング ファイルを会社が使用していることを確認する必要があります。
 
- [![コード署名オプションの編集](bundling-images/config02.png "コード署名オプションの編集")](bundling-images/config02-large.png)
+ [![コード署名オプションの編集](bundling-images/config02.png "コード署名オプションの編集")](bundling-images/config02-large.png#lightbox)
 
 **[Mac ビルド]** の設定で、インストーラー パッケージを作成するオプションがオンになっていることを確認します。
 
-[![ビルド オプションの編集](bundling-images/config03.png "ビルド オプションの編集")](bundling-images/config03-large.png)
+[![ビルド オプションの編集](bundling-images/config03.png "ビルド オプションの編集")](bundling-images/config03-large.png#lightbox)
 
 ## <a name="build"></a>ビルド
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: d258d993d8452c0c93c53d875d81683a294f80d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc728e5817a7d1d61d7745120bca7f05641ce76f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="global-styles"></a>グローバルのスタイル
 
@@ -60,7 +60,7 @@ _スタイルが利用できるグローバルに、アプリケーションの�
 
 これは、結果、次のスクリーン ショットに示すように表示されます。
 
-[![](application-images/application-styles-1.png "グローバル スタイル例")](application-images/application-styles-1-large.png "グローバル スタイルの例")
+[![](application-images/application-styles-1.png "グローバル スタイル例")](application-images/application-styles-1-large.png#lightbox "グローバル スタイルの例")
 
 ページのスタイルを作成する方法について[ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)を参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)と[暗黙的なスタイル](~/xamarin-forms/user-interface/styles/implicit.md)です。
 
@@ -98,9 +98,9 @@ _スタイルが利用できるグローバルに、アプリケーションの�
 
 元の`buttonStyle`、アプリケーション レベルで定義されている、によってオーバーライドされる、`buttonStyle`ページ レベルで定義されているインスタンス。 さらに、ページ レベルのスタイルは、制御レベルによってオーバーライド`buttonStyle`です。 したがって、 [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)次のスクリーン ショットに示すように、青のテキストのインスタンスが表示されます。
 
-[![](application-images/application-styles-2.png "スタイルの例をオーバーライドする")](application-images/application-styles-2-large.png "スタイルの例をオーバーライドします。")
+[![](application-images/application-styles-2.png "スタイルの例をオーバーライドする")](application-images/application-styles-2-large.png#lightbox "スタイルの例をオーバーライドします。")
 
-## <a name="creating-a-global-style-in-c35"></a>C &#35; グローバル スタイルを作成します。
+## <a name="creating-a-global-style-in-c35"></a>C では、グローバルなスタイルを作成します。&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) アプリケーションのインスタンスを追加することができます[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)新しいを作成して c# でのコレクション[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)、追加してから、`Style`インスタンスを`ResourceDictionary`、として次のコード例に示します。
 

@@ -6,23 +6,20 @@ ms.assetid: 2E54F1D0-45F4-43A7-B3A3-4F483B7150CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 0dbf8c32ca7b7565105c01cfaa077fe792b09b18
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: bc39faa37adae660a7751313d0d573237fadce94
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications-in-xamarinandroid"></a>Xamarin.Android での通知
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
-このセクションでは、Xamarin.Android で通知を実装する方法を示します。
-Android の通知のさまざまな UI 要素について説明し、API について説明します、通知が表示の作成と関係しているのです。
+このセクションでは、Xamarin.Android に通知を実装する方法について説明します。 Android の通知のさまざまな UI 要素について説明し、API について説明します、通知が表示の作成と関係しているのです。
 
-<a name="Sections" />
 
 ## <a name="sections"></a>セクション
 

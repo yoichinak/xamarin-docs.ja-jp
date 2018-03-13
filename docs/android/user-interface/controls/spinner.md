@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 44775853a29a384216af308a607cfddd18c9c192
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7c850d0ea06d69c3601081c1e9cde193903eb27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="spinner"></a>Spinner
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 このチュートリアルの最初の部分では、惑星の一覧を表示する単純なスピン ウィジェットを作成します。 惑星を選択すると、通知メッセージには、選択した項目が表示されます。
 
-[![HelloSpinner アプリの例のスクリーン ショット](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png)
+[![HelloSpinner アプリの例のスクリーン ショット](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 という名前の新しいプロジェクトを開始**HelloSpinner**です。
 
@@ -120,7 +120,7 @@ private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventA
 
 アプリケーションを実行します。次のようになります。
 
-[![地球として選択された mars スピン ボタンのスクリーン ショットの例](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png)
+[![地球として選択された mars スピン ボタンのスクリーン ショットの例](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>キー/値ペアを使用するスピン ボタン
 
@@ -188,10 +188,9 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 アプリケーションを実行します。トーストは、次のようになります。
 
-[![温度を表示する惑星選択例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png)
+[![温度を表示する惑星選択例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
    
   
-<a name="Resources" />
 
 ## <a name="resources"></a>リソース
 

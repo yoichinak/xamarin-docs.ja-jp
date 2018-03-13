@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: adb1042b8f44d3f414e2161e20b7eb3dc0e940a2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c4f8d70625fd8ee0e07832f8bdb3b7e502b5b38f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="carousel-page"></a>手荷物の受け取り場所 ページ
 
@@ -36,7 +36,7 @@ _Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのペー�
 
 <!--
 > [!NOTE]
-> **Note**: The [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
+> The [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
 -->
 
 ## <a name="creating-a-carouselpage"></a>CarouselPage を作成します。
@@ -49,7 +49,7 @@ _Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのペー�
 両方の方法で、`CarouselPage`を表示する次のページに移動の方向にスワイプ操作で、表示の各ページをさらに、されます。 このナビゲーション エクスペリエンスは自然で Windows Phone ユーザーになじみ慣れることができます。
 
 > [!NOTE]
-> **注**: A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)でのみ設定できます[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス、または`ContentPage`派生します。
+> A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)でのみ設定できます[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス、または`ContentPage`派生します。
 
 <a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
@@ -142,7 +142,7 @@ public class MainPageCS : CarouselPage
 各[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)だけが表示されます、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)の特定の色と[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)その色のです。
 
 > [!NOTE]
-> **注**: [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`CarouselPage`多数の子要素が含まれています。
+> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`CarouselPage`多数の子要素が含まれています。
 
 場合、 [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)に埋め込まれ、 [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)のページ、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)、 [ `MasterDetailPage.IsGestureEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty/)プロパティに設定する必要があります`false`ジェスチャが競合を防ぐために、`CarouselPage`と`MasterDetailPage`です。
 
@@ -239,7 +239,7 @@ public class MainPageCS : CarouselPage
 各[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)だけが表示されます、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)の特定の色と[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)その色のです。
 
 > [!NOTE]
-> **注**: [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`CarouselPage`多数の子要素が含まれています。
+> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`CarouselPage`多数の子要素が含まれています。
 
 場合、 [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)に埋め込まれ、 [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)のページ、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)、 [ `MasterDetailPage.IsGestureEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty/)プロパティに設定する必要があります`false`ジェスチャが競合を防ぐために、`CarouselPage`と`MasterDetailPage`です。
 

@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1625fe15d76ffe2bd3712d9126d9bd217bf60085
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-signing-the-apk"></a>APK に手動で署名する
 
-<a name="signing_legacy" />
 
 アプリケーションがリリースのためにビルドされたら、Android デバイスで実行できるように、配信に先立ち APK に署名する必要があります。 このプロセスは一般的に IDE で処理されます。ただし、コマンド ラインで、手動で APK に署名することが必要な状況があります。 APK 署名には次の手順が含まれます。
 
@@ -29,7 +28,6 @@ ms.lasthandoff: 02/27/2018
 順序は重要です。APK の署名に利用されるツールによって変わります。 **apksigner** を使用するときは、先にアプリケーションに **zipalign** を実行し、それから **apksigner** で署名することが重要です。  **jarsigner** を使用して APK に署名する必要がある場合、先に APK に署名し、それから **zipalign** を実行することが重要です。 
 
 
-<a name="Prerequisites" />
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
@@ -38,7 +36,6 @@ ms.lasthandoff: 02/27/2018
 以前のバージョンの Android SDK ビルド ツールでビルドされたアプリケーションの場合、以下の「[jarsigner で APK に署名する](#Sign_the_APK_with_jarsigner)」の説明どおりに **jarsigner** を使用する必要があります。
 
 
-<a name="Creating_a_Private_Keystore" />
 
 ## <a name="create-a-private-keystore"></a>プライベート キーストアを作成する
 
@@ -53,7 +50,6 @@ ms.lasthandoff: 02/27/2018
 失われたキーストアで引き起こされた問題を解決する唯一の策は、新しいキーストアを作成し、新しいキーで APK にもう一度署名し、新しいアプリケーションを提出することです。 古いアプリケーションは Google Play から削除する必要があります。 同様に、新しいキーストアが危険にさらされたり、公に配信されたりした場合、アプリケーションの非公式バージョンや悪意のあるバージョンが配布される可能性があります。
 
 
-<a name="Create_a_New_Keystore" />
 
 ### <a name="create-a-new-keystore"></a>キーストアの新規作成
 
@@ -99,7 +95,6 @@ Re-enter new password:
 $ keytool -list -keystore xample.keystore
 ```
 
-<a name="Zipalign_the_APK" />
 
 ## <a name="zipalign-the-apk"></a>APK に zipalign を実行する
 
@@ -111,7 +106,6 @@ $ keytool -list -keystore xample.keystore
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
 
-<a name="Manually_Signing_the_APK" />
 
 ## <a name="sign-the-apk"></a>APK に署名する
 

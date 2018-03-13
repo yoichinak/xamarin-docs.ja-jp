@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: 294d28c57978218986d62d1ee6579e8d283b8f72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f448a3ee9c018aa475775a5ac2c614f3e7ddc324
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -29,12 +29,12 @@ ms.lasthandoff: 02/27/2018
 
 最初に、ポータブル ライブラリ プロジェクトを作成することで Xamarin Studio 6.2 では、標準的な .NET のライブラリ プロジェクトを作成できます。
 
-[ ![](net-standard-images/xs01-sml.png "新しいポータブル ライブラリ プロジェクトを作成します。")](net-standard-images/xs01.png)
+[![](net-standard-images/xs01-sml.png "新しいポータブル ライブラリ プロジェクトを作成します。")](net-standard-images/xs01.png#lightbox)
 
 プロジェクトが作成されたら、右クリックし、開く、**プロジェクト オプション**ウィンドウです。
 **全般**プロジェクトを .NET 標準に変換しで特定のバージョンを使用する設定セクション、**プラットフォーム**ドロップ ダウン リスト。
 
-[ ![](net-standard-images/xs02-sml.png "一般にオプションで .NET 標準に変換します。")](net-standard-images/xs02.png)
+[![](net-standard-images/xs02-sml.png "一般にオプションで .NET 標準に変換します。")](net-standard-images/xs02.png#lightbox)
 
 できます[NuGet パッケージを作成する](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library.md)を他の開発者とライブラリを共有します。
 

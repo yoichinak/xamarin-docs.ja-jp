@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d5f9f86447886e2cea46a6317d05506cdbed90bb
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 30ee40272b5f7a6f5863dccf4dcae7431f6f536f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-view"></a>ビューを実装します。
 
@@ -115,7 +115,7 @@ public class MainPageCS : ContentPage
 1. 追加、`ExportRenderer`属性をカスタム レンダラー クラス Xamarin.Forms のカスタム コントロールを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
 
 > [!NOTE]
-> **注**: Xamarin.Forms のほとんどの要素は、各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラーが必要に各プラットフォームのプロジェクトでレンダリングするときに、[ビュー](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)要素。
+> Xamarin.Forms のほとんどの要素は各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラーが必要に各プラットフォームのプロジェクトでレンダリングするときに、[ビュー](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)要素。
 
 次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
 
@@ -318,7 +318,7 @@ namespace CustomRenderer.WinPhone81
 `Control`プロパティは`null`、新しい`CaptureElement`がインスタンス化されると、`InitializeAsync`メソッドは、使用する、`MediaCapture`カメラからプレビュー ストリームを提供する API。 `SetNativeControl`への参照を割り当てるにはメソッドが呼び出されます、`CaptureElement`インスタンスを`Control`プロパティです。 `CaptureElement`公開を制御、`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止およびがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントがサブスクライブするいるとカスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているレンダラーでは、要素が変更にアタッチされている場合にのみを購読解除します。
 
 > [!NOTE]
-> **注**: を停止し、Windows Phone または UWP アプリケーションでカメラへのアクセスを提供するオブジェクトを破棄することが重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。 と[クイック スタート: MediaCapture API を使用してビデオをキャプチャ](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)Windows ランタイム アプリケーションの場合と[カメラのプレビューを表示](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)UWP アプリケーションです。
+> 停止し、Windows Phone または UWP アプリケーションでカメラへのアクセスを提供するオブジェクトの破棄は重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。 と[クイック スタート: MediaCapture API を使用してビデオをキャプチャ](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)Windows ランタイム アプリケーションの場合と[カメラのプレビューを表示](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)UWP アプリケーションです。
 
 ## <a name="summary"></a>まとめ
 

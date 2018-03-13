@@ -8,23 +8,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: b199e4370e93712211db125e427fb61da39cb296
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c9ec0d3bc9c3278f097b925ccb755323df950c62
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-the-android-designer"></a>Android デザイナーの使用
 
 _このトピックでは、Xamarin.Android デザイナーのチュートリアルです。アプリについては、小さなカラー ブラウザー以外のユーザー インターフェイスを作成する方法を示しますこのユーザー インターフェイスは、デザイナーで完全作成されます。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
 Android のユーザー インターフェイスは XML ファイルを使用するか、プログラムによってコードを記述して、宣言によって作成されることができます。 Xamarin.Android デザイナーでは、作成し、XML ファイルを手作業で編集の面倒に対処することがなく宣言型のレイアウトを視覚的に、変更をすることができます。 デザイナーには、リアルタイムのフィードバックは、開発者はでき、デバイスまたはエミュレーターにアプリケーションを再配置することがなく、UI の変更を評価も用意されています。 これは、時間を短縮できます Android UI 開発大幅。 この記事では、Xamarin.Android デザイナーを使用して、視覚的に、ユーザー インターフェイスを作成する方法を示すチュートリアルご紹介します。
 
-<a name="Walkthrough" />
 
 ## <a name="walkthrough"></a>チュートリアル
 
@@ -32,7 +30,6 @@ Android のユーザー インターフェイスは XML ファイルを使用す
 
 開始しましょう!
 
-<a name="Creating_a_New_Project" />
 
 ### <a name="creating-a-new-project"></a>新規プロジェクトの作成
 
@@ -42,13 +39,13 @@ Android のユーザー インターフェイスは XML ファイルを使用す
 
 Visual Studio を起動し、をクリックして**新しいプロジェクト.**を選択し、 **Visual C\# > Android > Blank App (Android)**テンプレート。
 
-[ ![Android の空のアプリケーション](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png)
+[![Android の空のアプリケーション](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Mac とクリックの Visual Studio を起動して**新しいソリューションをしています.**.選択、 **Android アプリ**テンプレートとクリック**次**:
 
-[ ![Android の空のアプリケーション](designer-walkthrough-images/xs/01-android-app-sml.png)](designer-walkthrough-images/xs/01-android-app.png)
+[![Android の空のアプリケーション](designer-walkthrough-images/xs/01-android-app-sml.png)](designer-walkthrough-images/xs/01-android-app.png#lightbox)
 
 -----
 
@@ -56,20 +53,19 @@ Mac とクリックの Visual Studio を起動して**新しいソリューシ�
 
 アプリの新しい名前**DesignerWalkthrough**  をクリック**OK**です。
 
-[ ![名前のアプリ](designer-walkthrough-images/vs/02-name-app-sml.png)](designer-walkthrough-images/vs/02-name-app.png)
+[![名前のアプリ](designer-walkthrough-images/vs/02-name-app-sml.png)](designer-walkthrough-images/vs/02-name-app.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 アプリの新しい名前**DesignerWalkthrough**です。 **ターゲット プラットフォーム****最新かつ最大** をクリック**次へ**:
 
-[ ![名前のアプリ](designer-walkthrough-images/xs/02-designer-walkthrough-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough.png)
+[![名前のアプリ](designer-walkthrough-images/xs/02-designer-walkthrough-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough.png#lightbox)
 
 次のダイアログの画面でクリックして**作成**です。
 
 -----
 
 
-<a name="Adding_a_Layout" />
 
 ### <a name="adding-a-layout"></a>レイアウトを追加します。
 
@@ -79,38 +75,37 @@ Mac とクリックの Visual Studio を起動して**新しいソリューシ�
 
 Visual Studio を右クリックして**リソース/レイアウト**で、**ソリューション エクスプ ローラー**選択**追加 > 新しい項目の追加しています.**.**新しい項目の追加**ダイアログで、 **Android レイアウト**です。 ファイルの名前を付けます**ListItem.axml**  をクリック**追加**:
 
-[ ![新しいレイアウト](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png)
+[![新しいレイアウト](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png#lightbox)
 
 新しい**ListItem**レイアウトは、デザイナーに表示されます。
 
-[ ![デザイナー ビュー](designer-walkthrough-images/vs/04-designer-view-sml.png)](designer-walkthrough-images/vs/04-designer-view.png)
+[![デザイナー ビュー](designer-walkthrough-images/vs/04-designer-view-sml.png)](designer-walkthrough-images/vs/04-designer-view.png#lightbox)
 
 クリックして、**ソース**このレイアウトの XML ソースを表示するデザイナーの下部にあるタブ。
 
-[ ![Designer XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png)
+[![Designer XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png#lightbox)
 
 **ビュー**  メニューのをクリックして**その他のウィンドウ > ドキュメント アウトライン**を開くには、 **ドキュメント アウトライン**です。 **ドキュメント アウトライン**レイアウト現在 1 つに含まれる表示**LinearLayout**ウィジェット。
 
-[ ![ドキュメント アウトライン](designer-walkthrough-images/vs/06-document-outline-sml.png)](designer-walkthrough-images/vs/06-document-outline.png)
+[![ドキュメント アウトライン](designer-walkthrough-images/vs/06-document-outline-sml.png)](designer-walkthrough-images/vs/06-document-outline.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で、**ソリューション**を埋め込むし、選択**追加 > 新しいファイル.**.**新しいファイル**ダイアログで、 **Android > レイアウト**です。 ファイルの名前を付けます**ListItem**  をクリック**新規**:
 
-[ ![新しいレイアウト](designer-walkthrough-images/xs/03-new-layout-sml.png)](designer-walkthrough-images/xs/03-new-layout.png)
+[![新しいレイアウト](designer-walkthrough-images/xs/03-new-layout-sml.png)](designer-walkthrough-images/xs/03-new-layout.png#lightbox)
 
 新しい**ListItem**レイアウトは、デザイナーに表示されます。
 
-[ ![デザイナー ビュー](designer-walkthrough-images/xs/04-designer-view-sml.png)](designer-walkthrough-images/xs/04-designer-view.png)
+[![デザイナー ビュー](designer-walkthrough-images/xs/04-designer-view-sml.png)](designer-walkthrough-images/xs/04-designer-view.png#lightbox)
 
 クリックして、**ソース**このレイアウトの XML ソースを表示するデザイナーの下部にあるタブ。 クリックすると、 **[ドキュメント アウトライン**] タブ、右側には、レイアウトが現在、1 つを含むことを示します**LinearLayout**ウィジェット。
 
-[ ![Designer XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png)
+[![Designer XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png#lightbox)
 
 -----
 
 
-<a name="Creating_the_List_Item_User_Interface" />
 
 ### <a name="creating-the-list-item-user-interface"></a>リスト項目のユーザー インターフェイスを作成します。
 
@@ -120,11 +115,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView を見つける](designer-walkthrough-images/vs/07-locate-imageview-sml.png)](designer-walkthrough-images/vs/07-locate-imageview.png)
+[![ImageView を見つける](designer-walkthrough-images/vs/07-locate-imageview-sml.png)](designer-walkthrough-images/vs/07-locate-imageview.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ImageView を見つける](designer-walkthrough-images/xs/06-locate-imageview-sml.png)](designer-walkthrough-images/xs/06-locate-imageview.png)
+[![ImageView を見つける](designer-walkthrough-images/xs/06-locate-imageview-sml.png)](designer-walkthrough-images/xs/06-locate-imageview.png#lightbox)
 
 -----
 
@@ -132,11 +127,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView 検索](designer-walkthrough-images/vs/08-imageview-search-sml.png)](designer-walkthrough-images/vs/08-imageview-search.png)
+[![ImageView 検索](designer-walkthrough-images/vs/08-imageview-search-sml.png)](designer-walkthrough-images/vs/08-imageview-search.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ImageView 検索](designer-walkthrough-images/xs/07-imageview-search-sml.png)](designer-walkthrough-images/xs/07-imageview-search.png)
+[![ImageView 検索](designer-walkthrough-images/xs/07-imageview-search-sml.png)](designer-walkthrough-images/xs/07-imageview-search.png#lightbox)
 
 -----
 
@@ -144,11 +139,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![キャンバス上 ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas.png)
+[![キャンバス上 ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![キャンバス上 ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas.png)
+[![キャンバス上 ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas.png#lightbox)
 
 -----
 
@@ -158,11 +153,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![青のアウトライン](designer-walkthrough-images/vs/10-blue-outline-sml.png)](designer-walkthrough-images/vs/10-blue-outline.png)
+[![青のアウトライン](designer-walkthrough-images/vs/10-blue-outline-sml.png)](designer-walkthrough-images/vs/10-blue-outline.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![青のアウトライン](designer-walkthrough-images/xs/10-blue-outline-sml.png)](designer-walkthrough-images/xs/10-blue-outline.png)
+[![青のアウトライン](designer-walkthrough-images/xs/10-blue-outline-sml.png)](designer-walkthrough-images/xs/10-blue-outline.png#lightbox)
 
 -----
 
@@ -170,11 +165,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView を選択します。](designer-walkthrough-images/vs/11-select-imageview-sml.png)](designer-walkthrough-images/vs/11-select-imageview.png)
+[![ImageView を選択します。](designer-walkthrough-images/vs/11-select-imageview-sml.png)](designer-walkthrough-images/vs/11-select-imageview.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ImageView を選択します。](designer-walkthrough-images/xs/11-select-imageview-sml.png)](designer-walkthrough-images/xs/11-select-imageview.png)
+[![ImageView を選択します。](designer-walkthrough-images/xs/11-select-imageview-sml.png)](designer-walkthrough-images/xs/11-select-imageview.png#lightbox)
 
 -----
 
@@ -182,11 +177,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![緑色の強調表示](designer-walkthrough-images/vs/12-green-highlight-sml.png)](designer-walkthrough-images/vs/12-green-highlight.png)
+[![緑色の強調表示](designer-walkthrough-images/vs/12-green-highlight-sml.png)](designer-walkthrough-images/vs/12-green-highlight.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![緑色の強調表示](designer-walkthrough-images/xs/12-green-highlight-sml.png)](designer-walkthrough-images/xs/12-green-highlight.png)
+[![緑色の強調表示](designer-walkthrough-images/xs/12-green-highlight-sml.png)](designer-walkthrough-images/xs/12-green-highlight.png#lightbox)
 
 -----
 
@@ -194,11 +189,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![小さなテキスト ウィジェットを追加します。](designer-walkthrough-images/vs/13-add-small-text-sml.png)](designer-walkthrough-images/vs/13-add-small-text.png)
+[![小さなテキスト ウィジェットを追加します。](designer-walkthrough-images/vs/13-add-small-text-sml.png)](designer-walkthrough-images/vs/13-add-small-text.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![小さなテキスト ウィジェットを追加します。](designer-walkthrough-images/xs/13-add-small-text-sml.png)](designer-walkthrough-images/xs/13-add-small-text.png)
+[![小さなテキスト ウィジェットを追加します。](designer-walkthrough-images/xs/13-add-small-text-sml.png)](designer-walkthrough-images/xs/13-add-small-text.png#lightbox)
 
 -----
 
@@ -206,18 +201,17 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![デザイナーのレイアウト](designer-walkthrough-images/vs/14-raw-layout-sml.png)](designer-walkthrough-images/vs/14-raw-layout.png)
+[![デザイナーのレイアウト](designer-walkthrough-images/vs/14-raw-layout-sml.png)](designer-walkthrough-images/vs/14-raw-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![デザイナーのレイアウト](designer-walkthrough-images/xs/14-raw-layout-sml.png)](designer-walkthrough-images/xs/14-raw-layout.png)
+[![デザイナーのレイアウト](designer-walkthrough-images/xs/14-raw-layout-sml.png)](designer-walkthrough-images/xs/14-raw-layout.png#lightbox)
 
 -----
 
 場合、2 つ`textView`ウィジェットを inside されない`linearLayout1`、ドラッグすることを`linearLayout1`で、 **ドキュメント アウトライン**の前のスクリーン ショットに示すように表示されるように配置して (の下にインデント`linearLayout1`)。
 
 
-<a name="Arranging_The_User_Interface" />
 
 ### <a name="arranging-the-user-interface"></a>ユーザー インターフェイスを配置します。
 
@@ -241,13 +235,13 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 3.  下方向にスクロール**ビュー**を変更して、`Width`設定`wrap_content`:
 
-[ ![ラップ コンテンツ](designer-walkthrough-images/xs/15-wrap-content-sml.png)](designer-walkthrough-images/xs/15-wrap-content.png)
+[![ラップ コンテンツ](designer-walkthrough-images/xs/15-wrap-content-sml.png)](designer-walkthrough-images/xs/15-wrap-content.png#lightbox)
 
 -----
 
 別の方法を変更する、`Width`設定では幅設定を切り替えるウィジェットの右側にある三角形をクリックして、 `wrap_content`:
 
-[ ![幅を設定するドラッグ](designer-walkthrough-images/xs/16-width-arrow-sml.png)](designer-walkthrough-images/xs/16-width-arrow.png)
+[![幅を設定するドラッグ](designer-walkthrough-images/xs/16-width-arrow-sml.png)](designer-walkthrough-images/xs/16-width-arrow.png#lightbox)
 
 返しますの三角形を再度クリックすると、`Width`設定`match_parent`です。
 
@@ -255,11 +249,11 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![LinearLayout のルートを選択します。](designer-walkthrough-images/vs/16-root-linearlayout-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout.png)
+[![LinearLayout のルートを選択します。](designer-walkthrough-images/vs/16-root-linearlayout-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![LinearLayout のルートを選択します。](designer-walkthrough-images/xs/17-root-linearlayout-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout.png)
+[![LinearLayout のルートを選択します。](designer-walkthrough-images/xs/17-root-linearlayout-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout.png#lightbox)
 
 -----
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -272,7 +266,7 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 ルートと`LinearLayout`に戻り、選択されている、**プロパティ** タブでをクリックし、**ウィジェット**です。 変更、`Orientation`設定`horizontal`:
 
-[ ![水平方向を選択します。](designer-walkthrough-images/xs/18-horizontal-orientation-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation.png)
+[![水平方向を選択します。](designer-walkthrough-images/xs/18-horizontal-orientation-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation.png#lightbox)
 
 -----
 
@@ -280,15 +274,14 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![デザイナーのレイアウト](designer-walkthrough-images/vs/18-designer-layout-sml.png)](designer-walkthrough-images/vs/18-designer-layout.png)
+[![デザイナーのレイアウト](designer-walkthrough-images/vs/18-designer-layout-sml.png)](designer-walkthrough-images/vs/18-designer-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![デザイナーのレイアウト](designer-walkthrough-images/xs/19-designer-layout-sml.png)](designer-walkthrough-images/xs/19-designer-layout.png)
+[![デザイナーのレイアウト](designer-walkthrough-images/xs/19-designer-layout-sml.png)](designer-walkthrough-images/xs/19-designer-layout.png#lightbox)
 
 -----
 
-<a name="Modifying_the_Spacing" />
 
 ### <a name="modifying-the-spacing"></a>間隔を変更します。
 
@@ -296,13 +289,13 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 次に、空き領域を増やすのウィジェットの間で UI のパディングとマージンの設定を変更します。 選択、 `ImageView`、 をクリックして、 **Categorized**にある検索アイコン、**プロパティ**下にスクロールしてウィンドウ、**レイアウト**セクションです。 変更、`Min Height`に`70dp`、`Min Width`に`50dp`、および`padding`に`10dp`です。 これには、すべての側面の周辺のスペースが適用されます、`ImageView`垂直方向に elongates とします。
 
-[ ![余白を設定します。](designer-walkthrough-images/vs/19-padding-widths-sml.png)](designer-walkthrough-images/vs/19-padding-widths.png)
+[![余白を設定します。](designer-walkthrough-images/vs/19-padding-widths-sml.png)](designer-walkthrough-images/vs/19-padding-widths.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 次に、空き領域を増やすのウィジェットの間で UI のパディングとマージンの設定を変更します。 選択、 `ImageView`  をクリックし、**レイアウト** タブの下にある**プロパティ**です。 変更、`Padding`に`10dp`、`Min Width`に`50dp`、および`Min Height`に`70dp`です。 これには、すべての側面の周辺のスペースが適用されます、`ImageView`垂直方向に elongates とします。
 
-[ ![余白を設定します。](designer-walkthrough-images/xs/20-padding-widths-sml.png)](designer-walkthrough-images/xs/20-padding-widths.png)
+[![余白を設定します。](designer-walkthrough-images/xs/20-padding-widths-sml.png)](designer-walkthrough-images/xs/20-padding-widths.png#lightbox)
 
 -----
 
@@ -311,13 +304,13 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 下、左、右、および上の設定の余白の設定されません個別に値を入力して、 `paddingBottom`、 `paddingLeft`、 `paddingRight`、および`paddingTop`フィールドに、それぞれします。
 たとえば、設定、`paddingLeft`フィールドを`5dp`と`paddingBottom`、 `paddingRight`、および`paddingTop`フィールドを`10dp`:
 
-[ ![カスタムの余白設定](designer-walkthrough-images/vs/20-custom-padding-sml.png)](designer-walkthrough-images/vs/20-custom-padding.png)
+[![カスタムの余白設定](designer-walkthrough-images/vs/20-custom-padding-sml.png)](designer-walkthrough-images/vs/20-custom-padding.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 上、右、下、および左の余白の設定をする個別に設定に値を入力して、 `Top`、 `Right`、 `Bottom`、および`Left`フィールドをそれぞれパディングです。 たとえば、設定、`Left`パディング値に`5dp`と`Top`、 `Right`、および`Bottom`余白の値を`10dp`です。 なお、`Padding`設定をこれらの値のコンマ区切りのリストに変更します。
 
-[ ![カスタムの余白設定](designer-walkthrough-images/xs/21-custom-padding-sml.png)](designer-walkthrough-images/xs/21-custom-padding.png)
+[![カスタムの余白設定](designer-walkthrough-images/xs/21-custom-padding-sml.png)](designer-walkthrough-images/xs/21-custom-padding.png#lightbox)
 
 -----
 
@@ -325,18 +318,17 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 位置を次に、調整、`LinearLayout`ウィジェットを含む 2 つ`TextView`ウィジェット。 **ドキュメント アウトライン**`linearLayout1`です。 **プロパティ**ウィンドウで、**レイアウト - ビュー**セクションです。 設定`layout_marginBottom`、 `layout_marginLeft`、 `layout_marginRight`、および`layout_marginTop`に`5dp`、 `5dp`、 `0dp`、および`5dp`それぞれ。
 
-[ ![余白を設定します。](designer-walkthrough-images/vs/21-margins-sml.png)](designer-walkthrough-images/vs/21-margins.png)
+[![余白を設定します。](designer-walkthrough-images/vs/21-margins-sml.png)](designer-walkthrough-images/vs/21-margins.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 位置を次に、調整、`LinearLayout`ウィジェットを含む 2 つ`TextView`ウィジェット。 **ドキュメント アウトライン**`linearLayout1`です。 **プロパティ**ペインで、**レイアウト**タブです。下方向にスクロール、**ビュー**セクションし、設定、 `Left`、 `Top`、 `Right`、および`Bottom`に余白`5dp`、 `5dp`、 `0dp`、および`5dp`それぞれ。
 
-[ ![余白を設定します。](designer-walkthrough-images/xs/22-margins-sml.png)](designer-walkthrough-images/xs/22-margins.png)
+[![余白を設定します。](designer-walkthrough-images/xs/22-margins-sml.png)](designer-walkthrough-images/xs/22-margins.png#lightbox)
 
 -----
 
 
-<a name="Removing_the_Default_Image" />
 
 ### <a name="removing-the-default-image"></a>既定のイメージを削除します。
 
@@ -360,11 +352,10 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 3.  クリア、`Src`を空白に設定します。
 
-[ ![ImageView src の設定をクリアします。](designer-walkthrough-images/xs/23-clear-src-sml.png)](designer-walkthrough-images/xs/23-clear-src.png)
+[![ImageView src の設定をクリアします。](designer-walkthrough-images/xs/23-clear-src-sml.png)](designer-walkthrough-images/xs/23-clear-src.png#lightbox)
 
 -----
 
-<a name="Adding_a_ListView" />
 
 ### <a name="adding-a-listview-container"></a>ListView のコンテナーを追加します。
 
@@ -377,7 +368,7 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![新しい ListView](designer-walkthrough-images/xs/24-new-listview-sml.png)](designer-walkthrough-images/xs/24-new-listview.png)
+[![新しい ListView](designer-walkthrough-images/xs/24-new-listview-sml.png)](designer-walkthrough-images/xs/24-new-listview.png#lightbox)
 
 -----
 
@@ -390,14 +381,13 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![MyListView に id の名前を変更します。](designer-walkthrough-images/xs/25-change-id-sml.png)](designer-walkthrough-images/xs/25-change-id.png)
+[![MyListView に id の名前を変更します。](designer-walkthrough-images/xs/25-change-id-sml.png)](designer-walkthrough-images/xs/25-change-id.png#lightbox)
 
 -----
 
 この時点では、ユーザー インターフェイスが使用できるようにします。
 
 
-<a name="Running_the_Application" />
 
 ### <a name="running-the-application"></a>アプリケーションの実行
 
@@ -490,10 +480,9 @@ namespace DesignerWalkthrough
 
 アプリケーションをビルドして実行します。 次のスクリーン ショットは、デバイスで実行されているときのアプリの外観の例を示します。
 
-[ ![最終的なスクリーン ショット](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png)
+[![最終的なスクリーン ショット](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

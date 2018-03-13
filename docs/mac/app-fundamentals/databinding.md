@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 2c01a36eabb15fbe9b975c91328dfa7cfd651896
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>データのバインドとキー値のコーディング
 
@@ -24,11 +24,11 @@ _この記事では、キーと値のコーディングおよびキーと値の 
 
 キーと値のコーディングおよびでのデータ バインディング技術 Xamarin.Mac アプリケーションを使用するの記述し、保守を作成し、UI 要素を使用する必要のあるコードの量を大幅に削減できます。 また、バックアップ データをさらに分離することの利点がある場合 (_データ モデル_)、正面からのユーザー インターフェイスを終了 (_モデル-ビュー-コント ローラー_) より柔軟なアプリケーションの保守が容易に先行します。デザインします。
 
-[![実行中のアプリの使用例](databinding-images/intro01.png "実行中のアプリの例")](databinding-images/intro01-large.png)
+[![実行中のアプリの使用例](databinding-images/intro01.png "実行中のアプリの例")](databinding-images/intro01-large.png#lightbox)
 
 この記事でキーと値のコーディングおよび Xamarin.Mac アプリケーションでのデータ バインディングの操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを OBJECTIVE-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 <a name="What_is_Key-Value_Coding" />
 
@@ -421,7 +421,7 @@ public bool isManager {
 
 最初に、新しく追加してみましょう**ビュー コント ローラー**を弊社**Main.storyboard**インターフェイス ビルダー内のファイルとそのクラスの名前を`SimpleViewController`:。 
 
-[![新しいビュー コント ローラーを追加する](databinding-images/simple01.png "新しいビュー コント ローラーを追加します。")](databinding-images/simple01-large.png)
+[![新しいビュー コント ローラーを追加する](databinding-images/simple01.png "新しいビュー コント ローラーを追加します。")](databinding-images/simple01-large.png#lightbox)
 
 次に、Mac を Visual Studio に戻り、編集、 **SimpleViewController.cs** (つまり、プロジェクトに自動的に追加された) ファイルのインスタンスを公開し、`PersonModel`おになるデータをフォームをバインドします。 次のコードを追加します。
 
@@ -461,27 +461,27 @@ public override void ViewDidLoad ()
 
 フォームを作成する必要があります、これをダブルクリックして、 **Main.storyboard**編集のためインターフェイス ビルダーで開くファイル。 次のように表示するフォームのレイアウト:
 
-[![Xcode でストーリー ボードの編集](databinding-images/simple02.png "Xcode でストーリー ボードの編集")](databinding-images/simple02-large.png)
+[![Xcode でストーリー ボードの編集](databinding-images/simple02.png "Xcode でストーリー ボードの編集")](databinding-images/simple02-large.png#lightbox)
 
 データ バインド フォームを`PersonModel`を介して公開されることを`Person`キーを次の操作します。
 
 1. 選択、 **Employee Name**テキスト フィールドに切り替えると、**バインド インスペクター**です。
 2. チェック、**バインド**ボックスし、**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.Name`の**キー パス**: 
 
-    [![キーのパスを入力する](databinding-images/simple03.png "キーのパスを入力します。")](databinding-images/simple03-large.png)
+    [![キーのパスを入力する](databinding-images/simple03.png "キーのパスを入力します。")](databinding-images/simple03-large.png#lightbox)
 3. 選択、**職業**テキスト フィールドおよびチェック、**にバインド**ボックスし、選択**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.Occupation`の**キー パス**:  
 
-    [![キーのパスを入力する](databinding-images/simple04.png "キーのパスを入力します。")](databinding-images/simple04-large.png)
+    [![キーのパスを入力する](databinding-images/simple04.png "キーのパスを入力します。")](databinding-images/simple04-large.png#lightbox)
 4. 選択、**従業員がマネージャー**  チェック ボックスを確認し、**にバインド**ボックスし、**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.isManager`の**キー パス**:  
 
-    [![キーのパスを入力する](databinding-images/simple05.png "キーのパスを入力します。")](databinding-images/simple05-large.png)
+    [![キーのパスを入力する](databinding-images/simple05.png "キーのパスを入力します。")](databinding-images/simple05-large.png#lightbox)
 5. 選択、**管理された従業員の数**テキスト フィールドおよびチェック、**にバインド**ボックスし、選択**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.NumberOfEmployees`の**キー パス**:  
 
-    [![キーのパスを入力する](databinding-images/simple06.png "キーのパスを入力します。")](databinding-images/simple06-large.png)
+    [![キーのパスを入力する](databinding-images/simple06.png "キーのパスを入力します。")](databinding-images/simple06-large.png#lightbox)
 6. 数の従業員管理のラベルとテキスト フィールドを非表示にたい場合は、従業員がマネージャーではありません。
 7. 選択、**管理された従業員の数**ラベル、展開、 **Hidden** turndown とチェック、**にバインド**ボックスし、選択**単純なビュー コント ローラー**ドロップダウン リストからです。 次に入力`self.Person.isManager`の**キー パス**:  
 
-    [![キーのパスを入力する](databinding-images/simple07.png "キーのパスを入力します。")](databinding-images/simple07-large.png)
+    [![キーのパスを入力する](databinding-images/simple07.png "キーのパスを入力します。")](databinding-images/simple07-large.png#lightbox)
 8. 選択`NSNegateBoolean`から、**値トランスフォーマー**ドロップダウンします。  
 
     ![NSNegateBoolean キーの変換を選択すると](databinding-images/simple08.png "NSNegateBoolean キーの変換を選択します。")
@@ -491,11 +491,11 @@ public override void ViewDidLoad ()
 
 値をアプリケーションを実行する場合、`Person`プロパティは、フォームを自動的に設定します。
 
-[![自動設定されたフォームを示す](databinding-images/simple09.png "自動設定されたフォームを表示")](databinding-images/simple09-large.png)
+[![自動設定されたフォームを示す](databinding-images/simple09.png "自動設定されたフォームを表示")](databinding-images/simple09-large.png#lightbox)
 
 ユーザーがフォームに変更を加えた書き戻されますを`Person`ビュー コント ローラー内のプロパティです。 たとえば、選択を解除する**従業員がマネージャー**更新プログラム、`Person`のインスタンス、`PersonModel`と**管理された従業員の数**ラベルとテキスト フィールドが自動的に (経由で非表示データ バインディングの場合):
 
-[![管理者以外のメンバーの従業員の数を非表示にする](databinding-images/simple10.png "管理者以外のメンバーの従業員の数を非表示にします。")](databinding-images/simple10-large.png)
+[![管理者以外のメンバーの従業員の数を非表示にする](databinding-images/simple10.png "管理者以外のメンバーの従業員の数を非表示にします。")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
@@ -505,7 +505,7 @@ public override void ViewDidLoad ()
 
 最初に、新しく追加してみましょう**ビュー コント ローラー**を弊社**Main.storyboard**インターフェイス ビルダー内のファイルとそのクラスの名前を`TableViewController`:。
 
-[![新しいビュー コント ローラーを追加する](databinding-images/table01.png "新しいビュー コント ローラーを追加します。")](databinding-images/table01-large.png)
+[![新しいビュー コント ローラーを追加する](databinding-images/table01.png "新しいビュー コント ローラーを追加します。")](databinding-images/table01-large.png#lightbox)
 
 次に、編集しましょう、 **TableViewController.cs**ファイル (つまり、プロジェクトに自動的に追加された) と配列を公開して (`NSArray`) の`PersonModel`おなるはデータ バインディングをフォームのクラスです。 次のコードを追加します。
 
@@ -572,7 +572,7 @@ public override void AwakeFromNib ()
 
 テーブル、ビューを作成する必要があります、これをダブルクリックして、 **Main.storyboard**編集のためインターフェイス ビルダーで開くファイル。 次のように表示するテーブルのレイアウト:
 
-[![新しい表形式ビューのレイアウト](databinding-images/table02.png "新しい表形式ビューのレイアウト")](databinding-images/table02-large.png)
+[![新しい表形式ビューのレイアウト](databinding-images/table02.png "新しい表形式ビューのレイアウト")](databinding-images/table02-large.png#lightbox)
 
 追加する必要があります、**配列コント ローラー**このテーブルにバインドされたデータを提供する、次の操作します。
 
@@ -581,7 +581,7 @@ public override void AwakeFromNib ()
     ![ライブラリから配列コント ローラーを選択すると](databinding-images/table03.png "ライブラリから配列コント ローラーを選択します。")
 2. 選択**配列コント ローラー**で、**インターフェイス階層**に切り替えると、**属性インスペクター**:  
 
-    [![属性のインスペクターを選択すると](databinding-images/table04.png "属性インスペクターを選択します。")](databinding-images/table04-large.png)
+    [![属性のインスペクターを選択すると](databinding-images/table04.png "属性インスペクターを選択します。")](databinding-images/table04-large.png#lightbox)
 3. 入力`PersonModel`の**クラス名**、 をクリックして、 **Plus**ボタンをクリックし、3 つのキーを追加します。 名前を付けます`Name`、`Occupation`と`isManager`:  
 
     ![必須のキーのパスを追加する](databinding-images/table05.png "必須のキーのパスを追加します。")
@@ -595,22 +595,22 @@ public override void AwakeFromNib ()
 
 1. テーブル ビューを選択し、**インスペクターをバインド**:  
 
-    [![バインディング インスペクターを選択すると](databinding-images/table07.png "バインディング インスペクターを選択します。")](databinding-images/table07-large.png)
+    [![バインディング インスペクターを選択すると](databinding-images/table07.png "バインディング インスペクターを選択します。")](databinding-images/table07-large.png#lightbox)
 2. 下にある、**テーブルの内容**turndown、select**バインド**と**配列コント ローラー**です。 入力`arrangedObjects`の**コント ローラー キー**フィールド。  
 
     ![コント ローラーのキーを定義する](databinding-images/table08.png "コント ローラーのキーを定義します。")
 3. 選択、**テーブル ビューのセル**下にある、**従業員**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Name`の**キーのパスをモデル**:  
 
-    [![モデルのキー パスを設定して](databinding-images/table09.png "モデルのキー パスを設定します。")](databinding-images/table09-large.png)
+    [![モデルのキー パスを設定して](databinding-images/table09.png "モデルのキー パスを設定します。")](databinding-images/table09-large.png#lightbox)
 4. `objectValue` 現在`PersonModel`配列コント ローラーによって管理されている配列。
 5. 選択、**テーブル ビューのセル**下にある、**職業**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Occupation`の**キーのパスをモデル**:  
 
-    [![モデルのキー パスを設定して](databinding-images/table10.png "モデルのキー パスを設定します。")](databinding-images/table10-large.png)
+    [![モデルのキー パスを設定して](databinding-images/table10.png "モデルのキー パスを設定します。")](databinding-images/table10-large.png#lightbox)
 6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
 配列で、テーブルにデータを設定して、アプリケーションを実行する場合`PersonModels`:
 
-[![アプリケーションを実行している](databinding-images/table11.png "アプリケーションを実行します。")](databinding-images/table11-large.png)
+[![アプリケーションを実行している](databinding-images/table11.png "アプリケーションを実行します。")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
@@ -620,7 +620,7 @@ public override void AwakeFromNib ()
 
 最初に、新しく追加してみましょう**ビュー コント ローラー**を弊社**Main.storyboard**インターフェイス ビルダー内のファイルとそのクラスの名前を`OutlineViewController`:。 
 
-[![新しいビュー コント ローラーを追加する](databinding-images/outline01.png "新しいビュー コント ローラーを追加します。")](databinding-images/outline01-large.png)
+[![新しいビュー コント ローラーを追加する](databinding-images/outline01.png "新しいビュー コント ローラーを追加します。")](databinding-images/outline01-large.png#lightbox)
 
 次に、編集しましょう、 **OutlineViewController.cs**ファイル (つまり、プロジェクトに自動的に追加された) と配列を公開して (`NSArray`) の`PersonModel`おなるはデータ バインディングをフォームのクラスです。 次のコードを追加します。
 
@@ -690,7 +690,7 @@ public override void AwakeFromNib ()
 
 当社のアウトライン ビューを作成する必要があります、これをダブルクリックして、 **Main.storyboard**編集のためインターフェイス ビルダーで開くファイル。 次のように表示するテーブルのレイアウト:
 
-[![アウトライン表示を作成して](databinding-images/outline02.png "アウトライン表示を作成します。")](databinding-images/outline02-large.png)
+[![アウトライン表示を作成して](databinding-images/outline02.png "アウトライン表示を作成します。")](databinding-images/outline02-large.png#lightbox)
 
 追加する必要があります、**ツリー コント ローラー**アウトラインにバインドされたデータを提供する、次の操作します。
 
@@ -699,7 +699,7 @@ public override void AwakeFromNib ()
     ![ライブラリからツリー コント ローラーを選択すると](databinding-images/outline03.png "ライブラリからツリー コント ローラーを選択します。")
 2. 選択**ツリー コント ローラー**で、**インターフェイス階層**に切り替えると、**属性インスペクター**:  
 
-    [![属性のインスペクターを選択すると](databinding-images/outline04.png "属性インスペクターを選択します。")](databinding-images/outline04-large.png)
+    [![属性のインスペクターを選択すると](databinding-images/outline04.png "属性インスペクターを選択します。")](databinding-images/outline04-large.png#lightbox)
 3. 入力`PersonModel`の**クラス名**、 をクリックして、 **Plus**ボタンをクリックし、3 つのキーを追加します。 名前を付けます`Name`、`Occupation`と`isManager`:  
 
     ![必須のキーのパスを追加する](databinding-images/outline05.png "必須のキーのパスを追加します。")
@@ -717,22 +717,22 @@ public override void AwakeFromNib ()
 
 1. アウトライン表示を選択し、、**インスペクターのバインド**を選択します。  
 
-    [![バインディング インスペクターを選択すると](databinding-images/outline07.png "バインディング インスペクターを選択します。")](databinding-images/outline07-large.png)
+    [![バインディング インスペクターを選択すると](databinding-images/outline07.png "バインディング インスペクターを選択します。")](databinding-images/outline07-large.png#lightbox)
 2. 下にある、**内容のアウトライン表示**turndown、select**にバインド**と**ツリー コント ローラー**です。 入力`arrangedObjects`の**コント ローラー キー**フィールド。  
 
     ![コント ローラーのキーを設定する](databinding-images/outline08.png "コント ローラーのキーを設定します。")
 3. 選択、**テーブル ビューのセル**下にある、**従業員**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Name`の**キーのパスをモデル**:  
 
-    [![モデルのキーのパスを入力する](databinding-images/outline09.png "モデルのキーのパスを入力します。")](databinding-images/outline09-large.png)
+    [![モデルのキーのパスを入力する](databinding-images/outline09.png "モデルのキーのパスを入力します。")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue` 現在`PersonModel`ツリー コント ローラーによって管理されている配列。
 5. 選択、**テーブル ビューのセル**下にある、**職業**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Occupation`の**キーのパスをモデル**:  
 
-    [![モデルのキーのパスを入力する](databinding-images/outline10.png "モデルのキーのパスを入力します。")](databinding-images/outline10-large.png)
+    [![モデルのキーのパスを入力する](databinding-images/outline10.png "モデルのキーのパスを入力します。")](databinding-images/outline10-large.png#lightbox)
 6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
 アプリケーションを実行している場合、アウトラインが設定されます、配列の`PersonModels`:
 
-[![アプリケーションを実行している](databinding-images/outline11.png "アプリケーションを実行します。")](databinding-images/outline11-large.png)
+[![アプリケーションを実行している](databinding-images/outline11.png "アプリケーションを実行します。")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>コレクション ビューのデータ バインディング
 
@@ -860,7 +860,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 データ バインドに間違いを犯す可能性、_ネイティブ クラッシュ_でアンマネージ コードと、Xamarin.Mac アプリケーションで完全に失敗する、`SIGABRT`エラー。
 
-[![ネイティブのクラッシュ ダイアログ ボックスの例](databinding-images/debug01.png "ネイティブ クラッシュ ダイアログ ボックスの例")](databinding-images/debug01-large.png)
+[![ネイティブのクラッシュ ダイアログ ボックスの例](databinding-images/debug01.png "ネイティブ クラッシュ ダイアログ ボックスの例")](databinding-images/debug01-large.png#lightbox)
 
 データ バインド中には通常するクラッシュをネイティブの 4 つの主要な原因があります。
 
@@ -873,15 +873,15 @@ For more information on working with Collection Views, please see our [Collectio
 
 みましょうを探して、その修正方法を説明できるように、データ バインディングでネイティブのクラッシュが発生します。 インターフェイスのビルダーからコレクション ビューの例の最初のラベルのバインディングを変更してみましょう`Name`に`Title`:
 
-[![バインド キーを編集](databinding-images/debug02.png "バインド キーを編集")](databinding-images/debug02-large.png)
+[![バインド キーを編集](databinding-images/debug02.png "バインド キーを編集")](databinding-images/debug02-large.png#lightbox)
 
 みましょう変更を保存、Xcode と同期し、アプリケーションを実行する Mac 用の Visual Studio に戻ります。 アプリケーションがすぐにクラッシュし、コレクション ビューが表示される場合、`SIGABRT`エラー (で示すように、**アプリケーション出力**Mac 用の Visual Studio で) ため、`PersonModel`キーを持つプロパティを公開しません`Title`:
 
-[![バインディング エラーの例](databinding-images/debug03.png "バインディング エラーの例")](databinding-images/debug03-large.png)
+[![バインディング エラーの例](databinding-images/debug03.png "バインディング エラーの例")](databinding-images/debug03-large.png#lightbox)
 
 内のエラーの最上部までスクロールする場合、**アプリケーション出力**お問題を解決するためのキーを参照してください。
 
-[![エラー ログで問題を発見して](databinding-images/debug04.png "エラー ログで問題を検索します。")](databinding-images/debug04-large.png)
+[![エラー ログで問題を発見して](databinding-images/debug04.png "エラー ログで問題を検索します。")](databinding-images/debug04-large.png#lightbox)
 
 この行は、お客様の認証をキー`Title`にバインドすることをオブジェクト上に存在しません。 おを変更する場合、バインド バックアップ`Name`インターフェイス ビルダーで、保存、同期を再構築し、実行に問題なく正常に、アプリケーションは実行されます。
 

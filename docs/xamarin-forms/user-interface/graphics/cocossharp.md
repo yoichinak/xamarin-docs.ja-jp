@@ -8,19 +8,19 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 04268f38e558d438a4c84069400e4dc6be213009
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 395defa300da7b8f68746162d877a4fdb17ded9e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms で CocosSharp の使用
 
 _CocosSharp は、正確な形、画像、およびテキストのレンダリングを高度な視覚エフェクト用のアプリケーションに追加するために使用できます。_
 
-[ ![Xamarin.Forms で cocos #](cocossharp-images/evolve-mike-cocossharp-sml.png "xamarin.forms CocosSharp")](https://evolve.xamarin.com/session/56e210d1bad314273ca4d81e)
+> [!VIDEO https://youtube.com/embed/eYCx63FeqVU]
 
-[2016 を発展: Cocos # xamarin.forms](https://evolve.xamarin.com/session/56e210d1bad314273ca4d81e)
+**2016 を発展: Cocos # xamarin.forms**
 
 ## <a name="overview"></a>概要
 

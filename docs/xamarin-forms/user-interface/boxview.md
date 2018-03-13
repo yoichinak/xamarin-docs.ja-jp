@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 78ccb117e621b89d85e701b2ea027115f8681dc9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4d50ea5c3db0f5a141f1b48cf0a948c10b63f7f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="boxview"></a>BoxView
 
@@ -68,7 +68,7 @@ A `BoxView` 1 つのディメンション内で制限して、他の制約しま
 
 結果を次に示します。
 
-[![基本的な BoxView](boxview-images/basicboxview-small.png "基本 BoxView")](boxview-images/basicboxview-large.png "BasicBoxView")
+[![基本的な BoxView](boxview-images/basicboxview-small.png "基本 BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
 場合、`VerticalOptions`と`HorizontalOptions`プロパティはから削除、`BoxView`タグまたはに設定されている`Fill`、`BoxView`ページのサイズによって制限が、ページ全体に拡張されます。
 
@@ -113,7 +113,7 @@ A`BoxView`の子であることができますも、`AbsoluteLayout`です。 �
 
 子であるすべてのマークアップに続く、`StackLayout`です。 装飾用の複数の型は、このマークアップ`BoxView`で使用される要素、`Label`要素。
 
-[![文字飾り](boxview-images/textdecoration-small.png "文字飾り")](boxview-images/textdecoration-large.png "テキスト装飾")
+[![文字飾り](boxview-images/textdecoration-small.png "文字飾り")](boxview-images/textdecoration-large.png#lightbox "テキスト装飾")
 
 ページの上部にあるスタイリッシュ ヘッダーが得られます、`AbsoluteLayout`子は、4 つ`BoxView`要素と`Label`、すべては割り当ての特定の場所とサイズ。
 
@@ -168,7 +168,7 @@ XAML ファイルで、`AbsoluteLayout`が続く、`Label`で説明するテキ�
 
 `BoxView`色を表示するため便利です。 このプログラムを使用して、`ListView`パブリック静的な読み取り専用のフィールドはすべて、Xamarin.Forms を一覧表示する`Color`構造体。
 
-[![ListView 色](boxview-images/listviewcolors-small.png "ListView 色")](boxview-images/listviewcolors-large.png "ListView の色")
+[![ListView 色](boxview-images/listviewcolors-small.png "ListView 色")](boxview-images/listviewcolors-large.png#lightbox "ListView の色")
 
 [ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/)プログラムには、という名前のクラスが含まれています。`NamedColor`です。 静的コンス トラクターのすべてのフィールドにアクセスするリフレクションを使用して、`Color`構造体を作成、`NamedColor`それぞれのオブジェクト。 これらは、静的に格納されている`All`プロパティ。
 
@@ -350,7 +350,7 @@ class LifeCell : BoxView
 
 **GameOfLife**プログラムも含まれています、`LifeGrid`ほとんどのゲームのロジックをカプセル化するクラスと`MainPage`プログラムのビジュアルを処理するクラスです。 これらには、ゲームのルールを示すオーバーレイが含まれます。 数百のいくつかを示すアクションで、プログラムを次に示します`LifeCell`ページ上のオブジェクト。
 
-[![有効期間のゲーム](boxview-images/gameoflife-small.png "人生ゲーム")](boxview-images/gameoflife-large.png "人生ゲーム")
+[![有効期間のゲーム](boxview-images/gameoflife-small.png "人生ゲーム")](boxview-images/gameoflife-large.png#lightbox "人生ゲーム")
 
 <a name="digitalclock" />
 
@@ -358,7 +358,7 @@ class LifeCell : BoxView
 
 [ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/)プログラム作成 210`BoxView`昔ながらの 5 ~ 7 をドット マトリックス ディスプレイのドットをシミュレートする要素。 縦方向または横モードでの時間を読み取ることができますが、ランドス ケープが大きい。
 
-[![ドット マトリックス クロック](boxview-images/dotmatrixclock-small.png "ドット マトリックス クロック")](boxview-images/dotmatrixclock-large.png "ドット マトリックス クロック")
+[![ドット マトリックス クロック](boxview-images/dotmatrixclock-small.png "ドット マトリックス クロック")](boxview-images/dotmatrixclock-large.png#lightbox "ドット マトリックス クロック")
 
 XAML ファイルをインスタンス化がよりは少し多く、`AbsoluteLayout`時計のために使用します。
 
@@ -594,7 +594,7 @@ public partial class MainPage : ContentPage
 
 ドット マトリックス クロックがのアプリケーションが明らかになるように思えます`BoxView`が`BoxView`要素では、アナログ時計を実現できます。
 
-[![BoxView クロック](boxview-images/boxviewclock-small.png "BoxView クロック")](boxview-images/boxviewclock-large.png "BoxView クロック")
+[![BoxView クロック](boxview-images/boxviewclock-small.png "BoxView クロック")](boxview-images/boxviewclock-large.png#lightbox "BoxView クロック")
 
 内のすべてのビジュアル、 [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)プログラムの子である、`AbsoluteLayout`です。 使用してこれらの要素のサイズは、`LayoutBounds`添付プロパティ、および回転を使用して、`Rotation`プロパティです。 
 

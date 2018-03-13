@@ -3,16 +3,16 @@ title: "TvOS 9 の概要"
 description: "この記事では、Xamarin.tvOS 開発者向けのすべての新しいまたは変更された Api と tvOS 9 で使用できる機能を紹介します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c1fafe85fb7f5c30dca0dff6fe3dff5172e0b9aa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55e83658e09bc7e5c12bb3ef3f508497651ec46c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-tvos-9"></a>TvOS 9 の概要
 
@@ -91,7 +91,7 @@ Siri リモコンは、次の国で現在使用です。
 
 その他の国、Apple TV リモート Siri ボタンに置き換えるを検索するためのテキスト入力の既定の検索画面を表示する検索ボタンが表示されます。
 
-[ ![](tvos9-images/remote02.png "Siri リモート")](tvos9-images/remote02.png)
+[![](tvos9-images/remote02.png "Siri リモート")](tvos9-images/remote02.png#lightbox)
 
 詳細についてを参照してください、 [Siri リモート コンピューターと Bluetooth コント ローラー](~/ios/tvos/platform/remote-bluetooth.md)ドキュメント。
 
@@ -155,7 +155,7 @@ IOS または OS X とは異なり、タッチ スクリーンまたは直接を
 
 Apple TV ホーム画面がインストールされているし、ユーザー設定にアクセスする方法を提供するすべてのアプリを示しています。
 
-[ ![](tvos9-images/home01.png "ホーム画面")](tvos9-images/home01.png)
+[![](tvos9-images/home01.png "ホーム画面")](tvos9-images/home01.png#lightbox)
 
 ユーザーは、フォーカスを使用してアプリを選択し、これを起動する Siri リモート タッチ ジェスチャを使用してアプリのアイコンのグリッドを移動します。 アプリのアイコンは、最初の潜在的なユーザーに最適な印象を与える可能性し、一目でアプリの目的を伝える必要があります。
 
@@ -169,7 +169,7 @@ Apple TV ホーム画面がインストールされているし、ユーザー�
 
 ユーザーに、Apple テレビ ホーム画面上の行で Xamarin.tvOS アプリが配置されている場合、アプリがユーザーによって選択されたとき、大規模な上位棚イメージが表示されます。 このイメージは、アプリの機能を強調表示したり、そのコンテンツへの直接のリンクを提供しないでください。
 
-[ ![](tvos9-images/topshelf01.png "上段")](tvos9-images/topshelf01.png)
+[![](tvos9-images/topshelf01.png "上段")](tvos9-images/topshelf01.png#lightbox)
 
 上部棚のイメージを 1 つの静的として指定するか、できます`.png`または`.lsr`ファイルであるか動的に作成できます実行時にフォーカスを設定できるアイテムの単一の行として。
 

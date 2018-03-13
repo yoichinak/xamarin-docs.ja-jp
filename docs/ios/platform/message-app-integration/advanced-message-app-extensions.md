@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7e6621dc580e478873ce2db7139b04284bee355c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-message-app-extensions"></a>高度なメッセージ アプリ拡張機能
 
@@ -50,11 +50,11 @@ _この記事では、メッセージ アプリとの統合を新しい機能を
 
 対話型のメッセージは、カスタム メッセージのバブルを表示され、メッセージ アプリ拡張機能によって提供されます。 メッセージの入力 フィールドに挿入し、送信、ユーザーが対話型メッセージ コンテンツを作成できるようにします。
 
-[ ![](advanced-message-app-extensions-images/interactive01.png "対話型のメッセージの内容を作成します。")](advanced-message-app-extensions-images/interactive01.png)
+[![](advanced-message-app-extensions-images/interactive01.png "対話型のメッセージの内容を作成します。")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
 受信側のユーザーは、メッセージの履歴を作成したメッセージ アプリ拡張機能を読み込むには、そのメッセージ バブルをタップして対話型のメッセージに返信できます。 拡張機能は起動の全画面表示をするされ、ユーザーが、応答を作成し、元のユーザーに送信できるようにします。
 
-[ ![](advanced-message-app-extensions-images/interactive02.png "拡張機能は、全画面を起動")](advanced-message-app-extensions-images/interactive02.png)
+[![](advanced-message-app-extensions-images/interactive02.png "拡張機能は、全画面を起動")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
 次のトピックについては、説明以下で詳細。
@@ -68,7 +68,7 @@ _この記事では、メッセージ アプリとの統合を新しい機能を
 
 ユーザーによって呼び出されると、メッセージ アプリ拡張機能が、縮小表示モードでのメッセージ履歴の下部に表示されます。
 
-[ ![](advanced-message-app-extensions-images/interactive03.png "メッセージの API の概要")](advanced-message-app-extensions-images/interactive03.png)
+[![](advanced-message-app-extensions-images/interactive03.png "メッセージの API の概要")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
 1. `MSMessageAppViewController`メッセージ アプリ拡張機能内のオブジェクトが、拡張機能の表示が、ユーザーに表示されるときに呼び出されるメイン クラスです。
 2. メッセージ交換としてユーザーに表示される、`MSConversation`オブジェクト インスタンス。
@@ -80,7 +80,7 @@ _この記事では、メッセージ アプリとの統合を新しい機能を
 
 アクティブになるメッセージ アプリ拡張機能のプロセスを参照してください。
 
-[ ![](advanced-message-app-extensions-images/interactive04.png "アクティブになるメッセージ アプリ拡張機能の処理")](advanced-message-app-extensions-images/interactive04.png)
+[![](advanced-message-app-extensions-images/interactive04.png "アクティブになるメッセージ アプリ拡張機能の処理")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
 1. 拡張機能を開始するには (たとえば、アプリのドロアー) から、メッセージのアプリは、プロセスを起動します。
 2. `DidBecomeActive`メソッドが呼び出され、渡された、`MSConversation`を表す、メッセージ交換でメッセージ アプリ拡張機能が実行されています。
@@ -88,7 +88,7 @@ _この記事では、メッセージ アプリとの統合を新しい機能を
 
 次に、非アクティブになるメッセージ アプリ拡張機能のプロセスを見てみましょう。
 
-[ ![](advanced-message-app-extensions-images/interactive05.png "非アクティブになるメッセージ アプリ拡張機能の処理")](advanced-message-app-extensions-images/interactive05.png)
+[![](advanced-message-app-extensions-images/interactive05.png "非アクティブになるメッセージ アプリ拡張機能の処理")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
 1. メッセージ アプリ拡張機能が非アクティブ化されているときに、`ViewWillDisappear`メソッドは最初に呼び出されます。
 2. 続いて、`ViewDidDisappear`メソッドが呼び出されます。
@@ -128,7 +128,7 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 
 `AccessibilityLabel`プロパティは、ユーザーにメッセージ交換のトラン スクリプトの読み取りにスクリーン リーダーによって使用されます。 `Layout`プロパティを指定する方法、メッセージが表示されます、現在のみ、`MSMessageTemplateLayout`はサポートされており、次のようになります。
 
-[ ![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout テンプレート")](advanced-message-app-extensions-images/interactive06.png)
+[![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout テンプレート")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
 `Image`のプロパティ、 `MSMessageTemplateLayout` MessageBubble 画面上のメイン ボディのコンテンツを提供します。 `MediaFileUrl`プロパティもメッセージ バブルの本文のコンテンツでサポートされていないコンテンツは、`UIImage`バック グラウンドでのループは、ビデオ ファイル) などです。 両方の`Image`と`MediaFileUrl`プロパティが用意されて、`Image`プロパティが優先されます。 `MediaFileUrl` PNG、JPEG、GIF、および任意の形式で、メディア プレーヤー フレームワークで再生できるビデオをサポートしているメディア形式です。
 
@@ -140,7 +140,7 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 
 `Caption`、 `SubCaption`、`TrailingCaption`と`TrailingSubcaption`プロパティがさらに、イメージを説明し、イメージの下のセクション内に表示されます。 これらのプロパティをすべて設定`null`キャプション領域なしメッセージ バブルが作成されます。
 
-[ ![](advanced-message-app-extensions-images/interactive07.png "キャプション領域なしメッセージ バブル")](advanced-message-app-extensions-images/interactive07.png)
+[![](advanced-message-app-extensions-images/interactive07.png "キャプション領域なしメッセージ バブル")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
 最後の注目するはメッセージ アプリがメッセージのバブルの左上隅でメッセージ アプリ拡張機能のアイコンを描画します。
 
@@ -181,7 +181,7 @@ public void SendMessage (MSMessage message)
 
 メッセージ アプリ拡張機能は、次の 2 つの異なる表示モードのいずれかで表示できます。
 
-[ ![](advanced-message-app-extensions-images/interactive08.png "2 つの異なる表示モードで表示されるメッセージ アプリ拡張機能: Compact と展開")](advanced-message-app-extensions-images/interactive08.png)
+[![](advanced-message-app-extensions-images/interactive08.png "2 つの異なる表示モードで表示されるメッセージ アプリ拡張機能: Compact と展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -メッセージ アプリ拡張機能がメッセージのビューの下部にある 25% がここで、既定のモードです。 コンパクト モードで、アプリはキーボード、水平方向にスクロールまたはスワイプ ジェスチャ レコグナイザーへのアクセスをありません。 アプリの [入力] フィールドにはアクセスとするために呼び出す`InsertMessage`は即座にあるユーザーに表示されます。
 - **展開**-メッセージ アプリ拡張機能が全体のメッセージ ビューを塗りつぶします。 入力フィールドにアクセスできないが、キーボード、水平方向にスクロールおよびスワイプ ジェスチャ レコグナイザーへのアクセスには。
@@ -384,7 +384,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 メッセージ アプリ拡張機能は、メッセージに返信するときに処理する必要がある 2 つのケースがあります。
 
-[ ![](advanced-message-app-extensions-images/interactive09.png "非アクティブとアクティブ モードでメッセージ アプリ拡張機能")](advanced-message-app-extensions-images/interactive09.png)
+[![](advanced-message-app-extensions-images/interactive09.png "非アクティブとアクティブ モードでメッセージ アプリ拡張機能")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
 - **拡張機能が非アクティブ**-ユーザーがタップ拡張機能をアクティブ化し、対話型のメッセージ交換を続行するメッセージのトラン スクリプトでメッセージ アプリ拡張機能のメッセージのバブルの 1 つを使用する必要があります。
 - **拡張機能が有効になって**-ユーザーが拡大表示モードに切り替わるし、中断した場所から対話型プロセスを続行するメッセージのトラン スクリプトでメッセージ アプリ拡張機能のメッセージのバブルをタップします。
@@ -393,7 +393,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 メッセージのトラン スクリプトでユーザーがメッセージのバブルをタップすると、メッセージ アプリ拡張機能がアクティブでない、次の処理が行われます。
 
-[ ![](advanced-message-app-extensions-images/interactive10.png "非アクティブのメッセージ バブルの処理")](advanced-message-app-extensions-images/interactive10.png)
+[![](advanced-message-app-extensions-images/interactive10.png "非アクティブのメッセージ バブルの処理")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
 1. ユーザーは、拡張機能のメッセージのバブルをタップします。
 2. 拡張機能が起動されたときに、メッセージ アプリは、プロセスを起動します。
@@ -406,7 +406,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 メッセージ トラン スクリプトでユーザーがメッセージのバブルをタップすると、メッセージ アプリ拡張機能がアクティブで、次の処理が行われます。
 
-[ ![](advanced-message-app-extensions-images/interactive11.png "作業中のメッセージ バブルの処理")](advanced-message-app-extensions-images/interactive11.png)
+[![](advanced-message-app-extensions-images/interactive11.png "作業中のメッセージ バブルの処理")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
 1. ユーザーは、拡張機能のメッセージのバブルをタップします。
 2. メッセージ アプリ拡張機能が既にアクティブであるため、`WillTransition`のメソッド、`MSMessagesAppViewController`コンパクトなから展開の表示モードへの切り替えを処理します。
@@ -457,11 +457,11 @@ namespace MessageExtension
 
 2 つのユーザーのメッセージ交換の間の対話型のメッセージ交換のさまざまな手順を送信すると、処理を行ってメッセージ トラン スクリプトが読みにくく、部分的に完了したメッセージのバブルを起動できます。
 
-[ ![](advanced-message-app-extensions-images/interactive12.png "部分的に完了したメッセージ バブルできるメッセージのトラン スクリプトを雑然とさせること")](advanced-message-app-extensions-images/interactive12.png)
+[![](advanced-message-app-extensions-images/interactive12.png "部分的に完了したメッセージ バブルできるメッセージのトラン スクリプトを雑然とさせること")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
 代わりに、メッセージ アプリ拡張機能では、メッセージ トラン スクリプト内の簡潔なコメントに、前のメッセージのバブルを縮小する必要があります。
 
-[ ![](advanced-message-app-extensions-images/interactive13.png "メッセージ、トラン スクリプトの前のメッセージのバブルを折りたたむ")](advanced-message-app-extensions-images/interactive13.png)
+[![](advanced-message-app-extensions-images/interactive13.png "メッセージ、トラン スクリプトの前のメッセージのバブルを折りたたむ")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
 これは、処理を使用して、`MSSession`の既存の手順をすべてを折りたたむにします。 そのため、`DidSelectMessage`のメソッド、`MSMessagesAppViewController`クラスは、次のように変更できませんでした。
 
@@ -516,7 +516,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 
 見て、次の interaction 3 人のユーザーとグループのメッセージ交換で。
 
-[ ![](advanced-message-app-extensions-images/interactive14.png "3 人のユーザーとグループのメッセージ交換内での対話")](advanced-message-app-extensions-images/interactive14.png)
+[![](advanced-message-app-extensions-images/interactive14.png "3 人のユーザーとグループのメッセージ交換内での対話")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
 1. ユーザー 1 はグループ対話型のメッセージを送信ハンバーガー トッピングを選択するには、ユーザー 2 および 3 のユーザーを確認します。
 2. ユーザー 2 は、トマトを選択します。
@@ -531,7 +531,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 
 メッセージの送信者の識別子へのアクセスを説明するには、グループのメッセージ交換が上記の例を実行します。
 
-[ ![](advanced-message-app-extensions-images/interactive15.png "グループのメッセージ交換の識別子を送信します。")](advanced-message-app-extensions-images/interactive15.png)
+[![](advanced-message-app-extensions-images/interactive15.png "グループのメッセージ交換の識別子を送信します。")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
 1. ユーザー 1 がグループ対話型のメッセージを送信するもう一度、ハンバーガー トッピングを選択するには、ユーザー 2 および 3 のユーザーを確認します。
 2. ユーザー 3 は、にぎやかを取得します。

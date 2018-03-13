@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 79ce4a1393b2affade3422f73e1c3d4680d199df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1e65207e987dbdab8bf2fe5f48f0b0a500dd27bc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/28/2018
 
 作業を開始する DataPages Preview を使用して単純なデータ ドライブのページを作成する、次の手順に従います。 プレビューにハードコードされたスタイル (「イベント」) を構築するこのデモで使用は、コード内の特定の JSON 形式でのみ機能します。
 
-[ ![](get-started-images/demo-sml.png "DataPages サンプル アプリケーション")](get-started-images/demo.png "DataPages サンプル アプリケーション")
+[![](get-started-images/demo-sml.png "DataPages サンプル アプリケーション")](get-started-images/demo.png#lightbox "DataPages サンプル アプリケーション")
 
 ## <a name="1-add-nuget-packages"></a>1.NuGet パッケージを追加します。
 
@@ -134,7 +134,7 @@ JSON データの例、[デモ ソース](http://demo3143189.mockable.io/session
 
 上記の手順は、作業のデータ ページになります。
 
-[ ![](get-started-images/demo-sml.png "DataPages サンプル アプリケーション")](get-started-images/demo.png "DataPages サンプル アプリケーション")
+[![](get-started-images/demo-sml.png "DataPages サンプル アプリケーション")](get-started-images/demo.png#lightbox "DataPages サンプル アプリケーション")
 
 これは機能するため、構築済みのスタイル**「イベント」**ライト テーマの Nuget パッケージに存在し、(データ ソースに一致するように定義されているスタイルを持つ "title", "image", "presenter").
 
@@ -163,7 +163,7 @@ JSON データの例、[デモ ソース](http://demo3143189.mockable.io/session
 
 提供することによって、`DataTemplate`このコードは、`StyleClass`代わりに既定のレイアウトを使用して、`ListItemControl`です。
 
-[ ![](get-started-images/custom-sml.png "DataPages サンプル アプリケーション")](get-started-images/custom.png "DataPages サンプル アプリケーション")
+[![](get-started-images/custom-sml.png "DataPages サンプル アプリケーション")](get-started-images/custom.png#lightbox "DataPages サンプル アプリケーション")
 
 C# XAML にデータを作成する開発者はソース バインドすぎます (を必ず含めて、`using Xamarin.Forms.Pages;`ステートメント)。
 

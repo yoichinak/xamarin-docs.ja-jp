@@ -6,12 +6,12 @@ ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 83997018f4e08567a9150bf1e21374a98c8ddb4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1d9cf345aa971c40f4132cc7970ed1244640da14
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-android"></a>Android でタッチします。
 
@@ -33,7 +33,7 @@ IOS のように Android オブジェクトを作成、画面でのユーザー�
 
 
 > [!NOTE]
-> **注:**いないすべての Android デバイスがタッチ スクリーンをサポートします。 
+> すべての Android デバイスでは、タッチ スクリーンをサポートします。 
 
 マニフェスト ファイルに次のタグを追加すると、Google Play のみ表示するタッチを有効になっているはこれらのデバイスにアプリ。
 
@@ -90,11 +90,11 @@ public override bool OnTouchEvent(MotionEvent e)
 
 Android の 1.6 以降、Android SDK ジェスチャ ビルダーと呼ばれるエミュレーターに事前インストールされているアプリケーションが付属します。 このアプリケーションには、アプリケーションに埋め込むことができる定義済みのジェスチャを作成する、開発者ができるようにします。 次のスクリーン ショットは、ジェスチャ ビルダーの使用例を示しています。
 
-[![例のジェスチャを使用してジェスチャ ビルダーのスクリーン ショット](touch-in-android-images/image11.png)](touch-in-android-images/image11.png)
+[![例のジェスチャを使用してジェスチャ ビルダーのスクリーン ショット](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
 強化されたバージョンのジェスチャ ツールと呼ばれるアプリケーションは、Google Play で確認できます。 ジェスチャ ツールが、ジェスチャ ビルダーとよく似てそれが作成された後にジェスチャをテストすることができます。 この次のスクリーン ショットは、ジェスチャ ビルダーを示しています。
 
-[![例のジェスチャを使用してジェスチャ ツールのスクリーン ショット](touch-in-android-images/image12.png)](touch-in-android-images/image12.png)
+[![例のジェスチャを使用してジェスチャ ツールのスクリーン ショット](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
 ジェスチャ ツールは、少し方が便利ですが作成されるようにテストするジェスチャが許可されているカスタム ジェスチャを作成しは Google Play を介して簡単に使用します。
 

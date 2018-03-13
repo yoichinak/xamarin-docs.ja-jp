@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 21e35b056293e422b577b0ee8b51e8c43dbbf07d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ccee60b5d953987e858ef592d005cec9803b8b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>ストーリー ボードの概要
 
@@ -20,7 +20,7 @@ _この記事では、ストーリー ボード Xamarin.Mac アプリでの操�
 
 Xamarin.Mac アプリだけでなく、ウィンドウの定義と、コントロールが含まれていますが、さまざまなウィンドウの間のリンクを含むものユーザー インターフェイスを開発することはストーリー ボード (を介して segues) および状態を表示します。
 
-[ ![](images/intro01.png "Xcode で UI の例")](images/intro01.png)
+[![](images/intro01.png "Xcode で UI の例")](images/intro01.png#lightbox)
 
 この記事では、ストーリー ボードを使用して Xamarin.Mac アプリのユーザー インターフェイスを定義する概要を提供します。
 
@@ -36,11 +36,11 @@ Xamarin.Mac アプリだけでなく、ウィンドウの定義と、コント�
 
 前述のように、ストーリー ボードを定義のすべての機能の概要に分割する特定のアプリの UI の_コント ローラーの表示_です。 Xcode のインターフェイス ビルダーでは、これらのコント ローラーの各に住んでいる独自_シーン_です。
 
-[ ![](images/intro02.png "例ビュー コント ローラー")](images/intro02.png)
+[![](images/intro02.png "例ビュー コント ローラー")](images/intro02.png#lightbox)
 
 各シーンでは、一連の線 (Segues と呼ばれる) UI では、それらの関係を示すためには、各シーンを接続すると、特定のビューとビュー コント ローラーのペアを表します。 いくつか Segues ビュー コント ローラーの 1 つの方法を定義する 1 つまたは複数の子ビューまたはコント ローラーの表示が含まれています。 その他の Segues (重なってまたはダイアログ ボックスを表示する) などのビューのコント ローラー間の遷移を定義します。 
 
-[ ![](images/intro03.png "サンプル segue")](images/intro03.png)
+[![](images/intro03.png "サンプル segue")](images/intro03.png#lightbox)
 
 最も重要な注目するは各 Segue が何らかの形式、アプリの UI の特定の要素間のデータのフローを表します。
 
@@ -50,7 +50,7 @@ Xamarin.Mac アプリだけでなく、ウィンドウの定義と、コント�
 
 コント ローラーの表示は、Mac アプリ内の情報の特定のビューと、その情報を提供するデータ モデル間のリレーションシップを定義します。 ストーリー ボードの各トップ レベル シーンでは、Xamarin.Mac アプリのコード内の 1 つのビュー コント ローラーを表します。
 
-[ ![](images/intro04.png "明細ビュー コント ローラーの例")](images/intro04.png)
+[![](images/intro04.png "明細ビュー コント ローラーの例")](images/intro04.png#lightbox)
 
 これにより、各ビューのコント ローラーは、再利用可能な自己完結型情報のビジュアル表現 (ビュー) と存在し、その情報を制御するためのロジックの両方の組み合わせです。
 
@@ -115,8 +115,8 @@ SourceWriter コード全体に詳細なコメントが付いていて、可能�
 
 ## <a name="related-links"></a>関連リンク
 
-- [こんにちは, Mac (サンプル)](https://developer.xamarin.com/samples/mac/Hello_Mac/)
+- [Hello Mac (サンプル)](https://developer.xamarin.com/samples/mac/Hello_Mac/)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [ウィンドウの操作](~/mac/user-interface/window.md)
-- [OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows の概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

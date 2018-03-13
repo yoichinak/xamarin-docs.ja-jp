@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fdd4311072efd5571724fbe00d12a96921054fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4c5b9fcbfaabbfc78da1064396dc3fec2d3fde8d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deployment-and-testing"></a>配置とテスト
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/27/2018
 - **IOS Dev Center**:
   - [アプリ Id](#App_IDs)が作成されています。
   - [アプリ グループ](#App_Groups)(必要な場合) を構成します。
-  - [*配布*プロビジョニング プロファイル](#Provisioning_Profiles)を作成します。
+  - 配布プロビジョニング プロファイルを作成
 
 - で、解決方法。
 
@@ -36,6 +36,7 @@ ms.lasthandoff: 02/27/2018
   - [Apple Watch をテストするための展開](~/ios/watchos/deploy-test/device.md)、または
   - [アプリ ストアにアップロード](~/ios/watchos/deploy-test/appstore.md)です。
 
+<a name="App_IDs"/>
 
 ## <a name="app-ids"></a>アプリ Id
 
@@ -65,7 +66,7 @@ ms.lasthandoff: 02/27/2018
 
 ディストリビューションの場合のみ必要プロファイルを作成する 1 つの配布のプロビジョニングのワイルドカード アプリ id。
 
-<a name="app-groups" />
+<a name="App_Groups" />
 
 ## <a name="app-groups"></a>アプリ グループ
 
@@ -102,8 +103,6 @@ ms.lasthandoff: 02/27/2018
 である必要があります。![Entitlements.plist エディター](images/entitlements-plist-sml.png)
 
 **いない**Watch アプリ プロジェクトで権利を有効にします。 ウォッチ自体で有効にする必要はありません。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

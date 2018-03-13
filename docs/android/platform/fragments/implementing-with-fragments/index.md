@@ -8,23 +8,22 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ebb53398edba64e255f1a534556836df8734ba6f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-with-fragments"></a>フラグメントを実装します。
 
 _Android 3.0 には、フラグメントが導入されました。フラグメントは、自己完結型のモジュラー コンポーネントです。さまざまなサイズの画面で実行される可能性がある複雑なアプリケーション作成に対処するために使用されます。この記事で事前 Android 3.0 デバイスでのフラグメントをサポートする方法と Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
 このセクションでシェイクスピアーと選択した各 play から見積もりの一覧を表示するアプリケーションを作成する方法を説明します。 1 つの場所で、UI コンポーネントを定義しましたがさまざまなフォーム ファクターでこれらを使用できるように、アプリはフラグメントを利用します。 たとえば、次のスクリーン ショットは、10"タブレット、およびスマート フォンで実行されているアプリケーションを表示します。
 
-[![タブレットおよび電話で実行されている例のアプリのスクリーン ショット](images/intro-screenshot-sml.png)](images/intro-screenshot.png)
+[![タブレットおよび電話で実行されている例のアプリのスクリーン ショット](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
 
 このセクションでは、次のトピックを取り上げます。
 
@@ -34,13 +33,11 @@ _Android 3.0 には、フラグメントが導入されました。フラグメ�
 
 - **Android のサポート パッケージを使用して** &ndash; Android のサポート パッケージを実装し、以前のバージョンの Android 上で実行できるように、アプリケーション内の活動に若干の変更は、します。
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>必要条件
 
 このチュートリアルでは、Xamarin.Android 4.0 以上が必要です。 必要があります、Android のサポート パッケージをインストールするフラグメントのドキュメントで説明したようです。
 
-<a name="Introduction" />
 
 ## <a name="introduction"></a>はじめに
 

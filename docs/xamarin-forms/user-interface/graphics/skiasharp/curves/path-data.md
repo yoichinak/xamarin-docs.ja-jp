@@ -4,14 +4,15 @@ description: "文字列形式を使用して、スケーラブル ベクター �
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: feb4c5f4c7e7ad3fc5f762786001be9aa57ae718
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="svg-path-data"></a>SVG Path Data
 
@@ -216,7 +217,7 @@ public class PathDataHelloPage : ContentPage
 
 パスが横モードで表示したときより適切なキャンバスを塗りつぶします。
 
-[![](path-data-images/pathdatahello-small.png "パス データこんにちはページのスクリーン ショットをトリプル")](path-data-images/pathdatahello-large.png "パス データこんにちはページの 3 倍のスクリーン ショット")
+[![](path-data-images/pathdatahello-small.png "パス データこんにちはページのスクリーン ショットをトリプル")](path-data-images/pathdatahello-large.png#lightbox "パス データこんにちはページの 3 倍のスクリーン ショット")
 
 **パス データ Cat**ページは似ています。 パスとペイントのオブジェクトが両方のフィールドとして定義されている、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラス。
 
@@ -287,7 +288,7 @@ public class PathDataCatPage : ContentPage
 
 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
 
-[![](path-data-images/pathdatacat-small.png "パス データ Cat ページのスクリーン ショットをトリプル")](path-data-images/pathdatacat-large.png "パス データ Cat ページのトリプル スクリーン ショット")
+[![](path-data-images/pathdatacat-small.png "パス データ Cat ページのスクリーン ショットをトリプル")](path-data-images/pathdatacat-large.png#lightbox "パス データ Cat ページのトリプル スクリーン ショット")
 
 通常、ときに、`SKPath`オブジェクトがフィールドとして定義されている場合、コンス トラクターまたは別の方法でパスの輪郭を定義する必要があります。 ただし、SVG パス データを使用する場合、フィールド定義の完全パスを指定できることを見てきました。
 
@@ -424,7 +425,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 ただし、秒針で行わ特別なれます。 クロックが更新されるため、16 ミリ秒ごと、`Millisecond`のプロパティ、`DateTime`不連続なジャンプで移動する 1 つではなく、手動で 2 つ目、スイープをアニメーション化する値を使用する可能性が秒を 2 番目のです。 このコードでは、スムーズに移動することはできません。 代わりに、Xamarin.Forms を使用して[ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/)と[ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/)アニメーションにイージング関数の移動の別の種類。 これらのイージング関数と秒針不自然になる方法 & #x 2014; に移動するには引いて、もう少しに移動し、少し過剰撮影目的地エフェクト残念ながらを再現できない静的これらスクリーン ショットでは前に。
 
-[![](path-data-images/prettyanalogclock-small.png "アナログ時計かなりページのスクリーン ショットをトリプル")](path-data-images/prettyanalogclock-large.png "アナログ時計かなりページのトリプル スクリーン ショット")
+[![](path-data-images/prettyanalogclock-small.png "アナログ時計かなりページのスクリーン ショットをトリプル")](path-data-images/prettyanalogclock-large.png#lightbox "アナログ時計かなりページのトリプル スクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク

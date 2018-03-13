@@ -7,11 +7,11 @@ ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63faa0c46abfb509a6834efa647f23ad0ed7f454
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>チュートリアル: JSON 要素を使用してユーザー インターフェイスを作成するには
 
@@ -22,7 +22,7 @@ MT.D は、JSON で宣言されているユーザー インターフェイスの
 
 MT.D には、さまざまな JSON を使用する場合、要素 API で使用できる機能がサポートされています。 たとえば、次のスクリーン ショットでは、アプリケーションが完全を使用して宣言 JSON:
 
-[ ![](json-element-walkthrough-images/01-load-from-file.png "たとえば、このスクリーン ショットで、アプリケーションが完全に宣言されている JSON を使用して")](json-element-walkthrough-images/01-load-from-file.png) [ ![ ](json-element-walkthrough-images/02-load-from-file-details.png "など、このスクリーン ショットで、アプリケーションが完全を使用して宣言JSON")](json-element-walkthrough-images/02-load-from-file-details.png)
+[![](json-element-walkthrough-images/01-load-from-file.png "たとえば、このスクリーン ショットで、アプリケーションが完全に宣言されている JSON を使用して")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ](json-element-walkthrough-images/01-load-from-file.png "など、このスクリーン ショットで、アプリケーションが完全を使用して宣言JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 みましょうから例を見直し、[要素 API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)チュートリアルでは、JSON を使用してタスクの詳細画面を追加する方法を示すです。
 
@@ -30,7 +30,7 @@ MT.D には、さまざまな JSON を使用する場合、要素 API で使用�
 
 このチュートリアルの例ではタスクを作成します。 最初の画面でタスクを選択すると、詳細画面が示すように表示されます。
 
- [ ![](json-element-walkthrough-images/03-task-list.png "ように詳細画面が表示される最初の画面でタスクを選択すると、")](json-element-walkthrough-images/03-task-list.png)
+ [![](json-element-walkthrough-images/03-task-list.png "ように詳細画面が表示される最初の画面でタスクを選択すると、")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>JSON を作成します。
 
@@ -166,7 +166,7 @@ _rootElement = new RootElement ("Json Example"){
 
 ファイルの取得および山によって解析の実行時に、次のスクリーン ショットに示すように、ユーザーが 2 つ目のビューに移動したときに D:
 
- [ ![](json-element-walkthrough-images/04-json-web-example.png "ファイルが取得され、山によって解析ユーザーが 2 つ目のビューに移動するときに D")](json-element-walkthrough-images/04-json-web-example.png)
+ [![](json-element-walkthrough-images/04-json-web-example.png "ファイルが取得され、山によって解析ユーザーが 2 つ目のビューに移動するときに D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
  <a name="Summary" />
 

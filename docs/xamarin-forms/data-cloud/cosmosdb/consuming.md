@@ -5,20 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 41e28366a856f5f0c12db6087117aebb4de72844
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5013b35828cecc2e38600839f306f3c0fc1366b9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Azure Cosmos DB ドキュメント データベースの使用
 
 _Azure Cosmos DB ドキュメント データベースは、JSON ドキュメントでは、シームレスなスケールとグローバルのレプリケーションを必要とするアプリケーションのデータベースの高速、高可用性、スケーラブルなサービスを提供する低待機時間のアクセスを提供する NoSQL データベースです。この記事では、Microsoft Azure DocumentDB クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法について説明します。_
 
-## <a name="overview"></a>概要
+> [!VIDEO https://youtube.com/embed/BoVH12igmbg]
+
+**Microsoft Azure Cosmos DB により、 [Xamarin 大学](https://university.xamarin.com/)**
 
 Azure サブスクリプションを使用して Azure Cosmos DB ドキュメント データベース アカウントをプロビジョニングすることができます。 各データベースのアカウントには、0 個以上のデータベースを持つことができます。 Azure Cosmos db ドキュメント データベースは、ドキュメントのコレクションと、ユーザーの論理コンテナーです。
 

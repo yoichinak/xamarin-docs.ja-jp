@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ef016d963f710ff54fc57b5e6e57181df030c8f6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView を実装します。
 
@@ -151,7 +151,7 @@ public partial class HybridWebViewPage : ContentPage
 1. 追加、`ExportRenderer`属性をカスタム レンダラー クラス Xamarin.Forms のカスタム コントロールを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
 
 > [!NOTE]
-> **注**: Xamarin.Forms のほとんどの要素は、各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラーが必要に各プラットフォームのプロジェクトでレンダリングするときに、[ビュー](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)要素。
+> Xamarin.Forms のほとんどの要素は各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラーが必要に各プラットフォームのプロジェクトでレンダリングするときに、[ビュー](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)要素。
 
 次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
 
@@ -316,7 +316,7 @@ namespace CustomRenderer.iOS
   - リソースが解放されます。
 
 > [!NOTE]
-> **注**:`WKWebView`クラスは iOS 8 以降でのみサポートされます。
+> `WKWebView`クラスは iOS 8 以降でのみサポートされます。
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Android では、カスタム レンダラーを作成します。
 
@@ -411,7 +411,7 @@ public class JSBridge : Java.Lang.Object
 クラスから派生しなければなりません`Java.Lang.Object`、使用する JavaScript に公開されるメソッドを装飾する必要がありますと、`[JavascriptInterface]`と`[Export]`属性。 したがって、 `invokeCSharpAction` JavaScript 関数が web ページに挿入されが実行されるが呼び出されます、`JSBridge.InvokeAction`メソッドで装飾されているため、`[JavascriptInterface]`と`[Export("invokeAction")]`属性。 さらに、`InvokeAction`メソッドを呼び出して、`HybridWebView.InvokeAction`なるには、ポップアップを表示する登録されているアクションが呼び出されたメソッド。
 
 > [!NOTE]
-> **注**: 使用するプロジェクト、`[Export]`属性への参照を含める必要があります`Mono.Android.Export`、またはコンパイラ エラーが発生します。
+> 使用するプロジェクト、`[Export]`属性への参照を含める必要があります`Mono.Android.Export`、またはコンパイラ エラーが発生します。
 
 なお、`JSBridge`クラスを保持、`WeakReference`を`HybridWebViewRenderer`クラスです。 これは、2 つのクラス間の循環参照を作成しないようにします。 詳細については、次を参照してください。[弱い参照](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx)msdn です。
 

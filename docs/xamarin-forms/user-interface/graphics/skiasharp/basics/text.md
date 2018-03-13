@@ -4,14 +4,15 @@ description: "SkiaSharp グラフィックスとテキストを統合するレ�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a8cfac8911b1a8a13a4b6f149d02cd2f2c78453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスを統合します。
 
@@ -113,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 次は、メソッドの残りの部分は、単純なです。 別の作成`SKPaint`枠線と呼び出しのオブジェクト`DrawRoundRect`2 回クリックします。 2 番目の呼び出しでは、別の 10 ピクセルずつ拡大長方形を使用します。 最初の呼び出しが 20 ピクセルの角の半径を指定します2 つ目はよう平行に見えるように 30 (ピクセル単位) の角の半径があります。
 
- [![](text-images/framedtext-small.png "テキストのフレームのページのスクリーン ショットをトリプル")](text-images/framedtext-large.png "フレーム化テキスト ページのトリプル スクリーン ショット")
+ [![](text-images/framedtext-small.png "テキストのフレームのページのスクリーン ショットをトリプル")](text-images/framedtext-large.png#lightbox "フレーム化テキスト ページのトリプル スクリーン ショット")
 
 テキストとフレームのサイズの増加を表示するには、携帯電話やシミュレーターを横方向を有効にすることができます。
 
@@ -121,7 +122,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 テキスト自体は、グラフィカル オプションを使用するようにより処理できます。 1 つの単純なオプションでは、通常の塗りつぶしの表示ではなく、テキスト文字のアウトラインを表示します。
 
-[![](text-images/outlinedtext-small.png "3 つのテキストの説明 ページのスクリーン ショット")](text-images/outlinedtext-large.png "3 つのテキストの説明 ページのスクリーン ショット")
+[![](text-images/outlinedtext-small.png "3 つのテキストの説明 ページのスクリーン ショット")](text-images/outlinedtext-large.png#lightbox "3 つのテキストの説明 ページのスクリーン ショット")
 
 これには、標準の変更を単純に`Style`のプロパティ、`SKPaint`オブジェクトの既定の設定から`SKPaintStyle.Fill`に`SKPaintStyle.Stroke`ストロークの幅を指定することで。 `PaintSurface`のハンドラー、**記載されているテキスト**ページは、その方法を示しています。
 

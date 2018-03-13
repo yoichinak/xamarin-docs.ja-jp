@@ -3,27 +3,27 @@ title: "アプリケーションの基礎"
 description: "中核となるアプリケーションの概念"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: 9cace37a9e762a49a90963591931793d30d05453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f6c0bb75327f0c14d314a0e7ad9d114fd17c2a57
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="application-fundamentals"></a>アプリケーションの基礎
 
 このセクションでは、いくつかの一般的な処理タスクまたは開発者は、Xamarin.iOS (旧称 MonoTouch) アプリケーションを開発するときに注意する必要がある概念にガイドを提供します。
 
-## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[アプリのトランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
+## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[アプリケーション トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
 
 この記事で iOS 9 アプリおよびこれが意味、Xamarin.iOS プロジェクト用のアプリのトランスポート セキュリティを適用するセキュリティの変更を導入する ATS 構成オプションに適用されます、必要な場合は、ATS の脱退する方法はについて説明します。 (明示的に許可した) 場合を除き、ATS が既定で有効になっているためには、すべてのセキュリティ保護されていないインターネット接続で iOS 9 のアプリで例外が発生します。
 
 
-## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)
+## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)
 
 バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、バック グラウンドでタスクを実行するアプリケーションのプロセスです。 このガイドは、バック グラウンドで iOS 処理の概要として機能します。
 

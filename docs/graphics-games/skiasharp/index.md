@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 03089e4760ebf19849cd4d34cafb7047d8915a4d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="2d-drawing"></a>2D の描画
 
 SkiaSharp は、2 次元グラフィックスを行うための強力な c# API を提供します。 電源が入って[Google の Skia ライブラリ](http://skia.org)、Google Chrome、Firefox および Android のグラフィック スタックの電源を同じライブラリです。
 
-[ ![](images/ide-sml.png "SkiaSharp 2D グラフィックスを行うための強力な c# API を提供します。")](images/ide.png)
+[![](images/ide-sml.png "SkiaSharp 2D グラフィックスを行うための強力な c# API を提供します。")](images/ide.png#lightbox)
 
 SkiaSharp は、ポータブル ライブラリ、されとして簡単に付属しています、[クロスプラット フォームの NuGet パッケージ](https://www.nuget.org/packages/SkiaSharp)、すぐに、次のプラットフォームをサポートして: macOS、Xamarin.Android、Xamarin.iOS、および Windows デスクトップです。
 
@@ -43,7 +43,7 @@ SkiaSharp とサンプルの主要な概念の概要については、画像、�
   * [パスの塗りつぶしの種類](~/xamarin-forms/user-interface/graphics/skiasharp/paths/fill-types.md)
   * [多角形やパラメーターの式](~/xamarin-forms/user-interface/graphics/skiasharp/paths/polylines.md)
   * [ドットとダッシュ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)
-  * [本の指の描画](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
+  * [指による描画](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
 - [変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/index.md)
   * [平行移動の変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)
   * [スケールの変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/scale.md)
@@ -55,12 +55,12 @@ SkiaSharp とサンプルの主要な概念の概要については、画像、�
   * [3D 回転](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)
 - [曲線とパス](~/xamarin-forms/user-interface/graphics/skiasharp/curves/index.md)
   * [円弧を描画する 3 つの方法](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
-  * [次の 3 つの種類のベジエ曲線](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
+  * [3 つの種類のベジエ曲線](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
   * [SVG Path Data](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
   * [パスおよび領域でクリッピング](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
   * [パスの効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
   * [パスとテキスト](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
-  * [パス情報は、列挙型](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
+  * [パス情報と列挙](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[プラットフォーム固有の注意事項](~/graphics-games/skiasharp/platform.md)
 

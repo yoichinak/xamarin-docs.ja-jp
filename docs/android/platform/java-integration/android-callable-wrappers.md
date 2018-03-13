@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: f618f7257ab082a2a5b0aa587b135ad169d15133
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5b74b1486d72176207d3ccd669c85e249d0706b6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-callable-wrappers"></a>Android の呼び出し可能ラッパー
 
@@ -22,7 +22,6 @@ Android のランタイムがマネージ コードを呼び出すたびに、an
 Android の呼び出し可能ラッパーがによって生成される、 **monodroid.exe**中のプログラム、[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md): が生成されるすべての種類 (直接または間接的に) を継承する[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)です。 
 
 
-<a name="ACW_Naming" />
 
 ## <a name="android-callable-wrapper-naming"></a>Android の呼び出し可能ラッパーの名前を付ける
 
@@ -74,7 +73,6 @@ namespace My {
 MD5SUM ベースについての命名は、Xamarin.Android 5.0 で導入されました。 属性の名前付けに関する詳細については、次を参照してください。 [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)です。 
 
 
-<a name="Implementing_Interfaces" />
 
 ## <a name="implementing-interfaces"></a>インターフェイスの実装
 
@@ -97,7 +95,6 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-<a name="Implementation_Details" />
 
 ## <a name="implementation-details"></a>実装の詳細
 

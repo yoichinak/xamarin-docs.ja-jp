@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 7937e80b13ca7e3ecec1dc179adade666bd90635
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9cbc756c5ba61d764404ffabd347232a25dbdc58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms で UrhoSharp の使用
 
@@ -33,7 +33,7 @@ UrhoSharp を使用する前に開発者がそのソリューションに UrhoSh
 UrhoSharp.Forms Nuget パッケージには、すべての UrhoSharp オブジェクトを作成するために必要なオブジェクトが含まれています。 UrhoSharp.Forms nuget パッケージに含まれる、 `UrhoSurface` xamarin.forms UrhoSharp のホストに使用されるクラスです。
 を開始するには、PCL の上を右クリックして**パッケージ**フォルダーと選択**パッケージを追加しています.**.検索語句を入力**UrhoSharp.Forms**を選択**Xamarin.Forms の UrhoSharp**をクリックし、**パッケージの追加**です。
 
-[ ![](urhosharp-images/add-package-sml.png "[追加] ダイアログのパッケージ")](urhosharp-images/add-package.png "パッケージ ダイアログの追加")
+[![](urhosharp-images/add-package-sml.png "[追加] ダイアログのパッケージ")](urhosharp-images/add-package.png#lightbox "パッケージ ダイアログの追加")
 
 UrhoSharp.Forms NuGet パッケージは、プロジェクトに追加されます。
 

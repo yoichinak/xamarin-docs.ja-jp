@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: de37fd1e014938edcacec187ceeed572e573b379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8376ce2ccff6732fa0c89d6030b9af36d29c5085
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-nsuseractivity"></a>NSUserActivity で検索
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 
 IOS 9 に新しい`NSUserActivity`(パブリックとプライベートの両方) をインデックス化および Spotlight 検索でおよび Safari から検索できます。 マークすることによって、`NSUserActivity`検索と追加のインデックス可能なメタデータとしてアクティビティを表示して、iOS デバイスの検索結果にします。
 
-[ ![](nsuseractivity-images/apphistory01.png "アプリの履歴の概要")](nsuseractivity-images/apphistory01.png)
+[![](nsuseractivity-images/apphistory01.png "アプリの履歴の概要")](nsuseractivity-images/apphistory01.png#lightbox)
 
 ユーザーは、アプリからのアクティビティに属する検索結果を選択する場合、アプリを起動して、によって記述されたアクティビティ、`NSUserActivity`再起動し、ユーザーに表示されます。
 
@@ -58,7 +58,7 @@ Apple では、競合を避けるためのアクティビティ型識別子の�
 
 この動作をサポートするために必要なアクティビティの型識別子を作成するには、編集、 **Info.plist**ファイルに切り替えると、**ソース**ビュー。 追加、`NSUserActivityTypes`キーし、次の形式の識別子を作成します。
 
-[ ![](nsuseractivity-images/type01.png "NSUserActivityTypes キーと plist エディターで必要な識別子")](nsuseractivity-images/type01.png)
+[![](nsuseractivity-images/type01.png "NSUserActivityTypes キーと plist エディターで必要な識別子")](nsuseractivity-images/type01.png#lightbox)
 
 上記の例で新しい検索の利用状況のアクティビティ型識別子を 1 つを作成しました (`com.xamarin.platform`)。 内容を置き換える独自のアプリを作成するときに、`NSUserActivityTypes`アプリのアクティビティに固有のアクティビティ型の識別子を持つ配列をサポートしています。
 
@@ -87,7 +87,7 @@ activity.BecomeCurrent();
 
 追加でしたさらに詳細を設定して、`ContentAttributeSet`のプロパティ、`NSUserActivity`次のようにします。
 
-[ ![](nsuseractivity-images/apphistory02.png "追加の検索の詳細の概要")](nsuseractivity-images/apphistory02.png)
+[![](nsuseractivity-images/apphistory02.png "追加の検索の詳細の概要")](nsuseractivity-images/apphistory02.png#lightbox)
 
 使用して、`ContentAttributeSet`エンドユーザーがこれらと対話するように仕向ける多機能な検索結果を作成することができます。
 
@@ -114,7 +114,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 ハンドオフ要求に応答するために使用同じメソッドのオーバーライドであることに注意してください。 今すぐ、ユーザーは、Spotlight 検索で結果で、アプリからのリンクをクリックすると、アプリが前面に (まだ実行されていない場合、開始) したりするコンテンツ、ナビゲーションやそのリンクによって表される機能が表示されます。
 
-[ ![](nsuseractivity-images/apphistory03.png "検索からの以前の状態を復元します。")](nsuseractivity-images/apphistory03.png)
+[![](nsuseractivity-images/apphistory03.png "検索からの以前の状態を復元します。")](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing" />
 

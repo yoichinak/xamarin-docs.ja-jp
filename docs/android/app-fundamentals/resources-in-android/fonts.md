@@ -2,20 +2,19 @@
 title: "フォント"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA$
+ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 01/30/2018
-ms.openlocfilehash: 3b7c45a50ffb0748b5f63edfd444cb02af3fdc67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 7cde19a153585a6f9739aa02f3ea69dc4f09be58
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fonts"></a>フォント
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -60,7 +59,6 @@ Android のサポート ライブラリ v26 は、API レベル 26 にフォン�
 
 このガイドは、Android のリソースとしてフォントを使用する方法について説明し、その後、実行時にフォントをダウンロードする方法について説明します。
 
-<a name="fonts_as_a_resource" />
 
 ## <a name="fonts-as-a-resource"></a>フォント リソースとして
 
@@ -139,7 +137,6 @@ Android APK にフォントをパッケージ化とは、アプリケーショ�
     />
 ```
 
-<a name="programatically_assigning_fonts" />
 
 ### <a name="programmatically-assigning-fonts"></a>プログラムでフォントを割り当てる
 
@@ -158,7 +155,6 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-<a name="downloading_fonts" />
 
 ## <a name="downloading-fonts"></a>フォントをダウンロードします。
 
@@ -202,7 +198,6 @@ Android 8.0 では、2 つの方法でダウンロードのフォントをサポ
 
 フォントを定義すると、に関する情報を提供する必要あります、_フォント証明書_ダウンロードに含まれています。
 
-<a name="font_certificates" />
 
 ### <a name="font-certificates"></a>証明書のフォント
 
@@ -232,7 +227,6 @@ Android 8.0 では、2 つの方法でダウンロードのフォントをサポ
 
 これらのリソース ファイルの場所で、アプリは、フォントをダウンロードできます。
 
-<a name="downloadable_font_resource_declaration" />
 
 ### <a name="declaring-downloadable-fonts-as-resources"></a>ダウンロード可能なフォントをリソースとして宣言します。
 
@@ -253,7 +247,6 @@ Android 8.0 では、2 つの方法でダウンロードのフォントをサポ
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
 
-<a name="programatically_downloading_fonts" />
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>フォントの Api を使用したフォントをダウンロードします。
 
@@ -326,10 +319,6 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
     }
 }
 
-
-/// <summary>
-/// EventArg when a font has been downloaded. 
-/// </summary>
 public class FontDownloadEventArg : EventArgs
 {
     public FontDownloadEventArg(Android.Graphics.Typeface typeface)
@@ -360,7 +349,6 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

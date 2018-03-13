@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1e3139eb4c94264c91307f6f8a69b183f3bf7fa6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4917eafff020bb0e2d14a27d3c1a44d1d4087d7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-options"></a>レイアウト オプション
 
@@ -25,11 +25,11 @@ ms.lasthandoff: 02/27/2018
 
 ユーザーがデバイスを回転するときに、向きの変更など、ウィンドウのサイズと、システムは自動的にサイズを変更の自動規則に従ってそのウィンドウ内のビュー。 これらの規則を設定することができます (C#) を使用して、`AutoresizingMask`のプロパティ、`UIView`または、**プロパティ パッド**デザイナー、下図のように、iOS の。
 
- [ ![](layout-options-images/image41.png "Visual Studio for Mac デザイナー")](layout-options-images/image41.png)
+ [![](layout-options-images/image41.png "Visual Studio for Mac デザイナー")](layout-options-images/image41.png#lightbox)
 
 これにより、コントロールのサイズと場所を手動で指定する、コントロールが選択されている場合に選択するだけでなく**自動**動作します。 次のスクリーン ショットに示すようにおおよび使用できます、springs 脚柱自動コントロール内の親を選択したビューのリレーションシップを定義します。
 
- [ ![](layout-options-images/image42.png "Visual Studio for Mac デザイナー")](layout-options-images/image42.png)
+ [![](layout-options-images/image42.png "Visual Studio for Mac デザイナー")](layout-options-images/image42.png#lightbox)
 
 調整する、 *spring*親ビューの高さまたは幅に基づくサイズを変更するビューが発生されます。 調整、*見せつけて*自体とその特定のエッジに、親ビューの間の距離が一定の管理ビューを作成します。
 
@@ -43,7 +43,7 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 
 自動設定をテストするには、有効にするさまざまな**サポートされているデバイスの向き**プロジェクトのオプション で。
 
- [ ![](layout-options-images/image43a.png "自動設定")](layout-options-images/image43a.png)
+ [![](layout-options-images/image43a.png "自動設定")](layout-options-images/image43a.png#lightbox)
 
 分離コードで次のコードは、水平方向にサイズを変更する 2 つのテキスト コントロールを使用できます。
 
@@ -56,11 +56,11 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 デザイナーを使用してコントロールを調整することもできます。 以下が示すように、脚柱を選択すると、ビューの一番下から切り抜かれてなく右揃えを維持するイメージが発生します。
 
- [ ![](layout-options-images/autoresize.png "オートローテーション")](layout-options-images/autoresize.png)
+ [![](layout-options-images/autoresize.png "オートローテーション")](layout-options-images/autoresize.png#lightbox)
 
 これらのスクリーン ショットは、コントロールのサイズを変更または画面を回転したときに再配置を示します。
 
- [ ![](layout-options-images/image44a.png "オートローテーション")](layout-options-images/image44a.png)
+ [![](layout-options-images/image44a.png "オートローテーション")](layout-options-images/image44a.png#lightbox)
 
 テキスト ビューとテキスト フィールドの両方にストレッチすると、同じのまま維持いて理由のための余白を右、`FlexibleWidth`設定します。 イメージに存在、上と左余白柔軟なので、保存、下と右余白 – 画面を回転したときにビューで、イメージを維持することを意味します。 複雑なレイアウトには、これらの設定の組み合わせすべて表示されているコントロールのユーザー インターフェイスの一貫性を維持して、ビューの境界を変更 (回転やその他のサイズ変更イベント) のためと重複しないようにするコントロールを防ぐために通常必要とします。
 

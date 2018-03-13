@@ -7,18 +7,17 @@ ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 91e27fcaef0ef1b262eceecd4d3c71bac34e328d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="java-bindings-metadata"></a>Java バインディング メタデータ
 
 _Xamarin.Android で c# コードでは、Java ネイティブ インターフェイス (JNI) で指定されている低レベルの詳細を抽象化するメカニズムのバインディングを介して Java ライブラリを呼び出します。Xamarin.Android は、これらのバインディングを生成するツールを提供します。このツールは、により、プロシージャは名前空間、およびメンバーの名前を変更するなどのメタデータを使用してバインディングを作成する方法、開発者のコントロールを付与します。このドキュメントのメタデータの動作方法について説明します、属性をそのメタデータをまとめたものをサポートしているし、このメタデータの変更によるバインドの問題を解決する方法について説明します。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -74,7 +73,6 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 説明に進むことができます**Metadata.xml**で詳しく説明します。
 
-<a name="Metadata.xml_Transform_File" />
 
 ## <a name="metadataxml-transform-file"></a>Metadata.xml 変換ファイル
 
@@ -114,7 +112,6 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 -   `parameter` &ndash; メソッドのパラメーターを識別します。 例。 `/parameter[@name='p0']`
 
 
-<a name="ADDING_TYPES" />
 
 ### <a name="adding-types"></a>型の追加
 
@@ -129,7 +126,6 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 </add-node>
 ```
 
-<a name="REMOVING_TYPES" />
 
 ### <a name="removing-types"></a>型の削除
 
@@ -138,8 +134,6 @@ Java の型を無視してバインドできません Xamarin.Android バイン�
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
 ```
-
-<a name="Renaming_Members" />
 
 ### <a name="renaming-members"></a>メンバーの名前を変更します。
 
@@ -169,6 +163,8 @@ public class NewName : Java.Lang.Object { ... }
     name="managedName">NewName</attr>
 ```
 
+<a name="Renaming_EventArg_Wrapper_Classes" />
+
 #### <a name="renaming-eventarg-wrapper-classes"></a>名前を変更する`EventArg`ラッパー クラス
 
 Xamarin.Android バインディング ジェネレーターを識別、`onXXX`の set アクセス操作子メソッド、_リスナー型_、c# イベントと`EventArgs`サブクラスが生成されます .NET をサポートするには、Java ベースのリスナーの API を flavouredパターン。 たとえば、次の Java クラスとメソッドについて考えてみます。
@@ -193,7 +189,6 @@ NavigationManager.2DSignNextManueverEventArgs
 ```
 
  
-<a name="Supported_Attributes" />
 
 ## <a name="supported-attributes"></a>サポートされる属性
 
@@ -341,7 +336,6 @@ Java クラスを次に移動しました`SKRealReachSettings`と呼ばれる c#
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

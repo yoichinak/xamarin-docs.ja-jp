@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5db53bef0f62937f7be0a5e5fb6f64f1bf3ca007
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b6fad9eadbff272f86f9e426e3f6eb5d48847127
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>ITunes Connect で、tvOS アプリを構成します。
 
@@ -39,11 +39,11 @@ Apple TV の App Store でリリースされる新しいアプリを作成する
 
 すべての上記の手順を完了には、アプリの iTunes Connect レコードと、左側にあるサイドバーを使用して、tvOS のサポートを追加するを選択してを開きます。
 
-[ ![](itunes-connect-images/connect01.png "左側にあるサイド バーを使用して、tvOS のサポートを追加します。")](itunes-connect-images/connect01.png)
+[![](itunes-connect-images/connect01.png "左側にあるサイド バーを使用して、tvOS のサポートを追加します。")](itunes-connect-images/connect01.png#lightbox)
 
 TvOS 固有の情報画面れます特定 iTunes Connect レコードの使用。
 
-[ ![](itunes-connect-images/connect02.png "TvOS 固有の情報画面")](itunes-connect-images/connect02.png)
+[![](itunes-connect-images/connect02.png "TvOS 固有の情報画面")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -51,7 +51,7 @@ TvOS 固有の情報画面れます特定 iTunes Connect レコードの使用�
 
 左側にあるサイドバーから選択**1.0 の送信準備**tvOS アプリ セクションの下。
 
-[ ![](itunes-connect-images/connect03.png "tvOS バージョン情報")](itunes-connect-images/connect03.png)
+[![](itunes-connect-images/connect03.png "tvOS バージョン情報")](itunes-connect-images/connect03.png#lightbox)
 
 この画面で、次の情報を提供します。
 
@@ -63,7 +63,7 @@ TvOS 固有の情報画面れます特定 iTunes Connect レコードの使用�
 
 クリックして、必要な情報を入力すると、**保存**変更を保存する画面の右上隅のボタン。
 
-[ ![](itunes-connect-images/connect04.png "tvOS バージョン情報の送信準備完了")](itunes-connect-images/connect04.png)
+[![](itunes-connect-images/connect04.png "tvOS バージョン情報の送信準備完了")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -71,7 +71,7 @@ TvOS 固有の情報画面れます特定 iTunes Connect レコードの使用�
 
 最後に、Apple TV App Store レビューのために Xamarin.tvOS アプリを送信する準備ができたら、アプリの iTunes Connect レコードに戻るし をクリックして、**レビューするために送信**画面の右上隅のボタンをクリックします。
 
-[ ![](itunes-connect-images/connect05.png "確認を送信します。")](itunes-connect-images/connect05.png)
+[![](itunes-connect-images/connect05.png "確認を送信します。")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 234bd79754ae7f328d3207757156089441fc588c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0d418786a7364946e4e20100157fa0907b66deeb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-view"></a>Web ビュー
 
@@ -96,7 +96,7 @@ protected override void OnCreate (Bundle bundle)
 
 アプリケーションをビルドし、実行します。 次のスクリーン ショットに見られるものとして、単純な web ページ ビューアー アプリが表示されます。
 
-[![アプリの WebView の表示の例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png)
+[![アプリの WebView の表示の例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
 処理するために、**戻る**キーを押すのボタンを次の追加ステートメントを使用します。
 
@@ -122,7 +122,7 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 
 アプリケーションをもう一度実行します。 リンクに従い、ページの履歴を後方に移動することができます。
 
-[![アクションで [戻る] ボタンの例のスクリーン ショット](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png)
+[![アクションで [戻る] ボタンの例のスクリーン ショット](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 
 *このページの部分は変更を作成し、Android のオープン ソース プロジェクトで共有しての条項に従って使用作業に基づく、*

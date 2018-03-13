@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: aaa4c93eda9edb0eb5d568b3470c02352bdb7467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: df6a0afe18b6929f8e03ce4d9bf35198034508bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-value-converters"></a>バインディングの値コンバーター
 
@@ -95,7 +95,7 @@ public class IntToBoolConverter : IValueConverter
 
 **を有効にするボタン** ページでは、共通に必要な場合を示しています、`Button`ユーザーに入力したテキストに基づいて操作を実行、`Entry`ビュー。 何が型指定されている場合、 `Entry`、`Button`無効にする必要があります。 各`Button`上のデータ バインドを含むその`IsEnabled`プロパティです。 データ バインディング ソースが、`Length`のプロパティ、`Text`の対応するプロパティ`Entry`です。 場合は、その`Length`プロパティが 0 の場合、値コンバーターを返します`true`と`Button`が有効になっています。
 
-[![ボタンを有効にする](converters-images/enablebuttons-small.png "ボタンを有効にする")](converters-images/enablebuttons-large.png "ボタンを有効にします。")
+[![ボタンを有効にする](converters-images/enablebuttons-small.png "ボタンを有効にする")](converters-images/enablebuttons-large.png#lightbox "ボタンを有効にします。")
 
 注意して、`Text`プロパティにそれぞれ`Entry`は空の文字列に初期化します。 `Text`プロパティは`null`既定では、データ バインドは機能しないという点です。
 
@@ -236,7 +236,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 最後の 3 つ`Switch`と`Label`ペア、汎用引数に設定されている`Style`、全体と`Style`の値のオブジェクトが提供される`TrueObject`と`FalseObject`です。 これらのオーバーライドの暗黙的なスタイル`Label`リソース ディクショナリで設定、したがってそのスタイルのプロパティに明示的に割り当て、`Label`です。 切り替え、 `Switch` 、対応すると、`Label`変更を反映するように。
 
-[![インジケーターを切り替える](converters-images/switchindicators-small.png "インジケーターを切り替える")](converters-images/switchindicators-large.png "インジケーターを切り替える")
+[![インジケーターを切り替える](converters-images/switchindicators-small.png "インジケーターを切り替える")](converters-images/switchindicators-large.png#lightbox "インジケーターを切り替える")
 
 使用することも[ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md)他のビューに基づくユーザー インターフェイスで同じ変更を実装します。
 
@@ -460,7 +460,7 @@ binding.ConverterParameter = 255;
 
 結果を次に示します。
 
-[![RGB 色セレクター](converters-images/rgbcolorselector-small.png "RGB カラー セレクター")](converters-images/rgbcolorselector-large.png "RGB 色セレクター")
+[![RGB 色セレクター](converters-images/rgbcolorselector-small.png "RGB カラー セレクター")](converters-images/rgbcolorselector-large.png#lightbox "RGB 色セレクター")
 
 
 ## <a name="related-links"></a>関連リンク

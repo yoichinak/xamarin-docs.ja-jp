@@ -3,16 +3,16 @@ title: "プロアクティブなご提案"
 description: "ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、watchOS 3 アプリケーションではドライブ エンゲージメントをプロアクティブな提案を使用する方法を説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ca2476eef120c7d86b939934ec4b286e871d6a78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f9711cc39662a7e77d926551a0d2b49363d8ec4d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="proactive-suggestions"></a>プロアクティブなご提案
 
@@ -61,7 +61,7 @@ Xamarin.iOS アプリには、サポートは事前対応型の候補を追加�
 
 、前に述べたよう`NSUserActivity`、システムが画面上で、ユーザーが現在処理してどのような情報を理解するのに役立ちます。 `NSUserActivity` 軽量状態は、アプリ間を移動できるように、ユーザーのアクティビティをキャプチャするためのメカニズムをキャッシュします。 たとえば、レストランのアプリを確認します。
 
-[ ![](proactive-suggestions-images/activity02.png "レストラン アプリ")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "レストラン アプリ")](proactive-suggestions-images/activity02.png#lightbox)
 
 次の相互作用: と
 
@@ -71,7 +71,7 @@ Xamarin.iOS アプリには、サポートは事前対応型の候補を追加�
 
 最後の画面で詳しく見てをみましょう。
 
-[ ![](proactive-suggestions-images/activity03.png "NSUserActivity ペイロード")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "NSUserActivity ペイロード")](proactive-suggestions-images/activity03.png#lightbox)
 
 ここで、アプリを作成する、`NSUserActivity`情報と共に、状態を後で再作成に値が表示されているとします。 アプリが、この場所の名前やアドレスなど一部のメタデータにはとも含まれます。 このアクティビティを作成すると、アプリに iOS のユーザーの現在の状態を表すことを知ることができます。
 

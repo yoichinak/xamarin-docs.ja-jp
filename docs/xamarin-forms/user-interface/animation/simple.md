@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d1d91804c11d2e944bb618fadb3d659b512c5905
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="simple-animations"></a>単純なアニメーション
 
@@ -130,7 +130,7 @@ await image.TranslateTo (-100, -100, 1000);
 ![](simple-images/translateto.png "翻訳のアニメーション")
 
 > [!NOTE]
-> **注**: 要素が最初に画面外レイアウト、画面上に変換し、場合は、翻訳した後、要素の入力を画面をオフのレイアウトは、ユーザー操作できません。 そのため、ビューを最後の位置にレイアウトする必要があり、実行される変換し、必要なことをお勧めします。
+> 要素が最初に画面外レイアウト、画面上に変換し、場合は、翻訳した後、要素の入力レイアウト画面外でき、ユーザーが対話ことはできません。 そのため、ビューを最後の位置にレイアウトする必要があり、実行される変換し、必要なことをお勧めします。
 
 ### <a name="fading"></a>フェード
 

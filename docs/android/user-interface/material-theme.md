@@ -7,18 +7,14 @@ ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: ba73e03d6bdeea64918e0232b2188bf8e3b65084
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 479abf7fef695be156d4447592bc59dceabe3f03
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="material-theme"></a>材料テーマ
-
-<a name="overview" />
-
-## <a name="overview"></a>概要
 
 *材料テーマ*のビューと Android 5.0 (ロリポップ) で始まるアクティビティの外観を決定するユーザー インターフェイスのスタイルがします。 材料テーマは、およびアプリケーション、システム UI で使用するよう Android 5.0 に組み込まれています。 材料テーマは、ユーザーは [設定] メニューから動的に選択できるシステム全体の外観のオプションの意味で「テーマ」ではありません。 代わりに、マテリアル テーマ見なすことができますのアプリの外観をカスタマイズに使用できる関連する組み込みの基本スタイルのセットとして。
 
@@ -32,7 +28,7 @@ Android には、次の 3 つの素材テーマ フレーバーが用意され�
 
 マテリアルのテーマの種類の例についてはここに表示されます。
 
-[![ダーク テーマ、ライト テーマと暗い操作バー テーマの例のスクリーン ショット](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png)
+[![ダーク テーマ、ライト テーマと暗い操作バー テーマの例のスクリーン ショット](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
 
 一部またはすべての色の属性をオーバーライドする独自のテーマを作成する資料テーマから派生できます。 派生するテーマを作成するなど、 `Theme.Material.Light`、組織のブランドの色を一致するようにアプリ バーの色をオーバーライドしますが、します。 個々 のビューのスタイルを設定することもできます。スタイルを作成するなど、 [CardView](~/android/user-interface/controls/card-view.md)角が丸いよりと暗い背景色を使用します。
 
@@ -40,7 +36,6 @@ Android には、次の 3 つの素材テーマ フレーバーが用意され�
 
 マテリアル テーマがサポートされているは、Android 5.0 でのみと後ために使用できません (または資料テーマから派生したカスタムのテーマ) テーマにアプリ Android の以前のバージョンで実行されています。 ただし、Android 5.0 デバイスの素材のテーマを使用し、適切に代替以前のテーマを古いバージョンの Android での実行時にアプリを構成することができます (を参照してください、[互換性](#compatibility)詳細については、この記事のセクション)。
 
-<a name="requirements" />
 
 ## <a name="requirements"></a>必要条件
 
@@ -54,13 +49,11 @@ Xamarin ベースのアプリでの Android 5.0 マテリアルのテーマの�
 
 Android 5.0 アプリ プロジェクトを構成する方法については、次を参照してください。[設定を Android 5.0 プロジェクト](~/android/platform/lollipop.md)です。
 
-<a name="builtinthemes" />
 
 ## <a name="using-the-built-in-themes"></a>組み込みのテーマの使用
 
 マテリアルのテーマを使用する最も簡単な方法では、カスタマイズを行わなくても組み込みテーマを使用するアプリを構成します。 アプリは既定値に明示的にテーマを構成しない場合は、 `Theme.Material` (濃色のテーマ)。 アプリにのみ 1 つのアクティビティがある場合は、アプリケーション レベルのテーマを構成できます。 アプリに複数のアクティビティがある場合は、ように、すべての活動間で、同じテーマを使用したり、異なるアクティビティにさまざまなテーマを割り当てることができます、アプリケーション レベルでテーマを構成することができます。 次のセクションでは、アプリ レベルで、アクティビティ レベルでは、テーマを構成する方法を説明します。
 
-<a name="themeanapp" />
 
 ### <a name="theming-an-application"></a>テーマのアプリケーション
 
@@ -88,7 +81,6 @@ Android 5.0 アプリ プロジェクトを構成する方法については、�
 
 アプリケーションのテーマに設定すると`@android:style/Theme.Material.Light`、すべての活動で*MyApp*を使用して表示されます`Theme.Material.Light`です。
 
-<a name="activitytheme" />
 
 ### <a name="theming-an-activity"></a>アクティビティのテーマ
 
@@ -125,11 +117,10 @@ Android 5.0 アプリ プロジェクトを構成する方法については、�
 
 これらの画面領域は、次の図にラベルが付けられます。
 
-[ ![属性とその関連する画面領域の図](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png)
+[![属性とその関連する画面領域の図](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 既定では、`statusBarColor`の値に設定されている`colorPrimaryDark`です。 設定することができます`statusBarColor`を純色設定することもできます`@android:color/transparent`ステータス バーを透明にします。 ナビゲーション バーも使用できる透過的設定`navigationBarColor`に`@android:color/transparent`です。
 
-<a name="customapptheme" />
 
 ### <a name="creating-a-custom-app-theme"></a>カスタム アプリのテーマを作成します。
 
@@ -151,7 +142,7 @@ Android 5.0 アプリ プロジェクトを構成する方法については、�
 
 -   作成、**リソース/値の v21**フォルダーです。 このフォルダーに作成、 **styles.xml**ファイル。
 
-    [ ![Styles.xml リソース/値-21.xml フォルダー内の場所](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png)
+    [![Styles.xml リソース/値-21.xml フォルダー内の場所](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
     注意してください**リソース/値の v21**は Android 5.0 に固有の&ndash;Android の古いバージョンがこのフォルダー内のファイルを読み取れません。
 
@@ -169,7 +160,7 @@ Android 5.0 アプリ プロジェクトを構成する方法については、�
 
 -   この時点で、アプリは*MyCustomTheme* 、株式が表示されます`Theme.Material.Light`テーマのカスタマイズなし。
 
-    [ ![カスタム テーマの外観のカスタマイズの前に](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png)
+    [![カスタム テーマの外観のカスタマイズの前に](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
 -   色のカスタマイズを追加**styles.xml**を変更するレイアウト属性の色を定義することで。 たとえば、アプリ バーの色を変更する`my_blue`を UI コントロールの色を変更したり`my_purple`に色のオーバーライドを追加**styles.xml**で構成されている色リソースを参照する**colors.xml**:
 
@@ -188,7 +179,7 @@ Android 5.0 アプリ プロジェクトを構成する方法については、�
 
 これらの場所の変更のアプリを使用*MyCustomTheme*でアプリ バーの色が表示されます`my_blue`と UI コントロールに`my_purple`が使用して、`Theme.Material.Light`配色それ以外の場所。
 
-[ ![カスタム テーマの外観のカスタマイズした後](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png)
+[![カスタム テーマの外観のカスタマイズした後](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
 この例では*MyCustomTheme*から色をそのまま利用`Theme.Material.Light`の背景色、ステータス バー、およびテキストの色がの色を変更する、アプリ バー `my_blue` するラジオボタンの色を設定および`my_purple`.
 
@@ -225,11 +216,10 @@ Android 5.0 では、個々 のビューのスタイルを設定することで�
 
 次のスクリーン ショットは、既定値の例を示します`CardView`(表示される、左側) と比較して、`CardView`カスタム スタイルが設定されている`CardView.MyBlue`テーマ (右側に表示)。
 
-[ ![既定 CardView とカスタム CardView の例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png)
+[![既定 CardView とカスタム CardView の例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
 この例では、カスタム`CardView`背景色で表示される`my_blue`と 18dp 角の半径。
 
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>互換性
 
@@ -287,7 +277,7 @@ Android 5.0 では、個々 のビューのスタイルを設定することで�
 - [ThemeSwitcher (サンプル)](https://developer.xamarin.com/samples/monodroid/android5.0/ThemeSwitcher)
 - [ロリポップの概要](~/android/platform/lollipop.md)
 - [CardView](~/android/user-interface/controls/card-view.md)
-- [代替のリソース](~/android/app-fundamentals/resources-in-android/alternate-resources.md)
+- [代替リソース](~/android/app-fundamentals/resources-in-android/alternate-resources.md)
 - [Android L Developer Preview](http://developer.android.com/preview/index.html)
 - [素材のデザイン](http://developer.android.com/preview/material/index.html)
 - [素材のデザインの原則](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad621fa093379d5ad2dd81c81ce42dcaaa9bd923
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d915191e24b5238d5165237f6ede74635b31e08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
 `RelativeLayout` 位置とサイズ ビュー レイアウトまたは兄弟のビューのプロパティに対して相対的に使用されます。 異なり`AbsoluteLayout`、`RelativeLayout`移動アンカーの概念はありませんし、下または右のエッジのレイアウトの基準とした要素の配置機能はありません。 `RelativeLayout` 独自の境界の外部での位置の要素をサポートします。
 
-[ ![](relative-layout-images/layouts-sml.png "Xamarin.Forms レイアウト")](relative-layout-images/layouts.png "Xamarin.Forms レイアウト")
+[![](relative-layout-images/layouts-sml.png "Xamarin.Forms レイアウト")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
 
 ## <a name="purpose"></a>目的
 
@@ -76,7 +76,7 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
 - ボックスの`y`-100、親の高さの半分と座標を定義します。
 
 > [!NOTE]
-> **注**: 制約が定義されているため、c# XAML で指定できるよりも複雑なレイアウトを作成することができます。
+> 制約が定義されているため、c# XAML で指定できるよりも複雑なレイアウトを作成することができます。
 
 制約として上記の例の両方を定義する`RelativeToParent`&ndash;その値は、親要素に対する相対パスは、します。 別のビューに対して相対的に制約を定義することもできます。 これによりより直観的 (開発者) にレイアウトによりし、レイアウト コードの意図をより容易に明らかに行うことができます。
 

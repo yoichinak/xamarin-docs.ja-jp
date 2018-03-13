@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 0ab1daa9ce76900067f374cda58040354688c7be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e77c5653171ec6c69608858805de28843fc0db56
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="shared-projects"></a>共有プロジェクト
 
@@ -25,20 +25,8 @@ _共有プロジェクトでは、別のアプリケーション プロジェク
 を使用した過去ファイル リンク プロジェクト間でコードを共有する場合、共有プロジェクトは IDE サポートが大幅に向上が、同様の方法で動作します。
 
 
-# <a name="requirements"></a>必要条件
 
-Xamarin Studio 5 および Visual Studio 2013 Update 2 (注を参照してください) のサポートが追加されたプロジェクトを共有します。
-
-> [!IMPORTANT]
->  Microsoft では、この新しいプロジェクトの種類をリリースしました。**共有プロジェクト ([Visual Studio 拡張機能のプレビューをダウンロードして](http://visualstudiogallery.msdn.microsoft.com/315c13a7-2787-4f57-bdf7-adae6ed54450))** - Visual Studio 2013 Update 2 (April 2014)。 Microsoft を参照してください[Windows Phone 8.1](http://blogs.msdn.com/b/visualstudio/archive/2014/04/08/building-windows-phone-8-1-apps-in-html.aspx)と[Microsoft ストア](http://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#CrossPlatform)これらのプラットフォームでの動作についての詳細についてはドキュメントです。
-
-
-
-
- <a name="Walkthrough" />
-
-
-# <a name="what-is-a-shared-project"></a>共有プロジェクトとは何ですか。
+## <a name="what-is-a-shared-project"></a>共有プロジェクトとは何ですか。
 
 その他のほとんどのプロジェクトの種類とは異なり、共有プロジェクトが出力 (DLL 形式)、それを参照する各プロジェクトにコードをコンパイルする代わりにします。 次の図に示す - 概念的には、共有プロジェクトの内容全体は各参照元のプロジェクトに「コピー」と、それらの一部のようにコンパイルします。
 
@@ -54,9 +42,7 @@ Android アプリケーション プロジェクトが他の Android アプリ�
 
 
 
-<a name="Xamarin_Studio_Walkthrough" />
-
-# <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac のチュートリアル
+## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac のチュートリアル
 
 
 このセクションで作成および共有使用してプロジェクトを Visual Studio for mac を使用する方法について説明します。 参照してくださいに[共有プロジェクトの使用例](#Shared_Project_Example)コード例全体についてのセクションでします。
@@ -109,15 +95,13 @@ Android アプリケーション プロジェクトが他の Android アプリ�
 
 
 
-<a name="Visual_Studio_Walkthrough" />
-
-# <a name="visual-studio-walkthrough"></a>Visual Studio チュートリアル
+## <a name="visual-studio-walkthrough"></a>Visual Studio チュートリアル
 
 
 このセクションで作成して Visual Studio を使用して、共有プロジェクトを使用する方法について説明します。 参照してくださいに[共有プロジェクト例](#Shared_Project_Example)完全な実装についてのセクションです。
 
 
-## <a name="creating-a-shared-project"></a>共有プロジェクトを作成します。
+### <a name="creating-a-shared-project"></a>共有プロジェクトを作成します。
 
 
 移動する、新しい共有プロジェクトを作成する**ファイル > 新しいソリューションをしています.**プロジェクトおよびソリューションの名前を選択します。
@@ -145,7 +129,7 @@ Android アプリケーション プロジェクトが他の Android アプリ�
 共有プロジェクトが別のライブラリまたはアプリケーションによって参照されているとは、ソリューションをビルドし、コードですべてのエラーを表示します。 によって、共有プロジェクトを参照するときに_2 またはそれ以上_先となるプロジェクトが現在のコード ファイルを参照してソース コード エディターの左上の他のプロジェクトでは、メニューが表示されます。
 
 
-## <a name="shared-project-properties"></a>共有プロジェクトのプロパティ
+### <a name="shared-project-properties"></a>共有プロジェクトのプロパティ
 
 
 選択すると、共有プロジェクトがある設定は少なくなってその他のプロジェクトの種類よりプロパティ パネルで。 (自分で) 共有プロジェクトはコンパイルされていないために、出力、またはコンパイラ オプション、プロジェクトの構成、アセンブリの署名、またはカスタムのコマンドを設定できません。 共有プロジェクトのコードは、すべてが参照しているからこれらの値を効果的に継承します。
@@ -161,10 +145,9 @@ Android アプリケーション プロジェクトが他の Android アプリ�
 
 -----
 
- <a name="Shared_Project_Example" />
+<a name="Shared_Project_Example"/>
 
-
-# <a name="shared-project-example"></a>共有プロジェクトの使用例
+## <a name="shared-project-example"></a>共有プロジェクトの使用例
 
 [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)例の両方、iOS、Android、Windows Phone アプリケーションで使用される一般的なコードを含むプロジェクトの共有を使用します。 両方の`SQLite.cs`と`TaskRepository.cs`ソース コード ファイルを使えるコンパイラ ディレクティブ (たとえばです。 `#if __ANDROID__`) を参照するアプリケーションの各別の出力を生成します。
 
@@ -186,10 +169,9 @@ Windows Phone プロジェクトから誘導できます Visual Studio 内で、
 
  ![](shared-projects-images/example.png "iOS、Android、Windows Phone の例")
 
- <a name="Summary" />
 
 
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 このドキュメントでは、共有プロジェクトの動作方法、作成して Visual Studio for Mac と Visual Studio の両方で使用を説明し、共有プロジェクトの動作を示す簡単なサンプル アプリケーションが導入されました。
 

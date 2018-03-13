@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 88e8c66d36956649f0a996046f038d89a7267cf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="java-integration-overview"></a>Java の統合の概要
 
 _Java のエコシステムには、コンポーネントの多様なと非常に多くのコレクションが含まれています。これらのコンポーネントの多くを Android アプリケーションの開発にかかる時間を減らすために使用できます。このドキュメントは紹介し、開発者がその Xamarin.Android アプリケーションの開発エクスペリエンスを向上させるためにこれら既存の Java コンポーネントを使用する方法のいくつかの概要を説明します。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -41,7 +40,6 @@ JNI を使用して、2 番目の手法は、低レベルで機能しますが�
 3 番目の手法は、前の 2 つの大きく異なる: Java からコードを c# に移植します。 1 つの言語から別のコードを移植するプロセスは非常に手間がかかりがそのツールを利用して労力が呼び出されるを削減することが*シャープ*です。 シャープは Java オープン ソース ツール-を-c# コンバーター。 
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

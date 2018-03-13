@@ -3,22 +3,20 @@ title: "目標ペンを使わず"
 description: "このセクションで説明目的ペンを使わず、Objective C ライブラリへのバインドを作成するプロセスを自動化するため、Xamarin のコマンド ライン ツールの概要"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
+ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 02eebb7d8f579a207b6777771dbea223d30211cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bcb7be862537a002e5a80462702ed1f2f8497cda
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="objective-sharpie"></a>目標ペンを使わず
 
 _このセクションで説明目的ペンを使わず、Objective C ライブラリへのバインドを作成するプロセスを自動化するため、Xamarin のコマンド ライン ツールの概要_
-
-<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
 
 - [概要](#overview) & [履歴](#history)
 - [はじめに](get-started.md)
@@ -28,7 +26,7 @@ _このセクションで説明目的ペンを使わず、Objective C ライブ�
 - [チュートリアルを完了します。](~/ios/platform/binding-objective-c/walkthrough.md)
 - [リリース履歴](releases.md)
 
-#<a name="overview"></a>概要
+## <a name="overview"></a>概要
 
 目標ペンを使わずは、ブートス トラップ バインディングの最初のパスを支援するコマンド ライン ツールです。
 パブリック API をマップするネイティブ ライブラリのヘッダー ファイルを解析して、それと、[バインディング定義](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file)(以前は手動で実行する処理)。
@@ -40,7 +38,7 @@ _このセクションで説明目的ペンを使わず、Objective C ライブ�
 
 
 
-#<a name="history"></a>履歴
+## <a name="history"></a>履歴
 
 おがされて進化ありを使用目的ペンを使わず内部的に Xamarin で最後の 3 年間です。 目標ペンを使わずのべき乗に運営、Api は、iOS、Mac OS X 10.10 8 以降、Xamarin.iOS および Xamarin.Mac で導入されたおよび watchOS 2.0 が完全目標ペンを使わずにブートス トラップします。 Xamarin に大きく依存して目標ペンを使わず内部的には、独自の製品をビルドするためです。
 

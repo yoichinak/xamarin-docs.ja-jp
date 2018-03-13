@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ce20322b576b12ff9dfe56ef0bc9d2e1ca27792
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 530e53230e9f0dea165b083fa6795558025a293f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
 
@@ -42,7 +42,7 @@ Xamarin.Mac で拡張機能を使用する場合、次のヒントは役に立�
 - キャッチされない例外、プロセスがクラッシュします拡張機能、少量の有用な情報のみを提供する、**システム ログ**です。 問題のあるコードでの折り返し、 `try/catch` (例外) をブロック`NSLog`の役立つことがあります再スローする前にします。
 - **システム ログ**からアクセスできる、**コンソール**の下でアプリ**アプリケーション** > **ユーティリティ**:
 
-    [ ![](extensions-images/extension02.png "システム ログ")](extensions-images/extension02.png)
+    [![](extensions-images/extension02.png "システム ログ")](extensions-images/extension02.png#lightbox)
 - 前述のように、拡張機能ホスト アプリケーションの実行がシステムに登録、します。 アプリケーション バンドルを削除する登録を解除します。 
 - 「無効な」のバージョンのアプリの拡張機能が登録されている場合は、次のコマンドを使用して、(したがって、それらを削除することができます) それらを探します。 `plugin kit -mv`
 
@@ -65,4 +65,4 @@ Xamarin.Mac で拡張機能を使用する場合、次のヒントは役に立�
 
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
-- [OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

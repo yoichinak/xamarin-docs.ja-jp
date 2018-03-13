@@ -3,14 +3,15 @@ title: "23 章の概要です。 トリガーと動作"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 72158cac683e46a37d2cbd537cdfd72bea78a336
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a53cddcf216efd2bb86c838e280d599ff26c191
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>23 章の概要です。 トリガーと動作
 
@@ -99,7 +100,7 @@ ms.lasthandoff: 02/27/2018
 
 [ **GenderColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors)サンプルが必要です、 [ **SchoolOfFineArt** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt)ライブラリと、色を青受講者の名前のセットまたはピンクのに基づいて、`Sex`プロパティ。
 
-[![性別色のトリプル スクリーン ショット](images/ch23fg04-small.png "性別色")](images/ch23fg04-large.png "性別の色")
+[![性別色のトリプル スクリーン ショット](images/ch23fg04-small.png "性別色")](images/ch23fg04-large.png#lightbox "性別の色")
 
 [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler)サンプル セット、`IsEnabled`のプロパティ、`Entry`に`False`場合、`Length`のプロパティ、`Text`プロパティ、の`Entry`0 に等しい。 注意して、`Text`プロパティは、空の文字列に初期化以外の場合は既定では`null`、および`DataTrigger`組み合わせは正しく機能します。
 
@@ -170,7 +171,7 @@ A [ `RotateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/
 
 [ **RadioLabels** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels)プログラムは、ラジオ ボタンのテキスト文字列を使用します。 [ **RadioStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle)サンプルは、`Style`外観 checked と unchecked のボタンの間の差をします。 [ **RadioImages** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages)サンプルでは、そのラジオ ボタンのボックス化されたイメージを使用します。
 
-[![ラジオ イメージのトリプル スクリーン ショット](images/ch23fg17-small.png "ラジオ ボタン イメージ")](images/ch23fg17-large.png "ラジオ ボタンの画像")
+[![ラジオ イメージのトリプル スクリーン ショット](images/ch23fg17-small.png "ラジオ ボタン イメージ")](images/ch23fg17-large.png#lightbox "ラジオ ボタンの画像")
 
 [ **TraditionalRadios** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios)サンプルは、円で囲まれたドット付きで表示されている従来のラジオ ボタンを描画します。
 

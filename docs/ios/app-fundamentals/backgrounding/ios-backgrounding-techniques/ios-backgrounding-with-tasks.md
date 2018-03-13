@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0be4e7f1d8719fdd174d51399178eb1bc000c4b3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS のタスク Backgrounding
 
@@ -114,11 +114,11 @@ Task.Factory.StartNew( () => {
 
 事前 iOS 7 では、バック グラウンドで実行中のタスクがある 600 秒を完了に注意してください。 この制限の理由の 1 つは、こと、バック グラウンドで実行中のタスクを保持するデバイス起動状態、タスクの期間を示します。
 
- [ ![](ios-backgrounding-with-tasks-images/ios6.png "アプリの起動前 iOS 7 を保持するタスクのグラフ")](ios-backgrounding-with-tasks-images/ios6.png)
+ [![](ios-backgrounding-with-tasks-images/ios6.png "アプリの起動前 iOS 7 を保持するタスクのグラフ")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 iOS 7 のバック グラウンド処理は、バッテリを長持ちに最適です。 IOS 7、backgrounding 便宜的なりますデバイスがスリープ状態にし、デバイスが電話をかける、通知、着信電子メール、およびその他の処理を再開すると、チャンク単位で、処理に代わりに操作を行うになるデバイスを起動状態に保つには、代わりにタスクを尊重。一般的な中断します。 次の図は、タスクが破損する可能性がありますの方法を把握します。
 
- [ ![](ios-backgrounding-with-tasks-images/ios7.png "チャンク後 iOS 7 に分割するタスクのグラフ")](ios-backgrounding-with-tasks-images/ios7.png)
+ [![](ios-backgrounding-with-tasks-images/ios7.png "チャンク後 iOS 7 に分割するタスクのグラフ")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 タスクの実行時はないためになった連続、iOS 7 でネットワーク転送を実行するタスクを異なる方法で処理しなければなりません。 開発者は、使用することをお勧め、`NSURlSession`ネットワーク転送を処理する API。 次のセクションでは、バック グラウンド転送の概要です。
 

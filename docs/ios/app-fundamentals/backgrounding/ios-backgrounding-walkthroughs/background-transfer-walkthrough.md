@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 015bce612f369797f0540a0cb55f71f420f007a2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>チュートリアル - バック グラウンド転送サービスと NSURLSession を使用して
 
@@ -20,7 +20,7 @@ _このチュートリアルでは、バック グラウンド転送サービス
 
 バック グラウンド転送は、バック グラウンドの構成によって開始される`NSURLSession`およびアップロードまたはダウンロード タスクをエンキューします。 IOS がアプリケーションの完了ハンドラーを呼び出すことによって、アプリケーションを通知する場合は、アプリケーションが backgrounded、中断、または終了中にタスクが完了*AppDelegate*です。 次の図の動作例を示します。
 
- [ ![](background-transfer-walkthrough-images/transfer.png "バック グラウンド NSURLSession を構成することによって、バック グラウンド転送が開始され、エンキューのアップロードまたはダウンロード タスク")](background-transfer-walkthrough-images/transfer.png)
+ [![](background-transfer-walkthrough-images/transfer.png "バック グラウンド NSURLSession を構成することによって、バック グラウンド転送が開始され、エンキューのアップロードまたはダウンロード タスク")](background-transfer-walkthrough-images/transfer.png#lightbox)
 
 この内でどのようにコードを見てみましょう。
 

@@ -2,16 +2,16 @@
 title: "ユーザー プロファイル"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
+ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/21/2017
-ms.openlocfilehash: 53ac30abea05095583fcac5ddc315f93ce7024f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf8230c5832104fd17b14532f1d32822a1fc0097
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-profile"></a>ユーザー プロファイル
 
@@ -38,13 +38,11 @@ if (cursor.MoveToFirst ()) {
 
 Android 4 (API レベル 14、)、新しい`ContactsContact.Profile`クラスは、ContactsContract プロバイダーを介して使用できます。 `ContactsContact.Profile`デバイスの所有者の名前と電話番号などの連絡先データを含む、デバイスの所有者を個人プロファイルへのアクセスを提供します。
 
-<a name="Required_Permissions" />
 
 ## <a name="required-permissions"></a>必要なアクセス許可
 
 連絡先データを読み書きするアプリケーションを要求する必要があります、`Read_Contacts`と`Write_Contacts`アクセス許可、それぞれします。 さらに、閲覧、ユーザー プロファイルを編集、アプリケーション要求する必要があります、`Read_Profile`と`Write_Profile`アクセス許可。
 
-<a name="Updating_Profile_Data" />
 
 ## <a name="updating-profile-data"></a>プロファイル データの更新
 
@@ -60,7 +58,6 @@ ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri,
     values, null, null);
 ```
 
-<a name="Reading_Profile_Data" />
 
 ## <a name="reading-profile-data"></a>プロファイル データの読み取り
 
@@ -78,7 +75,6 @@ if (cursor.MoveToFirst ()) {
 }
 ```
 
-<a name="Navigating_to_the_People_App" />
 
 ## <a name="navigating-to-the-people-app"></a>ユーザーのアプリに移動します。
 
@@ -92,7 +88,7 @@ StartActivity (intent);
 
 上記のコードを実行する場合、ユーザー アプリは、次のスクリーン ショットに示すように、ユーザー プロファイルに読み込まれます。
 
-[![スクリーン ショットのユーザーのアプリ、John doe さんのユーザー プロファイルを表示します。](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png)
+[![スクリーン ショットのユーザーのアプリ、John doe さんのユーザー プロファイルを表示します。](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png#lightbox)
 
 ユーザー プロファイルの操作は、android での他のデータとの対話に似ていますし、デバイスの個人用設定の追加レベルを提供します。
 

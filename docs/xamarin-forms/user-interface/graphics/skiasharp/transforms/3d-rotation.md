@@ -4,14 +4,15 @@ description: "非アフィン変換を使用して、3 D 空間に 2 D のオブ
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: a959278b5de72792b23e46372b1333362bed91c8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="3d-rotations"></a>3D 回転
 
@@ -27,7 +28,7 @@ _非アフィン変換を使用して、3 D 空間に 2 D のオブジェクト�
 
 3 次元座標系が概念的には z までと呼ばれる 3 番目の軸を追加し、Z 軸は直角の画面に、します。 3D スペースで座標の点は 3 つの数値で示されます。 (x、y、z)。 3D で x 軸の値を増やすと、この記事で使用される座標系は右側があり、Y の増加する値が 2 つのディメンションと同様、移動します。 正の値の増加する Z 値は、画面から復帰します。 原点は、左上隅の 2 次元グラフィックと同様です。 この平面に直角に Z 軸を持つ、XY 平面として画面の考えることができます。
 
-これは、左側の座標系と呼ばれます。 ポイントする場合 (右) に正の X の方向で、左側の人差し指を調整し、増加する Y の方向に中央の指の座標 (ダウン)、Z 座標 &#x2014; を増加させる方向で、thumb ポイントし、画面からを拡張します。
+これは、左側の座標系と呼ばれます。 X 座標 (右側) に正の値の方向で、左側の人差し指をポイントすると、Y を増加させる方向に中央の指の座標 (ダウン)、親指をポイントして Z 座標を増加させる方向で — からを拡張すること画面。
 
 3D グラフィックで変換は、4-4 でマトリックスに基づいています。 4-4 を単位行列を次に示します。
 
@@ -109,7 +110,7 @@ Z 軸の周りの回転は、2 D グラフィックスの場合と同様です�
 |    0       0     0  1  |
 </pre>
 
-回転方向は、座標系のき手によって暗黙的に指定します。 左ききシステムでは、これは、左側にある特定の軸 &#x2014; の値を増やすに向かってのつまみをポイントするためX 軸の周りの回転の右側に Z 軸 &#x2014; 周りの回転角度の Y 軸を中心と手前の回転の下矢印その他の指の曲線は、回転の角度に正の値の方向を示します。
+回転方向は、座標系のき手によって暗黙的に指定します。 左ききシステムでは、これはに向けて、特定の軸の値を増やすと、左側のつまみをポイントするため — の X 軸の周りの回転を右側に下矢印の Z 軸の周りの回転を Y 軸を中心とする方向を回転 — の曲線し yoその他の指では、回転の角度に正の値の方向を示します。
 
 `SKMatrix44` 静的が汎用された[ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/)と[ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/)を対象となる、回転が発生した軸を指定できるようにするメソッド。
 
@@ -408,7 +409,7 @@ public partial class Rotation3DPage : ContentPage
 
 4 番目のスライダーに試行するときにわかります深さが異なる設定が、ビューアーから離れた場所でさらに、オブジェクトを移動しないが、パースペクティブの影響の程度を代わりに alter:
 
-[![](3d-rotation-images/rotation3d-small.png "回転の 3D ページのスクリーン ショットをトリプル")](3d-rotation-images/rotation3d-large.png "回転の 3D ページのトリプル スクリーン ショット")
+[![](3d-rotation-images/rotation3d-small.png "回転の 3D ページのスクリーン ショットをトリプル")](3d-rotation-images/rotation3d-large.png#lightbox "回転の 3D ページのトリプル スクリーン ショット")
 
 **アニメーションの回転の 3D**も使用`SKMatrix44`3 D 空間内のテキスト文字列をアニメーション化します。 `textPaint`オブジェクト セットのフィールドは、テキストの範囲を決定するコンス トラクターで使用されるものとします。
 
@@ -442,7 +443,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`上書き定義の 3 つの Xamarin.Forms`Animation`アニメーション化するオブジェクト、 `xRotationDegrees`、 `yRotationDegrees`、および`zRotationDegrees`異なるレートでフィールドです。 これらのアニメーションの期間が含まれる素数 &#x2014; に設定されていることを確認します。5 秒、7 秒、および 11 秒 & #x 2014 です。全体的な組み合わせは、すべて 385 秒、または 10 分以上にのみ繰り返されます。
+`OnAppearing`上書き定義の 3 つの Xamarin.Forms`Animation`アニメーション化するオブジェクト、 `xRotationDegrees`、 `yRotationDegrees`、および`zRotationDegrees`異なるレートでフィールドです。 数字の主要なにこれらのアニメーションの期間が設定されていることを確認 — 7 秒、および 11 秒、5 秒間 — ため、全体的な組み合わせは、すべて 385 秒、または 10 分以上にのみ繰り返されます。
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -532,7 +533,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 この 3D 回転は、いくつかの 2D 変換を回転の中心を画面の中央に移動し、画面と同じ幅になるように、テキスト文字列のサイズを拡大または縮小をで囲まれます。
 
-[![](3d-rotation-images/animatedrotation3d-small.png "アニメーションの回転の 3D ページのスクリーン ショットをトリプル")](3d-rotation-images/animatedrotation3d-large.png "アニメーションの回転の 3D ページのトリプル スクリーン ショット")
+[![](3d-rotation-images/animatedrotation3d-small.png "アニメーションの回転の 3D ページのスクリーン ショットをトリプル")](3d-rotation-images/animatedrotation3d-large.png#lightbox "アニメーションの回転の 3D ページのトリプル スクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク

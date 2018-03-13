@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d4d6e93bf3a755d9b48c9e096de87b4c89f2831f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a17ad79d3f3b537332494fc368c878f2733d5db2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar-compatibility"></a>ツールバーの互換性
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -36,7 +35,6 @@ ms.lasthandoff: 02/27/2018
 これらの各手順については、次のセクションで詳しく説明します。
 
 
-<a name="android_version" />
 
 ## <a name="set-the-minimum-and-target-android-version"></a>最小値とターゲットの Android バージョンを設定します。
 
@@ -44,23 +42,20 @@ API レベル 21 以上、アプリのターゲット フレームワークを�
 
 API レベル 21 レベル以上のターゲット フレームワークを設定し、Android API レベルのプロジェクトの設定をサポートするために、アプリは、最低限の Android バージョンに設定します。 Android API レベルの設定についての詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。 `ToolbarFun`例では、最低限の Android バージョンに設定されている KitKat (API レベル 4.4)。 
 
-<a name="install_nuget" />
 
 ## <a name="install-the-appcompat-nuget-package"></a>AppCompat NuGet パッケージをインストールします。
 
 次に、追加、 [Android のサポート ライブラリ v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)をプロジェクトにパッケージします。 Visual Studio を右クリックし**参照**選択**NuGet パッケージを管理しています.**.をクリックして**参照**を検索および**Android のサポート ライブラリ v7 AppCompat**です。 選択**Xamarin.Android.Support.v7.AppCompat**  をクリック**インストール**: 
 
-[![スクリーン ショットの V7 Appcompat パッケージ管理の NuGet パッケージの選択](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png)
+[![スクリーン ショットの V7 Appcompat パッケージ管理の NuGet パッケージの選択](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
 この NuGet がインストールされているときに他のいくつかの NuGet パッケージもインストールがまだ存在しない場合 (など**Xamarin.Android.Support.Animated.Vector.Drawable**、 **Xamarin.Android.Support.v4**、および**Xamarin.Android.Support.Vector.Drawable**)。 NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: プロジェクトで、NuGet を含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。 
 
-<a name="appcompat_theme" />
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>AppCompat テーマとツールバーを使用します。
 
 AppCompat ライブラリが付属のいくつか`Theme.AppCompat`AppCompat ライブラリによってサポートされている Android の任意のバージョンで使用できるテーマ。 `ToolbarFun`は例のアプリのテーマに由来`Theme.Material.Light.DarkActionBar`、ロリポップよりも前の Android バージョンに収録されていません。 したがって、`ToolbarFun`をこのテーマに AppCompat 対応するものを使用する必要があります`Theme.AppCompat.Light.DarkActionBar`です。 また、ため`Toolbar`は Android のバージョンでは使用できない、ロリポップより前お必要があります AppCompat のバージョンを使用`Toolbar`です。 したがって、レイアウトを使用する必要があります`android.support.v7.widget.Toolbar`の代わりに`Toolbar`です。 
 
-<a name="update_layouts" />
 
 ### <a name="update-layouts"></a>レイアウトを更新します。
 
@@ -91,7 +86,6 @@ AppCompat ライブラリが付属のいくつか`Theme.AppCompat`AppCompat ラ�
 
 なお、`?attr`値が付きます。 されなく`android:`(ことに注意してください、`?`表記は、現在のテーマでのリソースを参照)。 場合`?android:attr`使用されたもここでは、Android は、属性の値を参照 AppCompat ライブラリではなく、現在実行されているプラットフォームからです。 この例を使用するため、 `actionBarSize` AppCompat ライブラリで定義されている、`android:`プレフィックスを削除します。 同様に、`@android:style`に変更が`@style`ように、`android:theme`属性 AppCompat ライブラリのテーマに設定されている&ndash;、`ThemeOverlay.AppCompat.Dark.ActionBar`テーマがここでは使用ではなく`ThemeOverlay.Material.Dark.ActionBar`です。 
 
-<a name="update_style" />
 
 ### <a name="update-the-style"></a>スタイルを更新します。
 
@@ -113,7 +107,6 @@ AppCompat ライブラリが付属のいくつか`Theme.AppCompat`AppCompat ラ�
 項目名およびこの例では親テーマが不要になった付いた`android:`AppCompat ライブラリを使用しているためです。 AppCompat バージョンに親テーマの変更も、`Light.DarkActionBar`です。 
 
 
-<a name="update_menus" />
 
 ### <a name="update-menus"></a>メニューを更新します
 
@@ -180,7 +173,6 @@ local:showAsAction="ifRoom"
 
 この名前空間のスイッチを提供する方法のサポート、 `showAsAction` Android バージョン API レベル 11 より前の属性ですか? カスタム属性`showAsAction`AppCompat NuGet がインストールされているときに、アプリに含まれているすべての可能な値です。 
 
-<a name="subclass" />
 
 ## <a name="subclass-appcompatactivity"></a>サブクラス AppCompatActivity
 
@@ -208,7 +200,7 @@ SupportActionBar.Title = "My AppCompat Toolbar";
 
 アプリをビルドし、前のロリポップ デバイスまたは Android エミュレーターで実行します。 次のスクリーン ショットを示しています、AppCompat **ToolbarFun** KitKat (API 19) を実行している Nexus 4。 
 
-[![KitKat デバイスで実行されているアプリの全画面スクリーン ショットは、両方のツールバーが表示されます。](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png)
+[![KitKat デバイスで実行されているアプリの全画面スクリーン ショットは、両方のツールバーが表示されます。](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 AppCompat ライブラリを使用するとテーマしなくても切り替えられる Android のバージョンに基づく&ndash;AppCompat ライブラリでは、サポートされているすべての Android バージョン間で一貫性のあるユーザー エクスペリエンスを提供することです。 
 

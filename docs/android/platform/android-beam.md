@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: bea8480c66a2ecf499375636c98511ca55ce7693
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-beam"></a>Android ビーム
 
 Android のビームは、情報を共有するときに、近接 NFC 経由でアプリケーションを使用する Android 4 で新しい近距離通信 (NFC) テクノロジです。
 
-[![情報の共有の近くに 2 つのデバイスを示すダイアグラム](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png)
+[![情報の共有の近くに 2 つのデバイスを示すダイアグラム](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
 Android のビームは、2 つのデバイスが範囲内にある場合は、NFC 経由でメッセージをプッシュして動作します。 デバイス互いから約 4 cm では、Android ビームを使用してデータを共有できます。 1 つのデバイス上でアクティビティがメッセージを作成し、アクティビティ (アクティビティ) を指定します、プッシュを処理することができます。 フォア グラウンドでは、指定されたアクティビティと、デバイスが範囲内では、Android ビームは、メッセージを 2 番目のデバイスにプッシュされます。 受信側のデバイスでは、メッセージ データを含むインテントが呼び出されます。
 
@@ -30,7 +30,6 @@ Android には、Android ビーム設定メッセージの 2 つの方法がサ�
 
 どちらの場合、Android のビームを使用してデータを送信するアプリケーションに送信される、 `NdefMessage`、いくつかのデータをパッケージ化`NdefRecords`です。 Android ビームをトリガーして前に対処する必要がありますのキー_ポイントで見てをみましょう。 最初に、操作を行います。 作成のコールバック スタイル、`NdefMessage`です。
 
-<a name="Creating_a_Message" />
 
 ## <a name="creating-a-message"></a>メッセージを作成します。
 
@@ -66,7 +65,6 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 }
 ```
 
-<a name="Receiving_a_Message" />
 
 ## <a name="receiving-a-message"></a>メッセージの受信
 
@@ -79,7 +77,7 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 以下のスクリーン ショットで実行されている Android のビームを使用する完全なコード例については、 [Android ビーム デモ](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)サンプル ギャラリーにします。
 
-[![Android ビーム デモの例のスクリーン ショット](android-beam-images/24.png)](android-beam-images/24.png)
+[![Android ビーム デモの例のスクリーン ショット](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 
 

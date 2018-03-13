@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 1689736ce3f2a8e20ceaa23edf410d3892038522
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5422d3f0a68f99790617fe534b30389aae2563c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer ブック
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 02/27/2018
 -    [レッスン 7: シャドウ マッピング](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson7.workbook)
 -    [レッスン 8: アンビエント オクルー ジョン](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson8.workbook)
 
-[ ![](tinyrenderer-images/tinyrenderer-sml.png "ワイヤー フレームのレンダリングの例")](tinyrenderer-images/tinyrenderer.png)
+[![](tinyrenderer-images/tinyrenderer-sml.png "ワイヤー フレームのレンダリングの例")](tinyrenderer-images/tinyrenderer.png#lightbox)
 
 これらのブックでの c# コードはこのオープン ソースに基づいて[C++ コード](https://github.com/ssloy/tinyrenderer)、テキストはこれから[wiki](https://github.com/ssloy/tinyrenderer/wiki/)です。 元の作業は、ブックのセットに変換することを許可されているライセンスの下で提供されるを歓迎いたします。
 

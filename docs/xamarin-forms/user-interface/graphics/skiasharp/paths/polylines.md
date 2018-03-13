@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 523d79adbc5d4f88d4a2670b6422a58fb9256ab2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e40fd215d23e7da6f1356bba17fac84ce91007ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="polylines-and-parametric-equations"></a>多角形やパラメーターの式
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 結果とも呼ばれますが、*算術なる*各ループの間のオフセットは定数ため。
 
-[![](polylines-images/archimedeanspiral-small.png "Archimedean なるページのスクリーン ショットをトリプル")](polylines-images/archimedeanspiral-large.png "Archimedean なるページのトリプル スクリーン ショット")
+[![](polylines-images/archimedeanspiral-small.png "Archimedean なるページのスクリーン ショットをトリプル")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean なるページのトリプル スクリーン ショット")
 
 注意して、`SKPath`で作成された、`using`ブロックします。 これは、`SKPath`より多くのメモリを消費、`SKPath`されることを意味の以前のプログラム内のオブジェクト、`using`ブロックは、アンマネージ リソースを破棄するより適切な。
 

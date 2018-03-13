@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 50684d82726a398aabe77d09ff62eac40e277f02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -32,7 +32,7 @@ _HealthKit は、正常性関連の情報を一元的な調整、およびセキ
 
 この記事では今後を作成するユーザーの心拍数を記録するサンプル アプリケーション。
 
-[![](healthkit-images/image01.png "ユーザーの心拍数を記録するサンプル アプリケーション")](healthkit-images/image01.png)
+[![](healthkit-images/image01.png "ユーザーの心拍数を記録するサンプル アプリケーション")](healthkit-images/image01.png#lightbox)
 
 ## <a name="requirements"></a>必要条件
 
@@ -72,22 +72,22 @@ IOS アプリのプロビジョニングに関する詳細を確認する、[デ
 明示的な作成を**アプリ ID**をクリックして、  **+** する右のボタン、 **iOS アプリ ID を登録**ページ。
 
 
-[![](healthkit-images/image02.png "Apple 開発者ポータルでアプリを登録します。")](healthkit-images/image02.png)
+[![](healthkit-images/image02.png "Apple 開発者ポータルでアプリを登録します。")](healthkit-images/image02.png#lightbox)
 
 アプリの説明を作成した後、上の図に示すようにを使用して、**アプリ ID の明示的な**セクションで、アプリケーションの ID を作成します。 **App Services**  セクションで、チェック**ヘルス キット**で、**サービスの有効化**セクションです。
 
 完了したら、キーを押して、**続行**を登録する ボタン、**アプリ ID**お客様のアカウントです。 戻る、**証明書、識別子、およびプロファイル**ページ。 をクリックして**プロビジョニング プロファイル**を現在のプロビジョニング プロファイルの一覧に移動し、をクリックして、  **+** する右上隅のボタン、 **iOS の追加プロビジョニング プロファイル**ページ。 選択、 **iOS アプリの開発**オプションをクリックして**続行**を取得する、**アプリ ID の選択**ページ。 ここでは、明示的な選択**アプリ ID**以前に指定します。
 
 
-[![](healthkit-images/image03.png "明示的なアプリ ID を選択します")](healthkit-images/image03.png)
+[![](healthkit-images/image03.png "明示的なアプリ ID を選択します")](healthkit-images/image03.png#lightbox)
 
 をクリックして**続行**と指定する、残りの画面を仕事、**開発者の証明書**、**デバイス**、および**名前**この**プロビジョニング プロファイル**:
 
-[![](healthkit-images/image04.png "プロビジョニング プロファイルを生成します。")](healthkit-images/image04.png)
+[![](healthkit-images/image04.png "プロビジョニング プロファイルを生成します。")](healthkit-images/image04.png#lightbox)
 
 をクリックして**生成**し、プロファイルの作成を待機します。 ファイルをダウンロードし、ダブルクリックして、Xcode でインストールします。 下で、インストールを確認する**Xcode > 設定 > アカウント > の詳細を表示しています.** だけがインストールされているプロビジョニング プロファイルが表示され、正常性キットとでの他の特別なサービス用のアイコンが必要、**権利**行。
 
-[![](healthkit-images/image05.png "Xcode でプロファイルを表示します。")](healthkit-images/image05.png)
+[![](healthkit-images/image05.png "Xcode でプロファイルを表示します。")](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid" />
 
@@ -97,11 +97,11 @@ IOS アプリのプロビジョニングに関する詳細を確認する、[デ
 
 Xamarin iOS 8 のプロジェクトを手動で作成するプロセスを案内するのではなく、この記事の内容 (をあらかじめ作成されているストーリー ボードとコードを含む) に接続されているサンプル アプリを開きます。 サンプル アプリを有効になっている、正常性キットに関連付ける**プロビジョニング プロファイル**で、**ソリューション パッド**プロジェクトを右クリックし、立ち上げると、その**オプション**ダイアログ。 切り替えて、 **iOS アプリケーション**パネルし、明示的な入力**アプリ ID**アプリのとして以前に作成した**バンドル Id**:
 
-[![](healthkit-images/image06.png "明示的なアプリ ID を入力してください。")](healthkit-images/image06.png)
+[![](healthkit-images/image06.png "明示的なアプリ ID を入力してください。")](healthkit-images/image06.png#lightbox)
 
 今すぐに切り替え、 **iOS バンドル署名** パネルです。 最近インストールされた**プロビジョニング プロファイル**、明示的なへの関連付けを**アプリ ID**、として使用できるようになりました、**プロビジョニング プロファイル**:
 
-[![](healthkit-images/image07.png "プロビジョニング プロファイルを選択します。")](healthkit-images/image07.png)
+[![](healthkit-images/image07.png "プロビジョニング プロファイルを選択します。")](healthkit-images/image07.png#lightbox)
 
 場合、**プロビジョニング プロファイル**が使用できないを再確認してください、**バンドル Id**で、 **iOS アプリケーション**パネルで指定されていると、 **iOSデベロッパー センター**ことと、**プロビジョニング プロファイル**がインストールされている (**Xcode > 設定 > アカウント >... の詳細の表示**).
 
@@ -148,11 +148,11 @@ Xamarin iOS 8 のプロジェクトを手動で作成するプロセスを案内
 
 ヘルス キット データ ストアの保存の種類は、のすべてのサブクラス`HKObjectType`です。 `HKCharacteristicType` 生物の性別、血液型、および生年月日をオブジェクトが格納されます。 ただしより一般的なは、 `HKSampleType` 、特定の時刻または期間にわたって、サンプリングされるデータを表すオブジェクト。 
 
-[![](healthkit-images/image08.png "HKSampleType オブジェクト グラフ")](healthkit-images/image08.png)
+[![](healthkit-images/image08.png "HKSampleType オブジェクト グラフ")](healthkit-images/image08.png#lightbox)
 
 `HKSampleType` 抽象であり具体的なサブクラスが 4 つです。 現在の 1 つだけの型がある`HKCategoryType`分析のスリープ状態であるデータ。 ヘルス キット内のデータの大多数は、型の`HKQuantityType`にデータを保存および`HKQuantitySample`使い慣れたファクトリ デザイン パターンを使用して作成されるオブジェクト。
 
-[![](healthkit-images/image09.png "ヘルス キット内のデータの大多数の種類 HKQuantityType と HKQuantitySample オブジェクトにデータを格納")](healthkit-images/image09.png)
+[![](healthkit-images/image09.png "ヘルス キット内のデータの大多数の種類 HKQuantityType と HKQuantitySample オブジェクトにデータを格納")](healthkit-images/image09.png#lightbox)
 
 `HKQuantityType` 型の範囲`HKQuantityTypeIdentifier.ActiveEnergyBurned`に`HKQuantityTypeIdentifier.StepCount`です。 
 
@@ -162,11 +162,11 @@ Xamarin iOS 8 のプロジェクトを手動で作成するプロセスを案内
 
 エンドユーザーは、ヘルス キット データを読み書きするアプリを許可する正の手順を実行する必要があります。 これは iOS 8 デバイスに事前にインストールされる正常性アプリ経由で行われます。 ヘルス キット アプリを実行すると、最初に、ユーザーは、システム管理の表示は**ヘルス アクセス** ダイアログ。
 
-[![](healthkit-images/image10.png "システム制御ヘルス アクセス ダイアログ ボックスで、ユーザーが表示されます。")](healthkit-images/image10.png)
+[![](healthkit-images/image10.png "システム制御ヘルス アクセス ダイアログ ボックスで、ユーザーが表示されます。")](healthkit-images/image10.png#lightbox)
 
 後で、ユーザーがアプリの正常性を使用してアクセス許可を変更できる**ソース** ダイアログ。
 
-[![](healthkit-images/image11.png "ユーザーは、正常性のアプリのソース ダイアログを使用してアクセス許可を変更できます。")](healthkit-images/image11.png)
+[![](healthkit-images/image11.png "ユーザーは、正常性のアプリのソース ダイアログを使用してアクセス許可を変更できます。")](healthkit-images/image11.png#lightbox)
 
 正常性の情報は非常に機密性が高いためアプリ記述べき、プログラム防御的、権限の拒否され、アプリが実行されているときに変更行われることを見込んでです。 最も一般的な表現形式でのアクセス許可を要求する、`UIApplicationDelegate.OnActivated`メソッドおよび適切なユーザー インターフェイスを変更します。
 
@@ -413,12 +413,12 @@ IOS シミュレーターでは、正常性のキットがサポートされて�
 プロビジョニングを正しく設定されていると想定されるので、アプリケーションが開始されます。 達したとき、`OnActivated`メソッド、正常性のキットの承認を要求します。 これが、オペレーティング システムによって検出された最初に次のダイアログ ボックスで、ユーザーが表示されます。
 
 
-[![](healthkit-images/image12.png "このダイアログ ボックスで、ユーザーが表示されます。")](healthkit-images/image12.png)
+[![](healthkit-images/image12.png "このダイアログ ボックスで、ユーザーが表示されます。")](healthkit-images/image12.png#lightbox)
 
 心拍数のデータを更新するアプリを有効にし、アプリは再表示されます。 `ReactToHealthCarePermissions`コールバックを非同期的にアクティブ化されます。 これにより、 `HeartRateModel’s` `Enabled`が発生するプロパティを変更する、`EnabledChanged`原因となるイベント、`HKPermissionsViewController.OnEnabledChanged()`されるようにすることを実行するイベント ハンドラー、`StoreData`ボタンをクリックします。 次の図は、シーケンスを示しています。
 
 
-[![](healthkit-images/image13.png "この図は、イベントのシーケンスを示しています。")](healthkit-images/image13.png)
+[![](healthkit-images/image13.png "この図は、イベントのシーケンスを示しています。")](healthkit-images/image13.png#lightbox)
 
 キーを押して、**レコード**ボタンをクリックします。 これにより、`StoreData_TouchUpInside()`の値を解析するハンドラーを実行するには、`heartRate`テキスト フィールドに変換、`HKQuantity`経由で既に説明したよう`HeartRateModel.HeartRateInBeatsPerMinute()`関数およびその数量を渡す`HeartRateModel.StoreHeartRate()`です。 前述のように、これは、データを格納してが発生するか、`HeartRateStored`または`ErrorMessageChanged`イベント。
 
@@ -447,4 +447,4 @@ IOS シミュレーターでは、正常性のキットがサポートされて�
 ## <a name="related-links"></a>関連リンク
 
 - [HKWork (サンプル)](https://developer.xamarin.com/samples/monotouch/ios8/IntroToHealthKit/)
-- [IOS 8 の概要](~/ios/platform/introduction-to-ios8.md)
+- [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)

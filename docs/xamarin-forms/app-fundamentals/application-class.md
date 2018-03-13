@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: d7965c5d4d65dd6bf7aa4128f467acd3e2d39e60
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c383808d443685c1561113e418aed62467f1d5bd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-class"></a>App クラス
 
@@ -98,7 +98,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 常に予期しないエラーを防ぐためにアクセスする前に、キーの有無を確認します。
 
 > [!NOTE]
-> **注:** 、`Properties`ディクショナリには、ストレージのプリミティブ型がシリアル化できるだけです。 その他の種類を保存しようとしています (など`List<string>`) サイレント モードで失敗することができます。
+> `Properties`ディクショナリには、ストレージのプリミティブ型がシリアル化できるだけです。 その他の種類を保存しようとしています (など`List<string>`) サイレント モードで失敗することができます。
 
 <!-- bugzilla 28657 -->
 
@@ -196,7 +196,7 @@ public class MainActivity :
 ```
 
 > [!NOTE]
-> **注:**より新しいがある[ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md)基本 Android マテリアル デザインのサポートを向上させるために使用するクラス。
+> より新しい[ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md)基本 Android マテリアル デザインのサポートを向上させるために使用するクラス。
 > これは、既定の Android テンプレートを将来的になりますが、行うことができる[手順](~/xamarin-forms/platform/android/appcompat.md)を既存の Android アプリを更新します。
 
 

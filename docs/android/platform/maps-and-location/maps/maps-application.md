@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/05/2017
-ms.openlocfilehash: a6bfebb5272da3fd50f4f165fc25bb75574a0b63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4bcbd14b88f19dc48dc9d0694fb30aed31708153
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-application"></a>マップのアプリケーション
 
 Xamarin.Android 内の対応付けを使用する最も簡単な方法では、次に示す組み込みマップ アプリケーションを活用します。
 
-[![Google Maps の組み込みアプリのサンプルのスクリーン ショット](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png)
+[![Google Maps の組み込みアプリのサンプルのスクリーン ショット](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 マップのアプリケーションを使用するときに、マップには、アプリケーションの一部はできません。 代わりに、アプリケーションでは、マップのアプリケーションを起動して、外部でマップを読み込めません。 次のセクションでは、上記のようなマップを起動する Xamarin.Android を使用する方法を調べます。
 
-<a name="Creating_the_Intent" />
 
 ## <a name="creating-the-intent"></a>目的の作成
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 このコードは、前のスクリーン ショットに示すように、マップを起動するために必要なすべてです。 緯度と経度を指定すると、他は、マップの URI スキームは、その他のいくつかのオプションをサポートします。
 
-<a name="Geo_Uri_Scheme" />
 
 ## <a name="geo-uri-scheme"></a>Geo URI スキーム
 
@@ -52,10 +50,9 @@ StartActivity (mapIntent);
 
 URI のクエリ (つまり、番地アドレスや検索条件) を受け取るバージョンでは、Google の geocoder サービスを使用して、マップに表示される場所を取得します。 たとえば、URI`geo:0,0?q=coop+Cambridge`下図のマップにおいて。
 
-[![検索語句で Google Maps を示すサンプルのスクリーン ショット](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png)
+[![検索語句で Google Maps を示すサンプルのスクリーン ショット](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-<a name="Street_View" />
 
 Geo の URI スキームの詳細については、次を参照してください。[マップ上の場所を表示する](http://developer.android.com/guide/components/intents-common.html#Maps)です。
 
@@ -64,7 +61,7 @@ Geo の URI スキームの詳細については、次を参照してくださ�
 
 Geo スキームだけでなく、インテントから street ビューの読み込みを Android もサポートします。 Xamarin.Android から起動する street ビュー アプリケーションの例を次に示します。
 
-[![番地ビューの例のスクリーン ショット](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png)
+[![番地ビューの例のスクリーン ショット](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
 Street ビューを起動するだけで使用、 `google.streetview` URI スキームは、次のコードに示すようにします。
 

@@ -4,14 +4,15 @@ description: "変換行列の 3 番目の列を持つテーパ効果とパース
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 3fda8524b824042aa4aba07853da2801baf47027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e2e83404bc93bd07885008b868c51eba2ff7140
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
@@ -226,7 +227,7 @@ public partial class TestPerspectivePage : ContentPage
 
 一部の画像をサンプルを次に示します。
 
-[![](non-affine-images/testperspective-small.png "テスト パースペクティブのページのスクリーン ショットをトリプル")](non-affine-images/testperspective-large.png "テスト パースペクティブのページのトリプル スクリーン ショット")
+[![](non-affine-images/testperspective-small.png "テスト パースペクティブのページのスクリーン ショットをトリプル")](non-affine-images/testperspective-large.png#lightbox "テスト パースペクティブのページのトリプル スクリーン ショット")
 
 スライダーを試すとき 0.0066 を超えてまたは –0.0066 以下の値が発生するイメージを分割し、一貫性のないことになることがあります。 変換されているビットマップは、300 ピクセルの四角形です。 ビットマップの座標の範囲は –150 150 ~ ようにその中心を基準とした変換されます。 取り消しを z の値 ' は。
 
@@ -390,13 +391,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 次にいくつかの例を示します。
 
-[![](non-affine-images/tapertransform-small.png "トリプル ページのスクリーン ショット、テーパ変換")](non-affine-images/tapertransform-large.png "トリプル ページのスクリーン ショット、テーパ変換")
+[![](non-affine-images/tapertransform-small.png "トリプル ページのスクリーン ショット、テーパ変換")](non-affine-images/tapertransform-large.png#lightbox "トリプル ページのスクリーン ショット、テーパ変換")
 
 汎用化された非アフィン変換の別の型は次の記事で示したようには、3D 回転[3D 回転](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)です。
 
 非アフィン変換では、任意の凸四角形に四角形を変換できます。 示されるこれは、**表示の非アフィン行列**ページ。 非常に似ています、**表示のアフィン行列**ページから、[行列変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md)記事がある 4 つ目のする点を除いて`TouchPoint`ビットマップの 4 番目の隅を操作するオブジェクト。
 
-[![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列の表示 ページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png "非アフィン行列の表示 ページのトリプル スクリーン ショット")
+[![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列の表示 ページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png#lightbox "非アフィン行列の表示 ページのトリプル スクリーン ショット")
 
 ビットマップの四隅のいずれかの内部角度を 180 度よりも大きい値に加えるか互いに交差する 2 つの辺を加えるしようとしていない、限り正常に計算からこのメソッドを使用して変換を[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)クラス。
 

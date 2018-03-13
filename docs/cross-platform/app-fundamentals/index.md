@@ -3,26 +3,26 @@ title: "アプリケーションの基礎"
 description: "中核となるアプリケーションの概念"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 9e4e7705e1ca29b6abf716a48ae3fa0e7c1a19ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c5b823370e5b65fbcf9ba366cb89c05e003b1a89
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="application-fundamentals"></a>アプリケーションの基礎
 
 このセクションでは、いくつかの一般的な処理タスクまたはモバイル アプリケーションを開発するときに注意する必要がある開発者の概念のガイドを提供します。
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[クロス プラットフォーム アプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[クロスプラットフォーム アプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 
 Xamarin を選択し、デザインし、モバイル アプリケーションを開発するときに、いくつかの点に注意を保持する、することができます膨大なコードをモバイル プラットフォーム間で共有を実現に要する時間を短縮、既存の能力を活用してモバイル アクセスは、顧客の需要を満たすクロスプラット フォームの複雑さを軽減します。&nbsp;ユーティリティおよび生産性アプリケーションに対してこれらの利点を実現する主要なガイドラインを説明します。
 
-## <a name="code-sharing-optionscode-sharingmd"></a>[コード共有のオプション](code-sharing.md)
+## <a name="code-sharing-optionscode-sharingmd"></a>[コード共有オプション](code-sharing.md)
 
 Xamarin プロジェクト、ポータブル クラス ライブラリ (Pcl)、共有プロジェクト、および標準の .NET ライブラリを含む使用可能なオプションを共有する別のコードについて説明します。
 

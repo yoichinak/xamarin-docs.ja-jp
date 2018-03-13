@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e85bc98b5da4c6e529f150c6e7945a8556e2c60f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 887dc3cf710fb75d05d02af179bc218c15d31f97
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-mode"></a>バインド モード
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/27/2018
 
 ご想像、`Slider`初期値を 1 に初期化される`Opacity`の値`Label`です。 左側の iOS のスクリーン ショットにこれが表示されます。
 
-[![バインドを反転](binding-mode-images/reversebinding-small.png "バインドを反転")](binding-mode-images/reversebinding-large.png "逆バインディング")
+[![バインドを反転](binding-mode-images/reversebinding-small.png "バインドを反転")](binding-mode-images/reversebinding-large.png#lightbox "逆バインディング")
 
 必要がある意外に思いました、`Slider`は引き続き動作、Android および UWP スクリーン ショットが示すようにします。 これは、場合にお勧めのデータ バインドの動作を提案しているよう、`Slider`バインディング ターゲットではなく、`Label`予定であることと同じように、初期化が動作するためです。
 
@@ -250,7 +250,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 プログラムが最初に実行時に、 `BoxView`、 `Label`、し、次の 3 つ`Slider`要素は、すべてのセット最初に基づく ViewModel から`Color`ViewModel がインスタンス化されるときに設定するプロパティ。 これは、左側にある iOS のスクリーン ショットで示されます。
 
-[![単純なカラー セレクター](binding-mode-images/simplecolorselector-small.png "単純なカラー セレクター")](binding-mode-images/simplecolorselector-large.png "単純なカラー セレクター")
+[![単純なカラー セレクター](binding-mode-images/simplecolorselector-small.png "単純なカラー セレクター")](binding-mode-images/simplecolorselector-large.png#lightbox "単純なカラー セレクター")
 
 スライダーを操作するとき、`BoxView`と`Label`Android および UWP スクリーン ショットに示すように、それに応じて更新されます。
 
@@ -661,7 +661,7 @@ public partial class SampleSettingsPage : ContentPage
 
 左側にある iOS スクリーン ショットは、最初の実行時にプログラムを示します。 コンス トラクター`SampleSettingsViewModel`白に初期化、背景色をで選択した内容は、 `ListView`:
 
-[![設定のサンプル](binding-mode-images/samplesettings-small.png "設定のサンプル")](binding-mode-images/samplesettings-large.png "設定のサンプル")
+[![設定のサンプル](binding-mode-images/samplesettings-small.png "設定のサンプル")](binding-mode-images/samplesettings-large.png#lightbox "設定のサンプル")
 
 その他の 2 つのスクリーン ショットは、変更された設定を表示します。 このページを試す場合は、スリープ状態や、デバイスまたはエミュレーターが実行されていることに終了するプログラムを入力してください。 Visual Studio デバッガーからプログラムを終了してされません、`OnSleep`内の上書き、`App`クラスを呼び出します。
 

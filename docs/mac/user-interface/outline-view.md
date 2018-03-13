@@ -3,16 +3,16 @@ title: "アウトライン ビュー"
 description: "この記事では、Xamarin.Mac アプリケーションでのアウトライン ビューでの作業について説明します。 これは、作成および Xcode とインターフェイスのビルダーのアウトライン表示を維持し、それらのプログラムの操作について説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a125c2991c9b8c2453fad396c1d0baebe10be015
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: dbbd10af046c0a8421e06e675364f92405b2317f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="outline-views"></a>アウトライン ビュー
 
@@ -22,7 +22,7 @@ _この記事では、Xamarin.Mac アプリケーションでのアウトライ�
 
 アウトライン表示が、型、ユーザーができるテーブルの順に展開階層データの行を折りたたみます。 テーブル ビューのようには、アウトライン表示は、個々 のアイテムとそれらの項目の属性を表す列を表す行を含む関連項目のセット用のデータを表示します。 テーブル ビューとは異なり、アウトライン表示の項目は単純なリストではありません、階層では、ハード ドライブのファイルとフォルダーのように構成されます。
 
-[ ![](outline-view-images/populate03.png "実行のサンプル アプリ")](outline-view-images/populate03.png)
+[![](outline-view-images/populate03.png "実行のサンプル アプリ")](outline-view-images/populate03.png#lightbox)
 
 この記事でしれません Xamarin.Mac アプリケーションでのアウトライン ビューの操作の基礎をについて説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
@@ -50,23 +50,23 @@ _この記事では、Xamarin.Mac アプリケーションでのアウトライ�
 
 新しい Xamarin.Mac Cocoa アプリケーションを作成するときに、既定で標準の空白、ウィンドウを取得します。 この windows がで定義されている、`.storyboard`プロジェクトに自動的に含まれるファイル。 Windows のデザインを編集する、**ソリューション エクスプ ローラー**、ダブルクリックして、`Main.storyboard`ファイル。
 
-[ ![](outline-view-images/edit01.png "メインのストーリー ボードを選択します。")](outline-view-images/edit01.png)
+[![](outline-view-images/edit01.png "メインのストーリー ボードを選択します。")](outline-view-images/edit01.png#lightbox)
 
 Xcode のインターフェイスのビルダーで、ウィンドウのデザインが開きます。
 
-[ ![](outline-view-images/edit02.png "Xcode で UI を編集")](outline-view-images/edit02.png)
+[![](outline-view-images/edit02.png "Xcode で UI を編集")](outline-view-images/edit02.png#lightbox)
 
 型`outline`に、**ライブラリ インスペクター**をアウトライン表示コントロールを検索するが容易に検索ボックス。
 
-[ ![](outline-view-images/edit03.png "ライブラリから、アウトライン モードを選択します。")](outline-view-images/edit03.png)
+[![](outline-view-images/edit03.png "ライブラリから、アウトライン モードを選択します。")](outline-view-images/edit03.png#lightbox)
 
 ビュー コント ローラー上にアウトライン表示をドラッグして、**インターフェイス エディター**、ビュー コント ローラーのコンテンツ領域を入力し、縮小して、ウィンドウにも拡張に設定して、**制約エディター**:
 
-[ ![](outline-view-images/edit04.png "制約の編集")](outline-view-images/edit04.png)
+[![](outline-view-images/edit04.png "制約の編集")](outline-view-images/edit04.png#lightbox)
 
 アウトライン ビューを選択して、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
 
-[ ![](outline-view-images/edit05.png "属性の検査")](outline-view-images/edit05.png)
+[![](outline-view-images/edit05.png "属性の検査")](outline-view-images/edit05.png#lightbox)
 
 - **列をアウトライン**-、テーブルの列の階層データが表示されます。
 - **自動アウトライン列**場合 -`true`アウトライン列が自動的に保存し、アプリケーションの実行時の間で復元します。
@@ -101,7 +101,7 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 
 テーブルの列を選択して、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
 
-[ ![](outline-view-images/edit06.png "属性の検査")](outline-view-images/edit06.png)
+[![](outline-view-images/edit06.png "属性の検査")](outline-view-images/edit06.png#lightbox)
 
 - **タイトル**-列のタイトルを設定します。
 - **配置**-セル内でテキストの配置を設定します。
@@ -119,19 +119,19 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 
 テーブル セルのビューを選択 (`NSTableViewCell`) で、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
 
-[ ![](outline-view-images/edit07.png "属性の検査")](outline-view-images/edit07.png)
+[![](outline-view-images/edit07.png "属性の検査")](outline-view-images/edit07.png#lightbox)
 
 これらは、すべての標準的なビューのプロパティです。 また、この列は、ここに行サイズの変更オプションがあります。
 
 テーブル ビューのセルを選択 (既定では、これは、 `NSTextField`) で、**インターフェイス階層**あり、次のプロパティでは使用、**属性インスペクター**:
 
-[ ![](outline-view-images/edit08.png "属性の検査")](outline-view-images/edit08.png)
+[![](outline-view-images/edit08.png "属性の検査")](outline-view-images/edit08.png#lightbox)
 
 ここで設定する標準的なテキスト フィールドのすべてのプロパティがあります。 既定では、標準的なテキスト フィールドは列のセルのデータを表示するために使用します。
 
 テーブル セルのビューを選択 (`NSTableFieldCell`) で、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
 
-[ ![](outline-view-images/edit09.png "属性の検査")](outline-view-images/edit09.png)
+[![](outline-view-images/edit09.png "属性の検査")](outline-view-images/edit09.png#lightbox)
 
 ここでの最も重要な設定は次のとおりです。
 
@@ -145,7 +145,7 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 
 テーブル セルのビューを選択 (`NSTableFieldCell`) のテーブルの列の下部にある、**インターフェイス階層**:
 
-[ ![](outline-view-images/edit11.png "テーブル セルのビューを選択します。")](outline-view-images/edit10.png)
+[![](outline-view-images/edit11.png "テーブル セルのビューを選択します。")](outline-view-images/edit10.png#lightbox)
 
 これにより、ベースとして使用されるテーブル セルのビューを編集して_パターン_指定された列用に作成されたすべてのセル。
 
@@ -159,14 +159,14 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 
 1. 切り替えて、**アシスタント エディター**ことを確認して、`ViewController.h`ファイルが選択されています。 
 
-    [ ![](outline-view-images/edit11.png "正しい .h ファイルを選択します。")](outline-view-images/edit11.png)
+    [![](outline-view-images/edit11.png "正しい .h ファイルを選択します。")](outline-view-images/edit11.png#lightbox)
 2. アウトライン表示を選択して、**インターフェイス階層**コントロールをクリックし、ドラッグする、`ViewController.h`ファイル。
 3. 作成、**コンセント**、アウトライン表示と呼ばれる`ProductOutline`: 
 
-    [ ![](outline-view-images/edit13.png "コンセントを構成します。")](outline-view-images/edit13.png)
+    [![](outline-view-images/edit13.png "コンセントを構成します。")](outline-view-images/edit13.png#lightbox)
 4. 作成**コンセント**テーブルの列にも呼び出さ`ProductColumn`と`DetailsColumn`: 
 
-    [ ![](outline-view-images/edit14.png "コンセントを構成します。")](outline-view-images/edit14.png)
+    [![](outline-view-images/edit14.png "コンセントを構成します。")](outline-view-images/edit14.png#lightbox)
 5. 変更を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
 次に、作成してコードの表示、アウトラインの一部のデータ、アプリケーションを実行するとします。
@@ -179,7 +179,7 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 
 最初に、新しいを作成してみましょう`Product`個々 の行とサブ製品のグループに関する情報を保持するクラス。 **ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.**選択**全般** > **空のクラス**、入力`Product`の**名前**] をクリック、**新規**ボタン。
 
-[ ![](outline-view-images/populate01.png "空のクラスを作成します。")](outline-view-images/populate01.png)
+[![](outline-view-images/populate01.png "空のクラスを作成します。")](outline-view-images/populate01.png#lightbox)
 
 ように、`Product.cs`次のようなファイルの内容。
 
@@ -390,11 +390,11 @@ public override void AwakeFromNib ()
 
 アプリケーションを実行している場合、次のように表示されます。
 
-[ ![](outline-view-images/populate02.png "折りたたまれたビュー")](outline-view-images/populate02.png)
+[![](outline-view-images/populate02.png "折りたたまれたビュー")](outline-view-images/populate02.png#lightbox)
 
 アウトライン表示でノードを展開している場合、次のようになります。
 
-[ ![](outline-view-images/populate03.png "展開ビュー")](outline-view-images/populate03.png)
+[![](outline-view-images/populate03.png "展開ビュー")](outline-view-images/populate03.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
@@ -402,7 +402,7 @@ public override void AwakeFromNib ()
 
 ユーザーを列ヘッダーをクリックして、アウトライン内のデータを並べ替えるを許可してみましょう。 最初をダブルクリックして、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 選択、`Product`列、入力`Title`の**並べ替えキー**、`compare:`の**セレクター**を選択し、`Ascending`の**順序**:
 
-[ ![](outline-view-images/sort01.png "並べ替えキーの順序の設定")](outline-view-images/sort01.png)
+[![](outline-view-images/sort01.png "並べ替えキーの順序の設定")](outline-view-images/sort01.png#lightbox)
 
 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
@@ -435,7 +435,7 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 
 アプリケーションを実行すると、列ヘッダーをクリックして、その列で行が並べ替えられます。
 
-[ ![](outline-view-images/sort02.png "並べ替えの出力の例")](outline-view-images/sort02.png)
+[![](outline-view-images/sort02.png "並べ替えの出力の例")](outline-view-images/sort02.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -443,7 +443,7 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 
 1 つの行を選択し、ダブルクリックして、ユーザーを許可するかどうか、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 アウトライン ビューを選択して、**インターフェイス階層**をオフにし、**複数**のチェック ボックス、**属性インスペクター**:
 
-[ ![](outline-view-images/select01.png "属性の検査")](outline-view-images/select01.png)
+[![](outline-view-images/select01.png "属性の検査")](outline-view-images/select01.png#lightbox)
 
 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
@@ -466,7 +466,7 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 
 複数の行を選択し、ダブルクリックして、ユーザーを許可するかどうか、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 アウトライン ビューを選択して、**インターフェイス階層**を確認し、**複数**のチェック ボックス、**属性インスペクター**:
 
-[ ![](outline-view-images/select02.png "属性の検査")](outline-view-images/select02.png)
+[![](outline-view-images/select02.png "属性の検査")](outline-view-images/select02.png#lightbox)
 
 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
@@ -489,7 +489,7 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 
 その文字を含む、アウトライン モードを選択した文字を入力するユーザーを許可して、最初の行を選択する場合、ダブルクリック、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 アウトライン ビューを選択して、**インターフェイス階層**を確認し、**の種類を選択**のチェック ボックス、**属性インスペクター**:
 
-[ ![](outline-view-images/type01.png "行型の編集")](outline-view-images/type01.png)
+[![](outline-view-images/type01.png "行型の編集")](outline-view-images/type01.png#lightbox)
 
 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
@@ -517,7 +517,7 @@ public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSOb
 
 ユーザーがドラッグできるようにする場合、アウトライン表示の列の順序を変更をダブルクリックして、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 アウトライン ビューを選択して、**インターフェイス階層**を確認し、**並べ替え**のチェック ボックス、**属性インスペクター**:
 
-[ ![](outline-view-images/reorder01.png "属性の検査")](outline-view-images/reorder01.png)
+[![](outline-view-images/reorder01.png "属性の検査")](outline-view-images/reorder01.png#lightbox)
 
 値を提供する場合、**自動保存**プロパティとチェック、**列情報**フィールドでは、テーブルのレイアウトを変更しましたがご利用の米国自動的に保存され、次回アプリケーションを復元実行されます。
 
@@ -536,7 +536,7 @@ public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex,
 
 アプリケーションを実行する場合に、列の順序を変更する周囲の列ヘッダーをドラッグしたことができます。
 
-[ ![](outline-view-images/reorder02.png "並べ替え列の例")](outline-view-images/reorder02.png)
+[![](outline-view-images/reorder02.png "並べ替え列の例")](outline-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
@@ -598,7 +598,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 
 今すぐアプリケーションを実行して、ユーザーはテーブル ビュー内のセルを編集できます。
 
-[ ![](outline-view-images/editing01.png "セルの編集の例")](outline-view-images/editing01.png)
+[![](outline-view-images/editing01.png "セルの編集の例")](outline-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Outline_Views" />
 
@@ -694,7 +694,7 @@ Xamarin.Mac アプリケーションのコーディングのキー値と、デ�
 - [テーブル ビュー](~/mac/user-interface/table-view.md)
 - [ソース リスト](~/mac/user-interface/source-list.md)
 - [データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)
-- [OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [ビューを説明する概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)

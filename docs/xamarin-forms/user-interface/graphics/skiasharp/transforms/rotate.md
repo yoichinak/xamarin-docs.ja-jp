@@ -4,14 +4,15 @@ description: "影響と SkiaSharp 回転変換で実行できるアニメーシ�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: c87f9a561ac2f7a8c3da1c1e4ab839431073fcb9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 146093e15651316e84947e2bd81eeee3bf55cedb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-rotate-transform"></a>回転変換
 
@@ -57,7 +58,7 @@ using (SKPaint textPaint = new SKPaint
 
 回転の中心のほとんどの角度にこのプログラムで設定をキャンバスの左上隅にあるのため、画面をオフにテキストの回転します。
 
-[![](rotate-images/basicrotate-small.png "トリプル ページのスクリーン ショット、基本的な回転")](rotate-images/basicrotate-large.png "トリプル ページのスクリーン ショット、基本的な回転")
+[![](rotate-images/basicrotate-small.png "トリプル ページのスクリーン ショット、基本的な回転")](rotate-images/basicrotate-large.png#lightbox "トリプル ページのスクリーン ショット、基本的な回転")
 
 ほとんどの場合、回転のこれらのバージョンを使用して、指定のピボット ポイントを中心としたものにしておく、 [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/)と[ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/)メソッド。
 
@@ -85,7 +86,7 @@ using (SKPaint textPaint = new SKPaint
 
 今すぐテキストは、テキストのベースラインの水平方向の中央のテキストを配置するために使用する点を中心として回転します。
 
-[![](rotate-images/centeredrotate-small.png "トリプル ページのスクリーン ショット、回転の中心")](rotate-images/centeredrotate-large.png "ページの回転の中心のトリプル スクリーン ショット")
+[![](rotate-images/centeredrotate-small.png "トリプル ページのスクリーン ショット、回転の中心")](rotate-images/centeredrotate-large.png#lightbox "ページの回転の中心のトリプル スクリーン ショット")
 
 中央のバージョンのと同様に、`Scale`メソッド、中央のバージョン、`RotateDegrees`呼び出しは、ショートカット。
 
@@ -139,7 +140,7 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 回転と変換を結合するいくつかの方法は通常です。 **テキストの回転**ページは次の表示を作成します。
 
-[![](rotate-images/rotatedtext-small.png "テキストの回転 ページのスクリーン ショットをトリプル")](rotate-images/rotatedtext-large.png "テキストの回転 ページのトリプル スクリーン ショット")
+[![](rotate-images/rotatedtext-small.png "テキストの回転 ページのスクリーン ショットをトリプル")](rotate-images/rotatedtext-large.png#lightbox "テキストの回転 ページのトリプル スクリーン ショット")
 
 ここでは、`PaintSurface`のハンドラー、 [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs)クラス。
 
@@ -363,7 +364,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 クロックは、手が粗雑ではなく、確かに機能です。
 
-[![](rotate-images/uglyanalogclock-small.png "3 つの汚いアナログ時計のテキスト ページのスクリーン ショット")](rotate-images/uglyanalogclock-large.png "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "3 つの汚いアナログ時計のテキスト ページのスクリーン ショット")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
 
 ## <a name="related-links"></a>関連リンク

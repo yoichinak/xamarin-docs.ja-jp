@@ -4,14 +4,15 @@ description: "オブジェクトをさまざまなサイズに合わせたスケ
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 3ea498b3672c0b9ef4efeff7ec5981dca5a36912
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-scale-transform"></a>スケールの変換
 
@@ -103,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 わかるように後に、描画された内容、`Scale`比例して増加を呼び出します。
 
-[![](scale-images/basicscale-small.png "基本スケール ページのスクリーン ショットをトリプル")](scale-images/basicscale-large.png "基本スケール ページのトリプル スクリーン ショット")
+[![](scale-images/basicscale-small.png "基本スケール ページのスクリーン ショットをトリプル")](scale-images/basicscale-large.png#lightbox "基本スケール ページのトリプル スクリーン ショット")
 
 テキスト、破線、コーナーと、キャンバスの左と上のエッジ、および角の丸い四角形の間の 10 ピクセルの余白の丸め、その行にダッシュの長さの幅は、同じスケール ファクターのすべてが適用されます。
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 角の丸い四角形の左上隅が配置されている`margin`キャンバスの左端からピクセルと`margin`最上部からピクセルです。 最後の 2 つの引数、`Scale`メソッドは、それらの値の幅と高さの角の丸い四角形の幅と高さがテキストに設定されます。 これはすべてスケーリングが、その四角形の中心を基準として。
 
-[![](scale-images/centeredscale-small.png "スケールの中央に配置 ページのスクリーン ショットをトリプル")](scale-images/centeredscale-large.png "スケールの中央に配置 ページのトリプル スクリーン ショット")
+[![](scale-images/centeredscale-small.png "スケールの中央に配置 ページのスクリーン ショットをトリプル")](scale-images/centeredscale-large.png#lightbox "スケールの中央に配置 ページのトリプル スクリーン ショット")
 
 `Slider`このプログラム内の要素がある範囲の & #x 2013; 10 ~ 10 です。 わかります、垂直方向のスケーリング (画面の中央で、Android 上など) の負の値によってスケーリングの中心を通る水平軸の周りの上下を反転するオブジェクトを使用します。 負の値 (右側の Windows の画面など) のスケーリングの水平方向のスケーリングの中心を通る垂直軸の周りの上下を反転するオブジェクトが発生します。
 
@@ -246,7 +247,7 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds`四角形がこのコードの先頭付近にある取得およびにキャンバスの高さと幅で後で使用される、`Scale`呼び出します。 単独での呼び出しは拡大縮小パスの座標によってレポートが表示される、`DrawPath`キャンバスの右上隅の中央の呼び出しがある星型。 ダウンし、左にシフトする必要があります。 これは、ジョブの`Translate`呼び出します。 これら 2 つのプロパティの`pathBounds`は約 –100、ため、変換の要因が約 100 です。 `Translate`呼び出しが後に、`Scale`を呼び出すと、キャンバスの中央にある星型の中心を移動できるようにそれらの値が、スケーリングの要因によってスケーリング効果的に。
 
-[![](scale-images/anisotropicscaling-small.png "トリプル ページのスクリーン ショット、異方性スケーリング")](scale-images/anisotropicscaling-large.png "トリプル ページのスクリーン ショット、異方性のスケーリング")
+[![](scale-images/anisotropicscaling-small.png "トリプル ページのスクリーン ショット、異方性スケーリング")](scale-images/anisotropicscaling-large.png#lightbox "トリプル ページのスクリーン ショット、異方性のスケーリング")
 
 別の方法を考えることができます、`Scale`と`Translate`逆の順序に影響を判断するのには、呼び出し:`Translate`呼び出しは、キャンバスの左上隅で方向が完全に表示されるようにするために、パスを移動します。 `Scale`メソッドからは、そのスター左上隅に対して相対的に大きくします。
 
@@ -289,7 +290,7 @@ using (SKPaint textPaint = new SKPaint
 
 同様のロジックは、テキストがから返されるテキスト範囲の四角形に基づくページのサイズに拡張されます`MeasureText`(実際のテキストより少し大きい値です)。
 
-[![](scale-images/anisotropictext-small.png "異方性テスト ページのスクリーン ショットをトリプル")](scale-images/anisotropictext-large.png "異方性テスト ページのトリプル スクリーン ショット")
+[![](scale-images/anisotropictext-small.png "異方性テスト ページのスクリーン ショットをトリプル")](scale-images/anisotropictext-large.png#lightbox "異方性テスト ページのトリプル スクリーン ショット")
 
 グラフィカル オブジェクトの縦横比を保持する必要がある場合にアイソトロ ピック スケーリングを使用します。 **アイソトロ ピック スケーリング**11 星のこのページを示します。 概念的には、アイソトロ ピック スケーリングを使用してページの中央にグラフィカル オブジェクトを表示するための手順です。
 
@@ -338,7 +339,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 により 10% と赤から青の色を段階的に変更を組み込むことのスケーリングを小さくたびに、コードの詳細でその 10 倍も星に表示されます。
 
-[![](scale-images/isotropicscaling-small.png "トリプル ページのスクリーン ショット、アイソトロ ピック スケーリング")](scale-images/isotropicscaling-large.png "トリプル ページのスクリーン ショット、アイソトロ ピック スケーリング")
+[![](scale-images/isotropicscaling-small.png "トリプル ページのスクリーン ショット、アイソトロ ピック スケーリング")](scale-images/isotropicscaling-large.png#lightbox "トリプル ページのスクリーン ショット、アイソトロ ピック スケーリング")
 
 
 ## <a name="related-links"></a>関連リンク

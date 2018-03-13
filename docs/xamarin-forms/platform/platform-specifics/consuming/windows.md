@@ -3,16 +3,16 @@ title: "Windows プラットフォーム仕様"
 description: "プラットフォーム固有では、カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用できます。 この記事では、Xamarin.Forms に組み込まれている Windows のプラットフォームの仕様を使用する方法を示します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
+ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: da9279939af8dc4033cd89769a7add60a745ac85
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 01b32d1ca5356ed69480dff0d31c210a8c460417
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows-platform-specifics"></a>Windows プラットフォーム仕様
 
@@ -52,7 +52,7 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 結果は指定されたツールバーの配置に適用される、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)インスタンス。
 
-[![](windows-images/toolbar-placement.png "ツールバーの配置のプラットフォームに応じた")](windows-images/toolbar-placement-large.png "配置のプラットフォームに固有のツールバー")
+[![](windows-images/toolbar-placement.png "ツールバーの配置のプラットフォームに応じた")](windows-images/toolbar-placement-large.png#lightbox "配置のプラットフォームに固有のツールバー")
 
 <a name="collapsable_navigation_bar" />
 
@@ -84,7 +84,7 @@ page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(14
 
 結果は、指定した[ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/)に適用される、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)幅を指定されたものインスタンス。
 
-[![](windows-images/collapsed-navigation-bar.png "プラットフォームに固有のナビゲーション バーが折りたたまれている")](windows-images/collapsed-navigation-bar-large.png "プラットフォームに固有のナビゲーション バーを折りたたむ")
+[![](windows-images/collapsed-navigation-bar.png "プラットフォームに固有のナビゲーション バーが折りたたまれている")](windows-images/collapsed-navigation-bar-large.png#lightbox "プラットフォームに固有のナビゲーション バーを折りたたむ")
 
 ## <a name="summary"></a>まとめ
 

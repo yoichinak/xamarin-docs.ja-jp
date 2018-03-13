@@ -3,16 +3,16 @@ title: "Siri のリモート コンピューターと Bluetooth コント ロー
 description: "この記事では、Xamarin.tvOS アプリで新しい Siri リモート コンピューターと Bluetooth ゲーム コント ローラーのサポートについて説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5d74479e995c5c6ba6f6fd9fd23fbca78718ee31
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Siri のリモート コンピューターと Bluetooth コント ローラー
 
@@ -23,7 +23,7 @@ Xamarin.tvOS アプリのユーザーがいないするインターフェイス�
 
 アプリがゲームの場合は、することができます必要に応じて作成用のサード パーティのサポートの iOS ビルド (MFI) [Bluetooth ゲーム コント ローラー](#Bluetooth-Game-Controllers)もアプリにします。
 
-[ ![](remote-bluetooth-images/intro01.png "Bluetooth Remote、およびゲーム コント ローラー")](remote-bluetooth-images/intro01.png)
+[![](remote-bluetooth-images/intro01.png "Bluetooth Remote、およびゲーム コント ローラー")](remote-bluetooth-images/intro01.png#lightbox)
 
 この記事の内容について説明します、 [Siri リモート](#The-Siri-Remote)、[タッチ画面ジェスチャ](#Touch-Surface-Gestures)と[Siri リモート ボタン](#Siri-Remote-Buttons)経由でそれらを使用する方法を示しています[ジェスチャとストーリー ボード](#Gestures-and-Storyboards)、[ジェスチャ、およびコード](#Gestures-and-Code)と[低レベルのイベント処理](#Low-Level-Event-Handling)です。 最後に、についても説明[ゲーム コントローラを備えた作業](#Working-with-Game-Controllers)Xamarin.tvOS アプリでします。
 
@@ -35,7 +35,7 @@ Xamarin.tvOS アプリのユーザーがいないするインターフェイス�
 
 TvOS アプリ開発者として、問題点が Siri リモートのタッチ画面、加速度計、ジャイロスコープおよびボタンを利用したクイック、使いやすいおよび視覚的に説得力のあるユーザー インターフェイスの作成。
 
-[ ![](remote-bluetooth-images/remote01.png "Siri リモート")](remote-bluetooth-images/remote01.png)
+[![](remote-bluetooth-images/remote01.png "Siri リモート")](remote-bluetooth-images/remote01.png#lightbox)
 
 Siri リモコンには、次の機能と、tvOS アプリ内で予想される使用法があります。
 
@@ -128,14 +128,14 @@ Xamarin.tvOS アプリで Siri リモコンを使用する最も簡単な方法�
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いてインターフェイス デザイナーを編集します。
 2. ドラッグ、**タップ ジェスチャ レコグナイザー**から、**ライブラリ**し、ビュー上にドロップします。 
 
-    [ ![](remote-bluetooth-images/storyboard01.png "タップ ジェスチャ レコグナイザー")](remote-bluetooth-images/storyboard01.png)
+    [![](remote-bluetooth-images/storyboard01.png "タップ ジェスチャ レコグナイザー")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. 確認**選択**で、**ボタン**のセクションで、**属性インスペクター**: 
 
-    [ ![](remote-bluetooth-images/storyboard02.png "選択を確認します。")](remote-bluetooth-images/storyboard02.png)
+    [![](remote-bluetooth-images/storyboard02.png "選択を確認します。")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **選択**ジェスチャがユーザーのクリックしてに応答することを意味、**タッチ画面**Siri リモートです。 応答のオプションもある、**メニュー**、**再生/一時停止**、**を**、**ダウン**、**左**と**右**ボタン。
 5. 次に、ネットワーク上で、**アクション**から、**タップ ジェスチャ レコグナイザー**および呼び出し`TouchSurfaceClicked`: 
 
-    [ ![](remote-bluetooth-images/storyboard03.png "タップ ジェスチャ レコグナイザーからアクション")](remote-bluetooth-images/storyboard03.png)
+    [![](remote-bluetooth-images/storyboard03.png "タップ ジェスチャ レコグナイザーからアクション")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 変更を保存し、for mac を Visual Studio に戻る
 
 ビュー、コント ローラーの編集 (例`FirstViewController.cs`) ファイルし、トリガーされています。 ジェスチャを処理する次のコードを追加します。
@@ -314,7 +314,7 @@ namespace tvRemote
 
 Apple TV、サード パーティ、iOS の作成に付属する標準的な Siri リモートに加えて (MFI) Bluetooth ゲーム コント ローラー Apple TV と組み合わせて使用して、Xamarin.tvOS アプリを制御するために使用します。
 
-[ ![](remote-bluetooth-images/game01.png "Bluetooth ゲーム コント ローラー")](remote-bluetooth-images/game01.png)
+[![](remote-bluetooth-images/game01.png "Bluetooth ゲーム コント ローラー")](remote-bluetooth-images/game01.png#lightbox)
 
 ゲームを拡張し、ゲームの世界の意味を提供するゲーム コント ローラーを使用できます。 また、使用は、リモート コンピューターと、コント ローラーの間で切り替える必要はありませんので、Apple TV の標準のインターフェイスを制御するも使用できます。
 
@@ -425,7 +425,7 @@ Apple では、Xamarin.tvOS アプリは、ゲーム コント ローラーを�
 
 Xamarin.tvOS アプリでのゲーム コント ローラーのサポートを有効にするをダブルクリック、`Info.plist`ファイルで、**ソリューション エクスプ ローラー**ファイルを開いて編集します。
 
-[ ![](remote-bluetooth-images/game02.png "Info.plist エディター")](remote-bluetooth-images/game02.png)
+[![](remote-bluetooth-images/game02.png "Info.plist エディター")](remote-bluetooth-images/game02.png#lightbox)
 
 下にある、**ゲーム コント ローラー**セクションで、チェック ボックスをオンして**ゲーム コント ローラーを有効にする**、すべてのアプリでサポートされるゲーム コント ローラーの種類を確認します。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c59ddde44b0e47122865c55a7964707f106d2691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>IOS デザイナーでテーブルを操作します。
 
@@ -40,7 +40,7 @@ A`UITableView`プロトタイプでコンテンツ通常は、データの一覧
 
 StoryboardTable 例には、ストーリー ボードで UITableView の両方の種類を使用する単純なマスター/詳細アプリが含まれています。 このセクションの残りの部分では、完了すると、次のようになります小さな to do リストの例をビルドする方法について説明します。
 
- [ ![例の画面](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png)
+ [![例の画面](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
 、ストーリー ボードとユーザー インターフェイスがビルドされ、両方の画面、UITableView が使用されます。 メイン画面を使用して*プロトタイプ コンテンツ*画面を使用するには、行のレイアウトと詳細情報の*静的なコンテンツ*セルのカスタム レイアウトを使用してデータ エントリ フォームを作成します。
 
@@ -48,7 +48,7 @@ StoryboardTable 例には、ストーリー ボードで UITableView の両方�
 
 Visual Studio を使用して、新しいソリューションを作成する**(作成) の新しいプロジェクト > 1 つのビュー App(C#)**、および呼び出し_StoryboardTables_です。
 
- [ ![新しいプロジェクト ダイアログ ボックスを作成します。](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png)
+ [![新しいプロジェクト ダイアログ ボックスを作成します。](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
 一部の c# ファイルが開き、ソリューションおよび`Main.storyboard`ファイルが既に作成します。 ダブルクリックして、 `Main.storyboard` iOS デザイナーで開くファイル。
 
@@ -75,24 +75,24 @@ Visual Studio を使用して、新しいソリューションを作成する**(
 2.  ドラッグ、**ナビゲーション コント ローラー**と**ビュー コント ローラーの表に**ツールボックスからストーリー ボード上にします。 
 3.  追加されたテーブルのビューの 2 番目のコント ローラーに、ルート ビュー コント ローラーから、segue を作成します。 Segue、コントロールを作成すると、ドラッグ*詳細セルから*新しく追加された UITableViewController にします。 オプションを選択**表示*** **話題選択**です。 
 4.  選択して、新しい話題作成したしコードでこの話題参照に識別子を取得します。 Segue をクリックし、入力`TaskSegue`の**識別子**で、**プロパティ パッド**、次のようにします。    
-  [ ![プロパティ パネルの話題名前付け](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png) 
+  [![プロパティ パネルの話題名前付け](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. 次を選択し、プロパティ パッドを使用する 2 つのテーブルのビューを構成します。 ビューとビューのコント ローラー以外を選択することを確認 – 選択に役立てるためにドキュメント アウトラインを使用することができます。
 
 6.  ルート ビュー コント ローラーを変更する**コンテンツ: 動的プロトタイプ**(デザイン サーフェイスにビューのラベル付けするには**プロトタイプ コンテンツ**)。
 
-    [ ![動的なプロトタイプにコンテンツのプロパティの設定](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png)
+    [![動的なプロトタイプにコンテンツのプロパティの設定](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
 7.  新しい変更**UITableViewController**する**コンテンツ: 静的セル**です。 
 
 
 8. 新しい UITableViewController は、クラス名と識別子の設定が必要です。 コント ローラーのビューと種類を選択_TaskDetailViewController_の**クラス**で、**プロパティ パッド**– これは、新しい作成`TaskDetailViewController.cs`ソリューション内のファイルパッドです。 入力、 **StoryboardID**として_詳細_次の例で示すようにします。 これは、c# コードでは、このビューの読み込みに後で使用されます。  
 
-    [ ![ストーリー ボード ID を設定](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png)
+    [![ストーリー ボード ID を設定](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. ストーリー ボードのデザイン画面は次のようになります (このルート ビュー コント ローラーのナビゲーション項目のタイトルは「面倒ボード」に変更されました)。
 
-    [ ![デザイン画面](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png)  
+    [![デザイン画面](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
 
 
@@ -106,11 +106,11 @@ Visual Studio を使用して、新しいソリューションを作成する**(
 
 最初に、マスター ビュー コント ローラーでのプロトタイプのセルを選択し、設定、**識別子**として_taskcell_下図のように、します。 これは、コードの後でこの UITableViewCell のインスタンスの取得に使用されます。
 
- [ ![セル識別子の設定](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png)
+ [![セル識別子の設定](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 次に、以下に示すように、新しいタスクを追加するボタンを作成する必要があります。
 
-[ ![バーのナビゲーション バーでボタン項目](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png)
+[![バーのナビゲーション バーでボタン項目](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 次の手順で行います。 
 
@@ -123,7 +123,7 @@ Visual Studio を使用して、新しいソリューションを作成する**(
 
 詳細ビューには、はるかに多く作業が必要です。 テーブル セルの表示は、ビューにドラッグしても、ラベル、テキスト ビュー、およびボタンを使用し、設定する必要があります。 次のスクリーン ショットは、2 つのセクションで完成した UI を示しています。 1 つのセクションが 3 つのセル、ラベルを 3 つ、2 つのテキスト フィールドと 1 つ切り替えるには、2 番目のセクションに 2 つのボタンを含む 1 つのセルがあるときに。
 
- [ ![詳細ビューのレイアウト](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png)
+ [![詳細ビューのレイアウト](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 完全なレイアウトを作成する手順は次のとおりです。
 
@@ -137,7 +137,7 @@ Visual Studio を使用して、新しいソリューションを作成する**(
 上部のセクションを選択し、**プロパティ > テーブルのビュー セクション**変更**行**に_3_下図のように。
 
 
- [ ![上部のセクションを 3 つの行に設定します。](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png)
+ [![上部のセクションを 3 つの行に設定します。](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 開いている各セルの**プロパティ パッド**設定。
 
@@ -152,7 +152,7 @@ Visual Studio を使用して、新しいソリューションを作成する**(
 -  **背景を設定する**:_色をオフに_です。
 -  セルに 2 つのボタンをドラッグし、タイトルを適切に設定 (つまり_保存_と_削除_)、次のように。
 
-   [ ![下部のセクションに 2 つのボタンの設定](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png)
+   [![下部のセクションに 2 つのボタンの設定](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 この時点ですることも、セルとアダプティブ レイアウトを確認するコントロールに制約を設定します。
 
@@ -342,7 +342,7 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 ストーリー ボードの使用例 – 次のように完成したアプリの外観を完了するとします。
 
-[ ![完成したアプリ](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png)
+[![完成したアプリ](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 この例を示しています。
 
@@ -356,4 +356,4 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 ## <a name="related-links"></a>関連リンク
 
 - [StoryboardTable (サンプル)](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [ストーリー ボードの概要](~/ios/user-interface/storyboards/index.md)
+- [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)

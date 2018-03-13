@@ -3,16 +3,16 @@ title: "Hello, Android マルチスクリーン: 詳細"
 description: "2 部構成のこのガイドでは、2 つ目の画面を処理するために、(「Hello, Android」ガイドで作成された) 基本的な Phoneword アプリケーションが展開されます。 その過程で、基本的な Android アプリケーションの構成ブロックが紹介されます。 Android アーキテクチャの詳細も含まれます。これは、Android アプリケーションの構造と機能の理解を深めるのに役立ちます。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: a47dea43b1fb1e84a0cd3dffc07b483497edbe09
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: acced081daa9416c5c8dcf90f769aaacd584ec9a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android マルチスクリーン: 詳細
 
@@ -30,7 +30,6 @@ _2 部構成のこのガイドでは、2 つ目の画面を処理するために
 
 「[Hello, Android Deep Dive](~/android/get-started/hello-android/hello-android-deepdive.md)」 (Hello, Android の詳細) では、Android アプリケーションは単一のエントリ ポイントがないため、固有のプログラムであることを学習しました。 代わりに、オペレーティング システム (または別のアプリケーション) はアプリケーションの登録済みアクティビティのいずれかを開始します。これにより、アプリケーションのプロセスが開始されます。 Android アーキテクチャを詳しく分析し、Android アプリケーションの構成ブロックとその機能について紹介することで、Android アプリケーションのビルド方法の理解を深めます。
 
-<a name="AndroidApplicationBlocks" />
 
 ### <a name="android-application-blocks"></a>Android アプリケーション ブロック
 
@@ -52,7 +51,6 @@ Android は*最小権限の原則*に従って設計されています。アプ�
 
 通信を行うために、アプリケーション ブロックは*インテント*という非同期メッセージを送受信します。 インテントには、受信側のブロックと、場合によっては一部のデータに関する情報が含まれます。 1 つのアプリ コンポーネントから送信されたインテントが別のアプリ コンポーネントでのアクションをトリガーし、これにより、2 つのアプリ コンポーネントがバインドされ、通信できるようになります。 インテントを送受信することで、写真を撮影して保存するためのカメラ アプリの起動、場所情報の収集、またはある画面から次の画面への移動などの複雑なアクションをブロックで調整することができます。
 
-<a name="AndroidManifestXML" />
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 

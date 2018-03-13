@@ -3,14 +3,15 @@ title: "22 章の概要です。 アニメーション"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0ee99881a43b625cc8a70fb59e54710705c2d07a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0647e869fcf37a3a1dfdeb6f3dbf1e7d07ad95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-22-animation"></a>22 章の概要です。 アニメーション
 
@@ -110,7 +111,7 @@ Xamarin.Forms タイマーを使用して、独自のアニメーションを作
 
 [**RotatingSpokes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes)回転`BoxView`画面の中央を中心スポークし、それ自体の興味深いパターンを作成する各スポークを回転します。
 
-[![スポーク回転のトリプル スクリーン ショット](images/ch22fg21-small.png "スポーク回転")](images/ch22fg21-large.png "スポーク回転")
+[![スポーク回転のトリプル スクリーン ショット](images/ch22fg21-small.png "スポーク回転")](images/ch22fg21-large.png#lightbox "スポーク回転")
 
 ただし、徐々 に増やすと、`Rotation`として、要素のプロパティは、長期的な機能しない可能性があります、 [ **RotationBreakdown** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown)サンプルを示します。
 
@@ -124,7 +125,7 @@ Xamarin.Forms タイマーを使用して、独自のアニメーションを作
 
 [ **XamagonXuzzle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)サンプルは`LayoutTo`を移動するタイルで、クラシックの実装 15 ~ 16 パズル番号付きのタイルではなく、スクランブルされたイメージを表示します。
 
-[![Xamarin Xuzzle のトリプル スクリーン ショット](images/ch22fg26-small.png "Xuzzle パズル ゲーム")](images/ch22fg26-large.png "Xuzzle パズル ゲーム")
+[![Xamarin Xuzzle のトリプル スクリーン ショット](images/ch22fg26-small.png "Xuzzle パズル ゲーム")](images/ch22fg26-large.png#lightbox "Xuzzle パズル ゲーム")
 
 ### <a name="your-own-awaitable-animations"></a>独自の待機可能アニメーション
 

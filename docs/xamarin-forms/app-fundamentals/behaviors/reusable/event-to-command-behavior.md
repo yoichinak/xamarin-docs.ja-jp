@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 2727d83e55e305af1372ece35bdf22abfc653fe7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d82a1391feca9187cf2aca4394509447aeac6a18
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reusable-eventtocommandbehavior"></a>再利用可能な EventToCommandBehavior
 
@@ -182,7 +182,7 @@ selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 
 実行時に、動作は、コントロールとの対話に応答します。 項目が選択した場合、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)、 [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/)を実行するイベントは起動、 `OutputAgeCommand` ViewModel にします。 この更新、ViewModel`SelectedItemText`プロパティを[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)次のスクリーン ショットに示すようにバインドします。
 
-[ ![](event-to-command-behavior-images/screenshots-sml.png "サンプル アプリケーションで EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png "EventToCommandBehavior でアプリケーションのサンプル")
+[![](event-to-command-behavior-images/screenshots-sml.png "サンプル アプリケーションで EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "EventToCommandBehavior でアプリケーションのサンプル")
 
 イベントが発生したときにコマンドを実行するこの動作を使用する利点は、コマンドがコマンドとの対話に設計されていないコントロールを関連付けできることです。 さらに、分離コード ファイルからボイラー プレート イベント処理コードを削除します。
 

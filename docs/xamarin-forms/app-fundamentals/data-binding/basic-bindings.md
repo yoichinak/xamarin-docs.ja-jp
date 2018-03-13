@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 500ad02d79cea79f59b1aca91b0312c9a9d6bac3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b82c0471985306962133c3bf7b084b49d5588bb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="basic-bindings"></a>基本的なバインディング
 
@@ -94,7 +94,7 @@ label.SetBinding(RotationProperty, "Value");
 
 操作するとき、 `Slider`、`Label`適宜回転させます。
 
-[![バインド Basice コード](basic-bindings-images/basiccodebinding-small.png "基本的なコード バインディング")](basic-bindings-images/basiccodebinding-large.png "基本的なコードのバインディング")
+[![バインド Basice コード](basic-bindings-images/basiccodebinding-small.png "基本的なコード バインディング")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本的なコードのバインディング")
 
 **基本的な Xaml バインディング**ページと同じ**コードの基本的なバインディング**XAML で全体のデータ バインディングを定義する点を除いて。
 
@@ -190,7 +190,7 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 このプログラムを実行するには、少しことにより意外可能性があります。
 
-[![代替コード バインディング](basic-bindings-images/alternativecodebinding-small.png "代替コード バインディング")](basic-bindings-images/alternativecodebinding-large.png "代替コードのバインディング")
+[![代替コード バインディング](basic-bindings-images/alternativecodebinding-small.png "代替コード バインディング")](basic-bindings-images/alternativecodebinding-large.png#lightbox "代替コードのバインディング")
 
 左側の iOS の画面は、ページが最初に表示されるときの画面の外観を示します。 ここでは、`Label`しますか? 
 
@@ -319,7 +319,7 @@ XAML マークアップ拡張機能は、中かっこで区切られた通常、
 
 `BindingContext`のプロパティ、`StackLayout`に設定されている、`slider`オブジェクト。 両方でこのバインディング コンテキストを継承、`Label`と`BoxView`の両方をされて、`Rotation`プロパティに設定、`Value`のプロパティ、 `Slider`: 
 
-[![バインド コンテキストの継承](basic-bindings-images/bindingcontextinheritance-small.png "バインド コンテキストの継承")](basic-bindings-images/bindingcontextinheritance-large.png "コンテキストの継承のバインド")
+[![バインド コンテキストの継承](basic-bindings-images/bindingcontextinheritance-small.png "バインド コンテキストの継承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "コンテキストの継承のバインド")
 
 [次の記事](binding-mode.md)、わかる方法、*バインド モード*ターゲットとソースのオブジェクト間のデータ フローを変更することができます。
 

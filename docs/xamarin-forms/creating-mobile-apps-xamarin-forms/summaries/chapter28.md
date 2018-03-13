@@ -3,14 +3,15 @@ title: "28 章の概要です。 場所とマップ"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7361f65fecfed9d61b9df7088f9021ffa0192ad8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>28 章の概要です。 場所とマップ
 
@@ -215,7 +216,7 @@ Windows ランタイム アプリケーションでは、Bing Maps の使用の�
 
 これで使用される、 [LocalMuseumsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml)ファイルと[LocalMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml.cs)も博物館にユーザーの所在地からの距離を表示する、分離コード ファイル。
 
-[![ローカルの美術館ページのスクリーン ショットをトリプル](images/ch28fg28-small.png "場所までの距離")](images/ch28fg28-large.png "場所までの距離")
+[![ローカルの美術館ページのスクリーン ショットをトリプル](images/ch28fg28-small.png "場所までの距離")](images/ch28fg28-large.png#lightbox "場所までの距離")
 
 プログラムでは、動的にマップの場所に基づく pin の数を制限する方法も示します。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: cc2deb11d544bc4e933e690d6089eb001a186c79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connected-services-walkthrough"></a>接続済みサービスのチュートリアル
 
@@ -24,22 +24,22 @@ ms.lasthandoff: 02/27/2018
 1.  ダブルクリックして起動、**接続済みサービス**が起動すると、ソリューション内のノード、 **Services ギャラリー**です。
   これは、このアプリケーションの種類の使用可能なすべてのサービスの一覧です。 サービスを選択して (など**Azure App Service でモバイル バックエンド**) をクリックします。
 
-  [ ![](connected-services-images/image001-sml.png "Mac 用 Visual Studio でのサービス ノードを接続しています。")](connected-services-images/image001.png)
+  [![](connected-services-images/image001-sml.png "Mac 用 Visual Studio でのサービス ノードを接続しています。")](connected-services-images/image001.png#lightbox)
 
 2. サービスの詳細 ページでは、サービスとインストールされる依存関係の説明があります。
   クリックして、**追加**アプリへの依存関係を追加する。
 
-  [ ![](connected-services-images/image002-sml.png "Azure でのモバイル バックエンド")](connected-services-images/image002.png)
+  [![](connected-services-images/image002-sml.png "Azure でのモバイル バックエンド")](connected-services-images/image002.png#lightbox)
 
 3. 依存関係は、PCL およびプラットフォーム固有のプロジェクトが作業に追加する必要があります。
   サービスを (直接または間接的に)、参照するすべてのプロジェクトに追加するチェック ボックスを選択します。
 
-  [ ![](connected-services-images/image003-sml.png "サービスが参照するすべてのプロジェクトをチェックします。")](connected-services-images/image003.png)
+  [![](connected-services-images/image003-sml.png "サービスが参照するすべてのプロジェクトをチェックします。")](connected-services-images/image003.png#lightbox)
 
 4. 選択**Accept**上、**ライセンスの同意**NuGet パッケージのダイアログ ボックス。
   受け入れるには、1 つは、MobileClient、依存関係、および SQLiteStore、用に別のオフライン データ同期に必要な 2 つのダイアログ ボックスである可能性があります。
 
-  [ ![](connected-services-images/image004-sml.png "ライセンス契約に同意します。")](connected-services-images/image004.png)
+  [![](connected-services-images/image004-sml.png "ライセンス契約に同意します。")](connected-services-images/image004.png#lightbox)
 
   ![](connected-services-images/image005.png "ライセンスの同意 ウィンドウ")
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 02/27/2018
 
 6. 一覧から、アプリのサービスを選択します。 テンプレートのコード値が設定されます、 `MobileServiceClient` Azure 上のサービスをアプリの対応する URL を持つオブジェクト。
 
-  [ ![](connected-services-images/image006-sml.png "一覧からアプリ サービスを選択します。")](connected-services-images/image006.png)
+  [![](connected-services-images/image006-sml.png "一覧からアプリ サービスを選択します。")](connected-services-images/image006.png#lightbox)
 
   サービスの一覧がない場合にクリックして、**新規**ボタン (手順 9. を参照してください)。
 
@@ -59,12 +59,12 @@ ms.lasthandoff: 02/27/2018
 
 8. ドキュメントに従って**次の手順**追加データ、オフライン sync、認証、およびアプリへのプッシュ通知します。
 
-  [ ![](connected-services-images/image008-sml.png "次の手順の指示を確認します。")](connected-services-images/image008.png)
+  [![](connected-services-images/image008-sml.png "次の手順の指示を確認します。")](connected-services-images/image008.png#lightbox)
 
 10. For mac Visual Studio 内から新しいサービスを作成するには、既存のアプリケーション サービスをお持ちでない場合
   クリックして、**新規**を開くにはサービスの一覧の左下にあるボタン、**新しい App Service**  ダイアログ。
 
-  [ ![](connected-services-images/image009-sml.png "Mac 用 Visual Studio で新しいアプリ サービスを作成します。")](connected-services-images/image009.png)
+  [![](connected-services-images/image009-sml.png "Mac 用 Visual Studio で新しいアプリ サービスを作成します。")](connected-services-images/image009.png#lightbox)
 
 新しいサービスには、次のパラメーターが必要です。
 

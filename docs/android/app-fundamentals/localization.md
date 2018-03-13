@@ -7,12 +7,12 @@ ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: adfc0da404c6b9df79c3b2be51f8cafa302a6bc3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c4800c1fe844a03c20b28079640a5ddab8046b1f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-localization"></a>Android のローカライズ
 
@@ -81,7 +81,7 @@ Android アプリケーションは、次のようなリソースのフォルダ
 ![複数のカルチャ識別子のリソース/描画とリソース/値のフォルダーのスクリーン ショット](localization-images/resources.png)
 
 > [!NOTE]
-> **注:**のような最上位レベルの言語を指定するときに`es`だけで 2 つの文字が必要ですただし、ディレクトリ名の形式には、ダッシュと小文字が必要な完全ロケールを指定する場合**r** 2 つを分離するには。部分が、たとえば**pt rBR**または**zh rCN**です。 (アンダー スコアを持つ、コードに返される値と比較します。 `pt_BR`) これらの両方が .NET の値に異なる`CultureInfo`クラスの使用方法、ダッシュのみ (います `pt-BR`) Xamarin プラットフォーム間で操作するときに、これらの相違点に注意してください。
+> ような最上位レベルの言語を指定するときに`es`だけで 2 つの文字が必要ですただし、ディレクトリ名の形式には、ダッシュと小文字が必要な完全ロケールを指定する場合**r** 例については、2つの部分を分離するには。**pt rBR**または**zh rCN**です。 (アンダー スコアを持つ、コードに返される値と比較します。 `pt_BR`) これらの両方が .NET の値に異なる`CultureInfo`クラスの使用方法、ダッシュのみ (います `pt-BR`) Xamarin プラットフォーム間で操作するときに、これらの相違点に注意してください。
 
 #### <a name="stringsxml-file-format"></a>Strings.xml ファイル形式
 
@@ -164,13 +164,13 @@ Android の文字列リソースも作成できます*数量文字列*翻訳を�
 
 ```xml
 <plurals name="numberOfTasks">
-         <!--
-                    As a developer, you should always supply "one" and "other"
-                    strings. Your translators will know which strings are actually
-                    needed for their language.
-             -->
-         <item quantity="one">There is %d task left.</item>
-         <item quantity="other">There are %d tasks still to do.</item>
+   <!--
+      As a developer, you should always supply "one" and "other"
+      strings. Your translators will know which strings are actually
+      needed for their language.
+    -->
+   <item quantity="one">There is %d task left.</item>
+   <item quantity="other">There are %d tasks still to do.</item>
  </plurals>
 ```
 
@@ -229,15 +229,13 @@ Android 4.2 (API レベル 17) を使用する場合とで指定できる値は�
 
 次のスクリーン ショットでは、[ローカライズ**Tasky**サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)アラビア語で。
 
-[![アラビア語の Tasky アプリのスクリーン ショット](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png) 
+[![アラビア語の Tasky アプリのスクリーン ショット](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
 次のスクリーン ショットでは、[ローカライズ**Tasky**サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)ヘブライ語で。
 
-[![ヘブライ語で Tasky アプリのスクリーン ショット](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png)
+[![ヘブライ語で Tasky アプリのスクリーン ショット](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
 使用して右から左へテキストをローカライズ**Strings.xml** LTR テキストと同じ方法でファイル。
-
-<a name="testing" />
 
 ## <a name="testing"></a>テスト中
 

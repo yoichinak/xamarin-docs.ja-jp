@@ -8,21 +8,21 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: effa527b330fb6ca75800392e557289a326f17aa
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 388744d48799e84587a4f554a4eb67cd677d8c9a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="storyboards"></a>ストーリーボード
 
 ストーリー ボードでは、すべてのコント ローラーの表示の機能の概要に分割する特定のアプリの UI を定義します。 Xcode のインターフェイスのビルダーでは、独自のシーンにこれらのコント ローラーの各住んでいます。
 
-[ ![](indepth-images/intro01.png "Xcode のインターフェイスのビルダー内のストーリー ボード")](indepth-images/intro01.png)
+[![](indepth-images/intro01.png "Xcode のインターフェイスのビルダー内のストーリー ボード")](indepth-images/intro01.png#lightbox)
 
 ストーリー ボードは、リソース ファイル (拡張子の`.storyboard`) は、コンパイルおよび出荷されたときに、Xamarin.Mac アプリのバンドルに含まれるを取得します。 アプリの開始、ストーリー ボードを定義する編集の`Info.plist`ファイルおよび選択した、 **Main インターフェイス**ドロップダウン ボックスから。 
 
-[ ![](indepth-images/sb01.png "Info.plist エディター")](indepth-images/sb01.png)
+[![](indepth-images/sb01.png "Info.plist エディター")](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
@@ -41,11 +41,11 @@ controller.ShowWindow(this);
 
 `FromName`指定した名前のアプリのバンドルに含まれているストーリー ボード ファイルを読み込みます。 `InstantiateControllerWithIdentifier`指定された Id を持つビュー コント ローラーのインスタンスを作成します。 UI を設計するときは、Xcode のインターフェイスのビルダーで Id を設定します。
 
-[ ![](indepth-images/sb02.png "ストーリー ボード ID を設定")](indepth-images/sb02.png)
+[![](indepth-images/sb02.png "ストーリー ボード ID を設定")](indepth-images/sb02.png#lightbox)
 
 必要に応じて、使用することができます、`InstantiateInitialController`インターフェイス ビルダーで初期のコント ローラーが割り当てられているビュー コント ローラーを読み込みます。
 
-[ ![](indepth-images/sb03.png "最初のコント ローラーを設定")](indepth-images/sb03.png)
+[![](indepth-images/sb03.png "最初のコント ローラーを設定")](indepth-images/sb03.png#lightbox)
 
 マークされている、**ストーリー ボード エントリ ポイント**と上記の終了開く矢印です。
 
@@ -76,7 +76,7 @@ controller.ShowWindow(this);
 
 さらに、`NSViewControllers`のウィンドウの一部であるようになりました_レスポンダー チェーン_:
 
-[ ![](indepth-images/vc01.png "応答側チェーン")](indepth-images/vc01.png)
+[![](indepth-images/vc01.png "応答側チェーン")](indepth-images/vc01.png#lightbox)
 
 そのため、ワイヤード (有線) アップを受け取り、切り取り、コピー、貼り付けのメニュー項目の選択などのイベントに応答します。 この自動ビュー コント ローラー ワイヤは macOS Sierra (10.12) で実行されているアプリでのみ行われます値を超えています。
 
@@ -86,13 +86,13 @@ controller.ShowWindow(this);
 
 ストーリー ボードでコント ローラーの表示 (分割ビュー コント ローラー タブのビュー コント ローラーなど) を実装できるようになりました_コンテインメント_「がある」その他のサブ コント ローラーの表示になるよう、します。
 
-[ ![](indepth-images/vc02.png "ビューのコント ローラーのコンテインメントの例")](indepth-images/vc02.png)
+[![](indepth-images/vc02.png "ビューのコント ローラーのコンテインメントの例")](indepth-images/vc02.png#lightbox)
 
 子ビュー コント ローラーには、メソッドが含まれてし、プロパティに結びつけることが、親ビューのコント ローラーおよび表示すると、画面から削除、ビューを操作するをバックアップします。
 
 MacOS に組み込まれているすべてのコンテナー ビュー コント ローラーでは、Apple 独自カスタム コンテナー コント ローラーの表示を作成する場合に従うことを示す特定のレイアウトがあります。
 
-[ ![](indepth-images/vc03.png "ビュー コント ローラー レイアウト")](indepth-images/vc03.png)
+[![](indepth-images/vc03.png "ビュー コント ローラー レイアウト")](indepth-images/vc03.png#lightbox)
 
 コレクション ビューのコント ローラーには、コレクション アイテムの表示、独自のビューを含む 1 つまたは複数のビュー コント ローラーを含むそれぞれの配列が含まれています。
 
@@ -131,7 +131,7 @@ PerformSegue("MyNamedSegue", this);
 
 話題 ID は、アプリの UI をレイアウトするときに、Xcode のインターフェイスのビルダー内で定義されます。
 
-[ ![](indepth-images/sg02.png "入力する、名前の話題")](indepth-images/sg02.png)
+[![](indepth-images/sg02.png "入力する、名前の話題")](indepth-images/sg02.png#lightbox)
 
 オーバーライドする必要があります、Segue のソースとして動作しているビュー コント ローラー、`PrepareForSegue`メソッドと、Segue が実行される前に、初期化が必要な操作とビューの指定されたコント ローラーが表示されます。
 
@@ -215,7 +215,7 @@ namespace OnCardMac
 
 この新しい Segue タイプを Xcode のインターフェイスのビルダーを使用するのには、最初に、このアプリをコンパイルし、Xcode に切り替え、2 つのシーンの間で新しい Segue を追加する必要があります。 設定、**スタイル**に**カスタム**と**話題クラス**に`ReplaceViewSegue`(カスタム Segue クラスの名前)。
 
-[ ![](indepth-images/sg01.png "Setting Segue クラス")](indepth-images/sg01.png)
+[![](indepth-images/sg01.png "Setting Segue クラス")](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
@@ -271,21 +271,21 @@ MacOS のジェスチャ レコグナイザーは iOS の対応するとほぼ�
 
 1. **ソリューション エクスプ ローラー**、プロジェクト名を右クリックし **追加** > **新しいファイル.**  >  **Mac** > **ストーリー ボード**です。 入力、**名前**新しいストーリー ボードとをクリックして、**新規**ボタン。 
 
-    [ ![](indepth-images/ref01.png "新しいストーリー ボードを追加します。")](indepth-images/ref01.png)
+    [![](indepth-images/ref01.png "新しいストーリー ボードを追加します。")](indepth-images/ref01.png#lightbox)
 2. **ソリューション エクスプ ローラー**名をダブルクリックして、新しいストーリー ボード ファイルを開いて Xcode のインターフェイスのビルダーで編集します。
 2. 操作と同じよう通常、変更を保存は、新しいストーリー ボードのシーンのレイアウトをデザインします。 
 
-    [ ![](indepth-images/ref02.png "インターフェイスの設計")](indepth-images/ref02.png)
+    [![](indepth-images/ref02.png "インターフェイスの設計")](indepth-images/ref02.png#lightbox)
 3. インターフェイス ビルダーへの参照を追加しようとしているストーリー ボードに切り替えます。
 4. ドラッグ、**参照をストーリー ボード**から、**オブジェクト ライブラリ**デザイン サーフェイスに。 
 
-    [ ![](indepth-images/ref03.png "ライブラリ内の参照をストーリー ボードを選択します。")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "ライブラリ内の参照をストーリー ボードを選択します。")](indepth-images/ref03.png#lightbox)
 5. **属性インスペクター**の名前を選択、**ストーリー ボード**上に作成します。 
 
-    [ ![](indepth-images/ref04.png "参照を構成します。")](indepth-images/ref04.png)
+    [![](indepth-images/ref04.png "参照を構成します。")](indepth-images/ref04.png#lightbox)
 6. 既存のシーンで (ボタン) のような UI ウィジェットのコントロールをクリックしを新しい Segue を作成、**ストーリー ボード参照**先ほど作成しました。  ポップアップ メニューから選択**表示**Segue を完了します。 
 
-    [ ![](indepth-images/ref06.png "Segue の種類を設定")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Segue の種類を設定")](indepth-images/ref06.png#lightbox) 
 8. ストーリー ボードに変更を保存します。
 9. 変更内容を同期する Mac 用の Visual Studio に戻ります。
 
@@ -300,20 +300,20 @@ MacOS のジェスチャ レコグナイザーは iOS の対応するとほぼ�
 1. **ソリューション エクスプ ローラー**、外部のストーリー ボード ファイルを開いて Xcode のインターフェイスのビルダーで編集する をダブルクリックします。
 2. 新しいシーンを追加し、通常どおりにそのレイアウトをデザインします。 
 
-    [ ![](indepth-images/ref07.png "Xcode でレイアウトのデザイン")](indepth-images/ref07.png)
+    [![](indepth-images/ref07.png "Xcode でレイアウトのデザイン")](indepth-images/ref07.png#lightbox)
 3. **Identity インスペクター**、入力、**ストーリー ボード ID**新しいシーンのウィンドウのコント ローラー。 
 
-    [ ![](indepth-images/ref08.png "ストーリー ボード ID を設定")](indepth-images/ref08.png)
+    [![](indepth-images/ref08.png "ストーリー ボード ID を設定")](indepth-images/ref08.png#lightbox)
 3. インターフェイスのビルダーへの参照を追加することになっているストーリー ボードを開きます。
 4. ドラッグ、**参照をストーリー ボード**から、**オブジェクト ライブラリ**デザイン サーフェイスに。 
 
-    [ ![](indepth-images/ref03.png "ライブラリからの参照をストーリー ボードを選択します。")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "ライブラリからの参照をストーリー ボードを選択します。")](indepth-images/ref03.png#lightbox)
 5. **Identity インスペクター**の名前を選択、**ストーリー ボード**と**参照 ID** (ストーリー ボード ID) 上で作成した、シーンの。 
 
-    [ ![](indepth-images/ref09.png "参照 ID の設定")](indepth-images/ref09.png)
+    [![](indepth-images/ref09.png "参照 ID の設定")](indepth-images/ref09.png#lightbox)
 6. 既存のシーンで (ボタン) のような UI ウィジェットのコントロールをクリックしを新しい Segue を作成、**ストーリー ボード参照**先ほど作成しました。 ポップアップ メニューから選択**表示**Segue を完了します。 
 
-    [ ![](indepth-images/ref06.png "Segue の種類を設定")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Segue の種類を設定")](indepth-images/ref06.png#lightbox) 
 8. ストーリー ボードに変更を保存します。
 9. 変更内容を同期する Mac 用の Visual Studio に戻ります。
 
@@ -328,19 +328,19 @@ UI 要素を作成された、Segue のシーンをアプリが実行し、ユ�
 1. **ソリューション エクスプ ローラー**、ストーリー ボード ファイルを開いて編集する をダブルクリックします。
 2. 新しいシーンを追加し、通常どおりにそのレイアウトをデザインします。 
 
-    [ ![](indepth-images/ref11.png "Xcode でストーリー ボードの編集")](indepth-images/ref11.png)
+    [![](indepth-images/ref11.png "Xcode でストーリー ボードの編集")](indepth-images/ref11.png#lightbox)
 3. **Identity インスペクター**、入力、**ストーリー ボード ID**新しいシーンのウィンドウのコント ローラー。 
 
-    [ ![](indepth-images/ref12.png "ストーリー ボード ID を設定")](indepth-images/ref12.png)
+    [![](indepth-images/ref12.png "ストーリー ボード ID を設定")](indepth-images/ref12.png#lightbox)
 3. ドラッグ、**参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
 
-    [ ![](indepth-images/ref03.png "ライブラリからの参照をストーリー ボードを選択します。")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "ライブラリからの参照をストーリー ボードを選択します。")](indepth-images/ref03.png#lightbox)
 5. **属性インスペクター****参照 ID** (ストーリー ボード ID) 上で作成した、シーンの。 
 
-    [ ![](indepth-images/ref13.png "参照 ID の設定")](indepth-images/ref13.png)
+    [![](indepth-images/ref13.png "参照 ID の設定")](indepth-images/ref13.png#lightbox)
 6. 既存のシーンで (ボタン) のような UI ウィジェットのコントロールをクリックしを新しい Segue を作成、**ストーリー ボード参照**先ほど作成しました。 ポップアップ メニューから選択**表示**Segue を完了します。 
 
-    [ ![](indepth-images/ref06.png "Segue の種類の選択")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Segue の種類の選択")](indepth-images/ref06.png#lightbox) 
 8. ストーリー ボードに変更を保存します。
 9. 変更内容を同期する Mac 用の Visual Studio に戻ります。
 
@@ -359,5 +359,5 @@ SourceWriter コード全体に詳細なコメントが付いていて、可能�
 - [MacStoryboard (サンプル)](https://developer.xamarin.com/samples/mac/MacStoryboard/)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [ウィンドウの操作](~/mac/user-interface/window.md)
-- [OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows の概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

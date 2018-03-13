@@ -2,16 +2,16 @@
 title: "ビデオ プレーヤーを実装します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e818bc3fa9793f093c10ac2617c5a822d08213d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a889be5ee31f667117d2c36859e667980f0e6610
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="implementing-a-video-player"></a>ビデオ プレーヤーを実装します。
 
@@ -27,7 +27,7 @@ Xamarin.Forms のアプリケーションでのビデオ ファイルを再生�
 
 ビデオ プレーヤーを必要と*トランスポート コントロール*を再生したり、ビデオを一時停止するためのボタンは、ビデオを使用して進行状況を示しています、バーを配置、および別の場所に迅速にスキップすることができます。 `VideoPlayer` トランスポート コントロールを使用し、カスタム トランスポート コントロールとバーを配置するか (以下の手順に従って、プラットフォームによって提供される位置のバーを提供します。 IOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
 
-[![Web のビデオの再生](web-videos-images/playwebvideo-small.png "Web ビデオの再生")](web-videos-images/playwebvideo-large.png "Web ビデオの再生")
+[![Web のビデオの再生](web-videos-images/playwebvideo-small.png "Web ビデオの再生")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオの再生")
 
 もちろん、拡大表示の電話を横向きにすることができます。
 

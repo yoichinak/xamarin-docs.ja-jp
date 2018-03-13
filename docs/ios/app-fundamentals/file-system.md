@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: a2c3ce9e19340067d77a8bc131b5a247806ecfa1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-file-system"></a>ファイル システムでの作業
 
@@ -26,7 +26,7 @@ iOS にもいくつかのファイル システムに固有の機能: 特定の�
 
 機能について説明し、iOS の制限の詳細、ファイル システム Xamarin.iOS を使用して、いくつかの単純なファイル システム操作を実行する方法を示すサンプル アプリケーションが含まれています。
 
- [ ![](file-system-images/05-sampleapp.png "一部の単純なファイル システム操作を実行する iOS のサンプル")](file-system-images/05-sampleapp.png)
+ [![](file-system-images/05-sampleapp.png "一部の単純なファイル システム操作を実行する iOS のサンプル")](file-system-images/05-sampleapp.png#lightbox)
 
  <a name="General_File_Access" />
 
@@ -110,7 +110,7 @@ System.IO 名前空間の詳細については、次を参照してください�
 
 Json を操作する Xamarin.iOS アプリケーション内のデータを非常に簡単を使用して、 [Json.NET](http://www.newtonsoft.com/json) for .NET NuGet パッケージのパフォーマンスの高い JSON フレームワークです。 アプリケーションのプロジェクトに、NuGet パッケージを追加します。 
 
-[ ![](file-system-images/json01.png "NuGet パッケージのアプリケーション プロジェクトを追加します。")](file-system-images/json01.png)
+[![](file-system-images/json01.png "NuGet パッケージのアプリケーション プロジェクトを追加します。")](file-system-images/json01.png#lightbox)
 
 シリアル化または逆シリアル化のデータ モデルとして機能するクラスを次に、追加 (ここでは`Account.cs`)。
 
@@ -217,11 +217,11 @@ iOS がスラッシュを使用してパスの区切り記号としては、'/' 
 
 Mac と選択の Visual Studio でプロジェクトを右クリックするサンプル コードのアプリケーション バンドルを確認するには、**を含むフォルダーを開く**です。 移動し、 **Bin/debug/**が表示される必要がありますアプリケーション アイコン (次のスクリーン ショットに類似)。
 
- [ ![](file-system-images/40-bundle.png "このスクリーン ショットのようなアプリケーション アイコンを検索するには、Bin/debug に移動します。")](file-system-images/40-bundle.png)
+ [![](file-system-images/40-bundle.png "このスクリーン ショットのようなアプリケーション アイコンを検索するには、Bin/debug に移動します。")](file-system-images/40-bundle.png#lightbox)
 
 このアイコンを右クリックして選択**パッケージの内容の表示**アプリケーション バンドルのディレクトリの内容を参照します。 内容は、次に示すように、正規のディレクトリの内容と同じように表示されます。
 
- [ ![](file-system-images/45-bundle.png "アプリケーション バンドルの内容")](file-system-images/45-bundle.png)
+ [![](file-system-images/45-bundle.png "アプリケーション バンドルの内容")](file-system-images/45-bundle.png#lightbox)
 
 アプリケーション バンドルがインストールされている、シミュレーターまたはデバイスでのテスト中に、App Store に含めることを Apple に送信内容は最終的には.
 
@@ -313,7 +313,7 @@ Nothing に書き込むか、ルート ディレクトリが<b>iOS 7 および�
 
 このスクリーン ショットは、ファインダー ウィンドウで、ディレクトリ構造を示しています。
 
- [ ![](file-system-images/08-library-directory.png "このスクリーン ショットは、ファインダー ウィンドウで、ディレクトリ構造を示しています")](file-system-images/08-library-directory.png)
+ [![](file-system-images/08-library-directory.png "このスクリーン ショットは、ファインダー ウィンドウで、ディレクトリ構造を示しています")](file-system-images/08-library-directory.png#lightbox)
 
  <a name="Accessing_Other_Directories_Programmatically" />
 
@@ -352,11 +352,11 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 ユーザーは編集することによって、アプリケーションの Documents ディレクトリにファイルにアクセスできる`Info.plist`を作成して、**アプリケーションは、iTunes の共有をサポートしている**(`UIFileSharingEnabled`) 内のエントリ、**ソース**ビューとして次に示します。
 
- [ ![](file-system-images/09-uifilesharingenabled-plist.png "プロパティを共有 iTunes をサポートしているアプリケーションを追加します。")](file-system-images/09-uifilesharingenabled-plist.png)
+ [![](file-system-images/09-uifilesharingenabled-plist.png "プロパティを共有 iTunes をサポートしているアプリケーションを追加します。")](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
 これらのファイルは、デバイスが接続されているし、ユーザーが選択したときに、iTunes でアクセスできる、`Apps`タブです。たとえば、次のスクリーン ショットでは、選択したアプリが iTunes 経由の共有でファイルを示しています。
 
- [ ![](file-system-images/10-itunes-file-sharing.png "このスクリーン ショットでは、選択したアプリが iTunes 経由の共有のファイルを表示します。")](file-system-images/10-itunes-file-sharing.png)
+ [![](file-system-images/10-itunes-file-sharing.png "このスクリーン ショットでは、選択したアプリが iTunes 経由の共有のファイルを表示します。")](file-system-images/10-itunes-file-sharing.png#lightbox)
 
 ユーザーは、iTunes を経由してこのディレクトリのトップレベルの項目にのみアクセスできます。 (ただし、そのコンピューターにコピーするか、削除) は、すべてのサブディレクトリの内容を参照してください、ことはできません。 たとえば、GoodReader で PDF および epub 形式のファイル共有できます、アプリケーションにできるように、ユーザーが自分の iOS デバイスで読み取ることができます。
 
@@ -364,7 +364,7 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 この記事のサンプル コードは ドキュメント フォルダーにファイルとフォルダーの両方を作成します。 ( **SampleCode.cs**) でのファイル共有を有効にし、 **Info.plist**ファイル。 このスクリーン ショットは、iTunes でこれらの表示方法を示しています。
 
- [ ![](file-system-images/15-itunes-file-sharing-example.png "このスクリーン ショットは、iTunes のファイルを表示する方法を示しています。")](file-system-images/15-itunes-file-sharing-example.png)
+ [![](file-system-images/15-itunes-file-sharing-example.png "このスクリーン ショットは、iTunes のファイルを表示する方法を示しています。")](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
 参照してください、[イメージを操作](~/ios/app-fundamentals/images-icons/index.md)を作成するカスタム ドキュメントの種類のアプリケーションのアイコンを設定する方法についての情報の記事です。
 

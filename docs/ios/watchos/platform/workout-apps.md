@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f375f58215fbef13298e31b03b969c9388d2bfa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="workout-apps"></a>アプリのトレーニング
 
@@ -29,7 +29,7 @@ _拡張機能を取り上げて watchOS 3、および Xamarin でそれらを実
 
 適切に設計の適合性またはトレーニング アプリを使うと、グラフのそれらの活動の適合性の目標を達成できます。 Apple Watch を使用すると、適合性およびトレーニングのアプリにアクセス インスタント心拍数にカロリー burn とアクティビティの検出。
 
-[ ![](workout-apps-images/workout01.png "アプリの適合性とトレーニングの例")](workout-apps-images/workout01.png)
+[![](workout-apps-images/workout01.png "アプリの適合性とトレーニングの例")](workout-apps-images/workout01.png#lightbox)
 
 WatchOS 3 を新しい_バック グラウンドで実行されている_によりトレーニング関連アプリ Apple Watch でバック グラウンドで実行し、HealthKit データにアクセスする機能。
 
@@ -60,20 +60,20 @@ Apple Watch で高いパフォーマンスを維持するためにバック グ�
 1. **ソリューション エクスプ ローラー**、ウォッチ拡張機能のコンパニオン iPhone アプリをダブルクリックして`Info.plist`ファイルを開いて編集するファイル。
 2. 切り替えて、**ソース**ビュー。 
 
-    [ ![](workout-apps-images/plist01.png "ソース ビュー")](workout-apps-images/plist01.png)
+    [![](workout-apps-images/plist01.png "ソース ビュー")](workout-apps-images/plist01.png#lightbox)
 3. 呼ばれる新しいキーを追加`WKBackgroundModes`設定と、**型**に`Array`: 
 
-    [ ![](workout-apps-images/plist02.png "WKBackgroundModes と呼ばれる新しいキーを追加します。")](workout-apps-images/plist02.png)
+    [![](workout-apps-images/plist02.png "WKBackgroundModes と呼ばれる新しいキーを追加します。")](workout-apps-images/plist02.png#lightbox)
 4. 新しい項目の配列を追加、**型**の`String`と値の`workout-processing`: 
 
-    [ ![](workout-apps-images/plist03.png "文字列型とトレーニング処理の値を持つ配列に新しい項目を追加します。")](workout-apps-images/plist03.png)
+    [![](workout-apps-images/plist03.png "文字列型とトレーニング処理の値を持つ配列に新しい項目を追加します。")](workout-apps-images/plist03.png#lightbox)
 5. 変更内容をファイルに保存します。
 
 ## <a name="starting-a-workout-session"></a>トレーニングのセッションの開始
 
 これには、トレーニングのセッションを開始する次の 3 つの主要な手順があります。
 
-[ ![](workout-apps-images/workout02.png "トレーニングのセッションを開始する次の 3 つの主要な手順")](workout-apps-images/workout02.png)
+[![](workout-apps-images/workout02.png "トレーニングのセッションを開始する次の 3 つの主要な手順")](workout-apps-images/workout02.png#lightbox)
 
 1. アプリでは、HealthKit のデータにアクセスするための承認を要求する必要があります。
 2. 開始されているトレーニングの型のトレーニング構成オブジェクトを作成します。
@@ -97,7 +97,7 @@ Apple Watch で高いパフォーマンスを維持するためにバック グ�
 1. **ソリューション エクスプローラー**で `Entitlements.plist` ファイルをダブルクリックして、編集用に開きます。
 2. 下部までスクロールし、確認**を有効にする HealthKit**: 
 
-    [ ![](workout-apps-images/auth01.png "チェックを有効にする HealthKit")](workout-apps-images/auth01.png)
+    [![](workout-apps-images/auth01.png "チェックを有効にする HealthKit")](workout-apps-images/auth01.png#lightbox)
 3. 変更内容をファイルに保存します。
 4. 指示に従って、[明示的なアプリ ID とプロビジョニング プロファイル](~/ios/platform/healthkit.md)と[アプリ ID とプロビジョニング プロファイルで Xamarin.iOS アプリに関連付ける](~/ios/platform/healthkit.md)のセクション、[の概要HealthKit](~/ios/platform/healthkit.md)資料を正しくアプリをプロビジョニングします。
 5. 最後に、手順を使用して、[ヘルス キットのプログラミング](~/ios/platform/healthkit.md)と[、ユーザーからアクセス許可を要求する](~/ios/platform/healthkit.md)のセクションでは、 [HealthKit の概要](~/ios/platform/healthkit.md)要求に記事ユーザーの HealthKit データストアにアクセスを許可します。
@@ -273,7 +273,7 @@ private void StartOutdoorRun ()
 
 アプリは、このトレーニング セッションを開始、ウォッチの文字盤に切り替える場合は、面の上、小さなの緑の「man を実行している」アイコンが表示されます。
 
-[ ![](workout-apps-images/workout03.png "小さな緑色実行中のマニュアルのアイコン表面上に表示されます。")](workout-apps-images/workout03.png)
+[![](workout-apps-images/workout03.png "小さな緑色実行中のマニュアルのアイコン表面上に表示されます。")](workout-apps-images/workout03.png#lightbox)
 
 場合は、ユーザーがこのアイコンをタップは、アプリに戻る、撮影されます。
 
@@ -281,7 +281,7 @@ private void StartOutdoorRun ()
 
 トレーニングのセッションが構成されている、起動されると、アプリは、セッション (など、ユーザーの心拍数) に関するデータを収集し、セッションの状態を制御する必要があります。
 
-[ ![](workout-apps-images/workout04.png "データの収集とコントロールの図")](workout-apps-images/workout04.png)
+[![](workout-apps-images/workout04.png "データの収集とコントロールの図")](workout-apps-images/workout04.png#lightbox)
 
 1. **サンプルを観察し**-アプリが処理してユーザーに表示される HealthKit から情報を取得する必要があります。
 2. **イベントを観察し**-アプリは、ユーザーは、トレーニングの一時停止) など、アプリの UI からまたは HealthKit によって生成されるイベントに応答する必要があります。
@@ -502,7 +502,7 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 次の手順を終了し、トレーニングのセッションを保存する必要があります。
 
-[ ![](workout-apps-images/workout05.png "終了して、トレーニング セッション ダイアグラムの保存")](workout-apps-images/workout05.png)
+[![](workout-apps-images/workout05.png "終了して、トレーニング セッション ダイアグラムの保存")](workout-apps-images/workout05.png#lightbox)
 
 1. 最初に、アプリは、トレーニングのセッションを終了する必要があります。
 2. トレーニングのセッションは、HealthKit に保存されます。
@@ -642,7 +642,7 @@ WatchOS アプリの実行中に WatchConnectivity メッセージングと親�
 
 このプロセスのしくみを見てをみましょう。
 
-[ ![](workout-apps-images/workout06.png "iPhone、Apple Watch 通信ダイアグラム")](workout-apps-images/workout06.png)
+[![](workout-apps-images/workout06.png "iPhone、Apple Watch 通信ダイアグラム")](workout-apps-images/workout06.png#lightbox)
 
 1. IPhone アプリの作成、`HKWorkoutConfiguration`オブジェクトし、トレーニングの種類と場所を設定します。
 2. `HKWorkoutConfiguration`オブジェクトには、Apple Watch アプリのバージョンが送信され、実行されていない場合、システムによって起動されました。

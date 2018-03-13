@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 6de57e9523ff336c2e06e39903280db9c9ab95fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icons"></a>アプリケーションのアイコン
 
@@ -32,13 +32,13 @@ Xamarin.iOS アプリを UI コントロールとドキュメントのアイコ�
 
 - **アプリケーション アイコン**-すべての iOS アプリは、アプリケーション アイコンを定義する必要があります。 これは、ユーザーがタップするアイコン iOS ホーム画面でアプリを起動します。 さらに、このアイコンがゲーム センターで使用されるは、該当する場合。 例: 
 
-    [ ![](app-icons-images/000.png "アプリケーション アイコン")](app-icons-images/000-full.png)
+    [![](app-icons-images/000.png "アプリケーション アイコン")](app-icons-images/000-full.png#lightbox)
 - **アイコンのスポット ライト**- Spotlight 検索に、アプリの名前を入力するたびにこのアイコンが表示されます。 例: 
 
-    [ ![](app-icons-images/000a.png "スポット ライト アイコン")](app-icons-images/000a-full.png)
+    [![](app-icons-images/000a.png "スポット ライト アイコン")](app-icons-images/000a-full.png#lightbox)
 - **設定アイコン**- ユーザーが入力した場合、**設定**の最後に、iOS デバイスを次のアイコン上のアプリが表示されます、**設定**アプリの一覧です。 例: 
 
-    [ ![](app-icons-images/000b.png "設定アイコン")](app-icons-images/000b-full.png)
+    [![](app-icons-images/000b.png "設定アイコン")](app-icons-images/000b-full.png#lightbox)
 
 次のイメージ資産のサイズと解像度は、すべての iOS 9 (またはそれ以上) を介して iOS 5 を対象とする Xamarin.iOS アプリで必要なアイコンの種類をサポートするために必要なされます。
 

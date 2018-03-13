@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 00980c0038ac3ae51d0444e6f71dde9dfef25831
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="speech-recognition"></a>音声認識
 
@@ -33,7 +33,7 @@ Apple、に従って、音声認識の API は、以下の機能と利点があ�
 
 音声認識は、iOS アプリでライブまたは事前に録音オーディオ (API をサポートする音声の言語のいずれか) を取得して、活字のテキスト形式のトランスクリプションが返されます音声認識エンジンに渡すことによって実装されます。
 
-[ ![](speech-images/speech01.png "音声認識のしくみ")](speech-images/speech01.png)
+[![](speech-images/speech01.png "音声認識のしくみ")](speech-images/speech01.png#lightbox)
 
 ### <a name="keyboard-dictation"></a>キーボード ディクテーション モード
 
@@ -104,13 +104,13 @@ IOS アプリでの音声認識を採用する開発者が行う必要のある�
 1. ダブルクリックして、`Info.plist`ファイルを開いて編集するファイル。
 2. 切り替えて、**ソース**ビュー。 
 
-    [ ![](speech-images/speech02.png "ソース ビュー")](speech-images/speech02.png)
+    [![](speech-images/speech02.png "ソース ビュー")](speech-images/speech02.png#lightbox)
 3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
 
-    [ ![](speech-images/speech03.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03.png)
+    [![](speech-images/speech03.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03.png#lightbox)
 4. アプリがライブ オーディオ議事録を処理する場合が、マイクの使用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
 
-    [ ![](speech-images/speech04.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04.png)
+    [![](speech-images/speech04.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04.png#lightbox)
 4. 変更内容をファイルに保存します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -118,10 +118,10 @@ IOS アプリでの音声認識を採用する開発者が行う必要のある�
 1. ダブルクリックして、`Info.plist`ファイルを開いて編集するファイル。
 3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
 
-    [ ![](speech-images/speech03w.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03w.png)
+    [![](speech-images/speech03w.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03w.png#lightbox)
 4. アプリがライブ オーディオ議事録を処理する場合が、マイクの使用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
 
-    [ ![](speech-images/speech04w.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04w.png)
+    [![](speech-images/speech04w.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04w.png#lightbox)
 4. 変更内容をファイルに保存します。
 
 -----

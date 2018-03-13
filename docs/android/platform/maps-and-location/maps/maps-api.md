@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eddd723c07919db4749c63c5b4f1d05e9be81022
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48e8827895001d2b1887816a9368fcc5bbc50bbf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="maps-api"></a>マップの API
 
@@ -25,7 +25,6 @@ ms.lasthandoff: 02/27/2018
 ここで推奨されなくなりました Google Maps Android API v1 とは異なりの一部である Google Maps Android API v2 [Google Play サービス](http://developer.android.com/google/play-services/index.html)です。
 したがってを Xamarin.Android アプリケーションで、Google マップ Android API を使用することは前に、いくつかの必須の前提条件を満たすために必要なは。
 
-<a name="Configuring_Maps_API_Prerequisites" />
 
 ## <a name="google-maps-api-prerequisites"></a>Google は、API の前提条件をマップします。
 
@@ -37,7 +36,6 @@ ms.lasthandoff: 02/27/2018
 -  必要なアクセス許可を指定します。
 
 
-<a name="Google_APIs_Add-On" />
 
 ### <a name="install-the-google-play-services-sdk"></a>Google Play サービス SDK をインストールします。
 
@@ -53,9 +51,8 @@ Xamarin.Android アプリケーションは、マップの API を使用でき�
 ![Google Play サービスが、Android SDK Manager その他の機能の下に表示されます。](maps-api-images/image01.png)
 
 > [!NOTE]
-> **注:** APK ができない可能性があるライセンスされた製品、Google Play サービスがすべてのデバイスに存在します。 インストールされていないデバイスで Google Maps は機能しません。
+> Google Play サービス APK は、すべてのデバイス上に存在できない可能性があるライセンスされた製品です。 インストールされていないデバイスで Google Maps は機能しません。
 
-<a name="Binding_Google_Play_Services" />
 
 #### <a name="binding-google-play-services"></a>バインディングの Google Play サービスします。
 
@@ -68,7 +65,6 @@ Google Play サービス クライアント ライブラリがインストール
 -  **Google Play サービス クライアント ライブラリを手動でバインド**-これはより複雑な方法は、Google プレイ サービス SDK をバインドするには、Xamarin.Android 4.4 または Xamarin.Android 4.6 の唯一の方法です。
    このドキュメントの範囲を超えては Google Play サービス クライアント ライブラリを手動でバインドしますが、これを行う方法の例は、「、[マップや場所デモ v3 サンプル](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3)Github でします。
 
-<a name="Adding_the_Google_Play_Services_Component" />
 
 #### <a name="adding-the-google-play-services-map-package"></a>Google Play サービス マップのパッケージを追加します。
 
@@ -78,7 +74,7 @@ Google Play サービス クライアント ライブラリがインストール
 
 開き、 **NuGet Package Manager**です。 をクリックして**参照**入力と**Xamarin Google プレイ サービス マップ**検索フィールドにします。 選択**Xamarin.GooglePlayServices.Maps**  をクリック**インストール**です。 (このパッケージが既にインストールされていた場合はクリックして**更新**。)。
 
-[![選択した Xamarin.GooglePlayServices.Maps パッケージで NuGet パッケージ マネージャー](maps-api-images/image03-sml.png)](maps-api-images/image03.png)
+[![選択した Xamarin.GooglePlayServices.Maps パッケージで NuGet パッケージ マネージャー](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
 
 次の依存関係パッケージもインストールされていることに注意してください。
 
@@ -87,7 +83,6 @@ Google Play サービス クライアント ライブラリがインストール
 -   **Xamarin.GooglePlayServices.Tasks**
 
 
-<a name="Creating_an_Emulator_with_Google_APIs" />
 
 ### <a name="create-an-emulator-with-google-apis"></a>Google Api を使用したエミュレーターを作成します。
 
@@ -96,14 +91,12 @@ Google Play サービス クライアント ライブラリがインストール
 ![API レベル 19 用に構成された、AVD で android エミュレーター マネージャー](maps-api-images/image04.png)
 
 
-<a name="apikey" />
 
 ### <a name="obtain-a-google-maps-api-key"></a>Google Maps API キーを取得します。
 
 最後の手順では、Google マップの API キー (従来の Google Maps v1 から API キーを再利用できないことに注意してください) を取得します。 取得および Xamarin.Android と API キーを使用する方法については、次を参照してください。 [A Google Maps API のキーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)です。
  
 
-<a name="Specify_Permissions" />
 
 ### <a name="specify-the-required-permissions"></a>必要なアクセス許可を指定します。
 
@@ -167,7 +160,6 @@ Google Play サービス クライアント ライブラリがインストール
 </manifest>
 ```
 
-<a name="The_GoogleMap" />
 
 ## <a name="the-googlemap-class"></a>GoogleMap クラス
 
@@ -190,13 +182,12 @@ Google Play サービス クライアント ライブラリがインストール
 
 これらの各コンテナーを公開、`Map`のインスタンスを返すプロパティ`GoogleMap`です。 優先する必要があります、 [MapFragment](http://developer.android.com/reference/com/google/android/gms/maps/MapFragment.html)クラスには、開発者を手動で実装する必要がある量定型コードを削減する単純な API。
 
-<a name="Adding_GoogleMap_To_An_Activity" />
 
 ### <a name="adding-a-mapfragment-to-an-activity"></a>アクティビティに、MapFragment を追加します。
 
 次のスクリーン ショットは、非常に単純な例を示します`MapFragment`:
 
-[![マップのフラグメントを表示するデバイスのスクリーン ショット](maps-api-images/image05-sml.png)](maps-api-images/image05.png)
+[![マップのフラグメントを表示するデバイスのスクリーン ショット](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
 
 他のフラグメント クラスと同様に、ある 2 つの方法でこれを追加`MapFragment`アクティビティ。
 
@@ -255,7 +246,6 @@ public void OnMapReady (GoogleMap map)
 この結果を使用する方法の例としてとき`OnResume`が呼び出されると、かどうかを確認できます`_map`以外の場合します。 場合`_map`に設定されている、`GoogleMap`オブジェクト、`OnResume`マーカーを追加して、指定した経度と緯度にそのカメラを移動する場合がメソッドを呼び出すことができます。 完全なコード例は、次を参照してください。 [SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo)です。
 
 
-<a name="Map_Types" />
 
 ### <a name="map-types"></a>マップの種類
 
@@ -274,7 +264,7 @@ public void OnMapReady (GoogleMap map)
 
 次の図は、さまざまな種類のマップの左から右 (通常、ハイブリッド、地形) から 3 つを示しています。
 
-[![3 つのマップの例のスクリーン ショット: 通常、ハイブリッド、および地形](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png)
+[![3 つのマップの例のスクリーン ショット: 通常、ハイブリッド、および地形](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 `GoogleMap.MapType`を設定または表示するマップの種類を変更するプロパティを使用します。 次のコード スニペットは、サテライト マップを表示する方法を示します。
 
@@ -287,7 +277,6 @@ if (_map != null) {
 }
 ```
 
-<a name="GoogleMap_Properties" />
 
 ### <a name="googlemap-properties"></a>GoogleMap プロパティ
 
@@ -317,7 +306,6 @@ if (_map != null) {
 }
 ```
 
-<a name="Interacting_with_the_Map" />
 
 ## <a name="interacting-with-the-map"></a>マップとの対話
 
@@ -363,9 +351,8 @@ if (_map != null) {
 
 前のコード スニペットでは、マップ上の特定の場所で表される、 [LatLng](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/LatLng)クラスです。 ズーム レベルを 18 に設定するとします。 影響は、北部から時計回りにコンパスの測定値です。 プロパティは、表示角度を制御しは傾き、垂直方向から 25 度の角度を指定します。 次のスクリーン ショットでは、`GoogleMap`上記のコードを実行した後。
 
-[![表示する角度を傾斜するいると、指定した場所を示す例 Google マップ](maps-api-images/image06-sml.png)](maps-api-images/image06.png)
+[![表示する角度を傾斜するいると、指定した場所を示す例 Google マップ](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
 
-<a name="Adding_Overlays_to_a_Map" />
 
 ### <a name="drawing-on-the-map"></a>マップの描画
 
@@ -377,13 +364,11 @@ Android のマップ API は、マップで、次の項目を描画するため�
 
 -  **線、多角形、および円**-これらは、マップに図形を追加するアクティビティを許可する Api。
 
-<a name="markers" />
 
 #### <a name="markers"></a>Markers
 
 マップの API を提供、[マーカー](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker)のすべてのマップ上の 1 つの場所に関するデータをカプセル化するクラス。 既定では、Google マップによって提供される標準的なアイコンを使用します。 ユーザーのクリックに応答するマーカーの外観をカスタマイズする可能性があります。
 
-<a name="AddingAMarker" />
 
 ##### <a name="adding-a-marker"></a>マーカーを追加します。
 
@@ -403,9 +388,8 @@ if (_map != null) {
 
 マーカーのタイトルが表示されます、*情報ウィンドウ*マーカーをタップするとします。 次のスクリーン ショットは、このマーカーの外観を示します。
 
-[![マーカーとヴィミーねじ山の情報 ウィンドウが、Google マップの例](maps-api-images/image07-sml.png)](maps-api-images/image07.png)
+[![マーカーとヴィミーねじ山の情報 ウィンドウが、Google マップの例](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
 
-<a name="Customizing_A_Marker" />
 
 ##### <a name="customizing-a-marker"></a>マーカーのカスタマイズ
 
@@ -437,7 +421,6 @@ if (_map != null)
 }
 ```
 
-<a name="Info_Windows" />
 
 #### <a name="info-windows"></a>すべての情報ウィンドウ
 
@@ -455,13 +438,11 @@ if (_map != null)
 
 ![アイコンをクリックしてカタログの作成を含む、メルボルンの例のマーカー windows です。 右側のウィンドウには、角が丸いです。](maps-api-images/marker-infowindows.png)
 
-<a name="Adding_an_overlay" />
 
 #### <a name="ground-overlays"></a>地上オーバーレイ
 
 マーカーは、マップ上の特定の場所を特定するとは異なり、 [GroundOverlay](http://developer.android.com/reference/com/google/android/gms/maps/model/GroundOverlay.html)イメージの場所または、マップ上の領域のコレクションを識別するために使用します。
 
-<a name="AddingAGroundOverlay" />
 
 ##### <a name="adding-a-groundoverlay"></a>GroundOverlay を追加します。
 
@@ -477,9 +458,8 @@ GroundOverlay myOverlay = _map.AddGroundOverlay(groundOverlayOptions);
 
 次のスクリーン ショットは、マップ上のこのオーバーレイを示しています。
 
-[![極座標グラフ下げのオーバーレイをイメージ マップの例](maps-api-images/image09-sml.png)](maps-api-images/image09.png)
+[![極座標グラフ下げのオーバーレイをイメージ マップの例](maps-api-images/image09-sml.png)](maps-api-images/image09.png#lightbox)
 
-<a name="Lines_Circles_and_Polygons" />
 
 #### <a name="lines-circles-and-polygons"></a>線、円、および多角形
 
@@ -492,7 +472,6 @@ GroundOverlay myOverlay = _map.AddGroundOverlay(groundOverlayOptions);
 -  **円**-このマップに円を描画するは。
 
 
-<a name="Polylines" />
 
 ##### <a name="polylines"></a>多角形
 
@@ -508,7 +487,6 @@ rectOptions.Add(new LatLng(37.35, -122.0)); // close the polyline - this makes a
 myMap.AddPolyline(rectOptions);
 ```
 
-<a name="Polygons" />
 
 ##### <a name="polygons"></a>多角形
 
@@ -527,7 +505,6 @@ rectOptions.Add(new LatLng(37.35, -122.2));
 myMap.AddPolygon(rectOptions);
 ```
 
-<a name="Circles" />
 
 ##### <a name="circles"></a>円
 
@@ -541,7 +518,6 @@ circleOptions.InvokeRadius (1000);
 _map.AddCircle (CircleOptions);
 ```
 
-<a name="RespondingToClicks" />
 
 ## <a name="responding-to-events"></a>イベントに応答します。
 
@@ -555,7 +531,6 @@ _map.AddCircle (CircleOptions);
 
 これらのイベントについてで詳しく説明します。
 
-<a name="Marker_Click_Events" />
 
 ### <a name="marker-click-events"></a>マーカーのクリックしてイベント
 
@@ -584,7 +559,6 @@ private void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs mark
 }
 ```
 
-<a name="Marker_Drag_Events" />
 
 ### <a name="marker-drag-events"></a>マーカー ドラッグ イベント
 
@@ -602,7 +576,6 @@ private void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs mark
 
 各、`EventArgs`と呼ばれる 1 つのプロパティを含む`P0`への参照は、`Marker`ドラッグされているオブジェクトします。
 
-<a name="Info_Window_Click_Events" />
 
 ### <a name="info-window-click-events"></a>情報ウィンドウのクリックしてイベント
 

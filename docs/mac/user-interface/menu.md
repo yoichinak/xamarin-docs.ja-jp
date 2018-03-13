@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cf43cfe31811e91524af7894ea347e3dba784d92
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="menus"></a>メニュー
 
@@ -28,7 +28,7 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 - **メニューをドッキング**-ときにユーザーを右クリックしてまたはアプリケーションのアイコンをコントロール クリックすると、または、ユーザーがアイコンを左クリックして、マウス ボタンを押したままに表示される、ドッキング ステーション内の各アプリケーションのメニュー。
 - **ポップアップのボタンをクリックし、プルダウンで表示されるリスト**-選択した項目を表示し、ポップアップ ボタンとは、ユーザーがクリックされたときからを選択するオプションの一覧が表示されます。 プルダウンで表示されるリストは、通常、現在のタスクのコンテキストに固有のコマンドを選択するために使用ポップアップのボタンの一種です。 ウィンドウで任意の場所両方とも表示できます。
 
-[![例メニュー](menu-images/intro01.png "例メニュー")](menu-images/intro01-large.png)
+[![例メニュー](menu-images/intro01.png "例メニュー")](menu-images/intro01-large.png#lightbox)
 
 この記事で Cocoa メニュー バー、メニューのおよび Xamarin.Mac アプリケーションでのメニュー項目の操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
@@ -38,7 +38,7 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 
 すべてのウィンドウがそれに付随する独自のメニュー バーを持つことができます、Windows OS で実行されているアプリケーションとは異なり macOS で実行されているすべてのアプリケーションには、アプリケーションのウィンドウごとに使用される画面の上部に配置を実行する 1 つのメニュー バーがあります。
 
-[![メニュー バー](menu-images/appmenu01.png "メニュー バー")](menu-images/appmenu01-large.png)
+[![メニュー バー](menu-images/appmenu01.png "メニュー バー")](menu-images/appmenu01-large.png#lightbox)
 
 このメニュー バー上の項目がアクティブまたは非アクティブ化された特定の時点で、現在のコンテキストやアプリケーションとそのユーザー インターフェイスの状態に基づきます。 例: 上の項目、ユーザーは、テキスト フィールドを選択する場合、**編集**メニューは、ように有効になっているものは**コピー**と**切り取り**です。
 
@@ -64,21 +64,21 @@ Apple に従ってし、既定では、macOS のすべてのアプリケーシ�
 
 ダブルクリックして、 **Main.storyboard**ファイル用に開けませんが、メニュー エディターのインターフェイスと Xcode のインターフェイスのビルダーでの編集が表示されます。
 
-[![Xcode で UI を編集](menu-images/defaultbar01.png "Xcode で UI を編集")](menu-images/defaultbar01-large.png)
+[![Xcode で UI を編集](menu-images/defaultbar01.png "Xcode で UI を編集")](menu-images/defaultbar01-large.png#lightbox)
 
 ここからおできますで項目をクリックしてなど、**開く**のメニュー項目、**ファイル**メニュー編集やでそのプロパティを調整する、**属性インスペクター**:
 
-[![メニューの属性の編集](menu-images/defaultbar02.png "メニューの属性の編集")](menu-images/defaultbar02-large.png)
+[![メニューの属性の編集](menu-images/defaultbar02.png "メニューの属性の編集")](menu-images/defaultbar02-large.png#lightbox)
 
 追加、編集、およびメニューおよびこの記事の後半の項目を削除するのには表示されます。 ようになりましたたいだけどのようなメニューおよびメニュー項目は既定で使用できるとどのように、公開されている自動的に定義済みのコンセントとアクションのセットを使用してコードを参照してください (詳細については、次を参照してくださいこの[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)。ドキュメント)。
 
 たとえばをクリックした場合、**接続インスペクター**の**開く**メニュー項目の最大ワイヤードは自動的に確認できます、`openDocument:`アクション。 
 
-[![接続されているアクションを表示する](menu-images/defaultbar03.png "接続されているアクションを表示します。")](menu-images/defaultbar03-large.png)
+[![接続されているアクションを表示する](menu-images/defaultbar03.png "接続されているアクションを表示します。")](menu-images/defaultbar03-large.png#lightbox)
 
 選択した場合、**最初レスポンダー**で、**インターフェイス階層**で下へスクロールし、**接続インスペクター**の定義が表示されます、 `openDocument:`アクションを**開く**メニュー項目が (と共にいくつか他の既定の操作をアプリケーションは、コントロールまで自動的にケーブル接続されていません) に接続されています。
 
-[![アタッチ先のすべてのアクションを表示する](menu-images/defaultbar04.png "接続されているすべてのアクションを表示します。")](menu-images/defaultbar04-large.png) 
+[![アタッチ先のすべてのアクションを表示する](menu-images/defaultbar04.png "接続されているすべてのアクションを表示します。")](menu-images/defaultbar04-large.png#lightbox) 
 
 なぜこれが重要ですか。 次に、自動的に定義されているこれらのアクションが自動的に有効にしてメニュー項目を無効にするし、同様に、アイテムの組み込み機能を提供するには他の Cocoa ユーザー インターフェイス要素を操作する方法セクションが表示されます。
 
@@ -98,11 +98,11 @@ Apple に従ってし、既定では、macOS のすべてのアプリケーシ�
 
 アプリケーションを停止し、ダブルクリックしてみましょう、 **Main.storyboard**ファイルで、**ソリューション パッド**を開くには、Xcode で編集するためのインターフェイスのビルダー。 次に、ドラッグ、**テキスト ビュー**から、**ライブラリ**でウィンドウのビューのコント ローラー上に、**インターフェイス エディター**:
 
-[![ライブラリからテキスト ビューを選択すると](menu-images/appmenu05.png "ライブラリからテキスト ビューを選択します。")](menu-images/appmenu05-large.png)
+[![ライブラリからテキスト ビューを選択すると](menu-images/appmenu05.png "ライブラリからテキスト ビューを選択します。")](menu-images/appmenu05-large.png#lightbox)
 
 **制約エディター**みましょうウィンドウの端にテキスト ビューをピン留めし、設定、拡張して、すべて次の 4 つ赤いすれば-ビーム、エディターの上部にあるをクリックして、ウィンドウの縮小、 **4制約を追加**ボタンをクリックします。
 
-[![制約を編集](menu-images/appmenu06.png "制約の編集")](menu-images/appmenu06-large.png)
+[![制約を編集](menu-images/appmenu06.png "制約の編集")](menu-images/appmenu06-large.png#lightbox)
 
 ユーザー インターフェイスのデザインに変更を保存し、Xamarin.Mac プロジェクトで、変更を同期するために Mac を Visual Studio に切り替えします。 今すぐアプリケーションを起動、テキスト ビューにテキストを入力、選択し、開く、**編集**メニュー。
 
@@ -209,7 +209,7 @@ void OpenDialog (NSObject sender)
 
 ここでは、キーの行を行が`[Export ("openDocument:")]`、か`NSMenu`を**AppDelegate**メソッドがあります`void OpenDialog (NSObject sender)`に応答する、`openDocument:`アクション。 上記のわかりやすい場合、**開く**メニュー項目が自動的にワイヤード (有線) をこのアクションにインターフェイスのビルダーで既定では。
 
-[![接続されているアクションを表示する](menu-images/defaultbar03.png "接続されているアクションを表示します。")](menu-images/defaultbar03-large.png)
+[![接続されているアクションを表示する](menu-images/defaultbar03.png "接続されているアクションを表示します。")](menu-images/defaultbar03-large.png#lightbox)
 
 次のコードでそれらに独自のメニューのメニュー項目とアクションの作成と応答を見てみましょう。
 
@@ -453,7 +453,7 @@ public void defineKeyword (NSObject sender) {
 
 ストーリー ボードに変更を保存し、Mac の変更を同期用の Visual Studio に戻ります。 アプリを実行する場合は、カスタム アクションが接続されているメニュー項目が自動的に有効/無効にする (開く操作では、ウィンドウに基づく) と、アクションを起動メニュー項目を選択します。
 
-[![新しいアクションをテスト](menu-images/action05.png "新しいアクションのテスト")](menu-images/action05-large.png)
+[![新しいアクションをテスト](menu-images/action05.png "新しいアクションのテスト")](menu-images/action05-large.png#lightbox)
 
 <a name="Adding,_Editing_and_Deleting_Menus" />
 
@@ -465,7 +465,7 @@ public void defineKeyword (NSObject sender) {
 
 ダブルクリックして、 **Main.storyboard**ファイルで、**ソリューション パッド**ファイルを開いて編集します。
 
-[![Xcode で UI を編集](menu-images/maint01.png "Xcode で UI を編集")](menu-images/maint01-large.png)
+[![Xcode で UI を編集](menu-images/maint01.png "Xcode で UI を編集")](menu-images/maint01-large.png#lightbox)
 
 特定の Xamarin.Mac アプリケーション守られていない、既定値を使用して**ビュー**メニューを削除するようにします。 **インターフェイス階層**選択、**ビュー**メニュー項目は、メイン メニュー バーの一部であります。
 
@@ -477,19 +477,19 @@ Delete キーを押すか、バック スペース、メニューを削除しま
 
 親の下の項目をドラッグして**メニュー**サブメニュー現在されている場所から。
 
-[![親メニューにメニュー項目をドラッグする](menu-images/maint04.png "親メニューにメニュー項目をドラッグします。")](menu-images/maint04-large.png)
+[![親メニューにメニュー項目をドラッグする](menu-images/maint04.png "親メニューにメニュー項目をドラッグします。")](menu-images/maint04-large.png#lightbox)
 
 メニューのようになります。
 
-[![新しい場所に項目](menu-images/maint05.png "が新しい場所に項目")](menu-images/maint05-large.png)
+[![新しい場所に項目](menu-images/maint05.png "が新しい場所に項目")](menu-images/maint05-large.png#lightbox)
 
 [次へ] ドラッグして、**テキスト**から下にあるサブメニューを**形式**メニュー間にあるメイン メニュー バー上に配置し、**形式**と**ウィンドウ**メニュー:
 
-[![テキスト メニュー](menu-images/maint06.png "[テキスト] メニュー")](menu-images/maint06-large.png)
+[![テキスト メニュー](menu-images/maint06.png "[テキスト] メニュー")](menu-images/maint06-large.png#lightbox)
 
 下に見ていきましょう、**形式**メニューと削除、**フォント**サブメニュー項目。 次に、選択、**形式**メニュー「フォント」名前を変更します。
 
-[![フォント メニュー](menu-images/maint07.png "フォント メニュー")](menu-images/maint07-large.png)
+[![フォント メニュー](menu-images/maint07.png "フォント メニュー")](menu-images/maint07-large.png#lightbox)
 
 次が自動的に取得付加テキスト ビュー内のテキストには、選択したときに事前に定義されるフレーズのカスタム メニューを作成してみましょう。 下部の [検索] ボックスに、**ライブラリ インスペクター** 「メニュー」の種類 これは容易にできるようにすべてのメニューの UI 要素の検索し、操作します。
 
@@ -502,42 +502,42 @@ Delete キーを押すか、バック スペース、メニューを削除しま
     ![ライブラリに新しいメニュー項目を選択すると](menu-images/maint10.png "ライブラリに新しいメニュー項目を選択します。")
 2. 項目「語句」の名前を変更します。 
 
-    [![メニュー名を設定する](menu-images/maint09.png "メニュー名の設定")](menu-images/maint09-large.png)
+    [![メニュー名を設定する](menu-images/maint09.png "メニュー名の設定")](menu-images/maint09-large.png#lightbox)
 3. 次にドラッグ、**メニュー**から、**ライブラリ インスペクター**: 
 
     ![ライブラリのメニューを選択すると](menu-images/maint11.png "ライブラリから、メニューを選択します。")
 4. ドロップし、**メニュー**新しい**メニュー項目**先ほど作成し、名前を「語句」に変更します。 
 
-    [![メニュー名の編集](menu-images/maint12.png "メニュー名の編集")](menu-images/maint12-large.png)
+    [![メニュー名の編集](menu-images/maint12.png "メニュー名の編集")](menu-images/maint12-large.png#lightbox)
 5. これで 3 つの既定の名前を変更してみましょう**メニュー項目**"Address"、「日付」および"Greeting"。 
 
-    [![語句メニュー](menu-images/maint13.png "フレーズ メニュー")](menu-images/maint13-large.png)
+    [![語句メニュー](menu-images/maint13.png "フレーズ メニュー")](menu-images/maint13-large.png#lightbox)
 6. 4 番目を追加してみましょう。**メニュー項目**をドラッグして、**メニュー項目**から、**ライブラリ インスペクター**および"署名"呼び出し。 
 
-    [![メニュー項目の名前を編集](menu-images/maint14.png "メニュー項目の名前を編集")](menu-images/maint14-large.png)
+    [![メニュー項目の名前を編集](menu-images/maint14.png "メニュー項目の名前を編集")](menu-images/maint14-large.png#lightbox)
 7. メニュー バーに、変更を保存します。
 
 これで、新しいメニュー項目が c# コードに公開されているように、カスタム アクションのセットを作成しましょう。 Xcode でみましょうに切り替え、**アシスタント**ビュー。
 
-[![必要なアクションを作成する](menu-images/maint15.png "必要なアクションを作成します。")](menu-images/maint15-large.png)
+[![必要なアクションを作成する](menu-images/maint15.png "必要なアクションを作成します。")](menu-images/maint15-large.png#lightbox)
 
 それでは、次の操作を行います。
 
 1. コントロールをドラッグ、**アドレス**メニュー項目を**AppDelegate.h**ファイル。
 2. スイッチ、**接続**型**アクション**: 
 
-    [![アクションの種類を選択すると](menu-images/maint17.png "アクションの種類を選択します。")](menu-images/maint17-large.png)
+    [![アクションの種類を選択すると](menu-images/maint17.png "アクションの種類を選択します。")](menu-images/maint17-large.png#lightbox)
 3. 入力、**名前**"phraseAddress"とキーを押して、**接続**新しいアクションを作成するにはボタン。 
 
-    [![アクションの構成](menu-images/maint18.png "アクションの構成")](menu-images/maint18-large.png)
+    [![アクションの構成](menu-images/maint18.png "アクションの構成")](menu-images/maint18-large.png#lightbox)
 4. 上記の手順を繰り返します、**日付**、 **Greeting**、および**署名**メニュー項目。 
 
-    [![完了済みのアクション](menu-images/maint19.png "完了済みの操作")](menu-images/maint19-large.png)
+    [![完了済みのアクション](menu-images/maint19.png "完了済みの操作")](menu-images/maint19-large.png#lightbox)
 5. メニュー バーに、変更を保存します。
 
 次にコードからそのコンテンツを調整できるように、テキスト ビューのコンセントを作成する必要があります。 選択、 **ViewController.h**ファイルで、**アシスタント エディター**と呼ばれる新しいコンセントを作成および`documentText`:
 
-[![コンセントを作成する](menu-images/maint20.png "コンセントを作成します。")](menu-images/maint20-large.png)
+[![コンセントを作成する](menu-images/maint20.png "コンセントを作成します。")](menu-images/maint20-large.png#lightbox)
 
 Xcode からの変更を同期 Mac 用の Visual Studio に戻ります。 次の編集、 **ViewController.cs**ファイルし、次のようになります。
 
@@ -895,36 +895,36 @@ public void UnpopulateFormattingMenu(NSMenu menu) {
 
 編集しましょう、 **Main.storyboard** Xcode でファイルを追加、**ウィンドウ**、デザイン ウィンドウの設定、**クラス**で"NSPanel"に、 **Identity インスペクター**、追加、新しい**アシスタント**項目を**ウィンドウ**] メニューの [を使用して新しいウィンドウにアタッチし、**話題表示**:
 
-[![設定の segue 種類](menu-images/context01.png "segue の種類を設定")](menu-images/context01-large.png)
+[![設定の segue 種類](menu-images/context01.png "segue の種類を設定")](menu-images/context01-large.png#lightbox)
 
 それでは、次の操作を行います。
 
 1. ドラッグ、**ラベル**から、**ライブラリ インスペクター**上に、**パネル**ウィンドウし、そのテキストを"Property"に設定します。 
 
-    [![ラベルの値を編集](menu-images/context03.png "ラベルの値の編集")](menu-images/context03-large.png)
+    [![ラベルの値を編集](menu-images/context03.png "ラベルの値の編集")](menu-images/context03-large.png#lightbox)
 2. 次にドラッグ、**メニュー**から、**ライブラリ インスペクター** 、階層の表示と名前を変更する、3 つの既定のメニュー項目のビューのコント ローラー上に**ドキュメント**、**テキスト**と**フォント**:
 
-    [![必要なメニュー項目](menu-images/context02.png "必要なメニュー項目")](menu-images/context02-large.png)
+    [![必要なメニュー項目](menu-images/context02.png "必要なメニュー項目")](menu-images/context02-large.png#lightbox)
 3. 今すぐコントロールからドラッグ、**プロパティ ラベル**上に、**メニュー**:
 
-    [![ドラッグすると、segue](menu-images/context04.png "ドラッグ、segue を作成するには")](menu-images/context04-large.png)
+    [![ドラッグすると、segue](menu-images/context04.png "ドラッグ、segue を作成するには")](menu-images/context04-large.png#lightbox)
 4. ポップアップ ダイアログ ボックスから選択**メニュー**: 
 
     ![設定の segue 種類](menu-images/context05.png "segue の種類を設定")
 5. **Identity インスペクター**ビューのコント ローラーのクラスの"PanelViewController"に設定します。 
 
-    [![Setting segue クラス](menu-images/context10.png "設定 segue クラス")](menu-images/context10-large.png)
+    [![Setting segue クラス](menu-images/context10.png "設定 segue クラス")](menu-images/context10-large.png#lightbox)
 6. Mac に同期するには Visual Studio に戻るし、インターフェイスのビルダーに戻ります。
 7. 切り替えて、**アシスタント エディター**を選択し、 **PanelViewController.h**ファイル。
 8. に対するアクションの作成、**ドキュメント**メニュー項目と呼ばれる`propertyDocument`: 
 
-    [![アクションの構成](menu-images/context06.png "アクションの構成")](menu-images/context06-large.png)
+    [![アクションの構成](menu-images/context06.png "アクションの構成")](menu-images/context06-large.png#lightbox)
 9. 残りのメニュー項目の作成操作を繰り返します。 
 
-    [![必要なアクション](menu-images/context07.png "必要な操作")](menu-images/context07-large.png)
+    [![必要なアクション](menu-images/context07.png "必要な操作")](menu-images/context07-large.png#lightbox)
 10. コンセントを最後に作成、**プロパティ ラベル**と呼ばれる`propertyLabel`: 
 
-    [![コンセントを構成する](menu-images/context08.png "コンセントを構成します。")](menu-images/context08-large.png)
+    [![コンセントを構成する](menu-images/context08.png "コンセントを構成します。")](menu-images/context08-large.png#lightbox)
 11. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
 編集、 **PanelViewController.cs**ファイルし、次のコードを追加します。
@@ -1013,26 +1013,26 @@ public override void DidFinishLaunching (NSNotification notification)
     ![空のインターフェイス定義を追加する](menu-images/dock02.png "空のインターフェイス定義を追加します。")
 2. **ソリューション パッド**をダブルクリックして、 **DockMenu.xib**ファイルを開き、Xcode で編集します。 新規作成**メニュー**次の項目を含む:**アドレス**、**日付**、 **Greeting**、および**署名** 
 
-    [![UI のレイアウト](menu-images/dock03.png "UI のレイアウト")](menu-images/dock03-large.png)
+    [![UI のレイアウト](menu-images/dock03.png "UI のレイアウト")](menu-images/dock03-large.png#lightbox)
 3. 次に、接続してで、カスタムのメニューを作成した、既存のアクションを新しいメニュー項目、[追加、編集および削除するメニュー](#Adding,_Editing_and_Deleting_Menus)前のセクションです。 切り替えて、**接続インスペクター**を選択し、**最初レスポンダー**で、**インターフェイス階層**です。 下へスクロールし、検索、`phraseAddress:`アクション。 そのアクションの円から線をドラッグして、**アドレス**メニュー項目。
 
-    [![アクションの線をドラッグする](menu-images/dock04.png "アクションの線をドラッグします。")](menu-images/dock04-large.png)
+    [![アクションの線をドラッグする](menu-images/dock04.png "アクションの線をドラッグします。")](menu-images/dock04-large.png#lightbox)
 4. 他のメニュー項目に対応するアクションを添付するすべてのごとに繰り返します。 
 
-    [![必要なアクション](menu-images/dock05.png "必要な操作")](menu-images/dock05-large.png)
+    [![必要なアクション](menu-images/dock05.png "必要な操作")](menu-images/dock05-large.png#lightbox)
 5. 次に、選択、**アプリケーション**で、**インターフェイス階層**です。 **接続インスペクター**、円の線をドラッグして、`dockMenu`売店先ほど作成したメニューに。
 
-    [![コンセントをネットワーク上をドラッグする](menu-images/dock06.png "コンセントをネットワーク上をドラッグします。")](menu-images/dock06-large.png)
+    [![コンセントをネットワーク上をドラッグする](menu-images/dock06.png "コンセントをネットワーク上をドラッグします。")](menu-images/dock06-large.png#lightbox)
 6. 変更を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 7. ダブルクリックして、 **Info.plist**ファイルを開いて編集するファイル。 
 
-    [![Info.plist ファイルを編集](menu-images/dock07.png "Info.plist ファイルを編集します。")](menu-images/dock07-large.png)
+    [![Info.plist ファイルの編集](menu-images/dock07.png "Info.plist ファイルの編集")](menu-images/dock07-large.png#lightbox)
 8. クリックして、**ソース**画面の下部にあるタブ。 
 
-    [![ソース ビューを選択する](menu-images/dock08.png "ソース ビューを選択します。")](menu-images/dock08-large.png)
+    [![ソース ビューを選択する](menu-images/dock08.png "ソース ビューを選択します。")](menu-images/dock08-large.png#lightbox)
 9. をクリックして**新しいエントリを追加**緑色のプラス ボタンをクリックして、プロパティ名を"AppleDockMenu"と"DockMenu"(拡張子を除いた新しい .xib ファイルの名前) に値を設定します。 
 
-    [![DockMenu 項目の追加](menu-images/dock09.png "DockMenu 項目の追加")](menu-images/dock09-large.png)
+    [![DockMenu 項目の追加](menu-images/dock09.png "DockMenu 項目の追加")](menu-images/dock09-large.png#lightbox)
 
 これで、アプリケーションを実行すると、ドッキング ステーションに対応するアイコンを右クリックし、マイクロソフトの新しいメニュー項目が表示されます。
 
@@ -1050,16 +1050,16 @@ public override void DidFinishLaunching (NSNotification notification)
 
 1. 編集、 **Main.storyboard** Xcode とドラッグでのファイル、**ショートカット ボタン**から、**ライブラリ インスペクター**上に、**パネル**で作成したウィンドウ[コンテキスト メニュー](#Contextual_Menus)セクション。 
 
-    [![ショートカット ボタンの追加](menu-images/popup01.png "ポップアップ ボタンの追加")](menu-images/popup01-large.png)
+    [![ショートカット ボタンの追加](menu-images/popup01.png "ポップアップ ボタンの追加")](menu-images/popup01-large.png#lightbox)
 2. 新しいメニュー項目を追加しに、ポップアップ画面で、項目のタイトルを設定します**アドレス**、**日付**、 **Greeting**、および**署名。** 
 
-    [![メニュー項目を構成する](menu-images/popup02.png "メニュー項目を構成します。")](menu-images/popup02-large.png)
+    [![メニュー項目を構成する](menu-images/popup02.png "メニュー項目を構成します。")](menu-images/popup02-large.png#lightbox)
 3. 次に、接続してで、カスタムのメニューを作成した既存のアクションを新しいメニュー項目、[追加、編集および削除するメニュー](#Adding,_Editing_and_Deleting_Menus)前のセクションです。 切り替えて、**接続インスペクター**を選択し、**最初レスポンダー**で、**インターフェイス階層**です。 下へスクロールし、検索、`phraseAddress:`アクション。 そのアクションの円から線をドラッグして、**アドレス**メニュー項目。 
 
-    [![アクションの線をドラッグする](menu-images/popup03.png "アクションの線をドラッグします。")](menu-images/popup03-large.png)
+    [![アクションの線をドラッグする](menu-images/popup03.png "アクションの線をドラッグします。")](menu-images/popup03-large.png#lightbox)
 4. 他のメニュー項目に対応するアクションを添付するすべてのごとに繰り返します。 
 
-    [![必要なすべてのアクション](menu-images/popup04.png "必要なすべての操作")](menu-images/popup04-large.png)
+    [![必要なすべてのアクション](menu-images/popup04.png "必要なすべての操作")](menu-images/popup04-large.png#lightbox)
 5. 変更を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
 今すぐ、アプリケーションを実行、ポップアップから項目を選択すると、テキスト ビュー内のテキストは変更されます。

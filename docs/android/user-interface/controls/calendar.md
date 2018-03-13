@@ -7,27 +7,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8075473464472c5a830f62ebfc91c00ad54d1b98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b744f4c8582aa9295645b2bdc22e6fddf2bedc3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="calendar"></a>予定表
 
-<a name="Calendar_API" />
 
 ## <a name="calendar-api"></a>予定表 API
 
 新しい予定表 Android 4 で導入された Api のセットは、予定表のプロバイダーにデータを読み書きするように設計されたアプリケーションをサポートします。 これらの Api は、さまざまなイベント、出席者とリマインダーを読み書きする機能など、カレンダー データの相互作用オプションをサポートします。 カレンダーのプロバイダーを使用すると、アプリケーションで、API を通じて追加したデータは、Android 4 に付属する組み込みの予定表アプリに表示されます。
 
-<a name="Adding_Permissions" />
 
 ## <a name="adding-permissions"></a>アクセス許可を追加します。
 
 アプリケーションで新しい予定表 Api を使用する場合は、Android マニフェストに適切なアクセス許可を追加は、まず行う必要があります。 追加する必要があります。 アクセス許可は`android.permisson.READ_CALENDAR`と`android.permission.WRITE_CALENDAR`かどうかを読み取ることが、予定表データの書き込みやするに応じて、します。
 
-<a name="Using_the_Calendar_Contract" />
 
 ## <a name="using-the-calendar-contract"></a>カレンダーのコントラクトの使用方法
 
@@ -35,7 +32,6 @@ ms.lasthandoff: 02/27/2018
 
 予定表 API を使用する例を見てみましょう。 この例ではあります、カレンダーとそのイベントを列挙する方法だけでなく、予定表に、新しいイベントを追加する方法を確認します。
 
-<a name="Listing_Calendars" />
 
 ## <a name="listing-calendars"></a>予定表の一覧を表示します。
 
@@ -122,10 +118,9 @@ ListAdapter = adapter;
 
 表示されるカレンダー情報を含む最終結果を示すスクリーン ショットをここでは、 `ListView`:
 
-[![2 つの予定表エントリを表示する、エミュレーターで実行されている CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png)
+[![2 つの予定表エントリを表示する、エミュレーターで実行されている CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
-<a name="Listing_Calendar_Events" />
 
 ## <a name="listing-calendar-events"></a>カレンダー イベントの一覧
 
@@ -221,10 +216,9 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 次のように、イベントの一覧が表示されます。
 
-[![次の 3 つのカレンダー イベントを表示する例のアプリのスクリーン ショット](calendar-images/12-events.png)](calendar-images/12-events.png)
+[![次の 3 つのカレンダー イベントを表示する例のアプリのスクリーン ショット](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
-<a name="Adding_a_Calendar_Event" />
 
 ## <a name="adding-a-calendar-event"></a>予定表イベントを追加します。
 
@@ -280,11 +274,11 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 イベント一覧 UI にボタンを追加すると、上記のコードを実行ボタンの click イベント ハンドラー、イベントが、予定表に追加し、次に示すように、一覧で更新します。
 
-[![サンプル イベントの追加 ボタンを続けてカレンダー イベントの例のアプリのスクリーン ショット](calendar-images/13.png)](calendar-images/13.png)
+[![サンプル イベントの追加 ボタンを続けてカレンダー イベントの例のアプリのスクリーン ショット](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 予定表アプリを開くこと、お、表示、イベントを書き込むことがありますもされます。
 
-[![選択したイベントを表示する予定表アプリのスクリーン ショット](calendar-images/14.png)](calendar-images/14.png)
+[![選択したイベントを表示する予定表アプリのスクリーン ショット](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 ご覧のように、Android はできるため、予定表の機能にシームレスに統合するアプリケーションを取得し、予定表のデータを保持する強力かつ簡単のアクセスを許可します。
 

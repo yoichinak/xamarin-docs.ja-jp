@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 56d868f64de009d01930ec34ee2cb436276006ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
@@ -20,23 +20,6 @@ _Xamarin プラットフォームでビルドされたアプリケーション�
 
 低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
-Xamarin プラットフォームでビルドされたアプリケーションのパフォーマンスとユーザーの体感パフォーマンスを高めるための手法は多数あります。 Windows コモン コントロールには以下が含まれます。
-
-- [プロファイラーを使用する](#profiler)
-- [IDisposable のリソースを解放する](#idisposable)
-- [イベントのサブスクリプションを解除する](#events)
-- [弱い参照を使用して不変オブジェクトを回避する](#weakreferences)
-- [オブジェクトの作成コストの発生を遅らせる](#lazy)
-- [非同期操作を実装する](#async)
-- [SGen ガベージ コレクターを使用する](#sgen)
-- [アプリケーションのサイズを縮小する](#linker)
-- [イメージ リソースを最適化する](#optimizeimages)
-- [アプリケーションのアクティブ化期間を短くする](#activationperiod)
-- [Web サービス通信を減らす](#webservicecommunication)
-
-この無料の [Xamarin University のビデオ](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)にも Xamarin アプリの設計に役立つヒントが含まれています。
-
-[ ![](memory-perf-best-practices-images/clancey-sml.png "一般的な落とし穴の回避に関する無料の Xamarin University ビデオ")](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
 
 <a name="profiler" />
 

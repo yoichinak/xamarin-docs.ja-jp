@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: c70e4c9ec49b48c3bf6ecc6a4944d992f8ae930a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 160dd4b2326529abbb456e77391f0f73ee374f50
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms の動作
 
@@ -85,7 +85,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 `NumericValidationBehavior`から派生した、 [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)クラス、場所`T`は、 [ `Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)です。 [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/)メソッドのイベント ハンドラーの登録、 [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/)イベントと、 [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) を登録解除メソッド`TextChanged`メモリを防ぐためにイベントのリークが発生します。 動作のコア機能が用意されて、`OnEntryTextChanged`にユーザーが入力した値を解析するメソッド、 `Entry`、設定と、 [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/)プロパティ値がない場合は赤を`double`です。
 
 > [!NOTE]
-> **注**: Xamarin.Forms が設定されていない、`BindingContext`動作の動作を共有し、スタイルを介して複数のコントロールに適用されるためです。
+> Xamarin.Forms は設定されません、`BindingContext`動作の動作を共有し、スタイルを介して複数のコントロールに適用されるためです。
 
 ## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms 動作の使用
 
@@ -108,10 +108,10 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 実行時に、動作はに従って動作実装では、コントロールとの対話に応答します。 次のスクリーン ショットは、無効な入力に応答して動作を示しています。
 
-[ ![](creating-images/screenshots-sml.png "サンプル Xamarin.Forms 動作を持つアプリケーション")](creating-images/screenshots.png "Xamarin.Forms 動作を持つアプリケーションのサンプル")
+[![](creating-images/screenshots-sml.png "サンプル Xamarin.Forms 動作を持つアプリケーション")](creating-images/screenshots.png#lightbox "Xamarin.Forms 動作を持つアプリケーションのサンプル")
 
 > [!NOTE]
-> **注**: 特定のコントロール型 (または多くのコントロールに適用できるスーパークラス) の動作が書き込まれ、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようと、スローされた例外が発生します。
+> 動作は特定のコントロール型 (または多くのコントロールに適用できるスーパークラス) に書き込まれ、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようと、スローされた例外が発生します。
 
 ### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>スタイルと Xamarin.Forms の動作の使用
 
@@ -181,7 +181,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 スタイルの詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/styles/index.md)です。
 
 > [!NOTE]
-> **注**: バインド可能なプロパティが設定または作成した場合の動作を XAML では、クエリを実行する動作にした状態を追加できますが、それらを共有しない内のコントロール間、`Style`で、`ResourceDictionary`です。
+> 状態にあるバインド可能なプロパティが設定または作成した場合の動作を XAML では、クエリを実行する動作を追加できますが、それらを共有しない内のコントロール間、`Style`で、`ResourceDictionary`です。
 
 ### <a name="removing-a-behavior-from-a-control"></a>コントロールの動作を削除します。
 

@@ -3,14 +3,15 @@ title: "第 11 章の概要です。 バインド可能なインフラストラ�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3e3cfb55f7b96751979d14b489e892bc07817780
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章の概要です。 バインド可能なインフラストラクチャ
 
@@ -22,7 +23,7 @@ Xamarin.Forms と呼ばれる拡張されたプロパティ定義を定義する
 
 [ **ClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy)サンプルは、Xamarin.Forms のクラス階層を表示およびによって実行される重要な役割をデモンストレーションするリフレクションを使用して`BindableObject`この階層にします。 `BindableObject` 派生した`Object`に親クラスでは[ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)元となる[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)派生します。 これは、親クラスに[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)と[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)、これは、親クラスを[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/):
 
-[![クラスの階層の共有のトリプル スクリーン ショット](images/ch11fg01-small.png "クラス階層の共有")](images/ch11fg01-large.png "クラス階層の共有")
+[![クラスの階層の共有のトリプル スクリーン ショット](images/ch11fg01-small.png "クラス階層の共有")](images/ch11fg01-large.png#lightbox "クラス階層の共有")
 
 ## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>BindableObject と BindableProperty にピーク
 

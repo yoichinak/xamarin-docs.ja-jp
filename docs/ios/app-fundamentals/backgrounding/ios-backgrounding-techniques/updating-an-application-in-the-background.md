@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d878f922b74ea3e95fd0e1ebce9e7445063a2946
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>バック グラウンドでのアプリケーションの更新
 
@@ -44,7 +44,7 @@ IOS 6、フォア グラウンドを入力するアプリケーションでは�
 
 バック グラウンドでフェッチを実装するのには、編集*Info.plist*を確認し、**バック グラウンド モードを有効にする**と**バック グラウンドでフェッチ**のチェック ボックス。
 
- [ ![](updating-an-application-in-the-background-images/fetch.png "Info.plist を編集し、バック グラウンド モードを有効にして、バック グラウンドでフェッチ チェック ボックスを確認します。")](updating-an-application-in-the-background-images/fetch.png)
+ [![](updating-an-application-in-the-background-images/fetch.png "Info.plist を編集し、バック グラウンド モードを有効にして、バック グラウンドでフェッチ チェック ボックスを確認します。")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 次に、 `AppDelegate`、オーバーライド、`FinishedLaunching`フェッチの最小間隔を設定します。 この例では、多くの場合、新しいコンテンツをフェッチする方法を決定する、OS ができます。
 
@@ -106,7 +106,7 @@ IOS 6、プッシュ通知の受信は、アプリケーションで何か興味
 
 リモートの通知を実装するのには、編集*Info.plist*を確認し、**バック グラウンド モードを有効にする**と**リモート通知**のチェック ボックス。
 
- [ ![](updating-an-application-in-the-background-images/remote.png "バック グラウンド モードを有効にするバック グラウンド モードおよびリモートの通知を設定")](updating-an-application-in-the-background-images/remote.png)
+ [![](updating-an-application-in-the-background-images/remote.png "バック グラウンド モードを有効にするバック グラウンド モードおよびリモートの通知を設定")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 次に、設定、`content-available`を 1 にプッシュ通知自体のフラグ。 これにより、アプリケーションに通知をアラートを表示する前に新しいコンテンツを取得します。
 
@@ -153,7 +153,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 ただし、APNs は通知をサイレント、通常リモート通知またはキープ アライブ応答と共に"piggyback"です。 正規の通知は、レート制限ではありません、ために、次の図に示すようは、APNs から、デバイスへのプッシュをストアド サイレント通知を使用できます。
 
- [ ![](updating-an-application-in-the-background-images/silent.png "この図に示すように、APNs から、デバイスをサイレント ストアドの通知をプッシュする通常の通知を使用できます。")](updating-an-application-in-the-background-images/silent.png)
+ [![](updating-an-application-in-the-background-images/silent.png "この図に示すように、APNs から、デバイスをサイレント ストアドの通知をプッシュする通常の通知を使用できます。")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > **注**: Apple によって、開発者は、アプリケーションを必要として、APNs ことができますが、配信をスケジュールするたびに、サイレントのプッシュ通知を送信します。

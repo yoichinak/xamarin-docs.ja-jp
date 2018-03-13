@@ -7,23 +7,22 @@ ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/29/2017
-ms.openlocfilehash: 9f084899f44e0104d0aa2d4b3c0509812bd3fdd2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: ef073999e10e184806089bed3ef9ab93e2f28dd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase クラウド メッセージング
 
 _Firebase クラウド メッセージング (FCM) は、モバイル アプリとサーバー アプリケーション間のメッセージングを容易にするサービスです。この記事は、FCM のしくみの概要を説明および FCM をアプリケーションで使用できるように、Google サービスを構成する方法について説明します。_
 
-[![Firebase Cloud Messaging のヒーローの画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png)
+[![Firebase Cloud Messaging のヒーローの画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
 Xamarin.Android アプリと、アプリ サーバー間でメッセージをルーティングする Firebase Cloud Messaging 方法の大まかな概要を説明し、アプリが FCM サービスを使用できるように、資格情報を取得するための手順を追って説明を提供します。
 
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -31,12 +30,11 @@ Firebase クラウド メッセージング (FCM) は、クロス プラット�
 
 次の図にあるよう、FCM はメッセージの送信者とクライアント間の媒介として機能します。 A*クライアント アプリ*デバイス上で実行される FCM が有効なアプリケーションです。 *アプリ サーバー* (またはお客様の会社によって提供される) FCM 経由でクライアント アプリで通信する FCM が有効なサーバーです。 GCM とは異なり FCM できるようになります Firebase コンソール通知 GUI を使用して直接クライアント アプリケーションにメッセージを送信します。
 
-[![クライアント アプリケーションと、アプリ サーバーの間に位置 FCM](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png)
+[![クライアント アプリケーションと、アプリ サーバーの間に位置 FCM](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
 FCM を使用すると、アプリ サーバー メッセージ送信できます 1 台のデバイス、デバイスのグループまたはトピックにサブスクライブしているデバイスの数。 クライアント アプリでは、(たとえば、リモートの通知を受信する場合)、アプリ サーバーからのダウン ストリーム メッセージをサブスクライブする FCM を使用できます。 Firebase メッセージのさまざまな種類の詳細については、次を参照してください。 [FCM メッセージについて](https://firebase.google.com/docs/cloud-messaging/concept-options)です。
 
 
-<a name="inaction" />
 
 ## <a name="firebase-cloud-messaging-in-action"></a>アクションでメッセージング firebase クラウド
 
@@ -64,7 +62,7 @@ FCM では、次の資格情報を使用して、アプリ サーバーとクラ
 
 メッセージングを行う前に、クライアント アプリの登録は FCM でまず必要があります。 クライアント アプリでは、次の図に示すように登録手順を実行する必要があります。
 
-[![アプリの登録の手順のダイアグラム](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png)
+[![アプリの登録の手順のダイアグラム](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1.  クライアント アプリにアクセス FCM FCM に送信者の ID、API キーおよびアプリ ID を渡す、登録トークンを取得します。
 
@@ -77,13 +75,12 @@ FCM では、次の資格情報を使用して、アプリ サーバーとクラ
 不要になった、クライアント アプリケーションは、アプリ サーバーからメッセージを受信したいと考えていると、場合に、登録トークンを削除するアプリケーション サーバーに要求を送信、ことができます。 クライアント アプリがデバイスからアンインストールされると、FCM はこれを検出し、自動的にサーバーに通知する、アプリケーション登録トークンを削除します。
 
 
-<a name="downstream" />
 
 ### <a name="downstream-messaging"></a>ダウン ストリームのメッセージング
 
 次の図は、どの Firebase クラウド メッセージングを格納およびダウン ストリーム メッセージ転送を示しています。
 
-[![FCM のダウン ストリームのメッセージング ストア アンド フォワードを使用します。](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png)
+[![FCM のダウン ストリームのメッセージング ストア アンド フォワードを使用します。](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png#lightbox)
 
 アプリケーション サーバーは、クライアント アプリをダウン ストリーム メッセージを送信するときに、上記の図に列挙として、次の手順を使用します。
 
@@ -99,14 +96,11 @@ FCM では、次の資格情報を使用して、アプリ サーバーとクラ
 
 Android でのダウン ストリームの FCM メッセージの受信の詳細については、次を参照してください。 [FCM リモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)です。
 
-
-<a name="topic" />
-
 ### <a name="topic-messaging"></a>トピックのメッセージング
 
 *トピックのメッセージング*アプリ サーバーの特定のトピックをで選択した複数のデバイスに、メッセージを送信できるようになります。 作成し、Firebase コンソール通知 GUI を使用してトピックのメッセージを送信できます。 FCM は、ルーティングとサブスクライブしているクライアントをトピック メッセージの配信を処理します。 この機能は、気象アラート、株価情報、ヘッドラインなどのメッセージを使用できます。
 
-[![トピックのメッセージング ダイアグラム](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png)
+[![トピックのメッセージング ダイアグラム](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
 
 次の手順は、(クライアント アプリでは、上の説明に従って登録トークンを取得) 後に、トピックのメッセージングで使用されます。
 
@@ -127,28 +121,28 @@ FCM サービスを使用するには、アプリで、前にする必要があ�
 
 1.  サインイン、 [Firebase コンソール](https://console.firebase.google.com/)Google アカウント (つまり、Gmail アドレス) とクリックで**プロジェクトの新規作成**:
 
-    [![新しいプロジェクト ボタンを作成します。](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png)
+    [![新しいプロジェクト ボタンを作成します。](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
 
     既存のプロジェクトがあれば、クリックして**Google プロジェクトのインポート**です。
 
 2.  **プロジェクトを作成する**ダイアログ ボックスで、プロジェクトの名前を入力し、クリックして**プロジェクトの作成**です。 次の例では、新しいプロジェクトと呼ばれる**XamarinFCM**を作成します。
 
-    [![プロジェクト ダイアログ ボックスを作成します。](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png)
+    [![プロジェクト ダイアログ ボックスを作成します。](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png#lightbox)
 
 3.  Firebase コンソールで**概要**をクリックして**の Android アプリを追加 Firebase**:
 
-    [![Android アプリに追加して Firebase](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png)
+    [![Android アプリに追加して Firebase](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png#lightbox)
 
 4.  次の画面で、アプリのパッケージ名を入力します。 この例では、パッケージ名は**com.xamarin.fcmexample**です。 この値は、Android アプリのパッケージ名と一致する必要があります。 アプリのニックネームを入力することも、**アプリ ニックネーム**フィールド。
 
-    [![アプリのニックネームとして FCM 例を入力します。](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png)
+    [![アプリのニックネームとして FCM 例を入力します。](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png#lightbox)
 
 5.  アプリでは、動的リンク、招待、または Google の認証を使用する場合は、署名証明書、デバッグも入力する必要があります。 詳細については、署名証明書を検索する、次を参照してください。[キーストアの MD5 または SHA1 署名検索](~/android/deploy-test/signing/keystore-signature.md)です。
     この例では、署名証明書は空白のままにします。
 
 6.  をクリックして**追加アプリ**:
 
-    [![[アプリの追加] をクリックします。](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png)
+    [![[アプリの追加] をクリックします。](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png#lightbox)
 
     サーバー API キーと、クライアント ID は、アプリの自動的に生成されます。 この情報がパッケージ、 **google services.json**をクリックすると自動的にダウンロードされるファイル**アプリの追加**です。
     このファイルを安全な場所に保存することを確認します。
@@ -156,7 +150,6 @@ FCM サービスを使用するには、アプリで、前にする必要があ�
 追加する方法の詳細な例について**google services.json** Android で FCM プッシュ通知のメッセージを受信するアプリのプロジェクトを参照してください。 [FCM 使用して通知をリモート](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)です。
 
 
-<a name="furtherreading" />
 
 ## <a name="for-further-reading"></a>関連項目
 
@@ -167,7 +160,6 @@ FCM サービスを使用するには、アプリで、前にする必要があ�
 -   [RFC 6120](https://tools.ietf.org/html/rfc6120)と[RFC 6121](https://tools.ietf.org/html/rfc6121)について説明し、拡張可能なメッセージングおよびプレゼンス プロトコル (XMPP) を定義します。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

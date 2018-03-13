@@ -257,7 +257,7 @@
 ## [配置とテスト](deploy-test/index.md)
 ### [パフォーマンス](deploy-test/performance.md)
 ### [Xamarin.UITest と Test Cloud](deploy-test/uitest-and-test-cloud.md)
-## [内部的な処理](internals/index.md)
+## [高度な概念と内部構造](internals/index.md)
 ### [高速レンダラー](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
 ## [トラブルシューティング](troubleshooting/index.md)

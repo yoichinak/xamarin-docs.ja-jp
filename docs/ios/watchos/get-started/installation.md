@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: f7e511d7f0a933ab7f29369e5e5f0aa46607c8f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c423c9bf49c735673793f8e61134f7e705816d54
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installation"></a>インストール
 
@@ -55,19 +55,19 @@ Watch アプリは、3 つのプロジェクトで構成されます。
 
 1. 既存のプロジェクトをお持ちでない場合、最初を選択**ファイル > 新しいソリューション**iOS アプリを作成して (たとえば、 **1 つのアプリの表示**)。
 
-    [ ![](installation-images/cycle8-2-sml.png "ファイルを選択 > 新しいソリューションと iOS アプリの作成")](installation-images/cycle8-2.png)
+    [![](installation-images/cycle8-2-sml.png "ファイルを選択 > 新しいソリューションと iOS アプリの作成")](installation-images/cycle8-2.png#lightbox)
 
 2. IOS アプリの作成 (または、既存の iOS アプリを使用する場合)、ソリューションを右クリックし、選択**追加 > 新しいプロジェクトの追加.**.**新しいプロジェクト**ウィンドウ選択**watchOS > アプリ > WatchKit アプリ**:
 
-    [ ![](installation-images/cycle8-6-sml.png "WatchOS を選択 > アプリ > WatchKit アプリ")](installation-images/cycle8-6.png)
+    [![](installation-images/cycle8-6-sml.png "WatchOS を選択 > アプリ > WatchKit アプリ")](installation-images/cycle8-6.png#lightbox)
 
 3. 次の画面を使用して、iOS アプリ プロジェクトは、watch アプリを含める必要がありますを選択できます。
 
-    [ ![](installation-images/cycle8-7-sml.png "選択する iOS アプリ プロジェクトは、watch アプリを含める必要があります。")](installation-images/cycle8-7.png)
+    [![](installation-images/cycle8-7-sml.png "選択する iOS アプリ プロジェクトは、watch アプリを含める必要があります。")](installation-images/cycle8-7.png#lightbox)
 
 4. 最後に、プロジェクトを保存する場所を選択して (およびオプションでソース管理を有効にする)。
 
-    [ ![](installation-images/cycle8-8-sml.png "プロジェクトを保存する場所を選択します。")](installation-images/cycle8-8.png)
+    [![](installation-images/cycle8-8-sml.png "プロジェクトを保存する場所を選択します。")](installation-images/cycle8-8.png#lightbox)
 
 5. Visual Studio for Mac を自動的に構成[プロジェクト参照と**Info.plist**設定](~/ios/watchos/get-started/project-references.md)します。
 
@@ -81,11 +81,11 @@ Watch アプリのダブルクリック**Interface.storyboard** iOS デザイナ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](installation-images/iosdesigner-sml.png "デザイナーでストーリー ボード")](installation-images/iosdesigner.png)
+[![](installation-images/iosdesigner-sml.png "デザイナーでストーリー ボード")](installation-images/iosdesigner.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](installation-images/iosdesigner-sml-vs.png "デザイナーでストーリー ボード")](installation-images/iosdesigner-vs.png)
+[![](installation-images/iosdesigner-sml-vs.png "デザイナーでストーリー ボード")](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
@@ -152,7 +152,7 @@ Watch アプリを含むプロジェクトは、その他の iOS プロジェク
 Xcode 8 (またはそれ以降) がインストールされると、Apple Watch シミュレーターとは別 iOS シミュレーター (とは異なり[Xcode 6](#xcode6)として表示されていたという、*外付けディスプレイ*)。
 シミュレーターの一覧が表示されます Watch アプリ プロジェクトを選択して、スタートアップ プロジェクトを作成すると、 *iOS シミュレーター* (下図) から選択できます。
 
-[ ![](installation-images/xs-xcode8-watchos3-sml.png "シミュレーターの種類の選択")](installation-images/xs-xcode8-watchos3.png)
+[![](installation-images/xs-xcode8-watchos3-sml.png "シミュレーターの種類の選択")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
 デバッグを開始するときに*2*シミュレーターは、まず - iOS シミュレーター*と*Apple Watch シミュレーター。 使用して**コマンド + Shift + H**ウォッチ メニューと時計の文字盤; に移動しを使用して、**ハードウェア**を設定するメニュー、 **Force タッチ圧力**です。 トラック パッドやマウスのスクロールには、デジタル クラウンの使用をシミュレートします。
 
@@ -195,13 +195,13 @@ Visual Studio for Mac は、通知で watch アプリを起動する_スター�
 Watch アプリ プロジェクトを右クリックし、選択**実行 > カスタム構成しています.**:
 
 
-[![](installation-images/runwith-customparams-sml.png "カスタム構成を実行します。")](installation-images/runwith-customparams.png)
+[![](installation-images/runwith-customparams-sml.png "カスタム構成を実行します。")](installation-images/runwith-customparams.png#lightbox)
 
 
 開き、**カスタム パラメーター**ウィンドウを選択できます**通知**(および JSON ペイロードを提供)、キーを押します**実行**watch アプリをシミュレーターで起動します。
 
 
-[![](installation-images/runwith-execargs-sml.png "通知およびペイロードの設定")](installation-images/runwith-execargs.png)
+[![](installation-images/runwith-execargs-sml.png "通知およびペイロードの設定")](installation-images/runwith-execargs.png#lightbox)
 
 
 

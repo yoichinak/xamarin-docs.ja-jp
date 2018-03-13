@@ -7,18 +7,17 @@ ms.assetid: 42E5379F-B0F4-4B87-A314-BF3DE405B0C8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: d81f897fb7af39334cec4ea9f806533f09754079
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9c30cf9d76498e95aba6f9a003bc40c7d14e21de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="viewpager-with-views"></a>ビューで ViewPager
 
 _ViewPager は、レイアウト マネージャーで、ジェスチャー ナビゲーションを実装することができます。ジェスチャー ナビゲーションにより、左と右のデータ ページの手順をスワイプするユーザー。このガイドは、ViewPager とデータ ページとビューを使用して、PagerTabStrip swipeable UI を実装する方法を説明します。 (後続のガイドには、ページのフラグメントを使用する方法がについて説明します)。_
 
-<a name="overview" />
  
 ## <a name="overview"></a>概要
 
@@ -27,18 +26,16 @@ _ViewPager は、レイアウト マネージャーで、ジェスチャー ナ�
 `ViewPager`-ベースのアプリは、一般に実装`Fragment`s、比較的単純なユース ケースがある場所の余分な複雑さ`Fragment`s は必要ありません。 たとえば、このチュートリアルで基本イメージ ギャラリーのアプリが不要の使用`Fragment`s。 コンテンツが静的では、さまざまなイメージの間で切り替えるユーザーのみカード、実装では、維持しておくことシンプルな標準の Android ビューとレイアウトを使用してため。 
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
 いう新しい Android プロジェクトを作成する**TreePager** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、Android プロジェクトの新規作成) します。 次に、NuGet パッケージ マネージャーを起動します。 (NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: プロジェクトで、NuGet を含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 検索およびインストール**Android のサポート ライブラリ v4**: 
 
-[![サポートのスクリーン ショット v4 Nuget の NuGet Package Manager での選択](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png)
+[![サポートのスクリーン ショット v4 Nuget の NuGet Package Manager での選択](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 によって、その他のパッケージ reaquired もインストールされる**Android のサポート ライブラリ v4**です。
 
 
-<a name="datasource" />
 
 ## <a name="add-an-example-data-source"></a>例のデータ ソースを追加します。
 
@@ -58,7 +55,6 @@ int imageId = treeCatalog[2].imageId;
 の実装の詳細`TreeCatalog`理解するには関係ない`ViewPager`、`TreeCatalog`コードが記載されていません。 ソース コードを`TreeCatalog`は、「 [TreeCatalog.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/TreePager/TreeCatalog.cs)です。 このソース ファイルをダウンロードする (またはコピーして、新しいコードを貼り付けます**TreeCatalog.cs**ファイル) をプロジェクトに追加します。 また、ダウンロードし、展開、[イメージ ファイル](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/Resources/tree-images.zip?raw=true)に、**リソース/描画**フォルダー、プロジェクトに含めるとします。 
 
 
-<a name="layout" />
 
 ## <a name="create-a-viewpager-layout"></a>ViewPager レイアウトを作成します。
 
@@ -82,8 +78,6 @@ available only from
 [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
 it is not available in the Android SDK. 
 
-
-<a name="setup" />
 
 ## Set up ViewPager
 
@@ -115,12 +109,10 @@ protected override void OnCreate(Bundle bundle)
 
 ビルドし、このコードを実行すると、次のスクリーン ショットのような画面が表示されます。 
 
-[![空の ViewPager を表示するアプリのスクリーン ショット](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png)
+[![空の ViewPager を表示するアプリのスクリーン ショット](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
 
 この時点で、`ViewPager`それが不足しているアダプターのコンテンツにアクセスするためには何**TreeCatalog**です。 次のセクションで、 **PagerAdapter**接続するため、`ViewPager`を**TreeCatalog**です。 
 
-
-<a name="adapter" />
 
 ## <a name="create-the-adapter"></a>アダプターを作成します。
 
@@ -178,7 +170,6 @@ namespace TreePager
 このコードをスタブして、必要な`PagerAdapter`実装します。 次のセクションでこれらの各メソッドは作業中のコードで置き換えられます。 
 
 
-<a name="ctor" />
 
 ### <a name="implement-the-constructor"></a>コンス トラクターを実装します。
 
@@ -198,7 +189,6 @@ public TreePagerAdapter (Context context, TreeCatalog treeCatalog)
 このコンス トラクターの目的は、コンテキストを格納する、および`TreeCatalog`インスタンスが、`TreePagerAdapter`が使用されます。 
 
 
-<a name="count" />
 
 ### <a name="implement-count"></a>実装のカウント
 
@@ -214,7 +204,6 @@ public override int Count
 `NumTrees`プロパティ`TreeCatalog`データ セット内でツリー (ページの数) の数を返します。
 
 
-<a name="instantiateitem" />
 
 ### <a name="implement-instantiateitem"></a>InstantiateItem を実装します。
 
@@ -247,7 +236,6 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 ときに、`ViewPager`でイメージが表示されます`position`、これが表示されます`ImageView`です。 最初に、`InstantiateItem`ビューで最初の 2 つのページを設定するには、2 回呼び出されます。 ユーザーがスクロール、もう一度だけの背後にあると、現在表示されている項目の前のビューを維持するために呼び出されます。 
 
 
-<a name="destroyitem" />
 
 ### <a name="implement-destroyitem"></a>DestroyItem を実装します。
 
@@ -272,7 +260,6 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 3.  ビューが削除、`ViewPager`です。 
 
 
-<a name="isviewfromobject" />
 
 ### <a name="implement-isviewfromobject"></a>Implement IsViewFromObject
 
@@ -287,7 +274,6 @@ public override bool IsViewFromObject(View view, Java.Lang.Object obj)
 }
 ```
 
-<a name="addadapter" />
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>アダプター、ViewPager を追加します。
 
@@ -301,10 +287,9 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 
 実装の中核はこれで完了&ndash;をビルドして、アプリを実行します。 左側の [次へ] のスクリーン ショットに示すように画面に表示ツリー カタログの最初のイメージが表示されます。 方向にスワイプして、複数のツリー ビューでは、左にツリー カタログ後方へ移動し、右の方向にスワイプ: 
 
-[![ツリーのイメージをスワイプ スクリーン ショットの TreePager アプリ](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png)
+[![ツリーのイメージをスワイプ スクリーン ショットの TreePager アプリ](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 
-<a name="pagetabstrip" />
 
 ## <a name="add-a-pager-indicator"></a>ポケットベル インジケーターを追加します。
 
@@ -333,10 +318,9 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 
 `ViewPager` および`PagerTabStrip`連携して動作するよう設計されています。 宣言する場合、`PagerTabStrip`内、`ViewPager`レイアウト、`ViewPager`自動的に検出されます、`PagerTabStrip`し、アダプターに接続します。 ビルド アプリを実行すると、空が表示されます`PagerTabStrip`各画面の上部に表示されます。 
 
-[![空の PagerTabStrip のクローズ アップ スクリーン ショット](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png)
+[![空の PagerTabStrip のクローズ アップ スクリーン ショット](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
 
 
-<a name="title" />
 
 ### <a name="display-a-title"></a>タイトルを表示します。
 
@@ -351,23 +335,21 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 このコードは、ツリーのカタログの指定されたページ (位置) からツリー キャプション文字列を取得、Java に変換します`String`、し、それを返します、`ViewPager`です。 この新しいメソッドを使用してアプリを実行するときに各ページ キャプションを表示、ツリーで、`PagerTabStrip`です。 下線のない画面の上部にあるツリー名が表示されます。 
 
-[![テキスト入力 PagerTabStrip タブ付きページのスクリーン ショット](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png)
+[![テキスト入力 PagerTabStrip タブ付きページのスクリーン ショット](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png#lightbox)
 
 カタログでキャプション ツリーの各イメージを表示するには、前後スワイプすることができます。 
 
 
-<a name="pagertitlestrip" />
 
 ### <a name="pagertitlestrip-variation"></a>PagerTitleStrip バリエーション
 
 `PagerTitleStrip` よく似ています`PagerTabStrip`する点を除いて`PagerTabStrip`現在選択されているタブの下線を追加します。置き換えることができます`PagerTabStrip`で`PagerTitleStrip`、上記のレイアウトと、アプリの外観を確認するには、もう一度の実行で`PagerTitleStrip`: 
 
-[![テキストから削除された下線の付いた PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png)
+[![テキストから削除された下線の付いた PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 変換する場合、下線が削除されたことに注意してください`PagerTitleStrip`です。 
 
 
-<a name="summary" />
  
 ## <a name="summary"></a>まとめ
 

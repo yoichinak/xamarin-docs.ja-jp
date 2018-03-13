@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6b55e525849d57f2ad9e40ea64b75cfc65ef0727
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
@@ -138,7 +138,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A`Job`の_有効期間_(どのくらいの期間にはスケジュールを実行する) が、デバイスが再起動までにのみ&ndash;デバイスが再起動したら、`Job`は失われます。
 * A`Job`は繰り返されません&ndash;1 回だけ実行されます。
 * A`Job`をできるだけ早く実行するスケジュールされます。
-* 既定の再試行戦略、`Job`を使用して、_指数バックオフ_(セクションで、以下の詳細に説明した[、RetryStrategy 設定](#Setting_a_RestryStrategy))
+* 既定の再試行戦略、`Job`を使用して、_指数バックオフ_(セクションで、以下の詳細に説明した[、RetryStrategy 設定](#Setting_a_RetryStrategy))
 
 ### <a name="scheduling-a-job"></a>スケジュールを設定します。 `Job`
 
@@ -171,6 +171,8 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 これらのトピックは、次のセクションで詳しく説明されます。
 
+<a name="Passing_Parameters_to_a_Job" />
+
 #### <a name="passing-parameters-to-a-job"></a>ジョブにパラメーターの引き渡し
 
 作成することで、ジョブにパラメーターを渡す、`Bundle`と共に渡される、`Job.Builder.SetExtras`メソッド。
@@ -197,6 +199,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
+<a name="Setting_Constraints" />
 
 #### <a name="setting-constraints"></a>制約を設定
 
@@ -215,6 +218,8 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
+<a name="Setting_Job_Triggers" />
+
 #### <a name="setting-job-triggers"></a>ジョブ トリガーの設定
 
 `JobTrigger`ガイダンスは、ジョブを開始するオペレーティング システムを提供します。 A`JobTrigger`が、_ウィンドウを実行する_時期のスケジュールされた時刻を定義する、`Job`実行する必要があります。 実行ウィンドウに、_ウィンドウを起動_値と_終了ウィンドウ_値。 スタート ウィンドウは、デバイスが、ジョブを実行する前に待機する秒数と、ウィンドウの終了値は、実行する前に待機する秒数の最大数、`Job`です。 
@@ -230,6 +235,8 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 既定値`JobTrigger`値によって表されるジョブの`Trigger.Now`ジョブがスケジュールされている後にできるだけ早く実行することを指定する.
+
+<a name="Setting_a_RetryStrategy" />
 
 #### <a name="setting-a-retrystrategy"></a>設定、RetryStrategy
 

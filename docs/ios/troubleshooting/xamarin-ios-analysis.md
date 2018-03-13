@@ -6,15 +6,23 @@ ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/26/2017
-ms.openlocfilehash: 7cf627f369b666bb54d0f512dc1361d2a685a057
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/06/2018
+ms.openlocfilehash: c7dc63cbed0dbdc13dfd2d32a0859c0fe7a29196
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinios-analysis-rules"></a>Xamarin.iOS 分析規則
 
+Xamarin.iOS 分析は、高い/高い最適化された設定が使用可能な場合の判断に役立つプロジェクトの設定をチェックする規則のセットです。
+
+分析ルールを早い段階で品質向上を図るを検索し、開発時間を節約できる限り頻繁に実行します。
+
+実行するには、ルールでは、Visual Studio for Mac のメニューで選択**プロジェクト > コード分析を実行**です。
+
+> [!NOTE]
+> Xamarin.iOS 分析は、現在選択されている構成でのみ実行されます。 デバッグ用ツールの実行を強くお勧め**と**リリース構成します。
 
 ## <a name="a-namexia0001xia0001-disabledlinkerrule"></a><a name="XIA0001"/>XIA0001: DisabledLinkerRule
 
@@ -39,5 +47,10 @@ ms.lasthandoff: 02/27/2018
 
 ## <a name="a-namexia0005xia0005-float32rule"></a><a name="XIA0005"/>XIA0005: Float32Rule
 
-- **問題:** float32 オプションを使用していない (--aot オプション = O = float32) 倍精度演算が多少遅くなりますが、コスト、携帯電話 に特別に膨大なパフォーマンスにつながります。 .NET を使用すること倍精度内部的も浮動小数点数、有効桁数と、場合によっては、互換性に影響は、このオプションを有効にするように注意してください。
+- **問題:** float32 オプションを使用していない (--aot オプション = O = float32) 倍精度演算が多少遅くなりますが、携帯電話で特にコスト、膨大なパフォーマンスにつながります。 .NET を使用すること倍精度内部的も浮動小数点数、有効桁数と、場合によっては、互換性に影響は、このオプションを有効にするように注意してください。
 - **修正:**倍精度浮動小数点、iOS プロジェクトをクリックし、ビルドを参照してください > iOS をビルドおよびオフにして、「64 ビット浮動小数点として 32 ビット浮動小数点のすべての操作を実行する」です。
+
+## <a name="a-namexia0006xia0006-httpclientavoidmanaged"></a><a name="XIA0006"/>XIA0006: HttpClientAvoidManaged
+
+- **問題:**実行可能ファイル サイズの小さいパフォーマンス向上のため管理されている 1 つではなくネイティブ HttpClient ハンドラーを使用することをお勧めとを簡単に新しい標準をサポートします。
+- **修正:**倍精度浮動小数点、iOS プロジェクトをクリックし、ビルドを参照してください > iOS をビルドおよびを iOS 7 の前のバージョンをサポートするために NSUrlSession (iOS 7 以降) または CFNetwork HttpClient の実装を変更します。

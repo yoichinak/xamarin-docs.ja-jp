@@ -1,5 +1,5 @@
 ---
-title: "Android の消耗"
+title: Android Wear
 description: "Android ウェアラブル デバイス用のアプリをビルドします。"
 ms.topic: article
 ms.prod: xamarin
@@ -8,15 +8,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1dad5e859efdf69e7003b45724f718b16faffd62
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="android-wear"></a>Android の消耗
-
-## <a name="android-wear"></a>Android の消耗
+# <a name="android-wear"></a>Android Wear
 
 Android の劣化は、スマート ウォッチなど、ウェアラブル デバイス用に設計された Android のバージョンです。 このセクションでは、インストールし、ウェア開発では、詳しい手順については、最初の消耗デバイスと、独自に作成するためにアプリを身に参照できるサンプルの一覧を作成するために必要なツールを構成する方法の手順を説明します。
 
@@ -28,7 +26,7 @@ Android を着用が導入されていますのインストールし、ウェア
 
 Android の消耗固有が制御し、これらのコントロールを使用する方法を示すサンプルへのリンクを提供について説明します。
 
-##  <a name="platform-featuresandroidwearplatformindexmd"></a>[プラットフォームの機能](~/android/wear/platform/index.md)
+##  <a name="platform-featuresandroidwearplatformindexmd"></a>[プラットフォーム機能](~/android/wear/platform/index.md)
 
 このセクションのドキュメントでは、Android を着用に固有の機能について説明します。 ここで、WatchFace を作成する方法を説明するトピックが見つかります。
 
@@ -36,12 +34,11 @@ Android の消耗固有が制御し、これらのコントロールを使用す
 
 プレビューし、ユーザー インターフェイスの使用可能な画面サイズを最適化します。
 
-##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[展開とテスト](~/android/wear/deploy-test/index.md)
+##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[配置とテスト](~/android/wear/deploy-test/index.md)
 
 Android 着用デバイスまたは消耗用に構成された Android エミュレーターに着けの Android アプリを展開する方法について説明します。 デバッグのヒントと、開発用コンピューターと、Android デバイスの Bluetooth 接続を設定する方法に関する情報も含まれています。
 
 
-<a name="Samples" />
 
 ## <a name="samples"></a>サンプル
 
@@ -137,21 +134,21 @@ GridViewPager が、ユーザーが垂直方向に読み取ります 2D ナビ�
 <table align="center" border="0" cellpadding="1" cellspacing="1">
     <tr>
         <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0"/ /></td>
+        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
         <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android L およびその他多く</a>
         <br />
 Android の L Developer Preview マテリアルのデザイン、通知、および新しいアニメーションは、いくつかの例を含む多種多様な活用するために開発者用の新しい Api が導入されました。</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# の場合は目と my 耳にします Google ガラスおよび Android を着用。</a>
         <br />
 将来 (またはインスペクター ガジェット エピソード) から何かのように見えるかもしれませんウェアラブル コンピューティングが、多くの人が既にことを望んで将来今日! C# 開発者を把握このして既にツールとスキル ウェアラブル デバイス (する 2014) の機能を利用します。</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Xamarin.Android の新機能</a>
         <br />
         <i>Android L、Android の消耗、Android テレビ、Android の自動、材料デザイン、およびアートです。どういうことに、Xamarin の開発者ですか。</i>から 2014 の進化します。</td>

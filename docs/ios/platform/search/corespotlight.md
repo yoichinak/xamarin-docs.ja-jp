@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 20b18cd79eeaabab8019c367e241a4975dc37b0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-core-spotlight"></a>コアのスポット ライトの検索
 
@@ -46,7 +46,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 この情報は、検索結果では、次のように表示されます。
 
-[ ![](corespotlight-images/corespotlight01.png "コア Spotlight 検索結果の概要")](corespotlight-images/corespotlight01.png)
+[![](corespotlight-images/corespotlight01.png "コア Spotlight 検索結果の概要")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>アイテムを復元します。
 
@@ -80,7 +80,7 @@ public override bool ContinueUserActivity (UIApplication application,
 コアのスポット ライトで作成したインデックス項目する必要がある生じる変更するなど、タイトルまたはサムネイル画像の変更が必要である可能性があります。 この変更を行うには、最初に、インデックスの作成に使用されたように同じメソッドを使用します。
 作成する新しい`CSSearchableItem`項目を作成し、新しい接続に使用された同じ ID を使用して`CSSearchableItemAttributeSet`変更後の属性を含みます。
 
-[ ![](corespotlight-images/corespotlight02.png "項目の概要の更新")](corespotlight-images/corespotlight02.png)
+[![](corespotlight-images/corespotlight02.png "項目の概要の更新")](corespotlight-images/corespotlight02.png#lightbox)
 
 この項目を検索可能なインデックスに書き込むときに、既存の項目は、新しい情報で更新されます。
 

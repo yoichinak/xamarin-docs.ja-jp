@@ -3,16 +3,16 @@ title: RecyclerView
 description: "RecyclerView はコレクションを表示するため、グループの表示ListView、GridView などの古いグループの表示の代わりに柔軟に設計されています。  このガイドでは、使用および Xamarin.Android アプリケーションで RecyclerView をカスタマイズする方法について説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
+ms.assetid: 91EF0BD2-3306-47E1-9B39-627A1787762F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/03/2018
-ms.openlocfilehash: ec8b3a4655c8e8d9e492c9f7a1807dd64ecc6ae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 028520742a84e717e28147f2fa1fafacfef34028
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -23,7 +23,7 @@ _RecyclerView はコレクションを表示するため、グループの表示
 多くのアプリは、同じ種類 (メッセージ、連絡先、画像、または曲); などのコレクションを表示する必要があります。多くの場合、このコレクションは、コレクションがコレクション内のすべての項目をスムーズにスクロールできる小さいウィンドウに表示されるように、画面に収まるようには大きすぎます。
 `RecyclerView` リストまたはユーザー コレクションのスクロールを有効にすると、グリッド項目のコレクションを表示する Android ウィジェットがします。 使用する例のアプリのスクリーン ショットを次に示します`RecyclerView`垂直スクロール リストに電子メールの受信トレイの内容を表示します。
 
-[ ![受信トレイ メッセージの一覧を RecyclerView を使用した例のアプリ](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png)
+[![受信トレイ メッセージの一覧を RecyclerView を使用した例のアプリ](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png#lightbox)
 
 `RecyclerView` 2 つの魅力的な機能を提供します。
 

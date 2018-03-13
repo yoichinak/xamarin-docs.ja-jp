@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 8b1715c8e7c3e9bb296577acd3d09a0f22488250
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -48,7 +48,7 @@ EShopOnContainers モバイル アプリは、identity のマイクロ サービ
 -   IdentityServer でリソースにアクセスするには、要求しているモバイル アプリ、*アクセス*トークンで、API のリソースにアクセスできるようにします。 クライアントは、アクセス トークンを要求し、それらを API に転送します。 アクセス トークンは、(存在する場合) に、クライアントと、ユーザーに関する情報を格納します。 Api では、データへのアクセスを承認するためにその情報を使用します。
 
 > [!NOTE]
-> **注**: クライアントがトークンを要求前に、IdentityServer に登録する必要があります。
+> トークンを要求する前に、IdentityServer にクライアントを登録する必要があります。
 
 ### <a name="adding-identityserver-to-a-web-application"></a>Web アプリケーションに IdentityServer を追加します。
 

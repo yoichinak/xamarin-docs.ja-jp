@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 6d2a454665691c028fe8307940a5662a98ab9c98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f35256529d6d72a3f5e563dc88b9d5883a9724d4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="appearance-api"></a>API の外観
 
@@ -32,7 +32,7 @@ iOS では、標準のコントロールをアプリケーションに適用す�
 
 外観サンプル アプリケーションは、これらのスクリーン ショットに示すように、すべての 3 つの方法を示しています。
 
- [ ![](introduction-to-the-appearance-api-images/appearance01.png "外観のサンプル アプリケーションは、すべての 3 つの方法を示します")](introduction-to-the-appearance-api-images/appearance01.png)
+ [![](introduction-to-the-appearance-api-images/appearance01.png "外観のサンプル アプリケーションは、すべての 3 つの方法を示します")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 8、iOS の時点では、外観プロキシが TraitCollections に拡張されました。
  `AppearanceForTraitCollection` 特定の特徴であるコレクションの既定の外観を設定するために使用します。 詳細を読み取ることができますにこれは、[ストーリー ボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)ガイドです。
@@ -87,11 +87,11 @@ sg1.TintColor = UIColor.Magenta;
 
 または、デザイナーのプロパティ パッドで、値を設定します。 
 
-[ ![](introduction-to-the-appearance-api-images/propertiespadtint.png "パッド濃淡のプロパティ")](introduction-to-the-appearance-api-images/propertiespadtint.png)
+[![](introduction-to-the-appearance-api-images/propertiespadtint.png "パッド濃淡のプロパティ")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 次の図では、濃淡 'sg1' をという名前のコントロールのみで設定を示しています。
 
- [ ![](introduction-to-the-appearance-api-images/image53.png "個々 のコントロール濃淡の設定")](introduction-to-the-appearance-api-images/image53.png)
+ [![](introduction-to-the-appearance-api-images/image53.png "個々 のコントロール濃淡の設定")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 この方法で多くのコントロールを設定できない完全に効率的な静的代わりにセットアップできるように`Appearance`クラス自体のプロパティです。 これは、次のコードで示されます。
 
@@ -101,7 +101,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 次の図は、両方のセグメント化されたコントロールを示していますマゼンタに設定の外観のようになりました。
 
- [ ![](introduction-to-the-appearance-api-images/image54.png "外観の制御濃淡の設定")](introduction-to-the-appearance-api-images/image54.png)
+ [![](introduction-to-the-appearance-api-images/image54.png "外観の制御濃淡の設定")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance` プロパティ設定する必要があるアプリケーションのライフ サイクルの早い段階でなど AppDelegate の`FinishedLaunching`イベント、または影響を受けるコントロールを表示する前に、ViewController にします。
 

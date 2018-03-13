@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 90a2eb219ae1189e7a48e60cde9761e3e9e93e0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce51511c58d7d0f5a14e487b57897bfa0e0b20b3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="graphics-and-animation"></a>グラフィックスおよびアニメーション
 
 _Android では、2 次元グラフィックとアニメーションをサポートするため、非常に豊富なさまざまなフレームワークを提供します。このトピックでは、これらのフレームワークを紹介し、Xamarin.Android アプリケーションでカスタム グラフィックと使用するためのアニメーションを作成する方法について説明します。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -61,7 +60,6 @@ Android には、これらの 2 次元グラフィックス手法に加えて、
 参照してください[Google のユーザー補助ガイド](http://developer.android.com/guide/topics/ui/accessibility/)Android のユーザー補助機能の Api を利用する方法についての詳細。
 
 
-<a name="2D_Graphics" />
 
 ## <a name="2d-graphics"></a>2D グラフィック
 
@@ -71,7 +69,6 @@ Android には、これらの 2 次元グラフィックス手法に加えて、
 
 最初にドロウアブル リソースを調べてみましょう。 単純なされ、最も一般的なカスタム描画ケースに対応します。
 
-<a name="Drawable Resources" />
 
 ### <a name="drawable-resources"></a>ドロウアブル リソース
 
@@ -153,7 +150,6 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 XML 要素とドロウアブル リソースの構文の詳細についてを参照してください[Google のドキュメント](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)です。
 
-<a name="Using the Canvas Drawing API" />
 
 ### <a name="using-the-canvas-drawing-api"></a>キャンバスの描画 API を使用します。
 
@@ -183,7 +179,6 @@ Canvas canvas = new Canvas(b);
 -   [Canvas.DrawText](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawText/p/System.String/System.Single/System.Single/Android.Graphics.Paint/) &ndash;指定された色と、キャンバス上のテキストを描画します。 位置にテキストが描画された`x,y`です。
 
 
-<a name="Drawing with the Canvas API" />
 
 #### <a name="drawing-with-the-canvas-api"></a>キャンバスの API を使用した描画
 
@@ -218,7 +213,6 @@ public class MyView : View
 
 ![画面では、赤色の塗料と緑色の塗料オブジェクト](graphics-and-animation-images/image3.png)
 
-<a name="Animation" />
 
 ## <a name="animation"></a>アニメーション
 
@@ -232,7 +226,6 @@ public class MyView : View
 
 一般に、アニメーションのプロパティは、推奨されるシステムの方が柔軟性とより多くの機能を提供しています。 使用します。
 
-<a name="View Animations" />
 
 ### <a name="view-animations"></a>ビューのアニメーション
 
@@ -319,7 +312,6 @@ myImage.StartAnimation(myAnimation);
 
 ビューのアニメーションのしくみの基本的な理解がある、プロパティのアニメーションを移動することができます。
 
-<a name="Property Animations" />
 
 ### <a name="property-animations"></a>プロパティのアニメーション
 
@@ -397,7 +389,6 @@ animator.Start();
 
 前のコード スニペットからわかるように`ObjectAnimator`を削減し、オブジェクトをアニメーション化するために必要なコードを簡略化できます。
 
-<a name="Drawable Animations" />
 
 ### <a name="drawable-animations"></a>ドロウアブル アニメーション
 
@@ -442,7 +433,6 @@ protected override void OnCreate(Bundle bundle)
 
 この時点で Api の Android アプリケーションで使用できるアニメーションの基礎を説明します。
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

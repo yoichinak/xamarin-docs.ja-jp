@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: ac4644f65486d70fcbb7da1a03574fb238348313
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f657fc3dd87d5c39d442a863e4acc00ac320b00d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="target-framework"></a>[対象とする Framework]
 
@@ -44,7 +44,7 @@ Xamarin.Mac プロジェクトのターゲット フレームワークの種類�
 2. **ソリューション エクスプローラー**で、プロジェクト ファイルをダブルクリックし、**[プロジェクト オプション]** ダイアログ ボックスを開きます。
 3. **全般**の種類の選択 タブで、**ターゲット フレームワーク**アプリケーションのニーズに適した。
 
-  [![プロジェクトのオプション ウィンドウを使用してターゲット フレームワークを選択する](target-framework-images/select-target-full.png "プロジェクトのオプションのウィンドウを使用してターゲット フレームワークを選択するには")](target-framework-images/select-target-full-large.png)
+  [![プロジェクトのオプション ウィンドウを使用してターゲット フレームワークを選択する](target-framework-images/select-target-full.png "プロジェクトのオプションのウィンドウを使用してターゲット フレームワークを選択するには")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. **[OK]** をクリックして変更内容を保存します。
 

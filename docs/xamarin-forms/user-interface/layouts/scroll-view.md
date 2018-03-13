@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: c305075d37a25bfe828f16d4e69955437a591f9a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 648125ca8bd2c7c8a015b4c29195dc75c0bbf0a0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="scrollview"></a>ScrollView
 
 [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) レイアウトが含まれていますでき、その画面外にスクロールします。 `ScrollView` キーボードが表示されている場合、画面の表示部分に自動的に移動するビューを許可するも使用されます。
 
-[ ![](scroll-view-images/layouts-sml.png "Xamarin.Forms レイアウト")](scroll-view-images/layouts.png "Xamarin.Forms レイアウト")
+[![](scroll-view-images/layouts-sml.png "Xamarin.Forms レイアウト")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
 
 この記事の内容について説明します。
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/27/2018
 ## <a name="usage"></a>使用法
 
 > [!NOTE]
-> **注**: `ScrollView`s 入れ子にしてはいけない。 さらに、 `ScrollView`s と同様に、スクロールを提供する他のコントロールで入れ子にする必要がありますいない`ListView`と`WebView`です。
+> `ScrollView`s は入れ子にできません。 さらに、 `ScrollView`s と同様に、スクロールを提供する他のコントロールで入れ子にする必要がありますいない`ListView`と`WebView`です。
 
 `ScrollView` 公開、`Content`プロパティ 1 つのビューやレイアウトを設定することができます。 続けて、非常に大きな boxView とレイアウトの例を考えてみます、 `Entry`:
 

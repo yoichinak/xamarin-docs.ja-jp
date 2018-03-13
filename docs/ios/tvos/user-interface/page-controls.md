@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4da50dac901628b9baf10a07650d232a977a653
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-page-control"></a>ページ コントロールの操作
 
@@ -20,7 +20,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でページ コント�
 
 場合によっては、Xamarin.tvOS アプリで、一連のページやイメージを表示する必要があります。 ページ コントロールは、明確に、ユーザーがページの最大数外でどのページを表示するように設計されました。 ページ コントロールには、一連の dark、楕円形の背景に対してドットが表示されます。 黒点を現在のページが表示されますが、他のすべてのページが中空のドットで表示されます。 その背景領域に合わせてが多すぎますがある場合、ページ コントロールは外側のほとんどのドットをクリップします。
 
-[ ![](page-controls-images/page01.png "ページ コントロールをサンプルします。")](page-controls-images/page01.png)
+[![](page-controls-images/page01.png "ページ コントロールをサンプルします。")](page-controls-images/page01.png#lightbox)
 
 ユーザーのみにフィードバックを提供する非対話型要素内のページ コントロール。 (ジェスチャ ボタンなど) の現在のページ番号を変更するには、その他のコントロールを追加する必要があります。
 
@@ -41,14 +41,14 @@ Xamarin.tvOS アプリでのページ コントロールを操作する最も簡
 1. **ソリューション パッド**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**ページ コントロール**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](page-controls-images/page02.png "ページ コントロール")](page-controls-images/page02.png)
+    [![](page-controls-images/page02.png "ページ コントロール")](page-controls-images/page02.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ パッド**などいくつかのページ コントロールのプロパティを調整することができます、**現在のページ**と**のページ数**: 
 
-    [ ![](page-controls-images/page03.png "ウィジェット タブ")](page-controls-images/page03.png)
+    [![](page-controls-images/page03.png "ウィジェット タブ")](page-controls-images/page03.png#lightbox)
 1. 次に、後ろに移動し、ページのコレクションを転送するビューにコントロールやジェスチャを追加します。
 1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
 
-    [ ![](page-controls-images/page04.png "コントロールの名前")](page-controls-images/page04.png)
+    [![](page-controls-images/page04.png "コントロールの名前")](page-controls-images/page04.png#lightbox)
 1. 変更内容を保存します。
     
 
@@ -58,14 +58,14 @@ Xamarin.tvOS アプリでのページ コントロールを操作する最も簡
 1. **ソリューション エクスプ ローラー**をダブルクリックして、`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**ページ コントロール**から、**ツールボックス**し、ビュー上にドロップします。 
 
-    [ ![](page-controls-images/page02-vs.png "ページ コントロール")](page-controls-images/page02-vs.png)
+    [![](page-controls-images/page02-vs.png "ページ コントロール")](page-controls-images/page02-vs.png#lightbox)
 1. **ウィジェット タブ**の**プロパティ エクスプ ローラー**などいくつかのページ コントロールのプロパティを調整することができます、**現在のページ**と**のページ数**: 
 
-    [ ![](page-controls-images/page03-vs.png "ウィジェット タブ")](page-controls-images/page03-vs.png)
+    [![](page-controls-images/page03-vs.png "ウィジェット タブ")](page-controls-images/page03-vs.png#lightbox)
 1. 次に、後ろに移動し、ページのコレクションを転送するビューにコントロールやジェスチャを追加します。
 1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
 
-    [ ![](page-controls-images/page04-vs.png "コントロールの名前")](page-controls-images/page04-vs.png)
+    [![](page-controls-images/page04-vs.png "コントロールの名前")](page-controls-images/page04-vs.png#lightbox)
 1. 変更内容を保存します。
     
 

@@ -7,12 +7,12 @@ ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ccd55d4d7f1aea55110e109bed1fbd4ebc90b93f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="activity-lifecycle"></a>アクティビティのライフサイクル
 
@@ -44,7 +44,7 @@ Android のアクティビティのライフ サイクルには、リソース�
 
 Android OS では、アクティビティの状態に基づいてを介しです。 これにより、Android、OS メモリおよびリソースを再利用を許可する使用されなくなったアクティビティを識別します。 次の図は、その有効期間中にアクティビティを通過できる状態を示しています。
 
-[ ![アクティビティ状態図](images/image1-sml.png)](images/image1.png)
+[![アクティビティ状態図](images/image1-sml.png)](images/image1.png#lightbox)
 
 これらの状態は、4 つの主要グループに次のように分類されます。
 
@@ -69,7 +69,7 @@ Android OS では、アクティビティの状態に基づいてを介しです
 
 Android SDK、拡張機能によって Xamarin.Android フレームワークは、アプリケーション内の活動の状態を管理する強力なモデルを提供します。 アクティビティの状態を変更する場合は、アクティビティが、OS では、そのアクティビティの特定のメソッドを呼び出してによって通知されます。 次の図は、アクティビティのライフ サイクルへのリレーションシップでこれらのメソッドを示しています。
 
-[ ![アクティビティ ライフ サイクルのフローチャート](images/image2-sml.png)](images/image2.png)
+[![アクティビティ ライフ サイクルのフローチャート](images/image2-sml.png)](images/image2.png#lightbox)
 
 開発者は、アクティビティ内でこれらのメソッドをオーバーライドすることで、状態の変更を処理できます。 ただし、すべてのライフ サイクル メソッドが UI スレッドで呼び出され、新しいアクティビティなどを表示する現在のアクティビティを非表示にするなどの UI の作業の次の項目の実行から OS をブロックに重要です。そのため、これらのメソッドでコードがもを実行すると思われるアプリケーションの作成をできるだけ短くする必要があります。 実行時間の長いタスクは、バック グラウンド スレッドで実行する必要があります。
 
@@ -205,7 +205,7 @@ public void OnPause()
 
 多くの Android デバイスがある 2 つの個別のボタン:「戻る」ボタンと [ホーム] ボタン。 この例は、Android 4.0.3 以降の次のスクリーン ショットに表示されることができます。
 
-[ ![戻るボタンとホーム ボタン](images/image4-sml.png)](images/image4.png)
+[![戻るボタンとホーム ボタン](images/image4-sml.png)](images/image4.png#lightbox)
 
 2 つのボタンの微妙な違いがある、バック グラウンドでアプリケーションを配置するのと同じ効果が表示される場合でもです。 ユーザーは、[戻る] ボタンをクリックすると、それらはという Android アクティビティを終了することです。 Android、アクティビティが破棄されます。 これに対し、ユーザーは、[ホーム] ボタンをクリックすると、アクティビティは単に配置されます、バック グラウンド&ndash;Android は、アクティビティを中止しません。
 
@@ -225,7 +225,6 @@ public void OnPause()
 
 このガイドでは、最初の 2 つのオプションについて説明します。
 
- <a name="Bundle_State" />
 
 
 ### <a name="bundle-state"></a>バンドルの状態
@@ -241,7 +240,7 @@ public void OnPause()
 
 次の図は、これらのメソッドの使用方法を示しています。
 
-[ ![バンドルの状態のフローチャート](images/image3-sml.png)](images/image3.png)
+[![バンドルの状態のフローチャート](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
@@ -276,7 +275,7 @@ protected override void OnCreate (Bundle bundle)
 
 上記のコードは、という名前の整数をインクリメント`c`ときという名前のボタン`incrementCounter`をクリックするで結果を表示する、`TextView`という`output`です。 構成の変更が行われる場合、たとえば、ときに、デバイスの回転 - の値は失われますが、上記のコード`c`ため、`bundle`なります`null`次の図に示すように、します。
 
-[ ![前の値は表示されません。](images/07-sml.png)](images/07.png)
+[![前の値は表示されません。](images/07-sml.png)](images/07.png#lightbox)
 
 値を保持するために`c`この例では、アクティビティをオーバーライドできます`OnSaveInstanceState`、次に示すように、バンドルに値を保存します。
 
@@ -295,10 +294,9 @@ c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> **注:**の基本実装を常に重要な呼び出しである`OnSaveInstanceState`階層の表示の状態を保存することもできるようにします。
+> 基本実装を常に重要な呼び出しである`OnSaveInstanceState`階層の表示の状態を保存することもできるようにします。
 
 
-<a name="View_State" />
 
 ##### <a name="view-state"></a>ビューの状態
 
@@ -312,7 +310,7 @@ c = bundle.GetInt ("counter", -1);
 
 以降、`EditText`コントロールが、`id`割り当て、ユーザーが一部のデータを入力し、デバイスの回転時に、データは引き続き表示されます、次のように。
 
-[ ![データが横モードで保持されます。](images/08-sml.png)](images/08.png)
+[![データが横モードで保持されます。](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
@@ -334,8 +332,6 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 使用して状態の保存の例については、`Bundle`を参照してください、[チュートリアル - アクティビティの保存状態](saving-state.md)です。
 
 
-<a name="Bundle_Limitations" />
-
 #### <a name="bundle-limitations"></a>バンドルの制限事項
 
 `OnSaveInstanceState`は、これがフォルダーを簡単に一時的なデータを保存する、いくつかの制限。
@@ -348,7 +344,6 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 バンドルの状態は適しています多くのメモリを使用しない単純なデータが*構成以外のインスタンス データ*より複雑なデータ、またはデータを取得するとコストが便利で、web サービス呼び出しや複雑な 2016/2/14 などには。データベースのクエリ。 非構成インスタンス データは、必要に応じて、オブジェクトに保存を取得します。 次のセクションで紹介`OnRetainNonConfigurationInstance`構成の変更によってより複雑なデータ型を維持するための手段として。
 
-<a name="Persisting_Complex_Data" />
 
 ### <a name="persisting-complex-data"></a>複雑なデータの永続化
 
@@ -407,7 +402,7 @@ public class NonConfigInstanceActivity : ListActivity
 
 このコードは、JSON として書式設定、web から結果を取得、解釈し、次のスクリーン ショットに示すように、ボックスの一覧で結果を示します。
 
-[ ![画面に表示される結果](images/06-sml.png)](images/06.png)
+[![画面に表示される結果](images/06-sml.png)](images/06.png#lightbox)
 
 構成の変更 - たとえば、デバイスを回すと発生のコードは、プロセスを繰り返します。 使用できるを最初に取得した結果を再利用し、不要な冗長なネットワークの呼び出しは起こりません、`OnRetainNonconfigurationInstance`を次に示すように、結果を保存します。
 

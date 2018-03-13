@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 4798da42718658096509948bae07e5e5534d5af0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms の XAML プレビューアー
 
@@ -30,13 +30,13 @@ _入力すると表示される Xamarin.Forms レイアウトを参照してく�
 
 **プレビュー**を XAML ファイルを右クリックし、エディターでボタンを表示できる**ファイルを開く > XAML ビューアー**です。 プレビュー ウィンドウは、表示またはキーを押して非表示、**プレビュー**任意の XAML ドキュメント ウィンドウの右上隅にあるボタンをクリックします。
 
-[ ![ListView コントロールではプレビュー版 Visual Studio for Mac](xaml-previewer-images/xamlp-list-sml.png "Mac 用の Visual Studio でのフォーム プレビューアー")](xaml-previewer-images/xamlp-list.png "Mac 用の Visual Studio でのフォーム プレビューアー")
+[![ListView コントロールではプレビュー版 Visual Studio for Mac](xaml-previewer-images/xamlp-list-sml.png "Mac 用の Visual Studio でのフォーム プレビューアー")](xaml-previewer-images/xamlp-list.png#lightbox "Mac 用の Visual Studio でのフォーム プレビューアー")
 
 ### <a name="visual-studio-on-windows"></a>Windows の Visual Studio
 
 使用して、**ビュー > その他のウィンドウ > Xamarin.Forms プレビューアー**プレビュー ウィンドウを開いて Visual Studio のメニュー。 使用して、**ウィンドウ > 垂直タブ グループ**メニューにサイド バイ サイド配置します。
 
-[ ![Visual Studio での ListView コントロールのプレビュー](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio でのフォーム プレビューアー")](xaml-previewer-images/xamlp-list-vs.png "Visual Studio でのフォーム プレビューアー")
+[![Visual Studio での ListView コントロールのプレビュー](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio でのフォーム プレビューアー")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Visual Studio でのフォーム プレビューアー")
 
 ## <a name="xaml-preview-options"></a>XAML プレビュー オプション
 

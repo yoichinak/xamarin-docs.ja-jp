@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 42ef3e6c82763831b5114f3de7603bba8f59eac6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-animations"></a>カスタム アニメーション
 
@@ -54,7 +54,7 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 全体的な効果が増加するアニメーションを作成するには、 [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/)のプロパティ、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) 1 ~ 2、2 秒を超える (2000 ミリ秒) を使用して、 [ `Linear`](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/)イージング機能。 アニメーションが完了するたびにその`Scale`プロパティが 1 にリセットされ、アニメーションが繰り返されます。
 
 > [!NOTE]
-> **注**: を作成して、それぞれ個別に実行される同時実行のアニメーションを構築できる、`Animation`各アニメーションのオブジェクトを呼び出すことで、`Commit`各アニメーションのメソッドです。
+> 作成することで、それぞれ個別に実行される同時実行のアニメーションを構築する、`Animation`各アニメーションのオブジェクトを呼び出すことで、`Commit`各アニメーションのメソッドです。
 
 <a name="child" />
 

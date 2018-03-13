@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9073d64c43c6817b45dca02b870fcfe093ebf46d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 446db5c04849ac6fa320f3fe3b7e22b3d10bf9cf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-modern-macos-apps"></a>最新 macOS アプリの構築
 
@@ -24,7 +24,7 @@ _この記事では、いくつかのヒント、機能と手法、開発者が 
 
 最新の外観には、次に示す例のアプリなど最新のウィンドウとツールバーの表示が含まれます。
 
-[ ![](modern-cocoa-apps-images/content08.png "最新の Mac アプリ UI の例")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "最新の Mac アプリ UI の例")](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views" />
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 この機能も有効にする Xcode のインターフェイスのビルダーで、ウィンドウを選択し、チェック**フル サイズのコンテンツ ビュー**:
 
-[ ![](modern-cocoa-apps-images/content01.png "Xcode のインターフェイスのビルダーでメインのストーリー ボードの編集")](modern-cocoa-apps-images/content01.png)
+[![](modern-cocoa-apps-images/content01.png "Xcode のインターフェイスのビルダーでメインのストーリー ボードの編集")](modern-cocoa-apps-images/content01.png#lightbox)
 
 完全なサイズのコンテンツ ビューを使用する場合は、開発者が (ラベルなど) の特定のコンテンツがその下にスライドしないように、タイトルとツール バー領域の下にコンテンツをオフセットする必要があります。
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 通常 macOS ウィンドウには、ウィンドウの上端実行のタイトル バー、標準が含まれています。 ウィンドウには、ツール バーも含まれている場合は、このタイトル バー領域の下に表示されます。
 
-[ ![](modern-cocoa-apps-images/content02.png "標準 Mac ツールバー")](modern-cocoa-apps-images/content02.png)
+[![](modern-cocoa-apps-images/content02.png "標準 Mac ツールバー")](modern-cocoa-apps-images/content02.png#lightbox)
 
 簡素化されたツールバーを使用して、タイトル領域は表示されなくなります、タイトル バーの位置に、上方向へ移動 ツールバー、インラインでウィンドウを閉じる、最小および最大化ボタンを使用。
 
-[ ![](modern-cocoa-apps-images/content03.png "簡素化された Mac ツールバー")](modern-cocoa-apps-images/content03.png)
+[![](modern-cocoa-apps-images/content03.png "簡素化された Mac ツールバー")](modern-cocoa-apps-images/content03.png#lightbox)
 
 オーバーライドすることで、簡素化されたツールバーが有効になっている、`ViewWillAppear`のメソッド、`NSViewController`され、次のようになります。
 
@@ -171,7 +171,7 @@ public override void ViewWillAppear ()
 
 アプリのデザイン、によって、開発者にすることも状況依存コントロールをアクティビティに基づく、ユーザーが提供するツール/タイトル バー領域の下のすぐアクセサリ ビュー コント ローラーで、領域は、タイトル バーを補完現在進行中で。
 
-[ ![](modern-cocoa-apps-images/content04.png "例のアクセサリ ビュー コント ローラー")](modern-cocoa-apps-images/content04.png)
+[![](modern-cocoa-apps-images/content04.png "例のアクセサリ ビュー コント ローラー")](modern-cocoa-apps-images/content04.png#lightbox)
 
 アクセサリ ビュー コント ローラーに自動的にあいまいし、する、システムの開発者の介入なしでのサイズを変更します。
 
@@ -180,13 +180,13 @@ public override void ViewWillAppear ()
 1. **ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。
 2. ドラッグ、**カスタム ビューのコント ローラー**をウィンドウの階層にします。 
 
-    [ ![](modern-cocoa-apps-images/content05.png "新しいカスタム ビュー コント ローラーを追加します。")](modern-cocoa-apps-images/content05.png)
+    [![](modern-cocoa-apps-images/content05.png "新しいカスタム ビュー コント ローラーを追加します。")](modern-cocoa-apps-images/content05.png#lightbox)
 3. アクセサリのビューをレイアウト UI: 
 
-    [ ![](modern-cocoa-apps-images/content06.png "新しいビューの設計")](modern-cocoa-apps-images/content06.png)
+    [![](modern-cocoa-apps-images/content06.png "新しいビューの設計")](modern-cocoa-apps-images/content06.png#lightbox)
 4. として付属品のビューを公開、**コンセント**およびその他の**アクション**または**コンセント**その ui: 
 
-    [ ![](modern-cocoa-apps-images/content07.png "必要なコンセントを追加します。")](modern-cocoa-apps-images/content07.png)
+    [![](modern-cocoa-apps-images/content07.png "必要なコンセントを追加します。")](modern-cocoa-apps-images/content07.png#lightbox)
 5. 変更を保存します。
 6. Visual Studio for Mac の変更を同期に戻ります。
 
@@ -248,7 +248,7 @@ MacOS が完全にローカライズされていますので、`Left`と`Right``
 
 さらに、macOS システムでは、アプリのウィンドウにアクセサリ ビュー コント ローラーを追加する場合があります。 たとえば、タブ付きウィンドウが 1 つの仮想ウィンドウにマージされます、アプリの Windows のいくつかの場所を作成するには、します。
 
-[ ![](modern-cocoa-apps-images/content08.png "Mac のタブ付きウィンドウの例")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Mac のタブ付きウィンドウの例")](modern-cocoa-apps-images/content08.png#lightbox)
 
 通常は、開発者が制限付きのアクションが Xamarin.Mac アプリでのタブ付きウィンドウを使用する必要がありますをシステムは処理するように自動的に。
 
@@ -430,7 +430,7 @@ A`CALayer`オブジェクトが使用すると、開発者提示された内容�
 
 設定して、バックアップのレイヤーを有効にすることができます、`WantsLayer`の`NSView`に`true`または下にある Xcode のインターフェイスのビルダー内で、**表示効果インスペクター**をチェックして**コア アニメーション レイヤー**:
 
-[ ![](modern-cocoa-apps-images/content09.png "表示効果インスペクター")](modern-cocoa-apps-images/content09.png)
+[![](modern-cocoa-apps-images/content09.png "表示効果インスペクター")](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers" />
 
@@ -792,7 +792,7 @@ Apple では、次の操作を勧めします。
 
 Apple は、開発者は、使用できることを設計またはアプリの UI を編集するときのローカリゼーションをサポートするために Xcode のインターフェイスのビルダーでのいくつかの機能が提供がされます。 **テキストの方向**のセクションで、**属性インスペクター**により、ヒントを指定して 方法の方向を使用して、テキスト ベースのビューの select で更新する必要がある developer (など`NSTextField`)。
 
-[ ![](modern-cocoa-apps-images/content10.png "テキストの方向オプション")](modern-cocoa-apps-images/content10.png)
+[![](modern-cocoa-apps-images/content10.png "テキストの方向オプション")](modern-cocoa-apps-images/content10.png#lightbox)
 
 3 つの値がある、**テキストの方向**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 最新 macOS アプリでは、イメージの作成、編集、またはプレゼンテーション アプリに対して適切に機能する新しい濃いインターフェイス外観を採用できます。
 
-[ ![](modern-cocoa-apps-images/content11.png "濃い Mac ウィンドウ UI の例")](modern-cocoa-apps-images/content11.png)
+[![](modern-cocoa-apps-images/content11.png "濃い Mac ウィンドウ UI の例")](modern-cocoa-apps-images/content11.png#lightbox)
 
 これは、ウィンドウが表示される前に、1 行のコードを追加することで実行できます。 例:
 
@@ -898,7 +898,7 @@ Apple では、システムの外観を使用するための以下の推奨事�
 
 コント ローラーを使用すると、開発者が合成と Segues abstract の単位に要素を収集し、一般的な「接着コード」ビュー階層間を移動するために必要な削除します。
 
-[ ![](modern-cocoa-apps-images/content12.png "Xcode のインターフェイスのビルダーで、UI の編集")](modern-cocoa-apps-images/content12.png)
+[![](modern-cocoa-apps-images/content12.png "Xcode のインターフェイスのビルダーで、UI の編集")](modern-cocoa-apps-images/content12.png#lightbox)
 
 詳細についてを参照してください、[ストーリー ボードの概要](~/mac/platform/storyboards/index.md)ドキュメント。
 

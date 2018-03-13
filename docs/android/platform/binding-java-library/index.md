@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 01708f12340ec57bf1cb0e2bd076b680c99dff39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f336767cb6aea8bd8c7ce44f6479850a63d473a6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-java-library"></a>Java ライブラリのバインド
 
@@ -30,7 +30,7 @@ Android 用のサードパーティ ライブラリ エコシステムは、大�
 
 Xamarin.Android を使用してバインディングを実装する*呼び出し可能ラッパーをマネージ*(*MCW*)。 MCW は、マネージ コードは、Java コードを呼び出す必要がある場合に使用される JNI ブリッジです。 マネージ呼び出し可能ラッパーでは、Java の型をサブクラス化および Java 型上の仮想メソッドのオーバーライドのサポートも提供します。 同様に、Android ランタイム (アート) コードがマネージ コードを呼び出すしようとすると、ときにこれは Android 呼び出し可能ラッパー (について) と呼ばれる別の JNI ブリッジを介してします。 これは、[アーキテクチャ](~/android/internals/architecture.md)次の図に示します。
 
-[ ![Android の JNI ブリッジ アーキテクチャ](images/architecture.png)](images/architecture.png)
+[![Android の JNI ブリッジ アーキテクチャ](images/architecture.png)](images/architecture.png#lightbox)
 
 バインドのライブラリは、Java の型のマネージ呼び出し可能ラッパーを含むアセンブリです。 たとえば、Java の型を次に示します`MyClass`バインドのライブラリをラップします。
 
@@ -74,7 +74,6 @@ using Com.Company.Package;
 
 * **JDK のバージョンが、ライブラリをコンパイルするために使用しますか。** &ndash; バインド エラー Xamarin.Android によって Android ライブラリが使用中でより JDK の別のバージョンでビルドされた場合に発生します。 可能であれば、Xamarin.Android のインストールで使用される JDK の同じバージョンを使用して Android ライブラリを再コンパイルします。
 
-<a name="BUILD_ACTIONS" />
 
 ## <a name="build-actions"></a>ビルド アクション
 
@@ -127,7 +126,6 @@ Xamarin.Android バインディング ジェネレーターは、いくつかの
 -   _内部クラス_Java では、_入れ子になったクラス_C# の場合、インスタンス コンス トラクターを使用します。
 
 
-<a name="BINDING_SCENARIOS" />
 
 ## <a name="binding-scenarios"></a>バインディングのシナリオ
 

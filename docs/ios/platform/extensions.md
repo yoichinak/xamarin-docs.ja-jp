@@ -5,18 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f6e80b21c76089c0f3f7ac655584b7e18400307e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-extensions"></a>iOS の拡張機能
 
 _IOS 8 で導入された、拡張機能は、ウィジェットが提示する、標準のコンテキストで iOS など、通知センター内で、ユーザーがカスタムのキーボードを要求するときや、写真を編集します。すべての拡張機能では、コンテナー アプリと共にインストールされ、ホスト アプリケーションの特定の拡張機能ポイントからアクティブ化します。_
+
+> [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
+
+**IOS での拡張機能の作成[Xamarin 大学](https://university.xamarin.com/)**
 
 拡張機能、8、iOS で導入された、特殊な`UIViewControllers`をから提示された標準のコンテキスト内の iOS など以内、**通知センター**を実行するユーザーによって要求されたカスタム キーボードの種類に特化した、入力やその他のコンテキストなどの特殊効果のフィルターを拡張機能が提供できる、写真を編集します。
 
@@ -183,7 +188,7 @@ _IOS 8 で導入された、拡張機能は、ウィジェットが提示する�
 
 次のチュートリアルでは、例を作成します**今日**日と年の残り日数の数を計算するウィジェット。
 
-[ ![](extensions-images/carpediemscreenshot-sm.png "1 日と年の残り日数の数を計算する例今日ウィジェット")](extensions-images/carpediemscreenshot.png)
+[![](extensions-images/carpediemscreenshot-sm.png "1 日と年の残り日数の数を計算する例今日ウィジェット")](extensions-images/carpediemscreenshot.png#lightbox)
 
 <a name="Creating-the-Solution" />
 
@@ -193,26 +198,26 @@ _IOS 8 で導入された、拡張機能は、ウィジェットが提示する�
 
 1. 新しい iOS の場合を最初に、作成**1 つのアプリの表示**プロジェクトし、をクリックして、**次**ボタン。 
 
-    [ ![](extensions-images/today01.png "まず、新しい iOS、1 つのアプリの表示のプロジェクトを作成し、[次へ] をクリックしてください")](extensions-images/today01.png)
+    [![](extensions-images/today01.png "まず、新しい iOS、1 つのアプリの表示のプロジェクトを作成し、[次へ] をクリックしてください")](extensions-images/today01.png#lightbox)
 2. このプロジェクト`TodayContainer` をクリックし、**次**ボタン。 
 
-    [ ![](extensions-images/today02.png "プロジェクト TodayContainer を呼び出すし、[次へ] をクリックしてください")](extensions-images/today02.png)
+    [![](extensions-images/today02.png "プロジェクト TodayContainer を呼び出すし、[次へ] をクリックしてください")](extensions-images/today02.png#lightbox)
 3. 確認してください、**プロジェクト名**と**SolutionName**  をクリックし、**作成**ソリューションを作成するにはボタン。 
 
-    [ ![](extensions-images/today03.png "SolutionName とプロジェクトの名前を確認し、ソリューションを作成する [作成] をクリックしてください")](extensions-images/today03.png)
+    [![](extensions-images/today03.png "SolutionName とプロジェクトの名前を確認し、ソリューションを作成する [作成] をクリックしてください")](extensions-images/today03.png#lightbox)
 4. 次に、**ソリューション エクスプ ローラー**、ソリューションを右クリックし、新しい**iOS 拡張子**プロジェクトから、**今日拡張子**テンプレート。 
 
-    [ ![](extensions-images/today04.png "次に、ソリューション エクスプ ローラーでソリューションを右クリックし、拡張機能では現在のテンプレートから新しい iOS の拡張機能プロジェクトを追加")](extensions-images/today04.png)
+    [![](extensions-images/today04.png "次に、ソリューション エクスプ ローラーでソリューションを右クリックし、拡張機能では現在のテンプレートから新しい iOS の拡張機能プロジェクトを追加")](extensions-images/today04.png#lightbox)
 5. このプロジェクト`DaysRemaining` をクリックし、**次**ボタン。 
 
-    [ ![](extensions-images/today05.png "プロジェクト DaysRemaining を呼び出すし、[次へ] をクリックしてください")](extensions-images/today05.png)
+    [![](extensions-images/today05.png "プロジェクト DaysRemaining を呼び出すし、[次へ] をクリックしてください")](extensions-images/today05.png#lightbox)
 6. プロジェクトを確認し、をクリックして、**作成**それを作成するボタンをクリックします。 
 
-    [ ![](extensions-images/today06.png "プロジェクトを確認し、それを作成する [作成] をクリックしてください")](extensions-images/today06.png)
+    [![](extensions-images/today06.png "プロジェクトを確認し、それを作成する [作成] をクリックしてください")](extensions-images/today06.png#lightbox)
 
 結果として得られるソリューションが 2 つのプロジェクトでは、次のように。
 
-[ ![](extensions-images/today07.png "結果として得られるソリューションが 2 つのプロジェクトでは、次のように")](extensions-images/today07.png)
+[![](extensions-images/today07.png "結果として得られるソリューションが 2 つのプロジェクトでは、次のように")](extensions-images/today07.png#lightbox)
 
 <a name="Creating-the-Extension-User-Interface" />
 
@@ -228,10 +233,10 @@ _IOS 8 で導入された、拡張機能は、ウィジェットが提示する�
 
 1. **ソリューション エクスプ ローラー**、拡張機能プロジェクトのダブルクリック`Main.storyboard`ファイルを開いて編集するファイル。 
 
-    [ ![](extensions-images/today08.png "ファイルを開いて編集するには、拡張機能プロジェクト Main.storyboard ファイルをダブルクリックします。")](extensions-images/today08.png)
+    [![](extensions-images/today08.png "ファイルを開いて編集するには、拡張機能プロジェクト Main.storyboard ファイルをダブルクリックします。")](extensions-images/today08.png#lightbox)
 2. テンプレートによって、UI に自動的に追加されたラベルを選択し、**名前**`TodayMessage`で、**ウィジェット**のタブ、**プロパティ エクスプ ローラー**: 
 
-    [ ![](extensions-images/today09.png "テンプレートによって、UI に自動的に追加されたラベルを選択し、プロパティ エクスプ ローラーのウィジェット タブで名前 TodayMessage")](extensions-images/today09.png)
+    [![](extensions-images/today09.png "テンプレートによって、UI に自動的に追加されたラベルを選択し、プロパティ エクスプ ローラーのウィジェット タブで名前 TodayMessage")](extensions-images/today09.png#lightbox)
 3. ストーリー ボードに、変更を保存します。
 
 <a name="Using-Code" />
@@ -242,16 +247,16 @@ _IOS 8 で導入された、拡張機能は、ウィジェットが提示する�
 
 1. **ソリューション エクスプ ローラー**、select、 **DaysRemaining**プロジェクト、新しいクラスを追加して、 `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code01.png "Aelect DaysRemaining プロジェクトは、新しいクラスを追加および CodeBasedViewController の呼び出し")](extensions-images/code01.png)
+    [![](extensions-images/code01.png "Aelect DaysRemaining プロジェクトは、新しいクラスを追加および CodeBasedViewController の呼び出し")](extensions-images/code01.png#lightbox)
 2. もう一度、**ソリューション エクスプ ローラー**、拡張機能のダブルクリック`Info.plist`ファイルを開いて編集するファイル。 
 
-    [ ![](extensions-images/code02.png "ファイルを開いて編集する拡張機能の Info.plist ファイルをダブルクリックします。")](extensions-images/code02.png)
+    [![](extensions-images/code02.png "ファイルを開いて編集する拡張機能の Info.plist ファイルをダブルクリックします。")](extensions-images/code02.png#lightbox)
 3. 選択、**ソース ビュー** (画面の下部にある) から開くと、`NSExtension`ノード。 
 
-    [ ![](extensions-images/code03.png "画面の下部から、ソース ビューを選択し、NSExtension ノードを開きます")](extensions-images/code03.png)
+    [![](extensions-images/code03.png "画面の下部から、ソース ビューを選択し、NSExtension ノードを開きます")](extensions-images/code03.png#lightbox)
 4. 削除、`NSExtensionMainStoryboard`キーし、追加、`NSPrincipalClass`値を持つ`CodeBasedViewController`: 
 
-    [ ![](extensions-images/code04.png "NSExtensionMainStoryboard キーを削除し、値 CodeBasedViewController NSPrincipalClass の追加")](extensions-images/code04.png)
+    [![](extensions-images/code04.png "NSExtensionMainStoryboard キーを削除し、値 CodeBasedViewController NSPrincipalClass の追加")](extensions-images/code04.png#lightbox)
 5. 変更内容を保存します。
 
 次に、編集、`CodeBasedViewController.cs`ファイルし、次のようになります。
@@ -327,7 +332,7 @@ public override void ViewDidLoad ()
 
 このチュートリアルでは、コンテナー アプリは出荷方法と、拡張機能をインストールするメソッドとして使用するだけと、独自の機能は備えていません。 編集 TodayContainer の`Main.storyboard`ファイルし、拡張機能の関数とそのインストール方法を定義するテキストを追加します。
 
-[ ![](extensions-images/today10.png "TodayContainers Main.storyboard ファイルを編集し、拡張関数とそのインストール方法を定義するテキストを追加")](extensions-images/today10.png)
+[![](extensions-images/today10.png "TodayContainers Main.storyboard ファイルを編集し、拡張関数とそのインストール方法を定義するテキストを追加")](extensions-images/today10.png#lightbox)
 
 ストーリー ボードに、変更を保存します。
 
@@ -337,19 +342,19 @@ public override void ViewDidLoad ()
 
 IOS シミュレーターで、拡張機能をテストするには、実行、 **TodayContainer**アプリ。 コンテナーのメイン ビューが表示されます。
 
-[ ![](extensions-images/run01.png "コンテナーのメイン ビューが表示されます。")](extensions-images/run01.png)
+[![](extensions-images/run01.png "コンテナーのメイン ビューが表示されます。")](extensions-images/run01.png#lightbox)
 
 次に、ヒット、**ホーム**を開くには、画面の一番上から下へスワイプして、シミュレーターのボタン、**通知センター**、select、**今日** タブで、 をクリックし、**編集**ボタンをクリックします。
 
-[ ![](extensions-images/run02.png "シミュレーターを通知センターを開き、[今日] タブを選択し、[編集] ボタンをクリックして、画面の一番上から下方向にスワイプのホーム ボタンをクリックします。")](extensions-images/run02.png)
+[![](extensions-images/run02.png "シミュレーターを通知センターを開き、[今日] タブを選択し、[編集] ボタンをクリックして、画面の一番上から下方向にスワイプのホーム ボタンをクリックします。")](extensions-images/run02.png#lightbox)
 
 追加、 **DaysRemaining**拡張機能を**今日**表示し、クリックして、**実行**ボタン。
 
-[ ![](extensions-images/run03.png "今日ビューに DaysRemaining 拡張機能を追加し、元に戻す ボタンをクリックしてください")](extensions-images/run03.png)
+[![](extensions-images/run03.png "今日ビューに DaysRemaining 拡張機能を追加し、元に戻す ボタンをクリックしてください")](extensions-images/run03.png#lightbox)
 
 追加する新しいウィジェット、**今日**ビューと結果が表示されます。
 
-[ ![](extensions-images/run04.png "新しいウィジェットが今日ビューに追加され、結果が表示されます。")](extensions-images/run04.png)
+[![](extensions-images/run04.png "新しいウィジェットが今日ビューに追加され、結果が表示されます。")](extensions-images/run04.png#lightbox)
 
 <a name="Communicating-with-the-Host-App" />
 

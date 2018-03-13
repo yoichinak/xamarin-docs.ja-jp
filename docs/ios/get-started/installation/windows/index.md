@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: e3416b0551bafcd7ab87b21eafbe56b733f359a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>Windows に Xamarin.iOS をインストールする
 
@@ -34,7 +34,7 @@ Xamarin.iOS for Visual Studio は、Visual Studio が Mac 上の Windows 仮想�
 
 次の図は、Xamarin.iOS 開発ワークフローの簡単な概要です。
 
-[![Xamarin.iOS 開発ワークフロー](images/xma2.png)](images/xma2.png)
+[![Xamarin.iOS 開発ワークフロー](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
 >  Visual Studio は、実際には、別の MSBuild プロセスを開始してプロジェクトをビルドします。 このプロセスは、Mac への新しい接続を作成します。つまり、Visual Studio がビルドを行うとき、実際には Windows から Mac に 2 つの SSH 接続が存在します。 [コマンド ライン](~/ios/get-started/installation/windows/connecting-to-mac/index.md)からのビルドでは、作成される MSBuild プロセスは 1 つだけです。 図をわかりやすくするため、すべての接続は単に 1 つの矢印で表されています。
@@ -44,7 +44,7 @@ Xamarin.iOS for Visual Studio は、Visual Studio が Mac 上の Windows 仮想�
 Xamarin.iOS for Visual Studio は驚きの機能を実行します。これにより、開発者は、Visual Studio IDE を使って Windows コンピューター上で iOS アプリケーションの作成、ビルド、デバッグを行うことができます。 Xamarin.iOS for Visual Studio だけでこれを行うことはできません。iOS アプリケーションを作成するには、Apple のコンパイラが必要であり、配置するには、Apple の証明書とコード署名ツールが必要です。 つまり、Xamarin.iOS for Visual Studio のインストールがこれらのタスクを実行するには、Mac OS X コンピューターへのネットワーク接続が必要です。 いったん構成されると、Xamarin のツールはプロセスを可能な限りシームレスにします。
 
 
-<a name="system-requirements">
+<a name="system-requirements"/>
 
 ### <a name="system-requirements"></a>システム要件
 
@@ -72,13 +72,9 @@ Xamarin.iOS for Visual Studio は驚きの機能を実行します。これに�
 
 **Windows コンピューターは、ネットワーク経由で Mac にアクセスできる必要があります。**
 
-<a name="appleaccount" />
-
 ### <a name="apple-developer-account"></a>Apple 開発者アカウント
 
 アプリケーションをデバイスに展開したり、App Store に送信したりするには、Apple 開発者アカウントが必要です。 関連する開発者証明書とプロビジョニング プロファイルを作成し、ネットワークで接続された Mac にインストールしてからでないと、Xamarin.iOS for Visual Studio は動きません。 開発証明書を取得してデバイスをプロビジョニングする手順については、「[Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md)」(デバイスのプロビジョニング) をご覧ください。
-
-<a name="features" />
 
 ## <a name="features"></a>フィーチャー 
 
@@ -100,6 +96,7 @@ Xamarin.iOS for Visual Studio を使うと、Windows から Xamarin.iOS プロ�
 
 ## <a name="configuring-your-mac"></a>Mac の構成
 
+<a name="installation"/>
 
 ### <a name="installation"></a>インストール
 
@@ -148,7 +145,7 @@ iOS の開発では、Mac コンピューターに関連する署名 ID を構�
 
 Mac を構成した後は、Windows コンピューターを設定します。
 
-<a name="windowsinstallation">
+<a name="windowsinstallation"/>
 
 ## <a name="windows-installation"></a>Windows のインストール
 
@@ -159,7 +156,7 @@ Xamarin は、Visual Studio 2017 または 2015 の一部としてインスト�
 インストール プロセスが完了した後、すべてを動作させるには、さらにいくつかの手順を実行する必要があります。
 
 - [Visual Studio を Mac に接続する](#connectingtomac) – Xamarin.iOS プロジェクトをビルドするには、Visual Studio を Mac ビルド ホストに接続する必要があります。
-- [Visual Studio のツールバーを構成する](#Visual_Studio_Toolbar_Overview) – これにより、Visual Studio で Xamarin.iOS の機能に簡単にアクセスできるようになります。
+- [Visual Studio のツールバーを構成する](#toolbar) – これにより、Visual Studio で Xamarin.iOS の機能に簡単にアクセスできるようになります。
 
 <a name="connectingtomac" /> 
 
@@ -171,19 +168,19 @@ Mac に接続するには、次の手順のようにします。
 
 - **[ツール] > [オプション]** を選び、**[Xamarin]** の **[iOS の設定]** を選びます。
 
-  [![[iOS の設定] 画面](images/image2.png)](images/image2.png)
+  [![[iOS の設定] 画面](images/image2.png)](images/image2.png#lightbox)
 
 - Mac が**リモート ログイン**を許可するように正しく[構成](#configuration)されている場合、一覧で Mac を選ぶことができます。
 
-  [![[リモート ホスト] ダイアログ ボックス](images/xma3.png)](images/xma3.png)
+  [![[リモート ホスト] ダイアログ ボックス](images/xma3.png)](images/xma3.png#lightbox)
 
 - Mac ホストの管理者資格情報の入力を求められます。
 
-  [![[ログイン] ダイアログ ボックス](images/xma4.png)](images/xma4.png)
+  [![[ログイン] ダイアログ ボックス](images/xma4.png)](images/xma4.png#lightbox)
 
 - 接続すると、コンピューター名の横に "接続成功" アイコンが表示されます。
 
-  [![コンピューター名の横に "接続成功" アイコンが表示された [Remote Has]\(リモート\) ダイアログ](images/image6.png)](images/image6.png)
+  [![コンピューター名の横に "接続成功" アイコンが表示された [Remote Has]\(リモート\) ダイアログ](images/image6.png)](images/image6.png#lightbox)
 
 Visual Studio を起動するたびに再接続されます。
 
@@ -197,7 +194,7 @@ iOS ツール バーが表示されない場合は、下記の手順を使用で
 
 ツール バーを構成するには、**[表示] > [ツール バー]** メニューを開き、**[iOS]** エントリが選ばれていることを確認します。 次のスクリーンショットのように、メニュー項目を選びます。ツール バーを表示するには、オンにする必要があります。
 
-[![[ツール バー] > [iOS] を選ぶ](images/image31.png)](images/image31.png)
+[![[ツール バー] > [iOS] を選ぶ](images/image31.png)](images/image31.png#lightbox)
 
 ### <a name="visual-studio-2015"></a>Visual Studio 2015
 
@@ -208,11 +205,11 @@ Visual Studio 2017 より前のバージョンでは、**[ソリューション 
 - **[ボタンの表示/非表示]** を選びます
 - **[ソリューション プラットフォーム]** を選びます
 
-[![[ソリューション プラットフォーム] を選びます](images/image35.png)](images/image35.png)
+[![[ソリューション プラットフォーム] を選びます](images/image35.png)](images/image35.png#lightbox)
 
 **標準**ツール バーと **iOS** ツール バーが次のスクリーンショットのようになります。
 
-[![標準ツール バーと iOS ツール バーがこのスクリーンショットのようになります](images/image36.png)](images/image36.png)
+[![標準ツール バーと iOS ツール バーがこのスクリーンショットのようになります](images/image36.png)](images/image36.png#lightbox)
 
 ツール バーの構成が完了すると、Xamarin iOS for Visual Studio の使用を開始できる状態になります。
 

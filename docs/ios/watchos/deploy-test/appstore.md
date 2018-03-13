@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: eed12c84b9952ef5c3dd27847071f05392bc16c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deploying-to-the-app-store"></a>アプリ ストアへの配置
 
@@ -62,6 +62,8 @@ App Store の展開を作成する必要がありますを構築する、**分�
 **プロビジョニング プロファイル**リストが一致するすべてのプロファイルを表示する - このドロップダウン リストで作成した一致のプロファイルが表示されます。
 
 ![](appstore-images/options-selectprofile-sml.png "IOS バンドル署名 * ダイアログ")
+
+<a name="iTunes_Connect"/>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
@@ -123,7 +125,7 @@ Xcode は、for mac を Visual Studio で作成するアーカイブを自動的
 
 5. ITunes アップロードされたバイナリを参照してください。 もう一度への接続を参照してください。 アプリの構成 ページに移動し、選択**プレリリース**して、上部のメニューから、**ビルド**一覧。
 
-  [ ![](appstore-images/itc-prerelease-sml.png "ITunes Connect でアプリの構成 ページ")](appstore-images/itc-prerelease.png)
+  [![](appstore-images/itc-prerelease-sml.png "ITunes Connect でアプリの構成 ページ")](appstore-images/itc-prerelease.png#lightbox)
 
 承認するようにアプリケーションを送信することができますし、**バージョン**ページ。 参照してください、 [iOS アプリの配布の概要](~/ios/deploy-test/app-distribution/index.md)詳細についてはします。
 

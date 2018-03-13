@@ -4,14 +4,15 @@ description: "SkiaSharp を円錐、二次方程式、3 次ベジエ曲線を表
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 8fdebd00b0b33c184337eacd0836dd81a19f161b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
 
@@ -88,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで 3 つすべてのプラットフォームで実行されています。
 
-[![](beziers-images/beziercurve-small.png "ベジエ曲線のページのスクリーン ショットをトリプル")](beziers-images/beziercurve-large.png "ベジエ曲線のページのトリプル スクリーン ショット")
+[![](beziers-images/beziercurve-small.png "ベジエ曲線のページのスクリーン ショットをトリプル")](beziers-images/beziercurve-large.png#lightbox "ベジエ曲線のページのトリプル スクリーン ショット")
 
 数学的に、曲線では、3 次多項式近似です。 曲線では、3 つの点に直線が多くてと交差します。 開始時点では、曲線は常に最初の制御点を正接しと方向が同じでは、開始から直線ポイントです。 曲線を常には終了時点では、終了点に接線のと同じ方向に、2 つ目のコントロールから直線ポイントです。
 
@@ -206,7 +207,7 @@ float Magnitude(SKPoint v)
 
 次の 3 つの異なる角度の 3 つのプラットフォームで実行されているプログラムを次に示します。
 
-[![](beziers-images/beziercirculararc-small.png "円弧をベジエ ページのスクリーン ショットをトリプル")](beziers-images/beziercirculararc-large.png "円弧をベジエ ページのトリプル スクリーン ショット")
+[![](beziers-images/beziercirculararc-small.png "円弧をベジエ ページのスクリーン ショットをトリプル")](beziers-images/beziercirculararc-large.png#lightbox "円弧をベジエ ページのトリプル スクリーン ショット")
 
 Windows Mobile 画面について詳しく見てし、角度が 180 度は、その場合場合に合わせて正しく四半期円角度が 90 度思えます iOS の画面を示しています、半円からにベジエ曲線を外れて顕著なことを確認します。
 
@@ -288,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Sinusoidally 不安定な値に基づいて、ポイントが補間`t`です。 補間のポイントは、一連の接続された 4 つのベジエ曲線を構築するために使用されます。 正方形に円から進行状況を示す 3 つのプラットフォームで実行されているアニメーションを次に示します。
 
-[![](beziers-images/squaringthecircle-small.png "トリプル スクリーン ショット、Squaring 円ページ")](beziers-images/squaringthecircle-large.png "Squaring のトリプル スクリーン ショット円 ページ")
+[![](beziers-images/squaringthecircle-small.png "トリプル スクリーン ショット、Squaring 円ページ")](beziers-images/squaringthecircle-large.png#lightbox "Squaring のトリプル スクリーン ショット円 ページ")
 
 このようなアニメーションはアルゴリズムによっては柔軟なので円弧と直線の両方としてレンダリングされる曲線なしで実行できなくなります。
 
@@ -337,7 +338,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 次の 3 つすべてのプラットフォームで、無限大記号を次に示します。
 
-[![](beziers-images/bezierinfinity-small.png "ベジエ無限大ページのスクリーン ショットをトリプル")](beziers-images/bezierinfinity-large.png "ベジエ無限大ページのトリプル スクリーン ショット")
+[![](beziers-images/bezierinfinity-small.png "ベジエ無限大ページのスクリーン ショットをトリプル")](beziers-images/bezierinfinity-large.png#lightbox "ベジエ無限大ページのトリプル スクリーン ショット")
 
 によって表示される、無限大記号よりも中央方向にある程度スムーズには、**円弧無限大**からページ、 [**円弧を描画する方法は 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)資料です。
 
@@ -400,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで 3 つすべてのプラットフォームで実行されています。
 
-[![](beziers-images/quadraticcurve-small.png "二次曲線 ページのスクリーン ショットをトリプル")](beziers-images/quadraticcurve-large.png "二次曲線 ページのトリプル スクリーン ショット")
+[![](beziers-images/quadraticcurve-small.png "二次曲線 ページのスクリーン ショットをトリプル")](beziers-images/quadraticcurve-large.png#lightbox "二次曲線 ページのトリプル スクリーン ショット")
 
 点線は、正接を開始点と終了ポイントを曲線にし、コントロールの時点を満たします。
 
@@ -478,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで 3 つすべてのプラットフォームで実行されています。
 
-[![](beziers-images/coniccurve-small.png "円錐曲線 ページのスクリーン ショットをトリプル")](beziers-images/coniccurve-large.png "円錐曲線 ページのトリプル スクリーン ショット")
+[![](beziers-images/coniccurve-small.png "円錐曲線 ページのスクリーン ショットをトリプル")](beziers-images/coniccurve-large.png#lightbox "円錐曲線 ページのトリプル スクリーン ショット")
 
 ご覧のように、コントロール ポイントは、重みが大きい場合に、さらにこれに対する曲線をプルするようです。 重みが 0 の場合は、始点から終点に直線が曲線になります。
 
@@ -542,7 +543,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ビジュアルの違いはありませんが表示されるよう、`ConicTo`パスが赤で表示し、基になる円を表示して参照します。
 
-[![](beziers-images/coniccirculararc-small.png "円錐円弧ページのスクリーン ショットをトリプル")](beziers-images/coniccirculararc-large.png "円錐円弧ページのトリプル スクリーン ショット")
+[![](beziers-images/coniccirculararc-small.png "円錐円弧ページのスクリーン ショットをトリプル")](beziers-images/coniccirculararc-large.png#lightbox "円錐円弧ページのトリプル スクリーン ショット")
 
 180 度、および数学失敗に角度を設定します。
 

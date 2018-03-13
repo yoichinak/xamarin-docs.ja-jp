@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 3de935fd407524d7ba62a93205e333c7dd7adde0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b62af404ce0d3f5dacc479682a3002af49e968d1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="date-picker"></a>日付の選択
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 02/27/2018
 
 このガイドは、使用する方法をデモンストレーションします、`DatePickerDialog`でラップされた、`DialogFragment`です。 サンプル アプリケーションが表示されます、`DatePickerDialog`モーダル ダイアログ アクティビティ上のボタンをクリックするとします。 日付が、ユーザーが設定されている場合、`TextView`選択された日付が更新されます。
 
-[![日付の選択 ダイアログ ボックスでその後に日付の選択のスクリーン ショット ボタン](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png)
+[![日付の選択 ダイアログ ボックスでその後に日付の選択のスクリーン ショット ボタン](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
 ## <a name="requirements"></a>必要条件
 
@@ -49,7 +49,6 @@ ms.lasthandoff: 02/27/2018
 3. **使用して、 `Action`**  &ndash; 、`DialogFragment`呼び出すことができます、`Action<DateTime>`アクティビティで日付を表示します。 活動が提供する、`Action<DateTime`インスタンス化するとき、`DialogFragment`です。 このサンプルは 3 番目の手法を使用して、アクティビティを指定する必要があります、`Action<DateTime>`を`DialogFragment`です。
 
 
-<a name="extending_dialogfragment" />
 
 ### <a name="extending-dialogfragment"></a>DialogFragment を拡張します。
 
@@ -99,10 +98,9 @@ Android がメソッドを呼び出して、フラグメントは、表示され
 
 
 > [!NOTE]
-> **注:**に注意してくださいを月の値と`IOnDateSetListener.OnDateSet`が呼び出されますが 0 ~ 11 しない 1 ~ 12 の範囲内です。 月の日は、1 ~ 31 (に応じて月が選択されている) の範囲になります。
+> 注意してくださいを月の値と`IOnDateSetListener.OnDateSet`が呼び出されますが 0 ~ 11 しない 1 ~ 12 の範囲内です。 月の日は、1 ~ 31 (に応じて月が選択されている) の範囲になります。
 
 
-<a name="date_picker_fragment" />
 
 ### <a name="showing-the-datepickerfragment"></a>表示、DatePickerFragment
 
@@ -136,7 +134,6 @@ public class MainActivity : Activity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

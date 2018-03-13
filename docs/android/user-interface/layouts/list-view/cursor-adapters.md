@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: 43d1ef53933ca7867b834dbf118ec730ccbf71ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5cadaf5f41d940a0255113178d018b59b780eabc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-cursoradapters"></a>CursorAdapters を使用します。
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -27,7 +26,6 @@ Android には、SQLite データベース クエリからデータを表示す�
 
 カーソルのアダプターは、SQLite に格納されているデータの長い一覧をスクロールするパフォーマンスの高い方法を提供します。 コンシューマー コードでの SQL クエリを定義する必要があります、`Cursor`オブジェクトを作成し、各行のビューを設定する方法を説明します。
 
-<a name="Creating_an_SQLite_Database" />
 
 ## <a name="creating-an-sqlite-database"></a>SQLite データベースを作成します。
 
@@ -63,7 +61,6 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 カーソル クエリ*必要があります*整数型の列がある`_id`の`CursorAdapter`動作をします。 かどうか、基になるテーブルが名前付き整数型の列`_id`で一意の整数を別の列の別名を使用して、`RawQuery`カーソルを構成します。 参照してください、 [Android docs](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)についてさらにします。
 
-<a name="Creating_the_Cursor" />
 
 ### <a name="creating-the-cursor"></a>カーソルを作成します。
 
@@ -85,7 +82,6 @@ cursor.Close();
 
 いずれかの利用できるアプリケーションでは、SQLite データベースが使用されが示すようにカーソル オブジェクトを作成、`SimpleCursorAdapter`またはそのサブクラスの`CusorAdapter`内の行を表示する、`ListView`です。
 
-<a name="Using_SimpleCursorAdapter" />
 
 ## <a name="using-simplecursoradapter"></a>SimpleCursorAdapter を使用します。
 
@@ -119,7 +115,6 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
 
 `SimpleCursorAdapter` SQLite のデータを表示するための高速で単純なは、`ListView`です。 大きな限界は、あるメッセージがコントロールを表示する列の値のみバインドできます (たとえば、コントロールの表示/非表示またはプロパティを変更する) の行のレイアウトの他の側面を変更することはできません。
 
-<a name="Subclassing_CursorAdapter" />
 
 ## <a name="subclassing-cursoradapter"></a>CursorAdapter をサブクラス化
 
@@ -133,7 +128,6 @@ A`CursorAdapter`サブクラスは、パフォーマンス上の利点として�
 
 前の例のアダプター サブクラスは、– 現在の項目を取得して行の数を返すメソッドを持つ、`CursorAdapter`自体、カーソルからその情報を収集できるためこれらのメソッドは必要ありません。 作成およびこれら 2 つのメソッドには、各ビューの設定を分割して、`CursorAdapter`ビューを再使用を強制します。 これはこれに対し、通常のアダプターを無視する可能性がある、`convertView`のパラメーター、`BaseAdapter.GetView`メソッドです。
 
-<a name="Implementing_the_CursorAdapter" />
 
 ### <a name="implementing-the-cursoradapter"></a>CursorAdapter を実装します。
 
@@ -159,7 +153,6 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 }
 ```
 
-<a name="Assigning_the_CursorAdapter" />
 
 ### <a name="assigning-the-cursoradapter"></a>CursorAdapter を割り当てる
 

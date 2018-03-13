@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d37c2c9dbb12668680b5813e9e083d2ebb184c66
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
 
@@ -646,11 +646,11 @@ namespace VideoPlayerDemos
 
 `AutoPlay`に設定されている`false`で、 **CustomTransport.xaml**ファイル、キーを押す必要があります、**再生**が有効にビデオを開始するときにボタンをクリックします。 ボタンが定義され、上記で説明した Unicode 文字が、対応するテキスト付加されます。 ボタンは、各プラットフォームで、一貫した外観があるビデオを再生する場合。
 
-[![カスタム トランスポート再生](custom-transport-images/customtransportplaying-small.png "カスタム トランスポート再生")](custom-transport-images/customtransportplaying-large.png "カスタム トランスポートの再生")
+[![カスタム トランスポート再生](custom-transport-images/customtransportplaying-small.png "カスタム トランスポート再生")](custom-transport-images/customtransportplaying-large.png#lightbox "カスタム トランスポートの再生")
 
 Android と UWP、ですが、**再生**ボタンの外観、ビデオが一時停止しているときに非常に異なる。
 
-[![カスタム トランスポートを一時停止](custom-transport-images/customtransportpaused-small.png "カスタム トランスポートを一時停止")](custom-transport-images/customtransportpaused-large.png "カスタム トランスポートを一時停止")
+[![カスタム トランスポートを一時停止](custom-transport-images/customtransportpaused-small.png "カスタム トランスポートを一時停止")](custom-transport-images/customtransportpaused-large.png#lightbox "カスタム トランスポートを一時停止")
 
 実稼働アプリケーションでおそらくにしておく visual 統一性を実現するために、ボタンの独自のビットマップ イメージを使用します。
 

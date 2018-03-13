@@ -7,32 +7,31 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: f1567815ec342a958b48ec4801e2918f2981de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>旧バージョンとの Android サポート パッケージとの互換性を提供します。
 
 フラグメントの実用性になるせず後方の事前 Android 3.0 (API レベル 11) デバイスとの互換性を制限します。 この機能を提供するには、Google が導入されました、[サポート ライブラリ](http://developer.android.com/sdk/compatibility-library.html)(最初と呼ばれる、 *Android Compatibility Library*リリースされたとき) どの backports から新しいバージョンの Api の一部Android の古いバージョンを android。 Android のサポート パッケージを Android 2.3.3 に Android 1.6 (API レベル 4) を実行しているデバイスを有効にすることをお勧めします。 (API レベル 10)。
 
 > [!NOTE]
-> **注**: のみ、`ListFragment`と`DialogFragment`は Android のサポート パッケージで使用できます。 サブクラスをなどの他のフラグメント、 `PreferenceFragment,` Android のサポート パッケージではサポートされています。 事前 Android 3.0 アプリケーションでは機能しません。 
+> のみ、`ListFragment`と`DialogFragment`は Android のサポート パッケージで使用できます。 サブクラスをなどの他のフラグメント、 `PreferenceFragment,` Android のサポート パッケージではサポートされています。 事前 Android 3.0 アプリケーションでは機能しません。 
 
-<a name="Adding_the_Support_Package" /> 
 
 ## <a name="adding-the-support-package"></a>サポート パッケージを追加します。
 
 Android のサポート パッケージは Xamarin.Android アプリケーションに自動的には追加されません。 Xamarin では提供、 [v4 NuGet パッケージの Android サポート ライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)Xamarin.Android アプリケーションへのサポート ライブラリの追加を簡単にします。サポート パッケージをアプリケーションに含まれて、Xamarin.Android に含める、 [Android サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) Xamarin.Android プロジェクトに、次のスクリーン ショットに示すようにコンポーネント。 
 
-[![プロジェクトに追加されている Android のサポート ライブラリのスクリーン ショット v4 パッケージ](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png)
+[![プロジェクトに追加されている Android のサポート ライブラリのスクリーン ショット v4 パッケージ](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 次の手順を実行すると後で以前のバージョンの Android フラグメントを使用する可能になります。 フラグメントの Api には、次の例外を除き、これらの以前のバージョンで同じここでは機能します。 
 
 -   **最低限の Android バージョンを変更する**&ndash;を次に示すように Android 3.0 以上を対象とする必要がなくなったアプリケーション。 
 
-    [![アプリケーションのプロパティで設定されている最低限 Android のスクリーン ショットのターゲット](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png)
+    [![アプリケーションのプロパティで設定されている最低限 Android のスクリーン ショットのターゲット](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **拡張 FragmentActivity** &ndash;フラグメントをホストしている、アクティビティから継承する必要があります`Android.Support.V4.App.FragmentActivity`、およびからではなく`Android.App.Activity`です。 
 

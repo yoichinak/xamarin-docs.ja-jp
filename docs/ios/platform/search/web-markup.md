@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 63bc1f0ed13fe65b36e95978da9ccc2ea8d4481c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8812c6a234e05e4d651effbeb83a7bcad38dc683
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-web-markup"></a>Web のマークアップの検索
 
@@ -20,12 +20,12 @@ Web サイトを使用して、コンテンツへのアクセスを提供する�
 
 IOS アプリが既にモバイル ディープ リンクをサポートしており、web サイトには、アプリ内で、Apple のコンテンツへのディープ リンクが表示される場合_Applebot_の web クローラーがこのコンテンツのインデックスし、自動的にそのクラウド インデックスに追加します。
 
-[ ![](web-markup-images/webmarkup01.png "クラウドのインデックスの概要")](web-markup-images/webmarkup01.png)
+[![](web-markup-images/webmarkup01.png "クラウドのインデックスの概要")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple は、Spotlight 検索で、Safari の検索結果にこれらの結果が表面化します。
 ユーザーはタップ操作でこれらのいずれかが (と、インストールされているアプリがある) に、アプリのコンテンツが行われます。
 
-[ ![](web-markup-images/webmarkup02.png "詳細な検索結果での web サイトからのリンク")](web-markup-images/webmarkup02.png)
+[![](web-markup-images/webmarkup02.png "詳細な検索結果での web サイトからのリンク")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Web コンテンツのインデックス作成を有効にします。
 
@@ -154,7 +154,7 @@ Schema.org の %ld 個の JSON 形式では、同じ情報を表示すること�
 
 多機能な検索結果をエンドユーザーに提供する web サイトからのメタデータの例を次に示します。
 
-[ ![](web-markup-images/deeplink01.png "豊富な構造化データのマークアップを使用して結果を検索します。")](web-markup-images/deeplink01.png)
+[![](web-markup-images/deeplink01.png "豊富な構造化データのマークアップを使用して結果を検索します。")](web-markup-images/deeplink01.png#lightbox)
 
 Apple には、現在 schema.org から次のスキーマ型がサポートされています。
 

@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: c02ad78cc15f2d71f19d605f7a4d6889bbe3ca01
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec8d000f235a8e0da5198e425f9f1e630b2c662a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>チュートリアル - Android でのタッチの使用
 
 お知らせ実用的なアプリケーションで、前のセクションから概念を使用する方法を参照してください。 次の 4 つの活動を使ってアプリケーションを作成します。 最初のアクティビティは、さまざまな Api を示すために他のアクティビティを起動するメニューやメニューになります。 次のスクリーン ショットは、メインのアクティビティを示しています。
 
-[![サンプルのスクリーン ショットでタッチ Me ボタン](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png)
+[![サンプルのスクリーン ショットでタッチ Me ボタン](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
 最初のアクティビティでは、タッチのサンプルでは、ビューと接触しているにイベント ハンドラーを使用する方法を示します。 ジェスチャ レコグナイザー アクティビティが実演サブクラス化する方法`Android.View.Views`とイベントの処理だけでなくピンチ ジェスチャを処理する方法を示します。 3 番目および最後のアクティビティ**カスタム ジェスチャ**は表示する方法を使用してカスタム ジェスチャ。 わかりやすくするために従い、吸収、おをこのチュートリアルに分割のセクションでは、アクティビティのいずれかに焦点を当てたの各セクションでします。
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/27/2018
 
 -   プロジェクトを開く**TouchWalkthrough\_開始**です。 **MainActivity**へのすべての設定は、&ndash;まで、アクティビティでのタッチ動作を実装することができます。 アプリケーションを実行する をクリックすると**タッチ サンプル**、次のアクティビティを起動する必要があります。
 
-    [![表示の開始タッチ アクティビティのスクリーン ショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+    [![表示の開始タッチ アクティビティのスクリーン ショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 -   これで、アクティビティの開始することを確認して、ファイルを開く**TouchActivity.cs**のハンドラーを追加し、`Touch`のイベント、 `ImageView`:
 
@@ -63,11 +63,11 @@ ms.lasthandoff: 02/27/2018
 
 たびにユーザーの調整、 `ImageView`、`Touch`イベントを発生させるし、ハンドラー、メッセージが表示されます**開始タッチ**画面で、次のスクリーン ショットに示すように。
 
-[![タッチを開始アクティビティのスクリーン ショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+[![タッチを開始アクティビティのスクリーン ショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 ユーザーと接触している限り、 `ImageView`、**開始タッチ**に表示される、`TextView`です。 ときに、ユーザーが不要になったに触れること、 `ImageView`、メッセージ**終了タッチ**に表示される、`TextView`次のスクリーン ショットに示すように。
 
-[![タッチの終了活動のスクリーン ショット](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png)
+[![タッチの終了活動のスクリーン ショット](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>ジェスチャ レコグナイザー アクティビティ
@@ -234,11 +234,11 @@ ms.lasthandoff: 02/27/2018
 -   ここで、アプリケーションを実行し、ジェスチャ レコグナイザー アクティビティを開始します。
     開始時に、画面は次のスクリーン ショットのようになります。
 
-    [![Android のアイコンがジェスチャ レコグナイザー スタート 画面](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png)
+    [![Android のアイコンがジェスチャ レコグナイザー スタート 画面](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 -   今すぐ、アイコンをタッチし、画面にドラッグします。 ピンチ、ズーム ジェスチャを再試行してください。 ある時点で、画面が次のスクリーン ショットのようなもの表示します。
 
-    [![画面の周りのジェスチャ移動アイコン](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png)
+    [![画面の周りのジェスチャ移動アイコン](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
 この時点でする必要がありますを自分自身に付与、pat 裏面: Android アプリケーションで、ピンチ操作で拡大/縮小を実装しているだけです。 クイック休息を取って、このチュートリアルでは、3 番目および最後のアクティビティに進むことができます&ndash;カスタム ジェスチャを使用します。
 
@@ -341,17 +341,17 @@ ms.lasthandoff: 02/27/2018
 
 -   アプリケーションを実行し、カスタム ジェスチャ レコグナイザー アクティビティを開始します。 次のスクリーン ショットのように表示する必要があります。
 
-    [![スクリーン ショットを確認 Me イメージ](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png)
+    [![スクリーン ショットを確認 Me イメージ](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
     画面で、チェック マークを描画し、ビットマップが表示されているようになりますが、次のスクリーン ショットに示す。
 
-    [![チェック マークを描画](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png)
-    [![認識チェック マーク](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png)
+    [![チェック マークを描画](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![認識チェック マーク](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
     最後に、画面で、scribble を描画します。 チェック ボックスは、これらのスクリーン ショットに示すように、元のイメージに変更してください。
 
-    [![画面の scribble](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png)
-    [![元のイメージが表示されます](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png)
+    [![画面の scribble](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
+    [![元のイメージが表示されます](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
 
 タッチとジェスチャ Xamarin.Android を使用して Android のアプリケーションに統合する方法の理解があるようになりました。
 

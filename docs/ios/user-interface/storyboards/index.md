@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8bc262ff739cc65da80d887a6dea11ecc708e866
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>ストーリー ボードの概要
 
@@ -33,7 +33,7 @@ _ストーリー ボードは、外観を視覚的に表現し、アプリケー
 
 ストーリー ボードは、アプリケーション内のすべての画面のビジュアル表現です。 各シーンを表す、シーンのシーケンスが含まれている、*ビュー コント ローラー*とその*ビュー*です。 これらのビューは、オブジェクトを含めることが、[コントロール](~/ios/user-interface/controls/index.md)により、ユーザー、アプリケーションと対話します。 このビューとコントロールのコレクション (または*サブビュー*) と呼ばれる、*コンテンツの階層を表示*です。 シーンが接続されているによって、コント ローラーの表示の間の遷移を表すオブジェクトを提案します。 これは通常、最初のビューでは、上のオブジェクトと接続しているビュー間 segue を作成することで実現されます。 デザイン サーフェイス上の関係は、次の図に示します。
 
- [ ![](images/storyboardsview.png "このイメージの図解は、デザイン画面上の関係")](images/storyboardsview.png)
+ [![](images/storyboardsview.png "このイメージの図解は、デザイン画面上の関係")](images/storyboardsview.png#lightbox)
 
 ように、ストーリー ボードは、既に表示されてコンテンツを持つ、シーンの各をレイアウトし、両者間の接続を示しています。  IPhone でについてシーンは安全であるということを想定することをこの時点では、注目に値します*シーン*ストーリー ボードには 1 に等しい*画面*デバイス上のコンテンツのです。 ただし、一度に – 表示する複数のシーンを設定することは iPad でなど、重なってビュー コント ローラーを使用します。
 
@@ -47,22 +47,22 @@ _ストーリー ボードは、外観を視覚的に表現し、アプリケー
 
 A *Segue*、または*話題オブジェクト*シーンの間の遷移を表すために iOS 開発に使用します。 押しながら、segue を作成する、 **Ctrl**キーと別に 1 つのシーンからをクリックしてドラッグします。 ように、マウスをドラッグしたは、次の図に示すように、segue が潜在顧客場所を示す青色コネクタが表示されます。
 
- [ ![](images/createsegue.png "青色コネクタが表示されたら、この画像に示すように、segue が潜在顧客場所を示す")](images/createsegue.png)
+ [![](images/createsegue.png "青色コネクタが表示されたら、この画像に示すように、segue が潜在顧客場所を示す")](images/createsegue.png#lightbox)
 
 マウス時に、メニューが表示されますので、segue のアクションを選択します。 これは、次の図のようになります可能性があります。 
 
 **前の iOS 8 とサイズ クラス**:
 
-[ ![](images/segue1.png "アクションの話題ドロップダウン サイズ クラスなし")](images/segue1.png)
+[![](images/segue1.png "アクションの話題ドロップダウン サイズ クラスなし")](images/segue1.png#lightbox)
 
 **クラスのサイズとアダプティブ Segues を使用して**:
 
-[ ![](images/16new.png "サイズのクラスを含むアクションの話題ドロップダウン")](images/16new.png)
+[![](images/16new.png "サイズのクラスを含むアクションの話題ドロップダウン")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > **注:** Ctrl キーを押し、としてマップを使用している VMWare の Windows 仮想マシンの場合、_を右クリックして_既定でマウス ボタンをクリックします。 Segue を作成するには、を通じてキーボード設定を編集**設定** > **キーボードおよびマウス** > **マウス ショートカット**再マップと、**副ボタン**下図のようにします。
 > 
-> [ ![](images/image22.png "キーボードとマウスの設定")](images/image22.png)
+> [![](images/image22.png "キーボードとマウスの設定")](images/image22.png#lightbox)
 > 
 > 通常どおり、ビューのコント ローラー間 segue を追加できるようになりましたにします。
 
@@ -74,7 +74,7 @@ A *Segue*、または*話題オブジェクト*シーンの間の遷移を表す
 -  **アンワインド**– アンワインド話題プッシュまたはモーダルを後方に移動するために使用できる話題 – たとえば、ビューのモーダルとして表示されるコント ローラーを閉じる。 さらに、1 つだけでなくを介してアンワインドできますが、一連のプッシュとモーダル segues して戻る を 1 つのナビゲーション階層内の複数のステップのアンワインド操作。 使用する方法を理解するアンワインドの話題、ios、読み取り、 [Segues アンワインド作成](https://developer.xamarin.com/recipes/ios/general/storyboard/unwind_segue/)レシピします。
 -  **Sourceless** – sourceless segue 初期ビュー コント ローラーを含むシーンを示し、そのためユーザーがどのビューは最初に表示します。 次に示す segue によって表されます。  
 
-    [ ![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png)
+    [![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>アダプティブ話題型
 
@@ -82,7 +82,7 @@ A *Segue*、または*話題オブジェクト*シーンの間の遷移を表す
  
 サイズのクラスを使用しているアプリケーションは、新しい使用も[*アダプティブ Segues*](~/ios/user-interface/storyboards/unified-storyboards.md)です。 サイズのクラスを使用する場合は、ことはないを直接指定するかどうかを注意してください iPhone または iPad を使用します。 つまりおを常に使用する必要がある不動産量に関係なく、同じを検索する 1 つの UI を作成します。 アダプティブ Segues 作業時間、環境を判断し、コンテンツを表示する最善の方法を決定します。 アダプティブ Segues 次に示します。 
 
-[ ![](images/adaptivesegue.png "アダプティブ Segues ドロップダウン")](images/adaptivesegue.png)
+[![](images/adaptivesegue.png "アダプティブ Segues ドロップダウン")](images/adaptivesegue.png#lightbox)
 
 <table>
     <thead>
@@ -155,11 +155,11 @@ if (callHistoryContoller != null) {
 
 1. 参照して新しいストーリー ボード ファイルを作成する**ファイル > 新しいファイル > iOS > ストーリー ボード**下図のように、します。 
     
-    [ ![](images/new-storyboard-xs.png "新しいファイル ダイアログ")](images/new-storyboard-xs.png)
+    [![](images/new-storyboard-xs.png "新しいファイル ダイアログ")](images/new-storyboard-xs.png#lightbox)
 
 2. ストーリー ボード名を追加、 **Main インターフェイス**のセクションで、 **Info.plist**次のように、します。
     
-    [ ![](images/infoplist.png "Info.plist エディター")](images/infoplist.png)
+    [![](images/infoplist.png "Info.plist エディター")](images/infoplist.png#lightbox)
     
     これにより、初期ビュー コント ローラーでインスタンス化するのと同じ、`FinishedLaunching`アプリ デリゲート内のメソッドです。 このオプションを設定して、アプリケーション ウィンドウ (下記参照) をインスタンス化、メインのストーリー ボードの読み込みおよびとしてストーリー ボードの初期ビュー Controller (sourceless Segue の横にある 1 つ) のインスタンスを割り当てます、`RootViewController`ウィンドウはのプロパティ画面に表示するウィンドウです。
 
@@ -174,11 +174,11 @@ if (callHistoryContoller != null) {
 
 1. プロジェクトを右クリックして新しいストーリー ボード ファイルを作成**追加 > 新しいファイル > iOS > 空のストーリー ボード**下図のように、します。 
     
-    [ ![](images/new-storyboard-vs.png "新しい項目 ダイアログ")](images/new-storyboard-vs.png)
+    [![](images/new-storyboard-vs.png "新しい項目 ダイアログ")](images/new-storyboard-vs.png#lightbox)
 
 2. ストーリー ボード名を追加、 **Main インターフェイス**iOS アプリケーションを次に示すようのセクション。
     
-    [ ![](images/ios-app.png "Info.plist エディター")](images/ios-app.png)
+    [![](images/ios-app.png "Info.plist エディター")](images/ios-app.png#lightbox)
     
     これにより、初期ビュー コント ローラーでインスタンス化するのと同じ、`FinishedLaunching`アプリ デリゲート内のメソッドです。 このオプションを設定して、アプリケーション ウィンドウ (下記参照) をインスタンス化、メインのストーリー ボードの読み込みおよびとしてストーリー ボードの初期ビュー Controller (sourceless Segue の横にある 1 つ) のインスタンスを割り当てます、`RootViewController`ウィンドウはのプロパティ画面に表示するウィンドウです。
 
@@ -205,37 +205,37 @@ if (callHistoryContoller != null) {
 
 次のスクリーン ショットでは、それらの間の 2 つコント ローラーの表示、デザイン サーフェイス上のない話題は示しています。 次のセクションがコードでその遷移設定する方法について説明します。
 
- [ ![](images/viewcontrollerspink.png "このスクリーン ショットは、それらの間の 2 つコント ローラーの表示、デザイン サーフェイスのない話題を示しています。")](images/viewcontrollerspink.png)
+ [![](images/viewcontrollerspink.png "このスクリーン ショットは、それらの間の 2 つコント ローラーの表示、デザイン サーフェイスのない話題を示しています。")](images/viewcontrollerspink.png#lightbox)
 
 1. 追加、 _iPhone ストーリー ボードを空にする_既存プロジェクトのプロジェクトに。
     
-    [ ![](images/add-storyboard1.png "ストーリー ボードを追加します。")](images/add-storyboard1.png)
+    [![](images/add-storyboard1.png "ストーリー ボードを追加します。")](images/add-storyboard1.png#lightbox)
 
 2. 新しく作成されたストーリー ボードを開くをダブルクリックし、新しい**ナビゲーション コント ローラー**デザイン画面にします。 ナビゲーション コント ローラーは、次のように、ルート ビュー、コント ローラーとは既定では、UI のないです。
 
-    [ ![](images/uinavigationcontroller.png "コント ローラー Segues ビュー")](images/uinavigationcontroller.png)
+    [![](images/uinavigationcontroller.png "コント ローラー Segues ビュー")](images/uinavigationcontroller.png#lightbox)
 
 3. 選択、_ビュー コント ローラー_下部の黒のバーをクリックするとします。 デザイナーの **プロパティ パッド** **Identity**おビュー コント ローラーのカスタム クラスだけでなく、一意の ID を指定できます。 設定、**クラス名**と**ストーリー ボード ID**に`MainViewController`です。
 
-    [ ![](images/identitypanelnew.png "カスタム クラスを指定します。")](images/identitypanelnew.png)
+    [![](images/identitypanelnew.png "カスタム クラスを指定します。")](images/identitypanelnew.png#lightbox)
 
 4. ストーリー ボードからコント ローラーの表示のインスタンスを作成する必要がありますが、後で、コード内で参照するストーリー ボード ID が使用されます。 ストーリー ボード ID と一致する復元の ID を設定、状態を復元する必要があるビュー コント ローラーが正しく再作成を取得することを確認します。
 
 5. 現在だけある 1 つのビュー コント ローラー。 別のビュー コント ローラーをデザイン画面にドラッグします。 **プロパティ パッド**、識別情報、クラスとストーリー ボード ID を設定`PinkViewController`下図のように、します。
 
-    [ ![](images/pinkvcnew.png "プロパティのパッド")](images/pinkvcnew.png)
+    [![](images/pinkvcnew.png "プロパティのパッド")](images/pinkvcnew.png#lightbox)
     
     IDE では、コント ローラーの表示をこれらのカスタム クラスを作成します。 表示できるこれら、**ソリューション パッド**次のスクリーン ショットに示すように、します。
     
-    [ ![](images/solution-pad.png "ソリューションの埋め込み")](images/solution-pad.png)
+    [![](images/solution-pad.png "ソリューションの埋め込み")](images/solution-pad.png#lightbox)
 
 6. `PinkViewController`、コント ローラーのフレームの中央に向けてをクリックして、ビューを選択します。 パッドでは、プロパティ、[表示] を変更、**背景**マゼンタに。
     
-    [ ![](images/pinkcontroller.png "背景色を設定")](images/pinkcontroller.png)
+    [![](images/pinkcontroller.png "背景色を設定")](images/pinkcontroller.png#lightbox)
 
 7. 最後に、ボタンをドラッグして、**ツールボックス**上に、`MainViewController`です。 パッドでは、プロパティ、名前を付けます`PinkButton`とタイトル GoToPink、下図のようにします。
 
-    [ ![](images/pinkbutton.png "ボタンの名前を設定します。")](images/pinkbutton.png)
+    [![](images/pinkbutton.png "ボタンの名前を設定します。")](images/pinkbutton.png#lightbox)
 
 ストーリー ボードが完了するには、プロジェクトを今すぐ配置して、空の画面が得されます。 Ide、ストーリー ボードを使用して、最初のビューとして使用するルート ビュー コント ローラーを設定する必要があるためにです。 通常この使用できる、プロジェクトのオプションでは、上記のようにします。 次を追加することでコードでは、同じ結果を得ることがこの例ではただし、 **AppDelegate**:
 
@@ -351,13 +351,13 @@ public partial class MainViewController : UIViewController
         - 行: 2
         - 'Hidden' のチェック ボックスがオン 
         
-    [ ![](images/passwordvc.png "Center 行")](images/passwordvc.png)
+    [![](images/passwordvc.png "Center 行")](images/passwordvc.png#lightbox)
     
 2. ピンクへ移動 ボタンと Ctrl - からドラッグしてビュー コント ローラー間 Segue を作成、 *PinkButton*を*PinkViewController*を選択して**プッシュ**マウス時に. 
 
 3. Segue をクリックし、*識別子* `SegueToPink`:
 
-    [ ![](images/namesegue.png "Segue をクリックし、識別子 SegueToPink を付けます")](images/namesegue.png)  
+    [![](images/namesegue.png "Segue をクリックし、識別子 SegueToPink を付けます")](images/namesegue.png#lightbox)  
     
 
 4. 最後には、次の ShouldPerformSegue メソッドを追加、`MainViewController`クラス。
@@ -402,29 +402,29 @@ Storyboards.Conditional ソリューションを参照してください、[手�
 
 1. **ソリューション エクスプ ローラー**、プロジェクト名を右クリックし **追加** > **新しいファイル.**  >  **iOS** > **ストーリー ボード**です。 入力、**名前**新しいストーリー ボードとをクリックして、**新規**ボタン。
     
-    [ ![](images/ref01.png "新しいファイル ダイアログ")](images/ref01.png)
+    [![](images/ref01.png "新しいファイル ダイアログ")](images/ref01.png#lightbox)
     
 2. 操作と同じよう通常、変更を保存は、新しいストーリー ボードのシーンのレイアウトをデザインします。 
     
-    [ ![](images/ref02.png "新しいシーンのレイアウト")](images/ref02.png)
+    [![](images/ref02.png "新しいシーンのレイアウト")](images/ref02.png#lightbox)
     
 3. Ios デザイナーへの参照を追加しようとするストーリー ボードを開きます。
 
 4. ドラッグ、**参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
     
-    [ ![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png)
+    [![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png#lightbox)
     
 5. **ウィジェット**のタブ、**プロパティ エクスプ ローラー**の名前を選択、**ストーリー ボード**上に作成します。 
 
-    [ ![](images/ref04.png "ウィジェット タブ")](images/ref04.png)
+    [![](images/ref04.png "ウィジェット タブ")](images/ref04.png#lightbox)
     
 6. 既存のシーンで (ボタン) のような UI ウィジェットのコントロールをクリックしを新しい Segue を作成、**ストーリー ボード参照**先ほど作成しました。 
 
-    [ ![](images/ref05.png "Segue を作成します。")](images/ref05.png) 
+    [![](images/ref05.png "Segue を作成します。")](images/ref05.png#lightbox) 
     
 7. ポップアップ メニューから選択**表示**Segue を完了します。 
 
-    [ ![](images/ref06.png "Segue を完了するの表示 を選択")](images/ref06.png) 
+    [![](images/ref06.png "Segue を完了するの表示 を選択")](images/ref06.png#lightbox) 
     
 8. ストーリー ボードに変更を保存します。
 
@@ -440,29 +440,29 @@ Storyboards.Conditional ソリューションを参照してください、[手�
 
 2. 新しいシーンを追加し、通常どおりにそのレイアウトをデザインします。 
 
-    [ ![](images/ref07.png "新しいシーン レイアウト")](images/ref07.png)
+    [![](images/ref07.png "新しいシーン レイアウト")](images/ref07.png#lightbox)
     
 3. **ウィジェット**のタブ、**プロパティ エクスプ ローラー**、入力、**ストーリー ボード ID**新しいシーンのビューのコント ローラーの。 
 
-    [ ![](images/ref08.png "新しいシーン ビュー コント ローラーのストーリー ボード ID を入力します。")](images/ref08.png)
+    [![](images/ref08.png "新しいシーン ビュー コント ローラーのストーリー ボード ID を入力します。")](images/ref08.png#lightbox)
     
 3. Ios デザイナーへの参照を追加しようとするストーリー ボードを開きます。
 
 4. ドラッグ、**参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
 
-    [ ![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png)
+    [![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png#lightbox)
     
 5. **ウィジェット**のタブ、**プロパティ エクスプ ローラー**の名前を選択、**ストーリー ボード**と**参照 ID** (ストーリー ボード ID) の上記で作成したシーン: 
 
-    [ ![](images/ref09.png "ウィジェット タブ ")](images/ref09.png)
+    [![](images/ref09.png "ウィジェット タブ ")](images/ref09.png#lightbox)
     
 6. 既存のシーンで (ボタン) のような UI ウィジェットのコントロールをクリックしを新しい Segue を作成、**ストーリー ボード参照**先ほど作成しました。 
 
-    [ ![](images/ref10.png "Segue を作成します。")](images/ref10.png) 
+    [![](images/ref10.png "Segue を作成します。")](images/ref10.png#lightbox) 
     
 7. ポップアップ メニューから選択**表示**Segue を完了します。 
 
-    [ ![](images/ref06.png "Segue を完了するの表示 を選択")](images/ref06.png) 
+    [![](images/ref06.png "Segue を完了するの表示 を選択")](images/ref06.png#lightbox) 
     
 8. ストーリー ボードに変更を保存します。
 
@@ -478,27 +478,27 @@ UI 要素を作成された、Segue のシーンをアプリが実行し、ユ�
 
 2. 新しいシーンを追加し、通常どおりにそのレイアウトをデザインします。 
 
-    [ ![](images/ref11.png "新しいシーン レイアウト")](images/ref11.png)
+    [![](images/ref11.png "新しいシーン レイアウト")](images/ref11.png#lightbox)
 
 3. **ウィジェット**のタブ、**プロパティ エクスプ ローラー**、入力、**ストーリー ボード ID**新しいシーンのビューのコント ローラーの。 
 
-    [ ![](images/ref12.png "ウィジェット タブ")](images/ref12.png)
+    [![](images/ref12.png "ウィジェット タブ")](images/ref12.png#lightbox)
     
 3. ドラッグ、**参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
 
-    [ ![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png)
+    [![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png#lightbox)
     
 5. **ウィジェット**のタブ、**プロパティ エクスプ ローラー****参照 ID** (ストーリー ボード ID) 上で作成した、シーンの。 
 
-    [ ![](images/ref13.png "ウィジェット タブ")](images/ref13.png)
+    [![](images/ref13.png "ウィジェット タブ")](images/ref13.png#lightbox)
     
 6. 既存のシーンで (ボタン) のような UI ウィジェットのコントロールをクリックしを新しい Segue を作成、**ストーリー ボード参照**先ほど作成しました。 
 
-    [ ![](images/ref14.png "Segue を作成します。")](images/ref14.png) 
+    [![](images/ref14.png "Segue を作成します。")](images/ref14.png#lightbox) 
     
 7. ポップアップ メニューから選択**表示**Segue を完了します。 
 
-    [ ![](images/ref06.png "Segue を完了するの表示 を選択")](images/ref06.png) 
+    [![](images/ref06.png "Segue を完了するの表示 を選択")](images/ref06.png#lightbox) 
     
 8. ストーリー ボードに変更を保存します。
 

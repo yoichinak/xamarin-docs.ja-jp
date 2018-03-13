@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 7e4d1cab532a5c81da1dfc47df33aa0628c7f6c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c69b8e71cac5d9f0385728ca75a5f311cb24fc0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用して構築 HTML ビュー
 
@@ -34,7 +34,7 @@ Xamarin を簡単に作成し、c# を使用して HTML を表示するために
 
 Xamarin.iOS で UIWebView コントロールの HTML を表示すると、はわずか数行のコードも受け取ります。
 
-```
+```csharp
 var webView = new UIWebView (View.Bounds);
 View.AddSubview(webView);
 string contentDirectoryPath = Path.Combine (NSBundle.MainBundle.BundlePath, "Content/");
@@ -48,7 +48,7 @@ webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 
 Xamarin.Android を使用して、WebView コントロールでの HTML の表示は、少数の行のコードで行われます。
 
-```
+```csharp
 // webView is declared in an AXML layout file
 var webView = FindViewById<WebView> (Resource.Id.webView);
 var html = "<html><h1>Hello</h1><p>World</p></html>";
@@ -61,19 +61,19 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 
 両方のプラットフォームには、HTML ページの基本ディレクトリを指定するパラメーターがあります。 これは、画像や CSS ファイルなどのリソースへの相対参照を解決するのには使用されているデバイスのファイル システム上の場所です。 たとえば、タグなど
 
-
-    <link rel="stylesheet" href="style.css" />
-    <img src="monkey.jpg" />
-    <script type="text/javascript" src="jscript.js">
-
+```html
+<link rel="stylesheet" href="style.css" />
+<img src="monkey.jpg" />
+<script type="text/javascript" src="jscript.js">
+```
 
 これらのファイルを参照してください: **style.css**、 **monkey.jpg**と**jscript.js**です。 基本ディレクトリの設定は、これらのファイルが配置されているページに読み込まれている可能性があるため、web ビューを指示します。
 
 #### <a name="ios"></a>iOS
 
-テンプレートの出力は次の C# コードで、iOS でレンダリングされます。
+テンプレートの出力は次の c# コードで、iOS でレンダリングされます。
 
-```
+```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
@@ -89,7 +89,7 @@ webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 
 Android では、html 文字列が、web ビューに表示されるときに、パラメーターとして渡されるベース ディレクトリも必要です。
 
-```
+```csharp
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
@@ -101,30 +101,30 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
  ![Android プロジェクトのビルド アクション: AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>C# HTML および Javascript からの呼び出し
+### <a name="calling-c-from-html-and-javascript"></a>HTML および Javascript からの c# の呼び出し
 
 Web ビューに html ページが読み込まれると、サーバーからページが読み込まれた場合と同様のリンクとフォームに扱います。 つまり、ユーザーがリンクをクリックするか、フォームを送信する場合、web ビューを試行する、指定したターゲットに移動します。
 
 場合は (google.com) などの外部のサーバーへのリンクですし、web ビューを試みます (インターネット接続があると仮定した場合)、外部の web サイトを読み込みます。
 
-```
+```html
 <a href="http://google.com/">Google</a>
 ```
 
 リンクの相対的な場合、web ビューしようと、ベース ディレクトリからそのコンテンツを読み込みます。 明らかにネットワーク接続は必要ありませんこれを行う、デバイス上でのアプリに内容が保存されています。
 
-```
+```html
 <a href="somepage.html">Local content</a>
 ```
 
 フォーム アクションでは、同じルールに従います。
 
-```
+```html
 <form method="get" action="http://google.com/"></form>
 <form method="get" action="somepage.html"></form>
 ```
 
-クライアント上で web サーバーをホストしません。ただし、HTTP GET を経由でサービスを呼び出す今日レスポンシブ デザイン パターンで採用されているサーバーと同じ通信方法を使用して Javascript を生成することによって、応答を非同期的に処理 (または呼び出し側の Javascript は、web ビューで既にホストされている)。 これにより、簡単にデータを渡す HTML から C ## のコードを処理し、HTML ページ上のバックアップを結果の表示に戻すことができます。
+クライアント上で web サーバーをホストしません。ただし、HTTP GET を経由でサービスを呼び出す今日レスポンシブ デザイン パターンで採用されているサーバーと同じ通信方法を使用して Javascript を生成することによって、応答を非同期的に処理 (または呼び出し側の Javascript は、web ビューで既にホストされている)。 これにより、簡単に処理し、表示する HTML ページ上のバックアップを結果の c# コードに HTML からデータを渡すことができます。
 
 IOS および Android の両方は、アプリケーション コードをアプリのコードが (必要な場合) に応答できるように、これらのナビゲーション イベントをインターセプトするためのメカニズムを提供します。 この機能は、ネイティブ コードの web ビューとの対話をことができるため、ハイブリッド アプリを構築するために重要です。
 
@@ -132,7 +132,7 @@ IOS および Android の両方は、アプリケーション コードをアプ
 
 IOS の web ビューを ShouldStartLoad イベントをオーバーライドすると、(リンクをクリックします) などのナビゲーション要求を処理するアプリケーション コードを許可できます。 メソッドのパラメーターが、すべての情報を指定します。
 
-```
+```csharp
 bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType) {
     // return true if handled in code
     // return false to let the web view follow the link
@@ -141,7 +141,7 @@ bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNa
 
 イベント ハンドラーを割り当てます。
 
-```
+```csharp
 webView.ShouldStartLoad += HandleShouldStartLoad;
 ```
 
@@ -149,7 +149,7 @@ webView.ShouldStartLoad += HandleShouldStartLoad;
 
 Android で単にサブクラス WebViewClient し、ナビゲーション要求に応答するコードを実装します。
 
-```
+```csharp
 class HybridWebViewClient : WebViewClient {
     public override bool ShouldOverrideUrlLoading (WebView webView, string url) {
         // return true if handled in code
@@ -160,19 +160,19 @@ class HybridWebViewClient : WebViewClient {
 
 web ビューで、クライアントを設定します。
 
-```
+```csharp
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
 ### <a name="calling-javascript-from-c"></a>C# から呼び出す Javascript
 
-新しい HTML ページを読み込む web ビューを示すだけでなく、C# コードは、現在表示されているページ内で Javascript も実行できます。 全体の Javascript コード ブロックを C ## 文字列を使用して作成し、実行、または javascript を使用してページで既に使用可能なメソッド呼び出しを作成できます`script`タグ。
+新しい HTML ページを読み込む web ビューを示すだけでなく、c# コードは、現在表示されているページ内で Javascript も実行できます。 全体の Javascript コード ブロックを c# の文字列を使用して作成し、実行、または javascript を使用してページで既に使用可能なメソッド呼び出しを作成できます`script`タグ。
 
 #### <a name="android"></a>Android
 
 実行して、前にプレフィックスを Javascript コードを作成する"javascript:"し、web ビューをその文字列を読み込むように指示します。
 
-```
+```csharp
 var js = "alert('test');";
 webView.LoadUrl ("javascript:" + js);
 ```
@@ -181,7 +181,7 @@ webView.LoadUrl ("javascript:" + js);
 
 iOS の web ビューには、明示的に呼び出すメソッドを Javascript が提供します。
 
-```
+```csharp
 var js = "alert('test');";
 webView.EvaluateJavascript (js);
 ```
@@ -192,8 +192,8 @@ webView.EvaluateJavascript (js);
 
 -  コードでは、生成された文字列から HTML をロードする機能
 -  ローカル ファイル (CSS、Javascript、イメージまたはその他の HTML ファイル) を参照する機能
--  C# コードでナビゲーション要求をインターセプトする機能
--  Javascript コードからを呼び出す C ## 権限です。
+-  C# のコードでナビゲーション要求をインターセプトする機能
+-  Javascript コードからを呼び出す c# 権限です。
 
 
 次のセクションでは、ハイブリッド アプリで使用する HTML を作成しやすくなる Razor について説明します。
@@ -202,7 +202,7 @@ webView.EvaluateJavascript (js);
 
 Razor は、サーバー上で実行し、web ブラウザーに提供するための HTML を生成する最初の ASP.NET MVC で導入されたテンプレート エンジンです。
 
-Razor テンプレート エンジンは、レイアウトを表現して CSS スタイル シートおよび Javascript を簡単に組み込むように C# で標準の HTML 構文を拡張します。 テンプレートには、任意のカスタム型があり、テンプレートから直接アクセスできるプロパティを持つモデルのクラスを参照できます。 その主な利点の 1 つは、HTML および C ## の構文を簡単に混在させる機能です。
+Razor テンプレート エンジンは、レイアウトを表現して CSS スタイル シートおよび Javascript を簡単に組み込むように c# を使用して標準の HTML 構文を拡張します。 テンプレートには、任意のカスタム型があり、テンプレートから直接アクセスできるプロパティを持つモデルのクラスを参照できます。 その主な利点の 1 つは、HTML および c# の構文を簡単に混在させる機能です。
 
 Razor テンプレートはサーバー側で使用するだけではありません、Xamarin アプリでそれらに含めることもできます。 Web ビューをプログラムで使用する機能と共に Razor テンプレートを使用すると、Xamarin を構築する高度なクロスプラット フォームのハイブリッド アプリケーションができます。
 
@@ -214,7 +214,7 @@ Razor テンプレート ファイルが、 **.cshtml**ファイル拡張子。 
 
 単純な Razor テンプレート ( **RazorView.cshtml**) を次に示します。
 
-```
+```html
 @model string
 <html>
     <body>
@@ -225,18 +225,18 @@ Razor テンプレート ファイルが、 **.cshtml**ファイル拡張子。 
 
 通常の HTML ファイルから次の相違点に注意してください。
 
--  `@`シンボルは、Razor テンプレートで特別な意味を持つ: 次の式が評価される C ## ことを示します。
+-  `@`シンボルは、Razor テンプレートで特別な意味を持つ: 次の式を c# に評価されることを示します。
 - `@model` ディレクティブは、Razor テンプレート ファイルの最初の行として常に表示されます。
 -  `@model`型ディレクティブの後にする必要があります。 テンプレートにこの例では、単純な文字列が渡されるが、任意のカスタム クラスが考えられます。
 -  ときに`@Model`が参照されているテンプレートを全体にわたって (この例では、これは、文字列になります) での生成時に、テンプレートに渡されるオブジェクトへの参照を提供します。
 -  IDE が自動的にテンプレートの部分クラスを生成 (ファイルが、 **.cshtml**拡張子) です。 このコードを表示できますが、編集しないでください。
- ![RazorView.cshtml](images/image6_125x34.png)部分クラスは .cshtml テンプレートのファイル名に合わせて RazorView をという名前です。 この名前の C# コードにテンプレートを参照するために使用することをお勧めします。
+ ![RazorView.cshtml](images/image6_125x34.png)部分クラスは .cshtml テンプレートのファイル名に合わせて RazorView をという名前です。 この名前の c# コードでテンプレートを参照するために使用することをお勧めします。
 - `@using` ステートメントは、Razor テンプレートに含める追加の名前空間の上部に含めることもできます。
 
 
-HTML 出力の最終的なは、次の C# コードで生成できます。 文字列"Hello World"が表示されるテンプレートの出力に組み込まれますモデルを指定することに注意してください。
+HTML 出力の最終的なは、次の c# コードを生成できます。 文字列"Hello World"が表示されるテンプレートの出力に組み込まれますモデルを指定することに注意してください。
 
-```
+```csharp
 var template = new RazorView () { Model = "Hello World" };
 var page = template.GenerateString ();
 ```
@@ -249,7 +249,7 @@ IOS シミュレーターと Android エミュレーターでの web ビュー�
 
 このセクションでは作業を開始するためのいくつかの基本的な Razor 構文を紹介することでは、これを使用します。 このセクションの例では、データでは、次のクラスを作成し、Razor を使用して表示します。
 
-```
+```csharp
 public class Monkey {
     public string Name { get; set; }
     public DateTime Birthday { get; set; }
@@ -259,7 +259,7 @@ public class Monkey {
 
 すべての例は、次のデータの初期化コードを使用します
 
-```
+```csharp
 var animal = new Monkey {
     Name = "Rupert",
     Birthday=new DateTime(2011, 04, 01),
@@ -272,7 +272,7 @@ var animal = new Monkey {
 
 モデルがプロパティを持つクラスである場合は、簡単にで参照される、Razor テンプレートこのテンプレートの例に示すように。
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -284,7 +284,7 @@ var animal = new Monkey {
 
 これは、次のコードを使用して文字列に表示することができます。
 
-```
+```csharp
 var template = new RazorView () { Model = animal };
 var page = template.GenerateString ();
 ```
@@ -293,11 +293,11 @@ var page = template.GenerateString ();
 
  ![Rupert](images/image8_516x160.png)
 
-#### <a name="c-statements"></a>C# ステートメント
+#### <a name="c-statements"></a>(C#) ステートメント
 
-複雑な C# モデル プロパティの更新し、この例では年齢の計算など、テンプレートに含めることができます。
+複雑な C# の場合、モデル プロパティの更新プログラムとこの例では年齢の計算など、テンプレートに含めることができます。
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -312,15 +312,15 @@ var page = template.GenerateString ();
 </html>
 ```
 
-使用してコードを囲むことで (年齢を書式設定) などの複雑な単一行 C# 式を作成することができます`@()`です。
+使用してコードを囲むことで (年齢を書式設定) などの複雑な単一行 c# 式を記述する`@()`です。
 
-囲んで、C ## の複数のステートメントを記述できます`@{}`です。
+囲んで、複数の (C#) ステートメントを記述できます`@{}`です。
 
 #### <a name="if-else-statements"></a>If-else ステートメント
 
 コード分岐を表すことができます`@if`このテンプレートの例に示すようにします。
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -341,7 +341,7 @@ var page = template.GenerateString ();
 
 ループ構造と同様に`foreach`も追加できます。 `@`ループ変数のプレフィックスを使用できます (`@food`ここでは) を HTML でレンダリングします。
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -372,9 +372,9 @@ IOS シミュレーターおよび Android エミュレーターで実行され�
 
 このセクションの内容がソリューション テンプレートを Visual studio for mac を使用して、独自のハイブリッド アプリケーションをビルドに使用する方法について説明します 次の 3 つのテンプレートがから利用可能な**ファイル > 新規 > ソリューションしています.**ウィンドウ。
 
--  Android > アプリ > Android WebView アプリケーション
--  iOS > アプリ > WebView アプリケーション
-- ASP.NET MVC Project
+- **Android > アプリ > Android WebView アプリケーション**
+- **iOS > アプリ > WebView アプリケーション**
+- **ASP.NET MVC Project**
 
 
 
@@ -382,7 +382,7 @@ IOS シミュレーターおよび Android エミュレーターで実行され�
 
  ![IPhone、Android のソリューションを作成します。](images/image13_1139x959.png)
 
-簡単に追加することに注意してください、 **.cshtml** Razor テンプレート*任意*既存の Xamarin プロジェクト必要はありませんこれらのソリューション テンプレートを使用します。 iOS のプロジェクトには、いずれも; Razor を使用するストーリー ボードは不要します。任意のビューに UIWebView コントロールをプログラムで単に追加し、全体で C# コード Razor テンプレートを表示することができます。
+簡単に追加することに注意してください、 **.cshtml** Razor テンプレート*任意*既存の Xamarin プロジェクト必要はありませんこれらのソリューション テンプレートを使用します。 iOS のプロジェクトには、いずれも; Razor を使用するストーリー ボードは不要します。任意のビューに UIWebView コントロールをプログラムで単に追加し、c# コードで全体 Razor テンプレートを表示することができます。
 
 IPhone、Android プロジェクトの既定テンプレート ソリューションの内容を次に示します。
 
@@ -406,7 +406,7 @@ IPhone、Android プロジェクトの既定テンプレート ソリューシ�
 
 プロジェクト テンプレートには、ハイブリッド アプリの静的なコンテンツを追加する方法を説明する最小限のスタイル シートが含まれます。 CSS スタイル シートが次のように、テンプレート内で参照します。
 
-```
+```html
 <link rel="stylesheet" href="style.css" />
 ```
 
@@ -414,7 +414,7 @@ IPhone、Android プロジェクトの既定テンプレート ソリューシ�
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml テンプレート
 
-テンプレートには、Razor **.cshtml** HTML または Javascript と c# の間でデータを伝達するためのコードが事前に記述されたファイルです。 これによりできます C# コード処理または記憶域のためにバックアップを作成しないだけモデルからの読み取り専用のデータを表示、HTML でのユーザー入力を受け付けるやも渡すことを高度なハイブリッド アプリをビルドします。
+テンプレートには、Razor **.cshtml** HTML または Javascript と c# の間でデータを伝達するためのコードが事前に記述されたファイルです。 これによりできますしないだけモデルからの読み取り専用のデータを表示、HTML でのユーザー入力を受け付けるやも渡すことを高度なハイブリッド アプリのバックアップ処理または記憶域の c# コードをビルドします。
 
 #### <a name="rendering-the-template"></a>テンプレートの表示
 
@@ -422,23 +422,23 @@ IPhone、Android プロジェクトの既定テンプレート ソリューシ�
 
  ![Razor のフローチャート](images/image12_700x421.png)
 
-#### <a name="calling-c-code-from-the-template"></a>テンプレートから C# コードの呼び出し
+#### <a name="calling-c-code-from-the-template"></a>テンプレートから c# コードの呼び出し
 
-C# へ表示される web ビューからの通信は、web ビューの URL を設定し、web ビューを再読み込みすることがなく、ネイティブの要求を処理する C# で要求を受信して行われます。
+コールバックする C# の場合、レンダリングされた web ビューからの通信は、web ビューの URL を設定し、web ビューを再読み込みすることがなく、ネイティブの要求を処理する C# の場合、要求を受信して行われます。
 
 RazorView のボタンの処理方法の例を確認できます。 次の HTML にこのボタンには。
 
-```
+```html
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
 `InvokeCSharpWithFormValues` Javascript 関数では、すべての値を読み取り、HTML フォームとセットから、 `location.href` web ビュー。
 
-```
+```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
 ```
 
-これを行っていますをカスタム スキームを使用した URL を web ビュー内を移動しよう (`hybrid:`)
+これは、カスタム スキーム (を使用した URL を web ビュー内を移動しよう `hybrid:`)
 
 ```
 hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
@@ -448,31 +448,31 @@ hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
 
 これら 2 つのナビゲーション インターセプターの内部は、基本的に同じです。
 
-最初に、読み込むには、web ビューが開こうとしている URL を確認し、カスタム スキームで始まらない場合 (`hybrid:`)、発生する可能性への移動が通常どおりできます。
+最初に、読み込むには、web ビューが開こうとしている URL を確認し、カスタム スキームで始まらない場合 (`hybrid:`)、発生する可能性への移動を通常どおりに許可します。
 
-カスタムの URL スキームのおすべての処理、スキーム間の URL と"?" (この場合は"UpdateLabel") で処理するメソッド名。 クエリ文字列内のすべてのメソッド呼び出しへのパラメーターとして扱われます。
+スキームの間の URL 内のすべてのカスタムの URL スキームと"?" (この場合は"UpdateLabel") で処理するメソッドの名前です。 クエリ文字列内のすべてのメソッド呼び出しへのパラメーターとして扱われます。
 
-```
+```csharp
 var resources = url.Substring(scheme.Length).Split('?');
 var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-UpdateLabel このサンプルでは、最小限の文字列の操作 ボックスにパラメーターの (付加すること"C ## という '"を文字列に)、し、web ビューにコールバックします。
+`UpdateLabel` このサンプルでは、最小限の文字列操作 (「c# という」文字列を付加すること、) ボックスにパラメーターとし、web ビューに返信します。
 
-URL の処理の最後に、web ビューは、カスタムの URL への移動を完了しようとはしませんようににナビゲーションを中止します。
+URL を処理するには、後に、メソッドは、web ビューがカスタム URL への移動を完了しないようにナビゲーションを中止します。
 
 #### <a name="manipulating-the-template-from-c"></a>C# からテンプレートを操作します。
 
 C# からレンダリングされた HTML web ビューへの通信は、web ビューに Javascript を呼び出すことによって行われます。 Ios、呼び出すことによってこれは、 `EvaluateJavascript` UIWebView で。
 
-```
+```csharp
 webView.EvaluateJavascript (js);
 ```
 
 Android で Javascript によって呼び出される web ビューとして URL を使用して、Javascript を読み込み、 `"javascript:"` URL スキーム。
 
-```
+```csharp
 webView.LoadUrl ("javascript:" + js);
 ```
 

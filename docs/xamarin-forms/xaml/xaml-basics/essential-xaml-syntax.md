@@ -3,16 +3,16 @@ title: "第 2 部: 重要な XAML 構文"
 description: "XAML は、ほとんどの場合、インスタンス化して、オブジェクトの初期化用です。 多くの場合、XML 文字列として簡単に表現できない複雑なオブジェクトにプロパティを設定する必要があり、子クラスの 1 つのクラスによって定義されたプロパティを設定する必要があります。 これら 2 つのニーズは、プロパティ要素と添付プロパティの不可欠な XAML 構文の機能が必要です。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f99d4b177f5957b2e5f8c22171fe92799af8505a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部: 重要な XAML 構文
 
@@ -253,7 +253,7 @@ XAML ファイルの先頭をここでは、`GridDemoPage`クラスのプロパ�
 
 どのように 3 つすべてのプラットフォームで次に示します。
 
-[ ![](essential-xaml-syntax-images/griddemo.png "グリッド レイアウト")](essential-xaml-syntax-images/griddemo-large.png "グリッド レイアウト")
+[![](essential-xaml-syntax-images/griddemo.png "グリッド レイアウト")](essential-xaml-syntax-images/griddemo-large.png#lightbox "グリッド レイアウト")
 
 内部、構文の情報だけを頼りこれら`Grid.Row`、 `Grid.Column`、 `Grid.RowSpan`、および`Grid.ColumnSpan`の静的フィールドまたはプロパティである属性が表示される`Grid`が興味深いことに、`Grid`というものが定義されていません`Row`、 `Column`、 `RowSpan`、または`ColumnSpan`です。
 
@@ -310,7 +310,7 @@ XAML ファイルの先頭をここでは、`GridDemoPage`クラスのプロパ�
 
 次に示します。
 
-[ ![](essential-xaml-syntax-images/absolutedemo-large.png "絶対レイアウト")](essential-xaml-syntax-images/absolutedemo-large.png "絶対レイアウト")
+[![](essential-xaml-syntax-images/absolutedemo-large.png "絶対レイアウト")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "絶対レイアウト")
 
 次のように、なんらかの XAML を使用しての知識を質問可能性があります。 確かに、繰り返しおよびの規制、`LayoutBounds`四角形は、その可能性がありますよりで実現コードを提案します。
 

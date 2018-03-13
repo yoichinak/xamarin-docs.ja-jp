@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 17b9c14579b30ea27d700424c52c94c3b3da9146
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7819201e76e268ea84bf2cc5d49a5a07b20a04e3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="programmatic-layout-constraints"></a>プログラムによるレイアウト制約
 
@@ -69,7 +69,7 @@ OrangeView.HeightAnchor.ConstraintEqualTo (OrangeView.WidthAnchor, 2.0f);
 
 一般的なレイアウト制約は、単に線形の式として表現できます。 次の例を参照してください。
 
-[ ![](programmatic-layout-constraints-images/graph01.png "直線の式で表されるレイアウト制約")](programmatic-layout-constraints-images/graph01.png)
+[![](programmatic-layout-constraints-images/graph01.png "直線の式で表されるレイアウト制約")](programmatic-layout-constraints-images/graph01.png#lightbox)
 
 レイアウトのアンカーを使用して c# コードの次の行に変換されます。
 

@@ -4,18 +4,17 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d20b2aa7df17f2000e2de9cb67f091c52989719b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 39ee7f826d4c775ead679a09ce56a7c0f92b60ed
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="permissions-in-xamarinandroid"></a>Permissions In Xamarin.Android
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -42,7 +41,7 @@ Android アプリは、実行時に、保護されたリソースにアクセス
 
 チェックとアクセス許可の要求のワークフロー全体と呼ばれる、_実行時の権限_を確認して、次の図で集計されることができます。 
 
-[ ![実行時アクセス権チェックのフロー チャート](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png)
+[![実行時アクセス権チェックのフロー チャート](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
 Android のサポート ライブラリ backports Android の以前のバージョンへのアクセス許可用の新しい Api の一部です。 API レベル チェックを毎回実行する必要はありませんので、これら移植された Api は自動的にデバイスで Android のバージョンに確認します。  
 
@@ -50,7 +49,7 @@ Android のサポート ライブラリ backports Android の以前のバージ�
 
 
 > [!NOTE]
-> **注:**なっても、アプリは Google Play でフィルター処理する方法にハードウェアのアクセス許可が変わる可能性があります。 たとえば、アプリでは、カメラのアクセス許可が必要とする場合、Google Play は表示されませんアプリ カメラがインストールされていないデバイスで Google Play ストアで。
+> アプリは Google Play でフィルター処理する方法にハードウェアのアクセス許可が変わる可能性があります。 たとえば、アプリでは、カメラのアクセス許可が必要とする場合、Google Play は表示されませんアプリ カメラがインストールされていないデバイスで Google Play ストアで。
 
 
 <a name="requirements" />
@@ -59,7 +58,6 @@ Android のサポート ライブラリ backports Android の以前のバージ�
 
 Xamarin.Android プロジェクトが含まれていることを強くお勧め、 [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) NuGet パッケージです。 このパッケージは移植権限が提供する 1 つの一般的な Android の古いバージョンを特定の Api インターフェイスは、常にする必要はありませんは、Android でアプリが実行されているのバージョンを確認します。
 
-<a name="requesting_permissions" />
 
 ## <a name="requesting-system-permissions"></a>システムのアクセス許可を要求します。
 
@@ -68,9 +66,8 @@ Android アクセス許可の操作の最初の手順では、マニフェスト
 またはアプリを対象に Android 6.0 以上できないために受け継がれることをユーザーは、アクセス許可が有効であること、次回までは、ある時点で権限を取得します。 Android 6.0 を対象とするアプリでは、ランタイム アクセス許可のチェックを常に実行する必要があります。 Android 5.1 または下限を対象とするアプリは、実行時アクセス許可チェックを実行する必要はありません。
 
 > [!NOTE]
-> **注:**アプリケーションのみが必要なアクセス許可を要求する必要があります。
+> アプリケーションは、必要なアクセスのみを要求する必要があります。
 
-<a name="declaring_permissions_in_the_manifest" />
 
 ### <a name="declaring-permissions-in-the-manifest"></a>マニフェストにアクセス許可を宣言します。
 
@@ -87,15 +84,15 @@ Visual Studio に組み込まれているツールのサポートを使用して
 
 1. ダブルクリックして**プロパティ**で、**ソリューション エクスプ ローラー**を選択し、 **Android マニフェスト** タブで、プロパティ ウィンドウ。
 
-    [![Android マニフェスト タブで必要なアクセス許可](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png)
+    [![Android マニフェスト タブで必要なアクセス許可](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
 2. クリックして、アプリケーションがまだない場合、AndroidManifest.xml、**いいえ AndroidManifest.xml が見つかりました。いずれかの追加 をクリックします。**次のようにします。
 
-    [![AndroidManifest.xml メッセージはありません。](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png)
+    [![AndroidManifest.xml メッセージはありません。](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
 3. アプリケーションが必要なアクセス許可を選択して、**アクセス許可を必要な**を一覧表示し、保存します。
 
-    [![選択されているカメラ アクセス許可の例](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png)
+    [![選択されているカメラ アクセス許可の例](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -103,15 +100,15 @@ Mac 用 Visual Studio に組み込まれているツールのサポートを使�
 
 1. プロジェクトをダブルクリックして、**ソリューション パッド**選択**オプション > ビルド > Android アプリケーション**:
 
-    [![必要なアクセス許可のセクションに表示](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png)
+    [![必要なアクセス許可のセクションに表示](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
 2. クリックして、 **Android マニフェストの追加**ボタン プロジェクトがまだない場合、 **AndroidManifest.xml**:
 
-    [![プロジェクトの Android マニフェストが見つかりません](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png)
+    [![プロジェクトの Android マニフェストが見つかりません](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
 3. アプリケーションが必要なアクセス許可を選択して、**アクセス許可を必要な**を一覧表示し、をクリックして**OK**:
 
-    [![選択されているカメラ アクセス許可の例](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png)
+    [![選択されているカメラ アクセス許可の例](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
@@ -119,7 +116,6 @@ Xamarin.Android が自動的に追加のアクセス許可ビルド時にデバ�
 
 Android 5.1 (API レベル 22) または小文字を対象とするアプリの場合は詳細行う必要があります。 Android 6.0 (API 23 level 23) 以降を実行するアプリは、実行時の権限の確認を実行する方法には、次のセクションに進みます必要があります。 
 
-<a name="run_time_permission_checks" />
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Android 6.0 で実行時の権限を確認します。
 
@@ -213,7 +209,6 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

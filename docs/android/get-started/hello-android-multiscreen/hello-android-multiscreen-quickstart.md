@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 4c61a588eafdf0a86f4124d264c41cabef3e7a14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android マルチスクリーン: クイック スタート
 
@@ -22,7 +22,7 @@ _この 2 部構成のガイドでは、Phoneword アプリケーションを拡
 
 このガイドのチュートリアル部分では、[Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) アプリケーションに 2 つ目の画面を追加して、アプリを使用して変換した番号の履歴を追跡し続けます。 [最終的なアプリケーション](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/)には、右のスクリーンショットのように、"変換された" 番号を表示する 2 つ目の画面が表示されます。
 
-[![例のアプリのスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![例のアプリのスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 付随する[深い分析](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)では、ビルドされたものを確認し、アーキテクチャ、ナビゲーション、およびその過程で発生したその他の新しい Android 概念について説明します。
 
@@ -44,15 +44,15 @@ _この 2 部構成のガイドでは、Phoneword アプリケーションを拡
 
 **[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[TranslatedPhoneWord]** TextView の下に配置します。 **[プロパティ]** ウィンドウで、ボタン **ID** を `@+id/TranslationHistoryButton` に変更します。 
 
-[![新しいボタンをドラッグ](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png)
+[![新しいボタンをドラッグ](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
 ボタンの **[テキスト]** プロパティを `@string/translationHistory` に設定します。 Android Designer はこれを文字どおりに解釈しますが、ボタンのテキストが正しく表示されるようにいくつかの変更を行います。
 
-[![変換履歴ボタンのテキストを設定する](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png)
+[![変換履歴ボタンのテキストを設定する](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png#lightbox)
 
 **ソリューション エクスプローラー**で **[リソース]** フォルダーの下の**値**ノードを展開し、文字列リソース ファイル **Strings.xml** をダブルクリックします。
 
-[![Strings.xml を開く](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png)
+[![Strings.xml を開く](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png#lightbox)
 
 `translationHistory` 文字列の名前と値を **Strings.xml** ファイルに追加して保存します。
 
@@ -66,17 +66,17 @@ _この 2 部構成のガイドでは、Phoneword アプリケーションを拡
 
 **変換履歴**ボタンのテキストが、新しい文字列値を反映するように更新される必要があります。
 
-[![新しい文字列値が反映されたボタン](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)
+[![新しい文字列値が反映されたボタン](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png#lightbox)
 
 デザイン サーフェスで**変換履歴**ボタンを選択して、**[プロパティ]** ウィンドウで `enabled` 設定を見つけ、その値を `false` に設定してボタンを無効にします。 これによりデザイン サーフェイス上でボタンが暗くなります。
 
-[![変換履歴ボタンを無効にする](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png)
+[![変換履歴ボタンを無効にする](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>2 つ目のアクティビティの作成
 
 2 番目の画面の電源を投入する 2 番目のアクティビティを作成します。 **ソリューション エクスプローラー**で **Phoneword** プロジェクトを右クリックし、**[追加]、[新しい項目]** を選択します。
 
-[![新しいアイテムの追加](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png)
+[![新しいアイテムの追加](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
 **[新しい項目の追加]** ダイアログで、**[Visual C#]、[アクティビティ]** の順に選択し、アクティビティ ファイルに **TranslationHistoryActivity.cs** という名前を付けます。
 
@@ -171,7 +171,7 @@ translateButton.Click += (sender, e) =>
 
 エミュレーターまたはデバイスにアプリケーションを展開します。 次のスクリーンショットは、実行中の **Phoneword** アプリケーションを示しています。
 
-[![例のスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![例のスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -181,16 +181,16 @@ translateButton.Click += (sender, e) =>
 
 **[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[TranslatedPhoneWord]** TextView の下に配置します。 **[プロパティ]** パッドで、ボタン **ID** を `@+id/TranslationHistoryButton` に変更します。 
 
-[![新しいボタンをドラッグ](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png)
+[![新しいボタンをドラッグ](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
 ボタンの **[テキスト]** プロパティを `@string/translationHistory` に設定します。 Android Designer はこれを文字どおりに解釈しますが、ボタンのテキストが正しく表示されるようにいくつかの変更を行います。
 
-[![変換履歴ボタンのテキストを設定する](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png)
+[![変換履歴ボタンのテキストを設定する](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png#lightbox)
 
 
 **Solution Pad** で **[リソース]** フォルダーの下の**値**ノードを展開し、文字列リソース ファイル **Strings.xml** をダブルクリックします。
 
-[![文字列を開く](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png)
+[![文字列を開く](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png#lightbox)
 
 
 `translationHistory` 文字列の名前と値を **Strings.xml** ファイルに追加して保存します。
@@ -205,12 +205,12 @@ translateButton.Click += (sender, e) =>
 
 **変換履歴**ボタンのテキストが、新しい文字列値を反映するように更新される必要があります。
 
-[![新しい文字列値が反映されたボタン](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png)
+[![新しい文字列値が反映されたボタン](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
 
 
 デザイン サーフェスで**変換履歴**ボタンを選択して、**Properties Pad** で **[動作]** タブを開き、**[有効]** チェック ボックスをダブルクリックして、ボタンを無効にします。 これによりデザイン サーフェイス上でボタンが暗くなります。
 
-[![変換履歴ボタンを無効にする](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png)
+[![変換履歴ボタンを無効にする](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>2 つ目のアクティビティの作成
 
@@ -304,7 +304,7 @@ translateButton.Click += (sender, e) =>
 
 エミュレーターまたはデバイスにアプリケーションを展開します。 次のスクリーンショットは、実行中の **Phoneword** アプリケーションを示しています。
 
-[![例のスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![例のスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 -----
 

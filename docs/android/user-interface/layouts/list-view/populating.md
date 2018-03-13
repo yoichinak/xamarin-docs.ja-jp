@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 74d8533d0a757a307d88125701a482dfefd5eec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12197d238ddc6ddc2bd8f48f77aa15f5eff22a0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-listview-with-data"></a>データで ListView を設定します。
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -23,7 +22,6 @@ ms.lasthandoff: 02/27/2018
 
 組み込みアダプターは、行ごとに使用されるパラメーターとしてビュー リソース ID を取得します。 などの組み込みのリソースを使用できる`Android.Resource.Layout`なくてできるように書き込む独自です。
 
-<a name="Using_ListActivity_and_ArrayAdapterString" />
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>ListActivity および ArrayAdapter を使用して&lt;文字列&gt;
 
@@ -43,13 +41,12 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-<a name="Handling_Row_Clicks" />
 
 ### <a name="handling-row-clicks"></a>クリックした行の処理
 
 通常、`ListView`も (、曲の再生の問い合わせ、または別の画面を表示) などのいくつかの操作を実行する行をタッチするユーザーに許可します。 応答するユーザー仕上げのいずれかを指定する必要が複数のメソッドとして実装された、 `ListActivity` &ndash; `OnListItemClick` &ndash;次のようにします。
 
-[![SimpleListItem のスクリーン ショット](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png)
+[![SimpleListItem のスクリーン ショット](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -61,9 +58,8 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 これで、ユーザーが行をタッチしたりしても、`Toast`警告が表示されます。
 
-[![スクリーン ショットのトースト行が影響を受けるときに表示されます。](populating-images/basictable2.png)](populating-images/basictable2.png)
+[![スクリーン ショットのトースト行が影響を受けるときに表示されます。](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
-<a name="Implementing_a_ListAdapter" />
 
 ## <a name="implementing-a-listadapter"></a>ListAdapter を実装します。
 
@@ -110,7 +106,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-<a name="Using_a_Custom_Adapter" />
 
 ### <a name="using-a-custom-adapter"></a>カスタム アダプターを使用します。
 
@@ -122,7 +117,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 
 この例は、同じ行のレイアウトを使用しているため (`SimpleListItem1`)、生成されたアプリケーションは、前の例と同じになります。
 
-<a name="Row_View_Re-Use" />
 
 ### <a name="row-view-re-use"></a>行ビューを再利用
 
@@ -147,13 +141,12 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 一部のアダプター実装 (など、 `CursorAdapter`) がない、`GetView`メソッド、2 つの方法が必要ではなく`NewView`と`BindView`の役割を分離することにより行が再利用を強制する`GetView`を 2 つにメソッド。 `CursorAdapter`ドキュメントの後半の例です。
 
-<a name="Enabling_Fast_Scrolling" />
 
 ## <a name="enabling-fast-scrolling"></a>高速スクロールを有効にします。
 
 スクロールの高速では、ユーザーが、追加 'のハンドル' リストの一部に直接アクセスするスクロール バーとして機能することにより長い一覧をスクロールするのに役立ちます。 このスクリーン ショットは、高速スクロール ハンドルを示しています。
 
-[![スクロールのハンドルを高速スクロールのスクリーン ショット](populating-images/fastscroll.png)](populating-images/fastscroll.png)
+[![スクロールのハンドルを高速スクロールのスクリーン ショット](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 設定などの単純な原因で、高速スクロールへのハンドルが表示されますが、`FastScrollEnabled`プロパティを`true`:
 
@@ -161,13 +154,12 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 ListView.FastScrollEnabled = true;
 ```
 
-<a name="Adding_a_Section_Index" />
 
 ### <a name="adding-a-section-index"></a>セクションのインデックスを追加します。
 
 セクション インデックスは、長いリストを速くスクロールされるときにユーザーの追加のフィードバックを提供&ndash;どの 'section' にスクロールしてそれらを示しています。 アダプターのサブクラスを実装する必要がありますを表示するセクションのインデックスが発生する、`ISectionIndexer`によっては表示されている行のインデックスのテキストを指定するインターフェイス。
 
-[![H で始まるセクションの上に表示される H のスクリーン ショット](populating-images/sectionindex.png)](populating-images/sectionindex.png)
+[![H で始まるセクションの上に表示される H のスクリーン ショット](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 実装する`ISectionIndexer`アダプターに次の 3 つのメソッドを追加する必要があります。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 15f198465c544989b347fe534978956741478ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e03acbbac737bffd21ee3b592ab017d227f822ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-compression"></a>レイアウト圧縮
 
@@ -60,7 +60,7 @@ Xamarin.Forms でレイアウトを実行する方法の詳細については、
 レイアウトの圧縮は、iOS および Android プラットフォームで Xamarin.Forms アプリケーションで使用できますは、ページのレンダリング パフォーマンスを向上させることができます、ビジュアル ツリーから指定したレイアウトを削除することで入れ子ビューを平坦化する目的としています。 提供されるパフォーマンスの利点は、ページ、使用されているオペレーティング システムのバージョンおよびアプリケーションが実行されているデバイスの複雑さによって異なります。 ただし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
 
 > [!NOTE]
-> **注**: この記事では、Android でレイアウトの圧縮を適用した結果に焦点を当てています、これは iOS にも適用されます。
+> この記事では、Android でレイアウトの圧縮を適用した結果に焦点を当てていますは、iOS にも適用されます。
 
 ## <a name="layout-compression"></a>レイアウト圧縮
 

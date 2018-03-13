@@ -3,14 +3,15 @@ title: "第 15 章の概要です。 対話型のインターフェイス"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e6c61f9a6ba66db2b9a5c7b217c7da952607e709
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 37bbbf2b89048db175ddc1b3b1a24cea92b898a7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要です。 対話型のインターフェイス
 
@@ -105,7 +106,7 @@ Xamarin.Forms にはから派生した 20 のインスタンス化可能なク�
 
 [ **RgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders)プログラムでは、3 種類を含む`Slider`対話形式で、RGB 値を指定して色を選択するように要求する要素。
 
-[![R G B スライダーのトリプル スクリーン ショット](images/ch15fg03-small.png "RGB スライダー")](images/ch15fg03-large.png "RGB スライダー")
+[![R G B スライダーのトリプル スクリーン ショット](images/ch15fg03-small.png "RGB スライダー")](images/ch15fg03-large.png#lightbox "RGB スライダー")
 
 [ **TextFade** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade)サンプルを使用して 2 つ`Slider`2 つを移動する要素`Label`要素を`AbsoluteLayout`フェードを他のいずれかとします。
 
@@ -266,5 +267,5 @@ Xamarin.Forms では、ユーザー入力し、編集を許可する 3 つのビ
 
 - [第 15 章「フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
 - [第 15 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
-- [Entry](~/xamarin-forms/user-interface/text/entry.md)
+- [エントリ](~/xamarin-forms/user-interface/text/entry.md)
 - [[エディター]](~/xamarin-forms/user-interface/text/editor.md)

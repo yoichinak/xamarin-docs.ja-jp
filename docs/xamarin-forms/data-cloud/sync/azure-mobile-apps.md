@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b7756c63901d3b4fbfea70587b3fdf8e5cf9df72
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 965d4987c154acc5a2f95d4ca622266ebdc2a1c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Azure のモバイル アプリを使用してオフラインのデータの同期
 
@@ -133,7 +133,7 @@ public async Task SyncAsync()
 Äs ' í プル、`IMobileServiceSyncTable.PullAsync`メソッドを 1 つのテーブルです。 最初のパラメーター、`PullAsync`メソッドは、モバイル デバイスでのみ使用されるクエリ名。 Null でないクエリを実行する Azure のモバイル クライアント SDK の名前の結果を提供する、*差分同期*場所ごとに、プル操作の結果を返す最新、`updatedAt`結果からのタイムスタンプが、ローカルに格納されています。システム テーブル。 その後にプル操作は、そのタイムスタンプの後に、レコードをのみ取得されます。 または、*完全な同期*を渡すことによって実現できます`null`クエリ名としてその結果、各プル操作で取得されているすべてのレコードです。 次のすべての同期操作は、受信したデータは、ローカル ストアに挿入されます。
 
 > [!NOTE]
-> **注**: 保留中のローカルの更新があるテーブルに対して、プルを実行する場合、プルは最初に実行、プッシュ、同期コンテキストでします。 これは、既にキューに登録の変更と、Azure Mobile Apps インスタンスからの新しいデータ間の競合を最小化します。
+> プルが保留中のローカルの更新があるテーブルに対して実行される場合、プルは最初に実行されている同期コンテキストでプッシュを使用します。 これは、既にキューに登録の変更と、Azure Mobile Apps インスタンスからの新しいデータ間の競合を最小化します。
 
 `SyncAsync`メソッドにも、Azure Mobile Apps インスタンスと、両方のローカル ストアで同じレコードが変更されたときに競合を処理するための基本的な実装が含まれています。 競合しているローカル ストアと、Azure Mobile Apps インスタンスの両方にデータが更新されているときに、`SyncAsync`メソッドは、Azure Mobile Apps インスタンスに格納されたデータからローカル ストア内のデータを更新します。 その他のすべての競合が発生したときに、`SyncAsync`メソッドは、ローカルの変更を破棄します。 Azure Mobile Apps インスタンスから削除されているデータのローカルの変更が存在するシナリオが処理されます。
 
@@ -150,7 +150,7 @@ await todoTable.PurgeAsync(todoTable.Where(item => item.Done));
 呼び出し`PurgeAsync`もプッシュ操作をトリガーします。 そのため、ローカルで完了としてマークされているすべての項目は、ローカル ストアから削除される前に Azure Mobile Apps インスタンスに送信されます。 ただし、Azure Mobile Apps インスタンスとの同期を保留中の操作がある場合、消去がスローされます、`InvalidOperationException`しない限り、`force`にパラメーターが設定されている`true`です。 他の方法は、調べること、`IMobileServiceSyncContext.PendingOperations`プロパティで、保留中の Azure Mobile Apps インスタンスにプッシュされていないし、プロパティが 0 の場合にのみ、消去を実行する操作の数を返します。
 
 > [!NOTE]
-> **注**: 呼び出す`PurgeAsync`で、`force`パラメーターに設定`true`保留中の変更は失われます。
+> 呼び出す`PurgeAsync`で、`force`パラメーターに設定`true`保留中の変更は失われます。
 
 ## <a name="initiating-synchronization"></a>同期を開始しています
 

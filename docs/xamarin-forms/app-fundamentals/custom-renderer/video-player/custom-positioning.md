@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d4446d30491ee796ca93eadf2e107fc9d74748df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e7f2ad9e94d68007b1b7d0cca212cd51515a0108
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-positioning"></a>ビデオのカスタムの配置
 
@@ -472,7 +472,7 @@ UWP について[ `MediaElement` ](/uwp/api/Windows.UI.Xaml.Controls.MediaElemen
 
 最初の省略記号ボタン (···) を非表示に、 `ActivityIndicator`; は、前のものと同じ**カスタム トランスポート**ページ。 2 つのことを確認`Label`要素を表示する、`Position`と`TimeToEnd`プロパティです。 これら 2 つの間で、省略記号`Label`要素には、2 つが非表示に`Button`に表示される要素、**カスタム トランスポート**ページの再生、一時停止、および停止します。 分離コード ロジックと同じではまた、**カスタム トランスポート**ページ。
 
-[![カスタム配置](custom-positioning-images/custompositioning-small.png "カスタム配置")](custom-positioning-images/custompositioning-large.png "カスタム配置")
+[![カスタム配置](custom-positioning-images/custompositioning-small.png "カスタム配置")](custom-positioning-images/custompositioning-large.png#lightbox "カスタム配置")
 
 説明は、この時点で、`VideoPlayer`です。
 

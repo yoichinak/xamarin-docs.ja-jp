@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: cddf3c58020b534abdc1541d967a9a7f5a4d891a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="images"></a>イメージ
 
@@ -79,7 +79,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 次のスクリーン ショットは、ローカルのイメージを表示する各プラットフォームでの結果を表示します。
 
-[ ![ローカルの ImageSource](images-images/local-sml.png "サンプル アプリケーションがローカルのイメージを表示する")](images-images/local.png "サンプル アプリケーションがローカルのイメージを表示します。")
+[![ローカルの ImageSource](images-images/local-sml.png "サンプル アプリケーションがローカルのイメージを表示する")](images-images/local.png#lightbox "サンプル アプリケーションがローカルのイメージを表示します。")
 
 柔軟性を高めるため、`Device.RuntimePlatform`このコード例で示すように、別のイメージ ファイルまたはパスの一部またはすべてのプラットフォームを選択するプロパティを使用できます。
 
@@ -102,7 +102,7 @@ IOS 9 の場合は前に、retina バージョンのイメージを配置する�
 
 Android の代替解像度のイメージを配置する必要があります[特別にという名前のディレクトリ](http://developer.android.com/guide/practices/screens_support.html)Android プロジェクトで、次のスクリーン ショットに示すようにします。
 
-[![Android の複数の解像度のイメージの場所](images-images/xs-highdpisolution-sml.png "Android の複数の解像度のイメージの場所")](images-images/xs-highdpisolution.png "Android の複数の解像度のイメージの場所")
+[![Android の複数の解像度のイメージの場所](images-images/xs-highdpisolution-sml.png "Android の複数の解像度のイメージの場所")](images-images/xs-highdpisolution.png#lightbox "Android の複数の解像度のイメージの場所")
 
 ### <a name="additional-controls-that-display-images"></a>その他のコントロール イメージを表示します。
 
@@ -159,7 +159,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 
 次のスクリーン ショットは、各プラットフォームで埋め込み画像を表示する結果を表示します。
 
-[ ![ResourceImageSource](images-images/resource-sml.png "サンプル アプリケーションの埋め込み画像を表示する")](images-images/resource.png "サンプル アプリケーションの埋め込み画像を表示します。")
+[![ResourceImageSource](images-images/resource-sml.png "サンプル アプリケーションの埋め込み画像を表示する")](images-images/resource.png#lightbox "サンプル アプリケーションの埋め込み画像を表示します。")
 
 <a name="Embedded_Images_in_Xaml" />
 
@@ -261,7 +261,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 次のスクリーン ショットは、各プラットフォームでのリモート イメージを表示する結果を表示します。
 
-[![ダウンロード ImageSource](images-images/download-sml.png "サンプル アプリケーションをダウンロードしたイメージを表示する")](images-images/download.png "サンプル アプリケーションをダウンロードしたイメージを表示します。")
+[![ダウンロード ImageSource](images-images/download-sml.png "サンプル アプリケーションをダウンロードしたイメージを表示する")](images-images/download.png#lightbox "サンプル アプリケーションをダウンロードしたイメージを表示します。")
 
 <a name="Image_Caching" />
 

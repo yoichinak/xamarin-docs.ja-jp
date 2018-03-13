@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: dda7597456421aa4ae401f56ed6cfc7983df29c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging でリモートの通知
 
@@ -53,7 +53,7 @@ Google Cloud Messaging からメッセージを受信する、 [Google Play サ�
 
 Visual Studio を右クリックして**参照 > NuGet パッケージの管理.**; for Mac を Visual Studio で右クリック**パッケージ > パッケージを追加しています.**.検索**Xamarin Google Play サービス - GCM**にこのパッケージをインストールし、 **ClientApp**プロジェクト。 
 
-[ ![Google Play サービスをインストールします。](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png)
+[![Google Play サービスをインストールします。](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
 
 インストールするときに**Xamarin Google Play サービス - GCM**、 **Xamarin Google Play サービスのベース**は自動的にインストールします。 エラーが発生した場合は、変更、プロジェクトの*ターゲットに最低限の Android*以外の値に設定**SDK のバージョンを使用してコンパイル**と NuGet のインストールをもう一度やり直してください。 
 
@@ -76,7 +76,7 @@ GCM からメッセージを受信するには、Google Play ストア アプリ
 
 [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)、GCM を有効にしたアプリのパッケージ名を指定して (このパッケージの名前としても、*アプリケーション ID*マイクロソフトの API キーと送信者 ID に関連付けられている)。 プロパティを開いてみましょう、 **ClientApp**プロジェクトし、パッケージ名をこの文字列に設定します。 この例では、パッケージ名に設定`com.xamarin.gcmexample`:
 
-[ ![パッケージ名を設定します。](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png)
+[![パッケージ名を設定します。](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
 
 クライアント アプリがこのパッケージ名がない場合は、GCM から登録トークンを受信することはできませんに注意してください*まったく*Google 開発者コンソールに入力して、パッケージ名と一致します。 
 
@@ -192,7 +192,7 @@ protected override void OnCreate (Bundle bundle)
 
 みましょう完全に再構築し、アプリを実行します。 次のスクリーン ショットのような画面が表示されます。 
 
-[ ![Google Play サービスが利用可能です](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png)
+[![Google Play サービスが利用可能です](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
 
 この結果が得られない場合は、Google プレイ サービス APK がデバイスにインストールされていることを確認してください、 **Xamarin Google Play サービス - GCM**パッケージに追加、 **ClientApp**前述のようにプロジェクト。先ほどの。 ビルド エラーが発生した場合、ソリューションをクリーンアップし、プロジェクトを再度ビルドしてください。 
 
@@ -271,11 +271,11 @@ namespace ClientApp
 
 1.  ログイン、 [Google Cloud コンソール](https://console.cloud.google.com/)プルダウン メニューから、プロジェクト名を選択します。 **プロジェクト情報**プロジェクトに表示されているウィンドウのをクリックして**プロジェクトの設定を移動**:
 
-    [![XamarinGCM プロジェクトを選択します。](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png)
+    [![XamarinGCM プロジェクトを選択します。](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
 2.  **設定** ページで、検索、**プロジェクト番号**&ndash;これは、プロジェクトの送信者 ID:
 
-    [![プロジェクトの数が表示されます。](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png)
+    [![プロジェクトの数が表示されます。](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
 開始する、`RegistrationIntentService`アプリが実行を開始するときにします。 編集**MainActivity.cs**および変更、`OnCreate`メソッドできるように、 `RegistrationIntentService` Google Play サービスの存在を確認した後に開始します。 
 
@@ -548,7 +548,7 @@ C# デスクトップ コンソール アプリケーション プロジェク�
 
 探してみましょう、 **Json.NET**をパッケージ化し、プロジェクトにインストールします。 
 
-[ ![Json.NET のパッケージをインストールします。](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png)
+[![Json.NET のパッケージをインストールします。](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
 
 #### <a name="add-a-reference-to-systemnethttp"></a>System.Net.Http への参照を追加します。
@@ -630,7 +630,6 @@ namespace MessageSender
 GCM は、さらに、クライアント アプリケーションには、このメッセージを転送します。 構築してみましょう**MessageSender**コマンドラインから実行ここで、コンソール ウィンドウを開きます。
 
 
-<a name="tryit" />
 
 ### <a name="try-it"></a>手順を次に示します。
 
@@ -666,11 +665,11 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 さらに、新しい通知アイコンが通知のトレイに表示されているが発生する必要があります。 
 
-[ ![デバイスに表示される Notiication アイコン](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png)
+[![デバイスに表示される Notiication アイコン](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 通知を表示する通知トレイを開くと、リモートの通知が表示されます。
 
-[ ![通知メッセージが表示されます。](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png)
+[![通知メッセージが表示されます。](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
 
 以上で、アプリがその最初のリモートの通知を受信しました。
 

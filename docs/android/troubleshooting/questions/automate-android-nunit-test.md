@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a5f98fc351c879be55475808b5ab412449dadc7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 11b693193b36a80b55a61308d98b76f4f6984e8a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法は?
 
 > [!NOTE]
-> **注:**このガイドについて Xamarin.UITest プロジェクトではなく、Android NUnit テスト プロジェクトを設定するための手順を説明します。 Xamarin.UITest ガイドを参照して[ここ](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)です。
+> このガイドでは、Android NUnit テスト プロジェクトを Xamarin.UITest プロジェクトではなくを設定するための手順について説明します。 Xamarin.UITest ガイドを参照して[ここ](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)です。
 
 Android の単体テスト プロジェクト [Visual Studio for Mac] または単体テスト アプリ (Android) [Visual Studio] を作成するときに既定では、自動的にテスト実行しませんが、します。
 Android 単体テストを自動化する: テストを実行する NUnit、ターゲット デバイスで、使用して、`Android.App.Instrumentation`サブクラスでは、作成を使用して実行できる、`adb shell am instrument`コマンド。

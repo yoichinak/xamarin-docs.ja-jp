@@ -4,14 +4,15 @@ description: "クリップの画像へのパスを使用して、領域を作成
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: b1c5b64725a163e15f07d2aecaea4e56b7ecec2e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でクリッピング
 
@@ -98,7 +99,7 @@ canvas.ClipPath(keyholePath);
 
 `PaintSurface`ハンドラーを呼び出して変換をリセットし、`ResetMatrix`し、画面の高さに拡張するビットマップを描画します。 このコードでは、ビットマップがある正方形では、この特定のビットマップを前提としています。 クリッピング パスを使用して定義される領域内でのみ、ビットマップを描画します。
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Keyhole ページを通じてサル用のトリプル スクリーン ショット")](clipping-images/monkeythroughkeyhole-large.png "Keyhole ページを通じてサル用のトリプル スクリーン ショット")
+[![](clipping-images/monkeythroughkeyhole-small.png "Keyhole ページを通じてサル用のトリプル スクリーン ショット")](clipping-images/monkeythroughkeyhole-large.png#lightbox "Keyhole ページを通じてサル用のトリプル スクリーン ショット")
 
 クリッピング パスが有効でとき、変換の対象、`ClipPath`メソッドが呼び出されない、変換に有効で、グラフィカル オブジェクト (ビットマップ) などが表示される場合。 クリッピング パスはと共に保存されるキャンバス状態の一部である、`Save`メソッドで復元されると、`Restore`メソッドです。
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 これら 4 つの円の交差部分。
 
-[![](clipping-images//fourcircleintersectclip-small.png "次の 4 つの円が交差するクリップのページのスクリーン ショットをトリプル")](clipping-images/fourcircleintersectclip-large.png "円が交差するクリップの 4 つのページのトリプル スクリーン ショット")
+[![](clipping-images//fourcircleintersectclip-small.png "次の 4 つの円が交差するクリップのページのスクリーン ショットをトリプル")](clipping-images/fourcircleintersectclip-large.png#lightbox "円が交差するクリップの 4 つのページのトリプル スクリーン ショット")
 
 [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/)列挙体には 2 つのメンバー。
 
@@ -175,13 +176,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 4 つを置換する場合`SKClipOperation.Intersect`の引数、`FourCircleIntersectClipPage`クラス`SKClipOperation.Difference`次が表示されます。
 
-[![](clipping-images//fourcircledifferenceclip-small.png "トリプル ページのスクリーン ショット、4 つの円が交差するクリップ差分演算と")](clipping-images/fourcircledifferenceclip-large.png "トリプル ページのスクリーン ショット、4 つの円が交差するクリップ差分演算で")
+[![](clipping-images//fourcircledifferenceclip-small.png "トリプル ページのスクリーン ショット、4 つの円が交差するクリップ差分演算と")](clipping-images/fourcircledifferenceclip-large.png#lightbox "トリプル ページのスクリーン ショット、4 つの円が交差するクリップ差分演算で")
 
 4 つの重なり合う円は、クリッピング領域から削除されています。
 
 **クリップ操作**ページは、これら 2 つの操作で、円のペアだけの違いを示します。 左の最初の円が既定値のクリップ操作をクリッピング領域に追加`Intersect`テキスト ラベルで示されるクリップ操作と共に、右側に 2 番目の円がクリッピング領域に追加中に、します。
 
-[![](clipping-images//clipoperations-small.png "クリップ オペレーション ページのスクリーン ショットをトリプル")](clipping-images/clipoperations-large.png "クリップ オペレーション ページのトリプル スクリーン ショット")
+[![](clipping-images//clipoperations-small.png "クリップ オペレーション ページのスクリーン ショットをトリプル")](clipping-images/clipoperations-large.png#lightbox "クリップ オペレーション ページのトリプル スクリーン ショット")
 
 [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs)クラスは、2 つ定義`SKPaint`フィールドとしてオブジェクトし、し、画面に 2 つの四角形領域分割します。 これらの領域は、電話が縦または横モードではかどうかによって異なります。 `DisplayClipOp`クラスを表示し、テキストと呼び出し`ClipPath`各クリップ操作を説明するために 2 つの円のパス。
 
@@ -282,7 +283,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 次のスクリーン ショットは、6 つの地域の操作に基づくクリッピング領域を示しています。 左側の円は、領域を`Op`で、メソッドが呼び出され、右側の円は、地域に渡される、`Op`メソッド。
 
-[![](clipping-images//regionoperations-small.png "領域の管理 ページのスクリーン ショットをトリプル")](clipping-images/regionoperations-large.png "領域の管理 ページのトリプル スクリーン ショット")
+[![](clipping-images//regionoperations-small.png "領域の管理 ページのスクリーン ショットをトリプル")](clipping-images/regionoperations-large.png#lightbox "領域の管理 ページのトリプル スクリーン ショット")
 
 これらすべての可能性をこれら 2 つの円を組み合わせてとは 単独でに表示される 3 つのコンポーネントの組み合わせとして、結果のイメージを検討してください、 `Difference`、 `Intersect`、および`ReverseDifference`操作します。 組み合わせの総数は、3 つ目の電源を 2 つまたは 8 です。 不足している 2 つは、元の地域 (いない呼び出し元からの結果を`Op`まったく) と完全に空の領域。
 
@@ -423,7 +424,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `DrawRegion`呼び出しがオレンジ色で領域を塗りつぶします中に、`DrawPath`呼び出しの比較は青で元のパスの線します。
 
-[![](clipping-images//regionpaint-small.png "領域 [ペイント] ページのスクリーン ショットをトリプル")](clipping-images/regionpaint-large.png "地域ペイント ページのトリプル スクリーン ショット")
+[![](clipping-images//regionpaint-small.png "領域 [ペイント] ページのスクリーン ショットをトリプル")](clipping-images/regionpaint-large.png#lightbox "地域ペイント ページのトリプル スクリーン ショット")
 
 地域が一連の個別の座標では明確にします。
 
@@ -509,7 +510,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 これが 4 つ-リーフ クローバーようになりますが実際には、クリッピングなしで表示するためにハードされる可能性があるイメージ。
 
-[![](clipping-images//fourleafclover-small.png "4 つ-リーフ クローバー ページのスクリーン ショットをトリプル")](clipping-images/fourleafclover-large.png "-リーフ クローバーの 4 つのページのトリプル スクリーン ショット")
+[![](clipping-images//fourleafclover-small.png "4 つ-リーフ クローバー ページのスクリーン ショットをトリプル")](clipping-images/fourleafclover-large.png#lightbox "-リーフ クローバーの 4 つのページのトリプル スクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク

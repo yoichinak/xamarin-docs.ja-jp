@@ -3,14 +3,15 @@ title: "第 4 章の概要です。 スタックをスクロール"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 59d51c48cee30a242f5e1adcb1c886169334e9b2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要です。 スタックをスクロール
 
@@ -94,7 +95,7 @@ ms.lasthandoff: 02/27/2018
 
 複数のインスタンスを使用する`StackLayout`を結合する、`BoxView`といくつか`Label`のインスタンスにある、`Frame`を特定の色を表示し、次に、これらの各ビューで、`StackLayout`で、`ScrollView`魅力的なを作成するには表示される色の一覧、 [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)サンプル。
 
-[![色のブロックのトリプル スクリーン ショット](images/ch04fg11-small.png "一覧の色")](images/ch04fg11-large.png "色の一覧")
+[![色のブロックのトリプル スクリーン ショット](images/ch04fg11-small.png "一覧の色")](images/ch04fg11-large.png#lightbox "色の一覧")
 
 ## <a name="a-scrollview-in-a-stacklayout"></a>StackLayout ScrollView しますか。
 

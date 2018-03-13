@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp Windows のサポート"
-description: "Windows 固有の設定および機能"
+description: "Windows 固有のセットアップと UrhoSharp に対して機能します。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: ec4fec01aa27e522aeec6df09041f14b1c3db080
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0deefe0e00ec96a21317bfa2e8bf4894d5deae47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows のサポート
 
@@ -27,11 +27,11 @@ Urho、ポータブル クラス ライブラリで、さまざまなプラッ�
 
 # <a name="standalone-project"></a>スタンドアロン プロジェクト
 
-## <a name="creating-a-project"></a>Visual C++ プロジェクト
+### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
 コンソール プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含んでいるディレクトリ) を検索できることを確認します。
 
-## <a name="configuring-and-launching-urho"></a>構成および Urho を起動します。
+### <a name="configuring-and-launching-urho"></a>構成および Urho を起動します。
 
 アプリケーションを起動するには、これの操作を行います。
 
@@ -39,17 +39,17 @@ Urho、ポータブル クラス ライブラリで、さまざまなプラッ�
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";
 new MyGame().Run();
 ```
-## <a name="example"></a>例
+### <a name="example"></a>例
 
 [完全な例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Desktop)
 
-# <a name="integrated-with-wpf"></a>WPF と統合
+## <a name="integrated-with-wpf"></a>WPF と統合
 
-## <a name="creating-a-project"></a>Visual C++ プロジェクト
+### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
 WPF プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含んでいるディレクトリ) を検索できることを確認します。
 
-## <a name="configuring-and-launching-urho-from-wpf"></a>構成および Urho WPF からを起動します。
+### <a name="configuring-and-launching-urho-from-wpf"></a>構成および Urho WPF からを起動します。
 
 サブクラスを作成`Window`し、次のように、資産の構成します。
 
@@ -83,17 +83,17 @@ WPF プロジェクトを作成、Urho NuGet の参照し、資産 (データ �
     }
 ```
 
-## <a name="example"></a>例
+### <a name="example"></a>例
 
 [完全な例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/WPF)
 
-# <a name="integrated-with-uwp"></a>UWP と統合
+## <a name="integrated-with-uwp"></a>UWP と統合
 
-## <a name="creating-a-project"></a>Visual C++ プロジェクト
+### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
 UWP プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含んでいるディレクトリ) を検索できることを確認します。
 
-## <a name="configuring-and-launching-urho-from-uwp"></a>構成および Urho UWP からを起動します。
+### <a name="configuring-and-launching-urho-from-uwp"></a>構成および Urho UWP からを起動します。
 
 サブクラスを作成`Window`し、次のように、資産の構成します。
 
@@ -116,17 +116,17 @@ UWP プロジェクトを作成、Urho NuGet の参照し、資産 (データ �
     }
 ```
 
-## <a name="example"></a>例
+### <a name="example"></a>例
 
 [完全な例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/UWP)
 
-# <a name="integrated-with-windowsforms"></a>Windows.Forms と統合
+## <a name="integrated-with-windowsforms"></a>Windows.Forms と統合
 
-## <a name="creating-a-project"></a>Visual C++ プロジェクト
+### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
 Windows.Forms プロジェクトを作成し、Urho NuGet の参照を特定できること、資産 (データ ディレクトリを含んでいるディレクトリ) ことを確認します。
 
-## <a name="configuring-and-launching-urho-from-windowsforms"></a>構成および Urho Windows.Forms からを起動します。
+### <a name="configuring-and-launching-urho-from-windowsforms"></a>構成および Urho Windows.Forms からを起動します。
 
 フォームから Urho を起動してを参照してください[完全なサンプル](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)
 

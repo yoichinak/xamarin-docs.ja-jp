@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 55d692fa92dd08dd9c0887ed10013589afc98ec6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2276b67fc29f2752e4b178168a12e6e980b788d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-watchos"></a>WatchOS の概要
 
@@ -29,11 +29,11 @@ WatchOS アプリ ソリューションには、3 つのプロジェクトがあ
 
 WatchOS 1 アプリで、iPhone で拡張機能のコードが実行されます: Apple Watch、事実上、外付けディスプレイ。 watchOS 2 および 3 のアプリは、Apple Watch で完全に実行されます。 この違いは、次の図で示されます。
 
-[ ![](intro-to-watchos-images/arch-sml.png "この図に示すは watchOS 1 と watchOS 2 (以降) の違い")](intro-to-watchos-images/arch.png)
+[ ![](intro-to-watchos-images/arch-sml.png "この図に示すは watchOS 1 と watchOS 2 (以降) の違い")](intro-to-watchos-images/arch.png#lightbox)
 
 WatchOS のバージョンを対象とするに関係なく Mac のソリューション パッド用の Visual Studio での完全なソリューションは次のよう。
 
-[ ![](intro-to-watchos-images/projectstructure-sml.png "ソリューションのパッド")](intro-to-watchos-images/projectstructure.png)
+[![](intro-to-watchos-images/projectstructure-sml.png "ソリューションのパッド")](intro-to-watchos-images/projectstructure.png#lightbox)
 
 *親アプリ*watchOS ソリューションが正規の iOS アプリ。 これは、表示されているソリューションでのみプロジェクト**電話**です。 このアプリのユース ケースは、チュートリアル、管理画面、および中間層のフィルター処理、cacheing などが含まれます。ただし、インストールし、ウォッチ アプリ/拡張機能を実行せずに、ユーザーは**れた**親アプリを開いたのでは親アプリの管理、または 1 回限りの初期化を実行する必要がある場合必要があります、ウォッチのプログラミングユーザーに伝えるためアプリ/拡張機能です。
 
@@ -139,4 +139,4 @@ Apple のドキュメントをご覧ください。
 - [最初の Watch アプリ ビデオ](http://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple は、Watch キット ガイド用の開発](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Apple の WatchKit ヒント](https://developer.apple.com/watchkit/tips/)
-- [WatchOS 3 の概要](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [watchOS 3 の概要](~/ios/watchos/platform/introduction-to-watchos3/index.md)

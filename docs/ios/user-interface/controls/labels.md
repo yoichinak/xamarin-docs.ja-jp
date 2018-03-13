@@ -7,19 +7,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 695d02c5fa0477053cd95d73e1b738332d14f0f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0fdeecc4465aa5709b452ef0b591ec4e5c262e3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="labels"></a>ラベル
 
-`UILabel`コントロールが単一および複数の行を表示するための読み取り専用のテキスト。 ここでは、次のトピックについて説明します。
-
-- [ラベルを実装します。](#Implementing_a_Label)
-- [切り捨てとラッピング](#Truncating_and_Wrapping)
-- [テキストとラベルの書式設定](#Formatting_Text_and_Label)
+`UILabel`コントロールが単一および複数の行を表示するための読み取り専用のテキスト。 
 
 ## <a name="implementing-a-label"></a>ラベルを実装します。
 
@@ -52,6 +48,8 @@ IOS デザイナーを使用する場合を UI にラベルを追加すること
 ## <a name="truncating-and-wrapping"></a>切り捨てとラッピング
 
 行の使用の詳細については、iOS で区切りを参照してください、 [Truncate およびテキストを折り返す](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/)レシピします。
+
+<a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>テキストとラベルの書式設定
 

@@ -3,16 +3,16 @@ title: "iOS ゲーム Api"
 description: "この記事では、iOS 9 Xamarin.iOS ゲームのグラフィックスとオーディオ機能を向上させるために使用できるによって提供される新しいゲーム機能強化について説明します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6c735c68ee61032d8dfe3a74e6858bc058c6fa47
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d0a66d4cfdb3050c7ad791d24e24d6917a031ee1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-gaming-apis"></a>iOS ゲーム Api
 
@@ -21,7 +21,7 @@ _この記事では、iOS 9 Xamarin.iOS ゲームのグラフィックスとオ�
 Apple には、技術的な改良がいくつか iOS 9 のゲームの Api に容易にする Xamarin.iOS アプリでは、ゲーム グラフィックスおよびオーディオを実装するが行われます。
 これらには、高度なフレームワークと速度の向上やグラフィック機能について、iOS デバイスの GPU の電源を利用することによる開発の両方の簡単操作が含まれます。
 
-[ ![](images/flocking01.png "群雄を実行しているアプリの例")](images/flocking01.png)
+[![](images/flocking01.png "群雄を実行しているアプリの例")](images/flocking01.png#lightbox)
 
 金属、SceneKit SpriteKit の新しい、拡張機能と共に GameplayKit、ReplayKit、モデルの I/O、MetalKit およびメタル パフォーマンス シェーダーが含まれます。
 
@@ -56,7 +56,7 @@ GameplayKit に関する詳細についてを参照してください Apple の[
 
 次のマップを考慮してください。
 
-[ ![](images/gkpathfindpath.png "経路マップの例")](images/gkpathfindpath.png)
+[![](images/gkpathfindpath.png "経路マップの例")](images/gkpathfindpath.png#lightbox)
 
 経路を使用してこの c# コードのマップを使用する方法があります。
 
@@ -367,7 +367,7 @@ public override void ViewWillLayoutSubviews ()
 
 実行すると、少しアニメーション_"Boids"_指タップ周囲 flock されます。
 
-[ ![](images/flocking01.png "少しアニメーション Boids は指タップ周囲 flock します。")](images/flocking01.png)
+[![](images/flocking01.png "少しアニメーション Boids は指タップ周囲 flock します。")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>その他の Apple 例
 

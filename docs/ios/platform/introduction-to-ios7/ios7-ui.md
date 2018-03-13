@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 6df47bd54611feedd0d355a976a055d62f37afeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 
@@ -146,7 +146,7 @@ IOS 7 用のアプリケーションを準備するときはサブビューを�
 
  `TopLayoutGuide` `BottomLayoutGuide`コンテンツがない、半透明でオーバー ラップされたできるようにする必要があります、ビューの開始または終了するには、場所の参照として使用`UIKit`バーで、次の例に示すようにします。
 
- [ ![](ios7-ui-images/clipped.png "半透明 UIKit バーでいないオーバー ラップされたサンプルの内容")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "半透明 UIKit バーでいないオーバー ラップされたサンプルの内容")](ios7-ui-images/clipped.png#lightbox)
 
 これらの Api は、画面の上下からビューの距離を計算に使用することができ、コンテンツの配置は必要に応じて調整。
 
@@ -166,7 +166,7 @@ public override void ViewDidLayoutSubviews ()
 
 設定する上で計算される値を使用して当社`ImageView`の画像全体が表示されるよう、画面の上部からの距離。
 
- [ ![](ios7-ui-images/good2.png "画面の最上位から例 ImageViews 変位")](ios7-ui-images/good2.png)
+ [![](ios7-ui-images/good2.png "画面の最上位から例 ImageViews 変位")](ios7-ui-images/good2.png#lightbox)
 
 参照してください、 [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates)実際のサンプルです。
 
@@ -179,15 +179,15 @@ public override void ViewDidLayoutSubviews ()
 
 この API は、ビューのどの端必要がありますを拡張して、全画面表示に関係なくバーの透明度を指定します。 IOS 7 でのナビゲーション バーとツールバーが表示の上に配置 - コント ローラーのビューとは異なり以前の iOS のバージョンでは、同じ領域がありませんでした受け取りません。 IOS 7 写真アプリケーションは、既定値を示しています。`UIViewController.EdgesForExtendedLayout`値、`UIRectEdge.All`です。 この設定は、ビューでは、コンテンツ、4 つのエッジすべてを入力し、重複、全画面表示の効果を作成します。
 
- [ ![](ios7-ui-images/photos.png "サンプル EdgesForExtendedLayout")](ios7-ui-images/photos.png)
+ [![](ios7-ui-images/photos.png "サンプル EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
 画像をタップすると、バーを削除し、イメージ全画面表示を表示します。
 
- [ ![](ios7-ui-images/photos2.png "削除バーと EdgesForExtendedLayout")](ios7-ui-images/photos2.png)
+ [![](ios7-ui-images/photos2.png "削除バーと EdgesForExtendedLayout")](ios7-ui-images/photos2.png#lightbox)
 
 全画面のコンテンツは、既定値であるために、iOS 6 用に構成されたアプリケーションは、次のスクリーン ショットのようにクリップされるビューの一部が得られます。
 
- [ ![](ios7-ui-images/clipped.png "IOS 6 を構成したアプリはこのスクリーン ショットのようにクリップされるビューの一部になります")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "IOS 6 を構成したアプリはこのスクリーン ショットのようにクリップされるビューの一部になります")](ios7-ui-images/clipped.png#lightbox)
 
 変更、`UIViewController.EdgesForExtendedLayout`プロパティを調整します。 この動作をします。 ビューいないいっぱいになる、エッジのため、ビューはナビゲーションまたはツールバー (すべての向き) の位置によって占有される領域でコンテンツの表示を避けることを指定できます。
 
@@ -199,7 +199,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 アプリケーション内で会いしましょうビューがもう一度再配置されるため、全体のイメージが表示されます。
 
- [ ![](ios7-ui-images/good.png "表示されるイメージ全体の例")](ios7-ui-images/good.png)
+ [![](ios7-ui-images/good.png "表示されるイメージ全体の例")](ios7-ui-images/good.png#lightbox)
 
 中の影響に注意してください、`TopLayoutGuide/BottomLayoutGuide`と`EdgesForExtendedLayout`Api が似ているものである別の目標を入力します。 変更、`EdgesForExtendedLayout`既定値からの設定は、6、iOS 用に設計されたアプリケーションでクリップされたビューを解決することが、適切な iOS 7 デザインする必要があります全画面表示の見た目を優先して、全画面表示方法が、証明書利用者を提供`TopLayoutGuide`と`BottomLayoutGuide`がユーザーの位置に置いたりに操作を意図してコンテンツを正しく配置します。
 

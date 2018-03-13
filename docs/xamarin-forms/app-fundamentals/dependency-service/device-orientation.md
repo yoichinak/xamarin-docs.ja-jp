@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: ee91f0ebdc07f03831ae95a4b8ae6f85c3eb549e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d23f29fbfb51473ff5f89f27c0bfd621cfffbce0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-device-orientation"></a>デバイスの方向を確認しています
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 02/28/2018
 ![](device-orientation-images/orientation-diagram.png "DependencyService アプリケーション構造")
 
 > [!NOTE]
-> **注:**に示すようにするかどうか、デバイスが縦または横方向に共有コードを検出するために可能であればの [デバイス Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). この記事で説明した方法では、ネイティブの機能を使用して、詳細については、デバイスが上下逆にかどうかなどの向きを取得します。
+> 示されているようにするかどうか、デバイスが縦または横方向に共有コードを検出するために可能であればでの [デバイス Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation)。 この記事で説明した方法では、ネイティブの機能を使用して、詳細については、デバイスが上下逆にかどうかなどの向きを取得します。
 
 <a name="Creating_the_Interface" />
 
@@ -57,7 +57,7 @@ namespace DependencyServiceSample.Abstractions
 共有コードでは、このインターフェイスに対するコーディングすると、各プラットフォームでデバイスの向き Api にアクセスする Xamarin.Forms アプリが許可されます。
 
 > [!NOTE]
-> **注**: インターフェイスを実装するクラスを使用するパラメーターなしのコンス トラクターを持つ必要があります、`DependencyService`です。
+> インターフェイスを実装するクラスを使用するパラメーターなしのコンス トラクターを持つ必要があります、`DependencyService`です。
 
 <a name="iOS_Implementation" />
 

@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: D7ABAFAB-5CA2-443D-B902-2C7F3AD69CE2
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: bcb6f033c7fad76a17a7a5aa82f48a76b1ae501d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 5c63bda11a57c0f27efa1db6f0455b25f7da531b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient スタックと Android 用の SSL や TLS 実装セレクター
 
@@ -23,34 +23,31 @@ _HttpClient スタックと SSL/TLS 実装セレクターは、Xamarin.Android �
 Xamarin.Android は、Android アプリ用の TLS の設定を制御する 2 つのコンボ ボックスを提供します。 1 つのコンボ ボックスを識別する`HttpMessageHandler`インスタンス化するときに使用する、`HttpClient`オブジェクト、TLS 実装は web 要求で使用される、他の識別中にします。
 
 > [!NOTE]
-> **注:**プロジェクトを参照する必要があります、 **System.Net.Http**アセンブリ。
+> プロジェクトを参照する必要があります、 **System.Net.Http**アセンブリ。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 HttpClient スタックを設定すると、Xamarin.Android プロジェクトのプロジェクトのオプションがあります。 をクリックして、 **Android オプション** タブし、をクリックして、**詳細オプション**ボタンをクリックします。 これが表示されます、 **Android オプションの高度な**は、次の 2 つのコンボ ボックス、HttpClient の実装および SSL や TLS 実装では、ダイアログ ボックス。
 
 
-[ ![Android の visual Studio オプション](http-stack-images/tls07-vs-sml.png)](http-stack-images/tls07-vs.png)
+[![Android の visual Studio オプション](http-stack-images/tls07-vs-sml.png)](http-stack-images/tls07-vs.png#lightbox)
+
+## <a name="httpclient-stack-selector"></a>HttpClient スタック セレクター
+
+このプロジェクトのオプションを制御する`HttpMessageHandler`実装が使用するたびに、`HttpClient`オブジェクトをインスタンス化します。 既定では、これは、マネージ`HttpClientHandler`です。
+
+[![Visual Studio での android HttpClient の実装のコンボ ボックス](http-stack-images/tls04-vs-sml.png)](http-stack-images/tls04-vs.png#lightbox) 
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 HttpClient スタックの設定を Xamarin.Android プロジェクトのプロジェクトのオプションではあります。 をクリックして、**ビルド > Android ビルド**設定とをクリックして、**全般** タブ。
 
-[ ![Visual Studio for Mac Android オプション](http-stack-images/tls07-xs-sml.png)](http-stack-images/tls07-xs.png)
-
-
------
+[![Visual Studio for Mac Android オプション](http-stack-images/tls07-xs-sml.png)](http-stack-images/tls07-xs.png#lightbox)
 
 ## <a name="httpclient-stack-selector"></a>HttpClient スタック セレクター
 
 このプロジェクトのオプションを制御する`HttpMessageHandler`実装が使用するたびに、`HttpClient`オブジェクトをインスタンス化します。 既定では、これは、マネージ`HttpClientHandler`です。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[ ![Visual Studio での android HttpClient の実装のコンボ ボックス](http-stack-images/tls04-vs-sml.png)](http-stack-images/tls04-vs.png) 
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ![Mac 用の Visual Studio で android HttpClient の実装のコンボ ボックス](http-stack-images/tls04-xs.png )
 
@@ -84,10 +81,32 @@ AndroidClientHandler は、マネージ コードで実装するすべてのも�
 - Android 5.0 以降が必要です。
 - 一部の HttpClient 機能/オプションは使用できません。
 
+### <a name="choosing-a-handler"></a>ハンドラーを選択します。
+
+いずれかを`AndroidClientHandler`と`HttpClientHandler`アプリケーションのニーズによって異なります。 `AndroidClientHandler` 次のすべてに該当する場合をお勧めします。
+
+-   TLS 1.2 以降のサポートが必要です。
+-   アプリが Android 5.0 (API 21) を対象とするまたはそれ以降。
+-   TLS 1.2 以降が必要なサポート`HttpClient`です。
+-   不要 TLS 1.2 + サポート`WebClient`です。
+
+`HttpClientHandler` TLS 1.2 以降が必要な場合、適切な選択は、サポートしますが、Android 5.0 よりも前のバージョンの Android をサポートする必要があります。 また、適切な選択 TLS 1.2 以降が必要な場合のサポート`WebClient`です。
+
+Xamarin.Android 8.3 で始まる`HttpClientHandler`退屈 ssl の既定値 (`btls`) 基になる TLS プロバイダーとして。 SSL TLS の退屈プロバイダーには次の利点があります。
+
+-   TLS 1.2 をサポートします。
+-   これは、すべての Android バージョンをサポートします。
+-   両方の TLS 1.2 サポート`HttpClient`と`WebClient`です。
+
+退屈 SSL を使用して、基の TLS プロバイダーとしての欠点は、(サポートされている ABI あたり追加の APK サイズの約 1 MB を追加)、結果として得られる APK のサイズを拡大できることです。
+
+Xamarin.Android 8.3 から始まり、TLS の既定のプロバイダーでは、SSL の退屈 (`btls`)。 設定して、履歴の管理されている SSL の実装に戻すことができます退屈 SSL を使用しないようにする場合、`$(AndroidTlsProvider)`プロパティを`legacy`(ビルドのプロパティの設定に関する詳細については、次を参照してください。[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md))。
+
 
 ### <a name="programatically-using-androidclienthandler"></a>プログラムで使用します。 `AndroidClientHandler`
 
-`Xamarin.Android.Net.AndroidClientHandler`は、 `HttpMessageHandler` Xamarin.Android 専用に実装します。 このクラスのインスタンスが、ネイティブを使用して`java.net.URLConnection`すべての HTTP 接続の実装です。 これは、HTTP のパフォーマンスと小さい APK サイズの増加を理論的に提供されます。
+`Xamarin.Android.Net.AndroidClientHandler`は、 `HttpMessageHandler` Xamarin.Android 専用に実装します。
+このクラスのインスタンスが、ネイティブを使用して`java.net.URLConnection`すべての HTTP 接続の実装です。 これは、HTTP のパフォーマンスと小さい APK サイズの増加を理論的に提供されます。
 
 このコード スニペットは 1 つのインスタンスを明示的にする方法の例、`HttpClient`クラス。
 
@@ -97,7 +116,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
->  **注**: 基になる、Android デバイスは、TLS 1.2 (ie をサポートする必要があります。Android 5.0 以降)
+> 基になる、Android デバイスは、TLS 1.2 (ie をサポートする必要があります。Android 5.0 以降)
 
 
 ## <a name="ssltls-implementation-build-option"></a>SSL や TLS 実装ビルド オプション
@@ -106,11 +125,11 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Visual Studio での TLS と SSL の実装コンボ ボックス](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png)
+[![Visual Studio での TLS と SSL の実装コンボ ボックス](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Mac 用の Visual Studio での TLS と SSL の実装コンボ ボックス](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png)
+[![Mac 用の Visual Studio での TLS と SSL の実装コンボ ボックス](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
 
 -----
 
@@ -132,8 +151,7 @@ Xamarin.Android アプリケーションが TLS の設定を制御できる 3 �
 2. 使用してプログラムで`Xamarin.Android.Net.AndroidClientHandler`です。
 3. (省略可能) 環境変数を宣言します。
 
-Xamarin.Android プロジェクトのオプションを使用して、既定値を宣言する方法をお勧めは、3 つの選択肢の`HttpMessageHandler`と tls 暗号化は、アプリ全体を要求します。 次に、必要に応じて、プログラムによってインスタンス化`Xamarin.Android.Net.AndroidClientHandler`オブジェクト。
-上記のこれらのオプション。
+Xamarin.Android プロジェクトのオプションを使用して、既定値を宣言する方法をお勧めは、3 つの選択肢の`HttpMessageHandler`と tls 暗号化は、アプリ全体を要求します。 次に、必要に応じて、プログラムによってインスタンス化`Xamarin.Android.Net.AndroidClientHandler`オブジェクト。 上記のこれらのオプション。
 
 3 番目のオプション&ndash;環境変数を使用して&ndash;次について説明します。
 

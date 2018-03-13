@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: c8f6832f618c37b3593f28c8efaeb87e4df5df03
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fba8412c53597260744bdce443a7e993a6990672
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-resource-basics"></a>Android のリソースの基礎
 
@@ -39,7 +39,6 @@ ms.lasthandoff: 02/27/2018
 
 -  **Resource.designer.cs** &ndash;このファイルが自動的に生成され、Xamarin.Android、およびを保持しますが、一意で保持されている ID の各リソースに割り当てられます。 これは非常に似ています、Java で記述された Android アプリケーションの必要があります R.java ファイルと同じ目的です。 Xamarin.Android ツールによって自動的に作成し、時間の経過に再生成されます。
 
-<a name="Creating_and_Accessing_Resources" />
 
 ## <a name="creating-and-accessing-resources"></a>作成して、リソースへのアクセス
 
@@ -62,7 +61,6 @@ ms.lasthandoff: 02/27/2018
 
 アプリケーションで使用する 2 つの方法があるリソースをプロジェクトに追加すると、&ndash;プログラム (コード) 内や、XML ファイルです。
 
-<a name="Referencing_Resources_Programmatically" />
 
 ## <a name="referencing-resources-programmatically"></a>リソースをプログラムで参照します。
 
@@ -108,7 +106,6 @@ public partial class Resource
 
 -  **リソース名** &ndash; (拡張子なし)、リソースのファイル名または XML 要素に含まれるリソースの android: 名前属性の値。
 
-<a name="Referencing_Resources_from_XML" />
 
 ## <a name="referencing-resources-from-xml"></a>XML からリソースを参照します。
 

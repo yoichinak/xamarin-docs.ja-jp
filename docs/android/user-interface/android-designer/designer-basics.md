@@ -7,18 +7,17 @@ ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b2ed48ae9df7e950525fdc0cb97181ebe5a44dfb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d9342dc3a8d324f03cd31e1d03600449bfcf23f1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="designer-basics"></a>デザイナーの基本
 
 _このトピックは、デザイナーの機能が導入されています、デザイナーを起動する方法について説明します、デザイン画面をについて説明します、およびプロパティ ペインを使用して、ウィジェットのプロパティを編集する方法について詳しく説明をします。_
 
-<a name="Launching_the_Designer" />
 
 ## <a name="launching-the-designer"></a>デザイナーを起動します。
 
@@ -26,11 +25,11 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Visual Studio でのデザイナー画面](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png)
+[![Visual Studio でのデザイナー画面](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Mac 用の Visual Studio でのデザイナー画面](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png)
+[![Mac 用の Visual Studio でのデザイナー画面](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 -----
 
@@ -39,20 +38,19 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 同様を右クリックして新しいレイアウトを追加することができます、**レイアウト**内のフォルダー、**ソリューション エクスプ ローラー**を選択して**追加 > 新しい項目 > Android レイアウト**:
 
-[![新しい項目 ダイアログ ボックスを追加します。](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png)
+[![新しい項目 ダイアログ ボックスを追加します。](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 同様を右クリックして新しいレイアウトを追加することができます、**レイアウト**内のフォルダー、**ソリューション パッド**を選択して**追加 > 新しいファイル > Android > レイアウト**:
 
-[![新しいファイル ダイアログ ボックスを追加します。](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png)
+[![新しいファイル ダイアログ ボックスを追加します。](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 -----
 
 これにより、新しい .axml ファイルを作成し、デザイン サーフェイスに読み込みます。
 
 
-<a name="Designer_Features" />
 
 ## <a name="designer-features"></a>デザイナーの機能
 
@@ -60,11 +58,11 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デザイナー ウィンドウの図](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png)
+[![デザイナー ウィンドウの図](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デザイナー ウィンドウの図](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png)
+[![デザイナー ウィンドウの図](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 -----
 
@@ -97,7 +95,6 @@ _このトピックは、デザイナーの機能が導入されています、�
 -----
 
 
-<a name="Toolbar" />
 
 ## <a name="toolbar"></a>ツール バー
 
@@ -105,11 +102,11 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デザイナーのツールバーのダイアグラム](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png)
+[![デザイナーのツールバーのダイアグラム](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デザイナーのツールバーのダイアグラム](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png)
+[![デザイナーのツールバーのダイアグラム](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 -----
 
@@ -143,7 +140,6 @@ _このトピックは、デザイナーの機能が導入されています、�
 [素材のデザイン機能](~/android/user-interface/android-designer/material-design-features.md)の包括的な概要を説明、**テーマ エディター**と**マテリアル デザイン グリッド**です。
 
 
-<a name="Design_Surface" />
 
 ## <a name="design-surface"></a>デザイン サーフェイス
 
@@ -151,17 +147,16 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デザイン サーフェイス上のカーソル行の例](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png)
+[![デザイン サーフェイス上のカーソル行の例](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デザイン サーフェイス上のカーソル行の例](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png)
+[![デザイン サーフェイス上のカーソル行の例](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 -----
 
 ウィジェットをさらに、コピーすることができます。 コピーを使用すると、ウィジェットをコピー、貼り付けをドラッグ アンド ドロップのキーを押しているときに既存のウィジェット、 <kbd>Ctrl</kbd>キー。
 
-<a name="Context_Menu_Commands" />
 
 ### <a name="context-menu-commands"></a>コンテキスト メニュー コマンド
 
@@ -169,7 +164,7 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デザイン サーフェイスを右クリックしたときの例のコンテキスト メニュー](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png)
+[![デザイン サーフェイスを右クリックしたときの例のコンテキスト メニュー](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 この例では右クリックし、`TextView`いくつかのオプションを提供するコンテキスト メニューを開きます。
 
@@ -179,7 +174,7 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デザイン サーフェイスを右クリックしたときの例のコンテキスト メニュー](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png)
+[![デザイン サーフェイスを右クリックしたときの例のコンテキスト メニュー](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 この例では右クリックし、`TextView`いくつかのオプションを提供するコンテキスト メニューを開きます。
 
@@ -198,7 +193,6 @@ _このトピックは、デザイナーの機能が導入されています、�
 -   **削除**、**コピー**、および**切り取り** &ndash; 、右クリックしたときに適用される操作`TextView`です。
 
 
-<a name="Zoom_Controls" />
 
 ### <a name="zoom-controls"></a>ズーム コントロール
 
@@ -206,11 +200,11 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デザイン サーフェイスのズーム コントロールの図](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png)
+[![デザイン サーフェイスのズーム コントロールの図](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デザイン サーフェイスのズーム コントロールの図](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png)
+[![デザイン サーフェイスのズーム コントロールの図](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 -----
 
@@ -228,7 +222,6 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 選択したズーム設定が実行時にアプリケーションのユーザー インターフェイスに影響を及ぼさないように注意してください。
 
-<a name="property_pad" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -238,11 +231,10 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 デザイナーは、ウィジェットのプロパティの編集をサポートしている、**プロパティ パッド**です。 に応じて、ウィジェットがデザイナー画面で選択したプロパティ パッドの変更時に表示されるプロパティです。 ときに、`Button`前の例では、選択すると、そのプロパティ`Button`ウィジェットが表示されます。
 
-[![パッドのプロパティのスクリーン ショット](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png)
+[![パッドのプロパティのスクリーン ショット](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 -----
 
-<a name="Property_Pad_Sections" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -272,7 +264,6 @@ _このトピックは、デザイナーの機能が導入されています、�
 -----
 
 
-<a name="Default_Values" />
 
 ### <a name="default-values"></a>既定値
 
@@ -287,7 +278,6 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 -----
 
-<a name="Referencing_resources" />
 
 ### <a name="referencing-resources"></a>リソースの参照
 
@@ -299,13 +289,13 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 たとえば、次のスクリーン ショットを示しています使用可能なリソースのテキスト フィールドの右側にある省略記号をクリックすると、`Button`でウィジェット、**プロパティ**ウィンドウ。
 
-[![例に示す 2 つのリソースのリソース スクリーン ショット](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png)
+[![例に示す 2 つのリソースのリソース スクリーン ショット](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 たとえば、次のスクリーン ショットを示しています使用可能なリソースのテキスト フィールドの右側にある省略記号をクリックすると、`Button`でウィジェット、**プロパティ パッド**:
 
-[![例に示す 2 つのリソースのリソース スクリーン ショット](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png)
+[![例に示す 2 つのリソースのリソース スクリーン ショット](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 -----
 
@@ -313,16 +303,15 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![リソースのセレクター、ImageView のアイコン リソースを一覧表示します。](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png)
+[![リソースのセレクター、ImageView のアイコン リソースを一覧表示します。](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![リソースのセレクター、ImageView のアイコン リソースを一覧表示します。](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png)
+[![リソースのセレクター、ImageView のアイコン リソースを一覧表示します。](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 -----
 
 
-<a name="Boolean_Property_References" />
 
 ### <a name="boolean-property-references"></a>ブール型プロパティの参照
 
@@ -336,25 +325,21 @@ _このトピックは、デザイナーの機能が導入されています、�
 
 *ブール*プロパティが通常プロパティ パッドでチェック ボックスとして表示されます。 ときに、`Boolean`プロパティは、リソースの参照をサポートしている、プロパティの横に小さな チェック ボックスが表示されます。 チェックされたチェック ボックスを意味`true`および空のボックスの手段を`false`です。 など、値を入力することができますも直接`true`または`false`です。 マウスを動かすと、入力、小さいテキスト フィールドのアイコンが表示されます。 次の値を手動で入力する場合は、それをクリックすることができます。
 
-[![ブール型プロパティを設定する例](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png)
+[![ブール型プロパティを設定する例](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
-<a name="Grouped_Properties" />
 
 ## <a name="grouped-properties"></a>グループ化されたプロパティ
 
 一部のウィジェットがグループ化する複数値プロパティがあります (など`Padding`など)。 これらのプロパティ値は、「、**プロパティ パッド**、展開可能な 1 つの行にします。 これらのプロパティの一部で編集できます直接、グループ化された行など、`Padding`次に示すプロパティ。
 
-[![Padding プロパティの設定の例](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png)
+[![Padding プロパティの設定の例](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 -----
 
-<a name="Editing_Properties_Inline" />
 
 ## <a name="editing-properties-inline"></a>プロパティをインラインの編集
 
 Android デザイナーは、直接編集するデザイン サーフェイス上の特定のプロパティ (ため、これらのプロパティのプロパティの一覧で検索する必要はありません) をサポートします。 直接編集可能なプロパティには、テキスト、余白、およびサイズが含まれます。
-
-<a name="Text" />
 
 ### <a name="text"></a>テキスト
 
@@ -366,7 +351,7 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![こんにちは文字列のテキストのリソース](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png)
+[![こんにちは文字列のテキストのリソース](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 -----
 
@@ -378,7 +363,7 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Shift キーを押しながら、新しいリソースにテキストを自動的にリンクを入力してください。](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png)
+[![Shift キーを押しながら、新しいリソースにテキストを自動的にリンクを入力してください。](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 -----
 
@@ -386,7 +371,6 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 新しいテキスト文字列を入力するキーを押すと<kbd>shift キーを押し</kbd> +
 <kbd>Enter</kbd>入力したテキストと、新しいリソースに自動的にリンクします。
 
-<a name="Margin" />
 
 ### <a name="margin"></a>Margin
 
@@ -400,7 +384,7 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デザイナーで処理する余白を示すスクリーン ショット](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png)
+[![デザイナーで処理する余白を示すスクリーン ショット](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 -----
 
@@ -412,12 +396,11 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![ボタンの周囲のスペースをマーキング点線の例](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png)
+[![ボタンの周囲のスペースをマーキング点線の例](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 -----
 
 
-<a name="Size" />
 
 ### <a name="size"></a>サイズ
 
@@ -429,7 +412,7 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![ラップのコンテンツおよびサイズ変更ハンドル](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png)
+[![ラップのコンテンツおよびサイズ変更ハンドル](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 -----
 
@@ -443,7 +426,7 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![一致する親ハンドル](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png)
+[![一致する親ハンドル](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 -----
 
@@ -457,7 +440,7 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![循環サイズ変更ハンドル](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png)
+[![循環サイズ変更ハンドル](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 -----
 
@@ -469,12 +452,11 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![サイズ変更ハンドルのないです。](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png)
+[![サイズ変更ハンドルのないです。](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 -----
 
 
-<a name="Outline_View" />
 
 ## <a name="document-outline"></a>[ドキュメント アウトライン]
 
@@ -487,7 +469,7 @@ Android デザイナーは、直接編集するデザイン サーフェイス�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![ドキュメント アウトライン](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png)
+[![ドキュメント アウトライン](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 -----
 

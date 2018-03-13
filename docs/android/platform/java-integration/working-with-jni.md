@@ -7,18 +7,17 @@ ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: d1c441de089a84c93c251588115abecb19816868
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="working-with-jni"></a>JNI の操作
 
 _Xamarin.Android では、Java ではなく c# 内で Android アプリの作成を許可します。いくつかのアセンブリが付属して Xamarin.Android Mono.Android.dll や Mono.Android.GoogleMaps.dll など、Java、ライブラリのバインドを提供します。ただし、考えられるあらゆる Java ライブラリのバインドが指定されていないと、すべての Java 型およびメンバーが提供するバインディングはバインドできません。バインドされていない Java 型およびメンバーを使用して、Java ネイティブ インターフェイス (JNI) を使用することがあります。この記事は、JNI を使用して、Java の型および Xamarin.Android アプリケーションからのメンバーと対話する方法を示しています。_
 
-<a name="_Overview" />
 
 ## <a name="overview"></a>概要
 
@@ -37,14 +36,12 @@ Xamarin.Android で JNI API は、概念的に非常に似ています、 `Syste
 -  インターフェイスを公開する方法です。
 
 
-<a name="_Requirements" />
 
 ## <a name="requirements"></a>必要条件
 
 JNI、を通じて公開されていると、 [Android.Runtime.JNIEnv 名前空間](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)は Xamarin.Android のすべてのバージョンで使用できます。
 Java 型およびインターフェイスをバインドするには、Xamarin.Android 4.0 またはそれ以降を使用する必要があります。
 
-<a name="_Managed_Callable_Wrappers" />
 
 ## <a name="managed-callable-wrappers"></a>マネージ呼び出し可能ラッパー
 
@@ -58,7 +55,6 @@ A**呼び出し可能ラッパーをマネージ**(**MCW**) は、*バインデ�
 最初の目的は、コンシューマーがあるシンプルで管理されている一連のクラスを使用するように、単に利便性と複雑さをカプセル化です。 さまざまな使用する必要があります[JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)メンバーこの記事の後半で説明します。 呼び出し可能ラッパーをマネージことに注意してくださいは必ずしも必要&ndash;JNI を使用して「インライン」が完全に許容されると、バインドされていない Java メンバーの 1 回限り使用するために便利です。 サブクラスとインターフェイスの実装には、マネージ呼び出し可能ラッパーの使用が必要です。
 
 
-<a name="_Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android の呼び出し可能ラッパー
 
@@ -70,7 +66,6 @@ Android のコードは、バーチャル マシンを実行またはインタ�
 Android の呼び出し可能ラッパーがによって生成される、 **monodroid.exe**中のプログラム、[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md)、(直接または間接的に) を継承するすべての型に対して生成されると[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)です。
 
 
-<a name="_Implementing_Interfaces" />
 
 ### <a name="implementing-interfaces"></a>インターフェイスの実装
 
@@ -90,7 +85,6 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-<a name="_Implementation_Details" />
 
 ### <a name="implementation-details"></a>実装の詳細
 
@@ -155,7 +149,6 @@ public class HelloAndroid extends android.app.Activity {
 基本クラスを保持し、ネイティブ メソッドの宣言はマネージ コード内でオーバーライドされるメソッドごとに提供されることに注意してください。
 
 
-<a name="_ExportAttribute_and_ExportFieldAttribute" />
 
 ### <a name="exportattribute-and-exportfieldattribute"></a>ExportAttribute と ExportFieldAttribute
 
@@ -176,7 +169,6 @@ Xamarin.Android 4.2 以降コード生成が任意の名前を持つ任意の Ja
 
 [ExportAttribute](https://developer.xamarin.com/samples/monodroid/ExportAttribute/)サンプル プロジェクトは、これらの属性を使用する方法を示しています。
 
-<a name="_Troubleshooting_ExportAttribute_and_ExportFieldAttribute" />
 
 #### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>ExportAttribute と ExportFieldAttribute のトラブルシューティング
 
@@ -185,7 +177,6 @@ Xamarin.Android 4.2 以降コード生成が任意の名前を持つ任意の Ja
 -   リリース ビルドで`MissingMethodException`エクスポート メソッドの発生&ndash;でリリース ビルド`MissingMethodException`エクスポート メソッドに対して発生します。 (この問題は、Xamarin.Android の最新のバージョンで修正します)。
 
 
-<a name="_ExportParameterAttribute" />
 
 ### <a name="exportparameterattribute"></a>ExportParameterAttribute
 
@@ -200,7 +191,6 @@ Xamarin.Android 4.2 以降コード生成が任意の名前を持つ任意の Ja
 
 エクスポートされたメソッドの場合など、これらの型が必要な場合に、`ExportParameterAttribute`対応するパラメーターまたは戻り値の型を明示的に使用する必要があります。
 
- <a name="_Annotation_Attribute" />
 
 
 ### <a name="annotation-attribute"></a>注釈の属性
@@ -226,7 +216,6 @@ Xamarin.Android 4.2 以降コード生成が任意の名前を持つ任意の Ja
 -   属性プロパティには機能しません。 代わりに、プロパティ get アクセス操作子または set アクセス操作子の属性を使用します。
 
 
-<a name="_Class_Binding" />
 
 ## <a name="class-binding"></a>クラスのバインド
 
@@ -245,7 +234,6 @@ C# からのオーバーライドを許可するように仮想および抽象�
 -  のに型で必要なサブクラスが必要な場合、 [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)カスタム属性を使用して型宣言で[RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) 'éý'`true`です。
 
 
-<a name="_Declaring_Type_Handle" />
 
 ### <a name="declaring-type-handle"></a>型ハンドルを宣言します。
 
@@ -257,7 +245,6 @@ static IntPtr class_ref = JNIEnv.FindClass(CLASS);
 
 参照してください、 [JNI 型参照](#_JNI_Type_References)に関する詳細については、「、`CLASS`トークンです。
 
-<a name="_Binding_Fields" />
 
 ### <a name="binding-fields"></a>フィールドのバインド
 
@@ -297,7 +284,6 @@ public static System.IO.Stream In
 
 多くは、 [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/)型が`FromJniHandle`目的の型に、JNI を変換するメソッドを参照します。
 
- <a name="_Method_Binding" />
 
 
 ### <a name="method-binding"></a>メソッドのバインディング
@@ -318,8 +304,7 @@ Java メソッドは、c# のメソッドおよび c# のプロパティとし�
 
 メソッドのバインディングとは、メソッドの呼び出しでは複数の可能性があるだけです。 メソッドのバインディングも許可する (abstract および非 final メソッド) をオーバーライドするメソッドが含まれていますか、(インターフェイスのメソッド) の実装します。 [インターフェイスの継承のサポート、](#_Supporting_Inheritance,_Interfaces_1)仮想メソッドとインターフェイスのメソッドをサポートするの複雑な作業について説明します。
 
- <a name="_Static_Methods" />
-
+<a name="_Static_Methods_1" />
 
 #### <a name="static-methods"></a>静的メソッド
 
@@ -344,7 +329,6 @@ public static Java.Lang.Runtime GetRuntime ()
 静的フィールドにメソッドのハンドルを格納する注`id_getRuntime`です。 これは、メソッドのハンドルがすべての呼び出しでは検索する必要があるように、パフォーマンスの最適化です。 この方法でメソッドのハンドルをキャッシュする必要はありません。 メソッドのハンドルを取得すると、一度[JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/)メソッドを呼び出すために使用します。 `JNIEnv.CallStaticObjectMethod` 返します、`IntPtr`返された Java インスタンスのハンドルが含まれています。
 [Java.Lang.Object.GetObject&lt;T&gt;(IntPtr、JniHandleOwnership)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) Java ハンドルを厳密に型指定されたオブジェクトのインスタンスに変換するために使用します。
 
- <a name="_Non-virtual_Instance_Method_Binding" />
 
 
 #### <a name="non-virtual-instance-method-binding"></a>非仮想インスタンス メソッドのバインディング
@@ -368,7 +352,6 @@ public Java.Lang.Class Class {
 これは、メソッドのハンドルがすべての呼び出しでは検索する必要があるように、パフォーマンスの最適化です。 この方法でメソッドのハンドルをキャッシュする必要はありません。 メソッドのハンドルを取得すると、一度[JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/)メソッドを呼び出すために使用します。 `JNIEnv.CallStaticObjectMethod` 返します、`IntPtr`返された Java インスタンスのハンドルが含まれています。
 [Java.Lang.Object.GetObject&lt;T&gt;(IntPtr、JniHandleOwnership)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) Java ハンドルを厳密に型指定されたオブジェクトのインスタンスに変換するために使用します。
 
-<a name="_Binding_Constructors" />
 
 ### <a name="binding-constructors"></a>バインディングのコンス トラクター
 
@@ -444,8 +427,7 @@ public Integer (int value)
 
 [JNIEnv.CreateInstance](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CreateInstance/)メソッドを実行するヘルパー、 `JNIEnv.FindClass`、 `JNIEnv.GetMethodID`、 `JNIEnv.NewObject`、および`JNIEnv.DeleteGlobalReference`から返される値で`JNIEnv.FindClass`です。 詳細については、次のセクションを参照してください。
 
- <a name="_Supporting_Inheritance,_Interfaces" />
-
+<a name="_Supporting_Inheritance,_Interfaces_1" />
 
 ### <a name="supporting-inheritance-interfaces"></a>インターフェイスの継承をサポートするには、
 
@@ -488,7 +470,6 @@ partial class ManagedAdder : Adder {
 
 ここでは、 `Adder` c# 型*エイリアス*、 `Adder` Java の型。 `[Register]`の JNI 名を指定する属性を使用、 `mono.android.test.Adder` Java の型、および`DoNotGenerateAcw`について生成を抑制するプロパティを使用します。 これは、結果、についての生成時に、`ManagedAdder`型が正しくサブクラス、`mono.android.test.Adder`型です。 場合、`RegisterAttribute.DoNotGenerateAcw`プロパティが使用されておらず、Xamarin.Android ビルド プロセスに生成される新しい`mono.android.test.Adder`Java の型。 これは、結果として、コンパイル エラーとして、 `mono.android.test.Adder` 2 つの独立したファイルに 2 回、型があります。
 
- <a name="_Binding_Virtual_Methods" />
 
 
 ### <a name="binding-virtual-methods"></a>仮想メソッドのバインディング
@@ -501,7 +482,6 @@ partial class ManagedAdder : Adder {
 
 1.  **メソッドの登録**
 
-<a name="_Method_Binding" />
 
 #### <a name="method-binding"></a>メソッドのバインディング
 
@@ -562,7 +542,6 @@ partial class Adder {
 
 ときに`GetType`と一致しません`ThresholdType`、`Adder`サブクラス化されている (など`ManagedAdder`)、および`Adder.Add`実装は、サブクラスが呼び出された場合のみ呼び出される`base.Add`です。 これは、ような非仮想ディスパッチが`ThresholdClass`で提供します。 `ThresholdClass` Java クラスを呼び出すメソッドの実装を指定します。
 
- <a name="_Method_Registration" />
 
 
 #### <a name="method-registration"></a>メソッドの登録
@@ -657,7 +636,6 @@ int>`を参照するデリゲート、`n_Add`メソッドを呼び出します[J
 
 注: 常に使用`JniHandleOwnership.DoNotTransfer`Java インスタンスに対して、MCW を取得するときにします。 ローカルな参照として扱う (したがってを呼び出すと`JNIEnv.DeleteLocalRef`) が中断されます管理 -&gt; Java -&gt;スタック遷移を管理します。
 
- <a name="_Complete_Adder_Binding" />
 
 
 ### <a name="complete-adder-binding"></a>追加する操作子のバインドを完了します。
@@ -719,7 +697,6 @@ public class Adder : Java.Lang.Object {
 }
 ```
 
- <a name="_Restrictions" />
 
 
 ### <a name="restrictions"></a>制約
@@ -738,7 +715,6 @@ GC の対話型のため、*いない必要があります*を参照するすべ
 かどうか、型を参照できるインスタンス フィールドを含める必要があります、`Java.Lang.Object`インスタンス、フィールドの型である必要があります`System.WeakReference`または`GCHandle`です。
 
 
- <a name="_Binding_Abstract_Methods" />
 
 ## <a name="binding-abstract-methods"></a>抽象メソッドのバインディング
 
@@ -778,7 +754,6 @@ partial class AdderInvoker : Adder {
 
 `Invoker`型は、Java で作成されたインスタンスに JNI 参照を取得する場合にのみ必要です。
 
- <a name="_Binding_Interfaces" />
 
 ## <a name="binding-interfaces"></a>バインド インターフェイス
 
@@ -793,7 +768,6 @@ public interface Progress {
 インターフェイス バインディング部分があります: C# の場合、インターフェイスの定義とインターフェイスの呼び出し元定義します。
 
 
-<a name="_Interface_Definition" />
 
 ### <a name="interface-definition"></a>インターフェイス定義
 
@@ -828,7 +802,6 @@ public interface IAdderProgress : IJavaObject {
 Java をマップして、上記で予告`int[]`パラメーターを[JavaArray&lt;int&gt;](https://developer.xamarin.com/api/type/Android.Runtime.JavaArray%601/)です。
 これは必要ありません。 おでしたにバインドされていること、c# `int[]`、または`IList<int>`、または、それ以外完全です。 すべての型を選択した場合、 `Invoker` Java に変換できる必要があります`int[]`呼び出しの種類。
 
-<a name="_Invoker_Definition" />
 
 ### <a name="invoker-definition"></a>呼び出し元の定義
 
@@ -857,7 +830,6 @@ partial class ISortedMapInvoker : Java.Lang.Object, ISortedMap {
 
 呼び出し元の定義が 6 つのセクションでは: コンス トラクター、`Dispose`メソッド、`ThresholdType`と`ThresholdClass`、メンバー、`GetObject`メソッド、インターフェイス メソッドの実装、およびコネクタ メソッドの実装です。
 
- <a name="_Constructor" />
 
 
 #### <a name="constructor"></a>コンストラクター
@@ -879,7 +851,6 @@ partial class IAdderProgressInvoker {
 
 注:`Handle`コンス トラクター本体にあるプロパティを使用する必要がありますおよび not、`handle`パラメーター、Android v4.0 と同様、`handle`基底コンス トラクターは、実行が終了した後にパラメーターが無効になる可能性があります。
 
-<a name="_Dispose_Method" />
 
 #### <a name="dispose-method"></a>Dispose メソッド
 
@@ -897,7 +868,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_ThresholdType_and_ThresholdClass" />
 
 #### <a name="thresholdtype-and-thresholdclass"></a>開始および ThresholdClass
 
@@ -918,7 +888,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_GetObject_Method" />
 
 #### <a name="getobject-method"></a>GetObject メソッド
 
@@ -933,7 +902,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_Interface_Methods" />
 
 #### <a name="interface-methods"></a>インターフェイス メソッド
 
@@ -951,7 +919,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
- <a name="_Connector_Methods" />
 
 
 #### <a name="connector-methods"></a>コネクタ メソッド
@@ -986,7 +953,6 @@ int[] _values = (int[]) JNIEnv.GetArray(values, JniHandleOwnership.DoNotTransfer
 
 ただしを`JNIEnv.GetArray`のため、大きな配列をこの結果、追加の GC 負荷の多くの Vm 間で全体の配列をコピーします。
 
-<a name="_Complete_Invoker_Definition" />
 
 ### <a name="complete-invoker-definition"></a>呼び出し元の定義を完了します。
 
@@ -1060,7 +1026,6 @@ new JValue (currentSum));
 }
 ```
 
- <a name="_JNI_Object_References" />
 
 
 ## <a name="jni-object-references"></a>JNI オブジェクト参照
@@ -1077,13 +1042,11 @@ Android では、どの時点でも、通常 512 が存在するローカル参�
 
 グローバルの弱い参照は、Android バージョン 2.2 (Froyo) 以降にのみ使用できます。 グローバルの弱い参照を削除することができます[JNIEnv.DeleteWeakGlobalRef](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.DeleteWeakGlobalRef/(System.IntPtr))です。
 
-<a name="_Dealing_With_JNI_Local_References" />
 
 ### <a name="dealing-with-jni-local-references"></a>JNI ローカル参照を処理します。
 
 [JNIEnv.GetObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetObjectField/)、 [JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/)、 [JNIEnv.CallObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallObjectMethod/)、 [JNIEnv.CallNonvirtualObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualObjectMethod/)と[JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/)を返し、 `IntPtr` JNI ローカルな参照、Java オブジェクトにはが含まれていますまたは`IntPtr.Zero`Java が返される場合は`null`します。 により参照されることを確認する必要がある (512 エントリ) 後に保留にできるローカル参照の数を制限は、適切なタイミングで削除されます。 ローカル参照を処理することがある 3 つの方法: 明示的に削除すると、それらを作成する、`Java.Lang.Object`を使用して、それらを保持するためにインスタンス`Java.Lang.Object.GetObject<T>()`を中心にマネージ呼び出し可能ラッパーを作成します。
 
- <a name="_Explicitly_Deleting_Local_References" />
 
 
 ### <a name="explicitly-deleting-local-references"></a>ローカルの参照を明示的に削除します。
@@ -1100,7 +1063,6 @@ finally {
 }
 ```
 
- <a name="_Wrapping_with_Java.Lang.Object" />
 
 
 ### <a name="wrapping-with-javalangobject"></a>Java.Lang.Object での折り返し
@@ -1131,7 +1093,6 @@ using (var value = new Java.Lang.Object (lref, JniHandleOwnership.TransferLocalR
 }
 ```
 
- <a name="_Using_Java.Lang.Object.GetObject&lt;T&gt;()" />
 
 
 ### <a name="using-javalangobjectgetobjectlttgt"></a>Java.Lang.Object.GetObject を使用して&lt;T&gt;)
@@ -1170,13 +1131,12 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 ## <a name="instance-fields"></a>インスタンス フィールド
 
-フィールドを操作する*フィールド Id*です。 フィールド Id が経由で取得した[JNIEnv.GetFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetFieldID/)、クラスがありますが、フィールドは、フィールドの名前で定義されていると、 [JNI 型シグネチャ](#_JNI_Type_Signatures)フィールドのです。
+フィールドを操作する*フィールド Id*です。 フィールド Id が経由で取得した[JNIEnv.GetFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetFieldID/)、クラスがありますが、フィールドは、フィールドの名前で定義されていると、 [JNI 型シグネチャ](#JNI_Type_Signatures)フィールドのです。
 
 フィールド Id が解放する必要はありませんは有効では、対応する Java 型が読み込まれている限り、します。 (Android は現在サポートされませんクラスをアンロードします。)
 
 インスタンス フィールドを操作するメソッドの 2 つのセットがあります: 1 つのインスタンス フィールドと 1 つのインスタンス フィールドを記述するための読み取りにします。 すべてのメソッドのセットでは、フィールドの値を読み取ったり書き込んだりするフィールド ID が必要です。
 
-<a name="_Reading_Instance_Field_Values" />
 
 ### <a name="reading-instance-field-values"></a>インスタンス フィールドの値の読み取り
 
@@ -1207,7 +1167,6 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 
 
- <a name="_Writing_Instance_Field_Values" />
 
 
 ### <a name="writing-instance-field-values"></a>インスタンス フィールドの値を書き込んでいます
@@ -1243,13 +1202,12 @@ JNIEnv.SetField(IntPtr instance, IntPtr fieldID, Type value);
 
 ## <a name="static-fields"></a>静的フィールド
 
-静的フィールドを操作する*フィールド Id*です。 フィールド Id が経由で取得した[JNIEnv.GetStaticFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticFieldID/)、クラスがありますが、フィールドは、フィールドの名前で定義されていると、 [JNI 型シグネチャ](#JNI%20Type%20Signatures)フィールドのです。
+静的フィールドを操作する*フィールド Id*です。 フィールド Id が経由で取得した[JNIEnv.GetStaticFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticFieldID/)、クラスがありますが、フィールドは、フィールドの名前で定義されていると、 [JNI 型シグネチャ](#JNI_Type_Signatures)フィールドのです。
 
 フィールド Id が解放する必要はありませんは有効では、対応する Java 型が読み込まれている限り、します。 (Android は現在サポートされませんクラスをアンロードします。)
 
 静的フィールドを操作するメソッドの 2 つのセットがあります: 1 つのインスタンス フィールドと 1 つのインスタンス フィールドを記述するための読み取りにします。 すべてのメソッドのセットでは、フィールドの値を読み取ったり書き込んだりするフィールド ID が必要です。
 
-<a name="_Reading_Static_Field_Values" />
 
 ### <a name="reading-static-field-values"></a>静的フィールドの値の読み取り
 
@@ -1278,7 +1236,6 @@ JNIEnv.SetField(IntPtr instance, IntPtr fieldID, Type value);
 -   [JNIEnv.GetStaticDoubleField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticDoubleField/) &ndash;の値を読み取る`double`静的フィールドです。
 
 
-<a name="_Writing_Static_Field_Values" />
 
 ### <a name="writing-static-field-values"></a>静的フィールドの値を書き込んでいます
 
@@ -1313,7 +1270,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 ## <a name="instance-methods"></a>インスタンス メソッド
 
-を介してインスタンス メソッドが呼び出される*メソッド Id*です。 メソッド Id が経由で取得した[JNIEnv.GetMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetMethodID/)、型が必要ですが、メソッドは、メソッドの名前で定義されていると[JNI 型シグネチャ](#_JNI_Type_Signatures)メソッドの。
+を介してインスタンス メソッドが呼び出される*メソッド Id*です。 メソッド Id が経由で取得した[JNIEnv.GetMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetMethodID/)、型が必要ですが、メソッドは、メソッドの名前で定義されていると[JNI 型シグネチャ](#JNI_Type_Signatures)メソッドの。
 
 メソッド Id は、解放する必要はありませんは有効では、対応する Java 型が読み込まれている限り、します。 (Android は現在サポートされませんクラスをアンロードします。)
 
@@ -1323,7 +1280,6 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 クラスで宣言されている任意のメソッドまたはその基底クラスまたは実装されたインターフェイスを検索できます。
 
-<a name="_Virtual_Method_Invocation" />
 
 ### <a name="virtual-method-invocation"></a>仮想メソッドの呼び出し
 
@@ -1352,7 +1308,6 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 -   [JNIEnv.CallDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallDoubleMethod/) &ndash;を返すメソッドを呼び出し、`double`値。
 
 
-<a name="_Non-virtual_Method_Invocation" />
 
 ### <a name="non-virtual-method-invocation"></a>非仮想メソッドの呼び出し
 
@@ -1381,15 +1336,14 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 -   [JNIEnv.CallNonvirtualDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualDoubleMethod/) &ndash;非仮想的を返すメソッドを呼び出す、`double`値。
 
 
- <a name="_Static_Methods" />
+<a name="_Static_Methods" />
 
 ## <a name="static-methods"></a>静的メソッド
 
-静的メソッドがを通じて呼び出された*メソッド Id*です。 メソッド Id が経由で取得した[JNIEnv.GetStaticMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticMethodID/)、型が必要ですが、メソッドは、メソッドの名前で定義されていると[JNI 型シグネチャ](#JNI%20Type%20Signatures)メソッドの。
+静的メソッドがを通じて呼び出された*メソッド Id*です。 メソッド Id が経由で取得した[JNIEnv.GetStaticMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticMethodID/)、型が必要ですが、メソッドは、メソッドの名前で定義されていると[JNI 型シグネチャ](#JNI_Type_Signatures)メソッドの。
 
 メソッド Id は、解放する必要はありませんは有効では、対応する Java 型が読み込まれている限り、します。 (Android は現在サポートされませんクラスをアンロードします。)
 
- <a name="_Static_Method_Invocation" />
 
 
 ### <a name="static-method-invocation"></a>静的メソッドの呼び出し
@@ -1419,8 +1373,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 -   [JNIEnv.CallStaticDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticDoubleMethod/) &ndash;を返す静的メソッドを呼び出し、`double`値。
 
 
- <a name="_JNI_Type_Signatures" />
-
+<a name="JNI_Type_Signatures" />
 
 ## <a name="jni-type-signatures"></a>JNI 型シグネチャ
 
@@ -1453,9 +1406,6 @@ JNI 型参照の 4 つの種類があります。
 -  **array**
 
 
- <a name="_Built-in_Type_References" />
-
-
 ### <a name="built-in-type-references"></a>組み込み型の参照
 
 組み込み型の参照は、組み込みの値の型を参照するために使用、1 文字です。 マッピングは次のとおりです。
@@ -1471,8 +1421,7 @@ JNI 型参照の 4 つの種類があります。
 -  `"V"` `void`メソッドが型を返します。
 
 
- <a name="_Simplified_Type_References" />
-
+<a name="_Simplified_Type_References_1" />
 
 ### <a name="simplified-type-references"></a>簡略化された型の参照
 
@@ -1486,7 +1435,6 @@ JNI 型参照の 4 つの種類があります。
 
 Java の型と、2 つのいずれかが[java.lang.Thread.State](http://developer.android.com/reference/java/lang/Thread.State.html)型は単純な参照にマップされている`java/lang/Thread$State`です。
 
-<a name="_Type_References" />
 
 ### <a name="type-references"></a>型の参照
 
@@ -1528,7 +1476,6 @@ static {};
 `Thread.State` Java 列挙型では、署名を使用できるように、`valueOf`型参照が Ljava/lang/スレッド$ 状態であることを確認するメソッド。
 
 
-<a name="_Array_Type_References" />
 
 ### <a name="array-type-references"></a>配列型の参照
 
@@ -1537,7 +1484,6 @@ static {};
 
 たとえば、`int[]`は`"[I"`、`int[][]`は`"[[I"`、および`java.lang.Object[]`は`"[Ljava/lang/Object;"`します。
 
-<a name="_Java_Generics_and_Type_Erasure" />
 
 
 ## <a name="java-generics-and-type-erasure"></a>Java ジェネリックと型の消去
@@ -1547,7 +1493,6 @@ static {};
 
 JNI を介してやり取りするときに、ジェネリック型またはメンバーと非ジェネリック型またはメンバーの間の違いはありません。 たとえば、ジェネリック型[java.lang.Class&lt;T&gt; ](http://developer.android.com/reference/java/lang/Class.html) 「生」のジェネリック型ではも`java.lang.Class`、どちらも、同じの型は単純な参照がある`"java/lang/Class"`です。
 
-<a name="Java_Native_Interface_Support" />
 
 ## <a name="java-native-interface-support"></a>Java ネイティブ インターフェイスのサポート
 
@@ -1610,7 +1555,6 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 さらに、すべての JNI 関数が変更されて削除することで、`JNIEnv*`パラメーターすべて JNI 関数内に存在します。
 
-<a name="_Summary" />
 
 ## <a name="summary"></a>まとめ
 

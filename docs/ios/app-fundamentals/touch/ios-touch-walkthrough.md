@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 848db0af436ad43e07e68de4d278f641ab83136d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>チュートリアル – ios を使用するタッチ
 
@@ -24,9 +24,11 @@ ms.lasthandoff: 02/27/2018
 各セクションでは、最初からコードを記述する手順を説明します。
 [開始のサンプル コード](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start)完了のストーリー ボードとメニュー画面が既に含まれます。
 
- [ ![](ios-touch-walkthrough-images/image3.png "このサンプルには、メニュー画面が含まれています。")](ios-touch-walkthrough-images/image3.png)
+ [![](ios-touch-walkthrough-images/image3.png "このサンプルには、メニュー画面が含まれています。")](ios-touch-walkthrough-images/image3.png#lightbox)
 
 コードをストーリー ボードに追加し、iOS で使用できるタッチ イベントのさまざまな種類について学ぶには、以下の手順に従います。 また、開く、[完成したサンプル](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final)操作すべてを表示します。
+
+<a name="Touch_Samples"/>
 
 ## <a name="touch-samples"></a>タッチのサンプル
 
@@ -35,7 +37,7 @@ ms.lasthandoff: 02/27/2018
 
 1. プロジェクトを開く**Touch_Start**です。 最初に、プロジェクトの実行をすべて、問題がないかどうかを確認し、タッチ、**タッチ サンプル**ボタンをクリックします。 (いずれのボタンは機能) には、次のような画面が表示されます。
     
-    [![](ios-touch-walkthrough-images/image4.png "非稼働ボタンを使用して実行するサンプル アプリ")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "非稼働ボタンを使用して実行するサンプル アプリ")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
 1. ファイルを編集して**TouchViewController.cs**クラスに次の 2 つのインスタンス変数を追加および`TouchViewController`:
@@ -166,9 +168,9 @@ ms.lasthandoff: 02/27/2018
 
 1. この時点でサンプルのタッチ スクリーンが完了しました。 次のスクリーン ショットに示すように、画面が、イメージを操作するときを変更する方法に注意してください。
         
-    [![](ios-touch-walkthrough-images/image4.png "アプリの開始画面")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "アプリの開始画面")](ios-touch-walkthrough-images/image4.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image5.png "ユーザーがボタンをドラッグした後、画面")](ios-touch-walkthrough-images/image5.png)
+    [![](ios-touch-walkthrough-images/image5.png "ユーザーがボタンをドラッグした後、画面")](ios-touch-walkthrough-images/image5.png#lightbox)
  
 
 <a name="Gesture_Recognizer_Samples" />
@@ -183,7 +185,7 @@ ms.lasthandoff: 02/27/2018
 
 実行する場合、[開始のサンプル コード](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) をクリックし、**ジェスチャ レコグナイザー サンプル**ボタン、次の画面が表示されます。
 
- [ ![](ios-touch-walkthrough-images/image6.png "ジェスチャ レコグナイザー サンプル ボタン クリックすると、この画面を表示します。")](ios-touch-walkthrough-images/image6.png)
+ [![](ios-touch-walkthrough-images/image6.png "ジェスチャ レコグナイザー サンプル ボタン クリックすると、この画面を表示します。")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 ジェスチャ レコグナイザーを実装する次の手順に従います。
 
@@ -305,15 +307,17 @@ ms.lasthandoff: 02/27/2018
 1. アプリケーションを実行し、2 つのイメージと対話します。
 次のスクリーン ショットは、これらの操作の 1 つの例を示します。
     
-    [![](ios-touch-walkthrough-images/image7.png "このスクリーン ショットは、ドラッグ操作を示しています。")](ios-touch-walkthrough-images/image7.png)
+    [![](ios-touch-walkthrough-images/image7.png "このスクリーン ショットは、ドラッグ操作を示しています。")](ios-touch-walkthrough-images/image7.png#lightbox)
 
 
+
+<a name="Custom_Gesture_Recognizer"/>
 
 ## <a name="custom-gesture-recognizer"></a>カスタム ジェスチャ レコグナイザー
 
 このセクションの概念で前のセクションでは、カスタム ジェスチャ レコグナイザーをビルドするお適用されます。 カスタム ジェスチャ レコグナイザーはサブクラス`UIGestureRecognizer`は、画面上のユーザーは、"V"を描画する場合を認識し、ビットマップを切り替えます。 次のスクリーン ショットは、この画面の例を示します。
 
- [ ![](ios-touch-walkthrough-images/image8.png "ユーザーが画面に 'V' を描画するときに、アプリが認識されます。")](ios-touch-walkthrough-images/image8.png)
+ [![](ios-touch-walkthrough-images/image8.png "ユーザーが画面に 'V' を描画するときに、アプリが認識されます。")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 カスタム ジェスチャ レコグナイザーを作成する手順に従います。
 
@@ -490,9 +494,9 @@ ms.lasthandoff: 02/27/2018
 
 1. アプリケーションを実行して、画面上の"V"の描画を再試行してください。 次のスクリーン ショットに示すように、変更を表示するイメージ表示されます。
     
-    [![](ios-touch-walkthrough-images/image9.png "チェック ボタン")](ios-touch-walkthrough-images/image9.png)
+    [![](ios-touch-walkthrough-images/image9.png "チェック ボタン")](ios-touch-walkthrough-images/image9.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image10.png "未チェックのボタン")](ios-touch-walkthrough-images/image10.png)
+    [![](ios-touch-walkthrough-images/image10.png "未チェックのボタン")](ios-touch-walkthrough-images/image10.png#lightbox)
 
 
 

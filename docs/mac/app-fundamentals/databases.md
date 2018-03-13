@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c3de0150bd34667a9310b796bf98a6bff6c07a67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39186735749174884646a72871accfa051d2901c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="databases"></a>Databases
 
@@ -27,13 +27,13 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 1. **直接アクセスできるように**- SQLite データベースに直接アクセスするおおよび使用できます、データベースからデータをキーと値のコーディングの Xcode のインターフェイスのビルダーで UI 要素にデータ バインディングを作成します。 キーと値のコーディングおよびでのデータ バインディング技術 Xamarin.Mac アプリケーションを使用するの記述し、保守を作成し、UI 要素を使用する必要のあるコードの量を大幅に削減できます。 また、バックアップ データをさらに分離することの利点がある場合 (_データ モデル_)、正面からのユーザー インターフェイスを終了 (_モデル-ビュー-コント ローラー_) より柔軟なアプリケーションの保守が容易に先行します。デザインします。
 2. **SQLite.NET ORM**オープン ソースを使用して[SQLite.NET](http://www.sqlite.org)オブジェクトのリレーションシップ マネージャー (ORM) がお SQLite データベースからデータを読み書きするために必要なコードの量を大幅に削減できます。 このデータは、テーブル ビューなどのユーザー インターフェイス項目の設定に使用できます。
 
-[![実行中のアプリの使用例](databases-images/intro01.png "実行中のアプリの例")](databases-images/intro01-large.png)
+[![実行中のアプリの使用例](databases-images/intro01.png "実行中のアプリの例")](databases-images/intro01-large.png#lightbox)
 
 は、この記事では、キーと値のコーディングおよび Xamarin.Mac アプリケーションでは、SQLite データベースにデータ バインディングの操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
 おを使用するキーと値のコーディングおよびデータ バインディング、ためにが使用してください機能、[データのバインドとキー値のコーディング](~/mac/app-fundamentals/databinding.md)最初に、手法としてコアと概念については、説明は、このドキュメントおよびそのサンプルで使用します。アプリケーション。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを OBJECTIVE-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 ## <a name="direct-sqlite-access"></a>SQLite の直接アクセス
 
@@ -52,7 +52,7 @@ SQLite 送信されるデータを Xcode のインターフェイスのビルダ
 1. **ソリューション パッド**を右クリックし、**参照**フォルダーと選択**参照の編集**です。
 2. 両方を選択、 **Mono.Data.Sqlite**と**System.Data**アセンブリ。 
 
-    [![必要な参照を追加する](databases-images/reference01.png "必要な参照を追加します。")](databases-images/reference01-large.png)
+    [![必要な参照を追加する](databases-images/reference01.png "必要な参照を追加します。")](databases-images/reference01-large.png#lightbox)
 3. をクリックして、 **OK**変更を保存し、参照を追加するにはボタン。
 
 ### <a name="modifying-the-data-model"></a>データ モデルを変更します。
@@ -1019,7 +1019,7 @@ SQL ステートメントの唯一の違い (管理者のみが読み込まれ�
 
 例として、コンボ ボックスを追加するインターフェイス ビルダーでは、上記の単純バインディング例を編集し、名前付きコンセントを使用して公開`EmployeeSelector`:
 
-[![コンボ ボックス コンセントを公開する](databases-images/combo01.png "コンボ ボックス コンセントを公開します。")](databases-images/combo01-large.png)
+[![コンボ ボックス コンセントを公開する](databases-images/combo01.png "コンボ ボックス コンセントを公開します。")](databases-images/combo01-large.png#lightbox)
 
 **属性インスペクター**、確認、**オートコンプリート**と**データ ソースを使用して**プロパティ。
 
@@ -1924,7 +1924,7 @@ SQLite.NET は、アプリケーションに含めることの NuGet パッケ�
 1. **ソリューション パッド**を右クリックし、**パッケージ**フォルダーと選択**パッケージを追加しています.**
 2. 入力`SQLite.net`で、**検索ボックス**を選択し、 **sqlite net**エントリ。
 
-    [![SQLite の NuGet パッケージを追加する](databases-images/nuget01.png "SQLite NuGet パッケージを追加します。")](databases-images/nuget01-large.png)
+    [![SQLite の NuGet パッケージを追加する](databases-images/nuget01.png "SQLite NuGet パッケージを追加します。")](databases-images/nuget01-large.png#lightbox)
 3. クリックして、**パッケージの追加**[完了] をクリックします。
 
 ### <a name="creating-the-data-model"></a>データ モデルを作成します。
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 使用例、として Xcode のインターフェイスのビルダーで UI をテーブル ビューを追加します。 コンセントを使用してこのテーブルのビューを公開します (`OccupationTable`) の c# コードを使用してアクセスできるようにします。
 
-[![テーブル ビュー コンセントを公開する](databases-images/table01.png "テーブル ビュー コンセントを公開します。")](databases-images/table01-large.png)
+[![テーブル ビュー コンセントを公開する](databases-images/table01.png "テーブル ビュー コンセントを公開します。")](databases-images/table01-large.png#lightbox)
 
 次に、このテーブルに SQLite.NET データベースからデータを設定するカスタム クラスを追加します。
 

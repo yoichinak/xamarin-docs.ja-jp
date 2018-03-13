@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 55864073aecb48176d650da6edefad24c3248767
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0c4014ecda0501e9309a17901c439444e4b48e86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-views-in-c"></a>C# でネイティブのビュー
 
@@ -24,7 +24,7 @@ _IOS、Android、および UWP からネイティブのビューは、c# を使�
 
 次のスクリーン ショットは、プラットフォーム固有のビューを Xamarin.Forms に追加されたことを示す[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 
-[![](code-images/screenshots-sml.png "プラットフォーム固有のビューを含む StackLayout")](code-images/screenshots.png "StackLayout プラットフォーム固有のビューを含む")
+[![](code-images/screenshots-sml.png "プラットフォーム固有のビューを含む StackLayout")](code-images/screenshots.png#lightbox "StackLayout プラットフォーム固有のビューを含む")
 
 Xamarin.Forms のレイアウトにプラットフォーム固有のビューを追加する機能は、各プラットフォームでの 2 つの拡張メソッドで有効です。
 
@@ -64,7 +64,7 @@ contentView.Content = uiLabel.ToView();
 次のコード例は、追加する方法を示します、`TextView`を[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 
 ```csharp
-var textView = new TextView (Forms.Context) { Text = originalText, TextSize = 14 };
+var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
 stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
@@ -188,7 +188,7 @@ public class CustomControl : TextView
 このビューのインスタンスを追加、 [ `StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)次のコード例に示すように、します。
 
 ```csharp
-var customControl = new CustomControl (Forms.Context) {
+var customControl = new CustomControl (MainActivity.Instance) {
   Text = "This control has incorrect sizing - it doesn't occupy the available width of the device.",
   TextSize = 14
 };
