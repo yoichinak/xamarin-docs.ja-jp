@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e78b76a531e9f8ea88adca46fc59b2063fce14cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>チュートリアル - iOS 用の Xamarin デザイナーをカスタム コントロールを使用します。
 
@@ -33,13 +33,13 @@ IOS 用 Xamarin デザイナーは、Windows 上の Mac と Visual Studio 2015 �
 1. 新しいソリューションを作成、 **iOS > アプリ > ビューの 1 つのアプリケーション > c#**テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。
 
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "新しいソリューションを作成します。")](ios-designable-controls-walkthrough-images/01new.png)
+    [![](ios-designable-controls-walkthrough-images/01new.png "新しいソリューションを作成します。")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
 
 1. という名前の新しい空のクラス ファイルを作成する`ScratchTicketView`:
 
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "新しい ScratchTicketView クラスを作成します。")](ios-designable-controls-walkthrough-images/02new.png)
+    [![](ios-designable-controls-walkthrough-images/02new.png "新しい ScratchTicketView クラスを作成します。")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
 
 1. 次のコードを追加`ScratchTicketView`クラス。
@@ -168,63 +168,50 @@ IOS 用 Xamarin デザイナーは、Windows 上の Mac と Visual Studio 2015 �
     
 1. ダブルクリックして、`Main.storyboard`デザイナーで開くファイル。
 
-    
-    [![](ios-designable-controls-walkthrough-images/03new.png "IOS デザイナー")](ios-designable-controls-walkthrough-images/03new.png)
-
+    [![](ios-designable-controls-walkthrough-images/03new.png "IOS デザイナー")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
 1. ドラッグ アンド ドロップ、**イメージ ビュー**から、**ツールボックス**ストーリー ボードの表示にします。
 
-    
-    [![](ios-designable-controls-walkthrough-images/04new.png "レイアウトに追加のイメージ ビュー")](ios-designable-controls-walkthrough-images/04new.png)
+    [![](ios-designable-controls-walkthrough-images/04new.png "レイアウトに追加のイメージ ビュー")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
 1. 選択、**イメージ ビュー**変更とその**イメージ**プロパティを`Monkey.png`です。
 
-    
-    [![](ios-designable-controls-walkthrough-images/05new.png "Monkey.png にイメージのイメージ表示プロパティの設定")](ios-designable-controls-walkthrough-images/05new.png)
+    [![](ios-designable-controls-walkthrough-images/05new.png "Setting Image View Image property to Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. サイズのクラスを使用して、このイメージの表示を制限する必要になります。 制約のモードにするには、2 回イメージをクリックします。 Center 固定ハンドルをクリックして、中央に制限して、垂直および水平方向の両方を配置してみましょう。
-    
-    
-    [![](ios-designable-controls-walkthrough-images/06new.png "画像を中央揃え")](ios-designable-controls-walkthrough-images/06new.png)
 
-    
+    [![](ios-designable-controls-walkthrough-images/06new.png "画像を中央揃え")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+
 1. 高さと幅を制限、サイズ固定ハンドル ('骨' 形のハンドル) をクリックしを幅と高さをそれぞれ選択します。
 
-    
-    [![](ios-designable-controls-walkthrough-images/07new.png "制約の追加")](ios-designable-controls-walkthrough-images/07new.png)
+    [![](ios-designable-controls-walkthrough-images/07new.png "制約の追加")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
 1. ツールバーの [更新] ボタンをクリックして、制約に基づくフレームを更新します。
 
-
-    [![](ios-designable-controls-walkthrough-images/08new.png "制約のツールバー")](ios-designable-controls-walkthrough-images/08new.png)
+    [![](ios-designable-controls-walkthrough-images/08new.png "制約のツールバー")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
 1. 次に、プロジェクトをビルドできるように、**チケット ビューのスクラッチ**下に表示されます**カスタム コンポーネント**ツールボックスで。
 
-    
-    [![](ios-designable-controls-walkthrough-images/09new.png "カスタム コンポーネントのツールボックス")](ios-designable-controls-walkthrough-images/09new.png)
+    [![](ios-designable-controls-walkthrough-images/09new.png "カスタム コンポーネントのツールボックス")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 
 1. ドラッグ アンド ドロップ、**チケット ビューのスクラッチ**サル画像の上に表示されるようにします。 スクラッチ チケット ビュー、サルを次のように、完全にカバーするために、ドラッグ ハンドルを調整します。
 
-    
-    [![](ios-designable-controls-walkthrough-images/10new.png "全体のイメージ表示スクラッチ チケット ビュー")](ios-designable-controls-walkthrough-images/10new.png)
-
+    [![](ios-designable-controls-walkthrough-images/10new.png "全体のイメージ表示スクラッチ チケット ビュー")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
 1. スクラッチ チケット ビューに、画像表示を制限するには、両方のビューを選択する外接する四角形を描画します。 次に示すように制約に基づいて幅、高さ、中央および中央および更新プログラムのフレームに制限するオプションを選択します。
- 
-    
-    [![](ios-designable-controls-walkthrough-images/11new.png "中央に配置し、制約を追加します。")](ios-designable-controls-walkthrough-images/11new.png)
+
+    [![](ios-designable-controls-walkthrough-images/11new.png "中央に配置し、制約を追加します。")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
 1. アプリケーションを実行し、サルを表示するイメージをオフ"scratch"です。
 
-
- [ ![](ios-designable-controls-walkthrough-images/10-app.png "実行のサンプル アプリ")](ios-designable-controls-walkthrough-images/10-app.png)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "実行のサンプル アプリ")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>デザイン時のプロパティを追加します。
 
@@ -286,7 +273,7 @@ public override void Draw(CGRect rect)
 
 含む、`ExportAttribute`と`BrowsableAttribute`に設定する引数を持つ`true`デザイナーに表示されているプロパティで結果**プロパティ**パネルです。 プロパティを変更するなど、プロジェクトに含まれている別のイメージを`FillTexture2.png`、次に示すように、コントロールを更新中に、デザイン時に結果します。
 
- [ ![](ios-designable-controls-walkthrough-images/11-customproperty.png "デザイン時プロパティの編集")](ios-designable-controls-walkthrough-images/10-app.png)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "デザイン時プロパティの編集")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
