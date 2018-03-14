@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 97ca114f1160168c7fd9439e31dc475bc37b0467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2ec783b6963fc4ae14166ebf1e56bf8a802ba8b4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-page"></a>タブ ページ
 
@@ -97,7 +97,7 @@ public class MainPageCS : TabbedPage
 [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)には、2 つの子[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)オブジェクト。 最初の子は、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス、および 2 番目のタブは、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)を含む、`ContentPage`インスタンス。
 
 > [!NOTE]
-> **注**: [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`TabbedPage`多数の子要素が含まれています。
+> [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`TabbedPage`多数の子要素が含まれています。
 
 次のスクリーン ショットに示さ、 `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)上に表示されるインスタンス、*今日* タブ。
 
@@ -233,7 +233,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-各タブが表示されます、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の系列を使用する[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)タブのデータを表示するインスタンス。次のスクリーン ショットの内容を表示する、 *Tamarin* タブ。
+各タブが表示されます、 [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の系列を使用する[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)タブのデータを表示するインスタンス。次のスクリーン ショットの内容を表示する、 *Tamarin*  タブ。
 
 ![](tabbed-page-images/tab3.png "テンプレートを使用して TabbedPage を設定します。")
 

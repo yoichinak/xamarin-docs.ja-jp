@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: f1f420641691e700894687fef8ea3bd44fd60ff2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d7f7e031d91cd1505ee255bbf0d25198bd9ae82a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-contentpage"></a>コンテンツ ページをカスタマイズします。
 
@@ -99,7 +99,7 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 1. 追加、`ExportRenderer`属性、ページ レンダラーをクラスに Xamarin.Forms ページを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
 
 > [!NOTE]
-> **注**: プラットフォーム プロジェクトごとにページ レンダラーを提供することはオプションです。 ページ レンダラーが登録されていない場合は、ページの既定のレンダラーが使用されます。
+> 省略可能なページ レンダラーな各プラットフォームのプロジェクトでの提供になります。 ページ レンダラーが登録されていない場合は、ページの既定のレンダラーが使用されます。
 
 次の図は、その間の関係と共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
 
@@ -248,7 +248,7 @@ Windows Phone のプラットフォームでネイティブに、プラットフ
 派生するカスタム レンダラーを実装するときに`PageRenderer`Windows ランタイムで、`ArrangeOverride`基本レンダラーが不明な関連付けを行うためにも、メソッドを実装ページ コントロールを配置する必要があります。 それ以外の場合、空白のページが発生します。 そのため、この例では、`ArrangeOverride`メソッドの呼び出し、`Arrange`メソッドを`Page`インスタンス。
 
 > [!NOTE]
-> **注**: を停止し、Windows Phone 8.1 WinRT アプリケーションにカメラへのアクセスを提供するオブジェクトを破棄することが重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。、`CleanUpCaptureResourcesAsync`サンプル ソリューションで Windows Phone プロジェクト内のメソッドと[クイック スタート: MediaCapture API を使用してビデオを取り込む](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)です。
+> 停止し、Windows Phone 8.1 WinRT アプリケーションにカメラへのアクセスを提供するオブジェクトの破棄は重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。、`CleanUpCaptureResourcesAsync`サンプル ソリューションで Windows Phone プロジェクト内のメソッドと[クイック スタート: MediaCapture API を使用してビデオを取り込む](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)です。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP にページ レンダラーを作成します。
 
@@ -297,7 +297,7 @@ namespace CustomRenderer.UWP
 派生するカスタム レンダラーを実装するときに`PageRenderer`UWP、上、`ArrangeOverride`基本レンダラーが不明な関連付けを行うためにも、メソッドを実装ページ コントロールを配置する必要があります。 それ以外の場合、空白のページが発生します。 そのため、この例では、`ArrangeOverride`メソッドの呼び出し、`Arrange`メソッドを`Page`インスタンス。
 
 > [!NOTE]
-> **注**: 停止して、UWP アプリケーションでカメラへのアクセスを提供するオブジェクトを破棄することが重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。[カメラのプレビューを表示](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)です。
+> 停止し、UWP アプリケーションでカメラへのアクセスを提供するオブジェクトの破棄に重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。[カメラのプレビューを表示](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)です。
 
 ## <a name="summary"></a>まとめ
 

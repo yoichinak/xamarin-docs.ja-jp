@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 9579acc6c070bf692b0db1bd444a31c9ea4aa7ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture"></a>アーキテクチャ
 
@@ -22,13 +22,12 @@ Xamarin.Android アプリケーションは、Mono 実行環境内で実行さ�
 
 Android でのオーディオ、画像、OpenGL およびテレフォニーのようなシステム機能のほとんどはネイティブ アプリケーションに直接は使用できませんのいずれかに存在している Android のランタイム Java Api を介してのみ公開されている、 [Java](https://developer.xamarin.com/api/namespace/Java.Lang/)*。名前空間または[Android](https://developer.xamarin.com/api/namespace/Android/)。 * 名前空間。 アーキテクチャは、次のようにほぼです。
 
-[![カーネル上と下 .NET と Java + バインド モノラルとアートのダイアグラム](architecture-images/architecture1.png)](architecture-images/architecture1.png)
+[![カーネル上と下 .NET と Java + バインド モノラルとアートのダイアグラム](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Xamarin.Android 開発者 (下位アクセス用) が認識される .NET Api への呼び出しまたはによって公開されている Java Api への仲介役を果たしますが Android 名前空間で公開されているクラスを使用して、オペレーティング システムのさまざまな機能にアクセスします。Android のランタイム。
 
 Android のクラスが、Android のランタイム クラスと通信する方法の詳細については、次を参照してください。、 [API の設計](~/android/internals/api-design.md)ドキュメント。
 
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>アプリケーション パッケージ
 
@@ -44,7 +43,6 @@ Android アプリケーション パッケージは ZIP を使用したコンテ
 Xamarin.Android アプリケーションにも含まれて*Android 呼び出し可能ラッパー* Android マネージ コードへの呼び出しを使用できるようにします。
 
 
-<a name="Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android の呼び出し可能ラッパー
 
@@ -67,7 +65,6 @@ Xamarin.Android アプリケーションにも含まれて*Android 呼び出し�
 インスタンスを誤って破棄インスタンスとして、スレッド間で共有する場合は、マネージ呼び出し可能ラッパーの破棄と、その他のスレッドからの参照が影響する場合は、注意を実行する必要があります。 最大安全のため、のみ`Dispose()`経由で割り当てられているインスタンスの`new`*または*メソッドから先*知る*新しいインスタンスがキャッシュされたインスタンスを常に割り当てます。スレッド間で共有偶発的なインスタンスが発生します。
 
 
-<a name="Managed_Callable_Wrapper_Subclasses" />
 
 ## <a name="managed-callable-wrapper-subclasses"></a>呼び出し可能ラッパー サブクラスの管理
 
@@ -76,7 +73,6 @@ Xamarin.Android アプリケーションにも含まれて*Android 呼び出し�
 同様に管理されている、呼び出し可能ラッパーをマネージ呼び出し可能ラッパー サブクラスが経由でアクセスできるグローバルの参照を含めることも、 [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/)プロパティです。 マネージ呼び出し可能ラッパーでグローバル参照明示的に解放できるを呼び出して同様[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)です。
 マネージ呼び出し可能ラッパーとは異なり*細心*としてこのようなインスタンスの破棄される前に実行する必要があります*Dispose()*インスタンスの演算を行い、Java インスタンス間のマッピングが中断されます (のインスタンス、Android の呼び出し可能ラッパー) およびマネージ インスタンスです。
 
-<a name="Java_Activation" />
 
 ### <a name="java-activation"></a>Java のアクティブ化
 
@@ -182,7 +178,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 のみ*Dispose()*の Java オブジェクトは、使用されませんまたはサブクラスにインスタンス データが含まれていないことがわかっている場合に、呼び出し可能ラッパーのサブクラスをマネージ*(IntPtr、JniHandleOwnership)*コンス トラクターが用意されています。
 
 
-<a name="Application_Startup" />
 
 ## <a name="application-startup"></a>アプリケーションの起動
 

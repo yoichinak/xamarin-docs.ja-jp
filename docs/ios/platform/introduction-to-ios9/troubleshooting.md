@@ -3,16 +3,16 @@ title: "トラブルシューティング"
 description: "この記事は、Xamarin.iOS アプリで iOS 9 を操作するためのいくつかのトラブルシューティングのヒントを提供します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
+ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ea274ca198a4ca76a87198b02b6229e0e1c88b2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting"></a>トラブルシューティング
 
@@ -32,7 +32,7 @@ Xcode 7 (またはそれ以上) が自動的をインストールしている場
 
 Xcode での選択、 **Xcode**メニュー、**設定しています.**  > **ダウンロード**:
 
-[ ![](troubleshooting-images/ios8.png "iOS 8 シミュレータをダウンロードします。")](troubleshooting-images/ios8.png)
+[![](troubleshooting-images/ios8.png "iOS 8 シミュレータをダウンロードします。")](troubleshooting-images/ios8.png#lightbox)
 
 をクリックして、**チェックとインストール 今すぐ**iOS 8 シミュレータを再インストールするボタンをクリックします。
 
@@ -139,26 +139,26 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 IOS 9 バージョン Xamarin.iOS アプリの実際の iOS のハードウェアを実行すると、デバイスで、開発者アカウントが信頼されていないことを示すメッセージを取得可能性があります。 例:
 
-[ ![](troubleshooting-images/untrusted01.png "信頼されていないエンタープライズ開発者アラート")](troubleshooting-images/untrusted01.png)
+[![](troubleshooting-images/untrusted01.png "信頼されていないエンタープライズ開発者アラート")](troubleshooting-images/untrusted01.png#lightbox)
 
 この問題を解決するには、次の操作を行います。
 
 1. 開発ファルダ Xcode (最新のベータ版) を開始します。
 2. 選択**デバイス**から、**ウィンドウ** メニューの デバイス ウィンドウを開きます。 
 
-    [ ![](troubleshooting-images/untrusted02.png "[デバイス] ウィンドウ")](troubleshooting-images/untrusted02.png)
+    [![](troubleshooting-images/untrusted02.png "[デバイス] ウィンドウ")](troubleshooting-images/untrusted02.png#lightbox)
 3. 下にある、**デバイス**側のパネルで、デバイスを右クリックして選択を選択**プロビジョニング プロファイルを表示しています.**: 
 
-    [ ![](troubleshooting-images/untrusted03.png "SShow プロビジョニング プロファイル")](troubleshooting-images/untrusted03.png)
+    [![](troubleshooting-images/untrusted03.png "SShow プロビジョニング プロファイル")](troubleshooting-images/untrusted03.png#lightbox)
 4. 現在、デバイス上をクリックして各プロビジョニング プロファイルを選択、  **-** 削除ボタンをクリックします。 
 
-    [ ![](troubleshooting-images/untrusted04.png "プロビジョニング プロファイルの削除")](troubleshooting-images/untrusted04.png)
+    [![](troubleshooting-images/untrusted04.png "プロビジョニング プロファイルの削除")](troubleshooting-images/untrusted04.png#lightbox)
 5. **Xcode**メニューの **設定しています.**と**アカウント**: 
 
-    [ ![](troubleshooting-images/untrusted05.png "Xcode アカウントの基本設定")](troubleshooting-images/untrusted05.png)
+    [![](troubleshooting-images/untrusted05.png "Xcode アカウントの基本設定")](troubleshooting-images/untrusted05.png#lightbox)
 6. クリックして、**の詳細を表示しています.**クリックして、**すべてダウンロード**ボタンをクリックします。 
 
-    [ ![](troubleshooting-images/untrusted06.png "すべてのプロファイルをダウンロードします。")](troubleshooting-images/untrusted06.png)
+    [![](troubleshooting-images/untrusted06.png "すべてのプロファイルをダウンロードします。")](troubleshooting-images/untrusted06.png#lightbox)
 7. 一覧の更新が完了したらをクリックして、**完了**ボタンをクリックし、環境設定ウィンドウを閉じます。
 8. IOS デバイスからテストしようとした Xamarin.iOS アプリの既存のバージョンを削除します。
 9. Mac 用 Visual Studio に戻り、クリーン ビルドを実行およびデバイスでアプリを再実行しようとしてください。
@@ -177,7 +177,7 @@ IOS 9 バージョン Xamarin.iOS アプリの実際の iOS のハードウェ�
 
 コンパイルして、iOS 9 の既存の Xamarin.iOS アプリを実行しているときに、フォームでエラーが発生する可能性があります。
 
-> Objective C の例外がスローされます。  名前: NSInternalInconsistencyException 理由: アプリケーションの起動の最後に、ルート ビュー コント ローラーに windows アプリケーションは必要
+> Objective C の例外がスローされます。  [名前]: NSInternalInconsistencyException 理由: アプリケーションの起動の最後に、ルート ビュー コント ローラーに windows アプリケーションは必要
 
 これは、エラーがアプリの Windows がアプリケーションの起動の最後に、ルート ビュー コント ローラーをいる必要があり、既存のアプリはために発生します。
 

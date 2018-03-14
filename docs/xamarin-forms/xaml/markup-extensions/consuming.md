@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: cc4407be9dee7e19dbf1f3cc03b3b88191717e6f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0c68d2cfd43eb535fe2e02b5662250cb6e453ddd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
@@ -137,7 +137,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 3 つすべてのプラットフォームで実行されているサンプルを次に示します。
 
-[![X:static デモ](consuming-images/staticdemo-small.png "X:static デモ")](consuming-images/staticdemo-large.png "X:static デモ")
+[![X:static デモ](consuming-images/staticdemo-small.png "X:static デモ")](consuming-images/staticdemo-large.png#lightbox "X:static デモ")
 
 <a name="reference" />
 
@@ -181,7 +181,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 両方`x:Reference`式の短縮形を使用して、`ReferenceExtension`クラス名と、削除、`Name=`式の一部です。 最初の例では、`x:Reference`にマークアップ拡張機能が埋め込まれている、`Binding`マークアップ拡張機能です。 注意して、`Source`と`StringFormat`設定は、コンマで区切られます。 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
 
-[![X:reference デモ](consuming-images/referencedemo-small.png "X:reference デモ")](consuming-images/referencedemo-large.png "X:reference デモ")
+[![X:reference デモ](consuming-images/referencedemo-small.png "X:reference デモ")](consuming-images/referencedemo-large.png#lightbox "X:reference デモ")
 
 <a name="type" />
 
@@ -236,7 +236,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 開くメイン ページを次に示します**マークアップ拡張機能**:
 
-[![メイン ページ](consuming-images/mainpage-small.png "メイン ページ")](consuming-images/mainpage-large.png "メイン ページ")
+[![メイン ページ](consuming-images/mainpage-small.png "メイン ページ")](consuming-images/mainpage-large.png#lightbox "メイン ページ")
 
 各`CommandParameter`プロパティに設定されている、`x:Type`他のページの 1 つを参照するマークアップ拡張機能です。 `Command`プロパティがという名前のプロパティにバインドされる`NavigateCommand`です。 このプロパティが定義されている、`MainPage`分離コード ファイル。
 
@@ -319,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 メソッドは実行すると実行、`Button`が押された引数の新しいインスタンスを作成、設定、`VerticalOptions`プロパティに追加し、`StackLayout`です。 3 つ`Button`要素が動的に作成されたビューとし、ページを共有します。
 
-[![X:type デモ](consuming-images/typedemo-small.png "X:type デモ")](consuming-images/typedemo-large.png "X:type デモ")
+[![X:type デモ](consuming-images/typedemo-small.png "X:type デモ")](consuming-images/typedemo-large.png#lightbox "X:type デモ")
 
 <a name="array" />
 
@@ -376,7 +376,7 @@ public partial class TypeDemoPage : ContentPage
 
 `ViewCell` 、単純なが作成`BoxView`カラー エントリごとに。
 
-[![X:array デモ](consuming-images/arraydemo-small.png "X:array デモ")](consuming-images/arraydemo-large.png "X:array デモ")
+[![X:array デモ](consuming-images/arraydemo-small.png "X:array デモ")](consuming-images/arraydemo-large.png#lightbox "X:array デモ")
 
 個人を指定するいくつかの方法があります`Color`配列内の項目。 使用することができます、`x:Static`マークアップ拡張機能。
 
@@ -449,7 +449,7 @@ public partial class TypeDemoPage : ContentPage
 
 3 つのプラットフォームで実行されているプログラムを次に示します。
 
-[![X:null デモ](consuming-images/nulldemo-small.png "X:null デモ")](consuming-images/nulldemo-large.png "X:null デモ")
+[![X:null デモ](consuming-images/nulldemo-small.png "X:null デモ")](consuming-images/nulldemo-large.png#lightbox "X:null デモ")
 
 通知、4、`Label`要素は、中央がセリフ フォントをある`Label`既定 sans-serif フォントがします。
 

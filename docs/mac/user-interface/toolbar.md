@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 641f62d5e646607b2ff61db412a5defce63a211d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 92b90f8d4655ea89b67e81f3235b6fd9b6d92833
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbars"></a>ツールバー
 
@@ -82,7 +82,7 @@ Xcode のインターフェイスのビルダーのツールバーをセット�
 2. デザイン画面で、ウィンドウのコント ローラーを選択します。
 3. 切り替えて、 **Identity インスペクター**として"WindowController"を入力し、**クラス名**: 
 
-    [![ウィンドウのコント ローラーのカスタム クラス名を設定する](toolbar-images/windowcontroller01.png "ウィンドウ コント ローラーのカスタム クラス名の設定")](toolbar-images/windowcontroller01-large.png) 
+    [![ウィンドウのコント ローラーのカスタム クラス名を設定する](toolbar-images/windowcontroller01.png "ウィンドウ コント ローラーのカスタム クラス名の設定")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
 4. 変更内容を保存し、同期する Mac 用の Visual Studio に戻ります。
 5. A **WindowController.cs**ファイルは、プロジェクトに追加する、**ソリューション パッド**Mac 用の Visual Studio で。 
@@ -92,7 +92,7 @@ Xcode のインターフェイスのビルダーのツールバーをセット�
 6. Xcode のインターフェイスのビルダーでストーリー ボードを再度開きます。
 7. **WindowController.h**ファイルが使用できるようになります。 
 
-    [![WindowController.h ファイル](toolbar-images/windowcontroller03.png "WindowController.h ファイル")](toolbar-images/windowcontroller03-large.png)
+    [![WindowController.h ファイル](toolbar-images/windowcontroller03.png "WindowController.h ファイル")](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>作成して、Xcode でツールバーを維持します。
 
@@ -150,7 +150,7 @@ Xcode のインターフェイスのビルダーのツールバーをセット�
 
 ツールバーに項目を追加するには、ツールバーでを選択、**インターフェイス階層**カスタマイズ ダイアログを表示するを原因と、その項目のいずれかをクリックします。 新しい項目を次に、ドラッグ、**ライブラリ インスペクター**を**ツールバー項目の許可**領域。
 
-![ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目](toolbar-images/add01.png "ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目")
+![ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目](toolbar-images/add01.png "ツールバーの [カスタマイズ] ダイアログ ボックスの 許可されているツールバー項目")
 
 新しい項目が既定のツールバーの一部であることを確認するには、ドラッグして、**既定ツールバー項目**領域。 
 
@@ -188,7 +188,7 @@ Xcode のインターフェイスのビルダーのツールバーをセット�
 
 Cocoa UI 要素がいくつかは、既定では、標準ツールバーの項目と対話します。 たとえば、ドラッグ、**テキスト ビュー**アプリケーションのウィンドウの上にし、コンテンツ領域に合わせて配置。
 
-[![テキスト ビューをアプリケーションに追加する](toolbar-images/edit09.png "テキスト ビューをアプリケーションに追加します。")](toolbar-images/edit09-large.png)
+[![テキスト ビューをアプリケーションに追加する](toolbar-images/edit09.png "テキスト ビューをアプリケーションに追加します。")](toolbar-images/edit09-large.png#lightbox)
 
 Xcode での同期、アプリケーションを実行、いくつかのテキストを入力、選択し、をクリックをする Mac 用の Visual Studio に戻り、文書を保存、**色**ツールバー項目。 カラー ピッカーを使用して、テキスト ビューが自動的に動作することを確認します。
 
@@ -201,7 +201,7 @@ Xcode での同期、アプリケーションを実行、いくつかのテキ�
 1. Mac 用の Visual Studio での**ソリューション パッド**を右クリックし、**リソース**フォルダーを選択**追加** > **ファイルの追加**.
 2. **ファイルを追加** ダイアログ ボックスし、目的の画像に移動して選択してをクリックして、**開く**ボタンをクリックします。 
 
-    [![追加するイメージを選択すると](toolbar-images/edit11.png "を追加するイメージを選択します。")](toolbar-images/edit11-large.png)
+    [![追加するイメージを選択すると](toolbar-images/edit11.png "を追加するイメージを選択します。")](toolbar-images/edit11-large.png#lightbox)
 
 3. 選択**コピー**、確認**同じアクションを使用して、選択したすべてのファイルの**、 をクリック**OK**:
 
@@ -225,7 +225,7 @@ Xcode での同期、アプリケーションを実行、いくつかのテキ�
 
 9. ドラッグ、**区切りツールバー項目**から、**ライブラリ インスペクター**をツールバーの**ツールバー項目の許可**領域。 
 
-    [![区切り記号のツールバー項目はツールバー項目の許可 領域に追加](toolbar-images/edit17.png "A 区切り記号のツールバーの項目はツールバー項目の許可 領域に追加")](toolbar-images/edit17-large.png)
+    [![区切り記号のツールバー項目はツールバー項目の許可 領域に追加](toolbar-images/edit17.png "A 区切り記号のツールバーの項目はツールバー項目の許可 領域に追加")](toolbar-images/edit17-large.png#lightbox)
 
 10. 区切り記号アイテムと「ゴミ箱」のアイテムをドラッグして、**ツールバー項目の既定の**領域とセットから項目をツールバーの順序が左から右 (色、フォント、区切り記号、ごみ箱、柔軟な空き領域、印刷) を次のようにします。 
 
@@ -244,7 +244,7 @@ Xcode での同期、アプリケーションを実行、いくつかのテキ�
 1. **ソリューション パッド**をダブルクリックして**Main.storyboard**を Xcode で開きます。
 2. カスタム クラス"WindowController"は、メイン ウィンドウのコント ローラーに割り当てられていることを確認、 **Identity インスペクター**:
 
-    [![Identity インスペクターを使用して、ウィンドウのコント ローラーのカスタム クラスを設定する](toolbar-images/edit20a.png "Identity インスペクターを使用して、ウィンドウのコント ローラーのカスタム クラスを設定するには")](toolbar-images/edit20a-large.png)
+    [![Identity インスペクターを使用して、ウィンドウのコント ローラーのカスタム クラスを設定する](toolbar-images/edit20a.png "Identity インスペクターを使用して、ウィンドウのコント ローラーのカスタム クラスを設定するには")](toolbar-images/edit20a-large.png#lightbox)
 
 3. 次に、ツールバーのアイテムを選択、**インターフェイス階層**: 
 
@@ -253,11 +253,11 @@ Xcode での同期、アプリケーションを実行、いくつかのテキ�
 4. 開く、**アシスタント ビュー**、select、 **WindowController.h**ファイル、およびコントロールをドラッグするツールバー項目から、 **WindowController.h**ファイル。
 5. 設定、**接続**に入力**アクション**の"trashDocument"を入力、**名前**、 をクリックし、**接続**ボタン。 
 
-    [![ツールバー項目のアクションを設定する](toolbar-images/edit23.png "はツールバー項目のアクションを設定します。")](toolbar-images/edit23-large.png)
+    [![ツールバー項目のアクションを設定する](toolbar-images/edit23.png "はツールバー項目のアクションを設定します。")](toolbar-images/edit23-large.png#lightbox)
 
 6. 公開、**テキスト ビュー** "documentEditor"と呼ばれるコンセントとして、 **ViewController.h**ファイル。 
 
-    [![テキスト ビューのコンセントを構成する](toolbar-images/edit24.png "テキスト ビューのコンセントを構成します。")](toolbar-images/edit24-large.png)
+    [![テキスト ビューのコンセントを構成する](toolbar-images/edit24.png "テキスト ビューのコンセントを構成します。")](toolbar-images/edit24-large.png#lightbox)
 
 7. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 

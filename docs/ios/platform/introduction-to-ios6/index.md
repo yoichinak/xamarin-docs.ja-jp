@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0d08b2ff5131996984dbe41862ad1d6aac33b3d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e1232c96f5ea978c8adc640160a1e9b7e42663d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-ios-6"></a>IOS 6 の概要
 
 _iOS 6 には、さまざまな Xamarin.iOS 6 が c# 開発者を表示するアプリを開発するための新しいテクノロジが含まれています。_
 
-[ ![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg)
+[ ![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg#lightbox)
 
 IOS 6 と Xamarin.iOS 6 では、開発者は、自由にそのターゲット iPhone 5 ものなど、iOS アプリケーションを作成する機能豊富なを今すぐがあります。
 このドキュメントでは、使用可能なより興味深いの新機能および各トピックの記事へのリンクの一部を一覧表示します。 さらに、いくつかの変更が開発者は、iOS 6 および iPhone 5 の新しい解像度に移動したときに重要になる点に触れるです。
@@ -92,11 +92,11 @@ if (myImageView != null){
 
 iPhone 5 デバイスでは、640 x 1136 解像度があります。 IOS の以前のバージョンを対象とするアプリケーションが表示されます letterboxed iPhone 5 で実行すると次のように。
 
- [ ![](images/01-letterboxed.png "IOS の以前のバージョンを対象とするアプリケーションが letterboxed の iPhone 5 の実行時に表示されます。")](images/01-letterboxed.png)
+ [![](images/01-letterboxed.png "IOS の以前のバージョンを対象とするアプリケーションが letterboxed の iPhone 5 の実行時に表示されます。")](images/01-letterboxed.png#lightbox)
 
 アプリケーションを表示するために全画面表示している iPhone 5 で単に追加という名前のイメージ`Default-568h@2x.png`640 x 1136 の解像度を持ちます。 次のスクリーン ショットは、このイメージが含まれています後に実行されるアプリケーションを示しています。
 
- [ ![](images/02-fullscreen.png "このスクリーン ショットは、このイメージが含まれています後に実行されるアプリケーションを示しています。")](images/02-fullscreen.png)
+ [![](images/02-fullscreen.png "このスクリーン ショットは、このイメージが含まれています後に実行されるアプリケーションを示しています。")](images/02-fullscreen.png#lightbox)
 
 ### <a name="subclassing-uinavigationbar"></a>UINavigationBar をサブクラス化
 
@@ -130,7 +130,7 @@ navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolb
 
 これを使用して`UINavigationBar`サブクラス結果の次のスクリーン ショットに示すように表示されるイメージの表示にします。
 
- [ ![](images/03-navbar.png "このスクリーン ショットに示すように表示されるイメージのビューでこの UINavigationBar サブクラス結果の使用")](images/03-navbar.png)
+ [![](images/03-navbar.png "このスクリーン ショットに示すように表示されるイメージのビューでこの UINavigationBar サブクラス結果の使用")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>インターフェイスの向き
 

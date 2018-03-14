@@ -7,12 +7,12 @@ ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/07/2018
-ms.openlocfilehash: ae6b89e48005ca028db5d13f1a55f237888ae08b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 8fbb3f73fdc09f953ad5f7134020c1555d000d28
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="kitkat-features"></a>KitKat 機能
 
@@ -37,7 +37,7 @@ Android 4.4 (API レベル 19) とも呼ばれる"KitKat"は、遅延 2013 で�
 
 Xamarin.Android を KitKat を使用してアプリケーションを開発する必要があります*Xamarin.Android 4.11.0*または高い値と Android 4.4 (API レベル 19) で次のスクリーン ショットに示すように、Android SDK Manager を使用してをインストールします。
 
-[![Android SDK Manager で Android 4.4 を選択します。](kitkat-images/api19.png)](kitkat-images/api19.png)
+[![Android SDK Manager で Android 4.4 を選択します。](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
 <a name="Migrating_Your_App_to_KitKat" />
 
@@ -84,7 +84,7 @@ alarmManager.SetExact (AlarmType.Rtc, AlarmManager.IntervalDay, pendingIntent);
 -  プロパティへのアクセスまたはでメソッドを呼び出すことによってファイルまたはディレクトリのパスが示されている場合`Environment`など[ `GetExternalStorageDirectory` ](https://developer.xamarin.com/api/property/Android.OS.Environment.ExternalStorageDirectory/)または[ `GetExternalStoragePublicDirectory` ](https://developer.xamarin.com/api/member/Android.OS.Environment.GetExternalStoragePublicDirectory/p/System.String/) 、アプリに必要で、`READ_EXTERNAL_STORAGE`または`WRITE_EXTERNAL_STORAGE`権限です。
 
 > [!NOTE]
-> **注:** `WRITE_EXTERNAL_STORAGE`意味、`READ_EXTERNAL_STORAGE`のみ必要になった権限を 1 つを設定するためのアクセス許可。
+> `WRITE_EXTERNAL_STORAGE` 意味、`READ_EXTERNAL_STORAGE`のみ必要になった権限を 1 つを設定するためのアクセス許可。
 
 ### <a name="sms-consolidation"></a>SMS の統合
 
@@ -147,11 +147,11 @@ public class MainActivity : Activity
 
 次のスクリーン ショットは、アニメーションの前に、アプリを示しています。
 
-[![アニメーションの開始前に、アプリのスクリーン ショット](kitkat-images/trans-before.png)](kitkat-images/trans-before.png)
+[![アニメーションの開始前に、アプリのスクリーン ショット](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
 次のスクリーン ショットは、アニメーションの終了後、アプリを示しています。
 
-[![アニメーションの終了後のアプリのスクリーン ショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![アニメーションの終了後のアプリのスクリーン ショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 次のセクションで説明するシーンを使用した移行より詳細に制御を取得できます。
 
@@ -161,7 +161,7 @@ public class MainActivity : Activity
 
 動的なコンテンツを格納している静的の UI 要素は、呼び出された、*コンテナー*または*シーン基本*です。 次の例では、Android デザイナーを使用して、作成、`RelativeLayout`と呼ばれる`container`:
 
-[![Android デザイナーを使用して、[相対レイアウト] コンテナーを作成するには](kitkat-images/container.png)](kitkat-images/container.png)
+[![Android デザイナーを使用して、[相対レイアウト] コンテナーを作成するには](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
 サンプルのレイアウトでは、という名前のボタンも定義されて`sceneButton`下、`container`です。 このボタンには、遷移が発生します。
 
@@ -237,22 +237,22 @@ sceneButton.Click += (o, e) => {
 
 次のスクリーン ショットは、アニメーションの前にシーンを示しています。
 
-[![アニメーションの開始前に、のアプリのスクリーン ショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![アニメーションの開始前に、のアプリのスクリーン ショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 次のスクリーン ショットは、アニメーションの終了後、シーンを示しています。
 
-[![アニメーションの完了後のアプリのスクリーン ショット](kitkat-images/scene.png)](kitkat-images/scene.png)
+[![アニメーションの完了後のアプリのスクリーン ショット](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 
 > [!NOTE]
-> **注:**がある、[既知のバグ](https://code.google.com/p/android/issues/detail?id=62450)で Android の遷移のシーンの原因となるライブラリ使用して作成`GetSceneForLayout`をユーザーが移動すると、アクティビティを 2 番目の時間を中断します。 Java の回避策が記載されている[ここ](http://www.doubleencore.com/2013/11/new-transitions-framework/)です。
+> [既知のバグ](https://code.google.com/p/android/issues/detail?id=62450)で Android の遷移のシーンの原因となるライブラリ使用して作成`GetSceneForLayout`をユーザーが移動すると、アクティビティを 2 番目の時間を中断します。 Java の回避策が記載されている[ここ](http://www.doubleencore.com/2013/11/new-transitions-framework/)です。
 
 
 ##### <a name="custom-transitions-in-scenes"></a>シーン内のカスタムの移行
 
 Xml リソース ファイルにカスタム遷移を定義することができます、`transition`下にあるディレクトリ`Resources`次のスクリーン ショットに示すように、します。
 
-[![リソース/遷移ディレクトリの下の transition.xml ファイルの場所](kitkat-images/resources.png)](kitkat-images/resources.png)
+[![リソース/遷移ディレクトリの下の transition.xml ファイルの場所](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
 次のコード サンプルを使用してアニメーションを 5 秒間の遷移を定義する、[補間を超えて](http://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
@@ -307,7 +307,7 @@ KitKat 制御しやすくなりますテーマ経由で省略可能な transcluc
 
 次のスクリーン ショットは、状態: 半透明、ナビゲーション バーの上テーマを示しています。
 
-[![半透明の状態とナビゲーション バーのあるアプリのサンプルのスクリーン ショット](kitkat-images/theme.png)](kitkat-images/theme.png)
+[![半透明の状態とナビゲーション バーのあるアプリのサンプルのスクリーン ショット](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
 <a name="user_content" />
 
@@ -338,7 +338,7 @@ StartActivityForResult (intent, save_request_code);
 
 呼び出す`StartActivityForResult`SAF UI では、ユーザーが画像を選択し、閲覧できるが起動します。
 
-[![参照イメージする際の記憶域アクセス フレームワークを使用して、アプリのサンプルのスクリーン ショット](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png)
+[![参照イメージする際の記憶域アクセス フレームワークを使用して、アプリのサンプルのスクリーン ショット](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 ユーザーが、イメージを選択後`OnActivityResult`を返します、`Android.Net.Uri`の選択したファイル。 次のコード例では、ユーザーのイメージの選択が表示されます。
 
@@ -368,7 +368,7 @@ StartActivityForResult (intentCreate, write_request_code);
 
 上記のコード サンプルでは、ユーザー ファイル名を変更し、新しいファイルを格納するディレクトリを選択できるようにすること、SAF UI をロードします。
 
-[![ダウンロード ディレクトリ NewDoc にファイル名を変更するユーザーのスクリーン ショット](kitkat-images/saf-save.png)](kitkat-images/saf-save.png)
+[![ダウンロード ディレクトリ NewDoc にファイル名を変更するユーザーのスクリーン ショット](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
 押されたとき**保存**、`OnActivityResult`が渡される、`Android.Net.Uri`アクセスするのには、新しく作成されたファイルの`data.Data`します。 Uri は、新しいファイルに、ストリーム データを使用できます。
 
@@ -396,28 +396,28 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 導入に伴い KitKat で印刷内容が簡略化されて、[印刷サービス](https://developer.xamarin.com/api/namespace/Android.PrintServices/)と`PrintManager`です。 KitKat がフル活用するための最初の API バージョンではまた、 [Google のクラウド印刷サービス Api](https://developers.google.com/cloud-print/)を使用して、 [Google Cloud 印刷アプリケーション](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)です。
 KitKat を自動的に付属するほとんどのデバイスは、Google Cloud 印刷アプリをダウンロードし、 [HP 印刷サービス プラグイン](https://play.google.com/store/apps/details?id=com.hp.android.printservice)WiFi に初めて接続するとき。 移動して、ユーザーがデバイスの印刷設定を確認できます**設定 > システム > 印刷**:
 
-[![印刷設定 画面の例のスクリーン ショット](kitkat-images/printing.png)](kitkat-images/printing.png)
+[![印刷設定 画面の例のスクリーン ショット](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 
 > [!NOTE]
-> **注:**が、印刷の Api は、既定で Google Cloud の印刷を使用する設定は、Android 依然として、開発者は、新しい Api を使用してコンテンツを印刷の準備および印刷処理を行うには、他のアプリケーションに送信します。
+> 印刷の Api は、既定で Google Cloud の印刷を使用する設定は、Android 依然として、開発者は、新しい Api を使用してコンテンツを印刷の準備および印刷処理を行うには、他のアプリケーションに送信します。
 
 
 
 #### <a name="printing-html-content"></a>HTML コンテンツの印刷
 
-KitKat が自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) web ビューに対して`WebView.CreatePrintDocumentAdapter`です。 Web コンテンツを印刷は間の連携作業、 [ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/)をロードする HTML コンテンツを待機し、印刷オプションを [オプション] メニューで使用できるようにするアクティビティや、Actvity は、ユーザーが待機することができます呼び出しと印刷オプションを選択`Print`上、`PrintManager`です。 ここでは、画面上を印刷するために必要な基本的なセットアップの HTML コンテンツ。
+KitKat が自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) web ビューに対して`WebView.CreatePrintDocumentAdapter`です。 Web コンテンツを印刷は間の連携作業、 [ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/)をロードする HTML コンテンツを待機し、印刷オプションを [オプション] メニューで使用できるようにするアクティビティや、Actvity は、ユーザーが待機することができます呼び出しと印刷 オプションを選択`Print`上、`PrintManager`です。 ここでは、画面上を印刷するために必要な基本的なセットアップの HTML コンテンツ。
 
 読み込みと web コンテンツの印刷がインターネット アクセス許可が必要であることを確認してください。
 
-[![アプリケーションのオプションのインターネット アクセス許可を設定します。](kitkat-images/internet.png)](kitkat-images/internet.png)
+[![アプリケーションのオプションのインターネット アクセス許可を設定します。](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
 
 ##### <a name="print-menu-item"></a>印刷メニュー項目
 
 アクティビティの通常表示される印刷オプション[オプション メニュー](http://developer.android.com/guide/topics/ui/menus.html#options-menu)です。
 [オプション] メニューを使用して、アクティビティのアクションを実行できます。 画面の右上隅し、次のような。
 
-[![印刷メニュー項目いないことを示す画面の右上隅でのサンプルのスクリーン ショット](kitkat-images/menu.png)](kitkat-images/menu.png)
+[![印刷メニュー項目いないことを示す画面の右上隅でのサンプルのスクリーン ショット](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
 追加のメニュー項目を定義することができます、*メニュー*下にあるディレクトリ*リソース*です。 次のコードを定義、サンプルというメニュー項目[印刷](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
@@ -500,9 +500,9 @@ void PrintPage ()
 
 呼び出す`Print`印刷の UI では、印刷ジョブのオプションの一覧を読み込みます。 UI によって、次のスクリーン ショットに示すように、ユーザーの印刷または HTML コンテンツを保存して、PDF へのオプション。
 
-[![[印刷] メニューを表示する PrintHtmlActivity のスクリーン ショット](kitkat-images/print1.png)](kitkat-images/print1.png)
+[![[印刷] メニューを表示する PrintHtmlActivity のスクリーン ショット](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[![PrintHtmlActivity のスクリーン ショットは、保存を PDF メニューとして表示します。](kitkat-images/print2.png)](kitkat-images/print2.png)
+[![PrintHtmlActivity のスクリーン ショットは、保存を PDF メニューとして表示します。](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
@@ -524,7 +524,7 @@ HCE では、する必要があります HCE 機能および`Nfc`アクセス許
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[![アプリケーションのオプションの NFC アクセス許可の設定](kitkat-images/nfc.png)](kitkat-images/nfc.png)
+[![アプリケーションのオプションの NFC アクセス許可の設定](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
 を使用する、HCE がバック グラウンドで実行できる必要があり、HCE を使用して、アプリケーションが実行されていない場合でも、ユーザーが、NFC トランザクションを開始する必要があります。 これを行うとして HCE コードを記述して、`Service`です。 HCE サービスを実装、`HostApduService`インターフェイスで、次のメソッドを実装します。
 
@@ -588,7 +588,7 @@ KitKat には、また、ユーザーの手順を追跡するため 2 の新し�
 
 次のスクリーン ショットは、アクションで、手順カウンタを示しています。
 
-[![手順のカウンターを表示する SensorsActivity アプリのスクリーン ショット](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png)
+[![手順のカウンターを表示する SensorsActivity アプリのスクリーン ショット](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
 作成することができます、`SensorManager`を呼び出して`GetSystemService(SensorService)`として結果をキャストし、`SensorManager`です。 手順カウンターを使用するのには、呼び出す`GetDeafultSensor`上、`SensorManager`です。 センサーを登録およびを利用してカウントのステップで変更をリッスンする、 [ `ISensorEventListener` ](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)インターフェイス、次のコード例に示すようにします。
 
@@ -637,11 +637,10 @@ protected override void OnPause()
 
 
 > [!NOTE]
-> **注:**手順の検出と KitKat に付属のカウントの API、中にすべての電話はであり、センサーします。 センサーがあるかを実行して確認できます`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`、戻り値のことを確認するか、または`GetDefaultSensor`いない`null`です。
+> 手順の検出と KitKat に付属のカウントの API、中に、センサーいないすべてのスマート フォンであり、します。 センサーがあるかを実行して確認できます`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`、戻り値のことを確認するか、または`GetDefaultSensor`いない`null`です。
 
 
- <a name="developer_tools" />
-
+<a name="developer_tools" />
 
 ## <a name="developer-tools"></a>開発者用ツール
 
@@ -664,7 +663,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 デバイスでビデオを見つけることができます - 記録が完了すると、ギャラリーに表示されます。
 
-<a name="other_kitkat_additions" />
 
 ## <a name="other-kitkat-additions"></a>その他の KitKat 追加
 

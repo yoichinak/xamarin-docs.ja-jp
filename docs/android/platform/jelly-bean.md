@@ -7,18 +7,17 @@ ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/14/2017
-ms.openlocfilehash: 2e54bfc4bea3955dc80a747c4ecce485b78ada1d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="jelly-bean-features"></a>ゼリー Bean の機能
 
 _このドキュメントでは、Android 4.1 で導入された開発者向けの新機能の高レベルの概要を説明します。これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。_
 
-<a name="Overview" />
 
 
 ## <a name="overview"></a>概要
@@ -31,21 +30,18 @@ Android アプリケーションの安定性が不安定なコンテンツ プ�
 
 最後に Android 4.1 では、いくつかの新しいアクセス許可が追加されました。
 
- <a name="Requirements" />
 
 
 ## <a name="requirements"></a>必要条件
 
 Xamarin.Android アプリケーションの開発に使用するゼリー Bean 必要 Xamarin.Android 4.2.6 または高い値と Android 4.1 (API レベル 16) は、次のスクリーン ショットに示すように、Android SDK Manager を使用してにインストールします。
 
-[![Android SDK Manager で Android 4.1 の選択](jelly-bean-images/image1.png)](jelly-bean-images/image1.png)
+[![Android SDK Manager で Android 4.1 の選択](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
- <a name="What's_New" />
 
 
 ## <a name="whats-new"></a>新機能
 
- <a name="Animations" />
 
 
 ### <a name="animations"></a>Animations
@@ -79,7 +75,6 @@ animator.Start();
 
 として、`TimeAnimator`インスタンスが実行されているを呼び出す`ITimeAnimator.ITimeListener`方法がログインし、長いアニメーターされました実行時間それ以来、最後に、メソッドとして呼び出されています。
 
- <a name="Application_Stack_Navigation" />
 
 
 ### <a name="application-stack-navigation"></a>アプリケーション スタックのナビゲーション
@@ -98,7 +93,6 @@ Android 4.1 は、Android 3.0 で導入されたアプリケーション スタ�
 -   `OnCreateNavigateUpTaskStack` – この方法は、合成のスタックを作成する方法を完全に制御する必要がある場合はオーバーライドされます。
 
 
- <a name="Camera" />
 
 
 ### <a name="camera"></a>カメラ
@@ -149,19 +143,16 @@ button.Click += (sender, args) => mediaActionPlayer.Play(MediaActionSoundType.Sh
 mediaActionPlayer.Release();
 ```
 
- <a name="Connectivity" />
 
 
 ### <a name="connectivity"></a>接続
 
- <a name="Android_Beam" />
 
 
 #### <a name="android-beam"></a>Android ビーム
 
 Android のビームは、互いに通信するために 2 つの Android デバイスでできる NFC ベース テクノロジです。 Android 4.1 では、大きなファイルの転送を適切にサポートを提供します。 新しいメソッドを使用して`NfcAdapter.SetBeamPushUris()`Android 切り替えることは代替のトランスポート機構 (Bluetooth) など、高速転送速度を実現するためにします。
 
- <a name="Network_Services_Discovery" />
 
 
 #### <a name="network-services-discovery"></a>ネットワーク サービスの検出
@@ -173,14 +164,12 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 
 実装と、ネットワーク上のサービスを検出する`Nsd.DiscoveryListener`に渡される`NsdManager.discoverServices()`です。
 
- <a name="Network_Usage" />
 
 
 #### <a name="network-usage"></a>ネットワーク使用率
 
 新しいメソッド`ConnectivityManager.IsActiveNetworkMetered`デバイスを従量制ネットワークに接続されているかどうかを確認できます。 このメソッドは、正確にユーザーに通知するデータの操作の負荷の高い料金が存在する可能性がありますでデータの使用状況を管理するために使用できます。
 
- <a name="WiFi_Direct_Service_Discovery" />
 
 
 #### <a name="wifi-direct-service-discovery"></a>WiFi ダイレクト サービスの検出
@@ -195,14 +184,12 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 -   `SetUpnpServiceResponseListener()` – この方法は検出要求 Upnp への応答を受け取ると呼び出されるコールバックを登録するために使用します。
 
 
- <a name="Content_Providers" />
 
 
 ### <a name="content-providers"></a>コンテンツ プロバイダー
 
 `ContentResolver`クラスの新しいメソッドが受信した`AcquireUnstableContentProvider`です。 このメソッドは、「不安定」のコンテンツ プロバイダーを取得するアプリケーションを使用します。 通常、クラッシュしたアプリケーションが、コンテンツ プロバイダーとそのコンテンツ プロバイダーを獲得する場合、アプリケーションもロールバックされます。 このメソッドの呼び出しでは、コンテンツ プロバイダーがクラッシュした場合場合にいない、アプリケーションがクラッシュします。 代わりに、`Android.OS.DeadObjectionException`コンテンツ プロバイダーがなくなったアプリケーションを通知するために、コンテンツ プロバイダーの呼び出しからスローされます。 「不安定」のコンテンツ プロバイダーは、他のアプリケーションからのコンテンツ プロバイダーと対話するときに役立ちます: 別のアプリケーションからのバグのあるコードが別のアプリケーションに影響することはあまり考えられません。
 
- <a name="Copy_and_Paste_With_Intents" />
 
 
 ### <a name="copy-and-paste-with-intents"></a>コピーと貼り付けの目的で
@@ -214,14 +201,11 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 -   **Uri** – HTTP ブックマークやコンテンツ プロバイダーへの URI などの任意の URI を指定できます。
 
 
- <a name="Isolated_Services" />
 
 
 ### <a name="isolated-services"></a>分離サービス
 
 分離のサービスは、ですが、独自の特殊なプロセスで実行して、独自のアクセス許可を持たないサービスです。 場合にのみ、サービスとの通信は、サービスを開始し、サービス API を使用してバインドします。 プロパティを設定して、サービスを分離としてを宣言することは`IsolatedProcess="true"`で、`ServiceAttribute`サービス クラスを adorns です。
-
- <a name="Media" />
 
 
 ### <a name="media"></a>メディア
@@ -245,7 +229,6 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 -   `MediaRouterActionProvider` および`MediaRouteButton`– これらのクラスにより、一貫性のある UI を選択し、メディアを再生します。
 
 
- <a name="Notifications" />
 
 
 ### <a name="notifications"></a>通知
@@ -255,26 +238,25 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 -   `Notification.BigPictureStyle` – これは、それらのイメージを持っている通知を生成するヘルパー クラスです。 次の図は、大規模なイメージでの通知の例を示します。
 
 
- [ ![BigPictureStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image2.png)](jelly-bean-images/image2.png)
+ [![BigPictureStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
 -   `Notification.BigTextStyle` – これは、テキスト、電子メールなどの複数の行がある通知を生成するヘルパー クラスです。 この新しい通知形式の例は、次のスクリーン ショットに表示できます。
 
 
- [ ![BigTextStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image3.png)](jelly-bean-images/image3.png)
+ [![BigTextStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
 -   `Notification.InboxStyle` – これは、このスクリーン ショットに示すように、電子メール メッセージからスニペットなど、文字列のリストを含む通知を生成するヘルパー クラスです。
 
 
- [ ![Notification.InboxStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image4.png)](jelly-bean-images/image4.png)
+ [![Notification.InboxStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
 これは通常以上のスタイルを使用しているとき、通知、通知メッセージの下部に最大 2 つのアクション ボタンを追加することです。
 この例は、アクション ボタンが、通知の下部に表示されている、次のスクリーン ショットに表示されることができます。
 
- [ ![通知メッセージの下に表示されるアクション ボタンの例のスクリーン ショット](jelly-bean-images/image5.png)](jelly-bean-images/image5.png)
+ [![通知メッセージの下に表示されるアクション ボタンの例のスクリーン ショット](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
 `Notification`クラスが、開発者に通知を 5 つの優先度レベルのいずれかを指定できるようにする新しい定数を受信します。 これらを使用して通知に対して設定できる、`Priority`プロパティです。
 
- <a name="Permissions" />
 
 
 ### <a name="permissions"></a>アクセス許可
@@ -290,7 +272,6 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 
 注意する重要な変更`READ_EXTERNAL_STORAGE`– Android によってこのアクセス許可を自動的に付与されています。 Android の将来のバージョンは、権限を許可する前にこのアクセス許可を要求するアプリケーションを必要があります。
 
- <a name="Summary" />
 
 
 ## <a name="summary"></a>まとめ
@@ -305,4 +286,4 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 - [Time アニメーションの例 (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
 - [Android 4.1 Api](http://developer.android.com/about/versions/android-4.1.html)
 - [タスク ウィンドウとバック スタック](http://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [[戻る] とアップによるナビゲーション](http://developer.android.com/design/patterns/navigation.html)
+- [[戻る] と アップによるナビゲーション](http://developer.android.com/design/patterns/navigation.html)

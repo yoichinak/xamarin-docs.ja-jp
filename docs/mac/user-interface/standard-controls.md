@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e6df7f9308285b87ff0f42b73c8404b375cbb0de
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e887026b4f87d2e1bf8c7647a7845765ce8b886c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="standard-controls"></a>標準コントロール
 
@@ -22,7 +22,7 @@ _ここでは、チェック ボックス、ボタン、ラベル、テキスト
 
 AppKit コントロールは、Xamarin.Mac アプリケーションのユーザー インターフェイスの作成に使用する UI 要素を示します。 これらのボタン、ラベル、テキスト フィールド、チェック ボックスおよびセグメント化されたコントロールなどの要素で構成されているし、が発生するインスタント アクションまたは結果が表示、ユーザーがそれらを操作します。
 
-[ ![](standard-controls-images/intro01.png "サンプル アプリのメイン画面")](standard-controls-images/intro01.png)
+[![](standard-controls-images/intro01.png "サンプル アプリのメイン画面")](standard-controls-images/intro01.png#lightbox)
 
 この記事でしれませんにはアプリケーションで Xamarin.Mac AppKit コントロールの操作の基本について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
 
@@ -51,7 +51,7 @@ Apple は、次のガイドラインを示している AppKit コントロール
 
 ウィンドウのフレームの領域に含めるを許可する表示スタイルが含まれる AppKit コントロールのサブセットがあります。 例については、メール アプリのツールバーを参照してください。
 
-[ ![](standard-controls-images/mailapp.png "Mac のウィンドウ フレーム")](standard-controls-images/mailapp.png)
+[![](standard-controls-images/mailapp.png "Mac のウィンドウ フレーム")](standard-controls-images/mailapp.png#lightbox)
 
 - **ボタンのテクスチャを丸める**- a`NSButton`のスタイルと`NSTexturedRoundedBezelStyle`です。
 - **セグメント化されたコントロールの丸めをテクスチャ**- a`NSSegmentedControl`のスタイルと`NSSegmentStyleTexturedRounded`です。
@@ -73,15 +73,15 @@ Apple は、次のガイドラインを示している AppKit コントロール
 
 新しい Xamarin.Mac Cocoa アプリケーションを作成するときに、既定で標準の空白、ウィンドウを取得します。 この windows がで定義されている、`.storyboard`プロジェクトに自動的に含まれるファイル。 Windows のデザインを編集する、**ソリューション エクスプ ローラー**、ダブルクリックして、`Main.storyboard`ファイル。
 
-[ ![](standard-controls-images/edit01.png "ソリューション エクスプ ローラーでメインのストーリー ボードを選択します。")](standard-controls-images/edit01.png)
+[![](standard-controls-images/edit01.png "ソリューション エクスプ ローラーでメインのストーリー ボードを選択します。")](standard-controls-images/edit01.png#lightbox)
 
 Xcode のインターフェイスのビルダーで、ウィンドウのデザインが開きます。
 
-[ ![](standard-controls-images/edit02.png "Xcode でストーリー ボードの編集")](standard-controls-images/edit02.png)
+[![](standard-controls-images/edit02.png "Xcode でストーリー ボードの編集")](standard-controls-images/edit02.png#lightbox)
 
 ユーザー インターフェイスを作成するから UI 要素 (AppKit コントロール) をドラッグします、**ライブラリ インスペクター**を**インターフェイス エディター**インターフェイスのビルダー。 次の例で、**垂直分割ビュー**コントロールなったから薬、**ライブラリ インスペクター**のウィンドウに配置し、**インターフェイス エディター**:
 
-[ ![](standard-controls-images/edit03.png "ライブラリから分割ビューを選択します。")](standard-controls-images/edit03.png)
+[![](standard-controls-images/edit03.png "ライブラリから分割ビューを選択します。")](standard-controls-images/edit03.png#lightbox)
 
 インターフェイスのビルダーで、ユーザー インターフェイスを作成する方法の詳細についてを参照してください、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)ドキュメント。
 
@@ -91,21 +91,21 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 
 コントロールは、ユーザー インターフェイスに含まれている、使用して、**制約エディター**値を手動で入力してその場所とサイズを設定し、および方法を制御、コントロールが自動的に配置されているときにサイズを親ウィンドウまたはビューサイズを変更します。
 
-[ ![](standard-controls-images/edit04.png "制約を設定")](standard-controls-images/edit04.png)
+[![](standard-controls-images/edit04.png "制約を設定")](standard-controls-images/edit04.png#lightbox)
 
 使用して、**赤い I ビーム**の外側を囲む、 **Autoresizing**ボックスを_スティック_(x, y) 特定の場所を制御します。 例: 
 
-[ ![](standard-controls-images/edit05.png "制約の編集")](standard-controls-images/edit05.png)
+[![](standard-controls-images/edit05.png "制約の編集")](standard-controls-images/edit05.png#lightbox)
 
 指定、選択したコントロール (で、**階層ビュー** & **インターフェイス エディター**) サイズ変更または移動したように、ウィンドウまたはビューの上および右の場所をスタックします。 
 
 その他の要素の高さと幅などのエディター コントロールのプロパティ:
 
-[ ![](standard-controls-images/edit06.png "高さの設定")](standard-controls-images/edit06.png)
+[![](standard-controls-images/edit06.png "高さの設定")](standard-controls-images/edit06.png#lightbox)
 
 使用して制約を含む、要素の配置を制御することも、**配置エディター**:
 
-[ ![](standard-controls-images/edit07.png "配置エディター")](standard-controls-images/edit07.png)
+[![](standard-controls-images/edit07.png "配置エディター")](standard-controls-images/edit07.png#lightbox)
 
 > [!IMPORTANT]
 > IOS とは異なり、(0, 0) は、上 macOS (0, 0) で、画面の左下隅は、左下隅です。 これは、macOS 数学座標系を使用して、右上に値が増加し番号値であるためです。 ユーザー インターフェイス上で AppKit コントロールを配置するときに、これを考慮に入れておく必要があります。
@@ -197,7 +197,7 @@ namespace AppKit
 
 場所で上記のコードでは、デザイン サーフェイスを拡張する基本の型の AppKit コントロールをドラッグできます (次の例で、**ソース リスト**) に切り替え、 **Identity インスペクター**設定と**カスタム クラス**Objective C に公開した名前 (例`SourceListView`)。
 
-[ ![](standard-controls-images/edit10.png "Xcode でのカスタム クラスの設定")](standard-controls-images/edit10.png)
+[![](standard-controls-images/edit10.png "Xcode でのカスタム クラスの設定")](standard-controls-images/edit10.png#lightbox)
 
 <a name="Exposing_Outlets_and_Actions" />
 
@@ -205,15 +205,15 @@ namespace AppKit
 
 いずれかとして公開する必要がある AppKit コントロールは、c# コードでアクセスすることができます、前に、**コンセント**またはと**アクション**です。 いずれかで指定されたコントロールで選択これを行うには、**インターフェイス階層**または**インターフェイス エディター**に切り替えると、**アシスタント ビュー** (、があることを確認`.h`編集用に選択ウィンドウの)。
 
-[ ![](standard-controls-images/edit11.png "編集する正しいファイルを選択します。")](standard-controls-images/edit11.png)
+[![](standard-controls-images/edit11.png "編集する正しいファイルを選択します。")](standard-controls-images/edit11.png#lightbox)
 
 コントロールのドラッグを付けてくださいに AppKit コントロールから`.h`作成を開始するファイル、**コンセント**または**アクション**:
 
-[ ![](standard-controls-images/edit12.png "ドラッグしてコンセントまたはアクションを作成するには")](standard-controls-images/edit12.png)
+[![](standard-controls-images/edit12.png "ドラッグしてコンセントまたはアクションを作成するには")](standard-controls-images/edit12.png#lightbox)
 
 作成しへの露出の種類の選択、**コンセント**または**アクション**、**名前**: 
 
-[ ![](standard-controls-images/edit13.png "コンセントまたはアクションを構成します。")](standard-controls-images/edit13.png)
+[![](standard-controls-images/edit13.png "コンセントまたはアクションを構成します。")](standard-controls-images/edit13.png#lightbox)
 
 
 操作の詳細については**コンセント**と**アクション**を参照してください、[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)のセクションで、 [Xcode とインターフェイスの概要ビルダー](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)ドキュメント。
@@ -226,7 +226,7 @@ namespace AppKit
 
 選択した場合、`SplitViewController.designer.cs`で、**ソリューション エクスプ ローラー**を表示することができる方法、**コンセント**と**アクション**c# コードで接続されています。
 
-[ ![](standard-controls-images/sync01.png "Xcode での変更を同期します。")](standard-controls-images/sync01.png)
+[![](standard-controls-images/sync01.png "Xcode での変更を同期します。")](standard-controls-images/sync01.png#lightbox)
 
 通知方法の定義、`SplitViewController.designer.cs`ファイル。
 
@@ -270,7 +270,7 @@ Visual Studio for Mac をリッスンへの変更が表示されるよう、`.h`
 
 AppKit は、ユーザー インターフェイスの設計で使用できるボタンのいくつかの型を提供します。 詳細についてを参照してください、[ボタン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。 
 
-[ ![](standard-controls-images/buttons01.png "ボタンのさまざまな種類の例")](standard-controls-images/buttons01.png)
+[![](standard-controls-images/buttons01.png "ボタンのさまざまな種類の例")](standard-controls-images/buttons01.png#lightbox)
 
 ボタンを使用して公開されている場合、**コンセント**、次のコードは押されていることに応答します。
 
@@ -299,7 +299,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 ここで`NSCellStateValue`を指定できます。
 
-- **に** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
+- **オン** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
 - **オフ**-、ボタンが押されていないか、コントロールが選択されていません。
 - **混合**-混在**で**と**オフ**状態です。
 
@@ -311,7 +311,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 既定としてボタンを設定するには、Xcode のインターフェイスのビルダーで選択します。 次に、**属性インスペクター**を選択、**キーと同じ**フィールドとキーを押して、**戻り/Enter**キー。
 
-[ ![](standard-controls-images/buttons03.png "該当するショートカットは、キーの編集")](standard-controls-images/buttons03.png)
+[![](standard-controls-images/buttons03.png "該当するショートカットは、キーの編集")](standard-controls-images/buttons03.png#lightbox)
 
 同様に、マウスの代わりに、キーボードを使用して、ボタンをアクティブ化に使用できる任意のキー シーケンスを割り当てることができます。 たとえばでキーを押すことコマンド C 上の図でします。
 
@@ -323,7 +323,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 AppKit は、いくつかのチェック ボックスと、ユーザー インターフェイスの設計で使用できるオプション ボタン グループの種類を提供します。 詳細についてを参照してください、[ボタン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。 
 
-[ ![](standard-controls-images/buttons02.png "使用可能なチェック ボックスの種類の例")](standard-controls-images/buttons02.png)
+[![](standard-controls-images/buttons02.png "使用可能なチェック ボックスの種類の例")](standard-controls-images/buttons02.png#lightbox)
 
 
 チェック ボックスやオプション ボタン (を介して公開される**コンセント**) した状態 (と同様に**で**と**オフ**)、状態をチェックまたはで設定された、`State`プロパティに対して、`NSCellStateValue`列挙型。 例:
@@ -336,7 +336,7 @@ AdjustTime.Activated += (sender, e) => {
 
 ここで`NSCellStateValue`を指定できます。
 
-- **に** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
+- **オン** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
 - **オフ**-、ボタンが押されていないか、コントロールが選択されていません。
 - **混合**-混在**で**と**オフ**状態です。
 
@@ -375,7 +375,7 @@ partial void NumberChanged(Foundation.NSObject sender)
 
 AppKit は、ユーザー インターフェイスの設計で使用できるメニュー コントロールのいくつかの型を提供します。 詳細についてを参照してください、[メニュー コントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlswithMenus.html#//apple_ref/doc/uid/20000957-CH100-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。 
 
-[ ![](standard-controls-images/menu01.png "メニュー コントロールの例")](standard-controls-images/menu01.png)
+[![](standard-controls-images/menu01.png "メニュー コントロールの例")](standard-controls-images/menu01.png#lightbox)
 
 <a name="Providing-Menu-Control-Data" />
 
@@ -429,7 +429,7 @@ AppKit は、ユーザー インターフェイスの設計で使用できるメ
 
 ドロップダウンの種類の`NSPopupButtons`、最初のメニュー項目がコントロールのタイトルを提供します。 たとえば、次のように入力します。 
 
-[ ![](standard-controls-images/menu02.png "例メニュー コントロール")](standard-controls-images/menu02.png)
+[![](standard-controls-images/menu02.png "例メニュー コントロール")](standard-controls-images/menu02.png#lightbox)
 
 タイトルを変更するには、としては、この項目を公開、**コンセント**し、次のようなコードを使用します。
 
@@ -481,7 +481,7 @@ partial void ItemOne (Foundation.NSObject sender) {
 
 AppKit は、ユーザー インターフェイスの設計で使用できる選択コントロールのいくつかの型を提供します。 詳細についてを参照してください、[選択コントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsSelection.html#//apple_ref/doc/uid/20000957-CH49-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。 
 
-[ ![](standard-controls-images/select01.png "選択コントロールの例")](standard-controls-images/select01.png)
+[![](standard-controls-images/select01.png "選択コントロールの例")](standard-controls-images/select01.png#lightbox)
 
 2 つの方法の選択コントロールとして公開することにより、ユーザーとの対話にあるときに追跡するために、**アクション**です。 例:
 
@@ -526,7 +526,7 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 AppKit は、ユーザー インターフェイスの設計で使用できるインジケーター コントロールのいくつかの型を提供します。 詳細についてを参照してください、[インジケーター コントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsIndicators.html#//apple_ref/doc/uid/20000957-CH50-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。 
 
-[ ![](standard-controls-images/level01.png "インジケーターのコントロールの例")](standard-controls-images/level01.png)
+[![](standard-controls-images/level01.png "インジケーターのコントロールの例")](standard-controls-images/level01.png#lightbox)
 
 インジケーターのコントロールがあるユーザーの操作として公開することでいずれかを追跡するために 2 つの方法、**アクション**または**コンセント**アタッチして、**デリゲート**に`Activated`イベント。 例:
 
@@ -557,7 +557,7 @@ AsyncProgress.StartAnimation (this);
 
 AppKit は、ユーザー インターフェイスの設計のために使用するテキスト コントロールのいくつかの型を提供します。 詳細についてを参照してください、[テキスト コントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsText.html#//apple_ref/doc/uid/20000957-CH51-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。 
 
-[ ![](standard-controls-images/text01.png "テキスト コントロールの例")](standard-controls-images/text01.png)
+[![](standard-controls-images/text01.png "テキスト コントロールの例")](standard-controls-images/text01.png#lightbox)
 
 テキスト フィールド (`NSTextField`)、次のイベントを使用してユーザーの操作を追跡できます。
 
@@ -589,7 +589,7 @@ SourceWriter コード全体に詳細なコメントが付いていて、可能�
 
 AppKit は、いくつかの種類のユーザー インターフェイスの設計で使用できるコンテンツのビューを提供します。 詳細についてを参照してください、[コンテンツ ビュー](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。
 
-[ ![](standard-controls-images/content01.png "例のコンテンツ ビュー")](standard-controls-images/content01.png)
+[![](standard-controls-images/content01.png "例のコンテンツ ビュー")](standard-controls-images/content01.png#lightbox)
 
 <a name="Popovers" />
 
@@ -602,16 +602,16 @@ AppKit は、いくつかの種類のユーザー インターフェイスの設
 1. 開く、`.storyboard`でダブルクリックしてに重なってを追加するウィンドウのファイル、**ソリューション エクスプ ローラー**
 2. ドラッグ、**コント ローラーを表示**から、**ライブラリ インスペクター**上に、**インターフェイス エディター**: 
 
-    [ ![](standard-controls-images/content02.png "ライブラリからビュー コント ローラーを選択します。")](standard-controls-images/content02.png)
+    [![](standard-controls-images/content02.png "ライブラリからビュー コント ローラーを選択します。")](standard-controls-images/content02.png#lightbox)
 4. サイズとレイアウトの定義、**カスタム ビュー**: 
 
-    [ ![](standard-controls-images/content04.png "レイアウトを編集")](standard-controls-images/content04.png)
+    [![](standard-controls-images/content04.png "レイアウトを編集")](standard-controls-images/content04.png#lightbox)
 5. コントロールをクリックし、上にあるポップアップのソースからドラッグして、**ビュー コント ローラー**: 
 
-    [ ![](standard-controls-images/content05.png "ドラッグして、segue を作成するには")](standard-controls-images/content05.png)
+    [![](standard-controls-images/content05.png "ドラッグして、segue を作成するには")](standard-controls-images/content05.png#lightbox)
 6. 選択**重なって**ポップアップ メニューから。 
 
-    [ ![](standard-controls-images/content06.png "Segue の種類を設定")](standard-controls-images/content06.png)
+    [![](standard-controls-images/content06.png "Segue の種類を設定")](standard-controls-images/content06.png#lightbox)
 7. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
 <a name="Tab_Views" />
@@ -622,11 +622,11 @@ AppKit は、いくつかの種類のユーザー インターフェイスの設
 
 Xcode のインターフェイスのビルダーでのタブのビューを使用するときに使用して、**属性インスペクター**タブの数を設定します。
 
-[ ![](standard-controls-images/content08.png "タブの数の編集")](standard-controls-images/content08.png)
+[![](standard-controls-images/content08.png "タブの数の編集")](standard-controls-images/content08.png#lightbox)
 
 各タブを選択して、**インターフェイス階層**を設定する、**タイトル**UI 要素を追加し、その**ウィンドウ**:
 
-[ ![](standard-controls-images/content09.png "Xcode でのタブを編集")](standard-controls-images/content09.png)
+[![](standard-controls-images/content09.png "Xcode でのタブを編集")](standard-controls-images/content09.png#lightbox)
 
 <a name="Data_Binding_AppKit_Controls" />
 

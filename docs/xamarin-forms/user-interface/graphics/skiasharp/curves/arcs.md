@@ -4,14 +4,15 @@ description: "SkiaSharp を使用して、次の 3 つの異なる方法で円�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 236f5da78022d6f6482ed66ffd439c4cd15766a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -100,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ご覧のように、開始角度および掃引角度の両方を負の値で実行できます。
 
-[![](arcs-images/anglearc-small.png "角度円弧ページのスクリーン ショットをトリプル")](arcs-images/anglearc-large.png "角度円弧ページのトリプル スクリーン ショット")
+[![](arcs-images/anglearc-small.png "角度円弧ページのスクリーン ショットをトリプル")](arcs-images/anglearc-large.png#lightbox "角度円弧ページのトリプル スクリーン ショット")
 
 円弧を生成するには、このアプローチはアルゴリズムによって最も単純で、かつ簡単に弧を記述するパラメーターの式を取得します。楕円、および開始および掃引角度の位置とサイズを理解していれば、始点と円弧の終点計算できます単純な三角関数の使用します。
 
@@ -205,11 +206,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 新しい`SKPath`各円スライスのオブジェクトを作成します。 パスは、センターから行を`ArcTo`から中央の結果を戻すに向けて、円弧と別の行を描画する、`Close`呼び出します。 このプログラムに移動してすべてセンターから 50 ピクセル「分割」円スライスを表示します。 そのタスクには、各スライスの掃引角度の中心の方向にベクターが必要です。
 
-[![](arcs-images/explodedpiechart-small.png "分割円グラフ ページのスクリーン ショットをトリプル")](arcs-images/explodedpiechart-large.png "分割円グラフ ページのトリプル スクリーン ショット")
+[![](arcs-images/explodedpiechart-small.png "分割円グラフ ページのスクリーン ショットをトリプル")](arcs-images/explodedpiechart-large.png#lightbox "分割円グラフ ページのトリプル スクリーン ショット")
 
 見たなし「急増」を表示するには、単には、コメント アウト、`Translate`呼び出し。
 
-[![](arcs-images/explodedpiechartunexploded-small.png "トリプル ページのスクリーン ショット、分割円グラフ、爆発せず")](arcs-images/explodedpiechartunexploded-large.png "トリプル ページのスクリーン ショット、分割円グラフ、爆発なし")
+[![](arcs-images/explodedpiechartunexploded-small.png "トリプル ページのスクリーン ショット、分割円グラフ、爆発せず")](arcs-images/explodedpiechartunexploded-large.png#lightbox "トリプル ページのスクリーン ショット、分割円グラフ、爆発なし")
 
 ## <a name="the-tangent-arc"></a>正接の円弧
 
@@ -413,7 +414,7 @@ public partial class TangentArcPage : InteractivePage
 
 ここでは、**タンジェント円弧**3 つすべてのプラットフォームで実行されているページ。
 
-[![](arcs-images/tangentarc-small.png "タンジェント円弧ページのスクリーン ショットをトリプル")](arcs-images/tangentarc-large.png "タンジェント円弧ページのトリプル スクリーン ショット")
+[![](arcs-images/tangentarc-small.png "タンジェント円弧ページのスクリーン ショットをトリプル")](arcs-images/tangentarc-large.png#lightbox "タンジェント円弧ページのトリプル スクリーン ショット")
 
 Windows Mobile デバイスで、3 つのポイントは、ほぼ同一線上と円弧が非常に小さいです。
 
@@ -490,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 3 つのプラットフォームで実行されているプログラムを次に示します。
 
-[![](arcs-images/roundedheptagon-small.png "丸め七角形ページのスクリーン ショットをトリプル")](arcs-images/roundedheptagon-large.png "丸め七角形ページのトリプル スクリーン ショット")
+[![](arcs-images/roundedheptagon-small.png "丸め七角形ページのスクリーン ショットをトリプル")](arcs-images/roundedheptagon-large.png#lightbox "丸め七角形ページのトリプル スクリーン ショット")
 
 ## <a name="the-elliptical-arc"></a>楕円の円弧
 
@@ -585,7 +586,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで、次の 3 つのプラットフォームで実行されています。
 
-[![](arcs-images/ellipticalarc-small.png "楕円の円弧のページのスクリーン ショットをトリプル")](arcs-images/ellipticalarc-large.png "楕円の円弧のページのトリプル スクリーン ショット")
+[![](arcs-images/ellipticalarc-small.png "楕円の円弧のページのスクリーン ショットをトリプル")](arcs-images/ellipticalarc-large.png#lightbox "楕円の円弧のページのトリプル スクリーン ショット")
 
 **円弧無限大**ページでは、楕円の円弧を使用して、無限大記号を描画します。 無限大記号は、100 単位で区切られた 100 単位の半径のある 2 つの円に基づいています。
 
@@ -653,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 コードを使用して、`Bounds`プロパティ`SKPath`キャンバスのサイズに拡大する無限大サインの寸法を決定します。
 
-[![](arcs-images/arcinfinity-small.png "円弧の無限大のページのスクリーン ショットをトリプル")](arcs-images/arcinfinity-large.png "円弧無限大ページのトリプル スクリーン ショット")
+[![](arcs-images/arcinfinity-small.png "円弧の無限大のページのスクリーン ショットをトリプル")](arcs-images/arcinfinity-large.png#lightbox "円弧無限大ページのトリプル スクリーン ショット")
 
 示します結果とは少し小さな、`Bounds`プロパティ`SKPath`パスよりも大きいサイズを報告します。
 
@@ -661,7 +662,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 厳密な調整を取得する、`TightBounds`プロパティで、コントロール ポイントは含まれません。 ここでは、横モードで実行されておりを使用して、プログラム、`TightBounds`境界のパスを取得するプロパティ。
 
-[![](arcs-images/arcinfinitytightbounds-small.png "トリプル ページのスクリーン ショット、円弧無限大緊密な境界を持つ")](arcs-images/arcinfinitytightbounds-large.png "緊密な境界を持つ弧無限大ページのトリプル スクリーン ショット")
+[![](arcs-images/arcinfinitytightbounds-small.png "トリプル ページのスクリーン ショット、円弧無限大緊密な境界を持つ")](arcs-images/arcinfinitytightbounds-large.png#lightbox "緊密な境界を持つ弧無限大ページのトリプル スクリーン ショット")
 
 円弧と直線間の接続は、スムーズな数学的には、直線を弧からの変更が少し突然思われる場合します。 次のページより優れた無限大記号が表示されます。
 
