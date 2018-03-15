@@ -8,11 +8,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dcfcf43c89f26b4e721c9752b9cbad1f4a30cfc2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
 
@@ -20,7 +20,7 @@ _SkiaSharp を円錐、二次方程式、3 次ベジエ曲線を表示するた�
 
 ベジエ曲線がサンピエール ベジエ (1910: 1999)、車の本文のコンピューター支援型のデザインの曲線を使用した Renault 自動車企業のフランス語のエンジニア リング後という名前です。
 
-ベジエ曲線が既知の対話型のデザインに最適であるため: これらの動作はよく & #x 2014 です。つまり、無限であるか、または長すぎて扱いに曲線 & #x 2014; が発生する特異がないです。され、通常、見栄えの良いなります。 通常、コンピューター ベースのフォントの文字のアウトラインはベジエ曲線を含む定義します。
+ベジエ曲線が対話型のデザインに最適であるため呼ばれる: はうまく動作するように&mdash;言い換えれば、無限であるか、または長すぎて扱いに曲線が発生する特異がない&mdash;され、通常、見栄えの良い. 通常、コンピューター ベースのフォントの文字のアウトラインはベジエ曲線を含む定義します。
 
 ![](beziers-images/beziersample.png "サンプルのベジエ曲線")
 
@@ -411,7 +411,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-conic-bzier-curve"></a>円錐のベジエ曲線
 
-ベジエ曲線を円錐 & #x 2014;2 次ベジエ曲線を有理数 & #x 2014; とも呼ばれます比較的最近のベジエ曲線のファミリに追加します。 2 次のベジエ曲線のような合理性のある 2 次ベジエ曲線には、始点、終点、および 1 つのコントロール ポイントが含まれます。 有理数 2 次ベジエ曲線も必要ですが、*重み*値。 呼び出された、*有理数*パラメーター型数式には、比率が含まれまるため二次です。
+円錐のベジエ曲線&mdash;合理的に 2 次ベジエ曲線とも呼ばれる&mdash;は比較的最近のベジエ曲線のファミリに追加します。 2 次のベジエ曲線のような合理性のある 2 次ベジエ曲線には、始点、終点、および 1 つのコントロール ポイントが含まれます。 有理数 2 次ベジエ曲線も必要ですが、*重み*値。 呼び出された、*有理数*パラメーター型数式には、比率が含まれまるため二次です。
 
 パラメーターの式の X と Y が、同じ分母を共有する比率。 ここでは、式の分母*t* 0 から 1 の重みの値を*w*:
 
@@ -425,7 +425,7 @@ x(t) = ((1 – t)²x₀ + 2wt(1 – t)x₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t)²y₀ + 2wt(1 – t)y₁ + t²y₂)) ÷ d(t)
 
-有理数の 2 次ベジエ曲線とも呼ばれる*conics*円錐部分 & #x 2014; 任意のセグメントを正確に表すことができるため hyperbolas、parabolas、省略記号、および円です。
+有理数の 2 次ベジエ曲線とも呼ばれる*conics*円錐セクションのセグメントを正確に表すことができるため&mdash;hyperbolas、parabolas、省略記号、および円です。
 
 有理数 2 次ベジエ曲線をパスに追加するには、使用、 [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/)メソッドまたは[ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/)独立したオーバー ロードを`x`と`y`座標。
 

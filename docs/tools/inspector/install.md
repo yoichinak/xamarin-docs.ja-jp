@@ -1,5 +1,6 @@
 ---
-title: "インストールと要件"
+title: "インスペクターのインストールと要件"
+description: "ダウンロード、インストール、および Xamarin Inspector を使用する方法。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
@@ -7,35 +8,28 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: a587935e35882ed1dc68817fbbe1ae3e91200f29
-ms.sourcegitcommit: 0bdcd00b64d581d4c5179bc39ded4018c9374229
+ms.openlocfilehash: a2e6f254c77ac099b5700543db5763b8bbb44fef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>インストールと要件
-
-<script> var inspectorOnLoad 関数 () = {var primaryTextBase ="Xamarin ブック & インスペクターを"; var secondaryTextBase =「または用のダウンロード」; var inspectorDownloadUrlMac ="https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; varinspectorDownloadUrlWin ="https://dl.xamarin.com/interactive/XamarinInteractive.msi"です。
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = 基本です。var aWin aSecondary; を =var macTextBase primaryTextBase; を =var winTextBase secondaryTextBase; を =
-
-  if (/win/i.test(navigator.platform.toLowerCase())) { aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase; }
-
-  aMac.href = inspectorDownloadUrlMac; aMac.text = macTextBase + " Mac"; aWin.href = inspectorDownloadUrlWin; aWin.text = winTextBase + " Windows"; };
-
-document.addEventListener("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
 ## <a name="download-and-installation"></a>ダウンロードとインストール
 
-<ol>
-  <li>ダウンロードしてインストール<a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">Xamarin ブック & for Mac インスペクター</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">または Windows のダウンロード</a>)。
-  </li>
-  <li><a href="~/tools/inspector/inspect.md"> 独自のアプリを検査します。</a>
-    </li>
-</ol>
+
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. ダウンロードしてインストール[Xamarin ブック & インスペクターのウィンドウ](https://dl.xamarin.com/interactive/XamarinInteractive.msi)します。
+2. [独自のアプリを検査します。](~/tools/inspector/inspect.md)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. ダウンロードしてインストール[Xamarin ブック & for Mac インスペクター](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)です。
+2. [独自のアプリを検査します。](~/tools/inspector/inspect.md)
+
+-----
 
 ## <a name="requirements"></a>必要条件
 
@@ -57,43 +51,13 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 
 ### <a name="supported-app-platforms"></a>サポートされているアプリのプラットフォーム
 
-<table>
-<thead>
-  <tr>
-    <th>アプリ プラットフォーム</th>
-    <th>IDE のサポート</th>
-    <th>メモ</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (統合)</td>
-    <td>Mac 上でのみサポート</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (統合)</td>
-    <td>XS および Visual Studio でサポートされています。</td>
-    <td>Windows からの iOS アプリを調べることには、同じバージョンの Mac ビルド ホストにインストールされているもの検査が必要です。</td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>XS および Visual Studio でサポートされています。</td>
-    <td>
-      <ul>
-        <li>Android を対象にする > 4.0.3 を =</li>
-        <li>Fastdev 有効でなければなりません</li>
-        <li>Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります。 Android の 7 エミュレーターは、この時点で検査を許可しません。</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Windows 上の Visual Studio でのみサポートされます。</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|アプリ プラットフォーム|IDE のサポート|メモ|
+|--- |--- |--- |
+|Mac (統合)|Mac 上でのみサポート|
+|iOS (統合)|XS および Visual Studio でサポートされています。|Windows からの iOS アプリを調べることには、同じバージョンの Mac ビルド ホストにインストールされているもの検査が必要です。|
+|Android|XS および Visual Studio でサポートされています。|Android を対象にする > = 4.0.3、 **fastdev**有効にします。<br />Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります。 Android の 7 エミュレーターは、この時点で検査を許可しません。|
+|WPF|Windows 上の Visual Studio でのみサポートされます。|
+
 
 <a name="reporting-bugs" />
 
@@ -101,7 +65,7 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 
 Visual Studio を使用して直接バグを報告する必要があります。
 
-- **→ 送信フィードバック → レポート問題をヘルプします。**
+- **ヘルプ > フィードバックを送信 > 問題を報告します。**
 
 すべての次の情報を記入してください。
 
@@ -111,12 +75,12 @@ Visual Studio を使用して直接バグを報告する必要があります。
 
 Visual Studio For Mac
 
-- **Visual Studio] → [Visual Studio] → [表示の詳細] → [コピーの情報について**
+- **Visual Studio > Visual Studio に関する > 詳細を表示 > 情報のコピー**
 - バグのレポートに貼り付けます
 
 Xamarin Studio
 
-- **Xamarin Studio → Xamarin Studio → 表示に関する詳細の → コピーの情報**
+- **Xamarin Studio > About Xamarin Studio > Show Details > Copy Information**
 - バグのレポートに貼り付けます
 
 Visual Studio
@@ -135,7 +99,7 @@ Visual Studio
 
 機能 Finder (macOS) またはエクスプ ローラー (Windows) 直接メイン メニューから、ログ ファイルを選択することもあります 1.4.x:
 
-- **ヘルプ] → [ログ ファイルを表示**
+- **ヘルプ > ログ ファイルを表示します。**
 
 Visual Studio For Mac
 
@@ -148,11 +112,11 @@ Xamarin Studio
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio の内容`Output`ウィンドウできない可能性がありますも有益です。
+- Visual Studio の内容**出力**ウィンドウできない可能性がありますも有益です。
 
 ### <a name="project-settings"></a>プロジェクト設定
 
-アタッチすることができる場合、`.csproj`検査しようとするプロジェクトでになります非常に役立ちます。 これは、個々 の設定について確認するよりも簡単です。
+アタッチすることができる場合、 **.csproj**を検査しようとするプロジェクトでになります非常に役立ちます。 これは、個々 の設定について確認するよりも簡単です。
 
 デバッグ構成であることを確認してください。
 
@@ -177,13 +141,13 @@ Android と iOS の場合は、検査する場合のデバッグしているデ�
 
 #### <a name="visual-studio-installer"></a>Visual Studio インストーラー
 
-Visual Studio 2017 をした場合は、「Visual Studio インストーラー」を開き「Xamarin ブック」の「個々 のコンポーネント」を確認します。 オンの場合は、これをオフにしをアンインストールするには、[変更] をクリックします。
+Visual Studio 2017 があれば、開く**Visual Studio インストーラー**、ファイルの場所と**個々 のコンポーネント**の**Xamarin ブック**です。 オンの場合は、これをオフにしをアンインストールするには、[変更] をクリックします。
 
 #### <a name="system-uninstall"></a>システムのアンインストール
 
 使用してアンインストールする必要がありますをインストールしたブック & インスペクター自分でダウンロードしたインストーラーに場合、**アプリおよび機能**または経由で Windows 10 でのシステム設定] ページ**プログラムの追加/削除**古いバージョンの Windows コントロール パネルの [します。
 
-> **起動] → [設定] → [システム] → [アプリケーションと機能**
+> **開始 > 設定 > システム > アプリケーションと機能**
 
 ![](install-images/windows-remove.png "Xamarin ブックおよびインスペクター 'アプリケーションと機能 に表示されます。")
 

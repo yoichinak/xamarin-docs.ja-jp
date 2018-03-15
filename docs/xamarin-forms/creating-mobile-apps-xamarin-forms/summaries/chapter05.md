@@ -7,11 +7,11 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0c61727e90a03d618a7423e5b865a7fcc9e0b399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要です。 サイズを処理します。
 
@@ -42,7 +42,7 @@ Windows ランタイムでは、1 インチの 160 デバイス非依存単位�
 - 1 インチに相当する 160 単位
 - 64、センチメートル単位
 
-読み取り専用[ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/)と[ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/)によって定義されたプロパティ`VisualElement`「模擬表示」の値 & #x 2013 です。 既定値がある 1 です。 要素がサイズし、レイアウトで対応されている場合にのみこれらのプロパティはデバイスに依存しない単位内の要素の実際のサイズが反映されます。 このサイズが含まれる`Padding`要素で設定がない、`Margin`です。
+読み取り専用[ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/)と[ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/)によって定義されたプロパティ`VisualElement`default の値を「模擬」 &ndash;1 です。 要素がサイズし、レイアウトで対応されている場合にのみこれらのプロパティはデバイスに依存しない単位内の要素の実際のサイズが反映されます。 このサイズが含まれる`Padding`要素で設定がない、`Margin`です。
 
 視覚的要素が発生、 [ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/)イベントとその`Width`または`Height`が変更されました。 [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize)サンプルでは、このイベントを使用して、プログラムの画面のサイズを表示します。
 
@@ -75,7 +75,7 @@ Windows ランタイムでは、1 インチの 160 デバイス非依存単位�
 
 ## <a name="empirically-fitting-text"></a>調整テキスト経験的
 
-四角形にテキストに合わせての別の方法では、経験的表示されるテキストのサイズを計算し、上下を調整することです。 書籍の呼び出しで、プログラム[ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)で視覚的要素を要素の目的のサイズを取得します。 メソッドは廃止されて、そのプログラムを呼び出す代わりにする必要があります [`Measure`] (/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)。
+四角形にテキストに合わせての別の方法では、経験的表示されるテキストのサイズを計算し、上下を調整することです。 書籍の呼び出しで、プログラム[ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)で視覚的要素を要素の目的のサイズを取得します。 メソッドは廃止されて、そのプログラムを呼び出す代わりにする必要があります[ `Measure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)です。
 
 `Label`、最初の引数は、(折り返しを許可) コンテナーの幅を使用する必要がありますが、2 番目の引数を設定する必要がありますに`Double.PositiveInfinity`制約なしを高さにします。 [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize)サンプルは、この手法を示します。
 

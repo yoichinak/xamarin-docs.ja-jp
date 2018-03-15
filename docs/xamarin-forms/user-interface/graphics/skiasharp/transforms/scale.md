@@ -8,11 +8,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 39e2084bf9ca888d6e39fc5f02a455d3500e568c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-scale-transform"></a>スケールの変換
 
@@ -44,7 +44,7 @@ y' sy · を =y
 public void Scale (Single s)
 ```
 
-これは呼ば*アイソトロ ピック*拡大/縮小されている同じ双方向のスケーリング & #x 2014;。 アイソトロ ピック スケーリングには、オブジェクトの縦横比が維持されます。
+これと呼ばれます*アイソトロ ピック*スケーリング&mdash;拡大/縮小されている同じ双方向でします。 アイソトロ ピック スケーリングには、オブジェクトの縦横比が維持されます。
 
 2 番目[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/)メソッドでは、水平および垂直方向のスケーリングに別の値を指定できます。
 
@@ -168,7 +168,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](scale-images/centeredscale-small.png "スケールの中央に配置 ページのスクリーン ショットをトリプル")](scale-images/centeredscale-large.png#lightbox "スケールの中央に配置 ページのトリプル スクリーン ショット")
 
-`Slider`このプログラム内の要素がある範囲の & #x 2013; 10 ~ 10 です。 わかります、垂直方向のスケーリング (画面の中央で、Android 上など) の負の値によってスケーリングの中心を通る水平軸の周りの上下を反転するオブジェクトを使用します。 負の値 (右側の Windows の画面など) のスケーリングの水平方向のスケーリングの中心を通る垂直軸の周りの上下を反転するオブジェクトが発生します。
+`Slider`このプログラム内の要素の範囲がある&ndash;10 ~ 10 です。 わかります、垂直方向のスケーリング (画面の中央で、Android 上など) の負の値によってスケーリングの中心を通る水平軸の周りの上下を反転するオブジェクトを使用します。 負の値 (右側の Windows の画面など) のスケーリングの水平方向のスケーリングの中心を通る垂直軸の周りの上下を反転するオブジェクトが発生します。
 
 この 4 つ目のバージョンの`Scale`メソッドは、実際のショートカットです。 置き換えることでこの動作を確認することができます、`Scale`このコードを次のメソッド。
 

@@ -7,11 +7,11 @@ ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a085eb306ad81b3c9214df269f69558bc8fbfaa7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>19 章の概要です。 コレクション ビュー
 
@@ -31,7 +31,7 @@ MVVM アプリケーションを使用するが一般的、`ListView`オブジ�
 
 [ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo)サンプルでは XAML を使用して設定する方法、 `Picker` [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/)プロパティを追加および`string`項目[ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/)コレクション。 ユーザーが選択すると、 `Picker`、内の項目が表示されます、`Items`プラットフォームに依存する形でコレクション。
 
-[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)イベントは、ユーザーが項目を選択した場合を示します。 0 から始まる[ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)プロパティは、選択した項目を示します。 項目が選択されていない場合`SelectedIndex`equals &#x2013; 1 です。
+[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)イベントは、ユーザーが項目を選択した場合を示します。 0 から始まる[ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)プロパティは、選択した項目を示します。 項目が選択されていない場合`SelectedIndex`equals &ndash;1 です。
 
 使用することも`SelectedIndex`後に設定する必要がありますが、選択したアイテムを初期化するために、`Items`コレクションを格納します。 XAML では、つまりを設定するプロパティ要素を使用すること可能性あります`SelectedIndex`です。
 
@@ -82,11 +82,11 @@ IOS および Android の表示では、細い線は、行を区切ります。 
 
 `ListView` これらの項目を表示するテンプレートが必要です。 コードでは、設定することができます、 [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/)プロパティによって定義された`ItemsView<TVisual>`を[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)オブジェクトを使用して、 [ `DataTemplate`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/)です派生物を参照して、 [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/)クラスです。 `Cell` 5 つの派生クラスがあります。
 
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &#x2014; です。2 つ`Label`ビュー (概念的に)
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &#x2014; です。追加、`Image`を表示 `TextCell`
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &#x2014; です。含まれています、`Entry`で表示します。 `Label`
-- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &#x2014; です。含まれています、`Switch`で、 `Label`
-- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &#x2014; です。`View` (子を伴う可能性があります)
+- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &mdash; 2 つ`Label`ビュー (概念的に)
+- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &mdash; 追加、`Image`を表示 `TextCell`
+- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &mdash; 含まれています、`Entry`で表示します。 `Label`
+- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &mdash; 含まれています、`Switch`で、 `Label`
+- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &mdash; `View` (子を伴う可能性があります)
 
 呼び出す[ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/)と[ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)上、`DataTemplate`値とを関連付けるためのオブジェクト、`Cell`プロパティ、またはへのデータ バインディングの設定、 `Cell`プロパティ内の項目のプロパティを参照する、`ItemsSource`コレクション。 これに示されている、 [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode)サンプルです。
 

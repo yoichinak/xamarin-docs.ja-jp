@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 230c26c2537987f7ca09e28e05ec96186e5f7882
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="alternate-resources"></a>代替のリソース
 
@@ -44,7 +44,7 @@ ms.lasthandoff: 03/09/2018
 可能な修飾子は、リファレンスについては、次に示します。
 
 - **MCC と mnc も** &ndash; 、[モバイル国コード](http://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) し、必要に応じて、[モバイル ネットワーク コード](http://en.wikipedia.org/wiki/Mobile_Network_Code)(mnc も)。 SIM カードは、デバイスが接続先ネットワークは、mnc も提供しています、MCC を提供します。 モバイル国コードを使用するターゲット ロケールをすることはできますが、推奨手法では、以下に指定された、Language 修飾子の使用です。 たとえば、ドイツのターゲット リソースへの修飾子になります`mcc262`です。 T モバイル、米国内のターゲット リソースに、修飾子が`mcc310-mnc026`です。
-  モバイルの国コードとモバイル ネットワーク コードの完全な一覧については、次を参照してください。<http://mcclist.com/>です。
+  モバイルの国コードとモバイル ネットワーク コードの完全な一覧については、次を参照してください。<http://mcc-mnc.com/>です。
 
 - **言語** &ndash; 2 文字[ISO 639-1 言語コード](http://en.wikipedia.org/wiki/ISO_639-1)、必要に応じて、2 文字[ISO 3166-アルファ 2 地域コード](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)です。 
   両方の修飾子を指定しないかどうかで区切られます、`-r`です。 たとえば、しターゲット フランス語を話すロケールの修飾子`fr`を使用します。 カナダのロケールを対象とする、`fr-rCA`が使用されます。 言語コードと地域コードの一覧については、次を参照してください。 [、の形式の名前の言語コード](http://www.loc.gov/standards/iso639-2/php/English_list.php)と[国の名前とコード要素](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm)です。

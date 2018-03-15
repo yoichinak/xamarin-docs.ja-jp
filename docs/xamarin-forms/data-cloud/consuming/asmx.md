@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a095dbbb78ad1517791356ae0b7cbeaa94d1336f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) の使用
 
@@ -39,37 +39,12 @@ ASMX サービス設定手順については、サンプル アプリケーシ�
 
 ASMX サービスでは、次の操作を提供します。
 
-<table>
-  <thead>
-    <tr>
-      <th>操作</th>
-      <th>説明</th>
-      <th>パラメーター</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GetTodoItems</td>
-      <td>作業アイテムの一覧を取得します。</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CreateTodoItem</td>
-      <td>新しい作業項目を作成します。</td>
-      <td>シリアル化された XML <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>EditTodoItem</td>
-      <td>作業項目を更新します。</td>
-      <td>シリアル化された XML <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>DeleteTodoItem</td>
-      <td>作業項目を削除します。</td>
-      <td>シリアル化された XML <code>TodoItem</code></td>
-    </tr>
-  </tbody>
-</table>
+|操作|説明|パラメーター|
+|--- |--- |--- |
+|GetTodoItems|作業アイテムの一覧を取得します。|
+|CreateTodoItem|新しい作業項目を作成します。|TodoItem が XML にシリアル化されます。|
+|EditTodoItem|作業項目を更新します。|TodoItem が XML にシリアル化されます。|
+|DeleteTodoItem|作業項目を削除します。|TodoItem が XML にシリアル化されます。|
 
 アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。[データ モデリング](~/xamarin-forms/data-cloud/walkthrough.md)です。
 

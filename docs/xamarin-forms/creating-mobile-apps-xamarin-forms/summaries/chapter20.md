@@ -7,11 +7,11 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0ac316bc2cef04a80958c047427845dbdcc4137f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>20 章の概要です。 Async およびファイル I/O
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 03/12/2018
 
 ### <a name="good-news-and-bad-news"></a>良いニュースと短所
 
-Xamarin.Forms サポート アプリケーションのローカル記憶域 & #x 2014; でサポートされるすべてのプラットフォームアプリケーションに対してプライベート ストレージです。
+Xamarin.Forms サポート アプリケーションのローカル記憶域でサポートされているすべてのプラットフォーム&mdash;アプリケーションにとってプライベートな記憶域がします。
 
 Xamarin.iOS および Xamarin.Android ライブラリには、これら 2 つのプラットフォームの Xamarin が明示的に対応した .NET のバージョンが含まれます。 クラスが含まれます`System.IO`これら 2 つのプラットフォームでのアプリケーションのローカル記憶域を持つファイル入出力の実行に使用することできます。
 
@@ -117,7 +117,7 @@ Windows ランタイムで実行されるプログラム クラスを使用し�
 
 ### <a name="keeping-it-in-the-background"></a>バック グラウンドで維持すること
 
-複数の非同期メソッド & #x 2014; への呼び出しを構成するライブラリ内のメソッドなど、`WriteFileAsync`と`ReadFileASync`メソッドは、Windows ランタイムで[ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs)クラス & #x 2014; にできる効率よりもやや詳細を使用して、 [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/)メソッドユーザー インターフェイス スレッドへ切り替えしないでください。
+複数の非同期メソッドを呼び出すライブラリ内のメソッド&mdash;など、`WriteFileAsync`と`ReadFileASync`メソッドは、Windows ランタイムで[ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs)クラス&mdash;少し行わできます使用してより効率的な[ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/)ユーザー インターフェイス スレッドへ切り替えを回避するためです。
 
 ### <a name="dont-block-the-ui-thread"></a>UI スレッドをブロックしません。
 

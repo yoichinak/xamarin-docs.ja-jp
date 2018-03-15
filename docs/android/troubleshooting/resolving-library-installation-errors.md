@@ -7,12 +7,12 @@ ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5589d512f9a4ee9c1148810f36fee12d561f725c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/14/2018
+ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resolving-library-installation-errors"></a>ライブラリのインストール エラーを解決します。
 
@@ -104,7 +104,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    場合、 **m2repository**ダウンロード URL を作成するには付加することによってこのテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/**の名前に、 **m2repository**をダウンロードします。 たとえば、使用して**https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**.
+    場合、 **m2repository**ダウンロード URL を作成するには付加することによってこのテーブルにアーカイブが表示されていない **https://dl-ssl.google.com/android/repository/** の名前に、 **m2repository**をダウンロードします。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**です。
 
 2.  上記の表に示すように、ダウンロード URL の対応する MD5 ハッシュをファイルの名前を変更します。 たとえば、ダウンロードした**android\_m2repository\_r25.zip**に名前を変更**0B3F1796C97C707339FB13AE8507AF50.zip**です。 使用することができます、ダウンロードしたファイルのダウンロード URL の MD5 ハッシュがテーブルに表示されない場合、[オンライン MD5 ジェネレーター](http://www.webconfs.com/online-md5-generator.php) MD5 ハッシュ文字列を URL に変換します。 
 
@@ -160,6 +160,8 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
     [![23.1.1.0/embedded フォルダーにコピーされたファイルの例](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
 8.  上のすべてのファイルがコピーされることを確認します。 **埋め込み**を今すぐファイルを含むディレクトリなど**.jar**、 **.aar**、および**.pom**です。
+
+9.  いずれかの抽出を解凍**.aar**ファイル。 Windows では、追加、 **.zip**拡張機能を**.aar**ファイルで、右クリックし、選択**すべてを抽出しています.**、削除して、 **.zip**拡張機能です。 Macos、解凍、 **.aar**ファイルを使用して、**解凍**端末のコマンド (たとえば、 **file.aar を解凍**)。
 
 この時点では、不足しているコンポーネントを手動でインストールしたし、エラーせず、プロジェクトをビルドする必要があります。 以外の場合は、ダウンロードしたことを確認してください、 **m2repository** **.zip**エラー メッセージのバージョンに正確に対応するバージョンをアーカイブし、内容にがインストールされていることを確認してください、。上記の手順」の説明に従って、場所を修正します。 
 

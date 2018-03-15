@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: f448a3ee9c018aa475775a5ac2c614f3e7ddc324
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ab22881f383e00a67fda8d3e8ffc5d9a4f7f993e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -25,20 +25,7 @@ ms.lasthandoff: 03/09/2018
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="xamarin-studio"></a>Xamarin Studio
-
-最初に、ポータブル ライブラリ プロジェクトを作成することで Xamarin Studio 6.2 では、標準的な .NET のライブラリ プロジェクトを作成できます。
-
-[![](net-standard-images/xs01-sml.png "新しいポータブル ライブラリ プロジェクトを作成します。")](net-standard-images/xs01.png#lightbox)
-
-プロジェクトが作成されたら、右クリックし、開く、**プロジェクト オプション**ウィンドウです。
-**全般**プロジェクトを .NET 標準に変換しで特定のバージョンを使用する設定セクション、**プラットフォーム**ドロップ ダウン リスト。
-
-[![](net-standard-images/xs02-sml.png "一般にオプションで .NET 標準に変換します。")](net-standard-images/xs02.png#lightbox)
-
-できます[NuGet パッケージを作成する](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library.md)を他の開発者とライブラリを共有します。
-
-## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac のチュートリアル
+## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 このセクションで作成および for mac Visual Studio を使用する .NET 標準ライブラリを使用する方法について説明します。 完全な実装について .NET 標準ライブラリの例のセクションを参照してください。
 
@@ -46,7 +33,7 @@ ms.lasthandoff: 03/09/2018
 
 .NET 標準ライブラリを追加するソリューションには、比較的簡単です。
 
-1. 新しいプロジェクトの追加 ダイアログ ボックスで、`.NET Core`カテゴリし選択`Class Library(.NET Core)`です。
+1. 新しいプロジェクトの追加] ダイアログ ボックスで、`.NET Core`カテゴリし選択`Class Library(.NET Core)`です。
 
   **注:**にこのテンプレートの名前を変更するは`.NET Standard`将来のバージョンの Visual Studio for mac
 
@@ -68,7 +55,7 @@ ms.lasthandoff: 03/09/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-## <a name="visual-studio-windows-walkthrough"></a>Visual Studio (Windows) のチュートリアル
+## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
 このセクションで作成して Visual Studio を使用する .NET 標準ライブラリを使用する方法について説明します。 完全な実装について .NET 標準ライブラリの例のセクションを参照してください。
 
@@ -78,7 +65,7 @@ ms.lasthandoff: 03/09/2018
 
 .NET 標準ライブラリを追加するソリューションには、比較的簡単です。
 
-1. 新しいプロジェクトの追加 ダイアログ ボックスで、`.NET Standard`カテゴリし選択`Class Library(.NET Standard)`です。
+1. 新しいプロジェクトの追加] ダイアログ ボックスで、`.NET Standard`カテゴリし選択`Class Library(.NET Standard)`です。
 
   ![](net-standard-images/vs01.png "標準的な .NET クラス ライブラリの新規作成します。")
 
@@ -98,13 +85,9 @@ ms.lasthandoff: 03/09/2018
 
 #### <a name="using-net-standard-library"></a>.NET 標準ライブラリを使用します。
 
-.NET 標準ライブラリが作成されたら、通常の参照を追加する同じ方法で任意の互換性のあるアプリケーションまたはライブラリ プロジェクトからへの参照を追加できます。 Visual Studio で参照ノードを右クリックして選択`Add Reference...`に切り替えて、`Solution : Projects`ように タブします。
+.NET 標準ライブラリが作成されたら、通常の参照を追加する同じ方法で任意の互換性のあるアプリケーションまたはライブラリ プロジェクトからへの参照を追加できます。 Visual Studio で参照ノードを右クリックして選択`Add Reference...`に切り替えて、`Solution : Projects`ように] タブします。
 
 ![](net-standard-images/vs04.png "Visual Studio で、[参照] ノードを右クリックして参照の追加... しように、ソリューションのプロジェクトのタブに切り替えます")
 
 -----
 
-
-## <a name="related-links"></a>関連リンク
-
-- [リリース ノート](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#.NET_Standard_Support)

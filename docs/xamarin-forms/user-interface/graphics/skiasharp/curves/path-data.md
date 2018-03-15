@@ -8,11 +8,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 7d50e5a33020de822f96a8bf2f713a8c5b9d3020
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="svg-path-data"></a>SVG Path Data
 
@@ -423,7 +423,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-ただし、秒針で行わ特別なれます。 クロックが更新されるため、16 ミリ秒ごと、`Millisecond`のプロパティ、`DateTime`不連続なジャンプで移動する 1 つではなく、手動で 2 つ目、スイープをアニメーション化する値を使用する可能性が秒を 2 番目のです。 このコードでは、スムーズに移動することはできません。 代わりに、Xamarin.Forms を使用して[ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/)と[ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/)アニメーションにイージング関数の移動の別の種類。 これらのイージング関数と秒針不自然になる方法 & #x 2014; に移動するには引いて、もう少しに移動し、少し過剰撮影目的地エフェクト残念ながらを再現できない静的これらスクリーン ショットでは前に。
+ただし、秒針で行わ特別なれます。 クロックが更新されるため、16 ミリ秒ごと、`Millisecond`のプロパティ、`DateTime`不連続なジャンプで移動する 1 つではなく、手動で 2 つ目、スイープをアニメーション化する値を使用する可能性が秒を 2 番目のです。 このコードでは、スムーズに移動することはできません。 代わりに、Xamarin.Forms を使用して[ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/)と[ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/)アニメーションにイージング関数の移動の別の種類。 イージング関数これらが発生する不自然になります的に移動する秒針&mdash;引いて、もう少しに移動し、少し過剰撮影目的地エフェクト残念ながらを再現できない静的これらスクリーン ショットでは前に。
 
 [![](path-data-images/prettyanalogclock-small.png "アナログ時計かなりページのスクリーン ショットをトリプル")](path-data-images/prettyanalogclock-large.png#lightbox "アナログ時計かなりページのトリプル スクリーン ショット")
 

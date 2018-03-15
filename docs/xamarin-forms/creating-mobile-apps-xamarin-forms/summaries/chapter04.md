@@ -7,11 +7,11 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5559f9e6a4baf9d3f82701b5e3f341900ba83bae
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要です。 スタックをスクロール
 
@@ -67,9 +67,9 @@ ms.lasthandoff: 03/12/2018
 
 垂直方向の`StackLayout`、それぞれの子は、垂直方向には制約がなく、取得垂直スロットお子様の高さに応じている場合、`VerticalOptions`設定は使用されません。
 
-場合、垂直方向`StackLayout`自体は制約がありません (& a) #x 2014; である場合、`VerticalOptions`設定は、 `Start`、 `Center`、または`End`の高さ、`StackLayout`その子の高さの合計。
+場合、垂直`StackLayout`自体は制約がありません&mdash;されている場合その`VerticalOptions`設定は`Start`、 `Center`、または`End`の高さ、`StackLayout`その子の高さの合計。
 
-ただし場合、垂直`StackLayout`が垂直方向に制限されて (& a) #x 2014 以外の場合その`VerticalOptions`設定は`Fill`& #x 2014; しの高さ、 `StackLayout` 、全体の高さを超える可能性のあるコンテナーの高さになります子です。 場合は、少なくとも 1 つの子とする場合は、`VerticalOptions`による設定、`Expands`フラグ`true`で余分なスペースでは、`StackLayout`でこれらすべての子の間で均等に割り当てられている、`Expands`のフラグ`true`です。 子の全体の高さがの高さになりますし、 `StackLayout`、および`Alignment`の一部、`VerticalOptions`のスロットに子を配置する垂直方向に設定を決定します。
+ただし場合、垂直`StackLayout`が垂直方向に制限されて&mdash;場合その`VerticalOptions`設定は`Fill`&mdash;の高さをし、`StackLayout`合計を超える可能性のあるコンテナーの高さになりますその子の高さ。 場合は、少なくとも 1 つの子とする場合は、`VerticalOptions`による設定、`Expands`フラグ`true`で余分なスペースでは、`StackLayout`でこれらすべての子の間で均等に割り当てられている、`Expands`のフラグ`true`です。 子の全体の高さがの高さになりますし、 `StackLayout`、および`Alignment`の一部、`VerticalOptions`のスロットに子を配置する垂直方向に設定を決定します。
 
 これに示されている、 [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo)サンプルです。
 

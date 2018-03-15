@@ -7,11 +7,11 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09f63dd418ea1fb523c028edb02c28c22bfdccd1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4f76b1060ee8a672319683525470aee00e3db001
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>17 章の概要です。 マスター グリッド
 
@@ -29,16 +29,16 @@ ms.lasthandoff: 03/12/2018
 
 XAML では、 [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/)に単純なテキスト文字列に変換する`GridLength`値。 背後では、 [ `GridLength`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/)を作成、`GridLength`値が数値と型の値に基づいて[ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/)、3 つのメンバーを持つ列挙します。
 
-- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) & #x 2014 です。幅または高さがデバイスに依存しない単位 (XAML の番号) で指定されました。
-- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) & #x 2014 です。高さまたは幅は、セルの内容 (XAML での"Auto") に基づいて自動的に設定
-- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) & #x 2014 です。残された高さまたは幅が比例的に割り当てられます (数値に"\*"と呼ばれる、*スター*XAML で)
+- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) &mdash; 幅または高さがデバイスに依存しない単位 (XAML の番号) で指定されました。
+- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) &mdash; 高さまたは幅は、セルの内容 (XAML での"Auto") に基づいて自動的に設定
+- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) &mdash; 残された高さまたは幅が比例的に割り当てられます (数値に"\*"と呼ばれる、*スター*XAML で)
 
-それぞれの子の`Grid`必要がありますも指定した行と列 (明示的または暗黙的に)。 行にまたがるし、列の範囲は省略可能です。 これらはすべて指定を使用すると、バインド可能なプロパティ & #x 2014; にアタッチプロパティによって定義されている、`Grid`の子で、設定、`Grid`です。 `Grid` 次の 4 つの静的な接続されているバインド可能なプロパティを定義します。
+それぞれの子の`Grid`必要がありますも指定した行と列 (明示的または暗黙的に)。 行にまたがるし、列の範囲は省略可能です。 これらはすべて指定接続されているバインド可能なプロパティを使用して&mdash;プロパティによって定義されている、`Grid`の子で、設定、`Grid`です。 `Grid` 次の 4 つの静的な接続されているバインド可能なプロパティを定義します。
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) & #x 2014 です。0 から始まる行です。既定値は 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) & #x 2014 です。0 から始まる列です。既定値は 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) & #x 2014 です。数の行の子にまたがるです。既定値は 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) & #x 2014 です。数値列の子にまたがるです。既定値は 1
+- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; 0 から始まる行です。既定値は 0
+- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; 0 から始まる列です。既定値は 0
+- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; 数の行の子にまたがるです。既定値は 1
+- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; 数値列の子にまたがるです。既定値は 1
 
 コードでは、プログラムは、設定およびこれらの値を取得する 8 つの静的メソッドを使用できます。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: b0afba90dab5cba4bad385f8d6447d8b83c1de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55b83151e9c345096aeb0bfdd686d50c5fde62fd
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xaml-namespaces"></a>XAML 名前空間
 
@@ -38,40 +38,14 @@ XAML では、プレフィックスを使用して、名前空間内の型を参
 
 次の表にアウトライン、 `x` Xamarin.Forms によってサポートされる名前空間属性。
 
-<table>
- <thead>
-   <tr>
-     <td><strong>コンス トラクター</strong></td>
-     <td><strong>説明</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><code>x:Arguments</code></td>
-     <td>既定ではない、コンス トラクターまたはファクトリ メソッド オブジェクト宣言のコンス トラクター引数を指定します。</td>
-   </tr>
-   <tr>
-     <td><code>x:Class</code></td>
-     <td>XAML で定義されたクラスの名前空間とクラス名を指定します。 クラス名は、分離コード ファイルのクラス名と一致する必要があります。 このコンストラクトは、XAML ファイルのルート要素にのみ表示できますに注意してください。</td>
-   </tr>
-   <tr>
-     <td><code>x:FactoryMethod</code></td>
-     <td>オブジェクトを初期化するために使用できるファクトリ メソッドを指定します。</td>
-   </tr>
-   <tr>
-     <td><code>x:Key</code></td>
-     <td>内の各リソースの一意のユーザー定義キーを指定します、<code>ResourceDictionary</code>です。 キーの値が XAML リソースの取得に使用され、は、通常の引数として使用、<code>StaticResource</code>マークアップ拡張機能です。</td>
-   </tr>
-   <tr>
-     <td><code>x:Name</code></td>
-     <td>XAML 要素のランタイム オブジェクトの名前を指定します。 設定<code>x:Name</code>コード内の変数を宣言に似ています。</td>
-   </tr>
-   <tr>
-     <td><code>x:TypeArguments</code></td>
-     <td>ジェネリック型のコンス トラクターは、ジェネリック型引数を指定します。</td>
-   </tr>
- </tbody>
-</table>
+|構成体|説明|
+|--- |--- |
+|`x:Arguments`|既定ではない、コンス トラクターまたはファクトリ メソッド オブジェクト宣言のコンス トラクター引数を指定します。|
+|`x:Class`|XAML で定義されたクラスの名前空間とクラス名を指定します。 クラス名は、分離コード ファイルのクラス名と一致する必要があります。 このコンストラクトは、XAML ファイルのルート要素にのみ表示できますに注意してください。|
+|`x:FactoryMethod`|オブジェクトを初期化するために使用できるファクトリ メソッドを指定します。|
+|`x:Key`|内の各リソースの一意のユーザー定義キーを指定します、`ResourceDictionary`です。 キーの値が XAML リソースの取得に使用され、は、通常の引数として使用、`StaticResource`マークアップ拡張機能です。|
+|`x:Name`|XAML 要素のランタイム オブジェクトの名前を指定します。 設定`x:Name`コード内の変数を宣言に似ています。|
+|`x:TypeArguments`|ジェネリック型のコンス トラクターは、ジェネリック型引数を指定します。|
 
 詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)です。
 

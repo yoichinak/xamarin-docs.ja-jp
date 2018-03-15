@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: c0d328e784b0a12b0df1a6b2bf5b990ffa461da5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="apple-account-management"></a>Apple アカウント管理
 
@@ -41,7 +41,7 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
 
 - インターネットに接続していることを確認します。 ありませんが、Apple 開発者ポータルに直接通信するためです。
 - いることを確認[がありませんツールがインストールされて](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)です。
-- 最新のありませんツールがあることを確認[https://download.fastlane.tools](https://download.fastlane.tools)です。
+- 最新のありませんツールがあることを確認[ https://download.fastlane.tools](https://download.fastlane.tools)です。
 - 開始する前に確認で、ユーザーのライセンス契約を受け入れるように、[開発者ポータル](https://developer.apple.com/account/)です。
 
 ## <a name="adding-an-apple-developer-account"></a>Apple 開発者アカウントを追加します。
@@ -69,8 +69,7 @@ Apple アカウント管理を Visual Studio for mac の利用 Visual Studio for
     ![](apple-account-management-images/image6.png)
 
 
-<a name="managing"/>
-    
+<a name="managing" />
 
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>署名 Id の管理とプロビジョニング プロファイル

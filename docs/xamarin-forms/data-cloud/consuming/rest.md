@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f8b748ad1b57218d1e8aab11bdc1037cf3cfa14c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 98c38001ea7751c419d4be5b0f68339b06ec656f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-restful-web-service"></a>RESTful Web サービスの使用
 
@@ -49,42 +49,12 @@ REST サービスの設定方法は、サンプル アプリケーションに�
 
 REST サービスは ASP.NET Core を使用して記述し、次の操作を提供します。
 
-<table>
-  <thead>
-    <tr>
-      <th>操作</th>
-      <th>HTTP メソッド</th>
-      <th>相対 URI</th>
-      <th>パラメーター</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>作業アイテムの一覧を取得します。</td>
-      <td>GET</td>
-      <td>/api/todoitems/</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>新しい作業項目を作成します。</td>
-      <td>POST</td>
-      <td>/api/todoitems/</td>
-      <td>JSON 形式 <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>作業項目を更新します。</td>
-      <td>PUT</td>
-      <td>/api/todoitems/</td>
-      <td>JSON 形式 <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>作業項目を削除します。</td>
-      <td>Del</td>
-      <td>/api/todoitems/{id}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+|操作|HTTP メソッド|相対 URI|パラメーター|
+|--- |--- |--- |--- |
+|作業アイテムの一覧を取得します。|GET|/api/todoitems/|
+|新しい作業項目を作成します。|POST|/api/todoitems/|JSON 形式の TodoItem|
+|作業項目を更新します。|PUT|/api/todoitems/|JSON 形式の TodoItem|
+|作業項目を削除します。|Del|/api/todoitems/{id}|
 
 Uri の大部分が含まれて、`TodoItem`パス内の ID。 たとえば、削除するため、 `TodoItem` ID がある`6bb8a868-dba1-4f1a-93b7-24ebce87e243`、クライアントに DELETE 要求を送信`http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`です。 サンプル アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。[データ モデリング](~/xamarin-forms/data-cloud/walkthrough.md)です。
 

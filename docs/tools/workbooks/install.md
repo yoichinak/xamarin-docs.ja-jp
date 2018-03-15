@@ -1,43 +1,37 @@
 ---
-title: "インストールと要件"
+title: "ブックのインストールと要件"
+description: "ダウンロード、インストール、および Xamarin ブックを使用する方法。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: abc9f9402b55a11e313b9938f07f37e5329b55b6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: abd6ac7d4bce5a180db087488b32c878ed0a416b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>インストールと要件
-
-<script> var inspectorOnLoad 関数 () = {var primaryTextBase =「Xamarin ブック内の」; var secondaryTextBase =「または用のダウンロード」; var inspectorDownloadUrlMac ="https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; var inspectorDownloadUrlWin ="https://dl.xamarin.com/interactive/XamarinInteractive.msi"です。
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = 基本です。var aWin aSecondary; を =var macTextBase primaryTextBase; を =var winTextBase secondaryTextBase; を =
-
-  if (/win/i.test(navigator.platform.toLowerCase())) { aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase; }
-
-  aMac.href = inspectorDownloadUrlMac; aMac.text = macTextBase + " Mac"; aWin.href = inspectorDownloadUrlWin; aWin.text = winTextBase + " Windows"; };
-
-document.addEventListener("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
 <a name="install" />
 
 ## <a name="download-and-install"></a>ダウンロードとインストール
 
-<ol>
-  <li>チェック、<a href="#Requirements">要件</a>以下です。</li>
-  <li>ダウンロードしてインストール<a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">Mac 用の Xamarin ブック</a>(<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">または Windows のダウンロード</a>)。
-  </li>
-  <li>開始<a href="~/tools/workbooks/workbook.md">いろいろ</a>ブックまたは試すと、<a href="https://developer.xamarin.com/workbooks/">サンプル</a>です。
-    </li>
-</ol>
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. チェック、[要件](#requirements)以下です。
+2. ダウンロードしてインストール[Windows 用の Xamarin ブック](https://dl.xamarin.com/interactive/XamarinInteractive.msi)です。
+3. 開始[いろいろ](~/tools/workbooks/workbook.md)ブックまたは試すと、[サンプル](https://developer.xamarin.com/workbooks)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. チェック、[要件](#Requirements)以下です。
+2. ダウンロードしてインストール[Mac 用の Xamarin ブック](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)です。
+3. 開始[いろいろ](~/tools/workbooks/workbook.md)ブックまたは試すと、[サンプル](https://developer.xamarin.com/workbooks)
+
+-----
 
 ## <a name="requirements"></a>必要条件
 
@@ -48,52 +42,15 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 
 #### <a name="supported-app-platforms"></a>サポートされているアプリのプラットフォーム
 
-<table>
-<thead>
-  <tr>
-    <th>アプリ プラットフォーム</th>
-    <th>OS のサポート</th>
-    <th>メモ</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (統合)</td>
-    <td>Mac 上でのみサポート</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (統合)</td>
-    <td>Mac および Windows でサポート</td>
-    <td>
-      <ul>
-        <li>Mac 上は、Xamarin.iOS 11.0 と Xcode バージョン 9.0 以降をインストールする必要があります。</li>
-        <li>Windows 上の iOS ブックの実行が必要に、上記のすべての操作を実行している Mac ビルド ホストと<a href="~/tools/ios-simulator.md">リモート iOS シミュレーター</a> Windows にインストールされています。</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Mac および Windows でサポート</td>
-    <td>仮想デバイスで Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります > 5.0 を =</td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Windows でのみサポート</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>コンソール (.NET Framework)</td>
-    <td>Mac および Windows でサポート</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>コンソール (.NET Core)</td>
-    <td>Mac および Windows でサポート</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|アプリ プラットフォーム|OS のサポート|メモ|
+|--- |--- |--- |
+|Mac (統合)|Mac 上でのみサポート|
+|iOS (統合)|Mac および Windows でサポート|Mac 上は、Xamarin.iOS 11.0 と Xcode バージョン 9.0 以降をインストールする必要があります。 Windows 上の iOS ブックの実行が必要に、上記のすべての操作を実行している Mac ビルド ホストと[リモート iOS シミュレーター](~/tools/ios-simulator.md) Windows にインストールされています。|
+|Android|Mac および Windows でサポート|仮想デバイスで Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります > 5.0 を =|
+|WPF|Windows でのみサポート|
+|コンソール (.NET Framework)|Mac および Windows でサポート|
+|コンソール (.NET Core)|Mac および Windows でサポート|
+
 
 ## <a name="reporting-bugs"></a>バグの報告
 
@@ -108,7 +65,7 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 
 機能 Finder (macOS) またはエクスプ ローラー (Windows) 直接メイン メニューから、ログ ファイルを選択することもあります 1.4.x:
 
-- **ヘルプ] → [ログ ファイルを表示**
+- **ヘルプ > ログ ファイルを表示します。**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>ブック 1.3 および以前のログのパス:
 
@@ -121,23 +78,23 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 
 [ブックのメイン メニュー]。
 
-* **ヘルプ] → [コピーのバージョン情報**
+* **ヘルプ > のバージョン情報をコピー**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>ブック 1.3 と前の手順:
 
 Visual Studio For Mac
 
-- **Visual Studio] → [Visual Studio] → [表示の詳細] → [コピーの情報について**
+- **Visual Studio > Visual Studio に関する > 詳細を表示 > 情報のコピー**
 - バグのレポートに貼り付けます
 
 Visual Studio
 
-- **Visual Studio] → [情報のコピーに関する → をヘルプします。**
+- **ヘルプ > Visual Studio に関する > 情報のコピー**
 - お知らせ、オペレーティング システムのバージョンと 32 ビットまたは 64 ビットの Windows を実行しているかどうか。
 
 ### <a name="samples"></a>サンプル
 
-アタッチしたり、リンクする場合、`.workbooks`ファイルで、問題があるバグをより迅速に解決に役立つ可能性があります。
+アタッチしたり、リンクする場合、 **.workbooks**ファイルで、問題があるバグをより迅速に解決に役立つ可能性があります。
 
 ### <a name="devices"></a>デバイス
 
@@ -148,7 +105,7 @@ IOS または Android のブックの接続に問題があるため、まだチ�
 - Android: は、x86 を使用していることを確認してくださいエミュレーター。
 - Android: エミュレーター プラットフォームを使用していますか。 Google のエミュレーターですか。
   Visual Studio の Android エミュレーターですか。 Xamarin Android Player しますか。
-- Windows 上の iOS: Xamarin リモート iOS シミュレーターのバージョンはするがインストールされている (確認`Add/Remove Programs`で`Control Panel`)?
+- Windows 上の iOS: Xamarin リモート iOS シミュレーターのバージョンはするがインストールされている (確認**プログラムの追加/削除**で**コントロール パネルの** )?
 - Windows 上の iOS: Mac ビルド ホストのプラットフォームのバージョン情報のも指定してください
 - デバイスはネットワークに接続 (web ブラウザーから確認) しますか。
 
@@ -168,7 +125,7 @@ Visual Studio 2017 があれば、開く**Visual Studio インストーラー**�
 
 使用してアンインストールする必要がありますをインストールしたブック & インスペクター自分でダウンロードしたインストーラーに場合、**アプリおよび機能**または経由で Windows 10 でのシステム設定] ページ**プログラムの追加/削除**古いバージョンの Windows コントロール パネルの [します。
 
-> **起動] → [設定] → [システム] → [アプリケーションと機能**
+> **開始 > 設定 > システム > アプリケーションと機能**
 
 ![](install-images/windows-remove.png "Xamarin のブックとインスペクターに表示される&quot;アプリ&amp;機能&quot;")
 
@@ -197,7 +154,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>ダウン グレード
 
-バンドル id`/Applications/Xamarin Workbooks.app`から変更`com.xamarin.Inspector`に`com.xamarin.Workbooks`Xamarin ブック & インスペクターのインストーラーの将来の分割を容易に 1.4 のリリースでします。
+バンドル id **/applications/xamarin Workbooks.app**から変更`com.xamarin.Inspector`に`com.xamarin.Workbooks`Xamarin ブック & インスペクターのインストーラーの将来の分割を容易に 1.4 のリリースでします。
 
 古いインストーラーでのバグ、により、1.3.2 または古いインストーラーを使用して 1.4 以降のリリースをダウン グレードすることはできません。
 

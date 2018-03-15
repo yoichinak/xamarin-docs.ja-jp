@@ -8,11 +8,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e84bce5d4280ded801ed58999a2570d3c6bd327e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でクリッピング
 
@@ -267,7 +267,7 @@ API ドキュメントを調査した場合`SKCanvas`のオーバー ロード�
 
 使用することもできます、`SKRegionOperation`が列挙体の観点でのクリッピング領域を定義することが必要です、 [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/)オブジェクト。
 
-新しく作成した`SKRegion`オブジェクトには、空の領域がについて説明します。 オブジェクトの最初の呼び出しは、通常[ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/)領域に四角形の領域がについて説明するようにします。 パラメーターを`SetRect`、`SKRectI`値 & #x 2014 です。 整数のプロパティを持つ四角形の値。 呼び出してできます[ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/)で、`SKPath`オブジェクト。 これは、パスの内部と同じですが、初期の四角形領域のクリップ先する領域を作成します。
+新しく作成した`SKRegion`オブジェクトには、空の領域がについて説明します。 オブジェクトの最初の呼び出しは、通常[ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/)領域に四角形の領域がについて説明するようにします。 パラメーターを`SetRect`、`SKRectI`値&mdash;整数のプロパティを持つ四角形の値。 呼び出してできます[ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/)で、`SKPath`オブジェクト。 これは、パスの内部と同じですが、初期の四角形領域のクリップ先する領域を作成します。
 
 `SKRegionOperation`列挙型のみが関係の 1 つを呼び出すときに、 [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/)このなどのメソッドのオーバー ロードします。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="working-with-jni"></a>JNI の操作
 
@@ -154,7 +154,7 @@ public class HelloAndroid extends android.app.Activity {
 
 通常、Xamarin.Android を自動的に生成について; を構成する Java コードこの生成は、クラスは、Java クラスから派生され、Java の既存のメソッドをオーバーライドするときに、クラスとメソッドの名前に基づいています。 ただし、一部のシナリオで下記の手順に従って コード生成が適切なものでないです。
 
--   Android のサポートのアクション名がレイアウト xml 属性では、たとえば、 [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML 属性です。 指定すると、高めのインスタンスの表示は、Java メソッドを検索しようとします。
+-   Android でアクション名レイアウト XML 属性では、たとえば、 [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML 属性です。 指定すると、高めのインスタンスの表示は、Java メソッドを検索しようとします。
 
 -   [Java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html)インターフェイス必要があります`readObject`と`writeObject`メソッドです。 このインターフェイスのメンバーではないため、対応するマネージ実装にはこれらのメソッドの Java コードを公開しません。
 

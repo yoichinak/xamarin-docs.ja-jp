@@ -8,17 +8,17 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 756261db8f82198e6c5a4330a663bbd9965e57f7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10b23975fab8aa87019b9d0fed42decdc6adddfb
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 変換
 
 _SkiaSharp グラフィックを表示するための変換についてください。_
 
-SkiaSharp のメソッドとして実装されている従来のグラフィックス変換をサポートしている、 [ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)オブジェクト。 変換が座標とで指定したサイズを変更する数学的に、`SKCanvas`グラフィカル オブジェクトがレンダリングされるように関数を描画します。 変換では、多くの場合、便利なは、反復的なグラフィックスを描画するため、またはアニメーションを実行します。 いくつかの手法 & #x 2014 です。回転を表すビットマップまたはテキスト & #x 2014; など変換を使用せずにあります。
+SkiaSharp のメソッドとして実装されている従来のグラフィックス変換をサポートしている、 [ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)オブジェクト。 変換が座標とで指定したサイズを変更する数学的に、`SKCanvas`グラフィカル オブジェクトがレンダリングされるように関数を描画します。 変換では、多くの場合、便利なは、反復的なグラフィックスを描画するため、またはアニメーションを実行します。 一部のテクニック&mdash;ビットマップまたはテキストの回転など&mdash;変換を使用せずにできない場合は、します。
 
 SkiaSharp 変換には、次の操作がサポートします。
 

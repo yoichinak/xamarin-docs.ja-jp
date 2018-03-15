@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5dd77232dc992880b18393c740b54c7784e4d049
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>ポータブル クラス ライブラリの概要
 
@@ -39,94 +39,13 @@ _この記事では、ポータブル クラス ライブラリ (PCL) プロジ�
 
 次の表は、.NET プラットフォームによって異なり、機能の一部を示します。 特定のデバイスとプラットフォームで実行することが保証するために PCL をアセンブリに書き込むだけを選択するプロジェクトを作成するときに、サポートが必要。
 
-<table border="1" cellpadding="1" cellspacing="1">
-  <tbody>
-    <tr>
-      <td>
-機能 </td>
-      <td>
-.NET Framework </td>
-      <td>
-UWP アプリ </td>
-      <td>
-Silverlight </td>
-      <td>
-Windows Phone </td>
-      <td>
-Xamarin </td>
-    </tr>
-    <tr>
-      <td>
-コア </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-LINQ </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-IQueryable </td>
-       <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-7.5 + </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-シリアル化 </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-データの注釈 </td>
-      <td>
-4.0.3 + </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-      </td>
-      <td>
-Y </td>
-    </tr>
-  </tbody>
-</table>
+|機能|.NET Framework|UWP アプリ|Silverlight|Windows Phone|Xamarin|
+|---|---|---|---|---|---|
+|コア|Y|Y|Y|Y|Y|
+|LINQ|Y|Y|Y|Y|Y|
+|IQueryable|Y|Y|Y|7.5 +|Y|
+|シリアル化|Y|Y|Y|Y|Y|
+|データの注釈|4.0.3 +|Y|Y||Y|
 
 Xamarin の列には、Xamarin.iOS および Xamarin.Android は、Visual Studio に付属のすべてのプロファイルをサポートしているいて作成するすべてのライブラリの機能の可用性をサポートするその他のプラットフォームによってのみ制限されますが反映されます。
 

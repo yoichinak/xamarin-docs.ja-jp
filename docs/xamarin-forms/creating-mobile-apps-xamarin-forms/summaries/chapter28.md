@@ -7,11 +7,11 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d7a75ce0303030d53315b5e698fc604a910c969c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>28 章の概要です。 場所とマップ
 
@@ -29,7 +29,7 @@ Xamarin.Forms をサポートしている、 [ `Map` ](https://developer.xamarin
 
 ### <a name="longitude-and-meridians"></a>経度と経線
 
-通り北極北極から優れた円の半分と等しい経度、線とも呼ばれます*経線*です。 これらはイギリスのグリニッジをで子午線に対して相対的です。 慣例により、子午線の経度は、0 ° 180 °、正の値、経度子午線から負の値を 0 ° & #x 2013; 180 度。
+通り北極北極から優れた円の半分と等しい経度、線とも呼ばれます*経線*です。 これらはイギリスのグリニッジをで子午線に対して相対的です。 慣例により、子午線の経度は、0 ° 180 °、正の値、経度子午線から負の値を 0 ° &ndash;180 度。
 
 ### <a name="the-equirectangular-projection"></a>距円筒図法
 

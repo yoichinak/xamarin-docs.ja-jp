@@ -7,11 +7,11 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a40b4f00fd2a0dd3f61c4882a2ef25b8eb68a3a5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>21 章の概要です。 変換
 
@@ -19,9 +19,9 @@ Xamarin.Forms ビューの位置と、その親では、通常、これによっ
 
 Xamarin.Forms は、次の 3 つの基本的な種類の変換をサポートします。
 
-- *翻訳*& #x 2014; 要素を水平方向または垂直方向にシフト
-- *スケール*& #x 2014; 要素のサイズの変更
-- *回転*& #x 2014; ポイントまたは軸の周りの要素を有効にします。
+- *翻訳*&mdash;要素を水平方向または垂直方向にシフト
+- *スケール*&mdash;要素のサイズを変更します。
+- *回転*&mdash;ポイントまたは軸の周りの要素を有効にします。
 
 Xamarin.Forms でスケーリングはアイソトロ ピックです。影響の幅と高さ一様に分布します。 回転には、両方で 2 次元表面画面の 3D スペースではサポートされています。 ないずれ (または膨大な) 変換、汎用化された行列変換されません。
 

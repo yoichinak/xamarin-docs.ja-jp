@@ -8,11 +8,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 347ecf72356915714200835263e38519c1ad8a13
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="basic-animation"></a>基本的なアニメーション
 
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-`while`ループを開始からのサイクル時間を取得することによって、`Slider`です。 たとえば、5 秒単位で時間です。 2 番目のステートメントの値を計算する`t`の*時間*です。 `cycleTime` 5、 `t` 1 に 5 秒ごとに 0 から増加します。 引数、`Math.Sin`関数の 2 番目のステートメントの範囲が 0 から 2 π 5 秒ごとにします。 `Math.Sin` 0 1、0 に戻る & #x 2013 以外の場合は 1 および 0 5 秒ごとに、値が 1 または – 1 の近くに遅く変更する値が範囲の値を返します。 値 1 が加算されるは、正の値は常に、値とし、これが 2 で割った値、値が約 1 および 0 の場合にお勧めの 1/2 に 0 に 1/2 に 1 ~ ½ 値の範囲、ためです。 設定されて、`scale`フィールド、および`SKCanvasView`は無効になります。
+`while`ループを開始からのサイクル時間を取得することによって、`Slider`です。 たとえば、5 秒単位で時間です。 2 番目のステートメントの値を計算する`t`の*時間*です。 `cycleTime` 5、 `t` 1 に 5 秒ごとに 0 から増加します。 引数、`Math.Sin`関数の 2 番目のステートメントの範囲が 0 から 2 π 5 秒ごとにします。 `Math.Sin`関数は、0 から 0 と 1 の背面まで値を返します&ndash;1 と 0、5 秒ごと、値が 1 または – 1 の近くに遅く変更値しますが、します。 値 1 が加算されるは、正の値は常に、値とし、これが 2 で割った値、値が約 1 および 0 の場合にお勧めの 1/2 に 0 に 1/2 に 1 ~ ½ 値の範囲、ためです。 設定されて、`scale`フィールド、および`SKCanvasView`は無効になります。
 
 `PaintSurface`メソッドを使用してこの`scale`楕円の 2 つの軸を計算する値。
 

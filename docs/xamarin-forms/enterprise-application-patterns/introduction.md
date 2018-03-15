@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d5d5de21c4f397f203b4da5ea86e1f9a0e4714e9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction"></a>はじめに
 
@@ -118,48 +118,16 @@ EShopOnContainers モバイル アプリは Xamarin.Forms の次の機能を実�
 
 EShopOnContainers モバイル アプリのソリューションでは、ソース コードおよびその他のリソースをプロジェクトに整理します。 すべてのプロジェクトは、フォルダーを使用して、ソース コードおよびその他のリソースのカテゴリを整理します。 次の表は、eShopOnContainers モバイル アプリを構成するプロジェクトを示します。
 
-<table>
-<thead>
-<tr class="header">
-<th>プロジェクト</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>eShopOnContainers.Core</td>
-<td>このプロジェクトは、共有コードと共有 UI を含むポータブル クラス ライブラリ (PCL) プロジェクトです。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.Droid</td>
-<td>このプロジェクトは、特定の Android のコードを保持され、Android アプリ用のエントリ ポイントです。</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.iOS</td>
-<td>このプロジェクトは、iOS に固有のコードを保持して、iOS アプリのエントリ ポイントです。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UWP</td>
-<td>このプロジェクトは、固有のコードをユニバーサル Windows プラットフォーム (UWP) を保持して、Windows アプリ用のエントリ ポイントです。</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Droid</td>
-<td>このプロジェクトは、Android のテスト ランナー eShopOnContainers.UnitTests プロジェクトです。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.TestRunner.iOS</td>
-<td>このプロジェクトは、iOS のテスト ランナー eShopOnContainers.UnitTests プロジェクトです。</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Windows</td>
-<td>このプロジェクトは、eShopOnContainers.UnitTests プロジェクトのユニバーサル Windows プラットフォームのテスト ランナーです。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UnitTests</td>
-<td>このプロジェクトには、eShopOnContainers.Core プロジェクトの単体テストが含まれています。</td>
-</tr>
-</tbody>
-</table>
+|プロジェクト|説明|
+|--- |--- |
+|eShopOnContainers.Core|このプロジェクトは、共有コードと共有 UI を含むポータブル クラス ライブラリ (PCL) プロジェクトです。|
+|eShopOnContainers.Droid|このプロジェクトは、特定の Android のコードを保持され、Android アプリ用のエントリ ポイントです。|
+|eShopOnContainers.iOS|このプロジェクトは、iOS に固有のコードを保持して、iOS アプリのエントリ ポイントです。|
+|eShopOnContainers.UWP|このプロジェクトは、固有のコードをユニバーサル Windows プラットフォーム (UWP) を保持して、Windows アプリ用のエントリ ポイントです。|
+|eShopOnContainers.TestRunner.Droid|このプロジェクトは、Android のテスト ランナー eShopOnContainers.UnitTests プロジェクトです。|
+|eShopOnContainers.TestRunner.iOS|このプロジェクトは、iOS のテスト ランナー eShopOnContainers.UnitTests プロジェクトです。|
+|eShopOnContainers.TestRunner.Windows|このプロジェクトは、eShopOnContainers.UnitTests プロジェクトのユニバーサル Windows プラットフォームのテスト ランナーです。|
+|eShopOnContainers.UnitTests|このプロジェクトには、eShopOnContainers.Core プロジェクトの単体テストが含まれています。|
 
 EShopOnContainers モバイル アプリからのクラスは、ほとんどまたはまったく変更せずにすべての Xamarin.Forms アプリで再利用できます。
 
@@ -167,76 +135,23 @@ EShopOnContainers モバイル アプリからのクラスは、ほとんどま�
 
 EShopOnContainers.Core PCL プロジェクトには、次のフォルダーが含まれています。
 
-<table>
-<thead>
-<tr class="header">
-<th>フォルダー</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Animations</td>
-<td>XAML で消費されるアニメーションを有効にするクラスが含まれています。</td>
-</tr>
-<tr class="even">
-<td>ビヘイビアー</td>
-<td>クラスを表示する公開されている動作が含まれています。</td>
-</tr>
-<tr class="odd">
-<td>コントロール</td>
-<td>アプリで使用するカスタム コントロールが含まれています。</td>
-</tr>
-<tr class="even">
-<td>コンバーター</td>
-<td>バインディングにカスタム ロジックを適用する値コンバーターが含まれています。</td>
-</tr>
-<tr class="odd">
-<td>効果</td>
-<td>含まれています、<code>EntryLineColorEffect</code>を特定の罫線の色を変更するために使用されるクラス<code>Entry</code>コントロール。</td>
-</tr>
-<tr class="even">
-<td>例外</td>
-<td>ユーザー設定を含む<code>ServiceAuthenticationException</code>です。</td>
-</tr>
-<tr class="odd">
-<td>拡張機能</td>
-<td>拡張メソッドを格納、<code>VisualElement</code>と<code>IEnumerable<T> </code>クラスです。</td>
-</tr>
-<tr class="even">
-<td>ヘルパー</td>
-<td>アプリ用にヘルパー クラスが含まれています。</td>
-</tr>
-<tr class="odd">
-<td>モデル</td>
-<td>アプリのモデル クラスを含みます。</td>
-</tr>
-<tr class="even">
-<td>プロパティ</td>
-<td>含む<code>AssemblyInfo.cs</code>、.NET アセンブリのメタデータ ファイル。</td>
-</tr>
-<tr class="odd">
-<td>サービス</td>
-<td>アプリに提供するサービスを実装するインターフェイスとクラスが含まれています。</td>
-</tr>
-<tr class="even">
-<td>トリガー</td>
-<td>含まれています、<code>BeginAnimation</code>トリガーで、XAML でのアニメーションの呼び出しに使用します。</td>
-</tr>
-<tr class="odd">
-<td>検証</td>
-<td>データ入力の検証に関連するクラスが含まれています。</td>
-</tr>
-<tr class="even">
-<td>ViewModels</td>
-<td>ページに公開されているアプリケーションのロジックが含まれています。</td>
-</tr>
-<tr class="odd">
-<td>ビュー</td>
-<td>アプリのページが含まれています。</td>
-</tr>
-</tbody>
-</table>
+|フォルダー|説明|
+|--- |--- |
+|Animations|XAML で消費されるアニメーションを有効にするクラスが含まれています。|
+|ビヘイビアー|クラスを表示する公開されている動作が含まれています。|
+|コントロール|アプリで使用するカスタム コントロールが含まれています。|
+|コンバーター|バインディングにカスタム ロジックを適用する値コンバーターが含まれています。|
+|効果|含まれています、`EntryLineColorEffect`を特定の罫線の色を変更するために使用されるクラス`Entry`コントロール。|
+|例外|ユーザー設定を含む`ServiceAuthenticationException`です。|
+|拡張機能|拡張メソッドを格納、`VisualElement`と`IEnumerable`クラスです。|
+|ヘルパー|アプリ用にヘルパー クラスが含まれています。|
+|モデル|アプリのモデル クラスを含みます。|
+|プロパティ|含む`AssemblyInfo.cs`、.NET アセンブリのメタデータ ファイル。|
+|サービス|アプリに提供するサービスを実装するインターフェイスとクラスが含まれています。|
+|トリガー|含まれています、`BeginAnimation`トリガーで、XAML でのアニメーションの呼び出しに使用します。|
+|検証|データ入力の検証に関連するクラスが含まれています。|
+|ViewModels|ページに公開されているアプリケーションのロジックが含まれています。|
+|ビュー|アプリのページが含まれています。|
 
 ##### <a name="platform-projects"></a>プラットフォームのプロジェクト
 

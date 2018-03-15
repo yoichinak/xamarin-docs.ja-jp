@@ -7,11 +7,11 @@ ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ccae97021e86eb1375f948c5ad126253c6088037
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章の概要です。 バインド可能なインフラストラクチャ
 
@@ -47,9 +47,9 @@ Xamarin.Forms と呼ばれる拡張されたプロパティ定義を定義する
 
 ときに、バインド可能なプロパティの変更によってバックアップされているプロパティ`BindableObject`発生、 [ `PropertyChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.PropertyChanged/)変更されたプロパティを識別するイベントです。 プロパティが同じ値に設定されている場合、このイベントは起動しません。
 
-一部のプロパティがバインド可能なプロパティ、およびいくつか Xamarin.Forms クラス & #x 2014; でバックアップされていませんように`Span`& #x 2014; からは派生しません`BindableObject`です。 派生したクラスのみ`BindableObject`ために、バインド可能なプロパティをサポートできる`BindableObject`定義、`SetValue`と`GetValue`メソッドです。
+一部のプロパティは、バインド可能なプロパティ、および Xamarin.Forms の一部のクラスではバックアップされません&mdash;など`Span`&mdash;からは派生しません`BindableObject`です。 派生したクラスのみ`BindableObject`ために、バインド可能なプロパティをサポートできる`BindableObject`定義、`SetValue`と`GetValue`メソッドです。
 
-`Span`から派生していません`BindableObject`、; などのプロパティ & #x 2014 の none `Text` & #x 2014; バインド可能なプロパティでサポートされます。 その理由は、`DynamicResource`の設定、`Text`プロパティの`Span`で例外が発生、 [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic)サンプルは、前のチャプターです。 [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode)サンプルを使用してコードで動的なリソースを設定する方法を示します、 [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/)によって定義されたメソッド`Element`です。 最初の引数は型のオブジェクト`BindableProperty`です。
+`Span`から派生していない`BindableObject`、そのプロパティのいずれも&mdash;など`Text`&mdash;バインド可能なプロパティでサポートされます。 その理由は、`DynamicResource`の設定、`Text`プロパティの`Span`で例外が発生、 [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic)サンプルは、前のチャプターです。 [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode)サンプルを使用してコードで動的なリソースを設定する方法を示します、 [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/)によって定義されたメソッド`Element`です。 最初の引数は型のオブジェクト`BindableProperty`です。
 
 同様に、 [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)メソッドによって定義された`BindableObject`型の最初の引数を持つ`BindableProperty`します。
 

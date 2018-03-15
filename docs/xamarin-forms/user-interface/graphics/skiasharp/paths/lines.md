@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lines-and-stroke-caps"></a>行とストローク キャップ
 
@@ -30,7 +30,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 既定では、`StrokeWidth`新しくインスタンス化のプロパティ`SKPaint`オブジェクトが 0 で、太さで 1 ピクセルの線の表示では 1 の値と同じ効果がします。 これが表示される、電話などの高解像度のデバイスで薄すぎてのでを設定する可能性がありますが、`StrokeWidth`より大きい値にします。 別の問題を発生させるかなりの数の太さの線を描画を開始すると、: する必要がありますが開始されるとシック (thick) これらの線の端点の表示方法ですか?
 
-開始および線の端の外観が呼び出された、*ライン キャップ*または Skia、*キャップのストローク*です。 このコンテキストでは、"cap"という単語は hat & #x 2014; の種類を参照します。行の末尾に位置するものです。 設定する、 [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)のプロパティ、`SKPaint`オブジェクトの次のメンバーのいずれかを[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列挙型。
+開始および線の端の外観が呼び出された、*ライン キャップ*または Skia、*キャップのストローク*です。 このコンテキストでは、"cap"という単語は hat の種類を参照&mdash;行の末尾に位置するものです。 設定する、 [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)のプロパティ、`SKPaint`オブジェクトの次のメンバーのいずれかを[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列挙型。
 
 - [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (既定)
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)

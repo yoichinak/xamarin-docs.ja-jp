@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 6625edc1f661e5f9769de82ec48367e9f900e567
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understanding-the-sample"></a>このサンプルを理解します。
 
@@ -38,47 +38,19 @@ _このトピックでは、別の web サービスと通信する方法につ�
 
 各サンプル アプリケーションについては、PCL プロジェクトは、次の 3 つのメイン フォルダーで構成されます。
 
-<table>
-    <thead>
-        <tr><td><strong>Folder</strong></td><td><strong>目的</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>データ</strong></td>
-                        <td>データ項目を管理し、web サービスとの通信に使用するインターフェイスとクラスが含まれています。 少なくとも、これが含まれています、<code>TodoItemManager</code>のプロパティによって公開されるクラス、 <code>App</code> web サービス操作の呼び出しにクラスです。</td>
-        </tr>
-        <tr>
-            <td><strong>モデル</strong></td>
-                        <td>アプリケーションのデータ モデル クラスを含みます。 少なくとも、これが含まれています、<code>TodoItem</code>クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、ユーザー データのモデルで使用されるその他のクラスも指定できます。</td>
-        </tr>
-        <tr>
-            <td><strong>ビュー</strong></td>
-                        <td>アプリケーション ページが含まれます。 通常から成る、<code>TodoListPage</code>と<code>TodoItemPage</code>クラス、および認証の目的で使用されるその他のクラスです。</td>
-                </tr>
-    </tbody>
-</table>
+|フォルダー|目的|
+|--- |--- |
+|データ|データ項目を管理し、web サービスとの通信に使用するインターフェイスとクラスが含まれています。 少なくとも、これが含まれています、`TodoItemManager`のプロパティによって公開されるクラス、 `App` web サービス操作の呼び出しにクラスです。|
+|モデル|アプリケーションのデータ モデル クラスを含みます。 少なくとも、これが含まれています、`TodoItem`クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、ユーザー データのモデルで使用されるその他のクラスも指定できます。|
+|ビュー|アプリケーション ページが含まれます。 通常から成る、`TodoListPage`と`TodoItemPage`クラス、および認証の目的で使用されるその他のクラスです。|
 
 重要なファイルの数もアプリケーションごとに PCL プロジェクトの構成します。
 
-<table>
-    <thead>
-      <tr><td><strong>ファイル</strong></td><td><strong>目的</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code>クラスは、web サービスと通信するために、アプリケーションで使用される任意の定数を指定します。 これらの定数は、プロバイダーに対して作成された個人のバックエンド サービスにアクセスする更新が必要です。
-        </tr>
-        <tr>
-            <td><strong>ITextToSpeech.cs</strong></td>
-            <td><code>ITextToSpeech</code>ことを指定するインターフェイス、<code>Speak</code>メソッドを実装する任意のクラスによって提供される必要があります。</td>
-        </tr>
-        <tr>
-          <td><strong>Todo.cs</strong></td>
-          <td><code>App</code>を各プラットフォームでのアプリケーションによって表示される両方の最初のページをインスタンス化するクラスと<code>TodoItemManager</code>web サービス操作の呼び出しに使用されるクラスです。</td>
-        </tr>
-    </tbody>
-</table>
+|ファイル|目的|
+|--- |--- |
+|Constants.cs|`Constants`クラスは、web サービスと通信するために、アプリケーションで使用される任意の定数を指定します。 これらの定数は、プロバイダーに対して作成された個人のバックエンド サービスにアクセスする更新が必要です。|
+|ITextToSpeech.cs|`ITextToSpeech`ことを指定するインターフェイス、`Speak`メソッドを実装する任意のクラスによって提供される必要があります。|
+|Todo.cs|`App`を各プラットフォームでのアプリケーションによって表示される両方の最初のページをインスタンス化するクラスと`TodoItemManager`web サービス操作の呼び出しに使用されるクラスです。|
 
 ### <a name="viewing-pages"></a>ページの表示
 

@@ -7,11 +7,11 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1d246ea65e88bde07c3d527c18b7850aa09e08b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要です。 Xamarin.Forms どのように適合しますか。
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/12/2018
 
 この問題は一般的なモバイル プラットフォームを対象とする場合です。 現時点では、存在 2 つの主要なモバイル プラットフォームで、Apple のファミリ Iphone と Ipad の iOS オペレーティング システムおよびさまざまな携帯電話とタブレットで実行されている Android オペレーティング システムを実行します。 別の大幅なプラットフォームは、Microsoft のユニバーサル Windows プラットフォーム (UWP)、これにより Windows 10 および Windows 10 Mobile の両方を対象とする 1 つのプログラムです。
 
-これら 3 つのプラットフォームを対象とすることを希望するソフトウェア ベンダーは、別のユーザー インターフェイスのパラダイム、3 つの別の開発環境、3 つの異なるプログラミング インターフェイスを処理する必要がありますと & #x 2014、おそらくほとんどながら & #x 2014; 次の 3 つプログラミング言語によって異なります。 iPhone と iPad、android では、Java や c# の Windows の Objective-c です。
+これら 3 つのプラットフォームを対象とすることを希望するソフトウェア ベンダーは、別のユーザー インターフェイスのパラダイム、3 つの別の開発環境、3 つの異なるプログラミング インターフェイスを処理する必要がありますと&mdash;おそらく最もながら&mdash;次の 3 つの異なるプログラミング言語: iPhone と iPad、android では、Java や c# の Windows の OBJECTIVE-C です。
 
 ## <a name="the-c-and-net-solution"></a>C# と .NET ソリューション
 

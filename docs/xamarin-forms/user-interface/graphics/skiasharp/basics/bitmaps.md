@@ -8,17 +8,17 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 921697657397662e92fb72c32e6efcc31745d7f1
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="bitmap-basics"></a>ビットマップの基礎
 
 _さまざまなソースからビットマップを読み込み、それらを表示します。_
 
-SkiaSharp のビットマップのサポートは非常に広範です。 基本 & #x 2014; のみを取り上げてください。ビットマップを読み込む方法と、それらを表示する方法。
+SkiaSharp のビットマップのサポートは非常に広範です。 基本だけを取り上げて&mdash;ビットマップを読み込む方法と、それらを表示する方法。
 
 ![](bitmaps-images/bitmapssample.png "2 つのビットマップの表示")
 
@@ -207,7 +207,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](bitmaps-images/basicbitmaps-small.png "基本的なビットマップ ページのスクリーン ショット トリプル")](bitmaps-images/basicbitmaps-large.png#lightbox "トリプル基本的なビットマップ ページのスクリーン ショット")
 
-3 番目の画像 & #x 2014 です。プログラムを実行し、独自の画像ライブラリ & #x 2014; から写真を読み込むかどうかだけ表示します。四角形は四角形内に表示されるもビットマップの縦横比を維持するために位置とサイズを調整します。 この計算は、必要とするスケール ファクターのビットマップと移行先の四角形のサイズに基づく値とその領域内の四角形の中心を計算するために少し複雑です。
+3 番目のイメージ&mdash;のみ表示されるプログラムを実行し、独自の画像ライブラリから写真を読み込むかどうか&mdash;四角形は四角形内に表示されるもビットマップの縦横比を維持するために位置とサイズを調整します。 この計算は、必要とするスケール ファクターのビットマップと移行先の四角形のサイズに基づく値とその領域内の四角形の中心を計算するために少し複雑です。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

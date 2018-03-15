@@ -7,11 +7,11 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: db950915decd2bba216c7dcd6031797037a7c8e0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>24 章の概要です。 ページのナビゲーション
 
@@ -118,7 +118,7 @@ ms.lasthandoff: 03/12/2018
 
 ## <a name="patterns-of-data-transfer"></a>データ転送のパターン
 
-ページ & #x 2014; の間でデータを共有する必要があります。起動したページにデータを返すページと、移動のページをデータを転送します。 これを行うためのいくつかの手法があります。
+ページ間でデータを共有する必要があります&mdash;とは、起動したページにデータを返すページを移動 ページでは、データを転送します。 これを行うためのいくつかの手法があります。
 
 ### <a name="constructor-arguments"></a>コンス トラクターの引数
 

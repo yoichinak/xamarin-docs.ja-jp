@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 861d47d001c10c14a0294536c6122cafb33a93ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e930004a91133f391f68221473f212b7caaf1b07
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>MonoGame で 3D 座標
 
@@ -47,7 +47,7 @@ _3D ゲーム開発における重要な手順は、3 D の座標系を理解す
 
 作成、ロボットの周囲の移動を始める前に、`Robot`描画と移動のためのロジックを格納するクラス。 ゲームの開発者は、ロジックとデータとしてのこのカプセル化を参照してください、*エンティティ*です。
 
-新しい空のクラス ファイルを追加、 **MonoGame3D**ポータブル クラス ライブラリ (プラットフォーム固有の ModelAndVerts.Android とは異なる)。 名前を it * * ロボット * * をクリックして**新規**:
+新しい空のクラス ファイルを追加、 **MonoGame3D**ポータブル クラス ライブラリ (プラットフォーム固有の ModelAndVerts.Android とは異なる)。 名前を付けます**ロボット** をクリック**新規**:
 
 ![](part3-images/image3.png "ロボットに名前を指定し、[新規] をクリックしてください")
 

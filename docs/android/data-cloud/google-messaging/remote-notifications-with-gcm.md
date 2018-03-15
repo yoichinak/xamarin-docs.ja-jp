@@ -7,12 +7,12 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging でリモートの通知
 
@@ -507,32 +507,12 @@ GCM からメッセージを受信してできます、前に、Android のマ�
 
 この XML で、各設定の動作内容を見てみましょう。
 
-<table>
-    <thead>
-        <tr>
-            <th>設定</th>
-            <th>説明</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>com.google.android.gms.gcm.GcmReceiver</code></td>
-            <td>アプリをキャプチャしてプッシュ通知の受信のメッセージを処理する GCM 受信者が実装されているを宣言します。</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.permission.SEND</code></td>
-            <td>GCM サーバーのみが、アプリに直接メッセージを送信できることを宣言します。</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.RECEIVE</code></td> 
-            <td>インテント フィルターが、アプリケーションの動作が GCM からブロードキャスト メッセージを処理することをアドバタイズします。</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.REGISTRATION</code></td>
-            <td>目的のフィルターをアドバタイズして、アプリが新しい登録インテントを処理する (つまり、インスタンス ID のリスナー サービスを実装しましたが)。</td>
-        </tr>
-    </tbody>
-</table>
+|設定|説明|
+|---|---|
+|`com.google.android.gms.gcm.GcmReceiver`|アプリをキャプチャしてプッシュ通知の受信のメッセージを処理する GCM 受信者が実装されているを宣言します。|
+|`com.google.android.c2dm.permission.SEND`|GCM サーバーのみが、アプリに直接メッセージを送信できることを宣言します。|
+|`com.google.android.c2dm.intent.RECEIVE`|インテント フィルターが、アプリケーションの動作が GCM からブロードキャスト メッセージを処理することをアドバタイズします。|
+|`com.google.android.c2dm.intent.REGISTRATION`|目的のフィルターをアドバタイズして、アプリが新しい登録インテントを処理する (つまり、インスタンス ID のリスナー サービスを実装しましたが)。|
 
 代わりに、装飾できます`GcmListenerService`XML; で指定するのではなく、これらの属性とここで指定で**AndroidManifest.xml**コード サンプルは、実行しやすいようにします。 
 

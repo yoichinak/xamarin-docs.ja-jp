@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d2e600ccc85f6e72e7f913e7ffb501bf62ff69a
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="path-basics"></a>パスの基礎
 
@@ -115,7 +115,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - `AddPath` 現在のパスに別のパスを追加するには
 - [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) 逆の順序で別のパスを追加するには
 
-注意してください、`SKPath`オブジェクト geometry & #x 2014; のみを定義する一連のポイントとの接続。 場合にのみ、`SKPath`と組み合わせて、`SKPaint`オブジェクトが特定の色や線幅などのレンダリングにパスします。 またを注意してください、`SKPaint`オブジェクトに渡される、`DrawPath`メソッドは、パス全体の特性を定義します。 いくつかの色を必要とするものを描画する場合は、それぞれの色の独立したパスを使用する必要があります。
+注意してください、`SKPath`オブジェクト定義のみ geometry&mdash;一連のポイントとの接続。 場合にのみ、`SKPath`と組み合わせて、`SKPaint`オブジェクトが特定の色や線幅などのレンダリングにパスします。 またを注意してください、`SKPaint`オブジェクトに渡される、`DrawPath`メソッドは、パス全体の特性を定義します。 いくつかの色を必要とするものを描画する場合は、それぞれの色の独立したパスを使用する必要があります。
 
 2 本の線の間の接続の外観がによって定義された線幅を開始および行の末尾の外観が定義されていると同様、*ストローク結合*です。 これの設定を指定する、 [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/)のプロパティ`SKPaint`のメンバーに、 [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/)列挙します。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 161a5be643ccf5f96b04413cec5956264af6ce60
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS Sierra の概要
 
@@ -63,8 +63,6 @@ Apple の Safari web ブラウザー、ページのワード プロセッサ番�
 CloudKit フレームワークは、macOS を迅速かつ簡単に共有をプライベート iCloud データベースからレコード セットのレコードまたはユーザーを許可する Sierra で展開されています。
 
 CloudKit 完全な UI を送信して、レコードの共有の招待を受信しており、ユーザーが完全な読み取り/書き込み、レコードへのアクセスを持つユーザーを制御します。
-
-<!--To find out more, please see our [CloudKit Data Sharing](~/mac/platform-features/introduction-to-macos-sierra/cloudkit-data-sharing/) guide.-->
 
 詳細については、Apple を参照してください[CloudKit フレームワーク参照](https://developer.apple.com/reference/clockkit)と[CloudKit JS フレームワーク参照](https://developer.apple.com/reference/cloudkitjs)です。
 

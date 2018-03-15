@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: df3692777eaa0791385c9ef3d114fbc8a9ab752e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c489aab66a0aaafeaaeadad0e8b95d451ec1592
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>MonoGame パイプライン ツールを使用します。
 
@@ -135,7 +135,7 @@ MonoGame パイプライン ツールを通じて .spritefont ファイルを作
 .Spritefont ファイルが実際には XML ファイルに、for mac Visual Studio を含む、任意のテキスト エディターで編集できます。 .Spritefont ファイルで編集する最も一般的な変数は、`FontName`と`Size`プロパティ。
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>
 
@@ -147,7 +147,7 @@ MonoGame パイプライン ツールを通じて .spritefont ファイルを作
 任意のテキスト エディターでファイルを開くことがあります。 として、 **arial 36.spritefont**名前が示すように、`FontName`として`Arial`が、変更、`Size`値を`36`:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>   
   

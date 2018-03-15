@@ -7,11 +7,11 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a3980c63c31f4fdf0297fdc9b05da3590f0cac54
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>14 章の概要です。 絶対レイアウト
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/12/2018
 
 子を追加することができます、`Children`のコレクション、`AbsoluteLayout`標準を使用して[ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/)メソッドが、`AbsoluteLayout`拡張も提供[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/)メソッドを指定できる、 [ `Rectangle`](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/)です。 別[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/)メソッドにのみ必要ですが、 [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/)、その場合は、子は制約がなく、それ自体のサイズを設定します。
 
-作成することができます、`Rectangle`値と、[コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/)を必要とする 4 つの値 & #x 2014 ですその親の子の左上隅の位置を示す最初の 2 つとを示す 2 つ目の 2 つ、。子のサイズ。 使用することができます、[コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/)を必要とする、`Point`と[ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/)値。
+作成することができます、`Rectangle`値と、[コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) 4 つの値を必要とする&mdash;その親の子の左上隅の位置を示す最初の 2 つとを示す 2 つ目の 2 つ、子のサイズ。 使用することができます、[コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/)を必要とする、`Point`と[ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/)値。
 
 これら`Add`で方法が示されて[ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo)、どの位置`BoxView`を使用して要素`Rectangle`値、および`Label`だけを使用して要素`Point`値。
 

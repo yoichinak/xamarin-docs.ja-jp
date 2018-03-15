@@ -7,11 +7,11 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: b660a3e8ebfe88264a22532a8943daf2afe9dd28
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: 4cdecdac5ee283108bef7c3a99b335321b4cdf75
+  ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 03/15/2018
 abstract:
   description: "Xamarin.iOS は、.NET 開発者向けに iOS SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな iOS アプリを構築できます。"
   menu:
@@ -119,8 +119,8 @@ sections:
     className: cardsD
     items:
     - title: API
-      href: 
-      html: "<p><a href=\"https://developer.xamarin.com/api/root/monotouch-lib/\">iOS API ドキュメント</a></p><p><a href=\"https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinios-10.8\">基本クラス ライブラリ</a></p>"
+      href: https://developer.xamarin.com/api/root/ios-unified/
+      html: "<p><a href=\"https://developer.xamarin.com/api/root/ios-unified/\">iOS API ドキュメント</a></p><p><a href=\"https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinios-10.8\">基本クラス ライブラリ</a></p>"
     - title: "サンプル"
       href: https://developer.xamarin.com/samples
       html: "<p><a href=\"https://developer.xamarin.com/samples/ios/all/\">iOS のサンプル</a></p><p><a href=\"https://developer.xamarin.com/samples/ios/all/\">watchOS のサンプル</a></p><p><a href=\"https://developer.xamarin.com/samples/ios/all/\">tvOS のサンプル</a></p>"

@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="drawing-a-simple-circle"></a>単純な円を描画
 
@@ -146,7 +146,7 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 
 `SKPaint`オブジェクトがプロパティを描画する画像のコレクションよりも若干高です。 これらのオブジェクトは、非常に軽量です。 再利用できる`SKPaint`オブジェクトをこのプログラムでは、または複数を作成することができます`SKPaint`描画のさまざまな組み合わせのオブジェクト。 作成してこれらのオブジェクトの外部の初期化、`PaintSurface`して、イベント ハンドラーとして保存できますフィールドで、ページ クラスです。
 
-円のアウトラインの幅が 25 のピクセル & #x 2014; として指定されてまたは、円 & #x 2014; の半径の 4 分の 1幅が狭いほど、ように見えることと、相応の理由がある: 線の幅の半分が青い円形によって隠されています。 引数、`DrawCircle`メソッドは、円の抽象幾何学的座標を定義します。 そのディメンションを最も近いピクセル サイズが青の内部が 25 ピクセル幅のアウトラインをまたぐ幾何学的円 & #x 2014;内側と外側の半分の半分です。
+円のアウトラインの幅が 25 ピクセルとして指定されて&mdash;または 4 分の 1 の円の半径&mdash;が幅が狭いほど、あるし、相応の理由がある: 線の幅の半分が青い円形によって隠されています。 引数、`DrawCircle`メソッドは、円の抽象幾何学的座標を定義します。 青の内部のサイズが、最も近いピクセルにそのディメンションが、輪郭の 25 ピクセル幅にまたがっている幾何学模様の円&mdash;内側と外側の半分の半分です。
 
 次のサンプル、 [Xamarin.Forms との統合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)資料は、これを視覚的に示します。
 

@@ -8,11 +8,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1d174e441cd46255d62283521e7db2802b49072f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスを統合します。
 
@@ -61,13 +61,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 `Left`と`Top`のプロパティ、`SKRect`によってテキストが表示されている場合、構造体をレンダリングするテキストの左上隅の座標を示すため、`DrawText`を呼び出す 0 X と Y の位置。 このプログラムが 7 の iPhone シミュレーターで実行されているときになど`TextSize`90.6254 最初の呼び出しの後、計算の結果としての値が割り当てられている`MeasureText`です。 `SKRect` 2 番目の呼び出しから得られた値`MeasureText`は次のプロパティ値があります。
 
 - `Left` = 6
-- `Top` = & #x 2013; 68
+- `Top` = &ndash;68
 - `Width` = 664.8214
 - `Height` = 88;
 
-留意すること、X 座標と Y 座標を渡す、`DrawText`メソッドで指定されたベースラインのテキストの左側にあります。 `Top`値は、テキストが 68 ピクセルを基準と (68 it 88 から差し引くこと) の上に拡張されていることを示しますベースラインの下の 20 ピクセルです。 `Left` 6 の値が、テキストの先頭の X 値の右側に 6 のピクセルを示す、`DrawText`呼び出します。 これにより、通常の文字間スペースのためです。 ディスプレイ画面の左上隅でしっかりテキストを表示する場合は、これらの符号を反転を渡す`Left`と`Top`と、X 座標と Y 座標の値の`DrawText`、この例では、& #x 2013; 6 および 68。
+留意すること、X 座標と Y 座標を渡す、`DrawText`メソッドで指定されたベースラインのテキストの左側にあります。 `Top`値は、テキストが 68 ピクセルを基準と (68 it 88 から差し引くこと) の上に拡張されていることを示しますベースラインの下の 20 ピクセルです。 `Left` 6 の値が、テキストの先頭の X 値の右側に 6 のピクセルを示す、`DrawText`呼び出します。 これにより、通常の文字間スペースのためです。 ディスプレイ画面の左上隅でしっかりテキストを表示する場合は、これらの符号を反転を渡す`Left`と`Top`と、X 座標と Y 座標の値の`DrawText`、この例では&ndash;6 および 68。
 
-`SKRect`構造体は、いくつかの便利なプロパティおよびの残りの部分で使用されるこれらのいくつかのメソッドを定義、`PaintSurface`ハンドラー。 `MidX`と`MidY`値は、四角形の中心の座標を示します。 (例では、iPhone 7、それらの値が 338.4107 および & #x 2013; 24 です)。次のコードでは、座標の最も簡単な計算のこれらの値を使用して、ディスプレイ上のテキストを中央に。
+`SKRect`構造体は、いくつかの便利なプロパティおよびの残りの部分で使用されるこれらのいくつかのメソッドを定義、`PaintSurface`ハンドラー。 `MidX`と`MidY`値は、四角形の中心の座標を示します。 (例では、iPhone 7、それらの値が 338.4107 と&ndash;24 です)。次のコードでは、座標の最も簡単な計算のこれらの値を使用して、ディスプレイ上のテキストを中央に。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

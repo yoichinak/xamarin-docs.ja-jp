@@ -8,11 +8,11 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 90be80d42c20ca7509037b5f59b34cc1bddde6de
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="touch-manipulations"></a>タッチ操作
 
@@ -193,7 +193,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-場合、`HitTest`メソッドを返します。 `true` & #x 2014; 指がビットマップ & #x 2014; によって占有される領域内で画面をタッチし、に touch ID を追加することの意味、`TouchIds`コレクション。 この ID は、指を画面から解除されるまでに、その指タッチ イベントのシーケンスを表します。 複数の指タッチ、ビットマップの場合、`touchIds`コレクションには各本指タッチ ID が含まれています。
+場合、`HitTest`メソッドを返します。 `true` &mdash;指がビットマップで占有される領域内で画面をタッチことを意味&mdash;に touch ID を追加してから、`TouchIds`コレクション。 この ID は、指を画面から解除されるまでに、その指タッチ イベントのシーケンスを表します。 複数の指タッチ、ビットマップの場合、`touchIds`コレクションには各本指タッチ ID が含まれています。
 
 `TouchAction`ハンドラーも呼び出します、`ProcessTouchEvent`クラス`TouchManipulationBitmap`です。 ここでは一部 (すべてではない) 実際のタッチの処理が行われます。
 
@@ -404,7 +404,7 @@ class TouchManipulationManager
 
 回転が選択されているときに 1 本指と指の 2 つの操作メソッドの両方が最初に回転を処理します。 回転が検出されると、し、回転の成分効果的に削除されます。 新機能は、パンおよび拡大/縮小として解釈されます。
 
-ここでは、`OneFingerManipulate`メソッドです。 1 本指の回転が有効になっていない場合、ロジックは単純な & #x 2014 です。単に使用して、前のポイントと新しいポイントという名前のベクターを構築するために`delta`翻訳に正確に対応します。 1 本指の回転が有効になっている、メソッドを使って角度ピボット ポイント (ビットマップの中央) から、以前の時点と新しいポイント回転行列を作成します。
+ここでは、`OneFingerManipulate`メソッドです。 1 本指の回転が有効になっていないかどうかは、ロジックが単純な&mdash;だけを使用して、前のポイントと新しいポイントをという名前のベクターを構築`delta`翻訳に正確に対応します。 1 本指の回転が有効になっている、メソッドを使って角度ピボット ポイント (ビットマップの中央) から、以前の時点と新しいポイント回転行列を作成します。
 
 ```csharp
 class TouchManipulationManager

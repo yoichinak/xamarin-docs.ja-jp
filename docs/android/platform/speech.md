@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 7c38ebb6b482f4097a4977accecc4a230d3f3ed3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-speech"></a>Android の音声
 
@@ -128,11 +128,11 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 
 ### <a name="step-1---instantiating-texttospeech"></a>手順 1 - TextToSpeech をインスタンス化します。
 
-`TextToSpeech` 最大 3 つのパラメーターを受け取り、最初の 2 つを 3 番目と共に使用される省略可能な (`AppContext`、 `IOnInitListener`、 `engine`)。 リスナーが使用されている任意の数には、少なくとも、使用可能な Android テキスト読み上げエンジンのエンジンとサービス、およびエラーのテストにバインドする、デバイスが Google のエンジンです。
+`TextToSpeech` 最大 3 つのパラメーターを受け取り、最初の 2 つを 3 番目と共に使用される省略可能な (`AppContext`、 `IOnInitListener`、 `engine`)。 リスナーを使用して、任意の数の使用可能な Android 音声合成エンジンをされているエンジンのサービス、およびエラーのテストにバインドします。 少なくとも、デバイスは、Google のエンジンがあります。
 
 ### <a name="step-2---finding-the-languages-available"></a>手順 2 - 使用できる言語を検索します。
 
-`Java.Util.Locale`名前空間と呼ばれる便利なメソッドが含まれています。`GetAvailableLocales()`です。 音声認識エンジンによってサポートされる言語のこの一覧は、インストールされている言語に対してテストできます。
+`Java.Util.Locale`クラスと呼ばれる便利なメソッドが含まれています。`GetAvailableLocales()`です。 音声認識エンジンによってサポートされる言語のこの一覧は、インストールされている言語に対してテストできます。
 
 「認識」言語の一覧を生成する作業は簡単です。 常にある既定の言語 (ユーザーに設定された言語を最初に自分のデバイスをセットアップしたとき)、この例では、 `List<string>` "Default"は、最初のパラメーターと、一覧の残りの部分は、の結果に応じて、自動的に入力されます、`textToSpeech.IsLanguageAvailable(locale)`です。
 
@@ -186,7 +186,7 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 ### <a name="step-5---the-ioninitlistener"></a>手順 5 -、IOnInitListener
 
-テキスト読み上げ、インターフェイス メソッドに変換できるアクティビティの`OnInit`を作成するには (これは、2 番目のパラメーターをインスタンス化に指定された、`TextToSpeech`クラス)。 これは、リスナーを初期化し、結果をテストします。
+テキスト読み上げ、インターフェイス メソッドに変換できるアクティビティの`OnInit`を実装するのには (これは、2 番目のパラメーターをインスタンス化に指定された、`TextToSpeech`クラス)。 これは、リスナーを初期化し、結果をテストします。
 
 両方のリスナーをテストする必要があります`OperationResult.Success`と`OperationResult.Failure`最低限です。
 次の例では、だけを示しています。

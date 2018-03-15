@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: 7934738a546a266036573b81e15ef9b2fa28d7b4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 53c32003cd1a77a3aa5feb0ab26cedeab27789dc
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sharing-code-options"></a>コード共有のオプション
 
@@ -22,19 +22,19 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="building-cross-platform-mobile-apps"></a>クロス プラットフォームのモバイル アプリの構築
 
- [概要](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-0-overview.md)
+ [概要](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
- [パート 1: Xamarin モバイル プラットフォームを理解します。](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-1-understanding-the-xamarin-mobile-platform.md)
+ [パート 1: Xamarin モバイル プラットフォームを理解します。](~/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 
- [パート 2 – アーキテクチャ](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-2-architecture.md)
+ [パート 2 – アーキテクチャ](~/cross-platform/app-fundamentals/building-cross-platform-applications/architecture.md)
 
- [パート 3 – Xamarin クロス プラットフォーム ソリューションを設定します。](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-3-setting-up-a-xamarin-cross-platform-solution.md)
+ [パート 3 – Xamarin クロス プラットフォーム ソリューションを設定します。](~/cross-platform/app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md)
 
- [パート 4: 複数のプラットフォームを処理します。](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-4-platform-divergence-abstraction-divergent-implementation.md)
+ [パート 4: 複数のプラットフォームを処理します。](~/cross-platform/app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md)
 
- [パート 5 – 実用的なコードの戦略を共有](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-5-practical-code-sharing-strategies.md)
+ [パート 5 – 実用的なコードの戦略を共有](~/cross-platform/app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md)
 
- [パート 6 - テストと App Store の承認](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-6-testing-and-app-store-approvals.md)
+ [パート 6 - テストと App Store の承認](~/cross-platform/app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md)
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 5ec627fad1695bab8d05d75a5089fe849ea2fd75
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c12764610d0fd9834914b8114818b2ccd7d7def0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debug-on-a-wear-device"></a>消耗デバイス上でのデバッグします。
 
@@ -92,7 +92,7 @@ Android の着用 Smartwatch など、Android を着用デバイスがある場�
 
 この時点では、損傷、デバイスにアプリを展開できます。
 
-<a name="screenshots"/>
+<a name="screenshots" />
 
 ### <a name="taking-screenshots"></a>作成のスクリーン ショット
 

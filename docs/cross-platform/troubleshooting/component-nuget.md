@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4de4517c960395e5d7d5a8fb2c537576e15fc007
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>NuGet コンポーネント参照の更新
 
@@ -27,6 +27,82 @@ _アプリを将来の NuGet パッケージで、コンポーネントが参照
 同等の NuGet パッケージ、読み取り表示されていないコンポーネントを使用している場合、 [NuGet 移行パスを持たないコンポーネント](#require-update)以下のセクションです。
 
 NuGet パッケージを追加する方法についての詳細については、これらのページを参照してください[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)または[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。
+
+## <a name="opening-a-project-containing-a-component"></a>コンポーネントを含むプロジェクトを開く
+
+2017 年 11 月、でした[発表](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)Xamarin コンポーネント ストアが終了するということです。 コンポーネントの sunsetting で前方に移動するために、15.6 リリースの Visual Studio と 7.4 リリースの Visual Studio for Mac はサポートしなくなりましたプロジェクト内のコンポーネントです。 
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Visual Studio からプロジェクトを読み込む場合は、次のダイアログ ボックスが表示されます、説明する必要があります、コンポーネント プロジェクトから手動で削除します。
+
+![警告ダイアログことの説明、コンポーネントが見つかった後、プロジェクトで削除する必要があります。](component-nuget-images/component-alert-vs.png)
+
+プロジェクトから、コンポーネントを削除します。
+
+1. .Csproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、選択**プロジェクトのアンロード**です。 
+
+2. アンロードされたプロジェクトを再度右クリックし、選択**{プロジェクト名には、} .csproj の編集**です。
+
+3. ファイル内の参照を探して`XamarinComponentReference`です。 次の例のようになります。
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+4. 参照を削除する`XamarinComponentReference`ファイルを保存します。 上記の例では全体を削除しても安全`ItemGroup`です。
+
+5. ファイルが保存されると、プロジェクト名を右クリックし **プロジェクトの再読み込み**です。
+
+6. ソリューション内の各プロジェクトには、上記の手順を繰り返します。
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+読み込まれる場合、プロジェクトを Visual Studio for Mac、する必要があります、コンポーネント プロジェクトから手動で削除するを説明する次のダイアログ ボックスが表示されます。
+
+![警告ダイアログことの説明、コンポーネントが見つかった後、プロジェクトで削除する必要があります。](component-nuget-images/component-alert.png)
+
+プロジェクトから、コンポーネントを削除します。
+
+1. .Csproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、選択**ツール > ファイルの編集**です。
+
+2. ファイル内の参照を探して`XamarinComponentReference`です。 次の例のようになります。
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+3. 参照を削除する`XamarinComponentReference`ファイルを保存します。 上記の例では安全に全体の削除 `ItemGroup`
+
+4. ソリューション内の各プロジェクトには、上記の手順を繰り返します。 
+
+-----
 
 <a name="contain" />
 

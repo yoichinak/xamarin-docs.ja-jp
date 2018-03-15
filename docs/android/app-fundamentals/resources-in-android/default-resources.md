@@ -6,12 +6,12 @@ ms.assetid: 762572F0-173A-D994-0510-8F36BEF3D487
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3d9c747cdf8e43f33b9310ac1156550066b400eb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 5cf5bd38612f0f763e30456b0dd42198a3c0ff06
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="default-resources"></a>既定のリソース
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 03/09/2018
 -  **anim** &ndash;を記述する XML ファイル*トゥイーン*アニメーション。 トゥイーン アニメーションは、一連のアニメーションの命令の画像またはテキストのサイズを拡大して、ビューのオブジェクト、または例では、回転の内容に変換を実行します。 トゥイーン アニメーションは、オブジェクトの表示のみに制限されます。
 
 -  **色**&ndash;状態の色の一覧を記述する XML ファイルです。 色の状態の一覧を理解するのには、ボタンなどの UI ウィジェットを検討してください。
-   押されたまたは無効になっているなどの異なる状態であることをおし、ボタンは状態の変更のたびに色を変更することがあります。 一覧は、状態の一覧で表されます。
+   押されたまたは無効になっているなどのさまざまな状態があること、およびボタンは状態の変更のたびに色を変更することがあります。 一覧は、状態の一覧で表されます。
 
 -  **ドロウアブル**&ndash;ドロウアブル リソースは、アプリケーションにコンパイルしし、API 呼び出しでアクセスしたりできるその他の XML リソースによって参照されるグラフィックス用の一般的な概念です。
    ドロウアブルのいくつかの例としては、ビットマップ ファイル (.png、.gif、.jpg) と呼ばれる特別なサイズ変更可能なビットマップ[9 パッチ](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch)状態が一覧表示されます、XML などで定義された汎用の図形です。

@@ -7,12 +7,12 @@ ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 5db4c735205753810466c26535ba9e2f525709a8
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -44,116 +44,25 @@ Android 着用デバイスまたは消耗用に構成された Android エミュ
 
 数を検索する[サンプル](https://developer.xamarin.com/samples/android/Android%20Wear/)Android 着用を使用して (に直接移動または[github](https://github.com/xamarin/monodroid-samples/tree/master/wear))。 
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-      <th>
-          <strong>サンプル</strong>
-      </th>
-      <th>
-          <strong>説明</strong>
-      </th>
-      <th>
-          <strong>スクリーン ショット</strong>
-      </th>
-  </thead>
-  <tbody>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/SkeletonWear/">SkeletonWear</a>
-      </td>
-      <td valign="top">
-GridViewPager や対話型の通知など、ウェアラブル プロジェクトの基本の単純な例です。
-      </td>
-      <td>
-          <img src="Images/skeleton.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/WatchViewStub/">WatchViewStub</a>
-      </td>
-      <td valign="top">
-画面の図形を検出し、正しいレイアウトを自動的にロードされる WatchViewStub コントロールの簡単なデモを行います。
-WatchViewStub がでどのように動作するかを参照してください、 <b>Resources/layout/main_actvity.xml</b>レイアウトです。
-      </td>
-      <td>
-          <img src="Images/watchview.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/RecipeAssistant/">RecipeAssistant</a>
-      </td>
-      <td valign="top">
-レシピの手順の形式での消耗通知ページのデモンストレーションです。 通知の作成に<b>RecipeService.cs</b>です。
-      </td>
-      <td>
-          <img src="Images/recipeassist.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/ElizaChat/">ElizaChat</a>
-      </td>
-      <td valign="top">
-「個人アシスタント」との対話の楽しいサンプルでは、ある eliza が消耗対話型の通知を使用して、用意された応答を使用してメッセージ交換を作成すると呼ばれます。
-      </td>
-      <td>
-          <img src="Images/eliza.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/GridViewPager/">GridViewPager</a>
-      </td>
-      <td valign="top">
-GridViewPager が、ユーザーが垂直方向に読み取ります 2D ナビゲーション パターンを実装し、次のオプションとコンテンツ内を移動するには、水平方向にします。
-      </td>
-      <td>
-          <img src="Images/gridviewpager.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/monodroid/wear/WatchFace">WatchFace</a>
-      </td>
-      <td valign="top">
-          <b>WatchFace</b>アナログ スタイルの時間、分、および 2 番目の手でカスタム ウォッチの文字盤がします。 このサンプルでは、現在の時刻を描画するウォッチ フェイス サービスを作成およびハンドル アンビエント モードと可視性は、イベントを変更する方法を示します。 タイム ゾーンの変更をリッスンし、それに応じて、時間が自動的に更新するブロードキャスト受信者が含まれています。
-      </td>
-      <td>
-          <img src="Images/watchface.png" class="tableimg">
-      </td>
-  </tr>
-  </tbody>
-</table>
+|サンプル|説明|スクリーン ショット|
+|--- |--- |--- |
+|[SkeletonWear](https://developer.xamarin.com/samples/SkeletonWear/)|GridViewPager や対話型の通知など、ウェアラブル プロジェクトの基本の単純な例です。|![Skeletonwear のスクリーン ショット](images/skeleton.png)|
+|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|画面の図形を検出し、正しいレイアウトを自動的にロードされる WatchViewStub コントロールの簡単なデモを行います。  WatchViewStub がでどのように動作するかを参照してください、 **Resources/layout/main_actvity.xml**レイアウトです。|![WatchViewStub のスクリーン ショット](images/watchview.png)|
+|[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|レシピの手順の形式での消耗通知ページのデモンストレーションです。 通知は、RecipeService.cs に作成されます。|![RecipeAssistant のスクリーン ショット](images/recipeassist.png)|
+|[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|「個人アシスタント」との対話の楽しいサンプルでは、ある eliza が消耗対話型の通知を使用して、用意された応答を使用してメッセージ交換を作成すると呼ばれます。|![ElizaChat のスクリーン ショット](images/eliza.png)|
+|[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager が、ユーザーが垂直方向に読み取ります 2D ナビゲーション パターンを実装し、次のオプションとコンテンツ内を移動するには、水平方向にします。|![GridViewPager のスクリーン ショット](images/gridviewpager.png)|
+|[WatchFace](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)|WatchFace は、アナログ スタイルの時間、分、および 2 番目の手でカスタム ウォッチの文字盤がします。 このサンプルでは、現在の時刻を描画するウォッチ フェイス サービスを作成およびハンドル アンビエント モードと可視性は、イベントを変更する方法を示します。 タイム ゾーンの変更をリッスンし、それに応じて、時間が自動的に更新するブロードキャスト受信者が含まれています。|![WatchFace のスクリーン ショット](images/gridviewpager.png)|
+
 
 ##  <a name="videos"></a>ビデオ
 
-消耗と Xamarin.Android をについて説明するリンクをサポートしてこれらのビデオを確認します。
+消耗と Xamarin.Android をについて説明するリンクをサポートして以下のビデオを確認します。
 
-<table align="center" border="0" cellpadding="1" cellspacing="1">
-    <tr>
-        <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
-        <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android L およびその他多く</a>
-        <br />
-Android の L Developer Preview マテリアルのデザイン、通知、および新しいアニメーションは、いくつかの例を含む多種多様な活用するために開発者用の新しい Api が導入されました。</td>
-    </tr>
-    <tr>
-        <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
-        <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# の場合は目と my 耳にします Google ガラスおよび Android を着用。</a>
-        <br />
-将来 (またはインスペクター ガジェット エピソード) から何かのように見えるかもしれませんウェアラブル コンピューティングが、多くの人が既にことを望んで将来今日! C# 開発者を把握このして既にツールとスキル ウェアラブル デバイス (する 2014) の機能を利用します。</td>
-    </tr>
-    <tr>
-        <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
-        <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Xamarin.Android の新機能</a>
-        <br />
-        <i>Android L、Android の消耗、Android テレビ、Android の自動、材料デザイン、およびアートです。どういうことに、Xamarin の開発者ですか。</i>から 2014 の進化します。</td>
-    </tr>
-</table>
+|説明|スクリーン ショット|
+|--- |--- |
+|[Android L、およびよりずっと](http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L Developer Preview 導入された多くを活用するために開発者用の新しい Api の資料デザイン、通知、および新しいアニメーションは、いくつかの例を含むです。|![プレゼンテーションのビデオ スクリーン ショット](images/video-android-l.png)|
+|[C# の場合は目と祝いに: Google ガラスおよび Android を着用](https://www.youtube.com/watch?v=80H8tXByZQc)&ndash;将来 (またはインスペクター ガジェット エピソード) から何かのように見えるかもしれませんウェアラブル コンピューティングが、多くの人が既にことを望んで将来今日! C# 開発者を把握このして既にツールとスキル ウェアラブル デバイス (する 2014) の機能を利用します。|![プレゼンテーションのビデオ スクリーン ショット](images/video-eyes-ears.png)|
+|[Xamarin.Android の新機能](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L、Android を着用、Android のテレビ、Android の自動、マテリアルの設計、およびアート; これが何 Xamarin 開発者に平均? する 2014年からです。|![プレゼンテーションのビデオ スクリーン ショット](Images/video-whats-new.png)|
 
 
 <!--

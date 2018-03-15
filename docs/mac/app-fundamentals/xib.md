@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a4b8ac68da7bcb25ea55906e8fe060b7c7fdee9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 92ca65409dd82806278885bb03efd7b04ab1827d
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xib-files"></a>.xib ファイル
 
@@ -67,7 +67,7 @@ Xcode で編集するための .xib ファイルを開くときに、Visual Stud
 
 #### <a name="properties--utilities"></a>プロパティおよび公益事業
 
-**プロパティおよび公益事業**セクションでは、取り組んでは 2 つのメイン セクションに devided**プロパティ**(インスペクターとも呼ばれます) および**ライブラリ**:
+**プロパティおよび公益事業**セクションでは、取り組んでは 2 つの主要なセクションに分かれています**プロパティ**(インスペクターとも呼ばれます) および**ライブラリ**:
 
 ![プロパティ インスペクター](xib-images/xcode04.png "プロパティ インスペクター")
 
@@ -375,7 +375,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 このコードは、Xcode とインターフェイスのビルダーを作成し、ユーザーがボタンをクリックしたいつでも呼び出されるアクションをアタッチします。
 
-一部の UI 要素に自動的が組み込まれて操作、たとえば、既定のメニュー バー内の項目など、**オープンしています.**メニュー項目 (`openDocument:`)。 **ソリューション パッド**をダブルクリックして、`AppDelegate.CS`ファイルを開いて編集し、下の次のコードを追加するファイル、`DidFinishLaunching`メソッド。
+一部の UI 要素に自動的が組み込まれて操作、たとえば、既定のメニュー バー内の項目など、**オープンしています.**メニュー項目 (`openDocument:`)。 **ソリューション パッド**をダブルクリックして、 **<code>appdelegate.cs</code>**ファイルを開いて編集し、下の次のコードを追加するファイル、`DidFinishLaunching`メソッド。
 
 ```csharp
 [Export ("openDocument:")]

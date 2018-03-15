@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 650f8dceebb088b3601c21c1f5373fc4ae8c76dc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>認識サービスとインテリジェンスを追加します。
 
@@ -52,51 +52,20 @@ _マイクロソフトの知的サービスでは、Api、Sdk、および開発�
 
 5 つのメイン フォルダーのサンプル アプリケーションについては、ポータブル クラス ライブラリ (PCL) プロジェクトで構成されます。
 
-<table>
-    <thead>
-        <tr><td><strong>Folder</strong></td><td><strong>目的</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>モデル</strong></td>
-            <td>アプリケーションのデータ モデル クラスを含みます。 これが含まれています、<code>TodoItem</code>クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、別の Microsoft 認知サービス Api から返されたモデルの JSON 応答に使用されるクラスも含まれています。</td>
-        </tr>
-        <tr>
-            <td><strong>リポジトリ</strong></td>
-                        <td>含まれています、<code>ITodoItemRepository</code>インターフェイスと<code>TodoItemRepository</code>データベース操作を実行に使用されるクラスです。</td>
-        </tr>
-        <tr>
-            <td><strong>サービス</strong></td>
-                        <td>Api にアクセスするさまざまな Microsoft 認知サービスで使用されるインターフェイスと一緒に使用されるクラスとインターフェイスが含まれています、<code>DependencyService</code>プラットフォーム プロジェクトでは、インターフェイスを実装するクラスを検索対象のクラスです。</td>
-        </tr>
-        <tr>
-            <td><strong>ユーティリティ</strong></td>
-            <td>含まれています、<code>Timer</code>によって使用されるクラス、 <code>AuthenticationService</code> 9 分ごと、JWT アクセス トークンを更新するクラス。</td>
-        </tr>
-        <tr>
-            <td><strong>ビュー</strong></td>
-            <td>アプリケーション ページが含まれます。</td>
-        </tr>
-    </tbody>
-</table>
+|フォルダー|目的|
+|--- |--- |
+|モデル|アプリケーションのデータ モデル クラスを含みます。 これが含まれています、`TodoItem`クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、別の Microsoft 認知サービス Api から返されたモデルの JSON 応答に使用されるクラスも含まれています。|
+|リポジトリ|含まれています、`ITodoItemRepository`インターフェイスと`TodoItemRepository`データベース操作を実行に使用されるクラスです。|
+|サービス|Api にアクセスするさまざまな Microsoft 認知サービスで使用されるインターフェイスと一緒に使用されるクラスとインターフェイスが含まれています、`DependencyService`プラットフォーム プロジェクトでは、インターフェイスを実装するクラスを検索対象のクラスです。|
+|ユーティリティ|含まれています、`Timer`によって使用されるクラス、 `AuthenticationService` 9 分ごと、JWT アクセス トークンを更新するクラス。|
+|ビュー|アプリケーション ページが含まれます。|
 
 PCL プロジェクトには、いくつかの重要なファイルも含まれています。
 
-<table>
-    <thead>
-      <tr><td><strong>ファイル</strong></td><td><strong>目的</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code>クラスは、呼び出される Microsoft 認知サービス Api の API キーとエンドポイントを指定します。 API キー定数は、さまざまな認知サービス Api にアクセスする更新が必要です。
-        </tr>
-        <tr>
-          <td><strong>App.xaml.cs</strong></td>
-          <td><code>App</code>クラスは、各プラットフォームでのアプリケーションによって表示される両方の最初のページをインスタンス化して、<code>TodoManager</code>データベース操作の呼び出しに使用されるクラスです。</td>
-        </tr>
-    </tbody>
-</table>
+|ファイル|目的|
+|--- |--- |
+|Constants.cs|`Constants`クラスは、呼び出される Microsoft 認知サービス Api の API キーとエンドポイントを指定します。 API キー定数は、さまざまな認知サービス Api にアクセスする更新が必要です。|
+|App.xaml.cs|`App`クラスは、各プラットフォームでのアプリケーションによって表示される両方の最初のページをインスタンス化して、`TodoManager`データベース操作の呼び出しに使用されるクラスです。|
 
 ### <a name="nuget-packages"></a>NuGet パッケージ
 
