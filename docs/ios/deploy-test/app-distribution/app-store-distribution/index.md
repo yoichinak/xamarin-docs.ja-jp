@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: e19949c3a2efa4a5ddb17393d58c4430662254eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -48,13 +48,13 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 3. **+** ボタンをクリックして、新しい証明書を作成します。
 4. *[Production]\(運用\)* の見出しの下で **[App Store and Ad Hoc]\(App Store およびアドホック\)** を選択します。
 
-    [ ![](images/createcertmanually01.png "[App Store and Ad Hoc] を選択します")](images/createcertmanually01.png)
+    [![](images/createcertmanually01.png "[App Store and Ad Hoc] を選択します")](images/createcertmanually01.png#lightbox)
 5. **[Continue]\(続行\)** をクリックし、指示に従って Keychain Access を使用して証明書署名要求を作成します。
 
-    [ ![](images/createcertmanually02.png "キーチェーン アクセスを使用して証明書署名要求を作成します")](images/createcertmanually02.png)
+    [![](images/createcertmanually02.png "キーチェーン アクセスを使用して証明書署名要求を作成します")](images/createcertmanually02.png#lightbox)
 6. 指示どおりに CSR を作成したら、**[Continue]\(続行\)** をクリックし、CSR を Member Center にアップロードします。
 
-    [ ![](images/createcertmanually03.png "CSR を Member Center にアップロードします")](images/createcertmanually03.png)
+    [![](images/createcertmanually03.png "CSR を Member Center にアップロードします")](images/createcertmanually03.png#lightbox)
 
 7. **[Generate]\(生成\)** をクリックして証明書を作成します。
 8. 最後に、完成した証明書を**ダウンロード**し、ファイルをダブルクリックしてインストールします。
@@ -62,11 +62,11 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 または、Xcode の [Preferences]\(環境設定\) ダイアログを使用して証明書を要求することができます。 この操作を行うには、次の手順に従います。
 
-1.   チームを選択し、**[Manage Certificates…]\(証明書の管理...\)** をクリックします。 [ ![](images/selectteam.png "チームの選択と詳細の表示")](images/selectteam.png)
+1.   チームを選択し、**[Manage Certificates…]\(証明書の管理…\)** をクリックします。 [![](images/selectteam.png "チームの選択と詳細の表示")](images/selectteam.png#lightbox)
 
-2.   次に、**[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。[ ![](images/selectcert.png "iOS 配布証明書の作成")](images/selectcert.png)
+2.   次に、**[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。[![](images/selectcert.png "iOS 配布証明書の作成")](images/selectcert.png#lightbox)
 
-3.   チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[ ![](images/generated.png "署名 ID が生成され、ダイアログが表示される")](images/generated.png)
+3.   チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[![](images/generated.png "署名 ID が生成され、ダイアログが表示される")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />
@@ -95,27 +95,27 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 1. Apple Provisioning ポータルに戻り、**[Provisioning]\(プロビジョニング\)** > **[Distribution]\(配布\)** の順に選択します。
 
-    [ ![](images/distribute01.png "[Provisioning]、[Distribution] の順に選択します")](images/distribute01.png)
+    [![](images/distribute01.png "[Provisioning]、[Distribution] の順に選択します")](images/distribute01.png#lightbox)
 
 2. **+** ボタンをクリックし、**App Store** として作成する配布プロファイルの種類を選択します。
 
-    [ ![](images/distribute02.png "App Store 配布プロファイルを作成します")](images/distribute02.png)
+    [![](images/distribute02.png "App Store 配布プロファイルを作成します")](images/distribute02.png#lightbox)
 
 3. **[Continue]\(続行\)** ボタンをクリックし、配布プロファイルを作成するアプリ ID をドロップダウン リストから選択します。
 
-    [ ![](images/distribute03.png "ドロップダウン リストからアプリ ID を選択します")](images/distribute03.png)
+    [![](images/distribute03.png "ドロップダウン リストからアプリ ID を選択します")](images/distribute03.png#lightbox)
 
 4. **[Continue]\(続行\)** ボタンをクリックし、アプリケーションに署名するために必要な証明書を選択します。
 
-    [ ![](images/distribute04.png "アプリケーションに署名するために必要な証明書を選択します")](images/distribute04.png)
+    [![](images/distribute04.png "アプリケーションに署名するために必要な証明書を選択します")](images/distribute04.png#lightbox)
 
 5. **[Continue]\(続行\)** ボタンをクリックし、Xamarin.iOS アプリケーションを実行できるようにする iOS を選択します。
 
-    [ ![](images/distribute05.png "アプリケーションを実行できるようにする iOS デバイスを選択します")](images/distribute05.png)
+    [![](images/distribute05.png "アプリケーションを実行できるようにする iOS デバイスを選択します")](images/distribute05.png#lightbox)
 
 6. **[Continue]\(続行\)** ボタンをクリックし、新しい配布プロファイルの**名前**を入力します。
 
-    [ ![](images/distribute06.png "新しい配布プロファイルの名前を入力します")](images/distribute06.png)
+    [![](images/distribute06.png "新しい配布プロファイルの名前を入力します")](images/distribute06.png#lightbox)
 
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 

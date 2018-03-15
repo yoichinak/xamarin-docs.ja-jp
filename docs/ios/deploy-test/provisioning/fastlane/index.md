@@ -3,16 +3,16 @@ title: "iOS 向け fastlane の概要"
 description: "このガイドでは、iOS アプリケーションのコード署名で使用できるさまざまな fastlane ツールを紹介します。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 084be16b55650f607d71f6eb3baf86b6f968aa35
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>iOS 向け fastlane の概要
 
@@ -87,12 +87,12 @@ fastlane はさまざまな方法で使用できます。たとえば、ター�
 
 fastlane は非常にアクティブなオープン ソース プロジェクトであり、定期的に新しいリリースがプッシュされます。 新しいバージョンの fastlane が使用可能な場合は、fastlane コマンドを実行すると次のように通知されます。
 
-[ ![](images/fastlane-image0.png "fastlane の更新プロンプト")](images/fastlane-image0.png)
+[![](images/fastlane-image0.png "fastlane の更新プロンプト")](images/fastlane-image0.png#lightbox)
 
 
 fastlane を新しいバージョンに更新するには、[ここ](https://download.fastlane.tools)から最新のパッケージをダウンロードし、インストール パッケージをダブルクリックして実行します。
 
-[ ![](images/fastlane-image0a.png "インストール パッケージの実行")](images/fastlane-image0a.png)
+[![](images/fastlane-image0a.png "インストール パッケージの実行")](images/fastlane-image0a.png#lightbox)
 
 
 ## <a name="contents"></a>目次
@@ -111,7 +111,7 @@ fastlane で署名 ID とプロビジョニング プロファイルを作成し
 
 Xamarin.iOS アプリケーションのコード署名オプションを設定するには、次のように、プロジェクト名を右クリックし、**[プロジェクト オプション]、[ビルド]、[iOS バンドル署名]** の順に選択して、署名 ID とプロビジョニング プロファイルを明示的に設定します。
 
-[ ![](images/fastlane-image11.png "署名 ID とプロビジョニング プロファイルを明示的に設定します")](images/fastlane-image11.png)
+[![](images/fastlane-image11.png "署名 ID とプロビジョニング プロファイルを明示的に設定します")](images/fastlane-image11.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

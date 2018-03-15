@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.technology: xamarin-cross-platform
+ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 24d58621ae8143984683a41cd849a8b60893fd25
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8d9acbf5fa53c2fa94d1a15d51de9d3db48a16fe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>作業の開始
 
@@ -45,6 +46,12 @@ Xamarin のしくみや、モバイル アプリの開発プロジェクトに�
 
 このドキュメントでは、統合開発環境 (IDE) である Visual Studio for Mac の概要を説明します。
 
+
+## <a name="xamarin-university-video"></a>Xamarin University のビデオ
+
+> [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
+
+**Building Your First Xamarin.Forms App with Xamarin for Visual Studio (Xamarin for Visual Studio で最初の Xamarin.Forms アプリを構築する)、by [Xamarin University](https://university.xamarin.com)**
 
 ## <a name="related-links"></a>関連リンク
 

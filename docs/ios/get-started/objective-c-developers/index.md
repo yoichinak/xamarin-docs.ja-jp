@@ -7,11 +7,11 @@ ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7e26c11f71b446baf89ca11effe30bc1e041f951
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C 開発者向けの Xamarin
 
@@ -21,7 +21,7 @@ Xamarin は Android via Xamarin.Android やさまざまな Windows など、使�
 
 さらに、Xamarin ではバインドの技術を使用して既存の Objective-C のアセットも利用できます。 次の図で説明されているように、Objective-C で静的ライブラリを作成し、バインドを使用して C# に公開するだけです。
 
- [ ![](images/01-bindings.png "バインドを使用して C# に公開された Objective-C の静的ライブラリ")](images/01-bindings.png)
+ [![](images/01-bindings.png "バインドを使用して C# に公開された Objective-C の静的ライブラリ")](images/01-bindings.png#lightbox)
 
 これは非 UI コードに制限する必要はありません。 バインドでは Objective-C で開発されたユーザー インターフェイス コードも公開できます。
 

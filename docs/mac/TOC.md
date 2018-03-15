@@ -31,7 +31,7 @@
 ## [プラットフォーム機能](platform/index.md)
 ### [macOS Sierra の概要](platform/introduction-to-macos-sierra/index.md)
 #### [最新の macOS アプリの構築](platform/introduction-to-macos-sierra/modern-cocoa-apps.md)
-#### [iOS 10 フレームワークのその他の変更点](platform/introduction-to-macos-sierra/additional-framework-changes.md)
+#### [追加の macOS Sierra フレームワークの変更](platform/introduction-to-macos-sierra/additional-framework-changes.md)
 #### [トラブルシューティング](platform/introduction-to-macos-sierra/troubleshooting.md)
 ### [Mac ライブラリのバインド](platform/binding.md)
 ### [OpenTK の概要](platform/opentk.md)

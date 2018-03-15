@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3BC68C5-87C1-50AF-ED0A-55EBF07CBD8B
 ms.technology: xamarin-android
+ms.custom: xamu-video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/25/2017
-ms.openlocfilehash: 974388ad3ad125fb059a0c71252f53e140e056cf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c07ab37bc88b52bbff0ddc0fb7bf1faa4d97bb2a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-series"></a>作業の開始シリーズ
 
@@ -35,3 +36,9 @@ Xamarin.Android を設定し、Visual Studio で実行します。 このセク�
 ##  <a name="xamarin-for-java-developersandroidget-startedjava-developersmd"></a>[Java 開発者向け Xamarin](~/android/get-started/java-developers.md)
 
 この記事では Java 開発者向けの C# プログラミングの概要を提供します。特に Java 開発者が Xamarin.Android アプリの開発を学ぶうえで目にする C# 言語の機能に重点を置いています。
+
+## <a name="xamarin-university-video"></a>Xamarin University のビデオ
+
+> [!VIDEO https://youtube.com/embed/rkNikCa5D48]
+
+**Building Your First Android App with Xamarin for Visual Studio (Xamarin for Visual Studio で最初の Android アプリを構築する)、by [Xamarin University](https://university.xamarin.com)**
