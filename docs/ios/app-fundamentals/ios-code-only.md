@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>コードで iOS のユーザー インターフェイスの作成
 
@@ -69,7 +69,7 @@ IOS アプリのユーザー インターフェイス、storefront のように 
 ## <a name="ios-templates"></a>iOS テンプレート
 
 
-Mac 用の visual Studio では、空のテンプレートは提供されません。 すべてのテンプレートは、ストーリー ボードのサポートは、Apple が UI を作成する主な方法として推奨が付属します。 ただし、コードで完全にで UI を作成することを勧めします。 
+Mac 用の visual Studio では、空のテンプレートは提供されません。 すべてのテンプレートは、ストーリー ボードのサポートは、Apple が UI を作成する主な方法として推奨が付属します。 ただし、コードで UI を完全に作成することができます。 
 
 次の手順に従ってアプリケーションからストーリー ボードを削除します。 
 
@@ -316,7 +316,7 @@ Window.RootViewController = navController;
 
 iOS ユーザー インターフェイスは、階層の表示で構成されます。 ラベル、ボタン、スライダーなどの他のビューは、いくつかの親ビューのサブビューとして追加されます。
 
-たとえばを編集しましょう、`CustomViewController`ユーザーがユーザー名とパスワードを入力できるログイン画面を作成します。 画面は、ボタンと 2 つのテキスト フィールドで構成されます。
+たとえば、編集、`CustomViewController`ユーザーがユーザー名とパスワードを入力できるログイン画面を作成します。 画面は、ボタンと 2 つのテキスト フィールドで構成されます。
 
 ### <a name="adding-the-text-fields"></a>テキスト フィールドを追加します。
 
@@ -433,7 +433,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>ボタンの機能を追加します。
 
-ボタンがクリックされたときに、ユーザーは、求める動作が発生するかどうか、そのアラートまたは別の画面に移動することによってこのです。 
+ボタンがクリックされたときに、ユーザーは、求める動作が発生します。 たとえば、アラートが表示されるか、ナビゲーションが別の画面に実行します。 
 
 2 つ目のビュー コント ローラーをナビゲーション スタックにプッシュするコードを追加してみましょう。
 
@@ -497,7 +497,7 @@ UIKit の一部であるコントロールを使用するだけでなく、カ�
 
 ### <a name="inheriting-from-uiview"></a>UIView から継承します。
 
-まずを行うには必要なは、クラス、カスタム ビューを作成します。 それではを使用して、**クラス**という空のクラスを追加する Visual Studio でテンプレート`CircleView`です。 基本クラスを設定する必要があります`UIView`、再呼び出しが、`UIKit`名前空間。 必要、`System.Drawing`名前空間もします。 その他のさまざまな`System.*`名前空間はできませんこの例で使用されているため、自由にそれらを削除します。
+まずを行うには必要なは、クラス、カスタム ビューを作成します。 それではを使用して、**クラス**という空のクラスを追加する Visual Studio でテンプレート`CircleView`です。 基本クラスに設定する必要があります`UIView`が内にあることに注意してください、`UIKit`名前空間。 必要、`System.Drawing`名前空間もします。 その他のさまざまな`System.*`名前空間はできませんこの例で使用されているため、自由にそれらを削除します。
 
 クラスは、次のようになります。
 

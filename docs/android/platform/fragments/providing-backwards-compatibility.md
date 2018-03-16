@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>旧バージョンとの Android サポート パッケージとの互換性を提供します。
 
@@ -25,13 +25,13 @@ ms.lasthandoff: 03/12/2018
 
 Android のサポート パッケージは Xamarin.Android アプリケーションに自動的には追加されません。 Xamarin では提供、 [v4 NuGet パッケージの Android サポート ライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)Xamarin.Android アプリケーションへのサポート ライブラリの追加を簡単にします。サポート パッケージをアプリケーションに含まれて、Xamarin.Android に含める、 [Android サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) Xamarin.Android プロジェクトに、次のスクリーン ショットに示すようにコンポーネント。 
 
-[![プロジェクトに追加されている Android のサポート ライブラリのスクリーン ショット v4 パッケージ](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![プロジェクトに追加されている Android のサポート ライブラリのスクリーン ショット v4 パッケージ](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 次の手順を実行すると後で以前のバージョンの Android フラグメントを使用する可能になります。 フラグメントの Api には、次の例外を除き、これらの以前のバージョンで同じここでは機能します。 
 
 -   **最低限の Android バージョンを変更する**&ndash;を次に示すように Android 3.0 以上を対象とする必要がなくなったアプリケーション。 
 
-    [![アプリケーションのプロパティで設定されている最低限 Android のスクリーン ショットのターゲット](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Android マニフェストで設定されている最低限 Android のスクリーン ショットのターゲット](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **拡張 FragmentActivity** &ndash;フラグメントをホストしている、アクティビティから継承する必要があります`Android.Support.V4.App.FragmentActivity`、およびからではなく`Android.App.Activity`です。 
 

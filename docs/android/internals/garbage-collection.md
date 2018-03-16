@@ -6,12 +6,12 @@ ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/15/2018
+ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="garbage-collection"></a>ガベージ コレクション
 
@@ -21,12 +21,12 @@ Xamarin.Android 使用モノラルの[世代単純なガベージ コレクタ�
 -   (Gen1 を収集し、ラージ オブジェクト スペース ヒープ) の主なコレクション。 
 
 > [!NOTE]
-> 使用して明示的なコレクションがない場合は、 [GC です。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)コレクションは*オンデマンド*ヒープの割り当てに基づいて、します。 *これは参照カウントのシステムではありません*; オブジェクト*未解決の参照がないとすぐには収集されません*スコープが終了した場合またはします。 GC は、マイナーのヒープが新しい割り当て用のメモリを使い果たしたときに実行されます。 割り当てがない場合は実行されません。
+> 使用して明示的なコレクションがない場合は、 [GC です。Collect()](xref:System.GC.Collect)コレクションは*オンデマンド*ヒープの割り当てに基づいて、します。 *これは参照カウントのシステムではありません*; オブジェクト*未解決の参照がないとすぐには収集されません*スコープが終了した場合またはします。 GC は、マイナーのヒープが新しい割り当て用のメモリを使い果たしたときに実行されます。 割り当てがない場合は実行されません。
 
 
-マイナー コレクションは低コストな頻繁に行われると、最近割り当てられ、死んだ状態のオブジェクトを収集するために使用します。 マイナー コレクションは、割り当てられたオブジェクトの数 MB ごとの後に実行されます。 呼び出して、マイナー コレクションを手動で実行する可能性があります[GC です。(0) の収集します。](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
+マイナー コレクションは低コストな頻繁に行われると、最近割り当てられ、死んだ状態のオブジェクトを収集するために使用します。 マイナー コレクションは、割り当てられたオブジェクトの数 MB ごとの後に実行されます。 呼び出して、マイナー コレクションを手動で実行する可能性があります[GC です。(0) の収集します。](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-主要なコレクションは、コストがかかり、頻度が低いと、停止しているすべてのオブジェクトの再利用するために使用します。 メジャーのコレクションは、(の前に、ヒープのサイズを変更するには)、現在のヒープ サイズのメモリが不足したり後に実行されます。 呼び出して、メジャーのコレクションを手動で実行する可能性があります[GC です。() を収集](https://developer.xamarin.com/api/member/System.GC.Collect/)または呼び出すことによって[GC です。(Int) の収集](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32)引数と共に[GC です。MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/)です。 
+主要なコレクションは、コストがかかり、頻度が低いと、停止しているすべてのオブジェクトの再利用するために使用します。 メジャーのコレクションは、(の前に、ヒープのサイズを変更するには)、現在のヒープ サイズのメモリが不足したり後に実行されます。 呼び出して、メジャーのコレクションを手動で実行する可能性があります[GC です。() を収集](xref:System.GC.Collect)または呼び出すことによって[GC です。(Int) の収集](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_)引数と共に[GC です。MaxGeneration](xref:System.GC.MaxGeneration)です。 
 
 
 
@@ -34,7 +34,7 @@ Xamarin.Android 使用モノラルの[世代単純なガベージ コレクタ�
 
 オブジェクトの種類の 3 つのカテゴリがあります。
 
--   **管理されているオブジェクト**: 型は*いない*から継承[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)など、 [System.String](https://developer.xamarin.com/api/type/System.String/)です。 
+-   **管理されているオブジェクト**: 型は*いない*から継承[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)など、 [System.String](xref:System.String)です。 
     これらは、GC で通常収集されます。 
 
 -   **Java オブジェクト**: Java の型が Android ランタイム VM 内で存在がモノラル VM に公開されません。 これらは、面倒であり、これ以上説明しません。 これらは、Android ランタイム VM によって通常収集されます。 
@@ -71,7 +71,7 @@ Android ランタイム コレクション通常が、注意の動作: グロー
 
 ピア オブジェクトは、Android のランタイムおよびモノラル VM の内部で論理的に存在します。 たとえば、 [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)ピアのマネージ インスタンスが、対応する必要が[android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework ピア Java インスタンス。 継承するすべてのオブジェクト[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)両方の Vm 内での表現に生じる場合があります。 
 
-両方の Vm での表現であるすべてのオブジェクトが 1 つの VM 内でのみ存在するオブジェクトと比較して、拡張の有効期間になります (など、 [ `System.Collections.Generic.List<int>` ](https://developer.xamarin.com/api/type/System.Collections.Generic.List%601/))。 呼び出す[GC です。収集](https://developer.xamarin.com/api/member/System.GC.Collect/)Xamarin.Android GC がそれを収集する前にいずれかの VM でオブジェクトが参照されないことを確認する必要があると、これらのオブジェクトを収集必ずしもはありません。 
+両方の Vm での表現であるすべてのオブジェクトが 1 つの VM 内でのみ存在するオブジェクトと比較して、拡張の有効期間になります (など、 [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601))。 呼び出す[GC です。収集](xref:System.GC.Collect)Xamarin.Android GC がそれを収集する前にいずれかの VM でオブジェクトが参照されないことを確認する必要があると、これらのオブジェクトを収集必ずしもはありません。 
 
 オブジェクトの有効期間を短縮する[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)呼び出す必要があります。 これは、手動で"接続は切断されます"できるので、高速で収集されるオブジェクトにより、グローバルの参照を解放して、2 つの Vm 間でオブジェクトにします。 
 
@@ -140,7 +140,7 @@ GC が不完全なプロセスと実行されない可能性がありますの�
 インスタンスなど、 [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)型または派生型は、少なくとも 20 バイト サイズ (通知などは、せず変更される可能性がなどです。)。 
 [呼び出し可能ラッパーをマネージ](~/android/internals/architecture.md)ので、追加のインスタンス メンバーを追加できませんがある場合、 [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/)メモリの 10 MB の blob を参照するインスタンスを Xamarin.Android の GC がわかりません&ndash;GC20 バイトのオブジェクトが表示され、10 MB のメモリをアライブに保つは Android のランタイムに割り当てられたオブジェクトにリンクされていることを確認することはできません。 
 
-これは GC のために頻繁に必要です。 残念ながら、 *GC です。AddMemoryPressure()*と*GC です。RemoveMemoryPressure()*はサポートされていませんのでする*知る*だけを手動で呼び出す必要があります、大規模な Java に割り当てられたオブジェクト グラフを解放する[GC です。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)プロンプト Java 側を解放する GC にメモリ、または明示的に破棄*Java.Lang.Object*サブクラス、マネージ呼び出し可能ラッパーと Java インスタンス間のマッピングを解除します。 たとえばを参照してください[バグ 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)です。 
+これは GC のために頻繁に必要です。 残念ながら、 *GC です。AddMemoryPressure()*と*GC です。RemoveMemoryPressure()*はサポートされていませんのでする*知る*だけを手動で呼び出す必要があります、大規模な Java に割り当てられたオブジェクト グラフを解放する[GC です。Collect()](xref:System.GC.Collect)プロンプト Java 側を解放する GC にメモリ、または明示的に破棄*Java.Lang.Object*サブクラス、マネージ呼び出し可能ラッパーと Java インスタンス間のマッピングを解除します。 たとえばを参照してください[バグ 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)です。 
 
 
 > [!NOTE]
@@ -314,7 +314,7 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>マイナー コレクション
 
-呼び出して、マイナー コレクションを手動で実行する可能性があります[GC です。Collect(0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32)です。 マイナー コレクションは、安価なは、(主なコレクションと比較して) 場合、が重大な問題、コストを修正できるように多くの場合、それらをトリガーしたくないあり必要がありますが、いくつかのミリ秒単位の停止時間。 
+呼び出して、マイナー コレクションを手動で実行する可能性があります[GC です。Collect(0)](xref:System.GC.Collect)です。 マイナー コレクションは、安価なは、(主なコレクションと比較して) 場合、が重大な問題、コストを修正できるように多くの場合、それらをトリガーしたくないあり必要がありますが、いくつかのミリ秒単位の停止時間。 
 
 アプリケーションを同じものは繰り返しの「デューティ サイクル」にある場合がありますマイナーのコレクションを手動で実行することをお勧めデューティ サイクルが終了した後。 デューティ サイクルの例は次のとおりです。 
 
@@ -326,7 +326,7 @@ class BetterActivity : Activity {
 
 ## <a name="major-collections"></a>主要なコレクション
 
-呼び出して、メジャーのコレクションを手動で実行する可能性があります[GC です。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)または`GC.Collect(GC.MaxGeneration)`です。 
+呼び出して、メジャーのコレクションを手動で実行する可能性があります[GC です。Collect()](xref:System.GC.Collect)または`GC.Collect(GC.MaxGeneration)`です。 
 
 まれに、実行する必要があります、512 MB のヒープを収集するときに、Android スタイルのデバイスでの秒部分の停止時間を必要があります。 
 

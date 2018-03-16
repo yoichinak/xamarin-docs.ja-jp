@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player のライブのセットアップ
 
@@ -68,7 +68,7 @@ Xamarin Live Player が必要です。
 
   デバイスがない場合は、関連付ける、方法について記載された QR コードが表示されます、デバイスとペアに。
 
-    ![[デバイス] ウィンドウのペア](install-images/manage-empty-windows.png)
+  ![[デバイス] ウィンドウのペア](install-images/manage-empty-windows.png)
 
   組み合わせについて、デバイスに接続できない場合、エラーが表示されます。
 
@@ -111,11 +111,11 @@ Xamarin Live Player が必要です。
 
   デバイスがペアになっていない場合、デバイスをペアリングする方法について QR コードに表示されます。
 
-    ![[デバイス] ウィンドウのペア](install-images/manage-empty.png)
+  ![[デバイス] ウィンドウのペア](install-images/manage-empty.png)
 
   組み合わせについて、デバイスに接続できない場合、エラーが表示されます。
 
-    ![デバイスのエラー メッセージに接続できません。](install-images/error-cannot-connect.png)
+  ![デバイスのエラー メッセージに接続できません。](install-images/error-cannot-connect.png)
 
 
 -----

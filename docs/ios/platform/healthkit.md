@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -67,7 +67,7 @@ IOS アプリのプロビジョニングに関する詳細を確認する、[デ
 
 明示的な作成**アプリ ID**と適切な**プロビジョニング プロファイル**Apple の操作は実行[iOS Dev Center](https://developer.apple.com/devcenter/ios/index.action)です。 
 
-現在**のアプリ Id**に記載されて、[証明書、識別子、およびプロファイル](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)デベロッパー センターの「します。 多くの場合、このリストに表示されます **ID** 値 `*` を示すを* *アプリ ID*- **名前** 任意の数のサフィックスで使用できます。 このような*ワイルドカードのアプリ Id*ヘルス キットでは使用できません。
+現在**のアプリ Id**に記載されて、[証明書、識別子、およびプロファイル](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)デベロッパー センターの「します。 多くの場合、このリストに表示されます**ID**値`*`を示すを**アプリ ID** - **名前**任意の数のサフィックスで使用できます。 このような*ワイルドカードのアプリ Id*ヘルス キットでは使用できません。
  
 明示的な作成を**アプリ ID**をクリックして、  **+** する右のボタン、 **iOS アプリ ID を登録**ページ。
 
@@ -87,7 +87,7 @@ IOS アプリのプロビジョニングに関する詳細を確認する、[デ
 
 をクリックして**生成**し、プロファイルの作成を待機します。 ファイルをダウンロードし、ダブルクリックして、Xcode でインストールします。 下で、インストールを確認する**Xcode > 設定 > アカウント > の詳細を表示しています.** だけがインストールされているプロビジョニング プロファイルが表示され、正常性キットとでの他の特別なサービス用のアイコンが必要、**権利**行。
 
-[![](healthkit-images/image05.png "Xcode でプロファイルを表示します。")](healthkit-images/image05.png#lightbox)
+[![](healthkit-images/image05.png "Xcode でのプロファイルの表示")](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid" />
 

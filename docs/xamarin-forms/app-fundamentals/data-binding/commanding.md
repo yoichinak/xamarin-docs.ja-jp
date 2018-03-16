@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0456742ca30257670375e3ae781dcdc49707e2ce
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="the-command-interface"></a>コマンド インターフェイス
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 03/09/2018
 
 間のデータ バインドを許可する、`Button`と ViewModel、 `Button` 2 つのプロパティを定義します。
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) 型の [`ICommand`](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)
+- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) 型の <xref:System.Windows.Input.ICommand>
 - [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) 型の `Object`
 
 対象とするデータ バインドを定義するコマンド インターフェイスを使用する、`Command`のプロパティ、`Button`型の ViewModel では、プロパティは、ソースの場所`ICommand`です。 ViewModel に関連付けられているコードが含まれています`ICommand`ボタンがクリックされたときに実行されるプロパティです。 設定することができます`CommandParameter`すべてしている場合、複数のボタンを区別するために任意のデータを同じバインド`ICommand`ViewModel プロパティ。
@@ -39,7 +39,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="the-icommand-interface"></a>ICommand インターフェイス
 
-[ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)インターフェイスは、Xamarin.Forms の一部ではありません。 代わりに定義されている、 [ `System.Windows.Input` ](https://developer.xamarin.com/api/namespace/System.Windows.Input/)名前空間には、2 つのメソッドと 1 つのイベントで構成されます。
+<xref:System.Windows.Input.ICommand>インターフェイスは、Xamarin.Forms の一部ではありません。 代わりに定義されている、 [System.Windows.Input](xref:System.Windows.Input)名前空間には、2 つのメソッドと 1 つのイベントで構成されます。
 
 ```csharp
 public interface ICommand

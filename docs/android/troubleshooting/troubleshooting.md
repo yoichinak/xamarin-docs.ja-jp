@@ -6,12 +6,12 @@ ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 145c8507ca5ebea6197fa8827b93f58fbc9bb078
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="troubleshooting-tips"></a>トラブルシューティングのヒント
 
@@ -333,7 +333,7 @@ Xamarin.Android ABIs 複数のデバイスをサポートしています: *armea
 2 のダウンロードは Google の Android SDK for Windows から利用できます。
 .Exe インストーラーを選択した場合は、インストール先 Xamarin.Android に指示するレジストリ キーを書き込みます。 .Zip ファイルを選択して解凍して Xamarin.Android は SDK を検索する場所を特定できません。 わかります Xamarin.Android SDK が Visual Studio でに移動して**ツール > オプション > Xamarin > Android 設定**:
 
-[![Xamarin Android の設定で android SDK の場所](troubleshooting-images/01a.png)](troubleshooting-images/01a.png#lightbox)
+[![Xamarin Android の設定で android SDK の場所](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 
 
@@ -728,7 +728,7 @@ C を使用する\#アプリケーションまたはライブラリに動的で�
 
     -   コストを抑えることに注意動的コード常にします。 効率的なコードを必要がある場合は、動的なコードを使用していないことを検討します。
 
--   プレビューでは、最初、各アセンブリ内の型は、アプリケーション コードによって明示的に使用されていない限り、それらのアセンブリは除外されました。 回避策については、次を参照してください: [http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+-   プレビューでは、最初、各アセンブリ内の型は、アプリケーション コードによって明示的に使用されていない限り、それらのアセンブリは除外されました。 回避策については、次を参照してください。 [http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>X86 で AOT + ある LLVM クラッシュでビルドされたプロジェクトのデバイス

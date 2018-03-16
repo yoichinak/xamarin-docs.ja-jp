@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: c5bafe12c2cf8c5f8d75757b22223c708ae248dc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef4de2d544f3bcfb661b29dd90de738ae0442373
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms ビュー
 
@@ -107,7 +107,7 @@ _Xamarin.Forms ビューは、クロスプラット フォーム モバイル �
 
 |     |     |
 | --- | --- |
-| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) プラットフォームの日付選択カレンダーで日付を選択することができます。 許容される日付の範囲を設定、 [ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/)と[ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/)プロパティです。 [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/)プロパティは、選択した日付と[ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/)イベントは、そのプロパティが変更されたときに発生します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) | [![DatePicker 例](views-images/DatePicker.png "DatePicker 例")](views-images/DatePicker-Large.png#lightbox "DatePicker 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
+| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) プラットフォームの日付選択カレンダーで日付を選択することができます。 許容される日付の範囲を設定、 [ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/)と[ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/)プロパティです。 [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/)プロパティは、選択した日付と[ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/)イベントは、そのプロパティが変更されたときに発生します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) / [ガイド](~/xamarin-forms/user-interface/datepicker.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) | [![DatePicker 例](views-images/DatePicker.png "DatePicker 例")](views-images/DatePicker-Large.png#lightbox "DatePicker 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
 |     |     |
 
 ### <a name="timepicker"></a>TimePicker

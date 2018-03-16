@@ -6,21 +6,20 @@ ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 8be599f5b6541ef738ffa47a01374fd7f90044a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 693ada611dc24d3bb22de7c51efe378939a732ad
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="threading"></a>スレッド
 
-Xamarin.iOS ランタイムにアクセスを開発者に、.NET Api をスレッド処理、スレッドの両方の明示的なを使用して ( `System.Threading.Thread, System.Threading.ThreadPool`)、暗黙的に非同期的なデリゲート パターンまたは BeginXXX メソッドだけでなく、完全範囲の Api、タスクをサポートするを使用します。並列ライブラリです。
+Xamarin.iOS ランタイム開発者へアクセスを提供、.NET Api では、スレッドを使用するときに明示的に両方のスレッド (`System.Threading.Thread, System.Threading.ThreadPool`) と暗黙的に非同期的なデリゲート パターンまたは BeginXXX メソッドだけでなく、完全範囲の Api をサポートするを使用して、タスク並列ライブラリです。
 
 
 
-Xamarin の使用を強く推奨、[タスク並列ライブラリ](http://msdn.microsoft.com/en-us/library/dd460717.aspx)
-
- (ライブラリ TPL) のいくつかの理由からアプリケーションを構築するため:-既定の TPL スケジューラでは、さらに、動的に拡張処理が行わ、スレッドが多すぎるがどこで終了するシナリオを回避しながら、必要なスレッドの数のスレッド プールにタスクの実行を委任します。競って CPU 時間を使用します。 
+Xamarin の使用を強く推奨、[タスク並列ライブラリ](http://msdn.microsoft.com/en-us/library/dd460717.aspx)(TPL) のいくつかの理由からアプリケーションを構築するため。
+-  既定の TPL スケジューラでは、さらに、動的に拡張処理が行わ、スレッドが多すぎるがどこで CPU 時間の競合を終了するシナリオを回避しながら、必要なスレッドの数のスレッド プールにタスクの実行を委任します。 
 -  TPL のタスクに関する操作について考えると簡単です。 簡単にして、操作にスケジュール、それらの実行をシリアル化したり、多く機能豊富な一連の Api と並列でを起動できます。 
 -  これは、新しい c# 非同期言語拡張機能を使用したプログラミングの基盤です。 
 
@@ -41,7 +40,6 @@ MyThreadedRoutine ()
 {  
     var result = DoComputation ();  
 
-    //
     // we want to update an object that is managed by the main
     // thread; To do so, we need to ensure that we only access
     // this from the main thread:

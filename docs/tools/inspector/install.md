@@ -8,23 +8,23 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: a2e6f254c77ac099b5700543db5763b8bbb44fef
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d93481a865be1ee9272c7ce7969bdb6ebd6b5536
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
 ## <a name="download-and-installation"></a>ダウンロードとインストール
 
 
-# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 1. ダウンロードしてインストール[Xamarin ブック & インスペクターのウィンドウ](https://dl.xamarin.com/interactive/XamarinInteractive.msi)します。
 2. [独自のアプリを検査します。](~/tools/inspector/inspect.md)
 
-# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 1. ダウンロードしてインストール[Xamarin ブック & for Mac インスペクター](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)です。
 2. [独自のアプリを検査します。](~/tools/inspector/inspect.md)

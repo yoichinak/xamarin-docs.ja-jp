@@ -8,20 +8,20 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c4b2a103821bb18da4878cd37335faa899e910be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="working-with-user-defaults"></a>ユーザーの既定値の操作
 
-_この記事では、Xamarin の iOS アプリまたは拡張機能に既定の設定を保存する NSUserDefault の扱いについて説明します。_
+_この記事では、Xamarin.iOS アプリや拡張機能に既定の設定を保存する NSUserDefault の扱いについて説明します。_
 
 
-`NSUserDefaults`クラスは、ios アプリと拡張機能は、システム全体の既定のシステムとの対話方法を提供します。 既定でシステムを使用すると、ユーザーはアプリの動作または (アプリのデザインに基づく) の設定に応じたスタイル設定を構成できます。 たとえば、ヤード メトリックの vs でのデータを表示または指定した UI のテーマを選択します。
+`NSUserDefaults`クラスは、ios アプリと拡張機能は、システム全体の既定値は、システムとの対話方法を提供します。 既定でシステムを使用すると、ユーザーはアプリの動作または (アプリのデザインに基づく) の設定に応じたスタイル設定を構成できます。 たとえば、ヤード メトリックの vs でのデータを表示または指定した UI のテーマを選択します。
 
-ときにアプリ グループを使用する`NSUserDefaults`も、特定のグループ内でのアプリ (または拡張機能) の間の通信する方法を提供します。
+アプリ グループを使用すると`NSUserDefaults`も、特定のグループ内でのアプリ (または拡張機能) の間の通信する方法を提供します。
 
 <a name="About-User-Defaults" />
 
@@ -32,7 +32,7 @@ _この記事では、Xamarin の iOS アプリまたは拡張機能に既定の
 アプリが最初に実行されるときに`NSUserDefaults`アプリのユーザーの既定値はデータベースからのキーと値を読み取り、値が必要を開くと、毎回データベースの読み取りを回避するメモリにキャッシュに保持します。 
 
 > [!IMPORTANT]
-> **注**: Apple が不要になった、開発者が呼び出すことを推奨、`Synchronize`メソッドを直接データベースにメモリ内キャッシュを同期します。 代わりに、自動的に呼び出されます、メモリ内キャッシュの同期を保つ、ユーザーの既定のデータベースに定期的にします。
+> **注**: Apple 不要になったことをお勧めする開発者の呼び出し、`Synchronize`メソッドを直接データベースにメモリ内キャッシュを同期します。 代わりに、自動的に呼び出されます、メモリ内キャッシュの同期を保つ、ユーザーの既定のデータベースに定期的にします。
 
 `NSUserDefaults`クラスには読み書きに基本設定の値の一般的なデータ型などのいくつかの便利なメソッドが含まれています: 文字列、整数、浮動小数点、ブール値および Url。 使用して他の種類のデータをアーカイブする`NSData`からの読み取りまたはユーザーの既定値はデータベースに書き込まれます。 詳細については、Apple を参照してください[好みや設定プログラミング ガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)です。
 
@@ -46,7 +46,7 @@ _この記事では、Xamarin の iOS アプリまたは拡張機能に既定の
 - アプリのバンドル Id ドメイン。
 - `NSGlobalDomain`のすべてのアプリで共有される、既定の設定で構成されます。
 - 各ユーザーのドメインを別の言語を優先します。
-- `NSRegistationDomain`をアプリに検索は、常に成功したことを確認して変更できる一時的な既定値のセットを使用します。
+- `NSRegistrationDomain`をアプリに検索は、常に成功したことを確認して変更できる一時的な既定値のセットを使用します。
 
 ユーザーの既定の共有インスタンスにアクセスするには、次のコードを使用します。
 
@@ -59,11 +59,11 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 ## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>アプリ グループ NSUserDefaults インスタンスにアクセスします。
 
-アプリ グループを使用して前に、述べたよう`NSUserDefaults`特定のグループ内でのアプリ (または拡張機能) 間の通信に使用できます。 アプリ グループと必要なアプリ Id が構成されている正しくのことを確認する必要が最初に、**証明書、識別子、およびプロファイル**セクションで[iOS Dev Center](https://developer.apple.com/devcenter/ios/)がインストールされていると開発環境でします。
+アプリ グループを使用して前に、述べたよう`NSUserDefaults`特定のグループ内でのアプリ (または拡張機能) 間の通信に使用できます。 アプリ グループと必要なアプリ Id が構成されている正しくのことを確認する必要が最初に、**証明書、識別子、およびプロファイル**セクションで[iOS Dev Center](https://developer.apple.com/devcenter/ios/)がインストールされていると開発環境です。
 
-アプリや拡張機能プロジェクトは、上記で作成した有効なアプリ Id のいずれかを指定する必要があります次を`Entitlements.plist`ファイルに有効になっているし、指定されたアプリ グループがあり、アプリ バンドルに含まれるので取得します。
+次に、アプリや拡張機能プロジェクトが必要、上記で作成されたアプリの有効な Id のいずれかと`Entitlements.plist`アプリ グループを有効になっているし、指定したアプリ バンドルに含まれるファイルにがします。
 
-このすべての共有アプリ グループ ユーザーの既定値を次のコードを使用してアクセスできます。
+このすべて、共有アプリ グループ ユーザーの既定値アクセスできるよう、次のコードを使用します。
 
 ```csharp
 // Get App Group User Defaults

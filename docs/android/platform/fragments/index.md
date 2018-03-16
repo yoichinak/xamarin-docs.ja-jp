@@ -7,12 +7,12 @@ ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 8595ecb63e49a4768120e98f41826b74c2dd43e4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 0a9a1f41810fe113ac3d88d2533411ac537840ab
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="fragments"></a>フラグメント
 
@@ -53,9 +53,9 @@ Android を調整して、これらすべてのフラグメントを管理アク
 
 [![Android SDK Manager での API レベルを選択します。](images/02.png)](images/02.png#lightbox)
 
-フラグメントは Xamarin.Android 4.0 で使用可能な以上です。 Xamarin.Android アプリケーションを対象にするには、少なくとも API レベル (Android 3.0) の 11 以上のフラグメントを使用するためにします。 次のように、プロジェクトのオプションでターゲット フレームワークを設定する可能性があります。
+フラグメントは Xamarin.Android 4.0 で使用可能な以上です。 Xamarin.Android アプリケーションを対象にするには、少なくとも API レベル (Android 3.0) の 11 以上のフラグメントを使用するためにします。 ターゲット フレームワークは、プロジェクト プロパティを次に示すように設定することがあります。
 
-[![プロジェクトのオプションで、ターゲット フレームワーク API レベルを設定](images/03.png)](images/03.png#lightbox)
+[![プロジェクトのオプションで、ターゲット フレームワーク API レベルを設定](images/03-sml.png)](images/03.png#lightbox)
 
 Android のサポート パッケージと Xamarin.Android 4.2 を使用して Android、またはそれ以降の旧バージョンでフラグメントを使用して行うことができます。 これを行う方法は、ドキュメントのこのセクションで詳しく説明します。
 
