@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ee98e19ce59b8a61040941d9851b8fbf965c3b17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 Xamarin.Android 4.10 では、`_Gdb` MSBuild ターゲットを使用することによる `gdb` の使用の部分的なサポートが導入されました。 
 
 > [!NOTE]
-> **注:** `gdb` のサポートには、Android NDK のインストールが必要になります。
+> `gdb` のサポートには、Android NDK のインストールが必要になります。
 
 `gdb` を使用する場合、次の 3 つの方法があります。
 
@@ -59,7 +59,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 
 
 > [!NOTE]
-> **注:** `gdb-symbols` ディレクトリの内容は、展開された Android ターゲットに関連付けられており、ターゲットを変更した場合、自動的に置き換えられません  (これをバグと見なします)。Android ターゲット デバイスを変更する場合は、このディレクトリを手動で削除する必要があります。
+> `gdb-symbols` ディレクトリの内容は、展開された Android ターゲットに関連付けられており、ターゲットを変更した場合、自動的に置き換えられません  (これをバグと見なします)。Android ターゲット デバイスを変更する場合は、このディレクトリを手動で削除する必要があります。
 
 最後に、生成された `gdb` コマンドをコピーし、シェルで実行します。
 

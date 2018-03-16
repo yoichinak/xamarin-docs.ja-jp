@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: fec57fbeb201d55e887969c5a50baf6a76c10e17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e09bb1150c3cc53104b41b75a2c3d4d2db4e5ff
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="publishing-independently"></a>個別公開
 
 既存の Android マーケットプレースを使用しないで、アプリケーションを公開することができます。 このセクションでは、これらの他の公開方法、および Xamarin.Android のライセンス レベルについて説明します。
 
-<a name="Xamarin_Licensing" />
 
 ## <a name="xamarin-licensing"></a>Xamarin のライセンス
 
@@ -31,36 +30,32 @@ ms.lasthandoff: 02/27/2018
 
 [visualstudio.com](https://www.visualstudio.com/xamarin/) にアクセスして Community Edition をダウンロードするか、Professional Edition と Enterprise Edition の購入に関する詳細を確認します。
 
-<a name="Allow_Installation_from_Unknown_Sources" />
 
 ## <a name="allow-installation-from-unknown-sources"></a>不明なソースからのインストールを許可する
 
 既定では、Android は、ユーザーが Google Play 以外の場所からアプリケーションをダウンロードやインストールを行えないようにしています。 マーケットプレース以外のソースからのインストールを許可するには、ユーザーはアプリケーションをインストールする前に、デバイス上で *[不明なソース]* の設定を有効にする必要があります。 この設定は、次の図に示すように、**[設定] > [セキュリティ]** で確認できます。
 
-[ ![セキュリティ設定画面](publishing-independently-images/settings.png)](publishing-independently-images/settings.png)
+[![セキュリティ設定画面](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 
 > [!IMPORTANT]
-> **注:** ネットワーク プロバイダーは、この設定に関係なく、不明なソースからのアプリケーションのインストールを禁止する可能性があります。
+> ネットワーク プロバイダーは、この設定に関係なく、不明なソースからのアプリケーションのインストールを禁止する可能性があります。
 
 
-<a name="Publishing_by_E-Mail" />
 
 ## <a name="publishing-by-e-mail"></a>電子メールでの発行
 
 電子メールにリリース APK を添付するのは、アプリケーションをユーザーに配布する迅速かつ簡単な方法です。 ユーザーが Android を利用したデバイスで電子メールを開くと、Android は APK 添付ファイルを認識し、次の画像のような **[インストール]** ボタンが表示されます。
 
-[ ![添付ファイルの [インストール] ボタン](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png)
+[![添付ファイルの [インストール] ボタン](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 電子メールによる配布が簡単ですが、プライバシーや承認されていない配布に対してほとんど保護を提供しません。 アプリケーションの受信者が少なく、受信者がアプリケーションを配布しないことが信頼できる場合の予備の方法として最適です。
 
-<a name="Publishing_by_Web" />
 
 ## <a name="publishing-by-web"></a>Web での発行
 
 Web サーバーでアプリケーションを配布することができます。 これは、Web サーバーにアプリケーションをアップロードして、ユーザーにダウンロードのリンクを提供することで完了します。 Android を利用したデバイスでリンクを参照して、アプリケーションをダウンロードする場合、アプリケーションはダウンロードが完了すると、自動的にインストールされます。
 
-<a name="Manually_Installing_an_APK" />
 
 ## <a name="manually-installing-an-apk"></a>APK の手動インストール
 

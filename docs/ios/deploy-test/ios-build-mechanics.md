@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b752ebdd1a98d5258cc27b2221d33e07fa04aa46
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 44813ea6c1e795889444d949ca2706c0f50483c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-build-mechanics"></a>iOS ビルドのしくみ
 
@@ -33,7 +33,7 @@ Visual Studio for Mac 内で診断用 MSBuild 出力を有効にするには:
 
 1. **[Visual Studio for Mac]、[環境設定]** の順にクリックします。
 2. 左側のツリー ビューで、**[プロジェクト]、[ビルド]** の順に選択します。
-3. 右側のパネルで、次のようにログ詳細度ドロップダウンを **[診断]** に設定します。 [ ![](ios-build-mechanics-images/image2.png "ログ詳細度を設定する")](ios-build-mechanics-images/image2.png)
+3. 右側のパネルで、次のようにログ詳細度ドロップダウンを **[診断]** に設定します。[![](ios-build-mechanics-images/image2.png "ログ詳細度を設定する")](ios-build-mechanics-images/image2.png#lightbox)
 4. **[OK]** をクリックします。
 5. Visual Studio for Mac を再起動します。
 6. パッケージから不要な要素を取り除き、再ビルドします。
@@ -46,7 +46,7 @@ Visual Studio 内で診断 MSBuild 出力を有効にするには:
 
 1. **[ツール]、[出力]** の順にクリックします。
 2. 左側のツリー ビューで、**[プロジェクトおよびソリューション]、[ビルド/実行]** の順に選択します。
-3. 右側のパネルで、*MSBuild ビルド出力の詳細度ドロップダウン*を **[診断]** に設定します。 [ ![](ios-build-mechanics-images/image2-vs.png "MSBuild ビルド出力の詳細度を設定する")](ios-build-mechanics-images/image2-vs.png)
+3. 右側のパネルで、*MSBuild ビルド出力の詳細度ドロップダウン*を **[診断]** に設定します。 [![](ios-build-mechanics-images/image2-vs.png "MSBuild ビルド出力の詳細度を設定する")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. **[OK]** をクリックします。
 5. パッケージから不要な要素を取り除き、再ビルドします。
 6. 診断出力は [出力] パネルに表示されます。
@@ -101,7 +101,7 @@ Apple は iOS 開発用のシミュレーターを提供しており、互換性
 
 次のスクリーンショットでは、iOS オプションでシミュレーターに前述のオプションを設定している様子を確認できます。
 
-[ ![](ios-build-mechanics-images/image3.png "オプションを設定する")](ios-build-mechanics-images/image3.png)
+[![](ios-build-mechanics-images/image3.png "オプションを設定する")](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>デバイス関連のヒント
 
@@ -155,7 +155,7 @@ iOS アプリを配置するとき、さまざまなビルド構成が与えら�
 
 次のスクリーンショットでは、iOS オプションでシミュレーターに前述のオプションを設定している様子を確認できます。
 
-[ ![](ios-build-mechanics-images/image4.png "オプションを設定する")](ios-build-mechanics-images/image4.png)
+[![](ios-build-mechanics-images/image4.png "オプションを設定する")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>リンカーを使用する
 

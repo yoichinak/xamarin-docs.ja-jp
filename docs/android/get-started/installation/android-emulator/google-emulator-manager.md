@@ -7,21 +7,20 @@ ms.assetid: 0C0BBEC0-C84A-4558-B905-4EF81FCD62F9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/22/2017
-ms.openlocfilehash: f275ff6c7d3e6eeec5eb3878cc39633d70238f66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1e90ebe55dbec9fdcc57b9eaab99e614fdc5cbbc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="google-emulator-manager"></a>Google エミュレーター マネージャー
 
 ハードウェアの高速化が有効になっていることを確認した後は (「[Android Emulator ハードウェアの高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)」を参照)、アプリのテストとデバッグに使う仮想デバイスを作成します。 従来の Google エミュレーター マネージャー (*Android 仮想デバイス (AVD) マネージャー* とも呼ばれます) を使用して、Android SDK エミュレーターで使用するための仮想デバイスを作成することができます。
 
 > [!NOTE]
-> **注:** Android 8.0 Oreo を対象とする場合は、[Xamarin Android Device Manager](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) を使用して仮想デバイスを作成および構成する必要があります。
+> Android 8.0 Oreo を対象とする場合は、[Xamarin Android Device Manager](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) を使用して仮想デバイスを作成および構成する必要があります。
 
-<a name="sysimg" />
 
 ## <a name="installing-system-images"></a>システム イメージのインストール
 
@@ -46,11 +45,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android エミュレーターの Android 6.0 x86 システム イメージの選択](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png)
+[![Android エミュレーターの Android 6.0 x86 システム イメージの選択](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Android エミュレーターの Android 6.0 x86 システム イメージの選択](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png)
+[![Android エミュレーターの Android 6.0 x86 システム イメージの選択](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png#lightbox)
 
 -----
 
@@ -69,23 +68,21 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 これらのシステム イメージがインストールされたら、仮想デバイスの構成 (これについては次のセクションで説明します) 時に適切な API レベルと CPU/ABI を選択して、**x86** ベースの Android 仮想デバイスを作成できます。
 
 
-<a name="virtualdevice" />
-
 ## <a name="configuring-virtual-devices"></a>仮想デバイスの構成
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 仮想デバイスは、**Android エミュレーター マネージャー** (_Android 仮想デバイス マネージャー_または _AVD マネージャー_ともいう) を使用して構成されます。 Visual Studio から Android エミュレーター マネージャーを起動するには、次のように、ツール バーの **Android エミュレーター マネージャー**のアイコンをクリックします。
 
-[ ![AVD アイコンの場所](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png)
+[![AVD アイコンの場所](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png#lightbox)
 
 メニュー バーから Android エミュレーター マネージャーを起動することもできます。その場合は、次のように、**[ツール]、[Android]、[Android エミュレーター マネージャー]** の順に選択します。
 
-[![Android エミュレーター マネージャーのメニュー項目の場所](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png)
+[![Android エミュレーター マネージャーのメニュー項目の場所](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png#lightbox)
 
 **[Android 仮想デバイス (AVD) マネージャー]** ダイアログには、既存の Android 仮想デバイスのリストが表示されます。
 
-[![Android 仮想デバイス マネージャー](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png)
+[![Android 仮想デバイス マネージャー](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -93,17 +90,16 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 メニュー バーから Android エミュレーター マネージャーを起動できます。その場合は、**[ツール]、[Google エミュレーター マネージャー]** の順に選択します。
 
-[![Android エミュレーター マネージャーのメニュー項目の場所](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png)
+[![Android エミュレーター マネージャーのメニュー項目の場所](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png#lightbox)
 
 **[Android 仮想デバイス (AVD) マネージャー]** ダイアログには、既存の Android 仮想デバイスのリストが表示されます。
 
-[![Android 仮想デバイス マネージャー](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png)
+[![Android 仮想デバイス マネージャー](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png#lightbox)
 
 -----
 
 さまざまなデバイスの特性と API レベルで新しい仮想デバイス イメージを作成することができます。カスタム デバイス定義と仮想デバイスの作成方法については、次のセクションで説明します。
 
-<a name="custom-def" />
 
 ### <a name="creating-a-custom-device-definition"></a>カスタム デバイス定義の作成
 
@@ -111,11 +107,11 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Nexus 6 に基づくカスタム デバイス定義](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png)
+[![Nexus 6 に基づくカスタム デバイス定義](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Nexus 6 に基づくカスタム デバイス定義](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png)
+[![Nexus 6 に基づくカスタム デバイス定義](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png#lightbox)
 
 -----
 
@@ -153,11 +149,11 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デバイス リストに追加された MyNexus](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png)
+[![デバイス リストに追加された MyNexus](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デバイス リストに追加された MyNexus](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png)
+[![デバイス リストに追加された MyNexus](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png#lightbox)
 
 -----
 
@@ -165,16 +161,15 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デバイスのプルダウン メニューに追加された MyNexus](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png)
+[![デバイスのプルダウン メニューに追加された MyNexus](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デバイスのプルダウン メニューに追加された MyNexus](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png)
+[![デバイスのプルダウン メニューに追加された MyNexus](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png#lightbox)
 
 -----
 
 
-<a name="cloning" />
 
 ### <a name="cloning-a-device-definition"></a>デバイス定義の複製
 
@@ -182,11 +177,11 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![使用可能なデバイス定義のリスト](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png)
+[![使用可能なデバイス定義のリスト](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![使用可能なデバイス定義のリスト](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png)
+[![使用可能なデバイス定義のリスト](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png#lightbox)
 
 -----
 
@@ -194,11 +189,11 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デバイスの複製ダイアログ](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png)
+[![デバイスの複製ダイアログ](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デバイスの複製ダイアログ](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png)
+[![デバイスの複製ダイアログ](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png#lightbox)
 
 -----
 
@@ -210,7 +205,7 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Custom Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png)
+[![Custom Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png#lightbox)
 
 -----
 
@@ -218,11 +213,11 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![新しいユーザーのデバイス定義として表示されている Nexus 5 Custom](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png)
+[![新しいユーザーのデバイス定義として表示されている Nexus 5 Custom](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![新しいユーザーのデバイス定義として表示されている Nexus 5 Custom](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png)
+[![新しいユーザーのデバイス定義として表示されている Nexus 5 Custom](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png#lightbox)
 
 -----
 
@@ -230,11 +225,11 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Nexus 5 Custom ユーザー デバイス定義から AVD を作成する](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png)
+[![Nexus 5 Custom ユーザー デバイス定義から AVD を作成する](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Nexus 5 Custom ユーザー デバイス定義から AVD を作成する](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png)
+[![Nexus 5 Custom ユーザー デバイス定義から AVD を作成する](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png#lightbox)
 
 -----
 
@@ -242,11 +237,11 @@ Android Wear 用アプリを開発している場合は、次のシステム イ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![デバイスのドロップダウン メニューに追加された新しいカスタム AVD](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png)
+[![デバイスのドロップダウン メニューに追加された新しいカスタム AVD](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![デバイスのドロップダウン メニューに追加された新しいカスタム AVD](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png)
+[![デバイスのドロップダウン メニューに追加された新しいカスタム AVD](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png#lightbox)
 
 -----
 

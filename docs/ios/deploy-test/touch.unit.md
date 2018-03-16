@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a113a386f1312253fda8913cea3cb608a65e1061
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f7c743bab2a6acb3dcd57ebca207957f983e0c0f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unit-testing"></a>単体テスト
 
@@ -119,15 +119,15 @@ namespace Fixtures {
 
 テスト ランナーでは、登録されるテストを確認し、実行可能なテストを個別に選択できます。
 
-[ ![](touch.unit-images/02.png "登録済みのテストの一覧")](touch.unit-images/02.png) 
+[![](touch.unit-images/02.png "登録済みのテストの一覧")](touch.unit-images/02.png#lightbox) 
 
-[ ![](touch.unit-images/03.png "個々のテキスト")](touch.unit-images/03.png) 
+[![](touch.unit-images/03.png "個々のテキスト")](touch.unit-images/03.png#lightbox) 
 
-[ ![](touch.unit-images/04.png "実行結果")](touch.unit-images/04.png)
+[![](touch.unit-images/04.png "実行結果")](touch.unit-images/04.png#lightbox)
 
 個々のテスト フィクスチャを実行する場合は、入れ子ビューからテスト フィクスチャを選択します。あるいは、"すべて実行" ですべてのテストを実行することもできます。 既定のテストを実行する場合、成功したテスト、失敗したテストおよび無視されたテストが 1 つずつ含まれることが想定されます。 そのレポートは次のようになり、失敗したテストに直接ドリルダウンして、失敗に関する詳細情報を見つけることができます。
 
-[ ![](touch.unit-images/05.png "サンプル レポート")](touch.unit-images/05.png) [ ![](touch.unit-images/06.png "サンプル レポート")](touch.unit-images/06.png) [ ![](touch.unit-images/07.png "サンプル レポート")](touch.unit-images/07.png)
+[![](touch.unit-images/05.png "サンプル レポート")](touch.unit-images/05.png#lightbox)[![](touch.unit-images/05.png "サンプル レポート")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "サンプル レポート")](touch.unit-images/05.png#lightbox)
 
 IDE のアプリケーション出力ウィンドウで、実行中のテストとその現在の状態を確認することもできます。
 

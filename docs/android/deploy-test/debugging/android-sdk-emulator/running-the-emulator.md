@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2995d9126617a767013ed1f5cb808f22ce0fd2da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 89768d2562814091f0e5894c4af2edd67d68cb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="running-the-android-sdk-emulator"></a>Android SDK エミュレーターの実行
 
@@ -32,13 +32,13 @@ Visual Studio には、デバイスのドロップダウン メニューに表�
 
 -   **VisualStudio\_android-23\_x86\_tablet** 
 
-[ ![仮想デバイス](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png)
+[![仮想デバイス](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png#lightbox)
 
 通常、電話アプリをテストしてデバッグする場合は、**VisualStudio\_android-23\_x86\_phone** 仮想デバイスを選択します。 これらの構成済み仮想デバイスのいずれかが要件を満たしている (つまり、アプリのターゲット API レベルと一致している) 場合は、「[エミュレーターの起動](#launching)」に進み、エミュレーターでのアプリの実行を開始します  (Android API レベルについてまだよく理解していない場合は、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」 (Android API レベルについて) を参照してください)。
 
 Xamarin.Android プロジェクトで、使用可能な仮想マシンと互換性のないターゲット フレームワーク レベルを使用している場合は、ドロップダウン メニューの **[サポートされていないデバイス]** に使用不可の仮想デバイスがリストされます。 たとえば、以下のプロジェクトでは、ターゲット フレームワークが、既定で提供される **Android 6.0** 仮想デバイスと互換性のない **Android 7.1 Nougat (API 25)** に設定されています。
 
-[ ![互換性のない仮想デバイス](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png)
+[![互換性のない仮想デバイス](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png#lightbox)
 
 使用可能な仮想デバイスの API レベルと一致するように、**[最小 Android ターゲットの変更]** をクリックして、プロジェクトの最小 Android バージョンを変更することができます。 また、**Android エミュレーター マネージャー**を使用して、後述の「[仮想デバイスの構成](#virtualdevice)」で説明するターゲット API レベルをサポートする新しい仮想デバイスを作成することもできます。 新しい API レベル用に仮想デバイスを構成するには、まず、その API レベルに対応するシステム イメージをインストールする必要があります。これについては、次のセクションで説明します。
 
@@ -50,7 +50,7 @@ Visual Studio for Mac には、デバイスのドロップダウン メニュー
 
 -   **Android\_ARMv7a**
 
-[ ![仮想デバイス](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png)
+[![仮想デバイス](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png#lightbox)
 
 通常、電話アプリをテストしてデバッグする場合は、**Android\_Accelerated\_x86** 仮想デバイスを選択します。 この構成済み仮想デバイスが要件を満たしている (つまり、アプリのターゲット API レベルと一致している) 場合は、「[エミュレーターの起動](#launching)」に進み、エミュレーターでのアプリの実行を開始します  (Android API レベルについてまだよく理解していない場合は、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」 (Android API レベルについて) を参照してください)。
 
@@ -73,11 +73,11 @@ IDE の上部近くにドロップダウン メニューがあります。この
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![[デバッグ] および [リリース] モードと [再生] ボタン](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png)
+[![[デバッグ] および [リリース] モードと [再生] ボタン](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![[デバッグ] および [リリース] モードと [再生] ボタン](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png)
+[![[デバッグ] および [リリース] モードと [再生] ボタン](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png#lightbox)
 
 -----
 

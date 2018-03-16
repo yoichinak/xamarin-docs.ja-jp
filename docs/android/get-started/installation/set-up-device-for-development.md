@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6327c00253036f5ede8bf1934f56e6d4bb8f0ecd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64036af82ea49ad4d758a89767ff0da02eef094f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="set-up-device-for-development"></a>開発用のデバイスの設定
 
@@ -28,13 +28,11 @@ _この記事では、Android デバイスを Xamarin.Android アプリケーシ
 
 各手順については、以下のセクションで詳しく説明します。
 
-<a name="EnableDebugging" />
 
 ## <a name="enable-debugging-on-the-device"></a>デバイスでのデバッグを有効にする
 
 任意の Android デバイスを使用して、Android アプリケーションをテストすることができます。 ただし、デバッグを行う前に、デバイスを正しく構成する必要があります。 関係する手順は、デバイスで実行されている Android のバージョンによって多少異なります。
 
-<a name="EnableDebuggingAndroid4" />
 
 ### <a name="android-40-to-android-41"></a>Android 4.0 から Android 4.1
 
@@ -46,23 +44,21 @@ Android 4.0.x から Android 4.1.x の場合は、以下の手順に従ってデ
 
 このスクリーン ショットは、Android 4.0.3 を実行しているデバイスの **[開発者向けオプション]** 画面を示しています。
 
-[![開発者向けオプション](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png)
+[![開発者向けオプション](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png#lightbox)
 
-<a name="EnableDebuggingAndroid42" />
 
 ### <a name="android-42-and-higher"></a>Android 4.2 以降
 
 Android 4.2 以降では、**[開発者向けオプション]** は既定で非表示になります。 これを使用可能にするには、**[設定]、[端末情報]** の順に移動し、**[ビルド番号]** 項目を 7 回タップして **[開発者向けオプション]** タブを表示します。
 
-[![ビルド番号項目](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png)
+[![ビルド番号項目](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
 
 **[設定]、[システム]** の **[開発者向けオプション]** タブが使用可能になったら、それを開いて開発者向け設定を表示します。
 
-[![開発者向け設定画面](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png)
+[![開発者向け設定画面](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png#lightbox)
 
 ここで、USB デバッグやスリープ モードにしないなどの開発者向けオプションを有効にすることができます。
 
-<a name="USB_Debugging" />
 
 ## <a name="install-usb-drivers"></a>USB ドライバーをインストールする
 
@@ -71,13 +67,12 @@ Android 4.2 以降では、**[開発者向けオプション]** は既定で非�
 Windows コンピューターが USB で接続された Android デバイスを認識する前に、いくつかの追加のドライバーをインストールする必要がある場合があります。
 
 > [!NOTE]
-> **注:** これらは、Google Nexus デバイスの設定手順であり、参照として提供されるものです。 特定のデバイスの手順は異なる場合がありますが、同様のパターンに従います。 何かお困りでしたら、インターネットで使用しているデバイスを検索してください。
+> これらは、Google Nexus デバイスの設定手順であり、参照として提供されるものです。 特定のデバイスの手順は異なる場合がありますが、同様のパターンに従います。 何かお困りでしたら、インターネットで使用しているデバイスを検索してください。
 
 **[Android SDK のインストール パス]\tools** ディレクトリの **android.bat** アプリケーションを実行します。 既定では、Xamarin.Android インストーラーは、Windows コンピューター上の次の場所に Android SDK を配置します。
 
     C:\Users\[username]\AppData\Local\Android\android-sdk
 
-<a name="Download_the_USB_Drivers" />
 
 ### <a name="download-the-usb-drivers"></a>USB ドライバーをダウンロードする
 
@@ -86,7 +81,7 @@ Google Nexus デバイス (Galaxy Nexus を除く) では、Google USB ドライ
 
 Android SDK マネージャーを起動し、以下のスクリーン ショットに示されているように、**Extras** フォルダーを展開して、**Google USB ドライバー** パッケージをインストールします。
 
-[![選択されている Google USB ドライバー パッケージ](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png)
+[![選択されている Google USB ドライバー パッケージ](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
 
 **[Google USB Driver]\(Google USB ドライバー\)** ボックスをオンにして、**[インストール]** ボタンをクリックします。
 次の場所にドライバー ファイルがダウンロードされます。
@@ -98,7 +93,6 @@ Xamarin.Android インストールの既定のパスは次のとおりです。
     C:\Users\[username]\AppData\Local\Android\android-sdk\extras\google\usb_driver
 
 
-<a name="Installing_the_USB_Driver" />
 
 ### <a name="installing-the-usb-driver"></a>USB ドライバーのインストール
 
@@ -122,7 +116,6 @@ Windows 7 でドライバーをインストールする場合は、次のよう�
 
 8.  **[次へ]** をクリックして、ドライバーをインストールします。
 
-<a name="Windows_8" />
 
 ### <a name="installing-unverified-drivers-in-windows-8"></a>Windows 8 での未確認ドライバーのインストール
 
@@ -140,7 +133,6 @@ Windows で未確認のドライバーをインストールするには、追加
 4.  **デバイス ドライバーをインストールする** - 前述のようにデバイス ドライバーをインストールします。
 
 
-<a name="ConnectDevice" />
 
 ## <a name="connect-the-device-to-the-computer"></a>デバイスをコンピューターに接続する
 
@@ -150,7 +142,6 @@ Windows で未確認のドライバーをインストールするには、追加
 
 -   **WiFi** - USB ケーブルを使用せずに、WiFi 経由で Android デバイスをコンピューターに接続することができます。 この方法は少し手間がかかりますが、USB ケーブルがない場合や、デバイスが離れた場所にあるため USB ケーブルで接続できない場合に便利です。 WiFi 経由の接続については、次のセクションで説明します。
 
-<a name="Debug_over_WiFi" />
 
 ### <a name="connecting-over-wifi"></a>WiFi 経由の接続
 
@@ -186,7 +177,6 @@ WiFi 経由でのデバッグが完了したら、以下のコマンドを使用
 
     adb devices
 
-<a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 

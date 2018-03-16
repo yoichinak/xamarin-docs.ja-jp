@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 423240949daf45d8d179a3ca9f89677f490cc24d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ad-hoc-distribution"></a>アドホック配布
 
@@ -51,15 +51,15 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 3. **+** ボタンをクリックして、新しい証明書を作成します。
 4. *[Production]\(運用\)* 見出しの下で、プログラム メンバーシップに応じて、**[In-House and Ad Hoc]\(社内およびアドホック\)** または **[App Store and Ad Hoc]\(App Store およびアドホック\)** を選択します。
 
-  [ ![](ad-hoc-distribution-images/cert-first-small.png "[In-House and Ad Hoc]\(社内およびアドホック\)、または [App Store and Ad Hoc]\(App Store およびアドホック\)")](ad-hoc-distribution-images/cert-first-large.png)
+  [![](ad-hoc-distribution-images/cert-first-small.png "[In-House and Ad Hoc]\(社内およびアドホック\)、または [App Store and Ad Hoc]\(App Store およびアドホック\)")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. [Continue]\(続行\) をクリックし、指示に従って Keychain Access を使用して証明書署名要求を作成します。
 
-  [ ![](ad-hoc-distribution-images/createcertmanually02.png "キーチェーン アクセスを使用して証明書署名要求を作成します")](ad-hoc-distribution-images/createcertmanually02.png)
+  [![](ad-hoc-distribution-images/createcertmanually02.png "キーチェーン アクセスを使用して証明書署名要求を作成します")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. 指示どおりに CSR を作成したら、[Continue]\(続行\) をクリックし、CSR を Member Center にアップロードします。
 
-  [ ![](ad-hoc-distribution-images/createcertmanually03.png "CSR を Member Center にアップロードします")](ad-hoc-distribution-images/createcertmanually03.png)
+  [![](ad-hoc-distribution-images/createcertmanually03.png "CSR を Member Center にアップロードします")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. [Generate]\(生成\) をクリックして証明書を作成します。
 8. 最後に、完成した証明書をダウンロードし、ファイルをダブルクリックしてインストールします。
@@ -67,9 +67,9 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 
 または、Xcode の [Preferences]\(環境設定\) ダイアログを使用して証明書を要求することができます。 この操作を行うには、次の手順に従います。
 
-1.   チームを選択し、**[Manage Certificates…]\(証明書の管理...\)** をクリックします。[ ![](ad-hoc-distribution-images/selectteam.png "チームの選択")](ad-hoc-distribution-images/selectteam.png)
+1.   チームを選択し、**[Manage Certificates…]\(証明書の管理...\)** をクリックします。[![](ad-hoc-distribution-images/selectteam.png "チームの選択")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   次に、**プラス (+)** ボタンをクリックして **[iOS App Store]** を選択します。[ ![](ad-hoc-distribution-images/selectcert.png "iOS App Store の選択")](ad-hoc-distribution-images/selectcert.png)
+2.   次に、**プラス (+)** ボタンをクリックして **[iOS App Store]** を選択します。[ ![](ad-hoc-distribution-images/selectcert.png "iOS App Store の選択")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,23 +91,23 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 
 配布プロファイルを作成するのに必要なコンポーネントがそろったら、次の手順に従って配布プロファイルを作成します。
 
-1. Apple Provisioning ポータルに戻り、**[Provisioning]\(プロビジョニング\)、[Distribution]\(配布\)** の順に選択します。[ ![](ad-hoc-distribution-images/distribute01.png "[Provisioning]\(プロビジョニング\) > [Distribution]\(配布\) の選択")](ad-hoc-distribution-images/distribute01.png)
+1. Apple Provisioning ポータルに戻り、**[Provisioning]\(プロビジョニング\)、[Distribution]\(配布\)** の順に選択します。[![](ad-hoc-distribution-images/distribute01.png "[Provisioning]\(プロビジョニング\) > [Distribution]\(配布\) の選択")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. **+** ボタンをクリックし、**アドホック**として作成する配布プロファイルの種類を選択します。
 
-    [ ![](ad-hoc-distribution-images/distribute02.png "アドホック配布の種類を作成します")](ad-hoc-distribution-images/distribute02.png)
+    [![](ad-hoc-distribution-images/distribute02.png "アドホック配布の種類を作成します")](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. **[Continue]\(続行\)** ボタンをクリックし、配布プロファイルを作成するアプリ ID をドロップダウン リストから選択します。
 
-    [ ![](ad-hoc-distribution-images/distribute03.png "ドロップダウン リストからアプリ ID を選択します")](ad-hoc-distribution-images/distribute03.png)
+    [![](ad-hoc-distribution-images/distribute03.png "ドロップダウン リストからアプリ ID を選択します")](ad-hoc-distribution-images/distribute03.png#lightbox)
 
 4. **[Continue]\(続行\)** ボタンをクリックし、アプリケーションに署名するために必要な配布証明書を選択します。
 
-    [ ![](ad-hoc-distribution-images/distribute04.png "アプリケーションに署名するために必要な配布証明書を選択します")](ad-hoc-distribution-images/distribute04.png)
+    [ ![](ad-hoc-distribution-images/distribute04.png "アプリケーションに署名するために必要な配布証明書を選択します")](ad-hoc-distribution-images/distribute04.png#lightbox)
 
 6. **[Continue]\(続行\)** ボタンをクリックし、新しい配布プロファイルの**名前**を入力します。
 
-    [ ![](ad-hoc-distribution-images/distribute06.png "新しい配布プロファイルの名前を入力します")](ad-hoc-distribution-images/distribute06.png)
+    [![](ad-hoc-distribution-images/distribute06.png "新しい配布プロファイルの名前を入力します")](ad-hoc-distribution-images/distribute06.png#lightbox)
 
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 

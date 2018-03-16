@@ -2,16 +2,16 @@
 title: fastlane for iOS - match
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 435ba4c3799288724625ca06016770b3ecad56a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d92f820e22277148b4de3ff87e3fdaca0f573f52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane for iOS - match
 
@@ -56,15 +56,15 @@ match はコード署名証明書およびプロプロビジョニング ファ�
 
 プロンプトが表示されたら、Git リポジトリの URL を入力します。
 
- [ ![](match-images/fastlane-image7.png "Git リポジトリの URL を入力します")](match-images/fastlane-image7.png)
+ [![](match-images/fastlane-image7.png "Git リポジトリの URL を入力します")](match-images/fastlane-image7.png#lightbox)
 
 この URL は、次の図のように、github.com の **[Clone or Download]\(複製またはダウンロード\)** ボタンをクリックすることで確認およびコピーできます。
 
-[ ![](match-images/fastlane-image6.png "github.com の [Clone or Download]\(複製またはダウンロード\) ボタンの下の URL")](match-images/fastlane-image6.png)
+[![](match-images/fastlane-image6.png "github.com の [Clone or Download]\(複製またはダウンロード\) ボタンの下の URL")](match-images/fastlane-image6.png#lightbox)
 
 プロジェクトを初期化することで matchfile が作成されます。これは環境変数を match ツールに渡すために編集可能なテキスト ファイルです。 matchfile の例を次に示します。
 
-[ ![](match-images/fastlane-image8.png "matchfile の例")](match-images/fastlane-image8.png)
+[![](match-images/fastlane-image8.png "matchfile の例")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -88,7 +88,7 @@ match はコード署名証明書およびプロプロビジョニング ファ�
 - 基本的な手順が記載された Readme
 - match のバージョン
 
-[ ![](match-images/fastlane-image9.png "Git リポジトリのプロジェクト構造")](match-images/fastlane-image9.png)
+[![](match-images/fastlane-image9.png "Git リポジトリのプロジェクト構造")](match-images/fastlane-image9.png#lightbox)
 
 プロビジョニング プロファイルは `~/Library/MobileDevice/Provisioning Profiles` にインストールされます。 証明書と秘密キーは、キーチェーンに直接インストールされます。
 

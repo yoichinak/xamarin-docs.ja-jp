@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/20/2017
-ms.openlocfilehash: f1e7e36dfa1bfe122084f0525d83f06760ca1fe0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4ed2df994ace7f6de5ade78577e759bb811565c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-licensing-services"></a>Google ライセンス サービス
 
@@ -26,7 +26,7 @@ Google ライセンスは、各応答が Google Play サーバーとアプリケ
 
 Google ライセンスを実装したアプリケーションは、デバイス上の Google Play アプリケーションによってホストされるサービスへの要求を作成します。 次に、Google Play は、ライセンスの状態に応答する、Google ライセンス サーバーにこの要求を送信します。 
 
-[ ![ライセンス サーバーのワークフロー図](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png)
+[![ライセンス サーバーのワークフロー図](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 上の図は、このワークフローを示しています。 
 
@@ -36,7 +36,6 @@ Google ライセンスを実装したアプリケーションは、デバイス�
 
 また、Google ライセンス サービスは、APK 拡張ファイルの主要なコンポーネントでもあります (このドキュメントで後述されます)。 APK 拡張ファイルでは、Google ライセンス サービスを使用して、ダウンロードされる拡張ファイルの URL を取得します。
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>必要条件
 

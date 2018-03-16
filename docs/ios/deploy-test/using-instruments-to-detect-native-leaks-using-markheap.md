@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fec6fca0bf7930a59a6927557786a3ed7a412da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a5dc7839b1669e51e79efc0f02111eae8987b95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Instruments を使用した Xamarin.iOS アプリケーションのプロファイリング
 
@@ -38,13 +38,13 @@ Xcode Instruments は Mac でのみ実行されます。
 
 Instruments が開き、次のダイアログが表示されます。
 
- [ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "プロファイリング テンプレートを選択する")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "プロファイリング テンプレートを選択する")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 **[Allocations]\(割り当て\)** テンプレートをクリックして選択します。 他のテンプレートも有効ですが、この記事では **Allocations** プロファイル テンプレートについてのみ説明します。
 
 次に、ウィンドウの上部にあるメニューを使用して、デバイスとアプリケーションを選択します。
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "デバイスとアプリケーションを選択する")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "デバイスとアプリケーションを選択する")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 ウィンドウの上部にあるメニューで iOS デバイスを選択し、その横でプロファイルするアプリケーションを選択します (上記のスクリーン ショットの **[MemoryDemo]**)。
 
@@ -52,13 +52,13 @@ Instruments が開き、次のダイアログが表示されます。
 
 **[選択]** ボタンをクリックすると、次の画面が表示されます。
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "プロファイリング インターフェイス")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "プロファイリング インターフェイス")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 レコード ボタン (左上の赤い円) をクリックしてプロファイリングを開始します。
 
 次のスクリーンショットは、**Instruments** を使用したプロファイリングの例を示しています。
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Instruments によるプロファイリング例")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Instruments によるプロファイリング例")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 

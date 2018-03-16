@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: baf1ae7d4cc533af0db482e8d7c31fc3c8b4edbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4e93696f8eef44030ffacbdbaa8ebcd860a402f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="free-provisioning"></a>無料プロビジョニング
 
@@ -43,29 +43,29 @@ Apple Developer アカウントを使用しないプロビジョニングは Xco
 2. Xcode を開き、**[Xcode]、[Preferences]\(設定\)** の順に参照します。
 3. **[Accounts]**\(アカウント\) で **+** ボタンを使用して既存の Apple ID を追加します。 次のスクリーンショットのようになります。
 
-  [ ![](free-provisioning-images/launchapp1.png "Xcode [Preferences]\(設定\) [Accounts]\(アカウント\)")](free-provisioning-images/launchapp1.png)
+  [![](free-provisioning-images/launchapp1.png "Xcode [Preferences]\(設定\) [Accounts]\(アカウント\)")](free-provisioning-images/launchapp1.png#lightbox)
 
 4. 展開する iOS デバイスを接続し、Xcode で新しい空白で単一ビューの iOS プロジェクトを作成します。 **[Team]**\(チーム\) ドロップダウンを、追加した Apple ID に設定します。 Apple ID は `your name (Personal Team - your Apple ID)` のような形式です。
 
-  [ ![](free-provisioning-images/launchapp2.png "署名 ID を作成する")](free-provisioning-images/launchapp2.png)
+  [![](free-provisioning-images/launchapp2.png "署名 ID を作成する")](free-provisioning-images/launchapp2.png#lightbox)
 
 5. **[General]\(全般\) の [Identity]\(ID\)** セクションで、バンドル ID が Xamarin.iOS のバンドル ID と_完全に_一致することを確認し、展開対象の数が接続されている iOS デバイス数以下であることを確認します。 Xcode でプロビジョニング プロファイルを作成するにはアプリ ID を指定する必要があるので、この手順はとても重要です。
 
-  [![](free-provisioning-images/launchapp5.png "明示的なアプリ ID でプロビジョニング プロファイルを作成する")](free-provisioning-images/launchapp5.png)
+  [![](free-provisioning-images/launchapp5.png "明示的なアプリ ID でプロビジョニング プロファイルを作成する")](free-provisioning-images/launchapp5.png#lightbox)
 
 6. [Signing]\(署名\) セクションで **[Automatically Manage Signing]**\(署名の自動管理\) を選択し、ドロップダウン リストから自分のチームを選択します。
 
-  [![](free-provisioning-images/launchapp6.png "[Automatically Manage Signing]\(署名の自動管理\) を選択して、ドロップ ダウン リストから自分のチームを選択する")](free-provisioning-images/launchapp6.png)
+  [![](free-provisioning-images/launchapp6.png "[Automatically Manage Signing]\(署名の自動管理\) を選択して、ドロップ ダウン リストから自分のチームを選択する")](free-provisioning-images/launchapp6.png#lightbox)
 
 7. 前の手順で、プロビジョニング プロファイルと署名 ID が自動的に生成されます。 この情報を表示するには、プロビジョニング プロファイルの横の情報アイコンをクリックします。
 
-  [![](free-provisioning-images/launchapp7.png "プロビジョニング プロファイルを表示する")](free-provisioning-images/launchapp7.png)
+  [![](free-provisioning-images/launchapp7.png "プロビジョニング プロファイルを表示する")](free-provisioning-images/launchapp7.png#lightbox)
 
 8. Xcode でテストするには、[Run]\(実行\) ボタンをクリックして空のアプリケーションをデバイスに展開します。
 
 9. IDE に戻り、同じデバイスを接続し、Xamarin.iOS プロジェクト名を右クリックして、**[プロジェクト オプション]** ダイアログを開きます。 [iOS バンドル署名] セクションを参照し、署名 ID とプロビジョニング プロファイルを明示的に設定します。
 
-  [![](free-provisioning-images/launchapp8.png "署名 ID とプロビジョニング プロファイルを設定する")](free-provisioning-images/launchapp8.png)
+  [![](free-provisioning-images/launchapp8.png "署名 ID とプロビジョニング プロファイルを設定する")](free-provisioning-images/launchapp8.png#lightbox)
 
 IDE に署名 ID または正しいプロビジョニング プロファイルが表示されない場合は、必要に応じて IDE を再起動します。
 

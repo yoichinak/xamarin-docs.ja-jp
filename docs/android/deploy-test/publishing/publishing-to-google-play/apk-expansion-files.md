@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d118eb5e9f875c5480105d1596ef1318112fb53e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3431791d51858df2013634e1594ee960a10728da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apk-expansion-files"></a>APK 拡張ファイル
 
@@ -33,7 +33,6 @@ ms.lasthandoff: 02/27/2018
 拡張ファイルは、APK のアップロードと同時にアップロードする必要があります。
 Google Play では、拡張ファイルを既存の APK にアップロードしたり、既存の APK を更新したりできません。 既存のファイルを更新する必要がある場合、`versionCode` を更新し、新しい APK をアップロードする必要があります。
 
-<a name="Expansion_File_Storage" />
 
 ## <a name="expansion-file-storage"></a>拡張ファイル ストレージ
 
@@ -51,7 +50,6 @@ Google Play では、拡張ファイルを既存の APK にアップロードし
 
 拡張ファイルのファイル抽出に代わる方法は、拡張ファイルから直接、アセットやリソースを読み取ることです。 拡張ファイルは、適切な `ContentProvider` と併用できる zip ファイルです。 [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) にはアセンブリの [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip) が含まれています。このアセンブリには、一部のメディア ファイルの直接ファイル アクセスを可能にする `ContentProvider` が含まれています。 メディア ファイルが zip ファイルにパッケージ化されている場合、メディア再生呼び出しでは、その zip ファイルを解凍することなく、zip のファイルを直接利用できることがあります。 zip ファイルに追加するとき、メディア ファイルを圧縮しないでください。 
 
-<a name="FileName_Format" />
 
 ### <a name="filename-format"></a>FileName 形式
 
@@ -68,13 +66,12 @@ Google Play では、拡張ファイルを既存の APK にアップロードし
 
 たとえば、APK バージョンが 21 で、パッケージ名が `mono.samples.helloworld` であれば、メイン拡張ファイルには **main.21.mono.samples.helloworld** と名前が付けられます。
 
-<a name="Download_Process" />
 
 ## <a name="download-process"></a>ダウンロード プロセス
 
 アプリケーションを Google Play からインストールすると、拡張ファイルがダウンロードされ、APK と共に保存されます。 状況によっては、拡張ファイルがダウンロードされなかったり、拡張ファイルが削除されたりします。 その場合、アプリは拡張ファイルの存在を確認し、必要に応じてダウンロードする必要があります。 次のフローチャートは、このプロセスの推奨ワークフローを示すものです。
 
-[ ![APK 拡張フローチャート](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png)
+[![APK 拡張フローチャート](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
 起動時に、アプリケーションは現在のデバイスにしかるべき拡張ファイルが存在することを確認します。 存在しない場合、アプリケーションは Google Play の[アプリケーション ライセンス](http://developer.android.com/google/play/licensing/index.html)に要求する必要があります。 この確認は *LVL (License Verification Library)* によって行われます。無料のアプリケーションにも、ライセンス購入アプリケーションにも行います。 LVL は主に、ライセンス制限を適用する目的で有料アプリケーションによって使用されます。 ただし、Google では LVL が拡張されており、拡張ライブラリでも使用できます。 無料のアプリケーションは LVL 確認を実行する必要がありますが、ライセンス制限は無視できます。 LVL 要求は、アプリケーションが必要とする拡張ファイルに関する次の情報を提供する役割を担っています。 
 
@@ -92,7 +89,6 @@ LVL 確認後、アプリケーションは拡張ファイルをダウンロー�
 -  ダウンロード中に発生したエラーは回復可能であり、正常に処理されます。
 
 
-<a name="Architectural_Overview" />
 
 ## <a name="architectural-overview"></a>アーキテクチャの概要
 

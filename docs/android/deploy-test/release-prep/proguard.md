@@ -7,18 +7,17 @@ ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 50666708bde2f2e7a61c30c6c9b383541e7ae9d5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 10744d7c4fbcc5a8935a1fe1e60b6c96ec828815
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="proguard"></a>ProGuard
 
 _ProGuard は、Java クラス ファイルのシュリンカー、オプティマイザー、オブファスケーター、および事前検証機能です。これは、未使用のコードを検出して削除し、バイトコードの分析と最適化を行い、クラスとクラス メンバーを難読化します。このガイドでは、ProGuard がどのように機能するか、プロジェクトで有効にする方法、および設定方法について説明します。また、ProGuard の設定例もいくつか示します。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -38,13 +37,12 @@ ProGuard は、以下の手順を使って入力 APK を処理します。
 これらの各ステップは "*省略可能*" です。 次のセクションで説明するように、Xamarin.Android の ProGuard はこれらのステップのサブセットのみを使います。 
 
 
-<a name="xa_proguard" />
 
 ## <a name="proguard-in-xamarinandroid"></a>Xamarin.Android での ProGuard
 
 Xamarin.Android ProGuard の構成では、APK は難読化されません。 実際、ProGuard で難読化を有効にすることはできません (カスタム構成ファイルを使用しても)。 したがって、Xamarin.Android の ProGuard は、**圧縮**ステップと**最適化**ステップのみを実行します。 
 
-[ ![圧縮ステップと最適化ステップ](proguard-images/01-xa-chain-sml.png)](proguard-images/01-xa-chain.png)
+[![圧縮ステップと最適化ステップ](proguard-images/01-xa-chain-sml.png)](proguard-images/01-xa-chain.png#lightbox)
 
 ProGuard を使う前に知っておく必要のある重要なことは、`Xamarin.Android` のビルド プロセスにおけるその動作方法です。 このプロセスでは次の 2 つの個別のステップが使われます。 
 
@@ -55,7 +53,6 @@ ProGuard を使う前に知っておく必要のある重要なことは、`Xama
 次に各ステップについて詳しく説明します。
 
 
-<a name="linker" />
 
 ### <a name="linker-step"></a>リンカー ステップ
 
@@ -70,21 +67,18 @@ Xamarin.Android リンカーは、アプリケーションの静的分析を使�
 リンカーは常に ProGuard ステップの前に実行されます。 このため、リンカーは、ProGuard で処理されると予想されるアセンブリ/型/メンバーを除去することがあります  (Xamarin.Android でのリンクの詳細については、「[Linking on Android](~/android/deploy-test/linker.md)」(Android でのリンク) をご覧ください)。
 
 
-<a name="proguard_step" />
 
 ### <a name="proguard-step"></a>ProGuard ステップ
 
 リンカー ステップが正常に完了した後は、ProGuard が実行されて未使用の Java バイトコードが削除されます。 これは、APK を最適化するステップです。 
 
 
-<a name="using" />
 
 ## <a name="using-proguard"></a>ProGuard の使用
 
 ProGuard をアプリ プロジェクトを使用するには、まず ProGuard を有効にする必要があります。 次に、Xamarin.Android のビルド プロセスに既定の ProGuard 構成ファイルを使用させるか、または ProGuard 用に独自のカスタム構成ファイルを作成することができます。 
 
 
-<a name="enabling" />
 
 ### <a name="enabling-proguard"></a>ProGuard の有効化
 
@@ -92,22 +86,21 @@ ProGuard をアプリ プロジェクトで有効にするには、次の手順�
 
 1.  プロジェクトが**リリース**構成に設定されていることを確認してください (これは、ProGuard が実行するにはリンカーが実行している必要があるため重要なことです)。 
 
-    [ ![リリース構成を選択する](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png)
+    [![リリース構成を選択する](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png#lightbox)
    
 2.  **[プロパティ] > [Android オプション]** の **[パッケージ]** タブの **[ProGuard を有効にする]** オプションをオンにして ProGuard を有効にします。 
 
-    [ ![オンにした [ProGuard を有効にする] オプション](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png)
+    [![オンにした [ProGuard を有効にする] オプション](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png#lightbox)
 
 ほとんどの Xamarin.Android アプリでは、Xamarin.Android によって提供される既定の ProGuard 構成ファイルを使用すると、すべての未使用コード (のみ) を削除するのに十分です。 既定の ProGuard 構成を表示するには、**obj\\Release\\proguard\\proguard_xamarin.cfg** ファイルを開きます。 次のセクションでは、カスタマイズした ProGuard 構成ファイルを作成する方法について説明します。 
 
 
-<a name="customizing" />
 
 ### <a name="customizing-proguard"></a>ProGuard のカスタマイズ
 
 必要に応じて、カスタム ProGuard 構成ファイルを追加し、ProGuard ツールをより厳密に制御することができます。 たとえば、ProGuard に維持するクラスを明示的に指示できます。 そのためには、新しい **.cfg** ファイルを作成し、**[ソリューション エクスプローラー]** の **[プロパティ]** ウィンドウで `ProGuardConfiguration` ビルド アクションを適用します。 
 
-[ ![ProguardConfiguration ビルド アクションの選択](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png)
+[![ProguardConfiguration ビルド アクションの選択](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png#lightbox)
 
 この構成ファイルは Xamarin.Android の **proguard_xamarin.cfg** ファイルの代わりに使用するものではないことに注意してください。ProGuard は両方のファイルを使用します。 
 
@@ -156,8 +149,6 @@ ProGuard がアプリケーションを正しく分析できない場合があ�
 `[Register]` 注釈で独自の名前を登録し、その名前を使って ProGuard のルールをカスタマイズすることもできます。 Adapters、Views、BroadcastReceivers、Services、ContentProviders、Activities、Fragments の名前を登録できます。 `[Register]` カスタム属性の使用の詳細については、「[Working with JNI](~/android/platform/java-integration/working-with-jni.md)」(JNI の処理) をご覧ください。
 
 
-<a name="options" />
-
 ### <a name="proguard-options"></a>ProGuard のオプション
 
 ProGuard には、操作をきめ細かく制御するために構成できる複数のオプションが用意されています。 [ProGuard のマニュアル](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html)では、ProGuard を使うための完全なリファレンス ドキュメントが提供されています。 
@@ -196,7 +187,6 @@ Xamarin.Android では、次の ProGuard オプションがサポートされて
 -    [事前検証オプション](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#preverificationoptions)
 
 
-<a name="nougat" />
 
 ## <a name="proguard-and-android-nougat"></a>ProGuard と Android Nougat
 
@@ -207,7 +197,6 @@ ProGuard を Android 7.0 以降に対して使用する場合は、Android SDK �
 [SourceForge ページ](https://sourceforge.net/projects/proguard/files/)で ProGuard のすべてのバージョンを見つけることができます。 
 
 
-<a name="examples" />
 
 ## <a name="example-proguard-configurations"></a>ProGuard の構成例
 
@@ -272,7 +261,6 @@ ProGuard 構成ファイルの 2 つの例を次に示します。 これらの�
     public static <fields>;
     }
 
-<a name="build" />
 
 ## <a name="proguard-and-the-xamarinandroid-build-process"></a>ProGuard と Xamarin.Android のビルド プロセス
 
@@ -325,12 +313,7 @@ ProGuard タスクは **Xamarin.Android.Build.Tasks.dll** アセンブリ内に�
 C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sdk\tools\proguard\lib\proguard.jar -include obj\Release\proguard\proguard_xamarin.cfg -include obj\Release\proguard\proguard_project_references.cfg -include obj\Release\proguard\proguard_project_primary.cfg "-injars 'obj\Release\proguard\__proguard_input__.jar';'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.0\mono.android.jar'" "-libraryjars 'C:\Android\android-sdk\platforms\android-25\android.jar'" -outjars "obj\Release\proguard\__proguard_output__.jar" -optimizations !code/allocation/variable
 ```
 
-
-<a name="troubleshoot" />
-
 ## <a name="troubleshooting"></a>トラブルシューティング
-
-<a name="files" />
 
 ### <a name="file-issues"></a>ファイルの問題
 
@@ -351,13 +334,10 @@ Windows でこの問題が発生するのは、通常、`.cfg` ファイルの�
 -----
 
 
-<a name="other" />
-
 ### <a name="other-issues"></a>その他の問題
 
 ProGuard を使うと発生する可能性がある一般的な問題と解決策については、ProGuard の「[Troubleshooting](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html)」(トラブルシューティング) ページをご覧ください。
 
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

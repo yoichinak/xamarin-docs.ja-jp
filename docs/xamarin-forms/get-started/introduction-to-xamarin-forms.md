@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 593e720e4a6125e2ef4a1c9488186cb2c04dcd66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: be4b0c907774c33dfcd1818da167acb2dc3b04dd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms の概要
 
@@ -45,7 +45,7 @@ Xamarin.Forms でユーザー インターフェイスを作成する技法は 2
 
 Visual Studio for Mac および Visual Studio の既定の Xamarin.Forms アプリ テンプレートでは、ユーザーにテキストを表示する最も単純な Xamarin.Forms ソリューションを作成できます。 このアプリケーションを実行すると、次のスクリーンショットのような表示があります。
 
-[ ![](introduction-to-xamarin-forms-images/image05-sml.png "既定の Xamarin.Forms アプリケーション")](introduction-to-xamarin-forms-images/image05.png "既定の Xamarin.Forms アプリケーション")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "既定の Xamarin.Forms アプリケーション")](introduction-to-xamarin-forms-images/image05.png#lightbox "既定の Xamarin.Forms アプリケーション")
 
 スクリーンショットの各画面は、Xamarin.Forms の *Page* に該当します。 [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) は、Android では *Activity*、iOS では *View Controller*、ユニバーサル Windows プラットフォーム (UWP) では *Page* を表します。 上記のスクリーンショットのサンプルは、[`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) オブジェクトのインスタンスを作成し、それを使用して [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) を表示します。
 
@@ -249,7 +249,7 @@ public class StackLayoutExample : ContentPage
 
 既定では、[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) は次のスクリーンショットのとおり、垂直方向を前提としています。
 
-[ ![](introduction-to-xamarin-forms-images/image09-sml.png "垂直方向の StackLayout")](introduction-to-xamarin-forms-images/image09.png "垂直方向の StackLayout")
+[![](introduction-to-xamarin-forms-images/image09-sml.png "垂直方向の StackLayout")](introduction-to-xamarin-forms-images/image09.png#lightbox "垂直方向の StackLayout")
 
 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) の向きは、次の XAML コードのとおり、水平方向に変更することもできます。
 
@@ -286,7 +286,7 @@ public class StackLayoutExample: ContentPage
 
 次のスクリーンショットは、結果のレイアウトです。
 
-[ ![](introduction-to-xamarin-forms-images/image10-sml.png "水平方向の StackLayout")](introduction-to-xamarin-forms-images/image10.png "水平方向の StackLayout")
+[![](introduction-to-xamarin-forms-images/image10-sml.png "水平方向の StackLayout")](introduction-to-xamarin-forms-images/image10.png#lightbox "水平方向の StackLayout")
 
 コントロールのサイズは、次の XAML コードの例のとおり、`HeightRequest` と `WidthRequest` プロパティを使用して設定することも可能です。
 
@@ -329,7 +329,7 @@ Content = new StackLayout
 
 次のスクリーンショットは、結果のレイアウトです。
 
-[ ![](introduction-to-xamarin-forms-images/image11-sml.png "LayoutOptions を使用した水平方向の StackLayout")](introduction-to-xamarin-forms-images/image11.png "LayoutOptions を使用した水平方向の StackLayout")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "LayoutOptions を使用した水平方向の StackLayout")](introduction-to-xamarin-forms-images/image11.png#lightbox "LayoutOptions を使用した水平方向の StackLayout")
 
 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) クラスの詳細については、「[StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)」を参照してください。
 

@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/22/2017
-ms.openlocfilehash: 53dc85cab94bdf692e088d7c6eea6916d283ba84
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7560900ace62a737ac765bcfe93f759f8985aca2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android Emulator ハードウェアの高速化
 
 Android SDK エミュレーターはハードウェアの高速化なしでは非常に低速なため、Android SDK エミュレーターのパフォーマンスを劇的に改善する方法として、Intel の HAXM (Hardware Accelerated Execution Manager) が推奨されます。
 
-<a name="haxm-overview" />
 
 ## <a name="haxm-overview"></a>HAXM の概要
 
@@ -27,9 +26,8 @@ HAXM は、Intel Virtualization Technology (VT) を使用してホスト コン�
 Android SDK エミュレーターは、HAXM が使用可能であれば、自動的にそれを使用します。 (「[構成および使用](~/android/deploy-test/debugging/android-sdk-emulator/index.md)」で説明されているように) **x86** ベースの仮想デバイスを選択すると、その仮想デバイスはハードウェアの高速化に HAXM を使用します。 初めて Android SDK エミュレーターを使用する場合は、事前に HAXM がインストールされ、Android SDK エミュレーターを使用できることを確認することをお勧めします。
 
 > [!NOTE]
-> **注:** HAXM を仮想マシンで実行することはできません。
+> HAXM を仮想マシンで実行することはできません。
 
-<a name="verify-haxm" />
 
 ## <a name="verifying-haxm-installation"></a>HAXM インストールの確認
 
@@ -39,7 +37,7 @@ Android SDK エミュレーターは、HAXM が使用可能であれば、自動
 
 1. **[ツール]、[Android]、[Android エミュレーター マネージャー]** の順にクリックして、Android エミュレーター マネージャーを起動します。
 
-    [![Android エミュレーター マネージャーのメニュー項目の場所](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png)
+    [![Android エミュレーター マネージャーのメニュー項目の場所](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
 
 2. 次のような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示される場合は、HAXM がまだインストールされていないか、コンピューター上で正しく構成されていません。
 
@@ -65,7 +63,7 @@ Android SDK エミュレーターは、HAXM が使用可能であれば、自動
 
 1. **[ツール]、[Google エミュレーター マネージャー]** の順にクリックして、Android エミュレーター マネージャーを起動します。
 
-    [![Android エミュレーター マネージャーのメニュー項目の場所](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png)
+    [![Android エミュレーター マネージャーのメニュー項目の場所](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
 
 2. 次のような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示される場合は、HAXM がまだインストールされていないか、コンピューター上で正しく構成されていません。
 
@@ -75,7 +73,7 @@ Android SDK エミュレーターは、HAXM が使用可能であれば、自動
 
 3. **x86** イメージ (**Android\_Accelerated\_x86** など) を選択し、**[Start]\(開始\)**、**[Launch]\(起動\)** の順にクリックします。
 
-    [![既定の仮想デバイス イメージを使って Android SDK エミュレーターを起動](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png)
+    [![既定の仮想デバイス イメージを使って Android SDK エミュレーターを起動](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. エミュレーターの起動中は **[Starting Android Emulator]\(Android エミュレーターの起動\)** ダイアログ ウィンドウを監視します。 HAXM がインストールされている場合は、次のスクリーンショットに示されているように、"**HAX is working and emulator runs in fast virt mode**" (HAX は動作しており、エミュレーターは高速仮想モードで実行されています) のメッセージが表示されます。
 
@@ -147,7 +145,7 @@ Windows 10 で、次の手順を使用して、**Device Guard** が実行され�
 
 2. **[システムの概要]** で、**[Device Guard 仮想化ベースのセキュリティ]** があり、**実行**状態になっているかどうかを確認します。
 
-   [![Device Guard があり、実行されている](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png)
+   [![Device Guard があり、実行されている](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png#lightbox)
 
 Device Guard が有効になっている場合は、次の手順に従って無効にします。
 
@@ -157,7 +155,7 @@ Device Guard が有効になっている場合は、次の手順に従って無�
 
 3. **ローカル グループ ポリシー エディター**で、**[コンピューターの構成]、[管理用テンプレート]、[システム]、[Device Guard]** の順に移動します。
 
-   [![ローカル グループ ポリシー エディターでの Device Guard](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png)
+   [![ローカル グループ ポリシー エディターでの Device Guard](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png#lightbox)
 
 4. (上記のように) **[仮想化ベースのセキュリティを有効にする]** を **[無効]** に変更し、**ローカル グループ ポリシー エディター**を終了します。
 
@@ -190,6 +188,6 @@ HYPER-V がまだ無効になっていない場合は、ドメインに参加し
 
 2. HAXM インストーラーを実行します。 インストーラーのダイアログの既定値をそのまま使用します。
 
-   [![Intel Hardware Accelerated Execution Manager のセットアップ ウィンドウ](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png)
+   [![Intel Hardware Accelerated Execution Manager のセットアップ ウィンドウ](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png#lightbox)
 
 -----

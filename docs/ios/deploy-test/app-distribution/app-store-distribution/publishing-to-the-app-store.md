@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 84db17ede0019e1134b65edaca85ef2401fb3bc0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>App Store への発行
 
@@ -133,7 +133,7 @@ iOS では*プロビジョニング プロファイル*を使用して、特定�
 4. リンクを設定し、未使用のメソッド、プロパティ、クラスなどを削除することで、配布可能なアプリケーションの全体のサイズが小さくなります。ほとんどの場合、既定値の **[SDK アセンブリのみをリンクする]** のままにしておきます。 状況によっては (一部の特定のサードパーティ製のライブラリを使用する場合など)、必要な要素が削除されないように、この値を強制的に **[リンクしない]** に設定する必要がある場合があります。 詳細については、「[iOS Build Mechanics](~/ios/deploy-test/ios-build-mechanics.md)」 (iOS ビルドのしくみ) ガイドを参照してください。
 5. **[iOS 用に PNG イメージ ファイルを最適化する]** チェック ボックスをオンにする必要があります。そうすれば、アプリケーションの配布可能サイズをさらに小さくすることができます。
 6. デバッグはビルド サイズが不必要に大きくなるため、有効に_しない_でください。
-8. iOS 11 の場合は、**ARM64** をサポートするデバイスのアーキテクチャの 1 つを選択する必要があります。 64 ビット iOS デバイスのビルドの詳細については、「[32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64.md)」 (32/64 ビット プラットフォームの考慮事項) ドキュメントの「**Enabling 64 Bit Builds of Xamarin.iOS Apps**」 (Xamarin.iOS アプリの 64 ビット ビルドの有効化) セクションを参照してください。
+8. iOS 11 の場合は、**ARM64** をサポートするデバイスのアーキテクチャの 1 つを選択する必要があります。 64 ビット iOS デバイスのビルドの詳細については、「[32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64/index.md)」 (32/64 ビット プラットフォームの考慮事項) ドキュメントの「**Enabling 64 Bit Builds of Xamarin.iOS Apps**」 (Xamarin.iOS アプリの 64 ビット ビルドの有効化) セクションを参照してください。
 9. 必要に応じて、より小さな高速コードを作成する **LLVM** コンパイラを使用することはできますが、コンパイルに時間がかかります。
 10. アプリケーションのニーズに基づいて、**国際化**対応のために使用および設定する**ガベージ コレクション**の種類を調整することもできます。
 11. ビルド構成の変更内容を保存します。
@@ -157,7 +157,7 @@ iOS では*プロビジョニング プロファイル*を使用して、特定�
 
     ![](publishing-to-the-app-store-images/configurevs02.png "[詳細設定] タブ")
 
-8. Xamarin.iOS アプリケーションの対象が iOS 8 および 64 ビット iOS デバイスである場合は、**ARM64** をサポートするデバイス アーキテクチャのいずれかを選択する必要があります。 64 ビット iOS デバイスのビルドの詳細については、「[32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64.md)」 (32/64 ビット プラットフォームの考慮事項) ドキュメントの「**Enabling 64 Bit Builds of Xamarin.iOS Apps**」 (Xamarin.iOS アプリの 64 ビット ビルドの有効化) セクションを参照してください。
+8. Xamarin.iOS アプリケーションの対象が iOS 8 および 64 ビット iOS デバイスである場合は、**ARM64** をサポートするデバイス アーキテクチャのいずれかを選択する必要があります。 64 ビット iOS デバイスのビルドの詳細については、「[32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64/index.md)」 (32/64 ビット プラットフォームの考慮事項) ドキュメントの「**Enabling 64 Bit Builds of Xamarin.iOS Apps**」 (Xamarin.iOS アプリの 64 ビット ビルドの有効化) セクションを参照してください。
 9. 必要に応じて、より小さな高速コードを作成する **LLVM** コンパイラを使用することはできますが、コンパイルに時間がかかります。
 10. アプリケーションのニーズに基づいて、**国際化**対応のために使用および設定する**ガベージ コレクション**の種類を調整することもできます。
 11. ビルド構成の変更内容を保存します。
@@ -351,16 +351,16 @@ Visual Studio for Mac のアーカイブ ワークフローでは、アプリケ
 
 1. *[Deliver Your App]\(アプリの配信\)* を選択して、*[選択]* ボタンをクリックします。
 
-    [ ![](publishing-to-the-app-store-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) を選択します")](publishing-to-the-app-store-images/publishvs01.png)
+    [![](publishing-to-the-app-store-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) を選択します")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
 
 2. 前の手順で作成した IPA ファイルまたは zip ファイルを選択し、**[OK]** ボタンをクリックします。
 
 3. アプリケーション ローダーはファイルを検証します。
 
-    [ ![](publishing-to-the-app-store-images/publishvs02.png "検証画面")](publishing-to-the-app-store-images/publishvs02.png)
+    [![](publishing-to-the-app-store-images/publishvs02.png "検証画面")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
 4. *[次へ]* ボタンをクリックすると、アプリケーションは App Store に対して検証されます。
 
-    [ ![](publishing-to-the-app-store-images/publishvs03.png "App Store に対する検証")](publishing-to-the-app-store-images/publishvs03.png)
+    [![](publishing-to-the-app-store-images/publishvs03.png "App Store に対する検証")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
 5. **[送信]** ボタンをクリックして、審査のために Apple にアプリケーションを送信します。
 6. アプリケーション ローダーは、ファイルが正常にアップロードされたときに通知します。
 
@@ -368,7 +368,7 @@ Visual Studio for Mac のアーカイブ ワークフローでは、アプリケ
 
 ITunes Connect に再度ログインし、使用可能なアプリのリストからアプリケーションを選択した場合、iTunes Connect のステータスは **[審査待ち]** になります (処理中に、一時的に **[Upload Received]\(アップロード受信済み\)** になる場合があります)。
 
-[ ![](publishing-to-the-app-store-images/image21.png "iTunes Connect の状態は [Waiting for Review] と表示されます")](publishing-to-the-app-store-images/image21.png)
+[![](publishing-to-the-app-store-images/image21.png "iTunes Connect の状態は [Waiting for Review] と表示されます")](publishing-to-the-app-store-images/image21.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 

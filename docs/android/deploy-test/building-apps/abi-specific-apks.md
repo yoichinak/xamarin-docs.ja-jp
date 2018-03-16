@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 3bc53a8230b66b88319f729d7effe8ed75f0176b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf2f62929df63d08add76b7fb6de404d2780b2b3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -42,7 +42,6 @@ APK が複数あると配布が困難になる場合がある - Google Play で�
 このガイドの最後は、[Rake](http://martinfowler.com/articles/rake.html) を使用して、これらの手順をスクリプト化する方法を示すチュートリアルです。
 
 
-<a name="Setting_android_versionCode" />
 
 ### <a name="creating-the-version-code-for-the-apk"></a>APK のバージョン コードの作成
 
@@ -67,7 +66,7 @@ Google では、7 桁のバージョン コードを使用するバージョン 
 
 下図に、上のリストで説明した各コードの位置を示します。
 
-[![色分けされた、8 桁のバージョン コード形式の図](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png)
+[![色分けされた、8 桁のバージョン コード形式の図](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 
 Google Play は、`versionCode` と APK 構成に基づいて、正しい APK が確実にデバイスに配布されるようにします。 最高バージョン コードの APK がデバイスに配布されます。 たとえば、アプリケーションに以下のバージョン コードの 3 つの APK があるとします。
@@ -88,7 +87,6 @@ Google Play は、`versionCode` と APK 構成に基づいて、正しい APK �
 これらのバージョン コードを手動で維持することは、開発者にとってかなりの負担になる場合があります。 正しい `android:versionCode` を計算してから APK をビルドするプロセスを自動化する必要があります。
 この実行方法の例は、このドキュメントの最後のチュートリアルで説明します。
 
-<a name="CreatingAndroidManifest" />
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>一時的な AndroidManifest.XML を作成する
 
@@ -123,7 +121,6 @@ ABI ごとに APK をビルドする場合、以下のサンプル コマンド 
 -   `<CS_PROJ FILE>` &ndash; これは、Xamarin.Android プロジェクトの `.csproj` ファイルへのパスです。
 
 
-<a name="SignAndZipAlign" />
 
 ### <a name="sign-and-zipalign-the-apk"></a>APK に署名して zipalign を実行する
 
@@ -139,7 +136,6 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore <PATH/TO/KEYSTO
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-<a name="Automating_APK_Creation_With_Rake" />
 
 ## <a name="automating-apk-creation-with-rake"></a>Rake による APK 作成の自動化
 
@@ -174,11 +170,11 @@ $ rake build
 
 rake タスクが完了すると、ファイル `xamarin.helloworld.apk` を含む 3 つの `bin` フォルダーが生成されます。 次のスクリーンショットには、これらの各フォルダーとそのコンテンツが示されています。
 
-[![xamarin.helloworld.apk を含むプラットフォーム固有のフォルダーの場所](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png)
+[![xamarin.helloworld.apk を含むプラットフォーム固有のフォルダーの場所](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 
 > [!NOTE]
-> **注:** このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
+> このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
 
 
 ## <a name="summary"></a>まとめ

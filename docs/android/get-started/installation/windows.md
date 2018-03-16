@@ -7,18 +7,17 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 10cfb790fca30b67faaa8f7720a358ec34c25663
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7cf21e75c9ae2f3c27b07cb20f1044779b42b06b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
 _このガイドでは、Windows で Visual Studio 用の Xamarin.Android をインストールする手順と、最初の Xamarin.Android アプリケーションをビルドするための Xamarin.Android の構成方法について説明します。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>概要
 
@@ -39,7 +38,6 @@ Xamarin は現在、追加料金なしで Visual Studio のすべてのエディ
 
 Windows での Visual Studio を使用するための Xamarin のインストールについては、[Windows インストール](~/cross-platform/get-started/installation/windows.md)のガイドをご覧ください。
 
-<a name="configuration" />
 
 ## <a name="configuration"></a>構成
 
@@ -52,16 +50,15 @@ Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用し�
 Xamarin.Android は [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) を使用します。これは、API レベル 24 以上で開発する場合に必要となります (JDK 8 は 23 以下の API レベルもサポートしています)。 API レベル 23 以下のみで開発している場合は、[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) を引き続き使用することができます。
 
 > [!IMPORTANT]
-> **注:** Xamarin.Android は JDK 9 をサポートしていません。
+> Xamarin.Android は JDK 9 をサポートしていません。
 
-<a name="sdk_manager" />
 
 ### <a name="android-sdk-manager"></a>Android SDK Manager
 
 Android では複数の Android API レベル設定を使用して、さまざまなバージョンの Android 間のアプリの互換性を確認します (Android API レベルの詳細については、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」 (Android API レベルについて) を参照してください)。
 対象となる Android API レベルに応じて、追加の Android SDK コンポーネントをダウンロードしてインストールする必要がある場合があります。 さらに、Android SDK で提供されるオプションのツールとエミュレーター イメージをインストールする必要がある場合があります。 そのためには、**Android SDK マネージャー**を使用します。 **[ツール]、[Android]、[Android SDK マネージャー]** の順にクリックして、**Android SDK マネージャー**を起動できます。
 
-[![Android SDK マネージャーを起動する方法](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png)
+[![Android SDK マネージャーを起動する方法](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png#lightbox)
 
 既定では、Visual Studio は Google Android SDK マネージャーをインストールします。
 
@@ -71,7 +68,6 @@ Google Android SDK マネージャーを使用して、バージョン 25.2.3 �
 
 Xamarin Android SDK Manager の使用の詳細については、「[Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)」を参照してください。
 
-<a name="emulator" />
 
 ### <a name="android-emulator"></a>Android エミュレーター
 
@@ -94,8 +90,6 @@ Google Android エミュレーターは、他のエミュレーターで使用�
 テストに使用する物理的な Android デバイスがある場合は、開発用に設定する良いタイミングです。 「[Set Up Device for Development](~/android/get-started/installation/set-up-device-for-development.md)」 (開発用のデバイスの設定) を参照して、開発用に Android デバイスを構成してから、Xamarin.Android アプリケーションの実行とデバッグのためにコンピューターに接続してください。
 
 
-<a name="create_app" />
-
 ## <a name="create-an-application"></a>アプリケーションの作成
 
 Xamarin.Android をインストールしたので、Visual Studio を起動して新しいプロジェクトを作成することができます。 **[ファイル]、[新規]、[プロジェクト]** の順にクリックして、アプリの作成を開始します。
@@ -104,12 +98,10 @@ Xamarin.Android をインストールしたので、Visual Studio を起動し�
 
 **[新しいプロジェクト]** ダイアログの **[テンプレート]** で **[Android]** を選択し、右側のウィンドウで **[空のアプリ (Android)]** をクリックします。 アプリの名前 (以下のスクリーン ショットでは、アプリの名前は **MyApp**) を入力してから **[OK]** をクリックします。
 
-[![空の Android アプリを作成している、[新しいプロジェクト] ダイアログのスクリーン ショット](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png)
+[![空の Android アプリを作成している、[新しいプロジェクト] ダイアログのスクリーン ショット](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png#lightbox)
 
 これで完了です。 これで、Xamarin.Android を使用して Android アプリケーションを作成する準備ができました。
 
-
-<a name="summary" />
 
 ## <a name="summary"></a>まとめ
 

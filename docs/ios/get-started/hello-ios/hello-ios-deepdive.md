@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bc89450a5c9a00ab9f088ca9fff345ebbf7b6c4c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS の詳細説明
 
@@ -102,7 +102,7 @@ iOS アプリケーションにユーザー インターフェイスを読み込
 
 このセクションでは、次の図に示す関係について学習します。
 
-[ ![](hello-ios-deepdive-images/image32.png "この図はアーキテクチャとアプリケーションの基本の関係について説明しています")](hello-ios-deepdive-images/image32.png)
+[![](hello-ios-deepdive-images/image32.png "この図はアーキテクチャとアプリケーションの基本の関係について説明しています")](hello-ios-deepdive-images/image32.png#lightbox)
 
 最初の部分から始め、アプリケーションのスタートアップ時の動作について説明します。
 
@@ -197,7 +197,7 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 シーンの左側には、次のスクリーンショットに示すように、フラグ アイコン付きの灰色の矢印があります。
 
- [![](hello-ios-deepdive-images/image37.png "フラグ アイコン付きの灰色の矢印")](hello-ios-deepdive-images/image37.png)
+ [![](hello-ios-deepdive-images/image37.png "フラグ アイコン付きの灰色の矢印")](hello-ios-deepdive-images/image37.png#lightbox)
 
 灰色の矢印は、*Segue* ("セグウェイ" と発音) と呼ばれるストリーボードの切り替え効果を表します。 このセグエには基がないので、*ソースレス セグエ*と呼ばれます。 ソースレス セグエは、アプリケーションの起動時にアプリケーションのウィンドウにビューが読み込まれる最初のシーンをポイントします。 シーンおよびその内部のビューは、アプリが読み込まれるときにユーザーに最初に表示されます。
 
@@ -243,7 +243,7 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 _コンテンツ ビュー階層_は、次の図に示すように、1 つのビュー コントローラーによって管理されるビューとサブビューのスタックです。
 
- [ ![](hello-ios-deepdive-images/image41.png "コンテンツ ビュー階層")](hello-ios-deepdive-images/image41.png)
+ [![](hello-ios-deepdive-images/image41.png "コンテンツ ビュー階層")](hello-ios-deepdive-images/image41.png#lightbox)
 
 下のスクリーンショットに示すように、**プロパティ パッド**のビュー セクションで、ルート ビューの背景色を一時的に黄色に変更することで、`ViewController` のコンテンツ ビューを見やすくすることができます。
 
@@ -259,7 +259,7 @@ _コンテンツ ビュー階層_は、次の図に示すように、1 つのビ
 
 次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。
 
- [![](hello-ios-deepdive-images/image43.png "ウィンドウ、ビュー、サブビュー、ビュー コントローラー間の関係")](hello-ios-deepdive-images/image43.png)
+ [![](hello-ios-deepdive-images/image43.png "ウィンドウ、ビュー、サブビュー、ビュー コントローラー間の関係")](hello-ios-deepdive-images/image43.png#lightbox)
 
 次のセクションでは、コードでビューを操作する方法について説明し、ビュー コントローラーとビュー ライフサイクルを使用してユーザーの操作をプログラムする方法を説明します。
 
@@ -331,7 +331,7 @@ public partial class ViewController : UIViewController
 これでビューとビュー コントローラーについて理解を深めたので、その動作を見てみましょう。
 `Phoneword_iOS` プロジェクトでは、`TranslateButton` というボタンが現在のビュー階層に追加されました。
 
- [ ![](hello-ios-deepdive-images/image1.png "TranslateButton というボタンがコンテンツ ビュー階層に追加されました")](hello-ios-deepdive-images/image1.png)
+ [![](hello-ios-deepdive-images/image1.png "TranslateButton というボタンがコンテンツ ビュー階層に追加されました")](hello-ios-deepdive-images/image1.png#lightbox)
 
 **プロパティ パッド**で **Name** が **Button** コントロールに割り当てられるときに、iOS Designer が **ViewController.designer.cs** でそれを自動的にコントロールにマッピングし、`ViewController` クラス内で `TranslateButton` を使用できるようにします。 コントロールは、ビュー ライフサイクルの `ViewDidLoad` ステージで初めて利用可能になるので、このライフサイクル メソッドを使用して、ユーザーのタッチに応答します。
 
@@ -432,7 +432,7 @@ iOS シミュレーターは、アプリケーションをテストする簡単�
 
 iOS デバイスにアプリが展開されます。
 
-[ ![](hello-ios-deepdive-images/image1.png "iOS デバイスにアプリが展開され、実行されます")](hello-ios-deepdive-images/image1.png)
+[![](hello-ios-deepdive-images/image1.png "iOS デバイスにアプリが展開され、実行されます")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>カスタム アイコンを生成し、イメージを起動する
 

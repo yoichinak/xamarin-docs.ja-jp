@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/19/2017
-ms.openlocfilehash: 2eaf4c6180b51a827d8182d87ee2db0fd1726c8d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fd6214f34c313db0d7a59291b73c5b29a9cc3592
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -86,29 +86,18 @@ Visual Studio for Mac to を使用し、OS X El Capitan (10.11) 以降で Xamari
 
 ## <a name="windows-system-requirements"></a>Windows のシステム要件
 
-iOS と Android 向けの Xamarin.Forms アプリは Xamarin 開発に対応しているあらゆる Windows インストールでビルドできます。 Visual Studio 2013 Update 2 以降を Windows 7 以上で実行する必要があります。 iOS 開発には、ネットワークに接続した Mac が必要です。
-
-次のような Windows アプリにはさらに要件があります。
+iOS と Android 向けの Xamarin.Forms アプリは Xamarin 開発に対応しているあらゆる Windows インストールでビルドできます。 Visual Studio 2015 以降を Windows 7 以上で実行する必要があります。 iOS 開発には、ネットワークに接続した Mac が必要です。
 
 ### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
 UWP 用の Xamarin.Forms アプリの開発に必要なもの:
 
-* Windows 10
+* Windows 10 (Fall Creators Update を推奨)
 
-* Visual Studio 2015 以降
+* Visual Studio 2017 を推奨
 
-* [ユニバーサル Windows 開発者ツール](https://dev.windows.com/downloads/windows-10-sdk)
+* [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 UWP プロジェクトは、Visual Studio 2015 と Visual Studio 2017 で作成された Xamarin.Forms ソリューションに含まれています。
 [ユニバーサル Windows プラットフォーム (UWP) アプリ](~/xamarin-forms/platform/windows/installation/universal.md)を既存の Xamarin.Forms ソリューションに追加することもできます。
 
-
-
-### <a name="windows-81-and-windows-phone-81-winrt"></a>Windows 8.1 と Windows Phone 8.1 WinRT
-
-Windows 8.1 と Windows Phone 8.1 WinRT 用の Xamarin.Forms アプリの開発に必要なもの:
-
-* Windows 8.1
-
-* Visual Studio 2013 Update 2 以降

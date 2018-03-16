@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7ce674ea38bc847bc9064a5a61113900a45b991d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 434a12c26a5823b082751c95c2090b22c39cf081
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 
 このチュートリアルでは、英数字の電話番号 (ユーザーが入力) を数字の電話番号に変換してから、その番号に電話をかけるアプリケーションを作成する方法を説明します。 最終的なアプリケーションは、次のとおりです。
 
-[![](quickstart-images/intro-app-examples-sml.png "Phoneword アプリケーション")](quickstart-images/intro-app-examples.png "Phoneword アプリケーション")
+[![](quickstart-images/intro-app-examples-sml.png "Phoneword アプリケーション")](quickstart-images/intro-app-examples.png#lightbox "Phoneword アプリケーション")
 
 Phoneword アプリケーションは次のように作成します。
 
@@ -113,7 +113,7 @@ Phoneword アプリケーションは次のように作成します。
         }
 
   > [!NOTE]
-> **注**: この時点でアプリケーションをビルドしようとするとエラーが発生しますが、このエラーは後ほど修正されます。
+  > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、このエラーは後ほど修正されます。
 
   **CTRL + S** を押し、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
@@ -565,7 +565,7 @@ Phoneword アプリケーションは次のように作成します。
         }
 
   > [!NOTE]
-> **注**: この時点でアプリケーションをビルドしようとするとエラーが発生しますが、このエラーは後ほど修正されます。
+  > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、このエラーは後ほど修正されます。
 
   **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 

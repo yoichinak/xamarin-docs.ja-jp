@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ca3afa892176a11c4688b4f4d8d34e59d1758585
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 18f9814941c4cd7d2719f23b6102361f013ba8a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging"></a>デバッグ
 
@@ -34,11 +34,11 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1.png "ブレークポイントの設定")](debugging-in-xamarin-ios-images/debugging1.png)
+[![](debugging-in-xamarin-ios-images/debugging1.png "ブレークポイントの設定")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1a.png "ブレークポイントの設定")](debugging-in-xamarin-ios-images/debugging1a.png)
+[![](debugging-in-xamarin-ios-images/debugging1a.png "ブレークポイントの設定")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
@@ -46,13 +46,13 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/image0a.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0a.png)
+[![](debugging-in-xamarin-ios-images/image0a.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  [ブレークポイント] パッドが自動的に表示されない場合、_[表示]、[デバッグ ウィンドウ]、[ブレークポイント]_ の順に選択すると表示されます。
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/image0.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0.png)
+[![](debugging-in-xamarin-ios-images/image0.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  [ブレークポイント] パッドが自動的に表示されない場合、_[デバッグ]、[ウィンドウ]、[ブレークポイント]_ の順に選択すると表示されます。
  
@@ -62,13 +62,13 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7.png "シミュレーターでのデバッグ")](debugging-in-xamarin-ios-images/debugging7.png)
-[ ![](debugging-in-xamarin-ios-images/debugging7a.png "物理デバイスでのデバッグ")](debugging-in-xamarin-ios-images/debugging7a.png)
+[![](debugging-in-xamarin-ios-images/debugging7.png "シミュレーターでのデバッグ")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7a.png "物理デバイスでのデバッグ")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7c.png "シミュレーターでのデバッグ")](debugging-in-xamarin-ios-images/debugging7c.png)
-[ ![](debugging-in-xamarin-ios-images/debugging7d.png "物理デバイスでのデバッグ")](debugging-in-xamarin-ios-images/debugging7d.png)
+[![](debugging-in-xamarin-ios-images/debugging7c.png "シミュレーターでのデバッグ")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7d.png "物理デバイスでのデバッグ")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
@@ -77,11 +77,11 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7b.png "ターゲット デバイスを選択します")](debugging-in-xamarin-ios-images/debugging7b.png)
+[![](debugging-in-xamarin-ios-images/debugging7b.png "ターゲット デバイスを選択します")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7e.png "ターゲット デバイスを選択します")](debugging-in-xamarin-ios-images/debugging7e.png)
+[![](debugging-in-xamarin-ios-images/debugging7e.png "ターゲット デバイスを選択します")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -91,11 +91,11 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 ブレークポイントにヒットすると、コードは黄色で強調表示されます。
 
-[ ![](debugging-in-xamarin-ios-images/image2.png "コードは黄色で強調表示されます")](debugging-in-xamarin-ios-images/image2.png)
+[![](debugging-in-xamarin-ios-images/image2.png "コードは黄色で強調表示されます")](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 オブジェクト値の検査ツールなど、デバッグ ツールをこの時点で使用すると、コードの状態を詳しく確認できます。
 
-[ ![](debugging-in-xamarin-ios-images/image3.png "色の値の表示")](debugging-in-xamarin-ios-images/image3.png)
+[![](debugging-in-xamarin-ios-images/image3.png "色の値の表示")](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>条件付きブレークポイント
 
@@ -108,26 +108,26 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 - 新しい条件付きブレークポイントを追加するには、ブレークポイントを設定するコードの行番号の左にあるエディターの余白を右クリックし、[ブレークポイントの作成] を選択します。
 
-    [ ![](debugging-in-xamarin-ios-images/image4.png "[ブレークポイントの作成] を選択します")](debugging-in-xamarin-ios-images/image4.png)
+    [![](debugging-in-xamarin-ios-images/image4.png "[ブレークポイントの作成] を選択します")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - 既存のブレークポイントに条件を追加するには、ブレークポイントを右クリックし、**[ブレークポイントのプロパティ]** を選択します。あるいは**ブレークポイント パッド**で、次の画像にあるプロパティを選択します。
 
-    [ ![](debugging-in-xamarin-ios-images/image5.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image5.png)
+    [![](debugging-in-xamarin-ios-images/image5.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
 この画面で、ブレークポイントが発生する条件を入力できます。
 
-[ ![](debugging-in-xamarin-ios-images/image6.png "ブレークポイントが発生する条件を入力します")](debugging-in-xamarin-ios-images/image6.png)
+[![](debugging-in-xamarin-ios-images/image6.png "ブレークポイントが発生する条件を入力します")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Visual Studio 2015 で条件付きブレークポイントを設定するには、最初に[普通のブレークポイントを設定](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)します。 そのブレークポイントを右クリックし、コンテキスト メニューを表示します。
 
- [ ![](debugging-in-xamarin-ios-images/image4vs.png "ブレークポイント コンテキスト メニュー")](debugging-in-xamarin-ios-images/image4vs.png)
+ [![](debugging-in-xamarin-ios-images/image4vs.png "ブレークポイント コンテキスト メニュー")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 **[条件...]** を選択し、_[ブレークポイントの設定]_ メニューを表示します。
 
- [ ![](debugging-in-xamarin-ios-images/image6vs.png "[ブレークポイントの設定] メニュー")](debugging-in-xamarin-ios-images/image6vs.png)
+ [![](debugging-in-xamarin-ios-images/image6vs.png "[ブレークポイントの設定] メニュー")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 ここで、ブレークポイントが発生する条件を入力できます。
 
@@ -143,7 +143,7 @@ Visual Studio 2015 で条件付きブレークポイントを設定するには�
 
 Visual Studio for Mac では次のように表示されます。
 
- [ ![](debugging-in-xamarin-ios-images/image7.png "開発者はデバッグ ツールを使用してプログラムの実行を制御できます")](debugging-in-xamarin-ios-images/image7.png)
+ [![](debugging-in-xamarin-ios-images/image7.png "開発者はデバッグ ツールを使用してプログラムの実行を制御できます")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
 これらの数値は、次のとおりです。
 
@@ -156,7 +156,7 @@ Visual Studio for Mac では次のように表示されます。
 
 Visual Studio では次のように表示されます。
 
-[ ![](debugging-in-xamarin-ios-images/image7vs.png "開発者はデバッグ ツールを使用してプログラムの実行を制御できます")](debugging-in-xamarin-ios-images/image7vs.png)
+[![](debugging-in-xamarin-ios-images/image7vs.png "開発者はデバッグ ツールを使用してプログラムの実行を制御できます")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
 これらの数値は、次のとおりです。
 
@@ -224,13 +224,13 @@ Xamarin.iOS には Mono のクラス ライブラリのソース コードが付
 
 この機能を有効にするには、下の画像のように、_[Visual Studio for Mac]、[環境設定]、[デバッガー]_ メニューで **[プロジェクト コードのみをデバッグします。フレームワーク コードにはステップ インしません。]** オプションの選択を解除します。
 
-[ ![](debugging-in-xamarin-ios-images/debugging6.png "Mono のクラス ライブラリのデバッグ")](debugging-in-xamarin-ios-images/debugging6.png)
+[![](debugging-in-xamarin-ios-images/debugging6.png "Mono のクラス ライブラリのデバッグ")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Visual Studio でクラス ライブラリをデバッグするには、_[デバッグ] の [オプション]_ メニューで **[マイ コードのみ]** を無効にする必要があります。 _[デバッグ]、[全般]_ ノードで、**[マイ コードのみを有効にする]** チェック ボックスをオフにします。
 
-[ ![](debugging-in-xamarin-ios-images/debugging6vs.png "Mono のクラス ライブラリのデバッグ")](debugging-in-xamarin-ios-images/debugging6vs.png)
+[![](debugging-in-xamarin-ios-images/debugging6vs.png "Mono のクラス ライブラリのデバッグ")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 
