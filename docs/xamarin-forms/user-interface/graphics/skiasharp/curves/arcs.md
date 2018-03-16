@@ -8,11 +8,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 739efa994f172a7a1de82ac02d1c10b0d80f4c30
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -238,7 +238,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 ![](arcs-images/tangentarcconnectinglines.png "正接の円弧の 3 つの点を結ぶ線")
 
-3 つのポイントが同一線上に & #x 2014; 場合つまり、同一直線 & #x 2014; に含まれている場合は、円弧は描画されません。
+3 つのポイントが同一線上にある場合&mdash;は、同一直線上に存在する場合&mdash;円弧は描画されません。
 
 `ArcTo`メソッドも含まれています、`radius`パラメーター。 これには、円の半径を定義します。
 

@@ -33,7 +33,7 @@ ms.lasthandoff: 03/15/2018
 
 .NET 標準ライブラリを追加するソリューションには、比較的簡単です。
 
-1. 新しいプロジェクトの追加] ダイアログ ボックスで、`.NET Core`カテゴリし選択`Class Library(.NET Core)`です。
+1. 新しいプロジェクトの追加ダイアログ ボックスで、`.NET Core`カテゴリし選択`Class Library(.NET Core)`です。
 
   **注:**にこのテンプレートの名前を変更するは`.NET Standard`将来のバージョンの Visual Studio for mac
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 03/15/2018
 
 .NET 標準ライブラリを追加するソリューションには、比較的簡単です。
 
-1. 新しいプロジェクトの追加] ダイアログ ボックスで、`.NET Standard`カテゴリし選択`Class Library(.NET Standard)`です。
+1. 新しいプロジェクトの追加ダイアログ ボックスで、`.NET Standard`カテゴリし選択`Class Library(.NET Standard)`です。
 
   ![](net-standard-images/vs01.png "標準的な .NET クラス ライブラリの新規作成します。")
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 03/15/2018
 
 #### <a name="using-net-standard-library"></a>.NET 標準ライブラリを使用します。
 
-.NET 標準ライブラリが作成されたら、通常の参照を追加する同じ方法で任意の互換性のあるアプリケーションまたはライブラリ プロジェクトからへの参照を追加できます。 Visual Studio で参照ノードを右クリックして選択`Add Reference...`に切り替えて、`Solution : Projects`ように] タブします。
+.NET 標準ライブラリが作成されたら、通常の参照を追加する同じ方法で任意の互換性のあるアプリケーションまたはライブラリ プロジェクトからへの参照を追加できます。 Visual Studio で参照ノードを右クリックして選択`Add Reference...`に切り替えて、`Solution : Projects`ようにタブします。
 
 ![](net-standard-images/vs04.png "Visual Studio で、[参照] ノードを右クリックして参照の追加... しように、ソリューションのプロジェクトのタブに切り替えます")
 

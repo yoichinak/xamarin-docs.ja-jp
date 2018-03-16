@@ -108,7 +108,7 @@ ms.lasthandoff: 03/15/2018
 
 さまざまなプラットフォームでは、上記の一覧に示すようには、既定の色のスキームがあります。
 
-Android を対象とする場合になっても Android.Manifest.xml ファイルまたはによって light] テーマを指定することによって、軽量での dark スキームに切り替え[AppCompat の追加と材料設計](~/xamarin-forms/platform/android/appcompat.md)です。
+Android を対象とする場合になっても Android.Manifest.xml ファイルまたはによって light テーマを指定することによって、軽量での dark スキームに切り替え[AppCompat の追加と材料設計](~/xamarin-forms/platform/android/appcompat.md)です。
 
 色のテーマに通常、ユーザーが選択されているプラットフォームについては、Windows、追加することが、`RequestedTheme`いずれかに属性が設定`Light`または`Dark`プラットフォームの App.xaml ファイルにします。 既定では、UWP プロジェクトで、App.xaml ファイルを含む、`RequestedTheme`属性に設定`Light`です。
 
