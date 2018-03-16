@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 08/28/2017
-ms.openlocfilehash: 024e73ddfe517f6fe9766607fa17efbd5703234c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a2b5a1135a4d08c2a89caf0fbf4b2cdb1ac624c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -32,7 +32,7 @@ Xamarin 製品は、iOS または Android をターゲットとする際に Appl
 
 この表は、さまざまな開発ツールとオペレーティング システムを組み合わせてビルドできるプラットフォームを示しています。
 
-[!include[](~/cross-platform/includes/development-environment.html)]
+[!include[](~/cross-platform/includes/development-environment.md)]
 
 
 > [!NOTE]
@@ -44,7 +44,7 @@ Xamarin 製品は、iOS または Android をターゲットとする際に Appl
 
 Xamarin の開発に Mac コンピューターを使用するには、次のソフトウェア/SDK バージョンが必要です。 オペレーティング システムのバージョンを確認し、[Xamarin インストーラー](#install)の指示に従ってください。
 
-[!include[](~/cross-platform/includes/macos-requirements.html)]
+[!include[](~/cross-platform/includes/macos-requirements.md)]
 
 > [!NOTE]
 > 注: Xcode は [developer.apple.com](https://developer.apple.com/xcode/download/) または Mac App Store でインストール (および更新) できます。
@@ -53,7 +53,7 @@ Xamarin の開発に Mac コンピューターを使用するには、次のソ�
 
 Xamarin モバイル アプリケーションを USB 経由で物理デバイスに展開し、テストおよびデバッグを行うことができます (Xamarin.Mac アプリは開発用コンピューターで直接テストできます。Apple Watch アプリは対応する iPhone に最初に展開されます)。
 
-[!include[](~/cross-platform/includes/macos-testing.html)]
+[!include[](~/cross-platform/includes/macos-testing.md)]
 
 
 <a name="windows" />
@@ -64,7 +64,7 @@ Xamarin の開発に Windows コンピューターを使用するには、次の
 オペレーティング システムのバージョンを確認してください (さらに、*Express* バージョンの Visual Studio を使用していないことを確認します。使用している場合は、*Community* エディションへの更新を検討してください)。
 Visual Studio 2015 と 2017 のインストーラーには、Xamarin を自動的にインストールするオプションが含まれます。
 
-[!include[](~/cross-platform/includes/windows-requirements.html)]
+[!include[](~/cross-platform/includes/windows-requirements.md)]
 
 
 > [!NOTE]
@@ -78,7 +78,7 @@ Visual Studio 2015 と 2017 のインストーラーには、Xamarin を自動�
 
 Xamarin モバイル アプリケーションを USB 経由で物理デバイスに展開し、テストおよびデバッグを行うことができます (iOS デバイスは、Visual Studio を実行しているコンピューターではなく、Mac コンピューターに接続する必要があります)。
 
-[!include[](~/cross-platform/includes/windows-testing.html)]
+[!include[](~/cross-platform/includes/windows-testing.md)]
 
 
 > [!NOTE]

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 2552538c4d586e9471c42aaf7d696955a0908d1b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dc21b21e28de155aa7a0e7b5cf9734e752cce9a2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
@@ -98,7 +98,7 @@ Apple では、アプリケーションがサポートするすべての画面�
 
 現在必須となっている画面サイズと解像度は次のとおりです。
 
-[!include[](~/ios/includes/table-itunesconnect.html)]
+[!include[](~/ios/includes/table-itunesconnect.md)]
 
 ### <a name="editing-screenshots-in-itunes-connect"></a>iTunes Connect でのスクリーンショットの編集
 
