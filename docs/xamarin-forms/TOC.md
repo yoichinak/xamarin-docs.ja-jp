@@ -121,6 +121,7 @@
 ### [DataPages](user-interface/datapages/index.md)
 #### [はじめに](user-interface/datapages/get-started.md)
 #### [コントロールのリファレンス](user-interface/datapages/controls.md)
+### [DatePicker](user-interface/datepicker.md)
 ### [グラフィックス](user-interface/graphics/index.md)
 #### [Xamarin.Forms で CocosSharp を使用する](user-interface/graphics/cocossharp.md)
 #### [Xamarin.Forms で SkiaSharp を使用する](user-interface/graphics/skiasharp/index.md)
