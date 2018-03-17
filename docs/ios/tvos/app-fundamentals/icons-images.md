@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons-and-images"></a>アイコンとイメージの操作
 
@@ -40,17 +40,9 @@ _この記事では、設計と、アイコンと Xamarin.tvOS アプリ内で�
 
 起動イメージが広告またはアートの式の機会ではない、印象アプリが迅速に起動し、準備ができている場合にのみ存在するを使用します。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>イメージを起動します。</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 1080px
-
-    Non-layered `.png` files only</td>
-</tr>
-</table>
+|イメージのサイズを起動します。|メモ|
+|---|---|
+|1920x1080px|非層 .png ファイルのみ|
 
 Apple では、アプリの起動イメージをデザインするための次の提案を加えます。
 
@@ -146,39 +138,15 @@ Xamarin.tvOS アプリでは、Apple テレビ ホーム画面も、アプリ �
 
 すべてのアプリには、小さなと、アプリ アイコンのサイズの大きいバージョンの両方を指定する必要があります。 小さいアイコンは、アプリがインストールされているときに、Apple テレビ ホーム画面で使用されます。 大規模なバージョンは、アプリ ストアによって使用されます。 大規模なアプリのアイコンは、小さいアイコンのバージョンのルック アンド フィールを模倣する必要があります。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>小さいアイコン</b></td>
-    <td colspan="2"><b>大きいアイコン</b></td>
-</tr>
-<tr>
-    <td><b>実際のサイズ</b></td>
-    <td>400px x 240px</td>
-    <td><b>Size</b></td>
-    <td>1280px x 768px</td>
-</tr>
-<tr>
-    <td><b>安全なゾーンのサイズ</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>フォーカスされていないサイズ</b></td>
-    <td>300px x 180px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>フォーカスのあるサイズ</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
+|小さいアイコン||大きいアイコン||
+|---|---|---|---|
+|実際のサイズ|400x240px|サイズ|1280x768px|
+|安全なゾーンのサイズ|370x222px|||
+|フォーカスされていないサイズ|300x180px|||
+|フォーカスのあるサイズ|370x222px|||
 
 > [!IMPORTANT]
-> **注:**として、アプリ アイコンを指定する必要があります**層イメージ**です。 参照してください、[層イメージ](#Layered-Images)の詳細については、上記「します。
+> として、アプリ アイコンを指定する必要があります**層イメージ**です。 参照してください、[層イメージ](#Layered-Images)の詳細については、上記「します。
 
 
 
@@ -227,17 +195,9 @@ TvOS プロジェクトに必要なアプリのアイコンを設定するには
 
 上部棚のイメージを 1 つの静的として指定するか、できます`.png`または`.lsr`ファイル (を参照してください[層イメージの作成](#Creating-Layered-Images)) 動的に作成できます実行時にフォーカスを設定できるアイテムの単一の行として、または (を参照してください[動的上段コンテンツ](#Dynamic-Top-Shelf-Content)下)。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>上段イメージ</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 720px
-
-    Static `.png` or layered `.lsr` file</td>
-</tr>
-</table>
+|上段イメージのサイズ|メモ|
+|---|---|
+|1920x720px|静的 .png またはレイヤード .lsr ファイル|
 
 Apple では、上部棚イメージを作成するため次の推奨事項を提供します。
 
@@ -279,38 +239,12 @@ TvOS プロジェクトに必要な上位棚のイメージを設定するには
 
 次のコンテンツのサイズは、必要になります。
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>ポスター (2:3)</b></td>
-    <td><b>正方形 (1:1)</b></td>
-    <td><b>HDTV (16:9)</b></td>
-</tr>
-<tr>
-    <td><b>実際のサイズ</b></td>
-    <td>404px x 608px</td>
-    <td>608px x 608px</td>
-    <td>908px x 512px</td>
-</tr>
-<tr>
-    <td><b>安全なゾーンのサイズ</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-<tr>
-    <td><b>フォーカスされていないサイズ</b></td>
-    <td>333px x 500px</td>
-    <td>500px x 500px</td>
-    <td>782px x 440px</td>
-</tr>
-<tr>
-    <td><b>フォーカスのあるサイズ</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-</table>
+||ポスター (2:3)|正方形 (1:1)|HDTV (16:9)|
+|---|---|---|---|
+|実際のサイズ|404x608px|608x608px|908x512px|
+|安全なゾーンのサイズ|380x570px|570x570px|852x479px|
+|フォーカスされていないサイズ|333x500px|500x500px|782x440px|
+|フォーカスのあるサイズ|380x570px|570x570px|852x479px|
 
 Apple では、コンテンツの断面行の次の方法を提供します。
 
@@ -325,27 +259,14 @@ Apple では、コンテンツの断面行の次の方法を提供します。
 
 自動スクロールだけでなくユーザーで、バナーのコントロールを作成し、Siri リモコンを使用していずれかの方向にスクロールすることができます。 バナーのフォーカスがあるときに Siri リモート循環ジェスチャの小さなを行った、そのバナーの視差効果が有効になります。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>バナー イメージ (余分な全体)</b></td>
-</tr>
-<tr>
-    <td><b>実際のサイズ</b></td>
-    <td>1940px x 624px</td>
-</tr>
-<tr>
-    <td><b>安全なゾーンのサイズ</b></td>
-    <td>1740px x 620px</td>
-</tr>
-<tr>
-    <td><b>フォーカスされていないサイズ</b></td>
-    <td>1740px x 560px</td>
-</tr>
-<tr>
-    <td><b>フォーカスのあるサイズ</b></td>
-    <td>1740px x 620px</td>
-</tr>
-</table>
+**バナー イメージ (余分な全体)**
+
+|   |   |
+|---|---|
+|実際のサイズ|1940x624px|
+|安全なゾーンのサイズ|1740x620px|
+|フォーカスされていないサイズ|1740x560px|
+|フォーカスのあるサイズ|1740x620px|
 
 埋め込みバナーをスクロールするかを指定できます。 静的な`.png`層または`.lsr`ファイル。
 
@@ -366,44 +287,13 @@ Xamarin.tvOS アプリは、ゲーム、ゲーム センターのサポートが
 - **ダッシュ ボードのアートワーク**-Game Center アプリのダッシュ ボードの上部に表示される提供される、省略可能なイメージを指定できます。 これらのイメージは、フォーカスを設定します。
 - **スコアボード アートワーク**-入力してください間で 1 つ (1) に 3 つ (3) 16:9 の縦横比イメージ、アプリでサポートされる各スコアボードにします。 静的あります`.png`層または`.lsr`ファイル。 スコアボード アートワークは、フォーカスを設定します。
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>達成アイコン</b></td>
-    <td><b>ダッシュ ボードのアートワーク</b></td>
-    <td><b>スコアボードのアートワーク</b></td>
-</tr>
-<tr>
-    <td><b>表示サイズ</b></td>
-    <td>200px x 200px</td>
-    <td>923px x 150px</td>
-    <td>N/A</td>
-</tr>
-<tr>
-    <td><b>実際のサイズ</b></td>
-    <td>320px x 320px</td>
-    <td>N/A</td>
-    <td>659px x 371px</td>
-</tr>
-<tr>
-    <td><b>安全なゾーンのサイズ</b></td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>618px x 348px</td>
-</tr>
-<tr>
-    <td><b>フォーカスされていないサイズ</b></td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>548px x 309px</td>
-</tr>
-<tr>
-    <td><b>フォーカスのあるサイズ</b></td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>618px x 348px</td>
-</tr>
-</table>
+||達成アイコン|ダッシュ ボードのアートワーク|スコアボードのアートワーク|
+|---|---|---|---|
+|表示サイズ|200x200px|923x150px|N/A|
+|実際のサイズ|320x320px|N/A|659x371px|
+|安全なゾーンのサイズ|N/A|N/A|618x348px|
+|フォーカスされていないサイズ|N/A|N/A|548x309px|
+|フォーカスのあるサイズ|N/A|N/A|618x348px|
 
 ゲーム センターの操作の詳細については、Apple を参照してください[ゲーム センターのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)です。
 

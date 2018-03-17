@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: b78ade19efed92ab3b2d8ba790f2d7334472bab4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 09858bd7902b44bbedd96f1be9c9c827131ee16f
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="native-types"></a>ネイティブ型
 
@@ -27,28 +27,11 @@ Objective C のたとえば、マップ、`NSInteger`のデータ型`int32_t`32 
 
 次の表は、この新しい 32/64 ビット環境を一致するように、データ型で変更を示しています。
 
-<table>
-        <tr>
-            <th>ネイティブ型</th>
-            <th>32 ビットのバッキング型</th> 
-            <th>64 ビットのバッキング型</th>
-        </tr>
-        <tr>
-            <td><code>System.nint</code></td>
-        <td><code>System.Int32</code> (<code>int</code>)</td>
-        <td><code>System.Int64</code> (<code>long</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nuint</code></td>
-        <td><code>System.UInt32</code> (<code>uint</code>)</td>
-        <td><code>System.UInt64</code> (<code>ulong</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nfloat</code></td>
-        <td><code>System.Single</code> (<code>float</code>)</td>
-        <td><code>System.Double</code> (<code>double</code>)</td>
-        </tr>
-    </table>
+|ネイティブ型|32 ビットのバッキング型|64 ビットのバッキング型|
+|--- |--- |--- |
+|`System.nint`|`System.Int32` (`int`)|`System.Int64` (`long`)|
+|`System.nuint`|`System.UInt32` (`uint`)|`System.UInt64` (`ulong`)|
+|`System.nfloat`|`System.Single` (`float`)|`System.Double` (`double`)|
 
 今日の見た目と同じ方法で検索増減する c# コードを許可するには、その名前を選択しました。
 
@@ -76,32 +59,15 @@ CoreGraphics で使用されるポイント、サイズ、および四角形の�
 
 移動するときに**統合**のインスタンスを置換する必要があります`System.Drawing`でその`CoreGraphics`次の表に示すように対応します。
 
-<table>
-        <tr>
-            <th>System.Drawing の古い型</th>
-            <th>新しいデータ型 CoreGraphics</th> 
-            <th>説明</th>
-        </tr>
-        <tr>
-        <td><code>RectangleF</code></td>
-        <td><code>CGRect</code></td>
-        <td>浮動小数点を保持では、四角形の情報をポイントします。  </td>
-        </tr>
-        <tr>
-        <td><code>SizeF</code></td>
-        <td><code>CGSize</code></td>
-        <td>浮動小数点を保持ポイント サイズの情報 (幅、高さ)</td>
-        </tr>
-        <tr>
-        <td><code>PointF</code></td>
-        <td><code>CGPoint</code></td>
-        <td>浮動小数点を保持ポイント情報 (X, Y)</td>
-        </tr>
-    </table>
+|System.Drawing の古い型|新しいデータ型 CoreGraphics|説明|
+|--- |--- |--- |
+|`RectangleF`|`CGRect`|浮動小数点を保持では、四角形の情報をポイントします。|
+|`SizeF`|`CGSize`|浮動小数点を保持ポイント サイズの情報 (幅、高さ)|
+|`PointF`|`CGPoint`|浮動小数点を保持ポイント情報 (X, Y)|
 
 データ構造体の要素を格納する古いデータ型を使用する浮動小数点の値が 1 つを使用して新しい while`System.nfloat`です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [クロスプラット フォーム アプリでネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md)
-- [従来の vs Unified API の相違点](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md)
+- [従来の vs Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>SiriKit 概念を理解します。
 
@@ -65,108 +65,33 @@ MonkeyChat がユーザーの友人の連絡先独自書籍を維持、それぞ
 
 たとえば、ユーザーは、友人の Bobo にメッセージを送信する場合に、Siri と次のメッセージ交換がある可能性があります。
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>ユーザー</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri、MonkeyChat メッセージを送信"</td>
-</tr>
-<tr>
-    <td>"にだれか。"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo"</td>
-</tr>
-<tr>
-    <td>「実行 Bobo にたいですか?」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「複数バナナを送信してください」</td>
-</tr>
-</table>
+_ユーザー: Hey Siri、MonkeyChat メッセージを送信します。_<br />
+_Siri: にだれか。_<br />
+_ユーザー: Bobo です。_<br />
+_Siri: 実行 Bobo にたいですか。_<br />
+_ユーザーの場合は、複数バナナを送信してください。_<br />
 
 別のユーザーには、別のメッセージ交換で同じ要求を行うことがあります。
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>ユーザー</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「メッセージを送信する MonkeyChat で Bobo」</td>
-</tr>
-<tr>
-    <td>「実行 Bobo にたいですか?」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「複数バナナを送信してください」</td>
-</tr>
-</table>
+_: ユーザーは、MonkeyChat で Bobo にメッセージを送信します。_<br />
+_Siri: 実行 Bobo にたいですか。_<br />
+_ユーザーの場合は、複数バナナを送信してください。_<br />
 
 他のユーザーは、さらに短い要求を行う可能性があります。
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>ユーザー</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「MonkeyChat Bobo 送信してください複数バナナ」</td>
-</tr>
-<tr>
-    <td>「Ok、メッセージの送信に送信してください複数バナナ Monkeychat で Bobo」</td>
-    <td></td>
-</tr>
-</table>
+_ユーザー: MonkeyChat Bobo に複数のバナナを送信してください。_<br />
+_Siri: Ok、メッセージを送信する送信してください複数バナナ Monkeychat で Bobo。_<br />
 
 または、別の言語でも同じ要求を行います。
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>ユーザー</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo s'il vous plaît envoyer plus de bananes"</td>
-</tr>
-<tr>
-    <td>"Oui、envoi メッセージ s'il vous plaît envoyer plus de bananes à Bobo sur Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_ユーザー: MonkeyChat Bobo s'il vous plaît envoyer plus de bananes です。_<br />
+_Siri: Oui、envoi メッセージ s'il vous plaît envoyer plus de bananes à Bobo sur Monkeychat です。_<br />
 
 まだ他のユーザーは、メッセージ交換でかなり詳細可能性があります。
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>ユーザー</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri、できますくださいしないで me、優先と MonkeyChat のアプリケーションの送信を開始、メッセージ テキストが複数バナナを送信してください"</td>
-</tr>
-<tr>
-    <td>"にだれか。"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"マイ ベスト pal Bobo"</td>
-</tr>
-</table>
+_ユーザー: Hey Siri、できますくださいしないで me、優先と MonkeyChat のアプリケーションの送信を開始、メッセージ テキストが複数バナナを送信してください。_<br />
+_Siri: にだれか。_<br />
+_ユーザー: 最適な pal Bobo です。_<br />
 
 さらに、方法は多数あります Siri がいくつかの要求が行われた方法に基づいて、要求に応答可能性があります。
 
@@ -198,24 +123,9 @@ Siri はユーザーのユーザー補助機能のニーズを満たすとは対
 
 上記の情報を指定するには、次のメッセージ交換は MonkeyChat アプリと対話する方法を調べます。
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>ユーザー</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri、MonkeyChat で Bobo にメッセージの送信"</td>
-</tr>
-<tr>
-    <td>「実行 Bobo にたいですか?」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「複数バナナを送信してください」</td>
-</tr>
-</table>
+_ユーザー: Hey Siri、MonkeyChat で Bobo にメッセージを送信します。_<br />
+_Siri: 実行 Bobo にたいですか。_<br />
+_ユーザーの場合は、複数バナナを送信してください。_<br />
 
 アプリは、メッセージ交換の最初のロールは、Siri がユーザーの音声を理解するためです。
 
@@ -493,7 +403,7 @@ Siri を使用するアプリとのやり取りをできるだけ多くの異な
 
 問題が 1 つの値では、アプリが表示されたら、これに対処することをお勧めの確認を求め Siri があるを開始します。 たとえば、 *"'sizeof...' Bobo 優れた?"*、はいまたは no 答えを簡単に応答できるようにします。
 
-いくつかの可能な選択肢を 1 つの値の正しいできた場合がある場合は、あいまいさを排除、推奨される処理方法です。 このような状況で Siri に 10 個までの使用可能なオプションから選択するとユーザーを要求できます。 例:
+いくつかの可能な選択肢を 1 つの値の正しいできた場合がある場合は、あいまいさを排除、推奨される処理方法です。 このような状況で Siri に 10 個までの使用可能なオプションから選択するとユーザーを要求できます。 例えば:
 
 ```csharp
 Who do you want to send the message to?

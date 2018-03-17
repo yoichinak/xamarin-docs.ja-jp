@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>チュートリアル - WCF の使用
 
@@ -27,7 +27,7 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
 
 <a name="Requirements" />
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このチュートリアルでは、を作成して、WCF サービスを使用していくつかの知識があることを前提としています。
 
@@ -394,37 +394,12 @@ WCF サービス プロキシは、Xamarin.iOS のアプリケーションで使
 1. `HelloWorld.iOS`プロジェクトへの参照を追加、`HelloWorldServiceProxy`プロジェクト、およびへの参照、`System.ServiceModel`名前空間。
 1. **ソリューション エクスプ ローラー**をダブルクリックして`Main.storyboard`iOS デザイナーで、ファイルを開きます。 次のコードを追加し、`UIButton`と`UITextView`コントロール。
 
-    <table>
-        <thead>
-            <tr>
-                <td></td>
-                <td>name</td>
-                <td>Title</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>sayHelloWorldButton</code></td>
-                <td>「こんにちは, World」を言う</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>sayHelloWorldText</code></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>getHelloWorldDataButton</code></td>
-                <td>「こんにちは, World」を取得するデータ</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>getHelloWorldDataText</code></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    ||名前|Title|
+    |--- |--- |--- |
+    |`UIButton`|`sayHelloWorldButton`|「こんにちは, World」を言う|
+    |`UITextView`|`sayHelloWorldText`||
+    |`UIButton`|`getHelloWorldDataButton`|「こんにちは, World」を取得するデータ|
+    |`UITextView`|`getHelloWorldDataText`||
 
     コントロールを追加した後、UI は、次のスクリーン ショットをようになります。
 

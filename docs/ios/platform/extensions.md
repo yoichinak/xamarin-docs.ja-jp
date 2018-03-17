@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6e0eebef2404ce3f117fe897d456f3ef78a8f585
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="ios-extensions"></a>iOS の拡張機能
 
@@ -44,63 +44,14 @@ _IOS 8 で導入された、拡張機能は、ウィジェットが提示する�
 
 ## <a name="extension-points"></a>拡張ポイント
 
-8 (以降)、iOS で作成できる拡張機能のいくつかの種類があります。
-
-<table>
-<colgroup>
-<col />
-<col />
-<col />
-</colgroup>
-
-<thead>
-<tr>
-    <th >型</th>
-    <th >説明</th>
-    <th >拡張点</th>
-    <th >ホスト アプリケーション</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-    <td >アクション</td>
-    <td >特殊なエディターまたは特定のメディアの種類のビューアー</td>
-    <td ><code>com.apple.ui-services</code></td>
-    <td >どれでも可</td>
-</tr>
-<tr>
-    <td >ドキュメント プロバイダー</td>
-    <td >リモート ドキュメント ストアを使用するアプリに許可します。</td>
-    <td ><code>com.apple.fileprovider-ui</code></td>
-    <td >アプリを使用して、 <a href="https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/">UIDocumentPickerViewController</a></td>
-</tr>
-<tr>
-    <td >キーボード</td>
-    <td >代替キーボード</td>
-    <td ><code>com.apple.keyboard-service</code></td>
-    <td >どれでも可</td>
-</tr>
-<tr>
-    <td >写真の編集</td>
-    <td >写真の操作と編集</td>
-    <td ><code>com.apple.photo-editing</code></td>
-    <td >Photos.app エディター</td>
-</tr>
-<tr>
-    <td >共有</td>
-    <td >メッセージング サービスなどのソーシャル ネットワークとデータを共有します。</td>
-    <td ><code>com.apple.share-services</code></td>
-    <td >どれでも可</td>
-</tr>
-<tr>
-    <td >今日</td>
-    <td >現在の画面または通知センターに表示される「ウィジェット」</td>
-    <td ><code>com.apple.widget-extensions</code></td>
-    <td >今日と通知センター</td>
-</tr>
-</tbody>
-</table>
+|型|説明|拡張点|ホスト アプリケーション|
+|--- |--- |--- |--- |
+|アクション|特殊なエディターまたは特定のメディアの種類のビューアー|`com.apple.ui-services`|どれでも可|
+|ドキュメント プロバイダー|リモート ドキュメント ストアを使用するアプリに許可します。|`com.apple.fileprovider-ui`|アプリを使用して、 [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|キーボード|代替キーボード|`com.apple.keyboard-service`|どれでも可|
+|写真の編集|写真の操作と編集|`com.apple.photo-editing`|Photos.app エディター|
+|共有|メッセージング サービスなどのソーシャル ネットワークとデータを共有します。|`com.apple.share-services`|どれでも可|
+|今日|現在の画面または通知センターに表示される「ウィジェット」|`com.apple.widget-extensions`|今日と通知センター|
 
 [その他の拡張点](~/ios/platform/introduction-to-ios10/index.md#app-extensions)iOS 10 に追加されました。
 

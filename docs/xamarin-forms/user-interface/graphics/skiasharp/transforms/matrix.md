@@ -8,11 +8,11 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 9d5e65abe675ded48e9239f2cd10ceed4a7c3a52
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: b54e5258c76892620947d0a7ce673b4ff61f09f3
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="matrix-transforms"></a>行列変換
 
@@ -410,7 +410,7 @@ public class PathTransformPage : ContentPage
 transformedPath.Transform(matrix);
 ```
 
-パスは*いない*プロパティとしては、このマトリックスを保持します。 代わりにのすべてのパスの座標に変換が適用されます。 場合`Transform`と呼ばれる、もう一度、トランス フォームが再び適用されること、および戻ることが唯一の方法が変換を元に戻す別の行列を適用することではします。 さいわい、`SKMatrix`構造体を定義、 [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix@/)行列を取得するメソッドは、指定された行列を反転させます。
+パスは*いない*プロパティとしては、このマトリックスを保持します。 代わりにのすべてのパスの座標に変換が適用されます。 場合`Transform`と呼ばれる、もう一度、トランス フォームが再び適用されること、および戻ることが唯一の方法が変換を元に戻す別の行列を適用することではします。 さいわい、`SKMatrix`構造体を定義、 [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/)行列を取得するメソッドは、指定された行列を反転させます。
 
 ```csharp
 SKMatrix inverse;

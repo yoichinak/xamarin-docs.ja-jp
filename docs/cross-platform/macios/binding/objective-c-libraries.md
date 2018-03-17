@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: f0e8dabc47352213d18d079ee9f8abb3e557b868
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 8674a8b846573c27e54660ae3bc065e07561f411
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Objective C ライブラリのバインド
 
@@ -528,7 +528,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常これらのフィールドには、参照する必要がある文字列または整数の値が含まれます。 特定の通知を表す文字列とはディクショナリ内のキーとしてよく使用されます。
 
-バインドするフィールド、インターフェイス定義ファイルにプロパティを追加しを使用してプロパティを装飾、 [[Field]](~/cross-platform/macios/binding/binding-types-reference.md)属性。 この属性は 1 つのパラメーターを受け取ります。 参照する記号の C の名前。 例:
+バインドするフィールド、インターフェイス定義ファイルにプロパティを追加しを使用してプロパティを装飾、 [[Field]](~/cross-platform/macios/binding/binding-types-reference.md)属性。 この属性は 1 つのパラメーターを受け取ります。 参照する記号の C の名前。 例えば:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -636,7 +636,7 @@ interface MyType {
 
 装飾できるは、(戻り値) のメソッドやパラメーターを持つプロパティ[[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md)です。 唯一の制限は、メンバー**いない必要があります**内にある、`[Protocol]`または`[Model]`インターフェイスです。
 
-例:
+例えば:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -655,7 +655,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md)もの配列をサポート`NSNumber``NSValue`と`NSString`(列挙)。
 
-例:
+例えば:
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -684,7 +684,7 @@ Xamarin.iOS バインディング ジェネレーターは、通知をバイン�
 
 なし、運ぶ通知の引数を指定せず、この属性を使用できますかを指定することができます、 `System.Type` API の定義で別のインターフェイスを通常"EventArgs"で終わる名前で参照します。 ジェネレーターは、インターフェイスに変換クラスをサブクラス化する`EventArgs`すべてのプロパティが一覧表示が含まれます。 `[Export]`属性は、値がフェッチ OBJECTIVE-C ディクショナリの検索に使用するキーの名前を一覧表示を EventArgs クラスで使用する必要があります。
 
-例:
+例えば:
 
 ```csharp
 interface MyClass {
@@ -1021,155 +1021,31 @@ interface XyzPanel {
 
 次の表は、OBJECTIVE-C と CocoaTouch world から Xamarin.iOS 世界への型をマップする方法を示しています。
 
-<table border="1" cellpadding="1" cellspacing="1" width="80%">
-      <caption> 型のマッピング </caption>
-      <tbody>
-        <tr>
-          <td>
-Objective C 型名 </td>
-          <td>
-Xamarin.iOS Unified API type </td>
-        </tr>
-        <tr>
-          <td>
-BOOL、GLboolean </td>
-          <td>
-bool </td>
-        </tr>
-        <tr>
-          <td>
-NSInteger </td>
-          <td>
-nint </td>
-        </tr>
-        <tr>
-          <td>
-NSUInteger </td>
-          <td>
-nuint </td>
-        </tr>
-        <tr>
-          <td>
-CFTimeInterval / NSTimeInterval </td>
-          <td>
-double </td>
-        </tr>
-        <tr>
-          <td>
-NSString (<a href="~/ios/internals/api-design/nsstring.md">NSString をバインディングに詳細</a>) </td>
-          <td>
-string </td>
-        </tr>
-        <tr>
-          <td>
-char* </td>
-          <td>
-            <a href="~/cross-platform/macios/binding/binding-types-reference.md#plainstring"> [PlainString]</a>文字列 </td>
-        </tr>
-        <tr>
-          <td>
-CGRect </td>
-          <td>
-CGRect </td>
-        </tr>
-        <tr>
-          <td>
-CGPoint </td>
-          <td>
-CGPoint </td>
-        </tr>
-        <tr>
-          <td>
-CGSize </td>
-          <td>
-CGSize </td>
-        </tr>
-        <tr>
-          <td>
-CGFloat、GLfloat </td>
-          <td>
-nfloat </td>
-        </tr>
-        <tr>
-          <td>
-CoreFoundation 型 (CF *) </td>
-          <td>
-CoreFoundation.CF* </td>
-        </tr>
-        <tr>
-          <td>
-GLint </td>
-          <td>
-nint </td>
-        </tr>
-        <tr>
-          <td>
-GLfloat </td>
-          <td>
-nfloat </td>
-        </tr>
-        <tr>
-          <td>
-Foundation 型 (NS *) </td>
-          <td>
-Foundation.NS* </td>
-        </tr>
-        <tr>
-          <td>
-ID </td>
-          <td>
-Foundation.NSObject </td>
-        </tr>
-        <tr>
-          <td>
-NSGlyph </td>
-          <td>
-nint </td>
-        </tr>
-        <tr>
-          <td>
-NSSize </td>
-          <td>
-CGSize </td>
-        </tr>
-        <tr>
-          <td>
-NSTextAlignment </td>
-          <td>
-UITextAlignment </td>
-        </tr>
-        <tr>
-          <td>
-SEL </td>
-          <td>
-ObjCRuntime.Selector </td>
-        </tr>
-        <tr>
-          <td>
-dispatch_queue_t </td>
-          <td>
-CoreFoundation.DispatchQueue </td>
-        </tr>
-        <tr>
-          <td>
-CFTimeInterval </td>
-          <td>
-double </td>
-        </tr>
-        <tr>
-          <td>
-CFIndex </td>
-          <td>
-nint </td>
-        </tr>
-        <tr>
-          <td>
-NSGlyph </td>
-          <td>
-nuint </td>
-        </tr>
-      </tbody>
-    </table>
+|Objective C 型名|Xamarin.iOS Unified API type|
+|---|---|
+|`BOOL`, `GLboolean`|`bool`|
+|`NSInteger`|`nint`|
+|`NSUInteger`|`nuint`|
+|`CFTimeInterval` / `NSTimeInterval`|`double`|
+|`NSString` ([バインドの詳細`NSString` ](~/ios/internals/api-design/nsstring.md))|`string`|
+|`char *`|`string` (も参照してください: [PlainString 属性](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
+|`CGRect`|`CGRect`|
+|`CGPoint`|`CGPoint`|
+|`CGSize`|`CGSize`|
+|`CGFloat`, `GLfloat`|`nfloat`|
+|CoreFoundation 型 (`CF*`)|`CoreFoundation.CF*`|
+|`GLint`|`nint`|
+|`GLfloat`|`nfloat`|
+|Foundation 型 (`NS*`)|`Foundation.NS*`|
+|`id`|`Foundation`.`NSObject`|
+|`NSGlyph`|`nint`|
+|`NSSize`|`CGSize`|
+|`NSTextAlignment`|`UITextAlignment`|
+|`SEL`|`ObjCRuntime.Selector`|
+|`dispatch_queue_t`|`CoreFoundation.DispatchQueue`|
+|`CFTimeInterval`|`double`|
+|`CFIndex`|`nint`|
+|`NSGlyph`|`nuint`|
 
  <a name="Arrays" />
 
@@ -1450,7 +1326,7 @@ Xamarin.iOS、ライブラリにリンクする方法を通知する必要があ
 
 上記の例ではリンク`libMyLibrary.a`、`libSystemLibrary.dylib`と`CFNetwork`フレームワーク ライブラリ、最終的な実行可能ファイルにします。
 
-アセンブリ レベルの活用、または`LinkWithAttribute`、契約ファイルに埋め込むことができます (など`AssemblyInfo.cs`)。 使用すると、 `LinkWithAttribute`、ためするには、バインド、アプリケーションを使用して、ネイティブ ライブラリ埋め込む時に使用できる、ネイティブ ライブラリが存在する必要があります。 例:
+アセンブリ レベルの活用、または`LinkWithAttribute`、契約ファイルに埋め込むことができます (など`AssemblyInfo.cs`)。 使用すると、 `LinkWithAttribute`、ためするには、バインド、アプリケーションを使用して、ネイティブ ライブラリ埋め込む時に使用できる、ネイティブ ライブラリが存在する必要があります。 例えば:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:

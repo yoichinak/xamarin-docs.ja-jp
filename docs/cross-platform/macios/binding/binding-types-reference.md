@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 568650a850b9db1fa22deef55eebb6a437e7e0b7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="binding-types-reference-guide"></a>バインディングの種類のリファレンス ガイド
 
@@ -114,7 +114,7 @@ Bool の値を返します、ここでは、ラムダの構文によりだけか
 
 バインディング ジェネレーターは、イベントおよびのようなクラスをリンクしているプロパティの生成をサポート`UIScrollView`でその`UIScrollViewDelegate`(もこれらのモデル クラス) を呼び出す注釈を付けるときは、`BaseType`と定義、`Events`と`Delegates`パラメーター (下記参照)。 注釈を付けるだけでなく、`BaseType`これらのパラメーターがいくつかのより多くのコンポーネントのジェネレーターを通知するために必要です。
 
-パラメーターを 1 つ以上のイベント (OBJECTIVE-C、規則は、デリゲート クラスの最初のパラメーターが送信元オブジェクトのインスタンスである) に使用する生成された EventArgs クラスを使用する名前を指定する必要があります。 これは、`EventArgs`モデル クラスのメソッドの宣言での属性です。 例:
+パラメーターを 1 つ以上のイベント (OBJECTIVE-C、規則は、デリゲート クラスの最初のパラメーターが送信元オブジェクトのインスタンスである) に使用する生成された EventArgs クラスを使用する名前を指定する必要があります。 これは、`EventArgs`モデル クラスのメソッドの宣言での属性です。 例えば:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -324,7 +324,7 @@ interface FooObject {
 
 静的クラスから派生していないものが生成されますだけこの属性がクラスに適用されるときに`NSObject`ため、`[BaseType]`属性は無視されます。 静的クラスは、ホストに公開するパブリック変数の C に使用されます。
 
-例:
+例えば:
 
 ```csharp
 [Static]
@@ -498,7 +498,7 @@ public Func<NSAnimation, float, float> ComputeAnimationCurve { get; set; }
 
 パラメーターを 1 つ以上のイベント (OBJECTIVE-C、規則は、デリゲート クラスの最初のパラメーターが送信元オブジェクトのインスタンスである) に使用する生成された EventArgs クラスを使用する名前を指定する必要があります。 これは、`EventArgs`メソッド宣言での属性、`Model`クラスです。
 
-例:
+例えば:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -785,7 +785,7 @@ interface NSUrlSession {
 
 装飾できるは、(戻り値) のメソッドやパラメーターを持つプロパティ`BindAs`です。 唯一の制限は、メンバー**いない必要があります**内にある、`[Protocol]`または`[Model]`インターフェイスです。
 
-例:
+例えば:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -894,7 +894,7 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 使用すると、メソッドまたはプロパティのバインド属性の効果を指定されたセレクターを呼び出すメソッドの生成を開始します。 その結果、生成されたメソッドがで修飾されていないが、`[Export]`属性は、メソッドのオーバーライドで参加できるいないことを意味します。 これは通常と組み合わせて使用、 `Target` Objective C の拡張メソッドを実装するための属性です。
 
-例:
+例えば:
 
 ```csharp
 public interface UIView {
@@ -906,7 +906,7 @@ public interface UIView {
 Getter または setter で使用する場合、`Bind`プロパティの get アクセス操作子および set アクセス操作子 OBJECTIVE-C セレクター名を生成するときに、コード ジェネレーターによって推論される既定の設定を変更する属性を使用します。 既定では名前の「従属」を持つプロパティのフラグを設定するときに、ジェネレーターが生成、get アクセス操作子の「従属」エクスポートと"setFooBar:"、set アクセス操作子にします。 いくつかの場合、Objective C がこの規約に従っていない、通常、名を変更、get アクセス操作子"isFooBar"であります。
 このコード ジェネレーターを通知するために、この属性を使用します。
 
-例:
+例えば:
 
 ```csharp
 // Default behavior
@@ -1004,7 +1004,7 @@ C: の目的でこのような 2 つのプロパティを次に示します
 
 以降、`Dispose`メソッドはによって自動的に生成、`bmac-native`と`btouch-native`ツールを使用する必要があります、 `Dispose` 、生成されたコードを挿入する属性`Dispose`メソッドの実装です。
 
-例:
+例えば:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1090,7 +1090,7 @@ interface CameraEffects {
 
 C# 補完的なサポート ファイルに追加し公開する厳密に型指定されたラッパーと、通常はメソッドまたはこの属性を使用してプロパティを非表示にし、メソッドまたはプロパティに別の名前を提供するバインドをデザインするときに、基になる機能です。
 
-例:
+例えば:
 
 ```csharp
 [Internal]
@@ -1140,7 +1140,7 @@ public NSObject this [NSObject idx] {
 
 なし、運ぶ通知の引数を指定せず、この属性を使用できますかを指定することができます、 `System.Type` API の定義で別のインターフェイスを通常"EventArgs"で終わる名前で参照します。 ジェネレーターは、インターフェイスに変換クラスをサブクラス化する`EventArgs`すべてのプロパティが一覧表示が含まれます。 `[Export]`で属性を使用する必要があります、`EventArgs`値がフェッチ OBJECTIVE-C ディクショナリの検索に使用されるキーの名前を一覧表示するクラス。
 
-例:
+例えば:
 
 ```csharp
 interface MyClass {
@@ -1252,7 +1252,7 @@ interface MyClass {
 
 参照型がこの属性を持たない場合バインディング Objective C に渡す前に割り当てられている値のチェックが生成されますされをスローするチェックが生成されます、`ArgumentNullException`割り当てられた値が null の場合。
 
-例:
+例えば:
 
 ```csharp
 // In properties
@@ -1440,7 +1440,7 @@ demo.Delegate = new MyDelegate ();
 ```
 
 
-別の使用、`Wrap`属性は、厳密に型指定されたバージョンのメソッドをサポートします。   例:
+別の使用、`Wrap`属性は、厳密に型指定されたバージョンのメソッドをサポートします。   例えば:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1935,7 +1935,7 @@ Xamarin.iOS 8.0 でラップする厳密に型指定されたクラスを簡単�
 
 この属性は、1 つのパラメーター ディクショナリの要素にアクセスするためのキーを含むクラスの名前です。   既定では、属性を持つインターフェイス内の各プロパティは「キー」サフィックスが付いた名前の指定した型のメンバーを検索します。
 
-例:
+例えば:
 
 ```csharp
 [StrongDictionary ("MyOptionKeys")]
@@ -1987,70 +1987,20 @@ interface MyColoringKeys {
 
 次のデータ型はサポートされて、`StrongDictionary`定義。
 
-<table border="1" cellpadding="1" cellspacing="1" width="80%">
-<tbody>
-  <tr>
-    <td>インターフェイスの型 (C#)</td>
-    <td>NSDictionary 記憶域の種類</td>
-  </tr>
-  <tr>
-    <td>bool</td>
-    <td>ブール値を NSNumber に格納されています。</td>
-  </tr>
-  <tr>
-    <td>列挙値</td>
-    <td>整数、NSNumber に格納されています。</td>
-  </tr>
-  <tr>
-    <td>int</td>
-    <td>NSNumber に格納されている 32 ビット整数</td>
-  </tr>
-  <tr>
-    <td>uint</td>
-    <td>NSNumber に格納されている 32 ビット符号なし整数</td>
-  </tr>
-  <tr>
-    <td>nint</td>
-    <td>NSInteger、NSNumber に格納されています。</td>
-  </tr>
-  <tr>
-    <td>nuint</td>
-    <td>NSUInteger、NSNumber に格納されています。</td>
-  </tr>
-  <tr>
-    <td>long</td>
-    <td>NSNumber に格納されている 64 ビットの整数</td>
-  </tr>
-  <tr>
-    <td>float</td>
-    <td>NSNumber として格納されている 32 ビット整数</td>
-  </tr>
-  <tr>
-    <td>double</td>
-    <td>NSNumber として格納されている 64 ビットの整数</td>
-  </tr>
-  <tr>
-    <td>NSObject とサブクラス</td>
-    <td>NSObject</td>
-  </tr>
-  <tr>
-    <td>NSDictionary</td>
-    <td>NSDictionary</td>
-  </tr>
-  <tr>
-    <td>string</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>NSString</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>NSObject の配列 (C#)</td>
-    <td>NSArray</td>
-  </tr>
-  <tr>
-    <td>列挙体の配列 (C#)</td>
-    <td>値を持つ NSNumbers を含む NSArray</td>
-  </tr>
-</tbody>
+|インターフェイスの型 (C#)|`NSDictionary` 記憶域の種類|
+|---|---|
+|`bool`|`Boolean` 格納されている、 `NSNumber`|
+|列挙値|格納されている整数、 `NSNumber`|
+|`int`|32 ビット整数に格納されている、 `NSNumber`|
+|`uint`|32 ビット符号なし整数に格納されている、 `NSNumber`|
+|`nint`|`NSInteger` 格納されている、 `NSNumber`|
+|`nuint`|`NSUInteger` 格納されている、 `NSNumber`|
+|`long`|64 ビット整数に格納されている、 `NSNumber`|
+|`float`|32 ビット整数として格納されている、 `NSNumber`|
+|`double`|64 ビット整数として格納されている、 `NSNumber`|
+|`NSObject` サブクラスと|`NSObject`|
+|`NSDictionary`|`NSDictionary`|
+|`string`|`NSString`|
+|`NSString`|`NSString`|
+|C#`Array`の `NSObject`|`NSArray`|
+|C#`Array`列挙型の|`NSArray` 含む`NSNumber`値|

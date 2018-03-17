@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 6d6e4f7a60468090797c61fc78119d759f57b728
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 68ea5c700efaaf007718cae3ec8b8f7875385b07
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-api"></a>統合 API
 
@@ -67,36 +67,14 @@ Mac および iOS 製品間でコードを共有する摩擦を減らすため�
 
 Unified API が非推奨のメソッドを削除し、いくつかのインスタンスがある場所が入力ミス API 名で、従来の Api で元 MonoTouch と MonoMac 名前空間にバインドされているときにします。 これらのインスタンスが、新しい Unified Api で修正され、コンポーネント、iOS および Mac のアプリケーションで更新する必要があります。 次に遭遇する最も一般的なものの一覧を示します。
 
-<table width="100%" border="1">
-<tr>
-    <th>従来の API メソッドの名前</th>
-    <th>統一された API のメソッド名</th>
-</tr>
-<tr>
-    <td>UINavigationController.PushViewControllerAnimated()</td>
-    <td>UINavigationController.PushViewController()</td>
-</tr>
-<tr>
-    <td>UINavigationController.PopViewControllerAnimated()</td>
-    <td>UINavigationController.PopViewController()</td>
-</tr>
-<tr>
-    <td>CGContext.SetRGBFillColor()</td>
-    <td>CGContext.SetFillColor()</td>
-</tr>
-<tr>
-    <td>NetworkReachability.SetCallback()</td>
-    <td>NetworkReachability.SetNotification()</td>
-</tr>
-<tr>
-    <td>CGContext.SetShadowWithColor</td>
-    <td>CGContext.SetShadow</td>
-</tr>
-<tr>
-    <td>UIView.StringSize</td>
-    <td>UIKit.UIStringDrawing.StringSize</td>
-</tr>
-</table>
+|従来の API メソッドの名前|統一された API のメソッド名|
+|--- |--- |
+|`UINavigationController.PushViewControllerAnimated()`|`UINavigationController.PushViewController()`|
+|`UINavigationController.PopViewControllerAnimated()`|`UINavigationController.PopViewController()`|
+|`CGContext.SetRGBFillColor()`|`CGContext.SetFillColor()`|
+|`NetworkReachability.SetCallback()`|`NetworkReachability.SetNotification()`|
+|`CGContext.SetShadowWithColor`|`CGContext.SetShadow`|
+|`UIView.StringSize`|`UIKit.UIStringDrawing.StringSize`|
 
 クラシックから Unified API に切り替えると、変更の一覧についてを参照してください、[クラシック (monotouch.dll) と統合 (Xamarin.iOS.dll) API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)ドキュメント。
 
@@ -152,7 +130,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>配列と System.Collections.Generic
 
-C# のインデクサーには、型が想定しているため`int`、明示的にキャストする必要があります`nint`値`int`コレクションまたは配列要素にアクセスします。 例:
+C# のインデクサーには、型が想定しているため`int`、明示的にキャストする必要があります`nint`値`int`コレクションまたは配列要素にアクセスします。 例えば:
 
 ```csharp
 public List<string> Names = new List<string>();

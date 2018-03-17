@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 6da9b4d36c8caca23328318b4f2bff784038bacd
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d1aadd808ea18023ee0a22259ddb36c0a8daa802
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="styles"></a>スタイル
 
@@ -157,4 +157,4 @@ label.Style = Device.Styles.TitleStyle;
 - [Xamarin.Forms、章 12 を使用したモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [スタイル](~/xamarin-forms/user-interface/styles/index.md)
 - [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [スタイル](http://developer.xamarin.comhttps://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
+- [スタイル](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)

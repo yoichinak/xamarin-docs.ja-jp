@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-storyboards"></a>ストーリー ボードの概要
 
@@ -25,7 +25,7 @@ _ストーリー ボードは、外観を視覚的に表現し、アプリケー
 ストーリー ボードの作成、開かれたおよび Xamarin iOS デザイナーを使用して編集します。 このガイドもチュートリアル、デザイナーを使用して、ナビゲーションをプログラミングする c# を使用しているときに、ストーリー ボードを作成する方法です。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 ストーリー ボードは、インストールされている Xamarin ワークロードで iOS Mac 用の Visual Studio のデザイナーや、Visual Studio 2015 や 2017 使用できます。
 
@@ -84,32 +84,12 @@ A *Segue*、または*話題オブジェクト*シーンの間の遷移を表す
 
 [![](images/adaptivesegue.png "アダプティブ Segues ドロップダウン")](images/adaptivesegue.png#lightbox)
 
-<table>
-    <thead>
-        <tr>
-            <th>話題</th>
-            <th>説明</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>表示</td>
-            <td>これとよく似ています、プッシュが話題が、アカウントに、画面のコンテンツがかかりません。 </td>
-        </tr>
-        <tr>
-            <td>詳細の表示</td>
-            <td>アプリケーションには、(たとえば、iPAd で分割ビュー コント ローラー) のマスター/詳細ビューが表示されて、コンテンツの詳細ビューに置き換わります。 アプリケーションには、マスターのみが表示されている場合<strong>または</strong>詳細、コンテンツ ビューのコント ローラー スタックの一番上に置き換えられます。</td>
-        </tr>
-        <tr>
-            <td>Presentation</td>
-            <td>これは、モーダル segue に似ていますしのプレゼンテーションと遷移のスタイルの選択できます。</td>
-        </tr>
-        <tr>
-            <td>重なってプレゼンテーション</td>
-            <td>これは、重なってとしてコンテンツが表示します。</td>
-        </tr>
-    </tbody>
-</table>
+|話題|説明|
+|--- |--- |
+|表示|これとよく似ています、プッシュが話題が、アカウントに、画面のコンテンツがかかりません。|
+|詳細の表示|アプリケーションには、(たとえば、iPad で分割ビュー コント ローラー) のマスター/詳細ビューが表示されて、コンテンツの詳細ビューに置き換わります。 アプリケーションには、マスターまたは詳細のみが表示されて、コンテンツ ビューのコント ローラー スタックの一番上に置き換えられます。|
+|Presentation|これは、モーダル segue に似ていますしのプレゼンテーションと遷移のスタイルの選択できます。|
+|重なってプレゼンテーション|これは、重なってとしてコンテンツが表示します。|
 
 ### <a name="transferring-data-with-segues"></a>Segues を使用してデータを転送します。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b1b6338494b9be98e677cf9d338410eae759feb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a09ba93fe7c3f5ade6b5cafe44fd7ee2b0c33487
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>統合 API への既存のアプリの更新
 
@@ -49,7 +49,7 @@ For mac を Visual Studio に組み込まれて自動的に移行ツールを使
 
 Unified API を使用して、iOS プロジェクトで既存の Xamarin.Forms ソリューションを更新する次の手順に従います。 統一された API のサポートのみ利用可能で、Xamarin.Forms 1.3 にその後、ように[指示](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)バージョン 1.3 に Xamarin.Forms アプリを更新する方法についても説明します。 これら[ヒント](~/cross-platform/macios/unified/updating-tips.md)カスタム レンダラーや依存関係サービス内のすべてのネイティブの iOS コードを更新役立つ場合があります。
 
-## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[クロスプラット フォーム アプリでネイティブ型の使用](~/cross-platform/macios/nativetypes.md)
+## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/nativetypes.md)
 
 この記事では、コードが Android や Windows Phone Os などの非 iOS デバイスと共有されているクロス プラットフォーム アプリケーションで新しい iOS Unified API をネイティブ型 (nint、nuint、nfloat) の使用について説明します。 ネイティブ型を使用すべき状況を把握し、クロス プラットフォームのコードで、新しい型を使用する必要がある場合に使用するいくつかの考えられる解決策を提供します。
 
@@ -68,4 +68,4 @@ Objective C のライブラリへのバインドを作成した顧客は、(一�
 - [Xamarin.Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [バインドの更新](~/cross-platform/macios/unified/update-binding.md)
 - [ヒントの更新](~/cross-platform/macios/unified/updating-tips.md)
-- [従来の vs Unified API の相違点](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [従来の vs Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

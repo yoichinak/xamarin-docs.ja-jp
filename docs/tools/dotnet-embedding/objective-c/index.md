@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6d19f0f6573b17dfb3feb6bf131686413d4e68f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 047f7d7497a114bf4b7c94e50bdf09862b882794
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="objective-c-support"></a>Objective C のサポート
 
@@ -74,7 +74,7 @@ Api を公開する`System.String`型に変換されます`NSString`です。 �
 
 ### <a name="subscripting"></a>添字演算子 
 
-管理対象のインデックス付きプロパティは、オブジェクトの添字演算子に変換されます。 例:
+管理対象のインデックス付きプロパティは、オブジェクトの添字演算子に変換されます。 例えば:
 
 ```csharp
     public bool this[int index] {
@@ -201,13 +201,11 @@ ObjC は演算子をサポートしていないため、演算子をクラス �
 
 変換するときに`DateTime`に`NSDate`DateTime の`Kind`プロパティを考慮します。
 
-<table>
-<tr><th> 種類         </th><th> 結果                                                                                            </th></tr>
-<!--tr><td> ------------ </td><td> -------------------------------------------------------------------------------------------------- </td></tr-->
-<tr><td> (utc)          </td><td> 変換は、指定された DateTime オブジェクトをそのまま使用して実行されます。                                  </td></tr>
-<tr><td> ローカル        </td><td> 呼び出しの結果`ToUniversalTime ()`変換に指定された datetime オブジェクトを使用します。 </td></tr>
-<tr><td> 指定されていません。  </td><td> 指定された DateTime オブジェクトは UTC で同一の動作の種類としてと見なされます (utc) = = です。                </td></tr>
-</table>
+|種類|結果                                                                                            |
+|---|---|
+|(utc)|指定されたを使用して変換を実行`DateTime`が格納されるオブジェクトします。|
+|ローカル|呼び出しの結果`ToUniversalTime()`を指定した`DateTime`オブジェクトが変換に使用します。|
+|指定されていません。|指定された`DateTime`オブジェクトは UTC で同一の動作の種類としてと見なされます (utc) = = です。|
 
 変換は、次の数式を使用して行われます。
 

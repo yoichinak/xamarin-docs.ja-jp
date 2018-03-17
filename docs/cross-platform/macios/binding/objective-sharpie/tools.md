@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 0d6e953a6a45b78d470c7ff73e1d6faa7444a683
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4985d67f74d54644cbc033d6c76148f88d741ee1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="tools--commands"></a>ツールとコマンド
 
@@ -53,19 +53,14 @@ Available Tools:
 
 目標ペンを使わずには、次のツールが用意されています。
 
-<table>
-  <thead>
-    <tr><td>ツール</td><td>説明</td>
-  </thead>
-  <tbody>
-    <tr><td><b>xcode</b></td><td>現在の Xcode インストールと iOS および Mac の Sdk を利用できますがのバージョンに関する情報を提供します。 使用するこの情報は後で、バインディングが生成されたとき。</td></tr>
-    <tr><td><b>pod</b></td><td>検索、構成、(ローカル ディレクトリ) にインストールすると、およびバインド Objective C <a href="https://cocoapods.org">CocoaPod</a>マスター Spec リポジトリから使用可能なライブラリです。 このツールに渡す正しい入力を自動的に推測にインストールされている CocoaPod の評価、<code>bind</code>以下のツールです。 <em><strong>3.0 の新機能!</strong></em></td></tr>
-    <tr><td><b>bind</b></td><td>ヘッダー ファイルを解析して (<code>*.h</code>) に Objective C ライブラリで、<a href="~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md">初期<i>ApiDefinition.cs</i>と<i>StructsAndEnums.cs</i>ファイル</a>です。</td></tr>
-    <tr><td><b>update</b></td><td>目標ペンを使わずの新しいバージョンを確認し、ダウンロードし、1 つが利用可能な場合は、インストーラーを起動します。</td></tr>
-    <tr><td><b>verify-docs</b></td><td>に関する詳細情報が表示<code>[Verify]</code>属性。</td></tr>
-    <tr><td><b>docs</b></td><td>既定の web ブラウザーでは、このドキュメントに移動します。</td></tr>
-  </tbody>
-</table>
+|ツール|説明|
+|--- |--- |
+|**xcode**|現在の Xcode インストールと iOS および Mac の Sdk を利用できますがのバージョンに関する情報を提供します。 使用するこの情報は後で、バインディングが生成されたとき。|
+|**pod**|検索、構成、(ローカル ディレクトリ) にインストールすると、およびバインド Objective C [CocoaPod](https://cocoapods.org/)マスター Spec リポジトリから使用可能なライブラリです。 このツールに渡す正しい入力を自動的に推測にインストールされている CocoaPod の評価、`bind`以下のツールです。 3.0 の新機能!|
+|**bind**|ヘッダー ファイルを解析して (`*.h`)、最初に Objective C ライブラリの[ApiDefinition.cs と StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)ファイル。|
+|**update**|目標ペンを使わずの新しいバージョンを確認し、ダウンロードし、1 つが利用可能な場合は、インストーラーを起動します。|
+|**verify-docs**|に関する詳細情報が表示`[Verify]`属性。|
+|**docs**|既定の web ブラウザーでは、このドキュメントに移動します。|
 
 特定の目標ペンを使わずツールのヘルプを表示するには、ツールの名前を入力し、`-help`オプション。 たとえば、`sharpie xcode -help`次の出力を返します。
 

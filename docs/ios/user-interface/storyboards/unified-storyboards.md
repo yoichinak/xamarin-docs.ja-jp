@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-storyboards"></a>統一されたストーリー ボード
 
@@ -116,63 +116,23 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 以下は、開発者可能性があります、iPhone で表示される一般的な特徴であるコレクションです。
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>プロパティ</td>
-    <td>[値]</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Compact</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>Regular</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>電話番号</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>2.0</td>
-</tr>
-</tbody>
-</table>
+|プロパティ|[値]|
+|--- |--- |
+|`HorizontalSizeClass`|Compact|
+|`VerticalSizeClass`|Regular|
+|`UserInterfaceIdom`|電話番号|
+|`DisplayScale`|2.0|
 
 すべての特徴であるプロパティの値が、上記のセットでは、完全修飾の特徴であるコレクションを表します。
 
 その値の一部が欠落している特徴であるコレクションが存在することも (Apple として参照*未指定*)。
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>プロパティ</td>
-    <td>[値]</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Compact</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>{unspecified}</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>{unspecified}</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>{unspecified}</td>
-</tr>
-</tbody>
-</table>
+|プロパティ|[値]|
+|--- |--- |
+|`HorizontalSizeClass`|Compact|
+|`VerticalSizeClass`|指定されていません。|
+|`UserInterfaceIdom`|指定されていません。|
+|`DisplayScale`|指定されていません。|
 
 一般に、ただし、問い合わせるときに、開発者の特徴である環境の特徴は、コレクションのがコレクションを返す完全修飾では、上記の例のようです。
 
@@ -216,7 +176,6 @@ Apple のという iOS 8 に新しいクラスが追加`UIImageAsset`にイメ�
 
 前述のよう、特徴であるコレクションの 1 つで指定されていませんが、特徴 (traits) のいずれかの別の指定した場合、値が指定されたバージョンに設定されます。 ただし、複数のバージョンの指定された特定の値がある場合は、最後の値の特徴であるコレクション値になります、ために使用されます。
 
-
 ## <a name="adaptive-view-controllers"></a>コント ローラーのアダプティブの表示
 
 このセクションでは、ビューとコント ローラーの表示、iOS に特徴 (traits) およびサイズ クラスは、自動的に開発者向けのアプリケーションには適応性の概念を採用している方法の詳細を説明します。
@@ -259,58 +218,11 @@ A`UIView`分割ビュー コント ローラーの親として設定されてい
 
 iOS 8 では、次の表に示すように、特徴の変更に参加する、開発者が使用できるいくつかのコールバックを提供します。
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Phase</td>
-    <td>コールバック</td>
-    <td>説明</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>セットアップ</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        <li><code>TraitCollectionDidChange</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>特徴であるコレクションは、その新しい値に設定を取得する前に、特徴の変更の先頭にこのメソッドが呼び出されます。</li>
-        <li>特徴であるコレクションの値が変更されたときに、すべてのアニメーションが行われる前に、メソッドが呼び出されます。</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>アニメーション</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>このメソッドに渡された遷移コーディネーターは、<code>AnimateAlongside</code>により、開発者は、既定のアニメーションと共に実行されるアニメーションを追加するプロパティです。</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>クリーンアップ</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>開発者は、遷移が行われた後にクリーンアップ コードを含めるためのメソッドを提供します。</li>
-        </ul>
-    </td>
-</tr>
-</tbody>
-</table>
+|Phase|コールバック|説明|
+|--- |--- |--- |
+|セットアップ|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>特徴であるコレクションは、その新しい値に設定を取得する前に、特徴の変更の先頭にこのメソッドが呼び出されます。</li><li>特徴であるコレクションの値が変更されたときに、すべてのアニメーションが行われる前に、メソッドが呼び出されます。</li></ul>|
+|アニメーション|`WillTransitionToTraitCollection`|このメソッドに渡された遷移コーディネーターは、`AnimateAlongside`により、開発者は、既定のアニメーションと共に実行されるアニメーションを追加するプロパティです。|
+|クリーンアップ|`WillTransitionToTraitCollection`|開発者は、遷移が行われた後にクリーンアップ コードを含めるためのメソッドを提供します。|
 
 `WillTransitionToTraitCollection`メソッドはの特徴であるコレクションの変更とコント ローラーの表示をアニメーション化するのに適しています。 `WillTransitionToTraitCollection`メソッドはコント ローラーの表示で使用できるのみ ( `UIViewController`) と、他の特徴である環境ではなくと同様に`UIViews`です。
 
@@ -354,7 +266,7 @@ Apple は iOS 8 に加えられたその他の変更は、開発者が、コン�
 
  [![](unified-storyboards-images/gettargetforaction.png "新しい GetTargetForAction メソッド")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-このメソッドは、適切なコンテナー ビュー コント ローラーが見つかるまで、階層チェーンをについて説明します。 例:
+このメソッドは、適切なコンテナー ビュー コント ローラーが見つかるまで、階層チェーンをについて説明します。 例えば:
 
 1.  場合、`ShowViewController`メソッドが呼び出されると、新しいビューの親として使用されているために、このメソッドを実装するチェーンの最初のビュー コント ローラーは、ナビゲーションのコント ローラー。
 1.  場合、`ShowDetailViewController`メソッドが呼び出された代わりに、分割ビュー コント ローラーは、親として使用されているため、実装する最初のビュー コント ローラー。
@@ -390,7 +302,7 @@ IPhone でアダプティブ写真アプリケーションの実行中、ユー�
 
  [![](unified-storyboards-images/rotation.png "分割ビュー コント ローラーには、両方のマスタが表示され、次に示すように詳細が表示")](unified-storyboards-images/rotation.png#lightbox)
 
-オーバーライドすることでこれを行う、`UpdateConstraintsForTraitCollection`の値に基づいてビュー コント ローラーおよび制約の調整方法、`VerticalSizeClass`です。 例:
+オーバーライドすることでこれを行う、`UpdateConstraintsForTraitCollection`の値に基づいてビュー コント ローラーおよび制約の調整方法、`VerticalSizeClass`です。 例えば:
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -446,7 +358,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>移行アニメーションを追加します。
 
-アプリケーションがからアダプティブ写真で分割ビュー コント ローラーが展開に折りたたまれている場合でも、アニメーションはオーバーライドすることで既定アニメーションに追加されます、`WillTransitionToTraitCollection`ビュー コント ローラーのメソッドです。 例:
+アプリケーションがからアダプティブ写真で分割ビュー コント ローラーが展開に折りたたまれている場合でも、アニメーションはオーバーライドすることで既定アニメーションに追加されます、`WillTransitionToTraitCollection`ビュー コント ローラーのメソッドです。 例えば:
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)

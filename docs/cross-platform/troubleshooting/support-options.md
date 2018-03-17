@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68b420f98461ee42862726a658d721b36326c203
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>どのようなサポート オプションは、Xamarin を使用しますか。
 
@@ -18,28 +18,13 @@ ms.lasthandoff: 03/09/2018
 
 上のように、 [Xamarin サポート ページ](https://www.xamarin.com/support)、いくつかのオプションを使用できます。  ここでは、初期の推奨事項クイック[スタック オーバーフローにインスパイアされた](http://stackoverflow.com/help/product-support)に最適なオプションを選択する方法。
 
-<table>
-    <tr>
-        <td>「このエラーどういう意味ですか?」 「操作方法...」または</td>
-        <td><a href="http://stackoverflow.com/questions/ask?tags=xamarin">スタックのオーバーフロー</a>下にある、 <em>xamarin</em>タグ</td>
-    </tr>
-    <tr>
-        <td>この問題は、Xamarin のソース コードの欠陥と思います。</td>
-        <td><a href="https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html">Xamarin Bugzilla</a></td>
-    </tr>
-    <tr>
-        <td>概念、機能の要求、または新しいドキュメントの要求があります。</td>
-        <td><a href="https://xamarin.uservoice.com">Xamarin UserVoice ページ</a></td>
-    </tr>
-    <tr>
-        <td>どのようなリソース、フレームワーク、またはツールは他のユーザーに推奨... しますか。 (およびその他の制約のないディスカッション)</td>
-        <td><a href="https://forums.xamarin.com/">Xamarin フォーラム</a></td>
-    </tr>
-    <tr>
-        <td>ライセンス、または価格設定、サブスクリプションについての質問があります。</td>
-        <td>電子メールの連絡先情報を使用してを呼び出したり、<a href="https://www.xamarin.com/faq">よく寄せられる質問</a></td>
-    </tr>
-</table>
+|   |   |
+|---|---|
+|「このエラーどういう意味ですか?」 「操作方法...」または|[スタックのオーバーフロー](http://stackoverflow.com/questions/ask?tags=xamarin)下にある、 *xamarin*タグ|
+|この問題は、Xamarin のソース コードの欠陥と思います。|[Xamarin Bugzilla](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)|
+|概念、機能の要求、または新しいドキュメントの要求があります。|[Xamarin UserVoice ページ](https://xamarin.uservoice.com)|
+|どのようなリソース、フレームワーク、またはツールは他のユーザーに推奨... しますか。 (およびその他の制約のないディスカッション)|[Xamarin フォーラム](https://forums.xamarin.com)|
+|ライセンス、または価格設定、サブスクリプションについての質問があります。|電子メールの連絡先情報を使用してを呼び出したり、[よく寄せられる質問](https://www.xamarin.com/faq)|
 
 Xamarin のサポート チームは、これらの各オプションを監視することができます。  すべてのユーザーが、よく考えられた質問やレポートを有効に活用知識 Xamarin 開発者コミュニティを拡大を投稿することをお勧めします。  疑いのある障害は、必ずバグの報告を問題は、Xamarin のエンジニア リング チームによって正式に追跡を確認できる場合にします。
 

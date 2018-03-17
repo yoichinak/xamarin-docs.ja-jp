@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -22,7 +22,7 @@ CloudKit フレームワークは、そのアクセス iCloud アプリケーシ
 
 開発者は、そのクライアント側アプリケーションに注目し、サーバー側のアプリケーション ロジックを記述する必要がある iCloud を使用できます。 CloudKit は、認証、プライベートとパブリック データベース、および構造化データおよび資産の記憶域サービスを提供します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 この記事で紹介する手順を完了する、次が必要。
 
@@ -147,40 +147,12 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 データベースの種類の違いを次に示します。
 
-<table cellpadding="1" cellspacing="1" border="1" width="100%">
-<thead>
-<tr>
-<td></td>
-<td>Public データベース</td>
-<td>プライベートのデータベース</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>データの種類</td>
-<td>共有データ</td>
-<td>現在のユーザーのデータ</td>
-</tr>
-
-<tr>
-<td>クォータ</td>
-<td>開発者のクォータに計上</td>
-<td>ユーザーのクォータに計上</td>
-</tr>
-
-<tr>
-<td>既定のアクセス許可</td>
-<td>読み取り可能なワールド</td>
-<td>読み取り可能なユーザー</td>
-</tr>
-
-<tr>
-<td>アクセス許可の編集</td>
-<td>レコード クラス レベルで iCloud ダッシュ ボードの役割</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
+||Public データベース|プライベートのデータベース|
+|---|--- |--- |
+|**データ型**|共有データ|現在のユーザーのデータ|
+|**クォータ**|開発者のクォータに計上|ユーザーのクォータに計上|
+|**既定のアクセス許可**|読み取り可能なワールド|読み取り可能なユーザー|
+|**アクセス許可の編集**|レコード クラス レベルで iCloud ダッシュ ボードの役割|N/A|
 
 ### <a name="records"></a>レコード
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 7819201e76e268ea84bf2cc5d49a5a07b20a04e3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a3450026eff06555723b16093c7a0daf3d12ae7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="programmatic-layout-constraints"></a>プログラムによるレイアウト制約
 
@@ -51,7 +51,7 @@ _このガイドは、iOS デザイナー内でそれらを作成する代わり
 - **ConstraintGreaterThanOrEqualTo** -のリレーションシップを定義、`first attribute >= second attribute + [constant]`オプションで指定されたと`constant`オフセット値。
 - **ConstraintLessThanOrEqualTo** -のリレーションシップを定義、`first attribute <= second attribute + [constant]`オプションで指定されたと`constant`オフセット値。
 
-例:
+例えば:
 
 ```csharp
 // Get the parent view's layout
@@ -79,32 +79,15 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 ここで c# コードの部分は式の指定された構成要素に次のように対応します。
 
-<table width="100%" border="1">
-<tr>
-<td width="50%"><b>数式</b></td><td><b>コード</b></td>
-</tr>
-<tr>
-<td width="50%">アイテム 1</td><td>PurpleView</td>
-</tr>
-<tr>
-<td width="50%">属性 1</td><td>LeadingAnchor</td>
-</tr>
-<tr>
-<td width="50%">Relationship</td><td>ConstraintEqualTo</td>
-</tr>
-<tr>
-<td width="50%">乗数</td><td>既定値は 1.0 ように指定されていません</td>
-</tr>
-<tr>
-<td width="50%">項目 2</td><td>OrangeView</td>
-</tr>
-<tr>
-<td width="50%">属性 2</td><td>TrailingAnchor</td>
-</tr>
-<tr>
-<td width="50%">定数</td><td>10.0</td>
-</tr>
-</table>
+|数式|コード|
+|---|---|
+|アイテム 1|PurpleView|
+|属性 1|LeadingAnchor|
+|Relationship|ConstraintEqualTo|
+|乗数|既定値は 1.0 ように指定されていません|
+|項目 2|OrangeView|
+|属性 2|TrailingAnchor|
+|定数|10.0|
 
 レイアウトの制約式を解決するために必要なパラメーターのみを提供するだけでなくのレイアウトのアンカー メソッドに渡されるパラメーターの型の安全性を適用します。 など、水平方向の制約を固定`LeadingAnchor`または`TrailingAnchor`のみ使用できます他の水平方向のアンカーを持つ型と乗数だけに提供されたサイズの制限。
 
@@ -112,7 +95,7 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 ### <a name="layout-constraints"></a>レイアウトの制約
 
-自動レイアウトの制約を手動で追加するには直接構築することによって、 `NSLayoutConstraint` c# コードです。 レイアウトのアンカーを使用するとは異なり、定義されている制約には影響はない場合でも、すべてのパラメーターの値を指定する必要があります。 その結果にかなりの読み取り、定型的なコードを生成するは終了します。 例:
+自動レイアウトの制約を手動で追加するには直接構築することによって、 `NSLayoutConstraint` c# コードです。 レイアウトのアンカーを使用するとは異なり、定義されている制約には影響はない場合でも、すべてのパラメーターの値を指定する必要があります。 その結果にかなりの読み取り、定型的なコードを生成するは終了します。 例えば:
 
 ```csharp
 //// Pin the leading edge of the view to the margin

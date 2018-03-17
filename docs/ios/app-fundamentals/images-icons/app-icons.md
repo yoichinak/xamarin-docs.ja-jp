@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68372d90b0567c662f0ae43e315663832f1f769b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="application-icons"></a>アプリケーションのアイコン
 
@@ -42,104 +42,66 @@ Xamarin.iOS アプリを UI コントロールとドキュメントのアイコ�
 
 次のイメージ資産のサイズと解像度は、すべての iOS 9 (またはそれ以上) を介して iOS 5 を対象とする Xamarin.iOS アプリで必要なアイコンの種類をサポートするために必要なされます。
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPhone</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td align="center" bgcolor="#F9F9F9"><b>iOS 9 & 10<b><br/><i>(iPhone 6 および 7 Plus)</i></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>アイコンの種類</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>3x</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">アプリケーション アイコン</td>
-        <td align="center">57 x 57</td>
-        <td align="center">114x114</td>
-        <td align="center" style="color:#BBBBBB;">60x60<sup>(1)</sup></td>
-        <td align="center">120 x 120</td>
-        <td align="center">180x180</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">スポット ライト</td>
-        <td align="center">29 x 29</td>
-        <td align="center">58 x 58</td>
-        <td align="center" style="color:#BBBBBB;">40x40<sup>(2)</sup></td>
-        <td align="center">80x80</td>
-        <td align="center">120 x 120</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">設定</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(4)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(4)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center">87x87</td>
-    </tr>
-</table>
+### <a name="iphone-icon-sizes"></a>iPhone アイコンのサイズ
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPad</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td colspan="1" align="center" bgcolor="#F9F9F9"><b>iOS&nbsp;9 & 10</b></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>アイコンの種類</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>2x<br/>iPad&nbsp;Pro</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">アプリケーション アイコン</td>
-        <td align="center">72 x 72</td>
-        <td align="center">144x144</td>
-        <td align="center">76 x 76</td>
-        <td align="center">152x152</td>
-        <td align="center">167x167<sup>(6)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">スポット ライト</td>
-        <td align="center">50 x 50</td>
-        <td align="center">100x100</td>
-        <td align="center">40 x 40</td>
-        <td align="center">80x80</td>
-        <td align="center" style="color:#BBBBBB;">120x120<sup>(5)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">設定</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(5)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(5)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(5)</sup></td>
-    </tr>
-</table>
+- **iPhone: 9 および 10 iOS (iPhone 6 および 7 Plus)**
 
-1. _Mac と Xcode の両方の Visual Studio は、iOS 7 の 1 の x 画像の設定をサポートしません。_
-2. _資産カタログを使用する場合は、iOS 7 の 1 x 画像の設定はサポートされていません。_
-3. _iOS 7 と 8 では、iOS 5 および 6 として同じイメージのサイズを使用します。_
-4. _スポット ライト アイコンとして同じイメージとサイズを使用します。_
-5. _IPhone として同じサイズのアイコンを使用します。_
-6. _アセット カタログのイメージ セットでのみサポートされます。_
+    ||3x|
+    |---|---|
+    |アプリケーション アイコン|180x180|
+    |スポット ライト|120 x 120|
+    |設定|87x87|
 
-アイコンの詳細については、Apple を参照してください[アイコンおよび画像のサイズ](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)ドキュメント。
+- **iPhone: iOS 7 と 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |アプリケーション アイコン|60x60<sup>1</sup>|120 x 120|
+    |スポット ライト|40x40<sup>2</sup>|80x80|
+    |設定|-|-|
+
+- **iPhone: iOS 5 および 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |アプリケーション アイコン|57 x 57|114x114|
+    |スポット ライト|29 x 29|58 x 58|
+    |設定|29 x 29<sup>3、4</sup>|58 x 58<sup>3、4</sup>|
+
+### <a name="ipad-icon-sizes"></a>iPad アイコンのサイズ
+
+- **iPad: iOS 9 & 10**
+
+    ||2 x (iPad Pro)|
+    |---|---|
+    |アプリケーション アイコン|167x167<sup>6</sup>|
+    |スポット ライト|120x120<sup>6</sup>|
+    |設定|58x58<sup>5</sup>|
+
+- **iPad: iOS 7 と 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |アプリケーション アイコン|76 x 76|152x152|
+    |スポット ライト|40 x 40|80x80|
+    |設定|-|-|
+
+- **iPad: iOS 5 & 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |アプリケーション アイコン|72 x 72|144x144|
+    |スポット ライト|50 x 50|100x100|
+    |設定|29 x 29<sup>3、5</sup>|58 x 58<sup>3、5</sup>|
+
+ 1. Mac と Xcode の両方の Visual Studio は、iOS 7 の 1 の x 画像の設定をサポートしません。
+ 2. 資産カタログを使用する場合は、iOS 7 の 1 x 画像の設定はサポートされていません。
+ 3. iOS 7 と 8 では、iOS 5 および 6 として同じイメージのサイズを使用します。
+ 4. スポット ライト アイコンとして同じイメージとサイズを使用します。
+ 5. IPhone として同じサイズのアイコンを使用します。
+ 6. アセット カタログのイメージ セットでのみサポートされます。
+ 
+ アイコンの詳細については、Apple を参照してください[アイコンおよび画像のサイズ](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)ドキュメント。
 
 <a name="managing" />
 

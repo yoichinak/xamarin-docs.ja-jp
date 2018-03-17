@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Xamarin で Jenkins の使用
 
@@ -34,7 +34,7 @@ Jenkins が構成されているし、任意の必要なプラグインがイン
 
 このガイドは、これらのポイントの各をカバーする Jenkins サーバーをセットアップする手順について説明します。 末尾をセットアップして IPA および APK の Xamarin モバイル プロジェクトの作成に Jenkins を構成する方法をよく理解お割り当てる必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 最適なビルド サーバーは、可能性のあるアプリケーションのテストのビルドとの唯一の目的に専用のスタンドアロン コンピューターです。 専用のコンピューターにより、他の役割 (web サーバーなど) に必要な可能性のある成果物には、ビルドはソケットピンしないようにします。 たとえば、ビルド サーバーが web サーバーとしても機能している場合、web サーバーは、競合しているバージョンのいくつか共通ライブラリを必要があります。 この競合があるため、web サーバーが正しく機能しませんまたは Jenkins がユーザーに展開するときに動作しないビルドを作成可能性があります。
 
@@ -343,40 +343,14 @@ Zipaligning、APK の署名と技術的には 2 つ独立したタスクは、An
 
 これらのコマンドの両方が、プロジェクトをプロジェクトに異なる場合がありますコマンド ライン パラメーターが必要です。 これらのコマンド ライン パラメーターにも、パスワードに、ビルドが実行されているときにコンソール出力には表示されません。 環境変数にこれらのコマンド ライン パラメーターを格納します。 署名および/または zip の配置に必要な環境変数は次の表で説明します。
 
-<table>
-    <thead>
-        <tr>
-            <td>環境変数</td>
-            <td>説明</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>KEYSTORE_FILE</td>
-            <td>これは、APK の署名にキー ストアへのパス</td>
-        </tr>
-        <tr>
-            <td>KEYSTORE_ALIAS</td>
-            <td>キーストアを APK の署名に使用されるキーです。</td>
-        </tr>
-        <tr>
-            <td>INPUT_APK</td>
-            <td>によって作成される APK`xbuild`です。</td>
-        </tr>
-        <tr>
-            <td>SIGNED_APK</td>
-            <td>によって生成された署名付き APK`jarsigner`です。</td>
-        </tr>
-        <tr>
-            <td>FINAL_APK</td>
-            <td>これは、zip 配置によって生成される APK`zipalign`です。</td>
-        </tr>
-        <tr>
-            <td>STORE_PASS</td>
-            <td>これは、ファイルを singing のキー ストアの内容にアクセスに使用されるパスワードです。</td>
-        </tr>
-    </tbody>
-</table>
+|環境変数|説明|
+|--- |--- |
+|KEYSTORE_FILE|これは、APK の署名にキー ストアへのパス|
+|KEYSTORE_ALIAS|キーストアを APK の署名に使用されるキーです。|
+|INPUT_APK|によって作成される APK`xbuild`です。|
+|SIGNED_APK|によって生成された署名付き APK`jarsigner`です。|
+|FINAL_APK|これは、zip 配置によって生成される APK`zipalign`です。|
+|STORE_PASS|これは、ファイルを singing のキー ストアの内容にアクセスに使用されるパスワードです。|
 
 必要条件」のように、EnvInject プラグインを使用して、ビルド時にこれらの環境変数を設定できます。 ジョブは、新しいビルドが必要ステップが次のスクリーン ショットに示すように、挿入の環境変数に基づくを追加します。
 

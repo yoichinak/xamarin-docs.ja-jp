@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: ce51511c58d7d0f5a14e487b57897bfa0e0b20b3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25a10fdcfc612d85875ba684fced3f188400b71e
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="graphics-and-animation"></a>グラフィックスおよびアニメーション
 
@@ -170,7 +170,7 @@ Canvas canvas = new Canvas(b);
 
 取得するその他の方法、`Canvas`し、オブジェクトが、 [OnDraw](https://developer.xamarin.com/api/member/Android.Views.View.OnDraw/)から提供されるコールバック メソッド、[ビュー](https://developer.xamarin.com/api/type/Android.Views.View/)基本クラスです。 Android は、ビューを選択し、自身で描画する必要がありますで渡しますを決めるときにこのメソッドを呼び出して、`Canvas`を使用するビューのオブジェクト。
 
-キャンバス クラスでは、プログラムで描画の指示を提供するメソッドを公開します。 例:
+キャンバス クラスでは、プログラムで描画の指示を提供するメソッドを公開します。 例えば:
 
 -   [Canvas.DrawPaint](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawPaint/p/Android.Graphics.Paint/) &ndash;キャンバス全体のビットマップを指定したペイントで塗りつぶします。
 
@@ -445,7 +445,7 @@ protected override void OnCreate(Bundle bundle)
 - [アニメーションのデモ (サンプル)](https://developer.xamarin.com/samples/monodroid/AnimationDemo)
 - [アニメーションやグラフィック](http://developer.android.com/guide/topics/graphics/index.html)
 - [モバイル アプリを現実に近づけるにアニメーションを使用します。](http://youtu.be/ikSk_ILg3d0)
-- [AnimationDrawable](https://developer.xamarin.comhttps://developer.xamarin.com/api/type/Android.Graphics.Drawables.AnimationDrawable/)
-- [Canvas](https://developer.xamarin.comhttps://developer.xamarin.com/api/type/Android.Graphics.Canvas/)
-- [オブジェクトのアニメーター](https://developer.xamarin.comhttps://developer.xamarin.com/api/type/Android.Animation.ObjectAnimator/)
-- [値アニメーター](https://developer.xamarin.comhttps://developer.xamarin.com/api/type/Android.Animation.ValueAnimator/)
+- [AnimationDrawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.AnimationDrawable/)
+- [Canvas](https://developer.xamarin.com/api/type/Android.Graphics.Canvas/)
+- [オブジェクトのアニメーター](https://developer.xamarin.com/api/type/Android.Animation.ObjectAnimator/)
+- [値アニメーター](https://developer.xamarin.com/api/type/Android.Animation.ValueAnimator/)

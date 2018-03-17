@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: d47499c1e309fbc67c85b55cacbbba3942188f54
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 5c214fe4124b900ea63399b97084d1ce0e181d4a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-datepicker"></a>DatePicker を使用します。
 
@@ -48,7 +48,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-ときに、 `DateTime` 、XAML パーサーを使用して XAML では、指定の値、`DateTime.Parse`メソッドを`CultureInfo.InvariantCulture`引数を文字列に変換する、`DateTime`値。 正確な形式で日付を指定する必要があります。 2 桁の月、2 桁の日、およびスラッシュで区切られた 4 桁の年。
+ときに、 `DateTime` XAML パーサーを使用して XAML では、値が指定された、`DateTime.Parse`メソッドを`CultureInfo.InvariantCulture`引数を文字列に変換する、`DateTime`値。 正確な形式で日付を指定する必要があります。 2 桁の月、2 桁の日、およびスラッシュで区切られた 4 桁の年。
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -139,7 +139,7 @@ XAML ファイルを次に示します。
 </ContentPage>
 ```
 
-各`DatePicker`が割り当てられている、`Format`長い日付形式の"D"のプロパティです。 また、`endDatePicker`オブジェクトを対象とするバインディングにがその`MinimumDate`プロパティです。 バインディング ソースは、選択した`Date`のプロパティ、`startDatePicker`オブジェクト。 これによりを終了日が常に後で、開始日と等しいまたはそれよりもします。 2 つに加えて`DatePicker`、オブジェクト、 `Switch` "Include 両方日の合計"というラベルが付いたです。 
+各`DatePicker`が割り当てられている、`Format`長い日付形式の"D"のプロパティです。 また、`endDatePicker`オブジェクトを対象とするバインディングにがその`MinimumDate`プロパティです。 バインディング ソースは、選択した`Date`のプロパティ、`startDatePicker`オブジェクト。 これによりを終了日が常に後で、開始日と等しいまたはそれよりもします。 2 つに加えて`DatePicker`、オブジェクト、`Switch`というラベルが付いた「合計の両方の日を含む」です。 
 
 2 つ`DatePicker`ビューにアタッチされているハンドラーがある、`DateSelected`イベント、および`Switch`にハンドラーをアタッチがその`Toggled`イベント。 これらのイベント ハンドラーは、分離コード ファイル内にあるし、2 つの日付間の日数の計算を新しいトリガーします。
 
