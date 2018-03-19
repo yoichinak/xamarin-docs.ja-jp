@@ -7,15 +7,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: bffc6bb1bc6537745fe9603906b5938fc3c34fe1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b15c9b05a4e476353322c6d29e94267313460bfe
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>Windows の Visual Studio への Xamarin のインストール
 
-Xamarin がすべてのバージョンの Visual Studio に追加料金なしで含まれるようになり、別個のライセンスが必要なくなったため、Visual Studio インストーラーを使用して Xamarin ツールをダウンロードおよびインストールできるようになりました。
+Xamarin は無償で使用でき、Visual Studio のすべてのエディションに含まれています。
 
 <a name="requirements" />
 
@@ -25,7 +25,7 @@ Xamarin 向けの Visual Studio Tools をインストールするには、以下
 
 1. Windows 7 以上。
 
-2. Visual Studio 2015 または 2017 (Community、Professional、または Enterprise)。
+2. Visual Studio 2017 (Community、Professional、または Enterprise)。
 
 3. Xamarin for Visual Studio。
 
@@ -74,27 +74,6 @@ Visual Studio 2017 が既にインストールされている場合は、Visual 
 
 Visual Studio 2017 のダウンロードとインストールの詳細については、「[Visual Studio 2017 のインストール](https://docs.microsoft.com/visualstudio/install/install-visual-studio)」を参照してください。
 
-
-<a name="vs2015" />
-
-### <a name="adding-xamarin-to-visual-studio-2015"></a>Visual Studio 2015 への Xamarin の追加
-
-Xamarin.Android を Visual Studio 2015 の既存のインストールに追加するには、以下の手順を使用します。
-
-1. Windows の **[スタート]** ボタンを右クリックし、**[プログラムと機能]** を選択します。
-
-2. **[Microsoft Visual Studio]** を右クリックして、**[変更]** をクリックします。
-
-3. Visual Studio インストーラーのダイアログが表示されたら、**[変更]** ボタンをクリックします。
-
-4. **[機能]** タブで、**[クロス プラットフォームのモバイル開発]** まで下方向にスクロールします。 **[C#/.NET (Xamarin)]** の横にあるチェック ボックスをオンにします。
-
-    ![Visual Studio 2015 への C#/.NET Xamarin の追加](windows-images/06-add-xamarin.png)
-
-5. **[更新]** ボタンをクリックして、Visual Studio に Xamarin を追加します。
-
-
-<a name="verifying" />
 
 ### <a name="verifying-installation"></a>インストールの確認
 

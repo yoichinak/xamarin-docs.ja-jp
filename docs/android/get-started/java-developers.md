@@ -7,12 +7,12 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 7abcaa218c6755a58e6f35e982a1144060df0b3b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
@@ -433,342 +433,48 @@ Xamarin による非同期プログラミング機能のサポートについて
 
 Java で使われている言語キーワードの多くは、C# でも使われます。 また、次の表で示すように、Java キーワードと同等の機能を持っていても C# では名前が異なるものもいくつかあります。
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>Java</strong>
-    </th>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>説明</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <code>boolean</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx">bool</a>
-      </td>
-      <td valign="top">
-ブール値 <code>true</code> および <code>false</code> を宣言するために使われます。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>extends</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-継承するクラスとインターフェイスの前に付きます。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>implements</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-継承するクラスとインターフェイスの前に付きます。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>import</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx">using</a>
-      </td>
-      <td valign="top">
-名前空間から型をインポートし、名前空間の別名の作成にも使われます。
-      </td>
-    </tr>
-    <tr>
-      <td valign="final">
-        <code>final</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/88c54tsw.aspx">sealed</a>
-      </td>
-      <td valign="top">
-クラスの派生を防止します。派生クラスでメソッドとプロパティがオーバーライドされるのを防止します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>instanceof</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/scekt9xw.aspx">is</a>
-      </td>
-      <td valign="top">
-オブジェクトに特定の型との互換性があるかどうかを評価します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>native</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/e59b22c5.aspx">extern</a>
-      </td>
-      <td valign="top">
-外部で実装されているメソッドを宣言します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>package</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx">namespace</a>
-      </td>
-      <td valign="top">
-関連する一連のオブジェクトのスコープを宣言します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>T...</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/w5zay9db.aspx">params T[]</a>
-      </td>
-      <td valign="top">
-可変数個の引数を受け取るメソッド パラメーターを指定します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>super</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx">base</a>
-      </td>
-      <td valign="top">
-派生クラス内から親クラスのメンバーにアクセスするために使われます。
-      </td>
-    </tr>
-    <tr>
-      <td valign="synchronized">
-        <code>synchronized</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">lock</a>
-      </td>
-      <td valign="top">
-ロックの取得と解放でコードの重要なセクションをラップします。
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Java|C#|説明|
+|---|---|---|
+|`boolean`|[bool](https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx)|ブール値 true および false を宣言するために使われます。|
+|`extends`|`:`|継承するクラスとインターフェイスの前に付きます。|
+|`implements`|`:`|継承するクラスとインターフェイスの前に付きます。|
+|`import`|[using](https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx)|名前空間から型をインポートし、名前空間の別名の作成にも使われます。|
+|`final`|[sealed](https://msdn.microsoft.com/en-us/library/88c54tsw.aspx)|クラスの派生を防止します。派生クラスでメソッドとプロパティがオーバーライドされるのを防止します。|
+|`instanceof`|[is](https://msdn.microsoft.com/en-us/library/scekt9xw.aspx)|オブジェクトに特定の型との互換性があるかどうかを評価します。|
+|`native`|[extern](https://msdn.microsoft.com/en-us/library/e59b22c5.aspx)|外部で実装されているメソッドを宣言します。|
+|`package`|[namespace](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|関連する一連のオブジェクトのスコープを宣言します。|
+|`T...`|[params T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|可変数個の引数を受け取るメソッド パラメーターを指定します。|
+|`super`|[base](https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx)|派生クラス内から親クラスのメンバーにアクセスするために使われます。|
+|`synchronized`|[lock](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)|ロックの取得と解放でコードの重要なセクションをラップします。|
 
 
 また、C# に固有で、Java には対応するもののないキーワードも多くあります。 Xamarin.Android のコードでは、以下の C# キーワードがよく使われます (この表は、Xamarin.Android の[サンプル コード](https://developer.xamarin.com/samples/android/all/)を読むときに参照すると便利です)。
 
-
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>説明</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx">as</a>
-      </td>
-      <td valign="top">
-互換性のある参照型の間、または null 許容型の間の変換を実行します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156513.aspx">async</a>
-      </td>
-      <td valign="top">
-メソッドまたはラムダ式が非同期であることを指定します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156528.aspx">await</a>
-      </td>
-      <td valign="top">
-タスクが完了するまで、メソッドの実行を中断します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/5bdb6693.aspx">byte</a>
-      </td>
-      <td valign="top">
-符号なしの 8 ビット整数型です。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/900fyy8e.aspx">delegate</a>
-      </td>
-      <td valign="top">
-メソッドまたは匿名メソッドをカプセル化するために使われます。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/sbbt4032.aspx">enum</a>
-      </td>
-      <td valign="top">
-列挙型つまり名前付き定数のセットを宣言します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/8627sbea.aspx">event</a>
-      </td>
-      <td valign="top">
-パブリッシャー クラスのイベントを宣言します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/f58wzh21.aspx">fixed</a>
-      </td>
-      <td valign="top">
-変数が再配置されないようにします。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-取得 </td>
-      <td valign="top">
-プロパティの値を取得するアクセサー メソッドを定義します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/dd469484.aspx">in</a>
-      </td>
-      <td valign="top">
-パラメーターがジェネリック インターフェイスの弱い派生型を受け付けられるようにします。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx">object</a>
-      </td>
-      <td valign="top">
-.NET Framework の <code>Object</code> 型の別名です。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx">out</a>
-      </td>
-      <td valign="top">
-パラメーター修飾子またはジェネリック型パラメーターの宣言です。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx">override</a>
-      </td>
-      <td valign="top">
-継承されたメンバーの実装を拡張または修正します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/6b0scde8.aspx">partial</a>
-      </td>
-      <td valign="top">
-定義が複数のファイルに分割されることを宣言します。または、実装からのメソッド定義を分割します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx">readonly</a>
-      </td>
-      <td valign="top">
-クラスのメンバーが、宣言時にのみ、またはクラス コンストラクターによってのみ、割り当てられることを宣言します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/14akc2c7.aspx">ref</a>
-      </td>
-      <td valign="top">
-値ではなく、参照によって引数が渡されるようにします。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ms228368.aspx">set</a>
-      </td>
-      <td valign="top">
-プロパティの値を設定するアクセサー メソッドを定義します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/362314fe.aspx">string</a>
-      </td>
-      <td valign="top">
-.NET Framework の <code>String</code> 型の別名です。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ah19swz4.aspx">struct</a>
-      </td>
-      <td valign="top">
-関連する変数のグループをカプセル化する値の型です。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/58918ffs.aspx">typeof</a>
-      </td>
-      <td valign="top">
-オブジェクトの型を取得します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/bb383973.aspx">var</a>
-      </td>
-      <td valign="top">
-暗黙的に型指定されたローカル変数を宣言します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx">value</a>
-      </td>
-      <td valign="top">
-クライアント コードがプロパティに代入する値を参照します。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx">virtual</a>
-      </td>
-      <td valign="top">
-派生クラスでのメソッドのオーバーライドを許可します。
-      </td>
-    </tr>
-  </tbody>
-</table>
+|C#|説明|
+|---|---|
+|[as](https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx)|互換性のある参照型の間、または null 許容型の間の変換を実行します。|
+|[async](https://msdn.microsoft.com/en-us/library/hh156513.aspx)|メソッドまたはラムダ式が非同期であることを指定します。|
+|[await](https://msdn.microsoft.com/en-us/library/hh156528.aspx)|タスクが完了するまで、メソッドの実行を中断します。|
+|[byte](https://msdn.microsoft.com/en-us/library/5bdb6693.aspx)|符号なしの 8 ビット整数型です。|
+|[delegate](https://msdn.microsoft.com/en-us/library/900fyy8e.aspx)|メソッドまたは匿名メソッドをカプセル化するために使われます。|
+|[enum](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)|列挙型つまり名前付き定数のセットを宣言します。|
+|[event](https://msdn.microsoft.com/en-us/library/8627sbea.aspx)|パブリッシャー クラスのイベントを宣言します。|
+|[fixed](https://msdn.microsoft.com/en-us/library/f58wzh21.aspx)|変数が再配置されないようにします。|
+|`get`|プロパティの値を取得するアクセサー メソッドを定義します。|
+|[in](https://msdn.microsoft.com/en-us/library/dd469484.aspx)|パラメーターがジェネリック インターフェイスの弱い派生型を受け付けられるようにします。|
+|[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|.NET Framework のオブジェクト型の別名です。|
+|[out](https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx)|パラメーター修飾子またはジェネリック型パラメーターの宣言です。|
+|[override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|継承されたメンバーの実装を拡張または修正します。|
+|[partial](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|定義が複数のファイルに分割されることを宣言します。または、実装からのメソッド定義を分割します。|
+|[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)|クラスのメンバーが、宣言時にのみ、またはクラス コンストラクターによってのみ、割り当てられることを宣言します。|
+|[ref](https://msdn.microsoft.com/en-us/library/14akc2c7.aspx)|値ではなく、参照によって引数が渡されるようにします。|
+|[set](https://msdn.microsoft.com/en-us/library/ms228368.aspx)|プロパティの値を設定するアクセサー メソッドを定義します。|
+|[string](https://msdn.microsoft.com/en-us/library/362314fe.aspx)|.NET Framework の文字列型の別名です。|
+|[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|関連する変数のグループをカプセル化する値の型です。|
+|[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|オブジェクトの型を取得します。|
+|[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|暗黙的に型指定されたローカル変数を宣言します。|
+|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|クライアント コードがプロパティに代入する値を参照します。|
+|[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|派生クラスでのメソッドのオーバーライドを許可します。|
 
 
 <a name="interop" />

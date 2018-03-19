@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: d7532d052c57ad46caca0cd6d6ce26d0e77dc05f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="automatic-provisioning"></a>自動プロビジョニング
 
@@ -36,21 +36,13 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
 2. **Info.plist** ファイルを開きます。
 
-    ![Info.plist ファイル](automatic-provisioning-images/image1.png)
-
-3. **[Signing]** セクションの **[Team]** ドロップダウンからチームを選択します。
+3. **[署名]** セクションで、**[自動プロビジョニング]** を選択します。
 
     ![チーム セレクターのドロップダウン](automatic-provisioning-images/image2.png)
 
-4. 次の図のように **[Automatically manage signing]** チェックボックスをオンにします。 これで、自動署名プロセスが開始されます。このとき、Visual Studio for Mac はアプリ ID、プロビジョニング プロファイル、および署名 ID を生成し、これらのアーティファクトを署名に使用しようとします。 このチェックボックスがオンの場合、署名 ID を選択する手動コントロールは無効になります。
+4. **[チーム]** ドロップダウンからチームを選択します。
 
-    ![[automatically manage teams] オプション](automatic-provisioning-images/image3.png)
-
-5. 次のダイアログがポップアップ表示され、新しく生成した証明書とプロビジョニング プロファイルを使用するようにプロジェクト ファイルが変更されることが通知されます。
-
-    ![プロジェクト ファイルの変更を通知するダイアログ](automatic-provisioning-images/image4.png)
-
-6. 数秒後に、署名証明書とプロビジョニング プロファイルが作成され、表示されます。
+6. 数秒後に、署名証明書とプロビジョニング プロファイルが作成されます。
 
     ![証明書とプロファイルが正常に作成されました](automatic-provisioning-images/image5.png)
 

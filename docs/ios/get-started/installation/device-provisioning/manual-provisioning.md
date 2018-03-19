@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 2ad3bd55ae0abc44b0c9757bd79c2711eddf171d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="manual-provisioning"></a>手動プロビジョニング
 
@@ -236,7 +236,8 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[プロジェクトのオプション] > [iOS バンドル署名] で、チームのセレクターが [なし] に設定されていることを確認します。
+> [!IMPORTANT]
+> 開始する前に、**Info.plist** で**手動プロビジョニング**を選択します。
 
 1. デバイスを Mac に接続します。
 2. プロジェクトの **Info.plist** で、バンドル ID がアプリ ID と一致していることを確認します (アプリ ID がワイルドカードではない場合)。

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="connection-troubleshooting"></a>接続のトラブルシューティング
 
@@ -240,7 +240,6 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 4. .zip ファイルを開くと、下のサンプルのようなファイルの一覧が表示されます。 接続エラーの場合、最も重要なファイルは **\*Ide.log** ファイルと **\*Ide.svclog** ファイルです。 このファイルには、同じメッセージが微妙に異なる 2 つの形式で入っています。 **.svclog** は XML であり、メッセージを拾い読みする場合に便利です。 **.log** はプレーン テキストであり、コマンド ライン ツールでメッセージをフィルター処理する場合に便利です。
 
-
     すべてのメッセージに目を通すには、**.svclog** ファイルを選択し、開きます。
 
     [![](troubleshooting-images/troubleshooting-image13.png "svclog ファイルを選択します")](troubleshooting-images/troubleshooting-image13.png#lightbox)
@@ -319,7 +318,7 @@ Mac で Xcode を起動し、Apple 開発者アカウントでログインして
 
 関連バグ [#40781](https://bugzilla.xamarin.com/show_bug.cgi?id=40781)
 
-この問題は、Visual Studio で MEF コンポーネント キャッシュを更新できなかったときに発生することがあります。 その場合、この Visual Studio 拡張機能 ([https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)) をインストールすると解決されることがあります。
+この問題は、Visual Studio で MEF コンポーネント キャッシュを更新できなかったときに発生することがあります。 その場合、この Visual Studio 拡張機能 ([https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)) をインストールすると解決することがあります。
 
 Visual Studio MEF コンポーネント キャッシュが消去され、キャッシュ破損の問題が解消されます。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3871955f723d1b3aec6245bba0502ca4f955d64c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 825b566ed45e8c337a1a452ec2c76a23e6a16462
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android のパフォーマンス
 
@@ -156,7 +156,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 ユーザーがスクロールすると、[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) は `GetView` オーバーライドを呼び出して、表示する新しいビューを要求します。使用可能な場合は、`convertView` パラメーターに未使用のビューを渡します。 この値が `null` の場合、コードで新しい [`View`](https://developer.xamarin.com/api/type/Android.Views.View/) インスタンスが作成されます。それ以外の場合は、`convertView` プロパティをリセットして再利用できます。
 
-詳細については、「[Populating a ListView with Data](~/android/user-interface/layouts/list-view/populating.md)」 (ListView へのデータの設定) の「[Row View Re-Use](~/android/user-interface/layouts/list-view/populating.md)」 (行ビューの再利用) を参照してください。
+詳細については、「[Populating a ListView with Data](~/android/user-interface/layouts/list-view/populating.md)」 (ListView へのデータの設定) の「[Row View Re-Use](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use)」 (行ビューの再利用) を参照してください。
 
 <a name="removeeventhandlers" />
 

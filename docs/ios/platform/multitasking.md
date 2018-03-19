@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 39c699b10280218223b6f6022d419f77aba875dc
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="multitasking-for-ipad"></a>IPad のマルチタスク
 
@@ -24,7 +24,7 @@ _iOS 9 には、同時に、スライドを使用して、上または分割ビ�
 iOS 9 iPad の特定のハードウェアで同時に 2 個のアプリを実行するには、マルチタスク処理サポートを追加します。 IPad のマルチタス キングは、次の機能を使用してサポートされます。
 
 - [**スライド上**](#Slide-Over) -現在実行されているメインのアプリの約 25% がカバーする (言語方向に基づいて、画面の右側または左側にいずれか) パネルをスライドに一時的に 2 つ目の iOS アプリを実行することができます。 スライドは iPad Pro、iPad 空気、iPad 空気 2、iPad ミニ 2、iPad ミニ 3、または iPad ミニ 4 でのみ使用できます。
-- [**分割ビュー** ](#Split-View) -iPad のサポートされているハードウェア (iPad 空気 2、iPad ミニ 4 および iPad Pro のみ)、ユーザーは、2 番目のアプリを選択し、分割画面表示モードで現在実行中のアプリとサイド バイ サイドを実行します。 ユーザーは、各アプリを占有するメイン画面の割合を制御できます。
+- [**分割ビュー**](#Split-View) -iPad のサポートされているハードウェア (iPad 空気 2、iPad ミニ 4 および iPad Pro のみ)、ユーザーは、2 番目のアプリを選択し、分割画面表示モードで現在実行中のアプリとサイド バイ サイドを実行します。 ユーザーは、各アプリを占有するメイン画面の割合を制御できます。
 - [**画像に画像**](#Picture-in-Picture) - アプリの移動とサイズを変更できる ウィンドウで、iOS デバイスで現在実行されている他のアプリで再生するビデオ コンテンツの再生、ビデオできるようになりました。 ユーザーは、このウィンドウの位置とサイズを完全に制御を持ちます。 図の画像は iPad Pro、iPad 空気、iPad 空気 2、iPad ミニ 2、iPad ミニ 3、または iPad ミニ 4 でのみ使用できます。
 
 多くのときに考慮することがある[マルチタスク処理をサポートするアプリで](#Supporting-Multitasking-in-your-App)など。
@@ -260,7 +260,7 @@ Xamarin.iOS アプリのいずれかをスライド パネル、または分割�
 ## <a name="related-links"></a>関連リンク
 
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [マルチタスク (サンプル)](http://developer.xamarin.comhttps://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)
+- [マルチタスク (サンプル)](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)
 - [統一されたストーリー ボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [開発者向けの iOS 9](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

@@ -1,6 +1,6 @@
 ---
 title: "ワイヤレス展開"
-description: "このプレビュー機能を使用すると、ネットワーク接続経由で iOS または Apple TV のデバイスに展開できます"
+description: "この機能を使用すると、ネットワーク接続経由で iOS または Apple TV のデバイスに展開できます"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
@@ -8,47 +8,40 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: 11961a21a7c4188c505c822a35531036fd953405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7566669fb7d607ca6616b88cb32b770537146c94
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wireless-deployment"></a>ワイヤレス展開
 
-_このプレビュー機能を使用すると、ネットワーク接続経由で iOS または Apple TV のデバイスに展開できます_
-
-![リリースのプレビュー](~/media/shared/preview.png)
-
-開発者ワークフローの重要なフローの 1 つは、デバイスの展開です。 Xcode 9 では、ネットワークを介して iOS デバイスや Apple TV に展開するオプションが導入されました。アプリを展開およびデバッグするたびにデバイスを配線する必要はありません。 この機能は Visual Studio for Mac と Visual Studio 15.6 リリース (現在プレビュー段階) で導入されました。
+開発者ワークフローの重要なフローの 1 つは、デバイスの展開です。 Xcode 9 では、ネットワークを介して iOS デバイスや Apple TV に展開するオプションが導入されました。アプリを展開およびデバッグするたびにデバイスを配線する必要はありません。 この機能は Visual Studio for Mac 7.4 と Visual Studio 15.6 リリースで導入されました。
 
 このガイドでは、ネットワーク経由でデバイスとペアリングし、そのデバイスに展開する方法を詳しく説明します。
 
 ## <a name="requirements"></a>必要条件
 
-ワイヤレス展開は、Visual Studio for Mac と Visual Studio の両方で**プレビュー**機能として利用できます。
-
+ワイヤレス展開は、Visual Studio for Mac と Visual Studio の両方の機能として利用できます。
 
 ワイヤレス展開を使用するには、以下が必要です。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 - macOS 10.12.4
-- Visual Studio for Mac の最新プレビュー バージョン 
-    - Visual Studio for Mac の[アルファ チャネルまたはベータ チャネル](https://docs.microsoft.com/en-us/visualstudio/mac/update)にこのスイッチをインストールする場合。
+- Visual Studio for Mac の最新バージョン
 - Xcode 9.0 以降
 - iOS 11.0 または tvOS 11.0 以降のデバイス
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Visual Studio の最新[プレビュー バージョン](https://www.visualstudio.com/vs/preview/)
+- Visual Studio の最新バージョン
 - iOS 11.0 または tvOS 11.0 以降のデバイス
 
 Mac ビルド ホストでは、次のコンポーネントをインストールする必要があります。
 
 - macOS 10.12.4
-- Visual Studio for Mac プレビュー
-    - Visual Studio for Mac の[アルファ チャネルまたはベータ チャネル](https://docs.microsoft.com/en-us/visualstudio/mac/update)へのインストールの切り替えを行う場合。
+- Visual Studio for Mac
 - Xcode 9.0 以降
 
 -----
