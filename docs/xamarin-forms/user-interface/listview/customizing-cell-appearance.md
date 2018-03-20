@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 62ac3ab4b3114447f0c67d86c601a688bb8ff1a7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 551a0de8cd4965815c67a795fb5723d4261a173c
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="cell-appearance"></a>セルの外観
 
@@ -73,11 +73,9 @@ Windows Phone 8.1 を対象とするときに注意してください`ImageCell`
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>カスタムのセル
-組み込みのセルが、必要なレイアウトを提供しない場合に、カスタムのセルには、必要なレイアウトが実装されています。 たとえば、を同じ重みを持つ 2 つのラベルが付いたセルを表示することがあります。 A`LabelCell`十分となりますので、`LabelCell`小さいが 1 つのラベルがあります。
+組み込みのセルが、必要なレイアウトを提供しない場合に、カスタムのセルには、必要なレイアウトが実装されています。 たとえば、を同じ重みを持つ 2 つのラベルが付いたセルを表示することがあります。 A`LabelCell`十分となりますので、`LabelCell`小さいが 1 つのラベルがあります。 セルのカスタマイズのほとんどは、(その他のラベル、イメージや他の情報を表示) など、追加の読み取り専用のデータを追加します。
 
 カスタムのすべてのセルから派生しなければなりません[ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)、組み込みのセルのすべての型を使用している同じ基本クラスです。
-
-セルのカスタマイズのほとんどは、(その他のラベル、イメージや他の情報を表示) など、追加の読み取り専用のデータを追加します。 ボタンまたはフォーカスすることはその他のコントロールを追加すると、セル自体は Android でクリック可能なできない可能性があります。 この制限を克服する方法を下を参照してください。
 
 Xamarin.Forms 2 に導入された新しい[キャッシュの動作](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)上、`ListView`コントロールいくつかの種類のカスタムのセルのスクロールのパフォーマンスを向上させるために設定することができます。
 
@@ -261,30 +259,6 @@ var listView = new ListView {
 ```
 
 IOS と Android の場合、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)要素がリサイクルしカスタムのセルは、カスタム レンダラーを使用して、カスタムのレンダラーがプロパティの変更通知を正しく実装する必要があります。 使用可能なセルのバインド コンテキストが更新されたときに、プロパティ値が変更されますセルが再利用される`PropertyChanged`イベントが発生します。 詳細については、次を参照してください。 [、ViewCell をカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)です。 セルのリサイクルの詳細については、次を参照してください。[キャッシュ戦略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)です。
-
-### <a name="enabling-row-selection-on-android"></a>Android での行の選択を有効にします。
-
-含まれているセルの入力要素のために、行の選択を許可するボタン、単純な[ `custom renderer` ](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)が必要です。 サブクラスを作成、一般的なコードで`Button`されるため、プラットフォームのプロジェクトでカスタム レンダラーを追加することができます。
-
-```csharp
-public class ListButton : Button { }
-```
-
-Android 用レンダラーの実装で設定するだけ、`Focusable`ホスト クリック可能なボタンと選択可能にするのには、行を許可する属性。 このコードは、Android アプリケーション プロジェクトに追加されます。
-
-```csharp
-[assembly: ExportRenderer (typeof (ListButton), typeof (ListButtonRenderer))]
-// ...
-public class ListButtonRenderer : ButtonRenderer {
-    protected override void OnElementChanged (ElementChangedEventArgs<ListButton> e) {
-        base.OnElementChanged (e);
-        Control.Focusable = false;
-    }
-}
-```
-
-前述のように、唯一の Android が必要です、`ButtonRenderer`実装します。 iOS および Windows Phone プラットフォームは、カスタム レンダラーを実装することがなくクリックするボタンを許可します。
-
 
 ## <a name="related-links"></a>関連リンク
 

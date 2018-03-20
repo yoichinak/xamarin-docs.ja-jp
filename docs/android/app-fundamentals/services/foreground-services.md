@@ -6,24 +6,44 @@ ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: 96e8d1a3658a515b6b1d37cf0fdd93157954c01d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: d1267bc4a530deb6dfb6eb2e30bee2facabd8fed
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="foreground-services"></a>フォア グラウンド サービス
 
-一部のサービスは、ユーザーがアクティブに認識されているいくつかのタスクを実行するは、これらのサービスと呼ばれます_フォア グラウンド サービス_です。 フォア グラウンド サービスの例は、運転または徒歩中に指示をユーザーに提供されているアプリです。 アプリは、バック グラウンドでは、場合でもはサービスが正常に動作するための十分なリソースであると、ユーザーがアプリへのアクセスを迅速かつ便利な方法を持っていることも重要です。 Android アプリで、つまり、フォア グラウンド サービスは、「標準」サービスよりも高い優先順位を受信する必要があります、フォア グラウンド サービスを提供する必要があります、`Notification`サービスが実行されている限り、Android が表示されます。
+フォア グラウンド サービスは、特殊な種類のバインドされているサービスまたは開始されるサービスです。 場合によってはサービスでは、ユーザーがアクティブに認識する必要があるタスクを実行、これらのサービスと呼ばれます_フォア グラウンド サービス_です。 フォア グラウンド サービスの例は、運転または徒歩中に指示をユーザーに提供されているアプリです。 アプリは、バック グラウンドでは、場合でもはサービスが正常に動作するための十分なリソースであると、ユーザーがアプリへのアクセスを迅速かつ便利な方法を持っていることも重要です。 Android アプリで、つまり、フォア グラウンド サービスは、「標準」サービスよりも高い優先順位を受信する必要があります、フォア グラウンド サービスを提供する必要があります、`Notification`サービスが実行されている限り、Android が表示されます。
  
-フォア グラウンド サービスが作成され、その他のサービスと同様に開始します。 サービスは、起動時には自体が登録 Android フォア グラウンド サービスとして。
- 
-このガイドでは、フォア グラウンド サービスを登録してサービスを停止が行われるときに考慮しなければならない特別な手順について説明します。
+フォア グラウンド サービスを開始するには、アプリは、サービスを開始する Android に通知する目的をディスパッチする必要があります。 その後サービス必要があります登録自体 Android とフォア グラウンド サービスとして。 Android 8.0 で (またはそれ以上) に実行されているアプリを使用する必要があります、`Context.StartForegroundService`古いバージョンの Android デバイスで実行されているアプリが使用中に、サービスを開始するメソッド `Context.StartService`
+
+この c# 拡張メソッドは、フォア グラウンド サービスを開始する方法の例です。 Android 8.0 以降が使用されます、`StartForegroundService`メソッド、それ以外の場合、古い`StartService`メソッドが使用されます。  
+
+```csharp
+public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
+{
+    var intent = new Intent(context, typeof(T));
+    if (args != null) 
+    {
+        intent.PutExtras(args);
+    }
+
+    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+    {
+        context.StartForegroundService(intent);
+    }
+    else
+    {
+        context.StartService(intent);
+    }
+}
+```
 
 ## <a name="registering-as-a-foreground-service"></a>フォア グラウンド サービスとして登録します。
 
-フォア グラウンド サービスは、特殊な種類のバインドされているサービスまたは開始されるサービスです。 サービスが開始されると、呼び出し、 [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)メソッド フォア グラウンド サービスとしての Android の登録をします。   
+フォア グラウンド サービスが開始する必要があります自体が登録 Android を呼び出すことによって、 [ `StartForeground`](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)です。 サービスが開始された場合、`Service.StartForegroundService`メソッド自体が登録されない、Android は、サービスを停止し、応答しないように、アプリのフラグを設定しがします。
 
 `StartForeground` どちらも必須の 2 つのパラメーターを受け取ります。
  
@@ -78,8 +98,7 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 StopForeground(true);
 ```
 
-呼び出して、サービスが停止した場合`StopSelf`または`StopService`、ステータス バーの通知は削除同様にします。
-
+呼び出して、サービスが停止した場合`StopSelf`または`StopService`、ステータス バーの通知が削除される予定です。
 
 ## <a name="related-links"></a>関連リンク
 

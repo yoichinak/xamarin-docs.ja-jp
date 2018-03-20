@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 50f99c48d0f53bd6a2dfaf42284137ce1e424b30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 747c158460b23b91e4c2986d212802528cdd3979
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp の概要
 
@@ -20,7 +20,7 @@ _これにより、SkiaSharp 概念の概要_
 
 SkiaSharp 豊富で強力な 2 次元グラフィックス 2D バッファーに表示するために使用できる API を提供します。  これらを使用して、カスタム ユーザー インターフェイス要素と、アプリケーションに組み込むことが 2 次元グラフィックスを実装することができます。  SkiaSharp は、.NET バインディングを[Skia](https://skia.org)ライブラリ機能とこのライブラリの電源を継承します。
 
-ライブラリは現在、クロス プラットフォームとして使用[NuGet パッケージ](https://www.nuget.org/packages/SkiaSharp)NuGet の参照を追加することで、プロジェクトにできます。
+ライブラリは現在、クロス プラットフォームとして使用[NuGet パッケージ](https://www.nuget.org/packages/SkiaSharp)NuGet の参照を追加することで、プロジェクトに追加できます。
 
 を描画する、コードは、作成、 `SkCanvas` 、画面の描画操作を行う場所を記述します。
 

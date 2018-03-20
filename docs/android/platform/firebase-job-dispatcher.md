@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
@@ -27,7 +27,7 @@ _このガイドでは、Google から Firebase ジョブ ディスパッチャ�
 Android には、包括的なソリューションはいずれもに、バック グラウンドでの作業の実行に役立てるためにいくつかの Api が既に用意されています。
 
 * **[インテント サービス](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash;目的としたサービスは、作業をスケジュールする方法を提供されませんが、作業を実行するのに適しています。
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager)**  &ndash;これらの Api をスケジュールするが、実際には、作業を実行する手段が用意されていない作業のみを許可します。 また、AlarmManager は、時間ベースの制約、つまり、特定の時間または一定の時間が経過した後、アラームを発生させるです。 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash;これらの Api をスケジュールするが、実際には、作業を実行する手段が用意されていない作業のみを許可します。 また、AlarmManager は、時間ベースの制約、つまり、特定の時間または一定の時間が経過した後、アラームを発生させるです。 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash;の JobSchedule がジョブのスケジュールを設定するオペレーティング システムで動作する優れた API です。 ただし、のみである以降の API レベル 21 を対象とするそれらの Android アプリで使用可能です。 
 * **[レシーバーをブロードキャスト](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android アプリはシステム全体のイベントまたは意図的に応答の作業を実行するブロードキャストの受信者をセットアップできます。 ただし、放送受信機は、ジョブの実行と制御を提供しません。 Android オペレーティング システムでの変更の制限も放送受信機は機能、またはに対応する作業の種類。 
 * **Google Cloud メッセージ ネットワーク Manager** &ndash;これが、おそらく、長い時間のスケジュールのバック グラウンド インテリジェントにする最善の方法が作業します。 ただし、GCMNetworkManager ので廃止されました。 
@@ -56,7 +56,7 @@ Xamarin.Android アプリケーション Firebase ジョブ ディスパッチ�
 
 このガイドでは、Firebase ジョブ ディスパッチャーを Xamarin.Android アプリケーションに追加して、バック グラウンド作業のスケジュールを使用する方法を説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Firebase ジョブ ディスパッチャーには、Android API レベル 9 以上が必要です。 Firebase ジョブ ディスパッチャー ライブラリは、Google Play サービス; によって提供される一部のコンポーネントに依存していますデバイスには、Google Play サービスがインストールされている必要があります。
 

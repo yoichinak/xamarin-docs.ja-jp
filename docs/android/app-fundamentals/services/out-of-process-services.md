@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 0f018aa666f08792a1693a79e22da150f82712f6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>リモート プロセスで実行されている Android サービス
 
@@ -58,7 +58,7 @@ Android を呼び出すクライアントを要求すると、リモート サ�
 > [!IMPORTANT]
 > [Bugzilla 51940 のオーバー ロードを正常に解決するのには分離プロセスおよびカスタム アプリケーションのクラスとサービスが失敗する](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)Xamarin.Android サービスが正しく起動をしないレポートと、`IsolatedProcess`に設定されている`true`です。 このガイドの参照が指定されます。 Xamarin.Android アプリケーションは、Java で記述されたプロセス外のサービスと通信できる必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドは、サービスの作成に関する知識を前提とします。
 
