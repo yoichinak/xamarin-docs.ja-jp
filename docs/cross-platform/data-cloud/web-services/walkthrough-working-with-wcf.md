@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: ee39851070be2f302125162400d2214c732faeec
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>チュートリアル - WCF の使用
 
@@ -40,10 +40,11 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
 1. Visual Studio 2017 を起動し、新しいプロジェクトを作成します。
 1. **新しいプロジェクト**ダイアログで、選択、 **WCF > WCF サービス ライブラリ**テンプレート、およびソリューション名`HelloWorldService`:
 
-  ![](walkthrough-working-with-wcf-images/new-wcf-service.png "新しい WCF サービス ライブラリを作成します。")
+    ![](walkthrough-working-with-wcf-images/new-wcf-service.png "新しい WCF サービス ライブラリを作成します。")
 
 1. **ソリューション エクスプ ローラー**、という名前の新しいクラスを追加`HelloWorldData`をプロジェクトに。
 
+    ```csharp
         using System.Runtime.Serialization;
 
         namespace HelloWorldService
@@ -64,10 +65,13 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
                 }
             }
         }
+    ```
+
 
 1. **ソリューション エクスプ ローラー**、名前を変更`IService1.cs`に`IHelloWorldService.cs`の名前を変更し、`Service1.cs`に`HelloWorldService.cs`です。
 1. **ソリューション エクスプ ローラー**、開かれている`IHelloWorldService.cs`コードを次のコードに置き換えます。
 
+    ```csharp
         using System.ServiceModel;
 
         namespace HelloWorldService
@@ -82,11 +86,13 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
                 HelloWorldData GetHelloData(HelloWorldData helloWorldData);
             }
         }
-
+    ```
+  
     このサービスは、2 つのメソッドを提供します。 – .NET オブジェクトを受け取るいずれかのパラメーターと別の文字列を使用します。
 
 1. **ソリューション エクスプ ローラー**、開かれている`HelloWorldService.cs`コードを次のコードに置き換えます。
 
+    ```csharp
         using System;
 
         namespace HelloWorldService
@@ -110,9 +116,11 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
                 }
             }
         }
+    ```
 
 1. **ソリューション エクスプ ローラー**、開かれている`App.config`、更新、`name`の属性、 `<service>`  ノード、`contract`の属性、`<endpoint>`ノード、および`baseAddress`の属性`<add>`ノード。
 
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
             ...
@@ -133,17 +141,18 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
             </services>
             ...
         </configuration>
+    ```
 
 1. ビルドして、WCF サービスを実行します。 サービスは、WCF テスト クライアントでホストされます。
 
-  ![](walkthrough-working-with-wcf-images/hosted-wcf-service.png "テスト クライアントで実行されている WCF サービス")
+    ![](walkthrough-working-with-wcf-images/hosted-wcf-service.png "テスト クライアントで実行されている WCF サービス")
 
 1. 実行して、WCF テスト クライアントでは、ブラウザーを起動し、WCF サービスのエンドポイントに移動します。
 
-  ![](walkthrough-working-with-wcf-images/wcf-service-browser.png "WCF サービスのブラウザー情報 ページ")
+    ![](walkthrough-working-with-wcf-images/wcf-service-browser.png "WCF サービスのブラウザー情報 ページ")
 
 > [!IMPORTANT]
-> **注:**次のセクションでは、Windows 10 のワークステーション上のリモート接続を許可する必要があるときのみです。 別のプラットフォームを WCF サービスを展開する必要がある場合は、セクションを無視できます。
+> 次のセクションでは、必要なは、Windows 10 のワークステーション上のリモート接続を許可する必要がある場合のみです。 別のプラットフォームを WCF サービスを展開する必要がある場合は、セクションを無視できます。
 
 <a name="Allow_Remote_Access_to_IIS_Express" />
 
@@ -154,7 +163,7 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
 1.  **IIS Express を構成を受け入れるリモート接続に**-この手順では、特定のポートでのリモート接続を受け入れるための IIS Express の構成ファイルの編集後の IIS Express で受信トラフィックを許可するルールを設定します。
 1.  **Windows ファイアウォールに例外を追加**-リモート アプリケーションが WCF サービスと通信するために使用できる Windows ファイアウォールでポートを開く必要があります。
 
-ワークステーションの IP アドレスを知っている必要があります。 この例の目的はものと、ワークステーションが IP アドレス 192.168.1.143 を持っています。
+    ワークステーションの IP アドレスを知っている必要があります。 この例の目的はものと、ワークステーションが IP アドレス 192.168.1.143 を持っています。
 
 1. 外部からの要求をリッスンするように IIS が Express の構成を見てみましょう。 IIS Express の構成ファイルを編集することによってこの作業を行うことができます`[solutiondirectory]\.vs\config\applicationhost.config`の次のスクリーン ショットに示すようにします。
 
@@ -163,6 +172,7 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
 
     検索、`site`という名前の要素`HelloWorldWcfHost`です。 次の XML スニペットのように表示する必要があります。
 
+    ```xml
         <site name="HelloWorldWcfHost" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
                 <virtualDirectory path="/" physicalPath="\\vmware-host\Shared Folders\tom\work\xamarin\code\private-samples\webservices\HelloWorld\HelloWorldWcfHost" />
@@ -171,13 +181,17 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
                 <binding protocol="http" bindingInformation="*:8733:localhost" />
             </bindings>
         </site>
-
+    ```
+ 
     もう 1 つ追加する必要があります。`binding`を外部のトラフィックをポート 8734 を開きます。 次の XML を追加、`bindings`要素、IP アドレスを IP アドレスに置き換えます。
 
-        <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
-
+    ```xml
+    <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
+    ```
+    
     コンピューターの外部 IP アドレスにポート 8734 でリモート IP アドレスからの HTTP トラフィックを受け入れるように IIS が Express に設定されます。 上のスニペットは、IIS Express を実行しているコンピューターの IP アドレスは 192.168.1.143 前提としています。 変更後に、`bindings`要素は次のようになります。
 
+    ```xml
         <site name="HelloWorldWcfHost" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
                 <virtualDirectory path="/" physicalPath="\\vmware-host\Shared Folders\tom\work\xamarin\code\private-samples\webservices\HelloWorld\HelloWorldWcfHost" />
@@ -187,6 +201,7 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
                 <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
             </bindings>
         </site>
+    ```
 
 1. 次に、IIS Express を構成する必要があります 8734 のポートで着信接続を許可します。 スタートアップの管理コマンド プロンプトのセットアップし、このコマンドを実行します。
 
@@ -215,7 +230,7 @@ IIS Express で実行されていると、サービスを提供する、オフ�
 1. ビルド、`HelloWorldServiceProxy`プロジェクト。
 
 > [!NOTE]
-> **注**: Visual Studio 2017 で Microsoft WCF Web サービス参照のプロバイダーを使用してプロキシを作成する代わりには、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)です。
+> Visual Studio 2017 で Microsoft WCF Web サービス参照のプロバイダーを使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)です。
 
 <a name="Creating_a_Xamarin_Android_Application" />
 
@@ -227,6 +242,7 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
 1. `HelloWorld.Android`プロジェクトへの参照を追加、`HelloWorldServiceProxy`プロジェクト、およびへの参照、`System.ServiceModel`名前空間。
 1. **ソリューション エクスプ ローラー**、開かれている`Resources/layout/main.axml`し既存の XML を次の XML に置き換えます。
 
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:orientation="vertical"
@@ -267,18 +283,22 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
                         android:id="@+id/getHelloWorldDataTextView" />
             </LinearLayout>
         </LinearLayout>
-
+    ```
+    
     次のスクリーン ショットは、デザイナーで UI を示しています。
 
     [![](walkthrough-working-with-wcf-images/image09.png "これは、デザイナーで、この UI はのようになりますのスクリーン ショット")](walkthrough-working-with-wcf-images/image09.png#lightbox)
-
+    
 1. **ソリューション エクスプ ローラー**、開かれている`Resources/values/Strings.xml`し、次の XML を追加します。
 
-        <string name="say_hello_world">Say Hello World</string>
-        <string name="get_hello_world_data">Get Hello World data</string>
-
+    ```xml
+    <string name="say_hello_world">Say Hello World</string>
+    <string name="get_hello_world_data">Get Hello World data</string>
+    ```
+    
 1. **ソリューション エクスプ ローラー**、開かれている`MainActivity.cs`し既存のコードを次のコードに置き換えます。
 
+    ```csharp
         [Activity(Label = "HelloWorld.Android", MainLauncher = true)]
         public class MainActivity : Activity
         {
@@ -291,11 +311,13 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
             TextView _sayHelloWorldTextView;
             ...
         }
+    ```
 
     置き換える`<insert_WCF_service_endpoint_here>`WCF エンドポイントのアドレスを使用します。
 
 1. `MainActivity.cs`、変更、`OnCreate`次のコードを格納するためのメソッド。
 
+    ```csharp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(bundle);
@@ -314,11 +336,13 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
             _sayHelloWorldButton.Click += SayHelloWorldButtonOnClick;
             _sayHelloWorldTextView = FindViewById<TextView>(Resource.Id.sayHelloWorldTextView);
         }
-
+    ```
+    
     上記のコードでは、クラスのインスタンス変数を初期化し、いくつかのイベント ハンドラーに接続します。
 
 1. `MainActivity.cs`、次の 2 つのメソッドを追加することによって、クライアント プロキシ クラスをインスタンス化します。
 
+    ```csharp
         void InitializeHelloWorldServiceClient()
         {
             BasicHttpBinding binding = CreateBasicHttpBinding();
@@ -340,11 +364,13 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
             binding.ReceiveTimeout = timeout;
             return binding;
         }
-
+    ```
+    
     上記のコードは、インスタンス化し、初期化、`HelloWorldServiceClient`オブジェクト。
 
 1. `MainActivity.cs`、2 つのボタンの偶数のハンドラーを追加、 `Activity`:
 
+    ```csharp
         async void GetHelloWorldDataButtonOnClick(object sender, EventArgs e)
         {
             var data = new HelloWorldData
@@ -379,10 +405,11 @@ WCF サービスのプロキシは、Xamarin.Android のアプリケーション
                 Console.WriteLine(ex.Message);
             }
         }
-
+    ```
+  
 1. アプリケーションを実行することを確認して、WCF サービスが実行されている、2 つのボタンをクリックします。 アプリケーションは、WCF を非同期で呼び出すこと、`Endpoint`フィールドが正しく設定されています。
 
-  [![](walkthrough-working-with-wcf-images/image08.png "30 秒以内は、各 WCF メソッドから応答を受信して、アプリケーションはこのスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image08.png#lightbox)
+    [![](walkthrough-working-with-wcf-images/image08.png "30 秒以内は、各 WCF メソッドから応答を受信して、アプリケーションはこのスクリーン ショットのようになります")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -407,17 +434,20 @@ WCF サービス プロキシは、Xamarin.iOS のアプリケーションで使
 
 1. **ソリューション エクスプ ローラー**、開かれている`ViewController.cs`し、次のコードを追加します。
 
+    ```xml
         public partial class ViewController : UIViewController
         {
             static readonly EndpointAddress Endpoint = new EndpointAddress("<insert_WCF_service_endpoint_here>");
             HelloWorldServiceClient _client;
             ...
         }
-
+    ```
+  
     置き換える`<insert_WCF_service_endpoint_here>`WCF エンドポイントのアドレスを使用します。
 
 1. `ViewController.cs`、更新、`ViewDidLoad`メソッドが、次のようになります。
 
+    ```csharp
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -426,9 +456,11 @@ WCF サービス プロキシは、Xamarin.iOS のアプリケーションで使
             getHelloWorldDataButton.TouchUpInside += GetHelloWorldDataButton_TouchUpInside;
             sayHelloWorldButton.TouchUpInside += SayHelloWorldButton_TouchUpInside;
         }
-
+    ```
+  
 1. `ViewController.cs`、追加、`InitializeHelloWorldServiceClient`と`CreateBasicHttpBinding`メソッド。
 
+    ```csharp
         void InitializeHelloWorldServiceClient()
         {
             BasicHttpBinding binding = CreateBasicHttpBinding();
@@ -450,9 +482,11 @@ WCF サービス プロキシは、Xamarin.iOS のアプリケーションで使
             binding.ReceiveTimeout = timeout;
             return binding;
         }
-
+    ```
+  
 1. `ViewController.cs`、イベント ハンドラーを追加、 `TouchUpInside` 、2 つのイベント`UIButton`インスタンス。
 
+    ```csharp
         async void GetHelloWorldDataButton_TouchUpInside(object sender, EventArgs e)
         {
             getHelloWorldDataText.Text = "Waiting for WCF...";
@@ -487,6 +521,7 @@ WCF サービス プロキシは、Xamarin.iOS のアプリケーションで使
                 Console.WriteLine(ex.Message);
             }
         }
+    ```
 
 1. アプリケーションを実行することを確認して、WCF サービスが実行されている、2 つのボタンをクリックします。 アプリケーションは、WCF を非同期で呼び出すこと、`Endpoint`フィールドが正しく設定されています。
 

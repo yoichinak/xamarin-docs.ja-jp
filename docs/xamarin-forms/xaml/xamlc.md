@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/21/2016
-ms.openlocfilehash: c6fb404919621e1b22217b4461597ae07a5624c4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3ce0fd2b83599fca7f38c161bbd2137254b75bd5
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xaml-compilation"></a>XAML のコンパイル
 
@@ -56,7 +56,7 @@ public class HomePage : ContentPage
 この例では、コンパイル時の XAML のチェックでは、`HomePage`クラスが実行され、エラー、コンパイル処理の一部として報告します。
 
 > [!NOTE]
-> `XamlCompilation`属性および`XamlCompilationOptions`に列挙型が存在する、`Xamarin.Forms.Xaml0`名前空間は、それらを使用してにインポートする必要があります。
+> `XamlCompilation`属性および`XamlCompilationOptions`に列挙型が存在する、`Xamarin.Forms.Xaml`名前空間は、それらを使用してにインポートする必要があります。
 
 
 ## <a name="related-links"></a>関連リンク

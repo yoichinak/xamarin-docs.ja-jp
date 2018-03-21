@@ -8,33 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/19/2018
-ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: fbcb0190f609efc4396429a7961c2d49ab82576f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
 _このガイドでは、Google から Firebase ジョブ ディスパッチャー ライブラリを使用してバック グラウンド処理をスケジュールする方法について説明します。_
 
-## <a name="firebase-job-dispatcher-overview"></a>Firebase ジョブ ディスパッチャーの概要
+## <a name="overview"></a>概要
 
 複雑なまたは長時間実行される作業をバック グラウンドで実行するために Android アプリケーションのユーザーに応答性を維持する最善の方法の 1 つです。 ただし、これがいるバック グラウンド作業悪影響を与えないことがユーザーのエクスペリエンス、デバイスに重要です。 
 
-たとえば、バック グラウンド ジョブ可能性がありますポーリング web サイト数分ごとにクエリの特定のデータセットへの変更。 これは、デバイスに障害の原因の影響を与えることでしたが、害のないようです。 アプリケーションは、ウェイク アップ、デバイスを通常の電力状態を CPU を昇格する、無線の電源を投入、ネットワーク要求を行うと、結果を処理を終了します。 これは、デバイスはすぐに電源を切り、低電力アイドル状態に戻すため悪化を取得します。 適切にスケジュールされたバック グラウンド作業は、不要な過剰な電力要件の状態でデバイスを誤って維持できます。 実際には、この取り除かれています無害であるアクティビティ (ポーリング web サイト) が使用不可能にデバイス比較的短時間でします。
+たとえば、バック グラウンド ジョブ可能性があります web サイト分ごとにポーリング 3 または 4 つのクエリの特定のデータセットへの変更。 これが、バッテリの寿命障害の原因の影響を与えるには、害のないようです。 アプリケーションは繰り返しデバイスを起動、通常の電力状態に、CPU を昇格させる、無線の電源、ネットワーク要求とし、結果の処理を行います。 これは、デバイスはすぐに電源を切り、低電力アイドル状態に戻すため悪化を取得します。 適切にスケジュールされたバック グラウンド作業は、不要な過剰な電力要件の状態でデバイスを誤って維持できます。 この一見無害であるアクティビティを (ポーリング web サイト) デバイスは比較的短時間で使用できない表示されます。
 
-Android には、包括的なソリューションはいずれもに、バック グラウンドでの作業の実行に役立てるためにいくつかの Api が既に用意されています。
+Android には、バック グラウンドでの作業の実行に役立てるために次の Api が用意されていますが単独でないインテリジェントなジョブ スケジュールを行うための十分なできます。 
 
 * **[インテント サービス](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash;目的としたサービスは、作業をスケジュールする方法を提供されませんが、作業を実行するのに適しています。
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash;これらの Api をスケジュールするが、実際には、作業を実行する手段が用意されていない作業のみを許可します。 また、AlarmManager は、時間ベースの制約、つまり、特定の時間または一定の時間が経過した後、アラームを発生させるです。 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash;これらの Api のみ許可する作業をスケジュールするが、実際に作業を実行する方法を指定しません。 また、AlarmManager は、時間ベースの制約、つまり、特定の時間または一定の時間が経過した後、アラームを発生させるです。 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash;の JobSchedule がジョブのスケジュールを設定するオペレーティング システムで動作する優れた API です。 ただし、のみである以降の API レベル 21 を対象とするそれらの Android アプリで使用可能です。 
-* **[レシーバーをブロードキャスト](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android アプリはシステム全体のイベントまたは意図的に応答の作業を実行するブロードキャストの受信者をセットアップできます。 ただし、放送受信機は、ジョブの実行と制御を提供しません。 Android オペレーティング システムでの変更の制限も放送受信機は機能、またはに対応する作業の種類。 
-* **Google Cloud メッセージ ネットワーク Manager** &ndash;これが、おそらく、長い時間のスケジュールのバック グラウンド インテリジェントにする最善の方法が作業します。 ただし、GCMNetworkManager ので廃止されました。 
+* **[レシーバーをブロードキャスト](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android アプリはシステム全体のイベントまたは意図的に応答の作業を実行する放送受信機をセットアップできます。 ただし、放送受信機は、ジョブの実行と制御を提供しません。 Android オペレーティング システムでの変更の制限も放送受信機は機能、またはに対応する作業の種類。 
 
-バック グラウンド作業を効率的に実行する 2 つの主要機能が (とも呼ば、_バック グラウンド ジョブ_または_ジョブ_)。
+バック グラウンド作業を効率的に実行する 2 つの主要機能がある (とも呼ば、_バック グラウンド ジョブ_または_ジョブ_)。
 
-1. **作業を適切にスケジューリング**&ndash;を実施する際に、アプリケーションはバック グラウンドでの作業をこれは良き市民として重要です。 理想的には、アプリケーションを要求できません、ジョブを実行します。 代わりに、アプリケーションでは、操作、条件が満たされたときに実行するジョブが実行しスケジュールするときに満たす必要がある条件を指定する必要があります。 これにより、適切に作業を実行する Android できます。 たとえば、ネットワーク要求の場合は、すべてで最大に活用するためのオーバーヘッド ネットワークに関連する同時に実行にバッチ処理される場合があります。
+1. **作業を適切にスケジューリング**&ndash;を実施する際に、アプリケーションはバック グラウンドでの作業をこれは良き市民として重要です。 理想的には、アプリケーションを要求できません、ジョブを実行します。 代わりに、アプリケーションは、ジョブが実行して、条件が満たされたときに実行するには、その作業をスケジュールするときに満たす必要がある条件を指定する必要があります。 これにより、適切に作業を実行する Android できます。 たとえば、ネットワーク要求の場合は、すべてで最大に活用するためのオーバーヘッド ネットワークに関連する同時に実行にバッチ処理される場合があります。
 2. **作業をカプセル化**&ndash;不連続コンポーネント ユーザー インターフェイスとは無関係に実行でき、比較的簡単に作業を完了できない場合に再スケジュールすることで、バック グラウンド処理を実行するコードをカプセル化する必要がありますどうもですね。
 
 Firebase ジョブ ディスパッチャーは、スケジュールのバック グラウンド処理を簡略化する fluent API を提供する、Google からのライブラリです。 これは、Google クラウド マネージャーの置換をするものではします。 Firebase ジョブ ディスパッチャーは、次の Api で構成されます。
@@ -66,7 +65,7 @@ Firebase ジョブ ディスパッチャーを開始するには、追加、 [Xa
 
 Firebase ジョブ ディスパッチャー ライブラリを追加すると、作成、`JobService`クラスし、のインスタンスで実行するようにスケジュールし、`FirebaseJobDispatcher`です。
 
-### <a name="creating-a-jobservice"></a>作成します。 `JobService`
+### <a name="creating-a-jobservice"></a>JobService を作成します。
 
 拡張する型で Firebase ジョブ ディスパッチャー ライブラリによって実行されるすべての作業を行う必要があります、`Firebase.JobDispatcher.JobService`抽象クラスです。 作成する、`JobService`の作成によく似ています、 `Service` Android framework を使用します。 
 
@@ -74,7 +73,7 @@ Firebase ジョブ ディスパッチャー ライブラリを追加すると、
 2. サブクラスを装飾、`ServiceAttribute`です。 必須ではありませんが推奨を明示的に設定する、`Name`パラメーター デバッグに役立つよう、`JobService`です。 
 3. 追加、`IntentFilter`を宣言する、`JobService`で、 **AndroidManifest.xml**です。 Firebase ジョブ ディスパッチャー ライブラリを検索し、呼び出すことができます、`JobService`です。
 
-次のコードは、最も簡単な例`JobService`アプリケーション。
+次のコードは、最も簡単な例`JobService`アプリケーションは、いくつかの作業を非同期的に実行する、TPL を使用します。
 
 ```csharp
 [Service(Name = "com.xamarin.fjdtestapp.DemoJob")]
@@ -85,11 +84,14 @@ public class DemoJob : JobService
 
     public override bool OnStartJob(IJobParameters jobParameters)
     {
-        Log.Debug(TAG, "DemoJob::OnStartJob");
-        // Note: This runs on the main thread. Anything that takes longer than 16 milliseconds
-         // should be run on a seperate thread.
-        
-        return false; // return false because there is no more work to do.
+        Task.Run(() =>
+        {
+            // Work is happening asynchronously (code omitted)
+                       
+        });
+
+        // Return true because of the asynchronous work
+        return true;  
     }
 
     public override bool OnStopJob(IJobParameters jobParameters)
@@ -101,7 +103,7 @@ public class DemoJob : JobService
 }
 ```
 
-### <a name="creating-a-firebasejobdispatcher"></a>作成します。 `FirebaseJobDispatcher`
+### <a name="creating-a-firebasejobdispatcher"></a>FirebaseJobDispatcher を作成します。
 
 作成する必要は、作業をスケジュールすることができます、前に、`Firebase.JobDispatcher.FirebaseJobDispatcher`オブジェクト。 `FirebaseJobDispatcher`スケジューリング担当、`JobService`です。 次のコード スニペットは、のインスタンスを作成する方法の 1 つ、 `FirebaseJobDispatcher`: 
  
@@ -121,7 +123,7 @@ FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
 
 1 回、`FirebaseJobDispatcher`されましたが、インスタンス化可能であればを作成する、`Job`のコードを実行し、`JobService`クラスです。 `Job`によって作成された、`Job.Builder`オブジェクトし、は、次のセクションで説明します。
 
-### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>作成する、`Firebase.JobDispatcher.Job`で、 `Job.Builder`
+### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Job.Builder、Firebase.JobDispatcher.Job を作成します。
 
 `Firebase.JobDispatcher.Job`メタ データをカプセル化するため、クラスを実行するために必要な`JobService`です。 A`Job`場合、ジョブを実行すると、前に満たしている必要がある、制約などの情報が含まれています、`Job`が反復的なまたはジョブを実行すると、すべてのトリガーです。  最低限、として、`Job`必要があります、_タグ_(にジョブを識別する一意の文字列、 `FirebaseJobDispatcher`) との種類、`JobService`を実行する必要があります。 Firebase ジョブ ディスパッチャーがインスタンス化され、`JobService`ジョブを実行する時間である場合。  A`Job`のインスタンスを使用して作成された、`Firebase.JobDispatcher.Job.JobBuilder`クラスです。 
 
@@ -140,7 +142,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A`Job`をできるだけ早く実行するスケジュールされます。
 * 既定の再試行戦略、`Job`を使用して、_指数バックオフ_(セクションで、以下の詳細に説明した[、RetryStrategy 設定](#Setting_a_RetryStrategy))
 
-### <a name="scheduling-a-job"></a>スケジュールを設定します。 `Job`
+### <a name="scheduling-a-job"></a>ジョブのスケジュール設定
 
 作成した後、 `Job`、スケジュールを設定する必要がある、`FirebaseJobDispatcher`の実行前にします。 スケジュールの 2 つのメソッド、 `Job`:
 
@@ -173,7 +175,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-parameters-to-a-job"></a>ジョブにパラメーターの引き渡し
+#### <a name="passing-jarameters-to-a-job"></a>ジョブに渡す jarameters
 
 作成することで、ジョブにパラメーターを渡す、`Bundle`と共に渡される、`Job.Builder.SetExtras`メソッド。
 
@@ -219,8 +221,6 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 <a name="Setting_Job_Triggers" />
-
-#### <a name="setting-job-triggers"></a>ジョブ トリガーの設定
 
 `JobTrigger`ガイダンスは、ジョブを開始するオペレーティング システムを提供します。 A`JobTrigger`が、_ウィンドウを実行する_時期のスケジュールされた時刻を定義する、`Job`実行する必要があります。 実行ウィンドウに、_ウィンドウを起動_値と_終了ウィンドウ_値。 スタート ウィンドウは、デバイスが、ジョブを実行する前に待機する秒数と、ウィンドウの終了値は、実行する前に待機する秒数の最大数、`Job`です。 
 
@@ -283,7 +283,7 @@ int cancelResult = dispatcher.Cancel("unique-tag-for-job");
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、Firebase ジョブ ディスパッチャーを使用して、適切に作業をバック グラウンドで実行する方法について説明します。 として実行される作業をカプセル化する方法が説明されている、`JobService`する方法と、`FirebaseJobDispatcher`で条件を指定する、その作業をスケジュールする、`JobTrigger`でのエラーの処理方法と、`RetryStrategy`です。
+このガイドでは、Firebase ジョブ ディスパッチャーを使用して、適切に作業をバック グラウンドで実行する方法について説明します。 として実行される作業をカプセル化する方法が説明されている、`JobService`と使用方法、`FirebaseJobDispatcher`で条件を指定する、その作業をスケジュールする、`JobTrigger`でのエラーの処理方法と、`RetryStrategy`です。
 
 
 ## <a name="related-links"></a>関連リンク

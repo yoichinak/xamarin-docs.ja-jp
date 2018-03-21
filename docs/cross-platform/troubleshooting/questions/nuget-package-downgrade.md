@@ -6,11 +6,11 @@ ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 98d12bd93c50690909ac902a6f2498bcdb94960f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7befac774732d6f9e432d43ac9bdc635b25bf431
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>NuGet パッケージをダウン グレードする方法は?
 
@@ -23,7 +23,7 @@ Visual Studio for Mac と Visual Studio の両方を古いバージョンのパ�
 
     > パッケージのインストール [PackageName]-[バージョン] メニューのタブのバージョン
 
-ことができますもコピー/貼り付け、パッケージの NuGet ページから正確なコマンド。 Xamarin.Forms の使用例: [https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
+ことができますもコピー/貼り付け、パッケージの NuGet ページから正確なコマンド。 Xamarin.Forms の例: [https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 1. プロジェクトで、[パッケージ] フォルダーを右クリックし、選択**パッケージの追加**
@@ -36,7 +36,6 @@ Visual Studio for Mac と Visual Studio の両方を古いバージョンのパ�
 
     `Xamarin.Forms version:`
 - Xamarin.Forms 1.4.x のすべてのパッケージの一覧です。 
-
 
     `Xamarin.Forms version:1.4`
 

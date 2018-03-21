@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 9bebc33affef4a1a25667039dfcdbe345dbd2cd6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8c336799a4d46359a78432837101dad43b572aea
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="api-design"></a>API の設計
 
@@ -92,7 +92,7 @@ Xamarin.iOS には形成するアセンブリの数が含まれています、 *
 
 Xamarin.iOS ミラーリング (C#) 目標 C からのクラス階層です。 Objective C の基本クラスなど、 [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)経由での c# から使用できるように、 [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)です。
 
-この名前空間には、基になる OBJECTIVE-C Foundation 型のバインドを提供しますが、いくつかのケースでお基になる型にマップの .NET 型です。 例:
+この名前空間には、基になる OBJECTIVE-C Foundation 型のバインドを提供しますが、いくつかのケースでお基になる型にマップの .NET 型です。 例えば:
 
 - 処理するのではなく[NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)、ランタイムに公開するこれらとして c#[文字列](https://developer.xamarin.com/api/type/System.String/)s 厳密に型指定された[配列](https://developer.xamarin.com/api/type/System.Array/)全体にわたって sAPI です。
 
@@ -375,7 +375,7 @@ UIWebView ケースの例では、特定のコントロールの動作を制御�
 厳密に型指定のプロパティだけでなく弱い型指定されたデリゲートにより、開発者は必要な場合は、異なる方法で処理をバインドすることもできます。
 厳密に型指定されたすべての場所で`Delegate`で Xamarin.iOS のバインディングを対応するプロパティが公開される`WeakDelegate`プロパティが公開されるもします。
 
-使用する場合、 `WeakDelegate`、クラスを使用して、正しくを修飾することを担当する場合、[エクスポート](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)セレクターを指定する属性。 例:
+使用する場合、 `WeakDelegate`、クラスを使用して、正しくを修飾することを担当する場合、[エクスポート](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)セレクターを指定する属性。 例えば:
 
 ```csharp
 class Notifier : NSObject  {
@@ -494,6 +494,7 @@ public class MyCallbacks : NSObject {
 
 このスタイルのプログラミングを使用する場合は、c# パラメーターが、ランタイム エンジンが送信される実際の型と一致することを確認します。
 
+<a name="Models" />
 
 #### <a name="models"></a>モデル
 
@@ -619,13 +620,13 @@ Mac と InterfaceBuilder の Visual Studio を使用する場合、これにつ�
 
 Objective C のプログラミングの中核となる概念では、セレクターです。 セレクターを渡すことを必要としたり、セレクターに応答するコードが必要ですが Api を多くの場合、遭遇されます。
 
-C# では新しいセレクターを作成することは非常に簡単 – だけの新しいインスタンスを作成する、`ObjCRuntime.Selector`クラスし、必要とする API 内のどの場所の結果を使用します。 例:
+C# では新しいセレクターを作成することは非常に簡単 – だけの新しいインスタンスを作成する、`ObjCRuntime.Selector`クラスし、必要とする API 内のどの場所の結果を使用します。 例えば:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-C# メソッドには、応答セレクターの呼び出しを継承する必要があります、`NSObject`セレクターの名前を使用してでは、型と c# のメソッドを装飾する必要があります、`[Export]`属性。 例:
+C# メソッドには、応答セレクターの呼び出しを継承する必要があります、`NSObject`セレクターの名前を使用してでは、型と c# のメソッドを装飾する必要があります、`[Export]`属性。 例えば:
 
 ```csharp
 public class MyMath : NSObject {

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9834da444032622cc3547e7c99ca3de0e41bb603
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="architecture"></a>アーキテクチャ
 
@@ -33,7 +33,7 @@ Android のクラスが、Android のランタイム クラスと通信する方
 
 Android アプリケーション パッケージは ZIP を使用したコンテナー、 *.apk*ファイル拡張子。 Xamarin.Android アプリケーション パッケージと同じである構造体レイアウトとして、次の項目を追加、標準の Android パッケージ。
 
--   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダーです。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()*プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アプリの起動時間の短縮を実行する前に抽出する必要はありませんアセンブリとして。 - *注:*アセンブリの場所情報など、 [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)と[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
+-   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダーです。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()*プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アセンブリを実行する前に抽出する必要はありません、高速のアプリ起動時。 - *注:*アセンブリの場所情報など、 [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)と[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
     *は適して*リリースでは構築します。 個別の filesystem のエントリとして存在しないされ、使用可能な場所がありません。
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="java-bindings-metadata"></a>Java バインディング メタデータ
 
@@ -275,7 +275,7 @@ Setter メソッドと getter メソッドがバインド ジェネレーター�
 
 ### <a name="sender"></a>sender
 
-メソッドのパラメーターにする必要がありますを指定します、`sender`メソッドがイベントにマップされるパラメーター。 値を指定できます`true`または`false`です。 例:
+メソッドのパラメーターにする必要がありますを指定します、`sender`メソッドがイベントにマップされるパラメーター。 値を指定できます`true`または`false`です。 例えば:
 
 ```xml
 <attr path="/api/package[@name='android.app']/
@@ -313,7 +313,7 @@ Android ライブラリがライブラリのプロパティまたはメソッド
 </mapping>
 ```
 
-Java クラスを次に移動しました`SKRealReachSettings`と呼ばれる c# 列挙を定義および`SKRealReachSettings`名前空間に`Skobbler.Ngx.Map.RealReach`です。 `field`エントリ Java 定数の名前を定義します (例`UNIT\_SECOND`)、列挙型のエントリの名前 (例`Second`) と両方のエンティティによって表される整数値 (例`0`)。 
+Java クラスを次に移動しました`SKRealReachSettings`と呼ばれる c# 列挙を定義および`SKMeasurementUnit`名前空間に`Skobbler.Ngx.Map.RealReach`です。 `field`エントリ Java 定数の名前を定義します (例`UNIT_SECOND`)、列挙型のエントリの名前 (例`Second`) と両方のエンティティによって表される整数値 (例`0`)。 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>EnumMethods.xml を使用して、Getter または Setter メソッドを定義します。
 
@@ -328,7 +328,7 @@ Java クラスを次に移動しました`SKRealReachSettings`と呼ばれる c#
 </mapping>
 ```
 
-最初の`method`行は、Java の戻り値をマップ`getMeasurementUnit`メソッドを`SKRealReachSettings`列挙型。 2 番目`method`行マップの最初のパラメーター、`setMeasurementUnit`同じ列挙型にします。
+最初の`method`行は、Java の戻り値をマップ`getMeasurementUnit`メソッドを`SKMeasurementUnit`列挙型。 2 番目`method`行マップの最初のパラメーター、`setMeasurementUnit`同じ列挙型にします。
 
 すべての変更を行うには、次のコードで使える Xamarin.Android を設定する、 `MeasurementUnit`: 
 

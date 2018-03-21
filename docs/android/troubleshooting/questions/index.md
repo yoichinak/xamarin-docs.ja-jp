@@ -6,12 +6,12 @@ ms.assetid: 0F0FDD2B-FFB1-476F-B674-81DB3A5E1CF3
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 22ddf61d3636962273716d8d5c48857e0004bb42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 69a5c905367f9e6dbd38acb664ad21b9dbe63efc
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -68,6 +68,11 @@ Windows; で開発するときに Android デバイスでデバッグするに�
 ### <a name="smarter-xamarin-android-support-v4--v13-nuget-packagesandroid-support-v4v13-librariesmd"></a>[より高度な Xamarin Android サポート v4/v13 NuGet パッケージ](android-support-v4v13-libraries.md)
 
 `Support-v4` および`Support-v13`は使用できません同時に、同じアプリでは、これらは相互に排他的です。 これは、ため`Support-v13`実際にすべての型との実装を含む`Support-v4`です。 しようとすると、同じプロジェクトの両方を参照は、重複する型のエラーが発生します。
+
+### <a name="how-do-i-resolve-a-pathtoolongexception-errorpath-too-long-exceptionmd"></a>[PathTooLongException エラーを解決する方法](path-too-long-exception.md)
+
+この記事を解決する方法を説明します、 **PathTooLongException** Xamarin.Android プロジェクトのビルド中に発生するエラーです。
+
 
 
 ## <a name="deprecated"></a>非推奨

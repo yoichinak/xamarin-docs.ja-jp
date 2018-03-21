@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -21,22 +21,6 @@ _Xamarin.Forms アプリは、.NET リソース ファイルを使用してロ�
 ## <a name="overview"></a>概要
 
 .NET アプリケーションの使用をローカライズするための組み込みメカニズム[RESX ファイル](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)と、クラス、`System.Resources`と`System.Globalization`名前空間。 翻訳された文字列を含む RESX ファイルは、コンパイラによって生成されたクラス、翻訳を厳密に型指定されたアクセスを提供すると共に、Xamarin.Forms アセンブリに埋め込まれます。 翻訳文字列は、コードで取得できます。
-
-このドキュメントは、次のトピックに分かれています。
-
-**Xamarin.Forms コードのグローバル化**
-
-* 追加して、Xamarin.Forms PCL アプリで文字列リソースの使用します。
-* ネイティブ アプリの各言語検出を有効にします。
-
-**XAML のローカライズ**
-
-* XAML を使用してローカライズ、`IMarkupExtension`です。
-* ネイティブ アプリでマークアップ拡張機能を有効にします。
-
-**プラットフォーム固有の要素のローカライズ**
-
-* イメージとネイティブ アプリのアプリ名をローカライズします。
 
 ### <a name="sample-code"></a>サンプル コード
 
@@ -651,15 +635,17 @@ using Xamarin.Forms.Xaml;
 
 namespace UsingResxLocalization
 {
-    // You exclude the 'Extension' suffix when using in Xaml markup
-    [ContentProperty ("Text")]
+    // You exclude the 'Extension' suffix when using in XAML
+    [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
     {
-        readonly CultureInfo ci;
+        readonly CultureInfo ci = null;
         const string ResourceId = "UsingResxLocalization.Resx.AppResources";
 
-        private static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(()=> new ResourceManager(ResourceId
-                                                                                                                  , typeof(TranslateExtension).GetTypeInfo().Assembly));
+        static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(
+            () => new ResourceManager(ResourceId, IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly));
+
+        public string Text { get; set; }
 
         public TranslateExtension()
         {
@@ -669,24 +655,21 @@ namespace UsingResxLocalization
             }
         }
 
-        public string Text { get; set; }
-
-        public object ProvideValue (IServiceProvider serviceProvider)
+        public object ProvideValue(IServiceProvider serviceProvider)
         {
             if (Text == null)
-                return "";
+                return string.Empty;
 
             var translation = ResMgr.Value.GetString(Text, ci);
-
             if (translation == null)
             {
-                #if DEBUG
+#if DEBUG
                 throw new ArgumentException(
-                    String.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
+                    string.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
                     "Text");
-                #else
-                translation = Text; // returns the key, which GETS DISPLAYED TO THE USER
-                #endif
+#else
+                translation = Text; // HACK: returns the key, which GETS DISPLAYED TO THE USER
+#endif
             }
             return translation;
         }
@@ -699,7 +682,7 @@ namespace UsingResxLocalization
 * クラスの名前は`TranslateExtension`、としてを参照すれば慣例**翻訳**マークアップでします。
 * クラスを実装`IMarkupExtension`の機能を Xamarin.Forms で必要となります。
 * `"UsingResxLocalization.Resx.AppResources"` RESX リソースのリソース識別子です。 これは、既定の名前空間、リソース ファイルが配置されているフォルダー、および既定の RESX ファイル名ので構成されます。
-* `ResourceManager`を使用してクラスを作成`typeof(TranslateExtension)`からリソースを読み込むための現在のアセンブリを特定します。
+* `ResourceManager`を使用してクラスを作成`IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)`、リソースの読み込みを現在のアセンブリを特定し、静的でキャッシュされた`ResMgr`フィールドです。 として作成される、`Lazy`で最初に使用されるまでの作成が遅延されるように、入力、`ProvideValue`メソッドです。
 * `ci` 依存関係サービスを使用して、ネイティブのオペレーティング システムからユーザーの選択した言語を取得します。
 * `GetString` リソース ファイルから実際の翻訳された文字列を取得する方法です。 Windows Phone 8.1 とユニバーサル Windows プラットフォームに`ci`が null でないため、`ILocalize`インターフェイスは、これらのプラットフォームで実装されていません。 これは、呼び出すことと同じ、`GetString`最初のパラメーターだけを持つメソッドです。 代わりに、リソース フレームワークでは、ロケールを自動的に認識され、適切な RESX ファイルから翻訳した文字列を取得します。
 * エラー処理が例外をスローして不足しているリソースをデバッグする際に含まれています (で`DEBUG`モードのみ)。
