@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>コードで iOS のユーザー インターフェイスの作成
 
@@ -620,7 +620,7 @@ Apple は、.xib またはストーリー ボード ファイルを使用して 
 - [ストーリー ボードでの起動画面を管理します。](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> **注:** Apple iOS 9、時点での起動画面を作成する主な方法としてストーリー ボードを使用する必要があることをお勧めします。
+> Apple は iOS 9、時点で、ストーリー ボードを起動画面を作成する主な方法として使用することをお勧めします。
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>起動イメージの作成前の iOS 8 アプリケーション
 
@@ -629,7 +629,7 @@ Apple は、.xib またはストーリー ボード ファイルを使用して 
 この静的イメージは、Info.plist のファイルまたは (用、iOS 7)、アプリケーションでの資産カタログとして設定できます。 各デバイス サイズ (320 x 480、640 x 960、640 x 1136) をアプリケーションが実行される個別の画像を提供する必要があります。 起動画面サイズの詳細については、表示、[起動画面イメージ](~/ios/app-fundamentals/images-icons/launch-screens.md)ガイドです。
 
 > [!IMPORTANT]
-> **注:**画面を起動して、アプリがない場合は、画面を完全に一致しないことを確認可能性があります。 大文字と小文字の場合を確認してください含めるには、少なくとも、という名前の 640 x 1136 イメージ`Default-568@2x.png`Info.plist にします。 
+> アプリが起動画面を持たない場合は、画面を完全に一致しないことに注意してください可能性があります。 大文字と小文字の場合を確認してください含めるには、少なくとも、という名前の 640 x 1136 イメージ`Default-568@2x.png`Info.plist にします。 
 
 
 

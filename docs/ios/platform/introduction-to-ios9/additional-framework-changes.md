@@ -7,11 +7,11 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 773df1eec7c8694143ad6c31044ce281c1265282
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5053d8d0cf9c1c3e6d3282ee8d6e42448e733c2c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>その他の iOS 9 のフレームワークの変更
 
@@ -53,7 +53,7 @@ CloudKit フレームワークは、そのアクセス iCloud アプリケーシ
 新しい_CloudKit Web Services_ framework には、同じベース CloudKit データと、Xamarin.iOS アプリとのコンテンツへのアクセスを提供する web サイトに組み込むことができる JavaScript ライブラリ (CloudKit JS) が用意されています。
 
 > [!IMPORTANT]
-> **注:**へのアクセスまたは提示 CloudKit を CloudKit JS を使用してデータベースからコンテンツを更新することができます、前にする必要がありますが以前に定義したそのデータベースのスキーマです。
+> アクセスまたは提示 CloudKit を CloudKit JS を使用してデータベースからコンテンツを更新することができます、前にする必要がありますが以前に定義したそのデータベースのスキーマです。
 
 
 
@@ -100,7 +100,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>省電力モードへの応答
 
-使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/)クラスで、アプリが実行されている iOS デバイスで低電力モードが有効にされているかどうかを決定します。 例:
+使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/)クラスで、アプリが実行されている iOS デバイスで低電力モードが有効にされているかどうかを決定します。 例えば:
 
 ```csharp
 // Is the device in low power mode?

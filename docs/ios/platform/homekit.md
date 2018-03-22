@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -77,7 +77,7 @@ HomeKit によって課せられるセキュリティ要件のため、Xamarin.i
 これらの設定で、アプリケーションは HomeKit フレームワーク Api にアクセスする準備ができてようになりました。 プロビジョニングの詳細についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)と[してアプリをプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
 
 > [!IMPORTANT]
-> **注:**の開発が正しくプロビジョニングされている実際の iOS デバイスを必要と HomeKit が有効になっているアプリをテストします。 IOS シミュレーターでは、HomeKit をテストすることはできません。
+> 有効になっている HomeKit アプリをテストすると、開発用が正しくプロビジョニングされている実際の iOS デバイスが必要です。 IOS シミュレーターでは、HomeKit をテストすることはできません。
 
 ## <a name="the-homekit-accessory-simulator"></a>HomeKit アクセサリ シミュレーター
 
@@ -143,7 +143,7 @@ IOS 10 の新しい (大きい)、開発者は必要がありますを追加、`
 6. 変更内容をファイルに保存します。
 
 > [!IMPORTANT]
-> **注:**設定に失敗した、`NSHomeKitUsageDescription`でキー、`Info.plist`ファイルの場合は、アプリ_サイレント モードで障害が発生_(実行時にシステムに閉じられました) 10 (またはそれ以上)、iOS では実行時エラーなし。
+> 設定に失敗した、`NSHomeKitUsageDescription`でキー、`Info.plist`ファイルの場合は、アプリ_サイレント モードで障害が発生_(実行時にシステムに閉じられました) 10 (またはそれ以上)、iOS では実行時エラーなし。
 
 ## <a name="connecting-to-homekit"></a>HomeKit への接続
 
@@ -265,7 +265,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 ホーム マネージャーを監視することも必要があります。`DidAddHome`と`DidRemoveHome`必要に応じて、アプリのユーザー インターフェイスのイベントおよび更新します。
 
 > [!IMPORTANT]
-> **注:** 、`AlertView.PresentOKAlert`上記のサンプル コードで使用されるメソッドは、作業を ios アラート容易 HomeKitIntro アプリケーションでヘルパー クラス。
+> `AlertView.PresentOKAlert`上記のサンプル コードで使用されるメソッドは、作業を ios アラート容易 HomeKitIntro アプリケーションでヘルパー クラス。
 
 
 ## <a name="finding-new-accessories"></a>新しいアクセサリを検索します。
@@ -275,7 +275,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 呼び出す、`StartSearchingForNewAccessories`新しいアクセサリを探して開始するメソッド、および`StopSearchingForNewAccessories`メソッドが完了します。
 
 > [!IMPORTANT]
-> **注:** `StartSearchingForNewAccessories`残さないようにバッテリ寿命と iOS デバイスのパフォーマンスの両方に影響が悪影響を及ぼすために、長期間に対して実行されています。 Apple 提案通話`StopSearchingForNewAccessories`分または検索アクセサリ UI が、ユーザーに表示される場合にのみ検索後にします。
+> `StartSearchingForNewAccessories` 残さないようにバッテリ寿命と iOS デバイスのパフォーマンスの両方に影響が悪影響を及ぼすために、長期間に対して実行されています。 Apple 提案通話`StopSearchingForNewAccessories`分または検索アクセサリ UI が、ユーザーに表示される場合にのみ検索後にします。
 
 `DidFindNewAccessory`イベントと呼び出される新しいアクセサリが検出され、それらに追加するが、`DiscoveredAccessories`アクセサリ ブラウザーの一覧です。
 
@@ -285,7 +285,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 [![](homekit-images/accessory01.png "新しいアクセサリを検索します。")](homekit-images/accessory01.png#lightbox)
 
-呼び出す、`AddAccessory`ホームのコレクションを選択したアクセサリを追加するメソッド。 例:
+呼び出す、`AddAccessory`ホームのコレクションを選択したアクセサリを追加するメソッド。 例えば:
 
 ```csharp
 // Add the requested accessory to the home
@@ -318,7 +318,7 @@ HomeKit アクセサリ シミュレーターでこの数は「、**セットア
 
 この例では、おを保存する点単純な使用して作業ホームのアクセサリを直接編成しルームまたはゾーンの代わりにします。
 
-`HMHome`オブジェクトをユーザーに提示する割り当ての付属品の一覧が含まれています。 その`Accessories`プロパティです。 例:
+`HMHome`オブジェクトをユーザーに提示する割り当ての付属品の一覧が含まれています。 その`Accessories`プロパティです。 例えば:
 
 [![](homekit-images/accessory04.png "例アクセサリ")](homekit-images/accessory04.png#lightbox)
 
@@ -426,7 +426,7 @@ HomeKit アクセサリ シミュレーターでこの数は「、**セットア
  - 製造元
  - モデル
  - MotionDetected
- - name
+ - 名前
  - ObstructionDetected
  - OccupancyDetected
  - OutletInUse

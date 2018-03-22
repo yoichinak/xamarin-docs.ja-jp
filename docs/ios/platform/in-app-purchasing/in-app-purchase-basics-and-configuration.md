@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b622da2d6d9777fc200a091ccf003369b1c2e8d1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>アプリ内購入の基本と構成
 
@@ -84,7 +84,7 @@ ms.lasthandoff: 03/09/2018
 使用する任意の文字列を使用することができます、**バンドル Id** (限り、アカウント内で一意である)、Apple では、逆引き DNS 形式に従うのではなくする任意の文字列を使用することをお勧めします。 この記事に付属するサンプル アプリケーションは、(Apple では推奨していない) 場合でも、my_store_example のような識別子を使用する有効な均等になりますが、バンドル Id の com.xamarin.storekit.testing を使用します。
 
 > [!IMPORTANT]
-> **注**: Apple では、ワイルドカードのアスタリスクの末尾に追加することもできます、**バンドル Id** 1 つのアプリ ID を複数のアプリケーションが使用できるようにする_ワイルド カードのアプリ Id は使用できませんAppPurchase で_です。 ワイルドカードのバンドル Id が com.xamarin.* あります例
+> Apple では、ワイルドカードのアスタリスクの末尾に追加することもできます、**バンドル Id** 1 つのアプリ ID を複数のアプリケーションが使用できるようにする_AppPurchaseワイルドカードのアプリIdは使用できません_. ワイルドカードのバンドル Id が com.xamarin.* あります例
 
 #### <a name="enabling-app-services"></a>アプリ サービスを有効にします。
 

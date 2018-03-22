@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53494e61d702b83a28534c644f33fb5327b5958
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 128ec8d19dc25dc2231521756ee0f00690e0d134
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="core-graphics"></a>コア グラフィック
 
@@ -228,7 +228,7 @@ public override void Draw (CGRect rect)
  ![](core-graphics-images/04-upright-monkey.png "サンプル表示されるイメージ直立")
 
 > [!IMPORTANT]
->  **注:**グラフィックス コンテキストへの変更が後続のすべての描画操作に適用します。 したがって、CTM を変換すると、その他の描画に影響します。 たとえば、CTM 変換後の三角形を描画した場合は、表示される上下逆にします。
+> グラフィックス コンテキストへの変更は、後続のすべての描画操作に適用されます。 したがって、CTM を変換すると、その他の描画に影響します。 たとえば、CTM 変換後の三角形を描画した場合は、表示される上下逆にします。
 
 ### <a name="adding-text-to-the-image"></a>テキスト、イメージを追加します。
 

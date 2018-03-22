@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 
@@ -173,7 +173,7 @@ public override void ViewDidLayoutSubviews ()
 ビューを読み取ろうとしたため、階層に追加した後、変位値が動的に生成される`TopLayoutGuide`と`BottomLayoutGuide`値`ViewDidLoad`は 0 を返します。 ビューが読み込まれた後の例については、値の計算、`ViewDidLayoutSubviews`です。
 
 > [!IMPORTANT]
-> **注**:`TopLayoutGuide`と`BottomLayoutGuide`新しい安全な領域のレイアウトを優先するために iOS 11 では使用されなくなりました。 Apple が表記を安全な領域を使用して iOS 11 より前の iOS のバージョンと互換性のある示します。 詳細については、次を参照してください。、 [11 iOS 用アプリを更新](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)ガイドです。
+> `TopLayoutGuide` および`BottomLayoutGuide`新しい安全な領域のレイアウトを優先するために iOS 11 では使用されなくなりました。 Apple が表記を安全な領域を使用して iOS 11 より前の iOS のバージョンと互換性のある示します。 詳細については、次を参照してください。、 [11 iOS 用アプリを更新](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)ガイドです。
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -252,7 +252,7 @@ public override bool PrefersStatusBarHidden ()
 濃淡の色を場合も画像に適用できる、`RenderingMode`に設定されている`UIImageRenderingMode.AlwaysTemplate`です。
 
 > [!IMPORTANT]
-> 注: 濃淡の色を設定できませんを使用して`UIAppearance`です。
+> 使用して、濃淡の色を設定することはできません`UIAppearance`です。
 
 
 ### <a name="dynamic-type"></a>動的な型

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 01b316e296f78ea2739e2f3ed1bd8d8ec112fca8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient スタックと iOS/macOS の SSL/TLS の実装のセレクター
 
@@ -110,6 +110,7 @@ HttpClient client = new HttpClient(new NSUrlSessionHandler());
 SSL (Secure Socket Layer) とその後続バージョンの TLS (Transport Layer Security)、HTTP およびその他のネットワーク接続経由でのサポートを提供`System.Net.Security.SslStream`です。 Xamarin.iOS、Xamarin.tvOS または Xamarin.Mac の`System.Net.Security.SslStream`実装はモノラルによって提供されるマネージ実装を使用する代わりに、Apple のネイティブの SSL/TLS 実装を呼び出します。 Apple のネイティブ実装では、TLS 1.2 をサポートします。
 
 <a name="Mono" />
+
 > [!WARNING]
 > **モノラル/マネージ**TLS プロバイダーは SSL v3 と TLS v1 に制限されます。 この TLS プロバイダーは廃止されており、Xamarin.iOS アプリケーション用に使用することはできなくします。 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0a9b9651a735ef4300e19f5ccb231a616850d970
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="contacts-and-contactsui"></a>取引先担当者および ContactsUI
 
@@ -30,7 +30,7 @@ Apple iOS 9 の導入に伴い、2 つの新しいフレームワークをリリ
 [![](contacts-images/add01.png "IOS デバイスでの使用例コンタクト シート")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> **注:**既存`AddressBook`と`AddressBookUI`フレームワーク iOS 8 で使用する (前) iOS 9 で廃止されたおよび新しいに置き換える必要が`Contacts`と`ContactsUI`すべて既存 Xamarin.iOS をできるだけ早くフレームワークアプリです。 新しいフレームワークに対しては、新しいアプリを記述する必要があります。
+> 既存の`AddressBook`と`AddressBookUI`フレームワーク iOS 8 で使用する (前) iOS 9 で廃止されたおよび新しいに置き換える必要が`Contacts`と`ContactsUI`できるだけ早くどの既存 Xamarin.iOS アプリのフレームワークです。 新しいフレームワークに対しては、新しいアプリを記述する必要があります。
 
 
 
@@ -111,7 +111,7 @@ else
 }
 ```
 
-IOS 9 デバイスでは、このコードを実行した場合、新しい連絡先は、ユーザーのコレクションに追加されます。 例:
+IOS 9 デバイスでは、このコードを実行した場合、新しい連絡先は、ユーザーのコレクションに追加されます。 例えば:
 
 [![](contacts-images/add01.png "ユーザーのコレクションに追加された新しい連絡先")](contacts-images/add01.png#lightbox)
 
@@ -124,7 +124,7 @@ Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterSt
 Console.WriteLine(CNPostalAddressFormatter.GetStringFrom(workAddress, CNPostalAddressFormatterStyle.MailingAddress));
 ```
 
-アプリの UI に表示されるプロパティのラベル、連絡先フレームワークにもそれらの文字列をローカライズするためのメソッドを持っています。 ここでも、これは、アプリを実行している iOS デバイスの現在のロケールに基づいています。 例:
+アプリの UI に表示されるプロパティのラベル、連絡先フレームワークにもそれらの文字列をローカライズするためのメソッドを持っています。 ここでも、これは、アプリを実行している iOS デバイスの現在のロケールに基づいています。 例えば:
 
 ```csharp
 // Localized properties
@@ -144,7 +144,7 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 ```
 
 > [!IMPORTANT]
-> **注:**ジェネリック連絡先フレームワークでは、複合述語はサポートされていないとします。
+> 連絡先、フレームワークによっては、汎用的な複合述語はサポートされていません。
 
 例については、のみにフェッチを制限する、 **GivenName**と**FamilyName**連絡先のプロパティは、次のコードを使用します。
 
@@ -176,7 +176,7 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 A_部分にお問い合わせください_は連絡先ストアから利用可能なプロパティの一部のみがフェッチされることにお問い合わせください。 以前はフェッチされませんが、プロパティにアクセスしようとすると、例外になります。
 
-担当者がいずれかを使用して目的のプロパティを持つかどうかを確認する簡単に確認することができます、`IsKeyAvailable`または`AreKeysAvailable`のメソッド、`CNContact`インスタンス。 例:
+担当者がいずれかを使用して目的のプロパティを持つかどうかを確認する簡単に確認することができます、`IsKeyAvailable`または`AreKeysAvailable`のメソッド、`CNContact`インスタンス。 例えば:
 
 ```csharp
 // Does the contact contain the requested key?
@@ -190,7 +190,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> **注:** 、`GetUnifiedContact`と`GetUnifiedContacts`のメソッド、`CNContactStore`クラス_のみ_によって提供されるフェッチ キーから要求されたプロパティを上限とする部分的な連絡先を返します。
+> `GetUnifiedContact`と`GetUnifiedContacts`のメソッド、`CNContactStore`クラス_のみ_によって提供されるフェッチ キーから要求されたプロパティを上限とする部分的な連絡先を返します。
 
 ### <a name="unified-contacts"></a>統合メンバー
 
@@ -227,7 +227,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 A`CNSaveRequest`を 1 つの操作に複数の連絡先とグループの変更をキャッシュし、に、これらの変更のバッチにも使用することができます、`CNContactStore`です。
 
-フェッチ操作から取得した、変更できない連絡先を更新するには、まず次に変更し、連絡先のストアに保存する変更可能なコピーを要求する必要があります。 例:
+フェッチ操作から取得した、変更できない連絡先を更新するには、まず次に変更し、連絡先のストアに保存する変更可能なコピーを要求する必要があります。 例えば:
 
 ```csharp
 // Get mutable copy of contact
@@ -281,7 +281,7 @@ Xamarin.iOS アプリで連絡先をサポートするために作成する必�
 
 呼び出す前に、`CNContactPickerViewController`クラス、プロパティを定義するどのユーザーが選択し、表示と連絡先のプロパティの選択を制御する述語を定義できます。
 
-継承するクラスのインスタンスを使用して`CNContactPickerDelegate`ピッカーを使用して、ユーザーの対話に応答します。 例:
+継承するクラスのインスタンスを使用して`CNContactPickerDelegate`ピッカーを使用して、ユーザーの対話に応答します。 例えば:
 
 ```csharp
 using System;

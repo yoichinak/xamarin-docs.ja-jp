@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="document-picker"></a>ドキュメントの選択
 
@@ -21,7 +21,7 @@ _ドキュメント ピッカー ビュー コント ローラーは、ユーザ
 
 アプリとクラウド間で同期されているドキュメントを保持するための難易度のために必要な複雑さ量を導入します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 この記事で紹介する手順を完了する、次が必要。
 
@@ -221,7 +221,7 @@ Ios 8、`NSMetadataQuery`合成と呼ばれる新しい機能を直接使用す�
 合成を使用して、アプリケーションがなくなったを開くには、データ ソースをローカルで監視して、クラウド ベースのファイルの変更。 これで、アプリケーションの利用`NSMetadataQuery`直接です。
 
 > [!IMPORTANT]
-> **注**: 合成前のセクションで説明したよう、アプリケーションはファイルの調整を使用する場合にのみ機能します。 ファイルの調整が使用されていない場合、Api 既定より前の既存の iOS 8 の動作になります。
+> 合成は、前のセクションで説明したよう、アプリケーションはファイルの調整を使用する場合にのみ機能します。 ファイルの調整が使用されていない場合、Api 既定より前の既存の iOS 8 の動作になります。
 
 
 
@@ -465,7 +465,7 @@ Xamarin.iOS アプリケーションでは、ドキュメント ピッカーを�
 6.  右クリックして`Entitlements.plist`で、**ソリューション エクスプ ローラー**をエディターで開きます。
 
     > [!IMPORTANT]
-> **注**: Visual Studio での選択を右クリックして、権利エディターを開くには必要があります**ファイルを開く.** プロパティ リスト エディターを選択して
+    > Visual Studio でする必要がありますを右クリックして権利エディターを開くには選択**ファイルを開く.** プロパティ リスト エディターを選択して
 
 7.  確認**iCloud を有効にする**、 **iCloud ドキュメント**、**キーと値の記憶域**と**CloudKit**です。
 8.  確認、**コンテナー** (上記で作成した) と、アプリケーションに存在します。 例 : `iCloud.com.your-company.AppName`
@@ -793,7 +793,7 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> **注**: 上記のコードには、探索およびドキュメントの一覧表示する前のセクションのコードが含まれています。 ここで示す全体、実際のアプリケーションで表示されます。 わかりやすくするため、この例は、ハード コーディングされた 1 つのファイルで動作 (`test.txt`) のみです。
+> 上記のコードには、前の検出と一覧表示するドキュメント セクションのコードが含まれています。 ここで示す全体、実際のアプリケーションで表示されます。 わかりやすくするため、この例は、ハード コーディングされた 1 つのファイルで動作 (`test.txt`) のみです。
 
 上記のコードでは、アプリケーションの残りの部分で作業しやすくためのいくつかの iCloud ドライブ ショートカットを公開します。
 
@@ -902,7 +902,7 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> **注**: 開発者が呼び出す必要があります、`StartAccessingSecurityScopedResource`のメソッド、`NSUrl`外部ドキュメントにアクセスする前に、。 `StopAccessingSecurityScopedResource`ロックを解除する、セキュリティ、ドキュメントが読み込まれたとすぐにメソッドを呼び出す必要があります。
+> 開発者が呼び出す必要があります、`StartAccessingSecurityScopedResource`のメソッド、`NSUrl`外部ドキュメントにアクセスする前に、。 `StopAccessingSecurityScopedResource`ロックを解除する、セキュリティ、ドキュメントが読み込まれたとすぐにメソッドを呼び出す必要があります。
 
 ### <a name="sample-output"></a>出力例
 
@@ -1134,7 +1134,7 @@ Mac OS X Yosemite を Apple の管轄外の後方互換性ので、すべての�
 ユーザーのアカウントは、ドライブを iCloud に移行されているが後、iCloud ドライブを使用してのみのデバイスは同じドキュメントにそれらのデバイス間での変更を反映することができます。
 
 > [!IMPORTANT]
-> **注**: 開発者は、この記事で取り上げられている新しい機能が使用できるは、ユーザーのアカウントが iCloud ドライブへ移行されている場合のみことに注意してください。 
+> 開発者は、この記事で取り上げられている新しい機能が使用できるは、ユーザーのアカウントが iCloud ドライブへ移行されている場合のみことに注意してください。 
 
 ## <a name="summary"></a>まとめ
 

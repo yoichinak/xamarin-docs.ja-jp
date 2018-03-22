@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b35905d14086dcfc0cb749c8e4cc7de1608dd5
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-sizing-row-height"></a>自動サイズ変更行の高さ
 
@@ -21,7 +21,7 @@ iOS 11 では、自動的に展開する行の機能を追加しました。 ヘ
 
 ## <a name="cell-layout-in-the-ios-designer"></a>IOS デザイナー内のセルのレイアウト
 
-開いている行の自動サイズ変更用 iOS デザイナーでテーブル ビューのストーリー ボードのセルを選択の*プロトタイプ*セルのレイアウトをデザインします。 例:
+開いている行の自動サイズ変更用 iOS デザイナーでテーブル ビューのストーリー ボードのセルを選択の*プロトタイプ*セルのレイアウトをデザインします。 例えば:
 
 [![](autosizing-row-height-images/table01.png "セルのプロトタイプのデザイン")](autosizing-row-height-images/table01.png#lightbox)
 
@@ -46,13 +46,13 @@ iOS 11 では、自動的に展開する行の機能を追加しました。 ヘ
 この例の場合`GrowCell`です。 後で、テーブルの作成時にこの値が使用されます。
 
 > [!IMPORTANT]
-> **注:** 、テーブルには、1 つ以上のセルの種類が含まれている場合 (**プロトタイプ**)、種類ごとに独自の一意なことを確認する必要があります`Identifier`の自動動作する行がサイズ変更します。
+> テーブルには、1 つ以上のセルの種類が含まれている場合 (**プロトタイプ**)、種類ごとに独自の一意なことを確認する必要があります`Identifier`の自動動作する行がサイズ変更します。
 
-このセルのプロトタイプの各要素に対して割り当てる、**名前**c# コードに公開します。 例:
+このセルのプロトタイプの各要素に対して割り当てる、**名前**c# コードに公開します。 例えば:
 
 [![](autosizing-row-height-images/table05.png "C# コードに公開する名前を割り当てる")](autosizing-row-height-images/table05.png#lightbox)
 
-カスタム クラスを次に、追加、 `UITableViewController`、`UITableView`と`UITableCell`(プロトタイプ)。 例: 
+カスタム クラスを次に、追加、 `UITableViewController`、`UITableView`と`UITableCell`(プロトタイプ)。 例えば: 
 
 [![](autosizing-row-height-images/table06.png "UITableViewController や、UITableView、UITableCell カスタム クラスを追加します。")](autosizing-row-height-images/table06.png#lightbox)
 
@@ -64,7 +64,7 @@ UI が定義されているを使用した自動行の高さのサイズ変更�
 
 ## <a name="enabling-auto-resizing-height"></a>高さの自動サイズ変更を有効にします。
 
-いずれかで、テーブル ビューのデータ ソース (`UITableViewDatasource`) またはソース (`UITableViewSource`) を使用する必要がありますのセルをデキューおときに、`Identifier`デザイナーで選択しました。 例:
+いずれかで、テーブル ビューのデータ ソース (`UITableViewDatasource`) またはソース (`UITableViewSource`) を使用する必要がありますのセルをデキューおときに、`Identifier`デザイナーで選択しました。 例えば:
 
 ```csharp
 public string CellID {
@@ -86,7 +86,7 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 }
 ```
 
-既定では、テーブル ビューを自動サイズ変更行の高さに設定されます。 これには、ことを確認する、`RowHeight`プロパティに設定する必要があります`UITableView.AutomaticDimension`です。 設定する必要があります、`EstimatedRowHeight`プロパティに、`UITableViewController`です。 例:
+既定では、テーブル ビューを自動サイズ変更行の高さに設定されます。 これには、ことを確認する、`RowHeight`プロパティに設定する必要があります`UITableView.AutomaticDimension`です。 設定する必要があります、`EstimatedRowHeight`プロパティに、`UITableViewController`です。 例えば:
 
 ```csharp
 public override void ViewWillAppear (bool animated)
@@ -104,7 +104,7 @@ public override void ViewWillAppear (bool animated)
 
 この推定値は正確である必要はありませんテーブル ビューの各行の高さの平均値の概算だけです。
 
-場所でこのコードでは、アプリを実行すると、各行は圧縮し、セルのプロトタイプの最後のラベルの高さに基づいて、拡張されます。 例:
+場所でこのコードでは、アプリを実行すると、各行は圧縮し、セルのプロトタイプの最後のラベルの高さに基づいて、拡張されます。 例えば:
 
 [![](autosizing-row-height-images/table07.png "実行のサンプル テーブル")](autosizing-row-height-images/table07.png#lightbox)
 

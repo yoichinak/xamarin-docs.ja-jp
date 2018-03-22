@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 35665731fb0b8b669a850c06929dd951589e6bf6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 46118b5879589c963898ab7f60c61bd8e38f3900
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-mac-apps"></a>既存の Mac アプリケーションの更新
 
@@ -32,7 +32,7 @@ Unified API に、既存のコードを更新する前にすべてを除去す�
 
 ## <a name="automated-updating"></a>自動更新
 
-Mac または Visual Studio の Visual Studio で既存の Mac プロジェクトを選択して、警告が修正され後、 **Xamarin.Mac Unified API への移行**から、**プロジェクト**メニュー。 例:
+Mac または Visual Studio の Visual Studio で既存の Mac プロジェクトを選択して、警告が修正され後、 **Xamarin.Mac Unified API への移行**から、**プロジェクト**メニュー。 例えば:
 
 ![](updating-mac-apps-images/beta-tool1.png "[プロジェクト] メニューから Xamarin.Mac Unified API への移行を選択します。")
 
@@ -116,7 +116,7 @@ Unified API のサポートを使用する NuGet への変更の原因は、中�
 コンポーネントと同じように、その時点までには、Unified Api をサポートするバージョンに、プロジェクトに含めるすべての NuGet パッケージを切り替えるし、その後、クリーン ビルドを実行する必要があります。
 
 > [!IMPORTANT]
-> **注:**形式でエラーがあれば_"エラー 3 は、同じ Xamarin.Mac プロジェクトに 'monomac.dll' と 'Xamarin.Mac.dll' の両方を含めることはできません - 'Xamarin.Mac.dll' は 'monomac.dll' によって参照されますが、明示的に参照される ' xxx、バージョン = 0.0.000、Culture = neutral, PublicKeyToken = null'"_ Unified Api にアプリを変換した後は、通常、統合 API が更新されていないプロジェクトで、コンポーネントまたは NuGet パッケージを持つためです。 削除する既存のコンポーネント/NuGet Unified Api をサポートするバージョンに更新して、クリーン ビルドを行う必要があります。
+> フォームでエラーがあれば_"エラー 3 は、同じ Xamarin.Mac プロジェクトに 'monomac.dll' と 'Xamarin.Mac.dll' の両方を含めることはできません - 'Xamarin.Mac.dll' は 'monomac.dll' によって参照されますが、明示的に参照される ' xxx、バージョン = 0.0.000、カルチャ =neutral, PublicKeyToken = null'"_ Unified Api にアプリを変換した後は、通常、統合 API が更新されていないプロジェクトで、コンポーネントまたは NuGet パッケージを持つためです。 削除する既存のコンポーネント/NuGet Unified Api をサポートするバージョンに更新して、クリーン ビルドを行う必要があります。
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Xamarin.Mac アプリのビルド時に 64 ビットの有効化
 

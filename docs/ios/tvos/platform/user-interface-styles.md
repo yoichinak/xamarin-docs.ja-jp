@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-user-interface-styles"></a>新しいユーザー インターフェイスのスタイル
 
@@ -101,7 +101,7 @@ TvOS 10 アプリでは、ライト テーマとダーク テーマをサポー�
 - TvOS アプリは、オーバーライドすることで、特徴であるコレクションの変更を処理できる、`TraitCollectionDidChange`のメソッド、`UIView`または`UIViewController`クラスです。
 
 > [!IMPORTANT]
-> **注:** tvOS 10 の Xamarin.tvOS の早期プレビュー版を完全にサポートしない`UIUserInterfaceStyle`の`UITraitCollection`まだです。 完全なサポートは、将来のリリースで追加されます。
+> TvOS 10 の Xamarin.tvOS の早期プレビュー版を完全にサポートしない`UIUserInterfaceStyle`の`UITraitCollection`まだです。 完全なサポートは、将来のリリースで追加されます。
 
 
 
@@ -124,7 +124,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> **注:**残念ながら、Xamarin.tvOS プレビュー tvOS 10 を完全にサポートしていない`UIUserInterfaceStyle`の`UITraitCollection`ので、この種類のカスタマイズはまだ使用できません。 完全なサポートは、将来のリリースで追加されます。
+> 残念ながら、Xamarin.tvOS プレビュー tvOS 10 を完全にサポートしていない`UIUserInterfaceStyle`の`UITraitCollection`ので、この種類のカスタマイズはまだ使用できません。 完全なサポートは、将来のリリースで追加されます。
 
 <a name="Responding-to-Theme-Changes-Directly" />
 
@@ -132,7 +132,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 
 開発者が必要に、UI 要素の外観をより深いコントロールで選択された UI のテーマに基づく、オーバーライドすることができます、`TraitCollectionDidChange`のメソッド、`UIView`または`UIViewController`クラスです。
 
-例:
+例えば:
 
 ```csharp
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
@@ -150,7 +150,7 @@ public override void TraitCollectionDidChange (UITraitCollection previousTraitCo
 
 TvOS アプリの設計に基づき、あります、開発者が指定されたユーザー インターフェイス要素の特徴であるコレクションをオーバーライドして、それを常に、特定の UI のテーマを使用する必要がある場合。
 
-これを使用して、`SetOverrideTraitCollection`メソッドを`UIViewController`クラスです。 例:
+これを使用して、`SetOverrideTraitCollection`メソッドを`UIViewController`クラスです。 例えば:
 
 ```csharp
 // Create new trait and configure it

@@ -6,11 +6,11 @@ ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 2664fbf7dc28591ac9f4e0271382b427b5293900
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a311bace159a450dc27e15baa8ef1c260a90c36e
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Xamarin のブックの表示
 
@@ -64,7 +64,7 @@ public sealed class Person : ISerializableObject
 ```
 
 > [!NOTE]
-> 注: Api を生成する`ISerializableObject`オブジェクトがによって処理する必要はありません直接、`RepresentationProvider`です。 オブジェクトを表示する場合は**いない**、`ISerializableObject`での折り返しを処理する必要は、`RepresentationProvider`です。
+> 生成 Api`ISerializableObject`オブジェクトがによって処理する必要はありません直接、`RepresentationProvider`です。 オブジェクトを表示する場合は**いない**、`ISerializableObject`での折り返しを処理する必要は、`RepresentationProvider`です。
 
 ### <a name="rendering-a-representation"></a>内部表現を表示
 
@@ -87,7 +87,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 ここでは、`PersonRenderer`を実装する、`Renderer`インターフェイスです。 参照してください、[型指定][ typings]詳細についてはします。
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
-[xir-color]: /api/type/Xamarin.Interactive.Representations.Color/
-[repman]: /api/type/Xamarin.Interactive.Representations.IRepresentationManager/
-[repp]: /api/type/Xamarin.Interactive.Representations.RepresentationProvider/
-[serobj]: /api/type/Xamarin.Interactive.Serialization.ISerializableObject/
+[xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
+[repman]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.IRepresentationManager/
+[repp]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.RepresentationProvider/
+[serobj]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Serialization.ISerializableObject/

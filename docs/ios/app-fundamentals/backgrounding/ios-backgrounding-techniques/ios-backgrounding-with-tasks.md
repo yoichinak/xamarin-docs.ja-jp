@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ad75dfac55add7e03ffbdb910e0e62ebd0fd6c18
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS のタスク Backgrounding
 
@@ -43,7 +43,7 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 登録プロセスのペアを一意の識別子を持つタスク`taskID`、照合にラップし、`BeginBackgroundTask`と`EndBackgroundTask`呼び出しです。 呼び出しを行う場合、識別子を生成する、`BeginBackgroundTask`メソッドを`UIApplication`オブジェクト、および新しいスレッド上で通常実行時間の長いタスクを開始します。 タスクが完了したらと呼ば`EndBackgroundTask`と同じ識別子を渡します。 場合、iOS のアプリケーションは終了することが重要な`BeginBackgroundTask`呼び出しが、一致する`EndBackgroundTask`です。
 
 > [!IMPORTANT]
-> **注**: メイン スレッドまたはアプリケーションのニーズに応じて、バック グラウンド スレッドでバック グラウンド セーフであるタスクを実行できます。
+> セーフでバック グラウンド タスクは、メイン スレッドまたはアプリケーションのニーズに応じて、バック グラウンド スレッドで実行できます。
 
 
 ## <a name="performing-tasks-during-didenterbackground"></a>DidEnterBackground 中にタスクを実行します。
@@ -65,7 +65,7 @@ public override void DidEnterBackground (UIApplication application) {
 まず、オーバーライドすることで、`DidEnterBackground`メソッドで、 `AppDelegate`, を使用して、タスクを登録しましたが、`BeginBackgroundTask`前の例で行ったようにします。 次に、新しいスレッドを起動し、実行時間の長いタスクを実行します。 注意してください、`EndBackgroundTask`呼び出しは、今すぐ内で行われた実行時間の長いタスクので、`DidEnterBackground`メソッドも返される、既にあります。
 
 > [!IMPORTANT]
-> **注**: iOS を使用して、[メカニズムをウォッチドッグ](http://developer.apple.com/library/ios/qa/qa1693/_index.html)がアプリケーションの UI の応答性を保つためです。 アプリケーションであまり時間を費やす`DidEnterBackground`は UI の応答しなくなります。 により、バック グラウンドで実行するタスクを始める際`DidEnterBackground`適時、UI の応答性を維持して、監視がアプリケーションを強制終了するを妨げてに戻ります。
+> iOS を使用して、[メカニズムをウォッチドッグ](http://developer.apple.com/library/ios/qa/qa1693/_index.html)がアプリケーションの UI の応答性を保つためです。 アプリケーションであまり時間を費やす`DidEnterBackground`は UI の応答しなくなります。 により、バック グラウンドで実行するタスクを始める際`DidEnterBackground`適時、UI の応答性を維持して、監視がアプリケーションを強制終了するを妨げてに戻ります。
 
 
 ## <a name="handling-background-task-time-limits"></a>処理のバック グラウンド タスク時間の制限
@@ -153,7 +153,7 @@ else {
 ```
 
 > [!IMPORTANT]
-> **注**: iOS 6 バック グラウンド UI の更新をサポートしないし、アプリケーションを終了よう、iOS 6 に準拠したコードの背景から UI を更新するための呼び出しを作成しないようにします。
+> IOS 6 バック グラウンド UI の更新をサポートしないし、アプリケーションを終了よう、iOS 6 に準拠したコードの背景から UI を更新するための呼び出しを行うしないでください。
 
 
 `NSURLSession` API には、認証の処理、失敗した転送を管理およびクライアント側 - がないサーバー側のエラーを報告する機能の豊富なセットが含まれています。 により、ブリッジの作業の中断が iOS 7 で導入された時刻を実行し、迅速かつ確実に大きなファイルを転送するに対するサポートも提供します。 次のセクションでは、この 2 つ目の機能について説明します。

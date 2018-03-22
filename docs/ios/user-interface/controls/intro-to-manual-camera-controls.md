@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5e44635c9dfbe9fa069272f50d035476bd1aa6b9
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: f11305fcbf8a5b9bf6552fa31ecfa1c0e8e7a68f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-camera-controls"></a>手動のカメラのコントロール
 
@@ -881,7 +881,7 @@ iOS 7 以降を使用して、次の既存ホワイト バランス コントロ
 使用して、`CaptureDevice.GetTemperatureAndTintValues`と`CaptureDevice.GetDeviceWhiteBalanceGains`温度、濃淡、一番および RGB 間で変換するメソッドは、カラー スペースを取得します。
 
 > [!NOTE]
-> **注**: Planckian たどったに変換する値が近づくと、変換ルーチンは正確です。
+> 変換ルーチンは、変換する値が Planckian たどったに近い正確です。
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 927a77d5671e877e93e5375b61220ac595891179
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-icons-and-images"></a>アイコンとイメージの操作
 
@@ -28,7 +28,7 @@ _この記事では、設計と、アイコンと Xamarin.tvOS アプリ内で�
 - [Xamarin.tvOS プロジェクト イメージを設定](#Setting-Xamarin.tvOS-Project-Images)-Xamarin.tvOS アプリのイメージを起動し、アプリ アイコンを設定するために必要な手順について説明します。
 
 > [!IMPORTANT]
-> **注:** 1 x の解像度で Apple TV のすべてのイメージは、(`@1x`) する必要がありますと_のみ_このサイズのイメージを使用します。 大きなを含む、高解像度のグラフィックスだけでなく時間のダウンロードし、使用の詳細のメモリと記憶域を実行時に動的に再スケーリングされますが、描画のパフォーマンスに悪影響を及ぼすです。
+> Apple TV のすべてのイメージが 1 x の解像度では (`@1x`) する必要がありますと_のみ_このサイズのイメージを使用します。 大きなを含む、高解像度のグラフィックスだけでなく時間のダウンロードし、使用の詳細のメモリと記憶域を実行時に動的に再スケーリングされますが、描画のパフォーマンスに悪影響を及ぼすです。
 
 <a name="Launch-Image" />
 
@@ -79,7 +79,7 @@ TvOS プロジェクトを起動してイメージを設定するには、次を
 [![](icons-images-images/layered01.png "複数層の画像の Z オーダーのダイアグラム")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
-> **注:**階層イメージが、アプリのアイコンに必要なおよびその他のオプションは[フォーカス可能な項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)(、上部棚イメージなど)。 ただし、Apple は、アプリでフォーカスを取得できるすべてのイメージのイメージの階層型の使用をお勧めします。
+> 複数層のイメージが、アプリのアイコンに必要なし、は、その他のオプション[フォーカス可能な項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)(、上部棚イメージなど)。 ただし、Apple は、アプリでフォーカスを取得できるすべてのイメージのイメージの階層型の使用をお勧めします。
 
 
 

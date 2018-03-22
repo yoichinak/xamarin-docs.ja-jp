@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7a190014abd3386a3a675d50ce6a89101d0588a7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="social-framework"></a>ソーシャル フレームワーク
 
@@ -22,7 +22,7 @@ _ソーシャル フレームワークでは、Twitter、Facebook、とともに
 認証を管理することがなく、単一の API からソーシャル ネットワークと対話するアプリケーションをソーシャル フレームワークを使用できます。 これには、投稿だけでなく HTTP を介した各ソーシャル ネットワークの API を使用できるようにする抽象化を作成するためのビューのコント ローラーを用意されたシステムが含まれます。
 
 > [!IMPORTANT]
-> **注:**クロスプラット フォーム API さまざまなソーシャル ネットワークに接続するには、次を参照してください。、 [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) Xamarin コンポーネント ストア コンポーネントです。
+> クロス プラットフォーム API さまざまなソーシャル ネットワークに接続するには、次を参照してください。、 [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) Xamarin コンポーネント ストア コンポーネントです。
 
 ## <a name="connecting-to-twitter"></a>Twitter への接続
 
@@ -302,7 +302,7 @@ request.PerformRequest ((data, response, error) => {
 
 ソーシャル フレームワークは、統合 API の複数のソーシャル ネットワークにアクセスするよう設計されていますが、コードは使用されている、ソーシャル ネットワークに関係なくとほぼ同じです。
 
-たとえば、`SLComposeViewController`のみ異なるが、Facebook 固有の設定とオプションに切り替える前に示した Twitter 例と同様に正確に使用することができます。 例:
+たとえば、`SLComposeViewController`のみ異なるが、Facebook 固有の設定とオプションに切り替える前に示した Twitter 例と同様に正確に使用することができます。 例えば:
 
 ```csharp
 using System;

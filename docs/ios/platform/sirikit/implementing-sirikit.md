@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="implementing-sirikit"></a>SiriKit を実装します。
 
@@ -211,7 +211,7 @@ Apple が SiriKit framework、SiriKit を実装する任意の Xamarin.iOS ア�
 
 Mac で、次の操作を行います。
 
-1. Web ブラウザーでに移動[http://developer.apple.com](http://developer.apple.com)と自分のアカウントにログインします。
+1. Web ブラウザーでに移動[ http://developer.apple.com ](http://developer.apple.com)と自分のアカウントにログインします。
 2. をクリックして**証明書**、**識別子**と**プロファイル**です。
 3. 選択**プロビジョニング プロファイル**を選択し、**のアプリ Id**、をクリックして、  **+** ボタンをクリックします。
 4. 入力、**名前**新しいプロファイルのです。
@@ -246,7 +246,7 @@ Mac で、次の操作を行います。
 22. **[OK]** ボタンをクリックして、変更を保存します。
 
 > [!IMPORTANT]
-> **注:**テスト SiriKit でのみ機能実際 iOS 10 のハードウェア デバイス、iOS 10 ではなくシミュレーター。 Xamarin.iOS アプリを実際のハードウェアが有効な問題、SiriKit をインストールする場合は、必要な権限、アプリ ID、識別子の署名とプロビジョニング プロファイルが構成されている正しく Apple の開発者ポータルと Visual Studio の両方で for mac を確認してください。
+> テスト SiriKit でのみ機能実際 iOS 10 のハードウェア デバイス、iOS 10 ではなくシミュレーター。 Xamarin.iOS アプリを実際のハードウェアが有効な問題、SiriKit をインストールする場合は、必要な権限、アプリ ID、識別子の署名とプロビジョニング プロファイルが構成されている正しく Apple の開発者ポータルと Visual Studio の両方で for mac を確認してください。
 
 ### <a name="requesting-siri-authorization"></a>Siri の承認を要求します。
 
@@ -302,7 +302,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 ### <a name="localization-and-siri"></a>ローカリゼーションと Siri
 
-IOS デバイス、ユーザーは Siri とは異なる、システムの既定の言語を選択することです。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、`INPreferences`クラス Siri から言語コードを取得します。 例:
+IOS デバイス、ユーザーは Siri とは異なる、システムの既定の言語を選択することです。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、`INPreferences`クラス Siri から言語コードを取得します。 例えば:
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -326,7 +326,7 @@ if (language == "en-US") {
 
 カスタム ボキャブラリとして登録する用語を選択する場合は、用語のみを選択して、アプリに慣れていないユーザーをとなります。 決してレジスタ一般的な用語「My トレーニング」または「My アルバム」などです。 たとえば、MonkeyChat アプリは、ユーザーのアドレス帳に連絡先ごとに関連付けられているニックネームを登録します。
 
-呼び出して、アプリがユーザーの特定のボキャブラリを提供、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡すと、`NSOrderedSet`メインのアプリからのコレクション。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいジョブを追加する前に、既存の用語を削除します。 例:
+呼び出して、アプリがユーザーの特定のボキャブラリを提供、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡すと、`NSOrderedSet`メインのアプリからのコレクション。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいジョブを追加する前に、既存の用語を削除します。 例えば:
 
 ```csharp
 using System;
@@ -432,7 +432,7 @@ namespace MonkeyChat
 ```
 
 > [!IMPORTANT]
-> **注:** Siri がヒントとしてカスタム ボキャブラリを扱い、できるだけ多くの可能な用語が組み込まれます。 ただし、領域のカスタムのボキャブラリは登録する重要なことが限定されて_のみ_登録されている用語の合計数を最小限に抑えるため、複雑になる可能性がある用語。
+> Siri を使用して、ヒントとしてカスタム ボキャブラリを見なし、できるだけ用語の大半が組み込まれます。 ただし、領域のカスタムのボキャブラリは登録する重要なことが限定されて_のみ_登録されている用語の合計数を最小限に抑えるため、複雑になる可能性がある用語。
 
 詳細についてを参照してください、[ユーザー固有のボキャブラリ リファレンス](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム ボキャブラリの参照を指定する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)です。
 
@@ -587,7 +587,7 @@ namespace MonkeyChat
 -----
 
 > [!IMPORTANT]
-> **注:** 、`AppIntentVocabulary.plist`が登録される開発中にデバイスでテストに Siri をカスタムのボキャブラリを組み込む Siri の時間がかかる可能性があります。 その結果、テスト担当者が更新されたときに、アプリ固有のボキャブラリをテストする前に数分間待機する必要があります。
+> `AppIntentVocabulary.plist`が登録される開発中にデバイスでテストに Siri をカスタムのボキャブラリを組み込む Siri の時間がかかる可能性があります。 その結果、テスト担当者が更新されたときに、アプリ固有のボキャブラリをテストする前に数分間待機する必要があります。
 
 詳細についてを参照してください、[アプリ ボキャブラリ リファレンス](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム ボキャブラリの参照を指定する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)です。
 
@@ -690,7 +690,7 @@ namespace MonkeyChat
 
 ### <a name="configuring-the-main-class"></a>メインのクラスを構成します。
 
-次に、開発者は、Siri を目的とした拡張機能のメイン エントリ ポイントとして機能する主要なクラスを構成する必要があります。 サブクラスである必要があります、`INExtension`に準拠している、`IINIntentHandler`を委任します。 例:
+次に、開発者は、Siri を目的とした拡張機能のメイン エントリ ポイントとして機能する主要なクラスを構成する必要があります。 サブクラスである必要があります、`INExtension`に準拠している、`IINIntentHandler`を委任します。 例えば:
 
 ```csharp
 using System;
@@ -936,7 +936,7 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 ### <a name="configuring-the-main-class"></a>メインのクラスを構成します。
 
-Siri を目的とした UI 拡張機能のメイン エントリ ポイントとして機能する主要なクラスを構成します。 サブクラスである必要があります、`UIViewController`に準拠している`IINUIHostedViewController`インターフェイスです。 例:
+Siri を目的とした UI 拡張機能のメイン エントリ ポイントとして機能する主要なクラスを構成します。 サブクラスである必要があります、`UIViewController`に準拠している`IINUIHostedViewController`インターフェイスです。 例えば:
 
 ```csharp
 using System;
@@ -1013,7 +1013,7 @@ Siri が、アプリがアプリでは、その構成が終了した後に、ビ
 IOS デザイナーで目的の UI 拡張機能のユーザー インターフェイスをレイアウトします。 ダブルクリックして、拡張機能の`MainInterface.storyboard`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。 すべてのユーザー インターフェイスを構築し、変更を保存する必須の UI 要素にドラッグします。
 
 > [!IMPORTANT]
-> **注:**などの対話型要素を追加することができますが`UIButtons`または`UITextFields`を目的とした UI 拡張機能の`UIViewController`非対話型の目的とした UI と禁じこれら、およびユーザーをやり取りすることにすることはできません。
+> などの対話型要素を追加することができますが`UIButtons`または`UITextFields`を目的とした UI 拡張機能の`UIViewController`非対話型の目的とした UI と禁じこれら、およびユーザーでは、対話機能を使用できません。
 
 ### <a name="wire-up-the-user-interface"></a>ネットワーク上のユーザー インターフェイス
 

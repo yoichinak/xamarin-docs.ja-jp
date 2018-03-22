@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b1b53fefdd72c36bdffd3c5ade0b8d86da225b14
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-page-control"></a>ページ コントロールの操作
 
@@ -46,7 +46,7 @@ Xamarin.tvOS アプリでのページ コントロールを操作する最も簡
 
     [![](page-controls-images/page03.png "ウィジェット タブ")](page-controls-images/page03.png#lightbox)
 1. 次に、後ろに移動し、ページのコレクションを転送するビューにコントロールやジェスチャを追加します。
-1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
+1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例えば: 
 
     [![](page-controls-images/page04.png "コントロールの名前")](page-controls-images/page04.png#lightbox)
 1. 変更内容を保存します。
@@ -63,7 +63,7 @@ Xamarin.tvOS アプリでのページ コントロールを操作する最も簡
 
     [![](page-controls-images/page03-vs.png "ウィジェット タブ")](page-controls-images/page03-vs.png#lightbox)
 1. 次に、後ろに移動し、ページのコレクションを転送するビューにコントロールやジェスチャを追加します。
-1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
+1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例えば: 
 
     [![](page-controls-images/page04-vs.png "コントロールの名前")](page-controls-images/page04-vs.png#lightbox)
 1. 変更内容を保存します。
@@ -72,12 +72,12 @@ Xamarin.tvOS アプリでのページ コントロールを操作する最も簡
 -----
 
 > [!IMPORTANT]
-> **注:**などのイベントを割り当てることができますが`TouchUpInside`UI 要素に (など、UIButton)、ios デザイナーには決して呼び出されません Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためです。 常に使用する必要があります、 `Primary Action` tvOS のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
+> などのイベントを割り当てることができますが`TouchUpInside`UI 要素に (など、UIButton)、ios デザイナーには決して呼び出されません Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためです。 常に使用する必要があります、 `Primary Action` tvOS のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
 
 
 
 
-編集ビュー コント ローラー (例`ViewController.cs`) ファイルし、変更されているページを処理するコードを追加します。 例:
+編集ビュー コント ローラー (例`ViewController.cs`) ファイルし、変更されているページを処理するコードを追加します。 例えば:
 
 ```csharp
 using System;

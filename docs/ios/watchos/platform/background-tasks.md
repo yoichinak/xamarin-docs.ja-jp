@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8fd2b5069e175a68ff7609e75775db1929507582
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="background-tasks"></a>バックグラウンド タスク
 
@@ -56,7 +56,7 @@ WatchOS 3 には、こと watch アプリがその情報を最新に保つ 3 つ
 
 Apple を提案を押しながら、アプリがそれ自体の更新プロセスを終了するまで (アプリに制限されたリソースである) ために、このタスクのほとんどを行います。
 
-システム提供これらのタスクを呼び出して、新しい`HandleBackgroundTasks`のメソッド、`WKExtensionDelegate`を委任します。 例:
+システム提供これらのタスクを呼び出して、新しい`HandleBackgroundTasks`のメソッド、`WKExtensionDelegate`を委任します。 例えば:
 
 ```csharp
 using System;
@@ -143,7 +143,7 @@ WatchOS 3 で Apple がドッキング ステーション、ユーザーが自�
 アプリをマークすると、`WKSnapshotRefreshBackgroundTask`完了すると、システムは自動的のスナップショットを取ってアプリの UI。
 
 > [!IMPORTANT]
-> **注:**常にスケジュールを設定することが重要な` WKSnapshotRefreshBackgroundTask`後、アプリが新しいデータを受信して、ユーザー インターフェイスを更新または変更した情報はユーザーに表示されません。
+> 常にスケジュールを設定することが重要な` WKSnapshotRefreshBackgroundTask`後、アプリが新しいデータを受信して、ユーザー インターフェイスを更新または変更した情報はユーザーに表示されません。
 
 
 
@@ -630,7 +630,7 @@ WatchOS 3 で Apple がドッキング ステーション、ユーザーが自�
 ユーザーが実行された最後のアプリと見なされます、_最近使用した_アプリは、ドッキング ステーションに最後のスロットを占有するとします。 そこから、あるユーザーは、ドッキング ステーションに完全にピン留めを選択できます。 最も最近使用したは、他のお気に入りアプリ、ユーザーがドッキング ステーションにピン留め済みと同じように処理されます。
 
 > [!IMPORTANT]
-> **注:**のみが、ホーム画面に追加されているアプリは正規のスケジューリング付与しません。 正規のスケジュール設定と背景が表示される更新プログラムをアプリ_必要があります_ドッキング ステーションに追加します。
+> 正規のスケジュールのみが、ホーム画面に追加されているアプリが付与されませんされます。 正規のスケジュール設定と背景が表示される更新プログラムをアプリ_必要があります_ドッキング ステーションに追加します。
 
 このドキュメントで前述したように、スナップショットの値は、アプリのプレビューおよび起動の両方のイメージとして機能させるため watchOS 3 で非常に重要です。 場合は、ユーザーは、ドッキング ステーションでのアプリで決済、全画面表示を展開し、フォア グラウンドの入力を開始するを実行しているため、スナップショットが最新の状態にする必要があります。
 

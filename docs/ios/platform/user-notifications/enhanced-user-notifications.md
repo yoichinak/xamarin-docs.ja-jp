@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enhanced-user-notifications"></a>強化されたユーザーへの通知
 
@@ -276,7 +276,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>フォア グラウンド アプリの通知の処理
 
-新しい 10、iOS にアプリ通知を処理できる異なる方法で、通知がトリガーされる、フォア グラウンドである場合。 提供することによって、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッド、アプリは、通知を表示するための責任を占有できます。 例:
+新しい 10、iOS にアプリ通知を処理できる異なる方法で、通知がトリガーされる、フォア グラウンドである場合。 提供することによって、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッド、アプリは、通知を表示するための責任を占有できます。 例えば:
 
 ```csharp
 using System;
@@ -433,7 +433,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 
 カスタム アクションとカテゴリのセットを作成し、システムに登録されましたは、ローカルまたはリモートの通知から表示できます。
 
-リモートの通知の設定、`category`上記で作成したカテゴリの 1 つに一致するリモート通知ペイロードにします。 例:
+リモートの通知の設定、`category`上記で作成したカテゴリの 1 つに一致するリモート通知ペイロードにします。 例えば:
 
 ```csharp
 {
@@ -444,7 +444,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-ローカル通知は、設定、`CategoryIdentifier`のプロパティ、`UNMutableNotificationContent`オブジェクト。 例:
+ローカル通知は、設定、`CategoryIdentifier`のプロパティ、`UNMutableNotificationContent`オブジェクト。 例えば:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -460,7 +460,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>処理操作を消去します。
 
-前述のよう、ユーザーが通知を閉じるときに破棄操作は、アプリに送信できます。 これは標準アクションではないため、オプションは、カテゴリが作成されるときに設定する必要があります。 例:
+前述のよう、ユーザーが通知を閉じるときに破棄操作は、アプリに送信できます。 これは標準アクションではないため、オプションは、カテゴリが作成されるときに設定する必要があります。 例えば:
 
 ```csharp
 var categoryID = "message";
@@ -473,7 +473,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>操作の応答を処理します。
 
-をカスタム アクションとカテゴリの上に作成されたユーザーが操作するときに、アプリは要求されたタスクを実行する必要があります。 これは、提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッドです。 例:
+をカスタム アクションとカテゴリの上に作成されたユーザーが操作するときに、アプリは要求されたタスクを実行する必要があります。 これは、提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッドです。 例えば:
 
 ```csharp
 using System;
@@ -558,9 +558,9 @@ Xamarin.iOS アプリでは、サービス拡張機能を実装するには、�
 -----
 
 > [!IMPORTANT]
-> 注: サービス拡張機能のバンドル Id でメインのアプリのバンドル Id が一致する必要があります`.appnameserviceextension`末尾に追加します。 たとえば、メインのアプリのバンドル Id が含まれていた`com.xamarin.monkeynotify`、サービス拡張機能のバンドル Id を持つ必要があります`com.xamarin.monkeynotify.monkeynotifyserviceextension`です。 これは自動的に、ソリューションに拡張機能が追加されたときに設定する必要があります。 
+> サービス拡張機能のバンドル Id がでメインのアプリのバンドル Id に一致する必要があります`.appnameserviceextension`末尾に追加します。 たとえば、メインのアプリのバンドル Id が含まれていた`com.xamarin.monkeynotify`、サービス拡張機能のバンドル Id を持つ必要があります`com.xamarin.monkeynotify.monkeynotifyserviceextension`です。 これは自動的に、ソリューションに拡張機能が追加されたときに設定する必要があります。 
 
-必要な機能を提供するように変更する必要があります通知サービス拡張機能で 1 つのメイン クラスです。 例:
+必要な機能を提供するように変更する必要があります通知サービス拡張機能で 1 つのメイン クラスです。 例えば:
 
 ```csharp
 using System;
@@ -615,7 +615,7 @@ namespace MonkeyChatServiceExtension
 
 ### <a name="triggering-a-service-extension"></a>サービスの拡張機能をトリガーします。
 
-サービスの拡張が作成され、アプリの配信に、デバイスに送信されるリモートの通知のペイロードを変更することによりトリガーできます。 例:
+サービスの拡張が作成され、アプリの配信に、デバイスに送信されるリモートの通知のペイロードを変更することによりトリガーできます。 例えば:
 
 ```csharp
 {

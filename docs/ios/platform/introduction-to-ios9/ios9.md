@@ -7,18 +7,18 @@ ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfdf0c73226eec472eb671d5543f5ce124919ab8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3f52ef88224e65f12502c9fbf82e240233890a82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 の互換性
 
 _すぐアプリを iOS 9 の機能を追加する予定がない場合でも、最新バージョンの Xamarin を使用してアプリケーションを再構築する必要があります。_
 
 > [!IMPORTANT]
-> **注:**このページでは、この情報は、既に iOS 8 以降を対象とするアプリ ストアにアプリを使用して iOS 9 の互換性のための更新プログラムをまだ送信していない顧客にします。 最新バージョンが既に使用している場合は、Xcode 7 および Xamarin.iOS 9 - アプリケーションの開発を参照してください、 [iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)です。
+> このページの情報の iOS 8 を対象とするアプリのストア内の既存のアプリを使用して顧客などが以前にユーザー既にを送信していない iOS 9 の互換性のための更新プログラム。 最新バージョンが既に使用している場合は、Xcode 7 および Xamarin.iOS 9 - アプリケーションの開発を参照してください、 [iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)です。
 
 最初の iOS 9 のベータ版が表示されたときに、2 つの問題を古いアプリを iOS 9 で開始することができませんとして示されている Xamarin の以前のバージョンではわかりました。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: c111d2f873270eab78eee92edc3d884d1e92fdd8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 69c4b25e17c31d57701f99e84f6f686c65dc7028
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="interactive-workbooks"></a>対話型のブック
 
@@ -32,7 +32,7 @@ _ブックを使用して、講義、トレーニングを探索するか、試�
 
 [ ![](workbook-images/inspector-0.6.0-repl-small.png "コード編集ウィンドウのコード補完機能、構文の色分け、インライン live-診断、および複数行のステートメントのサポートを提供します。")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Xamarin のブックで保存されます、`.workbook`ファイル、上部にあるメタデータを含む CommonMark ファイル (を参照してください[ブック ファイルの種類](#Workbooks_Files_Types)ブックを保存する方法の詳細については)。
+Xamarin のブックで保存されます、`.workbook`ファイル、上部にあるメタデータを含む CommonMark ファイル (を参照してください[ブック ファイルの種類](#workbooks-files-types)ブックを保存する方法の詳細については)。
 
 ### <a name="nuget-package-support"></a>NuGet パッケージのサポート
 
@@ -132,7 +132,7 @@ Mac の Finder および Xamarin ブックの 開く ダイアログで最近使
 場合は、プレーン テキスト`.workbook`0.99.3 のブックでその同じディレクトリからリソースを参照するファイルが開かれるか、後で、保存されると、それに変換されます、`.workbook`パッケージです。 これは Mac および Windows の両方に当てはまります。
 
 > [!NOTE]
-> **注:** Windows ユーザーを表示、`package.workbook\index.workbook`を直接ファイルしますが、それ以外の場合、パッケージの動作は mac 上と同じ
+> Windows ユーザーを表示、`package.workbook\index.workbook`を直接ファイルしますが、それ以外の場合、パッケージの動作は mac 上と同じ
 
 ### <a name="archives"></a>アーカイブ
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 71f076bb0dc7d552a041d48a6ce531dcff444de6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>サンド ボックス Xamarin.Mac アプリ
 
@@ -174,7 +174,7 @@ public override void AwakeFromNib ()
 6. クリックして、**完了**ボタンをクリックします。
 
 > [!IMPORTANT]
-> **注:**を終了し、新しいアプリ ID と Xcode でインストールされているプロビジョニング プロファイルを認識するための Mac 用の Visual Studio を再起動する必要があります。
+> 終了し、新しいアプリ ID と Xcode でインストールされているプロビジョニング プロファイルを認識するための Mac 用の Visual Studio を再起動する必要があります。
 
 #### <a name="troubleshooting-provisioning-issues"></a>プロビジョニングの問題のトラブルシューティング
 
@@ -308,7 +308,7 @@ Xamarin.Mac アプリケーションのアプリのコンテナー ディレク�
 - _靴箱_(Apple のフォト アプリ) のようなアプリの種類、コンテナーに、ユーザーのコンテンツが移動されます。
 
 > [!IMPORTANT]
-> **注:**残念ながら、Xamarin.Mac が 100 %api カバレッジまだ (とは異なり Xamarin.iOS)、その結果、 `NSHomeDirectory` Xamarin.Mac の現在のバージョンの API がマップされていません。
+> 残念ながら、Xamarin.Mac が 100 %api カバレッジまだ (とは異なり Xamarin.iOS)、その結果、 `NSHomeDirectory` Xamarin.Mac の現在のバージョンの API がマップされていません。
 
 一時的な回避策としては、次のコードを使用できます。
 
@@ -413,7 +413,7 @@ Security-Scoped ブックマークと永続的なリソースへのアクセス�
 Document-Scoped ブックマークは、ブックマークのデータと、ドキュメント自体に開くことができる任意のアプリケーションで解決できます。 これは、ユーザーが別のユーザーと同様にそれらの機能すべてのブックマークを持つにプロジェクト ファイルを送信できるように、移植性をサポートします。
 
 > [!IMPORTANT]
-> **注:** Document-Scoped Bookman できます_のみ_1 つのファイルとフォルダーではなくをポイントし、そのファイルは、システムによって使用される場所にすることはできません (など`/private`または`/Library`)。
+> Document-Scoped ブックマークできます_のみ_1 つのファイルとフォルダーではなくをポイントし、そのファイルは、システムによって使用される場所にすることはできません (など`/private`または`/Library`)。
 
 #### <a name="using-security-scoped-bookmarks"></a>セキュリティ スコープのブックマークの使用
 
@@ -428,7 +428,7 @@ Security-Scoped ブックマークのいずれかの型を使用してには、�
 リソースへのアクセスを放棄した後は、アクセスを再確立するためにもう一度 4 の手順に戻る必要があります。 Xamarin.Mac アプリを再起動する場合は、手順 3 に戻ります、ブックマークを再び解決する必要があります。
 
 > [!IMPORTANT]
-> **注:**リリース Security-Scoped URL リソースへのアクセスに問題が発生する、Xamarin.Mac アプリ カーネル リソース リークが発生します。 その結果、アプリができなくなりますが再起動されるまで、そのコンテナーにファイル システムの場所を追加します。
+> エラー Security-Scoped URL リソースへのアクセスを解放するには、カーネル リソース リークが発生する Xamarin.Mac アプリが発生します。 その結果、アプリができなくなりますが再起動されるまで、そのコンテナーにファイル システムの場所を追加します。
 
 ### <a name="the-app-sandbox-and-code-signing"></a>アプリのサンド ボックスとコード署名
 
@@ -493,7 +493,7 @@ Apple 署名バージョン Xamarin.Mac アプリを実行するを許可する�
 6. 移行戦略を実装します。
 
 > [!IMPORTANT]
-> **注:**だけでなくサンド ボックスで、アプリ バンドルが含まれる支援者にもメイン実行可能ファイルを作成する必要がありますアプリまたはそのバンドル内のツールです。 これは Mac App Store から配信されるすべてのアプリに必要であり、可能な場合、アプリの配布の他の形式を行う必要があります。
+> 必要なだけでなく、メインの実行可能ファイル、アプリ バンドルが含まれる支援者にもサンド ボックス アプリまたはそのバンドル内のツールです。 これは Mac App Store から配信されるすべてのアプリに必要であり、可能な場合、アプリの配布の他の形式を行う必要があります。
 
 Xamarin.Mac アプリのバンドル内のすべての実行可能バイナリの一覧は、ターミナルで、次のコマンドを入力してください。
 

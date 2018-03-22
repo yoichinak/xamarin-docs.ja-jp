@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f619123fec036dfe919e977b4f218e8d235f0b82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -29,8 +29,8 @@ _このガイドでは、別の web サービスのテクノロジを使用す�
 Xamarin.Forms を使用してお客様の場合は、完全な例を各でこれらのテクノロジを使用して、 [Xamarin.Forms Web Services](~/xamarin-forms/data-cloud/index.md)ドキュメント。
 
 > [!IMPORTANT]
-> **Xamarin.iOS に関する注意:** iOS 9 の場合は、アプリのトランスポート セキュリティ (ATS) 強制セキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリ間で機密情報の誤った情報開示を回避します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-
+> IOS 9 では、アプリのトランスポート セキュリティ (ATS) は、(アプリのバック エンド サーバーなど) のインターネット リソースと、アプリ間でセキュリティで保護された接続に対し、機密情報の誤った情報開示を回避を強制します。
+> ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 
 ことができますオプトアウト ATS を使用することがない場合、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 アプリケーションを更新することによってこれを行う**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)です。
 
@@ -191,7 +191,7 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> **注:** XML または JSON 標準に準拠していないを使用する重要な場合があります ServiceStack と RestSharp 簡単に呼び出すし、消費などのツールは、サービスを REST、中に_DataContract_シリアル化規則。 必要に応じて、要求を起動し、次に説明 ServiceStack.Text ライブラリを使用して明示的に適切なシリアル化を処理します。
+> 非 trivial XML または JSON 標準に準拠していないを使用する場合があります ServiceStack と RestSharp 簡単に呼び出すし、消費などのツールは、サービスを REST、中に_DataContract_シリアル化規則。 必要に応じて、要求を起動し、次に説明 ServiceStack.Text ライブラリを使用して明示的に適切なシリアル化を処理します。
 
 
 <a name="Options_for_consuming_RESTful_data" />

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: ef4de2d544f3bcfb661b29dd90de738ae0442373
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: f7d27c5226741ec2b105633206ebaa0ac73d9a7b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms ビュー
 
@@ -86,7 +86,7 @@ _Xamarin.Forms ビューは、クロスプラット フォーム モバイル �
 
 |     |     |
 | --- | --- |
-| [`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) 選択することができます、`double`を連続する範囲で指定された値、 [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/)と[ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) | [![スライダーの使用例](views-images/Slider.png "スライダー例")](views-images/Slider-Large.png#lightbox "スライダーの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SliderDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SliderDemoPage.xaml) |
+| [`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) 選択することができます、`double`を連続する範囲で指定された値、 [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/)と[ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) / [ガイド](~/xamarin-forms/user-interface/slider.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) | [![スライダーの使用例](views-images/Slider.png "スライダー例")](views-images/Slider-Large.png#lightbox "スライダーの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SliderDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SliderDemoPage.xaml) |
 |     |     |
 
 ### <a name="stepper"></a>ステッパ

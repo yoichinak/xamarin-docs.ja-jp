@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fc9765b3f6a77f47fdce32dbc3805dd7bd70a08a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7b3a7a2347ed93aff5cddc6f15e25028c61a53d8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>タブ バー コント ローラーの使用
 
@@ -113,7 +113,7 @@ Xamarin.tvOS アプリでは、タブ バーを使用する最も簡単な方法
 -----
 
 > [!IMPORTANT]
-> **注:**などのイベントを割り当てることができますが`TouchUpInside`UI 要素 (など、 `UIButton`)、ios デザイナーには決して呼び出されません Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためです。 常に使用する必要があります、 `Primary Action ` tvOS のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
+> などのイベントを割り当てることができますが`TouchUpInside`UI 要素 (など、 `UIButton`)、ios デザイナーには決して呼び出されません Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためです。 常に使用する必要があります、 `Primary Action ` tvOS のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
 
 ストーリー ボードの使用の詳細についてを参照してください、[こんにちは、tvOS クイック スタート ガイド](~/ios/tvos/get-started/hello-tvos.md)です。 
 

@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="push-notifications-in-ios"></a>IOS でのプッシュ通知
 
 _このセクションでは、iOS でプッシュ通知を説明します。Apple Push 通知ゲートウェイ サービスと iOS アプリケーションに公開通知で再生されるロールが導入されています。プッシュ通知を有効にして説明するために必要なセキュリティ証明書を作成する方法を説明します。最後にこのセクションでは、いくつかのアプリケーション サーバーのクライアントのモバイル デバイスを追跡するために必要ハウスキーピング タスクについてはします。_
 
 > [!IMPORTANT]
-> **注:** iOS 9 にこのセクションの情報が関連し、前に、ままになっていますここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降では、次を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモートの通知の両方をサポートするためです。
+> このセクションの情報が iOS 9 に関連し、前に、ままになっていますここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降では、次を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモートの通知の両方をサポートするためです。
 
 プッシュ通知を使用して、簡単な維持する必要があります、モバイル アプリケーションの更新プログラムのサーバー アプリケーションを接続する必要があることを通知するための十分なデータだけを含めます。 たとえば、新しい電子メールが到着すると、サーバー アプリケーションは新しい電子メールが到着するモバイル アプリケーションは通知のみです。 通知には、新しい電子メール自体が含まれていません。 モバイル アプリケーションは、新しい電子メール サーバーから取得が適切です
 
@@ -30,7 +30,7 @@ IOS での通知は、プッシュの中央にある、 *Apple Push Notification
 
 Apple APNS の 2 つの環境の保持:*サンド ボックス*と*運用*環境。 サンド ボックス環境を開発段階におけるテストの目的し、してにある`gateway.sandbox.push.apple.com`TCP ポート 2195 します。 運用環境が配置されているしで見つかることをアプリケーションでは使用を意図したもの`gateway.push.apple.com`TCP ポート 2195 します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 プッシュ通知は、APNS のアーキテクチャによって規定されている次の規則に従う必要があります。
 

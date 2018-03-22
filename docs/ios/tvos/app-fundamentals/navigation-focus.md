@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fe1358d330c2a0fd94016853cedeabe094c394da
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>ナビゲーションとフォーカスの操作
 
@@ -81,7 +81,7 @@ Apple では、フォーカスと選択を操作するための以下の推奨�
 
 ### <a name="working-with-focus"></a>フォーカスの操作
 
-フォーカスを設定できる項目となるカスタム コントロールを作成する時間である可能性があります。 場合ためオーバーライド、`CanBecomeFocused`プロパティと戻り`true`それ以外の場合に戻り、`false`です。 例:
+フォーカスを設定できる項目となるカスタム コントロールを作成する時間である可能性があります。 場合ためオーバーライド、`CanBecomeFocused`プロパティと戻り`true`それ以外の場合に戻り、`false`です。 例えば:
 
 ```csharp
 public class myView : UIView
@@ -92,7 +92,7 @@ public class myView : UIView
 }
 ```
 
-いつでも行うこともできます、`Focused`のプロパティ、`UIKit`それが現在の項目であるかどうかを制御します。 場合`true`UI 項目現在フォーカスがある、それ以外の場合はありません。 例:
+いつでも行うこともできます、`Focused`のプロパティ、`UIKit`それが現在の項目であるかどうかを制御します。 場合`true`UI 項目現在フォーカスがある、それ以外の場合はありません。 例えば:
 
 ```csharp
 // Is my view in focus?
@@ -102,7 +102,7 @@ if (myView.Focused) {
 }
 ```
 
-UI 要素を設定して、画面が読み込まれるときに最初にフォーカスを取得を指定するにはコードを使用して、他の UI 要素にフォーカスを移動することはできません直接、中にその`PreferredFocusedView`プロパティを`true`です。 例:
+UI 要素を設定して、画面が読み込まれるときに最初にフォーカスを取得を指定するにはコードを使用して、他の UI 要素にフォーカスを移動することはできません直接、中にその`PreferredFocusedView`プロパティを`true`です。 例えば:
 
 ```csharp
 // Make the play button the starting focus item
@@ -123,7 +123,7 @@ playButton.PreferredFocusedView = true;
 フォーカスがバックアップ要求エンジンは、フォーカスが移動する、 `PreferredFocusedView` UI 要素を呼び出し、`SetNeedsUpdateFocus`ビュー コント ローラーのメソッドです。
 
 > [!IMPORTANT]
-> **注:**呼び出す`SetNeedsUpdateFocus`に対して呼び出されたビュー コント ローラーには、現在フォーカスがあるビューが含まれている場合にのみ効果がします。
+> 呼び出す`SetNeedsUpdateFocus`に対して呼び出されたビュー コント ローラーには、現在フォーカスがあるビューが含まれている場合にのみ効果がします。
 
 
 
@@ -208,7 +208,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 最初に、このコードの取得の`NextFocusedView`から、`UIFocusUpdateContext`に渡されました (`context`)。 このビューは、する場合`null`処理が必要でないと、メソッドを終了しました。
 
-次に、`nextFocusableItem`が評価されます。 いずれかと一致する場合、**詳細**または**購入**ボタン、フォーカス ガイドを使用して、[逆] ボタンにフォーカスが送信`PreferredFocusedView`プロパティです。 例:
+次に、`nextFocusableItem`が評価されます。 いずれかと一致する場合、**詳細**または**購入**ボタン、フォーカス ガイドを使用して、[逆] ボタンにフォーカスが送信`PreferredFocusedView`プロパティです。 例えば:
 
 ```csharp
 // Move from the More Info to Buy button
@@ -226,7 +226,7 @@ FocusGuide.PreferredFocusedView = null;
 
 ### <a name="working-with-focus-in-collections"></a>コレクション内のフォーカスの操作
 
-個々 の項目でフォーカスを設定することができるかどうかを決定する際、`UICollectionView`または`UITableView`のメソッドをオーバーライドします、`UICollectionViewDelegate`または`UITableViewDelegate`それぞれします。 例:
+個々 の項目でフォーカスを設定することができるかどうかを決定する際、`UICollectionView`または`UITableView`のメソッドをオーバーライドします、`UICollectionViewDelegate`または`UITableViewDelegate`それぞれします。 例えば:
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout

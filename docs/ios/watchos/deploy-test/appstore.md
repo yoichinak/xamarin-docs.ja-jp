@@ -8,16 +8,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="deploying-to-the-app-store"></a>アプリ ストアへの配置
 
 > [!IMPORTANT]
->  必ず確認[Apple のウォッチ キット送信ガイド](https://developer.apple.com/app-store/watch/)、しを参照してください、[トラブルシューティング](#Troubleshooting)セクションの問題がある可能性があります。
+> 必ず確認[Apple のウォッチ キット送信ガイド](https://developer.apple.com/app-store/watch/)、しを参照してください、[トラブルシューティング](#Troubleshooting)セクションの問題がある可能性があります。
 
 - あることを確認します。
   - [**プロビジョニング プロファイルの配布**](#provisioning)プロジェクト用に作成します。
@@ -177,7 +177,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Mac 用 Visual Studio の最新バージョンであることを確認してください、 **AppIcons.appiconset**イメージの完全なセットが含まれています。 このエラーが引き続き表示される場合のソースを表示、 **Contents.json**に必要なすべてのイメージのエントリが含まれていることを確認します。 代わりに、Xamarin の最新バージョンを使用していることを確認するが、いったん削除して、再作成、 **AppIcons.appiconset**です。
 
 > [!IMPORTANT]
-> 注: がある既知のバグを Visual Studio での Mac のウォッチ アイコンのサポート: 88 x 88 ピクセル イメージのことが必要ですが、  **29x29@3x** イメージ 87 x 87 ピクセルにする必要があります)。
+> ある既知のバグを Visual Studio での Mac のウォッチ アイコンのサポート: 88 x 88 ピクセル イメージのことが必要ですが、  **29x29@3x** イメージ 87 x 87 ピクセルにする必要があります)。
 
 
 Mac で Xcode でのイメージ アセットを編集いずれかの Visual Studio でこれを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
@@ -196,7 +196,7 @@ The app may have been built or signed with non-compliant or pre-release tools.
 Ensure you are using the latest version of Xcode and Xamarin's tools.
 -->
 > [!IMPORTANT]
-> 注: する必要があります**アーカイブ**Mac しに切り替えると Xcode 6.2 + を検証して、iTunes Connect へのアップロード用の Visual Studio でのアプリです。
+> 必要な**アーカイブ**Mac しに切り替えると Xcode 6.2 + を検証して、iTunes Connect へのアップロード用の Visual Studio でのアプリです。
 
 
 安定した Xamarin チャネルと Xcode 6.2 + を使用します。

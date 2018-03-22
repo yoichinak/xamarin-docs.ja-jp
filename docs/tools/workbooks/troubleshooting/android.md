@@ -6,11 +6,11 @@ ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: eb188abb3e757f6f66af7758ced311ae1236d3ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 530abec733ec1d842559bf9c898217a8e45465aa
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android での Xamarin のブックのトラブルシューティング
 
@@ -25,7 +25,8 @@ HYPER-V では、システムで有効にする必要があります、代わり
 
 お読みください[Android エミュレーターを設定する方法、ドキュメント][ android-emu]プロセスに慣れていない場合。
 
-**注:** 1.1 およびそれ以前のブックを再試行してください (され失敗!) を使用して ARM エミュレーター可能な場合にします。 開く、または Android のブックを作成する前に、選択した場合は、この、起動、x86 エミュレーターを回避します。 ブックは、互換性がある限り、実行中のエミュレーターへの接続に常に優先します。
+> [!NOTE]
+> 1.1 およびそれ以前のブックを再試行してください (され失敗!) を使用して ARM エミュレーター可能な場合にします。 開く、または Android のブックを作成する前に、選択した場合は、この、起動、x86 エミュレーターを回避します。 ブックは、互換性がある限り、実行中のエミュレーターへの接続に常に優先します。
 
 ## <a name="workbooks-wont-load"></a>ブックは読み込まれません
 
@@ -33,7 +34,7 @@ HYPER-V では、システムで有効にする必要があります、代わり
 
 最初に、エミュレーターがエミュレーターの web ブラウザーで任意の web サイトをテストすることによって完全作業用のネットワーク アクセスを持つことを確認してください。
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-internet"></a>Visual Studio の Android エミュレーターは、インターネットに接続できません。
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio の Android エミュレーターは、インターネットに接続できません。
 
 エミュレーターがネットワーク アクセスを持たない場合は、HYPER-V ネットワーク スイッチの修正手順に従う必要があります。 Wi-fi ネットワークに頻繁に切り替える場合は、これを定期的に繰り返す必要があります。
 

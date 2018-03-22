@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b36d3ba8601d125d0a17173efb12c249224e78
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Xamarin.iOS での通知
 
 _このセクションでは、Xamarin.iOS でローカルの通知を実装する方法を示します。IOS 通知のさまざまな UI 要素について説明するされ API について説明を作成して、メッセージを表示するのに含まれているのです。_
 
 > [!IMPORTANT]
-> **注:** iOS 9 にこのセクションの情報が関連し、前に、ままになっていますここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降では、次を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモートの通知の両方をサポートするためです。
+> このセクションの情報が iOS 9 に関連し、前に、ままになっていますここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降では、次を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモートの通知の両方をサポートするためです。
 
 iOS では、ユーザーに通知が受信されたことを示すために 3 つの方法があります。
 
@@ -78,7 +78,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 Apple ヒューマン インターフェイス ガイドラインに従って、通知、サウンドを再生する場合にもが付属バッジや、アラートが発生したアプリケーションを特定のユーザーを支援する警告です。 また、サウンドが 30 秒より長い場合は、iOS は音を鳴らす既定代わりにします。
 
 > [!IMPORTANT]
-> **注**: はデリゲートの通知を 2 回起動する iOS シミュレーターでバグがあります。 デバイスにアプリケーションを実行している場合は、この問題は発生しません。
+> デリゲートの通知を 2 回起動する iOS シミュレーターには、バグがあります。 デバイスにアプリケーションを実行している場合は、この問題は発生しません。
 
 ## <a name="handling-notifications"></a>通知の処理
 

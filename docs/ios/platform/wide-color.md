@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 34f2e249c5474997b2e2e179285f455c425739cf
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="wide-color"></a>広色
 
@@ -191,7 +191,7 @@ Apple では、ファイル形式とアプリケーションのイメージの�
 - 埋め込みの"表示 P3"ICC プロファイルを持つ 16 ビット PNG ファイルとしてのイメージ アセットをエクスポートします。
 
 > [!IMPORTANT]
-> **注:**を使用する、 **for Web を保存**または**エクスポート資産**機能が最も一般的な画像編集ソフトウェアで見つかった_されません_ワイド カラー イメージを以降の作業これらの機能がまだ必要なファイル形式の仕様をサポートするために更新されていません。
+> 使用して、 **for Web を保存**または**エクスポート資産**機能が最も一般的な画像編集ソフトウェアで見つかった_されません_ワイド カラー イメージをこれらの機能がなかったための作業まだ必要なファイル形式の仕様をサポートするために更新されます。
 
 ### <a name="supporting-wide-color-with-asset-catalogs"></a>資産カタログを含むワイドの色をサポートします。
 
@@ -330,7 +330,7 @@ public UIImage DrawWideColorImage ()
 
 ### <a name="drawing-wide-color-in-macos"></a>MacOS における広色の描画
 
-`NSImage`クラスは、macOS ワイド カラー イメージの描画をサポートするために Sierra で展開されています。 例:
+`NSImage`クラスは、macOS ワイド カラー イメージの描画をサポートするために Sierra で展開されています。 例えば:
 
 ```csharp
 var size = CGSize(250,250);
@@ -354,7 +354,7 @@ var wideColorImage = new NSImage(size, false, (drawRect) =>{
 
 ### <a name="rendering-on-screen-in-ios"></a>IOS の画面に表示
 
-アプリは、iOS の画面に表示されるワイド色でイメージをレンダリングする必要がある、オーバーライド、`Draw`のメソッド、`UIView`通常どおり問題です。 例:
+アプリは、iOS の画面に表示されるワイド色でイメージをレンダリングする必要がある、オーバーライド、`Draw`のメソッド、`UIView`通常どおり問題です。 例えば:
 
 ```csharp
 using System;
@@ -396,7 +396,7 @@ IOS 10 と同様、 `UIGraphicsImageRenderer` sRGB または拡張範囲 sRGB �
 
 ### <a name="rendering-on-screen-in-macos"></a>MacOS で画面に表示
 
-アプリで macOS 画面に表示されるワイド カラー イメージをレンダリングする場合、オーバーライド、`DrawRect`のメソッド、`NSView`通常どおり問題です。 例:
+アプリで macOS 画面に表示されるワイド カラー イメージをレンダリングする場合、オーバーライド、`DrawRect`のメソッド、`NSView`通常どおり問題です。 例えば:
 
 ```csharp
 using System;

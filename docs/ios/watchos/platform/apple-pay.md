@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 53c2c3e3866cb782eea0cc9514c0c35379e48b5c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 591f6f53c9e787ee9499b2a1a3cc812f7e72749a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay-on-watchos"></a>Apple watchOS に料金を支払う
 
@@ -58,7 +58,8 @@ IOS 10、watchOS 3 では、Apple には、開発者は、iOS デバイスで直
 3. アプリをテストする目的の地域を設定します。
 4. テストの支払いカードからの 1 つを使用して、 [Apple のガイドで料金を支払う](https://developer.apple.com/apple-pay/)の支払いを行うにします。
 
-> ⚠️ **注:** iCloud アカウントを切り替えることによってデバイスは自動的に新しいテスト環境に切り替わります。 ただし、Apple がまだ**必要があります**アプリでテストするのには、iTunes App Store に送信する前に、実稼働環境でカードです。
+> [!NOTE]
+> ICloud アカウントを切り替えることによって、デバイスは、新しいテスト環境に自動的に切り替わります。 ただし、Apple がまだ**必要があります**アプリでテストするのには、iTunes App Store に送信する前に、実稼働環境でカードです。
 
 ## <a name="summary"></a>まとめ
 

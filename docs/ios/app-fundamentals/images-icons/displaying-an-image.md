@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 1ca537ef47f48886483e99bb33b0d524d16593f8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 39da41b7fb5118a16f2b2953f8fcb0a5b72aa819
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="displaying-an-image"></a>イメージを表示します。
 
@@ -95,7 +95,7 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> **注**: イメージ セットに割り当てられているイメージが表示されない場合正常に正しいファイル名を使用していることを確認してください、`FromBundle`メソッド (、**イメージ設定**であり、親**アセット カタログ**名)。 PNG イメージは、`.png`拡張機能は省略できます。 他のイメージ形式を拡張機能が必要 (例です。 `PurpleMonkey.jpg`)
+> イメージ セットに割り当てられているイメージが表示されない場合正常に正しいファイル名を使用していることを確認してください、`FromBundle`メソッド (、**イメージ設定**であり、親**アセット カタログ**名)。 PNG イメージは、`.png`拡張機能は省略できます。 他のイメージ形式を拡張機能が必要 (例です。 `PurpleMonkey.jpg`)
 
 <a name="Using-Vector-Images-in-Asset-Catalogs" />
 
@@ -231,7 +231,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage");
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-その他のイメージ形式の名前を持つ拡張機能が含まれます。 例:
+その他のイメージ形式の名前を持つ拡張機能が含まれます。 例えば:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");

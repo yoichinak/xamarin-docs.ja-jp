@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: 557521bc3bce41b9023acbf31a344a57cb63d2a1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6331912eedcd52df45c0d25d83a5b599c55ca7d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sirikit"></a>SiriKit
 
@@ -146,12 +146,10 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 クラスを継承する必要があります`INExtension`も実装するため、サンプルでは、リストを処理して、インテントをノート、および`IINNotebookDomainHandling`です。
 
 > [!NOTE]
-> **名前付けに関するメモ:** 、規則に従う大文字の付いたを指定するインターフェイスを .NET では`I`Xamarin は iOS SDK からのプロトコルをバインドするときに準拠します。
->
-> Xamarin では、iOS からの型の名前も保持され、Apple は、型が属するフレームワークを反映するように型名の最初の 2 つの文字を使用します。
->
-> `Intents` Framework、種類が付きます。`IN*`などです。 `INExtension`) が、_いない_インターフェイスです。
-> プロトコル (c# でのインターフェイスになります) が終わるを 2 つにも従う`I`s など`IINAddTasksIntentHandling`です。
+> - 大文字の付いたを指定するインターフェイスを .NET で、規則がある`I`Xamarin は iOS SDK からのプロトコルをバインドするときに準拠します。
+> - Xamarin では、iOS からの型の名前も保持され、Apple は、型が属するフレームワークを反映するように型名の最初の 2 つの文字を使用します。
+> - `Intents` Framework、種類が付きます。`IN*`などです。 `INExtension`) が、_いない_インターフェイスです。
+> - プロトコル (c# でのインターフェイスになります) が終わるを 2 つにも従う`I`s など`IINAddTasksIntentHandling`です。
 
 #### <a name="handling-intents"></a>処理の目的
 

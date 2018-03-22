@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c55ba4fb90181aaa1aa8ec52e2fcb3e2b2cc76d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="table-control"></a>テーブル コントロール
 
@@ -51,7 +51,8 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 ```
 
 > [!IMPORTANT]
-> **注**: テーブルの行が iOS のようになった仮想化できません。 (Apple の推奨 20 未満) の行の数を制限しようとしてください。
+> テーブルの行は、iOS のようになった仮想化されません。 (Apple の推奨 20 未満) の行の数を制限しようとしてください。
+
 行が作成された後は、各セルを読み込む必要があります。 (のような`GetCell`iOS での操作と)。 このコード スニペットから、 [WatchTables 例](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/)行ごとにラベルを更新
 
 ```csharp
@@ -62,7 +63,7 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> **注:**を使用する`SetNumberOfRows`を使用してループと`GetRowController`と、テーブル全体のウォッチ ポイントに送信されます。 テーブルの後続のビューを追加または削除する必要がある場合の特定の行を使用して`InsertRowsAt`と`RemoveRowsAt`パフォーマンスが向上します。
+> 使用して`SetNumberOfRows`を使用してループと`GetRowController`と、テーブル全体のウォッチ ポイントに送信されます。 テーブルの後続のビューを追加または削除する必要がある場合の特定の行を使用して`InsertRowsAt`と`RemoveRowsAt`パフォーマンスが向上します。
 
 
 ## <a name="respond-to-taps"></a>タップへの応答します。
@@ -148,7 +149,7 @@ watchOS 3 には、テーブルの新しい機能が導入されました。 テ
 ![](table-images/table-scroll-sml.png "垂直方向の詳細のページングの使用例") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
-> **警告:**この機能は現在のみ使用可能なインターフェイスのビルダーを Xcode でストーリー ボードを編集します。
+> この機能は現在のみ使用可能なインターフェイスのビルダーを Xcode でストーリー ボードを編集しています。
 
 この機能を有効にするには選択、`WKInterfaceTable`ティックとデザイン画面で、**垂直詳細ページング**オプション。
 

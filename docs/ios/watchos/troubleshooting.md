@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS トラブルシューティング
 
@@ -33,13 +33,6 @@ ms.lasthandoff: 03/09/2018
 ### <a name="general"></a>全般
 
 <a name="deploy" />
-<!--
-* You cannot deploy to the App Store *from within Visual Studio for Mac or Visual Studio*
-    in the current release. You should create an **Archive** in Visual Studio for Mac
-    and then switch to Xcode to upload the archive to iTunes Connect. Visual Studio
-    is not currently supported (but will be a future release). Refer to the
-    [deployment guide](~/ios/watchos/deploy-test/appstore.md) for more information.
--->
 
 - 以前のリリースの Visual Studio for Mac が正しく示されていないのいずれかの、 **AppleCompanionSettings** 88 x 88 (ピクセル) ですその結果として、アイコン、**アイコン エラーのない**アプリに送信しようとする場合。ストア。
     このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x**  Retina 画面)。 Mac で Xcode でのイメージ アセットを編集いずれかの Visual Studio でこれを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
@@ -47,14 +40,6 @@ ms.lasthandoff: 03/09/2018
 - 場合ウォッチ拡張機能プロジェクトの**Info.plist > WKApp バンドル ID**は[正しく設定されている](~/ios/watchos/get-started/project-references.md)Watch アプリの一致するように**バンドル ID**デバッガーは接続に失敗し、VisualMac 用 studio が、メッセージで待機*「デバッガーの接続を待機している」*です。
 
 - デバッグはサポートされて**通知**モードですが信頼できることができます。 再試行は動作場合があります。 いることを確認、Watch アプリの**Info.plist** `WKCompanionAppBundleIdentifier`親/コンテナーの iOS アプリのバンドル id が一致するように設定されている (ie。 iPhone で実行されている 1 つ)。
-
-<!--
-- **Can't launch application on Watch simulator.** This seems to
-    be an issue with the iOS Simulator hanging when trying to
-    install an app that has changed. Xcode release notes (beta 4)
-    includes a similar known issue:
-    If the issue persists, reset the Simulator (**iOS Simulator > Reset Content and Settings...**).
--->
 
 - iOS デザイナーでは、一目または通知インターフェイス コント ローラーのエントリ ポイントに表示する矢印は表示されません。
 
@@ -69,15 +54,6 @@ ms.lasthandoff: 03/09/2018
 ### <a name="visual-studio"></a>Visual Studio
 
 ウォッチ キット用の iOS デザイナー サポート*必要があります*ソリューションを正しく構成されています。 プロジェクト参照が設定されていない場合 (を参照してください[の参照を設定する方法](~/ios/watchos/get-started/project-references.md)) デザイン サーフェイスが正しく機能しません。
-
-<!--
-* New Watch Kit apps created in Visual Studio might not allow
-    starting in Notifications mode.
-
-* You cannot deploy to the App Store from Visual Studio (see [notes above](#deploy)
-    and the [deployment guide](~/ios/watchos/deploy-test/appstore.md)). Use
-    Visual Studio for Mac and Xcode on your Mac Build Host.
-    -->
 
 <a name="noalpha" />
 
@@ -109,11 +85,10 @@ Mac OS X でアルファ チャネルを削除するは簡単、**プレビュ�
 ## <a name="manually-adding-interface-controller-files"></a>インターフェイス コント ローラーのファイルを手動で追加します。
 
 > [!IMPORTANT]
-> Xamarin のウォッチ キットのサポートには、次の手順を必要としない iOS デザイナー (Visual Studio for Mac と Visual Studio の両方でウォッチ ストーリー ボードのデザインが含まれます。 単にインターフェイスのコント ローラー、Visual Studio for Mac プロパティ パッドと自動的に作成されるファイルの c# コードでクラス名を付けます。
+> Xamarin の WatchKit サポートには、次の手順を必要としない iOS デザイナー (Visual Studio for Mac と Visual Studio の両方でウォッチ ストーリー ボードのデザインが含まれています。 単にインターフェイスのコント ローラー、Visual Studio for Mac プロパティ パッドと自動的に作成されるファイルの c# コードでクラス名を付けます。
 
 
 *場合*Xcode インターフェイスのビルダーを使用して、新しいインターフェイスのコント ローラーをウォッチ アプリを作成し、コンセントとアクションは、c# で使用できるように、Xcode との同期を有効にするには、次の手順に従います。
-
 
 1. アプリを開き、ウォッチの**Interface.storyboard**で**Xcode インターフェイス ビルダー**です。
     
@@ -256,7 +231,7 @@ Mac OS X でアルファ チャネルを削除するは簡単、**プレビュ�
 メインのアプリ バンドルの完全パス*watch アプリと拡張機能を含む iOS アプリの*します。
 
 > [!NOTE]
-> *注:*パスを指定する必要がありますが、 *iPhone アプリケーション .app ファイル*、つまり、1 つ、iOS シミュレーターにデプロイされ、ウォッチ拡張機能と watch アプリの両方を格納しています。
+> パスを指定する必要がありますが、 *iPhone アプリケーション .app ファイル*、つまり、1 つ、iOS シミュレーターにデプロイされ、ウォッチ拡張機能と watch アプリの両方を格納しています。
 
 例:
 

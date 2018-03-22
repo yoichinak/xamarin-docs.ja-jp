@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2f14510e5968ebe24bd297365416fa8aa5a0c59
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Xamarin.Forms の既存のアプリの更新
 
@@ -196,7 +196,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 場合によっては、Xamarin.Forms NuGet パッケージを更新した後は、次のようなエラーが表示されます。 NuGet updater がから以前のバージョンへの参照を完全に削除していないときに発生、 **csproj**ファイル。
 
->\_PROJECT.csproj: エラー: このプロジェクトは、このコンピューターに不足している NuGet パッケージを参照します。 ダウンロードする NuGet パッケージの復元を有効にします。  詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。 見つからないファイルは、./../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets です。 (、\_プロジェクト)
+>\_PROJECT.csproj: エラー: このプロジェクトは、このコンピューターに不足している NuGet パッケージを参照します。 ダウンロードする NuGet パッケージの復元を有効にします。  詳細については、「http://go.microsoft.com/fwlink/?LinkID=322105」を参照してください。 見つからないファイルは、./../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets です。 (、\_プロジェクト)
 
 これらのエラーを修正するには、開きます、 **csproj**をテキスト エディターでファイルを探します.`<Target`要素を次に示す要素など、Xamarin.Forms の古いバージョンを参照してください。 この全体の要素から手動で削除する必要があります、 **csproj**ファイルし、変更を保存します。
 
@@ -226,7 +226,7 @@ Unified API のサポートを使用する NuGet への変更の原因は、中�
 コンポーネントと同じように、その時点までには、Unified Api をサポートするバージョンに、プロジェクトに含めるすべての NuGet パッケージを切り替えるし、その後、クリーン ビルドを実行する必要があります。
 
 > [!IMPORTANT]
-> **注:**形式でエラーがあれば_"エラー 3 は、同じ Xamarin.iOS プロジェクトに 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を含めることはできません - 'Xamarin.iOS.dll' は 'monotouch.dll' によって参照されますが、明示的に参照される ' xxx、バージョン = 0.0.000、Culture = neutral, PublicKeyToken = null'"_ Unified Api にアプリを変換した後は、通常、統合 API が更新されていないプロジェクトで、コンポーネントまたは NuGet パッケージを持つためです。 削除する既存のコンポーネント/NuGet Unified Api をサポートするバージョンに更新して、クリーン ビルドを行う必要があります。
+> フォームでエラーがあれば_"エラー 3 は、同じ Xamarin.iOS プロジェクトに 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を含めることはできません - 'Xamarin.iOS.dll' は 'monotouch.dll' によって参照されますが、明示的に参照される ' xxx、バージョン = 0.0.000、Culture = neutral, PublicKeyToken = null'"_ Unified Api にアプリを変換した後は、通常、統合 API が更新されていないプロジェクトで、コンポーネントまたは NuGet パッケージを持つためです。 削除する既存のコンポーネント/NuGet Unified Api をサポートするバージョンに更新して、クリーン ビルドを行う必要があります。
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin.iOS アプリのビルド時に 64 ビットの有効化
 

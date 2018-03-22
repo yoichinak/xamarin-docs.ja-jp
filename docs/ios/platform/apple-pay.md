@@ -7,11 +7,11 @@ ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ac2a19e9020113df273897a8ec2c86ee1763ec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af899bb1c5708e3fc0be88db6224d9127f5a5c6d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay"></a>Apple Pay
 
@@ -21,7 +21,7 @@ _このガイドでは、Apple の食品、エンターテイメントなど、�
 Apple Pay 導入された iOS 8 と共に食品、エンターテイメントなど、iOS デバイスを使用してメンバーシップなどの物理的な商品の支払いにユーザーを有効にします。 IPhone 6 および iPhone 6 では利用プラス、ストア内での購入の Apple Watch とも組で使用できるとします。 IPhone で使用すると、ことを確認し、ユーザーのクレジット_カードまたはデビット カードへのトランザクションを承認する方法として Touch ID を使用します。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Apple Pay のみ上、および iOS 8 内で使用可能なしたがって Xcode 6 の最低限必要です。
 
@@ -118,7 +118,7 @@ Apple がに対していくつかの機能強化 Apple Pay の web サイトか�
 4. テストの支払いカードからの 1 つを使用して、 [Apple のガイドで料金を支払う](https://developer.apple.com/apple-pay/)の支払いを行うにします。
 
 > [!IMPORTANT]
->  **注:** iCloud アカウントを切り替えることによってデバイスは自動的に新しいテスト環境に切り替わります。 ただし、Apple がまだ**必要があります**アプリでテストするのには、iTunes App Store に送信する前に、実稼働環境でカードです。
+> ICloud アカウントを切り替えることによって、デバイスは、新しいテスト環境に自動的に切り替わります。 ただし、Apple がまだ**必要があります**アプリでテストするのには、iTunes App Store に送信する前に、実稼働環境でカードです。
 
 ## <a name="summary"></a>まとめ
 

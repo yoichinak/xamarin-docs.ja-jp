@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5cd2671bb66aa89117012fe394bb724f7e22e1a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-3d-touch"></a>3 D Touch の概要
 
@@ -65,7 +65,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 `MaximumPossibleForce`の最大値を返します、`Force`のプロパティ、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)でアプリが実行されている iOS デバイスに基づいたです。
 
 > [!IMPORTANT]
-> **注:**プレッシャ内で変更が発生、`TouchesMoved`イベントが発生する場合でも、X Y 座標値が変更されていない/です。 この動作の変更のために iOS アプリを準備する必要があります、`TouchesMoved`より多くの場合、X に呼び出されるイベント Y 座標、最後と同じであるを/`TouchesMoved`呼び出します。
+> プレッシャ内で変更が発生、`TouchesMoved`イベントが発生する場合でも、X Y 座標値が変更されていない/です。 この動作の変更のために iOS アプリを準備する必要があります、`TouchesMoved`より多くの場合、X に呼び出されるイベント Y 座標、最後と同じであるを/`TouchesMoved`呼び出します。
 
 
 
@@ -281,7 +281,7 @@ public override void ViewDidLoad ()
 * `UIApplicationShortcutItemType` は、アプリケーション内で項目の識別に使用する文字列値です。 詳細については、以下のセクションを参照してください。
 
 > [!IMPORTANT]
-> **注:**クイック アクション ショートカット項目で設定されている、`Info.plist`でファイルにアクセスできない、`Application.ShortcutItems`プロパティです。 内に渡されるだけ、`HandleShortcutItem`イベント ハンドラー。 
+> 設定されている、クイック アクション ショートカット項目、`Info.plist`でファイルにアクセスできない、`Application.ShortcutItems`プロパティです。 内に渡されるだけ、`HandleShortcutItem`イベント ハンドラー。 
 
 
 

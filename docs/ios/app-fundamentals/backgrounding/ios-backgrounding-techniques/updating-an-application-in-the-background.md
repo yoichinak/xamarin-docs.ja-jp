@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7f7cfcd320fcb38a9b08dfd8fe7e0fae7ff808ec
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>バック グラウンドでのアプリケーションの更新
 
@@ -79,7 +79,7 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 バック グラウンドでフェッチを使用してアプリケーションには、バック グラウンドから UI を更新する呼び出しを行うことができます。 ユーザーがアプリを開いたには、UI が最新であり新しいコンテンツの表示になります。 アプリケーションのアプリケーションのスイッチャーのスナップショットは、アプリケーションが新しいコンテンツを持つ場合に、ユーザーが確認できるようにこのも更新されます。
 
 > [!IMPORTANT]
-> **注**: 1 回`PerformFetch`が呼び出されると、アプリケーションは、約 30 秒、新しいコンテンツのダウンロードを開始し、完了ハンドラー ブロックを呼び出します。 これは時間がかかりすぎる、アプリが終了されます。 バック グラウンドのフェッチで使用を検討して、_バック グラウンド転送サービス_メディアまたはその他の大きなファイルをダウンロードするときにします。
+> 1 回`PerformFetch`が呼び出されると、アプリケーションは、約 30 秒、新しいコンテンツのダウンロードを開始し、完了ハンドラー ブロックを呼び出します。 これは時間がかかりすぎる、アプリが終了されます。 バック グラウンドのフェッチで使用を検討して、_バック グラウンド転送サービス_メディアまたはその他の大きなファイルをダウンロードするときにします。
 
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
@@ -132,7 +132,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 リモートの通知を使用して、非常に重要アプリケーションの機能には、コンテンツで更新プログラムを不定期に起きる必要があります。 リモートの通知の詳細についてを参照してください、Xamarin [iOS でのプッシュ通知](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)ガイドです。
 
 > [!IMPORTANT]
-> **注**: ためリモート通知では、更新機構がバック グラウンドでフェッチに基づいて、または iOS は、アプリケーションの新しいコンテンツのダウンロードを開始し、通知の受信の 30 秒以内に完了ハンドラー ブロックを呼び出す必要がありますアプリケーションを終了します。 リモートの通知とを組み合わせることを検討_バック グラウンド転送サービス_メディアや、バック グラウンドで他の大きなファイルをダウンロードするときにします。
+> リモートの通知の更新の機構は、バック グラウンドでフェッチに基づいているため、アプリケーションは、新しいコンテンツのダウンロードを開始し、通知の受信の 30 秒以内に完了ハンドラー ブロックを呼び出す必要があります。 または iOS は、アプリケーションを終了します。 リモートの通知とを組み合わせることを検討_バック グラウンド転送サービス_メディアや、バック グラウンドで他の大きなファイルをダウンロードするときにします。
 
 
 ### <a name="silent-remote-notifications"></a>サイレント リモート通知
@@ -156,7 +156,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
  [![](updating-an-application-in-the-background-images/silent.png "この図に示すように、APNs から、デバイスをサイレント ストアドの通知をプッシュする通常の通知を使用できます。")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
-> **注**: Apple によって、開発者は、アプリケーションを必要として、APNs ことができますが、配信をスケジュールするたびに、サイレントのプッシュ通知を送信します。
+> Apple は、開発者アプリケーションを必要とするたびに、サイレントのプッシュ通知を送信することをお勧めして APNs の配信をスケジュールします。
 
 
 このセクションでは、バック グラウンドに必要なカテゴリに適合しないタスクを実行するバック グラウンドでコンテンツを更新する場合、さまざまなオプションをきました。 ここで、これらの Api の動作のいくつかを確認してみましょう。

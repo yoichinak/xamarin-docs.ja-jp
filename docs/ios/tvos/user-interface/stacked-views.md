@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: efc0da0b0f0a800069efb00a402361a8b0cd7f1d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-stacked-view"></a>積み上げビューの操作
 
@@ -76,7 +76,7 @@ _この記事では、設計とビューの積み上げ Xamarin.tvOS アプリ�
 * 水平方向のスタック ビュー最初と最後の両方の基準に、最も高いサブビューが使用されます。 最も高いビューは、スタック ビューではまた場合、は、最も高いサブビューをベースラインとして使用します。
 
 > [!IMPORTANT]
-> **注:**ベースラインの配置では、間違った位置に、基準が計算されますに、拡張または圧縮されたサブビュー サイズで動作しません。 ベースライン配置のことを確認サブビューの**高さ**組み込みのコンテンツ ビューと一致する**高さ**です。
+> ベースライン配置機能しない. 拡張または圧縮されたサブビュー サイズで間違った位置に、基準が計算されます。 ベースライン配置のことを確認サブビューの**高さ**組み込みのコンテンツ ビューと一致する**高さ**です。
 
 
 
@@ -149,11 +149,11 @@ Xamarin.tvOS アプリでは、スタック ビューを使用する最も簡単
 -----
 
 > [!IMPORTANT]
-> **注:**注: などのアクションを割り当てることができますが`TouchUpInside`UI 要素 (など、 `UIButton`)、ios では、イベント ハンドラーを作成するときに、デザイナー、これは決して呼び出されません Apple TV はタッチ画面またはサポート タッチがあるないためイベントです。 既定値を常に使用する必要があります`Action Type`ユーザー インターフェイス要素 tvOS のアクションを作成する場合。
+> などのアクションを割り当てることができますが`TouchUpInside`UI 要素 (など、 `UIButton`)、ios では、イベント ハンドラーを作成するときに、デザイナー、これは決して呼び出されません Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためです。 既定値を常に使用する必要があります`Action Type`ユーザー インターフェイス要素 tvOS のアクションを作成する場合。
 
 ストーリー ボードの使用の詳細についてを参照してください、[こんにちは、tvOS クイック スタート ガイド](~/ios/tvos/get-started/hello-tvos.md)です。
 
-この例の場合、コンセントとセグメント コントロールのアクションと「player カードごと」コンセントを公開おしました。 コードではおを非表示にされ、現在のセグメントに基づくプレーヤーを表示します。 例:
+この例の場合、コンセントとセグメント コントロールのアクションと「player カードごと」コンセントを公開おしました。 コードではおを非表示にされ、現在のセグメントに基づくプレーヤーを表示します。 例えば:
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {

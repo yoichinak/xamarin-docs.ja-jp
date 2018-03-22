@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e7252aa89e2514653fc730c7221d22cc053d2e24
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>プロアクティブな推奨事項の概要
 
@@ -68,7 +68,7 @@ Siri を使用して簡単に現在表示しているアプリで、後で、コ
 アプリのみをサポートしている変更を共有する場合、その提案をシステムで開始*"に変更を Get..."*、ルーティングの方向 (ウォーキングまたは自転車) などの他の種類はサポートされている場合、システムが使用*「するための指示を取得しています...」*
 
 > [!IMPORTANT]
-> **注:** 、 [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)アプリを受信するオブジェクトの緯度と経度の情報を含まない場合がありますおよびジオコード化が必要になります。
+> [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)アプリを受信するオブジェクトの緯度と経度の情報を含まない場合がありますおよびジオコード化が必要になります。
 
 ## <a name="implementing-proactive-suggestions"></a>プロアクティブな推奨事項を実装します。
 
@@ -166,7 +166,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティを復元します。
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -503,7 +503,7 @@ Safari は、次のスキーマ プロパティのいずれかに準拠してい
 - アプリは、アプリでプロアクティブな候補を取得することができます。
 - アプリは、オート コレクトの強化を活用できます。
 
-新しい`TextContentType`iOS 10 内のテキスト フィールド コントロールのプロパティにより、開発者は、ユーザーが特定のフィールドに入力する予定の値のセマンティックの目的を定義します。 例:
+新しい`TextContentType`iOS 10 内のテキスト フィールド コントロールのプロパティにより、開発者は、ユーザーが特定のフィールドに入力する予定の値のセマンティックの目的を定義します。 例えば:
 
 ```csharp
 var textField = new UITextField();
@@ -532,7 +532,7 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 - MapKit と、アプリの起動を処理するために`MKDirectionsRequest`オブジェクト。
 - IOS の適切な時間は、ユーザーにアプリを提案する方法を説明する機能を提供するには、ユーザーの関与に基づいています。
 
-起動すると、アプリは、MapKit`MKDirectionsRequest`オブジェクト、する必要があります自動的に開始要求された場所にユーザーの指示を与えるまたはユーザーが方向の取得を開始しやすくための UI を表示します。 例:
+起動すると、アプリは、MapKit`MKDirectionsRequest`オブジェクト、する必要があります自動的に開始要求された場所にユーザーの指示を与えるまたはユーザーが方向の取得を開始しやすくための UI を表示します。 例えば:
 
 
 ```csharp

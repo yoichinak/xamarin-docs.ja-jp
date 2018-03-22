@@ -6,11 +6,11 @@ ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b357eecb0974884db645a0b2e5c8467ddf3b5d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 723a9c4a052f7f432ba0f32ec501af3221b2696f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-reference-counting-system"></a>新しい参照カウントのシステム
 
@@ -46,7 +46,7 @@ For mac、これらのオプションを Visual Studio の新しいバージョ�
 
     
 > [!IMPORTANT]
-> **注:**この機能の以前のバージョンが経ちましたが MonoTouch 5.2 がないためだけに使用できる**sgen**実験用のプレビューとして。 この新しい強化されたバージョンも使用できるようになりました、 **Boehm**ガベージ コレクターです。
+> この機能の以前のバージョンが経ちましたが MonoTouch 5.2 がないためだけに使用できる**sgen**実験用のプレビューとして。 この新しい強化されたバージョンも使用できるようになりました、 **Boehm**ガベージ コレクターです。
 
 
 従来されている Xamarin.iOS によって管理されるオブジェクトの 2 つの種類: 通常余分なメモリ内状態を保持することで、ネイティブ オブジェクト (ピア オブジェクト) と拡張や新機能 (派生オブジェクト) に組み込まれているものをラップするラッパーだけを実行していた。 以前 (たとえば、c# のイベント ハンドラーを追加すること) で状態のピア オブジェクトを補強おできますが、参照されていないと、収集の移動オブジェクトできるようにすることでした。 これが原因で、クラッシュ後で (例: Objective C のランタイムがマネージ オブジェクトにコールバックかどうか)。

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2282a340811d9932f9df3a1343b22ffc35247e54
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="workout-apps"></a>アプリのトレーニング
 
@@ -472,7 +472,7 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 アプリ、動きが一時停止イベントを受け取ると、ユーザーが動きを再開して、動きが再開されるイベントを受信するまでデータの収集を停止する必要があります。 アプリのアプリでは、動きが一時停止イベントに応答トレーニング セッションを一時停止する必要がありますされません。
 
 > [!IMPORTANT]
-> **注:**動きが一時停止およびモーション再開イベントは、RunningWorkout アクティビティの種類でのみサポート (`HKWorkoutActivityType.Running`)。
+> 動きが一時停止およびモーション再開イベントは、RunningWorkout アクティビティの種類でのみサポート (`HKWorkoutActivityType.Running`)。
 
 これらのイベントを処理して、オーバーライドすることで、もう一度、`DidGenerateEvent`のメソッド、 `HKWorkoutSessionDelegate`:
 
@@ -649,7 +649,7 @@ WatchOS アプリの実行中に WatchConnectivity メッセージングと親�
 3. トレーニングの構成では、渡されたを使用して、watchOS 3 アプリケーションは新しいトレーニング セッションが開始される (`HKWorkoutSession`)。
 
 > [!IMPORTANT]
-> **注:**背景が有効になっているを実行している親の iPhone アプリで、Apple Watch、トレーニングを開始するためには、watchOS 3 アプリがいる必要があります。 参照してください[を有効にするバック グラウンドを実行している](#Enabling-Background-Running)上詳細についてはします。
+> 親の iPhone アプリで、Apple Watch、トレーニングを開始するためには、watchOS 3 アプリにバック グラウンドが有効になっているを実行している必要があります。 参照してください[を有効にするバック グラウンドを実行している](#Enabling-Background-Running)上詳細についてはします。
 
 このプロセスは、直接 watchOS 3 アプリでトレーニング セッションを開始するプロセスによく似ています。 IPhone では、次のコードを使用します。
 
@@ -764,7 +764,7 @@ public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutC
 3. **watchOS 3 `OutdoorRunDelegate.cs`**  -カスタム`HKWorkoutSessionDelegate`トレーニングのイベントを処理します。
 
 > [!IMPORTANT]
-> **注:**セクションでは、次に示すようにコードには、watchOS 3 でのアプリのトレーニングに提供される、新しい拡張機能を実装するために必要な部分にはのみが含まれています。 すべてのサポート コードと存在し、UI を更新するコードが含まれていないが、他の watchOS ドキュメントに従って簡単に作成できます。<p/>
+> 次のセクションで示したコードには、watchOS 3 でのアプリのトレーニングに提供される、新しい拡張機能を実装するために必要な部分にはのみが含まれます。 すべてのサポート コードと存在し、UI を更新するコードが含まれていないが、他の watchOS ドキュメントに従って簡単に作成できます。<p/>
 
 
 

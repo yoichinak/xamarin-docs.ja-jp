@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="unified-storyboards"></a>統一されたストーリー ボード
 
@@ -581,7 +581,7 @@ IOS デザイナーは、開発者がサイズのクラスを使用して、ス�
  [![](unified-storyboards-images/sizeclass02.png "アラートのサイズのクラスを使用します。")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
-> **注**: 自動レイアウトを正しく動作するサイズ クラスのチェックも必要があります。
+> 自動レイアウトは、正常に動作するサイズ クラスもチェックする必要があります。
 
 ### <a name="generic-device-types"></a>汎用的なデバイスの種類
 
@@ -630,7 +630,7 @@ IOS デザイナーは、開発者がサイズのクラスを使用して、ス�
 開発者が前に、ストーリー ボードを使用するかどうかは、既存の segue 種類の精通することが**プッシュ**、**モーダル**と**重なって**です。 一元化されたストーリー ボード ファイルには、サイズのクラスが有効な場合、次アダプティブ話題の種類 (上で説明した新しいビュー コント ローラーの API に対応) が利用可能な:**表示**と**詳細の表示**.
 
 > [!IMPORTANT]
-> **注**: ときのサイズ クラスが有効にした場合は、既存の segues 新しい型に変換します。
+> Segues 既存サイズ クラスを有効にすると、新しい型に変換します。
 
 IOS の例に単純なゲーム ナビゲーション メニューをマスター ビューの分割ビュー コント ローラーで、一元化されたストーリー ボードを使用するアプリケーションが 8 を実行します。 ユーザーは、メニュー ボタンをクリックすると、選択した項目のビューのコント ローラー時に表示される分割ビュー コント ローラーの [詳細] セクションで iPad で実行されています。 IPhone では、アイテムのビューのコント ローラーをナビゲーション スタックにプッシュされる必要があります。
 

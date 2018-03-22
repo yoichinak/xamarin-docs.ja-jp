@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2016
-ms.openlocfilehash: be005f62c914fe5f59696c5ef9b608a73a45d269
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 348f84533974d1434dd0c7e5045c20e16b57057b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="deprecated-notification-technologies"></a>非推奨の通知のテクノロジ
 
 このセクションでは、ローカルを実装し、Xamarin.iOS で通知をプッシュする方法を示します。 IOS 通知のさまざまな UI 要素について説明するされ API について説明を作成して、メッセージを表示するのに含まれているのです。
 
 > [!IMPORTANT]
-> **注:** iOS 9 にこのセクションの情報が関連し、前に、ままになっていますここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降では、次を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモートの通知の両方をサポートするためです。
+> このセクションの情報が iOS 9 に関連し、前に、ままになっていますここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降では、次を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモートの通知の両方をサポートするためです。
 
 
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 02/27/2018
 
 <a name="Local Notifications Walkthrough" />
 
-##  <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[チュートリアル - Xamarin.iOS でローカルの通知の使用](local-notifications-in-ios-walkthrough.md)
+##  <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[チュートリアル - Xamarin.iOS でのローカル通知の使用](local-notifications-in-ios-walkthrough.md)
 
 このセクションで Xamarin.iOS アプリケーションでローカルの通知を使用する方法を説明します。 これは、作成して、アプリで受信された場合にアラートが表示される通知の発行の基本を示します。
 

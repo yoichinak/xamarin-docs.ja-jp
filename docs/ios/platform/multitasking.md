@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="multitasking-for-ipad"></a>IPad のマルチタスク
 
@@ -33,7 +33,7 @@ iOS 9 iPad の特定のハードウェアで同時に 2 個のアプリを実行
 - [カスタムのハードウェア キーボード ショートカット](#Custom-Hardware-Keyboard-Shortcuts)
 - [リソース管理](#Resource-Management-Considerations)
 
-アプリの開発者とすることもできます[マルチタスクのオプトアウト](#Opting-Out-of-Multitasking)など、 [PIP ビデオの再生を無効にする](#Disabling-PIP-Video-Playback)です。
+アプリの開発者とすることもできます[マルチタスクからオプトアウト](#Opting-Out-of-Multitasking)など、 [PIP ビデオの再生を無効にする](#Disabling-PIP-Video-Playback)です。
 
 この記事では、マルチタスク処理環境で正しく Xamarin.iOS アプリの実行中またはをアプリに合わせて十分でない場合は、マルチタスク処理から除外する方法のことを確認するための手順を説明します。
 
@@ -205,7 +205,7 @@ IPad で添付ハードウェア キーボードとユーザー タイプでこ�
 
 IOS 8 の設計ガイドとベスト プラクティス、既に使用しているアプリ、に対しても効率的なリソースの管理も問題があります。 Ios 9 の場合は、アプリでは、メモリ、CPU、またはその他のシステム リソースを排他的に使用が不要になったがあります。
 
-その結果、システム リソースを効果的に使用する Xamarin.iOS アプリを微調整する必要があります。 またはに直面してメモリ不足の状況で終了します。 これは、マルチタスクの脱退するアプリの場合は true。 同様に、2 台目以降アプリ可能性がありますも実行スライド上パネルまたは 1 秒あたり 60 フレームを下回るに余分なリソースを必要とする、リフレッシュ レートを原因または画像 ウィンドウで画像。
+その結果、システム リソースを効果的に使用する Xamarin.iOS アプリを微調整する必要があります。 またはに直面してメモリ不足の状況で終了します。 これは、マルチタスクから選択されているアプリの場合は true。 同様に、2 台目以降アプリ可能性がありますも実行スライド上パネルまたは 1 秒あたり 60 フレームを下回るに余分なリソースを必要とする、リフレッシュ レートを原因または画像 ウィンドウで画像。
 
 次のユーザーの操作とその関連事項を考慮してください。
 
@@ -223,19 +223,16 @@ Apple を参照してください[iOS アプリのエネルギー効率ガイド
 
 <a name="Opting-Out-of-Multitasking" />
 
-## <a name="opting-out-of-multitasking"></a>マルチタスクを無効にします。
+## <a name="opting-out-of-multitasking"></a>マルチタスクを除外
 
 Apple では、すべての iOS 9 アプリは、マルチタスク処理をサポートからわかるように、中にある可能性があります、アプリケーションのための特別な理由なりすぎないようにゲームやカメラ アプリを正常に動作する全画面表示を必要とするなど。
 
-Xamarin.iOS アプリのいずれかをスライド パネル、または分割ビュー モードで実行中のオプトアウトを編集、プロジェクトの**Info.plist**ファイルし、チェック**全画面表示の必要があります**:
+Xamarin.iOS アプリのいずれかをスライド パネル、または分割ビュー モードで実行されてから除外する、編集、プロジェクトの**Info.plist**ファイルし、チェック**全画面表示の必要があります**:
 
-[![](multitasking-images/fullscreen01.png "マルチタスクを無効にします。")](multitasking-images/fullscreen01.png#lightbox)
+[![](multitasking-images/fullscreen01.png "マルチタスクを除外")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
-> **注:** Opting アウト マルチタスク処理には、スライドまたは分割ビューで実行されてから、アプリが防止されますが、これは**いない**と共に表示からスライドまたは画像のビデオでは画像で実行されてから別のアプリを防ぐため、アプリです。
-
-
-
+> マルチタスク外を無効にするには、スライドまたは分割ビューで実行されてから、アプリが防止されますが、中にれない別のアプリとアプリが表示されないスライドまたはビデオの図の画像で実行されているからです。
 
 <a name="Disabling-PIP-Video-Playback" />
 
@@ -243,7 +240,7 @@ Xamarin.iOS アプリのいずれかをスライド パネル、または分割�
 
 ほとんどの場合、アプリがフローティング ウィンドウの画像に画像の表示、ビデオのコンテンツを再生するユーザーを許可する必要があります。 ただし、ここでこのいないする必要があります、ゲームのカット シーン ビデオなどの状況があります。
 
-オプトアウト PIP ビデオの再生、アプリに次の操作を行います。
+PIP のビデオ再生を除外するには、アプリでは、次を行います。
 
  - 使用している場合、`AVPlayerViewController`ビデオを表示する設定、`AllowsPictureInPicturePlayback`プロパティを`false`です。
  - 使用している場合、`AVPlayerLayer`表示するにはビデオのインスタンスを作成しない、`AVPictureInPictureController`です。

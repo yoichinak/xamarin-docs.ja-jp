@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 7ae41e99d20f0e8f3cad6b933e415002903a3294
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d3a370c3a8d930c817d38422b249b496532fa33f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="text-kit"></a>テキスト キット
 
@@ -143,7 +143,7 @@ public class ExclusionPathView : UITextView
 このコードは、主要なグラフィックスを使用してテキスト ビューで描画するためのサポートを追加します。 以降、`UITextView`テキストのレンダリングやレイアウトにテキスト キットを使用するクラスが組み込まれた、除外のパスを設定するなどのテキストのキットのすべての機能を使用できます。
 
 > [!IMPORTANT]
->   注: この例サブクラス`UITextView`タッチ描画のサポートを追加します。 サブクラス化`UITextView`テキスト キットの機能を取得する必要はありません。
+> この例サブクラス`UITextView`タッチ描画のサポートを追加します。 サブクラス化`UITextView`テキスト キットの機能を取得する必要はありません。
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff19048504ee76db614306adebb71b7237139091
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin デザイナーに自動レイアウト
 
@@ -22,7 +22,7 @@ _このガイドでは、自動レイアウトを iOS および iOS 用の Xamar
 
 このガイドでは、制約、および Xamarin iOS デザイナー内で操作する方法を紹介します。 このガイドでは、制約の使用をプログラムでは説明しません。 プログラムによる自動レイアウトの使用方法の詳細についてを参照してください、 [Apple のドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 IOS 用 Xamarin デザイナーは、Windows 上の Mac に Visual Studio 2015 および 2017 での Visual Studio で使用します。
 
@@ -88,7 +88,7 @@ IOS デザイナー ツールには、デザイン サーフェイス上の要�
 他の 2 つのボタンの間で、次の 3 つ緑破線に注意してください。 緑の線を示す*ドロップ エリア*、またはおを制限するその他の要素の属性です。 他の 2 つのボタンが 3 の垂直方向のドロップ領域を提供する上記のスクリーン ショット (*下部*、 *centerY*、*上部*) ボタンを制限します。 ビューの上部にある緑の点線は、ビュー コント ローラーには、ビューの上部にある、制約と純色の緑色のボックスでは、ビュー コント ローラーには、最上位レイアウト ガイドの下の制約は意味を意味します。
 
 > [!IMPORTANT]
-> **注**: レイアウト ガイドは、特別な種類のステータス バーまたはツールバーなどのシステムのバーの有無を考慮する上部と下部の制約を作成することを許可する制約のターゲットです。 最新バージョンには、コンテナーのビュー、ステータス バーの下を拡張するため、アプリを iOS 6、iOS 7 の間で互換性がある主な用途の 1 つです。 最上位レイアウト ガイドの詳細についてを参照してください、 [Apple のドキュメント](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)です。
+> レイアウト ガイドは、特別な種類の上部を作成することを許可する制約のターゲットとステータス バーまたはツールバーなどのシステムのバーの有無を考慮する下部制約です。 最新バージョンには、コンテナーのビュー、ステータス バーの下を拡張するため、アプリを iOS 6、iOS 7 の間で互換性がある主な用途の 1 つです。 最上位レイアウト ガイドの詳細についてを参照してください、 [Apple のドキュメント](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)です。
 
 
 
@@ -203,7 +203,7 @@ IOS デザイナーで制約の次の設定を指定します。
 
 ### <a name="animating-constraint-changes"></a>制約の変更をアニメーション化
 
-制約のプロパティを変更するには、だけでなく、ビューの制約に加えた変更をアニメーション化するのにコア アニメーションを使用できます。 例:
+制約のプロパティを変更するには、だけでなく、ビューの制約に加えた変更をアニメーション化するのにコア アニメーションを使用できます。 例えば:
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");

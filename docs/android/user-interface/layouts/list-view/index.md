@@ -7,12 +7,12 @@ ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/21/2018
+ms.openlocfilehash: 4225e45ecfe4a4a2cdb7e75b94823fc8fcd29fc4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -56,10 +56,10 @@ Android アプリケーションの最も基本的なビルド ブロックで�
 
 このファイルに配置される各項目のレイアウトを定義する、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)です。
 
-開く、`HelloListView.cs`拡張クラスおよび[ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (の代わりに[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/))。
+開いている`MainActivity.cs`を拡張するクラスを変更および[ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (の代わりに[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/))。
 
 ```csharp
-public class HelloListView : ListActivity
+public class MainActivity : ListActivity
 {
 ```
 
@@ -74,9 +74,9 @@ protected override void OnCreate (Bundle bundle)
 
     ListView.TextFilterEnabled = true;
 
-    ListView.ItemClick += delegate (object sender, ItemEventArgs args) {
-        // When clicked, show a toast with the TextView text
-        Toast.MakeText (Application, ((TextView)args.View).Text, ToastLength.Short).Show ();
+    ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+    {
+        Toast.MakeText(Application, ((TextView)args.View).Text, ToastLength.Short).Show();
     };
 }
 ```
@@ -93,7 +93,12 @@ protected override void OnCreate (Bundle bundle)
 独自のレイアウト ファイルを定義する代わりに、プラットフォームによって提供されるリスト項目の設計を使用することができます、 [ `ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)です。
 たとえば、を使用してみてください`Android.Resource.Layout.SimpleListItem1`の代わりに`Resource.Layout.list_item`です。
 
-後に、 [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))メソッド、文字列の配列を追加します。
+次の追加`using`ステートメント。
+
+```csharp
+using System;
+```
+次に、次の文字列配列を追加のメンバーとして`MainActivity`:
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -145,22 +150,23 @@ static readonly string[] countries = new String[] {
 
 アプリケーションを実行します。 一覧をスクロールし、入力をフィルター処理、またはメッセージを表示する項目をクリックすることができます。 次のように表示されます。
 
-[![国の名前を持つ ListView の例のスクリーン ショット](images/helloviews6.png)](images/helloviews6.png#lightbox)
+[![国の名前を持つ ListView の例のスクリーン ショット](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
-ただし、ハード コーディングされた文字列配列を使用して、デザインのベスト プラクティスではありません。 いずれかを示すためにわかりやすくするため、このチュートリアルを使用は、 [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)ウィジェット。 参照によって定義されている外部のリソースなどの文字列配列にすることをお勧め、`string-array`プロジェクトのリソース**Resources/Values/Strings.xml**ファイル。 例:
+ただし、ハード コーディングされた文字列配列を使用して、デザインのベスト プラクティスではありません。 いずれかを示すためにわかりやすくするため、このチュートリアルを使用は、 [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)ウィジェット。 参照によって定義されている外部のリソースなどの文字列配列にすることをお勧め、`string-array`プロジェクトのリソース**Resources/Values/Strings.xml**ファイル。 例えば:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="countries_array">
-        <item>Bahrain</item>
-        <item>Bangladesh</item>
-        <item>Barbados</item>
-        <item>Belarus</item>
-        <item>Belgium</item>
-        <item>Belize</item>
-        <item>Benin</item>
-    </string-array>
+  <string name="app_name">HelloListView</string>
+  <string-array name="countries_array">
+    <item>Bahrain</item>
+    <item>Bangladesh</item>
+    <item>Barbados</item>
+    <item>Belarus</item>
+    <item>Belgium</item>
+    <item>Belize</item>
+    <item>Benin</item>
+  </string-array>
 </resources>
 ```
 
@@ -170,6 +176,9 @@ static readonly string[] countries = new String[] {
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
+アプリケーションを実行します。 次のように表示されます。
+
+[![小規模なリストを ListView の例のスクリーン ショット](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
 
 ## <a name="going-further-with-listview"></a>ListView に進む

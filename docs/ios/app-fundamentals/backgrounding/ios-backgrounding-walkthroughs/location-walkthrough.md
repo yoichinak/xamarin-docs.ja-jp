@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b10894d6b18d78d682825000726c5ef2cbe5ba6b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-background-location"></a>チュートリアル - バック グラウンドの場所を使用します。
 
@@ -79,7 +79,7 @@ ms.lasthandoff: 03/12/2018
     - `AllowsBackgroundLocationUpdates` – これは、iOS 9 を中断されている場合、場所の更新を受け取るようアプリを許可する設定できるで導入された、ブール型プロパティです。
 
     > [!IMPORTANT]
-    > **警告**: iOS 8 (以降) では、内のエントリも必要です、 **Info.plist**承認要求の一部として、ユーザーを表示するファイル。
+    > iOS 8 (以降) では、内のエントリも必要です、 **Info.plist**承認要求の一部として、ユーザーを表示するファイル。
 
 1. キーを追加する`NSLocationAlwaysUsageDescription`または`NSLocationWhenInUseUsageDescription`場所データへのアクセスを要求する警告のユーザーに表示される文字列を使用します。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5da834e7e77fb8ab080c124bd09653bc840be3b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-buttons"></a>ボタンの操作
 
@@ -130,7 +130,7 @@ namespace tvRemote
 ボタンの限り`Enabled`プロパティは`true`と別のコントロールまたはビューでは対応できない、Siri リモコンを使用して、フォーカス設定項目にできます。 ユーザーがボタンを選択して、タッチ画面をクリックすると、`ButtonPressed`上記で定義されたアクションが実行されます。
 
 > [!IMPORTANT]
-> **注:**などのアクションを割り当てることができますが`TouchUpInside`を`UIButton`iOS デザイナーを作成するときに、**イベント ハンドラー**、Apple TV はタッチ スクリーンやサポートがあるないためには呼び出すことはありませんタッチ イベント。 既定値を常に使用する必要があります**アクションの種類**作成するときに**アクション**の tvOS ユーザー インターフェイス要素です。
+> などのアクションを割り当てることができますが`TouchUpInside`を`UIButton`iOS デザイナーを作成するときに、**イベント ハンドラー**、Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためには呼び出すことはありません。 既定値を常に使用する必要があります**アクションの種類**作成するときに**アクション**の tvOS ユーザー インターフェイス要素です。
 
 
 
@@ -141,7 +141,7 @@ namespace tvRemote
 
 ## <a name="buttons-and-code"></a>ボタンとコード
 
-必要に応じて、 `UIButton` c# コードで作成され、tvOS アプリのビューに追加されたことができます。 例:
+必要に応じて、 `UIButton` c# コードで作成され、tvOS アプリのビューに追加されたことができます。 例えば:
 
 ```csharp
 var button = new UIButton(UIButtonType.System);
@@ -169,7 +169,7 @@ View.AddSubview (button);
 button.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-次に、ボタンのタイトルを設定します。 `UIButtons` ほとんどとは異なる`UIKit`コントロールにまったくことはできませんので、状態がある点では、タイトルを変更する必要がありますを変更するため、指定された`UIControlState`です。 例:
+次に、ボタンのタイトルを設定します。 `UIButtons` ほとんどとは異なる`UIKit`コントロールにまったくことはできませんので、状態がある点では、タイトルを変更する必要がありますを変更するため、指定された`UIControlState`です。 例えば:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
@@ -191,7 +191,7 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> **注:**などのアクションを割り当てることができますが`TouchUpInside`を`UIButton`、Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためには呼び出すことはありません。 常にイベントを使用するように**AllEvents**または**PrimaryActionTriggered**です。
+> などのアクションを割り当てることができますが`TouchUpInside`を`UIButton`、Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためには呼び出すことはありません。 常にイベントを使用するように**AllEvents**または**PrimaryActionTriggered**です。
 
 
 
@@ -206,19 +206,19 @@ tvOS のいくつかのプロパティを提供する、`UIButton`を使用し�
 
 ### <a name="button-titles"></a>ボタンのタイトル
 
-上記に説明したよう`UIButtons`ほとんどとは異なる`UIKit`コントロールにまったくことはできませんので、状態がある点では、タイトルを変更する必要がありますを変更するため、指定された`UIControlState`です。 例:
+上記に説明したよう`UIButtons`ほとんどとは異なる`UIKit`コントロールにまったくことはできませんので、状態がある点では、タイトルを変更する必要がありますを変更するため、指定された`UIControlState`です。 例えば:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-使用して、ボタンのタイトルの色を設定することができます、`SetTitleColor`メソッドです。 例:
+使用して、ボタンのタイトルの色を設定することができます、`SetTitleColor`メソッドです。 例えば:
 
 ```csharp
 button.SetTitleColor (UIColor.White, UIControlState.Normal);
 ```
 
-タイトルを調整してシャドウを使用して、`SetTitleShadowColor`です。 例:
+タイトルを調整してシャドウを使用して、`SetTitleShadowColor`です。 例えば:
 
 ```csharp
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
@@ -230,7 +230,7 @@ button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 button.ReverseTitleShadowWhenHighlighted = true;
 ```
 
-さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例:
+さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例えば:
 
 ```csharp
 var normalAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);

@@ -8,68 +8,72 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8c336799a4d46359a78432837101dad43b572aea
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: c333fd18e306c50bbfd41377638470cb45954883
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="api-design"></a>API の設計
 
 モノラルの一部である基本クラス ライブラリのコアだけでなく[Xamarin.iOS](http://www.xamarin.com/iOS)さまざまな iOS 開発者は、Mono でネイティブの iOS アプリケーションの作成を許可するための Api のバインドが付属しています。
 
-C ベースの Api を iOS 用のバインドともなどの CoreGraphics、として OBJECTIVE-C 世界中で c# 世界をブリッジするエンジンと相互運用機能がある、Xamarin.iOS の中核と[OpenGLES](#OpenGLES)です。
+結びます。 また、c# world Objective C の世界に加え、iOS CoreGraphics と同様に C ベースの Api のバインドと相互運用機能のエンジンがある、Xamarin.iOS の中核と[OpenGL ES](#OpenGLES)です。
 
-Objective C コードとの通信に低レベルのランタイムは、 [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime)です。 このため、バインドの上に[Foundation](#MonoTouch.Foundation)、CoreFoundation と[UIKit](#MonoTouch.UIKit)提供されます。
+Objective C コードとの通信に低レベルのランタイムは[MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime)です。 このため、バインドの上に[Foundation](#MonoTouch.Foundation)、CoreFoundation、および[UIKit](#MonoTouch.UIKit)提供されます。
 
 ## <a name="design-principles"></a>デザインの原則
 
-(これらにも適用 Xamarin.Mac、OBJECTIVE-C OS X 上の Mono バインド) Xamarin.iOS バインド用の設計原則のいくつか次に示します。
+(そのにも適用 Xamarin.Mac、macos Objective C の Mono バインド)、Xamarin.iOS バインド用の設計原則のいくつか次に示します。
 
-- Framework デザイン ガイドラインに従ってください。
+- 以下の[Framework デザイン ガイドライン](https://docs.microsoft.com/dotnet/standard/design-guidelines)
 - 開発者はサブクラス Objective C のクラスを使用するには。
 
   - 既存のクラスから派生します。
-  - チェーンに基底コンス トラクターを呼び出す
+  - チェーンに、基底コンス トラクターを呼び出す
   - # のオーバーライド システムとメソッドのオーバーライドを行う必要があります。
+  - サブクラス化する必要があります (C#) 標準のコンストラクトを使用
 
-- サブクラスは、c# の標準的な構成要素を使用する必要があります。
 - Objective C のセレクターを開発者に公開しないでください。
 - Objective C の任意のライブラリを呼び出すための機構を提供します。
-- Objective C の一般的なタスクを簡単に、そしてハード Objective C のタスクの可能なを作成します。
+- Objective C の一般的なタスクを簡単かつハード Objective C のタスクの可能なを作成します。
 - Objective C のプロパティは c# プロパティとして公開します。
 - 厳密に型指定された API を公開します。
-- タイプ セーフを向上します。
-- ランタイム エラーを最小限に抑える
-- 戻り値の型の IDE の intellisense を取得します。
-- IDE のポップアップのドキュメントでは、します。
+
+  - タイプ セーフを向上します。
+  - ランタイム エラーを最小限に抑える
+  - 戻り値の型の IDE の IntelliSense を取得します。
+  - IDE のポップアップのドキュメントでは、します。
+
 - Api の IDE の調査をお勧めします。
+
+  - たとえば、次のように、弱い型指定の配列を公開するには: の代わりに
+    
+    ```objc
+    NSArray *getViews
+    ```
+    次のように、厳密な型を公開します。
+    
+    ```csharp
+    NSView [] Views { get; set; }
+    ```
+    
+    これにより、Visual Studio for Mac API の参照中に自動補完を行うには、により、すべて、`System.Array`返される値で使用できる操作でき、戻り値を LINQ に参加します。
+
 - ネイティブの c# 型:
 
-    - 例: の代わりに次のように、弱い型指定の配列を公開するには。
-        ```
-        NSArray *getViews
-        ```
-        次のように、厳密な型でそれらを公開します。
-    
-        ```
-        NSView [] Views { get; set; }
-        ```
-    
-    これにより、Visual Studio for Mac API の参照中に自動補完を実行でき、またすべての`System.Array`を返される値に使用できる操作でき、LINQ に参加する戻り値
+  - [`NSString` なります `string`](~/ios/internals/api-design/nsstring.md)
+  - 有効にする`int`と`uint`c# 列挙型と C# の場合と列挙体に列挙されている必要があるパラメーター`[Flags]`属性
+  - 型に依存しないのではなく`NSArray`オブジェクトが厳密に型指定された配列としての配列を公開します。
+  - イベントと通知は、のいずれかをユーザーに付与します。
 
-- [NSString 文字列になります](~/ios/internals/api-design/nsstring.md)
-- Int、uint のパラメーターが使用されるべき列挙型 (C#) 列挙型と C# の場合 [Flags] 属性を持つ列挙体としてを有効にします。
-- 型に依存しない NSArray の代わりには、オブジェクトは、厳密に型の配列としての配列を公開します。
-- イベントおよび通知は、いずれかをユーザーに付与します。
-
-    - 既定値は厳密に型指定されたバージョンです。
-    - 事前ユース ケースの弱く型指定されたバージョン
+    - 既定では、厳密に型指定されたバージョン
+    - 高度なユース ケースの弱い型指定のバージョン
 
 - Objective C デリゲート パターンをサポートしてください。
 
     - C# イベント システム
-    - Objective C Api に「ブロック」として c# デリゲート (ラムダ、匿名メソッドと System.Delegate) を公開します。
+    - デリゲート (C#) を公開 (ラムダ、匿名メソッド、および`System.Delegate`) ブロックと OBJECTIVE-C Api を
 
 ### <a name="assemblies"></a>アセンブリ
 

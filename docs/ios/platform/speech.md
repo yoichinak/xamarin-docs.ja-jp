@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e868c0ee71688e208c5217d9f5a89ea3acec988c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="speech-recognition"></a>音声認識
 
@@ -105,10 +105,10 @@ IOS アプリでの音声認識を採用する開発者が行う必要のある�
 2. 切り替えて、**ソース**ビュー。 
 
     [![](speech-images/speech02.png "ソース ビュー")](speech-images/speech02.png#lightbox)
-3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
+3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例えば: 
 
     [![](speech-images/speech03.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03.png#lightbox)
-4. アプリがライブ オーディオ議事録を処理する場合が、マイクの使用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
+4. アプリがライブ オーディオ議事録を処理する場合が、マイクの使用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例えば: 
 
     [![](speech-images/speech04.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04.png#lightbox)
 4. 変更内容をファイルに保存します。
@@ -116,10 +116,10 @@ IOS アプリでの音声認識を採用する開発者が行う必要のある�
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. ダブルクリックして、`Info.plist`ファイルを開いて編集するファイル。
-3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
+3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例えば: 
 
     [![](speech-images/speech03w.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03w.png#lightbox)
-4. アプリがライブ オーディオ議事録を処理する場合が、マイクの使用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例: 
+4. アプリがライブ オーディオ議事録を処理する場合が、マイクの使用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**用途説明**として、**値**です。 例えば: 
 
     [![](speech-images/speech04w.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04w.png#lightbox)
 4. 変更内容をファイルに保存します。
@@ -127,7 +127,7 @@ IOS アプリでの音声認識を採用する開発者が行う必要のある�
 -----
 
 > [!IMPORTANT]
-> **注:**に上記のいずれかを提供できない場合`Info.plist`キー (`NSSpeechRecognitionUsageDescription`または`NSMicrophoneUsageDescription`) 音声認識またはライブ オーディオのマイクにアクセスしようとしているときに警告なしに失敗しているアプリで発生することができます。
+> 上記のいずれかを指定する失敗`Info.plist`キー (`NSSpeechRecognitionUsageDescription`または`NSMicrophoneUsageDescription`) 音声認識またはライブ オーディオのマイクにアクセスしようとしているときに警告なしに失敗しているアプリで発生することができます。
 
 
 
@@ -186,7 +186,7 @@ namespace MonkeyTalk
 A`SFSpeechRecognizerAuthorizationStatus`に結果が返されます、`RequestAuthorization`アクションを実行するために使用するメソッドのコールバック ルーチンがユーザーのアクセス許可に基づいています。 
 
 > [!IMPORTANT]
-> **注:**ユーザーがこのアクセス許可を要求する前に音声認識を必要とするアプリでアクションを開始するまで待機している Apple を提案します。
+> Apple では、ユーザーがこのアクセス許可を要求する前に音声認識を必要とするアプリでアクションを開始するまで待機しているを提案します。
 
 ### <a name="recognizing-pre-recorded-speech"></a>記録済みの音声を認識します。
 
@@ -243,7 +243,7 @@ A`SFSpeechUrlRecognitionRequest`から作成された、 `NSUrl` iOS デバイ�
 
 ### <a name="recognizing-live-speech"></a>ライブ音声を認識します。
 
-アプリは、ライブ音声を認識する必要がある場合、プロセスは記録済みの音声を認識することとよく似ています。 例:
+アプリは、ライブ音声を認識する必要がある場合、プロセスは記録済みの音声を認識することとよく似ています。 例えば:
 
 ```csharp
 using System;
@@ -373,7 +373,7 @@ RecognitionTask.Cancel ();
 呼び出すことが重要`RecognitionTask.Cancel`メモリと、デバイスのプロセッサの両方を解放する翻訳が取り消された場合。
 
 > [!IMPORTANT]
-> **注:**に提供できない場合、`NSSpeechRecognitionUsageDescription`または`NSMicrophoneUsageDescription``Info.plist`キー音声認識またはライブ オーディオのマイクにアクセスしようとしているときに警告なしに失敗しているアプリで発生することができます (`var node = AudioEngine.InputNode;`)。 参照してください、**使用状況の説明を提供する**の詳細については、上記「します。
+> 提供できない場合、`NSSpeechRecognitionUsageDescription`または`NSMicrophoneUsageDescription``Info.plist`キー音声認識またはライブ オーディオのマイクにアクセスしようとしているときに警告なしに失敗しているアプリで発生することができます (`var node = AudioEngine.InputNode;`)。 参照してください、**使用状況の説明を提供する**の詳細については、上記「します。
 
 ## <a name="speech-recognition-limits"></a>音声認識の制限
 
