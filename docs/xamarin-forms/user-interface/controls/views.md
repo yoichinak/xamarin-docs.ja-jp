@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms ビュー"
-description: "Xamarin.Forms ビューは、クロスプラット フォーム モバイル ユーザー インターフェイスのビルド ブロックです。"
+title: Xamarin.Forms ビュー
+description: Xamarin.Forms ビューは、クロスプラット フォーム モバイル ユーザー インターフェイスのビルド ブロックです。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
@@ -8,8 +8,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: f7d27c5226741ec2b105633206ebaa0ac73d9a7b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 45dc110104d7bb064aff1c883f65d894cbe6402f
+ms.sourcegitcommit: c3abb91d1a944de07d1b2b0878b02752c768d722
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/22/2018
@@ -100,7 +100,7 @@ _Xamarin.Forms ビューは、クロスプラット フォーム モバイル �
 
 |     |     |
 | --- | --- |
-| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) 使用するブール値を選択するユーザーのオン/オフ スイッチの形式をとります。 [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/)プロパティは、スイッチの状態と[ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/)状態が変更されたときに発生します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![例を切り替える](views-images/Switch.png "スイッチの例")](views-images/Stepper-Large.png#lightbox "スイッチの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) 使用するブール値を選択するユーザーのオン/オフ スイッチの形式をとります。 [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/)プロパティは、スイッチの状態と[ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/)状態が変更されたときに発生します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![例を切り替える](views-images/Switch.png "スイッチの例")](views-images/Switch-Large.png#lightbox "スイッチの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker
