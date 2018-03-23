@@ -1,6 +1,6 @@
 ---
-title: "接続のトラブルシューティング"
-description: "このガイドでは、新しい接続マネージャーの使用中に発生する可能性がある問題を解決する方法について説明します。接続できない問題や SSH の問題などを解決します。"
+title: 接続のトラブルシューティング
+description: このガイドでは、新しい接続マネージャーの使用中に発生する可能性がある問題を解決する方法について説明します。接続できない問題や SSH の問題などを解決します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d33f4ba5512985d62575885d44fdcebced8b61ed
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connection-troubleshooting"></a>接続のトラブルシューティング
 
@@ -72,26 +72,34 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 7. Mac の IP アドレスを確認したら、Windows の `cmd.exe` でそのアドレスに `ping` を試します。
 
-        ping 10.1.8.95
-
+    ```
+    ping 10.1.8.95
+    ```
+    
     ping に失敗した場合、Windows コンピューターから Mac に_到達できません_。 この問題は、2 台のコンピューター間のローカル エリア ネットワーク構成レベルで解決する必要があります。 両方のマシンが同じローカル ネットワークにあることを確認してください。
 
 8. 次に、OpenSSH の `ssh` クライアントが Windows から Mac に接続できるかテストします。 このプログラムをインストールする方法の 1 つは、[Git for Windows](https://git-for-windows.github.io/) をインストールすることです。 インストール後、**Git Bash** コマンド プロンプトを起動し、自分のユーザー名と IP アドレスで Mac に `ssh` を試します。
 
-        ssh amyb@10.1.8.95
-
+    ```bash
+    ssh amyb@10.1.8.95
+    ```
+    
 <a name="stepnine" />
 
 9. **手順 8 で成功した**場合、接続状態で `ls` のような単純なコマンドを試します。
 
-        ssh amyb@10.1.8.95 'ls'
-
+    ```bash
+    ssh amyb@10.1.8.95 'ls'
+    ```
+    
     Mac のホーム ディレクトリのコンテンツが一覧表示されるはずです。 `ls` コマンドは正しく機能するが、Visual Studio 接続に失敗する場合は、「[既知の問題と制限事項](#knownissues)」セクションで Xamarin に固有の問題を確認してください。 該当する問題が見当たらない場合は、[新しいバグ レポートを提出](https://bugzilla.xamarin.com/newbug)し、ログを添付してください。詳細は、[詳細ログ ファイルの確認](#verboselogs)に関するセクションにあります。
 
 10. **手順 8 で失敗した**場合、Mac のターミナルで次のコマンドを実行し、SSH サーバーが_何らか_の接続を受信しているか確認します。
 
-        ssh localhost
-
+    ```bash
+    ssh localhost
+    ```
+    
 11. 手順 8 で失敗したが、**手順 10 で成功した**場合、問題はおそらく、ネットワーク構成に起因し、Mac ビルド ホストのポート 22 に Windows から到達できないことにあります。 次のような構成問題が考えられます。
 
     - OS X ファイアウォール設定で接続を禁止しています。 手順 3 をもう一度確認してください。
@@ -161,8 +169,10 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
     5. ファイルの一番下に次の行を追加します。
 
-            UseDNS no
-
+        ```
+        UseDNS no
+        ```
+        
     6. `UseDNS yes` という行があればそれを削除し、新しい設定が適用されるようにします。
 
     7. ファイルを保存します。
@@ -179,16 +189,20 @@ Mac エージェントの "インストール"、"アップロード"、"起動"
 
 1. Mac のターミナルで次のコマンドを実行します。
 
-        open "$HOME/Library/Caches/Xamarin"
-
+    ```bash
+    open "$HOME/Library/Caches/Xamarin"
+    ```
+    
 2. **XMA** フォルダーをコントロール クリックし、**[ごみ箱に入れる]** を選択します。
 
     [![](troubleshooting-images/troubleshooting-image8.png "XMA フォルダーをごみ箱に移動します")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Windows のキャッシュもクリアしておくといいでしょう。 Windows でコマンド プロンプトを管理者として開きます。
 
-        del %localappdata%\Temp\Xamarin\XMA
-
+    ```
+    del %localappdata%\Temp\Xamarin\XMA
+    ```
+    
 ## <a name="warning-messages"></a>警告メッセージ
 
 このセクションでは、出力ウィンドウやログに表示され、通常は無視してもかまわないメッセージについて説明します。
@@ -230,7 +244,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 1. Visual Studio を起動します。
 
     > [!IMPORTANT]
->  **.svclogs** は既定では有効になっていません。 アクセスするには、詳細ログありで Visual Studio を起動する必要があります。[詳細ログ](~/cross-platform/troubleshooting/questions/version-logs.md#visual-studio-startup-verbose-logs) ガイドに説明があります。 詳細については、ブログ投稿の「[Troubleshooting Extensions with the Activity Log](https://blogs.msdn.microsoft.com/visualstudio/2010/02/24/troubleshooting-extensions-with-the-activity-log/)」 (アクティビティ ログで拡張機能の問題を解決する) を参照してください。
+    > **.svclogs** は既定では有効になっていません。 アクセスするには、詳細ログありで Visual Studio を起動する必要があります。[詳細ログ](~/cross-platform/troubleshooting/questions/version-logs.md#visual-studio-startup-verbose-logs) ガイドに説明があります。 詳細については、ブログ投稿の「[Troubleshooting Extensions with the Activity Log](https://blogs.msdn.microsoft.com/visualstudio/2010/02/24/troubleshooting-extensions-with-the-activity-log/)」 (アクティビティ ログで拡張機能の問題を解決する) を参照してください。
 
 2. ビルド ホストに接続してみます。
 
@@ -272,7 +286,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
     ```bash
     grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"
-    ```
+   ```
 
 詳細ログでも問題を直接解決するために必要な情報が十分に得られない場合、[新しいバグ レポートを提出](https://bugzilla.xamarin.com/newbug)し、手順 5 の .zip ファイルと手順 6 の .log ファイルを両方添付してください。
 

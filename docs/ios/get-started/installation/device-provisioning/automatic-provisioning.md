@@ -1,6 +1,6 @@
 ---
-title: "自動プロビジョニング"
-description: "Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、Visual Studio for Mac の自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。"
+title: 自動プロビジョニング
+description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、Visual Studio for Mac の自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 271d9e3f7ae04f03a132ae2fd0ebf531fe52578c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="automatic-provisioning"></a>自動プロビジョニング
 
@@ -24,7 +24,7 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 - Xcode 9 以降
 
 > [!IMPORTANT]
->  このガイドでは、Visual Studio for Mac を使用して Apple デバイスの展開を設定する方法と、アプリケーションを展開する方法について説明します。 この処理と、Windows 上の Visual Studio で同じ処理を実行する方法の手動の手順については、「[Manual Povisioning](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)」(手動プロビジョニング) ガイドの詳細な手順に従うことをお勧めします。
+> このガイドでは、Visual Studio for Mac を使用して Apple デバイスの展開を設定する方法と、アプリケーションを展開する方法について説明します。 この処理と、Windows 上の Visual Studio で同じ処理を実行する方法の手動の手順については、「[Manual Povisioning](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)」(手動プロビジョニング) ガイドの詳細な手順に従うことをお勧めします。
 
 ## <a name="enabling-automatic-signing"></a>自動署名を有効にする
 

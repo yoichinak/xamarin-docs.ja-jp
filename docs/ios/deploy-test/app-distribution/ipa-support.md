@@ -1,6 +1,6 @@
 ---
-title: "IPA のサポート"
-description: "この記事では、IPA ファイルの作成方法を紹介します。IPA ファイルは、テスト目的か社内用のアプリケーションを社内で配布する目的のために、アドホック配布でアプリケーションを配置するときに利用できます。"
+title: IPA のサポート
+description: この記事では、IPA ファイルの作成方法を紹介します。IPA ファイルは、テスト目的か社内用のアプリケーションを社内で配布する目的のために、アドホック配布でアプリケーションを配置するときに利用できます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bee3480fc90c2eac5629e336c57daa90adf9c346
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fa0986141a44bbe7100268c629e606a5857e2699
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ipa-support"></a>IPA のサポート
 
@@ -151,7 +151,7 @@ CI 環境などでは、コマンド ラインから IPA をビルドしなけ�
     ![](ipa-support-images/imagevs02.png "[構成] ドロップダウン リストから [アドホック] を選択します")
 
     > [!NOTE]
-> 新しい Xamarin.iOS プロジェクトでは、アドホック構成を選択できない場合があります。 選択できない場合、**[リリース]** 構成を選択します。
+    > 新しい Xamarin.iOS プロジェクトでは、アドホック構成を選択できない場合があります。 選択できない場合、**[リリース]** 構成を選択します。
 
 3. 任意の **iTunesMetadata.plist** ファイルを含める場合、**[...]** ボタンをクリックして一覧から選択し、**[開く]** ボタンをクリックします。
 

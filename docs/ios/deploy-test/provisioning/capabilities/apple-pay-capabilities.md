@@ -1,6 +1,6 @@
 ---
-title: "Apple Pay 機能"
-description: "アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、Apple Pay 機能に必要な設定について説明します。"
+title: Apple Pay 機能
+description: アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、Apple Pay 機能に必要な設定について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay-capabilities"></a>Apple Pay 機能
 
@@ -116,7 +116,7 @@ Developer Center から新しいアプリをプロビジョニングするとき
     ![証明書の署名要求の作成](apple-pay-capabilities-images/image45.png)
     
     > [!IMPORTANT]
-> Apple Pay に JudoPay や Stripe などの支払いプロバイダーを使用している場合は、これらのプロバイダーから、ここで使用可能な適切な形式の CSR を提供してもらうことができます。 CSR の要求に関する情報は、[JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) や [Stripe](https://stripe.com/docs/apple-pay/apps#csr) のサイトにあります。 独自の CSR を作成するには、次の手順 5 - 8 に従います。 CSR を入手したら、手順 9 に進みます。
+    > Apple Pay に JudoPay や Stripe などの支払いプロバイダーを使用している場合は、これらのプロバイダーから、ここで使用可能な適切な形式の CSR を提供してもらうことができます。 CSR の要求に関する情報は、[JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) や [Stripe](https://stripe.com/docs/apple-pay/apps#csr) のサイトにあります。 独自の CSR を作成するには、次の手順 5 - 8 に従います。 CSR を入手したら、手順 9 に進みます。
 
 5.  Keychain Access アプリケーションを開き、**[Keychain Access] > [Certificate Assistant]\(証明書アシスタント\) > [Request a Certificate from a Certificate Authority]\(証明機関から証明書を要求する\)** の順に移動します。 
 
