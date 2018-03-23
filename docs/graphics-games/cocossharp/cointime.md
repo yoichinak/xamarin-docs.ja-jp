@@ -1,6 +1,6 @@
 ---
-title: "コイン時の実装の詳細"
-description: "このガイドでは、ゲームでは、コイン時間、マップのタイルの操作、エンティティを作成する、スプライト、アニメーション化する、効率的な競合を実装するなどの実装の詳細について説明します。"
+title: コイン時の実装の詳細
+description: このガイドでは、ゲームでは、コイン時間、マップのタイルの操作、エンティティを作成する、スプライト、アニメーション化する、効率的な競合を実装するなどの実装の詳細について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b3827d05ae9e563ae04dd4ab1e303577f6c9d82a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="coin-time-implementation-details"></a>コイン時の実装の詳細
 
@@ -61,10 +61,7 @@ _このガイドでは、ゲームでは、コイン時間、マップのタイ�
 1. 描画するタイルをクリックします。
 1. をクリックしてまたはプッシュし、タイルを描画するマップ上にドラッグ
 
-
     ![](cointime-images/image2.png "1 を描画するタイルをクリックします。")
-
- 
 
 タイルセットの左上には、地形コイン時間内のすべてが含まれます。 純色は、地形が含まれています、 **SolidCollision**プロパティ、画面の左側のタイルのプロパティで示すようにします。
 
@@ -97,15 +94,11 @@ CoinTime コードは検索、 **EntityType**エンティティによって置�
 1. ガベージ コレクターは、レベル番号シーケンスが、既存のレベルなど、新しい .tmx ファイルの名前を変更**level8.tmx**
 1. Visual Studio または Visual Studio for Mac、Android レベル フォルダーに新しい .tmx ファイルを追加します。 ファイルで使用されることを確認、 **AndroidAsset**ビルド アクション。
 
-
     ![](cointime-images/image8.png "ファイルが AndroidAsset ビルド アクションを使用することを確認してください。")
-
 
 1. レベルの iOS フォルダーに新しい .tmx ファイルを追加します。 元の場所からファイルをリンクし、使用していることを確認してください、 **BundleResource**ビルド アクション。
 
-
     ![](cointime-images/image9.png "元の場所からファイルをリンクし、BundleResource ビルド アクションを使用していることを確認してください。")
-
 
 新しいレベルはレベル 9 としてレベル選択画面に表示する (ファイル名のレベルは、0 から始まりますが、レベルのボタンが 1 から開始)。
 

@@ -1,5 +1,5 @@
 ---
-title: "認証と承認"
+title: 認証と承認
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 16cd5571a8c3b0e179046351e9996e55b040a9de
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -21,7 +21,7 @@ ASP.NET Core Id、Google、Microsoft などの外部認証プロバイダーの�
 
 ## <a name="authentication"></a>認証
 
-アプリケーションは、現在のユーザーの id を知っておく必要がある場合、認証が必要です。 ユーザーを識別するための ASP.NET Core の主要なメカニズムは、開発者によって構成されているデータ ストアにユーザー情報を格納する ASP.NET Core Id メンバーシップ システムです。 通常、このデータ ストアに EntityFramework ストアでは、Azure ストレージ、DocumentDB の場合、またはその他の場所に id 情報を格納するカスタム ストアまたはサードパーティ製パッケージを利用できますが、します。
+アプリケーションは、現在のユーザーの id を知っておく必要がある場合、認証が必要です。 ユーザーを識別するための ASP.NET Core の主要なメカニズムは、開発者によって構成されているデータ ストアにユーザー情報を格納する ASP.NET Core Id メンバーシップ システムです。 通常、このデータ ストアに EntityFramework ストアでは、Azure ストレージ、Azure Cosmos DB、またはその他の場所に id 情報を格納するカスタム ストアまたはサードパーティ製パッケージを利用できますが、します。
 
 ローカル ユーザーのデータ ストアを使用する認証シナリオとの間 (で ASP.NET MVC web アプリケーションで一般的な) の cookie を使用して要求の id 情報を保持する、ASP.NET Core Id は適切なソリューションです。 ただし、cookie は常に永続化して、データの送信の通常の方法 たとえば、モバイル アプリからアクセスされる rest ベースのエンドポイントを公開する ASP.NET Core web アプリケーションはこのシナリオでは cookie を使用することはできませんのでベアラー トークンの認証を使用する通常必要があります。 ただし、ベアラー トークン簡単に取得して、モバイル アプリからの web 要求の承認ヘッダーに含まれます。
 

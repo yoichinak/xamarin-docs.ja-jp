@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル - バック グラウンドの場所を使用します。"
+title: チュートリアル - バック グラウンドの場所を使用します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: efdabc5450b186c89785ee3cb19a3decdd6c2064
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="walkthrough---using-background-location"></a>チュートリアル - バック グラウンドの場所を使用します。
 
@@ -28,7 +28,6 @@ ms.lasthandoff: 03/22/2018
 
     ソリューション エクスプ ローラーで、をダブルクリックして、 **Info.plist**ファイルを開くと、一覧の一番下までスクロールします。 両方で、チェックを配置、**バック グラウンド モードを有効にする**と**場所の更新**チェック ボックスをオンします。
 
-
     Mac 用 Visual Studio のように表示されます。
 
     [![](location-walkthrough-images/image7.png "バック グラウンド モードを有効にして、場所の更新プログラムのチェック ボックスの両方でチェック ボックスをオンします。")](location-walkthrough-images/image7.png#lightbox)
@@ -38,7 +37,7 @@ ms.lasthandoff: 03/22/2018
     ```xml
     <key>UIBackgroundModes</key>
     <array>
-        <string>location</string>
+      <string>location</string>
     </array>
     ```
 

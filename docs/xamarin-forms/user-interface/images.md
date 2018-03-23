@@ -1,6 +1,6 @@
 ---
-title: "イメージ"
-description: "イメージは、Xamarin.Forms を使用したプラットフォーム間で共有することができます、具体的には、各プラットフォーム用に読み込むことができる、または表示をダウンロードすることができます。"
+title: イメージ
+description: イメージは、Xamarin.Forms を使用したプラットフォーム間で共有することができます、具体的には、各プラットフォーム用に読み込むことができる、または表示をダウンロードすることができます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b2cc302cf45527319bb22a4942290e0b0ac414d7
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="images"></a>イメージ
 
@@ -24,7 +24,7 @@ _イメージは、Xamarin.Forms を使用したプラットフォーム間で�
 
 このドキュメントでは、次のトピックについて説明します。
 
-- [ **ローカル イメージ**](#Local_Images) -iOS Retina または Android の高 DPI バージョンの画像のようなネイティブの解像度の解決を含め、アプリケーション付属のイメージを表示します。
+- [ **ローカル イメージ**](#Local_Images) -iOS Retina、Android または UWP 高 DPI のバージョンの画像のようなネイティブの解像度の解決を含め、アプリケーション付属のイメージを表示します。
 - [ **埋め込み画像**](#Embedded_Images) -アセンブリ リソースとして埋め込まれた画像を表示します。
 - [ **イメージをダウンロード**](#Downloading_Images) - ダウンロードし、イメージを表示します。
 - [ **アイコンとスプラッシュ スクリーン**](#Icons_and_splashscreens) -プラットフォーム固有のアイコンとスタートアップ イメージ。
@@ -94,15 +94,17 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>ネイティブの解像度 (Retina と高 DPI)
 
-IOS と Android プラットフォームの両方には、別の画像の解像度、オペレーティング システムが実行時に、デバイスの機能に基づく適切なイメージを選択のサポートが含まれます。 Xamarin.Forms は、場合は、ファイルが正しくという名前し、プロジェクト内に別の解像度を自動的にサポートするために、ローカルのイメージを読み込むためのネイティブ プラットフォームの Api を使用します。
+iOS、Android、Windows Phone、および UWP には、別の画像の解像度、オペレーティング システムが実行時に、デバイスの機能に基づく適切なイメージを選択のサポートが含まれます。 Xamarin.Forms は、場合は、ファイルが正しくという名前し、プロジェクト内に別の解像度を自動的にサポートするために、ローカルのイメージを読み込むためのネイティブ プラットフォームの Api を使用します。
 
 IOS 9 以降のイメージを管理することをお勧め適切な資産カタログ イメージ セットに必要な各解像度のイメージのドラッグを開始します。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
 
-IOS 9 の場合は前に、retina バージョンのイメージを配置する可能性があります、**リソース**フォルダー - 2 と 3 回の解像度、  **@2x** または **@3x** (ファイル拡張子の前にファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
+IOS 9 の場合は前に、retina バージョンのイメージを配置する可能性があります、**リソース**フォルダー - 2 と 3 回の解像度、 **@2x**または**@3x**(ファイル拡張子の前にファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
 
 Android の代替解像度のイメージを配置する必要があります[特別にという名前のディレクトリ](http://developer.android.com/guide/practices/screens_support.html)Android プロジェクトで、次のスクリーン ショットに示すようにします。
 
 [![Android の複数の解像度のイメージの場所](images-images/xs-highdpisolution-sml.png "Android の複数の解像度のイメージの場所")](images-images/xs-highdpisolution.png#lightbox "Android の複数の解像度のイメージの場所")
+
+UWP と Windows Phone のイメージ ファイル名[を付ける`.scale-xxx`ファイル拡張子の前に](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ここで、`xxx`の拡大/縮小すると、資産などの割合をパーセント**myimage.scale 200.png**. コードまたは XAML スケール修飾子を指定せず、たとえばだけにイメージを参照できます**myimage.png**です。 プラットフォームでは、ディスプレイの現在の DPI に基づく最も近い適切な資産のスケールを選択します。
 
 ### <a name="additional-controls-that-display-images"></a>その他のコントロール イメージを表示します。
 
@@ -168,7 +170,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 組み込み型コンバーターが存在しないため`string`に`ResourceImageSource`、これらの種類のイメージは XAML でネイティブに読み込むことができません。 単純なカスタム XAML マークアップ拡張機能を記述してを使用してイメージを読み込む代わりに、**リソース ID** XAML で指定します。
 
 ```csharp
-[ContentProperty ("Source")]
+[ContentProperty (nameof(Source))]
 public class ImageResourceExtension : IMarkupExtension
 {
  public string Source { get; set; }
@@ -179,6 +181,7 @@ public class ImageResourceExtension : IMarkupExtension
    {
      return null;
    }
+   
    // Do your translation lookup here, using whatever method you require
    var imageSource = ImageSource.FromResource(Source);
 

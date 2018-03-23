@@ -1,6 +1,6 @@
 ---
-title: "Azure Cosmos DB ドキュメント データベースとユーザーの認証"
-description: "Azure の Cosmos DB ドキュメント データベースは、パーティションのコレクションは、無制限のストレージとスループットをサポートしながら複数のサーバーとは、パーティションにまたがることができますをサポートします。 この記事では、ユーザーは、Xamarin.Forms アプリケーションで、各自のドキュメントのみアクセスできるようにパーティション分割のコレクションとアクセス制御を結合する方法について説明します。"
+title: Azure Cosmos DB ドキュメント データベースとユーザーの認証
+description: Azure の Cosmos DB ドキュメント データベースは、パーティションのコレクションは、無制限のストレージとスループットをサポートしながら複数のサーバーとは、パーティションにまたがることができますをサポートします。 この記事では、ユーザーは、Xamarin.Forms アプリケーションで、各自のドキュメントのみアクセスできるようにパーティション分割のコレクションとアクセス制御を結合する方法について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Azure Cosmos DB ドキュメント データベースとユーザーの認証
 
@@ -22,12 +22,12 @@ _Azure の Cosmos DB ドキュメント データベースは、パーティシ�
 
 パーティションのコレクションを作成するときに、パーティション キーを指定する必要があり、同じパーティション キーを持つドキュメントは、同じパーティションに格納されます。 そのため、パーティション キーとして、ユーザーの id を指定することになりますが、そのユーザーのドキュメントを保存してだけをパーティション分割されたコレクション。 これもにより、ユーザーの数として Azure Cosmos DB ドキュメント データベースをスケール項目が増加します。
 
-任意のコレクションにアクセスを許可する必要があり、DocumentDB API アクセス制御モデル アクセスの構成要素の 2 種類の定義します。
+任意のコレクションにアクセスを許可する必要があり、SQL API のアクセス制御モデル アクセスの構成要素の 2 種類の定義します。
 
 - **マスター _ キー** Cosmos DB アカウント内のすべてのリソースへの完全な管理者のアクセスを有効にして、Cosmos DB アカウントの作成時に作成されます。
 - **リソース トークン**データベースのユーザーと、ユーザーをコレクションやドキュメントなど、特定の Cosmos DB リソースに対して持っているアクセス許可の間のリレーションシップをキャプチャします。
 
-マスター _ キーを公開するには、悪意のあるまたは過失による使用の可能性を Cosmos DB アカウントが表示されます。 ただし、Cosmos DB リソース トークンは、クライアントを読み取り、書き込み、および付与されたアクセス許可に従って Cosmos DB アカウント内の特定のリソースを削除できるように安全なメカニズムを提供します。
+マスター _ キーを公開するには、悪意のあるまたは過失による使用の可能性を Cosmos DB アカウントが表示されます。 ただし、Azure Cosmos DB リソース トークンは、クライアントを読み取り、書き込み、および付与されたアクセス許可に従って Azure Cosmos DB アカウント内の特定のリソースを削除できるように安全なメカニズムを提供します。
 
 要求する一般的な方法は、生成、およびモバイル アプリケーションにリソース トークンを提供するは、リソース トークン ブローカーを使用してです。 次の図は、サンプル アプリケーションでリソース トークン ブローカーを使用して、ドキュメント データベースのデータへのアクセスを管理する方法の大まかな概要を示しています。
 
@@ -44,7 +44,7 @@ _Azure の Cosmos DB ドキュメント データベースは、パーティシ�
 > [!NOTE]
 > リソース トークンの期限が切れると、データベースに要求する後続のドキュメントには、401 unauthorized 例外が表示されます。 この時点では、Xamarin.Forms アプリケーションは、id を再度確立し、新しいリソース トークンを要求する必要があります。
 
-Cosmos DB がパーティション分割の詳細については、次を参照してください。[ハウツー パーティションおよび Azure Cosmos DB のスケール](/azure/cosmos-db/partition-data/)です。 Cosmos DB アクセス制御の詳細については、次を参照してください。 [Cosmos DB のデータへのアクセスをセキュリティで保護する](/azure/cosmos-db/secure-access-to-data/)と[DocumentDB API のアクセス制御](/rest/api/documentdb/access-control-on-documentdb-resources/)です。
+Cosmos DB がパーティション分割の詳細については、次を参照してください。[ハウツー パーティションおよび Azure Cosmos DB のスケール](/azure/cosmos-db/partition-data/)です。 Cosmos DB アクセス制御の詳細については、次を参照してください。 [Cosmos DB のデータへのアクセスをセキュリティで保護する](/azure/cosmos-db/secure-access-to-data/)と[SQL API のアクセス制御](/rest/api/documentdb/access-control-on-documentdb-resources/)です。
 
 ## <a name="setup"></a>セットアップ
 
@@ -58,11 +58,11 @@ Xamarin.Forms アプリケーション リソース トークンのブローカ�
 
 <a name="cosmosdb_configuration" />
 
-### <a name="cosmos-db-configuration"></a>Cosmos DB 構成
+### <a name="azure-cosmos-db-configuration"></a>Azure Cosmos DB 構成
 
 アクセス制御が使用する Cosmos DB アカウントを作成するプロセスは次のとおりです。
 
-1. Cosmos DB アカウントを作成します。 詳細については、次を参照してください。 [Cosmos DB アカウントを作成する](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account)です。
+1. Cosmos DB アカウントを作成します。 詳細については、次を参照してください。 [Cosmos DB の Azure アカウントを作成する](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)です。
 1. Cosmos DB アカウントでは、という名前の新しいコレクションを作成`UserItems`のパーティション キーを指定する`/userid`です。
 
 <a name="app_service_configuration" />
@@ -269,10 +269,10 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 ## <a name="related-links"></a>関連リンク
 
-- [TodoDocumentDBAuth (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+- [Todo Azure Cosmos DB Auth (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
 - [Azure Cosmos DB ドキュメント データベースの使用](~/xamarin-forms/data-cloud/cosmosdb/consuming.md)
 - [Azure Cosmos DB のデータへのアクセスをセキュリティで保護します。](/azure/cosmos-db/secure-access-to-data/)
-- [DocumentDB API のアクセス制御](/rest/api/documentdb/access-control-on-documentdb-resources/)です。
+- [SQL API のアクセス制御](/rest/api/documentdb/access-control-on-documentdb-resources/)です。
 - [パーティションと Azure Cosmos DB にスケールする方法](/azure/cosmos-db/partition-data/)
-- [DocumentDB クライアント ライブラリ](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure Cosmos DB クライアント ライブラリ](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)

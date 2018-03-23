@@ -1,18 +1,18 @@
 ---
-title: "データとクラウド サービス"
-description: "Xamarin.Forms アプリケーションは、さまざまなテクノロジを使用して実装されている web サービスを利用できるし、このガイドはこれを行う方法を確認します。"
+title: データとクラウド サービス
+description: Xamarin.Forms アプリケーションは、さまざまなテクノロジを使用して実装されている web サービスを利用できるし、このガイドはこれを行う方法を確認します。
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: "0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß"
+ms.assetid: 0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 28007ee702c66f3b819430b544465d3470d571d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 54313c3e8808ee9e563d6b55e3bf034c543a48e5
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="data--cloud-services"></a>データとクラウド サービス
 
@@ -50,7 +50,7 @@ Xamarin プラットフォームのクロスプラット フォームの web サ
 
 ## <a name="storing-data-in-a-document-databasecosmosdbindexmd"></a>[ドキュメント データベースにデータを格納する](cosmosdb/index.md)
 
-このガイドでは、Xamarin.Forms アプリケーションを Azure Cosmos DB ドキュメント データベースを統合する Microsoft Azure DocumentDB クライアント ライブラリを使用する方法を示します。 Azure Cosmos DB ドキュメント データベースは、JSON ドキュメントでは、シームレスなスケールとグローバルのレプリケーションを必要とするアプリケーションのデータベースの高速、高可用性、スケーラブルなサービスを提供する低待機時間のアクセスを提供する NoSQL データベースです。
+このガイドでは、Azure Cosmos DB 標準 .NET クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法を示します。 Azure Cosmos DB ドキュメント データベースは、JSON ドキュメントでは、シームレスなスケールとグローバルのレプリケーションを必要とするアプリケーションのデータベースの高速、高可用性、スケーラブルなサービスを提供する低待機時間のアクセスを提供する NoSQL データベースです。
 
 ## <a name="adding-intelligence-with-cognitive-servicescognitive-servicesindexmd"></a>[Cognitive Services とインテリジェンスの追加](cognitive-services/index.md)
 

@@ -1,6 +1,6 @@
 ---
-title: "Azure Search を使用したデータを検索"
-description: "Azure Search は、インデックスの作成とクエリ機能によりアップロードされたデータを提供するクラウド サービスです。 これは、インフラストラクチャの要件と従来アプリケーションでの検索機能の実装に関連付けられている検索アルゴリズムの複雑さを削除します。 この記事では、Microsoft Azure Search のライブラリを使用して、Azure Search を Xamarin.Forms アプリケーションに統合する方法を示します。"
+title: Azure Search を使用したデータを検索
+description: Azure Search は、インデックスの作成とクエリ機能によりアップロードされたデータを提供するクラウド サービスです。 これは、インフラストラクチャの要件と従来アプリケーションでの検索機能の実装に関連付けられている検索アルゴリズムの複雑さを削除します。 この記事では、Microsoft Azure Search のライブラリを使用して、Azure Search を Xamarin.Forms アプリケーションに統合する方法を示します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: bf6b9f8aaa07e934a1e707b85ecaa24e4f3d99bf
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 24db1404e218eea86356f9bbc004e7d5850c2e7a
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="searching-data-with-azure-search"></a>Azure Search を使用したデータを検索
 
@@ -119,7 +119,7 @@ searchClient.Indexes.Delete(Constants.Index);
 
 インデックスを定義した後は、2 つのモデルのいずれかを使用してデータをアップロードすることができます。
 
-- **プル モデル**– Azure DocumentDB、Azure SQL Database、Azure Blob ストレージからデータが取り込まれ定期的にまたは SQL Server が Azure の仮想マシンでホストされています。
+- **プル モデル**– Azure Cosmos DB、Azure SQL Database、Azure Blob ストレージからデータが取り込まれ定期的にまたは SQL Server が Azure の仮想マシンでホストされています。
 - **プッシュ モデル**– データをプログラムによって、インデックスに送信します。 これは、この記事で採用されたモデルです。
 
 A`SearchIndexClient`インデックスにデータをインポートするインスタンスを作成する必要があります。 これには、呼び出すことによって、`SearchServiceClient.Indexes.GetClient`メソッドを次のコード例で示したようにします。
