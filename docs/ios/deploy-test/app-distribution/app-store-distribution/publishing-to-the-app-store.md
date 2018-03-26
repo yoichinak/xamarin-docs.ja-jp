@@ -1,6 +1,6 @@
 ---
-title: "App Store への発行"
-description: "この記事では、App Store から配布する Xamarin.iOS アプリケーションの構成、ビルド、発行の方法を示します。 これには、アプリケーションの配布準備の方法、Apple のツールを使用して審査のためにアプリケーションを提出する方法、最後に App Store にアプリケーションを発行する方法について説明するステップ バイ ステップ ガイドが含まれます。"
+title: App Store への発行
+description: この記事では、App Store から配布する Xamarin.iOS アプリケーションの構成、ビルド、発行の方法を示します。 これには、アプリケーションの配布準備の方法、Apple のツールを使用して審査のためにアプリケーションを提出する方法、最後に App Store にアプリケーションを発行する方法について説明するステップ バイ ステップ ガイドが含まれます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>App Store への発行
 
@@ -185,7 +185,7 @@ iOS では*プロビジョニング プロファイル*を使用して、特定�
 
 
 > [!NOTE]
-> 注: 古い _App Store_ と "_アドホック_" の構成がすべての Visual Studio for Mac テンプレート プロジェクトから削除されましたが、古いプロジェクトにまだこれらの構成が含まれている場合があります。 その場合は、引き続き、上記の手順 1 で **App Store とデバイス**の構成を使用できます。
+> 古い _App Store_ と "_アドホック_" の構成がすべての Visual Studio for Mac テンプレート プロジェクトから削除されましたが、古いプロジェクトにまだこれらの構成が含まれている場合があります。 その場合は、引き続き、上記の手順 1 で **App Store とデバイス**の構成を使用できます。
 
 ### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
@@ -309,7 +309,7 @@ xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/B
 ## <a name="submitting-your-app-to-apple"></a>Apple へのアプリの提出
 
 > [!NOTE]
-> 注: Apple では最近 iOS アプリケーションの検証プロセスが変更されたため、IPA に `iTunesMetadata.plist` が含まれるアプリは却下される可能性があります。 `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"` というエラーが発生した場合は、[ここ](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)に示されている回避策で問題が解決されるはずです。
+> Apple では最近 iOS アプリケーションの検証プロセスが変更されたため、IPA に `iTunesMetadata.plist` が含まれるアプリは却下される可能性があります。 `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"` というエラーが発生した場合は、[ここ](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)に示されている回避策で問題が解決されるはずです。
 
 配布ビルドが完了したら、審査のために Apple に iOS アプリケーションを提出し、App Store でリリースできます。
 

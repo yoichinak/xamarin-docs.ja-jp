@@ -1,6 +1,6 @@
 ---
-title: "Mac への接続"
-description: "Xamarin.iOS for Visual Studio を使用すると、開発者は Visual Studio IDE を使って、Windows コンピューター上で iOS アプリケーションの作成、ビルド、デバッグを行うことができます。 このガイドでは、Xamarin.iOS for Visual Studio で用意されている機能と、Mac ビルド ホストへの接続を確立する方法について説明します。"
+title: Mac への接続
+description: Xamarin.iOS for Visual Studio を使用すると、開発者は Visual Studio IDE を使って、Windows コンピューター上で iOS アプリケーションの作成、ビルド、デバッグを行うことができます。 このガイドでは、Xamarin.iOS for Visual Studio で用意されている機能と、Mac ビルド ホストへの接続を確立する方法について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4f7b55fa859473e84298151bc08878bc2161192
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connecting-to-the-mac"></a>Mac への接続
 
@@ -39,7 +39,7 @@ Mac への接続は、ブローカーによって制御される機能の異な�
 [![iOS 開発ワークフロー](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio は、実際には、別の MSBuild プロセスを開始してプロジェクトをビルドします。 このプロセスは、Mac への新しい接続を作成します。つまり、Visual Studio がビルドを行うとき、実際には Windows から Mac に 2 つの SSH 接続が存在します。 [コマンド ライン](#commandline)からのビルドでは、作成される MSBuild プロセスは 1 つだけです。 図をわかりやすくするため、すべての接続は単に 1 つの矢印で表されています。
+> Visual Studio は、実際には、別の MSBuild プロセスを開始してプロジェクトをビルドします。 このプロセスは、Mac への新しい接続を作成します。つまり、Visual Studio がビルドを行うとき、実際には Windows から Mac に 2 つの SSH 接続が存在します。 [コマンド ライン](#commandline)からのビルドでは、作成される MSBuild プロセスは 1 つだけです。 図をわかりやすくするため、すべての接続は単に 1 つの矢印で表されています。
 
 ## <a name="requirements"></a>必要条件
 
@@ -53,7 +53,7 @@ Xamarin.iOS for Visual Studio は驚きの機能を実行します。これに�
 #### <a name="compatibility"></a>互換性
 
 > [!IMPORTANT]
->  Windows マシンで使用する Xamarin.iOS のバージョンは、接続している Mac と同じバージョンである必要があります。 これは、次の方法で確認できます。                                                    
+> Windows マシンで使用する Xamarin.iOS のバージョンは、接続している Mac と同じバージョンである必要があります。 これは、次の方法で確認できます。                                                    
 >                                                                                                                 
 > - **Visual Studio 2015 以前の場合**: Visual Studio for Mac と同じ[更新チャネル](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/)を使用していることを確認します。
 >                                                                                                                 
@@ -113,7 +113,7 @@ iOS ツール バー:
 エージェントはこれらの資格情報を使用して、Mac への新しい SSH 接続を作成します。 成功すると、SSH キーが作成され、Mac の `authorized_keys` ファイルに[登録](#commandline)されます。 後続の接続で、エージェントは、最後に接続された既知のビルド ホストに接続するために、そのユーザー名とキー ファイルを使用します。
 
 > [!NOTE]
->  **注:**資格情報を入力するときは、_フル ネーム_ではなく、_ユーザー名_を使用する必要があります。  ターミナルで `whoami` コマンドを使用して、ユーザー名を見つけることができます。  たとえば、下のスクリーンショットでは、アカウント名が **Amy Burns** ではなく **amyb** になります。
+> 資格情報を入力するときは、"_フル ネーム_" ではなく、"_ユーザー名_" を使用する必要があります。  ターミナルで `whoami` コマンドを使用して、ユーザー名を見つけることができます。  たとえば、下のスクリーンショットでは、アカウント名が **Amy Burns** ではなく **amyb** になります。
 >
 > ![ターミナル アプリでのユーザー名の検索](images/image5.png)
 

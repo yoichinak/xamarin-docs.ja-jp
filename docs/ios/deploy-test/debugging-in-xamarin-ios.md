@@ -1,6 +1,6 @@
 ---
-title: "デバッグ"
-description: "Xamarin.iOS アプリケーションは Visual Studio for Mac や Visual Studio に内蔵されているデバッガーでデバッグできます。"
+title: デバッグ
+description: Xamarin.iOS アプリケーションは Visual Studio for Mac や Visual Studio に内蔵されているデバッガーでデバッグできます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 18f9814941c4cd7d2719f23b6102361f013ba8a9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a449d692a2761f59135930d40ad3708d6ef2e9b9
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="debugging"></a>デバッグ
 
@@ -22,7 +22,7 @@ C# やその他の管理対象言語コードのデバッグには、Visual Stud
 
 
 > [!NOTE]
-> **重要:** デバッグ モードでアプリケーションをコンパイルすると、Xamarin.iOS は動作が遅く、大容量のアプリケーションを生成します。すべてのコード行をインストルメント化しなければならないためです。 リリース前に、リリース ビルドを行ってください。
+> デバッグ モードでアプリケーションをコンパイルすると、Xamarin.iOS は動作が遅く、大容量のアプリケーションを生成します。すべてのコード行をインストルメント化しなければならないためです。 リリース前に、リリース ビルドを行ってください。
 
 Xamarin.iOS デバッガーは IDE に統合されており、開発者はシミュレーターまたはデバイスで、Xamarin.iOS が対応している管理対象言語でビルドされた Xamarin.iOS アプリケーションをデバッグできます。
 

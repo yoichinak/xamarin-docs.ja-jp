@@ -6,11 +6,11 @@ ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b1b61e7ce1bae413f132cfe1e6c051a53b786f98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bd9be12ee1d67c7c071cf8fcfb49b4d888258dae
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="mtouch"></a>mtouch
 
@@ -24,6 +24,22 @@ iPhone アプリケーションはアプリケーション バンドルとして
 
 [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) のマニュアル ページをご覧ください。mtouch ツールのあらゆる利用方法が紹介されています。
 
+## <a name="installation"></a>インストール
+
+Mac では、`mtouch` は Xamarin.iOS にバンドルされています。 次のディレクトリにあります。
+
+**/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**
+
+`mtouch` を使いやすくするには、その親ディレクトリをシステムの `PATH` 環境変数に追加します。  
+
+たとえば、Bash でこれを行うには、**~/.bash_profile** ファイルの末尾に次の行を追加します。
+
+```bash
+export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
+```
+
+> [!WARNING]
+> `mtouch` を使う場合、**/Developer/MonoTouch/usr/bin** (**/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin** を示すシンボリック リンク) が存在することに依存しないでください。 このシンボリック リンクは、**/Library/Frameworks/...** にインストールされなかった古い MonoTouch リリースとの互換性を維持するためにのみ存在し、将来のリリースでは存在しなくなる可能性があります。
 
 ## <a name="building"></a>ビルド
 

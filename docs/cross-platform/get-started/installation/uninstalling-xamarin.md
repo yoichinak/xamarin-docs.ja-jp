@@ -1,6 +1,6 @@
 ---
-title: "Xamarin のアンインストール"
-description: "コンピューターから Xamarin 製品をアンインストールする"
+title: Xamarin のアンインストール
+description: コンピューターから Xamarin 製品をアンインストールする
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 9b7738736995835ebb6da68d32bdfbec868e73cc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2c2ba84167924916c3bec27379d33c47e8dab360
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="uninstalling-xamarin"></a>Xamarin のアンインストール
 
@@ -69,13 +69,14 @@ rm -rf ~/Library/XamarinStudio-*
 Mono は Microsoft .NET Framework のオープン ソースの実装であり、すべての Xamarin 製品 (Xamarin.iOS、Xamarin.Android、Xamarin.Mac) によって、C# でこれらのプラットフォームの開発を可能にするために使われています。
 
 > [!IMPORTANT]
-> 注: Xamarin 以外にも Mono を使うアプリケーションがあります (Unity など)。 Mono をアンインストールする前に、Mono に依存するアプリケーションが他にないことを確認してください。
+> Xamarin 以外にも Mono を使うアプリケーションがあります (Unity など)。 Mono をアンインストールする前に、Mono に依存するアプリケーションが他にないことを確認してください。
 
 Mono Framework をコンピューターから削除するには、ターミナルで次のコマンドを実行します。
 
 ```bash
 sudo rm -rf /Library/Frameworks/Mono.framework
 sudo pkgutil --forget com.xamarin.mono-MDK.pkg
+sudo rm /etc/paths.d/mono-commands
 ```
 
 <a name="uninstallandroid" />
@@ -257,7 +258,7 @@ Visual Studio 2017 を完全にアンインストールするには、**[起動]
 [![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Visual Studio インストーラーを完全にアンインストールします")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
-> **警告:** Visual Studio の 2 つ (以上) のインスタンスを side-by-side (SxS) でインストールしている場合 (リリース バージョンとプレビュー バージョンなど)、1 つのインスタンスをアンインストールすると、次のような他の Visual Studio インスタンスから一部の Xamarin の機能が削除される可能性があります。
+> Visual Studio の 2 つ (以上) のインスタンスを side-by-side (SxS) でインストールしている場合 (リリース バージョンとプレビュー バージョンなど)、1 つのインスタンスをアンインストールすると、次のような他の Visual Studio インスタンスから一部の Xamarin の機能が削除される可能性があります。
 >
 > - Xamarin Profiler
 > - Xamarin Workbooks/インスペクター

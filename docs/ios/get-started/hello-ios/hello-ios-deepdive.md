@@ -1,6 +1,6 @@
 ---
-title: "Hello, iOS: 詳細説明"
-description: "この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して基本的な Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について理解を深めます。 ガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順を紹介します。"
+title: 'Hello, iOS: 詳細説明'
+description: この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して基本的な Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について理解を深めます。 ガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順を紹介します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 500c3d1c6f38427a921097a0c3104254ec5cb263
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS の詳細説明
 
@@ -306,7 +306,7 @@ public partial class ViewController : UIViewController
 これで `ViewController` は、ストーリーボードでこのビュー コントローラーに関連付けられているコンテンツ ビュー階層の相互作用を実行します。 次に、ビュー ライフサイクルと呼ばれるプロセスを紹介することで、ビューの管理でのビュー コントローラーの役割について説明します。
 
 > [!NOTE]
-> **注:** ユーザーの介入を必要としない表示専用の画面の場合は、**Properties Pad** で **[Class]** プロパティを空白のままにすることができます。 これにより、`UIViewController` の既定の実装としてビュー コントローラーのバッキング クラスを設定します。これは、カスタム コードを追加する予定がない場合に適しています。
+> ユーザーの介入を必要としない表示専用の画面の場合は、**Properties Pad** で **[Class]** プロパティを空白のままにすることができます。 これにより、`UIViewController` の既定の実装としてビュー コントローラーのバッキング クラスを設定します。これは、カスタム コードを追加する予定がない場合に適しています。
 
 ### <a name="view-lifecycle"></a>ビュー ライフサイクル
 
@@ -416,7 +416,7 @@ iOS シミュレーターは、アプリケーションをテストする簡単�
 デバイスは、プロビジョニングに時間がかかり、Apple 開発者アカウントが必要です。 [デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md) ガイドでは、開発用デバイスを準備する詳細な手順を説明しています。
 
 > [!NOTE]
-> **注:** 現時点では、Apple の要件により、デバイスまたはシミュレーターのコードをビルドするために、開発証明書または "_署名 ID_" を用意する必要があります。 [デバイス プロビジョニング ガイド](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)の手順に従ってこれを設定します。
+> 現時点では、Apple の要件により、デバイスまたはシミュレーターのコードをビルドするために、開発証明書または "_署名 ID_" を用意する必要があります。 [デバイス プロビジョニング ガイド](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)の手順に従ってこれを設定します。
 
 デバイスがプロビジョニングされたら、プラグインすることで展開し、次のスクリーンショットに示すようにビルド ツールバーでターゲットを iOS デバイスに変更して、**[Start]** (**Play**) を押します。
 

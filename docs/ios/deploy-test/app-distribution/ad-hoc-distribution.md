@@ -1,6 +1,6 @@
 ---
-title: "アドホック配布"
-description: "このドキュメントでは、幅広い層の人々に主に Xamarin.iOS アプリケーションのテストのために使用されるアドホック配布手法の概要を示します。"
+title: アドホック配布
+description: このドキュメントでは、幅広い層の人々に主に Xamarin.iOS アプリケーションのテストのために使用されるアドホック配布手法の概要を示します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ad-hoc-distribution"></a>アドホック配布
 
@@ -39,7 +39,7 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 次のセクションでは、配布証明書とプロビジョニング プロファイルを使用して設定する方法について説明します。
 
 > [!NOTE]
->  注: 配布証明書とプロビジョニング プロファイルを作成できるのは、チーム エージェントと管理者のみです。
+> 配布証明書とプロビジョニング プロファイルを作成できるのは、チーム エージェントと管理者のみです。
 
 <a name="createcertificate" />
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ee612d4a8982a6ae505b4d329b9abbc84624a1e0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 66f4dcf14cd179795e9a23bccabe4289d74c7c5b
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -36,7 +36,7 @@ Xamarin.Android 4.6 以降、*環境ファイル* をプロジェクトに追加
 
 *キー* が大文字で始まる場合、*キー* は環境変数として扱われます。**setenv** (3) は、プロセスの起動時に環境変数を指定された*値*に設定するために使用されます。
 
-*キー*が小文字で始まる場合、*キー*は Android のシステム プロパティとして扱われます。*値*は*既定値*です。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ サーバーから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値を上書きできるようにするためです。
+"*キー*" が小文字で始まる場合、"*キー*" は Android のシステム プロパティとして扱われます。"*値*" は "*既定値*" です。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値を上書きできるようにするためです。
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android の環境変数
 
@@ -45,9 +45,9 @@ Xamarin.Android は `XA_HTTP_CLIENT_HANDLER_TYPE` 変数をサポートしてい
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-[HttpMessageHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagehandler(v=vs.118).aspx) から継承する必要があり、[`HttpClient()` 既定コンストラクター](https://msdn.microsoft.com/en-us/library/hh138077(v=vs.118).aspx)から構築されるアセンブリ修飾型です。
+[HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) から継承する必要があり、[`HttpClient()` 既定コンストラクター](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor)から構築されるアセンブリ修飾型です。
 
-Xamarin.Android 6.1 では、この環境変数は既定では設定されておらず、[HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler(v=vs.118).aspx) が使用されます。
+Xamarin.Android 6.1 では、この環境変数は既定では設定されておらず、[HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) が使用されます。
 
 代わりに、ネットワーク アクセスに [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) を使用する値 `Xamarin.Android.Net.AndroidClientHandler` を指定することもできます。この設定で、Android がサポートしている場合に TLS 1.2 の使用が*許可されることがあります*。
 

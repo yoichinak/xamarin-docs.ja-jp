@@ -1,5 +1,5 @@
 ---
-title: "デバッグ可能な属性"
+title: デバッグ可能な属性
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1ABF90F1-6A70-45AE-9271-D90DC42807D0
@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 65037029d01d499421fd825f72347ae1bebd9966
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: fe516a9780b8b1cdc478a49fe3b6963097649a80
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="debuggable-attribute"></a>デバッグ可能な属性
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 03/12/2018
 Android アプリケーションで JDWP を `android:debuggable` 属性の値にすることができます。 Xamarin.Android では、この属性を設定する次の方法が提供されます。
 
 1.  `AndroidManifext.xml` ファイルを作成し、そこに `android:debuggable` 属性を設定する。
-1.  `[assembly: Application(Debuggable=false)]` のように、`.CS` ファイルに `ApplicationAttribute` を含める。
+2.  `[assembly: Application(Debuggable=false)]` のように、`.CS` ファイルに `ApplicationAttribute` を含める。
 
 
 `AndroidManifest.xml` と `ApplicationAttribute` の両方が存在する場合は、`AndroidManifest.xml` の内容が、`ApplicationAttribute` で指定されたものより優先されます。

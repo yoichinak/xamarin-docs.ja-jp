@@ -1,18 +1,18 @@
 ---
 title: Xamarin Android Device Manager
-description: "現在プレビュー中の Xamarin Android Device Manager は、Google の従来のデバイス マネージャーに代わるものです。 このガイドでは、Xamarin Android Device Manager を使って、Android デバイスをエミュレートする Android 仮想デバイス (AVD) を作成および構成する方法を説明します。 仮想デバイスを使うと、物理デバイスがなくてもアプリを実行してテストすることができます。"
+description: 現在プレビュー中の Xamarin Android Device Manager は、Google の従来のデバイス マネージャーに代わるものです。 このガイドでは、Xamarin Android Device Manager を使って、Android デバイスをエミュレートする Android 仮想デバイス (AVD) を作成および構成する方法を説明します。 仮想デバイスを使うと、物理デバイスがなくてもアプリを実行してテストすることができます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: c38a0a7f6897cd90f81c92348280539b33524b9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/20/2018
+ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android Device Manager
 
@@ -308,7 +308,8 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 
 <a name="device-edit" />
- 
+
+
 ### <a name="edit-device"></a>デバイスの編集
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -415,6 +416,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 <a name="properties" />
  
+
 ## <a name="profile-properties"></a>プロファイルのプロパティ
 
 **[New Device]\(新しいデバイス\)** および **[Device Edit]\(デバイスの編集\)** 画面では、最初の列に仮想デバイスのプロパティが一覧表示され、2 番目の列に各プロパティの対応する値が表示されます。 プロパティを選ぶと、そのプロパティの詳しい説明が右側に表示されます。 "*ハードウェア プロファイルのプロパティ*" および "*AVD のプロパティ*" は変更できます。
@@ -467,9 +469,9 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 ここでは、Xamarin Android Device Manager でのよくある問題とその回避策を説明します。
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="android-sdk-in-non-standard-location"></a>標準以外の場所にある Android SDK
 
@@ -501,19 +503,64 @@ SDK がこの場所にインストールされていない場合、起動時に�
 
 **user.config** をこのように変更すると、Xamarin Android Device Manager を起動できるようになります。
 
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>スナップショットによって Android Oreo の WiFi が無効になる
+
+Android Oreo 用に構成された AVD で Wi-Fi アクセスをシミュレートしている場合、スナップショットの後で AVD を再起動すると、Wi-Fi アクセスが無効になる場合があります。
+
+この問題を回避するには、次のようにします。
+
+1. Xamarin Device Manager で AVD を選びます。
+
+2. 追加のオプション メニューから、**[エクスプローラーで表示します]** をクリックします。
+
+3. **snapshots > default_boot** に移動します。
+
+4. **snapshot.pb** ファイルを削除します。
+
+    [![snapshot.pb ファイルの場所](xamarin-device-manager-images/win/36-delete-snapshot-sml.png)](xamarin-device-manager-images/win/36-delete-snapshot.png#lightbox)
+
+5. AVD を再起動します。 
+
+これらの変更を行った後は、AVD は Wi-Fi が再び機能する状態で再起動します。
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>スナップショットによって Android Oreo の WiFi が無効になる
+
+Android Oreo 用に構成された AVD で Wi-Fi アクセスをシミュレートしている場合、スナップショットの後で AVD を再起動すると、Wi-Fi アクセスが無効になる場合があります。
+
+この問題を回避するには、次のようにします。
+
+1. Xamarin Device Manager で AVD を選びます。
+
+2. 追加のオプション メニューから、**[Finder で表示します]** をクリックします。
+
+3. **snapshots > default_boot** に移動します。
+
+4. **snapshot.pb** ファイルを削除します。
+
+    [![snapshot.pb ファイルの場所](xamarin-device-manager-images/mac/36-delete-snapshot-sml.png)](xamarin-device-manager-images/mac/36-delete-snapshot.png#lightbox)
+
+5. AVD を再起動します。 
+
+これらの変更を行った後は、AVD は Wi-Fi が再び機能する状態で再起動します。
+
+-----
+
+
 ### <a name="generating-a-bug-report"></a>バグ報告の生成
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 上記のトラブルシューティングのヒントで解決できない問題が Xamarin Android Device Manager で見つかった場合は、タイトル バーを右クリックし、**[Generate Bug Report]\(バグ報告の生成\)** を選択して、バグ報告を提出してください。
 
 ![バグ報告の提出に関するメニュー項目の場所](xamarin-device-manager-images/win/35-bug-report.png)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-現在、Visual Studio for Mac の Xamarin Android Device Manager について、既知の問題および回避策はありません。 
-
-### <a name="generating-a-bug-report"></a>バグ報告の生成
-
-問題が見つかった場合は、**[ヘルプ] > [Generate Bug Report]\(バグ レポートの生成\)** をクリックしてバグ報告を提出してください。
+上記のトラブルシューティングのヒントで解決できない問題が Xamarin Android Device Manager で見つかった場合は、**[ヘルプ] > [Generate Bug Report]\(バグ報告の生成\)** をクリックして、バグ報告を提出してください。
 
 ![バグ報告の提出に関するメニュー項目の場所](xamarin-device-manager-images/mac/35-bug-report.png)
 

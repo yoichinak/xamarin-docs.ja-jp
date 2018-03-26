@@ -1,6 +1,6 @@
 ---
-title: "手動プロビジョニング"
-description: "Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、開発証明書とプロファイルの要求、アプリケーション サービスの使用、デバイスへのアプリの展開について説明します。"
+title: 手動プロビジョニング
+description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、開発証明書とプロファイルの要求、アプリケーション サービスの使用、デバイスへのアプリの展開について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-provisioning"></a>手動プロビジョニング
 
@@ -85,7 +85,7 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 -----
 
 > [!WARNING]
-> **注:** 証明書および関連付けられたキーが失われると、既存の証明書を失効させる必要があり、さらに一時的な展開のために登録されたものを含む、すべての関連するデバイスを再プロビジョニングする必要があるので、大きな問題になる可能性があります。 開発証明書を正常に設定したら、バックアップ コピーをエクスポートし、安全な場所に保管します。 これを行う方法の詳細については、Apple のドキュメントの「[Maintaining Certificates](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html)」(証明書の保守) の「Exporting and Importing Certificates and Profiles」(証明書とプロファイルのエクスポートとインポート) セクションを参照してください。
+> 証明書および関連付けられたキーが失われると、既存の証明書を失効させる必要があり、さらに一時的な展開のために登録されたものを含む、すべての関連するデバイスを再プロビジョニングする必要があるので、大きな問題になる可能性があります。 開発証明書を正常に設定したら、バックアップ コピーをエクスポートし、安全な場所に保管します。 これを行う方法の詳細については、Apple のドキュメントの「[Maintaining Certificates](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html)」(証明書の保守) の「Exporting and Importing Certificates and Profiles」(証明書とプロファイルのエクスポートとインポート) セクションを参照してください。
 
 <a name="provisioning" />
 
@@ -209,12 +209,12 @@ Apple Developer Portal で作成された証明書とプロビジョニング �
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **注:** 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio for Mac の停止と再起動が必要になる場合があります。
+> 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio for Mac の停止と再起動が必要になる場合があります。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!IMPORTANT]
-> **注:** 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio の停止と再起動が必要になる場合があります。
+> 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio の停止と再起動が必要になる場合があります。
 
 -----
 

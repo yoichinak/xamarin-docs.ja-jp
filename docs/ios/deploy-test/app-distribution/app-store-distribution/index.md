@@ -1,6 +1,6 @@
 ---
-title: "App Store 配布"
-description: "このドキュメントでは、Apple の App Store に配布するための要件について説明します。"
+title: App Store 配布
+description: このドキュメントでは、Apple の App Store に配布するための要件について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -37,7 +37,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 開発プロビジョニング プロファイルで使用したものと同じ**アプリ ID** と**デバイス**を選択できますが、まだ作成していないため、App Store にアプリを提出する際に組織を識別するための配布証明書を作成する必要があります。 配布証明書の作成手順については、以下のセクションで説明します。
 
 > [!NOTE]
->  注: 配布証明書とプロビジョニング プロファイルを作成できるのは、チーム エージェントと管理者のみです。
+> 配布証明書とプロビジョニング プロファイルを作成できるのは、チーム エージェントと管理者のみです。
 
 <a name="creatingcertificate" />
 

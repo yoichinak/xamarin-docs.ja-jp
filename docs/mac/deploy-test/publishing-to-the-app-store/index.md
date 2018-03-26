@@ -1,6 +1,6 @@
 ---
-title: "App Store への発行"
-description: "このガイドでは、Visual Studio for Mac を使用して Xamarin.Mac アプリを配置する手順について説明します。 Mac 開発者アカウントを設定する方法について説明します。コード署名用の証明書を作成する手順について説明し、Visual Studio for Mac を使用して、直接、または Mac App Store を介して配布できる Mac アプリを構築する方法を示します。"
+title: App Store への発行
+description: このガイドでは、Visual Studio for Mac を使用して Xamarin.Mac アプリを配置する手順について説明します。 Mac 開発者アカウントを設定する方法について説明します。コード署名用の証明書を作成する手順について説明し、Visual Studio for Mac を使用して、直接、または Mac App Store を介して配布できる Mac アプリを構築する方法を示します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4c7b0913d43d9db3b5414c831864dae8d0b4d61
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>App Store への発行
 
@@ -37,7 +37,7 @@ Xamarin.Mac アプリは、2 つの異なる方法で配布することができ
 状況に応じた正しい登録の種類を選択します。
 
 > [!NOTE]
-> **注**: ここで選択した内容は、開発者アカウントを構成するときに、一部の画面の表示方法に影響します。 このドキュメントの説明とスクリーンショットは、**個人**の開発者アカウントの観点から示しています。 **会社**では、いくつかのオプションは**チーム管理者**ユーザーのみが使用できます。
+> ここで選択した内容は、開発者アカウントを構成するときに、一部の画面の表示方法に影響します。 このドキュメントの説明とスクリーンショットは、**個人**の開発者アカウントの観点から示しています。 **会社**では、いくつかのオプションは**チーム管理者**ユーザーのみが使用できます。
 
 
 ### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[証明書と ID](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)

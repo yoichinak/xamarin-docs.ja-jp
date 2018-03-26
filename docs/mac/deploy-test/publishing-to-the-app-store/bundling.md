@@ -1,6 +1,6 @@
 ---
-title: "Mac App Store 用のバンドル"
-description: "このガイドでは、Mac App Store に Xamarin.Mac アプリを発行するためのバンドルの手順について説明します。"
+title: Mac App Store 用のバンドル
+description: このガイドでは、Mac App Store に Xamarin.Mac アプリを発行するためのバンドルの手順について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3f94b448539b2e4073c7d8a1092df066e484dfc
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Mac App Store 用のバンドル
 
 このセクションでは、Visual Studio for Mac を使用して、Mac App Store でリリースするためのアプリケーションを構築する基礎について説明します。 iCloud アクセスやプッシュ通知などの追加の機能によっては、この記事で扱っていない追加のセットアップが必要になる場合があります。
 
 > [!NOTE]
->  **注**: このセクションの内容を開始する前に、開発者が、Mac App Store 用にビルドするための Production プロビジョニング プロファイルを作成している必要があります。 必要なプロビジョニング プロファイルの作成方法については、このドキュメントの前の手順を参照してください。
+> このセクションの内容を開始する前に、開発者が、Mac App Store 用にビルドするための Production プロビジョニング プロファイルを作成している必要があります。 必要なプロビジョニング プロファイルの作成方法については、このドキュメントの前の手順を参照してください。
 
 ## <a name="code-signing-options"></a>コード署名のオプション
 

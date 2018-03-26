@@ -1,6 +1,6 @@
 ---
 title: Hello, iOS
-description: "この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して基本的な Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について理解を深めます。 ガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順を紹介します。"
+description: この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して基本的な Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について理解を深めます。 ガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順を紹介します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7b1d56c62fe54d5b1e196e20e1a6989b542da1be
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6a26bb42ee0abcec70d17633152dd12bd200a737
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS クイックスタート
 
@@ -90,7 +90,7 @@ Xamarin.iOS は次のセットアップで機能します。
   ![](hello-ios-quickstart-images/image8new.png "デザイン サーフェイス (中央の領域) にラベルをドラッグします")
 
   > [!NOTE]
-> **注:** **[表示] > [パッド]** の順に選択すれば、**Properties Pad** や**ツールボックス**をいつでも表示できます。
+  > **[表示] > [パッド]** の順に選択すれば、**Properties Pad** や**ツールボックス**をいつでも表示できます。
 
 9. *ドラッグ コントロール*のハンドル (コントロールを囲む円) をつかみ、ラベルを大きくします。
 
@@ -268,9 +268,8 @@ Xamarin.iOS は次のセットアップで機能します。
 
   ![](hello-ios-quickstart-images/image27new.png "[開始] を押します")
 
-
   > [!NOTE]
-> **注:** 現在のところ、Apple の要件に起因し、場合によっては、デバイスまたはシミュレーターのコードをビルドするため、開発証明書または "*署名 ID*" を用意する必要があります。 [デバイス プロビジョニング ガイド](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)の手順に従ってこれを設定します。
+  > 現在のところ、Apple の要件に起因し、場合によっては、デバイスまたはシミュレーターのコードをビルドするため、開発証明書または "*署名 ID*" を用意する必要があります。 [デバイス プロビジョニング ガイド](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)の手順に従ってこれを設定します。
 
 28. これにより、iOS シミュレーター内でアプリケーションが起動します。
 
@@ -289,7 +288,7 @@ Xamarin.iOS は次のセットアップで機能します。
 **注**: このチュートリアルでは、Windows 10 仮想マシンの Visual Studio Enterprise 2017 を使用します。 上記の要件を満たす限り、実際のセットアップはこれと異なってもかまいません。一部のスクリーンショットが実際とは異なる場合があります。
 
 > [!NOTE]
-> **このチュートリアルを進める前に**、Visual Studio から Mac に接続しておく "_必要があります_"。 iOS デザイナーとアプリケーションをビルドし、起動するために Xamarin.iOS は Apple のツールを利用するためです。 [Mac への接続](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ガイドの手順に従い、設定を始めます。
+> このチュートリアルを進める前に、Visual Studio から Mac に接続しておく必要があります。 iOS デザイナーとアプリケーションをビルドし、起動するために Xamarin.iOS は Apple のツールを利用するためです。 [Mac への接続](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ガイドの手順に従い、設定を始めます。
 
 1. **[スタート]** メニューから Visual Studio を起動します。
 
@@ -333,7 +332,7 @@ Xamarin.iOS は次のセットアップで機能します。
   ![](hello-ios-quickstart-images/vs-image10.png "ラベルの Text プロパティを "Enter a Phoneword" に設定します")
 
   > [!NOTE]
-> **注:** **[表示]** メニューに移動すれば、**[プロパティ]** や **[ツールボックス]** をいつでも表示できます。
+  > **[表示]** メニューに移動すれば、**[プロパティ]** や **[ツールボックス]** をいつでも表示できます。
 
 
 9. ツールボックス内で “テキスト フィールド” を検索し、**[ツールボックス]** の **[テキスト フィールド]** をデザイン サーフェイスにドラッグし、**[ラベル]** の下に置きます。 **テキスト フィールド**の幅が**ラベル**の幅と同じになるまで幅を調整します。
@@ -377,7 +376,7 @@ Xamarin.iOS は次のセットアップで機能します。
   ![](hello-ios-quickstart-images/vs-image19.png "「PhoneTranslator」という新しいクラスを追加します")
 
   > [!IMPORTANT]
-> アイコンに C# がある 'class' テンプレートを必ず選択してください。 それ以外を選択すると、この新しいクラスを参照できないことがあります。
+  > アイコンに C# がある 'class' テンプレートを必ず選択してください。 それ以外を選択すると、この新しいクラスを参照できないことがあります。
 
 
 17. これで、新しい C# クラスが作成されます。 テンプレート コードをすべて削除し、次のコードに置き換えます。

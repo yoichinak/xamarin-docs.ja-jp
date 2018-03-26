@@ -1,17 +1,17 @@
 ---
-title: "リリースに向けてアプリケーションを準備する"
+title: リリースに向けてアプリケーションを準備する
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/21/2018
+ms.openlocfilehash: baaa40bc89a1ca6728189563c8350f9c9f011762
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -40,13 +40,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="specify-the-application-icon"></a>アプリケーション アイコンを指定する
 
-Xamarin.Android アプリケーションそれぞれでアプリケーション アイコンを指定することを強くお勧めします。 一部のアプリケーション マーケットプレースでは、これがないと、Android アプリケーションを公開することができません。
-
-`Application` 属性の `Icon` プロパティは、Xamarin.Android プロジェクトのアプリケーション アイコンを指定するために使用されます。 この属性は、このサンプルのスニペットに示されているように、ファイル **Properties\AssemblyInfo.cs** で宣言することができます。
-
-```csharp
-[assembly: Application(Icon = "@drawable/icon")]
-```
+Xamarin.Android アプリケーションそれぞれでアプリケーション アイコンを指定することを強くお勧めします。 一部のアプリケーション マーケットプレースでは、これがないと、Android アプリケーションを公開することができません。 `Application` 属性の `Icon` プロパティは、Xamarin.Android プロジェクトのアプリケーション アイコンを指定するために使用されます。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -61,6 +55,15 @@ Visual Studio for Mac では、アプリケーション アイコンは、次の
 [![アプリケーションのアイコンを設定する](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
+
+これらの例では、`@drawable/icon` は **Resources/drawable/icon.png** にあるアイコン ファイルを示します (リソース名には **.png** 拡張子が含まれないことに注意してください)。 また、この属性は、このサンプルのスニペットに示されているように、ファイル **Properties\AssemblyInfo.cs** で宣言することができます。
+
+```csharp
+[assembly: Application(Icon = "@drawable/icon")]
+```
+
+通常、`using Android.App` は **AssemblyInfo.cs** の先頭で宣言されています (`Application` 属性の名前空間は `Android.App`)。ただし、`using` ステートメントがまだ存在しない場合は、追加する必要があります。
+
 
 <a name="Versioning" />
 

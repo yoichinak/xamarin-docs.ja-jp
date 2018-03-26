@@ -1,6 +1,6 @@
 ---
-title: "機能の使用"
-description: "アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、すべての機能に必要な設定について説明します。"
+title: 機能の使用
+description: アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、すべての機能に必要な設定について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c038aba3989046e6df062e97ae7f777ae6238ade
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-capabilities"></a>機能の使用
 
@@ -58,7 +58,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **注**: Visual Studio for Mac で追加および管理できない機能もあります。 次の一覧には、サポートされている機能が含まれています。
+> Visual Studio for Mac で追加および管理できない機能もあります。 次の一覧には、サポートされている機能が含まれています。
 >
 >* HealthKit 
 >* HomeKit 
@@ -198,7 +198,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
     ![Visual Studio for Mac プロジェクト オプション](images/image16.png)
 
 > [!IMPORTANT]
-> 注: Entitlement.plist ファイルの権利キーと、Info.plist ファイルの秘密キーの設定が必要な場合もあります。 これらの権利の詳細については、「[Working with Entitlements](~/ios/deploy-test/provisioning/entitlements.md)」 (権利の使用) を参照してください。
+> Entitlement.plist ファイルの権利キーと、Info.plist ファイルの秘密キーの設定が必要な場合もあります。 これらの権利の詳細については、「[Working with Entitlements](~/ios/deploy-test/provisioning/entitlements.md)」 (権利の使用) を参照してください。
 
 <a name="nextsteps" />
 
@@ -220,7 +220,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 -   プロビジョニング プロファイルとアプリ ID がインストールされており、アプリの **Info.plist** (Xamarin プロジェクト内にある) で構成済みのアプリ ID のいずれかが使用されていることを確認します。
 -   アプリの **Entitlements.plist** ファイル (Xamarin プロジェクト内にある) で正しいサービスが有効になっていることを確認します。
 -   適切な秘密キーが info.plist に設定されていることを確認します。
--   アプリの **[iOS バンドル署名]** で、**[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 **注:** これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では_ありません_。
+-   アプリの **[iOS バンドル署名]** で、**[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では_ありません_。
 
 <a name="summary" />
 
