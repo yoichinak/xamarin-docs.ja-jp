@@ -1,5 +1,5 @@
 ---
-title: "Objective C ライブラリのバインド"
+title: Objective C ライブラリのバインド
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 29b846453396d37adc689fe49e80299e8f35bbe2
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 3b1894555c27e368fc80cc4ebaa1f6b40446e2aa
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Objective C ライブラリのバインド
 
 Xamarin.iOS または Xamarin.Mac を処理するときは、サード パーティ製 Objective C のライブラリを使用する場合が発生する可能性があります。 ような状況では、ネイティブの Objective C ライブラリを c# バインディングを作成するのに Xamarin バインド プロジェクトを使用できます。 プロジェクトでは、C# の場合に、iOS と Mac の Api を使用する同じツールを使用します。
 
-Objective C Api をバインドする方法について説明 C Api のみをバインドする場合は、これは、標準の .NET メカニズムを使用する必要があります[P/invoke framework](http://mono-project.com/Dllimport)です。
+Objective C Api をバインドする方法について説明 C Api のみをバインドする場合は、これは、標準の .NET メカニズムを使用する必要があります[P/invoke framework](http://www.mono-project.com/docs/advanced/pinvoke/)です。
 C ライブラリを静的にリンクする方法の詳細についてで使用できる、[ネイティブ ライブラリのリンク](~/ios/platform/native-interop.md)ページ。
 
 当社ガイド 』 を参照してください[バインドの種類のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)です。

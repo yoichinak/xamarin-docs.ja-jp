@@ -1,5 +1,5 @@
 ---
-title: "ネイティブ ライブラリを参照します。"
+title: ネイティブ ライブラリを参照します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 9299d2b37825298d3defa18a9f5137e11b29f6ce
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 99e565c2268bec6d80c4976e604333cbd2f160a3
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="referencing-native-libraries"></a>ネイティブ ライブラリを参照します。
 
@@ -105,7 +105,7 @@ lipo -info /full/path/to/libraryname.a
 
 <a name="Accessing_C_Methods_from_C#" />
 
-## <a name="accessing-c-methods-from-c35"></a>C &#35; から C メソッドにアクセスします。
+## <a name="accessing-c-methods-from-c35"></a>C から C メソッドにアクセスします。&#35;
 
 2 種類がありますネイティブ ライブラリの使用可能な iOS で。
 
@@ -114,7 +114,7 @@ lipo -info /full/path/to/libraryname.a
 -  アプリケーションを使用して出荷するスタティック ライブラリ。
 
 
-使用するもののいずれかで定義されているメソッドにアクセスする[モノラルの P/invoke 機能](http://www.mono-project.com/Interop_with_Native_Libraries)はほぼ同じである .NET で使用すると同じテクノロジ。
+使用するもののいずれかで定義されているメソッドにアクセスする[モノラルの P/invoke 機能](http://www.mono-project.com/docs/advanced/pinvoke/)はほぼ同じである .NET で使用すると同じテクノロジ。
 
 -  起動する C 関数を決定します。
 -  その署名を確認します。

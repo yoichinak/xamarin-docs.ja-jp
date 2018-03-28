@@ -1,20 +1,19 @@
 ---
-title: "操作バーを置き換える"
+title: 操作バーを置き換える
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/27/2018
+ms.openlocfilehash: f02f77eb45086d1d568b367b28163a4773dcd80d
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="replacing-the-action-bar"></a>操作バーを置き換える
-
 
 ## <a name="overview"></a>概要
 
@@ -38,7 +37,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-いう新しい Android プロジェクトを作成する**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、Android プロジェクトを新規作成) します。 このプロジェクトを作成した後にターゲットと最低限の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)**です。 Android バージョン レベルの設定の詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。 アプリがビルドされ、実行、ときに、このスクリーン ショットに示すよう、既定値アクション バーを表示します。 
+いう新しい Android プロジェクトを作成する**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、Android プロジェクトを新規作成) します。 このプロジェクトを作成した後にターゲットと最低限の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)**またはそれ以降。 Android バージョン レベルの設定の詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。 アプリがビルドされ、実行、ときに、このスクリーン ショットに示すよう、既定値アクション バーを表示します。
 
 [![既定のアクションのバーのスクリーン ショット](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -76,6 +75,8 @@ Olive-green`colorPrimary`ツールバーの背景色の設定を使用します�
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
+
+## <a name="apply-the-custom-theme"></a>カスタム テーマを適用します。
 
 編集**Properties/AndroidManifest.xml**し、以下の追加`android:theme`属性を`<application>`要素、アプリが使用できるように、`MyTheme`カスタム テーマ。 
 
@@ -136,12 +137,6 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <Button
-        android:id="@+id/MyButton"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World, Click Me!" />
 </RelativeLayout>
 ```
 
@@ -171,6 +166,7 @@ ActionBar.Title = "My Toolbar";
 
 注意して、`Toolbar`のスタイルとは無関係に、`Theme.Material.Light.DarkActionBar`アプリの残りの部分に適用されているテーマ。 
 
+アプリの実行中に例外が発生した場合は、次を参照してください。、[トラブルシューティング](#troubleshooting)以下のセクションです。
 
  
 ## <a name="add-menu-items"></a>メニュー項目を追加します。 
@@ -193,7 +189,7 @@ ActionBar.Title = "My Toolbar";
 
 ### <a name="install-menu-icons"></a>メニューのアイコンをインストールします。
 
-続行、`ToolbarFun`例のアプリ、アプリ プロジェクトにメニューのアイコンを追加します。 ダウンロード[ツールバー icons.zip](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true)し、解凍します。 抽出したの内容をコピー *mipmap -*フォルダーをプロジェクトに*mipmap -*の下のフォルダー **ToolbarFun/リソース**プロジェクトに追加したアイコンの各ファイルを含めるとします。
+続行、`ToolbarFun`例のアプリ、アプリ プロジェクトにメニューのアイコンを追加します。 ダウンロード[ツールバーのアイコン](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)、展開、および、抽出の内容をコピー *mipmap -*フォルダーをプロジェクトに*mipmap -*の下にフォルダー **ToolbarFun/リソース**プロジェクトに追加したアイコンの各ファイルを含めるとします。
 
 
 ### <a name="define-a-menu-resource"></a>メニュー リソースを定義します。
@@ -277,6 +273,19 @@ Android を呼び出すユーザーがメニュー項目をタップしたとき
 Android のメニューに関する詳細については、Android Developer を参照してください。[メニュー](https://developer.android.com/guide/topics/ui/menus.html)トピックです。 
  
 
+## <a name="troubleshooting"></a>トラブルシューティング
+
+次のヒントは、ツールバーで、アクションのバーを置き換え中に発生する可能性のある問題をデバッグするのに役立ちます。
+
+### <a name="activity-already-has-an-action-bar"></a>アクティビティは既に操作バー
+
+説明したように、カスタム テーマを使用するアプリが正しく構成されていない場合[カスタム テーマを適用する](#apply-the-custom-theme)アプリの実行中、次の例外が発生します。
+
+![カスタム テーマを使用しない場合に発生するエラー](replacing-the-action-bar-images/03-theme-not-defined.png)
+
+エラー メッセージは次が生成するなどのさらに、: _Java.Lang.IllegalStateException: この活動は既にウィンドウ装飾によって提供される操作バー。_ 
+
+このエラーを修正することを確認、`android:theme`属性をユーザー定義のテーマが追加される`<application>`(で**Properties/AndroidManifest.xml**) 前述の[のカスタムテーマを適用する](#apply-the-custom-theme). 場合にこのエラーがさらに、発生する可能性があります、`Toolbar`レイアウト] または [カスタム テーマ正しく構成されていません。
 
 
 ## <a name="related-links"></a>関連リンク

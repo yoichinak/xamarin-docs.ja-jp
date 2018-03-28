@@ -1,6 +1,6 @@
 ---
-title: "認識サービスとインテリジェンスを追加します。"
-description: "マイクロソフトの知的サービスでは、Api、Sdk、および開発者は、顔認識、音声認識、および言語理解などの機能を追加することで、アプリケーションをより高度な利用できるサービスのセットです。 この記事では、Microsoft 認知サービス Api の一部を呼び出す方法を説明するサンプル アプリケーションに紹介します。"
+title: 認識サービスとインテリジェンスを追加します。
+description: マイクロソフトの知的サービスでは、Api、Sdk、および開発者は、顔認識、音声認識、および言語理解などの機能を追加することで、アプリケーションをより高度な利用できるサービスのセットです。 この記事では、Microsoft 認知サービス Api の一部を呼び出す方法を説明するサンプル アプリケーションに紹介します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: fd67629b9e8d0057ccf3b95b9e84ff1d16acbd7b
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>認識サービスとインテリジェンスを追加します。
 
@@ -23,12 +23,12 @@ _マイクロソフトの知的サービスでは、Api、Sdk、および開発�
 付属するサンプルは、機能を提供する todo リスト アプリケーションです。
 
 - タスクの一覧を表示します。
-- 追加し、ソフト キーボード、または Bing Speech API で音声認識を実行することによってタスクを編集します。 音声認識を実行する方法の詳細については、次を参照してください。 [Bing Speech API を使用する音声認識](speech-recognition.md)です。
+- 追加し、ソフト キーボード、または Microsoft Speech API で音声認識を実行することによってタスクを編集します。 音声認識を実行する方法の詳細については、次を参照してください。 [Microsoft Speech API を使用する音声認識](speech-recognition.md)です。
 - スペルをチェック タスクの Bing スペル チェック API を使用します。 詳細については、次を参照してください。[スペル チェック Bing スペル チェック API を使用して](spell-check.md)です。
 - 変換 API を使用してドイツ語に英語からタスクを変換します。 詳細については、次を参照してください。[トランスレーター API を使用してテキストの翻訳](text-translation.md)です。
 - タスクを削除します。
 - 'Done' に、タスクの状態を設定します。
-- Emotion API を使用して、emotion 認識を使用してアプリケーションを評価します。 詳細については、次を参照してください。 [Emotion API を使用して Emotion 認識](emotion-recognition.md)です。
+- Face API を使用して、emotion 認識を使用してアプリケーションを評価します。 詳細については、次を参照してください。 [Face API を使用して Emotion 認識](emotion-recognition.md)です。
 
 タスクは、ローカル SQLite データベースに格納されます。 詳細については、SQLite ローカル データベースを使用して、次を参照してください。[ローカル データベースで作業](~/xamarin-forms/app-fundamentals/databases.md)です。
 
@@ -36,7 +36,7 @@ _マイクロソフトの知的サービスでは、Api、Sdk、および開発�
 
 ![](images/sample-application-1.png "TodoListPage")
 
-をクリックして新しい項目を作成することができます、  *+* に移動するボタン、`TodoItemPage`です。 このページは、タスクを選択してに移動することもできます。
+をクリックして新しい項目を作成することができます、 *+*に移動するボタン、`TodoItemPage`です。 このページは、タスクを選択してに移動することもできます。
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -46,7 +46,7 @@ _マイクロソフトの知的サービスでは、Api、Sdk、および開発�
 
 ![](images/sample-application-3.png "RateAppPage")
 
-`RateAppPage`写真の面では、表示されている、返された感情を Emotion API に送信されるを実行することができます。
+`RateAppPage`写真の面では、表示されている、返された感情を Face API に送信されるを実行することができます。
 
 ## <a name="understanding-the-application-anatomy"></a>アプリケーション構造を理解します。
 
@@ -73,7 +73,7 @@ PCL プロジェクトには、いくつかの重要なファイルも含まれ�
 
 - `Microsoft.Net.Http` – 提供、 `HttpClient` HTTP 経由で要求を行うためのクラスです。
 - `Newtonsoft.Json` – .NET の JSON フレームワークを提供します。
-- `Microsoft.ProjectOxford.Emotion` – Emotion API にアクセスするためのクライアント ライブラリです。
+- `Microsoft.ProjectOxford.Face` – Face API にアクセスするためのクライアント ライブラリです。
 - `PCLStorage` – クロスプラット フォームのローカル ファイル IO Api のセットを提供します。
 - `sqlite-net-pcl` – SQLite データベース ストレージを提供します。
 - `Xam.Plugin.Media` – クロスプラット フォームの写真の作成と Api の取得を提供します。
@@ -117,11 +117,10 @@ public class TodoItem
 
 サンプル アプリケーションは、次の Microsoft 認知サービスを呼び出します。
 
-- Bing Speech API. 詳細については、次を参照してください。 [Bing Speech API を使用する音声認識](speech-recognition.md)です。
+- Microsoft Speech API. 詳細については、次を参照してください。 [Microsoft Speech API を使用する音声認識](speech-recognition.md)です。
 - Bing のスペル チェック API です。 詳細については、次を参照してください。[スペル チェック Bing スペル チェック API を使用して](spell-check.md)です。
 - API を変換します。 詳細については、次を参照してください。[トランスレーター API を使用してテキストの翻訳](text-translation.md)です。
-- Emotion API です。 詳細については、次を参照してください。 [Emotion API を使用して Emotion 認識](emotion-recognition.md)です。
-
+- Face API です。 詳細については、次を参照してください。 [Face API を使用して Emotion 認識](emotion-recognition.md)です。
 
 ## <a name="related-links"></a>関連リンク
 

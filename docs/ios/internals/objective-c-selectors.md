@@ -1,22 +1,22 @@
 ---
-title: "Objective C セレクター"
+title: Objective C セレクター
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 3fa01d8f28dc1c86f9d4a8ee4d9fc0a9cdb8ee9c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b7f64288695ecc0f9f57ec670c4e9ff2e44804c
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="objective-c-selectors"></a>Objective C セレクター
 
 Objective C の言語がに基づいて*セレクター*です。 セレクターがオブジェクトに送信できるメッセージまたは*クラス*です。 [Xamarin.iOS](~/ios/internals/api-design/index.md)マップがインスタンス化するインスタンス メソッド、セレクターとクラスの静的メソッド セレクター。
 
-標準 C 関数とは異なり、C++ メンバー関数と同様に) 直接呼び出すことができませんセレクターを使用して、 [P/invoke](http://www.mono-project.com/Dllimport)です。
+標準 C 関数とは異なり、C++ メンバー関数と同様に) 直接呼び出すことができませんセレクターを使用して、 [P/invoke](http://www.mono-project.com/docs/advanced/pinvoke/)です。
 (*確保*: 理論的には、C++ メンバー関数の非仮想、P/invoke を使用する可能性がありますより無視ペインの世界である名前のマングル コンパイラごと、について心配する必要があります)。セレクターが代わりに、OBJECTIVE-C クラスに送信されるか、インスタンスを使用して、 [ `objc_msgSend`関数](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend)です。
 
 検索することがあります[Objective C のメッセージングに役立つこのガイド](http://developer.apple.com/iphone/library/documentation/cocoa/conceptual/ObjCRuntimeGuide/Articles/ocrtHowMessagingWorks.html)に便利です。

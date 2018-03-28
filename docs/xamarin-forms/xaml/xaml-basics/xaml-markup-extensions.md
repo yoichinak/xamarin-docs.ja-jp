@@ -1,18 +1,18 @@
 ---
-title: "パート 3 です。 XAML マークアップ拡張機能"
-description: "XAML マークアップ拡張機能は、オブジェクトやその他のソースから直接参照されている値を設定するプロパティを許可する XAML で重要な機能を構成します。 XAML マークアップ拡張機能は、オブジェクトを共有し、アプリケーション全体で使用される定数を参照してにとって特に重要ですが、データ バインドで、最大のユーティリティを見ることができます。"
+title: パート 3 です。 XAML マークアップ拡張機能
+description: XAML マークアップ拡張機能は、オブジェクトやその他のソースから直接参照されている値を設定するプロパティを許可する XAML で重要な機能を構成します。 XAML マークアップ拡張機能は、オブジェクトを共有し、アプリケーション全体で使用される定数を参照してにとって特に重要ですが、データ バインドで、最大のユーティリティを見ることができます。
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 3/27/2018
+ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>パート 3 です。 XAML マークアップ拡張機能
 
@@ -45,7 +45,7 @@ _XAML マークアップ拡張機能は、オブジェクトやその他のソ�
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do that!"
                 HorizontalOptions="Center"
@@ -53,7 +53,7 @@ _XAML マークアップ拡張機能は、オブジェクトやその他のソ�
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do the other thing!"
                 HorizontalOptions="Center"
@@ -61,7 +61,7 @@ _XAML マークアップ拡張機能は、オブジェクトやその他のソ�
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
     </StackLayout>
 </ContentPage>
@@ -103,7 +103,7 @@ XAML では、1 つの一般的なソリューションは、このような値�
 </ContentPage>
 ```
 
-これでオブジェクトとさまざまな種類の値は、リソース ディクショナリに追加できます。 これらの型をインスタンス化可能にする必要があります。 たとえば、抽象クラスにできません。 これらの型は、パブリック パラメーターなしのコンス トラクターも必要です。 各項目で指定された辞書のキーが必要です、`x:Key`属性。 例:
+これでオブジェクトとさまざまな種類の値は、リソース ディクショナリに追加できます。 これらの型をインスタンス化可能にする必要があります。 たとえば、抽象クラスにできません。 これらの型は、パブリック パラメーターなしのコンス トラクターも必要です。 各項目で指定された辞書のキーが必要です、`x:Key`属性。 例えば:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -136,7 +136,7 @@ XAML では、1 つの一般的なソリューションは、このような値�
         BorderWidth="3"
         Rotation="-15"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 `StaticResource`マークアップ拡張機能は、常に、中かっこで区切られます、ディクショナリのキーが含まれています。
@@ -192,7 +192,7 @@ XAML では、1 つの一般的なソリューションは、このような値�
         BorderWidth="{StaticResource borderWidth}"
         Rotation="{StaticResource rotationAngle}"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 種類のリソースに対する`Color`、これらの型の属性を直接割り当てるときに使用する同じ文字列形式を使用することができます。 リソースの作成時に、型コンバーターが呼び出されます。 型のリソースを次に示します`Color`:
@@ -201,14 +201,10 @@ XAML では、1 つの一般的なソリューションは、このような値�
 <Color x:Key="textColor">Red</Color>
 ```
 
-`FontSize`プロパティは、ほとんどの問題を表示します。 型にするプロパティが定義されている`double`です。 メンバーに、プロパティを設定すると、`NamedSize`など列挙`Large`、`FontSizeConverter`クラスを使用して、プラットフォームに依存する値に変換するシーンの背後にある works、`Device.GetNamedSized`メソッドです。
-
-としてフォント サイズのリソースを定義することはできませんただし、 `double` "Large"に値を設定します。 時に、XAML パーサーがリソースを処理する、フォント サイズとして、値が使用されますを認識していません。 
-
-解決としてリソースを定義するには、`string`を使用して、`x:String`型。
+多くの場合、プログラムのセット、`FontSize`プロパティのメンバーを`NamedSize`など列挙`Large`です。 `FontSizeConverter`クラスを使用して、プラットフォームに依存する値に変換するシーンの背後にある works、`Device.GetNamedSized`メソッドです。 ただし、フォント サイズのリソースを定義するときにほうが効果的に示すように、数値の値を使用してを図って、ここに`x:Double`型。
 
 ```xaml
-<x:String x:Key="fontSize">Large</x:String>
+<x:Double x:Key="fontSize">24</x:Double>
 ```
 
 これですべてのプロパティを除く`Text`リソースの設定によって定義されます。
@@ -275,7 +271,7 @@ XAML では、1 つの一般的なソリューションは、このような値�
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
                 TextColor="{StaticResource textColor}"
-                FontSize"{StaticResource fontSize}" />
+                FontSize="{StaticResource fontSize}" />
 
         <Button Text="Do that!"
                 HorizontalOptions="{StaticResource horzOptions}"

@@ -1,6 +1,6 @@
 ---
-title: "チュートリアル: バインド iOS Objective C ライブラリ"
-description: "この記事では、既存の Objective C ライブラリ、InfColorPicker 用 Xamarin.iOS バインディングの作成の実践的なチュートリアルを提供します。 Objective C のスタティック ライブラリをコンパイルし、バインド、Xamarin.iOS アプリケーションでバインディングを使用してなどのトピックについて説明します。"
+title: 'チュートリアル: バインド iOS Objective C ライブラリ'
+description: この記事では、既存の Objective C ライブラリ、InfColorPicker 用 Xamarin.iOS バインディングの作成の実践的なチュートリアルを提供します。 Objective C のスタティック ライブラリをコンパイルし、バインド、Xamarin.iOS アプリケーションでバインディングを使用してなどのトピックについて説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e4619f5b1d3f888b2557cf894aaa83106504766f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 44ed651413d66866f131a294158525440278b291
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: バインド iOS Objective C ライブラリ
 
@@ -41,7 +41,7 @@ Xamarin.iOS でこの特定の Objective C API を使用するために必要な
 
 サンプル アプリケーションは、InfColorPicker API と c# コード間の通信が強力なデリゲートを使用する方法をデモンストレーションします。 強力なデリゲートを使用する方法を説明し、脆弱なデリゲートを使用して同じタスクを実行する方法がここします。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 この記事では、Xcode と Objective C 言語の一部に関する知識があり、その読み取りが前提としています、[バインド OBJECTIVE-C](~/cross-platform/macios/binding/index.md)ドキュメント。 さらに、次は、表示する手順を完了するために必要。
 
@@ -159,7 +159,7 @@ Github で InfColorPicker 用のコードを調べてお: 場合
 
     [![](walkthrough-images/image16b.png "リンク バイナリとライブラリのセクションを展開します。")](walkthrough-images/image16b.png#lightbox)
 
-13. 使用して、  **+** 上必要なフレーム フレームワークの一覧に追加することができます ダイアログを開くボタンをクリックします。
+13. 使用して、 **+**上必要なフレーム フレームワークの一覧に追加することができます ダイアログを開くボタンをクリックします。
 
     [![](walkthrough-images/image16c.png "上記の必要なフレーム フレームワークを追加します。")](walkthrough-images/image16c.png#lightbox)
 
@@ -183,7 +183,7 @@ Fat ライブラリは`.a`サポートされているすべてのアーキテク
 
 これら 3 つの手順は簡単ではなく、あり、もう一度実行して、今後 Objective C ライブラリが更新プログラムを受信すると、またはバグの修正が必要な場合に必要な場合があります。 次の手順を自動化する場合は、その簡単になります、今後のメンテナンスとサポート iOS バインド プロジェクト。
 
-シェル スクリプトでは、- などのタスクを自動化に使用できる多くのツールがある[rake](http://rake.rubyforge.org/)、 [xbuild](http://www.mono-project.com/Microsoft.Build)、および[ように](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)です。 Xcode コマンド ライン ツールをインストールするとおも make、このチュートリアルで使用されるビルド システムはこれをインストールします。 ここでは、**メイクファイル**iOS デバイスおよびシミュレーターでの任意のライブラリで動作する複数のアーキテクチャの共有ライブラリを作成に使用できます。
+シェル スクリプトでは、- などのタスクを自動化に使用できる多くのツールがある[rake](http://rake.rubyforge.org/)、 [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、および[ように](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)です。 Xcode コマンド ライン ツールをインストールするとおも make、このチュートリアルで使用されるビルド システムはこれをインストールします。 ここでは、**メイクファイル**iOS デバイスおよびシミュレーターでの任意のライブラリで動作する複数のアーキテクチャの共有ライブラリを作成に使用できます。
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild

@@ -1,6 +1,6 @@
 ---
-title: "Android SDK ツールへの変更"
-description: "Android SDK がインストールされている API レベルおよび Avd を管理する方法を変更します。"
+title: Android SDK ツールへの変更
+description: Android SDK がインストールされている API レベルおよび Avd を管理する方法を変更します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 69e9f08870a01c056951700978d07277af5edfa8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a16aa3704d9e0a63cfabde4b620452e7e2a5bf57
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK ツールへの変更
 
@@ -20,7 +20,7 @@ _Android SDK がインストールされている API レベルおよび Avd を
 
 ## <a name="changes-to--android-sdk-tooling"></a>Android SDK ツールへの変更
 
-Google android SDK ツールの最新バージョンは、新しいいる既存と SDK の AVD マネージャーを削除が_コマンド ライン インターフェイス_(CLI) ツール。 前者**android**プログラムは削除されましたと過去のバージョンの Android SDK ツール Mac と Xamarin for Visual Studio の以前のバージョンの Visual Studio での GUI (グラフィカル ユーザー インターフェイス) マネージャーが機能しなくなります。
+Android SDK ツールの最新バージョンは、Google が新しい CLI (コマンド ライン インターフェイス) ツールいる既存と SDK の AVD マネージャーを削除します。 前者**android**プログラムが削除され、過去の Android SDK ツールのバージョン 25.2.5 Mac と Xamarin for Visual Studio の以前のバージョンの Visual Studio での GUI (グラフィカル ユーザー インターフェイス) マネージャーが機能しなくなります。
 
 
 ![Visual Studio での android IDE メニュー](sdk-cli-tooling-changes-images/android-ide-menu.png)
@@ -50,7 +50,7 @@ and tools\bin\avdmanager.bat
 
 **追加されました:** Android SDK ツール 25.3.0 (年 3 月、2017) 以上です。
 
-呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダーです。 このツールは、Google Android エミュレーターの AVD を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)です。
+呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダーです。 このツールは、Google Android エミュレーターの場合、Avd を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)です。
 
 ### <a name="downgrading"></a>ダウン グレード
 
@@ -64,7 +64,7 @@ and tools\bin\avdmanager.bat
 ## <a name="related-links"></a>関連リンク
 
 - [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)
-- [Android API レベルを理解します。](~/android/app-fundamentals/android-api-levels.md)
-- [SDK ツールのリリース ノート (Google)](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
+- [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)
+- [SDK Tools のリリース ノート (Google)](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
-- [avdmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+- [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
