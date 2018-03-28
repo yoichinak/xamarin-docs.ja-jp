@@ -1,5 +1,5 @@
 ---
-title: "トラブルシューティング"
+title: トラブルシューティング
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
@@ -143,7 +143,7 @@ Namespace 設定は、プロジェクトのオプション ダイアログに含
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>System.Exception で失敗するデバイスに展開します AMDeviceInstallApplication 3892346901 が返されます。
 
-このエラーは、コード署名証明書/バンドル id の構成では、デバイスにインストールされているプロビジョニング プロファイルが一致しないことを意味します。  確認する、適切な証明書があるプロジェクトのオプションで選択されているバンドル署名 *、iPhone]-> [し、プロジェクトのオプションで指定された正しいバンドル id が iPhone アプリケーション ->
+このエラーは、コード署名証明書/バンドル id の構成では、デバイスにインストールされているプロビジョニング プロファイルが一致しないことを意味します。  確認する、適切な証明書があるプロジェクトのオプションで選択されているバンドル署名 、iPhone]-> [し、プロジェクトのオプションで指定された正しいバンドル id が iPhone アプリケーション ->
 
 ## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>コード補完が機能していない Visual Studio で Mac
 
