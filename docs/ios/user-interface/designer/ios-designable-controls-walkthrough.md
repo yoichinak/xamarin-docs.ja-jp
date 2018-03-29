@@ -1,6 +1,6 @@
 ---
-title: "チュートリアル - iOS 用の Xamarin デザイナーをカスタム コントロールを使用します。"
-description: "この記事では、カスタム コントロールを作成し、iOS 用の Xamarin デザイナーで使用する方法を示す詳細なチュートリアルを提供します。 ようにコントロール デザイナーのツールボックスで使用できるドラッグ/削除するビューにする方法を示します。 また、デザイン時および実行時、正しくレンダリングされるようにコントロールを実装する方法と、デザイン時に設定できるプロパティを作成する方法を示します。"
+title: チュートリアル - iOS 用の Xamarin デザイナーをカスタム コントロールを使用します。
+description: この記事では、カスタム コントロールを作成し、iOS 用の Xamarin デザイナーで使用する方法を示す詳細なチュートリアルを提供します。 ようにコントロール デザイナーのツールボックスで使用できるドラッグ/削除するビューにする方法を示します。 また、デザイン時および実行時、正しくレンダリングされるようにコントロールを実装する方法と、デザイン時に設定できるプロパティを作成する方法を示します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4138ba0da1dd2174c53e6e35105c3199ea941f7f
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>チュートリアル - iOS 用の Xamarin デザイナーをカスタム コントロールを使用します。
 
 _この記事では、カスタム コントロールを作成し、iOS 用の Xamarin デザイナーで使用する方法を示す詳細なチュートリアルを提供します。ようにコントロール デザイナーのツールボックスで使用できるドラッグ/削除するビューにする方法を示します。また、デザイン時および実行時、正しくレンダリングされるようにコントロールを実装する方法と、デザイン時に設定できるプロパティを作成する方法を示します。_
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 IOS 用 Xamarin デザイナーは、Windows 上の Mac と Visual Studio 2015 と 2017 の Visual Studio で使用します。
 
@@ -32,15 +32,11 @@ IOS 用 Xamarin デザイナーは、Windows 上の Mac と Visual Studio 2015 �
 
 1. 新しいソリューションを作成、 **iOS > アプリ > ビューの 1 つのアプリケーション > c#**テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。
 
-
     [![](ios-designable-controls-walkthrough-images/01new.png "新しいソリューションを作成します。")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
-
 
 1. という名前の新しい空のクラス ファイルを作成する`ScratchTicketView`:
 
-
     [![](ios-designable-controls-walkthrough-images/02new.png "新しい ScratchTicketView クラスを作成します。")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
-
 
 1. 次のコードを追加`ScratchTicketView`クラス。
 

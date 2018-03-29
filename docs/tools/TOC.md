@@ -2,7 +2,6 @@
 ## [Live Player](live-player/index.md)
 ### [セットアップ](live-player/install.md)
 ### [Xamarin Live Player アプリ](live-player/player.md)
-### [XAML Live プレビュー](live-player/live-view.md)
 ### [サンプル](live-player/samples.md)
 ### [制限事項](live-player/limitations.md)
 ### [トラブルシューティング](live-player/troubleshooting.md)
