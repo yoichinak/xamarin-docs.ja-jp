@@ -1,6 +1,6 @@
 ---
-title: "Xamarin Player のライブのセットアップ"
-description: "編集し、同時にリアルタイムで iOS または Android デバイスでアプリをテスト"
+title: Xamarin Player のライブのセットアップ
+description: 編集し、同時にリアルタイムで iOS または Android デバイスでアプリをテスト
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 05d6a679f318406d1ee5c6893ae4d01452a79723
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player のライブのセットアップ
 
@@ -22,25 +22,28 @@ Xamarin Live Player には、アプリにライブの編集を行うことがで
 
 ## <a name="1-get-the-app"></a>1.アプリを入手します。
 
-### <a name="xamarin-live-player-for-android"></a>Xamarin Live Player for Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Xamarin Live Player は、Google Play から Android 用に使用できます。
 
 [ ![Google Play に掲載](install-images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 せず Google Play の Android デバイス用の Xamarin Live Player がを通じて使用可能な[HockeyApp](https://aka.ms/xlp-hockeyapp)配布します。 For Android は、の使用を選択して Google Play から直接インストールできますが初期プレビューでさらに、ビルド、[開くベータ プログラム](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>IOS 用の Xamarin Live Player
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 ユーザーの参加をお勧め、 [Xamarin Player のライブ アプリ_iOS プレビュー_ ](https://aka.ms/liveplayeralpha) TestFlight を介して最新機能へのクイック アクセスを利用します。
 
+-----
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="2-get-visual-studio-2017-preview-on-windows-or-for-mactabsvsmac"></a>2.Windows 上の Visual Studio 2017 プレビューの取得 (または[for Mac](?tabs=vsmac))
+## <a name="2-get-visual-studio-2017"></a>2.Visual Studio 2017 を取得します。
 
 Xamarin Live Player が必要です。
 
-- Visual Studio 2017 [15.4](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/#visualstudio2017)またはそれ以降。
-- Visual Studio コンピューターと同じ WiFi ネットワーク上のデバイス
+- Visual Studio 2017 15.4年またはそれ以降。
+- Visual Studio コンピューターと同じ WiFi ネットワーク上のデバイス。
 
 ## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3.初めて Xamarin Live Player の使用
 
@@ -72,9 +75,9 @@ Xamarin Live Player が必要です。
 
   組み合わせについて、デバイスに接続できない場合、エラーが表示されます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="2-get-visual-studio-for-mac-or-for-windowstabsvswin"></a>2.Visual Studio を Mac の取得 (または[for Windows](?tabs=vswin))
+## <a name="2-get-visual-studio-for-mac"></a>2.Visual Studio を Mac を取得します。
 
 Xamarin Live Player が必要です。
 
@@ -120,7 +123,7 @@ Xamarin Live Player が必要です。
 
 -----
 
-問題が発生する場合は、次を参照してください。[制限事項とトラブルシューティング](~/tools/live-player/troubleshooting.md)です。
+問題が発生して接続できません。 するかを参照してください。[制限事項とトラブルシューティング](~/tools/live-player/troubleshooting.md)です。
 
 
 ## <a name="related-links"></a>関連リンク

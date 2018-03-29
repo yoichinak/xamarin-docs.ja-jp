@@ -1,6 +1,6 @@
 ---
-title: "リソース ディクショナリ"
-description: "XAML リソースは、2 回以上使用できるオブジェクトの定義です。 ResourceDictionary は、リソースを 1 つの場所で定義されている、Xamarin.Forms アプリケーション全体で再利用できます。 この記事では、作成し、ResourceDictionary を使用する方法、リソース ディクショナリをマージする方法について説明します。"
+title: リソース ディクショナリ
+description: XAML リソースは、2 回以上使用できるオブジェクトの定義です。 ResourceDictionary は、リソースを 1 つの場所で定義されている、Xamarin.Forms アプリケーション全体で再利用できます。 この記事では、作成し、ResourceDictionary を使用する方法、リソース ディクショナリをマージする方法について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: aa3ae9fed67b6cd7521e5c59edcb54f05cc6b7c5
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -53,7 +53,7 @@ XAML では、リソースが定義されている、 [ `ResourceDictionary` ](h
 
 これは、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)定義 3 [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/)リソースと[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)リソース。 XAML の作成の詳細については`App`クラスを参照してください[App クラス](~/xamarin-forms/app-fundamentals/application-class.md)です。
 
-各リソースを使用して指定されているキーを持っている、`x:Key`属性は、ことのわかりやすいキーを`ResourceDictionary`です。 リソースを取得するキーが使用される、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)によって、`StaticResource`マークアップ拡張機能、コントロールで定義されているその他のリソースのレベルを表示する次の XAML コードの例に示すよう`ResourceDictionary`:
+各リソースには、指定したキーを使用して、`x:Key`属性は、ことのわかりやすいキーを`ResourceDictionary`です。 リソースを取得するキーが使用される、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)によって、`StaticResource`マークアップ拡張機能、コントロールで定義されているその他のリソースのレベルを表示する次の XAML コードの例に示すよう`ResourceDictionary`:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">

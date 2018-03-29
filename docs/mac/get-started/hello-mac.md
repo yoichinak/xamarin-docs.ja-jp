@@ -1,6 +1,6 @@
 ---
 title: Hello Mac
-description: "このガイドでは、Xamarin.Mac アプリを初めて作成する場合の手順を、Visual Studio for Mac、Xcode、Interface Builder などの開発ツールチェーンの紹介と共に説明します。 また、コードに UI コントロールを公開する Outlet と Action についても紹介します。最後に、Xamarin.Mac アプリケーションを実行およびテストする方法を説明します。"
+description: このガイドでは、Xamarin.Mac アプリを初めて作成する場合の手順を、Visual Studio for Mac、Xcode、Interface Builder などの開発ツールチェーンの紹介と共に説明します。 また、コードに UI コントロールを公開する Outlet と Action についても紹介します。最後に、Xamarin.Mac アプリケーションを実行およびテストする方法を説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,27 +8,27 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 635577bbc35d9e80147ecf7e1a59540099f85b9d
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="hello-mac"></a>Hello Mac
 
 Xamarin.Mac を使うと、*Objective-C* と *Xcode* で開発するときに使用するのと同じ OS X ライブラリとインターフェイス コントロールを使用して、C# と .NET で完全にネイティブな Mac アプリを開発できます。 Xamarin.Mac は直接 Xcode と統合できるため、開発者は Xcode の _Interface Builder_ を使用して、アプリのユーザー インターフェイスを作成できます (または、必要に応じて C# コードで直接作成することも可能です)。
 
-さらに、Xamarin.Mac アプリケーションは C# と .NET で書かれているため、共通のバックエンド コードを Xamarin.iOS や Xamarin.Android モバイル アプリと共有でき、各プラットフォームでネイティブ エクスペリエンスを提供します。
+さらに、Xamarin.Mac アプリケーションは C# と .NET で記述されているため、共通のバックエンド コードを Xamarin.iOS や Xamarin.Android モバイル アプリと共有でき、各プラットフォームでネイティブ エクスペリエンスを提供します。
 
-この記事では、ボタンがクリックされた回数を数える単純な **Hello Mac** アプリを構築するプロセスを示しながら、Xamarin.Mac、Visual Studio for Mac、Xcode の Interface Builder を使用して Mac アプリを作成するために必要な主要概念を紹介します。
+この記事では、ボタンがクリックされた回数を数えるシンプルな **Hello Mac** アプリを構築するプロセスを示しながら、Xamarin.Mac、Visual Studio for Mac、Xcode の Interface Builder を使用して Mac アプリを作成するために必要な主要概念を紹介します。
 
-[![](hello-mac-images/run02.png "Hello, Mac アプリの実行例")](hello-mac-images/run02.png#lightbox)
+[![](hello-mac-images/run02.png "Hello Mac アプリの実行例")](hello-mac-images/run02.png#lightbox)
 
 次の概念について説明します。
 
 -  **Visual Studio for Mac** – Visual Studio for Mac の概要と、Visual Studio for Mac を使って Xamarin.Mac アプリケーションを作成する方法。
 -  **Xamarin.Mac アプリケーションの構造** – Xamarin.Mac アプリケーションの構成。
--  **Xcode の Interface Builder**  – Xcode の Interface Builder を使用してアプリのユーザー インターフェイスを定義する方法。
+-  **Xcode の Interface Builder** – Xcode の Interface Builder を使用してアプリのユーザー インターフェイスを定義する方法。
 -  **Outlet と Action** – Outlet と Action を使用してユーザー インターフェイスのコントロールを接続する方法。
 -  **配置/テスト** – Xamarin.Mac アプリを実行してテストする方法。
 
@@ -89,7 +89,7 @@ Visual Studio for Mac での**ソリューション**と**プロジェクト**�
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac アプリケーションの構造
 
-iOS プログラミングになじみがある場合、ここには多くの類似点があります。 実際、iOS は Mac で使われている Cocoa をスリムにしたバージョンである CocoaTouch フレームワークを使用しているため、多くの概念が共通します。
+iOS プログラミングになじみがある場合、多くの類似点があります。 実際、iOS は Mac で使われている Cocoa をスリムにしたバージョンである CocoaTouch フレームワークを使用しているため、多くの概念が共通します。
 
 プロジェクト内のファイルを見てください。
 
@@ -163,7 +163,7 @@ namespace Hello_Mac
 
 このコードは、以前に iOS アプリを構築したことがある開発者以外にはおそらくなじみの薄いものですが、かなりシンプルです。
 
-`FinishedLaunching` メソッドは、アプリがインスタンス化された後に実行され、実際にアプリのウィンドウを作成して、その中にビューを表示するプロセスを開始します。
+`DidFinishLaunching` メソッドは、アプリがインスタンス化された後に実行され、実際にアプリのウィンドウを作成して、その中にビューを表示するプロセスを開始します。
 
 `WillTerminate` メソッドは、ユーザーまたはシステムがアプリのシャットダウンをインスタンス化したときに呼び出されます。 開発者はこのメソッドを使用して、アプリが終了する前に最終処理を行う必要があります (ユーザー設定やウィンドウのサイズと位置を保存するなど)。
 
@@ -171,7 +171,7 @@ namespace Hello_Mac
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-Cocoa (と派生の CocoaTouch) は、*モデル ビュー コント ローラー* (MVC) パターンと呼ばれるパターンを使用します。 `ViewController` 宣言は、オブジェクトが実際のアプリ ウィンドウを制御することを表します。 一般に、作成されたすべてのウィンドウ (およびウィンドウ内の他の多くの要素) には、ウィンドウのライフ サイクルに関する処理を行うコントローラーがあります。コントローラーは、ウィンドウを表示したり、ウィンドウに新しいビュー (コントロール) を追加したりします。
+Cocoa (と派生の CocoaTouch) は、*モデル ビュー コント ローラー* (MVC) パターンと呼ばれるパターンを使用します。 `ViewController` 宣言は、オブジェクトが実際のアプリ ウィンドウを制御することを表します。 一般に、作成されたすべてのウィンドウ (およびウィンドウ内の他の多くの要素) には、ウィンドウのライフサイクルに関する処理を行うコントローラーがあります。コントローラーは、ウィンドウを表示したり、ウィンドウに新しいビュー (コントロール) を追加したりします。
 
 `ViewController` クラスはメイン ウィンドウのコントローラーです。 つまり、メイン ウィンドウのライフ サイクルに関する処理を行います。 これについては後で詳しく説明します。ここでは簡単に見ていきます。
 
@@ -248,7 +248,7 @@ Xamarin.Mac アプリ プロジェクトを作成し、そのコンポーネン�
 
 [![](hello-mac-images/infoplist01.png "Visual Studio for Mac plist エディター")](hello-mac-images/infoplist01.png#lightbox)
 
-そして、**メイン インターフェイス** ドロップダウンの Xamarin.Mac アプリのユーザー インターフェイスを表示するために使用される_ストーリーボード_を定義します。 上記の例の場合、ドロップダウンの `Main` は、**ソリューション エクスプローラー**のプロジェクト ツリーにある `Main.storyboard` に関連しています。 また、それらを含む*アセット カタログ* (この場合は AppIcons) を指定することによって、アプリのアイコンを定義します。
+また、**メイン インターフェイス** ドロップダウンの Xamarin.Mac アプリのユーザー インターフェイスを表示するために使用される_ストーリーボード_も定義します。 上記の例の場合、ドロップダウンの `Main` は、**ソリューション エクスプローラー**のプロジェクト ツリーにある `Main.storyboard` に関連しています。 また、それらを含む*アセット カタログ* (この場合は AppIcons) を指定することによって、アプリのアイコンを定義します。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -318,7 +318,7 @@ Xcode で `.storyboard` ファイルを開くと、Visual Studio for Mac によ�
 
 最初はこのセクションはほとんど空ですが、開発者が**インターフェイス エディター**または**インターフェイス階層**で要素を選択すると、**プロパティ** セクションには指定した要素と調整可能なプロパティに関する情報が設定されます。
 
-**プロパティ** セクションには、次の図に示すように 8 つの異なる*インスペクター タブ*があります。
+**プロパティ** セクション内には、次の図に示すように 8 つの異なる*インスペクター タブ*があります。
 
 [![](hello-mac-images/xcode05.png "すべてのインスペクターの概要")](hello-mac-images/xcode05.png#lightbox)
 
@@ -498,7 +498,7 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 開発者が Xcode から Visual Studio for Mac に戻ると、Xcode で行った変更は自動的に Xamarin.Mac プロジェクトと同期されます。
 
-**ソリューション エクスプローラー**で **ViewController.designer.cs** を選択して、**アウトレット**と**アクション**が C# コードでどのように接続されているかを確認します。
+**ソリューション エクスプローラー**で **ViewController.designer.cs** を選択して、**Outlet** と **Action** が C# コードでどのように接続されているかを確認します。
 
 [![](hello-mac-images/sync01.png "Xcode との変更の同期")](hello-mac-images/sync01.png#lightbox)
 
@@ -559,9 +559,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-`ViewDidLoad` (`Initialize` などの別のメソッドではなく) を使用します。`ViewDidLoad` は、OS が読み込まれ、**.storyboard** ファイルからユーザー インターフェイスがインスタンス化された*後*に呼び出されるためです。 **.storyboard** ファイルが完全に読み込まれてインスタンス化される前に開発者がラベル コントロールにアクセスしようとすると、ラベル コントロールがまだ作成されないため `NullReferenceException` エラーが発生します。
+`ViewDidLoad` (`Initialize` などの別のメソッドではなく) を使用します。`ViewDidLoad` は、OS が読み込まれ、**.storyboard** ファイルからユーザー インターフェイスがインスタンス化された*後*に呼び出されるためです。 **.storyboard** ファイルが完全に読み込まれてインスタンス化される前に開発者がラベル コントロールにアクセスしようとすると、ラベル コントロールがまだ存在しないため `NullReferenceException` エラーが発生します。
 
-次に、ボタンをクリックしたユーザーに応答するコードを追加します。 次の部分クラスを `ViewController` クラスに追加します。
+次に、ボタンをクリックしたユーザーに応答するコードを追加します。 次の部分メソッドを `ViewController` クラスに追加します。
 
 ```csharp
 partial void ClickedButton (Foundation.NSObject sender) {

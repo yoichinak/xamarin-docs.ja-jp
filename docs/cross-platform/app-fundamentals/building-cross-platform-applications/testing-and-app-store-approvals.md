@@ -4,14 +4,10 @@
 
 # <a name="part-6---testing-and-app-store-approvals"></a>パート 6 - テストと App Store の承認
 
-<a name="Testing" />
-
 
 ## <a name="testing"></a>テスト中
 
 発行される前に、承認プロセスを渡す必要が多くアプリ (Android でも、一部のストアを)テストすることが確実に重要なのでアプリ市場に達すると (は言うまでも、お客様が成功する)。 テストはさまざまな形式、ベータ テストさまざまなハードウェアを管理するテスト developer レベル単位からです。
-
- <a name="Test_on_All_Platforms" />
 
 
 ### <a name="test-on-all-platforms"></a>すべてのプラットフォームでのテストします。
@@ -22,16 +18,12 @@
 
 また、できる限り多くの別の物理ハードウェア デバイスでテストする必要があります。
 
- <a name="Devices_in_cloud" />
-
 
 #### <a name="devices-in-cloud"></a>クラウド内のデバイス
 
 モバイルの電話やタブレットのエコシステムには、使用可能なデバイスの増え数でのテストが不可能になるすべての時間が増え続けます。 この問題を解決するためには、サービスの数は、アプリケーションをインストールして直接多数のハードウェアに投資しなくてもテストできるように、さまざまなデバイスをリモートで制御する機能を提供します。
 
 [アプリ Center Test](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) iOS および数百のさまざまなデバイスで Android アプリケーションをテストする簡単な方法を提供します。
-
- <a name="Test_Management" />
 
 
 ### <a name="test-management"></a>テスト管理
@@ -44,10 +36,8 @@
 
 数を収集および使用状況と、エラー レポートをアプリに組み込まれているインフラストラクチャを提供し、サインアップにヘルプおよびテスト担当者とユーザーのデバイスを管理する、プロビジョニング プロセスを合理化することも、これらの問題に対処するサービスのヘルプ.
 
-[Xamarin Insights プレビュー](http://xamarin.com/insights)クラッシュ レポートと高度なアプリケーションの使用状況情報を提供する、この問題の 2 番目の部分にソリューションを提供します。
+[Visual Studio アプリ センター](/appcenter/)これらの問題は、テスト バージョンの配布、クラッシュ レポート、および高度なアプリケーションの使用状況情報を提供するソリューションを提供します。
 
-
- <a name="Test_Automation" />
 
 
 ### <a name="test-automation"></a>テストの自動化
@@ -55,12 +45,10 @@
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)スクリプトを作成する自動化されたユーザー インターフェイス テストをローカルで実行したりできるにアップロードできます[アプリ Center テスト](https://docs.microsoft.com/appcenter/test-cloud/)です。
 
 
- <a name="Unit_Testing" />
 
 
 ## <a name="unit-testing"></a>単体テスト
 
- <a name="Touch.Unit" />
 
 
 #### <a name="touchunit"></a>Touch.Unit
@@ -69,29 +57,13 @@ Xamarin.iOS には、テストの記述 JUnit/NUnit スタイルに続く Touch.
 
 参照してください、 [Xamarin.iOS による単体テスト](~/ios/deploy-test/touch.unit.md)テストの記述と Touch.Unit の実行の詳細についてはドキュメントです。
 
- <a name="Andr.Unit" />
 
 
 #### <a name="andrunit"></a>Andr.Unit
 
 Touch.Unit Andr.Unit と呼ばれる Android 用のオープン ソースのそれと同等です。 ダウンロードすることができます[github](https://github.com/spouliot/Andr.Unit)でツールについて読み取りと[@spouliotのブログ](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)です。
 
- <a name="Windows_Phone" />
 
-
-#### <a name="windows-phone"></a>Windows Phone
-
-セットアップの単体テストを Windows Phone のヘルプへのリンクを次に示します。
-
--   [http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/](http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/)
--   [http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
--   [http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7](http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7)
--   [http://mobile.dzone.com/articles/unit-testing-your-windows](http://mobile.dzone.com/articles/unit-testing-your-windows)
-
-
-&nbsp;
-
- <a name="App_Store_Approvals" />
 
 
 ## <a name="app-store-approvals"></a>アプリ ストアの承認
@@ -100,7 +72,6 @@ Apple および Microsoft プラットフォームでは、唯一のストアを
 
 アプリをレビューするを待って、大きな負荷を与えることができます - ビジネス pressures 多くの場合、という意味では「対象」の開始日より前のエラーのほとんどの余白と承認のためのアプリケーションが送信されます。 プロセス自体が 2 週間かかることができ、必ずしも透過的はありません: 制限のフィードバックにある、アプリケーションの進行状況が最後に拒否または承認されるまでです。 拒否を 2 回以上発生し、週が、元の開始日の間で受け渡す場合は特に、および最後に承認されると、アプリの営業案件、マーケティング ウィンドウがありません意味します。
 
- <a name="Be_prepared" />
 
 
 ### <a name="be-prepared"></a>準備します。
@@ -117,7 +88,6 @@ Apple および Microsoft プラットフォームでは、唯一のストアを
 
 このセクションの残りの部分では、任意の中断がなく、アプリが承認されることを確認することを考慮する事項について説明します。
 
- <a name="Quality" />
 
 
 ### <a name="quality"></a>品質
@@ -127,8 +97,6 @@ Apple および Microsoft プラットフォームでは、唯一のストアを
 クラッシュは、一般的な却下理由です。 アプリのクラッシュにも簡単である場合は、拒否される保証が。 ほとんどの開発者は、それらがクラッシュし、まだ多くの場合は、という前提で、アプリを送信しません。 送信する、いないだけで必ずすべてが機能に注目することもしたネットワークの問題やメモリまたはストレージの領域などのリソース制約など、モバイルのエラーの一般的なシナリオを処理する前に、アプリを十分にテストします。 シミュレーターと物理デバイスの両方を使用してテストする - デバイスのみ、シミュレーター内でコードが実行されるどの程度に関係なく、アプリの実際のパフォーマンスを示すことができます。 検索、および、ベータ分布とフィードバックを管理するサード パーティのサービスに役立つことができる場合、ベータ テスターのチームを参加させることができます、多くのさまざまなデバイスを使用します。
 
 すべてのモバイル オペレーティング システムには、十分に速いが起動しないアプリケーションは強制終了します。 許容時間は異なりますが、一般的にアプリが数秒で応答し、長い時間を要するすべての作業を行うバック グラウンド タスクを使用して目指す必要があります。 時間がかかりすぎる読み込むには、アプリまたは通常の使用に応答しないは拒否されます。 常に、バック グラウンドで何かが行われているまたはアプリが表示されるがクラッシュし、もう一度、拒否を取得するときは、ユーザー フィードバックを提供します。
-
- <a name="Check_Your_Edge_Cases" />
 
 
 ### <a name="check-your-edge-cases"></a>エッジ ケースを確認します。
@@ -143,7 +111,6 @@ Apple および Microsoft プラットフォームでは、唯一のストアを
 -   **ハードウェアによって異なります**– サポートを計画している最も古い、最も低速なハードウェアでテストしてください。 アプリに影響する可能性のある 2 つの点があります: パフォーマンスで、以前のデバイス、および、カメラ、マイク、GPS、ジャイロスコープまたはその他の省略可能なコンポーネントなどのハードウェア機能のサポートでは利用できない可能性があります。 アプリケーションが低下する必要があります適切に (およびクラッシュいない) 場合、コンポーネントは使用できません。
 
 
- <a name="Guidelines_are_more_than_just_a_‘guide’" />
 
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>ガイドラインは、単 'ガイド'
@@ -158,7 +125,6 @@ Windows 開発者が; 同様に注意する必要があります。よくある�
 
 各プラットフォームのデザイン ガイドラインに従って、デザイナーをお勧めします。
 
- <a name="Implementing_Platform-Specific_Features" />
 
 
 ### <a name="implementing-platform-specific-features"></a>プラットフォーム固有の機能を実装します。
@@ -171,7 +137,6 @@ IOS で特にプラットフォーム固有のサービスを実装する際に�
 -   **マップ**– するがますます一般的モバイル maps にオーバーレイおよびその他の機能を追加、ただしに慎重にマップがわかりにくくなる 'クレジット' iOS5 で Google ロゴ) などの情報ようになりますが拒否されます。
 
 
- <a name="Manage_Your_Metadata" />
 
 
 ### <a name="manage-your-metadata"></a>メタデータを管理します。
@@ -185,7 +150,6 @@ IOS で特にプラットフォーム固有のサービスを実装する際に�
 
 開発およびテストに、アプリケーションのメタデータに、多大な労力を配置します。 時間をかけて正しく理解するには、マイナーの侵害、メタデータ内のアプリケーションを拒否取得操作を行います。
 
- <a name="App_Stores:_Not_For_Everyone" />
 
 
 ### <a name="app-stores-not-for-everyone"></a>アプリ ストア: できませんのすべてのユーザー
@@ -198,8 +162,6 @@ IOS で特にプラットフォーム固有のサービスを実装する際に�
 Apple では、iOS App Store 承認プロセスをバイパスし、により、企業は社内のアプリを従業員に配布する、Developer Enterprise Program に登録されている開発者に社内で展開オプションを提供します。
 残念ながら本ライセンスには、顧客または仕入先の閉じている他のグループへのエクストラネットのようなアプリの配布の必要性は取り上げません。 [Enterprise (および Ad Hoc) の展開](~/ios/deploy-test/app-distribution/ipa-support.md)
 
-
- <a name="App_Store_Summary" />
 
 
 ### <a name="app-store-summary"></a>アプリ ストアの概要

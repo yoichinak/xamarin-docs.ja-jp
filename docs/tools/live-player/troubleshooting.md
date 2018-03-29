@@ -1,6 +1,6 @@
 ---
-title: "トラブルシューティング"
-description: "Xamarin Live Player、およびそれらの修正方法に関する既知の問題です。"
+title: トラブルシューティング
+description: Xamarin Live Player、およびそれらの修正方法に関する既知の問題です。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: d7c5bedb03d7c869be65e3c704bac58a9cdfcbbd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ab075cad0c3f3456ed23f3eb175dcdb3aa493510
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="troubleshooting"></a>トラブルシューティング
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/27/2018
 
 Xamarin Live Player を実行しているモバイル デバイスは、IDE を実行しているコンピューターと同じネットワーク上にないときに発生します。 次を確認します。
 
-- デバイスとコンピューターの両方が同じ WiFi ネットワークにあることを確認します。
+- デバイスとコンピューターの両方が同じの Wi-fi ネットワークにあることを確認します。
   - コンピューターがワイヤード (有線) ネットワークに接続しても、ワイヤード (有線) 接続のプラグを抜きを再試行してください。
 - (によって企業ネットワークなど)、緊密にネットワークを保護することがあります Xamarin Live Player で必要なポートをブロックします。
 - Live プレーヤーの Xamarin アプリを閉じて再起動します。
@@ -35,12 +35,92 @@ Xamarin Live Player を実行しているモバイル デバイスは、IDE を�
 
 **"IOException: 転送接続からデータを読み取ることができません: 非ブロッキング ソケットでの操作はブロック"**
 
-Xamarin Live Player を実行しているモバイル デバイスは、IDE を実行しているコンピューターと同じネットワーク上にないときに、多くの場合、このエラーが発生しましたこれは多くの場合、ペアリングされて正常にデバイスに接続するときに発生します。
+Xamarin Live Player を実行しているモバイル デバイスが Visual Studio は; を実行しているコンピューターと同じネットワーク上にない場合に、多くの場合、このエラーが発生しましたこれは多くの場合、ペアリングされて正常にデバイスに接続するときに発生します。
 
-* デバイスとコンピューターの両方が同じ WiFi ネットワークにあることを確認してください。
+* デバイスとコンピューターの両方が同じの Wi-fi ネットワークにあることを確認してください。
 * (によって企業ネットワークなど)、緊密にネットワークを保護することがあります Xamarin Live Player で必要なポートをブロックします。 次のポートは、Xamarin Live プレーヤーの必要があります。
   * 37847 – 内部ネットワーク アクセス 
   * 8090-外部のネットワーク アクセス
+
+## <a name="manually-configure-device"></a>デバイスを手動で構成します。
+
+、Wi-fi 経由で、デバイスに接続できる場合、次の手順で、構成ファイルを使用したデバイスを手動で構成しようとすることができません。
+
+**手順 1: 構成ファイルを開く**
+
+アプリケーション データ フォルダーにヘッドします。
+
+* Windows: **%userprofile%\AppData\Roaming**
+* macOS: **~/Users/$USER/.config**
+
+このフォルダーで見つかります**PlayerDeviceList.xml**が存在しない場合は、1 つを作成する必要があります。
+
+**手順 2: IP アドレスを取得します。**
+
+Xamarin Player のライブ アプリに移動**に関する > 接続テスト > 接続テストの開始**です。
+
+メモの IP アドレスは、デバイスを構成するときに表示されている IP アドレス必要があります。
+
+**手順 3: は、コードのペアを取得します。**
+
+Xamarin Player のライブ tap の内部で**ペア**または**ペア再度**、キーを押します**手動で入力**です。 数値のコードが表示されます、これは、構成ファイルを更新する必要があります。
+
+**手順 4: GUID を生成します。**
+
+移動:https://www.guidgenerator.com/online-guid-generator.aspx新しい guid を生成しには、大文字に変換するかどうかを確認します。
+
+
+**手順 5: デバイスを構成します。**
+
+開き、 **PlayerDeviceList.xml**など、Visual Studio または Visual Studio Code エディターでセットアップします。 このファイルで、デバイスを手動で構成する必要があります。 既定では、ファイルが次の空白を含める必要があります`Devices`XML 要素。
+
+```xml
+<DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Devices>
+
+</Devices>
+</DeviceList>
+```
+
+**IOS デバイスを追加します。**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>iPhone Player</Name>
+<Platform>iOS</Platform>
+<AndroidApiLevel>0</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:36:03.9492291Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+
+**Android デバイスを追加します。**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>Android Player</Name>
+<Platform>Android</Platform>
+<AndroidApiLevel>24</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:34:42.2332328Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+**閉じて、再び Visual Studio を開きます。** デバイスが一覧に表示する必要があります。
+
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>IDE で「型または名前空間が見つかりません」メッセージ
 

@@ -1,24 +1,24 @@
 ---
-title: "Java の概要"
+title: Java の概要
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.date: 11/14/2017
-ms.openlocfilehash: 1a29481e4da3a7c1f72a513db70afc1ca6e5f3e8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/28/2018
+ms.openlocfilehash: 06df925525c7bc01963274e9e0d5edfe7bb70613
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="getting-started-with-java"></a>Java の概要
 
 
 これは、java の場合、サポートされているすべてのプラットフォームの基本についての内容を含む作業の開始ページです。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Java で .NET の埋め込みを使用するには、必要があります。
 
@@ -33,7 +33,7 @@ Windows の場合。
 * Windows 10 SDK
 
 Android:
-* Xamarin.Android 7.4.99 以降 (からビルド[Jenkins](https://jenkins.mono-project.com/view/Xamarin.Android/job/xamarin-android/lastSuccessfulBuild/Azure/))
+* [Xamarin.Android 7.5](https://www.visualstudio.com/xamarin/)以降
 * [Android Studio 3.x](https://developer.android.com/studio/index.html) with Java 1.8
 
 使用することができます[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)を編集し、c# コードをコンパイルします。

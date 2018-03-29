@@ -1,6 +1,6 @@
 ---
-title: "XAML で引数の受け渡し"
-description: "この記事では、工場出荷時のメソッドを呼び出すと、汎用引数の型を指定する既定以外のコンス トラクターに引数を渡すために使用できる XAML 属性の使用方法を示します。"
+title: XAML で引数の受け渡し
+description: この記事では、工場出荷時のメソッドを呼び出すと、汎用引数の型を指定する既定以外のコンス トラクターに引数を渡すために使用できる XAML 属性の使用方法を示します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: a30dd9b33466ac6907322f8c6b586c012452a44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 232f60bb7afca7acf73e63bd7e11e1b6ec47fbd2
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML で引数の受け渡し
 
@@ -135,7 +135,7 @@ _この記事では、工場出荷時のメソッドを呼び出すと、汎用�
 </BoxView>
 ```
 
-内の要素の数、`x:Arguments`タグ、およびこれらの要素の型が呼び出されるファクトリ メソッドの引数に一致する必要があります。 [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/)工場出荷時のメソッドでは、4 つが必要な[ `Int32` ](https://developer.xamarin.com/api/type/System.Int32/)パラメーターで、0 から 255 までそれぞれ、赤、緑、青、およびアルファ値を表します。 [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/)工場出荷時のメソッドでは、4 つが必要な[ `Double` ](https://developer.xamarin.com/api/type/System.Double/)色合い、鮮やかさ、明るさ、および、0 ~ 1 それぞれのアルファ値を表すパラメーター。 [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/)ファクトリ メソッドが必要な[ `String` ](https://developer.xamarin.com/api/type/System.String/)を表す 16 進数値 (A) RGB 色。
+内の要素の数、`x:Arguments`タグ、およびこれらの要素の型が呼び出されるファクトリ メソッドの引数に一致する必要があります。 [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/)工場出荷時のメソッドでは、4 つが必要な[ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32)パラメーターで、0 から 255 までそれぞれ、赤、緑、青、およびアルファ値を表します。 [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/)工場出荷時のメソッドでは、4 つが必要な[ `Double` ](https://docs.microsoft.com/dotnet/api/system.double)色合い、鮮やかさ、明るさ、および、0 ~ 1 それぞれのアルファ値を表すパラメーター。 [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/)ファクトリ メソッドが必要な[ `String` ](https://docs.microsoft.com/dotnet/api/system.string)を表す 16 進数値 (A) RGB 色。
 
 次のスクリーン ショットそれぞれの呼び出しの結果を表示する[ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/)指定した引数の値を持つファクトリ メソッド。
 

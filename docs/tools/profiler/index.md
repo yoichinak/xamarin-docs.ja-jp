@@ -1,6 +1,6 @@
 ---
 title: Xamarin Profiler
-description: "このガイドでは、Xamarin プロファイラーの主な機能について説明します。 Xamarin アプリケーションをプロファイリングするため、プロファイラー、プロファイリング、および、使用すべき状況、および標準的なワークフローを探します。"
+description: このガイドでは、Xamarin プロファイラーの主な機能について説明します。 Xamarin アプリケーションをプロファイリングするため、プロファイラー、プロファイリング、および、使用すべき状況、および標準的なワークフローを探します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7c44541c56d7b1a00a704cfc66812d5537ec83c4
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -48,7 +48,7 @@ Xamarin プロファイラーは、プロファイルの使用可能な機器の
 ## <a name="download-and-install"></a>ダウンロードとインストール
 
 > [!NOTE]
-> **注:** mac 上の Mac の Windows 上のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除する Visual Studio Enterprise のサブスクライバーである必要があります
+> **注:**である必要があります、 [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) mac 上の Mac の Windows 上のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除するサブスクライバー
 
 Xamarin プロファイラーは、スタンドアロン アプリケーションされ、IDE 内からのプロファイリングを有効にするには、Visual Studio for Mac と Visual Studio と統合されます。
 
@@ -60,10 +60,6 @@ Xamarin プロファイラーは、スタンドアロン アプリケーショ�
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 ダウンロードされると、Xamarin プロファイラーをシステムに追加するためにインストーラーを起動します。
-
-IDE の統合は、Xamarin のすべてのリリース バージョンで使用可能です。
-ただし、 [Visual Studio Enterprise](https://www.xamarin.com/compare-visual-studio)のプロファイルが必要です。
-
 
 
 ## <a name="profilers-and-profiling"></a>プロファイラーおよびプロファイリング

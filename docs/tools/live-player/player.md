@@ -1,6 +1,6 @@
 ---
 title: Xamarin Live Player App
-description: "編集し、同時にリアルタイムで iOS または Android デバイスでアプリをテスト"
+description: 編集し、同時にリアルタイムで iOS または Android デバイスでアプリをテスト
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 6b0d62a9026c1248a66166e75ed41bb0148547a6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d666bb9a7749845265d50b86e46ef78e2036cb69
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player App
 
@@ -20,17 +20,19 @@ ms.lasthandoff: 03/12/2018
 
 ## <a name="get-the-app"></a>アプリを入手します。
 
-### <a name="xamarin-live-player-for-android"></a>Xamarin Live Player for Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Xamarin Live Player は、Google Play から Android 用に使用できます。
 
 [ ![Google Play に掲載](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 せず Google Play の Android デバイス用の Xamarin Live Player がを通じて使用可能な[HockeyApp](https://aka.ms/xlp-hockeyapp)配布します。 For Android は、の使用を選択して Google Play から直接インストールできますが初期プレビューでさらに、ビルド、[開くベータ プログラム](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>IOS 用の Xamarin Live Player
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 ユーザーの参加をお勧め、 [Xamarin Player のライブ アプリ_iOS プレビュー_ ](https://aka.ms/liveplayeralpha) TestFlight を介して最新機能へのクイック アクセスを利用します。
 
-
+-----
 
 ## <a name="using-the-app"></a>アプリの使用
 
@@ -44,7 +46,7 @@ Xamarin Live Player は、Google Play から Android 用に使用できます。
 
 ![IOS のバーコード スキャナのスクリーン ショット](player-images/scan-iphone-sml.png) ![Android のバーコード スキャナのスクリーン ショット](player-images/scan-android-sml.png)
 
-接続が成功した場合、コードは、ほぼ瞬時に (電卓のサンプル) などデバイスで実行する必要があります。
+接続が成功した場合と、コードがほぼ瞬時にデバイスで実行する必要があります (など、[電卓のサンプル](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator))。
 
 ![デバイスで実行されているサンプルの電卓アプリケーション](player-images/basic-calculator-iphone-sml.png)
 
@@ -52,7 +54,7 @@ Xamarin Live Player は、Google Play から Android 用に使用できます。
 
 情報ボタンを押して**(i)**を表示するアプリの下部にある、**オプション**メニュー。
 
-![[オプション] メニューのスクリーン ショット](player-images/options.png)
+[ ![[オプション] メニューのスクリーン ショット](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>ログ
 
@@ -64,13 +66,13 @@ Xamarin Live Player は、Google Play から Android 用に使用できます。
 * バージョン情報です。
 * フィードバックを送信します。
 
-![設定のスクリーン ショット](player-images/settings.png)
+[ ![設定のスクリーン ショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>デバイスの管理
 
 最初にデバイスを接続する手順についてで[要件およびセットアップ](~/tools/live-player/install.md)です。 複数のデバイス (たとえば、iOS や Android など) をペアし、IDE を使用して管理することができます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています.。**
 
@@ -84,7 +86,7 @@ Visual Studio で、次のように選択します**ツール > Xamarin Live Pla
 
 このウィンドウは、デバイスの一覧からアクセスすることもできます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Mac 用 Visual Studio で次のように選択します**ツール > (Xamarin Player Live) デバイスを管理しています.。**
 

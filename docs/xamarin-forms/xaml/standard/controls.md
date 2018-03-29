@@ -1,6 +1,6 @@
 ---
-title: "XAML (プレビュー) の標準コントロール"
-description: "Xamarin.Forms で XAML Standard プレビューを探索する方法"
+title: XAML (プレビュー) の標準コントロール
+description: Xamarin.Forms で XAML Standard プレビューを探索する方法
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: b044cb849f9a8e591a8db5907211a55f77d6e45f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 084da9cbb06c7ec9bbab6ea4dc6a1a7b15ffe692
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-standard-preview-controls"></a>XAML (プレビュー) の標準コントロール
 
@@ -38,7 +38,7 @@ Standard では XAML のプロパティおよび列挙体の新しい名前を�
 
 ## <a name="properties-and-enumerations"></a>プロパティおよび列挙
 
-|更新されたプロパティを持つ Xamarin.FormsControls|Xamarin.FormsProperty または列挙型|XAML StandardEquivalent|
+|更新されたプロパティを持つ Xamarin.Forms コントロール|Xamarin.Forms プロパティまたは列挙型|該当するショートカットは標準的な XAML|
 |--- |--- |--- |
 |ボタン、エントリ、ラベル、DatePicker、エディター、SearchBar、TimePicker|TextColor|前景|
 |VisualElement|BackgroundColor|バック グラウンド *|
