@@ -1,6 +1,6 @@
 ---
-title: "Hello, Android マルチスクリーン: クイック スタート"
-description: "この 2 部構成のガイドでは、Phoneword アプリケーションを拡張して 2 番目の画面を処理します。 その過程で、基本的な Android アプリケーションの構成要素と Android アーキテクチャの詳細を紹介します。"
+title: 'Hello, Android マルチスクリーン: クイック スタート'
+description: この 2 部構成のガイドでは、Phoneword アプリケーションを拡張して 2 番目の画面を処理します。 その過程で、基本的な Android アプリケーションの構成要素と Android アーキテクチャの詳細を紹介します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2913508159787f6d369f5e55f879addfc1b2ba4f
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android マルチスクリーン: クイック スタート
 
@@ -126,7 +126,7 @@ public class MainActivity : Activity
 }
 ```
 
-`MainActivity` クラスで、次のコードを追加して**変換履歴**ボタンを登録します (`translationHistory` 宣言の後にこの行を配置します)。
+`MainActivity` クラスで、次のコードを追加して**変換履歴**ボタンを登録します (`translateButton` 宣言の後にこの行を配置します)。
 
 ```csharp
 Button translationHistoryButton = FindViewById<Button> (Resource.Id.TranslationHistoryButton);

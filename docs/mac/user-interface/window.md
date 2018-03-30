@@ -1,6 +1,6 @@
 ---
 title: Windows
-description: "この記事では、windows と Xamarin.Mac アプリケーション内のパネルでの作業について説明します。 これには、作成元の windows と Xcode とストーリー ボードや .xib ファイルから読み込むと、それらをプログラムによって操作のインターフェイス ビルダー内のパネルがについて説明します。"
+description: この記事では、windows と Xamarin.Mac アプリケーション内のパネルでの作業について説明します。 これには、作成元の windows と Xcode とストーリー ボードや .xib ファイルから読み込むと、それらをプログラムによって操作のインターフェイス ビルダー内のパネルがについて説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4b8de30cecb738fecb13616a3b796c0b4fa5a51a
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -20,7 +20,7 @@ _この記事では、windows と Xamarin.Mac アプリケーション内のパ�
 
 同じウィンドウにアクセスし、で作業する開発者をパネル Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき*OBJECTIVE-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、ウィンドウとパネルの管理 (または必要に応じて c# コードで直接作成すること)。
 
-その目的に基づき、Xamarin.Mac アプリケーションは、管理および情報が表示されますで動作を調整する画面の 1 つまたは複数のウィンドウに表示できます。 Windows の主要な機能は次のとおりです。
+目的に基づき、Xamarin.Mac アプリケーションが画面上の Windows を管理および情報が表示されますで動作を調整する 1 つまたは複数を提供します。 ウィンドウの主要な機能は次のとおりです。
 
 1. どのビュー、およびコントロール内の領域を提供するには、配置および管理できます。
 2. 受け入れ、キーボードとマウスの両方でユーザーとの対話に応答内のイベントに応答します。
@@ -278,7 +278,7 @@ public override void ViewWillAppear ()
 
 アプリケーションを実装する場合、`NSWindow`の`WillClose`イベント、ウィンドウを閉じる前に生成されます。 イベントを返す場合`false`ウィンドウがない閉じられます。 ウィンドウがない場合、**閉じる**ボタンまたは閉じることができません何らかの理由で、OS は、アラートのサウンドを出力します。
 
-例:
+例えば:
 
 ```csharp
 MyWindow.PerformClose(this);
@@ -299,7 +299,7 @@ MyWindow.PerformClose(this);
 1. させる試みません、`WillClose`イベント。
 2. クリックすると、ユーザーはシミュレートしません、**閉じる**によってすぐに、ボタンを強調表示ボタンをクリックします。
 
-例:
+例えば:
 
 ```csharp
 MyWindow.Close();
@@ -337,7 +337,7 @@ Window.DocumentEdited = false;
 
 ### <a name="saving-changes-before-closing-a-window"></a>ウィンドウを閉じる前に変更を保存
 
-ユーザーのウィンドウを閉じるように変更されたコンテンツを事前に保存するは、こちらからのサブクラスを作成する必要があります`NSWindowDelegate`オーバーライドとその`WindowShouldClose`メソッドです。 例:
+ユーザーのウィンドウを閉じるように変更されたコンテンツを事前に保存するは、こちらからのサブクラスを作成する必要があります`NSWindowDelegate`オーバーライドとその`WindowShouldClose`メソッドです。 例えば:
 
 ```csharp
 using System;
@@ -511,7 +511,7 @@ var window = NSApplication.SharedApplication.KeyWindow;
 
 あります Xamarin.Mac アプリが現在開いてでいる windows のすべてにアクセスする必要。 たとえば、ファイルを開くには、ユーザーが必要があるかどうかを既存のウィンドウで既に開かれているがします。
 
-`NSApplication.SharedApplication`保持、`Windows`アプリで開いているすべての windows の配列を格納するプロパティです。 すべてのアプリの現在のウィンドウにアクセスするには、この配列を反復処理することができます。 例:
+`NSApplication.SharedApplication`保持、`Windows`アプリで開いているすべての windows の配列を格納するプロパティです。 すべてのアプリの現在のウィンドウにアクセスするには、この配列を反復処理することができます。 例えば:
 
 ```csharp
 // Is the file already open?
@@ -561,7 +561,7 @@ SetFrame (frame, true);
 
 [![](window-images/resize01.png "Id 検査")](window-images/resize01.png#lightbox)
 
-カスタムのウィンドウのコント ローラー クラスとモニターを次に、編集、`DidResize`ライブ サイズの変更の通知を受信するコント ローラーのウィンドウでイベントをします。 例:
+カスタムのウィンドウのコント ローラー クラスとモニターを次に、編集、`DidResize`ライブ サイズの変更の通知を受信するコント ローラーのウィンドウでイベントをします。 例えば:
 
 ```csharp
 public override void WindowDidLoad ()

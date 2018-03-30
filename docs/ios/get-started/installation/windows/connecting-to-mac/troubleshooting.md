@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d33f4ba5512985d62575885d44fdcebced8b61ed
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 505bd755140e3d4cdd162caf694de386fc72a68a
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="connection-troubleshooting"></a>接続のトラブルシューティング
 
@@ -83,8 +83,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
     ```bash
     ssh amyb@10.1.8.95
     ```
-    
-<a name="stepnine" />
+    <a name="stepnine" />
 
 9. **手順 8 で成功した**場合、接続状態で `ls` のような単純なコマンドを試します。
 

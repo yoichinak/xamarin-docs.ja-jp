@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 246dd135b8a6e8a60bca9ba38e91ca8fd2d43674
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -163,7 +163,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` が機能しない
 
-`mono_pmip` 関数 ([マネージ スタック フレームを取得する](http://www.mono-project.com/Debugging#Debugging_with_GDB)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
+`mono_pmip` 関数 ([マネージ スタック フレームを取得する](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
 
 `libmonosgen-2.0.so` にある関数の呼び出しを有効にするには、次のようにターゲット デバイスから `gdb-symbols` ディレクトリにコピーします。
 
