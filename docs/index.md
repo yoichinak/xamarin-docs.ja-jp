@@ -1,8 +1,8 @@
 ---
 layout: HubPage
-hide_bc: 
-title: "Xamarin ドキュメント"
-description: "Xamarin を使用すると、.NET のコードとプラットフォームに固有のユーザー インターフェイスを使用して、Android、iOS、および macOS 用のネイティブ アプリを構築できます。 Xamarin.Forms を使用すると、C# または XAML で記述された共有 UI コードを使用してネイティブ アプリを構築できます。"
+hide_bc: true
+title: Xamarin ドキュメント
+description: Xamarin を使用すると、.NET のコードとプラットフォームに固有のユーザー インターフェイスを使用して、Android、iOS、および macOS 用のネイティブ アプリを構築できます。 Xamarin.Forms を使用すると、C# または XAML で記述された共有 UI コードを使用してネイティブ アプリを構築できます。
 featureFlags:
 - clicktale
 ms.openlocfilehash: d73b8165fc1a71fbfe3202f694c4653788ccfb28
