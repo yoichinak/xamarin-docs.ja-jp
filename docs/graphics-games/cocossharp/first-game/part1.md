@@ -1,6 +1,6 @@
 ---
-title: "マルチプラット フォーム CocosSharp プロジェクトを作成します。"
-description: "このチュートリアルでは、新しいマルチプラット フォーム CocosSharp ソリューションを作成する方法を示します。 このチュートリアルの結果は 3 つのプロジェクトを含む Mac ソリューション用の Visual Studio: 1 つのポータブル クラス ライブラリ プロジェクト、1 つの特定の Android プロジェクトおよび iOS に固有の 1 つのプロジェクトです。 作成されたプロジェクトの実行時に空の黒い画面が表示されます。"
+title: マルチプラット フォーム CocosSharp プロジェクトを作成します。
+description: 'このチュートリアルでは、新しいマルチプラット フォーム CocosSharp ソリューションを作成する方法を示します。 このチュートリアルの結果は 3 つのプロジェクトを含む Mac ソリューション用の Visual Studio: 1 つのポータブル クラス ライブラリ プロジェクト、1 つの特定の Android プロジェクトおよび iOS に固有の 1 つのプロジェクトです。 作成されたプロジェクトの実行時に空の黒い画面が表示されます。'
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 37C97693-B0A8-4064-97B6-A6FAB5BA4FB7
@@ -9,10 +9,10 @@ author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
 ms.openlocfilehash: 2906035ce9bd44d111b89ccfe7443896775315b7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="creating-a-multi-platform-cocossharp-project"></a>マルチプラット フォーム CocosSharp プロジェクトを作成します。
 
