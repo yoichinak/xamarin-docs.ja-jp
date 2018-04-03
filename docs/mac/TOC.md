@@ -53,6 +53,7 @@
 #### [Mac App Store へのアップロード](deploy-test/publishing-to-the-app-store/uploading.md)
 ## [高度な概念と内部構造](internals/index.md)
 ### [AOT](internals/aot.md)
+### [使用できるアセンブリ](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)
 ### [Mac のアーキテクチャ](internals/architecture.md)
 ### [Xamarin.Mac のしくみ](internals/how-it-works.md)
 ### [フレームワーク](internals/frameworks.md)

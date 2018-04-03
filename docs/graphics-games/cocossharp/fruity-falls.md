@@ -1,6 +1,6 @@
 ---
-title: "Fruity がゲームの詳細"
-description: "このガイドでは、一般的な CocosSharp および物理学、コンテンツの管理、ゲームの状態とゲームのデザインなどのゲーム開発の概念をカバーする Fruity がゲームを確認します。"
+title: Fruity がゲームの詳細
+description: このガイドでは、一般的な CocosSharp および物理学、コンテンツの管理、ゲームの状態とゲームのデザインなどのゲーム開発の概念をカバーする Fruity がゲームを確認します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A5664930-F9F0-4A08-965D-26EF266FED24
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 307fdec697f2b94ddfdfe0c380e02fd69e197132
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d37b289249e5c9e2c23b45c998d1e24960637ba6
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="fruity-falls-game-details"></a>Fruity がゲームの詳細
 
@@ -22,7 +22,7 @@ Fruity なったは、プレーヤーがポイントを取得する色つきの�
 
 ![](fruity-falls-images/image1.png "ゲームの目的は、せず果物ドロップ間違ったビンにゲームを終了、できるだけ多くのポイントを取得するには")
 
-Fruity がで導入された概念を拡張し、 [BouncingGame ガイド](~/graphics-games/cocossharp/first-game/index.md)以下を追加します。
+Fruity がで導入された概念を拡張し、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)以下を追加します。
 
  - Png の形式でコンテンツします。
  - 高度な物理
@@ -32,20 +32,20 @@ Fruity がで導入された概念を拡張し、 [BouncingGame ガイド](~/gra
  - ゲームのエンティティを使用してコード組織
  - 楽しいと再生の値に重点を置いてゲームの設計
 
-BouncingGame は、中核となる CocosSharp 概念の概要に重点を置いて、中に Fruity 滝はさせるすべて同時にゲーム完成する方法を示します。 このガイドは、BouncingGame を参照するためのリーダー必要がありますまず理解している、 [BouncingGame ガイド](~/graphics-games/cocossharp/first-game/index.md)このガイドを読む前にします。
+中に、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)コア CocosSharp 概念の概要に重点を置いて、Fruity 滝はゲームの完成にすべて同時に取り込んで方法を示しています。 このガイドは、BouncingGame を参照するためのリーダー必要がありますまず理解している、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)このガイドを読む前にします。
 
 このガイドでは、実装と、独自のゲームを作成するための洞察を提供する Fruity 滝の設計について説明します。 次のトピックがについて説明します。
 
 
-- [GameController クラス](#GameController_Class)
-- [ゲームのエンティティ](#Game_Entities)
-- [果物グラフィック](#Fruit_Graphics)
-- [物理的な特性](#Physics)
-- [ゲームの内容](#Game_Content)
-- [GameCoefficients](#GameCoefficients)
+- [GameController クラス](#gamecontroller-class)
+- [ゲームのエンティティ](#game-entities)
+- [果物グラフィック](#fruit-graphics)
+- [物理的な特性](#physics)
+- [コンテンツのゲーム](#game-content)
+- [GameCoefficients](#gamecoefficients)
 
 
-# <a name="gamecontroller-class"></a>GameController クラス
+## <a name="gamecontroller-class"></a>GameController クラス
 
 Fruity 分類 PCL プロジェクトに含まれる、`GameController`クラスは、ゲームをインスタンス化して、シーンの間での移動を担当します。 このクラスは、重複するコードを削除 iOS と Android プロジェクトの両方で使用します。
 
@@ -79,7 +79,7 @@ GameView.DesignResolution = new CCSizeI (width, height);
 最後に、`GameController`クラスを提供する静的メソッドによって呼び出すことができますを`CCGameScene`別に移行する`CCScene`です。 このメソッドを使用して、間で移動、`TitleScene`と`GameScene`です。
 
 
-# <a name="game-entities"></a>ゲームのエンティティ
+## <a name="game-entities"></a>ゲームのエンティティ
 
 Fruity がゲームのオブジェクトのほとんどのエンティティのパターンでは、使用できます。 このパターンの詳細については含まれて、 [CocosSharp 内のエンティティのガイド](~/graphics-games/cocossharp/entities.md)です。
 
@@ -107,7 +107,7 @@ public Fruit ()
 ```
 
 
-## <a name="fruit-graphics"></a>果物グラフィック
+### <a name="fruit-graphics"></a>果物グラフィック
 
 `CreateFruitGraphic`メソッドを作成、`CCSprite`をインスタンス化し、それを追加、`Fruit`です。 `IsAntialiased`外観、ゲーム、ピクセルにプロパティが false に設定します。 この値は false に設定すべてに`CCSprite`と`CCLabel`ゲーム全体にわたってインスタンス。
 
@@ -179,7 +179,7 @@ if (GameCoefficients.ShowCollisionAreas)
 ![](fruity-falls-images/image4.png "果物のイメージとコントラストを保持する extraPointsLabel 色が調整され、果物 CCSprite で表すローカライズされたを中央には、その PositionY 値を調整してください。")
 
 
-## <a name="collision"></a>衝突
+### <a name="collision"></a>衝突
 
 Fruity 代わりには、Geometry フォルダー内のオブジェクトを使用してカスタム競合ソリューションが実装されています。
 
@@ -218,17 +218,17 @@ private void CreateCollision()
 }
 ```
 
-衝突ロジックについては説明[このガイドの後半](#Collision)です。
+衝突ロジックについては説明[このガイドの後半](#collision)です。
 
 
-# <a name="physics"></a>物理的な特性
+## <a name="physics"></a>物理的な特性
 
 Fruity 代わりに、物理的な特性は、2 つのカテゴリに分けることが: の移動と競合します。 
 
 
-## <a name="movement-using-velocity-and-acceleration"></a>ベロシティとアクセラレータを使用して移動
+### <a name="movement-using-velocity-and-acceleration"></a>ベロシティとアクセラレータを使用して移動
 
-Fruity 滝を使用して`Velocity`と`Acceleration`と同様に、そのエンティティの動作を制御する値、 [BouncingGame](~/graphics-games/cocossharp/first-game/index.md)です。 エンティティは、という名前のメソッドで、移動ロジックを実装`Activity`、フレームごとに 1 回呼び出します。 たとえば、上の移動の実装を参照してお、`Fruit`クラス`Activity`メソッド。
+Fruity 滝を使用して`Velocity`と`Acceleration`と同様に、そのエンティティの動作を制御する値、 [BouncingGame](~/graphics-games/cocossharp/bouncing-game.md)です。 エンティティは、という名前のメソッドで、移動ロジックを実装`Activity`、フレームごとに 1 回呼び出します。 たとえば、上の移動の実装を参照してお、`Fruit`クラス`Activity`メソッド。
 
 ```csharp
 public void Activity(float frameTimeInSeconds)
@@ -274,7 +274,7 @@ public void HandleInput(CCPoint touchPoint)
 }
 ```
 
-## <a name="collision"></a>衝突
+### <a name="collision"></a>衝突
 
 Fruity 滝など、果物と collidable 他のオブジェクト間の半現実的な衝突の実装、`Paddle`と`GameScene.Splitter`です。 デバッグする際の競合、Fruity 滝衝突領域表示できる変更することによって、`GameCoefficients.ShowDebugInfo`で、`GameCoefficients.cs`ファイル。
 
@@ -330,7 +330,8 @@ private void PerformCollision()
 }
 ```
 
-### <a name="fruitvsborders"></a>FruitVsBorders
+#### <a name="fruitvsborders"></a>FruitVsBorders
+
 `FruitVsBorders` 競合は、別のクラスに含まれるロジックに依存するのではなく、競合を独自のロジックを実行します。 成果物と、画面の境界線の間で競合が完全に純色ではありません-注意パドル移動して、画面の端からプッシュする果物の可能性があるために、この違いが存在します。 成果物は、パドルとヒット時 画面から離れるバウンドしますが、プレーヤーが緩やかに変化果物をプッシュする場合は移動過去の端と画面をオフ。
 
 
@@ -352,7 +353,8 @@ private void FruitVsBorders(Fruit fruit)
 }
 ```
 
-### <a name="fruitvsbins"></a>FruitVsBins
+#### <a name="fruitvsbins"></a>FruitVsBins
+
 `FruitVsBins`メソッドは任意の成果物に 2 つの区間のいずれかになった場合にチェックを担当します。場合は、プレーヤーが与えられますポイント (果物/bin 色の一致) する場合か、ゲームは終了 (色が一致しない) 場合。
 
 
@@ -380,7 +382,8 @@ private void FruitVsBins(Fruit fruit)
 }
 ```
 
-### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle と FruitPolygonCollision
+#### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle と FruitPolygonCollision
+
 パドルおよび (2 つの区間を分離する領域) のスプリッターと果物の果物のどちらも、依存衝突、`FruitPolygonCollision`メソッドです。 このメソッドには、3 つの部分があります。
 
 1. オブジェクトが競合するかどうかをテストします。
@@ -419,7 +422,7 @@ Fruity 滝衝突応答が片側 – のみ果物のベロシティと位置を�
  
 
 
-# <a name="game-content"></a>ゲームの内容
+## <a name="game-content"></a>コンテンツのゲーム
 
 Fruity 滝でアートは、すぐに、BouncingGame とゲームを区別します。 ゲームの設計と似ていますが、プレーヤーはすぐに、2 つのゲームを検索する方法に違いを確認します。 ゲーマーが面では、そのビジュアルでゲームを再試行するかどうか多くの場合、決定します。 したがって、開発者が視覚に訴えるにする際にリソースを投資は非常に重要ですがゲームです。
 
@@ -432,7 +435,7 @@ Fruity 滝のアートは、次の目的で作成されました。
  - リソースの量が多いアニメーションなしの単純な視覚効果を作成する機能
 
 
-## <a name="content-location"></a>コンテンツの場所
+### <a name="content-location"></a>コンテンツの場所
 
 Fruity 滝には、Android プロジェクトで、Images フォルダーのすべてのコンテンツが含まれます。
 
@@ -445,9 +448,9 @@ Fruity 滝には、Android プロジェクトで、Images フォルダーのす�
 内でコンテンツが含まれていないことに注意、 **%ld**または**Hd**フォルダーで、既定の CocosSharp テンプレートの一部であります。 **%Ld**と**Hd**コンテンツ: 携帯電話、タブレットなどの高解像度のデバイス用の 1 つなどの低解像度のデバイスの 1 つの 2 つのセットが用意されているゲームをするためのフォルダーが目的としています。 Fruity 滝アートは意図的にで作成、ピクセル、見た目のでのさまざまな画面サイズにコンテンツを提供する必要はありません。 したがって、 **%ld**と**Hd**フォルダーがプロジェクトから完全に削除されました。
 
 
-## <a name="gamescene-layering"></a>GameScene 重ね順
+### <a name="gamescene-layering"></a>GameScene 重ね順
 
-このガイドの前半で説明したように、として、GameScene はすべてのゲームのオブジェクトのインスタンス化、配置、および (競合) などのオブジェクト間のロジックをします。 すべてのオブジェクトは 4 つのいずれかに追加`CCLayer`インスタンス。
+このガイドの前半で説明したように、`GameScene`はすべてのゲームのオブジェクトのインスタンス化、配置、および (競合) などのオブジェクト間のロジックを担当します。 すべてのオブジェクトは 4 つのいずれかに追加`CCLayer`インスタンス。
 
 
 ```csharp
@@ -488,7 +491,7 @@ private void CreateBackground()
 ```
 
 
-## <a name="vine-entity"></a>つるエンティティ
+### <a name="vine-entity"></a>つるエンティティ
 
 `Vine`エンティティでは、コンテンツのために使用が一意に – ゲーム プレイに影響を与えません。 構成される 20`CCSprite`つる、画面の上部を常に達したかどうかを確認する試行錯誤が選択した数のインスタンスします。
 
@@ -557,7 +560,7 @@ public void Activity(float frameTimeInSeconds)
 回転の量が少ないがを通じてつるに追加されたことに注意してください、`vineAngle`係数。 この値は、vines の回転量を調整する変更できます。
 
 
-# <a name="gamecoefficients"></a>GameCoefficients
+## <a name="gamecoefficients"></a>GameCoefficients
 
 すべての適切なゲームは、製品のイテレーションの Fruity 滝にはと呼ばれるクラスが含まれています`GameCoefficients`ゲームの再生方法を制御します。 このクラスには、コントロールの物理学、レイアウト、起動、およびスコア付けするゲーム全体で使用される表現力が豊か変数が含まれています。
 
@@ -606,7 +609,7 @@ public static class GameCoefficients
 ```
 
 
-# <a name="conclusion"></a>まとめ
+## <a name="conclusion"></a>まとめ
 
 このガイドでは、Fruity 滝ゲームについて説明します。 コンテンツ、物理的な特性、ゲーム状態管理などの概念を説明します。
 

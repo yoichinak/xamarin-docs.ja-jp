@@ -1,6 +1,6 @@
 ---
-title: "行とストローク キャップ"
-description: "異なるストローク キャップを持つ線を描画する SkiaSharp を使用する方法をについてください。"
+title: 行とストローク キャップ
+description: 異なるストローク キャップを持つ線を描画する SkiaSharp を使用する方法をについてください。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 96b8a990f4644d5e4c9c8ffe6cdb6c173c50657c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="lines-and-stroke-caps"></a>行とストローク キャップ
 
@@ -36,7 +36,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-サンプル プログラムを使用してこれらは、最適な説明します。 ホーム ページの 2 番目のセクション、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)というタイトルのページでプログラムが始まる**ストローク Cap**に基づいて、 [ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)クラスです。 このページを定義、`PaintSurface`の 3 つのメンバーをループ処理するイベント ハンドラー、`SKStrokeCap`列挙体、列挙体メンバーの両方に名前を表示して、その線幅を使用して線を描画します。
+サンプル プログラムを使用してこれらは、最適な説明します。 ホーム ページの 2 番目のセクション、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)というタイトルのページでプログラムが始まる**ストローク Cap**に基づいて、 [ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)クラスです。 このページを定義、`PaintSurface`の 3 つのメンバーをループ処理するイベント ハンドラー、`SKStrokeCap`列挙体、列挙体メンバーの両方に名前を表示して、その線幅を使用して線を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -244,4 +244,4 @@ Windows モバイル デバイスの結果を表示する、`SKPointMode.Polygon
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

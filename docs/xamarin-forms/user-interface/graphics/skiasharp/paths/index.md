@@ -1,6 +1,6 @@
 ---
-title: "SkiaSharp 行とパス"
-description: "SkiaSharp を使用して行およびグラフィックス パスを描画するには"
+title: SkiaSharp 行とパス
+description: SkiaSharp を使用して行およびグラフィックス パスを描画するには
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b94091afc459866d072bd3c4adc3947f6be258b1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 897e3bbe0375a425709ec63edf25088ac35106e5
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp 行とパス
 
@@ -22,7 +22,7 @@ _SkiaSharp を使用して行およびグラフィックス パスを描画す�
 
 グラフィックス パスは、行と SkiaSharp 内の曲線を描画する最も一般的なアプローチです。 ここを使用して、`SKPath`小さな直線のコレクションを使用して、直線を描画するオブジェクト (と呼ばれる、*ポリライン*) 数学的に定義できる曲線の描画にします。 後のセクションには、曲線でサポートされているのさまざまな種類がについて説明します`SKPath`です。
 
-という見出しの下に表示されるこのセクションのすべてのサンプル プログラム**線およびパス**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)プログラム、し、 [**パス**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Paths)ソリューションのフォルダーです。
+という見出しの下に表示されるこのセクションのすべてのサンプル プログラム**線およびパス**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、し、 [**パス**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Paths)ソリューションのフォルダーです。
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[線とストローク キャップ](lines.md)
 
@@ -52,4 +52,4 @@ SkiaSharp で点線および破線を描画の複雑さをマスターします�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

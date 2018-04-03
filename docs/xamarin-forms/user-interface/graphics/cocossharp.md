@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms で CocosSharp の使用"
-description: "CocosSharp は、正確な形、画像、およびテキストのレンダリングを高度な視覚エフェクト用のアプリケーションに追加するために使用できます。"
+title: Xamarin.Forms で CocosSharp の使用
+description: CocosSharp は、正確な形、画像、およびテキストのレンダリングを高度な視覚エフェクト用のアプリケーションに追加するために使用できます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 395defa300da7b8f68746162d877a4fdb17ded9e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 83852b6b2d7324ae6aaf6b1dbf86a6ef7f9ac509
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms で CocosSharp の使用
 
@@ -197,7 +197,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 ![](cocossharp-images/image4.png "一般的な CocosSharp 階層")
 
-1 つだけ`CCScene`一度にアクティブにできます。 ほとんどのゲーム複数回使用`CCLayer`並べ替えコンテンツは、アプリケーションのインスタンスを使用して 1 つだけです。 同様に、ほとんどのゲームは、複数のビジュアル オブジェクトを使用して、のみした、アプリケーション内で 1 つ。 詳細な階層構造は含まれて CocosSharp について、[バウンス ゲームのチュートリアル](~/graphics-games/cocossharp/first-game/index.md)です。
+1 つだけ`CCScene`一度にアクティブにできます。 ほとんどのゲーム複数回使用`CCLayer`並べ替えコンテンツは、アプリケーションのインスタンスを使用して 1 つだけです。 同様に、ほとんどのゲームは、複数のビジュアル オブジェクトを使用して、のみした、アプリケーション内で 1 つ。 詳細な階層構造は含まれて CocosSharp について、 [BouncingGame チュートリアル](~/graphics-games/cocossharp/bouncing-game.md)です。
 
 最初に、`GameScene`クラスはほとんど空になります: を作成しましょう内の参照を満たすために、`HomePage`です。 という名前の PCL に新しいクラスを追加`GameScene`です。 継承する必要がありますが、`CCScene`クラスの次のようにします。
 

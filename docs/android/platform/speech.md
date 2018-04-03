@@ -1,18 +1,18 @@
 ---
-title: "Android の音声"
-description: "この記事では、非常に強力な Android.Speech 名前空間の基本的な使い方について説明します。 以来、Android を音声を認識し、テキストとして出力ができました。 これは、比較的単純なプロセスです。 テキスト読み上げ、ただし、そのプロセスはより複雑にだけでなく、音声認識エンジンに考慮すると、使用可能で、音声合成 (TTS) システムからインストールされている言語もします。"
+title: Android の音声
+description: この記事では、非常に強力な Android.Speech 名前空間の基本的な使い方について説明します。 以来、Android を音声を認識し、テキストとして出力ができました。 これは、比較的単純なプロセスです。 テキスト読み上げ、ただし、そのプロセスはより複雑にだけでなく、音声認識エンジンに考慮すると、使用可能で、音声合成 (TTS) システムからインストールされている言語もします。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 04/02/2018
+ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="android-speech"></a>Android の音声
 
@@ -28,7 +28,7 @@ Google には、デバイス (など、ブラインド用に設計されたソ�
 
 機能は音声認識されるがありますは、使用されるハードウェアに基づく制限があります。 これは、デバイスが正常に解釈に利用可能なすべての言語で話されるすべてのものがほとんどありません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドでは、マイクとスピーカーを持つデバイス以外の特別な要件はありません。
 
@@ -158,15 +158,21 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
+このコードを呼び出す[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)特定のロケールの言語パッケージが既にデバイスに存在する場合にテストします。 このメソッドが戻る、 [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)、渡されたロケールの言語を使用するかどうかを示します。 場合`LanguageAvailableResult`言語があることを示します`NotSupported`、(ダウンロード) に対しても使用可能な音声パッケージはありませんし、その言語に対応します。 場合`LanguageAvailableResult`に設定されている`MissingData`、手順 4. で後述するように、新しい言語パッケージをダウンロードすることがあります。
+
 ### <a name="step-3---setting-the-speed-and-pitch"></a>手順 3 - 速度と声の高さの設定
 
 Android を変更することにより、音声のサウンドを変更するユーザーの許可、`SpeechRate`と`Pitch`(速度と、音声の色調の比率)。 これには、0 から 1 に両方の場合は 1 をされている"normal"音声認識でします。
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>手順 4 - テストと、新しい言語の読み込み
 
-これは、実行を使用して、`Intent`で解釈される結果を含む`OnActivityResult`です。 使用する音声からテキストの例とは異なり、`RecognizerIntent`として、`PutExtra`パラメーターを`Intent`、インテントを使用して、インストール、`Action`です。
+使用して実行は、新しい言語をダウンロード、`Intent`です。 この目的の結果により、 [OnActivityResult](https://developer.xamarin.com/api/member/Android.App.Activity.OnActivityResult/)呼び出されるメソッド。 音声からテキストの例とは異なり (使用する、 [RecognizerIntent](https://developer.xamarin.com/api/type/Android.Speech.RecognizerIntent/)として、`PutExtra`パラメーターを`Intent`)、テストおよびロード`Intent`は`Action`-ベースします。
 
-次のコードを使用して Google からの新しい言語をインストールすることができます。 結果、`Activity`かどうか確認し、言語が必要な場合、場合は、ダウンロードが発生する指示を受けた後、言語をインストールします。
+-   [TextToSpeech.Engine.ActionCheckTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionCheckTtsData/) &ndash; Starts an activity from the platform `TextToSpeech` engine to verify proper installation and availability of language resources on the device.
+
+-   [TextToSpeech.Engine.ActionInstallTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionInstallTtsData/) &ndash; Starts an activity that prompts the user to download the necessary languages.
+
+次のコード例では、これらのアクションを使用して、言語リソースをテストし、新しい言語をダウンロードする方法を示します。
 
 ```csharp
 var checkTTSIntent = new Intent();
@@ -183,6 +189,19 @@ protected override void OnActivityResult(int req, Result res, Intent data)
     }
 }
 ```
+
+`TextToSpeech.Engine.ActionCheckTtsData` 言語リソースの可用性をテストします。 `OnActivityResult` このテストの完了時に呼び出されます。 言語リソースをダウンロードする必要がある場合`OnActivityResult`を起動、`TextToSpeech.Engine.ActionInstallTtsData`ユーザーが必要な言語をダウンロードできるアクティビティを開始するアクション。 注この`OnActivityResult`実装を確認しません、`Result`コードのため、この単純な例の決定が既に行われた言語パッケージをダウンロードする必要があること。
+
+`TextToSpeech.Engine.ActionInstallTtsData`アクション原因、 **Google 音声合成による音声データ**をダウンロードする言語を選択するため、ユーザーに提示するアクティビティ。
+
+![Google の音声合成による音声データ アクティビティ](speech-images/01-google-tts-voice-data.png)
+
+例として、ユーザーはフランス語を選択し、フランス語の音声のデータをダウンロードするダウンロード アイコンをクリックして可能性があります。
+
+![フランス語の言語をダウンロードする例](speech-images/02-selecting-french.png)
+
+ダウンロードが完了した後、このデータのインストールは自動的に行われます。
+
 
 ### <a name="step-5---the-ioninitlistener"></a>手順 5 -、IOnInitListener
 

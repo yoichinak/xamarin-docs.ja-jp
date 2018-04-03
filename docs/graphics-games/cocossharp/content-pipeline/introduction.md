@@ -1,6 +1,6 @@
 ---
-title: "コンテンツのパイプラインの概要"
-description: "コンテンツのパイプラインは、アプリケーション、またはアプリケーションの各部分に使用されるファイルをゲーム プロジェクトを読み込むことができる形式に変換します。 MonoGame コンテンツ パイプラインは、CocosSharp および MonoGame プロジェクト ファイルを変換するための特定のコンテンツ パイプライン実装です。"
+title: コンテンツのパイプラインの概要
+description: コンテンツのパイプラインは、アプリケーション、またはアプリケーションの各部分に使用されるファイルをゲーム プロジェクトを読み込むことができる形式に変換します。 MonoGame コンテンツ パイプラインは、CocosSharp および MonoGame プロジェクト ファイルを変換するための特定のコンテンツ パイプライン実装です。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 40628B5F-FAF7-4FA7-A929-6C3FEA83F8EC
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: d51852924a4d909857659d38f8c19d520bb4c589
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7394ae5ddacb20a10e603fa50376799b82d2a3dc
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="introduction-to-content-pipelines"></a>コンテンツのパイプラインの概要
 
@@ -21,7 +21,7 @@ _コンテンツのパイプラインは、アプリケーション、または�
 この記事は、主に重点コンテンツのパイプラインの概念の理解、 *MonoGame コンテンツ パイプライン*、CocosSharp および MonoGame と共に使用するコンテンツのパイプラインの実装であります。
 
 
-# <a name="what-is-a-content-pipeline"></a>コンテンツのパイプラインとは何ですか。
+## <a name="what-is-a-content-pipeline"></a>コンテンツのパイプラインとは何ですか。
 
 用語*コンテンツ パイプライン*はファイルの 1 つの形式を変換するプロセスの一般的な用語です。 *入力*のコンテンツのパイプラインは、通常 Photoshop から画像ファイルなどのオーサリング ツールによって出力されるファイルです。 コンテンツのパイプラインを作成、*出力*ゲーム プロジェクトを直接読み込むことができる形式のファイルです。 通常、出力ファイルは高速読み込みの最適化され、ディスクのサイズが減ります。
 
@@ -31,32 +31,32 @@ _コンテンツのパイプラインは、アプリケーション、または�
 
 ![](introduction-images/image1.png "ファイルは実行時に読み込まれるオーサリングから取得するパスはこの図の視覚化します。")
 
-# <a name="why-use-a-content-pipeline"></a>コンテンツのパイプラインを使用する理由
+## <a name="why-use-a-content-pipeline"></a>コンテンツのパイプラインを使用する理由
 
 コンテンツのパイプラインは、コンパイル時間を増やすと、開発プロセスに複雑さを追加できます、オーサリング アプリケーションとゲーム、余分な手順を紹介します。 これらの考慮事項であるにもかかわらずは、コンテンツのパイプラインは、ゲームの開発にさまざまな利点を導入します。
 
 
-## <a name="converting-to-a-format-understood-by-the-game"></a>ゲームが認識できる形式に変換します。
+### <a name="converting-to-a-format-understood-by-the-game"></a>ゲームで認識される形式に変換します。
 
 CocosSharp と MonoGame は、さまざまな種類のコンテンツを読み込むためのメソッドを提供します。ただし、コンテンツは、読み込まれる前に正しくフォーマットしなければなりません。 ほとんどのコンテンツの種類では、読み込まれる前に変換のいくつかの種類が必要です。 視聴覚効果など、 **.wav**形式に変換する必要があります、 **.xnb** CocosSharp MonoGame では、読み込みをサポートしていないために、実行時に読み込まれるファイル、 **.wav**ファイル形式です。
 
 
-## <a name="converting-to-a-format-native-to-the-hardware"></a>ハードウェアにネイティブ形式に変換します。
+### <a name="converting-to-a-format-native-to-the-hardware"></a>ハードウェアにネイティブ形式に変換します。
 
 別のハードウェア可能性がありますの扱いコンテンツ実行時にします。 たとえば、CocosSharp ゲーム読み込むことができますのイメージ ファイルを作成するとき、`CCSprite`インスタンス。 同じコードは、iOS と Android の両方でファイルの読み込みに使用できますが、各プラットフォームが異なる方法で読み込まれているファイルを格納します。 その結果、テクスチャのフォーマット MonoGame コンテンツ パイプライン**.xnb**ターゲット プラットフォームに応じて異なる方法でファイル。
 
 
-## <a name="reducing-size-on-disk"></a>ディスク上のサイズを縮小します。 
+### <a name="reducing-size-on-disk"></a>ディスク上のサイズを縮小します。 
 
 コンテンツ情報を削除するパイプラインを使用できます、これは作成者時に便利ですが、実行時に必要ありません。 元の (入力) ファイルがコンテンツの作成者が既存のコンテンツの管理に役立つすべての情報を格納できますが、出力ファイルがゲーム全体のファイルを小さく必要できます。 このに関する考慮事項は、インストール メディアに分散するのではなく、ダウンロードはモバイル ゲーム用に特に便利です。
 
 
-## <a name="reducing-load-time"></a>読み込み時間を短縮します。
+### <a name="reducing-load-time"></a>読み込み時間を短縮します。
 
 ゲームには、ビジュアルの強化や新機能を追加する、実行時のパフォーマンスを向上させるためにコンテンツの変更が必要です。 たとえば 3D ゲームの多くに 1 回だけの照明計算し、複雑なシーンをレンダリングするときに、この計算の結果を使用します。 負担することができる内容を読み込んで、これらの計算を実行するため、計算できます代わりに実行するゲームのビルド時にします。 結果の計算は、処理できるよりも非常に高速で読み込まれるコンテンツを有効にすると、コンテンツに含めることができます。 
 
 
-# <a name="xnb-file-extension"></a>XNB ファイル拡張子
+## <a name="xnb-file-extension"></a>xnb ファイル拡張子
 
 **.Xnb**ファイル拡張子は Monogame コンテンツ パイプラインによって出力されるすべてのファイルの拡張子。 これには、Microsoft XNA コンテンツ パイプラインによって出力されるファイルの拡張子と一致します。
 
@@ -65,7 +65,7 @@ CocosSharp と MonoGame は、さまざまな種類のコンテンツを読み�
 CocosSharp と MonoGame の .xnb ファイルは、それについては説明 Monogame パイプライン ツールを使用して作成できる[このチュートリアルで](~/graphics-games/cocossharp/content-pipeline/walkthrough.md)です。
 
 
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 この記事提供されるコンテンツのパイプラインの利点の概要と一般的に、MonoGame コンテンツ パイプラインの概要とします。
 

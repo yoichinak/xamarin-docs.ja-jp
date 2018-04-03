@@ -1,6 +1,6 @@
 ---
-title: "CCAction をアニメーション化します。"
-description: "CCAction クラスでは、追加のアニメーション CocosSharp ゲームを簡略化します。 機能を実装したり、ポーランド語を追加する、これらのアニメーションを使用できます。"
+title: CCAction をアニメーション化します。
+description: CCAction クラスでは、追加のアニメーション CocosSharp ゲームを簡略化します。 機能を実装したり、ポーランド語を追加する、これらのアニメーションを使用できます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74DBD02A-6F10-4104-A61B-08CB49B733FB
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 2852cf0e141e8239cee8dbe580576f4571c919a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e64789f4e86dbcd47fc760fd9d4d7fb61c76121
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="animating-with-ccaction"></a>CCAction をアニメーション化します。
 
@@ -23,7 +23,7 @@ _CCAction クラスでは、追加のアニメーション CocosSharp ゲーム�
 このガイドでは、プロジェクトと呼ばれる**ActionProject**を[でダウンロードできます](https://developer.xamarin.com/samples/mobile/CCAction)です。 このガイドでは、`CCDrawNode`については、クラス、 [CCDrawNode で描画 Geometry](~/graphics-games/cocossharp/ccdrawnode.md)ガイドです。
 
 
-# <a name="running-the-actionproject"></a>ActionProject を実行しています。
+## <a name="running-the-actionproject"></a>ActionProject を実行しています。
 
 **ActionProject** CocosSharp ソリューションが iOS および Android 用構築されたことができます。 両方の使用方法のコード サンプルとして機能し、`CCAction`クラスと共通のリアルタイムのデモとして`CCAction`実装します。
 
@@ -39,8 +39,7 @@ _CCAction クラスでは、追加のアニメーション CocosSharp ゲーム�
 
 ![](ccaction-images/image3.gif "位置のラベルをクリックするとが順番に異なる値を変更できます。")
 
-
-# <a name="common-variable-changing-ccactions"></a>共通の変数を変更する CCActions 
+## <a name="common-variable-changing-ccaction-classes"></a>共通の変数を変更する CCAction クラス
 
 **ActionProject** 、次を使用して`CCAction`-CocosSharp の一部となっているクラスを継承します。
 
@@ -94,13 +93,13 @@ nodeToAddTo.AddAction (coreAction);
 各"To"クラスも「によって」、バージョンを持っての現在の値には引数の値が追加されます、`CCNode`です。 などの作成、 `CCMoveBy` X の位置 = 100 と Y = 200 になります、`CCNode`アクションが開始されたときでは位置から右側 100 単位に、200 の単位を移動するインスタンス。
 
 
-# <a name="easing-actions"></a>アクションの簡略化
+## <a name="easing-actions"></a>アクションの簡略化
 
 変数を変更するアクションを実行する既定では、*線形補間*– アクションが一定の割合で目的の値の方向に移動します。 補間する場合*位置*の速度はそのまま、アクションを実行し、直線的に移動するオブジェクトがすぐに開始され先頭と、操作の最後に移動は停止します。 
 
 非線形補間では、小さい少し目障りな感じがし、CocosSharp さまざまな変数を変更するアクションを変更するために使用するアクションを簡略化を提供するために、ポーランド語の要素を追加します。
 
-**ActionProject**サンプルについては、この種類の 2 番目のラベルをクリックしてイージング操作の間で切り替えるおできます (既定値 **<None>** )。
+**ActionProject**サンプルについては、この種類の 2 番目のラベルをクリックしてイージング操作の間で切り替えるおできます (既定値**<None>**)。
 
 ![](ccaction-images/image4.gif "ユーザーは、この種類の 2 番目のラベルをクリックしてイージング操作を切り替えることができます。")
 
@@ -128,35 +127,35 @@ nodeToAddTo.AddAction (easing);
 ![](ccaction-images/image5.gif "CCRotateTo などの他の変数設定アクションに正確な同じイージングを適用できます。")
 
 
-# <a name="easing-in-out-and-inout"></a>イージング In、Out、および InOut
+## <a name="easing-in-out-and-inout"></a>イージング In、Out、および InOut
 
 すべてのアクションをイージングが`In`、 `Out`、または`InOut`イージング型に追加されます。 イージングが適用されるときは、これらの用語を参照:`In`イージングは開始時に、適用することを意味`Out`終了時に、ことを意味し、`InOut`先頭と末尾の両方を意味します。
 
 `In`全体の補間 (両方の先頭と末尾に)、全体で変数が適用される方法に影響がアクションを簡略化いますが、通常最もわかりやすい特性イージング アクションの先頭に配置します。 同様に、`Out`イージング アクションは、補間の終了時の動作によって特徴付けられます。 たとえば、`CCEaseBounceOut`アクションの終了時バウンス オブジェクトになります。
 
 
-## <a name="out"></a>Out
+### <a name="out"></a>Out
 
 `Out` 一般に容易には、補間の最後に最も大きな変更が適用されます。 たとえば、`CCEaseExponentialOut`対象の値に近づくにつれて、変化する変数の変化率が低下します。
 
 ![](ccaction-images/image6.gif "対象の値に近づくにつれて、CCEaseExponentialOut の変化する変数の変化率が低下します。")
 
 
-## <a name="in"></a>イン
+### <a name="in"></a>イン
 
 `In` 通常の簡略化すると、補間の先頭に最も大きな変更が適用されます。 たとえば、`CCEaseExponentialIn`より遅くなりアクションの先頭に移動されます。
 
 ![](ccaction-images/image7.gif "アクションの先頭に CCEaseExponentialIn はより遅くなり移動します。")
 
 
-## <a name="inout"></a>InOut
+### <a name="inout"></a>InOut
 
 `InOut` 通常の先頭と末尾の両方で最も顕著な変更を適用します。 `InOut` イージングは通常対称です。 たとえば、`CCEaseExponentialInOut`先頭と、操作の最後に、緩やかに変化が移動します。
 
 ![](ccaction-images/image8.gif "先頭と末尾のアクションで CCEaseExponentialInOut が緩やかに変化移動します。")
 
 
-# <a name="implementing-a-custom-ccaction"></a>カスタム CCAction を実装します。
+## <a name="implementing-a-custom-ccaction"></a>カスタム CCAction を実装します。
 
 CocosSharp 一般的な機能を提供するには、すべてのこれまでに説明したクラスが含まれます。 カスタム`CCAction`の実装がさらに高い柔軟性を提供します。 たとえば、`CCAction`エクスペリエンス バーの塗りつぶしの比率を制御することできますエクスペリエンス バーは、ユーザー エクスペリエンスが加算されるたびに滑らかに拡大できるようにします。
 
@@ -226,7 +225,7 @@ public class LineWidthState : CCFiniteTimeActionState
 ![](ccaction-images/image9.gif "このアニメーションで示すようには、さまざまな方法で線幅を変更するイージングのアクション、LineWidthAction を結合できます。")
 
 
-## <a name="interpolation-and-the-update-method"></a>補間と、Update メソッド
+### <a name="interpolation-and-the-update-method"></a>補間と、Update メソッド
 
 上記のクラス内の値を格納する場合を除いて、唯一のロジックが住んでいる、`LineWidthState.Update`メソッドです。 `startWidth`変数がターゲットの幅を格納`LineNode`、アクションの開始時と`deltaWidth`変数がどの程度の値は、操作の過程で変更を保存します。
 
@@ -247,7 +246,7 @@ castedTarget.Width = startWidth + deltaWidth * 1;
 `time`値は 0 ~ 1 - で通常は常にではありません - と`Update`実装は、これらの境界を想定しないでください。 一部のイージング メソッド (など`CCEaseBackIn`と`CCEaseBackOut`) 0 ~ 1 の範囲外での時刻値を指定します。
 
 
-# <a name="conclusion"></a>まとめ
+## <a name="conclusion"></a>まとめ
 
 補間とイージング、光沢のあるゲームを作成するユーザー インターフェイスを作成するときに特に重要な部分です。 このガイドを使用する方法を説明する`CCActions`位置と回転などの標準の値だけでなくカスタム値を補間します。 `LineWidthState`と`LineWidthAction`クラスは、カスタム アクションを実装する方法を示します。
 

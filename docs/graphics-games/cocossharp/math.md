@@ -1,6 +1,6 @@
 ---
-title: "CocosSharp による 2D 数学的演算"
-description: "このガイドでは、ゲームの開発のための 2D 数学について説明します。 CocosSharp 使用ゲーム開発の一般的なタスクを実行する方法について説明と、これらのタスクの背後にある数値演算について説明します。"
+title: CocosSharp による 2D 数学的演算
+description: このガイドでは、ゲームの開発のための 2D 数学について説明します。 CocosSharp 使用ゲーム開発の一般的なタスクを実行する方法について説明と、これらのタスクの背後にある数値演算について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 7573ca423c3d9462d400f117c2116209e7c2a410
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 484bd8b19f2c51dac57a46a1ef93610ed5e13419
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>CocosSharp による 2D 数学的演算
 
@@ -28,12 +28,12 @@ _このガイドでは、ゲームの開発のための 2D 数学について説
 開発者が、強力な数学背景は持っていないユーザーまたはユーザーが時間の長い忘れかけていた学校からこれらのトピックは、心配する必要はありません: このドキュメントは分割の概念食べるサイズ、および実際の例の理論上の説明を伴う、します。 簡単に言えば、この記事は回答を昔ながら math 学生:「は実際に必要になる場合にこの機能を使用しますか?」
 
 
-# <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 コード サンプルにフォームを継承するオブジェクトを使った作業前提としていますが、このドキュメントでは、主 CocosSharp の数学的な側面に焦点を当てています、`CCNode`です。 さらに、以降`CCNode`値を含まない速度とアクセラレータの場合は、コードは、VelocityX、VelocityY、AccelerationX、および AccelerationY などの値を提供するエンティティの使用を想定しています。 エンティティの詳細については、このチュートリアルを参照してください。 [CocosSharp 内のエンティティ](~/graphics-games/cocossharp/entities.md)です。
 
 
-# <a name="velocity"></a>ベロシティ
+## <a name="velocity"></a>ベロシティ
 
 ゲーム開発者という用語を使用する*ベロシティ*オブジェクトが移動 – 方法を説明する速度は何かの移動と方向が移動します。 
 
@@ -50,7 +50,7 @@ bulletInstance.VelocityY = 300;
 ```
 
 
-## <a name="implementing-velocity"></a>ベロシティを実装します。
+### <a name="implementing-velocity"></a>ベロシティを実装します。
 
 移動を必要とするオブジェクトは、独自の動きのロジックを実装する必要がありますので、CocosSharp は速度を実装しません。 多くの場合、速度を実装する新しいゲーム開発者は間違い、ベロシティのフレーム レートに依存します。 次は、*を正しく実装*は正しい結果を提供するようですが、ゲームのフレーム レートに基づきます。
 
@@ -75,7 +75,7 @@ this.PositionY += this.VelocityY * seconds;
 時間ベースの動きを追加する方法の例は、次を参照してください。[時間をカバーするこのレシピ ベース移動](https://developer.xamarin.com/recipes/cross-platform/game_development/time_based_movement/)です。
 
 
-## <a name="calculating-positions-using-velocity"></a>速度を使用して位置の計算
+### <a name="calculating-positions-using-velocity"></a>速度を使用して位置の計算
 
 ベロシティは、ある程度の時間の経過後にオブジェクトがされるに関する予測を行うか、ゲームを実行することがなくオブジェクトの動作の調整に役立ちますに使用できます。 たとえば、起動の箇条書きの動きを実装する開発者がインスタンス化された後に、行頭の速度を設定する必要があります。 画面のサイズは、基礎となる速度を設定するために使用できます。 開発者が知っている場合は、行頭文字は 2 秒単位で、画面の高さを移動する必要がありますし、ベロシティは、2 で割った値画面の高さを設定する必要があります。 画面が 800 ピクセルの高さの場合は、行頭の速度は 400 (ある 800/2) に設定されます。
 
@@ -92,7 +92,7 @@ label.Text = secondsToReachTarget + " seconds to reach target";
 ```
 
 
-# <a name="acceleration"></a>高速化
+## <a name="acceleration"></a>高速化
 
 *アクセラレータ*ゲームの開発における一般的な概念は、多くの類似点と同じ速度でします。 アクセラレータは、オブジェクトが高速化、または (ベロシティ値の変更時間の経過と共にどのように) のパフォーマンスの低下するかどうかを定量化します。 アクセラレータ*追加*ベロシティは、配置に追加する場合と同じように、ベロシティにします。 アクセラレータの一般的なアプリケーションには、重力、車の高速化、およびその thrusters を発生させるスペースが含まれます。 
 
@@ -111,12 +111,12 @@ icicle.AccelerationY = -50;
 ```
 
 
-## <a name="acceleration-vs-deceleration"></a>アクセラレータとします。減速
+### <a name="acceleration-vs-deceleration"></a>加速減速との比較
 
 毎日音声認識では、アクセラレータと減速は区別される場合があります、ですが、2 つの技術の違いはありません。 重力は、アクセラレータで力です。 オブジェクトが上方向へスローされた場合、重力が遅くなる原因 (減速) が、オブジェクトが上昇が停止し、重力と同じ方向に遅れが発生したら、重力は高速化、(加速する場合)。 以下に示すよう、アプリケーション、アクセラレータの同じですが、同じ方向または逆方向の移動に適用されているかどうか。 
 
 
-## <a name="implementing-acceleration"></a>高速化を実装します。
+### <a name="implementing-acceleration"></a>高速化を実装します。
 
 実装する場合は、アクセラレータ、ベロシティに類似 – CocosSharp、によって自動的に実装されていません、時間ベースのアクセラレータ (フレーム ベースのアクセラレータ) ではなく必要な実装。 したがって (速度) と共に単純なアクセラレータの実装例を示します。
 
@@ -149,7 +149,7 @@ this.VelocityY += this.AccelerationY * seconds;
 実際の影響`halfSecondSquare`アクセラレータが動作する数学的に正確かつ予測可能なフレーム レートに関係なく、します。 アクセラレータの線形近似はフレーム レート – される可能性がありますが低いほど、フレーム レート精度は下がります、概算値になります。 使用して`halfSecondsSquared`コードが動作するフレーム レートに関係なく同じ保証します。
 
 
-# <a name="angles-and-rotation"></a>角度と回転
+## <a name="angles-and-rotation"></a>角度と回転
 
 などの visual オブジェクト`CCSprite`経由の回転は、サポート、`Rotation`変数。 これは、(度単位) の回転を設定する値に割り当てることができます。 たとえば、次のコードが回転する方法を示しています、`CCSprite`インスタンス。
 
@@ -189,7 +189,7 @@ this.AddChild (rotatedSprite);
 上のダイアグラムが度数; 回転を表示することに注意する必要があります。ただし、一部の数学関数 (内の関数など、`System.Math`名前空間) ことが予想され、内の値を返す*ラジアン*度ではなくです。 このガイドで少し後で 2 つの単位の種類の間で変換する方法を紹介します。
 
 
-## <a name="rotating-to-face-a-direction"></a>方向を向く回転
+### <a name="rotating-to-face-a-direction"></a>方向を向く回転
 
 、上記のように`CCSprite`を回転できる を使用して、`Rotation`プロパティです。 `Rotation`によって提供されるプロパティ`CCNode`(の基底クラス`CCSprite`) から継承するエンティティに回転を適用できることを意味する`CCNode`もします。 
 
@@ -261,14 +261,16 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 
 ![](math-images/image5.gif "このコードは、この動作になります")
 
-### <a name="using-atan2-to-convert-offsets-to-angles"></a>Atan2 を使用して、角度のオフセットを変換するには
+#### <a name="using-atan2-to-convert-offsets-to-angles"></a>オフセット Atan2 を使用して変換する角度を
+
 `System.Math.Atan2` 角度にオフセットを変換するために使用します。 関数名`Atan2`三角関数の逆正接に由来します。 「2」サフィックスでは、この関数を区別標準から`Atan`アーク タンジェントの数学的な動作を厳密に一致する関数。 アーク タンジェントの値を返す-90 関数とは、+90 度 (または同等のラジアン単位)。 コンピューター ゲームなど、多くのアプリケーションでは、フルの 360 度の値の多くの場合、必要なため、`Math`クラスが含まれます`Atan2`このニーズを満たすためにします。
 
 上記のコードが合格する Y パラメーター最初に、X パラメーターを呼び出すときに注意してください、`Atan2`メソッドです。 これは旧バージョンと通常の X、Y の位置座標の順序です。 詳細については[Atan2 ドキュメントを参照してください](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx)です。
 
 注目すべきも戻り値の値から`Atan2`ラジアンは角度を測定するために使用する別の単位であります。 このガイドはラジアン単位の詳細をカバーしましたに留意してくださいを内のすべての三角関数、`System.Math`名前空間を使用するラジアンのため CocosSharp オブジェクトで使用される前に度に任意の値を変換する必要があります。 ラジアン単位の詳細についてを参照できます[ラジアンの Wikipedia ページに](http://en.wikipedia.org/wiki/Radian)です。
 
-### <a name="forward-angle"></a>順方向の角度
+#### <a name="forward-angle"></a>順方向の角度
+
 1 回、`FacePoint`メソッド角度をラジアンに変換する、定義、`forwardAngle`値。 この値は、回転の値が 0 の場合のエンティティが直面する角度を表します。 この例では、あるエンティティを上向き、90 度 (CocosSharp 回転) ではなく数学的な回転を使用する場合に想定しています。 数学的な回転ここで使用 CocosSharp の回転とは逆おにまだしていないためです。
 
 どのようなエンティティが、次の表示、 `forwardAngle` 90 度のようになります。
@@ -276,7 +278,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 ![](math-images/image6.png "これが 90 度 forwardAngle を持つエンティティの外観を示しています")
 
 
-## <a name="angled-velocity"></a>山ベロシティ
+### <a name="angled-velocity"></a>山ベロシティ
 
 これまでのオフセットを角度に変換する方法を見てみました。 このセクションでは、他のようになる – 角度を受け取りし、X に変換し、Y 値。 一般的な例には、車向きには、または、出荷が直面している方向に移動する箇条書きを撮影スペース内の移動にはが含まれます。 
 
@@ -354,6 +356,6 @@ newBullet.Rotation = rotation;
 ![](math-images/image9.png "このコードは、このスクリーン ショットのようなものを生成可能性があります。")
 
 
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 このガイドでは、2 D ゲーム開発での一般的な数学的な概念について説明します。 割り当てるし、速度とアクセラレータ、実装する方法について説明し、オブジェクトとの任意の方向に移動ベクターを回転する方法について説明します。

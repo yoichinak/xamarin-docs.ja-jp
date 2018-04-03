@@ -1,6 +1,6 @@
 ---
-title: "デバイス非依存単位、ピクセル"
-description: "SkiaSharp 座標と Xamarin.Forms の座標の違いを調べる"
+title: デバイス非依存単位、ピクセル
+description: SkiaSharp 座標と Xamarin.Forms の座標の違いを調べる
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1698c18eafdce0585daa81c9462ee038c15586bd
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>デバイス非依存単位、ピクセル
 
@@ -26,7 +26,7 @@ _SkiaSharp 座標と Xamarin.Forms の座標の違いを調べる_
 
 これらの円*は*Xamarin.Forms サイズと比較して少ないです。 既定では、Xamarin.Forms に基づいて座標とサイズ、基になるプラットフォームによって確立されたデバイスに依存しない単位間 SkiaSharp をピクセル単位で描画します。(詳細については、Xamarin.Forms の座標系には含まれて[第 5 章します。サイズを扱う](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)書籍の*Xamarin.Forms を使用したモバイル アプリを作成する*)。
 
-内のページ、 [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)というプログラム**画面サイズ**SkiaSharp テキスト出力を使用して、次の 3 つの異なるソースから、ディスプレイ画面のサイズを示します。
+内のページ、 [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)というプログラム**画面サイズ**SkiaSharp テキスト出力を使用して、次の 3 つの異なるソースから、ディスプレイ画面のサイズを示します。
 
 - 通常の Xamarin.Forms [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/)と[ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/)のプロパティ、`SKCanvasView`オブジェクト。
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/)のプロパティ、`SKCanvasView`オブジェクト。
@@ -165,4 +165,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

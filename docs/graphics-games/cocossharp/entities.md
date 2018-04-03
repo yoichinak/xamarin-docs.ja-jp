@@ -1,6 +1,6 @@
 ---
-title: "CocosSharp 内のエンティティ"
-description: "エンティティのパターンは、ゲーム コードを整理する強力な方法です。 読みやすさを向上、維持するため、コードを容易にし、組み込みの親/子の機能を活用します。"
+title: CocosSharp 内のエンティティ
+description: エンティティのパターンは、ゲーム コードを整理する強力な方法です。 読みやすさを向上、維持するため、コードを容易にし、組み込みの親/子の機能を活用します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: fe722ce75f0322ab60bb6fd967ff2c498b2e7b20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb4af0f76f6b266cad4eb969d987a346b7396aa9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="entities-in-cocossharp"></a>CocosSharp 内のエンティティ
 
@@ -34,7 +34,7 @@ _エンティティのパターンは、ゲーム コードを整理する強力
 ![](entities-images/image1.png "完成したゲームのようになります")
 
 
-# <a name="introduction-to-game-entities"></a>ゲームのエンティティの概要
+## <a name="introduction-to-game-entities"></a>ゲームのエンティティの概要
 
 ゲームのエンティティは、レンダリング、衝突、物理的、または人工知能のロジックを必要とするオブジェクトを定義するクラスです。 さいわい、ゲームのコード ベースであるエンティティには、ゲームの概念オブジェクト多くの場合と一致します。 これが true の場合、ゲームで必要となるエンティティを識別するより簡単に実現できます。 
 
@@ -51,7 +51,7 @@ _エンティティのパターンは、ゲーム コードを整理する強力
 これらのエンティティは、ゲームの独自のクラスは、各インスタンスのインスタンス化を超えるまったくまたはほとんどのセットアップが必要になります。
 
 
-# <a name="general-vs-specific-entity-types"></a>一般的な vs です。特定のエンティティの種類
+## <a name="general-vs-specific-entity-types"></a>型と特定のエンティティ型には、[全般]
 
 どの程度のエンティティを一般化するエンティティ システムを使用してゲームの開発者が直面している最初の質問の 1 つです。 実装の中で最も固有では、いくつかの特性が異なる場合でも、すべての種類、エンティティのためのクラスが定義します。 一般的なシステムはエンティティのグループを 1 つのクラスに結合しをカスタマイズできますのインスタンスを許可します。
 
@@ -84,7 +84,7 @@ _エンティティのパターンは、ゲーム コードを整理する強力
 わかりやすくするため、使用するクラス ベースのアプローチを特定出荷] および [箇条書きの単一のエンティティとこのチュートリアルでは。
 
 
-# <a name="project-setup"></a>プロジェクトのセットアップ
+## <a name="project-setup"></a>プロジェクトのセットアップ
 
 エンティティの実装を始める前にプロジェクトを作成する必要があります。 使用する CocosSharp プロジェクト テンプレートをプロジェクトの作成を簡略化します。 [この投稿の確認](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio)については、Visual Studio for Mac テンプレートから CocosSharp プロジェクトを作成します。 このガイドの残りの部分が、プロジェクト名を使用して**EntityProject**です。
 
@@ -110,14 +110,14 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 CocosSharp 解像度を処理する場合の詳細については、次を参照してください。 この[CocosSharp 内の複数の解決を処理ガイド](~/graphics-games/cocossharp/resolutions.md)です。
 
 
-# <a name="adding-content-to-the-project"></a>プロジェクトにコンテンツを追加します。
+## <a name="adding-content-to-the-project"></a>プロジェクトにコンテンツを追加します。
 
 含まれるファイルを追加おは、プロジェクトが作成されたら、[このコンテンツの zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)です。 これを行うには、zip ファイルをダウンロードして解凍します。 両方を追加**ship.png**と**bullet.png**を**コンテンツ**フォルダーです。 **コンテンツ**フォルダー内に生成されます、**資産**フォルダーには、Android、iOS にプロジェクトのルートになります。 追加されると、両方のファイルに表示する必要があります、**コンテンツ**フォルダー。
 
 ![](entities-images/image2.png "追加されると、両方のファイルがコンテンツのフォルダーにする必要があります。")
 
 
-# <a name="creating-the-ship-entity"></a>出荷エンティティを作成します。
+## <a name="creating-the-ship-entity"></a>出荷エンティティを作成します。
 
 `Ship`クラスは、ゲームの最初のエンティティになります。 追加する、`Ship`クラス、という名前のフォルダーをまず作成**エンティティ**プロジェクトのルート レベルにします。 新しいクラスを追加、**エンティティ**という名前のフォルダー `Ship`:
 
@@ -179,16 +179,16 @@ public class GameLayer : CCLayer
 ![](entities-images/image4.png "ゲームを実行するには、出荷エンティティが表示されます。")
 
 
-## <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>なぜ CCSprite ではなく CCNode から継承しますか。
+### <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>なぜ CCSprite ではなく CCNode から継承しますか。
 
 この時点で、`Ship`クラスは、簡単なラッパーで、`CCSprite`インスタンス。 `CCSprite`からも継承`CCNode`から直接継承されたでしたお`CCSprite`、内のコードを削減するよう`Ship.cs`です。 さらに、直接継承`CCSprite`メモリ内のオブジェクトの数を削減し、依存関係ツリーを小さくすることによってパフォーマンスを向上させることができます。
 
 継承したこれらの利点に関係なく`CCNode`いくつかの非表示にする、`CCSprite`各インスタンスのプロパティです。 たとえば、`Texture`以外のプロパティは変更しないで、`Ship`クラス、および継承`CCNode`このプロパティを非表示にすることができます。 エンティティのパブリック メンバーは、ゲームが大きくとその他の開発者がチームに追加されると、特に重要になります。
 
 
-# <a name="adding-input-to-the-ship"></a>船への入力を追加します。
+## <a name="adding-input-to-the-ship"></a>船への入力を追加します。
 
-これで、出荷を画面に表示されている入力を追加する予定です。 当社のアプローチはアプローチで実行されるようになります、 [CocosSharp ガイドの概要](~/graphics-games/cocossharp/first-game/part2.md)、コード内の動きを配置おする点を除いて、`Ship`クラスの親ではなく`CCLayer`または`CCScene`.
+これで、出荷を画面に表示されている入力を追加する予定です。 当社のアプローチはアプローチで実行されるようになります、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)、コード内の動きを配置おする点を除いて、`Ship`クラスの親ではなく`CCLayer`または`CCScene`です。
 
 コードを追加して`Ship`ユーザーが画面に触れては任意の場所に移動することをサポートするためにします。
 
@@ -230,7 +230,7 @@ public class Ship : CCNode
 多く撮影実践ゲームを実装する最大速度になっているため、コント ローラー ベースの従来の動作を模倣します。 ただし、単に短いコードを保持するイミディ エイトの動きを実装します。
 
 
-# <a name="creating-the-bullet-entity"></a>行頭文字エンティティを作成します。
+## <a name="creating-the-bullet-entity"></a>行頭文字エンティティを作成します。
 
 単純なゲームでは、2 番目のエンティティは、エンティティの行頭文字を表示するためです。 同じように、 `Ship` 、エンティティ、`Bullet`エンティティが含まれます、`CCSprite`画面に表示されないようにします。 移動のためのロジックはという点では、移動; のユーザー入力には依存しません代わりに、`Bullet`インスタンスが速度プロパティを使用して直線的に移動します。
 
@@ -288,7 +288,7 @@ namespace EntityProject
 `Schedule`メソッドでは、フレームごとに呼び出されるデリゲートを追加できるようにします。 ここで追加しています、`ApplyVelocity`メソッドのベロシティ値に従って、行頭に移動できるようにします。 `Schedule`メソッドは、 `Action<float>`、浮動小数点数のパラメーターが最後のフレームは、時間ベースの移動の実装を使用してから経過した時間 (単位は秒) の量を指定します。 秒単位で値を測定した時刻以降、当社ベロシティ値での移動を表します*1 秒あたりのピクセル*です。
 
 
-# <a name="adding-bullets-to-gamelayer"></a>GameLayer に行頭文字を追加します。
+## <a name="adding-bullets-to-gamelayer"></a>GameLayer に行頭文字を追加します。
 
 いずれかを追加する前に`Bullet`、ゲームにインスタンスおすると、コンテナー、具体的には、`List<Bullet>`です。 変更、`GameLayer`のため、箇条書きの一覧が含まれています。
 
@@ -422,14 +422,14 @@ void HandleBulletCreated(Bullet newBullet)
 ![](entities-images/image1.png "ゲームを実行し、出荷が行頭文字インスタンスを撮影します。")
 
 
-# <a name="why-gamelayer-has-ship-and-bullets-members"></a>GameLayer が出荷および箇条書きのメンバーを持つ理由
+## <a name="why-gamelayer-has-ship-and-bullets-members"></a>GameLayer が出荷および箇条書きのメンバーを持つ理由
 
 `GameLayer`クラスは、エンティティ インスタンスへの参照を保持するために 2 つのフィールドを定義 (`ship`と`bullets`)、それらに何も行いません。 さらに、エンティティは、移動やトラブルシューティングなど、独自の動作を担当します。 したがって理由でした追加`ship`と`bullets`フィールドを`GameLayer`しますか?
 
 これらのメンバーを追加したためです完全ゲームの実装のロジックが必要になります、`GameLayer`別のエンティティ間の対話にします。 たとえば、プレーヤーで破壊することができます敵を含めるこのゲームをさらに開発可能性があります。 これら敵に含まれている、`List`で、 `GameLayer`、およびロジックをテストするかどうか`Bullet`と競合するインスタンス敵はで実行されます、`GameLayer`もします。 言い換えると、`GameLayer`ルート*所有者*すべてのエンティティのインスタンス、およびそれがエンティティ インスタンス間の相互作用を担当します。
 
 
-# <a name="bullet-destruction-considerations"></a>箇条書きの破棄に関する考慮事項
+## <a name="bullet-destruction-considerations"></a>箇条書きの破棄に関する考慮事項
 
 ゲームには、コードの破棄を現在がない`Bullet`インスタンス。 各`Bullet`インスタンスには、画面上を移動するためのロジックが、いずれかの画面の範囲外に破棄するためのコードを追加していません`Bullet`インスタンス。
 
@@ -437,8 +437,7 @@ void HandleBulletCreated(Bullet newBullet)
 
 最も簡単なソリューションでは、破棄をサポートするためにファクトリ クラスの役割を展開します。 破棄されているエンティティのインスタンスなど、他のオブジェクトを処理するの工場出荷時の通知を受け取ることができ、`GameLayer`その一覧からエンティティのインスタンスを削除します。 
 
-
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 このガイドを継承して CocosSharp エンティティを作成する方法を示しています、`CCNode`クラスです。 これらのエンティティは、自己完結型のオブジェクトの独自のビジュアルとカスタム ロジックの作成を処理します。 このガイドでは、ルート エンティティ コンテナー (衝突およびその他のエンティティの相互作用ロジック) に属しているコードからエンティティ (移動し、その他のエンティティの作成) の内部が所属するコードを指定します。
 

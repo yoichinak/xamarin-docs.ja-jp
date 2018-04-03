@@ -2,51 +2,51 @@
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
-  description: "Xamarin.Forms は、モバイル、タブレット、およびデスクトップ アプリを構築する .NET 開発者に、完全にクロスプラットフォームな UI ツールキットを提供します。"
+  description: Xamarin.Forms は、モバイル、タブレット、およびデスクトップ アプリを構築する .NET 開発者に、完全にクロスプラットフォームな UI ツールキットを提供します。
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: ff86846ded6ca9dffce616a4e0e3415b58fc20da
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: ae192b3f07c4d6c180644871e48b6bc749a633c2
+  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 04/03/2018
 abstract:
-  description: "Xamarin.Forms は、.NET 開発者向けの包括的なクロスプラット フォーム UI ツールキットを提供します。 Visual Studio で C# を使用して、完全にネイティブな Android アプリを構築できます。"
+  description: Xamarin.Forms は、.NET 開発者向けの包括的なクロスプラット フォーム UI ツールキットを提供します。 Visual Studio で C# を使用して、完全にネイティブな Android アプリを構築できます。
   menu:
     items:
     - href: ~/xamarin-forms/samples/
-      text: "Xamarin.Forms のサンプル"
+      text: Xamarin.Forms のサンプル
     - href: https://developer.xamarin.com/releases/xamarin-forms/
-      text: "リリース ノート"
+      text: リリース ノート
     - href: https://developers.google.com/
-      text: "Google の開発者向けドキュメント"
+      text: Google の開発者向けドキュメント
     - href: https://developer.apple.com/documentation/
-      text: "Apple の開発者向けドキュメント"
+      text: Apple の開発者向けドキュメント
     - href: /visualstudio/
       text: Visual Studio
 sections:
-- title: "開始するには"
+- title: 開始するには
   items:
   - type: paragraph
-    text: "Android、iOS、および Windows を対象とする Xamarin.Forms アプリを Xamarin や C# で初めて構築する開発者向けに開発方法を説明します。"
+    text: Android、iOS、および Windows を対象とする Xamarin.Forms アプリを Xamarin や C# で初めて構築する開発者向けに開発方法を説明します。
   - type: list
     style: icon48
     items:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: "セットアップ"
+      text: セットアップ
       href: ~/xamarin-forms/get-started/installation.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Hello, Xamarin.Forms
+      text: クイック スタート
       href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: "マルチスクリーン アプリ"
+      text: マルチスクリーン アプリ
       href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
-- title: "ガイド"
+- title: ガイド
   items:
   - type: grid
     style: columns
@@ -57,68 +57,68 @@ sections:
       className: cardsB
       items:
       - href: ~/xamarin-forms/get-started/index.md
-        html: "すぐに Xamarin.Forms を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Xamarin.Forms アプリを構築してみましょう。"
+        html: すぐに Xamarin.Forms を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Xamarin.Forms アプリを構築してみましょう。
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
           href: ~/xamarin-forms/get-started/index.md
-        title: "作業の開始"
+        title: 作業の開始
       - href: ~/xamarin-forms/user-interface
-        html: "Xamarin.Forms XAML で使用できるすべてのユーザー インターフェイス コントロールについて説明します。"
+        html: Xamarin.Forms XAML で使用できるすべてのユーザー インターフェイス コントロールについて説明します。
         image:
           src: ~/media/icons/i_user-interface.svg
           href: ~/xamarin-forms/user-interface/
-        title: "ユーザー インターフェイス"
+        title: ユーザー インターフェイス
       - href: ~/xamarin-forms/deploy-test/
-        html: "アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。"
+        html: アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。
         image:
           src: ~/media/icons/i_deploy-test.svg
           href: ~/xamarin-forms/deploy-test/
-        title: "配置とテスト"
+        title: 配置とテスト
       - href: ~/xamarin-forms/data-cloud/
-        html: "ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。"
+        html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
         image:
           src: ~/media/icons/i_data-cloud.svg
           href: ~/xamarin-forms/data-cloud/
-        title: "データとクラウド サービス"
+        title: データとクラウド サービス
     - type: list
       style: cards
       className: cardsB
       items:
       - href: ~/xamarin-forms/app-fundamentals/
-        html: "ファイル、画像、データベースの扱いなど、Xamarin.Forms アプリを構築するために必要なすべての情報を説明します。"
+        html: ファイル、画像、データベースの扱いなど、Xamarin.Forms アプリを構築するために必要なすべての情報を説明します。
         image:
           src: ~/media/icons/i_app-build.svg
           href: ~/xamarin-forms/app-fundamentals/
-        title: "アプリケーションの基礎"
+        title: アプリケーションの基礎
       - href: ~/
-        html: "カスタム レンダラーなど、Xamarin.Forms プラットフォームの機能と、各リリースのその他の重要な機能を使用します。"
+        html: カスタム レンダラーなど、Xamarin.Forms プラットフォームの機能と、各リリースのその他の重要な機能を使用します。
         image:
           src: ~/media/icons/i_platform.svg
           href: ~/
-        title: "プラットフォーム機能"
+        title: プラットフォーム機能
       - href: ~/xamarin-forms/xaml/
-        html: "ユーザー インターフェイスを宣言によってビルドし、モバイルおよびデスクトップのプラットフォーム間で共有します。"
+        html: ユーザー インターフェイスを宣言によってビルドし、モバイルおよびデスクトップのプラットフォーム間で共有します。
         image:
           src: ~/media/icons/i_xaml-forms.svg
           href: ~/xamarin-forms/xaml/
         title: XAML
       - href: ~/xamarin-forms/internals/
-        html: "Xamarin.Forms の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。"
+        html: Xamarin.Forms の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
           href: ~/xamarin-forms/internals/
-        title: "高度な概念と内部構造"
-- title: "参照"
+        title: 高度な概念と内部構造
+- title: 参照
   items:
   - type: list
     style: cards
     className: cardsD
     items:
     - title: API
-      html: "<p><a href=\"https://developer.xamarin.com/api/root/Xamarin.Forms/\">Xamarin.Forms API ドキュメント</a></p>"
-    - title: "サンプル"
-      html: "<p><a href=\"https://developer.xamarin.com/samples/xamarin-forms/all/\">Xamarin.Forms のサンプル</a></p>"
-    - title: "ブック"
+      html: <p><a href="https://developer.xamarin.com/api/root/Xamarin.Forms/">Xamarin.Forms API ドキュメント</a></p>
+    - title: サンプル
+      html: <p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms のサンプル</a></p>
+    - title: ブック
       html: <p><a href="https://developer.xamarin.com/workbooks#xamarin-forms">Xamarin.Forms Workbooks</a></p>
-    - title: "ブック"
-      html: "<p><a href=\"~/xamarin-forms/creating-mobile-apps-xamarin-forms\">Mobile Apps の電子ブックを作成する</a></p><p><a href=\"~/xamarin-forms/enterprise-application-patterns\">エンタープライズ アプリケーション パターン電子ブック</a></p>"
+    - title: ブック
+      html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">Mobile Apps の電子ブックを作成する</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">エンタープライズ アプリケーション パターン電子ブック</a></p>

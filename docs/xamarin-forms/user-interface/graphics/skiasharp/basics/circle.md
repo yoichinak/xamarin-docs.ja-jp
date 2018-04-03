@@ -1,6 +1,6 @@
 ---
-title: "単純な円を描画"
-description: "キャンバスとペイントを含め、SkiaSharp 図面の基本をについてください。"
+title: 単純な円を描画
+description: キャンバスとペイントを含め、SkiaSharp 図面の基本をについてください。
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 402470c3a27ba4327afa6e77336d60748abad436
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-a-simple-circle"></a>単純な円を描画
 
@@ -20,7 +20,7 @@ _キャンバスとペイントを含め、SkiaSharp 図面の基本をについ
 
 この記事の作成など、SkiaSharp を使用して Xamarin.Forms でグラフィックスを描画の概念を説明する、`SKCanvasView`グラフィック、処理をホストするオブジェクト、`PaintSurface`イベント、およびを使用して、`SKPaint`色と他の描画を指定するオブジェクト属性。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)プログラムには、この一連の SkiaSharp 資料のすべてのサンプル コードが含まれています。 最初のページに権利がある**単純な円**ページ クラスを呼び出すと[ `SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)です。 このコードは、半径が 100 ピクセルのページの中央の円を描画する方法を示します。 円のアウトラインが赤であり、円の内部は青で表示します。
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラムには、この一連の SkiaSharp 資料のすべてのサンプル コードが含まれています。 最初のページに権利がある**単純な円**ページ クラスを呼び出すと[ `SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)です。 このコードは、半径が 100 ピクセルのページの中央の円を描画する方法を示します。 円のアウトラインが赤であり、円の内部は青で表示します。
 
 ![](circle-images/circleexample.png "赤で青い円形")
 
@@ -154,4 +154,4 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

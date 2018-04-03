@@ -1,6 +1,6 @@
 ---
-title: "次の 3 つの種類のベジエ曲線"
-description: "SkiaSharp を円錐、二次方程式、3 次ベジエ曲線を表示するために使用する方法について解説します。"
+title: 次の 3 つの種類のベジエ曲線
+description: SkiaSharp を円錐、二次方程式、3 次ベジエ曲線を表示するために使用する方法について解説します。
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: dcfcf43c89f26b4e721c9752b9cbad1f4a30cfc2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: cea9951f22fbcf0ff07a8e2244a9bc00819ada24
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
 
@@ -553,4 +553,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

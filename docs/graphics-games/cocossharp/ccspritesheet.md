@@ -1,6 +1,6 @@
 ---
-title: "CCSpriteSheet にフレーム レートの向上"
-description: "CCSpriteSheet は、結合および 1 つのテクスチャで多数のイメージ ファイルを使用するための機能を提供します。 テクスチャ数を減らすと、ゲームの読み込み時間とフレーム レートを向上させることができます。"
+title: CCSpriteSheet フレーム レートの向上
+description: CCSpriteSheet は、結合および 1 つのテクスチャで多数のイメージ ファイルを使用するための機能を提供します。 テクスチャ数を減らすと、ゲームの読み込み時間とフレーム レートを向上させることができます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1334030-750C-4C60-8B84-1A8A54B0D00E
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: ec8a641fbd15f826e92ada62f65b17dd46b369e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2bb5b98b5c93fb625ce645692d8a3ccb3d143b
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="improving-framerate-with-ccspritesheet"></a>CCSpriteSheet にフレーム レートの向上
+# <a name="improving-frame-rate-with-ccspritesheet"></a>CCSpriteSheet フレーム レートの向上
 
 _CCSpriteSheet は、結合および 1 つのテクスチャで多数のイメージ ファイルを使用するための機能を提供します。テクスチャ数を減らすと、ゲームの読み込み時間とフレーム レートを向上させることができます。_
 
 多くのゲームでは、スムーズに実行し、モバイル ハードウェアでのロードは速かった最適化作業が必要です。 `CCSpriteSheet`クラスの CocosSharp ゲームで発生した多くの一般的なパフォーマンス問題の解決に役立つことができます。 このガイドは、一般的なパフォーマンス問題とその対処方法について説明します。 を使用して、`CCSpriteSheet`クラスです。
 
 
-# <a name="what-is-a-sprite-sheet"></a>スプライト シートとは何ですか。
+## <a name="what-is-a-sprite-sheet"></a>スプライト シートとは何ですか。
 
 A*スプライト シート*、することがあるとも呼びます、*テクスチャ地図*、イメージを 1 つのファイルに複数のイメージを組み合わせたものです。 これは、コンテンツの読み込み時間と実行時のパフォーマンスを向上させることができます。
 
@@ -30,7 +30,7 @@ A*スプライト シート*、することがあるとも呼びます、*テク
 ![](ccspritesheet-images/image1.png "個々 のイメージは、任意のサイズを指定でき、結果として得られるスプライト シートが完全に入力する必要はありません。")
 
 
-## <a name="render-states"></a>レンダリングの状態
+### <a name="render-states"></a>状態を表示します。
 
 ビジュアルの CocosSharp オブジェクト (など`CCSprite`)、頂点バッファーの作成を必要とする従来のグラフィカル API レンダリング コード MonoGame など OpenGL、経由でレンダリング コードを簡略化 (」の説明に従って、[描画と 3D グラフィックスMonoGame の頂点](~/graphics-games/monogame/3d/part2.md)ガイド)。 その簡潔さに関係なく CocosSharp 消去しません設定のコスト*レンダリング ステート*、レンダリング コードでテクスチャまたは他のレンダリングに関連する状態を切り替える必要がある回数を超えるはします。
 
@@ -62,7 +62,7 @@ CocosSharp は、シーケンスで 4 個の星をレンダリングは。
 
 もちろん、理想的な状態を複数のイメージでも、1 つのレンダー状態です。 CocosSharp ゲームこれを行うには 1 つのファイルにすべてのイメージを結合し、その 1 つのファイルの読み込み (それに付随すると共に**.plist**ファイル) に、`CCSpriteSheet`です。 使用して、`CCSpriteSheet`クラスがさらにゲームが、イメージの数が多いこともある非常に重要なレイアウトが複雑になりです。 
 
-## <a name="load-times"></a>読み込み時間
+### <a name="load-times"></a>読み込み時間
 
 1 つのファイルに複数のイメージを結合すると、さまざまな理由から、ゲームの読み込み時間も向上します。
 
@@ -70,7 +70,7 @@ CocosSharp は、シーケンスで 4 個の星をレンダリングは。
  - .Png ヘッダーを解析など、ファイルごとのオーバーヘッドを減らすことを意味が少ないファイルを読み込んでいます
  - ファイル数を減らしてを読み込むには、ディスク ベースのメディアの Dvd と従来のコンピューターのハード ドライブなどの重要となる時間をシーク小さい必要があります。
 
-# <a name="using-ccspritesheet-in-code"></a>コードで CCSpriteSheet の使用
+## <a name="using-ccspritesheet-in-code"></a>コードで CCSpriteSheet の使用
 
 作成する、`CCSpriteSheet`インスタンス、イメージとフレームごとに使用するイメージの領域を定義するファイル、コードを指定する必要があります。 としてイメージを読み込むことができます、 **.png**または**.xnb**ファイル (を使用する場合、[コンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md))。 フレームを定義するファイルが、 **.plist**を手動で作成することがあるファイルまたは*TexturePacker* (これは、以下について説明します)。
 
@@ -110,7 +110,7 @@ CCSprite sprite = new CCSprite (frame);
 以降、`CCSprite`コンス トラクターがかかることができます、`CCSpriteFrame`パラメーター、コードではことの詳細を調査するために、 `CCSpriteFrame`、使用しているテクスチャなど、またはマスター スプライト シート内のイメージの地域。
 
 
-#  <a name="creating-a-sprite-sheet-plist"></a>.Plist シート スプライトを作成します。
+## <a name="creating-a-sprite-sheet-plist"></a>スプライト シート .plist を作成します。
 
 形式の .plist ファイルは、xml ベース、ファイル、作成および手動で編集できます。 同様に、編集プログラム イメージを使用して、1 つの大きなファイルに複数のファイルを結合することができます。 以降の作成と保守スプライト シートを非常に時間がかかることができます、見ていきます TexturePacker プログラムが CocosSharp 形式のファイルをエクスポートできます。 TexturePacker で、空きと、"Pro"バージョンには、Windows と Mac OS 使用します。 このガイドの残りの部分は、無料版を使用して実行できます。 
 
@@ -124,13 +124,13 @@ TexturePacker を指定できます[TexturePacker web サイトからダウン�
 
 スプライト シートをエクスポートする をクリックして、**発行スプライト シート**ボタンをクリックし、スプライト シートの場所を選択します。 TexturePacker は .plist ファイルとイメージ ファイルに保存します。
 
-結果として得られるファイルを使用するには、CocosSharp プロジェクトに .png と .plist の両方を追加します。 CocosSharp プロジェクトにファイルを追加する方法については、次を参照してください。、 [BouncingGame ガイドを実装する](~/graphics-games/cocossharp/first-game/part2.md)です。 ファイルが追加されると、それらに読み込まれる、`CCSpriteSheet`上記のコードで前述したとおりでした。
+結果として得られるファイルを使用するには、CocosSharp プロジェクトに .png と .plist の両方を追加します。 CocosSharp プロジェクトにファイルを追加する方法については、次を参照してください。、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)です。 ファイルが追加されると、それらに読み込まれる、`CCSpriteSheet`上記のコードで前述したとおりでした。
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
 ```
 
-## <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>TexturePacker スプライト シートを維持するための考慮事項
+### <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>TexturePacker スプライト シートを維持するための考慮事項
 
 ゲームを開発すると、アーティスト可能性がありますを追加、削除、またはアートを変更します。 すべての変更には、更新されたスプライト シートが必要です。 次の考慮事項がスプライト シート メンテナンス簡単になります。
 
@@ -144,7 +144,7 @@ CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png");
 
     ![](ccspritesheet-images/image10.png "フォルダーのパスを含めるをクリックして表示高度なデータ セクションにして Prepend フォルダー名を確認")
 
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 このガイドの作成し、使用する方法を説明する、`CCSpriteSheet`クラスです。 ファイルに読み込むことができますを作成する方法についても説明`CCSpriteSheet`TexturePacker プログラムを使用してインスタンス化します。
 

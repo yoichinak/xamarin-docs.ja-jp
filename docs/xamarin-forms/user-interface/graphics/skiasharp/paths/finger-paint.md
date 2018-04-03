@@ -1,6 +1,6 @@
 ---
-title: "本の指の描画"
-description: "指を使用して、キャンバスに描画します。"
+title: 本の指の描画
+description: 指を使用して、キャンバスに描画します。
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: b4213d71c2eca6c2552ac674a0203d7a2cc36e1b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dacb9f399ad044d2d5e9c960bce398092766020c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="finger-painting"></a>本の指の描画
 
@@ -24,7 +24,7 @@ _指を使用して、キャンバスに描画します。_
 
 Xamarin.Forms でタッチのサポートでは、Xamarin.Forms タッチ追跡効果は、追加のタッチ サポートを提供する開発が完了するために、画面で、個々 の本の指を追跡することはできません。 この効果は、資料に記載されて[**効果からイベントを呼び出す**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)です。 サンプル プログラム[**タッチ追跡効果デモ**](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) SkiaSharp、finger-painting プログラムなどを使用する 2 つのページが含まれています。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)ソリューションには、このタッチ追跡イベントが含まれています。 ポータブル クラス ライブラリ プロジェクトに含まれる、`TouchEffect`クラス、`TouchActionType`列挙型、`TouchActionEventHandler`デリゲート、および`TouchActionEventArgs`クラスです。 プラットフォーム プロジェクトそれぞれを含める、`TouchEffect`そのプラットフォームのクラス以外の場合は、iOS プロジェクトにも含まれています、`TouchRecognizer`クラスです。
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ソリューションには、このタッチ追跡イベントが含まれています。 ポータブル クラス ライブラリ プロジェクトに含まれる、`TouchEffect`クラス、`TouchActionType`列挙型、`TouchActionEventHandler`デリゲート、および`TouchActionEventArgs`クラスです。 プラットフォーム プロジェクトそれぞれを含める、`TouchEffect`そのプラットフォームのクラス以外の場合は、iOS プロジェクトにも含まれています、`TouchRecognizer`クラスです。
 
 **指ペイント**ページに**SkiaSharpFormsDemos**本の指の描画のシンプルな実装です。 色を選択できるようにしたり、幅の境界線の描画しないキャンバスをクリアすることがない、および、もちろん、アートワークを保存することはできません。
 
@@ -169,6 +169,6 @@ public partial class FingerPaintPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [タッチ追跡効果デモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
 - [呼び出し元のイベントの効果を適用](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

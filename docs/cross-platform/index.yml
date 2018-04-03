@@ -1,48 +1,48 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "クロスプラットフォーム ガイダンス"
+title: クロスプラットフォーム ガイダンス
 metadata:
-  description: "モバイル開発者向けのクロスプラットフォーム ガイダンスです。"
+  description: モバイル開発者向けのクロスプラットフォーム ガイダンスです。
   author: conceptdev
   ms.author: crdun
-  ms.date: 02/17/2018
+  ms.date: 03/28/2018
   ms.topic: landing-page
-  ms.openlocfilehash: c143d0be4eb0a8afa122028018ab7c8c4e20a32a
-  ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+  ms.openlocfilehash: 92873a844fad195d221f6d191476cb5ff17c76e9
+  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/09/2018
+  ms.lasthandoff: 04/03/2018
 abstract:
-  description: "Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発用プラットフォームが用意されています。"
+  description: Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発用プラットフォームが用意されています。
   menu:
     items:
     - href: ~/cross-platform/samples/
-      text: "Xamarin のサンプル"
+      text: Xamarin のサンプル
     - href: /visualstudio/
       text: Visual Studio
     - href: /visualstudio/mac/
       text: Visual Studio for Mac
 sections:
-- title: "開始するには"
+- title: 開始するには
   items:
   - type: paragraph
-    text: "Xamarin と C# を使用して、Android、iOS、macOS、UWP など用の最初のアプリを構築する方法について説明します。"
+    text: Xamarin と C# を使用して、Android、iOS、macOS、UWP など用の最初のアプリを構築する方法について説明します。
   - type: list
     style: icon48
     items:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: "必要条件"
-      href: ~/cross-platform/get-started/index.md
+      text: 必要条件
+      href: ~/cross-platform/get-started/requirements.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: "作業の開始"
-      href: ~/cross-platform/get-started/index.md
+      text: 作業の開始
+      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: "マルチスクリーン アプリ"
-      href: ~/cross-platform/index.md
-- title: "ガイド"
+      text: マルチスクリーン アプリ
+      href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
+- title: ガイド
   items:
   - type: grid
     style: columns
@@ -53,52 +53,40 @@ sections:
       className: cardsB
       items:
       - href: ~/cross-platform/get-started/index.md
-        html: "すぐに Xamarin を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。"
+        html: すぐに Xamarin を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
           href: ~/cross-platform/get-started/index.md
-        title: "作業の開始"
+        title: 作業の開始
       - href: ~/cross-platform/platform
-        html: "プラットフォーム機能の操作方法について説明します。"
+        html: プラットフォーム機能の操作方法について説明します。
         image:
           src: ~/media/icons/i_platform.svg
           href: ~/
-        title: "プラットフォーム機能"
-      - href: ~/cross-platform/data-cloud/
-        html: "ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。"
-        image:
-          src: ~/media/icons/i_data-cloud.svg
-          href: ~/cross-platform/data-cloud/
-        title: "データとクラウド サービス"
+        title: プラットフォーム機能
       - href: ~/cross-platform/macios/
-        html: "iOS、watchOS、tvOS、および macOS SDK に共通する機能について説明します。"
+        html: iOS、watchOS、tvOS、および macOS SDK に共通する機能について説明します。
         image:
           src: https://docs.microsoft.com/media/logos/logo_xcode.svg
           href: ~/cross-platform/macios/
-        title: "Apple プラットフォーム (Mac と iOS)"
+        title: Apple プラットフォーム (Mac と iOS)
     - type: list
       style: cards
       className: cardsB
       items:
       - href: ~/cross-platform/app-fundamentals/
-        html: "アプリを構築するために必要なすべての情報について説明します。"
+        html: アプリを構築するために必要なすべての情報について説明します。
         image:
           src: ~/media/icons/i_app-build.svg
           href: ~/cross-platform/app-fundamentals/
-        title: "アプリケーションの基礎"
+        title: アプリケーションの基礎
       - href: ~/cross-platform/deploy-test/
-        html: "アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。"
+        html: アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。
         image:
           src: ~/media/icons/i_deploy-test.svg
           href: ~/cross-platform/deploy-test/
-        title: "配置とテスト"
-      - href: ~/cross-platform/internals/
-        html: "クロスプラットフォームのモバイル、タブレット、デスクトップ開発に関するその他の情報について説明します。"
-        image:
-          src: https://docs.microsoft.com/en-us/media/common/i_advanced.svg
-          href: ~/cross-platform/internals/
-        title: "高度な概念と内部構造"
-- title: "プラットフォーム"
+        title: 配置とテスト
+- title: プラットフォーム
   items:
   - type: list
     style: cards
@@ -106,13 +94,13 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: "<p><a href=\"~/xamarin-forms/get-started/index.md\">開始するには</a><br /><a href=\"~/xamarin-forms/app-fundamentals/index.md\">アプリの基礎</a><br /><a href=\"~/xamarin-forms/user-interface/index.md\">ユーザー インターフェイス</a><br /><a href=\"~/xamarin-forms/platform/index.md\">プラットフォーム機能</a><br /><a href=\"~/xamarin-forms/deploy-test/index.md\">配置とテスト</a><br /><a href=\"~/xamarin-forms/xaml/index.md\">XAML</a><br /><a href=\"~/xamarin-forms/data-cloud/index.md\">データとクラウド サービス</a><br /><a href=\"~/xamarin-forms/internals/index.md\">高度な概念と内部構造</a></p>"
+      html: <p><a href="~/xamarin-forms/get-started/index.md">開始するには</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">アプリの基礎</a><br /><a href="~/xamarin-forms/user-interface/index.md">ユーザー インターフェイス</a><br /><a href="~/xamarin-forms/platform/index.md">プラットフォーム機能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">配置とテスト</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">データとクラウド サービス</a><br /><a href="~/xamarin-forms/internals/index.md">高度な概念と内部構造</a></p>
     - title: Android
       href: ~/android/index.md
-      html: "<p><a href=\"~/android/get-started/index.md\">開始するには</a><br /><a href=\"~/android/app-fundamentals/index.md\">アプリの基礎</a><br /><a href=\"~/android/user-interface/index.md\">ユーザー インターフェイス</a><br /><a href=\"~/android/platform/index.md\">プラットフォーム機能</a><br /><a href=\"~/android/deploy-test/index.md\">配置とテスト</a><br /><a href=\"~/android/data-cloud/index.md\">データとクラウド サービス</a><br /><a href=\"~/android/internals/index.md\">高度な概念と内部構造</a></p>"
+      html: <p><a href="~/android/get-started/index.md">開始するには</a><br /><a href="~/android/app-fundamentals/index.md">アプリの基礎</a><br /><a href="~/android/user-interface/index.md">ユーザー インターフェイス</a><br /><a href="~/android/platform/index.md">プラットフォーム機能</a><br /><a href="~/android/deploy-test/index.md">配置とテスト</a><br /><a href="~/android/data-cloud/index.md">データとクラウド サービス</a><br /><a href="~/android/internals/index.md">高度な概念と内部構造</a></p>
     - title: iOS
       href: ~/ios/index.md
-      html: "<p><a href=\"~/ios/get-started/index.md\">開始するには</a><br /><a href=\"~/ios/app-fundamentals/index.md\">アプリの基礎</a><br /><a href=\"~/ios/user-interface/index.md\">ユーザー インターフェイス</a><br /><a href=\"~/ios/platform/index.md\">プラットフォーム機能</a><br /><a href=\"~/ios/deploy-test/index.md\">配置とテスト</a><br /><a href=\"~/ios/data-cloud/index.md\">データとクラウド サービス</a><br /><a href=\"~/ios/internals/index.md\">高度な概念と内部構造</a></p>"
+      html: <p><a href="~/ios/get-started/index.md">開始するには</a><br /><a href="~/ios/app-fundamentals/index.md">アプリの基礎</a><br /><a href="~/ios/user-interface/index.md">ユーザー インターフェイス</a><br /><a href="~/ios/platform/index.md">プラットフォーム機能</a><br /><a href="~/ios/deploy-test/index.md">配置とテスト</a><br /><a href="~/ios/data-cloud/index.md">データとクラウド サービス</a><br /><a href="~/ios/internals/index.md">高度な概念と内部構造</a></p>
     - title: Mac
       href: ~/mac/index.md
-      html: "<p><a href=\"~/mac/get-started/index.md\">開始するには</a><br /><a href=\"~/mac/app-fundamentals/index.md\">アプリの基礎</a><br /><a href=\"~/mac/user-interface/index.md\">ユーザー インターフェイス</a><br /><a href=\"~/mac/platform/index.md\">プラットフォーム機能</a><br /><a href=\"~/mac/deploy-test/index.md\">配置とテスト</a><br /><a href=\"~/mac/internals/index.md\">高度な概念と内部構造</a></p>"
+      html: <p><a href="~/mac/get-started/index.md">開始するには</a><br /><a href="~/mac/app-fundamentals/index.md">アプリの基礎</a><br /><a href="~/mac/user-interface/index.md">ユーザー インターフェイス</a><br /><a href="~/mac/platform/index.md">プラットフォーム機能</a><br /><a href="~/mac/deploy-test/index.md">配置とテスト</a><br /><a href="~/mac/internals/index.md">高度な概念と内部構造</a></p>

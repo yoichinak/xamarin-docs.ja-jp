@@ -1,5 +1,5 @@
 ---
-title: コイン時の実装の詳細
+title: コイン時のゲームの詳細
 description: このガイドでは、ゲームでは、コイン時間、マップのタイルの操作、エンティティを作成する、スプライト、アニメーション化する、効率的な競合を実装するなどの実装の詳細について説明します。
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 8c33b74af80a14df1626ab39ba8c055a81259194
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="coin-time-implementation-details"></a>コイン時の実装の詳細
+# <a name="coin-time-game-details"></a>コイン時のゲームの詳細
 
 _このガイドでは、ゲームでは、コイン時間、マップのタイルの操作、エンティティを作成する、スプライト、アニメーション化する、効率的な競合を実装するなどの実装の詳細について説明します。_
 
@@ -24,27 +24,27 @@ _このガイドでは、ゲームでは、コイン時間、マップのタイ�
 
 このガイドでは、コイン時間、次のトピックをカバーする実装の詳細について説明します。
 
-- [TMX ファイルの操作](#Working_with_TMX_Files)
-- [レベルの読み込み](#Level_Loading)
-- [新しいエンティティを追加します。](#Adding_New_Entities)
-- [アニメーション化されたエンティティ](#Animated_Entities)
+- [Tmx ファイルの操作](#working-with-tmx-files)
+- [レベルの読み込み](#level-loading)
+- [新しいエンティティを追加します。](#adding-new-entities)
+- [アニメーション化されたエンティティ](#animated-entities)
 
 
-# <a name="content-in-coin-time"></a>コイン時間でコンテンツ
+## <a name="content-in-coin-time"></a>コイン時間でコンテンツ
 
 コイン時間は、サンプル プロジェクトを完全な CocosSharp プロジェクトの構成方法を表すです。 コイン時刻の加算とコンテンツの保守を簡単に目的の構造体します。 使用して**.tmx**によって作成されるファイル[並べて](http://www.mapeditor.org)レベルとアニメーションを定義する XML ファイルです。 変更や新しいコンテンツの追加は、最小限の労力で実現できます。 
 
 プロフェッショナルなどのゲームを反映してもこの方法によりコイン時間の学習、実験の効果的なプロジェクト、中に行われました。 このガイドでは、いくつかの追加および変更内容を簡単に実行される方法について説明します。
 
 
-# <a name="working-with-tmx-files"></a>TMX ファイルの操作
+## <a name="working-with-tmx-files"></a>Tmx ファイルの操作
 
 コイン時間レベルがによって出力された .tmx ファイル形式を使用して定義されている、[並べて](http://www.mapeditor.org)タイル マップ エディターです。 並べて表示の操作の詳細については、次を参照してください。、 [Cocos シャープ ガイドに並べて表示を使用して](~/graphics-games/cocossharp/tiled.md)です。 
 
 各レベルに含まれている、独自の .tmx ファイルで定義されている、 **CoinTime/資産/コンテンツ/レベル**フォルダーです。 コイン時間のすべてのレベルで定義されている 1 つのタイルセット ファイルの共有、 **mastersheet.tsx**ファイル。 このファイルは、タイルが純色の競合を持つかどうかや、エンティティのインスタンスで、タイルを置き換える必要があるかどうかなど、各タイルのカスタム プロパティを定義します。 Mastersheet.tsx ファイルは、1 回だけ定義し、すべてのレベルで使用するプロパティを使用します。 
 
 
-## <a name="editing-a-tile-map"></a>タイルのマップの編集
+### <a name="editing-a-tile-map"></a>タイルのマップの編集
 
 タイルのマップを編集するには、.tmx ファイルをダブルクリックするか、並べて表示の [ファイル] メニューから開くことによって並べて表示で .tmx ファイルを開きます。 レベル タイル マップは、次の 3 つのレイヤーを含めるコイン時間: 
 
@@ -54,7 +54,8 @@ _このガイドでは、ゲームでは、コイン時間、マップのタイ�
 
 後で、学習しましょうはレベル読み込みコードにコイン時間のすべてのレベルでこれらの 3 つのレイヤーが必要です。
 
-### <a name="editing-terrain"></a>地形を編集
+#### <a name="editing-terrain"></a>地形を編集
+
 クリックしてタイルを配置することができます、 **mastersheet**マップ タイルセットとし、タイルをクリックします。 たとえば、レベル内の新しい地形を描画するには、します。
 
 1. 地形レイヤーを選択します。
@@ -67,7 +68,8 @@ _このガイドでは、ゲームでは、コイン時間、マップのタイ�
 
 ![](cointime-images/image3.png "地形、純色は、画面の左側のタイルのプロパティのように SolidCollision プロパティが含まれます")
 
-### <a name="editing-entities"></a>エンティティの編集
+#### <a name="editing-entities"></a>エンティティの編集
+
 エンティティを追加、地形と同じように – レベルから削除したりすることができます。 **Mastersheet**タイルセットがないできるように表示される右にスクロールしなくても、配置の途中で水平方向に、すべてのエンティティがします。
 
 ![](cointime-images/image4.png "いないできるように表示される右にスクロールしなくても、mastersheet タイルセットが配置の途中で水平方向に、すべてのエンティティ")
@@ -85,7 +87,7 @@ CoinTime コードは検索、 **EntityType**エンティティによって置�
 ![](cointime-images/image7.png "ファイルを変更して保存した後、変更が自動的に表示プロジェクトがビルドされ、実行")
 
 
-## <a name="adding-new-levels"></a>新しいレベルを追加します。
+### <a name="adding-new-levels"></a>新しいレベルを追加します。
 
 コイン時間にレベルを追加するプロセスは、コードを変更しないでとのみ少しだけ変更をプロジェクトに必要です。 新しいレベルを追加します。
 
@@ -105,7 +107,7 @@ CoinTime コードは検索、 **EntityType**エンティティによって置�
 ![](cointime-images/image10.png "新しいレベルはレベル 9 レベルのファイル名の最初の 0 からとしてレベル選択画面で表示するが、レベルのボタンが 1 で始まる")
 
 
-# <a name="level-loading"></a>レベルの読み込み
+## <a name="level-loading"></a>レベルの読み込み
 
 前述のように、新しいレベルにコードの変更が必要としない – ゲームは、正しくという名前に追加されは自動的にレベルを検出、**レベル**適切なビルド アクションを持つフォルダー (**BundleResource**または**AndroidAsset**)。
 
@@ -201,7 +203,7 @@ private void GoToLevel(int levelNumber)
 呼び出されるメソッドを見てみましょう次`GoToLevel`です。
 
 
-## <a name="loadlevel"></a>LoadLevel
+### <a name="loadlevel"></a>LoadLevel
 
 `LoadLevel`メソッドは .tmx ファイルの読み込みとに追加することを担当、`GameScene`です。 このメソッドは、衝突やエンティティなど、対話型のオブジェクトを作成しません – とも呼びますレベルのビジュアルをだけを作成、*環境*です。
 
@@ -227,7 +229,7 @@ private void LoadLevel(int levelNumber)
 現在、CocosSharp できませんを削除して、親に再追加することがなくレイヤーの順序が変更`CCScene`(これは、`GameScene`ここでは)、レイヤーの順序を変更するメソッドの最後の数行が必要なため、します。
 
 
-## <a name="createcollision"></a>CreateCollision
+### <a name="createcollision"></a>CreateCollision
 
 `CreateCollision`メソッド コンストラクト、`LevelCollision`実行に使用されるインスタンス*ソリッド衝突*プレーヤーと環境の間です。
 
@@ -245,7 +247,7 @@ private void CreateCollision()
 コイン時間での競合は、追加のコードを持たない – タイル化されたファイルへの変更のみ追加できます。 
 
 
-## <a name="processtileproperties"></a>ProcessTileProperties
+### <a name="processtileproperties"></a>ProcessTileProperties
 
 レベルがロードされ、競合が作成されると、`ProcessTileProperties`タイルのプロパティに基づくロジックを実行すると呼びます。 コイン時間が含まれています、`PropertyLocation`プロパティと、これらのプロパティ タイルの座標を定義するための構造体。
 
@@ -343,7 +345,7 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 ```
 
 
-# <a name="adding-new-entities"></a>新しいエンティティを追加します。
+## <a name="adding-new-entities"></a>新しいエンティティを追加します。
 
 コイン時間、ゲームのオブジェクトに対してエンティティ パターンを使用して (これは、「、 [CocosSharp 内エンティティのガイド](~/graphics-games/cocossharp/entities.md)). すべてのエンティティを継承`CCNode`の子として追加することを意味する、`gameplayLayer`です。
 
@@ -352,19 +354,19 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 既存のコードでは、エンティティ型の例として、新しいエンティティを作成する方法の数を提供します。 次の手順は、新しいエンティティの作成に使用できます。
 
 
-## <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - エンティティ パターンを使用して新しいクラスを定義します。
+### <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - エンティティ パターンを使用して新しいクラスを定義します。
 
 継承されるクラスを作成するエンティティを作成するための唯一の要件は、`CCNode`です。 ほとんどのエンティティがいくつかのビジュアルをなどがある、 `CCSprite`、そのコンス トラクター内のエンティティの子として追加する必要があります。
 
-CoinTime 提供、`AnimatedSpriteEntity`アニメーション化されたエンティティの作成を単純化するクラス。 詳しく取り上げますアニメーション、[エンティティのアニメーション セクションで](#Animated_Entities)です。
+CoinTime 提供、`AnimatedSpriteEntity`アニメーション化されたエンティティの作成を単純化するクラス。 詳しく取り上げますアニメーション、[エンティティのアニメーション セクションで](#animated-entities)です。
 
 
-## <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – TryCreateEntity switch ステートメントに新しいエントリを追加します。
+### <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – TryCreateEntity switch ステートメントに新しいエントリを追加します。
 
 新しいエンティティのインスタンスをインスタンス化する必要があります、`TryCreateEntity`です。 エンティティの競合、AI、入力を読み取るなどのフレームごとのロジックが必要な場合、`GameScene`オブジェクトへの参照を保持する必要があります。 複数のインスタンスが必要な場合 (など`Coin`または`Enemy`インスタンス)、し、新しい`List`に追加する必要があります、`GameScene`クラスです。
 
 
-## <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – 新しいエンティティのタイルのプロパティを変更します。
+### <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – 新しいエンティティのタイルのプロパティを変更します。
 
 コードでは、新しいエンティティの作成をサポートする、タイルセットに追加する新しいエンティティ必要があります。 任意のレベルを開くことによって、タイルセットを編集することができます`.tmx`ファイル。 
 
@@ -389,7 +391,7 @@ CoinTime 提供、`AnimatedSpriteEntity`アニメーション化されたエン�
 ![](cointime-images/image15.png "彼はタイルセット既存 mastersheet.tsx タイルセットを上書きする必要があります。")
 
 
-# <a name="entity-tile-removal"></a>エンティティのタイルの削除
+## <a name="entity-tile-removal"></a>エンティティのタイルの削除
 
 ゲームにタイルのマップが読み込まれると、個々 のタイルは、静的オブジェクトです。 エンティティには、移動など、カスタム動作が必要があるために、コイン時のコードは、エンティティが作成されたときにタイルを削除します。
 
@@ -453,7 +455,7 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="entity-offsets"></a>エンティティのオフセット
+## <a name="entity-offsets"></a>エンティティのオフセット
 
 タイルから作成されたエンティティは、タイルの中央にエンティティの中心を連携させることで配置されます。 などのより大きなエンティティは、`Door`を正しく配置する追加のプロパティとロジックを使用します。 
 
@@ -493,12 +495,12 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="animated-entities"></a>アニメーション化されたエンティティ
+## <a name="animated-entities"></a>アニメーション化されたエンティティ
 
 コイン時間には、いくつかのアニメーション化されたエンティティが含まれます。 `Player`と`Enemy`エンティティ ウォーク アニメーションを再生して、`Door`すべてコインが収集された後に、エンティティが開くアニメーションを再生します。
 
 
-## <a name="achx-files"></a>.achx ファイル
+### <a name="achx-files"></a>.achx ファイル
 
 .Achx ファイルでは、コイン時間アニメーションが定義されています。 間で各アニメーションが定義されている`AnimationChain`タグで定義されている次のアニメーションのように**propanimations.achx**:
 
@@ -533,7 +535,7 @@ private void ProcessTileProperties()
 .Achx ファイル内の他のすべての AnimationChain プロパティは、コイン時間によって無視されます。
 
 
-## <a name="animatedspriteentity"></a>AnimatedSpriteEntity
+### <a name="animatedspriteentity"></a>AnimatedSpriteEntity
 
 アニメーション処理のロジックが含まれている、`AnimatedSpriteEntity`で使用されるほとんどのエンティティの基本クラスとして機能するクラス、`GameScene`です。 これには、次の機能が提供されます。
 
@@ -562,7 +564,7 @@ walkRightAnimation = animations.Find (item => item.Name == "WalkRight");
 ```
 
 
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 このガイドでは、コイン時間の実装の詳細について説明します。 コイン時間が完全版のゲームを作成しますが、も簡単に変更および拡張できるプロジェクトです。 リーダーは、新しいレベルを追加して、コイン時間を実装する方法をさらに理解する新しいエンティティを作成する時間の修正レベルを費やすことをお勧めします。
 
