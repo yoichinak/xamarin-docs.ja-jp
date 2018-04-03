@@ -1,6 +1,6 @@
 ---
-title: "クロスプラットフォームのパフォーマンス"
-description: "Xamarin プラットフォームでビルドされたアプリケーションのパフォーマンスを高めるための手法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。 この記事では、これらの方法について説明します。"
+title: クロスプラットフォームのパフォーマンス
+description: Xamarin プラットフォームでビルドされたアプリケーションのパフォーマンスを高めるための手法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。 この記事では、これらの方法について説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e8b597221e806c2338d6f1965d3d151f998a3011
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
@@ -291,7 +291,7 @@ SGen がガベージ コレクションを開始すると、メモリの再利�
 
 ## <a name="reduce-the-size-of-the-application"></a>アプリケーションのサイズを縮小する
 
-アプリケーション実行可能ファイルのサイズの取得元を把握するために、各プラットフォームでのコンパイル処理を理解することが重要です。
+アプリケーションの実行可能ファイルのサイズの取得元を把握するために、各プラットフォームでのコンパイル処理を理解することが重要です。
 
 - iOS アプリケーションは、ARM アセンブリ言語に AOT (Ahead-of-Time) コンパイルされます。 .NET Framework が組み込まれ、その未使用のクラスは、適切なリンカー オプションが有効になっている場合にのみ削除されます。
 - Android アプリケーションは中間言語 (IL) にコンパイルされ、MonoVM と Just-In-Time (JIT) コンパイルでパッケージ化されます。 未使用のフレームワーク クラスは、適切なリンカー オプションが有効になっている場合にのみ削除されます。

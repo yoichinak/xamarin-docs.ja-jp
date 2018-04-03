@@ -1,6 +1,6 @@
 ---
-title: "モバイル ソフトウェア開発ライフサイクルの概要"
-description: "この記事では、モバイル アプリケーションに関するソフトウェア開発ライフサイクルと、モバイル プロジェクトのビルド時に必要ないくつかの考慮事項について説明します。 すぐにビルドを開始したい開発者は、このガイドをスキップし、後半の記述を読んでモバイル開発の理解を深めることができます。"
+title: モバイル ソフトウェア開発ライフサイクルの概要
+description: この記事では、モバイル アプリケーションに関するソフトウェア開発ライフサイクルと、モバイル プロジェクトのビルド時に必要ないくつかの考慮事項について説明します。 すぐにビルドを開始したい開発者は、このガイドをスキップし、後半の記述を読んでモバイル開発の理解を深めることができます。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 7a344ce211a025176c2b40540ce8337802dd347b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 144e71677ad5477c7e1cfb5211cc5860995642bb
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフサイクルの概要
 
@@ -25,7 +25,7 @@ IDE を起動して何かをまとめてスローし、ちょっとしたテス�
 1.   **プロセス** - ソフトウェア開発のプロセスは、ソフトウェア開発ライフサイクル (SDLC) と呼ばれます。 ここでは、インスピレーション、デザイン、開発、安定化、配置、メンテナンスなど、モバイル アプリケーション開発に関する SDLC のすべてのフェーズを考察します。
 1.   **考慮事項** - モバイル アプリケーションを構築する際には、特に従来の Web アプリケーションやデスクトップ アプリケーションと比較すると、多数の考慮事項があります。 ここでは、こうした考慮事項と、そのモバイル開発に与える影響を考察します。
 
-このドキュメントの目的は、アプリケーション開発の初心者と上級者の両者に向けて、モバイル アプリ開発に関する基本的な質問に回答することです。 ソフトウェア開発ライフサイクル (SDLC) の間に出会うほとんどの概念について、包括的なアプローチで概要を説明します。 ただし、このドキュメントが適していない場合もあります。アプリケーションの構築をすぐに始めたい場合は、まず「[Introduction to Mobile Development](~/cross-platform/get-started/introduction-to-mobile-development.md)」(モバイル開発の概要)、「[Hello, Android](~/android/get-started/hello-android/index.md)」、または「[Hello, iPhone](~/ios/get-started/hello-ios/index.md)」チュートリアルを読んでから、このドキュメントに戻ることをお勧めします。
+このドキュメントの目的は、アプリケーション開発の初心者と上級者の両者に向けて、モバイル アプリ開発に関する基本的な質問に回答することです。 ソフトウェア開発ライフサイクル (SDLC) の間に出会うほとんどの概念について、包括的なアプローチで概要を説明します。 ただし、このドキュメントが適していない場合もあります。アプリケーションの構築をすぐに始めたい場合は、まず「[モバイル開発の概要](~/cross-platform/get-started/introduction-to-mobile-development.md)」のガイドを読んでから、このドキュメントに戻ることをお勧めします。
 
 ## <a name="mobile-development-sdlc"></a>モバイル開発の SDLC
 
@@ -73,19 +73,17 @@ IDE を起動して何かをまとめてスローし、ちょっとしたテス�
 
 #### <a name="ux-design"></a>UX デザイン
 
-通常、UX は、[Balsamiq](http://www.balsamiq.com/)、[Mockingbird](https://gomockingbird.com/)、[Visio](http://office.microsoft.com/en-us/visio/) などのツールや、昔ながらの単なるペンと紙で作成したワイヤフレームやモックアップで設計します。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
+通常 UX は、多くの[デザイン ツールキット](https://docs.microsoft.com/windows/uwp/design/downloads/)のいずれかを使用したワイヤフレームまたはモックアップで行います。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
 
  [![](introduction-to-mobile-sdlc-images/balsamiq.png "通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行います")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 UX モックアップを作成するときは、アプリが対象とする多様なプラットフォームのインターフェイス ガイドラインを考慮することが重要です。 各プラットフォームで "使い慣れた感覚" のアプリになるようにします。 各プラットフォームの公式デザイン ガイドラインは次のとおりです。
 
-1.   **Apple** -  [Human Interface Guidelines](http://developer.apple.com/library/ios/#DOCUMENTATION/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) (ヒューマン デザイン ガイドライン)
+1.   **Apple** -  [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/) (ヒューマン デザイン ガイドライン)
 1.   **Android** - [Design Guidelines](http://developer.android.com/design/index.html) (デザイン ガイドライン)
-1.   **Windows Phone** - [Windows Phone のデザイン ライブラリ](http://msdn.microsoft.com/en-US/library/windowsphone/design/fa00461b-abe1-41d1-be87-0b0fe3d3389d(v=vs.105).aspx)
+1.   **UWP** – [UWP Design basics](https://docs.microsoft.com/windows/uwp/design/basics/) (UWP デザインの基本)
 
-たとえば、各アプリには、アプリケーションのセクション間を切り替える操作のメタファーがあります。 iOS は、画面の下部にあるタブ バーを使用し、Android は画面の上部にあるタブ バーを使用し、Windows Phone はパノラマ ビューを使用します。
-
- ![](introduction-to-mobile-sdlc-images/38.png "各アプリには、アプリケーションのセクション間を切り替える操作のメタファーがあります")
+たとえば、各アプリには、アプリケーションのセクション間を切り替える操作のメタファーがあります。 iOS は、画面の下部にあるタブ バーを使用し、Android は画面の上部にあるタブ バーを使用し、UWP は[ピボットまたはタブ](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) ビューを使用します。
 
 また、ハードウェア自体にも UX を決定する要素があります。 たとえば、iOS デバイスには物理的な*戻る*ボタンがないため、ナビゲーション コントローラーのメタファーを導入します。
 
@@ -104,15 +102,6 @@ UX が決まったら、次の手順は UI デザインの作成です。 通常
 UX の場合と同様に、各プラットフォームには独自のデザイン言語があることを理解することが重要です。また、適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります。
 
  [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
-
-適切な UI デザインのインスピレーションについては、次のサイトをいくつか見てみてください。
-
-1.   [pttrns.com](http://pttrns.com) - (iOS のみ)
-1.   [androidpttrns.com](http://androidpttrns.com) - (Android のみ)
-1.   [lovelyui.com](http://lovelyui.com) - (iOS、Android、および Windows Phone)
-1.   [mobiledesignpatterngallery.com](http://mobiledesignpatterngallery.com) - (iOS、Android、および Windows Phone)
-
-さらに、[Behance.com](http://behance.com)、[Dribbble.com](http://dribbble.com) などのサイトでグラフィック デザイナーのポートフォリオを見ることもできます。ここでは世界中のデザイナーを見つけることができます。また、為替レートが良い場所では、優れたグラフィック デザインでも高価にならない場合もよくあります。
 
 ### <a name="development"></a>開発
 
@@ -135,12 +124,7 @@ UX の場合と同様に、各プラットフォームには独自のデザイ�
 
 比較的少数のデバイスを対象にしたテストと配置の場合、通常、開発機からの直接配置で十分です。 ただし、対象者が広がるにつれて、これは急速に複雑な作業になります。 そのため、テスト配置の選択肢は多数あります。テスト プールにユーザーを招待し、Web でビルドをリリースする機能があり、ユーザーがフィードバックを送信できるツールが用意されているため、このプロセスが簡単になります。
 
-人気が高いものをいくつか紹介します。
-
-1.   **Testflight** - テスト用アプリを配布するだけでなく、ユーザーからクラッシュ レポートと使用状況に関する情報を受信することができる iOS 製品です。 Testflight は iTunes Connect に含まれており、Apple Developer Enterprise メンバーシップに参加している場合は使用できません。
-2.   **LaunchPad (launchpadapp.com)** - Android 用に設計されています。このサービスは TestFlight とよく似ています。
-3.   **Vessel (vessel.io)** - iOS および Android 用のサービスです。使用状況の監視、ユーザーの追跡、さらにはアプリ内からの A/B テストを実行することができます。
-4.  **hockeyapp.com** - iOS、Android、および Windows Phone 用にテスト サービスを提供しています。
+テストと配置には、[App Center](https://appcenter.ms/) を使用して、アプリを継続的に構築、テスト、リリース、および監視することができます。
 
 ### <a name="distribution"></a>配布
 
@@ -170,9 +154,9 @@ Android はこの情報を使用して、Android OS 内で実行されるアプ�
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="windows"></a>Windows 
+#### <a name="uwp"></a>UWP 
 
-Windows アプリケーションは、Microsoft ストアを介してユーザーに配布されます。 開発者は自作アプリを提出して承認を受けます。アプリは承認後にストアに表示されます。
+UWP アプリケーションは、Microsoft ストアを介してユーザーに配布されます。 開発者は自作アプリを提出して承認を受けます。アプリは承認後にストアに表示されます。 Windows アプリを公開する方法の詳細については、UWP の[公開](https://docs.microsoft.com/windows/uwp/publish/)に関するドキュメントを参照してください。
 
 ## <a name="mobile-development-considerations"></a>モバイル開発に関する考慮事項
 
@@ -237,9 +221,9 @@ Android のマルチタスキングには 2 つのコンポーネントがあり
 Android のマルチタスキングの 2 つ目のコンポーネントは、サービスの使用です。
 サービスは、アプリケーションとは独立して存在し、長時間実行されるプロセスです。また、アプリケーションがバックグラウンドで動作しているときにプロセスを実行するために使用されます。 詳細については、「[Creating Services](~/android/app-fundamentals/services/index.md)」(サービスの作成) ガイドを参照してください。
 
-#### <a name="many-devices-amp-many-form-factors"></a>多数のデバイス &amp; 多数のフォーム ファクター
+#### <a name="many-devices-and-many-form-factors"></a>多数のデバイスと多数のフォーム ファクター
 
-デバイスが少数の iOS や、最小限の一連のプラットフォーム要件を満たす承認済みデバイスでのみ実行される Windows Phone とは異なり、Google は Android OS を実行できるデバイスに関して一切制限を課していません。 このようにオープンなパラダイムなので、さまざまなハードウェア、画面解像度や縦横比、デバイスの特徴、機能が搭載されたさまざまなデバイスで製品環境が構成されています。
+Google では、Android OS を実行できるデバイスに制限を課すことはありません。 このようにオープンなパラダイムなので、さまざまなハードウェア、画面解像度や縦横比、デバイスの特徴、機能が搭載されたさまざまなデバイスで製品環境が構成されています。
 
 Android デバイスは過度に断片化されているため、ほとんどの開発者は、人気の高い 5 台か 6 台を選択してデザイン、テストに使用し、優先しています。
 
@@ -252,25 +236,17 @@ Android OS のアプリケーションはいずれも、制限されたアクセ
 
 #### <a name="multitasking"></a>マルチタスキング
 
-Windows Phone のマルチタスキングにも 2 つの部分があります。ページとアプリケーションのライフサイクルと、バックグラウンド プロセスです。 アプリケーションの各画面は、ページ クラスのインスタンスであり、アクティブまたは非アクティブになる処理に関連するイベントがあります (また、非アクティブ状態または "廃棄済み" を処理する特殊なルールがあります)。 
+UWP のマルチタスキングには 2 つの部分があります。ページとアプリケーションのライフサイクルと、バックグラウンド プロセスです。 アプリケーションの各画面は、ページ クラスのインスタンスであり、アクティブまたは非アクティブになる処理に関連するイベントがあります (また、非アクティブ状態または "廃棄済み" を処理する特殊なルールがあります)。 
 
 2 つ目の部分は、アプリケーションがフォアグラウンドで実行中でない場合でも、タスクを処理するバックグラウンド エージェントを提供しています。 
 
 #### <a name="device-capabilities"></a>デバイスの機能
 
-Microsoft が厳密なガイドラインを提供しているため、Windows Phone ハードウェアは比較的均質ですが、オプションのコンポーネントもあるので、コーディング時には特殊な配慮も必要です。 オプションのハードウェア機能には、カメラ、コンパス、ジャイロスコープなどがあります。 特殊な配慮が必要な低メモリ (256 MB) の特殊なクラスもあります。または開発者は低メモリのサポートを除外することができます。
-
-#### <a name="database"></a>データベース
-
-iOS と Android のいずれにも SQLite データベース エンジンが含まれています。このデータベース エンジンによって、クロスプラットフォームでも動作する洗練されたデータ ストレージが可能になります。 Windows Phone 7 にはデータベースが含まれていませんでしたが、Windows Phone 7.1 と 8 には、[LINQ to SQL](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202872(v=vs.105).aspx) を使用したクエリのみを実行可能で、Transact-SQL クエリをサポートしていない[ローカル データベース エンジン](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202860(v=vs.105).aspx)が含まれています。 Windows Phone アプリに追加して、使い慣れた Transact-SQL のサポートとクロスプラットフォームの互換性を提供することができる [SQLite のオープンソース ポート](http://code.google.com/p/csharp-sqlite/)もあります。
+UWP ハードウェアは比較的均質ですが、オプションのコンポーネントもあるので、コーディング時には特殊な配慮も必要です。 オプションのハードウェア機能には、カメラ、コンパス、ジャイロスコープなどがあります。 特殊な配慮が必要な低メモリ (256 MB) の特殊なクラスもあります。または開発者は低メモリのサポートを除外することができます。
 
 #### <a name="security-considerations"></a>セキュリティの考慮事項
 
-Windows Phone アプリケーションは、相互に分離され、実行できる操作制限されている、制限されたアクセス許可セットで実行されています。
-ネットワーク アクセスは特定の API 経由で実行する必要があります。また、アプリケーション間通信は、制御されたメカニズムで実行する必要があります。 ファイルシステムへのアクセスも制限されています。分離ストレージ API は、キーと値ペアのストレージと、制御された方式でファイルとフォルダーを作成する機能を提供します (詳細については、「[Isolated Storage Overview](http://msdn.microsoft.com/en-us/library/ff402541(v=vs.92).aspx)」(Windows Phone の分離ストレージの概要) を参照してください)。
-
-ハードウェアおよびオペレーティング システム機能に対するアプリケーションのアクセスは、(Android と同様に) マニフェスト ファイルに記載されている機能で制御されます。
-マニフェストでは、アプリケーションに必要な機能を宣言する必要があるので、ユーザーはそのアクセス許可を確認して同意し、オペレーティング システムが API に対するアクセスを許可することができます。 アプリケーションは、連絡先データ、予定データ、カメラ、位置情報、メディア ライブラリなどの機能に対するアクセスを要求する必要があります。 詳細については、Microsoft の「[Windows Phone のアプリケーション マニフェスト ファイル](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff769509(v=vs.92).aspx)」を参照してください。
+UWP のセキュリティに関する重要な考慮事項については、「[セキュリティ](https://docs.microsoft.com/windows/uwp/security/)」のドキュメントを参照してください。
 
 ## <a name="summary"></a>まとめ
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 5ee36d63e2751eb5d09ee526755d62dda4ef537e
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7c90b5bcca5a6b8d2a4b52c166ae6884646a61d2
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 
@@ -31,7 +31,7 @@ Phoneword アプリケーションは次のように作成します。
 
     ![](quickstart-images/vs/new-solution.png "新しいプロジェクト")
 
-3. **[新しいプロジェクト]** ダイアログで、**[クロスプラットフォーム]** をクリックして、**[クロスプラットフォーム アプリ (Xamarin.Forms)]** テンプレートを選択し、[名前] と [ソリューション名] を `Phoneword` に設定し、プロジェクトの適切な場所を選択し、**[OK]** ボタンをクリックします。
+3. **[新しいプロジェクト]** ダイアログで、**[クロスプラットフォーム]** をクリックして、**[Mobile App (Xamarin.Forms)]\(モバイル アプリ (Xamarin.Forms)\)** テンプレートを選択し、[名前] と [ソリューション名] を `Phoneword` に設定し、プロジェクトの適切な場所を選択し、**[OK]** ボタンをクリックします。
 
     ![](quickstart-images/vs/new-project.png "クロスプラットフォームのプロジェクト テンプレート")
 
