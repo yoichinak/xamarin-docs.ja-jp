@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms 書籍の最初のエディションでモバイル アプリの作成"
-description: "電子 Charles Petzold でモバイル アプリを作成するブックのバージョンでは、Xamarin.Forms を説明します。"
+title: Xamarin.Forms 書籍の最初のエディションでモバイル アプリの作成
+description: 電子 Charles Petzold でモバイル アプリを作成するブックのバージョンでは、Xamarin.Forms を説明します。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
@@ -9,10 +9,10 @@ author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
 ms.openlocfilehash: caee0d685838f7c0a54e19611fdf72df5730c037
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>Xamarin.Forms 書籍の最初のエディションでモバイル アプリの作成
 
