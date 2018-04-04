@@ -1,18 +1,17 @@
 ---
-title: "統一されたストーリー ボード"
-description: "統一されたストーリー ボードには、iOS デバイスの画面サイズの範囲が拡張をカバーする、複数のストーリー ボードではなく、1 つのストーリー ボードで、ユーザー インターフェイスを作成する開発者ができるようにします。 この記事は、Xamarin.iOS 内で統一されたストーリー ボードの操作に詳細な概要を説明する設計されています。"
-ms.topic: article
+title: 統一されたストーリー ボード
+description: 統一されたストーリー ボードには、iOS デバイスの画面サイズの範囲が拡張をカバーする、複数のストーリー ボードではなく、1 つのストーリー ボードで、ユーザー インターフェイスを作成する開発者ができるようにします。 この記事は、Xamarin.iOS 内で統一されたストーリー ボードの操作に詳細な概要を説明する設計されています。
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-storyboards"></a>統一されたストーリー ボード
 
@@ -680,7 +679,7 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 
  [![](unified-storyboards-images/exclude05.png "要素が見つからない場合に iPhone シミュレーターで実行中のアプリ")](unified-storyboards-images/exclude05.png#lightbox)
 
-要素から除外ケースを削除する内の要素を選択するだけ、**デザイン サーフェイス**の一番下までスクロール、**プロパティ エクスプ ローラー**  をクリックし、  **-** を削除する場合の横にあるボタンをクリックします。
+要素から除外ケースを削除する内の要素を選択するだけ、**デザイン サーフェイス**の一番下までスクロール、**プロパティ エクスプ ローラー**  をクリックし、 **-**を削除する場合の横にあるボタンをクリックします。
 
 ストーリー ボードの統合の実装を表示するを見て、`UnifiedStoryboard`サンプル Xamarin iOS 8 のアプリケーションがこのドキュメントにアタッチされています。
 

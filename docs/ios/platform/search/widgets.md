@@ -1,18 +1,17 @@
 ---
-title: "検索とホーム画面ウィジェットの機能強化"
-description: "この記事では、Apple がシステムに加え、ウィジェット 10、iOS での機能強化について説明します。"
-ms.topic: article
+title: 検索とホーム画面ウィジェットの機能強化
+description: この記事では、Apple がシステムに加え、ウィジェット 10、iOS での機能強化について説明します。
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 7ca863b92d8d7af46f4ce18f5d088347b9ca04ee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="search-and-home-screen-widget-enhancements"></a>検索とホーム画面ウィジェットの機能強化
 
@@ -51,14 +50,14 @@ Apple はウィジェットが優れた上にある新しい iOS 10 個のロッ
 
 ## <a name="working-with-vibrancy"></a>活気の操作
 
-活気ことウィジェットのテキストがウィジェットのライト、背景 (システムによって提供される) に表示したときに読みのままになることを確認します。 10、iOS の前に、開発者が使用する[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)ウィジェットの活気のです。 例:
+活気ことウィジェットのテキストがウィジェットのライト、背景 (システムによって提供される) に表示したときに読みのままになることを確認します。 10、iOS の前に、開発者が使用する[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)ウィジェットの活気のです。 例えば:
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect
 var vibrancy = UIVibrancyEffect.CreateForNotificationCenter ();
 ```
 
-これは、iOS 10 で廃止されましたが、いずれかで置き換える必要があります、 [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)です。 例:
+これは、iOS 10 で廃止されましたが、いずれかで置き換える必要があります、 [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)です。 例えば:
 
 ```csharp
 // Get Primary Widget Vibrancy Effect

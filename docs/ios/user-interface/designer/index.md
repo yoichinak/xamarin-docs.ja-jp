@@ -1,18 +1,17 @@
 ---
 title: iOS Designer
-description: "IOS 用の Xamarin デザイナーは、Mac と Visual Studio の Visual Studio に完全に統合されている iOS ストーリー ボードとインターフェイスのビルダー形式をビジュアル デザイナーです。 IOS デザイナーは、Visual Studio for Mac または Xcode のインターフェイスのビルダーに加えて、Visual Studio でファイルを編集できるように、ストーリー ボード and.xib 書式と完全な互換性を維持します。 さらに、iOS 用の Xamarin デザイナーは、エディターでのデザイン時に表示するカスタム コントロールなどの高度な機能をサポートします。"
-ms.topic: article
+description: IOS 用の Xamarin デザイナーは、Mac と Visual Studio の Visual Studio に完全に統合されている iOS ストーリー ボードとインターフェイスのビルダー形式をビジュアル デザイナーです。 IOS デザイナーは、Visual Studio for Mac または Xcode のインターフェイスのビルダーに加えて、Visual Studio でファイルを編集できるように、ストーリー ボード and.xib 書式と完全な互換性を維持します。 さらに、iOS 用の Xamarin デザイナーは、エディターでのデザイン時に表示するカスタム コントロールなどの高度な機能をサポートします。
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 884811e4035aabd831f851015db098a0243a2388
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 98d11b54ace70d4c4a82b2caebbe97cff02e0544
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-designer"></a>iOS Designer
 

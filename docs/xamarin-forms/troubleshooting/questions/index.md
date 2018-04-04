@@ -1,28 +1,28 @@
 ---
-title: "よく寄せられる質問"
-ms.topic: article
+title: よく寄せられる質問
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 89364175-53BA-4A09-B3E2-44AC67DD971C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 95728bf6bf1009db1cc834bf1d9d0be6a8fc5ef5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c0c8a6f4736bdcbb028425296f2e05dd500294d9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
 
-## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[最新の NuGet パッケージに Xamarin.Forms の既定のテンプレートを更新できますか。](update-forms-template.md)
+## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。](update-forms-template.md)
 このガイドは、例として、Xamarin.Forms PCL テンプレートを使用しますが、同じ一般的な方法は、Xamarin.Forms 共有プロジェクト テンプレートのでも機能します。 
 
-## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルの動作しません。](forms-xaml-designer.md)
+## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルに有効でない理由を教えてください。](forms-xaml-designer.md)
 Xamarin.Forms は XAML ファイルのビジュアルなデザイナーをサポートされていません。
 
-## <a name="android-build-error-the-linkassemblies-task-failed-unexpectedlyandroid-linkassemblies-errormd"></a>[Android のビルド エラー:"LinkAssemblies"タスクが予期せず失敗しました](android-linkassemblies-error.md)
+## <a name="android-build-error-the-linkassemblies-task-failed-unexpectedlyandroid-linkassemblies-errormd"></a>[Android のビルド エラー: "LinkAssemblies" タスクが予期せず失敗しました](android-linkassemblies-error.md)
 エラー メッセージが表示することがあります`The "LinkAssemblies" task failed unexpectedly`フォームを使用する Xamarin.Android プロジェクトを構築する場合。 これは、エラーは、リンカーは、アクティブな場合 (通常の*リリース*アプリ パッケージのサイズを縮小するビルド); し、Android の対象は、最新のフレームワークに更新されないために発生します。 
 
 

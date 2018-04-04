@@ -1,18 +1,17 @@
 ---
-title: "セグメント化されたコントロールの操作"
-description: "この記事では、設計と Xamarin.tvOS アプリ内でセグメント化されたコントロールの操作について説明します。"
-ms.topic: article
+title: セグメント化されたコントロールの操作
+description: この記事では、設計と Xamarin.tvOS アプリ内でセグメント化されたコントロールの操作について説明します。
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-segmented-controls"></a>セグメント化されたコントロールの操作
 
@@ -68,7 +67,7 @@ Xamarin.tvOS アプリでは、セグメントのコントロールを使用す�
     [![](segmented-controls-images/segment03.png "ウィジェット タブ")](segmented-controls-images/segment03.png#lightbox)
 1. 使用して、**セグメント**コント ローラーのセグメントの数を制御するフィールドです。
 1. 指定されたセグメントを選択、**セグメント ドロップダウン**など、その個々 のプロパティを調整する**タイトル**または**イメージ**とコントロールの場合は、指定されたセグメントに**有効になっている**または**選択**コントロールが表示される場合。
-1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
+1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例えば: 
 
     [![](segmented-controls-images/segment04.png "名前を割り当てる")](segmented-controls-images/segment04.png#lightbox)
 1. 変更内容を保存します。
@@ -84,7 +83,7 @@ Xamarin.tvOS アプリでは、セグメントのコントロールを使用す�
     [![](segmented-controls-images/segment03-vs.png "ウィジェット タブ")](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用して、**セグメント**コント ローラーのセグメントの数を制御するフィールドです。
 1. 指定されたセグメントを選択、**セグメント ドロップダウン**など、その個々 のプロパティを調整する**タイトル**または**イメージ**とコントロールの場合は、指定されたセグメントに**有効になっている**または**選択**コントロールが表示される場合。
-1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
+1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例えば: 
 
     [![](segmented-controls-images/segment04-vs.png "名前を割り当てる")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 変更内容を保存します。

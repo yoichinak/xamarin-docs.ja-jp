@@ -1,18 +1,17 @@
 ---
-title: "ピンチ ジェスチャ レコグナイザーを追加します。"
-description: "ピンチ ジェスチャでは、対話型のズームを実行するために使用され、PinchGestureRecognizer クラスに実装されます。 ピンチ ジェスチャの一般的なシナリオでは、ピンチ操作での場所にイメージの対話のズームを実行します。 これは、ビューポートのコンテンツをスケーリングして行われますであり、この記事で示されます。"
-ms.topic: article
+title: ピンチ ジェスチャ レコグナイザーを追加します。
+description: ピンチ ジェスチャでは、対話型のズームを実行するために使用され、PinchGestureRecognizer クラスに実装されます。 ピンチ ジェスチャの一般的なシナリオでは、ピンチ操作での場所にイメージの対話のズームを実行します。 これは、ビューポートのコンテンツをスケーリングして行われますであり、この記事で示されます。
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 38e46af1d928a3d4e5dc33e2a46fe04cd169ed60
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f8f81418cf5284b288f29fd2363b6b8f2d9d5fdd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ レコグナイザーを追加します。
 

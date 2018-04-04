@@ -1,18 +1,17 @@
 ---
-title: "Android の消耗の概要"
-description: "Google の Android 着用の導入に伴い、する制限がなくなりました電話やタブレットは単に優れた Android アプリを開発する際にします。 Android を着用 Xamarin.Android のサポートできるようになります手首に c# コードを実行するためです。 この概要は Android 着用の基本的な概要については、主な機能について説明します、および Android 着用 2.0 で使用できる機能の概要を提供します。 いくつかの人気のある Android 着用デバイスが一覧表示し、さらに詳細不可欠な Google Android 着用ドキュメントへのリンクを提供します。"
-ms.topic: article
+title: Android の消耗の概要
+description: Google の Android 着用の導入に伴い、する制限がなくなりました電話やタブレットは単に優れた Android アプリを開発する際にします。 Android を着用 Xamarin.Android のサポートできるようになります手首に c# コードを実行するためです。 この概要は Android 着用の基本的な概要については、主な機能について説明します、および Android 着用 2.0 で使用できる機能の概要を提供します。 いくつかの人気のある Android 着用デバイスが一覧表示し、さらに詳細不可欠な Google Android 着用ドキュメントへのリンクを提供します。
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ab166bb71c23d456cb70d35a2794717110642fd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-android-wear"></a>Android の消耗の概要
 

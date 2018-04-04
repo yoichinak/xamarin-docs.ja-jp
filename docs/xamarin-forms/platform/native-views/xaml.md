@@ -1,18 +1,17 @@
 ---
-title: "XAML でのネイティブのビュー"
-description: "IOS、Android、およびユニバーサル Windows プラットフォームのネイティブのビューは、Xamarin.Forms の XAML ファイルから直接参照できます。 プロパティとイベント ハンドラーは、ネイティブのビューを設定でき、Xamarin.Forms のビューとやり取りすることができます。 この記事では、Xamarin.Forms の XAML ファイルからのネイティブのビューを使用する方法を示します。"
-ms.topic: article
+title: XAML でのネイティブのビュー
+description: IOS、Android、およびユニバーサル Windows プラットフォームのネイティブのビューは、Xamarin.Forms の XAML ファイルから直接参照できます。 プロパティとイベント ハンドラーは、ネイティブのビューを設定でき、Xamarin.Forms のビューとやり取りすることができます。 この記事では、Xamarin.Forms の XAML ファイルからのネイティブのビューを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: f4345e107a32c3a583c246fe5dbe24590960c870
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="native-views-in-xaml"></a>XAML でのネイティブのビュー
 

@@ -1,18 +1,17 @@
 ---
-title: "モデル クラスを使用します。"
-description: "モデル クラスでは、3 D グラフィックスの表示の従来の方法と比較した場合の複雑な 3D オブジェクトのレンダリングが大幅に簡略化します。 モデル オブジェクトは、カスタム コードがないのコンテンツを簡単に統合できるように、コンテンツ ファイルから作成されます。"
-ms.topic: article
+title: モデル クラスを使用します。
+description: モデル クラスでは、3 D グラフィックスの表示の従来の方法と比較した場合の複雑な 3D オブジェクトのレンダリングが大幅に簡略化します。 モデル オブジェクトは、カスタム コードがないのコンテンツを簡単に統合できるように、コンテンツ ファイルから作成されます。
 ms.prod: xamarin
 ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: dd0f97f450d131bcbddff43ffc778b91bff6b12e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 871e4b1ad058dd97635dab228522620850b229b7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-the-model-class"></a>モデル クラスを使用します。
 

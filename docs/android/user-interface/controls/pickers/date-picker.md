@@ -1,18 +1,17 @@
 ---
-title: "日付の選択"
-description: "DatePickerDialog および DialogFragment を使用して、カレンダーの日付を選択します。"
-ms.topic: article
+title: 日付の選択
+description: DatePickerDialog および DialogFragment を使用して、カレンダーの日付を選択します。
 ms.prod: xamarin
 ms.assetid: F2BCD8D4-8957-EA53-C5A8-6BB603ADB47B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: b62af404ce0d3f5dacc479682a3002af49e968d1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 916a9c74fa28b99e799eef80db822e86cfda617d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="date-picker"></a>日付の選択
 
@@ -26,7 +25,7 @@ ms.lasthandoff: 03/12/2018
 
 [![日付の選択 ダイアログ ボックスでその後に日付の選択のスクリーン ショット ボタン](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドのサンプル アプリケーションは、Android 4.1 (API レベルをターゲットします。
 16) またはそれ以降、Android 3.0 (API レベル 11 以上) に適用されますが、します。 Android の古いバージョンの追加により、プロジェクトとコードを変更する Android のサポート ライブラリ v4 のサポートを行うことができます。

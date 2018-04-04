@@ -1,18 +1,17 @@
 ---
-title: "アプリのレビューを要求します。"
-description: "ここでは、Xamarin.iOS に実装する方法、iOS 10 に追加する Apple RequestReview メソッドについて説明します。"
-ms.topic: article
+title: アプリのレビューを要求します。
+description: ここでは、Xamarin.iOS に実装する方法、iOS 10 に追加する Apple RequestReview メソッドについて説明します。
 ms.prod: xamarin
 ms.assetid: 6408e707-b7dc-4557-b931-16a4d79b8930
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 2e63f2c47bbcd6da0f0d5370ebfc231d19a10e7d
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 2fff227581d6eeca69d7a770308d9793a4831baf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="request-app-review"></a>アプリのレビューを要求します。
 

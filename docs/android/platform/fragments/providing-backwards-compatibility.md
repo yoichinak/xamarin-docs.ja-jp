@@ -1,17 +1,16 @@
 ---
-title: "旧バージョンとの Android サポート パッケージとの互換性を提供します。"
-ms.topic: article
+title: 旧バージョンとの Android サポート パッケージとの互換性を提供します。
 ms.prod: xamarin
 ms.assetid: 7511D2F8-2B4F-4200-C74E-E967153B2E8D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 07aec6f5fb66d4efcc114f92f0fb85d5b5b99c6f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>旧バージョンとの Android サポート パッケージとの互換性を提供します。
 
@@ -37,7 +36,7 @@ Android のサポート パッケージは Xamarin.Android アプリケーショ
 
 -   **名前空間を更新**&ndash;から継承するクラス`Android.App.Fragment`から継承する必要があります`Android.Support.V4.App.Fragment`です。 使用して、削除するステートメント" `using Android.App;` "ソース コードの上部にあるファイルし、置き換える" `using Android.Support.V4.App` "です。 
 
--   **SupportFragmentManager を使用して** &ndash; `Android.Support.V4.App.FragmentActivity`公開、`SupportingFragmentManager`プロパティへの参照を取得するために使用する必要があります、`FragmentManager`です。 例: 
+-   **SupportFragmentManager を使用して** &ndash; `Android.Support.V4.App.FragmentActivity`公開、`SupportingFragmentManager`プロパティへの参照を取得するために使用する必要があります、`FragmentManager`です。 例えば: 
 
 ```csharp
 FragmentTransaction fragmentTx = this.SupportingFragmentManager.BeginTransaction();

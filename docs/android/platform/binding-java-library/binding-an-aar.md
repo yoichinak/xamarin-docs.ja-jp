@@ -1,18 +1,17 @@
 ---
-title: "バインドにします。[AAR]"
-description: "このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成するための手順を説明します。[Aar] ファイルです。"
-ms.topic: article
+title: バインドにします。[AAR]
+description: このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成するための手順を説明します。[Aar] ファイルです。
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-an-aar"></a>バインドにします。[AAR]
 
@@ -276,7 +275,7 @@ namespace BindingTest
 <ImageView android:src="@drawable/image" ... />
 ```
 
-内に存在するリソースのレイアウトをアクセスすることも、します。[AAR] です。 これを行うには、使用する、 **Resource.Layout**内部にパッケージ化レイアウトの名前、します。[AAR] です。 例:
+内に存在するリソースのレイアウトをアクセスすることも、します。[AAR] です。 これを行うには、使用する、 **Resource.Layout**内部にパッケージ化レイアウトの名前、します。[AAR] です。 例えば:
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
@@ -284,7 +283,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 **Textanalyzer.aar**の例には、イメージ ファイルに存在するが含まれています。 **res/drawable/monkey.png**です。 このイメージのリソースにアクセスして、例のアプリで使用してみましょう。
 
-編集、 **BindingTest**レイアウト (**Main.axml**) を追加し、`ImageView`の末尾に、`LinearLayout`コンテナーです。 これは、`ImageView`で見つかったイメージが表示されます **@drawable/monkey** ; のリソース セクションからこのイメージが読み込まれます**textanalyzer.aar**:
+編集、 **BindingTest**レイアウト (**Main.axml**) を追加し、`ImageView`の末尾に、`LinearLayout`コンテナーです。 これは、`ImageView`で見つかったイメージが表示されます**@drawable/monkey**; のリソース セクションからこのイメージが読み込まれます**textanalyzer.aar**:
 
 ```xml
     ...

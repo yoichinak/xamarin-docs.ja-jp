@@ -1,28 +1,27 @@
 ---
-title: "ユーザー インターフェイス"
-description: "Xamarin.Android アプリのユーザー インターフェイスの作成"
-ms.topic: article
+title: ユーザー インターフェイス
+description: Xamarin.Android アプリのユーザー インターフェイスの作成
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 40d02def5c0aae3334ae59cec78f6d22a1d5d772
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 152f5551e2f539e8ab93121c35c2acca7eb7f2e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-interface"></a>ユーザー インターフェイス
 
 次のセクションでは、さまざまなツールおよび Xamarin.Android アプリ内のユーザー インターフェイスの作成に使用する構成要素について説明します。
 
-## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android デザイナー](~/android/user-interface/android-designer/index.md)
+## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android Designer](~/android/user-interface/android-designer/index.md)
 
 このセクションでは、Android デザイナーを使用してコントロールを視覚的にレイアウトおよびプロパティを編集する方法について説明します。 デザイナーを使用して、複数のテーマ、言語、およびデバイスの構成などのさまざまな構成ユーザー インターフェイスとリソースを使用する方法と、横、縦など別のビューを設計する方法についても説明します。
 
-## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[材料テーマ](~/android/user-interface/material-theme.md)
+## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[素材のテーマ](~/android/user-interface/material-theme.md)
 
 *材料テーマ*のビューと Android でのアクティビティの外観を決定するユーザー インターフェイスのスタイルがします。 素材のテーマは、およびアプリケーション、システム UI で使用するよう Android に組み込まれています。 このガイドはマテリアル デザインの原則を紹介し、について説明組み込みマテリアル テーマまたはカスタム テーマのいずれかを使用してアプリのテーマをする方法です。
 

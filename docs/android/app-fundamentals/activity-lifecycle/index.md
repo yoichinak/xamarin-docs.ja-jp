@@ -1,18 +1,17 @@
 ---
-title: "アクティビティのライフサイクル"
-description: "アクティビティは、Android アプリケーションの基本的なビルディング ブロックと、さまざまな異なる状態で存在することができます。 アクティビティのライフ サイクルは、インスタンス化で始まり、破棄で終わると間に多くの状態が含まれています。 アクティビティの状態が変わるときに、適切なライフ サイクル イベント メソッドは起こる状態のアクティビティに通知され、その変更に合わせて調整するコードを実行するように呼び出されます。 この記事は、アクティビティのライフ サイクルを検査し、責任について説明します、適切に動作で信頼性の高いアプリケーションの一部としてこれらの状態変更の各アクティビティがあります。"
-ms.topic: article
+title: アクティビティのライフサイクル
+description: アクティビティは、Android アプリケーションの基本的なビルディング ブロックと、さまざまな異なる状態で存在することができます。 アクティビティのライフ サイクルは、インスタンス化で始まり、破棄で終わると間に多くの状態が含まれています。 アクティビティの状態が変わるときに、適切なライフ サイクル イベント メソッドは起こる状態のアクティビティに通知され、その変更に合わせて調整するコードを実行するように呼び出されます。 この記事は、アクティビティのライフ サイクルを検査し、責任について説明します、適切に動作で信頼性の高いアプリケーションの一部としてこれらの状態変更の各アクティビティがあります。
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/28/2018
-ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f35f3e59d8b669795ade3d370894e45866cea1ff
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="activity-lifecycle"></a>アクティビティのライフサイクル
 

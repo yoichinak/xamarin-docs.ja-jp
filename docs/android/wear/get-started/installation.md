@@ -1,24 +1,23 @@
 ---
-title: "セットアップとインストール"
-description: "この記事では、インストール手順と、コンピューターとデバイス開発を Android 着用を準備するために必要な構成の詳細について説明します。 この記事の目的は、最初 Xamarin.Android 消耗アプリケーションのビルドを開始する準備ができるし、Xamarin.Android 消耗インストールが Mac や Microsoft Visual Studio、Visual Studio に統合されて作業を必要があります。"
-ms.topic: article
+title: セットアップとインストール
+description: この記事では、インストール手順と、コンピューターとデバイス開発を Android 着用を準備するために必要な構成の詳細について説明します。 この記事の目的は、最初 Xamarin.Android 消耗アプリケーションのビルドを開始する準備ができるし、Xamarin.Android 消耗インストールが Mac や Microsoft Visual Studio、Visual Studio に統合されて作業を必要があります。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
 _この記事では、インストール手順と、コンピューターとデバイス開発を Android 着用を準備するために必要な構成の詳細について説明します。この記事の目的は、最初 Xamarin.Android 消耗アプリケーションのビルドを開始する準備ができるし、Xamarin.Android 消耗インストールが Mac や Microsoft Visual Studio、Visual Studio に統合されて作業を必要があります。_
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Android 着用して Xamarin ベースのアプリを作成する、次が必要。
 

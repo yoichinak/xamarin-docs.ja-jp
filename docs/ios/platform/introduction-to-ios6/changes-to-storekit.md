@@ -1,18 +1,17 @@
 ---
-title: "StoreKit への変更"
-description: "iOS 6 のストア キット API に 2 つの変更が導入されています: iTunes (と App Store/iBookstore) を表示する機能、アプリと、新規のアプリ内から製品は、Apple が、ダウンロード可能なファイルをホストするオプションを購入します。 このドキュメントでは、Xamarin.iOS とそれらの機能を実装する方法について説明します。"
-ms.topic: article
+title: StoreKit への変更
+description: 'iOS 6 のストア キット API に 2 つの変更が導入されています: iTunes (と App Store/iBookstore) を表示する機能、アプリと、新規のアプリ内から製品は、Apple が、ダウンロード可能なファイルをホストするオプションを購入します。 このドキュメントでは、Xamarin.iOS とそれらの機能を実装する方法について説明します。'
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="changes-to-storekit"></a>StoreKit への変更
 
@@ -26,7 +25,7 @@ IOS6 ストア キットの主な変更は、これら 2 つの新機能です�
 
 このドキュメントは、既存の Xamarin.iOS と共にで読み取ることをお勧め[アプリ内購入](~/ios/platform/in-app-purchasing/index.md)ドキュメント。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このドキュメントで説明するストア キット機能は、iOS 6 および Xamarin.iOS 6.0 と共に、Xcode 4.5 が必要です。
 
@@ -143,7 +142,7 @@ Apple には、アプリ ストア、iTunes および、iBookstore 内のすべ�
 
 次にいくつかの例を示します。
 
--   **iBooks app*- [http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
+-   **iBooks アプリ*- [http://itunes.apple.com/search?term=ibooks&amp;エンティティ ソフトウェアを =&amp;国 = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
 -   **ドットと持っている iBook*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;エンティティ = 電子&amp;国 = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
 
 

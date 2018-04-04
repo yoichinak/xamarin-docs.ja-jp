@@ -1,18 +1,17 @@
 ---
-title: "ASP.NET Web サービス (ASMX) の使用"
-description: "Asmx サービスは、簡易オブジェクト アクセス プロトコル (SOAP) を使用してメッセージを送信する web サービスをビルドする機能を提供します。 SOAP は、構築および web サービスにアクセスするためのプラットフォームや言語に依存しないプロトコルです。 ASMX サービスのコンシューマーは、プラットフォーム、オブジェクト モデル、またはサービスの実装に使用するプログラミング言語に関する知識は必要はありません。 のみ、SOAP メッセージを送受信する方法を理解する必要があります。 この記事では、Xamarin.Forms アプリケーションから、ASMX SOAP サービスを利用する方法を示します。"
-ms.topic: article
+title: ASP.NET Web サービス (ASMX) の使用
+description: Asmx サービスは、簡易オブジェクト アクセス プロトコル (SOAP) を使用してメッセージを送信する web サービスをビルドする機能を提供します。 SOAP は、構築および web サービスにアクセスするためのプラットフォームや言語に依存しないプロトコルです。 ASMX サービスのコンシューマーは、プラットフォーム、オブジェクト モデル、またはサービスの実装に使用するプログラミング言語に関する知識は必要はありません。 のみ、SOAP メッセージを送受信する方法を理解する必要があります。 この記事では、Xamarin.Forms アプリケーションから、ASMX SOAP サービスを利用する方法を示します。
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: a095dbbb78ad1517791356ae0b7cbeaa94d1336f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: c45f0de039abc3f98b7c269f183e2883a495910b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) の使用
 

@@ -1,17 +1,16 @@
 ---
-title: "UrhoSharp を使用します。"
-description: "UrhoSharp エンジンの概要"
-ms.topic: article
+title: UrhoSharp を使用します。
+description: UrhoSharp エンジンの概要
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cd30f17d631216a3ea119a262aca6d294394a77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-urhosharp"></a>UrhoSharp を使用します。
 
@@ -218,7 +217,7 @@ await cloud.RunActionAsync (
 [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/)サブクラスは、コンポーネントの動作を準備し、その機能をドライブする非同期メソッドを導入する必要があります。
 C# を使用してこのメソッドを呼び出すと、`await`キーワードをプログラムの別の部分からいずれか、`Application.Start`メソッドまたは、アプリケーションのユーザーまたはストーリー ポイントに応答します。
 
-例:
+例えば:
 
 ```csharp
 class Robot : Component {
@@ -497,7 +496,7 @@ healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"))
 
 可能な限り、既存のファイル形式を使用し、モデルなど、どうしても必要な場合にのみカスタム ファイル形式を定義しようと Urho3D (*.mdl)、アニメーション用 (*.ani)。 これらの種類の資産の Urho が用意されており、コンバーターでは、 [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) fbx、dae、3 ds、および obj など多くの人気のある 3D 形式を使用することができます。
 
-ミキサーの便利なのアドインによっても[https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender) Urho3D に適した形式で、Blender 資産をエクスポートすることができます。
+ミキサーの便利なのアドインによっても[ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) Urho3D に適した形式で、Blender 資産をエクスポートすることができます。
 
 ## <a name="background-loading-of-resources"></a>リソースのバック グラウンドで読み込まない
 
@@ -529,7 +528,7 @@ soundSource.AutoRemove = true;
 
 # <a name="particles"></a>パーティクル
 
-パーティクルは、アプリケーションをいくつかのシンプルかつ安価な効果を追加する簡単な方法を提供します。  などのツールを使用して、PEX 形式で格納されるパーティクルを利用できる[http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/)です。
+パーティクルは、アプリケーションをいくつかのシンプルかつ安価な効果を追加する簡単な方法を提供します。  などのツールを使用して、PEX 形式で格納されるパーティクルを利用できる[ http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/)です。
 
 パーティクルは、ノードに追加できるコンポーネントです。  ノードを呼び出す必要がある`CreateComponent<ParticleEmitter2D>`パーティクルを作成し、2 次元効果にエフェクト プロパティを設定してパーティクルを構成する方法がリソースのキャッシュから読み込まれます。
 

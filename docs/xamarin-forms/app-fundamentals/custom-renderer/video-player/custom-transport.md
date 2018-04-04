@@ -1,17 +1,16 @@
 ---
-title: "カスタムのビデオ トランスポート コントロール"
-ms.topic: article
+title: カスタムのビデオ トランスポート コントロール
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5463a91dba5840ebe655aa1509d9f98e73643d26
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
 
@@ -521,19 +520,19 @@ namespace FormsVideoLibrary.UWP
 
 Unicode 文字を使用してシンボリック**再生**、**一時停止**と**停止**イメージは問題が発生します。 [その他の技術](https://unicode-table.com/en/blocks/miscellaneous-technical/)Unicode 標準のセクションは、この目的に適した見かけ上の 3 つの記号を定義します。 これらの数値は、次のとおりです。
 
-- 0x23F5 (黒中程度の右向きの三角形) または & #x23F5 です。**再生**
-- 0x23F8 (二重の縦棒) または & #x23F8 です。**一時停止**
-- 0x23F9 (黒の四角形) または & #x23F9 です。**停止**
+- 0x23F5 (黒中程度の右向きの三角形) または&#x23F5;の**再生**
+- 0x23F8 (二重の縦棒) または&#x23F8;の**一時停止**
+- 0x23F9 (黒の四角形) または&#x23F9;の**停止**
 
 関係なく方法お使いのブラウザーでこれらのシンボルが表示されます (およびさまざまな方法でさまざまなブラウザーの処理)、Xamarin.Forms でサポートされているプラットフォームで一貫して、表示されません。 IOS および UWP デバイスで、**一時停止**と**停止**文字がグラフィカルな外観を 3D の背景色を青と白のフォア グラウンドがあります。 これは、Android、シンボルが単に青色でケースがありません。 ただしの 0x23F5 codepoint**再生**UWP と上の同じ外観が iOS および Android 上であってもサポートされていることはありません。
 
 そのための 0x23F5 コード ポイントを使用できません**再生**です。 適切な代替です。
 
-- 0x25B6 (黒の右向き三角形) または & #x25B6 です。**再生**
+- 0x25B6 (黒の右向き三角形) または&#x25B6;の**再生**
 
 3D の外観は似ていませんプレーンの黒い三角形がする点を除いてすべての 3 つのプラットフォームでサポートされる**Pause**と**停止**です。 1 つの可能性は、バリアント型のコードで 0x25B6 コード ポイントには。
 
-- 0xFE0F (バリアント型 16) 続けて 0x25B6 または & #x25B6; & #xFE0F です。**再生**
+- 0xFE0F (バリアント型 16) 続けて 0x25B6 または&#x25B6;&#xFE0F;の**再生**
 
 これは、次に示すマークアップで使用されるものです。 これにより、iOS で、**再生**記号と同じ 3D 外観、**一時停止**と**停止**Android および UWP でボタンが、バリアント型は機能しません。
 

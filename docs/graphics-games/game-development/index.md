@@ -1,18 +1,17 @@
 ---
-title: "Xamarin を使用したゲームの開発の概要"
-description: "ゲーム開発の性質は、その他の種類のアプリの開発と明らかに異なることができます。 この記事では、Xamarin.iOS および Xamarin.Android を使用できるテクノロジを特徴とゲームの開発の概要です。 ゲームを配布する方法の詳細については高レベルと使用可能なテクノロジのサンプリングの両方を Xamarin.iOS および Xamarin.Android を提供します。"
-ms.topic: article
+title: Xamarin を使用したゲームの開発の概要
+description: ゲーム開発の性質は、その他の種類のアプリの開発と明らかに異なることができます。 この記事では、Xamarin.iOS および Xamarin.Android を使用できるテクノロジを特徴とゲームの開発の概要です。 ゲームを配布する方法の詳細については高レベルと使用可能なテクノロジのサンプリングの両方を Xamarin.iOS および Xamarin.Android を提供します。
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 9d1ce2da87d6f169efb5431f734695f6876cf3f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin を使用したゲームの開発の概要
 
@@ -97,8 +96,8 @@ X 座標と Y 座標オブジェクト – を配置するし、デカルト –
 ゲーム開発には、プロセスに関連する個人ユーザー向けの新しいロールとタイトルが導入されています。 ほとんどのゲーム開発者は、さまざまな分野が多数存在するためにフルのゲームを解放するために必要なスキルの一式を満たすことはできません。 開発 – 一般的なものの一部の領域の完全な一覧ではないことに注意してください。
 
 - **プログラマ**– ほとんどの人が読み取るこの記事は、このカテゴリに分類されます。 ゲーム開発におけるプログラマの役割は、ゲーム以外のアプリケーションで、プログラマのロールに似ています。 追加して、コンテンツを表示して当然ながらバグを修正して、特定のプロジェクトのコンテキストでの一般的なタスクのシステムの開発、ゲームのフローを制御するためのロジックを記述することを担当します。
-- **2D アーティスト**– 2D アーティストは作成を担当する*2D 資産*です。 ゲームの GUI、パーティクル、環境、および文字のイメージ ファイルが含まれます。 3D ゲームを開発している場合は、2D アーティストできない可能性があります環境と文字を担当します。 空きを見つけることができます、ゲームにアート[http://opengameart.org/](http://opengameart.org/)です。
-- **3D アーティスト**– 3D アーティストは作成を担当する*3D アセット*です。 これらには、環境、文字、および props (家具、プラント、およびその他の物体) 用の 3D のモデルが含まれます。 一部のチームは、3 D アーティストとチームの規模によっては 3D アニメーターによって区別されます。 空き表示で、ゲーム用の 3D のアート[http://opengameart.org/](http://opengameart.org/)です。
+- **2D アーティスト**– 2D アーティストは作成を担当する*2D 資産*です。 ゲームの GUI、パーティクル、環境、および文字のイメージ ファイルが含まれます。 3D ゲームを開発している場合は、2D アーティストできない可能性があります環境と文字を担当します。 空きを見つけることができます、ゲームにアート[ http://opengameart.org/ ](http://opengameart.org/)です。
+- **3D アーティスト**– 3D アーティストは作成を担当する*3D アセット*です。 これらには、環境、文字、および props (家具、プラント、およびその他の物体) 用の 3D のモデルが含まれます。 一部のチームは、3 D アーティストとチームの規模によっては 3D アニメーターによって区別されます。 空き表示で、ゲーム用の 3D のアート[ http://opengameart.org/ ](http://opengameart.org/)です。
 - **ゲーム デザイナー** – ゲームのデザイナーは、ゲームの再生方法を定義します。 ゲーム、および、プレーヤーがゲーム内からがどのように移行する方法の全体的な目的は、ゲームの設定などの高度な決定を含めるこのことができます。 ゲームのデザイナーすることも、アクションへの入力のマッピングなどの非常に詳細な決定に関係する移動またはレベル ups、係数を定義するレベルのレイアウトをデザインします。 注意してください、用語*デザイナー*はゲーム デザイナーまたはコンテキストに応じて、ビジュアル デザイナーを参照します。
 - **デザイナーのサウンド**– サウンド デザイナーは、ゲームのオーディオの資産を担当します。 小さなチームでは 1 人のユーザーのすべてのオーディオを担当する必要があります、サウンド効果と作曲者の作成を担当する個人とチームによってを区別可能性があります。
 
@@ -171,9 +170,9 @@ UrhoSharp は、クロスプラット フォーム大まかな 3D と 2D エン�
 
 上記の強調表示されているテクノロジは、使用できるテクノロジのサンプルのみです。 その他の重要なテクノロジは次のとおりです。
 
-- **スプライト キット**– Xamarin は、Apple のスプライト キット ゲームのフレームワークのすべてのネイティブの API の機能にアクセスできるサポートを提供します。 スプライト キットは、Apple が作成したテクノロジであるため、iOS のエコシステムの残りの部分との緊密な統合を提供します。 もちろん、スプライト キットはクロスプラット フォームのため Android で使用することはできません。 スプライト キットの使用の詳細については、この投稿を参照してください: [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **シーン キット**– Xamarin では、Apple のシーン キット framework は、3 D グラフィックスを実装する iOS アプリに簡略化のサポートもが用意されています。 シーン キットも、統合とスプライト キットを上記で説明したプラットフォームに固有の考慮事項があるために、Apple によって提供されるテクノロジです。 シーンのキットの詳細については、この投稿を参照してください: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK (が開いているツール キットの略)、iOS、Apple、および Mac への低レベルの OpenGL アクセスを提供するハードウェアです。 OpenTK の詳細については、メイン ページを参照してください: [http://www.opentk.com/](http://www.opentk.com/)
+- **スプライト キット**– Xamarin は、Apple のスプライト キット ゲームのフレームワークのすべてのネイティブの API の機能にアクセスできるサポートを提供します。 スプライト キットは、Apple が作成したテクノロジであるため、iOS のエコシステムの残りの部分との緊密な統合を提供します。 もちろん、スプライト キットはクロスプラット フォームのため Android で使用することはできません。 スプライト キットの使用の詳細については、この投稿を参照してください。  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **シーン キット**– Xamarin では、Apple のシーン キット framework は、3 D グラフィックスを実装する iOS アプリに簡略化のサポートもが用意されています。 シーン キットも、統合とスプライト キットを上記で説明したプラットフォームに固有の考慮事項があるために、Apple によって提供されるテクノロジです。 シーンのキットの詳細については、この投稿を参照してください。 [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** OpenTK (が開いているツール キットの略)、iOS、Apple、および Mac への低レベルの OpenGL アクセスを提供するハードウェアです。 OpenTK の詳細については、メイン ページを参照してください。  [http://www.opentk.com/](http://www.opentk.com/)
 
 
 # <a name="summary"></a>まとめ

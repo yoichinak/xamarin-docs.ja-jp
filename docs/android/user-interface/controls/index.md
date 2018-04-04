@@ -1,18 +1,17 @@
 ---
-title: "コントロール"
-description: "Xamarin.Android ユーザー インターフェイスを作成するためのビルド ブロック"
-ms.topic: article
+title: コントロール
+description: Xamarin.Android ユーザー インターフェイスを作成するためのビルド ブロック
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 25afd284fc88df4f23aaa3dfa1f47a3dc4fee551
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls"></a>コントロール
 
@@ -26,7 +25,7 @@ Xamarin.Android は、Android によって提供されるネイティブ ユー�
 ![例アクションバー](images/action-bar.png)
 
 
-## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[オート コンプリート](~/android/user-interface/controls/auto-complete.md)
+## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[オートコンプリート](~/android/user-interface/controls/auto-complete.md)
 
 `AutoCompleteTextView` ユーザーの入力中に自動的に補完候補を表示する編集可能なテキスト ビュー要素です。 修正候補の一覧は、ユーザーがエディット ボックスのコンテンツを置換する項目を選択できるメニュー ドロップダウンに表示されます。
 
@@ -76,7 +75,7 @@ Xamarin.Android は、Android によって提供されるネイティブ ユー�
 ![ナビゲーション バーの例](images/navigation-bar.png)
 
 
-## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[ピッカー](~/android/user-interface/controls/pickers/index.md)
+## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[選択](~/android/user-interface/controls/pickers/index.md)
 
 *ピッカー* UI 要素はユーザーが Android によって提供されるダイアログを使用して、日付や時刻を選択できるようにします。
 

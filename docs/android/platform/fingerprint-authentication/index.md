@@ -1,18 +1,17 @@
 ---
-title: "指紋認証"
-description: "このガイドでは、Xamarin.Android アプリケーションに、Android 6.0 で導入された、指紋認証を追加する方法について説明します。"
-ms.topic: article
+title: 指紋認証
+description: このガイドでは、Xamarin.Android アプリケーションに、Android 6.0 で導入された、指紋認証を追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6742D874-4988-4516-A946-D5C714B20A10
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 79f5f81e11f62359c3b951500d4ab5cbd63fb507
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b28b16dfd92ef3a31201ef2e86681a425a58ab8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fingerprint-authentication"></a>指紋認証
 
@@ -46,7 +45,7 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
 
 このガイドには、使用する方法を検討、`FingerprintManager`指紋認証での Android アプリケーションを強化するための Api です。 インスタンスを作成し、作成する方法に適用されます、`CryptoObject`指紋スキャナーからの結果を保護するためにします。 サブクラスをアプリケーションがどのように検証`FingerprintManager.AuthenticationCallback`指紋スキャナーからのフィードバックに応答しています。 最後に、後ほどお見せ、Android デバイスまたはエミュレーターにフィンガー プリントを登録する方法と使用方法**adb**指紋スキャンをシミュレートします。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 指紋認証には、Android 6.0 (API level 23) が必要です。 または高い、指紋スキャナーを持つデバイス。 
 

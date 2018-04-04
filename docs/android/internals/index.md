@@ -1,18 +1,17 @@
 ---
-title: "高度な概念と内部構造"
-description: "Xamarin.Android と API の設計の背後にあるアーキテクチャを基になります。"
-ms.topic: article
+title: 高度な概念と内部構造
+description: Xamarin.Android と API の設計の背後にあるアーキテクチャを基になります。
 ms.prod: xamarin
 ms.assetid: CC6A0D52-E9FA-4270-B3FA-84660621D6D5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/13/2017
-ms.openlocfilehash: d120398d4c59e51cee8da5e8ed2fbe0994ceca76
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 517e21f2decd0dabbd03d752f13831a891ad7138
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="advanced-concepts-and-internals"></a>高度な概念と内部構造
 

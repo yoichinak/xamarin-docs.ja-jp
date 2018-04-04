@@ -1,17 +1,17 @@
 ---
-title: "IPA 出力ファイルを TFS のドロップ フォルダーにコピーする方法は?"
-ms.topic: article
+title: IPA 出力ファイルを TFS のドロップ フォルダーにコピーする方法は?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c89d81434cac43505c4f0341a10aaf4fc99407fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2139be01b95a0a4287bba43b8a2ebad537ac7a4f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>IPA 出力ファイルを TFS のドロップ フォルダーにコピーする方法は?
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/27/2018
 
 -   この同じ一般的な手法で説明した[IPA ファイルの出力パスを変更できますか。](~/ios/troubleshooting/questions/ipa-output-path.md)です。 設定する、2 つの重要な点は、`$(TF_BUILD_BINARIESDIRECTORY)`ため追加の条件を追加して保存先フォルダーとして`CopyIpa`TFS ビルド向けにのみ実行されます。
 
--   詳細については`TF_BUILD_BINARIESDIRECTORY`を参照してください[https://msdn.microsoft.com/en-us/library/hh850448.aspx](https://msdn.microsoft.com/en-us/library/hh850448.aspx)です。
+-   詳細については`TF_BUILD_BINARIESDIRECTORY`を参照してください[ https://msdn.microsoft.com/en-us/library/hh850448.aspx](https://msdn.microsoft.com/en-us/library/hh850448.aspx)です。
 
 ## <a name="additional-references"></a>その他のリファレンス
 

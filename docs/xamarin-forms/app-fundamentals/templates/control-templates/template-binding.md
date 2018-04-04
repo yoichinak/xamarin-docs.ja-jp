@@ -1,18 +1,17 @@
 ---
-title: "ControlTemplate のバインド"
-description: "テンプレート バインディングは、プロパティの値を簡単に変更するコントロール テンプレート内のコントロールを有効にすると、データにコントロール テンプレート内のコントロールのパブリック プロパティは、バインドを許可します。 テンプレート バインディングを使用して、コントロール テンプレートからのデータ バインディングを実行するかを説明します。"
-ms.topic: article
+title: ControlTemplate のバインド
+description: テンプレート バインディングは、プロパティの値を簡単に変更するコントロール テンプレート内のコントロールを有効にすると、データにコントロール テンプレート内のコントロールのパブリック プロパティは、バインドを許可します。 テンプレート バインディングを使用して、コントロール テンプレートからのデータ バインディングを実行するかを説明します。
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 5b330c448a135cbcf8fc2745debc48924e29c103
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3b306c79aea9bd2192aa73eddcf95790a9b24353
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-from-a-controltemplate"></a>ControlTemplate のバインド
 
@@ -68,7 +67,7 @@ public string FooterText {
 
 ![](template-binding-images/teal-theme.png "テンプレート バインディングを使用して青緑コントロール テンプレート")
 
-## <a name="creating-a-templatebinding-in-c35"></a>C &#35; で、TemplateBinding を作成します。
+## <a name="creating-a-templatebinding-in-c35"></a>C では、TemplateBinding を作成します。&#35;
 
 C# の場合は、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)を使用して作成された、`TemplateBinding`コンス トラクターは、次のコード例で示したようにします。
 

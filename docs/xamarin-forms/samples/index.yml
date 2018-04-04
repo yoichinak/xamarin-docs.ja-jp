@@ -1,23 +1,23 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Xamarin.Forms のサンプル"
+title: Xamarin.Forms のサンプル
 metadata:
-  description: "モバイル開発者のための Xamarin.Forms のサンプル アプリとコード デモ。"
+  description: モバイル開発者のための Xamarin.Forms のサンプル アプリとコード デモ。
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
-  ms.topic: article
-  ms.openlocfilehash: 2cd0a8019df09c8da0f19812b5217bcad5f0c2e9
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.topic: sample
+  ms.openlocfilehash: 9a30de76dcdf1fc9c286f3511695e1468d6bfe0a
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "Xamarin.Forms の概念の理解と作業の開始に役立つ Xamarin.Forms のサンプル アプリとコード デモです。"
+  description: Xamarin.Forms の概念の理解と作業の開始に役立つ Xamarin.Forms のサンプル アプリとコード デモです。
   menu:
     items:
     - href: https://developer.xamarin.com/samples/xamarin-forms/all/
-      text: "すべての Xamarin.Forms のサンプル"
+      text: すべての Xamarin.Forms のサンプル
 sections:
 - title: 
   items:
@@ -26,44 +26,44 @@ sections:
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      html: "このサンプルは、データがローカルの SQLite データベースに格納され、アクセスされる Todo リスト アプリケーションの例です。"
+      html: このサンプルは、データがローカルの SQLite データベースに格納され、アクセスされる Todo リスト アプリケーションの例です。
       image:
         src: images/todo.png
         href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
       title: Todo
     - href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
-      html: "これは、よく知られたゲームにひねりを加えたアプリです。 9×9 グリッドのタイルに 10 匹の虫が隠れています。 ゲームをクリアするには 10 匹の虫をすべて見つけて、旗を立てます。"
+      html: これは、よく知られたゲームにひねりを加えたアプリです。 9×9 グリッドのタイルに 10 匹の虫が隠れています。 ゲームをクリアするには 10 匹の虫をすべて見つけて、旗を立てます。
       image:
         src: images/bugsweeper.png
         href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
       title: BugSweeper
     - href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
-      html: "RPN (逆ポーランド記法) Calculator では、かっこや等号を使用せずに数字と演算子を入力できます。"
+      html: RPN (逆ポーランド記法) Calculator では、かっこや等号を使用せずに数字と演算子を入力できます。
       image:
         src: images/rpncalc.png
         href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
       title: RPN Calculator
     - href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
-      html: "指でタッチして動かすことで描画できる回転円盤をシミュレートするプログラムです。 SpinPaint では、タッチすると指の下に線が描画されますが、円盤の他の 3 象限にもその線のミラー画像が複製されます。"
+      html: 指でタッチして動かすことで描画できる回転円盤をシミュレートするプログラムです。 SpinPaint では、タッチすると指の下に線が描画されますが、円盤の他の 3 象限にもその線のミラー画像が複製されます。
       image:
         src: images/spinpaint.png
         href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
       title: SpinPaint
     - href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
-      html: "XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。"
+      html: XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。
       image:
         src: images/xaml.png
         href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
-      title: "XAML のサンプル"
+      title: XAML のサンプル
     - href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
-      html: "XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。"
+      html: XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。
       image:
         src: images/xuzzle.png
         href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
       title: Xuzzle
     - href: https://developer.xamarin.com/samples/xamarin-forms/all/
-      html: "すべての Xamarin.Forms サンプル アプリとコード デモです。"
+      html: すべての Xamarin.Forms サンプル アプリとコード デモです。
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/xamarin-forms/all/
-      title: "すべての Xamarin.Forms のサンプル"
+      title: すべての Xamarin.Forms のサンプル

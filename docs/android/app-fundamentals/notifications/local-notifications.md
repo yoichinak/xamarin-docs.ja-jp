@@ -1,18 +1,17 @@
 ---
-title: "ローカルの通知"
-description: "このセクションでは、Xamarin.Android でローカルの通知を実装する方法を示します。 Android の通知のさまざまな UI 要素について説明し、API について説明します、通知が表示の作成と関係しているのです。"
-ms.topic: article
+title: ローカルの通知
+description: このセクションでは、Xamarin.Android でローカルの通知を実装する方法を示します。 Android の通知のさまざまな UI 要素について説明し、API について説明します、通知が表示の作成と関係しているのです。
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 97c8372656f0cbfa5b8f7bb12d15b00feac4b5c3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="local-notifications"></a>ローカルの通知
 
@@ -229,7 +228,7 @@ notification.Defaults |= NotificationDefaults.Vibrate;
 
 ### <a name="updating-a-notification"></a>通知の更新
 
-公開された後に、通知の内容を更新する場合は、既存の再利用できる`Notification.Builder`新しい通知オブジェクトを作成し、最後の通知の識別子では、この通知をパブリッシュするオブジェクト。 例:
+公開された後に、通知の内容を更新する場合は、既存の再利用できる`Notification.Builder`新しい通知オブジェクトを作成し、最後の通知の識別子では、この通知をパブリッシュするオブジェクト。 例えば:
 
 ```csharp
 // Update the existing notification builder content:
@@ -446,7 +445,7 @@ Oreo デバイスで通知を表示する通知チャネルを使用せず、ユ
 
 通知チャネルへの通知を投稿するには、次の操作を行います。
 
-1.  使用して通知を構成、 `Notification.Builder`、チャネル ID を渡して、`SetChannelId`メソッドです。 例:
+1.  使用して通知を構成、 `Notification.Builder`、チャネル ID を渡して、`SetChannelId`メソッドです。 例えば:
 
     ```csharp
     Notification.Builder builder = new Notification.Builder (this)
@@ -490,7 +489,7 @@ Android での単純な標準ベースのレイアウト形式に既定で通知
 
 大きいアイコンで通知が表示されたらに、小さなアプリ アイコンが大きいアイコンの右下隅にバッジとして表示されていることを確認します。
 
-通知の大きいアイコンとしてイメージを使用するには通知ビルダーを呼び出す[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)メソッドとイメージのビットマップを渡します。 異なり`SetSmallIcon`、`SetLargeIcon`のみビットマップを受け入れます。 使用するビットマップにイメージ ファイルを変換する、 [BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)クラスです。 例:
+通知の大きいアイコンとしてイメージを使用するには通知ビルダーを呼び出す[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)メソッドとイメージのビットマップを渡します。 異なり`SetSmallIcon`、`SetLargeIcon`のみビットマップを受け入れます。 使用するビットマップにイメージ ファイルを変換する、 [BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)クラスです。 例えば:
 
 ```csharp
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
@@ -512,7 +511,7 @@ Android での通知アイコンのサイズの詳細についてを参照して
 
 この拡張されたレイアウト形式には、通知の下部にある概要テキストも含まれています。 最大の高さ、*大きなテキスト*通知は、256 dp です。
 
-作成する、*大きなテキスト*インスタンス化、通知、`Notification.Builder`前とに、、オブジェクトのインスタンスを作成し、追加、 [BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/)オブジェクトを`Notification.Builder`オブジェクト。 例:
+作成する、*大きなテキスト*インスタンス化、通知、`Notification.Builder`前とに、、オブジェクトのインスタンスを作成し、追加、 [BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/)オブジェクトを`Notification.Builder`オブジェクト。 例えば:
 
 ```csharp
 // Instantiate the Big Text style:
@@ -550,7 +549,7 @@ builder.SetStyle (textStyle);
 
 コンパクトな形式で、通知が表示されたら、そのテキストに表示される通知の通知 (通知のビルダーに渡されるテキスト`SetContentText`メソッド、前に示したよう)。 ただし、イメージを表示するために、通知を展開すると、イメージの上の概要のテキストが表示されます。
 
-作成する、*イメージ*インスタンス化、通知、`Notification.Builder`以前と同様、オブジェクトを作成し、挿入、 [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)オブジェクトに、`Notification.Builder`オブジェクト。 例:
+作成する、*イメージ*インスタンス化、通知、`Notification.Builder`以前と同様、オブジェクトを作成し、挿入、 [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)オブジェクトに、`Notification.Builder`オブジェクト。 例えば:
 
 ```csharp
 // Instantiate the Image (Big Picture) style:
@@ -610,7 +609,7 @@ builder.SetStyle (picStyle);
 
 ![展開の例の受信トレイ通知](local-notifications-images/21-inbox-expanded.png)
 
-作成する、*受信トレイ*インスタンス化、通知、`Notification.Builder`前とに、、オブジェクトを追加、 [InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/)オブジェクトを`Notification.Builder`です。 例:
+作成する、*受信トレイ*インスタンス化、通知、`Notification.Builder`前とに、、オブジェクトを追加、 [InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/)オブジェクトを`Notification.Builder`です。 例えば:
 
 ```csharp
 // Instantiate the Inbox style:
@@ -661,7 +660,7 @@ Xamarin.Android には、通知の優先順位を設定するための次の列�
 
 -   `NotificationPriority.Min` &ndash; 背景情報については、ユーザーがされる場合にのみに通知する (場所や気象情報など) の通知を表示します。
 
-通知の優先順位を設定するには、呼び出し、 [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)のメソッド、`Notification.Builder`優先度レベルを渡して、オブジェクトです。 例:
+通知の優先順位を設定するには、呼び出し、 [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)のメソッド、`Notification.Builder`優先度レベルを渡して、オブジェクトです。 例えば:
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -738,7 +737,7 @@ Android 5.0 以降では、定義済みのカテゴリは順位付けと通知�
 
 -   `Notification.CategoryStatus` &ndash; デバイスに関する情報です。
 
-通知は、並べ替えられたときに、通知の優先度が、そのカテゴリの設定よりも優先されます。 たとえば、優先度の高い通知はヘッドアップとして表示するのに属している場合でも、`Promo`カテゴリ。 呼び出すの通知のカテゴリを設定するには`SetCategory`のメソッド、`Notification.Builder`カテゴリの設定を渡して、オブジェクトです。 例:
+通知は、並べ替えられたときに、通知の優先度が、そのカテゴリの設定よりも優先されます。 たとえば、優先度の高い通知はヘッドアップとして表示するのに属している場合でも、`Promo`カテゴリ。 呼び出すの通知のカテゴリを設定するには`SetCategory`のメソッド、`Notification.Builder`カテゴリの設定を渡して、オブジェクトです。 例えば:
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);

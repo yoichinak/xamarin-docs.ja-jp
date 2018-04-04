@@ -1,18 +1,17 @@
 ---
-title: "Azure のモバイル アプリを使用してユーザーの認証"
-description: "Azure のモバイル アプリでは、認証および承認する Facebook、Google、Microsoft、Twitter、および Azure Active Directory を含む、アプリケーションのユーザーをサポートするために、さまざまな外部の id プロバイダーを使用します。 認証されたユーザーのみにアクセスを制限するテーブルに対するアクセス許可を設定できます。 この記事では、Azure Mobile Apps を使用して、Xamarin.Forms アプリケーションでの認証プロセスを管理する方法について説明します。"
-ms.topic: article
+title: Azure のモバイル アプリを使用してユーザーの認証
+description: Azure のモバイル アプリでは、認証および承認する Facebook、Google、Microsoft、Twitter、および Azure Active Directory を含む、アプリケーションのユーザーをサポートするために、さまざまな外部の id プロバイダーを使用します。 認証されたユーザーのみにアクセスを制限するテーブルに対するアクセス許可を設定できます。 この記事では、Azure Mobile Apps を使用して、Xamarin.Forms アプリケーションでの認証プロセスを管理する方法について説明します。
 ms.prod: xamarin
 ms.assetid: D50D6F56-8B19-44E7-81F3-E0E1C6E240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 823dcdfdaca79045a407b62ec7e75079ee25d72f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f5c69601c11a3c0d25bc804c60883841b0fb30d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-azure-mobile-apps"></a>Azure のモバイル アプリを使用してユーザーの認証
 

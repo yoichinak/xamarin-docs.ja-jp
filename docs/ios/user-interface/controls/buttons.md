@@ -1,18 +1,17 @@
 ---
-title: "ボタン"
-description: "UIButton クラスは、iOS の画面でボタンのさまざまな種類のスタイルを表すために使用します。 このセクションでは、iOS でのボタンを使用するためのさまざまなオプションについて説明します。"
-ms.topic: article
+title: ボタン
+description: UIButton クラスは、iOS の画面でボタンのさまざまな種類のスタイルを表すために使用します。 このセクションでは、iOS でのボタンを使用するためのさまざまなオプションについて説明します。
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: ab7a77c44412bd22427e17a696eb43278ff7dd94
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2c33103c005a5ed567b1c4703846f887d824ac4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="buttons"></a>ボタン
 
@@ -52,7 +51,7 @@ UIButton myButton = new UIButton(UIButtonType.System);
 myButton.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-ボタンのテキストを変更するには、使用、`SetTitle`プロパティ、ボタンのテキスト文字列を設定する必要があります、`UIControlStyle`です。 例:
+ボタンのテキストを変更するには、使用、`SetTitle`プロパティ、ボタンのテキスト文字列を設定する必要があります、`UIControlStyle`です。 例えば:
 
 ```csharp
 myButton.SetTitle("Hello, World!", UIControlState.Normal);
@@ -91,7 +90,7 @@ button.SetTitleColor (UIColor.White, UIControlState.Normal);
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例:
+さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例えば:
 
 ```csharp
 var normalAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);

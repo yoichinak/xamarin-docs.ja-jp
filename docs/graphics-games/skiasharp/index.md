@@ -1,18 +1,17 @@
 ---
-title: "2D の描画"
-description: "クロス プラットフォーム SkiaSharp を 2D の図形を描画します。"
-ms.topic: article
+title: 2D の描画
+description: クロス プラットフォーム SkiaSharp を 2D の図形を描画します。
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a6249525e8a5f85284c462888a7698312321642f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="2d-drawing"></a>2D の描画
 
@@ -74,4 +73,4 @@ SkiaSharp とサンプルの主要な概念の概要については、画像、�
 
 SkiaSharp は、コミュニティと共有している処理中です。 Skia API の重要な部分にバインドしましたが、中に実行する多くの作業が残っています。 Skia、側に表示される安定した C API を使用して、原因となった Api を完全に保護する Skia の C バインドに作業を続行することを計画します。
 
-バインディング労力をガイド、くださいのままにコメントや提案問題として GitHub リポジトリにご協力[http://github.com/mono/SkiaSharp](http://github.com/mono/SkiaSharp)です。
+バインディング労力をガイド、くださいのままにコメントや提案問題として GitHub リポジトリにご協力[ http://github.com/mono/SkiaSharp](http://github.com/mono/SkiaSharp)です。

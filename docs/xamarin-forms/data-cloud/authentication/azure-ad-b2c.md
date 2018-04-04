@@ -1,18 +1,17 @@
 ---
-title: "Azure Active Directory B2C のユーザーの認証"
-description: "Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Microsoft の認証ライブラリと Azure Active Directory B2C を使用して、モバイル アプリケーションにコンシューマーの id 管理を統合する方法を示します。"
-ms.topic: article
+title: Azure Active Directory B2C のユーザーの認証
+description: Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Microsoft の認証ライブラリと Azure Active Directory B2C を使用して、モバイル アプリケーションにコンシューマーの id 管理を統合する方法を示します。
 ms.prod: xamarin
 ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 5d64c7c1dbc502acd3876c2442f9bae1c46eeb74
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f17a6ad012aff81674db943b7d65e65ba77dca52
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C のユーザーの認証
 

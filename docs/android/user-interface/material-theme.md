@@ -1,18 +1,17 @@
 ---
-title: "材料テーマ"
-description: "テーマをする方法の素材のテーマに Xamarin.Android アプリ"
-ms.topic: article
+title: 材料テーマ
+description: テーマをする方法の素材のテーマに Xamarin.Android アプリ
 ms.prod: xamarin
 ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 479abf7fef695be156d4447592bc59dceabe3f03
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a3b5f908330833a38aad9e329835a4a437fc29f0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="material-theme"></a>材料テーマ
 
@@ -37,7 +36,7 @@ Android には、次の 3 つの素材テーマ フレーバーが用意され�
 マテリアル テーマがサポートされているは、Android 5.0 でのみと後ために使用できません (または資料テーマから派生したカスタムのテーマ) テーマにアプリ Android の以前のバージョンで実行されています。 ただし、Android 5.0 デバイスの素材のテーマを使用し、適切に代替以前のテーマを古いバージョンの Android での実行時にアプリを構成することができます (を参照してください、[互換性](#compatibility)詳細については、この記事のセクション)。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin ベースのアプリでの Android 5.0 マテリアルのテーマの新機能を使用する、次が必要。
 
@@ -73,7 +72,7 @@ Android 5.0 アプリ プロジェクトを構成する方法については、�
 </application>
 ```
 
-アプリケーションを設定する代わりに、`Theme`属性**AssemblyInfo.cs** (または**Properties.cs**)。 例:
+アプリケーションを設定する代わりに、`Theme`属性**AssemblyInfo.cs** (または**Properties.cs**)。 例えば:
 
 ```C#
 [assembly: Application(Theme="@android:style/Theme.Material.Light")]
@@ -204,7 +203,7 @@ Android 5.0 では、個々 のビューのスタイルを設定することで�
 </style>
 ```
 
--   レイアウトで、設定、`style`前の手順で選択したカスタム スタイル名と一致するには、そのビューの属性です。 例:
+-   レイアウトで、設定、`style`前の手順で選択したカスタム スタイル名と一致するには、そのビューの属性です。 例えば:
 
 ```xml
 <android.support.v7.widget.CardView
@@ -225,7 +224,7 @@ Android 5.0 では、個々 のビューのスタイルを設定することで�
 
 スタイルをアプリが Android 5.0 でマテリアルのテーマを使用しますが、下降傾向と互換性のあるスタイルの Android の以前のバージョンに自動的に元に戻しますするには、次の手順を使用します。
 
--   カスタム テーマを定義**Resources/values-v21/styles.xml**マテリアル テーマ スタイルから派生しました。 例:
+-   カスタム テーマを定義**Resources/values-v21/styles.xml**マテリアル テーマ スタイルから派生しました。 例えば:
 
 ```xml
 <resources>
@@ -235,7 +234,7 @@ Android 5.0 では、個々 のビューのスタイルを設定することで�
 </resources>
 ```
 
--   カスタム テーマを定義**Resources/values/styles.xml**を古いテーマから派生したが、上と同じテーマ名を使用します。 例:
+-   カスタム テーマを定義**Resources/values/styles.xml**を古いテーマから派生したが、上と同じテーマ名を使用します。 例えば:
 
 ```xml
 <resources>
@@ -246,7 +245,7 @@ Android 5.0 では、個々 のビューのスタイルを設定することで�
 ```
 
 -   **AndroidManifest.xml**、カスタム テーマ名を使ってアプリを構成します。 
-    例:
+    例えば:
 
 ```xml
 <application android:label="MyApp" 

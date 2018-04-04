@@ -1,17 +1,16 @@
 ---
-title: "ドキュメントの選択"
-description: "ドキュメント ピッカー ビュー コント ローラーは、ユーザーがアプリケーションのサンド ボックス外にあるファイルへのアクセスを許可します。 これは、アプリ間でドキュメントを共有するための簡単なメカニズムです。 複雑なワークフローは、ユーザーが複数のアプリケーションの 1 つのドキュメントを編集できるので、こともできます。 この記事を紹介 Xamarin.iOS アプリケーションでドキュメント ピッカーを使用しており、サポートするように iCloud ドキュメントの変更が必要です。"
-ms.topic: article
+title: ドキュメントの選択
+description: ドキュメント ピッカー ビュー コント ローラーは、ユーザーがアプリケーションのサンド ボックス外にあるファイルへのアクセスを許可します。 これは、アプリ間でドキュメントを共有するための簡単なメカニズムです。 複雑なワークフローは、ユーザーが複数のアプリケーションの 1 つのドキュメントを編集できるので、こともできます。 この記事を紹介 Xamarin.iOS アプリケーションでドキュメント ピッカーを使用しており、サポートするように iCloud ドキュメントの変更が必要です。
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 33a6dc7294db74c3c8ab451f147c941124db8982
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="document-picker"></a>ドキュメントの選択
 

@@ -1,18 +1,17 @@
 ---
-title: "最新 macOS アプリの構築"
-description: "この記事では、いくつかのヒント、機能と手法、開発者が Xamarin.Mac で最新 macOS アプリの構築に使用できるについて説明します。"
-ms.topic: article
+title: 最新 macOS アプリの構築
+description: この記事では、いくつかのヒント、機能と手法、開発者が Xamarin.Mac で最新 macOS アプリの構築に使用できるについて説明します。
 ms.prod: xamarin
 ms.assetid: F20EE590-246E-40EB-B309-D9D8C090C7F1
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 446db5c04849ac6fa320f3fe3b7e22b3d10bf9cf
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4eb4ff4a9e4784d816e2cbe8734e0422573cad92
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="building-modern-macos-apps"></a>最新 macOS アプリの構築
 
@@ -436,7 +435,7 @@ A`CALayer`オブジェクトが使用すると、開発者提示された内容�
 
 #### <a name="redrawing-views-with-layers"></a>レイヤーにビューを再描画
 
-他の重要な手順のレイヤー バックアップ ビュー Xamarin.Mac アプリの使用を設定する場合、`LayerContentsRedrawPolicy`の`NSView`に`OnSetNeedsDisplay`で、`NSViewController`です。 例:
+他の重要な手順のレイヤー バックアップ ビュー Xamarin.Mac アプリの使用を設定する場合、`LayerContentsRedrawPolicy`の`NSView`に`OnSetNeedsDisplay`で、`NSViewController`です。 例えば:
 
 ```csharp
 public override void ViewWillAppear ()
@@ -637,7 +636,7 @@ macOS Sierra は OS の以前のバージョンで利用可能な既存のコン
 
 ## <a name="table-view-enhancements"></a>テーブル ビューの機能強化
 
-開発者は、必ず使用して、新しい`NSView`などのバージョンのコンテナーのビュー コントロールをベース`NSTableView`です。 例:
+開発者は、必ず使用して、新しい`NSView`などのバージョンのコンテナーのビュー コントロールをベース`NSTableView`です。 例えば:
 
 ```csharp
 using System;
@@ -836,7 +835,7 @@ public override void ViewDidLoad ()
 
 ここで、`Alignment`と`ImagePosition`に基づいて設定される、`UserInterfaceLayoutDirection`コントロールのです。
 
-macOS Sierra がいくつかの新しい便利なコンス トラクターを追加します (静的を介して`CreateButton`メソッド) を (タイトル、イメージ、およびアクション) などのいくつかのパラメーターを受け取るし、自動的に正しく反映されます。 例:
+macOS Sierra がいくつかの新しい便利なコンス トラクターを追加します (静的を介して`CreateButton`メソッド) を (タイトル、イメージ、およびアクション) などのいくつかのパラメーターを受け取るし、自動的に正しく反映されます。 例えば:
 
 ```csharp
 var button2 = NSButton.CreateButton (myTitle, myImage, () => {
@@ -853,7 +852,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 [![](modern-cocoa-apps-images/content11.png "濃い Mac ウィンドウ UI の例")](modern-cocoa-apps-images/content11.png#lightbox)
 
-これは、ウィンドウが表示される前に、1 行のコードを追加することで実行できます。 例:
+これは、ウィンドウが表示される前に、1 行のコードを追加することで実行できます。 例えば:
 
 ```csharp
 using System;
@@ -908,7 +907,7 @@ Apple では、システムの外観を使用するための以下の推奨事�
 - これにより UI の柔軟性が制限としてハードコーディングする UI 構造の依存関係を避けてください。
 - C# のインターフェイスを使用すると、依存関係を汎用的なデータを提供します。
 
-Segue のソースとして動作しているビュー コント ローラーがオーバーライドできる、`PrepareForSegue`メソッドと、Segue 前に (データを渡す) など、任意の初期化が必要な操作は実行されている場合、ターゲット ビュー コント ローラーを表示します。 例:
+Segue のソースとして動作しているビュー コント ローラーがオーバーライドできる、`PrepareForSegue`メソッドと、Segue 前に (データを渡す) など、任意の初期化が必要な操作は実行されている場合、ターゲット ビュー コント ローラーを表示します。 例えば:
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)

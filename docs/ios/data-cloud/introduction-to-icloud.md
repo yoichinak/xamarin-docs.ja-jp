@@ -1,18 +1,17 @@
 ---
 title: iCloud
-description: "Apple では、アプリケーションを Apple のサーバーにデータを格納して、それを (それらの Apple ID) を使用して、同じユーザーが使用されるすべてのデバイス間で同期を許可するためのサービスとして 5、iOS で iCloud が導入されました。 さらに、バックアップ コンポーネントでは、ここで、デバイス上のデータはバックアップを Apple のサーバー。 このドキュメントでは、Apple によって iCloud 提供の Api の一部を使用して格納および c# のサンプルをキーと値の小さいデータのペアを格納して、ドキュメントを格納するために、それぞれのサーバーからデータを取得する方法について説明します。 ICloud のバックアップが、アプリケーションの設計に影響する方法も説明します。"
-ms.topic: article
+description: Apple では、アプリケーションを Apple のサーバーにデータを格納して、それを (それらの Apple ID) を使用して、同じユーザーが使用されるすべてのデバイス間で同期を許可するためのサービスとして 5、iOS で iCloud が導入されました。 さらに、バックアップ コンポーネントでは、ここで、デバイス上のデータはバックアップを Apple のサーバー。 このドキュメントでは、Apple によって iCloud 提供の Api の一部を使用して格納および c# のサンプルをキーと値の小さいデータのペアを格納して、ドキュメントを格納するために、それぞれのサーバーからデータを取得する方法について説明します。 ICloud のバックアップが、アプリケーションの設計に影響する方法も説明します。
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -32,7 +31,7 @@ _Apple では、アプリケーションを Apple のサーバーにデータを
 
 このドキュメントでは、最初の 2 種類のキーと値のペアと UIDocument サブクラス - Xamarin.iOS でこれらの機能を使用する方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 - Xamarin.iOS の最新の安定バージョン
 - Xcode 8 以降

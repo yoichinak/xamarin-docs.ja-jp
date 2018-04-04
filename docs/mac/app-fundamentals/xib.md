@@ -1,18 +1,17 @@
 ---
-title: ".xib ファイル"
-description: "この記事では、Xcode のインターフェイスのビルダーを作成および維持 Xamarin.Mac アプリケーションのユーザー インターフェイスに作成された .xib ファイルと作業について説明します。"
-ms.topic: article
+title: .xib ファイル
+description: この記事では、Xcode のインターフェイスのビルダーを作成および維持 Xamarin.Mac アプリケーションのユーザー インターフェイスに作成された .xib ファイルと作業について説明します。
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 92ca65409dd82806278885bb03efd7b04ab1827d
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: c1f575f5d3d5f0fbe82d5e0d08103b9261944602
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xib-files"></a>.xib ファイル
 
@@ -575,7 +574,7 @@ private void DisplaySubview(NSViewController controller, SubviewType type) {
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-これを表示するには、新しいビューのビュー コント ローラーの新しいインスタンスを作成、その型で指定されているプロジェクトに追加された列挙型) を設定およびを使用して、`DisplaySubview`メソッドを実際には、ビューを表示するウィンドウのクラスに追加します。 例:
+これを表示するには、新しいビューのビュー コント ローラーの新しいインスタンスを作成、その型で指定されているプロジェクトに追加された列挙型) を設定およびを使用して、`DisplaySubview`メソッドを実際には、ビューを表示するウィンドウのクラスに追加します。 例えば:
 
 [![サンプル アプリを実行している](xib-images/view04.png "サンプル アプリの実行")](xib-images/view04-large.png#lightbox)
 

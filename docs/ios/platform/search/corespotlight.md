@@ -1,17 +1,16 @@
 ---
-title: "コアのスポット ライトの検索"
-ms.topic: article
+title: コアのスポット ライトの検索
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d38d90ce460c7a93f8412baf372778443eb9d9e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="search-with-core-spotlight"></a>コアのスポット ライトの検索
 
@@ -50,7 +49,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 ## <a name="restoring-an-item"></a>アイテムを復元します。
 
-ユーザーが、アプリの主要なメディアを使用して、検索結果に追加された項目をタップしたときに、`AppDelegate`メソッド`ContinueUserActivity`と呼びます (このメソッドはの使用も`NSUserActivity`)。 例:
+ユーザーが、アプリの主要なメディアを使用して、検索結果に追加された項目をタップしたときに、`AppDelegate`メソッド`ContinueUserActivity`と呼びます (このメソッドはの使用も`NSUserActivity`)。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -100,7 +99,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-次に、ドメイン名でインデックス項目のグループを削除することができます。 例:
+次に、ドメイン名でインデックス項目のグループを削除することができます。 例えば:
 
 ```csharp
 // Delete by Domain Name

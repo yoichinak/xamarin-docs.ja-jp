@@ -1,18 +1,17 @@
 ---
-title: "回転の処理"
-description: "このトピックでは、Xamarin.Android でデバイスの向きの変更を処理する方法について説明します。 自動的に変更をプログラムによって印刷の向きを処理する方法と同様、特定のデバイスの向きのリソースを読み込む Android リソース システムを操作する方法を説明します。"
-ms.topic: article
+title: 回転の処理
+description: このトピックでは、Xamarin.Android でデバイスの向きの変更を処理する方法について説明します。 自動的に変更をプログラムによって印刷の向きを処理する方法と同様、特定のデバイスの向きのリソースを読み込む Android リソース システムを操作する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 6D33ADF7-ED81-0256-479D-D9E3787A76B0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: c31dbfeea3134de95f3275a7fa79c508a94d6a91
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1cdc7928c45b99cdd8c8149b3ae9b06e790deeca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="handling-rotation"></a>回転の処理
 

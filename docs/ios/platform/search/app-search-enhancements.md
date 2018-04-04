@@ -1,18 +1,17 @@
 ---
-title: "アプリの検索の機能強化"
-description: "拡張機能を取り上げて Apple iOS 10 および Xamarin.iOS でそれらを実装する方法にアプリを検索する行ってきました。"
-ms.topic: article
+title: アプリの検索の機能強化
+description: 拡張機能を取り上げて Apple iOS 10 および Xamarin.iOS でそれらを実装する方法にアプリを検索する行ってきました。
 ms.prod: xamarin
 ms.assetid: 30124DB6-6A02-4F66-A2D9-BBC8008E6B48
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: af124c2ae0390c5321e9dd34158c7b53b33b2c48
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 036dbc6a33126d4ade1a68e853ca6ddb4b7c83cc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-search-enhancements"></a>アプリの検索の機能強化
 
@@ -64,7 +63,7 @@ IOS 10 Apple は、メディアまたは Safari、検索を開始し、アプリ
 
 -----
 
-表示するには、検索結果の操作を続行する (`NSUserActivity`)、編集、`AppDelegate.cs`ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例:
+表示するには、検索結果の操作を続行する (`NSUserActivity`)、編集、`AppDelegate.cs`ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

@@ -1,18 +1,17 @@
 ---
-title: "ポップアップを表示します。"
-description: "Xamarin.Forms では、次の 2 つの pop 増のようなユーザー インターフェイス要素 –、アラートとアクション シートを提供します。 この記事では、単純な質問をユーザーに確認してを使用してタスクを使用してユーザーにアラートとアクション シート Api を使用してを示します。"
-ms.topic: article
+title: ポップアップを表示します。
+description: Xamarin.Forms では、次の 2 つの pop 増のようなユーザー インターフェイス要素 –、アラートとアクション シートを提供します。 この記事では、単純な質問をユーザーに確認してを使用してタスクを使用してユーザーにアラートとアクション シート Api を使用してを示します。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 87b20dfd8882bf7da58b1bd078930fb69c46a79d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2e0a5ff433de034da0170e3aa9a19ab50ddc3cb6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="displaying-pop-ups"></a>ポップアップを表示します。
 

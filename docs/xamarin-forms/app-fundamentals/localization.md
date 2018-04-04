@@ -1,18 +1,17 @@
 ---
-title: "ローカリゼーション"
-description: "Xamarin.Forms アプリは、.NET リソース ファイルを使用してローカライズできます。"
-ms.topic: article
+title: ローカリゼーション
+description: Xamarin.Forms アプリは、.NET リソース ファイルを使用してローカライズできます。
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -760,7 +759,7 @@ iOS プロジェクトのローカリゼーションをという名前の名前�
 
 ![](localization-images/ios-resources.png "iOS のプロジェクト ディレクトリのローカライズ")
 
-各言語のディレクトリのコピーを格納する**flag.png**、その言語のローカライズされました。 イメージが指定されていない場合、オペレーティング システムは既定の言語の既定のディレクトリにあるイメージをします。 指定する必要があります Retina を完全にサポートするには、  **@2x** と **@3x** 各イメージのコピー。
+各言語のディレクトリのコピーを格納する**flag.png**、その言語のローカライズされました。 イメージが指定されていない場合、オペレーティング システムは既定の言語の既定のディレクトリにあるイメージをします。 指定する必要があります Retina を完全にサポートするには、 **@2x**と**@3x**各イメージのコピー。
 
 #### <a name="app-name"></a>アプリ名
 

@@ -1,18 +1,17 @@
 ---
-title: "代替アプリのアイコン"
-description: "この記事では、Xamarin.iOS で代替アプリ アイコンの使用について説明します。"
-ms.topic: article
+title: 代替アプリのアイコン
+description: この記事では、Xamarin.iOS で代替アプリ アイコンの使用について説明します。
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: ff24a1411a7ddf2ca78c7997f1dc37744013ece4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8d9f27d58a881878aabeda4326805eec726c247c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="alternate-app-icons"></a>代替アプリのアイコン
 
@@ -111,7 +110,7 @@ Apple では、そのアイコンを管理するアプリを許可する iOS 10.
 
 Xamarin.iOS プロジェクトに含まれる、アイコン イメージを使用し、 **Info.plist**ファイルが正しく構成されて、開発者が使用できる iOS 10.3 に追加された多くの新機能のいずれかをアプリのアイコンを制御します。
 
-`SupportsAlternateIcons`のプロパティ、`UIApplication`クラスにより、開発者は、アプリが代替のアイコンをサポートしているかを参照してください。 例:
+`SupportsAlternateIcons`のプロパティ、`UIApplication`クラスにより、開発者は、アプリが代替のアイコンをサポートしているかを参照してください。 例えば:
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +118,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-`ApplicationIconBadgeNumber`のプロパティ、`UIApplication`クラスにより、開発者を取得またはのスプリング ボードで、アプリ アイコンの現在のバッジ番号を設定します。 既定値は、ゼロ (0) です。 例:
+`ApplicationIconBadgeNumber`のプロパティ、`UIApplication`クラスにより、開発者を取得またはのスプリング ボードで、アプリ アイコンの現在のバッジ番号を設定します。 既定値は、ゼロ (0) です。 例えば:
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-`AlternateIconName`のプロパティ、`UIApplication`クラスにより、開発者は、現在選択されている代替アプリ アイコンの名前を取得するかを返します`null`アプリがプライマリのアイコンを使用している場合。 例:
+`AlternateIconName`のプロパティ、`UIApplication`クラスにより、開発者は、現在選択されている代替アプリ アイコンの名前を取得するかを返します`null`アプリがプライマリのアイコンを使用している場合。 例えば:
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +137,7 @@ if (name != null ) {
 }
 ```
 
-`SetAlternameIconName`のプロパティ、`UIApplication`クラスにより、開発者はアプリ アイコンを変更します。 選択するアイコンの名前を渡すまたは`null`プライマリ アイコンに戻ります。 例:
+`SetAlternameIconName`のプロパティ、`UIApplication`クラスにより、開発者はアプリ アイコンを変更します。 選択するアイコンの名前を渡すまたは`null`プライマリ アイコンに戻ります。 例えば:
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)

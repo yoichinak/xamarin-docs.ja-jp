@@ -1,18 +1,17 @@
 ---
-title: "カスタム コントロールの作成"
-description: "この記事では、カスタム コントロールを作成し、インターフェイスのビルダーに処理する方法について説明します。"
-ms.topic: article
+title: カスタム コントロールの作成
+description: この記事では、カスタム コントロールを作成し、インターフェイスのビルダーに処理する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-custom-controls"></a>カスタム コントロールの作成
 
@@ -185,7 +184,7 @@ private void Initialize() {
 }
 ```
 
-このメソッドは、各コントロールが正しく構成されていることを確認するコントロールのコンス トラクターから呼び出されます。 例:
+このメソッドは、各コントロールが正しく構成されていることを確認するコントロールのコンス トラクターから呼び出されます。 例えば:
 
 ```csharp
 public NSFlipSwitch (IntPtr handle) : base (handle)

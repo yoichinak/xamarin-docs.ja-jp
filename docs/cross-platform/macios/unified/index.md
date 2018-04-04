@@ -1,18 +1,17 @@
 ---
-title: "統合 API"
-description: "新しいスタイルの API よりも簡単にこれまで Mac と iOS だけでなくできると、同じ 32 と 64 ビットのアプリケーションをサポートするバイナリ間でコードを共有します。"
-ms.topic: article
+title: 統合 API
+description: 新しいスタイルの API よりも簡単にこれまで Mac と iOS だけでなくできると、同じ 32 と 64 ビットのアプリケーションをサポートするバイナリ間でコードを共有します。
 ms.prod: xamarin
 ms.assetid: 14311617-1BC2-42CC-AF3F-9F97733EE2D0
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c31b6e25350089874b5baf868dfe19e12ab4d531
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d0ad5b08aaf5e7b14f75611a28d389e3f7e0477c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-api"></a>統合 API
 

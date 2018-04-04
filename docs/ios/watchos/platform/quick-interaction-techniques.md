@@ -1,18 +1,17 @@
 ---
-title: "WatchOS 3 のクイックの相互作用手法"
-description: "この記事は、クイック相互作用手法を説明 Apple が watchOS 3 および Apple Watch の Xamarin.iOS でそれらを実装する方法で追加します。"
-ms.topic: article
+title: WatchOS 3 のクイックの相互作用手法
+description: この記事は、クイック相互作用手法を説明 Apple が watchOS 3 および Apple Watch の Xamarin.iOS でそれらを実装する方法で追加します。
 ms.prod: xamarin
 ms.assetid: 26697F68-AF7E-4A36-988F-85E2674A4DD1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d3c7c6d80a6f23cdadda04d787e28e13b054a9e6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>WatchOS 3 のクイックの相互作用手法
 
@@ -120,7 +119,7 @@ Apple Watch アプリの使用 watchOS 2、以降、`WKInterfacePicker`オブジ
 
 #### <a name="rotations-per-second"></a>1 秒あたりの回転
 
-デジタル クラウンから秒あたりの回転へのアクセスは、物理操作は、アニメーションをベースする場合に便利です。 秒あたりの回転にアクセスするには、使用、`CrownSequencer`のプロパティ、`WKInterfaceController`ウォッチ拡張機能のです。 例:
+デジタル クラウンから秒あたりの回転へのアクセスは、物理操作は、アニメーションをベースする場合に便利です。 秒あたりの回転にアクセスするには、使用、`CrownSequencer`のプロパティ、`WKInterfaceController`ウォッチ拡張機能のです。 例えば:
 
 ```csharp
 var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
@@ -128,7 +127,7 @@ var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
 
 #### <a name="rotational-deltas"></a>回転のデルタ
 
-デジタル クラウンから回転デルタを使用して、回転の数をカウントします。 使用して、`CrownDidRotate`のメソッドをオーバーライドして、`WKCrownDelegate`回転デルタにアクセスします。 例:
+デジタル クラウンから回転デルタを使用して、回転の数をカウントします。 使用して、`CrownDidRotate`のメソッドをオーバーライドして、`WKCrownDelegate`回転デルタにアクセスします。 例えば:
 
 ```csharp
 using System;

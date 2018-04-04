@@ -1,17 +1,16 @@
 ---
-title: "MonoTouch.Dialog の概要"
-description: "MonoTouch.Dialog (mt.D) toolkit は、アプリケーションの迅速な Xamarin.iOS で UI の開発の不可欠なフレームワークです。 MT.D は、高速で簡単に複雑なアプリケーションのコント ローラーのナビゲーションやテーブルなどの面倒ではなく、宣言型の方法を使用して UI を定義します。さらに、山D では、完全な制御または自動化されたアプローチでは、だけでなく更新するプル、背景画像の読み込みなどの追加機能を開発者に提供、サポート、および JSON データを使用して動的な UI の生成を検索する Api の柔軟なセットがあります。 このガイドには山を使用するさまざまな方法が導入されていますD、高度な使用を深く電子です。"
-ms.topic: article
+title: MonoTouch.Dialog の概要
+description: MonoTouch.Dialog (mt.D) toolkit は、アプリケーションの迅速な Xamarin.iOS で UI の開発の不可欠なフレームワークです。 MT.D は、高速で簡単に複雑なアプリケーションのコント ローラーのナビゲーションやテーブルなどの面倒ではなく、宣言型の方法を使用して UI を定義します。さらに、山D では、完全な制御または自動化されたアプローチでは、だけでなく更新するプル、背景画像の読み込みなどの追加機能を開発者に提供、サポート、および JSON データを使用して動的な UI の生成を検索する Api の柔軟なセットがあります。 このガイドには山を使用するさまざまな方法が導入されていますD、高度な使用を深く電子です。
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog の概要
 
@@ -114,7 +113,7 @@ MonoTouch.Dialog プロセスを開始するには、少なくとも 1 つ RootE
 
  [![](images/image4.png "このスクリーン ショットには、右側のデザート、選択した desert の値と一緒に詳細画面のタイトルを含むセルが左側のテーブルを示しています")](images/image4.png#lightbox) [ ![ ](images/image5.png "これは、次のスクリーン ショットには、右側のデザート、選択した desert の値と一緒に詳細画面のタイトルを含むセルが左側のテーブルを示しています")](images/image5.png#lightbox)
 
-ルート要素こともできます内のセクションでは、新しい入れ子になった構成ページの読み込みをトリガーする上記のようにします。 このモードで使用されている場合、指定されたキャプションはセクション内にレンダリングされるときに使用し、サブページのタイトルとしても使用します。 例:
+ルート要素こともできます内のセクションでは、新しい入れ子になった構成ページの読み込みをトリガーする上記のようにします。 このモードで使用されている場合、指定されたキャプションはセクション内にレンダリングされるときに使用し、サブページのタイトルとしても使用します。 例えば:
 
 ```csharp
 var root = new RootElement ("Meals") {

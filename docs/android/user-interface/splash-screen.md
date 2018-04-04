@@ -1,18 +1,17 @@
 ---
-title: "スプラッシュ スクリーン"
-description: "Android アプリでは、起動、特に、アプリが最初に起動した場合、デバイス上に時間がかかります。 スプラッシュ スクリーンが開始表示をユーザーまたはブランド化を示すために進行状況をセットアップします。"
-ms.topic: article
+title: スプラッシュ スクリーン
+description: Android アプリでは、起動、特に、アプリが最初に起動した場合、デバイス上に時間がかかります。 スプラッシュ スクリーンが開始表示をユーザーまたはブランド化を示すために進行状況をセットアップします。
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 9f88899d390f7f268f1b2f435617dc952f9eb205
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f34a3ee44b604bf0b82faf77769f3c2844e6460f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
@@ -34,7 +33,7 @@ Android アプリを起動する時間のかかる、特に最初の時間中に
 [![アプリの画面に続く例 Xamarin ロゴ スプラッシュ スクリーン](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドでは、アプリケーションが Android API レベル 15 (Android 4.0.3 以降) を対象と仮定またはそれ以降。 また、アプリケーションが必要、 **Xamarin.Android.Support.v4**と**Xamarin.Android.Support.v7.AppCompat** NuGet パッケージのプロジェクトに追加します。
 

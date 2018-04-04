@@ -1,18 +1,17 @@
 ---
-title: "マップ"
-description: "この記事では、Xamarin.Android でマップや場所を使用する方法について説明します。 組み込みのマップ アプリケーション V2 を使用して、Google マップ Android API 直接を活用することからすべての情報を説明します。"
-ms.topic: article
+title: マップ
+description: この記事では、Xamarin.Android でマップや場所を使用する方法について説明します。 組み込みのマップ アプリケーション V2 を使用して、Google マップ Android API 直接を活用することからすべての情報を説明します。
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bb166c78e15ea91408a2a52b4da78cfa884f7621
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57dc07aefbd1c80a53f4225f5f44fe72a9ddb9a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="maps"></a>マップ
 

@@ -1,18 +1,17 @@
 ---
-title: "動作の概要"
-description: "動作では、それらをサブクラス化しなくてもユーザー インターフェイス コントロール機能を追加できます。 代わりに、機能が動作クラスで実装され、コントロール自体の一部が場合と、コントロールにアタッチされています。 この記事では、動作を紹介します。"
-ms.topic: article
+title: 動作の概要
+description: 動作では、それらをサブクラス化しなくてもユーザー インターフェイス コントロール機能を追加できます。 代わりに、機能が動作クラスで実装され、コントロール自体の一部が場合と、コントロールにアタッチされています。 この記事では、動作を紹介します。
 ms.prod: xamarin
 ms.assetid: 0DF1EF8C-A212-4142-A3C6-DF760A82A757
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 9a92a80bae49a20b276e0d985845fbf08fe92bec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b5aa0d3de7092ac87d511ab8d59c329471fa6a28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-behaviors"></a>動作の概要
 

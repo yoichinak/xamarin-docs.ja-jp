@@ -1,18 +1,17 @@
 ---
-title: "Web サービスの使用"
-description: "このガイドを提供する別の web サービスと通信する方法を示しています作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。 説明のトピックには、ASMX サービス、WCF services、REST サービス、Azure Mobile Apps、および Amazon Web Services との通信が含まれます。"
-ms.topic: article
+title: Web サービスの使用
+description: このガイドを提供する別の web サービスと通信する方法を示しています作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。 説明のトピックには、ASMX サービス、WCF services、REST サービス、Azure Mobile Apps、および Amazon Web Services との通信が含まれます。
 ms.prod: xamarin
 ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 411ceaa372aef7aec51e3fa691996c2d7538c590
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 530b57c009a1f76d3756d7315856f74b6cda2f66
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-web-services"></a>Web サービスの使用
 

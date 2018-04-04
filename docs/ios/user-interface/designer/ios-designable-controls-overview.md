@@ -1,18 +1,17 @@
 ---
-title: "IOS 用の Xamarin デザイナーでカスタム コントロール"
-description: "IOS 用の Xamarin デザイナーは、プロジェクトで作成、または Xamarin コンポーネント ストアなどの外部ソースから参照されているカスタム コントロールのレンダリングをサポートします。"
-ms.topic: article
+title: IOS 用の Xamarin デザイナーでカスタム コントロール
+description: IOS 用の Xamarin デザイナーは、プロジェクトで作成、または Xamarin コンポーネント ストアなどの外部ソースから参照されているカスタム コントロールのレンダリングをサポートします。
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 83ec11ab6a17717dd9556122745afc8d87959186
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 113fab2fd0d1a055d566606885cefbafe3185529
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin デザイナーでカスタム コントロール
 
@@ -20,7 +19,7 @@ _IOS 用の Xamarin デザイナーは、プロジェクトで作成、または
 
 IOS 用の Xamarin デザイナーは、アプリケーションのユーザー インターフェイスを視覚化するための強力なツールであり、WYSIWYG 編集のほとんどの iOS のビューとコント ローラーの表示のサポートを提供します。 アプリでは、iOS に組み込まれているものを拡張するカスタム コントロールもあります。 これらのカスタム コントロールがいくつかのガイドラインを念頭に書き込まれる場合、iOS デザイナーより豊富な編集エクスペリエンスを提供することも表示できることができます。 このドキュメントではこれらのガイドラインを確認します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 次のすべての要件を満たしているコントロールをデザイン サーフェイスにレンダリングします。
 

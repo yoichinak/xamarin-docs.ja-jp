@@ -1,18 +1,17 @@
 ---
-title: "ViewCell をカスタマイズします。"
-description: "Xamarin.Forms ViewCell は、ListView または開発者が定義したビューが含まれているテーブルに追加できるセルです。 この記事では、Xamarin.Forms ListView コントロールの内部でホストされている ViewCell 用のカスタム レンダラーを作成する方法を示します。 これによってされない Xamarin.Forms レイアウトの計算で停止 ListView スクロール中に繰り返し呼び出されます。"
-ms.topic: article
+title: ViewCell をカスタマイズします。
+description: Xamarin.Forms ViewCell は、ListView または開発者が定義したビューが含まれているテーブルに追加できるセルです。 この記事では、Xamarin.Forms ListView コントロールの内部でホストされている ViewCell 用のカスタム レンダラーを作成する方法を示します。 これによってされない Xamarin.Forms レイアウトの計算で停止 ListView スクロール中に繰り返し呼び出されます。
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 9e980dd428ec0efab8578a25f9191dbc71bbaf6c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell をカスタマイズします。
 

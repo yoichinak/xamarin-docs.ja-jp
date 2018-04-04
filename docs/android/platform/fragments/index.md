@@ -1,18 +1,17 @@
 ---
-title: "フラグメント"
-description: "Android 3.0 には、携帯電話とタブレットで検出された多くのさまざまな画面サイズをより柔軟なデザインをサポートする方法を示す、フラグメントが導入されました。 この記事は、事前 Android の 3.0 (API レベル 11) デバイスでのフラグメントをサポートする方法と Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。"
-ms.topic: article
+title: フラグメント
+description: Android 3.0 には、携帯電話とタブレットで検出された多くのさまざまな画面サイズをより柔軟なデザインをサポートする方法を示す、フラグメントが導入されました。 この記事は、事前 Android の 3.0 (API レベル 11) デバイスでのフラグメントをサポートする方法と Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 0a9a1f41810fe113ac3d88d2533411ac537840ab
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 08c2edb3acc15518c7d5a69f227fb9ef819887be
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fragments"></a>フラグメント
 
@@ -47,7 +46,7 @@ Android を調整して、これらすべてのフラグメントを管理アク
 -   **Android のサポート パッケージ**– Android の古いバージョンで使用されるフラグメントを許可するライブラリを使用する方法です。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 フラグメントは、次のスクリーン ショットに示すように、Android SDK の API レベル 11 (Android 3.0) で始まる内です。
 

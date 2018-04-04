@@ -1,17 +1,16 @@
 ---
-title: "その他の iOS 9 のフレームワークの変更"
-description: "この記事では、追加、マイナーの変更や iOS 9 の既存のフレームワークの機能強化について説明します。"
-ms.topic: article
+title: その他の iOS 9 のフレームワークの変更
+description: この記事では、追加、マイナーの変更や iOS 9 の既存のフレームワークの機能強化について説明します。
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5053d8d0cf9c1c3e6d3282ee8d6e42448e733c2c
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5561cccfd0968c309526aae1e5dc90831ca681b4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>その他の iOS 9 のフレームワークの変更
 

@@ -1,18 +1,17 @@
 ---
 title: LayoutOptions
-description: "Xamarin.Forms のすべてのビューには、型 LayoutOptions、HorizontalOptions と VerticalOptions プロパティがあります。 この記事では、各 LayoutOptions 値が、配置とビューの拡張に与える影響について説明します。"
-ms.topic: article
+description: Xamarin.Forms のすべてのビューには、型 LayoutOptions、HorizontalOptions と VerticalOptions プロパティがあります。 この記事では、各 LayoutOptions 値が、配置とビューの拡張に与える影響について説明します。
 ms.prod: xamarin
 ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: a2aa143d5aeb801cd753dd99718ca9cf6dd72353
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a9fb9aa9471fbdedf9436bb12bb9af9b69ba4e95
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="layoutoptions"></a>LayoutOptions
 

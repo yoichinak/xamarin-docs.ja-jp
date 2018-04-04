@@ -1,18 +1,17 @@
 ---
-title: "クロスプラット フォーム アプリでネイティブ型の使用"
-description: "この記事では、コードが Android や Windows Phone Os などの非 iOS デバイスと共有されているクロス プラットフォーム アプリケーションで新しい iOS Unified API をネイティブ型 (nint、nuint、nfloat) の使用について説明します。"
-ms.topic: article
+title: クロスプラット フォーム アプリでネイティブ型の使用
+description: この記事では、コードが Android や Windows Phone Os などの非 iOS デバイスと共有されているクロス プラットフォーム アプリケーションで新しい iOS Unified API をネイティブ型 (nint、nuint、nfloat) の使用について説明します。
 ms.prod: xamarin
 ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: 2e177afa9124095f00edacbeb71512d5cd9bb219
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b32cb68174183fd094f72a7ab20f7ed52b278ee
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>クロスプラット フォーム アプリでネイティブ型の使用
 
@@ -59,7 +58,7 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 #### <a name="using-duplicate-methods"></a>重複したメソッドを使用します。
 
-上記四角形のデータの変換を行っているライブラリの例を実行します。 ライブラリがのみ 1 つまたは 2 つの非常に単純なメソッドが含まれる場合は、Xamarin.iOS および Xamarin.Android をこれらのメソッドの複製バージョンを作成することもできます。 例:
+上記四角形のデータの変換を行っているライブラリの例を実行します。 ライブラリがのみ 1 つまたは 2 つの非常に単純なメソッドが含まれる場合は、Xamarin.iOS および Xamarin.Android をこれらのメソッドの複製バージョンを作成することもできます。 例えば:
 
 ```csharp
 using System;
@@ -104,7 +103,7 @@ namespace NativeShared
 
 #### <a name="using-method-overloads"></a>オーバー ロード メソッドを使用して
 
-その場合は、ソリューションがありますをできるようにここでは、32 ビット データ型を使用してメソッドのオーバー ロード バージョンを作成`CGRect`パラメーターまたは戻り値、として変換するには、その値、 `RectangleF` (から変換することを知ること`nfloat`に`float`損失を伴う変換が)、実際の作業を実行するルーチンの元のバージョンを呼び出します。 例:
+その場合は、ソリューションがありますをできるようにここでは、32 ビット データ型を使用してメソッドのオーバー ロード バージョンを作成`CGRect`パラメーターまたは戻り値、として変換するには、その値、 `RectangleF` (から変換することを知ること`nfloat`に`float`損失を伴う変換が)、実際の作業を実行するルーチンの元のバージョンを呼び出します。 例えば:
 
 ```csharp
 using System;

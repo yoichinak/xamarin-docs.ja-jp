@@ -1,18 +1,17 @@
 ---
-title: "ロリポップ機能"
-description: "この記事では、Android 5.0 (ロリポップ) で導入された新機能の高レベルの概要を説明します。 これらの機能には、ユーザー インターフェイスと呼ばれる新型マテリアル テーマとアニメーション、表示シャドウ、およびドロウアブル着色などの新しいサポート機能が含まれます。 Android 5.0 には、強化された通知、2 つの新しい UI ウィジェット、新しいジョブのスケジューラでは、および記憶域、ネットワーク、接続、およびマルチ メディア機能を向上させるために、いくつかの新しい Api も含まれています。"
-ms.topic: article
+title: ロリポップ機能
+description: この記事では、Android 5.0 (ロリポップ) で導入された新機能の高レベルの概要を説明します。 これらの機能には、ユーザー インターフェイスと呼ばれる新型マテリアル テーマとアニメーション、表示シャドウ、およびドロウアブル着色などの新しいサポート機能が含まれます。 Android 5.0 には、強化された通知、2 つの新しい UI ウィジェット、新しいジョブのスケジューラでは、および記憶域、ネットワーク、接続、およびマルチ メディア機能を向上させるために、いくつかの新しい Api も含まれています。
 ms.prod: xamarin
 ms.assetid: 1CE99CFE-FAAC-49FC-AEDC-1A21FC6E946E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: de6829a0a698133ad9002ead1cd7c534a30b1f6c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cdef611525abbe4f066959c0ac56380b1c617747
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="lollipop-features"></a>ロリポップ機能
 
@@ -41,7 +40,7 @@ Android 5.0 (ロリポップ) には、新しいデザインの言語が導入�
 -   **新しい Api** &ndash; Android 5.0 は、Bluetooth 接続、容易に記憶域の管理、およびマルチ メディア プレーヤーやカメラ デバイスのより柔軟に制御を向上 Api を使用する複数のネットワーク サポートを追加します。 新しいジョブのスケジュール機能は非同期でタスクを実行できるようにスケジュールされた時刻。 この機能を使用する、バッテリの寿命を向上させるためになど、デバイスが接続されている場合と充電中のタスクをスケジュールします。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin ベースのアプリでの Android 5.0 の新機能を使用する、次が必要。
 

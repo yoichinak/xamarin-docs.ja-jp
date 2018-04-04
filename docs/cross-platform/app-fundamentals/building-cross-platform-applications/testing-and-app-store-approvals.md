@@ -1,5 +1,5 @@
 #<a name="---"></a>---
-タイトル:「部分 6-テストし、アプリ ストアの承認」ms.topic:: article: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology:: xamarin クロスプラット フォームの作成者: asb3993 ms.author: amburns ms.date:: 03/23/2017
+タイトル:「部分 6-テストし、アプリ ストアの承認」. トピック: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology:: xamarin クロスプラット フォームの作成者: asb3993 ms.author: amburns ms.date:: 03/23/2017
 ---
 
 # <a name="part-6---testing-and-app-store-approvals"></a>パート 6 - テストと App Store の承認

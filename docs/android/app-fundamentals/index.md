@@ -1,18 +1,17 @@
 ---
-title: "アプリケーションの基礎"
-description: "中核となるアプリケーションの概念"
-ms.topic: article
+title: アプリケーションの基礎
+description: 中核となるアプリケーションの概念
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 4abb8c823c62bc62fd2e6f717cc1b5bde9057e4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfb31fa6cac7c4848054cd58a1e144c2ac944262
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>アプリケーションの基礎
 
@@ -35,7 +34,7 @@ Api を使用して、Android ユーザー補助機能によるとアプリを�
 
 
 
-##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[アクティビティのライフ サイクル](~/android/app-fundamentals/activity-lifecycle/index.md)
+##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[アクティビティのライフサイクル](~/android/app-fundamentals/activity-lifecycle/index.md)
 
 アクティビティは、Android アプリケーションの基本的なビルディング ブロックと、さまざまな異なる状態で存在することができます。 アクティビティのライフ サイクルは、インスタンス化で始まり、破棄で終わると間に多くの状態が含まれています。 アクティビティの状態が変わるときに、適切なライフ サイクル イベント メソッドは起こる状態のアクティビティに通知され、その変更に合わせて調整するコードを実行するように呼び出されます。 この記事は、アクティビティのライフ サイクルを検査し、責任について説明します、適切に動作で信頼性の高いアプリケーションの一部としてこれらの状態変更の各アクティビティがあります。
 
@@ -47,7 +46,7 @@ Api を使用して、Android ユーザー補助機能によるとアプリを�
 
 この記事では、Android のサービス、バック グラウンドで実行する作業を許可する Android のコンポーネントについて説明します。 サービスが適しているさまざまなシナリオについて説明し、両方のタスクを実行する実行時間の長い背景もリモート プロシージャ コールにインターフェイスを提供するために実装する方法を示します。
 
-## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[受信側をブロードキャストします。](~/android/app-fundamentals/broadcast-receivers.md)
+## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[ブロードキャスト レシーバー](~/android/app-fundamentals/broadcast-receivers.md)
 
 このガイドでは、システム全体のブロードキャストを Xamarin.Android 内に応答するために Android コンポーネント作成および放送受信機を使用する方法について説明します。
 
@@ -59,7 +58,7 @@ Mac 用の Visual Studio または Visual Studio に組み込まれているツ�
 
 
 
-##  <a name="graphics-and-animationandroidapp-fundamentalsgraphics-and-animationmd"></a>[グラフィックスおよびアニメーション](~/android/app-fundamentals/graphics-and-animation.md)
+##  <a name="graphics-and-animationandroidapp-fundamentalsgraphics-and-animationmd"></a>[グラフィックスとアニメーション](~/android/app-fundamentals/graphics-and-animation.md)
 
 Android では、2 次元グラフィックとアニメーションをサポートするため、非常に豊富なさまざまなフレームワークを提供します。 このドキュメントでは、これらのフレームワークを紹介し、カスタム グラフィックとアニメーションを作成および Xamarin.Android アプリケーションで使用する方法について説明します。
 

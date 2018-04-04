@@ -1,18 +1,17 @@
 ---
-title: "ツール バー"
-description: "ツールバーは、既定のアクションのバーより高い柔軟性を提供するアクション バー コンポーネント。 アプリで任意の場所に配置できるため、そのサイズを変更することができます、およびアプリのテーマとは異なる色スキームを使用できます。 また、各アプリの画面は、複数のツールバーを持つことができます。"
-ms.topic: article
+title: ツール バー
+description: ツールバーは、既定のアクションのバーより高い柔軟性を提供するアクション バー コンポーネント。 アプリで任意の場所に配置できるため、そのサイズを変更することができます、およびアプリのテーマとは異なる色スキームを使用できます。 また、各アプリの画面は、複数のツールバーを持つことができます。
 ms.prod: xamarin
 ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08fa00b539bd5baca4f5d61b04419a76a4a72ab1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="toolbar"></a>ツール バー
 
@@ -71,7 +70,7 @@ Google の[マテリアルのデザイン ガイドライン](https://material.g
 
  
  
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 `Toolbar` 以降では、Android 5.0 ロリポップ (API 21) は使用できます。 Android 5.0 より前のリリース Android を対象とするときに使用して、 [Android サポート ライブラリ v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)、下位互換性を提供する`Toolbar`NuGet パッケージでサポートします。 
 [ツールバーの互換性](~/android/user-interface/controls/tool-bar/toolbar-compatibility.md)このライブラリを使用する方法について説明します。 

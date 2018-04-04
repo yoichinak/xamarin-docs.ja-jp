@@ -1,17 +1,16 @@
 ---
-title: "Android マニフェストを伴う作業"
-ms.topic: article
+title: Android マニフェストを伴う作業
 ms.prod: xamarin
 ms.assetid: CB7CCF60-FEF1-3B28-215F-159391E74347
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 18817063900437baa625d8572f0ae28fec77be1e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストを伴う作業
 
@@ -84,7 +83,7 @@ public class MyActivity : Activity
 ### <a name="activity-title-bar"></a>活動のタイトル バー
 
 既定では、Android ことで、アプリケーションのタイトル バーを実行するとします。 このために使用する値は[ `/manifest/application/activity/@android:label`](http://developer.android.com/guide/topics/manifest/activity-element.html#label)です。 ほとんどの場合、この値は、クラス名と異なります。 タイトル バーで、アプリのラベルを指定するには、使用、 [ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)プロパティです。
-例: 
+例えば: 
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -103,7 +102,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>アプリケーションの選択 ウィンドウから起動可能です
 
-既定では、アクティビティは表示されません [Android のアプリケーション ランチャー] 画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションごとのアイコンをたくないためです。 どちらかをアプリケーション起動プログラムから起動可能にする必要がありますを指定する、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティです。 例: 
+既定では、アクティビティは表示されません [Android のアプリケーション ランチャー] 画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションごとのアイコンをたくないためです。 どちらかをアプリケーション起動プログラムから起動可能にする必要がありますを指定する、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティです。 例えば: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -128,7 +127,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>[アクティビティ] アイコン
 
-既定では、システムによって提供される既定ランチャー アイコンに、アクティビティが与えられます。 カスタム アイコンを使用するには、まず追加、 **.png**に**リソース/描画**、そのビルド アクションに設定**AndroidResource**を使用して、 [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)プロパティを使用するアイコンを指定します。 例: 
+既定では、システムによって提供される既定ランチャー アイコンに、アクティビティが与えられます。 カスタム アイコンを使用するには、まず追加、 **.png**に**リソース/描画**、そのビルド アクションに設定**AndroidResource**を使用して、 [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)プロパティを使用するアイコンを指定します。 例えば: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -177,7 +176,7 @@ Android マニフェストへのアクセス許可を追加すると (」の説�
 
 ### <a name="intent-actions-and-features"></a>インテントの動作と機能
 
-Android マニフェストでは、アクティビティの機能を記述する方法を提供します。 使用してこれを行う[インテント](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)と[ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)カスタム属性です。 アクティビティの適切なアクションを指定できます、 [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/)コンス トラクター、およびカテゴリが適切な[ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/)プロパティです。 少なくとも 1 つのアクティビティには、(そのため、コンス トラクターで指定されるアクティビティ) を指定する必要があります。 `[IntentFilter]` 複数回、され、別の結果は各を使用して提供されます`<intent-filter/>`内の要素、`<activity/>`です。 例:
+Android マニフェストでは、アクティビティの機能を記述する方法を提供します。 使用してこれを行う[インテント](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)と[ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)カスタム属性です。 アクティビティの適切なアクションを指定できます、 [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/)コンス トラクター、およびカテゴリが適切な[ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/)プロパティです。 少なくとも 1 つのアクティビティには、(そのため、コンス トラクターで指定されるアクティビティ) を指定する必要があります。 `[IntentFilter]` 複数回、され、別の結果は各を使用して提供されます`<intent-filter/>`内の要素、`<activity/>`です。 例えば:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

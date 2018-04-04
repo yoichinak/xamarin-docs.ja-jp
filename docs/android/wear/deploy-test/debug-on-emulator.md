@@ -1,18 +1,17 @@
 ---
-title: "Android の消耗エミュレーターでのデバッグします。"
-description: "これらの記事では、エミュレーターで Xamarin.Android 消耗アプリケーションをデバッグする方法について説明します。"
-ms.topic: article
+title: Android の消耗エミュレーターでのデバッグします。
+description: これらの記事では、エミュレーターで Xamarin.Android 消耗アプリケーションをデバッグする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: dc6146670c4b5f7d29491335b4719e032487dcce
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cf1b586c8e30b2922251104461d9ca7100b8e74e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Android の消耗エミュレーターでのデバッグします。
 
@@ -33,7 +32,7 @@ Android 着用アプリケーションを開発するには、物理ハードウ
 
 ## <a name="launch-the-wear-virtual-device"></a>消耗仮想デバイスを起動します。 
 
-着用して Android 仮想デバイスを作成した後に選択できますが、IDE でデバイスのプルダウン メニューからデバッグを開始する前に。 仮想デバイスがデバイスのドロップダウン リストで使用できない場合は、プロジェクトが Android であることを確認*着用*仮想デバイスとアプリのプロジェクト (、Android アプリ プロジェクトではなく) と同じ API に、ターゲット API レベルが設定されているレベルします。 例:
+着用して Android 仮想デバイスを作成した後に選択できますが、IDE でデバイスのプルダウン メニューからデバッグを開始する前に。 仮想デバイスがデバイスのドロップダウン リストで使用できない場合は、プロジェクトが Android であることを確認*着用*仮想デバイスとアプリのプロジェクト (、Android アプリ プロジェクトではなく) と同じ API に、ターゲット API レベルが設定されているレベルします。 例えば:
 
 [![Visual Studio デバイス メニューに着け AVD を選択します。](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 

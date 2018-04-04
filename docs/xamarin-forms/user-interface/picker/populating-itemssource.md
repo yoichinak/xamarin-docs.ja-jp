@@ -1,18 +1,17 @@
 ---
-title: "ピッカーの ItemsSource プロパティの設定"
-description: "ピッカー ビューは、データの一覧からテキスト アイテムを選択するためのコントロールです。 この記事では、ItemsSource プロパティを設定してデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。"
-ms.topic: article
+title: ピッカーの ItemsSource プロパティの設定
+description: ピッカー ビューは、データの一覧からテキスト アイテムを選択するためのコントロールです。 この記事では、ItemsSource プロパティを設定してデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 5e3d20ad213df9fd9331c71c84003c7738bd5a29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf3940bc1bc0318bad4d785388f9dc9292af80ca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 

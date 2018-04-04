@@ -1,18 +1,17 @@
 ---
 title: EventKit
-description: "このガイドでは、アクセスし、EventKit を介して公開されると、カレンダー データベースに格納されているカレンダー、CalendarEvents、および通知のデータを操作する方法の概要を示します。 主要なクラスと EventKit プログラミングだけでなく、EventKit フレームワークに関連付けられている一般的なタスクの数には、その役割を説明します。"
-ms.topic: article
+description: このガイドでは、アクセスし、EventKit を介して公開されると、カレンダー データベースに格納されているカレンダー、CalendarEvents、および通知のデータを操作する方法の概要を示します。 主要なクラスと EventKit プログラミングだけでなく、EventKit フレームワークに関連付けられている一般的なタスクの数には、その役割を説明します。
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a08bc67a9af653a9a646ad62071df0400ce58c12
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="eventkit"></a>EventKit
 
@@ -32,7 +31,7 @@ EventKit フレームワークにアクセスする方法を提供する、*カ�
 
  [![](eventkit-images/01.png "コンパニオン サンプル アプリケーションの画面")](eventkit-images/01.png#lightbox)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 EventKit は iOS 4.0 で導入されましたが、アラーム データへのアクセスは iOS 6.0 で導入されました。 そのため、全般的な EventKit 開発には、する必要がありますには、少なくとも対象バージョン 4.0、および通知の 6.0。
 

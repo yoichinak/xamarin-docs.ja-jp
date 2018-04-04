@@ -1,18 +1,17 @@
 ---
 title: CocosSharp による 2D 数学的演算
 description: このガイドでは、ゲームの開発のための 2D 数学について説明します。 CocosSharp 使用ゲーム開発の一般的なタスクを実行する方法について説明と、これらのタスクの背後にある数値演算について説明します。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 484bd8b19f2c51dac57a46a1ef93610ed5e13419
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>CocosSharp による 2D 数学的演算
 

@@ -1,18 +1,17 @@
 ---
-title: "アプリ ストアへの配置"
-description: "アプリ ストアへのウォッチ アプリの展開"
-ms.topic: article
+title: アプリ ストアへの配置
+description: アプリ ストアへのウォッチ アプリの展開
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deploying-to-the-app-store"></a>アプリ ストアへの配置
 
@@ -177,7 +176,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Mac 用 Visual Studio の最新バージョンであることを確認してください、 **AppIcons.appiconset**イメージの完全なセットが含まれています。 このエラーが引き続き表示される場合のソースを表示、 **Contents.json**に必要なすべてのイメージのエントリが含まれていることを確認します。 代わりに、Xamarin の最新バージョンを使用していることを確認するが、いったん削除して、再作成、 **AppIcons.appiconset**です。
 
 > [!IMPORTANT]
-> ある既知のバグを Visual Studio での Mac のウォッチ アイコンのサポート: 88 x 88 ピクセル イメージのことが必要ですが、  **29x29@3x** イメージ 87 x 87 ピクセルにする必要があります)。
+> ある既知のバグを Visual Studio での Mac のウォッチ アイコンのサポート: 88 x 88 ピクセル イメージのことが必要ですが、 **29x29@3x**イメージ 87 x 87 ピクセルにする必要があります)。
 
 
 Mac で Xcode でのイメージ アセットを編集いずれかの Visual Studio でこれを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。

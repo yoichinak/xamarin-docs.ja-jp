@@ -1,18 +1,17 @@
 ---
-title: "Nougat 機能"
-description: "Android Nougat 用アプリを開発する Xamarin.Android を使用して作業を開始する方法。"
-ms.topic: article
+title: Nougat 機能
+description: Android Nougat 用アプリを開発する Xamarin.Android を使用して作業を開始する方法。
 ms.prod: xamarin
 ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: c666b7d5b680eab3c990950569868eacdb6f30af
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="nougat-features"></a>Nougat 機能
 
@@ -43,7 +42,7 @@ Android Nougat Xamarin.Android 開発者にとって関心のある多くの新�
 この記事では、新しい機能を試すし、新しい Android Nougat プラットフォームを対象の移行または機能の作業を計画する Android Nougat を使ったアプリの構築を開始する方法について説明します。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 次が機能を使用する、新しい Android Nougat Xamarin ベースのアプリに必要です。
 
@@ -150,7 +149,7 @@ Android Nougat には、さまざまな新機能および複数ウィンドウ�
 
 [![縦長と横長の両方で、複数のウィンドウ モードで実行されている例のアプリ](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-Xamarin.Android アプリのアクティビティが複数のウィンドウのモードをサポートする方法を構成することができます。 たとえば、複数のウィンドウ モードの最小サイズと、既定の高さと幅、アプリを設定する属性を構成できます。 新しいを使用する`Activity.IsInMultiWindowMode`プロパティ、アクティビティが複数のウィンドウ モードのかを判断します。 例:
+Xamarin.Android アプリのアクティビティが複数のウィンドウのモードをサポートする方法を構成することができます。 たとえば、複数のウィンドウ モードの最小サイズと、既定の高さと幅、アプリを設定する属性を構成できます。 新しいを使用する`Activity.IsInMultiWindowMode`プロパティ、アクティビティが複数のウィンドウ モードのかを判断します。 例えば:
 
 ```csharp
 if (!IsInMultiWindowMode) {

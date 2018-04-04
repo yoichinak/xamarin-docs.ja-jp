@@ -1,18 +1,17 @@
 ---
-title: "アタッチされるプロパティ"
-description: "添付プロパティは、特殊な種類のバインド可能なプロパティを 1 つのクラスで定義されているが、その他のオブジェクトにアタッチされているを含むフォルダーを属性として XAML で認識可能なクラスおよびプロパティ名、ピリオドで区切られます。 この記事では、アタッチされるプロパティは、の概要について説明し、作成し、それらを使用する方法を示します。"
-ms.topic: article
+title: アタッチされるプロパティ
+description: 添付プロパティは、特殊な種類のバインド可能なプロパティを 1 つのクラスで定義されているが、その他のオブジェクトにアタッチされているを含むフォルダーを属性として XAML で認識可能なクラスおよびプロパティ名、ピリオドで区切られます。 この記事では、アタッチされるプロパティは、の概要について説明し、作成し、それらを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 7112812c843ccbcd6c24ea028deae3c09851b03d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c903a39e5569c7ffedfff8eb8e6b0bd4071be9d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="attached-properties"></a>アタッチされるプロパティ
 

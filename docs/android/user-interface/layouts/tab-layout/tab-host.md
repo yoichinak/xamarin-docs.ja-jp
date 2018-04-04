@@ -1,18 +1,17 @@
 ---
-title: "TabHost タブ レイアウト"
-description: "この記事では、高レベルの概要を説明します。、Xamarin.Android アプリケーションでタブ付きレイアウトを作成するため、TabHost、古い API を使用します。"
-ms.topic: article
+title: TabHost タブ レイアウト
+description: この記事では、高レベルの概要を説明します。、Xamarin.Android アプリケーションでタブ付きレイアウトを作成するため、TabHost、古い API を使用します。
 ms.prod: xamarin
 ms.assetid: 77B890A4-27A6-41DF-81BA-22C6116A8FB2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: e27557c65d2b3049457640a3492d090c5fa26a43
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ae5b9020e08575bcd453703f3df14f63b288d2f5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tab-layout-with-tabhost"></a>TabHost タブ レイアウト
 

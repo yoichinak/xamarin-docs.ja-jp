@@ -1,18 +1,17 @@
 ---
-title: "Renderscript の概要"
-description: "このガイドでは、Renderscript を紹介し、組み込み Renderscript API の Xamarin.Android アプリケーションでそのターゲット API レベル 17 以上の使用方法について説明します。"
-ms.topic: article
+title: Renderscript の概要
+description: このガイドでは、Renderscript を紹介し、組み込み Renderscript API の Xamarin.Android アプリケーションでそのターゲット API レベル 17 以上の使用方法について説明します。
 ms.prod: xamarin
 ms.assetid: 378793C7-5E3E-40E6-ABEE-BEAEF64E6A47
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 552c1db347d9bc37724691247648fa0e938baa88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f9e21a51c409c5444f137a63eb2c6fadfef03cbe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript の概要
 
@@ -70,7 +69,7 @@ Renderscript エンジンでは、各割り当て内の要素が、カーネル�
 
 これら 2 つの型ののみ、 `StringIntrinsic` Xamarin.Android でサポートされています。 このガイドでは、Xamarin.Android アプリケーションで組み込みのスクリプトを使用する方法を説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドでは、そのターゲット API レベル 17 以上 Xamarin.Android アプリケーションには。 使用_ユーザー スクリプト_このガイドでは説明しません。
 

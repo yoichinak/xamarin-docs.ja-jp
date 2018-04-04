@@ -1,17 +1,17 @@
 ---
-title: "どのように手動でインストールできます Xamarin.Android.Support パッケージで必要な Android サポート ライブラリか。"
-ms.topic: article
+title: どのように手動でインストールできます Xamarin.Android.Support パッケージで必要な Android サポート ライブラリか。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A9CB8CA8-8A6D-405E-B84C-A16CE452C0F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 26dd7e23352bf0911c2a7268518ddebf6626596a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e760a87cbd1e0220ed5cf3a350d3539ffe29650e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>どのように手動でインストールできます Xamarin.Android.Support パッケージで必要な Android サポート ライブラリか。
 
@@ -52,7 +52,7 @@ $url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zi
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-コピー **android\_m2repository.zip**に、 **%localappdata%\\Xamarin\\圧縮\\**フォルダーです。 ステップの計算前の MD5 ハッシュから MD5 ハッシュを使用するファイルの名前を変更します。 例:
+コピー **android\_m2repository.zip**に、 **%localappdata%\\Xamarin\\圧縮\\**フォルダーです。 ステップの計算前の MD5 ハッシュから MD5 ハッシュを使用するファイルの名前を変更します。 例えば:
 
 **%LOCALAPPDATA%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF.zip**
 
@@ -104,7 +104,7 @@ csharp -e 'var url = "https://dl-ssl.google.com/android/repository/android_m2rep
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-コピー **android\_m2repository.zip**を**$HOME/.local/share/Xamarin/zips/**フォルダーです。 ステップの計算前の MD5 ハッシュから MD5 ハッシュを使用するファイルの名前を変更します。 例:
+コピー **android\_m2repository.zip**を**$HOME/.local/share/Xamarin/zips/**フォルダーです。 ステップの計算前の MD5 ハッシュから MD5 ハッシュを使用するファイルの名前を変更します。 例えば:
 
 **$HOME/.local/share/Xamarin/zips/F16A3455987DBAE5783F058F19F7FCDF.zip**
 

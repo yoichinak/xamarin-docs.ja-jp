@@ -1,18 +1,17 @@
 ---
-title: "ケース スタディ: Tasky"
-description: "このドキュメントでは、Tasky Portable サンプル アプリケーションでのクロス プラットフォーム アプリケーションの構築の基本原則が適用される方法について説明します。 この要素は、再利用するための一般的なコードを記述して、iOS、Android、Windows Phone プラットフォームを対象とするプラットフォーム固有のプロジェクトを実装するモバイル アプリケーションの設計に関連します。"
-ms.topic: article
+title: 'ケース スタディ: Tasky'
+description: このドキュメントでは、Tasky Portable サンプル アプリケーションでのクロス プラットフォーム アプリケーションの構築の基本原則が適用される方法について説明します。 この要素は、再利用するための一般的なコードを記述して、iOS、Android、Windows Phone プラットフォームを対象とするプラットフォーム固有のプロジェクトを実装するモバイル アプリケーションの設計に関連します。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 5b16fe1d6dab776af31e0aff97a00065517550ec
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f8e663ab2e274bff1ae8b700586d4c6749f04545
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="case-study-tasky"></a>ケース スタディ: Tasky
 
@@ -28,7 +27,7 @@ _このドキュメントでは、Tasky Portable サンプル アプリケーシ
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 アプリケーションの設計の最初の手順では、目的の機能を識別します。 高度な目標を指定できますまたはユース ケースを詳しく説明します。 Tasky 簡単な機能の要件があります。
 

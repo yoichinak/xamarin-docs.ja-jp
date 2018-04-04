@@ -1,18 +1,17 @@
 ---
-title: "コントロール テンプレート"
-description: "コントロールのテンプレートは、ページの外観とテーマを簡単に付けるページの作成を有効にすると、そのコンテンツ間で明確に分離を提供します。"
-ms.topic: article
+title: コントロール テンプレート
+description: コントロールのテンプレートは、ページの外観とテーマを簡単に付けるページの作成を有効にすると、そのコンテンツ間で明確に分離を提供します。
 ms.prod: xamarin
 ms.assetid: 836C8D57-ABBC-4D5A-B3CF-0B723E069A2B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 499262b0ef1fabfd48a7732a91c007d85a55d2bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7062962b1aeb397e61de769ef1e3c9aaea942147
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="control-templates"></a>コントロール テンプレート
 

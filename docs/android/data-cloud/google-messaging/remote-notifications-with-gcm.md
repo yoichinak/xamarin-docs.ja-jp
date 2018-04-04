@@ -1,18 +1,17 @@
 ---
-title: "Google Cloud Messaging でリモートの通知"
-description: "このチュートリアルでは、Xamarin.Android アプリケーションで Google Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれる) を実装する方法の詳細な手順の説明を提供します。 Google Cloud Messaging (GCM) と通信するために実装する必要があるさまざまなクラスについて説明、GCM へのアクセス用の Android のマニフェストにアクセス許可を設定する方法について説明し、サンプル プログラムをテストすると、エンド ツー エンドのメッセージングを示しています。"
-ms.topic: article
+title: Google Cloud Messaging でリモートの通知
+description: このチュートリアルでは、Xamarin.Android アプリケーションで Google Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれる) を実装する方法の詳細な手順の説明を提供します。 Google Cloud Messaging (GCM) と通信するために実装する必要があるさまざまなクラスについて説明、GCM へのアクセス用の Android のマニフェストにアクセス許可を設定する方法について説明し、サンプル プログラムをテストすると、エンド ツー エンドのメッセージングを示しています。
 ms.prod: xamarin
 ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 969b1b36659ac52782d30a1840ba352524e5e3c6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging でリモートの通知
 
@@ -401,7 +400,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>GCM と登録をテストします。
 
-みましょう完全に再構築し、アプリを実行します。 GCM から正常に登録トークンを受信する場合、登録トークンが、出力ウィンドウに表示されます。 例: 
+みましょう完全に再構築し、アプリを実行します。 GCM から正常に登録トークンを受信する場合、登録トークンが、出力ウィンドウに表示されます。 例えば: 
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2

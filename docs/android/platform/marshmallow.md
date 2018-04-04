@@ -1,18 +1,17 @@
 ---
-title: "Marshmallow 機能"
-description: "この記事が Xamarin.Android を使用して、Android 6.0 Marshmallow 用のアプリを開発するを使用して作業を開始します。"
-ms.topic: article
+title: Marshmallow 機能
+description: この記事が Xamarin.Android を使用して、Android 6.0 Marshmallow 用のアプリを開発するを使用して作業を開始します。
 ms.prod: xamarin
 ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: c9ff9eb0b8d013485f0437d470ec49f1c1795d7a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2150e18a377d61a2e79fabfc845f57cfab8a5c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="marshmallow-features"></a>Marshmallow 機能
 
@@ -56,7 +55,7 @@ Marshmallow リリースは主に「ポーランド語と品質」に焦点を�
 
 さらに、多くのコア Android ライブラリの更新が Android Marshmallow、と共にリリースされたし、これらの更新プログラムが Android Marshmallow と以前のバージョンの Android の両方の新機能を提供します。 Android Marshmallow でのアプリの構築を開始する方法を説明し、Android 6.0 で強調表示、新しい機能の概要を示します。 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin ベースのアプリで Android Marshmallow の新機能を使用する、次が必要。 
 

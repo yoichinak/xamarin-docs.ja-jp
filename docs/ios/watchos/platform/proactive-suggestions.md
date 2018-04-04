@@ -1,18 +1,17 @@
 ---
-title: "プロアクティブなご提案"
-description: "ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、watchOS 3 アプリケーションではドライブ エンゲージメントをプロアクティブな提案を使用する方法を説明します。"
-ms.topic: article
+title: プロアクティブなご提案
+description: ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、watchOS 3 アプリケーションではドライブ エンゲージメントをプロアクティブな提案を使用する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f9711cc39662a7e77d926551a0d2b49363d8ec4d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f22be43f814865c3c14e12aa2aec3a8dbce09b7a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="proactive-suggestions"></a>プロアクティブなご提案
 
@@ -132,7 +131,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティを復元します。
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -297,7 +296,7 @@ Apple のアクティビティを使用する場合、次のベスト プラク�
 - MapKit と、アプリの起動を処理するために`MKDirectionsRequest`オブジェクト。
 - WatchOS のユーザー エンゲージメントに基づいてアプリを提案する方法を説明する機能を提供します。
 
-起動すると、アプリは、MapKit`MKDirectionsRequest`オブジェクト、する必要があります自動的に開始要求された場所にユーザーの指示を与えるまたはユーザーが方向の取得を開始しやすくための UI を表示します。 例:
+起動すると、アプリは、MapKit`MKDirectionsRequest`オブジェクト、する必要があります自動的に開始要求された場所にユーザーの指示を与えるまたはユーザーが方向の取得を開始しやすくための UI を表示します。 例えば:
 
 
 ```csharp

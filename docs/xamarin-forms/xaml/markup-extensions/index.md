@@ -1,18 +1,17 @@
 ---
-title: "XAML マークアップ拡張機能"
-description: "属性が設定されている XAML からのソースの範囲を拡張します。"
-ms.topic: article
+title: XAML マークアップ拡張機能
+description: 属性が設定されている XAML からのソースの範囲を拡張します。
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 11889115b65608c750690c33052a9c86f7081e25
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-markup-extensions"></a>XAML マークアップ拡張機能
 
@@ -46,11 +45,11 @@ XAML マークアップ拡張機能では、リテラル テキスト文字列�
 
 この記事は、2 つの部分に分かれています。
 
-## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[XAML マークアップ拡張機能の使用](consuming.md)  
+## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[XAML マークアップ拡張の使用](consuming.md)  
 
 Xamarin.Forms で定義されている XAML マークアップ拡張機能を使用します。
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML マークアップ拡張機能の作成](creating.md) 
+## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML マークアップ拡張の作成](creating.md) 
 
 独自のカスタム XAML マークアップ拡張を書き込みます。
 

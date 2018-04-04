@@ -1,18 +1,17 @@
 ---
-title: "Azure のモバイル アプリを使用して Azure Active Directory B2C の統合"
-description: "Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Xamarin.Forms を使用した Azure Mobile Apps インスタンスに対する認証および承認を提供する Azure Active Directory B2C を使用する方法を示します。"
-ms.topic: article
+title: Azure のモバイル アプリを使用して Azure Active Directory B2C の統合
+description: Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Xamarin.Forms を使用した Azure Mobile Apps インスタンスに対する認証および承認を提供する Azure Active Directory B2C を使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 53F52036-A997-4D0F-86B4-4302C6913136
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cafc1e78779dc393fa0409daa08b3daa8948a1ee
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure のモバイル アプリを使用して Azure Active Directory B2C の統合
 

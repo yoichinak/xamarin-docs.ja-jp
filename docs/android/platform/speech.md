@@ -1,18 +1,17 @@
 ---
 title: Android の音声
 description: この記事では、非常に強力な Android.Speech 名前空間の基本的な使い方について説明します。 以来、Android を音声を認識し、テキストとして出力ができました。 これは、比較的単純なプロセスです。 テキスト読み上げ、ただし、そのプロセスはより複雑にだけでなく、音声認識エンジンに考慮すると、使用可能で、音声合成 (TTS) システムからインストールされている言語もします。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/02/2018
-ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: bdaa9bf09485c06551a2df15a2e3a4b410a53e75
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-speech"></a>Android の音声
 

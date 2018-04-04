@@ -1,18 +1,17 @@
 ---
-title: "新しいユーザー インターフェイスのスタイル"
-description: "光を取り上げており、10 および Xamarin.tvOS アプリでそれらを実装する方法が、濃い UI のテーマを Apple を tvOS に追加します。"
-ms.topic: article
+title: 新しいユーザー インターフェイスのスタイル
+description: 光を取り上げており、10 および Xamarin.tvOS アプリでそれらを実装する方法が、濃い UI のテーマを Apple を tvOS に追加します。
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="new-user-interface-styles"></a>新しいユーザー インターフェイスのスタイル
 
@@ -186,7 +185,7 @@ TvOS 10 での特徴であるコレクションに応答する、アプリのス
 
 * 開発者がで UI のテーマに基づくユーザー インターフェイス要素のさまざまなバリエーションを指定する、**属性インスペクター**:
     
-    * いくつかのプロパティのようになりましたが、  **+** の横に UI のテーマの特定のバージョンを追加するときにクリックします。 
+    * いくつかのプロパティのようになりましたが、 **+**の横に UI のテーマの特定のバージョンを追加するときにクリックします。 
 
         [![](user-interface-styles-images/theme08.png "UI のテーマの特定のバージョンを追加します。")](user-interface-styles-images/theme08.png#lightbox) 
     

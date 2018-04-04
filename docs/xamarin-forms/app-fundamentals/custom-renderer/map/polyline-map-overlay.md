@@ -1,18 +1,17 @@
 ---
-title: "マップ上のルートを強調表示"
-description: "この記事では、マップに多角形のオーバーレイを追加する方法について説明します。 ポリライン オーバーレイは、通常は、マップ上のルートの表示を切り替えるために必要な任意の図形をフォームに使用した接続されている直線セグメントの系列です。"
-ms.topic: article
+title: マップ上のルートを強調表示
+description: この記事では、マップに多角形のオーバーレイを追加する方法について説明します。 ポリライン オーバーレイは、通常は、マップ上のルートの表示を切り替えるために必要な任意の図形をフォームに使用した接続されている直線セグメントの系列です。
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c7becef16009596148b4de28e4e8f6892cb44fe1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f781a472a63d97c8859aff36b28e0fd4fa0c7756
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-route-on-a-map"></a>マップ上のルートを強調表示
 
@@ -31,7 +30,7 @@ _この記事では、マップに多角形のオーバーレイを追加する�
 1. [カスタマイズ](#Customizing_the_Map)各プラットフォームで、マップのカスタム レンダラーを作成することでマップします。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) 初期化して使用する前に構成されている必要があります。 詳細については、次を参照してください。 [ `Maps Control`](~/xamarin-forms/user-interface/map.md)です。
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) 初期化して使用する前に構成されている必要があります。 詳細については、「[`Maps Control`](~/xamarin-forms/user-interface/map.md)」を参照してください。
 
 カスタム レンダラーを使用してマップをカスタマイズする方法の詳細については、次を参照してください。[マップ暗証番号 (pin) をカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)です。
 

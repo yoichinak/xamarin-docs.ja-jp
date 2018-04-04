@@ -1,18 +1,17 @@
 ---
-title: "MonoGame で 3D 座標"
-description: "3D ゲーム開発における重要な手順は、3 D の座標系を理解することです。 MonoGame は、さまざまな位置、向きの調整、およびスケーリングの 3D 空間内のオブジェクトのクラスを提供します。"
-ms.topic: article
+title: MonoGame で 3D 座標
+description: 3D ゲーム開発における重要な手順は、3 D の座標系を理解することです。 MonoGame は、さまざまな位置、向きの調整、およびスケーリングの 3D 空間内のオブジェクトのクラスを提供します。
 ms.prod: xamarin
 ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e930004a91133f391f68221473f212b7caaf1b07
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 0273b4f13c91fd766530ff7c0976096de3239dc5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>MonoGame で 3D 座標
 

@@ -1,18 +1,17 @@
 ---
-title: "標準コントロール"
-description: "ここでは、チェック ボックス、ボタン、ラベル、テキスト フィールドなどの標準の AppKit コントロールの操作について説明し、Xamarin.Mac アプリケーションでコントロールをセグメント化します。 これは、インターフェイスのビルダーを持つインターフェイスに追加して、コード内とやり取りするについて説明します。"
-ms.topic: article
+title: 標準コントロール
+description: ここでは、チェック ボックス、ボタン、ラベル、テキスト フィールドなどの標準の AppKit コントロールの操作について説明し、Xamarin.Mac アプリケーションでコントロールをセグメント化します。 これは、インターフェイスのビルダーを持つインターフェイスに追加して、コード内とやり取りするについて説明します。
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e887026b4f87d2e1bf8c7647a7845765ce8b886c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3fe155508b60cbe502c3beca58426528d6f49c9d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="standard-controls"></a>標準コントロール
 
@@ -93,7 +92,7 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 
 [![](standard-controls-images/edit04.png "制約を設定")](standard-controls-images/edit04.png#lightbox)
 
-使用して、**赤い I ビーム**の外側を囲む、 **Autoresizing**ボックスを_スティック_(x, y) 特定の場所を制御します。 例: 
+使用して、**赤い I ビーム**の外側を囲む、 **Autoresizing**ボックスを_スティック_(x, y) 特定の場所を制御します。 例えば: 
 
 [![](standard-controls-images/edit05.png "制約の編集")](standard-controls-images/edit05.png#lightbox)
 
@@ -280,7 +279,7 @@ ButtonOutlet.Activated += (sender, e) => {
 };
 ```
 
-経由で公開されているボタンの**アクション**、`public partial`メソッドは自動的に作成されますを Xcode で選択した名前を持つ。 応答する、**アクション**、クラスにある部分メソッドを完了する、**アクション**で定義されていた。 例:
+経由で公開されているボタンの**アクション**、`public partial`メソッドは自動的に作成されますを Xcode で選択した名前を持つ。 応答する、**アクション**、クラスにある部分メソッドを完了する、**アクション**で定義されていた。 例えば:
 
 ```csharp
 partial void ButtonAction (Foundation.NSObject sender) {
@@ -289,7 +288,7 @@ partial void ButtonAction (Foundation.NSObject sender) {
 }
 ```
 
-した状態にあるボタンの (と同様に**で**と**オフ**)、状態をチェックまたはで設定された、`State`プロパティに対して、`NSCellStateValue`列挙型。 例:
+した状態にあるボタンの (と同様に**で**と**オフ**)、状態をチェックまたはで設定された、`State`プロパティに対して、`NSCellStateValue`列挙型。 例えば:
 
 ```csharp
 DisclosureButton.Activated += (sender, e) => {
@@ -326,7 +325,7 @@ AppKit は、いくつかのチェック ボックスと、ユーザー イン�
 [![](standard-controls-images/buttons02.png "使用可能なチェック ボックスの種類の例")](standard-controls-images/buttons02.png#lightbox)
 
 
-チェック ボックスやオプション ボタン (を介して公開される**コンセント**) した状態 (と同様に**で**と**オフ**)、状態をチェックまたはで設定された、`State`プロパティに対して、`NSCellStateValue`列挙型。 例:
+チェック ボックスやオプション ボタン (を介して公開される**コンセント**) した状態 (と同様に**で**と**オフ**)、状態をチェックまたはで設定された、`State`プロパティに対して、`NSCellStateValue`列挙型。 例えば:
 
 ```csharp
 AdjustTime.Activated += (sender, e) => {
@@ -483,7 +482,7 @@ AppKit は、ユーザー インターフェイスの設計で使用できる選
 
 [![](standard-controls-images/select01.png "選択コントロールの例")](standard-controls-images/select01.png#lightbox)
 
-2 つの方法の選択コントロールとして公開することにより、ユーザーとの対話にあるときに追跡するために、**アクション**です。 例:
+2 つの方法の選択コントロールとして公開することにより、ユーザーとの対話にあるときに追跡するために、**アクション**です。 例えば:
 
 ```csharp
 partial void SegmentButtonPressed (Foundation.NSObject sender) {
@@ -491,7 +490,7 @@ partial void SegmentButtonPressed (Foundation.NSObject sender) {
 }
 ```
 
-または、アタッチすることにより、**デリゲート**を`Activated`イベント。 例:
+または、アタッチすることにより、**デリゲート**を`Activated`イベント。 例えば:
 
 ```csharp
 TickedSlider.Activated += (sender, e) => {
@@ -499,7 +498,7 @@ TickedSlider.Activated += (sender, e) => {
 };
 ```
 
-設定または選択コントロールの値を読み、使用、`IntValue`プロパティです。 例:
+設定または選択コントロールの値を読み、使用、`IntValue`プロパティです。 例えば:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Stepper Value: {0:###}",TickedSlider.IntValue);
@@ -528,7 +527,7 @@ AppKit は、ユーザー インターフェイスの設計で使用できるイ
 
 [![](standard-controls-images/level01.png "インジケーターのコントロールの例")](standard-controls-images/level01.png#lightbox)
 
-インジケーターのコントロールがあるユーザーの操作として公開することでいずれかを追跡するために 2 つの方法、**アクション**または**コンセント**アタッチして、**デリゲート**に`Activated`イベント。 例:
+インジケーターのコントロールがあるユーザーの操作として公開することでいずれかを追跡するために 2 つの方法、**アクション**または**コンセント**アタッチして、**デリゲート**に`Activated`イベント。 例えば:
 
 ```csharp
 LevelIndicator.Activated += (sender, e) => {
@@ -536,13 +535,13 @@ LevelIndicator.Activated += (sender, e) => {
 };
 ```
 
-読み取るか、インジケーターのコントロールの値を設定、使用、`DoubleValue`プロパティです。 例:
+読み取るか、インジケーターのコントロールの値を設定、使用、`DoubleValue`プロパティです。 例えば:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Rating: {0:###}",Rating.DoubleValue);
 ```
 
-表示されるときに、不定と非同期の進行状況インジケーターをアニメーション化する必要があります。 使用して、`StartAnimation`表示されるときに、アニメーションを開始するメソッド。 例:
+表示されるときに、不定と非同期の進行状況インジケーターをアニメーション化する必要があります。 使用して、`StartAnimation`表示されるときに、アニメーションを開始するメソッド。 例えば:
 
 ```csharp
 Indeterminate.StartAnimation (this);
@@ -565,13 +564,13 @@ AppKit は、ユーザー インターフェイスの設計のために使用す
 - **EditingBegan** -ユーザーがフィールドの編集を選択したときに発生します。
 - **EditingEnded** - ユーザーがフィールドに、Enter キーを押すか、フィールドのままにする場合。
 
-使用して、`StringValue`プロパティを取得したり、フィールドの値を設定します。 例:
+使用して、`StringValue`プロパティを取得したり、フィールドの値を設定します。 例えば:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);
 ```
 
-使用することができますを表示または編集数値フィールドで、`IntValue`プロパティです。 例:
+使用することができますを表示または編集数値フィールドで、`IntValue`プロパティです。 例えば:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);

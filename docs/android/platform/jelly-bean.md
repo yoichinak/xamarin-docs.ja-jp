@@ -1,18 +1,17 @@
 ---
-title: "ゼリー Bean の機能"
-description: "このドキュメントでは、Android 4.1 で導入された開発者向けの新機能の高レベルの概要を説明します。 これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。"
-ms.topic: article
+title: ゼリー Bean の機能
+description: 'このドキュメントでは、Android 4.1 で導入された開発者向けの新機能の高レベルの概要を説明します。 これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。'
 ms.prod: xamarin
 ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1d8068ccfc8d0f159a88704370261ec5f20d8b7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="jelly-bean-features"></a>ゼリー Bean の機能
 
@@ -32,7 +31,7 @@ Android アプリケーションの安定性が不安定なコンテンツ プ�
 
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin.Android アプリケーションの開発に使用するゼリー Bean 必要 Xamarin.Android 4.2.6 または高い値と Android 4.1 (API レベル 16) は、次のスクリーン ショットに示すように、Android SDK Manager を使用してにインストールします。
 

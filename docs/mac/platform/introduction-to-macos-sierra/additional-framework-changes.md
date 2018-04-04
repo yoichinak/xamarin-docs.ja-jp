@@ -1,18 +1,17 @@
 ---
-title: "追加 macOS Sierra フレームワークの変更"
-description: "この記事では、追加、マイナーの変更や macOS Sierra の既存のフレームワークの機能強化について説明します。"
-ms.topic: article
+title: 追加 macOS Sierra フレームワークの変更
+description: この記事では、追加、マイナーの変更や macOS Sierra の既存のフレームワークの機能強化について説明します。
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d49276d6367a52a05d486cd5cab198c666965bf7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a1bc12629a84e9a06cc80882d141bf6a0c2f0c52
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>追加 macOS Sierra フレームワークの変更
 

@@ -1,18 +1,17 @@
 ---
-title: "プラグイン"
-description: "ネイティブ機能を Xamarin.Forms アプリに簡単に追加します。"
-ms.topic: article
+title: プラグイン
+description: ネイティブ機能を Xamarin.Forms アプリに簡単に追加します。
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: ad338e655c1aeb475122c837ca5c805e491f84bc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="plugins"></a>プラグイン
 
@@ -35,7 +34,7 @@ NuGet パッケージをプロジェクトに追加する場合に、ガイド�
 
 たとえば、次のプラグインの一覧は、すべてのオープン ソースとサンプルに対応する、 [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)セクション。
 
-- **音声合成**James Montemagno によって&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech)と[NuGet  ](https://www.nuget.org/packages/Xam.Plugin.Battery)
+- **音声合成**James Montemagno によって&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech)と[NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 - **バッテリの状態**James Montemagno によって&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)と[NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
 
 Github、これらのプロジェクトに次の手順と同様に、独自のクロスプラット フォームのプラグインを作成するための適切な開始点を提供できます[Xamarin 用のプラグインを作成する](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin)です。

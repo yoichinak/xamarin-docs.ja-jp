@@ -1,18 +1,17 @@
 ---
 title: Android Audio
-description: "Android OS は、オーディオとビデオの両方を含むマルチ メディア、広範なサポートを提供します。 このガイドでは、Android でのオーディオを重視し、再生組み込みオーディオ プレーヤーとレコーダー クラスだけでなく、低レベルのオーディオ API を使用してオーディオを録音したりについて説明します。 開発者が適切に動作のアプリケーションを構築できるように、他のアプリケーションによってブロードキャストされたオーディオ イベントの処理も取り上げています。"
-ms.topic: article
+description: Android OS は、オーディオとビデオの両方を含むマルチ メディア、広範なサポートを提供します。 このガイドでは、Android でのオーディオを重視し、再生組み込みオーディオ プレーヤーとレコーダー クラスだけでなく、低レベルのオーディオ API を使用してオーディオを録音したりについて説明します。 開発者が適切に動作のアプリケーションを構築できるように、他のアプリケーションによってブロードキャストされたオーディオ イベントの処理も取り上げています。
 ms.prod: xamarin
 ms.assetid: 646ED563-C34E-256D-4B56-29EE99881C27
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/28/2018
-ms.openlocfilehash: 91bd5ae83cd0d59872e11a6b1bdc7b84c751e64f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: aff0d67549707129bfc85246318c33c522e4f1f6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-audio"></a>Android Audio
 
@@ -34,7 +33,7 @@ Android では、マルチ メディアの広範なサポートを提供しま�
 4.  **オーディオの低水準の操作**&ndash;オーディオを使用して再生、`AudioTrack`メモリ バッファーに直接書き込むことによってクラスです。 使用してオーディオを記録、`AudioRecord`メモリ バッファーから直接読み取ったりクラスです。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドには、Android 2.0 (API レベル 5) が必要がありますまたはそれ以降。 デバイスで Android でのオーディオのデバッグを行う必要がある注意してください。
 

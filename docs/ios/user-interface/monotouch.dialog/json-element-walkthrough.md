@@ -1,17 +1,16 @@
 ---
-title: "チュートリアル: JSON 要素を使用してユーザー インターフェイスを作成するには"
-description: "MonoTouch.Dialog (mt.D) には、JSON データを使用してダイナミック UI 生成のサポートが含まれています。 このチュートリアルでは、JSONElement を使用して、アプリケーションに含まれているか、リモート Url から読み込まれたを JSON からユーザー インターフェイスを作成する方法を説明します。"
-ms.topic: article
+title: 'チュートリアル: JSON 要素を使用してユーザー インターフェイスを作成するには'
+description: MonoTouch.Dialog (mt.D) には、JSON データを使用してダイナミック UI 生成のサポートが含まれています。 このチュートリアルでは、JSONElement を使用して、アプリケーションに含まれているか、リモート Url から読み込まれたを JSON からユーザー インターフェイスを作成する方法を説明します。
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>チュートリアル: JSON 要素を使用してユーザー インターフェイスを作成するには
 

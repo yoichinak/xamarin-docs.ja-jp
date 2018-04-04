@@ -1,16 +1,15 @@
 ---
-title: "MonoTouch.Dialog Json マークアップ"
-ms.topic: article
+title: MonoTouch.Dialog Json マークアップ
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 843e66a7979fc1aaa86371a3406c89af3f9ba967
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 02c95f06571a3c242481769846d7cab51450f2ca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
@@ -295,7 +294,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="ontap-and-onaccessorytap"></a>ontap と onaccessorytap
 
-これらのプロパティは、パラメーターとしてオブジェクトを取得するアプリケーションで静的メソッド名をポイントする必要があります。 JsonDialog.FromFile または JsonDialog.FromJson メソッドを使用して、階層を作成するときに、省略可能なオブジェクトの値を渡すことができます。 このオブジェクトの値は、メソッドに渡されます。 これを使用するには、静的メソッドにいくつかのコンテキストを渡す。 例:
+これらのプロパティは、パラメーターとしてオブジェクトを取得するアプリケーションで静的メソッド名をポイントする必要があります。 JsonDialog.FromFile または JsonDialog.FromJson メソッドを使用して、階層を作成するときに、省略可能なオブジェクトの値を渡すことができます。 このオブジェクトの値は、メソッドに渡されます。 これを使用するには、静的メソッドにいくつかのコンテキストを渡す。 例えば:
 
 ```csharp
 class Foo {
@@ -360,7 +359,7 @@ class Foo {
 
 ## <a name="boolean-elements"></a>ブール型の要素
 
-ブール型の要素は、種類を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、`"value"`に true または false に設定します。 場合、`"on"`と`"off"`プロパティが設定されて、イメージをしたと見なされます。 イメージは、アプリケーションの現在の作業ディレクトリに対して相対的に解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドルのディレクトリを表すへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれている favorite.png になります。 例:
+ブール型の要素は、種類を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、`"value"`に true または false に設定します。 場合、`"on"`と`"off"`プロパティが設定されて、イメージをしたと見なされます。 イメージは、アプリケーションの現在の作業ディレクトリに対して相対的に解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドルのディレクトリを表すへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれている favorite.png になります。 例えば:
 
 ```csharp
 { 

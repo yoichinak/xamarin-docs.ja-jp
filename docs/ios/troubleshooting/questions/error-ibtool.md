@@ -1,16 +1,16 @@
 ---
-title: "IBTool エラー: 操作を完了できませんでした。"
-ms.topic: article
+title: 'IBTool エラー: 操作を完了できませんでした。'
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A804EBC4-2BBF-4A98-A4E8-A455DB2E8A17
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: dd668859428da1abfa3a8e46a0810b2de6645fe2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4647227ad208bfa968f8282a966220a09ab7f4a6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool エラー: 操作を完了できませんでした。
 
@@ -24,7 +24,7 @@ Apple[固定](https://developer.apple.com/library/content/documentation/Xcode/Co
 
 `ibtool` Xcode 6.0 でのコマンドは OS X 10.10 Yosemite に関するバグを持っています。 Xamarin.iOS は Xcode の`ibtool`ストーリー ボードをコンパイルして`XIB`ファイル。
 
-Xcode に関連して、バグの詳細については、次に参照できるスタック オーバーフローの投稿: [http://stackoverflow.com/questions/25754763/cant-open-storyboard](http://stackoverflow.com/questions/25754763/cant-open-storyboard)
+Xcode に関連して、バグの詳細については、次にあります post のスタック オーバーフローが発生します。 [http://stackoverflow.com/questions/25754763/cant-open-storyboard](http://stackoverflow.com/questions/25754763/cant-open-storyboard)
 
 ### <a name="error-message"></a>エラー メッセージ
 
@@ -54,7 +54,7 @@ Xcode に関連して、バグの詳細については、次に参照できる�
 </BundleResource>
 ```
 
-Mac 用の Visual Studio で、`LogicalName`を使用して設定することも、`Resource ID`フィールドの下にあるイメージ**ビュー > パッド > プロパティ**です。 (も参照してください: [http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545](http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
+Mac 用の Visual Studio で、`LogicalName`を使用して設定することも、`Resource ID`フィールドの下にあるイメージ**ビュー > パッド > プロパティ**です。 (も参照してください: [ http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545 ](http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
 
 この変更後に、ストーリー ボードを更新する必要があると`.xib`新しい最上位のイメージのパスを使用するファイル。 Mac 用の visual Studio でのオートコンプリートの一覧を自動的に更新、 `Image` iOS デザイナー内のプロパティです。 Visual Studio では、パスを手動で編集する必要があります。 IOS デザイナーにより、これと表示、不足しているイメージが、プロジェクトのビルドおよび正常に実行されます。
 

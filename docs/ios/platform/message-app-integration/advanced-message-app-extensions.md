@@ -1,18 +1,17 @@
 ---
-title: "高度なメッセージ アプリ拡張機能"
-description: "この記事では、メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を使用するための高度なテクニックを示します。"
-ms.topic: article
+title: 高度なメッセージ アプリ拡張機能
+description: この記事では、メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を使用するための高度なテクニックを示します。
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cd2cabf98c83bba7502e8533e482713a9c43f67a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="advanced-message-app-extensions"></a>高度なメッセージ アプリ拡張機能
 
@@ -38,7 +37,7 @@ _この記事では、メッセージ アプリとの統合を新しい機能を
 
 また新しい iOS 10、Apple が追加ユーザーがアプリを簡単に検出するインライン アプリ属性。 たとえば、1 人のユーザーは、2 番目のユーザーが持っていないアプリから別のコンテンツを送信する場合 (たとえばステッカー) のようにインストールされている送信元のアプリの名前 下にあるメッセージ履歴内のコンテンツ。 場合、ユーザーはタップ アプリの名前、開くおメッセージ アプリ ストアとストアで選択されているアプリ。
 
-メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が作成に慣れており、すべての標準的なフレームワークと標準的な iOS アプリの機能へのアクセスが必要であることに似ています。 例:
+メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が作成に慣れており、すべての標準的なフレームワークと標準的な iOS アプリの機能へのアクセスが必要であることに似ています。 例えば:
 
 - アプリ内購入へのアクセスがあります。
 - Apple Pay へのアクセスがあります。
@@ -419,7 +418,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 どちらの場合、ユーザーがメッセージのアプリ拡張機能に属しているメッセージ バブルをタップしたときに、必要がありますにアクセスするために、`MSMessage`を使用してがタップされた、`SelectedMessage`のプロパティ、`MSConversation`です。
 
-例:
+例えば:
 
 ```csharp
 using System;
@@ -547,7 +546,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 - 拡張機能は、ユーザーからのメッセージを受信したときを追跡できます送信者の識別子。 同じ送信者の識別子を持つ別のメッセージを受信した場合、拡張機能同じユーザーからであることを認識します。
 - メッセージ交換内の特定のユーザーの識別に使用できます。
 
-送信者の識別子のフィールドのテキストのいずれかで使用できます、`MSMessageTemplateLayout`にドル記号をプレフィックスとして付けること (`$`)。 例:
+送信者の識別子のフィールドのテキストのいずれかで使用できます、`MSMessageTemplateLayout`にドル記号をプレフィックスとして付けること (`$`)。 例えば:
 
 ```csharp
 // Pass along the sender identifier

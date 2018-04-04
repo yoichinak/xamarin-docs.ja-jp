@@ -1,17 +1,17 @@
 ---
-title: "トラブルシューティングのヒント"
-ms.topic: article
+title: トラブルシューティングのヒント
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 961f9f38687790343f225d95c74e00e98f594c28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-tips"></a>トラブルシューティングのヒント
 
@@ -200,7 +200,7 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 -  グローバルは弱参照破棄: で始まる行は、これら*-w-*です。
 
 
-すべてのメッセージで、 *grefc*値 Xamarin.Android が作成すると、グローバルの参照の数は、中、 *grefwc*値は Xamarin.Android が作成されたグローバルの弱参照の数。 *処理*または*obj ハンドル*値が、JNI ハンドル値、および後の文字には、'  */* ' ハンドルの値の型です: */L*ローカル参照に、 */G*のグローバルの参照と*/W*グローバルの弱い参照をします。
+すべてのメッセージで、 *grefc*値 Xamarin.Android が作成すると、グローバルの参照の数は、中、 *grefwc*値は Xamarin.Android が作成されたグローバルの弱参照の数。 *処理*または*obj ハンドル*値が、JNI ハンドル値、および後の文字には、' */*' ハンドルの値の型です: */L*ローカル参照に、 */G*のグローバルの参照と*/W*グローバルの弱い参照をします。
 
 GC プロセスの一環としては、グローバルの弱い参照にグローバル参照 (+ g +) を変換します。 (a + w + の原因と-g-)、Java 側 GC が開始されて、およびグローバルの弱い参照をチェックして、収集された場合、します。 弱い参照を新しい gref が作成されたまだ有効である場合 (+ g +、-w-)、それ以外の場合、脆弱な ref が破棄される (-w)。
 

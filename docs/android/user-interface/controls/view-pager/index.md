@@ -1,18 +1,17 @@
 ---
 title: ViewPager
-description: "ViewPager は、レイアウト マネージャーで、ジェスチャー ナビゲーションを実装することができます。 ジェスチャー ナビゲーションにより、左と右のデータ ページの手順をスワイプするユーザー。 このガイドでは、およびフラグメントを使用せずにジェスチャー ViewPager を使用したナビゲーションを実装する方法について説明します。 PagerTitleStrip および PagerTabStrip を使用してページ インジケーターを追加する方法についても説明します。"
-ms.topic: article
+description: ViewPager は、レイアウト マネージャーで、ジェスチャー ナビゲーションを実装することができます。 ジェスチャー ナビゲーションにより、左と右のデータ ページの手順をスワイプするユーザー。 このガイドでは、およびフラグメントを使用せずにジェスチャー ViewPager を使用したナビゲーションを実装する方法について説明します。 PagerTitleStrip および PagerTabStrip を使用してページ インジケーターを追加する方法についても説明します。
 ms.prod: xamarin
 ms.assetid: D42896C0-DE7C-4818-B171-CB2D5E5DD46A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 5e2f93eea970a15df03b00cc962ca7482624973d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bd687175048bb6a19dde21e66619667511a76796
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -37,7 +36,7 @@ _ViewPager は、レイアウト マネージャーで、ジェスチャー ナ�
 -   [フラグメント Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)、やや複雑[FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)アプリを開発して使用する方法を示します`ViewPager`で`Fragment`として計算問題を表示するアプリケーションを作成します。フラッシュ カードとユーザー入力に応答します。 
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 使用する`ViewPager`インストールする必要があります、アプリ プロジェクトで、 [Android のサポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)パッケージです。 NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: プロジェクトで、NuGet を含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。 
 

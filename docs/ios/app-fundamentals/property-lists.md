@@ -1,18 +1,17 @@
 ---
-title: "プロパティ リストの使用"
-description: "このドキュメントでは、Info.plist と Entitlements.plist の操作に Mac のグラフィックと高度なプロパティ一覧 (.plist) のエディターの Visual Studio を紹介します。 示されている設定アイコンと起動イメージからの iOS アプリケーションを Visual Studio for mac 内"
-ms.topic: article
+title: プロパティ リストの使用
+description: このドキュメントでは、Info.plist と Entitlements.plist の操作に Mac のグラフィックと高度なプロパティ一覧 (.plist) のエディターの Visual Studio を紹介します。 示されている設定アイコンと起動イメージからの iOS アプリケーションを Visual Studio for mac 内
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f6ee7a606243f5d21d827546b528ca5d9d3f0281
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-property-lists"></a>プロパティ リストの使用
 

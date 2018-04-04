@@ -1,21 +1,21 @@
 ---
-title: "タイミングと方法はバグのレポートをファイル必要がありますか。"
-ms.topic: article
+title: タイミングと方法はバグのレポートをファイル必要がありますか。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 3a57c0843a68b454c8cb21c95b280d2731d064cd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b23ea33fe19e0d9ae07d1f1e6213c65439f58b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="when-and-how-should-i-file-a-bug-report"></a>タイミングと方法はバグのレポートをファイル必要がありますか。
 
 
-Xamarin の Bugzilla バグの追跡ツールでは、ここにバグのファイル: [https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all](https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all)です。
+Xamarin の Bugzilla バグの追跡ツールでは、ここにバグのファイル: [ https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all](https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all)です。
 
 ## <a name="file-a-bug-if"></a>場合は、バグをファイルしてください.
 

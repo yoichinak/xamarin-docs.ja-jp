@@ -1,18 +1,17 @@
 ---
-title: "MonoGame におけるの頂点を持つ 3 D グラフィックスの描画"
-description: "頂点の配列を使用してポイントごとに、3 D のオブジェクトをレンダリングする方法を定義する MonoGame をサポートします。 ユーザーでは、動的 geometry を作成する、特殊効果を実装およびカリングを通じて、レンダリングの効率を向上する頂点の配列を利用できます。"
-ms.topic: article
+title: MonoGame におけるの頂点を持つ 3 D グラフィックスの描画
+description: 頂点の配列を使用してポイントごとに、3 D のオブジェクトをレンダリングする方法を定義する MonoGame をサポートします。 ユーザーでは、動的 geometry を作成する、特殊効果を実装およびカリングを通じて、レンダリングの効率を向上する頂点の配列を利用できます。
 ms.prod: xamarin
 ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 1b139e460a4841f2174df166bf50bb276802d8d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25a05bcd094011042b3dc33a1b837460d5893be0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>MonoGame におけるの頂点を持つ 3 D グラフィックスの描画
 

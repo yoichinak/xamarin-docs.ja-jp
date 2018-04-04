@@ -1,18 +1,17 @@
 ---
-title: "ウォッチの文字盤を作成します。"
-description: "このガイドでは、Android を着用のカスタム ウォッチ フェイス サービスを実装する方法について説明します。 詳細な手順については、さらに、アナログ スタイル ウォッチの文字盤を作成するコードを続けて、デジタル ウォッチ フェイス サービスをストリップを構築するために提供されます。"
-ms.topic: article
+title: ウォッチの文字盤を作成します。
+description: このガイドでは、Android を着用のカスタム ウォッチ フェイス サービスを実装する方法について説明します。 詳細な手順については、さらに、アナログ スタイル ウォッチの文字盤を作成するコードを続けて、デジタル ウォッチ フェイス サービスをストリップを構築するために提供されます。
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c02755cc3ff5b46a5a97b6c14185794d8ad538d8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成します。
 
@@ -20,7 +19,7 @@ _このガイドでは、Android を着用のカスタム ウォッチ フェイ
 
 ## <a name="overview"></a>概要 
 
-このチュートリアルでは、[ウォッチ式の基本的な面サービスが、カスタム Android 着用ウォッチの文字盤の作成の基礎を説明するために作成されます。 初期ウォッチ フェイス サービスには、時間と分で、現在の時刻を表示する簡単なデジタル ウォッチが表示されます。 
+このチュートリアルでは、ウォッチ式の基本的な面サービスが、カスタム Android 着用ウォッチの文字盤の作成の基礎を説明するために作成されます。 初期ウォッチ フェイス サービスには、時間と分で、現在の時刻を表示する簡単なデジタル ウォッチが表示されます。 
 
 [![デジタル ウォッチの文字盤](creating-a-watchface-images/01-initial-face.png "初期デジタル ウォッチの文字盤の例のスクリーン ショット")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
@@ -30,7 +29,7 @@ _このガイドでは、Android を着用のカスタム ウォッチ フェイ
 
 ウォッチ フェイス サービスは組み込まれ、消耗アプリの一部としてインストールされます。 次の例についてで`MainActivity`ウォッチ フェイス サービスをパッケージ化したり、アプリの一部としてスマート ウォッチに展開できるように消耗アプリ テンプレートからのコードよりも詳細 nothing が含まれます。 実際には、このアプリは、デバッグとテストの損傷、デバイス エミュレーター) に読み込まれるウォッチ フェイス サービスを取得するための手段として純粋使用されます。 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 ウォッチ フェイス サービスを実装するのには次が必要です。
 
@@ -47,11 +46,11 @@ Android 5.0 が、最小 API レベル ウォッチ フェイス サービス、
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![新しいプロジェクト] ダイアログ](creating-a-watchface-images/03-wear-project-vs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
+[![新しいプロジェクト ダイアログ](creating-a-watchface-images/03-wear-project-vs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![新しいプロジェクト] ダイアログ](creating-a-watchface-images/03-wear-project-xs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
+[![新しいプロジェクト ダイアログ](creating-a-watchface-images/03-wear-project-xs-sml.png "着用アプリの [新しいプロジェクト] ダイアログ ボックスの選択")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -99,7 +98,7 @@ NuGet パッケージ マネージャーを起動 (Visual Studio を右クリッ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-NuGet パッケージ マネージャーを起動 (Mac を Visual Studio で、右クリック**パッケージ**で、**ソリューション ペイン**選択**パッケージの追加...]**).プロジェクトの最新の安定したバージョンを更新して**Xamarin.Android.Wear**: 
+NuGet パッケージ マネージャーを起動 (Mac を Visual Studio で、右クリック**パッケージ**で、**ソリューション ペイン**選択**パッケージの追加...**).プロジェクトの最新の安定したバージョンを更新して**Xamarin.Android.Wear**: 
 
 [![NuGet パッケージ マネージャーを追加](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin.Android.Wear パッケージの追加")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
@@ -146,11 +145,11 @@ Android の消耗を実装を介して面の視聴、`CanvasWatchFaceService`ク
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-という名前の新しいファイルを追加**MyWatchFaceService.cs** (Visual Studio を右クリックして**WatchFace**で、**ソリューション エクスプ ローラー**をクリックして**追加 > 新しい項目]**を選択して**クラス**)。
+という名前の新しいファイルを追加**MyWatchFaceService.cs** (Visual Studio を右クリックして**WatchFace**で、**ソリューション エクスプ ローラー**をクリックして**追加 > 新しい項目**を選択して**クラス**)。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-という名前の新しいファイルを追加**MyWatchFaceService.cs** (Mac を Visual Studio で右クリックし、 **WatchFace**プロジェクトで、をクリックして**追加 > 新しいファイル]**を選択して**空のクラス**)。 
+という名前の新しいファイルを追加**MyWatchFaceService.cs** (Mac を Visual Studio で右クリックし、 **WatchFace**プロジェクトで、をクリックして**追加 > 新しいファイル**を選択して**空のクラス**)。 
 
 -----
 
@@ -297,7 +296,7 @@ public override void OnTimeTick()
 
 2.  定義、`watch_face`リソース。 このリソースは短い XML ファイルを宣言する、`wallpaper`リソース (このファイルは、次のセクションで作成されます)。 
 
-3.  宣言と呼ばれるドロウアブル イメージ`preview`ウォッチ ピッカーの選択] 画面で表示されます。 
+3.  宣言と呼ばれるドロウアブル イメージ`preview`ウォッチ ピッカーの選択 画面で表示されます。 
 
 4.  含まれています、`intent-filter`させることに注意して Android`MyWatchFaceSevice`ウォッチの文字盤を表示します。 
 

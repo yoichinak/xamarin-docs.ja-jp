@@ -1,17 +1,16 @@
 ---
-title: "ハンドオフ"
-description: "この記事では、カバーを転送する Xamarin.iOS アプリでハンドオフを操作するユーザーで実行されているアプリ間でのユーザー アクティビティの他のデバイス。"
-ms.topic: article
+title: ハンドオフ
+description: この記事では、カバーを転送する Xamarin.iOS アプリでハンドオフを操作するユーザーで実行されているアプリ間でのユーザー アクティビティの他のデバイス。
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bb665c7ffd4241fac14be13ebd8f113d11afd417
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="handoff"></a>ハンドオフ
 
@@ -402,13 +401,13 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-`ContinueUserActivity`メソッドが含まれています、`UIApplicationRestorationHandler`活動の再開に基づくドキュメントまたは応答側に対して呼び出すことです。 渡す必要があります、`NSArray`または復元のハンドラーが呼び出されたときに、復元可能なオブジェクトです。 例:
+`ContinueUserActivity`メソッドが含まれています、`UIApplicationRestorationHandler`活動の再開に基づくドキュメントまたは応答側に対して呼び出すことです。 渡す必要があります、`NSArray`または復元のハンドラーが呼び出されたときに、復元可能なオブジェクトです。 例えば:
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
 ```
 
-渡されると、オブジェクトごとにその`RestoreUserActivityState`メソッドが呼び出されます。 各オブジェクトにデータを使用し、`UserInfo`が自身の状態を復元するためのディクショナリ。 例:
+渡されると、オブジェクトごとにその`RestoreUserActivityState`メソッドが呼び出されます。 各オブジェクトにデータを使用し、`UserInfo`が自身の状態を復元するためのディクショナリ。 例えば:
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -426,7 +425,7 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 
 ハンドオフは疎接続コレクション iOS および OS X デバイスの間で情報の送信に依存するので、転送プロセスは失敗することができます。 このようなエラーを適切に処理し、発生する状況がすべてのユーザーに通知するアプリを設計する必要があります。
 
-障害が発生した場合、`DidFailToContinueUserActivitiy`のメソッド、`AppDelegate`が呼び出されます。 例:
+障害が発生した場合、`DidFailToContinueUserActivitiy`のメソッド、`AppDelegate`が呼び出されます。 例えば:
 
 ```csharp
 public override void DidFailToContinueUserActivitiy (UIApplication application, string userActivityType, NSError error)
@@ -452,7 +451,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 
 指定されたドメインと一致する場合、`WebpageURL`ハンドオフ プロパティの値は、そのドメインで web サイトから承認済みのアプリ Id の一覧をダウンロードします。 Web サイトは、という名前の署名された JSON ファイル内の承認済みの Id の一覧を指定する必要があります**apple app サイト関連付け**(たとえば、 `https://company.com/apple-app-site-association`)。
 
-この JSON ファイルには、フォームでのアプリ Id の一覧を示すディクショナリが含まれている`<team identifier>.<bundle identifier>`です。 例:
+この JSON ファイルには、フォームでのアプリ Id の一覧を示すディクショナリが含まれている`<team identifier>.<bundle identifier>`です。 例えば:
 
 ```csharp
 {
@@ -463,7 +462,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-JSON ファイルに署名する (正しいことがあるできるように`Content-Type`の`application/pkcs7-mime`)、使用、**ターミナル**アプリと`openssl`コマンドと、証明書とキーが iOS で信頼された証明機関によって発行された (を参照してください[http://support.apple.com/kb/ht5012](http://support.apple.com/kb/ht5012)一覧)。 例:
+JSON ファイルに署名する (正しいことがあるできるように`Content-Type`の`application/pkcs7-mime`)、使用、**ターミナル**アプリと`openssl`コマンドと、証明書とキーが iOS で信頼された証明機関によって発行された (を参照してください[http://support.apple.com/kb/ht5012 ](http://support.apple.com/kb/ht5012)一覧)。 例えば:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -476,7 +475,7 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-`openssl`コマンドは、web サイトに配置する署名付き JSON ファイルを出力、 **apple app サイト関連付け**URL。 例:
+`openssl`コマンドは、web サイトに配置する署名付き JSON ファイルを出力、 **apple app サイト関連付け**URL。 例えば:
 
 ```csharp
 https://example.com/apple-app-site-association.
@@ -486,7 +485,7 @@ https://example.com/apple-app-site-association.
 
 ## <a name="supporting-handoff-in-document-based-apps"></a>ドキュメント ベースのアプリでハンドオフのサポート
 
-IOS および OS X 上前に、述べたようドキュメント ベースのアプリは自動的にサポート ハンドオフ iCloud ベースのドキュメントの場合、アプリの**Info.plist**ファイルが含まれています、`CFBundleDocumentTypes`のキー`NSUbiquitousDocumentUserActivityType`です。 例:
+IOS および OS X 上前に、述べたようドキュメント ベースのアプリは自動的にサポート ハンドオフ iCloud ベースのドキュメントの場合、アプリの**Info.plist**ファイルが含まれています、`CFBundleDocumentTypes`のキー`NSUbiquitousDocumentUserActivityType`です。 例えば:
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -522,7 +521,7 @@ IOS および OS X 上前に、述べたようドキュメント ベースのア
 
 ここで、アクティビティを続行するために必要な情報の量効率的に転送できません初期ハンドオフ ペイロードで状況があります。 このような場合は、受信側のアプリはそれ自体とデータを転送元アプリ間で 1 つまたは複数のストリームを確立できます。
 
-元のアプリは、設定、`SupportsContinuationStreams`のプロパティ、`NSUserActivity`インスタンスを`true`です。 例:
+元のアプリは、設定、`SupportsContinuationStreams`のプロパティ、`NSUserActivity`インスタンスを`true`です。 例えば:
 
 ```csharp
 // Create a new user Activity to support this tab
@@ -541,7 +540,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-受信側のアプリは呼び出すことができますし、`GetContinuationStreams`のメソッド、`NSUserActivity`でその`AppDelegate`ストリームを確立するためにします。 例:
+受信側のアプリは呼び出すことができますし、`GetContinuationStreams`のメソッド、`NSUserActivity`でその`AppDelegate`ストリームを確立するためにします。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

@@ -1,18 +1,17 @@
 ---
-title: "アプリケーションの基礎"
-description: "Xamarin.Forms 開発の基礎を調べる"
-ms.topic: article
+title: アプリケーションの基礎
+description: Xamarin.Forms 開発の基礎を調べる
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: afa3bf25b1448d98c49c95a66bd0f4dc55bde39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a53c15ebad6081dae2ebc4bd782bcc3644620fe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>アプリケーションの基礎
 
@@ -24,7 +23,7 @@ Xamarin.Forms を使用したアクセスなどの機能 (画面閲覧ツール�
 
 `Application`クラスは、Xamarin.Forms の開始位置 – サブクラスを実装する必要があるすべてのアプリに`App`を最初のページを設定します。 用意されています、`Properties`単純なデータ記憶域のコレクション。 これは、C# コードか XAML のいずれかで定義できます。
 
-## <a name="app-lifecycleapp-lifecyclemd"></a>[アプリのライフ サイクル](app-lifecycle.md)
+## <a name="app-lifecycleapp-lifecyclemd"></a>[アプリのライフサイクル](app-lifecycle.md)
 
 `Application`クラス`OnStart`、 `OnSleep`、および`OnResume`モーダル ナビゲーション イベントと同様に、メソッドを使用するカスタム コードでのアプリケーション ライフ サイクル イベントを処理します。
 
@@ -44,7 +43,7 @@ Xamarin.Forms を使用したアクセスなどの機能 (画面閲覧ツール�
 
 `DependencyService`共有コードでコードのインターフェイスをしたり、Xamarin.Forms でプラットフォーム固有の機能を参照するは容易になりますが自動的に解決されるプラットフォーム固有の実装を提供できるように、単純なロケーターを提供します。
 
-## <a name="effectseffectsindexmd"></a>[効果](effects/index.md)
+## <a name="effectseffectsindexmd"></a>[エフェクト](effects/index.md)
 
 エフェクトをカスタマイズするには、各プラットフォームでネイティブ コントロールは、小規模のスタイル設定の変更に通常使用されます。
 

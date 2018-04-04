@@ -1,18 +1,17 @@
 ---
-title: "呼び出し元のイベントの効果を適用"
-description: "特殊効果では、定義でき、基になるネイティブ ビュー内の変更の通知、イベントを起動することができます。 この記事では、追跡、低レベルのマルチタッチ指を実装する方法とタッチのアクティビティを通知するイベントを生成する方法を示します。"
-ms.topic: article
+title: 呼び出し元のイベントの効果を適用
+description: 特殊効果では、定義でき、基になるネイティブ ビュー内の変更の通知、イベントを起動することができます。 この記事では、追跡、低レベルのマルチタッチ指を実装する方法とタッチのアクティビティを通知するイベントを生成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: eb4ed3df4ea1f9e6aacf1c875eab17908d73cb7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="invoking-events-from-effects"></a>呼び出し元のイベントの効果を適用
 

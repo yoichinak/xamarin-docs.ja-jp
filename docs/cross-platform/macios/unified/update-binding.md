@@ -1,18 +1,17 @@
 ---
-title: "バインディングを統一された API に移行します。"
-description: "この記事では、Xamarin.IOS および Xamarin.Mac アプリケーションの統合された Api をサポートするために既存の Xamarin バインド プロジェクトの更新に必要な手順について説明します。"
-ms.topic: article
+title: バインディングを統一された API に移行します。
+description: この記事では、Xamarin.IOS および Xamarin.Mac アプリケーションの統合された Api をサポートするために既存の Xamarin バインド プロジェクトの更新に必要な手順について説明します。
 ms.prod: xamarin
 ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2a04dc047674b67b8f21571ed9e7890ddf773f64
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25641671992a125e97bf7feff84b754423527da6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>バインディングを統一された API に移行します。
 
@@ -24,7 +23,7 @@ _この記事では、Xamarin.IOS および Xamarin.Mac アプリケーション
 
 さらに、Xamarin バインド プロジェクトでは、64 ビット Xamarin.iOS または Xamarin.Mac プロジェクトに含まれる新しい Unified Api がサポートもする必要があります。 この記事では、Unified API を使用して既存のバインド プロジェクトを更新するための手順を説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 この記事で紹介する手順を完了する、次が必要。
 

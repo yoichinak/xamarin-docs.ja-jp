@@ -1,18 +1,17 @@
 ---
-title: "テーブルおよびセルの使用"
-description: "Xamarin.iOS と UITableView を使用してデータを表示します。"
-ms.topic: article
+title: テーブルおよびセルの使用
+description: Xamarin.iOS と UITableView を使用してデータを表示します。
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/06/2016
-ms.openlocfilehash: f6abcaa3a771954785df83e80c7e46dd200e6986
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1cda3632a75c7e462e763a34fdb5b586237b670
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-and-cells"></a>テーブルおよびセルの使用
 
@@ -33,7 +32,7 @@ Xamarin.Android を使用してクロスプラット フォーム アプリケ�
 
  [テーブルの部品&amp;機能](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
- [データを含むテーブルを設定します。](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
+ [テーブルへのデータの読み込み](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 
  [テーブルの外観のカスタマイズ](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
 
@@ -43,14 +42,14 @@ Xamarin.Android を使用してクロスプラット フォーム アプリケ�
 
  [ストーリー ボードのテーブルの作成](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
- [自動サイズ変更行の高さ](~/ios/user-interface/controls/tables/autosizing-row-height.md)
+ [行の高さの自動サイズ変更](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [WorkingWithTables (サンプル)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables/)
 - [ストーリー ボード (サンプル) 内のテーブル](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [ストーリー ボードの概要](~/ios/user-interface/storyboards/index.md)
+- [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)
 - [ストーリー ボードのレシピのテーブル](https://developer.xamarin.com/recipes/ios/general/storyboard/storyboard_a_tableview)
 - [MonoTouch.Dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [Github に TableEditing サンプル](https://github.com/xamarin/monotouch-samples/tree/master/TableEditing)

@@ -1,18 +1,17 @@
 ---
 title: Android Designer
-description: "この記事では、Xamarin.Android デザイナーの機能について説明します。 デザイナーを使用してウィジェットを視覚的にレイアウトする方法とプロパティを編集する方法を示す、デザイナーの基本を説明します。 デザイナーを使用して、複数のテーマ、言語、およびデバイスの構成などのさまざまな構成ユーザー インターフェイスとリソースを使用する方法と、横、縦など別のビューを設計する方法も示しています。"
-ms.topic: article
+description: この記事では、Xamarin.Android デザイナーの機能について説明します。 デザイナーを使用してウィジェットを視覚的にレイアウトする方法とプロパティを編集する方法を示す、デザイナーの基本を説明します。 デザイナーを使用して、複数のテーマ、言語、およびデバイスの構成などのさまざまな構成ユーザー インターフェイスとリソースを使用する方法と、横、縦など別のビューを設計する方法も示しています。
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 20da09895bae759c77e96300d798267881a7cbfd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-designer"></a>Android Designer
 

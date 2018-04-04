@@ -1,18 +1,17 @@
 ---
-title: "強化されたユーザーへの通知"
-description: "この記事では、すべての方法を Xamarin.iOS アプリで使用する方法と iOS 10 ユーザー通知が強化されたことについて説明します。"
-ms.topic: article
+title: 強化されたユーザーへの通知
+description: この記事では、すべての方法を Xamarin.iOS アプリで使用する方法と iOS 10 ユーザー通知が強化されたことについて説明します。
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 9fd3ff17dc9af3fd30a7d5b31e8cea7ff8669a51
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="enhanced-user-notifications"></a>強化されたユーザーへの通知
 
@@ -169,7 +168,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 2. 切り替えて、**ソース**ビュー。 
 
     [![](enhanced-user-notifications-images/setup01.png "ソース ビュー")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. クリックして、  **+** 新しいキーを追加するボタンをクリックします。
+3. クリックして、 **+**新しいキーを追加するボタンをクリックします。
 4. 入力`aps-environment`の**プロパティ**のままにして、**型**として`String`いずれかを入力および`development`または`production`の**値**: 
 
     [![](enhanced-user-notifications-images/setup02.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png#lightbox)
@@ -178,7 +177,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. ダブルクリックして、`Entitlements.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、  **+** 新しいキーを追加するボタンをクリックします。
+3. クリックして、 **+**新しいキーを追加するボタンをクリックします。
 4. 入力`aps-environment`の**プロパティ**のままにして、**型**として`String`いずれかを入力および`development`または`production`の**値**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png#lightbox)

@@ -1,18 +1,17 @@
 ---
-title: "時刻の選択"
-description: "TimePickerDialog および DialogFragment を使用して時刻を選択します。"
-ms.topic: article
+title: 時刻の選択
+description: TimePickerDialog および DialogFragment を使用して時刻を選択します。
 ms.prod: xamarin
 ms.assetid: EB4E8206-E8AD-9F04-AC1C-82AC9364A9DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 93a2effd42432d13767dad05a47548aebc9a0b93
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c4261e3dccaccc4c88afe9c1033fb16b730fea6e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="time-picker"></a>時刻の選択
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 03/09/2018
 
 このガイドを使用する方法を示しています、`TimePickerDialog`でラップされた、`DialogFragment`です。 サンプル アプリケーションが表示されます、`TimePickerDialog`モーダル ダイアログ アクティビティ上のボタンをクリックするとします。 ダイアログ ボックスを終了し、ハンドラーが更新の時間が、ユーザーが設定されている場合、 `TextView` [アクティビティ] 画面で選択された時刻を使用します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドのサンプル アプリケーションは、Android 4.1 (API レベルをターゲットします。
 16) 以降では、またはが Android 3.0 (API レベル 11 以上) で使用できます。 Android の古いバージョンの追加により、プロジェクトとコードを変更する Android のサポート ライブラリ v4 のサポートを行うことができます。

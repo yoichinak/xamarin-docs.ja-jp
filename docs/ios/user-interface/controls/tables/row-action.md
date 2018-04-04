@@ -1,18 +1,17 @@
 ---
-title: "行の操作の操作"
-description: "このガイドは UISwipeActionsConfiguration または UITableViewRowAction でテーブルの行のカスタム スワイプしてアクションを作成する方法を示します"
-ms.topic: article
+title: 行の操作の操作
+description: このガイドは UISwipeActionsConfiguration または UITableViewRowAction でテーブルの行のカスタム スワイプしてアクションを作成する方法を示します
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: 23a8fcd0633757bfffdb1761c3fc811268341b96
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c257406f3ad81e8144b47e099c9a00f3fdae30cb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-row-actions"></a>行の操作の操作
 
@@ -119,7 +118,7 @@ public UIContextualAction ContextualFlagAction(int row)
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-1 つまたは複数の行のカスタム アクションを定義する、`UITableView`のインスタンスを作成する必要があります、`UITableViewDelegate`クラスし、オーバーライド、`EditActionsForRow`メソッドです。 例:
+1 つまたは複数の行のカスタム アクションを定義する、`UITableView`のインスタンスを作成する必要があります、`UITableViewDelegate`クラスし、オーバーライド、`EditActionsForRow`メソッドです。 例えば:
 
 ```csharp
 using System;
@@ -163,7 +162,7 @@ namespace BasicTable
 }
 ```
 
-静的`UITableViewRowAction.Create`メソッドの作成に使用する新しい`UITableViewRowAction`を表示する、 **Hi**ユーザー カードは、テーブル内の行の水平方向にままの場合 ボタンをクリックします。 以降の新しいインスタンス、`TableDelegate`が作成されに接続されている、`UITableView`です。 例:
+静的`UITableViewRowAction.Create`メソッドの作成に使用する新しい`UITableViewRowAction`を表示する、 **Hi**ユーザー カードは、テーブル内の行の水平方向にままの場合 ボタンをクリックします。 以降の新しいインスタンス、`TableDelegate`が作成されに接続されている、`UITableView`です。 例えば:
 
 ```csharp
 TableDelegate tableDelegate;

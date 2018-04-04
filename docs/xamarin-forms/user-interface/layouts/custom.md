@@ -1,18 +1,17 @@
 ---
-title: "カスタム レイアウトの作成"
-description: "Xamarin.Forms は StackLayout、AbsoluteLayout、[相対レイアウト]、およびグリッドで、4 つのレイアウト クラスを定義し、別の方法でその子を整列それぞれします。 ただし、場合によっては必要 Xamarin.Forms では提供されないレイアウトを使用してページの内容を整理します。 この記事では、カスタム レイアウト クラスを作成する方法について説明し、その子をページ全体で水平方向に整列し、追加の行に後続の子の表示をラップする方向を区別 WrapLayout クラスを示します。"
-ms.topic: article
+title: カスタム レイアウトの作成
+description: Xamarin.Forms は StackLayout、AbsoluteLayout、[相対レイアウト]、およびグリッドで、4 つのレイアウト クラスを定義し、別の方法でその子を整列それぞれします。 ただし、場合によっては必要 Xamarin.Forms では提供されないレイアウトを使用してページの内容を整理します。 この記事では、カスタム レイアウト クラスを作成する方法について説明し、その子をページ全体で水平方向に整列し、追加の行に後続の子の表示をラップする方向を区別 WrapLayout クラスを示します。
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 4c7bf5f2c867faef7d9baf8d511393dbe2d129a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0728ac110fcf86f44a5ccb5ddd80b00af1b8d62
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-custom-layout"></a>カスタム レイアウトの作成
 

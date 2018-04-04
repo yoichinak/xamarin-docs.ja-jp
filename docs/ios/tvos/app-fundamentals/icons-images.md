@@ -1,18 +1,17 @@
 ---
-title: "アイコンとイメージの操作"
-description: "この記事では、設計と、アイコンと Xamarin.tvOS アプリ内でイメージ処理について説明します。"
-ms.topic: article
+title: アイコンとイメージの操作
+description: この記事では、設計と、アイコンと Xamarin.tvOS アプリ内でイメージ処理について説明します。
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 927a77d5671e877e93e5375b61220ac595891179
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-icons-and-images"></a>アイコンとイメージの操作
 
@@ -122,7 +121,7 @@ tvOS は、次の形式で、イメージの階層で動作します。
 
 [![](icons-images-images/layered03.png "視差プレビュー用のプログラム")](icons-images-images/layered03.png#lightbox)
 
-階層化の画像をプレビューしながら、イメージの回転し、視差効果のプレビューにマウスを使用できます。 使用して、  **+**  (正符号 +) と **-**  (マイナス記号) ボタンを追加およびレイヤーを削除します。
+階層化の画像をプレビューしながら、イメージの回転し、視差効果のプレビューにマウスを使用できます。 使用して、 **+** (正符号 +) と**-** (マイナス記号) ボタンを追加およびレイヤーを削除します。
 
 新しい層のイメージを作成するときに LSR 形式でエクスポートして、アプリのバンドルに含まれます。
 

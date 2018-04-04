@@ -1,18 +1,17 @@
 ---
-title: "Android API レベルを理解します。"
-description: "Xamarin.Android には、複数のバージョンの Android アプリの互換性を確認するいくつかの Android API レベル設定があります。 このガイドは、これらの設定の意味、これらを構成する方法およびどのような影響について説明します。 実行時に、アプリであります。"
-ms.topic: article
+title: Android API レベルを理解します。
+description: Xamarin.Android には、複数のバージョンの Android アプリの互換性を確認するいくつかの Android API レベル設定があります。 このガイドは、これらの設定の意味、これらを構成する方法およびどのような影響について説明します。 実行時に、アプリであります。
 ms.prod: xamarin
 ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-android-api-levels"></a>Android API レベルを理解します。
 
@@ -282,7 +281,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 
 この例では、アプリのターゲット フレームワークが に設定されている**Android 5.0 (API レベル 21)**に設定されている最低限の Android バージョンおよび**Android 4.1 (API レベル 16)**です。 `SetCategory` API レベルにある`Android.OS.BuildVersionCodes.Lollipop`と後で、このコード例は`SetCategory`が実際に使用できる&ndash;なります*いない*を呼び出そうと`SetCategory`ときに APIレベルは、16、17、18、19、または 20 です。 のみ身元を正しく (ための型によって分類されない) と、通知の並べ替えは行われません、まだでも、この通知がユーザーに警告を発行されています。 これら以前 Android のバージョンで機能が制限されます。 アプリは引き続き動作しますが、その機能が若干低下します。
 
-一般に、ビルドのバージョン チェックは、コードが従来の方法ではなく新しい方法を何らかの間での実行時に決定に役立ちます。 例:
+一般に、ビルドのバージョン チェックは、コードが従来の方法ではなく新しい方法を何らかの間での実行時に決定に役立ちます。 例えば:
 
 ```csharp
 if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)

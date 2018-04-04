@@ -1,18 +1,17 @@
 ---
-title: "イベント、プロトコルとデリゲート"
-description: "この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定するために使用するキー iOS テクノロジを表示します。 これらのテクノロジは、イベント、プロトコル、およびデリゲートには。 この記事では、新機能について説明しますがこれらの各および c# から使用は、各方法です。 Xamarin.iOS が iOS コントロールを使用して、Xamarin.iOS Objective C の概念のプロトコルおよびデリゲートなどのサポートを提供する方法と、使い慣れた .NET イベントもを公開する方法を示しています (OBJECTIVE-C デリゲート混同しないように c# デリゲートを使用)。 この記事では、プロトコルの使用方法: Objective C のデリゲートは、およびデリゲート以外のシナリオでの基礎として両方を示す例も提供します。"
-ms.topic: article
+title: イベント、プロトコルとデリゲート
+description: 'この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定するために使用するキー iOS テクノロジを表示します。 これらのテクノロジは、イベント、プロトコル、およびデリゲートには。 この記事では、新機能について説明しますがこれらの各および c# から使用は、各方法です。 Xamarin.iOS が iOS コントロールを使用して、Xamarin.iOS Objective C の概念のプロトコルおよびデリゲートなどのサポートを提供する方法と、使い慣れた .NET イベントもを公開する方法を示しています (OBJECTIVE-C デリゲート混同しないように c# デリゲートを使用)。 この記事では、プロトコルの使用方法: Objective C のデリゲートは、およびデリゲート以外のシナリオでの基礎として両方を示す例も提供します。'
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="events-protocols-and-delegates"></a>イベント、プロトコルとデリゲート
 

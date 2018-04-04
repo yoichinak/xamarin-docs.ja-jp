@@ -1,18 +1,17 @@
 ---
-title: "アクションバーを持つタブ付きレイアウト"
-description: "このガイドでは、紹介し、アクションバー Api を使用して Xamarin.Android アプリケーションで、タブ付きのユーザー インターフェイスを作成する方法について説明します。"
-ms.topic: article
+title: アクションバーを持つタブ付きレイアウト
+description: このガイドでは、紹介し、アクションバー Api を使用して Xamarin.Android アプリケーションで、タブ付きのユーザー インターフェイスを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B7E60AAF-BDA5-4305-9000-675F0438734D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: afaa02168dcac54115e8fca53683725926e4baed
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5956cd13708f4e7e73926fc01e6142d9cf4a8edb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>アクションバーを持つタブ付きレイアウト
 
@@ -27,7 +26,7 @@ _このガイドでは、紹介し、アクションバー Api を使用して X
 
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 ターゲット API レベル 11 (Android 3.0) または高いネイティブの Android Api の一部としてアクションバー Api へのアクセスを持つ Xamarin.Android アプリケーションです。 
 

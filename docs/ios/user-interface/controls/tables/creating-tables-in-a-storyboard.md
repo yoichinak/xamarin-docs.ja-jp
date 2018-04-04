@@ -1,18 +1,17 @@
 ---
-title: "IOS デザイナーでテーブルを操作します。"
-description: "前のセクションでは、テーブルを使用して開発おについて説明しました。 これには、5 番目および最後のセクションおは、これまで説明した集計し、ストーリー ボードを使用して基本的な面倒な作業一覧アプリケーションを作成します。"
-ms.topic: article
+title: IOS デザイナーでテーブルを操作します。
+description: 前のセクションでは、テーブルを使用して開発おについて説明しました。 これには、5 番目および最後のセクションおは、これまで説明した集計し、ストーリー ボードを使用して基本的な面倒な作業一覧アプリケーションを作成します。
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 869719b1d3514fee4b45f61dcdb34a0bcf54f7b2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>IOS デザイナーでテーブルを操作します。
 
@@ -115,7 +114,7 @@ Visual Studio を使用して、新しいソリューションを作成する**(
 次の手順で行います。 
 
 -  ドラッグ、**バー ボタン項目**をツールボックスから、_ナビゲーション バーの右側にある_です。
--  **プロパティ パッド****バー ボタンの項目**選択**識別子: 追加**(やすく、  *+* プラス ボタン)。 
+-  **プロパティ パッド****バー ボタンの項目**選択**識別子: 追加**(やすく、 *+*プラス ボタン)。 
 -  名前を付けます後の段階でのコードに識別できるようにします。 ルート ビュー コント ローラー クラス名を指定する必要がありますに注意してください (たとえば**ItemViewController**) バー ボタンの項目の名前を設定することにします。
 
 

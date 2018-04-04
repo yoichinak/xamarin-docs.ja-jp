@@ -1,18 +1,17 @@
 ---
-title: "Android の消耗の概要"
-description: "ガイドでは、このセクションでは、Android を着用を紹介のインストールし、ウェア開発用コンピューターを構成する方法について説明し、作成し、最初の Android 着用アプリを実行するための手順を提供します。"
-ms.topic: article
+title: Android の消耗の概要
+description: ガイドでは、このセクションでは、Android を着用を紹介のインストールし、ウェア開発用コンピューターを構成する方法について説明し、作成し、最初の Android 着用アプリを実行するための手順を提供します。
 ms.prod: xamarin
 ms.assetid: 8B9DC98A-773F-4E06-84A7-BA8208C4E864
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/18/2017
-ms.openlocfilehash: b2085343d1b6f94544d73614f5732b0ecf2f9b59
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0b022225dd670ca6da09abbca6b3db75a55f38b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-android-wear"></a>Android の消耗の概要
 

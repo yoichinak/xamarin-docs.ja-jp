@@ -1,18 +1,17 @@
 ---
-title: "SiriKit を実装します。"
-description: "この記事では、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。"
-ms.topic: article
+title: SiriKit を実装します。
+description: この記事では、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-sirikit"></a>SiriKit を実装します。
 
@@ -213,14 +212,14 @@ Mac で、次の操作を行います。
 
 1. Web ブラウザーでに移動[ http://developer.apple.com ](http://developer.apple.com)と自分のアカウントにログインします。
 2. をクリックして**証明書**、**識別子**と**プロファイル**です。
-3. 選択**プロビジョニング プロファイル**を選択し、**のアプリ Id**、をクリックして、  **+** ボタンをクリックします。
+3. 選択**プロビジョニング プロファイル**を選択し、**のアプリ Id**、をクリックして、 **+**ボタンをクリックします。
 4. 入力、**名前**新しいプロファイルのです。
 5. 入力、**バンドル ID**推奨設定の名前付け Apple の後です。
 6. 下方向にスクロール、 **App Services**セクションで、 **SiriKit**  をクリックし、**続行**ボタン。 
 
     [![](implementing-sirikit-images/setup03.png "SiriKit を選択します。")](implementing-sirikit-images/setup03.png#lightbox)
 7. すべての設定、し確認**送信**アプリ id。
-8. 選択**プロビジョニング プロファイル** > **開発**をクリックして、  **+** ボタン、、 **Apple ID**、をクリックして**続行**です。
+8. 選択**プロビジョニング プロファイル** > **開発**をクリックして、 **+**ボタン、、 **Apple ID**、をクリックして**続行**です。
 9. [選択] をクリックして**すべて**をクリックし、**続行**です。
 10. をクリックして**すべて選択**再度 をクリックし、**続行**です。
 11. 入力、**プロファイル名**Apple を使用すると、推奨事項の名前付け、をクリックして**続行**です。
@@ -462,16 +461,16 @@ namespace MonkeyChat
 
     [![](implementing-sirikit-images/plist01.png "プロパティ リストを追加します。")](implementing-sirikit-images/plist01.png#lightbox) 
 2. ダブルクリックして、`AppIntentVocabulary.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、  **+** キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
+3. クリックして、 **+**キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist02.png "ParameterVocabularies と配列の型に名前を設定します。")](implementing-sirikit-images/plist02.png#lightbox)
-4. 展開`ParameterVocabularies` をクリックし、  **+** ボタンをクリックし、設定、**型**に`Dictionary`:
+4. 展開`ParameterVocabularies` をクリックし、 **+**ボタンをクリックし、設定、**型**に`Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "型をディクショナリに設定します。")](implementing-sirikit-images/plist03.png#lightbox)
-5. クリックして、  **+** を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
+5. クリックして、 **+**を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist04.png "ParameterNames と配列の型に名前を設定します。")](implementing-sirikit-images/plist04.png#lightbox)
-6. クリックして、  **+** を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
+6. クリックして、 **+**を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName キー")](implementing-sirikit-images/plist05.png#lightbox)
 7. 追加、`ParameterVocabulary`キーを`ParameterVocabularies`キーを**型**の`Array`:
@@ -526,16 +525,16 @@ namespace MonkeyChat
 
     [![](implementing-sirikit-images/plist01w.png "新しい Info.plist を追加します。")](implementing-sirikit-images/plist01w.png#lightbox) 
 2. ダブルクリックして、`AppIntentVocabulary.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、  **+** キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
+3. クリックして、 **+**キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist02w.png "ParameterVocabularies と配列の型に名前を設定します。")](implementing-sirikit-images/plist02w.png#lightbox)
-4. 展開`ParameterVocabularies` をクリックし、  **+** ボタンをクリックし、設定、**型**に`Dictionary`:
+4. 展開`ParameterVocabularies` をクリックし、 **+**ボタンをクリックし、設定、**型**に`Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "型をディクショナリに設定します。")](implementing-sirikit-images/plist03w.png#lightbox)
-5. クリックして、  **+** を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
+5. クリックして、 **+**を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist04w.png "ParameterNames と配列の型に名前を設定します。")](implementing-sirikit-images/plist04w.png#lightbox)
-6. クリックして、  **+** を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
+6. クリックして、 **+**を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName キー")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 追加、`ParameterVocabulary`キーを`ParameterVocabularies`キーを**型**の`Array`:

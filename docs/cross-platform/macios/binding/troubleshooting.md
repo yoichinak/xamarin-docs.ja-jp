@@ -1,18 +1,17 @@
 ---
-title: "バインドのトラブルシューティング"
-description: "このガイドでは、バインド Objective C ライブラリが難しい場合の対処方法について説明します。"
-ms.topic: article
+title: バインドのトラブルシューティング
+description: このガイドでは、バインド Objective C ライブラリが難しい場合の対処方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: 2db7fe30f05224f6b74b4d2189606da59946bda0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7ea3e3802ec2e0baf0fe8355a41e806bacabc9ac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-troubleshooting"></a>バインドのトラブルシューティング
 
@@ -45,15 +44,15 @@ Xamarin (該当する場合)、不足しているバインディングの通知�
 
 お客様のフィードバックは弊社にとって重要です。 : Xamarin.Mac で問題が見つかった場合
 
-- チェック、 [Xamarin.Mac フォーラム](https://forums.xamarin.com/categories/mac)
-- 検索、[問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues) 
-- GitHub の問題に切り替えるには、前に、Xamarin の問題がで追跡された[Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)です。 照合の問題がある検索してください。
-- 一致する問題が見つからない場合で新しい懸案事項を送信してください、[問題の GitHub リポジトリ](https://github.com/xamarin/xamarin-macios/issues/new)です。
+- [Xamarin.Mac フォーラム](https://forums.xamarin.com/categories/mac)を確認する
+- [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する 
+- GitHub の問題に切り替わる前に、Xamarin の問題は [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) で追跡されていました。 そこで一致する問題を検索してください。
+- 一致する問題が見つからない場合は、[GitHub の問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues/new)に新しい問題を提出してください。
 
-GitHub の問題は、すべてのパブリックです。 コメントまたは添付ファイルを非表示にすることはできません。 
+GitHub の問題はすべて公開されています。 コメントまたは添付ファイルを非表示にすることはできません。 
 
-可能性として、次の大半を含めてください。
+次の情報について、できるだけ多くを含めてください。
 
-- この問題を再現する簡単な例です。 これは**貴重な**可能な限りです。 
+- 問題を再現する簡単な例。 これは**重要**です (可能な場合)。 
 - クラッシュの完全なスタック トレース。
-- C# コードのクラッシュを囲むです。 
+- クラッシュの周囲の C# コード。 

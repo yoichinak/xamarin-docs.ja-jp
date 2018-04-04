@@ -1,18 +1,17 @@
 ---
-title: "IOS 8 の概要"
-description: "IOS 8、Apple が多種多様な新しいフレームワークと励起開発者を魅了し、するための Api が提供されます。 このガイドでは、これらの新しい Api を紹介し、iOS 8 が開発者とユーザーの両方を利用する方法を参照してください。 おされます。"
-ms.topic: article
+title: IOS 8 の概要
+description: IOS 8、Apple が多種多様な新しいフレームワークと励起開発者を魅了し、するための Api が提供されます。 このガイドでは、これらの新しい Api を紹介し、iOS 8 が開発者とユーザーの両方を利用する方法を参照してください。 おされます。
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 8a4fabd5cc63434950f4646336b06676f6eb915b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2f57547356adcbafd01851bc54e42a14454ccd6a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-ios-8"></a>IOS 8 の概要
 
@@ -26,7 +25,7 @@ IOS 7 のユーザーを満足させる場合は、iOS 8 は、これらおい�
 
 詳細については、このドキュメントの最後に iOS 8 で廃止されたいくつかの Api もあります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 要件は次の Mac を Visual Studio での iOS 8 のアプリを作成します。
 

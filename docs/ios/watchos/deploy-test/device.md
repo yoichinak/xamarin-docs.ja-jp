@@ -1,18 +1,17 @@
 ---
-title: "ウォッチ デバイスでのテスト"
-description: "Apple Watch でテストするアプリの展開"
-ms.topic: article
+title: ウォッチ デバイスでのテスト
+description: Apple Watch でテストするアプリの展開
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="testing-on-watch-devices"></a>ウォッチ デバイスでのテスト
 
@@ -26,7 +25,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="devices"></a>デバイス
 
-実際の iPhone または iPad で iOS アプリをテストすると、デベロッパー センターに登録するデバイスは常に必要です。 次のようなデバイスの一覧 (プラス記号をクリックして **+** 新しいデバイスを追加する)。
+実際の iPhone または iPad で iOS アプリをテストすると、デベロッパー センターに登録するデバイスは常に必要です。 次のようなデバイスの一覧 (プラス記号をクリックして**+**新しいデバイスを追加する)。
 
 ![](device-images/devices-sml.png "次のようなデバイスの一覧")
 

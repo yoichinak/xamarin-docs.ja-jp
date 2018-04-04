@@ -1,18 +1,17 @@
 ---
-title: "IOS でのプッシュ通知"
-description: "このセクションでは、iOS でプッシュ通知を説明します。 Apple Push 通知ゲートウェイ サービスと iOS アプリケーションに公開通知で再生されるロールが導入されています。 プッシュ通知を有効にして説明するために必要なセキュリティ証明書を作成する方法を説明します。 最後にこのセクションでは、いくつかのアプリケーション サーバーのクライアントのモバイル デバイスを追跡するために必要ハウスキーピング タスクについてはします。"
-ms.topic: article
+title: IOS でのプッシュ通知
+description: このセクションでは、iOS でプッシュ通知を説明します。 Apple Push 通知ゲートウェイ サービスと iOS アプリケーションに公開通知で再生されるロールが導入されています。 プッシュ通知を有効にして説明するために必要なセキュリティ証明書を作成する方法を説明します。 最後にこのセクションでは、いくつかのアプリケーション サーバーのクライアントのモバイル デバイスを追跡するために必要ハウスキーピング タスクについてはします。
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="push-notifications-in-ios"></a>IOS でのプッシュ通知
 
@@ -51,7 +50,7 @@ Apple APNS の 2 つの環境の保持:*サンド ボックス*と*運用*環境
 
     [![](remote-notifications-in-ios-images/image6new.png "アプリ Id に移動し、新しいアプリ ID の作成")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  クリックすると、  **+** ボタン、ことができますアプリ id、説明、およびバンドル Id を入力するように次のスクリーン ショットに示すようにします。
+3.  クリックすると、 **+**ボタン、ことができますアプリ id、説明、およびバンドル Id を入力するように次のスクリーン ショットに示すようにします。
 
     [![](remote-notifications-in-ios-images/image7new.png "アプリ id、説明、およびバンドル Id を入力します。")](remote-notifications-in-ios-images/image7new.png#lightbox)
 

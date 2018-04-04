@@ -1,18 +1,17 @@
 ---
-title: "フラグメントを実装します。"
-description: "Android 3.0 には、フラグメントが導入されました。 フラグメントは、自己完結型のモジュラー コンポーネントです。さまざまなサイズの画面で実行される可能性がある複雑なアプリケーション作成に対処するために使用されます。 この記事で事前 Android 3.0 デバイスでのフラグメントをサポートする方法と Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。"
-ms.topic: article
+title: フラグメントを実装します。
+description: Android 3.0 には、フラグメントが導入されました。 フラグメントは、自己完結型のモジュラー コンポーネントです。さまざまなサイズの画面で実行される可能性がある複雑なアプリケーション作成に対処するために使用されます。 この記事で事前 Android 3.0 デバイスでのフラグメントをサポートする方法と Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-with-fragments"></a>フラグメントを実装します。
 
@@ -34,7 +33,7 @@ _Android 3.0 には、フラグメントが導入されました。フラグメ�
 - **Android のサポート パッケージを使用して** &ndash; Android のサポート パッケージを実装し、以前のバージョンの Android 上で実行できるように、アプリケーション内の活動に若干の変更は、します。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このチュートリアルでは、Xamarin.Android 4.0 以上が必要です。 必要があります、Android のサポート パッケージをインストールするフラグメントのドキュメントで説明したようです。
 

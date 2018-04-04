@@ -1,18 +1,17 @@
 ---
-title: "タブ バーおよびタブ バー コント ローラー"
-description: "タブ ナビゲーション UI を使用して iOS アプリケーションは、UITabBarController クラスを使用して構築されます。 この記事の内容をいくつかのコント ローラーとビューを含むタブ付きアプリケーションを設定する方法を説明します。 できない場合に、ルートのコント ローラーなど、ログイン画面の後に、UITabBarController を読み込む方法について確認し、します。"
-ms.topic: article
+title: タブ バーおよびタブ バー コント ローラー
+description: タブ ナビゲーション UI を使用して iOS アプリケーションは、UITabBarController クラスを使用して構築されます。 この記事の内容をいくつかのコント ローラーとビューを含むタブ付きアプリケーションを設定する方法を説明します。 できない場合に、ルートのコント ローラーなど、ログイン画面の後に、UITabBarController を読み込む方法について確認し、します。
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>タブ バーおよびタブ バー コント ローラー
 

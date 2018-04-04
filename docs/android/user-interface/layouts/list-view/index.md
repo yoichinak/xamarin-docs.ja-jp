@@ -1,18 +1,17 @@
 ---
 title: ListView
-description: "ListView が Android アプリケーションの重要な UI 要素です。使用されます everywhere メニュー オプションの短い一覧から連絡先またはインターネットのお気に入りの長い一覧です。 いずれかの組み込みスタイルで書式設定したりできる広範なカスタマイズされた行のスクロール ボックスの一覧を表示する簡単な方法を提供します。"
-ms.topic: article
+description: ListView が Android アプリケーションの重要な UI 要素です。使用されます everywhere メニュー オプションの短い一覧から連絡先またはインターネットのお気に入りの長い一覧です。 いずれかの組み込みスタイルで書式設定したりできる広範なカスタマイズされた行のスクロール ボックスの一覧を表示する簡単な方法を提供します。
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 4225e45ecfe4a4a2cdb7e75b94823fc8fcd29fc4
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 8499b9f186c12df22518893b6677cab22f0a3568
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview"></a>ListView
 

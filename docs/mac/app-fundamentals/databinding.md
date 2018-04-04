@@ -1,18 +1,17 @@
 ---
-title: "データのバインドとキー値のコーディング"
-description: "この記事では、キーと値のコーディングおよびキーと値の Xcode のインターフェイスのビルダーでの UI 要素にデータ バインドを許可する確認の使用方法について説明します。"
-ms.topic: article
+title: データのバインドとキー値のコーディング
+description: この記事では、キーと値のコーディングおよびキーと値の Xcode のインターフェイスのビルダーでの UI 要素にデータ バインドを許可する確認の使用方法について説明します。
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 48ee5d4e4a0a53de49fbba46d79424e03af6fe5c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>データのバインドとキー値のコーディング
 
@@ -70,7 +69,7 @@ namespace MacDatabinding
 
 最初に、`[Register("PersonModel")]`属性クラスを登録し、目標 C. に公開します。 次に、クラスから継承する必要があります。 `NSObject` (またはそのサブクラスから継承する`NSObject`)、いくつかの基本 KVC 準拠にするクラスを許可するメソッドが追加されます。 次に、`[Export("Name")]`属性の公開、`Name`プロパティをプロパティにアクセスする、KVC と KVO の手法を後で使用されるキー値を定義します。 
 
-最後に、プロパティの値に変更のキー値測定するには、アクセサー ラップする必要がありますにはその値への変更`WillChangeValue`と`DidChangeValue`メソッドの呼び出し (と同じキーを指定する、`Export`属性)。  例:
+最後に、プロパティの値に変更のキー値測定するには、アクセサー ラップする必要がありますにはその値への変更`WillChangeValue`と`DidChangeValue`メソッドの呼び出し (と同じキーを指定する、`Export`属性)。  例えば:
 
 ```csharp
 set {
@@ -159,7 +158,7 @@ Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 
 ### <a name="observing-value-changes"></a>値の変更を確認します。
 
-キーと値 (KVO) を観察しを使用して、オブザーバーを KVC 準拠クラスの特定のキーに関連付けることができます、いつでも (KVC 手法を使用して、または c# コードで指定されたプロパティに直接アクセスする)、そのキーの値が変更された通知。 例:
+キーと値 (KVO) を観察しを使用して、オブザーバーを KVC 準拠クラスの特定のキーに関連付けることができます、いつでも (KVC 手法を使用して、または c# コードで指定されたプロパティに直接アクセスする)、そのキーの値が変更された通知。 例えば:
 
 ```csharp
 // Watch for the name value changing

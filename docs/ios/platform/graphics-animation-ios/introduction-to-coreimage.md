@@ -1,18 +1,17 @@
 ---
 title: CoreImage
-description: "CoreImage は、iOS 5 をイメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。 この記事では、Xamarin.iOS サンプルを使ってこれらの機能を紹介します。"
-ms.topic: article
+description: CoreImage は、iOS 5 をイメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。 この記事では、Xamarin.iOS サンプルを使ってこれらの機能を紹介します。
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: da9b9230a466c70cd584a00af848ffe87dacbc5b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0bb2c3b8b563da53e432ad16e6518ada67a4655e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="coreimage"></a>CoreImage
 
@@ -29,7 +28,7 @@ CoreImage は、さまざまな組み込みのフィルターと画像とビデ�
 
 これらの例は、Xamarin.iOS アプリケーションに CoreImage 機能を組み込むことを開始するのに役立ちます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xcode の最新バージョンを使用する必要があります。
 

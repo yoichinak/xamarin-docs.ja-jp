@@ -1,18 +1,17 @@
 ---
-title: "iOS のローカライズ"
-description: "このドキュメントでは、iOS SDK のローカリゼーション機能および Xamarin とそれらにアクセスする方法について説明します。"
-ms.topic: article
+title: iOS のローカライズ
+description: このドキュメントでは、iOS SDK のローカリゼーション機能および Xamarin とそれらにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: cc7643d89b4a45b6f6fb87bb027edb1c339a20ec
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 96ee8343bb2b99fdc0be9437aaa7737a70b8c19c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-localization"></a>iOS のローカライズ
 
@@ -20,7 +19,7 @@ _このドキュメントでは、iOS SDK のローカリゼーション機能�
 
 参照してください、[国際化エンコーディング](encodings.md)については Unicode 以外のデータを処理する必要があるアプリケーションで文字セットおよびコード ページが含まれます。
 
-## <a name="ios-platform-features"></a>iOS プラットフォームの機能
+## <a name="ios-platform-features"></a>iOS プラットフォーム機能
 
 このセクションでは、iOS のローカリゼーション機能の一部について説明します。 進んで、[次のセクション](#basics)に特定のコードと例を参照してください。
 

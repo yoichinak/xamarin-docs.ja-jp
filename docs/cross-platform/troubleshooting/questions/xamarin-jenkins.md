@@ -1,16 +1,16 @@
 ---
-title: "なぜ Jenkins でサポートされていない Xamarin しますか。"
-ms.topic: article
+title: なぜ Jenkins でサポートされていない Xamarin しますか。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 8129229a821edd2ef4f251679ee46bca7b74c8f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8112f9bfc8975b12e3c300c0c981d21749173f7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>なぜ Jenkins でサポートされていない Xamarin しますか。
 
@@ -50,7 +50,7 @@ Jenkins の問題が私たちのチームによって直接サポートされて
 
 > エラー: Xamarin.iOS のスタート エディションは Xamarin Studio の外部でビルドをサポートしません 
 
-このシナリオの最も一般的な原因は、Xamarin ライセンスに関連付けられていないユーザー アカウントでログインして Jenkins の使用です。 これを解決する最も簡単な方法では、ユーザー アカウントを使用して直接アプリとして Jenkins をインストールします。 プロセスと他の考慮事項がここで説明されている: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
+このシナリオの最も一般的な原因は、Xamarin ライセンスに関連付けられていないユーザー アカウントでログインして Jenkins の使用です。 これを解決する最も簡単な方法では、ユーザー アカウントを使用して直接アプリとして Jenkins をインストールします。 そのプロセスおよび他の考慮事項は、次に示します。 [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
 
 別の方法としては、Xamarin のライセンス情報が何らかの理由で破損していることは、使用できます、 [Xamarin ライセンスを再同期ガイド](~/cross-platform/troubleshooting/legacy-licenses/resync-licenses.md)問題を解決します。
 

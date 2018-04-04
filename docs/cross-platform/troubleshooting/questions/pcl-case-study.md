@@ -1,16 +1,16 @@
 ---
-title: "PCL ケース スタディ: Microsoft TPL データ フローの NuGet パッケージの System.Diagnostics.Tracing に関連する問題を解決する方法ですか?"
-ms.topic: article
+title: 'PCL ケース スタディ: Microsoft TPL データ フローの NuGet パッケージの System.Diagnostics.Tracing に関連する問題を解決する方法ですか?'
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7986A556-382D-4D00-ACCF-3589B4029DE8
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: c1d8bab1af8082d74f447cd51422a7eedb7c18c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04814b78fd035005aabd8b9229d36bbda17ba140
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>PCL ケース スタディ: Microsoft TPL データ フローの NuGet パッケージの System.Diagnostics.Tracing に関連する問題を解決する方法ですか?
 

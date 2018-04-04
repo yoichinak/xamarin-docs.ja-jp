@@ -1,18 +1,17 @@
 ---
-title: "非同期の概要"
-description: "C# 言語 – バージョン 5 – の最新バージョンには、非同期操作を表すための 2 つの新しいキーワードが導入されました: async と await です。 これらのキーワードでは、別のスレッドで実行時間の長い操作 (ネットワーク アクセスなど) を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。 Xamarin.iOS および Xamarin.Android の最新バージョン サポート async および await - 説明、および Xamarin を使用した新しい構文の使用例を説明します。"
-ms.topic: article
+title: 非同期の概要
+description: 'C# 言語 – バージョン 5 – の最新バージョンには、非同期操作を表すための 2 つの新しいキーワードが導入されました: async と await です。 これらのキーワードでは、別のスレッドで実行時間の長い操作 (ネットワーク アクセスなど) を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。 Xamarin.iOS および Xamarin.Android の最新バージョン サポート async および await - 説明、および Xamarin を使用した新しい構文の使用例を説明します。'
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4762612075a866581339b198552b8e26c9a1f6fa
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ecad6259cb0d472ac39afb0a6be980d4582812c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -32,7 +31,7 @@ C# 5 (多くのサンプルとさまざまな使用シナリオを含む) の新
 
 Xamarin の非同期サポートは、Mono 3.0 をベースに構築され、モバイル フレンドリなバージョンの .NET 4.5 のモバイル対応バージョンで Silverlight の中から API プロファイルをアップグレードします。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 C# 5 機能では、Mono 3.0 6.4 の Xamarin.iOS と Xamarin.Android 4.8 に含まれている必要があります。 これを活用するために、モノラル、Xamarin.iOS、Xamarin.Android、Xamarin.Mac をアップグレードするように促されます。
 

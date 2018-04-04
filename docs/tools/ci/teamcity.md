@@ -1,18 +1,17 @@
 ---
-title: "Xamarin を使用したチームの市区町村を使用します。"
-description: "このガイドを使って、TeamCity するモバイル アプリケーションをコンパイルして Xamarin Test Cloud に送信するには必要な手順を説明します。"
-ms.topic: article
+title: Xamarin を使用したチームの市区町村を使用します。
+description: このガイドを使って、TeamCity するモバイル アプリケーションをコンパイルして Xamarin Test Cloud に送信するには必要な手順を説明します。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: caff1fb834ade35e68eb19683e87788a4aa70740
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin を使用したチームの市区町村を使用します。
 
@@ -40,7 +39,7 @@ TeamCity を設定するのには、いくつかの手順があります。
 
 - **A TeamCity プロジェクトの作成**– 前の 3 つの手順を完了するは前に、すべてのメタ データを格納する TeamCity プロジェクトを作成する必要がありますをソース コードを取得、プロジェクトをコンパイルおよび Xamarin Test Cloud テストを送信する必要です。
 
-# <a name="requirements"></a>必要条件
+# <a name="requirements"></a>要件
 
 エクスペリエンスを[Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud)が必要です。
 

@@ -1,18 +1,17 @@
 ---
-title: "クラウド内のファイルを格納します。"
-description: "Azure ストレージは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド記憶域ソリューションです。"
-ms.topic: article
+title: クラウド内のファイルを格納します。
+description: Azure ストレージは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド記憶域ソリューションです。
 ms.prod: xamarin
 ms.assetid: 2C0EDFCE-6DB4-4BF6-B978-E64614AC9DB6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 62057a9c00d2d35cb085421f6f021b20247e64b0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3e44fcc2dfadf6c06e78df956615087a4468d5d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="storing-files-in-the-cloud"></a>クラウド内のファイルを格納します。
 

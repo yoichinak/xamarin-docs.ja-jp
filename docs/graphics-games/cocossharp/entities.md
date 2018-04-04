@@ -1,18 +1,17 @@
 ---
 title: CocosSharp 内のエンティティ
 description: エンティティのパターンは、ゲーム コードを整理する強力な方法です。 読みやすさを向上、維持するため、コードを容易にし、組み込みの親/子の機能を活用します。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: bb4af0f76f6b266cad4eb969d987a346b7396aa9
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 406c416e9bbecb4726793981ae347e0172ab0dbc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="entities-in-cocossharp"></a>CocosSharp 内のエンティティ
 

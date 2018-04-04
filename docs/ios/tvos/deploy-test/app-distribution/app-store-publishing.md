@@ -1,18 +1,17 @@
 ---
-title: "Apple TV のアプリ ストアに発行します。"
-description: "この記事では、構成、ビルド、および Apple TV のアプリ ストア経由で配布用の Xamarin.tvOS アプリを発行する方法を示します。 配布用のアプリを準備する方法、Apple のツールを使用して、レビュー用アプリを送信する方法と、最後に、Apple TV のアプリ ストアにアプリを公開する方法をカバーするステップ バイ ステップ ガイドが含まれています。"
-ms.topic: article
+title: Apple TV のアプリ ストアに発行します。
+description: この記事では、構成、ビルド、および Apple TV のアプリ ストア経由で配布用の Xamarin.tvOS アプリを発行する方法を示します。 配布用のアプリを準備する方法、Apple のツールを使用して、レビュー用アプリを送信する方法と、最後に、Apple TV のアプリ ストアにアプリを公開する方法をカバーするステップ バイ ステップ ガイドが含まれています。
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV のアプリ ストアに発行します。
 
@@ -114,7 +113,7 @@ tvOS を使用して*プロビジョニング プロファイル*に特定のア
 プロビジョニングには、Apple の Web ベース iOS プロビジョニング プロファイルを使用する以下の手順が必要です。
 
 1.  **[プロビジョニング]** > **[配布]** の順に選択します。
-2.  クリックして、  **+** ボタンをクリックし、として作成するディストリビューション プロファイルの種類の選択**Apple TV の App Store**です。
+2.  クリックして、 **+**ボタンをクリックし、として作成するディストリビューション プロファイルの種類の選択**Apple TV の App Store**です。
 3.  配布プロファイルを作成する**アプリ ID** をドロップダウン リストから選択します。
 4.  アプリケーションの署名に必要な証明書を選択します。
 5.  新しい**配布プロファイル**の**名前**を入力して、プロファイルを生成します。
@@ -154,7 +153,7 @@ Xamarin.tvOS アプリを正しく構成されているを確認して、Apple �
     ![](app-store-publishing-images/buildxs01new.png "リリース構成を選択します。")
 2. **[ビルド]** メニューから **[発行のためのアーカイブ]** を選択します。
 
-    [![](app-store-publishing-images/buildxs02new.png "発行用のアーカイブ を選択します。")](app-store-publishing-images/buildxs02new.png#lightbox)
+    [![](app-store-publishing-images/buildxs02new.png "[発行のためのアーカイブ] を選択します")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. アーカイブが作成されると、**[アーカイブ]** ビューが表示されます。
 
     [![](app-store-publishing-images/buildxs03new.png "アーカイブ ビュー")](app-store-publishing-images/buildxs03new.png#lightbox)
@@ -196,7 +195,7 @@ Mac 用の Visual Studio で、アーカイブ ワークフローはアプリケ
 
 2. *[Deliver Your App]\(アプリの配信\)* を選択して、*[選択]* ボタンをクリックします。
 
-    [![](app-store-publishing-images/publishvs01.png "選択、アプリを配信します。")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![](app-store-publishing-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) を選択します")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. 前の手順で作成した IPA ファイルまたは zip ファイルを選択し、**[OK]** ボタンをクリックします。
 4. アプリケーション ローダーはファイルを検証します。

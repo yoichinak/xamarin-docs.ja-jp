@@ -1,17 +1,16 @@
 ---
 title: Backgrounding
-description: "バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、バック グラウンドでタスクを実行するアプリケーションのプロセスです。 このガイドは、バック グラウンドで iOS 処理の概要として機能します。"
-ms.topic: article
+description: バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、バック グラウンドでタスクを実行するアプリケーションのプロセスです。 このガイドは、バック グラウンドで iOS 処理の概要として機能します。
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2bba7c0908fb78ca199cc654adad645afaf47a02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ae3e732008c6503f511dc4be9cad874ecfe1272d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="backgrounding"></a>Backgrounding
 

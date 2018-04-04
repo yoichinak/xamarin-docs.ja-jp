@@ -1,18 +1,17 @@
 ---
-title: "アイスクリーム サウスサンドウィッチ機能"
-description: "この記事では、いくつかの API 使用して、Android 4 - アイスクリーム サウスサンドウィッチ アプリケーション開発者が利用できる新しい機能について説明します。 いくつかの新しいユーザー インターフェイス テクノロジについて説明し、次のさまざまな Android 4 には、アプリケーション間とデバイス間でデータを共有する新しい機能を確認します。"
-ms.topic: article
+title: アイスクリーム サウスサンドウィッチ機能
+description: この記事では、いくつかの API 使用して、Android 4 - アイスクリーム サウスサンドウィッチ アプリケーション開発者が利用できる新しい機能について説明します。 いくつかの新しいユーザー インターフェイス テクノロジについて説明し、次のさまざまな Android 4 には、アプリケーション間とデバイス間でデータを共有する新しい機能を確認します。
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: c2e7f9fabd462faf813299021d5f84ef0a62f790
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3c5412629f6dcd31fb0a82634ef530569eef459a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ice-cream-sandwich-features"></a>アイスクリーム サウスサンドウィッチ機能
 

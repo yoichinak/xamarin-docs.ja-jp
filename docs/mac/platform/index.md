@@ -1,25 +1,24 @@
 ---
-title: "プラットフォームの機能"
-description: "MacOS プラットフォームのキー コンポーネント"
-ms.topic: article
+title: プラットフォーム機能
+description: MacOS プラットフォームのキー コンポーネント
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 3e18863ae91e76325a088c83fc2c11b9d6fa1125
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2bebc42cd3b5db7dba20066e90f294e621b1e4ac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>プラットフォームの機能
+# <a name="platform-features"></a>プラットフォーム機能
 
 このセクションのドキュメントでは、macOS Xamarin.Mac アプリケーションでのキー、プラットフォーム固有の機能の使用について説明します。
 
 
-## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[MacOS Sierra の概要](~/mac/platform/introduction-to-macos-sierra/index.md)
+## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[macOS Sierra の概要](~/mac/platform/introduction-to-macos-sierra/index.md)
 
 macOS Sierra は for mac の Apple のデスクトップ オペレーティング システムの最新のインカーネーション このドキュメントでは、Xamarin.Mac アプリでそれらを実装する方法と、Mac OS X 許可されてからの変更について説明します。
 
@@ -33,7 +32,7 @@ Objective C Mac ライブラリ Xamarin.Mac プロジェクトで使用するた
 OpenTK (「Open ツールキット) は、、下位の高度な c# ライブラリ OpenGL と OpenCL OpenAL の扱いが簡単しますです。 OpenTK は、ゲーム、科学アプリケーションまたはその他の 3 D グラフィックスを必要とするプロジェクト、オーディオや計算の機能を使用できます。 この記事では、Xamarin.Mac アプリで OpenTK の使用の概要を提供します。
 
 
-## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[ストーリー ボードの概要](~/mac/platform/storyboards/index.md)
+## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[ストーリーボードの概要](~/mac/platform/storyboards/index.md)
 
 Xamarin.Mac アプリだけでなく、ウィンドウの定義と、コントロールが含まれていますが、さまざまなウィンドウの間のリンクを含むものユーザー インターフェイスを開発することはストーリー ボード (を介して segues) および状態を表示します。 この記事では、Xamarin.Mac アプリでのストーリー ボードの使用の概要を提供します。
 

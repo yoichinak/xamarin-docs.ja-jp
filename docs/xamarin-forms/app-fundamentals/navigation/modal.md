@@ -1,18 +1,17 @@
 ---
-title: "モーダル ページ"
-description: "Xamarin.Forms はモーダル ページをサポートしています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダルのページに移動する方法を示します。"
-ms.topic: article
+title: モーダル ページ
+description: Xamarin.Forms はモーダル ページをサポートしています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダルのページに移動する方法を示します。
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: b1e67fe355b9a84cc6832441f06c72dcd4c512ad
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 909a04398043a3c2f0c30e4da82d174a6bfaf148
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="modal-pages"></a>モーダル ページ
 
@@ -42,7 +41,7 @@ _Xamarin.Forms は、モーダルのページのサポートを提供します�
 [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/)プロパティも公開、 [ `ModalStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.ModalStack/)プロパティ モーダル スタックでモーダル ページを取得できます。 ただし、モーダル スタックの操作を実行したり、モーダル ナビゲーションで、ルート ページにポップしたりする概念はありません。 これは、これらの操作が基になるプラットフォームで一般にサポートされていないためです。
 
 > [!NOTE]
-> A [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)インスタンスがモーダルのページのナビゲーションを実行する必要はありません。
+> [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) インスタンスは、モーダル ページ ナビゲーションの実行には不要です。
 
 <a name="Pushing_Pages_to_the_Modal_Stack" />
 

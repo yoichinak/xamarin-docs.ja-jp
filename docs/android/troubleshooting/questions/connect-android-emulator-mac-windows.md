@@ -1,17 +1,17 @@
 ---
-title: "Android エミュレーターに接続することから実行している Mac で Windows 仮想マシンですか。"
-ms.topic: article
+title: Android エミュレーターに接続することから実行している Mac で Windows 仮想マシンですか。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2f0ef027d8a2d40ccf85e35d5a85eba4cd7c7ccc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a04258e6056b4572856d4ec05c40effec4e51910
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Android エミュレーターに接続することから実行している Mac で Windows 仮想マシンですか。
 
@@ -34,7 +34,7 @@ Windows 仮想マシンから、Mac で実行されている Google Android エ�
     emulator6 94105 macuser   21u  IPv4 0xa8dacfb1d845a51f      0t0  TCP localhost:5554 (LISTEN)
     ```
 
-    奇数ポートへの接続に使用されるの`adb`します。 関連項目[http://developer.android.com/tools/devices/emulator.html#emulatornetworking](http://developer.android.com/tools/devices/emulator.html#emulatornetworking)です。
+    奇数ポートへの接続に使用されるの`adb`します。 関連項目[ http://developer.android.com/tools/devices/emulator.html#emulatornetworking](http://developer.android.com/tools/devices/emulator.html#emulatornetworking)です。
 
 4.  _オプション 1_: 使用[ `nc` ](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)受信 TCP パケットの転送を外部ポートで受信した 5555 (またはその他の任意のポート) に奇数ポートには、ループバック インターフェイス (**127.0.0.1 5555**この例では)、送信パケットを転送するには、バックアップの他の方法とします。
 
@@ -92,13 +92,13 @@ Windows 仮想マシンから、Mac で実行されている Google Android エ�
 
 ### <a name="alternate-technique-using-adb--h-is-not-yet-supported"></a>別の手法を使用して`adb -H`はまだサポートされていません
 
-理論上は、別の方法としては使用すること`adb`の組み込み機能への接続に、`adb`をリモート コンピューターで実行しているサーバー (例を参照してください[http://stackoverflow.com/a/18551325](http://stackoverflow.com/a/18551325))。
+理論上は、別の方法としては使用すること`adb`の組み込み機能への接続に、`adb`をリモート コンピューターで実行しているサーバー (例を参照してください[ http://stackoverflow.com/a/18551325 ](http://stackoverflow.com/a/18551325))。
 Xamarin.Android IDE の拡張機能はそのオプションを構成する方法提供されていません。
 
 ## <a name="contact-information"></a>連絡先情報
 
 このドキュメントには、2016 年 3 月の時点で現在の動作について説明します。 このドキュメントで説明した手法は、Xamarin の安定したテスト スイートの一部ではないが、今後分割ため。
 
-手法が動作しなくなった、発生した場合、またはドキュメント内の他の誤りがあることを確認する場合は、自由に、次のフォーラム スレッドに関する説明を追加: [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm)です。
+手法が動作しなくなった、発生した場合、またはドキュメント内の他の誤りがあることを確認する場合は、自由に、次のフォーラム スレッドに関する説明を追加: [ http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm)です。
 ありがとうございます。
 

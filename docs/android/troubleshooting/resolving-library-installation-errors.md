@@ -1,18 +1,18 @@
 ---
-title: "ライブラリのインストール エラーを解決します。"
-description: "場合によっては、Android のサポート ライブラリをインストール中にエラーが発生する可能性があります。 このガイドでは、一般的なエラーのいくつかの回避策を提供します。"
-ms.topic: article
+title: ライブラリのインストール エラーを解決します。
+description: 場合によっては、Android のサポート ライブラリをインストール中にエラーが発生する可能性があります。 このガイドでは、一般的なエラーのいくつかの回避策を提供します。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 6f280a90994ff40ebd8a07d2cab49ddc2b3d6ca1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resolving-library-installation-errors"></a>ライブラリのインストール エラーを解決します。
 
@@ -104,7 +104,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    場合、 **m2repository**ダウンロード URL を作成するには付加することによってこのテーブルにアーカイブが表示されていない **https://dl-ssl.google.com/android/repository/** の名前に、 **m2repository**をダウンロードします。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**です。
+    場合、 **m2repository**ダウンロード URL を作成するには付加することによってこのテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/**の名前に、 **m2repository**をダウンロードします。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**です。
 
 2.  上記の表に示すように、ダウンロード URL の対応する MD5 ハッシュをファイルの名前を変更します。 たとえば、ダウンロードした**android\_m2repository\_r25.zip**に名前を変更**0B3F1796C97C707339FB13AE8507AF50.zip**です。 使用することができます、ダウンロードしたファイルのダウンロード URL の MD5 ハッシュがテーブルに表示されない場合、[オンライン MD5 ジェネレーター](http://www.webconfs.com/online-md5-generator.php) MD5 ハッシュ文字列を URL に変換します。 
 

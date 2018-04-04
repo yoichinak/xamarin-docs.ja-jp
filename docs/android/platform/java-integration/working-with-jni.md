@@ -1,18 +1,17 @@
 ---
-title: "JNI の操作"
-description: "Xamarin.Android では、Java ではなく c# 内で Android アプリの作成を許可します。 いくつかのアセンブリが付属して Xamarin.Android Mono.Android.dll や Mono.Android.GoogleMaps.dll など、Java、ライブラリのバインドを提供します。 ただし、考えられるあらゆる Java ライブラリのバインドが指定されていないと、すべての Java 型およびメンバーが提供するバインディングはバインドできません。 バインドされていない Java 型およびメンバーを使用して、Java ネイティブ インターフェイス (JNI) を使用することがあります。 この記事は、JNI を使用して、Java の型および Xamarin.Android アプリケーションからのメンバーと対話する方法を示しています。"
-ms.topic: article
+title: JNI の操作
+description: Xamarin.Android では、Java ではなく c# 内で Android アプリの作成を許可します。 いくつかのアセンブリが付属して Xamarin.Android Mono.Android.dll や Mono.Android.GoogleMaps.dll など、Java、ライブラリのバインドを提供します。 ただし、考えられるあらゆる Java ライブラリのバインドが指定されていないと、すべての Java 型およびメンバーが提供するバインディングはバインドできません。 バインドされていない Java 型およびメンバーを使用して、Java ネイティブ インターフェイス (JNI) を使用することがあります。 この記事は、JNI を使用して、Java の型および Xamarin.Android アプリケーションからのメンバーと対話する方法を示しています。
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 4b5874a0f0e4289201f68299e2e37660cabc9ecf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-jni"></a>JNI の操作
 
@@ -37,7 +36,7 @@ Xamarin.Android で JNI API は、概念的に非常に似ています、 `Syste
 
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 JNI、を通じて公開されていると、 [Android.Runtime.JNIEnv 名前空間](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)は Xamarin.Android のすべてのバージョンで使用できます。
 Java 型およびインターフェイスをバインドするには、Xamarin.Android 4.0 またはそれ以降を使用する必要があります。
@@ -72,7 +71,7 @@ Android の呼び出し可能ラッパーがによって生成される、 **mon
 Android のインターフェイスを実装する必要がある場合があります (など[Android.Content.IComponentCallbacks](https://developer.xamarin.com/api/type/Android.Content.IComponentCallbacks/))。
 
 すべての Android のクラスとインターフェイスを拡張、 [Android.Runtime.IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)インターフェイスです。 したがって、すべての Android の種類を実装する必要があります`IJavaObject`です。
-このファクトの Xamarin.Android を活用&ndash;を使用して`IJavaObject`Java プロキシ (、Android 呼び出し可能ラッパー) で指定したマネージ型の Android を提供します。 **Monodroid.exe**だけを検索`Java.Lang.Object`サブクラス (実装する必要があります`IJavaObject`)、サブクラス`Java.Lang.Object`マネージ コードでインターフェイスを実装する方法を提供します。 例:
+このファクトの Xamarin.Android を活用&ndash;を使用して`IJavaObject`Java プロキシ (、Android 呼び出し可能ラッパー) で指定したマネージ型の Android を提供します。 **Monodroid.exe**だけを検索`Java.Lang.Object`サブクラス (実装する必要があります`IJavaObject`)、サブクラス`Java.Lang.Object`マネージ コードでインターフェイスを実装する方法を提供します。 例えば:
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -1443,7 +1442,7 @@ Java の型と、2 つのいずれかが[java.lang.Thread.State](http://develope
 型の参照は、配列型の参照と JNI 署名に使用されます。
 
 型の参照を取得する追加の方法がの出力の読み取りを`'javap -s -classpath android.jar fully.qualified.Java.Name'`です。
-種類に応じて、関連するコンス トラクターの宣言やも使用できますメソッドが JNI 名を特定の型を返します。 例:
+種類に応じて、関連するコンス トラクターの宣言やも使用できますメソッドが JNI 名を特定の型を返します。 例えば:
 
 ```shell
 $ javap -classpath android.jar -s java.lang.Thread.State

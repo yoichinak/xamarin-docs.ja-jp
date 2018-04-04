@@ -1,17 +1,16 @@
 ---
-title: "新しい検索 Api"
-description: "この記事では、Api を使用して、新しいアプリ検索 iOS 9 によって提供される情報と、Xamarin.iOS アプリ内の機能を検索できるようにするについて説明します。"
-ms.topic: article
+title: 新しい検索 Api
+description: この記事では、Api を使用して、新しいアプリ検索 iOS 9 によって提供される情報と、Xamarin.iOS アプリ内の機能を検索できるようにするについて説明します。
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6ec8cb9b6fdb391afcb8f9baaa641da5aec38f6d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5dcd3d9665befaa82fd0f5677a4a662f633ed45b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="new-search-apis"></a>新しい検索 Api
 

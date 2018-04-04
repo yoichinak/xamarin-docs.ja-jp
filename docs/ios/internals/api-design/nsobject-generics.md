@@ -1,17 +1,16 @@
 ---
-title: "NSObject の汎用サブクラス"
-ms.topic: article
+title: NSObject の汎用サブクラス
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 76c35cfb993bade324b25f86e75db7eb028a7399
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 89df751d74b9b54ae8138d2e1b24c61d82c3cac8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="generic-subclasses-of-nsobject"></a>NSObject の汎用サブクラス
 
@@ -118,7 +117,7 @@ class Generic<T> : NSObject where T : NSObject
 
 これは Objective C には、ジェネリック型の概念がないと、作成する場合は、正確なジェネリック型を指定できないために発生します。
 
-この問題は、ジェネリック型の特殊なサブクラスを作成することで回避できます。   例:
+この問題は、ジェネリック型の特殊なサブクラスを作成することで回避できます。   例えば:
     
 ```
 class Generic<T> : NSObject where T : NSObject

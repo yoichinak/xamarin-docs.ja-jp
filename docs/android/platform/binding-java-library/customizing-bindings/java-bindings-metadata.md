@@ -1,18 +1,17 @@
 ---
-title: "Java バインディング メタデータ"
-description: "Xamarin.Android で c# コードでは、Java ネイティブ インターフェイス (JNI) で指定されている低レベルの詳細を抽象化するメカニズムのバインディングを介して Java ライブラリを呼び出します。 Xamarin.Android は、これらのバインディングを生成するツールを提供します。 このツールは、により、プロシージャは名前空間、およびメンバーの名前を変更するなどのメタデータを使用してバインディングを作成する方法、開発者のコントロールを付与します。 このドキュメントのメタデータの動作方法について説明します、属性をそのメタデータをまとめたものをサポートしているし、このメタデータの変更によるバインドの問題を解決する方法について説明します。"
-ms.topic: article
+title: Java バインディング メタデータ
+description: Xamarin.Android で c# コードでは、Java ネイティブ インターフェイス (JNI) で指定されている低レベルの詳細を抽象化するメカニズムのバインディングを介して Java ライブラリを呼び出します。 Xamarin.Android は、これらのバインディングを生成するツールを提供します。 このツールは、により、プロシージャは名前空間、およびメンバーの名前を変更するなどのメタデータを使用してバインディングを作成する方法、開発者のコントロールを付与します。 このドキュメントのメタデータの動作方法について説明します、属性をそのメタデータをまとめたものをサポートしているし、このメタデータの変更によるバインドの問題を解決する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 6dea13fcda43cad22b8bea9838bbcb23b97820c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-bindings-metadata"></a>Java バインディング メタデータ
 
@@ -246,7 +245,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>難読化
 
-Java ライブラリを難読化ツール Xamarin.Android バインディング ジェネレーターと c# のラッパー クラスを生成するには、その機能に影響します。 難読化されたクラスの特性を含める: * クラス名が含まれています、  **$** 、つまり**$.class** * クラス名が完全セキュリティが侵害の小文字、つまり**a.class**
+Java ライブラリを難読化ツール Xamarin.Android バインディング ジェネレーターと c# のラッパー クラスを生成するには、その機能に影響します。 難読化されたクラスの特性を含める: * クラス名が含まれています、 **$**、つまり**$.class** * クラス名が完全セキュリティが侵害の小文字、つまり**a.class**
 
 このスニペットは、C# の場合、「難読化されていない」型を生成する方法の例を示します。
 

@@ -1,18 +1,17 @@
 ---
-title: "フィンガー プリントを登録します。"
-description: "設定する方法は、画面のロックをセットアップし、Android デバイスまたはエミュレーターに指紋を登録します。"
-ms.topic: article
+title: フィンガー プリントを登録します。
+description: 設定する方法は、画面のロックをセットアップし、Android デバイスまたはエミュレーターに指紋を登録します。
 ms.prod: xamarin
 ms.assetid: 52092F63-00EE-4F8B-A49F-65C9CCBA7EF2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 20e6d693f2a3eba54afaf1d3c7054ad75d7a7610
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4faee5decb102d17d9a270b96cef4a12fc9dbef4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="enrolling-a-fingerprint"></a>フィンガー プリントを登録します。
 
@@ -20,7 +19,7 @@ ms.lasthandoff: 03/09/2018
 
 デバイスは、指紋認証で既に構成されている場合は、指紋認証を利用する Android アプリケーションのみです。 このガイドでは、Android デバイスまたはエミュレーターにフィンガー プリントを登録する方法を説明します。 エミュレーターはありません指紋スキャンを実行する実際のハードウェアが (後述) Android Debug Bridge を利用して指紋スキャンをシミュレートすることができます。  このガイドでは、Android デバイスで画面のロックを有効にして、認証のフィンガー プリントを登録する方法を説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 フィンガー プリントを登録するには、Android デバイスまたはエミュレーターを API level 23 (Android 6.0) を実行しているが必要です。
 

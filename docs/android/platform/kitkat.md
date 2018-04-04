@@ -1,18 +1,17 @@
 ---
-title: "KitKat 機能"
-description: "Android 4.4 (KitKat) は、ユーザーおよび開発者向けの機能の cornucopia で読み込まれたものです。 このガイドでは、これらの機能のいくつかが強調表示され、コード例と KitKat を最大限に活用するための実装の詳細を提供します。"
-ms.topic: article
+title: KitKat 機能
+description: Android 4.4 (KitKat) は、ユーザーおよび開発者向けの機能の cornucopia で読み込まれたものです。 このガイドでは、これらの機能のいくつかが強調表示され、コード例と KitKat を最大限に活用するための実装の詳細を提供します。
 ms.prod: xamarin
 ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 8fbb3f73fdc09f953ad5f7134020c1555d000d28
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3c3eafc8dc18113080dd6c906025556292c43e1c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="kitkat-features"></a>KitKat 機能
 
@@ -33,7 +32,7 @@ Android 4.4 (API レベル 19) とも呼ばれる"KitKat"は、遅延 2013 で�
 
 このガイドでは、Xamarin.Android 開発者向けを KitKat の概要をできるだけでなく、KitKat 既存 Xamarin.Android アプリケーションへの移行に関するガイダンスを提供します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin.Android を KitKat を使用してアプリケーションを開発する必要があります*Xamarin.Android 4.11.0*または高い値と Android 4.4 (API レベル 19) で次のスクリーン ショットに示すように、Android SDK Manager を使用してをインストールします。
 

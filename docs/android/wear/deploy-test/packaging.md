@@ -1,17 +1,16 @@
 ---
-title: "消耗アプリのパッケージ化"
-ms.topic: article
+title: 消耗アプリのパッケージ化
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: a3eb5cd5b4202db8c58870c2b2c679b47f79d4aa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af96c0f8cf862b7a208beb5b91ecbb30598b09d9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="packaging-wear-apps"></a>消耗アプリのパッケージ化
 
@@ -48,7 +47,7 @@ Xamarin Android 5.0 以降では、消耗アプリは自動的にパッケージ
 -----
 
 
-表示されることに注意してください、 **XA5211**消耗アプリのパッケージ名が、パッケージ アプリの名前、ハンドヘルドと一致しない場合はエラーです。 例:
+表示されることに注意してください、 **XA5211**消耗アプリのパッケージ名が、パッケージ アプリの名前、ハンドヘルドと一致しない場合はエラーです。 例えば:
 
 ```shell
 Error XA5211: Embedded wear app package name differs from handheld 
@@ -63,7 +62,7 @@ app package name (com.companyname.mywearapp != com.companyname.myapp). (XA5211)
 
 -   パッケージ名前と一致していることを確認します。 
 
--   XML を生成し、これをアプリに関連付けて、消耗ハンドヘルド プロジェクトに追加します。 例: 
+-   XML を生成し、これをアプリに関連付けて、消耗ハンドヘルド プロジェクトに追加します。 例えば: 
 
     ```xml
     <!-- Handheld (Phone) Project.csproj -->

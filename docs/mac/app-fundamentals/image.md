@@ -1,18 +1,17 @@
 ---
-title: "イメージ"
-description: "この記事では、イメージやアイコン Xamarin.Mac アプリケーションでの操作について説明します。 作成し、アプリケーションのアイコンを作成するために必要し、c# コードと Xcode のインターフェイスのビルダーの両方でイメージを使用して、イメージの管理について説明します。"
-ms.topic: article
+title: イメージ
+description: この記事では、イメージやアイコン Xamarin.Mac アプリケーションでの操作について説明します。 作成し、アプリケーションのアイコンを作成するために必要し、c# コードと Xcode のインターフェイスのビルダーの両方でイメージを使用して、イメージの管理について説明します。
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dc33dc78c09c0b5b7cb7533afdd2f95b8ebd9c4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images"></a>イメージ
 
@@ -46,7 +45,7 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 - **[Deprecated] メイン プロジェクト ツリー** -イメージは、プロジェクト ツリーに直接追加することができます。 メイン プロジェクト ツリーをコードからに格納されているイメージを呼び出すときにフォルダーの場所が指定されていません。 たとえば、`NSImage image = NSImage.ImageNamed("tags.png");` のように指定します。 
 - **[Deprecated] のリソース フォルダー** -特殊**リソース**フォルダーは、画像 (またはその他のイメージやファイル、開発者、アイコン、画面の起動または一般的ななど、アプリケーションの一部となるすべてのファイルがバンドル 's のしようとする追加) します。 格納されているイメージを呼び出すときに、**リソース**コードからフォルダーをメイン プロジェクト ツリーに格納されているイメージと同様、フォルダーの場所が指定されていません。 たとえば、`NSImage.ImageNamed("tags.png")` のように指定します。
 - **カスタムのフォルダーまたは [deprecated] サブフォルダー** -開発者がプロジェクトのソース ツリーにカスタム フォルダーを追加およびがあるイメージを格納します。 ファイルを追加する場所は、プロジェクトを整理するためのサブフォルダーに入れ子にすることができます。 たとえば、開発者が追加された場合、`Card`フォルダーをプロジェクトとのサブ フォルダーに`Hearts`そのフォルダーにイメージを格納し、 **Jack.png**で、`Hearts`フォルダー、`NSImage.ImageNamed("Card/Hearts/Jack.png")`でイメージの読み込みがランタイム。
-- **[優先] アセット カタログのイメージ セット**- 追加の OS X 許可されて、**アセット カタログのイメージ セット**を含むすべてのバージョンをさまざまなデバイスをサポートし、規模の要素のために必要なイメージの表現、アプリケーション。 イメージの資産ファイル名ではなく (**@1x**、  **@2x** )。
+- **[優先] アセット カタログのイメージ セット**- 追加の OS X 許可されて、**アセット カタログのイメージ セット**を含むすべてのバージョンをさまざまなデバイスをサポートし、規模の要素のために必要なイメージの表現、アプリケーション。 イメージの資産ファイル名ではなく (**@1x**、 **@2x**)。
 
 <a name="asset-catalogs" />
 
@@ -68,7 +67,7 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 
     [![名前を設定、画像を編集](image-images/imageset04.png "名の設定、画像の編集")](image-images/imageset04-large.png#lightbox)
     
-特殊な**ベクター**クラスに追加された**イメージ セット**を含めることができます、 _PDF_形式の代わりに個々 のビットマップ ファイルを含む casset でベクター イメージ別の解像度。 1 つのベクトル ファイルを指定するためにこのメソッドを使用して、  **@1x**  (ベクター PDF ファイル形式) の解決と **@2x** と **@3x** のバージョンのファイルがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
+特殊な**ベクター**クラスに追加された**イメージ セット**を含めることができます、 _PDF_形式の代わりに個々 のビットマップ ファイルを含む casset でベクター イメージ別の解像度。 1 つのベクトル ファイルを指定するためにこのメソッドを使用して、 **@1x** (ベクター PDF ファイル形式) の解決と**@2x**と**@3x**のバージョンのファイルがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
 
 [![イメージ エディターのインターフェイスを設定する](image-images/imageset05.png "イメージ エディターのインターフェイスを設定します。")](image-images/imageset05-large.png#lightbox)
 
@@ -142,7 +141,7 @@ Xamarin.Mac アプリケーションで、ソース イメージとして、png�
 イメージのバージョンの標準と高解像度バージョンを作成するときに、このイメージのペアの名前付け規則、Xamarin.Mac プロジェクトに含めるときに従います。
 
 - **標準解像度**  - **ImageName.filename 拡張子**(例: **tags.png**)
-- **高解像度**  -   **ImageName@2x.filename-extension**  (例:  **tags@2x.png** )
+- **高解像度**  -  **ImageName@2x.filename-extension** (例: **tags@2x.png**)
 
 プロジェクトに追加すると、次のような。
 
@@ -150,7 +149,7 @@ Xamarin.Mac アプリケーションで、ソース イメージとして、png�
 
 内のファイルを選択するイメージがインターフェイスのビルダーでの UI 要素に割り当てられたときにだけが、 _ImageName_**.**_ファイル名拡張子_形式 (例: **tags.png**)。 同じイメージを使用して、c# コードを選択する内のファイル、 _ImageName_**.**_ファイル名拡張子_形式です。
 
-Mac では、する Xamarin.Mac アプリケーションを実行すると、 _ImageName_**.**_ファイル名拡張子_形式の画像は標準の解像度表示に使用される、  **ImageName@2x.filename-extension** は、イメージが自動的に取得する mac コンピューターの基本 Retina ディスプレイです。
+Mac では、する Xamarin.Mac アプリケーションを実行すると、 _ImageName_**.**_ファイル名拡張子_形式の画像は標準の解像度表示に使用される、 **ImageName@2x.filename-extension**は、イメージが自動的に取得する mac コンピューターの基本 Retina ディスプレイです。
 
 
 ## <a name="using-images-in-interface-builder"></a>インターフェイスのビルダーでのイメージの使用
@@ -176,7 +175,7 @@ Mac では、する Xamarin.Mac アプリケーションを実行すると、 _I
      ![ツール バー エディターに表示されるイメージ](image-images/ib04.png "ツール バー エディターに表示されるイメージ")
 6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
-上記の手順は、イメージのプロパティで設定するのには、すべての UI 要素について作業、**属性インスペクター**です。 ここでも、選択した場合、  **@2x** イメージ ファイルのバージョンは、これは自動的に使用する Retina ディスプレイ ベース Mac。
+上記の手順は、イメージのプロパティで設定するのには、すべての UI 要素について作業、**属性インスペクター**です。 ここでも、選択した場合、 **@2x**イメージ ファイルのバージョンは、これは自動的に使用する Retina ディスプレイ ベース Mac。
 
 > [!IMPORTANT]
 > イメージがで使用できない場合、**イメージ名**ドロップダウン リストで、プロジェクトを閉じて、.storyboard Xcode で、後で再び開くから Visual Studio for mac イメージをまだ使用できない場合いることを確認、**ビルド アクション**は`BundleResource`イメージに追加されたことと、**リソース**フォルダーです。
@@ -189,7 +188,7 @@ Mac では、する Xamarin.Mac アプリケーションを実行すると、 _I
 NSImage image = NSImage.ImageNamed("tags.png");
 ```
 
-上記の例では、静的な`ImageNamed("...")`のメソッド、`NSImage`からメモリに指定されたイメージの読み込みにクラス、**リソース**フォルダーで、イメージが見つからない場合`null`が返されます。 インターフェイス ビルダーでは、割り当てられているイメージを選択した場合と同様に、  **@2x** イメージ ファイルのバージョンは、これは自動的に使用する Retina ディスプレイ ベース Mac。
+上記の例では、静的な`ImageNamed("...")`のメソッド、`NSImage`からメモリに指定されたイメージの読み込みにクラス、**リソース**フォルダーで、イメージが見つからない場合`null`が返されます。 インターフェイス ビルダーでは、割り当てられているイメージを選択した場合と同様に、 **@2x**イメージ ファイルのバージョンは、これは自動的に使用する Retina ディスプレイ ベース Mac。
 
 アプリケーションのバンドル (Mac ファイル システム) からの外部でイメージを読み込むには、次のコードを使用します。
 
@@ -247,7 +246,7 @@ MyIcon.Image = ImageTintedWithColor (MyIcon.Image, NSColor.Red);
 
 ## <a name="using-images-with-table-views"></a>テーブル ビューでのイメージの使用
 
-内のセルの一部として画像を含める、 `NSTableView`、データをテーブル ビューのによって返される方法を変更する必要があります`NSTableViewDelegate's``GetViewForItem`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例:
+内のセルの一部として画像を含める、 `NSTableView`、データをテーブル ビューのによって返される方法を変更する必要があります`NSTableViewDelegate's``GetViewForItem`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例えば:
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -345,7 +344,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 ## <a name="using-images-with-outline-views"></a>アウトライン ビューでのイメージの使用
 
-内のセルの一部として画像を含める、 `NSOutlineView`、アウトライン表示のによってデータが返される方法を変更する必要があります`NSTableViewDelegate's``GetView`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例:
+内のセルの一部として画像を含める、 `NSOutlineView`、アウトライン表示のによってデータが返される方法を変更する必要があります`NSTableViewDelegate's``GetView`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例えば:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {

@@ -1,18 +1,17 @@
 ---
-title: "パン ジェスチャ レコグナイザーを追加します。"
-description: "パン ジェスチャでは、ドラッグすることを検出するために使用され、PanGestureRecognizer クラスに実装されます。 パン ジェスチャの一般的なシナリオは水平方向および垂直方向にドラッグ イメージようにするイメージの大きさよりも小さいビューポートに表示されているときに、すべてのイメージのコンテンツ表示できます。 これは、ビューポート内の画像を移動することによって実現し、は、この記事で説明します。"
-ms.topic: article
+title: パン ジェスチャ レコグナイザーを追加します。
+description: パン ジェスチャでは、ドラッグすることを検出するために使用され、PanGestureRecognizer クラスに実装されます。 パン ジェスチャの一般的なシナリオは水平方向および垂直方向にドラッグ イメージようにするイメージの大きさよりも小さいビューポートに表示されているときに、すべてのイメージのコンテンツ表示できます。 これは、ビューポート内の画像を移動することによって実現し、は、この記事で説明します。
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 4da42a92c83dcc1ec0b0ba2528de672e3fcf3be3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ed38f7ace9e11b009aae768cda2d4af0f36c337e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ レコグナイザーを追加します。
 

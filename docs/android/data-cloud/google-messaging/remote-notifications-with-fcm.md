@@ -1,18 +1,17 @@
 ---
-title: "リモート Firebase 通知クラウド メッセージング"
-description: "このチュートリアルでは、アプリケーションで Xamarin.Android Firebase Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれる) を実装する方法の詳細な手順についてを提供します。 Firebase クラウド メッセージング (FCM) との通信に必要な FCM へのアクセス用の Android のマニフェストを構成する方法の例を示しますおよびダウン ストリームを使用してメッセージング、Firebase について説明するさまざまなクラスを実装する方法を示していますコンソールです。"
-ms.topic: article
+title: リモート Firebase 通知クラウド メッセージング
+description: このチュートリアルでは、アプリケーションで Xamarin.Android Firebase Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれる) を実装する方法の詳細な手順についてを提供します。 Firebase クラウド メッセージング (FCM) との通信に必要な FCM へのアクセス用の Android のマニフェストを構成する方法の例を示しますおよびダウン ストリームを使用してメッセージング、Firebase について説明するさまざまなクラスを実装する方法を示していますコンソールです。
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 7e107fc9ced62027bc793c97a388344d74becd66
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート Firebase 通知クラウド メッセージング
 
@@ -34,7 +33,7 @@ _このチュートリアルでは、アプリケーションで Xamarin.Android
 
 このチュートリアルでは増分機能を追加する**FCMClient**し、デバイスまたは FCM との対話方法を理解するためのエミュレーターで実行します。 ライブ アプリ トランザクション FCM サーバーとミラーリング監視サーバーにログ記録を使用して、Firebase コンソール通知 GUI に入力された FCM メッセージからの通知を生成する方法が観察します。 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスは」で説明されて[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)です。 具体的には、ダウンロードする必要があります、 **google services.json**このチュートリアルで示すサンプル コードで使用するファイル。 かどうかはまだ作成していないプロジェクト Firebase コンソールで (まだダウンロードしていない場合や、 **google services.json**ファイル) を参照してください[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)です。 
 

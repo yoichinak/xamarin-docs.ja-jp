@@ -1,18 +1,17 @@
 ---
-title: "マップ"
-description: "iOS には、フレームワークで、簡単に追加するアプリケーションにマップされて MapKit が含まれています。 IOS アプリケーションは、マップ キットを使用して、パン、ズーム、地図上のユーザーの場所と重ね順の豊富なグラフィックスの表示などの機能をサポートする対話型のマップを追加できます。 いくつかのアプリケーションに地理的な機能を構築するように利用する方法を示す、マップ キットの機能について詳しく説明この記事の内容"
-ms.topic: article
+title: マップ
+description: iOS には、フレームワークで、簡単に追加するアプリケーションにマップされて MapKit が含まれています。 IOS アプリケーションは、マップ キットを使用して、パン、ズーム、地図上のユーザーの場所と重ね順の豊富なグラフィックスの表示などの機能をサポートする対話型のマップを追加できます。 いくつかのアプリケーションに地理的な機能を構築するように利用する方法を示す、マップ キットの機能について詳しく説明この記事の内容
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3fecf17a4f70e44ca169c825bf0dd34a5127cec8
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="maps"></a>マップ
 

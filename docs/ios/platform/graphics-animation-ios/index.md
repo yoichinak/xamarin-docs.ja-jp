@@ -1,17 +1,16 @@
 ---
-title: "グラフィックスおよび iOS でのアニメーション"
-description: "中核となるアプリケーションの概念"
-ms.topic: article
+title: グラフィックスおよび iOS でのアニメーション
+description: 中核となるアプリケーションの概念
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ece988f2ba29ec4656631d993e4c4b99a276b199
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 99c05efa13027aca4935425d2a731613f250ec93
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="graphics-and-animation-in-ios"></a>グラフィックスおよび iOS でのアニメーション
 
@@ -22,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 CoreImage は、さまざまな組み込みのフィルターと画像とビデオ、顔の検出などに適用する効果を提供する iOS 5 で導入された新しいフレームワークです。
 
-##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[コア グラフィック](~/ios/platform/graphics-animation-ios/core-graphics.md)
+##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[コア グラフィックス](~/ios/platform/graphics-animation-ios/core-graphics.md)
 
 この記事では、低レベルの描画サポートを提供するコア グラフィック iOS フレームワークについて説明します。 コア グラフィックスを使用して、geometry、イメージ、および Pdf を描画する方法を示します。
 

@@ -1,18 +1,17 @@
 ---
-title: "Java の統合の概要"
-description: "Java のエコシステムには、コンポーネントの多様なと非常に多くのコレクションが含まれています。 これらのコンポーネントの多くを Android アプリケーションの開発にかかる時間を減らすために使用できます。 このドキュメントは紹介し、開発者がその Xamarin.Android アプリケーションの開発エクスペリエンスを向上させるためにこれら既存の Java コンポーネントを使用する方法のいくつかの概要を説明します。"
-ms.topic: article
+title: Java の統合の概要
+description: Java のエコシステムには、コンポーネントの多様なと非常に多くのコレクションが含まれています。 これらのコンポーネントの多くを Android アプリケーションの開発にかかる時間を減らすために使用できます。 このドキュメントは紹介し、開発者がその Xamarin.Android アプリケーションの開発エクスペリエンスを向上させるためにこれら既存の Java コンポーネントを使用する方法のいくつかの概要を説明します。
 ms.prod: xamarin
 ms.assetid: 7B5B8695-1C49-19BF-AE99-948CDCBD2A20
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dbaf17479ae077fced425df5ac31bdbbc4e06b64
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-integration-overview"></a>Java の統合の概要
 

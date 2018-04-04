@@ -1,7 +1,6 @@
 ---
-title: "Oreo 機能"
-description: "Android の最新バージョンのアプリを開発する Xamarin.Android を使用して作業を開始する方法。"
-ms.topic: article
+title: Oreo 機能
+description: Android の最新バージョンのアプリを開発する Xamarin.Android を使用して作業を開始する方法。
 ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
@@ -9,11 +8,11 @@ ms.custom: video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 03be7b624ffa9dd8774f291b96be27499cccab2b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a7a8a96ff22cf02d04ffdfff684d454d1a28024
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -26,7 +25,7 @@ _Android の最新バージョンのアプリを開発する Xamarin.Android を
 この記事は、Android の 8.0 Oreo 用 Xamarin.Android アプリの開発を開始するために構成されます。 これには、必要な更新プログラムをインストール、SDK を構成およびテスト用エミュレーター (またはデバイス) を作成する方法について説明します。 また、Android Oreo 機能 Xamarin.Android アプリで使用する方法を説明するサンプル アプリへのリンクを Android 8.0 Oreo の新機能の概要を示します。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 次が機能を使用する Android Oreo Xamarin ベースのアプリに必要です。
 
@@ -85,7 +84,7 @@ Xamarin.Android 8.0 でプロジェクトを作成する必要があります最
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. SDK Manager を開始 (Visual Studio で、[**ツール > Android > Android SDK Manager**)。
+1. SDK Manager を開始 (Visual Studio で、**ツール > Android > Android SDK Manager**)。
 
 2. インストール、 **Android 8.0 - Oreo**パッケージです。 Android SDK エミュレーターを使用している場合を必ず含めて、 **x86**システム イメージを必要があります。
 
@@ -97,7 +96,7 @@ Xamarin.Android 8.0 でプロジェクトを作成する必要があります最
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. SDK Manager を開始 (Mac を Visual Studio で [**ツール > SDK Manager**)。
+1. SDK Manager を開始 (Mac を Visual Studio で **ツール > SDK Manager**)。
 
 2. インストール、 **Android 8.0 - Oreo** SDK パッケージです。 Android SDK エミュレーターを使用している場合を必ず含めて、 **x86**システム イメージを必要があります。
 

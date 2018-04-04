@@ -1,18 +1,17 @@
 ---
-title: "コレクション ビューの操作"
-description: "この記事では、設計と Xamarin.tvOS アプリ内でコレクション ビューの操作について説明します。"
-ms.topic: article
+title: コレクション ビューの操作
+description: この記事では、設計と Xamarin.tvOS アプリ内でコレクション ビューの操作について説明します。
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f943d6b88d2fd7f38759fb32ecb612e102266657
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-collection-views"></a>コレクション ビューの操作
 
@@ -61,7 +60,7 @@ _この記事では、設計と Xamarin.tvOS アプリ内でコレクション �
 - `DequeueReusableCell` -作成または指定されているアプリのストーリー ボードで) 指定された型のセルを取得します。
 - `DequeueReusableSupplementaryView` -作成または指定されているアプリのストーリー ボードで) 指定された型の補助ビューを取得します。
 
-これらのメソッドのいずれかを呼び出す前に、クラスを登録する必要がありますストーリー ボードまたは`.xib`ファイル コレクション ビューを持つセルのビューを作成するために使用します。 例:
+これらのメソッドのいずれかを呼び出す前に、クラスを登録する必要がありますストーリー ボードまたは`.xib`ファイル コレクション ビューを持つセルのビューを作成するために使用します。 例えば:
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -104,7 +103,7 @@ Xamarin.tvOS アプリでは、コレクション ビューを使用する最も
 1. 既存のビューにイメージの表示、ラベル、およびボタンを追加し、次のようにするように構成します。 
 
     [![](collection-views-images/collection02.png "サンプルのレイアウト")](collection-views-images/collection02.png#lightbox)
-1. 割り当てる、**名前**イメージ ビューとのラベルに、**ウィジェット タブ**の**プロパティ エクスプ ローラー**です。 例: 
+1. 割り当てる、**名前**イメージ ビューとのラベルに、**ウィジェット タブ**の**プロパティ エクスプ ローラー**です。 例えば: 
 
     [![](collection-views-images/collection03.png "名の設定")](collection-views-images/collection03.png#lightbox)
 1. 次に、コレクション ビューのコント ローラーをストーリー ボード上にドラッグします。 
@@ -144,7 +143,7 @@ Xamarin.tvOS アプリでは、コレクション ビューを使用する最も
 1. 既存のビューにイメージの表示、ラベル、およびボタンを追加し、次のようにするように構成します。 
 
     [![](collection-views-images/collection02vs.png "レイアウトを構成します。")](collection-views-images/collection02vs.png#lightbox)
-1. 割り当てる、**名前**イメージ ビューとのラベルに、**ウィジェット タブ**の**プロパティ エクスプ ローラー**です。 例: 
+1. 割り当てる、**名前**イメージ ビューとのラベルに、**ウィジェット タブ**の**プロパティ エクスプ ローラー**です。 例えば: 
 
     [![](collection-views-images/collection03vs.png "プロパティ エクスプ ローラー")](collection-views-images/collection03vs.png#lightbox)
 1. 次に、コレクション ビューのコント ローラーをストーリー ボード上にドラッグします。 

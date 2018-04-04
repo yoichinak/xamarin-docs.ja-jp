@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Mac アーキテクチャ"
-description: "このガイドでは、低レベルで OBJECTIVE-C に Xamarin.Mac との関係について説明します。 これには、コンパイル、セレクター、レジストラー、アプリの起動、およびコード ジェネレーターなどの概念について説明します。"
-ms.topic: article
+title: Xamarin.Mac アーキテクチャ
+description: このガイドでは、低レベルで OBJECTIVE-C に Xamarin.Mac との関係について説明します。 これには、コンパイル、セレクター、レジストラー、アプリの起動、およびコード ジェネレーターなどの概念について説明します。
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 5e32a06499d68c58bedbe88b24dc40b6c86ee8d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d6d7557fed5ea0ca0719dcbddbda316340645320
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin.Mac アーキテクチャ
 
@@ -32,7 +31,7 @@ Xamarin.Mac アプリケーションでは、Mono 実行環境内で実行し、
 
 ネイティブ コードには (たとえば、OBJECTIVE-C または ARM チップでは、偶数のコンパイル AOT コード) は、特定のプラットフォームでネイティブに実行されます。 このガイドにアクセスすることも中にバインディングを使用して、Apple の Mac Api の使用を増加させるマネージ コードのネイティブ コードにコンパイルされ、Xamarin.Mac アプリケーションの動作方法について説明しますについて説明します。NET の BCL と c# などの高度な言語です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin.Mac を使って macOS アプリケーションを開発するには、以下のものが必要です。
 

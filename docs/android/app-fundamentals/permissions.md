@@ -1,17 +1,16 @@
 ---
 title: Permissions In Xamarin.Android
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/09/2018
-ms.openlocfilehash: 39ee7f826d4c775ead679a09ce56a7c0f92b60ed
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: b8a8005c69c8aaee5d92bdabb3429bd52fc76b4a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="permissions-in-xamarinandroid"></a>Permissions In Xamarin.Android
 
@@ -54,7 +53,7 @@ Android のサポート ライブラリ backports Android の以前のバージ�
 
 <a name="requirements" />
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin.Android プロジェクトが含まれていることを強くお勧め、 [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) NuGet パッケージです。 このパッケージは移植権限が提供する 1 つの一般的な Android の古いバージョンを特定の Api インターフェイスは、常にする必要はありませんは、Android でアプリが実行されているのバージョンを確認します。
 

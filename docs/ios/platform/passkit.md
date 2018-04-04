@@ -1,18 +1,17 @@
 ---
 title: PassKit
-description: "ウォレットを格納し、バーコードと '現実の世界' でそれらの電話に顧客のトランザクションをリンクするその他の情報を表示するシステムの iOS アプリです。"
-ms.topic: article
+description: ウォレットを格納し、バーコードと '現実の世界' でそれらの電話に顧客のトランザクションをリンクするその他の情報を表示するシステムの iOS アプリです。
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -25,7 +24,7 @@ _ウォレットを格納し、バーコードと '現実の世界' でそれら
  [![](passkit-images/image1.png "スマート フォン上のすべてのパスを分類して格納、ウォレット")](passkit-images/image1.png#lightbox)
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このドキュメントで説明するストア キット機能は、iOS 6 および Xamarin.iOS 6.0 と共に、Xcode 4.5 が必要です。
 
@@ -238,7 +237,7 @@ App Store を入力するパスの順序では、開発者アカウントをリ�
 
 それぞれに渡す型 ID を設定するには、まず_型_のサポートされるパス。 ID を渡す (または型を渡す識別子) は、パスの一意の識別子を作成します。 この ID は証明書を使用して、開発者アカウントでパスをリンクを使用します。
 
-1. [IOS プロビジョニング ポータルの「証明書識別子、およびプロファイル](https://developer.apple.com/account/overview.action)、に移動**識別子**選択**型 Id を渡す**です。 選択し、  **+** パスの種類を作成するにはボタン: [ ![ ](passkit-images/passid.png "新しいパスの種類を作成します。")](passkit-images/passid.png#lightbox)
+1. [IOS プロビジョニング ポータルの「証明書識別子、およびプロファイル](https://developer.apple.com/account/overview.action)、に移動**識別子**選択**型 Id を渡す**です。 選択し、 **+**パスの種類を作成するにはボタン: [ ![ ](passkit-images/passid.png "新しいパスの種類を作成します。")](passkit-images/passid.png#lightbox)
 
 2.   提供、**説明**(名) と**識別子**(一意の文字列) のパス。 型 Id を渡すすべてが文字列で始まる必要がありますを`pass.`使用して、この例では`pass.com.xamarin.coupon.banana`: [ ![ ](passkit-images/register.png "説明と識別子を指定")](passkit-images/register.png#lightbox)
 

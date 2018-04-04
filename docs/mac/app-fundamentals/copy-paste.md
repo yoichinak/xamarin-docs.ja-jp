@@ -1,18 +1,17 @@
 ---
-title: "コピーして貼り付ける"
-description: "この記事では、コピーを提供し、Xamarin.Mac アプリケーションに貼り付けますペーストの扱いについて説明します。 作業する方法を示しますの複数のアプリと特定のアプリ内のカスタム データをサポートする方法の間で共有できる標準データ型。"
-ms.topic: article
+title: コピーして貼り付ける
+description: この記事では、コピーを提供し、Xamarin.Mac アプリケーションに貼り付けますペーストの扱いについて説明します。 作業する方法を示しますの複数のアプリと特定のアプリ内のカスタム データをサポートする方法の間で共有できる標準データ型。
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="copy-and-paste"></a>コピーして貼り付ける
 
@@ -541,7 +540,7 @@ void PasteImage (NSObject sender)
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-呼び出して、`ImageDocument`および貼り付け操作をコピーを処理するには、そのウィンドウのクラスのインスタンス。 例: 
+呼び出して、`ImageDocument`および貼り付け操作をコピーを処理するには、そのウィンドウのクラスのインスタンス。 例えば: 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -703,7 +702,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 コピー操作を行うには、最初、ペースト ボードにアクセスする、既存の内容をクリアするおよびペースト ボードに必要なデータの多くの表現を記述します。
 
-例:
+例えば:
 
 ```csharp
 // Get the standard pasteboard
@@ -937,7 +936,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-クラスは、OBJECTIVE-C を公開することも必要がありますを使用して、`Register`ディレクティブとそれを任意の必要なプロパティまたはメソッドを使用して公開する必要があります`Export`です。 例:
+クラスは、OBJECTIVE-C を公開することも必要がありますを使用して、`Register`ディレクティブとそれを任意の必要なプロパティまたはメソッドを使用して公開する必要があります`Export`です。 例えば:
 
 ```csharp
 [Export("name")]

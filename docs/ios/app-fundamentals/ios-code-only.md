@@ -1,18 +1,17 @@
 ---
-title: "コードで iOS のユーザー インターフェイスの作成"
-description: "Xamarin.iOS アプリ – iOS 用、またはコードでの Xamarin デザイナーでは、ユーザー インターフェイスを作成する 2 つの方法を提供します。 この記事では、コードで完全 iOS ユーザー インターフェイスを作成する方法について説明します。 UIKit からビューの階層を作成してコント ローラーでアプリケーションの画面を構築するプロジェクト テンプレートからを起動する方法を示します。 その後、コント ローラーで読み込むことができるカスタム ビューを作成する方法について説明します。"
-ms.topic: article
+title: コードで iOS のユーザー インターフェイスの作成
+description: Xamarin.iOS アプリ – iOS 用、またはコードでの Xamarin デザイナーでは、ユーザー インターフェイスを作成する 2 つの方法を提供します。 この記事では、コードで完全 iOS ユーザー インターフェイスを作成する方法について説明します。 UIKit からビューの階層を作成してコント ローラーでアプリケーションの画面を構築するプロジェクト テンプレートからを起動する方法を示します。 その後、コント ローラーで読み込むことができるカスタム ビューを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>コードで iOS のユーザー インターフェイスの作成
 

@@ -1,18 +1,17 @@
 ---
 title: RecyclerView
-description: "RecyclerView はコレクションを表示するため、グループの表示ListView、GridView などの古いグループの表示の代わりに柔軟に設計されています。  このガイドでは、使用および Xamarin.Android アプリケーションで RecyclerView をカスタマイズする方法について説明します。"
-ms.topic: article
+description: RecyclerView はコレクションを表示するため、グループの表示ListView、GridView などの古いグループの表示の代わりに柔軟に設計されています。  このガイドでは、使用および Xamarin.Android アプリケーションで RecyclerView をカスタマイズする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 91EF0BD2-3306-47E1-9B39-627A1787762F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/03/2018
-ms.openlocfilehash: 028520742a84e717e28147f2fa1fafacfef34028
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 187339244d53c154cc22672a3d2ceba7e0a75bcf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -34,7 +33,7 @@ _RecyclerView はコレクションを表示するため、グループの表示
 このガイドを使用する方法について説明`RecyclerView`Xamarin.Android アプリケーションに追加する方法について説明します、 `RecyclerView` Xamarin.Android プロジェクトとパッケージの説明方法`RecyclerView`一般的なアプリケーションで機能します。 統合する方法を表示する実際のコード例が提供されて`RecyclerView`、アプリケーション、item ビューをクリックしを実装する方法、および更新する方法に`RecyclerView`その基になるデータが変更されたとき。 このガイドでは、Xamarin.Android 開発に慣れていることを前提としています。
 
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 `RecyclerView`は Android 5.0 ロリポップに関連付けられている多くの場合が提供されるサポート ライブラリとして&ndash;`RecyclerView`はアプリと連携するターゲット API レベル (Android 2.1) 7 以降。 次は、使用する必要は`RecyclerView`Xamarin ベースのアプリケーションで。
 

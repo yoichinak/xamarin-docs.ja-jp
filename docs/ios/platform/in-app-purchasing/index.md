@@ -1,17 +1,16 @@
 ---
-title: "アプリ内購入"
-description: "iOS アプリケーションには、デジタルの製品およびストア キット Api を使用してサービスを販売できます。 製品が作成され、iTunes Connect ポータルで管理します。 Apple はトランザクション処理を管理し、販売できる前に、すべての製品を承認し、各トランザクションの (現在は 30%) の料金を請求します。 Apple では、物理商品または非デジタル サービスの販売を使うことはできませんが、アプリでデジタル売上のアプリ内購入を使用する必要があります。 デジタル製品およびサービス用の代替のお支払い方法を提供しているアプリは、拒否される可能性があります。 このドキュメントでは、ストア キットを使用するアプリケーションを構成する方法について説明し、最も一般的なアプリ内購入シナリオ Xamarin.iOS 例を示します。"
-ms.topic: article
+title: アプリ内購入
+description: iOS アプリケーションには、デジタルの製品およびストア キット Api を使用してサービスを販売できます。 製品が作成され、iTunes Connect ポータルで管理します。 Apple はトランザクション処理を管理し、販売できる前に、すべての製品を承認し、各トランザクションの (現在は 30%) の料金を請求します。 Apple では、物理商品または非デジタル サービスの販売を使うことはできませんが、アプリでデジタル売上のアプリ内購入を使用する必要があります。 デジタル製品およびサービス用の代替のお支払い方法を提供しているアプリは、拒否される可能性があります。 このドキュメントでは、ストア キットを使用するアプリケーションを構成する方法について説明し、最も一般的なアプリ内購入シナリオ Xamarin.iOS 例を示します。
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: af8eb556215679bab2da8f54e8231f7d7d3ed418
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-app-purchasing"></a>アプリ内購入
 
@@ -32,7 +31,7 @@ iOS アプリケーションは、デジタルの製品または StoreKit – Ap
 このドキュメントでは、アプリ内購入 Xamarin.iOS を使用して提供するこれらすべての手順を完了する方法について説明します。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 アプリ内購入をサポートするために以降 Xcode 7 では、Xamarin.iOS 5.0 以降を使用する必要があります。
 

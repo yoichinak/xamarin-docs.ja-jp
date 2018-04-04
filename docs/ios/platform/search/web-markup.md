@@ -1,18 +1,17 @@
 ---
-title: "Web のマークアップの検索"
-description: "アプリケーションにリンクできる web ベースの検索結果を追加します。"
-ms.topic: article
+title: Web のマークアップの検索
+description: アプリケーションにリンクできる web ベースの検索結果を追加します。
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 8812c6a234e05e4d651effbeb83a7bcad38dc683
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bc3446419ef0e469f7184d60fe8876cd2e5da520
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="search-with-web-markup"></a>Web のマークアップの検索
 
@@ -63,7 +62,7 @@ Apple のアプリの web サイトを検索する最も簡単な方法がいず
 
 ## <a name="using-twitter-cards"></a>Twitter のカードを使用します。
 
-Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを提供できます。 例:
+Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを提供できます。 例えば:
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -75,7 +74,7 @@ Twitter のカードを使用して、アプリのコンテンツへのディー
 
 ## <a name="using-facebook-app-links"></a>Facebook アプリのリンクを使用します。
 
-Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを提供できます。 例:
+Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを提供できます。 例えば:
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -87,7 +86,7 @@ Facebook アプリのリンクを使用して、アプリのコンテンツへ�
 
 ## <a name="opening-deep-links"></a>ディープ リンクを開く
 
-開くおよび Xamarin.iOS アプリのディープ リンクを表示するためのサポートを追加する必要があります。 編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`OpenURL`カスタム URL の形式を処理するメソッド。 例:
+開くおよび Xamarin.iOS アプリのディープ リンクを表示するためのサポートを追加する必要があります。 編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`OpenURL`カスタム URL の形式を処理するメソッド。 例えば:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -121,7 +120,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 リッチ結果詳細関与するされ、改善おびき寄せますより多くのユーザーが対話機能を使用して、クラウドで、順位付けが検索インデックスをベースです。
 
-構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用します。 例:
+構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用します。 例えば:
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -131,7 +130,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 詳細についてを参照してください、 [Open Graph](http://ogp.me) web サイトです。
 
-構造化データ マークアップの他の一般的な形式は、schema.org のマイクロ データ形式です。 例:
+構造化データ マークアップの他の一般的な形式は、schema.org のマイクロ データ形式です。 例えば:
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">

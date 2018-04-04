@@ -1,18 +1,17 @@
 ---
 title: Face API を使用して emotion 認識
 description: Face API は、画像は入力としての顔の式を取得し、信頼度のレベルを含む一連の図の各面感情の間でデータを返します。 この記事では、Xamarin.Forms アプリケーションを評価する、感情を認識するように、Face API を使用する方法について説明します。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 0fc69fb1283ea2afd95900348cdecec5d6514ae0
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 49e53425dbaf3aadd74d02ab030929e3311c7c8c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="emotion-recognition-using-the-face-api"></a>Face API を使用して emotion 認識
 

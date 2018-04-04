@@ -1,18 +1,17 @@
 ---
-title: "iOS 7 ユーザー インターフェイスの概要"
-description: "iOS 7 には、多数のユーザー インターフェイスの変更が導入されています。 この記事より大きな変更、コントロールの外観と、新しいデザインをサポートする Api の両方の一部が強調表示されます。"
-ms.topic: article
+title: iOS 7 ユーザー インターフェイスの概要
+description: iOS 7 には、多数のユーザー インターフェイスの変更が導入されています。 この記事より大きな変更、コントロールの外観と、新しいデザインをサポートする Api の両方の一部が強調表示されます。
 ms.prod: xamarin
 ms.assetid: FADCEA7C-8968-42A1-9E9E-F4BBAB7BCF2C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3f5ea8abd41e718f9ac947c5acb290dffe400ddd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 

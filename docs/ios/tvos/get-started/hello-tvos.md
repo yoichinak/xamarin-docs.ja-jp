@@ -1,18 +1,17 @@
 ---
-title: "こんにちは, tvOS クイック スタート ガイド"
-description: "このガイドは、初めて Xamarin.tvOS アプリとその開発ツール チェーンを作成する手順について説明します。 コードを UI コントロールを公開し、ビルド、実行、および Xamarin.tvOS アプリケーションをテストする方法を示しています。 Xamarin デザイナーも導入されています。"
-ms.topic: article
+title: こんにちは, tvOS クイック スタート ガイド
+description: このガイドは、初めて Xamarin.tvOS アプリとその開発ツール チェーンを作成する手順について説明します。 コードを UI コントロールを公開し、ビルド、実行、および Xamarin.tvOS アプリケーションをテストする方法を示しています。 Xamarin デザイナーも導入されています。
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0adf6e326dd29db15b6bd90626f424b803dc0bc9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>こんにちは, tvOS クイック スタート ガイド
 
@@ -253,7 +252,7 @@ IOS 用の Xamarin デザイナーを使用して、Xamarin.tvOS アプリ用の
 
 UI の作成を開始する をダブルクリックしてみましょう、`Main.storyboard`ファイルで、**ソリューション エクスプ ローラー**ファイルを開いて、iOS デザイナーで編集します。
 
-[![](hello-tvos-images/designer01.png "ソリューション エクスプ ローラーで Main.storyboard ファイル")](hello-tvos-images/designer01.png#lightbox)
+[![](hello-tvos-images/designer01.png "ソリューション エクスプローラーの Main.storyboard ファイル")](hello-tvos-images/designer01.png#lightbox)
 
 これは、デザイナーを起動し、次のように必要があります。
 

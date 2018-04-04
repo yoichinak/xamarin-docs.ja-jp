@@ -1,18 +1,17 @@
 ---
-title: "ネイティブのフォーム"
-description: "ネイティブのフォームは、Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) のネイティブ プロジェクトが消費できるように Xamarin.Forms コンテンツ ページから派生したページを使用できます。 ネイティブ プロジェクトは、プロジェクトまたはポータブル クラス ライブラリ (PCL)、.NET の標準ライブラリまたは共有プロジェクトから直接追加するコンテンツ ページから派生したページを使用できます。 この記事では、それらの間を移動する方法とは、ネイティブ プロジェクトに直接追加するコンテンツ ページから派生したページを使用する方法について説明します。"
-ms.topic: article
+title: ネイティブのフォーム
+description: ネイティブのフォームは、Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) のネイティブ プロジェクトが消費できるように Xamarin.Forms コンテンツ ページから派生したページを使用できます。 ネイティブ プロジェクトは、プロジェクトまたはポータブル クラス ライブラリ (PCL)、.NET の標準ライブラリまたは共有プロジェクトから直接追加するコンテンツ ページから派生したページを使用できます。 この記事では、それらの間を移動する方法とは、ネイティブ プロジェクトに直接追加するコンテンツ ページから派生したページを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 5a7d4ab69ff3ccd1a50ea4fccb6e494f7c73fc72
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9d0d4e69228ce8a1d9944833bff80b22ea5f9ddd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="native-forms"></a>ネイティブのフォーム
 

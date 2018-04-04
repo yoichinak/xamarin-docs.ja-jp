@@ -1,18 +1,17 @@
 ---
-title: "進行状況インジケーターの操作"
-description: "この記事では、設計と Xamarin.tvOS アプリ内での進行状況インジケーターの操作について説明します。"
-ms.topic: article
+title: 進行状況インジケーターの操作
+description: この記事では、設計と Xamarin.tvOS アプリ内での進行状況インジケーターの操作について説明します。
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c021550e17cf8206d59102856a11c72000ad06aa
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 96fc3ea0aa802f62bd697b34f7bd504eb445a4f6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-progress-indicators"></a>進行状況インジケーターの操作
 
@@ -67,7 +66,7 @@ Xamarin.tvOS アプリでは、プログレス インジケーターを使用す
 1. **ウィジェット タブ**の**プロパティ エクスプ ローラー**など、進行状況のビューのいくつかのプロパティを調整することができます、**スタイル**と**の進行状況**(% 完了)。 
 
     [![](progress-indicators-images/activity04.png "ウィジェット タブ")](progress-indicators-images/activity04.png#lightbox)
-1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
+1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例えば: 
 
     [![](progress-indicators-images/activity05.png "名前を割り当てる")](progress-indicators-images/activity05.png#lightbox)
 1. 変更内容を保存します。
@@ -87,7 +86,7 @@ Xamarin.tvOS アプリでは、プログレス インジケーターを使用す
 1. **ウィジェット タブ**の**プロパティ エクスプ ローラー**など、進行状況のビューのいくつかのプロパティを調整することができます、**スタイル**と**の進行状況**(% 完了)。 
 
     [![](progress-indicators-images/activity04-vs.png "ウィジェット タブ")](progress-indicators-images/activity04-vs.png#lightbox)
-1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例: 
+1. 最後に、割り当てる**名**コントロールに c# コードでそれらに応答できるようにします。 例えば: 
 
     [![](progress-indicators-images/activity05-vs.png "名前を割り当てる")](progress-indicators-images/activity05-vs.png#lightbox)
 1. 変更内容を保存します。

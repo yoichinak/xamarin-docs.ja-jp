@@ -1,18 +1,17 @@
 ---
-title: "iOS デザイナーの基礎"
-description: "このガイドでは、iOS 用の Xamarin デザイナーについて説明します。 IOS デザイナーを使用してコントロールを視覚的にレイアウトする方法、コードでは、これらのコントロールにアクセスする方法、およびプロパティを編集する方法を示しています。"
-ms.topic: article
+title: iOS デザイナーの基礎
+description: このガイドでは、iOS 用の Xamarin デザイナーについて説明します。 IOS デザイナーを使用してコントロールを視覚的にレイアウトする方法、コードでは、これらのコントロールにアクセスする方法、およびプロパティを編集する方法を示しています。
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/31/2018
-ms.openlocfilehash: a2445e49005175f62e4d7cd8aadccb5f596177bf
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7e36a402619813214e821f3060e053d76c99cfb7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-designer-basics"></a>iOS デザイナーの基礎
 
@@ -20,7 +19,7 @@ _このガイドでは、iOS 用の Xamarin デザイナーについて説明し
 
 IOS 用の Xamarin デザイナーは、Xcode のインターフェイスのビルダーのようなビジュアル インターフェイス デザイナーと、Android デザイナーです。 多数の機能の一部には、Visual Studio for Mac と Visual Studio 2015 および 2017、ドラッグ アンド ドロップ編集、イベント ハンドラーを設定するためのインターフェイスをカスタム コントロールを表示する機能とのシームレスな統合が含まれます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 IOS デザイナーは、windows や、Visual Studio 2015、2017 Mac 用の Visual Studio で使用します。 Visual Studio 2015 または 2017 では、iOS デザイナーでは、Xcode が実行されていない必要がある場合に、正しく構成されている Mac ビルド ホストへの接続が必要です。
 

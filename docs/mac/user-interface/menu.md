@@ -1,18 +1,17 @@
 ---
-title: "メニュー"
-description: "この記事と Xamarin.Mac アプリケーションでメニューの作業について説明します。 これは、作成およびメニューとメニュー項目には、Xcode とインターフェイスのビルダーを維持し、それらのプログラムの操作について説明します。"
-ms.topic: article
+title: メニュー
+description: この記事と Xamarin.Mac アプリケーションでメニューの作業について説明します。 これは、作成およびメニューとメニュー項目には、Xcode とインターフェイスのビルダーを維持し、それらのプログラムの操作について説明します。
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="menus"></a>メニュー
 
@@ -226,7 +225,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 アプリが使用されていない場合でも`NSDocuments`、使用することも、`NSDocumentController`維持するために、**開く最近**送信することでメニュー、`NSUrl`するファイルの場所に、`NoteNewRecentDocumentURL`のメソッド、`SharedDocumentController`です。
 
-次に、オーバーライドする必要があります、`OpenFile`からユーザーが選択したファイルを開くアプリケーションのデリゲートのメソッド、**最近開いて**メニュー。 例:
+次に、オーバーライドする必要があります、`OpenFile`からユーザーが選択したファイルを開くアプリケーションのデリゲートのメソッド、**最近開いて**メニュー。 例えば:
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -425,7 +424,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 同様に、組み込み**最初レスポンダー**標準メニュー項目を事前にワイヤード (有線) に付属しているアクション、新しいカスタム アクションを作成してそれらのインターフェイスのビルダーでのメニュー項目をネットワーク上でします。
 
-まず、アプリのウィンドウのコント ローラーの 1 つで、カスタム アクションを定義します。 例:
+まず、アプリのウィンドウのコント ローラーの 1 つで、カスタム アクションを定義します。 例えば:
 
 ```csharp
 [Action("defineKeyword:")]
@@ -439,7 +438,7 @@ public void defineKeyword (NSObject sender) {
 
 ![属性のインスペクター](menu-images/action01.png "属性インスペクター")
 
-クリックして、  **+** の下部にあるボタン、**属性インスペクター**新しいカスタム アクションを追加します。
+クリックして、 **+**の下部にあるボタン、**属性インスペクター**新しいカスタム アクションを追加します。
 
 ![新しいアクションを追加する](menu-images/action02.png "新しいアクションを追加します。")
 

@@ -1,18 +1,17 @@
 ---
-title: "ローカル データベース"
-description: "Xamarin.Forms では、読み込みと共有コードでオブジェクトを保存できるようになります、SQLite データベース エンジンを使用してデータベースに基づくアプリケーションをサポートします。 この記事では、Xamarin.Forms アプリケーションが読み取りを SQLite.Net を使用してローカル SQLite データベースにデータを書き込む方法について説明します。"
-ms.topic: article
+title: ローカル データベース
+description: Xamarin.Forms では、読み込みと共有コードでオブジェクトを保存できるようになります、SQLite データベース エンジンを使用してデータベースに基づくアプリケーションをサポートします。 この記事では、Xamarin.Forms アプリケーションが読み取りを SQLite.Net を使用してローカル SQLite データベースにデータを書き込む方法について説明します。
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 29686b29a18fe409a1f778d54266cbeedea40eda
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="local-databases"></a>ローカル データベース
 

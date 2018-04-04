@@ -1,18 +1,17 @@
 ---
-title: "再利用可能な EffectBehavior"
-description: "動作は、処理の分離コード ファイルからコード ボイラー プレート効果を削除する、コントロールに、特殊効果を追加するために有効な方法です。 この記事では、コントロールを追加する、特殊効果、Xamarin.Forms 動作を使用してを示します。"
-ms.topic: article
+title: 再利用可能な EffectBehavior
+description: 動作は、処理の分離コード ファイルからコード ボイラー プレート効果を削除する、コントロールに、特殊効果を追加するために有効な方法です。 この記事では、コントロールを追加する、特殊効果、Xamarin.Forms 動作を使用してを示します。
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 698e2baef26a985fa40c2943cd25aefae55381f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1612d1e87f0e05c859babd93fd03ac9a5736b47
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
@@ -163,7 +162,7 @@ label.Behaviors.Add (new EffectBehavior {
 
 ## <a name="related-links"></a>関連リンク
 
-- [効果](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [動作の効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
 - [動作](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
 - [動作<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)

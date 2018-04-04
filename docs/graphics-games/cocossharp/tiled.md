@@ -1,22 +1,21 @@
 ---
 title: 使用して CocosSharp を並べて表示
-description: 並べて表示は強力で柔軟なされ、ゲームの直交と等角] タイルを作成するための完成度の高いアプリケーションがマップされます。 CocosSharp は、並べてのネイティブのファイル形式の組み込みの統合を提供します。
-ms.topic: article
+description: 並べて表示は強力で柔軟なされ、ゲームの直交と等角 タイルを作成するための完成度の高いアプリケーションがマップされます。 CocosSharp は、並べてのネイティブのファイル形式の組み込みの統合を提供します。
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 68afa9d175140fd5104e83282a2f72c47625d882
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: a356ddc0412eb1dce1b35e060e6c9127525de804
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>使用して CocosSharp を並べて表示
 
-_並べて表示は強力で柔軟なされ、ゲームの直交と等角] タイルを作成するための完成度の高いアプリケーションがマップされます。CocosSharp は、並べてのネイティブのファイル形式の組み込みの統合を提供します。_
+_並べて表示は強力で柔軟なされ、ゲームの直交と等角 タイルを作成するための完成度の高いアプリケーションがマップされます。CocosSharp は、並べてのネイティブのファイル形式の組み込みの統合を提供します。_
 
 *並べて*アプリケーションを作成するための標準*マップのタイル*ゲーム開発で使用するためです。 このガイドは、既存の .tmx ファイル (並べてによって作成されたファイル) を行い、CocosSharp ゲームで使用する方法を説明します。 具体的には、このガイドを取り上げます。
 
@@ -169,13 +168,13 @@ protected override void AddedToScene ()
 
 されたら、[開く] タイルで、そのプロパティを表示する設定宝箱を選択します。
 
-![](tiled-images/image9.png "開いている場合は、選択宝箱] タイルで、そのプロパティを表示する設定")
+![](tiled-images/image9.png "開いている場合は、選択宝箱 タイルで、そのプロパティを表示する設定")
 
 宝箱を右クリックし、選択宝物箱プロパティが表示されない場合**タイル プロパティ**:
 
 ![](tiled-images/image10.png "宝箱を右クリックし、タイルのプロパティを選択して宝物箱プロパティが表示されない場合")
 
-並べて表示されるプロパティは、名前と値で実装されます。 プロパティを追加するをクリックして、 ** + **ボタン名を入力します**IsTreasure**、をクリックして**OK**、値を入力**true**: 
+並べて表示されるプロパティは、名前と値で実装されます。 プロパティを追加するをクリックして、 **+**ボタン名を入力します**IsTreasure**、をクリックして**OK**、値を入力**true**: 
 
 ![](tiled-images/image11.png "プロパティを追加するには、ボタンをクリックして IsTreasure の名前を入力、[ok] をクリックし、入力値の true")
 

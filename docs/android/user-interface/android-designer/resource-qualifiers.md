@@ -1,18 +1,17 @@
 ---
-title: "リソース修飾子と視覚エフェクト オプション"
-description: "このトピックでは、いくつかの修飾子の値が一致する場合にのみ使用されるリソースを定義する方法について説明します。 単純な例は、文字列の言語で修飾されたリソースです。 文字列リソースは、その他の代替のリソース定義に追加の言語を使用すると、既定値として定義できます。 レイアウトの種類を含む、すべてのリソース型を修飾できます。"
-ms.topic: article
+title: リソース修飾子と視覚エフェクト オプション
+description: このトピックでは、いくつかの修飾子の値が一致する場合にのみ使用されるリソースを定義する方法について説明します。 単純な例は、文字列の言語で修飾されたリソースです。 文字列リソースは、その他の代替のリソース定義に追加の言語を使用すると、既定値として定義できます。 レイアウトの種類を含む、すべてのリソース型を修飾できます。
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bc9eb145b6d9ed7bd441d625f533c5cbbd87fccd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>リソース修飾子と視覚エフェクト オプション
 

@@ -1,18 +1,17 @@
 ---
-title: "マップ上の円形の領域を強調表示"
-description: "この記事では、円形のマップの領域を強調表示する、マップに循環オーバーレイを追加する方法について説明します。"
-ms.topic: article
+title: マップ上の円形の領域を強調表示
+description: この記事では、円形のマップの領域を強調表示する、マップに循環オーバーレイを追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 0eef31c5b9a93154b1038ffa63ee560bd738fe6b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a70c8fdca457e386a1490ca974e1a1ea5da2f6db
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>マップ上の円形の領域を強調表示
 

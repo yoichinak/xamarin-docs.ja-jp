@@ -1,18 +1,17 @@
 ---
-title: "配置とテスト"
-description: "Android デバイス (またはエミュレーター) で消耗アプリをテストし、展開用に準備する方法。"
-ms.topic: article
+title: 配置とテスト
+description: Android デバイス (またはエミュレーター) で消耗アプリをテストし、展開用に準備する方法。
 ms.prod: xamarin
 ms.assetid: 3D8E5A97-F719-4E8C-B777-108DFF20C91F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/19/2017
-ms.openlocfilehash: f80be1c61d28ce73342399a0b4f2346007cd14de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e6472b3bf07750338d9ada7ca62f0a5c9e2c8a7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deployment-and-testing"></a>配置とテスト
 
@@ -23,7 +22,7 @@ ms.lasthandoff: 02/27/2018
 
 Android SDK エミュレーターで Xamarin.Android 消耗アプリケーションをデバッグする方法。
 
-## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[消耗デバイス上でのデバッグします。](~/android/wear/deploy-test/debug-on-device.md)
+## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)
 
 Xamarin.Android 消耗アプリケーションことができますを展開できるようにするか、Visual Studio または Visual Studio から直接 for mac、Android デバイスを構成する方法
 

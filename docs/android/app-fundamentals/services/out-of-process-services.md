@@ -1,18 +1,17 @@
 ---
-title: "リモート プロセスで実行されている Android サービス"
-description: "一般に、Android アプリケーションのすべてのコンポーネントは、同じプロセスで実行されます。 Android のサービスは、この主な例外、独自のプロセスで実行するように構成およびその他の Android 開発者のものを含む、他のアプリケーションと共有できます。 このガイドでは、作成して、Xamarin を使用して Android のリモート サービスを使用する方法を説明します。"
-ms.topic: article
+title: リモート プロセスで実行されている Android サービス
+description: 一般に、Android アプリケーションのすべてのコンポーネントは、同じプロセスで実行されます。 Android のサービスは、この主な例外、独自のプロセスで実行するように構成およびその他の Android 開発者のものを含む、他のアプリケーションと共有できます。 このガイドでは、作成して、Xamarin を使用して Android のリモート サービスを使用する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 57be8187509ad7607c38ea17233e9ab5d25b41f1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>リモート プロセスで実行されている Android サービス
 

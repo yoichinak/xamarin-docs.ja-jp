@@ -1,18 +1,17 @@
 ---
-title: "テーブル ビューを使用します。"
-description: "この記事では、設計と Xamarin.tvOS アプリ内でテーブルのビューおよびテーブル ビューのコント ローラーの操作について説明します。"
-ms.topic: article
+title: テーブル ビューを使用します。
+description: この記事では、設計と Xamarin.tvOS アプリ内でテーブルのビューおよびテーブル ビューのコント ローラーの操作について説明します。
 ms.prod: xamarin
 ms.assetid: D8F80FA9-6400-4DB7-AFC9-A28A54AD04E8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: af562ac03f2cd5f293f99c7509000499ad5deaa4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8864e85e4d657fc242f6c06b21c815f62055c9f4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-table-views"></a>テーブル ビューを使用します。
 
@@ -731,7 +730,7 @@ namespace tvTable
 
 ## <a name="pulling-it-all-together"></a>すべての要素をプルし
 
-このドキュメントの開始時に説明したように、テーブルのビューがの一方の側に通常表示、[分割ビュー](~/ios/tvos/user-interface/split-views.md)によるナビゲーション、反対側に表示される選択された項目の詳細を含むです。 例: 
+このドキュメントの開始時に説明したように、テーブルのビューがの一方の側に通常表示、[分割ビュー](~/ios/tvos/user-interface/split-views.md)によるナビゲーション、反対側に表示される選択された項目の詳細を含むです。 例えば: 
 
 [![](table-views-images/intro01.png "サンプル アプリの実行")](table-views-images/intro01.png#lightbox)
 

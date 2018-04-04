@@ -1,17 +1,16 @@
 ---
-title: "チュートリアル: リフレクション API を使用してアプリケーションの作成"
-description: "要素の API、MonoTouch.Dialog (山に加えて属性ベースのリフレクション API D) も含まれています。 リフレクション API は、山と画面を作成します。D クラスの属性で修飾することと同じくらい簡単です。 この記事では、リフレクション API を使用してアプリケーションを作成する方法を示す説明を提供します。"
-ms.topic: article
+title: 'チュートリアル: リフレクション API を使用してアプリケーションの作成'
+description: 要素の API、MonoTouch.Dialog (山に加えて属性ベースのリフレクション API D) も含まれています。 リフレクション API は、山と画面を作成します。D クラスの属性で修飾することと同じくらい簡単です。 この記事では、リフレクション API を使用してアプリケーションを作成する方法を示す説明を提供します。
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>チュートリアル: リフレクション API を使用してアプリケーションの作成
 

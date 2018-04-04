@@ -1,18 +1,17 @@
 ---
-title: "コレクション ビュー"
-description: "コレクション ビューは、任意のレイアウトを使用して表示するコンテンツを許可します。 これらは、カスタム レイアウトをサポートしているときに既定でグリッドのようなレイアウトを容易に作成できるようにします。"
-ms.topic: article
+title: コレクション ビュー
+description: コレクション ビューは、任意のレイアウトを使用して表示するコンテンツを許可します。 これらは、カスタム レイアウトをサポートしているときに既定でグリッドのようなレイアウトを容易に作成できるようにします。
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="collection-views"></a>コレクション ビュー
 
@@ -140,7 +139,7 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 ## <a name="data-source"></a>データ ソース
 
-同様に、iOS の他の部分など`UITableView`と`MKMapView`、`UICollectionView`からデータを取得、*データ ソース*、Xamarin.iOS 経由で公開されているが、  **`UICollectionViewDataSource`** クラスです。 コンテンツを提供するため、このクラスは、`UICollectionView`など。
+同様に、iOS の他の部分など`UITableView`と`MKMapView`、`UICollectionView`からデータを取得、*データ ソース*、Xamarin.iOS 経由で公開されているが、 **`UICollectionViewDataSource`**クラスです。 コンテンツを提供するため、このクラスは、`UICollectionView`など。
 
 -  **セル**– から返された`GetCell`メソッドです。
 -  **補助ビュー** – から返された`GetViewForSupplementaryElement`メソッドです。
@@ -453,7 +452,7 @@ IOS 9、コレクション ビュー内で (`UICollectionView`) ここではサ�
 
 コレクション ビューに並べ替えを追加する最も簡単な方法は、iOS 9 を使用する、`UICollectionViewController`です。
 コレクション ビューのコント ローラーになりました、`InstallsStandardGestureForInteractiveMovement`プロパティで、追加の標準*ジェスチャ レコグナイザー*コレクション内の項目の順序を変更するドラッグをサポートします。
-既定値はため`true`、のみを実装する必要がある、`MoveItem`のメソッド、`UICollectionViewDataSource`ドラッグの並べ替えをサポートするクラス。 例:
+既定値はため`true`、のみを実装する必要がある、`MoveItem`のメソッド、`UICollectionViewDataSource`ドラッグの並べ替えをサポートするクラス。 例えば:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -693,7 +692,7 @@ namespace CollectionView
 
 UI に対して行った変更を保存し、アプリを実行します。
 ユーザーは、一覧から項目を選択しを新しい場所にドラッグする場合、他のアイテムがアニメーション化自動的にアイテムの移動を邪魔にします。
-ユーザーは、新しい位置に項目をドロップ、ときに、その場所に固定されます。 例:
+ユーザーは、新しい位置に項目をドロップ、ときに、その場所に固定されます。 例えば:
 
 [![](uicollectionview-images/intro01.png "新しい場所に項目をドラッグすることの例")](uicollectionview-images/intro01.png#lightbox)
 
@@ -701,7 +700,7 @@ UI に対して行った変更を保存し、アプリを実行します。
 
 ### <a name="using-a-custom-gesture-recognizer"></a>カスタム ジェスチャ認識エンジンの使用
 
-使用できない場合、`UICollectionViewController`標準を使用する必要があります`UIViewController`、または、ドラッグ アンド ドロップ ジェスチャより詳細に制御を実行する場合は、独自のカスタム ジェスチャ レコグナイザーを作成し、ビューを読み込むときに、コレクション ビューに追加します。 例:
+使用できない場合、`UICollectionViewController`標準を使用する必要があります`UIViewController`、または、ドラッグ アンド ドロップ ジェスチャより詳細に制御を実行する場合は、独自のカスタム ジェスチャ レコグナイザーを作成し、ビューを読み込むときに、コレクション ビューに追加します。 例えば:
 
 ```csharp
 public override void ViewDidLoad ()

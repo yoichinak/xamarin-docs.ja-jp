@@ -1,18 +1,18 @@
 ---
-title: "watchOS トラブルシューティング"
-description: "既知の問題の解決策、watchOS 開発上の問題です。"
-ms.topic: article
+title: watchOS トラブルシューティング
+description: 既知の問題の解決策、watchOS 開発上の問題です。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS トラブルシューティング
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/22/2018
 <a name="deploy" />
 
 - 以前のリリースの Visual Studio for Mac が正しく示されていないのいずれかの、 **AppleCompanionSettings** 88 x 88 (ピクセル) ですその結果として、アイコン、**アイコン エラーのない**アプリに送信しようとする場合。ストア。
-    このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x**  Retina 画面)。 Mac で Xcode でのイメージ アセットを編集いずれかの Visual Studio でこれを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
+    このアイコンは 87 x 87 ピクセルである必要があります (29 単位**@3x** Retina 画面)。 Mac で Xcode でのイメージ アセットを編集いずれかの Visual Studio でこれを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
 - 場合ウォッチ拡張機能プロジェクトの**Info.plist > WKApp バンドル ID**は[正しく設定されている](~/ios/watchos/get-started/project-references.md)Watch アプリの一致するように**バンドル ID**デバッガーは接続に失敗し、VisualMac 用 studio が、メッセージで待機*「デバッガーの接続を待機している」*です。
 

@@ -1,18 +1,17 @@
 ---
-title: "単純なアニメーション"
-description: "ViewExtensions クラスでは、単純なアニメーションを構築するために使用できる拡張メソッドを提供します。 この記事は、作成、ViewExtensions クラスを使用してアニメーションを取り消す方法について説明します。"
-ms.topic: article
+title: 単純なアニメーション
+description: ViewExtensions クラスでは、単純なアニメーションを構築するために使用できる拡張メソッドを提供します。 この記事は、作成、ViewExtensions クラスを使用してアニメーションを取り消す方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0d2cc30f9bc1ae5602394b8ca2d8e75517a01b54
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="simple-animations"></a>単純なアニメーション
 

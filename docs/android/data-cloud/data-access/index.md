@@ -1,18 +1,17 @@
 ---
 title: Xamarin.Android Data Access
-description: "ほとんどのアプリケーションでは、デバイスをローカルでのデータを保存するには、いくつか必要があります。 データの量が小さい普通でない限り通常が必要に、データベースとデータベースへのアクセスを管理するアプリケーションでデータ層です。  Android が 'ビルドされた' SQLite データベース エンジンと、Xamarin のプラットフォームでデータを格納および取得のアクセスが簡素化されます。 このドキュメントでは、クロスプラット フォームの方法で、SQLite データベースにアクセスする方法を示します。"
-ms.topic: article
+description: ほとんどのアプリケーションでは、デバイスをローカルでのデータを保存するには、いくつか必要があります。 データの量が小さい普通でない限り通常が必要に、データベースとデータベースへのアクセスを管理するアプリケーションでデータ層です。  Android が 'ビルドされた' SQLite データベース エンジンと、Xamarin のプラットフォームでデータを格納および取得のアクセスが簡素化されます。 このドキュメントでは、クロスプラット フォームの方法で、SQLite データベースにアクセスする方法を示します。
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 301c4330afe6ff7808ca7b09f6cc5260517aae43
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 508a8f54723bfdd30b1c8ea8d4b6c1d422ae24e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 

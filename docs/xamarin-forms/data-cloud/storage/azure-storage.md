@@ -1,18 +1,17 @@
 ---
-title: "格納して、Azure ストレージ内のデータにアクセスします。"
-description: "Azure ストレージは、非構造化、および構造化データを格納するために使用するスケーラブルなクラウド記憶域ソリューションです。 この記事では、Xamarin.Forms を使用して、Azure ストレージ内のテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。"
-ms.topic: article
+title: 格納して、Azure ストレージ内のデータにアクセスします。
+description: Azure ストレージは、非構造化、および構造化データを格納するために使用するスケーラブルなクラウド記憶域ソリューションです。 この記事では、Xamarin.Forms を使用して、Azure ストレージ内のテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: d2d85840a0c698bfd3aa01dbacb204072ecca119
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 63afeec81eff350b034e8dd3a13da52801937826
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="storing-and-accessing-data-in-azure-storage"></a>格納して、Azure ストレージ内のデータにアクセスします。
 

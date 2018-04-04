@@ -1,18 +1,17 @@
 ---
-title: "ListView のカスタマイズ"
-description: "Xamarin.Forms ListView は、垂直方向の一覧としてデータのコレクションを表示するビューです。 この記事では、カスタム レンダラーを作成のプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブのリスト コントロールのパフォーマンスをより細かく制御できるようにする方法を示します。"
-ms.topic: article
+title: ListView のカスタマイズ
+description: Xamarin.Forms ListView は、垂直方向の一覧としてデータのコレクションを表示するビューです。 この記事では、カスタム レンダラーを作成のプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブのリスト コントロールのパフォーマンスをより細かく制御できるようにする方法を示します。
 ms.prod: xamarin
 ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: eb4cf0285585351db5c45dc34a382236e6805c99
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 

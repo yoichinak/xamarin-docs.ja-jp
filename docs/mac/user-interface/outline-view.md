@@ -1,18 +1,17 @@
 ---
-title: "アウトライン ビュー"
-description: "この記事では、Xamarin.Mac アプリケーションでのアウトライン ビューでの作業について説明します。 これは、作成および Xcode とインターフェイスのビルダーのアウトライン表示を維持し、それらのプログラムの操作について説明します。"
-ms.topic: article
+title: アウトライン ビュー
+description: この記事では、Xamarin.Mac アプリケーションでのアウトライン ビューでの作業について説明します。 これは、作成および Xcode とインターフェイスのビルダーのアウトライン表示を維持し、それらのプログラムの操作について説明します。
 ms.prod: xamarin
 ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: dbbd10af046c0a8421e06e675364f92405b2317f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 82cb3afadf7615fdd92476371e9ab80cd1228b02
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="outline-views"></a>アウトライン ビュー
 
@@ -604,7 +603,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 
 ## <a name="using-images-in-outline-views"></a>アウトライン ビューでのイメージの使用
 
-内のセルの一部として画像を含める、 `NSOutlineView`、アウトライン表示のによってデータが返される方法を変更する必要があります`NSTableViewDelegate's``GetView`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例:
+内のセルの一部として画像を含める、 `NSOutlineView`、アウトライン表示のによってデータが返される方法を変更する必要があります`NSTableViewDelegate's``GetView`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例えば:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {

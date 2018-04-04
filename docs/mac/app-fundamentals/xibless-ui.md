@@ -1,18 +1,17 @@
 ---
-title: ".storyboard/.xib-less ユーザー インターフェイスの設計"
-description: "この記事では、c# コード、.storyboard ファイル、.xib ファイル、またはインターフェイスのビルダーせずから直接 Xamarin.Mac アプリケーションのユーザー インターフェイスを作成するについて説明します。"
-ms.topic: article
+title: .storyboard/.xib-less ユーザー インターフェイスの設計
+description: この記事では、c# コード、.storyboard ファイル、.xib ファイル、またはインターフェイスのビルダーせずから直接 Xamarin.Mac アプリケーションのユーザー インターフェイスを作成するについて説明します。
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52d300ac583ec2313d3169c7b2adb73c15ebe4fb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 66725b02d3e351e74fa79ae5336a7db3a9f2b534
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="storyboardxib-less-user-interface-design"></a>.storyboard/.xib-less ユーザー インターフェイスの設計
 
@@ -300,7 +299,7 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>コード内のウィンドウに、UI 要素を追加します。
 
-ウィンドウはコードで作成したか、.storyboard または .xib ファイルから読み込まれた、かありますコードからウィンドウへの UI 要素を追加する場所です。 例:
+ウィンドウはコードで作成したか、.storyboard または .xib ファイルから読み込まれた、かありますコードからウィンドウへの UI 要素を追加する場所です。 例えば:
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){

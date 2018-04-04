@@ -1,18 +1,17 @@
 ---
-title: "Razor テンプレートを使用して構築 HTML ビュー"
+title: Razor テンプレートを使用して構築 HTML ビュー
 description: " 全画面表示の web ページを使用して HTML を表示するためには、web サイト プロジェクトから、HTML、Javascript と CSS が既にある場合は特に、クロスプラット フォームの方法で複雑な書式設定を表示するために単純で効果的な方法です。"
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 5c69b8e71cac5d9f0385728ca75a5f311cb24fc0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用して構築 HTML ビュー
 

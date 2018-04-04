@@ -1,17 +1,16 @@
 ---
-title: "オート コンプリート"
-ms.topic: article
+title: オート コンプリート
 ms.prod: xamarin
 ms.assetid: D4C8CA49-8369-35B7-798D-B147FDC24185
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f4118881272bb605607d528007064ada561cf7fc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 333264e65e814ad73eabeb7be55abb320400a59a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="auto-complete"></a>オート コンプリート
 
@@ -160,7 +159,7 @@ static string[] COUNTRIES = new string[] {
 
 ## <a name="more-information"></a>説明
 
-ハード コーディングされた文字列配列を使用して、推奨される設計プラクティスいないコンテンツの動作を集中的に、アプリケーション コードに注意してください。 文字列などのアプリケーションのコンテンツは、コンテンツへの変更が容易し、コンテンツのローカライズを容易にするために、コードから外部化する必要があります。 ハードコーディングされた文字列を使用する簡単と重点にのみこのチュートリアルでは使用が、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェット。 代わりに、アプリケーションでは、XML ファイルにそのような文字列の配列を宣言する必要があります。 これで、`<string-array>`プロジェクトのリソース`res/values/strings.xml`ファイル。 例:
+ハード コーディングされた文字列配列を使用して、推奨される設計プラクティスいないコンテンツの動作を集中的に、アプリケーション コードに注意してください。 文字列などのアプリケーションのコンテンツは、コンテンツへの変更が容易し、コンテンツのローカライズを容易にするために、コードから外部化する必要があります。 ハードコーディングされた文字列を使用する簡単と重点にのみこのチュートリアルでは使用が、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェット。 代わりに、アプリケーションでは、XML ファイルにそのような文字列の配列を宣言する必要があります。 これで、`<string-array>`プロジェクトのリソース`res/values/strings.xml`ファイル。 例えば:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

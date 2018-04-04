@@ -1,24 +1,23 @@
 ---
 title: .NET Embedding Errors
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 90d30b92069bcd6a5c008fa8009c0392c4d26473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64caaf6610d9f9193a686d91b4731cd4d4953fa6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="em0xxx-binding-error-messages"></a>EM0xxx: バインドのエラー メッセージ
 
-例。 パラメーター、環境
+たとえば、 パラメーター、環境
 
 <!-- 0xxx: the generator itself, e.g. parameters, environment -->
-<h3><a name="EM0000"/>EM0000: 予期しないエラー https://github.com/mono/Embeddinator-4000/issues でバグ報告を入力してください。</h3>
+<h3><a name="EM0000"/>EM0000: 予期しないエラーでバグ報告を入力してください。 https://github.com/mono/Embeddinator-4000/issues</h3>
 
 予期しないエラーが発生しました。 ください[問題を報告](https://github.com/mono/Embeddinator-4000/issues)できるだけ多くの情報を含みます。
 
@@ -68,7 +67,7 @@ ms.lasthandoff: 02/27/2018
 
 ツールは、それらの間に共通のファイルがあるために、エラー メッセージに記載されているフレームワークをマージできませんでした。
 
-これは Embeddinator 4000; のバグを示している可能性があります。バグ報告を送信してください[https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
+これは Embeddinator 4000; のバグを示している可能性があります。バグ報告を送信してください[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
 
 <h3><a name="EM0011"/>EM0011: アセンブリ`X`存在しません。</h3>
 
@@ -100,11 +99,11 @@ ms.lasthandoff: 02/27/2018
 
 コマンド ライン オプションに指定された構文`A`ツールで解析できませんでした。 可能性があります、正しくないドキュメントか、正しい構文のヘルプを参照してください。
 
-<h3><a name="EM0099"/>EM0099: 内部エラー * です。 テスト ケース (https://github.com/mono/Embeddinator-4000/issues) とバグのレポートを送信してください。</h3>
+<h3><a name="EM0099"/>EM0099: 内部エラー * です。 テスト_ケースとバグのレポートを送信してください (https://github.com/mono/Embeddinator-4000/issues)です。</h3>
 
 Embeddinator 4000 で内部整合性チェックが失敗したときに、このエラー メッセージが報告されます。
 
-Embeddinator 4000; のバグを示しますバグ報告を送信してください[https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
+Embeddinator 4000; のバグを示しますバグ報告を送信してください[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
 
 
 <!-- 1xxx: code processing -->
@@ -141,7 +140,7 @@ Embeddinator 4000; のバグを示しますバグ報告を送信してくださ�
 
 <h3><a name="EM1021"/>コンス トラクター`C`が既定値のラッパーが生成されません。</h3>
 
-これは、**警告**をコンス トラクターの既定のパラメーター`C`余分なコードを生成するされません。 最も一般的な原因は、既存のメソッドが既に同じシグネチャを持つことです。 例。 .net は、あります。
+これは、**警告**をコンス トラクターの既定のパラメーター`C`余分なコードを生成するされません。 最も一般的な原因は、既存のメソッドが既に同じシグネチャを持つことです。 たとえば、 .net は、あります。
 
 ```
 public class MyType {
@@ -173,7 +172,7 @@ public class MyType {
 
 <h3><a name="EM1032"/>メソッド`M`が既定値のラッパーが生成されません。</h3>
 
-これは、**警告**をメソッドの既定のパラメーター`M`余分なコードを生成するされません。 最も一般的な原因は、既存のメソッドが既に同じシグネチャを持つことです。 例。 .net は、あります。
+これは、**警告**をメソッドの既定のパラメーター`M`余分なコードを生成するされません。 最も一般的な原因は、既存のメソッドが既に同じシグネチャを持つことです。 たとえば、 .net は、あります。
 
 ```
 public class MyType {

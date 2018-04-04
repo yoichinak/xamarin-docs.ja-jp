@@ -1,18 +1,17 @@
 ---
-title: "Android でアプリ リンク"
-description: "このガイドでは、Android 6.0 がアプリにリンクすると、モバイル アプリ web サイトの Url に応答できるようにする方法をサポートする方法について説明します。 どのようなアプリ リンクが、Android 6.0 アプリケーションは、アプリ リンクを実装する方法、およびドメイン用のモバイル アプリへのアクセス許可を付与する web サイトを構成する方法を説明します。"
-ms.topic: article
+title: Android でアプリ リンク
+description: このガイドでは、Android 6.0 がアプリにリンクすると、モバイル アプリ web サイトの Url に応答できるようにする方法をサポートする方法について説明します。 どのようなアプリ リンクが、Android 6.0 アプリケーションは、アプリ リンクを実装する方法、およびドメイン用のモバイル アプリへのアクセス許可を付与する web サイトを構成する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-linking-in-android"></a>Android でアプリ リンク
 
@@ -36,7 +35,7 @@ Android 6.0 は、自動リンクの処理を使用してこのが向上しま�
 
 このガイドは、作成し、Android 6.0 でアプリ リンクをサポートするためのデジタル資産へのリンク ファイルを発行する方法と、Android 6.0 アプリケーションを構成する方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドは、Xamarin.Android 6.1 と Android 6.0 (API level 23) を対象とするアプリケーションが必要です。 またはそれ以降。
 
@@ -56,7 +55,7 @@ Android 6.0 でのアプリのリンクを設定するには、2 つの主要な
 Android アプリケーションのアクティビティへの web サイトの URI (または可能な一連の Uri) をマップするインテント フィルターを構成する必要があります。 Xamarin.Android、装飾を含むアクティビティでこのリレーションシップを確立、 [IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)です。 目的のフィルターは、次の情報を宣言する必要があります。
 
 * **`Intent.ActionView`** &ndash; これを情報を表示する要求に応答するインテント フィルターが登録されます。
-* **`Categories`** &ndash;  目的のフィルターは、両方を登録する必要があります **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** と **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** できる正常web の URI を処理します。
+* **`Categories`** &ndash;  目的のフィルターは、両方を登録する必要があります**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**と**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**できる正常web の URI を処理します。
 * **`DataScheme`** &ndash; 目的のフィルターを宣言する必要があります`http`や`https`です。 これらは、2 つの有効なパターンです。
 * **`DataHost`** &ndash; これは、Uri は元のドメインです。
 * **`DataPathPrefix`** &ndash; これは、web サイト上のリソースへの省略可能なパスです。
@@ -86,7 +85,7 @@ Android では、URI の既定のハンドラーとしてアプリケーショ�
 > [!NOTE]
 > `android:autoVerify`インテント フィルターで属性を設定する必要があります&ndash;それ以外の場合 Android では、検証を実行しません。
 
-場所にあるドメインの web サイトの管理者により、ファイルが配置された**https://domain/.well-known/assetlinks.json**です。
+場所にあるドメインの web サイトの管理者により、ファイルが配置された **https://domain/.well-known/assetlinks.json**です。
 
 デジタル アセット ファイルには、Android 用の関連付けの検証に、メタデータの必要なが含まれています。 **Assetlinks.json**ファイルに次のキー/値ペア。
 
@@ -177,7 +176,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     * **`Domain`** &ndash; Web リンクを持つ、アプリケーションによって処理されます (スペースで区切って) ドメイン
     * **`Status`** &ndash; これは、アプリの現在のリンク処理状態です。 値**常に**アプリケーションを持つことを意味`android:autoVerify=true`宣言され、システムの検証に合格します。 優先順位の Android のシステムのレコードを表す 16 進数が続くことはできます。
 
-    例:
+    例えば:
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps

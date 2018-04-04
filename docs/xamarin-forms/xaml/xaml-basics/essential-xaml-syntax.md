@@ -1,18 +1,17 @@
 ---
-title: "第 2 部: 重要な XAML 構文"
-description: "XAML は、ほとんどの場合、インスタンス化して、オブジェクトの初期化用です。 多くの場合、XML 文字列として簡単に表現できない複雑なオブジェクトにプロパティを設定する必要があり、子クラスの 1 つのクラスによって定義されたプロパティを設定する必要があります。 これら 2 つのニーズは、プロパティ要素と添付プロパティの不可欠な XAML 構文の機能が必要です。"
-ms.topic: article
+title: '第 2 部: 重要な XAML 構文'
+description: XAML は、ほとんどの場合、インスタンス化して、オブジェクトの初期化用です。 多くの場合、XML 文字列として簡単に表現できない複雑なオブジェクトにプロパティを設定する必要があり、子クラスの 1 つのクラスによって定義されたプロパティを設定する必要があります。 これら 2 つのニーズは、プロパティ要素と添付プロパティの不可欠な XAML 構文の機能が必要です。
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 776b0d07de947c01761f8e8d8809b24cf7f3c3cb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部: 重要な XAML 構文
 

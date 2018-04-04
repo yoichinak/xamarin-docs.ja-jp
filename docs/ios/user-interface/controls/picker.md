@@ -1,18 +1,17 @@
 ---
-title: "ピッカー"
-description: "このガイドでは、設計とピッカー Xamarin.iOS アプリで作業について説明します。"
-ms.topic: article
+title: ピッカー
+description: このガイドでは、設計とピッカー Xamarin.iOS アプリで作業について説明します。
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: b92bdc365cae524cee1f586b293c4638225c6178
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e213124e870f1cca96a6078fd26bc7eeb1af55a1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="picker"></a>ピッカー
 
@@ -188,7 +187,7 @@ datePickerView.MinimumDate = minDate;
 datePickerView.MaximumDate = NSDate.Now;
 ```
 
-または、最小値と最大の日付範囲を設定するのに .NET コントロールを使用することもできます。 例:
+または、最小値と最大の日付範囲を設定するのに .NET コントロールを使用することもできます。 例えば:
 
 ```csharp
 DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
@@ -205,7 +204,7 @@ datePickerView.MinuteInterval = 10;
 
 #### <a name="time"></a>時刻
 
-時モードでは、時間、時間と分のセレクターと省略可能な AM または PM の表記が表示されます。 設定されている、`UIDatePickerMode.Time`プロパティです。 例:
+時モードでは、時間、時間と分のセレクターと省略可能な AM または PM の表記が表示されます。 設定されている、`UIDatePickerMode.Time`プロパティです。 例えば:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Time;
@@ -219,7 +218,7 @@ datePickerView.Mode = UIDatePickerMode.Time;
 
 #### <a name="date"></a>日付
 
-日付のモードでは、月、日、年セレクターと日付を表示します。 設定されている、`UIDatePickerMode.Date`プロパティです。 例:
+日付のモードでは、月、日、年セレクターと日付を表示します。 設定されている、`UIDatePickerMode.Date`プロパティです。 例えば:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Date;
@@ -240,7 +239,7 @@ datePickerView.Locale = NSLocale.FromLocaleIdentifier("en_GB");
 
 #### <a name="date-and-time"></a>日付と時刻
 
-日付と時刻のモードを 12 や 24 時間制を使用する場合、上の日付、時間と分、および省略可能な AM または PM 指定 dependings で時間の shortend ビューが表示されます。 設定されている、`UIDatePickerMode.DateAndTime`プロパティです。 例:
+日付と時刻のモードを 12 や 24 時間制を使用する場合、上の日付、時間と分、および省略可能な AM または PM 指定 dependings で時間の shortend ビューが表示されます。 設定されている、`UIDatePickerMode.DateAndTime`プロパティです。 例えば:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.DateAndTime;
@@ -254,7 +253,7 @@ datePickerView.Mode = UIDatePickerMode.DateAndTime;
 
 #### <a name="countdown-timer"></a>カウント ダウン タイマー
 
-カウント ダウン タイマー モードでは、時間と分の値を表示します。 設定されている、`UIDatePickerMode.CountDownTimer`プロパティです。 例:
+カウント ダウン タイマー モードでは、時間と分の値を表示します。 設定されている、`UIDatePickerMode.CountDownTimer`プロパティです。 例えば:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.CountDownTimer;

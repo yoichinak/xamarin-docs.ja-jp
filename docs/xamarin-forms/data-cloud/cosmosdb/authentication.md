@@ -1,18 +1,17 @@
 ---
 title: Azure Cosmos DB ドキュメント データベースとユーザーの認証
 description: Azure の Cosmos DB ドキュメント データベースは、パーティションのコレクションは、無制限のストレージとスループットをサポートしながら複数のサーバーとは、パーティションにまたがることができますをサポートします。 この記事では、ユーザーは、Xamarin.Forms アプリケーションで、各自のドキュメントのみアクセスできるようにパーティション分割のコレクションとアクセス制御を結合する方法について説明します。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Azure Cosmos DB ドキュメント データベースとユーザーの認証
 

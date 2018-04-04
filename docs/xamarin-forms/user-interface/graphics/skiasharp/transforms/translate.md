@@ -1,18 +1,17 @@
 ---
 title: 平行移動の変換
 description: SkiaSharp グラフィックスをシフトする平行移動の変換を使用する方法をについてください。
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 771fde301a8585f25d7d83c7bf0451cf6e0cf8e9
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 573848186a8f389ac18e22ea4c3b7d4fe1503449
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-translate-transform"></a>平行移動の変換
 
@@ -126,7 +125,7 @@ using (SKPaint textPaint = new SKPaint())
 
 次の 3 つの例については、の各`Translate`で指定した位置からオフセットするテキストを表示するために呼び出されますが、`x`と`y`変数。 テキストを翻訳の効果がない別の色でもう一度表示されます。
 
-[![](translate-images/translatetexteffects-small.png "テキスト効果の変換] ページのスクリーン ショットをトリプル")](translate-images/translatetexteffects-large.png#lightbox "テキスト効果の変換] ページのトリプル スクリーン ショット")
+[![](translate-images/translatetexteffects-small.png "テキスト効果の変換 ページのスクリーン ショットをトリプル")](translate-images/translatetexteffects-large.png#lightbox "テキスト効果の変換 ページのトリプル スクリーン ショット")
 
 役に立たなくさまざまな方法を示していますの 3 つの例では、それぞれ、`Translate`呼び出し。
 
@@ -138,7 +137,7 @@ using (SKPaint textPaint = new SKPaint())
 
 ただし、変換の呼び出しは 1 つから引き継がについて心配することも、`PaintSurface`へハンドラー。 新しい呼び出しごとに`PaintSurface`新規の配信`SKCanvas`の既定の変換を持つオブジェクト。
 
-一般的な用途の別、`Translate`ビジュアル オブジェクトをレンダリングがもともと作成された描画都合の良い座標を使用して変換がします。 たとえば、中央の位置 (0, 0) を持つ、アナログ時計の座標を指定することができます。 できますし、変換を使用できます表示目的の位置。 示されているこれは、[**Hendecagram 配列**] ページ。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)クラスが作成した後、 `SKPath` 11 - 星のオブジェクト。 `HendecagramPath`オブジェクトが定義されている、公開、static、および読み取り専用他のデモ プログラムからアクセスできるようにします。 静的コンス トラクターで作成されます。
+一般的な用途の別、`Translate`ビジュアル オブジェクトをレンダリングがもともと作成された描画都合の良い座標を使用して変換がします。 たとえば、中央の位置 (0, 0) を持つ、アナログ時計の座標を指定することができます。 できますし、変換を使用できます表示目的の位置。 示されているこれは、**[Hendecagram 配列]** ページ。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)クラスが作成した後、 `SKPath` 11 - 星のオブジェクト。 `HendecagramPath`オブジェクトが定義されている、公開、static、および読み取り専用他のデモ プログラムからアクセスできるようにします。 静的コンス トラクターで作成されます。
 
 ```csharp
 public class HendecagramArrayPage : ContentPage

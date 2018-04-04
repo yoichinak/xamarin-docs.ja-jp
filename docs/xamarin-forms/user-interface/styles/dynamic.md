@@ -1,18 +1,17 @@
 ---
-title: "動的なスタイル"
-description: "せずスタイルにプロパティの変更に応答して、アプリケーションの実行中は変更されません。 たとえば、視覚的要素を 1 つの set アクセス操作子インスタンスが変更された場合、削除、または追加された新しい set アクセス操作子インスタンスに割り当てると、スタイル、変更は視覚要素に適用されません。 ただし、アプリケーションは、動的なリソースを使用して、実行時に動的にスタイルの変更に応答できます。"
-ms.topic: article
+title: 動的なスタイル
+description: せずスタイルにプロパティの変更に応答して、アプリケーションの実行中は変更されません。 たとえば、視覚的要素を 1 つの set アクセス操作子インスタンスが変更された場合、削除、または追加された新しい set アクセス操作子インスタンスに割り当てると、スタイル、変更は視覚要素に適用されません。 ただし、アプリケーションは、動的なリソースを使用して、実行時に動的にスタイルの変更に応答できます。
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c484bdc90ec039a8d70209deabbe283cf7100610
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dynamic-styles"></a>動的なスタイル
 

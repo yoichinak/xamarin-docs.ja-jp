@@ -1,18 +1,17 @@
 ---
-title: "バインディングのトラブルシューティング"
-description: "この記事は、バインディング、および考えられる原因と問題を解決する方法をお勧めを生成するときに発生する可能性のあるいくつかの一般的なエラーをまとめたものです。"
-ms.topic: article
+title: バインディングのトラブルシューティング
+description: この記事は、バインディング、および考えられる原因と問題を解決する方法をお勧めを生成するときに発生する可能性のあるいくつかの一般的なエラーをまとめたものです。
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6286eed091114c117c723f462bbb8cac77034b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-bindings"></a>バインディングのトラブルシューティング
 
@@ -51,7 +50,7 @@ Android ライブラリをデコンパイルしたが後、は、ソース コ�
 
 - **難読化の特性を持つクラス**&ndash;難読化されたクラスの特性を含めます。
 
-    - クラス名が含まれています、  **$** 、つまり**$.class**
+    - クラス名が含まれています、 **$**、つまり**$.class**
     - クラス名が完全セキュリティが侵害の小文字、つまり**a.class**      
 
 - **`import` 参照されていないライブラリ ステートメント**&ndash;未参照のライブラリを識別し、Xamarin.Android バインディングでプロジェクトにこれらの依存関係を追加、**ビルド アクション**の**ReferenceJar**または**EmbedddedReferenceJar**です。
@@ -114,7 +113,7 @@ Xamarin.Android が XML ファイル名を生成、バインディングのプ�
 
 -   Java は、パブリックでないクラスからパブリック クラスを派生するが、これは .NET でサポートされていません。 バインディング ジェネレーターが非パブリック クラスのバインドを生成しないので、これらを正しく生成できませんなどクラスを派生します。 これを解決するには、これらの派生クラスで削除するノードを使用して、メタデータ エントリを削除するか**Metadata.xml**、またはパブリック非パブリック クラスを行っているメタデータを修正します。 C# のソースを作成できるように、後者の方法は、バインディングを作成、パブリックでないクラスは使用できません。
 
-    例:
+    例えば:
 
     ```xml
     <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"

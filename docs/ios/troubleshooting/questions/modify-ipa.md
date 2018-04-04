@@ -1,16 +1,16 @@
 ---
-title: "ファイルを追加または Visual Studio でビルドした後、IPA ファイルからファイルを削除できますか。"
-ms.topic: article
+title: ファイルを追加または Visual Studio でビルドした後、IPA ファイルからファイルを削除できますか。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be792c95de7aa66d64278e47b2ca6b354e611273
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8b61ba38491b2085233dd1b30a82bc57d2baaed
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>ファイルを追加または Visual Studio でビルドした後、IPA ファイルからファイルを削除できますか。
 
@@ -86,4 +86,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 App Store の検証プロセスは、同様のエラー メッセージを報告します。
 
-> ERROR ITMS-90035: "Invalid Signature. 封印されたリソースは、存在しないか無効です。 パス [iPhoneApp1.app/iPhoneApp1] にあるバイナリには、無効な署名が含まれています。 アドホックの証明書または開発証明書ではない、配布証明書を使用してアプリケーションに署名したことを確認してください。 (これは、プロジェクト レベルでの任意の値を上書き)、ターゲット レベルで、Xcode でコード署名の設定が正しいことを確認します。 また、アップロードするバンドルは、Xcode、シミュレーターのターゲットではないでリリース ターゲットを使用して構築されたことを確認してください。 コードの署名の設定が正しい場合は、Xcode で"クリーン All"を選択して、Finder で、「ビルド」ディレクトリを削除してリビルドしてターゲットのリリースです。 詳細についてを参照してください[https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> ERROR ITMS-90035: "Invalid Signature. 封印されたリソースは、存在しないか無効です。 パス [iPhoneApp1.app/iPhoneApp1] にあるバイナリには、無効な署名が含まれています。 アドホックの証明書または開発証明書ではない、配布証明書を使用してアプリケーションに署名したことを確認してください。 (これは、プロジェクト レベルでの任意の値を上書き)、ターゲット レベルで、Xcode でコード署名の設定が正しいことを確認します。 また、アップロードするバンドルは、Xcode、シミュレーターのターゲットではないでリリース ターゲットを使用して構築されたことを確認してください。 コードの署名の設定が正しい場合は、Xcode で"クリーン All"を選択して、Finder で、「ビルド」ディレクトリを削除してリビルドしてターゲットのリリースです。 詳細についてを参照してください[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

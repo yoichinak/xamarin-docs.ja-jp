@@ -1,17 +1,16 @@
 ---
-title: "ローカリゼーションの使用"
-description: "複数の言語、watchOS アプリを適応させる"
-ms.topic: article
+title: ローカリゼーションの使用
+description: 複数の言語、watchOS アプリを適応させる
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c765005491f55a1bdcadb1bc5aea97f693dc4570
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-localization"></a>ローカリゼーションの使用
 
@@ -55,7 +54,7 @@ Watch アプリには、アプリのユーザー インターフェイスにつ�
 
 1. 作成**Base.lproj**ディレクトリと移動、 **Interface.storyboard**にします。
 
-2. 作成** <language>.lproj**サポートする各言語用のディレクトリ。
+2. 作成 **<language>.lproj**サポートする各言語用のディレクトリ。
 
 3. **.Lproj**ディレクトリを含める必要があります、 **Interface.strings**テキスト ファイル (ファイル名は storboard の名前を一致する必要があります)。 必要に応じて、これらのディレクトリでのローカライズを必要とするすべてのイメージを配置できます。
 
@@ -86,13 +85,13 @@ Watch アプリには、アプリのユーザー インターフェイスにつ�
 
 #### <a name="storyboard-images"></a>ストーリー ボードの画像
 
-ソリューションの例も含まれています、 ** gradient@2x.png **各言語のフォルダー内のイメージです。 このイメージを指定できます言語ごとに異なる (たとえばです。 変換に必要なテキストが埋め込まれている可能性があります。 またはローカライズされた物の使用)。
+ソリューションの例も含まれています、 **gradient@2x.png**各言語のフォルダー内のイメージです。 このイメージを指定できます言語ごとに異なる (たとえばです。 変換に必要なテキストが埋め込まれている可能性があります。 またはローカライズされた物の使用)。
 
 単にセットのイメージの**イメージ**ストーリー ボードと適切なイメージのプロパティは、ユーザーが選択した言語に従って watch でレンダリングされます。
 
 ![](localization-images/storyboard-image.png "ストーリー ボードの画像イメージのプロパティを設定します。")
 
-注: すべての Apple ウォッチがあるのみ Retina ディスプレイのため、 ** @2x **イメージのバージョンが必要です。 指定する必要はありません** @2x **ストーリー ボードにします。
+注: すべての Apple ウォッチがあるのみ Retina ディスプレイのため、 **@2x**イメージのバージョンが必要です。 指定する必要はありません**@2x**ストーリー ボードにします。
 
 ### <a name="watch-extension"></a>ウォッチ拡張機能
 
@@ -130,7 +129,7 @@ displayText.SetText (localizedDisplay);
   displayImage.SetImage("gradient"); // image in Watch App (as shown above)
   ```
 
-2. 使用して、監視する、拡張機能からイメージを行うことができます`FromBundle`し、アプリは、ユーザーの言語の選択のための適切なイメージを自動的に選択します。 ソリューションの例では、イメージ** language@2x.png **各言語で、フォルダーとそのに表示される`DetailController`次のコードを使用します。
+2. 使用して、監視する、拡張機能からイメージを行うことができます`FromBundle`し、アプリは、ユーザーの言語の選択のための適切なイメージを自動的に選択します。 ソリューションの例では、イメージ**language@2x.png**各言語で、フォルダーとそのに表示される`DetailController`次のコードを使用します。
 
   ```csharp
   using (var image = UIImage.FromBundle ("language")) {
@@ -138,7 +137,7 @@ displayText.SetText (localizedDisplay);
   }
   ```
 
-  指定する必要はありません、 ** @2x **画像のファイル名を参照する場合。
+  指定する必要はありません、 **@2x**画像のファイル名を参照する場合。
 
 2 番目のメソッドも watch; で表示するためにリモート サーバーからイメージをダウンロードする場合は、適用できます。ただしここで行う必要があります、イメージをダウンロードするが、ユーザーの設定に従って正しくローカライズされています。
 
