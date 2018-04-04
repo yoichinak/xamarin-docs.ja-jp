@@ -14,7 +14,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/28/2018
 ---
-# <a name="consuming-platform-specifics"></a>Platform-Specificsの使用
+# <a name="consuming-platform-specifics"></a>Platform-Specifics の使用
 
 _Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。_
 
