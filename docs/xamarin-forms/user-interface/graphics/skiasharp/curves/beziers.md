@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 312d487111f8e36170c97ca7a29fb91556c72569
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
 
@@ -46,7 +46,7 @@ public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Sing
 
 結果の曲線は、開始した時点、終点で終わります。 曲線通常を通過しません、2 つの制御ポイントです。代わりにそれらの方向に曲線をプルする程度 like 磁石機能します。
 
-3 次ベジエ曲線の把握する最善の方法は、実験でです。 目的は、これは、**ベジエ曲線** ページから派生する`InteractivePage`です。 [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)ファイルをインスタンス化、`SKCanvasView`と`TouchEffect`です。 [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)分離コード ファイルは、4 つ作成`TouchPoint`コンス トラクター内のオブジェクト。 `PaintSurface`イベント ハンドラーを作成、`SKPath`基に、4 つのベジエ曲線を表示するために`TouchPoint`オブジェクトし、も管理ポイントから終了ポイントにドット区切りの接線を描画します。
+3 次ベジエ曲線の把握する最善の方法は、実験でです。 目的は、これは、**ベジエ曲線** ページから派生する`InteractivePage`です。 [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)ファイルをインスタンス化、`SKCanvasView`と`TouchEffect`です。 [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)分離コード ファイルは、4 つ作成`TouchPoint`コンス トラクター内のオブジェクト。 `PaintSurface`イベント ハンドラーを作成、`SKPath`基に、4 つのベジエ曲線を表示するために`TouchPoint`オブジェクトし、も管理ポイントから終了ポイントにドット区切りの接線を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -128,7 +128,7 @@ L = 4 × tan(α/4)/3
 
 L ハイパーボリック 0.265、45 度の角度を示します。 コードでは、必要な円の半径によってその値を乗算するは。
 
-**円弧をベジエ** ページでは、おおよその最大 180 ° の範囲の角度の円弧をベジエ曲線を定義するをテストすることができます。 [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)ファイルをインスタンス化、`SKCanvasView`と`Slider`の角度を選択します。 `PaintSurface`内のイベント ハンドラー、 [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)分離コード ファイルでは、変換を使用して、キャンバスの中央に点 (0, 0) を設定します。 比較については、そのポイントを中心と円を描画し、ベジエ曲線の 2 つの制御点を計算します。
+**円弧をベジエ** ページでは、おおよその最大 180 ° の範囲の角度の円弧をベジエ曲線を定義するをテストすることができます。 [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)ファイルをインスタンス化、`SKCanvasView`と`Slider`の角度を選択します。 `PaintSurface`内のイベント ハンドラー、 [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)分離コード ファイルでは、変換を使用して、キャンバスの中央に点 (0, 0) を設定します。 比較については、そのポイントを中心と円を描画し、ベジエ曲線の 2 つの制御点を計算します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -216,7 +216,7 @@ Windows Mobile 画面について詳しく見てし、角度が 180 度は、そ
 
 100 では、円の半径*L* 55 とは、簡単な数に注意してください。
 
-**円を 2 乗**ページには、円、四角形の間の図がアニメーション化します。 円がこの配列内の定義の最初の列の座標が示すように 4 つのベジエ曲線によって近似された形状、 [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs)クラス。
+**円を 2 乗**ページには、円、四角形の間の図がアニメーション化します。 円がこの配列内の定義の最初の列の座標が示すように 4 つのベジエ曲線によって近似された形状、 [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs)クラス。
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -292,7 +292,7 @@ Sinusoidally 不安定な値に基づいて、ポイントが補間`t`です。 
 
 このようなアニメーションはアルゴリズムによっては柔軟なので円弧と直線の両方としてレンダリングされる曲線なしで実行できなくなります。
 
-**ベジエ無限大**ページのおおよその円弧をベジエ曲線の機能を使用してもかかります。ここでは、`PaintSurface`からハンドラー、 [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs)クラス。
+**ベジエ無限大**ページのおおよその円弧をベジエ曲線の機能を使用してもかかります。ここでは、`PaintSurface`からハンドラー、 [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -359,7 +359,7 @@ public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 
 メソッドでは、曲線を追加する現在の位置から`point2`で`point1`コントロール ポイントとして。
 
-2 次ベジエ曲線を試すことができます、**二次曲線**ページとよく似ていますが、**ベジエ曲線**ページのみの 3 つのタッチ ポイントがある点が異なります。 ここでは、`PaintSurface`ハンドラー、 [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)分離コード ファイル。
+2 次ベジエ曲線を試すことができます、**二次曲線**ページとよく似ていますが、**ベジエ曲線**ページのみの 3 つのタッチ ポイントがある点が異なります。 ここでは、`PaintSurface`ハンドラー、 [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)分離コード ファイル。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -436,7 +436,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 最後に注意してください`weight`パラメーター。
 
-**円錐曲線** ページでは、これらの曲線をテストすることができます。 `ConicCurvePage` クラスは `InteractivePage` から派生したものです。 [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)ファイルをインスタンス化、 `Slider` – 2 と 2 の重み値を選択します。 [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)分離コード ファイルでは、3 つが作成されます`TouchPoint`オブジェクト、および`PaintSurface`ハンドラーは、コントロールに接線で結果の曲線を単にレンダリングポイント:
+**円錐曲線** ページでは、これらの曲線をテストすることができます。 `ConicCurvePage` クラスは `InteractivePage` から派生したものです。 [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)ファイルをインスタンス化、 `Slider` – 2 と 2 の重み値を選択します。 [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)分離コード ファイルでは、3 つが作成されます`TouchPoint`オブジェクト、および`PaintSurface`ハンドラーは、コントロールに接線で結果の曲線を単にレンダリングポイント:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -490,7 +490,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 円の中心からのコントロール ポイントの距離を調べるに三角関数を使用することができます: α する半分の角度のコサインの値で割った値円の半径はします。 始点と終点の間の円弧を描画するには、半分の角度の同じそのコサインを重みを設定します。 角度が 180 度の場合は、接線を満たすことはありませんし、重みが 0 に注意してください。 より小さい角度 180 ° の計算は問題なく動作します。
 
-**円錐円弧** ページでは、この動作について説明します。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)ファイルをインスタンス化、`Slider`の角度を選択します。 `PaintSurface`ハンドラー、 [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)分離コード ファイルは、管理ポイントと重みを計算します。
+**円錐円弧** ページでは、この動作について説明します。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)ファイルをインスタンス化、`Slider`の角度を選択します。 `PaintSurface`ハンドラー、 [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)分離コード ファイルは、管理ポイントと重みを計算します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

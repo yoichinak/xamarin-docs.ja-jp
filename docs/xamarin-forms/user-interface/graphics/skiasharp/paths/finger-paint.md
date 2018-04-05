@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 9f7e3f64122f3b95291973d032aaf507dfbc8fab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="finger-painting"></a>本の指の描画
 
@@ -27,7 +27,7 @@ Xamarin.Forms でタッチのサポートでは、Xamarin.Forms タッチ追跡�
 
 **指ペイント**ページに**SkiaSharpFormsDemos**本の指の描画のシンプルな実装です。 色を選択できるようにしたり、幅の境界線の描画しないキャンバスをクリアすることがない、および、もちろん、アートワークを保存することはできません。
 
-[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml)ファイルの配置、 `SKCanvasView` 1 つのセルで`Grid`アタッチし、`TouchEffect`に`Grid`:
+[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml)ファイルの配置、 `SKCanvasView` 1 つのセルで`Grid`アタッチし、`TouchEffect`に`Grid`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -50,7 +50,7 @@ Xamarin.Forms でタッチのサポートでは、Xamarin.Forms タッチ追跡�
 
 アタッチする、`TouchEffect`に直接、`SKCanvasView`すべてのプラットフォームにおいては使用できません。
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)分離コード ファイルを格納するための 2 つのコレクションを定義する、`SKPath`オブジェクトだけでなく、`SKPaint`これらのパスを表示するためのオブジェクト。
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)分離コード ファイルを格納するための 2 つのコレクションを定義する、`SKPath`オブジェクトだけでなく、`SKPaint`これらのパスを表示するためのオブジェクト。
 
 ```csharp
 public partial class FingerPaintPage : ContentPage

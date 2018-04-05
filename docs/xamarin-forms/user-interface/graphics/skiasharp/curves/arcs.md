@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 668b1f437b78535bd4cdf3bb3f80154dbf281a02
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -73,7 +73,7 @@ path.ArcTo (oval, startAngle, sweepAngle, false);
 
 このバージョンの`ArcTo`円弧の始点までの現在位置から線を描画します。つまり円弧をより大きな輪郭の途中でどこかにあることができます。
 
-**角度円弧**ページを使用して、2 つのスライダーを使用して、開始時刻を指定し、掃引角度にできます。 XAML ファイルでは、2 つをインスタンス化`Slider`要素および`SKCanvasView`です。 `PaintCanvas`ハンドラー、 [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs)ファイルは、楕円と円弧を使用して 2 つの両方を描画`SKPaint`フィールドとして定義されているオブジェクト。
+**角度円弧**ページを使用して、2 つのスライダーを使用して、開始時刻を指定し、掃引角度にできます。 XAML ファイルでは、2 つをインスタンス化`Slider`要素および`SKCanvasView`です。 `PaintCanvas`ハンドラー、 [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs)ファイルは、楕円と円弧を使用して 2 つの両方を描画`SKPaint`フィールドとして定義されているオブジェクト。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ y 楕円を = です。MidY + (oval です。高さ/2) * sin(angle)
 
 `angle`いずれかの値は`startAngle`または`startAngle + sweepAngle`です。
 
-円弧を定義する 2 つの角度の使用は、円弧を描くには、たとえば、円グラフを作成するの角度の長さがわかっている場合に最適です。 **分割円グラフ** ページでは、この動作について説明します。 [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs)クラスは、内部クラスを使用していくつか用意されたデータと色を定義します。
+円弧を定義する 2 つの角度の使用は、円弧を描くには、たとえば、円グラフを作成するの角度の長さがわかっている場合に最適です。 **分割円グラフ** ページでは、この動作について説明します。 [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs)クラスは、内部クラスを使用していくつか用意されたデータと色を定義します。
 
 ```csharp
 class ChartData
@@ -259,7 +259,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 2 番目の接点から輪郭を続行することができます。
 
-**タンジェント円弧** ページでは、正接の円弧をテストすることができます。これは、最初のいくつかのページから派生する[ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/InteractivePage.cs)、便利ないくつかを定義する`SKPaint`オブジェクトし、実行`TouchPoint`処理します。
+**タンジェント円弧** ページでは、正接の円弧をテストすることができます。これは、最初のいくつかのページから派生する[ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs)、便利ないくつかを定義する`SKPaint`オブジェクトし、実行`TouchPoint`処理します。
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -309,7 +309,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` クラスは `InteractivePage` から派生したものです。 コンス トラクター、 [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)ファイルがインスタンス化と初期化を担当する、`touchPoints`配列、および設定`baseCanvasView`(で`InteractivePage`) に、`SKCanvasView`でオブジェクトがインスタンス化、 [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)ファイル。
+`TangentArcPage` クラスは `InteractivePage` から派生したものです。 コンス トラクター、 [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)ファイルがインスタンス化と初期化を担当する、`touchPoints`配列、および設定`baseCanvasView`(で`InteractivePage`) に、`SKCanvasView`でオブジェクトがインスタンス化、 [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)ファイル。
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -419,7 +419,7 @@ Windows Mobile デバイスで、3 つのポイントは、ほぼ同一線上と
 
 正接弧は、角が丸い角の丸い四角形などの作成に最適です。 `SKPath`が既に含まれる、`AddRoundedRect`メソッド、**丸め七角形**ページが使用する方法を示します`ArcTo`7 つの辺の多角形の角を丸める場合。 (コードは、正規の多角形の汎用的です。)
 
-`PaintSurface`のハンドラー、 [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs)クラスでは、1 つ含まれています`for`ループ、七角形とこれらの値から 7 つの辺の中間点を計算する 2 番目の 7 つの頂点の座標を計算するには頂点。 これらの中間点が、パスを構築するために使用されます。
+`PaintSurface`のハンドラー、 [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs)クラスでは、1 つ含まれています`for`ループ、七角形とこれらの値から 7 つの辺の中間点を計算する 2 番目の 7 つの頂点の座標を計算するには頂点。 これらの中間点が、パスを構築するために使用されます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -543,7 +543,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 円弧を定義するには、この方法は、最初に遭遇したで複雑な音、回転の楕円と円弧を定義できます。 唯一の方法、ことがある多くの場合、最も簡単なアプローチ輪郭の他の部分と円弧を統合する必要がある場合。
 
-**楕円の円弧** ページでは、2 つのポイント サイズと楕円の回転を対話的に設定することができます。 `EllipticalArcPage`クラスから派生`InteractivePage`、および`PaintSurface`ハンドラーに、 [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)分離コード ファイルは、次の 4 つの円弧を描画します。
+**楕円の円弧** ページでは、2 つのポイント サイズと楕円の回転を対話的に設定することができます。 `EllipticalArcPage`クラスから派生`InteractivePage`、および`PaintSurface`ハンドラーに、 [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)分離コード ファイルは、次の 4 つの円弧を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -613,7 +613,7 @@ y = 112·sin(41.8) = 75
 
 ![](arcs-images/infinitycoordinates.png "接線と座標の 2 つの円")
 
-`PaintSurface`ハンドラー、 [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs)クラスは、無限大記号を配置できるように、(0, 0) ポイントが、ページの中央に配置されているし、画面のサイズへのパスのスケールを設定。
+`PaintSurface`ハンドラー、 [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs)クラスは、無限大記号を配置できるように、(0, 0) ポイントが、ページの中央に配置されているし、画面のサイズへのパスのスケールを設定。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

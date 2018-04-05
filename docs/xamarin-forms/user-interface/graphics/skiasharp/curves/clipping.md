@@ -7,11 +7,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 0451653b4ee5c85b9bcf884b6b5609a251cf577c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 051ceec148a569d00048a661e6ba8dc3ce96fc81
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でクリッピング
 
@@ -23,7 +23,7 @@ _クリップの画像へのパスを使用して、領域を作成して特定�
 
 *のクリッピング領域*グラフィックスが表示される画面の領域です。 クリッピング領域の外側に表示されるものは表示されません。 クリッピング領域が通常で定義されている、 [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)オブジェクトが別の方法として定義できますクリッピング領域を使用して、 [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/)オブジェクト。 これら 2 種類のオブジェクトは、パスから領域を作成するために最初に、関連する思えるかもしれません。 ただし、領域からパスを作成することはできませんし、それらが内部的に非常に異なる: パスは、一連の水平方向のスキャン ライン、地域が定義されている一連の直線と曲線、構成されています。
 
-上記の図は、によって作成された、 **Keyhole を通じてサル**ページ。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)クラス SVG データを使用してパスを定義し、コンス トラクターを使用してプログラム リソースからビットマップを読み込めません。
+上記の図は、によって作成された、 **Keyhole を通じてサル**ページ。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)クラス SVG データを使用してパスを定義し、コンス トラクターを使用してプログラム リソースからビットマップを読み込めません。
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -118,7 +118,7 @@ public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.In
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-既定では、結果のクリッピング領域が、既存のクリッピング領域の積集合と`SKPath`または`SKRect`で指定されている、`ClipPath`または`ClipRect`メソッドです。 これに示されている、 **4 つの円が交差するクリップ**ページ。 `PaintSurface`ハンドラー、 [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs)クラスを再利用同じ`SKPath`連続呼び出しでのクリッピング領域を削減それぞれ 4 つの重なり合う円を作成するオブジェクト`ClipPath`:
+既定では、結果のクリッピング領域が、既存のクリッピング領域の積集合と`SKPath`または`SKRect`で指定されている、`ClipPath`または`ClipRect`メソッドです。 これに示されている、 **4 つの円が交差するクリップ**ページ。 `PaintSurface`ハンドラー、 [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs)クラスを再利用同じ`SKPath`連続呼び出しでのクリッピング領域を削減それぞれ 4 つの重なり合う円を作成するオブジェクト`ClipPath`:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -183,7 +183,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](clipping-images//clipoperations-small.png "クリップ オペレーション ページのスクリーン ショットをトリプル")](clipping-images/clipoperations-large.png#lightbox "クリップ オペレーション ページのトリプル スクリーン ショット")
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs)クラスは、2 つ定義`SKPaint`フィールドとしてオブジェクトし、し、画面に 2 つの四角形領域分割します。 これらの領域は、電話が縦または横モードではかどうかによって異なります。 `DisplayClipOp`クラスを表示し、テキストと呼び出し`ClipPath`各クリップ操作を説明するために 2 つの円のパス。
+[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs)クラスは、2 つ定義`SKPaint`フィールドとしてオブジェクトし、し、画面に 2 つの四角形領域分割します。 これらの領域は、電話が縦または横モードではかどうかによって異なります。 `DisplayClipOp`クラスを表示し、テキストと呼び出し`ClipPath`各クリップ操作を説明するために 2 つの円のパス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -286,7 +286,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 これらすべての可能性をこれら 2 つの円を組み合わせてとは 単独でに表示される 3 つのコンポーネントの組み合わせとして、結果のイメージを検討してください、 `Difference`、 `Intersect`、および`ReverseDifference`操作します。 組み合わせの総数は、3 つ目の電源を 2 つまたは 8 です。 不足している 2 つは、元の地域 (いない呼び出し元からの結果を`Op`まったく) と完全に空の領域。
 
-これは困難領域を使用して、そのパスから、パスと、地域をまず作成し、複数の領域を結合する必要があるためにクリップするためです。 全体的な構造、**地域の操作**によく似ていますページ**クリップ操作**ですが、 [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs)クラスは、画面 6 つの領域に分割し、このジョブに領域を使用するために必要な追加の作業を示しています。
+これは困難領域を使用して、そのパスから、パスと、地域をまず作成し、複数の領域を結合する必要があるためにクリップするためです。 全体的な構造、**地域の操作**によく似ていますページ**クリップ操作**ですが、 [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs)クラスは、画面 6 つの領域に分割し、このジョブに領域を使用するために必要な追加の作業を示しています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -370,7 +370,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 ただし、一連のスキャンに領域を縮小するときに行、特定のピクセルのディメンションに基づいた行これらスキャンします。 厳密には、領域はベクター グラフィックス オブジェクトではありません。 パスにより圧縮モノクロ ビットマップには、本質的に近いです。 そのため、領域を拡大縮小または信頼性のあるを失うことがなく、このため、これらは変換されませんクリッピング領域を使用する場合を回転することはできません。
 
-ただし、描画用の領域に変換を適用できます。 **地域ペイント**プログラムが鮮明に領域の内側の性質を示します。 [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs)クラスを作成、`SKRegion`オブジェクトに基づいて、 `SKPath` 10 単位の半径の円のです。 トランス フォームでは、円のページを埋めるし展開します。
+ただし、描画用の領域に変換を適用できます。 **地域ペイント**プログラムが鮮明に領域の内側の性質を示します。 [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs)クラスを作成、`SKRegion`オブジェクトに基づいて、 `SKPath` 10 単位の半径の円のです。 トランス フォームでは、円のページを埋めるし展開します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -427,7 +427,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 地域が一連の個別の座標では明確にします。
 
-場合は、クリッピング領域に関連して変換を使用する必要はありません、として使用できます領域、クリッピング、 **4 つ-リーフ クローバー**ページを示しています。 [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs)クラスの 4 つの循環領域から複合領域を作成、クリッピング領域としてその複合地域を設定、および一連のページの中央から 360 の直線を描画します。
+場合は、クリッピング領域に関連して変換を使用する必要はありません、として使用できます領域、クリッピング、 **4 つ-リーフ クローバー**ページを示しています。 [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs)クラスの 4 つの循環領域から複合領域を作成、クリッピング領域としてその複合地域を設定、および一連のページの中央から 360 の直線を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

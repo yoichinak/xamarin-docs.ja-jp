@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 88b9dacef7a77d5f18908bdcb696e5172ceaa8c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
@@ -32,7 +32,7 @@ _SkiaSharp パスの塗りつぶし型で実行できるさまざまな特殊効
 
 多くの日常的なパスを持つワインディング アルゴリズムは多くの場合、パスの含まれているすべての領域を塗りつぶします。 一般に、偶アルゴリズムには、さらに興味深い結果が生成されます。
 
-典型的な例は、5 ポイントの星で示したように、 **Five-Pointed スター**ページ。 [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)ファイルでは、2 つをインスタンス化`Picker`パスを選択するビューは入力型とパスを描画または入力するかどうかまたは両方とどのような順序で。
+典型的な例は、5 ポイントの星で示したように、 **Five-Pointed スター**ページ。 [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)ファイルでは、2 つをインスタンス化`Picker`パスを選択するビューは入力型とパスを描画または入力するかどうかまたは両方とどのような順序で。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

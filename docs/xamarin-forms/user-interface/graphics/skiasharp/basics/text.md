@@ -7,11 +7,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1e8ad47867fb1821df1e427aa777ead1a7da19a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4ef9f1b634d2ecfa73a94bfd562a68593dfdc575
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスを統合します。
 
@@ -23,7 +23,7 @@ _SkiaSharp グラフィックスとテキストを統合するレンダリング
 
 SkiaSharp`Canvas`クラスでは、四角形を描画するメソッドも含まれます ([`DrawRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRect/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/)) と角の丸い四角形 ([`DrawRoundRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRoundRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPaint/))。 これらのメソッドとして定義する四角形の必要な`SKRect`値。
 
-**フレーム化テキスト**ページ センター ページと角の丸い四角形のペアから成るフレームでブロックの挿入に短いテキスト文字列。 [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs)クラスは、その方法を示しています。
+**フレーム化テキスト**ページ センター ページと角の丸い四角形のペアから成るフレームでブロックの挿入に短いテキスト文字列。 [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs)クラスは、その方法を示しています。
 
 SkiaSharp でを使用して、`SKPaint`セットのテキストとフォントの属性をクラスも使用できますをレンダリングされるテキストのサイズを取得します。 次の先頭`PaintSurface`イベント ハンドラーを呼び出す 2 つの異なる`MeasureText`メソッドです。 最初の[ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.MeasureText/p/System.String/)呼び出しでは、単純な`string`引数と現在のフォント属性に基づいて、テキストの幅をピクセル単位を返します。 プログラムは、新しい計算`TextSize`のプロパティ、`SKPaint`オブジェクトが現在、レンダリングされた幅に基づく`TextSize`プロパティ、および表示領域の幅。 設定するためのものでは、この`TextSize`文字列が画面の幅の 90% に表示されるようにします。
 

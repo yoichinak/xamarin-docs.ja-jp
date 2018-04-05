@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 274c8e9a79fa3fadff14f1174d86aad04d902b05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="dots-and-dashes"></a>ドットとダッシュ
 
@@ -29,7 +29,7 @@ SkiaSharp を使用して、純色ではない代わりに、ドットとダッ�
 
 ただし、`StrokeCap`の設定、`SKPaint`オブジェクトは、これらのドットとダッシュにも影響します。 後ほどと、影響を与えるをこの配列の要素を持ちます。
 
-ドットで区切られたおよびで破線が示されている、**点線および破線**ページ。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml)ファイルでは、2 つをインスタンス化`Picker`線幅および dash 配列を選択する、2 つ目を選択することのいずれかを表示します。
+ドットで区切られたおよびで破線が示されている、**点線および破線**ページ。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml)ファイルでは、2 つをインスタンス化`Picker`線幅および dash 配列を選択する、2 つ目を選択することのいずれかを表示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ SkiaSharp を使用して、純色ではない代わりに、ドットとダッ�
 
 内の最初の 3 つの項目、`dashArrayPicker`ストロークの幅が 10 ピクセルであると仮定します。 {10, 10}、点線の場合は、配列 {30, 10} は破線の行と {10、10、30, 10} 点鎖線には、します。 (他の 3 つ、後ほど。)
 
-[ `DotsAndDashesPage`分離コード ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)が含まれています、`PaintSurface`イベント ハンドラーと、いくつかヘルパー ルーチンにアクセスするための`Picker`ビュー。
+[ `DotsAndDashesPage`分離コード ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)が含まれています、`PaintSurface`イベント ハンドラーと、いくつかヘルパー ルーチンにアクセスするための`Picker`ビュー。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,7 +168,7 @@ float[] GetPickerArray(Picker picker)
 
 これまで説明が行われないに 2 番目のパラメーターの`SKPathEffect.CreateDash`メソッドです。 このパラメーターの名前は`phase`あり、行の先頭のドットとダッシュのパターン内のオフセットを意味します。 たとえば、dash 配列がある場合 {10, 10} と`phase`は 10 ですが、行が、ドットではなく、ギャップが開始されます。
 
-1 つの興味深いアプリケーション、`phase`パラメーターは、アニメーションでします。 **アニメーションなる**ページがに似ていますが、 **Archimedean なる** ページの点を除いて、 [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs)クラスをアニメーション化、`phase`パラメーター。 ページには、アニメーションを別の方法も示しています。 前の例、 [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs)使用、`Task.Delay`アニメーションを制御します。 この例では代わりに、Xamarin.Forms`Device.Timer`メソッド。
+1 つの興味深いアプリケーション、`phase`パラメーターは、アニメーションでします。 **アニメーションなる**ページがに似ていますが、 **Archimedean なる** ページの点を除いて、 [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs)クラスをアニメーション化、`phase`パラメーター。 ページには、アニメーションを別の方法も示しています。 前の例、 [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs)使用、`Task.Delay`アニメーションを制御します。 この例では代わりに、Xamarin.Forms`Device.Timer`メソッド。
 
 
 ```csharp

@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4097aea4079555b26b586db5ec63fa261d5e7946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47f5a6fdcfb6ee795f84ca8e19c0954b68a2fae9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-effects"></a>パスの効果
 
@@ -50,7 +50,7 @@ public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 
 [![](effects-images/animateddottedtext-small.png "ドットで区切られたテキストのアニメーションをページのスクリーン ショットをトリプル")](effects-images/animateddottedtext-large.png#lightbox "ドットで区切られたテキストのアニメーションをページのトリプル スクリーン ショット")
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスは、一部の定数を定義することで開始しもオーバーライド、`OnAppearing`と`OnDisappearing`アニメーションのメソッド。
+[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスは、一部の定数を定義することで開始しもオーバーライド、`OnAppearing`と`OnDisappearing`アニメーションのメソッド。
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -158,7 +158,7 @@ public class AnimatedDottedTextPage : ContentPage
 
 [![](effects-images/dotdashmorph-small.png "ドット Dash Morph ページのスクリーン ショットをトリプル")](effects-images/dotdashmorph-large.png#lightbox "ドット Dash Morph ページのトリプル スクリーン ショット")
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスのオーバーライド、`OnAppearing`と`OnDisappearing`メソッドの前のプログラムがでしたが、定義されているクラスと同様、`SKPaint`フィールドとしてオブジェクト。
+[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスのオーバーライド、`OnAppearing`と`OnDisappearing`メソッドの前のプログラムがでしたが、定義されているクラスと同様、`SKPaint`フィールドとしてオブジェクト。
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -287,7 +287,7 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 
 `Translate`メンバーにより、パスを直線または曲線に沿ってレプリケートされるように、同じ方向に保持します。 `Rotate`パスが、曲線の接線に基づいて回転します。 パスには、水平の線の通常の方向がします。 `Morph` ような`Rotate`パス自体が描画される線の曲率を一致するように曲線も点が異なります。
 
-**1 D 効果**ページは、これら 3 つのオプションを示します。 [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml)ファイルが列挙体の 3 つのメンバーに対応する 3 つの項目を含むピッカーを定義します。
+**1 D 効果**ページは、これら 3 つのオプションを示します。 [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml)ファイルが列挙体の 3 つのメンバーに対応する 3 つの項目を含むピッカーを定義します。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -323,7 +323,7 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPathEffect`フィールドとしてオブジェクト。 これらはすべてを使用して作成`SKPathEffect.Create1DPath`で`SKPath`を使用して作成されたオブジェクト`SKPath.ParseSvgPathData`です。 最初は簡単なボックス、2 番目はダイヤモンド形、3 番目は四角形。 これらは、次の 3 つの効果のスタイルを示すために使用されます。
+[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPathEffect`フィールドとしてオブジェクト。 これらはすべてを使用して作成`SKPathEffect.Create1DPath`で`SKPath`を使用して作成されたオブジェクト`SKPath.ParseSvgPathData`です。 最初は簡単なボックス、2 番目はダイヤモンド形、3 番目は四角形。 これらは、次の 3 つの効果のスタイルを示すために使用されます。
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -422,7 +422,7 @@ y、· を =cosh(x/a)
 
 cosh (w/2、/) 1 + h を =、/
 
-次の方法で、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)として等号 (=) の右側と左側の 2 つの式を参照して、等しいかどうかがクラスに組み込まれています`left`と`right`です。 値が小さい*、*、`left`がより大きい`right`; の値が大きい*、*、`left`はより小さい`right`です。 `while`ループを内の最適な値を絞り込みます*、*:
+次の方法で、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)として等号 (=) の右側と左側の 2 つの式を参照して、等しいかどうかがクラスに組み込まれています`left`と`right`です。 値が小さい*、*、`left`がより大きい`right`; の値が大きい*、*、`left`はより小さい`right`です。 `while`ループを内の最適な値を絞り込みます*、*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -551,7 +551,7 @@ public class LinkedChainPage : ContentPage
 
 (0, 0) のバケットのパスのポイントは、ハンドル、ため、`phase`引数はアニメーション、コンベヤ ベルト、おそらく下部水をスコープとアウトを上部にあるダンプ中心となるように、バケット。
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)クラスのオーバーライドによるアニメーション、`OnAppearing`と`OnDisappearing`メソッドです。 バケットのパスは、ページのコンス トラクターで定義されます。
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)クラスのオーバーライドによるアニメーション、`OnAppearing`と`OnDisappearing`メソッドです。 バケットのパスは、ページのコンス トラクターで定義されます。
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -712,7 +712,7 @@ public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 
 既定では、ハッチ行は、水平方向です。 場合、`matrix`パラメーターには、回転が含まれています、ハッチ行が時計回りに回転します。
 
-**ハッチ塗りつぶし**ページは、このパスの効果を示します。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)クラスでは、次の 3 つのパスの効果を定義フィールドとして、されている最初の幅を示すスケール ファクターを 3 ピクセルの水平線ハッチ線間隔 6 ピクセルの各要素を区別します。 線の間の分離は、そのため、3 ピクセルです。 2 番目のパスの効果はピクセル単位の間隔 (そのため、分離が 18 ピクセルの位置)、24 の間隔の 6 ピクセル幅で行を垂直方向の陰影の斜線行 12 ピクセル幅スペース区切り 36 ピクセル間隔について、3 番目、およびです。 
+**ハッチ塗りつぶし**ページは、このパスの効果を示します。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)クラスでは、次の 3 つのパスの効果を定義フィールドとして、されている最初の幅を示すスケール ファクターを 3 ピクセルの水平線ハッチ線間隔 6 ピクセルの各要素を区別します。 線の間の分離は、そのため、3 ピクセルです。 2 番目のパスの効果はピクセル単位の間隔 (そのため、分離が 18 ピクセルの位置)、24 の間隔の 6 ピクセル幅で行を垂直方向の陰影の斜線行 12 ピクセル幅スペース区切り 36 ピクセル間隔について、3 番目、およびです。 
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -812,7 +812,7 @@ public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 
 レプリケートされたパスは通常塗りつぶし対象の領域ではなく、画面の左と上端に揃えられます。 この動作をオーバーライドするには、0 と左と上の辺から水平および垂直方向のオフセットを指定するスケール ファクターの間での平行移動の係数を提供します。
 
-**パス タイル塗りつぶし**ページは、このパスの効果を示します。 領域を並べて表示するために使用されるパスがフィールドとして定義されている、 [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)クラスです。 水平および垂直方向の座標の範囲 – 40 を 40、つまりこのパスは 80 ピクセルの四角形: 
+**パス タイル塗りつぶし**ページは、このパスの効果を示します。 領域を並べて表示するために使用されるパスがフィールドとして定義されている、 [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)クラスです。 水平および垂直方向の座標の範囲 – 40 を 40、つまりこのパスは 80 ピクセルの四角形: 
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -868,7 +868,7 @@ public static SKPathEffect CreateCorner (Single radius)
 
 1 つの引数が名前付き`radius`目的角の半径を半分に設定する必要があります。 (これは、基になる Skia コードの特性です)。
 
-ここでは、`PaintSurface`ハンドラー、 [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs)クラス。
+ここでは、`PaintSurface`ハンドラー、 [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -944,7 +944,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 
 [![](effects-images/jitterexperiment-small.png "3 つのジッター実験ページのスクリーン ショット")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-プログラムは、直接的なです。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)ファイルでは、2 つをインスタンス化`Slider`要素および`SKCanvasView`:
+プログラムは、直接的なです。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)ファイルでは、2 つをインスタンス化`Slider`要素および`SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1000,7 +1000,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 </ContentPage>
 ```
 
-`PaintSurface`ハンドラーに、 [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)分離コード ファイルを呼び出すたびに、`Slider`値の変更。 呼び出す`SKPathEffect.CreateDiscrete`、2 つを使用して`Slider`値を四角形の境界線の描画に使用しています。
+`PaintSurface`ハンドラーに、 [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)分離コード ファイルを呼び出すたびに、`Slider`値の変更。 呼び出す`SKPathEffect.CreateDiscrete`、2 つを使用して`Slider`値を四角形の境界線の描画に使用しています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1031,7 +1031,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-この効果は、このランダム偏差に従って塗りつぶす領域のアウトラインがの場合は同様に、入力を使用できます。 **ジッター テキスト** ページでは、このパスの効果を使用してテキストを表示するを示しています。 内のコードのほとんど、`PaintSurface`のハンドラー、 [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs)クラスのためのサイズ変更と、テキストを中央揃えにします。
+この効果は、このランダム偏差に従って塗りつぶす領域のアウトラインがの場合は同様に、入力を使用できます。 **ジッター テキスト** ページでは、このパスの効果を使用してテキストを表示するを示しています。 内のコードのほとんど、`PaintSurface`のハンドラー、 [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs)クラスのためのサイズ変更と、テキストを中央揃えにします。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 たとえば場合、`src`パスは、単純な円の半径、500 のおよび`SKPaint`オブジェクトは、100 の線幅を指定します。、`dst`半径 550 の 450 および、その他の radius で 1 つ、2 つの同心円をパスになります。 メソッドを呼び出した`GetFillPath`これを埋めるため`dst`パスは、線の描画と同じ、`src`パス。 境界線を描くことができますが、`dst`パス枠線が表示へのパス。
 
-**パスをタップすると、アウトライン**を次に示します。 `SKCanvasView`と`TapGestureRecognizer`でインスタンス化される、 [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)ファイル。 [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPaint`と線の描画に 2 つのフィールドとしてオブジェクトのストローク 100 と 20、および塗りつぶしの 3 つ目の幅。
+**パスをタップすると、アウトライン**を次に示します。 `SKCanvasView`と`TapGestureRecognizer`でインスタンス化される、 [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)ファイル。 [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPaint`と線の描画に 2 つのフィールドとしてオブジェクトのストローク 100 と 20、および塗りつぶしの 3 つ目の幅。
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1239,7 +1239,7 @@ public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner
 
 [![](effects-images/catsinframe-small.png "Cats のフレームのページのスクリーン ショットをトリプル")](effects-images/catsinframe-large.png#lightbox "Cats のフレームのページのトリプル スクリーン ショット")
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)クラスがいくつかのフィールドを定義することで開始します。 最初のフィールドを認識する可能性があります、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラス、 [ **SVG パス データ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)資料です。 2 番目のパスは、直線およびフレームのひだパターンを円弧に基づきます。
+[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)クラスがいくつかのフィールドを定義することで開始します。 最初のフィールドを認識する可能性があります、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラス、 [ **SVG パス データ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)資料です。 2 番目のパスは、直線およびフレームのひだパターンを円弧に基づきます。
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1353,7 +1353,7 @@ public class CatsInFramePage : ContentPage
 
 使用するが一般的`SKPathEffect.CreateCompose`別のパスの効果をいくつかのジッターを追加します。 確かに自分で試すことができますが、若干異なる例を次に示します。
 
-**破線ハッチ**破線でハッチ行で楕円を塗りつぶします。 ほとんどの作業の[ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs)クラスが実行されるフィールド定義の右側にします。 これらのフィールドは、dash 効果と陰影効果を定義します。 として定義されている`static`にし、参照されているため、`SKPathEffect.CreateCompose`で呼び出し、`SKPaint`定義。
+**破線ハッチ**破線でハッチ行で楕円を塗りつぶします。 ほとんどの作業の[ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs)クラスが実行されるフィールド定義の右側にします。 これらのフィールドは、dash 効果と陰影効果を定義します。 として定義されている`static`にし、参照されているため、`SKPathEffect.CreateCompose`で呼び出し、`SKPaint`定義。
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage

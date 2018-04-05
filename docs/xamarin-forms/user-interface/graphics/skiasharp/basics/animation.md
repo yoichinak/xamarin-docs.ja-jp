@@ -7,11 +7,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 7435807e77a9a79d7fc3821675c1d959a16caa8f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859677a3dcfcddd0b333c9ddf60c01e2093b6a5b
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="basic-animation"></a>基本的なアニメーション
 
@@ -24,7 +24,7 @@ _SkiaSharp グラフィックスをアニメーション化する方法を説明
 **いた楕円** ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラムいたでに表示されないように、楕円の 2 つの軸をアニメーション化して、制御することも、この pulsation の比率。
 
 
-[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、Xamarin.Forms をインスタンス化`Slider`と`Label`スライダーの現在の値を表示します。 これは、一般的な方法で、統合、 `SKCanvasView` Xamarin.Forms 他のビューと。
+[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、Xamarin.Forms をインスタンス化`Slider`と`Label`スライダーの現在の値を表示します。 これは、一般的な方法で、統合、 `SKCanvasView` Xamarin.Forms 他のビューと。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
  2 つを作成することでこの特定のケースのより良いソリューション`SKPaint`フィールドとしてオブジェクトの 1 回、および保存します。
 
-その目的、**展開円**アニメーションはします。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)クラスの開始など、いくつかのフィールドを定義することによって、`SKPaint`オブジェクト。
+その目的、**展開円**アニメーションはします。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)クラスの開始など、いくつかのフィールドを定義することによって、`SKPaint`オブジェクト。
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage

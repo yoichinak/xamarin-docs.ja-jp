@@ -7,11 +7,11 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: b86068c2ed5063c25f76e81fdf477550b1437984
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 688c6218f9ac66e3dfd6cd157e43f9b639e124c6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="bitmap-basics"></a>ビットマップの基礎
 
@@ -29,7 +29,7 @@ SkiaSharp ビットマップは、型のオブジェクトを[ `SKBitmap`](https
 - 実行可能ファイルに埋め込まれたリソースから
 - ユーザーの写真のライブラリから
 
-次の 3 つ`SKBitmap`これら 3 つのソースがフィールドのフィールドとして定義されているオブジェクト、 [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)クラス。
+次の 3 つ`SKBitmap`これら 3 つのソースがフィールドのフィールドとして定義されているオブジェクト、 [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)クラス。
 
 ```csharp
 public class BasicBitmapsPage : ContentPage

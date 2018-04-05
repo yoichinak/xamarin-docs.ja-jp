@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 998c804f02eed808c0a1493b054e754a7670aa70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-information-and-enumeration"></a>パス情報は、列挙型
 
@@ -31,7 +31,7 @@ _パスに関する情報を取得し、コンテンツの列挙_
 
 [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/)クラスに役立つことができます。 [コンス トラクター](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/)を受け入れる、`SKPath`引数、および[ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/)プロパティは、その長さを表示します。
 
-これに示されている、**パスの長さ**に基づくサンプル、**ベジエ曲線**ページ。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)から派生したファイル`InteractivePage`タッチ インターフェイスが含まれています。
+これに示されている、**パスの長さ**に基づくサンプル、**ベジエ曲線**ページ。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)から派生したファイル`InteractivePage`タッチ インターフェイスが含まれています。
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,7 +52,7 @@ _パスに関する情報を取得し、コンテンツの列挙_
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)分離コード ファイルでは、端点を定義および 3 次ベジエ曲線の点を制御する 4 つのタッチ ポイントを移動することができます。 3 つのフィールドをテキスト文字列を定義する、`SKPaint`オブジェクト、およびテキストの計算された幅。
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)分離コード ファイルでは、端点を定義および 3 次ベジエ曲線の点を制御する 4 つのタッチ ポイントを移動することができます。 3 つのフィールドをテキスト文字列を定義する、`SKPaint`オブジェクト、およびテキストの計算された幅。
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -242,7 +242,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 ただしは、問題のある動詞`Close`です。 このコマンドでは、現在の位置から直線を描画によって以前に確立された輪郭の先頭に、`Move`コマンド。 理想的には、`Close`動詞は、1 つのポイントではなく、これら 2 つのポイントを提供する必要があります。 さらに悪い付随するポイントは、`Close`動詞は、常に (0, 0) です。 これは、必要があるパスを列挙するときにあります可能性を保持する、`Move`ポイントと、現在の位置。
 
-静的な[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)クラスには、小さな直線、曲線のおおよその系列に次の 3 つの種類のベジエ曲線に変換するいくつかのメソッドが含まれています。 (パラメーターの数式は、アーティクルで表示された[ **3 つの種類のベジエ曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md))。`Interpolate`直線長さ単位の 1 つだけである多数の短い行に分割する方法。
+静的な[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)クラスには、小さな直線、曲線のおおよその系列に次の 3 つの種類のベジエ曲線に変換するいくつかのメソッドが含まれています。 (パラメーターの数式は、アーティクルで表示された[ **3 つの種類のベジエ曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md))。`Interpolate`直線長さ単位の 1 つだけである多数の短い行に分割する方法。
 
 ```csharp
 static class PathExtensions
@@ -426,7 +426,7 @@ static class PathExtensions
 
 [![](information-images/globulartext-small.png "Globular テキスト ページのスクリーン ショットをトリプル")](information-images/globulartext-large.png#lightbox "Globular テキスト ページのトリプル スクリーン ショット")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスのコンス トラクターは、この変換を実行します。 作成、 `SKPaint` 、テキストのオブジェクトし、を取得し、`SKPath`オブジェクトから、`GetTextPath`メソッドです。 渡されるパスは、`CloneWithTransform`変換関数と共に拡張メソッド。 
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスのコンス トラクターは、この変換を実行します。 作成、 `SKPaint` 、テキストのオブジェクトし、を取得し、`SKPath`オブジェクトから、`GetTextPath`メソッドです。 渡されるパスは、`CloneWithTransform`変換関数と共に拡張メソッド。 
 
 ```csharp
 public class GlobularTextPage : ContentPage

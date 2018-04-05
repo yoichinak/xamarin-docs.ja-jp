@@ -7,11 +7,11 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 87bddc8d541167cef350658ac69f8aaac6d6a2ee
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f7de8724a16e8c9c900123ce7da79d33b51a08c
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="matrix-transforms"></a>行列変換
 
@@ -321,7 +321,7 @@ SKMatrix.RotateDegrees(ref R, degrees, px, py);
 
 これらのメソッドは*いない*既存の変換を回転変換を連結します。 メソッドは、マトリックスのすべてのセルを設定します。 機能的に同じで、`MakeRotation`と`MakeRotationDegrees`メソッドがインスタンス化されないことを除き、`SKMatrix`値。
 
-あると、`SKPath`表示する場合は、若干異なる向き、または別の中心点があることを希望するオブジェクト。 パスのすべての座標を変更するには呼び出すことによって、 [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/)メソッドの`SKPath`で、`SKMatrix`引数。 **パス変換**ページは、これを行う方法を示します。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)クラスが参照、`HendecagramPath`フィールド内のオブジェクトは、そのパスに変換を適用するそのコンス トラクターを使用するがします。
+あると、`SKPath`表示する場合は、若干異なる向き、または別の中心点があることを希望するオブジェクト。 パスのすべての座標を変更するには呼び出すことによって、 [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/)メソッドの`SKPath`で、`SKMatrix`引数。 **パス変換**ページは、これを行う方法を示します。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)クラスが参照、`HendecagramPath`フィールド内のオブジェクトは、そのパスに変換を適用するそのコンス トラクターを使用するがします。
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -438,15 +438,15 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 アフィン変換用大まかに 1 つの方法は、画面の周りのビットマップの 3 つの角を移動して、どのような変換の結果が表示される対話形式でです。 これは、概念、**表示のアフィン行列**ページ。 このページには、他のデモで使用されるその他の 2 つのクラスが必要です。
 
-[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchPoint.cs)クラスは、画面の周りにドラッグできる半透明円を表示します。 `TouchPoint` いる必要があります、`SKCanvasView`または要素の親である、`SKCanvasView`が、 [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchEffect.cs)添付します。 `Capture` プロパティを `true` に設定します。 `TouchAction`プログラムで呼び出す必要があります、イベント ハンドラー、`ProcessTouchEvent`メソッド`TouchPoint`各`TouchPoint`インスタンス。 このメソッドを返します`true`タッチ ポイントを移動、タッチ イベントが発生した場合。 また、`PaintSurface`ハンドラーを呼び出す必要があります、`Paint`で各メソッド`TouchPoint`を渡す、インスタンス、`SKCanvas`オブジェクト。
+[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs)クラスは、画面の周りにドラッグできる半透明円を表示します。 `TouchPoint` いる必要があります、`SKCanvasView`または要素の親である、`SKCanvasView`が、 [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs)添付します。 `Capture` プロパティを `true` に設定します。 `TouchAction`プログラムで呼び出す必要があります、イベント ハンドラー、`ProcessTouchEvent`メソッド`TouchPoint`各`TouchPoint`インスタンス。 このメソッドを返します`true`タッチ ポイントを移動、タッチ イベントが発生した場合。 また、`PaintSurface`ハンドラーを呼び出す必要があります、`Paint`で各メソッド`TouchPoint`を渡す、インスタンス、`SKCanvas`オブジェクト。
 
 `TouchPoint` 一般的に使われるを示して 方法 SkiaSharp ビジュアルを別のクラスにカプセル化できます。 このクラスは、ビジュアルの特性を指定するプロパティを定義でき、という名前のメソッド`Paint`で、`SKCanvas`引数が表示できます。
 
 `Center`プロパティ`TouchPoint`オブジェクトの場所を示します。 このプロパティは、場所を初期化するために設定できます。プロパティは、ユーザーが、キャンバスの周囲 circle をドラッグしたときに変更します。
 
-**アフィン変換行列のページを表示**も必要です、 [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/MatrixDisplay.cs)クラスです。 このクラスは、のセルを表示、`SKMatrix`オブジェクト。 2 つのパブリック メソッドがある:`Measure`マトリックス形式表示のサイズを取得して`Paint`を表示します。 クラスが含まれています、`MatrixPaint`型のプロパティ`SKPaint`のフォント サイズや色を置き換えることができます。
+**アフィン変換行列のページを表示**も必要です、 [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs)クラスです。 このクラスは、のセルを表示、`SKMatrix`オブジェクト。 2 つのパブリック メソッドがある:`Measure`マトリックス形式表示のサイズを取得して`Paint`を表示します。 クラスが含まれています、`MatrixPaint`型のプロパティ`SKPaint`のフォント サイズや色を置き換えることができます。
 
-[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml)ファイルをインスタンス化、`SKCanvasView`アタッチし、`TouchEffect`です。 [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs)分離コード ファイルでは、3 つが作成されます`TouchPoint`オブジェクトし、埋め込みから読み込むビットマップの 3 つの角に対応する位置に設定し、リソース:
+[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml)ファイルをインスタンス化、`SKCanvasView`アタッチし、`TouchEffect`です。 [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs)分離コード ファイルでは、3 つが作成されます`TouchPoint`オブジェクトし、埋め込みから読み込むビットマップの 3 つの角に対応する位置に設定し、リソース:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage

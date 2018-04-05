@@ -7,11 +7,11 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 47daca2ab94f718aeb5ce474c87edce3c3bd77a4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="3d-rotations"></a>3D 回転
 
@@ -221,7 +221,7 @@ X の値が負の値の中にバック グラウンド遠ざかります 2D オ�
 
 使用する場合`SKMatrix44`、さまざまなを乗算することによって、すべての 3D 回転とパースペクティブの操作を実行`SKMatrix44`値。 4、4 から 3-3 で 2 次元行列を抽出することができますし、マトリックスを使用して、 [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/)のプロパティ、`SKMatrix44`クラスです。 このプロパティを返します使い慣れた`SKMatrix`値。
 
-**回転の 3D**ページの 3D 回転を試すことができます。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)ファイルには、X、Y、および Z 軸の周りの回転を設定して、深さの値を設定する 4 つのスライダーがインスタンス化します。
+**回転の 3D**ページの 3D 回転を試すことができます。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)ファイルには、X、Y、および Z 軸の周りの回転を設定して、深さの値を設定する 4 つのスライダーがインスタンス化します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -302,7 +302,7 @@ X の値が負の値の中にバック グラウンド遠ざかります 2D オ�
 
 注意して、`depthSlider`による初期化を行う、 `Minimum` 250 の値。 これは、ここで回転されている 2D オブジェクトに原点の周囲の 250 ピクセルの半径によって定義される円に限定される X と Y 座標が含まれているを意味します。 3D スペースでは、このオブジェクトの回転は、250 未満の座標値に常になります。
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) 300 ピクセルの四角形をビットマップに分離コード ファイルが読み込まれます。
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) 300 ピクセルの四角形をビットマップに分離コード ファイルが読み込まれます。
 
 ```csharp
 public partial class Rotation3DPage : ContentPage

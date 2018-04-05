@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 7f6885415e1b5e0c988d13fe331703213b9b8fb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>チュートリアル - WCF の使用
 
@@ -167,7 +167,6 @@ _このチュートリアルでは、Xamarin でビルドしたモバイル ア�
 1. 外部からの要求をリッスンするように IIS が Express の構成を見てみましょう。 IIS Express の構成ファイルを編集することによってこの作業を行うことができます`[solutiondirectory]\.vs\config\applicationhost.config`の次のスクリーン ショットに示すようにします。
 
     [![](walkthrough-working-with-wcf-images/image05.png "そのため、solutiondirectory.vsconfigapplicationhost.config に IIS Express の構成ファイルを編集してこのスクリーン ショットに示すように")](walkthrough-working-with-wcf-images/image05.png#lightbox)
-
 
     検索、`site`という名前の要素`HelloWorldWcfHost`です。 次の XML スニペットのように表示する必要があります。
 

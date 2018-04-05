@@ -7,11 +7,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: a718d051c2bf04e75c87b0e4a18aced4824802ba
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b18bd6a565639e2ca22f4637a67c4f48717f6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="drawing-a-simple-circle"></a>単純な円を描画
 
@@ -19,11 +19,11 @@ _キャンバスとペイントを含め、SkiaSharp 図面の基本をについ
 
 この記事の作成など、SkiaSharp を使用して Xamarin.Forms でグラフィックスを描画の概念を説明する、`SKCanvasView`グラフィック、処理をホストするオブジェクト、`PaintSurface`イベント、およびを使用して、`SKPaint`色と他の描画を指定するオブジェクト属性。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラムには、この一連の SkiaSharp 資料のすべてのサンプル コードが含まれています。 最初のページに権利がある**単純な円**ページ クラスを呼び出すと[ `SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)です。 このコードは、半径が 100 ピクセルのページの中央の円を描画する方法を示します。 円のアウトラインが赤であり、円の内部は青で表示します。
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラムには、この一連の SkiaSharp 資料のすべてのサンプル コードが含まれています。 最初のページに権利がある**単純な円**ページ クラスを呼び出すと[ `SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)です。 このコードは、半径が 100 ピクセルのページの中央の円を描画する方法を示します。 円のアウトラインが赤であり、円の内部は青で表示します。
 
 ![](circle-images/circleexample.png "赤で青い円形")
 
-[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)ページ クラスから派生`ContentPage`は 2 つと`using`SkiaSharp 名前空間のディレクティブ。
+[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)ページ クラスから派生`ContentPage`は 2 つと`using`SkiaSharp 名前空間のディレクティブ。
 
 ```csharp
 using SkiaSharp;

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: 0068540ec385ab3be56865c7728eb3128154a2ea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43699e77bc8b7365c6d5f7fbf27e19a945e69e22
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="limitations"></a>制限事項
 
@@ -51,7 +51,7 @@ Xamarin Player のライブ実行できますが、次の項目を含むもの�
 - リフレクションの制限付きサポート (現在、SQLite、Json.NET のように、いくつかの一般的な NuGets に影響します)。 その他の NuGets をサポートすることも可能性があります。
 - 一部のシステム クラスをオーバーライドすることはできません (たとえば、サブクラスを実装することはできません)。
 - (ただしに構成されているフォト ギャラリーのアクセスなどの一般的な操作の) Live プレーヤーの Xamarin アプリで動作する準備が必要なプラットフォーム機能ことはできません。
-- カスタムのターゲットとビルド手順は無視されます。 たとえば、Fody、Retit、AutoFac などのツールと AutoMapper を組み込むことはできません。
+- カスタムのターゲットとビルド手順は無視されます。 たとえば、Fody、不適切、AutoFac、および AutoMapper などのツールを組み込むことはできません。
 - F# プロジェクトが Android でサポートされていませんし、iOS でサポートが制限されます。
 - カスタムのジェネリック クラスとインターフェイスの高度なシナリオがサポートされていない可能性があります。
 
