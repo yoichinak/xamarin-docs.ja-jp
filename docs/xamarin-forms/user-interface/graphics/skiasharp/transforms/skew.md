@@ -7,11 +7,11 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: c9f5f9f20296b1c2443a8addeebd4d12ccaa1ab4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39547ebaf301a9b6dca6a90cb5ede831b19862cf
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-skew-transform"></a>傾斜変換
 
@@ -39,7 +39,7 @@ public void Skew (SKPoint skew)
 
 ただし、使用することをこれら 2 つのメソッドのいずれかの分離の可能性はありません。
 
-**実験傾斜**– 10 ~ 10 の間には、その範囲の値 ページでの傾斜を試してみることです。 テキスト文字列が 2 から取得した傾きの値と、ページの左上隅に配置されている`Slider`要素。 ここでは、`PaintSurface`ハンドラー、 [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs)クラス。
+**実験傾斜**– 10 ~ 10 の間には、その範囲の値 ページでの傾斜を試してみることです。 テキスト文字列が 2 から取得した傾きの値と、ページの左上隅に配置されている`Slider`要素。 ここでは、`PaintSurface`ハンドラー、 [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,7 +109,7 @@ y' ySkew · を =(x – px) + y
 
 100 ピクセル垂直方向に 150 ピクセルのシフトの比率は、この例では、その角度のタンジェントの値は、56.3 度です。
 
-XAML ファイル、**傾斜角度実験**ページがに似ていますが、**傾斜の角度**ページの点を除いて、`Slider`範囲に要素を –90 から 90 度。 [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コード ファイルが、ページ上のテキストを中央揃え、使用して`Translate`をページの中央に傾斜の中心を設定します。 短い`SkewDegrees`コードの下部にあるメソッドが傾けるには値の角度に変換します。
+XAML ファイル、**傾斜角度実験**ページがに似ていますが、**傾斜の角度**ページの点を除いて、`Slider`範囲に要素を –90 から 90 度。 [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コード ファイルが、ページ上のテキストを中央揃え、使用して`Translate`をページの中央に傾斜の中心を設定します。 短い`SkewDegrees`コードの下部にあるメソッドが傾けるには値の角度に変換します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -154,7 +154,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 [![](skew-images/skewangleexperiment-small.png "傾斜角度実験 ページのスクリーン ショットをトリプル")](skew-images/skewangleexperiment-large.png#lightbox "傾斜角度実験 ページのトリプル スクリーン ショット")
 
-水平方向の負の値の小さいゆがみとして斜投影または斜体のテキストを模倣、**斜投影テキスト**ページを示しています。 [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)クラスは、その方法を示しています。
+水平方向の負の値の小さいゆがみとして斜投影または斜体のテキストを模倣、**斜投影テキスト**ページを示しています。 [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)クラスは、その方法を示しています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

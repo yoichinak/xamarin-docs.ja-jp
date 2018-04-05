@@ -7,11 +7,11 @@ ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 177437ef016a25849e7c34d0a26270ce14173b7d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 354844f69c0b8755a15a3325c39e35b97d44f94d
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-rotate-transform"></a>回転変換
 
@@ -39,7 +39,7 @@ x' = x•cos(α) – y•sin(α)
 
 y` = x•sin(α) + y•cos(α)
 
-**基本的な回転**ページを示しています、`RotateDegrees`メソッドです。 [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)ファイルは、ページの中央にベースラインがいくつかのテキストを表示し、基にして回転、 `Slider` –360 360 の範囲とします。 ここで、関連の一部である、`PaintSurface`ハンドラー。
+**基本的な回転**ページを示しています、`RotateDegrees`メソッドです。 [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)ファイルは、ページの中央にベースラインがいくつかのテキストを表示し、基にして回転、 `Slider` –360 360 の範囲とします。 ここで、関連の一部である、`PaintSurface`ハンドラー。
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -139,9 +139,9 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 回転と変換を結合するいくつかの方法は通常です。 **テキストの回転**ページは次の表示を作成します。
 
-[![](rotate-images/rotatedtext-small.png "テキストの回転 ページのスクリーン ショットをトリプル")](rotate-images/rotatedtext-large.png#lightbox "テキストの回転 ページのトリプル スクリーン ショット")
+[![](rotate-images/rotatedtext-small.png "テキストの回転] ページのスクリーン ショットをトリプル")](rotate-images/rotatedtext-large.png#lightbox "テキストの回転] ページのトリプル スクリーン ショット")
 
-ここでは、`PaintSurface`のハンドラー、 [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs)クラス。
+ここでは、`PaintSurface`のハンドラー、 [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs)クラス。
 
 ```csharp
 static readonly string text = "    ROTATE";
@@ -281,7 +281,7 @@ protected override void OnDisappearing()
 }
 ```
 
-**汚いアナログ時計**(と呼ばれるより魅力的なアナログ時計は、以降の記事で説明) プログラムでは使用して回転描画、分、および時間時計の針を回転させます。 プログラムでは、位置 (0, 0) にある radius 100 の中心とする円に基づいて任意の座標系を使用して、時計を描画します。 展開し、 ページで、円の中心の変換とスケーリングを使用します。
+**汚いアナログ時計**(と呼ばれるより魅力的なアナログ時計は、以降の記事で説明) プログラムでは使用して回転描画、分、および時間時計の針を回転させます。 プログラムでは、位置 (0, 0) にある radius 100 の中心とする円に基づいて任意の座標系を使用して、時計を描画します。 展開し、] ページで、円の中心の変換とスケーリングを使用します。
 
 `Translate`と`Scale`呼び出しに適用されるグローバル、クロックのための初期化後に呼び出される最初のものであるもの、`SKPaint`オブジェクト。
 

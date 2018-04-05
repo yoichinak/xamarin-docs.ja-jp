@@ -7,11 +7,11 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 836f404e25679f01e1bd330582cf469299c73243
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a94e1011557a5c7487315681e6e7c4d106ae4ba1
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 変換
 
@@ -48,7 +48,7 @@ SkiaSharp 変換は、の左上隅を基準とした、 `SKCanvas` Xamarin.Forms
 
 非常に大きな違いは、ある SKiaSharp 変換*メソッド*Xamarin.Forms 変換されているときに*プロパティ*です。 これは、構文の違いを超えるセマンティックの相違: SkiaSharp 変換は、Xamarin.Forms 変換状態を設定中に、操作を実行します。 SkiaSharp 変換は、変換が適用される前に描画されるグラフィックス オブジェクトではなく、後で描画されたグラフィックス オブジェクトに適用されます。 これに対し、プロパティを設定するとすぐには、以前にレンダリングされる要素に、Xamarin.Forms 変換が適用されます。 SkiaSharp 変換、累積的なメソッドが呼び出されます。Xamarin.Forms の変換には、別の値を持つプロパティが設定されている場合は置き換えられます。
 
-という見出しの下に表示されるこのセクションのすべてのサンプル プログラム**変換**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**変換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms)ソリューションのフォルダーです。
+という見出しの下に表示されるこのセクションのすべてのサンプル プログラム**変換**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**変換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)ソリューションのフォルダーです。
 
 ## <a name="the-translate-transformtranslatemd"></a>[平行移動変換](translate.md)
 

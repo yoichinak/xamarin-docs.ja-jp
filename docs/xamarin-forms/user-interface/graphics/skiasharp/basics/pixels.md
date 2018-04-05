@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: dd9694a05632cd5f37cb583d15bc93311a49cfdc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>デバイス非依存単位、ピクセル
 
@@ -31,7 +31,7 @@ _SkiaSharp 座標と Xamarin.Forms の座標の違いを調べる_
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/)のプロパティ、`SKCanvasView`オブジェクト。
 - [ `Size` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Size/)のプロパティ、`SKImageInfo`と一致する値、`Width`と`Height`2 つの前のページで使用されるプロパティです。
 
-[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs)クラスは、これらの値を表示する方法を示します。 コンス トラクターの保存、`SKCanvasView`オブジェクトにアクセスできるように、フィールドとして、`PaintSurface`イベントのハンドラー。
+[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs)クラスは、これらの値を表示する方法を示します。 コンス トラクターの保存、`SKCanvasView`オブジェクトにアクセスできるように、フィールドとして、`PaintSurface`イベントのハンドラー。
 
 ```csharp
 SKCanvasView canvasView;
@@ -114,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
 ```
 
-画面の表面を塗りつぶす楕円を描画することは? **楕円の塗りつぶし**ページを示していますか。 `PaintSurface`内のイベント ハンドラー、 [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)クラス減算から線幅の半分、`xRadius`と`yRadius`全体の楕円に合わせて値とそのデザイン画面内を示してください。
+画面の表面を塗りつぶす楕円を描画することは? **楕円の塗りつぶし**ページを示していますか。 `PaintSurface`内のイベント ハンドラー、 [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)クラス減算から線幅の半分、`xRadius`と`yRadius`全体の楕円に合わせて値とそのデザイン画面内を示してください。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

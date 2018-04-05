@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 77005665d163e7f9f62325b94cc5c779a7873f78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c0b793a495278d91429045d7e396917d02c1412e
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="paths-and-text"></a>パスとテキスト
 
@@ -45,7 +45,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 [![](text-paths-images/clippingtext-small.png "領域のテキスト ページのスクリーン ショットをトリプル")](text-paths-images/clippingtext-large.png#lightbox "クリッピング テキスト ページのトリプル スクリーン ショット")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)クラスのコンス トラクターが内の埋め込みリソースとして格納されているビットマップを読み込み、**メディア**ソリューションのフォルダー。
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)クラスのコンス トラクターが内の埋め込みリソースとして格納されているビットマップを読み込み、**メディア**ソリューションのフォルダー。
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -126,7 +126,7 @@ public class ClippingTextPage : ContentPage
 
 [![](text-paths-images/textpatheffect-small.png "パスのテキスト効果 ページのスクリーン ショットをトリプル")](text-paths-images/textpatheffect-large.png#lightbox "パスのテキスト効果 ページのトリプル スクリーン ショット")
 
-含まれる作業の量、 [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)クラスは、フィールドとコンス トラクターで発生します。 2 つ`SKPaint`2 つの異なる目的のために使用されるフィールドが定義されているオブジェクト: 最初の (という名前`textPathPaint`) でアンパサンドを変換するために使用、`TextSize`の 1 D パス効果のパスを 50 です。 2 番目 (`textPaint`)、アンパサンドとそのパスの効果の大きいバージョンを表示するために使用します。 そのため、`Style`に設定されているオブジェクトのこの 2 つ目のペイント`Stroke`、ですが、`StrokeWidth`プロパティが設定されていないため、1 D パス効果を使用したときにそのプロパティが必要はありません。
+含まれる作業の量、 [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)クラスは、フィールドとコンス トラクターで発生します。 2 つ`SKPaint`2 つの異なる目的のために使用されるフィールドが定義されているオブジェクト: 最初の (という名前`textPathPaint`) でアンパサンドを変換するために使用、`TextSize`の 1 D パス効果のパスを 50 です。 2 番目 (`textPaint`)、アンパサンドとそのパスの効果の大きいバージョンを表示するために使用します。 そのため、`Style`に設定されているオブジェクトのこの 2 つ目のペイント`Stroke`、ですが、`StrokeWidth`プロパティが設定されていないため、1 D パス効果を使用したときにそのプロパティが必要はありません。
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -213,7 +213,7 @@ public class TextPathEffectPage : ContentPage
 
 呼び出すこともできます`GetFillPath`から返されるパスで`GetTextPath`なる場合が最初にすることですが、そのを次に示します。
 
-**文字アウトライン アウトライン**ページは、方法を示します。 関連するすべてのコードが、`PaintSurface`のハンドラー、 [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs)クラスです。
+**文字アウトライン アウトライン**ページは、方法を示します。 関連するすべてのコードが、`PaintSurface`のハンドラー、 [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs)クラスです。
 
 コンス トラクターは、作成した後、`SKPaint`という名前のオブジェクト`textPaint`で、`TextSize`プロパティ ページのサイズに基づきます。 これを使用してパスに変換されます、`GetTextPath`メソッドです。 座標の引数`GetTextPath`画面上のパスを効果的にセンターします。
 
@@ -287,7 +287,7 @@ public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOf
 
 このメソッドの設定に関するガイダンスを提供する機能はありません、`TextSize`プロパティ`SKPaint`テキストを完璧にサイズ設定すると、パスの先頭から末尾を実行します。 場合によって、自分でそのテキストのサイズを理解できます。 それ以外の時間は、今後の記事で説明するパスの測定機能を使用する必要があります。
 
-**循環テキスト**プログラムは、円記号のテキストをラップします。 これは、円の円周を判断するので、簡単に正確に合わせてテキストのサイズに簡単です。 `PaintSurface`のハンドラー、 [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs)クラスは、ページのサイズに基づく円の半径を計算します。 その円になります`circularPath`:
+**循環テキスト**プログラムは、円記号のテキストをラップします。 これは、円の円周を判断するので、簡単に正確に合わせてテキストのサイズに簡単です。 `PaintSurface`のハンドラー、 [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs)クラスは、ページのサイズに基づく円の半径を計算します。 その円になります`circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage

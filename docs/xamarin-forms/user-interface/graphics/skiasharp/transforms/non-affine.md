@@ -7,11 +7,11 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 52bed94724d330b74a9604c54fcfebad1e562267
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
@@ -91,11 +91,11 @@ y' = = y/(0.01·x + 1)
 
 ときに x が 100、z' 分母は 2、x および y 座標が実質的に半分になります。 ボックスの右側には、左側にあるよりも短いのようになります。
 
-![](non-affine-images/nonaffinetransform.png "非アフィン変換の対象 ボックス")
+![](non-affine-images/nonaffinetransform.png "非アフィン変換の対象] ボックス")
 
 `Persp`しますが、右側にあるビューアーからかけ離れたものに傾いたようになりましたことを提案する、短縮するために、これらのセルの名前の部分が「パースペクティブ」を指します。
 
-**テスト パースペクティブ** ページでは、値をテストできます。`Persp0`と`Pers1`をどのように動作感を取得します。 マトリックス セルにこれらの妥当な値は非常に小さいこと、`Slider`ユニバーサル Windows プラットフォームで正しく処理できないにします。 UWP 問題を 2 つ、それに合わせて`Slider`内の要素、 [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) 1 – 1 の範囲に初期化する必要があります。
+**テスト パースペクティブ**] ページでは、値をテストできます。`Persp0`と`Pers1`をどのように動作感を取得します。 マトリックス セルにこれらの妥当な値は非常に小さいこと、`Slider`ユニバーサル Windows プラットフォームで正しく処理できないにします。 UWP 問題を 2 つ、それに合わせて`Slider`内の要素、 [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) 1 – 1 の範囲に初期化する必要があります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ y' = = y/(0.01·x + 1)
 </ContentPage>
 ```
 
-スライダーを対応するイベント ハンドラー、 [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs)分離コード ファイルに分けられ、値 100 をよう –0.01 と 0.01 間で、さまざまな種類です。 さらに、コンス トラクターは、ビットマップにロードします。
+スライダーを対応するイベント ハンドラー、 [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs)分離コード ファイルに分けられ、値 100 をよう –0.01 と 0.01 間で、さまざまな種類です。 さらに、コンス トラクターは、ビットマップにロードします。
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -240,7 +240,7 @@ z` = Persp0·x + Persp1·y + 1
 
 ![](non-affine-images/tapertransform.png "対象となるテーパ変換ボックス")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)クラスは、これらのパラメーターに基づいて非アフィン変換の一般的な計算を実行します。
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)クラスは、これらのパラメーターに基づいて非アフィン変換の一般的な計算を実行します。
 
 - 変換されているイメージの四角形のサイズ
 - 分散する四角形の側を示す列挙体
@@ -349,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-このクラスが使用されて、**テーパ変換**ページ。 XAML ファイルの 2 つのインスタンスを作成`Picker`列挙値を選択する要素と`Slider`のテーパ分数を選択します。 [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)ハンドラーを組み合わせたもので 2 つのテーパ変換の変換、ビットマップの左上隅に対する相対変換を作成するための変換。
+このクラスが使用されて、**テーパ変換**ページ。 XAML ファイルの 2 つのインスタンスを作成`Picker`列挙値を選択する要素と`Slider`のテーパ分数を選択します。 [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)ハンドラーを組み合わせたもので 2 つのテーパ変換の変換、ビットマップの左上隅に対する相対変換を作成するための変換。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -396,9 +396,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 非アフィン変換では、任意の凸四角形に四角形を変換できます。 示されるこれは、**表示の非アフィン行列**ページ。 非常に似ています、**表示のアフィン行列**ページから、[行列変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md)記事がある 4 つ目のする点を除いて`TouchPoint`ビットマップの 4 番目の隅を操作するオブジェクト。
 
-[![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列の表示 ページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png#lightbox "非アフィン行列の表示 ページのトリプル スクリーン ショット")
+[![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列の表示] ページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png#lightbox "非アフィン行列の表示] ページのトリプル スクリーン ショット")
 
-ビットマップの四隅のいずれかの内部角度を 180 度よりも大きい値に加えるか互いに交差する 2 つの辺を加えるしようとしていない、限り正常に計算からこのメソッドを使用して変換を[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)クラス。
+ビットマップの四隅のいずれかの内部角度を 180 度よりも大きい値に加えるか互いに交差する 2 つの辺を加えるしようとしていない、限り正常に計算からこのメソッドを使用して変換を[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)クラス。
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -459,7 +459,7 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 
 右側にある最後の座標は、次の 4 つのタッチ ポイントに関連付けられている 4 つのポイントです。 これらは、最終的なビットマップの角の座標です。
 
-幅と高さは、ビットマップの高さと幅を表します。 最初の変換 (`S`) だけで 1 ピクセルの四角形にビットマップのスケールを設定します。 2 番目の変換が非アフィン変換`N`、3 番目はアフィン変換`A`です。 アフィン変換は次の 3 つ、ポイントに基づいて以前アフィンようでは、 [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)メソッドと 4 番目の行が含まれる、(a、b) ポイント。
+幅と高さは、ビットマップの高さと幅を表します。 最初の変換 (`S`) だけで 1 ピクセルの四角形にビットマップのスケールを設定します。 2 番目の変換が非アフィン変換`N`、3 番目はアフィン変換`A`です。 アフィン変換は次の 3 つ、ポイントに基づいて以前アフィンようでは、 [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)メソッドと 4 番目の行が含まれる、(a、b) ポイント。
 
 `a`と`b`値が 3 番目の変換がアフィンになるように計算されます。 コードでは、アフィン変換の逆を取得し、右下隅のマップを使用しています。 ポイント (a、b) です。
 

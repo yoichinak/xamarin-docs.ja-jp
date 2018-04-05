@@ -7,11 +7,11 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 573848186a8f389ac18e22ea4c3b7d4fe1503449
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-translate-transform"></a>平行移動の変換
 
@@ -35,7 +35,7 @@ public void Translate (Single dx, Single dy)
 public void Translate (SKPoint point)
 ```
 
-**変換蓄積**のページ、 [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル プログラムでは、その何度も呼び出すを示しています、`Translate`メソッドは累積されます。 [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)クラスが同じ四角形の 20 のバージョンを表示、1 つずつオフセット前の四角形から十分な量対角線に沿ったをストレッチするようにします。 ここでは、`PaintSurface`イベントのハンドラー。
+**変換蓄積**のページ、 [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル プログラムでは、その何度も呼び出すを示しています、`Translate`メソッドは累積されます。 [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)クラスが同じ四角形の 20 のバージョンを表示、1 つずつオフセット前の四角形から十分な量対角線に沿ったをストレッチするようにします。 ここでは、`PaintSurface`イベントのハンドラー。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -78,7 +78,7 @@ y' = y + dy
 
 これらと呼ばれますが、*数式の変換*変換用。 既定値は、`dx`と`dy`、新しい`SKCanvas`は 0 です。
 
-シャドウ効果と同様の手法として平行移動の変換を使用するが一般的、**テキスト効果の翻訳**ページを示しています。 ここで、関連の一部である、`PaintSurface`ハンドラー、 [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs)クラス。
+シャドウ効果と同様の手法として平行移動の変換を使用するが一般的、**テキスト効果の翻訳**ページを示しています。 ここで、関連の一部である、`PaintSurface`ハンドラー、 [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs)クラス。
 
 ```csharp
 float textSize = 150;
@@ -137,7 +137,7 @@ using (SKPaint textPaint = new SKPaint())
 
 ただし、変換の呼び出しは 1 つから引き継がについて心配することも、`PaintSurface`へハンドラー。 新しい呼び出しごとに`PaintSurface`新規の配信`SKCanvas`の既定の変換を持つオブジェクト。
 
-一般的な用途の別、`Translate`ビジュアル オブジェクトをレンダリングがもともと作成された描画都合の良い座標を使用して変換がします。 たとえば、中央の位置 (0, 0) を持つ、アナログ時計の座標を指定することができます。 できますし、変換を使用できます表示目的の位置。 示されているこれは、**[Hendecagram 配列]** ページ。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)クラスが作成した後、 `SKPath` 11 - 星のオブジェクト。 `HendecagramPath`オブジェクトが定義されている、公開、static、および読み取り専用他のデモ プログラムからアクセスできるようにします。 静的コンス トラクターで作成されます。
+一般的な用途の別、`Translate`ビジュアル オブジェクトをレンダリングがもともと作成された描画都合の良い座標を使用して変換がします。 たとえば、中央の位置 (0, 0) を持つ、アナログ時計の座標を指定することができます。 できますし、変換を使用できます表示目的の位置。 示されているこれは、**[Hendecagram 配列]** ページ。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)クラスが作成した後、 `SKPath` 11 - 星のオブジェクト。 `HendecagramPath`オブジェクトが定義されている、公開、static、および読み取り専用他のデモ プログラムからアクセスできるようにします。 静的コンス トラクターで作成されます。
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -211,7 +211,7 @@ public class HendecagramArrayPage : ContentPage
 
 [![](translate-images/hendecagramarray-small.png "Hendecagram アレイのページのスクリーン ショットをトリプル")](translate-images/hendecagramarray-large.png#lightbox "Hendecagram アレイのページのトリプル スクリーン ショット")
 
-アニメーションには、多くの場合、変換が含まれます。 **Hendecagram アニメーション**ページ内を移動 11 星円です。 [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)クラスがいくつかのフィールドで始まり、かつの上書きが、`OnAppearing`と`OnDisappearing`開始および Xamarin.Forms タイマーを停止する方法。
+アニメーションには、多くの場合、変換が含まれます。 **Hendecagram アニメーション**ページ内を移動 11 星円です。 [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)クラスがいくつかのフィールドで始まり、かつの上書きが、`OnAppearing`と`OnDisappearing`開始および Xamarin.Forms タイマーを停止する方法。
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage

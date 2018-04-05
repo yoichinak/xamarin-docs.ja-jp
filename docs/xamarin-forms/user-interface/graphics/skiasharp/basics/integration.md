@@ -7,11 +7,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 67c4330d8e446a407dec7792fe5f40cdd9d23c22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ebe153ead2bb62b19ad6b25bf0093e20bf15c04
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>Xamarin.Forms との統合
 
@@ -22,9 +22,9 @@ SkiaSharp グラフィックスは、Xamarin.Forms のさまざまな方法で�
 ![](integration-images/integrationexample.png "スライダーの色を選択します。")
 
 Xamarin.Forms で対話型の SkiaSharp グラフィックスを作成するための別の方法では、タッチ使用します。
-2 番目のページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)権利があるプログラム**トグル塗りつぶしをタップして**です。 2 つの方法の簡単な円を描画&mdash;塗りつぶしと塗りつぶし&mdash;タップで切り替えをします。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)クラスは、ユーザー入力に応答 SkiaSharp グラフィックスを変更する方法を示しています。
+2 番目のページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)権利があるプログラム**トグル塗りつぶしをタップして**です。 2 つの方法の簡単な円を描画&mdash;塗りつぶしと塗りつぶし&mdash;タップで切り替えをします。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)クラスは、ユーザー入力に応答 SkiaSharp グラフィックスを変更する方法を示しています。
 
-このページの`SKCanvasView`でクラスをインスタンス化、 [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)も、Xamarin.Forms を設定するファイル[ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)ビュー。
+このページの`SKCanvasView`でクラスをインスタンス化、 [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)も、Xamarin.Forms を設定するファイル[ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)ビュー。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -99,7 +99,7 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 
 どちらの場合、`h`引数の範囲は 0 ~ 360 です。 `s`、 `l`、および`v`引数の範囲は 0 ~ 100 です。 `a`アルファ (透明度) 引数範囲は 0 ~ 255 です。
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)ファイルには、2 つ作成されます`SKCanvasView`内のオブジェクト、`StackLayout`サイド バイ サイドで`Slider`と`Label`HSL を選択するユーザーに許可するビューとHSV カラー値:
+[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)ファイルには、2 つ作成されます`SKCanvasView`内のオブジェクト、`StackLayout`サイド バイ サイドで`Slider`と`Label`HSL を選択するユーザーに許可するビューとHSV カラー値:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -181,7 +181,7 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 
 2 つ`SKCanvasView`要素が 1 つのセルに`Grid`で、`Label`結果、RGB 色の値を表示するための上部に座ってです。
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)は比較的簡単に分離コード ファイル。 共有`ValueChanged`の 3 つのハンドラー`Slider`要素だけが無効化両方`SKCanvasView`要素。 `PaintSurface`ハンドラーによって示される色で、キャンバスのオフ、`Slider`要素、およびも設定、`Label`の上に座って、`SKCanvasView`要素。
+[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)は比較的簡単に分離コード ファイル。 共有`ValueChanged`の 3 つのハンドラー`Slider`要素だけが無効化両方`SKCanvasView`要素。 `PaintSurface`ハンドラーによって示される色で、キャンバスのオフ、`Slider`要素、およびも設定、`Label`の上に座って、`SKCanvasView`要素。
 
 ```csharp
 public partial class ColorExplorePage : ContentPage
