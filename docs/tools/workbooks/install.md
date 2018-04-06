@@ -1,17 +1,16 @@
 ---
-title: "ブックのインストールと要件"
-description: "ダウンロード、インストール、および Xamarin ブックを使用する方法。"
-ms.topic: article
+title: ブックのインストールと要件
+description: ダウンロード、インストール、および Xamarin ブックを使用する方法。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: bf3d675224a1e1696d4ce526fa42260d2102aa7d
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 68cac91a9b430d2abd138c0bb8bd334b65986329
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
@@ -33,7 +32,7 @@ ms.lasthandoff: 03/16/2018
 
 -----
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 #### <a name="supported-operating-systems"></a>Supported Operating Systems
 
@@ -105,7 +104,7 @@ IOS または Android のブックの接続に問題があるため、まだチ�
 - Android: は、x86 を使用していることを確認してくださいエミュレーター。
 - Android: エミュレーター プラットフォームを使用していますか。 Google のエミュレーターですか。
   Visual Studio の Android エミュレーターですか。 Xamarin Android Player しますか。
-- Windows 上の iOS: Xamarin リモート iOS シミュレーターのバージョンはするがインストールされている (確認**プログラムの追加/削除**で**コントロール パネルの** )?
+- Windows 上の iOS: Xamarin リモート iOS シミュレーターのバージョンはするがインストールされている (確認**プログラムの追加/削除**で**コントロール パネルの**)?
 - Windows 上の iOS: Mac ビルド ホストのプラットフォームのバージョン情報のも指定してください
 - デバイスはネットワークに接続 (web ブラウザーから確認) しますか。
 

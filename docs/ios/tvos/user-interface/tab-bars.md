@@ -1,18 +1,17 @@
 ---
-title: "タブ バー コント ローラーの使用"
-description: "この記事では、設計と Xamarin.tvOS アプリ内でタブ バーのコント ローラーの操作について説明します。"
-ms.topic: article
+title: タブ バー コント ローラーの使用
+description: この記事では、設計と Xamarin.tvOS アプリ内でタブ バーのコント ローラーの操作について説明します。
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b3a7a2347ed93aff5cddc6f15e25028c61a53d8
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 1536e37830f3b2a1e2a83c7bf5039909062d092b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>タブ バー コント ローラーの使用
 
@@ -76,7 +75,7 @@ Xamarin.tvOS アプリでは、タブ バーを使用する最も簡単な方法
 1. 新しいカテゴリ (タブ) を追加、削除、**ビュー コント ローラー**デザイン サーフェイスに。 
 
     [![](tab-bars-images/tab04.png "ビューのコント ローラー")](tab-bars-images/tab04.png#lightbox)
-1. コントロールをクリックしてからドラッグ、  **タブのビューのコント ローラー**を新しい**ビュー コント ローラー**です。
+1. コントロールをクリックしてからドラッグ、 **タブのビューのコント ローラー**を新しい**ビュー コント ローラー**です。
 1. ポップアップ ウィンドウから次のように選択します。**コント ローラーを表示**(カテゴリ) のタブとして、新しいビューを追加します。 
 
     [![](tab-bars-images/tab05.png "タブを選択します。")](tab-bars-images/tab05.png#lightbox)
@@ -101,7 +100,7 @@ Xamarin.tvOS アプリでは、タブ バーを使用する最も簡単な方法
 1. 新しいカテゴリ (タブ) を追加するには、次のようにドラッグします。、**ビュー コント ローラー**から、**ツールボックス**し、デザイン サーフェイスにドロップします。 
 
     [![](tab-bars-images/tab04vs.png "ビューのコント ローラー")](tab-bars-images/tab04vs.png#lightbox)
-1. コントロールをクリックしてからドラッグ、  **タブのビューのコント ローラー**を新しい**ビュー コント ローラー**です。
+1. コントロールをクリックしてからドラッグ、 **タブのビューのコント ローラー**を新しい**ビュー コント ローラー**です。
 1. ポップアップ ウィンドウから次のように選択します。**コント ローラーを表示**(カテゴリ) のタブとして、新しいビューを追加します。 
 
     [![](tab-bars-images/tab05vs.png "タブを選択します。")](tab-bars-images/tab05vs.png#lightbox)

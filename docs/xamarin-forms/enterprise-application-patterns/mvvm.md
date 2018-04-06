@@ -1,17 +1,16 @@
 ---
 title: MVVM
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ac8cf026fba8cac565ad622dcba24834a2ea8098
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 32a7a7dd50edcc3eefe76429ddb1e5581447993e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="mvvm"></a>MVVM
 
@@ -99,7 +98,7 @@ Xamarin.Forms のアプリケーションでは、ビューは通常、 [ `Page`
 </ContentPage>
 ```
 
-ときに、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)は、インスタンスを作成、`LoginViewModel`が自動的に構築され、ビューの 設定[ `BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)です。
+ときに、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)は、インスタンスを作成、`LoginViewModel`が自動的に構築され、ビューの設定[ `BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)です。
 
 この宣言型の構築と割り当てビューでビュー モデルの利点は、単純、されているが、欠点もビュー モデルの既定の (パラメーターなし) コンス トラクターが必要であることがあります。
 

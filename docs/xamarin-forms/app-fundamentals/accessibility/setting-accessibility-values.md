@@ -1,18 +1,17 @@
 ---
-title: "ユーザー インターフェイス要素のアクセシビリティの値の設定"
-description: "Xamarin.Forms では、ネイティブのユーザー補助の値を設定する AutomationProperties クラスからの接続のプロパティを使用してユーザー インターフェイス要素に設定するユーザー補助機能の値を許可します。 この記事では、スクリーン リーダーが要素に関する ページで会話できますように AutomationProperties クラスを使用する方法について説明します。"
-ms.topic: article
+title: ユーザー インターフェイス要素のアクセシビリティの値の設定
+description: Xamarin.Forms では、ネイティブのユーザー補助の値を設定する AutomationProperties クラスからの接続のプロパティを使用してユーザー インターフェイス要素に設定するユーザー補助機能の値を許可します。 この記事では、スクリーン リーダーが要素に関する ページで会話できますように AutomationProperties クラスを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 4aeeea7f946a121b12741d2da217daf531935849
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cf9071684061b584e1cb75cfd50b33212f42bf79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-accessibility-values-on-user-interface-elements"></a>ユーザー インターフェイス要素のアクセシビリティの値の設定
 

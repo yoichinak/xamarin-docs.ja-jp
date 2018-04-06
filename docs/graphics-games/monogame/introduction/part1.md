@@ -1,18 +1,17 @@
 ---
-title: "クロス プラットフォーム MonoGame を作成する – 第 1 部"
-description: "このチュートリアルでは、iOS および Android MonoGame を使用して新しいプロジェクトを作成する方法を示します。 結果は、Mac ソリューション、プラットフォームごとに 1 つのプロジェクトと同様に、プラットフォーム間の共有コード プロジェクトの Visual Studio です。 このプロジェクトの実行時に空の青い画面が表示されます。"
-ms.topic: article
+title: クロス プラットフォーム MonoGame を作成する – 第 1 部
+description: このチュートリアルでは、iOS および Android MonoGame を使用して新しいプロジェクトを作成する方法を示します。 結果は、Mac ソリューション、プラットフォームごとに 1 つのプロジェクトと同様に、プラットフォーム間の共有コード プロジェクトの Visual Studio です。 このプロジェクトの実行時に空の青い画面が表示されます。
 ms.prod: xamarin
 ms.assetid: FC69E69B-04D4-45DF-9BBF-2A6CDEAD9B2F
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0d1352b4129dc1cf8be42e813787b9b73f80cd3e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cd12f23f8cb269b2a41a08bf641db08e18fb82b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>クロス プラットフォーム MonoGame を作成する – 第 1 部
 
@@ -32,7 +31,7 @@ MonoGame として追加できる追加の Visual studio for mac Mac で次の�
 ![](part1-images/image2.png "ギャラリータブを選択、ゲーム開発のカテゴリを展開し、MonoGame アドインを選択し、[インストール] をクリックしてください")
 
 > [!IMPORTANT]
-> **注**: 場合、**ゲーム開発**セクションがない、アドイン マネージャーから、手動でダウンロードし、ここから最新バージョンをインストールできます: http://www.monogame.net/downloads/ です。 表示されるテンプレート用に Mac を Visual Studio を再起動する必要があります。
+> **注**: 場合、**ゲーム開発**セクションがない、アドイン マネージャーから、手動でダウンロードし、ここから最新バージョンをインストールできます:http://www.monogame.net/downloads/です。 表示されるテンプレート用に Mac を Visual Studio を再起動する必要があります。
 
 
 
