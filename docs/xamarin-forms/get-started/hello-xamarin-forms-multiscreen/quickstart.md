@@ -1,17 +1,16 @@
 ---
 title: Xamarin.Forms マルチスクリーン クイックスタート
-ms.topic: article
-ms.prod: xamarin
+ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 96a0ce0c2c53c1ede01afd743514c16d16f5b54e
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 268622ff8bc7ff05771096549ed694c57139366d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms マルチスクリーン クイックスタート
 
@@ -202,7 +201,7 @@ Phoneword アプリケーションを次のように拡張します。
     </ContentPage>      
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**CallHistoryPage.xaml** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**CallHistoryPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
 6. **Solution Pad** で **App.xaml.cs** をダブルクリックして開きます。
 
@@ -233,7 +232,7 @@ Phoneword アプリケーションを次のように拡張します。
     }
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 8. **Solution Pad** で、**MainPage.xaml** をダブルクリックして開きます。
 
@@ -253,7 +252,7 @@ Phoneword アプリケーションを次のように拡張します。
     </StackLayout>
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
 10. **Solution Pad** で **MainPage.xaml.cs** をダブルクリックして開きます。
 
@@ -290,7 +289,7 @@ Phoneword アプリケーションを次のように拡張します。
     }
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 12. Visual Studio for Mac で、**[ビルド]、[すべてビルド]** の順にメニュー項目を選択します (または **&#8984; + B** キーを押します)。 アプリケーションがビルドされ、Visual Studio for Mac のツール バーに成功のメッセージが表示されます。
 

@@ -1,18 +1,18 @@
 ---
-title: "Hello, Android: 詳細説明"
-description: "このガイドは 2 つに分かれています。最初に、Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。"
-ms.topic: article
+title: 'Hello, Android: 詳細説明'
+description: このガイドは 2 つに分かれています。最初に、Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: e9e554da80218d2e89ff79c6e89886d707b1ed95
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: 詳細説明
 

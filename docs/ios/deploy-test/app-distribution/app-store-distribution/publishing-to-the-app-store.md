@@ -1,18 +1,17 @@
 ---
 title: App Store への発行
 description: この記事では、App Store から配布する Xamarin.iOS アプリケーションの構成、ビルド、発行の方法を示します。 これには、アプリケーションの配布準備の方法、Apple のツールを使用して審査のためにアプリケーションを提出する方法、最後に App Store にアプリケーションを発行する方法について説明するステップ バイ ステップ ガイドが含まれます。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-app-store"></a>App Store への発行
 

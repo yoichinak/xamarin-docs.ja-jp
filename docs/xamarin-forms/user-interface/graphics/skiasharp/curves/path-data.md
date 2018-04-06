@@ -7,11 +7,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7ea99612f85a853bcd045b773df0a01f33427a89
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="svg-path-data"></a>SVG Path Data
 
@@ -147,7 +147,7 @@ T x2 y2 ...
 
 [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/)メソッドは、既存の SVG パス データを取得するための便利な`SKPath`を別のプログラムを転送するか、XML などのテキスト ベースのファイル形式で格納するオブジェクト。 (、`ToSvgPathData`メソッドは、この記事のサンプル コードではデモンストレーションしません)。*いない*期待`ToSvgPathData`メソッドの呼び出しパスの作成を正確に対応する文字列を返します。 円弧が複数に変換される具体的には、紹介`QuadTo`コマンドから返されるパス データでの表示方法を`ToSvgPathData`です。
 
-**パス データこんにちは**ページ魔法単語の"HELLO"SVG パス データを使用します。 両方の`SKPath`と`SKPaint`オブジェクトがフィールドのフィールドとして定義されている、 [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs)クラス。
+**パス データこんにちは**ページ魔法単語の"HELLO"SVG パス データを使用します。 両方の`SKPath`と`SKPaint`オブジェクトがフィールドのフィールドとして定義されている、 [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs)クラス。
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -218,7 +218,7 @@ public class PathDataHelloPage : ContentPage
 
 [![](path-data-images/pathdatahello-small.png "パス データこんにちはページのスクリーン ショットをトリプル")](path-data-images/pathdatahello-large.png#lightbox "パス データこんにちはページの 3 倍のスクリーン ショット")
 
-**パス データ Cat**ページは似ています。 パスとペイントのオブジェクトが両方のフィールドとして定義されている、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラス。
+**パス データ Cat**ページは似ています。 パスとペイントのオブジェクトが両方のフィールドとして定義されている、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラス。
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -291,7 +291,7 @@ public class PathDataCatPage : ContentPage
 
 通常、ときに、`SKPath`オブジェクトがフィールドとして定義されている場合、コンス トラクターまたは別の方法でパスの輪郭を定義する必要があります。 ただし、SVG パス データを使用する場合、フィールド定義の完全パスを指定できることを見てきました。
 
-以前**汚いアナログ時計**サンプルは、 [ **、回転変換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)記事では、単純な行として、時計の針が表示されます。 **アナログ時計かなり**以下のプログラムでこれらの行を置き換えます`SKPath`でフィールドとして定義されているオブジェクト、 [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs)クラスと`SKPaint`オブジェクト。
+以前**汚いアナログ時計**サンプルは、 [ **、回転変換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)記事では、単純な行として、時計の針が表示されます。 **アナログ時計かなり**以下のプログラムでこれらの行を置き換えます`SKPath`でフィールドとして定義されているオブジェクト、 [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs)クラスと`SKPaint`オブジェクト。
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

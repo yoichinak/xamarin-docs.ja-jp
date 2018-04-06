@@ -1,18 +1,17 @@
 ---
-title: "TestFlight の使用"
-description: "Apple が所有するようになった TestFlight は、Xamarin.iOS アプリのベータ テストを行う主要な方法です。 この記事では、アプリのアップロードから iTunes Connect での使用まで、TestFlight プロセスのすべての手順について説明します。"
-ms.topic: article
+title: TestFlight の使用
+description: Apple が所有するようになった TestFlight は、Xamarin.iOS アプリのベータ テストを行う主要な方法です。 この記事では、アプリのアップロードから iTunes Connect での使用まで、TestFlight プロセスのすべての手順について説明します。
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: adc08009de308598041adb79dc02bf83bcf4a2f2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-testflight"></a>TestFlight の使用
 

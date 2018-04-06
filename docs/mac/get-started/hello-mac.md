@@ -1,18 +1,18 @@
 ---
 title: Hello Mac
 description: このガイドでは、Xamarin.Mac アプリを初めて作成する場合の手順を、Visual Studio for Mac、Xcode、Interface Builder などの開発ツールチェーンの紹介と共に説明します。 また、コードに UI コントロールを公開する Outlet と Action についても紹介します。最後に、Xamarin.Mac アプリケーションを実行およびテストする方法を説明します。
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 635577bbc35d9e80147ecf7e1a59540099f85b9d
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-mac"></a>Hello Mac
 
@@ -22,7 +22,7 @@ Xamarin.Mac を使うと、*Objective-C* と *Xcode* で開発するときに使
 
 この記事では、ボタンがクリックされた回数を数えるシンプルな **Hello Mac** アプリを構築するプロセスを示しながら、Xamarin.Mac、Visual Studio for Mac、Xcode の Interface Builder を使用して Mac アプリを作成するために必要な主要概念を紹介します。
 
-[![](hello-mac-images/run02.png "Hello Mac アプリの実行例")](hello-mac-images/run02.png#lightbox)
+[![](hello-mac-images/run02.png "Hello, Mac アプリの実行例")](hello-mac-images/run02.png#lightbox)
 
 次の概念について説明します。
 

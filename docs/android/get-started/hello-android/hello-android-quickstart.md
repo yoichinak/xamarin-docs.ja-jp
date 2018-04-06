@@ -1,18 +1,18 @@
 ---
 title: 'Hello, Android: クイック スタート'
 description: このガイドは 2 つに分かれています。最初に (Visual Studio または Visual Studio for Mac を使用して) Xamarin.Android アプリケーションを作成し、Xamarin での Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: bbe243b108be6e0060ba9067db58a9875c7b5153
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: クイック スタート
 

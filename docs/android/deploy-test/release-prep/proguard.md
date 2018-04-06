@@ -1,18 +1,17 @@
 ---
 title: ProGuard
-description: "ProGuard は、Java クラス ファイルのシュリンカー、オプティマイザー、オブファスケーター、および事前検証機能です。 これは、未使用のコードを検出して削除し、バイトコードの分析と最適化を行い、クラスとクラス メンバーを難読化します。 このガイドでは、ProGuard がどのように機能するか、プロジェクトで有効にする方法、および設定方法について説明します。 また、ProGuard の設定例もいくつか示します。"
-ms.topic: article
+description: ProGuard は、Java クラス ファイルのシュリンカー、オプティマイザー、オブファスケーター、および事前検証機能です。 これは、未使用のコードを検出して削除し、バイトコードの分析と最適化を行い、クラスとクラス メンバーを難読化します。 このガイドでは、ProGuard がどのように機能するか、プロジェクトで有効にする方法、および設定方法について説明します。 また、ProGuard の設定例もいくつか示します。
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 10744d7c4fbcc5a8935a1fe1e60b6c96ec828815
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e65c78633ae91318bd8e9cce949bac9cc12675c0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="proguard"></a>ProGuard
 

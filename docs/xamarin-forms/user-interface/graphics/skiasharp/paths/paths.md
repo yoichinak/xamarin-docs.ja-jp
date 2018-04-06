@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 3a828baccda83822237d2564d771bcd89c9099e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2881148631435c9082b42cad0e784100b010b46
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-basics"></a>パスの基礎
 
@@ -50,7 +50,7 @@ _接続されている直線と曲線を組み合わせる場合の SkiaSharp SK
 
 輪郭が別の呼び出しで終わる`MoveTo`または`RMoveTo`、新しい輪郭またはへの呼び出しを開始する`Close`輪郭を終了します。 `Close`メソッドに自動的に、輪郭の最初のポイントに現在の位置から、直線を追加し、パスとしてマークを閉じると、任意ストローク線端なしに描画されることを意味します。
 
-オープンおよびクローズされた輪郭の違いを示す、 **2 つの三角形輪郭**ページを使用して、 `SKPath` 2 つの三角形を表示するために 2 つの輪郭を使用したオブジェクト。 最初の輪郭が開いていて、2 つ目が閉じられます。 ここでは、 [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs)クラス。
+オープンおよびクローズされた輪郭の違いを示す、 **2 つの三角形輪郭**ページを使用して、 `SKPath` 2 つの三角形を表示するために 2 つの輪郭を使用したオブジェクト。 最初の輪郭が開いていて、2 つ目が閉じられます。 ここでは、 [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -122,7 +122,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) 角丸の結合
 - [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) 切り詰めるオフ結合
 
-**ストローク結合**番組のようなコードとの結合を描くこれら 3 つのページ、**ストローク Cap**ページ。 これは、`PaintSurface`内のイベント ハンドラー、 [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs)クラス。
+**ストローク結合**番組のようなコードとの結合を描くこれら 3 つのページ、**ストローク Cap**ページ。 これは、`PaintSurface`内のイベント ハンドラー、 [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

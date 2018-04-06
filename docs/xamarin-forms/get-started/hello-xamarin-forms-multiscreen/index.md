@@ -1,18 +1,18 @@
 ---
-title: "Hello, Xamarin.Forms マルチスクリーン"
-description: "このガイドでは、Hello, Xamarin.Forms ガイドで作成した Phoneword アプリケーションを、2 つ目の画面に移動できるように拡張します。 説明するトピックには、ページ ナビゲーションとコレクションへのデータ バインドが含まれます。"
-ms.topic: article
+title: Hello, Xamarin.Forms マルチスクリーン
+description: このガイドでは、Hello, Xamarin.Forms ガイドで作成した Phoneword アプリケーションを、2 つ目の画面に移動できるように拡張します。 説明するトピックには、ページ ナビゲーションとコレクションへのデータ バインドが含まれます。
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 4b1f7817-6754-4b8d-9567-424d7d8f2b05
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 79b9ead855863498964aca3807afa7edcf40f21b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2132e1d0732a727d90e3eb7f36085f13c78c2e7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-xamarinforms-multiscreen"></a>Hello, Xamarin.Forms マルチスクリーン
 

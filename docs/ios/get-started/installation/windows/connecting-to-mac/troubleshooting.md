@@ -1,18 +1,17 @@
 ---
 title: 接続のトラブルシューティング
 description: このガイドでは、新しい接続マネージャーの使用中に発生する可能性がある問題を解決する方法について説明します。接続できない問題や SSH の問題などを解決します。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 505bd755140e3d4cdd162caf694de386fc72a68a
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: f30e49122c343a967a2348c03ce4f06d9452dc76
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="connection-troubleshooting"></a>接続のトラブルシューティング
 

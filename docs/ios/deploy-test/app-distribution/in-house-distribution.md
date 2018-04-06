@@ -1,18 +1,17 @@
 ---
-title: "社内配布"
-description: "このドキュメントでは、Apple Enterprise Developer Program のメンバーとして、アプリケーションの社内配布の概要を提供します。"
-ms.topic: article
+title: 社内配布
+description: このドキュメントでは、Apple Enterprise Developer Program のメンバーとして、アプリケーションの社内配布の概要を提供します。
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4da96f3119fb46fbeb22ad3d6c68b3099f6d0698
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c11148928ab0fa028f9cc4a9cb50b27a0e195847
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-house-distribution"></a>社内配布
 

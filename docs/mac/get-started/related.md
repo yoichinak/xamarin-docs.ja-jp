@@ -1,18 +1,17 @@
 ---
-title: "関連ドキュメント"
-description: "その他の macOS 開発者向けドキュメントのリンク。"
-ms.topic: article
+title: 関連ドキュメント
+description: その他の macOS 開発者向けドキュメントのリンク。
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 000061d8ed884f1eb248517c6131ec49134cb8a1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ff26747a395b48163dbabf0b058f28427182d41a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="related-documentation"></a>関連ドキュメント
 
@@ -26,7 +25,7 @@ Xamarin.Mac に関する質問の資料は、[developer.xamarin.com](~/mac/get-s
 
 ## <a name="user-interface"></a>ユーザー インターフェイス
 
-Xamarin.Mac アプリケーションで C# と .NET を使用している場合、開発者は、*Objective-C* と *Xcode* を使用する開発者が使用しているのと同じユーザー インターフェイス コントロールを使用できます。 Xamarin.Mac は直接 Xcode と統合できるため、開発者は Xcode の _Interface Builder_ を使用して、アプリのユーザー インターフェイスを作成して維持できます (または、必要に応じて C# コードで直接作成することも可能です)。
+Xamarin.Mac アプリケーションで C# と .NET を使用している場合、開発者は、*Objective-C* と *Xcode* を使用する開発者が使用しているのと同じユーザー インターフェイス コントロールを使用できます。 Xamarin.Mac は直接 Xcode と統合できるため、開発者は Xcode の_Interface Builder_を使用して、アプリのユーザー インターフェイスを作成して維持できます (または、必要に応じて C# コードで直接作成することも可能です)。
 
 以下のガイドでは、Xamarin.Mac アプリケーションで macOS 要素を使用する方法を詳細に説明します。
 

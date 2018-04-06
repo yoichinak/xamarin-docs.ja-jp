@@ -1,17 +1,17 @@
 ---
 title: Xamarin.Forms のクイック スタート
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7c90b5bcca5a6b8d2a4b52c166ae6884646a61d2
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: a1adaa20bb649dd51547e3bff74e60e0d5c001af
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 
@@ -535,7 +535,7 @@ Phoneword アプリケーションは次のように作成します。
     </ContentPage>
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
 9. **Solution Pad** で **MainPage.xaml.cs** をダブルクリックして開きます。
 
@@ -589,7 +589,7 @@ Phoneword アプリケーションは次のように作成します。
     > [!NOTE]
     > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、このエラーは後ほど修正されます。
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 11. **Solution Pad** で **App.xaml.cs** をダブルクリックして開きます。
 
@@ -842,7 +842,7 @@ Phoneword アプリケーションは次のように作成します。
     }        
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S キー**を押し)、**MainActivity.cs** の変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S キー**を押し)、**MainActivity.cs** の変更内容を保存してから、ファイルを閉じます。
 
 26. **Solution Pad** で **Properties** フォルダーを展開し、**AndroidManifest.xml** ファイルをダブルクリックします。
 
@@ -852,7 +852,7 @@ Phoneword アプリケーションは次のように作成します。
 
     ![](quickstart-images/xs/android-manifest-changed.png "CallPhone アクセス許可を有効にする")
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**AndroidManifest.xml** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**AndroidManifest.xml** への変更内容を保存してから、ファイルを閉じます。
 
 28. **Solution Pad** で、**PhonewordPage** クラスを **Phoneword** プロジェクトから削除します。 このページは、プロジェクトの作成時に自動的に追加されたもので、もう不要です。
 29. Visual Studio for Mac で、**[ビルド]、[すべてビルド]** の順にメニュー項目を選択します (または **&#8984; + B** キーを押します)。 アプリケーションがビルドされ、Visual Studio for Mac のツール バーに成功のメッセージが表示されます。

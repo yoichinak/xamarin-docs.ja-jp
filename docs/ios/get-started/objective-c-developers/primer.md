@@ -1,17 +1,16 @@
 ---
-title: "Objective-C 開発者向けの C# Primer"
-description: "Xamarin.iOS では、C# で記述されたプラットフォームに依存しないコードをプラットフォーム間で共有できます。 ただし、既存の iOS アプリケーションは既に作成されている Objective-C コードを活用できます。 この記事は、Xamarin と C# 言語への移行を検討している Objective-C 開発者向けの簡単な入門となります。"
-ms.topic: article
+title: Objective-C 開発者向けの C# Primer
+description: Xamarin.iOS では、C# で記述されたプラットフォームに依存しないコードをプラットフォーム間で共有できます。 ただし、既存の iOS アプリケーションは既に作成されている Objective-C コードを活用できます。 この記事は、Xamarin と C# 言語への移行を検討している Objective-C 開発者向けの簡単な入門となります。
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfc91ba92b2ed62e61d7ba99dec03784933295bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 717e131dd4025ea07780f6e52d8171fd15272dac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Objective-C 開発者向けの C# Primer
 

@@ -1,7 +1,6 @@
 ---
-title: "Android の作業の開始"
-description: "Xamarin.Android を使用すると、Java の場合と同様に UI コントロールを使用しながら、柔軟かつ洗練された最新言語 (C#)、基本クラス ライブラリ (BCL) のパワー、すぐに利用できるファースト クラス IDE (Visual Studio) も使って、ネイティブ Android アプリケーションを作成できるようになります。 このシリーズでは、Xamarin.Android 開発の基本を紹介します。 ここでは、セットアップとインストールから最初のアプリケーションのビルドまでを説明します。"
-ms.topic: article
+title: Android の作業の開始
+description: Xamarin.Android を使用すると、Java の場合と同様に UI コントロールを使用しながら、柔軟かつ洗練された最新言語 (C#)、基本クラス ライブラリ (BCL) のパワー、すぐに利用できるファースト クラス IDE (Visual Studio) も使って、ネイティブ Android アプリケーションを作成できるようになります。 このシリーズでは、Xamarin.Android 開発の基本を紹介します。 ここでは、セットアップとインストールから最初のアプリケーションのビルドまでを説明します。
 ms.prod: xamarin
 ms.assetid: D3BC68C5-87C1-50AF-ED0A-55EBF07CBD8B
 ms.technology: xamarin-android
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/25/2017
-ms.openlocfilehash: c07ab37bc88b52bbff0ddc0fb7bf1faa4d97bb2a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8a9abb7e9a5640994d67c1fb33d15d8405442b6c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-series"></a>作業の開始シリーズ
 

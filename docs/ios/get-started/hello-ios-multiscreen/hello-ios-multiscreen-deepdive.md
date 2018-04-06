@@ -1,18 +1,18 @@
 ---
 title: Hello, iOS マルチスクリーン
 description: 2 部構成のこのガイドでは、2 つ目の画面を処理するために、「Hello, iOS」ガイドで作成された Phoneword アプリケーションを展開します。 その過程で、モデル ビュー コントローラー設計パターンについて紹介し、最初の iOS ナビゲーションを実装し、iOS アプリケーションの構造と機能について理解を深めます。
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 0c21fbd86fc9069d52f5f5935f66500e9477ca02
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 6f3c02bf3e5def0ad4acdb82e4c8a2606159846a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Hello, iOS マルチスクリーンの詳細
 

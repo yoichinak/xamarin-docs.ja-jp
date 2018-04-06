@@ -1,18 +1,17 @@
 ---
-title: "マルチコア デバイスと Xamarin.Android"
-description: "Android は、複数の異なるコンピューター アーキテクチャで実行できます。 このドキュメントでは、Xamarin.Android アプリケーションに利用できるさまざまな CPU アーキテクチャについて説明します。 このドキュメントでは、さまざまな CPU アーキテクチャをサポートするために Android アプリケーションがどのようにパッケージ化されているかについても説明します。 アプリケーション バイナリ インターフェイス (ABI) が導入され、Xamarin.Android アプリケーションで使用する ABI に関するガイダンスが提供される予定です。"
-ms.topic: article
+title: マルチコア デバイスと Xamarin.Android
+description: Android は、複数の異なるコンピューター アーキテクチャで実行できます。 このドキュメントでは、Xamarin.Android アプリケーションに利用できるさまざまな CPU アーキテクチャについて説明します。 このドキュメントでは、さまざまな CPU アーキテクチャをサポートするために Android アプリケーションがどのようにパッケージ化されているかについても説明します。 アプリケーション バイナリ インターフェイス (ABI) が導入され、Xamarin.Android アプリケーションで使用する ABI に関するガイダンスが提供される予定です。
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0288ba6aa8a3c9eb89208161f60ba831723444c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>マルチコア デバイスと Xamarin.Android
 
