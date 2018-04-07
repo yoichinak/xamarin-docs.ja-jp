@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: db8b767d6e7a6c5e5badc1c74703825a66ea2ab8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="app-class"></a>App クラス
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 04/04/2018
 * 永続的な[`Properties`ディクショナリ](#Properties_Dictionary)ライフ サイクルの状態の変更の間にわたって単純な値を格納します。
 * 静的な`Current`を現在のアプリケーション オブジェクトへの参照を格納するプロパティです。
 
-場合も公開[ライフ サイクル メソッド](~/xamarin-forms/app-fundamentals/app-lifecycle.md)など`OnStart`、 `OnSleep`、および`OnResume`モーダル ナビゲーション イベントとします。
+また、公開[ライフ サイクル メソッド](~/xamarin-forms/app-fundamentals/app-lifecycle.md)など`OnStart`、 `OnSleep`、および`OnResume`モーダル ナビゲーション イベントとします。
 
 選択したテンプレートによって、`App`で 2 つの方法のいずれかのクラスを定義する可能性があります。
 

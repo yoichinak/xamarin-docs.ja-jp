@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ff36deff996a92fca512158252c64e5c29046be9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="list-appearance"></a>リストの外観
 
@@ -117,14 +117,12 @@ x:Class="DemoListView.GroupingViewPage"
 - 変更、`ListView`の`ItemsSource`をグループ化された一覧に
 
 ### <a name="customizing-grouping"></a>グループ化をカスタマイズします。
-これで、基本的な ListView でグループ化を実装する方法を見たグループ ヘッダーの表示をカスタマイズする方法を見てみましょう。
 
-ような方法、`ListView`が、 `ItemTemplate` 、行の表示方法を定義するため`ListView`が、`GroupHeaderTemplate`です。 カスタマイズしたグループ ヘッダーのテンプレートを使用して上記のリスト ビューの例を次に示します。
+一覧にグループ化が有効になっている場合、グループ ヘッダーもカスタマイズできます。
 
-![](customizing-list-appearance-images/grouping-depth.png "カスタマイズされた GroupHeaderTemplate を含む ListView")
+ような方法、`ListView`が、 `ItemTemplate` 、行の表示方法を定義するため`ListView`が、`GroupHeaderTemplate`です。 
 
-
-XAML では、そのデザインを実行する方法を次に示します。
+XAML でグループ ヘッダーをカスタマイズする例を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

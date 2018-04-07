@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ec46a5e098ba14925102211a27fcce8c27970e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="touch-id"></a>タッチ ID
 
@@ -121,47 +121,46 @@ ACL を使用する必要がありますを使用する、`SecAccessControl`ポ�
 
 認証の追加によって Touch ID、アプリケーションを見ていきましょう。 このチュートリアルでは、ここを使用して、[ストーリー ボード テーブル](https://developer.xamarin.com/samples/StoryboardTable/)サンプルです。 デバイスの所有者を何かこの一覧に追加できる、だけされないようにするためにすべてのユーザーが項目を追加することで、いっぱいになっていることを確認したいと考えてください。
 
-1.  このサンプルをダウンロードして、for mac の Visual Studio で実行
-2.  ダブルクリックして`MainStoryboard.Storyboard`iOS デザイナーでサンプルを開きます。 このサンプルは、アプリケーションでは、認証を制御する新しい画面を追加することができます。 これは、現在の前に移動`MasterViewController`です。
-3.  新しいドラッグ**ビュー コント ローラー**から、**ツールボックス**を**デザイン サーフェイス**です。 設定として、**ビュー コント ローラーのルート**によって**ctrl キーを押しながらドラッグ**から、**ナビゲーション コント ローラー**:
+1. このサンプルをダウンロードして、for mac の Visual Studio で実行
+2. ダブルクリックして`MainStoryboard.Storyboard`iOS デザイナーでサンプルを開きます。 このサンプルは、アプリケーションでは、認証を制御する新しい画面を追加することができます。 これは、現在の前に移動`MasterViewController`です。
+3. 新しいドラッグ**ビュー コント ローラー**から、**ツールボックス**を**デザイン サーフェイス**です。 設定として、**ビュー コント ローラーのルート**によって**ctrl キーを押しながらドラッグ**から、**ナビゲーション コント ローラー**:
 
     [![](touchid-images/image4.png "ルート ビュー コント ローラーを設定します。")](touchid-images/image4.png#lightbox)
 4.  新しいビュー コント ローラーの名前を付けます`AuthenticationViewController`です。
-5.  次に、ボタンをドラッグし、配置、`AuthenticationViewController`です。 これを呼び出して`AuthenticateButton`、し、テキストを付けます`Add a Chore`です。
-6.  イベントを作成、`AuthenticateButton`と呼ばれる`AuthenticateMe`です。
-7.  手動作成から話題`AuthenticationViewController`下部黒のバーをクリックして、 **ctrl キーを押しながらドラッグ**バーから、`MasterViewController`を選択して**プッシュ**(または**表示**クラスを使用するサイズ): 場合
+5. 次に、ボタンをドラッグし、配置、`AuthenticationViewController`です。 これを呼び出して`AuthenticateButton`、し、テキストを付けます`Add a Chore`です。
+6. イベントを作成、`AuthenticateButton`と呼ばれる`AuthenticateMe`です。
+7. 手動作成から話題`AuthenticationViewController`下部黒のバーをクリックして、 **ctrl キーを押しながらドラッグ**バーから、`MasterViewController`を選択して**プッシュ**(または**表示**クラスを使用するサイズ): 場合
 
     [![](touchid-images/image5.png "プッシュを選択して、MasterViewController バーからドラッグするかを表示します。")](touchid-images/image6.png#lightbox)
-8.  をクリックして、新しく作成された話題し、識別子を与える`AuthenticationSegue`下図のように。
+8. をクリックして、新しく作成された話題し、識別子を与える`AuthenticationSegue`下図のように。
 
     [![](touchid-images/image7.png "Segue 識別子 AuthenticationSegue に設定します。")](touchid-images/image7.png#lightbox)
-9.  `AuthenticationViewController` に次のコードを追加します。
+9. `AuthenticationViewController` に次のコードを追加します。
 
-    ```
+    ```csharp
     partial void AuthenticateMe (UIButton sender)
-        {
-            var context = new LAContext();
-            NSError AuthError;
-            var myReason = new NSString("To add a new chore");
+    {
+        var context = new LAContext();
+        NSError AuthError;
+        var myReason = new NSString("To add a new chore");
 
-
-            if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
-                var replyHandler = new LAContextReplyHandler((success, error) => {
-
-                    this.InvokeOnMainThread(()=>{
-                        if(success){
-                            Console.WriteLine("You logged in!");
-                            PerformSegue("AuthenticationSegue", this);
-                        }
-                        else{
-                            //Show fallback mechanism here
-                        }
-                    });
-
+        if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
+            var replyHandler = new LAContextReplyHandler((success, error) => {
+                this.InvokeOnMainThread(()=> {
+                    if(success)
+                    {
+                        Console.WriteLine("You logged in!");
+                        PerformSegue("AuthenticationSegue", this);
+                    }
+                    else
+                    {
+                        // Show fallback mechanism here
+                    }
                 });
-                context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
-            };
-        }
+            });
+            context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
+        };
+    }
     ```
 
 これは、ローカルの認証を使用して Touch ID の認証を実装する必要があるすべてのコードです。 次の図で強調表示された行は、ローカルの認証の使用を示しています。
