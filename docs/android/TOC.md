@@ -166,7 +166,6 @@
 ### [ネイティブ ライブラリの使用](platform/native-libraries.md)
 ### [Renderscript](platform/renderscript.md)
 ## [データとクラウド サービス](data-cloud/index.md)
-### [Azure 接続済みサービス](~/cross-platform/data-cloud/connected-services.md?context=xamarin/android)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android)
 #### [はじめに](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android)
 ##### [手順 1.登録](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android)
