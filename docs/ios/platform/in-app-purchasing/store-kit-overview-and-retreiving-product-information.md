@@ -291,7 +291,7 @@ string Buy = "Buy {0}"; // or a localizable string
 buy5Button.SetTitle(String.Format(Buy, product.LocalizedPrice()), UIControlState.Normal);
 ```
 
-(アメリカのストアの 1 つ)、日本語のストアのいずれかと次のスクリーン ショットでは 2 つの異なる iTunes テスト アカウントを使用するには。   
+(アメリカ合衆国のストアの 1 つ)、日本語のストアのいずれかと次のスクリーン ショットでは 2 つの異なる iTunes テスト アカウントを使用するには。   
    
    
    
