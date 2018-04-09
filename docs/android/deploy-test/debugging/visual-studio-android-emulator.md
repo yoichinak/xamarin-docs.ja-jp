@@ -1,18 +1,17 @@
 ---
 title: Visual Studio Emulator for Android
-description: "このガイドでは、Visual Studio 2015 で Xamarin.Android アプリを開発するため、Visual Studio Emulator for Android を構成および使用する方法について説明します。"
-ms.topic: article
+description: このガイドでは、Visual Studio 2015 で Xamarin.Android アプリを開発するため、Visual Studio Emulator for Android を構成および使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: a31d90e6d5abd574eb6187953082e1b70f66a113
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/30/2018
+ms.openlocfilehash: bcc88ba4c46aa9abe9038d6ea65bc9c17f337da6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio Emulator for Android
 
@@ -21,6 +20,9 @@ _このガイドでは、Visual Studio 2015 で Xamarin.Android アプリを開�
 ## <a name="visual-studio-android-emulator-overview"></a>Visual Studio Android Emulator の概要
 
 Microsoft Visual Studio 2015 には、Xamarin.Android アプリのデバッグのターゲットとして使用できる Android エミュレーター、*Visual Studio Emulator for Android* が含まれています。 このエミュレーターは、開発用コンピューターの Hyper-V 機能を使用して、Android SDK に付属の既定のエミュレーターよりも速い起動と短い実行時間を実現します。 Visual Studio Emulator for Android は、Xamarin.Android アプリケーションを開発するときに、既定の Android SDK エミュレーターの代わりに使用できます。
+
+> [!NOTE]
+> Visual Studio Emulator for Android は Visual Studio 2015 とのみ互換性があります &ndash; Visual Studion 2017 では動作しません。
 
 このガイドでは、Visual Studio から Microsoft Android エミュレーターを起動してアプリをテストする方法と、エミュレーターで使用できるさまざまな機能について説明します。 (既定の Android SDK エミュレーターのデバイス定義に似た) *デバイス プロファイル* を選択してさまざまな種類の Android デバイスをシミュレートする方法を学習します。 最後のトラブルシューティングのセクションでは、よくある落とし穴とその回避策について説明します。
 

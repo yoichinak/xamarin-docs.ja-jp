@@ -1,7 +1,6 @@
 ---
-title: "作業の開始"
-description: "以下の詳細なガイドを使用して、最初からモバイル アプリケーションを開発して展開する方法を学習します。"
-ms.topic: article
+title: 作業の開始
+description: 以下の詳細なガイドを使用して、最初からモバイル アプリケーションを開発して展開する方法を学習します。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.technology: xamarin-cross-platform
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 8d9acbf5fa53c2fa94d1a15d51de9d3db48a16fe
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2178d567f1ccfe803ebce8b7b623c31c290999bc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started"></a>作業の開始
 
@@ -23,11 +22,13 @@ _以下の詳細なガイドを使用して、最初からモバイル アプリ
 
 ## <a name="build-your-first-app"></a>最初のアプリをビルドする
 
-すぐにコーディングを開始するには、最初のアプリのビルドに役立つクイック スタート ガイドを次の中から選択します。
+> [!div class="nextstepaction"]
+> [Xamarin.Forms のクイック スタート](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+
+ネイティブの UI テクノロジ (Android XML や Xcode のストーリーボードなど) を使用してアプリをビルドする場合は、次のプラットフォーム固有のガイドを参照してみてください。
 
 * [Android のクイック スタート](~/android/get-started/hello-android/hello-android-quickstart.md)
 * [iOS のクイック スタート](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-* [Xamarin.Forms のクイック スタート](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 * [Mac の概要](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>モバイル開発入門
@@ -47,7 +48,7 @@ Xamarin のしくみや、モバイル アプリの開発プロジェクトに�
 このドキュメントでは、統合開発環境 (IDE) である Visual Studio for Mac の概要を説明します。
 
 
-## <a name="xamarin-university-video"></a>Xamarin University のビデオ
+## <a name="get-started-with-xamarin-university"></a>Xamarin University の概要
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 

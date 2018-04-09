@@ -83,7 +83,6 @@
 ### [HttpClient スタックと SSL/TLS の実装セレクター](macios/http-stack.md)
 ## [トラブルシューティング](troubleshooting/index.md)
 ### [よく寄せられる質問](troubleshooting/questions/index.md)
-#### [Xamarin で Visual Studio 2017 リリース候補を使用できますか](troubleshooting/questions/visualstudio-2017-rc.md)
 #### [PCL でサポートされているライブラリを確認する方法を教えてください](troubleshooting/questions/pcl-support-libraries.md)
 #### [PCL Reflection API](troubleshooting/questions/pcl-reflection.md)
 #### [PCL のケース スタディ: Microsoft TPL Dataflow NuGet パッケージの System.Diagnostics.Tracing に関連する問題の解決方法](troubleshooting/questions/pcl-case-study.md)
@@ -96,12 +95,14 @@
 #### [バグを報告する場合と場所を教えてください](troubleshooting/questions/howto-file-bug.md)
 #### [Xenarin が Jenkins をサポートしていないのはなぜですか](troubleshooting/questions/xamarin-jenkins.md)
 #### [デバッガーに必要なプロジェクト設定を教えてください](troubleshooting/questions/debugger-settings.md)
+
+### Visual Studio に関する質問
+#### [構成マネージャーで無効になっているチェック ボックスを配置する](troubleshooting/questions/deploy-checkboxes.md)
+#### [インストール後に見つからない Visual Studio の拡張機能がある](troubleshooting/questions/missing-vs-extensions.md)
+#### [Xamarin for Visual Studio の完全なアンインストールを実行するにはどうすればいいですか](troubleshooting/questions/uninstall-xamarin-vs.md)
+#### [Visual Studio のプロセスの現在の呼び出し履歴はどのようにして収集しますか](troubleshooting/questions/vs-callstack.md)
+#### [Visual Studio に自分のビルドの参照先ライブラリ プロジェクトが含まれないのはなぜですか](troubleshooting/questions/vs-config-manager.md)
+
 ### [NuGet へのコンポーネント参照の更新](troubleshooting/component-nuget.md)
 ### [サポート オプション](troubleshooting/support-options.md)
-### [従来のライセンスに関する質問](troubleshooting/legacy-licenses/index.md)
-#### [Xamarin プラットフォームのチーム管理](troubleshooting/legacy-licenses/team-management.md)
-#### [アカウントの電子メール アドレスを変更する方法を教えてください](troubleshooting/legacy-licenses/change-email.md)
-#### [手動で Xamarin ライセンスを再同期する方法を教えてください](troubleshooting/legacy-licenses/resync-licenses.md)
-#### [特定のライセンス エラー](troubleshooting/legacy-licenses/licensing-errors.md)
-#### [Visual Studio または Visual Studio for Mac で Xamarin にログインできないのはなぜですか](troubleshooting/legacy-licenses/login-troubleshooting.md)
 ## [サンプル](samples/index.yml)

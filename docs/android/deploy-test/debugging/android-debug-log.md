@@ -1,17 +1,16 @@
 ---
 title: Android のデバッグ ログ
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2018
-ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.date: 04/04/2018
+ms.openlocfilehash: e0e22fe35dc5042a7b3c895a250803e936611629
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
 
@@ -110,17 +109,24 @@ ms.lasthandoff: 03/22/2018
 
 デバッグ ログを表示するには、コマンド ラインを使う方法もあります。 コマンド プロンプト ウィンドウを開き、Android SDK の platform-tools フォルダーに移動します (SDK platform-tools フォルダーの通常の位置: **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools**)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-デバッグ ログを表示するには、コマンド ラインを使う方法もあります。 ターミナル ウィンドウを開き、Android SDK の platform-tools フォルダーに移動します (SDK platform-tools フォルダーの通常の位置: **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
-
------
-
 接続されているデバイス (物理デバイスまたはエミュレーター) が 1 つだけの場合は、次のコマンドを入力してログを表示できます。
 
 ```shell
 $ adb logcat
 ```
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+デバッグ ログを表示するには、コマンド ラインを使う方法もあります。 ターミナル ウィンドウを開き、Android SDK の platform-tools フォルダーに移動します (SDK platform-tools フォルダーの通常の位置: **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
+
+接続されているデバイス (物理デバイスまたはエミュレーター) が 1 つだけの場合は、次のコマンドを入力してログを表示できます。
+
+```shell
+$ ./adb logcat
+```
+
+-----
+
 
 複数のデバイスが接続されている場合は、デバイスを明示的に指定する必要があります。 たとえば、**adb -d logcat** では、接続されている物理デバイスのログのみが表示されます。また、**adb -e logcat** では、実行されているエミュレーターのログのみが表示されます。
 
@@ -146,6 +152,18 @@ Log.Error (tag, "this is an error message");
 I/myapp   (11103): this is an info message
 W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
+```
+
+`Console.WriteLine` を使用して**デバッグ ログ**に書き込むこともできます &ndash; このメッセージは logcat に表示されますが、出力形式が若干異なります (この手法は Android で Xamarin.Forms アプリをデバッグする場合に特に便利です)。
+
+```csharp
+System.Console.WriteLine ("DEBUG - Button Clicked!");
+```
+
+これにより、logcat に次のような出力が生成されます。
+
+```
+Info (19543) / mono-stdout: DEBUG - Button Clicked!
 ```
 
 ## <a name="interesting-messages"></a>興味深いメッセージ

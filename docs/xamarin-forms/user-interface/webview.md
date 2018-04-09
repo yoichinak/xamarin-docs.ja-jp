@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 54c70fda22782dfa9b6617c0832f2c17f0169b57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="webview"></a>WebView
 
@@ -399,6 +399,8 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 最新きたようにそれぞれの一般的な web ブラウザーのハードウェア アクセラレーション レンダリングと JavaScript のコンパイルと同様のテクノロジを採用します。 残念ながら、セキュリティ制限によりこれらの機能のほとんどで利用できなかったの iOS equaivalent `WebView`、`UIWebView`です。 Xamarin.Forms`WebView`使用`UIWebView`です。 問題がある場合は、カスタム レンダラーを使用してを記述する必要があります`WKWebView`、高速な参照をサポートします。 なお`WKWebView`は iOS 8 以降でのみサポートされます。
 
 既定では Android で WebView はの組み込みブラウザーと同じ速度で約です。
+
+[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge のレンダリング エンジンを使用します。 デスクトップとタブレット デバイス自体 Edge ブラウザーを使用する場合と同等のパフォーマンスが表示されます。
 
 `WebBrowser`コントロール Windows Phone 8 および Windows Phone 8.1 機能は最新の HTML5 のサポート機能ではないので、多くの場合、パフォーマンスが低下します。 Windows Phone の サイトを表示する方法に注意してください`WebView`です。 Internet Explorer でテストするのに十分ではありません。
 
