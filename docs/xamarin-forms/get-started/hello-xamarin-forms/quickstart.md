@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: a1adaa20bb649dd51547e3bff74e60e0d5c001af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e8d1064e76c2ccdeb14302d30428cd932444a0f5
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 
@@ -822,7 +822,7 @@ Phoneword アプリケーションは次のように作成します。
 
     namespace Phoneword.Droid
     {
-        [Activity(Label = "Phoneword", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+        [Activity(Label = "Phoneword", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
         public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
         {
             internal static MainActivity Instance { get; private set; }
@@ -843,6 +843,9 @@ Phoneword アプリケーションは次のように作成します。
     ```
 
     **[ファイル]、[保存]** の順に選択し (または **& #8984; + S キー**を押し)、**MainActivity.cs** の変更内容を保存してから、ファイルを閉じます。
+
+    > [!NOTE]
+    > 古いテンプレートに基づいているため、サンプル コードは `Theme="@style/MainTheme"` を使用します。 テーマ名でコンパイラ エラーが発生した場合は、**Phoneword/Droid/Resources/values/styles.xml** で正しいスタイル名を確認できます。
 
 26. **Solution Pad** で **Properties** フォルダーを展開し、**AndroidManifest.xml** ファイルをダブルクリックします。
 
