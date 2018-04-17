@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
@@ -33,9 +33,17 @@ Xamarin.Forms を拡張しを使用してプラットフォーム固有の機能
 
 使用して一部の iOS のスタイル処理を実行できる**Info.plist**と`UIAppearance`API です。 このガイドでは、コア Spotlight 検索を含む Xamarin.Forms ソリューションの iOS アプリを iOS 9 の機能を組み込む方法の例を示します。
 
+## <a name="gtkgtkmd"></a>[GTK](gtk.md)
+
+Xamarin.Forms では、GTK # アプリ用のプレビューがサポートできるようになりました。
+
 ## <a name="macmacmd"></a>[Mac](mac.md)
 
 Xamarin.Forms では、macOS アプリ用のプレビューがサポートできるようになりました。
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms では、Windows Presentation Foundation (WPF) アプリ用のプレビューがサポートできるようになりました。
 
 ## <a name="native-formsnative-formsmd"></a>[ネイティブ フォーム](native-forms.md)
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f20042b9599f7b4dde699a125e63c5ce435f6bc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e67820fa83ddea46f934b4eaedde2c6334f9cc6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="data--cloud-services"></a>データとクラウド サービス
 
@@ -25,11 +25,11 @@ Xamarin プラットフォームのクロスプラット フォームの web サ
 
 ## <a name="consuming-web-servicesxamarin-formsdata-cloudconsumingindexmd"></a>[Web サービスの使用](~/xamarin-forms/data-cloud/consuming/index.md)
 
-このガイドを提供する別の web サービスと通信する方法を示しています作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。 説明のトピックにはとの通信が含まれて[ASMX サービス](consuming/asmx.md)、 [WCF サービス](consuming/wcf.md)、 [REST サービス](consuming/rest.md)、 [Azure Mobile Apps](consuming/azure.md)、および[Amazon Web Services](consuming/aws.md)です。
+このガイドを提供する別の web サービスと通信する方法を示しています作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。 説明のトピックにはとの通信が含まれて[ASMX サービス](consuming/asmx.md)、 [WCF サービス](consuming/wcf.md)、 [REST サービス](consuming/rest.md)、および[Azure Mobile Apps](consuming/azure.md)です。
 
 ## <a name="authenticating-access-to-web-servicesxamarin-formsdata-cloudauthenticationindexmd"></a>[Web サービスへのアクセスの認証](~/xamarin-forms/data-cloud/authentication/index.md)
 
-このガイドでは、自分のデータにアクセスすることのみバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。 トピックを取り上げています[REST サービスと基本認証を使用して](authentication/rest.md)、 [Xamarin.Auth コンポーネントを使用して OAuth id プロバイダーに対して認証する](authentication/oauth.md)、組み込みの認証を使用してによって提供されるメカニズム[Azure Mobile Apps](authentication/azure.md)、および[Amazon Web Services](authentication/aws.md)です。
+このガイドでは、自分のデータにアクセスすることのみバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。 トピックを取り上げています[REST サービスと基本認証を使用して](authentication/rest.md)、 [Xamarin.Auth コンポーネントを使用して OAuth id プロバイダーに対して認証する](authentication/oauth.md)、組み込みの認証を使用してによって提供されるメカニズム[Azure Mobile Apps](authentication/azure.md)です。
 
 ## <a name="synchronizing-data-with-web-servicessyncindexmd"></a>[Web サービスとデータを同期する](sync/index.md)
 

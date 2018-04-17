@@ -6,16 +6,20 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 969b1b36659ac52782d30a1840ba352524e5e3c6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: f4a1451cb848f4da1f595c15d946f4e05292900d
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging でリモートの通知
 
 _このチュートリアルでは、Xamarin.Android アプリケーションで Google Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれる) を実装する方法の詳細な手順の説明を提供します。Google Cloud Messaging (GCM) と通信するために実装する必要があるさまざまなクラスについて説明、GCM へのアクセス用の Android のマニフェストにアクセス許可を設定する方法について説明し、サンプル プログラムをテストすると、エンド ツー エンドのメッセージングを示しています。_
+
+> [!NOTE]
+> GCM によって置き換えられた[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM)。
+> GCM サーバーとクライアント Api[廃止された](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)2019 年 4 月 11日として間もなく使用できる不要になったとします。
 
 ## <a name="gcm-notifications-overview"></a>GCM 通知の概要
 
