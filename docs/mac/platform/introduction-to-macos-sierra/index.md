@@ -7,11 +7,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ab373d708d47ad7c3dbbf4507284be04a1f9934
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3b8211e4c38fd37040fab5b35be4709d4b926c91
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS Sierra の概要
 
@@ -64,6 +64,9 @@ CloudKit フレームワークは、macOS を迅速かつ簡単に共有をプ�
 CloudKit 完全な UI を送信して、レコードの共有の招待を受信しており、ユーザーが完全な読み取り/書き込み、レコードへのアクセスを持つユーザーを制御します。
 
 詳細については、Apple を参照してください[CloudKit フレームワーク参照](https://developer.apple.com/reference/clockkit)と[CloudKit JS フレームワーク参照](https://developer.apple.com/reference/cloudkitjs)です。
+
+> [!IMPORTANT]
+> Apple[ツールを提供](https://developer.apple.com/support/allowing-users-to-manage-data/)開発者が、欧州連合の一般的なデータ保護規制 (GDPR) を適切に処理します。
 
 <a name="Safari-App-Extensions-Support" />
 

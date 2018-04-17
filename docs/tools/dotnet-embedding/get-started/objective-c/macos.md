@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: c129079aad14ac9e8aad6f73670ce9a43a36f222
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f75ced921cd240e280b5dd6f7366ccceefb5e40e
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="getting-started-with-macos"></a>MacOS の概要
 
@@ -19,152 +19,71 @@ ms.lasthandoff: 04/04/2018
 
 * 指示に従って、 [Objective C の概要](~/tools/dotnet-embedding/get-started/objective-c/index.md)ガイドです。
 
-* 使用する .NET アセンブリ**Embeddinator 4000**です。
+## <a name="hello-world"></a>Hello world
 
-* MacOS Cocoa アプリケーション
+最初に、C# の場合は、単純な hello world の例をビルドします。
 
-実行した後の手順を続行してください、 [Objective C の概要](~/tools/dotnet-embedding/get-started/objective-c/index.md)ガイドです。 .NET アセンブリが既にある場合に直接省略できます**Embeddinator 4000 を使用して**セクションです。
+### <a name="create-c-sample"></a>C# のサンプルを作成します。
 
-## <a name="creating-a-net-assembly"></a>.NET アセンブリを作成します。
+Mac 用 Visual Studio を開き、という名前の新しい Mac クラス ライブラリ プロジェクトを作成する**csharp からのこんにちは**、しに保存**~/Projects/hello-from-csharp**です。
 
-開く必要があります .NET アセンブリをビルドする[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)され、新しい作成**.NET ライブラリ プロジェクト**行う*ファイル > 新しいソリューション > その他の > .NET > ライブラリ*. 次へ をクリックし、*気象*として、*プロジェクト名*、 をクリック*作成*です。
-
-次の手順に従います。
-
-1. 削除、**カスタム**ファイルおよび**プロパティ**フォルダーです。
-
-2. 右クリックして*気象プロジェクト > 追加 > 新しいファイル。*
-
-3. 選択*空のクラス*して**XAMWeatherFetcher**名として [新規] をクリックします。
-
-4. 内容を置き換える*XAMWeatherFetcher.cs*を次のコード。
+コードで置き換え、`MyClass.cs`次のスニペットを持つファイル。
 
 ```csharp
-using System;
-using System.Json;
-using System.Net;
-
-public class XAMWeatherFetcher {
-
-    static string urlTemplate = @"https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22{0}%2C%20{1}%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-    public string City { get; private set; }
-    public string State { get; private set; }
-
-    public XAMWeatherFetcher (string city, string state)
+using AppKit;
+public class MyNSView : NSTextView
+{
+    public MyNSView ()
     {
-        City = city;
-        State = state;
-    }
-
-    public XAMWeatherResult GetWeather ()
-    {
-        try {
-            using (var wc = new WebClient ()) {
-                var url = string.Format (urlTemplate, City, State);
-                var str = wc.DownloadString (url);
-                var json = JsonValue.Parse (str)["query"]["results"]["channel"]["item"]["condition"];
-                var result = new XAMWeatherResult (json["temp"], json["text"]);
-                return result;
-            }
-        }
-        catch (Exception ex) {
-            // Log some of the exception messages
-            Console.WriteLine (ex.Message);
-            Console.WriteLine (ex.InnerException?.Message);
-            Console.WriteLine (ex.InnerException?.InnerException?.Message);
-
-            return null;
-        }
-
-    }
-}
-
-public class XAMWeatherResult {
-    public string Temp { get; private set; }
-    public string Text { get; private set; }
-
-    public XAMWeatherResult (string temp, string text)
-    {
-        Temp = temp;
-        Text = text;
+        Value = "Hello from C#";
     }
 }
 ```
 
-わかります`Using System.Json;`; 以下を実行する必要があります。 この問題を解決すると、エラーを示します。
+プロジェクトをビルドします。 結果として得られるアセンブリとして保存する**~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**です。
 
-1. ダブルクリックして、**参照**フォルダーです。
+### <a name="bind-the-managed-assembly"></a>マネージ アセンブリをバインドします。
 
-2. をクリックして、**パッケージ**タブです。
-
-3. 確認**System.Json**です。
-
-4. Click **Ok**.
-
-終わったら、上記の必要なことを行うには、ビルド、.NET アセンブリ をクリックして*ビルド メニュー > すべてビルド*⌘ + b のまたはします。 試みなかったメッセージは最上位のステータス バーに表示を作成します。
-
-これを右クリックして*気象*プロジェクト ノードを選択*Finder で明らか*です。 Finder でに移動、 *Bin/debug*フォルダー以外の内側に表示されます**Weather.dll です。**
-
-## <a name="using-embeddinator-4000"></a>Embeddinator 4000 を使用します。
-
-Embeddinator 4000 パッケージ インストーラーを使用してインストールし、インストールした後の新しいターミナル セッションを開始、ことができますを使用する場合、 **objcgen**コマンド (それ以外の場合、その絶対パスを使用できます: `/Library/Frameworks/Xamarin.Embeddinator-4000.framework/Commands/objcgen`) です。**objcgen** .NET アセンブリからネイティブ ライブラリを生成する必要なツールです。
-
-開いているターミナルは、 `cd` Weather.dll を含むフォルダーにし、実行**objcgen**次に示す引数を使用。
+マネージ アセンブリのネイティブ フレームワークを作成する embeddinator を実行します。
 
 ```shell
-cd /Users/Alex/Projects/Weather/Weather/bin/Debug
-
-objcgen --debug --outdir=output -c Weather.dll
+cd ~/Projects/hello-from-csharp
+objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll --target=framework --platform=macOS-modern --abi=x86_64 --outdir=output -c --debug
 ```
 
-必要がありますに配置するすべてのもの、**出力**横にディレクトリ*Weather.dll*です。 .NET アセンブリがある場合は置換*Weather.dll*ことと同じ手順に従ってください。
+配置されるフレームワーク**~/Projects/hello-from-csharp/output/hello-from-csharp.framework**です。
 
-## <a name="using-the-generated-output-in-an-xcode-project"></a>Xcode プロジェクトで生成された出力の使用
+### <a name="use-the-generated-output-in-an-xcode-project"></a>Xcode プロジェクトで生成された出力を使用します。
 
-Xcode を開き、新しい作成**macOS Cocoa アプリケーション**し名前を付けます**MyWeather**です。 右クリックして、 *MyWeather プロジェクト ノード* *"MyWeather"にファイルを追加*に移動し、**出力**によって作成されたディレクトリ*Embeddinator 4000*、し、次のファイルを追加します。
+Xcode を開き、新しい Cocoa アプリケーションを作成します。 名前を付けます**csharp からのこんにちは**を選択し、 **OBJECTIVE-C**言語です。
 
-* bindings.h
-* embeddinator.h
-* glib.h
-* mono-support.h
-* mono_embeddinator.h
-* objc-support.h
-* libWeather.dylib
-* Weather.dll
+開く、 **~/Projects/hello-from-csharp/output** Finder で、選択ディレクトリ**こんにちは-csharp.framework から**Xcode プロジェクトにドラッグ アンド ドロップすぐ上、 **csharp からのこんにちは**プロジェクト内のフォルダーです。
 
-確認してください**ために必要な場合は、項目をコピー**がファイル ダイアログの [オプション] パネルでオンになっています。
+![ドラッグ アンド ドロップのフレームワーク](macos-images/hello-from-csharp-mac-drag-drop-framework.png)
 
-確認していく必要があります**libWeather.dylib**と**Weather.dll**アプリ バンドルを取得します。
+確認**ために必要な場合は、項目をコピー**がポップアップ表示されるダイアログ ボックスでチェックされ、をクリックして**完了**。
 
-* をクリックして*MyWeather プロジェクト ノード*です。
-* 選択*ビルド フェーズ*タブです。
-* 新しい*ファイルのコピー フェーズ*です。
-* *先*選択**フレームワーク**を追加および**libWeather.dylib**です。
-* 新しい*ファイルのコピー フェーズ*です。
-* *先*選択**実行可能ファイル**、追加**Weather.dll**ことを確認し、*コピーでコード署名*がオンになってです。
+![必要な場合は、項目をコピーします。](macos-images/hello-from-csharp-mac-copy-items-if-needed.png)
 
-これで開く**ViewController.m**とその内容を置き換えます。
+選択、 **csharp からのこんにちは**プロジェクトに移動して、 **csharp からのこんにちは**ターゲットの**全般**タブです。**埋め込みバイナリ**セクションで、追加**こんにちは-csharp.framework から**です。
 
-```objective-c
+![埋め込まれたバイナリ](macos-images/hello-from-csharp-mac-embedded-binaries.png)
+
+開いている**ViewController.m**の内容を置き換えます。
+
+```objc
 #import "ViewController.h"
-#import "bindings.h"
+
+#include "hello-from-csharp/hello-from-csharp.h"
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    XAMWeatherFetcher * fetcher = [[XAMWeatherFetcher alloc] initWithCity:@"Boston" state:@"MA"];
-    XAMWeatherResult * weather = [fetcher getWeather];
-
-    NSString * result;
-    if (weather)
-        result = [NSString stringWithFormat:@"%@ °F - %@", weather.temp, weather.text];
-    else
-        result = @"An error occured";
-
-    NSTextField * textField = [NSTextField labelWithString:result];
-    [self.view addSubview:textField];
+    
+    MyNSView *view = [[MyNSView alloc] init];
+    view.frame = CGRectMake(0, 200, 200, 200);
+    [self.view addSubview: view];
 }
 
 @end
@@ -172,6 +91,6 @@ Xcode を開き、新しい作成**macOS Cocoa アプリケーション**し名�
 
 最後に、Xcode プロジェクトを実行し、次のように表示されます。
 
-![実行されている MyWeather サンプル](macos-images/weather-from-csharp-macos.png)
+![シミュレーターで実行されている c# のサンプルからこんにちは](macos-images/hello-from-csharp-mac.png)
 
-詳細とより探し求めているサンプルは[ここ](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)です。
+包括的かつ見栄えのよいサンプルは[ここ](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)です。

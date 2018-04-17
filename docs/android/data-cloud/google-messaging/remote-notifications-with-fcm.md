@@ -6,12 +6,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: e2f25504b971a0332dc51dc9b017c9c83222ec57
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート Firebase 通知クラウド メッセージング
 
@@ -427,7 +427,7 @@ if (Intent.Extras != null)
 長い文字列が付いた**トークン**Firebase コンソールに貼り付け、インスタンス ID のトークン&ndash;を選択し、この文字列をクリップボードにコピーします。 インスタンス ID トークンが表示されない場合は、先頭に次の行を追加、`OnCreate`ことを確認するメソッド**google services.json**正しく解析されました。
 
 ```csharp
-Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
+Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
 `google_app_id`値は、出力ウィンドウにログ記録に一致する必要があります、`mobilesdk_app_id`で記録された値**google services.json**です。 
@@ -683,6 +683,27 @@ SendNotification(message.GetNotification().Body, message.Data);
 開くと、通知、Firebase コンソール通知 GUI から送信された最後のメッセージが表示されます。 
 
 [![フォア グラウンドのアイコンが示すようにフォア グラウンド通知](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
+
+
+## <a name="disconnecting-from-fcm"></a>FCM からの切断
+
+トピック サブスクリプションの解除を呼び出す、 [UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29)メソッドを[FirebaseMessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging)クラスです。 たとえばの登録を解除するため、_ニュース_にトピックが以前にサブスクライブしている、 **Unsubscribe**ボタンは、レイアウトを次のハンドラー コードに追加できませんでした。
+
+```csharp
+var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
+unSubscribeButton.Click += delegate {
+    FirebaseMessaging.Instance.UnsubscribeFromTopic("news");
+    Log.Debug(TAG, "Unsubscribed from remote notifications");
+};
+```
+
+FCM を完全からデバイスの登録を解除するには、呼び出すことにより、インスタンス ID を削除、 [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラスです。 例えば:
+
+```csharp
+FirebaseInstanceId.Instance.DeleteInstanceId();
+```
+
+このメソッドの呼び出しによって削除され、インスタンス ID と関連付けられているデータ。 その結果、デバイスに FCM データの定期的な送信は停止します。
 
  
 ## <a name="troubleshooting"></a>トラブルシューティング

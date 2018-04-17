@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: ed934e4a5896a004e0f226d156109df182cfebd3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 20d5a81a6a33465e5b883e495600b57400adf199
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="f35"></a>F&AMP;#35;
 
@@ -21,7 +21,7 @@ F# succinctness、表現性、および関数型プログラミングの型推�
 
 F# は、Xamarin のユーザーに対して、Xamarin でサポートされているプラットフォームのすべてのプログラミング言語として使用できます: Android、iOS、macOS などです。
 
-- [F# のガイド](https://docs.microsoft.com/en-us/dotnet/fsharp/)
+- [F# のガイド](https://docs.microsoft.com/dotnet/fsharp/)
 - [F# と Xamarin の概要](overview.md)
 - [F# Mobile サンプル](samples.md)
 
@@ -36,4 +36,3 @@ F# は Visual Studio for mac でサポートされている言語です。 サ�
 - F# Interactive で構文の強調表示
 - F# Xamarin.Forms、iOS、および Android 用のテンプレート
 - [*しています.*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)
-

@@ -44,7 +44,7 @@ Visual Studio からプロジェクトを読み込む場合は、次のダイア
 
 2. アンロードされたプロジェクトを再度右クリックし、**{プロジェクト名には、} .csproj の編集**を選択しま。
 
-3. ファイル内の参照`XamarinComponentReference`を探します。 次の例のようになっています。
+3. ファイル内の参照`XamarinComponentReference`を探します。 次の例のようになっています。 次の例のようになります。
 
     ```xml
     <ItemGroup>
@@ -77,9 +77,9 @@ Visual Studio からプロジェクトを読み込む場合は、次のダイア
 
 プロジェクトから、コンポーネントを削除します。
 
-1. .Csproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、選択**ツール > ファイルの編集**です。
+1. .cproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、**プロジェクトのアンロード**を選択します
 
-2. ファイル内の参照を探して`XamarinComponentReference`です。 次の例のようになります。
+2. ファイル内の参照`XamarinComponentReference`を探します。 次の例のようになっています。 次の例のようになります。
 
     ```xml
     <ItemGroup>
@@ -98,7 +98,7 @@ Visual Studio からプロジェクトを読み込む場合は、次のダイア
     </ItemGroup>
     ```
 
-3. 参照を削除する`XamarinComponentReference`ファイルを保存します。 上記の例では安全に全体の削除 `ItemGroup`
+3. 参照`XamarinComponentReference`を削除し、ファイルを保存します。 上記の例では安全に全体の削除 `ItemGroup`
 
 4. ソリューション内の各プロジェクトには、上記の手順を繰り返します。 
 

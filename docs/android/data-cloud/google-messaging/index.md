@@ -6,12 +6,12 @@ ms.assetid: 85E8DF92-D160-4763-A7D3-458B4C31635F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: f68b4dc12586d482fd9d3f8901bf3fd09469b0bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: cf1eaec3dfee7c3457a4614147c9b5564843b2a7
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="google-messaging"></a>Google のメッセージング
 
@@ -28,6 +28,10 @@ Firebase クラウド メッセージング (FCM) は、モバイル アプリ�
 ## <a name="google-cloud-messaginggoogle-cloud-messagingmd"></a>[Google Cloud Messaging](google-cloud-messaging.md)
 
 このセクションでは、Google Cloud Messaging (GCM) が、アプリと、アプリ サーバー間でメッセージをルーティングする方法の大まかな概要を説明し、アプリは、GCM サービスを使用できるように、資格情報を取得するための手順を追って説明を提供します。 (GCM が FCM によって取り替えられていることに注意してください)。
+
+> [!NOTE]
+> GCM によって置き換えられた[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM)。
+> GCM サーバーとクライアント Api[廃止された](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)2019 年 4 月 11日として間もなく使用できる不要になったとします。
 
 ## <a name="remote-notifications-with-google-cloud-messagingremote-notifications-with-gcmmd"></a>[Google Cloud Messaging でリモートの通知](remote-notifications-with-gcm.md)
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 647ed1723bcc98b97c03ad824fbae0060854d6a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b760f5e1d37f4bc8cc6af063552b974afa435d56
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="creating-a-custom-theme"></a>カスタム テーマの作成
 
@@ -74,7 +74,7 @@ xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 使用して角の半径を適用、`BindableProperty`適用することによって実装されると、[効果](~/xamarin-forms/app-fundamentals/effects/index.md)です。 効果でプラットフォーム固有のコードが必要です、 [iOS](#ios)と[Android](#android)プロジェクト (下図参照)
 
 ```csharp
-namemspace ThemesDemo
+namespace ThemesDemo
 {
   public static class ThemeEffects
   {

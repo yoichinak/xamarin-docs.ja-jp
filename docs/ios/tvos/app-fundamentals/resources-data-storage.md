@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b4d96ef50498b454da583a955169b9d51c29dd01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="resources-and-data-storage"></a>リソースとデータ ストレージ
 
@@ -55,6 +55,9 @@ Apple TV の記憶域が限られているためだけでなく、非常に限�
 
 - **iCloud キーと値ストレージ (KVS)** - は小規模な情報 (1 MB 未満) アプリ必要があること (ユーザーの設定など) のような iCloud KVS 記憶域を使用することができます。 iCloud KVS データが、クラウドと、同じアプリを実行しているユーザーのデバイスのすべてに自動的に同期します。 詳細情報を参照してください、[キーと値の記憶域](~/ios/data-cloud/introduction-to-icloud.md)のセクション、 [iCloud 概要](~/ios/data-cloud/introduction-to-icloud.md)ドキュメントや Apple の[iCloud にキーと値のデータの設計](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7)ドキュメントです。
 - **CloudKit** : (1 MB より大きい)、情報の大きな部分の記憶域は、Apple の CloudKit フレームワークを使用します。 ICloud KVS 記憶域とは異なり CloudKit データはアプリ (だけでなく、単一のユーザーにプライベート) のすべてのユーザー間で共有できます。 フォームの詳細についてを参照してください、 [CloudKit 概要](~/ios/data-cloud/intro-to-cloudkit.md)ドキュメントや Apple の[CloudKit クイック スタート](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)です。
+
+> [!IMPORTANT]
+> Apple[ツールを提供](https://developer.apple.com/support/allowing-users-to-manage-data/)開発者が、欧州連合の一般的なデータ保護規制 (GDPR) を適切に処理します。
 
 <a name="On-Demand-Resources" />
 

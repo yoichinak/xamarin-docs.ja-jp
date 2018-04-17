@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 703441e3fc58beeb33e519f3781387a59c1c1cef
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="understanding-the-sample"></a>このサンプルを理解します。
 
@@ -86,7 +86,7 @@ Web サービス操作にはを通じてアクセス、`TodoItemManager`クラ�
 
 さらに、サンプル アプリケーションに含める追加のメソッド、`TodoItemManager`クラスは、ユーザーの認証プロセスを管理するために使用します。
 
-Web サービスの操作を直接呼び出すのではなく、`TodoItemManager`メソッドに組み込まれている依存クラスのメソッドを呼び出し、`TodoItemManager`コンス トラクターです。 たとえば、1 つのサンプル アプリケーションでは挿入、`SimpleDBStorage`にクラス、 `TodoItemManager` Amazon の SimpleDB サービスに対して操作を呼び出す実装を提供するコンス トラクターです。
+Web サービスの操作を直接呼び出すのではなく、`TodoItemManager`メソッドに組み込まれている依存クラスのメソッドを呼び出し、`TodoItemManager`コンス トラクターです。 たとえば、1 つのサンプル アプリケーションでは挿入、`RestService`にクラス、`TodoItemManager`データにアクセスする REST Api を使用する実装を提供するコンス トラクターです。
 
 ### <a name="translating-text-to-speech"></a>Text to Speech を変換します。
 
@@ -113,4 +113,3 @@ void OnSpeakActivated (object sender, EventArgs e)
 - [WCF のバージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
 - [REST バージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
 - [Azure のバージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure)
-- [Amazon Web Services バージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS)

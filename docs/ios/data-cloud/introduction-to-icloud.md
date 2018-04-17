@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -30,6 +30,9 @@ _Apple では、アプリケーションを Apple のサーバーにデータを
 - **個々 のファイルとディレクトリ**- ファイル システムに直接多数の異なるファイルを管理するためです。
 
 このドキュメントでは、最初の 2 種類のキーと値のペアと UIDocument サブクラス - Xamarin.iOS でこれらの機能を使用する方法について説明します。
+
+> [!IMPORTANT]
+> Apple[ツールを提供](https://developer.apple.com/support/allowing-users-to-manage-data/)開発者が、欧州連合の一般的なデータ保護規制 (GDPR) を適切に処理します。
 
 ## <a name="requirements"></a>要件
 

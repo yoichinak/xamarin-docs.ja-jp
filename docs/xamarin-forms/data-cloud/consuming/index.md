@@ -1,21 +1,21 @@
 ---
 title: Web サービスの使用
-description: このガイドを提供する別の web サービスと通信する方法を示しています作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。 説明のトピックには、ASMX サービス、WCF services、REST サービス、Azure Mobile Apps、および Amazon Web Services との通信が含まれます。
+description: このガイドを提供する別の web サービスと通信する方法を示しています作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。 説明のトピックには、ASMX サービス、WCF services、REST サービスと Azure Mobile Apps との通信が含まれます。
 ms.prod: xamarin
 ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 530b57c009a1f76d3756d7315856f74b6cda2f66
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="consuming-web-services"></a>Web サービスの使用
 
-_このガイドを提供する別の web サービスと通信する方法を示しています作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。説明のトピックには、ASMX サービス、WCF services、REST サービス、Azure Mobile Apps、および Amazon Web Services との通信が含まれます。_
+(_T) のガイドが提供する別の web サービスと通信する方法を示します作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーションです。 説明のトピックには、ASMX サービス、WCF services、REST サービスと Azure Mobile Apps との通信が含まれます。
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[ASP.NET Web サービス (ASMX) の使用](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
@@ -32,11 +32,6 @@ Representational State Transfer (REST) は、web サービスを構築するた�
 ## <a name="consuming-an-azure-mobile-appxamarin-formsdata-cloudconsumingazuremd"></a>[Azure のモバイル アプリの使用](~/xamarin-forms/data-cloud/consuming/azure.md)
 
 Azure のモバイル アプリでは、モバイルの認証、オフライン sync、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。 これは Node.js バックエンドを使用する Azure のモバイル アプリに適用できるのみ、この記事では、クエリ、挿入、更新、および Azure Mobile Apps インスタンス内のテーブルに格納されたデータを削除する方法について説明します。
-
-## <a name="consuming-an-amazon-simpledb-servicexamarin-formsdata-cloudconsumingawsmd"></a>[Amazon SimpleDB サービスの使用](~/xamarin-forms/data-cloud/consuming/aws.md)
-
-Amazon SimpleDB は、web サービスを保存し、Amazon のクラウド内のデータをクエリする機能を提供します。 この記事では、AWS SDK for .NET を使用してクエリを実行、作成し、置換、および SimpleDB サービスに格納されたデータを削除する方法について説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 
