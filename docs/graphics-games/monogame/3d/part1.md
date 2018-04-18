@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 871e4b1ad058dd97635dab228522620850b229b7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e778df7fa6dd27aee8282154c99faf5ca5791ce
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-the-model-class"></a>モデル クラスを使用します。
 
@@ -21,27 +21,26 @@ MonoGame API が含まれる、`Model`レンダリングを実行して、コン
 
 このチュートリアルでは使用[ロボットの 3D モデル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)次をカバーしています。
 
- - 新しいゲーム プロジェクトを開始
- - モデルおよびそのテクスチャの XNBs を作成します。
- - ゲームのプロジェクトで、XNBs を含む
- - 3D のモデルの描画
- - 複数のモデルの描画
+- 新しいゲーム プロジェクトを開始
+- モデルおよびそのテクスチャの XNBs を作成します。
+- ゲームのプロジェクトで、XNBs を含む
+- 3D のモデルの描画
+- 複数のモデルの描画
 
 完了したら、プロジェクトが次のように表示されます。
 
-![](part1-images/image1.png "完了したら、プロジェクトは、次のように表示されます。")
+![6 つロボットを示す完成したサンプル](part1-images/image1.png)
 
-
-# <a name="creating-an-empty-game-project"></a>ゲームの空のプロジェクトを作成します。
+## <a name="creating-an-empty-game-project"></a>ゲームの空のプロジェクトを作成します。
 
 最初に呼び出された MonoGame3D ゲーム プロジェクトを設定する必要があります。 新しい MonoGame プロジェクトを作成する方法については、次を参照してください。 [Cross Platform Monogame プロジェクトを作成するには、このチュートリアル](~/graphics-games/monogame/introduction/part1.md)です。
 
 続行する前にする必要があります、プロジェクトが開くし、正しく展開を確認します。 1 回配置された空のブルー スクリーンいることを確認します。
 
-![](part1-images/image2.png "1 回配置開発者が空ブルー スクリーンに表示されます")
+![空の青いゲーム画面](part1-images/image2.png)
 
 
-# <a name="including-the-xnbs-in-the-game-project"></a>ゲームのプロジェクトで、XNBs を含む
+## <a name="including-the-xnbs-in-the-game-project"></a>ゲームのプロジェクトで、XNBs を含む
 
 .Xnb ファイル形式がビルドされたコンテンツの標準の拡張機能 (で作成されたコンテンツ、 [MonoGame パイプライン ツール](http://www.monogame.net/documentation/?page=Pipeline))。 組み込みのすべてのコンテンツは、ソース ファイル (ある場合は、モデル、.fbx ファイル) と、コピー先ファイル (.xnb ファイル) がします。 .Fbx 形式などのアプリケーションで作成できる一般的な 3D モデル形式[Maya](http://www.autodesk.com/products/maya/overview)と[Blender](http://www.blender.org/)です。 
 
@@ -53,20 +52,19 @@ MonoGame API が含まれる、`Model`レンダリングを実行して、コン
 
 2 つのファイルは、今すぐプロジェクトの一部をする必要があります。
 
-![](part1-images/xnbsinxs.png "2 つのファイルは、プロジェクトの一部を今すぐする必要があります。")
+![Xnb ファイルとソリューション エクスプ ローラーのコンテンツ フォルダー](part1-images/xnbsinxs.png)
 
 Visual Studio for Mac 新しく追加された XNBs のビルド アクションは自動的に設定できません。 各ファイルと選択 を右クリックし、iOS の**ビルド アクション メニューの BundleResource**です。 Android では、右クリックし、ファイルの各**ビルド アクション] メニューの [AndroidAsset**です。
 
-# <a name="rendering-a-3d-model"></a>3D のモデルの表示
+## <a name="rendering-a-3d-model"></a>3D のモデルの表示
 
 画面に表示されるモデルを表示するために必要な最後の手順では、読み込みと描画コードを追加します。 具体的には、おある、次を手順します。
 
- - 定義する、`Model`インスタンス、`Game1`クラス
- - 読み込み、`Model`インスタンス `Game1.LoadContent`
- - 描画、`Model`インスタンス `Game1.Draw`
+- 定義する、`Model`インスタンス、`Game1`クラス
+- 読み込み、`Model`インスタンス `Game1.LoadContent`
+- 描画、`Model`インスタンス `Game1.Draw`
 
 置換、`Game1.cs`コード ファイル (内に配置されていますが、 **WalkingGame** PCL) に次の。
-
 
 ```csharp
 public class Game1 : Game
@@ -81,7 +79,7 @@ public class Game1 : Game
     {
         graphics = new GraphicsDeviceManager(this);
         graphics.IsFullScreen = true;
-                    
+
         Content.RootDirectory = "Content";
     }
     protected override void LoadContent()
@@ -162,17 +160,13 @@ public class Game1 : Game
         base.Draw(gameTime);
     }
 }
-                                                                                                                 
 ```
 
 このコードを実行している場合は、モデルを画面に表示されるお表示されます。
 
-![](part1-images/image8.png "このコードを実行すると、モデルが表示されます画面に表示されます。")
+![画面に表示される表示されているモデル](part1-images/image8.png "モデルが画面に表示される表示する場合はこのコードを実行すると、")
 
-上記のコードの重要な部分のいくつかを見てみましょう。
-
-
-## <a name="model-class"></a>モデル クラス
+### <a name="model-class"></a>モデル クラス
 
 `Model`クラスは、コンテンツ ファイル (.fbx ファイルなど) から 3 D レンダリングを実行するためのコア クラスです。 すべてのレンダリングでは、3 D のジオメトリ、テクスチャの参照を含むために必要な情報が含まれていますと`BasicEffect`インスタンスを配置、明るさ、およびカメラの値を制御します。
 
@@ -180,20 +174,17 @@ public class Game1 : Game
 
 各`Model`は 1 つ以上で構成されて`ModelMesh`を通じて公開されているインスタンス、`Meshes`プロパティです。 検討できますが、 `Model` 1 つのゲームとしてオブジェクト (ロボットや車)、各`ModelMesh`別に描画できる`BasicEffect`値。 たとえば、メッシュの個別の部分は、ロボットまたは車のホイールの区間を表すことがあります、私たちを割り当てることがあります、 `BasicEffect` wheels スピンまたは、脚部が机の値を移動します。 
 
-
-## <a name="basiceffect-class"></a>BasicEffect クラス
+### <a name="basiceffect-class"></a>BasicEffect クラス
 
 `BasicEffect`クラスは、レンダリング オプションを制御するためのプロパティを提供します。 最初の変更を行う場合に、`BasicEffect`が呼び出されて、`EnableDefaultLighting`メソッドです。 名前が示すように、これにより、既定の照明は、ことを確認する場合に便利です、`Model`ゲーム内期待どおりに表示されます。 コメント アウトする場合、`EnableDefaultLighting`呼び出すには、レンダリングしますが、ない網掛けや反射の効果の光彩のテクスチャでモデルを見てみましょう。
 
-
 ```csharp
-//effect.EnableDefaultLighting (); 
+//effect.EnableDefaultLighting ();
 ```
 
-![](part1-images/image9.png "ない網掛けや反射の効果の光彩のテクスチャで表示されるモデル")
+![ない網掛けや反射の効果の光彩のテクスチャで表示されるモデル](part1-images/image9.png "がない網掛けや反射の効果の光彩のテクスチャで表示されるモデル")
 
 `World`位置、回転、およびモデルのスケールを調整するプロパティを使用できます。 使用して上記のコード、`Matrix.Identity`値、つまり、`Model`ゲーム内指定どおり .fbx ファイルを表示します。 テーマは、マトリックスのほか、3 D の座標で詳しく[パート 3](~/graphics-games/monogame/3d/part3.md)、例としては、位置を変更できますが、`Model`変更することで、`World`次のようにプロパティ。
-
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -203,10 +194,9 @@ effect.World = Matrix.CreateTranslation (modelPosition);
 
 このコードは、3 つのワールド単位で移動対象のオブジェクトが得られます。
 
-![](part1-images/image10.png "このコードを 3 つのワールド単位で上へ移動オブジェクトで実行します。")
+![このコードを実行して 3 つのワールド単位移動対象のオブジェクトで](part1-images/image10.png "3 のワールド単位で上へ移動オブジェクトでこのコードを実行")
 
 割り当てられている最後の 2 つのプロパティ、`BasicEffect`は`View`と`Projection`です。 テーマは、3 D のカメラで[パート 3](~/graphics-games/monogame/3d/part3.md)、お例としては、ローカルを変更することでカメラの位置を変更することは`cameraPosition`変数。
-
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back
@@ -215,10 +205,9 @@ var cameraPosition = new Vector3 (0, 30, 0);
 
 分かりますカメラがこれ以上の背面に移動その結果、`Model`パースペクティブにより小さく表示。
 
-![](part1-images/image11.png "カメラが戻ささらに、パースペクティブによって小さく表示されるモデルの結果として得られる")
+![カメラがさらに戻し、パースペクティブによって小さく表示されるモデルの結果として得られるを移動](part1-images/image11.png "カメラがさらに戻し、パースペクティブによって小さく表示されるモデルの結果として得られるを移動")
 
-
-# <a name="rendering-multiple-models"></a>複数のモデルの表示
+## <a name="rendering-multiple-models"></a>複数のモデルの表示
 
 1 つ前に述べたよう`Model`複数回を描画することができます。 これが容易になる移動、`Model`目的は、独自のメソッドにコードを描画`Model`位置パラメーターとして。 1 回終了したら、当社`Draw`と`DrawModel`メソッドのようになります。
 
@@ -266,10 +255,9 @@ void DrawModel(Vector3 modelPosition)
 
 これは、結果、ロボット 6 回に描画されているモデルになります。
 
-![](part1-images/image1.png "これは、結果、ロボット 6 回に描画されているモデルで")
+![これは、結果、ロボット 6 回に描画されているモデルで](part1-images/image1.png "ロボット 6 回に描画されているモデルでこの結果")
 
-
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 このチュートリアルの導入 MonoGame の`Model`クラスです。 .Xnb に .fbx ファイルへの変換に対応するさらに読み込める、`Model`クラスです。 示す方法への変更、`BasicEffect`インスタンスに影響を与えることができます`Model`描画します。
 

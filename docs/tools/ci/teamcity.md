@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 34702fafdd0d767362b0ca32ab56e880ed7cb366
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin を使用したチームの市区町村を使用します。
 
@@ -39,7 +39,7 @@ TeamCity を設定するのには、いくつかの手順があります。
 
 - **A TeamCity プロジェクトの作成**– 前の 3 つの手順を完了するは前に、すべてのメタ データを格納する TeamCity プロジェクトを作成する必要がありますをソース コードを取得、プロジェクトをコンパイルおよび Xamarin Test Cloud テストを送信する必要です。
 
-# <a name="requirements"></a>要件
+## <a name="requirements"></a>要件
 
 エクスペリエンスを[Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud)が必要です。
 
@@ -88,7 +88,6 @@ TeamCity のコンパイルとそれ自体で Test Cloud のモバイル アプ�
 - [**偽の**](http://fsharp.github.io/FAKE/) – これは、f# で必要な場合は、既存の .NET ライブラリを利用できるようにベース DSL です。
 
 使用するスクリプト言語は、ユーザー設定や要件によって異なります。 [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)例にはとして Rake の使用例が含まれています、[ビルド スクリプト](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)です。
-
 
 > [!NOTE]
 > これは、表現力とソフトウェアの構築する専用の DSL の保守容易性が、MSBuild または NAnt、これらが不足しているなど、XML ベースのビルド システムを使用することです。
@@ -166,35 +165,35 @@ TeamCity がインストールされているし、Visual Studio for Mac は、�
 
 1. Web ブラウザーを介して TeamCity にログインして開始します。 ルート プロジェクトに移動します。
 
-    ![](teamcity-images/image2.png "ルート プロジェクトに移動")ルート プロジェクトの下に新しいサブ プロジェクトを作成します。
+    ![ルート プロジェクトへの移動](teamcity-images/image2.png "ルート プロジェクトへの移動")ルート プロジェクトの下に新しいサブ プロジェクトを作成します。
 
-    ![](teamcity-images/image3.png "ルート プロジェクトすぐ下に、ルート プロジェクトに移動し、新しいサブ プロジェクトの作成")
+    ![ルート プロジェクトすぐ下に、ルート プロジェクトに移動し、プロジェクトを作成新しいサブ](teamcity-images/image3.png "移動ルート プロジェクトすぐ下に、ルート プロジェクトに、新しいサブ プロジェクトの作成")
 2. サブ プロジェクトが作成されたら、新しいビルド構成を追加します。
 
-    ![](teamcity-images/image5.png "サブ プロジェクトを作成すると、追加、新しいビルド構成")
+    ![サブ プロジェクトを作成すると、追加、新しいビルド構成](teamcity-images/image5.png "サブ プロジェクトを作成すると、追加、新しいビルド構成")
 3. VC プロジェクトをビルド構成にアタッチします。 これは、バージョン コントロール設定画面上で行います。
 
-    ![](teamcity-images/image6.png "バージョン コントロール設定画面を使用してこれを行う")
+    ![これは、バージョン コントロール設定画面上で](teamcity-images/image6.png "バージョン コントロール設定画面を使用してこれを行う")
 
     作成の VC プロジェクトがない場合は、次に示す新しい VCS ルート ページから作成するのにはオプションがあります。
 
-    ![](teamcity-images/image7.png "新しい VCS ルート ページから 1 つを作成するオプションの VC プロジェクトの作成がない場合があります。")
+    ![ある作成の VC プロジェクトがない場合は新しい VCS ルート ページから作成するのにはオプション](teamcity-images/image7.png "ある作成の VC プロジェクトがない場合は新しい VCS ルート ページから作成するのにはオプション")
 
     VCS ルートが結び付けられる、TeamCity はチェック アウト プロジェクトしようとして自動ビルド ステップを検出します。 を TeamCity としている場合、検出されたビルド手順のいずれかを選択できます。 ここでは、検出されたビルドの手順を無視しても安全であります。
 
 4. 次に、ビルドのトリガーを構成します。 これはキューに入れるビルドなど、ユーザーがコードをリポジトリにコミットするときに、特定の条件が満たされたときにします。 次のスクリーン ショットは、ビルド トリガーを追加する方法を示します。
 
-    ![](teamcity-images/image8.png "このスクリーン ショットは、ビルドのトリガーを追加する方法を示します")ビルド トリガーを構成する例を次のスクリーン ショットに表示できます。
+    ![このスクリーン ショットは、ビルドのトリガーを追加する方法を示します](teamcity-images/image8.png "このスクリーン ショットは、ビルドのトリガーを追加する方法を示します")ビルド トリガーを構成する例を次のスクリーン ショットに表示できます。
 
-    ![](teamcity-images/image9.png "ビルド トリガーの構成の例は、このスクリーン ショットに表示できます。")
+    ![ビルド トリガーの構成の例は、このスクリーン ショットに表示できます](teamcity-images/image9.png "ビルド トリガーの構成の例は、このスクリーン ショットに表示できます")
 
 5. ビルド スクリプトのパラメーター化の前のセクションでは、いくつかの値を環境変数として保存することをお勧めします。 これらの変数は、パラメーターの画面上でビルド構成に追加できます。 テスト クラウド API キー、iOS デバイス ID、および Android のデバイス ID の次のスクリーン ショットに示すように、変数を追加します。
 
-    ![](teamcity-images/image11.png "テスト クラウド API キー、iOS デバイス ID、および Android のデバイス ID、変数を追加します。")
+    ![テスト クラウド API キー、iOS デバイス ID、および Android のデバイス ID、変数を追加](teamcity-images/image11.png "テスト クラウド API キー、iOS デバイス ID、および Android のデバイス ID、変数を追加")
 
 6. 最後の手順では、アプリケーションとエンキュー Test Cloud にアプリケーションをコンパイルするビルド スクリプトを起動するビルド ステップを追加します。 次のスクリーン ショットは、アプリケーションを構築する、Rakefile を使用するビルド ステップの例を示します。
 
-    ![](teamcity-images/image12.png "このスクリーン ショットは、アプリケーションをビルド、Rakefile を使用するビルド ステップの例")
+    ![このスクリーン ショットは、アプリケーションをビルド、Rakefile を使用するビルド ステップの一例](teamcity-images/image12.png "このスクリーン ショットは、アプリケーションをビルド、Rakefile を使用するビルド ステップの例")
 
 7. この時点では、ビルド構成が完了しました。 プロジェクトが正しく構成されていることを確認するビルドをトリガーすることをお勧めします。 これを行うことをお勧め、意味のない小さな変更をリポジトリにコミットを開始します。 TeamCity は、コミットを検出し、ビルドを開始する必要があります。
 
