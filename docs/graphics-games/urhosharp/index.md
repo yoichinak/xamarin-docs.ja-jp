@@ -7,25 +7,25 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: c8df53d90ab1245aecff3eab1393c009b7910aa5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 564d106cc0192e818b87342ae0590e20afe507ae
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp - 3D/2D エンジン
 
 _UrhoSharp は、クロスプラット フォーム大まかな 3D と 2D エンジン ジオメトリ、資料、ライト、カメラを使用して、アプリケーションのアニメーションの 3D と 2D シーンを作成するために使用できます。_
 
-![](images/video.gif "サンプル UrhoSharp ゲーム")
+![サンプル UrhoSharp ゲーム](images/video.gif)
 
 Mac 用 Visual Studio または Visual Studio にインストールすることができますし、次のプラットフォームのいずれかをターゲットに使用できる NuGet パッケージとして配布 UrhoSharp: Android、MacOS、iOS、tvOS および Windows。
 
-##  <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp の概要](~/graphics-games/urhosharp/introduction.md)
+## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp の概要](~/graphics-games/urhosharp/introduction.md)
 
 この記事では、UrhoSharp および 3D の視覚エフェクトおよびシンプルな 3D ゲームで使用するためにその機能の大まかな概要を提供します。
 
-##  <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[UrhoSharp の使用](~/graphics-games/urhosharp/using.md)
+## <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[UrhoSharp の使用](~/graphics-games/urhosharp/using.md)
 
 このドキュメントでは、ゲームをビルドするか、アプリケーションの 3D の視覚エフェクトを作成する使用 UrhoSharp の主要な概念について説明します。
 
@@ -54,7 +54,6 @@ Mac 用 Visual Studio または Visual Studio にインストールすること�
 すべてのサンプルの実行で Android、iOS、Mac および Windows。
 UrhoSharp の数もあります[ブック](https://developer.xamarin.com/workbooks/)など[地球](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)と[座標探索](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)です。
 
-
 ## <a name="copyright"></a>Copyright
 
 このドキュメントは、Xamarin Inc から元のコンテンツが含まれていますが、オープン ソース プロジェクトのドキュメント、Urho3D から広範なを描画し、Cocos2D プロジェクトからスクリーン ショットが含まれています。
@@ -62,8 +61,6 @@ UrhoSharp の数もあります[ブック](https://developer.xamarin.com/workboo
 ## <a name="license"></a>ライセンス
 
 UrhoSharp ライセンスで使用できますが、 [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
-
-
 
 ## <a name="related-links"></a>関連リンク
 

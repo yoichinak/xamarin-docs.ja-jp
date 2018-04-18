@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: efee4847397db0e89a8d10211e13d61ce13824fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ee4ee83c07cf01d1324b5f127d4f77ced0df2afe
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>MonoGame UWP プロジェクトの作成
 
@@ -21,23 +21,21 @@ _MonoGame は、ユニバーサル Windows プラットフォーム、コード�
 
 このチュートリアルを表示する空のプロジェクトを作成、 *コーンフラワー ブルー*背景 (XNA アプリの従来の背景色)。
 
-
-# <a name="requirements"></a>要件
+## <a name="requirements"></a>要件
 
 MonoGame UWP アプリの開発が必要です。
 
- - Windows 10 オペレーティング システム
- - Visual Studio 2015 の任意のバージョン
- - Windows 10 開発者ツール
- - 開発者モードに設定デバイス
+- Windows 10 オペレーティング システム
+- Visual Studio 2015 の任意のバージョン
+- Windows 10 開発者ツール
+- 開発者モードに設定デバイス
 - [Visual Studio の MonoGame 3.5](http://www.monogame.net/2016/03/17/monogame-3-5/)以降
 
 詳細については、これを参照して[の Windows 10 UWP 開発に関して設定に関するページ](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-set-up)です。
 
 Xbox One ゲームは、小売 Xbox One ハードウェアで開発できます。 開発 PC と Xbox One の両方では、追加のソフトウェアが必要です。 構成、Xbox 1 つのゲームの開発方法の詳細については、このページを参照して[Xbox One を設定する](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)です。
 
-
-# <a name="creating-an-empty-template"></a>空のテンプレートを作成します。
+## <a name="creating-an-empty-template"></a>空のテンプレートを作成します。
 
 すべての必要なリソースがインストールされているし、開発者モードが Windows 10 コンピューターで有効になって、次の手順で Visual Studio を使用して新しい MonoGame プロジェクトを作成できます。
 
@@ -51,7 +49,7 @@ Xbox One ゲームは、小売 Xbox One ハードウェアで開発できます�
     ![](uwp-images/image2.png "MonoGame Windows 10 のユニバーサル プロジェクト オプションを選択します。")
 
 1. 新しいプロジェクトの名前を入力し、クリックして**OK**です。
-Visual Studio では、[ok] をクリックすると、エラーが表示されている場合は、Windows 10 のツールがインストールされていることと、デバイスが開発者モードであるを確認します。 
+Visual Studio では、[ok] をクリックすると、エラーが表示されている場合は、Windows 10 のツールがインストールされていることと、デバイスが開発者モードであるを確認します。
 
 Visual Studio では、テンプレートの作成が終了したを実行している、空のプロジェクトを表示を実行できます。
 
@@ -72,7 +70,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
     ...
 ```
 
-# <a name="running-on-xbox-one"></a>1 つの Xbox で実行されています。
+## <a name="running-on-xbox-one"></a>1 つの Xbox で実行されています。
 
 UWP プロジェクトは、同じプロジェクトから任意の Windows 10 デバイスに展開できます。 Windows 10 の開発用コンピューターおよび Xbox One をセットアップした後は、リモート コンピューターに、ターゲットの切り替え、Xbox One の IP アドレスを入力して UWP アプリを展開できます。
 
@@ -82,7 +80,7 @@ Xbox One では、空白の枠線は、Tv の非セーフ領域を表します�
 
 ![](uwp-images/safearea.png "Xbox One に白の罫線が Tv の非セーフ領域を表す")
 
-## <a name="safe-area-on-xbox-one"></a>Xbox 1 セーフ領域
+### <a name="safe-area-on-xbox-one"></a>Xbox 1 セーフ領域
 
 コンソールのゲームの開発には、UI または HUD) などのすべての重要なビジュアルが含まれている画面の中央の領域には、安全な領域を考慮する必要があります。 安全なエリアの外側の領域は、ビジュアルのこの領域に配置されますが部分的または完全に表示されている一部のモニターでない可能性がありますので、すべてのテレビに表示するは保証されません。
 
@@ -90,15 +88,13 @@ Xbox One の MonoGame テンプレートは、安全な領域が考慮され、�
 
 ![](uwp-images/clientbounds.png "クライアントの境界の高さが 1920 x 1080 ディスプレイの解像度に関係なく、1016 ことに注意してください。")
 
-
-# <a name="referencing-content-in-uwp-projects"></a>UWP プロジェクトでコンテンツを参照します。
+## <a name="referencing-content-in-uwp-projects"></a>UWP プロジェクトでコンテンツを参照します。
 
 ファイルから直接または MonoGame プロジェクト内のコンテンツを参照できる、 [MonoGame コンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md)です。 小規模なゲーム プロジェクト ファイルからの読み込みのシンプルさからパフォーマンスが向上します。 大規模なプロジェクトとして、コンテンツ サイズを小さくし、読み込み時間を最適化するために、コンテンツのパイプラインを使用するメリットがあります。 Xbox 360 では、XNA とは異なり、`System.IO.File`クラスは Xbox の 1 つの UWP アプリで使用できます。
 
 コンテンツのパイプラインを使用して、コンテンツの読み込みの詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)です。 
 
-
-## <a name="loading-content-from-file"></a>ファイルからコンテンツを読み込む
+### <a name="loading-content-from-file"></a>ファイルからコンテンツを読み込む
 
 IOS および Android とは異なり、UWP プロジェクトは実行可能ファイルを基準としたファイルを参照できます。 シンプルなゲームは、変更およびコンテンツのパイプライン プロジェクトをビルドすることがなくこの手法を読み込みコンテンツを使用できます。
 
@@ -119,7 +115,6 @@ IOS および Android とは異なり、UWP プロジェクトは実行可能フ
 
 使用する方法について、`Texture2D`を参照してください、 [MonoGame guide 入門](~/graphics-games/monogame/introduction/index.md)です。
 
-
-# <a name="summary"></a>まとめ
+## <a name="summary"></a>まとめ
 
 このガイドでは、ファイルを読み込むときに、新しい UWP プロジェクトと UWP に固有の考慮事項を作成する方法について説明します。 完全 UWP ゲームを作成する関心のある開発者は、詳細を読み取ることができますに MonoGame に関する、 [MonoGame ガイドの概要](~/graphics-games/monogame/introduction/index.md)です。
