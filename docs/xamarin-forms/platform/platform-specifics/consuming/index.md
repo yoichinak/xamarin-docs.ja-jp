@@ -1,5 +1,5 @@
 ---
-title: "Platform-specifics"
+title: "Platform-specifics の使用"
 description: "Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。"
 ms.topic: article
 ms.prod: xamarin
