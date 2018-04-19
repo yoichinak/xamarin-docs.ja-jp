@@ -1,31 +1,37 @@
 ---
-title: SQLite.NET を使用します。
+title: Android での SQLite.NET の使用
+description: SQLite.NET PCL NuGet ライブラリでは、Xamarin.Android アプリ用の単純なデータ アクセス メカニズムを提供します。
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 59ba1ef60b0f63ed98302bf65c4d43c8ae207f22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="using-sqlitenet"></a>SQLite.NET を使用します。
 
 Xamarin で推奨される SQLite.NET ライブラリとは、簡単に格納し、Android デバイス上のローカル SQLite データベース内のオブジェクトを取得できる非常に基本的な ORM です。 オブジェクト リレーショナル マッピングは、ORM &ndash; API を保存し、SQL ステートメントを記述することがなく、データベースから「オブジェクト」を取得することができます。
 
-## <a name="using-sqlitenet"></a>SQLite.NET を使用します。
+含めるには、SQLite.NET ライブラリを Xamarin アプリで、次の NuGet パッケージをプロジェクトに追加します。
 
-Xamarin アプリで SQLite.NET ライブラリを組み込むには追加、 [SQLite.net PCL NuGet パッケージ](https://www.nuget.org/packages/sqlite-net-pcl/)を使用して、プロジェクトに、 **SQLite net PCL** NuGet パッケージ。
+- **パッケージ名:** SQLite net PCL
+- **作成者:** Frank A. Krueger
+- **Id:** sqlite net pcl
+- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet パッケージ](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet パッケージ")](using-sqlite-orm-images/image1a.png#lightbox)
 
+> [!TIP]
+> SQLite の異なるパッケージの数がある使用可能な – しいもの (場合があります検索で最上位の結果) を選択してください。
+
 SQLite.NET ライブラリを使用した後は、データベースへのアクセスに使用するこれら 3 つの手順に従います。
 
-
-1.  **使用して、追加ステートメント**&ndash;データ アクセスが必要な c# のファイルに次のステートメントを追加します。 
+1.  **使用して、追加ステートメント**&ndash;データ アクセスが必要な c# のファイルに次のステートメントを追加します。
 
     ```csharp
     using SQLite;
@@ -206,7 +212,7 @@ SQLite は、次の 3 つの異なるスレッド モードをサポートして
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-SQLite の Android バージョンでは、さらに、いくつかの手順が必要な制限があります。 場合への呼び出し`SqliteConnection.SetConfig`SQLite 例外を生成するよう`library used incorrectly`、次の回避策を使用する必要があります。 
+SQLite の Android バージョンでは、さらに、いくつかの手順が必要な制限があります。 場合への呼び出し`SqliteConnection.SetConfig`SQLite 例外を生成するよう`library used incorrectly`、次の回避策を使用する必要があります。
 
 1.  ネイティブへのリンク**libsqlite.so**ライブラリできるように、`sqlite3_shutdown`と`sqlite3_initialize`アプリで利用できる Api:
 
@@ -228,8 +234,6 @@ SQLite の Android バージョンでは、さらに、いくつかの手順が�
     ```
 
 この回避策は、に対しても機能、`Mono.Data.Sqlite`ライブラリです。 SQLite およびマルチ スレッド処理の詳細については、次を参照してください。 [SQLite と複数のスレッド](https://www.sqlite.org/threadsafe.html)です。 
-
-
 
 ## <a name="related-links"></a>関連リンク
 

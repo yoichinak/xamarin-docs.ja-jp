@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7dcf3cba72a07b06236e29ddf2603745fd348596
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="map"></a>マップ
 
@@ -72,15 +72,26 @@ NuGet パッケージが追加されており、各アプリケーションの�
 
 ### <a name="ios"></a>iOS
 
-IOS 7 でマップを管理"だけ works"くらい、`FormsMaps.Init()`呼び出しが行われました。
+IOS でロケーション サービスにアクセスする、次のキーを設定する必要があります**Info.plist**:
 
-IOS 8 の 2 つのキーに追加する必要があるため、 **Info.plist**ファイル: [ `NSLocationAlwaysUsageDescription` ](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18)と[ `NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)です。 XML 表現を次に示します: 更新する必要があります、`string`アプリで場所情報を使用する方法を反映するように値。
+- iOS 11
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) -アプリを使用するときに、ロケーション サービスを使用します。
+    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – 常時ロケーション サービスを使用します。
+- iOS 10 およびそれ以前
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) -アプリを使用するときに、ロケーション サービスを使用します。
+    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – 常時ロケーション サービスを使用します。    
+    
+11 およびそれ以前の iOS をサポートするには、3 つのキーを含めることができます: `NSLocationWhenInUseUsageDescription`、 `NSLocationAlwaysAndWhenInUseUsageDescription`、および`NSLocationAlwaysUsageDescription`です。
+
+これらのキーで XML 形式を**Info.plist**を次に示します。 更新する必要があります、`string`アプリで場所情報を使用する方法を反映するように値。
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
-    <string>Can we use your location</string>
+<string>Can we use your location at all times?</string>
 <key>NSLocationWhenInUseUsageDescription</key>
-    <string>We are using your location</string>
+<string>Can we use your location when your app is being used?</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Can we use your location at all times?</string>
 ```
 
 **Info.plist**でエントリを追加することも**ソース**ビューの編集中に、 **Info.plist**ファイル。

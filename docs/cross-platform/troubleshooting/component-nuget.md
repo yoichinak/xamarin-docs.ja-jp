@@ -7,28 +7,21 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 11/22/2017
-ms.openlocfilehash: a76adab41e9f7de5abb391e69a5b27783e0c3a63
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e3adee1b56b833442a8c927672cf903d45d03e84
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>NuGet コンポーネント参照の更新
 
-_アプリを将来の NuGet パッケージで、コンポーネントが参照に置き換えます。_
+> [!NOTE]
+> Xamarin コンポーネントは、Visual Studio ではサポートされなくと NuGet パッケージで置き換える必要があります。 コンポーネントの参照をプロジェクトから手動で削除するには、以下の手順に従います。
 
-このガイドでは、NuGet パッケージへのコンポーネントの参照を変更する既存の Xamarin ソリューションを更新する方法について説明します。
+NuGet パッケージを追加するための次の手順を参照してください[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)または[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。
 
-- [NuGet パッケージを含むコンポーネント](#contain)
-- [NuGet の置換コンポーネント](#replace)
-
-ほとんどのコンポーネントは、上記のカテゴリのいずれかに分類されます。
-同等の NuGet パッケージ、読み取り表示されていないコンポーネントを使用している場合、 [NuGet 移行パスを持たないコンポーネント](#require-update)以下のセクションです。
-
-NuGet パッケージを追加する方法についての詳細については、これらのページを参照してください[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)または[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。
-
-## <a name="opening-a-project-containing-a-component"></a>コンポーネントを含むプロジェクトを開く
+## <a name="manually-removing-component-references"></a>コンポーネントの参照を手動で削除します。
 
 2017 年 11 月、でした[発表](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)Xamarin コンポーネント ストアが終了するということです。 コンポーネントの sunsetting で前方に移動するために、15.6 リリースの Visual Studio と 7.4 リリースの Visual Studio for Mac はサポートしなくなりましたプロジェクト内のコンポーネントです。 
 
@@ -40,7 +33,7 @@ Visual Studio からプロジェクトを読み込む場合は、次のダイア
 
 プロジェクトから、コンポーネントを削除します。
 
-1. .cproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、**プロジェクトのアンロード**を選択します。 
+1. 開く、 **.csproj**ファイル。 これを行うには、プロジェクト名を右クリックし、**プロジェクトのアンロード**を選択します 
 
 2. アンロードされたプロジェクトを再度右クリックし、**{プロジェクト名には、} .csproj の編集**を選択しま。
 
@@ -100,9 +93,21 @@ Visual Studio からプロジェクトを読み込む場合は、次のダイア
 
 3. 参照`XamarinComponentReference`を削除し、ファイルを保存します。 上記の例では安全に全体の削除 `ItemGroup`
 
-4. ソリューション内の各プロジェクトには、上記の手順を繰り返します。 
+4. ソリューション内の各プロジェクトには、上記の手順を繰り返します。
 
 -----
+
+> [!WARNING]
+> 次の手順は、Visual Studio の旧バージョンでのみ機能します。
+> **コンポーネント**ノードは Visual Studio 2017 または Visual Studio for mac の現在のリリースで利用できなく
+
+次のセクションでは、NuGet パッケージへのコンポーネントの参照を変更する既存の Xamarin ソリューションを更新する方法を説明します。
+
+- [NuGet パッケージを含むコンポーネント](#contain)
+- [NuGet の置換コンポーネント](#replace)
+
+ほとんどのコンポーネントは、上記のカテゴリのいずれかに分類されます。
+同等の NuGet パッケージ、読み取り表示されていないコンポーネントを使用している場合、 [NuGet 移行パスを持たないコンポーネント](#require-update)以下のセクションです。
 
 <a name="contain" />
 
@@ -147,14 +152,12 @@ NuGet パッケージがで表示されたままになり、**パッケージ**�
 
 _NuGet の依存関係を含めることがありますが、これらは無視できます。_
 
-
 代わりに NuGet パッケージが存在することを確認、検索して[NuGet.org](https://www.nuget.org/packages)コンポーネント名を使用してまたは作成者によってです。
 
 たとえば、表示、人気の高い**sqlite net pcl**を検索してパッケージ。
 
 - [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) -製品名。
 - [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – 作成者のプロファイルです。
-
 
 ### <a name="updating-the-solution"></a>ソリューションの更新
 
