@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 9fb19b86ca303f8be3506d267dd75dc9db6cfca6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c94ed2e06ee57b67745b6a02692df2360aeb9754
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>MonoGame を使用したゲームの開発の概要
 
@@ -27,16 +27,16 @@ MonoGame はプラットフォーム間で、ハードウェア アクセラレ�
 
 このチュートリアルの結果を次に示します。
 
-![](images/image1.gif "このチュートリアルで作成するアプリ")
+![サンプル ゲーム文字のマウスを次のアニメーション](images/image1.gif)
 
-# <a name="monogame-and-xna"></a>Monogame および XNA
+## <a name="monogame-and-xna"></a>Monogame および XNA
 
 MonoGame ライブラリは、構文と機能の両方に Microsoft の XNA ライブラリを模倣するために対象としています。  まま変更せずに MonoGame で使用されるほとんどの XNA のコードを許可する – Microsoft.Xna 名前空間 MonoGame のすべてのオブジェクトに存在します。 
 
 XNA に慣れている開発者に既に習熟 MonoGame の構文と MonoGame の操作に関する追加情報を探している開発者は既存のオンライン XNA チュートリアル、API のドキュメント、およびディスカッションを参照することになります。
 
 
-# <a name="walkthrough-parts"></a>チュートリアルのパーツ
+## <a name="walkthrough-parts"></a>チュートリアルのパーツ
 
 - [クロス プラットフォーム MonoGame プロジェクトを作成する – 第 1 部](~/graphics-games/monogame/introduction/part1.md)
 - [パート 2 –、WalkingGame を実装します。](~/graphics-games/monogame/introduction/part2.md)

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 0e5a0cbbf5490b0fa0ffaca9be40d8e9357fce5a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b16792a506b131be07c52275e3f40cbb8d5fca94
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp の概要
 
@@ -132,7 +132,7 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-# <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細情報
 
 SkiaSharp の使用に関する詳細についてにあります、 [API のドキュメントをオンライン](https://developer.xamarin.com/api/namespace/SkiaSharp/)
 

@@ -1,17 +1,17 @@
 ---
 title: SkiaSharp プラットフォーム固有の詳細
-description: 'お使いのプラットフォームで SkiaSharp の使用について説明します。 簡単な: ネイティブ アプリケーションの SkSurface 内容を表示する方法の詳細について説明します。'
+description: ネイティブ アプリケーションの SKSurface 内容を表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 3f3eedc58284ffd10fb0352dd24e1605913f58c1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8dd5fcd6e8ad7817a26dc310f76451874a18d134
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="platform-specific-integration"></a>プラットフォーム固有の統合
 
@@ -71,7 +71,7 @@ using (var bitmap = Bitmap.CreateBitmap (canvas.Width, canvas.Height, Bitmap.Con
 }
 ```
 
-## <a name="os-x"></a>OS X
+## <a name="macos"></a>macOS
 
 ```csharp
 var screenScale = (int)NSScreen.MainScreen.BackingScaleFactor * 2;
@@ -119,7 +119,6 @@ using (var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb)) {
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
 Xamarin.Forms で SkiaSharp を含めるには、アプリケーションは、番組ガイドを参照してください。 [xamarin.forms を使用して SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)です。
-
 
 ## <a name="related-links"></a>関連リンク
 

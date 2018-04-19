@@ -6,11 +6,12 @@ ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 3788b6d6a9c9c9c84b8974a78f0a3c32ae6b6a3e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: 47ac762e472e6c45e40f8b0a3b47b53b550c5da7
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows のサポート
 
@@ -24,7 +25,7 @@ Urho、ポータブル クラス ライブラリで、さまざまなプラッ�
 
 これを使用する方法を示す完全な例を確認できます、[サンプル](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
 
-# <a name="standalone-project"></a>スタンドアロン プロジェクト
+## <a name="standalone-project"></a>スタンドアロン プロジェクト
 
 ### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
@@ -38,6 +39,7 @@ Urho、ポータブル クラス ライブラリで、さまざまなプラッ�
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";
 new MyGame().Run();
 ```
+
 ### <a name="example"></a>例
 
 [完全な例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Desktop)
@@ -128,4 +130,3 @@ Windows.Forms プロジェクトを作成し、Urho NuGet の参照を特定で�
 ### <a name="configuring-and-launching-urho-from-windowsforms"></a>構成および Urho Windows.Forms からを起動します。
 
 フォームから Urho を起動してを参照してください[完全なサンプル](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)
-
