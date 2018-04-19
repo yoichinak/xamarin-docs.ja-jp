@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 6f280a90994ff40ebd8a07d2cab49ddc2b3d6ca1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a54c69ff708ff7438ef1a8fd14c17e77b5375039
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="resolving-library-installation-errors"></a>ライブラリのインストール エラーを解決します。
 
@@ -161,7 +161,8 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 8.  上のすべてのファイルがコピーされることを確認します。 **埋め込み**を今すぐファイルを含むディレクトリなど**.jar**、 **.aar**、および**.pom**です。
 
-9.  いずれかの抽出を解凍**.aar**ファイル。 Windows では、追加、 **.zip**拡張機能を**.aar**ファイルで、右クリックし、選択**すべてを抽出しています.**、削除して、 **.zip**拡張機能です。 Macos、解凍、 **.aar**ファイルを使用して、**解凍**端末のコマンド (たとえば、 **file.aar を解凍**)。
+9.  抽出されたすべてのコンテンツを解凍**.aar**ファイルを**埋め込み**ディレクトリ。 Windows では、追加、 **.zip**拡張機能を**.aar**ファイルを開き、コンテンツのコピー、**埋め込み**ディレクトリ。
+    Macos、解凍、 **.aar**ファイルを使用して、**解凍**端末のコマンド (たとえば、 **file.aar を解凍**)。
 
 この時点では、不足しているコンポーネントを手動でインストールしたし、エラーせず、プロジェクトをビルドする必要があります。 以外の場合は、ダウンロードしたことを確認してください、 **m2repository** **.zip**エラー メッセージのバージョンに正確に対応するバージョンをアーカイブし、内容にがインストールされていることを確認してください、。上記の手順」の説明に従って、場所を修正します。 
 
