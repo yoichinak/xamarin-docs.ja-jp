@@ -1,6 +1,6 @@
 ﻿---
-title: プラットフォーム固有の使用
-description: プラットフォーム固有では、カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用できます。
+title: Platform-specifics の使用
+description: Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。
 title: "Platform-specifics の使用"
 description: "Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。"
 ms.prod: xamarin
