@@ -1,4 +1,4 @@
----
+﻿---
 title: NuGet コンポーネント参照の更新
 description: アプリを将来の NuGet パッケージで、コンポーネントが参照に置き換えます。
 ms.topic: troubleshooting

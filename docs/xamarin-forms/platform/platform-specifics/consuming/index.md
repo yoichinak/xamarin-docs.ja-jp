@@ -1,6 +1,8 @@
----
+﻿---
 title: Platform-specifics の使用
 description: Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。
+title: "Platform-specifics の使用"
+description: "Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。"
 ms.prod: xamarin
 ms.assetid: 6AF9D016-F693-44B8-B279-7AFDA5504634
 ms.technology: xamarin-forms
@@ -13,7 +15,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
 ---
-# <a name="consuming-platform-specifics"></a>Platform-specifics の使用
+# <a name="consuming-platform-specifics"></a>Platform-Specifics の使用
 
 _Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。_
 
