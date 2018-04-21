@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/18/2018
-ms.openlocfilehash: e7287a4f6b4e3f1203f6181c900c05565d9b5050
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e9149fc163d31e0fcbc6ae28ccaa896eeca6dd9b
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-sqlitenet"></a>SQLite.NET を使用します。
+# <a name="using-sqlitenet-with-ios"></a>IOS で SQLite.NET の使用
 
 Xamarin で推奨される SQLite.NET ライブラリとは、格納および iOS デバイス上のローカル SQLite データベース内のオブジェクトを取得できる基本的な ORM です。
 オブジェクト リレーショナル マッピング用 -保存し、「オブジェクト」を SQL ステートメントを記述することがなく、データベースから取得できる API ORM を意味します。
@@ -24,7 +24,7 @@ Xamarin で推奨される SQLite.NET ライブラリとは、格納および iO
 
 含めるには、SQLite.NET ライブラリを Xamarin アプリで、次の NuGet パッケージをプロジェクトに追加します。
 
-- **パッケージ名:** SQLite net PCL
+- **パッケージ名:** sqlite net pcl
 - **作成者:** Frank A. Krueger
 - **Id:** sqlite net pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)

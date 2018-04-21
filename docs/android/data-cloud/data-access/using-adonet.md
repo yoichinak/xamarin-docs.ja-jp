@@ -1,18 +1,18 @@
 ---
-title: ADO.NET を使用します。
+title: ADO.NET を使用する Android と
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: a2f7a7a0c282284d7a45fb81c134d300aef5afba
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 29e81afdf2c46cdefc68e2c2fae4e6e47999a346
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-adonet"></a>ADO.NET を使用します。
+# <a name="using-adonet-with-android"></a>ADO.NET を使用する Android と
 
 Xamarin では、Android で使用できるは、使い慣れた ADO.NET に似た構文を使用して公開できます SQLite データベース用の組み込みサポートがあります。 など、SQLite、によって処理される SQL ステートメントを記述するこれらの Api を使用する必要があります`CREATE TABLE`、`INSERT`と`SELECT`ステートメントです。
 

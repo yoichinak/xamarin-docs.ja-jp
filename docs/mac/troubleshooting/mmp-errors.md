@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 0a4bab44cfa260060c990949b45d3f5e6b103d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac エラー メッセージ (mmp)
 
@@ -131,7 +131,7 @@ ms.lasthandoff: 04/04/2018
 
 #### <a name="mm0091-this-version-of-xamarinmac-requires-the--sdk-shipped-with-xcode--either-upgrade-xcode-to-get-the-required-header-files-or-use-the-dynamic-registrar-or-set-the-managed-linker-behaviour-to-link-platform-or-link-framework-sdks-only-to-try-to-avoid-the-new-apis"></a>MM0091: Xamarin.Mac のこのバージョンので、* SDK (Xcode に同梱されて *)。 か、必要なヘッダー ファイルを取得または動的なレジストラーを使用してまたはリンク プラットフォームまたはリンク フレームワーク Sdk のみ (新しい Api を回避しようとしてください) をマネージ リンカー動作を設定する Xcode をアップグレードします。
 
-Xamarin.Mac には、静的なレジストラーを使用してアプリケーションを構築する、エラー メッセージで指定された SDK のバージョンからのヘッダー ファイルが必要です. このエラーを解決するための推奨方法は、必要な SDK を取得する Xcode にアップグレードする、これは、すべての必要なヘッダー ファイルが含まれます。 インストールされている、Xcode のバージョンが複数ある場合や既定以外の場所に、Xcode を使用する場合は場合、は、IDE の設定 で Xcode の正しい場所を設定することを確認してください。
+Xamarin.Mac には、静的なレジストラーを使用してアプリケーションを構築する、エラー メッセージで指定された SDK のバージョンからのヘッダー ファイルが必要です。 このエラーを解決するための推奨方法は、必要な SDK を取得する Xcode にアップグレードする、これは、すべての必要なヘッダー ファイルが含まれます。 インストールされている、Xcode のバージョンが複数ある場合や既定以外の場所に、Xcode を使用する場合は場合、は、IDE の設定 で Xcode の正しい場所を設定することを確認してください。
 
 1 つの代替、潜在的なソリューションは、マネージ リンカーを有効にするのにです。 これにより、使用されていない API を含む、ほとんどの場合、ヘッダー ファイルが不足している (または未完了) の新しい API が削除されます。 ただしこの場合は機能しません、プロジェクトは、Xcode 1 よりも新しい SDK で導入された API を使用して提供します。
 

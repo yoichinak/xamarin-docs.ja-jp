@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7531a8a21b6895de6113f5edd85d09a5e150877e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec3cb08b227b268c4c755545e8bc76b9e234d093
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="sharing-code-options"></a>コード共有のオプション
 
@@ -136,7 +136,7 @@ _このドキュメントは、クロス プラットフォーム プロジェ�
 
 コード共有を選択する戦略を対象とするプラットフォームによって推進されます。 プロジェクトの最適な方法を選択します。
 
-PCL .NET 標準が (特に、NuGet で公開する) の共有コード ライブラリを構築するための適切な選択肢です。 共有プロジェクトは、アプリケーション開発者はアプリを使用してプラットフォーム固有の機能の多くのクロス platforma 計画の適切に動作します。
+PCL .NET 標準が (特に、NuGet で公開する) の共有コード ライブラリを構築するための適切な選択肢です。 共有プロジェクトは、アプリケーション開発者は、クロスプラット フォーム アプリで多くのプラットフォーム固有の機能を使用する計画の適切に動作します。
 
 
 ## <a name="related-links"></a>関連リンク
