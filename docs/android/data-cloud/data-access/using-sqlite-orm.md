@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/18/2018
-ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e8e6e98cb6ada8d8da494e408e8db66ad5038799
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-sqlitenet"></a>SQLite.NET を使用します。
+# <a name="using-sqlitenet-with-android"></a>Android での SQLite.NET の使用
 
 Xamarin で推奨される SQLite.NET ライブラリとは、簡単に格納し、Android デバイス上のローカル SQLite データベース内のオブジェクトを取得できる非常に基本的な ORM です。 オブジェクト リレーショナル マッピングは、ORM &ndash; API を保存し、SQL ステートメントを記述することがなく、データベースから「オブジェクト」を取得することができます。
 
 含めるには、SQLite.NET ライブラリを Xamarin アプリで、次の NuGet パッケージをプロジェクトに追加します。
 
-- **パッケージ名:** SQLite net PCL
+- **パッケージ名:** sqlite net pcl
 - **作成者:** Frank A. Krueger
 - **Id:** sqlite net pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)

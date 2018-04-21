@@ -1,18 +1,18 @@
 ---
-title: ADO.NET を使用します。
+title: ADO.NET を使用して、ios
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4bf908c51deefea4e8a7e76fbf18b1aea5edee03
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d8478c363da1e4362a8a837dafba7f9cf85872e
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-adonet"></a>ADO.NET を使用します。
+# <a name="using-adonet-with-ios"></a>ADO.NET を使用して、ios
 
 Xamarin では、iOS、使い慣れた ADO.NET に似た構文を使用して公開で利用可能な SQLite データベースの組み込みサポートがあります。 など、SQLite、によって処理される SQL ステートメントを記述するこれらの Api を使用する必要があります`CREATE TABLE`、`INSERT`と`SELECT`ステートメントです。
 

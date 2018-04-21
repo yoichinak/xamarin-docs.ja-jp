@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e7ce8320441f6b248b183a8698a4f41c78bf2d64
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: ac87ee44163d53b11c15538f382379aae962cbb2
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame ゲーム パッドなどの参照
 
@@ -25,7 +25,7 @@ _ゲーム パッドは、MonoGame で入力デバイスにアクセスするた
 
 ## <a name="reading-input-from-gamepad"></a>ゲーム パッドなどからの入力を読み取る
 
-`GameController`クラスは、任意の MonoGame プラットフォームでの入力を読み取るの標準化された方法を提供します。 2 つの方法で情報を提供します。
+`GamePad`クラスは、任意の MonoGame プラットフォームでの入力を読み取るの標準化された方法を提供します。 2 つの方法で情報を提供します。
 
 - `GetState` – コント ローラーのボタン、アナログ スティック、および方向パッドの現在の状態を返します。
 - `GetCapabilities` – ボタンまたは振動をサポートしているコント ローラーに特定できるかどうかなど、ハードウェアの機能に関する情報を返します。

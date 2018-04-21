@@ -6,17 +6,16 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/19/2018
-ms.openlocfilehash: 75d42da4ba01aaefded0081da02b8e1651695f46
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/20/2018
+ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android で放送受信機
 
 _このセクションでは、放送受信機を使用する方法について説明します。_
-
 
 ## <a name="broadcast-receiver-overview"></a>放送受信機の概要
 
@@ -55,7 +54,7 @@ public class SampleReceiver : BroadcastReceiver
     public override void OnReceive(Context context, Intent intent)
     {
         // Do stuff here.
-        
+
         String value = intent.GetStringExtra("key");
     }
 }
@@ -97,9 +96,9 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Android 8.0 (API レベル 26) を対象とするアプリまたは高い可能性がありますいない静的に登録暗黙のブロードキャストのです。 アプリは、明示的なブロードキャストの可能性があります登録静的のままにします。 この制限から除外される暗黙のブロードキャストの小さいリストがあります。 これらの例外に記載されて、[ブロードキャストの暗黙的な例外](https://developer.android.com/guide/components/broadcast-exceptions.html)Android ドキュメントのガイドです。 暗黙的なブロードキャストに関心のあるアプリを使用して動的に行う必要があります、`RegisterReceiver`メソッドです。 これは次に説明します。  
+Android 8.0 (API レベル 26) を対象とするアプリまたは高い可能性がありますいない静的に登録暗黙のブロードキャストのです。 アプリは、明示的なブロードキャストの可能性があります登録静的のままにします。 この制限から除外される暗黙のブロードキャストの小さいリストがあります。 これらの例外に記載されて、[ブロードキャストの暗黙的な例外](https://developer.android.com/guide/components/broadcast-exceptions.html)Android ドキュメントのガイドです。 暗黙的なブロードキャストに関心のあるアプリを使用して動的に行う必要があります、`RegisterReceiver`メソッドです。 これは次に説明します。
 
-### <a name="context-registering-a-broadcast-receiver"></a>ブロードキャストの受信者のコンテキストの登録 
+### <a name="context-registering-a-broadcast-receiver"></a>ブロードキャストの受信者のコンテキストの登録
 
 呼び出してコンテキスト (動的登録とも呼ばれる) の登録、受信側が実行される、`RegisterReceiver`メソッド、およびブロードキャストの受信者がへの呼び出しに登録されている必要がある、`UnregisterReceiver`メソッドです。 リソースのリークを防ぐためには、することが重要 (アクティビティまたはサービス) のコンテキストに関連が不要になったときに、受信者の登録を解除します。 たとえば、サービスはユーザーに表示される更新プログラムが利用できるアクティビティに通知することを目的をブロードキャストする可能性があります。 アクティビティを開始するときは、それらの意図的の登録はします。 ときに、アクティビティは、バック グラウンドに移動されが表示されない、ユーザーに、それを登録解除する受信側、更新プログラムを表示するための UI が表示されないためです。 次のコード スニペットは、登録して、アクティビティのコンテキストで放送受信機の登録を解除する方法の例を示します。
 
@@ -108,22 +107,22 @@ Android 8.0 (API レベル 26) を対象とするアプリまたは高い可能�
 public class MainActivity: Activity 
 {
     MySampleBroadcastReceiver receiver;
-    
+
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
         receiver = new MySampleBroadcastReceiver()
-        
+
         // Code omitted for clarity
     }
-    
+
     protected override OnResume() 
     {
         base.OnResume();
         RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
         // Code omitted for clarity
     }
-    
+
     protected override OnPause() 
     {
         UnregisterReceiver(receiver);
@@ -150,28 +149,32 @@ public class MainActivity: Activity
    ```
 
     このスニペットは、ブロードキャストを使用して、送信の別の例、`Intent.SetAction`アクションを識別する方法。
-    
+
     ```csharp 
     Intent intent = new Intent();
     intent.SetAction("com.xamarin.example.TEST");
     intent.PutExtra("key", "value");
     SendBroadcast(intent);
     ```
-   
+
 2. **Context.SendOrderedBroadcast** &ndash;メソッドは、これとよく似ています`Context.SendBroadcast`目的が、recievers が登録されている順序でレシーバーを一度に 1 つの公開済みになる、違いです。
-   
+
 ### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-[Xamarin サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)と呼ばれるヘルパー クラスを提供[ `LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html)です。 `LocalBroadcastManager`を送信するか、デバイス上の他のアプリからブロードキャストを受信しないようにするアプリのためのものでは、します。 `LocalBroadcastManager`アプリケーションのコンテキスト内でメッセージを発行するだけです。 その他のデバイスでアプリがで公開されているメッセージを受信できない、`LocalBroadcastManager`です。 
+[Xamarin サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)と呼ばれるヘルパー クラスを提供[ `LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html)です。 `LocalBroadcastManager`を送信するか、デバイス上の他のアプリからブロードキャストを受信しないようにするアプリのためのものでは、します。 `LocalBroadcastManager`に登録されているこれらのブロードキャスト レシーバーにのみ、アプリケーションのコンテキスト内でメッセージを発行するのみ、`LocalBroadcastManager`です。 このコード スニペットはブロードキャストの受信者を登録する次の例`LocalBroadcastManager`:
 
-このコード スニペットは、インテントを使用して、ディスパッチする方法を示しています、 `LocalBroadcastManager`:
+```csharp
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this). RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
+```
+
+その他のデバイスでアプリがで公開されているメッセージを受信できない、`LocalBroadcastManager`です。 このコード スニペットは、インテントを使用して、ディスパッチする方法を示しています、 `LocalBroadcastManager`:
 
 ```csharp
 Intent message = new Intent("com.xamarin.example.TEST");
 // If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-``` 
+```
 
 ## <a name="related-links"></a>関連リンク
 
