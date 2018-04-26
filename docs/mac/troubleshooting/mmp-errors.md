@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 7f0d40e4adb16e47db18d0796afa42c66af096ce
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac エラー メッセージ (mmp)
 
@@ -34,29 +34,29 @@ ms.lasthandoff: 04/20/2018
 
 <a name="MM0001" />
 
-#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001: Xamarin.Mac のこのバージョンには、Mono {0} (現在の Mono バージョン {1}) が必要です。 Mono.framework を更新してください。 http://mono-project.com/Downloads
+#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001: このバージョンの Xamarin.Mac 必要モノラル{0}(モノの現在のバージョンは{1})。 Mono.framework を更新してください。 http://mono-project.com/Downloads
 
 <a name="MM0003" />
 
-#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>SDK または製品アセンブリ (.dll) 名では、アプリケーション名の {0} .exe 競合 MM0003: します。
+#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MM0003: アプリケーション名 '{0}.exe' SDK または製品アセンブリ (.dll) 名と競合しています。
 
 <a name="MM0007" />
 
-#### <a name="mm0007-the-root-assembly-0-does-not-exist"></a>MM0007: ルート アセンブリ ' 0'} は存在しません
+#### <a name="mm0007-the-root-assembly-0-does-not-exist"></a>MM0007: ルート アセンブリ '{0}' がありません
 
 <a name="MM0008" />
 
-#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008: 用意する必要ありますいずれかのルート アセンブリのみ、見つかった {0} アセンブリ: '{1}'
+#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008: 1 つのルート アセンブリのみ、見つかったを指定する必要があります{0}アセンブリ: '{1}'
 
 <a name="MM0010" />
 
-#### <a name="mm0010-could-not-parse-the-command-line-arguments-0"></a>MM0010: コマンドライン引数を解析できませんでした: {0}
+#### <a name="mm0010-could-not-parse-the-command-line-arguments-0"></a>MM0010: コマンドライン引数を解析できませんでした。 {0}
 
 <!-- 0013 is unused -->
 
 <a name="MM0016" />
 
-#### <a name="mm0016-the-option-0-has-been-deprecated"></a>MM0016: ' 0'} オプションは廃止されました。
+#### <a name="mm0016-the-option-0-has-been-deprecated"></a>MM0016: オプション '{0}' は推奨されていません。
 
 <a name="MM0017" />
 
@@ -64,19 +64,19 @@ ms.lasthandoff: 04/20/2018
 
 <a name="MM0018" />
 
-#### <a name="mm0018-unknown-command-line-argument-0"></a>MM0018: 不明なコマンドライン引数: ' 0'}
+#### <a name="mm0018-unknown-command-line-argument-0"></a>MM0018: 不明なコマンドライン引数: '{0}'
 
 <a name="MM0020" />
 
-#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020: ' 0'} に対して有効なオプションは、'{1}' です。
+#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020: に対して有効なオプション '{0}'は'{1}' です。
 
 <a name="MM0023" />
 
-#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>別のユーザー アセンブリでは、アプリケーション名の {0} .exe 競合 MM0023: します。
+#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>MM0023: アプリケーション名 '{0}.exe' 別のユーザー アセンブリと競合しています。
 
 <a name="MM0026" />
 
-#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026: が ' 0'} コマンドラインの引数を解析できませんでした: {1}
+#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026: コマンドライン引数を解析できませんでした '{0}'。 {1}
 
 <a name="MM0043" />
 
@@ -100,15 +100,15 @@ ms.lasthandoff: 04/20/2018
 
 <a name="MM0059" />
 
-#### <a name="mm0059-could-not-find-the-currently-selected-xcode-on-the-system-0"></a>MM0059: で、システム上の現在選択されている Xcode を見つけることができませんでした: {0} です。
+#### <a name="mm0059-could-not-find-the-currently-selected-xcode-on-the-system-0"></a>MM0059: で、システム上の現在選択されている Xcode を見つけることができませんでした:{0}です。
 
 <a name="MM0060" />
 
-#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060: は、システムで現在選択されている Xcode を見つけられませんでした。 '{0}'、' xcode 選択--印刷パス ' が返されますが、そのディレクトリは存在しません。
+#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060: は、システムで現在選択されている Xcode を見つけられませんでした。 'xcode 選択--印刷パス' が返されます '{0}' が、そのディレクトリは存在しません。
 
 <a name="MM0068" />
 
-#### <a name="mm0068-invalid-value-for-target-framework-0"></a>MM0068: ターゲット フレームワークの無効な値: {0}。
+#### <a name="mm0068-invalid-value-for-target-framework-0"></a>MM0068: ターゲット フレームワークの無効な値:{0}です。
 
 <a name="MM0071" />
 
@@ -149,7 +149,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM0099" />
 
-#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MM0099: 内部エラー {0}。 テスト_ケースとバグのレポートを送信してください (http://bugzilla.xamarin.com)です。
+#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MM0099: 内部エラー{0}です。 テスト_ケースとバグのレポートを送信してください (http://bugzilla.xamarin.com)です。
 
 <a name="MM0114" />
 
@@ -165,59 +165,59 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM1401" />
 
-#### <a name="mm1401-the-required-0-assembly-is-missing-from-the-references"></a>MM1401: 必要な ' {0' です。 アセンブリは参照から不足しています。
+#### <a name="mm1401-the-required-0-assembly-is-missing-from-the-references"></a>MM1401: 必要な '{0}' アセンブリが参照から不足しています。
 
 <a name="MM1402" />
 
-#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402: アセンブリ ' 0'} はこのツールと互換性がありません。
+#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402: アセンブリ '{0}' このツールと互換性がありません
 
 <a name="MM1403" />
 
-#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>MM1403: {0} '{1}' が見つかりませんでした。 ターゲット フレームワーク ' 0'} では、アプリケーションのパッケージに使用できません。
+#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>MM1403: {0} '{1}' に見つかりませんでした。 ターゲット フレームワーク '{0}' は、アプリケーション パッケージを使用できません。
 
 <a name="MM1404" />
 
-#### <a name="mm1404-target-framework-0-is-invalid"></a>MM1404: ターゲット フレームワーク ' 0'} は無効です。
+#### <a name="mm1404-target-framework-0-is-invalid"></a>MM1404: ターゲット フレームワーク '{0}' が無効です。
 
 <a name="MM1405" />
 
-#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework は .NET 4.5、いません '{0}' の無効なフレームワークをターゲットしてする必要があります常に
+#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework 常にターゲットでなければなりません framework .NET 4.5、いない '{0}' は無効です
 
 <a name="MM1406" />
 
-#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406: ターゲット フレームワーク ' 0'} は有効な場合に Xamarin.Mac 4.5 .NET framwork の対象とします。
+#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406: ターゲット フレームワーク '{0}' は有効な場合に Xamarin.Mac 4.5 .NET framwork の対象とします。
 
 <a name="MM1407" />
 
-#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407: Xamarin.Mac の参照を ' 0'} とターゲット フレームワークの不一致は、'{1}' を選択します。
+#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407: に不一致が Xamarin.Mac 参照 '{0}'および選択されているターゲット フレームワーク'{1}' です。
 
 ### <a name="mm15xx-assembly-gathering-not-requiring-linker-errors"></a>MM15xx: アセンブリの収集 (リンカーを必要としない) エラー
 
 <a name="MM1501" />
 
-#### <a name="mm1501-can-not-resolve-reference-0"></a>MM1501: 参照を解決できません: {0}
+#### <a name="mm1501-can-not-resolve-reference-0"></a>MM1501: 参照を解決できません。 {0}
 
 ### <a name="machocs"></a>MachO.cs
 
 <a name="MM1600" />
 
-#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600: 一致する O ダイナミック ライブラリではない (不明なヘッダー ' 0 x {0}'): {1} です。
+#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600: 一致する O ダイナミック ライブラリではない (不明なヘッダー ' 0 x{0}'):{1}です。
 
 <a name="MM1601" />
 
-#### <a name="mm1601-not-a-static-library-unknown-header-0-1"></a>MM1601: スタティック ライブラリではない (不明なヘッダー ' 0'}): {1} です。
+#### <a name="mm1601-not-a-static-library-unknown-header-0-1"></a>MM1601: スタティック ライブラリではない (不明なヘッダー '{0}'):{1}です。
 
 <a name="MM1602" />
 
-#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602: 一致する O ダイナミック ライブラリではない (不明なヘッダー ' 0 x {0}'): {1} です。
+#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602: 一致する O ダイナミック ライブラリではない (不明なヘッダー ' 0 x{0}'):{1}です。
 
 <a name="MM1603" />
 
-#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603: {0} {1} 内の位置で fat エントリの形式が不明です。
+#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603: 位置にあるエントリを fat 形式が不明な{0}で{1}です。
 
 <a name="MM1604" />
 
-#### <a name="mm1604-file-of-type-0-is-not-a-macho-file-1"></a>MM1604: {0} 型のファイルは MachO ファイル ({1}) ではありません。
+#### <a name="mm1604-file-of-type-0-is-not-a-macho-file-1"></a>MM1604: ファイルの種類{0}MachO ファイルではありません ({1})。
 
 ## <a name="mm2xxx-linker"></a>MM2xxx: リンカー
 
@@ -229,23 +229,23 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2002" />
 
-#### <a name="mm2002-can-not-resolve-reference-0"></a>MM2002: 参照を解決できません: {0}
+#### <a name="mm2002-can-not-resolve-reference-0"></a>MM2002: 参照を解決できません。 {0}
 
 <a name="MM2003" />
 
-#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003: リンクが無効なので ' 0'} オプションは無視されます。
+#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003: オプション '{0}' リンクが無効になるので無視されます
 
 <a name="MM2004" />
 
-#### <a name="mm2004-extra-linker-definitions-file-0-could-not-be-located"></a>MM2004: リンカーの定義ファイルの余分な ' 0'} 見つかりませんでした。
+#### <a name="mm2004-extra-linker-definitions-file-0-could-not-be-located"></a>MM2004: Extra リンカー定義ファイル '{0}' に見つかりませんでした。
 
 <a name="MM2005" />
 
-#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005: ' 0'} から定義を解析できませんでした。
+#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005: 定義 '{0}' を解析できませんでした。
 
 <a name="MM2006" />
 
-#### <a name="mm2006-native-library-0-was-referenced-but-could-not-be-found"></a>MM2006: ネイティブ ライブラリは ' 0'} が参照されましたが、見つかりませんでした。
+#### <a name="mm2006-native-library-0-was-referenced-but-could-not-be-found"></a>MM2006: ネイティブ ライブラリ '{0}' が参照されましたが、見つかりませんでした。
 
 <a name="MM2007" />
 
@@ -253,7 +253,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: {0} によって参照されている. \  * * MM2006 にこのメッセージが関連する * *
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: によって参照される{0}.{1}    * * このメッセージは MM2006 に関連する * *
 
 <a name="MM2010" />
 
@@ -261,15 +261,15 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2011" />
 
-#### <a name="mm2011-unknown-tlsprovider-0--valid-values-are-default-or-appletls"></a>MM2011: 不明な TLSProvider ' {0}。  有効な値は、default または appletls です。
+#### <a name="mm2011-unknown-tlsprovider-0--valid-values-are-default-or-appletls"></a>MM2011: 不明な TLSProvider '{0}です。  有効な値は、default または appletls です。
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: 1 \} の最初の {0} のみ「によって参照される」警告を表示します。 * * このメッセージは、2009 年に関連する * *
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: のみ最初{0}の{1}「によって参照される」警告を表示します。 * * このメッセージは、2009 年に関連する * *
 
 <a name="MM2013" />
 
-#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013:"{0}"、「{1}」で参照されているへの参照を解決できませんでした。 アプリでは、参照されたアセンブリは含まれません、実行時に失敗する可能性があります。
+#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013: への参照を解決できませんでした"{0}「, で参照されている」{1}"です。 アプリでは、参照されたアセンブリは含まれません、実行時に失敗する可能性があります。
 
 <a name="MM2014" />
 
@@ -283,7 +283,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2017" />
 
-#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017: XML の説明を処理できませんでした: {0}
+#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017: は、XML の説明を処理できませんでした。 {0}
 
 <a name="MM202x" />
 
@@ -303,11 +303,11 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2104" />
 
-#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: 混合モードは、アセンブリ ' 0'} をリンクできません。
+#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: アセンブリをリンクできません '{0}' 混在モードであるとします。
 
 混合モード アセンブリは、リンカーによっては処理できません。
 
-参照してくださいhttps://msdn.microsoft.com/en-us/library/x0w2664k.aspx混合モード アセンブリの詳細についてはします。
+参照してくださいhttps://msdn.microsoft.com/library/x0w2664k.aspx混合モード アセンブリの詳細についてはします。
 
 ## <a name="mm3xxx-aot"></a>MM3xxx: AOT
 
@@ -315,7 +315,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM3001" />
 
-#### <a name="mm3001-could-not-aot-the-assembly-0"></a>MM3001: でした AOT ' 0'} アセンブリではありません。
+#### <a name="mm3001-could-not-aot-the-assembly-0"></a>MM3001: でした AOT アセンブリではない '{0}'
 
 <!-- 3002 used by mtouch -->
 <!-- 3003 used by mtouch -->
@@ -327,11 +327,11 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM3009" />
 
-#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: '0 '} AOT が要求されましたが、見つかりませんでした。
+#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: AOT '{0}' が要求されましたが、見つかりませんでした
 
 <a name="MM3010" />
 
-#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010: '0 '} AOT の除外が要求されましたが、見つかりませんでした。
+#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010: AOT 除外 '{0}' が要求されましたが、見つかりませんでした
 
 ## <a name="mm4xxx-code-generation"></a>MM4xxx: コードの生成
 
@@ -345,7 +345,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM4134" />
 
-#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134: アプリケーションは、' 0'} framework を使用してアプリをビルドします (このフレームワークがで導入された OSX {2} MacOS {1} SDK でビルドするときにします。) を使用している MacOS SDK に含まれていませんこの構成は、静的レジストラー (パス--レジストラー: 動的、プロジェクトの Mac をビルドを選択するオプションで追加の mmp 引数として) でサポートされていません。 また、アプリの Mac をビルド オプションで新しい SDK を選択します。
+#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134: アプリケーションを使用して、'{0}' フレームワークで、アプリのビルドを使用する、MacOS SDK に含まれていない (このフレームワークは、OSX で導入された{2}、MacOS でビルドするときに、 {1} SDK)。この構成は、静的レジストラー (パス--レジストラー: 動的、プロジェクトの Mac をビルドを選択するオプションで追加の mmp 引数として) でサポートされていません。 また、アプリの Mac をビルド オプションで新しい SDK を選択します。
 
 ## <a name="mm5xxx-gcc-and-toolchain"></a>MM5xxx: GCC およびツール チェーン
 
@@ -353,13 +353,13 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM5101" />
 
-#### <a name="mm5101-missing-0-compiler-please-install-xcode-command-line-tools-component"></a>MM5101:、' 0'} コンパイラが不足しています。 Xcode コマンド ライン ツール コンポーネントをインストールしてください。
+#### <a name="mm5101-missing-0-compiler-please-install-xcode-command-line-tools-component"></a>MM5101: 見つからない '{0}' コンパイラです。 Xcode コマンド ライン ツール コンポーネントをインストールしてください。
 
 <!-- 5102 used by mtouch -->
 
 <a name="MM5103" />
 
-#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103: は、コンパイルに失敗しました。 エラー コード {0}。 バグ報告を送信してください。 http://bugzilla.xamarin.com
+#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103: は、コンパイルに失敗しました。 エラー コード -{0}です。 バグ報告を送信してください。 http://bugzilla.xamarin.com
 
 <!-- 5104 used by mtouch -->
 
@@ -379,7 +379,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM5205" />
 
-#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x8664-when---profilemobile"></a>MM5205: 無効なアーキテクチャ ' 0'}。 有効なアーキテクチャは、i386 と x86_64 (プロファイルと--= モバイル)。
+#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x8664-when---profilemobile"></a>MM5205: 無効なアーキテクチャ '{0}' です。 有効なアーキテクチャは、i386 と x86_64 (プロファイルと--= モバイル)。
 
 <a name="MM5218" />
 
@@ -428,7 +428,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM5310" />
 
-#### <a name="mm5310-installnametool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310: install_name_tool は、エラー コード ' 0'} で失敗しました。 詳細については、ビルド ログを確認します。
+#### <a name="mm5310-installnametool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310: install_name_tool がエラー コードで失敗しました。 '{0}' です。 詳細については、ビルド ログを確認します。
 
 <!-- MM6xxx: mmp internal tools -->
 <!-- MM7xxx: reserved -->

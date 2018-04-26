@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ad18382a7143c7b1cc6bbecb3867c042512eb562
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6de16095d9e1267587a050e8081f87f896f3153e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -337,7 +337,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は同じで、非同期操作をカプセル化して APM 開始/終了メソッドのペアを使用するプロセスを簡略化できます`Task`オブジェクト。 このカプセル化はの複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッドです。 このメソッドを作成、`Task`を実行する、`TodoService.EndGetTodoItems`メソッドを 1 回、`TodoService.BeginGetTodoItems`メソッドが完了するで、`null`パラメーターにデータが渡されるないことを示す、`BeginGetTodoItems`を委任します。 値、最後に、`TaskCreationOptions`列挙体を作成およびタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx)msdn です。
+APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
 
 ASMX サービスの使用の詳細については、次を参照してください。 [ASP.NET Web サービス (ASMX) を消費して](~/xamarin-forms/data-cloud/consuming/asmx.md)です。
 
@@ -364,7 +364,7 @@ Xamarin プラットフォームを使用して、WCF を使用する方法の�
 
 A*プロキシ*を使用した WCF サービス、により、アプリケーション、サービスへの接続を生成する必要があります。 メソッドと関連付けられているサービス構成を定義するサービス メタデータを使用して、プロキシが構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 .NET 標準ライブラリに、web サービスのサービス参照を追加する Visual Studio 2017 で Microsoft WCF Web サービス参照のプロバイダーを使用して、プロキシを構築できます。
 
-Visual Studio 2017 で Microsoft WCF Web サービス参照のプロバイダーを使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)です。
+Visual Studio 2017 で Microsoft WCF Web サービス参照のプロバイダーを使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)です。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -416,7 +416,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は同じで、非同期操作をカプセル化して APM 開始/終了メソッドのペアを使用するプロセスを簡略化できます`Task`オブジェクト。 このカプセル化はの複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッドです。 このメソッドを作成、`Task`を実行する、`TodoServiceClient.EndGetTodoItems`メソッドを 1 回、`TodoServiceClient.BeginGetTodoItems`メソッドが完了するで、`null`パラメーターにデータが渡されるないことを示す、`BeginGetTodoItems`を委任します。 値、最後に、`TaskCreationOptions`列挙体を作成およびタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx)msdn です。
+APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
 
 WCF サービスの使用の詳細については、次を参照してください。 [Windows Communication Foundation (WCF) Web サービスを使用](~/xamarin-forms/data-cloud/consuming/wcf.md)です。
 
@@ -462,5 +462,5 @@ HTTP 基本認証の詳細については、REST web サービスのコンテキ
 
 - [Web サービスのサンプル](https://developer.xamarin.com/samples/mobile/WebServices/WebServiceSamples/)
 - [Xamarin.Forms で web サービス](~/xamarin-forms/data-cloud/index.md)
-- [ServiceModel メタデータ ユーティリティ ツール (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
-- [BasicHttpBinding](http://msdn.microsoft.com/en-us/library/system.servicemodel.basichttpbinding.aspx)
+- [ServiceModel メタデータ ユーティリティ ツール (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [BasicHttpBinding](http://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

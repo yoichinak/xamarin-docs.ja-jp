@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a669daf5361e35305182922cdcb7c6a1fb92db47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdbe480c45e9c0117f1437b1ee632f6ea8f142e0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>バージョン情報とログを検索する場所は?
 
@@ -81,7 +81,7 @@ SDK Manager ツールバーのアイコンを選択します。
 
 ### <a name="a-idwindows-logs-namewindows-logs-windows-logs"></a><a id="windows-logs" name="windows-logs" />Windows ログ
 
-#### <a name="a-idwindows-logs-xamarin-vs-namewindows-logs-xamarin-vs--visual-studio-tools-for-xamarin"></a><a id="windows-logs-xamarin-vs" name="windows-logs-xamarin-vs" /> Visual Studio Tools for Xamarin
+#### <a name="a-idwindows-logs-xamarin-vs-namewindows-logs-xamarin-vs--visual-studio-tools-for-xamarin"></a><a id="windows-logs-xamarin-vs" name="windows-logs-xamarin-vs" /> Xamarin 用の visual Studio ツール
 
 `%LOCALAPPDATA%\Xamarin\Logs`
 
@@ -103,7 +103,7 @@ SDK Manager ツールバーのアイコンを選択します。
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-参照:[コマンド ライン オプション](http://msdn.microsoft.com/en-us/library/aa367988.aspx)
+参照:[コマンド ライン オプション](http://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Visual Studio のスタートアップ、詳細ログ
 
@@ -111,7 +111,7 @@ msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-Reference: [/Log (devenv.exe)](http://msdn.microsoft.com/en-us/library/ms241272.aspx)
+参照: [/Log (devenv.exe)](http://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Mac のログ
 

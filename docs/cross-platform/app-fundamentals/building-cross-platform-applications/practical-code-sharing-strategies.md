@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: d5f639cffc8ff2d134731374bd72663fec81c6a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f6b88bf29e94a221b2ef58b3299348eb08d33fa
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>パート 5 - 実用的なコードの戦略を共有
 
@@ -200,7 +200,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 既定のメカニズムが実装されている、Xamarin.iOS および Xamarin.Android を使用する共通ファイルへのアクセス コードを記述する Windows Phone (Silverlight) 内のファイル アクセスすることをお勧めします。 `System.IO.IsolatedStorage`で 3 つすべてのプラットフォーム間でクラスを参照することができます、[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)です。
 
-参照してください、[分離ストレージの概要の Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402541(v=vs.105).aspx)詳細についてはします。
+参照してください、[分離ストレージの概要の Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)詳細についてはします。
 
 分離ストレージ Api では使用できない[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)です。 PCL の 1 つの代替手段は、 [PCLStorage NuGet](https://pclstorage.codeplex.com/)
 

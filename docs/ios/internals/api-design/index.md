@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b7604633a5dfad6134d7b549299194ab6707a865
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da827c5bdd25bf841f5396b10d1eeb70e132dfeb
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="api-design"></a>API の設計
 
@@ -693,7 +693,7 @@ Xamarin.iOS には、ガベージ コレクターを使用するには不要に�
 
 公開する、`IDisposable`インターフェイスは、大きいサイズのメモリ ブロックがカプセル化するオブジェクトを解放するときに開発者を支援の便利な方法 (たとえば、`UIImage`無害であるポインターでは同じようになりますが、2 つメガバイト イメージを指している可能性があります) およびその他の重要であり、有限のリソース (ビデオのデコード バッファー) などです。
 
-NSObject、IDisposable インターフェイスを実装しても、 [.NET の Dispose パターン](http://msdn.microsoft.com/en-us/library/fs2xkftw.aspx)です。 これにより、開発者は、そのサブクラス NSObject Dispose 動作をオーバーライドし、必要に応じて、独自のリソースを解放します。 たとえば、多数のイメージを保持するようにこのビュー コント ローラーがあるとします。
+NSObject、IDisposable インターフェイスを実装しても、 [.NET の Dispose パターン](http://msdn.microsoft.com/library/fs2xkftw.aspx)です。 これにより、開発者は、そのサブクラス NSObject Dispose 動作をオーバーライドし、必要に応じて、独自のリソースを解放します。 たとえば、多数のイメージを保持するようにこのビュー コント ローラーがあるとします。
 
 ```csharp
 class MenuViewController : UIViewController {

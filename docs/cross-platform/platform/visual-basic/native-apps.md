@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c922102d20eb103eb265d8a7bcb418e5187296a5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54231d42383d491678b6152e67c01c5e39a1f958
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Xamarin iOS および Android で visual Basic.NET
 
@@ -197,7 +197,7 @@ public class XmlStorageImplementation : IXmlStorage
 }
 ```
 
-IOS アプリケーションで、`TodoItemManager`と`XmlStorageImplementation`で作成された、 **<code>appdelegate.cs</code>**ファイルの次のコード スニペットで示すようにします。 最初の 4 つの行がデータの格納場所です。 ファイルへのパスを構築するだけ最後の 2 つの行は、インスタンス化されている 2 つのクラスを示しています。
+IOS アプリケーションで、`TodoItemManager`と`XmlStorageImplementation`で作成された、 **<code>appdelegate.cs</code>** ファイルの次のコード スニペットで示すようにします。 最初の 4 つの行がデータの格納場所です。 ファイルへのパスを構築するだけ最後の 2 つの行は、インスタンス化されている 2 つのクラスを示しています。
 
 ```csharp
 var xmlFilename = "TodoList.xml";
@@ -273,7 +273,7 @@ Visual Studio for Mac は、Visual Basic 言語をサポートしていません
 
 ### <a name="keeping-the-pcl-output-from-visual-studio"></a>Visual Studio から PCL 出力を維持すること
 
-既定でを無視する (TFS および Git を含む)、ほとんどのバージョン管理システムを構成するは、 **/bin/**ディレクトリには、コンパイル済みのために PCL をアセンブリの意味は格納されません。 つまりへの参照を追加する Mac 用の Visual Studio を実行しているコンピューターに手動でコピーする必要があります。
+既定でを無視する (TFS および Git を含む)、ほとんどのバージョン管理システムを構成するは、 **/bin/** ディレクトリには、コンパイル済みのために PCL をアセンブリの意味は格納されません。 つまりへの参照を追加する Mac 用の Visual Studio を実行しているコンピューターに手動でコピーする必要があります。
 
 バージョン管理システムが PCL アセンブリの出力を保存させるには、プロジェクトのルートにコピーするビルド後のスクリプトを作成できます。 このビルド後のステップにより、アセンブリを簡単にソース管理に追加および他のプロジェクトと共有します。
 
@@ -281,17 +281,17 @@ Visual Studio for Mac は、Visual Basic 言語をサポートしていません
 
 1. プロジェクトを右クリックし、選択、**プロパティ > ビルド イベント**セクションです。
 
-2. 追加、_ビルド後_、出力の DLL をこのプロジェクトのプロジェクトのルート ディレクトリにコピーするスクリプト (の外部である**/bin/**)。 構成によっては、バージョン コントロール、DLL ことができますをソース管理に追加します。
+2. 追加、_ビルド後_、出力の DLL をこのプロジェクトのプロジェクトのルート ディレクトリにコピーするスクリプト (の外部である **/bin/**)。 構成によっては、バージョン コントロール、DLL ことができますをソース管理に追加します。
 
   [![](native-apps-images/image6-vs-sml.png "VB の dll ファイルをコピーする post ビルド スクリプトのビルド イベント")](native-apps-images/image6-vs.png#lightbox)
 
 #### <a name="visual-studio-2015"></a>Visual Studio 2015
 
-1.  プロジェクトを右クリックし、選択**プロパティ > コンパイル**マス目のボックスの左上のすべての構成が選択されていることを確認します。 クリックして、**イベントを作成しています.**右下にあるボタンをクリックします。
+1.  プロジェクトを右クリックし、選択**プロパティ > コンパイル**マス目のボックスの左上のすべての構成が選択されていることを確認します。 クリックして、**イベントを作成しています.** 右下にあるボタンをクリックします。
 
     [![](native-apps-images/image6.png "プロジェクトのプロパティ セクションをコンパイルします。")](native-apps-images/image6.png#lightbox)
 
-1.  このプロジェクトのプロジェクトのルート ディレクトリに、出力の DLL をコピーするビルド後のスクリプトを追加 (これは外側の**/bin/** )。 構成によっては、バージョン コントロール、DLL ことができますをソース管理に追加します。
+1.  このプロジェクトのプロジェクトのルート ディレクトリに、出力の DLL をコピーするビルド後のスクリプトを追加 (これは外側の **/bin/** )。 構成によっては、バージョン コントロール、DLL ことができますをソース管理に追加します。
 
     [![](native-apps-images/image7.png "ビルド イベント ウィンドウ")](native-apps-images/image7.png#lightbox)
 
@@ -335,4 +335,4 @@ Visual Studio で Visual Basic プロジェクトにプロジェクトをビル�
 ## <a name="related-links"></a>関連リンク
 
 - [TaskyPortableVB (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)
-- [.NET Framework (Microsoft) を使用したクロスプラット フォーム開発](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [.NET Framework (Microsoft) を使用したクロスプラット フォーム開発](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)

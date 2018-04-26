@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 017691ece68f979eea1627c0442f49018d5742fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e4720ac44876620783b32f731c44afe5a623231
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的な統合の概要
 
@@ -36,7 +36,7 @@ _継続的インテグレーションは、ソフトウェア エンジニア �
 
 モバイル アプリでは、継続的インテグレーションの特異な課題を紹介します。 アプリには、物理デバイスで使用できる、GPS やカメラなどのセンサーが必要です。 さらに、シミュレーターまたはエミュレーターはハードウェアの近似にすぎません可能性がありますを非表示や問題がわかりにくくなります。 最後に、実際にお客様の準備完了であることを保証する実際のハードウェアでのモバイル アプリをテストする必要があります。
 
-[アプリ Center Test](https://docs.microsoft.com/en-us/appcenter/test-cloud)数百台の物理デバイスに直接アプリのテストでこの特定の問題に対処します。 開発者は、強力な UI テストのため、自動承諾テストを記述します。 これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部として次の図に示すように。
+[アプリ Center Test](https://docs.microsoft.com/appcenter/test-cloud)数百台の物理デバイスに直接アプリのテストでこの特定の問題に対処します。 開発者は、強力な UI テストのため、自動承諾テストを記述します。 これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部として次の図に示すように。
 
 [![](intro-to-ci-images/intro02-small.png "これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部としてこの図に示すように")](intro-to-ci-images/intro02.png#lightbox)
 
@@ -48,21 +48,21 @@ _継続的インテグレーションは、ソフトウェア エンジニア �
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services と Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) および[Team Foundation Server](http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx) (TFS) は、継続的インテグレーションのコラボレーション ツールを Microsoft のサービス、タスクの追跡、アジャイル計画およびレポート作成ツール、およびバージョンのビルドコントロール。 バージョン管理、VSTS と TFS 作業ができ、独自のシステム Team Foundation バージョン管理 (TFVC) または GitHub でホストされるプロジェクトです。
+[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) および[Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) は、継続的インテグレーションのコラボレーション ツールを Microsoft のサービス、タスクの追跡、アジャイル計画およびレポート作成ツール、およびバージョンのビルドコントロール。 バージョン管理、VSTS と TFS 作業ができ、独自のシステム Team Foundation バージョン管理 (TFVC) または GitHub でホストされるプロジェクトです。
 
  - Visual Studio Team Services では、クラウド経由でサービスを提供します。 主な利点は、専用のハードウェアやインフラストラクチャは必要ありませんからアクセスできる任意の場所と地理的には、チームに魅力的なので、Visual Studio などの一般的な開発ツールの web ブラウザーを通じて分散されます。 これは無料の 5 人の開発者のチーム以下後に、増大するチームを対応する追加するライセンスを購入することができます。
  - TFS は、内部設置型 Windows サーバー用に設計され、ローカル ネットワークまたはそのネットワークに VPN 接続経由でアクセスします。 その主な利点は、完全にビルド サーバーの構成を制御してインストールすることをどのような追加のソフトウェアまたはサービスが必要なです。 TFS では、小規模なチーム向けの空きエントリ レベル Express edition があります。
 
 TFS および VSTS の両方が Visual Studio と密接に統合し、開発者に多くのバージョン管理と快適なシングル IDE 内から CI タスクを実行できるようにします。 Team Explorer Everywhere plugin for Eclipse (下記参照) も使用できます。 Mac 用の visual Studio では、TFS または VSTS の任意のサポートは提供しません。
 
-ビジュアルの Studio チーム サービスのビルド システムが、Xamarin プロジェクトでは、(Android、iOS、および Windows) のターゲットにする各プラットフォームのビルド定義を作成する内部での直接サポートします。 Xamarin ライセンスを適切な各ビルド定義が必要です。 ローカルに接続することも、Xamarin 対応 TFS は、この目的のための Visual Studio Team Services にサーバーを構築します。 この設定により、VSTS をキューに入っているビルドは、ローカル サーバーに委任されます。 詳細についてを参照してください[配置ビルド サーバーを構成および](https://msdn.microsoft.com/en-us/library/ms181712.aspx)です。 また、Jenkins またはチームの市区町村などの別のビルド ツールを使用することができます。
+ビジュアルの Studio チーム サービスのビルド システムが、Xamarin プロジェクトでは、(Android、iOS、および Windows) のターゲットにする各プラットフォームのビルド定義を作成する内部での直接サポートします。 Xamarin ライセンスを適切な各ビルド定義が必要です。 ローカルに接続することも、Xamarin 対応 TFS は、この目的のための Visual Studio Team Services にサーバーを構築します。 この設定により、VSTS をキューに入っているビルドは、ローカル サーバーに委任されます。 詳細についてを参照してください[配置ビルド サーバーを構成および](https://msdn.microsoft.com/library/ms181712.aspx)です。 また、Jenkins またはチームの市区町村などの別のビルド ツールを使用することができます。
 
-Visual Studio、Visual Studio Team Services、および Team Foundation Server では、参照のすべてのアプリケーション ライフ サイクル管理 (ALM) 機能の概要については、 [Xamarin アプリでのアプリケーション ライフ サイクル管理](https://msdn.microsoft.com/en-us/library/mt162217(v=vs.140).aspx)msdn です。
+Visual Studio、Visual Studio Team Services、および Team Foundation Server では、参照のすべてのアプリケーション ライフ サイクル管理 (ALM) 機能の概要については、 [Xamarin アプリでのアプリケーション ライフ サイクル管理](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx)msdn です。
 
 
 ### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](http://msdn.microsoft.com/en-us/library/gg413285.aspx)により Visual Studio の外部で開発チームが Team Foundation Server と Visual Studio Team Services の機能を導入します。 OS X、Linux for Eclipse またはクロス プラットフォーム コマンド ライン クライアントから内部設置方式かクラウド内のチーム プロジェクトに接続できます。 Team Explorer Everywhere は、完全では、(Git など)、バージョン管理へのアクセスを作業項目と、Windows 以外のプラットフォームの機能を構築します。
+[Team Explorer Everywhere](http://msdn.microsoft.com/library/gg413285.aspx)により Visual Studio の外部で開発チームが Team Foundation Server と Visual Studio Team Services の機能を導入します。 OS X、Linux for Eclipse またはクロス プラットフォーム コマンド ライン クライアントから内部設置方式かクラウド内のチーム プロジェクトに接続できます。 Team Explorer Everywhere は、完全では、(Git など)、バージョン管理へのアクセスを作業項目と、Windows 以外のプラットフォームの機能を構築します。
 
 
 ### <a name="git"></a>Git
@@ -103,11 +103,11 @@ Team Foundation Server では、特定のターゲット プラットフォー�
 
 [![](intro-to-ci-images/intro03-small.png "この図では、このトポロジを示しています。")](intro-to-ci-images/intro03.png#lightbox)
 
-VSTS ビルドは、ローカル サーバーに委任するように、Visual Studio Team Services プロジェクトにローカル TFS サーバーをリンクすることもできます。 詳細については、次を参照してください。[配置ビルド サーバーを構成および](http://msdn.microsoft.com/en-us/library/ms181712.aspx)msdn です。
+VSTS ビルドは、ローカル サーバーに委任するように、Visual Studio Team Services プロジェクトにローカル TFS サーバーをリンクすることもできます。 詳細については、次を参照してください。[配置ビルド サーバーを構成および](http://msdn.microsoft.com/library/ms181712.aspx)msdn です。
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services と Jenkins
 
-Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納しを引き続き使用する Jenkins CI ビルドできます。 チーム プロジェクトの Git リポジトリまたはチェックインするときにコードを TFVC にコードをプッシュするときに、Jenkins ビルドをトリガーできます。 詳細については、「[の Visual Studio Team Services Jenkins](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins)です。
+Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納しを引き続き使用する Jenkins CI ビルドできます。 チーム プロジェクトの Git リポジトリまたはチェックインするときにコードを TFVC にコードをプッシュするときに、Jenkins ビルドをトリガーできます。 詳細については、「[の Visual Studio Team Services Jenkins](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins)です。
 
 [![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納およびを引き続き使用する Jenkins CI ビルド")](intro-to-ci-images/intro04.png#lightbox)
 
@@ -123,4 +123,4 @@ Jenkins を使用して、アプリをビルドする場合は、Visual Studio T
 
 # <a name="summary"></a>まとめ
 
-このドキュメントには、ソフトウェア開発チームにもたらす利点と継続的インテグレーションの概念が導入されました。 バージョン管理の重要度は、ロールと、ビルド サーバーの役割と一緒に説明しました。 ドキュメント、通っていたのソース コード管理に使用してサーバーを構築できる、ツールの一部について説明します。 により、開発者は、品質と、アプリの機能を証明する自動テストを実行して、優れたアプリを発行するアプリ Center テストを紹介します。 アプリとアプリ センターへのテストの送信に関するドキュメントをより詳細な[ここ](https://docs.microsoft.com/en-us/appcenter/test-cloud)です。 最後に、理解しやすく組織では継続的インテグレーションの設定がいくつかの異なる CI 環境がここで説明した組み合わせるには、これらすべてのツールとコンポーネント、方法です。 Xamarin プロジェクトで Visual Studio Team Services と Team Foundation Server の使用の詳細については、次を参照してください。[構成 TFVC](https://docs.microsoft.com/vsts/tfvc/overview)され、この[継続的インテグレーション概要](https://docs.microsoft.com/en-us/vsts/build-release/actions/ci-cd-part-1)です。 同様に、Jenkins を使用している場合を参照してください[Xamarin を使用して Jenkins](~/tools/ci/jenkins-walkthrough.md)の継続的インテグレーションを設定する方法の詳細情報。
+このドキュメントには、ソフトウェア開発チームにもたらす利点と継続的インテグレーションの概念が導入されました。 バージョン管理の重要度は、ロールと、ビルド サーバーの役割と一緒に説明しました。 ドキュメント、通っていたのソース コード管理に使用してサーバーを構築できる、ツールの一部について説明します。 により、開発者は、品質と、アプリの機能を証明する自動テストを実行して、優れたアプリを発行するアプリ Center テストを紹介します。 アプリとアプリ センターへのテストの送信に関するドキュメントをより詳細な[ここ](https://docs.microsoft.com/appcenter/test-cloud)です。 最後に、理解しやすく組織では継続的インテグレーションの設定がいくつかの異なる CI 環境がここで説明した組み合わせるには、これらすべてのツールとコンポーネント、方法です。 Xamarin プロジェクトで Visual Studio Team Services と Team Foundation Server の使用の詳細については、次を参照してください。[構成 TFVC](https://docs.microsoft.com/vsts/tfvc/overview)され、この[継続的インテグレーション概要](https://docs.microsoft.com/vsts/build-release/actions/ci-cd-part-1)です。 同様に、Jenkins を使用している場合を参照してください[Xamarin を使用して Jenkins](~/tools/ci/jenkins-walkthrough.md)の継続的インテグレーションを設定する方法の詳細情報。

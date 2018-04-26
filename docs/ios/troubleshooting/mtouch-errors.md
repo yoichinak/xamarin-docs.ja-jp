@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 0187b65e4c10e7cc03715a997a90fbddab9bd532
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS エラー
 
@@ -631,7 +631,7 @@ Xamarin.iOS で内部整合性チェックが失敗したときに、このエ�
 
 <a name="MT0109" />
 
-### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: アセンブリ ' 0'} は、指定したパスとは異なるパスから読み込まれた (パスを指定します。 {1}、実際のパス: {2})。
+### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: アセンブリ '{0}' は、指定したパスとは異なるパスから読み込まれました (パスを指定: {1}、実際のパス: {2})。
 
 これは、アプリケーションによって参照されるアセンブリが要求したよりも、別の場所から読み込まれたことを示す警告です。
 
@@ -968,13 +968,13 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 <a name="MT1021" />
 
-### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021: は、ファイルをコピーできませんでした '\*'to'\*': {2}
+### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021: は、ファイルをコピーできませんでした '\*'to'\*'。 {2}
 
 ファイルをコピーできませんでした。 コピー操作からのエラー メッセージは、エラーの詳細についてがします。
 
 <a name="MT1022" />
 
-### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022: ディレクトリにコピーできませんでした '\*'to'\*': {2}
+### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022: ディレクトリにコピーできませんでした '\*'to'\*'。 {2}
 
 ディレクトリをコピーできませんでした。 コピー操作からのエラー メッセージは、エラーの詳細についてがします。
 
@@ -1653,11 +1653,11 @@ Parameter name: instruction
 
 <a name="MT2104" />
 
-### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: 混合モードは、アセンブリ ' 0'} をリンクできません。
+### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: アセンブリをリンクできません '{0}' 混在モードであるとします。
 
 混合モード アセンブリは、リンカーによっては処理できません。
 
-参照してくださいhttps://msdn.microsoft.com/en-us/library/x0w2664k.aspx混合モード アセンブリの詳細についてはします。
+参照してくださいhttps://msdn.microsoft.com/library/x0w2664k.aspx混合モード アセンブリの詳細についてはします。
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT エラー メッセージ
 
@@ -2060,7 +2060,7 @@ Objectice C クラスの名前は、つまり空白を含めることはでき�
 
 <a name="MT4161" />
 
-### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: レジストラーに対してサポートされていない構造が検出された '\*': 構造体のすべてのフィールドは構造体にもあります (フィールド'\*' 種類 '{2}' がありませんが、構造体)。
+### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: レジストラーに対してサポートされていない構造が検出された '\*': 構造体のすべてのフィールドは構造体にもあります (フィールド'\*'type' with{2}' は構造体ではありません)。
 
 レジストラーではサポートされていないフィールドを持つ構造体が見つかりませんでした。
 
@@ -2917,7 +2917,7 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: メソッドの変換メソッドを委任するブロックが見つかりません*.*'s パラメーター # * です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: メソッドの変換メソッドを委任するブロックが見つかりません *.*'s パラメーター # * です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
 
 これは、API が正しくバインドされていないを示します。 Xamarin によって公開される API の場合は、当社 bugzilla でバグを送信してください ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) 場合は、サード パーティ製のバインディングでは、製造元に問い合わせてください。
 
@@ -2929,7 +2929,7 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: メソッドの戻り値のブロック変換属性 ([DelegateProxy]) にデリゲートが見つかりません*.*です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: メソッドの戻り値のブロック変換属性 ([DelegateProxy]) にデリゲートが見つかりません *.* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
 
 Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、必要なメソッドを検索できませんでした。
 
@@ -2945,7 +2945,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: メソッドの戻り値の無効な DelegateProxyAttribute *.*: DelegateType ({2}) が 'Handler' フィールドがない型を指定します。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: メソッドの戻り値の無効な DelegateProxyAttribute *.*: DelegateType ({2}) 'Handler' フィールドがない型を指定します。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2953,7 +2953,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType の ({2}) 'Handler' フィールドが null です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType ({2}) 'Handler' フィールド null です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2961,7 +2961,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType の ({2}) 'Handler' フィールド デリゲートではないのは、* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType ({2}) 'Handler' フィールドは、デリゲートではないのは、* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2969,7 +2969,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: メソッドの戻り値のブロックをデリゲートに変換できません*.*入力には、委任が存在しないためは、* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: メソッドの戻り値のブロックをデリゲートに変換できません *.* 入力には、委任が存在しないためは、* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 

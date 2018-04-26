@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 036dbc6a33126d4ade1a68e853ca6ddb4b7c83cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0df51429ea9655b0a72d9f4c1e413fa7e37410ac
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="app-search-enhancements"></a>アプリの検索の機能強化
 
@@ -107,7 +107,7 @@ Web のマークアップと操作の詳細についてを参照してくださ�
 1. メッセージ アプリ拡張機能を作成します。
 2. 追加、`com.apple.developer.associated-domains`アプリの権利をメッセージ アプリ拡張機能を共有してイメージをホストする web ドメインの一覧が含まれています。 ドメインごとに、指定、`spotlight-image-search`サービス。
 3. 追加、`apple-app-site-association`ファイル、イメージをホストしている web サイトを参照します。 このファイルにはディクショナリが含まれています、`spotlight-image-search`サービスし、アプリの ID には、バンドル id 続けてチーム ID またはアプリ ID のプレフィックスが含まれています。 ファイルには、最大 500 のパスとスポット ライトでインデックス付けされたとする一般的な画像の検索に含めるパターンを含めることができます。 詳細については、Apple を参照してください[作成し、関連ファイルをアップロード](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4)ドキュメント。
-4. Web サイトをクロールする Applebot を許可します。 Apple を参照してください[に関する Applebot](https://support.apple.com/en-us/HT204683)ドキュメント。
+4. Web サイトをクロールする Applebot を許可します。 Apple を参照してください[に関する Applebot](https://support.apple.com/HT204683)ドキュメント。
 
 参照してください、[メッセージ アプリ統合](~/ios/platform/message-app-integration/index.md)詳細についてはドキュメントです。
 
