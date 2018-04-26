@@ -1,6 +1,6 @@
 ---
 title: "Android プラットフォーム仕様"
-description: "Platform-specifics は Custom Renderers や Effects を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。この記事では Xamarin.Forms 組み込みの Android の platform-specifics の使い方を説明します。"
+description: "プラットフォーム仕様は、カスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。この記事では Xamarin.Forms に組み込まれている Android のプラットフォーム仕様の使い方を説明します。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
@@ -14,23 +14,23 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/09/2018
 ---
-# <a name="android-platform-specifics"></a>Android Platform-Specifics
+# <a name="android-platform-specifics"></a>Android プラットフォーム仕様
 
-_Platform-specifics は Custom Renderers や Effects を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。この記事では Xamarin.Forms 組み込みの Android の platform-specifics の使い方を説明します。_
+この記事では Xamarin.Forms に組み込まれている Android のプラットフォーム仕様の使い方を説明します。プラットフォーム仕様は、カスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
 
-Android では、Xamarin.Forms は次のような platform-specific が含まれています。
+Android では、Xamarin.Forms は次のようなプラットフォーム仕様が含まれています。
 
-- ソフトキーボードの操作モードの設定。詳細は[ソフトキーボードの操作モードの設定](#soft_input_mode)を参照。
-- [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)でのfast scrollingの有効化。詳細は[ListView での fast scrolling の有効化](#fastscroll)を参照。
-- [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)でのページ間のスワイプ操作の有効化。詳細は[TabbedPage でのページ間のスワイプ操作の有効化](#enable_swipe_paging)を参照。
-- 描画の順番を決定するためのVisualElementsのZ-orderの制御。詳細は[Visual Elements の Elevation の制御](#elevation)を参照。
-- AppCompat を使ったアプリケーションで、pause や resume で[`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)や[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) といったぺージのライフサイクルのイベントをそれぞれ無効化する。詳細は[Disappearing と Appearing のぺージライフサイクルイベントの無効化](#disable_lifecycle_events)を参照。
+- ソフトキーボードの操作モードの設定。詳細については、「ソフトキーボードの入力モードの設定(#soft_input_mode)」を参照してください。
+- [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)での高速スクロールの有効化。詳細については、「[ListView での高速スクロールの有効化(#fastscroll)」を参照してください。
+- [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)でのページ間のスワイプ操作の有効化。詳細については、「TabbedPage でのページ間のスワイプ操作の有効化(#enable_swipe_paging)」を参照してください。
+- 描画の順番を決定するための視覚要素の Z オーダーの制御。詳細については、「視覚要素の昇格の制御(#elevation)」を参照してください。
+- AppCompat を使用するアプリケーションに対し、一時停止や再開時に [`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)や[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) といったぺージのライフサイクルのイベントをそれぞれ無効化する。詳細については、「Disappearing と Appearing のぺージライフサイクルイベントの無効化(#disable_lifecycle_events)」を参照してください。
 
 <a name="soft_input_mode" />
 
-## <a name="setting-the-soft-keyboard-input-mode"></a>ソフトキーボードの操作モードの設定
+## <a name="setting-the-soft-keyboard-input-mode"></a>ソフトキーボードの入力モードの設定
 
-この platform-specific はソフトキーボードの入力エリアのための操作方式を設定するために使われ、Xaml で[`Application.WindowSoftInputModeAdjust`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty/)添付プロパティに[`WindowSoftInputModeAdjust`](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/)列挙型の値を設定して使用します。
+このプラットフォーム仕様はソフトキーボードの入力エリアのための操作方式を設定するために使われ、Xaml で[`Application.WindowSoftInputModeAdjust`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty/)添付プロパティを[`WindowSoftInputModeAdjust`](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/)列挙型の値に設定して使用します。
 
 ```xaml
 <Application ...
@@ -58,9 +58,9 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 <a name="fastscroll" />
 
-## <a name="enabling-fast-scrolling-in-a-listview"></a>ListView での fast scrolling の有効化
+## <a name="enabling-fast-scrolling-in-a-listview"></a>ListView での高速スクロールの有効化
 
-この platform-specific は[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)のデータを通過する高速なスクロールを有効にするために使われます。これはXamlで`ListView.IsFastScrollEnabled`添付プロパティに`boolean`値を設定することで使用します。
+このプラットフォーム仕様は[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)のデータ間での高速なスクロールを有効にするために使われます。これはXAMLで`ListView.IsFastScrollEnabled`添付プロパティに`boolean`値を設定することで使用します。
 
 ```xaml
 <ContentPage ...
@@ -90,13 +90,13 @@ listView.GroupDisplayBinding = new Binding("Key");
 listView.On<Android>().SetIsFastScrollEnabled(true);
 ```
 
-`ListView.On<Android>`メソッドはこの platform-specific が Android 上でのみ動作することを指定します。`ListView.SetIsFastScrollEnabled`メソッドは、[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間に存在し、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)のデータを通過する高速なスクロールを可能にするために使われます。さらに、`SetIsFastScrollEnabled`メソッドは高速スクロールが有効かどうかを返す`IsFastScrollEnabled`メソッドを呼ぶことで高速スクロールを切り替えるために使用することができます。
+`ListView.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。`ListView.SetIsFastScrollEnabled`メソッドは、[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間に存在し、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)のデータ間で高速なスクロールを可能にするために使われます。さらに、`SetIsFastScrollEnabled`メソッドは高速スクロールが有効かどうかを返すために `IsFastScrollEnabled`メソッドを呼ぶことで高速スクロールを切り替えるために使用することができます。
 
 ```csharp
 listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScrollEnabled());
 ```
 
-その結果、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)のデータを通過する高速スクロールが有効になり、スクロールのつまみのサイズが変更されます。
+その結果、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)のデータ間での高速スクロールが有効になり、スクロールのつまみのサイズが変更されます。
 
 [![](android-images/fastscroll.png "ListView 高速スクロールのプラットフォーム仕様")](android-images/fastscroll-large.png#lightbox "ListView 高速スクロールのプラットフォーム仕様")
 
@@ -104,7 +104,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 ## <a name="enabling-swiping-between-pages-in-a-tabbedpage"></a>TabbedPage でのページ間のスワイプ操作の有効化
 
-このplatform-specificは[`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)のぺージ間の水平ジェスチャーによるスワイプ移動を有効にするために使われます。これは Xaml で[`TabbedPage.IsSwipePagingEnabled`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty/)添付プロパティに`boolean` 値を設定することで使用します。
+このプラットフォーム仕様は[`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)のぺージ間の水平ジェスチャーによるスワイプ移動を有効にするために使われます。これは XAML で[`TabbedPage.IsSwipePagingEnabled`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty/)添付プロパティに`boolean` 値を設定することで使用されます。
 
 ```xaml
 <TabbedPage ...
@@ -134,9 +134,9 @@ On<Android>().SetOffscreenPageLimit(2)
 
 <a name="elevation" />
 
-## <a name="controlling-the-elevation-of-visual-elements"></a>Visual Elements の Elevation の制御
+## <a name="controlling-the-elevation-of-visual-elements"></a>視覚要素の昇格の制御
 
-この platform-specific は、ターゲットがAPI21以上のアプリケーションで visual elements の z-order （重なりの順番）や elevation （高度）を制御するために使われます。visual element の elevation は、高いZの値を持つ visual elements が低いZの値をもつ visual elements を塞ぐように、自身の描画順を決定します。これは Xaml で`Elevation.Elevation`添付プロパティに`boolean`値を設定して使用します。
+このプラットフォーム仕様は、ターゲットが API 21 以上のアプリケーションで視覚要素の昇格または Z オーダーを制御するために使われます。視覚要素の昇格は、高い Z の値を持つ視覚要素が低い Z の値をもつ視覚要素を塞ぐように、自身の描画順を決定します。これは XAML で `Elevation.Elevation` 添付プロパティに`boolean`値を設定して使用します。
 
 ```xaml
 <ContentPage ...
@@ -197,9 +197,9 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>`メソッドは、この platform-specific が Android 上でのみ動作することを指定します。`Elevation.SetElevation`メソッドは、[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間に存在し、visual element の elevation にnull許容型の`float`値を設定するために使われます。さらに、`Elevation.GetElevation`メソッドは、visual element の elevation 値を取得するために使用できます。
+`Button.On<Android>`メソッドは、このプラットフォーム仕様が Android 上でのみ動作することを指定します。`Elevation.SetElevation`メソッドは、[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間に存在し、視覚要素の昇格に null 許容型の `float` 値を設定するために使われます。さらに、`Elevation.GetElevation`メソッドは、視覚要素の昇格値を取得するために使用できます。
 
-その結果、visual elements の elevation は、高いZ値の visual elements が低いZ値の visual elements を塞ぐように制御されます。それによって、この例では2番目の[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)は、より高い elevation値を持つため、[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)の上に描画されます。
+その結果、視覚要素の昇格は、高いZ値の視覚要素が低いZ値の視覚要素を塞ぐように制御されます。それによって、この例では2番目の[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)は、より高い昇格値を持つため、[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)の上に表示されます。
 
 ![](android-images/elevation.png)
 
@@ -243,7 +243,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 `Application.Current.On<Android>`メソッドはこのプラットフォーム仕様が Android上でのみ動作することを指定します。[`Application.SendDisappearingEventOnPause`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/)メソッドは、[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)名前空間に存在し、アプリケーションがバックグラウンドに切り替わった時に[`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)ぺージイベントの発生を有効化または無効化するために使用されます。[`Application.SendAppearingEventOnResume`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/)メソッドは、アプリケーションがバックグラウンドから復帰した時に[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)ページイベントの発生を有効化または無効化するために使用されます。[`Application.ShouldPreserveKeyboardOnResume`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/)メソッドは、一時停止時にソフトキーボードの操作方式に[`WindowSoftInputModeAdjust.Resize`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/)が設定されていて、それが表示されている場合に、再開時にそれを表示するかどうかを制御するために使用されます。
 
-その結果、[`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)と[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)ぺージイベントはアプリケーションの pause と resume ではそれぞれ発生しなくなり、pause時にソフトキーボードが表示されていた場合、resume時にもそれが表示されるようになります。
+その結果、[`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)と[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)ぺージイベントはそれぞれアプリケーションの一時停止時と再開時に発生しなくなり、アプリケーションの一時停止時にソフトキーボードが表示されていた場合、再開時にもそれが表示されるようになります。
 
 [![](android-images/keyboard-on-resume.png "ライフサイクル イベントのプラットフォーム仕様")](android-images/keyboard-on-resume-large.png#lightbox "ライフサイクル イベントのプラットフォーム仕様")
 
