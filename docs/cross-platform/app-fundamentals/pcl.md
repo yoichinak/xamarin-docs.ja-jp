@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: feef0a4083d2455cc189ddab6ed22762c044d848
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 799ee198f776b963bb8779d71bacc322001e2882
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>ポータブル クラス ライブラリの概要
 
@@ -42,7 +42,7 @@ _この記事では、ポータブル クラス ライブラリ (PCL) プロジ�
 |---|---|---|---|---|---|
 |コア|Y|Y|Y|Y|Y|
 |LINQ|Y|Y|Y|Y|Y|
-|IQueryable|Y|Y|Y|7.5 +|Y|
+|IQueryable|Y|Y|Y|7.5 以降|Y|
 |シリアル化|Y|Y|Y|Y|Y|
 |データの注釈|4.0.3 +|Y|Y||Y|
 
@@ -55,7 +55,7 @@ Xamarin の列には、Xamarin.iOS および Xamarin.Android は、Visual Studio
 -  Windows Phone 8
 -  UWP アプリ
 
-詳細を読み取ることができますに別のプロファイルの機能に関する[マイクロソフトの web サイト](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)別コミュニティ メンバーを表示および[PCL プロファイルの概要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)framework 情報や他の注意事項はサポートが含まれています。
+詳細を読み取ることができますに別のプロファイルの機能に関する[マイクロソフトの web サイト](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)別コミュニティ メンバーを表示および[PCL プロファイルの概要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)framework 情報や他の注意事項はサポートが含まれています。
 
 
 
@@ -71,7 +71,7 @@ Xamarin の列には、Xamarin.iOS および Xamarin.Android は、Visual Studio
 
 **短所**
 
-1. 同じポータブル クラス ライブラリは、複数のアプリケーション間で共有される、ため、プラットフォーム固有のライブラリは (参照できません。 Community.CsharpSqlite.WP7).
+1. 同じポータブル クラス ライブラリは、複数のアプリケーション間で共有される、ため、プラットフォーム固有のライブラリは (参照できません。 Community.CsharpSqlite.WP7)。
 1. ポータブル クラス ライブラリのサブセットは、それ以外の場合になる MonoTouch と (DllImport System.IO.File など) の Android 用の Mono の両方で使用可能なクラスを含まない場合があります。
 
 
@@ -429,4 +429,4 @@ public static Result Close(Sqlite3.sqlite3 db)
 - [ポータブル Visual Basic](~/cross-platform/platform/visual-basic/index.md)
 - [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
-- [.NET Framework (Microsoft) を使用したクロスプラット フォーム開発](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [.NET Framework (Microsoft) を使用したクロスプラット フォーム開発](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)

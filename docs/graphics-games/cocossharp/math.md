@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>CocosSharp による 2D 数学的演算
 
@@ -264,7 +264,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 
 `System.Math.Atan2` 角度にオフセットを変換するために使用します。 関数名`Atan2`三角関数の逆正接に由来します。 「2」サフィックスでは、この関数を区別標準から`Atan`アーク タンジェントの数学的な動作を厳密に一致する関数。 アーク タンジェントの値を返す-90 関数とは、+90 度 (または同等のラジアン単位)。 コンピューター ゲームなど、多くのアプリケーションでは、フルの 360 度の値の多くの場合、必要なため、`Math`クラスが含まれます`Atan2`このニーズを満たすためにします。
 
-上記のコードが合格する Y パラメーター最初に、X パラメーターを呼び出すときに注意してください、`Atan2`メソッドです。 これは旧バージョンと通常の X、Y の位置座標の順序です。 詳細については[Atan2 ドキュメントを参照してください](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx)です。
+上記のコードが合格する Y パラメーター最初に、X パラメーターを呼び出すときに注意してください、`Atan2`メソッドです。 これは旧バージョンと通常の X、Y の位置座標の順序です。 詳細については[Atan2 ドキュメントを参照してください](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx)です。
 
 注目すべきも戻り値の値から`Atan2`ラジアンは角度を測定するために使用する別の単位であります。 このガイドはラジアン単位の詳細をカバーしましたに留意してくださいを内のすべての三角関数、`System.Math`名前空間を使用するラジアンのため CocosSharp オブジェクトで使用される前に度に任意の値を変換する必要があります。 ラジアン単位の詳細についてを参照できます[ラジアンの Wikipedia ページに](http://en.wikipedia.org/wiki/Radian)です。
 

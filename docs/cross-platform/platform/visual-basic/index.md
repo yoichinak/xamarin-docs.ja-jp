@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6a4ecad0b28dc4b8ba4060966ccefb678c8e6794
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f37ff8a2d07681ba8e4ec3ed6ad7e5bbd85e6502
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="portable-visual-basicnet"></a>ポータブル Visual Basic.NET
 
@@ -42,7 +42,7 @@ Visual Studio で Visual Basic PCL を追加する場合は、プラットフォ
 
 PCL を作成し、そのプロファイルを選択する手順は次のとおりです。
 
-1.  **新しいプロジェクト**画面で、、 **Visual Basic > クラス ライブラリ (ポータブル)**オプション。
+1.  **新しいプロジェクト**画面で、、 **Visual Basic > クラス ライブラリ (ポータブル)** オプション。
 
     [![](images/image1-sml.png "新しい Visual Basic のポータブル ライブラリを作成します。")](images/image1.png#lightbox)
 
@@ -80,4 +80,4 @@ PCL は、Visual Basic コードを追加する準備が整いました。 PCL �
 
 - [TaskyPortableVB (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)
 - [XamarinFormsVB (sample)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
-- [.NET Framework (Microsoft) を使用したクロスプラット フォーム開発](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [.NET Framework (Microsoft) を使用したクロスプラット フォーム開発](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)

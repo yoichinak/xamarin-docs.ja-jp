@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c6a5233c9cdc043986f106712895439fa008b41
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-the-file-system"></a>ファイル システムでの作業
 
@@ -77,7 +77,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-MSDN のドキュメントを参照してください、 [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml.aspx)名前空間の詳細については[シリアル化](http://msdn.microsoft.com/en-us/library/system.xml.serialization.aspx)です。 確認する必要があります、 [Xamarin.iOS ドキュメント](~/ios/deploy-test/linker.md)リンカー – 通常必要がありますを追加する、`[Preserve]`属性をシリアル化するクラス。
+MSDN のドキュメントを参照してください、 [System.Xml](http://msdn.microsoft.com/library/system.xml.aspx)名前空間の詳細については[シリアル化](http://msdn.microsoft.com/library/system.xml.serialization.aspx)です。 確認する必要があります、 [Xamarin.iOS ドキュメント](~/ios/deploy-test/linker.md)リンカー – 通常必要がありますを追加する、`[Preserve]`属性をシリアル化するクラス。
 
  <a name="Creating_Files_and_Directories" />
 
@@ -102,7 +102,7 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-System.IO 名前空間の詳細については、次を参照してください。、 [MSDN ドキュメント](http://msdn.microsoft.com/en-us/library/system.io.aspx)です。
+System.IO 名前空間の詳細については、次を参照してください。、 [MSDN ドキュメント](http://msdn.microsoft.com/library/system.io.aspx)です。
 
 
 ### <a name="serializing-json"></a>Json をシリアル化します。
@@ -214,7 +214,7 @@ iOS がスラッシュを使用してパスの区切り記号としては、'/' 
 
 その他のディレクトリを参照してください (および .app サフィックスが非表示); よりも、別のアイコンと表示された Mac OS で、アプリケーション バンドルを参照するときただし、通常のオペレーティング システムが異なる方法で表示されているディレクトリのみを勧めします。
 
-Mac と選択の Visual Studio でプロジェクトを右クリックするサンプル コードのアプリケーション バンドルを確認するには、**を含むフォルダーを開く**です。 移動し、 **Bin/debug/**が表示される必要がありますアプリケーション アイコン (次のスクリーン ショットに類似)。
+Mac と選択の Visual Studio でプロジェクトを右クリックするサンプル コードのアプリケーション バンドルを確認するには、**を含むフォルダーを開く**です。 移動し、 **Bin/debug/** が表示される必要がありますアプリケーション アイコン (次のスクリーン ショットに類似)。
 
  [![](file-system-images/40-bundle.png "このスクリーン ショットのようなアプリケーション アイコンを検索するには、Bin/debug に移動します。")](file-system-images/40-bundle.png#lightbox)
 
@@ -239,7 +239,7 @@ Nothing に書き込むか、ルート ディレクトリが<b>iOS 7 および�
 
 |ディレクトリ|説明|
 |---|---|
-|[ApplicationName].app/|**IOS 7 およびそれ以前で**これは、`ApplicationBundle`アプリケーション実行可能ファイルが格納されているディレクトリ。 アプリで作成したディレクトリ構造は、(たとえば、イメージや Mac プロジェクトの Visual Studio でのリソースとしてマークした他のファイルの種類) は、このディレクトリに存在します。<br /><br />このディレクトリへのパスを利用し、アプリケーション バンドル内のコンテンツ ファイルにアクセスする必要がある場合、`NSBundle.MainBundle.BundlePath`プロパティです。|
+|[ApplicationName] .app/|**IOS 7 およびそれ以前で**これは、`ApplicationBundle`アプリケーション実行可能ファイルが格納されているディレクトリ。 アプリで作成したディレクトリ構造は、(たとえば、イメージや Mac プロジェクトの Visual Studio でのリソースとしてマークした他のファイルの種類) は、このディレクトリに存在します。<br /><br />このディレクトリへのパスを利用し、アプリケーション バンドル内のコンテンツ ファイルにアクセスする必要がある場合、`NSBundle.MainBundle.BundlePath`プロパティです。|
 |ドキュメント/|このディレクトリを使用すると、ユーザーのドキュメントおよびアプリケーション データ ファイルを格納できます。<br /><br />このディレクトリの内容できますで入手できる、ユーザーに iTunes のファイル (ただし、これは既定で無効) を共有します。 追加、`UIFileSharingEnabled`ブール型のキーをユーザーにこれらのファイルのアクセスを許可する Info.plist ファイルにします。<br /><br />場合でも、アプリケーションでは、ファイル共有を有効にしないすぐに、このディレクトリでユーザーから非表示にするファイルを配置することを避ける必要があります (など、データベース ファイルを共有する場合)。 機密性の高いファイルは非表示のまま、限り、これらのファイルいない公開されている (とする可能性のある移動、変更、または iTunes によって削除された) 場合は、今後のバージョンのファイル共有を有効にします。<br /><br /> 使用することができます、`Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)`アプリケーションの Documents ディレクトリへのパスを取得します。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|
 |ライブラリ/|ライブラリ ディレクトリは、データベースやその他のアプリケーションによって生成されたファイルなど、ユーザーが直接作成されないファイルを格納する適切な場所です。 このディレクトリの内容は、iTunes を使用してユーザーに決して公開されます。<br /><br />ライブラリで、独自のサブディレクトリを作成することができます。ただし、既にあるいくつかシステムで作成されたディレクトリは、ここの設定、キャッシュなど、注意してください。<br /><br />このディレクトリ (を除くキャッシュ サブディレクトリ) の内容は、iTunes によってバックアップされます。 ライブラリで作成したカスタム ディレクトリのバックアップが作成されます。|
 |ライブラリの設定//|アプリケーション固有の基本設定ファイルは、このディレクトリに格納されます。 これらのファイルを直接作成しません。 代わりに、使用、`NSUserDefaults`クラスです。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: ee4ee83c07cf01d1324b5f127d4f77ced0df2afe
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: e28823165188d1046142e31490967367d3246422
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>MonoGame UWP プロジェクトの作成
 
@@ -31,9 +31,9 @@ MonoGame UWP アプリの開発が必要です。
 - 開発者モードに設定デバイス
 - [Visual Studio の MonoGame 3.5](http://www.monogame.net/2016/03/17/monogame-3-5/)以降
 
-詳細については、これを参照して[の Windows 10 UWP 開発に関して設定に関するページ](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-set-up)です。
+詳細については、これを参照して[の Windows 10 UWP 開発に関して設定に関するページ](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up)です。
 
-Xbox One ゲームは、小売 Xbox One ハードウェアで開発できます。 開発 PC と Xbox One の両方では、追加のソフトウェアが必要です。 構成、Xbox 1 つのゲームの開発方法の詳細については、このページを参照して[Xbox One を設定する](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)です。
+Xbox One ゲームは、小売 Xbox One ハードウェアで開発できます。 開発 PC と Xbox One の両方では、追加のソフトウェアが必要です。 構成、Xbox 1 つのゲームの開発方法の詳細については、このページを参照して[Xbox One を設定する](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)です。
 
 ## <a name="creating-an-empty-template"></a>空のテンプレートを作成します。
 

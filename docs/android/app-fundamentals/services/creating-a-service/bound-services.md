@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 18cfe6acae08efac85223c9c121a12f102f846cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin.Android でのサービスをバインドします。
 
@@ -33,7 +33,7 @@ _バインドされているサービス (Android のアクティビティ) な�
 
 ![サービス コンポーネントが相互に関連付ける方法を示す図](bound-services-images/bound-services-02.png "サービス コンポーネントが相互に関連付ける方法を示す図。")
 
-このガイドには、拡張する方法を検討、`Service`バインドされているサービスを実装するクラス。 実装にも適用されます`IServiceConnection`と拡張`Binder`クライアント サービスと通信するために使用できるようにします。 サンプル アプリに伴うこのガイドと呼ばれる 1 つの Xamarin.Android プロジェクトとソリューションを含む**[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)**です。 これは、非常に基本的なアプリケーション、サービスを実装する方法と、アクティビティをバインドする方法について説明しています。 バインドされているサービスが 1 つのメソッドと非常に単純な API`GetFormattedTimestamp`サービスが開始されたときに、ユーザーに通知する文字列と時間が実行されたが返されます。 アプリでは、ユーザーが手動でバインドを解除し、サービスにバインドすることもできます。
+このガイドには、拡張する方法を検討、`Service`バインドされているサービスを実装するクラス。 実装にも適用されます`IServiceConnection`と拡張`Binder`クライアント サービスと通信するために使用できるようにします。 サンプル アプリに伴うこのガイドと呼ばれる 1 つの Xamarin.Android プロジェクトとソリューションを含む**[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** です。 これは、非常に基本的なアプリケーション、サービスを実装する方法と、アクティビティをバインドする方法について説明しています。 バインドされているサービスが 1 つのメソッドと非常に単純な API`GetFormattedTimestamp`サービスが開始されたときに、ユーザーに通知する文字列と時間が実行されたが返されます。 アプリでは、ユーザーが手動でバインドを解除し、サービスにバインドすることもできます。
 
 [![Android フォンで実行されているアプリケーションのスクリーン ショット](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
@@ -263,7 +263,7 @@ OOP 主義者はの以前の実装のしない可能性があります、`Timest
 厳密には、クライアントについて知っておく必要はありません、`TimestampService`とクライアントをその具象クラスを公開することができますアプリケーションより当てとその有効期間にわたって管理するは困難です。 別の方法は、公開するインターフェイスを使用する、`GetFormattedTimestamp()`メソッド、およびプロキシによるを通じてサービスの呼び出し、 `Binder` (または可能なサービス接続クラス)。  
 
 ```csharp
-public class TimestampBinder : Binder, IGetTimesamp
+public class TimestampBinder : Binder, IGetTimestamp
 {
     TimestampService service;
     public TimestampBinder(TimestampService service)

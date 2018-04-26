@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: f94959062f01a363319494eb510f1a6e42fe36b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -110,7 +110,7 @@ double.Parse("1,999.99", CultureInfo.InvariantCulture);
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-参照してください、[数値文字列の解析](http://msdn.microsoft.com/en-us/library/xbtzcc4w(v=vs.110).aspx)と[解析の日付と時刻文字列](http://msdn.microsoft.com/en-us/library/2h3syy57(v=vs.110).aspx)追加については、MSDN 記事です。
+参照してください、[数値文字列の解析](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)と[解析の日付と時刻文字列](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)追加については、MSDN 記事です。
 
 <a name="rtl" />
 
@@ -130,7 +130,7 @@ IOS および Android の両方は、右から左のレイアウトおよび上�
 
 さまざまな言語は、同じ文字セットを使用するときにも異なる方法で、アルファベットの並べ替え順序を定義します。
 
-参照してください、[文字列比較の詳細](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)で[、.NET Framework での文字列を使用するためのベスト プラクティス](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx)例については、言語 (CultureInfo) は、並べ替え順序に影響します。
+参照してください、[文字列比較の詳細](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)で[、.NET Framework での文字列を使用するためのベスト プラクティス](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)例については、言語 (CultureInfo) は、並べ替え順序に影響します。
 
 モバイル プラットフォームでは、組み込みのデータベース機能は、ビジネス ロジックの追加のコードを実装する必要がありますので順序言語固有の並べ替えをサポートする可能性が高いことはできません。
 
@@ -283,7 +283,7 @@ IOS および Android の両方は、右から左のレイアウトおよび上�
 テスト目的で多くのオンライン翻訳ツールのいずれかを使用でした、アプリの開発時に一部のローカライズされたテキストを含めます。
 
 - [Bing 翻訳ツール](https://www.bing.com/translator/)
-- [Google Translate](http://translate.google.com/)
+- [Google Translate します。](http://translate.google.com/)
 
 他にも多く使用できます。 機械翻訳の品質通常されていないと見なされるアプリケーションをリリースする十分なまずされているレビューし、テストしたプロの翻訳者またはネイティブのスピーカーなし。
 
@@ -312,4 +312,4 @@ IOS および Android の両方は、右から左のレイアウトおよび上�
 
 - [Apple のローカリゼーションの概要](https://developer.apple.com/internationalization/)
 - [Android のローカリゼーション チェックリスト](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [国際対応アプリケーション (MSDN) を開発するためのベスト プラクティス](http://msdn.microsoft.com/en-us/library/w7x1y988%28v=vs.90%29.aspx)
+- [国際対応アプリケーション (MSDN) を開発するためのベスト プラクティス](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

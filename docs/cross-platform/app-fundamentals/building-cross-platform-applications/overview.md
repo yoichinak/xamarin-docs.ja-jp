@@ -6,17 +6,17 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48aa53595d7ab0ccd5fb8f3dab57198199d65b8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロス プラットフォーム アプリケーションの概要作成
 
 このガイドでは、Xamarin プラットフォーム、およびコードの再利用を最大限活用し、すべての主要なモバイル プラットフォームで高品質のネイティブ エクスペリエンスを提供するクロス プラットフォーム アプリケーションを設計する方法が導入されています。 iOS、Android、Windows Phone です。
 
-このドキュメントで使用するアプローチが生産性アプリとゲームのアプリの両方に該当する通常の生産性とユーティリティ (非ゲーム アプリケーション) にフォーカスがあります。 参照してください、 [MonoGame ドキュメントの概要](https://developer.xamarin.com/guides/cross-platform/game_development/monogame/introduction/)かをチェック アウト[Visual Studio Tools for Unity](https://docs.microsoft.com/en-us/visualstudio/cross-platform/visual-studio-tools-for-unity)クロスプラット フォーム ゲーム開発のガイダンスについてはします。
+このドキュメントで使用するアプローチが生産性アプリとゲームのアプリの両方に該当する通常の生産性とユーティリティ (非ゲーム アプリケーション) にフォーカスがあります。 参照してください、 [MonoGame ドキュメントの概要](~/graphics-games/monogame/introduction/index.md)かをチェック アウト[Visual Studio Tools for Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity)クロスプラット フォーム ゲーム開発のガイダンスについてはします。
 
 語句"書き込み-everywhere を実行すると、"のに、使用は、多くの場合、1 つの利点のコードベースの実行は、複数のプラットフォームで変更されていません。 コードの再利用の利点がある、その多くの場合、アプローチを最も一般的な分母の機能セットを持つアプリケーションとが収まらないジェネリック外見のユーザー インターフェイスを適切に、対象プラットフォームのいずれかにします。
 
