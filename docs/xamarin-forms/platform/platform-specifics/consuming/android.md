@@ -1,4 +1,4 @@
----
+﻿---
 title: Android プラットフォーム仕様
 description: この記事では Xamarin.Forms に組み込まれている Android のプラットフォーム仕様の使い方を説明します。 プラットフォーム仕様は、カスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
 ms.prod: xamarin
@@ -17,7 +17,7 @@ ms.lasthandoff: 04/04/2018
 
 _この記事では Xamarin.Forms に組み込まれている Android のプラットフォーム仕様の使い方を説明します。プラットフォーム仕様は、カスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。_
 
-Android では、Xamarin.Forms には、次のプラットフォームの設定が含まれています。
+Android では、Xamarin.Forms は次のようなプラットフォーム仕様が含まれています。
 
 - ソフトキーボードの操作モードの設定。 詳細については、[ソフトキーボードの入力モードの設定](#soft_input_mode)を参照してください。
 - [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)での高速スクロールの有効化。詳細については、[ListView での高速スクロールの有効化(#fastscroll)](#fastscroll)を参照してください。
@@ -53,7 +53,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 その結果、入力コントロールがフォーカスを持つ時のソフトキーボードの入力エリアの操作方式を設定することができます。
 
-[![](android-images/pan-resize.png "ソフト キーボードがモードのプラットフォームに固有の動作")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "ソフトキーボード操作モードのプラットフォーム仕様")](android-images/pan-resize-large.png#lightbox "ソフトキーボード操作モードのプラットフォーム仕様")
 
 <a name="fastscroll" />
 
@@ -97,7 +97,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 その結果、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)のデータ間での高速スクロールが有効になり、スクロールのつまみのサイズが変更されます。
 
-[![](android-images/fastscroll.png "ListView FastScroll プラットフォーム固有")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView 高速スクロールのプラットフォーム仕様")](android-images/fastscroll-large.png#lightbox "ListView 高速スクロールのプラットフォーム仕様")
 
 <a name="enable_swipe_paging" />
 
@@ -206,12 +206,13 @@ public class AndroidElevationPageCS : ContentPage
 
 ## <a name="disabling-the-disappearing-and-appearing-page-lifecycle-events"></a>Disappearing と Appearing のぺージライフサイクルイベントの無効化
 
-このプラットフォームに固有の使用を無効に、 [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)と[ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)アプリケーションのページのイベントが一時停止および AppCompat を使用するアプリケーションのそれぞれを再開します。 ソフト キーボードが再開に表示されることが表示された場合、一時停止でソフト キーボードの動作モードに設定されているかどうかを制御する機能を掲載してさらに、 [ `WindowSoftInputModeAdjust.Resize`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/)です。
+
+このプラットフォーム仕様は、AppCompat を使ったアプリケーションで、アプリケーションの一時停止と再開の[`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)と[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)のぺージイベントをそれぞれ無効にするために使用されます。さらに、これには一時停止時にソフトキーボードの操作方式に[`WindowSoftInputModeAdjust.Resize`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/)が設定されていて、ソフトキーボードが表示されていた場合に、再開時にソフトキーボードを表示するかどうかを制御する機能も含まれます。
 
 > [!NOTE]
 > これらのイベントは、そのイベントに依存するアプリケーションの既存の動作を保持するためにデフォルトで有効であることに注意してください。 これらのイベントを無効にするとAppCompatのイベントサイクルを以前のAppCompatのイベントサイクルに合わせます。
 
-XAML で設定して使用できるこのプラットフォームに固有の[ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty/)、 [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty/)、および[ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty/) にアタッチされるプロパティ`boolean`値。
+このプラットフォーム仕様はXamlで[`Application.SendDisappearingEventOnPause`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty/)、[`Application.SendAppearingEventOnResume`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty/)、[`Application.ShouldPreserveKeyboardOnResume`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty/)添付プロパティに`boolean`値を設定して使用します。
 
 ```xaml
 <Application ...
@@ -243,7 +244,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 その結果、[`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)と[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)ぺージイベントはそれぞれアプリケーションの一時停止時と再開時に発生しなくなり、アプリケーションの一時停止時にソフトキーボードが表示されていた場合、再開時にもそれが表示されるようになります。
 
-[![](android-images/keyboard-on-resume.png "ライフ サイクル イベント プラットフォーム固有")](android-images/keyboard-on-resume-large.png#lightbox "イベントのプラットフォームに固有のライフ サイクル")
+[![](android-images/keyboard-on-resume.png "ライフサイクル イベントのプラットフォーム仕様")](android-images/keyboard-on-resume-large.png#lightbox "ライフサイクル イベントのプラットフォーム仕様")
 
 ## <a name="summary"></a>まとめ
 
@@ -252,7 +253,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
 - [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)
