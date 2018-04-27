@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
 ms.openlocfilehash: f851c1ca241be9e3c94a70b1f63135a46575d471
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリを追加します。
 
@@ -25,25 +25,25 @@ UWP 利用可能で、Xamarin.Forms 2.1 では、後であり、Xamarin.Forms.Ma
 
 Windows 10 の携帯電話、タブレット、およびデスクトップで実行される UWP アプリを追加する手順に従います。
 
- 1 . クリックし、ソリューションを右クリックして**追加 > 新しいプロジェクト.**を追加し、**空のアプリケーション (ユニバーサル Windows)**プロジェクト。
+ 1。 クリックし、ソリューションを右クリックして**追加 > 新しいプロジェクト.** を追加し、**空のアプリケーション (ユニバーサル Windows)** プロジェクト。
 
   ![](universal-images/add-wu.png "新しいプロジェクト ダイアログ ボックスを追加します。")
 
- 2 . **新しいユニバーサル Windows プラットフォーム プロジェクト**ダイアログ ボックスで、アプリが実行される Windows 10 の最小値とターゲットのバージョンを選択します。
+ 2 になります。 **新しいユニバーサル Windows プラットフォーム プロジェクト**ダイアログ ボックスで、アプリが実行される Windows 10 の最小値とターゲットのバージョンを選択します。
 
   ![](universal-images/target-version.png "新しいユニバーサル Windows プラットフォーム プロジェクト ダイアログ ボックス")
 
- 3 . UWP プロジェクトを右クリックし、選択**NuGet パッケージを管理しています.**を追加し、 **Xamarin.Forms**パッケージです。 ソリューション内の他のプロジェクトは、Xamarin.Forms パッケージの同じバージョンにも更新を確認します。
+ 3 です。 UWP プロジェクトを右クリックし、選択**NuGet パッケージを管理しています.** を追加し、 **Xamarin.Forms**パッケージです。 ソリューション内の他のプロジェクトは、Xamarin.Forms パッケージの同じバージョンにも更新を確認します。
 
- 4 . 新しい UWP プロジェクトがビルドされることを確認してください、**ビルド > Configuration Manager**ウィンドウ (この可能性がありますしない起きた既定)。 ティック、**ビルド**と**展開**ユニバーサル プロジェクトのボックス。
+ 4 です。 新しい UWP プロジェクトがビルドされることを確認してください、**ビルド > Configuration Manager**ウィンドウ (この可能性がありますしない起きた既定)。 ティック、**ビルド**と**展開**ユニバーサル プロジェクトのボックス。
 
   [![](universal-images/configuration-sml.png "構成マネージャー ウィンドウ")](universal-images/configuration.png#lightbox "構成マネージャー ウィンドウ")
 
- 5 . クリックし、プロジェクトを右クリックして**追加 > 参照**Xamarin.Forms アプリケーション プロジェクト (PCL、.NET Standard、またはプロジェクトの共有) への参照を作成します。
+ 5 です。 クリックし、プロジェクトを右クリックして**追加 > 参照**Xamarin.Forms アプリケーション プロジェクト (PCL、.NET Standard、またはプロジェクトの共有) への参照を作成します。
 
   ![](universal-images/addref-sml.png "参照マネージャー ダイアログ ボックス")
 
- 6 . UWP プロジェクトで、編集**App.xaml.cs**に含める、`Init`内のメソッドの呼び出し、 `OnLaunched` 52 'system.ftpserver メソッド。
+ 6。 UWP プロジェクトで、編集**App.xaml.cs**に含める、`Init`内のメソッドの呼び出し、 `OnLaunched` 52 'system.ftpserver メソッド。
 
 ```csharp
 // under this line
@@ -52,15 +52,15 @@ rootFrame.NavigationFailed += OnNavigationFailed;
 Xamarin.Forms.Forms.Init (e); // requires the `e` parameter
 ```
 
- 7 . UWP プロジェクトで、編集**MainPage.xaml**削除することによって、`Grid`内に含まれる、`Page`要素。
+ 7 です。 UWP プロジェクトで、編集**MainPage.xaml**削除することによって、`Grid`内に含まれる、`Page`要素。
 
- 8 . **MainPage.xaml**、追加、新しい`xmlns`エントリ`Xamarin.Forms.Platform.UWP`:
+ 8 です。 **MainPage.xaml**、追加、新しい`xmlns`エントリ`Xamarin.Forms.Platform.UWP`:
 
 ```csharp
 xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 ```
 
- 9 . **MainPage.xaml**、ルートを変更`<Page`要素`<forms:WindowsPage`:
+ 9 です。 **MainPage.xaml**、ルートを変更`<Page`要素`<forms:WindowsPage`:
 
 ```xaml
 <forms:WindowsPage
@@ -70,13 +70,13 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 </forms:WindowsPage>
 ```
 
- 10 . UWP プロジェクトで、編集**MainPage.xaml.cs**を削除する、`: Page`クラス名の指定子を継承 (から継承されるようになりましたので`WindowsPage`前の手順で行われた変更により)。
+ 10 です。 UWP プロジェクトで、編集**MainPage.xaml.cs**を削除する、`: Page`クラス名の指定子を継承 (から継承されるようになりましたので`WindowsPage`前の手順で行われた変更により)。
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11 . **MainPage.xaml.cs**、追加、`LoadApplication`で呼び出し、 `MainPage` Xamarin.Forms アプリを起動するコンス トラクター。
+ 11。 **MainPage.xaml.cs**、追加、`LoadApplication`で呼び出し、 `MainPage` Xamarin.Forms アプリを起動するコンス トラクター。
 
 ```csharp
 // below this existing line
@@ -95,7 +95,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
   * Location
 -->
 
-12 . (ローカル リソースを追加します。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトからです。
+12 です。 (ローカル リソースを追加します。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトからです。
 
 <a name="troubleshooting" />
 

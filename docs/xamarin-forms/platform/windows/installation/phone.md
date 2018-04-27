@@ -7,21 +7,21 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
 ms.openlocfilehash: 55bd4bdcfde4c91ad5c9b94bef486207466e135d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adding-a-windows-phone-app"></a>Windows Phone アプリを追加します。
 
 
 まず Xamarin.Forms PCL テンプレートを使用する場合は、[プロファイルを更新](~/xamarin-forms/platform/windows/installation/index.md)、し、次の手順に従います。
 
-1. **ソリューションを右クリックして > 追加 > 新しいプロジェクト.**を追加し、 **Blank App (Windows Phone)**
+1. **ソリューションを右クリックして > 追加 > 新しいプロジェクト.** を追加し、 **Blank App (Windows Phone)**
 
   ![](phone-images/add-wp81.png "新しいプロジェクト ダイアログ ボックスを追加します。")
 
-2. **新しく作成されたプロジェクトを右クリックして > NuGet パッケージの管理.**を追加し、 **Xamarin.Forms**パッケージです。
+2. **新しく作成されたプロジェクトを右クリックして > NuGet パッケージの管理.** を追加し、 **Xamarin.Forms**パッケージです。
 
 3. **プロジェクトを右クリックして > 追加 > 参照**し共有 Xamarin.Forms アプリケーション プロジェクトにプロジェクト参照を作成します。
 
@@ -36,7 +36,7 @@ Xamarin.Forms.Forms.Init (e); // requires LaunchActivatedEventArgs
 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {}
 ```
 
- 5 . 編集**MainPage.xaml** -ルート要素を変更`<Page`に`<forms:WindowsPhonePage`*と*定義、`xmlns:forms`のために使用します。
+ 5 です。 編集**MainPage.xaml** -ルート要素を変更`<Page`に`<forms:WindowsPhonePage`*と*定義、`xmlns:forms`のために使用します。
 
 ```xaml
 <forms:WindowsPhonePage
@@ -46,13 +46,13 @@ if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {}
 </forms:WindowsPhonePage>
 ```
 
- 6 . 編集**MainPage.xaml.cs**を削除する、`: PhonePage`クラス名の指定子を継承します。
+ 6。 編集**MainPage.xaml.cs**を削除する、`: PhonePage`クラス名の指定子を継承します。
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": PhonePage"
 ```
 
- 7 . まだ**MainPage.xaml.cs**、追加、`LoadApplication`で呼び出し、 `MainPage` ('system.ftpserver 28) コンス トラクター Xamarin.Forms アプリを起動します。
+ 7 です。 まだ**MainPage.xaml.cs**、追加、`LoadApplication`で呼び出し、 `MainPage` ('system.ftpserver 28) コンス トラクター Xamarin.Forms アプリを起動します。
 
 ```csharp
 // below this existing line
@@ -61,9 +61,9 @@ this.InitializeComponent();
 LoadApplication(new YOUR_NAMESPACE.App());
 ```
 
-8 . ダブルクリックして**Package.appxmanifest**を必要とされる多くの場合、これらの機能を設定します。
+8 です。 ダブルクリックして**Package.appxmanifest**を必要とされる多くの場合、これらの機能を設定します。
 
   * インターネット (クライアントとサーバー)
 
-9 . 最後に、(ローカル リソースを追加します。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトからです。
+9 です。 最後に、(ローカル リソースを追加します。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトからです。
 
