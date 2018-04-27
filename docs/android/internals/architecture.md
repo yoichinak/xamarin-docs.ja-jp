@@ -5,12 +5,12 @@ ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: f4be88a1eabb3fa3cca733690a3f097a03516272
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 9ce1d790f5dea00ac47d5639ae8424793006445a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="architecture"></a>アーキテクチャ
 
@@ -32,7 +32,7 @@ Android のクラスが、Android のランタイム クラスと通信する方
 
 Android アプリケーション パッケージは ZIP を使用したコンテナー、 *.apk*ファイル拡張子。 Xamarin.Android アプリケーション パッケージと同じである構造体レイアウトとして、次の項目を追加、標準の Android パッケージ。
 
--   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダーです。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()*プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アセンブリを実行する前に抽出する必要はありません、高速のアプリ起動時。 - *注:*アセンブリの場所情報など、 [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)と[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
+-   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダーです。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()* プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アセンブリを実行する前に抽出する必要はありません、高速のアプリ起動時。 - *注:* アセンブリの場所情報など、 [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)と[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
     *は適して*リリースでは構築します。 個別の filesystem のエントリとして存在しないされ、使用可能な場所がありません。
 
 
@@ -70,16 +70,16 @@ Xamarin.Android アプリケーションにも含まれて*Android 呼び出し�
 マネージ呼び出し可能ラッパー サブクラスは、「興味深い」すべてのアプリケーション固有のロジックが live 可能性があります。 ユーザー設定が含まれます[Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)サブクラス (など、 [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13)既定のプロジェクト テンプレートの種類)。 (具体的には、これらはいずれかの*Java.Lang.Object*サブクラスは*いない*を含む、 [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)カスタム属性または[RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/)は*false*、既定値です)。
 
 同様に管理されている、呼び出し可能ラッパーをマネージ呼び出し可能ラッパー サブクラスが経由でアクセスできるグローバルの参照を含めることも、 [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/)プロパティです。 マネージ呼び出し可能ラッパーでグローバル参照明示的に解放できるを呼び出して同様[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)です。
-マネージ呼び出し可能ラッパーとは異なり*細心*としてこのようなインスタンスの破棄される前に実行する必要があります*Dispose()*インスタンスの演算を行い、Java インスタンス間のマッピングが中断されます (のインスタンス、Android の呼び出し可能ラッパー) およびマネージ インスタンスです。
+マネージ呼び出し可能ラッパーとは異なり*細心*としてこのようなインスタンスの破棄される前に実行する必要があります*Dispose()* インスタンスの演算を行い、Java インスタンス間のマッピングが中断されます (のインスタンス、Android の呼び出し可能ラッパー) およびマネージ インスタンスです。
 
 
 ### <a name="java-activation"></a>Java のアクティブ化
 
-ときに、 [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md) Java から (について) が作成されると、についてコンス トラクターは、対応する c# 呼び出されるコンス トラクターになります。 についてなど*MainActivity*呼び出しは、既定のコンス トラクターが含まれます*MainActivity*の既定のコンス トラクターです。 (これには、 *TypeManager.Activate()*についてコンス トラクター内で呼び出します)。
+ときに、 [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md) Java から (について) が作成されると、についてコンス トラクターは、対応する c# 呼び出されるコンス トラクターになります。 についてなど*MainActivity*呼び出しは、既定のコンス トラクターが含まれます*MainActivity*の既定のコンス トラクターです。 (これには、 *TypeManager.Activate()* についてコンス トラクター内で呼び出します)。
 
-結果の他の 1 つのコンス トラクター シグネチャがある: *(IntPtr、JniHandleOwnership)*コンス トラクターです。 *(IntPtr、JniHandleOwnership)* Java オブジェクトはマネージ コードに公開され、マネージ呼び出し可能ラッパーを JNI ハンドルを管理するために作成する必要があるたびに、コンス トラクターが呼び出されます。 通常これは自動的にします。
+結果の他の 1 つのコンス トラクター シグネチャがある: *(IntPtr、JniHandleOwnership)* コンス トラクターです。 *(IntPtr、JniHandleOwnership)* Java オブジェクトはマネージ コードに公開され、マネージ呼び出し可能ラッパーを JNI ハンドルを管理するために作成する必要があるたびに、コンス トラクターが呼び出されます。 通常これは自動的にします。
 
-これで 2 つのシナリオがある、 *(IntPtr、JniHandleOwnership)*コンス トラクターを呼び出し可能ラッパーをマネージ サブクラスに手動で指定する必要があります。
+これで 2 つのシナリオがある、 *(IntPtr、JniHandleOwnership)* コンス トラクターを呼び出し可能ラッパーをマネージ サブクラスに手動で指定する必要があります。
 
 1. [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/)がサブクラス化されています。 *アプリケーション*は特殊です既定値*アプリケーション*コンス トラクターは*決して*呼び出されると[(IntPtr、JniHandleOwnership) コンス トラクターを指定する代わりにする必要があります](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/SanityTests/Hello.cs#L105)。
 
@@ -99,33 +99,29 @@ LogTextBox インスタンスをインスタンス化でサポートされるを
 
 3.  *Monodroid.apidemo.LogTextBox*コンス トラクターを実行、 [android.widget.TextView](http://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)コンス トラクターです。
 
-4.  *TextView*コンス トラクターを呼び出す*monodroid.apidemo.LogTextBox.getDefaultMovementMethod()*です。
+4.  *TextView*コンス トラクターを呼び出す*monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* です。
 
 5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* invokes *LogTextBox.n_getDefaultMovementMethod()* , which invokes *TextView.n_GetDefaultMovementMethod()* , which invokes [Java.Lang.Object.GetObject&lt;TextView&gt; (handle, JniHandleOwnership.DoNotTransfer)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) .
 
-6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* checks to see if there is already a corresponding C# instance for *handle* . ある場合が返されます。 このシナリオではありません、ため*Object.GetObject&lt;T&gt;()*いずれかを作成する必要があります。
+6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* checks to see if there is already a corresponding C# instance for *handle* . ある場合が返されます。 このシナリオではありません、ため*Object.GetObject&lt;T&gt;()* いずれかを作成する必要があります。
 
-7.  *Object.GetObject&lt;T&gt;()*は検索、 *LogTextBox (IntPtr、JniHandleOwneship)*コンス トラクターは、これを呼び出して、マッピングを作成*処理*と作成されたインスタンスで、作成されたインスタンスを返します。
+7.  *Object.GetObject&lt;T&gt;()* は検索、 *LogTextBox (IntPtr、JniHandleOwneship)* コンス トラクターは、これを呼び出して、マッピングを作成*処理*と作成されたインスタンスで、作成されたインスタンスを返します。
 
-8.  *TextView.n_GetDefaultMovementMethod()* invokes the *LogTextBox.DefaultMovementMethod* property getter.
+8.  *TextView.n_GetDefaultMovementMethod()* 呼び出します、 *LogTextBox.DefaultMovementMethod*プロパティ get アクセス操作子。
 
 9.  制御が戻る、 *android.widget.TextView*コンス トラクターは、実行を終了します。
 
-10. *Monodroid.apidemo.LogTextBox*コンス トラクターを実行する呼び出し*TypeManager.Activate()*です。
+10. *Monodroid.apidemo.LogTextBox*コンス トラクターを実行する呼び出し*TypeManager.Activate()* です。
 
-11. *LogTextBox (コンテキスト、IAttributeSet、int)*コンス トラクターを実行*(7) で作成された、同じインスタンスで*です。
+11. *LogTextBox (コンテキスト、IAttributeSet、int)* コンス トラクターを実行 *(7) で作成された、同じインスタンスで*です。
 
-12. ...
-
-
-場合 (IntPtr、JniHandleOwnership) コンス トラクターが見つからない場合、 [System.MissingMethodException](https://developer.xamarin.com/api/type/System.MissingMethodException/)がスローされます。
-
+12. 場合 (IntPtr、JniHandleOwnership) コンス トラクターが見つかりません、System.MissingMethodException] (https://developer.xamarin.com/api/type/System.MissingMethodException/)がスローされます。
 
 <a name="Premature_Dispose_Calls" />
 
 ### <a name="premature-dispose-calls"></a>不完全な Dispose() 呼び出し
 
-JNI ハンドルと C# の場合、対応するインスタンスの間のマッピングがあります。 Java.Lang.Object.Dispose() は、このマッピングを解除します。 Java のアクティブ化のようになります JNI ハンドルは、マッピングが切断された後にマネージ コードを入力する場合、 *(IntPtr、JniHandleOwnership)*コンス トラクターを確認し、呼び出されます。 コンス トラクターが存在しない場合は、例外がスローされます。
+JNI ハンドルと C# の場合、対応するインスタンスの間のマッピングがあります。 Java.Lang.Object.Dispose() は、このマッピングを解除します。 Java のアクティブ化のようになります JNI ハンドルは、マッピングが切断された後にマネージ コードを入力する場合、 *(IntPtr、JniHandleOwnership)* コンス トラクターを確認し、呼び出されます。 コンス トラクターが存在しない場合は、例外がスローされます。
 
 たとえば、次のマネージ呼び出し可能 Wraper サブクラスを考えてみます。
 
@@ -168,19 +164,19 @@ E/mono    ( 2906):   at Java.Lang.Object.GetObject (IntPtr handle, JniHandleOwne
 E/mono    ( 2906):   at Java.Lang.Object._GetObject[IJavaObject] (IntPtr handle, JniHandleOwnership transfer) [0x00000
 ```
 
-サブクラスは含まれている場合、 *(IntPtr、JniHandleOwnership)*コンス トラクター、*新しい*型のインスタンスが作成されます。 その結果、インスタンスは、新しいインスタンスは、""すべてのインスタンスのデータが失わに表示されます。 (値が null であることに注意してください)。
+サブクラスは含まれている場合、 *(IntPtr、JniHandleOwnership)* コンス トラクター、*新しい*型のインスタンスが作成されます。 その結果、インスタンスは、新しいインスタンスは、""すべてのインスタンスのデータが失わに表示されます。 (値が null であることに注意してください)。
 
 ```shell
 I/mono-stdout( 2993): [Managed: Value=]
 ```
 
-のみ*Dispose()*の Java オブジェクトは、使用されませんまたはサブクラスにインスタンス データが含まれていないことがわかっている場合に、呼び出し可能ラッパーのサブクラスをマネージ*(IntPtr、JniHandleOwnership)*コンス トラクターが用意されています。
+のみ*Dispose()* の Java オブジェクトは、使用されませんまたはサブクラスにインスタンス データが含まれていないことがわかっている場合に、呼び出し可能ラッパーのサブクラスをマネージ *(IntPtr、JniHandleOwnership)* コンス トラクターが用意されています。
 
 
 
 ## <a name="application-startup"></a>アプリケーションの起動
 
-アクティビティをサービスなどが起動、Android が最初に確認アクティビティ、サービスなどをホストする実行中のプロセスがないか確認します。このようなプロセスが存在しない場合、新しいプロセスが作成されます、 [AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/manifest-intro.html)読み取りとで指定された型には、 [ /manifest/application/@android:name ](http://developer.android.com/guide/topics/manifest/application-element.html#nm)属性は読み込まれ、インスタンス化します。 次に、によって指定されたすべての型、 [ /manifest/application/provider/@android:name ](http://developer.android.com/guide/topics/manifest/provider-element.html#nm)属性値がインスタンス化して、 [ContentProvider.attachInfo%28)](https://developer.xamarin.com/api/member/Android.Content.ContentProvider.AttachInfo/p/Android.Content.Context/Android.Content.PM.ProviderInfo/)メソッドが呼び出されました。 追加することによってこの Xamarin.Android フック、*モノラルです。MonoRuntimeProvider* *ContentProvider* AndroidManifest.xml ビルド処理中にします。 *モノラルです。MonoRuntimeProvider.attachInfo()*メソッドはの Mono ランタイムをプロセスに読み込みを管理します。
+アクティビティをサービスなどが起動、Android が最初に確認アクティビティ、サービスなどをホストする実行中のプロセスがないか確認します。このようなプロセスが存在しない場合、新しいプロセスが作成されます、 [AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/manifest-intro.html)読み取りとで指定された型には、 [ /manifest/application/@android:name ](http://developer.android.com/guide/topics/manifest/application-element.html#nm)属性は読み込まれ、インスタンス化します。 次に、によって指定されたすべての型、 [ /manifest/application/provider/@android:name ](http://developer.android.com/guide/topics/manifest/provider-element.html#nm)属性値がインスタンス化して、 [ContentProvider.attachInfo%28)](https://developer.xamarin.com/api/member/Android.Content.ContentProvider.AttachInfo/p/Android.Content.Context/Android.Content.PM.ProviderInfo/)メソッドが呼び出されました。 追加することによってこの Xamarin.Android フック、*モノラルです。MonoRuntimeProvider* *ContentProvider* AndroidManifest.xml ビルド処理中にします。 *モノラルです。MonoRuntimeProvider.attachInfo()* メソッドはの Mono ランタイムをプロセスに読み込みを管理します。
 モノラルを使用して、この時点より前に試みたすべての操作は失敗します。 (*注*その理由はどのサブクラスの種類[Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/)を提供する必要があります、 [(IntPtr、JniHandleOwnership) コンス トラクター](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)アプリケーション インスタンスが、。前に作成モノラルを初期化することができます。)
 
 プロセスの初期化が完了すると、`AndroidManifest.xml`アクティビティ/サービスなどを起動するのクラス名を検索する参照されます。 たとえば、 [ /manifest/application/activity/@android:name属性](http://developer.android.com/guide/topics/manifest/activity-element.html#nm)をロードするためのアクティビティの名前を決定するために使用します。 活動では、この型を継承する必要があります[android.app.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)です。

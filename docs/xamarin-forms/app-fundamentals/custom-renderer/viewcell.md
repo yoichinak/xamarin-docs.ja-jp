@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell をカスタマイズします。
 
 _Xamarin.Forms ViewCell は、ListView または開発者が定義したビューが含まれているテーブルに追加できるセルです。この記事では、Xamarin.Forms ListView コントロールの内部でホストされている ViewCell 用のカスタム レンダラーを作成する方法を示します。これによってされない Xamarin.Forms レイアウトの計算で停止 ListView スクロール中に繰り返し呼び出されます。_
 
-Xamarin.Forms のすべてのセルは、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがします。 ときに、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`ViewCellRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UITableViewCell`コントロール。 Android のプラットフォームでは、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブな`View`コントロール。 Windows Phone でユニバーサル Windows プラットフォーム (UWP)、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブな`DataTemplate`します。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+Xamarin.Forms のすべてのセルは、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがします。 ときに、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`ViewCellRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UITableViewCell`コントロール。 Android のプラットフォームでは、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブな`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブな`DataTemplate`します。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
 
 次の図の間のリレーションシップを示しています、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)とそれを実装する、対応するネイティブ コントロール。
 
@@ -169,7 +169,7 @@ Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Form
 
 ![](viewcell-images/screenshots.png "各プラットフォームで NativeCell")
 
-`ViewCellRenderer`クラスは、カスタムのセルを表示するためのプラットフォーム固有のメソッドを公開します。 これは、`GetCell`プラットフォームでは、iOS、メソッド、`GetCellCore`プラットフォームでは、Android、メソッド、 `GetTemplate` Windows Phone のプラットフォームでのメソッドです。
+`ViewCellRenderer`クラスは、カスタムのセルを表示するためのプラットフォーム固有のメソッドを公開します。 これは、`GetCell`プラットフォームでは、iOS、メソッド、`GetCellCore`プラットフォームでは、Android、メソッド、および`GetTemplate`UWP 上のメソッドです。
 
 各カスタム レンダラー クラスがで修飾された、 `ExportRenderer` Xamarin.Forms では、レンダラーを登録する属性。 属性は、–、表示される Xamarin.Forms セルの種類の名前とカスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
 
@@ -519,15 +519,15 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 
 このレイアウトを指定する 2 つ`TextView`コントロールと`ImageView`コントロールがセルの内容を表示するために使用します。 2 つ`TextView`コントロールは垂直方向に配置内で、`LinearLayout`中に含まれるすべてのコントロールのコントロール、`RelativeLayout`です。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone のカスタム レンダラーを作成し、UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP にカスタム レンダラーを作成します。
 
-次のコード例では、Windows Phone と UWP のカスタム レンダラーを示しています。
+次のコード例は、UWP のカスタム レンダラーを示しています。
 
 ```csharp
-[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeWinPhoneCellRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneCellRenderer : ViewCellRenderer
+    public class NativeUWPCellRenderer : ViewCellRenderer
     {
         public override Windows.UI.Xaml.DataTemplate GetTemplate(Cell cell)
         {

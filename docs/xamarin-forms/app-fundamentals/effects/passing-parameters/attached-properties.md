@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: c02929c49d9757f0814208d5f4fce7d258a689bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bca36189100942e21d1d750dd156dab0cf45fc4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>添付プロパティとして効果のパラメーターの引き渡し
 
@@ -257,7 +257,7 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged`メソッドは、radius、色、または、影のオフセットを更新します。 提供される、適切な`ShadowEffect`添付プロパティの値が変更されました。 このオーバーライドは、何度も呼び出すことができるよう、変更されているプロパティのチェックを実行常にする必要があります。
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android プロジェクト
 
 次のコード例は、 `LabelShadowEffect` Android プロジェクトの実装。
 
@@ -345,14 +345,14 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged`メソッドは、radius、色、または、影のオフセットを更新します。 提供される、適切な`ShadowEffect`添付プロパティの値が変更されました。 このオーバーライドは、何度も呼び出すことができるよう、変更されているプロパティのチェックを実行常にする必要があります。
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone とユニバーサル Windows プラットフォーム プロジェクト
+### <a name="universal-windows-platform-project"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
-次のコード例は、 `LabelShadowEffect` Windows Phone およびユニバーサル Windows プラットフォーム (UWP) プロジェクトの実装。
+次のコード例は、`LabelShadowEffect`ユニバーサル Windows プラットフォーム (UWP) プロジェクトの実装。
 
 ```csharp
 [assembly: ResolutionGroupName ("MyCompany")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -401,7 +401,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Windows ランタイムとユニバーサル Windows プラットフォームが影付き効果を提供しないため、`LabelShadowEffect`両方のプラットフォームで実装された 2 つ目のオフセットを追加することでシミュレートする[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)プライマリの背後にある`Label`. `OnAttached`メソッドが、新たに作成`Label`のいくつかのレイアウト プロパティを設定し、`Label`です。 使用して添付プロパティの値を取得するメソッドを呼び出して、 `ShadowEffect` get アクセス操作子を設定して影を作成し、 [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)、 [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)、および[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)の位置と色を制御するプロパティ、`Label`です。 `shadowLabel`が挿入される、プライマリの背後にあるオフセット`Label`です。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+ユニバーサル Windows プラットフォームが影付き効果を提供しないため、`LabelShadowEffect`両方のプラットフォームで実装された 2 つ目のオフセットを追加することでシミュレートする[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)プライマリの背後にある`Label`です。 `OnAttached`メソッドが、新たに作成`Label`のいくつかのレイアウト プロパティを設定し、`Label`です。 使用して添付プロパティの値を取得するメソッドを呼び出して、 `ShadowEffect` get アクセス操作子を設定して影を作成し、 [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)、 [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)、および[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)の位置と色を制御するプロパティ、`Label`です。 `shadowLabel`が挿入される、プライマリの背後にあるオフセット`Label`です。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
 
 #### <a name="responding-to-property-changes"></a>プロパティが変更された場合の対処
 

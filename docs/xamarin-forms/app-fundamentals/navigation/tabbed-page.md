@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 11287d38ec0e01e068ca385c92e6a6efdc323aeb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tabbed-page"></a>タブ ページ
 
@@ -39,7 +39,6 @@ _Xamarin.Forms TabbedPage は、詳細領域へのコンテンツの読み込み
     > [!NOTE]
   > ある AppCompat を Android で使用する場合の各タブもアイコンが表示されます、注意してください。 さらに、 `TabbedPageRenderer` Android AppCompat には、オーバーライド可能な`SetTabIcon`カスタムから タブのアイコンの読み込みに使用できるメソッド`Drawable`です。 このオーバーライドでは、上にアイコンとして SVG イメージを使用すること、`TabbedPage`です。
 
-- Windows Phone で画面の上部にあるタブの一覧が表示されます、詳細領域の下。 名前は小文字、およびユーザーに自動的に変換 タブは、1 つの画面に収まるようが多すぎますがある場合、タブのコレクションをスクロールできます。
 - 要因 - Windows タブレット フォームにタブが表示されない常に、ユーザーが方向にスワイプ ダウンする必要があります (または右クリックし、マウスが取り付けられている場合) 内のタブを表示する、 `TabbedPage` (下図のように)。
 
 ![](tabbed-page-images/windows-tabs.png "Windows 上の TabbedPage タブ")

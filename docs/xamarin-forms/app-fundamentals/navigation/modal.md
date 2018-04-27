@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 909a04398043a3c2f0c30e4da82d174a6bfaf148
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d52aa69372ab5ec3073e2355a43521b515ca8b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="modal-pages"></a>モーダル ページ
 
@@ -100,7 +100,7 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 
 ### <a name="disabling-the-back-button"></a>[戻る] ボタンを無効にします。
 
-Android および Windows Phone では、ユーザー常に押して戻ることが前のページに、標準*戻る*デバイス上のボタンをクリックします。 モーダル ページでは、ページを終了する前に、自己完結型のタスクを完了する必要がある場合、アプリケーションを無効にする必要があります、*戻る*ボタンをクリックします。 これには、オーバーライドすることで、 [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/)モーダル ページのメソッドです。 詳細については、次を参照してください。 [24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold Xamarin.Forms 書籍のです。
+Android でユーザー常に押して戻ることが前のページに、標準*戻る*デバイス上のボタンをクリックします。 モーダル ページでは、ページを終了する前に、自己完結型のタスクを完了する必要がある場合、アプリケーションを無効にする必要があります、*戻る*ボタンをクリックします。 これには、オーバーライドすることで、 [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/)モーダル ページのメソッドです。 詳細については、次を参照してください。 [24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold Xamarin.Forms 書籍のです。
 
 ### <a name="animating-page-transitions"></a>ページは、遷移のアニメーション化
 

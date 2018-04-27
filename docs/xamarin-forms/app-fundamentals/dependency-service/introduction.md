@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 01953d55a104a70b0451c9b796c732254afb081e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88821c5315fc338b5195e42ea4b2bc3e648e6ea1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService の概要
 
@@ -48,53 +48,64 @@ public interface ITextToSpeech {
 
 ### <a name="implementation-per-platform"></a>プラットフォームごとの実装
 
-適切なインターフェイスを設計すると後、を対象とする各プラットフォームのプロジェクトでそのインターフェイスを実装する必要があります。 次の実装するクラスなど、 `ITextToSpeech` Windows Phone 上のインターフェイス。
+適切なインターフェイスを設計すると後、を対象とする各プラットフォームのプロジェクトでそのインターフェイスを実装する必要があります。 たとえば、次のクラスを実装、 `ITextToSpeech` iOS 上のインターフェイス。
 
 ```csharp
-namespace TextToSpeech.WinPhone
+namespace UsingDependencyService.iOS
 {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
-すべての実装が必要なこと、既定の (パラメーターなし) コンス トラクターの順序で注意してください`DependencyService`がそれをインスタンス化できます。 パラメーターなしのコンス トラクターは、インターフェイスで定義できません。
-
 ### <a name="registration"></a>登録
 
-登録する必要がある各インターフェイスの実装の`DependencyService`メタデータ属性を持つ。 次のコードは、Windows Phone の実装を登録します。
+登録する必要がある各インターフェイスの実装の`DependencyService`メタデータ属性を持つ。 次のコードは、iOS の実装を登録します。
 
 ```csharp
-using TextToSpeech.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
   ...
+}
 ```
 
 まとめ、プラットフォーム固有の実装は、これのようになります。
 
 ```csharp
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
@@ -102,7 +113,7 @@ namespace TextToSpeech.WinPhone {
 
 #### <a name="universal-windows-platform-net-native-compilation"></a>ユニバーサル Windows プラットフォームの .NET ネイティブ コンパイル
 
-.NET ネイティブのコンパイル オプションを使用する UWP プロジェクトが従う必要があります、[わずかに異なる構成](~/xamarin-forms/platform/windows/installation/universal.md#target-invocation-exception)Xamarin.Forms を初期化するときにします。 .NET ネイティブのコンパイルには、依存サービスのための若干異なる登録も必要です。
+.NET ネイティブのコンパイル オプションを使用する UWP プロジェクトが従う必要があります、[わずかに異なる構成](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception)Xamarin.Forms を初期化するときにします。 .NET ネイティブのコンパイルには、依存サービスのための若干異なる登録も必要です。
 
 **App.xaml.cs**ファイルを使用して、UWP プロジェクトで定義されている各依存関係サービスを手動で登録、`Register<T>`メソッドを次のようにします。
 

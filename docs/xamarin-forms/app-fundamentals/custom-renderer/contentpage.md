@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 58f5a64f85dbe5a6889e6ff598c14fdfd9b0a5df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da3025f2616c91488ec70e25836351b08e957494
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-contentpage"></a>コンテンツ ページをカスタマイズします。
 
 _コンテンツ ページは、1 つのビューを表示し、画面の大部分を占める visual 要素です。この記事では、開発者は、独自のプラットフォーム固有のカスタマイズと既定のネイティブ レンダリングをオーバーライドするコンテンツ ページのページで、カスタム レンダラーを作成する方法を示します。_
 
-各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`PageRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIViewController`コントロール。 Android のプラットフォームでは、`PageRenderer`クラスをインスタンス化、`ViewGroup`コントロール。 Windows Phone でユニバーサル Windows プラットフォーム (UWP)、`PageRenderer`クラスをインスタンス化、`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`PageRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIViewController`コントロール。 Android のプラットフォームでは、`PageRenderer`クラスをインスタンス化、`ViewGroup`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`PageRenderer`クラスをインスタンス化、`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
 
 次の図の間のリレーションシップを示しています、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)とそれを実装する、対応するネイティブ コントロール。
 
@@ -198,57 +198,6 @@ namespace CustomRenderer.Droid
 
 ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`Camera`カメラと前に、写真をキャプチャする権限からライブ ストリームを提供する API、`AddView`ライブのカメラを追加するメソッドが呼び出されるストリームの UI を`ViewGroup`です。
 
-### <a name="creating-the-page-renderer-on-windows-phone"></a>Windows Phone でページ レンダラーを作成します。
-
-次のコード例は、Windows Phone プラットフォーム用のページ レンダラーを示しています。
-
-```csharp
-[assembly: ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
-namespace CustomRenderer.WinPhone81
-{
-    public class CameraPageRenderer : PageRenderer
-    {
-        ...
-
-        protected override void OnElementChanged (VisualElementChangedEventArgs e)
-        {
-            base.OnElementChanged (e);
-
-            if (e.OldElement != null || Element == null) {
-                return;
-            }
-
-            try {
-                ...
-                var container = ContainerElement as Canvas;
-
-                SetupUserInterface ();
-                SetupEventHandlers ();
-                SetupLiveCameraStream ();
-                container.Children.Add (page);
-            }
-            ...
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            page.Arrange(new Windows.Foundation.Rect(0, 0, finalSize.Width, finalSize.Height));
-            return finalSize;
-        }
-        ...
-    }
-}
-```
-
-基本クラスの呼び出し`OnElementChanged`メソッドは、Windows Phone をインスタンス化`Canvas`コントロール、ページがレンダリングされます。 カメラのライブ ストリームがレンダリングされるは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、なるは、カスタム レンダラーによってレンダリングされるページ インスタンスが存在するだけです。
-
-Windows Phone のプラットフォームでネイティブに、プラットフォームで使用されているページへの参照を型指定されたをを介してアクセスできる、`ContainerElement`プロパティで、`Canvas`制御への参照を型指定されている、`FrameworkElement`です。 ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`MediaCapture`カメラと、カスタマイズされたページに追加する前に、写真をキャプチャする権限からライブ ストリームを提供する API、`Canvas`表示用です。
-
-派生するカスタム レンダラーを実装するときに`PageRenderer`Windows ランタイムで、`ArrangeOverride`基本レンダラーが不明な関連付けを行うためにも、メソッドを実装ページ コントロールを配置する必要があります。 それ以外の場合、空白のページが発生します。 そのため、この例では、`ArrangeOverride`メソッドの呼び出し、`Arrange`メソッドを`Page`インスタンス。
-
-> [!NOTE]
-> 停止し、Windows Phone 8.1 WinRT アプリケーションにカメラへのアクセスを提供するオブジェクトの破棄は重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。、`CleanUpCaptureResourcesAsync`サンプル ソリューションで Windows Phone プロジェクト内のメソッドと[クイック スタート: MediaCapture API を使用してビデオを取り込む](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)です。
-
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP にページ レンダラーを作成します。
 
 次のコード例は、UWP 用ページ レンダラーを示しています。
@@ -305,4 +254,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [CustomRendererContentPage (sample)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/)
+- [CustomRendererContentPage (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/)

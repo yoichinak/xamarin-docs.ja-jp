@@ -1,5 +1,5 @@
 ---
-title: Xamarin Live Player App
+title: Xamarin Player がライブ アプリ
 description: 編集し、同時にリアルタイムで iOS または Android デバイスでアプリをテスト
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
@@ -7,13 +7,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 2ddaba4541af52ae119fbf504fdcc66ba357c113
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3205d83ba207322d4c53c4c6e98d4890ad48a77
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="xamarin-live-player-app"></a>Xamarin Live Player App
+# <a name="xamarin-live-player-app"></a>Xamarin Player がライブ アプリ
 
 ![プレビュー機能](~/media/shared/preview.png)
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 Xamarin Live Player は、Google Play から Android 用に使用できます。
 
-[ ![Google Play に掲載](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+[![Google Play に掲載](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 せず Google Play の Android デバイス用の Xamarin Live Player がを通じて使用可能な[HockeyApp](https://aka.ms/xlp-hockeyapp)配布します。 For Android は、の使用を選択して Google Play から直接インストールできますが初期プレビューでさらに、ビルド、[開くベータ プログラム](https://play.google.com/apps/testing/com.xamarin.live)
 
@@ -51,9 +51,9 @@ Xamarin Live Player は、Google Play から Android 用に使用できます。
 
 ## <a name="options"></a>オプション
 
-情報ボタンを押して**(i)**を表示するアプリの下部にある、**オプション**メニュー。
+情報ボタンを押して **(i)** を表示するアプリの下部にある、**オプション**メニュー。
 
-[ ![[オプション] メニューのスクリーン ショット](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![[オプション] メニューのスクリーン ショット](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>ログ
 
@@ -61,11 +61,11 @@ Xamarin Live Player は、Google Play から Android 用に使用できます。
 
 ### <a name="settings"></a>設定
 
-* コンパイルと実行時のエラーの表示を切り替えます。
-* バージョン情報です。
-* フィードバックを送信します。
+- コンパイルと実行時のエラーの表示を切り替えます。
+- バージョン情報です。
+- フィードバックを送信します。
 
-[ ![設定のスクリーン ショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![設定のスクリーン ショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>デバイスの管理
 
@@ -107,9 +107,8 @@ Mac 用 Visual Studio で次のように選択します**ツール > (Xamarin Pl
 
 すべての問題を参照が発生した場合[制限事項とトラブルシューティング](~/tools/live-player/troubleshooting.md)です。
 
-
 ## <a name="related-links"></a>関連リンク
 
 - [制限事項](~/tools/live-player/limitations.md)
 - [トラブルシューティング](~/tools/live-player/troubleshooting.md)
-- [Xamarin Player のライブのサンプル](~/tools/livehttps://developer.xamarin.com/samples.md)
+- [Xamarin Player のライブのサンプル](samples.md)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: a153791893f99a472c3fcf91a205bf91ed971e13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -53,7 +53,7 @@ ListView 内のセルのカスタマイズの詳細については、次を参�
 リスト ビューには、相互作用のスタイル (など) の数がサポートされています。
 
 - **[更新するプル](interactivity.md#Pull_to_Refresh)** &ndash; ListView は、各プラットフォームで更新するプルをサポートしています。
-- **[コンテキストのアクション](interactivity.md#Context_Actions)** &ndash; ListView をリスト内の個々 の項目に行動をサポートしています。 たとえば、iOS にスワイプして、操作を実装したり時間の長い tap Android と Windows Phone のアクションをできます。
+- **[コンテキストのアクション](interactivity.md#Context_Actions)** &ndash; ListView をリスト内の個々 の項目に行動をサポートしています。 たとえば、iOS にスワイプして、操作を実装したり時間の長い tap Android での操作できます。
 - **[選択範囲](interactivity.md#selectiontaps)** &ndash;選択内容であり、行がタップされたときにアクションを実行する deselections をリッスンすることができます。
 
 ![](images/context-default.png "コンテキストのアクションを含む ListView")

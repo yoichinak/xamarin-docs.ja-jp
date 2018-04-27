@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dots-and-dashes"></a>ドットとダッシュ
 
@@ -164,7 +164,7 @@ float[] GetPickerArray(Picker picker)
 - {30, 10} なります {20、20} 破線の
 - {10、10、30, 10} {0、20、20、20} が点線および破線の行の
 
-ドットで区切られた、ストロークの破線 Windows 画面表示のキャップの`Round`します。 `Round`多くの場合、キャップのストロークは太線でドットとダッシュの最適な外観を与えます。
+ドットで区切られた、ストロークの破線 UWP 画面表示のキャップの`Round`します。 `Round`多くの場合、キャップのストロークは太線でドットとダッシュの最適な外観を与えます。
 
 これまで説明が行われないに 2 番目のパラメーターの`SKPathEffect.CreateDash`メソッドです。 このパラメーターの名前は`phase`あり、行の先頭のドットとダッシュのパターン内のオフセットを意味します。 たとえば、dash 配列がある場合 {10, 10} と`phase`は 10 ですが、行が、ドットではなく、ギャップが開始されます。
 

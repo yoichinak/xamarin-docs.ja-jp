@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: d07026fbcc43a43a9f26d85ad15d5a4e3165e2ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 110c608558059ba0f207b4cff343b428125e1784
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -282,11 +282,7 @@ Title="AbsoluteLayout">
 
 ![](absolute-layout-images/abs.png "複雑な AbsoluteLayout")
 
-なお、Windows Phone をボタンを表示する方法の違いにより、Windows Phone のスクリーン ショットで boxviews 円のいくつか置き換えられています。
-
 注意して`AbsoluteLayout`s が入れ子になった場合によってはレイアウトを入れ子が許容されるので、同じレイアウト内のすべての要素を表示するよりも簡単です。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

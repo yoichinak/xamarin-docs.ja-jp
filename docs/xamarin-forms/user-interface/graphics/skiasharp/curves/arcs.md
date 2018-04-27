@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: aba193ca38d60db52298fdf239d936310a4ac193
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -415,8 +415,6 @@ public partial class TangentArcPage : InteractivePage
 
 [![](arcs-images/tangentarc-small.png "タンジェント円弧ページのスクリーン ショットをトリプル")](arcs-images/tangentarc-large.png#lightbox "タンジェント円弧ページのトリプル スクリーン ショット")
 
-Windows Mobile デバイスで、3 つのポイントは、ほぼ同一線上と円弧が非常に小さいです。
-
 正接弧は、角が丸い角の丸い四角形などの作成に最適です。 `SKPath`が既に含まれる、`AddRoundedRect`メソッド、**丸め七角形**ページが使用する方法を示します`ArcTo`7 つの辺の多角形の角を丸める場合。 (コードは、正規の多角形の汎用的です。)
 
 `PaintSurface`のハンドラー、 [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs)クラスでは、1 つ含まれています`for`ループ、七角形とこれらの値から 7 つの辺の中間点を計算する 2 番目の 7 つの頂点の座標を計算するには頂点。 これらの中間点が、パスを構築するために使用されます。
@@ -607,7 +605,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 x = 112·cos(41.8) = 83
 
-y = 112·sin(41.8) = 75
+y = 112·sin(41.8) 75 を =
 
 次の 4 つの接点では、100 の円の半径のあるポイント (0, 0) で中央揃え無限大記号を描画するために必要なすべて。
 

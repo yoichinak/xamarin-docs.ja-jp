@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2e0a5ff433de034da0170e3aa9a19ab50ddc3cb6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 97f0917e4e8670ab379aae1b2707ae08cb29bb70
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="displaying-pop-ups"></a>ポップアップを表示します。
 
@@ -45,7 +45,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 ## <a name="guiding-users-through-tasks"></a>タスクを使用してユーザー ガイド
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) iOS での一般的な UI 要素です。 Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/)メソッドを使用して、このコントロールは、クロス プラットフォーム アプリでは、Android および Windows Phone でネイティブの選択肢を表示できます。
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) iOS での一般的な UI 要素です。 Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/)メソッドを使用して、このコントロールは、クロス プラットフォーム アプリでは、Android プロジェクトおよび UWP にネイティブの選択肢を表示できます。
 
 アクション、シートを表示する`await` [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/)いずれかで[ `Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)メッセージを渡すこと、および文字列としてのラベルのボタンをクリックします。 このメソッドは、ユーザーがクリックしてされたボタンの文字列のラベルを返します。 単純な例を次に示します。
 

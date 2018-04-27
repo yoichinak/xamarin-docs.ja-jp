@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 638243958fce34871089b10185f150492dbd2b0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c27f94302037e4e19c9d72131e7137c8a4004d5c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="stacklayout"></a>StackLayout
 
@@ -215,8 +215,6 @@ Title="StackLayouts">
 上記のコードは、次のレイアウトが得られます。
 
 ![](stack-layout-images/stack.png "複雑な StackLayout")
-
-なお、Windows Phone をボタンを表示する方法の違いにより、Windows Phone のスクリーン ショットで boxviews 円のいくつか置き換えられています。
 
 注意して`StackLayouts`s が入れ子になった場合によってはレイアウトを入れ子が許容されるので、同じレイアウト内のすべての要素を表示するよりも簡単です。 またことに注意して、ため`StackLayout`をサポートしていないアイテムの重なり、ページがレイアウトすてきな発見の他のレイアウト ページでします。
 

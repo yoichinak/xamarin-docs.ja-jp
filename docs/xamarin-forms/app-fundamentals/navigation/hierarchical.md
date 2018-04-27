@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: afaf0c702cdba1ba9c5d2c9d158501c50501f910
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc5b24474230fd2b2477f020ac24cd72996d7b1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -47,7 +47,7 @@ _NavigationPage クラスでは、ここで、ユーザーは forwards と backw
 
 - ナビゲーション バーは、タイトルを表示して、あるページの上部にある、ios の場合、*戻る*を前のページに返すボタンをクリックします。
 - Android でナビゲーション バーは、タイトル、アイコンに表示されるページの上部にあると*戻る*を前のページに返すボタンをクリックします。 アイコンがで定義されている、`[Activity]`を装飾する属性、 `MainActivity` Android プラットフォームに固有のプロジェクト内のクラスです。
-- Windows Phone のナビゲーション バーは、タイトルを表示するページの上部に存在します。 Windows Phone がない、*戻る*ため、ナビゲーション バーのボタンで、画面に表示される*戻る* ボタンが画面の下部に表示します。
+- ユニバーサル Windows プラットフォームにナビゲーション バーがタイトルに表示されるページの上部にある存在します。 
 
 すべてのプラットフォームの値で、 [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/)プロパティは、ページ タイトルとして表示されます。
 

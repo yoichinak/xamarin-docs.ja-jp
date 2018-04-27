@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b06b17ce8f19f7f7cabe35c23de5b61db8f71dbe
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -28,9 +28,6 @@ ms.lasthandoff: 04/04/2018
 ## <a name="controlling-orientation"></a>方向を制御します。
 
 Xamarin.Forms を使用する場合、デバイスの方向を制御するサポートされているメソッドは、それぞれのプロジェクトの設定を使用するです。
-
-> [!NOTE]
-> Xamarin.Forms 1.5.0 が原因でバグがある時点で、カスタム レンダラー ベースは失敗する方向を制御しようとします。 参照してください[このディスカッション](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)詳細については、Xamarin のフォーラムでは、この説明します。
 
 ### <a name="ios"></a>iOS
 
@@ -57,7 +54,6 @@ Mac 用 Visual Studio で iOS プロジェクトを開き、開き**Info.plist**
 ![Mac 用 Visual Studio でのデバイスの向きをサポート](device-orientation-images/orientation-xam-source.png)
 
 -----
-
 
 ### <a name="android"></a>Android
 
@@ -87,33 +83,15 @@ Xamarin.Android には、印刷の向きを指定するためのいくつかの�
 - **ReversePortrait** &ndash;により、アプリケーションは通常、「上下逆にします」が表示するための反対方向が直面している、縦向きを使用するには。
 - **FullSensor** &ndash;により、アプリケーションは (外の考えられる 4) 正しい向きを選択するセンサー データに依存します。
 - **FullUser** &ndash;により、ユーザーの印刷の向きの設定を使用するアプリケーション。 自動的に回転が有効になっている 4 つすべての向きを使用できます。
-- **UserLandscape** &ndash; _\[はサポートされていません\]_によって、横方向を使用するアプリケーションをユーザーが有効にすると、自動的に回転を使用している場合、向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
-- **UserPortrait** &ndash; _\[はサポートされていません\]_によって、縦向きを使用するアプリケーションをユーザーが有効にすると、自動的に回転を使用している場合、向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
-- **ロックされている** &ndash; _\[はサポートされていません\]_により、アプリケーションは、画面の向きを使用するものは、起動時にデバイスでの変更に応答することがなくの物理方向。 このオプションは、コンパイルに中断されます。
+- **UserLandscape** &ndash; _\[はサポートされていません\]_ によって、横方向を使用するアプリケーションをユーザーが有効にすると、自動的に回転を使用している場合、向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
+- **UserPortrait** &ndash; _\[はサポートされていません\]_ によって、縦向きを使用するアプリケーションをユーザーが有効にすると、自動的に回転を使用している場合、向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
+- **ロックされている** &ndash; _\[はサポートされていません\]_ により、アプリケーションは、画面の向きを使用するものは、起動時にデバイスでの変更に応答することがなくの物理方向。 このオプションは、コンパイルに中断されます。
 
 ネイティブの Android Api は、多数の向きを管理する方法を制御を提供する、基本設定を表す、ユーザーを明示的に矛盾するオプションを含むことに注意してください。
 
-### <a name="windows-phone"></a>Windows Phone
+### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-Windows Phone RT でサポートされる向きの設定、 <span class="UIItem">Package.appxmanifest</span>ファイル。 マニフェストを開くと、サポートされる向きを選択できる構成パネルが表示されます。
-
-![](device-orientation-images/vs-winrt-config.png "Package.appxmanifest Visual Editor")
-
-Windows Phone 8 (Silverlight) でサポートされる向きを設定して、コードで、 <span class="UIItem">MainPage.xaml.cs</span>ファイル。 既定のプロジェクト テンプレートでは、次のコード行で値が既に設定します。
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-```
-
-Windows Phone 上向きのオプションを指定するには、必要な向きを有効にするコードで置き換えること。
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-SupportedOrientations = SupportedPageOrientation.Portrait; // portrait only
-SupportedOrientations = SupportedPageOrientation.Landscape; // landscape only
-```
-
-注 (から見た縦)、Windows Phone が両方の横向きビューをサポートする方向を左から右へまたは右から左。 使用するを指定することはできません。
+ユニバーサル Windows プラットフォーム (UWP) でサポートされる向きで設定されている、 **Package.appxmanifest**ファイル。 マニフェストを開くと、サポートされる向きを選択できる構成パネルが表示されます。
 
 <a name="Reacting_to_Changes_in_Orientation" />
 

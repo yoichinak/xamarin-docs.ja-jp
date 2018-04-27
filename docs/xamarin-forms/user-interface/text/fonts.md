@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="fonts"></a>フォント
 
@@ -50,7 +50,7 @@ label.FontSize = 24;
 
 使用することも、`NamedSize`列挙型を持つ 4 つのビルトイン オプションです。Xamarin.Forms は各プラットフォームの最適なサイズを選択します。
 
--  **Micro**
+-  **マイクロ**
 -  **小さな**
 -  **[中]**
 -  **大規模です**
@@ -70,7 +70,7 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 
 -  **None**
 -  **太字**
--  **Italic**
+-  **斜体**
 
 `FontAttribute`列挙体は次のように使用することができます (1 つの属性を指定することができますか`OR`それら)。
 
@@ -166,7 +166,7 @@ Xamarin.Forms は制御がすべて表示テキスト、 `Font` Xaml で設定�
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="MarkerFelt-Thin" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>
@@ -178,7 +178,7 @@ Xamarin.Forms は制御がすべて表示テキスト、 `Font` Xaml で設定�
 
 ## <a name="using-a-custom-font"></a>カスタム フォントを使用してください。
 
-組み込みの書体以外のフォントを使用するには、プラットフォーム固有のコーディングのいくつかが必要です。 このスクリーン ショットは、カスタム フォントを示しています。**ロブスター**から[Google のオープン ソース フォント](https://www.google.com/fonts)iOS、Android、および Xamarin.Forms を使用して Windows Phone 上に描画します。
+組み込みの書体以外のフォントを使用するには、プラットフォーム固有のコーディングのいくつかが必要です。 このスクリーン ショットは、カスタム フォントを示しています。**ロブスター**から[Google のオープン ソース フォント](https://www.google.com/fonts)Xamarin.Forms を使用して表示します。
 
  [![IOS および Android でのカスタム フォント](fonts-images/custom-sml.png "カスタム フォント例")](fonts-images/custom.png#lightbox "カスタム フォントの例")
 
@@ -215,7 +215,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Windows プラットフォーム用の Xamarin.Forms では、次の名前付け基準を特定して、プロジェクトに追加されたカスタム フォントを参照できます。 最初にフォント ファイルを追加、 **/Assets フォント/**アプリケーション プロジェクトとセット内のフォルダー、<span class="UIItem">ビルド アクション: コンテンツ</span>です。 完全パスとフォント ファイル名、後にハッシュ (#) を使用して、<span class="UIItem">フォント名</span>次のコード スニペットで示すように、します。
+Windows プラットフォーム用の Xamarin.Forms では、次の名前付け基準を特定して、プロジェクトに追加されたカスタム フォントを参照できます。 最初にフォント ファイルを追加、 **/Assets フォント/** アプリケーション プロジェクトとセット内のフォルダー、<span class="UIItem">ビルド アクション: コンテンツ</span>です。 完全パスとフォント ファイル名、後にハッシュ (#) を使用して、<span class="UIItem">フォント名</span>次のコード スニペットで示すように、します。
 
 ```csharp
 new Label
@@ -240,7 +240,7 @@ new Label
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="Lobster-Regular" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>

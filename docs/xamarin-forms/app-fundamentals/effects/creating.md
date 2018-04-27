@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="creating-an-effect"></a>特殊効果を作成します。
 
@@ -96,7 +96,7 @@ namespace EffectsDemo.iOS
 
 `OnElementPropertyChanged`オーバーライドが Xamarin.Forms コントロールにバインド可能なプロパティの変更に応答します。 ときに、 [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/)プロパティの変更、`BackgroundColor`コントロールのプロパティが白に変更されるコントロールにフォーカスがある場合、それ以外の場合ライト紫に変更されます。 この機能をラップする`try` / `catch`ブロックに影響が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティです。
 
-## <a name="android-project"></a>Android Project
+## <a name="android-project"></a>Android プロジェクト
 
 次のコード例は、 `FocusEffect` Android プロジェクトの実装。
 
@@ -150,17 +150,17 @@ namespace EffectsDemo.Droid
 
 `OnElementPropertyChanged`オーバーライドが Xamarin.Forms コントロールにバインド可能なプロパティの変更に応答します。 ときに、 [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/)プロパティの変更、コントロールの背景色が白に変更されるコントロールにフォーカスがある場合、それ以外の場合明るい緑に変更されます。 この機能をラップする`try` / `catch`ブロックに影響が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティです。
 
-## <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone とユニバーサル Windows プラットフォーム プロジェクト
+## <a name="universal-windows-platform-projects"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
-次のコード例は、 `FocusEffect` Windows Phone およびユニバーサル Windows プラットフォーム (UWP) プロジェクトの実装。
+次のコード例は、`FocusEffect`プロジェクトのユニバーサル Windows プラットフォーム (UWP) の実装。
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinRT;
+using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
 [assembly: ExportEffect(typeof(FocusEffect), "FocusEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
     {

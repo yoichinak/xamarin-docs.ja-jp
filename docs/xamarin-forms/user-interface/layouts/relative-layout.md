@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 2edd7a982d0307475933a234e7e1fbb8dd8d6a34
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 924aa88d29379c98204fd810c651de56ff757971
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
@@ -221,8 +221,6 @@ Title="RelativeLayout">
 上記のコードは、次のレイアウトが得られます。
 
 ![](relative-layout-images/relative.png "複雑な [相対レイアウト]")
-
-なお、Windows Phone をボタンを表示する方法の違いにより、Windows Phone のスクリーン ショットで boxviews 円のいくつか置き換えられています。
 
 注意して`RelativeLayouts`s が入れ子になった場合によってはレイアウトを入れ子が許容されるので、同じレイアウト内のすべての要素を表示するよりも簡単です。 いくつかの要素があることを確認も`RelativeToView`ビュー間のリレーションシップに従って、配置時に簡単になりより直感的なレイアウトのできるため、します。
 

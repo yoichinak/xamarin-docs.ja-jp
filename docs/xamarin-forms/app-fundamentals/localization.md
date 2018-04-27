@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f179fcfc26dd73bf1655c786078dce1f6a02b3a9
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -63,7 +63,7 @@ Xamarin.Forms PCL アプリケーションのグローバル化の最初の手�
 
 ソリューション ツリー関連ファイルが表示されます。 RESX ファイル*必要があります*新しい変換可能な文字列; を追加するように編集する、 **. designer.cs**ファイルにする必要があります*いない*を編集します。
 
-![](localization-images/appresources-tree.png "AppResources.resx File")
+![](localization-images/appresources-tree.png "AppResources.resx ファイル")
 
 ##### <a name="string-visibility"></a>文字列の可視性
 
@@ -150,13 +150,13 @@ Xamarin.Forms PCL アプリケーションのグローバル化の最初の手�
 
 一般的なパターンは、2 文字の言語コードを使用するがある場合 (中国語) など、別の形式が使用されている例であり、ブラジルのポルトガル語) などその他の例 4 文字のロケール識別子が必要です。
 
-これらの言語に固有のリソース ファイル*しない*を必要とする**. designer.cs**部分クラスで、通常の XML ファイルとして追加できるように、**ビルド アクション: EmbeddedResource**を設定します。 このスクリーン ショットは、言語固有のリソース ファイルを含むソリューションを示しています。
+これらの言語に固有のリソース ファイル*しない*を必要とする **. designer.cs**部分クラスで、通常の XML ファイルとして追加できるように、**ビルド アクション: EmbeddedResource**を設定します。 このスクリーン ショットは、言語固有のリソース ファイルを含むソリューションを示しています。
 
 ![](localization-images/appresources-langs.png "言語固有のリソース ファイル")
 
 アプリケーションを開発し、基本の RESX ファイルが追加されたテキスト、する必要がありますに送ること翻訳それぞれは、変換者`data`要素と戻り値 (表示される名前付け規則を使用して) 言語固有のリソース ファイルをアプリに含めます。 '機械翻訳' 例をいくつか次に示します。
 
-**AppResources.es.resx (Spanish)**
+**AppResources.es.resx (スペイン語)**
 
 ```xml
 <data name="AddButton" xml:space="preserve">
@@ -201,7 +201,7 @@ myEntry.Placeholder = AppResources.NotesPlaceholder;
 myButton.Text = AppResources.AddButton;
 ```
 
-ハードコーディングされているのではなく、テキストが、そのリソースから読み込まれているため、アプリを複数の言語に翻訳することはこれを除く iOS、Android、および、Windows プラットフォームをレンダリングするとしてのユーザー インターフェイスが期待されます。 変換する前に各プラットフォームで UI を表示されたスクリーン ショットを次に示します。
+ハードコーディングされているのではなく、テキストが、そのリソースから読み込まれているため、アプリを複数の言語に翻訳することはこれを除く iOS、Android、および、ユニバーサル Windows プラットフォーム (UWP) をレンダリングするとしてのユーザー インターフェイスが期待されます。 変換する前に各プラットフォームで UI を表示されたスクリーン ショットを次に示します。
 
 ![](localization-images/simple-example-english.png "変換する前にクロスプラット フォームの Ui")
 
@@ -274,7 +274,7 @@ public interface ILocalize
 }
 ```
 
-次に、使用、 [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) 、Xamarin.Forms で`App`クラス、インターフェイスを呼び出すし、適切な値に、RESX リソースのカルチャを設定します。 手動でこの値の Windows Phone と、ユニバーサル Windows プラットフォーム リソース フレームワークから自動的に設定する必要があることに注意してくださいでは、これらのプラットフォームで、選択した言語を認識します。
+次に、使用、 [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) 、Xamarin.Forms で`App`クラス、インターフェイスを呼び出すし、適切な値に、RESX リソースのカルチャを設定します。 手動でこの値、ユニバーサル Windows プラットフォーム用のリソースのフレームワークから自動的に設定する必要があることに注意してくださいでは、これらのプラットフォームで、選択した言語を認識します。
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
@@ -326,7 +326,7 @@ public class PlatformCulture
 
 ### <a name="platform-specific-code"></a>プラットフォーム固有のコード
 
-コードを表示する言語を検出するためには、iOS、Android、および Windows プラットフォームは、少し異なる方法でこの情報を公開するため、プラットフォーム固有にすることがあります。 コードを`ILocalize`依存関係サービスは、の下の各プラットフォームのことを確認する追加のプラットフォームに固有の要件とローカライズされたテキストは正しくレンダリング提供します。
+コードを表示する言語を検出するためには、iOS、Android、および UWP は少し異なる方法でこの情報を公開するため、プラットフォーム固有にすることがあります。 コードを`ILocalize`依存関係サービスは、の下の各プラットフォームのことを確認する追加のプラットフォームに固有の要件とローカライズされたテキストは正しくレンダリング提供します。
 
 プラットフォーム固有のコードでは、オペレーティング システムが構成でサポートされていないはロケール識別子をできますケースは処理もする必要があります。NET の`CultureInfo`クラスです。 このような場合は、サポートされていないロケールを検出し、最適なを代用カスタム コードを記述する必要があります。NET と互換性のあるロケールです。
 
@@ -551,50 +551,11 @@ namespace UsingResxLocalization.Android
 Android アプリケーション プロジェクトにこのコードを追加するは、翻訳された文字列を自動的に表示することがあります。
 
 > [!NOTE]
->️**警告:**翻訳済みの文字列を使用している Android リリース ビルドでは、デバッグ中にない場合を右クリックし、 **Android プロジェクト**選択**オプション > ビルド > Androidビルド**ことを確認して、**アセンブリの展開を高速**チェック マークがないです。 このオプションは、リソースの読み込みで問題が発生しは、ローカライズされたアプリをテストしている場合、使用できません。
+>️**警告:** 翻訳済みの文字列を使用している Android リリース ビルドでは、デバッグ中にない場合を右クリックし、 **Android プロジェクト**選択**オプション > ビルド > Androidビルド**ことを確認して、**アセンブリの展開を高速**チェック マークがないです。 このオプションは、リソースの読み込みで問題が発生しは、ローカライズされたアプリをテストしている場合、使用できません。
 
-#### <a name="windows-application-projects"></a>Windows アプリケーション プロジェクト
+#### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-Windows 8.1 とユニバーサル Windows プラットフォーム (UWP) のプロジェクトには、依存関係サービスは必要ありません – これらのプラットフォームでリソースのカルチャを正しく設定に自動的にします。
-
-このドキュメントの後半で説明されている XAML マークアップ拡張機能を実装することがあります、 `ILocalize` Windows Phone の下に示すように実装します。
-
-##### <a name="windows-phone-80"></a>Windows Phone 8.0
-
-は使用されませんが、`App`クラスは、内部での Windows Phone の実装、`ILocalize`依存関係サービス。 このクラスを Windows Phone アプリ プロジェクトに追加します。後で説明されている XAML マークアップ拡張機能を実装する場合は必要になります。
-
-```csharp
-[assembly: Dependency(typeof(UsingResxLocalization.WinPhone.Localize))]
-
-namespace UsingResxLocalization.WinPhone
-{
-    public class Localize : UsingResxLocalization.ILocalize
-    {
-        public void SetLocale (CultureInfo ci) { }
-        public System.Globalization.CultureInfo GetCurrentCultureInfo ()
-        {
-            return System.Threading.Thread.CurrentThread.CurrentUICulture;
-        }
-    }
-}
-
-```
-
-Windows Phone 8.0 のプロジェクトは、ローカライズされたテキストを表示するのには適切に構成する必要があります。
-プロジェクトのオプションでサポートされる言語を選択する必要があります*と*、 **WMAppManifest.xml**ファイル。
-これらの設定が更新されない場合は、ローカライズされた RESX リソースは読み込まれません。
-
-##### <a name="project-options"></a>プロジェクトのオプション
-
-Windows Phone プロジェクトを右クリックし、選択**プロパティ**です。 **アプリケーション**ティックのタブ、**サポートされているカルチャ**アプリケーションがサポートします。
-
-[![](localization-images/winphone-projectproperties-sml.png "プロジェクトのプロパティ - サポートされているカルチャ")](localization-images/winphone-projectproperties.png#lightbox "プロジェクト プロパティでサポートされているカルチャ")
-
-##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
-
-Windows Phone プロジェクトの [プロパティ] ノードを展開し、ダブルクリック、 **WMAppManifest.xml**ファイル。 をクリックして、**パッケージング**タブし、目盛りをアプリケーションでサポートされているすべての言語です。
-
-[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - サポートされる言語")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml - サポートされる言語")
+ユニバーサル Windows プラットフォーム (UWP) プロジェクトには、依存関係サービスは不要です。 代わりに、このプラットフォームに自動的にリソースのカルチャを適切に設定します。
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
@@ -683,7 +644,7 @@ namespace UsingResxLocalization
 * `"UsingResxLocalization.Resx.AppResources"` RESX リソースのリソース識別子です。 これは、既定の名前空間、リソース ファイルが配置されているフォルダー、および既定の RESX ファイル名ので構成されます。
 * `ResourceManager`を使用してクラスを作成`IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)`、リソースの読み込みを現在のアセンブリを特定し、静的でキャッシュされた`ResMgr`フィールドです。 として作成される、`Lazy`で最初に使用されるまでの作成が遅延されるように、入力、`ProvideValue`メソッドです。
 * `ci` 依存関係サービスを使用して、ネイティブのオペレーティング システムからユーザーの選択した言語を取得します。
-* `GetString` リソース ファイルから実際の翻訳された文字列を取得する方法です。 Windows Phone 8.1 とユニバーサル Windows プラットフォームに`ci`が null でないため、`ILocalize`インターフェイスは、これらのプラットフォームで実装されていません。 これは、呼び出すことと同じ、`GetString`最初のパラメーターだけを持つメソッドです。 代わりに、リソース フレームワークでは、ロケールを自動的に認識され、適切な RESX ファイルから翻訳した文字列を取得します。
+* `GetString` リソース ファイルから実際の翻訳された文字列を取得する方法です。 ユニバーサル Windows プラットフォームに`ci`が null でないため、`ILocalize`インターフェイスは、これらのプラットフォームで実装されていません。 これは、呼び出すことと同じ、`GetString`最初のパラメーターだけを持つメソッドです。 代わりに、リソース フレームワークでは、ロケールを自動的に認識され、適切な RESX ファイルから翻訳した文字列を取得します。
 * エラー処理が例外をスローして不足しているリソースをデバッグする際に含まれています (で`DEBUG`モードのみ)。
 
 次の XAML スニペットは、マークアップ拡張機能を使用する方法を示します。 機能させる手順は次の 2 つです。
@@ -751,7 +712,7 @@ switch (Device.RuntimePlatform)
 
 ### <a name="ios-application-project"></a>iOS アプリケーション プロジェクト
 
-iOS プロジェクトのローカリゼーションをという名前の名前付け標準を使用してまたは**.lproj**イメージと文字列のリソースを格納するディレクトリ。 これらのディレクトリは、アプリで使用されるイメージのローカライズ版を含めることができます、さらに、 **InfoPlist.strings**アプリ名をローカライズするために使用するファイル。
+iOS プロジェクトのローカリゼーションをという名前の名前付け標準を使用してまたは **.lproj**イメージと文字列のリソースを格納するディレクトリ。 これらのディレクトリは、アプリで使用されるイメージのローカライズ版を含めることができます、さらに、 **InfoPlist.strings**アプリ名をローカライズするために使用するファイル。
 
 #### <a name="images"></a>イメージ
 
@@ -809,92 +770,23 @@ Android のようなさまざまなを使用して、ローカライズされた
 
 ![](localization-images/android-imageicon.png "Android のサンプル アプリのテキストとイメージのローカライズ")
 
-### <a name="windows-phone-80-application-project"></a>Windows Phone 8.0 のアプリケーション プロジェクト
+### <a name="universal-windows-platform-application-projects"></a>ユニバーサル Windows プラットフォーム アプリケーション プロジェクト
 
-Windows Phone は、単純な組み込みの方法を特定のローカライズされたイメージを選択してもアプリの名前をローカライズするためがありません。
-
-#### <a name="images"></a>イメージ
-
-この制限を回避するサンプルは、修正案イメージの読み込みを使用してローカライズを導入する方法、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)の`Image`コントロール。
-
-カスタム レンダラーのコードを次に示しますソースがある場合、`FileImageSource`これには、ファイル名を抽出し、使用して、ローカライズされたイメージへのパスを構築、し、`CurrentUICulture`です。 一部の言語には特別な処理が必要となるフォールバックも期待される役目です。例では、既定値は、いくつかの特殊なケースでを除く 2 文字の言語コードのみを使用するのには。
-
-```csharp
-using System.IO;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinPhone;
-
-[assembly: ExportRenderer(typeof(Image), typeof(UsingResxLocalization.WinPhone.LocalizedImageRenderer))]
-namespace UsingResxLocalization.WinPhone
-{
-    public class LocalizedImageRenderer : ImageRenderer
-    {
-        protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
-        {
-            base.OnElementChanged(e);
-
-            if (e.NewElement != null)
-            {
-                var s = e.NewElement.Source as FileImageSource;
-                if (s != null)
-                {
-                    var fileName = s.File;
-                    string ci = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
-                    // you might need some custom logic here to support particular cultures and fallbacks
-                    if (ci == "pt-BR") {
-                        // use the complete string 'as is'
-                    } else if (ci == "zh-CN") {
-                         // we could have named the image directories differently,
-                         // but this keeps them consisent with RESX file naming
-                        ci = "zh-Hans";
-                    } else if (ci == "zh-TW" || ci == "zh-HK") {
-                        ci = "zh-Hant";
-                    } else {
-                        // for all others, just use the two-character language code
-                        ci = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
-                    }
-                    e.NewElement.Source = Path.Combine("Assets/" + ci + "/" + fileName);
-                }
-            }
-        }
-    }
-}
-```
-
-このコードは、次に示すディレクトリ構造でのローカライズされたイメージとは動作します。 (特定のロケールを処理して、イメージが利用できないときにフォール) など、特定のローカライズの要件を満たすためのコードを変更することをお勧めします。
-
-![](localization-images/winphone-resources.png "WinPhone は、イメージ ディレクトリ構造に合わせてローカライズ")
-
-これで、Windows Phone は、イメージをローカライズします。 スペイン語と簡体字中国語) の「結果のスクリーン ショット次に示します。
-
-![](localization-images/winphone-image-sml.png "WinPhone サンプル アプリのテキストとイメージのローカライズ")
-
-#### <a name="app-name"></a>アプリ名
-
-Microsoft のドキュメントを参照してください[Windows Phone 8.0 アプリのタイトルのローカライズ](http://msdn.microsoft.com/library/windows/apps/ff967550(v=vs.105).aspx)です。
-
-### <a name="windows-phone-81-and-universal-windows-platform-application-projects"></a>Windows Phone 8.1 およびユニバーサル Windows プラットフォーム アプリケーション プロジェクト
-
-Windows Phone 8.1 とユニバーサル Windows プラットフォームの双方に、リソースのインフラストラクチャをイメージとアプリ名のローカライズを簡略化します。
+ユニバーサル Windows プラットフォームでは、イメージとアプリ名のローカライズを簡単にするリソース インフラストラクチャが適用されます。
 
 #### <a name="images"></a>イメージ
 
 イメージは、次のスクリーン ショットに示すようにリソース固有のフォルダーに配置してローカライズできます。
 
-![](localization-images/uwp-image-folder-structure.png "WinPhone 8.1 および UWP イメージ ローカリゼーション フォルダー構造")
+![](localization-images/uwp-image-folder-structure.png "UWP イメージ ローカリゼーション フォルダー構造")
 
 実行時に、Windows リソース インフラストラクチャは、ユーザーのロケールに基づく適切なイメージを選択します。
-
-#### <a name="app-name"></a>アプリ名
-
-Microsoft のドキュメントを参照してください[Windows 8.1 ストア アプリ: ユーザーにアプリを記述する情報のローカライズ](https://msdn.microsoft.com/library/windows/apps/hh454044.aspx)と[アプリ マニフェストから文字列を読み込む](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323.aspx#loading_strings_from_the_app_manifest.)します。
 
 ## <a name="summary"></a>まとめ
 
 RESX ファイルおよび .NET グローバリゼーションのクラスを使用して、Xamarin.Forms アプリケーションをローカライズできます。 別に、少量のプラットフォーム固有のコードでは、ユーザーが優先言語を検出するために、ほとんどのローカリゼーション リソースは、一般的なコードでの集中管理します。
 
-イメージは一般に、iOS と Android の両方で提供されるマルチ解像度のサポートを活用するためにプラットフォーム固有の方法で処理されます。 Windows Phone には、クロス プラットフォーム フレンドリな方法では; でイメージをローカライズするカスタム コードが必要です。この機能を追加するサンプル コードが指定されました。
-
+イメージは一般に、iOS と Android の両方で提供されるマルチ解像度のサポートを活用するためにプラットフォーム固有の方法で処理されます。 
 
 ## <a name="related-links"></a>関連リンク
 

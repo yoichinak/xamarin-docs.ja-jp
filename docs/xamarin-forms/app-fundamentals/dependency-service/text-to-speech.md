@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 67e392bb3672e54a1e2fe709af9cf5deb3dae5e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9cf700ea798ac316e806c40cb90eedc7ded9fa5
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-text-to-speech"></a>音声合成の実装
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 - **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;共有コードで、インターフェイスを作成する方法を理解します。
 - **[iOS 実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コードにインターフェイスを実装する方法について説明します。
 - **[Android 実装](#Android_Implementation)** &ndash; for Android のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[Windows 実装](#WindowsImplementation)** &ndash; Windows Phone とユニバーサル Windows プラットフォーム (UWP) のネイティブ コードにインターフェイスを実装する方法について説明します。
+- **[UWP 実装](#WindowsImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードにインターフェイスを実装する方法について説明します。
 - **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法を学習`DependencyService`に共有コードからネイティブの実装を呼び出します。
 
 アプリケーションを使用して、`DependencyService`次のような構造になります。
@@ -122,9 +122,9 @@ namespace DependencyServiceSample.Droid
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone とユニバーサル Windows プラットフォームの実装
+## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームの実装
 
-Windows Phone とユニバーサル Windows プラットフォームで音声認識 API がある、`Windows.Media.SpeechSynthesis`名前空間。 唯一の注意点は、目盛りに注意してください、**マイク**マニフェストで機能は、それ以外の場合 Api がブロックされている音声にアクセスします。
+ユニバーサル Windows プラットフォームが音声 API の`Windows.Media.SpeechSynthesis`名前空間。 唯一の注意点は、目盛りに注意してください、**マイク**マニフェストで機能は、それ以外の場合 Api がブロックされている音声にアクセスします。
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -165,7 +165,7 @@ public MainPage ()
 }
 ```
 
-IOS、Android、または Windows プラットフォームおよびキーを押して、ボタンが応対する各プラットフォームでネイティブ speech SDK を使用するアプリケーションで発生でこのアプリケーションを実行します。
+IOS、Android、または、UWP でこのアプリケーションを実行し、ボタンを押して応対する各プラットフォームでネイティブ speech SDK を使用して、アプリケーションが発生します。
 
  ![iOS と Android の音声合成ボタン](text-to-speech-images/running.png "テキスト読み上げサンプル")
 

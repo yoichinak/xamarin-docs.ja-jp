@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 95f782fd4670782217d8ce4bc055341747a71170
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>デバイス非依存単位、ピクセル
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 わかります、`CanvasSize`のプロパティ、`SKCanvasView`と`Size`のプロパティ、`SKImageInfo`値がピクセルのサイズをレポートに一致します。 `Height`と`Width`のプロパティ、 `SKCanvasView` Xamarin.Forms のプロパティと、ビュー、プラットフォームで定義されているデバイスに依存しない単位のサイズを報告します。
 
-左上の iOS 7 シミュレーターがデバイスに依存しない単位あたり 2 ピクセル、中央に Android Nexus 5 3 ピクセル単位では、持ち右側の Nokia Lumia 925 2.25 ピクセル単位です。 理由、単純な円、ほぼ同じサイズ、iPhone で表示されている以前の検索を Windows phone は、Android フォンでより小さい。
+左上の iOS 7 シミュレーター デバイスに依存しない単位あたり 2 ピクセルがあり、センターで Android Nexus 5 3 ピクセル単位です。 その前に示した単純な円では、さまざまなサイズをさまざまなプラットフォームにします。
 
 デバイス非依存単位でまったく作業する場合は、これを行う設定して、`IgnorePixelScaling`のプロパティ、`SKCanvasView`に`true`です。 ただし、結果を入らないかもしれません。 SkiaSharp は、ピクセル サイズがデバイスに依存しない単位のビューのサイズと等しいより小さなデバイス画面上の画像を表示します。 (たとえば、SkiaSharp は使用 360 x 512 ピクセルの表示画面 Nexus 5)。効率が改善そのイメージ サイズは、顕著なビットマップ ギザギザの結果として得られます。
 

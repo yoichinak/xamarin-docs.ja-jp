@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: d22ebf0e150c064835fa73765a65025f10ef4c2a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
@@ -165,7 +165,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](fill-types-images/fivepointedstar-small.png "Five-Pointed スター ページのスクリーン ショットをトリプル")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed スター ページのトリプル スクリーン ショット")
 
-Android および Windows のモバイル スクリーン ショット、典型的な偶ワインディングとの効果を表示するには塗りつぶし、ストロークの順序にも影響結果。
+Android および UWP スクリーン ショットでは、一般的な偶ワインディングとの効果を表示するには塗りつぶし、ストロークの順序は、結果も影響します。
 
 ワインディング アルゴリズムは、線を描画する方向に左右されます。 通常、パスを作成している場合、制御できますその方向別に行が 1 つのポイントから描画されることを指定します。 ただし、`SKPath`クラスもなどのメソッドを定義`AddRect`と`AddCircle`全体の輪郭を描画します。 これらのオブジェクトの描画方法を制御するには、メソッドは型のパラメーターを含めます。 [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/)、2 つのメンバーを持ちます。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>パート 1 です。 XAML の概要
 
@@ -29,7 +29,7 @@ Windows では、Visual Studio を使用して選択**ファイル > 新規 > �
 
 ソリューションの場所を選択しの名前を付けます**XamlSamples** (または必要に応じて)、キーを押します**OK**です。
 
-次の画面で選択、**空のアプリケーション**、テンプレート、 **Xamarin.Forms** UI テクノロジと**ポータブル クラス ライブラリ (PCL)**コード共有の戦略。
+次の画面で選択、**空のアプリケーション**、テンプレート、 **Xamarin.Forms** UI テクノロジと**ポータブル クラス ライブラリ (PCL)** コード共有の戦略。
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "新しいアプリ ダイアログ ボックス")
 
@@ -192,7 +192,7 @@ Visual Studio for Mac は、プロジェクトをビルド、c# コード ファ
 
 通常は、生成されたコード ファイルに多くの時間を費やす必要はありません、ことがありますランタイム例外が発生、生成されたファイル内のコードに慣れておく必要がありますのでします。
 
-コンパイルして、このプログラムを実行するときに、`Label`が示すように、XAML 要素は、ページの中央に表示されます。 左から右への 3 つのプラットフォームは、iOS、Android、および Windows 10 Mobile には。
+コンパイルして、このプログラムを実行するときに、`Label`が示すように、XAML 要素は、ページの中央に表示されます。 左から右への 3 つのプラットフォームは、iOS、Android、および UWP には。
 
 [![](get-started-with-xaml-images/xamlsamples.png "既定の Xamarin.Forms 表示")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms の既定の表示")
 
@@ -224,7 +224,7 @@ MainPage = new MainPage();
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-その他の XAML ベースの追加を`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** PCL プロジェクトを起動、**プロジェクト > 新しい項目の追加**メニュー項目。 左側にある、**新しい項目の追加**ダイアログで、 **Visual c#**と**Xamarin.Forms**です。 リストから選択**コンテンツ ページ**(されません**コンテンツ ページ (c#)**、これは、コードのみ ページで、作成または**コンテンツ ビュー**ページではない)。 ページの名前、たとえば、 **HelloXamlPage.xaml**:
+その他の XAML ベースの追加を`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** PCL プロジェクトを起動、**プロジェクト > 新しい項目の追加**メニュー項目。 左側にある、**新しい項目の追加**ダイアログで、 **Visual c#** と**Xamarin.Forms**です。 リストから選択**コンテンツ ページ**(されません**コンテンツ ページ (c#)**、これは、コードのみ ページで、作成または**コンテンツ ビュー**ページではない)。 ページの名前、たとえば、 **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.png "新しい項目 ダイアログ ボックスを追加します。")
 
@@ -351,11 +351,11 @@ public MainPage()
 }
 ```
 
-設定、`Content`ページのプロパティの設定の置換、 `Content` XAML ファイルのプロパティです。 コンパイルして、このプログラムの新しいバージョンを配置するときに画面にボタンが表示されます。 移動を押しても`HelloXamlPage`します。 ここでは、iPhone、Android、および Windows 10 Mobile の結果ページのデバイス。
+設定、`Content`ページのプロパティの設定の置換、 `Content` XAML ファイルのプロパティです。 コンパイルして、このプログラムの新しいバージョンを配置するときに画面にボタンが表示されます。 移動を押しても`HelloXamlPage`します。 IPhone、Android、および UWP の結果ページを次に示します。
 
 [![](get-started-with-xaml-images/helloxaml1.png "ラベルのテキストを回転")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "ラベルのテキストの回転")
 
-場所に戻ることができます`MainPage`を使用して、 **< 戻る**ios の場合、ページの上部にある、または android で電話の下部にある左向きの矢印を使用して、または Windows 10 Mobile のページの下部にある左向きの矢印を使用してボタンをクリックします。
+場所に戻ることができます`MainPage`を使用して、 **< 戻る**ios の場合、ページの上部にある、または android で電話の下部にある左向きの矢印を使用して、または Windows 10 で、ページの上部にある左向きの矢印を使用してボタンをクリックします。
 
 表示するために別の方法については、XAML を試して、`Label`です。 テキストに含まれる Unicode 文字を埋め込む必要がある場合は、標準の XML 構文を使用することができます。 たとえば、次のように使用すると、スマート引用符で囲まれた応答メッセージを配置します。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 78d14b9764ab0c7cafb9f09fa1c8acea3f45afde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c913ea56af423631c48fb9ee6d8dcb95028a4144
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイムのプロパティとして効果のパラメーターの引き渡し
 
@@ -147,7 +147,7 @@ namespace EffectsDemo.iOS
 
 `OnAttached`メソッドの取得、`ShadowEffect`インスタンス、およびセット`Control.Layer`プロパティをシャドウを作成する指定したプロパティの値にします。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android プロジェクト
 
 次のコード例は、 `LabelShadowEffect` Android プロジェクトの実装。
 
@@ -184,14 +184,14 @@ namespace EffectsDemo.Droid
 
 `OnAttached`メソッドの取得、`ShadowEffect`インスタンス、および呼び出し、 [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/)メソッドを指定したプロパティ値を使用してシャドウを作成します。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone とユニバーサル Windows プラットフォーム プロジェクト
+### <a name="universal-windows-platform-project"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
-次のコード例は、 `LabelShadowEffect` Windows Phone およびユニバーサル Windows プラットフォーム (UWP) プロジェクトの実装。
+次のコード例は、`LabelShadowEffect`ユニバーサル Windows プラットフォーム (UWP) プロジェクトの実装。
 
 ```csharp
 [assembly: ResolutionGroupName ("Xamarin")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -229,7 +229,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Windows ランタイムとユニバーサル Windows プラットフォームが影付き効果を提供しないため、`LabelShadowEffect`両方のプラットフォームで実装された 2 つ目のオフセットを追加することでシミュレートする[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)プライマリの背後にある`Label`. `OnAttached`メソッドの取得、`ShadowEffect`インスタンスの新しく作成`Label`、いくつかのレイアウト プロパティを設定し、`Label`です。 設定して影を作成し、 [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)、 [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)、および[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) の位置と色を制御するプロパティ`Label`. `shadowLabel`が挿入される、プライマリの背後にあるオフセット`Label`です。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+ユニバーサル Windows プラットフォームが影付き効果を提供しないため、`LabelShadowEffect`両方のプラットフォームで実装された 2 つ目のオフセットを追加することでシミュレートする[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)プライマリの背後にある`Label`です。 `OnAttached`メソッドの取得、`ShadowEffect`インスタンスの新しく作成`Label`、いくつかのレイアウト プロパティを設定し、`Label`です。 設定して影を作成し、 [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)、 [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)、および[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) の位置と色を制御するプロパティ`Label`. `shadowLabel`が挿入される、プライマリの背後にあるオフセット`Label`です。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
 
 ## <a name="summary"></a>まとめ
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.openlocfilehash: ed37e723d4b1a7997890c41886df8d117425e270
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="webview"></a>WebView
 
@@ -33,12 +33,12 @@ ms.lasthandoff: 04/08/2018
 WebView は、次の種類のコンテンツがサポートされています。
 
 - HTML および CSS の web サイト&ndash;WebView が HTML と CSS、JavaScript のサポートなどを使用して作成された web サイトを完全にサポートします。
-- ドキュメント&ndash;WebView は各プラットフォームで表示可能なドキュメントを表示できないネイティブ コンポーネントを使用して、各プラットフォームで WebView が実装されたためです。 IOS、Android、Windows Phone ではないで PDF ファイルが機能することを意味します。
+- ドキュメント&ndash;WebView は各プラットフォームで表示可能なドキュメントを表示できないネイティブ コンポーネントを使用して、各プラットフォームで WebView が実装されたためです。 IOS および Android で PDF ファイルが機能することを意味します。
 - HTML 文字列&ndash;WebView がメモリから HTML 文字列を表示することができます。
 - ローカル ファイル&ndash;WebView は上記のコンテンツの種類のいずれかのアプリに埋め込むを提示できます。
 
 > [!NOTE]
-> `WebView` Windows および Windows Phone ではサポートしません Silverlight、Flash またはすべての ActiveX コントロールでは、そのプラットフォームで Internet Explorer ではサポートされている場合でも。
+> `WebView` Windows ではサポートしません Silverlight、Flash またはすべての ActiveX コントロールでは、そのプラットフォームで Internet Explorer ではサポートされている場合でも。
 
 ### <a name="websites"></a>Websites
 
@@ -231,28 +231,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 }
 ```
 
-#### <a name="windows-phone"></a>Windows Phone
+#### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-Windows Phone、HTML、CSS、および画像の配置プロジェクトのルートに設定するビルド アクション*コンテンツ*以下に示すようにします。
-
-![](webview-images/windows-vs.png "Windows Phone 上のローカル ファイル")
-
-Windows Phone 上、`BaseUrl`に設定する必要があります`""`:
-
-```csharp
-[assembly: Dependency (typeof(BaseUrl_Windows))]
-namespace WorkingWithWebview.Windows {
-  public class BaseUrl_Windows : IBaseUrl {
-    public string Get() {
-      return "";
-    }
-  }
-}
-```
-
-#### <a name="windows-runtime-and-universal-windows-platform"></a>Windows ランタイムとユニバーサル Windows プラットフォーム
-
-プロジェクトでは Windows ランタイムとユニバーサル Windows プラットフォーム (UWP)、HTML、CSS、およびイメージ ルートに配置するプロジェクトに設定するビルド アクション*コンテンツ*です。
+ユニバーサル Windows プラットフォーム (UWP) プロジェクトでは、HTML、CSS、および画像の配置プロジェクトのルートに設定するビルド アクション*コンテンツ*です。
 
 `BaseUrl`に設定する必要があります`"ms-appx-web:///"`:
 
@@ -402,14 +383,11 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 
 [UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge のレンダリング エンジンを使用します。 デスクトップとタブレット デバイス自体 Edge ブラウザーを使用する場合と同等のパフォーマンスが表示されます。
 
-`WebBrowser`コントロール Windows Phone 8 および Windows Phone 8.1 機能は最新の HTML5 のサポート機能ではないので、多くの場合、パフォーマンスが低下します。 Windows Phone の サイトを表示する方法に注意してください`WebView`です。 Internet Explorer でテストするのに十分ではありません。
-
 ## <a name="permissions"></a>アクセス許可
 
 順序で`WebView`するために、各プラットフォーム用のアクセス許可が設定されていることを確認してください。 一部のプラットフォームでなお`WebView`リリース用にビルドされたときではなく、デバッグ モードでは動作します。 Android でのインターネット アクセスの場合と同様に、いくつかのアクセス許可がデバッグ モードのときに Mac を Visual Studio で既定で設定するためです。
 
-- **Windows Phone 8.0** &ndash;が必要です`ID_CAP_WEBBROWSERCOMPONENT`コントロールと`ID_CAP_NETWORKING`インターネット アクセス。
-- **Windows Phone 8.1 と UWP** &ndash;ネットワークのコンテンツを表示するときに、インターネット (クライアントとサーバー) の機能が必要です。
+- **UWP** &ndash;ネットワークのコンテンツを表示するときに、インターネット (クライアントとサーバー) の機能が必要です。
 - **Android** &ndash;必要`INTERNET`ネットワークからコンテンツを表示する場合にのみです。 ローカル コンテンツには、特殊なアクセス許可は不要です。
 - **iOS** &ndash;特殊なアクセス許可は必要ありません。
 

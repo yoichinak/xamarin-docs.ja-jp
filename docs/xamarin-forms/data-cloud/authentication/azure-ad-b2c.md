@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: f17a6ad012aff81674db943b7d65e65ba77dca52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 627c6773c099c9cf45f871a9bb73a201bf98271a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C のユーザーの認証
 
@@ -60,7 +60,7 @@ Microsoft 認証ライブラリ (MSAL) NuGet ライブラリは、Xamarin.Forms 
 
 ### <a name="portable-class-library"></a>ポータブル クラス ライブラリ
 
-MSAL Windows Phone 8.1 をサポートしていないし、MSAL を消費する Pcl はこのターゲットを削除する必要がありますのでです。 これは、Profile7 を使用する Pcl の再ターゲットして実行できます。 PCL の詳細については、「[Introduction to Portable Class Libraries](~/cross-platform/app-fundamentals/pcl.md)」(ポータブル クラス ライブラリの概要) を参照してください。
+Pcl MSAL を使用するには、Profile7 を使用する再ターゲットする必要があります。 PCL の詳細については、「[Introduction to Portable Class Libraries](~/cross-platform/app-fundamentals/pcl.md)」(ポータブル クラス ライブラリの概要) を参照してください。
 
 ### <a name="ios"></a>iOS
 
@@ -237,6 +237,6 @@ public async Task<bool> LogoutAsync()
 
 ## <a name="related-links"></a>関連リンク
 
-- [AzureADB2CAuth (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
+- [AzureADB2CAuth (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
 - [Azure Active Directory B2C](/azure/active-directory-b2c/)
 - [Microsoft 認証ライブラリ](https://www.nuget.org/packages/Microsoft.Identity.Client)

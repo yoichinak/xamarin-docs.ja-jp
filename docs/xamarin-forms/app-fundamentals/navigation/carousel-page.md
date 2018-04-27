@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 035254f87e52801d5ff7419f9ad9d5503f060020
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="carousel-page"></a>手荷物の受け取り場所 ページ
 
@@ -45,7 +45,7 @@ _Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのペー�
 - [追加](#Populating_a_CarouselPage_with_a_Page_Collection)、`CarouselPage`子のコレクションを[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス。
 - [割り当てる](#Populating_a_CarouselPage_with_a_Template)コレクションには、 [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/)プロパティと割り当て、 [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)を[ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) を返されるプロパティ[`ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)コレクション内のオブジェクトのインスタンス。
 
-両方の方法で、`CarouselPage`を表示する次のページに移動の方向にスワイプ操作で、表示の各ページをさらに、されます。 このナビゲーション エクスペリエンスは自然で Windows Phone ユーザーになじみ慣れることができます。
+両方の方法で、`CarouselPage`を表示する次のページに移動の方向にスワイプ操作で、表示の各ページをさらに、されます。 
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)でのみ設定できます[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス、または`ContentPage`派生します。
@@ -246,7 +246,7 @@ public class MainPageCS : CarouselPage
 
 ## <a name="summary"></a>まとめ
 
-この記事には、使用する方法が示されている、 [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)ページのコレクションを移動します。 `CarouselPage`ギャラリーなどのコンテンツのページ間を移動するユーザーが横方向にスワイプできるページは、自然で Windows Phone ユーザーになじみがナビゲーション機能を提供します。
+この記事には、使用する方法が示されている、 [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)ページのコレクションを移動します。 `CarouselPage`ギャラリーと同様に、コンテンツのページ間を移動するユーザーが横方向にスワイプできますページです。
 
 
 ## <a name="related-links"></a>関連リンク

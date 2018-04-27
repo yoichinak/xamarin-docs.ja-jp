@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1e8ef47ceb381a0e4e163aaa24795d46264195da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-an-entry"></a>エントリをカスタマイズします。
 
 _Xamarin.Forms エントリ コントロールには、1 行のテキストを編集することが可能です。この記事では、開発者が独自のプラットフォーム固有のカスタマイズと既定のネイティブ レンダリングのオーバーライドを有効にすると、入力コントロールのカスタム レンダラーを作成する方法を示します。_
 
-各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロールが iOS での Xamarin.Forms アプリケーションによって表示される、`EntryRenderer`クラスをインスタンス化、ネイティブ インスタンス化それに続いて`UITextField`コントロール。 Android のプラットフォームでは、`EntryRenderer`クラスをインスタンス化、`EditText`コントロール。 Windows Phone でユニバーサル Windows プラットフォーム (UWP)、`EntryRenderer`クラスをインスタンス化、`TextBox`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロールが iOS での Xamarin.Forms アプリケーションによって表示される、`EntryRenderer`クラスをインスタンス化、ネイティブ インスタンス化それに続いて`UITextField`コントロール。 Android のプラットフォームでは、`EntryRenderer`クラスをインスタンス化、`EditText`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`EntryRenderer`クラスをインスタンス化、`TextBox`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
 
 次の図の間のリレーションシップを示しています、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロールおよびそれを実装する対応するネイティブ コントロール。
 
@@ -178,13 +178,13 @@ namespace CustomRenderer.Android
 
 基本クラスの呼び出し`OnElementChanged`メソッドは、Android をインスタンス化`EditText`コントロールの場合、レンダラーに割り当てられているコントロールへの参照と`Control`プロパティです。 背景色がで明るい緑に設定し、`Control.SetBackgroundColor`メソッドです。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone のカスタム レンダラーを作成し、UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP にカスタム レンダラーを作成します。
 
-次のコード例では、Windows Phone と UWP のカスタム レンダラーを示しています。
+次のコード例は、UWP のカスタム レンダラーを示しています。
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class MyEntryRenderer : EntryRenderer
     {

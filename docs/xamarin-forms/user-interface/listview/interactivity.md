@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 511a7052b07a853279f91211b3e3b1219f125c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d16c45b7f7cb7eef67a905b6fbcb9b8675b0b2ba
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
@@ -53,12 +53,10 @@ SelectionDemoList.ItemSelected += (sender, e) => {
 
 ![](interactivity-images/selection-default.png "選択範囲が有効になっているを含む ListView")
 
-Windows Phone など、いくつかのセルになお`SwitchCell`選択に応じて、表示状態を更新しません。
-
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>コンテキストのアクション
-多くの場合、ユーザーが操作対象の項目を`ListView`です。 たとえば、メール アプリでの電子メールの一覧があるとします。 Ios、メッセージを削除するまでスワイプことができ、Windows Phone でメッセージを時間の長いキーを押してとできますそれを削除します。
+多くの場合、ユーザーが操作対象の項目を`ListView`です。 たとえば、メール アプリでの電子メールの一覧があるとします。 Ios の場合は、メッセージを削除するまでスワイプできます。
 
 ![](interactivity-images/context-default.png "コンテキストのアクションを含む ListView")
 
@@ -149,8 +147,6 @@ listView.IsPullToRefreshEnabled = true;
 ![](interactivity-images/refresh-start.png "ListView プルで進行状況を更新するには")
 
 ユーザーとプルは更新するには、プルがリリースされました。 これは、ユーザーがリストを更新している間には: ![ ] (interactivity-images/refresh-in-progress.png "ListView プル全体を更新するには")
-
-Xamarin.Forms 1.4.3 時点でことに注意して、更新するプルは Windows Phone 8.1 でサポートされていません。 Windows phone 8 で更新するプル機能ではありませんネイティブ プラットフォーム、Xamarin.Forms で更新するプルの実装が提供されるようにします。 最後に、対応する Windows Phone では、リスト内のすべての要素はことができます (つまり、垂直方向のスクロールは必要ありません) 場合、画面に収まる場合そのプルの更新は機能しません。
 
 ListView では、更新するプル イベントに応答することは、いくつかのイベントを公開します。
 

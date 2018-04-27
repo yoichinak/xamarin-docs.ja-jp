@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e296ca79ee03e7fc61532758219b65946a8d4381
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="map"></a>マップ
 
@@ -50,7 +50,7 @@ Android では、同じパラメーターを渡す必要があります`Forms.In
 Xamarin.FormsMaps.Init(this, bundle);
 ```
 
-Windows ランタイム (WinRT) とユニバーサル Windows プラットフォーム (UWP) には、次のコードを使用します。
+ユニバーサル Windows プラットフォーム (UWP) には、次のコードを使用します。
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
@@ -60,7 +60,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 -  **iOS** -<code>appdelegate.cs</code> ファイルに、`FinishedLaunching`メソッドです。
 -  **Android** -MainActivity.cs ファイルで、`OnCreate`メソッドです。
--  **WinRT と UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンス トラクターです。
+-  **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンス トラクターです。
 
 NuGet パッケージが追加されており、各アプリケーションの内部初期化メソッドが呼び出された後`Xamarin.Forms.Maps`Api は、一般的な PCL または共有プロジェクトのコードで使用できます。
 
@@ -132,9 +132,9 @@ Android プロジェクトを右クリックしを選択すると、適切なア
 
 アプリケーションにマップ データをダウンロードするネットワーク接続が必要なために、最後の 2 つが必要です。 Android についてお読み[権限](http://developer.android.com/reference/android/Manifest.permission.html)詳細についてはします。
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Windows ランタイムとユニバーサル Windows プラットフォーム
+### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-Windows ランタイムおよびユニバーサル Windows プラットフォーム上のマップを使用するには、承認トークンを生成する必要があります。 詳細については、次を参照してください。[マップ認証キーを要求](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)msdn です。
+ユニバーサル Windows プラットフォームでマップを使用するには、承認トークンを生成する必要があります。 詳細については、次を参照してください。[マップ認証キーを要求](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)msdn です。
 
 認証トークンを指定する必要があります、`FormsMaps.Init("AUTHORIZATION_TOKEN")`メソッドの呼び出し、Bing マップでアプリを認証します。
 
@@ -255,7 +255,7 @@ MyMap.MoveToRegion(
 
 ## <a name="summary"></a>まとめ
 
-Xamarin.Forms.Maps は、個別の NuGet Xamarin.Forms ソリューション内の各プロジェクトに追加する必要があります。 追加の初期化コードは、iOS、Android、WinRT、および UWP もいくつかの構成手順として必要です。
+Xamarin.Forms.Maps は、個別の NuGet Xamarin.Forms ソリューション内の各プロジェクトに追加する必要があります。 追加の初期化コードは、iOS、Android、および UWP もいくつかの構成手順として必要です。
 
 一度設定したコードのはわずか数行で暗証番号 (pin)、マーカー付きマップを表示するために、マップの API を使用できます。 マップをさらに向上することができます、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)です。
 

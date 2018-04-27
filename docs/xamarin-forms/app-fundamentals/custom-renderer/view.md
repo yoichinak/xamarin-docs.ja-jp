@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e84427ba576528ed76f5885605c423bf6499d20c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-view"></a>ビューを実装します。
 
 _Xamarin.Forms カスタム ユーザー インターフェイス コントロールは、レイアウトと、画面上のコントロールを配置に使用されるビュー クラスから派生する必要があります。この記事では、デバイスのカメラからプレビュー ビデオ ストリームの表示に使用される Xamarin.Forms のカスタム コントロールのカスタム レンダラーを作成する方法を示します。_
 
-各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ios では、Xamarin.Forms アプリケーションによって表示される、`ViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIView`コントロール。 Android のプラットフォームでは、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`View`コントロール。 Windows Phone でユニバーサル Windows プラットフォーム (UWP)、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ios では、Xamarin.Forms アプリケーションによって表示される、`ViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIView`コントロール。 Android のプラットフォームでは、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
 
 次の図の間のリレーションシップを示しています、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)とそれを実装する、対応するネイティブ コントロール。
 
@@ -263,13 +263,13 @@ namespace CustomRenderer.Droid
 
 `Control`プロパティは`null`、`SetNativeControl`新しいのインスタンスを作成するメソッドが呼び出された`CameraPreview`を制御し、するために参照を代入、`Control`プロパティです。 `CameraPreview`コントロールは、プラットフォーム固有のカスタム コントロールを使用する、`Camera`カメラからプレビュー ストリームを提供する API。 `CameraPreview`コントロールは、構成、カスタムのレンダラーが新しい Xamarin.Forms 要素にアタッチされています。 この構成では、新しいネイティブを作成する`Camera`、特定のハードウェア カメラにアクセスするオブジェクトを処理するイベント ハンドラーを登録、`Click`イベント。 さらにこのハンドラーは停止しがタップされたときに、ビデオのプレビューを開始します。 `Click` Xamarin.Forms 要素は、レンダラーが変更に関連付けられている場合、イベントを購読解除します。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone のカスタム レンダラーを作成し、UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP にカスタム レンダラーを作成します。
 
-次のコード例では、Windows Phone と UWP のカスタム レンダラーを示しています。
+次のコード例は、UWP のカスタム レンダラーを示しています。
 
 ```csharp
 [assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
@@ -317,7 +317,7 @@ namespace CustomRenderer.WinPhone81
 `Control`プロパティは`null`、新しい`CaptureElement`がインスタンス化されると、`InitializeAsync`メソッドは、使用する、`MediaCapture`カメラからプレビュー ストリームを提供する API。 `SetNativeControl`への参照を割り当てるにはメソッドが呼び出されます、`CaptureElement`インスタンスを`Control`プロパティです。 `CaptureElement`公開を制御、`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止およびがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントがサブスクライブするいるとカスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているレンダラーでは、要素が変更にアタッチされている場合にのみを購読解除します。
 
 > [!NOTE]
-> 停止し、Windows Phone または UWP アプリケーションでカメラへのアクセスを提供するオブジェクトの破棄は重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。 と[クイック スタート: MediaCapture API を使用してビデオをキャプチャ](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)Windows ランタイム アプリケーションの場合と[カメラのプレビューを表示](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)UWP アプリケーションです。
+> 停止し、UWP アプリケーションでカメラへのアクセスを提供するオブジェクトの破棄に重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。[カメラのプレビューを表示](/windows/uwp/audio-video-camera/simple-camera-preview-access/)です。
 
 ## <a name="summary"></a>まとめ
 

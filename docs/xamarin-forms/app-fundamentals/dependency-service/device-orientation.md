@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: b8392dad578f94380e90da24cbf44120d38f754d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09cd92b436be97f5490ac74890e4b0723bcd5701
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-device-orientation"></a>デバイスの方向を確認しています
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 - **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;を理解するインターフェイスに方法は共有コードで作成します。
 - **[iOS 実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コードにインターフェイスを実装する方法について説明します。
 - **[Android 実装](#Android_Implementation)** &ndash; for Android のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[Windows 実装](#WindowsImplementation)** &ndash; Windows Phone とユニバーサル Windows プラットフォーム (UWP) のネイティブ コードにインターフェイスを実装する方法について説明します。
+- **[UWP 実装](#WindowsImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードにインターフェイスを実装する方法について説明します。
 - **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法を学習`DependencyService`に共有コードからネイティブの実装を呼び出します。
 
 アプリケーションを使用して、`DependencyService`次のような構造になります。
@@ -145,9 +145,9 @@ namespace DependencyServiceSample.Droid {
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone とユニバーサル Windows プラットフォームの実装
+## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームの実装
 
-次のコードを実装して、`IDeviceOrientation`とユニバーサル Windows プラットフォームに Windows Phone 上のインターフェイス。
+次のコードを実装して、`IDeviceOrientation`ユニバーサル Windows プラットフォーム上のインターフェイス。
 
 ```csharp
 namespace DependencyServiceSample.WindowsPhone

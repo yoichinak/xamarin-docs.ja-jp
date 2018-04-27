@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: d75c5714e53961ff5704c72b5508514f8cd2e898
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcd277145de13a95a0b19aa4945b02078af52978
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>タブレットおよびデスクトップ アプリのレイアウト
 
@@ -18,7 +18,7 @@ Xamarin.Forms は、携帯電話、に加えてアプリも実行のプラット
 
 * Ipad、
 * Android タブレットは、
-* Windows タブレットやデスクトップ コンピューターが (Windows 8.1 または Windows 10 を実行している)。
+* Windows タブレットやデスクトップ コンピューターが (Windows 10 を実行している)。
 
 このページを簡単に説明します。
 
@@ -53,12 +53,7 @@ Android のエコシステムでは、さまざまな大規模なタブレット
 
 ### <a name="windows-tablets-and-desktops"></a>Windows タブレットやデスクトップ
 
-タブレットや Windows を実行しているデスクトップ コンピューターをサポートするには、2 つのサポートされているプロジェクトの種類のいずれかを使用する必要があります。
-
-* [Windows 8.1](~/xamarin-forms/platform/windows/installation/tablet.md) -
-  Windows 8.1 のタブレットやデスクトップ向けのアプリをビルドします。
-* [Windows UWP サポート](~/xamarin-forms/platform/windows/installation/universal.md)-
-  両方 Windows 10 電話、タブレット、およびデスクトップで実行されるユニバーサル アプリをビルドします。
+タブレットや Windows を実行しているデスクトップ コンピューターをサポートするために使用する必要があります[Windows UWP サポート](~/xamarin-forms/platform/windows/installation/index.md)、どの Windows 10 で動作するユニバーサル アプリをビルドします。
 
 Windows タブレットやデスクトップで実行されているアプリ サイズを変更できる任意のディメンションをさらに実行されている全画面表示にします。
 

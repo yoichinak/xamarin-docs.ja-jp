@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 8315f1a0056c6a6f084ebfe2c29f0c0c2bb30330
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 02bea7e2ec927277a92c0732b25f590b5ae6704b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="files"></a>ファイル
 
@@ -99,9 +99,6 @@ var resourcePrefix = "WorkingWithFiles.iOS.";
 #if __ANDROID__
 var resourcePrefix = "WorkingWithFiles.Droid.";
 #endif
-#if WINDOWS_PHONE
-var resourcePrefix = "WorkingWithFiles.WinPhone.";
-#endif
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
@@ -142,7 +139,7 @@ Xamarin.Forms は、それぞれ独自のファイル システムに複数の�
 
  [![保存とテキストを読み込み](files-images/saveandload-sml.png "を保存し、アプリでのファイルの読み込み")](files-images/saveandload.png#lightbox "を保存し、アプリでのファイルの読み込み")
 
-各プラットフォームには、若干異なるディレクトリ構造、および異なる filesystem 機能 - たとえば、Xamarin.iOS および Xamarin.Android ほとんどがサポート`System.IO`のみをサポート機能しますが、Windows Phone`IsolatedStorage`と[`Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) Api です。
+各プラットフォームには、若干異なるディレクトリ構造、および異なる filesystem 機能 - たとえば、Xamarin.iOS および Xamarin.Android ほとんどがサポート`System.IO`機能が、ユニバーサル Windows プラットフォームのみをサポートする[ `Windows.Storage`](/uwp/api/windows.storage/) Api です。
 
 この問題を回避するには、サンプル アプリは、読み込み、ファイルを保存する Xamarin.Forms PCL にインターフェイスを定義します。 デバイスに格納できる読み込みおよびテキスト ファイルを保存する単純な API を提供します。
 
@@ -190,9 +187,9 @@ namespace WorkingWithFiles {
 }
 ```
 
-### <a name="universal-windows-platform-uwp-windows-81-and-windows-phone-81"></a>ユニバーサル Windows プラットフォーム (UWP)、Windows 8.1 および Windows Phone 8.1
+### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
-これらのプラットフォームがある別のファイル システム API – [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – つまりを保存し、ファイルを読み込むために使用します。
+UWP が別のファイル システム API – [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – つまりを保存し、ファイルを読み込むために使用します。
 `ISaveAndLoad`次に示すように、インターフェイスを実装することができます。
 
 ```csharp
@@ -226,7 +223,6 @@ namespace WindowsApp
     }
 }
 ```
-
 
 <a name="Saving_and_Loading_in_Shared_Projects" />
 

@@ -7,12 +7,12 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: クイック スタート
 
@@ -185,11 +185,10 @@ namespace Core
 (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 最初に、`OnCreate` メソッドが次のようになるようにテンプレート コードを変更します。
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {
@@ -292,7 +291,7 @@ namespace Phoneword
 
 **[新しいソリューション...]** をクリックして新しいプロジェクトを作成します。
 
-**[新しいプロジェクト用のテンプレートを選びます]** ダイアログで、**[Android]、[アプリ]** の順にクリックして、**[Android アプリ]** テンプレートを選択します。 **[次へ]**をクリックします。
+**[新しいプロジェクト用のテンプレートを選びます]** ダイアログで、**[Android]、[アプリ]** の順にクリックして、**[Android アプリ]** テンプレートを選択します。 **[次へ]** をクリックします。
 
 [![Android アプリ テンプレートを選択する](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 
@@ -420,13 +419,10 @@ namespace Core
 まず、**[変換]** ボタンにイベント ハンドラーを追加します。 `MainActivity` クラスで、`OnCreate` メソッドを見つけます。 `OnCreate` 内 (`base.OnCreate(bundle)` および `SetContentView (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 `OnCreate` メソッドが次のようになるように、テンプレート ボタン処理コードを削除します。
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {

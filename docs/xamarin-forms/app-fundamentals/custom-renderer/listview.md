@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
 _Xamarin.Forms ListView は、垂直方向の一覧としてデータのコレクションを表示するビューです。この記事では、カスタム レンダラーを作成のプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブのリスト コントロールのパフォーマンスをより細かく制御できるようにする方法を示します。_
 
-各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`ListViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UITableView`コントロール。 Android のプラットフォームでは、`ListViewRenderer`クラスのインスタンスを作成、ネイティブな`ListView`コントロール。 Windows Phone でユニバーサル Windows プラットフォーム (UWP)、`ListViewRenderer`クラスのインスタンスを作成、ネイティブな`ListView`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`ListViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UITableView`コントロール。 Android のプラットフォームでは、`ListViewRenderer`クラスのインスタンスを作成、ネイティブな`ListView`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`ListViewRenderer`クラスのインスタンスを作成、ネイティブな`ListView`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
 
 次の図の間のリレーションシップを示しています、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)コントロールおよびそれを実装する対応するネイティブ コントロール。
 
@@ -467,15 +467,15 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 
 メソッドの新しいインスタンスを作成する、`NativeAndroidListViewAdapter`ネイティブにデータを提供するクラス`ListView`コントロールを提供する、バインド可能な`NativeListView.Items`プロパティが変更されました。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone のカスタム レンダラーを作成し、UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP にカスタム レンダラーを作成します。
 
-次のコード例では、Windows Phone と UWP のカスタム レンダラーを示しています。
+次のコード例は、UWP のカスタム レンダラーを示しています。
 
 ```csharp
-[assembly: ExportRenderer (typeof(NativeListView), typeof(NativeWinPhoneListViewRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeListView), typeof(NativeUWPListViewRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneListViewRenderer : ListViewRenderer
+    public class NativeUWPListViewRenderer : ListViewRenderer
     {
         ListView listView;
 

@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: b4a36e15bd5db72ef113748282175c6d31a95966
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-scale-transform"></a>スケールの変換
 
@@ -167,7 +167,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](scale-images/centeredscale-small.png "スケールの中央に配置 ページのスクリーン ショットをトリプル")](scale-images/centeredscale-large.png#lightbox "スケールの中央に配置 ページのトリプル スクリーン ショット")
 
-`Slider`このプログラム内の要素の範囲がある&ndash;10 ~ 10 です。 わかります、垂直方向のスケーリング (画面の中央で、Android 上など) の負の値によってスケーリングの中心を通る水平軸の周りの上下を反転するオブジェクトを使用します。 負の値 (右側の Windows の画面など) のスケーリングの水平方向のスケーリングの中心を通る垂直軸の周りの上下を反転するオブジェクトが発生します。
+`Slider`このプログラム内の要素の範囲がある&ndash;10 ~ 10 です。 わかります、垂直方向のスケーリング (画面の中央で、Android 上など) の負の値によってスケーリングの中心を通る水平軸の周りの上下を反転するオブジェクトを使用します。 負の値 (右側の UWP 画面など) のスケーリングの水平方向のスケーリングの中心を通る垂直軸の周りの上下を反転するオブジェクトが発生します。
 
 この 4 つ目のバージョンの`Scale`メソッドは、実際のショートカットです。 置き換えることでこの動作を確認することができます、`Scale`このコードを次のメソッド。
 

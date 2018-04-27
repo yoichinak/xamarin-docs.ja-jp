@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 24bf7bd7fb2aa51968a96bdbf808030604665c26
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="lines-and-stroke-caps"></a>行とストローク キャップ
 
@@ -91,7 +91,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 各メンバーに対して、`SKStrokeCap`列挙型、ハンドラーが 50 ピクセルと 2 ピクセルのストロークの太さの一番上に配置されている別の行のストロークの太さを持つ 2 つの行を描画します。 この 2 行目は、幾何学模様の開始と終了の線の太さと線の幅からの行を示すために対象としています。
 
-[![](lines-images/strokecaps-small.png "キャップのストロークのページのスクリーン ショットをトリプル")](lines-images/strokecaps-large.png#lightbox "ストローク線端] ページのトリプル スクリーン ショット")
+[![](lines-images/strokecaps-small.png "キャップのストロークのページのスクリーン ショットをトリプル")](lines-images/strokecaps-large.png#lightbox "ストローク線端 ページのトリプル スクリーン ショット")
 
 ご覧のように、`Square`と`Round`ストローク cap がストローク幅の半分だけ行の先頭に、最後にもう一度、行の長さを効果的に拡張します。 この拡張機能は、レンダリングされたグラフィック オブジェクトのサイズを決定する必要がある場合に重要になります。
 
@@ -235,7 +235,7 @@ T GetPickerItem<T>(Picker picker)
 
 代わりに使用する場合`SKPointMode.Lines`センターでは、Android の画面に示すように、`DrawPoints`メソッドでは、直線を描画の各ペア間`SKPoint`値は、ここでは、指定した行 cap を使用して`Round`です。
 
-Windows モバイル デバイスの結果を表示する、`SKPointMode.Polygon`値。 線を描画して、配列内の連続する点の間が非常に密接に確認する場合は、これらの行が接続されていないことが表示されます。 これらの個別の行のそれぞれで終わります指定ライン キャップ。 選択した場合、 `Round` cap を接続する線が表示されるが、実際に接続していません。
+UWP スクリーン ショットがの結果を表示、`SKPointMode.Polygon`値。 線を描画して、配列内の連続する点の間が非常に密接に確認する場合は、これらの行が接続されていないことが表示されます。 これらの個別の行のそれぞれで終わります指定ライン キャップ。 選択した場合、 `Round` cap を接続する線が表示されるが、実際に接続していません。
 
 線を接続または接続されていないかどうかは、グラフィックス パスの作業の重要な側面です。
 

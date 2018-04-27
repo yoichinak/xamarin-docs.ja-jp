@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 9bdad3e7d3e16dfe906f96bce2b92cdb9ee6260a
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="path-effects"></a>パスの効果
 
@@ -854,7 +854,7 @@ public class PathTileFillPage : ContentPage
 
 元のスクリーン ショットからのスケーリングと、Android の画面上特に、ゆがみが行われます。
 
-これらのタイルが常に全体表示され、切り捨てられなければことに注意してください。 ただし、[Windows 10 Mobile] 画面で、でもわかりにくい塗りつぶし対象の領域が丸い四角形であることはできません。 特定の領域にこれらのタイルを切り捨てるする場合は、クリッピング パスを使用します。
+これらのタイルが常に全体表示され、切り捨てられなければことに注意してください。 最初の 2 つのスクリーン ショットに、塗りつぶし対象の領域には、角の丸い四角形もわかりにくいことはできません。 特定の領域にこれらのタイルを切り捨てるする場合は、クリッピング パスを使用します。
 
 設定を試みてください、`Style`のプロパティ、`SKPaint`オブジェクトを`Stroke`と入力するのではなく、記載されている個々 のタイルが表示されます。
 

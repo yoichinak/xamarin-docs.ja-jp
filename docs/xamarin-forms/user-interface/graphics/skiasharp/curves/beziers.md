@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 数学的に、曲線では、3 次多項式近似です。 曲線では、3 つの点に直線が多くてと交差します。 開始時点では、曲線は常に最初の制御点を正接しと方向が同じでは、開始から直線ポイントです。 曲線を常には終了時点では、終了点に接線のと同じ方向に、2 つ目のコントロールから直線ポイントです。
 
-3 次ベジエ曲線に凸四角形の 4 つの点を結ぶ常に制限されます。 これと呼ばれる、*凸包*です。 コントロール ポイントは、始点と終点の直線上にあるを場合は、直線としてベジエ曲線が表示されます。 曲線できますも伴う自体には、Windows Mobile デバイスのスクリーン ショットに示すようです。
+3 次ベジエ曲線に凸四角形の 4 つの点を結ぶ常に制限されます。 これと呼ばれる、*凸包*です。 コントロール ポイントは、始点と終点の直線上にあるを場合は、直線としてベジエ曲線が表示されます。 曲線できますも伴う自体には、3 番目のスクリーン ショットに示すようです。
 
 パス輪郭は複数の立方の接続されたベジエ曲線を含めることができますが、3 次ベジエ曲線を 2 つの間の接続は次の 3 つのポイントが同一線上に場合にのみ、スムーズになります (つまり、上に存在する直線)。
 
@@ -104,9 +104,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 3 次ベジエ曲線をレンダリングする基になるパラメーター式を知っておくと便利場合があります。 *T* 0 ~ 1、パラメーター型の式は、次のようにします。
 
-x(t) = (1 – t)³x₀ + 3t(1 – t)²x₁ + 3t²(1 – t)x₂ + t³x₃
+x(t) = (1 – t) ³x₀ + 3t (t) 1 – ²x₁ + 3t² (t)。 1 – x₂ + t³x₃。
 
-y(t) = (1 – t)³y₀ + 3t(1 – t)²y₁ + 3t²(1 – t)y₂ + t³y₃
+y(t) = (1 – t) ³y₀ + 3t (t) 1 – ²y₁ + 3t² (t)。 1 – y₂ + t³y₃。
 
 3 の最大指数は、これらが立方 polynomials であることを確認します。 簡単にすることを確認してください`t`0 に等しいポイントは、(x₀、y₀)、これは、始点とタイミング`t`は 1 に等しいポイントは、(x₃、y₃)、終点であります。 始点を付近 (の値が低`t`)、最初のコントロール ポイント (x₁、y₁) が、強力な効果し、終了点をほぼ (' t の値が高い ') (x₂、y₂)、2 番目の制御点が大きな影響を与える。
 
@@ -208,7 +208,7 @@ float Magnitude(SKPoint v)
 
 [![](beziers-images/beziercirculararc-small.png "円弧をベジエ ページのスクリーン ショットをトリプル")](beziers-images/beziercirculararc-large.png#lightbox "円弧をベジエ ページのトリプル スクリーン ショット")
 
-Windows Mobile 画面について詳しく見てし、角度が 180 度は、その場合場合に合わせて正しく四半期円角度が 90 度思えます iOS の画面を示しています、半円からにベジエ曲線を外れて顕著なことを確認します。
+3 番目のスクリーン ショットを詳しく見るし、角度が 180 度は、その場合場合に合わせて正しく四半期円角度が 90 度思えます iOS の画面を示しています、半円からにベジエ曲線を外れて顕著なことを確認します。
 
 四半期の円が次のように指向の場合は、この 2 つの制御点の座標を計算することは非常に簡単です。
 

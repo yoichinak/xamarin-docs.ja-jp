@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
@@ -63,11 +63,4 @@ IOS、Android、およびユニバーサル Windows プラットフォームの�
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms では、Windows プロジェクトの 4 つの異なる型のサポートがあります。
-
-* Windows Phone 8 Silverlight (元 Windows によってサポートされたプラットフォーム Xamarin.Forms)、
-* Windows Phone 8.1 (WinRT)
-* Windows 8.1 (WinRT) と
-* ユニバーサル Windows プラットフォーム (Windows 10)。
-
-このセクションでは、既存の Xamarin.Forms ソリューションに追加する方法と、それらの違いについて説明します。
+Xamarin.Forms では、Windows 10 のユニバーサル Windows プラットフォーム (UWP) のサポートがあります。 この記事の内容を追加する方法を説明します、既存の Xamarin.Forms ソリューションを UWP プロジェクト。

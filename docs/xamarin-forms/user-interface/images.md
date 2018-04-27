@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ddbcb74d34f09c7bb60891148bd50b36bc5094c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e8ad5ba3bdfa61ae1b2f4404016f204a8c1747c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="images"></a>イメージ
 
@@ -58,7 +58,6 @@ Xamarin.Forms を使用して、 [ `Image` ](https://developer.xamarin.com/api/t
 
 - **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**アセット カタログのイメージ セット**、すべてのさまざまなデバイスをサポートし、規模の要素に必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
 - **Android** -内のイメージを配置、**リソース/描画**ディレクトリが**ビルド アクション: AndroidResource**です。 高 DPI と低のバージョンの画像も提供されます (で適切に名前付き**リソース**などサブディレクトリ**ドロウアブル ldpi**、**ドロウアブル hdpi**、および**ドロウアブル xhdpi**)。
-- **Windows Phone** -アプリケーションのルート ディレクトリでイメージを配置**ビルド アクション: コンテンツ**です。
 - **ユニバーサル Windows プラットフォーム (UWP)** -アプリケーションのルート ディレクトリでイメージを配置**ビルド アクション: コンテンツ**です。
 
 > [!IMPORTANT]
@@ -93,7 +92,7 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>ネイティブの解像度 (Retina と高 DPI)
 
-iOS、Android、Windows Phone、および UWP には、別の画像の解像度、オペレーティング システムが実行時に、デバイスの機能に基づく適切なイメージを選択のサポートが含まれます。 Xamarin.Forms は、場合は、ファイルが正しくという名前し、プロジェクト内に別の解像度を自動的にサポートするために、ローカルのイメージを読み込むためのネイティブ プラットフォームの Api を使用します。
+iOS、Android、および UWP には、別の画像の解像度、オペレーティング システムが実行時に、デバイスの機能に基づく適切なイメージを選択のサポートが含まれます。 Xamarin.Forms は、場合は、ファイルが正しくという名前し、プロジェクト内に別の解像度を自動的にサポートするために、ローカルのイメージを読み込むためのネイティブ プラットフォームの Api を使用します。
 
 IOS 9 以降のイメージを管理することをお勧め適切な資産カタログ イメージ セットに必要な各解像度のイメージのドラッグを開始します。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
 
@@ -103,7 +102,7 @@ Android の代替解像度のイメージを配置する必要があります[�
 
 [![Android の複数の解像度のイメージの場所](images-images/xs-highdpisolution-sml.png "Android の複数の解像度のイメージの場所")](images-images/xs-highdpisolution.png#lightbox "Android の複数の解像度のイメージの場所")
 
-UWP と Windows Phone のイメージ ファイル名[を付ける`.scale-xxx`ファイル拡張子の前に](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ここで、`xxx`の拡大/縮小すると、資産などの割合をパーセント**myimage.scale 200.png**. コードまたは XAML スケール修飾子を指定せず、たとえばだけにイメージを参照できます**myimage.png**です。 プラットフォームでは、ディスプレイの現在の DPI に基づく最も近い適切な資産のスケールを選択します。
+イメージ ファイルの名前を UWP[を付けることができます`.scale-xxx`ファイル拡張子の前に](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ここで、`xxx`の拡大/縮小すると、資産などの割合をパーセント**myimage.scale 200.png**です。 コードまたは XAML スケール修飾子を指定せず、たとえばだけにイメージを参照できます**myimage.png**です。 プラットフォームでは、ディスプレイの現在の DPI に基づく最も近い適切な資産のスケールを選択します。
 
 ### <a name="additional-controls-that-display-images"></a>その他のコントロール イメージを表示します。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 8d6276a96d591363c88be4ff7edd8a9d039fb29d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="colors"></a>色
 
@@ -44,7 +44,7 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-これらの色は、各プラットフォームの下に表示されます。 最終的な色に注意してください`Accent`-iOS および Android; blue-ish 色は、Xamarin.Forms でこの値が定義されています。 Windows Phone 上、`Accent`赤で表示される*そのデバイスのユーザーが選択したアクセント カラーであるため*以外の場合は、ユーザーの設定に応じてこの値が変更されました。
+これらの色は、各プラットフォームの下に表示されます。 最終的な色に注意してください`Accent`-iOS および Android; blue-ish 色は、Xamarin.Forms でこの値が定義されています。
 
  [![色のデモ](colors-images/colors-sml.png "色デモ")](colors-images/colors.png#lightbox "色デモ")
 
@@ -59,8 +59,6 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 色をオフに設定します。
 
 ## <a name="coloraccent"></a>Color.Accent
-
-Windows Phone では、これは、ユーザーが選択した補色です。 適切な Windows Phone アプリケーションのスタイル処理の一部として、ネイティブのルック アンド フィールを提供するのに使用します。
 
 IOS および Android では、このインスタンスは対照的な色が、既定の背景に表示が既定のテキストの色と同じではないに設定されます。
 

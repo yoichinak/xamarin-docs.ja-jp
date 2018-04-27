@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 3f098e7f403a4f5e9fd924b8745348197cd4f843
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b437b42c1cb4dd8cbe7612a680032d84e852ff6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-battery-status"></a>バッテリの状態を確認しています
 
@@ -22,7 +22,6 @@ ms.lasthandoff: 04/04/2018
 - **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;共有コードで、インターフェイスを作成する方法を理解します。
 - **[iOS 実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コードにインターフェイスを実装する方法について説明します。
 - **[Android 実装](#Android_Implementation)** &ndash; for Android のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[Windows Phone 実装](#Windows_Phone_Implementation)** &ndash; Windows Phone 用のネイティブ コードにインターフェイスを実装する方法について説明します。
 - **[ユニバーサル Windows プラットフォームの実装](#UWPImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードにインターフェイスを実装する方法について説明します。
 - **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法を学習`DependencyService`に共有コードからネイティブの実装を呼び出します。
 
@@ -311,74 +310,6 @@ namespace DependencyServiceSample.Droid
 
 この属性の実装としてクラスを登録する、`IBattery`インターフェイス、つまり`DependencyService.Get<IBattery>`で使用できる共有コードは、そのインスタンスを作成できます。
 
-<a name="Windows_Phone_Implementation" />
-
-## <a name="windows-phone-implementation"></a>Windows Phone の実装
-
-この実装では Windows Phone power API と同等の Android および iOS よりも小さい情報を提供するため、Android と iOS のバージョンよりも制限します。
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-namespace DependencyServiceSample.WinPhone
-{
-  public class BatteryImplementation : IBattery
-  {
-    private int last;
-    private BatteryStatus status = BatteryStatus.Unknown;
-
-    public BatteryImplementation()
-    {
-      last = DefaultBattery.RemainingChargePercent;
-    }
-
-    Windows.Phone.Devices.Power.Battery battery;
-    private Windows.Phone.Devices.Power.Battery DefaultBattery
-    {
-      get { return battery ?? (battery = Windows.Phone.Devices.Power.Battery.GetDefault()); }
-    }
-    public int RemainingChargePercent
-    {
-      get
-      { return DefaultBattery.RemainingChargePercent; }
-    }
-
-    public  BatteryStatus Status
-    {
-      get { return status; }
-    }
-
-    public PowerSource PowerSource
-    {
-      get
-      {
-        if (status == BatteryStatus.Full || status == BatteryStatus.Charging)
-          return PowerSource.Ac;
-
-        return PowerSource.Battery;
-      }
-    }
-  }
-}
-```
-
-この追加`[assembly]`など必要な属性のクラス上 (および定義されている任意の名前空間の外部)、`using`ステートメントです。
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (BatteryImplementation))]
-namespace DependencyServiceSample.WinPhone {
-  public class BatteryImplementation : IBattery {
-    ...
-```
-
-この属性の実装としてクラスを登録する、`IBattery`インターフェイス、つまり`DependencyService.Get<IBattery>`そのインスタンスを作成する共有コードで使用できます。
-
 <a name="UWPImplementation" />
 
 ## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームの実装
@@ -537,7 +468,7 @@ public MainPage ()
 }
 ```
 
-IOS、Android、または Windows プラットフォームにこのアプリケーションを実行して、ボタンを押すと、デバイスの現在の電源の状態を反映するように更新ボタンのテキストが発生します。
+このアプリケーションを実行して、ios、Android、または UWP とボタンを押してになります、デバイスの現在の電源の状態を反映するように更新ボタンのテキスト。
 
 ![](battery-info-images/battery.png "バッテリの状態のサンプル")
 

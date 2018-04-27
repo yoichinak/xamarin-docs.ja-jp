@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 5c9eed8f48a40bc7feaadd0c644610f691713e9b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="app-class"></a>App クラス
 
@@ -173,7 +173,7 @@ public partial class AppDelegate :
 }
 ```
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android プロジェクト
 
 Android`MainActivity`を今すぐ継承`FormsApplicationActivity`です。 `OnCreate`オーバーライド、`LoadApplication`のインスタンス メソッドが呼び出された、`App`クラスです。
 
@@ -198,70 +198,9 @@ public class MainActivity :
 > より新しい[ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md)基本 Android マテリアル デザインのサポートを向上させるために使用するクラス。
 > これは、既定の Android テンプレートを将来的になりますが、行うことができる[手順](~/xamarin-forms/platform/android/appcompat.md)を既存の Android アプリを更新します。
 
-
-### <a name="windows-phone-project"></a>Windows Phone プロジェクト
-
-Windows Phone (Silverlight ベースの) プロジェクトのメイン ページを継承する必要があります`FormsApplicationPage`です。 つまり、XAML および c# の`MainPage`参照、`FormsApplicationPage`クラスに示すようにします。
-
-XAML ルート要素が反映されるように、カスタム名前空間を使用して、`FormsApplicationPage`クラス。
-
-```xaml
-<winPhone:FormsApplicationPage
-   ...
-   xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"
-    ...>
-</winPhone:FormsApplicationPage>
-```
-
-C# からの継承、`FormsApplicationPage`クラス、および呼び出し`LoadApplication`、Xamarin.Forms のインスタンスを作成する`App`です。 明示的に修飾するために、アプリケーションの名前空間を使用することをお勧めしてあることに注意してください、 `App` Windows Phone アプリケーションもあるため、独自`App`Xamarin.Forms に関係のないクラスです。
-
-```csharp
-public partial class MainPage :
-    global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new YOUR_APP_NAMESPACE.App()); // new in 1.3, use the correct namespace
-    }
- }
-```
-
-### <a name="windows-81-project"></a>Windows 8.1 Project
-
-メイン ページに[(WinRT ベース)、Windows 8.1](~/xamarin-forms/platform/windows/installation/tablet.md)プロジェクトから継承する必要があります`WindowsPage`です。 つまりの XAML`MainPage`参照、`WindowsPage`クラスに示すようにします。
-
-XAML ルート要素が反映されるように、カスタム名前空間を使用して、`FormsApplicationPage`クラス。
-
-```xaml
-<forms:WindowsPage
-   ...
-   xmlns:forms="using:Xamarin.Forms.Platform.WinRT"
-   ...>
-</forms:WindowsPage>
-```
-
-C# 分離コードの構築を呼び出す必要があります`LoadApplication`、Xamarin.Forms のインスタンスを作成する`App`です。 明示的に修飾するために、アプリケーションの名前空間を使用することをお勧めしてあることに注意してください、 `App` UWP アプリケーションもあるため、独自`App`Xamarin.Forms に関係のないクラスです。
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        LoadApplication(new YOUR_APP_NAMESPACE.App());
-    }
- }
-```
-
-なお`Forms.Init()`呼び出す必要があります**App.xaml.cs** 65 行目付近です。
-
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>Windows 10 用のユニバーサル Windows プロジェクト (UWP)
 
-[ユニバーサル Windows Project](~/xamarin-forms/platform/windows/installation/universal.md) Xamarin.Forms でのサポートは現在プレビュー中です。
+参照してください[セットアップ Windows プロジェクト](~/xamarin-forms/platform/windows/installation/index.md)Xamarin.Forms で UWP サポートについてはします。
 
 UWP プロジェクトのメイン ページを継承する必要があります`WindowsPage`です。 つまり、XAML および c# の`MainPage`参照、`FormsApplicationPage`クラスに示すようにします。
 

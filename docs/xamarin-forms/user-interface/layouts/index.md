@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 24d9dd332275fd811c0ff60fc514ae0f84c6ee07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layouts"></a>レイアウト
 
@@ -180,7 +180,7 @@ Xamarin.Forms と、組み込みのレイアウトをデバイスの向きの変
 
 ### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[タブレットおよびデスクトップ アプリのレイアウト](tablet.md)
 
-iOS、Android、および Windows プラットフォームでより大きな画面サイズをサポートのすべてのタブレット デバイス (ラップトップと Windows のデスクトップ) およびします。 Xamarin.Forms を使用して、デバイスの種類とページ レイアウトを調整するかを検出するか、まったく別のページをより大きな画面の完全を使用してより大きな画面用のアプリを最適化できます。
+iOS、Android、およびユニバーサル Windows プラットフォームでより大きな画面サイズをサポートしてすべてのタブレット デバイス (ラップトップと Windows のデスクトップ) およびします。 Xamarin.Forms を使用して、デバイスの種類とページ レイアウトを調整するかを検出するか、まったく別のページをより大きな画面の完全を使用してより大きな画面用のアプリを最適化できます。
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[カスタム レイアウトの作成](custom.md)
 

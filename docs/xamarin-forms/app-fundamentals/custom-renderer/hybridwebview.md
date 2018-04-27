@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4adff8a95f9981dbecc44bf177dcd98b7984a3a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView を実装します。
 
 _Xamarin.Forms カスタム ユーザー インターフェイス コントロールは、レイアウトと、画面上のコントロールを配置に使用されるビュー クラスから派生する必要があります。この記事では、JavaScript から呼び出せるように c# コードを許可するプラットフォーム固有の web コントロールを強化する方法を示します、HybridWebView カスタム コントロールのカスタム レンダラーを作成する方法を示します。_
 
-各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ios では、Xamarin.Forms アプリケーションによって表示される、`ViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIView`コントロール。 Android のプラットフォームでは、`ViewRenderer`クラスをインスタンス化、`View`コントロール。 Windows Phone でユニバーサル Windows プラットフォーム (UWP)、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ios では、Xamarin.Forms アプリケーションによって表示される、`ViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIView`コントロール。 Android のプラットフォームでは、`ViewRenderer`クラスをインスタンス化、`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
 
 次の図の間のリレーションシップを示しています、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)とそれを実装する、対応するネイティブ コントロール。
 
@@ -417,13 +417,13 @@ public class JSBridge : Java.Lang.Object
 > [!IMPORTANT]
 > Android Oreo Android マニフェストが設定されることを確認、**ターゲット Android バージョン**に**自動**です。 それ以外の場合、このコードを実行して、、エラー メッセージ「invokeCSharpAction が定義されていません」します。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone のカスタム レンダラーを作成し、UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP にカスタム レンダラーを作成します。
 
-次のコード例では、Windows Phone と UWP のカスタム レンダラーを示しています。
+次のコード例は、UWP のカスタム レンダラーを示しています。
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, Windows.UI.Xaml.Controls.WebView>
     {

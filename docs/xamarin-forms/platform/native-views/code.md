@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7979e43cdde60b1b0248118e591c096295847acb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="native-views-in-c"></a>C# でネイティブのビュー
 
@@ -34,7 +34,6 @@ Xamarin.Forms 共有プロジェクトでこれらのメソッドを使用する
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
-- **Windows ランタイム**– Xamarin.Forms.Platform.WinRT
 - **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms.Platform.UWP
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>各プラットフォームでプラットフォーム固有のビューを追加します。
@@ -70,7 +69,7 @@ contentView.Content = textView.ToView();
 
 例では、`stackLayout`と`contentView`インスタンスは、XAML または c# で既に作成しています。
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Windows ランタイムとユニバーサル Windows プラットフォーム
+### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
 次のコード例は、追加する方法を示します、`TextBlock`を[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 

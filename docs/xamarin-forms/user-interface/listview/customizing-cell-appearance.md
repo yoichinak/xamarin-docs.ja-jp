@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: df0e113f0c76ea9bde58da7a7ceccd50edd5b227
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="cell-appearance"></a>セルの外観
 
@@ -62,8 +62,6 @@ Xamarin.Forms は、多くの単純なアプリケーションで使用できる
 - `TextColor` &ndash; テキストの色
 - `DetailColor` &ndash; 詳細テキストの色
 - `ImageSource` &ndash; テキストの横に表示するイメージ
-
-Windows Phone 8.1 を対象とするときに注意してください`ImageCell`を既定ではイメージをスケールできません。 また、Windows Phone 8.1 がテキストが表示される詳細情報の唯一のプラットフォームである、同じ色とフォントとして既定では主要なテキストに注意してください。 Windows Phone 8.0 のレンダリング`ImageCell`以下に示すようにします。
 
 ![](customizing-cell-appearance-images/image-cell-default.png "ImageCell の既定の例")
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="list-appearance"></a>リストの外観
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 04/06/2018
 - 設定、`ListView`の`ItemsSource`するためのリスト。
 - 設定`IsGroupingEnabled`true に設定します。
 - 設定[ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/)グループのタイトルとして使用されているグループのプロパティにバインドします。
-- [オプション]設定[ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/)グループの短い名前として使用されているグループのプロパティにバインドします。 短い名前は、ジャンプ リスト (iOS、Windows Phone 上のタイルのグリッドで rigt 側列) に使用されます。
+- [オプション]設定[ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/)グループの短い名前として使用されているグループのプロパティにバインドします。 短い名前は、ジャンプ リスト (iOS の右側の列) に使用されます。
 
 グループのクラスを作成して開始します。
 
@@ -120,7 +120,7 @@ x:Class="DemoListView.GroupingViewPage"
 
 一覧にグループ化が有効になっている場合、グループ ヘッダーもカスタマイズできます。
 
-ような方法、`ListView`が、 `ItemTemplate` 、行の表示方法を定義するため`ListView`が、`GroupHeaderTemplate`です。 
+ような方法、`ListView`が、 `ItemTemplate` 、行の表示方法を定義するため`ListView`が、`GroupHeaderTemplate`です。
 
 XAML でグループ ヘッダーをカスタマイズする例を次に示します。
 
@@ -206,7 +206,7 @@ XAML:
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>行区切り記号
-間に区切り線が表示される`ListView`iOS および Android では既定の要素。 Windows Phone では、そのプラットフォームのユーザー エクスペリエンス ガイドラインごとの区分線をサポートしていません。 IOS および Android 上の区分線を非表示にする場合は、設定、 `SeparatorVisibility` listview プロパティです。 オプションを`SeparatorVisibility`は。
+間に区切り線が表示される`ListView`iOS および Android では既定の要素。 IOS および Android 上の区分線を非表示にする場合は、設定、 `SeparatorVisibility` listview プロパティです。 オプションを`SeparatorVisibility`は。
 
 * **既定の**-iOS および Android での区切り線を示しています。
 * **None** -すべてのプラットフォーム上の区分線を非表示にします。
