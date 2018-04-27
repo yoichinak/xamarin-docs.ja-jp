@@ -5,13 +5,13 @@ metadata:
   description: モバイル開発者向けのクロスプラットフォーム ガイダンスです。
   author: conceptdev
   ms.author: crdun
-  ms.date: 03/28/2018
+  ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 92873a844fad195d221f6d191476cb5ff17c76e9
-  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+  ms.openlocfilehash: 51ca9ee767acf453b252a967e0bbcd083c52ce20
+  ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/03/2018
+  ms.lasthandoff: 04/26/2018
 abstract:
   description: Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発用プラットフォームが用意されています。
   menu:
@@ -44,48 +44,40 @@ sections:
       href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
 - title: ガイド
   items:
-  - type: grid
-    style: columns
-    className: column50
+  - type: list
+    style: cards
+    className: cardsB
     items:
-    - type: list
-      style: cards
-      className: cardsB
-      items:
-      - href: ~/cross-platform/get-started/index.md
-        html: すぐに Xamarin を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。
-        image:
-          src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
-          href: ~/cross-platform/get-started/index.md
-        title: 作業の開始
-      - href: ~/cross-platform/platform
-        html: プラットフォーム機能の操作方法について説明します。
-        image:
-          src: ~/media/icons/i_platform.svg
-          href: ~/
-        title: プラットフォーム機能
-      - href: ~/cross-platform/macios/
-        html: iOS、watchOS、tvOS、および macOS SDK に共通する機能について説明します。
-        image:
-          src: https://docs.microsoft.com/media/logos/logo_xcode.svg
-          href: ~/cross-platform/macios/
-        title: Apple プラットフォーム (Mac と iOS)
-    - type: list
-      style: cards
-      className: cardsB
-      items:
-      - href: ~/cross-platform/app-fundamentals/
-        html: アプリを構築するために必要なすべての情報について説明します。
-        image:
-          src: ~/media/icons/i_app-build.svg
-          href: ~/cross-platform/app-fundamentals/
-        title: アプリケーションの基礎
-      - href: ~/cross-platform/deploy-test/
-        html: アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。
-        image:
-          src: ~/media/icons/i_deploy-test.svg
-          href: ~/cross-platform/deploy-test/
-        title: 配置とテスト
+    - href: ~/cross-platform/get-started/index.md
+      html: すぐに Xamarin を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。
+      image:
+        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        href: ~/cross-platform/get-started/index.md
+      title: 作業の開始
+    - href: ~/cross-platform/app-fundamentals/
+      html: アプリを構築するために必要なすべての情報について説明します。
+      image:
+        src: ~/media/icons/i_app-build.svg
+        href: ~/cross-platform/app-fundamentals/
+      title: アプリケーションの基礎
+    - href: ~/cross-platform/platform
+      html: プラットフォーム機能の操作方法について説明します。
+      image:
+        src: ~/media/icons/i_platform.svg
+        href: ~/
+      title: プラットフォーム機能
+    - href: ~/cross-platform/deploy-test/
+      html: アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。
+      image:
+        src: ~/media/icons/i_deploy-test.svg
+        href: ~/cross-platform/deploy-test/
+      title: 配置とテスト
+    - href: ~/cross-platform/macios/
+      html: iOS、watchOS、tvOS、および macOS SDK に共通する機能について説明します。
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_xcode.svg
+        href: ~/cross-platform/macios/
+      title: Apple プラットフォーム (Mac と iOS)
 - title: プラットフォーム
   items:
   - type: list

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5ca2918a0348254407fcbfff030def6c36af4988
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS の詳細説明
 
@@ -85,7 +85,7 @@ Visual Studio は、コードを_ソリューション_と*プロジェクト*�
 
 [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) チュートリアルでは、**Phoneword** というソリューションを作成し、iOS プロジェクト (**Phoneword_iOS**) をその中に配置しました。 プロジェクト内には次の項目があります。
 
--  **References** アプリケーションのビルドと実行に必要なアセンブリが含まれています。 ディレクトリを展開すると、[System](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx)、System.Core、[System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx) などの .NET アセンブリへの参照、および Xamarin の Xamarin.iOS アセンブリへの参照が表示されます。
+-  **References** アプリケーションのビルドと実行に必要なアセンブリが含まれています。 ディレクトリを展開すると、[System](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx)、System.Core、[System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) などの .NET アセンブリへの参照、および Xamarin の Xamarin.iOS アセンブリへの参照が表示されます。
 -  **Packages** - Packages ディレクトリには、あらかじめ用意されている NuGet パッケージが含まれています。
 -  **Resources** - Resources フォルダーは、その他のメディアを格納します。
 -  **Main.cs** – このファイルには、アプリケーションのメイン エントリ ポイントが含まれています。 アプリケーションを起動するには、メイン アプリケーション クラスの名前 `AppDelegate` が渡されます。

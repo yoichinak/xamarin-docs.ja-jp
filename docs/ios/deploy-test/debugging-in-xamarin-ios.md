@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8848dd20683163cd42215fe496dd7ff6a9e9f0c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e2e32170de258f46eb5a926db35bce33c0ca64de
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="debugging"></a>デバッグ
 
@@ -164,7 +164,7 @@ Visual Studio では次のように表示されます。
 - **ステップ イン (F10)** - このボタンの場合も次のコード行が実行されます。 次行が関数呼び出しの場合、[ステップ イン] をクリックすると関数の最初の行で停止するので、関数のデバッグを 1 行ずつ続行できます。 次行が関数ではない場合の動作は、[ステップ オーバー] と同じです。
 - **ステップ アウト (Shift + F11)** - 現在の関数が呼び出された行に戻ります。
 
-デバッグの詳しいドキュメントについては、「[Navigate Code with the Visual Studio Debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger)」(Visual Studio デバッガーでコード内を移動する) をご覧ください。
+デバッグの詳しいドキュメントについては、「[Navigate Code with the Visual Studio Debugger](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)」(Visual Studio デバッガーでコード内を移動する) をご覧ください。
 
 -----
 
