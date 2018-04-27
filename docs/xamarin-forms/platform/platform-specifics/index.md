@@ -1,6 +1,6 @@
 ---
-title: プラットフォーム固有
-description: プラットフォーム固有では、カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用できます。
+title: プラットフォーム仕様
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。
 ms.prod: xamarin
 ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
 ms.technology: xamarin-forms
@@ -13,11 +13,11 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-specifics"></a>プラットフォーム固有
+# <a name="platform-specifics"></a>プラットフォーム仕様
 
-_プラットフォーム固有では、カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用できます。_
+_プラットフォーム仕様は、 カスタム レンダラーや特殊効果を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。_
 
-次のプラットフォーム固有の機能は、Xamarin.Forms に構成されています。
+次のようなプラットフォーム仕様の機能が、Xamarin.Forms に組み込まれています。
 
 |iOS|Android|Windows|
 |--- |--- |--- |
@@ -31,26 +31,26 @@ _プラットフォーム固有では、カスタム レンダラーや特殊効
 |[Page.PrefersStatusBarHidden と Page.PreferredStatusBarUpdateAnimation](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#set_status_bar_visibility)|
 |[ScrollView.ShouldDelayContentTouches](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#delay_content_touches)|
 
-XAML による fluent コード API によるかプラットフォームに固有の使用に関して、プロセスは次のとおりです。
+XAML または fluent API のコードを使ったプラットフォーム仕様の使用手順は次のとおりです。
 
-1. 追加、`xmlns`宣言または`using`ディレクティブを[ `Xamarin.Forms.PlatformConfiguration` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/)名前空間。
-1. 追加、`xmlns`宣言または`using`プラットフォーム固有の機能を含む名前空間のディレクティブ。
-    1. これは、ios の場合、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間。
-    1. これは、android で、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間。 これは Android の AppCompat、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)名前空間。
-    1. これは、ユニバーサル Windows プラットフォームに、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)名前空間。
-1. プラットフォーム固有の適用、XAML またはコードから、 `On<T>` fluent API です。 値`T`できます、 [ `iOS` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOS/)、 [ `Android` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.Android/)、または[ `Windows` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.Windows/)から型の[ `Xamarin.Forms.PlatformConfiguration`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/)名前空間。
+1. [ `Xamarin.Forms.PlatformConfiguration` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/)名前空間に`xmlns`宣言または`using`ディレクティブを追加します。
+2. プラットフォーム仕様の機能が含まれる名前空間に`xmlns`宣言または`using`ディレクティブを追加します。
+    a. iOS の場合、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間です。
+    b. Android の場合は、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間です。Android AppCompat の場合は、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)名前空間です。
+    c. ユニバーサル Windows プラットフォームの場合は、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)名前空間です。
+1. XAML から、または `On<T>` fluent API を含むコードからプラットフォーム仕様を適用します。`T`の値には、[ `Xamarin.Forms.PlatformConfiguration`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/)名前空間から [ `iOS` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOS/)、[ `Android` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.Android/)、または [ `Windows` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.Windows/)の型を指定できます。
 
 > [!NOTE]
-> ここでは使用できませんのプラットフォームでは、プラットフォームに固有の使用を試みたりは発生しないこと、エラーに注意してください。 代わりに、コードが適用されているプラットフォームに応じたせず実行されます。
+> プラットフォーム仕様を利用できないプラットフォーム上で、プラットフォーム仕様の使おうとしてもエラーにはならないことに注意してください。そのかわり、そのコードはプラットフォーム仕様の適用なしで実行されます。
 
-プラットフォーム固有の使用を通じて、 `On<T>` fluent コード API の戻り値[ `IPlatformElementConfiguration` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IPlatformElementConfiguration%3CTPlatform,TElement%3E/)オブジェクト。 これにより、メソッドの連鎖で同じオブジェクトで呼び出される複数のプラットフォーム固有です。
+プラットフォーム仕様は、[ `IPlatformElementConfiguration` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IPlatformElementConfiguration%3CTPlatform,TElement%3E/)オブジェクトを返すコードの `On<T>` fluent API を通じて使用します。これによって、メソッド カスケードを使って複数のプラットフォーム仕様を呼び出すことができます。
 
-プラットフォーム固有の詳細については、次を参照してください。[消費してプラットフォーム固有](~/xamarin-forms/platform/platform-specifics/consuming/index.md)と[を作成するプラットフォーム固有](~/xamarin-forms/platform/platform-specifics/creating.md)です。
+プラットフォーム仕様の詳細については、「[Platform-Specific の使用](~/xamarin-forms/platform/platform-specifics/consuming/index.md)」や「[Platform-Specific の作成](~/xamarin-forms/platform/platform-specifics/creating.md)」を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム固有設定の使用](~/xamarin-forms/platform/platform-specifics/consuming/index.md)
-- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
-- [PlatformSpecifics (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様の使用](~/xamarin-forms/platform/platform-specifics/consuming/index.md)
+- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [PlatformConfiguration](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/)
