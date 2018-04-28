@@ -5,12 +5,12 @@ ms.assetid: B09AD282-2C4F-D71E-6806-9B1EF05C2CD4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 71557cc0adb123cd4556c3d35add314f44f30da1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: f4d737e31304a88f3ec293f90267a35ed1f2c7a5
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>リスト ビューの外観のカスタマイズ
 
@@ -38,7 +38,7 @@ ListView の外観は、表示されている行のレイアウトによって�
 
 - **SimpleListItemChecked** &ndash;選択範囲を示すためにチェック マークが表示されます。
 
-- **SimpleListItemMultipleChoice** &ndash; Displays check boxes to indicate multiple-choice selection.
+- **SimpleListItemMultipleChoice** &ndash;複数の選択を指定するためのチェック ボックスが表示されます。
 
 - **SimpleListItemSingleChoice** &ndash;表示オプションを相互に排他的な選択を示すボタン。
 
@@ -106,7 +106,7 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItemChecked, items);
 ```
 
-`ListView`自体が表示されているアクセサーに関係なく、別の選択モードをサポートしています。 混乱を避けるためには、次のように使用します。`Single`選択モードと`Checked`と`SingleChoice`アクセサリと`Multiple`モードと、`MultipleChoice`スタイル。 選択モードがによって制御される、`ChoiceMode`のプロパティ、`ListView`です。
+`ListView`自体が表示されているアクセサーに関係なく、別の選択モードをサポートしています。 混乱を避けるためには、次のように使用します。`Single`選択モードと`SingleChoice`アクセサリと`Checked`または`Multiple`モードと、`MultipleChoice`スタイル。 選択モードがによって制御される、`ChoiceMode`のプロパティ、`ListView`です。
 
 
 ### <a name="handling-api-level"></a>処理 API レベル

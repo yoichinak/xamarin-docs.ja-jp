@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 37ecc76d9774b3f375af92f2a00c6c687358f065
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="cell-appearance"></a>セルの外観
 
@@ -70,7 +70,7 @@ Xamarin.Forms は、多くの単純なアプリケーションで使用できる
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>カスタムのセル
-組み込みのセルが、必要なレイアウトを提供しない場合に、カスタムのセルには、必要なレイアウトが実装されています。 たとえば、を同じ重みを持つ 2 つのラベルが付いたセルを表示することがあります。 A`LabelCell`十分となりますので、`LabelCell`小さいが 1 つのラベルがあります。 セルのカスタマイズのほとんどは、(その他のラベル、イメージや他の情報を表示) など、追加の読み取り専用のデータを追加します。
+組み込みのセルが、必要なレイアウトを提供しない場合に、カスタムのセルには、必要なレイアウトが実装されています。 たとえば、を同じ重みを持つ 2 つのラベルが付いたセルを表示することがあります。 A`TextCell`十分となりますので、`TextCell`小さいが 1 つのラベルがあります。 セルのカスタマイズのほとんどは、(その他のラベル、イメージや他の情報を表示) など、追加の読み取り専用のデータを追加します。
 
 カスタムのすべてのセルから派生しなければなりません[ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)、組み込みのセルのすべての型を使用している同じ基本クラスです。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2018
-ms.openlocfilehash: 51aad1643709a96c56ccad8187a53f47a65a9dac
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 2e2bbf12cd7b4abab4609349b549fde1bcea09e8
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wpf-platform-setup"></a>WPF のプラットフォームのセットアップ
 
@@ -27,7 +27,7 @@ Windows 7、8、および 10 のデスクトップで実行される WPF アプ�
 
 1. Visual Studio 2017 でソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
-2. **新しいプロジェクト**ウィンドウで、左クリックで**Visual c#**と**Windows クラシック デスクトップ**です。 プロジェクトの種類の一覧で選択**WPF アプリケーション (.NET Framework)**です。 
+2. **新しいプロジェクト**ウィンドウで、左クリックで**Visual c#** と**Windows クラシック デスクトップ**です。 プロジェクトの種類の一覧で選択**WPF アプリケーション (.NET Framework)** です。 
 
 3. 使用してプロジェクトの名前を入力、 **WPF**拡張子、たとえば、 **BoxViewClock.WPF**です。 をクリックして、**参照**ボタン、、 **BoxViewClock**フォルダー、およびキーを押して**フォルダーの選択**です。 これにより、WPF プロジェクト、ソリューション内の他のプロジェクトと同じディレクトリに入ります。
 
@@ -57,7 +57,7 @@ Windows 7、8、および 10 のデスクトップで実行される WPF アプ�
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    ここで変更、`Window`タグを`wpf:FormsApplcationPage`です。 変更、`Title`設定、アプリケーションの名前を**BoxViewClock**です。 完成した XAML ファイルは、次のようになります。
+    ここで変更、`Window`タグを`wpf:FormsApplicationPage`です。 変更、`Title`設定、アプリケーションの名前を**BoxViewClock**です。 完成した XAML ファイルは、次のようになります。
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
