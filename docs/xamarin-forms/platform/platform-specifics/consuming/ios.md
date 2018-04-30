@@ -1,6 +1,6 @@
 ---
 title: iOS プラットフォーム仕様
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。この記事では Xamarin.Forms に組み込まれている iOS のプラットフォーム仕様の使い方を説明します。
+description: プラットフォーム固有では、カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用できます。 この記事では、iOS プラットフォームの具体的な Xamarin.Forms に組み込まれているを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
@@ -15,25 +15,25 @@ ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
-プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。この記事では Xamarin.Forms に組み込まれている iOS のプラットフォーム仕様の使い方を説明します。_
+_プラットフォーム固有では、カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用できます。この記事では、iOS プラットフォームの具体的な Xamarin.Forms に組み込まれているを使用する方法を示します。_
 
-iOS では、Xamarin.Forms に次のプラットフォーム仕様が含まれています。
+Ios の場合は、Xamarin.Forms には、次のプラットフォームの設定が含まれています。
 
-[ `VisualElement`](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)へに対するぼかしのサポート。詳細については、「[ぼかしの適用](#blur)」を参照してください。
-- ナビゲーションバーでページタイトルを大タイトルとして表示するかどうかを制御します。詳細については、「[大タイトルの表示](#large_title)」を参照してください。
-- ページのコンテンツがすべての iOS デバイスにとって安全な画面の領域に配置されるようにします。詳細については、「[セーフ エリア レイアウト ガイドの有効化](#safe_area_layout)」を参照してください。
-- 透明のナビゲーション バー。詳細については「[ナビゲーション バーの透明化](#translucent_navigation_bar)」を参照してください。
-- [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)上のステータスバーのテキストの色をナビゲーションバーの明るさに合わせて調整するかどうかを制御します。詳細については、「[ステータス バーのテキストの色モードの調整](#status_bar_color_mode)」を参照してください。
-- フォントサイズを調整することで入力した文字が [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)内に収まるようにします。詳細については、「[エントリのフォント サイズの調整](#adjust_font_size)」を参照してください。
-- [`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) でアイテムの選択が発生するタイミングを制御します。詳細については、「[Picker のアイテム選択の制御](#picker_update_mode)」を参照してください。
-- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) のステータス バーの可視性を設定します。詳細については、「[Page でのステータスバーの可視性の設定](#set_status_bar_visibility)」を参照してください。
-- [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) がタッチ ジェスチャを処理するか、そのコンテンツに渡すかを制御します。詳細については、「[ ScrollView でのコンテンツのタッチの遅延](#delay_content_touches)」を参照してください。
+- いずれかのサポートをぼかす[ `VisualElement`](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)です。 詳細については、次を参照してください。[ぼかし適用](#blur)です。
+- ページのナビゲーション バーで大規模なタイトルとしてページ タイトルが表示されるかどうかを制御します。 詳細については、次を参照してください。[大きいタイトルを表示する](#large_title)です。
+- すべての iOS デバイスに対して安全では、画面の領域には、そのページのコンテンツを確保するが配置されています。 詳細については、次を参照してください。 [、安全な領域のレイアウト ガイドを有効にする](#safe_area_layout)です。
+- 半透明のナビゲーション バー。 詳細については、次を参照してください。[ナビゲーション バー半透明行う](#translucent_navigation_bar)です。
+- 制御する、ステータス バーのテキスト色に対するかどうか、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)ナビゲーション バーの明るさと一致するように調整します。 詳細については、次を参照してください。[ステータス バーのテキスト色のモードを調整する](#status_bar_color_mode)です。
+- テキストを入力することを確認に組み込まれて、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)フォント サイズを調整することによってです。 詳細については、次を参照してください。[エントリのフォント サイズを調整する](#adjust_font_size)です。
+- 内の項目の選択のタイミングを制御する、 [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)です。 詳細については、次を参照してください。[の選択項目の選択を制御する](#picker_update_mode)です。
+- ステータス バーの可視性の設定、 [ `Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)です。 詳細については、次を参照してください。 [、ページにステータス バーの可視性を設定する](#set_status_bar_visibility)です。
+- 制御するかどうか、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)タッチ ジェスチャを処理するか、そのコンテンツに渡します。 詳細については、次を参照してください。 [、ScrollView でのコンテンツの調整を遅らせること](#delay_content_touches)です。
 
 <a name="blur" />
 
-## <a name="applying-blur"></a>ぼかしの適用
+## <a name="applying-blur"></a>ぼかし適用します。
 
-このプラットフォーム仕様は下に重なったコンテンツをぼかすために使われ、Xamlで、 [ `VisualElement.BlurEffect` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty/)添付プロパティを[ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)の列挙型の値に設定して使用します。
+このプラットフォームに固有は、その下位にある階層型の内容をぼかす使用し、設定によって、XAML で使用される、 [ `VisualElement.BlurEffect` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty/)添付プロパティの値を[ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)列挙します。
 
 ```xaml
 <ContentPage ...
@@ -57,17 +57,17 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 ```
 
-`BoxView.On<iOS>`メソッドは、このプラットフォーム仕様が iOS でのみ動作することを指定します。[ `VisualElement.UseBlurEffect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)メソッドは [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間に存在し、[ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)列挙型が適用する4つの値（[ `None` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None/)、 [ `ExtraLight` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight/)、 [ `Light` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light/)、[ `Dark`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark/)）を使ってぼかし効果を適用するために使用されます。
+`BoxView.On<iOS>`メソッドは、iOS でのこのプラットフォームに固有の実行はのみを指定します。 [ `VisualElement.UseBlurEffect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)のぼかし効果を適用する名前空間が使用される、 [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)を提供する 4 つの列挙値: [ `None` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None/)、 [ `ExtraLight` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight/)、 [ `Light` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light/)、および[ `Dark`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark/)です。
 
-結果として、指定された[ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)が[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)のインスタンスに適用され、下に重なっている[ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)をぼかします。
+結果として、指定された[ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)が [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)のインスタンスに適用され、下に重なっている [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)をぼかします。
 
-![](ios-images/blur-effect.png "ぼかし効果のプラットフォーム仕様")
+![](ios-images/blur-effect.png "ぼかし効果プラットフォーム固有")
 
 <a name="large_title" />
 
-## <a name="displaying-large-titles"></a>大タイトルの表示
+## <a name="displaying-large-titles"></a>大規模なタイトルを表示します。
 
-このプラットフォーム仕様は、iOS11 以上を使うデバイスで、ナビゲーションバー上で大タイトルとしてページタイトルを表示するために使われます。大タイトルは左寄せで大きいフォントが使われます。そして画面の領域を効率的に使うために、ユーザーがコンテンツをスクロールした時に、標準のタイトルに移り変わります。しかし横向きの画面では、コンテンツのレイアウトを最適化するためにタイトルはナビゲーションバーの中央に戻ります。この機能は XAML で `NavigationPage.PrefersLargeTitles` 添付プロパティを `boolean` 値に設定して使用します。
+このプラットフォームに固有の仕様を使用して、ナビゲーション バーで、iOS 11 以上を使用しているデバイスの大規模なタイトルとしてページ タイトルを表示します。 大タイトルは左揃え、大きいフォントを使用し、実際の画面が効率的に使用されるよう、ユーザーが開始、コンテンツがスクロールされる標準のタイトルに遷移します。 ただし、横方向にタイトルはコンテンツのレイアウトを最適化するために、ナビゲーション バーの中央に戻ります。 使用される XAML で設定して、`NavigationPage.PrefersLargeTitles`添付プロパティを`boolean`値。
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -90,9 +90,9 @@ var navigationPage = new Xamarin.Forms.NavigationPage(new iOSLargeTitlePageCS())
 navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 ```
 
-`NavigationPage.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `NavigationPage.SetPrefersLargeTitle` メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間に存在し、大タイトルを有効にするかどうかを制御します。
+`NavigationPage.On<iOS>`メソッドはこの platform-specific が iOS上 でのみ動作することを指定します。 `NavigationPage.SetPrefersLargeTitle`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間は、大きいタイトルが有効になっているかどうかを制御します。
 
-[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) で大タイトルが有効になると、ナビゲーションスタックにあるすべてのページは大タイトルで表示されるようになります。この動作は個々のページ上で `Page.LargeTitleDisplay` 添付プロパティを `LargeTitleDisplayMode` 列挙型の値に設定することで上書きできます。
+大きいタイトルは有効になっていれば、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)、大きいタイトルを移動スタック内のすべてのページが表示されます。 設定ページでこの動作をオーバーライドできます、`Page.LargeTitleDisplay`添付プロパティの値を`LargeTitleDisplayMode`列挙します。
 
 ```xaml
 <ContentPage ...
@@ -121,13 +121,13 @@ public class iOSLargeTitlePageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Page.SetLargeTitleDisplay` メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、[ `Page`] (https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) 上の大タイトルの動作を `LargeTitleDisplayMode` 列挙型が提供する次の 3 つ値を使って制御します。
+`Page.On<iOS>`メソッドは、iOS でのこのプラットフォームに固有の実行はのみを指定します。 `Page.SetLargeTitleDisplay`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間に大きなタイトル動作を制御する、 [ `Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)で、`LargeTitleDisplayMode`提供する 3 つの可能な列挙型値:
 
-- `Always` – 強制的にナビゲーションバーとフォントサイズに大きいフォーマットを使う
-- `Automatic` – ナビゲーションスタックの前のアイテムと同じスタイル（大または小）を使う
-- `Never` – 強制的に標準の小さいフォーマットのナビゲーションバーを使う 
+- `Always` – 強制的にナビゲーションバーとフォントサイズに大きいフォーマットを使う。
+- `Automatic` – 移動スタック内の前の項目として同じスタイル (大きさにかかわらず) を使用します。
+- `Never` – 強制的に標準の小さいフォーマットのナビゲーションバーを使う。
 
-さらに、`SetLargeTitleDisplay` メソッドは、現在の `LargeTitleDisplayMode` を返す `LargeTitleDisplay` メソッドを呼び出すことによって列挙値を切り替えるのに使用することができます。
+さらに、`SetLargeTitleDisplay`メソッドを呼び出すことで列挙値を切り替えるを使用することができます、`LargeTitleDisplay`現在を返すメソッド`LargeTitleDisplayMode`:
 
 ```csharp
 switch (On<iOS>().LargeTitleDisplay())
@@ -144,15 +144,15 @@ switch (On<iOS>().LargeTitleDisplay())
 }
 ```
 
-その結果、指定した `LargeTitleDisplayMode` が [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) に適用され、大タイトルの動作を制御します。
+結果は、指定した`LargeTitleDisplayMode`に適用される、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)、大規模なタイトルの動作を制御します。
 
-![](ios-images/large-title.png "ぼかし効果のプラットフォーム仕様")
+![](ios-images/large-title.png "ぼかし効果プラットフォーム固有")
 
 <a name="safe_area_layout" />
 
-## <a name="enabling-the-safe-area-layout-guide"></a>セーフ エリア レイアウト ガイドの有効化
+## <a name="enabling-the-safe-area-layout-guide"></a>安全な領域のレイアウト ガイドを有効にします。
 
-このプラットフォーム仕様は iOS11 以上を使う全てのデバイスでページコンテンツを安全な画面の領域に配置させるために使います。特に、iPhone X でデバイスの角の丸まり、ホームインジケータ、またはセンサーハウジングによってコンテンツが切り抜かれないようにすることを保証します。これは XAML で `Page.UseSafeArea` 添付プロパティを `boolean` 値に設定して使用します。
+このプラットフォームに固有のページ コンテンツが iOS 11 以降を使用しているすべてのデバイスに対して安全では、画面の領域に配置されていることを確認してください。 を使用します。 具体的には、確認に役立つ角の丸みのあるデバイスやホームのインジケーターでは、iphone X センサー ハウジングでそのコンテンツがクリップはありません。使用される XAML で設定して、`Page.UseSafeArea`添付プロパティを`boolean`値。
 
 ```xaml
 <ContentPage ...
@@ -175,16 +175,16 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetUseSafeArea(true);
 ```
 
-`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Page.SetUseSafeArea` メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、セーフ エリア レイアウト ガイドを有効にするかどうかを制御します。
+`Page.On<iOS>`メソッドは、iOS でのこのプラットフォームに固有の実行はのみを指定します。 `Page.SetUseSafeArea`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間が、安全な領域のレイアウト ガイドが有効になっているかどうかを制御します。
 
-その結果、ページコンテンツをすべての iPhone において、画面の安全な領域に配置することができます。
+結果はすべての Iphone 安全では、画面の領域をページのコンテンツを配置することができます。
 
-[![](ios-images/safe-area-layout.png "セーフ エリア レイアウト ガイド")](ios-images/safe-area-layout-large.png#lightbox "セーフ エリア レイアウト ガイド")
+[![](ios-images/safe-area-layout.png "安全な領域のレイアウト ガイド")](ios-images/safe-area-layout-large.png#lightbox "セーフ エリア レイアウト ガイド")
 
 > [!NOTE]
-> Apple によって定義されたセーフ エリアは、Xamarin.Forms では[ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/)プロパティを設定するために使用され、このプロパティの設定済みのすべての値は上書きされます。
+> Apple で定義された安全な領域は、Xamarin.Forms で設定に使用される、 [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/)プロパティ、およびそれまでの値のこのプロパティが設定されているよりも優先されます。
 
-セーフ エリアは[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間の `Page.SafeAreaInsets` メソッドを使って、その [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)の値を変更することでカスタマイズが可能です。取得した値を必要に応じて変更し、ページのコンストラクタまたは[ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/)のオーバーライドで、 `Padding` プロパティに再割り当てすることができます。
+取得することによって、安全な領域をカスタマイズすることができます、 [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)値と、`Page.SafeAreaInsets`メソッドから、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間。 として変更することができますし、必須であり、再割り当て、`Padding`ページのコンス トラクター内のプロパティまたは[ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/)オーバーライドします。
 
 ```csharp
 protected override void OnAppearing()
@@ -199,9 +199,9 @@ protected override void OnAppearing()
 
 <a name="translucent_navigation_bar" />
 
-## <a name="making-the-navigation-bar-translucent"></a>ナビゲーション バーの透明化
+## <a name="making-the-navigation-bar-translucent"></a>ナビゲーション バーを半透明にします。
 
-このプラットフォーム仕様はナビゲーションバーの透明度を変更するために使われます。これは XAML で [ `NavigationPage.IsNavigationBarTranslucent` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty/)添付プロパティを `boolean` 値に設定して使用します。
+このプラットフォームに固有のナビゲーション バーの透明度を変更するために使用し、設定によって、XAML で使用される、 [ `NavigationPage.IsNavigationBarTranslucent` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty/)添付プロパティを`boolean`値。
 
 ```xaml
 <NavigationPage ...
@@ -223,7 +223,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 (App.Current.MainPage as Xamarin.Forms.NavigationPage).On<iOS>().EnableTranslucentNavigationBar();
 ```
 
-`NavigationPage.On<iOS>` メソッドはこの platform-specific が iOS上 でのみ動作することを指定します。 [ `NavigationPage.EnableTranslucentNavigationBar` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/)メソッドは、[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間に存在し、ナビゲーションバーを透過させるために使用されます。さらに、 `Xamarin.Forms.PlatformConfiguration.iOSSpecific` 名前空間の [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage/)クラスには、ナビゲーションバーをデフォルトの状態に戻す[ `DisableTranslucentNavigationBar` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/)メソッドや[ `IsNavigationBarTranslucent` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/)メソッドを呼ぶことで、ナビゲーションバーの透明度を切り替えることに使用できる[ `SetIsNavigationBarTranslucent`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/System.Boolean/) メソッドもあります。
+`NavigationPage.On<iOS>`メソッドはこの platform-specific が iOS上 でのみ動作することを指定します。 [`NavigationPage.EnableTranslucentNavigationBar`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/)メソッドは、[`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間に存在し、ナビゲーションバーを透過させるために使用されます。 さらに、 `Xamarin.Forms.PlatformConfiguration.iOSSpecific` 名前空間の [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage/)クラスには、ナビゲーションバーをデフォルトの状態に戻す[`DisableTranslucentNavigationBar`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/)メソッドや[`IsNavigationBarTranslucent`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/)メソッドを呼ぶことで、ナビゲーションバーの透明度を切り替えることに使用できる[`SetIsNavigationBarTranslucent`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/System.Boolean/) メソッドもあります。
 
 ```csharp
 (App.Current.MainPage as Xamarin.Forms.NavigationPage)
@@ -233,13 +233,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 その結果、ナビゲーション バーの透明度を変更することができます。
 
-![](ios-images/translucent-navigation-bar.png "透明ナビゲーション バーのプラットフォーム仕様")
+![](ios-images/translucent-navigation-bar.png "プラットフォームに固有の半透明のナビゲーション バー")
 
 <a name="status_bar_color_mode" />
 
-## <a name="adjusting-the-status-bar-text-color-mode"></a>ステータス バーのテキストの色モードの調整
+## <a name="adjusting-the-status-bar-text-color-mode"></a>ステータス バーのテキストの色のモードを調整します。
 
-このプラットフォーム仕様は、[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) のステータスバーのテキストの色をナビゲーションバーの明るさに合うように調整するかどうかを制御します。これは、 XAML で[ `NavigationPage.StatusBarTextColorMode` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty/)添付プロパティを[ `StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙型の値に設定して使用します。
+このプラットフォームに固有のコントロールで、ステータス バーのテキストがカラーかどうか、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)ナビゲーション バーの明るさと一致するように調整します。 使用される XAML で設定して、 [ `NavigationPage.StatusBarTextColorMode` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty/)添付プロパティの値を[ `StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙します。
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -284,22 +284,22 @@ IsPresentedChanged += (sender, e) =>
 };
 ```
 
-`NavigationPage.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 [ `NavigationPage.SetStatusBarTextColorMode` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/) メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) のステータスバーのテキスト色をナビゲーションバーの明るさに合うように調整するかどうかを、[ `StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙型が提供する2つの値を使って制御します。
+`NavigationPage.On<iOS>`メソッドはこの platform-specific が iOS上 でのみ動作することを指定します。 [ `NavigationPage.SetStatusBarTextColorMode` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)コントロールの名前空間は、ステータス バーのテキスト色に対するかどうか、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)に合わせて調整されます、ナビゲーション バーの明るさと、 [ `StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙型の 2 つの値を提供します。
 
-- [`DoNotAdjust`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust/) – ステータスバーのテキストの色を調整しないことを示します。
+- [`DoNotAdjust`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust/) – ステータス バーのテキストの色を調整いないことを示します。
 - [`MatchNavigationBarTextLuminosity`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.MatchNavigationBarTextLuminosity/) – ステータスバーのテキスト色をナビゲーションバーの明るさに合わせることを示します。
 
-さらに、 [ `GetStatusBarTextColorMode` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/)メソッドは[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)に適用された現在の[ `StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙型の値を取得するために使用できます。
+さらに、 [`GetStatusBarTextColorMode`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/)メソッドは[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)に適用された現在の[`StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙型の値を取得するために使用できます。
 
-その結果、[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)のステータスバーのテキストの色はナビゲーションバーの明るさに合わせて調整されます。この例では、ステータスバーのテキストの色は [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) の [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) ページと[ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) ページをユーザが切り替えたときに変化します。
+結果は、ステータス バーの上のテキストの色、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)ナビゲーション バーの明るさを一致するように調整されることができます。 この例ではユーザーとステータス バーのテキストの色の変更のスイッチ間、 [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/)と[ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)のページ、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
-![](ios-images/status-bar-text-color-mode.png "ステータス バーのテキストの色モードのプラットフォーム仕様")
+![](ios-images/status-bar-text-color-mode.png "ステータス バーのテキストの色モード プラットフォーム固有")
 
 <a name="adjust_font_size" />
 
-## <a name="adjusting-the-font-size-of-an-entry"></a>エントリのフォント サイズの調整
+## <a name="adjusting-the-font-size-of-an-entry"></a>エントリのフォント サイズを調整します。
 
-このプラットフォーム仕様は、入力されたテキストがコントロール内に収まるように [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) のフォントサイズを拡大縮小するために使用されます。これは XAML で [ `Entry.AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/) 添付プロパティを `boolean` 値を設定して使用します。
+このプラットフォームに固有の使用のフォント サイズを調整する、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)を入力テキストがコントロール内に収まることを確認します。 使用される XAML で設定して、 [ `Entry.AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/)添付プロパティを`boolean`値。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -325,21 +325,21 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 entry.On<iOS>().EnableAdjustsFontSizeToFitWidth();
 ```
 
-`Entry.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 [ `Entry.EnableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.EnableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、入力されたテキストのフォントサイズを [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) に収まるように拡大縮小するために使用します。さらに、 `Xamarin.Forms.PlatformConfiguration.iOSSpecific` 名前空間の [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry/) クラスには、このプラットフォーム仕様を無効にする [ `DisableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.DisableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) メソッドや、[ `AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) メソッドを呼ぶことでフォントサイズの拡大縮小を切り替えることに使える [ `SetAdjustsFontSizeToFitWidth`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/System.Boolean/) メソッドもあります。
+`Entry.On<iOS>`メソッドは、iOS でのこのプラットフォームに固有の実行はのみを指定します。 [ `Entry.EnableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.EnableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/)メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)に収まることを確認する入力テキストのフォント サイズを調整する、名前空間が使用される、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). さらに、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry/)クラス内で、`Xamarin.Forms.PlatformConfiguration.iOSSpecific`名前空間にはまた、 [ `DisableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.DisableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/)このプラットフォームに固有で無効にするメソッドと[ `SetAdjustsFontSizeToFitWidth`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/System.Boolean/)メソッドを呼び出すことによってスケーリングのフォント サイズを切り替えるために使用する、 [ `AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/)メソッド。
 
 ```csharp
 entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToFitWidth());
 ```
 
-その結果、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) のフォントサイズは入力テキストがコントロール内に収まるように拡大縮小されます。
+その結果、 [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)のフォントサイズは入力テキストがコントロール内に収まるように拡大縮小されます。
 
-![](ios-images/entry-font-size.png "エントリ フォント サイズの調整のプラットフォーム仕様")
+![](ios-images/entry-font-size.png "エントリのフォント サイズのプラットフォームに固有を調整します。")
 
 <a name="picker_update_mode" />
 
-## <a name="controlling-picker-item-selection"></a>Picker のアイテム選択の制御
+## <a name="controlling-picker-item-selection"></a>選択項目の選択を制御します。
 
-このプラットフォーム仕様は、[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) でのアイテム選択の発生するタイミングを制御し、ユーザーがコントロール内でアイテムを動かしている時にアイテム選択を発生させるか、**完了** ボタンを押した時に 1 度だけ発生させるかを指定できます。これは、 XAML で `Picker.UpdateMode` 添付プロパティを `UpdateMode` 列挙型の値に設定して使用します。
+このプラットフォームに固有のコントロールで項目の選択が発生する、 [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)、ユーザーが項目の選択が、コントロール内の項目を参照するときに、または 1 回だけ発生することを指定できるように、**完了**ボタンが押されました。 使用される XAML で設定して、`Picker.UpdateMode`添付プロパティの値を`UpdateMode`列挙します。
 
 ```xaml
 <ContentPage ...
@@ -363,12 +363,12 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 ```
 
-`Picker.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Picker.SetUpdateMode` メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、 `UpdateMode` 列挙型が提供する次の 2 つの値を使って、アイテム選択が発生するタイミングを制御するために使用されます。
+`Picker.On<iOS>`メソッドは、iOS でのこのプラットフォームに固有の実行はのみを指定します。 `Picker.SetUpdateMode`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)項目の選択のタイミングを制御する、名前空間が使用されると、`UpdateMode`列挙型の 2 つの値を提供します。
 
-- `Immediately` – [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) でユーザーがアイテムを動かしているときにアイテム選択が発生します。これは Xamarin.Forms の既定の動作です。
-- `WhenFinished` – [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) でユーザーが**完了**ボタンを押した時に 1 回だけアイテムの選択が発生します。
+- `Immediately` 項目の選択は、ユーザーが内の項目を参照としてが発生した、 [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)です。 これは、Xamarin.Forms で既定の動作です。
+- `WhenFinished` 項目の選択は、ユーザーが押された後にのみ発生、**完了**ボタンをクリックして、 [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)です。
 
-さらに、`SetUpdateMode` メソッドは、現在の `UpdateMode` を返す `UpdateMode` メソッドを呼んで列挙型の値を切り替えることに使用できます。
+さらに、`SetUpdateMode` メソッドは、現在の`UpdateMode`を返す`UpdateMode`メソッドを呼んで列挙型の値を切り替えることに使用できます。
 
 ```csharp
 switch (picker.On<iOS>().UpdateMode())
@@ -382,15 +382,15 @@ switch (picker.On<iOS>().UpdateMode())
 }
 ```
 
-その結果、 [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) に指定された `UpdateMode` が適用され、アイテム選択が発生するタイミングを制御します。
+結果は、指定した`UpdateMode`に適用される、 [ `Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)項目の選択が発生したときを制御します。
 
-[![](ios-images/picker-updatemode.png "Picker UpdateMode のプラットフォーム仕様")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode のプラットフォーム仕様")
+[![](ios-images/picker-updatemode.png "ピッカー UpdateMode プラットフォーム固有")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
 <a name="set_status_bar_visibility" />
 
-## <a name="setting-the-status-bar-visibility-on-a-page"></a>Page でのステータスバーの可視性の設定
+## <a name="setting-the-status-bar-visibility-on-a-page"></a>ステータス バーの設定ページの表示
 
-このプラットフォーム仕様は、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) のステータスバーの可視性を設定するために使用されます。これにはステータスバーがどのように `Page` に出入りするのかを制御する機能を含みます。これは、 XAML で `Page.PrefersStatusBarHidden` 添付プロパティを `StatusBarHiddenMode` 列挙型の値に設定して使用します。そして任意で `Page.PreferredStatusBarUpdateAnimation` 添付プロパティを `UIStatusBarAnimation` 列挙型の値に設定します。
+このプラットフォームに固有の使用、ステータス バーの可視性をセットアップする、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)、ステータス バーの入力または出力を制御する機能が含まれていると、`Page`です。 使用される XAML で設定して、`Page.PrefersStatusBarHidden`添付プロパティの値を`StatusBarHiddenMode`列挙型、および必要に応じて、`Page.PreferredStatusBarUpdateAnimation`添付プロパティの値を`UIStatusBarAnimation`列挙。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -413,22 +413,22 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
          .SetPreferredStatusBarUpdateAnimation(UIStatusBarAnimation.Fade);
 ```
 
-`Page.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Page.SetPrefersStatusBarHidden` メソッドは、`Xamarin.Forms.PlatformConfiguration.iOSSpecific` 名前空間に存在し、`StatusBarHiddenMode` 列挙型の値（`Default`、`True`、`False`）の 1 つを指定することで [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) 上のステータスバーの可視性を設定するために使用されます。 `StatusBarHiddenMode.True` と `StatusBarHiddenMode.False` のそれぞれの値は、デバイスの方向に関係なくステータスバーの可視性を設定し、`StatusBarHiddenMode.Default` の値は縦向きの小さな環境でステータス バーを非表示にします。
+`Page.On<iOS>`メソッドは、iOS でのこのプラットフォームに固有の実行はのみを指定します。 `Page.SetPrefersStatusBarHidden`メソッドで、`Xamarin.Forms.PlatformConfiguration.iOSSpecific`名前空間を使用して、ステータス バーの可視性をセットアップする、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)のいずれかを指定することによって、`StatusBarHiddenMode`列挙値: `Default`、 `True`、または`False`です。 `StatusBarHiddenMode.True`と`StatusBarHiddenMode.False`値は、デバイスの方向に関係なくステータス バーの可視性を設定し、`StatusBarHiddenMode.Default`値が垂直方向にコンパクトな環境のステータス バーを非表示にします。
 
-その結果、[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) のステータスバーの可視性を設定することができます。
+その結果、[`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)のステータスバーの可視性を設定することができます。
 
-![](ios-images/hide-status-bar.png "ステータス バーの可視性のプラットフォーム仕様")
+![](ios-images/hide-status-bar.png "ステータス バーの可視性プラットフォーム固有")
 
 > [!NOTE]
-> [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) では、`StatusBarHiddenMode` 列挙型の値にが設定されると、すべての子ページのステータスバーも更新されます。 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) から派生する他のすべての型では、`StatusBarHiddenMode` 列挙型の値が設定されると、現在のページのステータスバーだけが更新されます。
+> [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)、指定した`StatusBarHiddenMode`列挙値のステータス バーにすべての子ページが更新されます。 その他のすべての[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)-派生型、指定した`StatusBarHiddenMode`列挙値は、現在のページにステータス バーにのみ更新されます。
 
-`Page.SetPreferredStatusBarUpdateAnimation` メソッドは、`UIStatusBarAnimation` 列挙型の値（`None`、`Fade`、`Slide`）の1つを指定することによって、ステータス バーがどのようにして [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)に出入りするかを設定するのに使用されます。`Fade` か `Slide` を指定すると、ステータスバーが `Page` を出入りする際に0.25秒のアニメーションが実行されます。
+`Page.SetPreferredStatusBarUpdateAnimation`メソッドを使用して、ステータス バーの入力または出力を設定、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)のいずれかを指定することによって、`UIStatusBarAnimation`列挙値: `None`、 `Fade`、または`Slide`です。 場合、`Fade`または`Slide`ステータス バーの入力または出力のように、アニメーションが実行 0.25 の 1 秒間に、列挙値が指定されて、`Page`です。
 
 <a name="delay_content_touches" />
 
-## <a name="delaying-content-touches-in-a-scrollview"></a>ScrollView でのコンテンツのタッチの遅延
+## <a name="delaying-content-touches-in-a-scrollview"></a>ScrollView に遅延コンテンツ仕上げ
 
-iOSでは、[ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) 内でタッチジェスチャーが開始される時、暗黙のタイマーが呼ばれます。そして `ScrollView` は、そのタイマーの間のユーザーのアクションに基づいて、そのジェスチャーを処理するか、その中のコンテンツに渡すかを決めます。既定では iOS の `ScrollView` はコンテンツのタッチを遅らせますが、これは `ScrollView` のコンテンツでジェスチャーが発生すべきときに発生しない、というようないくつかの状況での問題の原因となりえます。したがって、このプラットフォーム仕様は `ScrollView` がタッチジェスチャーを処理するか、その中のコンテンツに渡すかどうかを制御します。これは、 XAML で `ScrollView.ShouldDelayContentTouches` 添付プロパティを `boolean` 値に設定して使用します。
+タッチ ジェスチャの開始時に、暗黙的なタイマーがトリガーされる、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) iOS でと`ScrollView`タイマー スパン内でユーザー操作に基づいて、ジェスチャを処理またはその内容に渡す必要があるかどうかが決定します。 します。 既定では、iOS`ScrollView`遅延コンテンツ趣きをもこの問題が発生すると一部の状況で、`ScrollView`コンテンツが必要なときに、ジェスチャを獲得できません。 このプラットフォームに応じたコントロールではそのため、かどうか、`ScrollView`タッチ ジェスチャを処理するか、そのコンテンツに渡します。 使用される XAML で設定して、`ScrollView.ShouldDelayContentTouches`添付プロパティを`boolean`値。
 
 ```xaml
 <MasterDetailPage ...
@@ -459,23 +459,23 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 scrollView.On<iOS>().SetShouldDelayContentTouches(false);
 ```
 
-`ScrollView.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `ScrollView.SetShouldDelayContentTouches` メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) がタッチジェスチャーを処理するか、その中のコンテンツに渡すかどうかを制御するために使用されます。さらに、 `SetShouldDelayContentTouches` メソッドは、コンテンツのタッチを遅らせるかどうかを返す `ShouldDelayContentTouches` メソッドを呼び出すことで、コンテンツのタッチの遅延を切り替えることにも使用できます。
+`ScrollView.On<iOS>`メソッドは、iOS でのこのプラットフォームに固有の実行はのみを指定します。 `ScrollView.SetShouldDelayContentTouches`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間を使用しているかどうか、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)タッチ ジェスチャを処理するか、そのコンテンツに渡します。 さらに、`SetShouldDelayContentTouches`メソッドを呼び出すことによって、コンテンツの調整を遅らせることを切り替えを使用することができます、`ShouldDelayContentTouches`コンテンツ仕上げを遅らせるかどうかを返します。
 
 ```csharp
 scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDelayContentTouches());
 ```
 
-その結果は、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) はコンテンツのタッチを受けるときの遅延は無効にできます。そのためこのシナリオでは、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) の [`Detail`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) ではなく[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) がジェスチャーを受け取ります。
+その結果は、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)はコンテンツのタッチを受けるときの遅延は無効にできます。そのためこのシナリオでは、 [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) の [`Detail`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) ではなく[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) がジェスチャーを受け取ります。
 
-[![](ios-images/scrollview-delay-content-touches.png "ScrollView でのコンテンツ タッチの遅延のプラットフォーム仕様")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView でのコンテンツ タッチの遅延のプラットフォーム仕様")
+[![](ios-images/scrollview-delay-content-touches.png "ScrollView 遅延コンテンツ接してプラットフォーム固有の仕様")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.Forms に組み込まれている iOS のプラットフォーム仕様の使用方法について説明しました。プラットフォーム仕様は、特殊効果やカスタム レンダラーを実装することなく、特定のプラットフォームでのみ利用できる機能を使用できます。
+この記事では、iOS プラットフォーム固有 Xamarin.Forms に組み込まれているを使用する方法が示されています。 プラットフォーム固有では、カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用できます。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [iOSSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)
