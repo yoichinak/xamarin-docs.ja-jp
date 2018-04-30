@@ -69,9 +69,9 @@ config.Routes.MapHttpRoute(
 
 ルーティング テーブルを含むルート テンプレートでは、し、ルーティング テーブルにルート テンプレートに対して URI と照合しようと Web API フレームワークが HTTP 要求を受信するとします。 一致するルートで見つからない場合、クライアントが 404 (見つかりません) エラーを受信します。 一致するルートが見つかった場合、Web API コント ローラーとアクションとして次に選択されます。
 
-- コント ローラーを検索するには、Web API では、値に"controller"を追加、 *{controller}*変数。
+- コント ローラーを検索するには、Web API では、値に"controller"を追加、 *{controller}* 変数。
 - アクションを検索するには、Web API は HTTP メソッドではし、コント ローラーのアクションは、属性として同じ HTTP メソッドを使用して装飾を確認します。
-- *{Id}*をアクション パラメーターのプレース ホルダー変数が割り当てられます。
+- *{Id}* をアクション パラメーターのプレース ホルダー変数が割り当てられます。
 
 REST サービスでは、基本認証を使用します。 詳細については、次を参照してください。 [RESTful web サービス認証](~/xamarin-forms/data-cloud/authentication/rest.md)です。 ASP.NET Web API ルーティングの詳細については、次を参照してください。 [ASP.NET Web API でルーティング](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)ASP.NET web サイトです。 ASP.NET Core を使用して、REST サービスの構築に関する詳細については、次を参照してください。[ネイティブなモバイル アプリケーションのバックエンド サービスの作成](/aspnet/core/mobile/native-mobile-backend/)です。
 
