@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: 11e876207285689b230bb2fada3a4c836443e360
-ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
+ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
+ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin ライブの再読み込み
 
@@ -39,7 +39,7 @@ Xamarin のライブの再読み込みは、Visual Studio Marketplace 経由で�
 
 ![Visual Studio インストーラー Xamarin Live 再読み込みの確認](images/LiveReloadVSIXInstall.png)
 
-> 代わりでの情報を検索することができます、**オンライン** タブで、**拡張機能と更新プログラム**Visual Studio 内のダイアログ。
+代わりでの情報を検索することができます、**オンライン** タブで、**拡張機能と更新プログラム**Visual Studio 内のダイアログ。
 
 ### <a name="2-configure-your-app-to-use-live-reload"></a>2.ライブの再読み込みを使用するアプリを構成します。
 
@@ -110,18 +110,13 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 * .NET 標準ライブラリでのみ動作します。
 * CSS スタイル シートはサポートされていません。
 * MVVM を使用していない限り、UI の状態を再配置します。、間では維持されません可能性があります。
-
-## <a name="live-reload-server"></a>ライブの再読み込みサーバー
-
-シナリオで、実行中のアプリからコンピューターへの接続 (を使用して示された`localhost`または`127.0.0.1`で**ツール > オプション > Xamarin > ライブの再読み込み**) ことはできません (ファイアウォール、別のネットワークなど)できますリモート サーバーを構成する代わりに、IDE と、アプリの両方がこれに接続します。
-
-ライブの再読み込みは、標準を使用して[MQTT プロトコル](http://mqtt.org/)を交換するメッセージ、およびと通信できるため[サード パーティ サーバー](https://github.com/mqtt/mqtt.github.io/wiki/servers)です。 でもは[公開サーバー](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (とも呼ばれる*ブローカー*) を使用することができます。 ライブの再読み込みがテストされて`broker.hivemq.com`と`iot.eclipse.org`によって提供されるサービスと同様に、ホスト名[www.cloudmqtt.com](https://www.cloudmqtt.com)と[www.cloudamqp.com](https://www.cloudamqp.com)です。など、クラウド内の独自の MQTT サーバーを展開することもできます。 [azure HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)または[AWS でな MQ](http://www.rabbitmq.com/ec2.html)です。 
-
-任意のポートを構成することができますが、リモート サーバーの既定の 1883 ポートを使用するが一般的です。 ライブの再読み込みメッセージは、リモート サーバーに接続しても安全であるために、強力なエンド ツー エンド AES 対称暗号化を使用します。 既定では、暗号化キーと初期化ベクター (IV) の両方が Visual Studio のすべてのセッションに再生成します。
+* アプリ全体のリソースを再読み込みする (つまり**App.xaml**またはリソース ディクショナリを共有)、アプリのナビゲーションをリセットします。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-アプリケーションのビルド時からの情報**ツール > オプション > Xamarin > ライブの再読み込み**(ホスト名、ポート、および暗号化キー) に埋め込まれているアプリ、そのため時に`LiveReload.Init();`ペアリングまたは構成がありませんが、実行が接続が成功するために必要です。
+### <a name="app-doesnt-connect"></a>アプリにアクセスできなかった
+
+アプリケーションのビルド時からの情報**ツール > オプション > Xamarin > ライブの再読み込み**(ホスト名、ポート、および暗号化キー) に埋め込まれているアプリ、そのため時に`LiveReload.Init()`ペアリングまたは構成がありませんが、実行が接続が成功するために必要です。
 
 標準ネットワーク上の問題 (ファイアウォール、別のネットワーク上のデバイス)、以外の主な理由は、アプリが正常に接続できない IDE は、Visual Studio での 1 つの構成が異なるためです。 これは、場合に発生する可能性があります。
 
@@ -131,6 +126,13 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 
 このような場合は、すべてのビルドと、アプリをもう一度展開して解決されます。
 
+### <a name="uninstalling-preview-1"></a>Preview 1 をアンインストールします。
+
+古いプレビューがあり、これをアンインストールする問題がある場合は、次の手順に従います。
+
+1. フォルダーを削除**C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (注:"Enterprise"をインストールされているエディションに置き換えるし、「プレビュー」と「2017」します。安定した VS にインストール)
+2. 開く、**開発者コマンド プロンプト**Visual Studio と実行の`devenv /updateconfiguration`します。 
+
 ## <a name="tips--tricks"></a>ヒントとコツ
 
 * ライブの再読み込みの設定を変更しない限り、(場合など、暗号化キーを含むをオフにする**暗号化キーの自動生成**) と同じコンピューターからビルド、ビルドおよび初期の後に、アプリを展開する必要はありませんコードまたは依存関係を変更しない限りを展開します。 だけを実行してもう一度、以前に配置されたアプリと接続を最後に使用するホスト。
@@ -138,3 +140,21 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 * Visual Studio の同じセッションに接続できるデバイスの数に制限はありません。 展開し、必要に応じて、同時にそれらのすべてでライブの再読み込み動作を表示する、同数のデバイスまたはシミュレーターでアプリを起動できます。
 
 * ライブの再読み込みされます、アプリのユーザー インターフェイス部分を再読み込みのみが、*いない*ページを再作成もが、それぞれ置き換えますビュー モデル (またはバインディング コンテキスト)。 つまり、*全体*アプリの状態が再読み込み、挿入された依存関係を含む常に保持されます。
+
+## <a name="live-reload-server"></a>ライブの再読み込みサーバー
+
+シナリオで、実行中のアプリからコンピューターへの接続 (を使用して示された`localhost`または`127.0.0.1`で**ツール > オプション > Xamarin > ライブの再読み込み**) ことはできません (ファイアウォール、別のネットワークなど)できますリモート サーバーを構成する代わりに、IDE と、アプリの両方がこれに接続します。
+
+ライブの再読み込みは、標準を使用して[MQTT プロトコル](http://mqtt.org/)を交換するメッセージ、およびと通信できるため[サード パーティ サーバー](https://github.com/mqtt/mqtt.github.io/wiki/servers)です。 でもは[公開サーバー](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (とも呼ばれる*ブローカー*) を使用することができます。 ライブの再読み込みがテストされて`broker.hivemq.com`と`iot.eclipse.org`によって提供されるサービスと同様に、ホスト名[www.cloudmqtt.com](https://www.cloudmqtt.com)と[www.cloudamqp.com](https://www.cloudamqp.com)です。など、クラウド内の独自の MQTT サーバーを展開することもできます。 [azure HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)または[AWS でな MQ](http://www.rabbitmq.com/ec2.html)です。 
+
+任意のポートを構成することができますが、リモート サーバーの既定の 1883 ポートを使用するが一般的です。 ライブの再読み込みメッセージは、リモート サーバーに接続しても安全であるために、強力なエンド ツー エンド AES 対称暗号化を使用します。 既定では、暗号化キーと初期化ベクター (IV) の両方が Visual Studio のすべてのセッションに再生成します。
+
+インストールする最も簡単な方法は、おそらく、 [mosquitto](https://mosquitto.org) Azure 内の空白 Ubuntu VM 内のサーバー。
+
+1. Azure ポータルで新しい Ubuntu Server VM を作成します。
+2. [ネットワーク] タブで 1883 (MQTT ポートの既定値) に対して新しい受信ポート規則を追加します。
+3. 開く、[クラウド シェル](https://docs.microsoft.com/azure/cloud-shell/overview)(bash モード)
+4. 入力`ssh [USERNAME]@[PUBLIC_IP]`1 で選択したユーザー名を使用して) と、VM の概要ページに表示されるパブリック IP
+5. 実行`sudo apt-get install mosquitto`1 で選択したパスワードを入力)
+
+今すぐ MQTT サーバーへの接続にその IP を使用できます。
