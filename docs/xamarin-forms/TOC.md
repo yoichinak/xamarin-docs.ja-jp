@@ -16,6 +16,7 @@
 #### [第 4 部データ バインディングの基礎](xaml/xaml-basics/data-binding-basics.md)
 #### [第 5 部データ バインディングから MVVM まで](xaml/xaml-basics/data-bindings-to-mvvm.md)
 ### [XAML のコンパイル](xaml/xamlc.md)
+### [ライブでの再読み込み](xaml/live-reload.md)
 ### [XAML プレビューアー](xaml/xaml-previewer.md)
 ### [XAML 名前空間](xaml/namespaces.md)
 ### [XAML マークアップ拡張](xaml/markup-extensions/index.md)
