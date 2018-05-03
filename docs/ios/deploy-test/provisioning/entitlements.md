@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 6ced541ca9df6fcae1643dc14c2e19807e972822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-entitlements"></a>権利の使用
 
@@ -127,6 +127,9 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
     - `$(TeamIdentifierPrefix)` 文字列は、developer.apple.com にログインし、**[メンバー センター]、[あなたのアカウント]、[開発者アカウントの概要]** の順に移動して、チーム ID (または開発者の個別の ID) を取得することで確認できます。 これは 10 桁の文字列 (A93A5CM278 など) になります。
     - `$(CFBundleIdentifier)` 文字列は `iCloud` で始まり、iCloud コンテナーは「[機能の使用](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)」ガイドの手順に従って作成されるときに設定されます。
     - $`(TeamIdentifierPrefix)` および `$(CFBundleIdentifier)` プレースホルダーを使用することができ、ビルド時に適切な値に置き換えられます。
+
+> [!IMPORTANT]
+> Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
 ### <a name="app-groups"></a>アプリ グループ
 

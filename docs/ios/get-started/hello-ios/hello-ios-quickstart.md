@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e4828f1ae5448a94fa1f52147d1aef3787e95521
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS クイックスタート
 
@@ -288,7 +288,7 @@ Xamarin.iOS は次のセットアップで機能します。
 **注**: このチュートリアルでは、Windows 10 仮想マシンの Visual Studio Enterprise 2017 を使用します。 上記の要件を満たす限り、実際のセットアップはこれと異なってもかまいません。一部のスクリーンショットが実際とは異なる場合があります。
 
 > [!NOTE]
-> このチュートリアルを進める前に、Visual Studio から Mac に接続しておく必要があります。 iOS デザイナーとアプリケーションをビルドし、起動するために Xamarin.iOS は Apple のツールを利用するためです。 [Mac への接続](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ガイドの手順に従い、設定を始めます。
+> このチュートリアルを進める前に、Visual Studio から Mac に接続しておく必要があります。 iOS デザイナーとアプリケーションをビルドし、起動するために Xamarin.iOS は Apple のツールを利用するためです。 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドの手順に従い、設定を始めます。
 
 1. **[スタート]** メニューから Visual Studio を起動します。
 
