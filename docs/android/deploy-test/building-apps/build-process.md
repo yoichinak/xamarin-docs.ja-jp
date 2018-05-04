@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 2833c645a07a3717d9baeeec11e5fa7f9087725a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -332,7 +332,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
     
     事前定義済みのキー項目
 
-    -   **abi** &ndash; アプリのターゲットとなる abi を挿入する
+    -   **abi** &ndash; アプリのターゲットとなる abi を挿入します。
         -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
@@ -345,7 +345,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     `$(AndroidVersionCodeProperties)` プロパティ (次で定義) を使用してカスタム項目を定義することができます。
 
-    既定では、値は `{abi}{versionCode:D6}` に設定されます。 開発者が古い動作の保持を希望する場合は、`$(AndroidUseLegacyVersionCode)` プロパティを `true` に設定することで規定値を上書きできます。
+    既定では、値は `{abi}{versionCode:D6}` に設定されます。 開発者が古い動作を保持する必要がある場合は、`$(AndroidUseLegacyVersionCode)` プロパティを `true` に設定することで既定値を上書きできます。
 
     Xamarin.Android 7.2 で追加されました。
 
@@ -357,7 +357,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     Xamarin.Android 8.2 で追加されました。
 
--  **AndroidUseManagedDesignTimeResourceGenerator** &ndash;デザイン時のビルドを、`aapt` ではなくマネージ リソース パーサーの使用に切り替えるブール型プロパティ。
+-  **AndroidUseManagedDesignTimeResourceGenerator** &ndash;デザイン時のビルドを、`aapt` ではなくマネージド リソース パーサーの使用に切り替えるブール型プロパティ。
 
     Xamarin.Android 8.1 で追加されました。
 
@@ -394,7 +394,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **AndroidCodegenTarget** &ndash; コード生成ターゲット ABI を制御する文字列型プロパティ。 次の値を使用できます。
 
-    - **XamarinAndroid**: Mono for Android 1.0 以降に付属している JNI バインド API を使用します。 Xamarin.Android 5.0 以降で作成されたバインドのアセンブリは、Xamarin.Android 5.0 以降 (API/ABI 追加機能) でないと実行できませんが、*ソース*は前の製品バージョンと互換性があります。
+    - **XamarinAndroid**: Mono for Android 1.0 以降に付属している JNI バインド API を使用します。 Xamarin.Android 5.0 以降でビルドされたバインドのアセンブリは、Xamarin.Android 5.0 以降 (API/ABI 追加機能) でないと実行できませんが、*ソース*は前の製品バージョンと互換性があります。
 
     - **XAJavaInterop1**: JNI の呼び出しに Java.Interop を使用します。 `XAJavaInterop1` を使用したバインドのアセンブリは、Xamarin.Android 6.1 以降でのみビルドおよび実行できます。 Xamarin.Android 6.1 以降は、この値で `Mono.Android.dll` をバインドします。
 
@@ -404,7 +404,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
       - 継承階層の他のバインドの種類がすべて `XAJavaInterop1` 以降でビルドされる限り、`base` メソッドの呼び出しに `jmethodID` キャッシュを使用。
 
-      - マネージ サブクラスに対して Java 呼び出し可能ラッパー コンストラクターに `jmethodID` キャッシュを使用。
+      - マネージド サブクラスに対して Java 呼び出し可能ラッパー コンストラクターに `jmethodID` キャッシュを使用。
 
     既定値は `XamarinAndroid` です。
 
@@ -576,7 +576,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 
 通常の `Content` ビルド アクションはサポートされていません (コストのかかる可能性がある最初の実行手順を行わずにサポートする方法が見つかっていないからです)。
 
-Xamarin.Android 5.1 以降では、thw `@(Content)` ビルド アクションを使用しようとすると、`XA0101` 警告が発生します。
+Xamarin.Android 5.1 以降では、`@(Content)` ビルド アクションを使用しようとすると、`XA0101` 警告が発生します。
 
 ### <a name="linkdescription"></a>LinkDescription
 

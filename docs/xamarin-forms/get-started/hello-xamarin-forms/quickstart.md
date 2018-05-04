@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e8d1064e76c2ccdeb14302d30428cd932444a0f5
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.date: 04/26/2018
+ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 
@@ -35,9 +35,9 @@ Phoneword アプリケーションは次のように作成します。
 
     ![](quickstart-images/vs/new-project.png "クロスプラットフォームのプロジェクト テンプレート")
 
-4. **[New Cross Platform App]\(新しいクロス プラットフォーム アプリ\)** ダイアログで、**[空のアプリケーション]** をクリックして、UI テクノロジとして **[Xamarin.Forms]** を選択して、コードの共有方法として **[.NET Standard]** を選択し、**[OK]** ボタンをクリックします。
+4. **[新しいクロスプラットフォーム アプリ]** ダイアログで、**[空のアプリケーション]** をクリックして、コード共有方法として **[.NET Standard]** を選択し、**[OK]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/new-app.png "新しいクロスプラット フォーム アプリ")
+    ![](quickstart-images/vs/new-app.png "新しいクロスプラットフォーム アプリ")
 
 5. **ソリューション エクスプローラー**の **Phoneword** プロジェクトで、**MainPage.xaml** をダブルクリックして開きます。
 
@@ -53,7 +53,7 @@ Phoneword アプリケーションは次のように作成します。
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -523,7 +523,7 @@ Phoneword アプリケーションは次のように作成します。
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ Phoneword アプリケーションは次のように作成します。
     }
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**Phoneword.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 13. **Solution Pad** で **Phoneword** プロジェクトを選択し、右クリックして、**[追加]、[新しいファイル]** の順に選択します。
 

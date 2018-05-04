@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 238e224a1dfbc17089c8b6d03e78043f77f3f383
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 18c49afdd08921b81573da94c23e66f1dd48a25f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -23,9 +23,9 @@ ms.lasthandoff: 04/04/2018
 
 -   **[アプリケーションのバージョン管理](#Versioning)** &ndash; この手順では、バージョン管理情報を初期化または更新します。 これは将来、アプリケーションを更新するために、また、インストールしているアプリケーションのバージョンをユーザーに知らせるために重要です。
 
--   **[APK を圧縮する](#shrink_apk)** &ndash; マネージ コードで Xamarin.Android リンカーを使用し、Java バイトコードで ProGuard を使用することで、最終的な APK のサイズを大幅に縮小できます。
+-   **[APK を圧縮する](#shrink_apk)** &ndash; マネージド コードで Xamarin.Android リンカーを使用し、Java バイトコードで ProGuard を使用することで、最終的な APK のサイズを大幅に縮小できます。
 
--   **[アプリケーションを保護する](#protect_app)** &ndash; ユーザーや攻撃者によるアプリケーションのデバッグ、改ざん、またはリバース エンジニアリングを防ぐために、マネージ コードを難読化し、アンチデバッグとおよび改ざん防止を追加し、ネイティブ コンパイルを使用します。
+-   **[アプリケーションを保護する](#protect_app)** &ndash; ユーザーや攻撃者によるアプリケーションのデバッグ、改ざん、またはリバース エンジニアリングを防ぐために、マネージド コードを難読化し、アンチデバッグとおよび改ざん防止を追加し、ネイティブ コンパイルを使用します。
 
 -   **[パッケージング プロパティを設定する](#Set_Packaging_Properties)** &ndash; パッケージ プロパティは、Android アプリケーション パッケージ (APK) の作成を制御します。 この手順は APK を最適化し、そのアセットを保護し、必要に応じてパッケージをモジュール化します。
 
@@ -92,7 +92,7 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 ## <a name="shrink-the-apk"></a>APK を圧縮する
 
-不要な*マネージ* コードを削除する Xamarin.Android リンカーと、使用しない *Java バイトコード*を削除する Android SDK の *ProGuard* ツールを組み合わせることで、Xamarin.Android APK を小さくすることができます ビルド プロセスでは最初に Xamarin.Android リンカーを使用してマネージ (C#) コード レベルでアプリを最適化し、次に ProGuard (有効になっている場合) を使用して Java バイトコード レベルで APK を最適化します。
+不要な*マネージド* コードを削除する Xamarin.Android リンカーと、使用しない *Java バイトコード*を削除する Android SDK の *ProGuard* ツールを組み合わせることで、Xamarin.Android APK を小さくすることができます ビルド プロセスでは最初に Xamarin.Android リンカーを使用してマネージド (C#) コード レベルでアプリを最適化し、次に ProGuard (有効になっている場合) を使用して Java バイトコード レベルで APK を最適化します。
 
 
 ### <a name="configure-the-linker"></a>リンカーを構成する
@@ -141,7 +141,7 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 *ProGuard* は、Java コードをリンクし、難読化する Android SDK ツールです。 ProGuard は通常、APK の大きな組み込みライブラリ (Google Play サービスなど) のフットプリントを少なくすることで小さなアプリケーションを作成するために使用します。 ProGuard では、未使用の Java バイトコードが削除されるため、結果としてアプリが小さくなります。 たとえば、小さな Xamarin.Android アプリで ProGuard を使用すると、24% のサイズ縮小が実現します。ライブラリ依存関係が複数ある大きなアプリで ProGuard を使用すると、通常はさらにサイズが縮小します。 
 
-ProGuard は Xamarin.Android リンカーの代替ではありません。 Xamarin.Android リンカーは*マネージ* コードをリンクし、ProGuard は Java バイトコードをリンクします。 ビルド プロセスでは最初に Xamarin.Android リンカーを使用してアプリのマネージ (C#) コードを最適化し、次に ProGuard (有効になっている場合) を使用して Java バイトコード レベルで APK を最適化します。 
+ProGuard は Xamarin.Android リンカーの代替ではありません。 Xamarin.Android リンカーは*マネージド* コードをリンクし、ProGuard は Java バイトコードをリンクします。 ビルド プロセスでは最初に Xamarin.Android リンカーを使用してアプリのマネージド (C#) コードを最適化し、次に ProGuard (有効になっている場合) を使用して Java バイトコード レベルで APK を最適化します。 
 
 **[ProGuard を有効にする]** がオンになっていると、Xamarin.Android が結果として得られる APK で ProGuard ツールを実行します。 ProGuard 構成ファイルが生成され、ビルド時に ProGuard で使用されます。 Xamarin.Android は、カスタムの *ProguardConfiguration* ビルド アクションもサポートしています。 下の例で示すように、カスタムの ProGuard 構成ファイルをプロジェクトに追加し、これを右クリックして、ビルド アクションとして選択することができます。 
 
@@ -192,7 +192,7 @@ Android マニフェストには、アプリケーションをデバッグする
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 [デバッグが無効](#Disable_Debugging)になっていても、攻撃者が、アプリケーションを再パッケージ化し、構成オプションまたはアクセス許可を追加または削除することは可能です。 これにより、攻撃者がアプリケーションをリバース エンジニアリング、デバッグ、または改ざんすることができます。
-[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) を使用して、マネージ コードを難読化し、ビルド時にランタイムのセキュリティ状態検出コードを Xamarin.Android アプリに注入することができます。
+[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) を使用して、マネージド コードを難読化し、ビルド時にランタイムのセキュリティ状態検出コードを Xamarin.Android アプリに挿入して、アプリがルート化されたデバイスで実行されている場合に検出して対応することができます。
 
 Dotfuscator CE は、Visual Studio に含まれていますが、Visual Studio 2015 Update 3 (およびそれ以降) にのみ Xamarin.Android で機能する適切なバージョンが含まれています。 Dotfuscator を使用するには、**[ツール]、[PreEmptive Protection - Dotfuscator]** の順にクリックします。
 
@@ -202,7 +202,7 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 [デバッグが無効](#Disable_Debugging)になっていても、攻撃者が、アプリケーションを再パッケージ化し、構成オプションまたはアクセス許可を追加または削除することは可能です。 これにより、攻撃者がアプリケーションをリバース エンジニアリング、デバッグ、または改ざんすることができます。
-Visual Studio for Mac はサポートされていませんが、[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) と Visual Studio を使用して、マネージ コードを難読化し、ビルド時にランタイムのセキュリティ状態検出コードを Xamarin.Android アプリに挿入できます。
+Visual Studio for Mac はサポートされていませんが、[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) と Visual Studio を使用して、マネージド コードを難読化し、ビルド時にランタイムのセキュリティ状態検出コードを Xamarin.Android アプリに挿入して、アプリがルート化されたデバイスで実行されている場合に検出して対応することができます。
 
 Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition with Xamarin](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)」(Xamarin での Dotfuscator Community Edition の使用) を参照してください。
 構成されると、Dotfuscator CE は、自動的に作成される各ビルドを保護します。
@@ -213,7 +213,7 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 ### <a name="bundle-assemblies-into-native-code"></a>アセンブリをネイティブ コードにバンドルする
 
-このオプションが有効になっていると、アセンブリがネイティブの共有ライブラリにまとめられます。 このオプションによってコードの安全性が保持されます。コードがネイティブ バイナリに埋め込まれることでマネージ アセンブリが保護されます。
+このオプションが有効になっていると、アセンブリがネイティブの共有ライブラリにまとめられます。 このオプションによってコードの安全性が保持されます。コードがネイティブ バイナリに埋め込まれることでマネージド アセンブリが保護されます。
 
 このオプションは Enterprise ライセンスを必要とし、**[Fast Deployment の使用]** が無効になっている場合にのみ使用できます。 **[ネイティブ コードへのアセンブリのバンドル]** は既定では無効です。
 
@@ -242,7 +242,7 @@ _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-パッケージング プロパティは、次のスクリーンショットで示すように、プロジェクトの**[プロパティ]** の **[Android オプション]** セクションで設定できます。
+パッケージング プロパティは、次のスクリーンショットで示すように、プロジェクトの **[プロパティ]** の **[Android オプション]** セクションで設定できます。
 
 [![パッケージング プロパティ](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
@@ -365,7 +365,7 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 [![ビューのアーカイブ](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png#lightbox)
 
-この例では、**アーカイブ マネージャー**が、1 つのアーカイブされたアプリケーション **MyApp** のみを表示します。 コメント フィールドを使用して、アーカイブと共に短いコメントを保存することができます。 Xamarin.Android アプリケーションのアーカイブ済みのバージョンを発行するには、上に示すように **[アーカイブ マネージャー]** でアプリを選択し、**[署名と配布...]** をクリックします。 結果として得られる **[署名と配布]**ダイアログには、2 つの選択肢が表示されます。
+この例では、**アーカイブ マネージャー**が、1 つのアーカイブされたアプリケーション **MyApp** のみを表示します。 コメント フィールドを使用して、アーカイブと共に短いコメントを保存することができます。 Xamarin.Android アプリケーションのアーカイブ済みのバージョンを発行するには、上に示すように **[アーカイブ マネージャー]** でアプリを選択し、**[署名と配布...]** をクリックします。 結果として得られる **[署名と配布]** ダイアログには、2 つの選択肢が表示されます。
 
 [![署名と配布](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 

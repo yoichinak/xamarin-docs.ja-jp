@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms の概要
-description: Xamarin.Forms は、iOS、Android、Windows Phone、およびユニバーサル Windows プラットフォーム アプリ間で共有可能なネイティブ ユーザー インターフェイス レイアウトを効率的に作成するための、開発者向けクロスプラット フォーム UI ツールキットです。 このシリーズでは、Xamarin.Forms 開発の基礎を紹介し、マルチプラットフォームおよびマルチスクリーンのアプリケーションの構築について説明します。
+description: Xamarin.Forms は、iOS、Android、ユニバーサル Windows プラットフォーム アプリ間で共有可能なネイティブ ユーザー インターフェイス レイアウトを効率的に作成するための、開発者向けクロスプラットフォーム UI ツールキットです。 このシリーズでは、Xamarin.Forms 開発の基礎を紹介し、マルチプラットフォームおよびマルチスクリーンのアプリケーションの構築について説明します。
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -8,15 +8,15 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 58c0fa2041c106f697166891c0e88a409283c17f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da5547de1f21b1f02462f47a4e6ffee43dd0d1bf
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="getting-started-with-xamarinforms"></a>Xamarin.Forms の概要
 
-_Xamarin.Forms は、iOS、Android、Windows Phone、およびユニバーサル Windows プラットフォーム アプリ間で共有可能なネイティブ ユーザー インターフェイス レイアウトを効率的に作成するための、開発者向けクロスプラットフォーム UI ツールキットです。このシリーズでは、Xamarin.Forms 開発の基礎を紹介し、マルチプラットフォームおよびマルチスクリーンのアプリケーションの構築について説明します。_
+_Xamarin.Forms は、iOS、Android、ユニバーサル Windows プラットフォーム アプリ間で共有可能なネイティブ ユーザー インターフェイス レイアウトを効率的に作成するための、開発者向けクロスプラットフォーム UI ツールキットです。このシリーズでは、Xamarin.Forms 開発の基礎を紹介し、マルチプラットフォームおよびマルチスクリーンのアプリケーションの構築について説明します。_
 
 クロスプラットフォーム開発に適用されるインストールとセットアップ作業の概要については、[Xamarin.Forms の要件](installation.md)と[インストール](~/cross-platform/get-started/installation/index.md)に関する記事を参照してください。
 
