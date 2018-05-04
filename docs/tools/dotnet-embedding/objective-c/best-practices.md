@@ -1,18 +1,18 @@
 ---
-title: ObjC の Embeddinator 4000 のベスト プラクティス
+title: Objective C のベスト プラクティスを埋め込む .NET
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: ca5face9865c60fabe8359c2bf356d5d5555f517
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 9f31190d54b187e1dc298fe1c2a8d443862f10de
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="embeddinator-4000-best-practices-for-objc"></a>ObjC の Embeddinator 4000 のベスト プラクティス
+# <a name="net-embedding-best-practices-for-objective-c"></a>Objective C の .NET の埋め込みのベスト プラクティス
 
 これは、下書きと可能性がある機能との同期で現在サポートされていません、ツールによってです。 願っているこのドキュメントを個別に発展最終的に、最終的なツールと一致、つまり長期的な最適な方法でないイミディ エイトの回避策をお勧めします。
 
@@ -106,7 +106,7 @@ Objective C 開発者の観点から見る、メソッドを`Get`プレフィッ
 
 ## <a name="exceptions"></a>例外
 
-広範なエラーを報告する例外を使用する .NET できわめて commont することをお勧めします。 ただし、これらは低速で ObjC でかなりと同じです。 可能な限り Objective C の開発者から非表示にする必要があります。
+.Net では、広範なエラーを報告する例外を使用することはよくあります。 ただし、これらは低速で目標 C ではかなりと一致しません。 可能な限り Objective C の開発者から非表示にする必要があります。
 
 たとえば、.NET`Try`パターンは Objective C コードから使用するはるかに簡単になります。
 
@@ -138,6 +138,6 @@ Objective C は、これに対し、`init*`を返す`nil`インスタンスを�
 
 Objective C では、オーバー ロードされるように C# の場合は、ため、クラス セレクターに変換は、これらの演算子は許可されません。
 
-[「わかりやすい」](/dotnet/standard/design-guidelines/operator-overloads/)演算子のオーバー ロード方が優先的に名前付きメソッドが生成されるときに検出されより簡単に API を利用を生成できます。
+[「わかりやすい」](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)演算子のオーバー ロード方が優先的に名前付きメソッドが生成されるときに検出されより簡単に API を利用を生成できます。
 
 演算子をオーバーライドするクラス`==`やを施した`!=`も標準 Equals (Object) メソッドをオーバーライドする必要があります。

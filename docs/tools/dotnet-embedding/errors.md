@@ -1,16 +1,16 @@
 ---
-title: .NET のエラーの埋め込み
+title: .NET の埋め込みエラー
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/11/2018
-ms.openlocfilehash: 0bc4451d8eb93b826fc673bc4e163c9b7b68c36e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 677242ea12f8fd87d82f337eafd96a1743ad806a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding-errors"></a>.NET のエラーの埋め込み
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 04/26/2018
 
 ツールは、それらの間に共通のファイルがあるために、エラー メッセージに記載されているフレームワークをマージできませんでした。
 
-これは Embeddinator 4000; のバグを示している可能性があります。バグ報告を送信してください[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
+これは .NET 埋め込みのバグを示している可能性があります。バグ報告を送信してください[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
 
 <a name="EM0011" />
 
@@ -142,9 +142,9 @@ ms.lasthandoff: 04/26/2018
 
 ### <a name="em0099-internal-error--please-file-a-bug-report-with-a-test-case-httpsgithubcommonoembeddinator-4000issues"></a>EM0099: 内部エラー * です。 テスト_ケースとバグのレポートを送信してください (https://github.com/mono/Embeddinator-4000/issues)です。
 
-Embeddinator 4000 で内部整合性チェックが失敗したときに、このエラー メッセージが報告されます。
+.NET の埋め込みに内部整合性チェックが失敗したときに、このエラー メッセージが報告されます。
 
-Embeddinator 4000; のバグを示しますバグ報告を送信してください[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
+これは .NET 埋め込みのバグを示しますバグ報告を送信してください[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)とテスト_ケースをします。
 
 <!-- 1xxx: code processing -->
 
@@ -236,7 +236,7 @@ public class MyType {
 
 ### <a name="em1034-extension-method-m-is-not-generated-inside-a-category-because-they-cannot-be-created-on-primitive-type-t-a-normal-static-method-was-generated"></a>EM1034: 拡張メソッド`M`プリミティブ型を作成できないため、カテゴリ内は生成されません`T`です。 通常、静的メソッドが生成されました。
 
-これは、**警告**、primivite の拡張メソッドが入力 (例: `System.Int32`) が見つかりませんでした。 ObjC でプリミティブ型のカテゴリを作成することはできません。 代わりに、ジェネレーターには、通常、静的メソッドが生成されます。
+これは、**警告**、primivite の拡張メソッドが入力 (例: `System.Int32`) が見つかりませんでした。 Objective C のプリミティブ型のカテゴリを作成することはできません。 代わりに、ジェネレーターには、通常、静的メソッドが生成されます。
 
 <a name="EM1040" />
 
@@ -286,7 +286,7 @@ public class MyType {
 
 これは、**警告**をターゲットとする`E`Xamarin.iOS および Xamarin.Mac ユース ケースに対してサポートされていないと見なされます。 
 
-静的または動的 Embeddinator ライブラリの使用量は、追加の作業の手順や手を加えればを必要可能性があり、ほとんどの用途に避ける必要があります。
+静的または動的な .NET の埋め込みのライブラリの使用量は、追加の作業の手順や手を加えればを必要可能性があり、ほとんどの用途に避ける必要があります。
 
 削除を検討してください、`--target`パラメーターまたは pass`--target=framework`代わりにします。
 

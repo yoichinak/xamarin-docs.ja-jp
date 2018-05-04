@@ -1,5 +1,5 @@
 ---
-title: タッチ
+title: タッチとジェスチャ Xamarin.Android の
 description: 現在のデバイスの多くのタッチ スクリーンでは、迅速かつ効率的に、自然で直感的な方法でデバイスと対話するようにします。 この連携では簡単なタッチの検出にのみ限定されません - もジェスチャを使用することはできます。 たとえば、ピンチ、ズーム ジェスチャは、はさむ、ユーザーは拡大または縮小する 2 本の指で画面の一部でこの非常に一般的な例を示します。このガイドでは、タッチを調べて、Android のジェスチャします。
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d6c6d7fd02511ede84b7cfa75575d755f11bab99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3700f9c73fb58fefcdba7987c9931e385cd52d38
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="touch"></a>タッチ
+# <a name="touch-and-gestures-in-xamarinandroid"></a>タッチとジェスチャ Xamarin.Android の
 
 _現在のデバイスの多くのタッチ スクリーンでは、迅速かつ効率的に、自然で直感的な方法でデバイスと対話するようにします。この連携では簡単なタッチの検出にのみ限定されません - もジェスチャを使用することはできます。たとえば、ピンチ、ズーム ジェスチャは、はさむ、ユーザーは拡大または縮小する 2 本の指で画面の一部でこの非常に一般的な例を示します。このガイドでは、タッチを調べて、Android のジェスチャします。_
 

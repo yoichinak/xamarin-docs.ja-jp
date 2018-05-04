@@ -5,61 +5,55 @@ ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.date: 11/14/2017
-ms.openlocfilehash: 8dff45de6de7c9492b199f323656778ac5c34d57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/19/2018
+ms.openlocfilehash: 1313d7156a1fd75fd40e2aff65404aef5ab023bb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-c"></a>C の概要
 
-
 ## <a name="requirements"></a>要件
 
-C で .NET の埋め込みを使用するには、Mac または Windows 実行するコンピューターを必要があります。
+C では、.NET の埋め込みを使用するには、Mac または Windows 実行するコンピューターを必要があります。
+
+### <a name="macos"></a>macOS
 
 * macOS 10.12 (Sierra) 以降
 * Xcode 8.3.2 以降
+* [Mono](http://www.mono-project.com/download/)
+
+### <a name="windows"></a>Windows
 
 * Windows 7、8、10、またはそれ以降
 * Visual Studio 2015 以降
 
-* [Mono](http://www.mono-project.com/download/)
+## <a name="installing-net-embedding-from-nuget"></a>.NET は NuGet から埋め込みをインストールします。
 
+手順に従います。[指示](~/tools/dotnet-embedding/get-started/install/install.md)をインストールして、プロジェクトの .NET の埋め込みを構成します。
 
-## <a name="installation"></a>インストール
+構成する必要がありますコマンドの呼び出しを (場合によって異なるバージョン番号とパス) のようになります。
 
-次の手順をダウンロードしてコンピューターに .NET の埋め込みツールをインストールします。
+### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-C、および Java ジェネレーターのバイナリのビルドが利用できない場合が、近日公開されます。
+```shell
+mono {SolutionDir}/packages/Embeddinator-4000.0.4.0.0/tools/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
+```
 
-代わりにビルドすることは、git リポジトリから参照してください、[の原因となった](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)手順についてはドキュメントです。
+### <a name="visual-studio-2017"></a>Visual Studio 2017
 
+```shell
+$(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
+```
 
 ## <a name="generation"></a>生成
-
-C のコードを生成するには、ツールを起動、.NET の埋め込み C 言語を対象とする正しいフラグを渡します。
-
-### <a name="windows"></a>Windows の場合:
-
-```csharp
-$ build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
-```
-
-呼び出す、Visual Studio のコマンド シェルから特定バージョンの Visual Studio を確認してくださいでは、対象としています。
-
-### <a name="macos"></a>macOS
-
-```csharp
-$ mono build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
-```
 
 ### <a name="output-files"></a>出力ファイル
 
 場合はすべてうまく行けば、次の出力が表示されます。
 
-```csharp
+```shell
 Parsing assemblies...
     Parsed 'managed.dll'
 Processing assemblies...
@@ -76,12 +70,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-以降、`--compile`フラグは、ツールに渡された、.NET を埋め込む必要がありますも出力ファイルにコンパイルして見つけることができます、生成されたファイルの横にある、共有ライブラリ、 `libmanaged.dylib` macOS、上のファイルと`managed.dll`windows です。
+以降、`--compile`フラグは、ツールに渡された、.NET を埋め込む必要がありますも出力ファイルにコンパイルして見つけることができます、生成されたファイルの横にある、共有ライブラリ、 **libmanaged.dylib** macOS などとファイルを**managed.dll** windows です。
 
-含めることができます、共有ライブラリを使用する、 `managed.h` C ヘッダー ファイルは、それぞれに対応する C 宣言は、マネージ ライブラリ Api と、前述のリンクは、共有ライブラリをコンパイルします。
+共有ライブラリを使用するには追加、 **managed.h** C ヘッダー ファイルは、それぞれに対応する C 宣言は、マネージ ライブラリ Api と、前述のリンクは、共有ライブラリをコンパイルします。
 
 ## <a name="further-reading"></a>関連項目
 
-* [Embeddinator の制限事項](~/tools/dotnet-embedding/limitations.md)
-* [オープン ソース プロジェクトに貢献しています。](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
+* [.NET の埋め込みの制限事項](~/tools/dotnet-embedding/limitations.md)
+* [オープン ソース プロジェクトに貢献しています。](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [エラー コードと説明](~/tools/dotnet-embedding/errors.md)

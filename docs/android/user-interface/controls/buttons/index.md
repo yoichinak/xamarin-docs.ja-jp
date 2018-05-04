@@ -1,5 +1,5 @@
 ---
-title: ボタン
+title: Xamarin.Android ボタン
 description: ユーザーはタップ操作の操作を実行する UI 要素を実装します。
 ms.prod: xamarin
 ms.assetid: 4FBB7789-A8DA-4B8B-A46C-849181388A8D
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: a9221504f1eda589eee51096185d47d93335a7de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b741683d7dfe80337a0085ac8d94becb0b518535
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="buttons"></a>ボタン
+# <a name="buttons-in-xamarinandroid"></a>Xamarin.Android ボタン
 
 `Button` Android 画面でボタンのさまざまな種類のスタイルを表すクラスを使用します。 このセクションには、Xamarin.Android のボタンを使用するためのさまざまなオプションが導入されています。
 

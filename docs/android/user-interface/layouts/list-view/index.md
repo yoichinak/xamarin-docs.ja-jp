@@ -1,17 +1,17 @@
 ---
-title: ListView
+title: Xamarin.Android でリスト ビューの使用
 description: ListView が Android アプリケーションの重要な UI 要素です。使用されます everywhere メニュー オプションの短い一覧から連絡先またはインターネットのお気に入りの長い一覧です。 いずれかの組み込みスタイルで書式設定したりできる広範なカスタマイズされた行のスクロール ボックスの一覧を表示する簡単な方法を提供します。
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2018
-ms.openlocfilehash: 8499b9f186c12df22518893b6677cab22f0a3568
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: c5c8222df16b265f3b44f3ee3fcd9053d827cf6a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -41,7 +41,7 @@ Android アプリケーションの最も基本的なビルド ブロックで�
 
 という名前の新しいプロジェクトを開始**HelloListView**です。
 
-という XML ファイルを作成する**list_item.xml**内で保存し、 **リソース/レイアウト/**フォルダーです。 次に挿入します。
+という XML ファイルを作成する**list_item.xml**内で保存し、 **リソース/レイアウト/** フォルダーです。 次に挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -214,7 +214,7 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 ## <a name="related-links"></a>関連リンク
 
 - [AccessoryViews (サンプル)](https://developer.xamarin.com/samples/AccessoryViews/)
-- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/BasicTableAndroid/)
+- [BasicTableAndroid (サンプル)](https://developer.xamarin.com/samples/BasicTableAndroid/)
 - [BasicTableAdapter (サンプル)](https://developer.xamarin.com/samples/BasicTableAdapter/)
 - [BuiltInViews (サンプル)](https://developer.xamarin.com/samples/BuiltInViews/)
 - [CustomRowView (サンプル)](https://developer.xamarin.com/samples/CustomRowView/)

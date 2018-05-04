@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 84185bb616597ee62a35c1acacc5e3664f500c21
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="app-linking-in-android"></a>Android でアプリ リンク
 
@@ -55,7 +55,7 @@ Android 6.0 でのアプリのリンクを設定するには、2 つの主要な
 Android アプリケーションのアクティビティへの web サイトの URI (または可能な一連の Uri) をマップするインテント フィルターを構成する必要があります。 Xamarin.Android、装飾を含むアクティビティでこのリレーションシップを確立、 [IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)です。 目的のフィルターは、次の情報を宣言する必要があります。
 
 * **`Intent.ActionView`** &ndash; これを情報を表示する要求に応答するインテント フィルターが登録されます。
-* **`Categories`** &ndash;  目的のフィルターは、両方を登録する必要があります**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**と**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**できる正常web の URI を処理します。
+* **`Categories`** &ndash;  目的のフィルターは、両方を登録する必要があります**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** と**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** できる正常web の URI を処理します。
 * **`DataScheme`** &ndash; 目的のフィルターを宣言する必要があります`http`や`https`です。 これらは、2 つの有効なパターンです。
 * **`DataHost`** &ndash; これは、Uri は元のドメインです。
 * **`DataPathPrefix`** &ndash; これは、web サイト上のリソースへの省略可能なパスです。
@@ -68,8 +68,8 @@ Android アプリケーションのアクティビティへの web サイトの 
               Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault },
               DataScheme = "http",
               DataHost = "recipe-app.com",
-              DataPathPrefix = "/recipe"),
-              AutoVerify=true]
+              DataPathPrefix = "/recipe",
+              AutoVerify=true)]
 public class RecipeActivity : Activity
 {
     // Code for the activity omitted

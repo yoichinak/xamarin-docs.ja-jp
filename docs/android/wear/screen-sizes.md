@@ -1,16 +1,16 @@
 ---
-title: 画面サイズの使用
+title: Xamarin.Android とウェア OS で画面のサイズの使用
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/02/2018
-ms.openlocfilehash: 12272b6db10249fb3750edd853ebb01a99586427
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 40e7850ffe239b0ede43e4d0cd3c6da08bce3a40
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="working-with-screen-sizes"></a>画面サイズの使用
 
@@ -52,7 +52,7 @@ Android の消耗デバイスには、四角形またはさまざまなサイズ
 これは、 [Google 例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)を使用する方法を示します、`BoxInsetLayout`四角形と円形の両方の画面で、同じレイアウトを使用します。
 
 
-## <a name="wear-ui-designer"></a>Wear UI Designer
+## <a name="wear-ui-designer"></a>デザイナーの UI を着用します。
 
 Xamarin Android デザイナーには、四角形と円形の両方の画面がサポートされています。
 

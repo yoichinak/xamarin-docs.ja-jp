@@ -1,5 +1,5 @@
 ---
-title: iOS と Mac
+title: Apple のプラットフォーム (iOS と Mac)
 description: このセクションでは、Xamarin.iOS および Xamarin.Mac プロジェクトでコードを共有する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
@@ -7,13 +7,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 032b740a08af2c871aaec3db1076f3221e8008f3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a842e89b74419a03e4ea8f4355162960d9109f9b
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ios-and-mac"></a>iOS と Mac
+# <a name="apple-platform-ios-and-mac"></a>Apple のプラットフォーム (iOS と Mac)
 
 _このセクションでは、Xamarin.iOS および Xamarin.Mac プロジェクトでコードを共有する方法を説明します。_
 
@@ -30,7 +30,7 @@ IOS と Mac のプロジェクトの Unified API は、同じコード ファイ
 ### <a name="classic-apis"></a>従来の Api
 
 > [!NOTE]
-> **プロファイル非推奨のクラシック:**クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に取り除く秋 2016 Xamarin.iOS 10.0 のリリースではスケジュールされます。
+> **プロファイル非推奨のクラシック:** クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に取り除く秋 2016 Xamarin.iOS 10.0 のリリースではスケジュールされます。
 
 元の (非統合) Xamarin.iOS および Xamarin.Mac Api コード共有より困難にネイティブ フレームワークでは、いずれかの必要があるため`MonoTouch.`または`MonoMac.`名前空間プレフィックス。  一部の空の名前空間は開発者を追加することでコードを共有できるようにするが備えられています`using`同じファイルが、これで MonoMac と MonoTouch の両方の名前空間を参照するステートメントが少し悪いです。 従来の API がのみ引き続きは内部的に分散しているレガシのアプリで使用可能 (Unified API へのアップグレードを推奨)。
 

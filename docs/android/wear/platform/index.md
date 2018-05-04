@@ -1,17 +1,17 @@
 ---
-title: プラットフォーム機能
-description: Android の主要なコンポーネントを着用プラットフォーム
+title: Xamarin.Android で消耗 OS のプラットフォーム機能
+description: 消耗 OS のプラットフォームの主要なコンポーネント
 ms.prod: xamarin
 ms.assetid: E86688B5-B2FE-476A-A2AA-F8CC26EA8D2B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 4b22c55f3f30c880df2369e904c80dd76c81663d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 3e703ebb3d4705980785ec8fea6003ffc1442b54
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 

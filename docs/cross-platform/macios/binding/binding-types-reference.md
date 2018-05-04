@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 9364b4c56951ac9ebd3870e4afe41a40f9e1f455
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e064eda3db9aa0156869cf1c7392823553af9bd2
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="binding-types-reference-guide"></a>バインディングの種類のリファレンス ガイド
 
@@ -1141,7 +1141,7 @@ public NSObject this [NSObject idx] {
 この属性には、メソッドのサポートにネイティブ (OBJECTIVE-C) 例外となります。
 呼び出し元ではなく`objc_msgSend`を直接呼び出しにも例外をキャッチし、それらをマネージ コードの例外をマーシャ リングするカスタム トランポリンです。
 
-現在は少量のみ`objc_msgSend`署名はサポートされて (学びます不足している monotouch_ でバインディングを使用したアプリのネイティブのリンクが失敗した場合、署名はサポートされていませんかどうか*_objc_msgSend*シンボル)、詳細を指定できますが、要求に追加されます。
+現在は少量のみ`objc_msgSend`署名はサポートされて (学びます不足している monotouch_ でバインディングを使用したアプリのネイティブのリンクが失敗した場合、署名はサポートされていませんかどうか *_objc_msgSend*シンボル)、詳細を指定できますが、要求に追加されます。
 
 
 ### <a name="newattribute"></a>NewAttribute
@@ -1493,7 +1493,7 @@ interface FooExplorer {
 
 これは通常 c: の目的で次のように定義されているコールバックの使用します。
 
-```csharp
+```objc
 typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 

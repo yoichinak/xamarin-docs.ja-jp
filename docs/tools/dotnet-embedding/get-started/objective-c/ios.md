@@ -6,14 +6,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 34afdd9e91ebfbe7ad57c7eec6ba7f05fff1a2aa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f3696ffa5bb3b3931bcea0f93343bb46d2f92ad5
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-ios"></a>IOS の概要
-
 
 ## <a name="requirements"></a>要件
 
@@ -23,13 +22,13 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="hello-world"></a>Hello world
 
-最初は単純な hello world の例 (C#) を構築してみましょう。
+最初に、C# の場合は、単純な hello world の例をビルドします。
 
 ### <a name="create-c-sample"></a>C# のサンプルを作成します。
 
-Mac 用 Visual Studio を開き、新しい iOS クラス ライブラリ プロジェクトを作成、名前を付けます`hello-from-csharp`、しに保存`~/Projects/hello-from-csharp`です。
+Mac 用 Visual Studio を開き、新しい iOS クラス ライブラリ プロジェクトを作成、名前を付けます**csharp からのこんにちは**、しに保存 **~/Projects/hello-from-csharp**です。
 
-コードで置き換え、`MyClass.cs`次のスニペットを持つファイル。
+コードで置き換え、**カスタム**次のスニペットを持つファイル。
 
 ```csharp
 using UIKit;
@@ -42,36 +41,38 @@ public class MyUIView : UITextView
 }
 ```
 
-プロジェクトをビルド、結果として得られるアセンブリとして保存する`~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll`です。
+プロジェクトをビルドし、生成されたアセンブリで保存されます **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**です。
 
 ### <a name="bind-the-managed-assembly"></a>マネージ アセンブリをバインドします。
 
-マネージ アセンブリのネイティブ フレームワークを作成する embeddinator を実行します。
+マネージ アセンブリを作成したら、.NET の埋め込みを起動してバインドします。
+
+」の説明に従って、[インストール](~/tools/dotnet-embedding/get-started/install/install.md)ガイド、そのため、プロジェクトのビルド後のステップとして、カスタム MSBuild ターゲットまたは手動で。
 
 ```shell
 cd ~/Projects/hello-from-csharp
 objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll --target=framework --platform=iOS --outdir=output -c --debug
 ```
 
-配置されるフレームワーク`~/Projects/hello-from-csharp/output/hello-from-csharp.framework`です。
+配置されるフレームワーク **~/Projects/hello-from-csharp/output/hello-from-csharp.framework**です。
 
 ### <a name="use-the-generated-output-in-an-xcode-project"></a>Xcode プロジェクトで生成された出力を使用します。
 
-Xcode を開き、新しい iOS ビューの 1 つのアプリケーションを作成し、名前を付けます`hello-from-csharp`を選択し、 **OBJECTIVE-C**言語です。
+Xcode を開き、新しい iOS ビューの 1 つのアプリケーションを作成、名前を付けます**csharp からのこんにちは**を選択し、 **OBJECTIVE-C**言語です。
 
-開く、 `~/Projects/hello-from-csharp/output` Finder で、選択ディレクトリ`hello-from-csharp.framework`Xcode プロジェクトにドラッグ アンド ドロップすぐ上、`hello-from-csharp`プロジェクト内のフォルダーです。
+開く、 **~/Projects/hello-from-csharp/output** Finder で、選択ディレクトリ**こんにちは-csharp.framework から**Xcode プロジェクトにドラッグ アンド ドロップすぐ上、 **csharp からのこんにちは**プロジェクト内のフォルダーです。
 
 ![ドラッグ アンド ドロップ framework]Images/hello-from-csharp-ios-drag-drop-framework.png)
 
-確認`Copy items if needed`がポップアップ表示されるダイアログ ボックスでチェックされ、クリックして`Finish`です。
+確認**ために必要な場合は、項目をコピー**がポップアップ表示されるダイアログ ボックスでチェックされ、をクリックして**完了**。
 
 ![必要な場合は、項目をコピーします。](ios-images/hello-from-csharp-ios-copy-items-if-needed.png)
 
-選択、`hello-from-csharp`プロジェクトに移動して、`hello-from-csharp`ターゲットの**[全般] タブ**です。**埋め込みバイナリ**セクションで、追加`hello-from-csharp.framework`です。
+選択、 **csharp からのこんにちは**プロジェクトに移動して、 **csharp からのこんにちは**ターゲットの **[全般] タブ**です。**埋め込みバイナリ**セクションで、追加**こんにちは-csharp.framework から**です。
 
 ![埋め込まれたバイナリ](ios-images/hello-from-csharp-ios-embedded-binaries.png)
 
-ViewController.m を開き、内容を置き換えます。
+開いている**ViewController.m**の内容を置き換えます。
 
 ```objective-c
 #import "ViewController.h"
@@ -90,6 +91,12 @@ ViewController.m を開き、内容を置き換えます。
 }
 @end
 ```
+
+.NET の埋め込みはサポートされていません bitcode ios で、一部の Xcode プロジェクト テンプレートが有効になっています。 
+
+プロジェクトの設定でそれを無効にします。
+
+![Bitcode オプション](../../images/ios-bitcode-option.png)
 
 最後に、Xcode プロジェクトを実行し、次のように表示されます。
 

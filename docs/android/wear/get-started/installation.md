@@ -1,17 +1,17 @@
 ---
-title: セットアップとインストール
+title: 'インストールとセットアップ着用 OS onXamarin.Android '
 description: この記事では、インストール手順と、コンピューターとデバイス開発を Android 着用を準備するために必要な構成の詳細について説明します。 この記事の目的は、最初 Xamarin.Android 消耗アプリケーションのビルドを開始する準備ができるし、Xamarin.Android 消耗インストールが Mac や Microsoft Visual Studio、Visual Studio に統合されて作業を必要があります。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 14162663c518fdd1324f2b0340592fbae491d112
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 

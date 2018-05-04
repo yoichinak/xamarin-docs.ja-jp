@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
-ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
+ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin ライブの再読み込み
 
@@ -106,13 +106,33 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 ## <a name="limitations"></a>制限事項
 
 * XAML のみが再読み込みはサポートされています。
-* Visual Studio でのみサポートされます。
-* .NET 標準ライブラリでのみ動作します。
-* CSS スタイル シートはサポートされていません。
 * MVVM を使用していない限り、UI の状態を再配置します。、間では維持されません可能性があります。
-* アプリ全体のリソースを再読み込みする (つまり**App.xaml**またはリソース ディクショナリを共有)、アプリのナビゲーションをリセットします。
+
+## <a name="known-issues"></a>既知の問題
+
+* Visual Studio でのみサポートされます。
+* .NET 標準ライブラリでのみ動作します。 これは、次のプレビュー リリースで修正されます。
+* CSS スタイル シートはサポートされていません。 これは、次のプレビュー リリースで修正されます。
+* アプリ全体のリソースを再読み込みする (つまり**App.xaml**またはリソース ディクショナリを共有)、アプリのナビゲーションをリセットします。 これは、次のプレビュー リリースで修正されます。
+* ランタイム クラッシュが発生する可能性があります UWP のデバッグ中は、XAML を編集します。 回避策: を使用して **(Ctrl + f5 キー) をデバッグなしで開始**の代わりに**デバッグ (F5) で開始**です。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
+
+### <a name="error-codes"></a>エラー コード
+
+* **XLR001**:*現在のプロジェクトは、'Xamarin.LiveReload' NuGet パッケージのバージョン [VERSION] を参照しますが、Live 再読み込みの Xamarin 拡張機能には、バージョン '[VERSION]' が必要です。*
+
+  迅速なイテレーション、ライブの再読み込み機能の展開を許可するために nuget パッケージとを Visual Studio 拡張機能する必要がありますと完全に一致します。 Nuget パッケージをインストールした拡張機能の同じバージョンに更新します。
+
+* **XLR002**:*ライブの再読み込みに必要な最小 'MqttHostname' プロパティ、コマンドラインからのビルド時にします。また、この機能を無効にするには、'false' に 'EnableLiveReload' を設定します。*
+
+  ライブの再読み込みに必要なプロパティ利用できない場合に、コマンドラインから (または継続的インテグレーション) でのビルドとこのために明示的に用意する必要があります。 
+
+* **XLR003**:*ライブの再読み込み nuget パッケージは、Xamarin Live 再読み込み Visual Studio 拡張機能をインストールする必要があります。*
+
+  ライブの再読み込みの nuget パッケージを参照するプロジェクトをビルドしようとしましたが、Visual の拡張機能がインストールされていません。  
+
+
 
 ### <a name="app-doesnt-connect"></a>アプリにアクセスできなかった
 
@@ -145,7 +165,7 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 
 シナリオで、実行中のアプリからコンピューターへの接続 (を使用して示された`localhost`または`127.0.0.1`で**ツール > オプション > Xamarin > ライブの再読み込み**) ことはできません (ファイアウォール、別のネットワークなど)できますリモート サーバーを構成する代わりに、IDE と、アプリの両方がこれに接続します。
 
-ライブの再読み込みは、標準を使用して[MQTT プロトコル](http://mqtt.org/)を交換するメッセージ、およびと通信できるため[サード パーティ サーバー](https://github.com/mqtt/mqtt.github.io/wiki/servers)です。 でもは[公開サーバー](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (とも呼ばれる*ブローカー*) を使用することができます。 ライブの再読み込みがテストされて`broker.hivemq.com`と`iot.eclipse.org`によって提供されるサービスと同様に、ホスト名[www.cloudmqtt.com](https://www.cloudmqtt.com)と[www.cloudamqp.com](https://www.cloudamqp.com)です。など、クラウド内の独自の MQTT サーバーを展開することもできます。 [azure HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)または[AWS でな MQ](http://www.rabbitmq.com/ec2.html)です。 
+ライブの再読み込みは、標準を使用して[MQTT プロトコル](http://mqtt.org/)を交換するメッセージ、およびと通信できるため[サード パーティ サーバー](https://github.com/mqtt/mqtt.github.io/wiki/servers)です。 でもは[公開サーバー](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (とも呼ばれる*ブローカー*) を使用することができます。 ライブの再読み込みがテストされて`broker.hivemq.com`と`iot.eclipse.org`によって提供されるサービスと同様に、ホスト名[www.cloudmqtt.com](https://www.cloudmqtt.com)と[www.cloudamqp.com](https://www.cloudamqp.com)です。など、クラウド内の独自の MQTT サーバーを展開することもできます。 [azure HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)です。
 
 任意のポートを構成することができますが、リモート サーバーの既定の 1883 ポートを使用するが一般的です。 ライブの再読み込みメッセージは、リモート サーバーに接続しても安全であるために、強力なエンド ツー エンド AES 対称暗号化を使用します。 既定では、暗号化キーと初期化ベクター (IV) の両方が Visual Studio のすべてのセッションに再生成します。
 

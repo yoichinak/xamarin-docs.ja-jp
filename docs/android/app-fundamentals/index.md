@@ -1,5 +1,5 @@
 ---
-title: アプリケーションの基礎
+title: Xamarin.Android アプリケーションの基礎
 description: 中核となるアプリケーションの概念
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: cfb31fa6cac7c4848054cd58a1e144c2ac944262
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: caa51fa0a70da1b799d56c706e6de974f61a14d9
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="application-fundamentals"></a>アプリケーションの基礎
+# <a name="xamarinandroid-application-fundamentals"></a>Xamarin.Android アプリケーションの基礎
 
 このセクションでは、いくつかの一般的な処理タスクまたは Android アプリケーションを開発するときに注意する必要がある開発者の概念のガイドを提供します。
 
@@ -76,7 +76,7 @@ Xamarin.Android には、32 ビットおよび 64 ビットのデバイスも含
 
 
 
-##  <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android Audio](~/android/app-fundamentals/android-audio.md)
+##  <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android のオーディオ](~/android/app-fundamentals/android-audio.md)
 
 Android OS は、オーディオとビデオの両方を含むマルチ メディア、広範なサポートを提供します。 このガイドでは、Android でのオーディオを重視し、再生組み込みオーディオ プレーヤーとレコーダー クラスだけでなく、低レベルのオーディオ API を使用してオーディオを録音したりについて説明します。 開発者が適切に動作のアプリケーションを構築できるように、他のアプリケーションによってブロードキャストされたオーディオ イベントの処理も取り上げています。
 

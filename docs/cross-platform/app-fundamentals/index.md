@@ -1,5 +1,5 @@
 ---
-title: アプリケーションの基礎
+title: コードの共有
 description: 中核となるアプリケーションの概念
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
@@ -7,33 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: f5bd66cfcfb6ee06abac7bec9151e7325ebb32a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 01116a35dca80cd92ea16232a2abb127f60d9f0a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="application-fundamentals"></a>アプリケーションの基礎
+# <a name="sharing-code"></a>コードの共有
 
 このセクションでは、いくつかの一般的な処理タスクまたはモバイル アプリケーションを開発するときに注意する必要がある開発者の概念のガイドを提供します。
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[クロスプラットフォーム アプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
-
-Xamarin を選択し、デザインし、モバイル アプリケーションを開発するときに、いくつかの点に注意を保持する、することができます膨大なコードをモバイル プラットフォーム間で共有を実現に要する時間を短縮、既存の能力を活用してモバイル アクセスは、顧客の需要を満たすクロスプラット フォームの複雑さを軽減します。&nbsp;ユーティリティおよび生産性アプリケーションに対してこれらの利点を実現する主要なガイドラインを説明します。
-
-## <a name="code-sharing-optionscode-sharingmd"></a>[コード共有オプション](code-sharing.md)
+## <a name="code-sharing-overviewcode-sharingmd"></a>[コード共有の概要](code-sharing.md)
 
 Xamarin プロジェクト、ポータブル クラス ライブラリ (Pcl)、共有プロジェクト、および標準の .NET ライブラリを含む使用可能なオプションを共有する別のコードについて説明します。
-
-
-## <a name="accessibilityaccessibilitymd"></a>[ユーザー補助](accessibility.md)
-
-ユーザー補助アプリケーションを構築するためのヒント。
-
-
-## <a name="localizationlocalizationmd"></a>[ローカリゼーション](localization.md)
-
-ロケールに対応するアプリのためのガイドラインは、複数の言語に変換することができます。
 
 
 ##  <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)
@@ -55,18 +41,3 @@ NuGet パッケージを PCL プロジェクトまたは .NET 標準プロジェ
 ##  <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[Xamarin の NuGet パッケージを手動で作成します。](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 NuGet パッケージを作成するためのヒントは、Xamarin プラットフォームで動作します。
-
-##  <a name="cross-platform-data-accessxamarin-formsdata-cloudindexmd"></a>[クロス プラットフォームのデータ アクセス](~/xamarin-forms/data-cloud/index.md)
-
-ほとんどのアプリケーションでは、デバイスをローカルでのデータを保存するには、いくつか必要があります。 データの量が小さい普通でない限り通常が必要に、データベースとデータベースへのアクセスを管理するアプリケーションでデータ層です。 iOS および Android の両方がある「組み込み」SQLite データベース エンジンと Xamarin のプラットフォームでデータを格納および取得のアクセスが簡素化されます。 [Android データ アクセス](~/android/data-cloud/data-access/index.md)、 [iOS データ アクセス](~/ios/data-cloud/data/index.md)、および[Xamarin.Forms データ アクセス](~/xamarin-forms/data-cloud/index.md)ガイドは、各プラットフォームで SQLite にアクセスする方法の例を示します。
-
-
-##  <a name="transport-layer-securitytransport-layer-securitymd"></a>[トランスポート層セキュリティ](transport-layer-security.md)
-
-せんたくについては、アプリのネットワーク接続をセキュリティで保護する SSL/TLS 実装を修正します。
-
-
-##  <a name="notificationsxamarin-formsdata-cloudpush-notificationsindexmd"></a>[通知](~/xamarin-forms/data-cloud/push-notifications/index.md)
-
-モバイル アプリケーションは、いくつかアプリケーションの特定のイベントが発生したことをユーザーに通知の控えめな方法として通知を使用します。 通知は、バック グラウンドで実行されているアプリケーション プロセスの状態のユーザーに通知する通常使用されます。 この例には、サイズの大きなファイルをダウンロード可能性があります。 バック グラウンドでこのアクティビティを実行するようにこのファイルをダウンロードするに時間がかかる可能性があります。 ダウンロードが完了したら、ユーザーは、通知によってファクトの通知します。
-さらに、通知 are ローカル アプリケーションにのみ制限されます。 サーバー アプリケーションはモバイル アプリケーションへの通知を発行することもできます。 この記事では、Android と iOS の両方で通知を使用する方法を説明します。

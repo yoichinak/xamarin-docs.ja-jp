@@ -6,14 +6,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f75ced921cd240e280b5dd6f7366ccceefb5e40e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 3620312ff3fbf9d7aa879ae6d318f0b39eec386a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-macos"></a>MacOS の概要
-
 
 ## <a name="what-you-will-need"></a>必要があります。
 
@@ -25,9 +24,9 @@ ms.lasthandoff: 04/16/2018
 
 ### <a name="create-c-sample"></a>C# のサンプルを作成します。
 
-Mac 用 Visual Studio を開き、という名前の新しい Mac クラス ライブラリ プロジェクトを作成する**csharp からのこんにちは**、しに保存**~/Projects/hello-from-csharp**です。
+Mac 用 Visual Studio を開き、という名前の新しい Mac クラス ライブラリ プロジェクトを作成する**csharp からのこんにちは**、しに保存 **~/Projects/hello-from-csharp**です。
 
-コードで置き換え、`MyClass.cs`次のスニペットを持つファイル。
+コードで置き換え、**カスタム**次のスニペットを持つファイル。
 
 ```csharp
 using AppKit;
@@ -40,18 +39,20 @@ public class MyNSView : NSTextView
 }
 ```
 
-プロジェクトをビルドします。 結果として得られるアセンブリとして保存する**~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**です。
+プロジェクトをビルドします。 結果として得られるアセンブリとして保存する **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**です。
 
 ### <a name="bind-the-managed-assembly"></a>マネージ アセンブリをバインドします。
 
-マネージ アセンブリのネイティブ フレームワークを作成する embeddinator を実行します。
+マネージ アセンブリを作成したら、.NET の埋め込みを起動してバインドします。
+
+」の説明に従って、[インストール](~/tools/dotnet-embedding/get-started/install/install.md)ガイド、そのため、プロジェクトのビルド後のステップとして、カスタム MSBuild ターゲットまたは手動で。
 
 ```shell
 cd ~/Projects/hello-from-csharp
 objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll --target=framework --platform=macOS-modern --abi=x86_64 --outdir=output -c --debug
 ```
 
-配置されるフレームワーク**~/Projects/hello-from-csharp/output/hello-from-csharp.framework**です。
+配置されるフレームワーク **~/Projects/hello-from-csharp/output/hello-from-csharp.framework**です。
 
 ### <a name="use-the-generated-output-in-an-xcode-project"></a>Xcode プロジェクトで生成された出力を使用します。
 
@@ -93,4 +94,4 @@ Xcode を開き、新しい Cocoa アプリケーションを作成します。 
 
 ![シミュレーターで実行されている c# のサンプルからこんにちは](macos-images/hello-from-csharp-mac.png)
 
-包括的かつ見栄えのよいサンプルは[ここ](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)です。
+包括的かつ見栄えのよいサンプル[ここでは使用可能な](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)です。

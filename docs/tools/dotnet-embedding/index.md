@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f5e778ef9ba31c1a9e880b9fc66c2e48ddb2420c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 505c2902f2b8d112597b4b9b9b07282a7810db68
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding"></a>.NET Embedding
 
@@ -21,15 +21,17 @@ ms.lasthandoff: 04/04/2018
 
 つまり、ある場合、既存の iOS アプリから使用する .NET ライブラリがある場合は、することができます。   または、ネイティブ C++ ライブラリとリンクする場合は、行うことができますもです。   または、Java から .NET コードを使用します。
 
+.NET の埋め込みがに基づいて、 [Embeddinator 4000](https://github.com/mono/Embeddinator-4000)オープン ソース プロジェクトです。
+
 ## <a name="environments-and-languages"></a>環境および言語
 
-このツールは、どちらもこれを使用する言語と同様に、環境を使用するのに注意してください。   たとえば、embeddinator iOS で使用できるネイティブ コードに .NET コードのコンパイルに静的には、iOS プラットフォームはジャスト イン タイム (JIT) コンパイルを許可されません。  他の環境は JIT コンパイルを許可し JIT コンパイルすることを選択、これらの環境でします。
+このツールは、どちらもこれを使用する言語と同様に、環境を使用するのに注意してください。   たとえば、ので、.NET の埋め込みは静的にコンパイルに .NET コードを iOS で使用できるネイティブ コードに、iOS プラットフォームはジャスト イン タイム (JIT) コンパイルを許可されません。  他の環境は JIT コンパイルを許可し JIT コンパイルすることを選択、これらの環境でします。
 
 対象言語の慣用コードとして .NET コードを明らかにさまざまな言語は、コンシューマーがサポートされます。   これは、現時点ではサポートされている言語の一覧を示します。
 
-- [**Objective C** ](objective-c/index.md) – .NET の慣用 Objective C Api にマッピングします。
-- [**Java** ](android/index.md) – .NET の慣用 Java Api にマッピングします。
-- **C**: .NET に、オブジェクト指向 C Api と同様にマップします。
+- [**Objective C** ](objective-c/index.md) – 慣用 Objective C Api への .NET のマッピング
+- [**Java** ](android/index.md) – 慣用 Java Api への .NET のマッピング
+- [**C** ](get-started/c.md) – C Api などのオブジェクト指向に .NET のマッピング
 
 その他の言語は、後述します。
 
@@ -37,10 +39,9 @@ ms.lasthandoff: 04/04/2018
 
 、作業を開始するには、現在サポートされている言語ごとに、これらのガイドのいずれかを確認します。
 
-- [**Objective C** ](get-started/objective-c/index.md) – macOS と iOS について説明します。
-- [**Java** ](get-started/java/index.md) – macOS と Android について説明します。
-- [**C** ](get-started/c.md) – デスクトップ プラットフォームでの C 言語について説明します。
-
+- [**Objective C** ](get-started/objective-c/index.md) – macOS と iOS について説明します
+- [**Java** ](get-started/java/index.md) – macOS と Android について説明します
+- [**C** ](get-started/c.md) – デスクトップ プラットフォームでの C 言語の説明
 
 ## <a name="related-links"></a>関連リンク
 

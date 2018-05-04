@@ -1,5 +1,5 @@
 ---
-title: コントロール
+title: Android コントロール (のウィジェット)
 description: Xamarin.Android ユーザー インターフェイスを作成するためのビルド ブロック
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
@@ -7,14 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28418c3b3fedcd24963008eb3b59ffa782d791f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="controls"></a>コントロール
-
+# <a name="android-controls-widgets"></a>Android コントロール (のウィジェット)
 
 Xamarin.Android は、Android によって提供されるネイティブ ユーザー インターフェイス コントロール (のウィジェット) のすべてを公開します。 これらのコントロールは、Android デザイナーを使用して Xamarin.Android アプリにまたはレイアウトの XML ファイルを使用してプログラムで簡単に追加できます。 選択したどのメソッドに関係なく Xamarin.Android はすべてのユーザー インターフェイス オブジェクトのプロパティと c# のメソッドを公開します。 次のセクションでは、最も一般的な Android のユーザー インターフェイス コントロールを紹介し、Xamarin.Android アプリに組み込む方法について説明します。
 

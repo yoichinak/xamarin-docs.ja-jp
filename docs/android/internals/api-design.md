@@ -1,18 +1,18 @@
 ---
-title: API の設計
+title: Xamarin.Android API の設計原則
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a9c0b02457f006f75dc5b6f0a52e68865d620f67
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 611046954e8ef359476d2bd12a69f04041d869f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="api-design"></a>API の設計
+# <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API の設計原則
 
 
 ## <a name="overview"></a>概要
@@ -61,7 +61,6 @@ ms.lasthandoff: 04/04/2018
     - 任意の Java ライブラリを呼び出すための機構を提供 ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/))。
 
 
-
 ## <a name="assemblies"></a>アセンブリ
 
 Xamarin.Android には形成するアセンブリの数が含まれています、 *MonoMobile プロファイル*です。 [アセンブリ](~/cross-platform/internals/available-assemblies.md)ページには詳細についてはします。
@@ -80,7 +79,7 @@ Android Api では、リスト、セット、およびマップを提供する�
 
 -   [java.util.List<E> ](http://developer.android.com/reference/java/util/List.html)システム型にマップ[IList<T>](http://msdn.microsoft.com/en-us/library/5y536ey6.aspx)、ヘルパー クラス[Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/)です。
 
--   [java.util.Map<K,V>](http://developer.android.com/reference/java/util/Map.html) maps to system type [IDictionary<TKey,TValue>](http://msdn.microsoft.com/en-us/library/s4ys34ea.aspx), helper class [Android.Runtime.JavaDictionary<K,V>](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/).
+-   [< K, V > java.util.Map](http://developer.android.com/reference/java/util/Map.html)システム型にマップ[IDictionary < TKey, TValue >](http://msdn.microsoft.com/en-us/library/s4ys34ea.aspx)、ヘルパー クラス[Android.Runtime.JavaDictionary < K, V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/)です。
 
 -   [java.util.Collection<E> ](http://developer.android.com/reference/java/util/Collection.html)システム型にマップ[ICollection<T>](http://msdn.microsoft.com/en-us/library/92t2ye13.aspx)、ヘルパー クラス[Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/)です。
 
@@ -163,7 +162,7 @@ C# の場合は、イベントまたはプロパティのみ自動的に生成�
 さらに場合は、リスナー インターフェイス メソッドの戻り値の型を持つ**ブール**の代わりに**void**、生成された*EventArgs*サブクラスには、 *Handled*プロパティです。 値、 *Handled*プロパティの戻り値として使用、*リスナー*メソッド、およびその既定値は`true`します。
 
 たとえば、Android [View.setOnKeyListener()](https://developer.xamarin.com/api/member/Android.Views.View.SetOnKeyListener/p/Android.Views.View+IOnKeyListener/)メソッドを受け取ります、 [View.OnKeyListener](https://developer.xamarin.com/api/type/Android.Views.View+IOnKeyListener)インターフェイス、および[View.OnKeyListener.onKey (ビュー、int、KeyEvent)](https://developer.xamarin.com/api/member/Android.Views.View+IOnKeyListener.OnKey/p/Android.Views.View/Android.Views.Keycode/Android.Views.KeyEvent/)メソッドには、ブール型の戻り値の型があります。 Xamarin.Android 生成、対応する[View.KeyPress](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/)イベントは、これは、 [EventHandler&lt;View.KeyEventArgs&gt;](https://developer.xamarin.com/api/type/Android.Views.View+KeyEventArgs/)です。
-*KeyEventArgs*クラスにはさらに、 [View.KeyEventArgs.Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/)の戻り値として使用されるプロパティ、 *View.OnKeyListener.onKey()*メソッドです。
+*KeyEventArgs*クラスにはさらに、 [View.KeyEventArgs.Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/)の戻り値として使用されるプロパティ、 *View.OnKeyListener.onKey()* メソッドです。
 
 他のメソッドとデリゲート ベースの接続を公開する ctors のオーバー ロードを追加する予定があること。 また、複数のコールバックを持つリスナーには、変換しているこれら特定されるので、個々 のコールバックを実装する、妥当なはかどうかを決定するいくつか追加の検査が必要です。 対応するイベントがない場合は、リスナー、C# の場合は、使用する必要がありますがください注目するデリゲートの使用法を持つ可能性がありますと思われるいずれか。 したら、「リスナー」サフィックスが付いていないインターフェイスの一部の変換が、デリゲートの代替恩恵が受けはクリアします。
 
