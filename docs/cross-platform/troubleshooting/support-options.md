@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 500b4c63131ab850b4b9d7c6a0aec49b313ec426
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 47480adfdff5ee3282c1c7fa422260184f91c071
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>どのようなサポート オプションは、Xamarin を使用しますか。
 
@@ -33,8 +33,6 @@ Xamarin のサポート チームは、これらの各オプションを監視�
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Xamarin についてサポート インシデントを visual Studio の電子メール
 
 一部として Xamarin SDK、および IDE の機能はテクニカル サポート インシデントの条件に適合[Visual Studio サブスクライバー特典](https://msdn.microsoft.com/subscriptions/bb266240)と[Microsoft プレミア サポート](https://www.microsoft.com/microsoftservices/support.aspx)です。  これは、UWP と ASP.NET のように Visual Studio での開発プラットフォーム用のポリシーと一致します。  Xamarin のインシデントは、この方法は、Xamarin のサポート チームに割り当てられるを送信します。  参照してください、 [Microsoft のサポートに関する FAQ](https://support.microsoft.com/gp/offerprophone)ポリシーこれらのインシデントの詳細についてはします。
-
-Xamarin Test Cloud の順に移動サポート インシデントを送信することができます、 [Test Cloud のログイン ページ](https://testcloud.xamarin.com/login)を開くと、**サポート**リンクします。
 
 ### <a name="information-for-users-migrating-from-expired-xamarin-subscriptions-to-visual-studio-subscriptions"></a>Xamarin の有効期限が切れたサブスクリプションから Visual Studio サブスクリプションに移行するユーザー向けの情報
 

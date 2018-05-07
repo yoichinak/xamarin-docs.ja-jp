@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: b5bccfa38a9f382789585284765183efa42b6a3d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54f3d3c475e506e7d451af5125e90a0f51aa7374
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的な統合の概要
 
@@ -35,9 +35,8 @@ GitHub、VSTS、または Bitbucket から直接には、アプリ中心で、Xa
 
 ### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[Xamarin での TeamCity の使用](~/tools/ci/teamcity.md)
 
-このガイドを使って、TeamCity するモバイル アプリをコンパイルして Xamarin Test Cloud に送信するには必要な手順について説明します。
+このガイドを使って、TeamCity するモバイル アプリをコンパイルし、アプリ中心のテストに送信するには必要な手順について説明します。
 
-###  <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Xamarin での Jenkins の使用](~/tools/ci/jenkins-walkthrough.md)
+### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Xamarin での Jenkins の使用](~/tools/ci/jenkins-walkthrough.md)
 
 このガイドでは、Jenkins 継続的インテグレーション サーバーとして設定して、Xamarin で作成されたモバイル アプリのコンパイルを自動化する方法を示します。 これには、OS X 上の Jenkins のインストール、構成、および変更がバージョン管理システムにコミットされたときに、Xamarin.iOS および Xamarin.Android アプリをコンパイルするジョブをセットアップする方法について説明します。
-

@@ -7,25 +7,20 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 4156d712b91ad069d482debdf0731be8b649287a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: b5de9d673a348ddd4b939ae387257f835b37117a
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK ツールへの変更
 
 _Android SDK がインストールされている API レベルおよび Avd を管理する方法を変更します。_
 
-## <a name="changes-to--android-sdk-tooling"></a>Android SDK ツールへの変更
+## <a name="changes-to-android-sdk-tooling"></a>Android SDK ツールへの変更
 
-Android SDK ツールの最新バージョンは、Google が新しい CLI (コマンド ライン インターフェイス) ツールいる既存と SDK の AVD マネージャーを削除します。 前者**android**プログラムが削除され、過去の Android SDK ツールのバージョン 25.2.5 Mac と Xamarin for Visual Studio の以前のバージョンの Visual Studio での GUI (グラフィカル ユーザー インターフェイス) マネージャーが機能しなくなります。
-
-
-![Visual Studio での android IDE メニュー](sdk-cli-tooling-changes-images/android-ide-menu.png)
-
-使用すると、 **android**コマンドラインを使用してプログラムは、次のようなエラー メッセージになります。
+Android SDK ツールの最新バージョンは、Google が新しい CLI (コマンド ライン インターフェイス) ツールを優先するため既存と SDK の AVD マネージャーを削除します。 **Android**プログラムが削除され、過去の Android SDK ツールのバージョン 25.2.5 Mac と Xamarin for Visual Studio の以前のバージョンの Visual Studio で Google GUI (グラフィカル ユーザー インターフェイス) の管理者が機能しなくなります。 たとえば、使用すると、 **android**コマンドラインを使用してプログラムは、次のようなエラー メッセージになります。
 
 ```shell
 The "android" command is deprecated.
@@ -34,11 +29,21 @@ For command-line tools, use tools\bin\sdkmanager.bat
 and tools\bin\avdmanager.bat
 ```
 
-したがって CLI ツールを使用して管理およびエミュレーター、Android SDK を更新する必要があります。
+次のセクションでは、Android SDK と Android SDK 25.3.0 を使用して Android 仮想デバイスを管理する方法を説明するおよびそれ以降。
+
+### <a name="ui-tools"></a>UI ツール
+
+Visual Studio と Visual Studio for Mac Xamarin の提供が中止された Google GUI ベース マネージャーによる代替が提供されています。
+
+-   Android SDK ツール、プラットフォーム、および Xamarin.Android アプリの開発に必要なその他のコンポーネントをダウンロードするには、使用、 [Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md)従来の Google SDK Manager ではなくです。
+
+-   作成し、Android 仮想デバイスを構成するには、 [Xamarin Android デバイス マネージャー](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)レガシの Google エミュレーター マネージャーではなくです。
+
+これらのツールは機能的には、Google の GUI ベース マネージャー置き換わるものです。
 
 ### <a name="cli-tools"></a>CLI ツール
 
-次のプログラムは、Android SDK ツールのコマンド ライン インターフェイスを今すぐ構成します。
+代わりに、CLI ツールを使用して、管理およびエミュレーター、Android SDK を更新することができます。 次のプログラムは、Android SDK ツールのコマンド ライン インターフェイスを今すぐ構成します。
 
 #### <a name="sdkmanager"></a>sdkmanager
 
@@ -64,6 +69,7 @@ and tools\bin\avdmanager.bat
 ## <a name="related-links"></a>関連リンク
 
 - [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)
+- [Android デバイス マネージャー](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
 - [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)
 - [SDK Tools のリリース ノート (Google)](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
