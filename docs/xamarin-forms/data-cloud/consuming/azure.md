@@ -1,6 +1,6 @@
 ---
-title: Azure のモバイル アプリの使用
-description: Azure のモバイル アプリでは、モバイルの認証、オフライン sync、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。 これは Node.js バックエンドを使用する Azure のモバイル アプリに適用できるのみ、この記事では、クエリ、挿入、更新、および Azure Mobile Apps インスタンス内のテーブルに格納されたデータを削除する方法について説明します。
+title: Azure Mobile Apps の使用
+description: Azure Mobile Apps では、モバイル認証、オフライン同期、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。 これは Node.js バックエンドを使用する Azure Mobile Apps に適用できるのみ、この記事では、クエリ、挿入、更新、および Azure Mobile Apps インスタンス内のテーブルに格納されたデータを削除する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2B3EFD0A-2922-437D-B151-4B4DE46E2095
 ms.technology: xamarin-forms
@@ -15,21 +15,21 @@ ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Azure のモバイル アプリの使用
 
-_Azure のモバイル アプリでは、モバイルの認証、オフライン sync、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。これは Node.js バックエンドを使用する Azure のモバイル アプリに適用できるのみ、この記事では、クエリ、挿入、更新、および Azure Mobile Apps インスタンス内のテーブルに格納されたデータを削除する方法について説明します。_
+_Azure のモバイル アプリでは、モバイル認証、オフライン同期、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。この記事は、Azure Mobile AppsでNode.jsバックエンドを使用する場合にのみ適用され、Azure Mobile Appsインスタンスのテーブルに格納されたデータのクエリ、挿入、更新、および削除方法について説明しています。_
 
-Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、次を参照してください。 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/)です。 これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます、 `Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続には。
+Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます。 `Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続します。
 
 ![](azure-images/portal.png "サンプル アプリケーション")
 
-Azure Mobile Apps へのアクセスは、 [Azure Mobile クライアント SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)、Xamarin.Forms サンプル アプリケーションを Azure からのすべての接続が HTTPS 経由で行われるとします。
+Azure Mobile Apps へのアクセスは、 [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) を介して行われ、Xamarin.FormsサンプルアプリケーションからAzureへのすべての接続はHTTPS経由で行われます。
 
 > [!NOTE]
-> Ios 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 > 使用することがない場合のうち ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 アプリケーションを更新することによってこれを行う**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)です。
 
 ## <a name="consuming-an-azure-mobile-app-instance"></a>Azure のモバイル アプリ インスタンスの使用
 
-[Azure Mobile クライアント SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)提供、`MobileServiceClient`クラスは、次のコード例に示すように Azure Mobile Apps インスタンスへのアクセスの Xamarin.Forms アプリケーションによって使用されます。
+[Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)が提供する`MobileServiceClient`クラスは、次のコード例に示すように Azure Mobile Apps インスタンスへのアクセスするために Xamarin.Forms アプリケーションによって使用されます。
 
 ```csharp
 IMobileServiceTable<TodoItem> todoTable;
@@ -77,7 +77,7 @@ public async Task SaveTaskAsync (TodoItem item)
 }
 ```
 
-挿入要求を行うときに、ID を Azure Mobile Apps インスタンスに渡されるデータで指定されていません必要があります。 挿入要求には、ID が含まれている場合、`MobileServiceInvalidOperationException`がスローされます。
+挿入リクエストを行うときに、ID を Azure Mobile Apps インスタンスに渡されるデータで指定されている必要があります。 挿入リクエストには、ID が含まれている場合、`MobileServiceInvalidOperationException`がスローされます。
 
 後に、`InsertAsync`メソッドが完了すると、Azure Mobile Apps インスタンス内のデータの ID に設定されます、 `TodoItem` Xamarin.Forms アプリケーション内のインスタンス。
 
@@ -94,7 +94,7 @@ public async Task SaveTaskAsync (TodoItem item)
 }
 ```
 
-更新要求を行うときは、Azure Mobile Apps インスタンスは、更新するデータを識別できるように、ID を指定してください。 この ID の値が格納されている、`TodoItem.ID`プロパティです。 更新の要求が含まれていない ID には更新するには、Azure Mobile Apps インスタンス データを決定する方法はありません、そのため、`MobileServiceInvalidOperationException`がスローされます。
+更新リクエストを行うときは、Azure Mobile Apps インスタンスは、更新するデータを識別できるように ID を指定してください。 この ID の値が格納されている、`TodoItem.ID`プロパティです。 更新のリクエストが含まれていない ID には更新するには、Azure Mobile Apps インスタンス データを決定する方法はありません、そのため、`MobileServiceInvalidOperationException`がスローされます。
 
 ### <a name="deleting-data"></a>データの削除
 
@@ -109,11 +109,11 @@ public async Task DeleteTaskAsync (TodoItem item)
 }
 ```
 
-Delete 要求を行うときは、Azure Mobile App sinstance が削除されるデータを識別できるように、ID を指定してください。 この ID の値が格納されている、`TodoItem.ID`プロパティです。 削除要求には、ID が含まれていない場合、は、削除するには、Azure Mobile Apps インスタンス データを決定する方法はありませんので、`MobileServiceInvalidOperationException`がスローされます。
+削除リクエストを行うときは、Azure Mobile App sinstance が削除されるデータを識別できるように、ID を指定してください。 この ID の値が格納されているのは`TodoItem.ID`プロパティです。 削除リクエストに ID が含まれていない場合は、Azure Mobile Apps インスタンスが削除するデータを決定する方法はありませんので、`MobileServiceInvalidOperationException`がスローされます。
 
 ## <a name="summary"></a>まとめ
 
-この記事には、使用する方法が説明されている、 [Azure Mobile クライアント SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)クエリ、挿入、更新、および Azure のモバイル アプリ インスタンス内のテーブルに格納されたデータを削除します。 SDK の提供、 `MobileServiceClient` Azure Mobile Apps インスタンスにアクセスする Xamarin.Forms アプリケーションによって使用されるクラスです。
+この記事には、使用する方法が説明されている、 [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)クエリ、挿入、更新、および Azure のモバイル アプリ インスタンス内のテーブルに格納されたデータを削除します。 SDK の提供、 `MobileServiceClient` Azure Mobile Apps インスタンスにアクセスする Xamarin.Forms アプリケーションによって使用されるクラスです。
 
 
 ## <a name="related-links"></a>関連リンク
