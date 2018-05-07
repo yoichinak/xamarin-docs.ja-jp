@@ -17,7 +17,7 @@ ms.lasthandoff: 04/04/2018
 
 _Azure のモバイル アプリでは、モバイル認証、オフライン同期、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。この記事は、Azure Mobile AppsでNode.jsバックエンドを使用する場合にのみ適用され、Azure Mobile Appsインスタンスのテーブルに格納されたデータのクエリ、挿入、更新、および削除方法について説明しています。_
 
-Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます、 `Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続には。
+Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます。 `Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続します。
 
 ![](azure-images/portal.png "サンプル アプリケーション")
 
@@ -77,7 +77,7 @@ public async Task SaveTaskAsync (TodoItem item)
 }
 ```
 
-挿入リクエストを行うときに、ID を Azure Mobile Apps インスタンスに渡されるデータで指定されていません必要があります。 挿入リクエストには、ID が含まれている場合、`MobileServiceInvalidOperationException`がスローされます。
+挿入リクエストを行うときに、ID を Azure Mobile Apps インスタンスに渡されるデータで指定されている必要があります。 挿入リクエストには、ID が含まれている場合、`MobileServiceInvalidOperationException`がスローされます。
 
 後に、`InsertAsync`メソッドが完了すると、Azure Mobile Apps インスタンス内のデータの ID に設定されます、 `TodoItem` Xamarin.Forms アプリケーション内のインスタンス。
 
