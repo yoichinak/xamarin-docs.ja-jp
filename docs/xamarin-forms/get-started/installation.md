@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/19/2018
-ms.openlocfilehash: d2125c1ddaa3edc3e2ee76d8e03e384efdca42c6
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: ce3f2bcf6acc36239fc431bb7f5edece15d2e139
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -26,7 +26,7 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 -  iOS 8 以上
 -  Android 4.0.3 (API 15) 以上 ([詳細](#android))
 -  Windows 10 ユニバーサル Windows プラットフォーム ([詳細](#windows10))
--  Windows 8.1 / Windows Phone 8.1 WinRT ([詳細](#windows))
+-  *Windows 8.1 / Windows Phone 8.1 WinRT (非推奨)*
 -  
   *Windows Phone 8 Silverlight (非推奨)*
 
@@ -58,20 +58,11 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 
 -----
 
-
 <a name="windows10" />
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-ソリューションが macOS で作成されるとき、Windows 10 UWP プロジェクトは追加されません。 プロジェクトを既存のソリューションに追加する方法については、「[Adding a Universal Windows Platform (UWP) App](~/xamarin-forms/platform/windows/installation/universal.md)」 (ユニバーサル Windows プラットフォーム (UWP) アプリの追加) を参照してください。
-
-
-<a name="windows" />
-
-### <a name="windows-81--windows-phone-81-winrt"></a>Windows 8.1 / Windows Phone 8.1 WinRT
-
-ソリューションが macOS で作成されるとき、Windows 8.1 / Windows Phone 8.1 WinRT プロジェクトは追加されません。 プロジェクトを既存のソリューションに追加する方法については、「[Adding a Windows Phone App](~/xamarin-forms/platform/windows/installation/phone.md)」 (Windows Phone アプリの追加) と「 [Adding a Windows App](~/xamarin-forms/platform/windows/installation/tablet.md)」 (Windows アプリの追加) を参照してください。
-
+ソリューションが macOS で作成されるとき、Windows 10 UWP プロジェクトは追加されません。 これらのプロジェクトを既存のソリューションに追加する方法については、「[Setup Windows Projects](~/xamarin-forms/platform/windows/installation/index.md)」(Windows プロジェクトの設定) をご覧ください。
 
 ## <a name="development-system-requirements"></a>開発システムの要件
 
@@ -99,5 +90,4 @@ UWP 用の Xamarin.Forms アプリの開発に必要なもの:
 * [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 UWP プロジェクトは、Visual Studio 2015 と Visual Studio 2017 で作成された Xamarin.Forms ソリューションに含まれています。
-[ユニバーサル Windows プラットフォーム (UWP) アプリ](~/xamarin-forms/platform/windows/installation/universal.md)を既存の Xamarin.Forms ソリューションに追加することもできます。
-
+[ユニバーサル Windows プラットフォーム (UWP) アプリ](~/xamarin-forms/platform/windows/installation/index.md)を既存の Xamarin.Forms ソリューションに追加することもできます。
