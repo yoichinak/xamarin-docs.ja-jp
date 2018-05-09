@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2f57ac5b5b54b2606618c5e59fb544cae7c77e88
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="layouts"></a>レイアウト
 
@@ -28,6 +28,7 @@ Xamarin.Forms では、いくつかのレイアウトと画面上のコンテン
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash;座標の設定によってビューを整列 & 絶対値または比率の単位でサイズを変更するために使用します。 レイヤーのビューだけでなく左、右、または center に固定するには、AbsoluteLayout を使用できます。
 * **[[相対レイアウト]](relative-layout.md)**  &ndash;親のサイズと位置を基準とした制約を設定してビューを配置するために使用します。
 * **[グリッド](grid.md)** &ndash;をグリッドに表示を配置するために使用します。 絶対値または比率の観点からは、行と列を指定できます。
+* **[FlexLayout](flex-layout.md)**  &ndash;の折り返しを行うビューを水平方向または垂直方向に配置するために使用します。
 * **[ScrollView](scroll-view.md)**  &ndash;ビューが、画面の境界内に完全に収めることができなかったときにスクロールを提供するために使用します。
 * **[LayoutOptions](layout-options.md)**  &ndash;アラインメントとその親のビューでの展開を定義します。
 * **[透明度を入力](#input_transparency)** &ndash;要素が入力を受け取るかどうかを指定します。
@@ -59,6 +60,23 @@ Xamarin.Forms では、いくつかのレイアウトと画面上のコンテン
   <Button HorizontalOptions="End" Text="Button" />
 </StackLayout>
 ```
+
+### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
+
+`FlexLayout`に似ていますが`StackLayout`水平方向または垂直方向には、子ビューを表示します。
+
+```xaml
+<FlexLayout Direction="Column"
+            AlignItems="Center"
+            JustifyContent="SpaceEvenly">
+        
+    <Label Text="FlexLayout in Action" />
+    <Button Text="Button" />
+    <Label Text="Another Label" />
+</FlexLayout>
+```
+
+ただし、単一行、列に収まるように多数の子がある場合`FlexLayout`はそれらのビューをラップすることもできます。 `FlexLayout` CSS フレキシブル ボックス レイアウト モジュールに基づいておりが、同じ組み込みのオプションの多くを配置し、その子を整列します。
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 

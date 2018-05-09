@@ -1,17 +1,17 @@
 ---
-title: 画面を起動します。
+title: Xamarin.iOS アプリの画面を起動します。
 description: この記事では、任意の解像度と印刷の向き、1 つの統合のストーリー ボードを使用して、すべての iOS デバイス用アプリの起動画面を作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/19/2018
-ms.openlocfilehash: 991c2f30bcca1969e336f7269ad2a22ce6245b95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: d5a267bfa8655a9b9c6d4dba9d8cf9d16624ba9b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="launch-screens"></a>画面を起動します。
 
@@ -34,7 +34,7 @@ Ios 8 (およびそれ以降) では、開発者は、1 つ以上の静的な起
     ![新しいプロジェクト ウィンドウで選択されている 1 つのアプリの表示](launch-screens-images/launch01.png)
 
     - 既定では、新しいプロジェクトが含まれます、 **LaunchScreen.storyboard**起動画面インターフェイスを定義するファイル。 
-    - 代わりに既存のプロジェクトに起動画面ストーリー ボードを追加するでプロジェクト名を右クリックし、**ソリューション パッド**選択**追加 > 新しいファイル.**し、**起動画面**:
+    - 代わりに既存のプロジェクトに起動画面ストーリー ボードを追加するでプロジェクト名を右クリックし、**ソリューション パッド**選択**追加 > 新しいファイル.** し、**起動画面**:
 
     ![IOS 選択起動画面で、新しいファイル ウィンドウ](launch-screens-images/launch01b.png)
 
@@ -96,17 +96,19 @@ Ios 8 (およびそれ以降) では、開発者は、1 つ以上の静的な起
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 新しいプロジェクトを作成します。 Visual Studio で、次のように選択します**ファイル > 新規 > プロジェクト**、を選択し**1 つのビュー アプリ (iPhone)**:。
-    
-    ![新しいプロジェクト ウィンドウに、1 つのビューのアプリ (iPhone) の選択](launch-screens-images/launch01-vs.png)
+1. 新しいプロジェクトを作成します。 Visual Studio で、次のように選択します**ファイル > 新規 > プロジェクト > Visual c# > iPhone と iPad > iOS アプリ (Xamarin)**:。
 
-    - プロジェクトの名前、場所を選択し、選択**OK**です。
+    ![新しいプロジェクト ウィンドウ、iOS アプリ (Xamarin) で選択されています。](launch-screens-images/launch01.w157.png)
+
+    選択、 **1 つのアプリの表示**テンプレート、およびクリック**OK**:
+
+    ![1 つのビューのアプリケーション テンプレート](launch-screens-images/launch01-2.w157.png)
 
 2. 場合**リソース > LaunchScreen.xib**内に存在する、**ソリューション エクスプ ローラー**、ファイルを右クリックして を選択して削除**削除**です。 このファイルは次の手順でストーリー ボードに置き換えられます。
 
-3. 起動画面として使用するストーリー ボードを作成します。 **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加 > 新しい項目の追加.**続く**空ストーリー ボード**です。 このストーリー ボードの名前を付けます**LaunchScreen.storyboard**  をクリック**追加**:
+3. 起動画面として使用するストーリー ボードを作成します。 **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加 > 新しい項目の追加.** 続く**空ストーリー ボード**です。 このストーリー ボードの名前を付けます**LaunchScreen.storyboard**  をクリック**追加**:
 
-    ![[新しい項目の追加] ウィンドウの空のストーリー ボードが選択されています。](launch-screens-images/launch03-vs.png)
+    ![[新しい項目の追加] ウィンドウの空のストーリー ボードが選択されています。](launch-screens-images/launch03.w157.png)
 
 4. 使用するプロジェクト構成**LaunchScreen.storyboard**としてその起動画面ストーリー ボード。
 
@@ -119,7 +121,7 @@ Ios 8 (およびそれ以降) では、開発者は、1 つ以上の静的な起
 
     - **ソリューション エクスプ ローラー**を右クリックして**資産カタログ**選択と**アセット カタログの追加**です。 この新しいアセット カタログの名前を付けます**資産**:
 
-    ![[新しい項目の追加] ウィンドウの選択した資産カタログを](launch-screens-images/launch05-vs.png)
+    ![[新しい項目の追加] ウィンドウの選択した資産カタログを](launch-screens-images/launch05.w157.png)
 
     - 新しいイメージ セットを追加、**資産**資産カタログを」の説明に従って、[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)のセクション、[イメージを表示する](~/ios/app-fundamentals/images-icons/displaying-an-image.md)ガイドです。
 
@@ -211,7 +213,7 @@ Unified ストーリー ボードの起動画面の作成の詳細について�
 
     ![](launch-screens-images/image013.png "起動画面の名前を入力します。")
 3. **ソリューション エクスプ ローラー**、ファイルを開いて編集する、新しく作成されたストーリー ボード ファイルをダブルクリックします。
-4. いることを確認、**サイズ クラス**に設定されている**、:**と**ビューとして**は**ジェネリック**: 
+4. いることを確認、**サイズ クラス**に設定されている**、:** と**ビューとして**は**ジェネリック**: 
 
     ![](launch-screens-images/image016.png "サイズのクラスがいずれかに設定されていることを確認してください: 任意であり、ビューとしてジェネリック")
 5. アセンブリ、単純な UI 要素のサイズ クラスからの起動画面 (など`UIImageView`) と、アプリケーションのバンドルに含まれているイメージ。 

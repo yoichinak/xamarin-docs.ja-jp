@@ -6,12 +6,12 @@ ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 8afc15a75b6d34d9b3f094fe2c92f2b6623ee63f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/24/2018
+ms.openlocfilehash: f1f733fa91be7bf76e19896e78809d18494891d3
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="displaying-an-image"></a>イメージを表示します。
 
@@ -66,6 +66,7 @@ IOS 7 で追加された**アセット カタログのイメージ セット**�
 1. 資産カタログを開く、**ソリューション エクスプ ローラー**、左上隅のをクリックし、 **Plus**ボタン。
 
     ![](displaying-an-image-images/asset5.png "プラス記号をクリックしてボタン")
+
 2. 選択**イメージ セットを追加**され、新しいイメージ セットのイメージの設定エディターが表示されます。 ここでは、さまざまなデバイスの各イメージでドラッグおよびと解決策が必要です。 (注: これらの解決策がで指定した解像度に対応する、[イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)ドキュメント)。
 
     ![](displaying-an-image-images/asset7.png "イメージ エディターの設定")

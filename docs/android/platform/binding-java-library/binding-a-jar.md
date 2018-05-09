@@ -6,12 +6,12 @@ ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: a6cb08f19aac46ffa089914e28c732660caa52b2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 2d9f2198dbb88e7614944ac73729a4e6eca42647
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-a-jar"></a>バインドします。JAR
 
@@ -81,7 +81,7 @@ Picasso.With (this)
 
 最初に、新しいバインドのライブラリ プロジェクトを作成します。 Mac または Visual Studio の Visual Studio で新しいソリューションを作成し、選択、 *Android バインド ライブラリ*テンプレート。 (このチュートリアルのスクリーン ショットは、Visual Studio を使用して、Visual Studio for Mac は非常に似ています)。ソリューションの名前を付けます**JarBinding**: 
 
-[![JarBinding ライブラリ プロジェクトを作成します。](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
+[![JarBinding ライブラリ プロジェクトを作成します。](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 テンプレートに含まれる、 **Jar**フォルダーを追加する場所、します。バインドのライブラリ プロジェクトへ JAR(s) です。 右クリックし、 **Jar**フォルダーと選択**追加 > 既存の項目**: 
 
@@ -130,7 +130,7 @@ Java バインド ライブラリ プロジェクトを作成するときにす�
 
 最初に、バインドのライブラリを使用する新しい Xamarin.Android アプリを作成します。 ソリューションを右クリックし **新しいプロジェクトの追加**; 新しいプロジェクトの名前**BindingTest**です。 このアプリです。 このチュートリアルを簡略化するために、バインドのライブラリと同じソリューションで作成していますただし、バインド ライブラリを使用するアプリはでした、別のソリューションに代わりに、存在します。 
 
-[![新しい BindingTest プロジェクトを追加します。](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
+[![新しい BindingTest プロジェクトを追加します。](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 右クリックし、**参照**のノード、 **BindingTest**プロジェクトし、選択**の参照を追加しています.**:
 

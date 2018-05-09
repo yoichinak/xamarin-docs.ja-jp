@@ -6,12 +6,12 @@ ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 54708a7cfd071f77968991c9fe4e52938697c9bb
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-an-aar"></a>バインドにします。[AAR]
 
@@ -20,7 +20,7 @@ _このチュートリアルでは、Android から Xamarin.Android Java バイ�
 
 ## <a name="overview"></a>概要
 
-*Android アーカイブ (です。[Aar])*ファイルは、Android ライブラリのファイル形式。
+*Android アーカイブ (です。[Aar])* ファイルは、Android ライブラリのファイル形式。
 .[Aar] のファイルは、します。以下を含む ZIP アーカイブ。
 
 -   コンパイル済みの Java コード
@@ -82,7 +82,7 @@ public class TextCounter
 
 1.  以降、Android のバインドのライブラリ テンプレートで新しいバインドのライブラリ プロジェクトを作成します。 Visual Studio for Mac または Visual Studio (次のスクリーン ショットに表示する、Visual Studio ですが Visual Studio for Mac とよく似ています) を使用することができます。 ソリューションの名前を付けます**AarBinding**:
 
-    [![AarBindings プロジェクトを作成します。](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png#lightbox)
+    [![AarBindings プロジェクトを作成します。](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
 2.  テンプレートに含まれる、 **Jar**フォルダーを追加する場所、します。バインドのライブラリ プロジェクトへ AAR(s) です。 右クリックし、 **Jar**フォルダーと選択**追加 > 既存の項目**:
 
@@ -118,7 +118,7 @@ public class TextCounter
 
 1.  このチュートリアルを簡略化するライブラリをバインドと同じソリューションでこのアプリを作成しています。 (バインド ライブラリを使用するアプリでしたにも置くを別のソリューションです。)Xamarin.Android アプリを新規作成: ソリューションを右クリックし **新しいプロジェクトの追加**です。 新しいプロジェクトの名前**BindingTest**:
 
-    [![新しい BindingTest プロジェクトを作成します。](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png#lightbox)
+    [![新しい BindingTest プロジェクトを作成します。](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
 2.  右クリックし、**参照**のノード、 **BindingTest**プロジェクトし、選択**の参照を追加しています.**:
 

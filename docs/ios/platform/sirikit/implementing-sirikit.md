@@ -6,12 +6,12 @@ ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="implementing-sirikit"></a>SiriKit を実装します。
 
@@ -59,7 +59,7 @@ MonkeyChat がユーザーの友人の連絡先独自書籍を維持、それぞ
 
 ### <a name="moving-common-shared-code"></a>一般的な共有コードの移動 
 
-最初に、開発者は、共有される共通のコードの一部間で移動できますアプリとその拡張機能に_共有プロジェクト_、_ポータブル クラス ライブラリ (Pcl)_または_ネイティブライブラリ_です。
+最初に、開発者は、共有される共通のコードの一部間で移動できますアプリとその拡張機能に_共有プロジェクト_、_ポータブル クラス ライブラリ (Pcl)_ または_ネイティブライブラリ_です。
 
 拡張機能は、すべてのアプリは、処理を実行できるようにする必要があります。 サンプル MonkeyChat アプリ、新規の連絡先を追加する連絡先を検索するなどの用語では、メッセージを送信し、メッセージの履歴を取得します。
 
@@ -95,7 +95,7 @@ MonkeyChat がユーザーの友人の連絡先独自書籍を維持、それぞ
 2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクト.**.
 3. 選択**Visual c#** > **共有プロジェクト** をクリックし、**次**ボタン。 
 
-    [![](implementing-sirikit-images/prep02w.png "クラス ライブラリを選択します。")](implementing-sirikit-images/prep02w.png#lightbox)
+    [![](implementing-sirikit-images/prep02.w157-sml.png "クラス ライブラリを選択します。")](implementing-sirikit-images/prep02.w157.png#lightbox)
 4. 入力`MonkeyChatCommon`の**名** をクリックし、**作成**ボタンをクリックします。
 5. 右クリックし、**参照**でメインのアプリのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.**.チェック、 **MonkeyChatCommon**プロジェクトし、をクリックして、 **OK**ボタン。 
 
@@ -174,7 +174,7 @@ SiriKit との統合、Xamarin.iOS アプリ、する必要がありますが、
     [![](implementing-sirikit-images/setup01.png "Com.apple.developer.siri プロパティを追加します。")](implementing-sirikit-images/setup01.png#lightbox)
 4. 変更内容をファイルに保存します。
 5. ダブルクリックして、**プロジェクト ファイル**で、**ソリューション エクスプ ローラー**編集用に開きます。
-6. 選択**iOS バンドル署名 ***ことを確認して、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールド。 
+6. 選択**iOS バンドル署名 *** ことを確認して、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールド。 
 
     [![](implementing-sirikit-images/setup02.png "カスタム権利フィールドで Entitlements.plist ファイルを選択します。")](implementing-sirikit-images/setup02.png#lightbox)
 7. **[OK]** ボタンをクリックして、変更を保存します。
@@ -187,7 +187,7 @@ SiriKit との統合、Xamarin.iOS アプリ、する必要がありますが、
     [![](implementing-sirikit-images/setup01w.png "Com.apple.developer.siri プロパティを追加します。")](implementing-sirikit-images/setup01w.png#lightbox)
 4. 変更内容をファイルに保存します。
 5. ダブルクリックして、**プロジェクト ファイル**で、**ソリューション エクスプ ローラー**編集用に開きます。
-6. 選択**iOS バンドル署名 ***ことを確認して、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールドです。
+6. 選択**iOS バンドル署名 *** ことを確認して、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールドです。
 
 -----
 
@@ -212,14 +212,14 @@ Mac で、次の操作を行います。
 
 1. Web ブラウザーでに移動[ http://developer.apple.com ](http://developer.apple.com)と自分のアカウントにログインします。
 2. をクリックして**証明書**、**識別子**と**プロファイル**です。
-3. 選択**プロビジョニング プロファイル**を選択し、**のアプリ Id**、をクリックして、 **+**ボタンをクリックします。
+3. 選択**プロビジョニング プロファイル**を選択し、**のアプリ Id**、をクリックして、 **+** ボタンをクリックします。
 4. 入力、**名前**新しいプロファイルのです。
 5. 入力、**バンドル ID**推奨設定の名前付け Apple の後です。
 6. 下方向にスクロール、 **App Services**セクションで、 **SiriKit**  をクリックし、**続行**ボタン。 
 
     [![](implementing-sirikit-images/setup03.png "SiriKit を選択します。")](implementing-sirikit-images/setup03.png#lightbox)
 7. すべての設定、し確認**送信**アプリ id。
-8. 選択**プロビジョニング プロファイル** > **開発**をクリックして、 **+**ボタン、、 **Apple ID**、をクリックして**続行**です。
+8. 選択**プロビジョニング プロファイル** > **開発**をクリックして、 **+** ボタン、、 **Apple ID**、をクリックして**続行**です。
 9. [選択] をクリックして**すべて**をクリックし、**続行**です。
 10. をクリックして**すべて選択**再度 をクリックし、**続行**です。
 11. 入力、**プロファイル名**Apple を使用すると、推奨事項の名前付け、をクリックして**続行**です。
@@ -239,7 +239,7 @@ Mac で、次の操作を行います。
     [![](implementing-sirikit-images/setup06.png "バンドル Id")](implementing-sirikit-images/setup06.png#lightbox)
 18. **ソリューション エクスプ ローラー**、select、**プロジェクト**です。
 19. プロジェクトを右クリックし **オプション**です。
-21. 選択**iOS バンドル署名 ***を選択、**署名 Identity**と**プロビジョニング プロファイル**上記で作成されました。 
+21. 選択**iOS バンドル署名 *** を選択、**署名 Identity**と**プロビジョニング プロファイル**上記で作成されました。 
 
     [![](implementing-sirikit-images/setup07.png "署名 Id とプロビジョニング プロファイルを選択します。")](implementing-sirikit-images/setup07.png#lightbox)
 22. **[OK]** ボタンをクリックして、変更を保存します。
@@ -459,18 +459,18 @@ namespace MonkeyChat
 
 1. プロジェクト名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**  >  **iOS**:
 
-    [![](implementing-sirikit-images/plist01.png "プロパティ リストを追加します。")](implementing-sirikit-images/plist01.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.png "プロパティ リストを追加します。")](implementing-sirikit-images/plist01.png#lightbox)
 2. ダブルクリックして、`AppIntentVocabulary.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、 **+**キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
+3. クリックして、 **+** キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist02.png "ParameterVocabularies と配列の型に名前を設定します。")](implementing-sirikit-images/plist02.png#lightbox)
-4. 展開`ParameterVocabularies` をクリックし、 **+**ボタンをクリックし、設定、**型**に`Dictionary`:
+4. 展開`ParameterVocabularies` をクリックし、 **+** ボタンをクリックし、設定、**型**に`Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "型をディクショナリに設定します。")](implementing-sirikit-images/plist03.png#lightbox)
-5. クリックして、 **+**を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
+5. クリックして、 **+** を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist04.png "ParameterNames と配列の型に名前を設定します。")](implementing-sirikit-images/plist04.png#lightbox)
-6. クリックして、 **+**を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
+6. クリックして、 **+** を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName キー")](implementing-sirikit-images/plist05.png#lightbox)
 7. 追加、`ParameterVocabulary`キーを`ParameterVocabularies`キーを**型**の`Array`:
@@ -521,20 +521,21 @@ namespace MonkeyChat
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. プロジェクト名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**  >  **iOS**:
+1. プロジェクト名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しい項目 > Apple > プロパティの一覧 > Info.plist**:
 
-    [![](implementing-sirikit-images/plist01w.png "新しい Info.plist を追加します。")](implementing-sirikit-images/plist01w.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.w157-sml.png "新しい Info.plist を追加します。")](implementing-sirikit-images/plist01.w157.png#lightbox)
+
 2. ダブルクリックして、`AppIntentVocabulary.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、 **+**キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
+3. クリックして、 **+** キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist02w.png "ParameterVocabularies と配列の型に名前を設定します。")](implementing-sirikit-images/plist02w.png#lightbox)
-4. 展開`ParameterVocabularies` をクリックし、 **+**ボタンをクリックし、設定、**型**に`Dictionary`:
+4. 展開`ParameterVocabularies` をクリックし、 **+** ボタンをクリックし、設定、**型**に`Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "型をディクショナリに設定します。")](implementing-sirikit-images/plist03w.png#lightbox)
-5. クリックして、 **+**を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
+5. クリックして、 **+** を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
 
     [![](implementing-sirikit-images/plist04w.png "ParameterNames と配列の型に名前を設定します。")](implementing-sirikit-images/plist04w.png#lightbox)
-6. クリックして、 **+**を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
+6. クリックして、 **+** を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName キー")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 追加、`ParameterVocabulary`キーを`ParameterVocabularies`キーを**型**の`Array`:
@@ -625,11 +626,11 @@ namespace MonkeyChat
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 右クリックし、**ソリューション名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加.**.
-2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **目的とした拡張機能** をクリックし、**次**ボタンをクリックします。 
+2. ダイアログ ボックスから選択**Visual c# > iOS の拡張機能 > 目的とした拡張機能** をクリックし、**次**ボタン。
 
-    [![](implementing-sirikit-images/intents05w.png "インテントの拡張機能を選択します。")](implementing-sirikit-images/intents05w.png#lightbox)
-3. 次を入力、**名前**目的とした拡張機能とをクリックして、 **[ok]**ボタンをクリックします。
-5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成された目的とした拡張機能のフォルダーです。 (つまり、アプリは、上記で作成) 共通の共有コード ライブラリのプロジェクトの名前を確認し、をクリックして、 **OK**ボタンをクリックします。 
+    [![](implementing-sirikit-images/intents05.w157-sml.png "インテントの拡張機能を選択します。")](implementing-sirikit-images/intents05.w157.png#lightbox)
+3. 次を入力、**名前**目的とした拡張機能とをクリックして、 **[ok]** ボタンをクリックします。
+1. **ソリューション エクスプ ローラー**を右クリックし、**参照**インテントの新しく作成された拡張機能のフォルダーを選択して**追加 > 参照**です。 (つまり、アプリは、上記で作成) 共通の共有コード ライブラリのプロジェクトの名前を確認し、をクリックして、 **OK**ボタンをクリックします。
 
     [![](implementing-sirikit-images/intents08w.png "共通の共有コード ライブラリのプロジェクトの名前を選択します。")](implementing-sirikit-images/intents08w.png#lightbox)
     
@@ -890,7 +891,7 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 1. 右クリックし、**ソリューション名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加.**
 2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **UI 拡張機能の目的とした** をクリックし、**次**ボタンをクリックします。
-3. 次を入力、**名前**目的とした拡張機能とをクリックして、 **[ok]**ボタンをクリックします。
+3. 次を入力、**名前**目的とした拡張機能とをクリックして、 **[ok]** ボタンをクリックします。
 5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成された目的とした拡張機能のフォルダーです。 (アプリは、上記で作成) を共通の共有コード ライブラリのプロジェクトの名前を確認し、 **OK**ボタンをクリックします。
     
 -----

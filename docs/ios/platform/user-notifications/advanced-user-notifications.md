@@ -6,12 +6,12 @@ ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 9958682ce9e356692f451900d7dca0e343b244da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: bd8a95afc5bdd5aed958913d63f9b6cfe853677e
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="advanced-user-notifications"></a>高度なユーザーへの通知
 
@@ -171,7 +171,7 @@ Xamarin.iOS アプリでは、カスタム ユーザー通知 UI を実装する
 3. 選択**iOS** > **拡張機能** > **通知コンテンツの拡張機能** をクリックし、**次**ボタン。 
 
     [![](advanced-user-notifications-images/notify01.png "通知のコンテンツの拡張機能を選択します。")](advanced-user-notifications-images/notify01.png#lightbox)
-4. 入力、**名前**拡張機能とクリック、 **[次へ]**ボタン。 
+4. 入力、**名前**拡張機能とクリック、 **[次へ]** ボタン。 
 
     [![](advanced-user-notifications-images/notify02.png "拡張機能の名前を入力します。")](advanced-user-notifications-images/notify02.png#lightbox)
 5. 調整、**プロジェクト名**や**ソリューション名**要求されて、をクリックして、**作成**ボタン。 
@@ -181,10 +181,10 @@ Xamarin.iOS アプリでは、カスタム ユーザー通知 UI を実装する
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Visual studio for mac アプリのソリューションを開く
-2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加**です。
-3. 選択**iOS** > **拡張** > **通知コンテンツの拡張機能**: 
+2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
+3. 選択**Visual c# > iOS 拡張子 > 通知のコンテンツの拡張**:
 
-    [![](advanced-user-notifications-images/notify01w.png "通知のコンテンツの拡張機能を選択します。")](advanced-user-notifications-images/notify01w.png#lightbox)
+    [![](advanced-user-notifications-images/notify01.w157-sml.png "通知のコンテンツの拡張機能を選択します。")](advanced-user-notifications-images/notify01.w157.png#lightbox)
 4. 入力してください、**名**をクリックして、拡張機能の**OK**ボタンをクリックします。
 
 -----

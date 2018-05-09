@@ -5,12 +5,12 @@ ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/01/2018
-ms.openlocfilehash: d1e0fdb1c4b159b6db283d7b9b3be673b73a0ee0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: 00785ad161f5f05fd70b059bb0a3f1c8d6c31f97
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-a-service"></a>サービスの作成
 
@@ -82,8 +82,8 @@ Android でのサービスを開始する最も基本的な方法は、ディス
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **暗黙的な目的とした**&ndash;の目的としたこの型は疎を識別、アクションのことを実行する必要しますが、その処理を実行する特定のサービスは不明です。 暗黙的なインテント見なすことができますの文字です「To Whom It が問題にならなければ…」を指定します。
-    目的に一致する既存のサービスがある場合、android は目的、および指定する必要の内容を調べます。
+-   **暗黙的な目的とした**&ndash;の目的としたこの型は疎を識別、アクションを実行するが、その操作を完了する特定のサービスが不明です。 暗黙的なインテント見なすことができますの文字です「To Whom It が問題にならなければ…」を指定します。
+    Android は、目的の内容を確認し、目的に一致する既存のサービスがないか確認します。
 
     _インテント フィルター_登録されているサービスと暗黙的な使用目的に合わせてのために使用します。 インテントのフィルターに追加される XML 要素である**AndroidManifest.xml**暗黙のインテントを指定してサービスを検索するために必要なメタデータが含まれています。
 

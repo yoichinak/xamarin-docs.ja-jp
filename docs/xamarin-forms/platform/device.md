@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 471616dffc700cf93a9f6435565222d7628bf165
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-class"></a>デバイス クラス
 
@@ -86,6 +86,28 @@ if (Device.Idiom == TargetIdiom.Phone) {
     // layout views horizontally for a larger display (tablet or desktop)
 }
 ```
+
+## <a name="deviceflowdirection"></a>Device.FlowDirection
+
+[ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/)値の取得、 [ `FlowDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlowDirection/)デバイスによって使用されている現在のフロー方向を表す列挙値。 フロー方向とは、ページ上の UI 要素が目によってスキャンされる方向です。 列挙値は、次のとおりです。
+
+- [`LeftToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/)
+- [`RightToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/)
+- [`MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/)
+
+XAML では、 [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/)を使用して値を取得できる、`x:Static`マークアップ拡張機能。
+
+```xaml
+<ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
+```
+
+C# のコードは同等のコードは次のとおりです。
+
+```csharp
+this.FlowDirection = Device.FlowDirection;
+```
+
+フローの方向に関する詳細については、次を参照してください。[右から左へローカリゼーション](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)です。
 
 <a name="Device_Styles" />
 

@@ -6,12 +6,12 @@ ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/29/2018
-ms.openlocfilehash: ea3d4a7f848847d6a9f7341faec47294a4cab3f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/10/2018
+ms.openlocfilehash: 8d1dc410d5336d9c2505a18720cc7f734e838c39
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-the-android-designer"></a>Android デザイナーの使用
 
@@ -36,9 +36,9 @@ Android のユーザー インターフェイスは XML ファイルを使用す
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio を起動し、をクリックして**新しいプロジェクト.**を選択し、 **Visual C\# > Android > Blank App (Android)**テンプレート。
+Visual Studio を起動し、をクリックして**新しいプロジェクト.** を選択し、 **Visual C\# > Android > Android アプリ (Xamarin)** テンプレート。
 
-[![Android の空のアプリケーション](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png#lightbox)
+[![Android の空のアプリケーション](designer-walkthrough-images/vs/01-android-app-sml.w157.png)](designer-walkthrough-images/vs/01-android-app.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -74,7 +74,7 @@ Mac とクリックの Visual Studio を起動して**新しいソリューシ�
 
 Visual Studio を右クリックして**リソース/レイアウト**で、**ソリューション エクスプ ローラー**選択**追加 > 新しい項目の追加しています.**.**新しい項目の追加**ダイアログで、 **Android レイアウト**です。 ファイルの名前を付けます**ListItem.axml**  をクリック**追加**:
 
-[![新しいレイアウト](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png#lightbox)
+[![新しいレイアウト](designer-walkthrough-images/vs/03-new-layout-sml.w157.png)](designer-walkthrough-images/vs/03-new-layout.w157.png#lightbox)
 
 新しい**ListItem**レイアウトは、デザイナーに表示されます。
 
@@ -82,7 +82,7 @@ Visual Studio を右クリックして**リソース/レイアウト**で、**�
 
 クリックして、**ソース**このレイアウトの XML ソースを表示するデザイナーの下部にあるタブ。
 
-[![Designer XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png#lightbox)
+[![デザイナーの XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png#lightbox)
 
 **ビュー**  メニューのをクリックして**その他のウィンドウ > ドキュメント アウトライン**を開くには、 **ドキュメント アウトライン**です。 **ドキュメント アウトライン**レイアウト現在 1 つに含まれる表示**LinearLayout**ウィジェット。
 
@@ -100,7 +100,7 @@ Mac 用 Visual Studio で、右クリック**リソース/レイアウト**で�
 
 クリックして、**ソース**このレイアウトの XML ソースを表示するデザイナーの下部にあるタブ。 クリックすると、 **[ドキュメント アウトライン**] タブ、右側には、レイアウトが現在、1 つを含むことを示します**LinearLayout**ウィジェット。
 
-[![Designer XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png#lightbox)
+[![デザイナーの XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png#lightbox)
 
 -----
 

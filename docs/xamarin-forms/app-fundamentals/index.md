@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 5a53c15ebad6081dae2ebc4bd782bcc3644620fe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bd050e6eba33b543c52a80bb42b184200164c14
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="application-fundamentals"></a>アプリケーションの基礎
 
@@ -51,7 +51,7 @@ Xamarin.Forms を使用したアクセスなどの機能 (画面閲覧ツール�
 
 Xamarin.Forms [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)クラスがユーザー インターフェイス コントロールで tap、ピンチ、およびパン ジェスチャをサポートしています。
 
-## <a name="localizationlocalizationmd"></a>[ローカリゼーション](localization.md)
+## <a name="localizationlocalizationindexmd"></a>[ローカリゼーション](localization/index.md)
 
 組み込みの .NET のローカリゼーション フレームワークは、Xamarin.Forms を使用したクロスプラット フォームの多言語アプリケーションの構築に使用できます。
 

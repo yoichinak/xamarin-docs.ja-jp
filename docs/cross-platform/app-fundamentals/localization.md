@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
-ms.translationtype: MT
+ms.openlocfilehash: 2e108947ce8237b9f48b201e60c2252cfb0bc376
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -18,7 +18,7 @@ ms.lasthandoff: 04/26/2018
 
 Xamarin アプリをローカライズする技術的な詳細に進むをスキップする場合は、これらのプラットフォームに固有の操作方法に関する記事のいずれかの開始します。
 
-- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization.md)クロスプラット フォームのローカリゼーション RESX ファイルを使用します。
+- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization/index.md)クロスプラット フォームのローカリゼーション RESX ファイルを使用します。
 - [**Xamarin.iOS** ](~/ios/app-fundamentals/localization/index.md)ネイティブ プラットフォームのローカライズします。
 - [**Xamarin.Android** ](~/android/app-fundamentals/localization.md)ネイティブ プラットフォームのローカライズします。
 
@@ -302,7 +302,7 @@ IOS および Android の両方は、右から左のレイアウトおよび上�
 
 興味のあるプラットフォームの技術的な詳細の読み込みが続行します。
 
-- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization.md)クロスプラット フォームのローカリゼーション RESX ファイルを使用します。
+- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization/index.md)クロスプラット フォームのローカリゼーション RESX ファイルを使用します。
 - [Xamarin.iOS](~/ios/app-fundamentals/localization/index.md)ネイティブ プラットフォームのローカライズします。
 - [Xamarin.Android](~/android/app-fundamentals/localization.md)ネイティブ プラットフォームのローカライズします。
 

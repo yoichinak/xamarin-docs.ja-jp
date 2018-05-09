@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 96ee8343bb2b99fdc0be9437aaa7737a70b8c19c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ios-localization"></a>iOS のローカライズ
 
@@ -109,7 +109,7 @@ IOS の次の機能は、ユーザーに表示するローカライズされた�
 
 ### <a name="localizedstring-method"></a>LocalizedString メソッド
 
-`NSBundle.MainBundle.LocalizedString`メソッドに格納されているローカライズされたテキストを検索**.strings**プロジェクト内のファイルです。 これらのファイルごとに作成された特別に指定されたディレクトリに、言語、 **.lproj**サフィックス。
+`NSBundle.MainBundle.LocalizedString`メソッドに格納されているローカライズされたテキストを検索 **.strings**プロジェクト内のファイルです。 これらのファイルごとに作成された特別に指定されたディレクトリに、言語、 **.lproj**サフィックス。
 
 #### <a name="strings-file-locations"></a>.strings ファイルの場所
 
@@ -117,7 +117,7 @@ IOS の次の機能は、ユーザーに表示するローカライズされた�
   プロジェクトのルートにある多くの場合、(にも配置できますが、**リソース**フォルダー)。
 - **<language>.lproj**ディレクトリに作成されます、サポートされている各言語の通常の**リソース**フォルダーです。
 
-別の数があります**.strings**各言語ディレクトリ内のファイル。
+別の数があります **.strings**各言語ディレクトリ内のファイル。
 
 - **Localizable.strings** : ローカライズされたテキストのメインのリスト。
 - **InfoPlist.strings** – など、アプリケーション名を変換する特定のキーがこのファイルで許可されていることを特定します。
@@ -166,7 +166,7 @@ IOS のイメージをローカライズするには。
 
 2. 既定のイメージ ファイルを配置**flag.png**で**Base.lproj** (ネイティブな開発言語ディレクトリ)。
 
-3. 内のイメージのローカライズされたバージョンを必要に応じて配置**.lproj** (各言語のフォルダー **es.lproj**, **ja.lproj**). 同じファイル名を使用して**flag.png**各言語ディレクトリにします。
+3. 内のイメージのローカライズされたバージョンを必要に応じて配置 **.lproj** (各言語のフォルダー **es.lproj**、 **ja.lproj**)。 同じファイル名を使用して**flag.png**各言語ディレクトリにします。
 
 イメージが特定の言語の存在しない場合は、iOS は既定のネイティブ言語フォルダーに戻るし、そこからイメージを読み込みます。
 
@@ -252,7 +252,7 @@ iOS では、いくつかの右から左に対応するアプリの構築を支�
 [![](images/rtl-he-sml.png "ヘブライ語のローカライズ")](images/rtl-he.png#lightbox "Hebrew")
 
 iOS を自動的に反転、 `UINavigationController`、内の他のコントロールを配置していると`UIStackView`するか、自動レイアウトに配置します。
-使用して右から左へテキストをローカライズ**.strings** LTR テキストと同じ方法でファイル。
+使用して右から左へテキストをローカライズ **.strings** LTR テキストと同じ方法でファイル。
 
 <a name="code"/>
 
@@ -345,7 +345,7 @@ someControl.Text = localizedString;
 
 ## <a name="app-store-listing"></a>アプリ ストアの一覧
 
-Apple のよく寄せられる質問に依存して[アプリ ストアのローカリゼーション](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization)で販売アプリは、各国の翻訳を入力します。 翻訳は、アプリも含まれているローカライズされた場合のみ表示されます。 それらの警告に注意してください**.lproj**言語のディレクトリ。
+Apple のよく寄せられる質問に依存して[アプリ ストアのローカリゼーション](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization)で販売アプリは、各国の翻訳を入力します。 翻訳は、アプリも含まれているローカライズされた場合のみ表示されます。 それらの警告に注意してください **.lproj**言語のディレクトリ。
 
 ## <a name="summary"></a>まとめ
 
@@ -359,5 +359,5 @@ Apple のよく寄せられる質問に依存して[アプリ ストアのロー
 - [Tasky (ローカライズされたストーリー ボード) (サンプル)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)
 - [Apple のガイドでのローカライズ](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [クロスプラット フォームのローカリゼーションの概要](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin.Forms ローカリゼーション](~/xamarin-forms/app-fundamentals/localization.md)
+- [Xamarin.Forms ローカリゼーション](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [Android のローカライズ](~/android/app-fundamentals/localization.md)

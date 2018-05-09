@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6924cc9989c8ab1ca66472b628cdab677e546a3e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 076cadd16c3953ee4e06193190b59035ad57f2c1
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="android-localization"></a>Android のローカライズ
 
@@ -23,7 +23,7 @@ _このドキュメントでは、Android SDK、および Xamarin とそれら�
 
 ### <a name="locale"></a>ロケール
 
-ユーザーがその言語でを選択**設定 > 言語入力 &**です。 この選択を制御、表示言語と地域の設定を使用します。 日付と数値の書式設定)。
+ユーザーがその言語でを選択**設定 > 言語入力 &** です。 この選択を制御、表示言語と地域の設定を使用します。 日付と数値の書式設定)。
 
 現在のロケールは現在のコンテキストを使用してクエリを実行できます`Resources`:
 
@@ -251,7 +251,7 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ### <a name="device-testing"></a>デバイスのテスト
 
 デバイスでテストする、言語を変更する、**設定**アプリ。
-**ヒント:**言語設定を元に戻すことができるように、メニュー項目の場所と、アイコンのメモを作成します。
+**ヒント:** 言語設定を元に戻すことができるように、メニュー項目の場所と、アイコンのメモを作成します。
 
 
 ## <a name="summary"></a>まとめ
@@ -265,5 +265,5 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 - [(コードのローカライズ版) Tasky (サンプル)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
 - [Android のリソースをローカライズします。](http://developer.android.com/guide/topics/resources/localization.html)
 - [クロスプラット フォームのローカリゼーションの概要](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin.Forms ローカリゼーション](~/xamarin-forms/app-fundamentals/localization.md)
+- [Xamarin.Forms ローカリゼーション](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)

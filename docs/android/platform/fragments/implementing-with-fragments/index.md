@@ -1,65 +1,55 @@
 ---
-title: フラグメントを実装します。
-description: Android 3.0 には、フラグメントが導入されました。 フラグメントは、自己完結型のモジュラー コンポーネントです。さまざまなサイズの画面で実行される可能性がある複雑なアプリケーション作成に対処するために使用されます。 この記事で事前 Android 3.0 デバイスでのフラグメントをサポートする方法と Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。
+title: フラグメントのチュートリアルを実装します。
+description: この記事で Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。
+ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: 92c68298d7abd2570efd89e12d7cfb6364e90972
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="implementing-with-fragments"></a>フラグメントを実装します。
+# <a name="implementing-fragments---walkthrough"></a>フラグメントのチュートリアルを実装します。
 
-_Android 3.0 には、フラグメントが導入されました。フラグメントは、自己完結型のモジュラー コンポーネントです。さまざまなサイズの画面で実行される可能性がある複雑なアプリケーション作成に対処するために使用されます。この記事で事前 Android 3.0 デバイスでのフラグメントをサポートする方法と Xamarin.Android アプリケーションを開発するフラグメントを使用する方法について説明します。_
-
+_フラグメントは、さまざまな画面サイズとデバイスを対象とする Android アプリの複雑さに対処できる自己完結型、モジュール型のコンポーネントです。この記事で作成および Xamarin.Android アプリケーションを開発するときに、フラグメントを使用する方法について説明します。_
 
 ## <a name="overview"></a>概要
 
-このセクションでシェイクスピアーと選択した各 play から見積もりの一覧を表示するアプリケーションを作成する方法を説明します。 1 つの場所で、UI コンポーネントを定義しましたがさまざまなフォーム ファクターでこれらを使用できるように、アプリはフラグメントを利用します。 たとえば、次のスクリーン ショットは、10"タブレット、およびスマート フォンで実行されているアプリケーションを表示します。
+このセクションで作成および Xamarin.Android アプリケーションでフラグメントを使用する方法を説明します。 このアプリケーションは、いえいえ、いくつかのアプローチのタイトルを一覧に表示されます。 ユーザーは、再生のタイトルでタップ、したときに、アプリに表示されます引用形再生された、別のアクティビティで。
 
-[![タブレットおよび電話で実行されている例のアプリのスクリーン ショット](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
+[![Android フォンの縦モードで実行されているアプリ](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-このセクションでは、次のトピックを取り上げます。
+電話がモードを横向きに回転させると、アプリの外観が変わります: 同じアクティビティに両方のアプローチと引用符の一覧が表示されます。 再生がオンの場合、引用符が同じアクティビティに表示になります。
 
-- **フラグメントを作成する**&ndash;シェイクスピアーの一覧を表示するフラグメントと各 play から見積もりを表示する別のフラグメントを作成する方法を示します。
+[![Android フォンの横モードで実行されているアプリ](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-- **さまざまな画面サイズをサポートする**&ndash;表示画面のサイズを大きく活用するためにアプリケーションをレイアウトする方法です。
+最後に、アプリがタブレットで実行されている場合。
 
-- **Android のサポート パッケージを使用して** &ndash; Android のサポート パッケージを実装し、以前のバージョンの Android 上で実行できるように、アプリケーション内の活動に若干の変更は、します。
+[![Android タブレットで実行されているアプリ](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
+このサンプル アプリケーションに適合させること、さまざまなフォーム ファクターと最小限のコード変更の向きにフラグメントを使用して、[代替レイアウト](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources)です。
 
-## <a name="requirements"></a>要件
+アプリケーションのデータは、c# の文字列の配列としてハードコーディングされたアプリでは、2 つの文字列配列で存在します。 各配列は、1 つのフラグメントのデータ ソースとして使用されます。  1 つの配列は、いくつかのアプローチ シェイクスピアーでの名前を保持する、もう一方の配列から再生された見積もり持ちます。 アプリの起動時にでは、再生名が表示されます、`ListFragment`です。 再生で、ユーザーがクリックしたとき、`ListFragment`見積もりを表示する別のアクティビティをアプリケーションが開始されます。
 
-このチュートリアルでは、Xamarin.Android 4.0 以上が必要です。 必要があります、Android のサポート パッケージをインストールするフラグメントのドキュメントで説明したようです。
+アプリのユーザー インターフェイスは、2 つのレイアウト用縦と横モード用の 1 つで構成されます。 実行時に、Android を読み込むには、どのようなレイアウトが、デバイスの向きをに基づいて決定されますおよび表示するために、アクティビティにそのレイアウトを提供します。 すべてのユーザーのクリックに応答して、データを表示するためのロジックが含まれているフラグメント。 アプリ内のアクティビティは、フラグメントをホストするためのコンテナーとしてのみ存在します。
 
+このチュートリアルは、2 つのガイドに細分化をされます。 [第 1 部](./walkthrough.md)アプリケーションのコア部分に焦点を当てます。 2 つのフラグメントと 2 つのアクティビティと共に、レイアウト (縦向きモードの最適化) の 1 つのセットが作成されます。
 
-## <a name="introduction"></a>はじめに
+1. `MainActivity` &nbsp; これは、アプリの起動アクティビティです。
+1. `TitlesFragment` &nbsp; このフラグメントいえいえ記述されている再生のタイトルの一覧が表示されます。 によってホストされている`MainActivity`です。
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` 起動、`PlayQuoteActivity`で再生を選択すると、ユーザーへの応答`TitlesFragment`です。
+1. `PlayQuoteFragment` &nbsp; このフラグメントいえいえ引用形再生が表示されます。 によってホストされている`PlayQuoteActivity`です。
 
-例では、このセクションの内容をビルド、アクティビティでは、一覧の読み込み、ユーザーの選択への応答または選択されている再生の見積もりを表示するためのロジックは含まれません。 このロジックは、個々 のフラグメントに存在します。
-自体のフラグメントのこのロジックを配置すると、アクティビティごとに別のロジックを記述することがなく、1 つのアクティビティまたは複数の活動で小さな画面で大きな画面をサポートするために、アプリケーションのワークフローを分類できます。 タブレットでは、両方のフラグメントは 1 つのアクティビティになります。 スマート フォン、フラグメントは異なるアクティビティにホストされます。
-
-このアプリケーションには、次の部分が含まれます。
-
- **MainActivity** – 画面のサイズによっては、フラグメントの一方または両方が表示されます。 これは、スタートアップ アクティビティです。
-
- **TitlesFragment** – シェイクスピアーのユーザーが 元の一覧が表示されます。
-
- **DetailsFragment** – 選択した再生の見積もりが表示されます。
-
- **DetailsActivity** – をホストし、DetailsFragment が表示されます。
-このアクティビティは、携帯電話などの小さな画面でデバイスを使用します。
-
-
+[2 番目のこのチュートリアルのパート](./walkthrough-landscape.md)両方のフラグメントを画面に表示されます (横モード用に最適化) 異なるレイアウトを追加することについて説明します。 また、いくつかのコードの軽微な変更になります、コードに、アプリが画面に同時に表示されているフラグメントの数には、その動作を適応させるようにします。
 
 ## <a name="related-links"></a>関連リンク
 
 - [FragmentsWalkthrough (サンプル)](https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/)
 - [デザイナーの概要](~/android/user-interface/android-designer/index.md)
-- [Xamarin.Android サンプル: Honeycomb ギャラリー](https://developer.xamarin.com/samples/HoneycombGallery/)
 - [フラグメントを実装します。](http://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [サポート パッケージ](http://developer.android.com/sdk/compatibility-library.html)

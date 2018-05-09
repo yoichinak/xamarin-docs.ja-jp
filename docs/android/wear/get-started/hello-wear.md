@@ -6,12 +6,12 @@ ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 742a10ce0042d2bbf6d5690cb7a7a6eca529a57e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/10/2018
+ms.openlocfilehash: 17c12c4ec818c21d6697932315874ea4f63e6109
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hello-wear"></a>こんにちは, 損傷
 
@@ -29,7 +29,7 @@ _最初の Android 着用アプリを作成し、損傷のエミュレーター�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![新しいプロジェクト ダイアログで新しい Android 着用アプリケーションの作成](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
+[![新しいプロジェクト ダイアログで新しい Android 着用アプリケーションの作成](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -44,13 +44,13 @@ _最初の Android 着用アプリを作成し、損傷のエミュレーター�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-いることを確認**ターゲットに最低限の Android**に設定されている**Android 5.0 (ロリポップ)**以降。 
+いることを確認**ターゲットに最低限の Android**に設定されている**Android 5.0 (ロリポップ)** 以降。 
 
 [![Visual Studio での Android 5.0 にターゲット フレームワークを設定](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-ターゲット フレームワークに設定されていることを確認**Android 5.0 (ロリポップ)**以降。
+ターゲット フレームワークに設定されていることを確認**Android 5.0 (ロリポップ)** 以降。
 
 [![Mac 用 Visual Studio での Android 5.0 にターゲット フレームワークを設定](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
@@ -151,7 +151,7 @@ Android を着用デバイスは、デバイスのプルダウン メニュー�
 
 -----
 
-表示される、**すぐしています.**最初にメッセージ (またはその他のいくつかのスポット画面)。 
+表示される、**すぐしています.** 最初にメッセージ (またはその他のいくつかのスポット画面)。 
 
 ![エミュレーターは 1 分だけを表示を確認してください.](hello-wear-images/please-wait.png)
 

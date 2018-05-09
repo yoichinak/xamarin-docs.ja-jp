@@ -6,12 +6,12 @@ ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 9fd3ff17dc9af3fd30a7d5b31e8cea7ff8669a51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2017
+ms.openlocfilehash: b27d415240f3b8cd25c4bc54f6d176c50e42a250
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="enhanced-user-notifications"></a>強化されたユーザーへの通知
 
@@ -168,7 +168,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 2. 切り替えて、**ソース**ビュー。 
 
     [![](enhanced-user-notifications-images/setup01.png "ソース ビュー")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. クリックして、 **+**新しいキーを追加するボタンをクリックします。
+3. クリックして、 **+** 新しいキーを追加するボタンをクリックします。
 4. 入力`aps-environment`の**プロパティ**のままにして、**型**として`String`いずれかを入力および`development`または`production`の**値**: 
 
     [![](enhanced-user-notifications-images/setup02.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png#lightbox)
@@ -177,7 +177,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. ダブルクリックして、`Entitlements.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、 **+**新しいキーを追加するボタンをクリックします。
+3. クリックして、 **+** 新しいキーを追加するボタンをクリックします。
 4. 入力`aps-environment`の**プロパティ**のままにして、**型**として`String`いずれかを入力および`development`または`production`の**値**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png#lightbox)
@@ -538,7 +538,7 @@ Xamarin.iOS アプリでは、サービス拡張機能を実装するには、�
 3. 選択**iOS** > **拡張機能** > **通知サービスの拡張機能** をクリックし、**次**ボタン。 
 
     [![](enhanced-user-notifications-images/extension02.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension02.png#lightbox)
-4. 入力、**名前**拡張機能とクリック、 **[次へ]**ボタン。 
+4. 入力、**名前**拡張機能とクリック、 **[次へ]** ボタン。 
 
     [![](enhanced-user-notifications-images/extension03.png "拡張機能の名前を入力します。")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. 調整、**プロジェクト名**や**ソリューション名**要求されて、をクリックして、**作成**ボタン。 
@@ -548,10 +548,10 @@ Xamarin.iOS アプリでは、サービス拡張機能を実装するには、�
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Visual Studio でアプリのソリューションを開きます。
-2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加**です。
-3. 選択**iOS** > **拡張** > **通知サービスの拡張機能**: 
+2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
+3. 選択**Visual c# > iOS 拡張子 > 通知サービス拡張**:
 
-    [![](enhanced-user-notifications-images/extension01w.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension01w.png#lightbox)
+    [![](enhanced-user-notifications-images/extension01.w157-sml.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
 4. 入力してください、**名**をクリックして、拡張機能の**OK**ボタンをクリックします。
 
 -----

@@ -4,14 +4,14 @@ description: ソースとターゲット間の情報のフローを制御しま�
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: fdcba9b680bd548371883788af9e4eda755d91df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: charlespetzold
+ms.author: chape
+ms.date: 05/01/2018
+ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-mode"></a>バインド モード
 
@@ -58,6 +58,7 @@ ms.lasthandoff: 04/04/2018
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; データは、ソースとターゲット間の双方向を配置します。
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; データは、ソースからターゲットになった
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; データがターゲットからソースへ移動します。
+- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; データがソースから、ターゲットがされる場合にのみに、 `BindingContext` (Xamarin.Forms 3.0 で新機能) の変更
 
 すべてのバインド可能なプロパティが既定のバインド、バインド可能なプロパティが作成されるときに設定されているモードとはから利用可能な[ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/)のプロパティ、`BindableProperty`オブジェクト。 この既定のバインド モードは、そのプロパティがデータ バインディング ターゲットのモードを示します。
 
@@ -94,6 +95,15 @@ ViewModel クラスは、データ バインディング ソース、および�
 - `SelectedItem` プロパティ `ListView`
 
 理論的根拠は上のバインド、`SelectedItem`プロパティがバインディング ソースを設定することになります。 この記事の後半の例では、その動作を上書きします。
+
+### <a name="one-time-bindings"></a>1 回限りのバインド
+
+いくつかのプロパティの既定のバインド モードを持っている`OneTime`です。 これらの数値は、次のとおりです。
+
+- `IsTextPredictionEnabled` プロパティ `Entry`
+- `Text`、 `BackgroundColor`、および`Style`プロパティの`Span`します。
+
+バインド モードを使ってプロパティをターゲット`OneTime`バインド コンテキストが変更されたときにのみ更新されます。 これらのターゲット プロパティのバインディングは、このため、簡略化バインド インフラストラクチャは、ソースのプロパティの変更を監視する必要はありません。
 
 ## <a name="viewmodels-and-property-change-notifications"></a>ViewModels とプロパティの変更通知
 
@@ -198,6 +208,8 @@ public class HslColorViewModel : INotifyPropertyChanged
 ときに、`Color`プロパティが変更された、静的な`GetNearestColorName`メソッドで、`NamedColor`クラス (にも含まれて、 **DataBindingDemos**ソリューション) 名前付きの最も近い色を取得し、設定、`Name`プロパティです。 これは、`Name`プロパティにプライベート`set`アクセサー、ため、クラスの外部から設定することはできません。
 
 バインディング ソースとして、ViewModel を設定すると、バインド インフラストラクチャは、アタッチにハンドラーを`PropertyChanged`イベント。 この方法でバインドは、プロパティに対する変更の通知を受け取ることができ、変更された値から、ターゲットのプロパティを設定することができます。
+
+ただし、ときに、ターゲット プロパティ (または`Binding`対象のプロパティで定義) が、`BindingMode`の`OneTime`、バインド インフラストラクチャは、上のハンドラーをアタッチする必要はありません、`PropertyChanged`イベント。 ターゲット プロパティが更新される場合にのみ、`BindingContext`変更していないソース プロパティ自体が変更されたとき。 
 
 **単純なカラー セレクター** XAML ファイルのインスタンスを作成、`HslColorViewModel`でページのリソース ディクショナリを初期化します、`Color`プロパティです。 `BindingContext`のプロパティ、`Grid`に設定されている、`StaticResource`バインド拡張機能をそのリソースを参照します。
 

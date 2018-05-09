@@ -1,6 +1,6 @@
 ---
 title: ListView のパフォーマンス
-description: "ListView を基本としたアプリで優れたパフォーマンスを確保する"
+description: ListView を基本としたアプリで優れたパフォーマンスを確保する
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
@@ -15,24 +15,24 @@ ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
-モバイルアプリケーションの作成は、パフォーマンスが重要です。ユーザは、スムーズなスクロールと高速ロード時間を期待するようになっています。ユーザの期待に応え損なうと、ストアでのアプリケーションの評価が下がり、業務アプリの場合であれば、組織の時間と費用も無駄になります。
+モバイル アプリケーションを作成するには、パフォーマンスが重要です。 スムーズ スクロールと高速読み込み時間を期待するユーザーになっています。 ユーザーの期待を満たすために失敗して、アプリケーション ストア内の評価のコストまたは、基幹業務アプリケーションの場合、組織の時間とコストのコストします。
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) はデータ表示の強力な view ですが、制限がいくつかあります。深い入れ子になった階層の view を含む場合や、多くの測定値を必要とするレイアウトを使用する場合など、カスタムセルを使う場合は特に、スクロールパフォーマンスに影響が出ます。しかし、パフォーマンスの低下を避けるために使用できるテクニックがあります。
+[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)強力なビュー データを表示するには、いくつかの制限があります。 深く入れ子になったビュー階層が含まれて、やを多数の測定値を必要とする特定のレイアウトを使用する場合は特に、カスタムのセルを使用する場合、スクロールのパフォーマンスが低下します。 幸いにも、パフォーマンスの低下を避けるために使用できる手法があります。
 
-この記事では、次のトピックについて説明します。
+この記事では、次のトピックがについて説明します。
 
-- **[Caching Strategy](#cachingstrategy)**
+- **[キャッシュの戦略](#cachingstrategy)**
 - **[ListView のパフォーマンスの向上](#improving-performance)**
 
 <a name="cachingstrategy" />
 
-## <a name="caching-strategy"></a>Caching Strategy
+## <a name="caching-strategy"></a>キャッシュの戦略
 
-ListView は画面サイズ以上の大量のデータを表示するためによく使われます。 例としては音楽アプリがあります。音楽ライブラリには何千もの曲があります。曲ごとに1つの行を作成する簡単なアプローチでは、パフォーマンスを低下させてしまいます。そのアプローチでは貴重なメモリを浪費し、画面のスクロールを遅くする可能性があります。他には、表示領域にデータがスクロールされた時に行の作成と破棄を行うアプローチがあります。この方法は絶えず表示オブジェクトのインスタンス化とクリーンアップを要求するので、処理が重くなる可能性があります。
+Listview がより多くのデータの表示に使用される多くの場合、画面に表示される調整します。 たとえば、音楽のアプリを検討してください。 曲のライブラリは、何千ものエントリがあります。 すべての曲の行を作成することを簡単なアプローチは、パフォーマンスの低下必要があります。 アプローチでは、貴重なメモリを浪費され、スクロール、クロールする速度が低下します。 別の方法を作成し、データがビューにスクロールされる基準と行を破棄します。 これには、定数のインスタンス化と非常に遅いことが可能なビュー オブジェクトのクリーンアップが必要です。
 
-メモリーを節約するために、各プラットフォームのネイティブの [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) に相当するものには行を再利用するための組み込みの機能があります。画面上に見えているセルだけがメモリーにロードされ、**コンテンツ**がそのセルに読み込まれます。 この機能によってアプリケーションは何千ものオブジェクトのインスタンス化の要求を防ぐことができ、時間とメモリーを節約できます。
+ネイティブ メモリを節約するために[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)対応する各プラットフォームの行を再使用するための組み込みの機能があります。 画面に表示されているセルのみがメモリに読み込まれると、**コンテンツ**は既存のセルに読み込まれます。 これは、何千もの時間とメモリを節約して、オブジェクトをインスタンス化する必要があるからアプリケーションを防止します。
 
-Xamarin.Forms [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) 列挙型を使って、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) のセルの再利用を可能にしています。それには以下のような値があります。
+Xamarin.Forms で許可される[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)を通じてセルが再利用して、 [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/)列挙体は、次の値があります。
 
 ```csharp
 public enum ListViewCachingStrategy
@@ -44,29 +44,29 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> Universal Windows Platform (UWP) では常にパフォーマンス向上のためにキャッシュ機能を使用するので、Caching Strategy の [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) は無視されます。そのため、デフォルトで、 [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) が適用されるような動作をします。
+> ユニバーサル Windows プラットフォーム (UWP) は無視されます、 [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/)常に使用してキャッシュをパフォーマンスを向上させるための戦略をキャッシュします。 そのため、既定の動作として、 [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)キャッシング戦略を適用します。
 
 ### <a name="retainelement"></a>RetainElement
 
-[ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) の caching strategy は、[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) がリストの各項目ごとに1つのセルを生成することを指定します。これは `ListView` の規定の動作です。一般的には次のような状況での使用が推奨されます。
+[ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/)をキャッシュ方法を指定します、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)一覧で、各項目のセルを生成し、既定値は、`ListView`動作します。 これは、次の状況で一般的に使用する必要があります。
 
-- 各セルが多数の binding を持つ場合。 (20〜30以上)
+- 各セルが多数のバインディングを持つ場合に (20-30 以上)。
 - セルの template が頻繁に変更される場合。
 - テストによって `RecycleElement` が実行速度を下げる結果になることが判明した場合。
 
-カスタムセルを使って動かす場合は、 [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) での結果を認識することが大切です。どんなセルの初期化コードでも各セルの生成ごとに走らせる必要があり、1秒間に複数回になる場合もあります。その状況では、ページでの凝った Layout テクニック（複数のネストされた[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) を使っているような場合）は、それらがスクロールの際にリアルタイムで生成され破棄されるときに、パフォーマンスのボトルネックになります。
+結果を認識することが重要、 [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/)カスタムのセルを使用する場合は、戦略をキャッシュします。 任意のセルの初期化コードが各セルの作成を実行する必要があります 1 秒間に複数回ことが考えられます。 この状況では、ページに問題がレイアウトの手法などの複数の入れ子になった[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)インスタンス、セットアップがあるときにパフォーマンスのボトルネックとなるし、ユーザーがスクロールをリアルタイムで破棄されます。
 
 <a name="recycleelement" />
 
 ### <a name="recycleelement"></a>RecycleElement
 
-[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) の caching strategy を指定すると、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) はリストのセルを再利用することによって、メモリ使用量と実行速度を最小にすることを試みます。このモードは常にパフォーマンスの向上を提供するわけではなく、どのような改善があるかを判断するためにはテストを実施する必要があります。しかし、これは一般的に好ましい選択であり、次のような状況での使用が推奨されます。
+[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)をキャッシュ方法を指定します、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)を一覧のセルを再利用して、メモリ使用量と実行速度を最小限に抑えることを試みます。 常に、このモードにパフォーマンスの向上が提供されていないと、今後の改善点を確認するテストを実行する必要があります。 ただし、優先の選択肢では、通常、し、次のような状況で使用する必要があります。
 
-- 各セルの binding の数が小〜中程度の場合。
+- ときに各セルにはバインドの中程度の数を小さいです。
 - 各セルの [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) が全てのセルのデータを定義している場合。
 - 各セルがほぼ同じで、セルの template が変化しない場合。
 
-仮想化の間はセルは自身の binding context が更新されるので、アプリがこのモードを使う場合は binding context の更新が適切に処理されることを保証しなければなりません。セルに関するすべてのデータはその binding context に由来するものでなければなりません。そうしないと整合性エラーが発生する可能性があります。この処理は、セルのデータの表示に data binding を使うことによって実現できます。あるいは、以下のコードサンプルで示すように、セルのデータをカスタムセルのコンストラクタの中ではなく、 `OnBindingContextChanged` の override の中でセットするようにしても良いでしょう。
+セルが更新されると、そのバインディング コンテキストを持つ仮想化中に確認してくださいためアプリケーションは、このモードを使用する場合にする必要がありますバインド コンテキストの更新プログラムが適切に処理されること。 セルに関するすべてのデータは、バインディング コンテキストから取得する必要があります。 または一貫性エラーが発生する可能性があります。 これは、セル データを表示するデータ バインドを使用して行うことができます。 または、セル データはで設定する必要があります、 `OnBindingContextChanged` 、上書きではなく、カスタムのセルのコンス トラクター、次のコード例に示すように。
 
 ```csharp
 public class CustomCell : ViewCell
@@ -91,33 +91,33 @@ public class CustomCell : ViewCell
 }
 ```
 
-詳細については、[Binding Context Changes](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes) を参照してください。
+詳細については、次を参照してください。[バインディング コンテキストを変更](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes)です。
 
-iOS や Android でセルに CustomRenderer を使用している場合、プロパティ更新通知が正しく実装されていることを確認してください。セルが再利用されると、`PropertyChanged` イベントが発生し、それらセルのプロパティの値は、binding context が有効なセルに更新される時を変更します。より詳しい情報は [Customizing a ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md) を参照してください。
+IOS および Android では場合セルは、カスタムのレンダラーを使用している必要があります確認プロパティの変更通知が正しく実装されているします。 使用可能なセルのバインド コンテキストが更新されたときに、プロパティ値が変更されますセルが再利用される`PropertyChanged`イベントが発生します。 詳細については、次を参照してください。 [、ViewCell をカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)です。
 
-#### <a name="recycleelement-with-a-datatemplateselector"></a>DataTemplateSelector を使った RecycleElement
+#### <a name="recycleelement-with-a-datatemplateselector"></a>DataTemplateSelector RecycleElement
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) が [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択するために [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) を使用している場合、[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) の caching strategy は `DataTemplate` をキャッシュしません。その代わり、 `DataTemplate` はリストのデータの項目ごとに選択されます。
+ときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)を使用して、 [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)を選択する、 [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)、 [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)キャッシュ戦略をキャッシュしない`DataTemplate`s。 代わりに、`DataTemplate`リスト内のデータの各項目が選択されています。
 
 > [!NOTE]
-> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) caching strategy には Xamarin.Forms 2.4 で導入された前提条件があります。それは [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) が [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択することを要求されると、それぞれの `DataTemplate` は同じ [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) の型を返さなければならないということです。例えば、 `MyDataTemplateA` （ `MyViewCellA` という型の `ViewCell` を返す） または `MyDataTemplateB` （ `MyViewCellB` という型の `ViewCell` を返す） のどちらも返す可能性がある `DataTemplateSelector` を持つ [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) があった場合、 `MyDataTemplateA` が返されたときは `MyViewCellA` が返りますが、それ以外は例外がスローされるようになります。
+> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)前提、キャッシング戦略が Xamarin.Forms 2.4 で導入されたときに、 [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)は選択を求められます、 [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)各`DataTemplate`同じを返す必要があります[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)型です。 例として、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)で、`DataTemplateSelector`いずれかを返すことができます`MyDataTemplateA`(ここで`MyDataTemplateA`を返します、`ViewCell`型の`MyViewCellA`)、または`MyDataTemplateB`(ここで`MyDataTemplateB`を返します、`ViewCell`型の`MyViewCellB`) ときに、`MyDataTemplateA`を返す必要があるれる`MyViewCellA`または例外がスローされます。
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
-[ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) の caching strategy は [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) を拡張したもので、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) が [`DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) を使う場合に、 [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) をリスト内の項目の型ごとにキャッシュする機能を加えたものです。これにより `DataTemplate` は、項目のインスタンスごとに1つではなく、項目の型ごとに1つ選択されるようになります。
+[ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/)キャッシュ方法に基づいて、 [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)キャッシュ方法をさらに確保する場合、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) の使用[`DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)を選択する、 [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)、 `DataTemplate`s がリスト内の項目の種類によってキャッシュされます。 したがって、 `DataTemplate`s は項目のインスタンスごとに 1 回ではなく、項目の種類ごと 1 回選択します。
 
 > [!NOTE]
-> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) は前提条件があり、 [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) によって返される `DataTemplate` は `Type` 型 を引数にとる [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) のコンストラクタを使わなければなりません。
+> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/)前提がキャッシュ方法を`DataTemplate`によって返される、 [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)を使用する必要があります、 [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/)受け取るコンス トラクター、`Type`です。
 
-### <a name="setting-the-caching-strategy"></a>Caching strategy の設定
+### <a name="setting-the-caching-strategy"></a>キャッシュの方法を設定
 
-[ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) 列挙型の値は、次のコード例で示すように、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) のコンストラクタのオーバーロードで指定します。
+[ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/)列挙の値が指定されています、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)コンス トラクター オーバー ロードで、次のコード例に示すようにします。
 
 ```csharp
 var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 ```
 
-XAML では、以下のコードで示すように、 `CachingStrategy` 属性をセットします。
+XAML では、設定、`CachingStrategy`属性の次のコードに示すようにします。
 
 ```xaml
 <ListView CachingStrategy="RecycleElement">
@@ -131,14 +131,13 @@ XAML では、以下のコードで示すように、 `CachingStrategy` 属性�
 </ListView>
 ```
 
-これは C# でコンストラクタに、caching strategy の引数を設定するのと同じ効果があります。ただし、 `ListView` には `CachingStrategy` というプロパティは存在しないことに注意してください。
+これは C# でコンストラクタに、caching strategy の引数を設定するのと同じ効果があります。ただし、 `CachingStrategy` には `ListView` というプロパティは存在しないことに注意してください。
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>サブクラス化された ListView での Caching Strategy の設定
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) のサブクラスでは、 XAML での `CachingStrategy` 属性の設定は、期待した動作は起こりません。 `ListView` には `CachingStrategy` というプロパティは存在しないからです。さらに、 [XAMLC](~/xamarin-forms/xaml/xamlc.md) が有効であれば、次のようなエラーメッセージが表示されるでしょう。
-+**No property, bindable property, or event found for 'CachingStrategy'**
+`CachingStrategy` [ `ListView` のサブクラスでは、 XAML での ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) 属性の設定は、期待した動作は起こりません。 `ListView`CachingStrategy`には `ListView` というプロパティは存在しないからです。 さらに、 [XAMLC](~/xamarin-forms/xaml/xamlc.md) が有効であれば、次のようなエラーメッセージが表示されるでしょう。
 
-この問題を解決するには、 [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) パラメータを受け取る [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) のサブクラスのコンストラクタを作成し、それを基本クラスに渡します。
+この問題を解決するには、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) パラメータを受け取る [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) のサブクラスのコンストラクタを作成し、それを基本クラスに渡します。
 
 ```csharp
 public class CustomListView : ListView
@@ -164,26 +163,27 @@ public class CustomListView : ListView
 
 ## <a name="improving-listview-performance"></a>ListView のパフォーマンスの向上
 
-`ListView` のパフォーマンスを向上させるための多くのテクニックがあります。
+`ListView` フォーマンスを向上させるための多くのテクニックがあります。
 
--  `IEnumerable<T>` コレクションは、ランダムアクセスをサポートしないため、 `ItemsSource` プロパティには `IEnumerable<T>` ではなく `IList<T>` コレクションをバインドする。 
--  可能な限り `ViewCell` ではなく、組み込みのセル ( `TextCell` / `SwitchCell` など) を使用する。
--  より少ない要素を使う。例えば複数の Label の代わりに `FormattedString` を使った1つの Label の使用を検討する。
--  不均一のデータ（異なる型のデータ） を表示する場合は、 `ListView` を `TableView` に置き換える。
--  [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) メソッドの使用を控える。使いすぎると、パフォーマンスが低下します。
+-  `ItemsSource` コレクションは、ランダムアクセスをサポートしないため、 `IList<T>` プロパティには `IEnumerable<T>` ではなく `IEnumerable<T>` コレクションをバインドする。
+-  可能な限り `TextCell` ではなく、組み込みのセル (  /  `SwitchCell` `ViewCell` など) を使用する。
+-  より少ない要素を使う。 例えば複数の Label の代わりに `FormattedString` を使った1つの Label の使用を検討する。
+-  不均一のデータ（異なる型のデータ） を表示する場合は、 `ListView` を `TableView` 置き換える。
+-  [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) ソッドの使用を控える。 使いすぎると、パフォーマンスが低下します。
 -  Android でインスタンス化した後で、 `ListView` の 行セパレータの可視性や色を設定することを避けます。これは大きなパフォーマンスの低下が発生します。
--  [ `BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) に基づいたセルのレイアウトの変更を避けます。これは大きなレイアウトと初期化のコストが発生します。
--  深くネストされたレイアウトの階層は避けます。ネストを減らすために、 `AbsoluteLayout` または `Grid` を使用します。
--  `LayoutOptions` に `Fill` ( Fill は最も計算量が少ない）以外を指定することを避けます。
--  `ScrollView` の内部に `ListView` を配置することは以下の理由で避けます。
+-  [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) に基づいたセルのレイアウトの変更を避けます。 これは大きなレイアウトと初期化のコストが発生します。
+-  深くネストされたレイアウトの階層は避けます。 ネストを減らすために、 `AbsoluteLayout` または `Grid` を使用します。
+-  `LayoutOptions`に `Fill` ( Fill は最も計算量が少ない）以外を指定することを避けます。
+-  `ListView` の内部に `ScrollView` を配置することは以下の理由で避けます。
   - `ListView` には自身にクロール機能が実装されています。
-  - `ListView` は全てのジェスチャを受け取らない。それらは親である `ScrollView` によって処理されます。
-  - `ListView` リストの要素と同時にスクロールするカスタマイズされたヘッダーとフッターを表示することができ、その機能のために潜在的に `ScrollView` が提供されています。詳細については、次を参照してください。[ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)
+  - `ListView`は全てのジェスチャを受け取らない。それらは親である `ScrollView` によって処理されます。
+
+  - `ListView`リストの要素と同時にスクロールするカスタマイズされたヘッダーとフッターを表示することができ、その機能のために潜在的に `ScrollView` が提供されています。 詳細については、次を参照してください。[ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)
 -  セルの中で非常に特殊な複雑なデザインが必要な場合は Custom Renderer を検討します。
 
-`AbsoluteLayout` は1回も計測処理を呼ぶことなくレイアウトを実行できる可能性があります。これはパフォーマンス上で非常に強力です。もし `AbsoluteLayout` が使えないのであれば、 [ `RelativeLayout`](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) を検討してください。 `RelativeLayout` を使えば、直接制約を渡すことで式木 API を使うよりもかなり速くなるでしょう。なぜなら、式木 API は JIT を使い、 iOS ではその式木が実行時に解釈され、それが非常に低速だからです。式木 API はレイアウトの初期化や回転時にのみ呼ばれるようなページレイアウトに適しています。しかし `ListView` ではその処理がスクロールの間、継続的に実行され、パフォーマンスを損ないます。
+`AbsoluteLayout` は1回も計測処理を呼ぶことなくレイアウトを実行できる可能性があります。 これはパフォーマンス上で非常に強力です。 場合`AbsoluteLayout`することはできません、使用を検討してください[`RelativeLayout`](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)です。 `RelativeLayout` を使えば、直接制約を渡すことで式木 API を使うよりもかなり速くなるでしょう。 なぜなら、式木 API は JIT を使い、 iOS ではその式木が実行時に解釈され、それが非常に低速だからです。 式木 API はレイアウトの初期化や回転時にのみ呼ばれるようなページレイアウトに適しています。しかし `ListView` ではその処理がスクロールの間、継続的に実行され、パフォーマンスを損ないます。
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) やセルの custom renderer を作成することは、スクロール実行時のレイアウト計算の処理を減らす1つのアプローチです。詳細については、 [ListView のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) や [ViewCell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md) を参照してください。
+[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) やセルの custom renderer を作成することは、スクロール実行時のレイアウト計算の処理を減らす1つのアプローチです。 詳細については、 [ListView のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) や [ViewCell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md) を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク

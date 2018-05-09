@@ -6,12 +6,12 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>パート 1 です。 XAML の概要
 
@@ -23,9 +23,9 @@ _Xamarin.Forms アプリケーションでは、XAML はページのビジュア
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Windows では、Visual Studio を使用して選択**ファイル > 新規 > プロジェクト** メニューからです。 **新しいプロジェクト**ダイアログで、 **Visual c# > Cross Platform** 、左側にあるし、 **(Xamarin.Forms またはネイティブ) のクロス プラットフォーム アプリ**センターの一覧からです。 
+Windows では、Visual Studio を使用して選択**ファイル > 新規 > プロジェクト** メニューからです。 **新しいプロジェクト**ダイアログで、 **Visual c# > Cross Platform** 、左側にあるし、**モバイル アプリ (Xamarin.Forms)** センターの一覧からです。 
 
-![](get-started-with-xaml-images/win/newprojectdialog.png "新しいプロジェクト ダイアログ ボックス")
+![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新しいプロジェクト ダイアログ ボックス")
 
 ソリューションの場所を選択しの名前を付けます**XamlSamples** (または必要に応じて)、キーを押します**OK**です。
 
@@ -226,7 +226,7 @@ MainPage = new MainPage();
 
 その他の XAML ベースの追加を`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** PCL プロジェクトを起動、**プロジェクト > 新しい項目の追加**メニュー項目。 左側にある、**新しい項目の追加**ダイアログで、 **Visual c#** と**Xamarin.Forms**です。 リストから選択**コンテンツ ページ**(されません**コンテンツ ページ (c#)**、これは、コードのみ ページで、作成または**コンテンツ ビュー**ページではない)。 ページの名前、たとえば、 **HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.png "新しい項目 ダイアログ ボックスを追加します。")
+![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "新しい項目 ダイアログ ボックスを追加します。")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

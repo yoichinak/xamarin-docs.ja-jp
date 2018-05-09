@@ -6,12 +6,12 @@ ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/16/2017
-ms.openlocfilehash: 492b06420d27f902faf7240003ebe5e16416a5cb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2017
+ms.openlocfilehash: 73ca0974a42bf661a89327148b68341114297084
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-app-extension-basics"></a>メッセージ アプリ拡張機能の基礎
 
@@ -131,11 +131,12 @@ Xcode の属性のインスペクターをステッカー パック全体のサ�
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Visual Studio を起動します。
-2. メッセージ アプリ拡張機能を追加するソリューションを開きます。 
-3. 選択**iOS** > **拡張機能** > **iMessage 拡張子** をクリックし、 **次へ**ボタン。 
+2. メッセージ アプリ拡張機能を追加するソリューションを開きます。
+3. 選択 * * iOS の拡張機能 > iMessage 拡張機能 (iOS) * * をクリックし、**次**ボタン。
 
-    [![](intro-to-message-app-extensions-images/message01w.png "IMessage 拡張機能を選択します。")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. 入力、**拡張機能の名前** をクリックし、 **OK**ボタン
+    [![Select iMessage 拡張機能 (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+
+4. 入力してください、**名前** をクリックし、 **OK**ボタン
 
 -----
 
@@ -166,7 +167,7 @@ Xcode の属性のインスペクターをステッカー パック全体のサ�
 1. **ソリューション エクスプ ローラー**拡張機能のプロジェクト名を右クリックし、選択、**追加** > **新しいファイル.**  >  **iOS |Apple Watch** > **コント ローラーのインターフェイス**です。
 2. 入力`StickerBrowserViewController`の**名前** をクリックし、**新規**ボタン。 
 
-    [![](intro-to-message-app-extensions-images/browser01w.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. 開く、`StickerBrowserViewController.cs`ファイルを編集します。
 
 -----

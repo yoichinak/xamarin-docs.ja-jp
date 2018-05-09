@@ -6,12 +6,12 @@ ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>コードで iOS のユーザー インターフェイスの作成
 
@@ -33,9 +33,7 @@ IOS アプリのユーザー インターフェイス、storefront のように 
 
 [![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間の関係を示しています。")](ios-code-only-images/image9.png#lightbox)
 
-
 使用してこれらのビュー階層を構築することができます、 [iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md) Mac 用 Visual Studio でただし方が便利なコードでまったく作業する方法の基本的な知識があります。 この記事は、一部の基本的なポイント取得して実行コードのみのユーザー インターフェイスの開発の手順について説明します。
-
 
 -----
 
@@ -45,16 +43,17 @@ IOS アプリのユーザー インターフェイス、storefront のように 
 
 ## <a name="ios-blank-project-template"></a>iOS 空のプロジェクト テンプレート
 
-最初に、iPhone を使用して Visual Studio で、iOS プロジェクトを作成**空のプロジェクト**以下に示すテンプレートをコント ローラーとビューを追加する拡張します。
+最初に、Visual Studio を使用して、iOS プロジェクトを作成、**ファイル > 新しいプロジェクト > Visual c# > iPhone & iPad > iOS アプリ (Xamarin)** 次に示すプロジェクト。
 
+[![新しいプロジェクト ダイアログ ボックス](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-[![](ios-code-only-images/blankapp-vs.png "新しいプロジェクト ダイアログ ボックス")](ios-code-only-images/blankapp-vs.png#lightbox)
+選択し、 **Blank App**プロジェクト テンプレート。
 
+[![テンプレートのダイアログ ボックスをオンします。](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
 空のプロジェクト テンプレートは、4 つのファイルをプロジェクトに追加します。
 
-
-[![](ios-code-only-images/empty-project.png "プロジェクト ファイル")](ios-code-only-images/empty-project.png#lightbox)
+[![プロジェクト ファイル](ios-code-only-images/empty-project.w157-sml.png "プロジェクト ファイル")](ios-code-only-images/empty-project.w157.png#lightbox)
 
 
 1. **<code>appdelegate.cs</code>** -が含まれています、`UIApplicationDelegate`サブクラスは、 `AppDelegate` 、iOS からのアプリケーション イベントの処理に使用されます。 アプリケーション ウィンドウを作成、`AppDelegate`の`FinishedLaunching`メソッドです。
@@ -99,18 +98,12 @@ Mac 用の visual Studio では、空のテンプレートは提供されませ�
             return true;
         }
 
+追加されたコード、 `FinishedLaunching` 、上記の手順 5. のメソッドは、iOS アプリケーションに対するウィンドウ作成に必要なコードの最小量。
+
 
 -----
 
-## <a name="creating-a-window"></a>ウィンドウを作成します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-追加されたコード、 `FinishedLaunching` 、上記の手順 3 のメソッドは、iOS アプリケーションに対するウィンドウ作成に必要なコードの最小量。  
-
------
 
 iOS アプリケーションの構築を使用して、 [MVC パターン](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller)です。 アプリケーションが表示される最初の画面がウィンドウのルート ビュー コント ローラーから作成されます。 参照してください、[こんにちは, iOS マルチ スクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)自体の詳細については、MVC パターンを説明します。
 
@@ -223,7 +216,7 @@ public class AppDelegate : UIApplicationDelegate
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](ios-code-only-images/customviewcontroller.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/customviewcontroller.png#lightbox)
+[![](ios-code-only-images/customviewcontroller.w157-sml.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
