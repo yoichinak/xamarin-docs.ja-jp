@@ -1,5 +1,5 @@
 ---
-title: Android の作業の開始
+title: Xamarin.Android で Android アプリの開発を始める
 description: Xamarin.Android を使用すると、Java の場合と同様に UI コントロールを使用しながら、柔軟かつ洗練された最新言語 (C#)、基本クラス ライブラリ (BCL) のパワー、すぐに利用できるファースト クラス IDE (Visual Studio) も使って、ネイティブ Android アプリケーションを作成できるようになります。 このシリーズでは、Xamarin.Android 開発の基本を紹介します。 ここでは、セットアップとインストールから最初のアプリケーションのビルドまでを説明します。
 ms.prod: xamarin
 ms.assetid: D3BC68C5-87C1-50AF-ED0A-55EBF07CBD8B
@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 ms.custom: xamu-video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/25/2017
-ms.openlocfilehash: 8a9abb7e9a5640994d67c1fb33d15d8405442b6c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: a60331a6c8cd1b65e51a63b221cbdb7182803bd1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-series"></a>作業の開始シリーズ
 

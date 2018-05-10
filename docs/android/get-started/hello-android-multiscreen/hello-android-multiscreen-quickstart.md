@@ -7,12 +7,12 @@ ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 67644caedd268aac45a86c03a69ba017976fc103
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/30/2018
+ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android マルチスクリーン: クイック スタート
 
@@ -108,10 +108,11 @@ namespace Phoneword
 
 ### <a name="adding-translation-history-code"></a>変換履歴コードの追加
 
-このアプリは (最初の画面でユーザーが変換した) 電話番号を収集し、2 番目の画面に渡します。 電話番号は、文字列のリストとして格納されます。 リストをサポートするには、次の `using` ディレクティブを `MainActivity` クラスの先頭に追加します。
+このアプリは (最初の画面でユーザーが変換した) 電話番号を収集し、2 番目の画面に渡します。 電話番号は、文字列のリストとして格納されます。 一覧 (と後に使用される意図) をサポートするには、次の `using` ディレクティブを **MainActivity.cs** の一番上に追加します。
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 次に、電話番号を入力できる空のリストを作成します。
@@ -246,10 +247,11 @@ namespace Phoneword
 
 ### <a name="adding-translation-history-code"></a>変換履歴コードの追加
 
-このアプリは (最初の画面でユーザーが変換した) 電話番号を収集し、2 番目の画面に渡します。 電話番号は、文字列のリストとして格納されます。 リストをサポートするには、次の `using` ディレクティブを `MainActivity` クラスの先頭に追加します。
+このアプリは (最初の画面でユーザーが変換した) 電話番号を収集し、2 番目の画面に渡します。 電話番号は、文字列のリストとして格納されます。 一覧 (と後に使用される意図) をサポートするには、次の `using` ディレクティブを **MainActivity.cs** の一番上に追加します。
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 次に、電話番号を入力できる空のリストを作成します。 `MainActivity` クラスは次のようになります。

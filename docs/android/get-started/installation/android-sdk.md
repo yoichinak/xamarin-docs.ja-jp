@@ -1,5 +1,5 @@
 ---
-title: Android SDK セットアップ
+title: Xamarin.Android 向け Android SDK を設定する
 description: Visual Studio には、Google のスタンドアロン SDK Manager の代わりとなる Android SDK Manager が含まれています。 このガイドでは、Xamarin.Android アプリの開発に必要な Android SDK ツール、プラットフォーム、およびその他のコンポーネントを SDK Manager を使用してダウンロードする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 45ab1930300ac704da0a1fee25c08d40aa35ac5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="android-sdk-setup"></a>Android SDK セットアップ
+# <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Xamarin.Android 向け Android SDK を設定する
 
 _Visual Studio には、Google のスタンドアロン SDK Manager の代わりとなる Android SDK Manager が含まれています。このガイドでは、Xamarin.Android アプリの開発に必要な Android SDK ツール、プラットフォーム、およびその他のコンポーネントを SDK Manager を使用してダウンロードする方法について説明します。_
 
@@ -34,7 +34,7 @@ _Visual Studio には、Google のスタンドアロン SDK Manager の代わり
 -----
 
 Xamarin Android SDK Manager を使用すると、Xamarin.Android アプリを開発するために必要な最新の Android コンポーネントをダウンロードできます。
-これは使用されていない Google のスタンドアロン SDK Manager の代わりとなります。
+これは非推奨とされた Google のスタンドアロン SDK Manager の代わりとなります。
 
 Android SDK に含まれている SDK Manager の代わりに Xamarin Android SDK Manager を使用するのはなぜなのでしょうか。 Android SDK Tools パッケージのバージョン 25.2.3 では、Google によって Android SDK を維持する新しいツールが導入されています。 この新しい **[sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)** というツールは、Android SDK のスタンドアロンの UI マネージャーの代わりとなるコマンド ライン ユーティリティです。 つまり、SDK Tools バージョン 26.0.1 (Android 8.0 に必須) 以降に更新し、UI インターフェイスを使用して Android SDK の管理を継続したい場合、Xamarin Android SDK Manager を使用する必要があります。
 
@@ -102,7 +102,7 @@ Visual Studio for Mac で SDK Manager を起動するには、**[ツール]、[S
  
 ![Android SDK Manager のメニュー アイテムの場所](android-sdk-images/mac/sdkmanager-01.png )
 
-**Android SDK Manager** は、**[プラットフォーム]**、**[ツール]**、および **[場所]** の 3 つのタブがある **[Preferences window]**\(環境設定ウィンドウ\) に開きます。
+**Android SDK Manager** は、**[プラットフォーム]**、**[ツール]**、および **[場所]** の 3 つのタブがある **[Preferences window]** \(環境設定ウィンドウ\) に開きます。
 
 ![[プラットフォーム] タブが開かれた Android SDK Manager のスクリーン ショット](android-sdk-images/mac/sdkmanager-02.png)
 
@@ -165,7 +165,7 @@ Android SDK および Java JDK の場所を変更する場合、通常は **[場
 -----
 
 
-[_Some components can be updated.Do you want to update them now?_]\(一部のコンポーネントを更新できます。今すぐ更新しますか?\) というメッセージが含まれるダイアログが表示される場合があります。 **[はい]**をクリックします。 次に、[ライセンスの同意] ダイアログが表示されます。
+[_Some components can be updated.Do you want to update them now?_]\(一部のコンポーネントを更新できます。今すぐ更新しますか?\) というメッセージが含まれるダイアログが表示される場合があります。 **[はい]** をクリックします。 次に、[ライセンスの同意] ダイアログが表示されます。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

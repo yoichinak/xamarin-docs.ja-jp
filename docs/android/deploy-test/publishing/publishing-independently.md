@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6d278f3ae046a31be6e4335119572fb509672a66
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="publishing-independently"></a>個別公開
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/04/2018
 
 -   **Visual Studio Professional** &ndash; 個々の開発者や小規模なチーム向け (Windows のみ)。 このライセンスは、標準またはクラウド サブスクリプション、Xamarin University の追加コンテンツへのアクセスを提供し、使用法制限はありません。
 
--   **Visual Studio Enterprise** &ndash; すべての規模のチーム向け (Windows のみ)。 このライセンスには、エンタープライズ機能、標準またはクラウド サブスクリプション、および Xamarin Test Cloud の 25% 割引が含まれています。
+-   **Visual Studio Enterprise** &ndash; すべての規模のチーム向け (Windows のみ)。 このライセンスには、エンタープライズ機能、標準またはクラウド サブスクリプションが含まれています。
 
 [visualstudio.com](https://www.visualstudio.com/xamarin/) にアクセスして Community Edition をダウンロードするか、Professional Edition と Enterprise Edition の購入に関する詳細を確認します。
 

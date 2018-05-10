@@ -1,5 +1,5 @@
 ---
-title: Xamarin Android Device Manager
+title: Xamarin Android Device Manager で Android エミュレーターを管理する
 description: 現在プレビュー中の Xamarin Android Device Manager は、Google の従来のデバイス マネージャーに代わるものです。 このガイドでは、Xamarin Android Device Manager を使って、Android デバイスをエミュレートする Android 仮想デバイス (AVD) を作成および構成する方法を説明します。 仮想デバイスを使うと、物理デバイスがなくてもアプリを実行してテストすることができます。
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/26/2018
-ms.openlocfilehash: 94f82c9f893e22074ba95c052b57ce6ff18eaa1e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2b41c23bb880ca6150fa5f3f487eb00d8a7a19d8
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android Device Manager
 

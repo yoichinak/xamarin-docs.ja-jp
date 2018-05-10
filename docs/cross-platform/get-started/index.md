@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 2178d567f1ccfe803ebce8b7b623c31c290999bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fec14b0f7328bee1d0866ba02f28202e8d63e8cb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started"></a>作業の開始
 
@@ -42,6 +42,10 @@ Xamarin のしくみや、モバイル アプリの開発プロジェクトに�
 ###  <a name="introduction-to-the-mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[モバイル ソフトウェア開発ライフサイクルの概要](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
 この記事では、モバイル アプリケーションに関するソフトウェア開発ライフサイクルと、モバイル プロジェクトのビルド時に必要ないくつかの考慮事項について説明します。 すぐにビルドを開始したい開発者は、このガイドをスキップし、後半の記述を読んでモバイル開発の理解を深めることができます。
+
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[クロスプラットフォーム アプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+
+Xamarin を選択し、モバイル アプリケーションの設計時と開発時にいくつかの事柄を意図することで、モバイル プラットフォーム間で極めて効果的なコード共有を実現し、市場に出すまでの時間を短縮し、既存の能力を活用し、モバイル アクセスに関する顧客の要望に応え、クロスプラットフォームの複雑性を緩和できます。&nbsp;このドキュメントでは、ユーティリティ アプリケーションと生産性アプリケーションで以上の利点を実現するために大切な指針を提供します。
 
 ###  <a name="introducing-visual-studio-for-machttpsdocsmicrosoftcomvisualstudiomac"></a>[Visual Studio for Mac の概要](https://docs.microsoft.com/visualstudio/mac/)
 
