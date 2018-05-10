@@ -84,6 +84,7 @@
 #### [Xamarin.Mac 統合アプリの 64 ビットへの更新](~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac)
 ### [クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac)
 ### [HttpClient スタックと SSL/TLS の実装セレクター](~/cross-platform/macios/http-stack.md?context=xamarin/mac)
+### [ビルドの最適化](~/cross-platform/macios/optimizations.md?context=xamarin/mac)
 ## [高度な概念と内部構造](internals/index.md)
 ### [AOT](internals/aot.md)
 ### [使用できるアセンブリ](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)
