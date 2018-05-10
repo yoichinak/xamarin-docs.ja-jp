@@ -3,15 +3,14 @@ title: BouncingGame 詳細
 description: このチュートリアルでは、単純な弾むボールを使用するゲーム CocosSharp を実装する方法を示します。
 ms.prod: xamarin
 ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2018
-ms.openlocfilehash: 2f25841af8cb73a7e0fe02264706404ce59cacfb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d12d6fb8ecfcba5e5093b2af4790a51ef8cf8e47
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="bouncinggame-details"></a>BouncingGame 詳細
 
@@ -96,7 +95,7 @@ namespace BouncingGame
 
 上記のコードは、1 つを作成`CCSprite`の子として追加し、`GameLayer`です。 `CCSprite`コンス トラクターでは、文字列として使用するイメージ ファイルを定義します。 コードに指示をという名前のファイルを探して CocosSharp `paddle` (拡張機能は省略すると、このガイドの後半で説明する)。 CocosSharp はそのファイル名を探します`paddle`ルート コンテンツ フォルダー内 (これは**コンテンツ**) に追加された任意のフォルダーだけでなく、 `gameView.ContentManager.SearchPaths` (前のセクションで説明しています)。
 
-ファイルのルートに直接追加**コンテンツ**iOS および Android の両方のフォルダーです。 右クリックまたはコントロールをクリック、**コンテンツ**フォルダーをクリックし、iOS プロジェクトで**追加** > **ファイルを追加しています.**以前でコンテンツを解凍おに移動して選択**paddle.png**です。 フォルダーにファイルを追加する方法の場合を選択する必要があります、**コピー**オプション。
+ファイルのルートに直接追加**コンテンツ**iOS および Android の両方のフォルダーです。 右クリックまたはコントロールをクリック、**コンテンツ**フォルダーをクリックし、iOS プロジェクトで**追加** > **ファイルを追加しています.** 以前でコンテンツを解凍おに移動して選択**paddle.png**です。 フォルダーにファイルを追加する方法の場合を選択する必要があります、**コピー**オプション。
 
 ![ファイルの追加フォルダー ダイアログ](bouncing-game-images/image2.png "[フォルダ] ダイアログ ボックスにファイルの追加")
 

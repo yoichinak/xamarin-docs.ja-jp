@@ -3,21 +3,20 @@ title: ツールとコマンド
 description: それらを使用するには、目的のペンを使わずとコマンドライン引数に付属のツールの概要です。
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 8a307739134fe3b76692fbef5c1dc028af01017d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e333ce7c336d13c8b55326a5d51a64092885dfd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="tools--commands"></a>ツールとコマンド
 
 _それらを使用するには、目的のペンを使わずとコマンドライン引数に付属のツールの概要です。_
 
-<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
+<style type="text/css"> .terminal 青 {色: rgb(10,96,254);} .terminal 緑 {color: rgb(12,156,26);} .terminal マゼンタ {色: rgb(152,12,103);} </style>
 
 
 目標ペンを使わずが正常に[インストール](~/cross-platform/macios/binding/objective-sharpie/get-started.md)端末を開き、理解しておく、<em>コマンド</em>目標ペンを使わずが提供するには。

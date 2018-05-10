@@ -3,15 +3,14 @@ title: 非同期の概要
 description: 'C# 言語 – バージョン 5 – の最新バージョンには、非同期操作を表すための 2 つの新しいキーワードが導入されました: async と await です。 これらのキーワードでは、別のスレッドで実行時間の長い操作 (ネットワーク アクセスなど) を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。 Xamarin.iOS および Xamarin.Android の最新バージョン サポート async および await - 説明、および Xamarin を使用した新しい構文の使用例を説明します。'
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 638e16a47d30e1d4d61fe9e7d19a0245261e5d7f
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 

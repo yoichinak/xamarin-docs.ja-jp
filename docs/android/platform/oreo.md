@@ -8,11 +8,11 @@ ms.custom: video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4a7a8a96ff22cf02d04ffdfff684d454d1a28024
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -31,7 +31,7 @@ _Android の最新バージョンのアプリを開発する Xamarin.Android を
 
 -   **Visual Studio** &ndash; 15.5 またはそれ以降の Visual Studio のバージョンが必要な Windows を使用している場合。  Mac を使用している場合は、Visual Studio for Mac 7.2.0 はのバージョンが必要です。
 
--   **Xamarin.Android** &ndash; Xamarin.Android 8.0 or later must be installed and configured with Visual Studio.
+-   **Xamarin.Android** &ndash; Xamarin.Android 8.0 以降がインストールして、Visual Studio を使用して構成する必要があります。
 
 -   **Android SDK** &ndash; Android SDK 8.0 (API 26) 以降、Android SDK Manager を使用してをインストールする必要があります。
 
@@ -43,7 +43,7 @@ Xamarin.Android での Android Oreo の使用開始するには、ダウンロ�
 
 1. Visual Studio の最新バージョンに更新します。
 
-2. インストール、 **Android 8.0.0 (API 26)**または以降のパッケージおよびツール、SDK Manager を使用しています。
+2. インストール、 **Android 8.0.0 (API 26)** または以降のパッケージおよびツール、SDK Manager を使用しています。
 
 3. 新しい Xamarin.Android プロジェクトを対象とする Android Oreo (API 26) を作成します。
 
@@ -110,11 +110,11 @@ Xamarin.Android 8.0 でプロジェクトを作成する必要があります最
 
 
 
-### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
+### <a name="start-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを開始します。
 
 新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android 開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md) Xamarin.Android プロジェクトの作成について学習します。
 
-Android プロジェクトを作成するときに、Android 8.0 以降をターゲットにバージョン設定を構成する必要があります。 たとえば、Android 8.0 の場合、プロジェクトを対象にする必要がありますレベルを構成するターゲット Android API にプロジェクトの**Android 8.0 (API 26)**です。 API 26 またはそれ以降は、ターゲット フレームワークのレベルを設定することをお勧めします。 Android API レベル レベルの構成に関する詳細は、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。
+Android プロジェクトを作成するときに、Android 8.0 以降をターゲットにバージョン設定を構成する必要があります。 たとえば、Android 8.0 の場合、プロジェクトを対象にする必要がありますレベルを構成するターゲット Android API にプロジェクトの**Android 8.0 (API 26)** です。 API 26 またはそれ以降は、ターゲット フレームワークのレベルを設定することをお勧めします。 Android API レベル レベルの構成に関する詳細は、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。
 
 
 ### <a name="configure-an-emulator-or-device"></a>エミュレーターまたはデバイスを構成します。
@@ -162,7 +162,7 @@ Xamarin Android エミュレーター マネージャーなしの仮想デバイ
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-4.  メッセージが表示されたら**[いいえ] のカスタムのハードウェア プロファイルを作成する**を入力できます**ありません**し、既定のハードウェア プロファイルをそのまま使用します。 答えた場合**はい**、 **avdmanager**ハードウェア プロファイルをカスタマイズするための質問の一覧が表示されます。
+4.  メッセージが表示されたら **[いいえ] のカスタムのハードウェア プロファイルを作成する**を入力できます**ありません**し、既定のハードウェア プロファイルをそのまま使用します。 答えた場合**はい**、 **avdmanager**ハードウェア プロファイルをカスタマイズするための質問の一覧が表示されます。
 
 したら**avdmanager**こと、仮想デバイスを作成するデバイスのプルダウン メニューで含めるは。
 
@@ -182,7 +182,7 @@ Xamarin Android エミュレーター マネージャーなしの仮想デバイ
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  メッセージが表示されたら**[いいえ] のカスタムのハードウェア プロファイルを作成する**を入力できます**ありません**し、既定のハードウェア プロファイルをそのまま使用します。 答えた場合**はい**、 **avdmanager**をカスタマイズするための質問の一覧が表示、ハードウェア プロファイル。
+3.  メッセージが表示されたら **[いいえ] のカスタムのハードウェア プロファイルを作成する**を入力できます**ありません**し、既定のハードウェア プロファイルをそのまま使用します。 答えた場合**はい**、 **avdmanager**をカスタマイズするための質問の一覧が表示、ハードウェア プロファイル。
 
 使用した後**avdmanager**こと、仮想デバイスを作成するデバイスのプルダウン メニューで含めるは。
 
@@ -190,7 +190,7 @@ Xamarin Android エミュレーター マネージャーなしの仮想デバイ
 
 -----
 
-テストとデバッグ用の Android エミュレーターの構成の詳細については、次を参照してください。 [Android SDK エミュレーター](~/android/deploy-test/debugging/android-sdk-emulator/index.md)です。
+テストとデバッグ用の Android エミュレーターの構成の詳細については、次を参照してください。 [Google Android エミュレーター](~/android/deploy-test/debugging/android-sdk-emulator/index.md)です。
 
 Nexus やピクセルなどの物理デバイスを使用している場合か、無線 (OTA) 更新プログラムを自動でデバイスを更新またはシステム イメージをダウンロードでき、デバイスを直接フラッシュできます。 Android Oreo にデバイスを手動で更新の詳細については、次を参照してください。 [Nexus およびピクセル デバイスの工場出荷時イメージ](https://developers.google.com/android/images)です。
 
@@ -229,7 +229,7 @@ Android Oreo 紹介*XML 内のフォント*、リソースとしてカスタム 
 
 1. 作成、**リソース/フォント**フォルダーです。
 
-2. フォント ファイルをコピー (例では、 **.ttf**と**.otf**ファイル) に**リソース/フォント**です。 
+2. フォント ファイルをコピー (例では、 **.ttf**と **.otf**ファイル) に**リソース/フォント**です。 
 
 3. 必要に応じて、Android のファイル名前付け規則に従っているため、各フォント ファイルの名前 (使用だけ小文字など*a ~ z*、 *0-9*、およびファイル名にアンダー スコア)。 たとえば、フォント ファイル`Pacifico-Regular.ttf`のように名前を変更する可能性があります`pacifico.ttf`です。
 

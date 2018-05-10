@@ -50,7 +50,7 @@ public enum ListViewCachingStrategy
 
 [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/)をキャッシュ方法を指定します、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)一覧で、各項目のセルを生成し、既定値は、`ListView`動作します。 これは、次の状況で一般的に使用する必要があります。
 
-- 各セルが多数のバインディングを持つ場合に (20-30 以上)。
+- 各セルが多数の binding を持つ場合。 (20〜30以上)
 - セルの template が頻繁に変更される場合。
 - テストによって `RecycleElement` が実行速度を下げる結果になることが判明した場合。
 

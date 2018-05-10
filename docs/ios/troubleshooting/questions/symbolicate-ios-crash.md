@@ -6,24 +6,38 @@ ms.assetid: CB8607B9-FFDA-4617-8210-8E43EC512588
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ce60c19ab0b680e00338f517e5a3f17f725ed329
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/09/2018
+ms.openlocfilehash: 60d897be8739ff5b78a322bc4ea3f43011785bb5
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>IOS クラッシュ ログを symbolicate .dSYM ファイルはどこで入手できますか。
 
-Visual studio から iOS アプリを構築するときに symbolicate クラッシュ レポートに使用できる .dSYM ファイル パスのビルド ホスト上で終了します。
-```
-    /Users/<username>/Library/Caches/Xamarin/mtbs/builds/<appname>/<guid>/bin/iPhone/<configuration>
-```
+Mac または Visual Studio 2017 の Visual Studio で iOS アプリを構築するときにクラッシュ レポートを symbolicate に必要な .dSYM ファイルは、アプリのプロジェクト ファイル (.csproj) と同じディレクトリ階層に配置されます。 正確な場所は、プロジェクトのビルド設定によって異なります。
 
-注意してください、`~/Library`フォルダーが表示される Finder で既定では、ため必要がある使用 Finder の**移動 > フォルダーに移動**メニューを入力:`~/Library/Caches/Xamarin/mtbs/builds/`フォルダーを開きます。  
+- デバイスに固有のビルドを有効にした場合、次のディレクトリに、.dSYM が見つかりません。
 
-できます再表示する代わりに、`~/Library`フォルダーを使用して、**表示オプションを表示**ホーム フォルダーのパネルです。 Finder でサイド バーで、ホーム フォルダーを選択して、[検索] メニューを使用する場合**ビュー > 表示オプションを表示**(または cmd j) にあるチェック ボックスが表示されます、**ライブラリ フォルダーの表示**です。
+    **&lt;プロジェクト ディレクトリ&gt;/bin/&lt;プラットフォーム&gt;/&lt;構成&gt;/device-builds/&lt;デバイス&gt;- &lt;os バージョン&gt;/**
 
+    例えば:
+  
+    **TestApp/bin/iPhone/Release/device-builds/iphone8.4-11.3.1/**
 
-### <a name="see-also"></a>関連項目
-- IOS を symbolicating の拡張手順のクラッシュ レポート。 [http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
+- デバイスに固有のビルドを有効にできません、.dSYM 部分は、次のディレクトリで見つかります。
+
+    **&lt;プロジェクト ディレクトリ&gt;/bin/&lt;プラットフォーム&gt;/&lt;構成&gt;/**
+
+    例えば:
+
+    **TestApp、bin、iPhone/リリース/**
+
+> [!NOTE]
+> ビルド プロセスの一環としては、Visual Studio 2017 は、Windows、Mac ビルド ホストから .dSYM ファイルをコピーします。 Windows 上の .dSYM ファイルが表示されない場合、アプリのビルド設定を構成したことを確認する[.ipa ファイルを作成する](~/ios/deploy-test/app-distribution/ipa-support.md)です。
+
+## <a name="see-also"></a>関連項目
+
+- [IOS クラッシュ ファイル (Xamarin.iOS) を symbolicating](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
 - [IOS アプリケーションのクラッシュ ログを demystifying](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
+

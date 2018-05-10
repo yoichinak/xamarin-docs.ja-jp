@@ -6,16 +6,18 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/20/2018
-ms.openlocfilehash: 124823238968ab21c1e55818ba5b99d2bb0c0bf8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/08/2018
+ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
 _このガイドでは、Google から Firebase ジョブ ディスパッチャー ライブラリを使用してバック グラウンド処理をスケジュールする方法について説明します。_
+
+![プレビューで firebase ジョブ ディスパッチャー](~/media/shared/preview.png)
 
 ## <a name="overview"></a>概要
 
@@ -60,9 +62,13 @@ Firebase ジョブ ディスパッチャーには、Android API レベル 9 以�
 
 ## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Xamarin.Android で Firebase ジョブ ディスパッチャー ライブラリを使用します。
 
-Firebase ジョブ ディスパッチャーを開始するには、追加、 [Xamarin.Firebase.JobDispatcher NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher/0.6.0-beta1)Xamarin.Android プロジェクトにします。 NuGet パッケージ マネージャーを検索、 **Xamarin.Firebase.Jobdispatcher**パッケージです。  
+Firebase ジョブ ディスパッチャーを開始するには、追加、 [Xamarin.Firebase.JobDispatcher NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)Xamarin.Android プロジェクトにします。 NuGet パッケージ マネージャーを検索、 **Xamarin.Firebase.JobDispatcher** (これはプレリリース版でまだ) パッケージ。
 
 Firebase ジョブ ディスパッチャー ライブラリを追加すると、作成、`JobService`クラスし、のインスタンスで実行するようにスケジュールし、`FirebaseJobDispatcher`です。
+
+> [!NOTE]
+> Firebase ジョブ ディスパッチャーの現在のバインドは、ライブラリの古いバージョンを対象します。 [既知のバグ [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] Firebase ジョブ ディスパッチャーのより新しいバージョンを対象に更新されてからバインドを防ぐことができます。
+
 
 ### <a name="creating-a-jobservice"></a>JobService を作成します。
 
@@ -287,7 +293,8 @@ int cancelResult = dispatcher.Cancel("unique-tag-for-job");
 
 ## <a name="related-links"></a>関連リンク
 
-- [NuGet で Xamarin.Firebase.JobDispatcher](https://www.nuget.org/packages/Xamarin.FirebaseJobDispatcher)
+- [致命的な未処理の例外をエラーで失敗するバインド ジェネレーター: System.ArgumentNullException: 値を null にすることはできません。](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
+- [NuGet で Xamarin.Firebase.JobDispatcher](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [GitHub の firebase-ジョブのディスパッチャー](https://github.com/firebase/firebase-jobdispatcher-android)
 - [Xamarin.Firebase.JobDispatcher Binding](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
 - [インテリジェントなジョブ スケジュール](https://developer.android.com/topic/performance/scheduling.html)

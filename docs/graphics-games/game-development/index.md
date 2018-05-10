@@ -3,15 +3,14 @@ title: Xamarin を使用したゲームの開発の概要
 description: ゲーム開発の性質は、その他の種類のアプリの開発と明らかに異なることができます。 この記事では、Xamarin.iOS および Xamarin.Android を使用できるテクノロジを特徴とゲームの開発の概要です。 ゲームを配布する方法の詳細については高レベルと使用可能なテクノロジのサンプリングの両方を Xamarin.iOS および Xamarin.Android を提供します。
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin を使用したゲームの開発の概要
 

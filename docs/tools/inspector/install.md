@@ -3,15 +3,14 @@ title: インスペクターのインストールと要件
 description: ダウンロード、インストール、および Xamarin Inspector を使用する方法。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 93f42eef8d76074f6b672bc5a663e8f8f1d2ef80
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -79,7 +78,7 @@ Visual Studio For Mac
 
 Xamarin Studio
 
-- **Xamarin Studio > About Xamarin Studio > Show Details > Copy Information**
+- **Xamarin Studio > Xamarin Studio に関する > 詳細を表示 > 情報のコピー**
 - バグのレポートに貼り付けます
 
 Visual Studio

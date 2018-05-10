@@ -3,15 +3,14 @@ title: コイン時のゲームの詳細
 description: このガイドでは、ゲームでは、コイン時間、マップのタイルの操作、エンティティを作成する、スプライト、アニメーション化する、効率的な競合を実装するなどの実装の詳細について説明します。
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 07a43dbf5f3095d1735d57fdbb13499532bfe415
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2687b1c8eca8cfb68660c8a622278aa628459d07
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="coin-time-game-details"></a>コイン時のゲームの詳細
 
@@ -31,7 +30,7 @@ _このガイドでは、ゲームでは、コイン時間、マップのタイ�
 
 ## <a name="content-in-coin-time"></a>コイン時間でコンテンツ
 
-コイン時間は、サンプル プロジェクトを完全な CocosSharp プロジェクトの構成方法を表すです。 コイン時刻の加算とコンテンツの保守を簡単に目的の構造体します。 使用して**.tmx**によって作成されるファイル[並べて](http://www.mapeditor.org)レベルとアニメーションを定義する XML ファイルです。 変更や新しいコンテンツの追加は、最小限の労力で実現できます。 
+コイン時間は、サンプル プロジェクトを完全な CocosSharp プロジェクトの構成方法を表すです。 コイン時刻の加算とコンテンツの保守を簡単に目的の構造体します。 使用して **.tmx**によって作成されるファイル[並べて](http://www.mapeditor.org)レベルとアニメーションを定義する XML ファイルです。 変更や新しいコンテンツの追加は、最小限の労力で実現できます。 
 
 プロフェッショナルなどのゲームを反映してもこの方法によりコイン時間の学習、実験の効果的なプロジェクト、中に行われました。 このガイドでは、いくつかの追加および変更内容を簡単に実行される方法について説明します。
 

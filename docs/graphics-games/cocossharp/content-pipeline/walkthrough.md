@@ -3,21 +3,20 @@ title: MonoGame PipelineTool を使用します。
 description: MonoGame パイプライン ツールを使用してを作成および MonoGame コンテンツ プロジェクトを管理します。 コンテンツのプロジェクト内のファイルでは、Monogame パイプライン ツールによって処理され、CocosSharp および MonoGame アプリケーションで使用できる .xnb ファイルとして出力することができます。
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 672c57aded149200b32501a6b48165ca88726ee1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 50e6c611e285cde9184eed242353ad08b2a941ee
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>MonoGame パイプライン ツールを使用します。
 
 _MonoGame パイプライン ツールを使用してを作成および MonoGame コンテンツ プロジェクトを管理します。コンテンツのプロジェクト内のファイルでは、Monogame パイプライン ツールによって処理され、CocosSharp および MonoGame アプリケーションで使用できる .xnb ファイルとして出力することができます。_
 
-MonoGame パイプライン ツールは、コンテンツ ファイルに変換するための使いやすい環境**.xnb** CocosSharp および MonoGame アプリケーションで使用するファイル。 コンテンツのパイプラインとそれがゲームの開発に役立つ理由については、次を参照してください[コンテンツ パイプラインのこの概要。](~/graphics-games/cocossharp/content-pipeline/introduction.md)
+MonoGame パイプライン ツールは、コンテンツ ファイルに変換するための使いやすい環境 **.xnb** CocosSharp および MonoGame アプリケーションで使用するファイル。 コンテンツのパイプラインとそれがゲームの開発に役立つ理由については、次を参照してください[コンテンツ パイプラインのこの概要。](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 
 このチュートリアルは、次について説明します。
 
@@ -27,7 +26,7 @@ MonoGame パイプライン ツールは、コンテンツ ファイルに変換
  - MonoGame パイプライン ツールでファイルの処理
  - 実行時にファイルを使用します。
 
-このチュートリアルでは、CocosSharp プロジェクトを使用を示すためにどのように**.xnb**ファイルを読み込むし、アプリケーションで使用します。 MonoGame のユーザーが CocosSharp と MonoGame の両方を使用して、同じように、このチュートリアルを参照することもあります**.xnb**コンテンツ ファイルです。
+このチュートリアルでは、CocosSharp プロジェクトを使用を示すためにどのように **.xnb**ファイルを読み込むし、アプリケーションで使用します。 MonoGame のユーザーが CocosSharp と MonoGame の両方を使用して、同じように、このチュートリアルを参照することもあります **.xnb**コンテンツ ファイルです。
 
 完成したアプリからのテクスチャを表示する 1 つスプライトが表示されます、 **.xnb**ファイルと 1 つのラベルからスプライト フォントを表示する、 **.xnb**ファイル。
 
@@ -69,7 +68,7 @@ MonoGame パイプライン ツールが実行されているコンテンツと�
 
 ## <a name="creating-a-content-project"></a>コンテンツのプロジェクトを作成します。
 
-ゲームのプロジェクトができました MonoGame パイプライン プロジェクトを作成できます。 これを行う、MonoGame パイプライン ツールの選択で**ファイル > 新規しています.**し、プロジェクトのコンテンツ フォルダーに移動します。 Android では、フォルダーにある **[プロジェクトの root]\BouncingGame.Android\Assets\Content\**です。 Ios の場合、フォルダーにある **[プロジェクトの root]\BouncingGame.iOS\Content\**です。
+ゲームのプロジェクトができました MonoGame パイプライン プロジェクトを作成できます。 これを行う、MonoGame パイプライン ツールの選択で**ファイル > 新規しています.** し、プロジェクトのコンテンツ フォルダーに移動します。 Android では、フォルダーにある **[プロジェクトの root]\BouncingGame.Android\Assets\Content\** です。 Ios の場合、フォルダーにある **[プロジェクトの root]\BouncingGame.iOS\Content\** です。
 
 変更、**ファイル名**に**ContentProject**  をクリックし、**保存**ボタン。
 
@@ -84,7 +83,7 @@ MonoGame パイプライン ツールで、プロジェクトに関する情報�
 
 ### <a name="output-folder"></a>出力フォルダー
 
-ここでは、(コンテンツ プロジェクト自体) への相対フォルダー、出力**.xnb**ファイルが保存されます。 煩雑にならないように、同じフォルダー、入力し、出力ファイルを使用します。 変更しましょう言い換えると、**出力フォルダー**する **.\** :
+ここでは、(コンテンツ プロジェクト自体) への相対フォルダー、出力 **.xnb**ファイルが保存されます。 煩雑にならないように、同じフォルダー、入力し、出力ファイルを使用します。 変更しましょう言い換えると、**出力フォルダー**する **.\** :
 
 ![](walkthrough-images/image10.png "")
 
@@ -127,7 +126,7 @@ MonoGame パイプライン ツールを通じて .spritefont ファイルを作
 
 ![](walkthrough-images/browsetofonts.png "コンテンツのフォルダーを参照、[フォント] フォルダーを選択し、[ok] をクリックしてください")
 
-新しい .sprintefont ファイルを追加する フォント フォルダーを右クリックし、選択**追加 > 新しい項目の追加.**を選択、 **SpriteFont 説明**オプションで、名前を入力します**arial 36**、 をクリック**Ok**です。 CocosSharp では、– [FontType] の形式にする必要があります - フォント ファイルの具体的な名前を付ける必要があります [FontSize] です。 フォントがこの名前付け形式と一致しない場合に読み込まれません CocosSharp によって実行時にします。
+新しい .sprintefont ファイルを追加する フォント フォルダーを右クリックし、選択**追加 > 新しい項目の追加.** を選択、 **SpriteFont 説明**オプションで、名前を入力します**arial 36**、 をクリック**Ok**です。 CocosSharp では、– [FontType] の形式にする必要があります - フォント ファイルの具体的な名前を付ける必要があります [FontSize] です。 フォントがこの名前付け形式と一致しない場合に読み込まれません CocosSharp によって実行時にします。
 
 ![](walkthrough-images/image15.png "フォントがこの名前付け形式と一致しない場合に読み込まれません CocosSharp によって実行時に")
 
@@ -162,7 +161,7 @@ MonoGame パイプライン ツールを通じて .spritefont ファイルを作
 
 ### <a name="adding-xnb-files-to-visual-studio-for-mac"></a>Visual studio for Mac .xnb ファイルを追加します。
 
-最初のファイル プロジェクトに追加されます。 展開して Mac を Visual Studio で、 **BouncingGame.Android**プロジェクトで、展開、**資産**フォルダーを右クリックし、**コンテンツ**フォルダー、および選択**追加 > ファイルを追加しています.**最初に、ここを選択します、 **ball.xnb**先ほど作成し、をクリックして**開く**です。 上記の手順を繰り返しますが、追加し、 **arial 36.xnb**ファイル。 選択して、**その現在のサブディレクトリにファイルを残して**Mac 用の Visual Studio がファイルを追加する方法を確認する場合は、オプションです。 終了したら両方のファイルは、プロジェクトの一部にする必要があります。
+最初のファイル プロジェクトに追加されます。 展開して Mac を Visual Studio で、 **BouncingGame.Android**プロジェクトで、展開、**資産**フォルダーを右クリックし、**コンテンツ**フォルダー、および選択**追加 > ファイルを追加しています.** 最初に、ここを選択します、 **ball.xnb**先ほど作成し、をクリックして**開く**です。 上記の手順を繰り返しますが、追加し、 **arial 36.xnb**ファイル。 選択して、**その現在のサブディレクトリにファイルを残して**Mac 用の Visual Studio がファイルを追加する方法を確認する場合は、オプションです。 終了したら両方のファイルは、プロジェクトの一部にする必要があります。
 
 ![](walkthrough-images/image20.png "終了したら両方のファイルがプロジェクトの一部にする必要があります")
 

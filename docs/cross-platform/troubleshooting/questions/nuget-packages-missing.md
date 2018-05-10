@@ -3,14 +3,13 @@ title: Nuget パッケージを更新した後にエラーをパッケージ化�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: D61CC966-1D4A-49A5-8A6F-41572E28329B
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: e5d9fb039cf313b75133cbda2894d14022bcd526
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4f1c4f51b690e35711efc0fc4fac56565b9cb3c7
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="missing-packages-error-after-updating-nuget-packages"></a>Nuget パッケージを更新した後にエラーをパッケージ化がありません。
 

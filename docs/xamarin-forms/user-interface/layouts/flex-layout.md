@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
-ms.date: 05/01/2018
-ms.openlocfilehash: 4aa2ea21c9cf2e9e646465ab7ad4aa0a01de433e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: bba5007acb54852b9427c57c26aba6358c4c5771
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
 _FlexLayout を使用して、スタックまたは子ビューのコレクションをラップします。_
 
-Xamarin.Forms [ `FlexLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexLayout/) Xamarin.Forms バージョン 3.0 の新機能はします。 これは CSS に基づいて[フレキシブル ボックス レイアウト モジュール](http://www.w3.org/TR/css-flexbox-1/)とよく呼ばれる、_レイアウトをフレックス_または_フレックス ボックス_、いわゆるを子を整列する多くの柔軟なオプションが含まれています内でのレイアウトです。
+Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms バージョン 3.0 の新機能はします。 これは CSS に基づいて[フレキシブル ボックス レイアウト モジュール](http://www.w3.org/TR/css-flexbox-1/)とよく呼ばれる、_レイアウトをフレックス_または_フレックス ボックス_、いわゆるを子を整列する多くの柔軟なオプションが含まれています内でのレイアウトです。
 
 `FlexLayout` Xamarin.Forms に似ています[ `StackLayout` ](~/xamarin-forms/user-interface/layouts/stack-layout.md)ことで配置できる子水平方向および垂直方向にスタックにします。 ただし、`FlexLayout`は 1 つの行または列に収まるようが多すぎますがある場合は、その子をラップすることも、向き、配置、およびさまざまな画面サイズに合わせて調整の多くのオプションがあります。
 
@@ -65,11 +65,11 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 
 3 つのプロパティの`FlexLayout`が表示されます、 **SimpleStackPage.xaml**ファイル。
 
-- [ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/)の値に設定されて、 [ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/)列挙します。 既定値は、`Row` です。 プロパティを設定`Column`の子をにより、`FlexLayout`項目の 1 つの列に配置します。
+- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction)の値に設定されて、 [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection)列挙します。 既定値は、`Row` です。 プロパティを設定`Column`の子をにより、`FlexLayout`項目の 1 つの列に配置します。
 
     ときの項目を`FlexLayout`は、列に並べ、`FlexLayout`垂直方向と表現されます_主軸_と水平方向_軸クロス_です。
 
-- [ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/)プロパティの型は[ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/)し、交差軸上のアイテムを整列する方法を指定します。 `Center`オプションは、各アイテムの水平方向に中央揃えにします。
+- [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティの型は[ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems)し、交差軸上のアイテムを整列する方法を指定します。 `Center`オプションは、各アイテムの水平方向に中央揃えにします。
 
     使用していた場合、`StackLayout`ではなく、 `FlexLayout` 、このタスクは、割り当てることによってすべての項目を中央揃え.、`HorizontalOptions`する各項目のプロパティ`Center`です。 `HorizontalOptions`の子のプロパティが機能しません、`FlexLayout`が、この単一`AlignItems`プロパティは、同じ目標を達成します。 使用することができますをする必要がある場合、`AlignSelf`添付バインド可能なプロパティを上書きする、`AlignItems`個々 のアイテムのプロパティ。
 
@@ -81,7 +81,7 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 
     この変更によって`Label`がの左の端に配置されている、`FlexLayout`読み取り順序が左から右への場合。
 
-- [ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/)プロパティの型は[ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/)、メインの軸上のアイテムを配置する方法を指定します。 `SpaceEvenly`オプションはすべて残された垂直方向のスペースすべての項目間で均等にし、最初の項目では、上下にある最後の項目を割り当てます。
+- [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティの型は[ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)、メインの軸上のアイテムを配置する方法を指定します。 `SpaceEvenly`オプションはすべて残された垂直方向のスペースすべての項目間で均等にし、最初の項目では、上下にある最後の項目を割り当てます。
 
     使用していた場合、`StackLayout`は割り当てる必要があります、`VerticalOptions`する各項目のプロパティ`CenterAndExpand`と同様の効果を実現するためにします。 `CenterAndExpand`オプションは、各項目よりも、最初の項目の前後の最後の項目の間の 2 倍の空き領域を割り当てるとします。 模倣する、`CenterAndExpand`オプション`VerticalOptions`を設定して、`JustifyContent`プロパティの`FlexLayout`に`SpaceAround`です。
 
@@ -112,7 +112,7 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 
 `Direction`このプロパティ`FlexLayout`が設定されていないので、既定の設定の`Row`子は行に配置され、メインの軸は水平方向ことを意味します。
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/)列挙型のプロパティは、 [ `FlexWrap`](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/)です。 行に収まらない項目が多すぎますがある場合は、このプロパティの設定は次の行をラップするアイテムをさせます。
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap)列挙型のプロパティは、 [ `FlexWrap`](xref:Xamarin.Forms.FlexWrap)です。 行に収まらない項目が多すぎますがある場合は、このプロパティの設定は次の行をラップするアイテムをさせます。
 
 注意して、`FlexLayout`の子である、`ScrollView`です。 ページに収まるように多くの行がある場合、 `ScrollView` 、既定値を持つ`Orientation`プロパティ`Vertical`垂直スクロールできるようにします。
 
@@ -398,14 +398,14 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="the-direction-property"></a>Direction プロパティ
 
-[ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/)プロパティの型は[ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/)、4 つのメンバーを列挙します。
+[ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction)プロパティの型は[ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection)、4 つのメンバーを列挙します。
 
 - `Column`
 - `ColumnReverse` (または「列リバース」XAML 内)
 - `Row`、既定値
 - `RowReverse` (または「行リバース」XAML 内)
 
-XAML では、大文字、小文字で列挙メンバーの名前を使用してこのプロパティの値を指定することができます。 またはできます CSS インジケーターと同じでは、かっこで囲まれた 2 つの別の文字列を使用して、大文字小文字が混在したりします。 (「列リバース」と「行リバース」の文字列がで定義されている、 [ `FlexDirectionTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirectionTypeConverter/) XAML パーサーで使用されるクラスです)。
+XAML では、大文字、小文字で列挙メンバーの名前を使用してこのプロパティの値を指定することができます。 またはできます CSS インジケーターと同じでは、かっこで囲まれた 2 つの別の文字列を使用して、大文字小文字が混在したりします。 (「列リバース」と「行リバース」の文字列がで定義されている、 [ `FlexDirectionTypeConverter` ](xref:Xamarin.Forms.FlexDirectionTypeConverter) XAML パーサーで使用されるクラスです)。
 
 ここでは、**実験**(左から右へ) を表示するページ、`Row`方向、`Column`方向、および`ColumnReverse`方向。
 
@@ -417,7 +417,7 @@ XAML では、大文字、小文字で列挙メンバーの名前を使用して
 
 ### <a name="the-wrap-property"></a>ラップ プロパティ
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/)プロパティの型は[ `FlexWrap` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/)、3 つのメンバーを列挙します。
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap)プロパティの型は[ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap)、3 つのメンバーを列挙します。
 
 - `NoWrap`、既定値
 - `Wrap`
@@ -433,7 +433,7 @@ XAML では、大文字、小文字で列挙メンバーの名前を使用して
 
 ### <a name="the-justifycontent-property"></a>JustifyContent プロパティ
 
-[ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/)プロパティの型は[ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/)、6 つのメンバーを列挙します。
+[ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティの型は[ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)、6 つのメンバーを列挙します。
 
 - `Start` (または"フレックス start"XAML 内)、既定値
 - `Center`
@@ -452,7 +452,7 @@ XAML では、大文字、小文字で列挙メンバーの名前を使用して
 
 ### <a name="the-alignitems-property"></a>AlignItems プロパティ
 
-[ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/)プロパティの型は[ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/)、4 つのメンバーを列挙します。
+[ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティの型は[ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems)、4 つのメンバーを列挙します。
 
 - `Stretch`、既定値
 - `Center`
@@ -471,7 +471,7 @@ IOS のスクリーン ショットですべての子の上部を揃えます。
 
 ### <a name="the-aligncontent-property"></a>AlignContent プロパティ
 
-[ `AlignContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignContent/)プロパティの型は[ `FlexAlignContent` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/)、7 つのメンバーを持つ列挙します。
+[ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent)プロパティの型は[ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent)、7 つのメンバーを持つ列挙します。
 
 - `Stretch`、既定値
 - `Center`
@@ -501,7 +501,7 @@ IOS のスクリーン ショットですべての子の上部を揃えます。
 
 ### <a name="the-alignself-property"></a>AlignSelf プロパティ
 
-[ `AlignSelf` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignSelf/)接続されているバインド可能なプロパティの型は[ `FlexAlignSelf` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/)、5 つのメンバーを列挙します。
+[ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty)接続されているバインド可能なプロパティの型は[ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent)、5 つのメンバーを列挙します。
 
 - `Auto`、既定値
 - `Stretch`
@@ -525,15 +525,15 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 ### <a name="the-order-property"></a>Order プロパティ
 
-[ `Order` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Order/)プロパティの型は`int`します。 既定値は 0 です。
+[ `Order` ](xref:Xamarin.Forms.FlexLayout.OrderProperty)プロパティの型は`int`します。 既定値は 0 です。
 
 `Order`プロパティでは、順序を変更することができますの子、`FlexLayout`配置されます。 子では通常、`FlexLayout`並べたに出現する順序は、`Children`コレクション。 設定してこの順序を上書きすることができます、`Order`バインド可能なプロパティを 0 以外の整数値を 1 つ以上の子要素にアタッチします。 `FlexLayout`の設定に基づいてその子を整列、`Order`プロパティを各子要素が同じを持つ子`Order`設定に出現する順序に並べ、`Children`コレクション。
 
 ### <a name="the-basis-property"></a>基準のプロパティ
 
-[ `Basis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Basis/)接続されているバインド可能なプロパティの子に割り当てられている領域の量を示します、`FlexLayout`メインの軸にします。 サイズ指定によって、`Basis`プロパティは、親のメインの軸に沿ったサイズ`FlexLayout`です。 つまり、`Basis`子が列に配置されたときに、行、または高さに子が配置されたときに、子の幅を示します。
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty)接続されているバインド可能なプロパティの子に割り当てられている領域の量を示します、`FlexLayout`メインの軸にします。 サイズ指定によって、`Basis`プロパティは、親のメインの軸に沿ったサイズ`FlexLayout`です。 つまり、`Basis`子が列に配置されたときに、行、または高さに子が配置されたときに、子の幅を示します。
 
-`Basis`プロパティの型は[ `FlexBasis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexBasis/)、構造体。 いずれかのデバイスに依存しない単位またはサイズの割合として、サイズを指定できます、`FlexLayout`です。 既定値、`Basis`プロパティは、静的プロパティ`FlexBasis.Auto`子の幅または高さの使用を要求したことを意味します。
+`Basis`プロパティの型は[ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis)、構造体。 いずれかのデバイスに依存しない単位またはサイズの割合として、サイズを指定できます、`FlexLayout`です。 既定値、`Basis`プロパティは、静的プロパティ`FlexBasis.Auto`子の幅または高さの使用を要求したことを意味します。
 
 コードでは、設定することができます、`Basis`プロパティを`Label`という`label`を次のように 40 のデバイスに依存しない単位。
 
@@ -581,7 +581,7 @@ XAML では、デバイスに依存しない単位のサイズの数値を使用
 
 ### <a name="the-grow-property"></a>拡張プロパティ
 
-[ `Grow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Grow/)プロパティの型は`int`します。 既定値は 0、および値が 0 以上にする必要があります。
+[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty)接続されているバインド可能なプロパティの型は`int`します。 既定値は 0、および値が 0 以上にする必要があります。
 
 `Grow`プロパティがときときに役割を果たす、`Wrap`プロパティに設定されている`NoWrap`あり、子の行の幅未満の幅の合計、 `FlexLayout`、または子の列がより短い高さ、`FlexLayout`です。 `Grow`プロパティが子の間で残された領域を割り当てる方法を示します。
 
@@ -597,7 +597,7 @@ XAML では、デバイスに依存しない単位のサイズの数値を使用
 
 ### <a name="the-shrink-property"></a>圧縮プロパティ
 
-[ `Shrink` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Shrink/)プロパティの型は`int`します。 既定値は 1 であり、値が 0 以上にする必要があります。
+[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty)接続されているバインド可能なプロパティの型は`int`します。 既定値は 1 であり、値が 0 以上にする必要があります。
 
 `Shrink`プロパティは、役割を果たすときに、`Wrap`プロパティに設定されている`NoWrap`子の行の集計の幅がの幅を超えると、`FlexLayout`子の 1 つの列の集計の高さがより大きいか、高さ、`FlexLayout`です。 通常、 `FlexLayout` constricting のサイズによってこれらの子が表示されます。 `Shrink`プロパティでく子が優先度を指定で、フル サイズで表示されています。
 

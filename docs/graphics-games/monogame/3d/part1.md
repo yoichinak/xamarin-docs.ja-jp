@@ -3,15 +3,14 @@ title: モデル クラスを使用します。
 description: モデル クラスでは、3 D グラフィックスの表示の従来の方法と比較した場合の複雑な 3D オブジェクトのレンダリングが大幅に簡略化します。 モデル オブジェクトは、カスタム コードがないのコンテンツを簡単に統合できるように、コンテンツ ファイルから作成されます。
 ms.prod: xamarin
 ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 7e778df7fa6dd27aee8282154c99faf5ca5791ce
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 01e000b22749acb1b5c3a3203db7f372613cca16
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-the-model-class"></a>モデル クラスを使用します。
 
@@ -48,7 +47,7 @@ MonoGame API が含まれる、`Model`レンダリングを実行して、コン
 
 このガイドの MonoGame パイプラインを使用してスキップしますツールし、使用、します。XNB ファイルがここで説明します。 なお、します。XNB ファイル プラットフォームごとに異なるため、必ず使用しているどのプラットフォームに正しい XNB ファイルのセットを使用します。
 
-解凍しましたが、 [Content.zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)お包含 .xnb ファイルを使用して、ゲームにできるようにします。 右クリックし、Android プロジェクトで作業すると場合に、**資産**内のフォルダー、 **WalkingGame.Android**プロジェクト。 右クリックし、iOS プロジェクトで作業すると場合に、 **WalkingGame.iOS**プロジェクト。 選択**の追加]-> [ファイルを追加しています.**で作業しているプラットフォームのフォルダーに両方 .xnb ファイルを選択します。
+解凍しましたが、 [Content.zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)お包含 .xnb ファイルを使用して、ゲームにできるようにします。 右クリックし、Android プロジェクトで作業すると場合に、**資産**内のフォルダー、 **WalkingGame.Android**プロジェクト。 右クリックし、iOS プロジェクトで作業すると場合に、 **WalkingGame.iOS**プロジェクト。 選択**の追加]-> [ファイルを追加しています.** で作業しているプラットフォームのフォルダーに両方 .xnb ファイルを選択します。
 
 2 つのファイルは、今すぐプロジェクトの一部をする必要があります。
 

@@ -3,15 +3,14 @@ title: インストール後に不足している Visual Studio の拡張機能
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
-ms.openlocfilehash: 72870b9bf6ff6c3068ee037e6405e4ec03546cd6
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: e47cfc4de77a6310a81867eefb07c3c1e5cc7060
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>インストール後に不足している Visual Studio の拡張機能
 
@@ -69,7 +68,7 @@ ms.lasthandoff: 04/06/2018
 
     *   Xamarin for Visual Studio
 
-2.  エクスプ ローラーで、Visual Studio の Xamarin 拡張機能フォルダーから残りのファイルを削除します (両方を含む、すべてのバージョン**Program Files**と**%program Files (x86)**)。
+2.  エクスプ ローラーで、Visual Studio の Xamarin 拡張機能フォルダーから残りのファイルを削除します (両方を含む、すべてのバージョン**Program Files**と **%program Files (x86)**)。
 
     `C:\Program Files*\Microsoft Visual Studio 1*.0\Common7\IDE\Extensions\Xamarin`
 
@@ -83,7 +82,7 @@ ms.lasthandoff: 04/06/2018
 
     _HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
-6.  検索し、このパターンに一致するエントリを削除します。
+6.  次のパターンに一致するエントリがあれば、削除します。
 
     _C:\Program Files\*\Microsoft Visual Studio 1\*.0\Common7\IDE\Extensions\Xamarin_
 
@@ -91,7 +90,7 @@ ms.lasthandoff: 04/06/2018
 
     `HKEY\_CURRENT\_USER\Software\Microsoft\VisualStudio\1\*.0\ExtensionManager\PendingDeletions`
 
-8.  Xamarin に関連するいると同じようにすべてのエントリを削除します。 たとえば、次のいずれかを使用して、Xamarin の以前のバージョンで問題が発生します。
+8.  Xamarin に関連すると考えられるすべてのエントリを削除します。 たとえば、次のいずれかを使用して、Xamarin の以前のバージョンで問題が発生します。
 
     _Mono.VisualStudio.Shell,1.0_
 

@@ -3,15 +3,14 @@ title: 'ケース スタディ: Tasky'
 description: このドキュメントでは、Tasky Portable サンプル アプリケーションでのクロス プラットフォーム アプリケーションの構築の基本原則が適用される方法について説明します。 この要素は、再利用するための一般的なコードを記述して、iOS、Android、Windows Phone プラットフォームを対象とするプラットフォーム固有のプロジェクトを実装するモバイル アプリケーションの設計に関連します。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 690edabd53752ff0347fdb232a4bbfcb1ba6e84d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="case-study-tasky"></a>ケース スタディ: Tasky
 

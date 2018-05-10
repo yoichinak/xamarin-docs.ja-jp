@@ -3,15 +3,14 @@ title: Xamarin Profiler
 description: このガイドでは、Xamarin プロファイラーの主な機能について説明します。 Xamarin アプリケーションをプロファイリングするため、プロファイラー、プロファイリング、および、使用すべき状況、および標準的なワークフローを探します。
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 3408d4e1ca50651536b9d04f64156efac4fdd0ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -40,14 +39,14 @@ Xamarin プロファイラーは、プロファイルの使用可能な機器の
         - [プロファイラーの機能および機器](#Profiler_Features)
     - [割り当て](#Allocations)
     - [時間プロファイラー](#Time_Profiler)
-    - [Cycles](#Cycles)
+    - [サイクル](#Cycles)
 - [アプリケーションのプロファイリング](#Profiling_Applications)
 - [まとめ](#Summary)
 
 ## <a name="download-and-install"></a>ダウンロードとインストール
 
 > [!NOTE]
-> **注:**である必要があります、 [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) mac 上の Mac の Windows 上のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除するサブスクライバー
+> **注:** である必要があります、 [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) mac 上の Mac の Windows 上のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除するサブスクライバー
 
 Xamarin プロファイラーは、スタンドアロン アプリケーションされ、IDE 内からのプロファイリングを有効にするには、Visual Studio for Mac と Visual Studio と統合されます。
 
@@ -180,7 +179,7 @@ Xamarin プロファイラーは、iOS または Android のアプリケーシ�
 
 #### <a name="saving-and-loading-profiler-sessions"></a>保存と読み込みプロファイラー セッション
 
-いつでも、プロファイル セッションを保存する**ファイル > 名前を付けて保存しています.**プロファイラーのメニュー バーからです。 これでファイルが保存_mlpd_形式、プロファイリング データの圧縮率の高いは、特別な形式です。
+いつでも、プロファイル セッションを保存する**ファイル > 名前を付けて保存しています.** プロファイラーのメニュー バーからです。 これでファイルが保存_mlpd_形式、プロファイリング データの圧縮率の高いは、特別な形式です。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -196,7 +195,7 @@ Xamarin プロファイラーは、iOS または Android のアプリケーシ�
 
 -----
 
-読み込むことができます*.mlpd*スタンドアロン アプリケーションを開くことによってプロファイラーにファイルを選択すると**選択対象**ファイルの読み込みとします。
+読み込むことができます *.mlpd*スタンドアロン アプリケーションを開くことによってプロファイラーにファイルを選択すると**選択対象**ファイルの読み込みとします。
 
 詳細については、次を参照してください。 [.mlpd ファイルを生成する](~/tools/profiler/troubleshooting.md#gen_mlpd)です。
 

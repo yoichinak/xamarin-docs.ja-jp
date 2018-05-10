@@ -2,15 +2,14 @@
 title: .NET Standard
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: 20bbb6386de3fb83df22de5df6e9ee99e3913eaa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c70a1cb1aa05426ba6d54d8af3787f014883bfa1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -34,7 +33,7 @@ ms.lasthandoff: 04/04/2018
 
 1. 新しいプロジェクトの追加ダイアログ ボックスで、`.NET Core`カテゴリし選択`Class Library(.NET Core)`です。
 
-  **注:**にこのテンプレートの名前を変更するは`.NET Standard`将来のバージョンの Visual Studio for mac
+  **注:** にこのテンプレートの名前を変更するは`.NET Standard`将来のバージョンの Visual Studio for mac
 
   ![.NET Core クラス ライブラリを作成します。](net-standard-images/vsm01.png)
 
@@ -50,7 +49,7 @@ ms.lasthandoff: 04/04/2018
 
 バージョンを変更する内部`netstandard`変更することによって、`Target Framework`ドロップダウンの値。
 
-**さらに:**編集することができます、`.csproj`この値を変更するには、直接です。
+**さらに:** 編集することができます、`.csproj`この値を変更するには、直接です。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -80,7 +79,7 @@ ms.lasthandoff: 04/04/2018
 
 バージョンを変更する内部`netstandard`変更することによって、`Target Framework`ドロップダウンの値。
 
-**さらに:**編集することができます、`.csproj`この値を変更するには、直接です。
+**さらに:** 編集することができます、`.csproj`この値を変更するには、直接です。
 
 #### <a name="using-net-standard-library"></a>.NET 標準ライブラリを使用します。
 

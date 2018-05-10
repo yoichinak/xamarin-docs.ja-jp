@@ -3,15 +3,14 @@ title: Web サービスの概要
 description: このガイドでは、別の web サービスのテクノロジを使用する方法を示します。 説明のトピックには、REST サービス、SOAP サービス、および Windows Communication Foundation サービスとの通信が含まれます。
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6de16095d9e1267587a050e8081f87f896f3153e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5c07443519391192f7bdb62cc19ff8b1f87b2558
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -41,11 +40,11 @@ Xamarin.Forms を使用してお客様の場合は、完全な例を各でこれ
 
 Representational State Transfer (REST) は、web サービスを構築するためのアーキテクチャのスタイルです。 REST 要求は web ページを取得して、サーバーにデータを送信する web ブラウザーを使用して同じ HTTP 動詞を使用して HTTP 経由で行われます。 動詞は次のとおりです。
 
-- **取得**– この操作は web サービスからのデータの取得に使用します。
+- **GET**– この操作は web サービスからのデータの取得に使用します。
 - **POST** – この操作は、web サービスでデータの新しい項目の作成に使用します。
 - **PUT** – この操作は、web サービス上のデータ項目の更新に使用します。
-- **修正プログラム**– この操作は、項目を変更する方法に関する一連の命令を記述することで、web サービス上のデータ項目の更新を使用します。 この動作は、サンプル アプリケーションでは使用されません。
-- **削除**– この操作を使用して、web サービス上のデータ項目を削除します。
+- **PATCH**– この操作は、項目を変更する方法に関する一連の命令を記述することで、web サービス上のデータ項目の更新を使用します。 この動作は、サンプル アプリケーションでは使用されません。
+- **DELETE**– この操作を使用して、web サービス上のデータ項目を削除します。
 
 Web サービスの REST に準拠している Api は、RESTful Api と呼ばれますを使用して定義されます。
 
@@ -197,7 +196,7 @@ client.GetAsync<CustomersResponse>("",
 
 ## <a name="consuming-restful-data"></a>Rest ベースのデータの消費
 
-通常、rESTful web サービスは、クライアントにデータを返す JSON メッセージを使用します。 JSON はテキスト ベースのデータ交換形式が生成されますが、ペイロードを最適化するがよりも少ない帯域データを送信するときに発生します。 このセクションでは、rest ベースの応答を JSON およびプレーン Old XML (POX) を使用するためのメカニズムが検査されます。
+通常、RESTful web サービスは、クライアントにデータを返す JSON メッセージを使用します。 JSON はテキスト ベースのデータ交換形式が生成されますが、ペイロードを最適化するがよりも少ない帯域データを送信するときに発生します。 このセクションでは、rest ベースの応答を JSON およびプレーン Old XML (POX) を使用するためのメカニズムが検査されます。
 
 <a name="Using_System.JSON" />
 

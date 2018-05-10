@@ -3,15 +3,14 @@ title: 共有プロジェクト
 description: 共有プロジェクトでは、別のアプリケーション プロジェクトの数によって参照されている共通のコードを記述できます。 コードでは、各参照元のプロジェクトの一部としてコンパイルされ、共有コード ベースにプラットフォーム固有の機能を組み込むためのコンパイラ ディレクティブを含めることができます。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: a7d5a25c3c6f2889bde0ff4aeaf85053bcc796fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2910ada16aad2d8cb19cf0ee3a059c7df22b630e
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="shared-projects"></a>共有プロジェクト
 
@@ -50,7 +49,7 @@ Android アプリケーション プロジェクトが他の Android アプリ�
 ## <a name="creating-a-shared-project"></a>共有プロジェクトを作成します。
 
 
-移動する、新しい共有プロジェクトを作成する**ファイル > 新しいソリューションをしています.**名前を選択します。
+移動する、新しい共有プロジェクトを作成する**ファイル > 新しいソリューションをしています.** 名前を選択します。
 
 
 ![](shared-projects-images/xs-newsolution.png "新しいソリューション")
@@ -103,7 +102,7 @@ Android アプリケーション プロジェクトが他の Android アプリ�
 ### <a name="creating-a-shared-project"></a>共有プロジェクトを作成します。
 
 
-移動する、新しい共有プロジェクトを作成する**ファイル > 新しいソリューションをしています.**プロジェクトおよびソリューションの名前を選択します。
+移動する、新しい共有プロジェクトを作成する**ファイル > 新しいソリューションをしています.** プロジェクトおよびソリューションの名前を選択します。
 
 
 ![](shared-projects-images/vs-newsolution.png "新しいソリューション")

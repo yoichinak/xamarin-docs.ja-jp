@@ -3,15 +3,14 @@ title: 32/64 ビット プラットフォームの考慮事項
 description: アプリケーションの 32 ビットおよび 64 ビットのアーキテクチャを対象とする場合の考慮事項
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 06e65b8a639345af65c6e5d3bbe57d8bb3feffa1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 223da6b490e09b2fa27ab3bbf8fa123b5fa8070c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビット プラットフォームの考慮事項
 
@@ -46,7 +45,7 @@ Xamarin.iOS モバイル アプリケーションでは、Unified API に変換�
 
    [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定](Images/Image02.png "ARM64 組み合わせのいずれかに設定がサポートされているアーキテクチャ")](Images/Image02-large.png#lightbox)
 
-5. **[OK]**をクリックします。
+5. **[OK]** をクリックします。
 6. クリーン ビルドを実行します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -79,7 +78,7 @@ ARM64 は iPhone 6 またはその他の 64 ビットのデバイスで iOS 8 �
 32 ビットおよび 64 ビット アーキテクチャの両方を対象とすると、アプリケーションのサイズが大幅に向上します。 ただし、そのためは新しいデバイスを許可する古いデバイスをサポートしながら、最適化されたコードを実行します。
 
 > [!IMPORTANT]
-> 場合は、iTunes App Store に iOS アプリケーションを送信するときに、次のメッセージが表示される_"警告 ITMS 9000: 64 ビットのサポートがありません。アプリ ストアにアップロードされたアプリでは 2015 年 2 月 1 日の新しい iOS を開始、64 ビット サポートを含める必要があります、8 SDK、Xcode 6 以降が含まれている ios ビルドします。有効にする 64 ビットのプロジェクトで使用をお勧め Xcode ビルド「標準的なアーキテクチャ」の設定の既定値を 1 つのバイナリを 32 ビットおよび 64 ビットの両方のコードをビルドします"。_ サポートされているアーキテクチャを使用可能なのいずれかに切り替える必要がある**ARM64**組み合わせ (上記のように)、再コンパイルおよび再実行してください。
+> 場合は、iTunes App Store に iOS アプリケーションを送信するときに、次のメッセージが表示される _"警告 ITMS 9000: 64 ビットのサポートがありません。アプリ ストアにアップロードされたアプリでは 2015 年 2 月 1 日の新しい iOS を開始、64 ビット サポートを含める必要があります、8 SDK、Xcode 6 以降が含まれている ios ビルドします。有効にする 64 ビットのプロジェクトで使用をお勧め Xcode ビルド「標準的なアーキテクチャ」の設定の既定値を 1 つのバイナリを 32 ビットおよび 64 ビットの両方のコードをビルドします"。_ サポートされているアーキテクチャを使用可能なのいずれかに切り替える必要がある**ARM64**組み合わせ (上記のように)、再コンパイルおよび再実行してください。
 
 ## <a name="mac"></a>Mac
 

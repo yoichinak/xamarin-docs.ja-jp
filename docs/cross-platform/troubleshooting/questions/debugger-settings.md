@@ -3,14 +3,13 @@ title: どのようなプロジェクト設定は、デバッガーに必要な�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 7dff69e90b5105401da162c52053d884ed9b038b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 67c4b51a518f5c7dba6ae372dbd9206dd3ef8e9f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>どのようなプロジェクト設定は、デバッガーに必要なしますか。
 
@@ -20,7 +19,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="visual-studio"></a>Visual Studio
 1. プロジェクトのオプションを開く
-2. 移動して**ビルド > 高度なしています.**デバッグ情報を設定**完全**
+2. 移動して**ビルド > 高度なしています.** デバッグ情報を設定**完全**
 3. 各プラットフォームの設定:
    - 移動して**Android オプション > デバッグ オプション**です。 ティック、**開発者インストルメンテーションを有効にする**ボックス。
    - 移動して**iOS ビルド > デバッグ オプション**です。 ティック、**デバッグを有効にする**ボックス。

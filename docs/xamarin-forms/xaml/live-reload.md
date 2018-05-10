@@ -6,12 +6,12 @@ ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 04/23/2018
-ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/08/2018
+ms.openlocfilehash: 96054505af44c5d3e198c2b9e7e7cb30d39b02b1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin ライブの再読み込み
 
@@ -27,8 +27,8 @@ Xamarin のライブの再読み込みを有効にすると、 **、XAML を変�
 
 ## <a name="requirements"></a>要件
 
-* [Visual Studio 2017 15.7 Preview 4](https://www.visualstudio.com/vs/preview/)以上で、 **.NET を使用したモバイル開発**ワークロード。
-* [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3)またはそれ以降。
+* [Visual Studio 2017 バージョン 15.7 以上](https://www.visualstudio.com/vs/)以上で、 **.NET を使用したモバイル開発**ワークロード。
+* [Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)またはそれ以降。
 
 ## <a name="getting-started"></a>作業の開始
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1.Visual Studio Marketplace からライブ再読み込みの Xamarin をインストールします。
@@ -45,8 +45,13 @@ Xamarin のライブの再読み込みは、Visual Studio Marketplace 経由で�
 
 既存のモバイル アプリへのライブの再読み込みの追加は、3 つの手順で実行できます。
 
-1. すべてのプロジェクトが更新を使用することを確認[Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3)またはそれ以降。
-2. インストール、 **Xamarin.LiveReload** NuGet .NET 標準 2.0 ライブラリにします。 これは、プラットフォームのプロジェクトにインストールする必要はありません。 いることを確認、**パッケージ ソース**に設定されている**すべて**です。
+1. すべてのプロジェクトが更新を使用することを確認[Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)またはそれ以降。
+
+2. 追加、 **Xamarin.LiveReload** NuGet パッケージ。
+
+    a.  **.NET 標準**– インストール、 **Xamarin.LiveReload** NuGet .NET 標準 2.0 ライブラリにします。 これは、プラットフォームのプロジェクトにインストールする必要はありません。 いることを確認、**パッケージ ソース**に設定されている**すべて**です。
+    
+    b.  **共有プロジェクト**– インストール、 **Xamarin.LiveReload**プラットフォームのすべてのプロジェクトに NuGet (Android、iOS、UWP などなど)。 いることを確認、**パッケージ ソース**に設定されている**すべて**です。
 
 ![Xamarin ライブの再読み込み NuGet NuGet Package Manager での追加します。](images/addlivereloadnuget.png)
 
@@ -85,7 +90,7 @@ Xamarin のライブの再読み込みの初期のプレビュー リリース�
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>ライブの再読み込みに再配置どのような変更 
 
-ライブの再読み込みには、XAML に加えられた変更のみ適用されます。 C# ファイルを変更する場合に再コンパイルが必要になります。 再読み込みする (C#) のサポートについては、今後のリリース計画します。
+ライブの再読み込みには、XAML または CSS に加えられた変更のみ適用されます。 C# ファイルを変更する場合に再コンパイルが必要になります。 再読み込みする (C#) のサポートについては、今後のリリース計画します。
 
 ### <a name="what-platforms-are-supported"></a>どのようなプラットフォームがサポートされますか。 
 
@@ -111,8 +116,6 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 ## <a name="known-issues"></a>既知の問題
 
 * Visual Studio でのみサポートされます。
-* .NET 標準ライブラリでのみ動作します。 これは、次のプレビュー リリースで修正されます。
-* CSS スタイル シートはサポートされていません。 これは、次のプレビュー リリースで修正されます。
 * アプリ全体のリソースを再読み込みする (つまり**App.xaml**またはリソース ディクショナリを共有)、アプリのナビゲーションをリセットします。 これは、次のプレビュー リリースで修正されます。
 * ランタイム クラッシュが発生する可能性があります UWP のデバッグ中は、XAML を編集します。 回避策: を使用して **(Ctrl + f5 キー) をデバッグなしで開始**の代わりに**デバッグ (F5) で開始**です。
 
@@ -131,8 +134,6 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 * **XLR003**:*ライブの再読み込み nuget パッケージは、Xamarin Live 再読み込み Visual Studio 拡張機能をインストールする必要があります。*
 
   ライブの再読み込みの nuget パッケージを参照するプロジェクトをビルドしようとしましたが、Visual の拡張機能がインストールされていません。  
-
-
 
 ### <a name="app-doesnt-connect"></a>アプリにアクセスできなかった
 

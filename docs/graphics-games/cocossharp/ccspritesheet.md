@@ -3,15 +3,14 @@ title: CCSpriteSheet フレーム レートの向上
 description: CCSpriteSheet は、結合および 1 つのテクスチャで多数のイメージ ファイルを使用するための機能を提供します。 テクスチャ数を減らすと、ゲームの読み込み時間とフレーム レートを向上させることができます。
 ms.prod: xamarin
 ms.assetid: A1334030-750C-4C60-8B84-1A8A54B0D00E
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 9487ddf5ccdb1d0caf820b10446eaff0f80a97ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b0f58554b26b1a5334970b8c1288234acbf8db7
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="improving-frame-rate-with-ccspritesheet"></a>CCSpriteSheet フレーム レートの向上
 
@@ -59,7 +58,7 @@ CocosSharp は、シーケンスで 4 個の星をレンダリングは。
 
 レンダリングの状態が困難になる描画順でのビジュアル ツリーを従う必要がありますがあるために最適化`CCNode`インスタンス。 このツリー多くの場合、作業を容易に (など、visual の子を含む)、エンティティである構造化されたか、または、アーティストで定義されているため、必要なビジュアルなレイアウトに構成されています。
 
-もちろん、理想的な状態を複数のイメージでも、1 つのレンダー状態です。 CocosSharp ゲームこれを行うには 1 つのファイルにすべてのイメージを結合し、その 1 つのファイルの読み込み (それに付随すると共に**.plist**ファイル) に、`CCSpriteSheet`です。 使用して、`CCSpriteSheet`クラスがさらにゲームが、イメージの数が多いこともある非常に重要なレイアウトが複雑になりです。 
+もちろん、理想的な状態を複数のイメージでも、1 つのレンダー状態です。 CocosSharp ゲームこれを行うには 1 つのファイルにすべてのイメージを結合し、その 1 つのファイルの読み込み (それに付随すると共に **.plist**ファイル) に、`CCSpriteSheet`です。 使用して、`CCSpriteSheet`クラスがさらにゲームが、イメージの数が多いこともある非常に重要なレイアウトが複雑になりです。 
 
 ### <a name="load-times"></a>読み込み時間
 
@@ -71,9 +70,9 @@ CocosSharp は、シーケンスで 4 個の星をレンダリングは。
 
 ## <a name="using-ccspritesheet-in-code"></a>コードで CCSpriteSheet の使用
 
-作成する、`CCSpriteSheet`インスタンス、イメージとフレームごとに使用するイメージの領域を定義するファイル、コードを指定する必要があります。 としてイメージを読み込むことができます、 **.png**または**.xnb**ファイル (を使用する場合、[コンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md))。 フレームを定義するファイルが、 **.plist**を手動で作成することがあるファイルまたは*TexturePacker* (これは、以下について説明します)。
+作成する、`CCSpriteSheet`インスタンス、イメージとフレームごとに使用するイメージの領域を定義するファイル、コードを指定する必要があります。 としてイメージを読み込むことができます、 **.png**または **.xnb**ファイル (を使用する場合、[コンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md))。 フレームを定義するファイルが、 **.plist**を手動で作成することがあるファイルまたは*TexturePacker* (これは、以下について説明します)。
 
-サンプル アプリを[でダウンロードできます](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)、作成、`CCSpriteSheet`から、 **.png**と**.plist**ファイルの次のコードを使用します。
+サンプル アプリを[でダウンロードできます](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)、作成、`CCSpriteSheet`から、 **.png**と **.plist**ファイルの次のコードを使用します。
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
@@ -117,7 +116,7 @@ TexturePacker を指定できます[TexturePacker web サイトからダウン�
 
 ![](ccspritesheet-images/image7.png "CocosSharp は、Cocos2D データ形式を使用します。")
 
-イメージ ファイル (など**.png**) ドラッグ アンド ドロップによってに Windows エクスプ ローラーから Windows または mac 上の Finder TexturePacker に追加することができます ファイルが追加されるたびに、TexturePacker は自動的にスプライト シートのプレビューを更新します。
+イメージ ファイル (など **.png**) ドラッグ アンド ドロップによってに Windows エクスプ ローラーから Windows または mac 上の Finder TexturePacker に追加することができます ファイルが追加されるたびに、TexturePacker は自動的にスプライト シートのプレビューを更新します。
 
 ![](ccspritesheet-images/image8.png "ファイルが追加されるたびにスプライト シートのプレビューが TexturePacker によって自動的に更新します。")
 

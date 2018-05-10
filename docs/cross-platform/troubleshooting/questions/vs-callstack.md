@@ -3,15 +3,14 @@ title: Visual Studio のプロセスの現在の呼び出し履歴を収集す�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 64c24b09-2c4a-43ad-b94d-6cd05a1aee44
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/30/2017
-ms.openlocfilehash: 45ad6cc93d14fc1da077a40abea2c25668fb2269
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: e81c28f0610a0df2e4fe06349685ef5e0744071a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="how-do-i-collect-the-current-call-stacks-of-the-visual-studio-process"></a>Visual Studio のプロセスの現在の呼び出し履歴を収集する方法は?
 
@@ -27,7 +26,7 @@ GUI が Visual Studio のロック (ハング、フリーズ) したときに収
 
 4. 元のハングしたインスタンスを選択して`devenv.exe`の一覧から**選択可能なプロセス**です。
 
-5. 選択**デバッグ > [すべて中断]**です。
+5. 選択**デバッグ > [すべて中断]** です。
 
   ![](vs-callstack-images/image2.png "デバッグを選択 > [すべて中断]")
 
@@ -35,7 +34,7 @@ GUI が Visual Studio のロック (ハング、フリーズ) したときに収
 
   ![](vs-callstack-images/image3.png "デバッグを選択 > としてダンプを保存")
 
-7. 変更**付けて**に**ミニダンプ (\*.dmp)**です。 これよりも多くより小さなファイルが作成されます**ヒープ付きミニダンプ**ヒープは通常ありませんフリーズを診断するために関連するとします。
+7. 変更**付けて**に**ミニダンプ (\*.dmp)** です。 これよりも多くより小さなファイルが作成されます**ヒープ付きミニダンプ**ヒープは通常ありませんフリーズを診断するために関連するとします。
 
   ![](vs-callstack-images/image4.png "ヒープ付きミニダンプよりも多くより小さなファイルが生成され、ヒープは通常ありませんフリーズを診断するために関連します。")
 

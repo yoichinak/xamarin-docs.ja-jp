@@ -6,11 +6,11 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c206b124349614db7249609707bd22e8a4efe6d8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81bcc8e2f8627264820a859123e1be1a9f960a92
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要です。 アプリの構造
 
@@ -71,7 +71,7 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
-- Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
+- Windows 8.1： [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
 - Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
 それ以外の場合、これらのアプリケーション プロジェクトは、通常の「何もしない」のプログラムです。
@@ -100,7 +100,7 @@ SAP アプローチでは共有プロジェクトのコードは、c# プリプ�
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
 - UWP: `WINDOWS_UWP`
-- Windows 8.1: `WINDOWS_APP`
+- Windows 8.1： `WINDOWS_APP`
 - Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
 PCL に後の「わかりのように、実行時に、で実行しているプラットフォームを指定できます。
@@ -202,7 +202,7 @@ IOS および Android、間カットオフ`Tablet`と`Phone`600 ユニットの�
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 2 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
-- [第 2 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [第 2 章 f# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [第 2 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
+- [第 2 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+- [第 2 章 f# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Xamarin.Forms の概要](~/xamarin-forms/get-started/index.md)

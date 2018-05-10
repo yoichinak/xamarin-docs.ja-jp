@@ -3,15 +3,14 @@ title: ライブ アプリケーションの検査
 description: 視覚化し、ライブ アプリのデバッグ
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 841013fd6b836a7c9e065dc86e7d34c71146ca96
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8bcdc5ac50a0f03086ad9e9c3265e3ce86b06704
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="inspecting-live-applications"></a>ライブ アプリケーションの検査
 
@@ -22,7 +21,7 @@ ms.lasthandoff: 04/04/2018
 
 1. いずれかを開いて[アプリ プロジェクトはサポートされて](~/tools/inspector/install.md#supported-platforms)Mac または Visual Studio の Visual Studio でします。
 1. デバッグ モードでアプリケーションを実行します。
-1. をクリックして、**検査**IDE ツールバーのボタン (Visual Studio で、**検査現在アプリ...**から使用可能なメニュー項目も、**ツール**または**デバッグ**メニュー)。
+1. をクリックして、**検査**IDE ツールバーのボタン (Visual Studio で、**検査現在アプリ...** から使用可能なメニュー項目も、**ツール**または**デバッグ**メニュー)。
 
 
 

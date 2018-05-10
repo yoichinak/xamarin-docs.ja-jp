@@ -3,15 +3,14 @@ title: Xamarin の NuGet パッケージを手動で作成します。
 description: このページには、Xamarin プラットフォームを対象とする NuGet パッケージの構築を支援するいくつかのヒントが含まれています。
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: ce8003c862205ac80dfea2095009562ae7ebb23f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 510c27cb54b91c837ca6f6b7a93f944f13097f0c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Xamarin の NuGet パッケージを手動で作成します。
 
@@ -26,7 +25,7 @@ NuGet の web サイトの[.NET Framework の複数のバージョンのサポ�
 
 使用中では、メインの Xamarin ターゲット フレームワークは現在は。
 
-* **MonoAndroid** - Xamarin.Android
+* **MonoAndroid** -Xamarin.Android
 * **Xamarin.iOS** -Xamarin.iOS [Unified API](~/cross-platform/macios/unified/index.md) (64 ビットをサポートします)
 * **Xamarin.Mac** -Xamarin.Mac のモバイル プロファイルは、Xamarin.iOS および Xamarin.Android API サーフェイスに相当します。
 
@@ -47,7 +46,7 @@ A **.nuspec**これらすべてを対象となるファイルのように表示�
 
 上記のすべてのポータブル クラス ライブラリを無視します。
 
-ほとんど**.nuspec**ファイルがターゲット フレームワークのバージョン番号を指定が省略可能な場合、アセンブリは、そのターゲット フレームワークのすべてのバージョンで動作します。 ターゲットがあれば**lib\MonoAndroid**つまり Xamarin.Android の任意のバージョンでの動作です。
+ほとんど **.nuspec**ファイルがターゲット フレームワークのバージョン番号を指定が省略可能な場合、アセンブリは、そのターゲット フレームワークのすべてのバージョンで動作します。 ターゲットがあれば**lib\MonoAndroid**つまり Xamarin.Android の任意のバージョンでの動作です。
 
 小数点を持たない数値のセットとバージョンを指定できますか、10 進数のポイントを使用することを指定できます。 10 進数のポイントがない NuGet はだけの個々 の数を取得し、電源をバージョンに挿入することで、'.' 各桁の間です。
 

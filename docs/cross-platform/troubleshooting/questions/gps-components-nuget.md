@@ -3,14 +3,13 @@ title: Google Play の統合サービスのコンポーネントと NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: e0ba5ee9417917b834ab060a94f72d1f071b4912
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfd417f4fc01b07b4334259c45472eb24b73abd8
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Google Play の統合サービスのコンポーネントと NuGet
 
@@ -58,6 +57,6 @@ Xamarin.Android のより新しいバージョンは、今すぐ通知`aapt.exe`
 -   Google Play サービス (JellyBean)
 -   Google Play サービス (KitKat)
 
-既存の_Google プレイ サービス (ICS)_コンポーネント/Nuget の名前は_Google Play サービス_最新今後で保持されるとします。 この 1 つを使用するには、無効化/Delisted パッケージの 1 つを参照するすべてのプロジェクトを更新する必要があります。
+既存の_Google プレイ サービス (ICS)_ コンポーネント/Nuget の名前は_Google Play サービス_最新今後で保持されるとします。 この 1 つを使用するには、無効化/Delisted パッケージの 1 つを参照するすべてのプロジェクトを更新する必要があります。
 
 無効になっているコンポーネントがまだ存在し、それらを破損しないようにするでは、参照いるプロジェクトの復元可能な必要があります。 同様に delisted NuGet パッケージは引き続き存在し、復元することができます。 これらは更新されません前方に移動します。

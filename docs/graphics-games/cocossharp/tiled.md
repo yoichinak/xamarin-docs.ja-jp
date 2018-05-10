@@ -3,15 +3,14 @@ title: 使用して CocosSharp を並べて表示
 description: 並べて表示は強力で柔軟なされ、ゲームの直交と等角 タイルを作成するための完成度の高いアプリケーションがマップされます。 CocosSharp は、並べてのネイティブのファイル形式の組み込みの統合を提供します。
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: a356ddc0412eb1dce1b35e060e6c9127525de804
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8a7782097324829b8150b968c5658a864d1fab4a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>使用して CocosSharp を並べて表示
 
@@ -174,7 +173,7 @@ protected override void AddedToScene ()
 
 ![](tiled-images/image10.png "宝箱を右クリックし、タイルのプロパティを選択して宝物箱プロパティが表示されない場合")
 
-並べて表示されるプロパティは、名前と値で実装されます。 プロパティを追加するをクリックして、 **+**ボタン名を入力します**IsTreasure**、をクリックして**OK**、値を入力**true**: 
+並べて表示されるプロパティは、名前と値で実装されます。 プロパティを追加するをクリックして、 **+** ボタン名を入力します**IsTreasure**、をクリックして**OK**、値を入力**true**: 
 
 ![](tiled-images/image11.png "プロパティを追加するには、ボタンをクリックして IsTreasure の名前を入力、[ok] をクリックし、入力値の true")
 

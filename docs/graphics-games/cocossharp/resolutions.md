@@ -3,15 +3,14 @@ title: CocosSharp で複数の解像度の処理
 description: このガイドでは、さまざまな解像度のデバイスに正しく表示するゲームを開発する CocosSharp を操作する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 4077af2351b8ab3ef718a71cc672add54b6ef05a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 577a3edbd106b6fba298b3ee5999265ef955f9dd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>CocosSharp で複数の解像度の処理
 
@@ -25,7 +24,7 @@ CocosSharp の既定の解像度の動作は、物理的なピクセルをゲー
 | **デバイス** | **ディスプレイの解像度** | **サンプルのスクリーン ショット** |
 |--- | --- |--- |
 |希望の表示|368 x 240 (の縦横比に黒のバー)| ![368 x 240 (の縦横比に黒のバー)](resolutions-images/image1.png) |
-|iPhone 4s|960 x 640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 4 秒|960 x 640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
 |iPhone 6 Plus|1920 x 1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
 
 このドキュメントでは、CocosSharp を使用して、上記の表に示すように問題を解決する方法について説明します。 つまり、任意のデバイスの画面の解像度に関係なく – 最初の行に示すように表示する方法をしれませんについて説明します。
@@ -279,7 +278,7 @@ CCSprite.DefaultTexelToContentSizeRatio = 2;
 
 ### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio 詳細
 
-`DefaultTexelToContentSizeRatio`プロパティは`static,`アプリケーション内のすべてのスプライト意味は同じ値を共有します。 異なる解像度に対して行われたアセット ゲーム用の一般的な方法では、解決カテゴリごとの資産の完全なセットを含むです。 既定の Mac テンプレート CocosSharp Visual Studio で提供**%ld**と**hd**テクスチャの 2 つのセットをサポートするゲーム用役に立つ、資産のフォルダーです。 コンテンツを含むサンプル コンテンツ フォルダーのようになります。
+`DefaultTexelToContentSizeRatio`プロパティは`static,`アプリケーション内のすべてのスプライト意味は同じ値を共有します。 異なる解像度に対して行われたアセット ゲーム用の一般的な方法では、解決カテゴリごとの資産の完全なセットを含むです。 既定の Mac テンプレート CocosSharp Visual Studio で提供 **%ld**と**hd**テクスチャの 2 つのセットをサポートするゲーム用役に立つ、資産のフォルダーです。 コンテンツを含むサンプル コンテンツ フォルダーのようになります。
 
 ![](resolutions-images/image13.png "コンテンツを含むサンプル コンテンツ フォルダーのようになります")
 
@@ -304,7 +303,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 }
 ```
 
-これは、アプリケーションは、高解像度または標準解像度モードで実行されているかどうかに従ってパスのファイルの検索されることを意味します。 たとえば場合、 **hd**と**%ld**フォルダーという名前のファイルに含める**background.png**次に、次のコードは実行し、正しいファイルの解像度を選択。
+これは、アプリケーションは、高解像度または標準解像度モードで実行されているかどうかに従ってパスのファイルの検索されることを意味します。 たとえば場合、 **hd**と **%ld**フォルダーという名前のファイルに含める**background.png**次に、次のコードは実行し、正しいファイルの解像度を選択。
 
 
 ```csharp

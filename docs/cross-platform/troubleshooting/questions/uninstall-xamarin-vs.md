@@ -3,15 +3,14 @@ title: 実行する方法の詳細な for Xamarin for Visual Studio をアンイ
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 49577961026d9895912d2848975e71a9f7eebbd8
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 99fde9330498ee62d3cf6b5910c2cbfae39cfdeb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>実行する方法の詳細な for Xamarin for Visual Studio をアンインストールしますか?
 
@@ -24,7 +23,7 @@ ms.lasthandoff: 04/06/2018
     -   Xamarin.iOS
     -   Xamarin for Visual Studio
 
-2.  エクスプ ローラーで、Visual Studio の Xamarin 拡張機能フォルダーから残りのファイルを削除します (両方を含む、すべてのバージョン_Program Files_と_%program Files (x86)_)。
+2.  エクスプ ローラーで、Visual Studio の Xamarin 拡張機能フォルダーから残りのファイルを削除します (両方を含む、すべてのバージョン_Program Files_と _%program Files (x86)_)。
 
     _C:\\プログラム ファイル\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\拡張\\Xamarin_
 
@@ -38,7 +37,7 @@ ms.lasthandoff: 04/06/2018
 
     -   "プロジェクト ファイル、開くことができません。 不足しているプロジェクトのサブタイプがある"
 
-    -   "オブジェクト参照がオブジェクトのインスタンスに設定されていません。  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
+    -   "オブジェクト参照がオブジェクトのインスタンスに設定されていません。  Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"に
 
     -   「パッケージの SetSite に失敗しました」(Visual studio の_ActivityLog.xml_)
 
@@ -56,7 +55,7 @@ ms.lasthandoff: 04/06/2018
 
     _HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
 
-7.  検索し、このパターンに一致するエントリを削除します。
+7.  次のパターンに一致するエントリがあれば、削除します。
 
     _C:\\プログラム ファイル\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\拡張\\Xamarin_
 
@@ -64,11 +63,11 @@ ms.lasthandoff: 04/06/2018
 
     _HKEY\_現在\_ユーザー\\ソフトウェア\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager\\PendingDeletions_
 
-9.  Xamarin に関連するいると同じようにすべてのエントリを削除します。  たとえば、次のいずれかを使用して、Xamarin の以前のバージョンで問題が発生します。
+9.  Xamarin に関連すると考えられるすべてのエントリを削除します。  たとえば、次のいずれかを使用して、Xamarin の以前のバージョンで問題が発生します。
 
     _Mono.VisualStudio.Shell,1.0_
 
-10. 管理者を開く`cmd.exe`プロンプトのコマンドを実行し、`devenv /setup`と`devenv /updateconfiguration`インストールされている各バージョンの Visual Studio のコマンド。  たとえば、Visual Studio 2015。
+10. 管理者を開く`cmd.exe`プロンプトのコマンドを実行し、`devenv /setup`と`devenv /updateconfiguration`インストールされている各バージョンの Visual Studio のコマンド。  たとえば、Visual Studio 2015 では次のようになります。
 
     ```
     "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /setup

@@ -3,15 +3,14 @@ title: Xamarin プロファイラーのトラブルシューティング
 description: Xamarin プロファイラーのトラブルシューティング
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 4844c999ceddcee89d4f45f6e41dd4c7f2caf054
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e2f9a35f37513ce0cb785f2bd922aeccf42dd8e
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin プロファイラーのトラブルシューティング
 
@@ -51,7 +50,7 @@ Windows でこれらに保存されて。`%appdata%Local//Xamarin/Log/Xamarin.Pr
 ![](troubleshooting-images/image17-vs.png "Visual Studio で .mlpd ファイルの保存")
 
 
-重要な点は**.mlpd**多く情報にはが含まれており、ファイルのサイズが大きくなります。
+重要な点は **.mlpd**多く情報にはが含まれており、ファイルのサイズが大きくなります。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 

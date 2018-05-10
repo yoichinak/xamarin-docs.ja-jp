@@ -3,15 +3,14 @@ title: コンテンツのパイプラインの概要
 description: コンテンツのパイプラインは、アプリケーション、またはアプリケーションの各部分に使用されるファイルをゲーム プロジェクトを読み込むことができる形式に変換します。 MonoGame コンテンツ パイプラインは、CocosSharp および MonoGame プロジェクト ファイルを変換するための特定のコンテンツ パイプライン実装です。
 ms.prod: xamarin
 ms.assetid: 40628B5F-FAF7-4FA7-A929-6C3FEA83F8EC
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 2c3619fac771bd7962f6940a24d7c1ff81173d75
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a369c5ba61033eb61c0f188c03b21e08c71784fb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-content-pipelines"></a>コンテンツのパイプラインの概要
 
@@ -42,7 +41,7 @@ CocosSharp と MonoGame は、さまざまな種類のコンテンツを読み�
 
 ### <a name="converting-to-a-format-native-to-the-hardware"></a>ハードウェアにネイティブ形式に変換します。
 
-別のハードウェア可能性がありますの扱いコンテンツ実行時にします。 たとえば、CocosSharp ゲーム読み込むことができますのイメージ ファイルを作成するとき、`CCSprite`インスタンス。 同じコードは、iOS と Android の両方でファイルの読み込みに使用できますが、各プラットフォームが異なる方法で読み込まれているファイルを格納します。 その結果、テクスチャのフォーマット MonoGame コンテンツ パイプライン**.xnb**ターゲット プラットフォームに応じて異なる方法でファイル。
+別のハードウェア可能性がありますの扱いコンテンツ実行時にします。 たとえば、CocosSharp ゲーム読み込むことができますのイメージ ファイルを作成するとき、`CCSprite`インスタンス。 同じコードは、iOS と Android の両方でファイルの読み込みに使用できますが、各プラットフォームが異なる方法で読み込まれているファイルを格納します。 その結果、テクスチャのフォーマット MonoGame コンテンツ パイプライン **.xnb**ターゲット プラットフォームに応じて異なる方法でファイル。
 
 
 ### <a name="reducing-size-on-disk"></a>ディスク上のサイズを縮小します。 
@@ -59,7 +58,7 @@ CocosSharp と MonoGame は、さまざまな種類のコンテンツを読み�
 
 **.Xnb**ファイル拡張子は Monogame コンテンツ パイプラインによって出力されるすべてのファイルの拡張子。 これには、Microsoft XNA コンテンツ パイプラインによって出力されるファイルの拡張子と一致します。
 
-**.Xnb**拡張機能は、元のファイルの種類に関係なく使用できます。 つまり、イメージ ファイル (**.png**)、オーディオ ファイル (**.wav**)、およびカスタムのファイルの種類がすべて出力として**.xnb**ファイルのコンテンツのパイプラインを介して渡されるときです。 別のファイルが CocosSharp と MonoGame メソッドの両方を読み込んでいるでフォーマットし、区別するために、拡張機能を使用できませんので**.xnb**ファイル予期しない拡張機能ファイルを読み込むとき。
+**.Xnb**拡張機能は、元のファイルの種類に関係なく使用できます。 つまり、イメージ ファイル (**.png**)、オーディオ ファイル (**.wav**)、およびカスタムのファイルの種類がすべて出力として **.xnb**ファイルのコンテンツのパイプラインを介して渡されるときです。 別のファイルが CocosSharp と MonoGame メソッドの両方を読み込んでいるでフォーマットし、区別するために、拡張機能を使用できませんので **.xnb**ファイル予期しない拡張機能ファイルを読み込むとき。
 
 CocosSharp と MonoGame の .xnb ファイルは、それについては説明 Monogame パイプライン ツールを使用して作成できる[このチュートリアルで](~/graphics-games/cocossharp/content-pipeline/walkthrough.md)です。
 

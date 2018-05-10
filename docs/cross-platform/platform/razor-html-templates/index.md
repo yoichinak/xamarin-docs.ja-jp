@@ -3,15 +3,14 @@ title: Razor テンプレートを使用して構築 HTML ビュー
 description: " 全画面表示の web ページを使用して HTML を表示するためには、web サイト プロジェクトから、HTML、Javascript と CSS が既にある場合は特に、クロスプラット フォームの方法で複雑な書式設定を表示するために単純で効果的な方法です。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 48d7778bf3225401f2819909ae6be320cfa881e3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用して構築 HTML ビュー
 
@@ -92,7 +91,7 @@ Android では、html 文字列が、web ビューに表示されるときに、
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
-特殊な文字列**file:///android_asset/**アプリで、表示は、ここを格納している Android Assets フォルダーを指す、 **style.css**ファイル。
+特殊な文字列**file:///android_asset/** アプリで、表示は、ここを格納している Android Assets フォルダーを指す、 **style.css**ファイル。
 
  ![AndroidHybrid ソリューション](images/image3_240x167.png)
 
@@ -369,11 +368,11 @@ IOS シミュレーターおよび Android エミュレーターで実行され�
 
 ## <a name="using-razor-templates-with-xamarin"></a>Xamarin で Razor テンプレートの使用
 
-このセクションの内容がソリューション テンプレートを Visual studio for mac を使用して、独自のハイブリッド アプリケーションをビルドに使用する方法について説明します 次の 3 つのテンプレートがから利用可能な**ファイル > 新規 > ソリューションしています.**ウィンドウ。
+このセクションの内容がソリューション テンプレートを Visual studio for mac を使用して、独自のハイブリッド アプリケーションをビルドに使用する方法について説明します 次の 3 つのテンプレートがから利用可能な**ファイル > 新規 > ソリューションしています.** ウィンドウ。
 
 - **Android > アプリ > Android WebView アプリケーション**
 - **iOS > アプリ > WebView アプリケーション**
-- **ASP.NET MVC Project**
+- **ASP.NET MVC プロジェクト**
 
 
 
@@ -495,7 +494,7 @@ webView.LoadUrl ("javascript:" + js);
 
 両方のサンプル アプリは、Twitter の共有および Xamarin を使用したハイブリッド アプリケーションもあるアクセス基になるすべての機能に HTML Razor テンプレートに基づくビューからのデモンストレーション、ネイティブ プラットフォームからの音声合成 Api を組み込みます。
 
-**RazorTodo**アプリは、リストや編集のビューの HTML Razor テンプレートを使用します。 つまり、共有ポータブル クラス ライブラリでほぼ完全にアプリを構築できます (データベースを含むと**.cshtml** Razor テンプレート)。 次のスクリーン ショットは、iOS と Android アプリを表示します。
+**RazorTodo**アプリは、リストや編集のビューの HTML Razor テンプレートを使用します。 つまり、共有ポータブル クラス ライブラリでほぼ完全にアプリを構築できます (データベースを含むと **.cshtml** Razor テンプレート)。 次のスクリーン ショットは、iOS と Android アプリを表示します。
 
  ![RazorTodo](images/Both_700x290.png)
 

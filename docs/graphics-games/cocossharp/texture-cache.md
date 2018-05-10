@@ -3,15 +3,14 @@ title: CCTextureCache を使用してテクスチャ キャッシュ
 description: CocosSharp の CCTextureCache クラスは、整理、キャッシュ、およびコンテンツをアンロードする標準的な方法を提供します。 大規模なゲーム RAM、グループ化とテクスチャの破棄のプロセスを簡略化に完全に合わない可能性がありますが特に便利です。
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: f0a8121d5e90d2f39fb1b0cbd8d283253c2bf76d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb75efea0914827f1d59a8e0943584597f91803a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="texture-caching-using-cctexturecache"></a>テクスチャ キャッシュ CCTextureCache を使用します。
 

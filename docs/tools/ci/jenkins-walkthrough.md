@@ -3,15 +3,14 @@ title: Xamarin で Jenkins の使用
 description: このガイドでは、Jenkins 継続的インテグレーション サーバーとして設定し、Xamarin で作成したモバイル アプリケーションのコンパイルを自動化する方法を示します。 これには、OS X 上の Jenkins のインストール、構成、および変更は、ソース コード管理システムにコミットするときに、Xamarin.iOS および Xamarin.Android アプリケーションをコンパイルするジョブを設定する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: f183eb487b49d60c896bef9c90c711cd3da846b7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1052507bfbf06e264f9e9da89be1e0f35fa70ce1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Xamarin で Jenkins の使用
 
@@ -126,18 +125,18 @@ Jenkins では、任意の余分なプラグインなし Git がサポートさ�
 
  [![](jenkins-walkthrough-images/image13.png "Jenkins を選択して、プラグインのグローバル設定が見つかりません/管理 Jenkins/左上からのシステムの構成は、コーナーを渡す")](jenkins-walkthrough-images/image13.png#lightbox)
 
-このメニュー オプションを選択するときに実行をする、**システムの構成 [Jenkins]**ページ。 このページには、Jenkins 自体を構成して、プラグインのグローバル値の一部を設定セクションが含まれています。  次のスクリーン ショットは、このページの例を示しています。
+このメニュー オプションを選択するときに実行をする、**システムの構成 [Jenkins]** ページ。 このページには、Jenkins 自体を構成して、プラグインのグローバル値の一部を設定セクションが含まれています。  次のスクリーン ショットは、このページの例を示しています。
 
  [![](jenkins-walkthrough-images/image14.png "このスクリーン ショットは、このページの例を示しています。")](jenkins-walkthrough-images/image14.png#lightbox)
 
 
 #### <a name="configuring-the-msbuild-plugin"></a>MSBuild のプラグインを構成します。
 
-MSBuild プラグインは、使用するように構成する必要があります**/Library/Frameworks/Mono.framework/Commands/xbuild** Mac ソリューションとプロジェクト ファイルを Visual Studio をコンパイルします。 下にスクロールして、**システムの構成 [Jenkins]**までページ、**追加の MSBuild**ボタンが表示されたら、次のスクリーン ショットに示すように。
+MSBuild プラグインは、使用するように構成する必要があります **/Library/Frameworks/Mono.framework/Commands/xbuild** Mac ソリューションとプロジェクト ファイルを Visual Studio をコンパイルします。 下にスクロールして、**システムの構成 [Jenkins]** までページ、**追加の MSBuild**ボタンが表示されたら、次のスクリーン ショットに示すように。
 
  [![](jenkins-walkthrough-images/image15.png "MSBuild の追加 ボタンが表示されるまでシステム Jenkins の構成ページを下へスクロールします。")](jenkins-walkthrough-images/image15.png#lightbox)
 
-このボタンをクリックし、記入、**名前**と**パス**に**MSBuild**に表示されるフォームのフィールドです。 名前、 **MSBuild**インストールには、わかりやすい、中にする必要があります、 **MSBuild へのパス**へのパスにする必要があります`xbuild`、これは通常**/Library フレームワーク/Mono.framework/Commands/xbuild**です。 Jenkins が使用できる、保存またはページの下部にある [適用] ボタンをクリックして変更を保存して後`xbuild`ソリューションをコンパイルします。
+このボタンをクリックし、記入、**名前**と**パス**に**MSBuild**に表示されるフォームのフィールドです。 名前、 **MSBuild**インストールには、わかりやすい、中にする必要があります、 **MSBuild へのパス**へのパスにする必要があります`xbuild`、これは通常 **/Library フレームワーク/Mono.framework/Commands/xbuild**です。 Jenkins が使用できる、保存またはページの下部にある [適用] ボタンをクリックして変更を保存して後`xbuild`ソリューションをコンパイルします。
 
 #### <a name="configuring-the-tfs-plugin"></a>TFS プラグインを構成します。
 
@@ -157,7 +156,7 @@ OS X ワークステーション TFS サーバーと対話するためには、T
 
         Available commands and their options:
 
-Jenkins を完全なパスを構成する必要がある TFS 用のコマンド ライン クライアントがインストールされると、`tf`コマンド ライン クライアント。 下にスクロールして、**システムの構成 [Jenkins]**次のスクリーン ショットに示すように、Team Foundation Server のセクションが表示されるまでのページします。
+Jenkins を完全なパスを構成する必要がある TFS 用のコマンド ライン クライアントがインストールされると、`tf`コマンド ライン クライアント。 下にスクロールして、**システムの構成 [Jenkins]** 次のスクリーン ショットに示すように、Team Foundation Server のセクションが表示されるまでのページします。
 
  [![](jenkins-walkthrough-images/image17.png "Team Foundation Server のセクションが見つかるまで、システム Jenkins の構成ページを下へスクロールします。")](jenkins-walkthrough-images/image17.png#lightbox)
 
@@ -193,7 +192,7 @@ Jenkins を完全なパスを構成する必要がある TFS 用のコマンド 
 1. Jenkins を停止します。 Jenkins.app を使用している場合は、ドッキング ステーションに Jenkins.App アイコンを右クリックし、終了をポップアップ表示されるメニューから選択することでこれを実行できます。
 
     ![](jenkins-walkthrough-images/image19.png "ドック、および終了をポップアップ表示されるメニューから選択することでアプリのアイコン")
-2. ファイルを開く**~/.jenkins/config.xml**をテキスト エディターでします。
+2. ファイルを開く **~/.jenkins/config.xml**をテキスト エディターでします。
 3. 値を変更、`<usesecurity></usesecurity>`要素から`true`に`false`です。
 4. 削除、`<authorizationstrategy></authorizationstrategy>`と`<securityrealm></securityrealm>`ファイルからの要素。
 5. Jenkins を再起動します。
@@ -207,7 +206,7 @@ Jenkins では、最上位レベルに編成すべてにソフトウェアの構
 
 ![](jenkins-walkthrough-images/image22.png "ジョブは、メニューの右上隅の Jenkins 新しいジョブを選択して作成されます。")
 
-これが表示されます、**新しいジョブ [Jenkins]**ページ。 ジョブの名前を入力し、選択、**空きスタイル ソフトウェア プロジェクトのビルド**ラジオ ボタンをクリックします。 次のスクリーン ショットは、この例を示しています。
+これが表示されます、**新しいジョブ [Jenkins]** ページ。 ジョブの名前を入力し、選択、**空きスタイル ソフトウェア プロジェクトのビルド**ラジオ ボタンをクリックします。 次のスクリーン ショットは、この例を示しています。
 
 ![](jenkins-walkthrough-images/image23.png "ジョブでは、名前を入力し、空きスタイル ソフトウェア プロジェクトのラジオ ボタンのビルドを選択します。")
 

@@ -2,20 +2,19 @@
 title: 統合 API への既存のアプリの更新
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: ca14d35bcc167bd35cf1ec9e822e86421579b7b8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>統合 API への既存のアプリの更新
 
 > [!IMPORTANT]
-> **プロファイル非推奨のクラシック:**クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に削除は、Xamarin.iOS 10.0 のリリースで [次へ] の秋にスケジュールされます。
+> **プロファイル非推奨のクラシック:** クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に削除は、Xamarin.iOS 10.0 のリリースで [次へ] の秋にスケジュールされます。
 
 
 
@@ -24,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 Xamarin 大学自由に利用可能なビデオが**iOS Unified API へのアップグレード**です。 参照してください[Xamarin 大学稲妻講義](http://university.xamarin.com/lightninglectures)を監視します。
 
-[ ![](updating-apps-images/xamu-video-sml.png "Xamarin University")](http://university.xamarin.com/lightninglectures)
+[ ![](updating-apps-images/xamu-video-sml.png "Xamarin 大学")](http://university.xamarin.com/lightninglectures)
 
 これには、アプリを更新する 3 つの手順があります。
 

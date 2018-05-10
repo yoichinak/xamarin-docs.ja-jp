@@ -3,15 +3,14 @@ title: F# によるプログラミング UrhoSharp
 description: F# で Visual Studio の使用の Mac 簡単な UrhoSharp アプリケーションを作成する方法
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 1496ff10a089829a01ad9993dfbca87d10b18991
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: d2b21204d1d328831419308827e1a2de2b6aef1c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="programming-urhosharp-with-f"></a>F# によるプログラミング UrhoSharp
 
@@ -27,16 +26,16 @@ C++ の世界で発生した多くのライブラリと同様には、多くの 
 
 F# UrhoSharp のテンプレートがないまだ UrhoSharp プロジェクトを作成するため、使用することができますを開始するか、[サンプル](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)またはこれらの手順に従います。
 
-1. Mac 用 Visual Studio から新規作成**ソリューション**です。 選択**iOS > アプリ > 1 つのアプリの表示**選択**f#**実装の言語として。 
+1. Mac 用 Visual Studio から新規作成**ソリューション**です。 選択**iOS > アプリ > 1 つのアプリの表示**選択**f#** 実装の言語として。 
 1. 削除、 **Main.storyboard**ファイル。 開く、 **Info.plist**ファイルし、[、 **iPhone/iPod 展開情報**] ウィンドウで、削除、`Main`内の文字列、 **Main インターフェイス**ドロップダウンします。
 1. 削除、 **ViewController.fs**ファイルにもします。
 
 ## <a name="building-hello-world-in-urho"></a>Urho の建物 Hello World
 
-ゲームのクラスの定義を開始する準備が整いました。 少なくとものサブクラスを定義する必要がある`Urho.Application`オーバーライドとその`Start`メソッドです。 このファイルを作成するには f# プロジェクトを右クリックし、**新しいファイルを追加しています.**し、プロジェクトに空の f# クラスを追加します。 新しいファイルは、プロジェクト内のファイルの一覧の末尾に追加されますが、表示されるようにドラッグする必要があります*する前に*で使用されている**AppDelegate.fs**です。
+ゲームのクラスの定義を開始する準備が整いました。 少なくとものサブクラスを定義する必要がある`Urho.Application`オーバーライドとその`Start`メソッドです。 このファイルを作成するには f# プロジェクトを右クリックし、**新しいファイルを追加しています.** し、プロジェクトに空の f# クラスを追加します。 新しいファイルは、プロジェクト内のファイルの一覧の末尾に追加されますが、表示されるようにドラッグする必要があります*する前に*で使用されている**AppDelegate.fs**です。
 
 1. Urho NuGet パッケージへの参照を追加します。
-1. 既存の Urho プロジェクトから (大) のディレクトリにコピー **CoreData/**と**データ/**プロジェクトの**リソース/**ディレクトリ。 F# のプロジェクトを右クリックし、**リソース**フォルダーと使用**追加/既存のフォルダーを追加**これらすべてのファイルをプロジェクトに追加します。
+1. 既存の Urho プロジェクトから (大) のディレクトリにコピー **CoreData/** と**データ/** プロジェクトの**リソース/** ディレクトリ。 F# のプロジェクトを右クリックし、**リソース**フォルダーと使用**追加/既存のフォルダーを追加**これらすべてのファイルをプロジェクトに追加します。
 
 プロジェクトの構造のようになります。
 

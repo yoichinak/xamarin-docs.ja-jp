@@ -3,15 +3,14 @@ title: Xamarin.Forms を使用して Visual Basic.NET
 description: Xamarin.Forms PCL プロジェクト テンプレートは、実質的に VB.NET を使ったクロスプラット フォーム モバイル アプリをビルドすることができます、メイン アセンブリの Visual Basic を使用して変更できます。
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e26d330d62e6ffdfdb3f9b8eab59e57a6377a86c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b858e26de95d2abbc23917b1ed5a1de65105cd8d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms を使用して Visual Basic.NET
 
@@ -26,12 +25,12 @@ Xamarin に Visual Basic が直接サポートされていません - c# Xamarin
 
 Visual Basic を使用する単純な Xamarin.Forms プロジェクトを作成する手順に従います。
 
-1. 新しい*Xamarin.Forms c#*ポータブル クラス ライブラリ (PCL) を使用するソリューションです。
+1. 新しい*Xamarin.Forms c#* ポータブル クラス ライブラリ (PCL) を使用するソリューションです。
 移動して**ファイル > 新しいプロジェクト**し、、**新しいプロジェクト**にウィンドウが移動**インストールされている > テンプレート > Visual c# > Cross Platform**順に選択**クロス プラットフォーム アプリ (Xamarin.Forms またはネイティブ) > Xamarin.Forms**です。
 
 2. ソリューションを右クリックし、**追加 > 新しいプロジェクト**です。
 
-3. 選択、 **Visual Basic > クラス ライブラリ (ポータブル)**プロジェクトの種類。
+3. 選択、 **Visual Basic > クラス ライブラリ (ポータブル)** プロジェクトの種類。
 
    [![](xamarin-forms-images/add-vb-2-sml.png "新しいのポータブル クラス ライブラリ プロジェクトを追加します。")](xamarin-forms-images/add-vb-2.png#lightbox)
 
@@ -83,7 +82,7 @@ Visual Basic を使用する単純な Xamarin.Forms プロジェクトを作成�
 
    [![](xamarin-forms-images/add-vb-8-sml.png "古いプロジェクト参照を削除する、Visual Basic リファレンスの追加")](xamarin-forms-images/add-vb-8.png#lightbox)
 
-10. C# ポータブル プロジェクトを削除します。 新規追加**.vb**ビルドするファイルは、Xamarin.Forms アプリケーションを出力します。 新しいテンプレート`ContentPage`Visual Basic での s を次に示します。
+10. C# ポータブル プロジェクトを削除します。 新規追加 **.vb**ビルドするファイルは、Xamarin.Forms アプリケーションを出力します。 新しいテンプレート`ContentPage`Visual Basic での s を次に示します。
 
     ```vb
     Imports Xamarin.Forms

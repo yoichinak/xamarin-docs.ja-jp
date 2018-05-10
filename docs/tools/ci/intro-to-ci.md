@@ -3,15 +3,14 @@ title: Xamarin を使用した継続的な統合の概要
 description: 継続的インテグレーションは、ソフトウェア エンジニア リングのプラクティスを自動化されたビルドがコンパイルし、必要に応じてコードを追加またはプロジェクトのバージョン管理リポジトリ内の開発者によって変更されたときにアプリをテストします。 この記事は、継続的インテグレーションの一般的な概念といくつかのオプションの使用可能な継続的インテグレーション Xamarin プロジェクトで説明します。
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 5e4720ac44876620783b32f731c44afe5a623231
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e441e3a2f967bf7bed0a236375ce708966fdb6eb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的な統合の概要
 

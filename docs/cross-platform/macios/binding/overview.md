@@ -3,14 +3,13 @@ title: 概要
 description: バインディング プロセスのしくみの詳細
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: d1a90934cf7a9a832172f32ed95cf3e254e04385
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ce2e45a1985c64b5c479bd41140d7270fae97aee
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="overview"></a>概要
 
@@ -25,7 +24,7 @@ Xamarin を使用するため、Objective C ライブラリのバインドは、
 3. 定義した API を使用して、ネイティブの機能にアクセスできるように、その「バインド」アセンブリは、Xamarin アプリケーション プロジェクトに追加されます。
   バインド プロジェクトが、アプリケーション プロジェクトから完全に分離します。
 
-**注:**の支援を受けて、手順 1 を自動化できる[**目標ペンを使わず**](#objectivesharpie)です。 Objective C API を確認し、提案された c#「API 定義」が生成されます。 目標ペンを使わずによって作成されたファイルをカスタマイズして (またはコマンド ラインで) バインド プロジェクトでは、それらを使用してバインド アセンブリを作成します。 目標ペンを使わずには、単独でバインドは作成されません、大規模なプロセスのオプションの一部だけです。
+**注:** の支援を受けて、手順 1 を自動化できる[**目標ペンを使わず**](#objectivesharpie)です。 Objective C API を確認し、提案された c#「API 定義」が生成されます。 目標ペンを使わずによって作成されたファイルをカスタマイズして (またはコマンド ラインで) バインド プロジェクトでは、それらを使用してバインド アセンブリを作成します。 目標ペンを使わずには、単独でバインドは作成されません、大規模なプロセスのオプションの一部だけです。
 
 技術的な詳細を参照することもできます。[しくみ](#howitworks)、バインドを作成するするのに役立ちます。
 

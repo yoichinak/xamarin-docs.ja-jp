@@ -3,15 +3,14 @@ title: 統一された API の概要
 description: 新しいスタイルの API よりも簡単にこれまで Mac と iOS だけでなくできると、同じ 32 と 64 ビットのアプリケーションをサポートするバイナリ間でコードを共有します。
 ms.prod: xamarin
 ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c36682ba038c18dfb872e76f338ea1d9881cca10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0bdbf4a41ad5737603fccc7e78bc588a2f3acee3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unified-api-overview"></a>統一された API の概要
 
@@ -20,7 +19,7 @@ _新しいスタイルの API よりも簡単にこれまで Mac と iOS だけ�
 Mac と iOS の間で共有コードを改善し、32 と 64 ビット、上で動作する基本の 1 つのコードがある開発者を有効にする早期 2015 紹介 Unified API を呼び出す Xamarin.Mac と Xamarin.iOS の両方の製品の新しい API です。
 
 > [!IMPORTANT]
-> **プロファイル非推奨のクラシック:**クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に削除は、Xamarin.iOS 10.0 のリリースで [次へ] の秋にスケジュールされます。
+> **プロファイル非推奨のクラシック:** クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に削除は、Xamarin.iOS 10.0 のリリースで [次へ] の秋にスケジュールされます。
 
 ## <a name="ios"></a>iOS
 
@@ -47,7 +46,7 @@ Mac と iOS の間で共有コードを改善し、32 と 64 ビット、上で�
 この時点から、2 つの方法で、Api が提示されます。
 
 -  **クラシック API:** 32 ビット (のみ) に限定で公開されていると、`monotouch.dll`と`XamMac.dll`アセンブリ。
--  **統一された API:**で利用可能な単一の API の 32 と 64 ビットの開発をサポート、`Xamarin.iOS.dll`と`Xamarin.Mac.dll`アセンブリ。
+-  **統一された API:** で利用可能な単一の API の 32 と 64 ビットの開発をサポート、`Xamarin.iOS.dll`と`Xamarin.Mac.dll`アセンブリ。
 
 つまり、企業の開発者 (いない対象とするアプリ ストア) を引き続き使用できる既存の従来の Api おは保持を保持する永久にしたりするは、新しい Api にアップグレードできます。
 
@@ -59,8 +58,8 @@ Mac および iOS 製品間でコードを共有する摩擦を減らすため�
 
 これは条件付きコンパイルを行わなくても、Mac、iOS プラットフォーム間でコードを共有するが簡単であり、ソース コード ファイルの上部にあるノイズの軽減されます。
 
--  **クラシック API:**名前空間を使用して`MonoTouch.`または`MonoMac.`プレフィックス。
--  **統一された API:**名前空間プレフィックスなし
+-  **クラシック API:** 名前空間を使用して`MonoTouch.`または`MonoMac.`プレフィックス。
+-  **統一された API:** 名前空間プレフィックスなし
 
 ### <a name="api-changes"></a>API の変更
 
@@ -104,7 +103,7 @@ iOS のコンポーネントで、 [Xamarin コンポーネント ストア](htt
 Unified API の互換性のあるパッケージは、新しいプラットフォーム id が導入されています**Xamarin.iOS10**です。 既存の NuGet パッケージは、このプラットフォームのサポートを追加する、統合 API に対するビルドで更新する必要があります。
 
 > [!IMPORTANT]
-> フォームでエラーがあれば_"エラー 3 は、同じ Xamarin.iOS プロジェクトに 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を含めることはできません - 'Xamarin.iOS.dll' は 'monotouch.dll' によって参照されますが、明示的に参照される ' xxx、バージョン = 0.0.000、Culture = neutral, PublicKeyToken = null'"_ Unified Api にアプリを変換した後は、通常、統合 API が更新されていないプロジェクトで、コンポーネントまたは NuGet パッケージを持つためです。 削除する既存のコンポーネント/NuGet Unified Api をサポートするバージョンに更新して、クリーン ビルドを行う必要があります。
+> フォームでエラーがあれば _"エラー 3 は、同じ Xamarin.iOS プロジェクトに 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を含めることはできません - 'Xamarin.iOS.dll' は 'monotouch.dll' によって参照されますが、明示的に参照される ' xxx、バージョン = 0.0.000、Culture = neutral, PublicKeyToken = null'"_ Unified Api にアプリを変換した後は、通常、統合 API が更新されていないプロジェクトで、コンポーネントまたは NuGet パッケージを持つためです。 削除する既存のコンポーネント/NuGet Unified Api をサポートするバージョンに更新して、クリーン ビルドを行う必要があります。
 
 <a name="deprecated-apis" />
 
@@ -154,7 +153,7 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 内部 Xamarin.iOS classic API (monotouch.dll)、`[Obsolete]`属性は、2 つの方法で使用されました。
 
--  **IOS API を非推奨:**これは、Apple のヒントを新しいバージョンが置き換えされているため、API の使用を停止する場合。 従来の API がまだ正常で多くの場合、必要な (iOS の古いバージョンをサポートする) 場合。
+-  **IOS API を非推奨:** これは、Apple のヒントを新しいバージョンが置き換えされているため、API の使用を停止する場合。 従来の API がまだ正常で多くの場合、必要な (iOS の古いバージョンをサポートする) 場合。
  このような API (および`[Obsolete]`属性) 新しい Xamarin.iOS アセンブリに組み込まれます。
 -  **無効な API**一部 API では、入力ミスが、名前にします。
 
