@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: af0dbef84d8ceb178fe5c1ac6fc7194c178141dc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView を実装します。
 
@@ -74,7 +74,7 @@ public class HybridWebView : View
 }
 ```
 
-`HybridWebView`カスタム コントロールは、ポータブル クラス ライブラリ (PCL) プロジェクトに作成され、コントロールの次の API を定義します。
+`HybridWebView`カスタム コントロールは、標準的な .NET のライブラリ プロジェクトに作成され、コントロールの次の API を定義します。
 
 - A`Uri`ロードする web ページのアドレスを指定するプロパティです。
 - A`RegisterAction`を登録する方法、`Action`コントロールを使用します。 登録されているアクションを介して参照された HTML ファイルに格納されている JavaScript から呼び出される、`Uri`プロパティです。
@@ -85,7 +85,7 @@ public class HybridWebView : View
 
 ## <a name="consuming-the-hybridwebview"></a>HybridWebView の使用
 
-`HybridWebView`カスタム コントロールで参照できます XAML PCL プロジェクト内の場所の名前空間の宣言してカスタム コントロールの名前空間プレフィックスを使用します。 次のコード例に示す方法、`HybridWebView`カスタム コントロールを XAML ページで利用できることができます。
+`HybridWebView`カスタム コントロールで参照できます XAML で標準的な .NET のライブラリ プロジェクトの場所の名前空間の宣言してカスタム コントロールの名前空間プレフィックスを使用します。 次のコード例に示す方法、`HybridWebView`カスタム コントロールを XAML ページで利用できることができます。
 
 ```xaml
 <ContentPage ...

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c93681c3bfd8de8d813cbe98a7ac28b3ee8b74fc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-an-entry"></a>エントリをカスタマイズします。
 
@@ -43,13 +43,13 @@ public class MyEntry : Entry
 }
 ```
 
-`MyEntry`コントロールが、ポータブル クラス ライブラリ (PCL) プロジェクトが作成され、単に[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロール。 コントロールのカスタマイズを実行するカスタムのレンダラーでの他の実装は必要ありませんので、`MyEntry`コントロール。
+`MyEntry`コントロールが、標準の .NET ライブラリ プロジェクトが作成され、単に[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロール。 コントロールのカスタマイズを実行するカスタムのレンダラーでの他の実装は必要ありませんので、`MyEntry`コントロール。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
-`MyEntry`コントロールで参照できます XAML PCL プロジェクト内の場所の名前空間の宣言してコントロール要素で名前空間プレフィックスを使用します。 次のコード例に示す方法、`MyEntry`コントロールを XAML ページで利用できることができます。
+`MyEntry`コントロールで参照できます XAML で標準的な .NET のライブラリ プロジェクトの場所の名前空間の宣言してコントロール要素で名前空間プレフィックスを使用します。 次のコード例に示す方法、`MyEntry`コントロールを XAML ページで利用できることができます。
 
 ```xaml
 <ContentPage ...

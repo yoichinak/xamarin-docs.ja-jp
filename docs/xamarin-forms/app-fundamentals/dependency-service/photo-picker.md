@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6945d64e37bc7e0de930093d8a3f71590026182d
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: e552a0bf76572d50eb0d4618af69fc1179979f97
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 04/27/2018
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
-最初に、必要な機能を表現する共有コードでインターフェイスを作成します。 アプリケーションの場合、写真を選択、1 つのメソッドが必要です。 定義されて、 [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs)サンプル コードのポータブル クラス ライブラリ内のインターフェイス。
+最初に、必要な機能を表現する共有コードでインターフェイスを作成します。 アプリケーションの場合、写真を選択、1 つのメソッドが必要です。 定義されて、 [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) .NET 標準ライブラリで、サンプル コードのインターフェイス。
 
 ```csharp
 namespace DependencyServiceSample
@@ -261,7 +261,7 @@ namespace DependencyServiceSample.UWP
 
 ## <a name="implementing-in-shared-code"></a>共有コードで実装します。
 
-プラットフォームごとに、インターフェイスが実装されているようになりました、共通のポータブル クラス ライブラリ内のアプリケーションは、その利用できます。
+これで、プラットフォームごとに、インターフェイスが実装されている .NET 標準ライブラリ内のアプリケーションは、その利用できます。
 
 [ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs)クラスを作成、`Button`写真を選択します。
 

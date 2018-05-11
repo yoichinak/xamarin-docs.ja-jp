@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="local-databases"></a>ローカル データベース
 
@@ -19,7 +19,7 @@ _Xamarin.Forms では、読み込みと共有コードでオブジェクトを�
 
 ## <a name="overview"></a>概要
 
-Xamarin.Forms アプリケーションを使用して、 [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/)を参照して共有コードを組み込むデータベースの操作をするためのパッケージ、 `SQLite` NuGet に含まれているクラスです。 ポータブル クラス ライブラリ (PCL) プロジェクト内の Xamarin.Forms ソリューションをデータベースを格納するパスを返すプラットフォーム固有のプロジェクトでは、データベース操作を定義できます。
+Xamarin.Forms アプリケーションを使用して、 [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/)を参照して共有コードを組み込むデータベースの操作をするためのパッケージ、 `SQLite` NuGet に含まれているクラスです。 .NET 標準ライブラリ プロジェクト内の Xamarin.Forms ソリューションをデータベースを格納するパスを返すプラットフォーム固有のプロジェクトでは、データベース操作を定義できます。
 
 付随する[サンプル アプリケーション](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo)はシンプルな Todo リスト アプリケーションです。 次のスクリーン ショットは、各プラットフォームでサンプルを表示する方法を示しています。
 
@@ -33,7 +33,7 @@ Xamarin.Forms アプリケーションを使用して、 [SQLite.NET PCL NuGet](
 
 <a name="XamarinForms_PCL_Project" />
 
-### <a name="xamarinsforms-pcl-project"></a>Xamarins.Forms PCL Project
+### <a name="xamarinsforms-pcl-project"></a>Xamarins.Forms PCL プロジェクト
 
 Xamarin.Forms PCL プロジェクトに SQLite サポートを追加するには、検索に NuGet の検索機能を使用**sqlite net pcl**してパッケージをインストールします。
 
@@ -43,7 +43,7 @@ Xamarin.Forms PCL プロジェクトに SQLite サポートを追加するには
 
 - **によって作成された:** Frank A. Krueger
 - **Id:** sqlite net pcl
-- **NuGet link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **NuGet リンク:** [sqlite net pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 参照が追加されると、データベース ファイルの場所を調べるには、プラットフォーム固有の機能を抽象化するインターフェイスを記述します。 このサンプルで使用されるインターフェイスでは、1 つのメソッドを定義します。
 
@@ -160,7 +160,7 @@ namespace Todo.iOS
 
 <a name="PCL_Android" />
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android プロジェクト
 
 Android アプリケーションを構成するを使用して、Android プロジェクトを同じ NuGet パッケージを追加、 *NuGet*ウィンドウ。
 

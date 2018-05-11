@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: a9fb90794ec74c46019fd2b4f41d90a2635909cd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb6620e160af4c2c844fa694649c95abdac123f9
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="controls-reference"></a>コントロールのリファレンス
 
 _Xamarin.Forms アプリケーションを構築するために使用されるすべてのビジュアル要素の説明です。_
 
-Xamarin.Forms アプリケーションのビジュアル インターフェイスは、各ターゲット プラットフォームのネイティブ コントロールにマップされているオブジェクトの構築されます。 これによりに含まれている Xamarin.Forms コードを使用して iOS、Android、およびユニバーサル Windows プラットフォームのプラットフォーム固有のアプリケーション、[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)、 [.NET 標準ライブラリ](~/cross-platform/app-fundamentals/net-standard.md)、または、 [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)です。
+Xamarin.Forms アプリケーションのビジュアル インターフェイスは、各ターゲット プラットフォームのネイティブ コントロールにマップされているオブジェクトの構築されます。 これによりに含まれている Xamarin.Forms コードを使用して iOS、Android、およびユニバーサル Windows プラットフォームのプラットフォーム固有のアプリケーション、 [.NET 標準ライブラリ](~/cross-platform/app-fundamentals/net-standard.md)または[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)です。
 
 これら 4 つの記事は、Xamarin.Forms アプリケーションのユーザー インターフェイスの作成に使用される 4 つの主なコントロール グループを示したものです。
 

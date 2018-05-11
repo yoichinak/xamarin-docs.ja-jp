@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d06c3f95f55edb4870279bfc7d5326be4af4b3bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5774d91dad7b733a03219dcce1434798f70d4564
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="1-add-nuget-packages"></a>1.NuGet パッケージを追加します。
 
-Xamarin.Forms PCL およびアプリケーションのプロジェクトには、これらの Nuget パッケージを追加します。
+Xamarin.Forms .NET 標準ライブラリおよびアプリケーション プロジェクトには、これらの Nuget パッケージを追加します。
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
@@ -47,7 +47,7 @@ Xamarin.Forms PCL およびアプリケーションのプロジェクトには�
 </Application>
 ```
 
-**重要:**する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に定型コードを追加することによって`AppDelegate`および Android`MainActivity`です。 これが、将来のプレビュー リリースでは改善されます。
+**重要:** する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に定型コードを追加することによって`AppDelegate`および Android`MainActivity`です。 これが、将来のプレビュー リリースでは改善されます。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.XAML ページを追加します。
@@ -94,7 +94,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 削除、`Content`要素置き換えます、`p:ListDataPage.DataSource`データ ページを設定します。 リモート Json 次の例では、データ ファイルを URL から読み込まれています。
 
-**注:**プレビュー*が必要です*、`StyleClass`属性をデータ ソースのレンダリングのヒントを提供します。 `StyleClass="Events"`プレビューでは事前に定義し、スタイルを含むレイアウトを指す*ハードコードされた*使用されている JSON のデータ ソースを一致するようにします。
+**注:** プレビュー*が必要です*、`StyleClass`属性をデータ ソースのレンダリングのヒントを提供します。 `StyleClass="Events"`プレビューでは事前に定義し、スタイルを含むレイアウトを指す*ハードコードされた*使用されている JSON のデータ ソースを一致するようにします。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,7 +135,7 @@ JSON データの例、[デモ ソース](http://demo3143189.mockable.io/session
 
 [![](get-started-images/demo-sml.png "DataPages サンプル アプリケーション")](get-started-images/demo.png#lightbox "DataPages サンプル アプリケーション")
 
-これは機能するため、構築済みのスタイル**「イベント」**ライト テーマの Nuget パッケージに存在し、(データ ソースに一致するように定義されているスタイルを持つ "title", "image", "presenter").
+これは機能するため、構築済みのスタイル**「イベント」**ライト テーマの Nuget パッケージに存在し、(データ ソースに一致するように定義されているスタイルを持つ 「タイトル」、"image"、「発表者」) です。
 
 「イベント」`StyleClass`ビルドを表示する、`ListDataPage`をカスタム コントロール`CardView`で定義されている Xamarin.Forms.Pages で制御されています。 `CardView`コントロールが 3 つのプロパティ: `ImageSource`、 `Text`、および`Detail`です。 データ ソースの 3 つのフィールド (JSON ファイル) からこれらのプロパティを表示するためにバインドするはハードコードされています。
 
@@ -184,7 +184,7 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 
 **iOS**
 
-**<code>appdelegate.cs</code>**後に次の行を追加 `LoadApplication`
+**<code>appdelegate.cs</code>** 後に次の行を追加 `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

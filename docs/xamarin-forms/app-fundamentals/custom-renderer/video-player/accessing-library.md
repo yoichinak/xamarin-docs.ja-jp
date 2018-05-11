@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: eb3d66630613225c9b2becaa20f73a82f409ce7e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0f58a4a53d41c23e993f8b8b89b3fca44e0733d
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 
 各プラットフォームの 3 つには、デバイスのイメージのライブラリから写真やビデオを選択するユーザーを許可する機能が含まれています。 デバイスのイメージのライブラリからビデオを再生する最初の手順は各プラットフォームのイメージの選択を起動する依存関係サービスを作成しています。 以下に示す依存関係サービスは非常にいずれかのように定義されている、 [**画像ライブラリから写真をピッキング**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)記事、ビデオの選択、ではなく、ファイル名を返す点を除いて`Stream`オブジェクト。
 
-PCL プロジェクトという名前のインターフェイスを定義する`IVideoPicker`の依存関係サービス。
+という名前のインターフェイスを定義する .NET 標準のライブラリ プロジェクト`IVideoPicker`の依存関係サービス。
 
 ```csharp
 namespace FormsVideoLibrary

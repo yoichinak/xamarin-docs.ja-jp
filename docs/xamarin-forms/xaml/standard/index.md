@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 7cb2a79fffda40f09ee75a12d6287b162566741d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b16d146c5ad1097f38c41763a3ae111e7439256f
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xaml-standard-preview"></a>XAML Standard (プレビュー)
 
@@ -22,7 +22,7 @@ Xamarin.Forms で XAML の標準をテストする手順に従います。
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. ダウンロード、 [NuGet パッケージは、ここをプレビュー](https://aka.ms/xf-xamlstandard-nuget)です。
-2. 追加、 **Xamarin.Forms.Alias** Xamarin.Forms PCL、.NET Standard、およびプラットフォームのプロジェクトに NuGet パッケージです。
+2. 追加、 **Xamarin.Forms.Alias** NuGet パッケージ、および Xamarin.Forms .NET 標準プラットフォームのプロジェクトをします。
 3. 使用してパッケージを初期化します。 `Alias.Init()`
 4. 追加、`xmlns:a`参照 `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. XAML の型の使用 - を参照してください、[コントロールのリファレンス](controls.md)詳細についてはします。
@@ -30,7 +30,7 @@ Xamarin.Forms で XAML の標準をテストする手順に従います。
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. ダウンロード、 [NuGet パッケージは、ここをプレビュー](https://aka.ms/xf-xamlstandard-nuget)です。
-2. 追加、 **Xamarin.Forms.Alias** Xamarin.Forms PCL、.NET Standard、およびプラットフォームのプロジェクトに NuGet パッケージです。
+2. 追加、 **Xamarin.Forms.Alias** NuGet パッケージ、および Xamarin.Forms .NET 標準プラットフォームのプロジェクトをします。
 3. 使用してパッケージを初期化します。 `Alias.Init()`
 4. 追加、`xmlns:a`参照 `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. XAML の型の使用 - を参照してください、[コントロールのリファレンス](controls.md)詳細についてはします。

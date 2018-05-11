@@ -6,15 +6,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a9dbf77b85fe7f39c152d4dfb33bdd44c72dca40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="loading-application-resource-videos"></a>アプリケーション リソースのビデオの読み込み
 
-カスタム レンダラー、`VideoPlayer`ビューでも、アプリケーションのリソースとして個々 のプラットフォームのプロジェクトに埋め込まれたビデオ ファイルを再生します。 ただし、現在のバージョンの`VideoPlayer`ポータブル クラス ライブラリに埋め込まれたリソースにアクセスできません。
+カスタム レンダラー、`VideoPlayer`ビューでも、アプリケーションのリソースとして個々 のプラットフォームのプロジェクトに埋め込まれたビデオ ファイルを再生します。 ただし、現在のバージョンの`VideoPlayer`.NET 標準ライブラリに埋め込まれたリソースにアクセスできません。
 
 これらのリソースを読み込むには、インスタンスを作成`ResourceVideoSource`を設定して、`Path`にファイル名 (または、フォルダーとファイル名)、リソースのプロパティです。 また、静的なを呼び出すことができます`VideoSource.FromResource`メソッドからリソースを参照します。 次に、設定、`ResourceVideoSource`オブジェクトを`Source`プロパティ`VideoPlayer`です。 
 

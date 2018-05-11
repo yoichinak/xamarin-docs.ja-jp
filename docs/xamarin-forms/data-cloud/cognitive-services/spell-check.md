@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 41bd79b22aa193dd5303847997bc07e8e8d12e58
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 259be743a706c9316e2e275ff305a0fe5ad97906
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>スペル チェック Bing スペル チェック API を使用して
 
@@ -90,7 +90,7 @@ async Task<string> SendRequestAsync(string url)
 }
 ```
 
-API キーの値として追加すると、このメソッドが GET 要求を作成、`Ocp-Apim-Subscription-Key`ヘッダー。 GET 要求に送信し、 `SpellCheck` API を変換するテキストを指定する要求の URL とスペル チェック モードを使用します。 応答が読み取られ、呼び出し元メソッドに返されます。
+このメソッドが GET 要求を送信、 `SpellCheck` API を変換するテキストを指定する要求の URL とスペル チェック モードを使用します。 応答が読み取られ、呼び出し元メソッドに返されます。
 
 `SpellCheck` API は、要求が有効である、要求が成功したことを示すことと、要求された情報が応答で提供される、応答の HTTP ステータス コード 200 (OK) を送信します。 応答オブジェクトの一覧は、次を参照してください。[応答オブジェクト](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)です。
 

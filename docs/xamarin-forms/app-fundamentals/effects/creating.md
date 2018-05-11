@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 12b8906dd4562e58dede181e773e4046b8434214
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-an-effect"></a>特殊効果を作成します。
 
@@ -188,7 +188,7 @@ namespace EffectsDemo.UWP
 
 ## <a name="consuming-the-effect"></a>効果の使用
 
-Xamarin.Forms ポータブル クラス ライブラリ (PCL) または共有ライブラリ プロジェクトから効果を使用するためのプロセスは次のとおりです。
+Xamarin.Forms .NET 標準ライブラリまたはライブラリの共有プロジェクトから効果を使用するためのプロセスは次のとおりです。
 
 1. 効果は、カスタマイズする、コントロールを宣言します。
 1. コントロールの追加して、コントロールに影響をアタッチ[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)コレクション。
@@ -209,7 +209,7 @@ XAML コード例を次に、 [ `Entry` ](https://developer.xamarin.com/api/type
 </Entry>
 ```
 
-`FocusEffect` PCL にクラスを XAML では、効果の消費をサポートします。 次のコード例に示します。
+`FocusEffect` .NET 標準ライブラリ内のクラスを XAML では、効果の消費をサポートします。 次のコード例に示します。
 
 ```csharp
 public class FocusEffect : RoutingEffect

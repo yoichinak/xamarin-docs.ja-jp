@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/26/2018
-ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/03/2018
+ms.openlocfilehash: 6a0107ec11955f99c62a6f59f9bf82291dee9224
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 
@@ -33,11 +33,11 @@ Phoneword アプリケーションは次のように作成します。
 
 3. **[新しいプロジェクト]** ダイアログで、**[クロスプラットフォーム]** をクリックして、**[Mobile App (Xamarin.Forms)]\(モバイル アプリ (Xamarin.Forms)\)** テンプレートを選択し、[名前] と [ソリューション名] を `Phoneword` に設定し、プロジェクトの適切な場所を選択し、**[OK]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/new-project.png "クロスプラットフォームのプロジェクト テンプレート")
+    ![](quickstart-images/vs/new-project.w157.png "クロスプラットフォームのプロジェクト テンプレート")
 
 4. **[新しいクロスプラットフォーム アプリ]** ダイアログで、**[空のアプリケーション]** をクリックして、コード共有方法として **[.NET Standard]** を選択し、**[OK]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/new-app.png "新しいクロスプラットフォーム アプリ")
+    ![](quickstart-images/vs/new-app.png "新しいクロスプラット フォーム アプリ")
 
 5. **ソリューション エクスプローラー**の **Phoneword** プロジェクトで、**MainPage.xaml** をダブルクリックして開きます。
 
@@ -168,7 +168,7 @@ Phoneword アプリケーションは次のように作成します。
 
 12. **[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[クラス]** の順に選択し、新しいファイルに **PhoneTranslator** という名前を付け、**[追加]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/add-translator-class.png "新しいクラスの追加")
+    ![](quickstart-images/vs/add-translator-class.w157.png "新しいクラスの追加")
 
 13. **PhoneTranslator.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。 このコードにより、電話の単語が電話番号に変換されます。
 
@@ -234,7 +234,7 @@ Phoneword アプリケーションは次のように作成します。
 
 15. **[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[インターフェイス]** の順に選択し、新しいファイルに **IDialer** という名前を付け、**[追加]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/add-idialer-interface.png "新しいインターフェイスの追加")
+    ![](quickstart-images/vs/add-idialer-interface.w157.png "新しいインターフェイスの追加")
 
 16. **IDialer.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。 このコードでは、変換された電話番号にダイヤルするために、各プラットフォームに実装する必要がある `Dial` メソッドを定義します。
 
@@ -257,9 +257,9 @@ Phoneword アプリケーションは次のように作成します。
 
     ![](quickstart-images/vs/add-new-item-ios.png "新しい項目の追加")
 
-18. **[新しい項目の追加]** ダイアログで、**[Apple]、[コード]、[クラス]** の順に選択し、新しいファイルに **PhoneDialer** という名前を付け、**[追加]** ボタンをクリックします。
+18. **[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[クラス]** の順に選択し、新しいファイルに **PhoneDialer** という名前を付け、**[追加]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/new-phone-dialer-ios.png "新しいクラスの追加")
+    ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "新しいクラスの追加")
 
 19. **PhoneDialer.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。 このコードにより、iOS プラットフォームが、変換された電話番号をダイヤルする <code>Dial</code> メソッドが作成されます。
 
@@ -291,7 +291,7 @@ Phoneword アプリケーションは次のように作成します。
 
 21. **[新しい項目の追加]** ダイアログで、**[Visual C#]、[Android]、[クラス]** の順に選択し、新しいファイルに **PhoneDialer** という名前を付け、**[追加]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/new-phone-dialer-android.png "新しいクラスの追加")
+    ![](quickstart-images/vs/new-phone-dialer-android.w157.png "新しいクラスの追加")
 
 22. **PhoneDialer.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。 このコードにより、Android プラットフォームが、変換された電話番号をダイヤルする `Dial` メソッドが作成されます。
 
@@ -391,7 +391,7 @@ Phoneword アプリケーションは次のように作成します。
 
 27. **[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[クラス]** の順に選択し、新しいファイルに **PhoneDialer** という名前を付け、**[追加]** ボタンをクリックします。
 
-    ![](quickstart-images/vs/new-phone-dialer-uwp.png "新しいクラスの追加")
+    ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "新しいクラスの追加")
 
 28. **PhoneDialer.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。 このコードにより、ユニバーサル Windows プラットフォームが変換された電話番号をダイヤルする `Dial` メソッドとヘルパー メソッドが作成されます。
 
@@ -523,7 +523,7 @@ Phoneword アプリケーションは次のように作成します。
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, UWP" Value="20" />
+                <On Platform="Android, WinPhone, Windows" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ Phoneword アプリケーションは次のように作成します。
     }
     ```
 
-    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**Phoneword.cs** への変更内容を保存してから、ファイルを閉じます。
 
 13. **Solution Pad** で **Phoneword** プロジェクトを選択し、右クリックして、**[追加]、[新しいファイル]** の順に選択します。
 

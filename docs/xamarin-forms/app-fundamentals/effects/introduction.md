@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 7b859dd58551675c121c5600ba9c691e4280a03b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-effects"></a>影響の概要
 
@@ -21,7 +21,7 @@ Xamarin.Forms[ページ、レイアウトとコントロール](~/xamarin-forms/
 
 開発者は独自の `Renderer` クラスを実装して、コントロールの外観や動作をカスタマイズできます。 ただし、単純なコントロールのカスタマイズを実行するカスタム レンダラー クラスの実装は、ヘビーウェイト応答では多くの場合です。 効果より簡単にカスタマイズするには、各プラットフォームでネイティブ コントロールを許可する、このプロセスを簡略化します。
 
-サブクラス化で効果はプラットフォーム固有のプロジェクトに作成、`PlatformEffect`コントロールとし、効果は使用されている場合、Xamarin.Forms ポータブル クラス ライブラリ (PCL) または共有ライブラリのプロジェクトに適切なコントロールに添付しています。
+サブクラス化で効果はプラットフォーム固有のプロジェクトに作成、`PlatformEffect`コントロールとし、効果は使用されている場合、Xamarin.Forms .NET 標準ライブラリまたはライブラリの共有プロジェクトに適切なコントロールに添付しています。
 
 ## <a name="why-use-an-effect-over-a-custom-renderer"></a>カスタム レンダラーを特殊効果を使用する理由
 

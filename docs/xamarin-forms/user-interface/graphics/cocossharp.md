@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 5fcc3405780e0c5e8a0e8d32caf35abf59808c8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7ce541134e6db9a26699f96ab3114ced2ad22244
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms で CocosSharp の使用
 
@@ -53,13 +53,13 @@ Xamarin.Forms は、プラットフォーム固有のネイティブ UI のシ�
 ## <a name="adding-the-cocossharp-nuget-packages"></a>CocosSharp Nuget パッケージを追加します。
 
 CocosSharp を使用する前に開発者は、Xamarin.Forms プロジェクトにいくつかの項目を追加する必要があります。
-この前提として、iOS、Android、および PCL Xamarin.Forms プロジェクト プロジェクト。
-すべてのコードを書き込む PCL プロジェクトにあります。ただし、ライブラリは、iOS および Android のプロジェクトに追加する必要があります。
+この前提として、iOS、Android、および .NET 標準と Xamarin.Forms プロジェクト ライブラリ プロジェクト。
+すべてのコードは標準の .NET ライブラリ プロジェクトで書かれますただし、ライブラリは、iOS および Android のプロジェクトに追加する必要があります。
 
 CocosSharp Nuget パッケージには、すべての CocosSharp オブジェクトを作成するために必要なオブジェクトが含まれています。
 CocosSharp.Forms nuget パッケージに含まれる、 `CocosSharpView` xamarin.forms CocosSharp のホストに使用されるクラスです。
 追加、 **CocosSharp.Forms** NuGet と**CocosSharp**も自動的に追加されます。
-これを行うには、PCL の上を右クリックして<span class="UIItem">パッケージ</span>フォルダーと選択<span class="UIItem">パッケージを追加しています.</span>.検索語句を入力<span class="UIItem">CocosSharp.Forms</span>を選択<span class="UIItem">Xamarin.Forms の CocosSharp</span>をクリックし、<span class="UIItem">パッケージの追加</span>です。
+これを行うを右クリックし、<span class="UIItem">パッケージ</span>フォルダーをクリックし、標準的な .NET のライブラリ プロジェクトで<span class="UIItem">パッケージを追加しています.</span>.検索語句を入力<span class="UIItem">CocosSharp.Forms</span>を選択<span class="UIItem">Xamarin.Forms の CocosSharp</span>をクリックし、<span class="UIItem">パッケージの追加</span>です。
 
 ![](cocossharp-images/image1.png "追加のパッケージ ダイアログ ボックス")
 
@@ -198,7 +198,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 1 つだけ`CCScene`一度にアクティブにできます。 ほとんどのゲーム複数回使用`CCLayer`並べ替えコンテンツは、アプリケーションのインスタンスを使用して 1 つだけです。 同様に、ほとんどのゲームは、複数のビジュアル オブジェクトを使用して、のみした、アプリケーション内で 1 つ。 詳細な階層構造は含まれて CocosSharp について、 [BouncingGame チュートリアル](~/graphics-games/cocossharp/bouncing-game.md)です。
 
-最初に、`GameScene`クラスはほとんど空になります: を作成しましょう内の参照を満たすために、`HomePage`です。 という名前の PCL に新しいクラスを追加`GameScene`です。 継承する必要がありますが、`CCScene`クラスの次のようにします。
+最初に、`GameScene`クラスはほとんど空になります: を作成しましょう内の参照を満たすために、`HomePage`です。 名前付き .NET 標準ライブラリ プロジェクトに新しいクラスを追加`GameScene`です。 継承する必要がありますが、`CCScene`クラスの次のようにします。
 
 
 ```csharp

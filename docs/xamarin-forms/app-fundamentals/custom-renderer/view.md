@@ -6,12 +6,12 @@ ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/10/2018
+ms.openlocfilehash: 757cd9c0b3b8414b5a8c01af0cf4ffc9b9b8afc4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-view"></a>ビューを実装します。
 
@@ -268,45 +268,50 @@ namespace CustomRenderer.Droid
 次のコード例は、UWP のカスタム レンダラーを示しています。
 
 ```csharp
-[assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
+[assembly: ExportRenderer(typeof(CameraPreview), typeof(CameraPreviewRenderer))]
 namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
-        MediaCapture mediaCapture;
-        CaptureElement captureElement;
-        CameraOptions cameraOptions;
-        Application app;
-        bool isPreviewing = false;
+        ...
+        CaptureElement _captureElement;
+        bool _isPreviewing;
 
-        protected override void OnElementChanged (ElementChangedEventArgs<CameraPreview> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<CameraPreview> e)
         {
-            base.OnElementChanged (e);
+            base.OnElementChanged(e);
 
-            if (Control == null) {
+            if (Control == null)
+            {
                 ...
-                captureElement = new CaptureElement ();
-                captureElement.Stretch = Stretch.UniformToFill;
+                _captureElement = new CaptureElement();
+                _captureElement.Stretch = Stretch.UniformToFill;
 
-                InitializeAsync ();
-                SetNativeControl (captureElement);
+                SetupCamera();
+                SetNativeControl(_captureElement);
             }
-            if (e.OldElement != null) {
+            if (e.OldElement != null)
+            {
                 // Unsubscribe
                 Tapped -= OnCameraPreviewTapped;
+                ...
             }
-            if (e.NewElement != null) {
+            if (e.NewElement != null)
+            {
                 // Subscribe
                 Tapped += OnCameraPreviewTapped;
             }
         }
 
-        async void OnCameraPreviewTapped (object sender, TappedRoutedEventArgs e)
+        async void OnCameraPreviewTapped(object sender, TappedRoutedEventArgs e)
         {
-            if (isPreviewing) {
-                await StopPreviewAsync ();
-            } else {
-                await StartPreviewAsync ();
+            if (_isPreviewing)
+            {
+                await StopPreviewAsync();
+            }
+            else
+            {
+                await StartPreviewAsync();
             }
         }
         ...
@@ -314,7 +319,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`Control`プロパティは`null`、新しい`CaptureElement`がインスタンス化されると、`InitializeAsync`メソッドは、使用する、`MediaCapture`カメラからプレビュー ストリームを提供する API。 `SetNativeControl`への参照を割り当てるにはメソッドが呼び出されます、`CaptureElement`インスタンスを`Control`プロパティです。 `CaptureElement`公開を制御、`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止およびがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントがサブスクライブするいるとカスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているレンダラーでは、要素が変更にアタッチされている場合にのみを購読解除します。
+`Control`プロパティは`null`、新しい`CaptureElement`がインスタンス化されると、`SetupCamera`メソッドは、使用する、`MediaCapture`カメラからプレビュー ストリームを提供する API。 `SetNativeControl`への参照を割り当てるにはメソッドが呼び出されます、`CaptureElement`インスタンスを`Control`プロパティです。 `CaptureElement`公開を制御、`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止およびがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントがサブスクライブするいるとカスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているレンダラーでは、要素が変更にアタッチされている場合にのみを購読解除します。
 
 > [!NOTE]
 > 停止し、UWP アプリケーションでカメラへのアクセスを提供するオブジェクトの破棄に重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。[カメラのプレビューを表示](/windows/uwp/audio-video-camera/simple-camera-preview-access/)です。

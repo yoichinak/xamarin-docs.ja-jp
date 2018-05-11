@@ -6,12 +6,12 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e254aa14f5889cee6b5bee452f5275fd579eb8fc
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: 9bb368ca72909489ca267794035a4c4d0883f109
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms の詳細
 
@@ -54,7 +54,7 @@ Visual Studio for Mac は、コードを*ソリューション*と*プロジェ�
 
 プロジェクトの内容:
 
-- Phoneword: このプロジェクトは、すべての共有コードと共有 UI を保持するポータブル クラス ライブラリ (PCL) プロジェクトです。
+- Phoneword - このプロジェクトは、すべての共有コードと共有 UI を保持する .NET Standard ライブラリ プロジェクトです。
 - Phoneword.Droid: このプロジェクトは、Android 固有のコードを保持します。Android アプリケーションのエントリ ポイントです。
 - Phoneword.iOS: このプロジェクトは、iOS 固有のコードを保持します。iOS アプリケーションのエントリ ポイントです。
 
@@ -94,7 +94,7 @@ Xamarin.Forms アプリケーションは、従来のクロスプラットフォ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Xamarin.Forms アプリケーションは、従来のクロスプラットフォーム アプリケーションと同じ方法で設計されています。 通常、共有コードはポータブル クラス ライブラリ (PCL) に配置され、プラットフォーム固有のアプリケーションは共有コードを使用します。 次の図は、Phoneword アプリケーションのこの関係の概要を示しています。
+Xamarin.Forms アプリケーションは、従来のクロスプラットフォーム アプリケーションと同じ方法で設計されています。 通常、共有コードは .NET Standard ライブラリに配置され、プラットフォーム固有のアプリケーションは共有コードを使用します。 次の図は、Phoneword アプリケーションのこの関係の概要を示しています。
 
 ![](deepdive-images/xs/architecture.png "Phoneword アーキテクチャ")
 

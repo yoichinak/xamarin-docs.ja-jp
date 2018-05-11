@@ -3,15 +3,14 @@ title: クロスプラットフォームのパフォーマンス
 description: Xamarin プラットフォームでビルドされたアプリケーションのパフォーマンスを高めるための手法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。 この記事では、これらの方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 98b4b4a9e7bc28dd444cfdcb1afdfbe64cb1aee0
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
@@ -168,7 +167,7 @@ public class Subscriber : IDisposable
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>弱い参照を使用して不変オブジェクトを回避する
 
 > [!NOTE]
-> iOS 開発者は、アプリでメモリを効率的に使用できるように、[iOS での循環参照の回避](~/ios/deploy-test/performance.md#avoidcircularreferences)に関するドキュメントを確認する必要があります。
+> iOS 開発者は、アプリでメモリを効率的に使用できるように、[iOS での循環参照の回避](~/ios/deploy-test/performance.md#avoid-strong-circular-references)に関するドキュメントを確認する必要があります。
 
 <a name="lazy" />
 

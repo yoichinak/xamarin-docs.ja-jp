@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 8421355e0630a637589cb4f08c2fec4ea9cdab24
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1a982078f7a3fb2ba462cd7d6f1420b1d27618f7
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms で UrhoSharp の使用
 
@@ -27,10 +27,10 @@ UrhoSharp は、Xamarin.Forms アプリケーションでグラフィックス�
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>UrhoSharp Nuget パッケージを追加します。
 
-UrhoSharp を使用する前に開発者がそのソリューションに UrhoSharp Nuget パッケージを追加する必要があります。 この前提として、iOS、Android、および PCL Xamarin.Forms プロジェクト プロジェクト。 すべてのコードを書き込む PCL プロジェクトにあります。UrhoSharp Nuget をすぎる iOS および Android のプロジェクトに追加する必要があります。
+UrhoSharp を使用する前に開発者がそのソリューションに UrhoSharp Nuget パッケージを追加する必要があります。 この前提として、iOS、Android、および .NET 標準と Xamarin.Forms プロジェクト ライブラリ プロジェクト。 すべてのコードは標準の .NET ライブラリ プロジェクトで書かれますUrhoSharp Nuget をすぎる iOS および Android のプロジェクトに追加する必要があります。
 
 UrhoSharp.Forms Nuget パッケージには、すべての UrhoSharp オブジェクトを作成するために必要なオブジェクトが含まれています。 UrhoSharp.Forms nuget パッケージに含まれる、 `UrhoSurface` xamarin.forms UrhoSharp のホストに使用されるクラスです。
-を開始するには、PCL の上を右クリックして**パッケージ**フォルダーと選択**パッケージを追加しています.**.検索語句を入力**UrhoSharp.Forms**を選択**Xamarin.Forms の UrhoSharp**をクリックし、**パッケージの追加**です。
+を開始するには、を右クリックし、**パッケージ**フォルダーをクリックし、標準的な .NET のライブラリ プロジェクトで**パッケージを追加しています.**.検索語句を入力**UrhoSharp.Forms**を選択**Xamarin.Forms の UrhoSharp**をクリックし、**パッケージの追加**です。
 
 [![](urhosharp-images/add-package-sml.png "[追加] ダイアログのパッケージ")](urhosharp-images/add-package.png#lightbox "パッケージ ダイアログの追加")
 

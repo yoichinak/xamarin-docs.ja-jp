@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fd96770caf92eb30e669133f592f5d780146be59
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell をカスタマイズします。
 
@@ -65,13 +65,13 @@ public class NativeCell : ViewCell
   }
 }
 ```
-`NativeCell`クラスは、ポータブル クラス ライブラリ (PCL) プロジェクトが作成され、カスタムのセルの API を定義します。 カスタムのセルを公開`Name`、 `Category`、および`ImageFilename`データ バインディングによって表示可能なプロパティです。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
+`NativeCell`クラスが標準的な .NET のライブラリ プロジェクトで作成され、カスタムのセルの API を定義します。 カスタムのセルを公開`Name`、 `Category`、および`ImageFilename`データ バインディングによって表示可能なプロパティです。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
 <a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>カスタムのセルの使用
 
-`NativeCell`カスタム セルできますによって参照される Xaml で PCL プロジェクト内の場所の名前空間の宣言とカスタム セル要素に名前空間プレフィックスを使用します。 次のコード例に示す方法、 `NativeCell` XAML ページで使用できるカスタム セル。
+`NativeCell`カスタム セルで参照できます Xaml で、標準的な .NET のライブラリ プロジェクトの場所の名前空間の宣言してカスタム セル要素の名前空間プレフィックスを使用します。 次のコード例に示す方法、 `NativeCell` XAML ページで使用できるカスタム セル。
 
 ```xaml
 <ContentPage ...

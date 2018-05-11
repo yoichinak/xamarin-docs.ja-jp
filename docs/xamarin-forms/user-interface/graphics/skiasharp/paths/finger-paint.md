@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 6180eb61e7850b7739c5514461796fb0aacbc4ff
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="finger-painting"></a>本の指の描画
 
@@ -23,7 +23,7 @@ _指を使用して、キャンバスに描画します。_
 
 Xamarin.Forms でタッチのサポートでは、Xamarin.Forms タッチ追跡効果は、追加のタッチ サポートを提供する開発が完了するために、画面で、個々 の本の指を追跡することはできません。 この効果は、資料に記載されて[**効果からイベントを呼び出す**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)です。 サンプル プログラム[**タッチ追跡効果デモ**](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) SkiaSharp、finger-painting プログラムなどを使用する 2 つのページが含まれています。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ソリューションには、このタッチ追跡イベントが含まれています。 ポータブル クラス ライブラリ プロジェクトに含まれる、`TouchEffect`クラス、`TouchActionType`列挙型、`TouchActionEventHandler`デリゲート、および`TouchActionEventArgs`クラスです。 プラットフォーム プロジェクトそれぞれを含める、`TouchEffect`そのプラットフォームのクラス以外の場合は、iOS プロジェクトにも含まれています、`TouchRecognizer`クラスです。
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ソリューションには、このタッチ追跡イベントが含まれています。 .NET 標準のライブラリ プロジェクトに含まれる、`TouchEffect`クラス、`TouchActionType`列挙型、`TouchActionEventHandler`デリゲート、および`TouchActionEventArgs`クラスです。 プラットフォーム プロジェクトそれぞれを含める、`TouchEffect`そのプラットフォームのクラス以外の場合は、iOS プロジェクトにも含まれています、`TouchRecognizer`クラスです。
 
 **指ペイント**ページに**SkiaSharpFormsDemos**本の指の描画のシンプルな実装です。 色を選択できるようにしたり、幅の境界線の描画しないキャンバスをクリアすることがない、および、もちろん、アートワークを保存することはできません。
 

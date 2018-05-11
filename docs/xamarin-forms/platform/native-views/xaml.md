@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 24e7f29e42607d4a2c957cf85dad15f659d3618e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-xaml"></a>XAML でのネイティブのビュー
 
@@ -74,7 +74,7 @@ Xamarin.Forms の XAML ファイルへのネイティブのビューを埋め込
 Android のウィジェットのコンス トラクターは通常、Android を必要と`Context`オブジェクトでは、引数が、これが利用できる静的プロパティを通じて、`MainActivity`クラスです。 したがって、XAML では、Android のウィジェットを作成するときに、`Context`オブジェクトは、ウィジェットのコンス トラクターに渡すことが一般的を使用して、`x:Arguments`属性が、`x:Static`マークアップ拡張機能です。 詳細については、次を参照してください。[をネイティブのビューに渡す引数](#passing_arguments)です。
 
 > [!NOTE]
-> ネイティブのビューの名前を付けることに注意してください`x:Name`ポータブル クラス ライブラリ (PCL) プロジェクトまたは共有アセット プロジェクト (SAP) では不可能です。 これにより、コンパイル エラーの原因は、ネイティブ型の変数が生成されます。 ただし、ネイティブのビューにラップできます`ContentView`インスタンスおよび SAP が使用されていること、分離コード ファイルで取得します。 詳細については、次を参照してください。[コードからネイティブのビューを参照する](#native_view_code)です。
+> ネイティブのビューの名前を付けることに注意してください`x:Name`.NET 標準ライブラリ プロジェクトまたは共有アセット プロジェクト (SAP) のいずれかでは不可能です。 これにより、コンパイル エラーの原因は、ネイティブ型の変数が生成されます。 ただし、ネイティブのビューにラップできます`ContentView`インスタンスおよび SAP が使用されていること、分離コード ファイルで取得します。 詳細については、次を参照してください。[コードからネイティブのビューを参照する](#native_view_code)です。
 
 <a name="native_bindings" />
 
@@ -285,7 +285,7 @@ IOS および Android のネイティブ ボタンが同じ`OnButtonTap`イベ�
 
 ## <a name="subclassing-native-views"></a>ネイティブのビューをサブクラス化
 
-多くの iOS と Android のネイティブ ビューは、コントロールを設定するプロパティではなく、メソッドを使用するために、XAML でインスタンス化するのに適したではありません。 この問題を解決では、ネイティブのビューのラッパーのプロパティを使用して、コントロールをセットアップして、プラットフォームに依存しないイベントを使用する複数の XAML フレンドリな API の定義にサブクラスです。 ラップされたネイティブ ビューし共有アセット プロジェクト (SAP) に配置していると、条件付きコンパイル ディレクティブで囲まれまたはプラットフォーム固有のプロジェクトに配置してポータブル クラス ライブラリ (PCL) プロジェクトでは、XAML から参照されています。
+多くの iOS と Android のネイティブ ビューは、コントロールを設定するプロパティではなく、メソッドを使用するために、XAML でインスタンス化するのに適したではありません。 この問題を解決では、ネイティブのビューのラッパーのプロパティを使用して、コントロールをセットアップして、プラットフォームに依存しないイベントを使用する複数の XAML フレンドリな API の定義にサブクラスです。 ラップされたネイティブ ビューする共有アセット プロジェクト (SAP) に配置していると、条件付きコンパイル ディレクティブで囲まれまたはプラットフォーム固有のプロジェクトに配置し、.NET 標準ライブラリ プロジェクトに XAML から参照します。
 
 次のコード例では、Xamarin.Forms ページを使用するには、ネイティブのビューがサブクラス化を示しています。
 
@@ -489,7 +489,7 @@ class MySpinner : Spinner
 
 - [NativeSwitch (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
 - [Forms2Native (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Forms2Native/)
-- [NativeViewInsideContentView (sample)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeViewInsideContentView/)
+- [NativeViewInsideContentView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeViewInsideContentView/)
 - [SubclassedNativeControls (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/SubclassedNativeControls/)
 - [ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)
 - [XAML で引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)

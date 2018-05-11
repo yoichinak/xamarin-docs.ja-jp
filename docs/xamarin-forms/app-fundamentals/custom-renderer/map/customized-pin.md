@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 04d3d99a5d85dd77c93e9b926e8952cc3d8a771e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-map-pin"></a>マップの暗証番号 (pin) をカスタマイズします。
 
@@ -47,7 +47,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap`コントロールは、ポータブル クラス ライブラリ (PCL) プロジェクトが作成され、カスタム マップの API を定義します。 カスタムのマップを公開、`CustomPins`プロパティのコレクションを表す`CustomPin`各プラットフォームでネイティブ マップ コントロールによって表示されるオブジェクト。 `CustomPin`クラスが次のコード例に示すようにします。
+`CustomMap`コントロールは、標準的な .NET のライブラリ プロジェクトに作成され、カスタム マップの API を定義します。 カスタムのマップを公開、`CustomPins`プロパティのコレクションを表す`CustomPin`各プラットフォームでネイティブ マップ コントロールによって表示されるオブジェクト。 `CustomPin`クラスが次のコード例に示すようにします。
 
 ```csharp
 public class CustomPin : Pin
@@ -62,7 +62,7 @@ public class CustomPin : Pin
 
 ## <a name="consuming-the-custom-map"></a>カスタムのマップの使用
 
-`CustomMap`コントロールで参照できます XAML PCL プロジェクト内の場所の名前空間の宣言してカスタム マップ コントロールに名前空間プレフィックスを使用します。 次のコード例に示す方法、`CustomMap`コントロールを XAML ページで利用できることができます。
+`CustomMap`コントロールで参照できます XAML で標準的な .NET のライブラリ プロジェクトの場所の名前空間の宣言してカスタム マップ コントロールに名前空間プレフィックスを使用します。 次のコード例に示す方法、`CustomMap`コントロールを XAML ページで利用できることができます。
 
 ```xaml
 <ContentPage ...
@@ -322,7 +322,7 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-このメソッドは、web ブラウザーを起動しに格納されているアドレスに移動、`CustomMKAnnotationView.Url`プロパティです。 作成するときにアドレスが定義されたことに注意してください、 `CustomPin` PCL プロジェクト内のコレクション。
+このメソッドは、web ブラウザーを起動しに格納されているアドレスに移動、`CustomMKAnnotationView.Url`プロパティです。 作成するときにアドレスが定義されたことに注意してください、 `CustomPin` .NET 標準のライブラリ プロジェクト内のコレクション。
 
 <a name="Deselecting_the_Annotation" />
 
@@ -499,7 +499,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-このメソッドは、web ブラウザーを起動しに格納されているアドレスに移動、`Url`プロパティを取得して、`CustomPin`インスタンスの場合、`Marker`です。 作成するときにアドレスが定義されたことに注意してください、 `CustomPin` PCL プロジェクト内のコレクション。
+このメソッドは、web ブラウザーを起動しに格納されているアドレスに移動、`Url`プロパティを取得して、`CustomPin`インスタンスの場合、`Marker`です。 作成するときにアドレスが定義されたことに注意してください、 `CustomPin` .NET 標準のライブラリ プロジェクト内のコレクション。
 
 カスタマイズの詳細については、`MapView`インスタンスは、「[マップ API](~/android/platform/maps-and-location/maps/maps-api.md)です。
 
@@ -645,7 +645,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-このメソッドは、web ブラウザーを起動しに格納されているアドレスに移動、`Url`のプロパティ、`CustomPin`インスタンス。 作成するときにアドレスが定義されたことに注意してください、 `CustomPin` PCL プロジェクト内のコレクション。
+このメソッドは、web ブラウザーを起動しに格納されているアドレスに移動、`Url`のプロパティ、`CustomPin`インスタンス。 作成するときにアドレスが定義されたことに注意してください、 `CustomPin` .NET 標準のライブラリ プロジェクト内のコレクション。
 
 カスタマイズの詳細については、`MapControl`インスタンスは、「[マップや場所概要](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx)msdn です。
 

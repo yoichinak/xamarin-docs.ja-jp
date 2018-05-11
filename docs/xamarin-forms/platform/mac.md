@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: de08e686fc07595b75016b9266f57b12831e9822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0985fb533969a331ceee62f490bae600de9f189c
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="mac-platform-setup"></a>Mac プラットフォームのセットアップ
 
@@ -39,9 +39,9 @@ Sierra および Mac OS X 許可されて macOS で実行する Mac アプリケ
 
   ![Cocoa アプリを追加する方法を示すアニメーションの手順](mac-images/add-macos-proj.gif)
 
-5. Mac プロジェクトを右クリックして**パッケージ > パッケージを追加しています.**を追加する、 [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet です。 このバージョンへの他のプロジェクトを更新することも必要があります。
+5. Mac プロジェクトを右クリックして**パッケージ > パッケージを追加しています.** を追加する、 [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet です。 このバージョンへの他のプロジェクトを更新することも必要があります。
 
-6. Mac プロジェクトを右クリックして**参照**Xamarin.Forms プロジェクト (共有プロジェクトまたは PCL) への参照を追加します。
+6. Mac プロジェクトを右クリックして**参照**Xamarin.Forms プロジェクト (共有プロジェクトまたは .NET 標準ライブラリ プロジェクト) への参照を追加します。
 
   ![Xamarin.Forms 共有コード プロジェクトへの参照を追加します。](mac-images/references-sml.png)
 

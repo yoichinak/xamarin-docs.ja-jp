@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: eb4ed3df4ea1f9e6aacf1c875eab17908d73cb7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e363cae4dd72a25e4768395410d4e56a8db30eba
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="invoking-events-from-effects"></a>呼び出し元のイベントの効果を適用
 
@@ -49,7 +49,7 @@ UWP アプローチは、アプリケーション、音楽キーボードなど�
 
 ## <a name="the-touch-tracking-effect-api"></a>タッチ追跡効果 API
 
-[**追跡効果デモのタッチ**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)サンプルには、低レベルのタッチの追跡を実装するクラス (および列挙) が含まれています。 これらの型が、名前空間に属する`TouchTracking`という単語で始まる`Touch`です。 **TouchTrackingEffectDemos**ポータブル クラス ライブラリ プロジェクトに含まれる、`TouchActionType`タッチ イベントの種類を列挙します。
+[**追跡効果デモのタッチ**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)サンプルには、低レベルのタッチの追跡を実装するクラス (および列挙) が含まれています。 これらの型が、名前空間に属する`TouchTracking`という単語で始まる`Touch`です。 **TouchTrackingEffectDemos** .NET 標準のライブラリ プロジェクトに含まれる、`TouchActionType`タッチ イベントの種類を列挙します。
 
 ```csharp
 public enum TouchActionType
@@ -65,7 +65,7 @@ public enum TouchActionType
 
 すべてのプラットフォームでは、タッチ イベントが取り消されましたことを示すイベントも含まれます。
 
-`TouchEffect` 、PCL にクラスから派生`RoutingEffect`という名前のイベントを定義および`TouchAction`という名前のメソッドと`OnTouchAction`を呼び出す、`TouchAction`イベント。
+`TouchEffect` .NET 標準ライブラリ内のクラスから派生`RoutingEffect`という名前のイベントを定義および`TouchAction`という名前のメソッドと`OnTouchAction`を呼び出す、`TouchAction`イベント。
 
 ```csharp
 public class TouchEffect : RoutingEffect
@@ -87,7 +87,7 @@ public class TouchEffect : RoutingEffect
 
 また、`Capture`プロパティです。 タッチ イベントをキャプチャするアプリケーションこのプロパティを設定する必要があります`true`より前のバージョン、`Pressed`イベント。 それ以外の場合、タッチ イベントは、ユニバーサル Windows プラットフォームのように動作します。
 
-`TouchActionEventArgs` PCL にクラスには、各イベントに付属しているすべての情報が含まれています。
+`TouchActionEventArgs` .NET 標準ライブラリ内のクラスには、各イベントに付属しているすべての情報が含まれています。
 
 ```csharp
 public class TouchActionEventArgs : EventArgs
@@ -112,7 +112,7 @@ public class TouchActionEventArgs : EventArgs
 
 アプリケーションで使用できます、`Id`個々 の本の指を追跡するためのプロパティです。 通知、`IsInContact`プロパティです。 このプロパティは常に`true`の`Pressed`イベントと`false`の`Released`イベント。 常に`true`の`Moved`iOS および Android 上のイベントです。 `IsInContact`プロパティがあります`false`の`Moved`デスクトップでプログラムが実行され、ボタンなくマウス ポインターを動かしたときに、ユニバーサル Windows プラットフォーム上のイベントが押されました。
 
-使用することができます、`TouchEffect`とするインスタンスを追加することで、ソリューションの PCL プロジェクトにファイルを含めることで、独自のアプリケーション内のクラス、 `Effects` Xamarin.Forms の任意の要素のコレクション。 ハンドラーをアタッチ、`TouchAction`タッチ イベントを取得するイベントです。
+使用することができます、`TouchEffect`にインスタンスを追加して、ソリューションの標準の .NET ライブラリ プロジェクトで、ファイルを含むによって独自のアプリケーション内のクラス、 `Effects` Xamarin.Forms の任意の要素のコレクション。 ハンドラーをアタッチ、`TouchAction`タッチ イベントを取得するイベントです。
 
 使用する`TouchEffect`独自のアプリケーションに含まれるプラットフォームの実装を必要がありますも**TouchTrackingEffectDemos**ソリューションです。
 
@@ -151,7 +151,7 @@ public class TouchEffect : PlatformEffect
         // Get the Windows FrameworkElement corresponding to the Element that the effect is attached to
         frameworkElement = Control == null ? Container : Control;
 
-        // Get access to the TouchEffect class in the PCL
+        // Get access to the TouchEffect class in the .NET Standard library
         effect = (TouchTracking.TouchEffect)Element.Effects.
                     FirstOrDefault(e => e is TouchTracking.TouchEffect);
 
@@ -203,7 +203,7 @@ public class TouchEffect : PlatformEffect
 }
 ```
 
-`OnPointerPressed` またの値を調べて、 `Capture` PCL および呼び出しで効果クラスのプロパティの`CapturePointer`である場合`true`です。
+`OnPointerPressed` またの値を調べて、 `Capture` .NET 標準ライブラリの呼び出しで効果クラスのプロパティの`CapturePointer`である場合`true`です。
 
  その他の UWP イベント ハンドラーよりシンプルになりました。
 
@@ -267,7 +267,7 @@ void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
 
             idToEffectDictionary.Add(id, this);
 
-            capture = pclTouchEffect.Capture;
+            capture = libTouchEffect.Capture;
             break;
 
 ```
@@ -278,7 +278,7 @@ void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
 void FireEvent(TouchEffect touchEffect, int id, TouchActionType actionType, Point pointerLocation, bool isInContact)
 {
     // Get the method to call for firing events
-    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.pclTouchEffect.OnTouchAction;
+    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.libTouchEffect.OnTouchAction;
 
     // Get the location of the pointer within the view
     touchEffect.view.GetLocationOnScreen(twoIntArray);

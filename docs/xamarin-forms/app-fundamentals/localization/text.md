@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: cf0e7cab0c879f8fb286c87b2aaadab2dc1453f8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -32,7 +32,7 @@ _Xamarin.Forms アプリは、.NET リソース ファイルを使用してロ�
 
 TodoLocalized サンプルが含まれています、[共有プロジェクト デモ](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/)ビルド システムの制限のためのリソース ファイルが得られなかったが、 **. designer.cs**にアクセスする機能を中断するように生成されたファイル厳密に型指定されたコードに翻訳された文字列。
 
-このドキュメントの残りの部分は、Xamarin.Forms PCL テンプレートを使用してプロジェクトに関連しています。
+このドキュメントの残りの部分は、Xamarin.Forms .NET 標準のライブラリ テンプレートを使用してプロジェクトに関連しています。
 
 ## <a name="globalizing-xamarinforms-code"></a>Xamarin.Forms コードのグローバル化
 
@@ -46,7 +46,7 @@ TodoLocalized サンプルが含まれています、[共有プロジェクト �
 
 ### <a name="adding-resources"></a>リソースを追加します。
 
-Xamarin.Forms PCL アプリケーションのグローバル化の最初の手順は、アプリで使用されるすべてのテキストを格納するために使用する、RESX リソース ファイルを追加しています。 既定のテキストを含む RESX ファイルを追加し、サポート対象の各言語用の追加の RESX ファイルを追加する必要があります。
+Xamarin.Forms .NET 標準ライブラリ アプリケーションのグローバル化の最初の手順は、アプリで使用されるすべてのテキストを格納するために使用する、RESX リソース ファイルを追加しています。 既定のテキストを含む RESX ファイルを追加し、サポート対象の各言語用の追加の RESX ファイルを追加する必要があります。
 
 #### <a name="base-language-resource"></a>ベース言語リソース
 
@@ -98,7 +98,7 @@ Xamarin.Forms PCL アプリケーションのグローバル化の最初の手�
 
 -----
 
-この変更は省略可能であり、のみ (たとえば、配置した場合、RESX ファイルを別のアセンブリをコードに) 異なるアセンブリ全体でローカライズされた文字列を参照する必要があるかどうかに必要です。 このトピックのサンプルは、文字列のまま`internal`が使用されている同じ Xamarin.Forms PCL アセンブリで定義されているためです。
+この変更は省略可能であり、のみ (たとえば、配置した場合、RESX ファイルを別のアセンブリをコードに) 異なるアセンブリ全体でローカライズされた文字列を参照する必要があるかどうかに必要です。 このトピックのサンプルは、文字列のまま`internal`が使用されている同じ Xamarin.Forms .NET 標準ライブラリ アセンブリで定義されているためです。
 
 のみ; 上記のように、基本の RESX ファイルにカスタム ツールを設定する必要があります。設定する必要はありません*任意*次のセクションで説明されている言語固有の RESX ファイルでのビルド ツール。
 
@@ -559,7 +559,7 @@ Android アプリケーション プロジェクトにこのコードを追加�
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
-ポータブル クラス ライブラリ (PCL) プロジェクトで、[プロパティ] ノードを展開し、ダブルクリック、 **AssemblyInfo.cs**ファイル。 ニュートラル リソース アセンブリ言語を英語に設定するファイルに次の行を追加します。
+.NET 標準のライブラリ プロジェクトで、[プロパティ] ノードを展開し、ダブルクリック、 **AssemblyInfo.cs**ファイル。 ニュートラル リソース アセンブリ言語を英語に設定するファイルに次の行を追加します。
 
 ```csharp
 [assembly: NeutralResourcesLanguage("en")]

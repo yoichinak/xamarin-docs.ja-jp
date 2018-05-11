@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 520982491803fa0a909008ee60730a4149a75296
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="device-class"></a>デバイス クラス
 
@@ -155,7 +155,7 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-`Device`クラスもあります、 `StartTimer` Xamarin.Forms の一般的なコード (Pcl を含む) で動作する時間に依存するタスクをトリガーする簡単な方法を提供するメソッド。 渡す、`TimeSpan`間隔を設定して返す`true`を実行しているタイマーを保持するまたは`false`を現在の呼び出し後に停止します。
+`Device`クラスもあります、`StartTimer`を標準 .NET ライブラリを含む Xamarin.Forms の一般的なコードで動作する時間に依存するタスクをトリガーする簡単な方法を提供するメソッド。 渡す、`TimeSpan`間隔を設定して返す`true`を実行しているタイマーを保持するまたは`false`を現在の呼び出し後に停止します。
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -184,7 +184,7 @@ Device.BeginInvokeOnMainThread ( () => {
 
 ## <a name="summary"></a>まとめ
 
-Xamarin.Forms`Device`クラスは、プラットフォームごとの機能とレイアウトの詳細に制御を使用できます。-コード (PCL または共有プロジェクト) でも共通します。
+Xamarin.Forms`Device`クラスは、プラットフォームごとの機能とレイアウトの詳細に制御を使用できます。-コード (.NET 標準のライブラリ プロジェクトまたはプロジェクトの共有) でも共通します。
 
 
 ## <a name="related-links"></a>関連リンク

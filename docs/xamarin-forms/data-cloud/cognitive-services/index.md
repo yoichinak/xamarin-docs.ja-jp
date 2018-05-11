@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 2600b52b6e044ca9a3a8387bcf719dd1632c406d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>認識サービスとインテリジェンスを追加します。
 
@@ -35,7 +35,7 @@ _マイクロソフトの知的サービスでは、Api、Sdk、および開発�
 
 ![](images/sample-application-1.png "TodoListPage")
 
-をクリックして新しい項目を作成することができます、 *+*に移動するボタン、`TodoItemPage`です。 このページは、タスクを選択してに移動することもできます。
+をクリックして新しい項目を作成することができます、 *+* に移動するボタン、`TodoItemPage`です。 このページは、タスクを選択してに移動することもできます。
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -70,9 +70,7 @@ PCL プロジェクトには、いくつかの重要なファイルも含まれ�
 
 サンプル アプリケーションは、次の NuGet パッケージを使用します。
 
-- `Microsoft.Net.Http` – 提供、 `HttpClient` HTTP 経由で要求を行うためのクラスです。
 - `Newtonsoft.Json` – .NET の JSON フレームワークを提供します。
-- `Microsoft.ProjectOxford.Face` – Face API にアクセスするためのクライアント ライブラリです。
 - `PCLStorage` – クロスプラット フォームのローカル ファイル IO Api のセットを提供します。
 - `sqlite-net-pcl` – SQLite データベース ストレージを提供します。
 - `Xam.Plugin.Media` – クロスプラット フォームの写真の作成と Api の取得を提供します。
@@ -116,7 +114,7 @@ public class TodoItem
 
 サンプル アプリケーションは、次の Microsoft 認知サービスを呼び出します。
 
-- Microsoft Speech API. 詳細については、次を参照してください。 [Microsoft Speech API を使用する音声認識](speech-recognition.md)です。
+- Microsoft Speech API です。 詳細については、次を参照してください。 [Microsoft Speech API を使用する音声認識](speech-recognition.md)です。
 - Bing のスペル チェック API です。 詳細については、次を参照してください。[スペル チェック Bing スペル チェック API を使用して](spell-check.md)です。
 - API を変換します。 詳細については、次を参照してください。[トランスレーター API を使用してテキストの翻訳](text-translation.md)です。
 - Face API です。 詳細については、次を参照してください。 [Face API を使用して Emotion 認識](emotion-recognition.md)です。

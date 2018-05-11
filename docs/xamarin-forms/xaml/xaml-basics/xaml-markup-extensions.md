@@ -7,11 +7,11 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>パート 3 です。 XAML マークアップ拡張機能
 
@@ -386,13 +386,13 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-その他のクラスにアクセスする XML 名前空間宣言を追加する必要があります。 各追加の XML 名前空間宣言では、新しいプレフィックスを定義します。 クラスにアクセスするために PCL を共有アプリケーションをローカルなど`AppConstants`、XAML のプログラマが多くの場合、プレフィックスを使用して`local`です。 名前空間の宣言は、CLR (共通言語ランタイム) の名前空間の名前とも呼ばれる .NET 名前空間の名前、これは、C# の場合に表示される名前を示す必要があります`namespace`定義または、`using`ディレクティブ。
+その他のクラスにアクセスする XML 名前空間宣言を追加する必要があります。 各追加の XML 名前空間宣言では、新しいプレフィックスを定義します。 クラスにアクセスする、共有アプリケーションの .NET 標準ライブラリに対するローカルなど`AppConstants`、XAML のプログラマが多くの場合、プレフィックスを使用して`local`です。 名前空間の宣言は、CLR (共通言語ランタイム) の名前空間の名前とも呼ばれる .NET 名前空間の名前、これは、C# の場合に表示される名前を示す必要があります`namespace`定義または、`using`ディレクティブ。
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-PCL を参照する任意のアセンブリ内の .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、ここでは、`sys`標準の .NET のプレフィックス`System`である名前空間、 **mscorlib**アセンブリでは、"Microsoft 共通オブジェクト ランタイム ライブラリの"1 回縦が、"多言語標準を今すぐ意味共通オブジェクト ランタイム Library"です。 これは別のアセンブリであるため、必要がありますも、アセンブリ名を指定する例ではこの**mscorlib**:
+.NET 標準ライブラリを参照する任意のアセンブリ内の .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、ここでは、`sys`標準の .NET のプレフィックス`System`である名前空間、 **mscorlib**アセンブリでは、"Microsoft 共通オブジェクト ランタイム ライブラリの"1 回縦が、"多言語標準を今すぐ意味共通オブジェクト ランタイム Library"です。 これは別のアセンブリであるため、必要がありますも、アセンブリ名を指定する例ではこの**mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

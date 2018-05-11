@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: b394c64fe6e2bfb9e5e7ee0e00d8c0366d6bd93e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local`名前空間プレフィックスでは、あらゆるものがあります。 ただし、`namespace`と`assembly`値がカスタム コントロールの詳細情報と一致する必要があります。 名前空間が宣言されると、カスタム コントロールを参照する、プレフィックスを使用します。
 
 > [!NOTE]
-> 定義する、`xmlns`共有プロジェクトよりも Pcl に非常に簡単です。 PCL がアセンブリにコンパイルされるため、簡単に何かを判断、`assembly=CustomRenderer`値でなければなりません。 共有プロジェクトを使用する場合 (XAML を含む) すべての共有アセットまとめられ、参照元のプロジェクトは、iOS、Android、および UWP つまりの各プロジェクトがある独自*アセンブリ名*ことはできませんに書き込む`xmlns`宣言値は、アプリケーションごとに別にする必要があるためです。 プロジェクトの共有については XAML でカスタム コントロールは、すべてのアプリケーション プロジェクトを同じアセンブリ名で構成する必要があります。
+> 定義する、`xmlns`共有プロジェクトよりも .NET 標準のライブラリ プロジェクトで非常に簡単です。 .NET 標準ライブラリがアセンブリにコンパイルされるため、簡単に何かを判断、`assembly=CustomRenderer`値でなければなりません。 共有プロジェクトを使用する場合 (XAML を含む) すべての共有アセットまとめられ、参照元のプロジェクトは、iOS、Android、および UWP つまりの各プロジェクトがある独自*アセンブリ名*ことはできませんに書き込む`xmlns`宣言値は、アプリケーションごとに別にする必要があるためです。 プロジェクトの共有については XAML でカスタム コントロールは、すべてのアプリケーション プロジェクトを同じアセンブリ名で構成する必要があります。
 
 `MyEntry`背景が灰色で、各プラットフォームでは、次のスクリーン ショットに示すようにカスタム コントロールを表示し、します。
 
@@ -74,7 +74,7 @@ public class MyEntry : Entry
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-カスタム コントロールは、ソリューション (つまりいない PCL Mac/visual Studio Xamarin.Forms アプリ プロジェクト テンプレートの Visual Studio によって作成される) に追加されている PCL プロジェクトに含まれているが、カスタム コントロールにアクセスしようとすると、iOS で、例外が発生する可能性があります。 この問題は、カスタム コントロールへの参照を作成することで解決できますが発生した場合、`AppDelegate`クラス。
+カスタム コントロールが含まれている .NET 標準ライブラリ プロジェクトがソリューションに追加された、(つまりいない .NET 標準ライブラリ、Visual Studio for Mac/visual Studio Xamarin.Forms アプリ プロジェクト テンプレートによって作成された)、例外が iOS で発生する場合カスタム コントロールにアクセスしようとしています。 この問題は、カスタム コントロールへの参照を作成することで解決できますが発生した場合、`AppDelegate`クラス。
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
