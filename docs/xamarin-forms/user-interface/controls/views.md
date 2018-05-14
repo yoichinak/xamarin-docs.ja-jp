@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b690b4aed315a78d95d9e0e7444257f0fc2c4a78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms ビュー
 
@@ -53,7 +53,7 @@ _Xamarin.Forms ビューは、クロスプラット フォーム モバイル �
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) iOS および Android のプロジェクトでは、OpenGL のグラフィックを表示します。 ユニバーサル Windows プラットフォームのサポートされていません。 IOS および Android のプロジェクトへの参照が必要、 **OpenTK 1.0**アセンブリまたは**OpenTK**バージョン 1.0.0.0 アセンブリ。 `OpenGLView` 共有プロジェクトで使用する方が簡単です。PCL または .NET 標準ライブラリで使用されている場合、依存関係サービスも必要になります (示すように、サンプル コードで)。<br /><br />これは、Xamarin.Forms に組み込まれているのみグラフィックス機能が Xamarin.Forms アプリケーションは、グラフィックスを使用しても表示できる[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)、 [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、または[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![OpenGLView 例](views-images/OpenGLView.png "OpenGLView 例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) iOS および Android のプロジェクトでは、OpenGL のグラフィックを表示します。 ユニバーサル Windows プラットフォームのサポートされていません。 IOS および Android のプロジェクトへの参照が必要、 **OpenTK 1.0**アセンブリまたは**OpenTK**バージョン 1.0.0.0 アセンブリ。 `OpenGLView` 共有プロジェクトで使用する方が簡単です.NET 標準ライブラリで使用されている場合、依存関係サービスも必要になります (示すように、サンプル コードで)。<br /><br />これは、Xamarin.Forms に組み込まれているのみグラフィックス機能が Xamarin.Forms アプリケーションは、グラフィックスを使用しても表示できる[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)、 [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、または[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![OpenGLView 例](views-images/OpenGLView.png "OpenGLView 例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>マップ

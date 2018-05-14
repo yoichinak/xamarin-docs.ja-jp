@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0d1afc2c14b19bbd03244affed494405776a3c99
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
@@ -59,13 +59,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView`ポータブル クラス ライブラリ (PCL) プロジェクトが作成され、カスタム コントロールの API を定義します。 このコントロールは、公開、`Items`を設定するために使用されているプロパティ、`ListView`にバインドされているデータは表示目的、データとなることができます。 また、`ItemSelected`プラットフォーム固有のネイティブ リスト コントロールの項目が選択されるたびに発生するイベントです。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
+`NativeListView` .NET 標準のライブラリ プロジェクトで作成され、カスタム コントロールの API を定義します。 このコントロールは、公開、`Items`を設定するために使用されているプロパティ、`ListView`にバインドされているデータは表示目的、データとなることができます。 また、`ItemSelected`プラットフォーム固有のネイティブ リスト コントロールの項目が選択されるたびに発生するイベントです。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
-`NativeListView`カスタム コントロールで参照できます Xaml PCL プロジェクト内の場所の名前空間の宣言してコントロールに名前空間プレフィックスを使用します。 次のコード例に示す方法、`NativeListView`カスタム コントロールを XAML ページで利用できることができます。
+`NativeListView`カスタム コントロールで参照できます Xaml で標準的な .NET のライブラリ プロジェクトの場所の名前空間の宣言してコントロールに名前空間プレフィックスを使用します。 次のコード例に示す方法、`NativeListView`カスタム コントロールを XAML ページで利用できることができます。
 
 ```xaml
 <ContentPage ...

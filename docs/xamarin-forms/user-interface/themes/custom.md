@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: b760f5e1d37f4bc8cc6af063552b974afa435d56
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: c9bc532902e9cfcc080220a05e41401e893783e4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-a-custom-theme"></a>カスタム テーマの作成
 
@@ -68,7 +68,7 @@ Nuget パッケージからテーマを追加するだけでなく (など、[�
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-pcl-or-shared-project"></a>C# コードの PCL または共有プロジェクト
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>.NET 標準のライブラリ プロジェクト、または共有プロジェクト内の c# コード
 
 ラウンド角を作成するコード`BoxView`使用[効果](~/xamarin-forms/app-fundamentals/effects/index.md)です。
 使用して角の半径を適用、`BindableProperty`適用することによって実装されると、[効果](~/xamarin-forms/app-fundamentals/effects/index.md)です。 効果でプラットフォーム固有のコードが必要です、 [iOS](#ios)と[Android](#android)プロジェクト (下図参照)
