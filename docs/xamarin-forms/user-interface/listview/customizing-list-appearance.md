@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 26a3203bff9b65ec8063b513bb576eed5936892b
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="list-appearance"></a>リストの外観
 
@@ -151,7 +151,7 @@ x:Class="DemoListView.GroupingViewPage">
                     DetailColor="#503026" />
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
-            <!-- End Group Header Customization
+            <!-- End Group Header Customization -->
         </ListView>
     </ContentPage.Content>
 </ContentPage>
@@ -337,7 +337,7 @@ void OnImageTapped (object sender, EventArgs args)
 ## <a name="related-links"></a>関連リンク
 
 - [グループ化 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [カスタム レンダラー ビュー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+- [Custom Renderer View (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
 - [行の動的なサイズを変更する (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
 - [1.4 のリリース ノート](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 リリース ノート](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

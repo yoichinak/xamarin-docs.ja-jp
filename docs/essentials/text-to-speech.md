@@ -5,17 +5,17 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2fcb97eafda15a73e2b7e5441f1d6c94f75af0ce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b2c9ed50c48aee6343a20ddb28c49e1bd05d2153
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials 音声合成
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 
-**TextToSpeech**デバイスと、エンジンでサポートできるクエリの使用可能な言語もバックのテキストを読み上げるために音声合成エンジンで組み込みクラスを使用するアプリケーションを使用します。
+**TextToSpeech**クラスにより、アプリケーションをデバイスから、エンジンでは、クエリの使用可能な言語をさらにバックのテキストを読み上げるために音声合成エンジンで組み込みを使用します。
 
 ## <a name="using-text-to-speech"></a>音声合成を使用します。
 
@@ -45,7 +45,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-このメソッドは、いずれかの開始発話を停止する、省略可能な CancellationToken で受け取ります。 
+このメソッドは、いったん開始、発話を停止する、省略可能な CancellationToken で受け取ります。 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -115,7 +115,7 @@ public async Task SpeakNow()
 
 ### <a name="speech-locales"></a>音声認識のロケール
 
-各プラットフォームでは、複数の言語とアクセントのバックのテキストを読み上げるためにロケールを提供します。 各プラットフォームには、さまざまなコードとは、これを指定する方法 Essentials は、クロスプラット フォーム`Locale`クラスとそれらのクエリを実行する方法`GetLocalesAsync`です。
+各プラットフォームでは、複数の言語とアクセントのバックのテキストを読み上げるためにロケールを提供します。 各プラットフォームにはさまざまなコードとは、これを指定する方法 Essentials は、クロスプラット フォーム`Locale`クラスとそれらのクエリを実行する方法`GetLocalesAsync`です。
 
 ```csharp
 public async Task SpeakNow()
@@ -143,5 +143,5 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>API
 
-- [TextToSpeech ソース コード](https://github.com/xamarin/Essentials/tree/master/Essentials/TextToSpeech)
+- [TextToSpeech ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API ドキュメント](xref:Xamarin.Essentials.TextToSpeech)

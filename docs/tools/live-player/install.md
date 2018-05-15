@@ -5,12 +5,12 @@ ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: topgenorth
 ms.author: toopge
-ms.date: 11/22/2017
-ms.openlocfilehash: 0f343e253a57de33d7e19e648862e6d11fa5af5f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2018
+ms.openlocfilehash: bbc935c2770fab1a853bb12fba2b7eb0283bb258
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player のライブのセットアップ
 
@@ -30,7 +30,9 @@ Xamarin Live Player は、Google Play から Android 用に使用できます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-ユーザーの参加をお勧め、 [Xamarin Player のライブ アプリ_iOS プレビュー_ ](https://aka.ms/liveplayeralpha) TestFlight を介して最新機能へのクイック アクセスを利用します。
+Xamarin Player のライブ アプリ iOS TestFlight を介して最新機能へのクイック アクセスをご利用いただけます。 プレビューの参加をユーザーにはお勧めします。 Xamarin Live Player をアクセスすることによって、Microsoft に同意している[の使用条件](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx) & [のプライバシーに関する声明](https://privacy.microsoft.com/en-us/privacystatement)です。 Microsoft は、お客様の連絡先情報を使用して、更新プログラムおよび Xamarin について特価品とその他の Microsoft 製品およびサービスを提供する可能性があります。 いつでも購読を解除することができます。
+
+Xamarin Player のライブ iOS プレビューにアクセスするを完了してください、 [TestFlight 登録情報](https://fastring.xamarinliveplayer.com/)、するまでは電子メールを受信した TestFlight から Xamarin Live Player iOS プレビューをインストールする方法です。
 
 -----
 

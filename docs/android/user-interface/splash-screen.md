@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: f34a3ee44b604bf0b82faf77769f3c2844e6460f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.date: 05/11/2018
+ms.openlocfilehash: 431cc359f4191ab2b247b3cacf0f54c3ba44cd57
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
@@ -153,6 +153,74 @@ public class MainActivity : AppCompatActivity
 }
 ```
 
+## <a name="landscape-mode"></a>横モード
+
+前の手順で実装されるスプラッシュ画面は、縦長と横長の両方のモードで正しく表示されます。 ただし、場合によっては (たとえば、ロゴ イメージが全画面表示である場合)、別のスプラッシュ スクリーンの縦方向と横モードを設定する必要です。
+
+横向きモードのスプラッシュ スクリーンを追加するには、次の手順を使用します。
+
+1. **リソース/描画**フォルダー、スプラッシュ スクリーンのイメージを使用する場合のランドス ケープ バージョンを追加します。 この例では**splash_logo_land.png** (使用して黒いレタリング青ではなく) 上記の例で使用されていたロゴのランドス ケープ バージョンです。
+
+2. **リソース/描画**フォルダーのランドス ケープ バージョンを作成、`layer-list`ドロウアブルを以前に定義した (たとえば、 **splash_screen_land.xml**)。 このファイルには、スプラッシュ スクリーンのイメージのランドス ケープ バージョンにビットマップのパスを設定します。 次の例では、 **splash_screen_land.xml**使用**splash_logo_land.png**:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <item>
+        <color android:color="@color/splash_background"/>
+      </item>
+      <item>
+        <bitmap
+            android:src="@drawable/splash_logo_land"
+            android:tileMode="disabled"
+            android:gravity="center"/>
+      </item>
+    </layer-list>
+
+    ```
+
+3.  作成、**リソース/値の土地**フォルダーが存在しない場合。
+
+4.  ファイルを追加**colors.xml**と**style.xml**に**値土地**(コピーされ、既存のものから変更するには、これら**values/colors.xml**と**values/style.xml**ファイル)。
+
+5.  変更**値-土地/style.xml**ドロウアブル用のランドス ケープ バージョンを使用するように`windowBackground`です。 この例では**splash_screen_land.xml**を使用します。
+
+    ```xml
+    <resources>
+      <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+      </style>
+        <style name="MyTheme" parent="MyTheme.Base">
+      </style>
+      <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_land</item>
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowFullscreen">true</item>  
+        <item name="android:windowContentOverlay">@null</item>  
+        <item name="android:windowActionBar">true</item>  
+      </style>
+    </resources>
+    ```
+
+6.  変更**値-土地/colors.xml**スプラッシュ スクリーンのランドス ケープ バージョンを使用する色を構成します。 この例では、ロゴの背景色は横モードの黄色に変更されます。
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <color name="primary">#2196F3</color>
+      <color name="primaryDark">#1976D2</color>
+      <color name="accent">#FFC107</color>
+      <color name="window_background">#F5F5F5</color>
+      <color name="splash_background">#FFFF00</color>
+    </resources>
+    ```
+
+7.  ビルドして、アプリケーションを再実行します。 スプラッシュ スクリーンがまだ表示されている間は、モードを横向きにデバイスを回転します。 スプラッシュ スクリーンは、ランドス ケープのバージョンに変更します。
+
+    [![横向きモードにスプラッシュ画面の回転](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+
+
+横モードのスプラッシュ スクリーンの使用を提供しないこと、シームレスなエクスペリエンスに注意してください。 既定は、Android は、縦向きモードでアプリを起動し、デバイスが横モードで既に場合でも、モードを横向きに遷移します。 その結果、デバイスが横モードでは、アプリを起動、デバイスは縦スプラッシュ スクリーンを簡単に表示し、し、回転、縦から横スプラッシュ スクリーンをアニメーション化します。 残念ながら、この最初の縦の横の遷移が行わ場合でも、`ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape`スプラッシュ アクティビティのフラグで指定します。 この制限を回避する最善の方法では、縦長と横長の両方のモードで正しくレンダリングする 1 つのスプラッシュ スクリーンのイメージを作成します。
+
 
 ## <a name="summary"></a>まとめ
 
@@ -162,5 +230,5 @@ public class MainActivity : AppCompatActivity
 ## <a name="related-links"></a>関連リンク
 
 - [スプラッシュ スクリーン (サンプル)](https://developer.xamarin.com/samples/monodroid/SplashScreen)
-- [layer-list Drawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
+- [レイヤーの一覧のディスプレイ](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
 - [ 素材のデザイン パターン - 起動画面](https://www.google.com/design/spec/patterns/launch-screens.html)

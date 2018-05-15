@@ -220,7 +220,7 @@
 #### [ABI 固有の APK を構築する](deploy-test/building-apps/abi-specific-apks.md)
 ### [コマンド ライン エミュレーター](deploy-test/command-line-emulator.md)
 ### [デバッグ](deploy-test/debugging/index.md)
-#### [Android SDK エミュレーター](deploy-test/debugging/android-sdk-emulator/index.md)
+#### [Google Android エミュレーター](deploy-test/debugging/android-sdk-emulator/index.md)
 ##### [エミュレーターの実行](deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 ##### [トラブルシューティング](deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 #### [Visual Studio Android Emulator](deploy-test/debugging/visual-studio-android-emulator.md)

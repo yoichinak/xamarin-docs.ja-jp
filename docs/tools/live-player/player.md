@@ -5,34 +5,16 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/10/2017
-ms.openlocfilehash: 2e2a3e80c121688f9a8bfff0afe4184f19fc6619
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2017
+ms.openlocfilehash: 3d4d34c6945387f5878ea708faf630d2545a750e
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player がライブ アプリ
 
 ![プレビュー機能](~/media/shared/preview.png)
-
-## <a name="get-the-app"></a>アプリを入手します。
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-Xamarin Live Player は、Google Play から Android 用に使用できます。
-
-[![Google Play に掲載](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
-
-せず Google Play の Android デバイス用の Xamarin Live Player がを通じて使用可能な[HockeyApp](https://aka.ms/xlp-hockeyapp)配布します。 For Android は、の使用を選択して Google Play から直接インストールできますが初期プレビューでさらに、ビルド、[開くベータ プログラム](https://play.google.com/apps/testing/com.xamarin.live)
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-ユーザーの参加をお勧め、 [Xamarin Player のライブ アプリ_iOS プレビュー_ ](https://aka.ms/liveplayeralpha) TestFlight を介して最新機能へのクイック アクセスを利用します。
-
------
-
-## <a name="using-the-app"></a>アプリの使用
 
 以下の電話で、アプリをインストールした後、[セットアップ手順](~/tools/live-player/install.md)お使いのコンピューターに接続します。 いずれかの操作を再試行してください、[アプリのサンプル](~/tools/live-player/samples.md)動作を取得します。
 

@@ -1,93 +1,66 @@
 ---
-title: リモート iOS シミュレーター (Windows 用)
-description: Windows 上の Visual Studio 内に完全にテストおよびデバッグの iOS アプリ
+title: Remoted iOS Simulator for Windows
+description: リモート iOS Simulator の Windows では、Visual Studio 2017 の横のウィンドウに表示される iOS シミュレーターでアプリをテストすることができます。
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: topgenorth
 ms.author: toopge
-ms.date: 04/07/2017
-ms.openlocfilehash: 5a1408f6595bd1e2371cd1d0421f81a3a16a5cc3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/11/2018
+ms.openlocfilehash: b07cc24e63f4aa3ce4451e3bdb5819f1df1058c6
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
-# <a name="remoted-ios-simulator-for-windows"></a>リモート iOS シミュレーター (Windows 用)
+# <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator for Windows
 
-_Windows 上の Visual Studio 内に完全にテストおよびデバッグの iOS アプリ_
+リモート iOS Simulator の Windows では、Visual Studio 2017 の横のウィンドウに表示される iOS シミュレーターでアプリをテストすることができます。
 
 [![](ios-simulator-images/hero-sml.png "iOS シミュレーター Windows で実行されています。")](ios-simulator-images/hero.png#lightbox)
 
-## <a name="download-and-install"></a>ダウンロードとインストール
-
-ダウンロード、[インストーラー](https://dl.xamarin.com/xamarin-simulator/Xamarin.Simulator.Installer.msi)と、Windows コンピューターにインストールします。 Xamarin 用の visual Studio ツールは、既にインストールしてください。
-
-> [!NOTE]
-> Visual Studio でのリモート iOS シミュレーターを使用するには、xamarin がインストールされているネットワークに接続された Mac が必要です。
-
 ## <a name="getting-started"></a>作業の開始
 
-リモート iOS シミュレーターの使用。
+Windows 用のリモート iOS シミュレーターは、Visual Studio 2017 で使う Xamarin の一部として自動的にインストールされます。 これを使用するには、次の手順に従います。
 
-1. Visual Studio がリモート iOS シミュレーターを開始する前に少なくとも 1 回、Mac に接続されていることを確認してください。
-2. IOS または tvOS アプリことを確認、**スタートアップ プロジェクト**しデバッグを開始します。
+1. [Mac をビルド ホストに Visual 2017 をペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)です。
+2. Visual Studio 2017、iOS または tvOS プロジェクトのデバッグを開始します。 Windows 用のリモート iOS シミュレーターは、Windows コンピューターに表示されます。
 
-リモート iOS シミュレーターを無効にすることができます**ツール > オプション > Xamarin > iOS 設定**のボックスをオフにして**リモート Windows Simulator**ここで示すようにします。
+## <a name="simulator-window"></a>シミュレーター ウィンドウ
 
-[![](ios-simulator-images/options-sml.png "シミュレーターを使用する チェック ボックス")](ios-simulator-images/options.png#lightbox)
+シミュレーター ウィンドウの上部のツールバーには、便利なボタンの数が含まれています。
 
-接続されている Mac コンピューターでは、iOS シミュレーターを開きです。 リモート iOS シミュレーターをオンにするには、このオプションを確認します。
-
-## <a name="features"></a>フィーチャー
-
-リモート iOS シミュレーターは、テストし、Windows 上の Visual Studio から完全シミュレーターでの iOS アプリをデバッグする方法を提供します。
-
-### <a name="simulator-window"></a>シミュレーター ウィンドウ
-
-ウィンドウのツールバーには、シミュレーターと対話するボタンの数が含まれています。
-
-- **ホーム**– デバイスの [ホーム] ボタンをシミュレートします。
-- **ロック**– (ロックを解除するスワイプできます)、シミュレーターをロックします。
-- **スクリーン ショット**– をディスクに、シミュレーターのスクリーン ショットを保存します。
-- [**設定**](#settings) – キーボードと場所を構成します。
-- その他の[**オプション**](#options) – のさまざまなシミュレーターのオプションが使用できる、回転のシェイクなど他の状態は、シミュレーターを起動します。 いくつかのオプションは、隠されている場合は、ツールバーで、またはウィンドウを右クリックして表示される省略記号アイコンからアクセスできます。
+- **ホーム**– iOS デバイスで、[ホーム] ボタンのシミュレート
+- **ロック**– シミュレーター (ロックを解除する方向にスワイプ) のロック
+- **スクリーン ショット**–、シミュレーターのスクリーン ショットを保存
+- [**設定**](#settings) : キーボード、場所、およびその他の設定が表示されます
+- [**その他のオプション**](#other-options) – 回転やシェイク ジェスチャなどのさまざまなシミュレーター オプションを表示
 
     [![](ios-simulator-images/maps-app-sml.png "iOS シミュレーターの使用例をマップします。")](ios-simulator-images/maps-app.png#lightbox)
 
+## <a name="settings"></a>設定
 
-### <a name="settings"></a>設定
-
-「歯車」アイコンを開く、**設定**ウィンドウ。
+ツールバーの歯車アイコンをクリックすると開きます、**設定**ウィンドウ。
 
 [![](ios-simulator-images/settings-sml.png "iOS シミュレーターの設定")](ios-simulator-images/settings.png#lightbox)
 
-これにより、シミュレーターでのハードウェア キーボードを有効化し、のどの場所が、デバイス (静的な場所、または他の移動の場所のオプションを含む) に報告を選択することができます。
+これらの設定では、デバイスが必要がある場所を選択する、ハードウェア キーボードを有効にすることができます (静的および移動の場所の両方がサポート)、レポートが Touch ID を有効にして、コンテンツと、シミュレーターの場合は設定をリセットします。
 
+## <a name="other-options"></a>その他のオプション
 
-
-### <a name="other-options"></a>その他のオプション
-
-シェイク ジェスチャをトリガーして、シミュレーターの再起動の回転など、シミュレーター内で使用可能なすべてのオプションを表示するシミュレーター ウィンドウ内を右クリックします。
+ツールバーの省略記号ボタンでは、回転、シェイク ジェスチャ、および再起動などの他のオプションが表示されます。 これらと同じオプションは、シミュレーターのウィンドウで任意の場所を右クリックして、リストとして表示できます。
 
 [![](ios-simulator-images/more-sml.png "iOS シミュレーターの追加の設定")](ios-simulator-images/more.png#lightbox)
 
-### <a name="touchscreen-support"></a>タッチ スクリーンのサポート
+## <a name="touchscreen-support"></a>タッチ スクリーンのサポート
 
-最近のほとんどの Windows コンピューターはタッチ スクリーンを持ち、リモート iOS シミュレーターでは、対話をテストするユーザー、iOS アプリのシミュレーター ウィンドウのタッチすることができます。
+最近のほとんどの Windows コンピューターでは、タッチ スクリーンがあります。 リモート iOS Simulator の Windows では、タッチの相互作用をサポートするため、同じピンチ、スワイプして、物理的な iOS デバイスで使用するマルチ本指タッチ ジェスチャとアプリをテストすることができます。
 
-これには、はさむ、スワイプ、および複数本指タッチ ジェスチャ - 以前でしただけ簡単にテストする物理デバイスである点が含まれます。
+同様に、リモート iOS シミュレーター for Windows は、Apple の鉛筆の入力として Windows スタイラス入力を処理します。
 
-Windows でのスタイラスのサポートは、シミュレーターで Apple 鉛筆入力にも変換されます。
+## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>リモート iOS シミュレーター for Windows を無効にします。
 
-<!--
-<a name="knownissues" />
+リモート iOS シミュレーター for Windows を無効にするに移動**ツール > オプション > Xamarin > iOS 設定**をオフにし、**リモート Windows Simulator**です。
 
-# Known Issues
+[![](ios-simulator-images/options-sml.png "シミュレーターを使用する チェック ボックス")](ios-simulator-images/options.png#lightbox)
 
- - Apple Watch devices may show in the Visual Studio device list, but are not yet supported.
- - Launching in **Release** mode may also start Apple’s simulator on the networked Mac.
- - Closing the remote iOS Simulator on Windows will not immediately stop debugging in Visual Studio. Stop debugging manually from the menu or the red button.
- - Opening too many different simulators simultaneously will produce unexpected results.
- - Exception of type `Foundation.NSErrorException` may be thrown while launching Simulators. Workaround is to kill csproxy (server process) on the Mac host and re-deploy to the simulator.
- - Performance may be slower when using Xcode 8
--->
+このオプションを無効にすると、デバッグが開きますは、接続された Mac 上の iOS シミュレーターは、ホストを作成します。

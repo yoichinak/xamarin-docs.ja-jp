@@ -5,17 +5,39 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: 24d1e29ba0203aaafc3e21533478f6c505cc09b3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials セキュリティで保護されたストレージ
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 
 **SecureStorage**クラスは、単純なキー/値ペアを安全に保管します。
+
+## <a name="getting-started"></a>作業の開始
+
+アクセスする、 **SecureStorage**機能、次のプラットフォーム固有のセットアップが必要です。
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+追加の設定が必要です。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+IOS シミュレーターで開発する場合に有効にするには**キーチェーン**権利キーチェーン アクセス グループを追加するアプリケーションのバンドル id とします。
+
+開く、 **Entitlements.plist** iOS プロジェクトと検索、**キーチェーン**権利し有効にします。 グループとして、アプリケーションの識別子が自動的に追加されます。
+
+プロジェクトのプロパティで  **iOS バンドル署名 *** 設定、**カスタム権利**に**Entitlements.plist**です。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+追加の設定が必要です。
+
+-----
 
 ## <a name="using-secure-storage"></a>セキュリティで保護されたストレージを使用します。
 
@@ -75,5 +97,5 @@ var oauthToken = await SecureStorage.GetAsync("oauth_token");
 
 ## <a name="api"></a>API
 
-- [SecureStorage ソース コード](https://github.com/xamarin/Essentials/tree/master/Essentials/SecureStorage)
+- [SecureStorage ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API ドキュメント](xref:Xamarin.Essentials.SecureStorage)

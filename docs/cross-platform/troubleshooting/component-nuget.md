@@ -7,22 +7,26 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 020a5a2182458e759626b9bdbf45b62b6e13d71a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>NuGet コンポーネント参照の更新
 
-> [!NOTE]
+> [!IMPORTANT]
+> コンポーネント ストアは、2018 月 15日の時点で提供が中止されました (このクロージャであった[発表](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)2017 年 11 月版で)。
+>
 > Xamarin コンポーネントは、Visual Studio ではサポートされなくと NuGet パッケージで置き換える必要があります。 コンポーネントの参照をプロジェクトから手動で削除するには、以下の手順に従います。
 
 NuGet パッケージを追加するための次の手順を参照してください[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)または[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)です。
 
+人気のある Xamarin の一覧[プラグインとライブラリ](https://github.com/xamarin/XamarinComponents/blob/master/README.md)は NuGet パッケージとして使用できないコンポーネントに代わる方法を見つけやすくすることはできます。
+
 ## <a name="manually-removing-component-references"></a>コンポーネントの参照を手動で削除します。
 
-2017 年 11 月、でした[発表](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)Xamarin コンポーネント ストアが終了するということです。 コンポーネントの sunsetting で前方に移動するために、15.6 リリースの Visual Studio と 7.4 リリースの Visual Studio for Mac はサポートしなくなりましたプロジェクト内のコンポーネントです。 
+15.6 リリースの Visual Studio と 7.4 リリースの Visual Studio for Mac は、プロジェクト内のコンポーネントをサポートしません。 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -199,6 +203,6 @@ NuGet パッケージは、任意の依存関係と共に、プロジェクト�
 
 
 ## <a name="related-links"></a>関連リンク
-
+- [人気の Xamarin プラグインとライブラリの一覧](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [インストールして、NuGet パッケージ (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [NuGet パッケージ (Mac) を含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)
