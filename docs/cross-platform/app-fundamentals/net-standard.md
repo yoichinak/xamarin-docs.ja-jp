@@ -25,7 +25,7 @@ ms.lasthandoff: 05/09/2018
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-このセクションで作成および for mac Visual Studio を使用する .NET Standard ライブラリを使用する方法について説明します。 完全な実装について .NET Standard ライブラリの例のセクションを参照してください。
+このセクションでは、Visual Studio for Macを使用して.NET Standard ライブラリの作成と使用方法について説明します。完全な実装について .NET Standard ライブラリの例のセクションを参照してください。
 
 ### <a name="creating-a-net-standard-library"></a>.NET Standard ライブラリを作成します。
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 05/09/2018
 
 ## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
-このセクションで作成して Visual Studio を使用する .NET Standard ライブラリを使用する方法について説明します。 完全な実装について .NET Standard ライブラリの例のセクションを参照してください。
+このセクションでは、Visual Studioを使用して.NET Standard ライブラリの作成と使用方法について説明します。完全な実装について .NET Standard ライブラリの例のセクションを参照してください。
 
 ### <a name="creating-a-net-standard-library"></a>.NET Standard ライブラリを作成します。
 
