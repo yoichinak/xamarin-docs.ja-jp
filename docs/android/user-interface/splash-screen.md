@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/11/2018
-ms.openlocfilehash: 431cc359f4191ab2b247b3cacf0f54c3ba44cd57
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
-ms.translationtype: HT
+ms.date: 05/14/2018
+ms.openlocfilehash: 6200a04bb4d82174d36a48beab7c63709ac39187
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
@@ -159,7 +159,7 @@ public class MainActivity : AppCompatActivity
 
 横向きモードのスプラッシュ スクリーンを追加するには、次の手順を使用します。
 
-1. **リソース/描画**フォルダー、スプラッシュ スクリーンのイメージを使用する場合のランドス ケープ バージョンを追加します。 この例では**splash_logo_land.png** (使用して黒いレタリング青ではなく) 上記の例で使用されていたロゴのランドス ケープ バージョンです。
+1. **リソース/描画**フォルダー、スプラッシュ スクリーンのイメージを使用する場合のランドス ケープ バージョンを追加します。 この例では**splash_logo_land.png** (使用して白レタリング青ではなく) 上記の例で使用されていたロゴの横のバージョンです。
 
 2. **リソース/描画**フォルダーのランドス ケープ バージョンを作成、`layer-list`ドロウアブルを以前に定義した (たとえば、 **splash_screen_land.xml**)。 このファイルには、スプラッシュ スクリーンのイメージのランドス ケープ バージョンにビットマップのパスを設定します。 次の例では、 **splash_screen_land.xml**使用**splash_logo_land.png**:
 
@@ -176,7 +176,6 @@ public class MainActivity : AppCompatActivity
             android:gravity="center"/>
       </item>
     </layer-list>
-
     ```
 
 3.  作成、**リソース/値の土地**フォルダーが存在しない場合。
@@ -201,7 +200,7 @@ public class MainActivity : AppCompatActivity
     </resources>
     ```
 
-6.  変更**値-土地/colors.xml**スプラッシュ スクリーンのランドス ケープ バージョンを使用する色を構成します。 この例では、ロゴの背景色は横モードの黄色に変更されます。
+6.  変更**値-土地/colors.xml**スプラッシュ スクリーンのランドス ケープ バージョンを使用する色を構成します。 この例では、ロゴの背景色が青の横長に変更されます。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -210,7 +209,7 @@ public class MainActivity : AppCompatActivity
       <color name="primaryDark">#1976D2</color>
       <color name="accent">#FFC107</color>
       <color name="window_background">#F5F5F5</color>
-      <color name="splash_background">#FFFF00</color>
+      <color name="splash_background">#3498DB</color>
     </resources>
     ```
 
