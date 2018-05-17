@@ -81,8 +81,6 @@
 #### [GridLayout](user-interface/layouts/grid-layout.md)
 #### [タブ付きレイアウト](user-interface/layouts/tab-layout/index.md)
 ##### [ActionBar 付きのナビゲーション タブ](user-interface/layouts/tab-layout/with-action-bar.md)
-##### [TabHost の概要](user-interface/layouts/tab-layout/tab-host.md)
-##### [TabHost を使用したタブ付き UI の作成](user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
 ### [コントロール](user-interface/controls/index.md)
 #### [ActionBar](user-interface/controls/action-bar.md)
 #### [オートコンプリート](user-interface/controls/auto-complete.md)

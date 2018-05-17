@@ -1,5 +1,5 @@
 ---
-title: Hello, iOS
+title: Hello, iOS クイック スタート
 description: この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して基本的な Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について理解を深めます。 ガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順を紹介します。
 ms.topic: quickstart
 ms.prod: xamarin
@@ -7,19 +7,18 @@ ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/23/2017
-ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2017
+ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS クイックスタート
 
 このガイドでは、ユーザーが入力した英字の電話番号を数値の電話番号に変換してから、その番号に電話をかけるアプリケーションの作成方法を説明します。 最終的にアプリケーションは次のようになります。
 
  [![](hello-ios-quickstart-images/image1.png "Hello.iOS クイックスタート アプリ")](hello-ios-quickstart-images/image1.png#lightbox)
-
 
 <a name="Requirements" />
 
@@ -42,7 +41,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
 Xamarin.iOS は次のセットアップで機能します。
 
--  最新版の Visual Studio 2015 または 2017 Professional 以降。Windows 7 以上。上記の仕様を満たす Mac ビルド ホストとペア。
+-  最新版の Visual Studio 2017 Community、Professional、または Enterprise。Windows 7 以上。上記の仕様を満たす Mac ビルド ホストとペア。
 
 [Xamarin.iOS Windows インストール ガイド](~/ios/get-started/installation/windows/index.md)で段階的インストール手順をご確認いただけます。
 
@@ -63,7 +62,6 @@ Xamarin.iOS は次のセットアップで機能します。
 起動画面で、**[新しいプロジェクト...]** をクリックして、新しい Xamarin.iOS ソリューションを作成します。
 
 ![](hello-ios-quickstart-images/image3new.png "iOS ソリューション")
-
 
 2. **[新しいソリューション]** ダイアログで **[iOS]、[アプリ]、[単一ビュー アプリケーション]** テンプレートの順に選択し、C# が選択されていることを確認します。 **[次へ]** をクリックします。
 
@@ -294,51 +292,42 @@ Xamarin.iOS は次のセットアップで機能します。
 
   ![](hello-ios-quickstart-images/image001-.png "スタート画面")
 
-  **[新しいソリューション]** の下にある検索ボックスに「_Single View App_」と入力し、**[単一ビュー アプリ (iPhone)]** を選択して新しい Xamarin.iOS ソリューションを作成します。
+  **[ファイル]、[新規]、[プロジェクト]、[Visual C#]、[iPhone と iPad]、[iOS アプリ (Xamarin)]** の順に選択し、新しい Xamarin.iOS ソリューションを作成します。
 
-  ![](hello-ios-quickstart-images/image002-.png "単一ビュー アプリを追加します")
+  ![iOS アプリ (Xamarin) プロジェクト タイプを選択する](hello-ios-quickstart-images/image002.w157.png "iOS アプリ (Xamarin) プロジェクト タイプを選択する")
 
+  次に表示されたダイアログで **[単一ビュー アプリ]** テンプレートを選択し、**[OK]** をクリックしてプロジェクトを作成します。
 
-2. プロジェクトとソリューションに「`Phoneword`」という名前を付けます。下の画像をご覧ください。
+  ![[単一ビュー アプリ] テンプレートを選択する](hello-ios-quickstart-images/image002-2.w157.png "[単一ビュー アプリ] テンプレートを選択する")
 
-  ![](hello-ios-quickstart-images/vs-image3.png "プロジェクトに「PhonewordiOS」、新しいソリューションに「Phoneword」と名前を付けます")
-
-
-3. **[OK]** をクリックし、新しいプロジェクトを作成します。
-
-4. ツール バーの [Xamarin Mac エージェント] アイコンが緑であることを確認します。
+1. ツール バーの [Xamarin Mac エージェント] アイコンが緑であることを確認します。
 
     ![ツール バーの [Xamarin Mac エージェント] アイコンが緑であることを確認します](hello-ios-quickstart-images/vs-image4.png)
 
     緑でない場合は、Mac ビルド ホストへの接続がないことを示しているため、[構成ガイド](~/ios/get-started/installation/windows/connecting-to-mac/index.md)の手順に従って接続します。
 
-
-5. **ソリューション エクスプローラー** で iOS デザイナーの **Main.storyboard** ファイルをダブルクリックして開きます。
+1. **ソリューション エクスプローラー** で iOS デザイナーの **Main.storyboard** ファイルをダブルクリックして開きます。
 
   ![](hello-ios-quickstart-images/vs-image7.png "iOS Designer")
 
-6. **[ツールボックス]** タブの検索バーに「label」と入力し、デザイン サーフェイス (中央の領域) に**ラベル**をドラッグします。
+1. **[ツールボックス]** タブの検索バーに「label」と入力し、デザイン サーフェイス (中央の領域) に**ラベル**をドラッグします。
 
   ![](hello-ios-quickstart-images/vs-image8.png "デザイン サーフェイス (中央の領域) にラベルをドラッグします")
 
-
-7. 次に、*ドラッグ コントロール*のハンドルをつかみ、ラベルを大きくします。
+1. 次に、*ドラッグ コントロール*のハンドルをつかみ、ラベルを大きくします。
 
   ![](hello-ios-quickstart-images/vs-image9.png "ラベルを大きくします")
 
-
-8. デザイン サーフェイスで**ラベル**が選択されている状態で、**[プロパティ]** ウィンドウを利用し、**[ラベル]** の **[テキスト]** プロパティを "Enter a Phoneword:" に変更します。
+1. デザイン サーフェイスで**ラベル**が選択されている状態で、**[プロパティ]** ウィンドウを利用し、**[ラベル]** の **[テキスト]** プロパティを "Enter a Phoneword:" に変更します。
 
   ![](hello-ios-quickstart-images/vs-image10.png "ラベルの Text プロパティを "Enter a Phoneword" に設定します")
 
   > [!NOTE]
   > **[表示]** メニューに移動すれば、**[プロパティ]** や **[ツールボックス]** をいつでも表示できます。
 
-
-9. ツールボックス内で “テキスト フィールド” を検索し、**[ツールボックス]** の **[テキスト フィールド]** をデザイン サーフェイスにドラッグし、**[ラベル]** の下に置きます。 **テキスト フィールド**の幅が**ラベル**の幅と同じになるまで幅を調整します。
+1. ツールボックス内で “テキスト フィールド” を検索し、**[ツールボックス]** の **[テキスト フィールド]** をデザイン サーフェイスにドラッグし、**[ラベル]** の下に置きます。 **テキスト フィールド**の幅が**ラベル**の幅と同じになるまで幅を調整します。
 
   ![](hello-ios-quickstart-images/vs-image12.png "テキスト フィールドの幅がラベルの幅と同じになるまで幅を調整します")
-
 
 10. デザイン サーフェイスで**テキスト フィールド**が選択されている状態で、**[プロパティ]** パッドの ID セクションの **[テキスト フィールド]** の **[名前]** プロパティを `PhoneNumberText` に変更し、**[テキスト]** プロパティを "1-855-XAMARIN" に変更します。
 
@@ -371,9 +360,9 @@ Xamarin.iOS は次のセットアップで機能します。
   ![](hello-ios-quickstart-images/vs-image18.png "電話番号を英数字から数字に変換するコードをいくつか追加します")
 
 
-16. **[新しいファイル]** ダイアログで **[Apple]、[クラス]** の順に選択し、新しいファイルに「`PhoneTranslator`」という名前を付けます。
+16. (プロジェクトを右クリックし、[追加]、[新しいアイテム] の順に選択すると表示される) **[新しいアイテムの追加]** ダイアログで **[Apple]、[クラス]** の順に選択し、新しいファイルに「`PhoneTranslator`」という名前を付けます。
 
-  ![](hello-ios-quickstart-images/vs-image19.png "「PhoneTranslator」という新しいクラスを追加します")
+  ![](hello-ios-quickstart-images/vs-image19.w157.png "PhoneTranslator という名前の新しいクラスを追加する")
 
   > [!IMPORTANT]
   > アイコンに C# がある 'class' テンプレートを必ず選択してください。 それ以外を選択すると、この新しいクラスを参照できないことがあります。

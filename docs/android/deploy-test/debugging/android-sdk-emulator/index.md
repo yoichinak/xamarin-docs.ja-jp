@@ -1,21 +1,21 @@
 ---
-title: Android SDK エミュレーター
-description: このガイドでは、Visual Studio で Google Android SDK エミュレーターを使用する方法について説明します。
+title: Google Android Emulator
+description: このガイドでは、Visual Studio で Google Android Emulator を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 8913bb90-1340-409d-b7bb-71a06914923a
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bdae9f2189f91a6768419fd930a4ad5ce4b6e0ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aca71284c7d51936ce2addf143edb9980d9536fc
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="android-sdk-emulator"></a>Android SDK エミュレーター
+# <a name="google-android-emulator"></a>Google Android Emulator
 
-_このガイドでは、Visual Studio で Google Android SDK エミュレーターを使用する方法について説明します。_
+_このガイドでは、Visual Studio で Google Android Emulator を使用する方法について説明します。_
 
 
 ## <a name="overview"></a>概要
@@ -27,13 +27,13 @@ Google Android SDK Android エミュレーターは、異なるデバイスを�
 
 ### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[エミュレーターの実行](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 
-Visual Studio から Android SDK エミュレーターを起動する方法。
+Visual Studio から Google Android Emulator を起動する方法。
 
 ### <a name="troubleshootingandroiddeploy-testdebuggingandroid-sdk-emulatortroubleshootingmd"></a>[トラブルシューティング](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 
-Android SDK エミュレーターの一般的な問題を特定および解決する方法。
+Google Android Emulator の一般的な問題を特定し、解決する方法。
 
-Android SDK エミュレーターの構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
+Google Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7faf4ef090815ea799209e76816113f06889bd21
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: クイック スタート
 
@@ -64,10 +64,10 @@ Visual Studio の Android エミュレーターを使用している場合は、
 
 Visual Studio を起動します。  **[ファイル]、[新規]、[プロジェクト]** の順にクリックして、新しいプロジェクトを作成します。
 
-**[新しいプロジェクト]** ダイアログで、**[空のアプリ (Android)]** テンプレートをクリックします。
+**[新しいプロジェクト]** ダイアログで、**[Android アプリ]** テンプレートをクリックします。
 新しいプロジェクトに `Phoneword` という名前を付けます。 **[OK]** をクリックして、新しいプロジェクトを作成します。
 
-[![新しいプロジェクトが Phoneword であることを示すスクリーンショット](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png#lightbox)
+[![新しいプロジェクトが Phoneword であることを示すスクリーンショット](hello-android-quickstart-images/vs/02-new-project-name-sml.w157.png)](hello-android-quickstart-images/vs/02-new-project-name.w157.png#lightbox)
 
 ### <a name="creating-the-layout"></a>レイアウトの作成
 
@@ -112,9 +112,9 @@ Visual Studio を起動します。  **[ファイル]、[新規]、[プロジェ
 
 [![新しい項目を追加する](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png#lightbox)
 
-**[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]** の順に選択し、新しいコード ファイルに **PhoneTranslator.cs** という名前を付けます。
+**[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[コード ファイル]** の順に選択し、新しいコード ファイルに **PhoneTranslator.cs** という名前を付けます。
 
-[![PhoneTranslator.cs を追加する](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
+[![PhoneTranslator.cs を追加する](hello-android-quickstart-images/vs/14-add-class-sml.w157.png)](hello-android-quickstart-images/vs/14-add-class.w157.png#lightbox)
 
 これで、新しい空の C# クラスが作成されます。 このファイルに次のコードを挿入します。
 
@@ -185,10 +185,11 @@ namespace Core
 (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 最初に、`OnCreate` メソッドが次のようになるようにテンプレート コードを変更します。
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {
@@ -419,10 +420,13 @@ namespace Core
 まず、**[変換]** ボタンにイベント ハンドラーを追加します。 `MainActivity` クラスで、`OnCreate` メソッドを見つけます。 `OnCreate` 内 (`base.OnCreate(bundle)` および `SetContentView (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 `OnCreate` メソッドが次のようになるように、テンプレート ボタン処理コードを削除します。
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {

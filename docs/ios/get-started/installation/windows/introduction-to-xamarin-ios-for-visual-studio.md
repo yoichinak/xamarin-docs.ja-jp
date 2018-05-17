@@ -6,12 +6,12 @@ ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2018
+ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
 
@@ -48,8 +48,6 @@ Visual Studio での iOS 向けの開発時に従う必要があるいくつか�
 ## <a name="connecting-to-the-mac"></a>Mac への接続
 
 Visual Studio を Mac ビルド ホストに接続するには、「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドの説明に従ってください。
-
-
 
 ## <a name="visual-studio-toolbar-overview"></a>Visual Studio ツール バーの概要
 
@@ -136,14 +134,17 @@ Visual Studio のプロジェクト プロパティには、プロジェクト�
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>iOS アプリケーション用の新しいプロジェクトの作成
 
-Visual Studio 内からの新しい iOS プロジェクトの作成は、他のプロジェクトの種類と同じように行われます。 **[ファイル]、[新しいプロジェクト]** の順に選択すると、以下のようなダイアログが開きます。ここには、新しい iOS プロジェクトを作成するために使用可能なテンプレートがいくつか示されています。
+Visual Studio 内からの新しい iOS プロジェクトの作成は、他のプロジェクトの種類と同じように行われます。 **[ファイル]、[新しいプロジェクト]** の順に選択すると、以下のようなダイアログが開きます。ここには、新しい iOS プロジェクトを作成するために使用可能なプロジェクト タイプがいくつか示されています。
 
+![新規プロジェクトの作成](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/newproject.png "新規プロジェクトの作成")
+**[iOS アプリ (Xamarin)]** を選択すると、新しい Xamarin.iOS アプリケーションを作成するための次のテンプレートが表示されます。
+
+![iOS アプリのテンプレートの選択](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
 ストーリーボードと .xib ファイルは、Visual Studio で iOS Designer を使用して編集できます。 ストーリーボードを作成するには、ストーリーボード テンプレートのいずれかを選択します。 これにより、以下のスクリーンショットのように、**ソリューション エクスプローラー**で **Main.storyboard** ファイルが生成されます。
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.png "ソリューション エクスプローラーの Main.storyboard")
+![ソリューション エクスプローラーの Main.storyboard ファイル](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
 ストーリーボードの作成または編集を開始するには、`Main.storyboard` をダブルクリックして iOS Designer で開きます。
 

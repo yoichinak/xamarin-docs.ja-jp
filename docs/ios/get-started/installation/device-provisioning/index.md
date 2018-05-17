@@ -6,12 +6,12 @@ ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 07/15/2017
-ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-provisioning"></a>デバイスのプロビジョニング
 
@@ -25,7 +25,7 @@ Xamarin.iOS アプリケーションを開発する場合、シミュレータ�
 
 次の手順は、アプリケーションの配布です。 展開の詳細については、「[App Distribution](~/ios/deploy-test/app-distribution/index.md)」(アプリの配布) ガイドを参照してください。
 
-デバイスにアプリケーションを展開する前に、Apple の Developer Program の有効なサブスクリプションがあるか*、*[無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)を使用する必要があります。 Apple は 2 つのプログラム オプションを用意しています。
+デバイスにアプリケーションを展開する前に、Apple の Developer Program の有効なサブスクリプションがあるか *、*[無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)を使用する必要があります。 Apple は 2 つのプログラム オプションを用意しています。
 
 - **Apple Developer Program**: 個人か組織の代表かにかかわらず、Apple Developer Program では、アプリの開発、テスト、および配布を行うことができます。
 - **Apple Developer Enterprise Program**: Enterprise プログラムは、アプリを開発し、社内でのみ配布する組織に最適です。 Enterprise プログラムのメンバーは、iTunes Connect にはアクセスできません。また、作成したアプリは App Store に公開できません。
@@ -47,23 +47,14 @@ Xamarin.iOS アプリケーションを開発する場合、シミュレータ�
 
 <a name="Provisioning_Profile" />
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 ## <a name="provisioning-your-device"></a>デバイスのプロビジョニング
 
-Visual Studio for Mac を使用して iOS デバイスをプロビジョニングする方法は 2 つあります。
+iOS デバイスをプロビジョニングする方法は 2 つあります。
 
-* **自動 (推奨)** - Info.plist ファイルの **[Automatically manage signing]** オプションを選択すると、Visual Studio for Mac で署名 ID、アプリ ID、およびプロビジョニング プロファイルが自動的に作成および管理されます。  プロビジョニングを自動的に管理する方法については、「[自動プロビジョニング](automatic-provisioning.md)」ガイドを参照してください。 これは、iOS デバイスをプロビジョニングする場合にお勧めの方法です。
+* **自動 (推奨)** - プロジェクトで **[自動プロビジョニング]** スキームを選択すると、Visual Studio で署名 ID、アプリ ID、プロビジョニング プロファイルが自動的に作成され、管理されます。 プロビジョニングを自動的に管理する方法については、「[自動プロビジョニング](automatic-provisioning.md)」ガイドを参照してください。 これは、iOS デバイスをプロビジョニングする場合にお勧めの方法です。
 
 * **手動** - ID、アプリケーション ID、およびプロビジョニング プロファイルの署名は、「[手動プロビジョニング](manual-provisioning.md)」ガイドに記載されているように、Apple Developer Portal を使用して作成および管理できます。 これらのアーティファクトは、「[Apple Account Management](~/cross-platform/macios/apple-account-management.md)」(Apple アカウント管理) ガイドの説明に従って管理できます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-## <a name="provisioning-your-device"></a>デバイスのプロビジョニング
-
-展開用に Apple デバイスを設定する方法、および Windows 上の Visual Studio でアプリケーションを展開する方法の手順については、「[Manual Povisioning (手動プロビジョニング)](manual-provisioning.md)」ガイドの詳細な手順に従うことをお勧めします。
-
------
 
 <a name="appservices" />
 
@@ -74,9 +65,6 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 * 必要なアプリ サービスを使用してアプリ ID を作成します。
 * このアプリ ID が含まれる新しい[プロビジョニング プロファイル](#Provisioning_Profile)を作成します。
 * Xamarin.iOS プロジェクトでの権利を設定します。
-
-> [!NOTE]
-> 現在、Visual Studio for Mac で作成されたプロビジョニング プロファイルでは、プロジェクトで選択された権利 (Entitlements.plist) を考慮することはありません。 この機能は、今後の IDE のバージョンで追加されます。 App Services を使用する必要がある場合は、「[Manual Provisioning](manual-provisioning.md)」(手動プロビジョニング) ガイドの手順に従うことをお勧めします。
 
 ## <a name="related-links"></a>関連リンク
 

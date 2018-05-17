@@ -1,21 +1,21 @@
 ---
-title: Android SDK エミュレーターの実行
-description: Android SDK エミュレーターでアプリをデバッグする方法
+title: Google Android Emulator を実行する
+description: Google Android Emulator でアプリをデバッグする方法
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 630520f88dd23d3860b5f42fbb9bc4eb35ca2c4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e290b24c0d7a98b1abaf647fe76e56867042645
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="running-the-android-sdk-emulator"></a>Android SDK エミュレーターの実行
+# <a name="running-the-google-android-emulator"></a>Google Android Emulator を実行する
 
-このガイドでは、アプリをデバッグしてテストするために Android SDK Emulator で仮想デバイスを起動する方法について説明します。
+このガイドでは、アプリをデバッグしてテストするために Google Android Emulator で仮想デバイスを起動する方法について説明します。
 
 ## <a name="using-a-pre-configured-virtual-device"></a>構成済み仮想デバイスの使用
 
@@ -80,13 +80,13 @@ IDE の上部近くにドロップダウン メニューがあります。この
 
 -----
 
-Android エミュレーターが起動すると、Xamarin.Android はエミュレーターにアプリを展開します。 エミュレーターは、構成済みの仮想デバイス イメージを使用してアプリを実行します。 Android SDK エミュレーターの例のスクリーンショットを以下に示します (エミュレーターは **MyApp** という空のアプリを実行しています)。
+Android エミュレーターが起動すると、Xamarin.Android はエミュレーターにアプリを展開します。 エミュレーターは、構成済みの仮想デバイス イメージを使用してアプリを実行します。 Google Android Emulator の例のスクリーンショットを以下に示します (エミュレーターは **MyApp** という空のアプリを実行しています)。
 
 ![空のアプリを実行するエミュレーター](running-the-emulator-images/emulator-running.png)
 
 エミュレーターは実行したままでかまいません。アプリが実行されるたびにシャットダウンして再起動する必要はありません。 Xamarin.Android アプリがエミュレーターで初めて実行されるときに、ターゲットとなる API レベルの Xamarin.Android 共有ランタイムがインストールされてからアプリケーションがインストールされます。 ランタイムのインストールには少し時間がかかる場合があります。完了するまでしばらくお待ちください。 ランタイムのインストールが行われるのは、Xamarin.Android アプリが初めてエミュレーターに展開される場合のみです。以降の展開では、エミュレーターにアプリがコピーされるだけなので、初回より時間はかかりません。
 
-Android SDK エミュレーターの使用の詳細については、以下の Android 開発者向けトピックを参照してください。
+Google Android Emulator の使用の詳細については、以下の Android 開発者向けトピックを参照してください。
 
 -   [画面上で操作する](https://developer.android.com/studio/run/emulator.html#navigate)
 

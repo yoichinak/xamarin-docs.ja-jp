@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: a399aa1c314f1e93377a7831b430e563d9fd1b13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c42ebdca44e47e29ac74a263f0d11d4d4c120586
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="google-emulator-manager"></a>Google エミュレーター マネージャー
 
-ハードウェアの高速化が有効になっていることを確認した後は (「[Android Emulator ハードウェアの高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)」を参照)、アプリのテストとデバッグに使う仮想デバイスを作成します。 従来の Google エミュレーター マネージャー (*Android 仮想デバイス (AVD) マネージャー* とも呼ばれます) を使用して、Android SDK エミュレーターで使用するための仮想デバイスを作成することができます。
+ハードウェアの高速化が有効になっていることを確認した後は (「[Android Emulator ハードウェアの高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)」を参照)、アプリのテストとデバッグに使う仮想デバイスを作成します。 従来の Google エミュレーター マネージャー (*Android 仮想デバイス (AVD) マネージャー* とも呼ばれます) を使用して、Google Android Emulator で使用するための仮想デバイスを作成することができます。
 
 > [!NOTE]
 > Android 8.0 Oreo を対象とする場合は、[Xamarin Android Device Manager](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) を使用して仮想デバイスを作成および構成する必要があります。

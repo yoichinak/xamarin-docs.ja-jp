@@ -1,35 +1,46 @@
 ---
 title: 自動プロビジョニング
-description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、Visual Studio for Mac の自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。
+description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 11/17/2017
-ms.openlocfilehash: 01818d2870c7cf59a0f15385dbb3565f07400ff0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="automatic-provisioning"></a>自動プロビジョニング
 
-_Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、Visual Studio for Mac の自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。_
+_Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。_
 
 ## <a name="requirements"></a>必要条件
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 - Visual Studio for Mac 7.3 以降
 - Xcode 9 以降
 
-> [!IMPORTANT]
-> このガイドでは、Visual Studio for Mac を使用して Apple デバイスの展開を設定する方法と、アプリケーションを展開する方法について説明します。 この処理と、Windows 上の Visual Studio で同じ処理を実行する方法の手動の手順については、「[Manual Povisioning](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)」(手動プロビジョニング) ガイドの詳細な手順に従うことをお勧めします。
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+- Visual Studio 2017 バージョン 15.7 (以降)
+
+また、次に該当する Mac ビルド ホストとペアリングする必要があります。
+
+- Xcode 9 以降
+
+-----
 
 ## <a name="enabling-automatic-signing"></a>自動署名を有効にする
 
-自動署名プロセスを開始する前に、Visual Studio for Mac で Apple ID を追加しておく必要があります。手順については、「[Apple Account Management](~/cross-platform/macios/apple-account-management.md)」(Apple アカウントの管理) ガイドを参照してください。 Apple ID を追加すると、関連する_チーム_を使用できます。 こうすることで、チームに対して証明書、プロファイル、およびその他の ID を作成できます。 プロビジョニング プロファイルに含まれるアプリ ID のプレフィックスを作成するためにもチーム ID が使用されます。 チーム ID を使用することで、Apple は開発者の身元を検証できます。
+自動署名プロセスを開始する前に、Visual Studio で Apple ID を追加しておく必要があります。手順については、「[Apple アカウント管理](~/cross-platform/macios/apple-account-management.md)」ガイドを参照してください。 Apple ID を追加すると、関連する_チーム_を使用できます。 こうすることで、チームに対して証明書、プロファイル、およびその他の ID を作成できます。 プロビジョニング プロファイルに含まれるアプリ ID のプレフィックスを作成するためにもチーム ID が使用されます。 チーム ID を使用することで、Apple は開発者の身元を検証できます。
 
 iOS デバイスで開発のためにアプリに自動的に署名するには、次の手順を実行します。
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. Visual Studio for Mac で iOS プロジェクトを開きます。
 
@@ -46,6 +57,26 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
     ![証明書とプロファイルが正常に作成されました](automatic-provisioning-images/image5.png)
 
     自動署名に失敗すると、**自動署名パッド**にエラーの理由が表示されます。
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2017 と Mac をペアリングします。
+
+2. **[プロジェクト]、[Provisioning Properties…]\(プロパティのプロビジョニング...\)** の順に選択し、プロビジョニング オプションを開きます。
+
+3. **[Automatically Provisioning]\(自動プロビジョニング\)** スキームを選択します。
+
+    ![自動スキームの選択](automatic-provisioning-images/prov4.png)
+
+4. **[チーム]** コンボ ボックスからチームを選択し、自動署名プロセスを開始します。
+
+    ![チームの選択](automatic-provisioning-images/prov3.png)
+
+4. これで自動署名プロセスが始まります。 次に、Visual Studio によって App ID の生成が試行されます。プロファイルとこれらの成果物を署名に使用するための署名 ID がプロビジョニングされます。 ビルド出力で生成プロセスを確認できます。
+
+    ![ビルド出力で確認できる成果物の生成](automatic-provisioning-images/prov5.png)
+
+-----
 
 ## <a name="triggering-automatic-provisioning"></a>自動プロビジョニングのトリガー
 

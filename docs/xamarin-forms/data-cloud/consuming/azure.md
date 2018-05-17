@@ -1,5 +1,5 @@
 ---
-title: Azure Mobile Apps の使用
+title: Azure Mobile Appsの使用
 description: Azure のモバイル アプリでは、モバイルの認証、オフライン sync、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。 これは Node.js バックエンドを使用する Azure のモバイル アプリに適用できるのみ、この記事では、クエリ、挿入、更新、および Azure Mobile Apps インスタンス内のテーブルに格納されたデータを削除する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2B3EFD0A-2922-437D-B151-4B4DE46E2095
@@ -13,9 +13,9 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
 ---
-# <a name="consuming-an-azure-mobile-app"></a>Azure Mobile Apps の使用
+# <a name="consuming-an-azure-mobile-app"></a>Azure Mobile Appsの使用
 
-__Azure のモバイル アプリでは、モバイル認証、オフライン同期、およびプッシュ通知のサポートにより、Azure App Service でホストされているスケーラブルなバックエンドでアプリを開発できます。この記事は、Azure Mobile AppsでNode.jsバックエンドを使用する場合にのみ適用され、Azure Mobile Appsインスタンスのテーブルに格納されたデータのクエリ、挿入、更新、および削除方法について説明しています。_
+_Azure Mobile Appsでは、モバイル認証、オフライン同期、およびプッシュ通知のサポートにより、Azure App Serviceでホストされているスケーラブルなバックエンドでアプリを開発できます。この記事は、Azure Mobile AppsでNode.jsバックエンドを使用する場合にのみ適用され、Azure Mobile Appsインスタンスのテーブルに格納されたデータのクエリ、挿入、更新、および削除方法について説明しています。_ 
 
 
 Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。 これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます。`Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続します。
@@ -110,11 +110,11 @@ public async Task DeleteTaskAsync (TodoItem item)
 }
 ```
 
-削除リクエストを行うときは、Azure Mobile App sinstance が削除されるデータを識別できるように、ID を指定してください。 この ID の値が格納されている、`TodoItem.ID`プロパティです。 削削除リクエストに ID が含まれていない場合は、Azure Mobile Apps インスタンスが削除するデータを決定する方法はありませんので、`MobileServiceInvalidOperationException`がスローされます。
+削除リクエストを行うときは、Azure Mobile Apps インスタンス が削除されるデータを識別できるように、ID を指定してください。 この ID の値が格納されている、`TodoItem.ID`プロパティです。 削削除リクエストに ID が含まれていない場合は、Azure Mobile Apps インスタンスが削除するデータを決定する方法はありませんので、`MobileServiceInvalidOperationException`がスローされます。
 
 ## <a name="summary"></a>まとめ
 
-この記事には、使用する方法が説明されている、 [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)クエリ、挿入、更新、および Azure のモバイル アプリ インスタンス内のテーブルに格納されたデータを削除します。 SDK の提供、`MobileServiceClient` Azure Mobile Apps インスタンスにアクセスする Xamarin.Forms アプリケーションによって使用されるクラスです。
+この記事では、Azure Mobile Apps インスタンス内のテーブルに格納されたデータをクエリ、挿入、更新、および 削除する際の[Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)の使用方法を説明しました。 このSDKはAzure Mobile Apps インスタンスにアクセスするためにXamarin.Forms アプリケーションによって使用される `MobileServiceClient` クラスを提供します。
 
 
 ## <a name="related-links"></a>関連リンク

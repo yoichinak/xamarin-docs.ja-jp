@@ -4,14 +4,14 @@ description: アプリケーションに機能を追加するには、多くの�
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: asb3993
+ms.author: amburns
+ms.date: 05/06/2018
+ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="working-with-capabilities"></a>機能の使用
 
@@ -44,20 +44,18 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 * NFC タグの読み取り
 
 
-これらの機能は、Visual Studio for Mac を介して有効にすることも、Apple Developer ポータルで手動で有効にすることもできます。 ウォレット、Apple Pay、および iCloud などの特定の機能には、アプリ ID の追加構成が必要になります。
+これらの機能は、Visual Studio for Mac か Visual Studio 2017 を介して、または Apple Developer ポータルで手動で有効にすることができます。 ウォレット、Apple Pay、および iCloud などの特定の機能には、アプリ ID の追加構成が必要になります。
 
-このガイドでは、アプリケーションでこれらの各 App Services を、Visual Studio for Mac を介して有効にする方法と、Developer Center を介して手動で有効にする方法の両方について説明します。また、必要になる可能性のある追加の設定についても説明します。 
+このガイドでは、アプリケーションでこれらの各 App Services を、Visual Studio で自動的に有効にする方法と、Developer Center を介して手動で有効にする方法について説明します。また、場合によっては必要になる追加の設定についても説明します。 
 
 ## <a name="adding-app-services"></a>App Services の追加
 
-機能を使用するには、アプリに、正しいサービスが有効になっている App ID を含む有効なプロビジョニング プロファイルが必要です。 このプロビジョニング プロファイルは、Visual Studio for Mac で自動的に作成することも、Apple Developer Center で手動で作成することもできます。
+機能を使用するには、アプリに、正しいサービスが有効になっている App ID を含む有効なプロビジョニング プロファイルが必要です。 このプロビジョニング プロファイルは、Visual Studio for Mac や Visual Studio 2017 で自動的に作成するか、Apple Developer Center で手動で作成できます。
 
-このセクションでは、Visual Studio for Mac の自動プロビジョニングまたは Developer Center のいずれかを使用して、ほとんどの機能を有効にする方法について説明します。 iCloud、Apple Pay、およびアプリ グループなど、追加の設定が必要な機能がいくつかあります。 これらについては隣接するガイドで詳しく説明します。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+このセクションでは、Visual Studio の自動プロビジョニングか Developer Center を使用して、ほとんどの機能を有効にする方法について説明します。 iCloud、Apple Pay、およびアプリ グループなど、追加の設定が必要な機能がいくつかあります。 これらについては隣接するガイドで詳しく説明します。
 
 > [!IMPORTANT]
-> Visual Studio for Mac で追加および管理できない機能もあります。 次の一覧には、サポートされている機能が含まれています。
+> 自動プロビジョニングでは、追加したり、管理したりできない機能もあります。 次の一覧には、サポートされている機能が含まれています。
 >
 >* HealthKit 
 >* HomeKit 
@@ -72,10 +70,13 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 >
 >プッシュ通知、Game Center、アプリ内購入、マップ、キーチェーンの共有、関連付けられているドメイン、およびデータ保護機能は現在サポートされていません。 これらの機能を追加するには、手動のプロビジョニングを使用し、「[Developer Center](#devcenter)」セクションの手順に従ってください。
 
+## <a name="using-the-ide"></a>IDE の使用
 
-機能は、Visual Studio for Mac の **Entitlements.plist** に追加されます。 機能を追加するには、次の手順を実行します。
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. iOS アプリケーションの **Info.plist** ファイルを開き、**[Automatically manage signing]** がオンであることを確認します。 不明な点がある場合は、「[Automatic Provisioning](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)」(自動プロビジョニング) ガイドの手順を参照してください。
+機能は、Visual Studio for Mac の **Entitlements.plist** に追加されます。 機能を追加するには次の手順に従います。
+
+1. iOS アプリケーションの **Info.plist** ファイルを開き、コンボ ボックスから **[Automatically Provisioning]** スキームと自分の**チーム**を選択します。 不明な点がある場合は、「[Automatic Provisioning](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)」(自動プロビジョニング) ガイドの手順を参照してください。
 
     ![[Automatically manage signing] オプション](images/manage-signing.png)
 
@@ -93,39 +94,29 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio 2017 では自動プロビジョニングが現在サポートされていないため、正しいアプリケーション サービスのアプリ ID を作成するには [Developer Center](#devcenter) を使用する必要があります。
+機能は **Entitlements.plist** に追加されます。 Visual Studio 2017 の場合、次の手順で機能を追加します。
+
+1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2017 と Mac をペアリングします。
+
+2. **[プロジェクト]、[Provisioning Properties…]\(プロパティのプロビジョニング...\)** の順に選択し、プロビジョニング オプションを開きます。
+
+3. コンボ ボックスから **[Automatically Provisioning]\(自動プロビジョニング\)** と自分の**チーム**を選択します。 不明な点がある場合は、「[Automatic Provisioning](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)」(自動プロビジョニング) ガイドの手順を参照してください。
+
+    ![[Automatically manage signing] オプション](images/manage-signing-vs.png)
+
+4. **Entitlements.plist** ファイルを開き、追加する機能を選択します。 ファイルを保存します。
+
+    **Entitlement.plist** を保存すると、2 つの動作が行われます。
+
+    * その機能をアプリ ID に追加する
+    * 権利のキー/値のペアを Entitlements.plist ファイルに追加する
 
 -----
 
-<!--
-<a name="xcode" />
-
-## Xcode
-
-Xamarin developers can also use Xcode to quickly create a provisioning profile with a suitable App ID. This process, described below, can be used for any app service in the list:
-
-1.  Open Xcode and create a ‘dummy’ project. Give the dummy project the same name as your Xamarin.iOS project. The bundle identifier should be identical to the bundle identifier of your Xamarin.iOS project:
-
-    ![Xcode Create Project](images/image1.png)
-
-2.  Ensure **Automatically manage signing** is selected:
-
-    ![Automatically manage signing selection](images/image2.png)
-
-3.  Once the app has been created, go to the tab named **Capabilities**:
-
-    ![Xcode Capabilities tab](images/image3.png)
-
-4.  Browse to the capability that you wish to add, and move the switch to the **ON** position.
-5.  This will create a provisioning profile with an App ID that contains the capability and adds the entitlement to the profile.
-6.  In Visual Studio for Mac / Visual Studio, browse to **Project Options > Bundle Signing** and set the provisioning profile to the one that was just created in Xcode:
-
-    ![Visual Studio for Mac Project Options](images/image4.png)
--->
 
 <a name="devcenter" />
 
-## <a name="developer-center"></a>Developer Center
+## <a name="using-the-developer-center"></a>Developer Center の使用
 
 Developer Center の使用には 2 ステップのプロセスがあります。アプリ ID を作成してから、そのアプリ ID を使用してプロビジョニング プロファイルを作成する必要があります。 これらの手順を以下で詳しく説明します。
 
@@ -190,7 +181,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 
 8.  **[ダウンロード]** ボタンを押してダウンロードし、ファインダーのファイルをダブルクリックしてプロビジョニング プロファイルをインストールします。
 
-9. Visual Studio for Mac を使用している場合、**Info.plist** ファイルの **[Automatically manage signing]** オプションがオフであることを確認します。
+9. Visual Studio を使用している場合、**[手動プロビジョニング]** オプションが選択されていることを確認します。
 
 10. Visual Studio for Mac と Visual Studio では、**[プロジェクト オプション] > [バンドルの署名]** の順に参照し、プロビジョニング プロファイルを今作成したものに設定します。
 

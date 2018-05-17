@@ -1,40 +1,26 @@
 ---
 title: Xamarin.iOS のパフォーマンス
-description: Xamarin.iOS でビルドされたアプリケーションのパフォーマンスを高めるための方法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。 この記事では、これらの手法について説明します。
+description: このドキュメントでは、Xamarin.iOS アプリケーションでパフォーマンスとメモリ使用量を改善する手法について説明します。
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/29/2016
-ms.openlocfilehash: 3fc6263aa99edb94ae69f1ce8f87835043477392
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: afff9d3924c673edc363292efa1a9b7df43a9218
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
-_Xamarin.iOS でビルドされたアプリケーションのパフォーマンスを高めるための方法は多数あります。これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。この記事では、これらの方法について説明します。_
+低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。 
 
-低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
-
-Xamarin.iOS でビルドされたアプリケーションのパフォーマンスとユーザーの体感パフォーマンスを高めるための方法は多数あります。 Windows コモン コントロールには以下が含まれます。
-
-- [強い参照循環を避ける](#avoidcircularreferences)
-- [テーブル ビューを最適化する](#optimizetableviews)
-- [非透過的なビューを使用する](#opaqueviews)
-- [FAT XIB を避ける](#avoidfatxibs)
-- [イメージ リソースを最適化する](#optimizeimages)
-- [デバイスでテストする](#testondevices)
-- [アニメーションと表示の更新を同期する](#synchronizeanimations)
-- [コア アニメーションの透過を避ける](#avoidtransparency)
-- [コード生成を避ける](#avoidcodegeneration)
+このドキュメントでは、Xamarin.iOS アプリケーションでパフォーマンスとメモリ使用量を改善する手法について説明します。
 
 > [!NOTE]
 > この記事を読む前に、まず、「[Cross-Platform Performance](~/cross-platform/deploy-test/memory-perf-best-practices.md)」(クロスプラットフォーム パフォーマンス) をお読みください。Xamarin プラットフォームを使用してビルドされたアプリケーションのメモリ使用量とパフォーマンスを改善するための、プラットフォーム固有ではない手法について説明されています。
-
-<a name="avoidcircularreferences" />
 
 ## <a name="avoid-strong-circular-references"></a>強い循環参照を避ける
 
@@ -82,14 +68,14 @@ container.AddSubview (new MyView (container));
 
 ### <a name="using-weakreferences"></a>弱い参照の使用
 
-循環を避ける方法の 1 つとして、子から親に対して弱い参照を使用する方法などがあります。たとえば、上記のコードは次のように記述することができます。
+循環を避ける方法の 1 つは、子から親への参照に弱い参照を使用することです。 たとえば、上記のコードは次のように記述できます。
 
 ```csharp
 class Container : UIView
 {
     public void Poke ()
     {
-    // Call this method to poke this object
+        // Call this method to poke this object
     }
 }
 
@@ -112,11 +98,76 @@ var container = new Container ();
 container.AddSubview (new MyView (container));
 ```
 
-つまり、含まれるオブジェクトによって親は維持されず、親は `container.AddSubView` に対する呼び出しによって子のみを維持します。
+ここで、含まれるオブジェクトでは、親が維持されません。 ただし、親では、`container.AddSubView` を呼び出すことで子が維持されます。
 
-デリゲートまたはデータ ソース パターンを使用する iOS API でも、この用法が利用されます。この場合、たとえば [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) プロパティまたは [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) を [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) クラスで設定するときなどに、ピア クラスに実装が含まれます。
+デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) プロパティまたは [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) を [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) クラスで設定するときなどに、ピア クラスに実装が含まれます。
 
 プロトコルを実装するためだけに作成されたクラスの場合 ([`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/) など) にできることは、サブクラスの作成ではなく、クラスにインターフェイスを実装し、メソッドをオーバーライドし、`DataSource` プロパティを `this` に割り当てることです。
+
+#### <a name="weak-attribute"></a>Weak 属性
+
+[Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) では、`[Weak]` 属性が導入されました。 `WeakReference <T>` と同様に、`[Weak]` を利用して[強い循環参照](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)を中断できますが、コードがさらに短くなります。
+
+次のコード例をご覧ください。`WeakReference <T>` を使用しています。
+
+```csharp
+public class MyFooDelegate : FooDelegate {
+    WeakReference<MyViewController> controller;
+    public MyFooDelegate (MyViewController ctrl) => controller = new WeakReference<MyViewController> (ctrl);
+    public void CallDoSomething ()
+    {
+        MyViewController ctrl;
+        if (controller.TryGetTarget (out ctrl)) {
+            ctrl.DoSomething ();
+        }
+    }
+}
+```
+
+同様のコードで `[Weak]` を使用すると、ずっと簡潔になります。
+
+```csharp
+public class MyFooDelegate : FooDelegate {
+    [Weak] MyViewController controller;
+    public MyFooDelegate (MyViewController ctrl) => controller = ctrl;
+    public void CallDoSomething () => controller.DoSomething ();
+}
+```
+
+次は、[委任](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html)パターンで `[Weak]` を使用するもう 1 つの例です。
+
+```csharp
+public class MyViewController : UIViewController 
+{
+    WKWebView webView;
+
+    protected MyViewController (IntPtr handle) : base (handle) { }
+
+    public override void ViewDidLoad ()
+    {
+        base.ViewDidLoad ();
+        webView = new WKWebView (View.Bounds, new WKWebViewConfiguration ());
+        webView.UIDelegate = new UIDelegate (this);
+        View.AddSubview (webView);
+    }
+}
+
+public class UIDelegate : WKUIDelegate 
+{
+    [Weak] MyViewController controller;
+
+    public UIDelegate (MyViewController ctrl) => controller = ctrl;
+
+    public override void RunJavaScriptAlertPanel (WKWebView webView, string message, WKFrameInfo frame, Action completionHandler)
+    {
+        var msg = $"Hello from: {controller.Title}";
+        var alertController = UIAlertController.Create (null, msg, UIAlertControllerStyle.Alert);
+        alertController.AddAction (UIAlertAction.Create ("Ok", UIAlertActionStyle.Default, null));
+        controller.PresentViewController (alertController, true, null);
+        completionHandler ();
+    }
+}
+```
 
 ### <a name="disposing-of-objects-with-strong-references"></a>強い参照を使用したオブジェクトの破棄
 
@@ -142,7 +193,8 @@ class MyContainer : UIView
 親に対する強い参照を維持する子オブジェクトの場合は、`Dispose` 実装で親に対する参照をクリアします。
 
 ```csharp
-    class MyChild : UIView {
+class MyChild : UIView 
+{
     MyContainer container;
     public MyChild (MyContainer container)
     {
@@ -158,16 +210,13 @@ class MyContainer : UIView
 強い参照の解放の詳細については、「[Release IDisposable Resources](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)」(IDisposable リソースの解放) を参照してください。
 また、ブログの投稿「[Xamarin.iOS, the garbage collector and me](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)」(Xamarin.iOS とガベージ コレクターと私) の説明もお勧めします。
 
-### <a name="more-information"></a>説明
+### <a name="more-information"></a>詳細情報
 
 詳細については、Cocoa With Love の「[Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html)」(循環の保持を回避する規則)、StackOverflow の「[Is this a bug in MonoTouch GC](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc)」(これは MonoTouch GC のバグですか)、StackOverflow の「[Why can't MonoTouch GC kill managed objects with refcount > 1?](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1)」(参照カウントが 1 を超えるマネージ オブジェクトを MonoTouch GC でキルできないのはなぜですか?) を参照してください。
 
-
-<a name="optimizetableviews" />
-
 ## <a name="optimize-table-views"></a>テーブル ビューを最適化する
 
-ユーザーは[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) インスタンスに対してスムーズなスクロールと高速な読み込み時間を期待します。 ただし、セルに深い入れ子のビュー階層が含まれる場合、またはセルに複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`UITableView` のパフォーマンス低下を回避するために使用できる手法があります。
+ユーザーは、[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、セルに深い入れ子のビュー階層が含まれる場合、またはセルに複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`UITableView` のパフォーマンス低下を回避するために使用できる手法があります。
 
 - セルを再利用する。 詳細については、「[Reuse Cells](#reusecells)」(セルの再利用) を参照してください。
 - サブビューの数を減らす。
@@ -176,9 +225,7 @@ class MyContainer : UIView
 - セルと他のビューを非透過的にする。
 - イメージのスケーリングとグラデーションを避ける。
 
-これらの手法をすべて使うことで、[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) インスタンスのスクロールをスムーズに保つことができます。
-
-<a name="reusecells" />
+これらの手法をすべて使用することで、[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) インスタンスのスクロールをスムーズに保つことができます。
 
 ### <a name="reuse-cells"></a>セルを再利用する
 
@@ -204,19 +251,13 @@ class MyTableSource : UITableViewSource
 
 詳細については、「[Populating a Table with Data](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)」(データを使用したテーブルの設定) の「[Cell Reuse](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)」(セルの再利用) を参照してください。
 
-<a name="opaqueviews" />
-
 ## <a name="use-opaque-views"></a>非透過的なビューを使用する
 
 透過性が定義されていないビューには、[`Opaque`](https://developer.xamarin.com/api/property/UIKit.UIView.Opaque/) プロパティを設定するようにします。 こうすることで、描画システムはビューを最適にレンダリングします。 この方法は、ビューが [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/) に埋め込まれている場合、または複雑なアニメーションの一部の場合に特に重要です。 そうしないと、描画システムは他のコンテンツを含むビューを作成し、結果的にパフォーマンスが大きく低下する可能性があります。
 
-<a name="avoidfatxibs" />
-
 ## <a name="avoid-fat-xibs"></a>FAT XIB を避ける
 
 大部分の XIB はストーリーボードに置き換えられましたが、まだ XIB が使用されている環境も一部にあります。 XIB がメモリに読み込まれると、すべての画像を含め、すべてのコンテンツがメモリに読み込まれます。 XIB にすぐに使用されないビューが含まれると、メモリは無駄になります。 そのため、XIB を使用する場合は、1 つのビュー コントローラーにつき XIB を 1 つのみにします。また、可能であれば、ビュー コントローラーのビュー階層を別の XIB に分けます。
-
-<a name="optimizeimages" />
 
 ## <a name="optimize-image-resources"></a>イメージ リソースを最適化する
 
@@ -224,15 +265,11 @@ class MyTableSource : UITableViewSource
 
 詳細については、「[Cross-Platform Performance](~/cross-platform/deploy-test/memory-perf-best-practices.md)」(クロスプラットフォーム パフォーマンス) ガイドの「[Optimize Image Resources](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)」(イメージ リソースの最適化) を参照してください。
 
-<a name="testondevices" />
-
 ## <a name="test-on-devices"></a>デバイスでテストする
 
 物理デバイスでのアプリケーションの展開とテストは、できるだけ早く始めます。 シミュレーターは、デバイスの動作と制限とまったく同じではありません。そのため、できるだけはやく実際のデバイスのシナリオでテストすることが重要です。
 
 特に、シミュレーターでは、物理デバイスのメモリまたは CPU の制限をシミュレートすることはできません。
-
-<a name="synchronizeanimations" />
 
 ## <a name="synchronize-animations-with-the-display-refresh"></a>アニメーションと表示の更新を同期する
 
@@ -240,13 +277,9 @@ class MyTableSource : UITableViewSource
 
 一方、ディスプレイ サーバーは 1 秒あたり 60 下位の上限で画面の更新を実行します。 そのため、この上限よりも高速に画面を更新しようとすると、画面の停止や途切れが発生する可能性があります。 画面の更新がディスプレイの更新と同期するようにコードを作成することをお勧めします。 この同期には、[`CoreAnimation.CADisplayLink`](https://developer.xamarin.com/api/type/CoreAnimation.CADisplayLink/) クラスを使用できます。このクラスは、1 秒あたり 60 フレームで実行される視覚化やゲームに適したタイマーです。
 
-<a name="avoidtransparency" />
-
 ## <a name="avoid-core-animation-transparency"></a>コア アニメーションの透過を避ける
 
 コア アニメーションの透過を避けることで、ビットマップ作成のパフォーマンスが改善されます。 一般的に、可能な限り透過レイヤーと罫線のぼかしを避けることをお勧めします。
-
-<a name="avoidcodegeneration" />
 
 ## <a name="avoid-code-generation"></a>コード生成を避ける
 
