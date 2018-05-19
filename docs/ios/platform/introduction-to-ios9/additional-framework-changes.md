@@ -138,10 +138,10 @@ Apple には、次の変更が含まれている、[ローカル認証](https://
 
 次の変更が加えられた、 [LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/) iOS 9 のクラス。
 
-- **TouchIdAuthenticationMaximumAllowableReuseDuration** - Returns the maximum amount of time that a touch ID authentication can be reused.
+- **TouchIdAuthenticationMaximumAllowableReuseDuration** -最大タッチ ID の認証を再利用可能な時間を返します。
 - **EvaluatedPolicyDomainState** - を取得または評価されたポリシーの状態を設定します。
 - **MaxBiometryFailures** -iOS 9 で非推奨になっています。
-- **TouchIdAuthenticationAllowableReuseDuration** Gets or sets the amount of time that a touch ID authentication can be reused.
+- **TouchIdAuthenticationAllowableReuseDuration** を取得またはタッチ ID の認証を再利用可能な時間を設定します。
 - **EvaluateAccessControl** - 非同期的に認証ポリシーを評価します。
 - **無効になる**-特定のタッチ ID の認証を無効にします。
 - **IsCredentialSet** -返します`true`資格情報が現在設定されている場合。
