@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: dea5aaa16891893f649d5ec56f3e6b1ee9a18683
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: abfe22683de024f056d7798dc3ac2de13ebd953e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="cpu-architectures"></a>CPU アーキテクチャ
 
@@ -29,7 +29,7 @@ _Xamarin.Android には、32 ビットおよび 64 ビットのデバイスも�
 
 通常は、明示的に選択する、アーキテクチャ (アーキテクチャ) アプリを構成するとき**リリース**です。 アプリを構成するとき**デバッグ**、**共有ランタイムを使用**と**を使用して高速展開**、明示的なアーキテクチャの選択を無効にするオプションが有効です。
 
-Visual Studio で、ダブルクリック**プロパティ**のプロジェクトの下**ソリューション エクスプ ローラー**を選択し、 **Android オプション**ページ。 クリックして、**パッケージ** タブであることを確認し、**共有ランタイムを使用**は無効になります (これをオフにすることができますをサポートするどの ABIs を明示的に選択) します。 をクリックして、 **[詳細設定]** ] タブと [**プロパティの詳細**をサポートするアーキテクチャを確認します。
+Visual Studio での下のプロジェクトを右クリックし、**ソリューション エクスプ ローラー**選択と**プロパティ**です。 下にある、 **Android オプション**チェック ページ、**パッケージング プロパティ**セクションし、ことを確認**共有ランタイムを使用**は無効になります (これをオフにすることができますに明示的にサポートするためにどの ABIs を選択) します。 をクリックして、 **詳細設定**ボタンをクリックし、**サポートされているアーキテクチャ**、サポートするアーキテクチャを確認します。
 
 [![Armeabi と armeabi v7a の選択](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 

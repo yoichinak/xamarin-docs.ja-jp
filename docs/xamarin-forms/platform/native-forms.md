@@ -1,21 +1,21 @@
 ---
 title: ネイティブのフォーム
-description: ネイティブのフォームは、Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) のネイティブ プロジェクトが消費できるように Xamarin.Forms コンテンツ ページから派生したページを使用できます。 ネイティブ プロジェクトは、プロジェクトまたは .NET 標準ライブラリ、標準ライブラリを .NET、または共有プロジェクトから直接追加するコンテンツ ページから派生したページを使用できます。 この記事では、それらの間を移動する方法とは、ネイティブ プロジェクトに直接追加するコンテンツ ページから派生したページを使用する方法について説明します。
+description: ネイティブのフォームは、Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) のネイティブ プロジェクトが消費できるように Xamarin.Forms コンテンツ ページから派生したページを使用できます。 ネイティブ プロジェクトは、プロジェクトまたは .NET 標準ライブラリ、標準的な .NET のライブラリまたは共有プロジェクトから直接追加するコンテンツ ページから派生したページを使用できます。 この記事では、それらの間を移動する方法とは、ネイティブ プロジェクトに直接追加するコンテンツ ページから派生したページを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: bb7aa9a7071f9ac7bef0dce5790a3fe74302cfb4
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: a103d360221650ee4f679ee285dbedd65e62f947
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="native-forms"></a>ネイティブのフォーム
 
-_ネイティブのフォームは、Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) のネイティブ プロジェクトが消費できるように Xamarin.Forms コンテンツ ページから派生したページを使用できます。ネイティブ プロジェクトは、プロジェクトまたは .NET 標準ライブラリ、標準ライブラリを .NET、または共有プロジェクトから直接追加するコンテンツ ページから派生したページを使用できます。この記事では、それらの間を移動する方法とは、ネイティブ プロジェクトに直接追加するコンテンツ ページから派生したページを使用する方法について説明します。_
+_ネイティブのフォームは、Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) のネイティブ プロジェクトが消費できるように Xamarin.Forms コンテンツ ページから派生したページを使用できます。ネイティブ プロジェクトは、プロジェクトまたは .NET 標準ライブラリ、標準的な .NET のライブラリまたは共有プロジェクトから直接追加するコンテンツ ページから派生したページを使用できます。この記事では、それらの間を移動する方法とは、ネイティブ プロジェクトに直接追加するコンテンツ ページから派生したページを使用する方法について説明します。_
 
 通常、Xamarin.Forms アプリケーションから派生した 1 つまたは複数のページが含まれます。 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)、これらのページは、標準的な .NET のライブラリ プロジェクトまたは共有プロジェクトのすべてのプラットフォームで共有されるとします。 ただし、ネイティブのフォームでは、 `ContentPage`-ネイティブ Xamarin.iOS、Xamarin.Android、および UWP アプリケーションに直接追加するページを派生します。 使用するネイティブ プロジェクトを持つと比較して`ContentPage`-派生のページから、標準的な .NET のライブラリ プロジェクトまたは共有のプロジェクト ページに直接追加するネイティブ プロジェクトの利点は、ネイティブのビューでページを拡張することができます。 使用して XAML でネイティブのビューを付けることができますし、`x:Name`分離コードから参照されているとします。 ネイティブのビューの詳細については、次を参照してください。[ネイティブ ビュー](~/xamarin-forms/platform/native-views/index.md)です。
 

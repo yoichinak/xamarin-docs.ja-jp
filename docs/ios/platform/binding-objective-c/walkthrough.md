@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 5954d705e403a3c8230c3125efcf836c3930c459
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 15e1f53d053046b4a51666647ac846366d3c858b
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: バインド iOS Objective C ライブラリ
 
@@ -137,7 +137,7 @@ Github で InfColorPicker 用のコードを調べてお: 場合
 
     [![](walkthrough-images/image12.png "すべての InfColorPicker ファイル コピーします。")](walkthrough-images/image12.png#lightbox)
 
-7. Xcode に戻り、右クリックして、 **InfColorPicker**フォルダーと選択**「InfColorPicker…」にファイルを追加**:
+7. Xcode に戻り、右クリックして、 **InfColorPicker**フォルダーと選択 **「InfColorPicker…」にファイルを追加**:
 
     [![](walkthrough-images/image08.png "ファイルを追加します。")](walkthrough-images/image08.png#lightbox)
 
@@ -420,7 +420,7 @@ sdk: macosx10.11     arch: x86_64  i386
 sdk: watchos2.2      arch: armv7
 ```
 
-上記から、表示があること、 `iphoneos8.1` SDK がコンピューターにインストールされています。 配置でこの情報を使用する準備が整いました InfColorPicker プロジェクトを解析`.h`最初にファイルを**ApiDefinition.cs**と`StructsAndEnums.cs`InfColorPicker プロジェクト。
+上記から、表示があること、 `iphoneos9.3` SDK がコンピューターにインストールされています。 配置でこの情報を使用する準備が整いました InfColorPicker プロジェクトを解析`.h`最初にファイルを**ApiDefinition.cs**と`StructsAndEnums.cs`InfColorPicker プロジェクト。
 
 次のコマンドを入力して、ターミナル アプリ。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: dfc46b5caa14c1c02d1c2afaffecc701fea59e2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-platform-specifics"></a>Android プラットフォーム仕様
 
@@ -135,7 +135,7 @@ On<Android>().SetOffscreenPageLimit(2)
 
 ## <a name="controlling-the-elevation-of-visual-elements"></a>視覚要素の昇格の制御
 
-このプラットフォーム仕様は、ターゲットが API 21 以上のアプリケーションで視覚要素の昇格または Z オーダーを制御するために使われます。 視覚要素の昇格は、高い Z の値を持つ視覚要素が低い Z の値をもつ視覚要素を塞ぐように、自身の描画順を決定します。 これは XAML で `Elevation.Elevation` 添付プロパティに`boolean`値を設定して使用します。
+このプラットフォーム仕様は、ターゲットが API 21 以上のアプリケーションで視覚要素の昇格または Z オーダーを制御するために使われます。 視覚要素の昇格は、高い Z の値を持つ視覚要素が低い Z の値をもつ視覚要素を塞ぐように、自身の描画順を決定します。 この機能は XAML で `VisualElement.Elevation` 添付プロパティを `boolean` 値に設定して使用します。
 
 ```xaml
 <ContentPage ...
@@ -147,7 +147,7 @@ On<Android>().SetOffscreenPageLimit(2)
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>        
         <Grid Margin="0,20,0,0">
-            <Button Text="Button Above BoxView - Click Me" android:Elevation.Elevation="10"/>
+            <Button Text="Button Above BoxView - Click Me" android:VisualElement.Elevation="10"/>
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>
     </StackLayout>
@@ -196,7 +196,7 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>`メソッドは、このプラットフォーム仕様が Android 上でのみ動作することを指定します。 `Elevation.SetElevation`メソッドは、[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間に存在し、視覚要素の昇格に null 許容型の `float` 値を設定するために使われます。 さらに、`Elevation.GetElevation`メソッドは、視覚要素の昇格値を取得するために使用できます。
+`Button.On<Android>`メソッドは、このプラットフォーム仕様が Android 上でのみ動作することを指定します。 `VisualElement.SetElevation`メソッドは、[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)名前空間に存在し、視覚要素の昇格に null 許容型の `float` 値を設定するために使われます。 さらに、`VisualElement.GetElevation`メソッドは、視覚要素の昇格値を取得するために使用できます。
 
 その結果、視覚要素の昇格は、高いZ値の視覚要素が低いZ値の視覚要素を塞ぐように制御されます。 それによって、この例では2番目の[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)は、より高い昇格値を持つため、[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)の上に表示されます。
 
@@ -252,7 +252,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
-- [PlatformSpecifics (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
 - [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)

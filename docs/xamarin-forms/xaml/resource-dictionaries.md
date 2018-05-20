@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: bfdfeda5821b020d7948e583a63bf9ec7e8ee324
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -35,7 +35,7 @@ XAML では、リソースに格納されている、`ResourceDictionary`され�
 Xamarin.Forms プログラムには、1 つだけから派生するクラスが含まれています。`Application`多くの場合、使用する多くのクラスから派生するが、 `VisualElement`(ページ、レイアウト、およびコントロールなど)。 これらのオブジェクトがその`Resources`プロパティに設定、`ResourceDictionary`です。 特定の配置場所を選択する`ResourceDictionary`から受ける影響のリソースを使用できます。
 
 - 内のリソース、`ResourceDictionary`ように、ビューに接続されている`Button`または`Label`ので、これは非常に便利ではないのみに特定のオブジェクトに適用できます。
-- 内のリソース、`ResourceDictionary`などのレイアウトにアタッチされている`StackLayout`または`Grid`レイアウトやそのレイアウトのすべての子に適用できます。 
+- 内のリソース、`ResourceDictionary`などのレイアウトにアタッチされている`StackLayout`または`Grid`レイアウトやそのレイアウトのすべての子に適用できます。
 - 内のリソース、`ResourceDictionary`定義ページで、ページとそのすべての子レベルを適用できます。
 - 内のリソース、`ResourceDictionary`定義されているアプリケーションでは、アプリケーション全体でレベルが適用することができます。
 
@@ -187,7 +187,7 @@ XAML 例を次に、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDiction
         <local:MyResourceDictionary />
     </ContentPage.Resources>
     ...
-</ContentPage>  
+</ContentPage>
 ```
 
 インスタンス`MyResourceDictionary`に設定されている、`Resources`のプロパティ、`ContentPage`オブジェクト。
@@ -258,7 +258,7 @@ XAML 例を次に、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDiction
 
 ## <a name="merging-dictionaries-in-xamarinforms-30"></a>Xamarin.Forms 3.0 でのディクショナリのマージ
 
-Xamarin.Forms 3.0 では、マージ プロセスで始まる`ResourceDictionaries`と比較的簡単かつ柔軟になりました。 `MergedDictionaries`プロパティ要素タグが必要ではありません。 代わりに、追加するリソース ディクショナリに間`ResourceDictionary`に新しいタグ[ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティが、リソースを持つ XAML ファイルのファイル名に設定します。
+Xamarin.Forms 3.0 では、マージ プロセスで始まる[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)インスタンスは比較的簡単かつ柔軟になりました。 `MergedDictionaries`プロパティ要素タグが必要ではありません。 代わりに、追加するリソース ディクショナリに間`ResourceDictionary`に新しいタグ[ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティが、リソースを持つ XAML ファイルのファイル名に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -294,7 +294,7 @@ Xamarin.Forms 3.0 が自動的にインスタンス化するため、 `ResourceD
 </ContentPage>
 ```
 
-この新しい構文は_いない_をインスタンス化、`MyResourceDictionary`クラスです。 代わりに、XAML ファイルを参照します。 分離コード ファイルの理由を (**MyResourceDictionary.xaml.cs**) は必要なくなりました。 削除することも、`x:Class`のルート タグから属性を**MyResourceDictionary.xaml**ファイル。 
+この新しい構文は_いない_をインスタンス化、`MyResourceDictionary`クラスです。 代わりに、XAML ファイルを参照します。 分離コード ファイルの理由を (**MyResourceDictionary.xaml.cs**) は必要なくなりました。 削除することも、`x:Class`のルート タグから属性を**MyResourceDictionary.xaml**ファイル。
 
 ## <a name="summary"></a>まとめ
 
