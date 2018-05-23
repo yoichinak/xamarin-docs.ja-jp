@@ -420,7 +420,7 @@ I/RegistrationIntentService( 1934): GCM Registration Token: f8LdveCvXig:APA91bFI
 
 #### <a name="add-a-notification-icon"></a>通知アイコンを追加します。
 
-最初の通知が起動されたときに、通知領域に表示される小さいアイコンを追加してみましょう。 コピーすることができます[このアイコン](remote-notifications-with-gcm-images/ic-stat-ic-notification.png)をプロジェクトにするか、独自のカスタム アイコンを作成します。 という名前をアイコン ファイル**ic_stat_button_click.png**にコピーし、**リソース/描画**フォルダーです。 使用してください**追加 > 既存アイテム.**にこのアイコン ファイルをプロジェクトに含めます。
+最初の通知が起動されたときに、通知領域に表示される小さいアイコンを追加してみましょう。 コピーすることができます[このアイコン](remote-notifications-with-gcm-images/ic-stat-ic-notification.png)をプロジェクトにするか、独自のカスタム アイコンを作成します。 という名前をアイコン ファイル**ic_stat_button_click.png**にコピーし、**リソース/描画**フォルダーです。 使用してください**追加 > 既存アイテム.** にこのアイコン ファイルをプロジェクトに含めます。
 
 
 #### <a name="implement-a-gcm-listener-service"></a>GCM リスナー サービスを実装します。

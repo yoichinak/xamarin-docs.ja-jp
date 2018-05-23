@@ -19,7 +19,7 @@ _この記事は、Xamarin.iOS アプリで iOS 9 を操作するためのいく
 
 ## <a name="there-was-a-problem-parsing-the-xml"></a>XML を解析中に問題が発生しました
 
-Xamarin iOS デザイナーは、Xcode 7 の機能をまだサポートしていません。 ストーリー ボードが使用してデザイナーの読み込みに失敗する_「XML を解析中に問題が発生しました」_新しい iOS 9 (Xcode 7) を使用しようとしています。 StackView などのデザイナーの要素。
+Xamarin iOS デザイナーは、Xcode 7 の機能をまだサポートしていません。 ストーリー ボードが使用してデザイナーの読み込みに失敗する _「XML を解析中に問題が発生しました」_ 新しい iOS 9 (Xcode 7) を使用しようとしています。 StackView などのデザイナーの要素。
 
 iOS の Xcode 7 機能のデザイナー サポート サイクル 6 機能の今後のリリースの対象になります。 サイクル 6 のプレビュー バージョンでは、アルファ チャネルで現在使用できるはされ、Xcode 7 の新機能のサポートが制限されます。
 
@@ -91,7 +91,7 @@ IOS9 では、アプリのトランスポート セキュリティ (ATS) は、�
 
 **理由:** iOS 9 に、`initWithFrame:`コンス トラクターは、今すぐとして iOS 9 の動作の変更により、必要な[UICollectionView ドキュメント状態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)です。 セルが呼び出すことによって初期化これで、指定した識別子のクラスを登録すると、別のセルを作成する必要があります、その`initWithFrame:`メソッドです。
 
-**修正:**追加、`initWithFrame:`次のようにコンス トラクター。
+**修正:** 追加、`initWithFrame:`次のようにコンス トラクター。
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -109,7 +109,7 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 **理由:** 、`initWithCoder:`コンス トラクターは、1 つのインターフェイスのビルダー Xib ファイルからビューを読み込むときに呼び出されます。 このコンス トラクターがエクスポートされていない場合、アンマネージ コードは、管理されているバージョンを呼び出すことはできません。 以前 (リフレッシュ レート。 iOS 8) で、`IntPtr`ビューを初期化するコンス トラクターが呼び出されました。
 
-**修正:**の作成とエクスポート、`initWithCoder:`次のようにコンス トラクター。
+**修正:** の作成とエクスポート、`initWithCoder:`次のようにコンス トラクター。
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -130,7 +130,7 @@ Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**理由:**これは、パブリック、プライベートのフレームワークを行うときに発生する Apple のネイティブ リンカーのバグ (JavaScriptCore 公開された iOS 7 で前にプライベート framework した)、あり、アプリの配置ターゲットを iOS 版の場合、フレームワークは、プライベートでした。 ここでは Apple のリンカーは、プライベート framework のバージョンで、公開されているバージョンの代わりにリンクします。
+**理由:** これは、パブリック、プライベートのフレームワークを行うときに発生する Apple のネイティブ リンカーのバグ (JavaScriptCore 公開された iOS 7 で前にプライベート framework した)、あり、アプリの配置ターゲットを iOS 版の場合、フレームワークは、プライベートでした。 ここでは Apple のリンカーは、プライベート framework のバージョンで、公開されているバージョンの代わりにリンクします。
 
 **修正:** ios 9、これに対応する予定しますが、ある、簡単な対応策が当面の間に自分で適用することができます。 (iOS 7 をここではに再試行することができます)、プロジェクトの後で iOS バージョンを対象にだけです。 その他のフレームワークは、類似した問題を示す可能性があります、たとえば WebKit フレームワークが 8、iOS で公開された (および iOS 8 を実行し、アプリ内の WebKit の使用の対象にする必要があります。 このエラーが発生、iOS 7 を対象とするように) します。
 
@@ -149,13 +149,13 @@ IOS 9 バージョン Xamarin.iOS アプリの実際の iOS のハードウェ�
 3. 下にある、**デバイス**側のパネルで、デバイスを右クリックして選択を選択**プロビジョニング プロファイルを表示しています.**: 
 
     [![](troubleshooting-images/untrusted03.png "SShow プロビジョニング プロファイル")](troubleshooting-images/untrusted03.png#lightbox)
-4. 現在、デバイス上をクリックして各プロビジョニング プロファイルを選択、 **-**削除ボタンをクリックします。 
+4. 現在、デバイス上をクリックして各プロビジョニング プロファイルを選択、 **-** 削除ボタンをクリックします。 
 
     [![](troubleshooting-images/untrusted04.png "プロビジョニング プロファイルの削除")](troubleshooting-images/untrusted04.png#lightbox)
-5. **Xcode**メニューの **設定しています.**と**アカウント**: 
+5. **Xcode**メニューの **設定しています.** と**アカウント**: 
 
     [![](troubleshooting-images/untrusted05.png "Xcode アカウントの基本設定")](troubleshooting-images/untrusted05.png#lightbox)
-6. クリックして、**の詳細を表示しています.**クリックして、**すべてダウンロード**ボタンをクリックします。 
+6. クリックして、**の詳細を表示しています.** クリックして、**すべてダウンロード**ボタンをクリックします。 
 
     [![](troubleshooting-images/untrusted06.png "すべてのプロファイルをダウンロードします。")](troubleshooting-images/untrusted06.png#lightbox)
 7. 一覧の更新が完了したらをクリックして、**完了**ボタンをクリックし、環境設定ウィンドウを閉じます。

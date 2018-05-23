@@ -44,7 +44,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   Windows では、サポート ライブラリの場所は**c:\\ユーザー\\_username_\\AppData\\ローカル\\Xamarin**です。 
 
-    -   Mac OS x のサポート ライブラリの場所は**/users/_username_/.local/share/Xamarin**です。 
+    -   Mac OS x のサポート ライブラリの場所は **/users/_username_/.local/share/Xamarin**です。 
 
 2. エラー メッセージに対応するライブラリとバージョンのフォルダーを見つけます。 たとえば、上記のエラー メッセージのライブラリとバージョンのフォルダーにある**Android.Support.v4\\22.2.1**:
 
@@ -104,7 +104,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    場合、 **m2repository**ダウンロード URL を作成するには付加することによってこのテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/**の名前に、 **m2repository**をダウンロードします。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**です。
+    場合、 **m2repository**ダウンロード URL を作成するには付加することによってこのテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/** の名前に、 **m2repository**をダウンロードします。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**です。
 
 2.  上記の表に示すように、ダウンロード URL の対応する MD5 ハッシュをファイルの名前を変更します。 たとえば、ダウンロードした**android\_m2repository\_r25.zip**に名前を変更**0B3F1796C97C707339FB13AE8507AF50.zip**です。 使用することができます、ダウンロードしたファイルのダウンロード URL の MD5 ハッシュがテーブルに表示されない場合、[オンライン MD5 ジェネレーター](http://www.webconfs.com/online-md5-generator.php) MD5 ハッシュ文字列を URL に変換します。 
 
@@ -112,7 +112,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   Windows では、このフォルダーにある**c:\\ユーザー\\***username***\\AppData\\ローカル\\Xamarin\\圧縮**です。 
 
-    -   Mac OS x では、このフォルダーにある**/users/***username***/.local/share/Xamarin/zips**です。 
+    -   Mac OS x では、このフォルダーにある **/users/***username***/.local/share/Xamarin/zips**です。 
 
     たとえば、次のスクリーン ショットは、結果を示しています。 ときに**android\_m2repository\_r16.zip**がダウンロードされ、Windows 上のダウンロード URL の MD5 ハッシュを名前を変更します。
 
@@ -139,7 +139,7 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 2.  ダウンロード、 **android\_m2repository\_r_nn_.zip**エラーに対応する、Google からファイルをメッセージ (リンク前のセクションでテーブルを参照してください)。
 
-3.  この抽出**.zip** (デスクトップ) などの任意の場所にアーカイブします。 これの名前に対応するディレクトリを作成する必要があります、 **.zip**アーカイブします。 このディレクトリ内には、という名前のサブディレクトリを検索する必要があります**m2repository**: 
+3.  この抽出 **.zip** (デスクトップ) などの任意の場所にアーカイブします。 これの名前に対応するディレクトリを作成する必要があります、 **.zip**アーカイブします。 このディレクトリ内には、という名前のサブディレクトリを検索する必要があります**m2repository**: 
 
     [![抽出した zip アーカイブ内に見つかった m2repository フォルダー](resolving-library-installation-errors-images/05-m2repository-vs.png)](resolving-library-installation-errors-images/05-m2repository-vs.png#lightbox)
 
@@ -147,11 +147,11 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
     [![23.1.1.0 でコンテンツと埋め込みのフォルダーを作成するフォルダー](resolving-library-installation-errors-images/06-recreate-folders-vs.png)](resolving-library-installation-errors-images/06-recreate-folders-vs.png#lightbox)
 
-5.  コピー **m2repository**から抽出した**.zip**に、**コンテンツ**前の手順で作成したディレクトリ。 
+5.  コピー **m2repository**から抽出した **.zip**に、**コンテンツ**前の手順で作成したディレクトリ。 
 
     [![23.1.1.0/content フォルダーにコピー m2repository のスクリーン ショット](resolving-library-installation-errors-images/07-copied-m2repository-vs.png)](resolving-library-installation-errors-images/07-copied-m2repository-vs.png#lightbox)
 
-6.  抽出したで**.zip**ディレクトリを参照**m2repository\\com\\android\\サポート\\サポート v4**対応するフォルダーを開きます上記で作成したバージョン番号 (この例では**23.1.1**)。
+6.  抽出したで **.zip**ディレクトリを参照**m2repository\\com\\android\\サポート\\サポート v4**対応するフォルダーを開きます上記で作成したバージョン番号 (この例では**23.1.1**)。
 
     [![Support-v4/23.1.1 フォルダーに含まれているファイルの例](resolving-library-installation-errors-images/08-zip-contents-vs.png)](resolving-library-installation-errors-images/08-zip-contents-vs.png#lightbox)
 
@@ -159,9 +159,9 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
     [![23.1.1.0/embedded フォルダーにコピーされたファイルの例](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
-8.  上のすべてのファイルがコピーされることを確認します。 **埋め込み**を今すぐファイルを含むディレクトリなど**.jar**、 **.aar**、および**.pom**です。
+8.  上のすべてのファイルがコピーされることを確認します。 **埋め込み**を今すぐファイルを含むディレクトリなど **.jar**、 **.aar**、および **.pom**です。
 
-9.  抽出されたすべてのコンテンツを解凍**.aar**ファイルを**埋め込み**ディレクトリ。 Windows では、追加、 **.zip**拡張機能を**.aar**ファイルを開き、コンテンツのコピー、**埋め込み**ディレクトリ。
+9.  抽出されたすべてのコンテンツを解凍 **.aar**ファイルを**埋め込み**ディレクトリ。 Windows では、追加、 **.zip**拡張機能を **.aar**ファイルを開き、コンテンツのコピー、**埋め込み**ディレクトリ。
     Macos、解凍、 **.aar**ファイルを使用して、**解凍**端末のコマンド (たとえば、 **file.aar を解凍**)。
 
 この時点では、不足しているコンポーネントを手動でインストールしたし、エラーせず、プロジェクトをビルドする必要があります。 以外の場合は、ダウンロードしたことを確認してください、 **m2repository** **.zip**エラー メッセージのバージョンに正確に対応するバージョンをアーカイブし、内容にがインストールされていることを確認してください、。上記の手順」の説明に従って、場所を修正します。 

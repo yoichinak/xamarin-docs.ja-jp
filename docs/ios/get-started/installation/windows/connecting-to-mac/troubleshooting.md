@@ -159,7 +159,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
     1. ターミナル コマンド プロンプトで `ls /etc/ssh/sshd_config` と `ls /etc/sshd_config` を実行し、**sshd\_config** ファイルの場所を確認します。 残りのすべての手順では、"該当するファイルまたはディレクトリがありません" を_返さない_この場所を必ず使用します。
 
-        [![](troubleshooting-images/troubleshooting-image18.png "ターミナルでの "ls /etc/ssh/sshd_config" と "ls /etc/sshd_config" の実行")](troubleshooting-images/troubleshooting-image18.png#lightbox)
+        [![](troubleshooting-images/troubleshooting-image18.png "ターミナルでの \"ls /etc/ssh/sshd_config\" と \"ls /etc/sshd_config\" の実行")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. ターミナルで `cp /etc/ssh/sshd_config "$HOME/Desktop/"` を実行し、デスクトップにファイルをコピーします。
 

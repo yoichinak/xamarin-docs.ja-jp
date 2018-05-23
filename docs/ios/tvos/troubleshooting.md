@@ -39,7 +39,7 @@ Xamarin の tvOS のサポートの現在のリリースでは、次の既知の
 
 ### <a name="invalid-executable---the-executable-does-not-contain-bitcode"></a>無効な実行可能ファイルの実行可能ファイルを含まない bitcode
 
-Apple TV の App Store に Xamarin.tvOS アプリを送信しようとすると、フォームのエラー メッセージをする可能性があります_「無効な実行可能ファイルには実行可能ファイルが含まれていない bitcode には」_です。
+Apple TV の App Store に Xamarin.tvOS アプリを送信しようとすると、フォームのエラー メッセージをする可能性があります _「無効な実行可能ファイルには実行可能ファイルが含まれていない bitcode には」_ です。
 
 この問題を解決するには、次の操作を行います。
 
@@ -47,7 +47,7 @@ Apple TV の App Store に Xamarin.tvOS アプリを送信しようとすると�
 2. 選択**tvOS ビルド**にあることを確認して、**リリース**構成。 
 
     [![](troubleshooting-images/ts01.png "TvOS ビルド オプションを選択します。")](troubleshooting-images/ts01.png#lightbox)
-3. 追加`--bitcode=asmonly`を**追加 mtouch 引数**フィールドでをクリックし、 **[ok]**ボタンをクリックします。
+3. 追加`--bitcode=asmonly`を**追加 mtouch 引数**フィールドでをクリックし、 **[ok]** ボタンをクリックします。
 4. アプリを再構築、**リリース**構成します。
 
 ### <a name="verifying-that-your-tvos-app-contains-bitcode"></a>ことを確認、tvOS アプリが含まれています Bitcode

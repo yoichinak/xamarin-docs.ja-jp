@@ -56,7 +56,7 @@ ICloud にアクセスするアプリケーションを正しく構成するに�
 
 - **Entitlements.plist に、コンテナーの識別子を追加**-コンテナーの識別子の形式は`TeamID.BundleID`します。 詳細についてを参照してください、[権利に関する作業](~/ios/deploy-test/provisioning/entitlements.md)ガイドです。
 
-- **プロジェクトのプロパティを構成する**- Info.plist のファイルを確認してください、**バンドル Id**と一致する、**バンドル ID**場合は、設定[アプリ ID を作成する](~/ios/deploy-test/provisioning/capabilities/index.md)です。IOS バンドル署名 * 使用して、**プロビジョニング プロファイル**iCloud App Service でアプリ ID が含まれていると**カスタム権利**ファイルを選択します。 これは、ことができますすべてで実行する Visual Studio プロジェクトのプロパティ] ウィンドウの [します。
+- **プロジェクトのプロパティを構成する**- Info.plist のファイルを確認してください、**バンドル Id**と一致する、**バンドル ID**場合は、設定[アプリ ID を作成する](~/ios/deploy-test/provisioning/capabilities/index.md)です。IOS バンドル署名 使用して、**プロビジョニング プロファイル**iCloud App Service でアプリ ID が含まれていると**カスタム権利**ファイルを選択します。 これは、ことができますすべてで実行する Visual Studio プロジェクトのプロパティ] ウィンドウの [します。
 
 - **デバイスを iCloud を有効にする**に移動して -**設定 > iCloud**にデバイスを記録することを確認してください。
 選択して有効に、**ドキュメントおよびデータ**オプション。
@@ -279,7 +279,7 @@ public class MonkeyDocument : UIDocument
 
 ### <a name="finding-and-opening-icloud-documents"></a>検索と iCloud のドキュメントを開く
 
-サンプル アプリのみが扱う 1 つのファイル - test.txt のため、内のコード**<code>appdelegate.cs</code>**を作成、`NSPredicate`と`NSMetadataQuery`を具体的にはそのファイル名を探します。 `NSMetadataQuery`非同期で実行され、それが完了したら、通知を送信します。 `DidFinishGathering` 通知のオブザーバーによって呼び出されます、クエリを停止およびを使用して LoadDocument を呼び出し、`UIDocument.Open`ファイルを読み込み、表示しようとする完了ハンドラーを持つメソッド、`MonkeyDocumentViewController`です。
+サンプル アプリのみが扱う 1 つのファイル - test.txt のため、内のコード **appdelegate.cs** を作成、`NSPredicate`と`NSMetadataQuery`を具体的にはそのファイル名を探します。 `NSMetadataQuery`非同期で実行され、それが完了したら、通知を送信します。 `DidFinishGathering` 通知のオブザーバーによって呼び出されます、クエリを停止およびを使用して LoadDocument を呼び出し、`UIDocument.Open`ファイルを読み込み、表示しようとする完了ハンドラーを持つメソッド、`MonkeyDocumentViewController`です。
 
 ```csharp
 string monkeyDocFilename = "test.txt";

@@ -416,13 +416,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 y、· を =cosh(x/a)
 
-*Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、*です。 Catenary の中心です。 同様に、*コサイン*関数、 *cosh*と呼ばれます*でも*、つまり*cosh(–x)* equals *cosh(x)*、正または負の値の引数を高めるために値が大きくなるとします。 これらの値では、曲線、catenary の辺を形成するについて説明します。
+*Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、* です。 Catenary の中心です。 同様に、*コサイン*関数、 *cosh*と呼ばれます*でも*、つまり*cosh(–x)* equals *cosh(x)*、正または負の値の引数を高めるために値が大きくなるとします。 これらの値では、曲線、catenary の辺を形成するについて説明します。
 
-適切な値の検索*、* catenary 電話のページの寸法に合わせてが直接計算します。 場合*w*と*h*幅と高さの四角形の最適な値は、 *、*が次の式を満たします。
+適切な値の検索 *、* catenary 電話のページの寸法に合わせてが直接計算します。 場合*w*と*h*幅と高さの四角形の最適な値は、 *、* が次の式を満たします。
 
 cosh (w/2、/) 1 + h を =、/
 
-次の方法で、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)として等号 (=) の右側と左側の 2 つの式を参照して、等しいかどうかがクラスに組み込まれています`left`と`right`です。 値が小さい*、*、`left`がより大きい`right`; の値が大きい*、*、`left`はより小さい`right`です。 `while`ループを内の最適な値を絞り込みます*、*:
+次の方法で、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)として等号 (=) の右側と左側の 2 つの式を参照して、等しいかどうかがクラスに組み込まれています`left`と`right`です。 値が小さい *、*、`left`がより大きい`right`; の値が大きい *、*、`left`はより小さい`right`です。 `while`ループを内の最適な値を絞り込みます *、*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -499,7 +499,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-メインのジョブ、`PaintSurface`ハンドラーは catenary 自体のパスを作成します。 最適なを決定した後*、*で格納して、`optA`変数もする必要があるウィンドウの上部からのオフセットを計算します。 コレクションを累積できるし、 `SKPoint` 、catenary の値が、パスに有効にして、以前に作成して、パスの描画`SKPaint`オブジェクト。
+メインのジョブ、`PaintSurface`ハンドラーは catenary 自体のパスを作成します。 最適なを決定した後 *、* で格納して、`optA`変数もする必要があるウィンドウの上部からのオフセットを計算します。 コレクションを累積できるし、 `SKPoint` 、catenary の値が、パスに有効にして、以前に作成して、パスの描画`SKPaint`オブジェクト。
 
 ```csharp
 public class LinkedChainPage : ContentPage

@@ -37,7 +37,7 @@ ms.lasthandoff: 04/04/2018
 - 以前のリリースの Visual Studio for Mac が正しく示されていないのいずれかの、 **AppleCompanionSettings** 88 x 88 (ピクセル) ですその結果として、アイコン、**アイコン エラーのない**アプリに送信しようとする場合。ストア。
     このアイコンは 87 x 87 ピクセルである必要があります (29 単位**@3x** Retina 画面)。 Mac で Xcode でのイメージ アセットを編集いずれかの Visual Studio でこれを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
-- 場合ウォッチ拡張機能プロジェクトの**Info.plist > WKApp バンドル ID**は[正しく設定されている](~/ios/watchos/get-started/project-references.md)Watch アプリの一致するように**バンドル ID**デバッガーは接続に失敗し、VisualMac 用 studio が、メッセージで待機*「デバッガーの接続を待機している」*です。
+- 場合ウォッチ拡張機能プロジェクトの**Info.plist > WKApp バンドル ID**は[正しく設定されている](~/ios/watchos/get-started/project-references.md)Watch アプリの一致するように**バンドル ID**デバッガーは接続に失敗し、VisualMac 用 studio が、メッセージで待機 *「デバッガーの接続を待機している」* です。
 
 - デバッグはサポートされて**通知**モードですが信頼できることができます。 再試行は動作場合があります。 いることを確認、Watch アプリの**Info.plist** `WKCompanionAppBundleIdentifier`親/コンテナーの iOS アプリのバンドル id が一致するように設定されている (ie。 iPhone で実行されている 1 つ)。
 
@@ -98,7 +98,7 @@ Mac OS X でアルファ チャネルを削除するは簡単、**プレビュ�
 
     ![](troubleshooting-images/add-1.png "InterfaceController")
 
-3. 今すぐにドラッグできるコントロール インターフェイス コント ローラー ( ラベルやボタンなど) は作成できませんコンセントまたはアクション、まだがあるためありません**.h**ヘッダー ファイルです。 次の手順と、必要な**.h**ヘッダー ファイルを作成します。
+3. 今すぐにドラッグできるコントロール インターフェイス コント ローラー ( ラベルやボタンなど) は作成できませんコンセントまたはアクション、まだがあるためありません **.h**ヘッダー ファイルです。 次の手順と、必要な **.h**ヘッダー ファイルを作成します。
 
     ![](troubleshooting-images/add-2.png "レイアウト内のボタン")
 
@@ -165,7 +165,7 @@ Mac OS X でアルファ チャネルを削除するは簡単、**プレビュ�
     ![](troubleshooting-images/add-6.png "インターフェイスのビルダーで、ストーリー ボードを開く")
 
 8. 新しいインターフェイス コント ローラーを選択し、上記で定義したなどのクラス名を付けます。 `MyInterfaceController`。
-すべてが正しく機能場合、表示されるはずで自動的に、**クラス:**ドロップ ダウン リストと、そこから選択することができます。
+すべてが正しく機能場合、表示されるはずで自動的に、**クラス:** ドロップ ダウン リストと、そこから選択することができます。
 
     ![](troubleshooting-images/add-4.png "カスタム クラスを設定")
 
