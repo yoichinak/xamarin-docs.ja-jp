@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 92ca58374292c829df4098274abae870b355a7b0
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
@@ -24,7 +24,7 @@ _右から左へのローカライズでは、Xamarin.Forms アプリケーシ�
 フロー方向とは、ページ上の UI 要素が目によってスキャンされる方向です。 アラビア語やヘブライ語など、一部の言語では、UI 要素が右から左へのフローの方向にレイアウトされることが必要です。 設定してこれを行う、 [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティです。 このプロパティを取得またはそれらのレイアウトを制御しのいずれかに設定する必要がある親要素内でどの UI 要素のフローの方向に設定、 [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection)列挙値。
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 設定、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティを[ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft)要素で、右、右から左への読み取り順序とコントロールのレイアウトを受け渡しする通常の配置を設定右から左へ。

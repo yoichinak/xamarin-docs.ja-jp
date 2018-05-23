@@ -6,12 +6,12 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 05/07/2018
-ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/21/2018
+ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -30,7 +30,7 @@ XAML では、リソースに格納されている、`ResourceDictionary`され�
 リソースがで定義されている、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) 、次のいずれかに設定されている`Resources`プロパティ。
 
 - [ `Resources` ](xref:Xamarin.Forms.Application.Resources)から派生したクラスのプロパティ [`Application`](xref:Xamarin.Forms.Application)
-- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)任意のクラスの派生元となるプロパティ['VisualElement'](xref:Xamarin.Forms.Application)
+- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)から派生したクラスのプロパティ [`VisualElement`](xref:Xamarin.Forms.Application)
 
 Xamarin.Forms プログラムには、1 つだけから派生するクラスが含まれています。`Application`多くの場合、使用する多くのクラスから派生するが、 `VisualElement`(ページ、レイアウト、およびコントロールなど)。 これらのオブジェクトがその`Resources`プロパティに設定、`ResourceDictionary`です。 特定の配置場所を選択する`ResourceDictionary`から受ける影響のリソースを使用できます。
 

@@ -4,11 +4,11 @@ title: 'WPF とします。Xamarin.Forms: 類似点と相違点'
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 21ffca65ee72308d1340a1db43471228b2adbe91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ac30a29a2b4982b2f995c9f717cf1893ca5d8b8a
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF とします。Xamarin.Forms: 類似点と相違点
 
@@ -33,7 +33,7 @@ XAML は、WPF と Xamarin.Forms の宣言型マークアップ言語として�
 
 - Xamarin.Forms をサポートしている、 [XAML 2009 の仕様](/dotnet/framework/xaml-services/xaml-2009-language-features/); データを定義するなどが簡単になります。 `string`s、`int`などもとして定義するジェネリック型、およびコンス トラクターに渡す引数。
 
-- 方法はありません現在 dyanmically 読み込み XAML を WPF のように`XamlReader`です。 使用して同じ基本的な機能を取得することができます、 [NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)もします。
+- WPF のように、XAML を動的に読み込む方法は現在ありません`XamlReader`です。 使用して同じ基本的な機能を取得することができます、 [NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)もします。
 
 ### <a name="markup-extensions"></a>マークアップ拡張機能
 

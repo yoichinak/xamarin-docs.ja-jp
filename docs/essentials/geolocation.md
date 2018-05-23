@@ -5,13 +5,13 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ead498113f432e766fbd77ae2f01bc67c2273b60
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: bf0fa7d2caf7c8857bc1272f4471def04100383f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials ジオコード化
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials 地理的位置情報
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="getting-started"></a>作業の開始
 
-アクセスする、 **Geolocation**次のプラットフォーム固有のセットアップの機能が必要です。
+アクセスする、**地理的位置情報**機能、次のプラットフォーム固有のセットアップが必要です。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -47,11 +47,11 @@ ms.lasthandoff: 05/12/2018
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**権限が必要:** 領域とチェック、 **ACCESS_COARSE_LOCATION**と**ACCESS_FINE_LOCATION**アクセス許可。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**権限が必要:** 領域とチェック、 **ACCESS_COARSE_LOCATION**と**ACCESS_FINE_LOCATION**アクセス許可。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-キーを持つアプリが必要な**Info.plist**デバイスの場所にアクセスするために NSLocationWhenInUseUsageDescription 用です。
+アプリの**Info.plist**含める必要があります、`NSLocationWhenInUseUsageDescription`デバイスの場所にアクセスするためにキー。
 
 Plist エディターを開き、追加、**プライバシー - 場所ときに使用する使用状況の説明**プロパティと、ユーザーを表示する値に入力します。
 
@@ -64,7 +64,7 @@ Plist エディターを開き、追加、**プライバシー - 場所ときに
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-設定する必要があります、`Location`アプリケーションに対するアクセス許可。 これを開く、 **Package.appxmanifest**を選択し、**機能**タブとチェック**場所**です。
+設定する必要があります、`Location`アプリケーションに対するアクセス許可。 開くことによってこれ行う、 **Package.appxmanifest**を選択し、**機能**タブとチェック**場所**です。
 
 -----
 
@@ -104,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-現在のデバイスを照会する[場所](xref:Xamarin.Essentials.Location)座標、`GetLocationAsync`使用できます。 完全に渡すことをお勧め`GeolocationRequest`と`CancellationToken`ので、デバイスの場所を取得する時間がかかる場合があります。
+現在のデバイスを照会する[場所](xref:Xamarin.Essentials.Location)、座標、`GetLocationAsync`使用できます。 完全に渡すことをお勧め`GeolocationRequest`と`CancellationToken`ので、デバイスの場所を取得する時間がかかる場合があります。
 
 ```csharp
 try
@@ -133,7 +133,7 @@ catch (Exception ex)
 
 ## <a name="geolocation-accuracy"></a>地理的位置情報の精度
 
-次の表に、プラットフォームごとの精度
+次の表は、プラットフォームごとの精度を示します。
 
 ### <a name="lowest"></a>最低
 

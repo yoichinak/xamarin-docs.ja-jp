@@ -6,11 +6,11 @@ ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: b5301e499a3b85087f19449f8a25b107b8ec1e4b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: dd179fb1d1ce3ca57cdf6e27bb86a12e2f9ef03f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin.Forms の Xamarin ライブ Player
 
@@ -22,7 +22,7 @@ Xamarin Live Player は、作業の開始、デバイス上で簡単に視覚化
 
 [![Xamarin ライブ プレーヤー: コード、テストをスキャンします。](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. フローして、アプリをダウンロード、 [Xamarin Live Player セットアップ](install.md)指示します。
+1. に従って、アプリをダウンロード、 [Xamarin Live Player セットアップ](install.md)指示します。
 2. 有効にする、 *Xamarin Player のライブ*で**設定**からデバイスを選択し、**デバイス**リスト。
 2. デバイスに Visual Studio とペアに QR コードをスキャンする Live プレーヤー デバイスを管理します。
 3. アプリは、携帯電話やタブレットで右に実行されます。

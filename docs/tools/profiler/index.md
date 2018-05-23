@@ -6,11 +6,11 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -24,33 +24,12 @@ Xamarin プロファイラーは、プロファイルの使用可能な機器の
 
 このガイドでは、プロファイリングの一般的なシナリオを調査し、分析し、iOS および Android アプリケーションを最適化するためのツールとして、プロファイラーを紹介します。
 
-## <a name="contents"></a>目次
-
-- [ダウンロードとインストール](#Download_and_Install)
-- [プロファイラーおよびプロファイリング](#Profilers_and_Profiling)
-- [Xamarin Profiler](#Xamarin_Profiler)
-- [プロファイラーのサポート](#Profiler_Support)
-- [プロファイラーの基礎](#Profiler_Basics)
-    - [アプリのプロファイリングで許可します。](#Allowing_Profiling_in_your_App)
-    - [プロファイラーを起動します。](#Launching_the_Profiler)
-        - [Mac 用 Visual Studio から起動します。](#Launching_from_Xamarin_Studio)
-        - [Visual Studio から起動します。](#Launching_from_Visual_Studio)
-        - [保存と読み込みプロファイラー セッション](#Saving_and_Loading_Profiler_Sessions)
-        - [プロファイラーの機能および機器](#Profiler_Features)
-    - [割り当て](#Allocations)
-    - [時間プロファイラー](#Time_Profiler)
-    - [サイクル](#Cycles)
-- [アプリケーションのプロファイリング](#Profiling_Applications)
-- [まとめ](#Summary)
-
 ## <a name="download-and-install"></a>ダウンロードとインストール
 
 > [!NOTE]
-> **注:** である必要があります、 [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) mac 上の Mac の Windows 上のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除するサブスクライバー
+> ある必要があります、 [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) mac 上の Mac の Windows 上のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除するサブスクライバー
 
 Xamarin プロファイラーは、スタンドアロン アプリケーションされ、IDE 内からのプロファイリングを有効にするには、Visual Studio for Mac と Visual Studio と統合されます。
-
-### <a name="download"></a>ダウンロード
 
 お使いのプラットフォーム用のインストール パッケージをダウンロードするには。
 
@@ -58,7 +37,6 @@ Xamarin プロファイラーは、スタンドアロン アプリケーショ�
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 ダウンロードされると、Xamarin プロファイラーをシステムに追加するためにインストーラーを起動します。
-
 
 ## <a name="profilers-and-profiling"></a>プロファイラーおよびプロファイリング
 
@@ -199,7 +177,6 @@ Xamarin プロファイラーは、iOS または Android のアプリケーシ�
 
 詳細については、次を参照してください。 [.mlpd ファイルを生成する](~/tools/profiler/troubleshooting.md#gen_mlpd)です。
 
-
 ## <a name="profiler-features"></a>プロファイラーの機能
 
 Xamarin プロファイラーは、以下に示すように 5 つのセクションで構成されます。
@@ -298,7 +275,6 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 -----
 
-
 - **コール ツリー** – 各メソッドに費やされた時間数を示します。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -340,24 +316,7 @@ C# および f# マネージ コードを使用して、非常に一般的でお
 
 -----
 
-
 選択**更新**を続行します。
-
-<!---
-## Profiling Android Applications
-
-
-Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
-
-You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
-
-
-## Profiling iOS Applications
-
-### Profiling tvOS
-
-## Profiling Mac Applications
--->
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen ガベージ コレクターとプロファイリング
 
@@ -374,7 +333,6 @@ SGen は、次の 3 つのヒープにアプリケーションのオブジェク
 ## <a name="summary"></a>まとめ
 
 このガイドではどのようなプロファイルとの開発者にとって便利な方法について説明しました。 Xamarin プロファイラーは、いくつかの履歴とそのしくみに情報の提供を紹介します。 最後に、Xamarin プロファイラーの機能を付けましたし、割り当ておよび時間プロファイラー機器について説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 
