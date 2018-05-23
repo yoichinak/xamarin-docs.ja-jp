@@ -13,73 +13,73 @@ ms.lasthandoff: 05/09/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
-## <a name="using-net-standard-library-projects-to-share-code"></a>.NET 標準ライブラリ プロジェクトを使用してコードを共有するには
+## <a name="using-net-standard-library-projects-to-share-code"></a>.NET Standard ライブラリ プロジェクトを使用してコードを共有するには
 
-.NET Standard Library は、すべての .NET ランタイムで使用できるようにすることを目的とした .NET API の正式な仕様です。 Standard Library の背後にある動機は、.NET エコシステムの高度な統一性を確立することです。
+.NET Standard ライブラリは、すべての .NET ランタイムで使用できるようにすることを目的とした .NET API の正式な仕様です。 .NET Standard ライブラリの背後にある動機は、.NET エコシステムの高度な統一性を確立することです。
 [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) は引き続き .NET ランタイムの動作の統一性を確立しますが、.NET ライブラリの実装用の .NET 基底クラス ライブラリ (BCL) に同様の仕様はありません。
 
 考えることができますが、シンプルな次世代の[ポータブル クラス ライブラリ](https://msdn.microsoft.com/library/gg597391.aspx)です。
-1 つのライブラリの .NET Core を含むすべての .NET プラットフォーム、統一された API を使用することをお勧めします。 先ほど単一 .NET 標準ライブラリを作成し、.NET 標準プラットフォームをサポートする任意のランタイムから使用します。
+1 つのライブラリで、.NET Core を含むすべての .NET プラットフォームで利用可能なユニフォーム API を持ちます。 1 つの .NET Standard ライブラリを作成し、.NET Standard プラットフォームをサポートする任意のランタイムから使用するだけです。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-このセクションで作成および for mac Visual Studio を使用する .NET 標準ライブラリを使用する方法について説明します。 完全な実装について .NET 標準ライブラリの例のセクションを参照してください。
+このセクションでは、Visual Studio for Macを使用して.NET Standard ライブラリの作成と使用方法について説明します。 完全な実装については、.NET Standard ライブラリの例のセクションを参照してください。
 
-### <a name="creating-a-net-standard-library"></a>.NET 標準ライブラリを作成します。
+### <a name="creating-a-net-standard-library"></a>.NET Standard ライブラリの作成
 
-.NET 標準ライブラリを追加するソリューションには、比較的簡単です。
+.NET Standard ライブラリをソリューションに追加するのは、比較的簡単です。
 
 1. 新しいプロジェクトの追加ダイアログ ボックスで、`.NET Core`カテゴリし選択`Class Library(.NET Core)`です。
 
-  **注:** にこのテンプレートの名前を変更するは`.NET Standard`将来のバージョンの Visual Studio for mac
+  **注:** このテンプレートの名前は、Visual Studio for Mac の将来のバージョンで `.NET Standard` に変更されます。
 
-  ![.NET Core クラス ライブラリを作成します。](net-standard-images/vsm01.png)
+  ![.NET Standard ライブラリの作成](net-standard-images/vsm01.png)
 
-2. .NET 標準ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示すように表示されます。 依存関係ノードは、ライブラリを使用する、 [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/)です。
+2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。 依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
 
-  ![ソリューション内の依存関係ノードが .NET 標準を示します](net-standard-images/vsm02.png)
+  ![ソリューション内の依存関係ノードが .NET Standardを示します](net-standard-images/vsm02.png)
 
-#### <a name="editing-net-standard-library-settings"></a>.NET 標準ライブラリの設定の編集
+#### <a name="editing-net-standard-library-settings"></a>.NET Standard ライブラリの設定の編集
 
-.NET 標準ライブラリの設定を表示し、プロジェクトを右クリックしを選択すると変更`Options`このスクリーン ショットに示すようにします。
+.NET Standardライブラリの設定は、このスクリーン ショットで示されているように、プロジェクトを右クリックして`Options`を選択すことによって表示および変更できます。
 
 ![プロジェクトのオプションでの標準 .NET ターゲット フレームワークを編集します。](net-standard-images/vsm03.png)
 
 バージョンを変更する内部`netstandard`変更することによって、`Target Framework`ドロップダウンの値。
 
-**さらに:** 編集することができます、`.csproj`この値を変更するには、直接です。
+**さらに:** `.csproj`を直接編集してこの値を変更できます。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
-このセクションで作成して Visual Studio を使用する .NET 標準ライブラリを使用する方法について説明します。 完全な実装について .NET 標準ライブラリの例のセクションを参照してください。
+このセクションでは、Visual Studioを使用した.NET Standard ライブラリの作成と使用方法について説明します。 完全な実装については、.NET Standard ライブラリの例のセクションを参照してください。
 
-### <a name="creating-a-net-standard-library"></a>.NET 標準ライブラリを作成します。
+### <a name="creating-a-net-standard-library"></a>.NET Standard ライブラリの作成
 
 #### <a name="visual-studio-2017"></a>Visual Studio 2017
 
-.NET 標準ライブラリを追加するソリューションには、比較的簡単です。
+.NET Standard ライブラリをソリューションに追加するのは、比較的簡単です。
 
 1. 新しいプロジェクトの追加ダイアログ ボックスで、`.NET Standard`カテゴリし選択`Class Library(.NET Standard)`です。
 
-  ![](net-standard-images/vs01.png "標準的な .NET クラス ライブラリの新規作成します。")
+  ![](net-standard-images/vs01.png ".NET Standard クラス ライブラリを新規作成します。")
 
-2. .NET 標準ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示すように表示されます。 依存関係ノードは、ライブラリを使用する、 [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/)です。
+2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。 依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
 
-  ![](net-standard-images/vs02.png ".NET 標準的なソリューション内のプロジェクト")
+  ![](net-standard-images/vs02.png "ソリューション内の.NET Standard プロジェクト")
 
-#### <a name="editing-net-standard-library-settings"></a>.NET 標準ライブラリの設定の編集
+#### <a name="editing-net-standard-library-settings"></a>.NET Standard ライブラリの設定の編集
 
-.NET 標準ライブラリの設定を表示し、プロジェクトを右クリックしを選択すると変更`Properties`このスクリーン ショットに示すようにします。
+.NET Standard ライブラリの設定は、このスクリーンショットで示されているように、プロジェクトを右クリックし、`Properties` を選択することによって表示および変更できます。
 
 ![](net-standard-images/vs03.png ".NET 標準ライブラリを参照するには、他のプロジェクトと同じ方法")
 
 バージョンを変更する内部`netstandard`変更することによって、`Target Framework`ドロップダウンの値。
 
-**さらに:** 編集することができます、`.csproj`この値を変更するには、直接です。
+**さらに:** `.csproj`を直接編集してこの値を変更できます。
 
 #### <a name="using-net-standard-library"></a>.NET 標準ライブラリを使用します。
 
