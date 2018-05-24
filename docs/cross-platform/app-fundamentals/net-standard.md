@@ -1,4 +1,4 @@
----
+﻿---
 title: .NET Standard
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
@@ -16,16 +16,16 @@ ms.lasthandoff: 05/09/2018
 ## <a name="using-net-standard-library-projects-to-share-code"></a>.NET Standard ライブラリ プロジェクトを使用してコードを共有するには
 
 .NET Standard ライブラリは、すべての .NET ランタイムで使用できるようにすることを目的とした .NET API の正式な仕様です。 .NET Standard ライブラリの背後にある動機は、.NET エコシステムの高度な統一性を確立することです。
-[ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) は引き続き .NET ランタイムの動作の統一性を確立しますが、.NET ライブラリの実装用の .NET 基底クラス ライブラリ (BCL) に同様の仕様はありません。
+[ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) は引き続き .NET ランタイムの動作の統一性を確立しますが、.NET Standard ライブラリの実装用の .NET 基底クラス ライブラリ (BCL) に同様の仕様はありません。
 
 考えることができますが、シンプルな次世代の[ポータブル クラス ライブラリ](https://msdn.microsoft.com/library/gg597391.aspx)です。
-1 つのライブラリで、.NET Core を含むすべての .NET プラットフォームで利用可能なユニフォーム API を持ちます。 1 つの .NET Standard ライブラリを作成し、.NET Standard プラットフォームをサポートする任意のランタイムから使用するだけです。
+1 つのライブラリで、.NET Core を含むすべての .NET プラットフォームで利用可能なユニフォーム API を持ちます。1 つの .NET Standard ライブラリを作成し、.NET Standard プラットフォームをサポートする任意のランタイムから使用するだけです。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-このセクションでは、Visual Studio for Macを使用して.NET Standard ライブラリの作成と使用方法について説明します。 完全な実装については、.NET Standard ライブラリの例のセクションを参照してください。
+このセクションでは、Visual Studio for Macを使用して.NET Standard ライブラリの作成と使用方法について説明します。完全な実装については、.NET Standard ライブラリの例のセクションを参照してください。
 
 ### <a name="creating-a-net-standard-library"></a>.NET Standard ライブラリの作成
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 05/09/2018
 
   ![.NET Standard ライブラリの作成](net-standard-images/vsm01.png)
 
-2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。 依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
+2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
 
   ![ソリューション内の依存関係ノードが .NET Standardを示します](net-standard-images/vsm02.png)
 
@@ -55,19 +55,19 @@ ms.lasthandoff: 05/09/2018
 
 ## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
-このセクションでは、Visual Studioを使用した.NET Standard ライブラリの作成と使用方法について説明します。 完全な実装については、.NET Standard ライブラリの例のセクションを参照してください。
+このセクションでは、Visual Studioを使用した.NET Standard ライブラリの作成と使用方法について説明します。完全な実装については、.NET Standard ライブラリの例のセクションを参照してください。
 
 ### <a name="creating-a-net-standard-library"></a>.NET Standard ライブラリの作成
 
 #### <a name="visual-studio-2017"></a>Visual Studio 2017
 
-.NET Standard ライブラリをソリューションに追加するのは、比較的簡単です。
+.NET Standard ライブラリをソリューションに追加するのは、比較的簡単です。	
 
-1. 新しいプロジェクトの追加ダイアログ ボックスで、`.NET Standard`カテゴリし選択`Class Library(.NET Standard)`です。
+1. [新しいプロジェクトの追加] ダイアログ ボックスで、`.NET Standard`カテゴリを選択し `Class Library(.NET Standard)`を選択します。
 
-  ![](net-standard-images/vs01.png ".NET Standard クラス ライブラリを新規作成します。")
+  ![](net-standard-images/vs01.png ".NET Standard クラス ライブラリを新規作成します。")
 
-2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。 依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
+2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
 
   ![](net-standard-images/vs02.png "ソリューション内の.NET Standard プロジェクト")
 
@@ -81,9 +81,9 @@ ms.lasthandoff: 05/09/2018
 
 **さらに:** `.csproj`を直接編集してこの値を変更できます。
 
-#### <a name="using-net-standard-library"></a>.NET 標準ライブラリを使用します。
+#### <a name="using-net-standard-library"></a>.NET Standard ライブラリを使用します。
 
-.NET 標準ライブラリが作成されたら、通常の参照を追加する同じ方法で任意の互換性のあるアプリケーションまたはライブラリ プロジェクトからへの参照を追加できます。 Visual Studio で参照ノードを右クリックして選択`Add Reference...`に切り替えて、`Solution : Projects`ようにタブします。
+.NET Standard ライブラリが作成されたら、通常の参照を追加する同じ方法で任意の互換性のあるアプリケーションまたはライブラリ プロジェクトからへの参照を追加できます。 Visual Studio で参照ノードを右クリックして選択`Add Reference...`に切り替えて、`Solution : Projects`ようにタブします。
 
 ![](net-standard-images/vs04.png "Visual Studio で、[参照] ノードを右クリックして参照の追加... しように、ソリューションのプロジェクトのタブに切り替えます")
 
