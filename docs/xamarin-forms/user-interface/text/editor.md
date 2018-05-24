@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: dc83defcb3eb69cf53c205793ce77029c0947c2f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="editor"></a>エディター
 
@@ -19,8 +19,8 @@ _複数行テキスト入力_
 
 `Editor`を複数行の入力を受け付けるようにコントロールを使用します。 この記事を取り上げます。
 
-- **[カスタマイズ](#Customization)** &ndash;キーボードと色のオプションです。
-- **[対話機能](#Interactivity)** &ndash;対話機能を提供する待機可能イベント。
+- **[カスタマイズ](#customization)** &ndash;キーボードと色のオプションです。
+- **[対話機能](#interactivity)** &ndash;対話機能を提供する待機可能イベント。
 
 ## <a name="customization"></a>カスタマイズ
 

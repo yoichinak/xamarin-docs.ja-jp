@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: ca359e5ea700ef09249a2d8a299b6604f91e9149
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: d2aee2d6421b06f9147c656debdd58bdfe21be72
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin ライブの再読み込み
 
@@ -63,8 +63,10 @@ public partial class App : Application
     public App ()
     {
         // Initialize Live Reload.
+        #if DEBUG
         LiveReload.Init();
-    
+        #endif
+        
         InitializeComponent();
         MainPage = new MainPage();
     }
@@ -134,6 +136,10 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 * **XLR003**:*ライブの再読み込み nuget パッケージは、Xamarin Live 再読み込み Visual Studio 拡張機能をインストールする必要があります。*
 
   ライブの再読み込みの nuget パッケージを参照するプロジェクトをビルドしようとしましたが、Visual の拡張機能がインストールされていません。  
+
+* *アセンブリの読み込み中に例外: System.IO.FileNotFoundException: アセンブリを読み込むことができませんでした ' Xamarin.Live.Reload、バージョン 0.3.27.0、Culture = neutral, PublicKeyToken = =' です。*
+
+  ホスト プロジェクトを使用する必要があります`PackageReference`の代わりに `packages.config`
 
 ### <a name="app-doesnt-connect"></a>アプリにアクセスできなかった
 
