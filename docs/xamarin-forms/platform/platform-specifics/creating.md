@@ -19,10 +19,10 @@ _ベンダーは Effect を使って、独自の platform-specific を作成す�
 
 ## <a name="overview"></a>概要
 
-Platform-specific を作成する手順はは次のとおりです。
+Platform-specific を作成する手順は次のとおりです。
 
-1. 特定の機能を Effect として実装します。詳細については、[ Effect の作成](~/xamarin-forms/app-fundamentals/effects/creating.md) を参照してください。
-1. 作成した Effect を公開する platform-specific クラスを作成します。詳細については、[ Platform-Specific クラスの作成](#creating)を参照してください。
+1. 特定の機能を Effect として実装します。詳細については、[Effect の作成](~/xamarin-forms/app-fundamentals/effects/creating.md) を参照してください。
+1. 作成した Effect を公開する platform-specific クラスを作成します。詳細については、[Platform-Specific クラスの作成](#creating)を参照してください。
 1. Platform-Specific クラスに XAML から使用できるようにするために、添付プロパティを実装します。詳細については、[添付プロパティの追加](#attached_property)を参照してください。
 1. Platform-Specific クラスに fluent API から使用できるようにするために、拡張メソッドを実装します。詳細については、[拡張メソッドの追加](#extension_methods)を参照してください。
 1. Platform-specific が Effect と同じプラットフォーム上で呼び出された場合にのみ、その Effect が適用されるように Effect の実装を修正します。 詳細については、[ Effect の作成](#creating_the_effect)を参照してください。
@@ -38,7 +38,7 @@ Platform-specific として Effect を公開すると、 fluent API や XAML を
 
 サンプルアプリケーションでは、理解しやすいように、各プラットフォームで `Shadow` platform-specific を実装します。しかし、それぞれの platform-specific の Effect 実装以外の Shadow クラスの実装は 各プラットフォームで大部分は同じです。したがって、このガイドでは Shadow クラスと 1つのプラットフォームに関連付けられる Effect の実装に焦点を合わせます。
 
-Effect についての詳細は、[ Effect を使った コントロールのカスタマイズ](~/xamarin-forms/app-fundamentals/effects/index.md)を参照してください。
+Effect についての詳細は、[Effect を使った コントロールのカスタマイズ](~/xamarin-forms/app-fundamentals/effects/index.md)を参照してください。
 
 <a name="creating" />
 
@@ -56,7 +56,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-次のセクションでは、 `Shadow` platform-specific の実装と 関連づける Effect について説明します。
+次のセクションでは、`Shadow` platform-specific の実装と 関連づける Effect について説明します。
 
 <a name="attached_property" />
 
