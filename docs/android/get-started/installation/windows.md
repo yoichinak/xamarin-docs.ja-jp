@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/04/2018
-ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/17/2018
+ms.openlocfilehash: ca88159e8bcbcd4665e29b4ad8df9ffe00cfec67
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -85,7 +85,8 @@ x86 基盤のコンピューターで開発するとき、x86 アーキテクチ
 Google Android Emulator、Hyper-V、HAXM の詳細については、[Android Emulator ハードウェアの高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)ガイドを参照してください。
 
 > [!NOTE]
-> 古いバージョンの Windows では、HAXM と Hyper-V の間に互換性がありません。 この場合、[Hyper-V を無効にする](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v)か、x86 最適化のない、遅いエミュレーター イメージを使用する必要があります。
+> 古いバージョンの Windows では、HAXM と Hyper-V の間に互換性がありません。 この場合、[Hyper-V を無効にする](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v)か、x86 最適化のない、遅いエミュレーター イメージを使用する必要があります。
+
 
 <a name="device" />
 
