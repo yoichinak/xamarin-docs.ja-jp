@@ -6,12 +6,12 @@ ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 366c75db49a7e0f4f559b13c0871071dee2f08e3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/22/2018
+ms.openlocfilehash: b509f6892b27afa053a6ee913826d913d7ad54a8
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="location-services"></a>ロケーション サービス
 
@@ -83,9 +83,15 @@ else
  
 余裕が生まれます場所プロバイダー API は、さまざまな場所に対応するなど、アプリケーション ジオフェンシング アクティビティの監視を支援するためには、その他のツールを提供します。 このセクションで行うフォーカスの設定の基本の`LocationClient`プロバイダーを確立して、ユーザーの場所を取得します。
 
-余裕が生まれます場所プロバイダーの一部である[Google Play サービス](http://developer.android.com/google/play-services/index.html)です。 Google Play サービス パッケージをインストールし、余裕が生まれます場所プロバイダー API を使用するアプリケーションで正しく構成されているし、デバイスには、Google プレイ サービス APK インストールされている必要があります。
+余裕が生まれます場所プロバイダーの一部である[Google Play サービス](http://developer.android.com/google/play-services/index.html)です。
+Google Play サービス パッケージをインストールし、余裕が生まれます場所プロバイダー API を使用するアプリケーションで正しく構成されているし、デバイスには、Google プレイ サービス APK インストールされている必要があります。
 
-前に、Xamarin.Android アプリケーションに余裕が生まれます場所プロバイダーを使用できますする必要があります、追加、 **Xamarin.GooglePlayServices.Maps**をプロジェクトにします。
+前に、Xamarin.Android アプリケーションに余裕が生まれます場所プロバイダーを使用できますする必要があります、追加、 **Xamarin.GooglePlayServices.Maps**をプロジェクトにパッケージします。 さらに、次`using`ステートメントは、次に示すクラスを参照するソース ファイルに追加する必要があります。
+
+```csharp
+using Android.Gms.Common;
+using Android.Gms.Location;
+```
 
 ### <a name="checking-if-google-play-services-is-installed"></a>Google Play サービスがインストールされているかどうかは確認
 
@@ -349,7 +355,7 @@ else
 ## <a name="related-links"></a>関連リンク
 
 - [場所 (サンプル)](https://developer.xamarin.com/samples/Location/)
-- [FusedLocationProvider (sample)](https://developer.xamarin.com/samples/FusedLocationProvider/)
+- [FusedLocationProvider (サンプル)](https://developer.xamarin.com/samples/FusedLocationProvider/)
 - [Google Play サービス](http://developer.android.com/google/play-services/index.html)
 - [条件クラス](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager クラス](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)

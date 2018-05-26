@@ -6,12 +6,12 @@ ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: e9a4a661e694b5a885f202a36f9a2916c6c339fd
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.date: 05/21/2018
+ms.openlocfilehash: ca48ad6fb7d5aae53f972f6e3b5257919d140a8d
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms レイアウト
 
@@ -19,7 +19,7 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 
 [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout)と[ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) Xamarin.Forms クラスは、ビューおよびその他のレイアウト コンテナーとして機能するビューの特殊なサブタイプです。 `Layout`自体クラスから派生[ `View`](views.md)です。 A`Layout`派生には通常 Xamarin.Forms アプリケーションで、子要素のサイズと位置を設定するためのロジックが含まれています。
 
- [ ![](layouts-images/layouts-sml.png "Xamarin.Forms レイアウト型")](layouts-images/layouts.png#lightbox "Xamarin.Forms レイアウトの種類")
+[![Xamarin.Forms レイアウト型](layouts-images/layouts-sml.png "Xamarin.Forms レイアウト型")](layouts-images/layouts.png#lightbox "Xamarin.Forms レイアウトの種類")
 
 派生したクラス`Layout`2 つのカテゴリに分類できます。
 
@@ -101,7 +101,14 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 
 |     |     |
 | --- | --- |
-| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) 基準に子要素を配置、`RelativeLayout`自体またはその兄弟にします。 使用して子の位置が示されます、[アタッチされるプロパティ](~/xamarin-forms/xaml/attached-properties.md)型のオブジェクトに設定されている[ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/)と[ `BoundsConstraint`](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)/ [ガイド](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![[相対レイアウト] 例](layouts-images/RelativeLayout.png "[相対レイアウト] 例")](layouts-images/RelativeLayout-Large.png#lightbox "[相対レイアウト] の使用例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) 基準に子要素を配置、`RelativeLayout`自体またはその兄弟にします。 使用して子の位置が示されます、[アタッチされるプロパティ](~/xamarin-forms/xaml/attached-properties.md)型のオブジェクトに設定されている[ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/)と[ `BoundsConstraint`](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) / [ガイド](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![[相対レイアウト] 例](layouts-images/RelativeLayout.png "[相対レイアウト] 例")](layouts-images/RelativeLayout-Large.png#lightbox "[相対レイアウト] の使用例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+|     |     |
+
+### <a name="flexlayout"></a>FlexLayout
+
+|     |     |
+| --- | --- |
+| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) CSS に基づきます[フレキシブル ボックス レイアウト モジュール](http://www.w3.org/TR/css-flexbox-1/)とよく呼ばれる、_レイアウトをフレックス_または_フレックス ボックス_です。 `FlexLayout` 6 つのバインド可能なプロパティおよび積み上げまたは多くの配置と印刷の向きのオプションでラップする子を許可する 5 つの接続されているバインド可能なプロパティを定義します。<br /><br />[API のドキュメント](xref:Xamarin.Forms.FlexLayout) / [ガイド](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/) | [![FlexLayout 例](layouts-images/FlexLayout.png "FlexLayout 例")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
 |     |     |
 
 ## <a name="related-links"></a>関連リンク
