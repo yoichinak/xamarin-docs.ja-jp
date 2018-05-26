@@ -232,6 +232,7 @@
 ### [カスタム リンカー設定](deploy-test/linker.md)
 ### [マルチコア デバイス](deploy-test/multicore-devices.md)
 ### [パフォーマンス](deploy-test/performance.md)
+### [プロファイル](deploy-test/profiling.md)
 ### [リリースの準備](deploy-test/release-prep/index.md)
 #### [ProGuard](deploy-test/release-prep/proguard.md)
 ### [APK に署名する](deploy-test/signing/index.md)
