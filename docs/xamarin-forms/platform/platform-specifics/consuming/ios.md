@@ -6,12 +6,12 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/16/2017
-ms.openlocfilehash: 7826962cd3bf9595a63841e3f2d9fb377d1a0574
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/23/2018
+ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
@@ -21,13 +21,14 @@ iOS では、Xamarin.Forms に次のプラットフォーム仕様が含まれ�
 
 - [ `VisualElement`](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)へに対するぼかしのサポート。 詳細については、「[ぼかしの適用](#blur)」を参照してください。
 - ナビゲーションバーでページタイトルを大タイトルとして表示するかどうかを制御します。 詳細については、「[大タイトルの表示](#large_title)」を参照してください。
-- ページのコンテンツがすべての iOS デバイスにとって安全な画面の領域に配置されるようにします。 詳細については、「[セーフ エリア レイアウト ガイドの有効化](#safe_area_layout)」を参照してください。
+- すべての iOS デバイスに対して安全では、画面の領域には、そのページのコンテンツを確保するが配置されています。 詳細については、「[セーフ エリア レイアウト ガイドの有効化](#safe_area_layout)」を参照してください。
 - 透明のナビゲーション バー。 詳細については「[ナビゲーション バーの透明化](#translucent_navigation_bar)」を参照してください。
 - [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)上のステータスバーのテキストの色をナビゲーションバーの明るさに合わせて調整するかどうかを制御します。 詳細については、「[ステータス バーのテキストの色モードの調整](#status_bar_color_mode)」を参照してください。
 - フォントサイズを調整することで入力した文字が [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)内に収まるようにします。 詳細については、次を参照してください。[エントリのフォント サイズを調整する](#adjust_font_size)です。
 - [`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)でアイテムの選択が発生するタイミングを制御します。 詳細については、「[Picker のアイテム選択の制御](#picker_update_mode)」を参照してください。
 - [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) のステータス バーの可視性を設定します。 詳細については、「[Page でのステータスバーの可視性の設定](#set_status_bar_visibility)」を参照してください。
 - [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)がタッチ ジェスチャを処理するか、そのコンテンツに渡すかを制御します。 詳細については、次を参照してください。 [、ScrollView でのコンテンツの調整を遅らせること](#delay_content_touches)です。
+- 区分線のスタイルを設定、 [ `ListView`](xref:Xamarin.Forms.ListView)です。 詳細については、次を参照してください。 [ListView に区分線のスタイルを設定](#listview-separatorstyle)です。
 
 <a name="blur" />
 
@@ -62,7 +63,7 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 
 結果として、指定された[ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)が [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)のインスタンスに適用され、下に重なっている [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)をぼかします。
 
-![](ios-images/blur-effect.png " "Blur 効果 Platform-Specific"")
+![](ios-images/blur-effect.png " \"Blur 効果 Platform-Specific\"")
 
 <a name="large_title" />
 
@@ -304,7 +305,6 @@ IsPresentedChanged += (sender, e) =>
 このプラットフォーム仕様は、入力されたテキストがコントロール内に収まるように¨[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) のフォントサイズを拡大縮小するために使用されます。 これは XAML で [`Entry.AdjustsFontSizeToFitWidth`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/) 添付プロパティを `boolean` 値を設定して使用します。
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     <StackLayout Margin="20">
@@ -396,7 +396,6 @@ switch (picker.On<iOS>().UpdateMode())
 このプラットフォーム仕様は、 [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) のステータスバーの可視性を設定するために使用されます。これにはステータスバーがどのように `Page` に出入りするのかを制御する機能を含みます。 これは、 XAML で `Page.PrefersStatusBarHidden` 添付プロパティを `StatusBarHiddenMode` 列挙型の値に設定して使用します。そして任意で `Page.PreferredStatusBarUpdateAnimation` 添付プロパティを `UIStatusBarAnimation` 列挙型の値に設定します。
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.PrefersStatusBarHidden="True"
@@ -472,6 +471,45 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 [![](ios-images/scrollview-delay-content-touches.png "ScrollView でのコンテンツ タッチの遅延のプラットフォーム仕様")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
+<a name="listview-separatorstyle" />
+
+## <a name="setting-the-separator-style-on-a-listview"></a>ListView の区分線のスタイルを設定
+
+このプラットフォームに固有のセルの間の区切り記号かどうかを制御する、 [ `ListView` ](xref:Xamarin.Forms.ListView)の幅全体を使用して、`ListView`です。 これは、 XAML で[`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty)添付プロパティを[`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列挙型の値に設定して使用します。
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <ListView ... ios:ListView.SeparatorStyle="FullWidth">
+            ...
+        </ListView>
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
+```
+
+`ListView.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `ListView.SetSeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SetSeparatorStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)セル間の区切り記号かどうか、名前空間を使用して、 [ `ListView` ](xref:Xamarin.Forms.ListView)全体の使用幅、`ListView`で、 [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列挙型の 2 つの値を提供します。
+
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default) – 既定の iOS の区切り記号の動作を示します。 これは Xamarin.Forms の既定の動作です。
+- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) – の 1 つの辺から区切り記号が描画されることを示す、`ListView`にします。
+
+結果は、指定した[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)値に適用されます、 [ `ListView`](xref:Xamarin.Forms.ListView)セル間の区切り記号の幅を制御します。
+
+![](ios-images/listview-separatorstyle.png "後のプラットフォームに固有の ListView")
+
+> [!NOTE]
+> 区分線のスタイル設定されると`FullWidth`に変更することはできません`Default`実行時にします。
+
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.Forms に組み込まれている iOS のプラットフォーム仕様の使用方法について説明しました。 プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
@@ -480,5 +518,5 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 ## <a name="related-links"></a>関連リンク
 
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
-- [PlatformSpecifics (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [iOSSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)
