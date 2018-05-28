@@ -6,12 +6,12 @@ ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 05/06/2018
-ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/22/2018
+ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="automatic-provisioning"></a>自動プロビジョニング
 
@@ -37,6 +37,14 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 ## <a name="enabling-automatic-signing"></a>自動署名を有効にする
 
 自動署名プロセスを開始する前に、Visual Studio で Apple ID を追加しておく必要があります。手順については、「[Apple アカウント管理](~/cross-platform/macios/apple-account-management.md)」ガイドを参照してください。 Apple ID を追加すると、関連する_チーム_を使用できます。 こうすることで、チームに対して証明書、プロファイル、およびその他の ID を作成できます。 プロビジョニング プロファイルに含まれるアプリ ID のプレフィックスを作成するためにもチーム ID が使用されます。 チーム ID を使用することで、Apple は開発者の身元を検証できます。
+
+> [!IMPORTANT]
+> 開始する前に、[iTunes Connect](https://itunesconnect.apple.com/) または [appleid.apple.com](https://appleid.apple.com) にサインインして、最新の Apple アカウント ポリシーを承諾していることを確認します。 メッセージが表示された場合は、Apple からの新しいアカウント契約に同意する手順を完了します。 2018 年 5 月からのプライバシー契約を承諾しない場合、デバイスをプロビジョニングしようとする際に次の警告を受け取ります。
+> ```
+> Unexpected authentication failure. Reason: {
+> "authType" : "sa"
+>}
+>```
 
 iOS デバイスで開発のためにアプリに自動的に署名するには、次の手順を実行します。
 

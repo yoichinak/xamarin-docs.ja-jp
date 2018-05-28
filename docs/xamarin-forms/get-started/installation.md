@@ -6,12 +6,12 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/19/2018
-ms.openlocfilehash: ce3f2bcf6acc36239fc431bb7f5edece15d2e139
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/23/2018
+ms.openlocfilehash: 75e6d25f95a0a3f18c83fe73f67ad4a7797f0924
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -23,16 +23,27 @@ _Xamarin.Forms のプラットフォームと開発システムの要件_
 
 Xamarin.Forms アプリケーションは次のオペレーティング システム用として記述できます。
 
--  iOS 8 以上
--  Android 4.0.3 (API 15) 以上 ([詳細](#android))
--  Windows 10 ユニバーサル Windows プラットフォーム ([詳細](#windows10))
--  *Windows 8.1 / Windows Phone 8.1 WinRT (非推奨)*
--  
-  *Windows Phone 8 Silverlight (非推奨)*
+- iOS 8 以上
+- Android 4.0.3 (API 15) 以上 ([詳細](#android))
+- Windows 10 ユニバーサル Windows プラットフォーム ([詳細](#windows10))
 
-[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)に関する知識が開発者にあることを前提としています。
+開発者が [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)に関する知識を持っていることを前提としています。
 
-<a name="android" />
+### <a name="additional-platform-support"></a>その他のプラットフォームのサポート
+
+これらのプラットフォームの状態は、[Xamarin.Forms GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) で確認できます。
+
+- Samsung Tizen
+- macOS
+- GTK#
+- WPF
+
+### <a name="platforms-from-earlier-versions"></a>旧バージョンのプラットフォーム
+
+これらのプラットフォームは、Xamarin.Forms 3.0 を使用する場合はサポートされません。
+
+- *Windows 8.1 / Windows Phone 8.1 WinRT*
+- *Windows Phone 8 Silverlight*
 
 ### <a name="android"></a>Android
 
@@ -58,12 +69,6 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 
 -----
 
-<a name="windows10" />
-
-### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
-
-ソリューションが macOS で作成されるとき、Windows 10 UWP プロジェクトは追加されません。 これらのプロジェクトを既存のソリューションに追加する方法については、「[Setup Windows Projects](~/xamarin-forms/platform/windows/installation/index.md)」(Windows プロジェクトの設定) をご覧ください。
-
 ## <a name="development-system-requirements"></a>開発システムの要件
 
 Xamarin.Forms アプリは macOS と Windows で開発できます。 ただし、アプリの Windows 版を作成するには Windows と Visual Studio が必要になります。
@@ -79,15 +84,17 @@ Visual Studio for Mac to を使用し、OS X El Capitan (10.11) 以降で Xamari
 
 iOS と Android 向けの Xamarin.Forms アプリは Xamarin 開発に対応しているあらゆる Windows インストールでビルドできます。 Visual Studio 2017 以降を Windows 7 以上で実行する必要があります。 iOS 開発には、ネットワークに接続した Mac が必要です。
 
+<a name="windows10" />
+
 ### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
 UWP 用の Xamarin.Forms アプリの開発に必要なもの:
 
-* Windows 10 (Fall Creators Update を推奨)
+- Windows 10 (Fall Creators Update を推奨)
 
-* Visual Studio 2017
+- Visual Studio 2017
 
-* [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
+- [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
-UWP プロジェクトは、Visual Studio 2015 と Visual Studio 2017 で作成された Xamarin.Forms ソリューションに含まれています。
-[ユニバーサル Windows プラットフォーム (UWP) アプリ](~/xamarin-forms/platform/windows/installation/index.md)を既存の Xamarin.Forms ソリューションに追加することもできます。
+UWP プロジェクトは、Visual Studio 2017 で作成された Xamarin.Forms ソリューションに含まれています。ただし、Visual Studio for Mac で作成されたソリューションには含まれません。
+既存の Xamarin.Forms ソリューションに、いつでも[ユニバーサル Windows プラットフォーム (UWP) アプリを追加](~/xamarin-forms/platform/windows/installation/index.md)できます。

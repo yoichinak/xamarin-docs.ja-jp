@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/10/2018
-ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android Emulator ハードウェアの高速化
 
@@ -46,7 +46,7 @@ Hyper-V と Google Android Emulator の使用を始めるには:
 
     場合によっては、Hyper-V と Windows Hypervisor Platform を有効にしてから、Windows を再起動する必要があります。
 
-3. **[Visual Studio 15.8 プレビュー 1](https://aka.ms/hyperv-emulator-dl) をインストールします**。&ndash; このバージョンの Visual Studio は、Google Android Emulator と共に Hyper-V を使用するための IDE に対応しています。
+3. **[Visual Studio 15.8 プレビュー 1 以降](https://www.visualstudio.com/vs/preview/)をインストールします。**&ndash; このバージョンの Visual Studio は、Google Android Emulator と共に Hyper-V を使用するための IDE に対応しています。
 
 4. **Google Android エミュレーター パッケージ 27.2.7 以降をインストールします**。&ndash; このパッケージをインストールするには、Visual Studio で **[ツール]、[Android]、[Android SDK Manager]** の順に移動します。 **[ツール]** タブを選択し、Android Emulator コンポーネントがバージョン 27.2.7 以降であることを確認します。
 

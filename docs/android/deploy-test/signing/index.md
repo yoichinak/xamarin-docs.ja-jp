@@ -5,12 +5,12 @@ ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/26/2018
-ms.openlocfilehash: ba936137dd868e9ba5eabc6df89bb98a0a178ba2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/21/2018
+ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="signing-the-android-application-package"></a>Android アプリケーション パッケージに署名する
 
@@ -113,9 +113,9 @@ ms.lasthandoff: 04/04/2018
 
 [![[署名パスワード] ダイアログ](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
 
-署名プロセスが完了したら、**[フォルダーを開く]** をクリックします。
+署名プロセスが完了したら、**[ディストリビューションを開く]** をクリックします。
 
-[![[フォルダーを開く] ボタン](images/vs/08-open-folder-vs-sml.png)](images/vs/08-open-folder-vs.png#lightbox)
+[![[ディストリビューションを開く] ボタン](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
 
 これにより、Windows エクスプローラーで生成された APK ファイルを含むフォルダーが開きます。 この時点で、Visual Studio は Xamarin.Android アプリケーションを配布可能な APK にコンパイルしています。
 次のスクリーンショットは、公開の準備ができたアプリ **MyApp.MyApp.apk** の例を示しています。
@@ -134,7 +134,7 @@ ms.lasthandoff: 04/04/2018
 
 [![[アドホックとして公開します] ダイアログ](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
 
-**[APK ファイルを出力]** ダイアログは、APK を指定されたパスに保存します。 **[保存]**をクリックします。
+**[APK ファイルを出力]** ダイアログは、APK を指定されたパスに保存します。 **[保存]** をクリックします。
 
 ![[APK ファイルを出力] ダイアログ](images/xs/06-output-apk-file.png)
 
