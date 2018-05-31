@@ -12,6 +12,7 @@ ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34546087"
 ---
 # <a name="android-platform-specifics"></a>Android プラットフォーム仕様
 
@@ -245,7 +246,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 その結果、[`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)と[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)ぺージイベントはそれぞれアプリケーションの一時停止時と再開時に発生しなくなり、アプリケーションの一時停止時にソフトキーボードが表示されていた場合、再開時にもそれが表示されるようになります。
 
-[![](android-images/keyboard-on-resume.png "ライフ サイクル イベント プラットフォーム固有")](android-images/keyboard-on-resume-large.png#lightbox "イベントのプラットフォームに固有のライフ サイクル")
+[![](android-images/keyboard-on-resume.png "ライフサイクル イベントのプラットフォーム仕様")](android-images/keyboard-on-resume-large.png#lightbox "ライフサイクル イベントのプラットフォーム仕様")
 
 <a name="webview-mixed-content" />
 
