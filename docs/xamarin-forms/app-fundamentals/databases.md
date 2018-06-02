@@ -6,12 +6,13 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/23/2017
-ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.date: 05/31/2018
+ms.openlocfilehash: d97fc792e2eb14f7e432d377811d1318c99b9602
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689449"
 ---
 # <a name="local-databases"></a>ローカル データベース
 
@@ -33,17 +34,20 @@ Xamarin.Forms アプリケーションを使用して、 [SQLite.NET PCL NuGet](
 
 <a name="XamarinForms_PCL_Project" />
 
-### <a name="xamarinsforms-pcl-project"></a>Xamarins.Forms PCL プロジェクト
+### <a name="xamarinsforms-net-standard-or-pcl-project"></a>Xamarins.Forms .NET Standard または PCL プロジェクト
 
-Xamarin.Forms PCL プロジェクトに SQLite サポートを追加するには、検索に NuGet の検索機能を使用**sqlite net pcl**してパッケージをインストールします。
+Xamarin.Forms プロジェクトに SQLite サポートを追加するには、検索に NuGet の検索機能を使用**sqlite net pcl**してパッケージをインストールします。
 
-![](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL パッケージを追加します。")
+![NuGet SQLite.NET PCL パッケージを追加](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL パッケージの追加")
 
 類似した名前の NuGet パッケージの数が、適切なパッケージがこれらの属性。
 
 - **によって作成された:** Frank A. Krueger
 - **Id:** sqlite net pcl
 - **NuGet リンク:** [sqlite net pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+
+> [!TIP]
+> 使用して、 **sqlite net pcl**標準の .NET プロジェクトであっても NuGet です。
 
 参照が追加されると、データベース ファイルの場所を調べるには、プラットフォーム固有の機能を抽象化するインターフェイスを記述します。 このサンプルで使用されるインターフェイスでは、1 つのメソッドを定義します。
 
@@ -130,7 +134,7 @@ public Task<int> DeleteItemAsync(TodoItem item)
 
 IOS アプリケーションを構成するには、iOS プロジェクトを使用する同じ NuGet パッケージを追加、 *NuGet*ウィンドウ。
 
-![](databases-images/vsmac-sqlite-nuget.png "NuGet SQLite.NET PCL パッケージを追加します。")
+![NuGet SQLite.NET PCL パッケージを追加](databases-images/vsmac-sqlite-nuget.png "NuGet SQLite.NET PCL パッケージの追加")
 
 必要な唯一のコードは、`IFileHelper`データ ファイルのパスを決定する実装。 次のコード ファイルを配置、SQLite データベースに、**ライブラリ/データベース**アプリケーションのサンド ボックス内のフォルダーです。 参照してください、 [iOS ファイル システムで作業](~/ios/app-fundamentals/file-system.md)記憶域の使用可能な別のディレクトリの詳細についてはドキュメントです。
 
@@ -138,21 +142,21 @@ IOS アプリケーションを構成するには、iOS プロジェクトを使
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.iOS
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
+      string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+      string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
 
-            if (!Directory.Exists(libFolder))
-            {
-                Directory.CreateDirectory(libFolder);
-            }
+      if (!Directory.Exists(libFolder))
+      {
+        Directory.CreateDirectory(libFolder);
+      }
 
-            return Path.Combine(libFolder, filename);
-        }
+      return Path.Combine(libFolder, filename);
     }
+  }
 }
 ```
 
@@ -172,14 +176,14 @@ Android アプリケーションを構成するを使用して、Android プロ�
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.Droid
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            return Path.Combine(path, filename);
-        }
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        return Path.Combine(path, filename);
     }
+  }
 }
 ```
 
@@ -189,7 +193,7 @@ namespace Todo.Droid
 
 UWP アプリケーションを構成するには、UWP プロジェクトを使用する同じ NuGet パッケージを追加、 *NuGet*ウィンドウ。
 
-![](databases-images/vs2017-sqlite-uwp-nuget.png "NuGet SQLite.NET PCL パッケージを追加します。")
+![NuGet SQLite.NET PCL パッケージを追加](databases-images/vs2017-sqlite-uwp-nuget.png "NuGet SQLite.NET PCL パッケージの追加")
 
 参照が追加されると、実装、`IFileHelper`プラットフォーム固有の使用をインターフェイス`Windows.Storage`データ ファイルのパスを決定する API。
 
@@ -200,23 +204,21 @@ using Windows.Storage;
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.UWP
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
-        }
+      return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
     }
+  }
 }
-
 ```
 
 ## <a name="summary"></a>まとめ
 
 Xamarin.Forms では、読み込みと共有コードでオブジェクトを保存できるようになります、SQLite データベース エンジンを使用してデータベースに基づくアプリケーションをサポートします。
 
-この記事の内容に重点を置きます**へのアクセス**Xamarin.Forms を使用して SQLite データベース。 SQLite.Net 自体の扱いの詳細についてを参照してください、[データ アクセス: を使用して SQLite.NET](~/cross-platform/app-fundamentals/index.md)ドキュメント。 ほとんどの SQLite.Net コードは、すべてのプラットフォームで共有可能のみ SQLite データベース ファイルの場所を構成するには、プラットフォーム固有の機能が必要です。
-
+この記事の内容に重点を置きます**へのアクセス**Xamarin.Forms を使用して SQLite データベース。 SQLite.Net 自体の扱いの詳細についてを参照してください、 [Android で SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md)または[iOS で SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md)ドキュメント。 ほとんどの SQLite.Net コードは、すべてのプラットフォームで共有可能のみ SQLite データベース ファイルの場所を構成するには、プラットフォーム固有の機能が必要です。
 
 ## <a name="related-links"></a>関連リンク
 

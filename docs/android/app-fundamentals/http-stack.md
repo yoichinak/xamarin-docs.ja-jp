@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: bedcf0603fffc9886155881f91972203104ba155
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 765c51346ac63a00838fec52bde87b38091e2dd9
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689475"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient スタックと Android 用の SSL や TLS 実装セレクター
 
@@ -22,7 +23,7 @@ HttpClient スタックと SSL/TLS 実装セレクターは、Xamarin.Android �
 > [!WARNING]
 > **年 4 月、2018年**– セキュリティの向上のため要件、PCI コンプライアンスを含むメジャー クラウド プロバイダーおよび TLS バージョン 1.2 より前のサポートを停止する web サーバーが必要です。  Xamarin プロジェクトが以前のバージョンの Visual Studio の既定値は、古いバージョンの TLS を使用して作成します。
 >
-> アプリがこれらのサーバーと、サービスの操作を続行することを確認するために**、Xamarin のプロジェクトを更新する必要があります、`Android HttpClient`と`Native TLS 1.2`、次に示す設定を再構築し、アプリを再デプロイ**に、ユーザー。
+> アプリがこれらのサーバーと、サービスの操作を続行することを確認するために **、Xamarin のプロジェクトを更新する必要があります、`Android HttpClient`と`Native TLS 1.2`、次に示す設定を再構築し、アプリを再デプロイ**に、ユーザー。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -89,9 +90,9 @@ AndroidClientHandler は、マネージ コードで実装するすべてのも�
 
 Xamarin.Android 8.3 で始まる`HttpClientHandler`退屈 ssl の既定値 (`btls`) 基になる TLS プロバイダーとして。 SSL TLS の退屈プロバイダーには次の利点があります。
 
--   TLS 1.2 をサポートします。
+-   TLS 1.2 以降がサポートしています。
 -   これは、すべての Android バージョンをサポートします。
--   両方の TLS 1.2 サポート`HttpClient`と`WebClient`です。
+-   TLS 1.2 + が両方のサポートを提供`HttpClient`と`WebClient`です。
 
 退屈 SSL を使用して、基の TLS プロバイダーとしての欠点は、(サポートされている ABI あたり追加の APK サイズの約 1 MB を追加)、結果として得られる APK のサイズを拡大できることです。
 

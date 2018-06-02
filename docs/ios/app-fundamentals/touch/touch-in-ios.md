@@ -6,11 +6,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 78783089303eba09b0ee36534b0078b82674a1c6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689542"
 ---
 # <a name="touch-in-ios"></a>IOS でタッチします。
 
@@ -117,7 +118,7 @@ if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
 
 クラスを提供する Xamarin.iOS`UIGestureRecognizer`次の組み込みのジェスチャ レコグナイザーの基本クラスとして。
 
--  *UITapGesturesRecognizer* – これは、1 つまたは複数のタップします。
+-  *UITapGestureRecognizer* – これは、1 つまたは複数のタップします。
 -  *UIPinchGestureRecognizer* – Pinching と離れて指を展開します。
 -  *UIPanGestureRecognizer* – パンまたはドラッグします。
 -  *UISwipeGestureRecognizer* – 任意の方向にスワイプします。
