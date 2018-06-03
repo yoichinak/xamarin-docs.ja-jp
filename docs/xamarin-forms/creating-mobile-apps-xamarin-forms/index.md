@@ -20,9 +20,9 @@ ms.lasthandoff: 04/04/2018
 これは、*初版*27 のチャプターがあり、Xamarin.Forms をカバー&nbsp;2.x アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタムのレンダラーでいっそうなどです。
 28 章も現在オンライン以下に示す個々 のチャプター間できます。
 
-## <a name="download-ebook-for-free"></a>電子を無料でダウンロードします。
+## <a name="download-ebook-for-free"></a>電子書籍を無料でダウンロードします。
 
-Microsoft Virtual Academy から、優先される電子形式をダウンロードします。
+Microsoft Virtual Academy から、優先される電子書籍をダウンロードします。
 
 *    [**PDF (56Mb)**](https://aka.ms/xamebook)
 
@@ -32,7 +32,7 @@ Microsoft Virtual Academy から、優先される電子形式をダウンロー
 
 ## <a name="samples"></a>サンプル
 
-サンプルは[github で利用可能](https://github.com/xamarin/xamarin-forms-book-samples)、含める[Xamarin.Forms for Windows](~/xamarin-forms/platform/windows/index.md) Windows 8.1、Windows Phone 8.1、および Windows 10 用の UWP プロジェクト。
+サンプルは[github で利用可能](https://github.com/xamarin/xamarin-forms-book-samples)、[Xamarin.Forms for Windows](~/xamarin-forms/platform/windows/index.md) Windows 8.1、Windows Phone 8.1、および Windows 10 用の UWP プロジェクトが含まれます。
 
 ## <a name="chapter-summaries"></a>章の概要
 
@@ -43,49 +43,49 @@ Microsoft Virtual Academy から、優先される電子形式をダウンロー
 <table style="border:0px; box-shadow:0 0px 0px" cellpadding="0" cellspacing="2" border="0" width="85%">
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>第 1 章します。 Xamarin.Forms 調整がどのようにしますか。</h4>
+    <h4>第 1 章　 Xamarin.Forms 調整がどのようにしますか。</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter01.md">まとめ</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
-    <h4>第 2 章します。 アプリの構造</h4>
+    <h4>第 2 章　アプリの構造</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter02.md">まとめ</a></td>
 </tr>
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>第 3 章します。 テキストに進む</h4>
+    <h4>第 3 章 テキストに進む</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter03.md">まとめ</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
-    <h4>第 4 章します。 スタックをスクロール</h4>
+    <h4>第 4 章 スタックをスクロール</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter04.md">まとめ</a></td>
 </tr>
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>第 5 章します。 サイズを処理します。</h4>
+    <h4>第 5 章 サイズを処理します。</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter05.md">まとめ</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
-    <h4>第 6 章します。 ボタンのクリック</h4>
+    <h4>第 6 章 ボタンのクリック</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter06.md">まとめ</a></td>
 </tr>
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>第 7 章します。 XAML とします。コード</h4>
+    <h4>第 7 章 XAML とします。コード</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter07.md">まとめ</a></td>
