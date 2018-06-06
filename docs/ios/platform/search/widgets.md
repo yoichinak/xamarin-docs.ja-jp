@@ -1,22 +1,22 @@
 ---
-title: 検索とホーム画面ウィジェットの機能強化
-description: この記事では、Apple がシステムに加え、ウィジェット 10、iOS での機能強化について説明します。
+title: 検索と iOS 10 のホーム画面ウィジェットの強化
+description: このドキュメントでは、Apple は iOS を検索およびホーム画面のウィジェットの更新プログラムを含む 10 では、ウィジェットに加えられた機能強化について説明します。
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8383f167f8c85459e996b83368281fa243317948
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788112"
 ---
-# <a name="search-and-home-screen-widget-enhancements"></a>検索とホーム画面ウィジェットの機能強化
+# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>検索と iOS 10 のホーム画面ウィジェットの強化
 
 _この記事では、Apple がシステムに加え、ウィジェット 10、iOS での機能強化について説明します。_
-
 
 Apple はウィジェットが優れた上にある新しい iOS 10 個のロック画面、色の背景に表示されるように、ウィジェットのシステムには拡張機能を導入しました。 さらに、ウィジェットが含まれるよう、 [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode)プロパティにより、開発者は、コンテンツの量が使用可能な説明を入力しを展開して、コンテンツを折りたたむことができます。
 

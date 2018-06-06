@@ -1,18 +1,20 @@
 ---
-title: チュートリアル - バック グラウンドの場所を使用します。
+title: チュートリアル - Xamarin.iOS でバック グラウンドの場所
+description: このドキュメントでは、backgrounded Xamarin.iOS アプリケーションで場所情報を使用する方法のチュートリアルを提供します。 これは、必要なセットアップ、ユーザー インターフェイス、およびアプリケーションの状態について説明します。
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e6c74d9ffba4f63682a905d6ebc06d02be81abf4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aef39ef435bbbad6f643b2376832d8f8132d6a4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784095"
 ---
-# <a name="walkthrough---using-background-location"></a>チュートリアル - バック グラウンドの場所を使用します。
+# <a name="walkthrough---background-location-in-xamarinios"></a>チュートリアル - Xamarin.iOS でバック グラウンドの場所
 
 この例では、ここを現在の場所に関する情報を出力する場所のアプリケーションに、iOS をビルド: 緯度、経度、およびその他のパラメーターを画面にします。 このアプリケーションは、アプリケーションがアクティブまたは Backgrounded のいずれかの場所の更新プログラムが正しく実行する方法をデモンストレーションします。
 
@@ -21,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 ## <a name="application-set-up"></a>アプリケーション設定
 
 
-1. 最初に、新しい作成**iOS > アプリ > 1 つのビュー アプリケーション (c#)**です。 それを呼び出す_場所_iPad および iPhone の両方が選択されていることを確認してください。
+1. 最初に、新しい作成**iOS > アプリ > 1 つのビュー アプリケーション (c#)** です。 それを呼び出す_場所_iPad および iPhone の両方が選択されていることを確認してください。
 
 1. 場所のアプリケーションは、iOS で必要なバック グラウンド アプリケーションとして修飾します。 編集することによって、場所アプリケーションとしてアプリケーションを登録、 **Info.plist**のプロジェクト ファイルです。
 

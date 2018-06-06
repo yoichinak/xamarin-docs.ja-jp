@@ -1,19 +1,21 @@
 ---
 title: C の概要
+description: このドキュメントでは、.NET の埋め込みを使用して C アプリケーションで .NET コードを埋め込む方法について説明します。 .NET の Visual Studio 2017 および Visual Studio の両方で埋め込み for mac を使用する方法についても説明します。
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 author: topgenorth
 ms.author: toopge
 ms.date: 04/19/2018
-ms.openlocfilehash: f3c238dc9805dafa922f8e32fb4b1935a3fa152c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 248d44f23495e45d9d35b34622de0f3b85ca3e8d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794099"
 ---
 # <a name="getting-started-with-c"></a>C の概要
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 C では、.NET の埋め込みを使用するには、Mac または Windows 実行するコンピューターを必要があります。
 

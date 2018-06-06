@@ -1,18 +1,20 @@
 ---
-title: ナビゲーションの使用
+title: WatchOS Xamarin でナビゲーションの使用
+description: このドキュメントでは、ナビゲーション watchOS アプリケーションで使用する方法について説明します。 これは、モーダル インターフェイス、階層間を移動、およびページ ベースのインターフェイスについて説明します。
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3cef621479db89bfe30c1e82bf5e12f18d0e46af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9bcfc388164060549ca7010d11671abfa8230ac
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790641"
 ---
-# <a name="working-with-navigation"></a>ナビゲーションの使用
+# <a name="working-with-watchos-navigation-in-xamarin"></a>WatchOS Xamarin でナビゲーションの使用
 
 ウォッチで利用可能な最も簡単なナビゲーション オプションは、単純な[モーダル ポップアップ](#modal)現在シーンの上に表示されます。
 

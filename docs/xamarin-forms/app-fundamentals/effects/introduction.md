@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 38805c09136405a7a241cfaeb8fa8cb6fb1a5d5f
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732724"
 ---
 # <a name="introduction-to-effects"></a>影響の概要
 
@@ -53,7 +54,7 @@ Xamarin.Forms[ページ、レイアウトとコントロール](~/xamarin-forms/
 
 各プラットフォームに応じた`PlatformEffect`クラスは次のメソッドは、特殊効果を実装するをオーバーライドする必要がありますを公開します。
 
-- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – Xamarin.Forms コントロールに影響が接続されているときに呼び出されます。 各プラットフォームに固有の効果クラスで、このメソッドのオーバーライド バージョンとは、例外処理の効果を指定した Xamarin.Forms コントロールに適用できませんに備えてと共に、コントロールのカスタマイズを実行する場所です。
+- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – Xamarin.Forms コントロールに効果が接続されているときに呼び出されます。 各プラットフォームに固有の効果クラスで、このメソッドのオーバーライド バージョンとは、例外処理の効果を指定した Xamarin.Forms コントロールに適用できませんに備えてと共に、コントロールのカスタマイズを実行する場所です。
 - [`OnDetached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnDetached()/) – 効果は、Xamarin.Forms コントロールからデタッチされるときに呼び出されます。 各プラットフォームに固有の効果クラスで、このメソッドのオーバーライド バージョンとは、イベント ハンドラーを登録解除などの効果のクリーンアップを実行する場所です。
 
 さらに、`PlatformEffect`公開、 [ `OnElementPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E.OnElementPropertyChanged/p/System.ComponentModel.PropertyChangedEventArgs/)メソッドを上書きすることもできます。 このメソッドは、要素のプロパティが変更されたときに呼び出されます。 各プラットフォームに固有の効果クラスで、このメソッドのオーバーライド バージョンとは、Xamarin.Forms コントロールにバインド可能なプロパティの変更に応答する場所です。 このオーバーライドは、何度も呼び出すことができるよう、変更されているプロパティのチェックを実行常にする必要があります。

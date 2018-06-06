@@ -6,12 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: d4ddb662bf167a0c80561cce097104a7f5fc8096
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 7299de658a3491928e9bbeaa4dd192a8e95c435e
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732802"
 ---
 # <a name="windows-platform-specifics"></a>Windows プラットフォーム仕様
 
@@ -22,6 +23,10 @@ _プラットフォーム仕様はカスタム レンダラーや特殊効果を
 - ツールバーの配置オプションを設定します。 詳細については、次を参照してください。[ツールバーの配置を変更する](#toolbar_placement)です。
 - 折りたたみ、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)ナビゲーション バー。 詳細については、次を参照してください。 [MasterDetailPage ナビゲーション バーを折りたたみ](#collapsable_navigation_bar)です。
 - 有効にすると、 [ `WebView` ](xref:Xamarin.Forms.WebView)アラートを表示する JavaScript UWP メッセージ ダイアログ ボックスでします。 詳細については、次を参照してください。 [JavaScript アラートを表示する](#webview-javascript-alert)です。
+- 有効にすると、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)スペル チェック エンジンと対話します。 詳細については、次を参照してください。 [SearchBar スペル チェックを有効にすると](#searchbar-spellcheck)です。
+- テキストのコンテンツからの読み取り順序を検出する[ `Entry` ](xref:Xamarin.Forms.Entry)、 [ `Editor` ](xref:Xamarin.Forms.Editor)、および[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 詳細については、次を参照してください。[コンテンツからの読み取り順序を検出する](#inputview-readingorder)です。
+- サポートされているレガシの色のモードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)です。 詳細については、次を参照してください。[レガシ色のモードを無効にすると](#legacy-color-mode)です。
+- タップ ジェスチャのサポートを有効にすると、 [ `ListView`](xref:Xamarin.Forms.ListView)です。 詳細については、次を参照してください。 [ListView でタップ ジェスチャ サポートの有効化](#listview-selectionmode)です。
 
 <a name="toolbar_placement" />
 
@@ -127,6 +132,166 @@ _webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJav
 結果は、JavaScript のアラートは、UWP メッセージ ダイアログ ボックスで表示できます。
 
 ![WebView JavaScript アラート プラットフォーム固有](windows-images/webview-javascript-alert.png "WebView JavaScript アラート プラットフォーム固有の仕様")
+
+<a name="searchbar-spellcheck" />
+
+## <a name="enabling-searchbar-spell-check"></a>SearchBar スペル チェックを有効にします。
+
+このプラットフォームに固有の有効な[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)スペル チェック エンジンと対話します。 これは XAML で [`SearchBar.IsSpellCheckEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty) 添付プロパティを `boolean` 値を設定して使用します。
+
+```xaml
+<ContentPage ...
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        <SearchBar ... windows:SearchBar.IsSpellCheckEnabled="true" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+searchBar.On<Windows>().SetIsSpellCheckEnabled(true);
+```
+
+`SearchBar.On<Windows>`メソッドは、このプラットフォームに応じたがユニバーサル Windows プラットフォームでのみ実行されるを指定します。 [ `SearchBar.SetIsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.SetIsSpellCheckEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.SearchBar},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間が、スペル チェック機能をオンおよびオフにします。 さらに、`SearchBar.SetIsSpellCheckEnabled`メソッドを呼び出すことによって、スペル チェックを切り替えを使用することができます、 [ `SearchBar.GetIsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.GetIsSpellCheckEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.SearchBar}))スペル チェック機能が有効になっているかどうかを返します。
+
+```csharp
+searchBar.On<Windows>().SetIsSpellCheckEnabled(!searchBar.On<Windows>().GetIsSpellCheckEnabled());
+```
+
+結果は、その入力したテキストに、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)スペル チェックできる、ユーザーに表示されている正しくないスペルで。
+
+![SearchBar スペル チェックのプラットフォームに応じた](windows-images/searchbar-spellcheck.png "SearchBar スペル チェックのプラットフォームに固有")
+
+> [!NOTE]
+> `SearchBar`クラス内で、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間も[ `EnableSpellCheck` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.EnableSpellCheck*)と[ `DisableSpellCheck` ](xre:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.DisableSpellCheck*)有効および無効にするために使用する方法スペル チェック、 `SearchBar`、それぞれします。
+
+<a name="inputview-readingorder" />
+
+## <a name="detecting-reading-order-from-content"></a>コンテンツからの読み取り順序を検出します。
+
+このプラットフォームに固有の双方向のテキストの読み取り順序 (左から右へまたは右から左へ) を有効に[ `Entry` ](xref:Xamarin.Forms.Entry)、 [ `Editor` ](xref:Xamarin.Forms.Editor)、および[ `Label` ](xref:Xamarin.Forms.Label)を動的に検出するインスタンス。 使用される XAML で設定して、 [ `InputView.DetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.InputView.DetectReadingOrderFromContentProperty) (の`Entry`と`Editor`インスタンス) または[ `Label.DetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Label.DetectReadingOrderFromContentProperty)添付プロパティを`boolean`値。
+
+```xaml
+<ContentPage ...
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        <Editor ... windows:InputView.DetectReadingOrderFromContent="true" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+editor.On<Windows>().SetDetectReadingOrderFromContent(true);
+```
+
+`Editor.On<Windows>`メソッドは、このプラットフォームに応じたがユニバーサル Windows プラットフォームでのみ実行されるを指定します。 [ `InputView.SetDetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.InputView.SetDetectReadingOrderFromContent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.InputView},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)のコンテンツから読み取り順序が検出されたかどうか、名前空間を使用して、 [ `InputView` ](xref:Xamarin.Forms.InputView). さらに、`InputView.SetDetectReadingOrderFromContent`をコンテンツから呼び出すことによって、読み取り順序が検出されたかどうかを切り替えるメソッドを使用することができます、 [ `InputView.GetDetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.InputView.GetDetectReadingOrderFromContent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.InputView}))を現在の値を返すメソッド。
+
+```csharp
+editor.On<Windows>().SetDetectReadingOrderFromContent(!editor.On<Windows>().GetDetectReadingOrderFromContent());
+```
+
+結果を[ `Entry` ](xref:Xamarin.Forms.Entry)、 [ `Editor` ](xref:Xamarin.Forms.Editor)、および[ `Label` ](xref:Xamarin.Forms.Label)インスタンスが動的に検出されたコンテンツの読み取り順序を持つことができます。
+
+[![プラットフォーム固有のコンテンツからの読み取り順序を検出する InputView](windows-images/editor-readingorder.png "プラットフォーム固有のコンテンツからの読み取り順序を検出する InputView")](windows-images/editor-readingorder-large.png#lightbox "InputView からの読み取り順序を検出します。プラットフォーム固有のコンテンツ")
+
+> [!NOTE]
+> 設定とは異なり、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ、ビュー、ビュー内のテキストの配置は無効になります、テキスト コンテンツからの読み取り順序を検出するためのロジックです。 代わりでの双方向テキスト ブロックがレイアウトの順序を調整します。
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>レガシ色のモードを無効にします。
+
+Xamarin.Forms ビューの一部の機能、従来の色のモード。 このモードでときに、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)ビューのプロパティに設定されて`false`ビューには、既定のネイティブ色無効の状態を使用して、ユーザーが設定した色がよりも優先されます。 旧バージョンと互換性のため、この従来の色のモードはサポートされているビューの既定の動作のままです。
+
+このプラットフォームに固有では、ビューが無効になっている場合でも、ユーザーがビューに設定した色が維持されるよう、この従来の色のモードが無効にします。 使用される XAML で設定して、 [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.IsLegacyColorModeEnabledProperty)添付プロパティ`false`:
+
+```xaml
+<ContentPage ...
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Editor Text="Enter text here"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                windows:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+_legacyColorModeDisabledEditor.On<Windows>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<Windows>`メソッドは、このプラットフォームに応じたが Windows でのみ実行されるを指定します。 [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間を使用して、従来の色のモードが無効になっているかどうか。 さらに、 [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))を従来の色のモードが無効になっているかどうかを返すメソッドを使用できます。
+
+結果は、レガシ カラー モードを無効にすること、ように、ユーザーがビューに設定した色もビューが無効になっています。
+
+![](windows-images/legacy-color-mode-disabled.png "従来の色のモードが無効になっています")
+
+> [!NOTE]
+> 設定するときに、 [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)レガシ色のモードが完全に無視されますをビューにします。 表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)です。
+
+<a name="listview-selectionmode" />
+
+## <a name="enabling-tap-gesture-support-in-a-listview"></a>ListView でタップ ジェスチャのサポートを有効にします。
+
+ユニバーサル Windows プラットフォームで、既定では、Xamarin.Forms で[ `ListView` ](xref:Xamarin.Forms.ListView)ネイティブを使用して`ItemClick`ネイティブではなくとの対話に応答するイベント`Tapped`イベント。 これにより、ナレーターとキーボードに対話できるように、ユーザー補助機能、`ListView`です。 ただし、レンダリング内の任意のタップ ジェスチャ、`ListView`使用できなくなります。
+
+このプラットフォームに固有のコントロールかどうかの項目を[ `ListView` ](xref:Xamarin.Forms.ListView)タップ ジェスチャに応答できるためかどうか、ネイティブ`ListView`発生、`ItemClick`または`Tapped`イベント。 これは、 XAML で[`ListView.SelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SelectionModeProperty)添付プロパティを[`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)列挙型の値に設定して使用します。
+
+```xaml
+<ContentPage ...
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        <ListView ... windows:ListView.SelectionMode="Inaccessible">
+            ...
+        </ListView>
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
+```
+
+`ListView.On<Windows>`メソッドは、このプラットフォームに応じたがユニバーサル Windows プラットフォームでのみ実行されるを指定します。 [ `ListView.SetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間を使用しているかどうかの項目を[ `ListView` ](xref:Xamarin.Forms.ListView)でジェスチャをタップする応答できる、[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)列挙型の 2 つの値を提供します。
+
+- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible) – ことを示します、`ListView`ネイティブは起動`ItemClick`との対話を処理し、そのためユーザー補助機能を提供するイベントです。 そのため、Windows ナレーターとキーボードに対話できる、`ListView`です。 ただし、項目、`ListView`タップ ジェスチャに応答できません。 既定の動作は、この`ListView`ユニバーサル Windows プラットフォーム上のインスタンス。
+- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible) – ことを示します、`ListView`ネイティブは起動`Tapped`の対話を処理するイベントです。 そのため、項目、`ListView`タップ ジェスチャに応答できます。 ただし、ユーザー補助機能はありませんし、そのため、ナレーターとキーボード操作はできません、`ListView`です。
+
+> [!NOTE]
+> `Accessible`と`Inaccessible`選択モードは相互に排他的と、アクセス可能なのかを選択する必要があります[ `ListView` ](xref:Xamarin.Forms.ListView)または`ListView`タップ ジェスチャに応答することができます。
+
+さらに、 [ `GetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.GetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView}))を現在を返すメソッドを使用できます[ `ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)です。
+
+結果は、指定した[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)に適用される、 [ `ListView` ](xref:Xamarin.Forms.ListView)、制御するかどうかの項目を`ListView`タップ ジェスチャに応答できると同じようかどうか、ネイティブ`ListView`発生、`ItemClick`または`Tapped`イベント。
 
 ## <a name="summary"></a>まとめ
 

@@ -1,22 +1,20 @@
 ---
-title: 分割ビュー コント ローラーの使用
-description: この記事では、設計と Xamarin.tvOS アプリ内でコント ローラーの表示の分割操作について説明します。
+title: TvOS 分割 Xamarin でコント ローラーの表示の操作
+description: このドキュメントでは、Xamarin でビルドされたアプリ内でビューを分割 tvOS を操作する方法について説明します。 分割ビュー コント ローラーの概要を示します、ストーリー ボードなど、マスター/詳細のビューへのアクセスし表示とマスター ビューを非表示でそれらを使用する方法です。
 ms.prod: xamarin
 ms.assetid: 21248CFB-5A94-4C19-B223-C72E0DC5F1D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 25151eb2929e2bc61dba27a9937ffdf4ee224626
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2dd07cd8a4e92d6d39be50ba670441d965ed4d13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789432"
 ---
-# <a name="working-with-split-view-controllers"></a>分割ビュー コント ローラーの使用
-
-_この記事では、設計と Xamarin.tvOS アプリ内でコント ローラーの表示の分割操作について説明します。_
-
+# <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>TvOS 分割 Xamarin でコント ローラーの表示の操作
 
 分割ビュー コント ローラーは、表示し、マスターと詳細ビューのコント ローラーによってサイドで、同時に画面上を管理します。 分割ビューのコント ローラーはマスター ビュー (左側の小さなセクション) に永続的にフォーカス可能なコンテンツを表示するために、関連する詳細ビュー (右側の大規模なセクション) の詳細。
 

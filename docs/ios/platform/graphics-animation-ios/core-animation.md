@@ -1,5 +1,5 @@
 ---
-title: コア アニメーション
+title: Xamarin.iOS でのアニメーションのコア
 description: この記事では、表示することにより高いパフォーマンス、方法 UIKit で滑らかなアニメーションをアニメーションの下位のコントロールを直接使用する、コア アニメーション フレームワークについて説明します。
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b89b93a90e13072e36140b79081b90dcde1cdb05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5cc6019ed148b870e38659eb30ac7f2738481a50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786821"
 ---
-# <a name="core-animation"></a>コア アニメーション
+# <a name="core-animation-in-xamarinios"></a>Xamarin.iOS でのアニメーションのコア
 
 _この記事では、表示することにより高いパフォーマンス、方法 UIKit で滑らかなアニメーションをアニメーションの下位のコントロールを直接使用する、コア アニメーション フレームワークについて説明します。_
 

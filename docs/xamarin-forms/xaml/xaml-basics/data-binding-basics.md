@@ -7,11 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 4e3e090d826aa46d503f8c612250fd5122bc703e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733036"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データのバインドの基礎
 
@@ -388,7 +389,7 @@ namespace XamlSamples
 
 [![](data-binding-basics-images/listview3.png "DataTemplate とコンバーター コレクションへのバインド")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate とコンバーター コレクションへのバインド")
 
-`ListView`は、基になるで動的に発生する可能性の変更の処理に非常に高度な場合に限り、データは、特定の手順を実行します。 項目のコレクションに割り当てられている場合、`ItemsSource`のプロパティ、`ListView`実行時に変更 — に項目を追加できる場合は、またはコレクションから削除する: を使用して、`ObservableCollection`これらのアイテムのクラスです。 `ObservableCollection` 実装する、`INotifyCollectionChanged`インターフェイス、および`ListView`のハンドラーをインストール、`CollectionChanged`イベント。
+`ListView`は特定の手順を実行する場合にのみ、基になるデータで動的に発生した変更の処理に非常に高度なです。 項目のコレクションに割り当てられている場合、`ItemsSource`のプロパティ、`ListView`実行時に変更 — に項目を追加できる場合は、またはコレクションから削除する: を使用して、`ObservableCollection`これらのアイテムのクラスです。 `ObservableCollection` 実装する、`INotifyCollectionChanged`インターフェイス、および`ListView`のハンドラーをインストール、`CollectionChanged`イベント。
 
 実行時に、項目自体のプロパティを変更する場合、コレクション内の項目を実装する必要があります、`INotifyPropertyChanged`インターフェイスとシグナル値の変更にプロパティを使用して、`PropertyChanged`イベント。 これは、このシリーズの次の部分で示されて[パート 5 です。MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)です。
 

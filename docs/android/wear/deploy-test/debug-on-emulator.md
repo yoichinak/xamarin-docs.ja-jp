@@ -6,12 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 3dda1445815f747f484458388cd856c2f9705603
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732984"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Android の消耗エミュレーターでのデバッグします。
 
@@ -23,7 +24,7 @@ Android 着用アプリケーションを開発するには、物理ハードウ
 
 ## <a name="configure-the-google-android-emulator"></a>Google Android エミュレーターを構成します。
 
-消耗アプリをエミュレーターで実行するには、Android SDK Android エミュレーターをインストールし、Android 着用用に構成します。 全体的な Android SDK エミュレーターのインストールと構成については、次を参照してください。 [Google Android エミュレーター](~/android/deploy-test/debugging/android-sdk-emulator/index.md)です。
+消耗アプリをエミュレーターで実行するには、Android SDK Android エミュレーターをインストールし、Android 着用用に構成します。 全体的な Android SDK エミュレーターのインストールと構成については、次を参照してください。 [Android エミュレーターのセットアップ](~/android/get-started/installation/android-emulator/index.md)です。
 
 消耗仮想デバイスを作成するときに、Android を着用デバイス プロファイルを選択 (など**Android 消耗角**)。 パフォーマンス向上のための使用、消耗**x86** CPU/ABI この例のように。
 

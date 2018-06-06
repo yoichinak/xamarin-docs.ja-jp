@@ -1,20 +1,19 @@
 ---
 title: 既存の Mac アプリケーションの更新
-description: アプリを更新する既存 Xamarin.Mac Unified API を使用してこれらの手順に従います。
+description: このドキュメントでは、Unified API にクラシック API から Xamarin.Mac アプリを更新する従う必要がある手順について説明します。
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a2e3df4db13ccbf8001b762bf29a3eb53cacd35a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 5e6034b079bba5e884872e4f2096d677fd3641d0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782412"
 ---
 # <a name="updating-existing-mac-apps"></a>既存の Mac アプリケーションの更新
-
-_アプリを更新する既存 Xamarin.Mac Unified API を使用してこれらの手順に従います。_
 
 Unified API を使用して既存のアプリを更新すると、同様に、プロジェクト ファイル自体の名前空間と、アプリケーション コードで使用される Api への変更が必要です。
 
@@ -41,7 +40,7 @@ Mac または Visual Studio の Visual Studio で既存の Mac プロジェク�
 Xamarin.Mac アプリケーションで、統合 API の使用時に選択できる 2 つのサポートされているターゲット フレームワーク種類があります。
 
 - **Xamarin.Mac Mobile Framework** -これは、Xamarin.iOS と Xamarin.Android 全体のサブセットをサポートで使用される同じのチューニング対象の .NET framework**デスクトップ**フレームワークです。 これは、優れたリンク動作によるものより小さい平均バイナリを提供するための推奨されるフレームワークです。
-- **Xamarin.Mac .NET 4.5 Framework** -このフレームワークは、のサブセットでは、もう一度、**デスクトップ**フレームワークです。 ただし、小さくするときに完全はるかに少なくて**デスクトップ**フレームワークよりも、**モバイル**framework する必要があります_「同じように作業」_ほとんどの NuGet パッケージまたはサード パーティ製ライブラリを持つ。 これにより、標準を使用する開発者**デスクトップ**アセンブリもサポートされているフレームワークが、このオプションを使用して大規模なアプリケーション バンドルを生成中にします。 これは、サード パーティ製の .NET アセンブリが使用されていると互換性がないことをお勧めのフレームワーク、 **Xamarin.Mac Mobile Framework**です。 サポートされているアセンブリの一覧を参照してください、[アセンブリ](~/cross-platform/internals/available-assemblies.md)ドキュメント。
+- **Xamarin.Mac .NET 4.5 Framework** -このフレームワークは、のサブセットでは、もう一度、**デスクトップ**フレームワークです。 ただし、小さくするときに完全はるかに少なくて**デスクトップ**フレームワークよりも、**モバイル**framework する必要があります _「同じように作業」_ ほとんどの NuGet パッケージまたはサード パーティ製ライブラリを持つ。 これにより、標準を使用する開発者**デスクトップ**アセンブリもサポートされているフレームワークが、このオプションを使用して大規模なアプリケーション バンドルを生成中にします。 これは、サード パーティ製の .NET アセンブリが使用されていると互換性がないことをお勧めのフレームワーク、 **Xamarin.Mac Mobile Framework**です。 サポートされているアセンブリの一覧を参照してください、[アセンブリ](~/cross-platform/internals/available-assemblies.md)ドキュメント。
 
 ターゲット フレームワークの詳細情報と Xamarin.Mac アプリケーションの特定のターゲットを選択した場合の影響を参照してください、[ターゲット フレームワーク](~/mac/platform/target-framework.md)ドキュメント。 
 

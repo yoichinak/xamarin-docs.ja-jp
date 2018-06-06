@@ -1,20 +1,19 @@
 ---
 title: Xamarin を使用したゲームの開発の概要
-description: ゲーム開発の性質は、その他の種類のアプリの開発と明らかに異なることができます。 この記事では、Xamarin.iOS および Xamarin.Android を使用できるテクノロジを特徴とゲームの開発の概要です。 ゲームを配布する方法の詳細については高レベルと使用可能なテクノロジのサンプリングの両方を Xamarin.iOS および Xamarin.Android を提供します。
+description: このドキュメントでは、ゲームを配布する方法と、Xamarin.iOS および Xamarin.Android を使用するために使用できるテクノロジのサンプリングの両方を記述する、Xamarin を使用したゲームの開発の概要を示します。
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b1bd6d011cdc10352ce3b9258da7e16c2899d2d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783917"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin を使用したゲームの開発の概要
-
-_ゲーム開発の性質は、その他の種類のアプリの開発と明らかに異なることができます。この記事では、Xamarin.iOS および Xamarin.Android を使用できるテクノロジを特徴とゲームの開発の概要です。ゲームを配布する方法の詳細については高レベルと使用可能なテクノロジのサンプリングの両方を Xamarin.iOS および Xamarin.Android を提供します。_
 
 ゲームを開発できる非常に魅力的な特にモバイル プラットフォームでの作業内容を発行することができますいかに簡単であるかを指定します。 概念を説明し、目標は、ゲームや楽しい用プログラムにのみ、高品質 AAA を作成するかどうかを支援するゲームの開発に関連するテクノロジが、ゲームを作成します。
 

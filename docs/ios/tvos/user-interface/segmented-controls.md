@@ -1,22 +1,20 @@
 ---
-title: セグメント化されたコントロールの操作
-description: この記事では、設計と Xamarin.tvOS アプリ内でセグメント化されたコントロールの操作について説明します。
+title: Xamarin で tvOS セグメント化されたコントロールの操作
+description: このドキュメントでは、tvOS を Xamarin でビルドされたアプリ内でのセグメント化されたコントロールを操作する方法について説明します。 これは、セグメント アイコンとテキスト、イベント、コントロールの外観、および複数の変更について説明します。
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8980f9fbf6996217dbcaec869e4c81598ac36552
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789240"
 ---
-# <a name="working-with-segmented-controls"></a>セグメント化されたコントロールの操作
-
-_この記事では、設計と Xamarin.tvOS アプリ内でセグメント化されたコントロールの操作について説明します。_
-
+# <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Xamarin で tvOS セグメント化されたコントロールの操作
 
 セグメント化されたコントロールは、それぞれのアイコンまたはテキストを含めることができ、ユーザーに関連する選択肢を提供するための線形の要素のセットを提供します。
 

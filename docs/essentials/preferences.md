@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials 設定
-description: 設定クラスでは、キー/値のストアにアプリケーションの設定を保存します。
+title: 'Xamarin.Essentials: 設定'
+description: このドキュメントでは、キー/値のストアにアプリケーションの設定を保存する Xamarin.Essentials で設定クラスについて説明します。 クラスと格納できるデータの種類を使用する方法についても説明します。
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 882ff8e0f10948f4f88303f8bcc3d45b3cecf5fd
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: e453c04a953e60be2508670723d175bde3dc7c42
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782848"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials 設定
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: 設定
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 

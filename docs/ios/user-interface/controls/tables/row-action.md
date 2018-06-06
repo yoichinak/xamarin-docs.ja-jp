@@ -1,5 +1,5 @@
 ---
-title: 行の操作の操作
+title: Xamarin.iOS で行のアクションの使用
 description: このガイドは UISwipeActionsConfiguration または UITableViewRowAction でテーブルの行のカスタム スワイプしてアクションを作成する方法を示します
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: c257406f3ad81e8144b47e099c9a00f3fdae30cb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4be8b6dc66c9c047e6662067e7e3ecf81ab22893
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789942"
 ---
-# <a name="working-with-row-actions"></a>行の操作の操作
+# <a name="working-with-row-actions-in-xamarinios"></a>Xamarin.iOS で行のアクションの使用
 
 _このガイドは UISwipeActionsConfiguration または UITableViewRowAction でテーブルの行のカスタム スワイプしてアクションを作成する方法を示します_
 

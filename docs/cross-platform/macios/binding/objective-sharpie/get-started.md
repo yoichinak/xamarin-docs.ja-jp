@@ -1,17 +1,19 @@
 ---
-title: 作業の開始
+title: 目標ペンを使わずにあたって
+description: このドキュメントでは、目標ペンを使わず、c# Objective C コードへのバインドの作成を自動化するためのツールの概要を示します。
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 5f61d0794e1f5a38370f0d840504720043f69590
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a0431f8952055a55be24ae5f85381a4295206a40
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781817"
 ---
-# <a name="getting-started"></a>作業の開始
+# <a name="getting-started-with-objective-sharpie"></a>目標ペンを使わずにあたって
 
 > [!IMPORTANT]
 > 目標ペンを使わず、Objective C の (および C の拡張機能によって) 高度な知識と経験を積んだ開発者向けツールです。 Objective C ライブラリをバインドする前に、コマンドライン (およびのネイティブ ライブラリのしくみをよく理解) ネイティブ ライブラリを構築する方法を十分に理解が必要です。

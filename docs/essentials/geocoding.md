@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials ジオコード化
-description: ジオコード化クラスは、提供の Api geocode を位置指定の座標に placemark、placemark を逆に geocode coordincates とします。
+title: 'Xamarin.Essentials: ジオコード化'
+description: ジオコード化クラス Xamarin.Essentials では、提供 Api 両方 geocode を位置指定の座標に placemark および、placemark に geocode 座標を破棄します。
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 95301dad847887e867b220997ea9c34dba827982
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 0b6cbf9ee5621466285656a5efee68ccc2c85211
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783029"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials ジオコード化
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: ジオコード化
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 

@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Essentials 開くブラウザー
-description: ブラウザーのクラスには、最適化されたシステム優先ブラウザーまたは外部のブラウザーで web リンクを開くためのアプリケーションができるようにします。
+description: Xamarin.Essentials でブラウザー クラスには、最適化されたシステム優先ブラウザーまたは外部のブラウザーで web リンクを開くためのアプリケーションができるようにします。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2a95d0b89b78ce8b0ddfdc94d86c284a6f8b2bbe
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 563d3899cffb80c0215d90e8e4392046c4635256
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783136"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials ブラウザー
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: ブラウザー
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 

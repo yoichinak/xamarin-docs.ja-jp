@@ -1,21 +1,20 @@
 ---
-title: 実際には
-description: Xamarin.Mac の内部動作のピーク
+title: Xamarin.Mac の内部で
+description: このドキュメントには、Xamarin.Mac の内部動作を記述するさまざまなガイドへのリンクがします。 リンク先のドキュメントは、事前コンパイル、Xamarin.Mac アーキテクチャ、および Xamarin.Mac レジストラーについて説明します。
 ms.prod: xamarin
 ms.assetid: 84974D75-0CCE-4455-AA38-00DE68AE33B6
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 74721e880bb0d3ada3f3940a4074d06f55601c0e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c940252a675c38247d2c5bb374b9c30237222bda
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792490"
 ---
-# <a name="under-the-hood"></a>実際には
-
-_Xamarin.Mac の内部動作のピーク_
+# <a name="under-the-hood-in-xamarinmac"></a>Xamarin.Mac の内部で
 
 ## <a name="ahead-of-time-compilation-aotaotmd"></a>[コンパイル (AOT) の事前](aot.md)
 

@@ -1,21 +1,21 @@
 ---
 title: (手動) の実際の例の詳細
+description: このドキュメントでは、目標ペンを使わずは、内部での目標ペンを使わずに洞察を提供するへの入力として xcodebuild の出力を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 82bca525433e5c8fea3a29250afb83962f2e64fc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781257"
 ---
 # <a name="advanced-manual-real-world-example"></a>(手動) の実際の例の詳細
 
-
 **この例では、[の Facebook からの POP ライブラリ](https://github.com/facebook/pop)です。**
-
 
 ここでは、バインディング、Apple を使用するより高度なアプローチ`xcodebuild`ツールを最初にプロジェクトをビルド、POP、および目標ペンを使わずに入力を手動で推測します。 これは、本質的には、目標ペンを使わずが何を前のセクションで、内部でについて説明します。
 

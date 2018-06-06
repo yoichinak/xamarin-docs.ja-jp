@@ -1,19 +1,20 @@
 ---
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: デスクトップの開発者向けのクロスプラット フォーム
-description: Xamarin では、Windows、Android、iOS、および、Windows フォームや WPF のスキルを使用して Mac 用アプリをビルドすることができます。
+description: このドキュメントには、WPF と Windows フォームの開発者向け Xamarin.Forms を記述するさまざまなガイドへのリンクがします。 リンクされたコンテンツでは、アプリケーションのライフ サイクル、UI コントロール、ガイダンス、およびサンプルの移植について説明します。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 0794d931dd57971efcbd0ea5b42159e3524ea6b0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 21c74b8c0ccaffb2b3b8205a3bdda9101b99f072
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779955"
 ---
 # <a name="cross-platform-for-desktop-developers"></a>デスクトップの開発者向けのクロスプラット フォーム
 
-このセクションの内容には、既存のナレッジを相互参照で Xamarin を使用したモバイル アプリ開発を学習し、モバイルの表現方法に発生する WPF および Windows.Forms の開発者に役立つ情報が含まれていて、モバイル、デスクトップ アプリの移植の例を提供します。
+このセクションには、モバイルの表現方法、およびモバイルのデスクトップ アプリの移植の例を提供する経験を既存のナレッジを相互参照で Xamarin を使用したモバイル アプリ開発をについては、WPF と Windows フォームの開発者を支援する情報が含まれています。
 
 ## <a name="app-lifecycle-comparisonlifecyclemd"></a>[アプリのライフ サイクルの比較](lifecycle.md)
 

@@ -1,18 +1,20 @@
 ---
-title: UrhoSharp で ARKit の使用
+title: Xamarin.iOS で UrhoSharp で ARKit の使用
+description: このドキュメントは ARKit アプリは、Xamarin.iOS で設定する方法について説明し、どのフレームがレンダリングされる、カメラを調整する方法では検出方法プレーン、光源の方向、および詳細を操作する方法です。 UrhoSharp および HoloLens のコードの記述についても説明します。
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/01/2016
-ms.openlocfilehash: 95c9c602d0bfe1b77fda453a137dfdfc12a975c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0d70b1f751d5aa6b6c8fa578f53ba1ac8260cfa1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787104"
 ---
-# <a name="using-arkit-with-urhosharp"></a>UrhoSharp で ARKit の使用
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin.iOS で UrhoSharp で ARKit の使用
 
 導入に伴い[ARKit](https://developer.apple.com/arkit/)Apple が簡単になった、augmented reality アプリケーションを作成する開発者向けです。 ARKit がデバイスの正確な位置を追跡し、世界のさまざまな画面を検出し、blend のコードに ARKit から到着したデータを開発者がします。
 

@@ -1,19 +1,20 @@
 ---
-title: ピッカー
-description: このガイドでは、設計とピッカー Xamarin.iOS アプリで作業について説明します。
+title: Xamarin.iOS でピッカー コントロール
+description: このドキュメントでは、設計および Xamarin.iOS アプリでピッカー コントロールを操作する方法について説明します。 これには、コードでは、ios デザイナー ピッカーを実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: e213124e870f1cca96a6078fd26bc7eeb1af55a1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789913"
 ---
-# <a name="picker"></a>ピッカー
+# <a name="picker-control-in-xamarinios"></a>Xamarin.iOS でピッカー コントロール
 
 ピッカー コントロールは、スクロール可能な値を強調表示されている選択した値の一覧を含む 'ホイールに似た' コントロールを表示します。 ユーザーは、必要なオプションを選択するホイールを回転します。
 

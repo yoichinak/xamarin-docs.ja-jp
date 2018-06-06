@@ -1,21 +1,20 @@
 ---
-title: 親アプリケーションの操作
-description: WatchOS 1 で、や [ウォッチ] iOS アプリ間でデータの共有
+title: WatchOS Xamarin で親アプリケーションの使用
+description: このドキュメントでは、Xamarin で watchOS 親アプリケーションを操作する方法について説明します。 これは、WatchKit アプリ拡張機能、iOS アプリ、共有ストレージ、および詳細について説明します。
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 769847cccb3e21fea4d8f45d8e5d0c0fb59bdd43
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790693"
 ---
-# <a name="working-with-the-parent-application"></a>親アプリケーションの操作
-
-_WatchOS 1 で、や [ウォッチ] iOS アプリ間でデータの共有_
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>WatchOS Xamarin で親アプリケーションの使用
 
 > [!IMPORTANT]
 > 次の例をのみを使用して親アプリケーションへのアクセスは、watchOS 1 watch アプリで機能します。
@@ -148,7 +147,7 @@ C# バージョンをダウンロード[WormHoleSharp](https://github.com/Clance
 
 ## <a name="related-links"></a>関連リンク
 
-- [GpsWatch (sample)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
+- [GpsWatch (サンプル)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
 - [WormHoleSharp (サンプル)](https://github.com/Clancey/WormHoleSharp)
 - [Apple の WKInterfaceController 参照](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Apple のアプリを含むデータを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

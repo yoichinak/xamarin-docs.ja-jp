@@ -1,23 +1,24 @@
 ---
 title: 統合 API への既存のアプリの更新
+description: このドキュメントには、Unified API に Xamarin アプリケーションを更新する方法を説明するさまざまなガイドへのリンクがします。 Xamarin.iOS アプリ、Xamarin.Mac アプリについても説明します。 Xamarin.Forms アプリ、およびバインド プロジェクトのクロスプラット フォーム アプリでネイティブ型です。
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781632"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>統合 API への既存のアプリの更新
 
 > [!IMPORTANT]
-> **プロファイル非推奨のクラシック:** クラシック プロファイル (monotouch.dll) から機能を徐々 に廃止する開始 Xamarin.iOS で新しいプラットフォームが追加されるとします。 たとえば、非 NRC (ref カウントには新しい) オプションが削除されました。 NRC が常に有効になってすべて統合されたアプリケーション (つまり NRC 以外がオプションではなかったことはありません) の既知の問題はありません。 今後のリリースでは、ガベージ コレクターとして Boehm を使用するオプションを削除します。 サポートしても、オプションの統合されたアプリケーションで使用できることはありませんでした。 従来のサポートを完全に削除は、Xamarin.iOS 10.0 のリリースで [次へ] の秋にスケジュールされます。
-
-
-
+> Unified API の前に、Xamarin Classic API は廃止されました。 
+> - Classic API (monotouch.dll) をサポートするために Xamarin.iOS の最後のバージョンでは、Xamarin.iOS 9.10 はでした。
+> - 更新されなくは Xamarin.Mac が引き続きクラシックの API をサポートします。 推奨されなくなりましたので、開発者は、Unified API にアプリケーションを移動します。
 
 ## <a name="how-to-update-your-apps"></a>アプリを更新する方法
 
@@ -31,7 +32,7 @@ Xamarin 大学自由に利用可能なビデオが**iOS Unified API へのアッ
 
 2. Mac 用の Visual Studio に組み込まれている移行ツールを使用して、プロジェクト ファイルと名前空間を更新します。
 
-3. 残りの新しいに関連するコンパイラ エラー修正[64 型](~/cross-platform/macios/nativetypes.md)と[他の Api](~/cross-platform/macios/unified/index.md#deprecated-typos)に変更されました。 チェック アウト[これらのヒント](~/cross-platform/macios/unified/updating-tips.md)必要になる可能性がある手動で更新の詳細についてはします。
+3. 残りの新しいに関連するコンパイラ エラー修正[64 型](~/cross-platform/macios/nativetypes.md)と[他の Api](~/cross-platform/macios/unified/overview.md#deprecated-typos)に変更されました。 チェック アウト[これらのヒント](~/cross-platform/macios/unified/updating-tips.md)必要になる可能性がある手動で更新の詳細についてはします。
 
 特定のガイドは、Unified API と 64 ビットをサポートするアプリを更新するためには、各製品利用できます。
 
@@ -55,9 +56,6 @@ Unified API を使用して、iOS プロジェクトで既存の Xamarin.Forms �
 
 Objective C のライブラリへのバインドを作成した顧客は、(一部の型が現在される 64 ビット)、基になる API の変更を反映するようにバインディング プロジェクトを更新する必要があります。
 次の手順に従って[Unified API をサポートするために既存のバインドのプロジェクトを更新](~/cross-platform/macios/unified/update-binding.md)です。
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

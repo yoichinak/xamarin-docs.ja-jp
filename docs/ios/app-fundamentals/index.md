@@ -1,19 +1,20 @@
 ---
-title: アプリケーションの基礎
-description: 中核となるアプリケーションの概念
+title: Xamarin.iOS アプリケーションの基礎
+description: このドキュメント ガイドへのリンクさまざまなトランスポート セキュリティのアプリなど、Xamarin.iOS 開発に基本的な概念について説明した backgrounding、イベント、およびスレッドです。
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: d8dc1e25de527357fe6ad3ad1328a930e0e4dc70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdace50d851b2c99f9241b869f248e58d5b93377
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784498"
 ---
-# <a name="application-fundamentals"></a>アプリケーションの基礎
+# <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS アプリケーションの基礎
 
 このセクションでは、いくつかの一般的な処理タスクまたは開発者は、Xamarin.iOS (旧称 MonoTouch) アプリケーションを開発するときに注意する必要がある概念にガイドを提供します。
 

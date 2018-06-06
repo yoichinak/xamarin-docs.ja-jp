@@ -1,16 +1,17 @@
 ---
 title: その他の iOS 9 のフレームワークの変更
-description: この記事では、追加、マイナーの変更や iOS 9 の既存のフレームワークの機能強化について説明します。
+description: このドキュメントでは、iOS 9 で導入された追加のフレームワークの変更について説明します。 AVFoundation、AVKit、および CloudKit についても説明します。
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ae286ddbc61f48cbdd257dc453a2d9680bba703
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 15c9364cf3bdcb8c797882cc9ac76219959de439
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787709"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>その他の iOS 9 のフレームワークの変更
 
@@ -20,9 +21,9 @@ _この記事では、追加、マイナーの変更や iOS 9 の既存のフレ
 
 IOS に主要な変更だけでなく Apple 修正といくつかの既存のフレームワークの機能強化に向けた iOS 9 です。
 
-## <a name="av-foundation-framework-additions"></a>AV Foundation フレームワークの追加
+## <a name="avfoundation-framework-additions"></a>AVFoundation フレームワークの追加
 
-AV Foundation framework、 [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/)クラスだけでなく言語識別子によって、音声を指定できるようになりました。
+AVFoundation framework、 [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/)クラスだけでなく言語識別子によって、音声を指定できるようになりました。
 
 たとえば、次のコードはすべて利用できる音声の一覧を取得します。
 
@@ -66,7 +67,7 @@ CloudKit フレームワークは、そのアクセス iCloud アプリケーシ
 - [: CloudKit カタログの概要 (Cocoa および JavaScript) CloudKit](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -CloudKit および CloudKit JS を使用して、Apple のサンプル アプリ。
 
 > [!IMPORTANT]
-> Apple[ツールを提供](https://developer.apple.com/support/allowing-users-to-manage-data/)開発者が、欧州連合の一般的なデータ保護規制 (GDPR) を適切に処理します。
+> Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
 ## <a name="foundation-framework-additions"></a>Foundation フレームワークの追加
 

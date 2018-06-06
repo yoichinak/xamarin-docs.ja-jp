@@ -1,18 +1,20 @@
 ---
-title: アプリ内購入の基本と構成
+title: アプリ内購入の基本と Xamarin.iOS 内の構成
+description: このドキュメントでは、ルール、構成、および iTunes Connect に関する関連情報について説明する Xamarin.iOS でのアプリ内購入について説明します。
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c08d27ce2f5d41b7de1d08ea73232e92f9fa8144
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ded160ad4b31346c400e63d739a3dc21f6304d3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787244"
 ---
-# <a name="in-app-purchase-basics-and-configuration"></a>アプリ内購入の基本と構成
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>アプリ内購入の基本と Xamarin.iOS 内の構成
 
 アプリ内購入を実装するには、デバイスで StoreKit API を利用するアプリケーションが必要です。 StoreKit では、Apple の iTunes サーバー製品の情報を取得し、トランザクションを実行するとすべての通信を管理します。 アプリ内購入するため、プロビジョニング プロファイルを構成する必要があり、iTunes Connect では、製品情報を入力する必要があります。
 

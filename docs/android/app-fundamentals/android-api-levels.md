@@ -6,12 +6,13 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/01/2018
+ms.openlocfilehash: b942bb1be3441b1fb1a8bd65016914b3ecddbb26
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732321"
 ---
 # <a name="understanding-android-api-levels"></a>Android API レベルを理解します。
 
@@ -29,6 +30,10 @@ Xamarin.Android は、次の 3 つの Android API レベルのプロジェクト
 -   [Android バージョンを対象に](#target)&ndash;上で実行するためのもので、アプリが Android のバージョンを指定します。 この API レベルが使用される*実行*Android によって時間。
 
 API レベルを構成するには、プロジェクトの前に、その API レベルの SDK プラットフォーム コンポーネントをインストールする必要があります。 ダウンロードして、Android SDK コンポーネントのインストールに関する詳細については、次を参照してください。 [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)です。
+
+> [!NOTE]
+> 年 2018年 8 月以降、Google プレイ コンソールが必要になります API レベル 26 (Android 8.0) を対象とする新しいアプリまたはそれ以降。
+既存のアプリは、API レベル 26 または年 2018年 11 月高い以降を対象とする必要があります。 詳細については、次を参照してください。[アプリのセキュリティとになる年の Google Play のパフォーマンスの向上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)です。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -51,7 +56,7 @@ Android の以前のバージョンと旧バージョンとの互換性を維持
 
 [![ターゲット フレームワークがインストールされている最新バージョンを使用するプラットフォームを既定とします](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
-最小値とターゲットの Android バージョン設定は「**ビルド > Android アプリケーション**で**プロジェクト オプション**です。 最低限の Android バージョンを設定**自動: ターゲット フレームワークのバージョンを使用して**ターゲット Android バージョンをターゲット フレームワークのバージョンと同じ値に設定します。 次のスクリーン ショットでは、Android ターゲット フレームワークが に設定されている**Android 8.0 (API レベル 26)**上のターゲット フレームワークの設定と一致します。
+最小値とターゲットの Android バージョン設定は「**ビルド > Android アプリケーション**で**プロジェクト オプション**です。 最低限の Android バージョンを設定**自動: ターゲット フレームワークのバージョンを使用して**ターゲット Android バージョンをターゲット フレームワークのバージョンと同じ値に設定します。 次のスクリーン ショットでは、Android ターゲット フレームワークが に設定されている**Android 8.0 (API レベル 26)** 上のターゲット フレームワークの設定と一致します。
 
 [![プロジェクトのオプションで、ターゲットおよびフレームワーク レベルの設定](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
@@ -124,7 +129,7 @@ Xamarin.Android をさらに、定義*バージョン コードをビルド*現�
 
 -   **API 8 (Android 2.2.x)** &ndash; _Froyo_2010 年 6 月にリリースされました。 バージョンのコードをビルドします。 `Android.OS.BuildVersionCodes.Froyo`
 
--   **API 7 (Android 2.1.x)** &ndash; _Eclair_, released January 2010. バージョンのコードをビルドします。 `Android.OS.BuildVersionCodes.EclairMr1`
+-   **API 7 (Android 2.1.x)** &ndash; _Eclair_2010 年 1 月にリリースされました。 バージョンのコードをビルドします。 `Android.OS.BuildVersionCodes.EclairMr1`
 
 -   **API 6 (Android 2.0.1)** &ndash; _Eclair_2009 年 12 月にリリースされました。 バージョンのコードをビルドします。 `Android.OS.BuildVersionCodes.Eclair01`
 
@@ -170,13 +175,9 @@ Xamarin.Android でターゲットまたは最小 API レベルを選択する�
 
 *ターゲット フレームワーク*(とも呼ばれる`compileSdkVersion`) のビルド時にアプリがコンパイルされている特定の Android フレームワーク バージョン (API レベル) です。 この設定は、どのような Api アプリを指定*が必要ですが*、実行しますが、いる Api は、アプリを実際に使用できるインストールされている場合の影響を与えませんときに使用します。 その結果、ターゲット フレームワークの設定を変更する変わらない実行時の動作です。
 
-ターゲット フレームワークに対して、アプリケーションがリンクされているどのライブラリのバージョンを識別する&ndash;を Api アプリで使用できるこのプロパティを決定します。 たとえば、使用する場合、 [NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) Android 5.0 ロリポップで導入されたメソッドにターゲット フレームワークを設定する必要があります**API レベル 21 (ロリポップ)**またはそれ以降。 設定した場合、プロジェクトのターゲット フレームワーク API などレベル**API レベル 19 (KitKat)**呼び出そうとして、`SetCategory`コード内のメソッド、コンパイル エラーが表示されます。
+ターゲット フレームワークに対して、アプリケーションがリンクされているどのライブラリのバージョンを識別する&ndash;を Api アプリで使用できるこのプロパティを決定します。 たとえば、使用する場合、 [NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) Android 5.0 ロリポップで導入されたメソッドにターゲット フレームワークを設定する必要があります**API レベル 21 (ロリポップ)** またはそれ以降。 設定した場合、プロジェクトのターゲット フレームワーク API などレベル**API レベル 19 (KitKat)** 呼び出そうとして、`SetCategory`コード内のメソッド、コンパイル エラーが表示されます。
 
 常に使用してコンパイルすることをお勧め、*最新*使用可能なターゲット フレームワークのバージョン。 これにより、コードによって呼び出される可能性がありますすべての非推奨 Api 用の便利な警告メッセージと共に提供します。 最新のサポート ライブラリのリリースを使用する場合に特に重要はターゲット フレームワークの最新バージョンを使用して&ndash;各ライブラリはそのサポート ライブラリの最小 API レベルでのコンパイル以上でなければアプリが必要です。 
-
-> [!NOTE]
-> 年 2018年 8 月以降、Google プレイ コンソールが必要になります API レベル 26 (Android 8.0) を対象とする新しいアプリまたはそれ以降。
-既存のアプリは、API レベル 26 または年 2018年 11 月高い以降を対象とする必要があります。 詳細については、次を参照してください。[アプリのセキュリティとになる年の Google Play のパフォーマンスの向上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)です。
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -202,9 +203,9 @@ Mac 用 Visual Studio でターゲット フレームワークの設定にアク
 
 ### <a name="minimum-android-version"></a>最低限の Android バージョン
 
-*最低限の Android バージョン*(とも呼ばれる`minSdkVersion`) をインストールし、アプリケーションを実行できる Android OS (つまり、最低 API レベル) の最も古いバージョンです。 既定では、アプリは、必ずターゲット フレームワークの設定に一致するデバイスにインストールされて以降、最低限の Android バージョン設定がある場合*低い*ターゲット フレームワークの設定よりも、アプリは Android の以前のバージョンで実行もできます。 ターゲット フレームワークを設定する場合など、 **Android 7.1 (Nougat)**に最低限の Android バージョンを設定および**Android 4.0.3 (アイスクリーム サウスサンドウィッチ)**、API レベル 15 から任意のプラットフォームでアプリをインストールすることができますAPI レベル 25、包括的です。
+*最低限の Android バージョン*(とも呼ばれる`minSdkVersion`) をインストールし、アプリケーションを実行できる Android OS (つまり、最低 API レベル) の最も古いバージョンです。 既定では、アプリは、必ずターゲット フレームワークの設定に一致するデバイスにインストールされて以降、最低限の Android バージョン設定がある場合*低い*ターゲット フレームワークの設定よりも、アプリは Android の以前のバージョンで実行もできます。 ターゲット フレームワークを設定する場合など、 **Android 7.1 (Nougat)** に最低限の Android バージョンを設定および**Android 4.0.3 (アイスクリーム サウスサンドウィッチ)**、API レベル 15 から任意のプラットフォームでアプリをインストールすることができますAPI レベル 25、包括的です。
 
-アプリは可能性がありますが正常にビルドされ、このさまざまなプラットフォームにインストールが、これは保証されないものでは正常に*実行*これらすべてのプラットフォームにします。 アプリがインストールされている場合など、 **Android 5.0 (ロリポップ)**でのみ使用可能な API を呼び出すと**Android 7.1 (Nougat)**以降では、アプリはランタイム エラーが発生し、クラッシュする可能性があります。 したがって、コードを確認する必要があります&ndash;実行時に&ndash;で実行されている Android のデバイスでサポートされている Api のみを呼び出すことです。 つまり、コードでは、それらをサポートするのに十分な最新のデバイスでのみ、アプリが新しい Api を使用していることを確認する明示的なランタイム チェックを含める必要があります。
+アプリは可能性がありますが正常にビルドされ、このさまざまなプラットフォームにインストールが、これは保証されないものでは正常に*実行*これらすべてのプラットフォームにします。 アプリがインストールされている場合など、 **Android 5.0 (ロリポップ)** でのみ使用可能な API を呼び出すと**Android 7.1 (Nougat)** 以降では、アプリはランタイム エラーが発生し、クラッシュする可能性があります。 したがって、コードを確認する必要があります&ndash;実行時に&ndash;で実行されている Android のデバイスでサポートされている Api のみを呼び出すことです。 つまり、コードでは、それらをサポートするのに十分な最新のデバイスでのみ、アプリが新しい Api を使用していることを確認する明示的なランタイム チェックを含める必要があります。
 [ランタイムは Android バージョンをチェック](#runtimechecks)このガイドで後で、これらのランタイム チェックをコードに追加する方法について説明します。
 
 
@@ -279,7 +280,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 }
 ```
 
-この例では、アプリのターゲット フレームワークが に設定されている**Android 5.0 (API レベル 21)**に設定されている最低限の Android バージョンおよび**Android 4.1 (API レベル 16)**です。 `SetCategory` API レベルにある`Android.OS.BuildVersionCodes.Lollipop`と後で、このコード例は`SetCategory`が実際に使用できる&ndash;なります*いない*を呼び出そうと`SetCategory`ときに APIレベルは、16、17、18、19、または 20 です。 のみ身元を正しく (ための型によって分類されない) と、通知の並べ替えは行われません、まだでも、この通知がユーザーに警告を発行されています。 これら以前 Android のバージョンで機能が制限されます。 アプリは引き続き動作しますが、その機能が若干低下します。
+この例では、アプリのターゲット フレームワークが に設定されている**Android 5.0 (API レベル 21)** に設定されている最低限の Android バージョンおよび**Android 4.1 (API レベル 16)** です。 `SetCategory` API レベルにある`Android.OS.BuildVersionCodes.Lollipop`と後で、このコード例は`SetCategory`が実際に使用できる&ndash;なります*いない*を呼び出そうと`SetCategory`ときに APIレベルは、16、17、18、19、または 20 です。 のみ身元を正しく (ための型によって分類されない) と、通知の並べ替えは行われません、まだでも、この通知がユーザーに警告を発行されています。 これら以前 Android のバージョンで機能が制限されます。 アプリは引き続き動作しますが、その機能が若干低下します。
 
 一般に、ビルドのバージョン チェックは、コードが従来の方法ではなく新しい方法を何らかの間での実行時に決定に役立ちます。 例えば:
 

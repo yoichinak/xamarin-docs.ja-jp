@@ -1,6 +1,6 @@
 ---
-title: iOS の拡張機能
-description: IOS 8 で導入された、拡張機能は、ウィジェットが提示する、標準のコンテキストで iOS など、通知センター内で、ユーザーがカスタムのキーボードを要求するときや、写真を編集します。 すべての拡張機能では、コンテナー アプリと共にインストールされ、ホスト アプリケーションの特定の拡張機能ポイントからアクティブ化します。
+title: iOS Xamarin.iOS で拡張機能
+description: このドキュメントでは、通知センター内でなどの標準的なコンテキストで iOS によって提示されるウィジェットをある拡張機能について説明します。 これには、拡張機能を作成して親アプリからと通信する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: af52db5f1add040af025f2134f0e9a7b3936f4f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786731"
 ---
-# <a name="ios-extensions"></a>iOS の拡張機能
-
-_IOS 8 で導入された、拡張機能は、ウィジェットが提示する、標準のコンテキストで iOS など、通知センター内で、ユーザーがカスタムのキーボードを要求するときや、写真を編集します。すべての拡張機能では、コンテナー アプリと共にインストールされ、ホスト アプリケーションの特定の拡張機能ポイントからアクティブ化します。_
+# <a name="ios-extensions-in-xamarinios"></a>iOS Xamarin.iOS で拡張機能
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 

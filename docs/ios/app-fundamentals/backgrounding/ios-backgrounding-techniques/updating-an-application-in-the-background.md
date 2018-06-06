@@ -1,18 +1,20 @@
 ---
-title: バック グラウンドでのアプリケーションの更新
+title: バック グラウンドで Xamarin.iOS アプリの更新
+description: このドキュメントでは、領域の監視、バック グラウンドの取得、およびリモート通知など、バック グラウンドである Xamarin.iOS アプリを更新するさまざまな方法について説明します。
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 370d1cba71fa695e4e01dfb93241536a8df01b11
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 973c18528eee2096b29ba86e82ceff31ecf3e207
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784066"
 ---
-# <a name="updating-an-application-in-the-background"></a>バック グラウンドでのアプリケーションの更新
+# <a name="updating-a-xamarinios-app-in-the-background"></a>バック グラウンドで Xamarin.iOS アプリの更新
 
 バック グラウンド更新は、中断されているアプリケーションのウェイク アップまたはが実行されていないと新しいコンテンツで更新のプロセスです。 iOS は、バック グラウンドでコンテンツを更新するための 3 つのオプションを提供します。
 
@@ -99,7 +101,7 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 
 ## <a name="remote-notifications-ios-7-and-greater"></a>リモート通知 (iOS 7 以降)
 
-プッシュ通知は、JSON メッセージ プロバイダーからによってデバイスに送信される、 *Apple Push Notification サービス (APNs)*です。
+プッシュ通知は、JSON メッセージ プロバイダーからによってデバイスに送信される、 *Apple Push Notification サービス (APNs)* です。
 
 IOS 6、プッシュ通知の受信は、アプリケーションで何か興味深いものが発生したユーザーに警告する、システムを示しています。 通知をクリックすると、中断されたか、または終了状態から、アプリケーションを取得し、アプリのコンテンツの更新が開始します。 iOS 7 (以降) では、通常のプッシュ通知を拡張アプリケーションにコンテンツをバック グラウンドで更新する機会を提供することにより*する前に*ユーザーがアプリケーションを開くことができ、新しいコンテンツの表示できるように、ユーザーに通知します。すぐにします。
 

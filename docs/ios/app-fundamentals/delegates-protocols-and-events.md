@@ -1,21 +1,20 @@
 ---
-title: イベント、プロトコルとデリゲート
-description: 'この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定するために使用するキー iOS テクノロジを表示します。 これらのテクノロジは、イベント、プロトコル、およびデリゲートには。 この記事では、新機能について説明しますがこれらの各および c# から使用は、各方法です。 Xamarin.iOS が iOS コントロールを使用して、Xamarin.iOS Objective C の概念のプロトコルおよびデリゲートなどのサポートを提供する方法と、使い慣れた .NET イベントもを公開する方法を示しています (OBJECTIVE-C デリゲート混同しないように c# デリゲートを使用)。 この記事では、プロトコルの使用方法: Objective C のデリゲートは、およびデリゲート以外のシナリオでの基礎として両方を示す例も提供します。'
+title: イベント、プロトコルおよび Xamarin.iOS 内のデリゲート
+description: このドキュメントでは、イベント、プロトコルを使用する方法について説明し、Xamarin.iOS にデリゲートします。 これらの基本的な概念は、Xamarin.iOS 開発でユビキタスです。
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0e4c23bffe689c9218da2f43b97d98f348513ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784011"
 ---
-# <a name="events-protocols-and-delegates"></a>イベント、プロトコルとデリゲート
-
-_この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定するために使用するキー iOS テクノロジを表示します。これらのテクノロジは、イベント、プロトコル、およびデリゲートには。この記事では、新機能について説明しますがこれらの各および c# から使用は、各方法です。Xamarin.iOS が iOS コントロールを使用して、Xamarin.iOS Objective C の概念のプロトコルおよびデリゲートなどのサポートを提供する方法と、使い慣れた .NET イベントもを公開する方法を示しています (OBJECTIVE-C デリゲート混同しないように c# デリゲートを使用)。この記事では、プロトコルの使用方法: Objective C のデリゲートは、およびデリゲート以外のシナリオでの基礎として両方を示す例も提供します。_
+# <a name="events-protocols-and-delegates-in-xamarinios"></a>イベント、プロトコルおよび Xamarin.iOS 内のデリゲート
 
 Xamarin.iOS は、ほとんどのユーザーの操作のイベントを公開するのにコントロールを使用します。
 Xamarin.iOS アプリケーションでは、従来の .NET アプリケーションのようにほぼ同じ方法でこれらのイベントを使用します。 たとえば、Xamarin.iOS UIButton クラスは、TouchUpInside と呼ばれるイベントを持っているし、.NET アプリでこのクラスとイベントが場合と同様に、このイベントを使用します。
@@ -28,15 +27,13 @@ Xamarin.iOS アプリケーションでは、従来の .NET アプリケーシ�
 -  **プロトコル**– は、およびその使用方法、プロトコルの新機能を学習し、マップの注釈のデータを提供する例を作成します。
 -  **デリゲート**– Objective C のデリゲートには、注釈を含むユーザーとの対話を処理するマップの例を拡張し、学習の強度のデリゲートとこれらの各を使用する場合の違いについて学習します。
 
-
 プロトコルとバリアント汎用デリゲートを示すため、ここには、次に示すように、マップに注釈を追加する単純なマップ アプリケーションを構築します。
 
  [![](delegates-protocols-and-events-images/01-map.png "マップに注釈を追加する単純なマップ アプリケーションの一例")](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "マップに追加された例注釈")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 このアプリへの取り組み、前に開始しましょう、UIKit の下にある .NET イベントを確認しています。
 
- <a name=".NET_Events_with_UIKit" />
-
+<a name=".NET_Events_with_UIKit" />
 
 ## <a name="net-events-with-uikit"></a>UIKit と .NET イベント
 
@@ -47,7 +44,6 @@ aButton.TouchUpInside += (o,s) => {
     Console.WriteLine("button touched");
 };
 ```
-
 C# 2.0 スタイル匿名メソッドで次のようなこれを実装できます。
 
 ```csharp

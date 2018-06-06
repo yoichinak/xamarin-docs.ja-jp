@@ -1,17 +1,19 @@
 ---
-title: 浮動小数点
+title: Xamarin.iOS で浮動小数点演算
+description: このドキュメントでは、Xamarin.iOS が 32 ビットおよび 64 ビットの単精度浮動小数点演算を処理する方法について説明し、パフォーマンスへの関連付けの影響について説明します。
 ms.prod: xamarin
 ms.assetid: 003F25C1-B430-4339-9C95-7DF527EBC699
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 67fcf459747152346d32eb5836fa22b99719af12
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea5d69b52cbd4c76abb236bd1a272633dde440b7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786162"
 ---
-# <a name="floating-point"></a>浮動小数点
+# <a name="floating-point-operations-in-xamarinios"></a>Xamarin.iOS で浮動小数点演算
 
 Xamarin.iOS 既定では、ARM 上の 64 ビットの精度を使用して 32 ビットおよび 64 ビットの浮動小数点演算です。  
 

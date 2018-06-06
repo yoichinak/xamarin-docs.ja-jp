@@ -11,7 +11,7 @@ ms.openlocfilehash: 765c51346ac63a00838fec52bde87b38091e2dd9
 ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34689475"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient スタックと Android 用の SSL や TLS 実装セレクター

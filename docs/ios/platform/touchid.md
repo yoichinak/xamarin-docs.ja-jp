@@ -1,19 +1,20 @@
 ---
-title: タッチ ID
-description: タッチ ID は、Apple の指紋認証テクノロジです。
+title: Xamarin.iOS で touch ID
+description: このドキュメントでは、Xamarin.iOS アプリで Touch ID、Apple の指紋認証テクノロジを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: b5db80d280d7ad3c43a438d5caae57fbd1928896
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788590"
 ---
-# <a name="touch-id"></a>タッチ ID
+# <a name="touch-id-in-xamarinios"></a>Xamarin.iOS で touch ID
 
 タッチ ID は、ユーザーのパスコードのような認証のための手段として、iOS 7 で導入されました。 ただし、デバイスのロックを解除する、アプリ ストアを使用して、iTunes を使用して、iCloud キーチェーンのみの認証に制限されていました。
 

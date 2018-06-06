@@ -1,21 +1,23 @@
 ---
 title: Java の概要
+description: このドキュメントでは、Java で .NET の埋め込みを使用して作業を開始する方法について説明します。 これは、システム要件、インストール、およびサポートされているプラットフォームについて説明します。
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: e88e3c8d2dbabebcfff22687d8ea341233a776b5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 84ef5d047b3f70635d74ef5bee7741a7447db677
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793218"
 ---
 # <a name="getting-started-with-java"></a>Java の概要
 
 これは、java の場合、サポートされているすべてのプラットフォームの基本についての内容を含む作業の開始ページです。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Java で .NET の埋め込みを使用するには、必要があります。
 

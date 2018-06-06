@@ -1,15 +1,17 @@
 ---
 title: NuGet の新しいプラットフォーム固有のライブラリ プロジェクトを作成します。
+description: このドキュメントでは、複数のプラットフォームのプラットフォーム固有のコードを含む 1 つの NuGet パッケージを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 901dbe032d62047668f265e8c7f79593b3fbfcce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00a02973d6016ad63e4317279515acc2b4e2e81b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780644"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>NuGet の新しいプラットフォーム固有のライブラリ プロジェクトを作成します。
 
@@ -17,7 +19,7 @@ IOS や Android などの特定のプラットフォームを対象とするマ�
 
 NuGet は、.NET コードの両方に共通するだけでなく、iOS および Android に固有のコードを含めることができます。
 
-複数のアセンブリが作成され、1 つの NuGet パッケージに組み込まれています。 NuGet の標準では、Xamarin iOS や Android プロジェクトなど、サポートされているプロジェクトのすべての種類にパッケージを追加できることを確認してください。
+複数のアセンブリが作成され、1 つの NuGet パッケージに組み込まれています。 NuGet 標準では、Xamarin.iOS および Android のプロジェクトなど、サポートされているプロジェクトのすべての種類にパッケージを追加できることを確認してください。
 
 ## <a name="steps-to-create-a-cross-platform-library-nuget"></a>クロスプラット フォーム ライブラリ NuGet を作成する手順
 

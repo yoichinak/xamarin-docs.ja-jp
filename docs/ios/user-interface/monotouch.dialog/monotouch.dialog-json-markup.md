@@ -1,15 +1,17 @@
 ---
 title: MonoTouch.Dialog Json マークアップ
+description: このドキュメントでは、使用できる MonoTouch.Dialog を使用して、Xamarin.iOS ユーザー インターフェイスを構築する JSON の構文について説明します。
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 02c95f06571a3c242481769846d7cab51450f2ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc3f4ea87bbd381a4a1767fb9179fb1bcf0c56d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790758"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
@@ -350,7 +352,7 @@ class Foo {
  <a name="value" />
 
 
-### <a name="value"></a>value
+### <a name="value"></a>値
 
 レンダリング要素上に表示されるセカンダリ値です。 このレイアウトの影響を受ける、`"style"`設定します。 フォントと色を設定してカスタマイズすることができます、`"detailfont"`と`"detailcolor"`です。
 
@@ -473,7 +475,7 @@ class Foo {
  <a name="return-key" />
 
 
-### <a name="return-key"></a>return-key
+### <a name="return-key"></a>戻り値のキー
 
 戻り値のキーを使用するラベル。 次の値を指定できます。
 
@@ -493,7 +495,7 @@ class Foo {
  <a name="value" />
 
 
-### <a name="value"></a>value
+### <a name="value"></a>値
 
 エントリの初期値
 

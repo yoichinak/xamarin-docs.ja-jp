@@ -1,20 +1,19 @@
 ---
 title: Apple のプラットフォーム (iOS と Mac)
-description: このセクションでは、Xamarin.iOS および Xamarin.Mac プロジェクトでコードを共有する方法を説明します。
+description: Xamarin.iOS および Xamarin.Mac の開発に関連するさまざまなトピックについて説明します。 コード共有、Unified API、Objective C ライブラリ、ネイティブ参照、ネイティブ型、および複数のバインド。
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 3c01ff4af699dd0374729b638470d1ef34aa7022
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781534"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple のプラットフォーム (iOS と Mac)
-
-_このセクションでは、Xamarin.iOS および Xamarin.Mac プロジェクトでコードを共有する方法を説明します。_
 
 ## <a name="code-sharing"></a>コードの共有
 
@@ -48,8 +47,6 @@ Xamarin では、バインドで、アプリにネイティブ ライブラリ�
 
 ## <a name="native-referencesnative-referencesmd"></a>[ネイティブ参照](native-references.md)
 
-
-
 ##  <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS のネイティブ型](nativetypes.md)
 
 32 と 64 ビット コードが透過的に c# f# をサポートするには、新しいデータ型が導入されました。   ここでそれらについて説明します。
@@ -62,7 +59,6 @@ Xamarin では、バインドで、アプリにネイティブ ライブラリ�
 
 この記事では、新しい iOS Unified API をネイティブ型の使用方法について説明 (`nint`、 `nuint`、 `nfloat`) コードが Android や Windows Phone Os などの非 iOS デバイスと共有されているクロス プラットフォーム アプリケーションでします。
 ネイティブ型を使用すべき状況を把握し、クロス プラットフォームのコードで、新しい型を使用する必要がある場合に使用するいくつかの考えられる解決策を提供します。
-
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient スタックと SSL/TLS の実装セレクター](http-stack.md)
 

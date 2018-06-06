@@ -1,19 +1,20 @@
 ---
-title: IOS でタッチします。
+title: タッチ イベントおよび Xamarin.iOS のジェスチャ
+description: このドキュメントでは、タッチ イベント、マルチタッチ、ジェスチャ、複数のジェスチャ、および Xamarin.iOS アプリケーションでカスタム ジェスチャを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 34073474ef3ef74f2fddbf487b3377224dc1aa3e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34689542"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784590"
 ---
-# <a name="touch-in-ios"></a>IOS でタッチします。
+# <a name="touch-events-and-gestures-in-xamarinios"></a>タッチ イベントおよび Xamarin.iOS のジェスチャ
 
 中心となるデバイスとのすべての物理操作はそのタッチ イベントを理解し、iOS アプリケーションで Api をタッチする重要なは。 タッチのすべての操作を伴う、`UITouch`オブジェクト。 この記事を使用する方法を学習して、`UITouch`クラスとその Api touch をサポートするためにします。 後で、ジェスチャをサポートする方法についての知識をおが展開されます。
 

@@ -1,18 +1,19 @@
 ---
-title: 2D の描画
-description: クロス プラットフォーム SkiaSharp を 2D の図形を描画します。
+title: SkiaSharp を 2D の描画
+description: このドキュメントでは、描画 SkiaSharp クロスプラット フォームの 2D の概要を示します。 SkiaSharp を記述するさまざまなガイドやそのさまざまな Api にリンクします。
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: f1a40b48ecfb7244aae77cf1b4110ae53490d98c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 962fe657f25976f9b5069f2d434e92f816d249ca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783293"
 ---
-# <a name="2d-drawing"></a>2D の描画
+# <a name="2d-drawing-with-skiasharp"></a>SkiaSharp を 2D の描画
 
 SkiaSharp は、2 次元グラフィックスを行うための強力な c# API を提供します。 電源が入って[Google の Skia ライブラリ](http://skia.org)、Google Chrome、Firefox および Android のグラフィック スタックの電源を同じライブラリです。
 

@@ -1,19 +1,20 @@
 ---
-title: 3 D Touch の概要
-description: この記事で説明、new を使用して、アプリで iPhone 6 s と iPhone 6 s Plus 3D タッチ ジェスチャします。
+title: Introduction to Xamarin.iOS で 3 D Touch
+description: IPhone 6 s および iPhone 6 s で導入された 3D のタッチ ジェスチャを使用する方法を説明するとします。 筆圧対応機能、ピーク、pop、これらのジェスチャを有効にしてクイック アクション。
 ms.prod: xamarin
 ms.assetid: 806D051E-3791-40F7-9776-4E4D3E56F7F3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a0d89315b82f4931538cdabe64aade7986b2a42e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6eb71409317661cdd571c708db062e06e63ff55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786584"
 ---
-# <a name="introduction-to-3d-touch"></a>3 D Touch の概要
+# <a name="introduction-to-3d-touch-in-xamarinios"></a>Introduction to Xamarin.iOS で 3 D Touch
 
 _この記事で説明、new を使用して、アプリで iPhone 6 s と iPhone 6 s Plus 3D タッチ ジェスチャします。_
 

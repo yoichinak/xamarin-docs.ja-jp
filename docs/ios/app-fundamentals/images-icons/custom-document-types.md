@@ -1,5 +1,5 @@
 ---
-title: カスタム ドキュメント アイコン
+title: Xamarin.iOS でカスタム ドキュメント アイコン
 description: この資料について説明を含むとカスタム ドキュメントの種類のアイコンとして使用する Xamarin.iOS アプリでのイメージ資産を管理します。
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/23/2017
-ms.openlocfilehash: b369667bd728f7c8b6e8bcfed9cf5bca2916bf69
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 415500050e4e957ca635c4b18004716dd44a162d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784151"
 ---
-# <a name="custom-document-icons"></a>カスタム ドキュメント アイコン
+# <a name="custom-document-icons-in-xamarinios"></a>Xamarin.iOS でカスタム ドキュメント アイコン
 
 _この資料について説明を含むとカスタム ドキュメントの種類のアイコンとして使用する Xamarin.iOS アプリでのイメージ資産を管理します。_
 
@@ -26,7 +27,7 @@ Xamarin.iOS アプリでは、特定のドキュメント型の読み込みを�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Mac 用 Visual Studio でこれらの値を割り当てるには使用、**ドキュメントの種類**セクション、 **[詳細設定]**タブで、`Info.plist`ドキュメントの種類を追加およびイメージ アイコンを割り当てるのためのエディターです。 たとえば、PDF のサポートのための登録を示すスクリーン ショットを次に示します。
+Mac 用 Visual Studio でこれらの値を割り当てるには使用、**ドキュメントの種類**セクション、 **[詳細設定]** タブで、`Info.plist`ドキュメントの種類を追加およびイメージ アイコンを割り当てるのためのエディターです。 たとえば、PDF のサポートのための登録を示すスクリーン ショットを次に示します。
 
  [![](custom-document-types-images/18.png "'Info.plist' エディターの詳細設定 タブの下のセクションでドキュメントの種類")](custom-document-types-images/18.png#lightbox)
  

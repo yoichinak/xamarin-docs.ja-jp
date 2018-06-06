@@ -1,17 +1,18 @@
 ---
 title: watchOS 3 トラブルシューティング
-description: この記事は、watchOS 3 Xamarin Apple Watch アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。
+description: このドキュメントは、Xamarin で watchOS 3 を使用する場合に役立ちますいくつかのトラブルシューティングのヒントを示します。 ヒントは、アクティビティ、Apple Pay、バック グラウンド更新、NSURLConnection、プライバシー、および詳細に関連します。
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 159c6a6dadcaa325abc7fd747abc9b2ba2f26a9c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0aca2c96533e17e4aeb2f57d38a87d39f700fb45
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791029"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 トラブルシューティング
 
@@ -29,7 +30,6 @@ _この記事は、watchOS 3 Xamarin Apple Watch アプリで使用するため�
 - アクティビティの共有を含む、通知メッセージに返信があります。
 - アクティビティの共有の通知メッセージ上のコンテキストのテキストは不正確になります。
 
-
 ## <a name="apple-pay"></a>Apple Pay
 
 既知の問題:
@@ -37,13 +37,9 @@ _この記事は、watchOS 3 Xamarin Apple Watch アプリで使用するため�
 - 場合を押すと Apple Pay で新しい支払注意の入力は、不適切な有効期限の日付または CW コード**次**実行中のプロセスがクラッシュします。
 - 暗証番号 (PIN) を必要とするアプリで Apple Pay 購入がクラッシュする可能性があります。
 
-
-
 ## <a name="auto-mac-unlock"></a>Mac の自動ロック解除します。
 
 自動的に、Apple Watch を使用する watchOS 3 ベータ 2 (以降) と macOS Sierra beta 2 (またはそれ以上) を使用しているユーザーの iCloud アカウントに 2 要素認証が有効になっている場合は、使用して、そのファルダのロックを解除
-
-
 
 ## <a name="background-refresh"></a>バック グラウンド更新
 
@@ -53,12 +49,9 @@ _この記事は、watchOS 3 Xamarin Apple Watch アプリで使用するため�
 - **0xc51bad02** -アプリが多すぎる壁時間を使用します。
 - **0xc51bad03** -アプリは、現在のタスクを完了するための十分なランタイムがありません。
 
-
-
 ## <a name="clock"></a>Clock
 
 新しくインストールした Apple Watch アプリからの複雑さは、空白として表示可能性があります。 この問題を解決する Apple Watch を再起動します。
-
 
 ## <a name="connectivity"></a>接続
 
@@ -67,11 +60,9 @@ _この記事は、watchOS 3 Xamarin Apple Watch アプリで使用するため�
 - watchOS では、Apple Watch 上で保護されたユーザー データのアクセス許可をユーザーには確認できません。 Watch アプリでデータを使用する前に、iPhone アプリでのアクセスを許可します。
 - Apple Watch WatchConnectivity の送信が失敗した状態に入ることができますを解決する Apple Watch を再起動します。
 
-
 ## <a name="notifications"></a>通知
 
 メディア添付ファイルが大きすぎる場合は、ユーザーの iPhone、Apple Watch ではないで表示されます。
-
 
 ## <a name="nsurlconnection"></a>NSURLConnection
 
@@ -79,11 +70,9 @@ _この記事は、watchOS 3 Xamarin Apple Watch アプリで使用するため�
 
 WatchOS 3、時点で SSL/TLS 接続のセキュリティが設定されている厳密に Apple です。 影響を受けたサービスやアプリケーションは、最新の TLS プロトコルのバージョンを使用する web サーバーを更新する必要があります。
 
-
 ## <a name="nsurlsession"></a>NSURLSession
 
 WatchOS 第 3 の時点で、`HTTPBodyStream`のプロパティ、`NSMutableURLRequest`クラスは、以降、開かれていないストリームに設定する必要があります`NSURLConnection`と`NSURLSession`今すぐこの要件を厳密に適用します。
-
 
 ## <a name="privacy"></a>プライバシー
 
@@ -97,16 +86,13 @@ WatchOS 第 3 の時点で、`HTTPBodyStream`のプロパティ、`NSMutableURLR
 
 WatchOS 3、時点で SSL/TLS 接続のセキュリティが設定されている厳密に Apple です。 影響を受けたサービスやアプリケーションは、最新の TLS プロトコルのバージョンを使用する web サーバーを更新する必要があります。 参照してください[NSURLConnection](#NSURLConnection)上の詳細についてはします。
 
-
 ## <a name="snapshots"></a>スナップショット
 
 WatchKit いない採用しているアプリ、新しい`HandelBackgroundTask`watchOS 3 で定期的な更新が API では送信されなくなります。 
 
-
 ## <a name="watchkit"></a>WatchKit
 
 アプリ watchOS ドッキング ステーションにバック グラウンドに入ると、SpriteKit と SceneKit のシーンは一時停止されます。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,21 +1,20 @@
 ---
-title: タブ バーおよびタブ バー コント ローラー
-description: タブ ナビゲーション UI を使用して iOS アプリケーションは、UITabBarController クラスを使用して構築されます。 この記事の内容をいくつかのコント ローラーとビューを含むタブ付きアプリケーションを設定する方法を説明します。 できない場合に、ルートのコント ローラーなど、ログイン画面の後に、UITabBarController を読み込む方法について確認し、します。
+title: タブ バーおよび Xamarin.iOS 内のタブ バー コント ローラー
+description: このドキュメントでは、iOS タブ バー コント ローラーと Xamarin.iOS でそれらを使用する方法について説明します。 UITabBarController 設定、画像の操作、バッジ値やイベントでの作業を設定する方法を示します。
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d8b096774e60ec0e0b69e109fa5da53c25e66d25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789759"
 ---
-# <a name="tab-bars-and-tab-bar-controllers"></a>タブ バーおよびタブ バー コント ローラー
-
-_タブ ナビゲーション UI を使用して iOS アプリケーションは、UITabBarController クラスを使用して構築されます。この記事の内容をいくつかのコント ローラーとビューを含むタブ付きアプリケーションを設定する方法を説明します。できない場合に、ルートのコント ローラーなど、ログイン画面の後に、UITabBarController を読み込む方法について確認し、します。_
+# <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>タブ バーおよび Xamarin.iOS 内のタブ バー コント ローラー
 
 タブ付きのアプリケーションは、iOS で任意の順序で複数の画面にアクセスできる場所のユーザー インターフェイスをサポートするために使用されます。 を介して、`UITabBarController`クラス、アプリケーションがこのようなマルチ スクリーンのシナリオのサポートを簡単に含めることができます。 `UITabBarController` アプリケーション開発者は、各画面の詳細に重点を置くを許可する、マルチ スクリーンの管理を行います。
 
@@ -237,7 +236,7 @@ tab3.TabBarItem.BadgeValue = null;
 
 [![](creating-tabbed-applications-images/inital-screen-application.png "このスクリーン ショットは、アプリケーションのフローを示しています。")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
-この例は、新しいアプリケーションを起動してみましょう。 使用して、もう一度、 **iPhone > アプリ > 空のプロジェクト (c#)**テンプレート今度は、プロジェクトの名前付け`InitialScreenDemo`です。
+この例は、新しいアプリケーションを起動してみましょう。 使用して、もう一度、 **iPhone > アプリ > 空のプロジェクト (c#)** テンプレート今度は、プロジェクトの名前付け`InitialScreenDemo`です。
 
 
 この例では、コント ローラーの表示を保持するために、ストーリー ボードを必要になります。 ストーリー ボードを追加します。

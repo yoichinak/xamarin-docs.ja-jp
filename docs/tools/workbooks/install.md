@@ -1,15 +1,16 @@
 ---
 title: ブックのインストールと要件
-description: ダウンロード、インストール、および Xamarin ブックを使用する方法。
+description: このドキュメントでは、ダウンロードして、サポートされているプラットフォームとシステム要件について説明する、Xamarin のブックをインストールする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4d3217140605be8567d70e6dcf63d60a02e6b2fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793822"
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 05/09/2018
 
 -----
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 #### <a name="supported-operating-systems"></a>Supported Operating Systems
 

@@ -1,18 +1,19 @@
 ---
-title: ハンドオフ
+title: Xamarin.iOS でハンドオフ
 description: この記事では、カバーを転送する Xamarin.iOS アプリでハンドオフを操作するユーザーで実行されているアプリ間でのユーザー アクティビティの他のデバイス。
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bb665c7ffd4241fac14be13ebd8f113d11afd417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec324e8fb8327b622424311b89567608311a6a19
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787521"
 ---
-# <a name="handoff"></a>ハンドオフ
+# <a name="handoff-in-xamarinios"></a>Xamarin.iOS でハンドオフ
 
 _この記事では、カバーを転送する Xamarin.iOS アプリでハンドオフを操作するユーザーで実行されているアプリ間でのユーザー アクティビティの他のデバイス。_
 
@@ -250,7 +251,7 @@ Apple では、受信デバイスに適切なタイミングで、アクティ�
 
 ハンドオフはローカル iOS および元のデバイスに物理的に近づくにあり、継続のユーザー アクティビティの可用性、同一の iCloud アカウントに署名する OS X デバイスに自動的に通知します。 (チーム ID とアクティビティの種類に基づく) の適切なアプリと情報に、システムが起動場合は、ユーザーは、新しいデバイスにアクティビティを続行するが、その`AppDelegate`継続は、発生する必要があります。
 
-最初に、`WillContinueUserActivityWithType`メソッドが呼び出されるは、アプリがユーザーに通知する、継続が開始するためです。 次のコードを使用して、 **<code>appdelegate.cs</code>**継続の開始を処理する例のアプリのファイル。
+最初に、`WillContinueUserActivityWithType`メソッドが呼び出されるは、アプリがユーザーに通知する、継続が開始するためです。 次のコードを使用して、 **<code>appdelegate.cs</code>** 継続の開始を処理する例のアプリのファイル。
 
 ```csharp
 public NSString UserActivityTab1 = new NSString ("com.xamarin.monkeybrowser.tab1");

@@ -1,17 +1,18 @@
 ---
-title: 概要
-description: バインディング プロセスのしくみの詳細
+title: Objective C のバインディングの概要
+description: このドキュメントでは、C# の場合、コマンド ライン バインド、バインド プロジェクト、および目標ペンを使わずになど、Objective C コードのバインディングを作成するさまざまな方法の概要を示します。 また、バインディングのしくみについても説明します。
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: ce2e45a1985c64b5c479bd41140d7270fae97aee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f9f981a9024ad9b1f780efbadeeb7e1f1636a8ae
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781745"
 ---
-# <a name="overview"></a>概要
+# <a name="overview-of-objective-c-bindings"></a>Objective C のバインディングの概要
 
 _バインディング プロセスのしくみの詳細_
 

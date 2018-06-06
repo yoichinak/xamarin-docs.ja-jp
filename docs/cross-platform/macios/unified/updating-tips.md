@@ -1,14 +1,16 @@
 ---
 title: コードの統合の API を更新するためのヒント
+description: このドキュメントには、Xamarin の Unified API を使用するアプリケーションを更新するときに一般的なエラーとさまざまなヒントに便利ですがについて説明します。
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 640f95e0083c73288cc8e1f183b06bd28a7b4e07
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cab27d5dc38eeab65728f242c6f11fd445601a88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782119"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>コードの統合の API を更新するためのヒント
 
@@ -20,7 +22,6 @@ IOS および Mac プロジェクト Unified API (Xamarin.iOS.dll または Xama
 
 ```console
 Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not find a storyboard named 'xxx' in bundle NSBundle...
-
 ```
 
 この問題を解決し、次のビルド ターゲット ファイルを探しには、次を行うことができます。
@@ -82,9 +83,9 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * NSObject`.ctor(IntPtr)`コンス トラクターから変更されているためにパブリックに保護された ([不適切な使用を防ぐため](~/cross-platform/macios/unified/index.md#NSObject_ctor))。
+ * NSObject`.ctor(IntPtr)`コンス トラクターから変更されているためにパブリックに保護された ([不適切な使用を防ぐため](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
- * `NSAction` されました[交換](~/cross-platform/macios/unified/index.md#NSAction)starndard .NET と`Action`です。 いくつかの単純な (1 つのパラメーター) のデリゲートが置き換えられても`Action<T>`します。
+ * `NSAction` されました[交換](~/cross-platform/macios/unified/overview.md#NSAction)starndard .NET と`Action`です。 いくつかの単純な (1 つのパラメーター) のデリゲートが置き換えられても`Action<T>`します。
 
 最後を参照してください、[クラシック v Unified API の相違点](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)コードの Api への変更を検索します。 検索[このページ](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)クラシック Api とどのようなしたに更新されましたを検出するのに役立ちます。
 

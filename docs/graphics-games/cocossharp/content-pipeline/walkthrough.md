@@ -1,20 +1,21 @@
 ---
-title: MonoGame PipelineTool を使用します。
-description: MonoGame パイプライン ツールを使用してを作成および MonoGame コンテンツ プロジェクトを管理します。 コンテンツのプロジェクト内のファイルでは、Monogame パイプライン ツールによって処理され、CocosSharp および MonoGame アプリケーションで使用できる .xnb ファイルとして出力することができます。
+title: MonoGame パイプライン ツールを使用します。
+description: MonoGame パイプライン ツールを使用してを作成および MonoGame コンテンツ プロジェクトを管理します。 コンテンツのプロジェクト内のファイルでは、MonoGame パイプライン ツールによって処理され、CocosSharp および MonoGame アプリケーションで使用できる .xnb ファイルとして出力することができます。
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 50e6c611e285cde9184eed242353ad08b2a941ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 347cb7e9d417f97cb6e8d78e67b1c76a378cd188
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783300"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>MonoGame パイプライン ツールを使用します。
 
-_MonoGame パイプライン ツールを使用してを作成および MonoGame コンテンツ プロジェクトを管理します。コンテンツのプロジェクト内のファイルでは、Monogame パイプライン ツールによって処理され、CocosSharp および MonoGame アプリケーションで使用できる .xnb ファイルとして出力することができます。_
+_MonoGame パイプライン ツールを使用してを作成および MonoGame コンテンツ プロジェクトを管理します。コンテンツのプロジェクト内のファイルでは、MonoGame パイプライン ツールによって処理され、CocosSharp および MonoGame アプリケーションで使用できる .xnb ファイルとして出力することができます。_
 
 MonoGame パイプライン ツールは、コンテンツ ファイルに変換するための使いやすい環境 **.xnb** CocosSharp および MonoGame アプリケーションで使用するファイル。 コンテンツのパイプラインとそれがゲームの開発に役立つ理由については、次を参照してください[コンテンツ パイプラインのこの概要。](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 

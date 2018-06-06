@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp プラットフォームのサポート
-description: クロス プラットフォームの 3D/2D ゲームと視覚エフェクト エンジン
+description: このドキュメントには、Urho を特定のプラットフォーム用の既存のネイティブ プロジェクトに追加する方法を説明するさまざまなガイドへのリンクがします。 これは、Android、iOS、tvOS、macOS、Windows、および Xamarin.Forms について説明します。
 ms.prod: xamarin
 ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: b9fdb205148824282d527f2483e027b14d786ff2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9179b0913566ee5c70fbbfabe4c17ee3b98fbeca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783386"
 ---
 # <a name="urhosharp-platform-support"></a>UrhoSharp プラットフォームのサポート
-
-_クロス プラットフォームの 3D/2D ゲームと視覚エフェクト エンジン_
 
 このセクションでは、Urho をプラットフォームの既存のネイティブ プロジェクトに追加する方法とプラットフォームの特定の統合を活用する方法を説明します。
 

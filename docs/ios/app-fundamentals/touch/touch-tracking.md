@@ -1,19 +1,20 @@
 ---
-title: マルチタッチ本の指の追跡
-description: このドキュメントが複数の指からタッチ イベントを追跡する方法を示します
+title: マルチタッチ指 Xamarin.iOS での追跡
+description: このドキュメントでは、Xamarin.iOS アプリでマルチタッチ ジェスチャで個々 の指を追跡する方法について説明します。 これは、finger-painting アプリの例を中心として展開します。
 ms.prod: xamarin
 ms.assetid: 48E8B20D-0833-43D2-976A-0605DDB386E3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 178bd0a68166f033293b2d807fea449355c1c584
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dbd3c158408026f4ecef5fb2b01c265747140e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784404"
 ---
-# <a name="multi-touch-finger-tracking"></a>マルチタッチ本の指の追跡
+# <a name="multi-touch-finger-tracking-in-xamarinios"></a>マルチタッチ指 Xamarin.iOS での追跡
 
 _このドキュメントが複数の指からタッチ イベントを追跡する方法を示します_
 

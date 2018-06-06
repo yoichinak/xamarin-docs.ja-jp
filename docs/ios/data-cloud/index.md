@@ -1,20 +1,20 @@
 ---
-title: データとクラウド サービス
-description: 安定化と配置に関するガイド
+title: データと Xamarin.iOS アプリ内のクラウド サービス
+description: このドキュメントには、ローカル データ、iCloud、および CloudKit Xamarin.iOS アプリで操作する方法について説明するガイドへのリンクがします。
 ms.prod: xamarin
 ms.assetid: 945719F7-7CE6-4207-BF0F-23195125FC84
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 81aebe5fd7431e578b75c5b61e1d2c92ce546909
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a733c1af34b577786a7e18eeafa13da4327dddc6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784261"
 ---
-# <a name="data-and-cloud-services"></a>データとクラウド サービス
-
+# <a name="data-and-cloud-services-in-xamarinios-apps"></a>データと Xamarin.iOS アプリ内のクラウド サービス
 
 ##  <a name="data-accessiosdata-clouddataindexmd"></a>[データ アクセス](~/ios/data-cloud/data/index.md)
 

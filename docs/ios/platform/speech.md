@@ -1,5 +1,5 @@
 ---
-title: 音声認識
+title: Xamarin.iOS で音声認識
 description: この記事では、新しい音声 API を表示し、継続的な音声認識をサポートし、(生または録画のオーディオ ストリーム) からの音声をテキストに議事録の作成、Xamarin.iOS アプリに実装する方法を示しています。
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fa010f57d163cabe544176608cff2eb6efe872ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00841a73f9da3c4c434419cdb37726b17c08cf31
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788362"
 ---
-# <a name="speech-recognition"></a>音声認識
+# <a name="speech-recognition-in-xamarinios"></a>Xamarin.iOS で音声認識
 
 _この記事では、新しい音声 API を表示し、継続的な音声認識をサポートし、(生または録画のオーディオ ストリーム) からの音声をテキストに議事録の作成、Xamarin.iOS アプリに実装する方法を示しています。_
 
@@ -85,7 +86,7 @@ Apple には、特定の言語が、現在の翻訳のために使用できる�
 
 IOS アプリでの音声認識を採用する開発者が行う必要のある主要な手順は 4 つです。
 
-- アプリの使用状況の説明を提供`Info.plist`ツールを使用して、`NSSpeechRecognitionUsageDescription`キー。 たとえば、カメラ アプリが次の説明を含めることが_"これを取得できるように、写真という単語を言うことによりだけ 'チーズ'."_
+- アプリの使用状況の説明を提供`Info.plist`ツールを使用して、`NSSpeechRecognitionUsageDescription`キー。 たとえば、カメラ アプリが次の説明を含めることが _"これを取得できるように、写真という単語を言うことによりだけ 'チーズ'."_
 - 呼び出してに承認を要求、`SFSpeechRecognizer.RequestAuthorization`説明を表示する方法 (で提供される、`NSSpeechRecognitionUsageDescription`上記のキー)、アプリが音声認識を希望する理由の認識とへのアクセス ダイアログ ボックスで、ユーザー同意または拒否できるようにします。
 - 音声認識の要求を作成します。
     * ディスク上の事前に録音されたオーディオは、使用、`SFSpeechURLRecognitionRequest`クラスです。

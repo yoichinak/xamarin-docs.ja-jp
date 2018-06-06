@@ -1,21 +1,19 @@
 ---
-title: 'チュートリアル: リフレクション API を使用してアプリケーションの作成'
-description: 要素の API、MonoTouch.Dialog (山に加えて属性ベースのリフレクション API D) も含まれています。 リフレクション API は、山と画面を作成します。D クラスの属性で修飾することと同じくらい簡単です。 この記事では、リフレクション API を使用してアプリケーションを作成する方法を示す説明を提供します。
+title: リフレクション API を使用して Xamarin.iOS アプリケーションを作成します。
+description: このドキュメントでは、MonoTouch.Dialog 属性に基づくリフレクション API、属性で修飾されたクラスに基づく UI の作成について説明します。
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c60d2a8ca58fe807dc340125d0db21b6f9ddff9f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790511"
 ---
-# <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>チュートリアル: リフレクション API を使用してアプリケーションの作成
-
-_要素の API、MonoTouch.Dialog (山に加えて属性ベースのリフレクション API D) も含まれています。リフレクション API は、山と画面を作成します。D クラスの属性で修飾することと同じくらい簡単です。この記事では、リフレクション API を使用してアプリケーションを作成する方法を示す説明を提供します。_
-
+# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin.iOS アプリケーションを作成します。
 
 山D リフレクション API により、クラスをその山属性で装飾D は、自動的に画面の作成に使用します。 リフレクション API は、これらのクラスと画面に表示される内容の間のバインドを提供します。 この API は、詳細に API 要素は制御を提供するが、クラス装飾に基づいて要素の階層を自動的に作成して複雑さを軽減します。
 
@@ -36,7 +34,6 @@ _要素の API、MonoTouch.Dialog (山に加えて属性ベースのリフレク
  [![](reflection-api-walkthrough-images/01-expense-entry.png "この例でビルドします単純なデータ入力画面は、ここに示すように")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
-
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>山によるクラスの作成D 属性
 

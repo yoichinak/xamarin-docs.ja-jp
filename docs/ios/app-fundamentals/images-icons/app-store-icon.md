@@ -1,21 +1,20 @@
 ---
-title: App Store アイコン
-description: この資料について説明など、アプリ ストアのアイコンとして使用する Xamarin.iOS アプリでのイメージ資産を管理します。
+title: Xamarin.iOS アプリ ストアのアイコン
+description: このドキュメントでは、資産カタログを使用して、Xamarin.iOS アプリケーション用のアプリ ストア アイコンを管理する方法について説明します。 以前は、App Store のアイコンは、iTunes Connect で管理されていました。
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/26/2017
-ms.openlocfilehash: f8d993ccb23817e237b9cef8074b881f3ea4b3a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 749dbf01af382a54fe24652706f6a605ac7b20b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783611"
 ---
-# <a name="app-store-icon"></a>App Store アイコン
-
-_この資料について説明など、アプリ ストアのアイコンとして使用する Xamarin.iOS アプリでのイメージ資産を管理します。_
+# <a name="app-store-icons-in-xamarinios"></a>Xamarin.iOS アプリ ストアのアイコン
 
 Xcode 9 の前に、アプリ ストアのすべてのアイコンは、iTunes Connect で追加されました。 ただし、これは、ケースではなくなりました。 App Store のアイコンは、プロジェクト、バンドルの一部として含まれ、アセット カタログ内に追加するようになりました必要があります。 App Store のアイコンが含まれていないアプリは Apple によって拒否されます。
 

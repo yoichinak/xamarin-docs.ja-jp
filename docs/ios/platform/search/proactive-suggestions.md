@@ -1,5 +1,5 @@
 ---
-title: プロアクティブな推奨事項の概要
+title: Xamarin.iOS でプロアクティブな推奨事項の概要
 description: ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、ドライブ エンゲージメントを Xamarin.iOS アプリでプロアクティブな提案を使用する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b06dbf0e8e108616adb4f77910267aaa1ac71f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f736e9dda00546ddef7cf03457813c7e3d10882b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788020"
 ---
-# <a name="introduction-to-proactive-suggestions"></a>プロアクティブな推奨事項の概要
+# <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin.iOS でプロアクティブな推奨事項の概要
 
 _ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、ドライブ エンゲージメントを Xamarin.iOS アプリでプロアクティブな提案を使用する方法を説明します。_
 
@@ -54,7 +55,7 @@ UIKit は iOS に含める 10 で展開されています、 [TextContentType](h
 
 ## <a name="contextual-siri-reminders"></a>コンテキスト Siri アラーム
 
-Siri を使用して簡単に現在表示しているアプリで、後で、コンテンツの表示を求めるメッセージを作成することができます。 たとえば、アプリでレストランのレビューを表示していた場合、でした Siri を呼び出すし、言う*「通知についてホーム出た場合」。* Siri は、アプリで、レビューへのリンクを使用してアラームを生成します。
+Siri を使用して簡単に現在表示しているアプリで、後で、コンテンツの表示を求めるメッセージを作成することができます。 たとえば、アプリでレストランのレビューを表示していた場合、でした Siri を呼び出すし、言う *「通知についてホーム出た場合」。* Siri は、アプリで、レビューへのリンクを使用してアラームを生成します。
 
 ## <a name="contact-based-suggestions"></a>連絡先に基づいて候補
 
@@ -64,7 +65,7 @@ Siri を使用して簡単に現在表示しているアプリで、後で、コ
 
 飛行共有アプリで使用する場合、 [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API、iOS 10 が表示されますが、アプリのスイッチャーのオプションとしてときに、ユーザーは素敵する可能性があります。 指定して、飛行共有アプリとしてアプリが登録もする必要があります、`MKDirectionsModeRideShare`の[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)キーをその`Info.plist`ファイル。
 
-アプリのみをサポートしている変更を共有する場合、その提案をシステムで開始*"に変更を Get..."*、ルーティングの方向 (ウォーキングまたは自転車) などの他の種類はサポートされている場合、システムが使用*「するための指示を取得しています...」*
+アプリのみをサポートしている変更を共有する場合、その提案をシステムで開始 *"に変更を Get..."*、ルーティングの方向 (ウォーキングまたは自転車) などの他の種類はサポートされている場合、システムが使用 *「するための指示を取得しています...」*
 
 > [!IMPORTANT]
 > [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)アプリを受信するオブジェクトの緯度と経度の情報を含まない場合がありますおよびジオコード化が必要になります。
@@ -165,7 +166,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティを復元します。
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>** ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -203,10 +204,10 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 1. フレンドを対応するアプリであるレストランを検索します。
 2. ユーザーは、マルチタスク アプリ スイッチャーを使用してアプリから移動すると、システムが自動的に表示提案を送信 (画面の下部)、お気に入りのナビゲーション アプリを使用してレストランへの道順を取得します。
-3. 場合は、ユーザーがメッセージのアプリに切り替え、入力を開始*「では満たしてみましょう」*、QuickType キーボードは、レストランのアドレスを貼り付けることを自動的に表示します。
+3. 場合は、ユーザーがメッセージのアプリに切り替え、入力を開始 *「では満たしてみましょう」*、QuickType キーボードは、レストランのアドレスを貼り付けることを自動的に表示します。
 4. ユーザーは、マップのアプリに切り替え場合、レストランのアドレスが自動的に変換先として推奨されています。
 5. これは、サード パーティ製アプリに対しても機能 (をサポートする`NSUserActivity`) ので、飛行共有アプリをユーザーが切り替えることができ、レストランのアドレスが自動的に提案があるの保存先としてもします。
-6. コンテキストに提供 Siri、ため、ユーザーがレストランのアプリ内で Siri を呼び出すことができます、依頼して*「... の方向を取得」* Siri はユーザーが表示してレストランへの道順を提供します。
+6. コンテキストに提供 Siri、ため、ユーザーがレストランのアプリ内で Siri を呼び出すことができます、依頼して *「... の方向を取得」* Siri はユーザーが表示してレストランへの道順を提供します。
 
 1 つの点を共通の上記の機能のすべてから、修正案を最初の位置を示すため、それらはすべて。 上記の例の場合は、架空のレストランのレビュー アプリを勧めします。
 

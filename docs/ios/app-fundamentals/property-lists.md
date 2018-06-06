@@ -1,5 +1,5 @@
 ---
-title: プロパティ リストの使用
+title: Xamarin.iOS でプロパティ リストの使用
 description: このドキュメントでは、Info.plist と Entitlements.plist の操作に Mac のグラフィックと高度なプロパティ一覧 (.plist) のエディターの Visual Studio を紹介します。 示されている設定アイコンと起動イメージからの iOS アプリケーションを Visual Studio for mac 内
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f6ee7a606243f5d21d827546b528ca5d9d3f0281
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6b22acab3fb19a6209fac8dcf6a0870763e601d2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784469"
 ---
-# <a name="working-with-property-lists"></a>プロパティ リストの使用
+# <a name="working-with-property-lists-in-xamarinios"></a>Xamarin.iOS でプロパティ リストの使用
 
 _このドキュメントでは、Info.plist と Entitlements.plist の操作に Mac のグラフィックと高度なプロパティ一覧 (.plist) のエディターの Visual Studio を紹介します。示されている設定アイコンと起動イメージからの iOS アプリケーションを Visual Studio for mac 内_
 
@@ -113,7 +114,7 @@ Xamarin を参照して、マップ操作の詳細については、 [iOS マッ
 
 ## <a name="utis"></a>UTIs
 
-アプリケーションは、カスタムのファイルの種類を開くことがサポートする必要があります。 たとえば、することも、カスタム拡張機能でイメージ ファイルを開く*.xam*です。 カスタム ファイルの種類を指定するを作成、カスタムの汎用型識別子のユーティリ ティーを使用して、`UIExportedTypeDeclarations`キー。 次のスクリーン ショットは、.xam 拡張機能のカスタム ユーティリ ティーを作成する方法を示しています。
+アプリケーションは、カスタムのファイルの種類を開くことがサポートする必要があります。 たとえば、することも、カスタム拡張機能でイメージ ファイルを開く *.xam*です。 カスタム ファイルの種類を指定するを作成、カスタムの汎用型識別子のユーティリ ティーを使用して、`UIExportedTypeDeclarations`キー。 次のスクリーン ショットは、.xam 拡張機能のカスタム ユーティリ ティーを作成する方法を示しています。
 
  [![](property-lists-images/uti.png "UTIs エディター")](property-lists-images/uti.png#lightbox)
 

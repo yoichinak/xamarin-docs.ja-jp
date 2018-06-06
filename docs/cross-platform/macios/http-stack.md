@@ -1,18 +1,19 @@
 ---
-title: HttpClient スタックと iOS/macOS の SSL/TLS の実装のセレクター
-description: HttpClient スタック、および SSL や TLS 実装セレクターは、Xamarin iOS、tvOS、または macOS アプリで使用する HttpClient および SSL や TLS の実装を決定します。
+title: HttpClient および iOS/macOS の SSL/TLS の実装のセレクター
+description: SSL/TLS と HttpClient スタック実装セレクター Xamarin iOS、tvOS、または macOS アプリで使用する HttpClient および SSL や TLS の実装で指定します。
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: dcbdb4d20bca9764731b08e551a4d3b8a26a2ab4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9de2c97933bd33111a751be51e06dffe09794f15
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782269"
 ---
-# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient スタックと iOS/macOS の SSL/TLS の実装のセレクター
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient および iOS/macOS の SSL/TLS の実装のセレクター
 
 **HttpClient の実装のセレクター** Xamarin.iOS、Xamarin.tvOS、および Xamarin.Mac を制御する`HttpClient`使用する実装。 ネイティブ iOS、tvOS、または macOS のトランスポートを使用して実装を切り替えることができます (`NSUrlSession`または`CFNetwork`、オペレーティング システムによって異なります)。 メリットは、TLS 1.2 サポート、小さなバイナリ、およびダウンロードも高速です。欠点は、非同期操作の実行を実行しているにイベント ループを必要とすることです。
 
@@ -21,7 +22,7 @@ ms.lasthandoff: 05/09/2018
 > [!WARNING]
 > **年 4 月、2018年**– セキュリティの向上のため要件、PCI コンプライアンスを含むメジャー クラウド プロバイダーおよび TLS バージョン 1.2 より前のサポートを停止する web サーバーが必要です。  Xamarin プロジェクトが以前のバージョンの Visual Studio の既定値は、古いバージョンの TLS を使用して作成します。
 >
-> アプリがこれらのサーバーと、サービスの操作を続行することを確認するために**、Xamarin のプロジェクトを更新する必要があります、`NSUrlSession`次のように設定すると、再構築し、アプリを再デプロイ**をユーザーにします。
+> アプリがこれらのサーバーと、サービスの操作を続行することを確認するために **、Xamarin のプロジェクトを更新する必要があります、`NSUrlSession`次のように設定すると、再構築し、アプリを再デプロイ**をユーザーにします。
 
 <a name="Selecting-a-HttpClient-Stack" />
 

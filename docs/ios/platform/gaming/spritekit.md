@@ -1,33 +1,35 @@
 ---
-title: SpriteKit
+title: Xamarin.iOS で SpriteKit
+description: このドキュメントでは、SpriteKit、Apple の 2 次元グラフィックス フレームワーク SceneKit との統合、物理計算とアニメーションが組み込まれており、光源と、網掛けのサポートが含まれていますをについて説明します。 2 D ゲームを作成する SpriteKit を使用できます。
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 967fd5b25213478c89d1ab849b6c0b7ac66d0e20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b74b5a722aab240b55ed96bea2a33b162d7817eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786770"
 ---
-# <a name="spritekit"></a>SpriteKit
+# <a name="spritekit-in-xamarinios"></a>Xamarin.iOS で SpriteKit
 
-スプライト キット、Apple から 2D ゲーム フレームワークには、iOS 8 および OS X Yosemite のいくつか興味深いの新機能があります。 これらには、シーン キット、シェーダーのサポート、照明、影、制約、法線マップの生成、および物理学の機能強化との統合が含まれます。 具体的には、物理的な特性の新機能を使用すると、非常に簡単にゲームに現実的な効果を追加します。
+SpriteKit、Apple から 2D グラフィックス フレームワークには、iOS 8 および OS X Yosemite のいくつか興味深いの新機能があります。 SceneKit、シェーダーのサポート、光源、影、制約、法線マップの生成、および物理学の拡張機能との統合が含まれます。 具体的には、物理的な特性の新機能を使用すると、非常に簡単にゲームに現実的な効果を追加します。
 
 ## <a name="physics-bodies"></a>物理本文
 
-スプライト キットには、2 D、固定された本文物理 API が含まれています。 各スプライトが関連付けられている物理本文 (`SKPhysicsBody`) 物理世界で大容量摩擦と本文の geometry などの物理プロパティを定義します。
+SpriteKit には、2 D、固定された本文物理 API が含まれています。 各スプライトが関連付けられている物理本文 (`SKPhysicsBody`) 物理世界で大容量摩擦と本文の geometry などの物理プロパティを定義します。
 
 ## <a name="creating-a-physics-body-from-a-texture"></a>テクスチャから物理本文を作成します。
-スプライト キットでは、そのテクスチャからスプライトの物理学の本の派生をサポートしています。 これにより、簡単に競合がより自然な検索を実装します。
+SpriteKit では、そのテクスチャからスプライトの物理学の本の派生をサポートしています。 これにより、簡単に競合がより自然な検索を実装します。
 
 たとえばに注意してください以下の競合の各イメージの表面にほぼバナナとサルの競合します。
  
 ![](spritekit-images/image13.png "各イメージの表面にほぼバナナとサルが競合します。")
 
-スプライト キットにより、このような物理本文を作成する 1 行のコードで実行できます。 呼び出すだけ`SKPhysicsBody.Create`テクスチャ サイズと: スプライトします。PhysicsBody = SKPhysicsBody.Create (スプライトです。テクスチャ、スプライトします。サイズ)。
+SpriteKit により、このような物理本文を作成する 1 行のコードで実行できます。 呼び出すだけ`SKPhysicsBody.Create`テクスチャ サイズと: スプライトします。PhysicsBody = SKPhysicsBody.Create (スプライトです。テクスチャ、スプライトします。サイズ)。
 
 ## <a name="alpha-threshold"></a>アルファのしきい値
 
@@ -45,7 +47,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
  
 ## <a name="physics-fields"></a>物理フィールド
 
-別優れたスプライト キットには、値が、新しい物理計算フィールドをサポートします。 Vortex フィールドなどを追加することはこれら放射状重力フィールドといくつかの名前を付けるスプリング フィールドです。
+別優れた SpriteKit には、値が、新しい物理計算フィールドをサポートします。 Vortex フィールドなどを追加することはこれら放射状重力フィールドといくつかの名前を付けるスプリング フィールドです。
 
 同じように、他のシーンに追加されている SKFieldNode クラスを使用して物理フィールドが作成された`SKNode`です。 さまざまなファクトリ メソッドがある`SKFieldNode`異なる物理計算フィールドを作成します。 スプリング フィールドを作成するには呼び出すことによって`SKFieldNode.CreateSpringField()`、呼び出すことによって放射状重力フィールド`SKFieldNode.CreateRadialGravityField()`のようにします。
 

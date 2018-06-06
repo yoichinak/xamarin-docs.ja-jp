@@ -1,29 +1,26 @@
 ---
-title: ネイティブ参照
-description: ネイティブ参照では、ネイティブ フレームワークに埋め込む Xamarin.iOS または Xamarin.Mac プロジェクトまたはプロジェクトのバインド機能を提供します。
+title: 参照のネイティブの iOS、Mac、およびバインド プロジェクト
+description: ネイティブ参照では、Xamarin.iOS、Xamarin.Mac、またはバインド プロジェクトにネイティブ フレームワークを埋め込む機能を提供します。
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3a497d0bb4674014b8063cb1fbc91eec6e7ae5ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781719"
 ---
-# <a name="native-references"></a>ネイティブ参照
+# <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac、およびバインド プロジェクトでネイティブの参照
 
 _ネイティブ参照では、ネイティブ フレームワークに埋め込む Xamarin.iOS または Xamarin.Mac プロジェクトまたはプロジェクトのバインド機能を提供します。_
-
 
 IOS 8.0 以降が経過しているアプリの拡張機能と Xcode でメインのアプリ間でコードを共有するために埋め込みのフレームワークを作成することです。 ネイティブ参照機能を使用することができます Xamarin.iOS でこれらの組み込みフレームワーク (Xcode で作成) を使用します。
  
 > [!IMPORTANT]
 > Xamarin.iOS または Xamarin.Mac のプロジェクトの任意の型から組み込みフレームワークを作成することはできません、ネイティブ参照のみを許可する既存のネイティブ (OBJECTIVE-C) フレームワークの消費をします。
-
-
-
 
 <a name="Terminology" />
 

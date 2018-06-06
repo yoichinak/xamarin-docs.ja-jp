@@ -6,19 +6,18 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: fba13ab921949cd2361e78535d5ffc96952a1336
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3966b731531d617f105583210334a23071a6802b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780175"
 ---
-# <a name="sharing-code-options"></a>コード共有のオプション
+# <a name="building-cross-platform-applications"></a>クロス プラットフォーム アプリケーションの構築
 
 クロス プラットフォーム モバイル アプリケーション間でコードを共有するための 2 つのオプションがあります: 共有アセット プロジェクト、ポータブル クラス ライブラリです。 これらのオプションは[ここで説明した](~/cross-platform/app-fundamentals/code-sharing.md); の詳細について[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)も利用できます。
 
 <a name="Sections" />
-
-## <a name="building-cross-platform-mobile-apps"></a>クロス プラットフォームのモバイル アプリの構築
 
  [概要](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
@@ -36,13 +35,11 @@ ms.lasthandoff: 05/10/2018
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-
 ## <a name="case-studies"></a>ケース スタディ
 
 このドキュメントで説明した原則は、サンプル アプリケーションで実際に配置されます*Tasky*、だけでなく[既成のアプリケーション](https://xamarin.com/prebuilt)など[Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm)です。
 
  <a name="Tasky" />
-
 
 ### <a name="tasky"></a>Tasky
 
@@ -53,7 +50,6 @@ Xamarin を使用したクロス プラットフォーム アプリケーショ�
 
 読み取り、 [Tasky のケース スタディ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)です。
 
-
 ## <a name="summary"></a>まとめ
 
 このセクションでは、Xamarin のアプリケーションの開発ツールを紹介し、複数のモバイル プラットフォームを対象とするアプリケーションをビルドする方法について説明します。
@@ -63,8 +59,6 @@ Xamarin を使用したクロス プラットフォーム アプリケーショ�
 (ファイル サービスおよびネットワーク操作) のような一般的なアプリケーション機能とそれらをビルドしてクロスプラット フォームの方法で方法の例が示されています。
 
 最後に、その簡単なテスト、について説明し、アクションにこれらの原則を置くケース スタディへの参照を提供します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

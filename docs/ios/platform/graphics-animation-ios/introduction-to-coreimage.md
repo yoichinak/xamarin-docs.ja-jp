@@ -1,23 +1,24 @@
 ---
-title: CoreImage
-description: CoreImage は、iOS 5 をイメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。 この記事では、Xamarin.iOS サンプルを使ってこれらの機能を紹介します。
+title: Xamarin.iOS で core イメージ
+description: Core のイメージは、iOS 5 をイメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。 この記事では、Xamarin.iOS サンプルを使ってこれらの機能を紹介します。
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bb2c3b8b563da53e432ad16e6518ada67a4655e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6032554a0ddbda26ff5de94f6035bc4f8c15a22a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786633"
 ---
-# <a name="coreimage"></a>CoreImage
+# <a name="core-image-in-xamarinios"></a>Xamarin.iOS で core イメージ
 
-_CoreImage は、iOS 5 をイメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。この記事では、Xamarin.iOS サンプルを使ってこれらの機能を紹介します。_
+_Core のイメージは、iOS 5 をイメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。この記事では、Xamarin.iOS サンプルを使ってこれらの機能を紹介します。_
 
-CoreImage は、さまざまな組み込みのフィルターと画像とビデオ、顔の検出などに適用する効果を提供する iOS 5 で導入された新しいフレームワークです。
+Core のイメージは、さまざまな組み込みのフィルターと画像とビデオ、顔の検出などに適用する効果を提供する iOS 5 で導入された新しいフレームワークです。
 
 このドキュメントには、簡単な例が含まれています。
 
@@ -26,15 +27,15 @@ CoreImage は、さまざまな組み込みのフィルターと画像とビデ�
 -  使用できるフィルターを一覧表示します。
 
 
-これらの例は、Xamarin.iOS アプリケーションに CoreImage 機能を組み込むことを開始するのに役立ちます。
+これらの例は、Core のイメージの機能を Xamarin.iOS アプリケーションに組み込むことを開始するのに役立ちます。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Xcode の最新バージョンを使用する必要があります。
 
 ## <a name="face-detection"></a>顔の検出
 
-CoreImage 顔の検出機能の特長だけ何書かれている – 写真の顔を特定しようとして認識されているすべての面の座標を返します。 この情報は、イメージ内のユーザーの数をカウント、(イメージ上のインジケーターの描画に使用できます。 'タグの' 人写真で)、またはその他の考えることができます。
+Core イメージ顔の検出機能の特長だけ何書かれている – 写真の顔を特定しようとして認識されているすべての面の座標を返します。 この情報は、イメージ内のユーザーの数をカウント、(イメージ上のインジケーターの描画に使用できます。 'タグの' 人写真で)、またはその他の考えることができます。
 
 CoreImage\SampleCode.cs から次のコードでは、作成し、埋め込み画像の顔の検出を使用する方法を示します。
 
@@ -219,11 +220,11 @@ foreach (var filter in filters){
 
 ## <a name="summary"></a>まとめ
 
-この記事では、いくつかの顔の検出とイメージにフィルターを適用するように、新しい iOS 5 CoreImage framework 機能を使用する方法を説明しました。 多数の異なるイメージ フィルターを使用するためのフレームワークで使用できます。
+この記事では、いくつかの顔の検出とイメージにフィルターを適用するように新しい iOS 5 Core イメージ framework 機能を使用する方法を説明しました。 多数の異なるイメージ フィルターを使用するためのフレームワークで使用できます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Core イメージ (サンプル)](https://developer.xamarin.com/samples/CoreImage/)
 - [コントラクトおよびイメージ レシピの明るさを調整します。](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [CoreImage フィルターを使用します。](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [Core イメージ フィルターを使用します。](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter クラスのリファレンス](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

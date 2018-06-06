@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: d5a267bfa8655a9b9c6d4dba9d8cf9d16624ba9b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 0fbd38b643e7806932ba262becc72be2bae6ba4b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784622"
 ---
-# <a name="launch-screens"></a>画面を起動します。
+# <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS アプリの画面を起動します。
 
 _この記事では、任意の解像度と印刷の向き、1 つの統合のストーリー ボードを使用して、すべての iOS デバイス用アプリの起動画面を作成する方法について説明します。_
 
@@ -213,7 +214,7 @@ Unified ストーリー ボードの起動画面の作成の詳細について�
 
     ![](launch-screens-images/image013.png "起動画面の名前を入力します。")
 3. **ソリューション エクスプ ローラー**、ファイルを開いて編集する、新しく作成されたストーリー ボード ファイルをダブルクリックします。
-4. いることを確認、**サイズ クラス**に設定されている**、:** と**ビューとして**は**ジェネリック**: 
+4. いることを確認、**サイズ クラス**に設定されている **、:** と**ビューとして**は**ジェネリック**: 
 
     ![](launch-screens-images/image016.png "サイズのクラスがいずれかに設定されていることを確認してください: 任意であり、ビューとしてジェネリック")
 5. アセンブリ、単純な UI 要素のサイズ クラスからの起動画面 (など`UIImageView`) と、アプリケーションのバンドルに含まれているイメージ。 

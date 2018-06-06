@@ -1,21 +1,20 @@
 ---
-title: ビジュアル デ ザインの更新プログラム
-description: IOS 11 の新機能の検証
+title: IOS 11 でビジュアルのデザインの更新
+description: このドキュメントでは、更新プログラムが iOS 11 で導入されたビジュアルのデザインについて説明します。 ナビゲーション バー、検索のコント ローラー、余白、全画面表示コンテンツ、およびテーブルのビューへの変更についても説明します。
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 50858592ec6246fe825e80a3039f3640ebf708a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bc29e021e30910c7fcc4c3b451d0a4dfe187d05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787852"
 ---
-# <a name="visual-design-updates"></a>ビジュアル デ ザインの更新プログラム
-
-_IOS 11 の新機能の検証_
+# <a name="visual-design-updates-in-ios-11"></a>IOS 11 でビジュアルのデザインの更新
 
 11、iOS では、Apple には、ナビゲーション バー、検索バー、およびテーブル ビューの更新を含む新しいビジュアルの変更が導入されました。 さらに機能強化に加えられた柔軟性を高めるための余白と全画面表示のコンテンツを許可します。 このガイドでは、これらの変更について説明します。
 

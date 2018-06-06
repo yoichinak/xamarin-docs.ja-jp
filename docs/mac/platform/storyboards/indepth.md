@@ -1,19 +1,20 @@
 ---
-title: ストーリー ボードの使用
-description: Xcode を使ってストーリー ボードで macOS ユーザー インターフェイスを構築します。
+title: Xamarin.Mac 内のストーリー ボードの使用
+description: このドキュメントでは、Xamarin.Mac、コード、ビュー コント ローラーのライフ サイクル、レスポンダーのチェーンからそれらを読み込む方法を調べることでストーリー ボードを使用する方法について説明します、segues、ウィンドウのコント ローラー、ジェスチャ レコグナイザーなどです。
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b72affd9b101b0a139301fec9f2bed343310507
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 72986ed4247c3b6f66f6f1813d74bf0a95d0de53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792841"
 ---
-# <a name="storyboards"></a>ストーリーボード
+# <a name="working-with-storyboards-in-xamarinmac"></a>Xamarin.Mac 内のストーリー ボードの使用
 
 ストーリー ボードでは、すべてのコント ローラーの表示の機能の概要に分割する特定のアプリの UI を定義します。 Xcode のインターフェイスのビルダーでは、独自のシーンにこれらのコント ローラーの各住んでいます。
 

@@ -1,22 +1,22 @@
 ---
-title: アラートの使用
-description: この記事では、Xamarin.tvOS でユーザーに警告メッセージを表示する UIAlertController の扱いについて説明します。
+title: Xamarin で tvOS アラートの使用
+description: このドキュメントでは、Xamarin で tvOS アラートを操作する方法について説明します。 これは、テキスト フィールド、およびヘルパー クラスを追加する、アラートの表示について説明します。
 ms.prod: xamarin
 ms.assetid: F969BB28-FF2C-4A7D-88CA-F8076AD48538
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da4d2d952687c7e39276ca76af413b83c4519eea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b5125f150a4d57ed27041da2944f4c161434cf93
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789084"
 ---
-# <a name="working-with-alerts"></a>アラートの使用
+# <a name="working-with-tvos-alerts-in-xamarin"></a>Xamarin で tvOS アラートの使用
 
 _この記事では、Xamarin.tvOS でユーザーに警告メッセージを表示する UIAlertController の扱いについて説明します。_
-
 
 使用して、警告メッセージを表示するには、tvOS のユーザーの注目を取得または (ファイルを削除する) などの破壊的な操作を実行するアクセス許可を依頼する必要がある場合、 `UIAlertViewController`:
 

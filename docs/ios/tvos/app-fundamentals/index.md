@@ -1,5 +1,5 @@
 ---
-title: アプリケーションの基礎
+title: tvOS アプリケーションの基礎
 description: ここでは、最も一般的なタスクと開発者は、Xamarin.tvOS アプリを作成するときに注意する必要がある概念を示します。
 ms.prod: xamarin
 ms.assetid: B245062F-1DD9-4BE5-8E11-728BA3C8AD4C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 4ab06bd7de0b0e847d0ca31bcac9ecdefe79854e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cc9c0d26dfb9f5c97acd1d2a794ed1a9798b2eaf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788863"
 ---
-# <a name="application-fundamentals"></a>アプリケーションの基礎
+# <a name="tvos-application-fundamentals"></a>tvOS アプリケーションの基礎
 
 _ここでは、最も一般的なタスクと開発者は、Xamarin.tvOS アプリを作成するときに注意する必要がある概念を示します。_
 

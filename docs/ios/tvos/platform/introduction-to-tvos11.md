@@ -1,17 +1,18 @@
 ---
 title: TvOS 11 の概要
-description: Xamarin を使用して、tvOS 11 の開発者が利用できる新機能
+description: このドキュメントでは、tvOS 11 と Apple のリリース ノートへのリンクでの Xamarin の開発者に使用できる新機能の概要を示します。
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/08/2018
-ms.openlocfilehash: 735b2a113256b61d4e93c52707411e43fed2eca2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 83251cfa50dde4fb2089057aaaa2771956a4a3b0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788915"
 ---
 # <a name="introduction-to-tvos-11"></a>TvOS 11 の概要
 
@@ -36,8 +37,6 @@ Xamarin.tvOS アプリで新しい tvOS 11 の機能にアクセスします。
 - 金属 2
 
 Apple tvOS 11 で導入された変更の一覧については、次を参照してください。、[の新機能 tvOS](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)ドキュメント。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,18 +1,20 @@
 ---
-title: キットの概要と取得の製品情報を保存します。
+title: StoreKit 概要と Xamarin.iOS で製品情報を取得します。
+description: このドキュメントでは、StoreKit の概要を説明します。 StoreKit、StoreKit 相互作用をテスト、製品売上を表示する、処理、無効な製品および表示するローカライズされた価格で使用されるクラスがについて説明します。
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4ecd2942a99f80854fd340be454f9d8fefa5a36
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964b97e82db8e79cb32598d0c955fac3ab122314
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787225"
 ---
-# <a name="store-kit-overview-and-retrieving-product-information"></a>キットの概要と取得の製品情報を保存します。
+# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 概要と Xamarin.iOS で製品情報を取得します。
 
 アプリ内購入のユーザー インターフェイスは、次のスクリーン ショットに表示されます。
 任意のトランザクションの実行前にアプリケーションは、製品の価格と表示の説明を取得する必要があります。 ユーザーが押したときに、**購入**アプリケーションが要求を送信、確認のダイアログ ボックスと Apple ID でのログインを管理する StoreKit です。 トランザクションは、成功すると、StoreKit 通知、アプリケーション コードと仮定するとトランザクションの結果を格納の購入へのアクセスをユーザーに提供し、する必要があります。   

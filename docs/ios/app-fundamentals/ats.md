@@ -1,5 +1,5 @@
 ---
-title: アプリのトランスポート セキュリティ
+title: Xamarin.iOS でのアプリのトランスポート セキュリティ
 description: アプリのトランスポート セキュリティ (ATS) は、インターネット リソースの (アプリのバック エンド サーバーなど) と、アプリ間でセキュリティで保護された接続を強制します。
 ms.prod: xamarin
 ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 7e3a191def7e0c06365f334b4a7708e5927eadf8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71632da89c6a276b427b36f91eb343ab0a5c515b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784323"
 ---
-# <a name="app-transport-security"></a>アプリのトランスポート セキュリティ
+# <a name="app-transport-security-in-xamarinios"></a>Xamarin.iOS でのアプリのトランスポート セキュリティ
 
 _アプリのトランスポート セキュリティ (ATS) は、インターネット リソースの (アプリのバック エンド サーバーなど) と、アプリ間でセキュリティで保護された接続を強制します。_
 
@@ -181,7 +182,7 @@ NSAppTransportSecurity
 - **NSRequiresCertificateTransparency** (`Boolean`) - 場合`YES`ドメインのセキュリティで保護された Sockets Layer (SSL) が有効な透過性のデータを含める必要があります。 既定値は `NO` です。
 - **NSIncludesSubdomains** (`Boolean`) - 場合`YES`これらの設定は、このドメインのすべてのサブドメインを上書きします。 既定値は `NO` です。
 - **NSThirdPartyExceptionMinimumTLSVersion** (`String`)-TLS バージョンが、ドメインが、開発者のコントロールの外部のサード パーティ サービスである場合に使用します。
-- **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`) - If `YES` a 3rd party domain requires forward secrecy.
+- **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`) - 場合`YES`サード パーティ ドメイン前方の機密性を必要とします。
 - **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `YES` the ATS will allow non-secure communication with 3rd party domains.
 
 <a name="optout" />

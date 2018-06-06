@@ -1,18 +1,19 @@
 ---
-title: 埋め込みのフレームワーク
-description: このドキュメントでは、アプリケーション開発者がそれぞれのアプリでユーザーのフレームワークを埋め込むことができる方法について説明します。
+title: Xamarin.iOS で埋め込みフレームワーク
+description: このドキュメントでは、Xamarin.iOS アプリケーションに埋め込みのフレームワークとコードを共有する方法について説明します。 これは、mtouch ツールまたはネイティブ参照のいずれかで実行できます。
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f223d8ef6e89cc44822b8a831dbba3cf71d727c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e42f0940fe3fc132c9d381907aad5afbe474c4ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787293"
 ---
-# <a name="embedded-frameworks"></a>埋め込みのフレームワーク
+# <a name="embedded-frameworks-in-xamarinios"></a>Xamarin.iOS で埋め込みフレームワーク
 
 _このドキュメントでは、アプリケーション開発者がそれぞれのアプリでユーザーのフレームワークを埋め込むことができる方法について説明します。_
 

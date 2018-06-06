@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials データ転送
-description: DataTransfer クラスにより、アプリケーションをデバイス上の他のアプリケーションへのテキストと web リンクなどのデータを共有します。
+title: 'Xamarin.Essentials: データの転送'
+description: Xamarin.Essentials で DataTransfer クラスにより、アプリケーションをデバイス上の他のアプリケーションへのテキストと web リンクなどのデータを共有します。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b03ec1330aff1210350adf2600c63d7d84bc1125
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 69d429b1cdbbbd6dbb53e3cefa89695666494ba7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782386"
 ---
-# <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials データ転送
+# <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials: データの転送
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 

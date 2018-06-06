@@ -1,19 +1,20 @@
 ---
-title: 代替アプリのアイコン
-description: この記事では、Xamarin.iOS で代替アプリ アイコンの使用について説明します。
+title: Xamarin.iOS で代替アプリ アイコン
+description: このドキュメントでは、Xamarin.iOS で代替アプリ アイコンを使用する方法について説明します。 これは、Xamarin.iOS プロジェクトにこれらのアイコンを追加する方法、Info.plist ファイルを変更する方法、およびアプリのアイコンをプログラムで管理する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 8d9f27d58a881878aabeda4326805eec726c247c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1d37a29982454367c35bfdfad205abce0eb025af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784111"
 ---
-# <a name="alternate-app-icons"></a>代替アプリのアイコン
+# <a name="alternate-app-icons-in-xamarinios"></a>Xamarin.iOS で代替アプリ アイコン
 
 _この記事では、Xamarin.iOS で代替アプリ アイコンの使用について説明します。_
 
@@ -38,7 +39,7 @@ Apple では、そのアイコンを管理するアプリを許可する iOS 10.
 
     ![](alternate-app-icons-images/icons00.png "フォルダーからアイコン イメージを選択します。")
 
-2. メッセージが表示されたら、[**コピー**、**同じアクションを使用して、選択したすべてのファイルの**] をクリックし、 **[ok]**ボタン。
+2. メッセージが表示されたら、[**コピー**、**同じアクションを使用して、選択したすべてのファイルの**] をクリックし、 **[ok]** ボタン。
 
     ![](alternate-app-icons-images/icons02.png "ファイル フォルダ ダイアログ ボックスへの追加")
 

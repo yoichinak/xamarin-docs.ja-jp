@@ -1,19 +1,20 @@
 ---
-title: Web のマークアップの検索
-description: アプリケーションにリンクできる web ベースの検索結果を追加します。
+title: Xamarin.iOS で Web マークアップでの検索
+description: このドキュメントでは、Xamarin.iOS アプリにリンクする web ベースの検索結果を作成する方法について説明します。 これには、インデックス作成、探索可能なスマート アプリ バナー、汎用のリンクを使用して、アプリの web サイトを作成、web コンテンツを有効にする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: bc3446419ef0e469f7184d60fe8876cd2e5da520
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438a65de3eb78f849493e3478bce5522a325d0cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787995"
 ---
-# <a name="search-with-web-markup"></a>Web のマークアップの検索
+# <a name="search-with-web-markup-in-xamarinios"></a>Xamarin.iOS で Web マークアップでの検索
 
 Web サイトを使用して、コンテンツへのアクセスを提供するアプリ (からだけでなく、アプリ内で)、web コンテンツは、Apple によってクロールされ、ユーザーの iOS 9 デバイス上のアプリにディープ リンクを提供できる特別なリンクでマークできます。
 
@@ -86,7 +87,7 @@ Facebook アプリのリンクを使用して、アプリのコンテンツへ�
 
 ## <a name="opening-deep-links"></a>ディープ リンクを開く
 
-開くおよび Xamarin.iOS アプリのディープ リンクを表示するためのサポートを追加する必要があります。 編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`OpenURL`カスタム URL の形式を処理するメソッド。 例えば:
+開くおよび Xamarin.iOS アプリのディープ リンクを表示するためのサポートを追加する必要があります。 編集、 **<code>appdelegate.cs</code>** ファイルし、オーバーライド、`OpenURL`カスタム URL の形式を処理するメソッド。 例えば:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)

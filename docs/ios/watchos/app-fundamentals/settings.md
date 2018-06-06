@@ -1,18 +1,20 @@
 ---
-title: 設定の操作
+title: WatchOS Xamarin の設定の操作
+description: このドキュメントでは、Xamarin で watchOS 設定と連携する方法について説明します。 IPhone で、アプリと、Apple Watch アプリでそれらの設定を使用して watch アプリのソリューションに追加設定についても説明します。
 ms.prod: xamarin
 ms.assetid: 4B2EB192-F0A2-4010-B141-0431520594C0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6de70eae1eb1c498336a62b4d7be5e2805de11f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6cfbcf3b4383588819490838c2a54cdb4faf9403
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790878"
 ---
-# <a name="working-with-settings"></a>設定の操作
+# <a name="working-with-watchos-settings-in-xamarin"></a>WatchOS Xamarin の設定の操作
 
 Apple Watch アプリは iOS アプリとして設定と同じ機能を使用できます - で、[設定] ユーザー インターフェイスが表示されます、 **Apple Watch** iPhone アプリが、値は、iPhone アプリとの両方もウォッチ拡張機能にアクセスします。
 
@@ -24,7 +26,7 @@ Apple Watch アプリは iOS アプリとして設定と同じ機能を使用で
 
 **IPhone アプリ**、ソリューション (*いない*watch アプリまたは拡張機能)。
 
-1. 右クリック**追加 > 新しいファイル.**選択**Settings.bundle** (内の名前を編集することはできません、**新しいファイル**ダイアログ)。
+1. 右クリック**追加 > 新しいファイル.** 選択**Settings.bundle** (内の名前を編集することはできません、**新しいファイル**ダイアログ)。
 
    [![](settings-images/settings-add-sml.png "新しい設定バンドルを追加します。")](settings-images/settings-add.png#lightbox)
 
@@ -55,7 +57,7 @@ var isEnabled = shared.BoolForKey ("enabled_preference");
 var userName = shared.StringForKey ("name_preference");
 ```
 
-## <a name="apple-watch-app"></a>Apple Watch App
+## <a name="apple-watch-app"></a>Apple Watch アプリ
 
 [![](settings-images/settings-app-sml.png "IPhone 上の新しい Apple Watch アプリ")](settings-images/settings-app.png#lightbox)
 

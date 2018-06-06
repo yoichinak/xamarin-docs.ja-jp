@@ -6,18 +6,19 @@ ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 32d98efd644fb033785fbae0d9689494e42b2809
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 691be280b80e379863cc09d0f1bba0ff5882cf21
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732922"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Android デザイナーの Java メモリ パラメーターを調整します。
 
 開始するときに使用される既定のメモリのパラメーター、`java`プロセスでは、Android デザイナーが一部のシステム構成と互換性がない可能性があります。
 
-Xamarin Studio 5.7.2.7 (およびそれ以降、Visual Studio for Mac) で始まると、Xamarin for Visual Studio 3.9.344 プロジェクトごとにこれらの設定をカスタマイズすることができます。
+Xamarin Studio 5.7.2.7 (およびそれ以降、Visual Studio for Mac) で始まると、Visual Studio Tools for Xamarin 3.9.344、プロジェクトごとにこれらの設定をカスタマイズすることができます。
 
 ## <a name="new-android-designer-properties-and-corresponding-java-options"></a>新しい Android デザイナーのプロパティと対応する Java オプション
 
@@ -27,7 +28,7 @@ Xamarin Studio 5.7.2.7 (およびそれ以降、Visual Studio for Mac) で始ま
 
 - **AndroidDesignerJavaRendererMaxMemory** -Xmx
 
-- **AndroidDesignerJavaRendererPermSize** -XX:MaxPermSize
+- **AndroidDesignerJavaRendererPermSize** -XX: MaxPermSize
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

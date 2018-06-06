@@ -1,15 +1,17 @@
 ---
 title: アプリケーション ユーザー インターフェイスのローカリゼーション
+description: このドキュメントでは、国際化とローカリゼーションのクロスプラット フォームの概念について説明し、アプリケーションの設計にどのように影響を調べます。
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: eb8c64eb4523b7b233453b9337e3aaaeff7aeb89
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 299fe28a896c2bf2e5c420b330b8e8bde7d9dc22
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781957"
 ---
 # <a name="localization"></a>ローカリゼーション
 

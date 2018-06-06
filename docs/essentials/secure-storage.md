@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials セキュリティで保護されたストレージ
-description: SecureStorage クラスにより、単純なキー/値ペアを安全に保管します。
+title: 'Xamarin.Essentials: セキュリティで保護されたストレージ'
+description: このドキュメントでは、単純なキー/値ペアを安全に保管にも役立ちます Xamarin.Essentials で SecureStorage クラスについて説明します。 これには、クラス、プラットフォームの実装の詳細、および制限事項を使用する方法について説明します。
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783159"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials セキュリティで保護されたストレージ
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: セキュリティで保護されたストレージ
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 

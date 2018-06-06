@@ -1,16 +1,17 @@
 ---
 title: CCDrawNode ジオメトリの描画
-description: CCDrawNode は、線、円、および三角形などの描画プリミティブ オブジェクトに対してメソッドを提供します。
+description: このドキュメントでは、線、円、および三角形などの描画プリミティブ オブジェクトに対してメソッドを提供する CCDrawNode について説明します。
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 83d973ed013d1448915ee553069c1366922d28b6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00ccf089e88d726aff09605aa88076139399a7dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782886"
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>CCDrawNode ジオメトリの描画
 

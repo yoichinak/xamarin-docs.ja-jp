@@ -1,15 +1,17 @@
 ---
 title: クロス プラットフォーム アプリケーションの概要作成
+description: このドキュメントでは、クロス プラットフォーム アプリケーションの構築の概要を示します。 C# の場合、MVC/MVVM、およびネイティブ Ui などのデザイン パターンの値がについて説明します。
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e6e2b4f9d5a482a3c8c24dc5b059db2457b0f301
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1eb308e0095c29d8ab0d0bdf1f74b807fd2ab97f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780784"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロス プラットフォーム アプリケーションの概要作成
 

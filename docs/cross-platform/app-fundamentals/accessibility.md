@@ -1,18 +1,19 @@
 ---
-title: ユーザー補助
-description: アプリが可能な最大限のユーザーが使用可能なことを確認してください。
+title: Xamarin アプリのユーザー補助機能
+description: このドキュメントでは、アクセス可能なアプリの作成のさまざまなヒントを提供します。 たとえば、大きなフォント、ハイ コントラスト、自己記述型のインターフェイスに関する推奨事項が含まれています。
 ms.prod: xamarin
 ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 48e9d760362e47d7046528c819959bfb14f71f91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 97cd3655ac47a017d9590e1890b93d74f10a9c34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780305"
 ---
-# <a name="accessibility"></a>ユーザー補助
+# <a name="accessibility-in-xamarin-apps"></a>Xamarin アプリのユーザー補助機能
 
 _アプリが可能な最大限のユーザーが使用可能なことを確認してください。_
 

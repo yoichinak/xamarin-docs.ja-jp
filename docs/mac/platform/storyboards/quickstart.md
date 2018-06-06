@@ -1,19 +1,20 @@
 ---
-title: ストーリー ボードのクイック スタート
-description: 開始したビルド macOS ストーリー ボードでのユーザー インターフェイスを取得します。
+title: 'Xamarin.Mac: クイック スタートのストーリー ボード'
+description: このドキュメントでは、macOS Xamarin.Mac でストーリー ボードでのユーザー インターフェイスの構築にクイック スタートの概要を示します。 これには、segue を作成し、環境設定ウィンドウを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 20719B5D-8147-4E8A-A23C-8D575C7ACCEE
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 0c366de844b119736763f7d419d6bc9bb3fbfc0a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bf91a51a55583e2ba8ca1fc09eb3dcd0d9986cf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792573"
 ---
-# <a name="starting-a-new-storyboard-based-project"></a>プロジェクトに基づく新しいストーリー ボードの起動
+# <a name="storyboards-in-xamarinmac--quick-start"></a>Xamarin.Mac: クイック スタートのストーリー ボード
 
 ストーリー ボードを使用して Xamarin.Mac アプリのユーザー インターフェイスを定義する基礎として新しい Xamarin.Mac プロジェクトを開始しましょう。 **[Mac]** > **[アプリ]** > **[Cocoa アプリ]** を選択し、**[次へ]** ボタンをクリックします。
 
@@ -107,7 +108,7 @@ Mac 用 Visual Studio に戻り場合、アプリを実行し、をクリック�
 
 [![](quickstart-images/qs19.png "制約を設定")](quickstart-images/qs19.png#lightbox)
 
-次に、ユーザーが選択したときに、環境設定ウィンドウを表示する、**設定しています.**メニュー項目。 メニュー バーから、設定メニュー項目を選択、**コントロール**キー をクリックし、タブのビュー コント ローラーに線をドラッグします。
+次に、ユーザーが選択したときに、環境設定ウィンドウを表示する、**設定しています.** メニュー項目。 メニュー バーから、設定メニュー項目を選択、**コントロール**キー をクリックし、タブのビュー コント ローラーに線をドラッグします。
 
 [![](quickstart-images/qs20.png "ドラッグして、segue を作成するには")](quickstart-images/qs20.png#lightbox)
 
@@ -115,7 +116,7 @@ Mac 用 Visual Studio に戻り場合、アプリを実行し、をクリック�
 
 [![](quickstart-images/qs21.png "Segue の種類の選択")](quickstart-images/qs21.png#lightbox)
 
-For Mac を Visual Studio に戻り、変更を保存する場合は、アプリの実行を選択して、**設定しています.**メニュー項目を新しい設定のダイアログが表示されます。
+For Mac を Visual Studio に戻り、変更を保存する場合は、アプリの実行を選択して、**設定しています.** メニュー項目を新しい設定のダイアログが表示されます。
 
 [![](quickstart-images/qs22.png "実行している segue の例")](quickstart-images/qs22.png#lightbox)
 
@@ -129,7 +130,7 @@ For Mac を Visual Studio に戻り、変更を保存する場合は、アプリ
 
 [![](quickstart-images/qs24.png "Xcode での各タブの構成")](quickstart-images/qs24.png#lightbox)
 
-For Mac を Visual Studio に戻り、変更を保存する場合は、アプリの実行を選択して、**設定しています.**メニュー項目では、標準的な macOS アプリのように、ダイアログ ボックスが表示されます。
+For Mac を Visual Studio に戻り、変更を保存する場合は、アプリの実行を選択して、**設定しています.** メニュー項目では、標準的な macOS アプリのように、ダイアログ ボックスが表示されます。
 
 [![](quickstart-images/qs25.png "実行中の環境設定ウィンドウの例")](quickstart-images/qs25.png#lightbox)
 

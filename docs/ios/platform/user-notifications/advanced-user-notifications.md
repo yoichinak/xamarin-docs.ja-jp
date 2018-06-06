@@ -1,21 +1,20 @@
 ---
-title: 高度なユーザーへの通知
-description: この記事では、新しいユーザーへの通知フレームワークについて詳しく説明し、Xamarin.iOS アプリでこれを最大限に活用する方法です。
+title: Xamarin.iOS で高度なユーザーへの通知
+description: この記事では iOS 10 で導入された、ユーザーへの通知フレームワークについて詳しく説明します。 これは、ユーザーへの通知、通知のユーザー インターフェイス、メディアの添付ファイル、カスタム ユーザー インターフェイス、および詳細について説明します。
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: bd8a95afc5bdd5aed958913d63f9b6cfe853677e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 09a73ebc3dab90e6342a45c0f1fb5a40184d18a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788531"
 ---
-# <a name="advanced-user-notifications"></a>高度なユーザーへの通知
-
-_この記事では、新しいユーザーへの通知フレームワークについて詳しく説明し、Xamarin.iOS アプリでこれを最大限に活用する方法です。_
+# <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin.iOS で高度なユーザーへの通知
 
 初めて使用する iOS 10 では、ユーザー通知の配信とローカルおよびリモートの通知の処理のフレームワークを利用します。 このフレームワークを使用して、アプリまたはアプリ拡張機能をスケジュールできますローカルに関する通知の配信場所などの条件のセットまたは 1 日の時刻を指定することで。
 

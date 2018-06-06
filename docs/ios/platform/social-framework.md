@@ -1,5 +1,5 @@
 ---
-title: ソーシャル フレームワーク
+title: Xamarin.iOS でソーシャル フレームワーク
 description: ソーシャル フレームワークでは、Twitter、Facebook、とともに SinaWeibo を中国でのユーザーなどのソーシャル ネットワークと対話するため、統合 API を提供します。
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 334e05ad653d766b48f7f6028a1e98b0a0548c0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b7269282b18adc46f53b708a0af4934a1621d23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788196"
 ---
-# <a name="social-framework"></a>ソーシャル フレームワーク
+# <a name="social-framework-in-xamarinios"></a>Xamarin.iOS でソーシャル フレームワーク
 
 _ソーシャル フレームワークでは、Twitter、Facebook、とともに SinaWeibo を中国でのユーザーなどのソーシャル ネットワークと対話するため、統合 API を提供します。_
-
 
 認証を管理することがなく、単一の API からソーシャル ネットワークと対話するアプリケーションをソーシャル フレームワークを使用できます。 これには、投稿だけでなく HTTP を介した各ソーシャル ネットワークの API を使用できるようにする抽象化を作成するためのビューのコント ローラーを用意されたシステムが含まれます。
 
@@ -476,5 +476,5 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 
 ## <a name="related-links"></a>関連リンク
 
-- [SocialFrameworkDemo (sample)](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
+- [SocialFrameworkDemo (サンプル)](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
 - [Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)

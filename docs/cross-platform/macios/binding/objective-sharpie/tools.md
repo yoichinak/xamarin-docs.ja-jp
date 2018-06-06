@@ -1,18 +1,19 @@
 ---
-title: ツールとコマンド
-description: それらを使用するには、目的のペンを使わずとコマンドライン引数に付属のツールの概要です。
+title: 目標ペンを使わずツールとコマンド
+description: このドキュメントでは、それらを使用するには、目標ペンを使わずとコマンドライン引数に付属のツールの概要を示します。
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 0e333ce7c336d13c8b55326a5d51a64092885dfd
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9ef566559249caca75281d9490d5314e08e26d44
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781066"
 ---
-# <a name="tools--commands"></a>ツールとコマンド
+# <a name="objective-sharpie-tools--commands"></a>目標ペンを使わずツールとコマンド
 
 _それらを使用するには、目的のペンを使わずとコマンドライン引数に付属のツールの概要です。_
 

@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: 8d7ec3f2f64fdb8be903fd13bd72bcf545265a3d
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 05f1fc6158e9a20892ab4a4b49b33e4eac6bc5e5
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34546087"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733062"
 ---
 # <a name="android-platform-specifics"></a>Android プラットフォーム仕様
 
@@ -27,6 +27,8 @@ Android では、Xamarin.Forms には、次のプラットフォームの設定�
 - AppCompat を使用するアプリケーションに対し、一時停止や再開時に [`Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)や[`Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) といったぺージのライフサイクルのイベントをそれぞれ無効化する。 詳細については、[Disappearing と Appearing のぺージライフサイクルイベントの無効化](#disable_lifecycle_events)」を参照してください。
 - 制御するかどうか、 [ `WebView` ](xref:Xamarin.Forms.WebView)混合コンテンツを表示できます。 詳細については、次を参照してください。[混在コンテンツ WebView に有効にすると](#webview-mixed-content)です。
 - 入力方式のソフト キーボード用のエディター オプションの設定、 [ `Entry`](xref:Xamarin.Forms.Entry)です。 詳細については、次を参照してください。[設定エントリ入力方式エディター オプション](#entry-imeoptions)です。
+- サポートされているレガシの色のモードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)です。 詳細については、次を参照してください。[レガシ色のモードを無効にすると](#legacy-color-mode)です。
+- 既定の余白と Android のボタンの影の値を使用します。 詳細については、次を参照してください。 [Android ボタンを使用して](#button-padding-shadow)です。
 
 <a name="soft_input_mode" />
 
@@ -309,7 +311,7 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 
 `Entry.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。 [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)のソフト キーボードの入力方式アクション オプションの設定に名前空間が使用される、 [ `Entry` ](xref:Xamarin.Forms.Entry)、[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列挙体の次の値を指定します。
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – 特定のアクションのキーは必要なく、され、基になるコントロールが、独自の場合を生成することはできることを示します。
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – 特定のアクションのキーは必要なく、され、基になるコントロールが、独自の場合を生成することはできることを示します。 これはなります`Next`または`Done`です。
 - [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – アクション キーを作成していない使用可能なことを示します。
 - [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – アクション キーは、操作を実行"go"、文字列のターゲットにユーザーを取得する型指定されたことを示します。
 - [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) –「検索」操作を実行するアクション キー、入力したテキストの検索の結果をユーザーの取得のことを示します。
@@ -326,6 +328,83 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 結果は、指定した[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)のソフト キーボードを適用する値、 [ `Entry` ](xref:Xamarin.Forms.Entry)、入力方式エディターのオプションを設定します。
 
 [![エントリは、エディターのプラットフォームに固有のメソッドを入力](android-images/entry-imeoptions.png "エントリ エディターのプラットフォームに固有のメソッドの入力")](android-images/entry-imeoptions-large.png#lightbox "エントリ エディターのプラットフォームに固有のメソッドの入力")
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>レガシ色のモードを無効にします。
+
+Xamarin.Forms ビューの一部の機能、従来の色のモード。 このモードでときに、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)ビューのプロパティに設定されて`false`ビューには、既定のネイティブ色無効の状態を使用して、ユーザーが設定した色がよりも優先されます。 旧バージョンと互換性のため、この従来の色のモードはサポートされているビューの既定の動作のままです。
+
+このプラットフォームに固有では、ビューが無効になっている場合でも、ユーザーがビューに設定した色が維持されるよう、この従来の色のモードが無効にします。 使用される XAML で設定して、 [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.IsLegacyColorModeEnabledProperty)添付プロパティ`false`:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                android:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+_legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。 [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)名前空間を使用して、従来の色のモードが無効になっているかどうか。 さらに、 [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement}))を従来の色のモードが無効になっているかどうかを返すメソッドを使用できます。
+
+結果は、レガシ カラー モードを無効にすること、ように、ユーザーがビューに設定した色もビューが無効になっています。
+
+![](android-images/legacy-color-mode-disabled.png "従来の色のモードが無効になっています")
+
+> [!NOTE]
+> 設定するときに、 [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)レガシ色のモードが完全に無視されますをビューにします。 表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)です。
+
+<a name="button-padding-shadow" />
+
+## <a name="using-android-buttons"></a>Android のボタンを使用します。
+
+このプラットフォームに固有では、Xamarin.Forms ボタンが既定の余白と Android のボタンの影の値を使用するかどうかを制御します。 使用される XAML で設定して、 [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty)と[ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty)添付プロパティを`boolean`値。
+
+```xaml
+<ContentPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button ...
+                android:Button.UseDefaultPadding="true"
+                android:Button.UseDefaultShadow="true" />         
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
+```
+
+`Button.On<Android>`メソッドは、このプラットフォーム仕様が Android 上でのみ動作することを指定します。 [ `Button.SetUseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean))と[`Button.SetUseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)名前空間、Xamarin.Forms ボタンが既定値を使用するかどうかの制御に使用されますパディングと Android のボタンの影の値。 さらに、 [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button}))と[ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button}))ボタンが既定の値と既定シャドウの値をそれぞれパディングを使用するかどうかを返すメソッドを使用できます。
+
+結果は、Xamarin.Forms ボタンで、既定の余白と Android のボタンの影の値を使用できること。
+
+![](android-images/button-padding-and-shadow.png "従来の色のモードが無効になっています")
+
+それぞれの上のスクリーン ショットに注意してください[ `Button` ](xref:Xamarin.Forms.Button)点を除いて、同一の定義が、右側`Button`既定の余白と Android のボタンの影の値を使用します。
 
 ## <a name="summary"></a>まとめ
 

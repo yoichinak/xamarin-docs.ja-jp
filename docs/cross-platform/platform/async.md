@@ -1,20 +1,21 @@
 ---
-title: 非同期の概要
-description: 'C# 言語 – バージョン 5 – の最新バージョンには、非同期操作を表すための 2 つの新しいキーワードが導入されました: async と await です。 これらのキーワードでは、別のスレッドで実行時間の長い操作 (ネットワーク アクセスなど) を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。 Xamarin.iOS および Xamarin.Android の最新バージョン サポート async および await - 説明、および Xamarin を使用した新しい構文の使用例を説明します。'
+title: 非同期サポートの概要
+description: このドキュメントでは、非同期のプログラミングについて説明し、待機、非同期コードを記述するが容易に c# 5 で導入された概念。
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 22878695d93ae79bbbfe1b99961587ff0bf957be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782009"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
-_C# 言語 – バージョン 5 – の最新バージョンには、非同期操作を表すための 2 つの新しいキーワードが導入されました: async と await です。これらのキーワードでは、別のスレッドで実行時間の長い操作 (ネットワーク アクセスなど) を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。Xamarin.iOS および Xamarin.Android の最新バージョン サポート async および await - 説明、および Xamarin を使用した新しい構文の使用例を説明します。_
+_導入された非同期プログラミングを簡略化する 2 つのキーワードの c# 5: async と await です。これらのキーワードでは、別のスレッドで実行時間の長い操作 (ネットワーク アクセスなど) を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。Xamarin.iOS および Xamarin.Android の最新バージョン サポート async および await - 説明、および Xamarin を使用した新しい構文の使用例を説明します。_
 
 Xamarin の非同期サポートは、Mono 3.0 をベースに構築され、モバイル フレンドリなバージョンの .NET 4.5 のモバイル対応バージョンで Silverlight の中から API プロファイルをアップグレードします。
 
@@ -30,7 +31,7 @@ C# 5 (多くのサンプルとさまざまな使用シナリオを含む) の新
 
 Xamarin の非同期サポートは、Mono 3.0 をベースに構築され、モバイル フレンドリなバージョンの .NET 4.5 のモバイル対応バージョンで Silverlight の中から API プロファイルをアップグレードします。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 C# 5 機能では、Mono 3.0 6.4 の Xamarin.iOS と Xamarin.Android 4.8 に含まれている必要があります。 これを活用するために、モノラル、Xamarin.iOS、Xamarin.Android、Xamarin.Mac をアップグレードするように促されます。
 
@@ -149,7 +150,7 @@ GetButton.Click += async (sender, e) => {
 
 -  匿名デリゲートは、async キーワードのプレフィックスを持ちます。
 -  非同期メソッド DownloadHomepage がタスクを返します<int>sizeTask 変数に格納されています。
--  コードは、sizeTask 変数で待機します。  *これは、*メソッドが中断され、独自のスレッドで非同期のタスクが終了するまで呼び出し元のコードに制御が移るする場所です。
+-  コードは、sizeTask 変数で待機します。  *これは、* メソッドが中断され、独自のスレッドで非同期のタスクが終了するまで呼び出し元のコードに制御が移るする場所です。
 -  実行は*いない*作成中のタスクがあるにもかかわらず、メソッドの最初の行で、タスクが作成されるときに一時停止します。 Await キーワードは、実行が一時停止位置を示します。
 -  非同期タスクが完了したら、intResult が設定され、await 行から、元のスレッドで実行が続行されます。
 
@@ -181,7 +182,7 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 いくつかの重要なポイント:
 
 -  メソッドとしてマークされている`async`を返しますが、`void`です。 これは、通常のみのイベント ハンドラー (戻るそれ以外の場合、`Task`または`Task<TResult>`)。
--  コード`await`で s、`DownloadHomepage`変数への代入で直接メソッド ( `intResult` ) 中間を使用して、前の例とは異なり`Task<int>`タスクを参照する変数。  *これは、*制御が返される位置、呼び出し元に、非同期メソッドが完了するまで別のスレッドの場所です。
+-  コード`await`で s、`DownloadHomepage`変数への代入で直接メソッド ( `intResult` ) 中間を使用して、前の例とは異なり`Task<int>`タスクを参照する変数。  *これは、* 制御が返される位置、呼び出し元に、非同期メソッドが完了するまで別のスレッドの場所です。
 -  実行が再開されると、非同期メソッドの完了を返します、`await`つまり、整数の結果が返され、その UI ウィジェットで表示されます。
 
 

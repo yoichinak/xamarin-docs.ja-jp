@@ -1,17 +1,19 @@
 ---
-title: 国際化のエンコード
+title: Xamarin.iOS の国際化エンコーディング
+description: このドキュメントでは、Xamarin.iOS、利用可能なエンコーディングとアプリに追加する方法を説明の国際化エンコーディングについて説明します。
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60cfc5ac8238c853cc066afe2978f91ab9c0755e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4963b0f95ae48ee56462a82d2f82a8dcaa231a23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784127"
 ---
-# <a name="internationalization-encodings"></a>国際化のエンコード
+# <a name="internationalization-encodings-in-xamarinios"></a>Xamarin.iOS の国際化エンコーディング
 
 すべてのエンコーディングは、既定で Xamarin.iOS クラス ライブラリに含まれます。
 

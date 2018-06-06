@@ -1,15 +1,16 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
 title: WPF とします。Xamarin.Forms アプリのライフ サイクル
-description: アプリの起動プロセスを理解して、バック グラウンドの状態を処理します。
+description: このドキュメントを比較して、類似点および Xamarin.Forms と WPF アプリケーションのアプリケーションのライフ サイクル間の相違点です。 ビジュアル ツリーをグラフィックス、リソース、およびスタイルも確認します。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: b4f9aebbbcab48290d37c5732c69267897238272
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: abb7773873fa181085464b5985cc8233715cc4be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781583"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF とします。Xamarin.Forms アプリのライフ サイクル
 
@@ -50,7 +51,7 @@ Xamarin.Forms で最上位のビジュアルは常に、iOS でなどのプラ�
 
 別のプラットフォームの 2 つのビューを表示するために、技術的に可能であれば (例: 2 つの定義`UIWindow`オブジェクトおよび外付けディスプレイまたは AirPlay を 2 つ目の 1 つのレンダリングがある)、そのためにはプラットフォーム固有のコードを必要としての直接サポートされている機能ではありません自体 Xamarin.Forms です。
 
-### <a name="views"></a>ビュー
+### <a name="views"></a>Views
 
 両方のフレームワークのビジュアルの階層は似ています。 WPF は WYSIWYG ドキュメントのサポートがあるため、少し進むです。
 

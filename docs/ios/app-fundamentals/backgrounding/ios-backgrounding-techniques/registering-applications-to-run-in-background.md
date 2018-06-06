@@ -1,18 +1,20 @@
 ---
-title: バック グラウンドで実行するアプリケーションを登録します。
+title: Xamarin.iOS アプリのバック グラウンドで実行する登録
+description: このドキュメントでは、バック グラウンドで実行する Xamarin.iOS アプリケーションを登録する方法について説明します。 これは、オーディオ アプリ、VoIP アプリ、外部アクセサリ、bluetooth、および詳細について説明します。
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58ee68f765372094d68c3cf30ed6a631a67fe313
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f4774f6b4f5412c44dc985bd40129a178b1e813c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783676"
 ---
-# <a name="registering-applications-to-run-in-the-background"></a>バック グラウンドで実行するアプリケーションを登録します。
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Xamarin.iOS アプリのバック グラウンドで実行する登録
 
 一部のアプリケーションが GPS 経由でユーザーの方向を取得するなど、重要な実行時間の長いタスクを実行時にアプリケーションが常に呼び出された場合の動作のバック グラウンド特権 works の個々 のタスクを登録しますか。 次のようのアプリケーションは、既知の必要なバック グラウンド アプリケーションとして代わりに登録する必要があります。
 

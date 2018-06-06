@@ -1,18 +1,20 @@
 ---
-title: 使用できる非製品の購入
+title: Xamarin.iOS で使用できる非製品の購入
+description: このドキュメントでは、デバイスに関係なく、無期限に利用可能なままです、ユーザーが購入した機能は、Xamarin.iOS で以外が使用できる製品について説明します。
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0a581dc222e43f8d4742bd52dc56dc691449a8f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: db193493ea11a7963fe5fc57f0c45978c26a7a74
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786952"
 ---
-# <a name="purchasing-non-consumable-products"></a>使用できる非製品の購入
+# <a name="purchasing-non-consumable-products-in-xamarinios"></a>Xamarin.iOS で使用できる非製品の購入
 
 非が使用できる製品は、' 所有 ' 顧客です。 これらが常にアクセスできるようには、自分のデバイスが紛失または盗難にあったか、新しいを買う場合でもは予想されます。 これらは、ブック、雑誌の問題、ゲームのレベル、写真のフィルター、"pro の機能などに役立ちます。ユーザーが使用できる非製品を購入すると、お支払いについては、もう一度があることはありません。 誤って、コードでは再試行することができ、StoreKit で既に購入されているメッセージが表示されます。
 

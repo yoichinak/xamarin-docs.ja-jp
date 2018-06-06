@@ -1,5 +1,5 @@
 ---
-title: メッセージ アプリ拡張機能の基礎
+title: Xamarin.iOS でメッセージ アプリ拡張機能の基本事項
 description: この記事の内容表示は方法メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含めます。
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 73ca0974a42bf661a89327148b68341114297084
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: bc06d73543b9e0bd1e8715fc722b0a95af7d9f07
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787911"
 ---
-# <a name="message-app-extension-basics"></a>メッセージ アプリ拡張機能の基礎
+# <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin.iOS でメッセージ アプリ拡張機能の基本事項
 
 _この記事の内容表示は方法メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含めます。_
 

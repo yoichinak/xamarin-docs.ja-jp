@@ -1,20 +1,21 @@
 ---
-title: .NET Standard
+title: 標準の .NET ライブラリを使用してコードを共有するには
+description: このドキュメントでは、標準の .NET ライブラリを使用してコードを共有する方法について説明します。 .NET 標準ライブラリを作成する、その設定を編集して、アプリケーションで使用することについて説明します。
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: c70a1cb1aa05426ba6d54d8af3787f014883bfa1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919336"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781034"
 ---
-# <a name="net-standard"></a>.NET Standard
+# <a name="using-net-standard-libraries-to-share-code"></a>標準の .NET ライブラリを使用してコードを共有するには
 
-## <a name="using-net-standard-library-projects-to-share-code"></a>.NET Standard ライブラリ プロジェクトを使用してコードを共有するには
+## <a name="net-standard"></a>.NET Standard
 
 .NET Standard ライブラリは、すべての .NET ランタイムで使用できるようにすることを目的とした .NET API の正式な仕様です。 .NET Standard ライブラリの背後にある動機は、.NET エコシステムの高度な統一性を確立することです。
 [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) は引き続き .NET ランタイムの動作の統一性を確立しますが、.NET ライブラリの実装用の .NET 基底クラス ライブラリ (BCL) に同様の仕様はありません。

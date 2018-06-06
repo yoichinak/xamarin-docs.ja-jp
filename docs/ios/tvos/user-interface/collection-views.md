@@ -1,21 +1,20 @@
 ---
-title: コレクション ビューの操作
-description: この記事では、設計と Xamarin.tvOS アプリ内でコレクション ビューの操作について説明します。
+title: TvOS Xamarin でコレクション ビューの操作
+description: このドキュメントでは、Xamarin でビルドされた tvOS アプリでのコレクション ビューを操作する方法について説明します。 セルおよびユーザー イベントに応答して、補足のビューを作成、コレクション ビューのレイアウトを説明します。
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b411ac6bb8d1492511f9e5d2234731ae64c3a82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789279"
 ---
-# <a name="working-with-collection-views"></a>コレクション ビューの操作
-
-_この記事では、設計と Xamarin.tvOS アプリ内でコレクション ビューの操作について説明します。_
+# <a name="working-with-tvos-collection-views-in-xamarin"></a>TvOS Xamarin でコレクション ビューの操作
 
 コレクション ビューは、任意のレイアウトを使用して表示するコンテンツのグループにすること。 組み込みサポートを使用して、これにより、簡単に作成のグリッドのようなまたは線形レイアウトもカスタム レイアウトをサポートします。
 

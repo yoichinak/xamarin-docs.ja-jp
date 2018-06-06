@@ -1,19 +1,20 @@
 ---
-title: Web ビュー
-description: IOS web ビューのオプションの明確化
+title: Xamarin.iOS の web ビュー
+description: このドキュメントでは、Xamarin.iOS アプリは web コンテンツを表示できるさまざまな方法について説明します。 UIWebView、WKWebView、SFSafariViewController、Safari、およびアプリのトランスポート セキュリティについても説明します。
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 787b5594476b3a1b5b3f6a0e8151a98c97443d00
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f720eae68415ab9efe021e53c9da4875209cd221
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790497"
 ---
-# <a name="web-views"></a>Web ビュー
+# <a name="web-views-in-xamarinios"></a>Xamarin.iOS の web ビュー
 
 IOS の有効期間は、Apple はアプリの開発者がアプリケーションに web 表示の機能を組み込む方法をいくつかの数をリリースしました。 ほとんどのユーザーは、iOS デバイスでは、組み込みの Safari web ブラウザーを使用し、その他のアプリからの web ビュー機能がこのエクスペリエンスと一致することを想定します。 同じにする基準、および機能のパフォーマンスを同じジェスチャを享受できます。
 

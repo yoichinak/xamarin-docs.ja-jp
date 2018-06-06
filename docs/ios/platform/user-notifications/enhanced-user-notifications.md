@@ -1,21 +1,20 @@
 ---
-title: 強化されたユーザーへの通知
-description: この記事では、すべての方法を Xamarin.iOS アプリで使用する方法と iOS 10 ユーザー通知が強化されたことについて説明します。
+title: Xamarin.iOS で強化されたユーザーへの通知
+description: この記事では、iOS 10 で導入されたユーザーへの通知フレームワークについて説明します。 これは、ローカル通知、リモートの通知、通知、管理、通知アクション、および詳細について説明します。
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: b27d415240f3b8cd25c4bc54f6d176c50e42a250
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 29c529d57d35b0ab2b7bf2e80f8d295a8d059c5e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788655"
 ---
-# <a name="enhanced-user-notifications"></a>強化されたユーザーへの通知
-
-_この記事では、すべての方法を Xamarin.iOS アプリで使用する方法と iOS 10 ユーザー通知が強化されたことについて説明します。_
+# <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin.iOS で強化されたユーザーへの通知
 
 初めて使用する iOS 10 では、ユーザー通知の配信とローカルおよびリモートの通知の処理のフレームワークを利用します。 このフレームワークを使用して、アプリまたはアプリ拡張機能をスケジュールできますローカルに関する通知の配信場所などの条件のセットまたは 1 日の時刻を指定することで。
 

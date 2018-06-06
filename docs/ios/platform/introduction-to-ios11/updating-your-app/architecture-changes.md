@@ -1,21 +1,20 @@
 ---
-title: アーキテクチャの変更
-description: IOS 11 の新機能の検証
+title: IOS 11 のアーキテクチャの変更
+description: このドキュメントでは、11、iOS での 32 ビット アプリの非推奨について説明します。 これには、64 ビット アーキテクチャをターゲットにアプリケーションを更新する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 55F62F3F-8570-402B-B7D9-2875F76CB946
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 6dd874fd803d2b3de21b0b604cbc2bafa5bf1aec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09d528ceb0654debd7c0ac8818f19c622775eac2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787436"
 ---
-# <a name="architecture-changes"></a>アーキテクチャの変更
-
-_IOS 11 の新機能の検証_
+# <a name="architecture-changes-in-ios-11"></a>IOS 11 のアーキテクチャの変更
 
 Ios 11 の注意する必要がある最大の変更点の 1 つは、アプリについては、「32 ビット サポートの廃止[Apple の](https://developer.apple.com/news/?id=06282017b)プレス リリースします。 すべての新しいアプリと既存のアプリの更新プログラムは、64 ビットをサポートする必要があります。 32 ビット アプリ**が起動しない**iOS 11 にします。
 

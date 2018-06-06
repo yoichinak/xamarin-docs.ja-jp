@@ -1,17 +1,19 @@
 ---
-title: スレッド
+title: Xamarin.iOS でのスレッド
+description: このドキュメントでは、Xamarin.iOS アプリケーションで System.Threading Api を使用する方法について説明します。 これには、応答性の高いアプリケーション、およびガベージ コレクションの作成タスク並列ライブラリで、について説明します。
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63a213a62021923ac6dae8b080f3f8931621251d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 05d015d8d255ccc8c6230b1a89e098e187b22b37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784918"
 ---
-# <a name="threading"></a>スレッド
+# <a name="threading-in-xamarinios"></a>Xamarin.iOS でのスレッド
 
 Xamarin.iOS ランタイム開発者へアクセスを提供、.NET Api では、スレッドを使用するときに明示的に両方のスレッド (`System.Threading.Thread, System.Threading.ThreadPool`) と暗黙的に非同期的なデリゲート パターンまたは BeginXXX メソッドだけでなく、完全範囲の Api をサポートするを使用して、タスク並列ライブラリです。
 

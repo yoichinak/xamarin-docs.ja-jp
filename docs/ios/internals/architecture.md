@@ -1,19 +1,20 @@
 ---
-title: iOS のアーキテクチャ
-description: Xamarin.iOS 低レベルでの探索
+title: iOS アプリのアーキテクチャ
+description: このドキュメントでは、低レベルで説明するネイティブおよびマネージ コードを対話 AOT コンパイル、セレクター、レジストラー、アプリケーションの起動、およびコード ジェネレーターで Xamarin.iOS について説明します。
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 89b4e8bde43b34c50c1cba54a4c7d8d4ff183c66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786123"
 ---
-# <a name="ios-architecture"></a>iOS のアーキテクチャ
+# <a name="ios-app-architecture"></a>iOS アプリのアーキテクチャ
 
 Xamarin.iOS アプリケーションでは、Mono 実行環境内で実行およびフルの今後の時間 (AOT) コンパイルを使用して ARM アセンブリ言語を c# コードをコンパイルします。 サイド バイ サイド実行で、 [Objective C ランタイム](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)です。 具体的には、UNIX に似たカーネル上に両方のランタイム環境を実行[XNU](https://en.wikipedia.org/wiki/XNU)、および開発者は基になるネイティブまたはマネージ システムへのアクセスを許可するユーザー コードにさまざまな Api を公開します。
 
@@ -26,7 +27,6 @@ Xamarin.iOS アプリケーションでは、Mono 実行環境内で実行およ
 Xamarin の開発時に、用語*ネイティブおよびマネージ*コードはよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)によって管理されている、実行のあるコードが、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、または Xamarin の場合: モノラル ランタイム。 これは、中間言語と呼ばれるものです。
 
 ネイティブ コードには (たとえば、OBJECTIVE-C または ARM チップでは、偶数のコンパイル AOT コード) は、特定のプラットフォームでネイティブに実行されます。 このガイドでは、AOT がネイティブ コードに、マネージ コードをコンパイルする方法について説明し、使用を増加させるバインディングを使用して、Apple の iOS Api の状態もへのアクセス方法、Xamarin.iOS アプリケーションの動作について説明します。NET の BCL と c# などの高度な言語です。
-
 
 ## <a name="aot"></a>AOT
 
@@ -62,10 +62,10 @@ Xamarin である .NET および Apple にするために必要な 2 つの独�
 
 ```csharp
  class MyViewController : UIViewController{
-    [Export ("myFunc")]
-    public void MyFunc ()
-    {
-    }
+     [Export ("myFunc")]
+     public void MyFunc ()
+     {
+     }
  }
 ```
 

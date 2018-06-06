@@ -1,16 +1,17 @@
 ---
 title: トランスポート層セキュリティ (TLS) 1.2
-description: Android、iOS、Mac で Xamarin プロジェクトの TLS 1.2 の有効化
+description: このドキュメントについて説明する方法、Xamarin.iOS、Xamarin.Android、および Xamarin.Mac プロジェクトの TLS 1.2 を有効にします。 これを for mac Visual Studio 2017 および Visual Studio の両方で実行する方法を示しています
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 8e27801a9feb8cf7ba1534f88479dbf7259c3e85
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6f27d7713f2fe6426fa28f268b8e97838893aa76
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781398"
 ---
 # <a name="transport-layer-security-tls-12"></a>トランスポート層セキュリティ (TLS) 1.2
 
@@ -19,7 +20,7 @@ ms.lasthandoff: 05/09/2018
 > [!WARNING]
 > **年 4 月、2018年**– セキュリティの向上のため要件、PCI コンプライアンスを含むメジャー クラウド プロバイダーおよび TLS バージョン 1.2 より前のサポートを停止する web サーバーが必要です。  Xamarin プロジェクトが以前のバージョンの Visual Studio の既定値は、古いバージョンの TLS を使用して作成します。
 >
-> アプリがこれらのサーバーと、サービスの操作を続行することを確認するために**、Xamarin のプロジェクトに、次の設定を使用して、再構築し、アプリを再展開を更新する必要があります**をユーザーにします。
+> アプリがこれらのサーバーと、サービスの操作を続行することを確認するために **、Xamarin のプロジェクトに、次の設定を使用して、再構築し、アプリを再展開を更新する必要があります**をユーザーにします。
 
 プロジェクトを参照する必要があります、 **System.Net.Http**アセンブリ次に示すように構成するとします。
 

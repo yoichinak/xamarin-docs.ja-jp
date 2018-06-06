@@ -7,12 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/02/2018
-ms.openlocfilehash: b5de9d673a348ddd4b939ae387257f835b37117a
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.date: 06/02/2018
+ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732867"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK ツールへの変更
 
@@ -20,7 +21,7 @@ _Android SDK がインストールされている API レベルおよび Avd を
 
 ## <a name="changes-to-android-sdk-tooling"></a>Android SDK ツールへの変更
 
-Android SDK ツールの最新バージョンは、Google が新しい CLI (コマンド ライン インターフェイス) ツールを優先するため既存と SDK の AVD マネージャーを削除します。 **Android**プログラムが削除され、過去の Android SDK ツールのバージョン 25.2.5 Mac と Xamarin for Visual Studio の以前のバージョンの Visual Studio で Google GUI (グラフィカル ユーザー インターフェイス) の管理者が機能しなくなります。 たとえば、使用すると、 **android**コマンドラインを使用してプログラムは、次のようなエラー メッセージになります。
+Android SDK ツールの最新バージョンは、Google が新しい CLI (コマンド ライン インターフェイス) ツールを優先するため既存と SDK の AVD マネージャーを削除します。 **Android**プログラムが削除され、過去の Android SDK ツールのバージョン 25.2.5 Mac と Visual Studio Tools for Xamarin の以前のバージョンの Visual Studio で Google GUI (グラフィカル ユーザー インターフェイス) の管理者が機能しなくなります。 たとえば、使用すると、 **android**コマンドラインを使用してプログラムは、次のようなエラー メッセージになります。
 
 ```shell
 The "android" command is deprecated.
@@ -37,7 +38,7 @@ Visual Studio と Visual Studio for Mac Xamarin の提供が中止された Goog
 
 -   Android SDK ツール、プラットフォーム、および Xamarin.Android アプリの開発に必要なその他のコンポーネントをダウンロードするには、使用、 [Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md)従来の Google SDK Manager ではなくです。
 
--   作成し、Android 仮想デバイスを構成するには、 [Xamarin Android デバイス マネージャー](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)レガシの Google エミュレーター マネージャーではなくです。
+-   作成し、Android 仮想デバイスを構成するには、 [Android デバイス マネージャー](~/android/get-started/installation/android-emulator/device-manager.md)レガシの Google エミュレーター マネージャーではなくです。
 
 これらのツールは機能的には、Google の GUI ベース マネージャー置き換わるものです。
 
@@ -69,7 +70,7 @@ Visual Studio と Visual Studio for Mac Xamarin の提供が中止された Goog
 ## <a name="related-links"></a>関連リンク
 
 - [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)
-- [Android デバイス マネージャー](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
+- [Android デバイス マネージャー](~/android/get-started/installation/android-emulator/device-manager.md)
 - [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)
 - [SDK Tools のリリース ノート (Google)](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

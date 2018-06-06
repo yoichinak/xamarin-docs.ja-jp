@@ -1,18 +1,20 @@
 ---
-title: 利用できる製品の購入
+title: Xamarin.iOS で利用できる製品の購入
+description: このドキュメントでは、Xamarin.iOS で利用できる製品について説明します。 利用できる製品は 1 回のゲームで通貨などの機能です。
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c2c84c044ff41cced2c97e414502faff45341ec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9c53af1055736512c42f83a58011b7b3a42bcd5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786978"
 ---
-# <a name="purchasing-consumable-products"></a>利用できる製品の購入
+# <a name="purchasing-consumable-products-in-xamarinios"></a>Xamarin.iOS で利用できる製品の購入
 
 最も単純な 'restore' 要件が存在しないため、実装の消耗製品である場合です。 これらは、ゲーム内の通貨や機能の 1 つを使用して一部のような製品に役立ちます。 ユーザーが消耗製品 over-over をもう一度購入再ことができます。
 
@@ -23,8 +25,6 @@ ms.lasthandoff: 04/04/2018
 [![購買プロセスの視覚化](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  基本的なワークフローとは。   
-   
-   
    
  1. アプリを追加、`SKPayment`をキューにします。 ユーザーの Apple ID の入力を求めし、する、支払いの確認を求めに必要な場合です。   
    

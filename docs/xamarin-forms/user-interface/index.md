@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 84106cf8f699616fae772a6f149681840abca0e5
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733049"
 ---
 # <a name="user-interface"></a>ユーザー インターフェイス
 
@@ -24,6 +25,10 @@ Xamarin.Forms には、使用したときにも複雑なアニメーションを
 ## <a name="boxviewboxviewmd"></a>[BoxView](boxview.md)
 
 `BoxView`だけ単純な色付きの四角形が、装飾的な項目について、基本的なグラフィックス、および interative タッチ入力を取得するためも使用できます。
+
+## <a name="buttonbuttonmd"></a>[Button](button.md)
+
+`Button`がタップまたは特定のタスクを実行するアプリケーションに指示するクリックに応答します。
 
 ## <a name="colorscolorsmd"></a>[色](colors.md)
 

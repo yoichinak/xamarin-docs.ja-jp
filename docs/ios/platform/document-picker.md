@@ -1,26 +1,25 @@
 ---
-title: ドキュメントの選択
-description: ドキュメント ピッカー ビュー コント ローラーは、ユーザーがアプリケーションのサンド ボックス外にあるファイルへのアクセスを許可します。 これは、アプリ間でドキュメントを共有するための簡単なメカニズムです。 複雑なワークフローは、ユーザーが複数のアプリケーションの 1 つのドキュメントを編集できるので、こともできます。 この記事を紹介 Xamarin.iOS アプリケーションでドキュメント ピッカーを使用しており、サポートするように iCloud ドキュメントの変更が必要です。
+title: Xamarin.iOS でドキュメントの選択
+description: このドキュメントでは、iOS ドキュメント ピッカーをについて説明し、Xamarin.iOS で使用する方法について説明します。 ICloud、ドキュメント、一般的なセットアップ コード、ドキュメント プロバイダー拡張機能、および詳細を見てを使用します。
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786887"
 ---
-# <a name="document-picker"></a>ドキュメントの選択
-
-_ドキュメント ピッカー ビュー コント ローラーは、ユーザーがアプリケーションのサンド ボックス外にあるファイルへのアクセスを許可します。これは、アプリ間でドキュメントを共有するための簡単なメカニズムです。複雑なワークフローは、ユーザーが複数のアプリケーションの 1 つのドキュメントを編集できるので、こともできます。この記事を紹介 Xamarin.iOS アプリケーションでドキュメント ピッカーを使用しており、サポートするように iCloud ドキュメントの変更が必要です。_
+# <a name="document-picker-in-xamarinios"></a>Xamarin.iOS でドキュメントの選択
 
 ドキュメント ピッカーにより、アプリ間で共有するドキュメントです。 ICloud または別のアプリのディレクトリに、これらのドキュメントを格納可能性があります。 ドキュメントのセットを使用して共有[ドキュメント プロバイダーの拡張](~/ios/platform/extensions.md)ユーザーが自分のデバイスにインストールします。 
 
 アプリとクラウド間で同期されているドキュメントを保持するための難易度のために必要な複雑さ量を導入します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 この記事で紹介する手順を完了する、次が必要。
 
@@ -39,7 +38,7 @@ _ドキュメント ピッカー ビュー コント ローラーは、ユーザ
 -  iOS デバイスは、Mac OS iCloud フォルダーの内容にアクセスできます。
 
 > [!IMPORTANT]
-> Apple[ツールを提供](https://developer.apple.com/support/allowing-users-to-manage-data/)開発者が、欧州連合の一般的なデータ保護規制 (GDPR) を適切に処理します。
+> Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
 ## <a name="what-is-a-document"></a>ドキュメントとは何ですか。
 

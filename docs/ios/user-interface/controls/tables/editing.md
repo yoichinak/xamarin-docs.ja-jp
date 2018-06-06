@@ -1,18 +1,20 @@
 ---
-title: 編集
+title: Xamarin.iOS とテーブルの編集
+description: このドキュメントでは、Xamarin.iOS 内のテーブルを編集する方法について説明します。 これには、削除、編集モード、および行の挿入にスワイプしてがについて説明します。
 ms.prod: xamarin
 ms.assetid: EC197F25-E865-AFA3-E5CF-B33FAB7744A0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 161de0209217dde671b976afad90eaad18d8c7b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28ebf1157a1bfc9f7bd910fd11365b29cecb9529
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789991"
 ---
-# <a name="editing"></a>編集
+# <a name="editing-tables-with-xamarinios"></a>Xamarin.iOS とテーブルの編集
 
 内のメソッドをオーバーライドすることでテーブルの編集機能が有効になっている、`UITableViewSource`サブクラスです。 最も簡単な編集の動作は、1 つのメソッドのオーバーライドで実装できるスワイプ-delete ジェスチャです。
 複雑な編集 (移動行を含む) は、編集モードでテーブルを実行できます。
@@ -129,21 +131,21 @@ table.SetEditing (false, true);
 
 ## <a name="row-insertion-editing-style"></a>行挿入編集スタイル
 
-テーブル内の行の挿入は珍しいことでユーザー インターフェイス: 標準的な iOS アプリの主要な例は、 **Edit Contact**画面。 このスクリーン ショットは、行の挿入機能のしくみを示しています: 編集モードは、追加の行を (がクリックされたとき) は、データに追加行を挿入します。 編集が完了すると、一時的な**(新規追加)**行は削除されます。
+テーブル内の行の挿入は珍しいことでユーザー インターフェイス: 標準的な iOS アプリの主要な例は、 **Edit Contact**画面。 このスクリーン ショットは、行の挿入機能のしくみを示しています: 編集モードは、追加の行を (がクリックされたとき) は、データに追加行を挿入します。 編集が完了すると、一時的な **(新規追加)** 行は削除されます。
 
  [![](editing-images/image12.png "一時的なが新規に追加の編集が完了したら、行が削除されます。")](editing-images/image12.png#lightbox)
 
 さまざまな方法の数がある`UITableViewSource`テーブルの編集モードの動作に影響を与えます。 これらのメソッドは、コード例に次のように実装されています。
 
 -   **EditingStyleForRow** – 返します`UITableViewCellEditingStyle.Delete`データ、および返しますを含む行の`UITableViewCellEditingStyle.Insert`(具体的には、挿入ボタンとして動作に追加されます) を最後の行にします。 
--   **CustomizeMoveTarget** – ユーザーがセルこの省略可能なメソッドからの戻り値は、好みの場所を上書きできますを移動します。 つまり、'ドロップ' 防ぐことができます、セルなどの任意の行が後に移動されていることを防止する次の使用例 – 特定の位置に、 **(新規追加)**行です。 
+-   **CustomizeMoveTarget** – ユーザーがセルこの省略可能なメソッドからの戻り値は、好みの場所を上書きできますを移動します。 つまり、'ドロップ' 防ぐことができます、セルなどの任意の行が後に移動されていることを防止する次の使用例 – 特定の位置に、 **(新規追加)** 行です。 
 -   **CanMoveRow** true を戻り値 – 移動 'ハンドル' または移動を回避するには false を有効にします。 例では、最後の行は、非表示に必要なのでサーバーにのみ挿入ボタンとして移動 'ハンドル' をいます。 
 
 
 'Insert' の行を追加し、必要なくなった場合でもう一度削除する 2 つのカスタム メソッドを追加することもできます。 呼び出される、**編集**と**完了**ボタン。
 
 -   **WillBeginTableEditing** –、**編集**ボタンは、呼び出しに操作された`SetEditing`テーブルを編集モードにします。 これは、場合、トリガー、WillBeginTableEditing メソッドの場所を表示、 **(新規追加)** 'insert button' として機能するテーブルの最後の行。 
--   **DidFinishTableEditing** – [終了] ボタンの影響を受けると`SetEditing`編集モードをオフにするためにもう一度呼び出されます。 削除するコード例、 **(新規追加)**テーブルの行を編集する場合は必要なくなりました。 
+-   **DidFinishTableEditing** – [終了] ボタンの影響を受けると`SetEditing`編集モードをオフにするためにもう一度呼び出されます。 削除するコード例、 **(新規追加)** テーブルの行を編集する場合は必要なくなりました。 
 
 
 サンプル ファイルでこれらのメソッド オーバーライドが実装されている**TableEditModeAdd/Code/TableSource.cs**:
@@ -173,7 +175,7 @@ public override bool CanMoveRow (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-これら 2 つのカスタム メソッドを使用して追加および削除、 **(新規追加)**行とテーブルの編集モードを有効または無効にします。
+これら 2 つのカスタム メソッドを使用して追加および削除、 **(新規追加)** 行とテーブルの編集モードを有効または無効にします。
 
 ```csharp
 public void WillBeginTableEditing (UITableView tableView)

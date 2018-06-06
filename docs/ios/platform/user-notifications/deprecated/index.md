@@ -1,26 +1,25 @@
 ---
-title: 非推奨の通知のテクノロジ
+title: Xamarin.iOS で非推奨の通知のテクノロジ
+description: このドキュメントでは、iOS 10 で導入された、ユーザーへの通知フレームワークを優先するため非推奨になった iOS 通知テクノロジについて説明します。
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2016
-ms.openlocfilehash: eff1d999e705aa493d0481e34ead3b9b81d434f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4becc5e296fb6e2496d9ffd863f7137419480262
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788554"
 ---
-# <a name="deprecated-notification-technologies"></a>非推奨の通知のテクノロジ
+# <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin.iOS で非推奨の通知のテクノロジ
 
 このセクションでは、ローカルを実装し、Xamarin.iOS で通知をプッシュする方法を示します。 IOS 通知のさまざまな UI 要素について説明するされ API について説明を作成して、メッセージを表示するのに含まれているのです。
 
 > [!IMPORTANT]
 > このセクションの情報が iOS 9 に関連し、前に、ままになっていますここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降では、次を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモートの通知の両方をサポートするためです。
-
-
-
 
 ## <a name="sections"></a>セクション
 

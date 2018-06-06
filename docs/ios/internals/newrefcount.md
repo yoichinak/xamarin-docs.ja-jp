@@ -1,17 +1,19 @@
 ---
-title: 新しい参照カウントのシステム
+title: 新しい参照の追加 Xamarin.iOS でシステムのカウント
+description: このドキュメントでは、Xamarin の強化された参照がカウントの Xamarin.iOS のすべてのアプリケーションで既定で有効になっているシステムについて説明します。
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 00a792fb6ee55d5937046ebb321ffcb3aa8bdbd5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f2e40ca1fdd4a02d62e45004b75f3abefda781a5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786253"
 ---
-# <a name="new-reference-counting-system"></a>新しい参照カウントのシステム
+# <a name="new-reference-counting-system-in-xamarinios"></a>新しい参照の追加 Xamarin.iOS でシステムのカウント
 
 Xamarin.iOS 9.2.1 には、既定ですべてのアプリケーションにシステムをカウント強化された参照が導入されました。 追跡し、Xamarin.iOS の以前のバージョンで修正が困難でした多くのメモリの問題を回避するのには使用できます。
 

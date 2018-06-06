@@ -6,12 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 762a604186cf8657ce2f3732081cd82612b1b7ef
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732997"
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
@@ -29,6 +30,7 @@ iOS では、Xamarin.Forms に次のプラットフォーム仕様が含まれ�
 - [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) のステータス バーの可視性を設定します。 詳細については、「[Page でのステータスバーの可視性の設定](#set_status_bar_visibility)」を参照してください。
 - [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)がタッチ ジェスチャを処理するか、そのコンテンツに渡すかを制御します。 詳細については、次を参照してください。 [、ScrollView でのコンテンツの調整を遅らせること](#delay_content_touches)です。
 - 区分線のスタイルを設定、 [ `ListView`](xref:Xamarin.Forms.ListView)です。 詳細については、次を参照してください。 [ListView に区分線のスタイルを設定](#listview-separatorstyle)です。
+- サポートされているレガシの色のモードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)です。 詳細については、次を参照してください。[レガシ色のモードを無効にすると](#legacy-color-mode)です。
 
 <a name="blur" />
 
@@ -509,6 +511,47 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 > [!NOTE]
 > 区分線のスタイル設定されると`FullWidth`に変更することはできません`Default`実行時にします。
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>レガシ色のモードを無効にします。
+
+Xamarin.Forms ビューの一部の機能、従来の色のモード。 このモードでときに、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)ビューのプロパティに設定されて`false`ビューには、既定のネイティブ色無効の状態を使用して、ユーザーが設定した色がよりも優先されます。 旧バージョンと互換性のため、この従来の色のモードはサポートされているビューの既定の動作のままです。
+
+このプラットフォームに固有では、ビューが無効になっている場合でも、ユーザーがビューに設定した色が維持されるよう、この従来の色のモードが無効にします。 使用される XAML で設定して、 [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty)添付プロパティ`false`:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                ios:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+または、fluent API を使用して、c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+_legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用して、従来の色のモードが無効になっているかどうか。 さらに、 [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))を従来の色のモードが無効になっているかどうかを返すメソッドを使用できます。
+
+結果は、レガシ カラー モードを無効にすること、ように、ユーザーがビューに設定した色もビューが無効になっています。
+
+![](ios-images/legacy-color-mode-disabled.png "従来の色のモードが無効になっています")
+
+> [!NOTE]
+> 設定するときに、 [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)レガシ色のモードが完全に無視されますをビューにします。 表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)です。
 
 ## <a name="summary"></a>まとめ
 
