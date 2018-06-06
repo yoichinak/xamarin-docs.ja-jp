@@ -1,18 +1,20 @@
 ---
-title: コアのスポット ライトの検索
+title: Xamarin.iOS の中核となるメディアの検索
+description: このドキュメントでは、Xamarin.iOS アプリケーションでのコアのスポット ライトを使用して、アプリ内のコンテンツへのリンクを提供する方法について説明します。 これには、作成、復元、更新、および検索可能な項目を削除する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 0074cfcdc4a80f66f64d12f8e5c0a5e81ab2b8a1
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: a8bc3aaa43d7830b0a3baa0768d495458b1ecfad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788040"
 ---
-# <a name="search-with-core-spotlight"></a>コアのスポット ライトの検索
+# <a name="search-with-core-spotlight-in-xamarinios"></a>Xamarin.iOS の中核となるメディアの検索
 
 コア メディアは、iOS 9 を追加、編集、またはアプリ内のコンテンツへのリンクを削除するデータベースのような API を表示するための新しいフレームワークです。 スポット ライトのコアを使用して追加された項目は、iOS デバイスで Spotlight 検索で使用できるになります。
 

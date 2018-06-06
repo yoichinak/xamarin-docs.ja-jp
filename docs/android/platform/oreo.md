@@ -7,12 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732763"
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -25,7 +26,7 @@ _Android の最新バージョンのアプリを開発する Xamarin.Android を
 この記事は、Android の 8.0 Oreo 用 Xamarin.Android アプリの開発を開始するために構成されます。 これには、必要な更新プログラムをインストール、SDK を構成およびテスト用エミュレーター (またはデバイス) を作成する方法について説明します。 また、Android Oreo 機能 Xamarin.Android アプリで使用する方法を説明するサンプル アプリへのリンクを Android 8.0 Oreo の新機能の概要を示します。
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 次が機能を使用する Android Oreo Xamarin ベースのアプリに必要です。
 
@@ -133,8 +134,8 @@ Android SDK ツール 26.0 をインストールした後既定 Google GUI ベ�
 
 Google がスタンドアロン 26.0 およびそれ以降の API をサポートする GUI AVD マネージャーが用意されていませんので、このメッセージが表示されます。 Android の 8.0 Oreo を Xamarin Android エミュレーター マネージャーまたはコマンドラインを使用する必要があります`avdmanager`Android Oreo の仮想デバイスを作成するツールです。
 
-Xamarin Android デバイス マネージャーを作成し、仮想デバイスの管理を使用するのを参照してください。 [Xamarin Android デバイス マネージャー](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)です。
-Xamarin Android エミュレーター マネージャーなしの仮想デバイスを作成するには、次のセクションで、手順を実行します。
+Android デバイス マネージャーを作成し、仮想デバイスの管理を使用するのを参照してください。[仮想デバイスの管理、Android デバイス マネージャーで](~/android/get-started/installation/android-emulator/device-manager.md)です。
+仮想デバイスを Android デバイス マネージャーを含まないを作成するには、次のセクションで、手順を実行します。
 
 
 #### <a name="creating-virtual-devices-using-avdmanager"></a>仮想デバイスを使用して avdmanager を作成します。
@@ -190,7 +191,7 @@ Xamarin Android エミュレーター マネージャーなしの仮想デバイ
 
 -----
 
-テストとデバッグ用の Android エミュレーターの構成の詳細については、次を参照してください。 [Google Android エミュレーター](~/android/deploy-test/debugging/android-sdk-emulator/index.md)です。
+テストとデバッグ用の Android エミュレーターの構成の詳細については、次を参照してください。 [Google Android エミュレーターでデバッグ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)です。
 
 Nexus やピクセルなどの物理デバイスを使用している場合か、無線 (OTA) 更新プログラムを自動でデバイスを更新またはシステム イメージをダウンロードでき、デバイスを直接フラッシュできます。 Android Oreo にデバイスを手動で更新の詳細については、次を参照してください。 [Nexus およびピクセル デバイスの工場出荷時イメージ](https://developers.google.com/android/images)です。
 

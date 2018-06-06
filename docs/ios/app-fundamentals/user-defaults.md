@@ -1,19 +1,20 @@
 ---
-title: ユーザーの既定値の操作
-description: この記事では、Xamarin の iOS アプリまたは拡張機能に既定の設定を保存する NSUserDefault の扱いについて説明します。
+title: Xamarin.iOS でユーザーの既定値の操作
+description: この記事では、Xamarin iOS のアプリや拡張機能に既定の設定を保存する NSUserDefaults の扱いについて説明します。 高レベルで NSUserDefaults をについて説明し、値を読み書きする方法について説明します。
 ms.prod: xamarin
 ms.assetid: DAE7FFC4-B8C9-4D9E-886A-9B2388452EEB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: aa28e7d5636b06c8ab1e46457537431b5d1c7f1a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3befe77e990887773d408a3b9b6ec2e8cd371540
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784615"
 ---
-# <a name="working-with-user-defaults"></a>ユーザーの既定値の操作
+# <a name="working-with-user-defaults-in-xamarinios"></a>Xamarin.iOS でユーザーの既定値の操作
 
 _この記事では、Xamarin.iOS アプリや拡張機能に既定の設定を保存する NSUserDefault の扱いについて説明します。_
 

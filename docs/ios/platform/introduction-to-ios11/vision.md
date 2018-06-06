@@ -1,18 +1,20 @@
 ---
-title: ビジョン フレームワーク
+title: Xamarin.iOS でビジョン フレームワーク
+description: このドキュメントは、iOS 11 を使用する方法を説明 Xamarin.iOS でビジョン フレームワークです。 具体的には、四角形の検出についても説明し、検出に直面しています。
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/31/2016
-ms.openlocfilehash: 698bf829128cff1263e98b49d29a77b75ec32ad9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c44c4b3ab12c1ba448f1befb6f831f5ad9119f18
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787420"
 ---
-# <a name="vision-framework"></a>ビジョン フレームワーク
+# <a name="vision-framework-in-xamarinios"></a>Xamarin.iOS でビジョン フレームワーク
 
 ビジョン フレームワークは、新しいイメージが iOS を含む 11 の機能を処理の数を追加します。
 

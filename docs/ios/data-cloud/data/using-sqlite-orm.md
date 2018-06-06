@@ -1,20 +1,20 @@
 ---
-title: IOS で SQLite.NET の使用
-description: SQLite.NET PCL NuGet ライブラリでは、Xamarin.iOS アプリ用の単純なデータ アクセス メカニズムを提供します。
+title: Xamarin.iOS で SQLite.NET の使用
+description: SQLite.NET PCL NuGet ライブラリでは、Xamarin.iOS アプリ用の単純なデータ アクセス メカニズムを提供します。 このドキュメントでは、このライブラリを使用する方法の概要を示します。
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/18/2018
-ms.openlocfilehash: 861b024a7ff5dd07752662cc45306b6533cd38bd
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 2a96a7c3f9bf02110bc5e2b21e26e71fe9d84d83
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34689502"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784986"
 ---
-# <a name="using-sqlitenet-with-ios"></a>IOS で SQLite.NET の使用
+# <a name="using-sqlitenet-with-xamarinios"></a>Xamarin.iOS で SQLite.NET の使用
 
 Xamarin で推奨される SQLite.NET ライブラリとは、格納および iOS デバイス上のローカル SQLite データベース内のオブジェクトを取得できる基本的な ORM です。
 オブジェクト リレーショナル マッピング用 -保存し、「オブジェクト」を SQL ステートメントを記述することがなく、データベースから取得できる API ORM を意味します。

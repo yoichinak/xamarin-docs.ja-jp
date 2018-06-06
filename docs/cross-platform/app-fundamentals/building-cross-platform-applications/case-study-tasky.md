@@ -1,20 +1,19 @@
 ---
-title: 'ケース スタディ: Tasky'
-description: このドキュメントでは、Tasky Portable サンプル アプリケーションでのクロス プラットフォーム アプリケーションの構築の基本原則が適用される方法について説明します。 この要素は、再利用するための一般的なコードを記述して、iOS、Android、Windows Phone プラットフォームを対象とするプラットフォーム固有のプロジェクトを実装するモバイル アプリケーションの設計に関連します。
+title: 'クロスプラット フォーム アプリのケース スタディ: Tasky'
+description: このドキュメントでは、Tasky Portable サンプル アプリケーションに設計されていて、クロス プラットフォーム モバイル アプリケーションとしてビルド方法について説明します。 これは、アプリの要件、インターフェイス、データ モデル、コア機能、実装、および詳細について説明します。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 48650445d06ad3bc7ca6d4da84c9b8837f8a0f88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782236"
 ---
-# <a name="case-study-tasky"></a>ケース スタディ: Tasky
-
-_このドキュメントでは、Tasky Portable サンプル アプリケーションでのクロス プラットフォーム アプリケーションの構築の基本原則が適用される方法について説明します。この要素は、再利用するための一般的なコードを記述して、iOS、Android、Windows Phone プラットフォームを対象とするプラットフォーム固有のプロジェクトを実装するモバイル アプリケーションの設計に関連します。_
+# <a name="cross-platform-app-case-study-tasky"></a>クロスプラット フォーム アプリのケース スタディ: Tasky
 
 *Tasky* *ポータブル*単純 to do リスト アプリケーションです。 このドキュメントは、どのが設計、構築できる、次のガイダンスについて説明します、[クロス プラットフォーム アプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)ドキュメント。 次の領域について説明します。
 
@@ -26,7 +25,7 @@ _このドキュメントでは、Tasky Portable サンプル アプリケーシ
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 アプリケーションの設計の最初の手順では、目的の機能を識別します。 高度な目標を指定できますまたはユース ケースを詳しく説明します。 Tasky 簡単な機能の要件があります。
 

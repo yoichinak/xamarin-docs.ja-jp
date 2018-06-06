@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials 接続
-description: 接続クラスには、デバイスのネットワークの状態での変更の監視には、現在のネットワーク アクセス、および現在の接続方法を確認することができます。
+title: 'Xamarin.Essentials: 接続'
+description: Xamarin.Essentials で接続クラスには、デバイスのネットワークの状態での変更の監視には、現在のネットワーク アクセス、および現在の接続方法を確認することができます。
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: d2184f1e9817b473eac1d0b69a7637bc862de4cf
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782867"
 ---
-# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials 接続
+# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: 接続
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 

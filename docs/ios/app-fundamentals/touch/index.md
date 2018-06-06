@@ -1,22 +1,20 @@
 ---
-title: タッチ
-description: 現在のデバイスの多くのタッチ スクリーンでは、迅速かつ効率的に、自然で直感的な方法でデバイスと対話するようにします。 この連携では簡単なタッチの検出にのみ限定されません – もジェスチャを使用して行うことができます。 たとえば、ピンチ、ズーム ジェスチャは、はさむ、ユーザーは拡大または縮小する 2 本の指で画面の一部で – この非常に一般的な例を示します。このガイドでは、タッチとジェスチャで iOS を調べます。
+title: Xamarin.iOS アプリでのタッチの処理
+description: このドキュメントには、タッチ、マルチタッチ、ジェスチャ、および 3 D Touch Xamarin.iOS アプリで使用する方法を説明するガイドへのリンクがします。
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: f34b502e3c0d67f33d41bc489f7ec1d93356af99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb8dce8b13345c13a6f95ae7784bd135e7d1f1f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784163"
 ---
-# <a name="touch"></a>タッチ
-
-_現在のデバイスの多くのタッチ スクリーンでは、迅速かつ効率的に、自然で直感的な方法でデバイスと対話するようにします。この連携では簡単なタッチの検出にのみ限定されません – もジェスチャを使用して行うことができます。たとえば、ピンチ、ズーム ジェスチャは、はさむ、ユーザーは拡大または縮小する 2 本の指で画面の一部で – この非常に一般的な例を示します。このガイドでは、タッチとジェスチャで iOS を調べます。_
-
+# <a name="handling-touch-in-xamarinios-apps"></a>Xamarin.iOS アプリでのタッチの処理
 
 その他のモバイル プラットフォームと同様には、iOS は、タッチを処理する方法の番号を持ちます。 マルチタッチをサポートして、画面上の連絡先の多数のポイント — や複雑なジェスチャ。 このガイドでは、いくつかの概念、および iOS でのタッチとジェスチャの実装の詳細について説明します。
 
@@ -38,8 +36,6 @@ iOS でのタッチ データをカプセル化、`UITouch`クラスは、一連
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Haptic フィードバックの提供](~/ios/user-interface/ios-ui/haptic-feedback.md)
-
-
 
 ## <a name="related-links"></a>関連リンク
 

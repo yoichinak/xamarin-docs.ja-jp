@@ -1,18 +1,20 @@
 ---
-title: イメージを表示します。
+title: Xamarin.iOS でイメージを表示します。
+description: このドキュメントでは、Xamarin.iOS でイメージを表示する方法について説明します。 プログラムまたは iOS デザイナーによって、アプリへの追加のイメージがについて説明します。
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 406cfe813cbb58111769203f3b6c3fb0c2edad3c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f42cc5e4ab26c4c53d96e96420cbbba8036d6b5d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789831"
 ---
-# <a name="displaying-images"></a>イメージを表示します。
+# <a name="displaying-images-with-xamarinios"></a>Xamarin.iOS でイメージを表示します。
 
 2 つの手順をアプリにイメージを追加することが必要です最初に、イメージをプロジェクトに追加。次に、コントロールと、画面に表示するコードを追加します。 参照してください、[イメージを操作](~/ios/app-fundamentals/images-icons/index.md)カバレッジ イメージ Xamarin.iOS で処理の詳細な記事。
 

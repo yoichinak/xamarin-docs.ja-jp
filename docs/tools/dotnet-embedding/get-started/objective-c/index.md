@@ -1,21 +1,23 @@
 ---
 title: Objective C の概要
+description: このドキュメントについて説明する方法の使用を開始 .NET を埋め込む目的 C. NuGet、およびサポートされるプラットフォームから .NET の埋め込みをインストールする要件についても説明します。
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 0c2d92f52000bbc6d9d4ea3b07112795aa98bd0a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c5db0a55cc1d2597837ae5feb2c5167a0a21b494
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792981"
 ---
 # <a name="getting-started-with-objective-c"></a>Objective C の概要
 
 これは、サポートされているすべてのプラットフォームの基本についての内容を含む Objective C の作業の開始ページです。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Objective C では、.NET の埋め込みを使用するには、Mac を実行している必要があります。
 

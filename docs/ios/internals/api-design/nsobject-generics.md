@@ -1,18 +1,20 @@
 ---
-title: NSObject の汎用サブクラス
+title: Xamarin.iOS で NSObject の汎用サブクラス
+description: このドキュメントを作成する方法について説明 NSObject の汎用のサブクラスを作成します。 できるとことはできません、静的なレジストラーをについて説明し、パフォーマンスを確認を受け取るものを確認します。
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 89df751d74b9b54ae8138d2e1b24c61d82c3cac8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9caad9d4990225a0468be8ee4987eaa9fea0c118
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786484"
 ---
-# <a name="generic-subclasses-of-nsobject"></a>NSObject の汎用サブクラス
+# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Xamarin.iOS で NSObject の汎用サブクラス
 
 ## <a name="using-generics-with-nsobjects"></a>NSObjects にジェネリックを使用します。
 
@@ -186,7 +188,7 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**理由:**ジェネリック メソッドの場合は t ですジェネリック型引数を使用する型を把握できる Xamarin.iOS ランタイム ニーズと同じように。
+**理由:** ジェネリック メソッドの場合は t ですジェネリック型引数を使用する型を把握できる Xamarin.iOS ランタイム ニーズと同じように。
 
 インスタンス自体が使用されるメンバーのインスタンス (インスタンス ジェネリックされませんので<T>、ジェネリックは常に<SomeSpecificClass>) が静的メンバーにこの情報が存在しません。
 

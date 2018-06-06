@@ -1,5 +1,5 @@
 ---
-title: プログラムによるレイアウト制約
+title: Xamarin.iOS でプログラムによるレイアウト制約
 description: このガイドは、iOS デザイナー内でそれらを作成する代わりに c# コードでの自動レイアウトの制約を iOS での作業を表示します。
 ms.prod: xamarin
 ms.assetid: 119C8365-B470-4CD4-85F7-086F0A46DCBB
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 093101d09f5ffff637b034b3b4794aa6e785a0df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a40a3c66369902d2d6f8dbee5a6a7e9bad8a9e05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790602"
 ---
-# <a name="programmatic-layout-constraints"></a>プログラムによるレイアウト制約
+# <a name="programmatic-layout-constraints-in-xamarinios"></a>Xamarin.iOS でプログラムによるレイアウト制約
 
 _このガイドは、iOS デザイナー内でそれらを作成する代わりに c# コードでの自動レイアウトの制約を iOS での作業を表示します。_
 

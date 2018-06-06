@@ -1,5 +1,5 @@
 ---
-title: PassKit
+title: Xamarin.iOS で PassKit
 description: ウォレットを格納し、バーコードと '現実の世界' でそれらの電話に顧客のトランザクションをリンクするその他の情報を表示するシステムの iOS アプリです。
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0a4fd39e312cf96ac59eae97b1212f001c4ef799
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788349"
 ---
-# <a name="passkit"></a>PassKit
+# <a name="passkit-in-xamarinios"></a>Xamarin.iOS で PassKit
 
 _ウォレットを格納し、バーコードと '現実の世界' でそれらの電話に顧客のトランザクションをリンクするその他の情報を表示するシステムの iOS アプリです。_
 
@@ -24,7 +25,7 @@ _ウォレットを格納し、バーコードと '現実の世界' でそれら
  [![](passkit-images/image1.png "スマート フォン上のすべてのパスを分類して格納、ウォレット")](passkit-images/image1.png#lightbox)
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このドキュメントで説明するストア キット機能は、iOS 6 および Xamarin.iOS 6.0 と共に、Xcode 4.5 が必要です。
 
@@ -94,9 +95,9 @@ _ウォレットを格納し、バーコードと '現実の世界' でそれら
 -   **pass.json** -必須です。 パスのすべての情報が含まれています。
 -   **manifest.json** -必須です。 シグネチャ ファイルを除く、パス内の各ファイルとファイル (manifest.json) の SHA1 ハッシュが含まれています。
 -   **署名**-必須です。 署名によって作成された、 `manifest.json` iOS プロビジョニング ポータルで生成された証明書を持つファイルです。
--  **logo.png** – optional.
+-  **logo.png** -省略可能です。
 -  **background.png** -省略可能です。
--  **icon.png** – optional.
+-  **icon.png** -省略可能です。
 -  **ローカライズ可能な文字列ファイル**-省略可能です。
 
 
@@ -237,7 +238,7 @@ App Store を入力するパスの順序では、開発者アカウントをリ�
 
 それぞれに渡す型 ID を設定するには、まず_型_のサポートされるパス。 ID を渡す (または型を渡す識別子) は、パスの一意の識別子を作成します。 この ID は証明書を使用して、開発者アカウントでパスをリンクを使用します。
 
-1. [IOS プロビジョニング ポータルの「証明書識別子、およびプロファイル](https://developer.apple.com/account/overview.action)、に移動**識別子**選択**型 Id を渡す**です。 選択し、 **+**パスの種類を作成するにはボタン: [ ![ ](passkit-images/passid.png "新しいパスの種類を作成します。")](passkit-images/passid.png#lightbox)
+1. [IOS プロビジョニング ポータルの「証明書識別子、およびプロファイル](https://developer.apple.com/account/overview.action)、に移動**識別子**選択**型 Id を渡す**です。 選択し、 **+** パスの種類を作成するにはボタン: [ ![ ](passkit-images/passid.png "新しいパスの種類を作成します。")](passkit-images/passid.png#lightbox)
 
 2.   提供、**説明**(名) と**識別子**(一意の文字列) のパス。 型 Id を渡すすべてが文字列で始まる必要がありますを`pass.`使用して、この例では`pass.com.xamarin.coupon.banana`: [ ![ ](passkit-images/register.png "説明と識別子を指定")](passkit-images/register.png#lightbox)
 
@@ -384,7 +385,7 @@ Pass.json を開き、JSON を編集します。 更新する必要がありま�
 
 -  **ファイル拡張子**-.pkpass
 -  **MIME の種類**-application/vnd.apple.pkpass
--  **UTI** – com.apple.pkpass
+-  **ユーティリ ティー** – com.apple.pkpass
 
 
 コンジット アプリケーションの基本的な操作は、パスのファイルを取得および渡すキットの呼び出しを`PKAddPassesViewController`ウォレットにパスを追加するオプションをユーザーに提供します。 このビューのコント ローラーの実装については、次のセクションで**コンパニオン アプリケーション**です。
@@ -413,7 +414,7 @@ Pass.json を開き、JSON を編集します。 更新する必要がありま�
 
 ダブルクリックして、 **Entitlements.plist**ソリューション パッドを開くには、Entitlements.plist エディター内のファイル。
 
-![](passkit-images/image31.png "Entitlements.plst editor")
+![](passkit-images/image31.png "Entitlements.plst エディター")
 
 [定期券サイズ] セクションでは、選択、**を有効にするウォレット**オプション
 

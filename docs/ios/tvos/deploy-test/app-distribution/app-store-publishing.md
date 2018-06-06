@@ -1,21 +1,20 @@
 ---
 title: Apple TV のアプリ ストアに発行します。
-description: この記事では、構成、ビルド、および Apple TV のアプリ ストア経由で配布用の Xamarin.tvOS アプリを発行する方法を示します。 配布用のアプリを準備する方法、Apple のツールを使用して、レビュー用アプリを送信する方法と、最後に、Apple TV のアプリ ストアにアプリを公開する方法をカバーするステップ バイ ステップ ガイドが含まれています。
+description: このドキュメントでは、Apple TV のアプリ ストアにアプリを公開する方法について説明します。 これには、構成、プロビジョニング、ビルド、および Xamarin でビルドした tvOS アプリケーションを送信する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac905caaf0bdefe7f0c5502be0bd63102ca5a813
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789305"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV のアプリ ストアに発行します。
-
-_この記事では、構成、ビルド、および Apple TV のアプリ ストア経由で配布用の Xamarin.tvOS アプリを発行する方法を示します。配布用のアプリを準備する方法、Apple のツールを使用して、レビュー用アプリを送信する方法と、最後に、Apple TV のアプリ ストアにアプリを公開する方法をカバーするステップ バイ ステップ ガイドが含まれています。_
 
 Apple TV のすべてのデバイスにアプリケーションの配布の順序で、Apple がアプリを発行する必要があります、 *Apple TV の App Store*、tvOS アプリのワンストップ ショッピング場所は、アプリ ストアを作成します。 さまざまな種類のアプリの開発者は、この単一の配布ポイントの大規模な成功に大文字で入力できます。 Apple TV の App Store は、アプリの開発者に配布および支払いシステムの両方を提供するターンキー ソリューションです。
 
@@ -113,7 +112,7 @@ tvOS を使用して*プロビジョニング プロファイル*に特定のア
 プロビジョニングには、Apple の Web ベース iOS プロビジョニング プロファイルを使用する以下の手順が必要です。
 
 1.  **[プロビジョニング]** > **[配布]** の順に選択します。
-2.  クリックして、 **+**ボタンをクリックし、として作成するディストリビューション プロファイルの種類の選択**Apple TV の App Store**です。
+2.  クリックして、 **+** ボタンをクリックし、として作成するディストリビューション プロファイルの種類の選択**Apple TV の App Store**です。
 3.  配布プロファイルを作成する**アプリ ID** をドロップダウン リストから選択します。
 4.  アプリケーションの署名に必要な証明書を選択します。
 5.  新しい**配布プロファイル**の**名前**を入力して、プロファイルを生成します。

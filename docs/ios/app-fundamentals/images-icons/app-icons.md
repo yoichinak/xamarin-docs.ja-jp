@@ -1,21 +1,20 @@
 ---
-title: アプリケーションのアイコン
-description: この資料について説明など、アプリ アイコンとして使用する Xamarin.iOS アプリでのイメージ資産を管理します。
+title: Xamarin.iOS にアプリケーション アイコン
+description: 'このドキュメントは、Xamarin.iOS でさまざまなアプリケーションのアイコンを使用する方法を説明: アプリケーション アイコンでは、スポット ライト アイコン、設定アイコン、および iTunes アートワークです。'
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 3bf9286fe641d836f0877bfe2e17263bf9d7356e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c07f2573aa8ac6e28b2cd6bff56a773e6206aea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783998"
 ---
-# <a name="application-icons"></a>アプリケーションのアイコン
-
-_この資料について説明など、アプリ アイコンとして使用する Xamarin.iOS アプリでのイメージ資産を管理します。_
+# <a name="application-icons-in-xamarinios"></a>Xamarin.iOS にアプリケーション アイコン
 
 次のトピックで、詳しく説明します。
 
@@ -45,31 +44,31 @@ Xamarin.iOS アプリを UI コントロールとドキュメントのアイコ�
 
 - **iPhone: 9 および 10 iOS (iPhone 6 および 7 Plus)**
 
-    ||3x|
+    ||3 倍|
     |---|---|
     |アプリケーション アイコン|180x180|
     |スポット ライト|120 x 120|
-    |設定|87x87|
+    |設定|87 x 87|
 
 - **iPhone: iOS 7 と 8**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
-    |アプリケーション アイコン|60x60<sup>1</sup>|120 x 120|
-    |スポット ライト|40x40<sup>2</sup>|80x80|
+    |アプリケーション アイコン|60 x 60<sup>1</sup>|120 x 120|
+    |スポット ライト|40x40<sup>2</sup>|80 x 80|
     |設定|-|-|
 
 - **iPhone: iOS 5 および 6**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
-    |アプリケーション アイコン|57 x 57|114x114|
+    |アプリケーション アイコン|57 x 57|114 x 114|
     |スポット ライト|29 x 29|58 x 58|
     |設定|29 x 29<sup>3、4</sup>|58 x 58<sup>3、4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>iPad アイコンのサイズ
 
-- **iPad: iOS 9 & 10**
+- **iPad: iOS 9 および 10**
 
     ||2 x (iPad Pro)|
     |---|---|
@@ -79,17 +78,17 @@ Xamarin.iOS アプリを UI コントロールとドキュメントのアイコ�
 
 - **iPad: iOS 7 と 8**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
     |アプリケーション アイコン|76 x 76|152x152|
-    |スポット ライト|40 x 40|80x80|
+    |スポット ライト|40 x 40|80 x 80|
     |設定|-|-|
 
-- **iPad: iOS 5 & 6**
+- **iPad: iOS 5 および 6**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
-    |アプリケーション アイコン|72 x 72|144x144|
+    |アプリケーション アイコン|72 x 72|144 x 144|
     |スポット ライト|50 x 50|100x100|
     |設定|29 x 29<sup>3、5</sup>|58 x 58<sup>3、5</sup>|
 
@@ -114,7 +113,7 @@ Xamarin.iOS アプリを UI コントロールとドキュメントのアイコ�
 
 1. ダブルクリックして、`Info.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
 2. 下方向にスクロール、**アプリ アイコン**セクションです。
-3. **ソース** ドロップダウン リストで、確認**AppIcons**が選択されています。 
+3. **ソース** ドロップダウン リストで、確認**入った**が選択されています。 
 
     ![](app-icons-images/migrate01.png "AppIcons が選択されていることを確認します。")
 4. **ソリューション エクスプ ローラー**をダブルクリックして、`Assets.xcassets`ファイルを開いて編集するファイル。 

@@ -1,21 +1,19 @@
 ---
-title: アプリ内購入
-description: iOS アプリケーションには、デジタルの製品およびストア キット Api を使用してサービスを販売できます。 製品が作成され、iTunes Connect ポータルで管理します。 Apple はトランザクション処理を管理し、販売できる前に、すべての製品を承認し、各トランザクションの (現在は 30%) の料金を請求します。 Apple では、物理商品または非デジタル サービスの販売を使うことはできませんが、アプリでデジタル売上のアプリ内購入を使用する必要があります。 デジタル製品およびサービス用の代替のお支払い方法を提供しているアプリは、拒否される可能性があります。 このドキュメントでは、ストア キットを使用するアプリケーションを構成する方法について説明し、最も一般的なアプリ内購入シナリオ Xamarin.iOS 例を示します。
+title: アプリ内購入 Xamarin.iOS で
+description: このドキュメントでは、デジタルの製品や StoreKit Api を使用してサービスを販売する方法について説明します。 構成、使用できる製品、以外が使用できる製品、トランザクション、サブスクリプション、および詳細を説明するガイドにリンクします。
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8a41ed44a331c91a333b95c1d62136244a6945dd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787342"
 ---
-# <a name="in-app-purchasing"></a>アプリ内購入
-
-_iOS アプリケーションには、デジタルの製品およびストア キット Api を使用してサービスを販売できます。製品が作成され、iTunes Connect ポータルで管理します。Apple はトランザクション処理を管理し、販売できる前に、すべての製品を承認し、各トランザクションの (現在は 30%) の料金を請求します。Apple では、物理商品または非デジタル サービスの販売を使うことはできませんが、アプリでデジタル売上のアプリ内購入を使用する必要があります。デジタル製品およびサービス用の代替のお支払い方法を提供しているアプリは、拒否される可能性があります。このドキュメントでは、ストア キットを使用するアプリケーションを構成する方法について説明し、最も一般的なアプリ内購入シナリオ Xamarin.iOS 例を示します。_
-
+# <a name="in-app-purchasing-in-xamarinios"></a>アプリ内購入 Xamarin.iOS で
 
 iOS アプリケーションは、デジタルの製品または StoreKit – Apple id です。 それらを使用してユーザーの金融取引を実行するためには、Apple のサーバーと通信する iOS によって提供される Api のセットを使用してサービスを販売できます。 StoreKit Api は製品情報の取得、トランザクションを実行すると、主に懸念 – ユーザー インターフェイス コンポーネントがありません。 アプリ内購入を実装するアプリケーションは必要があります、独自のユーザー インターフェイスをビルドしてをユーザーに必要な製品やサービスを提供するカスタム コードで購入した項目を追跡します。
 
@@ -27,11 +25,9 @@ iOS アプリケーションは、デジタルの製品または StoreKit – Ap
 -  **ユーザー インターフェイスおよび製品自体の構築**– を各注文書を追跡およびバックアップ/復元する場合は、適切なメカニズムを含む、製品を実装する必要があります。
 -  **Sales を監視および資金の受信**– iTunes Connect によって提供される情報を使用して売上傾向を監視し、収入を追跡します。
 
-
 このドキュメントでは、アプリ内購入 Xamarin.iOS を使用して提供するこれらすべての手順を完了する方法について説明します。
 
-
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 アプリ内購入をサポートするために以降 Xcode 7 では、Xamarin.iOS 5.0 以降を使用する必要があります。
 
@@ -39,7 +35,7 @@ iOS アプリケーションは、デジタルの製品または StoreKit – Ap
 
  * [アプリ内購入の基本と構成](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
- * [ストア キットの概要と製品情報の取得](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ * [StoreKit 概要および製品情報を取得中](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
  * [コンシューマブル製品の購入](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
@@ -48,7 +44,6 @@ iOS アプリケーションは、デジタルの製品または StoreKit – Ap
  * [トランザクションと検証](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
  * [サブスクリプションとレポート](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
-
 
 ## <a name="summary"></a>まとめ
 

@@ -1,17 +1,19 @@
 ---
-title: System.Data
+title: Xamarin.iOS System.Data
+description: このドキュメントでは、System.Data、および Mono.Data.Sqlite.dll を使用して、SQLite データ Xamarin.iOS アプリケーションにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b141dfac49e2cfa2dc80b7c0e4ca3a93968590a6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784717"
 ---
-# <a name="systemdata"></a>System.Data
+# <a name="systemdata-in-xamarinios"></a>Xamarin.iOS System.Data
 
 サポートを追加する Xamarin.iOS 8.10 [System.Data](https://developer.xamarin.com/api/namespace/System.Data/)など、 `Mono.Data.Sqlite.dll` ADO.NET プロバイダー。 サポートには、次の追加が含まれています[アセンブリ](~/cross-platform/internals/available-assemblies.md):。
 
@@ -21,7 +23,6 @@ ms.lasthandoff: 04/04/2018
 -  `Mono.Data.Tds.dll`
 -  `Mono.Data.Sqlite.dll`
 
-
 <a name="Example" />
 
 ## <a name="example"></a>例
@@ -30,7 +31,7 @@ ms.lasthandoff: 04/04/2018
 
 ### <a name="add-references"></a>参照を追加します。
 
-最初を右クリックし、**参照**ノードを選択して**参照の編集.**を選択し、`System.Data`と`Mono.Data.Sqlite`:
+最初を右クリックし、**参照**ノードを選択して**参照の編集.** を選択し、`System.Data`と`Mono.Data.Sqlite`:
 
 [![](system.data-images/edit-references-sml.png "新しい参照の追加")](system.data-images/edit-references.png#lightbox)
 

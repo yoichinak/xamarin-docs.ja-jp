@@ -1,16 +1,17 @@
 ---
 title: Xamarin の NuGet パッケージを手動で作成します。
-description: このページには、Xamarin プラットフォームを対象とする NuGet パッケージの構築を支援するいくつかのヒントが含まれています。
+description: このドキュメントには、Xamarin プラットフォームを対象とする NuGet パッケージの構築を支援するためのヒントが含まれています。 NuGet パッケージの Xamarin プロファイル、プラットフォームの依存関係を持つ PCL NuGets をについて説明し、さまざまなオープン ソースのサンプルにリンクします。
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 510c27cb54b91c837ca6f6b7a93f944f13097f0c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cc39ade2ccc1192461bcfa19c98b7f9925b667a0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781422"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Xamarin の NuGet パッケージを手動で作成します。
 
@@ -58,7 +59,6 @@ A **.nuspec**これらすべてを対象となるファイルのように表示�
 - **Xamarin.iOS10** Xamarin.iOS 1.0 以降と一致します。
 - **Xamarin.iOS1.0** Xamarin.iOS 1.0 以降にも一致
 
-
 ## <a name="pcl-nugets-with-platform-dependencies"></a>プラットフォーム依存関係を持つ PCL NuGets
 
 PCL プロファイルはどのような .NET framework にアクセスする Api に制限があり、確かにプラットフォーム固有のコードにアクセスできません。 これらのサード パーティ製のリンクでは、Xamarin とその他のプラットフォームの互換性を提供するために PCL をおよびネイティブ Api を使用する NuGet パッケージを作成するための方法について説明します。
@@ -76,7 +76,6 @@ PCL プロファイルはどのような .NET framework にアクセスする Ap
 - [**ModernHttpClient** ](https://www.nuget.org/packages/modernhttpclient/) – System.Net.Http を使用してアプリを記述が内にこのライブラリを削除しては大幅に高速移動 (ビュー[ソース](https://github.com/paulcbetts/ModernHttpClient))。
 - [**Splat** ](https://www.nuget.org/packages/Splat/) – を取ってもクロスプラット フォーム ライブラリでありする必要があります (ビュー[ソース](https://github.com/paulcbetts/Splat))。
 - [**NGraphics** ](https://www.nuget.org/packages/NGraphics/) -.NET のベクター グラフィックスを表示するため、クロス プラットフォーム ライブラリ (ビュー[ソース](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec))。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,18 +1,19 @@
 ---
-title: 属性を確認してください。
+title: 目標ペンを使わずに属性を確認してください。
+description: このドキュメントでは、目標ペンを使わずによって生成された [確認] の属性について説明します。 [確認] 属性は、目標ペンを使わずの出力を確認するは手動で、開発者に強調表示されます。
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: b9409b4351ed9233db0edf8e2dd9f516b9727fe0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780712"
 ---
-# <a name="verify-attributes"></a>属性を確認してください。
-
+# <a name="objective-sharpie-verify-attributes"></a>目標ペンを使わずに属性を確認してください。
 
 目標ペンを使わずによって生成されたバインディングは注釈を付けることも珍しく、`[Verify]`属性。 これらの属性を示す必要がある_確認_目標ペンを使わずが元の C/Objective C 宣言 (にバインドされている宣言の上にコメントが表示されます) を使用してバインディングを比較することによって、正しいことをでした。
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 05/09/2018
 
 属性に指定されたヒント引数は、以下のドキュメントで参照されている、交差で使用できます。 生成される任意のドキュメント`[Verify]`属性は、バインディングが完了した後もコンソールに提供されます。
 
-|ヒントを確認してください。|説明|
+|`[Verify]` ヒント|説明|
 |---|---|
 |InferredFromPreceedingTypedef|この宣言の名前がから共通の規約によって推定された、すぐに先行`typedef`元のソースのネイティブ コードにします。 推論された名前がこの規則は、あいまいな正しいことを確認します。|
 |ConstantsInterfaceAssociation|どの Objective C インターフェイスで、extern 変数宣言が、関連付けられている可能性がありますを決定する確実な方法はありません。 これらのインスタンスとしてバインド`[Field]`が近くの具体的なインターフェイスに '定数' をなくなる可能性がありますより直感的な API を生成するために部分的なインターフェイスでプロパティがまったくインターフェイスです。|

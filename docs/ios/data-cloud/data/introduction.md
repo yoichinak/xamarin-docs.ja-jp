@@ -1,18 +1,20 @@
 ---
-title: IOS でのデータ ストレージの概要
+title: Xamarin.iOS アプリ内のデータ ストレージの概要
+description: このドキュメントは、Xamarin.iOS アプリケーション内のデータ ストレージのさまざまな方法について説明し、SQLite の利点に関する特定の情報を提供します。
 ms.prod: xamarin
 ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 0da267502629ba30da59c26600ef0e7c605640aa
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 3fc82e2a1a2cf8d25d934ca2194ecd7de1b8b7df
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784704"
 ---
-# <a name="introduction"></a>はじめに
+# <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin.iOS アプリ内のデータ ストレージの概要
 
 ## <a name="when-to-use-a-database"></a>データベースを使用する場合
 

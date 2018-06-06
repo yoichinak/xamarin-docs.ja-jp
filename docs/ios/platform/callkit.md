@@ -1,5 +1,5 @@
 ---
-title: CallKit
+title: Xamarin.iOS で CallKit
 description: この記事では、新しい CallKit API その Apple iOS 10 と Xamarin.iOS VOIP アプリで実装する方法でリリースについて説明します。
 ms.prod: xamarin
 ms.assetid: 738A142D-FFD2-4738-B3ED-57C273179848
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 67c761aa6656b571f16632dd1a076ff11737a424
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c674802eac9105d60471b6b130615e1b7efc1b28
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787202"
 ---
-# <a name="callkit"></a>CallKit
+# <a name="callkit-in-xamarinios"></a>Xamarin.iOS で CallKit
 
 _この記事では、新しい CallKit API その Apple iOS 10 と Xamarin.iOS VOIP アプリで実装する方法でリリースについて説明します。_
-
 
 IOS 10 で新しい CallKit API では、VOIP アプリ iPhone UI と統合し際に使い慣れたインターフェイスを提供し、エンドユーザーに発生するための手段を提供します。 この API ではユーザーが表示し、iOS デバイスのロック画面からの VOIP 呼び出しとの対話および連絡先の電話アプリの使用を管理**お気に入り**と**最近**ビュー。
 
@@ -1140,7 +1140,7 @@ Xamarin.iOS アプリで呼び出すディレクトリ拡張機能を実装す�
 3. 選択**iOS** > **拡張** > **ディレクトリ拡張機能の呼び出し** をクリックし、 **次へ**ボタン。 
 
     [![](callkit-images/calldir01.png "新しい呼び出しディレクトリ拡張機能の作成")](callkit-images/calldir01.png#lightbox)
-4. 入力、**名前**拡張機能とクリック、 **[次へ]**ボタン。 
+4. 入力、**名前**拡張機能とクリック、 **[次へ]** ボタン。 
 
     [![](callkit-images/calldir02.png "拡張機能の名前を入力します。")](callkit-images/calldir02.png#lightbox)
 5. 調整、**プロジェクト名**や**ソリューション名**要求されて、をクリックして、**作成**ボタン。 

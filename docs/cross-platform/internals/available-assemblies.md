@@ -1,20 +1,19 @@
 ---
 title: 使用可能なアセンブリ
-description: Xamarin.iOS、Xamarin.Android、および Xamarin.Mac で使用可能なアセンブリ
+description: このドキュメントには、Xamarin.iOS、Xamarin.Android、および Xamarin.Mac で使用可能なアセンブリが一覧表示されます。 標準の .NET ライブラリとポータブル クラス ライブラリに関するドキュメントにもリンクします。
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: ef1dde061ffce4082922cc2eb2af1ae9b045aedd
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b73a818d3864c7c4d1d776e104d95090e87f5877
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781908"
 ---
 # <a name="available-assemblies"></a>使用可能なアセンブリ
-
-_Xamarin.iOS、Xamarin.Android、および Xamarin.Mac で使用可能なアセンブリ_
 
 Xamarin.iOS、Xamarin.Android、および Xamarin.Mac すべて十数か所アセンブリが付属します。 Silverlight は、デスクトップの .NET アセンブリの拡張のサブセットは、同じよう Xamarin プラットフォームもいくつかの Silverlight およびデスクトップの .NET アセンブリの拡張のサブセットです。
 
@@ -23,7 +22,7 @@ Xamarin プラットフォームは、既存のアセンブリが別のプロフ
 Xamarin.Mac アプリケーションは、3 つのモードでコンパイルすることができますモバイル プロファイルのいずれかの Xamarin を使用して curated、Xamarin.Mac .NET 4.5 Framework ことができる対象の既存の完全なデスクトップ アセンブリおよびシステム モノラルで .NET API を使用するためのサポートされていない 1 つが見つかりました。インストール。 詳細についてを参照してください、[ターゲット フレームワーク](~/mac/platform/target-framework.md)ドキュメント。
 
 
-## <a name="net-standard-libraries"></a>標準の .NET ライブラリ
+## <a name="net-standard-libraries"></a>.NET Standard ライブラリ
 
 に加えて、iOS、Android、および Mac のバインド、Xamarin のプロジェクトが使用できる[.NET 標準ライブラリ](~/cross-platform/app-fundamentals/net-standard.md)です。
 

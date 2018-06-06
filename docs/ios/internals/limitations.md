@@ -1,18 +1,20 @@
 ---
-title: 制限事項
+title: Xamarin.iOS の制限事項
+description: このドキュメントでは、Xamarin.iOS、ジェネリック、NSObjects、汎用のオブジェクトでは、P/invoke などの汎用サブクラスについて議論の制限事項について説明します。
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8bd4ce464adf316517e2e1f2299006913bc68736
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786230"
 ---
-# <a name="limitations"></a>制限事項
+# <a name="limitations-of-xamarinios"></a>Xamarin.iOS の制限事項
 
 Xamarin.iOS を使用して iPhone 上のアプリケーションが静的コードにコンパイルされるので、実行時にコード生成を必要とするすべての機能を使用することはできません。
 
@@ -103,7 +105,7 @@ System.Reflection の欠如。 **出力**ランタイム コードの生成に�
 -  リモート処理の TransparentProxy、またはその他の要素が発生するコードを動的に生成するランタイム。 
 
 
- **重要:**と混同しないでください**Reflection.Emit**で**リフレクション**です。 Reflection.Emit は、コードを動的に生成するについて説明して、jit 処理のコードとネイティブ コードにコンパイルします。 IPhone (JIT コンパイルされません) の制限によりこれがサポートされていません。
+ **重要:** と混同しないでください**Reflection.Emit**で**リフレクション**です。 Reflection.Emit は、コードを動的に生成するについて説明して、jit 処理のコードとネイティブ コードにコンパイルします。 IPhone (JIT コンパイルされません) の制限によりこれがサポートされていません。
 
 で、Type.GetType ("someClass")、メソッドを一覧表示する属性と値をフェッチするプロパティを一覧表示を含む、全体のリフレクション API は正常に機能します。
 

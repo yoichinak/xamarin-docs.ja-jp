@@ -1,22 +1,22 @@
 ---
-title: 言語サポート
-description: クロス プラットフォーム アプリケーションの機能や概念です。
+title: Xamarin での言語サポートのプログラミング
+description: このドキュメントでは、Xamarin でサポートされているさまざまなプログラミング言語について説明します。 これは、c#、f#、ポータブル Visual Basic.NET、および Razor テンプレートについて説明します。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 18d7e93d686f369dec4a98b5b5f6c77679119091
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 715f63a0be54ba3342bd63c1c76d89656313359a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781677"
 ---
-# <a name="language-support"></a>言語サポート
-
-このセクションには、一部のより高度なクロスプラット フォームのアプリケーション機能と概念を説明するドキュメントが含まれています。
+# <a name="programming-language-support-in-xamarin"></a>Xamarin での言語サポートのプログラミング
 
 ## <a name="c"></a>C# 
+
 ###  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[非同期サポートの概要](~/cross-platform/platform/async.md)
 
 バージョン 5 の C# の場合に、非同期操作を表すための 2 つの新しいキーワードが導入されました: async と await です。 これらのキーワードでは、別のスレッドで実行時間の長い操作 (ネットワーク アクセスなど) を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。 Xamarin.iOS および Xamarin.Android の最新バージョン サポート async および await - 説明、および Xamarin を使用した新しい構文の使用例を説明します。

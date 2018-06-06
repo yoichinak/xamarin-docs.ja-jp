@@ -1,17 +1,19 @@
 ---
-title: F# のサンプル
+title: Xamarin の f# のサンプル
+description: Xamarin アプリケーションを構築する f# を使用できます。 このドキュメントは、iOS、Mac、および Xamarin.Forms のさまざまなにリンクしています。 は、f# で記述した Xamarin アプリ プロジェクトをサンプルです。
 ms.prod: xamarin
 ms.assetid: 8A355636-DE60-45BC-B988-1967755FDD28
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 30b27a68e8b69c2e431b172ffa4e7e5bbcc942e0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 316ec2d6991adbb187b7158f9bf9e0c1426e3c7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781021"
 ---
-# <a name="f-samples"></a>F# のサンプル
+# <a name="f-samples-for-xamarin"></a>Xamarin の f# のサンプル
 
 このページには、Xamarin を使用して一部 f# サンプルへのリンクがします。
 

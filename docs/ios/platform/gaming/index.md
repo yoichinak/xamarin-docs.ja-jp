@@ -1,5 +1,5 @@
 ---
-title: iOS ゲーム Api
+title: iOS Xamarin.iOS ゲーム Api
 description: この記事では、iOS 9 Xamarin.iOS ゲームのグラフィックスとオーディオ機能を向上させるために使用できるによって提供される新しいゲーム機能強化について説明します。
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34d3d6980819510a3390e2c30069818d6dfd721f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 263c325816867e9eee32c92edf97f703b39bda7c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786861"
 ---
-# <a name="ios-gaming-apis"></a>iOS ゲーム Api
+# <a name="ios-gaming-apis-in-xamarinios"></a>iOS Xamarin.iOS ゲーム Api
 
 _この記事では、iOS 9 Xamarin.iOS ゲームのグラフィックスとオーディオ機能を向上させるために使用できるによって提供される新しいゲーム機能強化について説明します。_
 
@@ -364,7 +365,7 @@ public override void ViewWillLayoutSubviews ()
 }
 ```
 
-実行すると、少しアニメーション_"Boids"_指タップ周囲 flock されます。
+実行すると、少しアニメーション _"Boids"_ 指タップ周囲 flock されます。
 
 [![](images/flocking01.png "少しアニメーション Boids は指タップ周囲 flock します。")](images/flocking01.png#lightbox)
 

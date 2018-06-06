@@ -1,27 +1,28 @@
 ---
-title: NSString
+title: Xamarin.iOS および Xamarin.Mac NSString
+description: このドキュメントでは、Xamarin.iOS 透過的に変換する方法 NSString オブジェクト、オブジェクトの文字列 (C#) にこれが発生しない場合について説明します。
 ms.prod: xamarin
 ms.assetid: 785744B3-42E2-4590-8F41-435325E609B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b084c2f1066c5cfad90911d845aa7555c669130
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: baf36700ab4d608296a9a67e234ce613da9ca077
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786091"
 ---
-# <a name="nsstring"></a>NSString
+# <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin.iOS および Xamarin.Mac NSString
 
 ネイティブ .NET 文字列型の公開 API を使用して呼び出す Xamarin.iOS と Xamarin.Mac の両方の設計`string`、c# での文字列操作や他の .NET プログラミング言語におよび、ではなくAPIによって公開されるデータ型として文字列を公開するには`NSString`データ型。
-
 
 これは意味を開発者は、Xamarin.iOS と Xamarin.Mac API (統合) を呼び出すことに使用するためのものでは、文字列を保持する必要がありますいない特殊な種類の (`Foundation.NSString`) を使用してモノラルを保持できます`System.String`のすべての操作をときにいつ当社の API バインドはマーシャ リング、情報の処理、Xamarin.iOS または Xamarin.Mac API に文字列が必要です。
 
 たとえば、OBJECTIVE-C"text"のプロパティ、`UILabel`型の`NSString`が次のように宣言されています。
 
-```csharp
+```objc
 @property(nonatomic, copy) NSString *text
 ```
 
@@ -39,14 +40,11 @@ class UILabel {
 
  <a name="Exceptions_to_the_Rule" />
 
-
 ## <a name="exceptions-to-the-rule"></a>規則の例外
 
 Xamarin.iOS と Xamarin.Mac の両方では、この規則の例外を行いました。 公開おとの間で意思決定`string`s を作成する場合と、except および公開`NSString`場合、s が行われます、`NSString`メソッドが、コンテンツの比較ではなくポインターの比較を行うことができます。
 
-
 これは、OBJECTIVE-C Api がパブリックで使用する場合に発生する可能性があります`NSString`を文字列の実際の内容の比較ではなく、いくつかの操作を表すトークンとして定数。
-
 
 ような場合、 `NSString` Api が公開され、このを持つ Api の少数派があります。 NSString プロパティがいくつかのクラスで公開されることもわかります。 もの`NSString`通知などの項目のプロパティが公開されます。 それらはプロパティは、通常次のようになります。
 
@@ -55,7 +53,6 @@ class Foo {
      public NSString FooNotification { get; }
 }
 ```
-
 通知は、キーに使用される、`NSNotification`クラスに、ランタイムによって配信している特定のイベントを登録するときにします。
 
 キーでは、次のような通常なります。

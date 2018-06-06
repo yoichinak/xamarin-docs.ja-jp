@@ -1,5 +1,5 @@
 ---
-title: HomeKit
+title: Xamarin.iOS で HomeKit
 description: HomeKit は、ホーム オートメーションのデバイスを制御するための Apple のフレームワークです。 この記事では、HomeKit を紹介し、HomeKit アクセサリ シミュレーターと単純な Xamarin.iOS アプリの作成を操作これらアクセサリの構成のテスト accessories について説明します。
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0dfc6e9ba5098df66a72292d6c8b89ea1bbd1f97
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787462"
 ---
-# <a name="homekit"></a>HomeKit
+# <a name="homekit-in-xamarinios"></a>Xamarin.iOS で HomeKit
 
 _HomeKit は、ホーム オートメーションのデバイスを制御するための Apple のフレームワークです。この記事では、HomeKit を紹介し、HomeKit アクセサリ シミュレーターと単純な Xamarin.iOS アプリの作成を操作これらアクセサリの構成のテスト accessories について説明します。_
 
@@ -103,7 +104,7 @@ Apple は、続行する前にインストールする必要がありますの�
 1. アプリケーション フォルダーから、HomeKit アクセサリ シミュレーターを開始します。 
 
     [![](homekit-images/simulator02.png "HomeKit アクセサリ シミュレーター")](homekit-images/simulator02.png#lightbox)
-2. クリックして、 **+**ボタンをクリックして**新しいアクセサリしています.**: 
+2. クリックして、 **+** ボタンをクリックして**新しいアクセサリしています.**: 
 
     [![](homekit-images/simulator03.png "新しいアクセサリを追加します。")](homekit-images/simulator03.png#lightbox)
 3. 新しいアクセサリについての情報を入力し、クリックして、**完了**ボタンをクリックします。 
@@ -154,7 +155,7 @@ Xamarin.iOS アプリを HomeKit を通信するためには、最初のイン�
 
 ### <a name="adding-a-home-manager"></a>ホーム マネージャーを追加します。
 
-HomeKit 対応アプリを追加する、Xamarin.iOS、編集、 **<code>appdelegate.cs</code>**ファイルを編集し、次のようになります。
+HomeKit 対応アプリを追加する、Xamarin.iOS、編集、 **<code>appdelegate.cs</code>** ファイルを編集し、次のようになります。
 
 ```csharp
 using HomeKit;
@@ -425,7 +426,7 @@ HomeKit アクセサリ シミュレーターでこの数は「、**セットア
  - 製造元
  - モデル
  - MotionDetected
- - 名前
+ - name
  - ObstructionDetected
  - OccupancyDetected
  - OutletInUse
@@ -435,7 +436,7 @@ HomeKit アクセサリ シミュレーターでこの数は「、**セットア
  - RotationDirection
  - RotationSpeed
  - [彩度]
- - SerialNumber
+ - シリアル番号
  - SmokeDetected
  - SoftwareVersion
  - StatusActive

@@ -1,25 +1,27 @@
 ---
-title: ネイティブ型
+title: IOS および macOS ネイティブ型
+description: このドキュメントは、コンパイル ターゲット アーキテクチャに基づいて、必要に応じて、32 ビットおよび 64 ビットのネイティブ型に、Xamarin の Unified API が .NET 型をマップする方法を説明します。
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 4d11d053cf4471a98cbba0f7c97be3bef39276fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781105"
 ---
-# <a name="native-types"></a>ネイティブ型
+# <a name="native-types-for-ios-and-macos"></a>IOS および macOS ネイティブ型
 
-Mac と iOS Api の両方は、差の中核には、32 ビット プラットフォームでは 32 ビットと 64 ビットの 64 ビット プラットフォームでは、常に、アーキテクチャ固有のデータ型を使用します。
+Mac および iOS Api は、常に 32 ビット プラットフォームでは 32 ビットおよび 64 ビット プラットフォーム上で 64 ビット アーキテクチャに固有のデータ型を使用します。
 
 Objective C のたとえば、マップ、`NSInteger`のデータ型`int32_t`32 ビット システム上に`int64_t`64 ビット システムでします。
 
-以前の使用を置き換える、統合 API では、この動作を一致するように`int`(として常に定義されている .net `System.Int32`) を新しいデータ型:`System.nint`です。  考えることができます"n"の意味「ネイティブ」プラットフォームのネイティブの整数を入力するようにします。
+以前の使用を置き換える、統合 API では、この動作を一致するように`int`(として常に定義されている .net `System.Int32`) を新しいデータ型:`System.nint`です。 考えることができます"n"の意味「ネイティブ」プラットフォームのネイティブの整数を入力するようにします。
 
-これらの新しいデータ型での 32 ビット、32 ビットおよび 64 ビットまたは 64 ビット、コンパイル フラグによって、同じソース コードがコンパイルされます。
+これらの新しいデータ型と同じソース コードがコンパイル フラグによって、32 ビットおよび 64 ビット アーキテクチャ用コンパイルされます。
 
 ## <a name="new-data-types"></a>新しいデータ型
 
@@ -35,7 +37,7 @@ Objective C のたとえば、マップ、`NSInteger`のデータ型`int32_t`32 
 
 ### <a name="implicit-and-explicit-conversions"></a>暗黙の型変換と明示的な型変換
 
-新しいデータ型のデザインは、単一 c# ソース ファイルをホスト プラットフォームとコンパイルの設定によって 32 ビットまたは 64 ビットのストレージが必然的に使用を許可するものです。
+新しいデータ型のデザインは、1 つ c# ソース ファイル必然的に、ホストのプラットフォームとコンパイルの設定によって 32 ビットまたは 64 ビットのストレージを使用するを許可するものです。
 
 これは、.NET の整数と浮動小数点データ型への明示的および暗黙的な変換プラットフォームに固有のデータ型とのセットを設計するために必要です。
 

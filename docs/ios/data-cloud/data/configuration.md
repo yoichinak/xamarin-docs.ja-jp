@@ -1,22 +1,24 @@
 ---
-title: 構成
+title: Xamarin.iOS で SQLite を構成します。
+description: このドキュメントでは、アプリケーションで Xamarin.iOS SQLite データベース ファイルの場所を特定する方法について説明します。 これらの概念は、選択したデータのアクセス メカニズムに関係なく適用されます。
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: f4a1bc65fbba68b59196702978633eaf46bc44c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 57645c0bb947a60a3d74436b752210d1bac18124
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784382"
 ---
-# <a name="configuration"></a>構成
+# <a name="configuring-sqlite-in-xamarinios"></a>Xamarin.iOS で SQLite を構成します。
 
 Xamarin.iOS アプリで SQLite を使用するには、データベース ファイルの正しいファイルの場所を特定する必要があります。
 
-## <a name="database-file-path"></a>Database File Path
+## <a name="database-file-path"></a>データベース ファイルのパス
 
 使用するデータのアクセス方法に関係なく SQLite にデータを格納できる前に、データベース ファイルを作成する必要があります。 対象とするプラットフォームに応じて、ファイルの場所が変更されます。 IOS 用の次のコード スニペットに示すように、有効なパスを構築するために環境クラスを使用できます。
 

@@ -1,21 +1,20 @@
 ---
-title: EventKit
-description: このガイドでは、アクセスし、EventKit を介して公開されると、カレンダー データベースに格納されているカレンダー、CalendarEvents、および通知のデータを操作する方法の概要を示します。 主要なクラスと EventKit プログラミングだけでなく、EventKit フレームワークに関連付けられている一般的なタスクの数には、その役割を説明します。
+title: Xamarin.iOS で EventKit
+description: このドキュメントでは、EventKit と Xamarin.iOS で使用する方法について説明します。 予定表、予定表イベント、およびアラーム、調べ EventKit、その他でプログラミングする際によく使用されるクラスがについて説明します。
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3522870d3e063d1e12660094a311e9850bcefa13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786715"
 ---
-# <a name="eventkit"></a>EventKit
-
-_このガイドでは、アクセスし、EventKit を介して公開されると、カレンダー データベースに格納されているカレンダー、CalendarEvents、および通知のデータを操作する方法の概要を示します。主要なクラスと EventKit プログラミングだけでなく、EventKit フレームワークに関連付けられている一般的なタスクの数には、その役割を説明します。_
+# <a name="eventkit-in-xamarinios"></a>Xamarin.iOS で EventKit
 
 iOS が 2 つのカレンダー関連のアプリケーション組み込み: カレンダー アプリケーションとアラーム アプリケーションです。 カレンダー アプリケーションが、予定表のデータを管理する方法を理解するのに十分な簡単ですが、アラーム アプリケーションはわかりにくくします。 アラームは、期限、完了するとしている場合は、観点でそれらに関連付けられている日付を持つことができますなどです。カレンダー イベントまたはアラームと呼ばれる 1 つの場所であるかどうかに、iOS がすべての予定表データを格納するような場合、*カレンダー データベース*です。
 
@@ -31,7 +30,7 @@ EventKit フレームワークにアクセスする方法を提供する、*カ�
 
  [![](eventkit-images/01.png "コンパニオン サンプル アプリケーションの画面")](eventkit-images/01.png#lightbox)
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 EventKit は iOS 4.0 で導入されましたが、アラーム データへのアクセスは iOS 6.0 で導入されました。 そのため、全般的な EventKit 開発には、する必要がありますには、少なくとも対象バージョン 4.0、および通知の 6.0。
 

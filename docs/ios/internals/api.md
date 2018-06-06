@@ -1,17 +1,19 @@
 ---
-title: API
+title: Xamarin.iOS API の概要
+description: このドキュメントには、Xamarin の API リファレンス ドキュメント、Xamarin.iOS API の設計、および Xamarin 開発に使用可能なアセンブリの一覧を記述するガイドへのリンクがします。
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2ce97ecc75dd59c0851db22431529ef819f37ea7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81c30af4d7c95960344015ed6dcfd868deda06af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786136"
 ---
-# <a name="api"></a>API
+# <a name="xamarinios-api-overview"></a>Xamarin.iOS API の概要
 
 Xamarin.iOS 公開 c#/CIL CocoaTouch API へのバインドされ、また ECMA CIL Api とさまざまな他の .NET Api へのアクセスを提供します。
 

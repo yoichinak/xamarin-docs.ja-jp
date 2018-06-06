@@ -1,21 +1,20 @@
 ---
-title: iCloud
-description: Apple では、アプリケーションを Apple のサーバーにデータを格納して、それを (それらの Apple ID) を使用して、同じユーザーが使用されるすべてのデバイス間で同期を許可するためのサービスとして 5、iOS で iCloud が導入されました。 さらに、バックアップ コンポーネントでは、ここで、デバイス上のデータはバックアップを Apple のサーバー。 このドキュメントでは、Apple によって iCloud 提供の Api の一部を使用して格納および c# のサンプルをキーと値の小さいデータのペアを格納して、ドキュメントを格納するために、それぞれのサーバーからデータを取得する方法について説明します。 ICloud のバックアップが、アプリケーションの設計に影響する方法も説明します。
+title: Xamarin.iOS と iCloud を使用します。
+description: このドキュメントでは、iCloud および Xamarin.iOS アプリケーションでの使用について説明します。 キーと値の記憶域、ドキュメント ストレージ、および iCloud のバックアップについても説明します。
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 032d5f01ae63e5aececa14390300c28623c4f371
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785545"
 ---
-# <a name="icloud"></a>iCloud
-
-_Apple では、アプリケーションを Apple のサーバーにデータを格納して、それを (それらの Apple ID) を使用して、同じユーザーが使用されるすべてのデバイス間で同期を許可するためのサービスとして 5、iOS で iCloud が導入されました。さらに、バックアップ コンポーネントでは、ここで、デバイス上のデータはバックアップを Apple のサーバー。このドキュメントでは、Apple によって iCloud 提供の Api の一部を使用して格納および c# のサンプルをキーと値の小さいデータのペアを格納して、ドキュメントを格納するために、それぞれのサーバーからデータを取得する方法について説明します。ICloud のバックアップが、アプリケーションの設計に影響する方法も説明します。_
+# <a name="using-icloud-with-xamarinios"></a>Xamarin.iOS と iCloud を使用します。
 
 5、iOS で iCloud ストレージ API には、中央の場所にユーザーのドキュメントおよびアプリケーションに固有のデータを保存し、すべてのユーザーのデバイスからそれらの項目にアクセスするアプリケーションができます。
 
@@ -32,9 +31,9 @@ _Apple では、アプリケーションを Apple のサーバーにデータを
 このドキュメントでは、最初の 2 種類のキーと値のペアと UIDocument サブクラス - Xamarin.iOS でこれらの機能を使用する方法について説明します。
 
 > [!IMPORTANT]
-> Apple[ツールを提供](https://developer.apple.com/support/allowing-users-to-manage-data/)開発者が、欧州連合の一般的なデータ保護規制 (GDPR) を適切に処理します。
+> Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 - Xamarin.iOS の最新の安定バージョン
 - Xcode 8 以降

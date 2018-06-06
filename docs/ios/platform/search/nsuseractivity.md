@@ -1,18 +1,20 @@
 ---
-title: NSUserActivity で検索
+title: Xamarin.iOS で NSUserActivity で検索
+description: このドキュメントでは、メディア、および Safari で検索可能なので、NSUserActivity のインデックスを作成する方法について説明します。 これには、検索結果に、NSUserActivity の選択に応答する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 803fcce359bbe27ea19901afa766f5b7f4692e0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b053f66e9b6b7715cbe52c4e43d9db32db48f4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788209"
 ---
-# <a name="search-with-nsuseractivity"></a>NSUserActivity で検索
+# <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin.iOS で NSUserActivity で検索
 
 `NSUserActivity` iOS 8 で導入されたし、ハンドオフ用にデータを提供するために使用します。
 渡すことのできる、、さまざまな iOS デバイスで実行されているアプリの別のインスタンスに、アプリの特定の部分でアクティビティを作成することができます。 受信デバイスは、前のデバイス、ユーザーが中断権利を手で開始されたアクティビティを続行できます。 ハンドオフの使用に関する詳細についてを参照してください、[ハンドオフの概要](~/ios/platform/handoff.md)ドキュメント。
@@ -94,7 +96,7 @@ activity.BecomeCurrent();
 
 ## <a name="responding-to-an-activity"></a>アクティビティへの応答
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリケーションでは、編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリケーションでは、編集、 **<code>appdelegate.cs</code>** ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

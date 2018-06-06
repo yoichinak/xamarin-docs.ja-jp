@@ -1,15 +1,17 @@
 ---
 title: Apple アカウント管理
+description: このドキュメントでは、Mac と Visual Studio 2017 の Visual Studio で、Apple のアカウントの管理機能を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 2a37f6644c66ebeb3b10a9fa0467115a21f69e75
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f77ab1c48e3200088d8c582634921df1ecf1001c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781508"
 ---
 # <a name="apple-account-management"></a>Apple アカウント管理
 
@@ -28,7 +30,7 @@ Apple アカウント ダイアログでは、次の操作を行うことがで�
 
 これらの機能を使用する方法についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
 ️
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Apple アカウントの管理は Visual Studio for Mac と Visual Studio 2017 (15.7 以降のバージョン) で使用できます。
 

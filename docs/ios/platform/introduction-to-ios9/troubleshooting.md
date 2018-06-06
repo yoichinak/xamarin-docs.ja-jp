@@ -1,19 +1,20 @@
 ---
-title: トラブルシューティング
-description: この記事は、Xamarin.iOS アプリで iOS 9 を操作するためのいくつかのトラブルシューティングのヒントを提供します。
+title: Xamarin.iOS 9 – のトラブルシューティング
+description: この記事は、Xamarin.iOS で iOS 9 を操作するためのさまざまなトラブルシューティングのヒントを提供します。 ヒントは、XML の解析、シミュレーター、レイアウトの制約、ネットワークの問題、およびその他の多くのトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c44d737efcf5092eb4b27d5311271005de65318b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787664"
 ---
-# <a name="troubleshooting"></a>トラブルシューティング
+# <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – のトラブルシューティング
 
 _この記事は、Xamarin.iOS アプリで iOS 9 を操作するためのいくつかのトラブルシューティングのヒントを提供します。_
 
@@ -190,8 +191,6 @@ IOS 9 バージョン Xamarin.iOS アプリの実際の iOS のハードウェ�
 Xamarin.iOS とは、マネージ コードに公開されるものが、iOS のデザインが壊れた場合と呼ばれるコンス トラクター内のビューまたはビュー コント ローラーの初期化することができます。
 
 一般にする必要がありますいないを初期化する何も呼び出すことができる戻る Objective C コード コンス トラクターからすることを確認することはできませんのでときに呼び出されます。 改善の場所 (その他の .ctor) があることも意味オーバーライド (Objective C には、イベントがあるない) を呼び出し、またはこの初期化を行う必要があります。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

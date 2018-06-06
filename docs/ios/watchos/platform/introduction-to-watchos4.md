@@ -1,21 +1,20 @@
 ---
 title: WatchOS 4 の概要
-description: WatchOS 4 の Xamarin を使用して開発者が利用できる新しい機能です。
+description: このドキュメントでは、watchOS 4 では、Xamarin の開発者が利用できるようになった新しい機能を記述する大まかな概要を示します。
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2017
-ms.openlocfilehash: d3377b503273dc84cfe07227c4b007c8e073f1a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 550cf57f6b89a8fd5726ae55cb5eaaa54d6d2692
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791268"
 ---
 # <a name="introduction-to-watchos-4"></a>WatchOS 4 の概要
-
-_WatchOS 4 の Xamarin を使用して開発者が利用できる新しい機能です。_
 
 WatchOS 4 では、アプリのアクセスの新機能:
 
@@ -29,7 +28,6 @@ WatchOS 3 以降の変更:
 
 * アプリ コードおよび UI は、1 つのプロセスで実行します。
 * Watch (携帯電話でそのまま使用するユーザーに確認する必要はありません) では、場所のアクセス許可を付与できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

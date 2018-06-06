@@ -1,21 +1,20 @@
 ---
-title: ファイル システムでの作業
-description: Xamarin.iOS は、任意の .NET アプリケーションで使用する iOS でファイルおよびディレクトリを使用する同じ System.IO クラスを使用することができます。 ただし、使い慣れたクラスとメソッドに関係なく、iOS は作成またはアクセスできるファイルのいくつかの制限を実装し、機能も提供特別な特定のディレクトリ。 この記事では、これらの制限およびの機能について説明し、Xamarin.iOS アプリケーションでファイルへのアクセスがどのように動作するかを示します。
+title: Xamarin.iOS 内のファイル システムの使用
+description: このドキュメントでは、Xamarin.iOS 内のファイル システムを操作する方法について説明します。 これには、ディレクトリ、ファイル、XML および JSON のシリアル化、iTunes を使ってファイルを共有するアプリケーションのサンド ボックスの読み取りがについて説明します。
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5bcfac7911ac589e08cd6c5db8c8ea15a3497eca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784242"
 ---
-# <a name="working-with-the-file-system"></a>ファイル システムでの作業
-
-_Xamarin.iOS は、任意の .NET アプリケーションで使用する iOS でファイルおよびディレクトリを使用する同じ System.IO クラスを使用することができます。ただし、使い慣れたクラスとメソッドに関係なく、iOS は作成またはアクセスできるファイルのいくつかの制限を実装し、機能も提供特別な特定のディレクトリ。この記事では、これらの制限およびの機能について説明し、Xamarin.iOS アプリケーションでファイルへのアクセスがどのように動作するかを示します。_
+# <a name="working-with-the-file-system-in-xamarinios"></a>Xamarin.iOS 内のファイル システムの使用
 
 Xamarin.iOS を使用して、`System.IO`内のクラス、 *.NET 基本クラス ライブラリ (BCL)* iOS ファイル システムにアクセスします。 `File`クラスを使用して、作成、削除、および、ファイルの読み取りおよび`Directory`クラスでは、作成、削除、またはディレクトリの内容を列挙することができます。 使用することも`Stream`サブクラスより多くのファイル操作 (ファイル内の圧縮や位置を検索) などの制御を提供できます。
 
@@ -29,15 +28,13 @@ iOS にもいくつかのファイル システムに固有の機能: 特定の�
 
  <a name="General_File_Access" />
 
-
 ## <a name="general-file-access"></a>一般的なファイル アクセス
 
 Xamarin.iOS 使用できるように、.NET `System.IO` iOS でのファイル システム操作のためのクラスです。
 
 次のコード スニペットは、いくつかの一般的なファイル操作を示しています。 できたら、それらすべての下に、`SampleCode.cs`この記事のサンプル アプリケーションでのファイルです。
 
- <a name="Working_with_directories" />
-
+<a name="Working_with_directories" />
 
 ### <a name="working-with-directories"></a>ディレクトリの操作
 

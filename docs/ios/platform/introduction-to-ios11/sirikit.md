@@ -1,18 +1,20 @@
 ---
-title: SiriKit
+title: Ios 11 SiriKit 更新プログラム
+description: このドキュメントでは、iOS 11 で SiriKit を操作する方法について説明します。 具体的には、タスクとメモを操作する方法と、アプリケーションの代替名を指定する方法を確認します。
 ms.prod: xamarin
 ms.assetid: 8F75300B-B591-42ED-9D17-001992A5C381
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: a712f7da0d57e81872d7f779cf0eb52c30ee3bc2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28160b40c97b8cc62fae95d3643801f1c4cc5e93
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787586"
 ---
-# <a name="sirikit"></a>SiriKit
+# <a name="sirikit-updates-in-ios-11"></a>Ios 11 SiriKit 更新プログラム
 
 SiriKit は、サービスのドメイン (ワークアウト、飛行予約、および呼び出しを含む) の数が 10、iOS で導入されました。 参照してください、 [SiriKit セクション](~/ios/platform/sirikit/index.md)SiriKit 概念と、アプリに SiriKit を実装する方法です。
 
@@ -218,7 +220,7 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 _Objective C の例外がスローされます。[名前]: NSInternalInconsistencyException 理由: クラスの使用 < INPreferences: 0x60400082ff00 > アプリから権利 com.apple.developer.siri が必要です。Xcode プロジェクトで Siri 機能を有効にしました。_
 
 - SiriKit がでチェック マーク**Entitlements.plist**です。
-- **Entitlements.plist**で構成された、**プロジェクトのオプション > ビルド > iOS バンドル署名 ***です。
+- **Entitlements.plist**で構成された、**プロジェクトのオプション > ビルド > iOS バンドル署名 *** です。
 
   [![プロジェクトの権利が正しく設定の表示オプション](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 

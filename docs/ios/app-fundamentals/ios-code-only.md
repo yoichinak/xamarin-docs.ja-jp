@@ -1,21 +1,20 @@
 ---
-title: コードで iOS のユーザー インターフェイスの作成
-description: Xamarin.iOS アプリ – iOS 用、またはコードでの Xamarin デザイナーでは、ユーザー インターフェイスを作成する 2 つの方法を提供します。 この記事では、コードで完全 iOS ユーザー インターフェイスを作成する方法について説明します。 UIKit からビューの階層を作成してコント ローラーでアプリケーションの画面を構築するプロジェクト テンプレートからを起動する方法を示します。 その後、コント ローラーで読み込むことができるカスタム ビューを作成する方法について説明します。
+title: Xamarin.iOS 内のコードでの iOS のユーザー インターフェイスの作成
+description: このドキュメントでは、コードを使用して、Xamarin.iOS アプリのユーザー インターフェイスを構築する方法について説明します。 コント ローラーの表示、構築、階層の表示、回転、および複数の処理についても説明します。
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784635"
 ---
-# <a name="creating-ios-user-interfaces-in-code"></a>コードで iOS のユーザー インターフェイスの作成
-
-_Xamarin.iOS アプリ – iOS 用、またはコードでの Xamarin デザイナーでは、ユーザー インターフェイスを作成する 2 つの方法を提供します。この記事では、コードで完全 iOS ユーザー インターフェイスを作成する方法について説明します。UIKit からビューの階層を作成してコント ローラーでアプリケーションの画面を構築するプロジェクト テンプレートからを起動する方法を示します。その後、コント ローラーで読み込むことができるカスタム ビューを作成する方法について説明します。_
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS 内のコードでの iOS のユーザー インターフェイスの作成
 
 IOS アプリのユーザー インターフェイス、storefront のように – アプリケーションは、通常、1 つのウィンドウを取得が、そのことができます、ウィンドウでいっぱいに多数のオブジェクトには、必要があるし、オブジェクトと配置を表示するアプリの必要に応じて変更することができます。 このシナリオのオブジェクト (ユーザーに表示される物事) はビューと呼ばれます。 アプリケーションで 1 つの画面をビルドするビューは相互に積み重ねられたコンテンツ ビューを階層では、階層は単一のビュー コント ローラーによって管理します。 複数の画面を持つアプリケーションには、複数のコンテンツ ビュー階層、それぞれに独自のビュー コントローラー、およびウィンドウ内のアプリケーションの場所のビューがあり、ユーザーに表示される画面に基づいて異なるコンテンツ ビュー階層を作成します。
 

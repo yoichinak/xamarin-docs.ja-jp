@@ -1,19 +1,20 @@
 ---
-title: コア NFC
-description: IOS 11 を使用してタグを読み取り近距離通信 (NFC)
+title: Xamarin.iOS でコア NFC
+description: このドキュメントでは、Xamarin.iOS iOS 11 で導入された Api を使用してのフィールドの通信のタグの近くの読み取り方法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2016
-ms.openlocfilehash: db0c417c1c79a988821a93b1cf20d94161f5c47a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c42048f9c00238fb73e354ea86322c3d19bae601
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787378"
 ---
-# <a name="core-nfc"></a>コア NFC
+# <a name="core-nfc-in-xamarinios"></a>Xamarin.iOS でコア NFC
 
 _IOS 11 を使用してタグを読み取り近距離通信 (NFC)_
 

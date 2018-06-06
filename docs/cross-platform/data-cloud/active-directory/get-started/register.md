@@ -1,15 +1,17 @@
 ---
 title: 手順 1. Azure Active Directory を使用するアプリを登録します。
+description: このドキュメントでは、モバイル クライアントから安全にアクセスできるように、Azure アプリケーションを Azure Active Directory に登録する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: bac26d47c0500de138efb0ebdf98b247d7b26fcf
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7f1e743eea81edc0aa45b49f6acb6a9fd461bc80
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780670"
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>手順 1. Azure Active Directory を使用するアプリを登録します。
 

@@ -6,12 +6,13 @@ ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 15698767ae71b68a26138169771f7f397bddd95a
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732519"
 ---
 # <a name="nougat-features"></a>Nougat 機能
 
@@ -42,13 +43,13 @@ Android Nougat Xamarin.Android 開発者にとって関心のある多くの新�
 この記事では、新しい機能を試すし、新しい Android Nougat プラットフォームを対象の移行または機能の作業を計画する Android Nougat を使ったアプリの構築を開始する方法について説明します。
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 次が機能を使用する、新しい Android Nougat Xamarin ベースのアプリに必要です。
 
--   **Visual Studio または Visual Studio for Mac** &ndash; 4.2.0.628 のバージョンの Visual Studio を使用しているかどうか、または Xamarin for Visual Studio のそれ以降が必要です。 使用している Visual Studio for Mac, バージョン 6.1.0 または Visual Studio の後で Mac が必要になるの場合
+-   **Visual Studio または Visual Studio for Mac** &ndash; 4.2.0.628 のバージョンの Visual Studio を使用しているかどうか、または Visual Studio Tools for Xamarin のそれ以降が必要です。 使用している Visual Studio for Mac, バージョン 6.1.0 または Visual Studio の後で Mac が必要になるの場合
 
--   **Xamarin.Android** &ndash; Xamarin.Android 7.0 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+-   **Xamarin.Android** &ndash; Xamarin.Android 7.0 以降をインストールし、Visual Studio または Visual Studio for mac 構成
 
 -   **Android SDK** -Android SDK 7.0 (API 24) 以降、Android SDK Manager を使用してをインストールする必要があります。
 
@@ -67,7 +68,7 @@ Xamarin.Android での Android Nougat の使用開始するには、ダウンロ
 
 1.  Xamarin.Android の最新の更新プログラムを Xamarin をインストールします。
 
-2.  インストール、 **Android 7.0 (API 24)**パッケージおよびツールまたはそれ以降。
+2.  インストール、 **Android 7.0 (API 24)** パッケージおよびツールまたはそれ以降。
 
 3.  対象とする Android Nougat 新しい Xamarin.Android プロジェクトを作成します。
 
@@ -84,11 +85,11 @@ Android Nougat の Xamarin のサポートを追加するには、Mac の安定�
 
 ### <a name="install-the-android-sdk"></a>Android SDK をインストールします。
 
-Xamarin Android 7.0 でプロジェクトを作成する必要があります最初を使用して、Android SDK Manager をインストール**SDK プラットフォーム Android N (API 24)**またはそれ以降。 最新版をインストールすることも必要があります**Android SDK ツール**:。
+Xamarin Android 7.0 でプロジェクトを作成する必要があります最初を使用して、Android SDK Manager をインストール**SDK プラットフォーム Android N (API 24)** またはそれ以降。 最新版をインストールすることも必要があります**Android SDK ツール**:。
 
 1.  Android SDK Manager を開始 (Mac を Visual Studio で使用**ツール > Android SDK Manager を開いている&hellip;**; Visual Studio で、使用**ツール > Android > Android SDK Manager**)。
 
-2.  インストール**Android 7.0 (API 24)**以降。
+2.  インストール**Android 7.0 (API 24)** 以降。
 
     [![Android SDK Manager で Android 7.0 パッケージを選択します。](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
@@ -106,11 +107,11 @@ Xamarin Android 7.0 でプロジェクトを作成する必要があります最
 
 
 
-### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
+### <a name="start-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを開始します。
 
 新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android 開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md) Xamarin.Android プロジェクトの作成について学習します。
 
-Android プロジェクトを作成するときに、Android 7.0 以降をターゲットにバージョン設定を構成する必要があります。 たとえば、Android 7.0 用プロジェクトのターゲット、行う必要がありますにプロジェクトのターゲット Android API レベル**Android 7.0 (API 24 - Nougat)**です。 API 24、またはそれ以降は、ターゲット フレームワークのレベルを設定することをお勧めします。 Android API レベル レベルの構成に関する詳細は、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。
+Android プロジェクトを作成するときに、Android 7.0 以降をターゲットにバージョン設定を構成する必要があります。 たとえば、Android 7.0 用プロジェクトのターゲット、行う必要がありますにプロジェクトのターゲット Android API レベル**Android 7.0 (API 24 - Nougat)** です。 API 24、またはそれ以降は、ターゲット フレームワークのレベルを設定することをお勧めします。 Android API レベル レベルの構成に関する詳細は、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。
 
 
 > [!NOTE]

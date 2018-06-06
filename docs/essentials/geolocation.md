@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials 地理的位置情報
-description: 地理的位置情報クラスは、デバイスの現在の地理座標を取得するための Api を提供します。
+title: 'Xamarin.Essentials: 地理的位置情報'
+description: このドキュメントでは、デバイスの現在の地理座標を取得するための Api を提供する Xamarin.Essentials で地理的位置情報クラスについて説明します。
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: bf0fa7d2caf7c8857bc1272f4471def04100383f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: d5dfdcb11754b1e08e7768a17003a14117e795ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783192"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials 地理的位置情報
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: 地理的位置情報
 
 ![プレリリース NuGet](~/media/shared/pre-release.png)
 

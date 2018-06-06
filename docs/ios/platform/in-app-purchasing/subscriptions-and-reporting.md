@@ -1,26 +1,26 @@
 ---
-title: サブスクリプションとレポート
+title: サブスクリプションと Xamarin.iOS でのレポート
+description: このドキュメントでは、サブスクリプションを更新する以外、無料サブスクリプション、自動更新可能なサブスクリプション、および iTunes Connect を使用してこれらのアイテムをレポートするについて説明します。
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7ba47e8f0ec114845c14269e81bb7f078a5d4936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e0873107a60b48e5ebfd8e159f3bf3b85d02867
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787031"
 ---
-# <a name="subscriptions-and-reporting"></a>サブスクリプションとレポート
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>サブスクリプションと Xamarin.iOS でのレポート
 
 ## <a name="about-non-renewing-subscriptions"></a>以外のサブスクリプションを更新する方法
 
 サブスクリプションの非更新は、時間制限 (1 週間のナビゲーション アプリケーションへのアクセス) やデータのアーカイブに時間制限付きのアクセスなどのサービスの売上を表す製品を意図しています。   
    
-   
-   
- 非更新サブスクリプションやその他の製品の種類の主な違いは:
+非更新サブスクリプションやその他の製品の種類の主な違いは:
 
 -  ITunes Connect で製品の定義では、という用語は含まれません。 アプリケーション コードは、製品の ID からの有効期間を推論できる必要があります。 
 -  これらを複数回 (製品と同様、消耗) 購入できます。 アプリケーションは、サブスクリプション期間/有効期限と、ユーザーが更新を管理し、ユーザーが重複しているサブスクリプションを購入するを防ぐ必要があります。 
