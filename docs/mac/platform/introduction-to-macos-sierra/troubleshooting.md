@@ -1,30 +1,31 @@
 ---
-title: トラブルシューティング
-description: この記事は、macOS Sierra Xamarin.Mac アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。
+title: Xamarin.Mac - macOS Sierra のトラブルシューティング
+description: このドキュメントは、macOS Sierra Xamarin.Mac アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。 ヒントは、Mac App Store、Apple Pay、バイナリの互換性、CFNetwork、CloudKit、および詳細に関連します。
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/22/2016
-ms.openlocfilehash: 7ea4ec48399b42ce69b0346b1a88a1d9fb9fbf6e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5b2571d9562fd137257e2dd0ea2ada8f071bab92
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792328"
 ---
-# <a name="troubleshooting"></a>トラブルシューティング
+# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac - macOS Sierra のトラブルシューティング
 
 _この記事は、macOS Sierra Xamarin.Mac アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。_
 
-次のセクションには、macOS Sierra Xamarin.mac とそれらの問題の解決策を使用する場合に発生する可能性がある既知の問題が一覧表示します。
+次のセクションでは、macOS Sierra Xamarin.mac とそれらの問題の解決策を使用する場合に発生する可能性がある既知の問題を一覧表示します。
 
 - [App Store](#App-Store)
 - [Apple Pay](#Apple-Pay)
 - [バイナリの互換性](#Binary-Compatibility)
 - [CFNetwork HTTP プロトコル](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Core イメージ](#CoreImage)
 - [通知](#Notifications)
 - [NSUserActivity](#NSUserActivity)
 - [Safari](#Safari)
@@ -69,7 +70,7 @@ Apple Pay に新しい支払いカードを追加するときに、不適切な�
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Core イメージ
 
 `CIImageProcessor` API が、任意の入力 image の数になりました。 `CIImageProcessor` MacOS Sierra ベータ 1 に含まれている API は削除されます。
 

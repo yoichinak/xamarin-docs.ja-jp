@@ -1,5 +1,5 @@
 ---
-title: ダイアログ ボックス
+title: Xamarin.Mac でダイアログ ボックス
 description: この記事では、ダイアログ ボックスとモーダル ウィンドウ Xamarin.Mac アプリケーションでの操作について説明します。 これは、標準のダイアログの操作と c# コードでこれらのコントロールと対話する、Xcode とインターフェイスのビルダーでモーダル ウィンドウを作成するについて説明します。
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cd0b57cc40d3f7cffd4d5711ec04a7225be870e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d9a93c8503d7e25f098e871378a22455b597e90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792695"
 ---
-# <a name="dialogs"></a>ダイアログ ボックス
+# <a name="dialogs-in-xamarinmac"></a>Xamarin.Mac でダイアログ ボックス
 
 同じダイアログおよびモーダル ウィンドウへのアクセスがある Xamarin.Mac アプリケーションでは、c# と .NET で作業するときをで作業する開発者*OBJECTIVE-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、モーダル ウィンドウの管理 (または必要に応じて c# コードで直接作成すること)。
 
@@ -502,12 +503,12 @@ namespace MacWindows
 9. 新しい Segue を選択し、設定、**クラス**に`ReplaceViewSegue`:
 
     [![](dialog-images/pref08.png "Setting segue クラス")](dialog-images/pref08.png#lightbox)
-10. **Menubar デザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.**コントロールをクリックし、ドラッグ、環境設定ウィンドウを作成するには**表示**話題。
+10. **Menubar デザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.** コントロールをクリックし、ドラッグ、環境設定ウィンドウを作成するには**表示**話題。
 
     [![](dialog-images/pref09.png "Segue の種類を設定")](dialog-images/pref09.png#lightbox)
 11. 変更内容を保存し、同期する Mac 用の Visual Studio に戻ります。
 
-コードを実行すると、選択、**設定しています.**から、**アプリケーション メニュー**ウィンドウが表示されます。
+コードを実行すると、選択、**設定しています.** から、**アプリケーション メニュー**ウィンドウが表示されます。
 
 [![](dialog-images/pref10.png "例の設定 ウィンドウ")](dialog-images/pref10.png#lightbox)
 
@@ -951,7 +952,7 @@ if (dlg.RunModal () == 1) {
 
 [開く] ダイアログをユーザーの選択したファイルまたはディレクトリ内の Url の配列として返します、`URL`プロパティです。
 
-プログラムを実行すると、選択、**オープンしています.**項目を**ファイル**メニューで、次が表示されます。 
+プログラムを実行すると、選択、**オープンしています.** 項目を**ファイル**メニューで、次が表示されます。 
 
 [![](dialog-images/dialog03.png "[開く] ダイアログ ボックス")](dialog-images/dialog03.png#lightbox)
 
@@ -1073,7 +1074,7 @@ void ShowSaveAs (NSObject sender)
 
 `AllowedFileTypes`プロパティは、ファイルに保存する、ユーザーが選択できるファイルの種類の文字列配列。 拡張機能としてか、ファイルの種類を指定することができますか_ユーティリ ティー_です。 既定値は`null`、これにより、ファイルの種類を使用します。
 
-設定している場合、`ShowSaveAsSheet`プロパティを`false`アプリケーションを実行し、選択、**名前を付けて保存しています.**から、**ファイル**メニューで、次が表示されます。
+設定している場合、`ShowSaveAsSheet`プロパティを`false`アプリケーションを実行し、選択、**名前を付けて保存しています.** から、**ファイル**メニューで、次が表示されます。
 
 [![](dialog-images/save01.png "A 保存 ダイアログ ボックス")](dialog-images/save01.png#lightbox)
 
@@ -1081,7 +1082,7 @@ void ShowSaveAs (NSObject sender)
 
 [![](dialog-images/save02.png "展開の保存 ダイアログ ボックス")](dialog-images/save02.png#lightbox)
 
-設定している場合、`ShowSaveAsSheet`プロパティを`true`アプリケーションを実行し、選択、**名前を付けて保存しています.**から、**ファイル**メニューで、次が表示されます。
+設定している場合、`ShowSaveAsSheet`プロパティを`true`アプリケーションを実行し、選択、**名前を付けて保存しています.** から、**ファイル**メニューで、次が表示されます。
 
 [![](dialog-images/save03.png "シート保存")](dialog-images/save03.png#lightbox)
 

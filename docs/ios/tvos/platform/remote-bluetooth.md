@@ -1,22 +1,20 @@
 ---
-title: Siri のリモート コンピューターと Bluetooth コント ローラー
-description: この記事では、Xamarin.tvOS アプリで新しい Siri リモート コンピューターと Bluetooth ゲーム コント ローラーのサポートについて説明します。
+title: Siri Remote、および Xamarin で tvOS の Bluetooth コント ローラー
+description: この記事では、Siri Remote、およびゲーム コント ローラー Xamarin で記述された tvOS アプリで Bluetooth を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b5893278acad999efd94c89f1ca923100f5cf7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc2abed202f8b2e6993890ca4e6b3c6875522e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789191"
 ---
-# <a name="siri-remote-and-bluetooth-controllers"></a>Siri のリモート コンピューターと Bluetooth コント ローラー
-
-_この記事では、Xamarin.tvOS アプリで新しい Siri リモート コンピューターと Bluetooth ゲーム コント ローラーのサポートについて説明します。_
-
+# <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri Remote、および Xamarin で tvOS の Bluetooth コント ローラー
 
 Xamarin.tvOS アプリのユーザーがいないするインターフェイスとの対話の直接として ios をタップしたいないデバイスの画面上のイメージが直接からルームを使用して、全体では、 [Siri リモート](#The-Siri-Remote)です。
 
@@ -75,9 +73,6 @@ Apple では、画面をタッチ ジェスチャを使用して操作するた�
 
 > [!IMPORTANT]
 > 行う必要があります**常に**リモコンの再生/一時停止ボタンに関数を割り当てます。 非機能的 ボタンを持つと、エンドユーザーに壊れた参照、アプリがなることができます。 このボタンの有効な関数をお持ちでない場合は、主ボタン (タッチ画面をクリックする) と同じ機能を割り当てます。
-
-
-
 
 <a name="Gestures-and-Storyboards" />
 

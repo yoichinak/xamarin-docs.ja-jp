@@ -1,18 +1,20 @@
 ---
-title: ネイティブ ライブラリを参照します。
+title: Xamarin.iOS でネイティブ ライブラリを参照します。
+description: このドキュメントでは、Xamarin.iOS アプリケーションにネイティブの C ライブラリをリンクする方法について説明します。 これには、c# からユニバーサル ネイティブ ライブラリとアクセスの C メソッドを構築する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 4d58e869dc1357faef71ea88ed6b5ea30aaf960d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb27ba8b2d9c1b66448f22b7f80f17ba2e483544
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787728"
 ---
-# <a name="referencing-native-libraries"></a>ネイティブ ライブラリを参照します。
+# <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin.iOS でネイティブ ライブラリを参照します。
 
 Xamarin.iOS では、ネイティブの C ライブラリと Objective C ライブラリの両方を持つリンクをサポートします。 このドキュメントでは、Xamarin.iOS プロジェクトを含む、ネイティブの C ライブラリをリンクする方法について説明します。 Objective C ライブラリの作業を行うことについては、次を参照してください。 この[Objective C 型のバインド](~/ios/platform/binding-objective-c/index.md)ドキュメント。
 

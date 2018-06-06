@@ -1,5 +1,5 @@
 ---
-title: .xib ファイル
+title: Xamarin.Mac で .xib ファイル
 description: この記事では、Xcode のインターフェイスのビルダーを作成および維持 Xamarin.Mac アプリケーションのユーザー インターフェイスに作成された .xib ファイルと作業について説明します。
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c1f575f5d3d5f0fbe82d5e0d08103b9261944602
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ef536ddb19ed60975368bd022e57c34c6f473dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792275"
 ---
-# <a name="xib-files"></a>.xib ファイル
+# <a name="xib-files-in-xamarinmac"></a>Xamarin.Mac で .xib ファイル
 
 _この記事では、Xcode のインターフェイスのビルダーを作成および維持 Xamarin.Mac アプリケーションのユーザー インターフェイスに作成された .xib ファイルと作業について説明します。_
 
@@ -374,7 +375,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 このコードは、Xcode とインターフェイスのビルダーを作成し、ユーザーがボタンをクリックしたいつでも呼び出されるアクションをアタッチします。
 
-一部の UI 要素に自動的が組み込まれて操作、たとえば、既定のメニュー バー内の項目など、**オープンしています.**メニュー項目 (`openDocument:`)。 **ソリューション パッド**をダブルクリックして、 **<code>appdelegate.cs</code>**ファイルを開いて編集し、下の次のコードを追加するファイル、`DidFinishLaunching`メソッド。
+一部の UI 要素に自動的が組み込まれて操作、たとえば、既定のメニュー バー内の項目など、**オープンしています.** メニュー項目 (`openDocument:`)。 **ソリューション パッド**をダブルクリックして、 **<code>appdelegate.cs</code>** ファイルを開いて編集し、下の次のコードを追加するファイル、`DidFinishLaunching`メソッド。
 
 ```csharp
 [Export ("openDocument:")]
@@ -425,7 +426,7 @@ partial void ClickedButton (Foundation.NSObject sender);
 - (IBAction)ClickedButton:(id)sender;
 ```
 
-わかるように、Visual Studio for Mac 待機 .h ファイルを変更して、それぞれにそれらの変更を自動的に同期**. designer.cs**ファイルをアプリケーションに公開することです。 場合もあります**MainWindow.designer.cs**部分クラスでは、Visual Studio for Mac は、変更する必要があるないように**MainWindow.cs**クラスに加え変更を上書きします。
+わかるように、Visual Studio for Mac 待機 .h ファイルを変更して、それぞれにそれらの変更を自動的に同期 **. designer.cs**ファイルをアプリケーションに公開することです。 場合もあります**MainWindow.designer.cs**部分クラスでは、Visual Studio for Mac は、変更する必要があるないように**MainWindow.cs**クラスに加え変更を上書きします。
 
 通常必要はありませんを開くには、 **MainWindow.designer.cs** 、自分でこれがここに示す教育する目的でのみです。
 
@@ -465,7 +466,7 @@ void ShowPreferences (NSObject sender)
 
 `var preferences = new PreferencesWindowController ();`行 .xib ファイルから、ウィンドウを読み込み、それを拡張するウィンドウ コント ローラーの新しいインスタンスを作成します。 `preferences.Window.MakeKeyAndOrderFront (this);`行をユーザーに新しいウィンドウが表示されます。
 
-コードを実行しを選択する場合、**設定しています.**から、**アプリケーション メニュー**ウィンドウが表示されます。
+コードを実行しを選択する場合、**設定しています.** から、**アプリケーション メニュー**ウィンドウが表示されます。
 
 ![サンプル アプリを実行している](xib-images/new04.png "サンプル アプリの実行")
 

@@ -1,5 +1,5 @@
 ---
-title: Apple watchOS に料金を支払う
+title: Xamarin で watchOS で Apple 料金を支払う
 description: 拡張機能を取り上げて Apple がに対して Apple Pay watchOS 3 および Apple Watch の Xamarin.iOS でそれらを実装する方法です。
 ms.prod: xamarin
 ms.assetid: 32FF5D21-C252-485D-83AC-A7E592237962
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b46a0e57ea9abc5c4ec4fc2aba1e6940249b64fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 75d660ad0699b6fac3b1ae43046f322f380872b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791076"
 ---
-# <a name="apple-pay-on-watchos"></a>Apple watchOS に料金を支払う
+# <a name="apple-pay-on-watchos-in-xamarin"></a>Xamarin で watchOS で Apple 料金を支払う
 
 Apple の拡張機能を Apple のお支払いに向けた watchOS 3 アプリ内の支払いのサポートを追加します。 これにより、ユーザーを安全に支払いを提供し、Apple Watch から直接、物理的な商品およびサービスの支払いに情報を問い合わせてください。
 

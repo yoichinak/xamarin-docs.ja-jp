@@ -1,18 +1,20 @@
 ---
-title: 通知
+title: watchOS Xamarin での通知
+description: このドキュメントでは、Xamarin で watchOS 通知を操作する方法について説明します。 作成する通知コント ローラー、通知の生成および通知のテストがについて説明します。
 ms.prod: xamarin
 ms.assetid: 0BC1306E-0713-4592-996E-7530CCF281E7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 1a681c2bda941d8fe015a8d4da8b99f4d85e441b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42b0354f19a9e0c31b7a859d598526fddad726cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791911"
 ---
-# <a name="notifications"></a>通知
+# <a name="watchos-notifications-in-xamarin"></a>watchOS Xamarin での通知
 
 含む iOS アプリには、それらがサポートされている場合、アプリで通知を受信できるをご覧ください。 組み込みの通知は処理しないように*必要があります*ただし以下に示すその他の通知のサポートを追加する場合は通知の動作をカスタマイズして、外観がで読み取られます。
 

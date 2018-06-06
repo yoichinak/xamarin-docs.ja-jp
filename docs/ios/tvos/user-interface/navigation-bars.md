@@ -1,21 +1,20 @@
 ---
-title: ナビゲーションのコント ローラーの使用
-description: この記事では、設計と Xamarin.tvOS アプリ内でのナビゲーション バーの操作について説明します。
+title: TvOS Xamarin のナビゲーション バーの操作
+description: このドキュメントでは、Xamarin でビルドされた tvOS アプリでのナビゲーション バーを操作する方法について説明します。 ストーリー ボードのナビゲーション バーを設定して、これらのボタンからのイベントに応答がについて説明します。
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8a9a1c852137a2bcc0d46615e69eef0a245a9768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6c8ff8551c91578b9399b88e90e94c6af12ac68
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789292"
 ---
-# <a name="working-with-navigation-controllers"></a>ナビゲーションのコント ローラーの使用
-
-_この記事では、設計と Xamarin.tvOS アプリ内でのナビゲーション バーの操作について説明します。_
+# <a name="working-with-tvos-navigation-bars-in-xamarin"></a>TvOS Xamarin のナビゲーション バーの操作
 
 ナビゲーション バーは、タイトルと省略可能なナビゲーション バーのボタンを表示するビューの先頭に追加できます。 通常、ユーザーがテーブルのビュー、コレクションまたは選択した項目の詳細を示すサブビュー メニューのように、メイン ページから移動するときに使用します。
 
@@ -26,9 +25,6 @@ _この記事では、設計と Xamarin.tvOS アプリ内でのナビゲーシ�
 > [!IMPORTANT]
 > ナビゲーション バーは、既定では完全に透過的です。 下にあるコンテンツをナビゲーション バーの内容が読み取り可能なことに注意してください。 たとえば、ときにテーブルのビューまたはコレクション内のコンテンツがスクロールします。
 
-
-
-
 <a name="Navigation-Bars-and-Storyboards" />
 
 ## <a name="navigation-bars-and-storyboards"></a>ナビゲーション バーとストーリー ボード
@@ -36,7 +32,6 @@ _この記事では、設計と Xamarin.tvOS アプリ内でのナビゲーシ�
 Xamarin.tvOS アプリでのナビゲーション バーを使用する最も簡単な方法では、iOS デザイナーを使用して、アプリの UI に追加します。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 
 1. **ソリューション パッド**、ダブルクリック`Main.storyboard`ファイルし、ファイルを開いて編集します。
 1. ドラッグ、**ナビゲーション バー**から、**ツールボックス**し、画面の上部にあるビュー上にドロップします。 
@@ -77,9 +72,6 @@ Xamarin.tvOS アプリでのナビゲーション バーを使用する最も簡
 
 > [!IMPORTANT]
 > などのイベントを割り当てることができますが`TouchUpInside`UI 要素に (など、UIButton)、ios デザイナーには決して呼び出されません Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためです。 常に使用する必要があります、 `Primary Action` tvOS のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
-
-
-
 
 次のコードは、次の 3 つの異なる BarButtonItems のイベント ハンドラーの例を示します: `ShowFirstHotel`、 `ShowSecondHotel`、および`ShowThirdHotel`です。 各アイテムがクリックされたとき、背景画像`HotelImage`を変更します。 これはビュー コント ローラーで編集 (例`ViewController.cs`) ファイル。
 

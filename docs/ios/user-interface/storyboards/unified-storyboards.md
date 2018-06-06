@@ -1,21 +1,20 @@
 ---
-title: 統一されたストーリー ボード
-description: 統一されたストーリー ボードには、iOS デバイスの画面サイズの範囲が拡張をカバーする、複数のストーリー ボードではなく、1 つのストーリー ボードで、ユーザー インターフェイスを作成する開発者ができるようにします。 この記事は、Xamarin.iOS 内で統一されたストーリー ボードの操作に詳細な概要を説明する設計されています。
+title: Xamarin.iOS で統一されたストーリー ボード
+description: このドキュメントでは、Xamarin.iOS で統一されたストーリー ボードについて説明します。 統一されたストーリー ボードには、1 つのインターフェイス定義に複数の画面サイズをサポートするために開発者ができるようにします。
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d3324a6485f2d240ec339f6ce7f03aafe51c80c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792022"
 ---
-# <a name="unified-storyboards"></a>統一されたストーリー ボード
-
-_統一されたストーリー ボードには、iOS デバイスの画面サイズの範囲が拡張をカバーする、複数のストーリー ボードではなく、1 つのストーリー ボードで、ユーザー インターフェイスを作成する開発者ができるようにします。この記事は、Xamarin.iOS 内で統一されたストーリー ボードの操作に詳細な概要を説明する設計されています。_
+# <a name="unified-storyboards-in-xamarinios"></a>Xamarin.iOS で統一されたストーリー ボード
 
 iOS 8 には、ユーザー インターフェイスを作成するための新しい、使用する単純なメカニズムが含まれており、統一されたストーリー ボードです。 すべてのハードウェアのさまざまな画面サイズに対応する 1 つにストーリー ボードは、や応答性の高速のビューを作成することができます、"設計-1 回のみ、使用する多"のスタイル。
 
@@ -679,7 +678,7 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 
  [![](unified-storyboards-images/exclude05.png "要素が見つからない場合に iPhone シミュレーターで実行中のアプリ")](unified-storyboards-images/exclude05.png#lightbox)
 
-要素から除外ケースを削除する内の要素を選択するだけ、**デザイン サーフェイス**の一番下までスクロール、**プロパティ エクスプ ローラー**  をクリックし、 **-**を削除する場合の横にあるボタンをクリックします。
+要素から除外ケースを削除する内の要素を選択するだけ、**デザイン サーフェイス**の一番下までスクロール、**プロパティ エクスプ ローラー**  をクリックし、 **-** を削除する場合の横にあるボタンをクリックします。
 
 ストーリー ボードの統合の実装を表示するを見て、`UnifiedStoryboard`サンプル Xamarin iOS 8 のアプリケーションがこのドキュメントにアタッチされています。
 

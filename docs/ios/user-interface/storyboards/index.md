@@ -1,21 +1,20 @@
 ---
-title: ストーリー ボードの概要
-description: ストーリー ボードは、外観を視覚的に表現し、アプリケーションのフローのです。 Xamarin には、利用するために、ストーリー ボードの視覚的に、アプリケーションの画面をデザインして、ビューにアクセスできるように Xamarin.iOS アプリケーション デザイナーが導入コント ローラーの詳細に制御を c# segues とします。
+title: Xamarin.iOS 内のストーリー ボードの概要
+description: このドキュメントでは、Xamarin.iOS 内のストーリー ボードに紹介します。 ストーリー ボードを使用して、ユーザー インターフェイスを定義する方法について説明します、segues、および iOS デザイナーを使用して、ストーリー ボード ファイルを編集する方法です。
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 647bd7d339dc56978752f7ab29de30cf8acb7e07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3366da2f5dc869c7b075bf32be238a1ebd3145d7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790969"
 ---
-# <a name="introduction-to-storyboards"></a>ストーリー ボードの概要
-
-_ストーリー ボードは、外観を視覚的に表現し、アプリケーションのフローのです。Xamarin には、利用するために、ストーリー ボードの視覚的に、アプリケーションの画面をデザインして、ビューにアクセスできるように Xamarin.iOS アプリケーション デザイナーが導入コント ローラーの詳細に制御を c# segues とします。_
+# <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS 内のストーリー ボードの概要
 
 このガイドでどのようなストーリー ボードを用いては、主要なコンポーネント – Segues などのいくつかを確認します。 ストーリー ボードを作成および使用方法に紹介開発者がどのような利点があるとします。
 
@@ -24,7 +23,7 @@ _ストーリー ボードは、外観を視覚的に表現し、アプリケー
 ストーリー ボードの作成、開かれたおよび Xamarin iOS デザイナーを使用して編集します。 このガイドもチュートリアル、デザイナーを使用して、ナビゲーションをプログラミングする c# を使用しているときに、ストーリー ボードを作成する方法です。
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 ストーリー ボードは、インストールされている Xamarin ワークロードで iOS Mac 用の Visual Studio のデザイナーや、Visual Studio 2015 や 2017 使用できます。
 
@@ -321,7 +320,7 @@ public partial class MainViewController : UIViewController
 1. ここで、UI を構築しに記載されているその他のビューを追加してみましょう、`MainViewController`次のスクリーン ショットでこのような外観にすること。
 
     - UITextField
-        - Name: PasswordTextField
+        - 名前: PasswordTextField
         - シークレットのパスワードを入力してください ' をプレース ホルダー。
     - UILabel
         - テキスト: ' エラー: パスワードが間違っています。 いてはいけない渡さないでください '。

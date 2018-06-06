@@ -1,19 +1,20 @@
 ---
-title: リソースとデータ ストレージ
-description: この記事では、リソースと Xamarin.tvOS アプリ内の永続的なデータ ストレージの操作について説明します。
+title: tvOS リソースと Xamarin 内のデータ ストレージ
+description: この記事では、リソースと Xamarin でビルドされた tvOS アプリ内の永続的なデータ ストレージを操作する方法について説明します。 ICloud データ ストレージとのオンデマンド リソースについても説明します。
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: aa14ac08763a48b5f4f9a9522e8b10c652e513c4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788837"
 ---
-# <a name="resources-and-data-storage"></a>リソースとデータ ストレージ
+# <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvOS リソースと Xamarin 内のデータ ストレージ
 
 _この記事では、リソースと Xamarin.tvOS アプリ内の永続的なデータ ストレージの操作について説明します。_
 
@@ -57,7 +58,7 @@ Apple TV の記憶域が限られているためだけでなく、非常に限�
 - **CloudKit** : (1 MB より大きい)、情報の大きな部分の記憶域は、Apple の CloudKit フレームワークを使用します。 ICloud KVS 記憶域とは異なり CloudKit データはアプリ (だけでなく、単一のユーザーにプライベート) のすべてのユーザー間で共有できます。 フォームの詳細についてを参照してください、 [CloudKit 概要](~/ios/data-cloud/intro-to-cloudkit.md)ドキュメントや Apple の[CloudKit クイック スタート](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)です。
 
 > [!IMPORTANT]
-> Apple[ツールを提供](https://developer.apple.com/support/allowing-users-to-manage-data/)開発者が、欧州連合の一般的なデータ保護規制 (GDPR) を適切に処理します。
+> Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
 <a name="On-Demand-Resources" />
 

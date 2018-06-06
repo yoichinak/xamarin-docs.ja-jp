@@ -1,23 +1,22 @@
 ---
-title: コントロール
-description: Xamarin.iOS は、Apple によって提供されるすべてのネイティブ ユーザー インターフェイス オブジェクトを公開します。 IOS を使用して、デザイナー、Xcode のインターフェイスのビルダー Xamarin.iOS アプリに簡単に追加されるかプログラムです。 どの方法を選択して、関係なく、Xamarin.iOS はすべてのユーザー インターフェイス オブジェクトのプロパティとメソッド (C#) を公開します。
+title: Xamarin.iOS のユーザー インターフェイス コントロール
+description: このドキュメントには、さまざまな iOS ユーザー インターフェイス コントロール Xamarin.iOS 開発者が利用できるを説明するガイドへのリンクがします。 リンクされたコンテンツは、アラート、ボタン、コレクション ビュー、イメージ、カメラの手動のコントロール、マップ、ラベル、ピッカー、日付の選択、および詳細について説明します。
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 82b2998319d4e78ee4f58a6d024032a509724537
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 477cb4e479224b9e795f3460e0f59e0aa2038630
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790043"
 ---
-# <a name="controls"></a>コントロール
+# <a name="user-interface-controls-in-xamarinios"></a>Xamarin.iOS のユーザー インターフェイス コントロール
 
-_Xamarin.iOS は、Apple によって提供されるすべてのネイティブ ユーザー インターフェイス オブジェクトを公開します。IOS を使用して、デザイナー、Xcode のインターフェイスのビルダー Xamarin.iOS アプリに簡単に追加されるかプログラムです。どの方法を選択して、関係なく、Xamarin.iOS はすべてのユーザー インターフェイス オブジェクトのプロパティとメソッド (C#) を公開します。_
-
-このドキュメントには、いくつかの最も一般的な iOS のユーザー インターフェイス コントロールとその使用方法を紹介します。
+このドキュメントでは、いくつかの最も一般的な iOS のユーザー インターフェイス コントロールとその使用方法を紹介します。
 
 ## <a name="alertsalertsmd"></a>[アラート](alerts.md)
 

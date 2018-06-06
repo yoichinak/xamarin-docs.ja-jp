@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Mac 拡張機能のサポート
-description: この記事では、Xamarin.Mac バージョン 2.10 (以降) での拡張機能のサポートについて説明します。
+description: このドキュメントでは、ファインダー、共有、および現在の拡張機能に対する Xamarin.Mac のサポートについて説明します。 制限事項と既知の問題、チュートリアルおよびサンプル アプリへのリンクを調査し、拡張機能を使用するためのヒントを提供します。
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 03936c75d31bfd01e741ad2c09096c925dc9dbfc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4cef6e89b89ef41a0c93b687c9df11a8aa971ed5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792379"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
 

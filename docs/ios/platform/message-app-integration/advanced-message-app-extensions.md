@@ -1,5 +1,5 @@
 ---
-title: 高度なメッセージ アプリ拡張機能
+title: 高度なメッセージ Xamarin.iOS アプリ拡張機能
 description: この記事では、メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を使用するための高度なテクニックを示します。
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cd2cabf98c83bba7502e8533e482713a9c43f67a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eca3dcc19714251184092fbe136d0078f1ca8d54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788024"
 ---
-# <a name="advanced-message-app-extensions"></a>高度なメッセージ アプリ拡張機能
+# <a name="advanced-message-app-extensions-in-xamarinios"></a>高度なメッセージ Xamarin.iOS アプリ拡張機能
 
 _この記事では、メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を使用するための高度なテクニックを示します。_
 
@@ -594,7 +595,7 @@ WatchOS では、メッセージ アプリには、ハンドオフ、ユーザ�
 
 - watchOS 2 +
 - OS X 10.11 +
-- iOS 9 +
+- iOS 9 以降
 
 2 つの独立したメッセージとしてフォールバック形式で転送されます。
 

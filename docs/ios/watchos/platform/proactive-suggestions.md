@@ -1,5 +1,5 @@
 ---
-title: プロアクティブなご提案
+title: watchOS Xamarin ではプロアクティブ提案
 description: ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、watchOS 3 アプリケーションではドライブ エンゲージメントをプロアクティブな提案を使用する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f22be43f814865c3c14e12aa2aec3a8dbce09b7a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33dccd00e07062e040c2707826ef62b764e11a0e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791287"
 ---
-# <a name="proactive-suggestions"></a>プロアクティブなご提案
+# <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS Xamarin ではプロアクティブ提案
 
 _ここでは、システムが事前に有用な情報をユーザーに自動的に表示できるように、watchOS 3 アプリケーションではドライブ エンゲージメントをプロアクティブな提案を使用する方法を説明します。_
 
@@ -37,7 +38,7 @@ WatchOS 3 を新しい、`NSUserActivity`クラスが含まれています、`Ma
 
 ## <a name="contextual-siri-reminders"></a>コンテキスト Siri アラーム
 
-Siri を使用して簡単に現在表示しているアプリで、後で、コンテンツの表示を求めるメッセージを作成することができます。 たとえば、アプリでレストランのレビューを表示していた場合、でした Siri を呼び出すし、言う*「通知についてホーム出た場合」。* Siri は、アプリで、レビューへのリンクを使用してアラームを生成します。
+Siri を使用して簡単に現在表示しているアプリで、後で、コンテンツの表示を求めるメッセージを作成することができます。 たとえば、アプリでレストランのレビューを表示していた場合、でした Siri を呼び出すし、言う *「通知についてホーム出た場合」。* Siri は、アプリで、レビューへのリンクを使用してアラームを生成します。
 
 ## <a name="implementing-proactive-suggestions"></a>プロアクティブな推奨事項を実装します。
 
@@ -131,7 +132,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティを復元します。
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>**ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリの編集、 **<code>appdelegate.cs</code>** ファイルし、オーバーライド、`ContinueUserActivity`メソッドです。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -170,7 +171,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 1. フレンドを対応するアプリであるレストランを検索します。
 4. ユーザーは、マップのアプリに切り替え場合、レストランのアドレスが自動的に変換先として推奨されています。
 5. これは、サード パーティ製アプリに対しても機能 (をサポートする`NSUserActivity`) ので、飛行共有アプリをユーザーが切り替えることができ、レストランのアドレスが自動的に提案があるの保存先としてもします。
-6. コンテキストに提供 Siri、ため、ユーザーがレストランのアプリ内で Siri を呼び出すことができます、依頼して*「... の方向を取得」* Siri はユーザーが表示してレストランへの道順を提供します。
+6. コンテキストに提供 Siri、ため、ユーザーがレストランのアプリ内で Siri を呼び出すことができます、依頼して *「... の方向を取得」* Siri はユーザーが表示してレストランへの道順を提供します。
 
 1 つの点を共通の上記の機能のすべてから、修正案を最初の位置を示すため、それらはすべて。 上記の例の場合は、架空のレストランのレビュー アプリを勧めします。
 

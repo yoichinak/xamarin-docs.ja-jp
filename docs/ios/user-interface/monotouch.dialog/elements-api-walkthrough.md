@@ -1,18 +1,19 @@
 ---
-title: チュートリアル - 要素 API を使用してアプリケーションを作成します。
+title: 要素の API を使用して Xamarin.iOS アプリケーションを作成します。
 description: この記事は、MonoTouch ダイアログ記事の概要に表示される情報を基に構築します。 MonoTouch.Dialog (山を使用する方法を示すチュートリアルを示しますD) 要素 API を簡単に開始山したアプリケーションのビルドD.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e4fbf744c6f967d09e0033212024c2e2398fb768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 64f407288da72dbf51fb3388ddf36caea377f09c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790433"
 ---
-# <a name="walkthrough---creating-an-application-using-the-elements-api"></a>チュートリアル - 要素 API を使用してアプリケーションを作成します。
+# <a name="creating-a-xamarinios-application-using-the-elements-api"></a>要素の API を使用して Xamarin.iOS アプリケーションを作成します。
 
 _この記事は、MonoTouch ダイアログ記事の概要に表示される情報を基に構築します。MonoTouch.Dialog (山を使用する方法を示すチュートリアルを示しますD) 要素 API を簡単に開始山したアプリケーションのビルドD._
 
@@ -165,7 +166,7 @@ public class Task
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDWalkthrough (sample)](https://developer.xamarin.com/samples/MTDWalkthrough/)
+- [MTDWalkthrough (サンプル)](https://developer.xamarin.com/samples/MTDWalkthrough/)
 - [-スクリーン キャストである Miguel de Icaza により iOS ログイン画面 MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
 - [スクリーン キャスト - MonoTouch.Dialog で iOS ユーザー インターフェイスを簡単に作成](http://youtu.be/j7OC5r8ZkYg)
 - [MonoTouch.Dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)

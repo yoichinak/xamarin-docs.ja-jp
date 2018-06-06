@@ -1,6 +1,6 @@
 ---
-title: トラブルシューティング
-description: この記事カバー既知の問題点の Xamarin の tvOS のサポートとやり取りしているときに発生する可能性があります。
+title: Xamarin でビルドされたアプリを tvOS のトラブルシューティング
+description: この記事では、Xamarin でビルドされた tvOS アプリの開発時にトラブルシューティングに役立つさまざまなヒントを提供します。 これは、特定のエラーと既知の問題について説明します。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 124E4953-4DFA-42B0-BCFC-3227508FE4A6
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 86106fa5ca53e93ccffb4dd141914c01ab65a506
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e69157cf9c8a9b9405e31edb2906754328653ccb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789204"
 ---
-# <a name="troubleshooting"></a>トラブルシューティング
+# <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin でビルドされたアプリを tvOS のトラブルシューティング
 
 _この記事カバー既知の問題点の Xamarin の tvOS のサポートとやり取りしているときに発生する可能性があります。_
 

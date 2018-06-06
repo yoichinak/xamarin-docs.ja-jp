@@ -1,14 +1,16 @@
 ---
 title: 既知の問題と回避策
+description: このドキュメントでは、Xamarin のブックの既知の問題と回避策について説明します。 これは、CultureInfo 問題や、JSON の問題について説明します。
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 186faf3fc4f93d1c9a4af9e3e9f72afd569fed8b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b6dc3b119d3e85369a71638f2519b2ef0c85446c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794034"
 ---
 # <a name="known-issues--workarounds"></a>既知の問題と回避策
 
@@ -56,7 +58,7 @@ Newtonsoft.Json 10 によって明示的にまたはそれ以降の NuGet パッ
 
 ## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>ブック 1.3. で SkiaSharp レンダラーが表示されません。
 
-ブック 1.3 以降、取り除きました SkiaSharp レンダラーは同梱されているブック 0.99.0、SkiaSharp 自体、レンダラーを提供することを [SDK] を使用して、優先するために [/ガイド/クロス プラットフォーム/ブック/sdk/] です。
+ブック 1.3 以降、取り除きました SkiaSharp レンダラーは同梱されているブック 0.99.0、SkiaSharp 自体、レンダラーを提供することを使用して、優先するために、 [SDK](~/tools/workbooks/sdk/index.md)です。
 
 ### <a name="workaround"></a>回避策
 

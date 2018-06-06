@@ -1,18 +1,20 @@
 ---
-title: コント ローラーのトランジションの表示
+title: Xamarin.iOS 内のビュー コント ローラーの移行
+description: このドキュメントでは、Xamarin.iOS アプリケーション内のビューのコント ローラー間のアニメーション効果をカスタマイズする方法について説明します。
 ms.prod: xamarin
 ms.assetid: CB3AC8E2-8A47-4839-AFA5-AE33047BB26C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 253a2556872ea9186eec832a84f4cfff9cb1c209
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 35795002310cd79a1897061fe6e3e41b48b45b4d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790449"
 ---
-# <a name="view-controller-transitions"></a>コント ローラーのトランジションの表示
+# <a name="view-controller-transitions-in-xamarinios"></a>Xamarin.iOS 内のビュー コント ローラーの移行
 
 UIKit は、コント ローラーの表示を表示するときに発生するアニメーションの移行をカスタマイズするためのサポートを追加します。 このサポートは、どのから直接継承するカスタム コント ローラーと同様に、組み込みのコント ローラーに含まれる`UIViewController`です。 さらに、`UICollectionViewController`コレクション ビューのレイアウトでのアニメーション効果を活用するコント ローラーの遷移のカスタマイズを活用します。
 

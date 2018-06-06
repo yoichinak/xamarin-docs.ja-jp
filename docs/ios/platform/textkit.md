@@ -1,32 +1,32 @@
 ---
-title: TextKit
-description: テキストのキット API は、強力なテキスト Xamarin.iOS のレイアウトとレンダリングの機能を提供します。
+title: Xamarin.iOS で TextKit
+description: このドキュメントでは、Xamarin.iOS で TextKit を使用する方法について説明します。 TextKit は、強力なテキスト レイアウトとレンダリングの機能を提供します。
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 78ca0d9505c9f56dc6476bd04dab560a70b2c4b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac80d1d07f5649d377dd6fdefcb4911ba9ec2dcb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788336"
 ---
-# <a name="text-kit"></a>テキスト キット
+# <a name="textkit-in-xamarinios"></a>Xamarin.iOS で TextKit
 
-テキスト キットは、強力なテキストのレイアウトとレンダリングの機能を提供する新しい API です。 低レベルの中核となるテキストのフレームワーク上に構築されますが、中核となるテキストよりも使用する方が簡単です。
+TextKit とは、強力なテキストのレイアウトとレンダリングの機能を提供する新しい API です。 低レベルの中核となるテキスト フレームワークに基づいて構築されますが、中核となるテキストよりも使用する方が簡単です。
 
-テキスト キットの機能を標準コントロールで使用できるようにするには、いくつかの iOS テキスト コントロールはテキスト Kit などを使用する再実装されています。
+TextKit の機能を標準コントロールで使用できるようにするいくつかの iOS テキスト コントロールは TextKit を使用する再実装されているを含みます。
 
 -  UITextView
 -  UITextField
 -  UILabel
 
-
 ## <a name="architecture"></a>アーキテクチャ
 
-テキスト Kit は、レイアウトと、次のクラスを含め、表示とテキストの保存を分離する、レイヤー アーキテクチャを提供します。
+TextKit は、レイアウトと、次のクラスを含め、表示とテキストの保存を分離する、レイヤー アーキテクチャを提供します。
 
 -  `NSTextContainer` – 座標系とレイアウトのテキストに使用されるジオメトリを提供します。
 -  `NSLayoutManager` – グリフにテキストにすることによってテキストをレイアウトします。 
@@ -37,7 +37,7 @@ ms.lasthandoff: 04/04/2018
 
 次の図は、このアーキテクチャを示しています。
 
- ![](textkit-images/textkitarch.png "この図は、テキスト キット アーキテクチャを示しています。")
+ ![](textkit-images/textkitarch.png "この図は、TextKit アーキテクチャを示しています。")
 
 ## <a name="text-storage-and-attributes"></a>テキストの保存と属性
 
@@ -56,7 +56,7 @@ textView.TextStorage.EndEditing ();
 
 ## <a name="layout-with-exclusion-path"></a>除外パスを含むレイアウト
 
-テキスト キットも、レイアウトをサポートでき、複雑なシナリオと呼ばれる複数の列のテキストと指定したパスの周りでフローさせるテキストなど*除外パス*です。 除外パスは、指定したパスの周囲にテキストを原因と、テキスト レイアウトのジオメトリを変更するテキスト コンテナーに適用されます。
+TextKit も、レイアウトをサポートでき、複雑なシナリオと呼ばれる複数の列のテキストと指定したパスの周りでフローさせるテキストなど*除外パス*です。 除外パスは、指定したパスの周囲にテキストを原因と、テキスト レイアウトのジオメトリを変更するテキスト コンテナーに適用されます。
 
 除外するパスを追加すると設定が必要です、`ExclusionPaths`レイアウト マネージャーのプロパティです。 このプロパティの設定が原因でテキストのレイアウトを無効にし、除外パスの前後のテキストをフローするレイアウト マネージャー。
 
@@ -139,10 +139,10 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-このコードは、主要なグラフィックスを使用してテキスト ビューで描画するためのサポートを追加します。 以降、`UITextView`テキストのレンダリングやレイアウトにテキスト キットを使用するクラスが組み込まれた、除外のパスを設定するなどのテキストのキットのすべての機能を使用できます。
+このコードは、主要なグラフィックスを使用してテキスト ビューで描画するためのサポートを追加します。 以降、 `UITextView` TextKit をテキストのレンダリングやレイアウトに使用するクラスが組み込まれた、TextKit、除外のパスを設定するなどのすべての機能を使用できます。
 
 > [!IMPORTANT]
-> この例サブクラス`UITextView`タッチ描画のサポートを追加します。 サブクラス化`UITextView`テキスト キットの機能を取得する必要はありません。
+> この例サブクラス`UITextView`タッチ描画のサポートを追加します。 サブクラス化`UITextView`TextKit の機能を取得する必要はありません。
 
 
 

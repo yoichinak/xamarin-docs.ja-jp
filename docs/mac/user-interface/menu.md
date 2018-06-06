@@ -1,5 +1,5 @@
 ---
-title: メニュー
+title: Xamarin.Mac のメニュー
 description: この記事と Xamarin.Mac アプリケーションでメニューの作業について説明します。 これは、作成およびメニューとメニュー項目には、Xcode とインターフェイスのビルダーを維持し、それらのプログラムの操作について説明します。
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cb89d1df60bafe14dcc989666f0eeb5d757e4017
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792922"
 ---
-# <a name="menus"></a>メニュー
+# <a name="menus-in-xamarinmac"></a>Xamarin.Mac のメニュー
 
 _この記事と Xamarin.Mac アプリケーションでメニューの作業について説明します。これは、作成およびメニューとメニュー項目には、Xcode とインターフェイスのビルダーを維持し、それらのプログラムの操作について説明します。_
 
@@ -116,7 +117,7 @@ Apple に従ってし、既定では、macOS のすべてのアプリケーシ�
 既定では、ユーザー イベントが発生するたびに`NSMenu`自動的に有効にし、各表示されているメニューと項目に基づいて、アプリケーションのコンテキスト メニューを無効にします。 これには項目の有効/無効にする 3 つの方法があります。
 
 - **自動メニューを有効にする**の場合は、メニュー項目が有効になっている`NSMenu`する項目は、ワイヤード (有線) アップをアクションに応答する適切なオブジェクトを検索することができます。 たとえば、テキスト上のビューにフックを組み込みのある、`copy:`アクション。
-- **カスタム アクションと validateMenuItem:**にバインドされているすべてのメニュー項目の[ウィンドウまたはビューのコント ローラーのカスタム アクション](#Working-with-Custom-Window-Actions)、追加することができます、`validateMenuItem:`アクションと手動で有効にするにまたはメニュー項目を無効にします。
+- **カスタム アクションと validateMenuItem:** にバインドされているすべてのメニュー項目の[ウィンドウまたはビューのコント ローラーのカスタム アクション](#Working-with-Custom-Window-Actions)、追加することができます、`validateMenuItem:`アクションと手動で有効にするにまたはメニュー項目を無効にします。
 - **手動でのメニューを有効にする**-手動で設定する、`Enabled`の各プロパティ`NSMenuItem`を有効にするにまたはメニュー内の各項目を個別に無効にします。
 
 選択するには、システム設定、`AutoEnablesItems`のプロパティ、`NSMenu`です。 `true` 自動 (既定の動作) と`false`は手動です。 
@@ -256,7 +257,7 @@ var url = new NSUrl ("file://"+filename);
 return OpenFile(url);
 ```
 
-すべてまとめてみましょうの実装例を見て、 **<code>appdelegate.cs</code>**ファイル。
+すべてまとめてみましょうの実装例を見て、 **<code>appdelegate.cs</code>** ファイル。
 
 ```csharp
 using AppKit;
@@ -438,7 +439,7 @@ public void defineKeyword (NSObject sender) {
 
 ![属性のインスペクター](menu-images/action01.png "属性インスペクター")
 
-クリックして、 **+**の下部にあるボタン、**属性インスペクター**新しいカスタム アクションを追加します。
+クリックして、 **+** の下部にあるボタン、**属性インスペクター**新しいカスタム アクションを追加します。
 
 ![新しいアクションを追加する](menu-images/action02.png "新しいアクションを追加します。")
 
@@ -605,7 +606,7 @@ namespace MacMenus
 }
 ```
 
-これにより、テキスト ビューの外部のテキスト、`ViewController`クラスし、ウィンドウを取得したりがフォーカスを失ったときに、アプリのデリゲートを通知します。 今すぐ編集、 **<code>appdelegate.cs</code>**ファイルし、次のようになります。
+これにより、テキスト ビューの外部のテキスト、`ViewController`クラスし、ウィンドウを取得したりがフォーカスを失ったときに、アプリのデリゲートを通知します。 今すぐ編集、 **<code>appdelegate.cs</code>** ファイルし、次のようになります。
 
 ```csharp
 using AppKit;
@@ -952,7 +953,7 @@ partial void propertyText (Foundation.NSObject sender) {
 
 ステータス バーのメニューは、メニューやアプリケーションの状態を反映してイメージなどのユーザーと対話を提供するメニュー項目の状態またはフィードバックのコレクションを表示します。 アプリケーションのステータス バーのメニューは、アプリケーションがバック グラウンドで実行されている場合でもは有効でアクティブなです。 システム全体のステータス バーは、アプリケーションのメニュー バーの右側に配置されている、macOS で現在使用できる唯一のステータス バーです。
 
-編集しましょう、 **<code>appdelegate.cs</code>**ファイルし、`DidFinishLaunching`次のようなメソッドの検索。
+編集しましょう、 **<code>appdelegate.cs</code>** ファイルし、`DidFinishLaunching`次のようなメソッドの検索。
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -1007,7 +1008,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 次の手順を実行して、アプリケーション用のカスタム ドック メニューを作成しましょう。
 
-1. Mac 用 Visual Studio で、アプリケーションのプロジェクトと選択 を右クリックして**追加** > **新しいファイル.**新しいファイル ダイアログ ボックスで、次のように選択します**Xamarin.Mac** > **空のインターフェイス定義**、の"DockMenu"を使用して、**名前** をクリックし、**新規。**クリックすると、新しい作成**DockMenu.xib**ファイル。
+1. Mac 用 Visual Studio で、アプリケーションのプロジェクトと選択 を右クリックして**追加** > **新しいファイル.** 新しいファイル ダイアログ ボックスで、次のように選択します**Xamarin.Mac** > **空のインターフェイス定義**、の"DockMenu"を使用して、**名前** をクリックし、**新規。** クリックすると、新しい作成**DockMenu.xib**ファイル。
 
     ![空のインターフェイス定義を追加する](menu-images/dock02.png "空のインターフェイス定義を追加します。")
 2. **ソリューション パッド**をダブルクリックして、 **DockMenu.xib**ファイルを開き、Xcode で編集します。 新規作成**メニュー**次の項目を含む:**アドレス**、**日付**、 **Greeting**、および**署名** 

@@ -1,18 +1,20 @@
 ---
-title: テーブル コントロール
+title: watchOS Xamarin 内のテーブル コントロール
+description: このドキュメントでは、Xamarin で watchOS テーブル コントロールを使用する方法について説明します。 これは、テーブルを追加する行コント ローラーの追加、作成、および行、タップ、その他に応答して生成について説明します。
 ms.prod: xamarin
 ms.assetid: 7C14126D-9591-4387-A588-3C4521F11C55
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3f596b424292dd0f4db08429bc7c5d4a885d3954
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: afb8f9a96fa14877cbd0352869e23972719a4480
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791359"
 ---
-# <a name="table-control"></a>テーブル コントロール
+# <a name="watchos-table-controls-in-xamarin"></a>watchOS Xamarin 内のテーブル コントロール
 
 WatchOS`WKInterfaceTable`コントロールが iOS、対応するものよりもはるかに簡単にはのような役割を実行します。 カスタムのレイアウトを持つおよびタッチ イベントに応答する行のスクロール リストを作成します。
 
@@ -179,7 +181,7 @@ namespace WatchTablesExtension
 }
 ```
 
-他の**. designer.cs**ファイル コンセントと 1 つでは、この例など、デザイナー画面上に作成されるアクションを含む部分クラス定義は、`WKInterfaceLabel`コントロール。
+他の **. designer.cs**ファイル コンセントと 1 つでは、この例など、デザイナー画面上に作成されるアクションを含む部分クラス定義は、`WKInterfaceLabel`コントロール。
 
 ```csharp
 using Foundation;

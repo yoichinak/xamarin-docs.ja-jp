@@ -1,5 +1,5 @@
 ---
-title: 標準コントロール
+title: Xamarin.Mac 内の標準コントロール
 description: ここでは、チェック ボックス、ボタン、ラベル、テキスト フィールドなどの標準の AppKit コントロールの操作について説明し、Xamarin.Mac アプリケーションでコントロールをセグメント化します。 これは、インターフェイスのビルダーを持つインターフェイスに追加して、コード内とやり取りするについて説明します。
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3fe155508b60cbe502c3beca58426528d6f49c9d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e9d110d0d7a46d431ea6fca50caffe05903ddce2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793046"
 ---
-# <a name="standard-controls"></a>標準コントロール
+# <a name="standard-controls-in-xamarinmac"></a>Xamarin.Mac 内の標準コントロール
 
 _ここでは、チェック ボックス、ボタン、ラベル、テキスト フィールドなどの標準の AppKit コントロールの操作について説明し、Xamarin.Mac アプリケーションでコントロールをセグメント化します。これは、インターフェイスのビルダーを持つインターフェイスに追加して、コード内とやり取りするについて説明します。_
 
@@ -298,7 +299,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 ここで`NSCellStateValue`を指定できます。
 
-- **オン** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
+- **** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
 - **オフ**-、ボタンが押されていないか、コントロールが選択されていません。
 - **混合**-混在**で**と**オフ**状態です。
 
@@ -335,7 +336,7 @@ AdjustTime.Activated += (sender, e) => {
 
 ここで`NSCellStateValue`を指定できます。
 
-- **オン** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
+- **** - ボタンをクリックするか (チェック ボックスにチェック マーク) など、コントロールが選択されています。
 - **オフ**-、ボタンが押されていないか、コントロールが選択されていません。
 - **混合**-混在**で**と**オフ**状態です。
 

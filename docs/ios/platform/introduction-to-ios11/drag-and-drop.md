@@ -1,19 +1,20 @@
 ---
-title: ドラッグ アンド ドロップ
-description: ドラッグ アンド ドロップ iOS 11 用の実装
+title: Xamarin.iOS でドラッグ アンド ドロップ
+description: このドキュメントでは、ドラッグを実装して、iOS 11 で導入された Api を使用して Xamarin.iOS アプリで削除する方法について説明します。 具体的には、についても説明を有効にする UITableView でドラッグ アンド ドロップします。
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/05/2016
-ms.openlocfilehash: fa6fcb2c4f5f17011307b31e4644889d066b71a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786965"
 ---
-# <a name="drag-and-drop"></a>ドラッグ アンド ドロップ
+# <a name="drag-and-drop-in-xamarinios"></a>Xamarin.iOS でドラッグ アンド ドロップ
 
 _ドラッグ アンド ドロップ iOS 11 用の実装_
 

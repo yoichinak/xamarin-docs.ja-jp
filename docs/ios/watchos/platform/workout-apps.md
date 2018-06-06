@@ -1,5 +1,5 @@
 ---
-title: アプリのトレーニング
+title: watchOS Xamarin でのアプリのトレーニング
 description: 拡張機能を取り上げて watchOS 3、および Xamarin でそれらを実装する方法でアプリのトレーニングを Apple が発生しました。
 ms.prod: xamarin
 ms.assetid: F1D19635-A738-43E5-9873-1FC1BA44EEDF
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 96eb2eaca15ed0bccbb4c5cdb6a855fc7e0e3bb1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a9e1ed8c0808ad42d96ac84d79721a5c706a27ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791708"
 ---
-# <a name="workout-apps"></a>アプリのトレーニング
+# <a name="watchos-workout-apps-in-xamarin"></a>watchOS Xamarin でのアプリのトレーニング
 
 _拡張機能を取り上げて watchOS 3、および Xamarin でそれらを実装する方法でアプリのトレーニングを Apple が発生しました。_
 

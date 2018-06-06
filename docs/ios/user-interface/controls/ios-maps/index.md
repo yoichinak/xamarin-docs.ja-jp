@@ -1,21 +1,20 @@
 ---
-title: マップ
-description: iOS には、フレームワークで、簡単に追加するアプリケーションにマップされて MapKit が含まれています。 IOS アプリケーションは、マップ キットを使用して、パン、ズーム、地図上のユーザーの場所と重ね順の豊富なグラフィックスの表示などの機能をサポートする対話型のマップを追加できます。 いくつかのアプリケーションに地理的な機能を構築するように利用する方法を示す、マップ キットの機能について詳しく説明この記事の内容
+title: Xamarin.iOS 内のマップ
+description: このドキュメントでは、iOS MapKit framework、Xamarin.iOS と使用方法について説明します。 これには、スタイル、パンしズーム、ユーザーの所在地を操作、注釈の追加、コールアウトとオーバーレイ、およびローカル検索を実行、マップを追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790231"
 ---
-# <a name="maps"></a>マップ
-
-_iOS には、フレームワークで、簡単に追加するアプリケーションにマップされて MapKit が含まれています。IOS アプリケーションは、マップ キットを使用して、パン、ズーム、地図上のユーザーの場所と重ね順の豊富なグラフィックスの表示などの機能をサポートする対話型のマップを追加できます。いくつかのアプリケーションに地理的な機能を構築するように利用する方法を示す、マップ キットの機能について詳しく説明この記事の内容_
+# <a name="maps-in-xamarinios"></a>Xamarin.iOS 内のマップ
 
 マップは、すべての最新のモバイル オペレーティング システムで一般的な機能です。 iOS では、マップ キット フレームワークを通じてネイティブ サポートがマッピングされています。 マップ キットを使用して、アプリケーションは、豊富な対話型のマップを簡単に追加できます。 これらのマップは、さまざまな、地図上に場所を示すために注釈を追加して、任意図形のグラフィックスのオーバーレイなどの方法でカスタマイズできます。 マップ キットでは、デバイスの現在の場所を表示するための組み込みサポートもあります。
 
@@ -415,4 +414,4 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 ## <a name="related-links"></a>関連リンク
 
 - [SearchController](https://developer.xamarin.com/recipes/ios/content_controls/search-controller/)
-- [MapDemo (sample)](https://developer.xamarin.com/samples/monotouch/MapDemo)
+- [MapDemo (サンプル)](https://developer.xamarin.com/samples/monotouch/MapDemo)

@@ -1,28 +1,26 @@
 ---
 title: 追加 tvOS 10 フレームワークの変更
-description: この記事では、追加、マイナーの変更または tvOS 10 用の既存のフレームワークの機能強化について説明します。
+description: このドキュメントでは、軽微な変更と 10、iOS での既存のフレームワークの拡張機能について説明します。 更新プログラム AVFoundation AVKit、基本データ、コア グラフィックス、Foundation、GameKit、GameplayKit、詳細を説明します。
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c53726b91a0cd3e79041b9b1d51e9f7fbb1c79bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 326fb6a23048ba3d3e1d33f42c8da2fff8544c25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788876"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>追加 tvOS 10 フレームワークの変更
-
-_この記事では、追加、マイナーの変更または tvOS 10 用の既存のフレームワークの機能強化について説明します。_
-
 
 TvOS に主要な変更だけでなく Apple 修正といくつかの既存のフレームワークの機能強化に向けた tvOS 10 です。
 
 <a name="AV-Foundation-Framework" />
 
-## <a name="av-foundation-framework-additions"></a>AV Foundation フレームワークの追加
+## <a name="avfoundation-framework-additions"></a>AVFoundation フレームワークの追加
 
 AVFoundation フレームワークには、次の機能強化が含まれています。
 

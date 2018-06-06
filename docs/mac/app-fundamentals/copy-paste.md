@@ -1,5 +1,5 @@
 ---
-title: コピーして貼り付ける
+title: Xamarin.Mac でコピーして貼り付ける
 description: この記事では、コピーを提供し、Xamarin.Mac アプリケーションに貼り付けますペーストの扱いについて説明します。 作業する方法を示しますの複数のアプリと特定のアプリ内のカスタム データをサポートする方法の間で共有できる標準データ型。
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: becdec771949584919595c84b13ae9e05bfd377b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791898"
 ---
-# <a name="copy-and-paste"></a>コピーして貼り付ける
+# <a name="copy-and-paste-in-xamarinmac"></a>Xamarin.Mac でコピーして貼り付ける
 
 _この記事では、コピーを提供し、Xamarin.Mac アプリケーションに貼り付けますペーストの扱いについて説明します。作業する方法を示しますの複数のアプリと特定のアプリ内のカスタム データをサポートする方法の間で共有できる標準データ型。_
 
@@ -46,7 +47,7 @@ Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき�
 
 次の手順で行います。
 
-1. Mac とクリックの Visual Studio を起動、**新しいプロジェクト.**リンクします。
+1. Mac とクリックの Visual Studio を起動、**新しいプロジェクト.** リンクします。
 2. 選択**Mac** > **アプリ** > **Cocoa アプリ**、をクリックして、**次**ボタン。 
 
     [![新しい Cocoa アプリ プロジェクトを作成する](copy-paste-images/sample01.png "Cocoa アプリ プロジェクトを新規作成")](copy-paste-images/sample01-large.png#lightbox)
@@ -463,7 +464,7 @@ partial void PasteImage (Foundation.NSObject sender) {
 
 最後に行う必要がありますが有効にする、**新規**からメニュー項目、**ファイル**メニュー (メイン ウィンドウの新しいインスタンスを作成する) を有効にして、**切り取り**、**コピー**と**貼り付け**からのメニュー項目、**編集**メニュー。
 
-有効にする、**新規**メニュー項目、編集、 **<code>appdelegate.cs</code>**ファイルし、次のコードを追加します。
+有効にする、**新規**メニュー項目、編集、 **<code>appdelegate.cs</code>** ファイルし、次のコードを追加します。
 
 ```csharp
 public int UntitledWindowCount { get; set;} =1;
@@ -485,7 +486,7 @@ void NewDocument (NSObject sender) {
 
 詳細についてを参照してください、[付き](~/mac/user-interface/window.md)のセクションで、 [Windows](~/mac/user-interface/window.md)ドキュメント。
 
-有効にする、**切り取り**、**コピー**と**貼り付け**メニュー項目を編集、 **<code>appdelegate.cs</code>**ファイルし、次のコードを追加します。
+有効にする、**切り取り**、**コピー**と**貼り付け**メニュー項目を編集、 **<code>appdelegate.cs</code>** ファイルし、次のコードを追加します。
 
 ```csharp
 [Export("copy:")]
@@ -601,7 +602,7 @@ namespace MacCopyPaste
 
 ここでも、現在、最上位のウィンドウを取得し、使用して、その`ImageDocument`クラスのインスタンスは、必要なイメージ データが存在するかどうかを参照してください。 私たちを使用して、`MenuWillHighlightItem`この状態に基づくメソッドを有効にするにまたは各項目を無効にします。
 
-編集、 **<code>appdelegate.cs</code>**ファイルし、`DidFinishLaunching`次のようなメソッドの検索。
+編集、 **<code>appdelegate.cs</code>** ファイルし、`DidFinishLaunching`次のようなメソッドの検索。
  
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -1279,7 +1280,7 @@ if (ok) {
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacCopyPaste (sample)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
+- [MacCopyPaste (サンプル)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [ペースト ボード プログラミング ガイド](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [macOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

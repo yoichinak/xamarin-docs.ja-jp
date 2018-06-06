@@ -1,19 +1,20 @@
 ---
-title: ウォッチ デバイスでのテスト
-description: Apple Watch でテストするアプリの展開
+title: デバイスの Apple Watch でのテスト
+description: このドキュメントでは、実際の Apple Watch でのテストに、Xamarin でビルドされた watchOS アプリを展開する方法について説明します。 プロビジョニング プロファイルをテストするには、デバイスをについて説明し、トラブルシューティングのヒントを提供します。
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a960d81d41ff127fa3316e6190dfbf4881305c02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790862"
 ---
-# <a name="testing-on-watch-devices"></a>ウォッチ デバイスでのテスト
+# <a name="testing-on-apple-watch-devices"></a>デバイスの Apple Watch でのテスト
 
 後[配置手順](~/ios/watchos/deploy-test/index.md)する (必要な場合) のアプリ Id とアプリ グループを作成するには、このページで指示を使用してください。
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="devices"></a>デバイス
 
-実際の iPhone または iPad で iOS アプリをテストすると、デベロッパー センターに登録するデバイスは常に必要です。 次のようなデバイスの一覧 (プラス記号をクリックして**+**新しいデバイスを追加する)。
+実際の iPhone または iPad で iOS アプリをテストすると、デベロッパー センターに登録するデバイスは常に必要です。 次のようなデバイスの一覧 (プラス記号をクリックして**+** 新しいデバイスを追加する)。
 
 ![](device-images/devices-sml.png "次のようなデバイスの一覧")
 
@@ -57,7 +58,7 @@ ms.lasthandoff: 04/04/2018
 
 ![](device-images/provisioningprofiles.png "使用可能な開発プロビジョニング プロファイル")
 
-プロビジョニング プロファイルを確認することができます、**プロジェクト オプション**を選択して、**ビルド > iOS バンドル署名 ***画面を選択して、**リリース**または**IPhone のデバッグ**構成します。
+プロビジョニング プロファイルを確認することができます、**プロジェクト オプション**を選択して、**ビルド > iOS バンドル署名 *** 画面を選択して、**リリース**または**IPhone のデバッグ**構成します。
 
 **プロビジョニング プロファイル**リストが一致するすべてのプロファイルを表示する - このドロップダウン リストで作成した一致のプロファイルが表示されます。
 
@@ -117,7 +118,7 @@ Invalid executable/Application Verification Failed
 
 ![](device-images/invalid-application-executable.png "無効なアプリケーション実行可能ファイルのアラート")
 
-これらのメッセージが表示されない場合は*[ウォッチ] 画面で*いくつかの問題がある可能性がありますアプリをインストールしようとしましたが後、。
+これらのメッセージが表示されない場合は *[ウォッチ] 画面で*いくつかの問題がある可能性がありますアプリをインストールしようとしましたが後、。
 
 - ウォッチ デバイス自体は、Apple のデベロッパー センター上のデバイスとして追加されていません。 指示に従って[デバイスを正しく構成](#devices)です。
 

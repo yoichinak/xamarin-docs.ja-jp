@@ -1,19 +1,20 @@
 ---
-title: CoreML の概要
-description: 機械学習の iOS 11 でモバイル アプリの場合
+title: Introduction to Xamarin.iOS で CoreML
+description: このドキュメントでは、iOS での機械学習できる CoreML について説明します。 このドキュメントでは、ビジョンのフレームワークで使用する方法と CoreML を開始する方法について説明します。
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: 412a534829349dbbc3f3b76b166882fa6e0e1cd1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b893fe5e56cc2d43a71870ffbbd20f0b8c6cfd18
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787497"
 ---
-# <a name="introduction-to-coreml"></a>CoreML の概要
+# <a name="introduction-to-coreml-in-xamarinios"></a>Introduction to Xamarin.iOS で CoreML
 
 _機械学習の iOS 11 でモバイル アプリの場合_
 
@@ -45,7 +46,7 @@ xcrun coremlcompiler compile {model.mlmodel} {outputFolder}
 ```
 
 > [!NOTE]
-> **.model**ファイル_必要があります_にコンパイルされます**.modelc** CoreML によって、使用前に
+> **.model**ファイル_必要があります_にコンパイルされます **.modelc** CoreML によって、使用前に
 
 ### <a name="2-load-the-model"></a>2.モデルを読み込む
 

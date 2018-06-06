@@ -1,29 +1,28 @@
 ---
-title: トラブルシューティング
-description: この記事は、tvOS 10 Xamarin.tvOS アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。
+title: TvOS 10 のトラブルシューティング、Xamarin でビルドされたアプリ
+description: この記事は、tvOS 10 での Xamarin アプリを操作するためのいくつかのトラブルシューティングのヒントを提供します。 これには、App Store、および関連するバイナリの互換性、CFNetwork HttpProtocol、CloudKit、Core のイメージ、NSUserActivity、UIKit 問題について説明します。
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8875e658ead17820655a2401079627875c14958b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4332caca2804da52bb565fe382932af691c39dab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788811"
 ---
-# <a name="troubleshooting"></a>トラブルシューティング
+# <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>TvOS 10 のトラブルシューティング、Xamarin でビルドされたアプリ
 
-_この記事は、tvOS 10 Xamarin.tvOS アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。_
-
-次のセクションでは、tvOS 10 Xamarin.tvOS とそれらの問題の解決策を使用する場合に発生する可能性がある既知の問題を一覧表示します。
+次のセクションでは、Xamarin とそれらの問題の解決策で tvOS 10 を使用する場合に発生する可能性がある既知の問題を一覧表示します。
 
 - [App Store](#App-Store)
 - [バイナリの互換性](#Binary-Compatibility)
 - [CFNetwork HTTP プロトコル](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Core イメージ](#CoreImage)
 - [NSUserActivity](#NSUserActivity)
 - [UIKit](#UIKit)
 
@@ -62,7 +61,7 @@ _この記事は、tvOS 10 Xamarin.tvOS アプリで使用するためのいく�
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Core イメージ
 
 `CIImageProcessor` API が、任意の入力 image の数になりました。 `CIImageProcessor` TvOS 10 ベータ 1 に含まれている API は削除されます。
 
@@ -84,10 +83,6 @@ _この記事は、tvOS 10 Xamarin.tvOS アプリで使用するためのいく�
  - tvOS 10 を呼び出す開発者が要求`base.AwakeFromNib`をサブクラス化する`UIViewController`をオーバーライドして、`AwakeFromNib`メソッドです。
  - カスタム アプリ`UIView`オーバーライド サブクラス`LayoutSubviews`呼び出す前に、レイアウトをダーティと`base.LayoutSubviews`tvOS 10 内のレイアウトが無限ループをトリガーする可能性があります。
  - 割り当てられたときの回転方向固有または flippable イメージ資産を入れません`UIButton`オブジェクト。
-
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

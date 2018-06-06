@@ -1,34 +1,32 @@
 ---
-title: プラットフォーム機能
-description: このセクションのドキュメントでは、iOS に固有の機能について説明します。
+title: iOS プラットフォーム機能
+description: このドキュメントには、さまざまなバージョンの iOS で導入された機能およびその他の iOS プラットフォームの機能を記述するさまざまなガイドへのリンクがします。
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95053faa4bab0a65660772aeea39405e4a80a042
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787088"
 ---
-# <a name="platform-features"></a>プラットフォーム機能
+# <a name="ios-platform-features"></a>iOS プラットフォーム機能
 
 ##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md)
 
 インストールし、Xcode 9 のベータ版および Xamarin の iOS 11 サポートのプレビューでは、開始する方法。
 
-
 ##  <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[iOS 10 の概要](~/ios/platform/introduction-to-ios10/index.md)
 
 Apple の iOS 10 には、いくつかの新しい Api と新機能と機能にアプリを開発できるように、サービスが含まれています。 アプリでは 10、iOS で、マップ、メッセージ、電話および Siri の拡張などの新しい力があります。 このセクションでは、Xamarin.iOS アプリでこれらの機能を利用する方法を示しています。
 
-
 ##  <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)
 
 このセクションでは、Xamarin.iOS アプリでこれらの機能を使用する方法と iOS 8 からアップグレードする場合は、iOS 9 で行われた変更を定義します。
-
 
 ##  <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)
 
@@ -147,8 +145,6 @@ iOS 10 には、テキストにアプリを継続的な音声認識をサポー�
 ##  <a name="wide-coloriosplatformwide-colormd"></a>[広色域](~/ios/platform/wide-color.md)
 
 iOS 10 や macOS Sierra 拡張範囲のピクセル形式とコア グラフィックス、Core のイメージ、金属および AVFoundation などのフレームワークを含む、システム全体で全体の色域スペースのサポートを強化します。 ワイド カラー ディスプレイを使用したデバイスのサポートはさらに、グラフィック スタック全体におけるこの動作を提供することにより容易になります。
-
-
 
 ##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Objective-C のバインド](binding-objective-c/index.md)
 

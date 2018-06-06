@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: e2e3843506061cc79ad911404468477bf49dfe56
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c3c278666c5d57d00b4038ae6d3f2d7925e88537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789025"
 ---
 # <a name="introduction-to-tvos-9"></a>TvOS 9 の概要
 
 _この記事では、Xamarin.tvOS 開発者向けのすべての新しいまたは変更された Api と tvOS 9 で使用できる機能を紹介します。_
-
 
 Apple に Apple TV のハードウェア再設計された、タッチを有効にするリモートを機能させると、システムを実行して、新しい tvOS オペレーティング (iOS 9 に基づく) の第 4 世代がリリースされました。
 

@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
-ms.date: 10/27/2017
-ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 06/03/2018
+ms.openlocfilehash: 42a8a2e3751d111f6ba8ccbea32e0446460f9a29
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793876"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -289,13 +290,15 @@ Xamarin プロファイラーは、以下に示すように 5 つのセクショ
 
 ### <a name="cycles"></a>サイクル
 
-C# および f# マネージ コードを使用して、非常に一般的でおよびが破棄されることはありませんがオブジェクトへの参照を作成する残念ながら非常に簡単にできます。 この intrument を使用すると、それらのオブジェクトを特定して、アプリケーション内で参照サイクルを表示できます。
+C# および f# マネージ コードを使用して、非常に一般的でおよびが破棄されることはありませんがオブジェクトへの参照を作成する残念ながら非常に簡単にできます。 この機器を使用すると、それらのオブジェクトを特定して、アプリケーション内で参照サイクルを表示できます。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
+[![サイクルのインストルメント化](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![サイクルのインストルメント化](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
+[![サイクルのインストルメント化](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
 
 -----
 

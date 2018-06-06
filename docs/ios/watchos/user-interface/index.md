@@ -1,18 +1,20 @@
 ---
-title: watchOS ユーザー インターフェイス
+title: watchOS Xamarin のユーザー インターフェイス コントロール
+description: このドキュメントでは、watchOS ユーザー インターフェイスで使用可能な各種のコントロールについて説明します。 ラベル、ボタン、スイッチ、スライダー、イメージ、区切り記号、マップ、および複数の説明を提供します。
 ms.prod: xamarin
 ms.assetid: EDFAD203-02EA-4A74-9CE2-7B8513BC90E1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 73099768d876cad08571c3d0bf8340535eb1307b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b56cfed8f045d824996a004539533b27d66c8cb1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791411"
 ---
-# <a name="watchos-user-interface"></a>watchOS ユーザー インターフェイス
+# <a name="watchos-user-interface-controls-in-xamarin"></a>watchOS Xamarin のユーザー インターフェイス コントロール
 
 [ **WatchKitCatalog** ](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog)サンプルでは、さまざまな watchOS コントロール。 アプリのストーリー ボードが表示されます (を拡大表示をクリックします)。
 

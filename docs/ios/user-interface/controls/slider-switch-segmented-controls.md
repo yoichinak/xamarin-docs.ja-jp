@@ -1,21 +1,22 @@
 ---
-title: スライダー、スイッチ、およびセグメント化されたコントロール
+title: スライダー、スイッチ、およびセグメント化されたコントロールで Xamarin.iOS
+description: このドキュメントでは、スライド、スイッチ、およびセグメント化されたコントロールで Xamarin.iOS、それと連動するプログラムと、iOS デザイナーの両方の方法を説明するについて説明します。
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3c98ea19b3f925e71f72b09d5356286d676a9f71
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09a5d9e76c41eba4e16cab041daa67d3a5d8a584
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790030"
 ---
-# <a name="sliders-switches-and-segmented-controls"></a>スライダー、スイッチ、およびセグメント化されたコントロール
+# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>スライダー、スイッチ、およびセグメント化されたコントロールで Xamarin.iOS
 
 <a name="Sliders" />
-
 
 ## <a name="sliders"></a>スライダー
 
@@ -61,7 +62,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 iOS を使用して、`UISwitch`ブール値の入力によって他のプラットフォームでラジオ ボタンを表すことができます。 ユーザーが移動することによって、コントロールを操作したり、 *thumb*間、**オン/オフ**位置。
 
- [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image28a.png "スイッチ")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 スイッチの外観をカスタマイズすることができます、**プロパティ パッド**既定の状態を制御することが、デザイナーの**オン/オフ濃淡**色と**On/Off イメージ**. これは次の図に示します。
 

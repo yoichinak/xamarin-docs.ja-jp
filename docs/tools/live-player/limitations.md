@@ -1,18 +1,19 @@
 ---
-title: 制限事項
-description: Xamarin Live プレーヤーのいくつかの制限
+title: Xamarin ライブ Player の制限事項
+description: このドキュメントでは、Xamarin Live Player の制限事項について説明します。 デバイスの要件について説明、プロジェクトの種類、およびその他の他のトピックで動作している機能です。
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: a3aea31f32e3bf6227cce2e3340e3d04828472a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793676"
 ---
-# <a name="limitations"></a>制限事項
+# <a name="limitations-of-xamarin-live-player"></a>Xamarin ライブ Player の制限事項
 
 ![プレビュー機能](~/media/shared/preview.png)
 
@@ -36,6 +37,7 @@ Xamarin Player のライブ アプリには、次のデバイスがサポート�
 Xamarin Player のライブ実行できますが、次の項目を含むものにいくつかの制限があります。
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
+
 - カスタム レンダラーがサポートされていません。
 - 効果はサポートされていません。
 - カスタム バインド可能なプロパティを持つカスタム コントロールはサポートされていません。
@@ -44,9 +46,11 @@ Xamarin Player のライブ実行できますが、次の項目を含むもの�
 - IOS での資産カタログを指定することはできません。
 
 ### <a name="other-project-types"></a>その他のプロジェクトの種類
+
 - ライブ Player は、ネイティブの Android または iOS プロジェクトを使用する Android XML またはストーリー ボードのユーザー インターフェイス) のものではありません。
 
 ### <a name="misc"></a>[その他]
+
 - リフレクションの制限付きサポート (現在、SQLite、Json.NET のように、いくつかの一般的な NuGets に影響します)。 その他の NuGets をサポートすることも可能性があります。
 - 一部のシステム クラスをオーバーライドすることはできません (たとえば、サブクラスを実装することはできません)。
 - (ただしに構成されているフォト ギャラリーのアクセスなどの一般的な操作の) Live プレーヤーの Xamarin アプリで動作する準備が必要なプラットフォーム機能ことはできません。
@@ -55,7 +59,6 @@ Xamarin Player のライブ実行できますが、次の項目を含むもの�
 - カスタムのジェネリック クラスとインターフェイスの高度なシナリオがサポートされていない可能性があります。
 
 その他の問題を報告してください[bugzilla](https://aka.ms/live-player-report-issue)です。
-
 
 ## <a name="related-links"></a>関連リンク
 

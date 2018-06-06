@@ -1,21 +1,20 @@
 ---
-title: 手動のカメラのコントロール
-description: AVFoundation Framework やすくよりも優れた写真が撮影することによって手動カメラ コントロールに対するユーザーのことです。 アプリケーションは、このフレームワークを使用して、カメラのフォーカス、ホワイト バランス、および公開の設定を直接制御を実行できます。 アプリケーションでは、自動的にイメージをキャプチャする別の危険度の設定でもかっこで囲まれた露出のキャプチャを使用できます。 この記事の内容を簡単にコントロールを使用して、手動カメラ簡単な iOS 8 のモバイル アプリケーションで見てとなります。
+title: Xamarin.iOS で手動カメラ コントロール
+description: このドキュメントでは、手動のカメラのコントロールを有効にするために、iOS AVFoundation フレームワークを Xamarin.iOS で使用する方法について説明します。 手動カメラのコントロールには、コントロールのフォーカス、ホワイト バランス、および公開の設定、ユーザーができるようにします。
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8545dce1b9232e396c4c9e71ad5f20649eef2417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a0f605a38117df87a03801c3b9d86b0b7361c232
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790826"
 ---
-# <a name="manual-camera-controls"></a>手動のカメラのコントロール
-
-_AVFoundation Framework やすくよりも優れた写真が撮影することによって手動カメラ コントロールに対するユーザーのことです。アプリケーションは、このフレームワークを使用して、カメラのフォーカス、ホワイト バランス、および公開の設定を直接制御を実行できます。アプリケーションでは、自動的にイメージをキャプチャする別の危険度の設定でもかっこで囲まれた露出のキャプチャを使用できます。この記事の内容を簡単にコントロールを使用して、手動カメラ簡単な iOS 8 のモバイル アプリケーションで見てとなります。_
+# <a name="manual-camera-controls-in-xamarinios"></a>Xamarin.iOS で手動カメラ コントロール
 
 提供されるマニュアル カメラ コントロール、 `AVFoundation Framework` 8、iOS でモバイル アプリケーションを iOS デバイスのカメラを完全に制御を許可します。 プロフェッショナルなレベルのカメラ アプリケーションを作成し、静止画像またはビデオを作成中に、カメラのパラメーターを調整してアーティスト コンポジションを指定するのには、この制御の粒度の細かいレベルを使用できます。
 
@@ -46,7 +45,7 @@ iOS 8 は、拡張機能を提供し、既存の iOS をこのイメージに対
 
 簡単に言うと、さまざまな画像に画像の設定で撮影された画像を静止のバーストは、角かっこをキャプチャします。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 次がこの記事の手順を実行する必要です。
 
@@ -820,7 +819,7 @@ IOS 8 アプリケーションのホワイト バランスの制御の詳細を�
 
 色の認識の調査で、 [CIE 1931 RGB 色空間と CIE 1931 XYZ 色空間](http://en.wikipedia.org/wiki/CIE_1931_color_space)は最初は数学的にカラー スペースを定義します。 1931 照明 (CIE) 国際委員会によって作成されました。
 
-[![](intro-to-manual-camera-controls-images/image17.png "領域をカラー CIE 1931 RGB 色空間と CIE 1931"xyz"")](intro-to-manual-camera-controls-images/image17.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image17.png "領域をカラー CIE 1931 RGB 色空間と CIE 1931\"xyz\"")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
 上のグラフが表示すべての色の濃い青明るい赤に明るい緑から人間の目に表示されます。 上の図に示すように、X と Y 値を持つ図上の任意の時点をプロットすることができます。
 

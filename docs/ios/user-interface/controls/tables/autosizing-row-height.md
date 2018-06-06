@@ -1,18 +1,20 @@
 ---
-title: 自動サイズ変更行の高さ
+title: Xamarin.iOS の自動サイズ変更行の高さ
+description: このドキュメントでは、テーブル ビューの行の高さの変化に基づいてコンテンツ Xamarin.iOS アプリに追加する方法について説明します。 これには、iOS デザイナー内のセルのレイアウトと有効にすると自動サイズ変更の高さがについて説明します。
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 73e16c3381b639645463e3e8aaeed35224b67861
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c6beb112947f5423de200fd5c8957ef28dd48f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789968"
 ---
-# <a name="auto-sizing-row-height"></a>自動サイズ変更行の高さ
+# <a name="auto-sizing-row-height-in-xamarinios"></a>Xamarin.iOS の自動サイズ変更行の高さ
 
 Apple iOS 8 以降、テーブル ビューを作成する機能を追加 (`UITableView`) を自動的に拡大して自動レイアウト、サイズのクラスおよび制約を使用して、コンテンツのサイズに基づいて、特定の行の高さを縮小します。
 

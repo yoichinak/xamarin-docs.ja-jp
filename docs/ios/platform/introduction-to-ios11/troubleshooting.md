@@ -1,21 +1,20 @@
 ---
-title: トラブルシューティング
-description: この記事は、iOS 11 Xamarin.iOS アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。
+title: IOS 11 のトラブルシューティング、Xamarin.iOS でビルドされたアプリ
+description: この記事では、Xamarin.iOS アプリケーションを開発する場合のトラブルシューティングに使用できるリソースについて説明します。 バグの報告についても説明リリース ノートについては、Xamarin のリリースのブログとオプションがサポートされます。
 ms.prod: xamarin
 ms.assetid: A90493BF-5298-4A5D-A5D5-8A8FCD078FF7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/31/2017
-ms.openlocfilehash: 181f0a1c66d05e0adf2b682f2df971f5d7d67dfb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ace24cae139c97a8735558c82e22143adbc9c064
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787547"
 ---
-# <a name="troubleshooting"></a>トラブルシューティング
-
-_この記事は、iOS 11 Xamarin.iOS アプリで使用するためのいくつかのトラブルシューティングのヒントを提供します。_
+# <a name="troubleshooting-ios-11-apps-built-with-xamarinios"></a>IOS 11 のトラブルシューティング、Xamarin.iOS でビルドされたアプリ
 
 次のセクションでは、使用可能な場合、および Xamarin.iOS で iOS 11 を使用する場合に発生する可能性がある既知の問題を一覧表示それらの問題の解決策。
 

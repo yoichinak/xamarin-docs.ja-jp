@@ -1,29 +1,26 @@
 ---
 title: ライブ アプリケーションの検査
-description: 視覚化し、ライブ アプリのデバッグ
+description: このドキュメントでは、Xamarin インスペクターを使用してアプリケーションを検査する方法について説明します。 Xamarin Inspector ツールの制限事項についても説明します。
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 8bcdc5ac50a0f03086ad9e9c3265e3ce86b06704
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793480"
 ---
 # <a name="inspecting-live-applications"></a>ライブ アプリケーションの検査
 
 ライブ アプリ検査は、企業ユーザーが利用できます。
 
-
 1. [インスペクター (&)、Xamarin のブックをインストールします。](~/tools/inspector/install.md)
-
 1. いずれかを開いて[アプリ プロジェクトはサポートされて](~/tools/inspector/install.md#supported-platforms)Mac または Visual Studio の Visual Studio でします。
 1. デバッグ モードでアプリケーションを実行します。
 1. をクリックして、**検査**IDE ツールバーのボタン (Visual Studio で、**検査現在アプリ...** から使用可能なメニュー項目も、**ツール**または**デバッグ**メニュー)。
-
-
 
 [![](inspect-images/mac-heres-the-button.png "IDE、ツールバーの [検査] ボタンをクリックします。")](inspect-images/mac-heres-the-button.png#lightbox)
 

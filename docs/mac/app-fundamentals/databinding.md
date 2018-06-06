@@ -1,5 +1,5 @@
 ---
-title: データのバインドとキー値のコーディング
+title: データのバインドと Xamarin.Mac でキーと値のコーディング
 description: この記事では、キーと値のコーディングおよびキーと値の Xcode のインターフェイスのビルダーでの UI 要素にデータ バインドを許可する確認の使用方法について説明します。
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 48ee5d4e4a0a53de49fbba46d79424e03af6fe5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792139"
 ---
-# <a name="data-binding-and-key-value-coding"></a>データのバインドとキー値のコーディング
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>データのバインドと Xamarin.Mac でキーと値のコーディング
 
 _この記事では、キーと値のコーディングおよびキーと値の Xcode のインターフェイスのビルダーでの UI 要素にデータ バインドを許可する確認の使用方法について説明します。_
 
@@ -333,7 +334,7 @@ public NSArray People {
 2 つの処理には、ここに注意してください:
 
 1. 使用して、 `NSMutableArray` 、c# の配列またはコレクション AppKit コントロールにデータをバインドする必要はなどのための標準ではなく**テーブル ビュー**、**アウトライン ビュー**と**コレクション**.
-2. キャストにして、従業員の配列を公開お、`NSArray`書式指定済みの名前のデータ バインディングのため、変更、c# `People`、データ バインディングが必要ですが、その`personModelArray`形式で**{class_name} 配列**(注意してください最初の文字が行われたこと小文字のみ)。
+2. キャストにして、従業員の配列を公開お、`NSArray`書式指定済みの名前のデータ バインディングのため、変更、c# `People`、データ バインディングが必要ですが、その`personModelArray`形式で **{class_name} 配列**(注意してください最初の文字が行われたこと小文字のみ)。
 
 次に、いくつか特別な名前公開をサポートするメソッドを追加する必要があります**配列コント ローラー**と**ツリー コント ローラー**:
 

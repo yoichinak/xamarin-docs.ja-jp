@@ -1,22 +1,20 @@
 ---
-title: tvOS の内部構造
-description: Xamarin.tvOS は、iOS 製品用に作成して、高度なドキュメント、tvOS 製品とほぼ同じように、Xamarin.iOS 製品として同じ DNA を共有します。
+title: Xamarin – 内部で tvOS
+description: Xamarin.iOS に基づく xamarin tvOS の内部動作を説明するドキュメントです。 リンクのコンテンツは、アセンブリのターゲット フレームワークについて説明し、iOS の概念に関連します。
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 83b8d5b6dc4e73f05160960f0e2547284de57799
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0132eac4edd4ecb9f693828bd58288dfbcb1c008
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789146"
 ---
-# <a name="tvos-internals"></a>tvOS の内部構造
-
-_Xamarin.tvOS は、iOS 製品用に作成して、高度なドキュメント、tvOS 製品とほぼ同じように、Xamarin.iOS 製品として同じ DNA を共有します。_
-
+# <a name="tvos-in-xamarin--internals"></a>Xamarin – 内部で tvOS 
 
 ##  <a name="assembliesiostvosinternalsassembliesmd"></a>[アセンブリ](~/ios/tvos/internals/assemblies.md)
 
@@ -73,8 +71,6 @@ Xamarin.iOS アプリケーション内でスレッドを使用するに関す�
 ###  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB コードの生成](~/ios/internals/xib-code-generation.md)
 
 Visual Studio for Mac 統合使用できるようにするインターフェイスのビルダーを使用して、UI の設計を Xcode のインターフェイスのビルダーを使用する方法。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

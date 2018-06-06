@@ -1,20 +1,19 @@
 ---
 title: 対話型のブック
-description: ブックを使用して、講義、トレーニングを探索するか、試してみるの c# コードでライブのドキュメントを作成します。
+description: このドキュメントでは、Xamarin のブックを使用して、実験、教育、トレーニング、または調査の c# コードを含むライブのドキュメントを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: de88bbc9bc45b8a6326924d964bdd9385acb82aa
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fa79aae9af2cd90741a54a5b3abc17910fcb181d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794177"
 ---
 # <a name="interactive-workbooks"></a>対話型のブック
-
-_ブックを使用して、講義、トレーニングを探索するか、試してみるの c# コードでライブのドキュメントを作成します。_
 
 ブックは、IDE から独立したスタンドアロン アプリケーションとして使用できます。
 

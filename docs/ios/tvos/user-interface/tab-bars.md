@@ -1,21 +1,20 @@
 ---
-title: タブ バー コント ローラーの使用
-description: この記事では、設計と Xamarin.tvOS アプリ内でタブ バーのコント ローラーの操作について説明します。
+title: TvOS Xamarin のタブ バーのコント ローラーの使用
+description: このドキュメントでは、Xamarin でビルドされた tvOS アプリ内のタブ バーのコント ローラーを使用する方法について説明します。 タブ バーの表示を超える高度な提供し、タブ バー項目、ストーリー ボードの統合、およびタブ バーの項目について説明します。
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1536e37830f3b2a1e2a83c7bf5039909062d092b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea782fc8d6a2ccef2cdd687ec467be6d49793fc0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789321"
 ---
-# <a name="working-with-tab-bar-controller"></a>タブ バー コント ローラーの使用
-
-_この記事では、設計と Xamarin.tvOS アプリ内でタブ バーのコント ローラーの操作について説明します。_
+# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>TvOS Xamarin のタブ バーのコント ローラーの使用
 
 多くの種類の tvOS アプリでは、プライマリ ナビゲーション、画面の一番上に実行されているタブ バーとして表示されます。 ユーザーは、可能なカテゴリと、ユーザーの選択を反映するように、コンテンツの下の領域の変更の一覧で、左と右を読み取ります。
 

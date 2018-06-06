@@ -1,18 +1,20 @@
 ---
-title: メニュー コントロール (Force タッチ)
+title: watchOS Xamarin 内のメニュー コントロール (Force タッチ)
+description: このドキュメントでは、Xamarin で watchOS force タッチ ジェスチャを使用する方法について説明します。 Force タッチに応答する方法について説明しますが、メニューとメニュー項目の変更を追加する方法です。
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4895f140acbc8a622cfb91c2fe9db6c5e9d9d1d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b973b925b99189416087224644c376864c56871
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791346"
 ---
-# <a name="menu-control-force-touch"></a>メニュー コントロール (Force タッチ)
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS Xamarin 内のメニュー コントロール (Force タッチ)
 
 ウォッチ キットは、メニュー watch アプリの画面で実装された場合にトリガーを Force タッチ ジェスチャを提供します。
 

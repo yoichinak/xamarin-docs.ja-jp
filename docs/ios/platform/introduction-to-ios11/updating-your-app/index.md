@@ -1,21 +1,20 @@
 ---
 title: IOS 11 にビルドされたアプリの更新
-description: IOS 11 の新機能の検証
+description: このドキュメントには、iOS 11 のリリースで Xamarin.iOS 開発者が利用できる新しい機能を記述するさまざまなガイドへのリンクがします。 たとえば、ビジュアル デ ザインの更新プログラム、アプリ ストアが変更され、アプリ アイコンを更新します。
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2581f729d85787021763f50f005e84d6bbb5db01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea57acbd6165f7b1abd8b9bd69873670c179f411
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787573"
 ---
 # <a name="updating-your-app-to-ios-11"></a>IOS 11 にビルドされたアプリの更新
-
-_IOS 11 の新機能の検証_
 
 11、iOS では、Apple がアーキテクチャの更新、新しいビジュアルの変更、および更新された iTunes Connect プロセスに導入されました。 このガイドは、iOS 11 用に更新 Xamarin.iOS アプリを入手することができ、これらの変更の各を説明します。
 

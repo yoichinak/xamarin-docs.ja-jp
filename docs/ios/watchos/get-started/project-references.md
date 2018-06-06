@@ -1,19 +1,20 @@
 ---
-title: プロジェクト参照
-description: IOS アプリ、watch アプリ、およびウォッチ拡張機能間のリレーションシップの説明。
+title: watchOS Xamarin のプロジェクト参照
+description: このドキュメントでは、iOS アプリ、watch アプリ、およびウォッチ アプリ拡張機能の関係について説明します。 プロジェクトの参照、およびバンドルについても説明識別子。
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: f3573e8b578ca567ea9d7360eb132aead4c24f37
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bd950d0929beae7133b0eb8ef6b2a69bc116f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791489"
 ---
-# <a name="project-references"></a>プロジェクト参照
+# <a name="watchos-project-references-in-xamarin"></a>watchOS Xamarin のプロジェクト参照
 
 _IOS アプリ、watch アプリ、およびウォッチ拡張機能間のリレーションシップの説明。_
 
@@ -43,7 +44,7 @@ WatchOS ソリューション内の次の 3 つのプロジェクトは*自動�
 またことを確認する必要があります、**バンドル識別子**が正しい。
 次の 3 つのすべてのプロジェクトが必要、*同じ*ウォッチ式の 2 つのプロジェクトの定義済みの拡張機能のことで、識別子のプレフィックス`watchkitextension`と`watchkitapp`、次のように (用、 **WatchKitCatalog**例):
 
- - Xamarin.iOS Unified project - `com.xamarin.WatchKitCatalog`
+ - Xamarin.iOS 統合プロジェクト- `com.xamarin.WatchKitCatalog`
 
  - WatchKit 拡張機能プロジェクトの場合- `com.xamarin.WatchKitCatalog.watchkitextension`
 

@@ -1,21 +1,20 @@
 ---
-title: Haptic フィードバックを提供します。
-description: この記事では、Xamarin.iOS でそれらを実装する方法と iOS 10 で使用できる haptic フィードバックの新しい型について説明します。
+title: Xamarin.iOS で Haptic フィードバックを提供します。
+description: このドキュメントでは、Xamarin.iOS アプリで haptic フィードバックを提供する方法について説明します。 UIImpactFeedbackGenerator、UINotificationFeedbackGenerator、および UISelectionFeedbackGenerator についても説明します。
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f2d1bd73ea764cd5bf56775abd7c7357b039bc79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0dae6d6f50423474fbfebad5d630000e2160f6a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790189"
 ---
-# <a name="providing-haptic-feedback"></a>Haptic フィードバックを提供します。
-
-_この記事では、Xamarin.iOS でそれらを実装する方法と iOS 10 で使用できる haptic フィードバックの新しい型について説明します。_
+# <a name="providing-haptic-feedback-in-xamarinios"></a>Xamarin.iOS で Haptic フィードバックを提供します。
 
 <a name="Overview" />
 

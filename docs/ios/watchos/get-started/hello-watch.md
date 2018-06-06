@@ -1,19 +1,20 @@
 ---
-title: こんにちは, ウォッチ
-description: Xamarin と watchOS の概要
+title: こんにちは, watchOS – チュートリアル
+description: このドキュメントでは、Xamarin を使用して単純な watchOS アプリケーションの作成のチュートリアルを提供します。 Mac 用 Visual Studio と Visual Studio の両方で機能、ストーリー ボードを操作してコード内のイベントに応答する方法を説明します。
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/14/2016
-ms.openlocfilehash: 2281fa801d32e8d8934767ae090503ca523d7eff
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d6080429450dce2c0491fa385cf4f179befba6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790998"
 ---
-# <a name="hello-watch"></a>こんにちは, ウォッチ
+# <a name="hello-watchos--walkthrough"></a>こんにちは, watchOS – チュートリアル
 
 」の手順に従って、ソリューションを作成した後[セットアップとインストール](~/ios/watchos/get-started/installation.md)、3 つのプロジェクトになります。
 
@@ -130,13 +131,11 @@ partial class InterfaceController
 
 ```csharp
 int clickCount = 0;
-
 partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 {
   var msg = String.Format("Clicked {0} times", ++clickCount);
   myLabel.SetText(msg);
 }
-
 ```
 
 このコードはきわめて透過的にする必要があります。 インスタンス変数`clickCount`は関数をたびにインクリメントされます`OnButtonPress`と呼びます。 テキスト`myLabel`; この数を反映するように変更されました`myLabel`、もちろんは XCode で作成したコンセントのいずれかの名前。 `partial`関数は、指定したアクションの名前に関連付けられている関数の実装です。

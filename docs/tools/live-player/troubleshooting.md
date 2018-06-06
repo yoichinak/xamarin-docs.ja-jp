@@ -1,23 +1,23 @@
 ---
-title: トラブルシューティング
-description: Xamarin Live Player、およびそれらの修正方法に関する既知の問題です。
+title: Xamarin ライブ Player のトラブルシューティング
+description: このドキュメントでは、Xamarin Live プレーヤーと考えられる修正内容に関する既知の問題について説明します。 これは、接続の問題や、構成の問題について説明します。
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: 147ce43d3fe764f71f27dce46b699142dfb99872
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793756"
 ---
-# <a name="troubleshooting"></a>トラブルシューティング
+# <a name="troubleshooting-xamarin-live-player"></a>Xamarin ライブ Player のトラブルシューティング
 
 ![プレビュー機能](~/media/shared/preview.png)
 
 ここでは、一般的な問題について説明し、それらを解決する手順について説明します。
-
 
 ## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>モバイル デバイスがスキャン バーコード (または入力するコード) の後に接続できません。
 
@@ -27,7 +27,6 @@ Xamarin Live Player を実行しているモバイル デバイスは、IDE を�
   - コンピューターがワイヤード (有線) ネットワークに接続しても、ワイヤード (有線) 接続のプラグを抜きを再試行してください。
 - (によって企業ネットワークなど)、緊密にネットワークを保護することがあります Xamarin Live Player で必要なポートをブロックします。
 - Live プレーヤーの Xamarin アプリを閉じて再起動します。
-
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE で「を展開するときにエラー」メッセージ
 
@@ -67,7 +66,6 @@ Xamarin Player のライブ tap の内部で**ペア**または**ペア再度**�
 
 移動:https://www.guidgenerator.com/online-guid-generator.aspx新しい guid を生成しには、大文字に変換するかどうかを確認します。
 
-
 **手順 5: デバイスを構成します。**
 
 開き、 **PlayerDeviceList.xml**など、Visual Studio または Visual Studio Code エディターでセットアップします。 このファイルで、デバイスを手動で構成する必要があります。 既定では、ファイルが次の空白を含める必要があります`Devices`XML 要素。
@@ -98,7 +96,6 @@ Xamarin Player のライブ tap の内部で**ペア**または**ペア再度**�
 </PlayerDevice>
 ```
 
-
 **Android デバイスを追加します。**
 
 ```xml
@@ -118,7 +115,6 @@ Xamarin Player のライブ tap の内部で**ペア**または**ペア再度**�
 ```
 
 **閉じて、再び Visual Studio を開きます。** デバイスが一覧に表示する必要があります。
-
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>IDE で「型または名前空間が見つかりません」メッセージ
 
@@ -141,9 +137,7 @@ AXML ファイルは、Xamarin Live プレーヤーで現在サポートされ�
 
 Xamarin.Forms Android プロジェクトでは、関連するレイアウト ファイルの名前の"Toolbar.axml"と"Tabbar.axml"を使用する必要があります。 これらの名前を使用する既定のテンプレート名前を変更すると、レンダリングの問題が発生します。
 
-
 その他の問題を報告してください[bugzilla](https://aka.ms/live-player-report-issue)です。
-
 
 ## <a name="related-links"></a>関連リンク
 

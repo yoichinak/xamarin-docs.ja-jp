@@ -1,19 +1,20 @@
 ---
-title: 配置とテスト
-description: デバイスでテストし、アプリ ストアにアップロードします。
+title: 展開して、Xamarin を使用した watchOS アプリのテスト
+description: このドキュメントでは、配置、および Xamarin でビルドされた watchOS アプリをテストする方法について説明します。 配置のチェックリストを提供して、明示的なについて説明しますとワイルドカード アプリ Id、し、アプリ グループを確認します。
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 47c63a01d435626fd1637b6ed5f5bb1755c717af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 778583456e74bb7ed3a85dce96bcdbc487aef57a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790943"
 ---
-# <a name="deployment-and-testing"></a>配置とテスト
+# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>展開して、Xamarin を使用した watchOS アプリのテスト
 
 ## <a name="deployment-checklist"></a>配置のチェックリスト
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 04/04/2018
 
 説明したように、[セットアップ手順](~/ios/watchos/get-started/installation.md)、Watch アプリ内のすべての 3 つのプロジェクトに関連するは、バンドル Id など。
 
-- Xamarin.iOS Unified project - `com.xamarin.WatchKitCatalog`
+- Xamarin.iOS 統合プロジェクト- `com.xamarin.WatchKitCatalog`
 - WatchKit 拡張機能プロジェクトの場合- `com.xamarin.WatchKitCatalog.watchkitextension`
 - Watch アプリ プロジェクト `com.xamarin.WatchKitCatalog.watchkitapp`
 

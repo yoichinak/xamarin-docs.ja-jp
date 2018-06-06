@@ -1,18 +1,20 @@
 ---
-title: データを含むテーブルを設定します。
+title: Xamarin.iOS でデータを含むテーブルを設定します。
+description: このドキュメントでは、Xamarin.iOS アプリケーションでデータを含むテーブルを作成する方法について説明します。 UITableViewSource、セルの再利用、インデックス、およびヘッダーとフッターの追加についても説明します。
 ms.prod: xamarin
 ms.assetid: 6FE64DDF-1029-EB9B-6EEC-1C7DFDFDF3AF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c139b96adfc325e7c251f8093eab338ddf0c6337
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 77167bb8938ec0b3dcd30b80235ee5d9a60b4ce0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790069"
 ---
-# <a name="populating-a-table-with-data"></a>データを含むテーブルを設定します。
+# <a name="populating-a-table-with-data-in-xamarinios"></a>Xamarin.iOS でデータを含むテーブルを設定します。
 
 行を追加する、`UITableView`を実装する必要があります、`UITableViewSource`サブクラスとオーバーライドをそれ自体を設定するテーブルを表示するメソッドを呼び出します。
 

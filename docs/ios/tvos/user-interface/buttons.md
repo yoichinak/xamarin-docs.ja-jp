@@ -1,22 +1,20 @@
 ---
-title: ボタンの操作
-description: この記事では、設計と Xamarin.tvOS アプリ内でのボタンの操作について説明します。
+title: Xamarin で tvOS ボタンの操作
+description: このドキュメントでは、Xamarin でビルドされた tvOS アプリ内のボタンを使用する方法について説明します。 ボタンおよびストーリー ボードなど、コードで使用する方法について説明し、ボタンのスタイルを設定する方法を調べます。
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: e915e96690fe67f0e704ec558313427f01753438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3de732e9eee696ce21ffc5526afd44f29695a313
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789386"
 ---
-# <a name="working-with-buttons"></a>ボタンの操作
-
-_この記事では、設計と Xamarin.tvOS アプリ内でのボタンの操作について説明します。_
-
+# <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin で tvOS ボタンの操作
 
 インスタンスを使用して、 `UIButton` tvOS ウィンドウにフォーカスを設定できる、選択可能なボタンを作成するクラス。 ターゲット オブジェクトに、アクション メッセージを送信、ユーザーがボタンを選択すると、ユーザーに、Xamarin.tvOS アプリの応答の入力を許可します。
 

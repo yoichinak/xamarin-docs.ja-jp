@@ -1,19 +1,20 @@
 ---
-title: セットアップとインストール
-description: WatchOS を開発するためのセットアップ
+title: インストールして、Xamarin で watchOS を使用
+description: このドキュメントでは、インストールして、Xamarin を使用した watchOS を使用する方法について説明します。 インストール、watchOS プロジェクトについても説明構造体、iOS デザイナー、Xcode integration を使用する方法とトラブルシューティングのヒントを提供します。
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: 976b7a78b70522e6ca9942c286792b53e4f11ae5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea0c7b6a68077cde83fa211e4e6f3432b3e39d5c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791239"
 ---
-# <a name="installation"></a>インストール
+# <a name="installing-and-using-watchos-in-xamarin"></a>インストールして、Xamarin で watchOS を使用
 
 watchOS 4 には、macOS Xcode 9 Sierra (10.12) が必要です。
 
@@ -100,7 +101,7 @@ Watch アプリのダブルクリック**Interface.storyboard** iOS デザイナ
 
 -----
 
-作成して segues **ctrl キーを押しドラッグ +**ボタン、テーブル、またはインターフェイス コント ローラーが別のインターフェイス コント ローラーにします。
+作成して segues **ctrl キーを押しドラッグ +** ボタン、テーブル、またはインターフェイス コント ローラーが別のインターフェイス コント ローラーにします。
 
 
 ### <a name="using-xcode-on-the-mac"></a>Mac で Xcode を使用します。
@@ -177,7 +178,7 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 Xcode 6 を使用する場合、iPhone 5、iPhone 5 s、iPhone 6 および iPhone だけ 6 プラスは、いずれかの外付けディスプレイをアクティブ化できます**Apple Watch - 38 mm**または**Apple Watch - 42 mm** watch アプリケーションが表示されます表示されます。
 
-**注:**ウォッチ画面が表示されないことに自動的に、iOS シミュレーターで Xcode 6 を使用する場合に注意してください。
+**注:** ウォッチ画面が表示されないことに自動的に、iOS シミュレーターで Xcode 6 を使用する場合に注意してください。
 使用して、**ハードウェア > 外部ディスプレイ**ウォッチ画面に表示されるメニュー。
 
 <a name="custommodes" />
@@ -211,7 +212,7 @@ Watch アプリ プロジェクトを右クリックし、選択**実行 > カ�
 
 ![](installation-images/debug-sml.png "このスクリーン ショットは、デバッグ ブレークポイント watch アプリで検出されるを示しています。")
 
-起動手順を実行した後は最終的に、ウォッチ アプリで実行されている、 **iOS シミュレーター (ウォッチ)**です。
+起動手順を実行した後は最終的に、ウォッチ アプリで実行されている、 **iOS シミュレーター (ウォッチ)** です。
 通知モードを選択できます**デバッグ > システム ログを開く**(**CMD +/**) を使用して`Console.WriteLine`コードにします。
 
 ### <a name="debugging-lifecycle-event-handlers"></a>ライフ サイクル イベント ハンドラーのデバッグ

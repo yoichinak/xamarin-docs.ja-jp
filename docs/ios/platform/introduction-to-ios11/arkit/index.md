@@ -1,19 +1,20 @@
 ---
-title: ARKit の概要
-description: Ios 11 augmented Reality
+title: Introduction to Xamarin.iOS で ARKit
+description: このドキュメントでは、augmented reality ARKit で ios 11 について説明します。 これには、アプリに 3D のモデルを追加、ビューを構成、セッション デリゲートを実装、世界では、3 D のモデルを配置および augmented reality セッションを一時停止する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: f48cdd48e63131fe234fef1bb60b555724dd8a92
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 55ef2004f66cb808f878b2215dfdd59a45015877
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787171"
 ---
-# <a name="introduction-to-arkit"></a>ARKit の概要
+# <a name="introduction-to-arkit-in-xamarinios"></a>Introduction to Xamarin.iOS で ARKit
 
 _Ios 11 augmented Reality_
 

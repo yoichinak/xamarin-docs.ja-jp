@@ -1,19 +1,20 @@
 ---
-title: 共通のパターンおよび手法
-description: このドキュメントでは、モデル ビュー コント ローラー パターンでは、データ ソースとデリゲート パターン、およびプロトコルについて説明します。
+title: 共通のパターンと Xamarin.Mac の表現方法
+description: このドキュメントでは、Xamarin.Mac アプリを構築するときに使用される共通の設計パターンについて説明します。 これは、モデル ビュー コント ローラー パターンでは、データ ソースとデリゲート パターン、およびプロトコルについて説明します。
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/17/2016
-ms.openlocfilehash: cf499c555ddbefbdb5a7fae3ae8929a17e0d0cd7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6bba5575edf2dcbddbd354b590e03f9fed06291
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791538"
 ---
-# <a name="common-patterns-and-idioms"></a>共通のパターンおよび手法
+# <a name="common-patterns-and-idioms-in-xamarinmac"></a>共通のパターンと Xamarin.Mac の表現方法
 
 C# を使用して公開されている Apple Api、全体で特定の表現形式とパターンつなげて何度もします。 Xamarin.iOS を使用したプログラミングの経験があれば、これらはおなじみです。 ドキュメントは多くの場合を参照してこれらのパターンと表現方法、繰り返しため、それらの実線に理解することはできますが見つかったら、ドキュメントの意味をなします。
 

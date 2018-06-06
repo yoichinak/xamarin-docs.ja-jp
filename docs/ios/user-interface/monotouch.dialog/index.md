@@ -1,21 +1,19 @@
 ---
-title: MonoTouch.Dialog の概要
-description: MonoTouch.Dialog (mt.D) toolkit は、アプリケーションの迅速な Xamarin.iOS で UI の開発の不可欠なフレームワークです。 MT.D は、高速で簡単に複雑なアプリケーションのコント ローラーのナビゲーションやテーブルなどの面倒ではなく、宣言型の方法を使用して UI を定義します。さらに、山D では、完全な制御または自動化されたアプローチでは、だけでなく更新するプル、背景画像の読み込みなどの追加機能を開発者に提供、サポート、および JSON データを使用して動的な UI の生成を検索する Api の柔軟なセットがあります。 このガイドには山を使用するさまざまな方法が導入されていますD、高度な使用を深く電子です。
+title: Xamarin.iOS の MonoTouch.Dialog の概要
+description: このドキュメントには、MonoTouch.Dialog (山がについて説明しますD)、Xamarin.iOS と UI 開発を高速で宣言するためのフレームワークです。 MonoTouch.Dialog Api を使用して、コードまたは JSON でインターフェイスを作成し、更新するプル、検索、背景イメージの読み込みなどの機能を使用する方法についても説明します。
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6511d8deed1800a8ae655f749feccd249bf4a8c0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790839"
 ---
-# <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog の概要
-
-_MonoTouch.Dialog (mt.D) toolkit は、アプリケーションの迅速な Xamarin.iOS で UI の開発の不可欠なフレームワークです。MT.D は、高速で簡単に複雑なアプリケーションのコント ローラーのナビゲーションやテーブルなどの面倒ではなく、宣言型の方法を使用して UI を定義します。さらに、山D では、完全な制御または自動化されたアプローチでは、だけでなく更新するプル、背景画像の読み込みなどの追加機能を開発者に提供、サポート、および JSON データを使用して動的な UI の生成を検索する Api の柔軟なセットがあります。このガイドには山を使用するさまざまな方法が導入されていますD、高度な使用を深く電子です。_
-
+# <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Xamarin.iOS の MonoTouch.Dialog の概要
 
 山と呼ばれる MonoTouch.Dialog短い、D はアプリケーション画面およびコント ローラーの表示、テーブルなどを作成する面倒ではなく、情報を使用してナビゲーションを構築する開発者ができる、迅速な開発の UI ツールキットです。そのため、UI の開発およびコードの削減の大幅な簡略化バージョンを提供します。 たとえば、次のスクリーン ショットがあるとします。
 

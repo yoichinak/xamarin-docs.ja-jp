@@ -1,21 +1,20 @@
 ---
-title: AVAudioPlayer でサウンドの再生
-description: この記事では、ヘルパー クラスを使用して、AVAudioPlayer を使用してサウンドの再生を制御する方法を示します。
+title: Xamarin.Mac で AVAudioPlayer でサウンドの再生
+description: このドキュメントでは、Xamarin.Mac アプリで AVAudioPlayer でサウンドを再生する方法について説明します。 高レベルより詳細にについてを説明するその他のドキュメントへのリンクで AVAudioPlayer についても説明します。
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 25e3285a1da1b6a112629001d5412fdd0788c705
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b9ec43189999f8a0aee29eb50221b494e2133
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791856"
 ---
-# <a name="playing-sound-with-avaudioplayer"></a>AVAudioPlayer でサウンドの再生
-
-_この記事では、ヘルパー クラスを使用して、AVAudioPlayer を使用してサウンドの再生を制御する方法を示します。_
+# <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>Xamarin.Mac で AVAudioPlayer でサウンドの再生
 
 ## <a name="about-the-avaudioplayer"></a>AVAudioPlayer について
 
@@ -34,8 +33,6 @@ _この記事では、ヘルパー クラスを使用して、AVAudioPlayer を�
 ## <a name="playing-sounds-in-macos"></a>MacOS でサウンドの再生
 
 MacOS iOS として同じオーディオ ツールボックス クラスをサポートしているため、iOS を参照してください[AVAudioPlayer でサウンドを再生](https://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/)Xamarin.Mac アプリでのオーディオの再生の詳細については、ドキュメントです。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

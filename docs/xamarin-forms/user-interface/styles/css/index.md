@@ -1,5 +1,5 @@
 ---
-title: カスケード スタイル シートを使用して Xamarin.Forms アプリのスタイルを設定
+title: カスケード スタイル シート (CSS) を使用して Xamarin.Forms アプリのスタイルを設定
 description: Xamarin.Forms では、カスケード スタイル シート (CSS) を使用してスタイル ビジュアル要素をサポートします。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 76ca67f7ac8a8e27e5f502455d48874c775fc172
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794086"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets"></a>カスケード スタイル シートを使用して Xamarin.Forms アプリのスタイルを設定
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用して Xamarin.Forms アプリのスタイルを設定
 
 _Xamarin.Forms では、カスケード スタイル シート (CSS) を使用してスタイル ビジュアル要素をサポートします。_
 
@@ -372,7 +373,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされている (�
 |`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_色_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_文字列_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_二重_\| _namedsize_  \| `initial` |`font-size: 12;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_二重_\| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double 型_ \| `initial` |`min-height: 250;`|
 |`margin`|`View`|_太さ_ \| `initial` |`margin: 6 12;`|
@@ -447,4 +448,4 @@ Xamarin.Forms では次の CSS プロパティがサポートされている (�
 ## <a name="related-links"></a>関連リンク
 
 - [MonkeyAppCSS (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
-- [XAML のスタイルを使用して Xamarin.Forms アプリのスタイルを設定](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)

@@ -1,17 +1,19 @@
 ---
-title: アイコンの使用
+title: WatchOS Xamarin のアイコンの使用
+description: このドキュメントでは、watchOS アプリケーションおよびこれらのアイコンを含むようにソリューションを設定する方法に必要な各種のアイコンについて説明します。
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a7cdecaa2ba6a8c9f28ef8598fec31506eee6852
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 150cca754de26edffcf97bb5d39b26166662c75b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790667"
 ---
-# <a name="working-with-icons"></a>アイコンの使用
+# <a name="working-with-watchos-icons-in-xamarin"></a>WatchOS Xamarin のアイコンの使用
 
 Apple Watch ソリューションには、2 つのアイコンのセットが必要です。
 
@@ -46,7 +48,7 @@ IOS アプリと watch アプリは、アイコンと正しい名前を表示す
 <string>Your App Name</string>
 ```
 
-### <a name="apple-watch-app"></a>Apple Watch App
+### <a name="apple-watch-app"></a>Apple Watch アプリ
 
 1 回、[親アプリ](~/ios/watchos/app-fundamentals/parent-app.md)watch アプリにアプリケーション アイコン資産カタログを追加する必要がありますが、アイコンで構成されています。
 

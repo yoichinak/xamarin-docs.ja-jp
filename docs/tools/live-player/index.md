@@ -1,16 +1,17 @@
 ---
-title: Xamarin.Forms のライブ プレーヤー
-description: Xamarin を簡単に学習、ビルド、および Android または iOS デバイスでアプリの実行を開始します。
+title: Xamarin.Forms の Xamarin ライブ Player
+description: このドキュメントには、Xamarin.Forms、インストール、Xamarin Player のライブ アプリ、Xamarin Live Player の制限事項と使用するサンプルを記述して、トラブルシューティング用の Xamarin Live Player がについて説明します。
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: dd179fb1d1ce3ca57cdf6e27bb86a12e2f9ef03f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 79cf2c790789963189d3eedd6645a6b6ae6503b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793139"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin.Forms の Xamarin ライブ Player
 
@@ -46,7 +47,6 @@ Xamarin Live Player では、どのような機能をサポートできます制
 ## <a name="troubleshootingtroubleshootingmd"></a>[トラブルシューティング](troubleshooting.md)
 
 問題が生じた場合は、ヘルプを検索します。
-
 
 ## <a name="related-links"></a>関連リンク
 

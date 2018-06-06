@@ -1,19 +1,20 @@
 ---
-title: 複雑な問題
-description: watchOS により、開発者はウォッチ面のカスタム複雑さの一部を記述するには
+title: watchOS Xamarin で複雑な問題
+description: このドキュメントでは、Xamarin で watchOS 複雑さの一部を操作する方法について説明します。 コンプリケーション、テンプレートを作成、問題を追加する方法について説明し、サンプル コードを提供します。
 ms.prod: xamarin
 ms.assetid: 7ACD9A2B-CF69-46EA-B0C8-10E7D81216E8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/03/2017
-ms.openlocfilehash: c058922f97183359122a1bfa2b0e162e4ce344f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c69f65091e7d6c83afe34c6d8c06477cc5d133b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791840"
 ---
-# <a name="complications"></a>複雑な問題
+# <a name="watchos-complications-in-xamarin"></a>watchOS Xamarin で複雑な問題
 
 _watchOS により、開発者はウォッチ面のカスタム複雑さの一部を記述するには_
 
@@ -38,7 +39,7 @@ _watchOS により、開発者はウォッチ面のカスタム複雑さの一�
 
 ### <a name="add-new-project"></a>新しいプロジェクトを追加してください.
 
-**新しいプロジェクトを追加しています.**ウィザードに自動的にコンプリケーション コント ローラー クラスを作成および構成する チェック ボックスが含まれています、 **Info.plist**ファイル。
+**新しいプロジェクトを追加しています.** ウィザードに自動的にコンプリケーション コント ローラー クラスを作成および構成する チェック ボックスが含まれています、 **Info.plist**ファイル。
 
 ![](complications-images/file-new-project-sml.png "含めるコンプリケーションのチェック ボックス")
 

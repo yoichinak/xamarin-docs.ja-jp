@@ -1,18 +1,20 @@
 ---
-title: 進行状況とアクティビティのインジケーター
+title: 進行状況および Xamarin.iOS アクティビティ インジケーター
+description: このドキュメントでは、Xamarin.iOS の進行状況とアクティビティのインジケーターを使用する方法について説明します。 これには、プログラムと、ストーリー ボードの両方に使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 58a492bed81a1d96a482c1396718da1c5e4af589
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 27ee788ec40bfd158dbc0d9926245b166e2954a9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790056"
 ---
-# <a name="progress-and-activity-indicators"></a>進行状況とアクティビティのインジケーター
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>進行状況および Xamarin.iOS アクティビティ インジケーター
 
 アプリが時間の長いを実行する必要がある可能性が読み込み中、またはデータと、この遅延が、UI を更新中に遅延が発生する処理などのタスクを実行します。 この期間中には、常をシステムがビジー状態の作業を行っているユーザーを組み込みますプログレス インジケーターを使用する必要があります。 これにより、ユーザー コントロールがその入力を待機していないこと、その要求で、アプリが機能するを待たずに、正確にどのくらいの期間の詳細を示す手段を提供できます。
 

@@ -1,24 +1,25 @@
 ---
-title: レイアウト オプション
+title: Xamarin.iOS でレイアウト オプション
+description: このドキュメントでは、Xamarin.iOS 内のユーザー インターフェイスをレイアウトするさまざまな方法について説明します。 これは、自動と自動レイアウトについて説明します。
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8f197bbffeabb708769c48f0130aa27a86b14386
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bad29eae308c8ca9f7228a1cbdfd69940894cf34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790117"
 ---
-# <a name="layout-options"></a>レイアウト オプション
+# <a name="layout-options-in-xamarinios"></a>Xamarin.iOS でレイアウト オプション
 
 これには、ビューがサイズ変更、または回転したときに、レイアウトを制御するための 2 つの異なるメカニズムがあります。
 
 -  **自動**– デザイナーで、自動インスペクターを設定する方法を提供する、`AutoresizingMask`プロパティです。 これにより、コントロールがコンテナーの端に固定や、そのサイズを修正、ことです。 サイズの自動変更は、iOS のすべてのバージョンで機能します。 詳細については、以下に記載されて
--  **オート**–、UI コントロールのリレーションシップの粒度の細かい制御できます。 iOS6 で導入された機能です。 デザイン サーフェイス上の他の要素に対して要素の位置のコントロールが許可されます。 このトピックで詳しく説明については、 [Xamarin iOS デザイナーで自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)ガイドです。
-
+-  **レイアウトを自動**–、UI コントロールのリレーションシップの粒度の細かい制御を許可する iOS 6 で導入された機能です。 デザイン サーフェイス上の他の要素に対して要素の位置のコントロールが許可されます。 このトピックで詳しく説明については、 [Xamarin iOS デザイナーで自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)ガイドです。
 
 ## <a name="autosizing"></a>サイズの自動変更
 

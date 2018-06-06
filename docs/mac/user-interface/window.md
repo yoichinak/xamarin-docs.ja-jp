@@ -1,5 +1,5 @@
 ---
-title: Windows
+title: Xamarin.Mac で Windows
 description: この記事では、windows と Xamarin.Mac アプリケーション内のパネルでの作業について説明します。 これには、作成元の windows と Xcode とストーリー ボードや .xib ファイルから読み込むと、それらをプログラムによって操作のインターフェイス ビルダー内のパネルがについて説明します。
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f45bc69b74d98c7b9130f2caeaee91b184c38d87
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39efcf3554469219cc29d70ee059fe645c41280d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794073"
 ---
-# <a name="windows"></a>Windows
+# <a name="windows-in-xamarinmac"></a>Xamarin.Mac で Windows
 
 _この記事では、windows と Xamarin.Mac アプリケーション内のパネルでの作業について説明します。これには、作成元の windows と Xcode とストーリー ボードや .xib ファイルから読み込むと、それらをプログラムによって操作のインターフェイス ビルダー内のパネルがについて説明します。_
 
@@ -113,7 +114,7 @@ Apple は、次のガイドラインを示しています。
 
 [![](window-images/panel02.png "例インスペクター")](window-images/panel02.png#lightbox)
 
-詳細については、次を参照してください、[パネル](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)と当社[MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) 、の完全な実装のサンプルアプリ**。インスペクター インターフェイス**Xamarin.Mac アプリでします。
+詳細については、次を参照してください、[パネル](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)と当社[MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) 、の完全な実装のサンプルアプリ **。インスペクター インターフェイス**Xamarin.Mac アプリでします。
 
 <a name="Creating_and_Maintaining_Windows_in_Xcode" />
 
@@ -146,7 +147,7 @@ Xcode のインターフェイスのビルダーで、ウィンドウのデザ�
 - **ときに閉じられたリリース**-は、ウィンドウが閉じられたときに、メモリから削除します。
 - **常に表示ツールヒント**-は常に表示されるツールヒント。
 - **ビューのループを再計算**-表示順序をウィンドウが描画される前に再計算されます。
-- **スペース**、 **expos ・**と**Cycling** -すべて macOS 環境で、ウィンドウの動作を定義します。 
+- **スペース**、 **expos ・** と**Cycling** -すべて macOS 環境で、ウィンドウの動作を定義します。 
 - **完全な画面**のかどうか、このウィンドウは、全画面表示モードを入力できますを決定します。 
 - **アニメーション**のウィンドウの使用できるアニメーションの種類を制御します。
 - **外観**のウィンドウの外観を制御します。 ここでは、1 つだけの外観、アクアがあります。
@@ -687,7 +688,7 @@ void OpenDialog (NSObject sender)
 }
 ```
 
-場合は、アプリを実行してを選択するようになりました**オープンしています.**から、**ファイル**メニューの [テキスト ファイルから、**開く**] ダイアログ ボックスを開きます。
+場合は、アプリを実行してを選択するようになりました**オープンしています.** から、**ファイル**メニューの [テキスト ファイルから、**開く**] ダイアログ ボックスを開きます。
 
 [![](window-images/file03.png "[開く] ダイアログ ボックス")](window-images/file03.png#lightbox)
 
@@ -713,13 +714,13 @@ void OpenDialog (NSObject sender)
 5. インターフェイスを設計するには。 
 
     [![](window-images/new03.png "UI の設計")](window-images/new03.png#lightbox)
-6. アプリのメニューを開き (`MacWindows`) を選択**設定しています.**コントロールを右クリックして新しいウィンドウにドラッグします。 
+6. アプリのメニューを開き (`MacWindows`) を選択**設定しています.** コントロールを右クリックして新しいウィンドウにドラッグします。 
 
     [![](window-images/new05.png "Segue を作成します。")](window-images/new05.png#lightbox)
 7. 選択**表示**ポップアップ メニューからです。
 6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
 
-コードを実行すると、選択、**設定しています.**から、**アプリケーション メニュー**ウィンドウが表示されます。
+コードを実行すると、選択、**設定しています.** から、**アプリケーション メニュー**ウィンドウが表示されます。
 
 [![](window-images/new04.png "サンプルの基本設定 メニュー")](window-images/new04.png#lightbox)
 

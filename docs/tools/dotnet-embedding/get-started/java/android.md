@@ -1,15 +1,17 @@
 ---
 title: Android の概要
+description: このドキュメントでは、Android と .NET の埋め込みを使用して作業を開始する方法について説明します。 これは、.NET の埋め込み、Android ライブラリ プロジェクトの作成、Android Studio プロジェクトとその他の考慮事項で生成された出力を使用してインストールするについて説明します。
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 57bedba786de82094ef43a6982d2df1bcab1de9c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6fbd46578f07692f266d97279031f1893bb96a1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793918"
 ---
 # <a name="getting-started-with-android"></a>Android の概要
 

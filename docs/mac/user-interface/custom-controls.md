@@ -1,21 +1,20 @@
 ---
-title: カスタム コントロールの作成
-description: この記事では、カスタム コントロールを作成し、インターフェイスのビルダーに処理する方法について説明します。
+title: Xamarin.Mac でカスタム コントロールの作成
+description: このドキュメントでは、Xamarin.Mac でカスタム コントロールを作成する方法について説明します。 カスタム コントロールをビルド、その状態を追跡、そのインターフェイスの描画、ユーザー入力に応答およびアプリケーションでコントロールを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e4c2b2c9ee7bae3d6489fec6b22881653ec53043
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792679"
 ---
-# <a name="creating-custom-controls"></a>カスタム コントロールの作成
-
-_この記事では、カスタム コントロールを作成し、インターフェイスのビルダーに処理する方法について説明します。_
+# <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin.Mac でカスタム コントロールの作成
 
 同じアクセス権がある Xamarin.Mac アプリケーションでは、c# と .NET で作業するときのユーザー コントロールで作業する開発者*Objective C*、 *Swift*と*Xcode*は. Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、ユーザー コントロールを管理 (または必要に応じて c# コードで直接作成すること)。
 

@@ -1,22 +1,20 @@
 ---
-title: 積み上げビューの操作
-description: この記事では、設計とビューの積み上げ Xamarin.tvOS アプリ内での操作について説明します。
+title: Xamarin で tvOS 積み上げビューを使用します。
+description: このドキュメントでは、Xamarin でビルドされたアプリ内でスタック ビューに、tvOS 協力する方法について説明します。 積み上げビューの大まかな概要を提供し、自動レイアウト、配置や積み上げビュー、一般的な使用、ストーリー ボードとの統合などをサイズ変更について説明します。
 ms.prod: xamarin
 ms.assetid: 00B07F85-F30B-4DD4-8664-A61D0A1CDB0E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a6300e4da47022199c0503e6be63b0c90f15654d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e718e525c23e78fbf846209602a07bf0f3f386e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789373"
 ---
-# <a name="working-with-stacked-view"></a>積み上げビューの操作
-
-_この記事では、設計とビューの積み上げ Xamarin.tvOS アプリ内での操作について説明します。_
-
+# <a name="working-with-tvos-stacked-views-in-xamarin"></a>Xamarin で tvOS 積み上げビューを使用します。
 
 スタック ビュー コントロール (`UIStackView`) および Apple TV のデバイスの画面のサイズのコンテンツの変更を動的に応答する水平方向または垂直方向にサブビューのスタックを管理するには、自動レイアウトおよびサイズ クラスの機能を利用しています。
 

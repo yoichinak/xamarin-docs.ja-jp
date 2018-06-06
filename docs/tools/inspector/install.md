@@ -1,21 +1,21 @@
 ---
 title: インスペクターのインストールと要件
-description: ダウンロード、インストール、および Xamarin Inspector を使用する方法。
+description: このドキュメントでは、Xamarin インスペクターをインストールする方法について説明し、サポートされるオペレーティング システム、Ide、およびアプリのプラットフォームについて説明します。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793809"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
 ## <a name="download-and-installation"></a>ダウンロードとインストール
-
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 05/09/2018
 
 -----
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 ### <a name="supported-operating-systems"></a>Supported Operating Systems
 
@@ -55,7 +55,6 @@ ms.lasthandoff: 05/09/2018
 |iOS (統合)|XS および Visual Studio でサポートされています。|Windows からの iOS アプリを調べることには、同じバージョンの Mac ビルド ホストにインストールされているもの検査が必要です。|
 |Android|XS および Visual Studio でサポートされています。|Android を対象にする > = 4.0.3、 **fastdev**有効にします。<br />Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります。 Android の 7 エミュレーターは、この時点で検査を許可しません。|
 |WPF|Windows 上の Visual Studio でのみサポートされます。|
-
 
 <a name="reporting-bugs" />
 
@@ -167,6 +166,5 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 1. `"/Applications/Xamarin Workbooks.app"` の Workbooks アプリを削除します
 2. `"Applications/Xamarin Inspector.app"` の Inspector アプリを削除します
-2. アドイン `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` と `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"` を削除します
-3. `/Library/Frameworks/Xamarin.Interactive.framework` および `/Library/Frameworks/Xamarin.Inspector.framework` にある Inspector のファイルとサポート ファイルを削除します
-
+3. アドイン `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` と `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"` を削除します
+4. `/Library/Frameworks/Xamarin.Interactive.framework` および `/Library/Frameworks/Xamarin.Inspector.framework` にある Inspector のファイルとサポート ファイルを削除します

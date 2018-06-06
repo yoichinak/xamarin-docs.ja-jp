@@ -1,23 +1,22 @@
 ---
-title: SiriKit を実装します。
-description: この記事では、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。
+title: Xamarin.iOS で SiriKit を実装します。
+description: このドキュメントでは、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。 これは、インテント UI と目的の拡張機能について説明します。
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f0e5e05828305bd3656d70105b6e2ad06f9fdc81
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788850"
 ---
-# <a name="implementing-sirikit"></a>SiriKit を実装します。
+# <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit を実装します。
 
 _この記事では、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。_
-
-
 
 新しい 10、iOS に SiriKit が iOS デバイスで Siri とマップのアプリを使用してユーザーがアクセスできるサービスを提供する Xamarin.iOS アプリを許可します。 この記事では、Xamarin.iOS アプリで、必要なインテント拡張子インテント UI 拡張機能およびボキャブラリを追加することによって SiriKit サポートを実装するための手順について説明します。
 

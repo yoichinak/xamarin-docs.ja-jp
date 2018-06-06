@@ -1,19 +1,20 @@
 ---
-title: 進行状況インジケーターの操作
-description: この記事では、設計と Xamarin.tvOS アプリ内での進行状況インジケーターの操作について説明します。
+title: Xamarin で進行状況インジケーター tvOS の操作
+description: このドキュメントでは、Xamarin でビルドされた tvOS アプリでの進行状況インジケーターを操作する方法について説明します。 これは、進行状況バーとアクティビティのインジケーターの両方について説明します。
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/25/2018
-ms.openlocfilehash: d512dfddb3a6c81767f937272a4ffb1ab1a35372
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f8812f6b3f8a461487dcaf548637c84b16631d6b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789217"
 ---
-# <a name="working-with-progress-indicators"></a>進行状況インジケーターの操作
+# <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Xamarin で進行状況インジケーター tvOS の操作
 
 _この記事では、設計と Xamarin.tvOS アプリ内での進行状況インジケーターの操作について説明します。_
 

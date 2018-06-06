@@ -1,5 +1,5 @@
 ---
-title: .storyboard/.xib-less ユーザー インターフェイスの設計
+title: Xamarin.Mac で.storyboard/.xib-less ユーザー インターフェイスの設計
 description: この記事では、c# コード、.storyboard ファイル、.xib ファイル、またはインターフェイスのビルダーせずから直接 Xamarin.Mac アプリケーションのユーザー インターフェイスを作成するについて説明します。
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 66725b02d3e351e74fa79ae5336a7db3a9f2b534
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 239133c8a5bcce97aca0c4444624fe0541600354
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792402"
 ---
-# <a name="storyboardxib-less-user-interface-design"></a>.storyboard/.xib-less ユーザー インターフェイスの設計
+# <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>Xamarin.Mac で.storyboard/.xib-less ユーザー インターフェイスの設計
 
 _この記事では、c# コード、.storyboard ファイル、.xib ファイル、またはインターフェイスのビルダーせずから直接 Xamarin.Mac アプリケーションのユーザー インターフェイスを作成するについて説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -315,7 +315,7 @@ MyWindow.ContentView.AddSubview (ClickMeButton);
 
 現在の制限によって Xamarin.Mac は行わないでを作成すること、Xamarin.Mac アプリケーションのメニュー バー –`NSMenuBar`– でコードが、引き続き使用する、 **Main.storyboard**または**MainMenu.xib**ファイルを定義します。 ただし、追加および c# コードでメニューおよびメニュー項目を削除できます。
 
-たとえば、編集、 **<code>appdelegate.cs</code>**ファイルし、`DidFinishLaunching`次のようなメソッドの検索。
+たとえば、編集、 **<code>appdelegate.cs</code>** ファイルし、`DidFinishLaunching`次のようなメソッドの検索。
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)

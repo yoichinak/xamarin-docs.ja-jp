@@ -1,16 +1,17 @@
 ---
 title: Xamarin で Jenkins の使用
-description: このガイドでは、Jenkins 継続的インテグレーション サーバーとして設定し、Xamarin で作成したモバイル アプリケーションのコンパイルを自動化する方法を示します。 これには、OS X 上の Jenkins のインストール、構成、および変更は、ソース コード管理システムにコミットするときに、Xamarin.iOS および Xamarin.Android アプリケーションをコンパイルするジョブを設定する方法について説明します。
+description: このドキュメントでは、Xamarin アプリケーションで継続的インテグレーションの Jenkins を使用する方法について説明します。 これには、インストール、構成、および Jenkins を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 1052507bfbf06e264f9e9da89be1e0f35fa70ce1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793951"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Xamarin で Jenkins の使用
 
@@ -32,7 +33,7 @@ Jenkins が構成されているし、任意の必要なプラグインがイン
 
 このガイドは、これらのポイントの各をカバーする Jenkins サーバーをセットアップする手順について説明します。 末尾をセットアップして IPA および APK の Xamarin モバイル プロジェクトの作成に Jenkins を構成する方法をよく理解お割り当てる必要があります。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 最適なビルド サーバーは、可能性のあるアプリケーションのテストのビルドとの唯一の目的に専用のスタンドアロン コンピューターです。 専用のコンピューターにより、他の役割 (web サーバーなど) に必要な可能性のある成果物には、ビルドはソケットピンしないようにします。 たとえば、ビルド サーバーが web サーバーとしても機能している場合、web サーバーは、競合しているバージョンのいくつか共通ライブラリを必要があります。 この競合があるため、web サーバーが正しく機能しませんまたは Jenkins がユーザーに展開するときに動作しないビルドを作成可能性があります。
 
@@ -316,7 +317,7 @@ Xamarin.Android プロジェクトのビルドは、Xamarin.iOS プロジェク�
 
 ### <a name="creating-the-apk"></a>APK を作成します。
 
-をクリックして、**ビルド ステップの追加**ボタンをクリックし、選択**、Visual Studio プロジェクトや MSBuild を使用してソリューションをビルド**次のスクリーン ショットに示すように。
+をクリックして、**ビルド ステップの追加**ボタンをクリックし、選択 **、Visual Studio プロジェクトや MSBuild を使用してソリューションをビルド**次のスクリーン ショットに示すように。
 
 ![](jenkins-walkthrough-images/image36.png "作成する APK クリックして追加ビルド ステップ ボタンとビルドの選択、Visual Studio プロジェクトやソリューションの MSBuild の使用")
 

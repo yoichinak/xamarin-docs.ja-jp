@@ -1,23 +1,22 @@
 ---
-title: チュートリアル - iOS 用の Xamarin デザイナーをカスタム コントロールを使用します。
-description: この記事では、カスタム コントロールを作成し、iOS 用の Xamarin デザイナーで使用する方法を示す詳細なチュートリアルを提供します。 ようにコントロール デザイナーのツールボックスで使用できるドラッグ/削除するビューにする方法を示します。 また、デザイン時および実行時、正しくレンダリングされるようにコントロールを実装する方法と、デザイン時に設定できるプロパティを作成する方法を示します。
+title: IOS デザイナーでカスタム コントロールの使用
+description: このドキュメントでは、カスタム コントロールを作成し、iOS 用の Xamarin デザイナーで使用する方法について説明します。 コントロールを iOS デザイナーのツールボックスで使用できるように、正しく表示されるようにコントロールを実装および時刻、および詳細を設計する方法を示します。
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a7fb6cba82b52f2a3506df7a36b4813a88ff583
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790166"
 ---
-# <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>チュートリアル - iOS 用の Xamarin デザイナーをカスタム コントロールを使用します。
+# <a name="using-custom-controls-with-the-ios-designer"></a>IOS デザイナーでカスタム コントロールの使用
 
-_この記事では、カスタム コントロールを作成し、iOS 用の Xamarin デザイナーで使用する方法を示す詳細なチュートリアルを提供します。ようにコントロール デザイナーのツールボックスで使用できるドラッグ/削除するビューにする方法を示します。また、デザイン時および実行時、正しくレンダリングされるようにコントロールを実装する方法と、デザイン時に設定できるプロパティを作成する方法を示します。_
-
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 IOS 用 Xamarin デザイナーは、Windows 上の Mac と Visual Studio 2015 と 2017 の Visual Studio で使用します。
 
@@ -29,7 +28,7 @@ IOS 用 Xamarin デザイナーは、Windows 上の Mac と Visual Studio 2015 �
 > Xamarin.Studio 5.5 以降、カスタム コントロールを作成する方法は以前のバージョンには若干異なります。 か、カスタム コントロールを作成する、`IComponent`インターフェイスが (、関連付けられた実装手段) またはできるクラスで注釈を付ける`[DesignTimeVisible(true)]`です。 後者の方法は、次のチュートリアルの例で使用されています。
 
 
-1. 新しいソリューションを作成、 **iOS > アプリ > ビューの 1 つのアプリケーション > c#**テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。
+1. 新しいソリューションを作成、 **iOS > アプリ > ビューの 1 つのアプリケーション > c#** テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。
 
     [![](ios-designable-controls-walkthrough-images/01new.png "新しいソリューションを作成します。")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
@@ -173,7 +172,7 @@ IOS 用 Xamarin デザイナーは、Windows 上の Mac と Visual Studio 2015 �
 
 1. 選択、**イメージ ビュー**変更とその**イメージ**プロパティを`Monkey.png`です。
 
-    [![](ios-designable-controls-walkthrough-images/05new.png "Setting Image View Image property to Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [!(ios-デザインのコントロールのチュートリアル-イメージ/05new.png"イメージの表示設定イメージ プロパティ Monkey.png を)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. サイズのクラスを使用して、このイメージの表示を制限する必要になります。 制約のモードにするには、2 回イメージをクリックします。 Center 固定ハンドルをクリックして、中央に制限して、垂直および水平方向の両方を配置してみましょう。

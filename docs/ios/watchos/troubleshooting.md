@@ -1,6 +1,6 @@
 ---
 title: watchOS トラブルシューティング
-description: 既知の問題の解決策、watchOS 開発上の問題です。
+description: このドキュメントでは、既知の問題の解決策、Xamarin を使用した watchOS 開発について説明します。 手動でファイルの追加インターフェイス コント ローラー、コマンドラインから watch アプリの起動の問題、および詳細を含むイメージがについて説明します。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
@@ -8,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4e84028336669738c40da9e37cd22f32ba11dfc1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791766"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS トラブルシューティング
 
@@ -267,7 +268,7 @@ Mac OS X でアルファ チャネルを削除するは簡単、**プレビュ�
  --sdkroot /Applications/Xcode.app/Contents/Developer/
 ```
 
-### <a name="--device"></a>--device
+### <a name="--device"></a>--デバイス
 
 実行するシミュレーター デバイスです。 これは、特定のデバイスの udid を使用するか、ランタイムとデバイスの種類の組み合わせを使用して 2 つの方法で指定できます。
 

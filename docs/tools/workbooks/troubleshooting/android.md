@@ -1,14 +1,16 @@
 ---
 title: Android での Xamarin のブックのトラブルシューティング
+description: このドキュメントでは、Android での Xamarin のブックの操作のトラブルシューティングのヒントを提供します。 これは、エミュレーターのサポートが読み込まないブックおよびその他のトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: cbae5439b7f83d6114024b1f7225b3aaf2a1d166
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b01fa5b67f8a7f5577c6598f63f8c38e8fa4cf3c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793985"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android での Xamarin のブックのトラブルシューティング
 

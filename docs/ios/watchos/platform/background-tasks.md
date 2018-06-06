@@ -1,21 +1,20 @@
 ---
-title: バックグラウンド タスク
-description: Watch アプリは、常に最新のデータとドッキングのスナップショットに持つようにするためには、新しいバック グラウンド タスク watchOS 3 を使用します。
+title: watchOS Xamarin でバック グラウンド タスク
+description: このドキュメントでは、Xamarin を見てバック グラウンド タスクの種類をリソースを使用して、バック グラウンド タスクをスケジュール、ベスト プラクティス、および複数の実装で watchOS でバック グラウンド タスクを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2049C430-7566-45F8-9E3D-1446F484981E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 0279aed1e694e3b38dcb8189819d88740c37b6ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ab53d4aea32cf41c492e286c18cbe85a619889a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792048"
 ---
-# <a name="background-tasks"></a>バックグラウンド タスク
-
-_Watch アプリは、常に最新のデータとドッキングのスナップショットに持つようにするためには、新しいバック グラウンド タスク watchOS 3 を使用します。_
+# <a name="watchos-background-tasks-in-xamarin"></a>watchOS Xamarin でバック グラウンド タスク
 
 WatchOS 3 には、こと watch アプリがその情報を最新に保つ 3 つの主な方法があります。 
 

@@ -1,5 +1,5 @@
 ---
-title: 新しいユーザー インターフェイスのスタイル
+title: tvOS Xamarin でのユーザー インターフェイスのスタイル
 description: 光を取り上げており、10 および Xamarin.tvOS アプリでそれらを実装する方法が、濃い UI のテーマを Apple を tvOS に追加します。
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43bfac29acb8b465fd1f3cdfd53c7664adeae18f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789172"
 ---
-# <a name="new-user-interface-styles"></a>新しいユーザー インターフェイスのスタイル
+# <a name="tvos-user-interface-styles-in-xamarin"></a>tvOS Xamarin でのユーザー インターフェイスのスタイル
 
 _光を取り上げており、10 および Xamarin.tvOS アプリでそれらを実装する方法が、濃い UI のテーマを Apple を tvOS に追加します。_
 
 tvOS 10 サポート Dark とライト ユーザー インターフェイスの両方のテーマを自動的にコントロールのすべてのビルドで UIKit を合わせて、これは、ユーザーの設定に基づいています。 さらに、開発者は、ユーザーが選択したテーマに基づく UI 要素を手動で調整でき、指定されたテーマをオーバーライドできます。
-
 
 <a name="About-the-New-User-Interface-Styles" />
 
@@ -185,7 +185,7 @@ TvOS 10 での特徴であるコレクションに応答する、アプリのス
 
 * 開発者がで UI のテーマに基づくユーザー インターフェイス要素のさまざまなバリエーションを指定する、**属性インスペクター**:
     
-    * いくつかのプロパティのようになりましたが、 **+**の横に UI のテーマの特定のバージョンを追加するときにクリックします。 
+    * いくつかのプロパティのようになりましたが、 **+** の横に UI のテーマの特定のバージョンを追加するときにクリックします。 
 
         [![](user-interface-styles-images/theme08.png "UI のテーマの特定のバージョンを追加します。")](user-interface-styles-images/theme08.png#lightbox) 
     

@@ -1,27 +1,26 @@
 ---
 title: IOS 用の Xamarin デザイナーに自動レイアウト
-description: このガイドでは、自動レイアウトを iOS および iOS 用の Xamarin デザイナーで使用できる新しい制約のワークフローが導入されています。
+description: このガイドでは、iOS 自動レイアウトを紹介し、iOS 用 Xamarin デザイナーを使用して作成および制約を使用してレイアウトを編集する方法について説明します。 コードでは、制約の変更、アニメーション化する変更の制約についても説明します。
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2023483f817c365d2cfad6945b281d630317693b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 876bf3de19d2bcce7d951facc92d5b05a928cd38
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790202"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin デザイナーに自動レイアウト
-
-_このガイドでは、自動レイアウトを iOS および iOS 用の Xamarin デザイナーで使用できる新しい制約のワークフローが導入されています。_
 
 自動レイアウト (「アダプティブ レイアウト」とも呼ばれます) は、レスポンシブ デザイン方法です。 各要素の場所は、画面上の点にハードコード、過渡期のレイアウト システムとは異なり、自動レイアウトがに関するは*リレーションシップ*-デザイン サーフェイス上の他の要素に対して要素の位置。 自動レイアウトの中核には、制約または画面の他の要素のコンテキストで要素の配置または要素のセットを定義するルールの設定を勧めします。 要素が画面上の特定位置に関連付けられていないために、制約はさまざまな画面サイズと向きがデバイスには良く見えるアダプティブ レイアウトの作成に役立ちます。
 
 このガイドでは、制約、および Xamarin iOS デザイナー内で操作する方法を紹介します。 このガイドでは、制約の使用をプログラムでは説明しません。 プログラムによる自動レイアウトの使用方法の詳細についてを参照してください、 [Apple のドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)です。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 IOS 用 Xamarin デザイナーは、Windows 上の Mac に Visual Studio 2015 および 2017 での Visual Studio で使用します。
 
@@ -61,7 +60,7 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
   ![制約のモードを切り替える](designer-auto-layout-images/constraints.png)
 
-- **「更新制約」ボタン:**が場合に応じて変更している編集モードの制約に注意してください。
+- **「更新制約」ボタン:** が場合に応じて変更している編集モードの制約に注意してください。
   - 制約の編集モードでは、このボタンは、要素のフレームを一致するように制約を調整します。
   - フレームが編集モードでは、このボタンは、制約を定義する位置に一致する要素のフレームを調整します。
 

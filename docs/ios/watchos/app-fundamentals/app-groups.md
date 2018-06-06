@@ -1,18 +1,20 @@
 ---
-title: アプリ グループの操作
+title: WatchOS Xamarin でアプリ グループの操作
+description: このドキュメントでは、アプリのグループとその watchOS アプリケーションでの使用について説明します。 これには、要件、Entitlements.plist に関する考慮事項、および配置をプロビジョニング、アプリ グループを構成する方法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 341f6b4f5049a39817f2923901472f35b254bead
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5736b25af3993e2da794422a1a6f040461532497
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790680"
 ---
-# <a name="working-with-app-groups"></a>アプリ グループの操作
+# <a name="working-with-watchos-app-groups-in-xamarin"></a>WatchOS Xamarin でアプリ グループの操作
 
 
 アプリ グループを使用すると、さまざまなアプリケーション (またはアプリケーションとその拡張機能) から共有ファイルの保存場所にアクセスできます。 アプリ グループは次のようなデータに使用できます。

@@ -1,21 +1,20 @@
 ---
-title: ページ コントロールの操作
-description: この記事では、設計と Xamarin.tvOS アプリ内でページ コントロールの使い方について説明します。
+title: TvOS Xamarin 内のページ コントロールの操作
+description: このドキュメントでは、Xamarin でビルドされたアプリ内で tvOS ページ コントロールを操作する方法について説明します。 ページ コントロールの概要を説明を提供、ストーリー ボードで設定する方法について説明し、ページ変更イベントに応答する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cb07c050aeb2ee72e34048baab991df2d5775d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bf020f230afc2eb2a09d863424bd4eb56ea1bde6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789159"
 ---
-# <a name="working-with-page-control"></a>ページ コントロールの操作
-
-_この記事では、設計と Xamarin.tvOS アプリ内でページ コントロールの使い方について説明します。_
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>TvOS Xamarin 内のページ コントロールの操作
 
 場合によっては、Xamarin.tvOS アプリで、一連のページやイメージを表示する必要があります。 ページ コントロールは、明確に、ユーザーがページの最大数外でどのページを表示するように設計されました。 ページ コントロールには、一連の dark、楕円形の背景に対してドットが表示されます。 黒点を現在のページが表示されますが、他のすべてのページが中空のドットで表示されます。 その背景領域に合わせてが多すぎますがある場合、ページ コントロールは外側のほとんどのドットをクリップします。
 
@@ -72,9 +71,6 @@ Xamarin.tvOS アプリでのページ コントロールを操作する最も簡
 
 > [!IMPORTANT]
 > などのイベントを割り当てることができますが`TouchUpInside`UI 要素に (など、UIButton)、ios デザイナーには決して呼び出されません Apple TV はタッチ画面またはタッチ イベントのサポートがあるないためです。 常に使用する必要があります、 `Primary Action` tvOS のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
-
-
-
 
 編集ビュー コント ローラー (例`ViewController.cs`) ファイルし、変更されているページを処理するコードを追加します。 例えば:
 
