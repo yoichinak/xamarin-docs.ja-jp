@@ -1,17 +1,18 @@
 ---
 title: IOS 6 の概要
-description: iOS 6 には、さまざまな Xamarin.iOS 6 が c# 開発者を表示するアプリを開発するための新しいテクノロジが含まれています。
+description: このドキュメントには、iOS 6 で導入された機能について説明するガイドへのリンクがします。 コレクション ビュー、PassKit、ソーシャル、Framework StoreKit への変更はすべて、説明とします。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8f3be80ffb8156c24c96b03fda8eac3907ca88bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cf623c7788137106ddbb2c23c69465f205a5a400
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787616"
 ---
 # <a name="introduction-to-ios-6"></a>IOS 6 の概要
 
@@ -28,12 +29,12 @@ IOS 6 と Xamarin.iOS 6 では、開発者は、自由にそのターゲット i
 コレクション ビューは、任意のレイアウトを使用して表示するコンテンツを許可します。 これらは、同様のカスタム レイアウトをサポートしながら、ボックス外のグリッドのようなレイアウトを容易に作成できるようにします。 詳細については、次を参照してください。、[コレクション ビューの概要](~/ios/user-interface/controls/uicollectionview.md) [](~/ios/user-interface/controls/uicollectionview.md)ガイドです。
 
 
-## <a name="introduction-to-pass-kitiosplatformpasskitmd"></a>[キットを渡すの概要](~/ios/platform/passkit.md)
+## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit の概要](~/ios/platform/passkit.md)
 
-キットを渡すために、フレームワークにより、Passbook アプリで管理されているデジタルのパスと対話するアプリケーションです。 詳細については、次を参照してください。、[渡すキット ガイドの概要](~/ios/platform/passkit.md)です。
+PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、次を参照してください。、[渡すキット ガイドの概要](~/ios/platform/passkit.md)です。
 
 
-##  <a name="introduction-to-event-kitiosplatformeventkitmd"></a>[イベントのキットの概要](~/ios/platform/eventkit.md)
+##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)
 
 EventKit フレームワークでは、予定表、カレンダー イベント、およびカレンダーのデータベースを格納するアラーム データにアクセスする手段を提供します。 アクセス カレンダーと予定表へのイベントは以来、使用可能な iOS 4 が iOS 6 は今すぐアラーム データへのアクセスを公開します。 詳細については、次を参照してください。、[すれば](~/ios/platform/eventkit.md) [EventKit に ntroduction](~/ios/platform/eventkit.md)ガイドです。
 
@@ -43,7 +44,7 @@ EventKit フレームワークでは、予定表、カレンダー イベント�
 ソーシャル フレームワークでは、Twitter、Facebook、とともに SinaWeibo を中国でのユーザーなどのソーシャル ネットワークと対話するため、統合 API を提供します。 詳細については、次を参照してください。、[ソーシャル Framework に導入](~/ios/platform/social-framework.md)ガイドです。
 
 
-##  <a name="changes-to-store-kitchanges-to-storekitmd"></a>[キットを格納する変更](changes-to-storekit.md)
+##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit の変更点](changes-to-storekit.md)
 
 Apple がストア キットで 2 つの新しい機能を導入しました。 購入と iTunes や、アプリからアプリ ストアのコンテンツをダウンロードすると、アプリ内購入のコンテンツ ファイルをホストしているです。 詳細については、次を参照してください。、[ストア キット変更](changes-to-storekit.md)ガイドです。
 
