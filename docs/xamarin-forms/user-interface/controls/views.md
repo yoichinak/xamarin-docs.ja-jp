@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733088"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms ビュー
 
@@ -69,7 +70,7 @@ _Xamarin.Forms ビューは、クロスプラット フォーム モバイル �
 
 |     |     |
 | --- | --- |
-| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) テキストを表示する四角形のオブジェクトは、発生して、 [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/)イベントが押されるとします。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) | [![ボタンの例](views-images/Button.png "例をボタン")](views-images/Button-Large.png#lightbox "ボタンの例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) テキストを表示する四角形のオブジェクトは、発生して、 [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/)イベントが押されるとします。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) / [ガイド](~/xamarin-forms/user-interface/button.md) / [サンプル](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![ボタンの例](views-images/Button.png "例をボタン")](views-images/Button-Large.png#lightbox "ボタンの例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar

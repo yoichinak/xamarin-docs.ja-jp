@@ -1,5 +1,5 @@
 ---
-title: Databases
+title: Xamarin.Mac 内のデータベース
 description: この記事では、キーと値のコーディングおよび SQLite データベースと Xcode のインターフェイスのビルダー内の UI 要素間のデータ バインディングを許可する確認キーと値の使用方法について説明します。 また、SQLite.NET ORM を使用して、SQLite データへのアクセスを提供するについても説明します。
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 33c1ab7092669bb1dbd4e7bfae628b58a0bf3726
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3bc40824396aba78b2645bf9701e8e0e659c8b0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791993"
 ---
-# <a name="databases"></a>Databases
+# <a name="databases-in-xamarinmac"></a>Xamarin.Mac 内のデータベース
 
 _この記事では、キーと値のコーディングおよび SQLite データベースと Xcode のインターフェイスのビルダー内の UI 要素間のデータ バインディングを許可する確認キーと値の使用方法について説明します。また、SQLite.NET ORM を使用して、SQLite データへのアクセスを提供するについても説明します。_
 
@@ -1910,7 +1911,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 オープン ソースを使用して前に、述べたよう[SQLite.NET](http://www.sqlite.org)オブジェクトのリレーションシップ マネージャー (ORM) がお SQLite データベースからデータを読み書きするために必要なコードの量を大幅に削減できます。 これによって、いくつかのキーと値のコーディングおよびデータ バインディングをオブジェクトの配置の要件のためのデータのバインド時に実行する最適なルートができない可能性があります。
 
-SQLite.Net web サイトで、に従って_"SQLite は、SQL データベース エンジンの自己完結型、なし、構成不要、トランザクションを実装するソフトウェア ライブラリです。SQLite は、世界で最も広く導入されているデータベース エンジンです。SQLite のソース コードには、パブリック ドメインです。"_
+SQLite.Net web サイトで、に従って _"SQLite は、SQL データベース エンジンの自己完結型、なし、構成不要、トランザクションを実装するソフトウェア ライブラリです。SQLite は、世界で最も広く導入されているデータベース エンジンです。SQLite のソース コードには、パブリック ドメインです。"_
 
 次のセクションでは、テーブル ビューのデータを提供する SQLite.Net を使用する方法を紹介します。
 

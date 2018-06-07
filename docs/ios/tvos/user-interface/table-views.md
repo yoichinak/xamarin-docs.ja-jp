@@ -1,5 +1,5 @@
 ---
-title: テーブル ビューを使用します。
+title: TvOS Xamarin のテーブル ビューの操作
 description: この記事では、設計と Xamarin.tvOS アプリ内でテーブルのビューおよびテーブル ビューのコント ローラーの操作について説明します。
 ms.prod: xamarin
 ms.assetid: D8F80FA9-6400-4DB7-AFC9-A28A54AD04E8
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8864e85e4d657fc242f6c06b21c815f62055c9f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c74c2cc7598f50e57a6a450823e2b0ebca4b537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789568"
 ---
-# <a name="working-with-table-views"></a>テーブル ビューを使用します。
+# <a name="working-with-tvos-table-views-in-xamarin"></a>TvOS Xamarin のテーブル ビューの操作
 
 _この記事では、設計と Xamarin.tvOS アプリ内でテーブルのビューおよびテーブル ビューのコント ローラーの操作について説明します。_
 
@@ -161,7 +162,7 @@ Xamarin.tvOS アプリでは、テーブルのビューを使用する最も簡�
 
 テーブル ビューを簡単に表示される情報に扱うことおよび (と、ユーザーを選択したり、テーブル ビューに行を強調表示)、詳細な情報の表示が容易になります、カスタムのクラスまたはについては、データ モデルとして機能するクラスを作成する次のように表示されます.
 
-たとえば旅行の予約アプリケーションの一覧を含む**都市**の一意の一覧を含む各**観光**ユーザーが選択できます。 ユーザーが、引力としてのマークを付けることが、*お気に入り*取得を選択して*方向*、引力と*、フライトの予約*特定の都市にします。
+たとえば旅行の予約アプリケーションの一覧を含む**都市**の一意の一覧を含む各**観光**ユーザーが選択できます。 ユーザーが、引力としてのマークを付けることが、*お気に入り*取得を選択して*方向*、引力と *、フライトの予約*特定の都市にします。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -285,7 +286,7 @@ namespace tvTable
 
 各テーブルのビューには、データ ソースが必要です (`UITableViewDataSource`) テーブル ビューで必要なテーブルにデータを提供し、として必要な行を生成します。
 
-上記の例でプロジェクト名を右クリックし、**ソリューション エクスプ ローラー**[**追加** > **新しいファイル.**および呼び出し`AttractionTableDatasource`] をクリックし、**新規**を作成するボタンをクリックします。 次に、編集、`AttractionTableDatasource.cs`ファイルし、次のようになります。
+上記の例でプロジェクト名を右クリックし、**ソリューション エクスプ ローラー**[**追加** > **新しいファイル.** および呼び出し`AttractionTableDatasource`] をクリックし、**新規**を作成するボタンをクリックします。 次に、編集、`AttractionTableDatasource.cs`ファイルし、次のようになります。
 
 ```csharp
 using System;
@@ -477,7 +478,7 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 
 各テーブルのビューには、デリゲートが必要です (`UITableViewDelegate`) ユーザーの操作や、テーブルでは、他のシステム イベントに応答します。
 
-上記の例でプロジェクト名を右クリックし、**ソリューション エクスプ ローラー**[**追加** > **新しいファイル.**および呼び出し`AttractionTableDelegate`] をクリックし、**新規**を作成するボタンをクリックします。 次に、編集、`AttractionTableDelegate.cs`ファイルし、次のようになります。
+上記の例でプロジェクト名を右クリックし、**ソリューション エクスプ ローラー**[**追加** > **新しいファイル.** および呼び出し`AttractionTableDelegate`] をクリックし、**新規**を作成するボタンをクリックします。 次に、編集、`AttractionTableDelegate.cs`ファイルし、次のようになります。
 
 ```csharp
 using System;
@@ -847,7 +848,7 @@ namespace tvTable
 
 分割ビュー コント ローラーのショートカットも定義しています (`SplitView`) テーブルのビューに変更を通信するために使用されます (`AcctractionTableView`)。
 
-最後に、カスタム アクション (イベント) は、3 つに追加された`UIButton`インターフェイス デザイナーで作成されたインスタンス、するアクセス許可として、引力をマークする、_お気に入り_、取得_方向_に、引力と_、フライトの予約_特定の都市にします。
+最後に、カスタム アクション (イベント) は、3 つに追加された`UIButton`インターフェイス デザイナーで作成されたインスタンス、するアクセス許可として、引力をマークする、_お気に入り_、取得_方向_に、引力と _、フライトの予約_特定の都市にします。
 
 <a name="The-Navigation-View-Controller" />
 

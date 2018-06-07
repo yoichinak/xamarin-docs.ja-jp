@@ -1,19 +1,20 @@
 ---
-title: 例外がマーシャ リング
-description: Xamarin.iOS には、特にネイティブ コードでの例外に応答を支援する新しいイベントが含まれています。
+title: Xamarin.iOS でマーシャ リング例外
+description: このドキュメントでは、Xamarin.iOS アプリでネイティブおよびマネージの例外を使用する方法について説明します。 これは、これらの問題のソリューションと発生する可能性がある問題について説明します。
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/05/2017
-ms.openlocfilehash: bb9c16985d958772193093434350435ce477956a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786744"
 ---
-# <a name="exception-marshaling"></a>例外がマーシャ リング
+# <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS でマーシャ リング例外
 
 _Xamarin.iOS には、特にネイティブ コードでの例外に応答を支援する新しいイベントが含まれています。_
 
@@ -108,7 +109,7 @@ Xamarin.iOS' キャッチされない Objective C 例外コールバックが呼
 
 コードの例:
 
-``` objective-c
+```objc
 -(id) setObject: (id) object forKey: (id) key
 {
     @try {
@@ -124,7 +125,7 @@ Xamarin.iOS' キャッチされない Objective C 例外コールバックが呼
 
 これのバリエーションは、マネージ コードおよび取得するネイティブ フレームをアンワインドし、マネージ例外をスローする、最初に管理されている`catch`句。
 
-``` csharp
+```csharp
 class AppDelegate : UIApplicationDelegate {
     public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
     {

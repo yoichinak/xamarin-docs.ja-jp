@@ -1,20 +1,19 @@
 ---
-title: UrhoSharp を使用します。
-description: UrhoSharp エンジンの概要
+title: UrhoSharp を使用して、3 D ゲームを作成するには
+description: このドキュメントでは、シーン、コンポーネント、図形、カメラ、アクション、ユーザー入力、サウンド、および詳細を説明する UrhoSharp の概要を説明します。
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 8eed81817620b3f68510ab2e043c3aeaafb6e78a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: eb1e93e47528e801da08f402f452e0e8ce5014d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784040"
 ---
-# <a name="using-urhosharp"></a>UrhoSharp を使用します。
-
-_UrhoSharp エンジンの概要_
+# <a name="using-urhosharp-to-build-a-3d-game"></a>UrhoSharp を使用して、3 D ゲームを作成するには
 
 基本的な方法を取得する、初めてのゲームを作成する前に: シーンをセットアップする方法、リソース (アートワークを含む) を読み込む方法、および、ゲーム用の単純な相互作用を作成する方法です。
 

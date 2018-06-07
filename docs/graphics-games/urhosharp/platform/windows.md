@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp Windows のサポート
-description: Windows 固有のセットアップと UrhoSharp に対して機能します。
+description: このドキュメントでは、UrhoSharp 用 Windows のサポートについて説明します。 プロジェクトを作成、構成する方法を説明し、および Urho を起動して、WPF との統合、UWP と統合します。
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: ac563e18c714a276ebe94a491999e61630d53ef3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 094eaf0ebe84ce8c1771bd6481ee897463349856
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783234"
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows のサポート
-
-_Windows 固有の設定および機能_
 
 Urho、ポータブル クラス ライブラリで、さまざまなプラットフォーム全体にわたる、ゲーム ロジックに使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化中には、特定のプラットフォーム機能を活用するためにはたいです.
 

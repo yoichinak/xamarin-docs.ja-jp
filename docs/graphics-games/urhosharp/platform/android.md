@@ -1,16 +1,17 @@
 ---
 title: UrhoSharp Android のサポート
-description: 特定の android のセットアップと UrhoSharp の機能です。
+description: このドキュメントでは、Android 固有のセットアップや UrhoSharp 機能に関する情報について説明します。 具体的には、サポートされているアーキテクチャでは、についても説明を構成および起動 Urho、およびカスタムの埋め込み Urho のプロジェクトを作成する方法です。
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 008afb060729b6d1badf47db7eafedbe631326df
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6e489f52712989b5f94fa52d5ec6f22a13ce6252
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783783"
 ---
 # <a name="urhosharp-android-support"></a>UrhoSharp Android のサポート
 

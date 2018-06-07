@@ -1,5 +1,5 @@
 ---
-title: コレクション ビュー
+title: Xamarin.iOS でコレクション ビュー
 description: コレクション ビューは、任意のレイアウトを使用して表示するコンテンツを許可します。 これらは、カスタム レイアウトをサポートしているときに既定でグリッドのようなレイアウトを容易に作成できるようにします。
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b9ba2f885364084d6bee67c460b4831c00c7ae55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790628"
 ---
-# <a name="collection-views"></a>コレクション ビュー
+# <a name="collection-views-in-xamarinios"></a>Xamarin.iOS でコレクション ビュー
 
 _コレクション ビューは、任意のレイアウトを使用して表示するコンテンツを許可します。これらは、カスタム レイアウトをサポートしているときに既定でグリッドのようなレイアウトを容易に作成できるようにします。_
 
@@ -139,7 +140,7 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 ## <a name="data-source"></a>データ ソース
 
-同様に、iOS の他の部分など`UITableView`と`MKMapView`、`UICollectionView`からデータを取得、*データ ソース*、Xamarin.iOS 経由で公開されているが、 **`UICollectionViewDataSource`**クラスです。 コンテンツを提供するため、このクラスは、`UICollectionView`など。
+同様に、iOS の他の部分など`UITableView`と`MKMapView`、`UICollectionView`からデータを取得、*データ ソース*、Xamarin.iOS 経由で公開されているが、 **`UICollectionViewDataSource`** クラスです。 コンテンツを提供するため、このクラスは、`UICollectionView`など。
 
 -  **セル**– から返された`GetCell`メソッドです。
 -  **補助ビュー** – から返された`GetViewForSupplementaryElement`メソッドです。
@@ -498,7 +499,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 最後に、ラベルを選択し、名前を付けます`TextLabel`:
 
-[![](uicollectionview-images/quick07.png "name label TextLabel")](uicollectionview-images/quick07.png#lightbox)
+[![](uicollectionview-images/quick07.png "名ラベル TextLabel")](uicollectionview-images/quick07.png#lightbox)
 
 編集、`TextCollectionViewCell`クラスし、次のプロパティを追加します。
 
@@ -686,7 +687,7 @@ namespace CollectionView
 }
 ```
 
-注意して`DataSource`と`Delegate`上に作成したコレクション ビューは、ストーリー ボードから構築されたときに設定されます (または**.xib**ファイル)。
+注意して`DataSource`と`Delegate`上に作成したコレクション ビューは、ストーリー ボードから構築されたときに設定されます (または **.xib**ファイル)。
 
 編集、 **Main.storyboard**ファイルを再びコレクション ビューを選択しに切り替えると、**プロパティ**です。 設定、**クラス**をカスタム`WaterfallCollectionView`上で定義したクラス。
 
