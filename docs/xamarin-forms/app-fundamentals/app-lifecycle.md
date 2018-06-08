@@ -6,25 +6,27 @@ ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/19/2016
-ms.openlocfilehash: 511591482a0e7512be34f6a210c6f44a1826be24
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: a22ad8f3f272212f5c7f088ba2112f2771ff4a7f
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846345"
 ---
 # <a name="app-lifecycle"></a>アプリのライフ サイクル
 
-`Application`基底クラスは、次の機能を提供します。
+[ `Application` ](xref:Xamarin.Forms.Application)基底クラスは、次の機能を提供します。
 
 * [ライフ サイクル メソッド](#Lifecycle_Methods) `OnStart`、 `OnSleep`、および`OnResume`です。
+* [ナビゲーション イベントをページ](#page) [ `PageAppearing` ](xref:Xamarin.Forms.Application.PageAppearing)、 [ `PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing)です。
 * [モーダル ナビゲーション イベント](#modal) `ModalPushing`、 `ModalPushed`、 `ModalPopping`、および`ModalPopped`です。
 
 <a name="Lifecycle_Methods" />
 
 ## <a name="lifecycle-methods"></a>ライフ サイクル メソッド
 
-`Application`クラスには、ライフ サイクル メソッドの処理をオーバーライドする 3 つの仮想メソッドが含まれています。
+[ `Application` ](xref:Xamarin.Forms.Application)クラスには、ライフ サイクル メソッドの処理をオーバーライドする 3 つの仮想メソッドが含まれています。
 
 * **OnStart** -アプリケーションの起動時に呼び出されます。
 
@@ -54,18 +56,30 @@ protected override void OnResume()
 
 更新するときに*古い*Xamarin.Forms アプリケーションなどです。 Xamarin.Forms 1.3 または旧) を作成、Android の主要なアクティビティが含まれていることを確認`ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation`で、`[Activity()]`属性。 観察するが存在しない場合、`OnStart`回転上だけでなく、アプリケーションの起動時にメソッドが呼び出されます。 この属性は、現在の Xamarin.Forms アプリ テンプレートに自動的に含まれます。
 
+<a name="page" />
+
+## <a name="page-navigation-events"></a>ページ ナビゲーション イベント
+
+2 つのイベントには、 [ `Application` ](xref:Xamarin.Forms.Application)表示および消失しているページの通知を提供するクラス。
+
+- [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing) ページが画面に表示されるときに発生します。
+- [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) ページが画面に表示されなくしようとしたときに発生します。
+
+これらのイベントは、画面に表示されている場合、ページを追跡するシナリオで使用できます。
+
+> [!NOTE]
+> [ `PageAppearing` ](xref:Xamarin.Forms.Application.PageAppearing)と[ `PageDisappearing` ](xref:Xamarin.Forms.Application.PageDisappearing)からのイベントが発生する、 [ `Page` ](xref:Xamarin.Forms.Page)基底クラスの直後に、 [ `Page.Appearing`](xref:Xamarin.Forms.Page.Appearing)と[ `Page.Disappearing` ](xref:Xamarin.Forms.Page.Disappearing)イベント、それぞれします。
+
 <a name="modal" />
 
 ## <a name="modal-navigation-events"></a>モーダル ナビゲーション イベント
 
-次の 4 つの新しいイベントがある、 `Application` Xamarin.Forms 1.4 は、それぞれが独自のイベント引数のクラス。
+4 つのイベントには、 [ `Application` ](xref:Xamarin.Forms.Application)クラス、それぞれが独自のイベント引数を使用することが応答するモーダル ページに表示され、破棄します。
 
 * **ModalPushing** - `ModalPushingEventArgs`
 * **ModalPushed** - `ModalPushedEventArgs`
 * **ModalPopping** -`ModalPoppingEventArgs`クラスに含まれる、`Cancel`プロパティです。 ときに`Cancel`に設定されている`true`モーダル pop が取り消されました。
 * **ModalPopped** - `ModalPoppedEventArgs`
-
-これらのイベントはアプリケーションのライフ サイクルの管理向上に役立つ、モーダルのページに表示され、破棄されたに応答することができるためです。
 
 > [!NOTE]
 > アプリケーション ライフ サイクル メソッドとをすべての事前モーダル ナビゲーション イベントを実装する`Application`Xamarin.Forms アプリを作成する方法 (ie 1.2 またはそれ以前のバージョンで記述された静的なを使用するアプリケーション`GetMainPage`メソッド) を作成するが更新されました、。既定`Application`の親として設定される`MainPage`です。

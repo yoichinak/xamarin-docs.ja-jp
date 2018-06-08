@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 5774d91dad7b733a03219dcce1434798f70d4564
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d5e73839f889234c816bfff08f3e46dade8dffc9
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846842"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -135,7 +136,7 @@ JSON データの例、[デモ ソース](http://demo3143189.mockable.io/session
 
 [![](get-started-images/demo-sml.png "DataPages サンプル アプリケーション")](get-started-images/demo.png#lightbox "DataPages サンプル アプリケーション")
 
-これは機能するため、構築済みのスタイル**「イベント」**ライト テーマの Nuget パッケージに存在し、(データ ソースに一致するように定義されているスタイルを持つ 「タイトル」、"image"、「発表者」) です。
+これは機能するため、構築済みのスタイル **「イベント」** ライト テーマの Nuget パッケージに存在し、(データ ソースに一致するように定義されているスタイルを持つ 「タイトル」、"image"、「発表者」) です。
 
 「イベント」`StyleClass`ビルドを表示する、`ListDataPage`をカスタム コントロール`CardView`で定義されている Xamarin.Forms.Pages で制御されています。 `CardView`コントロールが 3 つのプロパティ: `ImageSource`、 `Text`、および`Detail`です。 データ ソースの 3 つのフィールド (JSON ファイル) からこれらのプロパティを表示するためにバインドするはハードコードされています。
 

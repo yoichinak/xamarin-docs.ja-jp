@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b083bb83dbc7266f749c4adc660a8bfb431df795
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8623127444836d3335f42f9ba7a40de6aedfef70
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848370"
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Azure のモバイル アプリを使用してオフラインのデータの同期
 
@@ -179,5 +180,5 @@ protected override async void OnAppearing()
 - [TodoAzureAuthOfflineSync (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuthOfflineSync/)
 - [Azure のモバイル アプリの使用](~/xamarin-forms/data-cloud/consuming/azure.md)
 - [Azure のモバイル アプリを使用してユーザーの認証](~/xamarin-forms/data-cloud/authentication/azure.md)
-- [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Azure のモバイル クライアント SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
 - [MobileServiceClient](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx)

@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: c128e6130f0d8c2ba076a82ac85bda5aadea1ee9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fca5a0cb2e188df822efb15b090ef7986cf4a2d8
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848097"
 ---
 # <a name="themes"></a>テーマ
 
@@ -22,7 +23,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 
 参照してください、[ライト テーマ](light.md)と[ダーク テーマ](dark.md)、アプリに追加するか、チェック アウトする方法についてのページ、[例カスタム テーマ](custom.md)です。
 
-**重要:**する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に定型コードを追加することによって`AppDelegate`および Android`MainActivity`です。 これが、将来のプレビュー リリースでは改善されます。
+**重要:** する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に定型コードを追加することによって`AppDelegate`および Android`MainActivity`です。 これが、将来のプレビュー リリースでは改善されます。
 
 
 ## <a name="control-appearance"></a>コントロールの外観
@@ -118,7 +119,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 
 **iOS**
 
-**<code>appdelegate.cs</code>**後に次の行を追加 `LoadApplication`
+**<code>appdelegate.cs</code>** 後に次の行を追加 `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

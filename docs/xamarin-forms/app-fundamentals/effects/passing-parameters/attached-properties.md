@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 5bca36189100942e21d1d750dd156dab0cf45fc4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2ad27289fb7a4d34b9a951c8132f0147577dfc55
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847918"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>添付プロパティとして効果のパラメーターの引き渡し
 
@@ -94,7 +95,7 @@ public static class ShadowEffect
 }
 ```
 
-`ShadowEffect` 5 つの添付プロパティを持つ`static`添付プロパティの get アクセス操作子および set アクセス操作子ごとにします。 各プラットフォーム固有に渡されるパラメーターを表すこれらのプロパティのうち 4 つ`LabelShadowEffect`です。 `ShadowEffect`クラスも定義、`HasShadow`添付プロパティを追加または削除、コントロールに、その効果を制御するために使用する、`ShadowEffect`にクラスをアタッチします。 これは、添付プロパティのレジスタ、`OnHasShadowChanged`プロパティの値が変更されたときに実行されるメソッド。 このメソッドを追加または削除の値に基づいて有効、`HasShadow`添付プロパティ。
+`ShadowEffect` 5 つの添付プロパティを持つ`static`添付プロパティの get アクセス操作子および set アクセス操作子ごとにします。 各プラットフォーム固有に渡されるパラメーターを表すこれらのプロパティのうち 4 つ`LabelShadowEffect`です。 `ShadowEffect`クラスも定義、`HasShadow`添付プロパティを追加または削除、コントロールに、その効果を制御するために使用する、`ShadowEffect`にクラスをアタッチします。 この添付プロパティに、プロパティの値が変更された時に実行される `OnHasShadowChanged` メソッドを登録します。 このメソッドを追加または削除の値に基づいて有効、`HasShadow`添付プロパティ。
 
 入れ子になった`LabelShadowEffect`クラス、どのサブクラス、 [ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)クラスをサポートしている効果の追加と削除されます。 `RoutingEffect`クラスは、通常は、プラットフォーム固有の内部の効果をラップするプラットフォームに依存しない効果を表します。 プラットフォーム固有の効果の種類の情報へのコンパイル時アクセスは存在しないために、効果削除プロセスが簡略化します。 `LabelShadowEffect`コンス トラクターは、解像度グループ名、および各プラットフォームに固有の効果クラスで指定された一意の ID の連結で構成されるパラメーターを渡して基底クラスのコンス トラクターを呼び出します。 これにより、効果の追加と削除、`OnHasShadowChanged`メソッドは、次のようにします。
 
@@ -185,7 +186,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 
 ### <a name="ios-project"></a>iOS プロジェクト
 
-次のコード例は、 `LabelShadowEffect` iOS プロジェクトの実装。
+次のコードサンプルでは、 iOS プロジェクトの `LabelShadowEffect` 実装を示します。
 
 ```csharp
 [assembly:ResolutionGroupName ("MyCompany")]

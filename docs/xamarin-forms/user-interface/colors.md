@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7a304790213bcebe50a3f39295b5b1d1fb052879
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848344"
 ---
 # <a name="colors"></a>色
 
@@ -71,6 +72,21 @@ IOS および Android では、このインスタンスは対照的な色が、�
 -  **WithLuminosity**の明るさを指定した値に置き換えて、新しい色を返します。
 -  **WithSaturation**の鮮やかさを指定した値に置き換えて、新しい色を返します。
 -  **MultiplyAlpha** -英字、指定されたアルファ値で乗算を変更することで新しい色を返します。
+
+## <a name="implicit-conversions"></a>暗黙の型変換
+
+間の暗黙的な変換、`Xamarin.Forms.Color`と`System.Drawing.Color`型を実行することができます。
+
+```csharp
+Xamarin.Forms.Color xfColor = Xamarin.Forms.Color.FromRgb(0, 72, 255);
+System.Drawing.Color sdColor = System.Drawing.Color.FromArgb(38, 127, 0);
+
+// Implicity convert from a Xamarin.Forms.Color to a System.Drawing.Color
+System.Drawing.Color sdColor2 = xfColor;
+
+// Implicitly convert from a System.Drawing.Color to a Xamarin.Forms.Color
+Xamarin.Forms.Color xfColor2 = sdColor;
+```
 
 ## <a name="deviceruntimeplatform"></a>Device.RuntimePlatform
 

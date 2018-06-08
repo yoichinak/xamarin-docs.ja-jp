@@ -6,18 +6,19 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 02/24/2017
-ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.date: 05/31/2018
+ms.openlocfilehash: 9b87145773bf16b15c391c5c5d6d136b7aa76e39
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848357"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms の XAML プレビューアー
 
 _入力すると表示される Xamarin.Forms レイアウトを参照してください!_
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 プロジェクトでは、作業を XAML プレビュー用のプログラムの最新の Xamarin.Forms NuGet パッケージが必要です。 Android アプリをプレビューする必要があります[JDK 1.8 x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)です。
 
@@ -55,6 +56,17 @@ _入力すると表示される Xamarin.Forms レイアウトを参照してく�
 一部のレイアウトは、ユーザー インターフェイス コントロールにバインドされているデータを含まない視覚化が難しい可能性があります。 ようにするプレビューでは、役に立つ、静的データの一部に割り当てますコントロール ハードコーディングするによって、バインディング コンテキスト (分離コードまたは XAML を使用していずれか)。
 
 James Montemagno を参照してください[デザイン時のデータの追加に関するブログの投稿](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)XAML で静的 ViewModel にバインドする方法を確認します。
+
+## <a name="detecting-design-mode"></a>デザイン モードの検出
+
+静的な[ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled)プレビュー用のプログラムで、アプリケーションが実行されているかどうかを決定するプロパティを調べることができます。 プレビュー用のプログラムで、アプリケーションが実行されている場合にのみ実行されるコードを指定できます。
+
+```csharp
+if (DesignMode.IsDesignModeEnabled)
+{
+  // Previewer only code  
+}
+```
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 

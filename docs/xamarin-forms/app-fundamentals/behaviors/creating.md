@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 2848b554d2dbd6d3d69ae864846247b3612d64e6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3a86e7713620eff90db995941eb35df7bc393a76
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848292"
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms の動作
 
@@ -159,7 +160,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior`クラスには、添付プロパティ名前にはが含まれています。`AttachBehavior`で、 `static` get アクセス操作子および set アクセス操作子を追加またはアタッチがコントロールする動作の削除を制御します。 これは、添付プロパティのレジスタ、`OnAttachBehaviorChanged`プロパティの値が変更されたときに実行されるメソッド。 このメソッドを追加または削除動作の値に基づいて、コントロールを`AttachBehavior`添付プロパティ。
+`NumericValidationBehavior`クラスには、添付プロパティ名前にはが含まれています。`AttachBehavior`で、 `static` get アクセス操作子および set アクセス操作子を追加またはアタッチがコントロールする動作の削除を制御します。 この添付プロパティに、プロパティの値が変更された時に実行される `OnAttachBehaviorChanged` メソッドを登録します。 このメソッドを追加または削除動作の値に基づいて、コントロールを`AttachBehavior`添付プロパティ。
 
 次のコード例は、*明示的な*のスタイル、`NumericValidationBehavior`を使用して、`AttachBehavior`接続されたプロパティ、およびに適用できる[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロール。
 

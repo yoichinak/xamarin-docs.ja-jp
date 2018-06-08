@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: d2aee2d6421b06f9147c656debdd58bdfe21be72
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848305"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin ライブの再読み込み
 
@@ -25,7 +26,7 @@ Xamarin のライブの再読み込みを有効にすると、 **、XAML を変�
 
 ライブの再読み込みは、現在 Visual Studio 2017 の使用のみ。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 * [Visual Studio 2017 バージョン 15.7 以上](https://www.visualstudio.com/vs/)以上で、 **.NET を使用したモバイル開発**ワークロード。
 * [Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)またはそれ以降。
@@ -172,7 +173,7 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 
 シナリオで、実行中のアプリからコンピューターへの接続 (を使用して示された`localhost`または`127.0.0.1`で**ツール > オプション > Xamarin > ライブの再読み込み**) ことはできません (ファイアウォール、別のネットワークなど)できますリモート サーバーを構成する代わりに、IDE と、アプリの両方がこれに接続します。
 
-ライブの再読み込みは、標準を使用して[MQTT プロトコル](http://mqtt.org/)を交換するメッセージ、およびと通信できるため[サード パーティ サーバー](https://github.com/mqtt/mqtt.github.io/wiki/servers)です。 でもは[公開サーバー](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (とも呼ばれる*ブローカー*) を使用することができます。 ライブの再読み込みがテストされて`broker.hivemq.com`と`iot.eclipse.org`によって提供されるサービスと同様に、ホスト名[www.cloudmqtt.com](https://www.cloudmqtt.com)と[www.cloudamqp.com](https://www.cloudamqp.com)です。など、クラウド内の独自の MQTT サーバーを展開することもできます。 [azure HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)です。
+ライブの再読み込みは、標準を使用して[MQTT プロトコル](http://mqtt.org/)を交換するメッセージ、およびと通信できるため[サード パーティ サーバー](https://github.com/mqtt/mqtt.github.io/wiki/servers)です。 でもは[公開サーバー](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (とも呼ばれる*ブローカー*) を使用することができます。 ライブの再読み込みがテストされて`broker.hivemq.com`と`iot.eclipse.org`によって提供されるサービスと同様に、ホスト名[www.cloudmqtt.com](https://www.cloudmqtt.com)と[www.cloudamqp.com](https://www.cloudamqp.com)です。 など、クラウド内の独自の MQTT サーバーを展開することもできます。 [azure HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)です。
 
 任意のポートを構成することができますが、リモート サーバーの既定の 1883 ポートを使用するが一般的です。 ライブの再読み込みメッセージは、リモート サーバーに接続しても安全であるために、強力なエンド ツー エンド AES 対称暗号化を使用します。 既定では、暗号化キーと初期化ベクター (IV) の両方が Visual Studio のすべてのセッションに再生成します。
 

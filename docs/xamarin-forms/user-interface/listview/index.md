@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7beb9e66a6e6bc29de36fcd605c5daa0098e75a2
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848539"
 ---
 # <a name="listview"></a>ListView
 
@@ -41,8 +42,8 @@ ListView では、各プラットフォームのネイティブ機能を実行�
 
 - **[セル](customizing-cell-appearance.md)** &ndash;セルで ListView でデータが表示されます。 各セルは、データの行に対応します。 選択する組み込みのセルがまたは独自のカスタムのセルを定義することができます。 組み込みとカスタムの両方のセルには、XAML またはコードで使用される定義を指定できます。
   - **[組み込み](customizing-cell-appearance.md#Built_in_Cells)** &ndash; TextCell と ImageCell、特に、セルに組み込まれているために、設定できます優れたパフォーマンスは、各プラットフォームでネイティブ コントロールに対応します。
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;詳細テキストを必要に応じて、テキストの文字列を表示します。 詳細テキストは強調色とフォント サイズを小さくの 2 番目の行として表示されます。
-    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;テキストとイメージを表示します。 左上のイメージに TextCell として表示されます。
+       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;詳細テキストを必要に応じて、テキストの文字列を表示します。 詳細テキストは強調色とフォント サイズを小さくの 2 番目の行として表示されます。
+       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;テキストとイメージを表示します。 左上のイメージに TextCell として表示されます。
   - **[カスタムのセル](customizing-cell-appearance.md#customcells)** &ndash;複雑なデータを表示する必要がある場合は、カスタムのセルはすばらしいです。 たとえば、曲、アルバム、アーティストなどの一覧を提供するカスタム ビューを使用できます。
 
 ![](images/image-cell-default.png "ImageCells を含む ListView")
@@ -68,7 +69,7 @@ ListView の対話機能の詳細については、次を参照してくださ�
 - [セルでビルドされた (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
 - [カスタムのセル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 - [グループ化 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [カスタム レンダラー ビュー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
+- [Custom Renderer View (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
 - [ListView の対話機能 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
 - [iOS ブック](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-ios.workbook)
 - [Android のブック](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-android.workbook)

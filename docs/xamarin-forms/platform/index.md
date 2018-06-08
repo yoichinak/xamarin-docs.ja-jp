@@ -6,12 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/20/2017
-ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/06/2018
+ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847632"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
@@ -41,10 +42,6 @@ Xamarin.Forms では、GTK # アプリ用のプレビューがサポートでき
 
 Xamarin.Forms では、macOS アプリ用のプレビューがサポートできるようになりました。
 
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms では、Windows Presentation Foundation (WPF) アプリ用のプレビューがサポートできるようになりました。
-
 ## <a name="native-formsnative-formsmd"></a>[ネイティブ フォーム](native-forms.md)
 
 ネイティブのフォームは、Xamarin.Forms を許可する[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-ネイティブ Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) プロジェクトで使用されるページを派生します。
@@ -61,6 +58,14 @@ IOS、Android、およびユニバーサル Windows プラットフォームの�
 
 さまざまなオープン ソース プラグインは Xamarin.Forms アプリの拡張に役立つ、Github、Nuget、および Xamarin コンポーネント ストアで使用できます。
 
+## <a name="tizentizenmd"></a>[Tizen](tizen.md)
+
+Tizen .NET では、Xamarin.Forms と Tizen .NET framework での .NET アプリケーションをビルドすることができます。
+
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
 Xamarin.Forms では、Windows 10 のユニバーサル Windows プラットフォーム (UWP) のサポートがあります。 この記事の内容を追加する方法を説明します、既存の Xamarin.Forms ソリューションを UWP プロジェクト。
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms では、Windows Presentation Foundation (WPF) アプリ用のプレビューがサポートできるようになりました。

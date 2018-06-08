@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 37ecc76d9774b3f375af92f2a00c6c687358f065
-ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
+ms.openlocfilehash: 14ef4abe773512f76d9823809270f27b1a0ad1a3
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848461"
 ---
 # <a name="cell-appearance"></a>セルの外観
 
@@ -255,7 +256,7 @@ var listView = new ListView {
 };
 ```
 
-IOS と Android の場合、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)要素がリサイクルしカスタムのセルは、カスタム レンダラーを使用して、カスタムのレンダラーがプロパティの変更通知を正しく実装する必要があります。 使用可能なセルのバインド コンテキストが更新されたときに、プロパティ値が変更されますセルが再利用される`PropertyChanged`イベントが発生します。 詳細については、次を参照してください。 [、ViewCell をカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)です。 セルのリサイクルの詳細については、次を参照してください。[キャッシュ戦略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)です。
+IOS と Android の場合、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)要素がリサイクルしカスタムのセルは、カスタム レンダラーを使用して、カスタムのレンダラーがプロパティの変更通知を正しく実装する必要があります。 セルが再利用されると、`PropertyChanged` イベントが発生し、それらセルのプロパティの値は、binding context が有効なセルに更新される時を変更します。 より詳しい情報は [Customizing a ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md) を参照してください。 セルのリサイクルの詳細については、次を参照してください。[キャッシュ戦略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)です。
 
 ## <a name="related-links"></a>関連リンク
 

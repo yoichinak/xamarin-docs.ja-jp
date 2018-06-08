@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 48b81c5beb1643501c69e5de1ea4f4197d587001
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7857f3d4c76fe7d8589c25e4f7fb079f06e136e7
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846620"
 ---
 # <a name="consuming-a-restful-web-service"></a>RESTful Web サービスの使用
 
@@ -50,10 +51,10 @@ REST サービスは ASP.NET Core を使用して記述し、次の操作を提�
 
 |操作|HTTP メソッド|相対 URI|パラメーター|
 |--- |--- |--- |--- |
-|作業アイテムの一覧を取得します。|GET|/api/todoitems/|
+|To Do アイテムのリストの取得|GET|/api/todoitems/|
 |新しい作業項目を作成します。|POST|/api/todoitems/|JSON 形式の TodoItem|
-|作業項目を更新します。|PUT|/api/todoitems/|JSON 形式の TodoItem|
-|作業項目を削除します。|Del|/api/todoitems/{id}|
+|To Do アイテムの更新|PUT|/api/todoitems/|JSON 形式の TodoItem|
+|To Do アイテムの削除|Del|/api/todoitems/{id}|
 
 Uri の大部分が含まれて、`TodoItem`パス内の ID。 たとえば、削除するため、 `TodoItem` ID がある`6bb8a868-dba1-4f1a-93b7-24ebce87e243`、クライアントに DELETE 要求を送信`http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`です。 サンプル アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。[データ モデリング](~/xamarin-forms/data-cloud/walkthrough.md)です。
 
@@ -149,7 +150,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
   ...
 
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully saved.");
+    Debug.WriteLine (@"                TodoItem successfully saved.");
 
   }
   ...
@@ -196,7 +197,7 @@ public async Task DeleteTodoItemAsync (string id)
   ...
   var response = await client.DeleteAsync (uri);
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully deleted.");
+    Debug.WriteLine (@"                TodoItem successfully deleted.");
   }
   ...
 }

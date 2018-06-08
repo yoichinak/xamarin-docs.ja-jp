@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 703441e3fc58beeb33e519f3781387a59c1c1cef
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: d10bdc605fca199a4d0286ce662a27094b5b98f4
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847567"
 ---
 # <a name="understanding-the-sample"></a>このサンプルを理解します。
 
@@ -41,7 +42,7 @@ _このトピックでは、別の web サービスと通信する方法につ�
 |--- |--- |
 |データ|データ項目を管理し、web サービスとの通信に使用するインターフェイスとクラスが含まれています。 少なくとも、これが含まれています、`TodoItemManager`のプロパティによって公開されるクラス、 `App` web サービス操作の呼び出しにクラスです。|
 |モデル|アプリケーションのデータ モデル クラスを含みます。 少なくとも、これが含まれています、`TodoItem`クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、ユーザー データのモデルで使用されるその他のクラスも指定できます。|
-|ビュー|アプリケーション ページが含まれます。 通常から成る、`TodoListPage`と`TodoItemPage`クラス、および認証の目的で使用されるその他のクラスです。|
+|Views|アプリケーション ページが含まれます。 通常から成る、`TodoListPage`と`TodoItemPage`クラス、および認証の目的で使用されるその他のクラスです。|
 
 重要なファイルの数もアプリケーションごとに PCL プロジェクトの構成します。
 

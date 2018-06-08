@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: cff0b85514d2e5995d09735d6ad99b7909bfacb4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28aba0ec33dc88e3e87f51fbdd28d5ec8a72d3c3
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847603"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Azure のモバイル アプリからプッシュ通知を送信します。
 
@@ -422,4 +423,4 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 - [IOS でのプッシュ通知](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)
 - [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
 - [TodoAzurePush (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzurePush/)
-- [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Azure のモバイル クライアント SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

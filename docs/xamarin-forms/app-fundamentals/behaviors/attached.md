@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: af891ad1ff1389d5a48c6c47ba1914b8d4dfc20f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 32573ac3ed0dfecf8ddf1c731613c9a5f88fb1e7
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34845994"
 ---
 # <a name="attached-behaviors"></a>関連付けられた動作
 
@@ -77,7 +78,7 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior`クラスには、添付プロパティ名前にはが含まれています。`AttachBehavior`で、 `static` get アクセス操作子および set アクセス操作子を追加またはアタッチがコントロールする動作の削除を制御します。 これは、添付プロパティのレジスタ、`OnAttachBehaviorChanged`プロパティの値が変更されたときに実行されるメソッド。 このメソッドを登録またはのイベント ハンドラーを登録解除、 [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/)の値に基づく、イベント、`AttachBehavior`添付プロパティ。 動作のコア機能が用意されて、`OnEntryTextChanged`に入力された値を解析するメソッド、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)ユーザー、およびセットによって、`TextColor`プロパティ値がない場合は赤を`double`です。
+`NumericValidationBehavior`クラスには、添付プロパティ名前にはが含まれています。`AttachBehavior`で、 `static` get アクセス操作子および set アクセス操作子を追加またはアタッチがコントロールする動作の削除を制御します。 この添付プロパティに、プロパティの値が変更された時に実行される `OnAttachBehaviorChanged` メソッドを登録します。 このメソッドを登録またはのイベント ハンドラーを登録解除、 [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/)の値に基づく、イベント、`AttachBehavior`添付プロパティ。 動作のコア機能が用意されて、`OnEntryTextChanged`に入力された値を解析するメソッド、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)ユーザー、およびセットによって、`TextColor`プロパティ値がない場合は赤を`double`です。
 
 ## <a name="consuming-an-attached-behavior"></a>関連付けられた動作の使用
 

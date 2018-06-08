@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 280ca523d3e3b4f5037d626cc5fd0bd5b31d0e8b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f14479d353d24910f66afd35f968a232ec31657c
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847284"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS に固有の書式設定を追加します。
 
@@ -43,7 +44,7 @@ nav.BarTextColor = Color.White;
 
 理想的には、ステータス バーも空白にする iOS プロジェクトで直接実行できるもの。 次のエントリを追加、 **Info.plist**白でステータス バーを強制します。
 
-![](theme-images/info-plist.png "iOS Info.plist Entries")
+![](theme-images/info-plist.png "iOS Info.plist エントリ")
 
 または、対応する編集**Info.plist**のためファイルを直接含めます。
 
