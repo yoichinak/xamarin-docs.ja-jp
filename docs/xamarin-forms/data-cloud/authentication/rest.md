@@ -1,17 +1,18 @@
 ---
 title: RESTful Web サービスを認証
-description: HTTP では、リソースへのアクセスを制御するいくつかの認証メカニズムの使用をサポートします。 基本認証では、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して、RESTful web サービスのリソースへのアクセスを保護する方法を示します。
+description: 基本認証では、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して、RESTful web サービスのリソースへのアクセスを保護する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3160fcced190f74fcfb44c6259451e00995de0fa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42680ed8b79560f6f4f9f12892f7da5637a7af16
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240962"
 ---
 # <a name="authenticating-a-restful-web-service"></a>RESTful Web サービスを認証
 
@@ -20,7 +21,7 @@ _HTTP では、リソースへのアクセスを制御するいくつかの認�
 付随する Xamarin.Forms サンプル アプリケーションでは、web サービスへの読み取り専用のアクセスを提供する REST の Xamarin でホストされるサービスを使用します。 そのため、作成、更新、およびデータを削除する操作では、アプリケーションで使用するデータは変更されません。 ただし、REST サービスのホスト可能なバージョンは利用で、 *TodoRESTService*フォルダー サンプル アプリケーションとサービスを設定する方法の手順ではありますがあります。 REST サービスのホスト可能なこのバージョンでは、完全作成、更新、読み取り、および delete データへのアクセスを提供します。
 
 > [!NOTE]
-> Ios 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 > 使用することがない場合のうち ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 アプリケーションを更新することによってこれを行う**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)です。
 
 ## <a name="authenticating-users-over-http"></a>HTTP 経由でユーザーの認証

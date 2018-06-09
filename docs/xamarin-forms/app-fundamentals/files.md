@@ -1,5 +1,5 @@
 ---
-title: ファイル
+title: Xamarin.Forms でファイルの処理
 description: 埋め込みリソースの使用またはネイティブのファイル システム Api に対して書き込み、ファイル Xamarin.Forms を使用した処理を実行できます。
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 02bea7e2ec927277a92c0732b25f590b5ae6704b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 80fdedd6c5df15272e36e6ac9c1414a4f731123a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241934"
 ---
-# <a name="files"></a>ファイル
+# <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms でファイルの処理
 
 _埋め込みリソースの使用またはネイティブのファイル システム Api に対して書き込み、ファイル Xamarin.Forms を使用した処理を実行できます。_
 
@@ -39,11 +40,11 @@ Xamarin.Forms コードは複数のプラットフォームで実行されます
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![リソースのビルド アクションが埋め込まれている構成](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource"ビルド アクション"")](files-images/vs-embeddedresource.png#lightbox "設定埋め込まれたリソースのビルド アクション")
+[![リソースのビルド アクションが埋め込まれている構成](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource\"ビルド アクション\"")](files-images/vs-embeddedresource.png#lightbox "設定埋め込まれたリソースのビルド アクション")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![テキスト ファイルがビルド アクションが埋め込まれたリソースを構成するために、PCL に埋め込まれた](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource"ビルド アクション"")](files-images/xs-embeddedresource.png#lightbox "設定埋め込まれたリソースのビルド アクション")
+[![テキスト ファイルがビルド アクションが埋め込まれたリソースを構成するために、PCL に埋め込まれた](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource\"ビルド アクション\"")](files-images/xs-embeddedresource.png#lightbox "設定埋め込まれたリソースのビルド アクション")
 
 -----
 

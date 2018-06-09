@@ -1,18 +1,18 @@
 ---
 title: 階層ナビゲーション
-description: NavigationPage クラスでは、ここで、ユーザーは forwards と backwards、必要に応じて、ページ間を移動することが階層的なナビゲーション エクスペリエンスを提供します。 クラスでは、ページのオブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを実装します。 この記事では、NavigationPage クラスを使用して、ページの履歴内のナビゲーションを実行する方法を示します。
+description: この記事では、NavigationPage クラスを使用して、後入れ先出し (LIFO) のページのスタック内のナビゲーションを実行する方法を示します。
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 49be5b812c5ef66907e7ebf74906c25bfbb076b6
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847164"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242457"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -48,7 +48,7 @@ _NavigationPage クラスでは、ここで、ユーザーは forwards と backw
 
 - ナビゲーション バーは、タイトルを表示して、あるページの上部にある、ios の場合、*戻る*を前のページに返すボタンをクリックします。
 - Android でナビゲーション バーは、タイトル、アイコンに表示されるページの上部にあると*戻る*を前のページに返すボタンをクリックします。 アイコンがで定義されている、`[Activity]`を装飾する属性、 `MainActivity` Android プラットフォームに固有のプロジェクト内のクラスです。
-- ユニバーサル Windows プラットフォームにナビゲーション バーがタイトルに表示されるページの上部にある存在します。 
+- ユニバーサル Windows プラットフォームにナビゲーション バーがタイトルに表示されるページの上部にある存在します。
 
 すべてのプラットフォームの値で、 [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/)プロパティは、ページ タイトルとして表示されます。
 

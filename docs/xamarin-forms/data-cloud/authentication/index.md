@@ -1,17 +1,18 @@
 ---
 title: Web サービスへのアクセスの認証
-description: このガイドでは、自分のデータにアクセスすることのみバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。 別のプロバイダーによって提供される組み込みの認証メカニズムを使用しておよび基本認証を使用して、OAuth id プロバイダーに対して認証する Xamarin.Auth コンポーネントを使用して、REST サービスにトピックが含まれます。
+description: このガイドでは、自分のデータにアクセスすることのみバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: bc34cf265885708fa6392936a8dbc9d82796e2fd
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: d598a9b3de31ea6823530f911c3544bf3cebb37f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240688"
 ---
 # <a name="authenticating-access-to-web-services"></a>Web サービスへのアクセスの認証
 

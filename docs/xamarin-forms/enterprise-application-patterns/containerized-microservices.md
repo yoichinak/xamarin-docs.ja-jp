@@ -1,16 +1,18 @@
 ---
 title: コンテナー化 Microservices
+description: この章では、microservices とコンテナーを使用して、アジャイル、スケーラブルで、ビルドする方法と信頼性の高い先進的なクラウド アプリケーションについて説明します。
 ms.prod: xamarin
 ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 461a1310ff430c16e49fa0ed6037a77b1302f769
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33be84bc17f72c8b70d117a0742b001f1f763d3d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242262"
 ---
 # <a name="containerized-microservices"></a>コンテナー化 Microservices
 
@@ -121,13 +123,13 @@ Microservices ベースのアプリケーションは、複数のコンピュー
 
 ![](containerized-microservices-images/eventbus.png "イベント バスで公開/定期受信します。")
 
-**図 8-6:**イベント バスで公開/定期受信
+**図 8-6:** イベント バスで公開/定期受信
 
 アプリケーションの観点から、イベント バスは、発行するだけのインターフェイスを介して公開されるチャネルをサブスクライブします。 ただし、イベント バスを実装する方法が異なることができます。 たとえば、イベント バス実装でした RabbitMQ、Azure Service Bus または使用 NServiceBus MassTransit など他のサービス バス。 図 8-7 では、イベント バスを eShopOnContainers の参照をアプリケーションで使用する方法を示します。
 
 ![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "参照をアプリケーションで、イベント ドリブンの非同期通信")
 
-**図 8-7:**の参照をアプリケーションで、イベント ドリブンの非同期通信
+**図 8-7:** の参照をアプリケーションで、イベント ドリブンの非同期通信
 
 EShopOnContainers イベント バス、RabbitMQ を使用して実装では、1 対多非同期パブリッシュ/サブスクライブ機能を提供します。 これは、イベントを発行した後があること、同じイベントをリッスンしている複数のサブスクライバーを意味します。 図 8-9 では、この関係を示します。
 

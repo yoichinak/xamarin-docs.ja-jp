@@ -1,33 +1,25 @@
 ---
-title: スタイル
-description: Xamarin.Forms でテキストのスタイル設定
+title: Xamarin.Forms のテキストのスタイル
+description: この記事で説明します Xamarin.Forms アプリケーション内のテキストのスタイル処理する方法です。 スタイルを 1 回定義されているし、多くのビューで使用されることができますが、スタイルは、1 つの型のビューでのみ使用できます。
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 42d5da5c4171347de8c4befc773e498803fd9f36
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848448"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245323"
 ---
-# <a name="styles"></a>スタイル
+# <a name="xamarinforms-text-styles"></a>Xamarin.Forms のテキストのスタイル
 
-_Xamarin.Forms でテキストのスタイル設定_
-
+_Xamarin.Forms 内のテキストのスタイル処理_
 
 スタイルは、ラベル、エントリ、およびエディターの外観を調整に使用できます。 スタイルを 1 回定義されているし、多くのビューで使用されることができますが、スタイルは、1 つの型のビューでのみ使用できます。
 スタイルを指定することができます、`Key`選択的に特定のコントロールを使用して適用し、`Style`プロパティです。
-
-ここでは、次のトピックについて説明します。
-
-- **[組み込みスタイル](#Built-In_Styles)** &ndash;をスタイル アプリ全体のビューのテキスト ベースの組み込みスタイルを使用します。
-- **[カスタム スタイル](#Custom_Styles)** &ndash;組み込みオプションで満足できない場合に、カスタム スタイルを定義します。
-- **[スタイルを適用する](#Applying_Styles)** &ndash;ビューにカスタムと組み込みの両方のスタイルを適用します。
-- **[ユーザー補助](#Accessibility)** &ndash;テキストがユーザー補助の設定を尊重ことを確認してください。
 
 <a name="Built-In_Styles" />
 

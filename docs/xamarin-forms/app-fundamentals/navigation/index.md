@@ -1,19 +1,20 @@
 ---
-title: ナビゲーション
-description: Xamarin.Forms では、さまざまな使用されているページの種類に応じて、別のページ ナビゲーションのエクスペリエンスを提供します。
+title: Xamarin.Forms ナビゲーション
+description: このガイドでは、Xamarin.Forms アプリでのナビゲーションを実行する方法について説明します。 Xamarin.Forms では、さまざまな使用されているページの種類に応じて、別のページ ナビゲーションのエクスペリエンスを提供します。
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1a184e1ebfd9d87ba82642ebdfc30a8d3f92cce1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241957"
 ---
-# <a name="navigation"></a>ナビゲーション
+# <a name="xamarinforms-navigation"></a>Xamarin.Forms ナビゲーション
 
 _Xamarin.Forms では、さまざまな使用されているページの種類に応じて、別のページ ナビゲーションのエクスペリエンスを提供します。_
 
@@ -42,4 +43,3 @@ Xamarin.Forms では、モーダルのページのサポートも提供します
 ## <a name="displaying-pop-upspop-upsmd"></a>[ポップアップを表示します。](pop-ups.md)
 
 Xamarin.Forms は、次の 2 つの pop 増のようなユーザー インターフェイス要素: アラートとアクション シートです。 これらのインターフェイス要素は、単純な質問をユーザーに確認してを使用してタスクを使用してユーザーに使用できます。
-

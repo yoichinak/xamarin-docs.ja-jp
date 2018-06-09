@@ -1,17 +1,18 @@
 ---
 title: 認識サービスとインテリジェンスを追加します。
-description: マイクロソフトの知的サービスでは、Api、Sdk、および開発者は、顔認識、音声認識、および言語理解などの機能を追加することで、アプリケーションをより高度な利用できるサービスのセットです。 この記事では、Microsoft 認知サービス Api の一部を呼び出す方法を説明するサンプル アプリケーションに紹介します。
+description: この記事では、マイクロソフトの知的サービス Api の一部を呼び出す方法を示すサンプル アプリケーションに紹介します。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: c577aaf1991082baaf34248ee31899902f692d0b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241524"
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>認識サービスとインテリジェンスを追加します。
 
@@ -55,9 +56,9 @@ _マイクロソフトの知的サービスでは、Api、Sdk、および開発�
 |--- |--- |
 |モデル|アプリケーションのデータ モデル クラスを含みます。 これが含まれています、`TodoItem`クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、別の Microsoft 認知サービス Api から返されたモデルの JSON 応答に使用されるクラスも含まれています。|
 |リポジトリ|含まれています、`ITodoItemRepository`インターフェイスと`TodoItemRepository`データベース操作を実行に使用されるクラスです。|
-|サービス|Api にアクセスするさまざまな Microsoft 認知サービスで使用されるインターフェイスと一緒に使用されるクラスとインターフェイスが含まれています、`DependencyService`プラットフォーム プロジェクトでは、インターフェイスを実装するクラスを検索対象のクラスです。|
+|Services|Api にアクセスするさまざまな Microsoft 認知サービスで使用されるインターフェイスと一緒に使用されるクラスとインターフェイスが含まれています、`DependencyService`プラットフォーム プロジェクトでは、インターフェイスを実装するクラスを検索対象のクラスです。|
 |ユーティリティ|含まれています、`Timer`によって使用されるクラス、 `AuthenticationService` 9 分ごと、JWT アクセス トークンを更新するクラス。|
-|ビュー|アプリケーション ページが含まれます。|
+|Views|アプリケーション ページが含まれます。|
 
 PCL プロジェクトには、いくつかの重要なファイルも含まれています。
 

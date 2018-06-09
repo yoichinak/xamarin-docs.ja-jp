@@ -1,19 +1,20 @@
 ---
-title: バインディングの値コンバーター
-description: キャストまたはデータのバインド内の値の変換
+title: Xamarin.Forms バインディング値コンバーター
+description: この記事では、キャストするか (これはバインド コンバーターの場合、またはバインディング値コンバーターでとも呼ばれます) の値コンバーターを実装することによって、Xamarin.Forms データ バインディング内の値を変換する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 260db2372977202df3d73e32645a358066146b40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a5bd52d43ef93013537f30c7d5e0c31cbf336d07
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241830"
 ---
-# <a name="binding-value-converters"></a>バインディングの値コンバーター
+# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms バインディング値コンバーター
 
 通常のデータ バインドでは対象のプロパティにし、場合によっては、ターゲット プロパティから、ソース プロパティにデータ ソース プロパティからに転送してください。 この転送は、ソースとターゲットのプロパティが同じ型の場合、または 1 つの型は、暗黙的な変換によって他の型に変換できる場合に簡単です。 そうしない場合は、ときに、型の変換が行う必要があります。
 

@@ -1,18 +1,18 @@
 ---
 title: ビューを実装します。
-description: Xamarin.Forms カスタム ユーザー インターフェイス コントロールは、レイアウトと、画面上のコントロールを配置に使用されるビュー クラスから派生する必要があります。 この記事では、デバイスのカメラからプレビュー ビデオ ストリームの表示に使用される Xamarin.Forms のカスタム コントロールのカスタム レンダラーを作成する方法を示します。
+description: この記事では、デバイスのカメラからプレビュー ビデオ ストリームの表示に使用される Xamarin.Forms のカスタム コントロールのカスタム レンダラーを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: d270a23fb2fee67e5e3dd415771c975aeb682854
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: eb0bc199bfd31ac631ca9d131796b606960d76aa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848487"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240487"
 ---
 # <a name="implementing-a-view"></a>ビューを実装します。
 

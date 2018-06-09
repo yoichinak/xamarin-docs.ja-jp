@@ -1,21 +1,22 @@
 ---
-title: コマンド インターフェイス
-description: 実装、`Command`のデータ バインディング プロパティ
+title: Xamarin.Forms コマンド インターフェイス
+description: この記事では、Xamarin.Forms データ バインドでのコマンド プロパティを実装する方法について説明します。 コマンド実行のインターフェイスは、使用が適しています MVVM アーキテクチャには、コマンドを実装する別のアプローチを提供します。
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7f8b40624b9434347f69a473eed3bdff5c1d3d33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 37fe5bbcfa3dbc6aa5483c89b49c1698a00ecbb6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241313"
 ---
-# <a name="the-command-interface"></a>コマンド インターフェイス
+# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
-派生したクラスでは、通常、ViewModel プロパティ間アーキテクチャでは、モデル View-viewmodel (MVVM)、データ バインディングが定義されている`INotifyPropertyChanged`、およびビューでは、これは一般に、XAML ファイルのプロパティです。 場合があります、アプリケーションをユーザーが、ViewModel で何かに影響するコマンドの開始を要求することによって、これらのプロパティ バインディングを超える必要があります。 これらのコマンド ボタンのクリックによって通知は、通常、タップにお問い合わせや従来のハンドラーで分離コード ファイルで処理される、`Clicked`のイベント、`Button`または`Tapped`のイベント、`TapGestureRecognizer`です。 
+派生したクラスでは、通常、ViewModel プロパティ間アーキテクチャでは、モデル View-viewmodel (MVVM)、データ バインディングが定義されている`INotifyPropertyChanged`、およびビューでは、これは一般に、XAML ファイルのプロパティです。 場合があります、アプリケーションをユーザーが、ViewModel で何かに影響するコマンドの開始を要求することによって、これらのプロパティ バインディングを超える必要があります。 これらのコマンド ボタンのクリックによって通知は、通常、タップにお問い合わせや従来のハンドラーで分離コード ファイルで処理される、`Clicked`のイベント、`Button`または`Tapped`のイベント、`TapGestureRecognizer`です。
 
 コマンド実行のインターフェイスは、使用が適しています MVVM アーキテクチャには、コマンドを実装する別のアプローチを提供します。 ViewModel 自体は、コマンドは、ビューで、特定のアクティビティに反応などが実行されるメソッドを含めることができます、 `Button`  をクリックします。 これらのコマンド間でデータ バインディングが定義されていると、`Button`です。
 
@@ -32,7 +33,7 @@ ms.lasthandoff: 04/04/2018
 - [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) したがって、 [ `ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/)から派生しています `TextCell`
 - [`TapGestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
 
-[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 定義、 [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/)型のプロパティ`ICommand`と[ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/)プロパティです。 [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/)プロパティ[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)型も`ICommand`します。 
+[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 定義、 [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/)型のプロパティ`ICommand`と[ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/)プロパティです。 [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/)プロパティ[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)型も`ICommand`します。
 
 これらすべてのコマンドは、ビュー内の特定のユーザー インターフェイス オブジェクトに依存しない方法で ViewModel 内で処理できます。
 
@@ -57,7 +58,7 @@ ViewModel にはコマンド インターフェイスを使用するには型の
 public ICommand MyCommand { private set; get; }
 ```
 
-ViewModel 必要がありますを実装するクラスを参照しても、`ICommand`インターフェイスです。 このクラスは、少し説明します。 ビューで、`Command`のプロパティ、`Button`そのプロパティにバインドします。 
+ViewModel 必要がありますを実装するクラスを参照しても、`ICommand`インターフェイスです。 このクラスは、少し説明します。 ビューで、`Command`のプロパティ、`Button`そのプロパティにバインドします。
 
 ```xaml
 <Button Text="Execute command"
@@ -136,7 +137,7 @@ public class PersonViewModel : INotifyPropertyChanged
 }
 ```
 
-`PersonCollectionViewModel`表示以下の種類の新しいオブジェクトを作成`PersonViewModel`でき、ユーザーがデータを入力します。 クラスはプロパティを定義するために、`IsEditing`型の`bool`と`PersonEdit`型の`PersonViewModel`します。 クラスが型の 3 つのプロパティを定義するさらに、`ICommand`という名前のプロパティと`Persons`型の`IList<PersonViewModel>`: 
+`PersonCollectionViewModel`表示以下の種類の新しいオブジェクトを作成`PersonViewModel`でき、ユーザーがデータを入力します。 クラスはプロパティを定義するために、`IsEditing`型の`bool`と`PersonEdit`型の`PersonViewModel`します。 クラスが型の 3 つのプロパティを定義するさらに、`ICommand`という名前のプロパティと`Persons`型の`IList<PersonViewModel>`:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -199,7 +200,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
         <Grid.BindingContext>
             <local:PersonCollectionViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -216,7 +217,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
         <!-- Entry Form -->
         <Grid Grid.Row="1"
               IsEnabled="{Binding IsEditing}">
-            
+
             <Grid BindingContext="{Binding PersonEdit}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -230,11 +231,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Name: " Grid.Row="0" Grid.Column="0" />
-                <Entry Text="{Binding Name}" 
+                <Entry Text="{Binding Name}"
                        Grid.Row="0" Grid.Column="1" />
 
                 <Label Text="Age: " Grid.Row="1" Grid.Column="0" />
-                <StackLayout Orientation="Horizontal" 
+                <StackLayout Orientation="Horizontal"
                              Grid.Row="1" Grid.Column="1">
                     <Stepper Value="{Binding Age}"
                              Maximum="100" />
@@ -315,7 +316,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
     {
         (SubmitCommand as Command).ChangeCanExecute();
     }
-    
+
     void RefreshCanExecutes()
     {
         (NewCommand as Command).ChangeCanExecute();
@@ -359,9 +360,9 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             },
             canExecute: () =>
             {
-                return PersonEdit != null && 
-                       PersonEdit.Name != null && 
-                       PersonEdit.Name.Length > 1 && 
+                return PersonEdit != null &&
+                       PersonEdit.Name != null &&
+                       PersonEdit.Name.Length > 1 &&
                        PersonEdit.Age > 0;
             });
 
@@ -373,7 +374,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute`関数を`SubmitCommand`で変更されたプロパティがあるたびに呼び出される、`PersonViewModel`編集されているオブジェクトします。 返します`true`される場合にのみ、`Name`プロパティは、少なくとも 1 文字以上、および`Age`が 0 より大きい。 その時点で、**送信**ボタンが有効になります。 
+`canExecute`関数を`SubmitCommand`で変更されたプロパティがあるたびに呼び出される、`PersonViewModel`編集されているオブジェクトします。 返します`true`される場合にのみ、`Name`プロパティは、少なくとも 1 文字以上、および`Age`が 0 より大きい。 その時点で、**送信**ボタンが有効になります。
 
 `execute`関数を**送信**からプロパティ変更ハンドラーを削除、 `PersonViewModel`、オブジェクトを追加、`Persons`コレクション、および初期条件へのすべてのものを返します。
 
@@ -401,7 +402,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             canExecute: () =>
             {
                 return IsEditing;
-            }); 
+            });
     }
 
     ···
@@ -417,7 +418,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 ## <a name="using-command-parameters"></a>コマンド パラメーターを使用します。
 
-同じを共有する 1 つまたは複数のボタン (またはその他のユーザー インターフェイス オブジェクト) の便利な場合があります`ICommand`ViewModel プロパティ。 この場合、使用して、`CommandParameter`ボタンを区別するプロパティです。 
+同じを共有する 1 つまたは複数のボタン (またはその他のユーザー インターフェイス オブジェクト) の便利な場合があります`ICommand`ViewModel プロパティ。 この場合、使用して、`CommandParameter`ボタンを区別するプロパティです。
 
 使用を続行することができます、`Command`これらの共有クラス`ICommand`プロパティです。 このクラスを定義、[代替コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action%7BSystem.Object%7D/System.Func%7BSystem.Object,System.Boolean%7D/)を受け入れる`execute`と`canExecute`型のパラメーターを持つメソッド`Object`です。 これは、どのように`CommandParameter`はこれらのメソッドに渡されます。
 
@@ -442,7 +443,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
         <Grid.BindingContext>
             <local:DecimalKeypadViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.Resources>
             <ResourceDictionary>
                 <Style TargetType="Button">
@@ -465,51 +466,51 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
                 Command="{Binding ClearCommand}" />
 
         <Button Text="&#x21E6;"
-                Grid.Row="1" Grid.Column="2" 
+                Grid.Row="1" Grid.Column="2"
                 Command="{Binding BackspaceCommand}" />
 
         <Button Text="7"
-                Grid.Row="2" Grid.Column="0" 
+                Grid.Row="2" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="7" />
 
         <Button Text="8"
-                Grid.Row="2" Grid.Column="1" 
+                Grid.Row="2" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="8" />
-        
+
         <Button Text="9"
-                Grid.Row="2" Grid.Column="2" 
+                Grid.Row="2" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="9" />
 
         <Button Text="4"
-                Grid.Row="3" Grid.Column="0" 
+                Grid.Row="3" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="4" />
 
         <Button Text="5"
-                Grid.Row="3" Grid.Column="1" 
+                Grid.Row="3" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="5" />
 
         <Button Text="6"
-                Grid.Row="3" Grid.Column="2" 
+                Grid.Row="3" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="6" />
 
         <Button Text="1"
-                Grid.Row="4" Grid.Column="0" 
+                Grid.Row="4" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="1" />
 
         <Button Text="2"
-                Grid.Row="4" Grid.Column="1" 
+                Grid.Row="4" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="2" />
 
         <Button Text="3"
-                Grid.Row="4" Grid.Column="2" 
+                Grid.Row="4" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="3" />
 
@@ -519,7 +520,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
                 CommandParameter="0" />
 
         <Button Text="&#x00B7;"
-                Grid.Row="5" Grid.Column="2" 
+                Grid.Row="5" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="." />
     </Grid>
@@ -532,7 +533,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 [![10 進数のキーボード](commanding-images/decimalkeyboard-small.png "10 進数のキーボード")](commanding-images/decimalkeyboard-large.png#lightbox "10 進数のキーボード")
 
-入力した数に既に小数点が含まれているために次の 3 つすべてのスクリーン ショットの中で小数点のボタンが無効になっていることを確認します。 
+入力した数に既に小数点が含まれているために次の 3 つすべてのスクリーン ショットの中で小数点のボタンが無効になっていることを確認します。
 
 `DecimalKeypadViewModel`定義、`Entry`型のプロパティ`string`(をトリガーする唯一のプロパティは、`PropertyChanged`イベント) 型の 3 つのプロパティと`ICommand`:
 
@@ -587,7 +588,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
             });
 
         ···
-    
+
     }
 
     void RefreshCanExecutes()
@@ -597,7 +598,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -638,7 +639,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -674,13 +675,13 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
 `execute`メソッドへの文字列引数の追加、`Entry`プロパティです。 ただし、結果が 0 (がいない 0 と小数点) で始まる場合、その初期 0 必要がありますは削除を使用して、`Substring`関数。
 
-`canExecute`メソッドを返します。`false`引数が小数点 (小数が押されたされていることを示す) 場合にのみ、`Entry`小数点が既に存在します。 
+`canExecute`メソッドを返します。`false`引数が小数点 (小数が押されたされていることを示す) 場合にのみ、`Entry`小数点が既に存在します。
 
 すべての`execute`メソッド呼び出し`RefreshCanExecutes`、呼び出す`ChangeCanExecute`両方の`DigitCommand`と`ClearCommand`です。 小数点および backspace ボタンが有効になっているか、入力した数字の現在のシーケンスに基づいて無効になります。
 
@@ -753,13 +754,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-コンス トラクターのセット、`NavigateCommand`プロパティを`execute`インスタンス化するメソッド、`System.Type`パラメーターに移動するとします。 `PushAsync`呼び出しが必要です、 `await` 、演算子、`execute`メソッドに非同期とフラグを設定する必要があります。 これは、使用、`async`パラメーター リストの前にキーワード。 
+コンス トラクターのセット、`NavigateCommand`プロパティを`execute`インスタンス化するメソッド、`System.Type`パラメーターに移動するとします。 `PushAsync`呼び出しが必要です、 `await` 、演算子、`execute`メソッドに非同期とフラグを設定する必要があります。 これは、使用、`async`パラメーター リストの前にキーワード。
 
 コンス トラクターにも設定、`BindingContext`自身へのページのバインドを参照できるように、`NavigateCommand`このクラスでします。
 
 このコンス トラクター内のコードの順序による違い:`InitializeComponent`呼び出しと、解析する XAML が、その時点でプロパティにバインドがという名前`NavigateCommand`ために解決できません。`BindingContext`に設定されている`null`です。 場合、`BindingContext`コンス トラクターで設定されている*する前に*`NavigateCommand`が設定された場合、バインディング解決できるときに`BindingContext`が設定されているが、その時点で`NavigateCommand`が`null`です。 設定`NavigateCommand`後`BindingContext`は効果がなく、バインディングのために変更`NavigateCommand`イベントは発生しません、`PropertyChanged`イベント、およびバインドしないことに注意して`NavigateCommand`は有効です。
 
-両方を設定`NavigateCommand`と`BindingContext`で任意の順序) を呼び出す前`InitializeComponent`はバインドの両方のコンポーネントは、XAML パーサーは、バインド定義を検出したときに設定されているために機能します。 
+両方を設定`NavigateCommand`と`BindingContext`で任意の順序) を呼び出す前`InitializeComponent`はバインドの両方のコンポーネントは、XAML パーサーは、バインド定義を検出したときに設定されているために機能します。
 
 データ バインディングが、わかりにくいことがありますが、この一連の記事で説明したよう、強力で多目的のユーザー インターフェイスから基になるロジックを分離することにより、コードを整理する助けにします。
 

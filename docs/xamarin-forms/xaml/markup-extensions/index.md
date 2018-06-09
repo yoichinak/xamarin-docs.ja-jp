@@ -1,17 +1,18 @@
 ---
 title: XAML マークアップ拡張機能
-description: 属性が設定されている XAML からのソースの範囲を拡張します。
+description: Xamarin.Forms XAML マークアップ拡張機能を使用して、リテラル テキスト文字列以外のソースから設定する要素の属性を許可することで、電源と XAML の柔軟性を拡張する方法を説明します。
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245886"
 ---
 # <a name="xaml-markup-extensions"></a>XAML マークアップ拡張機能
 
@@ -33,7 +34,7 @@ XAML マークアップ拡張機能では、リテラル テキスト文字列�
 
 設定する代わりにたい場合があります、`Color`属性リソース ディクショナリに格納されている値、作成したクラスの静的プロパティの値からまたは型のプロパティから`Color` ページで、別の要素から構築された、または色合い、鮮やかさ、明るさの値を区切ります。
 
-これらすべてのオプションは、XAML マークアップ拡張機能の使用可能です。 でも、語句「マークアップ拡張機能」がコンピューターを保護する: XAML マークアップ拡張機能は*いない*to XML 拡張機能です。 XAML マークアップ拡張機能を使用しても XAML は常に有効な XML です。 
+これらすべてのオプションは、XAML マークアップ拡張機能の使用可能です。 でも、語句「マークアップ拡張機能」がコンピューターを保護する: XAML マークアップ拡張機能は*いない*to XML 拡張機能です。 XAML マークアップ拡張機能を使用しても XAML は常に有効な XML です。
 
 マークアップ拡張機能は、要素の属性を表すさまざまな方法では実際にです。 XAML マークアップ拡張機能は、中かっこで囲まれた属性の設定によって通常識別は。
 
@@ -49,7 +50,7 @@ XAML マークアップ拡張機能では、リテラル テキスト文字列�
 
 Xamarin.Forms で定義されている XAML マークアップ拡張機能を使用します。
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML マークアップ拡張の作成](creating.md) 
+## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML マークアップ拡張の作成](creating.md)
 
 独自のカスタム XAML マークアップ拡張を書き込みます。
 

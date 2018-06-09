@@ -1,22 +1,22 @@
 ---
 title: XAML マークアップ拡張機能の作成
-description: 独自カスタム XAML のマークアップ拡張機能を定義します。
+description: この記事では、独自のカスタム Xamarin.Forms XAML マークアップ拡張を定義する方法について説明します。 XAML マークアップ拡張機能は、IMarkupExtension IMarkupExtension インターフェイスを実装するクラスです。
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 1a484aa4a19473c5a4f60b3d7bab78af7a20eecd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b185ea3b7260ff2be8a4dec5dc713f24dc6e6095
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848253"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245704"
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張機能の作成
 
-プログラムのレベルでは、XAML マークアップ拡張機能が実装するクラス、 [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/)または[ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/)インターフェイスです。 以下に説明する標準のマークアップ拡張機能のソース コードを調べることができます、 [ **Markupextension**ディレクトリ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)Xamarin.Forms GitHub リポジトリのです。 
+プログラムのレベルでは、XAML マークアップ拡張機能が実装するクラス、 [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/)または[ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/)インターフェイスです。 以下に説明する標準のマークアップ拡張機能のソース コードを調べることができます、 [ **Markupextension**ディレクトリ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)Xamarin.Forms GitHub リポジトリのです。
 
 派生することによって独自カスタム XAML のマークアップ拡張機能を定義することも`IMarkupExtension`または`IMarkupExtension<T>`です。 マークアップ拡張機能が特定の種類の値を取得する場合は、汎用フォームを使用します。 Xamarin.Forms のマークアップ拡張機能のいくつかの場合と、次に示します。
 
@@ -26,7 +26,7 @@ ms.locfileid: "34848253"
 - `BindingExtension` を派生します。 `IMarkupExtension<BindingBase>`
 - `ConstraintExpression` を派生します。 `IMarkupExtension<Constraint>`
 
-2 つ`IMarkupExtension`インターフェイスが、それぞれ 1 つのメソッドを定義する名前付き`ProvideValue`: 
+2 つ`IMarkupExtension`インターフェイスが、それぞれ 1 つのメソッドを定義する名前付き`ProvideValue`:
 
 ```csharp
 public interface IMarkupExtension
@@ -92,7 +92,7 @@ public class HslColorExtension : IMarkupExtension<Color>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout>
         <BoxView>
             <BoxView.Color>
@@ -121,7 +121,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>ビットマップにアクセスするためのマークアップ拡張機能
 
-引数`ProvideValue`を実装するオブジェクトには、 [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) .NET で定義されているインターフェイス`System`名前空間。 このインターフェイスは、1 つのメンバーであるという名前のメソッド`GetService`で、`Type`引数。 
+引数`ProvideValue`を実装するオブジェクトには、 [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) .NET で定義されているインターフェイス`System`名前空間。 このインターフェイスは、1 つのメンバーであるという名前のメソッド`GetService`で、`Type`引数。
 
 `ImageResourceExtension`次に示すクラスの用途の 1 つを示しています。`IServiceProvider`と`GetService`を取得する、`IXmlLineInfoProvider`特定のエラーが検出されましたを示す行や文字の情報を提供できるオブジェクト。 ここでは、例外が発生したときに、`Source`プロパティが設定されていません。
 
@@ -152,7 +152,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` XAML ファイルが、標準的な .NET のライブラリ プロジェクト内の埋め込みリソースとして保存されたイメージ ファイルにアクセスする必要がある場合に便利です。 使用して、`Source`を呼び出す、静的なプロパティ`ImageSource.FromResource`メソッドです。 このメソッドには、アセンブリ名、フォルダー名、およびピリオドで区切られたファイル名から成る完全修飾リソース名が必要です。 `ImageResourceExtension`しない必要があります、アセンブリ名の部分にリフレクションを使用して、アセンブリ名を取得し、前に付加するため、`Source`プロパティです。 関係なく、`ImageSource.FromResource`をイメージにもそのライブラリしない限り、この XAML リソース拡張機能に外部ライブラリの一部をすることはできませんが、ビットマップを含むアセンブリから呼び出す必要があります。 (を参照してください、 [**埋め込み画像**](~/xamarin-forms/user-interface/images.md#embedded_images)埋め込みリソースとして格納されているビットマップへのアクセスの詳細については資料です)。 
+`ImageResourceExtension` XAML ファイルが、標準的な .NET のライブラリ プロジェクト内の埋め込みリソースとして保存されたイメージ ファイルにアクセスする必要がある場合に便利です。 使用して、`Source`を呼び出す、静的なプロパティ`ImageSource.FromResource`メソッドです。 このメソッドには、アセンブリ名、フォルダー名、およびピリオドで区切られたファイル名から成る完全修飾リソース名が必要です。 `ImageResourceExtension`しない必要があります、アセンブリ名の部分にリフレクションを使用して、アセンブリ名を取得し、前に付加するため、`Source`プロパティです。 関係なく、`ImageSource.FromResource`をイメージにもそのライブラリしない限り、この XAML リソース拡張機能に外部ライブラリの一部をすることはできませんが、ビットマップを含むアセンブリから呼び出す必要があります。 (を参照してください、 [**埋め込み画像**](~/xamarin-forms/user-interface/images.md#embedded_images)埋め込みリソースとして格納されているビットマップへのアクセスの詳細については資料です)。
 
 `ImageResourceExtension`が必要です、`Source`プロパティを設定する、`Source`プロパティは、クラスのコンテンツのプロパティとして属性で示されます。 つまり、`Source=`中かっこで式の一部を省略することができます。 **イメージ リソース デモ** ページで、`Image`要素は、フォルダー名とピリオドで区切られたファイル名を使用して 2 つのイメージをフェッチします。
 
@@ -167,7 +167,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Source="{local:ImageResource Images.SeatedMonkey.jpg}"
                Grid.Row="0" />
 
@@ -198,7 +198,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 ## <a name="conclusion"></a>まとめ
 
-XAML マークアップ拡張機能は、さまざまなソースからの属性を設定する機能を拡張することによって、XAML で重要な役割を果たします。 さらに、ニーズに合った既存の XAML マークアップ拡張機能が提供されない場合も記述できます独自。 
+XAML マークアップ拡張機能は、さまざまなソースからの属性を設定する機能を拡張することによって、XAML で重要な役割を果たします。 さらに、ニーズに合った既存の XAML マークアップ拡張機能が提供されない場合も記述できます独自。
 
 
 ## <a name="related-links"></a>関連リンク

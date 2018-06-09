@@ -1,17 +1,18 @@
 ---
 title: パート 5 です。 MVVM へのデータ バインディング
-description: 'モデル View-viewmodel (MVVM) アーキテクチャ パターンは、注意を XAML 考案されました。 パターンは、次の 3 つのソフトウェア レイヤー間の分離を強制: ビューと呼ばれる、XAML ユーザー インターフェイスは、モデルと呼ばれる、基になるデータされ、ビューと、モデル間の媒介には、ViewModel が呼び出されます。 ビューと、ViewModel は、多くの場合、XAML ファイルで定義されているデータ バインディングを通じて接続されます。 BindingContext のビューは、通常、ViewModel のインスタンスです。'
+description: 'MVVM パターンは、次の 3 つのソフトウェア レイヤー間の分離を強制: ビューと呼ばれる、XAML ユーザー インターフェイスは、モデルと呼ばれる、基になるデータされ、ビューと、モデル間の媒介には、ViewModel が呼び出されます。'
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 95cd79a4bd6da47757cfeb12a2862ccb5a66fee2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245772"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディング
 
@@ -649,7 +650,7 @@ public class PageDataViewModel
         };
     }
 
-    public static IList<PageDataViewModel> All { private set; get; } 
+    public static IList<PageDataViewModel> All { private set; get; }
 }
 ```
 

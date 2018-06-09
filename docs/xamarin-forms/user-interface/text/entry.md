@@ -1,20 +1,20 @@
 ---
-title: 入力
-description: 単一行のテキストまたはパスワードの入力
+title: Xamarin.Forms エントリ
+description: この記事では、Xamarin.Forms エントリ クラスを使用して、単一行のテキストまたはアプリケーションでパスワードの入力をそのまま使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847849"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245554"
 ---
-# <a name="entry"></a>入力
+# <a name="xamarinforms-entry"></a>Xamarin.Forms エントリ
 
 _単一行のテキストまたはパスワードの入力_
 

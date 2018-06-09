@@ -1,19 +1,20 @@
 ---
-title: マップ
-description: Xamarin.Forms は各プラットフォームでネイティブ マップ Api を使用します。
+title: Xamarin.Forms のマップ
+description: この記事では、Xamarin.Forms Map クラスを使用して、よく知られているマップのユーザーに対するエクスペリエンスを提供する各プラットフォームでネイティブ マップ Api を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6063732e08680974b8d4a2358bfd85b176b36aec
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245476"
 ---
-# <a name="map"></a>マップ
+# <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
 _Xamarin.Forms は各プラットフォームでネイティブ マップ Api を使用します。_
 
@@ -80,7 +81,7 @@ IOS でロケーション サービスにアクセスする、次のキーを設
 - iOS 10 およびそれ以前
     - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) -アプリを使用するときに、ロケーション サービスを使用します。
     - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – 常時ロケーション サービスを使用します。    
-    
+
 11 およびそれ以前の iOS をサポートするには、3 つのキーを含めることができます: `NSLocationWhenInUseUsageDescription`、 `NSLocationAlwaysAndWhenInUseUsageDescription`、および`NSLocationAlwaysUsageDescription`です。
 
 これらのキーで XML 形式を**Info.plist**を次に示します。 更新する必要があります、`string`アプリで場所情報を使用する方法を反映するように値。

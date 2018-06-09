@@ -1,16 +1,18 @@
 ---
 title: 第 13 章の概要です。 ビットマップ
+description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 13 章の概要です。 ビットマップ'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 76551057abc1abdd150591c0a1be39e9f68c4278
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d95e801f6a239e894c1f6baa68015659af9eba35
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241556"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要です。 ビットマップ
 
@@ -154,9 +156,9 @@ Ios の場合は、これらのビットマップは、ファイル名にサフ�
 
 Windows ランタイム プロジェクトは、名前付けスキームで構成されているデバイスに依存しない単位あたりのピクセルで、スケール ファクターのパーセンテージ、たとえばビットマップをサポートします。
 
-- MyImage.scale-200.jpg at 320 pixels square
+- 320 ピクセルの四角形の MyImage.scale 200.jpg
 
-一部の割合のみが有効です。 このドキュメントのサンプル プログラムのみを使用してイメージを含める**スケール 200** 、サフィックスが含む Xamarin.Forms ソリューション テンプレートを現在**スケール 100**、**スケール 125**、**スケール 150**、および**スケール 400**です。 
+一部の割合のみが有効です。 このドキュメントのサンプル プログラムのみを使用してイメージを含める**スケール 200** 、サフィックスが含む Xamarin.Forms ソリューション テンプレートを現在**スケール 100**、**スケール 125**、**スケール 150**、および**スケール 400**です。
 
 プラットフォームのプロジェクトにビットマップを追加するときに、**ビルド アクション**する必要があります。
 

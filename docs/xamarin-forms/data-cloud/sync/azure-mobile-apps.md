@@ -1,18 +1,18 @@
 ---
 title: Azure のモバイル アプリを使用してオフラインのデータの同期
-description: オフラインの同期により、ユーザーは、データの変更や、表示、追加すると、モバイル アプリケーションを操作したり、ネットワーク接続がない場合でもです。 変更は、ローカル データベースに格納し、Azure Mobile Apps インスタンスと、変更を同期することができます、デバイスがオンラインとします。 この記事では、オフラインの同期機能を Xamarin.Forms アプリケーションに追加する方法について説明します。
+description: この記事では、Azure Mobile Apps バックエンドを使用する Xamarin.Forms アプリケーションをオフラインの同期機能を追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: DBB343B0-2709-4C20-A669-5522B9956D9B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: 8623127444836d3335f42f9ba7a40de6aedfef70
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: e8b0eeeb4f0033fccd7a61b4acb286bb8457e6c2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848370"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243598"
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Azure のモバイル アプリを使用してオフラインのデータの同期
 

@@ -1,16 +1,18 @@
 ---
 title: 第 15 章の概要です。 対話型のインターフェイス
+description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 15 章の概要です。 対話型のインターフェイス'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c5b2bc00c4337969322193966f26ce0e151f426e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aac49c9e74dd22642396ea8daf5ee3abd85de7bf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241898"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要です。 対話型のインターフェイス
 
@@ -29,7 +31,7 @@ Xamarin.Forms にはから派生した 20 のインスタンス化可能なク�
 
 この章で 8 つのビューは、.NET の基本データ型と対話するユーザーを効果的に許可します。
 
-|データの種類|ビュー|
+|データの種類|Views|
 |--- |--- |
 |`Double`|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/), [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|
 |`Boolean`|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|
@@ -90,7 +92,7 @@ Xamarin.Forms にはから派生した 20 のインスタンス化可能なク�
 
 - [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) 型の`double`1 に初期化されて、
 
-視覚的に、`Stepper`というラベルの付いた 2 つのボタンから成る**&ndash;**と **+**です。 キーを押して**&ndash;**減少`Value`によって`Increment`を最小限に抑えるの`Minimum`します。 キーを押して**+**増加`Value`によって`Increment`最大`Maximum`です。
+視覚的に、`Stepper`というラベルの付いた 2 つのボタンから成る**&ndash;** と **+** です。 キーを押して**&ndash;** 減少`Value`によって`Increment`を最小限に抑えるの`Minimum`します。 キーを押して**+** 増加`Value`によって`Increment`最大`Maximum`です。
 
 示されるこれは、 [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo)サンプルです。
 

@@ -1,17 +1,18 @@
 ---
 title: 次の 3 つの種類のベジエ曲線
-description: SkiaSharp を円錐、二次方程式、3 次ベジエ曲線を表示するために使用する方法について解説します。
+description: この記事では、Xamarin.Forms のアプリケーションでの立方、二次方程式、および円錐のベジエ曲線の描画に SkiaSharp を使用する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 4a1b86035f9ce31b6e9fafac06cd0090a516b542
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244007"
 ---
 # <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
 

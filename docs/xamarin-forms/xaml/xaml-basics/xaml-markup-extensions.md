@@ -1,17 +1,18 @@
 ---
 title: パート 3 です。 XAML マークアップ拡張機能
-description: XAML マークアップ拡張機能は、オブジェクトやその他のソースから直接参照されている値を設定するプロパティを許可する XAML で重要な機能を構成します。 XAML マークアップ拡張機能は、オブジェクトを共有し、アプリケーション全体で使用される定数を参照してにとって特に重要ですが、データ バインドで、最大のユーティリティを見ることができます。
+description: XAML マークアップ拡張機能は、オブジェクトやその他のソースから直接参照されている値を設定するプロパティを許可する XAML で重要な機能を構成します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245912"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>パート 3 です。 XAML マークアップ拡張機能
 
@@ -321,8 +322,8 @@ XAML に慣れていない開発者疑問を視覚的要素をなどにするこ
 
 - パブリックな静的フィールド
 - パブリック静的プロパティ
-- パブリック定数フィールド 
-- 列挙体のメンバーです。 
+- パブリック定数フィールド
+- 列挙体のメンバーです。
 
 `StaticResource`マークアップ拡張機能は、リソース ディクショナリを定義する XAML の実装でサポートされて中に`x:Static`として XAML での組み込みの一部である、`x`プレフィックスが表示されます。
 
@@ -366,7 +367,7 @@ namespace XamlSamples
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(40, FontAttributes.Bold);
                     break;
-                    
+
                 case Device.UWP:
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(50, FontAttributes.Bold);

@@ -1,20 +1,20 @@
 ---
-title: カスタム アニメーション
-description: アニメーション クラスは、1 つまたは複数のアニメーション オブジェクトを作成する ViewExtensions クラスの拡張メソッドで、すべての Xamarin.Forms アニメーションのビルド ブロックです。 この記事では、作成し、アニメーションをキャンセル、複数のアニメーションを同期する、アニメーション クラスを使用して、既存のアニメーション メソッドでアニメーション化するプロパティをアニメーション化するカスタムのアニメーションを作成する方法を示します。
+title: Xamarin.Forms でアニメーション
+description: この記事では、Xamarin.FOrms アニメーション クラスを作成し、アニメーションをキャンセル、複数のアニメーションの同期を使用して、既存のアニメーション メソッドでアニメーション化するプロパティをアニメーション化するカスタム アニメーションを作成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 238268a3ad2b82494f1d096d0cbeba97edb90366
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 74430f6c158e74569f1b2cbfa0b6a85e8d40fbcf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847785"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242977"
 ---
-# <a name="custom-animations"></a>カスタム アニメーション
+# <a name="custom-animations-in-xamarinforms"></a>Xamarin.Forms でアニメーション
 
 _アニメーション クラスは、1 つまたは複数のアニメーション オブジェクトを作成する ViewExtensions クラスの拡張メソッドで、すべての Xamarin.Forms アニメーションのビルド ブロックです。この記事では、作成し、アニメーションをキャンセル、複数のアニメーションを同期する、アニメーション クラスを使用して、既存のアニメーション メソッドでアニメーション化するプロパティをアニメーション化するカスタムのアニメーションを作成する方法を示します。_
 

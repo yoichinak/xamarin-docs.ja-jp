@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB ドキュメント データベースの使用
-description: Azure Cosmos DB ドキュメント データベースは、JSON ドキュメントでは、シームレスなスケールとグローバルのレプリケーションを必要とするアプリケーションのデータベースの高速、高可用性、スケーラブルなサービスを提供する低待機時間のアクセスを提供する NoSQL データベースです。 この記事では、Azure Cosmos DB 標準 .NET クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法について説明します。
+description: この記事では、Azure Cosmos DB 標準 .NET クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a4656b5eb9a8159f1b3dc39c8cf62509101d219e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e797eaad98f6fac66876aaebecd7ae53ad9dbab
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242506"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Azure Cosmos DB ドキュメント データベースの使用
 

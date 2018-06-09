@@ -1,19 +1,20 @@
 ---
-title: バインド モード
-description: ソースとターゲット間の情報のフローを制御します。
+title: Xamarin.Forms バインド モード
+description: この記事では、ソースと BindingMode 列挙体のメンバーで指定するバインド モードを使用してターゲットの間で情報のフローを制御する方法について説明します。 各バインド可能なプロパティには、そのプロパティがデータ バインディング ターゲットの場合、モードを有効を示します。 既定のバインドのモードがあります。
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 12e6416eee989b0d36a7b9fe0ca4dcd9b18b0ade
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241817"
 ---
-# <a name="binding-mode"></a>バインド モード
+# <a name="xamarinforms-binding-mode"></a>Xamarin.Forms バインド モード
 
 [前の記事](basic-bindings.md)、**代替コード バインド**と**代わりに XAML バインド**ページ機能を備えた、`Label`でその`Scale`プロパティバインドされている、`Value`のプロパティ、`Slider`です。 `Slider`初期値が 0 の場合これの原因となった、`Scale`のプロパティ、 `Label` 1 ではなく 0 に設定して、`Label`消失しました。
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 05/07/2018
              Title="Reverse Binding">
     <StackLayout Padding="10, 0">
 
-        <Label x:Name="label" 
+        <Label x:Name="label"
                Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
@@ -52,9 +53,9 @@ ms.lasthandoff: 05/07/2018
 
 ## <a name="the-default-binding-mode"></a>既定のバインド モード
 
-メンバーでは、バインディング モードを指定してください。、 [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/)列挙します。 
+メンバーでは、バインディング モードを指定してください。、 [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/)列挙します。
 
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/) 
+- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/)
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; データは、ソースとターゲット間の双方向を配置します。
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; データは、ソースからターゲットになった
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; データがターゲットからソースへ移動します。
@@ -78,11 +79,11 @@ ms.lasthandoff: 05/07/2018
 - `SelectedItem` プロパティ `MultiPage`
 - `SelectedIndex` および`SelectedItem`のプロパティ `Picker`
 - `Value` プロパティの`Slider`と `Stepper`
-- `IsToggled` プロパティ `Switch` 
+- `IsToggled` プロパティ `Switch`
 - `On` プロパティ `SwitchCell`
 - `Time` プロパティ `TimePicker`
 
-これらの特定のプロパティとして定義されている`TwoWay`の非常に良い理由。 
+これらの特定のプロパティとして定義されている`TwoWay`の非常に良い理由。
 
 ViewModel クラスは、データ バインディング ソース、およびビューのように構成されると、ビュー モデル View-viewmodel (MVVM) アプリケーションのアーキテクチャとデータ バインディングを使用している場合`Slider`、データ バインディングのターゲットです。 MVVM バインドのようになります、**バインド反転**前のサンプルのバインディングより多くのサンプルです。 各ページのビューに、ViewModel に対応するプロパティの値で初期化されるがビュー内の変更は、ViewModel プロパティにも影響が非常に高くなります。
 
@@ -117,7 +118,7 @@ ViewModel とは、データ バインディングのソースです。 ViewMode
 public class HslColorViewModel : INotifyPropertyChanged
 {
     Color color;
-    string name; 
+    string name;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -130,7 +131,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                 Color = Color.FromHsla(value, color.Saturation, color.Luminosity);
             }
         }
-        get 
+        get
         {
             return color.Hue;
         }
@@ -209,7 +210,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 バインディング ソースとして、ViewModel を設定すると、バインド インフラストラクチャは、アタッチにハンドラーを`PropertyChanged`イベント。 この方法でバインドは、プロパティに対する変更の通知を受け取ることができ、変更された値から、ターゲットのプロパティを設定することができます。
 
-ただし、ときに、ターゲット プロパティ (または`Binding`対象のプロパティで定義) が、`BindingMode`の`OneTime`、バインド インフラストラクチャは、上のハンドラーをアタッチする必要はありません、`PropertyChanged`イベント。 ターゲット プロパティが更新される場合にのみ、`BindingContext`変更していないソース プロパティ自体が変更されたとき。 
+ただし、ときに、ターゲット プロパティ (または`Binding`対象のプロパティで定義) が、`BindingMode`の`OneTime`、バインド インフラストラクチャは、上のハンドラーをアタッチする必要はありません、`PropertyChanged`イベント。 ターゲット プロパティが更新される場合にのみ、`BindingContext`変更していないソース プロパティ自体が変更されたとき。
 
 **単純なカラー セレクター** XAML ファイルのインスタンスを作成、`HslColorViewModel`でページのリソース ディクショナリを初期化します、`Color`プロパティです。 `BindingContext`のプロパティ、`Grid`に設定されている、`StaticResource`バインド拡張機能をそのリソースを参照します。
 
@@ -221,7 +222,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:HslColorViewModel x:Key="viewModel" 
+            <local:HslColorViewModel x:Key="viewModel"
                                      Color="MediumTurquoise" />
 
             <Style TargetType="Slider">
@@ -229,7 +230,7 @@ public class HslColorViewModel : INotifyPropertyChanged
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-        
+
     <Grid BindingContext="{StaticResource viewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -246,7 +247,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                    HorizontalTextAlignment="Center" />
 
             <Slider Value="{Binding Hue}" />
-    
+
             <Slider Value="{Binding Saturation}" />
 
             <Slider Value="{Binding Luminosity}" />
@@ -257,7 +258,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 `BoxView`、 `Label`、3 つおよび`Slider`ビュー、バインディング コンテキストからの継承、`Grid`です。 これらのビューは、ソース、ViewModel のプロパティを参照するすべてのバインディング ターゲットです。 `Color`のプロパティ、 `BoxView`、および`Text`のプロパティ、 `Label`、データ バインディングは`OneWay`: ViewModel で指定したプロパティのビュー内のプロパティが設定されます。
 
-`Value`のプロパティ、 `Slider`、ただし、`TwoWay`です。 これにより、各`Slider`、ViewModel および各から設定する ViewModel も設定する`Slider`です。 
+`Value`のプロパティ、 `Slider`、ただし、`TwoWay`です。 これにより、各`Slider`、ViewModel および各から設定する ViewModel も設定する`Slider`です。
 
 プログラムが最初に実行時に、 `BoxView`、 `Label`、し、次の 3 つ`Slider`要素は、すべてのセット最初に基づく ViewModel から`Color`ViewModel がインスタンス化されるときに設定するプロパティ。 これは、左側にある iOS のスクリーン ショットで示されます。
 
@@ -272,7 +273,7 @@ public class HslColorViewModel : INotifyPropertyChanged
     <Grid.BindingContext>
         <local:HslColorViewModel Color="MediumTurquoise" />
     </Grid.BindingContext>
-        
+
     ···
 
 </Grid>
@@ -408,9 +409,9 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-各アプリケーション設定は、という名前のメソッドで Xamarin.Forms プロパティ辞書に保存されているプロパティ`SaveState`コンス トラクターでは、そのディクショナリから読み込まれたとします。 クラスの一番下まで ViewModels を効率化し、間違いを犯しにくいように 2 つのメソッドは、します。 `OnPropertyChanged`下部にあるメソッドが呼び出し元のプロパティに設定されているオプションのパラメーターです。 これにより、文字列として、プロパティの名前を指定する場合、スペル ミスを回避できます。 
+各アプリケーション設定は、という名前のメソッドで Xamarin.Forms プロパティ辞書に保存されているプロパティ`SaveState`コンス トラクターでは、そのディクショナリから読み込まれたとします。 クラスの一番下まで ViewModels を効率化し、間違いを犯しにくいように 2 つのメソッドは、します。 `OnPropertyChanged`下部にあるメソッドが呼び出し元のプロパティに設定されているオプションのパラメーターです。 これにより、文字列として、プロパティの名前を指定する場合、スペル ミスを回避できます。
 
-`SetProperty`メソッドがクラスにはさらに多く: フィールドとして格納されている値をプロパティに設定されている値を比較し、のみを呼び出して`OnPropertyChanged`ときに 次の 2 つの値が等しくないです。 
+`SetProperty`メソッドがクラスにはさらに多く: フィールドとして格納されている値をプロパティに設定されている値を比較し、のみを呼び出して`OnPropertyChanged`ときに 次の 2 つの値が等しくないです。
 
 `SampleSettingsViewModel`クラスの背景色の 2 つのプロパティを定義します。、`BackgroundNamedColor`プロパティの型は`NamedColor`、クラスもに含まれている、 **DataBindingDemos**ソリューションです。 `BackgroundColor`プロパティの型は`Color`から取得されると、`Color`のプロパティ、`NamedColor`オブジェクト。
 
@@ -649,7 +650,7 @@ public partial class App : Application
 SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
 ```
 
-既定のバインド モード`SelectedItem`は`OneWayToSource`、選択項目から ViewModel プロパティを設定します。 `TwoWay`モードでは、 `SelectedItem` ViewModel から初期化されるようにします。 
+既定のバインド モード`SelectedItem`は`OneWayToSource`、選択項目から ViewModel プロパティを設定します。 `TwoWay`モードでは、 `SelectedItem` ViewModel から初期化されるようにします。
 
 ただし、ときに、`SelectedItem`この方法で設定されている、`ListView`自動的に選択したアイテムを表示するスクロールしません。 分離コード ファイルにコードを少し必要があります。
 
@@ -662,13 +663,13 @@ public partial class SampleSettingsPage : ContentPage
 
         if (colorListView.SelectedItem != null)
         {
-            colorListView.ScrollTo(colorListView.SelectedItem, 
-                                   ScrollToPosition.MakeVisible, 
+            colorListView.ScrollTo(colorListView.SelectedItem,
+                                   ScrollToPosition.MakeVisible,
                                    false);
         }
     }
 }
-``` 
+```
 
 左側にある iOS スクリーン ショットは、最初の実行時にプログラムを示します。 コンス トラクター`SampleSettingsViewModel`白に初期化、背景色をで選択した内容は、 `ListView`:
 

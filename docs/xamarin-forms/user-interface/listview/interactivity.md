@@ -1,18 +1,18 @@
 ---
 title: ListView の対話機能
-description: 選択、スワイプして、削除、および更新するプルを実装することによって、ListView に対話機能を追加します。
+description: この記事では、選択、スワイプして、削除、および更新するプルを実装することで、対話機能を Xamarin.Forms ListView に追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/01/2018
-ms.openlocfilehash: 5fe821e7e5254da8febbbde518b9fd42526bf262
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 64ffda681c51c21b7485f0865af4b740316edaaa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848123"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245108"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 

@@ -1,17 +1,18 @@
 ---
 title: 回転変換
-description: 影響と SkiaSharp 回転変換で実行できるアニメーションを調査します。
+description: この記事とで SkiaSharp 回転変換を実行できるアニメーション効果について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 354844f69c0b8755a15a3325c39e35b97d44f94d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 514ecd16fedd7d3fda39fe20641cf0ee9ecb119e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244621"
 ---
 # <a name="the-rotate-transform"></a>回転変換
 
@@ -139,7 +140,7 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 回転と変換を結合するいくつかの方法は通常です。 **テキストの回転**ページは次の表示を作成します。
 
-[![](rotate-images/rotatedtext-small.png "テキストの回転] ページのスクリーン ショットをトリプル")](rotate-images/rotatedtext-large.png#lightbox "テキストの回転] ページのトリプル スクリーン ショット")
+[![](rotate-images/rotatedtext-small.png "テキストの回転 ページのスクリーン ショットをトリプル")](rotate-images/rotatedtext-large.png#lightbox "テキストの回転 ページのトリプル スクリーン ショット")
 
 ここでは、`PaintSurface`のハンドラー、 [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs)クラス。
 
@@ -281,7 +282,7 @@ protected override void OnDisappearing()
 }
 ```
 
-**汚いアナログ時計**(と呼ばれるより魅力的なアナログ時計は、以降の記事で説明) プログラムでは使用して回転描画、分、および時間時計の針を回転させます。 プログラムでは、位置 (0, 0) にある radius 100 の中心とする円に基づいて任意の座標系を使用して、時計を描画します。 展開し、] ページで、円の中心の変換とスケーリングを使用します。
+**汚いアナログ時計**(と呼ばれるより魅力的なアナログ時計は、以降の記事で説明) プログラムでは使用して回転描画、分、および時間時計の針を回転させます。 プログラムでは、位置 (0, 0) にある radius 100 の中心とする円に基づいて任意の座標系を使用して、時計を描画します。 展開し、 ページで、円の中心の変換とスケーリングを使用します。
 
 `Translate`と`Scale`呼び出しに適用されるグローバル、クロックのための初期化後に呼び出される最初のものであるもの、`SKPaint`オブジェクト。
 

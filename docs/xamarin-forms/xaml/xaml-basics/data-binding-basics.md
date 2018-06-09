@@ -1,18 +1,18 @@
 ---
 title: パート 4 です。 データのバインドの基礎
-description: データ バインディングを使用すると、変更を他のいずれかで変更できるようにリンクする 2 つのオブジェクトのプロパティ。 これは非常に重要なツールであり、すべてコードでのデータ バインドを定義する XAML 提供ショートカットと利便性。 その結果、Xamarin.Forms で最も重要なマークアップ拡張機能の 1 つはバインディングします。
+description: データ バインディングを使用すると、変更を他のいずれかで変更できるようにリンクする 2 つのオブジェクトのプロパティ。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733036"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245951"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データのバインドの基礎
 
@@ -86,7 +86,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 プロパティは、すべて 1 つの直線上に存在できます。 または複数の行に区切られました。
 
 ```csharp
-Text="{Binding Value, 
+Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -102,13 +102,13 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 [![](data-binding-basics-images/sliderbinding.png "ビューをバインド")](data-binding-basics-images/sliderbinding-large.png#lightbox "ビューをバインド ")
 
-## <a name="the-binding-mode"></a>バインド モード 
+## <a name="the-binding-mode"></a>バインド モード
 
 1 つのビューには、複数のプロパティにデータ バインドがあります。 ただし、各ビューで保持できる 1 つだけ`BindingContext`そのビューで複数のデータ バインディングでは、すべて必要がありますので、同じオブジェクトのプロパティを参照します。
 
 この問題をしたり、他のソリューションに、`Mode`のメンバーに設定されているプロパティ、`BindingMode`列挙。
 
-- `Default` 
+- `Default`
 - `OneWay` -の値は、ソースからターゲットに転送
 - `OneWayToSource` 値が、ターゲットからソースに転送
 - `TwoWay` — ソースとターゲット間の値に両方の方法が転送されます。
@@ -324,7 +324,7 @@ XAML とデータ バインディングは、テンプレートのより強力�
 </ContentPage>
 ```
 
-使用に注意してください`OnPlatform`のサイズを定義する、`BoxView`との高さ、`ListView`行です。 3 つすべてのプラットフォームの値は、同じですが、マークアップがの表示を微調整するその他の値に合わせて変更簡単に可能性があります。 
+使用に注意してください`OnPlatform`のサイズを定義する、`BoxView`との高さ、`ListView`行です。 3 つすべてのプラットフォームの値は、同じですが、マークアップがの表示を微調整するその他の値に合わせて変更簡単に可能性があります。
 
 ## <a name="binding-value-converters"></a>バインディングの値コンバーター
 
@@ -366,7 +366,7 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack`のみであるため、バインド方法の 1 つのソースからターゲットに、メソッドがこのプログラムでロールを再生できません。 
+`ConvertBack`のみであるため、バインド方法の 1 つのソースからターゲットに、メソッドがこのプログラムでロールを再生できません。
 
 バインディングとバインド コンバーターを参照して、`Converter`プロパティです。 バインディングのコンバーターで指定されたパラメーターも使用できます、`ConverterParameter`プロパティです。 一部の汎用性のこれは、乗数を指定する方法。 バインディング コンバーター チェックの有効なコンバーター パラメーター`double`値。
 

@@ -1,17 +1,18 @@
 ---
 title: IOS に固有の書式設定を追加します。
+description: この記事では、Xamarin.Forms のカスタム レンダラーを使用することがなく iOS に固有の外観を設定する方法について説明します。
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: f14479d353d24910f66afd35f968a232ec31657c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 74a3cdc340cb09e8adf15ed0dd09315c985d18b5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847284"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243533"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS に固有の書式設定を追加します。
 

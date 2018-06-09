@@ -1,5 +1,5 @@
 ---
-title: はじめに
+title: Xamarin.Forms コントロール テンプレートの概要
 description: Xamarin.Forms コントロール テンプレートでは、実行時にアプリケーション ページを簡単にテーマおよび re テーマする機能を提供します。 この記事では、コントロール テンプレートの概要を提供します。
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 744419cbc457ffb6dab6b46d690151c08ca35d42
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8e5c84bfa2525a28e9af5343be0ee156564bdd6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242519"
 ---
-# <a name="introduction"></a>はじめに
+# <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms コントロール テンプレートの概要
 
 _Xamarin.Forms コントロール テンプレートでは、実行時にアプリケーション ページを簡単にテーマおよび re テーマする機能を提供します。この記事では、コントロール テンプレートの概要を提供します。_
 

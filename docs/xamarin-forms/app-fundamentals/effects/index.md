@@ -1,19 +1,20 @@
 ---
-title: 効果
-description: Xamarin.Forms ユーザー インターフェイスでは、Xamarin.Forms アプリケーション プラットフォームごとに適切なルック アンド フィールを維持できるように、ターゲット プラットフォームのネイティブ コントロールを使用して表示されます。 効果は、カスタム レンダラーの実装に頼ることがなくカスタマイズするには、各プラットフォームでネイティブ コントロールを許可します。
+title: Xamarin.Forms の効果
+description: 効果は、カスタム レンダラーの実装に頼ることがなくカスタマイズするには、各プラットフォームでネイティブ コントロールを許可します。
 ms.prod: xamarin
 ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 63d7750294321a28dbde833f72fe6b7277ada397
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc1c600aa6d5ede079fe0af83370393d4f0e298f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239697"
 ---
-# <a name="effects"></a>効果
+# <a name="xamarinforms-effects"></a>Xamarin.Forms の効果
 
 _Xamarin.Forms ユーザー インターフェイスでは、Xamarin.Forms アプリケーション プラットフォームごとに適切なルック アンド フィールを維持できるように、ターゲット プラットフォームのネイティブ コントロールを使用して表示されます。効果は、カスタム レンダラーの実装に頼ることがなくカスタマイズするには、各プラットフォームでネイティブ コントロールを許可します。_
 

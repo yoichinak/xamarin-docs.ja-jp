@@ -1,19 +1,20 @@
 ---
-title: 3D 回転
-description: 非アフィン変換を使用して、3 D 空間に 2 D のオブジェクトを回転します。
+title: SkiaSharp の 3D 回転
+description: この記事では、非アフィン変換を使用して、3 D 空間に 2 D のオブジェクトを回転する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244300"
 ---
-# <a name="3d-rotations"></a>3D 回転
+# <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の 3D 回転
 
 _非アフィン変換を使用して、3 D 空間に 2 D のオブジェクトを回転します。_
 
@@ -74,7 +75,7 @@ w' M14·x + M24·y + M34·z + M44 を =
 
 x"= x'/w '
 
-y" = y' / w'
+'y = y'/w '
 
 z"z ='/w '
 
@@ -172,7 +173,7 @@ w' M14·x + M24·y M44 を =
 
 x"= x'/w '
 
-y" = y' / w'
+'y = y'/w '
 
 つまり、3 番目の行*と*4-4 でマトリックスの 3 番目の列を無視することができます。
 
@@ -207,15 +208,15 @@ y" = y' / w'
 
 x' = cos (α) ·x
 
-y' = y
+y' y を =
 
 z' = = (sin (α)/深度) ·x + 1
 
 今すぐ除算すべて z'。
 
-x" = cos(α)·x / ((sin(α)/depth)·x + 1)
+x"= cos (α) ·x/((sin (α)/深度) ·x + 1)
 
-y" = y / ((sin(α)/depth)·x + 1)
+"y = y/((sin (α)/深度) ·x + 1)
 
 X の値が負の値の中にバック グラウンド遠ざかります 2D オブジェクトは、Y 軸の周り、正の値は正の角度に回転したときに、前景色を取得する X 値。 X 値に見える遠い Y 軸座標と Y 軸 (を余弦の値によって制御されます) に近い場所に移動するより小さなまたはビューアーから移動するには大きなまたはビューアーに近い方になります。
 

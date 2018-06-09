@@ -1,5 +1,5 @@
 ---
-title: マスター/詳細 ページ
+title: Xamarin.Forms のマスター/詳細 ページ
 description: Xamarin.Forms MasterDetailPage は、ページ、項目を表示するマスター ページ、およびマスター ページの項目に関する詳細情報を表示する詳細ページ、情報の 2 つの関連するページを管理します。 この記事では、その情報のページ間を移動して、MasterDetailPage を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 20032cdf4789de3248ec30a8da5e21e1bd8e4bcd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 80d86e1aa6a00d4a55c0fdba1b858bfef7bcbc84
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846378"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241345"
 ---
-# <a name="master-detail-page"></a>マスター/詳細 ページ
+# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター/詳細 ページ
 
 _Xamarin.Forms MasterDetailPage は、ページ、項目を表示するマスター ページ、およびマスター ページの項目に関する詳細情報を表示する詳細ページ、情報の 2 つの関連するページを管理します。この記事では、その情報のページ間を移動して、MasterDetailPage を使用する方法について説明します。_
 

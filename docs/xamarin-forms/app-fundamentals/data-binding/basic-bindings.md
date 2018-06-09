@@ -1,19 +1,20 @@
 ---
-title: 基本的なバインディング
-description: データ バインディング、ソース、およびバインディング コンテキスト
+title: Xamarin.Forms Basic バインド
+description: この記事では、Xamarin.Forms データ バインディング、少なくとも 1 組の 2 つのオブジェクト間でのプロパティへのリンクの 1 つは、ユーザー インターフェイス オブジェクトでは通常の使用方法について説明します。 これら 2 つのオブジェクトは、ターゲットおよびソースと呼ばれます。
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 065258acacb8469b90dd2ca04286f0686dc90063
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f932b7dfbcccb8f1c6ccb726f5e48c2df6e93c6c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241690"
 ---
-# <a name="basic-bindings"></a>基本的なバインディング
+# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms Basic バインド
 
 Xamarin.Forms データ バインディングは、通常、ユーザー インターフェイス オブジェクトを少なくとも 1 つは、2 つのオブジェクト間でのプロパティのペアをリンクします。 これら 2 つのオブジェクトが呼び出されます、*ターゲット*と*ソース*:
 
@@ -47,7 +48,7 @@ Xamarin.Forms データ バインディングは、通常、ユーザー イン�
 
 `Slider` 0 ~ 360 の範囲を設定します。 このプログラムの目的は、回転する、`Label`操作することによって、`Slider`です。
 
-設定とデータ バインディング、せず、`ValueChanged`のイベント、`Slider`にアクセスするイベント ハンドラーに、`Value`のプロパティ、`Slider`その値を設定し、`Rotation`のプロパティ、`Label`です。 データ バインディングがそのジョブを自動化します。イベント ハンドラーとその中のコードでは、必要なくなりました。 
+設定とデータ バインディング、せず、`ValueChanged`のイベント、`Slider`にアクセスするイベント ハンドラーに、`Value`のプロパティ、`Slider`その値を設定し、`Rotation`のプロパティ、`Label`です。 データ バインディングがそのジョブを自動化します。イベント ハンドラーとその中のコードでは、必要なくなりました。
 
 派生したクラスのインスタンス上のバインドを設定することができます[ `BindableObject`](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)が含まれている`Element`、 `VisualElement`、 `View`、および`View`派生します。  バインディングは、対象のオブジェクトで常に設定されます。 バインディングは、ソース オブジェクトを参照します。 データ バインディングを設定するには、ターゲット クラスの次の 2 つのメンバーを使用します。
 
@@ -73,7 +74,7 @@ public partial class BasicCodeBindingPage : ContentPage
 
 `Label`オブジェクトは、このプロパティが設定されていると、メソッドが呼び出されるときに、オブジェクトになるようにバインディング ターゲットがします。 `BindingContext`プロパティがあるバインディング ソースを示す、`Slider`です。
 
-`SetBinding`メソッドは、バインディング ターゲットで呼び出されますが、ターゲット プロパティと基になるプロパティの両方を指定します。 ターゲット プロパティとして指定する`BindableProperty`オブジェクト:`Label.RotationProperty`です。 基になるプロパティを文字列として指定されたことを示し、`Value`プロパティ`Slider`です。 
+`SetBinding`メソッドは、バインディング ターゲットで呼び出されますが、ターゲット プロパティと基になるプロパティの両方を指定します。 ターゲット プロパティとして指定する`BindableProperty`オブジェクト:`Label.RotationProperty`です。 基になるプロパティを文字列として指定されたことを示し、`Value`プロパティ`Slider`です。
 
 `SetBinding`メソッドでは、データ バインドの最も重要な規則のいずれかのことがわかります。
 
@@ -120,7 +121,7 @@ label.SetBinding(RotationProperty, "Value");
 対象のオブジェクトでのデータ バインディングを設定、コードのように、`Label`です。 2 つの XAML マークアップ拡張機能が関与します。 次は、中かっこの区切り記号で即座に認識できるものがあります。
 
 - `x:Reference`はソース オブジェクトを参照するマークアップ拡張機能が必要な`Slider`という`slider`です。
-- `Binding`マークアップ拡張機能へのリンク、`Rotation`のプロパティ、`Label`を`Value`のプロパティ、`Slider`です。 
+- `Binding`マークアップ拡張機能へのリンク、`Rotation`のプロパティ、`Label`を`Value`のプロパティ、`Slider`です。
 
 記事を参照して[XAML マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/index.md)XAML マークアップ拡張機能の詳細についてはします。 `x:Reference`によってマークアップ拡張機能がサポートされている、 [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/)クラスです。`Binding`でサポートされて、 [ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/)クラスです。 Xml 名前空間プレフィックスを示す、 `x:Reference` XAML 2009 の仕様の一部であるときに`Binding`Xamarin.Forms の一部であります。 中かっこ内に引用符が表示されないことに注意してください。
 
@@ -185,13 +186,13 @@ public partial class AlternativeCodeBindingPage : ContentPage
 }
 ```
 
-`Binding`コンス トラクターは、6 つのパラメーターを持つため、`source`名前付き引数とパラメーターを指定します。 引数が、`slider`オブジェクト。 
+`Binding`コンス トラクターは、6 つのパラメーターを持つため、`source`名前付き引数とパラメーターを指定します。 引数が、`slider`オブジェクト。
 
 このプログラムを実行するには、少しことにより意外可能性があります。
 
 [![代替コード バインディング](basic-bindings-images/alternativecodebinding-small.png "代替コード バインディング")](basic-bindings-images/alternativecodebinding-large.png#lightbox "代替コードのバインディング")
 
-左側の iOS の画面は、ページが最初に表示されるときの画面の外観を示します。 ここでは、`Label`しますか? 
+左側の iOS の画面は、ページが最初に表示されるときの画面の外観を示します。 ここでは、`Label`しますか?
 
 問題は、 `Slider` 0 の初期値が含まれています。 これにより、`Scale`のプロパティ、`Label`にも、既定値は 1 をオーバーライドする 0 に設定します。 これは、結果、`Label`最初は表示されません。 操作できるように、Android およびユニバーサル Windows プラットフォーム (UWP) のスクリーン ショットで示されて、`Slider`させる、`Label`再度、表示が、その初期消滅は混乱を招く。
 
@@ -246,7 +247,7 @@ XAML マークアップ拡張機能は、中かっこで区切られた通常、
                  Path="Value" />
     </Label.Scale>
 </Label>
-``` 
+```
 
 これで、`Source`と`Path`プロパティは、XAML 属性の正規: 引用符で囲まれた値が表示され、属性は、コンマで区切られていません。 `x:Reference`マークアップ拡張機能はオブジェクト要素にもなります。
 
@@ -267,9 +268,9 @@ XAML マークアップ拡張機能は、中かっこで区切られた通常、
 
 この構文は一般的ではありませんが必要な複雑なオブジェクトが関係する場合があります。
 
-これまでに示した例の設定、`BindingContext`プロパティおよび`Source`プロパティの`Binding`を`x:Reference` ページで別のビューを参照するマークアップ拡張機能です。 これら 2 つのプロパティが型`Object`、バインド ソースに適したプロパティを含む任意のオブジェクトに設定することができます。 
+これまでに示した例の設定、`BindingContext`プロパティおよび`Source`プロパティの`Binding`を`x:Reference` ページで別のビューを参照するマークアップ拡張機能です。 これら 2 つのプロパティが型`Object`、バインド ソースに適したプロパティを含む任意のオブジェクトに設定することができます。
 
-今後の記事で紹介して設定できること、`BindingContext`または`Source`プロパティを`x:Static`の静的プロパティまたはフィールドの値を参照するマークアップ拡張機能または`StaticResource`に格納されているオブジェクトを参照するマークアップ拡張機能、リソース ディクショナリでは、直接オブジェクトには、通常 (必ずではありませんが)、または、ViewModel のインスタンス。 
+今後の記事で紹介して設定できること、`BindingContext`または`Source`プロパティを`x:Static`の静的プロパティまたはフィールドの値を参照するマークアップ拡張機能または`StaticResource`に格納されているオブジェクトを参照するマークアップ拡張機能、リソース ディクショナリでは、直接オブジェクトには、通常 (必ずではありませんが)、または、ViewModel のインスタンス。
 
 `BindingContext`プロパティを設定することも、`Binding`オブジェクトできるように、`Source`と`Path`のプロパティ`Binding`バインディング コンテキストを定義します。
 
@@ -294,7 +295,7 @@ XAML マークアップ拡張機能は、中かっこで区切られた通常、
 
         <StackLayout VerticalOptions="FillAndExpand"
                      BindingContext="{x:Reference slider}">
-            
+
             <Label Text="TEXT"
                    FontSize="80"
                    HorizontalOptions="Center"
@@ -309,14 +310,14 @@ XAML マークアップ拡張機能は、中かっこで区切られた通常、
                      Rotation="{Binding Value}" />
         </StackLayout>
 
-        <Slider x:Name="slider" 
+        <Slider x:Name="slider"
                 Maximum="360" />
-        
+
     </StackLayout>
 </ContentPage>
 ```
 
-`BindingContext`のプロパティ、`StackLayout`に設定されている、`slider`オブジェクト。 両方でこのバインディング コンテキストを継承、`Label`と`BoxView`の両方をされて、`Rotation`プロパティに設定、`Value`のプロパティ、 `Slider`: 
+`BindingContext`のプロパティ、`StackLayout`に設定されている、`slider`オブジェクト。 両方でこのバインディング コンテキストを継承、`Label`と`BoxView`の両方をされて、`Rotation`プロパティに設定、`Value`のプロパティ、 `Slider`:
 
 [![バインド コンテキストの継承](basic-bindings-images/bindingcontextinheritance-small.png "バインド コンテキストの継承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "コンテキストの継承のバインド")
 

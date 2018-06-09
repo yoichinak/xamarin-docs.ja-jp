@@ -1,17 +1,18 @@
 ---
 title: AppCompat と材料設計を追加します。
-description: AppCompat およびマテリアルのデザインを使用する既存の Xamarin.Forms Android アプリを変換するこれらの手順に従います
+description: この記事では、AppCompat およびマテリアルのデザインを使用する既存の Xamarin.Forms Android アプリに変換する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: 8f9820b863274453cff7e4124df683fb8518a978
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242922"
 ---
 # <a name="adding-appcompat-and-material-design"></a>AppCompat と材料設計を追加します。
 

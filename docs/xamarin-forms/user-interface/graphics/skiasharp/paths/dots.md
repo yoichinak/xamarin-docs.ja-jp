@@ -1,19 +1,20 @@
 ---
-title: ドットとダッシュ
-description: マスターの SkiaSharp で点線および破線を描画の複雑さ
+title: ドットと SkiaSharp にダッシュを使用します。
+description: この記事では、マスターの複雑な SkiaSharp、における点線および破線を描画する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 5571f2d1824cef72e192a19d15f9af03276f7523
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243874"
 ---
-# <a name="dots-and-dashes"></a>ドットとダッシュ
+# <a name="dots-and-dashes-in-skiasharp"></a>ドットと SkiaSharp にダッシュを使用します。
 
 _マスターの SkiaSharp で点線および破線を描画の複雑さ_
 

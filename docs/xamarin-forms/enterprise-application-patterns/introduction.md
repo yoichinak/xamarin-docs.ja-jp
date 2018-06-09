@@ -1,18 +1,20 @@
 ---
-title: はじめに
+title: エンタープライズのアプリ開発の概要
+description: この章では、エンタープライズ アプリの開発の概要について説明し、eShopOnContainers モバイル アプリを紹介します。
 ms.prod: xamarin
 ms.assetid: cbce0659-fa03-447a-86ec-140438143230
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a4f1f6ba820221be7553405f570911d3dc66a657
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242961"
 ---
-# <a name="introduction"></a>はじめに
+# <a name="introduction-to-enterprise-app-development"></a>エンタープライズのアプリ開発の概要
 
 すべてのプラットフォームでいくつかの課題に直面してエンタープライズ アプリケーションの開発者。
 
@@ -146,11 +148,11 @@ EShopOnContainers.Core PCL プロジェクトには、次のフォルダーが�
 |ヘルパー|アプリ用にヘルパー クラスが含まれています。|
 |モデル|アプリのモデル クラスを含みます。|
 |プロパティ|含む`AssemblyInfo.cs`、.NET アセンブリのメタデータ ファイル。|
-|サービス|アプリに提供するサービスを実装するインターフェイスとクラスが含まれています。|
+|Services|アプリに提供するサービスを実装するインターフェイスとクラスが含まれています。|
 |トリガー|含まれています、`BeginAnimation`トリガーで、XAML でのアニメーションの呼び出しに使用します。|
 |検証|データ入力の検証に関連するクラスが含まれています。|
 |ViewModels|ページに公開されているアプリケーションのロジックが含まれています。|
-|ビュー|アプリのページが含まれています。|
+|Views|アプリのページが含まれています。|
 
 ##### <a name="platform-projects"></a>プラットフォームのプロジェクト
 

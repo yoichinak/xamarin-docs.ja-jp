@@ -1,19 +1,20 @@
 ---
-title: プラグイン
-description: ネイティブ機能を Xamarin.Forms アプリに簡単に追加します。
+title: 消費し、Xamarin.Forms プラグインを作成します。
+description: この記事では、使用し、Xamarin.Forms のプラグインを作成する方法について説明します。 プラグインは通常、簡単にネイティブ プラットフォームの機能を公開に使用されます。
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242558"
 ---
-# <a name="plugins"></a>プラグイン
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>消費し、Xamarin.Forms プラグインを作成します。
 
 すべてのプラットフォームにわたって存在するネイティブ プラットフォーム機能が多数ありますが、若干異なる Api があります。 開発者は、他のユーザーと共有することもできます。 その機能の抽象クロスプラット フォーム インターフェイスを作成するプラグインを記述します。
 

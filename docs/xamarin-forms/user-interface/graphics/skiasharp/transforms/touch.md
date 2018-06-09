@@ -1,17 +1,18 @@
 ---
 title: タッチ操作
-description: タッチ ドラッグ、はさむ、および回転の実装を使用して行列による変換します。
+description: この記事では、行列変換を使用してタッチ ドラッグ、はさむ、および回転を実装する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: e8e5cc7b1a00f9822c4cbb4859a02b7546102ca0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244287"
 ---
 # <a name="touch-manipulations"></a>タッチ操作
 
@@ -753,9 +754,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-これは、`SKMatrix`次に示すタッチ ロジックによってオブジェクトを変更します。 
+これは、`SKMatrix`次に示すタッチ ロジックによってオブジェクトを変更します。
 
-分離コード ファイルの残りの部分は、`TouchEffect`イベント ハンドラー。 指の現在の場所の変換によって始まります、`SKPoint`値。 `Pressed`アクションの種類ハンドラーをチェックする他の本の指が画面に触れてなし、指がビットマップの境界内にあるとします。 
+分離コード ファイルの残りの部分は、`TouchEffect`イベント ハンドラー。 指の現在の場所の変換によって始まります、`SKPoint`値。 `Pressed`アクションの種類ハンドラーをチェックする他の本の指が画面に触れてなし、指がビットマップの境界内にあるとします。
 
 コードの重要な部分は、`if`に 2 つの呼び出しに関連するステートメント、`Math.Pow`メソッドです。 この数式では、本の指の場所は、ビットマップを塗りつぶす楕円外かどうかを確認します。 操作の場合、しをスケーリングします。 ビットマップの四隅のいずれかの近くに指し、反対側の隅にあるピボット ポイントが決定されます。 指がこの楕円内にある場合は、正規のパン操作であります。
 

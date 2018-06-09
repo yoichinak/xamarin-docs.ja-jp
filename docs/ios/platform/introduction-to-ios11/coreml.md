@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: b893fe5e56cc2d43a71870ffbbd20f0b8c6cfd18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8b489fd1a1bcce474decf6881e8eb6620c2ee2e3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787497"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240737"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Introduction to Xamarin.iOS で CoreML
-
-_機械学習の iOS 11 でモバイル アプリの場合_
 
 CoreML iOS に機械学習の表示 – からを実行するあらゆる種類の作業、画像認識に問題が解決するためのトレーニング済みの機械学習モデルのアプリを利用できます。
 
@@ -33,28 +31,19 @@ CoreML iOS に機械学習の表示 – からを実行するあらゆる種類�
 
 ![Mars 汚い価格の予測のサンプルのスクリーン ショット](coreml-images/marspricer-heading.png)
 
-### <a name="1-add-the-model-to-the-project"></a>1.モデルをプロジェクトに追加します。
+### <a name="1-add-the-coreml-model-to-the-project"></a>1.CoreML モデルをプロジェクトに追加します。
 
-コンパイル済みのモデルの追加 (ディレクトリが、 **.modelc**拡張機能) を**リソース**プロジェクトのディレクトリ。 ディレクトリの内容を持つ必要があるビルド アクションが**BundleResource**:
+CoreML モデルの追加 (ファイルが、 **.mlmodel**拡張機能) を**リソース**プロジェクトのディレクトリ。 
 
-![[リソース] フォルダーは、コンパイル済みのモデルを含める必要があります。](coreml-images/resources-modelc.png)
-
-[サンプル](https://developer.xamarin.com/samples/monotouch/ios11/)Xcode 9 でコンパイルされ、またはターミナル次のコマンドを使用して手動でモデルを使用します。
-
-```csharp
-xcrun coremlcompiler compile {model.mlmodel} {outputFolder}
-```
-
-> [!NOTE]
-> **.model**ファイル_必要があります_にコンパイルされます **.modelc** CoreML によって、使用前に
+モデル ファイルのプロパティでは、その**ビルド アクション**に設定されている**CoreMLModel**です。 つまりにコンパイルすること、 **.mlmodelc**ファイルのアプリケーションのビルド時にします。
 
 ### <a name="2-load-the-model"></a>2.モデルを読み込む
 
-ロードを使用してモデルを使用する前に、`MLModel.FromUrl`静的メソッド。
+使用してモデルを読み込み、`MLModel.Create`静的メソッド。
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
-model = MLModel.FromUrl(assetPath, out NSError error1);
+model = MLModel.Create(assetPath, out NSError error1);
 ```
 
 ### <a name="3-set-the-parameters"></a>3.パラメーターを設定します。
@@ -113,13 +102,15 @@ CoreML モデル_MNISTClassifier_は読み込まれでラップし、`VNCoreMLMo
 
 ```csharp
 // Load the ML model
-var assetPath = NSBundle.MainBundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
-var mlModel = MLModel.FromUrl(assetPath, out NSError mlErr);
-var vModel = VNCoreMLModel.FromMLModel(mlModel, out NSError vnErr);
+var bundle = NSBundle.MainBundle;
+var assetPath = bundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
+NSError mlErr, vnErr;
+var mlModel = MLModel.Create(assetPath, out mlErr);
+var model = VNCoreMLModel.FromMLModel(mlModel, out vnErr);
 
 // Initialize Vision requests
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
-ClassificationRequest = new VNCoreMLRequest(vModel, HandleClassification);
+ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
 クラスが実装する必要がある、`HandleRectangles`と`HandleClassification`手順 3. および 4. を以下に示すように、ビジョンの要求のメソッドです。
@@ -153,7 +144,7 @@ void HandleRectangles(VNRequest request, NSError error) {
   // Run the Core ML MNIST classifier -- results in handleClassification method
   var handler = new VNImageRequestHandler(correctedImage, new VNImageOptions());
   DispatchQueue.DefaultGlobalQueue.DispatchAsync(() => {
-    handler.Perform(new VNRequest[] { ClassificationRequest }, out NSError err);
+    handler.Perform(new VNRequest[] {ClassificationRequest}, out NSError err);
   });
 }
 ```
@@ -167,7 +158,7 @@ void HandleRectangles(VNRequest request, NSError error) {
 ```csharp
 void HandleClassification(VNRequest request, NSError error){
   var observations = request.GetResults<VNClassificationObservation>();
-  ... omitted error handling ...
+  // ... omitted error handling ...
   var best = observations[0]; // first/best classification result
   // render in UI
   DispatchQueue.MainQueue.DispatchAsync(()=>{
@@ -175,8 +166,6 @@ void HandleClassification(VNRequest request, NSError error){
   });
 }
 ```
-
-
 
 ## <a name="samples"></a>サンプル
 
@@ -187,7 +176,6 @@ void HandleClassification(VNRequest request, NSError error){
 * [ビジョン & CoreML サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/)イメージ パラメーターを受け取り、図では、1 桁の数字を認識する CoreML モデルに渡される四角形の領域を識別する、ビジョンのフレームワークを使用します。
 
 * 最後に、 [CoreML 画像認識のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)CoreML を使用して、写真の機能を識別します。 既定では、小さい**SqueezeNet**モデル (5 MB) が、これは、書き込まれたをダウンロードして、大きい方を組み込むように**VGG16**モデル (553 MB)。 詳細については、次を参照してください。、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)です。
-
 
 ## <a name="related-links"></a>関連リンク
 

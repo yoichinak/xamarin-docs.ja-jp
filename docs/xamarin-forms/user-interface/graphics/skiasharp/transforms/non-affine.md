@@ -1,17 +1,18 @@
 ---
 title: 非アフィン変換
-description: 変換行列の 3 番目の列を持つテーパ効果とパースペクティブを作成します。
+description: この記事では、変換行列の 3 番目の列を持つテーパ効果とパースペクティブを作成する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244234"
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
@@ -39,7 +40,7 @@ x' ScaleX·x + SkewX·y + x 方向を =
 
 y' SkewY·x + ScaleY·y 直線移動を =
 
-z` = Persp0·x + Persp1·y + Persp2
+z' Persp0·x + Persp1·y Persp2 を =
 
 3-3 でマトリックスを使用して、2 次元の変換のための基本的なルールは、ことはすべてそのまま平面上に Z が 1 に等しい場所です。 しない限り、`Persp0`と`Persp1`0 の場合と`Persp2`が 1 と等しい、トランス フォームがその面を Z 座標を移動します。
 
@@ -47,9 +48,9 @@ z` = Persp0·x + Persp1·y + Persp2
 
 x"= x'/z'
 
-y" = y' / z'
+'y = y'/z'
 
-z" = z' / z' = 1
+z"z ='/z' = 1
 
 これらと呼ばれます*同種座標*Möbius ストリップ年 8 月 Ferdinand Möbius をよりよく知られた彼トポロジー奇妙の数学的によって、開発されたとします。
 
@@ -59,7 +60,7 @@ z" = z' / z' = 1
 
 この式にたくない z の値 ' 0 になります。
 
-z` = Persp0·x + Persp1·y + Persp2
+z' Persp0·x + Persp1·y Persp2 を =
 
 `Persp2`セルには、0 または 0 ではありませんかを指定できます。 場合`Persp2`が 0、z' (0, 0) のポイントの 0 は、外にある通常望ましいそのポイントが 2 次元グラフィックスのよくあるためです。 場合`Persp2`がない場合は 0 に等しい場合は、ジェネリック クラスの損失は起こりません`Persp2`は 1 に固定します。 たとえば、次のことがわかった`Persp2`単に分割できるマトリックス内のすべてのセル、5、し、5 をする必要があります`Persp2`を 1 に等しいし、同じ結果になります。
 
@@ -87,15 +88,15 @@ y' = = y/(0.01·x + 1)
 
 (100, 0) → (50, 0)
 
-(100, 100) → (50, 50)
+(100, 100) (50, 50) →
 
 ときに x が 100、z' 分母は 2、x および y 座標が実質的に半分になります。 ボックスの右側には、左側にあるよりも短いのようになります。
 
-![](non-affine-images/nonaffinetransform.png "非アフィン変換の対象] ボックス")
+![](non-affine-images/nonaffinetransform.png "非アフィン変換の対象 ボックス")
 
 `Persp`しますが、右側にあるビューアーからかけ離れたものに傾いたようになりましたことを提案する、短縮するために、これらのセルの名前の部分が「パースペクティブ」を指します。
 
-**テスト パースペクティブ**] ページでは、値をテストできます。`Persp0`と`Pers1`をどのように動作感を取得します。 マトリックス セルにこれらの妥当な値は非常に小さいこと、`Slider`ユニバーサル Windows プラットフォームで正しく処理できないにします。 UWP 問題を 2 つ、それに合わせて`Slider`内の要素、 [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) 1 – 1 の範囲に初期化する必要があります。
+**テスト パースペクティブ** ページでは、値をテストできます。`Persp0`と`Pers1`をどのように動作感を取得します。 マトリックス セルにこれらの妥当な値は非常に小さいこと、`Slider`ユニバーサル Windows プラットフォームで正しく処理できないにします。 UWP 問題を 2 つ、それに合わせて`Slider`内の要素、 [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) 1 – 1 の範囲に初期化する必要があります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -230,7 +231,7 @@ public partial class TestPerspectivePage : ContentPage
 
 スライダーを試すとき 0.0066 を超えてまたは –0.0066 以下の値が発生するイメージを分割し、一貫性のないことになることがあります。 変換されているビットマップは、300 ピクセルの四角形です。 ビットマップの座標の範囲は –150 150 ~ ようにその中心を基準とした変換されます。 取り消しを z の値 ' は。
 
-z` = Persp0·x + Persp1·y + 1
+z' Persp0·x + Persp1·y + 1 を =
 
 場合`Persp0`または`Persp1`0.0066 より大きい –0.0066、下は常に、z で結果のビットマップのいくつかの座標または ' 値は 0 です。 0 による除算の原因となると、レンダリング乱雑になります。 0 による除算が発生する座標のすべてのものを表示しないようにする非アフィン変換を使用する場合。
 
@@ -396,7 +397,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 非アフィン変換では、任意の凸四角形に四角形を変換できます。 示されるこれは、**表示の非アフィン行列**ページ。 非常に似ています、**表示のアフィン行列**ページから、[行列変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md)記事がある 4 つ目のする点を除いて`TouchPoint`ビットマップの 4 番目の隅を操作するオブジェクト。
 
-[![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列の表示] ページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png#lightbox "非アフィン行列の表示] ページのトリプル スクリーン ショット")
+[![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列の表示 ページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png#lightbox "非アフィン行列の表示 ページのトリプル スクリーン ショット")
 
 ビットマップの四隅のいずれかの内部角度を 180 度よりも大きい値に加えるか互いに交差する 2 つの辺を加えるしようとしていない、限り正常に計算からこのメソッドを使用して変換を[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)クラス。
 

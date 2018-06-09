@@ -1,17 +1,18 @@
 ---
 title: バインド可能なプロパティ
-description: Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの機能がバインド可能なプロパティで拡張されます。 バインド可能なプロパティは、特殊な型、プロパティの Xamarin.Forms プロパティ システムによって、プロパティの値を追跡する場所です。 この記事では、バインド可能なプロパティは、の概要について説明し、作成し、それらを使用する方法を示します。
+description: この記事では、バインド可能なプロパティは、の概要について説明し、作成し、それらを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 7e1d3c82036ef703014ae548a6719937e89d22f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e39e8eb3d7ffb3ed33ea2a585d8d367302e9baa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245977"
 ---
 # <a name="bindable-properties"></a>バインド可能なプロパティ
 

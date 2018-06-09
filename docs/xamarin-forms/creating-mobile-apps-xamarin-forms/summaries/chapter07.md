@@ -1,16 +1,18 @@
 ---
 title: 7 章の概要です。 XAML コードとの比較
+description: 'Xamarin.Forms を使用したモバイル アプリの作成: 7 章の概要です。 XAML コードとの比較'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 97f1ad1f818c74a294421f223c4cea0123b83373
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efa3a22c12983ef742bb46f91ab6096294cdc533
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241449"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>7 章の概要です。 XAML コードとの比較
 

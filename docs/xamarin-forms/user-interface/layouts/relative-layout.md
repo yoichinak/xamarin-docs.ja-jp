@@ -1,20 +1,20 @@
 ---
-title: RelativeLayout
-description: '[相対レイアウト] を使用すると、任意の画面サイズに合わせてスケール アウトする Ui を作成できます。'
+title: Xamarin.Forms [相対レイアウト]
+description: この記事では、Xamarin.Forms [相対レイアウト] クラスを使用して、任意の画面サイズに合わせてスケール アウトする Ui を作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: f23c00fb40ba661cbc1633b61a898a9437fdee98
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 712092e58a7a7358ba1fa808614822c7988e6105
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847021"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245056"
 ---
-# <a name="relativelayout"></a>RelativeLayout
+# <a name="xamarinforms-relativelayout"></a>Xamarin.Forms [相対レイアウト]
 
 `RelativeLayout` 位置とサイズ ビュー レイアウトまたは兄弟のビューのプロパティに対して相対的に使用されます。 異なり`AbsoluteLayout`、`RelativeLayout`移動アンカーの概念はありませんし、下または右のエッジのレイアウトの基準とした要素の配置機能はありません。 `RelativeLayout` 独自の境界の外部での位置の要素をサポートします。
 

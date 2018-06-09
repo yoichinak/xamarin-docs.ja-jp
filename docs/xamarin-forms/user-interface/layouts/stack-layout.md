@@ -1,20 +1,20 @@
 ---
-title: StackLayout
-description: 1 つのディメンション上のビューのコレクションを表示するのにには、StackLayout を使用します。
+title: Xamarin.Forms StackLayout
+description: この記事では、Xamarin.Forms StackLayout クラスを使用して、1 つのディメンション上のビューのコレクションを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 412ea71df2d13338725246704b342e9b93109709
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6e278c466c352ad19575cd3a84d6e38e14ec2587
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847826"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244598"
 ---
-# <a name="stacklayout"></a>StackLayout
+# <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 `StackLayout` 水平方向または垂直方向には、1 次元の行 (「スタック」) 内のビューを整理します。 ビューで、`StackLayout`レイアウト オプションを使用して、レイアウト内の領域に基づくサイズことができます。 配置は、ビューは、レイアウトや、ビューのレイアウト オプションに追加された順序によって決まります。
 

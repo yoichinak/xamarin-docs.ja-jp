@@ -1,28 +1,22 @@
 ---
 title: デバイスの向き
-description: 縦方向と横の向きで見栄えのアプリケーションをレイアウトする方法を理解します。
+description: この記事で説明しますレイアウト Xamarin.Forms アプリケーションの方向を縦長と横長のすばらしい方法です。
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 95049e2d44b369bfa879226e17d2bad20b7b5408
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848136"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244352"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
 アプリケーションの使用方法と、ユーザー エクスペリエンスを向上させる方法横向きに組み込むことに注意してください。 複数の向きに合わせて個々 のレイアウトを設計することができ、最適なが使用可能な領域を使用します。 アプリケーション レベルでは、回転を無効または有効にすることができます。
-
-この記事では、指示に従って、デバイスの向きの機能を活用したアプリを作成し、次のセクションがあります。
-
-- **[方向を制御する](#Controlling_Orientation)** &ndash;を各プラットフォーム間で、アプリ レベルでの方向を制御する方法を理解します。
-- **[印刷の向きの変更に反応する](#Reacting_to_Changes_in_Orientation)** &ndash;を通知して対処する方法を学習、方向に変更します。
-- **[レスポンシブ レイアウト](#Responsive_Layout)** &ndash;横と縦向きの間で自動的に動作するレイアウトを作成する方法について説明します。
 
 <a name="Controlling_Orientation" />
 

@@ -1,22 +1,24 @@
 ---
 title: アプリケーション リソースのビデオの読み込み
+description: この記事では、Xamarin.Forms を使用して、ビデオ プレーヤー アプリケーションのアプリケーション リソースとして格納されているビデオを読み込む方法について説明します。
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f28b0dc8e25cb2e498f4101175005f05a5c5a6ef
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241033"
 ---
 # <a name="loading-application-resource-videos"></a>アプリケーション リソースのビデオの読み込み
 
 カスタム レンダラー、`VideoPlayer`ビューでも、アプリケーションのリソースとして個々 のプラットフォームのプロジェクトに埋め込まれたビデオ ファイルを再生します。 ただし、現在のバージョンの`VideoPlayer`.NET 標準ライブラリに埋め込まれたリソースにアクセスできません。
 
-これらのリソースを読み込むには、インスタンスを作成`ResourceVideoSource`を設定して、`Path`にファイル名 (または、フォルダーとファイル名)、リソースのプロパティです。 また、静的なを呼び出すことができます`VideoSource.FromResource`メソッドからリソースを参照します。 次に、設定、`ResourceVideoSource`オブジェクトを`Source`プロパティ`VideoPlayer`です。 
+これらのリソースを読み込むには、インスタンスを作成`ResourceVideoSource`を設定して、`Path`にファイル名 (または、フォルダーとファイル名)、リソースのプロパティです。 また、静的なを呼び出すことができます`VideoSource.FromResource`メソッドからリソースを参照します。 次に、設定、`ResourceVideoSource`オブジェクトを`Source`プロパティ`VideoPlayer`です。
 
 ## <a name="storing-the-video-files"></a>ビデオ ファイルを格納します。
 
@@ -30,13 +32,13 @@ IOS プロジェクトでビデオを保存することができます、**リ�
 
 ### <a name="android-video-resources"></a>Android のビデオ リソース
 
-Android プロジェクトでは、ビデオのサブフォルダーに格納する必要があります**リソース**という**生**です。 **生**フォルダーのサブフォルダーを含めることはできません。 ビデオ ファイルを付け、`Build Action`の`AndroidResource`します。 設定、`Path`プロパティ`ResourceVideoSource`のファイル名に、たとえば、 **MyFile.mp4**です。 
+Android プロジェクトでは、ビデオのサブフォルダーに格納する必要があります**リソース**という**生**です。 **生**フォルダーのサブフォルダーを含めることはできません。 ビデオ ファイルを付け、`Build Action`の`AndroidResource`します。 設定、`Path`プロパティ`ResourceVideoSource`のファイル名に、たとえば、 **MyFile.mp4**です。
 
-**VideoPlayerDemos.Android**プロジェクトには、サブフォルダーが含まれている**リソース**という**生**、という名前のファイルが含まれています**AndroidApiVideo.mp4**. 
+**VideoPlayerDemos.Android**プロジェクトには、サブフォルダーが含まれている**リソース**という**生**、という名前のファイルが含まれています**AndroidApiVideo.mp4**.
 
 ### <a name="uwp-video-resources"></a>UWP ビデオ リソース
 
-ユニバーサル Windows プラットフォームのプロジェクトでは、任意のフォルダー、プロジェクト内でのビデオを格納できます。 ファイルに付けます、`Build Action`の`Content`します。 設定、`Path`プロパティ`ResourceVideoSource`フォルダーとファイル名、たとえば、 **MyFolder/MyVideo.mp4**です。 
+ユニバーサル Windows プラットフォームのプロジェクトでは、任意のフォルダー、プロジェクト内でのビデオを格納できます。 ファイルに付けます、`Build Action`の`Content`します。 設定、`Path`プロパティ`ResourceVideoSource`フォルダーとファイル名、たとえば、 **MyFolder/MyVideo.mp4**です。
 
 **VideoPlayerDemos.UWP**という名前のフォルダーがプロジェクトに含まれている**ビデオ**ファイルと共に**UWPApiVideo.mp4**です。
 
@@ -169,7 +171,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-IOS リソースが格納されている場合、**リソース**フォルダー、UWP リソースがプロジェクトのルート フォルダーに格納されている場合は、3 つのプラットフォームの同じファイル名を使用できます。 その場合は場合に直接その名前を設定することができます、`Source`プロパティの`VideoPlayer`します。 
+IOS リソースが格納されている場合、**リソース**フォルダー、UWP リソースがプロジェクトのルート フォルダーに格納されている場合は、3 つのプラットフォームの同じファイル名を使用できます。 その場合は場合に直接その名前を設定することができます、`Source`プロパティの`VideoPlayer`します。
 
 3 つのプラットフォームで実行されているそのページを次に示します。
 

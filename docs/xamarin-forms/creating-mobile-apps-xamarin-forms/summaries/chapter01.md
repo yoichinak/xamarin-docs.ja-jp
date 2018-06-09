@@ -1,22 +1,24 @@
 ---
 title: 第 1 章の概要です。 Xamarin.Forms どのように適合しますか。
+description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 1 章の概要です。 Xamarin.Forms どのように適合しますか。'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 534c36a16acdc10ffb6f6b6703296a672875286e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240461"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要です。 Xamarin.Forms どのように適合しますか。
 
 そのプラットフォームにはさまざまなプログラミング言語が含まれる場合に特に、1 つのプラットフォームから基本コードを移植プログラミングで最も不快なジョブの 1 つです。 同様に、それをリファクターするコードを移植するときに、という誘惑が並列では、両方のプラットフォームを保持する必要がある場合の 2 つのコード ベースの相違点は将来保守が困難します。
 
-## <a name="cross-platform-mobile-development"></a>クロス プラットフォーム モバイル開発
+## <a name="cross-platform-mobile-development"></a>クロス プラットフォームのモバイル開発
 
 この問題は一般的なモバイル プラットフォームを対象とする場合です。 現時点では、存在 2 つの主要なモバイル プラットフォームで、Apple のファミリ Iphone と Ipad の iOS オペレーティング システムおよびさまざまな携帯電話とタブレットで実行されている Android オペレーティング システムを実行します。 別の大幅なプラットフォームは、Microsoft のユニバーサル Windows プラットフォーム (UWP)、これにより Windows 10 および Windows 10 Mobile の両方を対象とする 1 つのプログラムです。
 

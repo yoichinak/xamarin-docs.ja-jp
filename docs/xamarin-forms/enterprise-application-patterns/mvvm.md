@@ -1,19 +1,20 @@
 ---
-title: MVVM
+title: モデル View-viewmodel パターン
+description: この章では、eShopOnContainers モバイル アプリが MVVM パターンを使用して、そのユーザー インターフェイスからアプリのビジネスやプレゼンテーション ロジックを明確に分離する方法について説明します。
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fe2cace6a0fc3a1d901f55556eed09380f8f2006
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793957"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245433"
 ---
-# <a name="mvvm"></a>MVVM
+# <a name="the-model-view-viewmodel-pattern"></a>モデル View-viewmodel パターン
 
 Xamarin.Forms 開発者エクスペリエンスには、通常、XAML では、ユーザー インターフェイスを作成し、ユーザー インターフェイスで動作する分離コードが含まれます。 アプリでは、変更すると、し、サイズとスコープの拡張、メンテナンスも複雑問題が発生することができます。 これらの問題には、UI コントロールと UI の変更を行うと、このようなコードの単体テストの難易度をするためのコストが増加するビジネス ロジックの間の密結合が含まれます。
 

@@ -1,16 +1,18 @@
 ---
 title: 14 章の概要です。 絶対レイアウト
+description: 'Xamarin.Forms を使用したモバイル アプリの作成: 14 章の概要です。 絶対レイアウト'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 87feb17f79dadb0eb8da271f7c072e4a9753381c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8fe8f8bb0ba3204a312f3d91bc59b8fa3f7c03a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241404"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>14 章の概要です。 絶対レイアウト
 
@@ -83,7 +85,7 @@ layoutBounds.Y = (fractionalChildCoordinate.Y/(1 - layoutBounds.Height))
 
 ## <a name="overlays"></a>オーバーレイ
 
-使用することができます`AbsoluteLayout`構築するために、*オーバーレイ*、解説している他のコントロールと、ページなどと、ページ上の標準コントロールとの対話ユーザーを保護します。 
+使用することができます`AbsoluteLayout`構築するために、*オーバーレイ*、解説している他のコントロールと、ページなどと、ページ上の標準コントロールとの対話ユーザーを保護します。
 
 [ **SimpleOverlay** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/SimpleOverlay)サンプルは、この手法を実証し、を示しています、 [ `ProgressBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/)プログラムが完了するエクステントが表示されますが、タスク。
 

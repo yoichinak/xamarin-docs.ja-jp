@@ -1,17 +1,18 @@
 ---
 title: SkiaSharp 曲線とパス
-description: 曲線の描画、パスの機能を使用して SkiaSharp を使用する方法をについてください。
+description: この記事では、SkiaSharp を使用して曲線の描画し、Xamarin.Forms のアプリケーションでパス機能を使用する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 2b730690e508c29e9bee45ccfdd05d5dd6e92d7b
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 9bfab147b526a6c67aa295c61e334d75627f3ca3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243861"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp 曲線とパス
 

@@ -1,5 +1,5 @@
 ---
-title: DataTemplate を作成します。
+title: Xamarin.Forms DataTemplate を作成します。
 description: ResourceDictionary、またはカスタムの型または適切な Xamarin.Forms セルの種類からにより、データ テンプレートにインラインでを作成できます。 この記事では、各テクニックについて説明します。
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: c04f33f5956eadb677c55e01bea836815ad15462
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 8aa0ad693fd1a7f086492f93f18c1e33871dee0e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848500"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240513"
 ---
-# <a name="creating-a-datatemplate"></a>DataTemplate を作成します。
+# <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate を作成します。
 
 _ResourceDictionary、またはカスタムの型または適切な Xamarin.Forms セルの種類からにより、データ テンプレートにインラインでを作成できます。この記事では、各テクニックについて説明します。_
 

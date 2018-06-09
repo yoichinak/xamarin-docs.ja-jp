@@ -1,5 +1,5 @@
 ---
-title: 手荷物の受け取り場所 ページ
+title: Xamarin.Forms 手荷物の受け取り場所 ページ
 description: Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのページ間を移動するユーザーが横方向にスワイプできますページです。 この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 9259e2a85a7375106891eaae5fe22d6babfa2fcf
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: daf19dbed2e98429280758125a19efce2d7fd9a1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846459"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241752"
 ---
-# <a name="carousel-page"></a>手荷物の受け取り場所 ページ
+# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms 手荷物の受け取り場所 ページ
 
 _Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのページ間を移動するユーザーが横方向にスワイプできますページです。この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。_
 
@@ -46,7 +46,7 @@ _Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのペー�
 - [追加](#Populating_a_CarouselPage_with_a_Page_Collection)、`CarouselPage`子のコレクションを[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス。
 - [割り当てる](#Populating_a_CarouselPage_with_a_Template)コレクションには、 [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/)プロパティと割り当て、 [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)を[ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) を返されるプロパティ[`ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)コレクション内のオブジェクトのインスタンス。
 
-両方の方法で、`CarouselPage`を表示する次のページに移動の方向にスワイプ操作で、表示の各ページをさらに、されます。 
+両方の方法で、`CarouselPage`を表示する次のページに移動の方向にスワイプ操作で、表示の各ページをさらに、されます。
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)でのみ設定できます[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス、または`ContentPage`派生します。

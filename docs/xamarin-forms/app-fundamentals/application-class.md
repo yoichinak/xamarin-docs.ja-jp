@@ -1,20 +1,20 @@
 ---
-title: App クラス
-description: C# コードか XAML のいずれかを指定できる既定 App クラスの機能
+title: Xamarin.Forms App クラス
+description: ここで、アプリの初期ページを設定するプロパティが含まれている既定のアプリのクラスの機能について説明し、用の永続的な辞書が状態変化のライフ サイクル全体での単純な値を格納します。
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 4b502b0d6eea37e0b5b374cfd4740cf6a5ced478
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15fb866d2cde9409f401d6d021b22b8cb0468795
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846391"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240542"
 ---
-# <a name="app-class"></a>App クラス
+# <a name="xamarinforms-app-class"></a>Xamarin.Forms App クラス
 
 `Application`基底クラスが、既定のプロジェクトに公開されている次の機能を提供`App`サブクラス。
 

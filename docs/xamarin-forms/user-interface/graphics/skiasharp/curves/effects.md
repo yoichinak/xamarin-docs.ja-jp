@@ -1,19 +1,20 @@
 ---
-title: パスの効果
-description: 線の描画と、入力に使用するパスを許可するさまざまなパス効果を検出します。
+title: SkiaSharp でパスの効果
+description: この記事には、さまざまな SkiaSharp パスに及ぼす影響を描画し、入力するためのパスを許可して、サンプル コードを示しますがについて説明します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244111"
 ---
-# <a name="path-effects"></a>パスの効果
+# <a name="path-effects-in-skiasharp"></a>SkiaSharp でパスの効果
 
 _線の描画と、入力に使用するパスを許可するさまざまなパス効果を検出します。_
 
@@ -400,7 +401,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 指定されたパス、`SKPathEffect.Create1DPath`メソッドは常に入力します。 指定されたパス、`DrawPath`メソッド常にストロークを付ける場合、`SKPaint`オブジェクトがその`PathEffect`プロパティの 1 D パス効果に設定します。 注意して、`pathPaint`オブジェクトを持たない`Style`設定は、通常の既定値は`Fill`、パス ストロークを付けるかに関係なく、します。
 
-使用される、ボックス、`Translate`の例は、20 ピクセルの四角形、および`advance`引数 24 に設定されています。 この違いは、水平または垂直方向、行はほぼ同じですが、ボックスの対角線が 28.3 ピクセルであるため、行を斜めのボックスとは少し重複ボックス間のギャップをによりします。 
+使用される、ボックス、`Translate`の例は、20 ピクセルの四角形、および`advance`引数 24 に設定されています。 この違いは、水平または垂直方向、行はほぼ同じですが、ボックスの対角線が 28.3 ピクセルであるため、行を斜めのボックスとは少し重複ボックス間のギャップをによりします。
 
 菱形、`Rotate`例も 20 ピクセルです。 `advance`ひし形が線の曲率と一緒に回転させるようにタッチするポイントが続行するために、20 に設定します。
 
@@ -585,9 +586,9 @@ public class ConveyorBeltPage : ContentPage
         bucketPath.AddRect(new SKRect(-5, -3, 25, 3));
 
         // Sides
-        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
-        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
 
         // Five slats
@@ -595,20 +596,20 @@ public class ConveyorBeltPage : ContentPage
         {
             bucketPath.MoveTo(25, -19 + 8 * i);
             bucketPath.LineTo(25, -13 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.CounterClockwise, 65, -13 + 8 * i);
             bucketPath.LineTo(65, -19 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.Clockwise, 25, -19 + 8 * i);
             bucketPath.Close();
         }
 
         // Arc to suggest the hidden side
         bucketPath.MoveTo(25, -17);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.Clockwise, 65, -17);
         bucketPath.LineTo(65, -19);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.CounterClockwise, 25, -19);
         bucketPath.Close();
 
@@ -619,7 +620,7 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-バケット作成コードを少し大きくのバケットを横向きにするに次の 2 つの変換を完了します。 これらの変換を適用することは、前のコードですべての座標を調整するよりも簡単でした。 
+バケット作成コードを少し大きくのバケットを横向きにするに次の 2 つの変換を完了します。 これらの変換を適用することは、前のコードですべての座標を調整するよりも簡単でした。
 
 `PaintSurface`自体コンベヤ ベルトのパスを定義することによってハンドラーを開始します。 これは、行のペアだけとは、20-ピクセル幅灰色の線で描画を円のセミコロンのペア。
 
@@ -642,10 +643,10 @@ public class ConveyorBeltPage : ContentPage
         {
             // Straight verticals capped by semicircles on top and bottom
             conveyerPath.MoveTo(width, verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, 2 * width, verticalMargin);
             conveyerPath.LineTo(2 * width, info.Height - verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, width, info.Height - verticalMargin);
             conveyerPath.Close();
 
@@ -665,8 +666,8 @@ public class ConveyorBeltPage : ContentPage
             float phase = -t * spacing;
 
             // Create the buckets PathEffect
-            using (SKPathEffect bucketsPathEffect = 
-                        SKPathEffect.Create1DPath(bucketPath, spacing, phase, 
+            using (SKPathEffect bucketsPathEffect =
+                        SKPathEffect.Create1DPath(bucketPath, spacing, phase,
                                                   SKPath1DPathEffectStyle.Rotate))
             {
                 // Set it to the Paint object and draw the path again
@@ -680,7 +681,7 @@ public class ConveyorBeltPage : ContentPage
 
 コンベヤ ベルトを描画するためのロジックは、横モードでは機能しません。
 
-バケットは、200 ピクセル、コンベヤ ベルトの上に離れてに関する等間隔に配置する必要があります。 ただし、コンベヤ ベルトはおそらくありません 200 ピクセルの長さとしてつまり複数、`phase`の引数`SKPathEffect.Create1DPath`は、アニメーション化バケット ポップアップの存在の出入り。 
+バケットは、200 ピクセル、コンベヤ ベルトの上に離れてに関する等間隔に配置する必要があります。 ただし、コンベヤ ベルトはおそらくありません 200 ピクセルの長さとしてつまり複数、`phase`の引数`SKPathEffect.Create1DPath`は、アニメーション化バケット ポップアップの存在の出入り。
 
 このため、最初に計算という名前の値`length`コンベヤ ベルトの長さはします。 コンベヤ ベルトは、直線とセミコロンの円は、これは、単純な計算。 バケットの数を割ることによって計算は、次に、 `length` 200 でします。 これは、最も近い整数に丸められます、分割数が、そのこと`length`です。 バケット数は整数の間隔になります。 `phase`引数は、その一部だけです。
 
@@ -708,11 +709,11 @@ canvas.DrawPath(newPath, newPaint);
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-`width`ハッチ線の太さを指定します。 `matrix`パラメーターはスケーリングと省略可能な回転の組み合わせ。 スケール ファクターでは、Skia は陰影の行間を使用してピクセル インクリメントを示します。 線の間の分離は、スケール ファクター マイナス、`width`引数。 かどうか、スケール ファクターは以下に、`width`値は、スペースを入れないで陰影線の間および格納する領域が表示されます。 水平および垂直方向のスケーリングに同じ値を指定します。 
+`width`ハッチ線の太さを指定します。 `matrix`パラメーターはスケーリングと省略可能な回転の組み合わせ。 スケール ファクターでは、Skia は陰影の行間を使用してピクセル インクリメントを示します。 線の間の分離は、スケール ファクター マイナス、`width`引数。 かどうか、スケール ファクターは以下に、`width`値は、スペースを入れないで陰影線の間および格納する領域が表示されます。 水平および垂直方向のスケーリングに同じ値を指定します。
 
 既定では、ハッチ行は、水平方向です。 場合、`matrix`パラメーターには、回転が含まれています、ハッチ行が時計回りに回転します。
 
-**ハッチ塗りつぶし**ページは、このパスの効果を示します。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)クラスでは、次の 3 つのパスの効果を定義フィールドとして、されている最初の幅を示すスケール ファクターを 3 ピクセルの水平線ハッチ線間隔 6 ピクセルの各要素を区別します。 線の間の分離は、そのため、3 ピクセルです。 2 番目のパスの効果はピクセル単位の間隔 (そのため、分離が 18 ピクセルの位置)、24 の間隔の 6 ピクセル幅で行を垂直方向の陰影の斜線行 12 ピクセル幅スペース区切り 36 ピクセル間隔について、3 番目、およびです。 
+**ハッチ塗りつぶし**ページは、このパスの効果を示します。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)クラスでは、次の 3 つのパスの効果を定義フィールドとして、されている最初の幅を示すスケール ファクターを 3 ピクセルの水平線ハッチ線間隔 6 ピクセルの各要素を区別します。 線の間の分離は、そのため、3 ピクセルです。 2 番目のパスの効果はピクセル単位の間隔 (そのため、分離が 18 ピクセルの位置)、24 の間隔の 6 ピクセル幅で行を垂直方向の陰影の斜線行 12 ピクセル幅スペース区切り 36 ピクセル間隔について、3 番目、およびです。
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -721,10 +722,10 @@ public class HatchFillPage : ContentPage
 
     SKPathEffect horzLinesPath = SKPathEffect.Create2DLine(3, SKMatrix.MakeScale(6, 6));
 
-    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6, 
+    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6,
         Multiply(SKMatrix.MakeRotationDegrees(90), SKMatrix.MakeScale(24, 24)));
 
-    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12, 
+    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12,
         Multiply(SKMatrix.MakeScale(36, 36), SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint strokePaint = new SKPaint
@@ -761,14 +762,14 @@ public class HatchFillPage : ContentPage
 
         using (SKPath roundRectPath = new SKPath())
         {
-            // Create a path 
+            // Create a path
             roundRectPath.AddRoundedRect(
                 new SKRect(50, 50, info.Width - 50, info.Height - 50), 100, 100);
 
             // Horizontal hatch marks
             fillPaint.PathEffect = horzLinesPath;
             fillPaint.Color = SKColors.Red;
-            canvas.DrawPath(roundRectPath, fillPaint); 
+            canvas.DrawPath(roundRectPath, fillPaint);
 
             // Vertical hatch marks
             fillPaint.PathEffect = vertLinesPath;
@@ -808,18 +809,18 @@ Android の画面に表示されない本当にそのような: スクリーン 
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-`SKMatrix`スケール ファクターは、レプリケートされたパスの水平方向および垂直のスペースを指定します。 これを使用してパスを回転することはできませんが、`matrix`引数以外の場合は、回転、パス、パス自体の回転を使用して、`Transform`によって定義されたメソッド`SKPath`です。 
+`SKMatrix`スケール ファクターは、レプリケートされたパスの水平方向および垂直のスペースを指定します。 これを使用してパスを回転することはできませんが、`matrix`引数以外の場合は、回転、パス、パス自体の回転を使用して、`Transform`によって定義されたメソッド`SKPath`です。
 
 レプリケートされたパスは通常塗りつぶし対象の領域ではなく、画面の左と上端に揃えられます。 この動作をオーバーライドするには、0 と左と上の辺から水平および垂直方向のオフセットを指定するスケール ファクターの間での平行移動の係数を提供します。
 
-**パス タイル塗りつぶし**ページは、このパスの効果を示します。 領域を並べて表示するために使用されるパスがフィールドとして定義されている、 [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)クラスです。 水平および垂直方向の座標の範囲 – 40 を 40、つまりこのパスは 80 ピクセルの四角形: 
+**パス タイル塗りつぶし**ページは、このパスの効果を示します。 領域を並べて表示するために使用されるパスがフィールドとして定義されている、 [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)クラスです。 水平および垂直方向の座標の範囲 – 40 を 40、つまりこのパスは 80 ピクセルの四角形:
 
 ```csharp
 public class PathTileFillPage : ContentPage
 {
     SKPath tilePath = SKPath.ParseSvgPathData(
-        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " + 
-        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " + 
+        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " +
+        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " +
         "-2 20, -2 40, -20 40, -20 8, -40 8, -40 -8, -20 -8 Z");
     ...
     void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -840,7 +841,7 @@ public class PathTileFillPage : ContentPage
                 paint.PathEffect = pathEffect;
 
                 canvas.DrawRoundRect(
-                    new SKRect(50, 50, info.Width - 50, info.Height - 50), 
+                    new SKRect(50, 50, info.Width - 50, info.Height - 50),
                     100, 100, paint);
             }
         }
@@ -935,7 +936,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-このパスの効果は、線の描画または入力のいずれかを使用できます。 行が接続されているセグメントに分割されます — のおおよその長さがで指定された`segLength`— とさまざまな方向に拡張します。 元の行からの偏差の範囲が指定された`deviation`です。 
+このパスの効果は、線の描画または入力のいずれかを使用できます。 行が接続されているセグメントに分割されます — のおおよその長さがで指定された`segLength`— とさまざまな方向に拡張します。 元の行からの偏差の範囲が指定された`deviation`です。
 
 最後の引数は、結果を得るのために使用される擬似乱数シーケンスの生成に使用されるシードです。 ジッター効果は、異なるシードを少し異なる外観されます。 引数には、という効果は同じプログラムを実行するたびに、ゼロの既定値があります。 する場合は異なるジッター画面が再描画されるたびシードを設定することができます、`Millisecond`のプロパティ、`DataTime.Now`値 (たとえば)。
 
@@ -1016,7 +1017,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     using (SKPaint paint = new SKPaint())
     {
-        paint.Style = SKPaintStyle.Stroke; 
+        paint.Style = SKPaintStyle.Stroke;
         paint.StrokeWidth = 5;
         paint.Color = SKColors.Blue;
 
@@ -1144,7 +1145,7 @@ public partial class TapToOutlineThePathPage : ContentPage
         using (SKPath circlePath = new SKPath())
         {
             circlePath.AddCircle(info.Width / 2, info.Height / 2,
-                                 Math.Min(info.Width / 2, info.Height / 2) - 
+                                 Math.Min(info.Width / 2, info.Height / 2) -
                                  redThickStroke.StrokeWidth);
 
             if (!outlineThePath)
@@ -1217,9 +1218,9 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-`outlinePath`オブジェクトが、受信者の輪郭の`linkPath`場合、ストロークを付けるで指定されたプロパティを持つ`strokePaint`します。 
+`outlinePath`オブジェクトが、受信者の輪郭の`linkPath`場合、ストロークを付けるで指定されたプロパティを持つ`strokePaint`します。
 
-この手法を使用して別の例では、直近の見通しで使用されるパスには、次へ、`SKPathEffect.Create2DPath`メソッドです。 
+この手法を使用して別の例では、直近の見通しで使用されるパスには、次へ、`SKPathEffect.Create2DPath`メソッドです。
 
 ## <a name="combining-path-effects"></a>結合パス効果
 
@@ -1270,7 +1271,7 @@ public class CatsInFramePage : ContentPage
         StrokeWidth = 5
     };
 
-    SKPath scallopPath = 
+    SKPath scallopPath =
         SKPath.ParseSvgPathData("M 0 0 L 50 0 A 60 60 0 0 1 -50 0 Z");
 
     SKPaint framePaint = new SKPaint
@@ -1316,7 +1317,7 @@ public class CatsInFramePage : ContentPage
             outlinedCatPath);
 
         // Create a 1D path effect from the scallop path
-        SKPathEffect strokeEffect = 
+        SKPathEffect strokeEffect =
             SKPathEffect.Create1DPath(scallopPath, 75, 0, SKPath1DPathEffectStyle.Rotate);
 
         // Set the sum the effects to frame paint
@@ -1358,11 +1359,11 @@ public class CatsInFramePage : ContentPage
 ```csharp
 public class DashedHatchLinesPage : ContentPage
 {
-    static SKPathEffect dashEffect = 
+    static SKPathEffect dashEffect =
         SKPathEffect.CreateDash(new float[] { 30, 30 }, 0);
 
     static SKPathEffect hatchEffect = SKPathEffect.Create2DLine(20,
-        Multiply(SKMatrix.MakeScale(60, 60), 
+        Multiply(SKMatrix.MakeScale(60, 60),
                  SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint paint = new SKPaint()
@@ -1395,8 +1396,8 @@ public class DashedHatchLinesPage : ContentPage
 
         canvas.Clear();
 
-        canvas.DrawOval(info.Width / 2, info.Height / 2, 
-                        0.45f * info.Width, 0.45f * info.Height, 
+        canvas.DrawOval(info.Width / 2, info.Height / 2,
+                        0.45f * info.Width, 0.45f * info.Height,
                         paint);
     }
     ...

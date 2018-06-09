@@ -1,17 +1,18 @@
 ---
 title: XAML (プレビュー) の標準コントロール
-description: Xamarin.Forms で XAML Standard プレビューを探索する方法
+description: この記事では、Xamarin.Forms で使用できる XAML 標準コントロールについて説明します。
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 2fc7fb9581f344e0d54bd9f690d334eda78cc97a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b01d0773f0c2150db575875b770957eb6452f41
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245571"
 ---
 # <a name="xaml-standard-preview-controls"></a>XAML (プレビュー) の標準コントロール
 
@@ -39,7 +40,7 @@ Standard では XAML のプロパティおよび列挙体の新しい名前を�
 
 |更新されたプロパティを持つ Xamarin.Forms コントロール|Xamarin.Forms プロパティまたは列挙型|該当するショートカットは標準的な XAML|
 |--- |--- |--- |
-|ボタン、エントリ、ラベル、DatePicker、エディター、SearchBar、TimePicker|TextColor|前景|
+|ボタン、エントリ、ラベル、DatePicker、エディター、SearchBar、TimePicker|textColor|前景|
 |VisualElement|BackgroundColor|バック グラウンド *|
 |ボタンの選択|BorderColor、囲んで|BorderBrush|
 |ボタン|BorderWidth|BorderThickness|

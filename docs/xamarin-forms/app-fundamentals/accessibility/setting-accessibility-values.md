@@ -1,17 +1,18 @@
 ---
 title: ユーザー インターフェイス要素のアクセシビリティの値の設定
-description: Xamarin.Forms では、ネイティブのユーザー補助の値を設定する AutomationProperties クラスからの接続のプロパティを使用してユーザー インターフェイス要素に設定するユーザー補助機能の値を許可します。 この記事では、スクリーン リーダーが要素に関する ページで会話できますように AutomationProperties クラスを使用する方法について説明します。
+description: この記事では、スクリーン リーダーが要素に関する ページで会話できますように AutomationProperties クラスを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: cf9071684061b584e1cb75cfd50b33212f42bf79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ad7b1c41f34c14a81910d5be30fd6484919e8d39
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241885"
 ---
 # <a name="setting-accessibility-values-on-user-interface-elements"></a>ユーザー インターフェイス要素のアクセシビリティの値の設定
 
@@ -26,7 +27,7 @@ Xamarin.Forms は、次の添付プロパティを使用してユーザー イ�
 - `AutomationProperties.HelpText` – 要素に関連付けられているツールヒント テキストとしての考えられると、要素の長い説明。 詳細については、次を参照してください。 [AutomationProperties.HelpText](#helptext)です。
 - `AutomationProperties.LabeledBy` – 現在の要素のアクセシビリティに関する情報を定義する別の要素を許可します。 詳細については、次を参照してください。 [AutomationProperties.LabeledBy](#labeledby)です。
 
-これらは接続、スクリーン リーダーが要素に関する話すことができるようにセット ネイティブ アクセシビリティのプロパティの値です。 添付プロパティの詳細については、次を参照してください。[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)です。
+これらは接続、スクリーン リーダーが要素に関する話すことができるようにセット ネイティブ アクセシビリティのプロパティの値です。 添付プロパティの詳細については、[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)を参照してください。
 
 > [!IMPORTANT]
 > 使用して、`AutomationProperties`添付プロパティ Android で UI テストの実行に影響を与える可能性があります。 [ `AutomationId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.AutomationId/)、`AutomationProperties.Name`と`AutomationProperties.HelpText`プロパティはどちらも設定ネイティブ`ContentDescription`プロパティで、`AutomationProperties.Name`と`AutomationProperties.HelpText`プロパティ値をよりも優先`AutomationId`値 (両方`AutomationProperties.Name`と`AutomationProperties.HelpText`が設定された場合、値が連結されます)。 つまり、他のテストを探して`AutomationId`場合は失敗`AutomationProperties.Name`または`AutomationProperties.HelpText`要素に設定されます。 このシナリオでは、値の検索に UI テストを変更する`AutomationProperties.Name`または`AutomationProperties.HelpText`、または両方を連結します。
@@ -145,5 +146,5 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 ## <a name="related-links"></a>関連リンク
 
-- [関連付けられたプロパティ](~/xamarin-forms/xaml/attached-properties.md)
+- [添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)
 - [ユーザー補助 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)

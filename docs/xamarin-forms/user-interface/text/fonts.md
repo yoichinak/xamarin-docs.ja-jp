@@ -1,19 +1,20 @@
 ---
-title: フォント
-description: Xamarin.Forms でフォントの設定
+title: Xamarin.Forms で複数のフォント
+description: この記事では、Xamarin.Forms アプリケーションでテキストを表示するコントロールのフォントの情報を指定する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fd45528446c9d3d4bdfa1b8f9f4010babb2ad044
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245632"
 ---
-# <a name="fonts"></a>フォント
+# <a name="fonts-in-xamarinforms"></a>Xamarin.Forms で複数のフォント
 
 この記事は、Xamarin.Forms を使用 (太さやサイズなど) のフォント属性を指定する方法を説明テキストを表示するコントロールのします。 フォント情報は、[コードで指定された](#Setting_Font_in_Code)または[Xaml で指定した](#Setting_Font_in_Xaml)です。
 使用することも、[カスタム フォント](#Using_a_Custom_Font)です。

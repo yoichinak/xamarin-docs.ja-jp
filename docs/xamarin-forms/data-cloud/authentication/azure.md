@@ -1,17 +1,18 @@
 ---
 title: Azure のモバイル アプリを使用してユーザーの認証
-description: Azure のモバイル アプリでは、認証および承認する Facebook、Google、Microsoft、Twitter、および Azure Active Directory を含む、アプリケーションのユーザーをサポートするために、さまざまな外部の id プロバイダーを使用します。 認証されたユーザーのみにアクセスを制限するテーブルに対するアクセス許可を設定できます。 この記事では、Azure Mobile Apps を使用して、Xamarin.Forms アプリケーションでの認証プロセスを管理する方法について説明します。
+description: この記事では、Azure Mobile Apps を使用して、Xamarin.Forms アプリケーションでの認証プロセスを管理する方法について説明します。
 ms.prod: xamarin
 ms.assetid: D50D6F56-8B19-44E7-81F3-E0E1C6E240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 5f5c69601c11a3c0d25bc804c60883841b0fb30d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fc6206a22d7527ea38a39ab034c424bfe7730abb
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241716"
 ---
 # <a name="authenticating-users-with-azure-mobile-apps"></a>Azure のモバイル アプリを使用してユーザーの認証
 
@@ -27,7 +28,7 @@ Azure Mobile Apps が Xamarin.Forms アプリケーションでの認証プロ�
 1. Xamarin.Forms アプリケーションからの認証を呼び出します。 詳細については、次を参照してください[ポータブル クラス ライブラリに追加の認証](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-the-portable-class-library)、 [iOS アプリケーションへの追加認証](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-the-ios-app)、 [Android のアプリへの追加認証](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-the-android-app)、および。[Windows 10 アプリのプロジェクトに認証を追加](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-windows-10-including-phone-app-projects)です。
 
 > [!NOTE]
-> Ios 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 > 使用することがない場合のうち ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 アプリケーションを更新することによってこれを行う**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)です。
 
 従来は、モバイル アプリケーションでは、id プロバイダーで認証を実行するのに組み込み web ビューが使用されます。 これは推奨されなくなりました、次の理由。
@@ -188,5 +189,5 @@ public async Task<bool> LogoutAsync()
 - [TodoAzureAuth (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuth/)
 - [Azure のモバイル アプリの使用](~/xamarin-forms/data-cloud/consuming/azure.md)
 - [Xamarin.Forms アプリに認証を追加します。](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users/)
-- [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Azure のモバイル クライアント SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
 - [MobileServiceClient](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx)

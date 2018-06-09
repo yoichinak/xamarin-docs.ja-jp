@@ -1,5 +1,5 @@
 ---
-title: スタイルの概要
+title: Introduction to Xamarin.Forms スタイル
 description: スタイルは、カスタマイズする視覚要素の外観を許可します。 スタイルは、特定の種類に対して定義されてし、型に使用できるプロパティの値を含むです。
 ms.prod: xamarin
 ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f878641f9266da74d61eda8a85d4e16de193be0e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 071cfa2ba145775c179bc85dce4fac29ba0bd8fa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847967"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245821"
 ---
-# <a name="introduction-to-styles"></a>スタイルの概要
+# <a name="introduction-to-xamarinforms-styles"></a>Introduction to Xamarin.Forms スタイル
 
 _スタイルは、カスタマイズする視覚要素の外観を許可します。スタイルは、特定の種類に対して定義されてし、型に使用できるプロパティの値を含むです。_
 

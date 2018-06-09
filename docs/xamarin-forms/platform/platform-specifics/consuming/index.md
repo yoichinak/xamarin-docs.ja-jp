@@ -1,23 +1,22 @@
-﻿---
+---
 title: Platform-specifics の使用
-description: Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。
-title: "Platform-specifics の使用"
-description: "Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。"
+description: カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用します。
 ms.prod: xamarin
 ms.assetid: 6AF9D016-F693-44B8-B279-7AFDA5504634
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: e795bf97a5a723b906f72f425212eb3096d478f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b0cf79990730f5d2b2f9573f91872ae2e060e33e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243419"
 ---
-# <a name="consuming-platform-specifics"></a>Platform-Specifics の使用
+# <a name="consuming-platform-specifics"></a>Platform-specifics の使用
 
-_Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。_
+_カスタム レンダラーや特殊効果を実装することがなく、特定のプラットフォームで利用可能なだけの機能を使用します。_
 
 ## <a name="iosiosmd"></a>[iOS](ios.md)
 

@@ -1,18 +1,18 @@
 ---
 title: Platform Specific の作成
-description: ベンダーは Effect を使って、独自の platform-specific を作成することができます。 特定の機能を Effect で提供し、それを platform-specific を通して公開します。 その結果、 Effect は、 XAML や C# の fluent API を通して、より簡単に使えるようになります。 この記事では platform-specific を通して Effect を公開する方法を説明します。
+description: この記事では platform-specific を通して Effect を公開する方法を説明します。
 ms.prod: xamarin
 ms.assetid: 0D0E6274-6EF2-4D40-BB77-3D8E53BCD24B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: dcd22dd0d4e281245a1f6598d9a58d24a97b1f20
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a07ff2e206a08ee40355733ab2c1026f29de2f2f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848149"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242785"
 ---
 # <a name="creating-platform-specifics"></a>Platform Specific の作成
 

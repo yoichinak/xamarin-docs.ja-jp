@@ -1,17 +1,18 @@
 ---
 title: ASP.NET Web サービス (ASMX) の使用
-description: Asmx サービスは、簡易オブジェクト アクセス プロトコル (SOAP) を使用してメッセージを送信する web サービスをビルドする機能を提供します。 SOAP は、構築および web サービスにアクセスするためのプラットフォームや言語に依存しないプロトコルです。 ASMX サービスのコンシューマーは、プラットフォーム、オブジェクト モデル、またはサービスの実装に使用するプログラミング言語に関する知識は必要はありません。 のみ、SOAP メッセージを送受信する方法を理解する必要があります。 この記事では、Xamarin.Forms アプリケーションから、ASMX SOAP サービスを利用する方法を示します。
+description: この記事では、Xamarin.Forms アプリケーションから、ASMX SOAP サービスを利用する方法を示します。
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c45f0de039abc3f98b7c269f183e2883a495910b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6ec8168a8da64dbf3dfeb805856a4d91c9ec78ca
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242064"
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) の使用
 
@@ -31,7 +32,7 @@ ASMX サービス設定手順については、サンプル アプリケーシ�
 ![](asmx-images/portal.png "サンプル アプリケーション")
 
 > [!NOTE]
-> Ios 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> iOS 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 > 使用することがない場合のうち ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 アプリケーションを更新することによってこれを行う**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)です。
 
 ## <a name="consuming-the-web-service"></a>Web サービスの使用
@@ -40,10 +41,10 @@ ASMX サービスでは、次の操作を提供します。
 
 |操作|説明|パラメーター|
 |--- |--- |--- |
-|GetTodoItems|作業アイテムの一覧を取得します。|
+|GetTodoItems|To Do アイテムのリストの取得|
 |CreateTodoItem|新しい作業項目を作成します。|TodoItem が XML にシリアル化されます。|
-|EditTodoItem|作業項目を更新します。|TodoItem が XML にシリアル化されます。|
-|DeleteTodoItem|作業項目を削除します。|TodoItem が XML にシリアル化されます。|
+|EditTodoItem|To Do アイテムの更新|TodoItem が XML にシリアル化されます。|
+|DeleteTodoItem|To Do アイテムの削除|TodoItem が XML にシリアル化されます。|
 
 アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。[データ モデリング](~/xamarin-forms/data-cloud/walkthrough.md)です。
 

@@ -1,18 +1,20 @@
 ---
-title: ナビゲーション
+title: エンタープライズ アプリケーションのナビゲーション
+description: この章では、モデルの表示から eShopOnContainers モバイル アプリがビュー モデル優先のナビゲーションを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: aa2e2858e3bb8e435ec3f38bb3d5b249eaa6cba4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ac9f3200440001752c07ad45fdaaf2b1d9ba6a5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243682"
 ---
-# <a name="navigation"></a>ナビゲーション
+# <a name="enterprise-app-navigation"></a>エンタープライズ アプリケーションのナビゲーション
 
 Xamarin.Forms には、ページ ナビゲーションは、通常、UI でのユーザーの操作とは、アプリ自体のロジックに基づく内部の状態を変更した結果からの結果のサポートが含まれています。 ただし、ナビゲーションは複雑で、次の課題を満たす必要があると、モデル View-viewmodel (MVVM) パターンを使用するアプリで実装できます。
 

@@ -1,20 +1,20 @@
 ---
-title: DataTemplateSelector を作成します。
-description: データ バインドされたプロパティの値に基づいて実行時にデータ テンプレートを選択する、DataTemplateSelector を使用できます。 これにより、特定のオブジェクトの外観をカスタマイズする、オブジェクトの同じ型に適用する複数の Datatemplate できます。 この記事では、作成し、DataTemplateSelector を使用する方法を示します。
+title: Xamarin.Forms DataTemplateSelector を作成します。
+description: この記事では、作成およびデータ バインドされたプロパティの値に基づいて実行時にデータ テンプレートを選択するために使用するの DataTemplateSelector を使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ad8cce32cb9cfe2ea5e78f11b1250440371a9851
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 5e1f9e4ef3aa7f9c415427e280d9bdd05dfbd13c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847193"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240653"
 ---
-# <a name="creating-a-datatemplateselector"></a>DataTemplateSelector を作成します。
+# <a name="creating-a-xamarinforms-datatemplateselector"></a>Xamarin.Forms DataTemplateSelector を作成します。
 
 _データ バインドされたプロパティの値に基づいて実行時にデータ テンプレートを選択する、DataTemplateSelector を使用できます。これにより、特定のオブジェクトの外観をカスタマイズする、オブジェクトの同じ型に適用する複数の Datatemplate できます。この記事では、作成し、DataTemplateSelector を使用する方法を示します。_
 

@@ -1,6 +1,6 @@
 ---
 title: Azure のモバイル アプリからプッシュ通知を送信します。
-description: Azure Notification Hubs は、モバイル プッシュ通知を送信する任意のバックエンドから任意のモバイル プラットフォームでは、異なるプラットフォーム通知システムと通信すること、バックエンドの複雑さを排除しながら、スケーラブルなプッシュ インフラストラクチャを提供します。 この記事では、Azure Notification Hubs を使用して、Azure Mobile Apps インスタンスから Xamarin.Forms アプリケーションにプッシュ通知を送信する方法について説明します。
+description: この記事では、Azure Notification Hubs を使用して、Azure Mobile Apps インスタンスから Xamarin.Forms アプリケーションにプッシュ通知を送信する方法について説明します。
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 28aba0ec33dc88e3e87f51fbdd28d5ec8a72d3c3
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d5bf0e614ef3777bc956e66c0b737bfb8a5b9e0c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847603"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243767"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Azure のモバイル アプリからプッシュ通知を送信します。
 

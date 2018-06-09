@@ -1,20 +1,20 @@
 ---
-title: プラットフォーム機能
-description: Xamarin.Forms を使用したプラットフォームに固有の機能を活用します。
+title: Xamarin.Forms プラットフォーム機能
+description: このガイドでは、さまざまな手法を使用して Xamarin.Forms アプリケーション プラットフォームに固有の機能のメリットを利用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2e8eb19411799e7723be338e9e3f6df35058eb8c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847632"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242801"
 ---
-# <a name="platform-features"></a>プラットフォーム機能
+# <a name="xamarinforms-platform-features"></a>Xamarin.Forms プラットフォーム機能
 
 Xamarin.Forms を拡張しを使用してプラットフォーム固有の機能を組み込むことができます[効果](~/xamarin-forms/app-fundamentals/effects/index.md)、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)、 [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)、 [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)などです。
 

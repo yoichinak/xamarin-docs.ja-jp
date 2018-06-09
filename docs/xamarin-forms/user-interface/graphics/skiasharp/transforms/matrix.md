@@ -1,19 +1,20 @@
 ---
-title: 行列変換
-description: 汎用性の変換行列と SkiaSharp 変換をさらに深く
+title: SkiaSharp に行列変換
+description: この記事では、電子 SkiaSharp 変換に、汎用性の変換行列に深くし、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 90fadf0081f86e7739d75c0710caeaf1775c423e
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 816a5f47a4a4f5c01a1fb20b5c8e7a2fc83a64b0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244878"
 ---
-# <a name="matrix-transforms"></a>行列変換
+# <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp に行列変換
 
 _汎用性の変換行列と SkiaSharp 変換をさらに深く_
 
@@ -63,7 +64,7 @@ SkiaSharp は、グラフィカル オブジェクトをレンダリングする
 
 x' = x
 
-y' = y
+y' y を =
 
 z' = 1
 
@@ -131,7 +132,7 @@ y' ySkew · を =x + y
 
 x' cos(α) · を =x-sin(α) ·y
 
-y' = sin(α) · x - cos(α) · y
+y' sin(α) · を =x-cos(α) ·y
 
 Α 0 ° がある場合は、単位行列。 Α が 180 度の場合は、変換行列のとおりです。
 

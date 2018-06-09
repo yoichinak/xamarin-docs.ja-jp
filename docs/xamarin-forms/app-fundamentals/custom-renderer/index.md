@@ -1,19 +1,20 @@
 ---
-title: カスタム レンダラー
-description: Xamarin.Forms ユーザー インターフェイスでは、Xamarin.Forms アプリケーション プラットフォームごとに適切なルック アンド フィールを維持できるように、ターゲット プラットフォームのネイティブ コントロールを使用して表示されます。 カスタム レンダラーでは、開発者の各プラットフォームで Xamarin.Forms コントロールの動作と外観をカスタマイズするには、この処理をオーバーライドすることができます。
+title: Xamarin.Forms のカスタム レンダラー
+description: カスタム レンダラーには、Xamarin.Forms コントロールの動作と外観をカスタマイズする各プラットフォームでネイティブ コントロールのレンダリングをオーバーライドする開発者が使用できます。
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 6a2ee4b09426e6b4ff6dac7e1fd5221fc5b6d750
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a88462052906e68fd85a07161e8b5bb63a61e69d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239891"
 ---
-# <a name="custom-renderers"></a>カスタム レンダラー
+# <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
 _Xamarin.Forms ユーザー インターフェイスでは、Xamarin.Forms アプリケーション プラットフォームごとに適切なルック アンド フィールを維持できるように、ターゲット プラットフォームのネイティブ コントロールを使用して表示されます。カスタム レンダラーでは、開発者の各プラットフォームで Xamarin.Forms コントロールの動作と外観をカスタマイズするには、この処理をオーバーライドすることができます。_
 
@@ -55,7 +56,7 @@ Xamarin.Forms カスタム ユーザー インターフェイス コントロー
 
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[ビデオ プレーヤーを実装します。](video-player/index.md)
 
-この記事の内容を実装するカスタム レンダラーを作成する方法を示しています。 `VideoPlayer` web、アプリケーションのリソースとして埋め込まれているビデオまたはユーザーのデバイス上のビデオ ライブラリに格納されているビデオからビデオを再生できるコントロールです。 メソッドと読み取り専用のバインド可能なプロパティを実装するなど、いくつかの手法が示されています。 
+この記事の内容を実装するカスタム レンダラーを作成する方法を示しています。 `VideoPlayer` web、アプリケーションのリソースとして埋め込まれているビデオまたはユーザーのデバイス上のビデオ ライブラリに格納されているビデオからビデオを再生できるコントロールです。 メソッドと読み取り専用のバインド可能なプロパティを実装するなど、いくつかの手法が示されています。
 
 
 ## <a name="related-links"></a>関連リンク

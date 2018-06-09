@@ -1,17 +1,18 @@
 ---
 title: セットアップの Windows プロジェクト
-description: 既存の Xamarin.Forms ソリューションに新しい Windows プロジェクトを追加します。
+description: Xamarin.Forms ソリューションの古い (または macOS で作成したもの) がないユニバーサル Windows プラットフォーム プロジェクト、ためここで新しい UWP プロジェクトを既存の Xamarin.Forms ソリューションを追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 81cad7b178948ebfcf6f424be9ab62d6b6be5b92
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242638"
 ---
 # <a name="setup-windows-projects"></a>セットアップの Windows プロジェクト
 

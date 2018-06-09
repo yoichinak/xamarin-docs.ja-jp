@@ -1,19 +1,20 @@
 ---
-title: 文字列の書式設定
-description: データ バインディングを使用して書式設定およびオブジェクトを文字列として表示するには
+title: Xamarin.Forms 文字列の書式設定
+description: この記事では、Xamarin.FOrms データ バインディングを使用して書式設定し、オブジェクトを文字列として表示する方法について説明します。 これは、バインドの StringFormat をプレース ホルダーを持つ標準 .NET 書式指定文字列に設定します。
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4e143f650c3cde7577def1a95e53b207608a088a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240302"
 ---
-# <a name="string-formatting"></a>文字列の書式設定
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 文字列の書式設定
 
 オブジェクトまたは値の文字列表現を表示するデータ バインドを使用すると便利な場合があります。 使用するなど、`Label`の現在の値を表示する、`Slider`です。 このデータ バインドで、 `Slider` 、ソースであり、ターゲットは、`Text`のプロパティ、`Label`です。
 

@@ -1,19 +1,20 @@
 ---
-title: SVG Path Data
-description: 文字列形式を使用して、スケーラブル ベクター グラフィックス パスを定義します。
+title: SkiaSharp で SVG パス データ
+description: この記事では、文字列形式を使用して、スケーラブル ベクター グラフィックス、SkiaSharp パスを定義する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243975"
 ---
-# <a name="svg-path-data"></a>SVG Path Data
+# <a name="svg-path-data-in-skiasharp"></a>SkiaSharp で SVG パス データ
 
 _文字列形式を使用して、スケーラブル ベクター グラフィックス パスを定義します。_
 

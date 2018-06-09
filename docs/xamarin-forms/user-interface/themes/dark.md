@@ -1,19 +1,20 @@
 ---
-title: ダーク テーマ
+title: Xamarin.Forms ダーク テーマ
+description: この記事では、アプリ内の Xamarin.Forms ダーク テーマを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 43A3798D-6F05-4734-AF5E-97235B46D9B9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 676ed2d5f99c1f39904b2afe045cee21c0eab09c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fc329f506afde04b0dc59dc637d999865aafbe1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847265"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245925"
 ---
-# <a name="dark-theme"></a>ダーク テーマ
+# <a name="xamarinforms-dark-theme"></a>Xamarin.Forms ダーク テーマ
 
 ![](~/media/shared/preview.png "この API は現在プレビュー中")
 
@@ -69,4 +70,3 @@ XAML ファイルの例は、次に示します。
 ```
 
 [組み込みクラスの完全なリスト](~/xamarin-forms/user-interface/themes/index.md)どのようなスタイルは、いくつかの一般的なコントロールの使用を示しています。
-

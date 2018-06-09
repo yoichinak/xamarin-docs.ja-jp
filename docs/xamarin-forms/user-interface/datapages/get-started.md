@@ -1,17 +1,18 @@
 ---
 title: DataPages の概要
+description: この記事では、Xamarin.Forms DataPages を使用して単純なデータ ドリブン ページの構築を開始する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d5e73839f889234c816bfff08f3e46dade8dffc9
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846842"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243078"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -21,7 +22,7 @@ ms.locfileid: "34846842"
 > DataPages が必要です、 [Xamarin.Forms テーマ](~/xamarin-forms/user-interface/themes/index.md)レンダリングへの参照。
 
 
-作業を開始する DataPages Preview を使用して単純なデータ ドライブのページを作成する、次の手順に従います。 プレビューにハードコードされたスタイル (「イベント」) を構築するこのデモで使用は、コード内の特定の JSON 形式でのみ機能します。
+データ ドリブンの単純なページ DataPages Preview を使用して構築を開始、次の手順に従います。 プレビューにハードコードされたスタイル (「イベント」) を構築するこのデモで使用は、コード内の特定の JSON 形式でのみ機能します。
 
 [![](get-started-images/demo-sml.png "DataPages サンプル アプリケーション")](get-started-images/demo.png#lightbox "DataPages サンプル アプリケーション")
 

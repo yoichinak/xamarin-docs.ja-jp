@@ -1,20 +1,20 @@
 ---
-title: AbsoluteLayout
-description: AbsoluteLayout を使用すると、ピクセルの完全な Ui を作成できます。
+title: Xamarin.Forms AbsoluteLayout
+description: この記事では、Xamarin.Forms AbsoluteLayout クラスを使用して、ピクセルの完全な Ui を作成する方法について説明します。 このクラスは、配置、または絶対値によってサイズと位置に比例します。 子要素のサイズします。
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 506a9a4916cf2cf9105d59f56648e339d664a3d2
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848392"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244458"
 ---
-# <a name="absolutelayout"></a>AbsoluteLayout
+# <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) 配置し、子要素のサイズと位置または絶対値によって比例のサイズします。 静的な値を混在させることができます、位置指定と相対値または静的な値を使用してサイズおよび比例して、子ビューがあります。
 

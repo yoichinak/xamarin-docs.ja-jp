@@ -1,18 +1,20 @@
 ---
-title: 単体テスト
+title: 単体テストのエンタープライズ アプリ
+description: この章では、eShopOnContainers モバイル アプリの単体テストを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 57201a32f5ffc0ae962f6db851a25a737e1cb17d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242532"
 ---
-# <a name="unit-testing"></a>単体テスト
+# <a name="unit-testing-enterprise-apps"></a>単体テストのエンタープライズ アプリ
 
 モバイル アプリでは、デスクトップと web ベースのアプリケーションについて心配する必要がない一意の問題があります。 モバイル ユーザーを使用する、ネットワーク接続によって、サービスの可用性、およびその他の要因の範囲、デバイスによって異なります。 そのため、その品質、信頼性、およびパフォーマンスを向上させるために、実際の使用は、モバイル アプリをテストしてください。 単体テスト、統合テスト、テスト、単体テストのテストの最も一般的な形式の中のユーザー インターフェイスなどのアプリで実行されるテストの多くの種類があります。
 

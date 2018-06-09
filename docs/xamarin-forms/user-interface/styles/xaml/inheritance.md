@@ -1,20 +1,20 @@
 ---
-title: スタイルの継承
-description: スタイルは、重複を減らすし、再利用できるようにするには、他のスタイルを継承できます。
+title: Xamarin.Forms でスタイルの継承
+description: スタイルは、重複を減らすし、再利用できるようにするには、他のスタイルを継承できます。 この記事では、Xamarin.Forms アプリケーションでスタイルの継承を実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7b489e90daec2659a6d11b2776731582bdf368ff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848422"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245095"
 ---
-# <a name="style-inheritance"></a>スタイルの継承
+# <a name="style-inheritance-in-xamarinforms"></a>Xamarin.Forms でスタイルの継承
 
 _スタイルは、重複を減らすし、再利用できるようにするには、他のスタイルを継承できます。_
 

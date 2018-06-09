@@ -1,20 +1,20 @@
 ---
-title: グリッド
-description: グリッド内のビューを提供します。
+title: Xamarin.Forms グリッド
+description: この記事では、クラスを使用する、Xamarin.Forms グリッドのグリッドで、行と列を持つビューを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 6ff36f511c5194017afd34601fc9ea2f89b1e2d4
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848110"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245154"
 ---
-# <a name="grid"></a>グリッド
+# <a name="xamarinforms-grid"></a>Xamarin.Forms グリッド
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) ビューの行と列に配置をサポートします。 比例してサイズまたは絶対サイズを持つ行と列を設定できます。 `Grid`レイアウトは、従来のテーブルと混同しないでし、表形式のデータを表示するものではありません。 `Grid` 行、列またはセルの書式設定の概念はありません。 HTML テーブルとは異なり`Grid`コンテンツをレイアウトするため、純粋な目的としています。
 

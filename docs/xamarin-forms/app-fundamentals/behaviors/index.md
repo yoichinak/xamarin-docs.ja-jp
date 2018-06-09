@@ -1,5 +1,5 @@
 ---
-title: ビヘイビアー
+title: Xamarin.Forms の動作
 description: 動作では、それらをサブクラス化しなくてもユーザー インターフェイス コントロール機能を追加することができます。 動作はコードで記述され、XAML またはコード内のコントロールに追加します。
 ms.prod: xamarin
 ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: e5eef459c340764d9d373b42ac594f78c042a4de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: edb8929a4e5ffcff74714f65154cd78795bb9568
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239811"
 ---
-# <a name="behaviors"></a>ビヘイビアー
+# <a name="xamarinforms-behaviors"></a>Xamarin.Forms の動作
 
 _動作では、それらをサブクラス化しなくてもユーザー インターフェイス コントロール機能を追加することができます。動作はコードで記述され、XAML またはコード内のコントロールに追加します。_
 
@@ -32,4 +33,3 @@ _動作では、それらをサブクラス化しなくてもユーザー イン
 ## <a name="reusable-behaviorsreusableindexmd"></a>[再利用可能な動作](reusable/index.md)
 
 動作は、複数のアプリケーション間で再利用可能です。 これらの記事では、一般的に使用される機能を実行するのに使用できる動作を作成する方法について説明します。
-

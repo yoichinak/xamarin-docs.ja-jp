@@ -1,19 +1,20 @@
 ---
-title: Xamarin.Forms XAML Basics
-description: モバイル デバイス用のクロスプラット フォームのマークアップの概要
+title: Xamarin.Forms XAML の基礎
+description: このガイドでは、モバイル デバイス用のクロスプラット フォームの XAML を開始する方法について説明します。 XAML では、開発者はコードではなく、マークアップを使用して Xamarin.Forms アプリケーションでユーザー インターフェイスを定義します。
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 991d928c2c58f05098a41c84aba295a31636ab96
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 627267b95bb2d810a60f84c51e38bf5387fe1f99
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245964"
 ---
-# <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML Basics
+# <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
 XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。 プログラムでは、Xamarin.Forms、XAML が必要なことはありませんが、詳細は簡潔なと同等のコードより視覚的に一貫性のある潜在的に使いやすい。 XAML は、人気のある MVVM (モデル-ビュー-ViewModel) アプリケーションのアーキテクチャで使用する場合に特に適して: XAML を XAML ベースのデータ バインディングによって ViewModel コードにリンクされているビューを定義します。
 
@@ -96,7 +97,7 @@ XAML は XML で、基本的に XAML に固有の構文の一部の機能があ�
 
 これらの機能は*いない*XML 拡張。 XAML は、完全に有効な XML です。 これらの XAML 構文機能は、独自の方法で XML を使用します。 説明して、以下の記事で詳しく MVVM を実装するための XAML の使用の概要ではこれで完了します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 この記事は、Xamarin.Forms を使用した作業に関する知識を前提とします。 読み取り[An Introduction to Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)を強くお勧めします。
 

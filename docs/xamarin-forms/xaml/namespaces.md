@@ -1,5 +1,5 @@
 ---
-title: XAML 名前空間
+title: Xamarin.Forms で XAML 名前空間
 description: XAML では、名前空間宣言 xmlns XML 属性を使用します。 この記事では、XAML 名前空間の構文を紹介し、型にアクセスする XAML 名前空間を宣言する方法を示します。
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: ecf255d2fc6937e93258eaa021f79152cb7b1c7f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245834"
 ---
-# <a name="xaml-namespaces"></a>XAML 名前空間
+# <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms で XAML 名前空間
 
 _XAML では、名前空間宣言 xmlns XML 属性を使用します。この記事では、XAML 名前空間の構文を紹介し、型にアクセスする XAML 名前空間を宣言する方法を示します。_
 
@@ -54,7 +55,7 @@ XAML では、名前空間の宣言は子要素を親要素から継承します
 
 型は、共通言語ランタイム (CLR) の名前空間名、および必要に応じてアセンブリ名を指定する名前空間の宣言で、プレフィックスを持つ XAML 名前空間を宣言することによって、XAML で参照できます。 名前空間宣言内で次のキーワードの値を定義することでこれを実現します。
 
-- **clr 名前空間:**または**を使用して:** – CLR 名前空間は、XAML 要素として公開する型を含むアセンブリ内で宣言します。 このキーワードが必要です。
+- **clr 名前空間:** または**を使用して:** – CLR 名前空間は、XAML 要素として公開する型を含むアセンブリ内で宣言します。 このキーワードが必要です。
 - **アセンブリ =** – 参照先の CLR 名前空間を含むアセンブリです。 この値は、ファイル拡張子を除いた、アセンブリの名前です。 アセンブリを参照する XAML ファイルを含むプロジェクト ファイル内の参照として、アセンブリへのパスを確立する必要があります。 場合、このキーワードを省略できます、 **clr 名前空間**値が型を参照するアプリケーション コードと同じアセンブリ内にします。
 
 文字を分離することに注意してください、`clr-namespace`または`using`値からトークンがありますが、コロン、文字の分離、`assembly`値からトークンが等号 (=)。 2 つのトークンの間で使用する文字は、セミコロンです。

@@ -1,17 +1,18 @@
 ---
 title: Web ビデオを再生します。
+description: この記事では、Xamarin.Forms を使用して、ビデオ プレーヤー アプリケーションで web ビデオを再生する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 1d00861a9b6d7066212189aa4a59e786cb545f12
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f9b52398efbd189153ca74ce80433863b25bd578
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846748"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240978"
 ---
 # <a name="playing-a-web-video"></a>Web ビデオを再生します。
 
@@ -36,7 +37,7 @@ namespace FormsVideoLibrary
             set { SetValue(SourceProperty, value); }
             get { return (VideoSource)GetValue(SourceProperty); }
         }
-        
+
         // AutoPlay property
         public static readonly BindableProperty AutoPlayProperty =
             BindableProperty.Create(nameof(AutoPlay), typeof(bool), typeof(VideoPlayer), true);
@@ -169,7 +170,7 @@ namespace FormsVideoLibrary
             if (!String.IsNullOrWhiteSpace(value))
             {
                 Uri uri;
-                return Uri.TryCreate(value, UriKind.Absolute, out uri) && uri.Scheme != "file" ? 
+                return Uri.TryCreate(value, UriKind.Absolute, out uri) && uri.Scheme != "file" ?
                                 VideoSource.FromUri(value) : VideoSource.FromResource(value);
             }
 
@@ -482,7 +483,7 @@ namespace FormsVideoLibrary.UWP
                    AreTransportControlsEnabled="False" />
 ```
 
-両方のプロパティを設定した場合`false`ビデオの再生を開始しないおよびは行われませんを起動する方法です。 呼び出す必要がある`Play`分離コード ファイル、またはアーティクルの説明に従って、独自のトランスポート コントロールを作成する[カスタム ビデオ トランスポート コントロールを実装する](custom-transport.md)です。 
+両方のプロパティを設定した場合`false`ビデオの再生を開始しないおよびは行われませんを起動する方法です。 呼び出す必要がある`Play`分離コード ファイル、またはアーティクルの説明に従って、独自のトランスポート コントロールを作成する[カスタム ビデオ トランスポート コントロールを実装する](custom-transport.md)です。
 
 **App.xaml**ファイルには、追加のビデオを 2 つのリソースが含まれています。
 
@@ -502,7 +503,7 @@ namespace FormsVideoLibrary.UWP
 
             <video:UriVideoSource x:Key="Sintel"
                                   Uri="https://archive.org/download/Sintel/sintel-2048-stereo_512kb.mp4" />
-            
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

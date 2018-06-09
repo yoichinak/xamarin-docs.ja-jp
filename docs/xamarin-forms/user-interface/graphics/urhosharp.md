@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms で UrhoSharp の使用
-description: UrhoSharp を使用して、高度な視覚エフェクトのアプリケーションに 3 D グラフィックスを追加すること
+description: この記事では、UrhoSharp を使用して、高度な視覚エフェクトの Xamarin.Forms アプリケーションに 3 D グラフィックスを追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 0646B98E-CC04-4537-9715-9F82338FD7FF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: fbe07b81c8818378c3f6c12e09ae74bca2d89543
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 3ada1f45532797d77d52968343a7d7b3ab8f7948
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847486"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244520"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms で UrhoSharp の使用
 

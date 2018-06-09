@@ -1,25 +1,26 @@
 ---
-title: パスとテキスト
-description: パスとテキストの交差部分を調べる
+title: パスと SkiaSharp 内のテキスト
+description: この記事では、SkiaSharp パスとテキストの交差部分について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 9b3f906a23ed0d51237a244f3944104acc76e259
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243906"
 ---
-# <a name="paths-and-text"></a>パスとテキスト
+# <a name="paths-and-text-in-skiasharp"></a>パスと SkiaSharp 内のテキスト
 
 _パスとテキストの交差部分を調べる_
 
-最新のグラフィックス システムでは、テキストのフォントは、2 次ベジエ曲線によって定義された通常の文字のアウトラインのコレクションです。 そのため、多くの最新のグラフィックス システムには、テキストの文字をグラフィックス パスに変換する機能が含まれます。 
+最新のグラフィックス システムでは、テキストのフォントは、2 次ベジエ曲線によって定義された通常の文字のアウトラインのコレクションです。 そのため、多くの最新のグラフィックス システムには、テキストの文字をグラフィックス パスに変換する機能が含まれます。
 
-既に見たようことするテキストの文字の輪郭を描画したりできるように入力します。 」の説明に従って、特定のストロークの幅とパスの効果も文字アウトラインを表示できます、 [**パス効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)資料です。 文字列に変換することも、`SKPath`オブジェクト。 つまりで説明した手法でクリッピングのテキストのアウトラインを使用できること、 [**パスおよび領域でクリッピング**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)資料です。 
+既に見たようことするテキストの文字の輪郭を描画したりできるように入力します。 」の説明に従って、特定のストロークの幅とパスの効果も文字アウトラインを表示できます、 [**パス効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)資料です。 文字列に変換することも、`SKPath`オブジェクト。 つまりで説明した手法でクリッピングのテキストのアウトラインを使用できること、 [**パスおよび領域でクリッピング**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)資料です。
 
 文字のアウトラインを描画するパスの効果を使用して、だけでなく、パスに基づいている効果は、文字の文字列から派生するパスを作成することもできます。 と 2 つの効果を組み合わせることもできます。
 
@@ -37,7 +38,7 @@ _パスとテキストの交差部分を調べる_
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x`と`y`引数は、テキストの左側のベースラインの開始時点を指定します。 役割を果たします、同じここで、`DrawText`メソッドの`SKCanvas`します。 パス内でテキストの左側のベースラインは座標 (x, y) があります。 
+`x`と`y`引数は、テキストの左側のベースラインの開始時点を指定します。 役割を果たします、同じここで、`DrawText`メソッドの`SKCanvas`します。 パス内でテキストの左側のベースラインは座標 (x, y) があります。
 
 `GetTextPath`を入力するか、または結果のパスの境界線の描画だけを実行する場合、メソッドが過剰です。 法線`DrawText`メソッドを実行することができます。 `GetTextPath`メソッドは、パスに関連するその他のタスクの方が実用的です。
 
@@ -114,7 +115,7 @@ public class ClippingTextPage : ContentPage
 
         // Display bitmap to fill window but maintain aspect ratio
         SKRect rect = new SKRect(0, 0, info.Width, info.Height);
-        canvas.DrawBitmap(bitmap, 
+        canvas.DrawBitmap(bitmap,
             rect.AspectFill(new SKSize(bitmap.Width, bitmap.Height)));
     }
 }
@@ -141,7 +142,7 @@ public class TextPathEffectPage : ContentPage
         TextSize = littleSize
     };
 
-    SKPaint textPaint = new SKPaint 
+    SKPaint textPaint = new SKPaint
     {
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Black
@@ -160,7 +161,7 @@ public class TextPathEffectPage : ContentPage
         textPathPaint.MeasureText(character, ref textPathPaintBounds);
 
         // Create textPath centered around (0, 0)
-        SKPath textPath = textPathPaint.GetTextPath(character, 
+        SKPath textPath = textPathPaint.GetTextPath(character,
                                                     -textPathPaintBounds.MidX,
                                                     -textPathPaintBounds.MidY);
         // Create the path effect
@@ -324,7 +325,7 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "循環テキスト ページのスクリーン ショットをトリプル")](text-paths-images/circulartext-large.png#lightbox "循環テキスト ページのトリプル スクリーン ショット")
 
-ある程度循環させることに、テキスト自体が選択されました:"circle"という単語が両方の文の件名と前置詞句のオブジェクト。 
+ある程度循環させることに、テキスト自体が選択されました:"circle"という単語が両方の文の件名と前置詞句のオブジェクト。
 
 ## <a name="related-links"></a>関連リンク
 
