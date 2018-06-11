@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/01/2018
-ms.openlocfilehash: 1fed439ecb4bd79bd84974ea1397ca0ed1336b62
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
-ms.translationtype: HT
+ms.openlocfilehash: d74e0b2aa5be6e8eee2ce5cb54572dd4113d4d7d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847954"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244917"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms ボタン
 
-_ボタンは、タップまたは特定のタスクを実行するアプリケーションに指示するクリックに応答します。_ 
+_ボタンは、タップまたは特定のタスクを実行するアプリケーションに指示するクリックに応答します。_
 
 [ `Button` ](xref:Xamarin.Forms.Button)すべて Xamarin.Forms の最も基本的な対話型コントロールです。 `Button`通常が表示されますが、コマンドを示す短いテキスト文字列のことも、ビットマップ イメージまたはテキストの組み合わせとイメージを表示します。 ユーザーが、`Button`指で、またはそのコマンドを開始する、マウスでクリックします。
 
@@ -24,7 +24,7 @@ _ボタンは、タップまたは特定のタスクを実行するアプリケ�
 
 ## <a name="handling-button-clicks"></a>処理ボタンをクリックします。
 
-`Button` 定義、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)ユーザーがタップしたときに発生するイベント、`Button`指やマウスのポインターを使用します。 任意の場所から本の指またはマウス ボタンが離されると、イベントが発生した、`Button`です。 `Button`必要があります、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)プロパティに設定`true`タップに対応することにします。 
+`Button` 定義、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)ユーザーがタップしたときに発生するイベント、`Button`指やマウスのポインターを使用します。 任意の場所から本の指またはマウス ボタンが離されると、イベントが発生した、`Button`です。 `Button`必要があります、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)プロパティに設定`true`タップに対応することにします。
 
 **基本的なボタンをクリックして** ページで、 [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)サンプル インスタンスを作成する方法を示します、 `Button` XAML およびハンドルでその`Clicked`イベント。 **BasicButtonClickPage.xaml**ファイルが含まれています、`StackLayout`両方を持つ、`Label`と`Button`:
 
@@ -34,18 +34,18 @@ _ボタンは、タップまたは特定のタスクを実行するアプリケ�
              x:Class="ButtonDemos.BasicButtonClickPage"
              Title="Basic Button Click">
     <StackLayout>
-        
+
         <Label x:Name="label"
                Text="Click the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Click to Rotate Text!"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
-     
+
     </StackLayout>
 </ContentPage>
 ```
@@ -136,7 +136,8 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>ボタンを無効にします。
 
-アプリケーションは特定の状態で、特定`Button`クリックが有効な操作ではありません。 ような場合、`Button`設定によって無効にする必要があります、`IsEnabled`プロパティを`false`です。 典型的な例は、`Entry`ファイルを開く、ファイル名の制御`Button`:`Button`にいくつかのテキストが型指定されている場合にのみ有効にする必要があります、`Entry`です。 使用することができます、`DataTrigger`で示すように、このタスクの[**データ トリガー** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)資料です。
+アプリケーションは特定の状態で、特定`Button`クリックが有効な操作ではありません。 ような場合、`Button`設定によって無効にする必要があります、`IsEnabled`プロパティを`false`です。 典型的な例は、`Entry`ファイルを開く、ファイル名の制御`Button`:`Button`にいくつかのテキストが型指定されている場合にのみ有効にする必要があります、`Entry`です。
+使用することができます、`DataTrigger`で示すように、このタスクの[**データ トリガー** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)資料です。
 
 ## <a name="using-the-command-interface"></a>コマンド インターフェイスを使用します。
 
@@ -199,15 +200,15 @@ class CommandDemoViewModel : INotifyPropertyChanged
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.BasicButtonCommandPage"
              Title="Basic Button Command">
-    
+
     <ContentPage.BindingContext>
         <local:CommandDemoViewModel />
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <Label Text="{Binding Number, StringFormat='Value is now {0}'}"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Multiply by 2"
@@ -355,7 +356,7 @@ public partial class MainPage : ContentPage
         <Label x:Name="label"
                Text="Press and hold the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Press to Rotate Text!"
@@ -406,7 +407,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![キーを押すし、ボタンを離します](button-images/PressAndReleaseButton.png "キーを押すし、ボタンを放す")](button-images/PressAndReleaseButton-Large.png)
 
-このような動作がゲーム用のアプリケーション: 指で保持されている、 `Button` on 画面オブジェクトを特定の方向に移動を行う可能性があります。 
+このような動作がゲーム用のアプリケーション: 指で保持されている、 `Button` on 画面オブジェクトを特定の方向に移動を行う可能性があります。
 
 <a name="button-appearance" />
 
@@ -420,7 +421,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 - [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) テキストのフォント ファミリが使用します。
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) テキストのサイズは、します。
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) テキストが斜体または太字かどうかを示します
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 罫線の幅には 
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 罫線の幅には
 - [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) 角を丸める
 
 これらのプロパティの 6 文字の効果 (を除く`FontFamily`と`FontAttributes`) で説明されて、**ボタンの外観**ページ。 別のプロパティ、 [ `Image` ](xref:Xamarin.Forms.Button.Image)、セクションで説明した[**ボタンにビットマップを使用して**](#image-button)です。
@@ -447,7 +448,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
         <StackLayout BindingContext="{x:Reference button}"
                      Padding="10">
-            
+
             <Slider x:Name="fontSizeSlider"
                     Maximum="48"
                     Minimum="1"
@@ -462,8 +463,8 @@ public partial class PressAndReleaseButtonPage : ContentPage
                     Minimum="-1"
                     Maximum="12"
                     Value="{Binding BorderWidth}" />
-            
-            <Label Text="{Binding Source={x:Reference borderWidthSlider}, 
+
+            <Label Text="{Binding Source={x:Reference borderWidthSlider},
                                   Path=Value,
                                   StringFormat='BorderWidth = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -473,7 +474,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
                     Maximum="24"
                     Value="{Binding CornerRadius}" />
 
-            <Label Text="{Binding Source={x:Reference cornerRadiusSlider}, 
+            <Label Text="{Binding Source={x:Reference cornerRadiusSlider},
                                   Path=Value,
                                   StringFormat='CornerRadius = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -484,7 +485,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -586,13 +587,13 @@ class ToggleButton : Button
 }
 ```
 
-`ToggleButton`コンス トラクターにハンドラーをアタッチする、`Clicked`イベントがの値を変更できるように、`IsToggled`プロパティです。 `OnIsToggledChanged`メソッドが起動、`Toggled`イベント。 
+`ToggleButton`コンス トラクターにハンドラーをアタッチする、`Clicked`イベントがの値を変更できるように、`IsToggled`プロパティです。 `OnIsToggledChanged`メソッドが起動、`Toggled`イベント。
 
-最後の行、`OnIsToggledChanged`メソッドを呼び出す、静的な`VisualStateManager.GoToState`"ToggledOn"と"ToggledOff"文字列を 2 つのテキストを持つメソッドです。 読み取ることができるはこの方法と、アプリケーションが、記事の内容の表示状態に応答できる方法に関する[ **、Xamarin.Forms Visual State Manager**](~/xamarin-forms/user-interface/visual-state-manager.md)です。 
+最後の行、`OnIsToggledChanged`メソッドを呼び出す、静的な`VisualStateManager.GoToState`"ToggledOn"と"ToggledOff"文字列を 2 つのテキストを持つメソッドです。 読み取ることができるはこの方法と、アプリケーションが、記事の内容の表示状態に応答できる方法に関する[ **、Xamarin.Forms Visual State Manager**](~/xamarin-forms/user-interface/visual-state-manager.md)です。
 
-`ToggleButton`呼び出しを行う`VisualStateManager.GoToState`、クラス自体は追加の機能に基づいて、ボタンの外観を変更する必要はありません、`IsToggled`状態です。 ホストする XAML の責任は、`ToggleButton`です。 
+`ToggleButton`呼び出しを行う`VisualStateManager.GoToState`、クラス自体は追加の機能に基づいて、ボタンの外観を変更する必要はありません、`IsToggled`状態です。 ホストする XAML の責任は、`ToggleButton`です。
 
-**トグル ボタンのデモ**ページには、2 つのインスタンスが含まれています。 `ToggleButton`、設定 Visual State Manager マークアップを含む、 `Text`、 `BackgroundColor`、および`TextColor`ビジュアルの状態に基づいて、ボタンの。 
+**トグル ボタンのデモ**ページには、2 つのインスタンスが含まれています。 `ToggleButton`、設定 Visual State Manager マークアップを含む、 `Text`、 `BackgroundColor`、および`TextColor`ビジュアルの状態に基づいて、ボタンの。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -601,7 +602,7 @@ class ToggleButton : Button
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.ToggleButtonDemoPage"
              Title="Toggle Button Demo">
-    
+
     <ContentPage.Resources>
         <Style TargetType="local:ToggleButton">
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -620,7 +621,7 @@ class ToggleButton : Button
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Italic On " />
@@ -642,7 +643,7 @@ class ToggleButton : Button
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Bold On " />
@@ -710,9 +711,9 @@ IOS、Android、および、UWP で実行されているプログラムを次に
 
 `Button`クラスを定義、 [ `Image` ](xref:Xamarin.Forms.Button.Image)プロパティにビットマップ イメージを表示できるようにする、 `Button`、単独、またはテキストと組み合わせる。 テキストおよびイメージの配置方法を指定することもできます。
 
-`Image`プロパティの型は[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)、つまり、プロジェクトでは、個々 のプラットフォーム、および標準的な .NET のライブラリ プロジェクトではなく、リソースとして、ビットマップを格納する必要があります。 
+`Image`プロパティの型は[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)、つまり、プロジェクトでは、個々 のプラットフォーム、および標準的な .NET のライブラリ プロジェクトではなく、リソースとして、ビットマップを格納する必要があります。
 
-Xamarin.Forms でサポートされている各プラットフォームにより、イメージを複数のサイズをアプリケーションが実行されるさまざまなデバイスの別のピクセルの解像度で保存できます。 複数のビットマップの名前付きまたはオペレーティング システムは、デバイスのビデオは最適な一致を選択できます、このような方法で格納される画面の解像度。 
+Xamarin.Forms でサポートされている各プラットフォームにより、イメージを複数のサイズをアプリケーションが実行されるさまざまなデバイスの別のピクセルの解像度で保存できます。 複数のビットマップの名前付きまたはオペレーティング システムは、デバイスのビデオは最適な一致を選択できます、このような方法で格納される画面の解像度。
 
 上のビットマップの`Button`、最適なサイズは 32、64 のデバイスに依存しない単位間で、通常、規模によって場合があります。 この例では使用されている画像は、48 のデバイスに依存しない単位のサイズに基づきます。
 
@@ -801,7 +802,7 @@ UWP ビットマップは、プロジェクトのルート ディレクトリに
     <FlexLayout Direction="Column"
                 JustifyContent="SpaceEvenly"
                 AlignItems="Center">
-        
+
         <FlexLayout.Resources>
             <Style TargetType="Button">
                 <Setter Property="Image">
@@ -833,7 +834,7 @@ UWP ビットマップは、プロジェクトのルート ディレクトリに
         <Button Text="Right - 20"
                 ContentLayout="Right, 20" />
 
-        <Button Text="Bottom - 20" 
+        <Button Text="Bottom - 20"
                 ContentLayout="Bottom, 20" />
     </FlexLayout>
 </ContentPage>
