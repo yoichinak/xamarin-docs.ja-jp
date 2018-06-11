@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/01/2018
-ms.openlocfilehash: 095736e77b2f502261f9b85ab73c45dce74309b9
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 1fed439ecb4bd79bd84974ea1397ca0ed1336b62
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734151"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847954"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms ボタン
 
@@ -26,7 +26,7 @@ _ボタンは、タップまたは特定のタスクを実行するアプリケ�
 
 `Button` 定義、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)ユーザーがタップしたときに発生するイベント、`Button`指やマウスのポインターを使用します。 任意の場所から本の指またはマウス ボタンが離されると、イベントが発生した、`Button`です。 `Button`必要があります、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)プロパティに設定`true`タップに対応することにします。 
 
-**基本的なボタンをクリックして**] ページで、 [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)サンプル インスタンスを作成する方法を示します、 `Button` XAML およびハンドルでその`Clicked`イベント。 **BasicButtonClickPage.xaml**ファイルが含まれています、`StackLayout`両方を持つ、`Label`と`Button`:
+**基本的なボタンをクリックして** ページで、 [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)サンプル インスタンスを作成する方法を示します、 `Button` XAML およびハンドルでその`Clicked`イベント。 **BasicButtonClickPage.xaml**ファイルが含まれています、`StackLayout`両方を持つ、`Label`と`Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
