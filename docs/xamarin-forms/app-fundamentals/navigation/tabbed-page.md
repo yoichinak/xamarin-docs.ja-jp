@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
-ms.translationtype: MT
+ms.openlocfilehash: 7af9248e706e615ea3e693a58a5f7664e8dc4daa
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847813"
 ---
 # <a name="tabbed-page"></a>タブ ページ
 
@@ -97,7 +98,7 @@ public class MainPageCS : TabbedPage
 > [!NOTE]
 > [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`TabbedPage`多数の子要素が含まれています。
 
-次のスクリーン ショットに示さ、 `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)上に表示されるインスタンス、*今日* タブ。
+次のスクリーン ショットに示さ、 `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)上に表示されるインスタンス、*今日*] タブ。
 
 ![](tabbed-page-images/today-page.png "TabbedPage コンテンツ ページ")
 
@@ -231,7 +232,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-各タブが表示されます、 [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の系列を使用する[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)タブのデータを表示するインスタンス。次のスクリーン ショットの内容を表示する、 *Tamarin*  タブ。
+各タブが表示されます、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の系列を使用する[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)タブのデータを表示するインスタンス。次のスクリーン ショットの内容を表示する、 *Tamarin* ] タブ。
 
 ![](tabbed-page-images/tab3.png "テンプレートを使用して TabbedPage を設定します。")
 

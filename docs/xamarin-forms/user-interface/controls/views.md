@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms ビュー
-description: Xamarin.Forms ビューは、クロスプラット フォーム モバイル ユーザー インターフェイスのビルド ブロックです。
+description: Xamarin.Forms ビューは、クロスプラット フォーム モバイル ユーザー インターフェイスのビルド ブロックです。 この記事は、Xamarin.Forms で含まれているビューを一覧表示します。
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 414df933716c7ce5d9422e8a2b9be89ba7eff3a9
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733088"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243519"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms ビュー
 
@@ -80,7 +80,7 @@ _Xamarin.Forms ビューは、クロスプラット フォーム モバイル �
 | [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 検索を実行するアプリケーションのことを通知する型、文字列およびボタン (または、キーボードのキー) にユーザーの領域が表示されます。 [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.Text/)プロパティは、テキストへのアクセスを提供し、 [ `SearchButtonPressed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/)イベントは、ボタンが押されたことを示します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) | [![SearchBar 例](views-images/SearchBar.png "SearchBar 例")](views-images/SearchBar-Large.png#lightbox "SearchBar 例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-for-setting-values"></a>値の設定のビュー 
+## <a name="views-for-setting-values"></a>値の設定のビュー
 
 ### <a name="slider"></a>スライダー
 
@@ -96,7 +96,7 @@ _Xamarin.Forms ビューは、クロスプラット フォーム モバイル �
 | [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) 選択することができます、`double`で指定された増分値の範囲から値を[ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Minimum/)、 [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Maximum/)、および[ `Increment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) | [![ステッパ例](views-images/Stepper.png "ステッパ例")](views-images/Stepper-Large.png#lightbox "ステッパ例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
-### <a name="switch"></a>切り替え 
+### <a name="switch"></a>切り替え
 
 |     |     |
 | --- | --- |

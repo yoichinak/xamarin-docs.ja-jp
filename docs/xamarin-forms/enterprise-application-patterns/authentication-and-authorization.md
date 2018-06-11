@@ -1,16 +1,18 @@
 ---
 title: 認証と承認
+description: この章では、eShopOnContainers モバイル アプリが認証とコンテナー化 microservices に対して承認を実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 9c6f3ae19b3e1b89220cbdf0985f4bdf789f2209
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e6cfa566ab455841b3f11e4a857dcf678083417
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242429"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -39,7 +41,7 @@ EShopOnContainers 参照アプリケーションなどの直接のクライア�
 
 ![](authentication-and-authorization-images/authentication.png "専用認証マイクロ サービスによる認証")
 
-**図 9-1:**専用認証マイクロ サービスによる認証
+**図 9-1:** 専用認証マイクロ サービスによる認証
 
 EShopOnContainers モバイル アプリは、identity のマイクロ サービスは、IdentityServer 4 を使用して認証を実行し、Api のアクセス制御と通信します。 そのため、モバイル アプリは、ユーザーを認証するため、またはリソースにアクセスするため、IdentityServer からトークンを要求します。
 
@@ -222,7 +224,7 @@ EShopOnContainers モバイル アプリでは、図 9-2 に示すように、�
 
 ![](authentication-and-authorization-images/sign-in.png "サインイン プロセスの概要")
 
-**図 9-2:**サインイン プロセスの概要
+**図 9-2:** サインイン プロセスの概要
 
 サインイン要求が行われる`<base endpoint>:5105/connect/authorize`です。 次の認証が成功した IdentityServer は認証コードと id トークンを含む認証の応答を返します。 認証コードに送信し、`<base endpoint>:5105/connect/token`アクセス、id、および更新トークンに応答します。
 
@@ -230,7 +232,7 @@ EShopOnContainers モバイル アプリ記号アウト IdentityServer の要求
 
 ![](authentication-and-authorization-images/sign-out.png "サインアウト プロセスの概要")
 
-**図 9-3:**サインアウト プロセスの概要
+**図 9-3:** サインアウト プロセスの概要
 
 EShopOnContainers のモバイル アプリで IdentityServer との通信は、`IdentityService`クラスを実装する、`IIdentityService`インターフェイスです。 このインターフェイスを実装するクラスを提供する必要があります指定`CreateAuthorizationRequest`、 `CreateLogoutRequest`、および`GetTokenAsync`メソッドです。
 
@@ -408,7 +410,7 @@ IdentityServer は、アクセス トークンの承認を制御を提供する�
 
 ![](authentication-and-authorization-images/authorization.png "アクセス トークンによる認証")
 
-**図 9-5:**アクセス トークンによる認証
+**図 9-5:** アクセス トークンによる認証
 
 EShopOnContainers モバイル アプリでは、identity マイクロ サービスと通信し、認証プロセスの一環としてアクセス トークンを要求します。 アクセス トークンは、アクセス要求の一部として、順序付けとバスケット microservices によって公開される Api に転送されます。 アクセス トークンは、クライアント、およびユーザーに関する情報を格納します。 Api では、データへのアクセスを承認するためにその情報を使用します。 Api を保護する IdentityServer を構成する方法については、次を参照してください。 [API リソースの構成](#configuring-api-resources)です。
 
