@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 これは、*初版*27 のチャプターがあり、Xamarin.Forms をカバー&nbsp;2.x アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタムのレンダラーでいっそうなどです。
 28 章も現在オンライン以下に示す個々 のチャプター間できます。
 
-## <a name="download-ebook-for-free"></a>電子書籍を無料でダウンロードします。
+## <a name="download-ebook-for-free"></a>電子書籍を無料でダウンロード
 
 Microsoft Virtual Academy から、優先される電子形式をダウンロードします。
 
@@ -38,7 +38,7 @@ Microsoft Virtual Academy から、優先される電子形式をダウンロー
 
 オンライン[章の概要](summaries/index.md)github のサンプルと Api へのリンクをそれぞれの章の内容を説明します。
 
-## <a name="download-individual-chapters"></a>個々 の章のダウンロード
+## <a name="download-individual-chapters"></a>個々の章のダウンロード
 
 <table style="border:0px; box-shadow:0 0px 0px" cellpadding="0" cellspacing="2" border="0" width="85%">
 <tr style="background:#ecf0f1">
