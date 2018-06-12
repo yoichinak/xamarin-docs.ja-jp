@@ -1,28 +1,24 @@
 ---
 title: ListView のパフォーマンス
-description: ListView を基本としたアプリで優れたパフォーマンスを確保する
+description: リスト ビューには、データを表示するための強力なビューが、いくつかの制限があります。 この記事では、アプリケーション内の Xamarin.Forms ListView で優れたパフォーマンスを確保する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dcd4881e2ad7f1bb4af5455805da1dd2cade3605
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244904"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
 モバイルアプリケーションの作成は、パフォーマンスが重要です。 ユーザは、スムーズなスクロールと高速ロード時間を期待するようになっています。 ユーザの期待に応え損なうと、ストアでのアプリケーションの評価が下がり、業務アプリの場合であれば、組織の時間と費用も無駄になります。
 
 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)はデータ表示の強力な view ですが、制限がいくつかあります。 深い入れ子になった階層の view を含む場合や、多くの測定値を必要とするレイアウトを使用する場合など、カスタムセルを使う場合は特に、スクロールパフォーマンスに影響が出ます。 しかし、パフォーマンスの低下を避けるために使用できるテクニックがあります。
-
-この記事では、次のトピックについて説明します。
-
-- **[Caching Strategy](#cachingstrategy)**
-- **[ListView のパフォーマンスの向上](#improving-performance)**
 
 <a name="cachingstrategy" />
 
@@ -100,7 +96,7 @@ iOS や Android でセルに CustomRenderer を使用している場合、プロ
 [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) が [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択するために [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) を使用している場合、[`RecycleElement`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) の caching strategy は `DataTemplate` をキャッシュしません。 その代わり、 `DataTemplate` はリストのデータの項目ごとに選択されます。
 
 > [!NOTE]
-> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)caching strategy には Xamarin.Forms 2.4 で導入された前提条件があります。それは [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) が [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択することを要求されると、それぞれの `DataTemplate` は同じ [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) の型を返さなければならないということです 例えば、 `MyDataTemplateA` （ `MyViewCellA` という型の `ViewCell` を返す） または `MyDataTemplateB`（ `MyViewCellB`という型の `ViewCell` を返す） のどちらも返す可能性がある `DataTemplateSelector` を持つ[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) があった場合、 `MyDataTemplateA` が返されたときは `MyViewCellA` が返りますが、それ以外は例外がスローされるようになります。
+> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)caching strategy には Xamarin.Forms 2.4 で導入された前提条件があります。それは [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) が [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択することを要求されると、それぞれの `DataTemplate` は同じ [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) の型を返さなければならないということです 例として、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)で、`DataTemplateSelector`いずれかを返すことができます`MyDataTemplateA`(ここで`MyDataTemplateA`を返します、`ViewCell`型の`MyViewCellA`)、または`MyDataTemplateB`(ここで`MyDataTemplateB`を返します、`ViewCell`型の`MyViewCellB`) ときに、`MyDataTemplateA`を返す必要があるれる`MyViewCellA`または例外がスローされます。
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
@@ -117,7 +113,7 @@ iOS や Android でセルに CustomRenderer を使用している場合、プロ
 var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 ```
 
-XAML では、設定、`CachingStrategy`属性の次のコードに示すようにします。
+XAML では、以下のコードで示すように `CachingStrategy` 属性をセットします。
 
 ```xaml
 <ListView CachingStrategy="RecycleElement">

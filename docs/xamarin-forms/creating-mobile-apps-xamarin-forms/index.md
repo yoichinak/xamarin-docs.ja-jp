@@ -1,4 +1,4 @@
-﻿---
+---
 title: Xamarin.Forms 書籍の最初のエディションでモバイル アプリの作成
 description: 電子 Charles Petzold でモバイル アプリを作成するブックのバージョンと Xamarin.Forms アプリケーション開発について説明します。
 ms.prod: xamarin
@@ -21,7 +21,7 @@ ms.locfileid: "35241703"
 これは、*初版*27 のチャプターがあり、Xamarin.Forms をカバー&nbsp;2.x アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタムのレンダラーでいっそうなどです。
 28 章も現在オンライン以下に示す個々 のチャプター間できます。
 
-## <a name="download-ebook-for-free"></a>電子書籍を無料でダウンロード
+## <a name="download-ebook-for-free"></a>電子を無料でダウンロードします。
 
 Microsoft Virtual Academy から、優先される電子形式をダウンロードします。
 
@@ -39,12 +39,12 @@ Microsoft Virtual Academy から、優先される電子形式をダウンロー
 
 オンライン[章の概要](summaries/index.md)github のサンプルと Api へのリンクをそれぞれの章の内容を説明します。
 
-## <a name="download-individual-chapters"></a>個々の章のダウンロード
+## <a name="download-individual-chapters"></a>個々 の章をダウンロードします。
 
 <table style="border:0px; box-shadow:0 0px 0px" cellpadding="0" cellspacing="2" border="0" width="85%">
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>第 1 章 Xamarin.Forms 調整がどのようにしますか。</h4>
+    <h4>第 1 章します。 Xamarin.Forms 調整がどのようにしますか。</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter01.md">まとめ</a></td>
@@ -240,5 +240,5 @@ Microsoft Virtual Academy から、優先される電子形式をダウンロー
 
 ## <a name="related-links"></a>関連リンク
 
-- [Microsoft のブログ](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
+- [MS キーを押してブログ](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
 - [最初のエディションのサンプル](https://github.com/xamarin/xamarin-forms-book-samples)

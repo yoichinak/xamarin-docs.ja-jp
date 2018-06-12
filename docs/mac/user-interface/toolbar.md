@@ -1,5 +1,5 @@
 ---
-title: ツールバー
+title: Xamarin.Mac のツールバー
 description: この記事では、Xamarin.Mac アプリケーションのツールバーの扱いについて説明します。 Xcode およびインターフェイスのビルダー、それらをコードに公開して、それらをプログラムによって操作の作成と保守のツールバーを説明します。
 ms.prod: xamarin
 ms.assetid: C8D228CE-C860-47E1-85FD-69864BF91F20
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 729c5c69d80c52047585d1026d7c675f3267f34e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 11c01a2b2378ddc519185996deb78ba5bcbd2d1a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792889"
 ---
-# <a name="toolbars"></a>ツールバー
+# <a name="toolbars-in-xamarinmac"></a>Xamarin.Mac のツールバー
 
 _この記事では、Xamarin.Mac アプリケーションのツールバーの扱いについて説明します。Xcode およびインターフェイスのビルダー、それらをコードに公開して、それらをプログラムによって操作の作成と保守のツールバーを説明します。_
 
@@ -149,7 +150,7 @@ Xcode のインターフェイスのビルダーのツールバーをセット�
 
 ツールバーに項目を追加するには、ツールバーでを選択、**インターフェイス階層**カスタマイズ ダイアログを表示するを原因と、その項目のいずれかをクリックします。 新しい項目を次に、ドラッグ、**ライブラリ インスペクター**を**ツールバー項目の許可**領域。
 
-![ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目](toolbar-images/add01.png "ツールバーの [カスタマイズ] ダイアログ ボックスの 許可されているツールバー項目")
+![ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目](toolbar-images/add01.png "ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目")
 
 新しい項目が既定のツールバーの一部であることを確認するには、ドラッグして、**既定ツールバー項目**領域。 
 

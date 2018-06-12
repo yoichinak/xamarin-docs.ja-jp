@@ -1,5 +1,5 @@
 ---
-title: タブ ページ
+title: Xamarin.Forms タブ ページ
 description: Xamarin.Forms TabbedPage は、詳細領域へのコンテンツの読み込みの各タブで、タブより大きな詳細領域の一覧で構成されます。 この記事では、ページのコレクションを移動する、TabbedPage を使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 7af9248e706e615ea3e693a58a5f7664e8dc4daa
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
-ms.translationtype: HT
+ms.openlocfilehash: b7e3eb8539704fccd713af45490c35a6196b072f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847813"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240380"
 ---
-# <a name="tabbed-page"></a>タブ ページ
+# <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms タブ ページ
 
 _Xamarin.Forms TabbedPage は、詳細領域へのコンテンツの読み込みの各タブで、タブより大きな詳細領域の一覧で構成されます。この記事では、ページのコレクションを移動する、TabbedPage を使用する方法を示します。_
 
@@ -98,7 +98,7 @@ public class MainPageCS : TabbedPage
 > [!NOTE]
 > [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) UI 仮想化をサポートしていません。 そのため、パフォーマンスが受ける場合、`TabbedPage`多数の子要素が含まれています。
 
-次のスクリーン ショットに示さ、 `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)上に表示されるインスタンス、*今日*] タブ。
+次のスクリーン ショットに示さ、 `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)上に表示されるインスタンス、*今日*タブ。
 
 ![](tabbed-page-images/today-page.png "TabbedPage コンテンツ ページ")
 
@@ -232,7 +232,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-各タブが表示されます、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の系列を使用する[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)タブのデータを表示するインスタンス。次のスクリーン ショットの内容を表示する、 *Tamarin* ] タブ。
+各タブが表示されます、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の系列を使用する[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)タブのデータを表示するインスタンス。次のスクリーン ショットの内容を表示する、 *Tamarin*タブ。
 
 ![](tabbed-page-images/tab3.png "テンプレートを使用して TabbedPage を設定します。")
 

@@ -1,15 +1,17 @@
 ---
 title: Objective C ライブラリのバインド
+description: このドキュメントでは、バインディングを作成する c# Objective C コードと、イベント、メソッド、カスタム コントロールをバインドする方法を説明する方法の大まかな概要を説明します。
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: fddde9dbef0e4dfb03707a970d4263983d4cf85d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f7c4be4254ce3e3301c0c1e98d37134f5524c23b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782321"
 ---
 # <a name="binding-objective-c-libraries"></a>Objective C ライブラリのバインド
 
@@ -1083,7 +1085,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-C# の開発者に、バインドをより良いさせるためには、通常を提供しますを受け取るメソッド、`NSAction`パラメーターの代わりに使用するには、c# のデリゲートとラムダ、`Target+Selector`です。 非表示には通常これを行うには、`SetTarget`でフラグを設定することによって、 [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)属性と が次のように、新しいヘルパー メソッドを公開します。
+C# の開発者に、バインドをより良いさせるためには、通常を提供しますを受け取るメソッド、`NSAction`パラメーターの代わりに使用するには、c# のデリゲートとラムダ、`Target+Selector`です。 非表示には通常これを行うには、`SetTarget`でフラグを設定することによって、 [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)属性とが次のように、新しいヘルパー メソッドを公開します。
 
 ```csharp
 // API.cs
