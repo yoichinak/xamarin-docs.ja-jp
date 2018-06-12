@@ -6,12 +6,12 @@ ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 82a89309e6462462471f42c3504d109ff0722917
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781034"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806791"
 ---
 # <a name="using-net-standard-libraries-to-share-code"></a>標準の .NET ライブラリを使用してコードを共有するには
 
@@ -37,7 +37,7 @@ ms.locfileid: "34781034"
 
   **注:** このテンプレートの名前は、Visual Studio for Mac の将来のバージョンで `.NET Standard` に変更されます。
 
-  ![.NET Standard ライブラリの作成](net-standard-images/vsm01.png)
+  ![.NET Core クラス ライブラリを作成](net-standard-images/vsm01.png "新しい .NET コア クラス ライブラリを作成します。")
 
 2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。 依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
 
@@ -47,7 +47,7 @@ ms.locfileid: "34781034"
 
 .NET Standardライブラリの設定は、このスクリーン ショットで示されているように、プロジェクトを右クリックして`Options`を選択すことによって表示および変更できます。
 
-![プロジェクトのオプションでの標準 .NET ターゲット フレームワークを編集します。](net-standard-images/vsm03.png)
+![プロジェクトのオプションでの標準 .NET ターゲット フレームワークを編集](net-standard-images/vsm03.png "プロジェクトのオプションで標準的なターゲットの .NET Framework のバージョンは編集")
 
 バージョンを変更する内部`netstandard`変更することによって、`Target Framework`ドロップダウンの値。
 
@@ -67,17 +67,17 @@ ms.locfileid: "34781034"
 
 1. 新しいプロジェクトの追加ダイアログ ボックスで、`.NET Standard`カテゴリし選択`Class Library(.NET Standard)`です。
 
-  ![](net-standard-images/vs01.png ".NET Standard クラス ライブラリを新規作成します。")
+  ![新しい .NET 標準的なクラス ライブラリを作成する](net-standard-images/vs01.png "新しい標準的な .NET クラス ライブラリの作成")
 
 2. .NET Standard ライブラリ プロジェクトは、ソリューション エクスプ ローラーで示されているように表示されます。 依存関係ノードは、ライブラリが [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) を使用していることを示します。
 
-  ![](net-standard-images/vs02.png "ソリューション内の.NET Standard プロジェクト")
+  ![プロジェクト フォルダー内の NETStandard.Library](net-standard-images/vs02.png ".NET 標準的なソリューション内のプロジェクト")
 
 #### <a name="editing-net-standard-library-settings"></a>.NET Standard ライブラリの設定の編集
 
 .NET Standard ライブラリの設定は、このスクリーンショットで示されているように、プロジェクトを右クリックし、`Properties` を選択することによって表示および変更できます。
 
-![](net-standard-images/vs03.png ".NET 標準ライブラリを参照するには、他のプロジェクトと同じ方法")
+![プロジェクトのプロパティで標準のターゲット フレームワークを .NET の編集](net-standard-images/vs03.png ".NET 標準ライブラリを参照するには、他のプロジェクトと同じ方法")
 
 バージョンを変更する内部`netstandard`変更することによって、`Target Framework`ドロップダウンの値。
 
@@ -87,7 +87,7 @@ ms.locfileid: "34781034"
 
 .NET Standard ライブラリが作成されたら、通常の参照を追加する同じ方法で任意の互換性のあるアプリケーションまたはライブラリ プロジェクトからへの参照を追加できます。 Visual Studio で参照ノードを右クリックして選択`Add Reference...`に切り替えて、`Solution : Projects`ようにタブします。
 
-![](net-standard-images/vs04.png "Visual Studio で、[参照] ノードを右クリックして参照の追加... しように、ソリューションのプロジェクトのタブに切り替えます")
+![.NET 標準ライブラリを参照する](net-standard-images/vs04.png "Visual Studio で参照ノードを右クリックし、[参照の追加...] のように、ソリューションのプロジェクトタブに切り替えます")
 
 -----
 
