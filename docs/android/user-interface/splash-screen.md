@@ -1,6 +1,6 @@
 ---
 title: スプラッシュ スクリーン
-description: Android アプリでは、起動、特に、アプリが最初に起動した場合、デバイス上に時間がかかります。 スプラッシュ スクリーンが開始表示をユーザーまたはブランド化を示すために進行状況をセットアップします。
+description: Android アプリでは、起動、特に、アプリが最初に起動した場合、デバイス上に時間がかかります。 スプラッシュスクリーンは起動の進捗状態やブランドを表示します。
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
