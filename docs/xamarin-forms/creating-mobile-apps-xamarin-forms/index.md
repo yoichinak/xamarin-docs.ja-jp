@@ -44,7 +44,7 @@ Microsoft Virtual Academy から、優先される電子形式をダウンロー
 <table style="border:0px; box-shadow:0 0px 0px" cellpadding="0" cellspacing="2" border="0" width="85%">
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>第 1 章します。 Xamarin.Forms 調整がどのようにしますか。</h4>
+    <h4>第 1 章。 Xamarin.Forms の調整をどのようにしますか。</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf">PDF をダウンロードします。</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter01.md">まとめ</a></td>
@@ -240,5 +240,5 @@ Microsoft Virtual Academy から、優先される電子形式をダウンロー
 
 ## <a name="related-links"></a>関連リンク
 
-- [MS キーを押してブログ](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
+- [Microsoft のブログ](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
 - [最初のエディションのサンプル](https://github.com/xamarin/xamarin-forms-book-samples)
