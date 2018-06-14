@@ -12,10 +12,11 @@ ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153198"
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
-_Android アプリでは、起動、特に、アプリが最初に起動した場合、デバイス上に時間がかかります。スプラッシュ スクリーンが開始表示をユーザーまたはブランド化を示すために進行状況をセットアップします。_
+_Android アプリでは、起動、特に、アプリが最初に起動した場合、デバイス上に時間がかかります。スプラッシュスクリーンは起動の進捗状態やブランドを表示します。_
 
 
 ## <a name="overview"></a>概要
