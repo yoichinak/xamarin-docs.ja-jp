@@ -26,8 +26,8 @@ _Azure Active Directory B2C は、コンシューマー向けの web アプリ�
 
 Azure Active Directory B2C は、コンシューマー向けのアプリケーションのための ID 管理サービスで、コンシューマーがアプリケーションに次のような方法でサインインできるようにします。
 
-- 既存のソーシャル アカウント (Microsoft、Google、Facebook、Amazon、LinkedIn) の使用。
-- 新しい資格情報 (電子メール アドレスとパスワード、またはユーザー名とパスワード) の作成。これらの資格情報は *ローカル* アカウント といわれます。
+- 既存のソーシャル アカウント (Microsoft、Google、Facebook、Amazon、LinkedIn) を使用する。
+- 新しい資格情報 (電子メール アドレスとパスワード、またはユーザー名とパスワード) を作成する。これらの資格情報は *ローカル* アカウント といわれます。
 
 モバイル アプリケーションに Azure Active Directory B2C ID 管理サービスを統合するための手順は次のとおりです。
 
@@ -39,7 +39,7 @@ Azure Active Directory B2C は、コンシューマー向けのアプリケー�
 > [!NOTE]
 > モバイル アプリケーションへの Azure Active Directory B2C の ID 管理の統合だけでなく、モバイル アプリケーションへの Azure Active Directory の ID 管理の統合にも MSAL を使用することができます。これは、[アプリケーション登録ポータル](https://apps.dev.microsoft.com/) でモバイル アプリケーションを Azure Active Directory に登録することによって可能です。登録処理では、アプリケーションを一意に識別する **アプリケーション ID** を割り当て、それを MSAL を使用する際に指定する必要があります。詳細については、[v2.0 エンドポイントでアプリを登録する方法](/azure/active-directory/develop/active-directory-v2-app-registration/)、および[Microsoft Authentication Library を使ったモバイル アプリ認証](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) Xamarin ブログを参照してください。
 
-MSAL では、デバイスの web ブラウザーを使用して、認証を行います。 これにより、ユーザーは各デバイスにつき1回のサインインが必要なだけになるので、アプリケーションのユーザビリティが向上します。またアプリケーションのサインインと認証フローのコンバージョンレートが向上します。デバイスのブラウザーでは、強化されたセキュリティも提供します。 ユーザーが認証プロセスを完了させると、web ブラウザーのタブからアプリケーションに制御が返されます。これは、認証プロセスから返されるリダイレクト URL にカスタム URL スキームを登録することによって実現されます。そして、その送信されたカスタム URL を検知して処理します。カスタム URL スキームの選択の詳細については、[ネイティブ アプリのリダイレクト URI を選択する](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/) を参照してください。
+MSAL では、デバイスの web ブラウザーを使用して、認証を行います。 これにより、ユーザーは各デバイスにつき1回のサインインで済むようになるので、アプリケーションのユーザビリティが向上します。またアプリケーションのサインインと認証フローのコンバージョンレートが向上します。デバイスのブラウザーでは、強化されたセキュリティも提供します。 ユーザーが認証プロセスを完了させると、web ブラウザーのタブからアプリケーションに制御が返されます。これは、認証プロセスから返されるリダイレクト URL にカスタム URL スキームを登録することによって実現されます。そして、その送信されたカスタム URL を検知して処理します。カスタム URL スキームの選択の詳細については、[ネイティブ アプリのリダイレクト URI を選択する](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/) を参照してください。
 
 > [!NOTE]
 > オペレーティング システムにカスタム URL スキームを登録するメカニズムと、そのスキームを処理するためのメカニズムは、各プラットフォームに固有です。
@@ -56,7 +56,7 @@ Azure Active Directory テナントには、さまざまな種類の複数のポ
 
 ## <a name="setup"></a>セットアップ
 
-[Microsoft Authentication Library (MSAL) NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Identity.Client/) は、Xamarin.Forms ソリューション内の各プラットフォーム プロジェクトとポータブル クラス ライブラリ (PCL) または .NETStandard プロジェクトに追加する必要があります。 次のセクションでは、MSAL を使用して、モバイル アプリケーションから Azure Active Directory B2C テナントに通信するための追加のセットアップ手順を説明します。
+[Microsoft Authentication Library (MSAL) NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Identity.Client/) は、Xamarin.Forms ソリューション内のポータブル クラス ライブラリ (PCL) およびプラットフォーム プロジェクトに追加する必要があります。 次のセクションでは、MSAL を使用して、モバイル アプリケーションから Azure Active Directory B2C テナントに通信するための追加のセットアップ手順を説明します。
 
 ### <a name="portable-class-library"></a>ポータブル クラス ライブラリ
 
@@ -64,8 +64,7 @@ MSAL を使用する PCL には、Profile7 を使用して再ターゲットす�
 
 ### <a name="ios"></a>iOS
 
-iOS の場合は、Azure Active Directory B2C に登録されているカスタム URL スキームを
-次のスクリーン ショットに示すように **Info.plist** に登録する必要があります。
+Ios の場合は、Azure Active Directory B2C に登録されているカスタムの URL スキームに登録する必要があります**Info.plist**の次のスクリーン ショットに示すようにします。
 
 ![](azure-ad-b2c-images/customurl-ios.png "iOS でカスタム URL スキームを登録する。")
 
@@ -108,7 +107,7 @@ Android では、Azure Active Directory B2C に登録されているカスタム
 </application>
 ```
 
-Azure Active Directory B2C は、認証要求が完了すると、登録されたリダイレクト URL にリダイレクトします。その URL はカスタム スキームを使用しているため、Android がモバイル アプリケーションを起動した時に、起動パラメータとしてその URL が渡され、それを `microsoft.identity.client.BrowserTabActivity` によって処理するということになります。なお、`data android:scheme` プロパティは、Azure Active Directory B2C のアプリケーションに登録されているカスタム URL スキームを設定し、`android:host` プロパティにはカスタム URL のホスト部分を設定する必要があります。
+Azure Active Directory B2C は、認証要求が完了すると、登録されたリダイレクト URL にリダイレクトします。その URL はカスタム スキームを使用しているため、Android がモバイル アプリケーションを起動した時に、起動パラメータとしてその URL が渡され、それを `microsoft.identity.client.BrowserTabActivity` によって処理するということになります。なお、`data android:scheme` プロパティは、Azure Active Directory B2C のアプリケーションに登録されているカスタム URL スキームを設定する必要があります。
 
 さらに、`MainActivity` クラスは次のコードサンプルのように修正する必要があります。
 
@@ -140,7 +139,7 @@ namespace TodoAzure.Droid
 
 ```
 
-`OnCreate` メソッドで `App.UiParent` プロパティに `UIParent` インスタンスを割り当てるように変更します。これにより、現在のアクティビティのコンテキストでの認証フローが発生するようにします。
+`OnCreate` メソッドは、`App.UiParent` プロパティに `UIParent` インスタンスを割り当てることによって変更します。これにより、現在のアクティビティのコンテキストで認証フローが発生するようにします。
 
 `OnActivityResult` メソッド内のコードは、認証ワークフローの対話型の部分が終了した後は、MSAL に制御が戻るようにしています。
 
@@ -164,8 +163,7 @@ ADB2CClient = new PublicClientApplication(Constants.ClientID, Constants.Authorit
 
 ![](azure-ad-b2c-images/login.png "ログイン ページ")
 
-ソーシャル ID プロバイダーまたはローカル アカウントでのサインインが使用可能です。上で示すように Microsoft、Google、Facebook
- をソーシャル ID プロバイダーとして使用でき、他の ID プロバイダーも使用できます。
+サインインのソーシャル id プロバイダーまたはローカル アカウントを使用して、許可されます。 Microsoft、Google、Facebook、上記のように組み合わせて使用する場合、ソーシャル id プロバイダーとして他の id プロバイダーこともできます。
 
 次のコードサンプルは、サインイン処理を呼び出す方法を示しています。
 
