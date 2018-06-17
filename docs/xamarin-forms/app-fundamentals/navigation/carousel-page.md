@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms 手荷物の受け取り場所 ページ
+title: Xamarin.Forms CarouselPage
 description: Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのページ間を移動するユーザーが横方向にスワイプできますページです。 この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35241752"
 ---
-# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms 手荷物の受け取り場所 ページ
+# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms CarouselPage
 
 _Xamarin.Forms CarouselPage、ギャラリーなどのコンテンツのページ間を移動するユーザーが横方向にスワイプできますページです。この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。_
 
