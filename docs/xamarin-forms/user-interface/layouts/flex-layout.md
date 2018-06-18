@@ -536,87 +536,87 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 `Basis`プロパティは、[`FlexBasis`](xref:Xamarin.Forms.FlexBasis) 型の構造体です。 サイズはデバイスに依存しない単位、または `FlexLayout` のサイズの割合のどちらかで指定することができます。 `Basis` プロパティの規定値は、静的プロパティの `FlexBasis.Auto` で、これは子に要求した幅や高さが使用されることを意味します。 
 
-コードでは、設定することができます、`Basis`プロパティを`Label`という`label`を次のように 40 のデバイスに依存しない単位。
+コードでは、以下のように `label` という名前の `Label` の `Basis` プロパティに 40 デバイス非依存単位を設定することができます。
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(40, false));
 ```
 
-2 番目の引数、`FlexBasis`コンス トラクターの名前は`isRelative`サイズは相対値かどうかを示します (`true`) または絶対 (`false`)。 引数が、既定値は`false`ので、次のコードを使用することもできます。
+`FlexBasis` コンストラクタの 2 番目の引数は `isRelative` という名前で、相対サイズ（`true`）にするか絶対サイズ（`false`）にするかどうかを示します。 この引数は規定値として `false` を持っています。したがって次のコードのように書くこともできます。
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(40));
 ```
 
-暗黙的な変換`float`に`FlexBasis`が定義されている場合は、さらに簡略化できるようにします。
+`float` から `FlexBasis` への暗黙的な変換が定義されているので、より簡略的に記述できます。
 
 ```csharp
 FlexLayout.SetBasis(label, 40);
 ```
 
-25% にサイズを設定することができます、`FlexLayout`次のように親。
+以下のように、親の `FlexLayout` の 25% にサイズを設定できます。
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 ```
 
-この小数部の値は、0 ~ 1 の範囲でなければなりません。
+この小数値は 0 ~ 1 の範囲でなければなりません。
 
-XAML では、デバイスに依存しない単位のサイズの数値を使用できます。
+XAML では、デバイス非依存単位のサイズの数値を使用できます。
 
 ```xaml
 <Label ... FlexLayout.Basis="40" ... />
 ```
 
-または、範囲 0 ~ 100% の割合を指定できます。
+また 0 ~ 100% の範囲も指定できます。
 
 ```xaml
 <Label ... FlexLayout.Basis="25%" ... />
 ```
 
-**ごとの実験**のページ、 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルを試すことができます、`Basis`プロパティです。 ページには、ラップされた 5 つの列が表示されます。`Label`要素が背景と前景の色を交互に使用します。 2 つ`Slider`要素を指定できます`Basis`、2 番目と 4 番目の値`Label`:。
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルの **Basis Experiment** のページでは、`Basis` プロパティを試すことができます。 このページは交互に異なる背景色と前景色を持つ 5 つの `Label` 要素の折り返しする列が表示されます。 2 つの `Slider` 要素は 2 番目と 4 番目の `Label` に `Basis` 値を指定します。
 
-[![ベース ページの実験](flex-layout-images/BasisExperiment.png "ベース ページのテスト")](flex-layout-images/BasisExperiment-Large.png#lightbox)
+[![The Basis Experiment Page](flex-layout-images/BasisExperiment.png "The Basis Experiment Page")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-左側にある iOS のスクリーン ショットは、2 つを示しています。`Label`デバイス非依存単位の高さを指定された要素。 全体の高さの割合の高さを指定されている Android の画面を表示、`FlexLayout`です。 場合、`Basis`子の高さに 100% に設定されて、`FlexLayout`とは次の列にラップし、UWP スクリーン ショットに示すように、その列の全体の高さを占めます 5 つの子が行に配置された場合のように表示されます。、5 つの列で実際に配置されますが、します。
+左の iOS のスクリーンショットは、2 つの `Label` 要素がデバイス非依存単位で高さが与えられていること示しています。 Android のスクリーンショットは、それらの要素が `FlexLayout` の 合計の高さに対する割合での高さが与えられていることを示しています。 `Basis` に 100% がセットされた場合、UWP のスクリーンショットで示すように、子は `FlexLayout` の高さになり、次の列に折り返され、その列の全体の高さを占有します。さも 5 つの子が行に配置されたかのように見えますが、それらは実際は 5 つの列に配置されています。
 
-### <a name="the-grow-property"></a>拡張プロパティ
+### <a name="the-grow-property"></a>Grow プロパティ
 
-[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty)接続されているバインド可能なプロパティの型は`int`します。 既定値は 0、および値が 0 以上にする必要があります。
+[`Grow`](xref:Xamarin.Forms.FlexLayout.GrowProperty)添付プロパティは `int` 型です。 規定値は 0 でこの値は 0以上でなければなりません。
 
-`Grow`プロパティがときときに役割を果たす、`Wrap`プロパティに設定されている`NoWrap`あり、子の行の幅未満の幅の合計、 `FlexLayout`、または子の列がより短い高さ、`FlexLayout`です。 `Grow`プロパティが子の間で残された領域を割り当てる方法を示します。
+`Grow` プロパティは、`Wrap` プロパティに `NoWrap` が設定されていて、1行の子の合計幅が `FlexLayout` の幅より小さい場合、または1列の子の合計の高さが `FlexLayout` の高さより低い場合に機能します。 `Grow` プロパティは子に余った領域を分配する方法を示します。
 
-**実験の拡張**5 つのページ`Label`列と 2 つの要素の色を交互に並べた`Slider`要素は、調整することができます、 `Grow` 、2 番目と 4 番目のプロパティ`Label`です。 一番左にある iOS のスクリーン ショットは、既定値を示しています。 `Grow` 0 のプロパティ。
+**Grow Experiment** ページでは、交互に異なる色の 5 つの `Label`要素が列に配置されています。そして 2 つの `Slider` で 2 番目と 4 番目の `Label` の `Grow` プロパティを調整できます。 一番左の iOS のスクリーンショットは、`Grow` プロパティが 0 であるデフォルトの状態を示しています。
 
-[![拡大実験ページ](flex-layout-images/GrowExperiment.png "拡大実験 ページ")](flex-layout-images/GrowExperiment-Large.png#lightbox)
+[![The Grow Experiment Page](flex-layout-images/GrowExperiment.png "The Grow Experiment Page")](flex-layout-images/GrowExperiment-Large.png#lightbox)
 
-任意の 1 つの子には、正の値を指定した場合`Grow`値、Android のスクリーン ショットに示すように、その子が残りのすべての領域がします。 この領域は、次の 2 つ以上の子の間で割り当てることもできます。 UWP スクリーン ショットでは、 `Grow` 2 番目のプロパティ`Label`0.5 に設定されているときに、 `Grow` 4 番目のプロパティ`Label`1.5 では、4 つ目は、これは、 `Label` 3 倍の 2 つ目のとして残された領域の`Label`.
+ある子要素に正の `Grow` 値が設定されている場合、Android のスクリーンショットで示すように、その子要素は残りの全ての領域を取得します。 この領域は2つ以上の子の間で割り当てることもできます。 UWP のスクリーンショットでは、2 番目の `Label` の `Grow` プロパティに 0.5 を、4 番目の `Label` の `Grow` プロパティに 1.5 を設定しています。それによって 4 番目の `Label` に 2 番目の `Label` の 3 倍の領域が残りの領域から与えられます。
 
-子ビューがその領域を使用する方法は、子の特定の種類によって異なります。 `Label`の合計領域内でテキストを配置することができます、`Label`プロパティを使用して`HorizontalTextAlignment`と`VerticalTextAlignment`です。
+子ビューがその領域をどのように使用するかは、子の特定の型によって異なります。 `Label` では、テキストは `HorizontalTextAlignment` と `VerticalTextAlignment` のプロパティを使って `Label` の合計領域内に配置することができます。
 
 <a name="shrink" />
 
-### <a name="the-shrink-property"></a>圧縮プロパティ
+### <a name="the-shrink-property"></a>Shrink プロパティ
 
-[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty)接続されているバインド可能なプロパティの型は`int`します。 既定値は 1 であり、値が 0 以上にする必要があります。
+[`Shrink`](xref:Xamarin.Forms.FlexLayout.ShrinkProperty)添付プロパティは `int` 型です。 規定値は 1 でその値は 0 以上でなければなりません。
 
-`Shrink`プロパティは、役割を果たすときに、`Wrap`プロパティに設定されている`NoWrap`子の行の集計の幅がの幅を超えると、`FlexLayout`子の 1 つの列の集計の高さがより大きいか、高さ、`FlexLayout`です。 通常、 `FlexLayout` constricting のサイズによってこれらの子が表示されます。 `Shrink`プロパティでく子が優先度を指定で、フル サイズで表示されています。
+`Shrink` プロパティは、`Wrap` プロパティに `NoWrap` が設定されていて、1行の子の合計幅が `FlexLayout` の幅よりも大きくなる場合、または1列の子の合計の高さが `FlexLayout` の高さより大きくなる場合に機能します。 通常、`FlexLayout` は子のサイズを収縮させることで子を表示しようとします。 `Shrink`プロパティは、子がフルサイズで表示されることに優先度を与えることができます。
 
-**圧縮実験**ページを作成、 `FlexLayout` 5 つの単一行を持つ`Label`をより多くの領域を必要とする子、`FlexLayout`幅。 左側にある iOS スクリーン ショットはすべて、`Label`既定値は 1 を持つ要素。
+**Shrink Experiment** ページは、`FlexLayout` の幅より大きい領域を要求する 5 つの `Label` の子要素を1行で持つ `FlexLayout` を生成します。 左の iOS のスクリーンショットでは、全て規定値 1 の `Label` 要素を表示しています。
 
-[![圧縮は、ページを試す](flex-layout-images/ShrinkExperiment.png "圧縮 ページを試してみる")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
+[![The Shrink Experiment Page](flex-layout-images/ShrinkExperiment.png "The Shrink Experiment Page")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-Android のスクリーン ショット、 `Shrink` 、2 番目の値`Label`に 0 に設定されている`Label`の幅全体に表示されます。 また、4 番目`Label`が与えられます、 `Shrink` 、1 よりも大きい値し、が圧縮されます。 UWP スクリーン ショットは、両方を示しています`Label`要素が指定されている、`Shrink`許可するように、フル サイズで表示される場合は、その 0 の値が可能です。
+Android のスクリーンショットでは、2 番目の `Label` の `Shrink` 値に 0 が設定され、その `Label` はフルサイズで表示されています。 また、4 番目の `Label` には `Shrink` に 1 より大きい値が与えられ、それは収縮しています。 UWP のスクリーンショットは、両方の `Label` 要素に `Shrink` 値 0 が与えられ、可能であれば、それらをフルサイズで表示できることを示しています。
 
-両方を設定することができます、`Grow`と`Shrink`状況の子の集計サイズ可能性がありますものサイズよりも大きいか小さいに対応する値、`FlexLayout`です。
+子の合計サイズが `FlexLayout` のサイズより小さくなったり大きくなったりすることがあるような状況に対応するために、`Grow` と `Shrink` 値を両方設定することができます。
 
-## <a name="css-styling-with-flexlayout"></a>CSS スタイル FlexLayout を
+## <a name="css-styling-with-flexlayout"></a>FlexLayout を使った CSS スタイル
 
-使用することができます、 [CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md)で Xamarin.Forms 3.0 で導入された機能`FlexLayout`します。 **CSS カタログ アイテム**のページ、 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルのレイアウトの重複、**カタログ アイテム** ページで、ですが、CSSさまざまなスタイルのスタイル シート:
+`FlexLayout` に関連して Xamarin.Forms 3.0 に導入された [CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md) を使うことができます。 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルの **CSS Catalog Items** ページは、**Catalog Items** ページのレイアウトを複写したものですが、多くのスタイルに CSS スタイルシートを使っています。
 
-[![CSS のカタログ アイテム ページ](flex-layout-images/CssCatalogItems.png "CSS のカタログ項目ページ")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
+[![The CSS Catalog Items Page](flex-layout-images/CssCatalogItems.png "The CSS Catalog Items Page")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-元**CatalogItemsPage.xaml**ファイルには 5 つ`Style`内の定義、`Resources`セクション 15 で`Setter`オブジェクト。 **CssCatalogItemsPage.xaml**がまで減少した 2 つのファイル`Style`あり、4 つだけ定義`Setter`オブジェクト。 これらのスタイルは、Xamarin.Forms CSS スタイル処理の機能は、現在サポートされていないプロパティの CSS スタイル シートを補完します。
+オリジナルの **CatalogItemsPage.xaml** ファイルには 5 つの `Style` があり、自身の `Resources` セクション内に 15 の `Setter` オブジェクトが定義されています。 **CssCatalogItemsPage.xaml** ファイルでは、4 つだけの `Setter` オブジェクトが定義された 2 つの `Style` に減少しています。 これらのスタイルは、Xamarin.Forms CSS スタイル機能が現在サポートしていないプロパティのために、その CSS スタイルシートを補っています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -682,13 +682,13 @@ Android のスクリーン ショット、 `Shrink` 、2 番目の値`Label`に 
 </ContentPage>
 ```
 
-最初の行で CSS スタイル シートが参照されている、`Resources`セクション。
+`Resources` セクションの最初の行で CSS スタイルシートを参照しています。
 
 ```xaml
 <StyleSheet Source="CatalogItemsStyles.css" />
 ```
 
-次の 3 つの項目ごとに 2 つの要素を含めることにも注意してください`StyleClass`設定。
+3 つの各アイテム内の 2 つの要素に `StyleClass` 設定が含まれていることにも注目してください。
 
 ```xaml
 <Label Text="Seated Monkey" StyleClass="header" />
@@ -696,7 +696,7 @@ Android のスクリーン ショット、 `Shrink` 、2 番目の値`Label`に 
 <Label StyleClass="empty" />
 ```
 
-これらのセレクターを参照してください、 **CatalogItemsStyles.css**スタイル シート。
+これらは **CatalogItemsStyles.css** スタイルシートのセレクタを参照しています。
 
 ```css
 frame {
@@ -733,15 +733,15 @@ button {
 }
 ```
 
-いくつか`FlexLayout`接続されているバインド可能なプロパティがここで参照します。 `label.empty`セレクターが表示されます、`flex-grow`属性は、空のスタイルを`Label`上記空白領域の一部を提供する、`Button`です。 `image`セレクターを含む、`order`属性および`align-self`に対応する属性`FlexLayout`バインド可能なプロパティを添付します。
+様々な `FlexLayout` の添付プロパティがここを参照しています。 `label.empty`セレクタでは、`flex-grow` 属性が確認できますが、これは `Button` の上の空白を埋めるために空の `Label` をスタイルしています。 `image`セレクタは、`order`属性と `align-self` 属性を含んでおり、その両方が `FlexLayout` の添付プロパティに対応しています。
 
-直接プロパティを設定するにはことを確認した、`FlexLayout`の子に接続されているバインド可能なプロパティを設定して、`FlexLayout`です。 または、これらのプロパティを間接的に使用して XAML ベースの従来のスタイルまたは CSS スタイルを設定することができます。 調べることや、これらのプロパティを理解はどのようなことが重要です。 これらのプロパティは、新機能により、`FlexLayout`真に柔軟です。 
+これまで `FlexLayout` 上に直接プロパティを設定できることと、`FlexLayout` の子に添付プロパティを設定できること、 またこれらのプロパティに従来の XAML に基づくスタイルや CSS スタイルを使って間接的に設定できることを見てきました 重要なことはこれらのプロパティを知って理解することです。 これらのプロパティは `FlexLayout` を真に柔軟にさせます。 
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>Xamarin.University で FlexLayout
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin.Forms 3.0 は、レイアウトをでフレックス[Xamarin 大学](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 Flex Layout, by [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>関連リンク
 
