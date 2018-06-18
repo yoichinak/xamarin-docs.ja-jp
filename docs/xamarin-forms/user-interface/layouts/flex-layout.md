@@ -61,17 +61,17 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) は Xamarin.Forms 
 
 iOS、Android、および Universal Windows Platform で実行したページを次に示します。
 
-[![The Simple Stack Page](flex-layout-images/SimpleStack.png "The Simple Stack Page")](flex-layout-images/SimpleStack-Large.png#lightbox)
+[![Simple Stack ページ](flex-layout-images/SimpleStack.png "Simple Stack ページ")](flex-layout-images/SimpleStack-Large.png#lightbox)
 
  **SimpleStackPage.xaml** ファイルに `FlexLayout` の 3 つのプロパティが示されています。
 
 - [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) プロパティは、[ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) 列挙型の値が設定されます。既定値は `Row` です。このプロパティを `Column` に設定すると、 `FlexLayout` の子はアイテムを 1 つの列に配置します。
 
-    `FlexLayout` のアイテムが1列で配置されたとき、 `FlexLayout` は垂直の _主軸_ と水平の _交差軸_ を持つ と言います。
+    `FlexLayout` のアイテムが1列で配置されたとき、 `FlexLayout` は垂直の _主軸_ と水平の _交差軸_ を持つとされます。
 
 - [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) プロパティは、[ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) 型で、交差軸上にアイテムを配置する方法を指定します。 `Center` オプションは、各アイテムを水平方向に中央揃えにします。
 
-    もしこのタスクに `FlexLayout` ではなく `StackLayout` を使用していたら、各アイテムの `HorizontalOptions` を `Center` に設定することで、全てのアイテムを中央揃えにする必要があったでしょう。 `HorizontalOptions` プロパティは、 `FlexLayout` の子では動作しませんが、 1つの `AlignItems` プロパティだけで同じ目標を達成できます。必要であれば、 `AlignSelf` 添付プロパティを使って、個別のアイテムの `AlignItems` プロパティを上書きできます。
+    もしこのタスクに `FlexLayout` ではなく `StackLayout` を使用していたら、各アイテムの `HorizontalOptions` を `Center` に設定することで、全てのアイテムを中央揃えにする必要があったでしょう。 `HorizontalOptions` プロパティは、 `FlexLayout` の子では動作しませんが、 1つの `AlignItems` プロパティだけで同じ目標を達成できます。必要であれば、 `AlignSelf` の添付されたバインド可能なプロパティを使って、個別のアイテムの `AlignItems` プロパティを上書きできます。
 
     ```xaml
     <Label Text="FlexLayout in Action"
@@ -83,7 +83,7 @@ iOS、Android、および Universal Windows Platform で実行したページを
 
 - [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) プロパティは、 [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify) 型で、主軸上にアイテムを配置する方法を指定します。 `SpaceEvenly` オプションは、全ての垂直の余白を全てのアイテム間と最初のアイテムの上と最後のアイテムの下とで均等に割り当てます。
 
-    もし `StackLayout` を使用していたら、同様の効果を実現するために、各アイテムの `VerticalOptions` プロパティに `CenterAndExpand` を設定する必要があったでしょう。しかし `CenterAndExpand` オプションは、最初のアイテムの前と最後のアイテムの後の余白の2倍の余白を各アイテム間に割り当ててしまいます。 `FlexLayout` の `JustifyContent` プロパティ に `SpaceAround` を設定することで、 `VerticalOptions` の  `CenterAndExpand` オプションを再現できます。
+    もし `StackLayout` を使用していたら、同様の効果を実現するために、各アイテムの `VerticalOptions` プロパティに `CenterAndExpand` を設定する必要があったでしょう。しかし `CenterAndExpand` オプションは、最初のアイテムの前と最後のアイテムの後の余白の2倍の余白を各アイテム間に割り当ててしまいます。 `FlexLayout` の `JustifyContent` プロパティを `SpaceAround` に設定することで、 `VerticalOptions` の `CenterAndExpand` オプションを再現できます。
 
 これらの `FlexLayout` プロパティは、下にある **[バインド可能なプロパティの詳細](#bindable-properties)** セクションでより詳しく説明します。
 
@@ -118,7 +118,7 @@ iOS、Android、および Universal Windows Platform で実行したページを
 
 `JustifyContent` プロパティは、各アイテムが同じ量の空白によって囲まれるように、主軸（水平方向軸）の余った領域を割り当てます。
 
-次のコードビハインド ファイルでは、サンプルの photos コレクションにアクセスし、 `FlexLayout` の `Children` コレクションに追加しています。
+次の分離コード ファイルでは、サンプル写真のコレクションにアクセスし、 `FlexLayout` の `Children` コレクションに追加します。
 
 ```csharp
 public partial class PhotoWrappingPage : ContentPage
@@ -188,7 +188,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 次に 3 つのプラットフォームで実行されたプログラムを示します。これは上から下に段階的にスクロールします。
 
-[![The Photo Wrapping Page](flex-layout-images/PhotoWrapping.png "The Photo Wrapping Page")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
+[![Photo Wrapping ページ](flex-layout-images/PhotoWrapping.png "Photo Wrapping ページ")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
 ### <a name="page-layout-with-flexlayout"></a>FlexLayout を使ったページレイアウト
 
@@ -243,7 +243,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ここで、次の 3 つのプラットフォームでの動作を示します。
 
-[![The Holy Grail Layout Page](flex-layout-images/HolyGrailLayout.png "The Holy Grail Layout Page")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
+[![Holy Grail Layout ページ](flex-layout-images/HolyGrailLayout.png "Holy Grail Layout ページ")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
 ナビゲーションと aside エリアは、左側と右側に `BoxView` を使ってレンダリングしています。
 
@@ -251,21 +251,21 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 
 このプログラムでは、次の 3 つのバインド可能な添付プロパティについて説明します。
 
-- `Order` 添付プロパティは、最初の `BoxView` にセットされています。このプロパティは、既定値 0 を持つ整数型です。このプロパティを使ってレイアウトの順序を変更することができます。 一般的に開発者は、ナビゲーション項目と aside 項目より前にページのコンテンツがマークアップに表示されることを好みます。最初の `BoxView` の `Order` プロパティに他の兄弟要素より小さい値を設定すると、その行の最初のアイテムとして表示することができます。同様に、`Order` プロパティに兄弟要素より大きい値を設定することでアイテムを最後に表示させることができます。
+- `Order` のバインド可能な添付プロパティは、最初の `BoxView` にセットされています。このプロパティは、既定値 0 を持つ整数型です。このプロパティを使ってレイアウトの順序を変更することができます。 一般的に開発者は、ナビゲーション項目と aside 項目より前にページのコンテンツがマークアップに表示されることを好みます。最初の `BoxView` の `Order` プロパティに他の兄弟要素より小さい値を設定すると、その行の最初のアイテムとして表示することができます。同様に、`Order` プロパティに兄弟要素より大きい値を設定することでアイテムを最後に表示させることができます。
 
-- `Basis` 添付プロパティは、2 つの `BoxView` に 50 ピクセル幅を与えるために設定されています。このプロパティは、 `FlexBasis` 型で、 `Auto` という名前の `FlexBasis` 型の静的プロパティが定義されている構造体で、`Auto` が既定値となります。`Basis` を使って、ピクセルのサイズまたは主軸上でそのアイテムが占める領域の量を示すパーセンテージを指定することができます。_basis_ を呼ぶ理由は、全ての後続のレイアウトの基本となるアイテムのサイズを指定するためです。
+- `Basis` 添付プロパティは、2 つの `BoxView` に 50 ピクセル幅を与えるために設定されています。このプロパティは、 `FlexBasis` 型で、 `Auto` という名前の `FlexBasis` 型の静的プロパティが定義されている構造体で、`Auto` が既定値となります。`Basis` を使って、ピクセルのサイズまたは主軸上でそのアイテムが占める領域の量を示すパーセンテージを指定することができます。_basis_ と呼ばれる理由は、全ての後続のレイアウトの基本となるアイテムのサイズを指定するためです。
 
-- `Grow` 添付プロパティは、 入れ子の `Layout` と コンテンツを表す子の `Label` に設定されています。このプロパティは `float` 型で、既定値は 0 です。正の値を設定すると、主軸上にある残りの全ての領域が、そのアイテムと正の値の `Grow` を持つ兄弟要素に割り当てられます。その領域は `Grow` の値の比率にしたがって割り当てられます。これは `Grid` のstar 指定にやや似ています。
+- `Grow` プロパティは、 入れ子の `Layout` と コンテンツを表す子の `Label` に設定されています。このプロパティは `float` 型で、既定値は 0 です。正の値を設定すると、主軸上にある残りの全ての領域が、そのアイテムと正の値の `Grow` を持つ兄弟要素に割り当てられます。その領域は `Grow` の値の比率にしたがって割り当てられます。これは `Grid` の星形のプロパティにやや似ています。
 
     最初の `Grow` 添付プロパティは、 入れ子の `FlexLayout` 上に設定されており、この `FlexLayout` が外側の `FlexLayout` 内の未使用の垂直の領域全てを使用することを示しています。2つめの `Grow` 添付プロパティは、コンテンツを表す `Label` 上に設定されており、このコンテンツが 内部の `FlexLayout` の未使用の水平の領域全てを使用することを示します。
 
-    同様に、子のサイズの合計が (折り返ししない) `FlexLayout` のサイズを超える場合に使うことができる `Shrink` 添付プロパティもあります。
+    同様に、子のサイズの合計が (折り返ししない) `FlexLayout` のサイズを超える場合に使うことができる `Shrink` のバインド可能な添付プロパティもあります。
 
 ### <a name="catalog-items-with-flexlayout"></a>FlexLayout を使ったカタログアイテム
 
 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルの **Catalog Items** ページは、水平スクロールによって一連の3匹のサルの写真と説明が表示される点以外は、[CSS フレックス レイアウト ボックス仕様の1.1のセクションの例1](http://www.w3.org/TR/css-flexbox-1/#overview) に似ています。
 
-[![The Catalog Items Page](flex-layout-images/CatalogItems.png "The Catalog Items Page")](flex-layout-images/CatalogItems-Large.png#lightbox)
+[![Catalog Items ページ](flex-layout-images/CatalogItems.png "Catalog Items ページ")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
 3匹のそれぞれのサルは、明示的に高さと幅を与えられた `Frame` に含まれた `FlexLayout` の中に表示します。またそれは、より大きな `FlexLayout` の子となっています。この XAML ファイルでは、`FlexLayout` の子のプロパティのほとんどは、スタイルで指定されており、そのうちの一つ以外は暗黙的なスタイルが使われています。
 
@@ -366,7 +366,7 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 </ContentPage>
 ```
 
-`Image` のための暗黙的なスタイルは、`FlexLayout` の2つの添付プロパティの設定を含みます。:
+`Image` のための暗黙的なスタイルは、`FlexLayout` の2つのバインド可能な添付プロパティの設定を含みます。
 
 ```xaml
 <Style TargetType="Image">
@@ -568,7 +568,7 @@ XAML では、デバイス非依存単位のサイズの数値を使用できま
 <Label ... FlexLayout.Basis="40" ... />
 ```
 
-また 0 ~ 100% の範囲のパーセントも指定できます。
+また 0 ~ 100% の範囲も指定できます。
 
 ```xaml
 <Label ... FlexLayout.Basis="25%" ... />
