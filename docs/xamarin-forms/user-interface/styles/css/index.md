@@ -1,6 +1,6 @@
 ---
 title: カスケード スタイル シート (CSS) を使用して Xamarin.Forms アプリのスタイルを設定
-description: Xamarin.Forms では、カスケード スタイル シート (CSS) を使用してスタイル ビジュアル要素をサポートします。
+description: Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
 ms.technology: xamarin-forms
@@ -17,9 +17,9 @@ ms.locfileid: "34794086"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用して Xamarin.Forms アプリのスタイルを設定
 
-_Xamarin.Forms では、カスケード スタイル シート (CSS) を使用してスタイル ビジュアル要素をサポートします。_
+_Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。_
 
-Xamarin.Forms 3.0 には、CSS を使用してアプリのスタイルを設定する機能が導入されています。 スタイル シートは、1 つまたは複数のセレクターと宣言ブロックで構成される各規則と、規則の一覧で構成されます。 宣言ブロックは、プロパティ、コロン、および値から成る各宣言に、中かっこ内の宣言の一覧で構成されます。 ブロック内の複数の宣言が存在する場合、区切り記号としてセミコロンが挿入されます。 次のコード例は、Xamarin.Forms 一部準拠している CSS を示しています。
+Xamarin.Forms 3.0 には、CSS を使用してアプリのスタイルを設定する機能が導入されています。 スタイル シートは、規則の一覧で構成され、各規則は 1 つまたは複数のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこ内の宣言の一覧で構成され、各宣言はプロパティ・コロン・値から構成されます。ブロック内に複数の宣言が存在する場合、区切り記号としてセミコロンが挿入されます。 次のコード例は、Xamarin.Forms に対応した CSS の一部を示しています。
 
 ```css
 ^contentpage {
@@ -65,10 +65,10 @@ stacklayout>image {
 }
 ```
 
-Xamarin.Forms で CSS スタイル シートが解析され、コンパイル時ではなく、実行時に評価し、スタイル シートが使用するときに再解析します。
+Xamarin.Forms では、CSS スタイル シートはコンパイル時ではなく、実行時に解析・評価され、使用時に再解析されます。
 
 > [!NOTE]
-> 現時点では、すべての XAML のスタイルを持つことが、スタイリング CSS を実行できません。 ただし、XAML のスタイルは、Xamarin.Forms で現在サポートされていないプロパティの CSS を補足するものを使用できます。 XAML のスタイルの詳細については、次を参照してください。[スタイル Xamarin.Forms を使ったアプリの XAML スタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)です。
+> 現時点では、XAML のスタイルを使ってできるすべてのスタイリングが、CSS で表現できるわけではありません。しかし、XAML のスタイルは、Xamarin.Forms で現在サポートされていないプロパティの CSS を補足するために使用できます。 XAML のスタイルの詳細については、次を参照してください。[XAML スタイルを使った Xamarin.Forms アプリのスタイリング ](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
 [MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)サンプル CSS を使用して、簡単なアプリのスタイルを設定して、次のスクリーン ショットに表示されます。
 
