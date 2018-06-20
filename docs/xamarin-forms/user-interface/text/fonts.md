@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: fd45528446c9d3d4bdfa1b8f9f4010babb2ad044
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3d5fe936da9086dd7201b7ee7d91185b81eb65a1
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245632"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269032"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms で複数のフォント
 
-この記事は、Xamarin.Forms を使用 (太さやサイズなど) のフォント属性を指定する方法を説明テキストを表示するコントロールのします。 フォント情報は、[コードで指定された](#Setting_Font_in_Code)または[Xaml で指定した](#Setting_Font_in_Xaml)です。
+この記事は、Xamarin.Forms を使用 (太さやサイズなど) のフォント属性を指定する方法を説明テキストを表示するコントロールのします。 フォント情報は、[コードで指定された](#Setting_Font_in_Code)または[XAML で指定した](#Setting_Font_in_Xaml)です。
 使用することも、[カスタム フォント](#Using_a_Custom_Font)です。
 
 <a name="Setting_Font_in_Code" />
@@ -55,7 +55,6 @@ label.FontSize = 24;
 -  **小さな**
 -  **[中]**
 -  **大規模です**
-
 
 `NamedSize`列挙型になる任意の場所に使用される、`FontSize`を使用して指定できます、`Device.GetNamedSize`する値を変換する方法、 `double`:
 
@@ -103,7 +102,6 @@ fs.Spans.Add (new Span { Text=" and green!", ForegroundColor = Color.Green, Font
 labelFormatted.FormattedText = fs;
 ```
 
-
 ### <a name="setting-font-info-per-platform"></a>プラットフォームごとのフォント情報の設定
 
 または、`Device.RuntimePlatform`このコードに示すように、プラットフォームごとに異なるフォント名を設定するプロパティを使用できます。
@@ -119,16 +117,16 @@ IOS 用のフォント情報の適切なソースが[iosfonts.com](http://iosfon
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="setting-the-font-in-xaml"></a>Xaml でフォントの設定
+## <a name="setting-the-font-in-xaml"></a>XAML でフォントの設定
 
-Xamarin.Forms は制御がすべて表示テキスト、 `Font` Xaml で設定できるプロパティです。 Xaml でフォントを設定する最も簡単な方法は、この例で示すように、名前付きサイズ列挙値を使用するは。
+Xamarin.Forms は制御がすべて表示テキスト、 `Font` XAML で設定できるプロパティです。 XAML でフォントを設定する最も簡単な方法は、この例で示すように、名前付きサイズ列挙値を使用するは。
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-組み込みのコンバーターがある、`Font`プロパティを使用して Xaml 内の文字列値として表すことのすべてのフォント設定です。 次の例では、Xaml でフォント属性およびサイズを指定する方法を示します。
+組み込みのコンバーターがある、`Font`プロパティを使用して XAML 内の文字列値として表すことのすべてのフォント設定です。 次の例では、XAML でフォント属性およびサイズを指定する方法を示します。
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -136,11 +134,12 @@ Xamarin.Forms は制御がすべて表示テキスト、 `Font` Xaml で設定�
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-複数の指定に`Font`の設定は、1 つのフォント属性の文字列に必要な設定を組み合わせています。 フォント属性文字列の形式でなければなりません`"[font-face],[attributes],[size]"`です。 パラメーターの順序は重要なすべてのパラメーターは省略可能、および複数`attributes`を指定できます、たとえば。
+複数の指定に`Font`の設定は、1 つに、必要な設定を組み合わせて`Font`属性の文字列。 フォント属性文字列の形式でなければなりません`"[font-face],[attributes],[size]"`です。 パラメーターの順序は重要なすべてのパラメーターは省略可能、および複数`attributes`を指定できます、たとえば。
 
 ```xaml
-<Label Text="Small bold text" FontAttributes="Bold" FontSize="Micro" />
-<Label Text="Really big italic text" FontAttributes="Italic" FontSize="72" />
+<Label Text="Small bold text" Font="Bold, Micro" />
+<Label Text="Medium custom font" Font="MarkerFelt-Thin, 42" />
+<Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
 `FormattedString`次に示すように、クラスを XAML では、使用もできます。
@@ -253,7 +252,7 @@ new Label
 
 Xamarin.Forms を使用する単純な既定の設定を提供するすべてのサポートされているプラットフォームについて簡単にテキストのサイズします。 フォントのフォント フェイスとサイズを指定することもできます&ndash;各プラットフォームにも異なる&ndash;詳細に制御が必要な場合です。 `FormattedString`クラスを使用して別のフォントの仕様を含む文字列を構築するために使用できます、`Span`クラスです。
 
-フォントの詳細については、正しく書式設定されたフォント属性を使用して、Xaml で指定することも、または`FormattedString`を持つ要素`Span`子。
+フォントの詳細については、正しく書式設定されたフォント属性を使用して、XAML で指定することも、または`FormattedString`を持つ要素`Span`子。
 
 
 ## <a name="related-links"></a>関連リンク

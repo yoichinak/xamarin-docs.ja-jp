@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: a35038a948a89889bbf067a453b7465c1a6a7b49
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793822"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268993"
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
@@ -43,8 +44,8 @@ ms.locfileid: "34793822"
 
 |アプリ プラットフォーム|OS のサポート|メモ|
 |--- |--- |--- |
-|Mac (統合)|Mac 上でのみサポート|
-|iOS (統合)|Mac および Windows でサポート|Mac 上は、Xamarin.iOS 11.0 と Xcode バージョン 9.0 以降をインストールする必要があります。 Windows 上の iOS ブックの実行が必要に、上記のすべての操作を実行している Mac ビルド ホストと[リモート iOS シミュレーター](~/tools/ios-simulator.md) Windows にインストールされています。|
+|Mac|Mac 上でのみサポート|
+|iOS|Mac および Windows でサポート|Mac 上は、Xamarin.iOS 11.0 と Xcode バージョン 9.0 以降をインストールする必要があります。 Windows 上の iOS ブックの実行が必要に、上記のすべての操作を実行している Mac ビルド ホストと[リモート iOS シミュレーター](~/tools/ios-simulator.md) Windows にインストールされています。|
 |Android|Mac および Windows でサポート|仮想デバイスで Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります > 5.0 を =|
 |WPF|Windows でのみサポート|
 |コンソール (.NET Framework)|Mac および Windows でサポート|
@@ -114,7 +115,7 @@ IOS または Android のブックの接続に問題があるため、まだチ�
 
 ### <a name="windows"></a>Windows
 
-どのブック & インスペクターを取得、によっては、次の 2 つのアンインストール手順を実行する必要があります。 ソフトウェアを完全にアンインストールするこれらの両方を確認してください。
+ブックを取得する方法によっては、次の 2 つのアンインストール手順を実行する必要があります。 ソフトウェアを完全にアンインストールするこれらの両方を確認してください。
 
 #### <a name="visual-studio-installer"></a>Visual Studio インストーラー
 
@@ -122,19 +123,19 @@ Visual Studio 2017 があれば、開く**Visual Studio インストーラー**�
 
 #### <a name="system-uninstall"></a>システムのアンインストール
 
-使用してアンインストールする必要がありますをインストールしたブック & インスペクター自分でダウンロードしたインストーラーに場合、**アプリおよび機能**または経由で Windows 10 でのシステム設定] ページ**プログラムの追加/削除**古いバージョンの Windows コントロール パネルの [します。
+使用してアンインストールする必要がありますをインストールした場合のブック自分でダウンロードしたインストーラーで、**アプリおよび機能**または経由で Windows 10 でのシステム設定 ページ**プログラムの追加/削除**コントロールで古いバージョンの Windows 上のパネルです。
 
 > **開始 > 設定 > システム > アプリケーションと機能**
 
-![](install-images/windows-remove.png "Xamarin のブックとインスペクターに表示される&quot;アプリ&amp;機能&quot;")
+![](install-images/windows-remove.png "Xamarin のブックに記載されている&quot;アプリ&amp;機能&quot;")
 
-**確認してブックを作成する Visual Studio インストーラー用の手順を実行する必要がありますも & インスペクターは、知らない間に再インストール取得されません。**
+**Visual Studio インストーラー ブックは、知らない間に再インストール取得されないことを確認するための手順をまだ従う必要があります。**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-以降で[1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/)、Xamarin ブック & インスペクターを実行しての端末からアンインストールできます。
+以降で[1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/)Xamarin のブックを実行して、ターミナルからアンインストールすることができます。
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -153,7 +154,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>ダウン グレード
 
-バンドル id **/applications/xamarin Workbooks.app**から変更`com.xamarin.Inspector`に`com.xamarin.Workbooks`Xamarin ブック & インスペクターのインストーラーの将来の分割を容易に 1.4 のリリースでします。
+バンドル id **/applications/xamarin Workbooks.app**から変更`com.xamarin.Inspector`に`com.xamarin.Workbooks`1.4 のリリースでは、ブックとインスペクターは完全に分割します。
 
 古いインストーラーでのバグ、により、1.3.2 または古いインストーラーを使用して 1.4 以降のリリースをダウン グレードすることはできません。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e83f8a585c4badc31bffaea53bb2f183e7b11fc9
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245772"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268863"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディング
 
@@ -290,7 +290,7 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-各バインド`Label`既定値は、`OneWay`です。 のみ値を表示する必要があります。 各バインディングが、`Slider`は`TwoWay`します。 これにより、 `Slider` ViewModel から初期化されるようにします。 注意して、`Color`プロパティに設定されている`Blue`ViewModel がインスタンス化されるときです。 変更は、`Slider`で新しい色を計算すると、ViewModel プロパティの新しい値を設定する必要もあります。
+各バインド`Label`既定値は、`OneWay`です。 のみ値を表示する必要があります。 各バインディングが、`Slider`は`TwoWay`します。 これにより、 `Slider` ViewModel から初期化されるようにします。 注意して、`Color`プロパティに設定されている`Aqua`ViewModel がインスタンス化されるときです。 変更は、`Slider`で新しい色を計算すると、ViewModel プロパティの新しい値を設定する必要もあります。
 
 [![](data-bindings-to-mvvm-images/hslcolorscroll.png "双方向データ バインドを使用して MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM 双方向データ バインディングの使用")
 

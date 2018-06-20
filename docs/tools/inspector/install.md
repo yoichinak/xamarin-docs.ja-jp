@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793809"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268970"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -19,13 +19,15 @@ ms.locfileid: "34793809"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. ダウンロードしてインストール[Xamarin ブック & インスペクターのウィンドウ](https://dl.xamarin.com/interactive/XamarinInteractive.msi)します。
-2. [独自のアプリを検査します。](~/tools/inspector/inspect.md)
+1. ダウンロードしてインストール[Visual Studio Enterprise](https://www.visualstudio.com/vs/)を選択し、 **.NET を使用したモバイル開発**ワークロード。
+1. [サインイン](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)エンタープライズ サブスクリプションを有効にします。
+1. [検査](~/tools/inspector/inspect.md)独自のアプリです。
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. ダウンロードしてインストール[Xamarin ブック & for Mac インスペクター](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)です。
-2. [独自のアプリを検査します。](~/tools/inspector/inspect.md)
+1. ダウンロードしてインストール[Visual Studio for Mac](https://www.visualstudio.com/vs/mac/)です。
+1. [サインイン](https://docs.microsoft.com/visualstudio/mac/activation)エンタープライズ サブスクリプションを有効にします。
+1. [検査](~/tools/inspector/inspect.md)独自のアプリです。
 
 -----
 
@@ -38,10 +40,8 @@ ms.locfileid: "34793809"
 
 ### <a name="supported-ides"></a>サポートされている Ide
 
-- Xamarin Studio 6.2 以降
-- Visual Studio Mac Preview 4 以降
-- Xamarin を使用した visual Studio 2015 4.3.x 以上
-- Xamarin のワークロードでの visual Studio 2017
+- Visual Studio for Mac
+- Visual Studio 2017 **.NET を使用したモバイル開発**ワークロード
 
 ライブ アプリ検査は、企業ユーザーが利用できます。
 
@@ -51,10 +51,10 @@ ms.locfileid: "34793809"
 
 |アプリ プラットフォーム|IDE のサポート|メモ|
 |--- |--- |--- |
-|Mac (統合)|Mac 上でのみサポート|
-|iOS (統合)|XS および Visual Studio でサポートされています。|Windows からの iOS アプリを調べることには、同じバージョンの Mac ビルド ホストにインストールされているもの検査が必要です。|
-|Android|XS および Visual Studio でサポートされています。|Android を対象にする > = 4.0.3、 **fastdev**有効にします。<br />Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります。 Android の 7 エミュレーターは、この時点で検査を許可しません。|
-|WPF|Windows 上の Visual Studio でのみサポートされます。|
+|Mac|Mac 用 Visual Studio でのみサポートされています。|
+|iOS|Mac 用 Visual Studio 2017 および Visual Studio でサポートされています。| |
+|Android|Mac 用 Visual Studio 2017 および Visual Studio でサポートされています。|Android を対象にする > = 4.0.3、 **fastdev**有効にします。<br />Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります。 Android の 7 エミュレーターは、この時点で検査を許可しません。|
+|WPF|Visual Studio 2017 でのみサポートされます。|
 
 <a name="reporting-bugs" />
 
@@ -73,11 +73,6 @@ Visual Studio を使用して直接バグを報告する必要があります。
 Visual Studio For Mac
 
 - **Visual Studio > Visual Studio に関する > 詳細を表示 > 情報のコピー**
-- バグのレポートに貼り付けます
-
-Xamarin Studio
-
-- **Xamarin Studio > Xamarin Studio に関する > 詳細を表示 > 情報のコピー**
 - バグのレポートに貼り付けます
 
 Visual Studio
@@ -102,10 +97,6 @@ Visual Studio For Mac
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
-Xamarin Studio
-
-- `~/Library/Logs/XamarinStudio-6.0/Ide.log`
-
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
@@ -129,42 +120,3 @@ Android と iOS の場合は、検査する場合のデバッグしているデ�
 - デバイスはネットワークに接続 (web ブラウザーから確認) しますか。
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new
-
-## <a name="uninstall"></a>[アンインストール]
-
-### <a name="windows"></a>Windows
-
-どのブック & インスペクターを取得、によっては、次の 2 つのアンインストール手順を実行する必要があります。 ソフトウェアを完全にアンインストールするこれらの両方を確認してください。
-
-#### <a name="visual-studio-installer"></a>Visual Studio インストーラー
-
-Visual Studio 2017 があれば、開く**Visual Studio インストーラー**、ファイルの場所と**個々 のコンポーネント**の**Xamarin ブック**です。 オンの場合は、これをオフにしをアンインストールするには、[変更] をクリックします。
-
-#### <a name="system-uninstall"></a>システムのアンインストール
-
-使用してアンインストールする必要がありますをインストールしたブック & インスペクター自分でダウンロードしたインストーラーに場合、**アプリおよび機能**または経由で Windows 10 でのシステム設定] ページ**プログラムの追加/削除**古いバージョンの Windows コントロール パネルの [します。
-
-> **開始 > 設定 > システム > アプリケーションと機能**
-
-![](install-images/windows-remove.png "Xamarin ブックおよびインスペクター 'アプリケーションと機能 に表示されます。")
-
-**確認してブックを作成する Visual Studio インストーラー用の手順を実行する必要がありますも & インスペクターは、知らない間に再インストール取得されません。**
-
-### <a name="macos"></a>macOS
-
-以降で[1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/)、Xamarin ブック & インスペクターを実行しての端末からアンインストールできます。
-
-```bash
-sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
-```
-
-ファイルとディレクトリが削除されに続行する前に確認を求める、アンインストーラーは詳しく説明します。
-
-渡す、`-help`への引数、`uninstall`高度なシナリオ用のスクリプト。
-
-古いバージョンでは、次のものを手動で削除する必要があります。
-
-1. `"/Applications/Xamarin Workbooks.app"` の Workbooks アプリを削除します
-2. `"Applications/Xamarin Inspector.app"` の Inspector アプリを削除します
-3. アドイン `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` と `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"` を削除します
-4. `/Library/Frameworks/Xamarin.Interactive.framework` および `/Library/Frameworks/Xamarin.Inspector.framework` にある Inspector のファイルとサポート ファイルを削除します

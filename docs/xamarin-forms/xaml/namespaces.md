@@ -6,13 +6,13 @@ ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 07/10/2017
-ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 25299bc3b56c2fbb748db202e43e75be183cce66
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245834"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209298"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms で XAML 名前空間
 
@@ -43,11 +43,12 @@ XAML では、プレフィックスを使用して、名前空間内の型を参
 |`x:Arguments`|既定ではない、コンス トラクターまたはファクトリ メソッド オブジェクト宣言のコンス トラクター引数を指定します。|
 |`x:Class`|XAML で定義されたクラスの名前空間とクラス名を指定します。 クラス名は、分離コード ファイルのクラス名と一致する必要があります。 このコンストラクトは、XAML ファイルのルート要素にのみ表示できますに注意してください。|
 |`x:FactoryMethod`|オブジェクトを初期化するために使用できるファクトリ メソッドを指定します。|
+|`x:FieldModifier`|名前付き XAML 要素の生成されたフィールドのアクセス レベルを指定します。|
 |`x:Key`|内の各リソースの一意のユーザー定義キーを指定します、`ResourceDictionary`です。 キーの値が XAML リソースの取得に使用され、は、通常の引数として使用、`StaticResource`マークアップ拡張機能です。|
 |`x:Name`|XAML 要素のランタイム オブジェクトの名前を指定します。 設定`x:Name`コード内の変数を宣言に似ています。|
 |`x:TypeArguments`|ジェネリック型のコンス トラクターは、ジェネリック型引数を指定します。|
 
-詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)です。
+詳細については、`x:FieldModifier`属性は、「[フィールド修飾子](~/xamarin-forms/xaml/field-modifiers.md)です。 詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)です。
 
 XAML では、名前空間の宣言は子要素を親要素から継承します。 そのため、名前空間を定義する XAML ファイルのルート要素で、そのファイル内のすべての要素は、名前空間宣言を継承します。
 

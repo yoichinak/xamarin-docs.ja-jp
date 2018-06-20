@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209191"
 ---
 # <a name="gtk-platform-setup"></a>GTK # プラットフォームのセットアップ
 
@@ -42,7 +43,7 @@ Windows デスクトップで実行される GTK # アプリを追加する手�
 
     キーを押して、 **OK**プロジェクトを作成するボタンをクリックします。
 
-4. **ソリューション エクスプ ローラー**新しい GTK プロジェクトを右クリックして、選択**NuGet パッケージの管理**です。 選択、**参照** タブで、をクリックして、 **Include prerelease**  チェック ボックスを検索および**Xamarin.Forms** 3.0 以上です。
+4. **ソリューション エクスプ ローラー**新しい GTK プロジェクトを右クリックして、選択**NuGet パッケージの管理**です。 選択、**参照**タブをクリックし、検索**Xamarin.Forms** 3.0 またはそれ以降。
 
     ![Xamarin.Forms NuGet パッケージを選択して](gtk-images/win/select-forms-nuget-package.png "Xamarin.Forms NuGet パッケージの選択")
 

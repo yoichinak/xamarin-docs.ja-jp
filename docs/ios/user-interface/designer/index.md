@@ -7,22 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/31/2018
-ms.openlocfilehash: eadc2147a44d6077436e394a4757d367ce42e5fa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a931373a6abba3084af3c7aefcdddc903ad1b577
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790004"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209233"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>Ios デザイナー ユーザー インターフェイスの構築
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-=======
-# <a name="ios-designer"></a>iOS Designer
-
 _IOS 用の Xamarin デザイナーは、Mac と Visual Studio の Visual Studio に完全に統合されている iOS ストーリー ボードとインターフェイスのビルダー形式をビジュアル デザイナーです。IOS デザイナーは、Visual Studio for Mac または Xcode のインターフェイスのビルダーに加えて、Visual Studio でファイルを編集できるように、ストーリー ボードと .xib 形式と完全な互換性を維持します。さらに、iOS 用の Xamarin デザイナーは、エディターでのデザイン時に表示するカスタム コントロールなどの高度な機能をサポートします。_
->>>>>>> master
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

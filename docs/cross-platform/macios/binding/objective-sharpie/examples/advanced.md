@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 811b783d33a20e23a7e807861e19355a1c372b84
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781257"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209402"
 ---
 # <a name="advanced-manual-real-world-example"></a>(手動) の実際の例の詳細
 
@@ -19,7 +19,7 @@ ms.locfileid: "34781257"
 
 ここでは、バインディング、Apple を使用するより高度なアプローチ`xcodebuild`ツールを最初にプロジェクトをビルド、POP、および目標ペンを使わずに入力を手動で推測します。 これは、本質的には、目標ペンを使わずが何を前のセクションで、内部でについて説明します。
 
-```csharp
+```
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 Xcode プロジェクトの POP ライブラリがあるため (`pop.xcodeproj`)、使用することだけ`xcodebuild`POP をビルドします。 このプロセスは、目標ペンを使わずが解析する必要があるヘッダー ファイルを生成さらに可能性があります。 これは、ビルド前に、バインディングは、重要な理由です。 使用して構築するときに`xcodebuild`渡す同じ SDK 識別子とアーキテクチャをことを確認する目標ペンを使わずに渡す (目標ペンを使わず 3.0 通常はこれをすることを忘れないでください!)。
 
-```csharp
+```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 
 今すぐ POP をバインドする準備が整いました。 SDK をビルドすることが分かって`iphoneos8.1`で、`arm64`アーキテクチャ、および配慮してヘッダー ファイルにある`build/Headers`POP git チェック アウトの下。 見た場合、`build/Headers`ディレクトリ、ヘッダー ファイルの数を見てみましょう。
 
-```csharp
+```
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 見た場合`POP.h`は、ライブラリのメイン最上位レベルのヘッダー ファイルを確認できます`#import`s 他のファイルです。 このため、のみを渡す必要がある`POP.h`目標ペンを使わずに clang はバック グラウンドで残りの部分に操作を実行します。
 
-```csharp
+```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64
