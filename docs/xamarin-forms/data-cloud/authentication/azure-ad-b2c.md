@@ -57,7 +57,7 @@ Azure Active Directory テナントには、さまざまな種類の複数のポ
 
 ## <a name="setup"></a>セットアップ
 
-Microsoft 認証ライブラリ (MSAL) NuGet ライブラリは、Xamarin.Forms ソリューション内のプラットフォーム プロジェクト、ポータブル クラス ライブラリ (PCL) プロジェクトに追加する必要があります。 次のセクションでは、MSAL を使用して、モバイル アプリケーションから Azure Active Directory B2C テナントに通信するための追加のセットアップ手順を説明します。
+Microsoft Authentication Library (MSAL) NuGet ライブラリは、Xamarin.Forms ソリューション内のポータブル クラス ライブラリ (PCL) およびプラットフォーム プロジェクトに追加する必要があります。 次のセクションでは、MSAL を使用して、モバイル アプリケーションから Azure Active Directory B2C テナントに通信するための追加のセットアップ手順を説明します。
 
 ### <a name="portable-class-library"></a>ポータブル クラス ライブラリ
 
@@ -150,7 +150,7 @@ Universal Windows Platform に MSAL を使用する追加の設定は必要あ�
 
 ## <a name="initialization"></a>初期化
 
-Microsoft Authentication Library は、`PublicClientApplication` クラスのメンバーを使用して、認証ワークフローを開始します。 サンプル アプリケーションは、宣言および初期化し、`public`この型は、という名前のプロパティ`ADB2CClient`で、`AuthenticationProvider`クラスです。 次のコード例は、このプロパティを初期化する方法を示しています。
+Microsoft Authentication Library は、`PublicClientApplication` クラスのメンバーを使用して、認証ワークフローを開始します。 サンプル アプリケーションは、宣言および初期化し、`public`この型は、という名前のプロパティ`ADB2CClient`で、`AuthenticationProvider`クラスです。 次のコードサンプルは、このプロパティを初期化する方法を示しています。
 
 ```csharp
 ADB2CClient = new PublicClientApplication(Constants.ClientID, Constants.Authority);
