@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: c2e6a5624baba251061bcd324fcb849e3d95ebfd
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291036"
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -251,7 +252,7 @@ XAML 例を次に、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDiction
 
 1. リソース ディクショナリへのローカル リソース。
 1. マージされたリソース ディクショナリに含まれるリソースによって使用されていない[ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith)プロパティです。
-1. 使用してマージされたリソース ディクショナリに含まれるリソース、`MergedDictionaries`に登録されている順序でのコレクション、`MergedDictionaries`プロパティです。
+1. 使用してマージされたリソース ディクショナリに含まれるリソース、`MergedDictionaries`に登録されている逆の順序で、コレクション、`MergedDictionaries`プロパティです。
 
 > [!NOTE]
 > リソース ディクショナリの検索は、負荷の高い作業アプリケーションが複数含まれている場合の大規模なリソース ディクショナリ。 そのため、不要な検索を回避するのには、アプリケーション内の各ページだけが、ページに対応するリソース ディクショナリを使用するをするようにします。

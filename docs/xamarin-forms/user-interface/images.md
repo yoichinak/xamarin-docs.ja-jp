@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244546"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291352"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms の画像
 
@@ -153,8 +153,11 @@ IDE によってこの既定値を連結して生成された、**既定 Namespa
 埋め込み画像を読み込むようにコードを渡すだけ、**リソース ID**を[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)メソッドを次のように。
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
+
+> [!NOTE]
+> ユニバーサル Windows プラットフォームに、リリース モードで埋め込み画像の表示をサポートする必要があるのオーバー ロードを使用する`ImageSource.FromResource`イメージを検索するための基になるアセンブリを指定します。
 
 現在リソース識別子の暗黙的な変換はありません。 代わりに、使用する必要があります[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)または`new ResourceImageSource()`埋め込み画像を読み込めません。
 
@@ -182,12 +185,15 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
+
+> [!NOTE]
+> ユニバーサル Windows プラットフォームに、リリース モードで埋め込み画像の表示をサポートする必要があるのオーバー ロードを使用する`ImageSource.FromResource`イメージを検索するための基になるアセンブリを指定します。
 
 この拡張機能を使用するには、追加のカスタム`xmlns`XAML をプロジェクトの名前空間とアセンブリの正しい値を使用します。 この構文を使用して、イメージ ソースを設定することができますし:`{local:ImageResource WorkingWithImages.beach.jpg}`です。 XAML の完全な例を次に示します。
 
@@ -224,9 +230,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>他のプロジェクトに埋め込まれた画像が表示されません。
+#### <a name="images-embedded-in-other-projects"></a>他のプロジェクトに埋め込まれた画像
 
-`Image.FromResource` コードの呼び出しと同じアセンブリ内のイメージだけを検索`FromResource`です。 対象のアセンブリが変更することによって、特定のリソースを含むを判断できます上記デバッグ コードを使用して、`typeof()`ステートメントを`Type`各アセンブリ内にあります。
+既定では、`ImageSource.FromResource`メソッドだけを検索、コードの呼び出し元と同じアセンブリ内のイメージ、`ImageSource.FromResource`メソッドです。 対象のアセンブリが変更することによって、特定のリソースを含むを判断できます上記デバッグ コードを使用して、`typeof()`ステートメントを`Type`各アセンブリ内にあります。
+
+ただし、ソースの埋め込み画像の検索対象に指定できるアセンブリへの引数として、`ImageSource.FromResource`メソッド。
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
@@ -316,7 +328,6 @@ IOS および UWP アプリケーションのみ (スタートアップ画面ま
 Xamarin.Forms では、さまざまなプラットフォーム間で使用する同じイメージまたはプラットフォーム固有のイメージを指定するを許可する、クロスプラット フォームのアプリケーションに画像を挿入するさまざまな方法が用意されています。 ダウンロードしたイメージも自動的にキャッシュされる一般的なコーディングのシナリオを自動化します。
 
 アプリケーションのアイコンとスプラッシュ スクリーンのイメージはセットアップ、プラットフォーム固有のアプリに使用される同じガイダンスに従う Xamarin.Forms 以外のアプリケーションの場合と構成
-
 
 ## <a name="related-links"></a>関連リンク
 
