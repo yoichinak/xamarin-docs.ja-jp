@@ -113,7 +113,6 @@
 ## [プラットフォーム機能](platform/index.md)
 ### [Android ビーム](platform/android-beam.md)
 ### [Android マニフェスト](platform/android-manifest.md)
-### [Java を .NET に埋め込む](platform/embedding-net-in-java.md)
 ### [指紋認証](platform/fingerprint-authentication/index.md)
 #### [はじめに](platform/fingerprint-authentication/get-started.md)
 #### [指紋のスキャン](platform/fingerprint-authentication/scanning.md)
