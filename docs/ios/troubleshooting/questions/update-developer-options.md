@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30775485"
 ---
 # <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>開発者オプションを再有効化 iOS を更新した後に方法は?
 

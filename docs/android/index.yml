@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 05/07/2018
+  ms.locfileid: "33677924"
 abstract:
   description: Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな Android アプリを構築できます。
   menu:

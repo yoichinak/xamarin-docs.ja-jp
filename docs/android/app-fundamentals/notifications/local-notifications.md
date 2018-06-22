@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30773993"
 ---
 # <a name="local-notifications"></a>ローカルの通知
 
@@ -590,7 +591,7 @@ builder.SetStyle (picStyle);
 // Create notification and publish it ...
 ```
 
-この例では、イメージ ファイルにある**/sdcard/Pictures/my-tshirt.jpg**は読み込まれ、元のサイズの半分にサイズ変更、通知で使用するビットマップに変換されます。
+この例では、イメージ ファイルにある **/sdcard/Pictures/my-tshirt.jpg**は読み込まれ、元のサイズの半分にサイズ変更、通知で使用するビットマップに変換されます。
 
 ![通知で例 t シャツの画像](local-notifications-images/19-tshirt-notification.png)
 
@@ -802,7 +803,7 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 }
 ```
 
-この例では、アプリの**ターゲット フレームワーク**Android 5.0 に設定されていると、**最低限の Android バージョン**に設定されている**Android 4.1 (API レベル 16)**です。 `SetCategory`は API レベル 21 以降で使用でき、このコード例を呼び出す`SetCategory`が場合にのみ、使用可能な&ndash;を呼び出さない`SetCategory`API レベルが場合より小さい
+この例では、アプリの**ターゲット フレームワーク**Android 5.0 に設定されていると、**最低限の Android バージョン**に設定されている**Android 4.1 (API レベル 16)** です。 `SetCategory`は API レベル 21 以降で使用でき、このコード例を呼び出す`SetCategory`が場合にのみ、使用可能な&ndash;を呼び出さない`SetCategory`API レベルが場合より小さい
 21.
 
 

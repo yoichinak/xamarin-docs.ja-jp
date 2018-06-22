@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917864"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms を使用して Visual Basic.NET
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30766001"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>どのように手動でインストールできます Xamarin.Android.Support パッケージで必要な Android サポート ライブラリか。
 
@@ -56,7 +57,7 @@ F16A3455987DBAE5783F058F19F7FCDF
 
 **%LOCALAPPDATA%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF.zip**
 
-(省略可能)ファイルを解凍**%localappdata%\\Xamarin\\Xamarin.Android.Support.v4\\23.4.0.0\\コンテンツ\\** (作成、**コンテンツ\\m2repository**サブディレクトリ)。 この手順をスキップする場合、ライブラリを使用する最初のビルドは少し長くかかるため、この手順を完了する必要があります。
+(省略可能)ファイルを解凍 **%localappdata%\\Xamarin\\Xamarin.Android.Support.v4\\23.4.0.0\\コンテンツ\\** (作成、**コンテンツ\\m2repository**サブディレクトリ)。 この手順をスキップする場合、ライブラリを使用する最初のビルドは少し長くかかるため、この手順を完了する必要があります。
 サブディレクトリのバージョン番号 (**23.4.0.0**この例では)、NuGet パッケージのバージョンとまったく同じではありません。 使用することができます`ildasm`正しいバージョン番号を検索します。
 
 ```cmd
@@ -74,7 +75,7 @@ property string 'Version' = string('23.4.0.0')}
 
 (たとえば、NuGet package manager にインストールする) を必要な Xamarin.Android.Support NuGet パッケージをダウンロードします。
 
-ダブルクリックして、 _Xamarin.Android.Support.v4_下にあるアセンブリ、_参照_Mac アセンブリ ブラウザーでアセンブリを開くには Visual Studio で Android プロジェクトのセクションです。 いることを確認、_言語_ドロップダウンに設定されている_c#_最上位レベルを選択して_Xamarin.Android.Support.v4_アセンブリ ブラウザー ナビゲーション ツリーからのアセンブリ。 検索、`SourceUrl`プロパティのいずれかで、`IncludeAndroidResourcesFrom`または`JavaLibraryReference`属性。
+ダブルクリックして、 _Xamarin.Android.Support.v4_下にあるアセンブリ、_参照_Mac アセンブリ ブラウザーでアセンブリを開くには Visual Studio で Android プロジェクトのセクションです。 いることを確認、_言語_ドロップダウンに設定されている_c#_ 最上位レベルを選択して_Xamarin.Android.Support.v4_アセンブリ ブラウザー ナビゲーション ツリーからのアセンブリ。 検索、`SourceUrl`プロパティのいずれかで、`IncludeAndroidResourcesFrom`または`JavaLibraryReference`属性。
 
 ```csharp
 [assembly: IncludeAndroidResourcesFrom ("./", PackageName = "Xamarin.Android.Support.v4", SourceUrl = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip", EmbeddedArchive = "m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0.aar", Version = "23.4.0.0")]
@@ -104,7 +105,7 @@ csharp -e 'var url = "https://dl-ssl.google.com/android/repository/android_m2rep
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-コピー **android\_m2repository.zip**を**$HOME/.local/share/Xamarin/zips/**フォルダーです。 ステップの計算前の MD5 ハッシュから MD5 ハッシュを使用するファイルの名前を変更します。 例えば:
+コピー **android\_m2repository.zip**を **$HOME/.local/share/Xamarin/zips/** フォルダーです。 ステップの計算前の MD5 ハッシュから MD5 ハッシュを使用するファイルの名前を変更します。 例えば:
 
 **$HOME/.local/share/Xamarin/zips/F16A3455987DBAE5783F058F19F7FCDF.zip**
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30768897"
 ---
 # <a name="handling-rotation"></a>回転の処理
 
@@ -84,7 +85,7 @@ _このトピックでは、Xamarin.Android でデバイスの向きの変更を
 </RelativeLayout>
 ```
 
-かどうかフォルダーの名前を含む、追加のレイアウト土地**Main.axml**ランドス ケープのときに、レイアウトを膨張させるようになりましたが新しく追加されたを読み込む Android プロジェクトにファイルが追加された**[main.axml] です。** 横のバージョンを検討してください、 **Main.axml**を次のコードを含むファイル (わかりやすくするため、この XML は、コードの既定の縦のバージョンに似ていますで別の文字列を使用して、 `TextView`)。
+かどうかフォルダーの名前を含む、追加のレイアウト土地**Main.axml**ランドス ケープのときに、レイアウトを膨張させるようになりましたが新しく追加されたを読み込む Android プロジェクトにファイルが追加された **[main.axml] です。** 横のバージョンを検討してください、 **Main.axml**を次のコードを含むファイル (わかりやすくするため、この XML は、コードの既定の縦のバージョンに似ていますで別の文字列を使用して、 `TextView`)。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

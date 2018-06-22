@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30764470"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Xamarin.Android のバージョンでは、ロリポップ サポートを追加しますか。
 
@@ -68,8 +69,8 @@ Error: Could not find android.jar for API Level 21.**
 
 3. Android API レベル 21"L"プレビュー [1] に一時的にダウン グレードします。
 
-    1.  削除**/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
-    2.  [1] に抽出**/Users/username/Library/Developer/Xamarin/android-sdk-macosx**を作成する、 **android-l**フォルダーです。
+    1.  削除 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
+    2.  [1] に抽出 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx**を作成する、 **android-l**フォルダーです。
 
 -----
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30787090"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac のしくみ
 
@@ -103,7 +104,7 @@ AOT が Xamarin.Mac アプリを支援できる 2 つの主要な領域があり
 
 ### <a name="enabling-aot-compilation"></a>AOT コンパイルを有効にします。
 
-ダブルクリックして Xamarin.Mac で AOT が有効になっている、**プロジェクト名**で、**ソリューション エクスプ ローラー**に間を移動する、 **Mac をビルド**と追加`--aot:[options]`に**追加の mmp 引数:**フィールド (場所`[options]`は、1 つ以上のオプションを制御する AOT 型の下を参照してください)。 例えば:
+ダブルクリックして Xamarin.Mac で AOT が有効になっている、**プロジェクト名**で、**ソリューション エクスプ ローラー**に間を移動する、 **Mac をビルド**と追加`--aot:[options]`に**追加の mmp 引数:** フィールド (場所`[options]`は、1 つ以上のオプションを制御する AOT 型の下を参照してください)。 例えば:
 
 ![追加の mmp 引数に AOT を追加する](how-it-works-images/aot01.png "追加 mmp 引数を追加する AOT")
 
@@ -145,7 +146,7 @@ Xamarin.iOS 8.13 で初めて導入された一部の静的登録では、オプ
 
 ### <a name="enabling-the-partial-static-registrar"></a>部分の静的なレジストラーを有効にします。
 
-ダブルクリックして Xamarin.Mac の部分的な静的レジストラーが有効になっている、**プロジェクト名**で、**ソリューション エクスプ ローラー**に間を移動する、 **Mac をビルド**を追加して`--registrar:static`を**追加 mmp 引数:**フィールドです。 例えば:
+ダブルクリックして Xamarin.Mac の部分的な静的レジストラーが有効になっている、**プロジェクト名**で、**ソリューション エクスプ ローラー**に間を移動する、 **Mac をビルド**を追加して`--registrar:static`を**追加 mmp 引数:** フィールドです。 例えば:
 
 ![追加の mmp 引数に、部分的な静的レジストラーを追加する](how-it-works-images/psr01.png "追加 mmp 引数に、一部の静的なレジストラーを追加します。")
 
