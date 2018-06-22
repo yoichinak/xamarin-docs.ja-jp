@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d75cac7a21b2c74a6627845cdda8e4c04e72bddc
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240247"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309776"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms アプリケーションの基礎
 
@@ -47,6 +47,10 @@ Xamarin.Forms を使用したアクセスなどの機能 (画面閲覧ツール�
 ## <a name="effectseffectsindexmd"></a>[エフェクト](effects/index.md)
 
 エフェクトをカスタマイズするには、各プラットフォームでネイティブ コントロールは、小規模のスタイル設定の変更に通常使用されます。
+
+## <a name="filesfilesmd"></a>[ファイル](files.md)
+
+.NET 標準ライブラリで、または埋め込みリソースを使用してコードを使用して、ファイル Xamarin.Forms を使用した処理を実現できます。
 
 ## <a name="gesturesgesturesindexmd"></a>[ジェスチャ](gestures/index.md)
 
