@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30770236"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Permissions In Xamarin.Android
 
@@ -85,7 +86,7 @@ Visual Studio に組み込まれているツールのサポートを使用して
 
     [![Android マニフェスト タブで必要なアクセス許可](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
-2. クリックして、アプリケーションがまだない場合、AndroidManifest.xml、**いいえ AndroidManifest.xml が見つかりました。いずれかの追加 をクリックします。**次のようにします。
+2. クリックして、アプリケーションがまだない場合、AndroidManifest.xml、**いいえ AndroidManifest.xml が見つかりました。いずれかの追加 をクリックします。** 次のようにします。
 
     [![AndroidManifest.xml メッセージはありません。](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 

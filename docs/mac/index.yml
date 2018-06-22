@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 05/03/2018
+  ms.locfileid: "32436480"
 abstract:
   description: Xamarin.Mac は、.NET 開発者向けに macOS SDK 全体を公開しています。 Visual Studio for Mac で完全にネイティブなアプリを構築できます。
   menu:
