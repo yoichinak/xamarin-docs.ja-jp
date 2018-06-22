@@ -10,6 +10,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33922523"
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>パフォーマンスと CCRenderTexture に視覚効果
 
