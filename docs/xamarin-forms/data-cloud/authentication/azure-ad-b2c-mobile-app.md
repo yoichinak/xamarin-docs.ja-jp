@@ -1,6 +1,6 @@
 ---
-title: Azure のモバイル アプリを使用して Azure Active Directory B2C の統合
-description: Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Xamarin.Forms を使用した Azure Mobile Apps インスタンスに対する認証および承認を提供する Azure Active Directory B2C を使用する方法を示します。
+title: Azure Active Directory B2C を Azure Mobile Apps に統合する
+description: Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Xamarin.Forms で Azure Active Directory B2C を使って、認証および承認を Azure Mobile Apps インスタンスに提供する方法を示します。
 ms.prod: xamarin
 ms.assetid: 53F52036-A997-4D0F-86B4-4302C6913136
 ms.technology: xamarin-forms
@@ -14,11 +14,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
 ms.locfileid: "30787975"
 ---
-# <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure のモバイル アプリを使用して Azure Active Directory B2C の統合
+# <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure Active Directory B2C を Azure Mobile Apps に統合する
 
-_Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。この記事では、Xamarin.Forms を使用した Azure Mobile Apps インスタンスに対する認証および承認を提供する Azure Active Directory B2C を使用する方法を示します。_
+_Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。この記事では、Xamarin.Forms で Azure Active Directory B2C を使って、認証および承認を Azure Mobile Apps インスタンスに提供する方法を示します。_
 
-![](~/media/shared/preview.png "この API は、現在のリリース前")
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
 > [!NOTE]
 > [認証ライブラリの Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client)は、プレビュー段階では、運用環境での使用に適しています。 ただし、ある可能性がある重大な変更、API、内部キャッシュ形式、およびその他のメカニズム、ライブラリでは、アプリケーションに影響を与える可能性のです。
