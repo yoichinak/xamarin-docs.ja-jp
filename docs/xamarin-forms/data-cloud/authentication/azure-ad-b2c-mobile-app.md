@@ -20,7 +20,7 @@ _Azure Active Directory B2C は、コンシューマー向けの web アプリ�
 ![](~/media/shared/preview.png "この API は、現在プレリリースです。")
 
 > [!NOTE]
-> [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) は、まだプレビュー段階ですが、運用環境での使用に適しています。 ただし、ライブラリのAPIや内部のキャッシュ形式、およびその他のメカニズムに破壊的変更の可能性があり、アプリケーションに重大な影響を与える可能性があります。
+> [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) は、まだプレビュー段階ですが、運用環境での使用に適しています。 ただし、ライブラリのAPIや内部のキャッシュ形式、およびその他のメカニズムに重大な変更の可能性があり、アプリケーションに多大な影響を与える可能性があります。
 
 ## <a name="overview"></a>概要
 
@@ -64,7 +64,7 @@ Azure Mobile Apps インスタンスと Azure Active Directory B2C テナント�
 
 ### <a name="azure-active-directory-b2c-tenant-configuration"></a>Azure Active Directory B2C テナントの構成
 
-クライアント管理の認証ワークフローの場合は、Azure Active Directory B2C テナントを次のよう構成する必要があります。
+クライアント管理の認証ワークフローの場合は、Azure Active Directory B2C テナントを次のように構成する必要があります。
 
 - ネイティブ クライアントを含めます。
 - カスタムのリダイレクト URI にモバイル アプリケーションを一意に識別する URL スキームを設定します。後ろには `://auth/` を記述します。 カスタム URL スキームの選択の詳細については、[ネイティブ アプリのリダイレクト URI を選択する](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri) を参照してください。
@@ -150,7 +150,7 @@ public async Task<bool> LogoutAsync()
 
 ### <a name="azure-active-directory-b2c-tenant-configuration"></a>Azure Active Directory B2C テナントの構成
 
-サーバー管理の認証ワークフローの場合は、Azure Active Directory B2C テナントを次のよう構成する必要があります。
+サーバー管理の認証ワークフローの場合は、Azure Active Directory B2C テナントを次のように構成する必要があります。
 
 - Web アプリ/Web API を含め、暗黙的フローを許可します。
 - 応答 URL に Azure Mobile App のアドレスを設定し、末尾に `/.auth/login/aad/callback` を加えます。
@@ -174,7 +174,7 @@ Azure Active Directory B2C テナントが使用するポリシーも、応答 U
 
 ![](azure-ad-b2c-mobile-app-images/server-flow-ama-config.png "Azure Mobile Apps の構成")
 
-Azure Mobile Apps インスタンスは、Azure Active Directory B2C テナントに接続するための構成も必要です。 この構成は、Azure Active Directory の認証プロバイダーの **詳細**モード を有効にして、**クライアント ID** に Azure のActive Directory B2C テナントの **アプリケーション ID** を、**発行者の URL** に Azure Active Directory B2C ポリシーのメタデータ エンドポイントを設定することによって完了できます。次のスクリーン ショットは、この構成を示しています。
+Azure Mobile Apps インスタンスは、Azure Active Directory B2C テナントに接続するための構成も必要です。 この構成は、Azure Active Directory の認証プロバイダーの **詳細** モード を有効にして、**クライアント ID** に Azure のActive Directory B2C テナントの **アプリケーション ID** を、**発行者の URL** に Azure Active Directory B2C ポリシーのメタデータ エンドポイントを設定することによって完了できます。次のスクリーン ショットは、この構成を示しています。
 
 ![](azure-ad-b2c-mobile-app-images/server-flow-ama-advanced-config.png "Azure Mobile Apps の詳細な構成")
 
