@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4909cb3b874b1397fad10c92d8d655fadcbe8d85
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783159"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321341"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: セキュリティで保護されたストレージ
 
@@ -78,13 +78,13 @@ var oauthToken = await SecureStorage.GetAsync("oauth_token");
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[キーチェーン](https://developer.xamarin.com/api/type/Android.Security.KeyChain/)iOS デバイスで安全に値を格納するために使用します。  `SecRecord`値を格納するために使用が、`Service`値に設定 **[、-アプリ-バンドル-ID] .xamarinessentials**です。
+[キーチェーン](https://developer.xamarin.com/api/type/Security.SecKeyChain/)iOS デバイスで安全に値を格納するために使用します。  `SecRecord`値を格納するために使用が、`Service`値に設定 **[、-アプリ-バンドル-ID] .xamarinessentials**です。
 
 場合によってはキーチェーン データは iCloud と同期され、アプリケーションをアンインストールする可能性がありますいない値を削除、セキュリティで保護された iCloud とユーザーの他のデバイスからです。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/en-us/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) UWP デバイスで安全に暗号化されている値を使用します。
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) UWP デバイスで安全に暗号化されている値を使用します。
 
 暗号化された値が格納されている`ApplicationData.Current.LocalSettings`、という名前でコンテナーの内部 **[、アプリ ID] .xamarinessentials**です。
 

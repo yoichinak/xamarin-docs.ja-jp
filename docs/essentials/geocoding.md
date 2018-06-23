@@ -5,12 +5,12 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0b6cbf9ee5621466285656a5efee68ccc2c85211
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 001cca2524e495d64c6781d8a2fc5cb58e771e6e
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783029"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321445"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: ジオコード化
 
@@ -32,7 +32,7 @@ ms.locfileid: "34783029"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-ジオコード化 %1%2 を使用するのには、Bing maps API キーが必要です。 無料のサインアップ[Bing Maps](https://www.bingmapsportal.com/)アカウント。 **マイ アカウント > マイ キー**新しいキーを作成し、アプリケーションの種類に基づいて情報を入力します。
+ジオコード化 %1%2 を使用するのには、Bing maps API キーが必要です。 無料のサインアップ[Bing Maps](https://www.bingmapsportal.com/)アカウント。 **マイ アカウント > キー**新しいキーを作成し、アプリケーションの種類に基づいて情報を入力する (必要があります**パブリックの Windows アプリ (UWP、8.x、以前のバージョン)** UWP アプリの)。
 
 呼び出す前に、アプリケーションのライフ サイクルの早い段階で**ジオコード化**メソッドは、API キーを設定します。
 
