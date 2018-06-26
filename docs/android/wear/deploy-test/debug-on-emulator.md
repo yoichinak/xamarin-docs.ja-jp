@@ -6,13 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: baa8df87caf2c05d7b6202d5160c930e51656e10
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732984"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36934981"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Android の消耗エミュレーターでのデバッグします。
 
@@ -22,7 +22,7 @@ _これらの記事では、エミュレーターで Xamarin.Android 消耗ア�
 
 Android 着用アプリケーションを開発するには、物理ハードウェア上でいずれかと、アプリケーションを実行するか、エミュレーターまたはシミュレーターを使用する必要があります。 ハードウェアを使用するのが最適な方法ですが、常に実用的というわけではありません。 多くの場合、簡素化され、コスト効果をシミュレート エミュレート以下に示すように、エミュレーターを使用して Android 着用ハードウェアがあります。 まだ配置および実行の手順に慣れる着用して Android アプリを参照してください場合[ハロー, 着用](~/android/wear/get-started/hello-wear.md)です。
 
-## <a name="configure-the-google-android-emulator"></a>Google Android エミュレーターを構成します。
+## <a name="configure-the-android-emulator"></a>Android エミュレーターを構成します。
 
 消耗アプリをエミュレーターで実行するには、Android SDK Android エミュレーターをインストールし、Android 着用用に構成します。 全体的な Android SDK エミュレーターのインストールと構成については、次を参照してください。 [Android エミュレーターのセットアップ](~/android/get-started/installation/android-emulator/index.md)です。
 
@@ -48,4 +48,4 @@ Android エミュレーターが起動したら、Xamarin.Android は、エミ�
  
 ## <a name="summary"></a>まとめ
  
-このガイドでは、損傷の開発用 Google Android エミュレーターを構成して、デバッグ用の仮想デバイスの損傷を起動する方法について説明します。
+このガイドでは、損傷の開発用の Android エミュレーターを構成して、デバッグ用の仮想デバイスの損傷を起動する方法について説明します。

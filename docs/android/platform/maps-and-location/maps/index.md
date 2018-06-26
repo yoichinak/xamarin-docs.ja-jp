@@ -1,20 +1,20 @@
 ---
-title: マップ
+title: Xamarin.Android で Google Maps と場所を使用する方法
 description: この記事では、Xamarin.Android でマップや場所を使用する方法について説明します。 組み込みのマップ アプリケーション V2 を使用して、Google マップ Android API 直接を活用することからすべての情報を説明します。
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e57dc07aefbd1c80a53f4225f5f44fe72a9ddb9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a861e43152870933ba684bf693a1bd3d3ac5bd0b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763330"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935374"
 ---
-# <a name="maps"></a>マップ
+# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Xamarin.Android で Google Maps と場所を使用する方法
 
 _この記事では、Xamarin.Android でマップや場所を使用する方法について説明します。組み込みのマップ アプリケーション V2 を使用して、Google マップ Android API 直接を活用することからすべての情報を説明します。_
 
@@ -35,6 +35,5 @@ _この記事では、Xamarin.Android でマップや場所を使用する方法
 - [MapsAndLocationDemo_v3 (sample)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
 - [アクティビティのライフサイクル](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Google マップ API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Google Api アドオン](http://code.google.com/android/add-ons/google-apis/reference/index.html?com/google/android/maps/package-summary.html)
 - [インテント一覧: Android デバイスで Google のアプリケーションの起動](http://developer.android.com/guide/appendix/g-app-intents.html)
 - [場所とマップ](http://developer.android.com/guide/topics/location/index.html)

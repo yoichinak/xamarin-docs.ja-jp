@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8094f1ab78252e6d6bd8f5991bcb567b36ed1e9b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793951"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935346"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Xamarin で Jenkins の使用
 
@@ -385,7 +385,7 @@ Zipaligning、APK の署名と技術的には 2 つ独立したタスクは、An
 
 ### <a name="submitting-tests-to-test-cloud"></a>Test Cloud テストを送信します。
 
-自動テストは、シェル コマンドを使用してテスト クラウドに送信することができます。 Xamarin Test Cloud でテストの実行の設定に関する詳細についてを使用するためのガイドがある[Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/)または[Calabash](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/)です。
+自動テストは、シェル コマンドを使用してテスト クラウドに送信することができます。 Xamarin Test Cloud でテストの実行の設定に関する詳細についてを使用するためこのガイドを参照してください。 [Xamarin.UITest](/appcenter/test-cloud/preparing-for-upload/uitest/)です。
 
 
 ## <a name="summary"></a>まとめ

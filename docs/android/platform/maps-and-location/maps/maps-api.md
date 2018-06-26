@@ -1,19 +1,20 @@
 ---
-title: マップの API
+title: アプリケーションでは、Google マップ API を使用します。
+description: Xamarin.Android アプリケーションで Google Maps API v2 の機能を実装する方法。
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a0e010a8300eb4b4452737e34d2f55a35ab95428
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30773525"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935140"
 ---
-# <a name="maps-api"></a>マップの API
+# <a name="using-the-google-maps-api-in-your-application"></a>API を使用して、Google マップ、アプリケーションで
 
 マップのアプリケーションを使用して、あまり良い外観は、アプリケーションに直接マップを追加することがあります。 だけでなく、組み込みマップ アプリケーションでは、Google も用意されています、 [for Android のネイティブ マッピング API](https://developers.google.com/maps/documentation/android/)です。
 マップの API は、マッピング エクスペリエンスより詳細に制御を維持する必要がある場合に適しています。 マップの API で使用できるものは次のとおりです。
@@ -315,7 +316,7 @@ if (_map != null) {
 
 マップは、は Mercator 投影法に基づく画面で、フラットな面として modelled はします。 マップ ビューは、*カメラ*この平面のまっすぐ探し求めています。 カメラの位置は、場所、ズームの傾きを変更して影響を制御できます。 [CameraUpdate](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdate)カメラの位置を移動するクラスを使用します。 `CameraUpdate` オブジェクトは直接インスタンス化されません、マップの API は、代わりに、 [CameraUpdateFactory](http://developer.android.com/reference/com/google/android/gms/maps/CameraUpdateFactory.html)クラスです。
 
-1 回、`CameraUpdate`オブジェクトが作成された、いずれかをパラメーターとして渡される、 [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera(com.google.maps.CameraUpdate))または[GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.maps.CameraUpdate))メソッドです。 `MoveCamera`メソッドを更新中にすぐに、マップ、`AnimateCamera`メソッドは、smooth、動画の遷移を提供します。
+1 回、`CameraUpdate`オブジェクトが作成された、いずれかをパラメーターとして渡される、 [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera%28com.google.maps.CameraUpdate%29)または[GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera%28com.google.maps.CameraUpdate%29)メソッドです。 `MoveCamera`メソッドを更新中にすぐに、マップ、`AnimateCamera`メソッドは、smooth、動画の遷移を提供します。
 
 このコード スニペットは、使用する方法の簡単な例を示します、`CameraUpdateFactory`を作成する、`CameraUpdate`いずれかによって、マップのズーム レベルを 1 ずつ増分されます。
 
@@ -328,7 +329,7 @@ if (_map != null) {
 }
 ```
 
-マップの API を提供、 [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)カメラの位置の有効な値のすべてを集計するされます。 このクラスのインスタンスに提供できる、 [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition(com.google.android.gms.maps.model.CameraPosition))を返すメソッド、`CameraUpdate`オブジェクト。 マップの API も含まれています、 [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html)を作成するため、fluent API を提供するクラス`CameraPosition`オブジェクト。
+マップの API を提供、 [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)カメラの位置の有効な値のすべてを集計するされます。 このクラスのインスタンスに提供できる、 [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29)を返すメソッド、`CameraUpdate`オブジェクト。 マップの API も含まれています、 [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html)を作成するため、fluent API を提供するクラス`CameraPosition`オブジェクト。
 次のコード スニペットを作成する例を示しています、`CameraUpdate`から、`CameraPosition`でカメラの位置を変更するを使用して、 `GoogleMap`:
 
 ```csharp
@@ -372,7 +373,7 @@ Android のマップ API は、マップで、次の項目を描画するため�
 
 ##### <a name="adding-a-marker"></a>マーカーを追加します。
 
-マップにマーカーを追加する必要があるを新規作成[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)オブジェクトを呼び出す、 [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker(com.google.android.gms.maps.model.MarkerOptions))メソッドを`GoogleMap`インスタンス。 このメソッドは、[マーカー](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker)オブジェクト。
+マップにマーカーを追加する必要があるを新規作成[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)オブジェクトを呼び出す、 [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29)メソッドを`GoogleMap`インスタンス。 このメソッドは、[マーカー](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker)オブジェクト。
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -382,7 +383,7 @@ if (_map != null) {
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -402,7 +403,7 @@ if (_map != null) {
 
 -   `FromBitmap(Bitmap image)` &ndash; 指定したビットマップをアイコンとして使用します。
 
--   `FromFile(string fileName` &ndash; 指定したパスにあるファイルからカスタム アイコンを作成します。
+-   `FromFile(string fileName)` &ndash; 指定したパスにあるファイルからカスタム アイコンを作成します。
 
 -   `FromResource(int resourceId)` &ndash; 指定されたリソースからカスタム アイコンを作成します。
 
@@ -417,7 +418,7 @@ if (_map != null)
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
     markerOpt1.InvokeIcon(BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan));
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -515,7 +516,7 @@ myMap.AddPolygon(rectOptions);
 CircleOptions circleOptions = new CircleOptions ();
 circleOptions.InvokeCenter (new LatLng(37.4, -122.1));
 circleOptions.InvokeRadius (1000);
-_map.AddCircle (CircleOptions);
+_map.AddCircle (circleOptions);
 ```
 
 
@@ -614,4 +615,3 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 - [Google Android API v2 のマップ](https://developers.google.com/maps/documentation/android/)
 - [Google Play サービス APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [Google Maps API キーを取得します。](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [AVD が更新されない問題 57880: Google Play サービス](https://code.google.com/p/android/issues/detail?id=57880)

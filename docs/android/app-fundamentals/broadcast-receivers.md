@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 6b2e316eaf67e51801be4fcd670e80ec81c8ff08
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646704"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935400"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android で放送受信機
 
@@ -25,7 +25,7 @@ A_放送受信機_Android コンポーネントにより、メッセージに応
 Android では、2 種類のブロードキャストを識別します。
 
 * **明示的なブロードキャスト**&ndash;これらの種類のブロードキャストの特定のアプリケーションを対象とします。 明示的なブロードキャストの最も一般的な用途は、アクティビティを開始します。 アプリが電話番号をダイヤルする必要がある場合は、明示的なブロードキャストの例ダイヤルするには、Android と電話番号に沿ったパスの Phone アプリを対象とするインテントをディスパッチ、されます。 Android は、電話アプリに、インテントがルーティングされます。
-* **暗黙的な broadcase** &ndash;これらのブロードキャストは、デバイス上のすべてのアプリケーションにディスパッチされます。 暗黙のブロードキャストの例は、`ACTION_POWER_CONNECTED`目的としました。 この目的は、Android デバイスのバッテリが充電ことを検出するたびに発行されます。 Android では、このイベントに対して登録されているすべてのアプリをこの目的をルーティングします。
+* **暗黙的なブロードキャスト**&ndash;これらのブロードキャストは、デバイス上のすべてのアプリケーションにディスパッチされます。 暗黙のブロードキャストの例は、`ACTION_POWER_CONNECTED`目的としました。 この目的は、Android デバイスのバッテリが充電ことを検出するたびに発行されます。 Android では、このイベントに対して登録されているすべてのアプリをこの目的をルーティングします。
 
 ブロードキャストの受信者のサブクラスは、`BroadcastReceiver`型およびそれをオーバーライドする必要があります、 [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/)メソッドです。 Android を実行`OnReceive`メイン スレッドでそのためこの方法を設計する高速に実行します。 内のスレッドを起動するときは注意する必要がある`OnReceive`のため、メソッドの終了時に、Android がプロセスを終了させる可能性があります。 放送受信機が長時間実行される作業を実行する必要があるかどうかは、スケジュールを設定することをお勧め、_ジョブ_を使用して、`JobScheduler`または_Firebase ジョブ ディスパッチャー_です。 ジョブに作業をスケジュール設定については別のガイドで説明します。
 

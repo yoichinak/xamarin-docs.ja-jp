@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848305"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935429"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin ライブの再読み込み
 
@@ -119,6 +119,7 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 ## <a name="known-issues"></a>既知の問題
 
 * Visual Studio でのみサポートされます。
+* 設定する必要がありますリンク**しないリンク**または**リンク フレームワーク Sdk のみ** 
 * アプリ全体のリソースを再読み込みする (つまり**App.xaml**またはリソース ディクショナリを共有)、アプリのナビゲーションをリセットします。 これは、次のプレビュー リリースで修正されます。
 * ランタイム クラッシュが発生する可能性があります UWP のデバッグ中は、XAML を編集します。 回避策: を使用して **(Ctrl + f5 キー) をデバッグなしで開始**の代わりに**デバッグ (F5) で開始**です。
 

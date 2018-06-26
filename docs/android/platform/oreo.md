@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a23072427a74119bfa339fea8a695cd13b775685
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732763"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935104"
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -191,7 +191,7 @@ Android デバイス マネージャーを作成し、仮想デバイスの管�
 
 -----
 
-テストとデバッグ用の Android エミュレーターの構成の詳細については、次を参照してください。 [Google Android エミュレーターでデバッグ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)です。
+テストとデバッグ用の Android エミュレーターの構成の詳細については、次を参照してください。 [Android エミュレーターでデバッグする](~/android/deploy-test/debugging/debug-on-emulator.md)です。
 
 Nexus やピクセルなどの物理デバイスを使用している場合か、無線 (OTA) 更新プログラムを自動でデバイスを更新またはシステム イメージをダウンロードでき、デバイスを直接フラッシュできます。 Android Oreo にデバイスを手動で更新の詳細については、次を参照してください。 [Nexus およびピクセル デバイスの工場出荷時イメージ](https://developers.google.com/android/images)です。
 

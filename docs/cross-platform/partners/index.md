@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: F42526FF-2B0D-4A9D-B129-CECF680ED0DE
 author: conceptdev
 ms.author: crdun
-ms.date: 06/19/2017
-ms.openlocfilehash: 8f52c6783335bd7bc26bc9886dee670489ffba09
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.date: 06/25/2018
+ms.openlocfilehash: 4a3045b6f35930b61598f7038974722801c38c2e
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291776"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935517"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認定モバイル ソリューションを提供するパートナーをコンサルティング
 
@@ -56,7 +56,6 @@ _プライマリの場所によって一覧表示、多くのパートナーは�
 |[Ciber u. s.](http://www.ciber.com/)|Greenwood 村 (米国)|デジタル変換の最初のクラウド サービス、一意のアクセラレータとフォーカスのある人材サービス、行うもので、将来可能です。|
 |[Cie デジタル ラボ](http://www.ciedigital.com/)|Los Angeles (米国) です。Irvine (米国)|Cie デジタル ラボは、ビジネスの課題、パートナーが直面を理解し、測定可能なエンタープライズ値が表示される新しいソフトウェア ソリューションを革新に関する|
 |[わかりやすくするための事業](https://www.clarity-ventures.com)|オースティン、テキサス州|わかりやすくするためが適切に丸められた、professional、ビジネスのすべてのサービスの拡張機能です。 デザイン画面の画面で、ビジネス アイデンティティを行ったり、創造的なチーム. から|
-|[コード Mill テクノロジ](https://codemilltech.com/)|Madison (米国)|コード Mill は、付きコンサルティングおよびトレーニング会社が Microsoft と Xamarin MVP Matt Soucoup によって設立されました。 Xamarin と Azure の開発に専門としています |
 |[認識テクノロジ ソリューション](http://www.cognizant.com)|ブエノスアイレス、アルゼンチンです。オークランド、ニュージーランドです。メルボルン (オーストラリア) です。シドニー、オーストラリアです。ブリスベン (オーストラリア) です。ブリュッセル (ベルギー) です。San サンパウロ、ブラジルです。カナダ、トロントです。上海、中国です。Heredia、コスタリカです。Jersey 市区町村、ニュージャージー州、USA です。米国; San Francisco、カリフォルニア州Teaneck (NJ、米国)|Cognizant 顧客満足度、技術革新、深い業界およびビジネス プロセスの専門知識、将来の作業を具体化するグローバルなコラボレーション従業員に対する情熱を結合します。|
 |[一貫性のあるソリューション, inc.](http://www.coherentsolutions.com)|ニューヨークです。ボストン、MA です。ベラルーシ、ミンスク|一貫性のあるソリューションは、ソフトウェア開発コンサルティング会社をグローバルな専門知識、革新性、および創造力をまとめることによって、お客様のビジネス問題を解決するためのアウトソーシング|
 |[Cruxlab](https://cruxlab.com/)|Los Angeles (米国)|カスタムのデジタル製品新興と企業では、エンドユーザーおよびビジネスを作成します|
@@ -65,10 +64,10 @@ _プライマリの場所によって一覧表示、多くのパートナーは�
 |[度](http://www.degdigital.com)|Overland 公園 (米国)|度スマート デジタル マーケティング、電子商取引、およびコラボレーションする方法を競争力の長所を増幅し、その目的を達成できるように支援を作成します。|
 |[DevRabbit](http://www.devrabbit.com)|San Ramon (米国)|DevRabbit が基づく米国技術コンサルティング会社がエンタープライズ モビリティ、Web アプリケーションの開発およびクラウド コンサルティングに関する最新のソリューションを提供します。|
 |[Digineer](http://www.digineer.com)|プリマス、MN|Digineer は、エンタープライズ プロジェクト管理、ビジネス分析、アプリの開発と business intelligence、およびスタッフのサービスを提供します。|
-|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|ボストン、MA です。ヨーロッパ;アジア Pasific です。 中東です。アフリカ|DigitasLBi はデジタル世界の移動を支援する国際コミュニケーション事務所です。|
+|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|ボストン、MA です。ヨーロッパ;アジア太平洋地域です。 中東です。アフリカ|DigitasLBi はデジタル世界の移動を支援する国際コミュニケーション事務所です。|
 |[DMI](https://dminc.com/)|Bethesda、MD|ビルドすると、企業を接続されている世界中の変革自体、一意の blend の機能と燃料革新するように設計新しいマインド セットを提供します。|
 |[DOOR3](http://door3.com/)|New York (米国)|創造的な機関、大規模なコンサルティング会社および特化された実装店舗の世界では私たちが異なります。 当社のビジネスに関心が配慮して、お客様より。|
-|[DreamTeam Mobile](http://dreamteam-mobile.com)|米国、ワシントン d. c.|ネイティブの iOS、Android、Windows と Mac アプリ Swift、Xamarin を使用しておよびネイティブ反応 DreamTeam Moible を作成します。 複数のプラットフォームのネイティブ アプリを構築するのには、共有コードベース|
+|[DreamTeam Mobile](http://dreamteam-mobile.com)|米国、ワシントン d. c.|DreamTeam Mobile では、ネイティブの iOS、Swift、Xamarin を使用して Android、Windows と Mac のアプリおよびネイティブの反応を作成します。 複数のプラットフォームのネイティブ アプリを構築するのには、共有コードベース|
 |[Durwella](http://www.durwella.com)|ヒューストン (米国)|Durwella、科学、エンジニア リングのプロジェクトに重点を置いたソフトウェア ソリューション会社|
 |[EastBanc テクノロジ](http://www.eastbanctech.com)|米国、ワシントン d. c.|EastBanc テクノロジは、柔軟な通信テクノロジ ソリューションを提供するプラットフォームに依存しない、ライフ サイクルの全ソフトウェア開発会社です。|
 |[エッジ Webware, inc.](https://edgewebware.com)|Miamisburg オハイオ州|Web およびモバイル アプリのデザインおよび開発サービスを提供エッジ Webware, inc.|
@@ -79,7 +78,7 @@ _プライマリの場所によって一覧表示、多くのパートナーは�
 |[エンデバー ･ ソフトウェア テクノロジ inc.](http://www.techendeavour.com)|オースティン、テキサス州|エンデバー ･のコンサルタントがエンタープライズ モバイルの成熟度を評価し、すべてのレベルで、組織の戦略的なモビリティのニーズへの対処に役立つ|
 |[拡張システムのコンサルティング](http://www.enhancedsystems.com)|Johnson の市区町村、TN|新しいビジネス アプリケーション、または既存のテーブルを作成するを求めている企業の専門的なデザイン、開発および統合サービスを提供するエンハンス Systems コンサルティング, inc.|
 |[Envoc](http://envoc.com/)|バトン ルージュ、LA|創造性とパフォーマンスに優れたエクスペリエンスと革新テクノロジーの交差部分に存在しました|
-|[EPAM システム](https://www.epam.com)|Newtown、PA|EPAM システム, Inc は、先頭のグローバル製品開発およびデジタル プラットフォーム エンジニア リング サービス ポータルです。|
+|[EPAM システム](https://www.epam.com)|Newtown、PA です。New York City です。フィラデルフィアです。シカゴです。San Francisco です。Los Angeles です。ロンドンです。ミンスクです。St ペテルスブルグです。ブダペスト|EPAM システム, Inc は、先頭のグローバル製品開発およびデジタル プラットフォーム エンジニア リング サービス ポータルです。|
 |[Experis Ciber B.V.](http://www.ciber.com)|Troy、多重継承 |Ciber 北アメリカ、インド全体でグローバル IT コンサルティング会社でし、2,900 の従業員とオフィスには、します。|
 |[高速順方向 LLC](http://www.fastforward.sh/)|Salem、MA|高速順方向のすべてのデバイスの種類、すべてのネイティブの主要なオペレーティング システム、アプリケーションを開発およびモ ノのインターネット動作させるには|
 |[Fincons グループ](http://www.finconsgroup.com)|ロサンゼルス、カリフォルニア州です。ニューヨークです。ロンドン、英国|Fincoins グループ サービスとソリューションは、大規模なアカウントおよび Sme、テクノロジと、プロセスの両方に対して確実に必要な技術革新の実際のニーズに具体的な応答を提供します。|
@@ -88,7 +87,7 @@ _プライマリの場所によって一覧表示、多くのパートナーは�
 |[FusionComputing, inc.](http://www.fusioncomputing.com)|Douglasville ジョージア州|クロス プラットフォームのネイティブ アプリケーションの開発おため、お客様の任意のデバイスに到達することができます。|
 |[Griffin ソリューション](http://griffinsolutionsgroup.com)|Alpharetta、GA|Griffin ソリューション グループは、ビジネスの問題の解決に興味があるので、設立されました。 適切なテクノロジの意思決定を行うクライアントを支援する業界の多数の中での経験年数を適用します。|
 |[Harman は、Services, Inc. の接続](http://www.harman.com)|Mountain ビュー、CA です。Hartford、CT です。シアトル、ワシントン州です。ニューアーク、ニュージャージー州です。ロンドン、英国です。ベルリン、ドイツです。モスクワ、ロシア|Harman の設計とエンジニアに接続されている製品 automakers、コンシューマーで、企業の接続された自動車システム、オーディオとビジュアルの製品、エンタープライズのオートメーション ソリューションなど、世界中のソリューション接続済みサービス|
-|[HCL テクノロジ](https://www.hcltech.com/)|Noida、Uttar 国境、インドです。Mississauga、ON、カナダです。New York、NY、USA です。San サンパウロ、ブラジルです。メキシコのメキシコシティ、CDMX、です。ロンドン、英国です。シドニー、オーストラリア|HCL テクノロジは、ビジネスをデジタルの時代の reimagine 企業に役立つ次世代グローバル テクノロジ会社です。|
+|[HCL テクノロジ](https://www.hcltech.com/)|Noida、Uttar 国境、インドです。Mississauga、ON、カナダです。New York、NY、USA です。San サンパウロ、ブラジルです。メキシコのメキシコシティ、CDMX、です。ロンドン、英国です。シドニー、オーストラリア|HCL テクノロジは再デジタルの時代のパートナーのビジネスを想像企業に役立つ次世代グローバル テクノロジ会社です。|
 |[Hexaware テクノロジ Ltd](http://hexaware.com/)|イズリン New jersey」|Hexaware のグローバル プロバイダーは、IT、BPO とコンサルティング サービス |
 |[高度なテクノロジのグループ、LLC](http://hightg.com)|あり市区町村、あり|カスタムのソフトウェア開発会社|
 |[Hitcents](http://hitcents.com)|ボウリング緑、キーです。米国; ロサンゼルス、カリフォルニア州米国; San Francisco、カリフォルニア州上海、上海、中国|Hitcents がアプリをビルドできないだけ1 つのプラットフォームを超えるエクスペリエンスを構築します。 任意の場所では、すべてのユーザーがアプリにアクセスできるようにアプリ 24/7 もサポートします。|
@@ -239,7 +238,7 @@ _プライマリの場所によって一覧表示、多くのパートナーは�
 |[パイロット CVBA をフローします。](http://www.flowpilots.com)|アントワープ (ベルギー)|フロー パイロット設計、構築、デプロイおよび管理収益向上、コストを削減または自由および柔軟性を持っていき、その従業員に顧客を促進するデジタル ツールです。|
 |[KENZE](http://www.kenze.be)|Mechelen (ベルギー)|Microsoft .NET projecten en gerelateerde technologieën です。  De drie belangrijkste pijlers binnen de organisatie zijn mensen、kennis en mensenkennis、zij vormen de 単位 voor kwalitatieve、succesvolle projecten en tevreden klanten をします。 |
 |[Levelapp](http://www.levelapp.be)|Hoeilaart (ベルギー)|完全なモバイル agency Levelapp います。 私たちは、ソフトウェア開発者として動作しています。 表示され、戦略ビジョンを促進するクロス プラットフォーム アプリケーションを作成します。 値を顧客、パートナーや従業員に配信します。 |
-|[Realdolmen](http://www.realdolmen.com/)|Huizingen (ベルギー) です。Kontich (ベルギー) です。Lummen (ベルギー) です。Ghent (ベルギー) です。Harelbeke (ベルギー) です。Namur (ベルギー) です。Mons (ベルギー)|Mobile は、新しい標準です。 ほぼすべての企業では、モバイル サービスまたはアプリケーション競争力を維持する必要があります。 自身でモバイル戦略ではありません; 十分など、クラウドでは、セキュリティ、ERP を含む ICT インフラストラクチャ全般に完全に統合するすべてのものが必要です。 Realdolmen で呼び出してこの接続のビジネスします。 <link>|
+|[Realdolmen](http://www.realdolmen.com/)|Huizingen (ベルギー) です。Kontich (ベルギー) です。Lummen (ベルギー) です。Ghent (ベルギー) です。Harelbeke (ベルギー) です。Namur (ベルギー) です。Mons (ベルギー)|Mobile は、新しい標準です。 ほぼすべての企業では、モバイル サービスまたはアプリケーション競争力を維持する必要があります。 自身でモバイル戦略ではありません; 十分など、クラウドでは、セキュリティ、ERP を含む ICT インフラストラクチャ全般に完全に統合するすべてのものが必要です。 Realdolmen で呼び出してこの接続のビジネスします。|
 
 
 ## <a name="brazil"></a>ブラジル
@@ -574,7 +573,7 @@ _プライマリの場所によって一覧表示、多くのパートナーは�
 |[Billennium](http://billennium.pl/)|ワルシャワ、ポーランド |Billennium 長年の革新的なビジネスのツールとソリューションの開発経験があります。|
 |[エッジの 1 つのソリューション sp z o.o.](http://www.edge1s.com)|ワルシャワ、ポーランド |マイクロソフトには、スキルと高修飾 IT コンサルタントのエクスペリエンスが提供します。 クライアントのニーズと期待する柔軟性の高いアプローチ、ポートフォリオ内の各サービス内で保証します。|
 |[NETBULLS の sp z o.o.](http://www.netbulls.io)|Bialystok、ポーランド|Skilfully 市場に自分のアイデアを取得します。 せずポンド ドル €、時間または言い訳を無駄にするには。 |
-|[Sii](http://www.sii.pl/en)|ワルシャワ、ポーランドです。パリ (フランス) です。マドリッド (スペイン) です。ベルリン、ドイツです。アムステルダム、オランダです。ブリュッセル (ベルギー) です。ルクセンブルク市区町村、ルクセンブルクです。スイスのジュネーヴMarrakesh、モロッコです。プラハ、Czechia です。ブカレスト、ルーマニアです。トロント、ON、カナダです。サンティアゴ、サンティアゴ大都市圏領域、チリです。ブエノスアイレス、自律的なブエノスアイレス、アルゼンチンです。Bogot√ °、ボゴタ、コロンビアです。デリー (インド)|Sii は、主要な IT サービスの会社でポーランド デジタル変換プログラムの構想から正常に配信する以降のサポートです。 デバイスの通信、大規模なデータ処理とオフラインを初めて有効にすると、エンタープライズおよびコンシューマーのアプリを提供するうえでの専門知識を提供しています。|
+|[Sii](http://www.sii.pl/en)|ワルシャワ、ポーランドです。パリ (フランス) です。マドリッド (スペイン) です。ベルリン、ドイツです。アムステルダム、オランダです。ブリュッセル (ベルギー) です。ルクセンブルク市区町村、ルクセンブルクです。スイスのジュネーヴMarrakesh、モロッコです。プラハ、Czechia です。ブカレスト、ルーマニアです。トロント、ON、カナダです。サンティアゴ、サンティアゴ大都市圏領域、チリです。ブエノスアイレス、自律的なブエノスアイレス、アルゼンチンです。Bogotá、ボゴタ、コロンビアです。デリー (インド)|Sii は、主要な IT サービスの会社でポーランド デジタル変換プログラムの構想から正常に配信する以降のサポートです。 デバイスの通信、大規模なデータ処理とオフラインを初めて有効にすると、エンタープライズおよびコンシューマーのアプリを提供するうえでの専門知識を提供しています。|
 
 
 ## <a name="portugal"></a>ポルトガル

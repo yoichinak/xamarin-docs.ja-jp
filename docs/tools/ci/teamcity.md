@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 32338bc89df2ef7ee4426482b1967861f0c0e058
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e7279c03c730e95f211b555e5b832942c19ea8aa
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921951"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935416"
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin を使用したチームの市区町村を使用します。
 
@@ -39,7 +39,7 @@ TeamCity を設定するのには、いくつかの手順があります。
 
 - **A TeamCity プロジェクトの作成**– 前の 3 つの手順を完了するは前に、すべてのメタ データを格納する TeamCity プロジェクトを作成する必要がありますをソース コードを取得、プロジェクトをコンパイルおよび Xamarin Test Cloud テストを送信する必要です。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 エクスペリエンスを[Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud)が必要です。
 
@@ -142,7 +142,7 @@ test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <de
 
 という NUnit スタイル XML ファイルの形式で、テスト結果が返されます、テストの実行時に**report.xml**です。 TeamCity ビルド ログに情報が表示されます。
 
-Xamarin のマニュアルを参照する Test Cloud UITests を送信する方法の詳細については、 [Test Cloud テストを送信する](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/)です。
+Test Cloud に UITests を送信する方法の詳細については、このガイドを参照して[アップロードの準備 Xamarin.UITests](/appcenter/test-cloud/preparing-for-upload/uitest/)です。
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>Calabash テスト クラウドに送信します。
 
@@ -207,6 +207,5 @@ TeamCity がインストールされているし、Visual Studio for Mac は、�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin Test Cloud (UITest) にテストを送信します。](https://developer.xamarin.com~/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/)
-- [Xamarin Test Cloud (Calabash) にテストを送信します。](https://developer.xamarin.com~/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/)
+- [Xamarin.UITests などアップロードの準備](/appcenter/test-cloud/preparing-for-upload/uitest/)
 - [インストールと構成 TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

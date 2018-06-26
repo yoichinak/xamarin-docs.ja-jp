@@ -1,19 +1,20 @@
 ---
-title: マップのアプリケーション
+title: マップのアプリケーションの起動
+description: Xamarin.Android アプリから組み込みマップのアプリケーションを起動する方法。
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/05/2017
-ms.openlocfilehash: b94c65c079b28fe042a42ec04357c11f3516d205
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: d15b6e544f58f03272c711236b579ca568e09539
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765556"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935023"
 ---
-# <a name="maps-application"></a>マップのアプリケーション
+# <a name="launching-the-maps-application"></a>マップのアプリケーションの起動
 
 Xamarin.Android 内の対応付けを使用する最も簡単な方法では、次に示す組み込みマップ アプリケーションを活用します。
 
