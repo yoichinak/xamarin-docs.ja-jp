@@ -49,7 +49,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 * ライト テーマ (テーマを持たないに微妙な差異のみ)
 * ダーク テーマ
 
-![](images/standard-none-sml.png "テーマせずコントロール") ![ ](images/standard-light-sml.png "ライト テーマでのコントロール") ![ ](images/standard-dark-sml.png "ダーク テーマでのコントロール")
+![](images/standard-none-sml.png "テーマせずコントロール") ![](images/standard-light-sml.png "ライト テーマでのコントロール") ![](images/standard-dark-sml.png "ダーク テーマでのコントロール")
 
 <a name="styleclass" />
 
@@ -69,7 +69,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 
 これによって、薄いおよび濃いとおり。
 
-![](images/boxview-light-sml.png "ライト テーマ StyleClass で BoxView") ![ ](images/boxview-dark-sml.png "ダーク テーマ StyleClass で BoxView")
+![](images/boxview-light-sml.png "ライト テーマ StyleClass で BoxView") ![](images/boxview-dark-sml.png "ダーク テーマ StyleClass で BoxView")
 
 <a name="builtin" />
 
