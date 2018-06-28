@@ -1,23 +1,25 @@
 ---
-title: 環境
+title: Xamarin.iOS アプリの実行環境
+description: このドキュメントでは、Xamarin.iOS アプリ用に一時的な環境変数と永続的な環境変数を設定する方法について説明します。 変数は、プロジェクトのプロパティで、または mtouch パッケージ ツールへの追加引数として指定することができます。
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bc06ce3f3a26842340ce6e19741a8a7dfe8f086d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 246c65729f9327dd1ccf549603b4c2b1feb023e8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784967"
 ---
-# <a name="environment"></a>環境
+# <a name="execution-environment-for-xamarinios-apps"></a>Xamarin.iOS アプリの実行環境
 
 *実行環境*は、プログラムの実行に影響を与える一連の環境変数です。 環境変数はプロジェクトのプロパティに一時的に設定するか、追加の引数を mtouch パッケージ ツールに指定することで永続的に設定できます。
 
 ## <a name="temporary-environment-variables"></a>一時的な環境変数
 
-一時的な環境変数はプロジェクトの **[プロパティ]** から **[オプション]** ウィンドウを開き、**[実行] の [全般]** セクションで設定します。 これらの環境変数は、アプリケーションを Visual Studio for Mac で起動したときにのみ有効になります。アプリをタップして手動で起動した場合、これらの環境変数は設定されません。
+一時的な環境変数はプロジェクトの **[プロパティ]** / から **[オプション]** ウィンドウを開き、**[実行] の [全般]** セクションで設定します。 これらの環境変数は、アプリケーションを Visual Studio for Mac で起動したときにのみ有効になります。アプリをタップして手動で起動した場合、これらの環境変数は設定されません。
 
 ## <a name="permanent-environment-variables"></a>永続的な環境変数
 

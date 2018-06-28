@@ -1,18 +1,20 @@
 ---
-title: 単体テスト
+title: Xamarin.iOS アプリの単体テスト
+description: このドキュメントでは、Xamarin.iOS アプリケーションを単体テストする方法の概要を示します。 単体テスト プロジェクトの作成、テストの書き込み、テストの実行方法について説明します。
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3129302cbb2fbe9e2757986317da0ec30601b492
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785464"
 ---
-# <a name="unit-testing"></a>単体テスト
+# <a name="unit-testing-xamarinios-apps"></a>Xamarin.iOS アプリの単体テスト
 
 このドキュメントでは、Xamarin.iOS プロジェクト用の単体テストを作成する方法について説明します。
 Xamarin.iOS での単体テストは、Touch.Unit フレームワークを使用して行います。このフレームワークには、iOS テスト ランナーと、単体テストの書き込みのために使い慣れた一連の API を提供する [Touch.Unit](https://github.com/xamarin/Touch.Unit) という NUnit の変更バージョンの両方が含まれます。

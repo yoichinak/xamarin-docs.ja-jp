@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34549237"
 ---
 # <a name="deployment-and-testing"></a>配置とテスト
 
@@ -57,6 +58,11 @@ ms.lasthandoff: 05/03/2018
 ## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Xamarin.Android パフォーマンス](~/android/deploy-test/performance.md)
 
 Xamarin.Android でビルドされたアプリケーションのパフォーマンスを高めるための方法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。
+
+## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[Android アプリのプロファイリング](~/android/deploy-test/profiling.md)
+
+このガイドでは、プロファイラー ツールを使用して、Android アプリのパフォーマンスとメモリ使用量を調べる方法について説明します。
+
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935429"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066651"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin ライブの再読み込み
 
@@ -28,7 +28,7 @@ Xamarin のライブの再読み込みを有効にすると、 **、XAML を変�
 
 ## <a name="requirements"></a>必要条件
 
-* [Visual Studio 2017 バージョン 15.7 以上](https://www.visualstudio.com/vs/)以上で、 **.NET を使用したモバイル開発**ワークロード。
+* [Visual Studio 2017 バージョン 15.7 以上](https://visualstudio.microsoft.com/vs/)以上で、 **.NET を使用したモバイル開発**ワークロード。
 * [Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)またはそれ以降。
 
 ## <a name="getting-started"></a>作業の開始

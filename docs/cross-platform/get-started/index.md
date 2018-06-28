@@ -1,21 +1,20 @@
 ---
-title: 作業の開始
-description: 以下の詳細なガイドを使用して、最初からモバイル アプリケーションを開発して展開する方法を学習します。
+title: Xamarin の概要
+description: このドキュメントはさまざまなガイドにリンクしており、これらのガイドでは、Xamarin の開発を開始する方法について説明しています。 リンクされているコンテンツでは、最初のアプリをビルドする方法について説明し、モバイル開発の概要を提供します。また、Xamarin University でのトレーニングを紹介します。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: de5b1499f95e6703e0c11adb1f76e1717a494e33
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3873236c64f1288a896c40d468f06b60f532a431
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780797"
 ---
-# <a name="getting-started"></a>作業の開始
-
-_以下の詳細なガイドを使用して、最初からモバイル アプリケーションを開発して展開する方法を学習します。_
+# <a name="getting-started-with-xamarin"></a>Xamarin の概要
 
 作業を開始する前に、[システム要件](requirements.md)と[インストール手順](installation/index.md)を確認し、すべて準備が整っていることを確認してください。
 

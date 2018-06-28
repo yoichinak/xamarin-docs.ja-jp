@@ -1,5 +1,5 @@
 ---
-title: Apple Pay 機能
+title: Xamarin.iOS の Apple Pay 機能
 description: アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、Apple Pay 機能に必要な設定について説明します。
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c389dc4831009d760e4a6a810b5b3c01637c822e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a3d2e6179dde1583e0fd4d175c46582bed9a2e07
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785071"
 ---
-# <a name="apple-pay-capabilities"></a>Apple Pay 機能
+# <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS の Apple Pay 機能
 
 _アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。このガイドでは、Apple Pay 機能に必要な設定について説明します。_
 

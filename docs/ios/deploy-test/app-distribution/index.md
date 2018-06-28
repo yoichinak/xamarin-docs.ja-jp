@@ -1,5 +1,5 @@
 ---
-title: アプリの配布の概要
+title: Xamarin.iOS アプリの配布の概要
 description: ここでは、Xamarin.iOS アプリケーションで使用できる配布手法の概要について説明します。また、このトピックよりも詳細なドキュメントについても紹介します。
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 76de5b46559676e36b9d1f9b71575323beec414e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 83c58fa430a0cf21e8b86e56b9dea04b3cad6d82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784769"
 ---
-# <a name="app-distribution-overview"></a>アプリの配布の概要
+# <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS アプリの配布の概要
 
 _ここでは、Xamarin.iOS アプリケーションで使用できる配布手法の概要について説明します。また、このトピックよりも詳細なドキュメントについても紹介します。_
 

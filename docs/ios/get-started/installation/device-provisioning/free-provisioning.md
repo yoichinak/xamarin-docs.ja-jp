@@ -1,21 +1,22 @@
 ---
-title: 無料プロビジョニング
-description: Apple の Xcode 7 リリースでは、すべての iOS および Mac 開発者にとって重大な変更がありました。それが無料プロビジョニングです。
+title: Xamarin.iOS アプリの無料プロビジョニング
+description: このドキュメントでは、Xamarin.iOS の開発者が Apple の有料開発者プログラムに新規登録せずに物理デバイス上でアプリをテストする方法について説明しています。
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 03/19/2017
-ms.openlocfilehash: 09244ebaefedb991289e5a1f67b59491ee84ed28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786023"
 ---
-# <a name="free-provisioning"></a>無料プロビジョニング
+# <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
 
-_Apple の Xcode 7 リリースでは、すべての iOS および Mac 開発者にとって重大な変更がありました。それが無料プロビジョニングです。_
+_Apple の Xcode 7 リリースでは、すべての iOS と Mac 開発者にとって重大な変更がありました。それが無料プロビジョニングです。_
 
 開発者は無料プロビジョニングを使用して、作成した Xamarin.iOS アプリケーションを自分の iOS デバイスに展開できます。いずれかの **Apple Developer Program** に参加する必要は**ありません**。 デバイス上でのテストにはシミュレーター上のテストよりも多くの利点があるため、開発者にとってはとても便利です。たとえば、メモリ、ストレージ、ネットワーク接続などの利点があります。
 
@@ -40,11 +41,11 @@ Apple Developer アカウントを使用しないプロビジョニングは Xco
 
 1. Apple ID を持っていない場合は、[appleid.apple.com](https://appleid.apple.com/account) で作成します。
 2. Xcode を開き、**[Xcode]、[Preferences]\(設定\)** の順に参照します。
-3. **[Accounts]**\(アカウント\) で **+** ボタンを使用して既存の Apple ID を追加します。 次のスクリーンショットのようになります。
+3. **[Accounts]** \(アカウント\) で **+** ボタンを使用して既存の Apple ID を追加します。 次のスクリーンショットのようになります。
 
   [![](free-provisioning-images/launchapp1.png "Xcode [Preferences]\(設定\) [Accounts]\(アカウント\)")](free-provisioning-images/launchapp1.png#lightbox)
 
-4. 展開する iOS デバイスを接続し、Xcode で新しい空白で単一ビューの iOS プロジェクトを作成します。 **[Team]**\(チーム\) ドロップダウンを、追加した Apple ID に設定します。 Apple ID は `your name (Personal Team - your Apple ID)` のような形式です。
+4. 展開する iOS デバイスを接続し、Xcode で新しい空白で単一ビューの iOS プロジェクトを作成します。 **[Team]** \(チーム\) ドロップダウンを、追加した Apple ID に設定します。 Apple ID は `your name (Personal Team - your Apple ID)` のような形式です。
 
   [![](free-provisioning-images/launchapp2.png "署名 ID を作成する")](free-provisioning-images/launchapp2.png#lightbox)
 
@@ -52,7 +53,7 @@ Apple Developer アカウントを使用しないプロビジョニングは Xco
 
   [![](free-provisioning-images/launchapp5.png "明示的なアプリ ID でプロビジョニング プロファイルを作成する")](free-provisioning-images/launchapp5.png#lightbox)
 
-6. [Signing]\(署名\) セクションで **[Automatically Manage Signing]**\(署名の自動管理\) を選択し、ドロップダウン リストから自分のチームを選択します。
+6. [Signing]\(署名\) セクションで **[Automatically Manage Signing]** \(署名の自動管理\) を選択し、ドロップダウン リストから自分のチームを選択します。
 
   [![](free-provisioning-images/launchapp6.png "[Automatically Manage Signing]\(署名の自動管理\) を選択して、ドロップ ダウン リストから自分のチームを選択する")](free-provisioning-images/launchapp6.png#lightbox)
 

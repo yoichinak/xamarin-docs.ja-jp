@@ -1,16 +1,17 @@
 ---
 title: Xamarin のアンインストール
-description: コンピューターから Xamarin 製品をアンインストールする
+description: このドキュメントでは、Mac と Windows の両方で Xamarin をアンインストールする方法について説明します。 Mono、Xamarin.Android、Xamarin.iOS、およびその他のツールのアンインストールに関する特定の手順を示します。
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: d1b88ad97a1cecaadd84226bca61c7f2b262438d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d5cf15b8ecd225fb75a3cfa0017cb84bc13cce1b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782022"
 ---
 # <a name="uninstalling-xamarin"></a>Xamarin のアンインストール
 

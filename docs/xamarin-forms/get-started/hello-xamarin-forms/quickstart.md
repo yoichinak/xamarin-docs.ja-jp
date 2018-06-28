@@ -1,5 +1,6 @@
 ---
 title: Xamarin.Forms のクイック スタート
+description: この記事では、英数字の電話番号 (ユーザーが入力) を数字の電話番号に変換してから、その番号に電話をかけるアプリケーションを作成する方法を説明します。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
@@ -7,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2018
-ms.openlocfilehash: 02aa7d4847f8ac601ca1311fd7fed09290e77482
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 90394195afc4257656c8d09fab348156a7f549d5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848058"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35242909"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 

@@ -1,22 +1,22 @@
 ---
-title: 配置とテスト
-description: 安定化と配置に関するガイド
+title: Xamarin.iOS アプリの展開とテスト
+description: このドキュメントはさまざまなガイドにリンクしています。これらのガイドでは、Xamarin.iOS アプリケーションの展開とテストに関連するトピックについて説明します。 たとえば、アプリの配布、.ipa ファイル、プロビジョニング、ワイヤレス展開、TestFlight、およびデバッグについてです。
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 515ea8e63f8309c46a7d802af1daafcb0c483762
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96eeefa631eb4055d8bd0af5b89160ab0899907
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785185"
 ---
-# <a name="deployment-and-testing"></a>配置とテスト
+# <a name="deploying-and-testing-xamarinios-apps"></a>Xamarin.iOS アプリの展開とテスト
 
 このセクションには、アプリケーションのテストに使用されるトピックとアプリケーションを配布する方法が含まれます。 以下のトピックでは、デバッグに使用されるツール、テスターへの展開、App Store にアプリケーションを発行する方法などを説明しています。
-
 
 ##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[アプリの配布](~/ios/deploy-test/app-distribution/index.md)
 
@@ -46,19 +46,14 @@ Apple が所有するようになった TestFlight は、Xamarin.iOS アプリ�
 
 Visual Studio と Visual Studio for Mac IDE のどちらにも、iOS シミュレーターと iOS デバイスの両方で Xamarin.iOS アプリケーションをデバッグできるサポートが含まれています。 この記事では、デバッガーを使用する方法と、サポートする多様なオプションを構成する方法について説明します。
 
-
 ##  <a name="touchunitiosdeploy-testtouchunitmd"></a>[Touch.Unit](~/ios/deploy-test/touch.unit.md)
 
 このドキュメントでは、Xamarin.iOS プロジェクト用の単体テストを作成する方法について説明します。
 Xamarin.iOS での単体テストは、Touch.Unit フレームワークを使用して行います。このフレームワークには、iOS テスト ランナーと、単体テストの書き込みのために使い慣れた一連の API を提供する [NUnitLite](http://www.nunitlite.com/) フレームワークの変更バージョンの両方が含まれます。
 
-
-
 ##  <a name="using-instruments-to-detect-native-leaks-using-markheapiosdeploy-testusing-instruments-to-detect-native-leaks-using-markheapmd"></a>[Instruments で MarkHeap を使用してネイティブ リークを検出する](~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md)
 
 この記事では、iOS デバイスと Xamarin.iOS アプリケーションで Instruments を使用する方法について説明します。 また、シミュレーターでアプリケーションをプロファイルする方法についても説明します。
-
-
 
 ##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[チュートリアル - Apple の Instruments ツールの使用](~/ios/deploy-test/walkthrough-apples-instrument.md)
 

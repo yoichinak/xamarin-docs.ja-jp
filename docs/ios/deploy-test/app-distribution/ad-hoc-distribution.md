@@ -1,5 +1,5 @@
 ---
-title: アドホック配布
+title: Xamarin.iOS アプリ用のアドホック配布
 description: このドキュメントでは、幅広い層の人々に主に Xamarin.iOS アプリケーションのテストのために使用されるアドホック配布手法の概要を示します。
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b862a39d8fb8fe079b83b8842281fad5ec903e4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0907c3bcca9e0955e5ad9f8ed48adac03202cbaa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784804"
 ---
-# <a name="ad-hoc-distribution"></a>アドホック配布
+# <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用のアドホック配布
 
 _このドキュメントでは、幅広い層の人々に主に Xamarin.iOS アプリケーションのテストのために使用されるアドホック配布手法の概要を示します。_
 
@@ -80,7 +81,7 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 作成する他のプロビジョニング プロファイルと同じように、ユーザーのデバイスに配布されるアプリを識別するため、アプリ ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
 
 
-1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]**\(ID\) の下で **[App IDs]**\(App ID\) を選択します。
+1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 明示的またはワイルドカード アプリ ID を選択し、次のように逆引き DNS 形式でバンドル ID を入力します。
     - **明示的**: `com.[DomainName].[AppName]`

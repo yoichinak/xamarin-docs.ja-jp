@@ -1,5 +1,5 @@
 ---
-title: 機能の使用
+title: Xamarin.iOS の機能の使用
 description: アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、すべての機能に必要な設定について説明します。
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c897b1f5fbdf950e6858d7b73ebed60049f60e8e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785558"
 ---
-# <a name="working-with-capabilities"></a>機能の使用
+# <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
 _アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。このガイドでは、すべての機能に必要な設定について説明します。_
 

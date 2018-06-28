@@ -1,6 +1,6 @@
 ---
-title: Hello, iOS マルチスクリーン
-description: 2 部構成のこのガイドでは、2 つ目の画面を処理するために、「Hello, iOS」ガイドで作成された Phoneword アプリケーションを展開します。 その過程で、モデル ビュー コントローラー設計パターンについて紹介し、最初の iOS ナビゲーションを実装し、iOS アプリケーションの構造と機能について理解を深めます。
+title: Hello, iOS マルチスクリーン – 詳細
+description: このドキュメントでは、Phoneword アプリケーションの拡張についてさらに詳しく取り上げています。モデル ビュー コントローラー、iOS ナビゲーション、他の iOS 開発概念についても考察しています。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 6f3c02bf3e5def0ad4acdb82e4c8a2606159846a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785659"
 ---
-# <a name="hello-ios-multiscreen-deep-dive"></a>Hello, iOS マルチスクリーンの詳細
+# <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
 クイックスタート チュートリアルでは、最初のマルチスクリーン Xamarin.iOS アプリケーションを構築し、実行しました。 次は、iOS のナビゲーションとアーキテクチャについて理解を深めましょう。
 

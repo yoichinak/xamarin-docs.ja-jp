@@ -1,21 +1,20 @@
 ---
 title: App Store 配布
-description: このドキュメントでは、Apple の App Store に配布するための要件について説明します。
+description: このドキュメントでは、App Store で Xamarin.iOS アプリケーションを配布する方法について説明します。 配布証明書および配布プロビジョニング プロファイルの作成方法と、iTunes Connect を構成してアプリを提出する方法を説明します。
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784817"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
-
-_このドキュメントでは、Apple の App Store に配布するための要件について説明します。_
 
 Xamarin.iOS アプリの開発が完了したら、ソフトウェア開発ライフサイクルの次の手順は、iTunes App Store を使用してアプリをユーザーに配布することです。 これは、アプリケーションを配布する最も一般的な方法です。 Apple の App Store でアプリケーションを発行することにより、世界中のコンシューマーが使用できるようになります。
 
@@ -79,7 +78,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 作成する他のプロビジョニング プロファイルと同じように、ユーザーのデバイスに配布するアプリを識別するためにアプリ ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
 
 
-1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]**\(ID\) の下で **[App IDs]**\(App ID\) を選択します。
+1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 明示的またはワイルドカード アプリ ID を選択し、次のように逆引き DNS 形式でバンドル ID を入力します。
     - **明示的**: com.[DomainName].[AppName]

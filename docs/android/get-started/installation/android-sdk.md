@@ -6,12 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 06/02/2018
+ms.openlocfilehash: 0af0ef56630103498041ad61f7c5ce900358b055
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732854"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Xamarin.Android 向け Android SDK を設定する
 
@@ -44,9 +45,9 @@ Android SDK に含まれている SDK Manager の代わりに Xamarin Android SD
 
 Xamarin Android SDK Manager を使用するには、次が必要です。
 
-- Visual Studio 2017 Community Edition 以降。 Visual Studio 2017 バージョン 15.5 以降。
+- Visual Studio 2017 (Community、Professional、または Enterprise Edition)。 Visual Studio 2017 バージョン 15.5 以降。
 
-- Xamarin for Visual Studio バージョン 4.5.0 以降。 
+- Visual Studio Tools for Xamarin バージョン 4.5.0 以降。 
 
 Xamarin Android SDK Manager は、Visual Studio と対応していません。
 2015. Visual Studio 2015 のユーザーは、Google が Android SDK で提供している SDK Manager ツールを使用する必要があります。

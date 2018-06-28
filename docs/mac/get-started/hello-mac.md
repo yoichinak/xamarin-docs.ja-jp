@@ -1,6 +1,6 @@
 ---
-title: Hello Mac
-description: このガイドでは、Xamarin.Mac アプリを初めて作成する場合の手順を、Visual Studio for Mac、Xcode、Interface Builder などの開発ツールチェーンの紹介と共に説明します。 また、コードに UI コントロールを公開する Outlet と Action についても紹介します。最後に、Xamarin.Mac アプリケーションを実行およびテストする方法を説明します。
+title: Hello, Mac – チュートリアル
+description: このドキュメントでは、Xamarin.Mac アプリを作成する方法、Visual Studio for Mac、Xcode、Interface Builder について紹介します。 アウトレットやアクションを経由してコードに UI コントロールを公開する方法、Xamarin.Mac アプリケーションをビルド、実行、テストする方法について説明します。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,13 +8,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792786"
 ---
-# <a name="hello-mac"></a>Hello Mac
+# <a name="hello-mac--walkthrough"></a>Hello, Mac – チュートリアル
 
 Xamarin.Mac を使うと、*Objective-C* と *Xcode* で開発するときに使用するのと同じ OS X ライブラリとインターフェイス コントロールを使用して、C# と .NET で完全にネイティブな Mac アプリを開発できます。 Xamarin.Mac は直接 Xcode と統合できるため、開発者は Xcode の _Interface Builder_ を使用して、アプリのユーザー インターフェイスを作成できます (または、必要に応じて C# コードで直接作成することも可能です)。
 
@@ -450,7 +451,7 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
     [![](hello-mac-images/outlet04.png "ドラッグしてアウトレットを作成する")](hello-mac-images/outlet04.png#lightbox)
 
-8. ダイアログ ボックスが表示されます。 **[接続]** を **[アウトレット]** に設定したままにして、**[名前]**に「`ClickedLabel`」と入力します。
+8. ダイアログ ボックスが表示されます。 **[接続]** を **[アウトレット]** に設定したままにして、**[名前]** に「`ClickedLabel`」と入力します。
 
     [![](hello-mac-images/outlet05.png "アウトレットを定義する")](hello-mac-images/outlet05.png#lightbox)
 

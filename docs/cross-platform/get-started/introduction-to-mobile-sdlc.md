@@ -1,20 +1,19 @@
 ---
 title: モバイル ソフトウェア開発ライフサイクルの概要
-description: この記事では、モバイル アプリケーションに関するソフトウェア開発ライフサイクルと、モバイル プロジェクトのビルド時に必要ないくつかの考慮事項について説明します。 すぐにビルドを開始したい開発者は、このガイドをスキップし、後半の記述を読んでモバイル開発の理解を深めることができます。
+description: このドキュメントでは、UX デザイン、UI デザイン、開発、安定化、配布などを確認し、モバイル ソフトウェア開発ライフサイクルについて説明します。
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782334"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフサイクルの概要
-
-_この記事では、モバイル アプリケーションに関するソフトウェア開発ライフサイクルと、モバイル プロジェクトのビルド時に必要ないくつかの考慮事項について説明します。すぐにビルドを開始したい開発者は、このガイドをスキップし、後半の記述を読んでモバイル開発の理解を深めることができます。_
 
 IDE を起動して何かをまとめてスローし、ちょっとしたテストを行って App Store に公開するのと同じくらい、モバイル アプリケーションのビルドが簡単になります。すべてが半日で終わります。 さもなければ、事前のデザインを正確に行い、ユーザビリティをテストし、何千ものデバイスで QA テストを行い、ベータ ライフサイクルを十分に経て、何通りもの方法で配置することになるでしょう。
 

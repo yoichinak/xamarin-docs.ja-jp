@@ -1,21 +1,20 @@
 ---
-title: App Store への発行
-description: この記事では、App Store から配布する Xamarin.iOS アプリケーションの構成、ビルド、発行の方法を示します。 これには、アプリケーションの配布準備の方法、Apple のツールを使用して審査のためにアプリケーションを提出する方法、最後に App Store にアプリケーションを発行する方法について説明するステップ バイ ステップ ガイドが含まれます。
+title: App Store に Xamarin.iOS アプリを公開する
+description: このドキュメントでは、App Store で配布する Xamarin.iOS アプリケーションの構成、ビルド、発行の方法を示します。
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785701"
 ---
-# <a name="publishing-to-the-app-store"></a>App Store への発行
-
-_この記事では、App Store から配布する Xamarin.iOS アプリケーションの構成、ビルド、発行の方法を示します。これには、アプリケーションの配布準備の方法、Apple のツールを使用して審査のためにアプリケーションを提出する方法、最後に App Store にアプリケーションを発行する方法について説明するステップ バイ ステップ ガイドが含まれます。_
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store に Xamarin.iOS アプリを公開する
 
 アプリケーションをすべての iOS デバイスに配布するには、Apple ではアプリを *App Store* から発行する必要があります。これにより、App Store で iOS アプリケーションのワンストップ ショッピングが可能になります。 ストアには 500,000 を超えるアプリケーションがあり、多くの種類のアプリケーション開発者は、1 か所に配布することで大きな利益を得ています。 App Store はすぐに使用可能なソリューションであり、配布と支払いシステムの両方をアプリ開発者に提供します。
 
@@ -287,7 +286,7 @@ Visual Studio の Xamarin プラグインでは現在、App Store に iOS アプ
         <IpaPackageDir>$(OutputPath</IpaPackageDir>
       </PropertyGroup>
       ```
-コマンド ライン ビルドの `msbuild` または `xbuild` のための代替手法は、`/p:` コマンド ライン引数を追加し、`IpaPackageDir` プロパティを設定することです。 この場合、`msbuild` はコマンド ラインに渡される `$()` 式を展開しません。そのため、`$(OutputPath)` 構文は使用できません。 代わりに、完全パス名を指定する必要があります。 Mono の `xbuild` コマンドは `$()` 式を展開しますが、それでも完全パス名の使用が推奨されます。`xbuild` は最終的に廃止され、今後のリリースでは[クロスプラットフォーム バージョンの `msbuild`](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x) が使用されるようになるためです。 この手法を Windows で行うと次のようになります。
+コマンド ライン ビルドの `msbuild` または `xbuild` のための代替手法は、`/p:` コマンド ライン引数を追加し、`IpaPackageDir` プロパティを設定することです。 この場合、`msbuild` はコマンド ラインに渡される `$()` 式を展開しません。そのため、`$(OutputPath)` 構文は使用できません。 代わりに、完全パス名を指定する必要があります。 Mono の `xbuild` コマンドは `$()` 式を展開しますが、それでも完全パス名の使用が推奨されます。`xbuild` は最終的に非推奨とされ、今後のリリースでは[クロスプラットフォーム バージョンの `msbuild`](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x) が使用されるようになるためです。 この手法を Windows で行うと次のようになります。
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln

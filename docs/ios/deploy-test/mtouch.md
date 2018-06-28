@@ -1,23 +1,23 @@
 ---
-title: mtouch
+title: mtouch を使用する Xamarin.iOS アプリのバンドル
+description: このドキュメントでは mtouch について説明します。このツールでは、Xamarin.iOS アプリケーションのバンドルへの変換、シミュレーターでの起動、および物理デバイスへの展開に必要な多くの手順を実行します。
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 933ad24a8778ffbee3a1b6089c6ebcf33d26bf84
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784954"
 ---
-# <a name="mtouch"></a>mtouch
-
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>mtouch を使用する Xamarin.iOS アプリのバンドル
 
 iPhone アプリケーションはアプリケーション バンドルとして出荷されています。 これは拡張子 `.app` を持つディレクトリであり、コード、データ、構成ファイル、ユーザーのアプリケーションを iPhone が認識するためのマニフェストが含まれます。
 
 .NET 実行可能ファイルをアプリケーションに変換するプロセスは主に `mtouch` コマンドで行われます。これは、アプリケーションをバンドルに変換するために必要なさまざまな手順を統合するツールです。 このツールは、シミュレーターのアプリケーションを起動するときや実際の iPhone または iPod Touch デバイスにソフトウェアを展開するときにも利用されます。
-
 
 ## <a name="detailed-instructions"></a>詳しい手順
 

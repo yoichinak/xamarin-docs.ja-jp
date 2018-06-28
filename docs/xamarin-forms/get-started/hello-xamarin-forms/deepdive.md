@@ -1,5 +1,6 @@
 ---
 title: Xamarin.Forms の詳細
+description: この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。 たとえば、Xamarin.Forms アプリケーションの構造、アプリケーションのアーキテクチャ、と基礎、ユーザー インターフェイスについて説明しました。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
@@ -7,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: b51389a7ab6506908cb21f6657820575efdc0615
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 011ec94aca4e5110c704b83cb24cf6260338dfbd
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846765"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35243627"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms の詳細
 

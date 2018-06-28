@@ -6,12 +6,13 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/17/2018
-ms.openlocfilehash: ca88159e8bcbcd4665e29b4ad8df9ffe00cfec67
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/30/2018
+ms.openlocfilehash: 545636bc38240bc17837a661416702ec259caf45
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732607"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -82,7 +83,7 @@ x86 基盤のコンピューターで開発するとき、x86 アーキテクチ
 1. Microsoft の Hyper-V &ndash; Windows 10 の 4 月更新を実行しているコンピューターで利用できます。
 2. Intel の Hardware Accelerated Execution Manager (HAXM) &ndash; OS X、macOS、古いバージョンの Windows を実行している x86 コンピューターで利用できます。
 
-Google Android Emulator、Hyper-V、HAXM の詳細については、[Android Emulator ハードウェアの高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)ガイドを参照してください。
+Google Android Emulator、Hyper-V、HAXM の詳細については、「[エミュレーター パフォーマンスのためのハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)」ガイドを参照してください。
 
 > [!NOTE]
 > 古いバージョンの Windows では、HAXM と Hyper-V の間に互換性がありません。 この場合、[Hyper-V を無効にする](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v)か、x86 最適化のない、遅いエミュレーター イメージを使用する必要があります。
@@ -121,6 +122,6 @@ Xamarin.Android をインストールしたので、Visual Studio を起動し�
 - [Visual Studio Tools for Xamarin のインストール](~/cross-platform/get-started/installation/windows.md)
 - [システム要件](~/cross-platform/get-started/requirements.md)
 - [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)
-- [Google Android Emulator](~/android/get-started/installation/android-emulator/index.md)
+- [Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)
 - [開発用のデバイスの設定](~/android/get-started/installation/set-up-device-for-development.md)
 - [Android Emulator でアプリを実行する](https://developer.android.com/studio/run/emulator#Requirements)

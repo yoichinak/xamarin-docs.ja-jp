@@ -6,22 +6,23 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: a4ce36e28bd5b6dcf78d248b1f2ba951cad9b286
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732220"
 ---
 # <a name="debugging"></a>デバッグ
 
 このセクションでは、デバイスまたはエミュレーターで Xamarin.Android アプリをデバッグする方法について説明します。
+
 ## <a name="debugging-overview"></a>デバッグの概要
 
 Android アプリケーションを開発するには、物理ハードウェア上で、またはエミュレーターを使用して、アプリケーションを実行する必要があります。 ハードウェアを使用するのが最適な方法ですが、常に実用的というわけではありません。 多くの場合、以下に示されるエミュレーターのいずれかを使用して、Android ハードウェアを簡単かつコスト効率良く、シミュレートまたはエミュレートすることができます。
 
-
-### <a name="google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Google Android Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Google Android Emulator でのデバッグ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 
 これらの記事では、Android SDK で提供される既定のエミュレーターを使用する方法について説明します。 このエミュレーターは、Visual Studio for Windows と Visual Studio for Mac で使用できます。
 
