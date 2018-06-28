@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: e120b917a106d01067e073219bbe2688c2811448
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fffb78d6f2599c231617ed025d41282beffd319b
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33918761"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066456"
 ---
 # <a name="c-6-new-features-overview"></a>C# 6 の新機能の概要
 
@@ -49,7 +49,7 @@ _C# 言語 – version 6 – の最新バージョンは、小さい定型、強
 モノラル C# 6 コンパイラがこれはモノラル 4.0 以降に含まれる[無償でダウンロードできる](http://www.mono-project.com/download/)です。
 Mac 用の visual Studio では、Mono でシステムをインストール、自動的に更新します。
 
-Windows ユーザー必要があります[Visual Studio 2015 または 2017 ^](https://www.visualstudio.com/) (、IDE とは、Xamarin Studio for Windows を選択) 場合でも C# 6 コードのコンパイルにインストールします。
+Windows ユーザー必要があります[Visual Studio 2015 または 2017 ^](https://visualstudio.microsoft.com/) (、IDE とは、Xamarin Studio for Windows を選択) 場合でも C# 6 コードのコンパイルにインストールします。
 
 ^ または*[Microsoft ビルド ツール 2015](http://www.microsoft.com/download/details.aspx?id=48159)* コマンド ラインのコンパイルまたはビルド サーバー、例を示します。
 

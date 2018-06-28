@@ -5,12 +5,12 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f0f6eebbd12041a7be2d8e2dc00a9146b40d675f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783075"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067321"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials を概要します。
 
@@ -63,6 +63,10 @@ Xamarin.Essentials は Visual Studio を使用して、既存または新規の�
 5. Xamarin.Essentials には、プラットフォーム固有のセットアップが必要です。
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
+
+    Xamarin.Essentials が最低限の Android バージョン 4.4、API レベル 19 に対応するをサポートしますが、Android のターゲット バージョンをコンパイルする必要があります 8.1、API レベル 27 に対応します。 (Visual Studio でのこれら 2 つのバージョンが、Android マニフェスト タブで、Android プロジェクトのプロジェクトのプロパティ ダイアログで設定されます。Mac 用 Visual Studio でしている設定が、プロジェクトのオプション ダイアログ ボックスの Android アプリケーション タブで、Android プロジェクトなります。) 
+    
+    Xamarin.Essentials は、27.0.2 のバージョンが、必要な Xamarin.Android.Support ライブラリをインストールします。 アプリケーションを必要とするその他の Xamarin.Android.Support ライブラリは、NuGet パッケージ マネージャーを使用して 27.0.2 のバージョンにも更新されます。 アプリケーションで使用されるすべての Xamarin.Android.Support ライブラリは同じである必要がありますしてください。 には、少なくともバージョン 27.0.2 します。 参照してください、[トラブルシューティングのページ](troubleshooting.md)Xamarin.Essentials NuGet を追加または更新して、ソリューションで NuGets の問題がある場合。
 
     Android プロジェクトの`MainLauncher`または any`Activity`つまりで起動した Xamarin.Essentials を初期化する必要があります、`OnCreate`メソッド。
 

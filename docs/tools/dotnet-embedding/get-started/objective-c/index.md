@@ -6,12 +6,12 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: c5db0a55cc1d2597837ae5feb2c5167a0a21b494
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 02d79103825d150b6e6f5bec7ed3ee1788078312
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792981"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066628"
 ---
 # <a name="getting-started-with-objective-c"></a>Objective C の概要
 
@@ -25,7 +25,7 @@ Objective C では、.NET の埋め込みを使用するには、Mac を実行�
 * Xcode 8.3.2 以降
 * [モノラル 5.0](http://www.mono-project.com/download/)
 
-インストールすることができます[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)を編集し、c# コードをコンパイルします。
+インストールすることができます[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)を編集し、c# コードをコンパイルします。
 
 > [!NOTE]
 > * 以前のバージョンの macOS、Xcode、およびモノラル_可能性があります_機能しますが、テスト、サポートされていません
