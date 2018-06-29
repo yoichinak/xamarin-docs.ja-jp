@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: d5dfdcb11754b1e08e7768a17003a14117e795ea
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 11749107403fc99e1d49b63ee3b50ff105abaa57
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783192"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080288"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: 地理的位置情報
 
@@ -88,7 +88,7 @@ try
 
     if (location != null)
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
     }
 }
 catch (FeatureNotSupportedException fnsEx)
@@ -105,6 +105,8 @@ catch (Exception ex)
 }
 ```
 
+高度は常に使用できません。 使用できない場合、`Altitude`プロパティがあります`null`または値を 0 にすることがあります。 高度が使用可能な場合は、値は、sea レベルより上の上メートル単位でです。 
+
 現在のデバイスを照会する[場所](xref:Xamarin.Essentials.Location)、座標、`GetLocationAsync`使用できます。 完全に渡すことをお勧め`GeolocationRequest`と`CancellationToken`ので、デバイスの場所を取得する時間がかかる場合があります。
 
 ```csharp
@@ -115,7 +117,7 @@ try
 
     if (location != null)
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
     }
 }
 catch (FeatureNotSupportedException fnsEx)
@@ -175,6 +177,22 @@ catch (Exception ex)
 | Android | 0 ~ 100 |
 | iOS | ~0 |
 | UWP | < 10 を = |
+
+<a name="calculate-distance" />
+
+## <a name="distance-between-two-locations"></a>2 つの場所の間の距離
+
+[ `Location` ](xref:Xamarin.Essentials.Location)と[ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions)クラスを定義する`CalculateDistance`を 2 つの地理的な場所の間の距離を計算できるようにするメソッド。 距離が考慮されていない道路またはその他の通信路アカウントとも呼ばれる、地球の表面に沿って 2 つのポイント間の最短距離だけでは、この計算される、_優れた円距離_こと、または、距離を"クロウズ ファイル ファイルです"
+
+次に例を示します。
+
+```csharp
+Location boston = new Location(42.358056, -71.063611);
+Location sanFrancisco = new Location(37.783333, -122.416667);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
+```
+
+`Location`コンス トラクターが、その注文の緯度と経度の引数。 緯度の値は、赤道地帯、北、正の経度の値、子午線の正の値。 最後の引数を使用して`CalculateDistance`マイルまたはキロメートル単位を指定します。 `Location`クラスも定義`KilometersToMiles`と`MilesToKilometers`を 2 つのユニット間で変換するメソッド。
 
 ## <a name="api"></a>API
 

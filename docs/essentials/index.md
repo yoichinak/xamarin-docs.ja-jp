@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 5fec06fd6f0c13a75040d940a11811ef97c3bcc3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782740"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080487"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -44,8 +44,11 @@ Android、iOS、および UWP、一意のオペレーティング システム�
 * [地理的位置情報](geolocation.md?context=xamarin/xamarin-forms)– デバイスの GPS の場所を取得します。
 * [ジャイロスコープ](gyroscope.md?context=xamarin/xamarin-forms)– デバイスの 3 つのプライマリ軸の周りの回転を追跡します。
 * [磁力計](magnetometer.md?context=xamarin/xamarin-forms)– 地球の磁場の基準としたデバイスの方向を検出します。
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – アプリケーションのメイン スレッドでコードを実行します。 
 * [ブラウザーを開いて](open-browser.md?context=xamarin/xamarin-forms)– 迅速かつ簡単に特定の web サイトにブラウザーを開きます。
+* [印刷の向きセンサー](orientation-sensor.md?context=xamarin/xamarin-forms) – 3 つの次元空間でデバイスの向きを取得します。
 * [ダイヤラー](phone-dialer.md?context=xamarin/xamarin-forms) – ダイヤラーを開きます。
+* [電源](power.md?context=xamarin/xamarin-forms)– デバイスの省電力状態を取得します。
 * [環境設定](preferences.md?context=xamarin/xamarin-forms)– 永続的な環境設定をすばやく簡単に追加します。
 * [画面のロック](screen-lock.md?context=xamarin/xamarin-forms)– デバイスの画面を起動状態にしてください。
 * [記憶域をセキュリティで保護された](secure-storage.md?context=xamarin/xamarin-forms)– 安全にデータを格納します。

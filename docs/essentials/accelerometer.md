@@ -5,12 +5,12 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 99529f08348254dff7577b7e82da739fabd63a14
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8229a372659e7918457a9d2f358b871e1a3f5978
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781866"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080492"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: 加速度計
 
@@ -89,6 +89,8 @@ X 軸は水平方向と右へのポインター、Y 軸は縦方向上向き、�
 - **ゲーム**– ゲーム (UI スレッドで返されるとは限りません) に適したを評価します。
 - **標準**– 既定のレートが画面の向きの変更に適してします。
 - **Ui** – 一般的なユーザー インターフェイスの適切なを評価します。
+
+かどうか、イベント ハンドラーは、UI スレッドでを実行し、イベント ハンドラーは、ユーザー インターフェイス要素にアクセスする必要がある場合は保証されません、 [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md)メソッドを UI スレッドでそのコードを実行します。
 
 ## <a name="api"></a>API
 
