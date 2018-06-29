@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/03/2018
-ms.openlocfilehash: e62ac290423db1c18e7e50d55b2b3550f99d1533
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: fd9ebc7922428d2779e6985379c3118274a46aff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34549265"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066664"
 ---
 # <a name="profiling-android-apps"></a>Android アプリのプロファイリング
 
@@ -30,7 +30,7 @@ ms.locfileid: "34549265"
 Xamarin Profiler は、IDE 内から Xamarin アプリをプロファイリングするために Visual Studio および Visual Studio for Mac に統合されているスタンドアロン アプリケーションです。 Xamarin Profiler の使用の詳細については、「[Xamarin Profiler](~/tools/profiler/index.md)」を参照してください。
 
 > [!NOTE]
-> Windows 用 Visual Studio Enterprise または Visual Studio for Mac のいずれかで Xamarin Profiler 機能のロックを解除するには、[Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) のサブスクライバーである必要があります。
+> Windows 用 Visual Studio Enterprise または Visual Studio for Mac のいずれかで Xamarin Profiler 機能のロックを解除するには、[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) のサブスクライバーである必要があります。
  
 ## <a name="android-studio-profiler"></a>Android Studio Profiler
 

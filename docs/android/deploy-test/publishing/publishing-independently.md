@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33113474"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067002"
 ---
 # <a name="publishing-independently"></a>個別公開
 
@@ -24,11 +24,11 @@ ms.locfileid: "33113474"
 
 -   **Visual Studio Community** &ndash; Windows を使用する学生、小規模なチーム、およびオープン ソース ソフトウェア (OSS) の開発者向け。
 
--   **Visual Studio Professional** &ndash; 個々の開発者や小規模なチーム向け (Windows のみ)。 このライセンスは、標準またはクラウド サブスクリプション、Xamarin University の追加コンテンツへのアクセスを提供し、使用法制限はありません。
+-   **Visual Studio Professional** &ndash; 個々の開発者や小規模なチーム向け (Windows のみ)。 このライセンスでは、標準またはクラウド サブスクリプション、Xamarin University の追加コンテンツへのアクセスがオファーされ、使用法制限はありません。
 
 -   **Visual Studio Enterprise** &ndash; すべての規模のチーム向け (Windows のみ)。 このライセンスには、エンタープライズ機能、標準またはクラウド サブスクリプションが含まれています。
 
-[visualstudio.com](https://www.visualstudio.com/xamarin/) にアクセスして Community Edition をダウンロードするか、Professional Edition と Enterprise Edition の購入に関する詳細を確認します。
+[visualstudio.com](https://visualstudio.microsoft.com/xamarin/) にアクセスして Community Edition をダウンロードするか、Professional Edition と Enterprise Edition の購入に関する詳細を確認します。
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>不明なソースからのインストールを許可する
