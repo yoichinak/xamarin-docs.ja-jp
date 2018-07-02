@@ -7,13 +7,13 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 011ec94aca4e5110c704b83cb24cf6260338dfbd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/13/2018
+ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243627"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269070"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms の詳細
 
@@ -62,15 +62,11 @@ Visual Studio for Mac は、コードを*ソリューション*と*プロジェ�
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
 
-次のスクリーンショットは、Visual Studio for Mac の Phoneword PCL プロジェクトの内容です。
+次のスクリーンショットは、Visual Studio for Mac の Phoneword .NET Standard ライブラリ プロジェクトの内容を示しています。
 
-![](deepdive-images/xs/pcl-project.png "Phoneword PCL プロジェクトの内容")
+![](deepdive-images/xs/library-project.png "Phoneword .NET Standard ライブラリ プロジェクトの内容")
 
-このプロジェクトは 3 つのフォルダーで構成されています。
-
-- **参照**: アプリケーションのビルドと実行に必要なアセンブリが含まれています。 [.NET ポータブル サブセット] フォルダーを展開すると、[System](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx)、System.Core、[System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) などの .NET アセンブリの参照が表示されます。 **[パッケージから]** フォルダーを展開すると、Xamarin.Forms アセンブリの参照が表示されます。
-- **パッケージ**: [パッケージ] ディレクトリには [NuGet](https://www.nuget.org) パッケージが含まれています。NuGet パッケージは、アプリケーションでサードパーティ ライブラリを使用するプロセスを簡略化するパッケージです。 これらのパッケージを最新リリースに更新するには、フォルダーを右クリックし、ポップアップ メニューの更新オプションを選択します。
-- **プロパティ**: .NET アセンブリ メタデータ ファイルである **AssemblyInfo.cs** が含まれています。 このファイルには、アプリケーションに関する基本的な情報を入力しておくことをお勧めします。 このファイルの詳細については、MSDN の「[AssemblyInfo Class](http://msdn.microsoft.com/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx)」(AssemblyInfo クラス) を参照してください。
+このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。 **NuGet** ノードには、プロジェクトに追加された Xamarin.Forms NuGet パッケージが含まれています。**SDK** ノードには .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージが含まれています。
 
 -----
 
@@ -81,7 +77,6 @@ Visual Studio for Mac は、コードを*ソリューション*と*プロジェ�
 - **IDialer.cs**: `IDialer` インターフェイス。いずれかの実装クラスで `Dial` メソッドを提供する必要があることを指定します。
 - **MainPage.xaml**: `MainPage` クラスの XAML マークアップ。アプリケーションの起動時に表示されるページの UI を定義します。
 - **MainPage.xaml.cs**: `MainPage` クラスの分離コード。ユーザーがページを操作したときに実行されるビジネス ロジックが含まれています。
-- **packages.config** - (Visual Studio for Mac のみ) プロジェクトが使用している NuGet パッケージに関する情報が含まれている XML ファイル。必要なパッケージとそれぞれのバージョンを追跡するために使用されます。 Visual Studio for Mac と Visual Studio のいずれも、ソース コードを他のユーザーと共有するときに不足している NuGet パッケージを自動的に復元するように構成することができます。 このファイルの内容は、NuGet パッケージ マネージャーが制御するため、手動では編集しないでください。
 - **PhoneTranslator.cs**: フォン ワード (電話のボタンに印字されている英数字を使った単語) を電話番号に変換する処理を担当するビジネス ロジックです。**MainPage.xaml.cs** から呼び出します。
 
 Xamarin.iOS アプリケーションの構造については、「[Anatomy of a Xamarin.iOS Application](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy)」(Xamarin.iOS アプリケーションの構造) を参照してください。 Xamarin.Android アプリケーションの構造については、「[Anatomy of a Xamarin.Android Application](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy)」(Xamarin.Android アプリケーションの構造) を参照してください。
@@ -99,8 +94,6 @@ Xamarin.Forms アプリケーションは、従来のクロスプラットフォ
 Xamarin.Forms アプリケーションは、従来のクロスプラットフォーム アプリケーションと同じ方法で設計されています。 通常、共有コードは .NET Standard ライブラリに配置され、プラットフォーム固有のアプリケーションは共有コードを使用します。 次の図は、Phoneword アプリケーションのこの関係の概要を示しています。
 
 ![](deepdive-images/xs/architecture.png "Phoneword アーキテクチャ")
-
-PCL の詳細については、「[Introduction to Portable Class Libraries](~/cross-platform/app-fundamentals/pcl.md)」(ポータブル クラス ライブラリの概要) を参照してください。
 
 -----
 
@@ -153,23 +146,26 @@ namespace Phoneword.iOS
 
 ### <a name="android"></a>Android
 
-Android で最初の Xamarin.Forms ページを起動するために、Phoneword.Droid プロジェクトには、`MainLauncher` 属性を指定した `Activity` を作成し、`FormsApplicationActivity` クラスから継承したアクティビティが使用するコードが含まれています。次にコード例を示します。
+Android で最初の Xamarin.Forms ページを起動するために、Phoneword.Droid プロジェクトには、`MainLauncher` 属性を指定した `Activity` を作成し、`FormsAppCompatActivity` クラスから継承したアクティビティが使用するコードが含まれています。次にコード例を示します。
 
 ```csharp
 namespace Phoneword.Droid
 {
-    [Activity(Label = "Phoneword",
-              Icon = "@drawable/icon",
+    [Activity(Label = "Phoneword", 
+              Icon = "@mipmap/icon", 
+              Theme = "@style/MainTheme", 
               MainLauncher = true,
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
+            base.OnCreate(bundle);
             Instance = this;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());

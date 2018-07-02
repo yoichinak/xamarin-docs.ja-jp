@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 83c58fa430a0cf21e8b86e56b9dea04b3cad6d82
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 815277e9a4f9384d92bf17376f426cacd40dbc9f
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784769"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209441"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS アプリの配布の概要
 
@@ -35,6 +35,9 @@ Apple は、次のように Xamarin.iOS でサポートされる iOS アプリ�
 <a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>App Store 配布
+
+> [!IMPORTANT]
+> Apple は、2018 年 7 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイをサポートする](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)必要があることを[通知しました](https://developer.apple.com/news/?id=05072018a)。
 
 iOS デバイスのユーザーに iOS アプリケーションを配布するには、これが主な方法です。 App Store に提出されたすべてのアプリは、Apple の承認を受ける必要があります。
 

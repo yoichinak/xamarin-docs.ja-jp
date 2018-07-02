@@ -7,21 +7,24 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784817"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209260"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
 Xamarin.iOS アプリの開発が完了したら、ソフトウェア開発ライフサイクルの次の手順は、iTunes App Store を使用してアプリをユーザーに配布することです。 これは、アプリケーションを配布する最も一般的な方法です。 Apple の App Store でアプリケーションを発行することにより、世界中のコンシューマーが使用できるようになります。
 
 > [!IMPORTANT]
-> iTunes Connect を使用して、アプリを App Store に発行するには、個人または組織の Apple Developer Program に参加する**必要がある**ことに**注意**してください。 Apple Developer **Enterprise** Program のメンバーの場合、このページの手順に従うことはできません。
+> Apple は、2018 年 7 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイをサポートする](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)必要があることを[通知しました](https://developer.apple.com/news/?id=05072018a)。
 
 アプリケーションを配布するには、アプリケーションの開発の場合と同じように、適切な*プロビジョニング プロファイル*を使用してアプリケーションをプロビジョニングする必要があります。 プロビジョニング プロファイルは、コード署名情報だけでなく、アプリケーションの ID と使用する配布メカニズムも含むファイルです。 App Store 以外の配布では、アプリを展開できるデバイスに関する情報も含まれています。
+
+> [!IMPORTANT]
+> iTunes Connect を使用して、アプリを App Store に発行するには、個人または組織の Apple Developer Program に参加する**必要がある**ことに**注意**してください。 Apple Developer **Enterprise** Program のメンバーの場合、このページの手順に従うことはできません。
 
 <a name="provisioning" />
 

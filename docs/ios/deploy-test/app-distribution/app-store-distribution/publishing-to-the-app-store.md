@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785701"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209475"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store に Xamarin.iOS アプリを公開する
+
+> [!IMPORTANT]
+> Apple は、2018 年 7 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイをサポートする](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)必要があることを[通知しました](https://developer.apple.com/news/?id=05072018a)。
 
 アプリケーションをすべての iOS デバイスに配布するには、Apple ではアプリを *App Store* から発行する必要があります。これにより、App Store で iOS アプリケーションのワンストップ ショッピングが可能になります。 ストアには 500,000 を超えるアプリケーションがあり、多くの種類のアプリケーション開発者は、1 か所に配布することで大きな利益を得ています。 App Store はすぐに使用可能なソリューションであり、配布と支払いシステムの両方をアプリ開発者に提供します。
 
@@ -231,7 +234,7 @@ Visual Studio の Xamarin プラグインでは現在、App Store に iOS アプ
 1. **[iOS バンドル署名]** を選択し、プロビジョニング プロファイルを App Store プロビジョニング プロファイルに変更します。
 
     ![](publishing-to-the-app-store-images/ipa01.png "[iOS バンドル署名] を選択し、プロビジョニング プロファイルを App Store プロビジョニング プロファイルに変更します")
-1. **[iOS IPA オプション]** を選択し、**[構成]** ドロップダウン リストから **[アドホック]** を選択します (アドホックが表示されない場合は、代わりに **[リリース]** を選択します)。
+1. **[iOS IPA オプション]、[構成]、[アドホック]** の順に選択し (**[アドホック]** が表示されない場合は、代わりに **[リリース]** を選択します)、IPA ファイルをビルドするためのチェック ボックスをオンにします。
 
     ![](publishing-to-the-app-store-images/imagevs02.png "[構成] ドロップダウン リストから [アドホック] を選択します")
 
