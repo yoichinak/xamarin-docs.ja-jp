@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 444559672f25b13b7d3a769d6de4bd6384174965
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 265833c3b1453dfb21064860a747651d45c2c4a0
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268889"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066469"
 ---
 # <a name="uninstalling-xamarin"></a>Xamarin のアンインストール
 
@@ -269,7 +269,7 @@ Visual Studio 2017 を完全にアンインストールするには、**[起動]
 
 ### <a name="visual-studio-2015-and-earlier"></a>Visual Studio 2015 以前
 
-Visual Studio 2015 を完全にアンインストールするには、[visualstudio.com のサポート回答](https://www.visualstudio.com/vs/support/vs2015/uninstall-visual-studio-2015/)を使用してください。
+Visual Studio 2015 を完全にアンインストールするには、[visualstudio.com のサポート回答](https://visualstudio.microsoft.com/vs/support/vs2015/uninstall-visual-studio-2015/)を使用してください。
 
 Xamarin は、**コントロール パネル**を使って Windows コンピューターからアンインストールできます。 次の図に示すように、**[プログラムと機能]** または **[プログラム] > [プログラムのアンインストール]** に移動します。
 
