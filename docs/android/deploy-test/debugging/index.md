@@ -6,13 +6,13 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 1ed6ec57365c5d3a861dd3fd947a2ad195ce5357
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732220"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935387"
 ---
 # <a name="debugging"></a>デバッグ
 
@@ -22,13 +22,9 @@ ms.locfileid: "34732220"
 
 Android アプリケーションを開発するには、物理ハードウェア上で、またはエミュレーターを使用して、アプリケーションを実行する必要があります。 ハードウェアを使用するのが最適な方法ですが、常に実用的というわけではありません。 多くの場合、以下に示されるエミュレーターのいずれかを使用して、Android ハードウェアを簡単かつコスト効率良く、シミュレートまたはエミュレートすることができます。
 
-### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Google Android Emulator でのデバッグ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-on-the-android-emulatorandroiddeploy-testdebuggingdebug-on-emulatormd"></a>[Android Emulator でのデバッグ](~/android/deploy-test/debugging/debug-on-emulator.md)
 
-これらの記事では、Android SDK で提供される既定のエミュレーターを使用する方法について説明します。 このエミュレーターは、Visual Studio for Windows と Visual Studio for Mac で使用できます。
-
-### <a name="visual-studio-android-emulatorandroiddeploy-testdebuggingvisual-studio-android-emulatormd"></a>[Visual Studio Android Emulator](~/android/deploy-test/debugging/visual-studio-android-emulator.md)
-
-この記事では、Visual Studio 2015 に組み込まれている Android エミュレーターを使用して、Xamarin.Android アプリをデバッグおよびテストする方法について説明します。 このエミュレーターは、Visual Studio 2015 を使用していて、カスタム デバイス プロファイルを必要としない場合に最適です。
+この記事では、Visual Studio から Android Emulator を起動し、仮想デバイスでアプリを実行する方法について説明します。
 
 ### <a name="debugging-on-a-deviceandroiddeploy-testdebuggingdebug-on-devicemd"></a>[デバイスでのデバッグ](~/android/deploy-test/debugging/debug-on-device.md)
 
@@ -40,4 +36,4 @@ Android アプリケーションを開発するには、物理ハードウェア
 
 > [!WARNING]
 > 
-  **Xamarin Android Player** は非推奨とされていることに注意してください。 詳細については、[このブログ投稿のお知らせ](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/)を参照してください。
+  **Xamarin Android Player** は非推奨とされていることに注意してください。 詳細については、[このブログ投稿のお知らせ](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/)を参照してください。 さらに、**Visual Studio の Android Emulator** は Visual Studio 2017 より非推奨とされています。

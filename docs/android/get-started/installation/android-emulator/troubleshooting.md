@@ -1,113 +1,243 @@
 ---
-title: エミュレーターのセットアップに関する問題のトラブルシューティング
-description: この記事では、Android Device Manager の使用中に発生する可能性のある問題を診断して回避する方法について説明します。
+title: Android Emulator のトラブルシューティング
+description: この記事では、Android Emulator の使用中に発生する可能性のある問題を診断して回避する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4F053CC9-9378-47CB-8002-978A6558C4D0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/01/2018
-ms.openlocfilehash: 4cbd7d7626d114856d6c68fe7bc9feb7c2a5abc2
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733652"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935283"
 ---
-# <a name="troubleshooting-emulator-setup-problems"></a>エミュレーターのセットアップに関する問題のトラブルシューティング
+# <a name="android-emulator-troubleshooting"></a>Android Emulator のトラブルシューティング
 
-_この記事では、Android Device Manager を使用して Android Emulator を構成するときに発生する可能性のある問題を診断して回避する方法について説明します。Android Emulator の実行時の問題のトラブルシューティングについては、「[Google Android Emulator のトラブルシューティング](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)」を参照してください。_
+_この記事では、Android Emulator の構成および実行中に発生する、特に一般的な警告メッセージと問題をその回避策やヒントと共に説明します。_
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+<a name="perfwarn" />
 
-## <a name="android-sdk-in-non-standard-location"></a>標準以外の場所にある Android SDK
-
-通常、Android SDK は次の場所にインストールされます。
-
-**C:\\Program Files (x86)\\Android\\android-sdk**
-
-SDK がこの場所にインストールされていない場合、Android Device Manager の起動時に次のエラーが発生する可能性があります。
-
-![Android SDK インスタンスのエラー](troubleshooting-images/win/01-sdk-error.png)
-
-この問題を回避するには、次のようにします。
-
-1. Windows デスクトップから、**C:\\Users\\<*ユーザー名*>\\AppData\\Roaming\\XamarinDeviceManager** に移動します。
-
-    ![Android Device Manager のログ ファイルの場所](troubleshooting-images/win/02-log-files.png)
-
-2. いずれかのログ ファイルをダブルクリックして開き、**構成ファイルのパス**を調べます。 例:
-
-    [![ログ ファイルでの構成ファイルのパス](troubleshooting-images/win/03-config-file-path-sml.png)](troubleshooting-images/win/03-config-file-path.png#lightbox)
-
-3. この場所に移動し、**user.config** をダブルクリックして開きます。 
-
-4. **user.config** で **&lt;UserSettings&gt;** 要素を探し、それに **AndroidSdkPath** 属性を追加します。 Android SDK がインストールされているコンピューター上のパスをこの属性に設定し、ファイルを保存します。 たとえば、Android SDK が **C:\\Programs\\Android\\SDK** にインストールされている場合、**&lt;UserSettings&gt;** は次のようになります。
-        
-    ```xml
-    <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />
-    ```
-
-**user.config** をこのように変更すると、Android Device Manager を起動できるようになります。
-
-## <a name="snapshot-disables-wifi-on-android-oreo"></a>スナップショットによって Android Oreo の WiFi が無効になる
-
-Android Oreo 用に構成された AVD で Wi-Fi アクセスをシミュレートしている場合、スナップショットの後で AVD を再起動すると、Wi-Fi アクセスが無効になる場合があります。
-
-この問題を回避するには、次のようにします。
-
-1. Android Device Manager で AVD を選びます。
-
-2. 追加のオプション メニューから、**[エクスプローラーで表示します]** をクリックします。
-
-3. **snapshots > default_boot** に移動します。
-
-4. **snapshot.pb** ファイルを削除します。
-
-    ![snapshot.pb ファイルの場所](troubleshooting-images/win/05-delete-snapshot.png)
-
-5. AVD を再起動します。 
-
-これらの変更を行った後は、AVD は Wi-Fi が再び機能する状態で再起動します。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-## <a name="snapshot-disables-wifi-on-android-oreo"></a>スナップショットによって Android Oreo の WiFi が無効になる
-
-Android Oreo 用に構成された AVD で Wi-Fi アクセスをシミュレートしている場合、スナップショットの後で AVD を再起動すると、Wi-Fi アクセスが無効になる場合があります。
-
-この問題を回避するには、次のようにします。
-
-1. Android Device Manager で AVD を選びます。
-
-2. 追加のオプション メニューから、**[Finder で表示します]** をクリックします。
-
-3. **snapshots > default_boot** に移動します。
-
-4. **snapshot.pb** ファイルを削除します。
-
-    [![snapshot.pb ファイルの場所](troubleshooting-images/mac/02-delete-snapshot-sml.png)](troubleshooting-images/mac/02-delete-snapshot.png#lightbox)
-
-5. AVD を再起動します。 
-
-これらの変更を行った後は、AVD は Wi-Fi が再び機能する状態で再起動します。
-
-
------
-
-## <a name="generating-a-bug-report"></a>バグ報告の生成
+## <a name="performance-warnings"></a>パフォーマンスに関する警告
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-上記のトラブルシューティングのヒントで解決できない問題が Android Device Manager で見つかった場合は、タイトル バーを右クリックし、**[Generate Bug Report]\(バグ報告の生成\)** を選択して、バグ報告を提出してください。
+Visual Studio 2017 バージョン 15.4 以降では、Android Emulator にアプリを初めて展開したときにパフォーマンスに関する警告ダイアログが表示される場合があります。 これらの警告ダイアログについて以下に説明します。
 
-[![バグ報告の提出に関するメニュー項目の場所](troubleshooting-images/win/04-bug-report-sml.png)](troubleshooting-images/win/04-bug-report.png#lightbox)
+### <a name="computer-does-not-contain-an-intel-procesor"></a>コンピューターが Intel プロセッサを備えていません
+
+![コンピューターが Intel プロセッサを備えていません](troubleshooting-images/01-no-intel-processor.png)
+
+このダイアログが表示された場合は、Android SDK エミュレーターのアクセラレータとして必要な Intel プロセッサがコンピューターに搭載されていません。 コンピューターが Intel プロセッサを備えていない場合は、物理的な Android デバイスを使用して開発することをお勧めします。
+
+### <a name="hyper-v-is-installed-or-active"></a>Hyper-V がインストールされているか、アクティブになっています
+
+![Hyper-V がインストールされているか、アクティブになっています](troubleshooting-images/02-hyper-v-active.png)
+
+このダイアログが表示された場合は、Hyper-V がインストールされているか、アクティブになっているので無効にする必要があります。 この問題を解決する方法については、「[Disabling Hyper-V](#disable-hyperv)」 (Hyper-V を無効にする) を参照してください。
+
+### <a name="haxm-is-not-installed"></a>HAXM がインストールされていません
+
+![HAXM がインストールされていません](troubleshooting-images/03-haxm-not-installed.png)
+
+このダイアログが表示された場合、コンピューターは Intel プロセッサを備えており、Hyper-V が無効になっていますが、HAXM がインストールされていません。
+HAXM のインストール手順については、「[Installing HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm)」 (HAXM をインストールする) を参照してください。
+
+### <a name="haxm-process-not-running"></a>HAXM プロセスが実行されていません
+
+![HAXM プロセスが実行されていません](troubleshooting-images/04-haxm-process-not-running.png)
+
+コンピューターは Intel プロセッサを備えており、Hyper-V は無効になっており、Intel HAXM もインストールされているが、HAXM プロセスが実行されていない場合に、このダイアログが表示されます。 この問題を解決するには、コマンド プロンプト ウィンドウを開き、次のコマンドを入力します。
+
+```cmd
+sc query intelhaxm
+```
+
+HAXM プロセスが実行されている場合は、次のような出力が表示されます。
+
+```cmd
+SERVICE_NAME: intelhaxm
+    TYPE               : 1  KERNEL_DRIVER
+    STATE              : 4  RUNNING
+                            (STOPPABLE, NOT_PAUSABLE, IGNORES_SHUTDOWN)
+    WIN32_EXIT_CODE    : 0  (0x0)
+    SERVICE_EXIT_CODE  : 0  (0x0)
+    CHECKPOINT         : 0x0
+    WAIT_HINT          : 0x0
+```
+
+`STATE` が `RUNNING` に設定されていない場合は、「[How to Use the Intel Hardware Accelerated Execution Manager](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator)」(Intel Hardware Accelerated Execution Manager の使用方法) を参照して問題を解決してください。
+
+
+### <a name="other-failures"></a>その他のエラー
+
+![その他のエラー](troubleshooting-images/05-other-failure.png)
+
+コンピューターは Intel プロセッサを備えており、Hyper-V は無効になっており、Intel HAXM はインストールされており、HAXM プロセスも実行中であるが、何か不明な理由によりエミュレーターが起動しない場合に、このダイアログが表示されます。
+このエラーを解決するには、「[How to Use the Intel Hardware Accelerated Execution Manager](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator)」 (Intel Hardware Accelerated Execution Manager の使用方法) を参照してください。
+
+### <a name="disabling-performance-warnings"></a>パフォーマンスに関する警告を無効にする
+
+パフォーマンスに関する警告を表示したくない場合は、それを無効にすることができます。 Visual Studio で、**[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして、**[AVD アクセラレータがサポートされていない場合に警告する (HAXM)]** オプションを無効にします。
+
+[![AVD アクセラレーションに関する警告を無効にする](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-上記のトラブルシューティングのヒントで解決できない問題が Android Device Manager で見つかった場合は、**[ヘルプ]、[Generate Bug Report]\(バグ報告の生成\)** の順にクリックして、バグ報告を提出してください。
+Visual Studio for Mac build 7.2 (ビルド 559) では、Android Emulator にアプリを最初に展開した場合にパフォーマンスに関する警告ダイアログが表示されます。 これらの警告ダイアログについて以下に説明します。
 
-[![バグ報告の提出に関するメニュー項目の場所](troubleshooting-images/mac/01-bug-report-sml.png)](troubleshooting-images/mac/01-bug-report.png#lightbox)
+### <a name="haxm-is-not-installed"></a>HAXM がインストールされていません
+
+![HAXM がインストールされていません](troubleshooting-images/03-haxm-not-installed.png)
+
+このダイアログは、HAXM がインストールされていないことを示します。
+HAXM のインストール手順については、「[Installing HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm)」 (HAXM をインストールする) を参照してください。
+
+### <a name="haxm-process-not-running"></a>HAXM プロセスが実行されていません
+
+![HAXM プロセスが実行されていません](troubleshooting-images/04-haxm-process-not-running.png)
+
+このダイアログは、HAXM プロセスが実行されていない場合に表示されます。 この問題の解決に役立つ詳細については、「[How to Use the Intel Hardware Accelerated Execution Manager](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator)」 (Intel Hardware Accelerated Execution Manager の使用方法) を参照してください。
+
+### <a name="other-failures"></a>その他のエラー
+
+![その他のエラー](troubleshooting-images/05-other-failure.png)
+
+このダイアログは、何か不明な理由により、エミュレーターが起動できない場合に表示されます。 このエラーを解決するには、「[How to Use the Intel Hardware Accelerated Execution Manager](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator)」 (Intel Hardware Accelerated Execution Manager の使用方法) を参照して問題を解決してください。
 
 -----
+
+## <a name="deployment-issues"></a>展開に関する問題
+
+エミュレーターでの APK のインストールの失敗、または Android Debug Bridge (**adb**) の実行の失敗に関するエラーが表示された場合は、Android SDK がエミュレーターに接続できることを確認してください。 そのためには、次の手順に従います。
+
+1. **Android Device Manager** からエミュレーターを起動します (仮想デバイスを選択し、**[開始]** をクリックします)。
+
+2. コマンド プロンプトを開き、**adb** がインストールされているフォルダーに移動します。 たとえば、Windows の場合は、**C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe** となります。
+
+3. 次のコマンドを入力します。
+
+   ```shell
+   adb devices
+   ```
+
+4. Android SDK からエミュレーターにアクセスできる場合は、接続されているデバイスの一覧にエミュレーターが表示されます。 例:
+
+   ```shell
+   List of devices attached
+   emulator-5554   device
+   ```
+
+5. この一覧にエミュレーターが表示されない場合は、**Android SDK マネージャー**を起動し、すべての更新プログラムを適用し、エミュレーターをもう一度起動してみてください。
+
+
+## <a name="haxm-issues"></a>HAXM の問題
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Android Emulator が正常に起動しない場合、その多くは HAXM に問題があります。 HAXM の問題の多くは、その他の仮想化テクノロジとの競合、間違った設定、または HAXM ドライバーの期限切れが原因で発生します。
+
+<a name="virt-conflicts" />
+
+### <a name="haxm-virtualization-conflicts"></a>HAXM 仮想化の競合
+
+HAXM が、仮想化を使用する他のテクノロジ (Hyper-V、Windows Device Guard、ウイルス対策ソフトウェア) と競合している可能性があります。
+
+- **Hyper-V** &ndash; **Windows 10 April 2018 Update (ビルド 1803)** より前のバージョンの Windows を使用しており、Hyper-V が有効になっている場合は、「[Hyper-V を無効にする](#disable-hyperv)」の手順に従ってください。
+
+- **Device Guard** &ndash;Device Guard と Credential Guard により、Windows コンピューター上で Hyper-V を無効にできない可能性があります。 Device Guard と Credential Guard を無効にするには、「[Disabling Device Guard](#disable-devguard)」 (Device Guard を無効にする) を参照してください。
+
+- **ウイルス対策ソフトウェア** &ndash; (Avast など) ハードウェア補助による仮想化を使用するウイルス対策ソフトウェアを実行している場合は、そのソフトウェアを無効にするかアンインストールしてから、Android SDK エミュレーターを再起動してみてください。
+
+
+### <a name="incorrect-bios-settings"></a>不適切な BIOS 設定
+
+Windows PC 上で HAXM を使用する場合、BIOS 内で仮想化テクノロジ (Intel VT-x 対応) が有効になっていない限り、HAXM は機能しません。 VT-x が無効になっている場合に、Android Emulator の起動を試みると、次のようなエラーが表示されます。
+
+**このコンピューターは HAXM の要件を満たしていますが、Intel 仮想化テクノロジ (VT-x) がオンになっていません。**
+
+このエラーを修正するには、コンピューターを BIOS で起動し、VT-x と SLAT (第 2 レベルのアドレス変換) の両方を有効にし、Windows でコンピューターを再起動します。
+
+<a name="disable-hyperv" />
+
+### <a name="disabling-hyper-v"></a>Hyper-V を無効にする
+
+**Windows 10 April 2018 Update (ビルド 1803)** より前のバージョンの Windows を使用しており、Hyper-V が有効になっている場合、HAXM をインストールして使用するには Hyper-V を無効にしてコンピューターを再起動する必要があります。 **Windows 10 April 2018 Update (ビルド 1803)** 以降を使用している場合は、Android Emulator のバージョン 27.2.7 以降で (HAXM ではなく) Hyper-V を使用してハードウェアを高速化できるため、Hyper-V を無効にする必要はありません。
+
+次の手順に従って、コントロール パネルから HYPER-V を無効にできます。
+
+1. Windows 検索ボックスに「**プログラムと**」と入力し、検索結果の **[プログラムと機能]** をクリックします。
+
+2. コントロール パネルの **[プログラムと機能]** ダイアログで、**[Windows の機能の有効化または無効化]** をクリックします。
+
+    ![Windows の機能の有効化または無効化](troubleshooting-images/win/07-turn-windows-features.png)
+
+3. **[Hyper-V]** のチェック ボックスをオフにして、コンピューターを再起動します。
+
+    ![[Windows の機能] ダイアログで [HYPER-V] を無効にする](troubleshooting-images/win/08-uncheck-hyper-v.png)
+
+または、次の PowerShell コマンドレットを使用して HYPER-V を無効にすることもできます。
+
+`Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
+
+Intel HAXM および Microsoft HYPER-V の両方を同時にアクティブ化することはできません。 残念ながら、コンピューターを再起動せずに Hyper-V と HAXM を切り替える方法はありません。 
+
+Device Guard と Credential Guard が有効になっていると、上記の手順で HYPER-V を無効にできない場合があります。 HYPER-V を無効にできない場合 (または無効になっているように見えるが、HAXM のインストールがまだ失敗する場合) は、次のセクションの手順に従って、Device Guard と Credential Guard を無効にします。
+
+<a name="disable-devguard" />
+
+### <a name="disabling-device-guard"></a>Device Guard の無効化
+
+Device Guard と Credential Guard により、Windows コンピューター上で Hyper-V を無効にできない場合があります。 これは多くの場合、所有している組織によって構成され、制御されている、ドメインに参加しているマシンの問題です。
+Windows 10 で、次の手順を使用して、**Device Guard** が実行されているかどうかを確認します。
+
+1. **Windows Search** で、「**システム情報**」と入力し、**システム情報**アプリを起動します。
+
+2. **[システムの概要]** で、**[Device Guard 仮想化ベースのセキュリティ]** があり、**実行**状態になっているかどうかを確認します。
+
+   [![Device Guard があり、実行されている](troubleshooting-images/win/09-device-guard-sml.png)](troubleshooting-images/win/09-device-guard.png#lightbox)
+
+Device Guard が有効になっている場合は、次の手順に従って無効にします。
+
+1. 前のセクションで説明したように、(**[Windows の機能の有効化または無効化**] の下で) **HYPER-V** が無効になっていることを確認します。
+
+2. Windows 検索ボックスで、「**gpedit**」を入力し、検索結果で **[グループ ポリシーの編集]** を選択します。 これにより、**ローカル グループ ポリシー エディター**が起動します。
+
+3. **ローカル グループ ポリシー エディター**で、**[コンピューターの構成]、[管理用テンプレート]、[システム]、[Device Guard]** の順に移動します。
+
+   [![ローカル グループ ポリシー エディターでの Device Guard](troubleshooting-images/win/10-group-policy-editor-sml.png)](troubleshooting-images/win/10-group-policy-editor.png#lightbox)
+
+4. (上記のように) **[仮想化ベースのセキュリティを有効にする]** を **[無効]** に変更し、**ローカル グループ ポリシー エディター**を終了します。
+
+5. Windows 検索ボックスに「**cmd**」を入力します。 検索結果に **[コマンド プロンプト]** が表示されたら、**[コマンド プロンプト]** を右クリックして **[管理者として実行]** を選択します。
+
+6. 次のコマンドをコピーしてコマンド プロンプト ウィンドウに貼り付けます (ドライブ **Z:** が使用中の場合は、代わりに使用する未使用のドライブ文字を選択してください)。
+
+        mountvol Z: /s
+        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
+        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
+        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
+        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
+        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
+        mountvol Z: /d
+
+7. コンピューターを再起動する 起動画面に、次のようなプロンプトが表示されます。
+
+   **Do you want to disable Credential Guard?** (Credential Guard を無効にしますか)
+
+   指示に従って指定されたキーを押して Credential Guard を無効にします。
+
+8. コンピューターが再起動したら、(前の手順で説明したように) HYPER-V が無効になっていることを確認します。
+
+HYPER-V がまだ無効になっていない場合は、ドメインに参加しているコンピューターのポリシーによって Device Guard または Credential Guard を無効にできないようになっている可能性があります。 この場合、Credential Guard を無効化できるように適用除外をドメイン管理者に依頼することができます。 または、HAXM を使用するためにドメインに参加していないコンピューターを使用することができます。
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+Android Emulator が正常に起動しない場合、その多くは HAXM に問題があります。 HAXM の問題の多くは、その他の仮想化テクノロジとの競合、間違った設定、または HAXM ドライバーの期限切れが原因で発生します。 「[Installing HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm)」 (HAXM をインストールする) に詳述された手順に従って、HAXM ドライバーを再インストールしてみてください。
+
+-----
+

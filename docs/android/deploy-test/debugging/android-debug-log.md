@@ -1,17 +1,18 @@
 ---
 title: Android のデバッグ ログ
+description: デバッグ ログを使用して Xamarin.Android アプリケーションをデバッグする方法。
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/04/2018
-ms.openlocfilehash: e0e22fe35dc5042a7b3c895a250803e936611629
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.date: 06/22/2018
+ms.openlocfilehash: 442606f456e6f42ee178cd93253883a1d9de52c4
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30822883"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935218"
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
 
@@ -22,7 +23,7 @@ ms.locfileid: "30822883"
 **デバッグ ログ** ツールを使うと、Visual Studio でアプリをデバッグしながらログ出力を見ることができます。 デバッグ ログは次のデバイスをサポートします。
 
 -   物理的な Android フォン、タブレット、ウェアラブル。
--   Google Android Emulator 上で動作する Android 仮想デバイス。 
+-   Android Emulator 上で動作する Android 仮想デバイス。 
 
 > [!NOTE]
 > **デバッグ ログ** ツールは、Xamarin Live Player では動きません。
