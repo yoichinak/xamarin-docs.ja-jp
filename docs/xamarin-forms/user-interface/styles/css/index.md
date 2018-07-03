@@ -410,10 +410,10 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 
 - `X11` [colors](https://en.wikipedia.org/wiki/X11_color_names/) は、CSS の色、UWP 定義済みの色、および Xamarin.Forms の色に一致します。 これらの色値は大文字小文字を区別しないことに注意してください。
 - 16 進数の色: `#rgb`、 `#argb`、 `#rrggbb`、 `#aarrggbb`
-- rgb 色: `rgb(255,0,0)`、`rgb(100%,0%,0%)`。 値は範囲 0 ~ 255 0 ~ 100% です。
+- rgb 色: `rgb(255,0,0)`、`rgb(100%,0%,0%)`。 値は 0 ~ 255 0 ~ 100% の範囲です。
 - rgba 色: `rgba(255, 0, 0, 0.8)`、`rgba(100%, 0%, 0%, 0.8)`。 不透明度の値は 0.0 ~ 1.0 の範囲です。
 - hsl の色:`hsl(120, 100%, 50%)`です。 H の値は 0 ~ 360 の範囲で s と l は範囲 0 ~ 100% です。
-- hsla のカラー:`hsla(120, 100%, 50%, .8)`です。 不透明度の値は 0.0 ~ 1.0 の範囲でです。
+- hsla のカラー:`hsla(120, 100%, 50%, .8)`です。 不透明度の値は 0.0 ~ 1.0 の範囲です。
 
 ### <a name="thickness"></a>太さ
 
@@ -437,7 +437,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 - `medium`
 - `large`
 
-それぞれの `namedsize` 値 の厳密な意味は、プラットフォームに依存し、ビューに依存します。
+それぞれの `namedsize` 値 の厳密な意味は、プラットフォームやビューに依存します。
 
 ## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.Forms CSS を Xamarin.University で
 
