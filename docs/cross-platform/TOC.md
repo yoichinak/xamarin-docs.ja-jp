@@ -11,7 +11,7 @@
 ### [モバイル開発の概要](get-started/introduction-to-mobile-development.md)
 ### [モバイル SDLC の概要](get-started/introduction-to-mobile-sdlc.md)
 
-### [クロス プラットフォーム アプリケーションの構築](app-fundamentals/building-cross-platform-applications/index.md)
+### [クロスプラットフォーム アプリケーションの構築](app-fundamentals/building-cross-platform-applications/index.md)
 #### [概要](app-fundamentals/building-cross-platform-applications/overview.md)
 #### [パート 1 - Xamarin モバイル プラットフォームの概要](app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 #### [パート 2 - アーキテクチャ](app-fundamentals/building-cross-platform-applications/architecture.md)
@@ -89,5 +89,4 @@
 #### [Visual Studio に自分のビルドの参照先ライブラリ プロジェクトが含まれないのはなぜですか](troubleshooting/questions/vs-config-manager.md)
 
 ### [NuGet へのコンポーネント参照の更新](troubleshooting/component-nuget.md)
-### [サポート オプション](troubleshooting/support-options.md)
 ## [サンプル](samples/index.yml)
