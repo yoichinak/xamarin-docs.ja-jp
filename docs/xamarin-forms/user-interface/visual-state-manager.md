@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms Visual 状態マネージャー
-description: コードから設定する表示状態に基づく XAML 要素を変更するのにには、Visual State Manager を使用します。
+title: Xamarin.Forms Visual State Manager
+description: コードから設定の表示状態に基づき、XAML 要素を変更するのにには、Visual State Manager を使用します。
 ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
 ms.technology: xamarin-forms
@@ -8,51 +8,51 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: 3c0330d8d6d07112350db007d0500d57c236dc24
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 0fdcbd6467547647089b436a894b1bc490ba5ee1
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848025"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854819"
 ---
-# <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual 状態マネージャー
+# <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual State Manager
 
-_コードから設定する表示状態に基づく XAML 要素を変更するのにには、Visual State Manager を使用します。_
+_コードから設定の表示状態に基づき、XAML 要素を変更するのにには、Visual State Manager を使用します。_
 
-Visual 状態マネージャー (VSM) は、Xamarin.Forms 3.0 の新機能です。 VSM は、視覚的に変更を加える、ユーザー インターフェイスのコードから構造化された方法を提供します。 XAML では、ほとんどの場合、アプリケーションのユーザー インターフェイスが定義されているこの XAML には Visual State Manager が、ユーザー インターフェイスのビジュアルに与える影響を説明するマークアップが含まれています。
+Visual State Manager (VSM) は、Xamarin.Forms 3.0 の新機能です。 VSM では、コードから、ユーザー インターフェイスを視覚的な変更をする構造化された方法を提供します。 ほとんどの場合で、アプリケーションのユーザー インターフェイスは、XAML で定義し、この XAML には Visual State Manager がユーザー インターフェイスのビジュアルに与える影響を説明するマークアップが含まれています。
 
-概念を導入して、VSM_ビジュアル状態_です。 Xamarin.Forms ビューなど、`Button`の基になる状態に応じていくつかの異なる視覚的外観を持つことができます&mdash;かが無効なまたは押された、またはに入力フォーカスがします。 これらは、ボタンの状態です。
+VSM の概念を紹介する_visual state_します。 など、Xamarin.Forms のビューを`Button`の基になる状態に応じていくつかの異なる視覚的外観を持つことができます&mdash;は無効になっていること、または、押された状態またはに入力フォーカスが、かどうか。 これらは、ボタンの状態です。
 
-収集されます。 ビジュアル状態_表示状態グループ_です。 表示状態グループ内のすべてのビジュアル状態は相互に排他的です。 単純なテキスト文字列では、表示状態と表示状態グループの両方が識別されます。
+収集されます。 visual state_表示状態グループ_します。 表示状態グループ内のすべてのビジュアル状態では、相互に排他的です。 表示状態と表示状態グループの両方が、単純なテキスト文字列で識別されます。
 
-Xamarin.Forms Visual State Manager では、1 つの表示状態グループが 3 つの表示状態を"CommonStates"をという名前を定義します。
+Xamarin.Forms の Visual State Manager は、1 つの表示状態グループが 3 つのビジュアル状態を"CommonStates"をという名前を定義します。
 
 - "Normal"
 - "Disabled"
-- 「フォーカスされている」
+- 「フォーカス」
 
-この表示状態グループから派生したすべてのクラスではサポートされて[ `VisualElement`](xref:Xamarin.Forms.VisualElement)の基本クラスである[ `View` ](xref:Xamarin.Forms.View)と[ `Page`](xref:Xamarin.Forms.Page)です。 
+すべてのクラスから派生するこの表示状態グループがサポートされている[ `VisualElement`](xref:Xamarin.Forms.VisualElement)の基本クラスである[ `View` ](xref:Xamarin.Forms.View)と[ `Page`](xref:Xamarin.Forms.Page)します。 
 
-独自の表示状態グループを定義することもできます。 と表示状態、この記事の内容としては方法を説明します。
+独自の表示状態グループを定義することもでき、表示状態、としては、この記事で紹介します。
 
 > [!NOTE]
-> 慣れている Xamarin.Forms 開発者[トリガー](~/xamarin-forms/app-fundamentals/triggers.md)はトリガーがビューのプロパティまたはイベントの発生の変更に基づくユーザー インターフェイスでのビジュアルで変更をすることもことに注意してください。 ただし、これらの変更のさまざまな組み合わせを処理するトリガーを使用してに紛らわしくなります。 従来は、Visual State Manager は、表示状態の組み合わせによる混乱を軽減するための Windows の XAML ベースの環境で導入されました。 VSM と表示状態グループ内で視覚的な状態は相互に排他的にもします。 いつでもは、各グループ内の 1 つだけの状態は、現在の状態です。
+> 慣れている Xamarin.Forms 開発者[トリガー](~/xamarin-forms/app-fundamentals/triggers.md)はトリガーがビューのプロパティまたはイベントの発生の変更に基づくユーザー インターフェイスでのビジュアルで変更をすることもことに注意してください。 ただし、これらの変更のさまざまな組み合わせで対処するトリガーを使用してに紛らわしくなります。 従来は、Visual State Manager は、結果の表示状態の組み合わせの混乱を軽減するための Windows XAML ベースの環境で導入されました。 Vsm では、表示状態グループ内のビジュアル状態は相互に排他的常にします。 いつでもは、各グループ内の 1 つだけの状態は、現在の状態です。
 
 ## <a name="the-common-states"></a>一般的な状態
 
-Visual State Manager を使用すると、ビューは通常、または無効になっている、または入力フォーカスがある場合、ビューの外観を変更できるは、XAML ファイルでセクションを含めることができます。 これらと呼ばれますが、_一般的な状態_です。
+Visual State Manager を使用すると、ビューは通常、または無効になっている、または入力フォーカスがある場合、ビューの外観を変更できる XAML ファイルにセクションを含めることができます。 これらと呼ばれますが、_一般的な状態_します。
 
-たとえば、ある、`Entry`ページで、ビューの外観をして、`Entry`を次のように変更します。
+などがあるとします、`Entry`ページには、ビューの外観にして、`Entry`を次の方法で変更します。
 
-- `Entry` 、ピンクが必要時にバック グラウンド、`Entry`は無効になります。
-- `Entry`通常ライム背景を持つ必要があります。
+- `Entry` 、Pink」と入力する必要がありますがあるときにバック グラウンド、`Entry`は無効です。
+- `Entry`ライム バック グラウンド通常がある必要があります。
 - `Entry`に入力フォーカスがある場合と通常の高さに 2 回展開する必要があります。
 
-個々 のビューに VSM マークアップをアタッチすることができます、または複数のビューに適用する場合は、スタイルで定義することができます。 次の 2 つのセクションでは、これらの方法について説明します。
+VSM マークアップをアタッチするには、個々 のビューにまたは複数のビューに適用する場合はスタイルで定義することができます。 次の 2 つのセクションでは、これらの方法を説明します。
 
-### <a name="vsm-markup-on-a-view"></a>ビューに VSM マークアップ
+### <a name="vsm-markup-on-a-view"></a>ビューのマークアップを VSM
 
-VSM マークアップをアタッチする、`Entry`ビューで、最初の分割、`Entry`開始タグと終了タグに。
+VSM マークアップをアタッチする、`Entry`ビューで、最初の分離、`Entry`開始と終了タグに。
 
 ```xaml
 <Entry FontSize="18">
@@ -60,9 +60,9 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Entry>
 ```
 
-状態のいずれかが使用されるため、明示的なフォント サイズ与え、`FontSize`内のテキストのサイズを 2 倍にするプロパティ、`Entry`です。
+状態のいずれかが使用されるため、明示的なフォント サイズ与え、`FontSize`プロパティ内のテキストのサイズを 2 倍にする、`Entry`します。
 
-次に、挿入`VisualStateManager.VisualStateGroups`これらのタグの間のタグ。
+次に、挿入`VisualStateManager.VisualStateGroups`タグの間のタグ。
 
 ```xaml
 <Entry FontSize="18">
@@ -72,9 +72,9 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Entry>
 ```
 
-[`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) によって定義される添付バインド可能なプロパティ、 [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager)クラスです。 (接続されているバインド可能なプロパティの詳細については、記事を参照してください[アタッチされるプロパティ](~/xamarin-forms/xaml/attached-properties.md)。)。これは、どのように`VisualStateGroups`プロパティが添付される、`Entry`オブジェクト。
+[`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) によって定義される、接続されているバインド可能なプロパティは、 [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager)クラス。 (添付のバインド可能なプロパティの詳細については、記事を参照してください[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)。)。これは、どのように`VisualStateGroups`プロパティが添付される、`Entry`オブジェクト。
 
-`VisualStateGroups`プロパティの型は[ `VisualStateGroupList`](xref:Xamarin.Forms.VisualStateGroupList)の集合である[ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)オブジェクト。 内で、 `VisualStateManager.VisualStateGroups` 、タグのペアを挿入する`VisualStateGroup`タグを含める表示状態のグループごとに。
+`VisualStateGroups`プロパティの型は[ `VisualStateGroupList`](xref:Xamarin.Forms.VisualStateGroupList)のコレクションである[ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)オブジェクト。 内で、 `VisualStateManager.VisualStateGroups` 、タグのペアを挿入する`VisualStateGroup`を含めたい visual state の各グループに対してタグ。
 
 ```xaml
 <Entry FontSize="18">
@@ -86,17 +86,17 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Entry>
 ```
 
-注意して、`VisualStateGroup`タグが、`x:Name`グループの名前を示す属性です。 `VisualStateGroup`クラスを定義、`Name`代わりに使用できるプロパティ。
+注意、`VisualStateGroup`タグが、`x:Name`グループの名前を示す属性。 `VisualStateGroup`クラスを定義、`Name`代わりに使用できるプロパティ。
 
 ```xaml
 <VisualStateGroup Name="CommonStates">
 ```
 
-いずれかを使用する`x:Name`または`Name`同じ要素の両方ではなくです。
+いずれかを使用する`x:Name`または`Name`両方で同じ要素ではなく。
 
-`VisualStateGroup`クラスという名前のプロパティを定義する[ `States`](xref:Xamarin.Forms.VisualStateGroup.States)の集合である[ `VisualState` ](xref:Xamarin.Forms.VisualState)オブジェクト。 `States` _コンテンツ プロパティ_の`VisualStateGroups`利用できるようにする、`VisualState`タグの間で直接、`VisualStateGroup`タグ。 (コンテンツ プロパティは、記事で説明した[重要なは、XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties))。
+`VisualStateGroup`クラスという名前のプロパティを定義する[ `States`](xref:Xamarin.Forms.VisualStateGroup.States)のコレクションである[ `VisualState` ](xref:Xamarin.Forms.VisualState)オブジェクト。 `States` _プロパティをコンテンツ_の`VisualStateGroups`含めることができますので、`VisualState`タグの間で直接、`VisualStateGroup`タグ。 (プロパティが、情報の記事で説明されているコンテンツ[Essential XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties))。
 
-次の手順では、そのグループにすべてのビューステートのタグのペアを追加します。 これらも識別できますを使用して`x:Name`または`Name`:
+次の手順では、そのグループの各ビジュアルの状態のタグのペアが含まれます。 これらも識別できますを使用して`x:Name`または`Name`:
 
 ```xaml
 <Entry FontSize="18">
@@ -118,9 +118,9 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Entry>
 ```
 
-`VisualState` という名前のプロパティを定義[ `Setters`](xref:Xamarin.Forms.VisualState.Setters)の集合である[ `Setter` ](xref:Xamarin.Forms.Setter)オブジェクト。 これらは同じ`Setter`で使用するオブジェクトを[ `Style` ](xref:Xamarin.Forms.Style)オブジェクト。
+`VisualState` という名前のプロパティを定義します。 [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters)、のコレクションである[ `Setter` ](xref:Xamarin.Forms.Setter)オブジェクト。 これらは同じ`Setter`で使用するオブジェクトを[ `Style` ](xref:Xamarin.Forms.Style)オブジェクト。
 
-`Setters` _いない_の content プロパティ`VisualState`にプロパティ要素タグを含める必要があるため、`Setters`プロパティ。
+`Setters` _いない_の content プロパティ`VisualState`プロパティ要素タグを含める必要があるため、`Setters`プロパティ。
 
 ```xaml
 <Entry FontSize="18">
@@ -148,7 +148,7 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Entry>
 ```
 
-1 つまたは複数を挿入できるようになりました`Setter`の各ペア間でオブジェクト`Setters`タグ。 これらは、`Setter`前に説明した表示状態を定義するオブジェクト。
+1 つまたは複数挿入できます`Setter`の各ペアの間でオブジェクト`Setters`タグ。 これらは、`Setter`前に説明した表示状態を定義するオブジェクト。
 
 ```xaml
 <Entry FontSize="18">
@@ -176,9 +176,9 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Entry>
 ```
 
-各`Setter`タグは、その状態が現在のときに特定のプロパティの値を示します。 によって参照されるすべてのプロパティ、`Setter`バインド可能なプロパティでオブジェクトをバックアップする必要があります。
+各`Setter`タグがその状態が現在、特定のプロパティの値を示します。 によって参照される任意のプロパティを`Setter`バインド可能なプロパティでオブジェクトをバックアップする必要があります。
 
-次のようなマークアップの基になる、**ビュー VSM**  ページで、 **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** サンプル プログラムです。 3 つのページが含まれます`Entry`ビューが 2 番目の 1 つだけがそれに付随する VSM マークアップ。
+次のようなマークアップの基になる、**ビューで VSM**ページで、 **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** サンプル プログラムです。 3 つのページが含まれます`Entry`ビューが 2 つ目の 1 つだけが接続して VSM マークアップ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -249,23 +249,23 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </ContentPage>
 ```
 
-注意して、2 つ目`Entry`も、`DataTrigger`の一部としてその`Trigger`コレクション。 これにより、 `Entry` 、3 番目に何かが入力されるまで無効にする`Entry`です。 IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) で実行されているスタートアップでページを次に示します。
+注意して、2 つ目`Entry`もが、`DataTrigger`の一部としてその`Trigger`コレクション。 これにより、 `Entry` 、3 つ目に何かが入力されるまで無効にする`Entry`します。 IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) で実行されているスタートアップでページを示します。
 
 [![ビューで VSM: 無効になっている](vsm-images/VsmOnViewDisabled.png "VSM ビュー - 無効になっています")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
-現在の状態が「無効」ため、2 番目のバック グラウンド`Entry`ピンクで iOS および Android の画面であります。 UWP 実装`Entry`背景を設定することはありません色のときに、`Entry`は無効になります。 
+現在の表示状態が"Disabled"ため、2 つ目のバック グラウンド`Entry`ピンクで iOS および Android の画面であります。 UWP 実装`Entry`背景を設定することはない色のときに、`Entry`は無効です。 
 
-3 番目にいくつかのテキストを入力すると`Entry`、2 番目`Entry`ライム"Normal"状態、およびバック グラウンドへの切り替えは。
+3 番目にいくつかのテキストを入力すると`Entry`、2 番目の`Entry`"Normal"の状態と、バック グラウンドにスイッチがライム。
 
 [![ビューで VSM: 標準](vsm-images/VsmOnViewNormal.png "VSM ビュー - 標準")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
-2 つ目に触れると`Entry`、入力フォーカスを取得します。 これにより、"Focused"状態に切り替わりますされ、その高さの 2 倍に拡張されます。
+2 つ目をタッチする`Entry`、入力フォーカスを取得します。 「フォーカス」状態に切り替わります、その高さの 2 倍に展開されます。
 
-[![ビューで VSM: 重点を置いて](vsm-images/VsmOnViewFocused.png "ビュー - フォーカスされた VSM")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![ビューで VSM: 重点を置いた](vsm-images/VsmOnViewFocused.png "VSM ビューに重点を置いています")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
-注意して、`Entry`入力フォーカスを取得したとき、ライム背景は保持されません。 Visual State Manager は、視覚的な状態の間で切り替える、以前の状態によって設定されたプロパティが設定されていません。 視覚的な状態が相互に排他的なことに注意してください。 "Normal"状態とは限りませんだけを`Entry`を有効にします。 つまり、`Entry`が有効になっているし、入力フォーカスを持っていません。 
+なお、`Entry`入力フォーカスを取得した場合は、ライム バック グラウンドを保持しません。 Visual State Manager は切り替える表示状態の間、以前の状態によって設定されるプロパティは設定されません。 視覚的な状態は相互に排他的なことに注意してください。 "Normal"の状態があることを意味のみ、`Entry`を有効にします。 つまり、`Entry`を有効にして、入力フォーカスがないです。 
 
-場合は、`Entry`にライム バック グラウンド"Focused"状態で、別の追加`Setter`そのビジュアルの状態にします。
+場合は、`Entry`にライム バック グラウンドでは、「フォーカス」状態で、もう 1 つの追加`Setter`そのビジュアルの状態。
 
 ```xaml
 <VisualState x:Name="Focused">
@@ -276,17 +276,17 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </VisualState>
 ```
 
-これらの順序で`Setter`正常に機能するオブジェクト、`VisualStateGroup`含める必要があります`VisualState`そのグループ内のすべての状態のオブジェクト。 表示状態が含まれないことがある場合`Setter`空のタグとしてリビジョン、オブジェクトを含めます。
+これらの順序で`Setter`正常に機能するオブジェクト、`VisualStateGroup`含める必要があります`VisualState`そのグループ内のすべての状態のオブジェクト。 されていないビジュアルの状態がある場合`Setter`空タグとしてリビジョン、オブジェクトを含めます。
 
 ```xaml
 <VisualState x:Name="Normal" />
 ``` 
 
-### <a name="visual-state-manager-markup-in-a-style"></a>スタイルでビジュアル状態マネージャー マークアップ
+### <a name="visual-state-manager-markup-in-a-style"></a>スタイルの表示状態マネージャーのマークアップ
 
-2 つ以上のビューの間で同じ Visual State Manager マークアップを共有する必要があります。 ここでは、マークアップを配置にしておく、`Style`定義します。
+2 つまたは複数のビューの間で共通の Visual State Manager マークアップを共有する必要があります。 マークアップを配置したいここで、`Style`定義します。
 
-ここでは、既存の暗黙的な`Style`の`Entry`内の要素、 **VSM でビュー**ページ。
+ここでは、既存の暗黙的な`Style`の`Entry`内の要素、**ビューで VSM**ページ。
 
 ```xaml
 <Style TargetType="Entry">
@@ -307,7 +307,7 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Style> 
 ```
 
-コンテンツ プロパティ`Setter`は`Value`ための値、`Value`プロパティは、これらのタグ内で直接指定できます。 型のプロパティが`VisualStateGroupList`:
+コンテンツのプロパティの`Setter`は`Value`ための値、`Value`それらのタグ内で直接プロパティを指定することができます。 型のプロパティが`VisualStateGroupList`:
 
 ```xaml
 <Style TargetType="Entry">
@@ -337,7 +337,7 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 </Style> 
 ```
 
-VSM マークアップの残りの部分は、以前と同じです。
+VSM マークアップの残りの部分では前に、と同じです。
 
 ここでは、**スタイルで VSM** VSM の完全なマークアップを表示するページ。
 
@@ -410,25 +410,25 @@ VSM マークアップの残りの部分は、以前と同じです。
 </ContentPage>
 ```
 
-今すぐすべて、`Entry`のこのページ ビューの応答を視覚の状態と同様です。 "Focused"状態が、2 番目には今すぐに含まれているにも注意してください`Setter`により、各`Entry`とそれに入力フォーカスが、ライムもバック グラウンドします。
+今すぐすべて、`Entry`のこのページ ビューの表示状態にも同様の応答します。 「フォーカス」状態が 2 つ目を今すぐが含まれることにも注意してください`Setter`により、各`Entry`とそれに入力フォーカスをライムもバック グラウンドします。
 
 [![スタイルで VSM](vsm-images/VsmInStyle.png "スタイルで VSM")](vsm-images/VsmInStyle-Large.png#lightbox)
 
-## <a name="defining-your-own-visual-states"></a>独自の表示状態を定義します。
+## <a name="defining-your-own-visual-states"></a>独自のビジュアル状態を定義します。
 
-すべてのクラスから派生した`VisualElement`3 一般的な状態"Normal"、「フォーカスされている」、および"Disabled"をサポートしています。 内部的には、 [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs)有効または無効になっている、または対象を絞ったまたはフォーカスされていないになる場合は、静的なを呼び出すクラスを検出した[ `VisualStateManager.GoToState` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualStateManager.GoToState/p/Xamarin.Forms.VisualElement/System.String/)メソッド。
+すべてのクラスから派生した`VisualElement`3 つ一般的な状態"Normal"、「フォーカス」および"Disabled"をサポートしています。 内部的には、 [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs)有効または無効になっている、またはフォーカスがある、またはフォーカスされていないになると呼び出す静的クラスを検出した[ `VisualStateManager.GoToState` ](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String))メソッド。
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");
 ```
 
-これにのみの Visual State Manager コード、`VisualElement`クラスです。 `GoToState`から派生するすべてのクラスに基づくすべてのオブジェクトが呼び出されると`VisualElement`、いずれかで Visual State Manager を使用できる`VisualElement`これらの変更に応答するオブジェクト。
+これでのみの Visual State Manager コード、`VisualElement`クラス。 `GoToState`から派生したすべてのクラスに基づくすべてのオブジェクトが呼び出されると`VisualElement`、Visual State Manager を使用して、いずれかで`VisualElement`これらの変更に応答するオブジェクト。
 
-興味深いことに、表示状態グループ"CommonStates"の名前が明示的に参照されないで`VisualElement`です。 グループ名は、Visual State Manager 用の API の一部ではありません。 これまでに示す 2 つのサンプル プログラムのいずれか、以外では、"CommonStates"からのグループの名前を変更することができ、プログラムは引き続き動作します。 グループ名は、そのグループ内の状態の一般的な説明だけです。 任意のグループで視覚的な状態は相互に排他的であるが暗黙的に認識します。 1 つの状態と 1 つの状態はいつでも現在します。
+興味深いことに、"CommonStates"の表示状態グループの名前が明記されていないで`VisualElement`します。 Visual State Manager の API の一部でないグループ名。 これまでに示した 2 つのサンプル プログラムの 1 つを"CommonStates"から、それ以外のグループの名前を変更することができ、プログラムは引き続き動作します。 グループ名は、そのグループの状態の一般的な説明だけです。 任意のグループの表示状態は相互に排他的であるが暗黙的に認識します。 1 つの状態と 1 つだけの状態はいつでも現在します。
 
-呼び出す必要があります、独自の表示状態を実装する場合は、`VisualStateManager.GoToState`コードからです。 ほとんどの場合、ページ クラスの分離コード ファイルからこの呼び出しを行うします。
+呼び出す必要があります、独自のビジュアル状態を実装する場合は、`VisualStateManager.GoToState`コードから。 ほとんどの場合、ページ クラスの分離コード ファイルからのこの呼び出しを行います。
 
-**VSM 検証** ページで、 **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** サンプル入力の検証に関連して Visual State Manager を使用する方法を示します。 XAML ファイルには、2 つの`Label`、要素、 `Entry`、および`Button`:
+**VSM 検証**ページで、 **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** サンプルは、入力の検証に関連 Visual State Manager を使用する方法を示します。 XAML ファイルには、2 つの`Label`、要素、 `Entry`、および`Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -486,17 +486,17 @@ VisualStateManager.GoToState(this, "Focused");
 </ContentPage>
 ```
 
-VSM マークアップは、2 番目にアタッチされて`Label`(という名前`helpLabel`) および`Button`(という`submitButton`)。 「有効」および「が無効です」という名前の 2 つの相互に排他的な状態があります。 これらの 2 つの"ValidationState"グループに含まれる`VisualState`"Valid"と「無効」の両方のタグのうちの 1 つは各ケースで空にします。 
+VSM マークアップが、2 つ目に接続されている`Label`(という名前`helpLabel`) および`Button`(という`submitButton`)。 「有効」および「が無効です」という名前の 2 つの相互に排他的な状態があります。 これらの 2 つの"ValidationState"グループに含まれる`VisualState`"Valid"と「無効」の両方のタグのうち 1 つは各ケースで空にします。 
 
-場合、`Entry`は有効な電話番号、現在の状態が「無効」し、2 番目`Label`が表示され、`Button`は無効になります。
+場合、`Entry`現在の状態は「無効」で、そのため、有効な電話番号を含まない、2 つ目`Label`が表示されると、`Button`は無効です。
 
-[![VSM 検証: 無効な状態](vsm-images/VsmValidationInvalid.png "VSM 検証 - 無効")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
+[![VSM 検証: 無効な状態](vsm-images/VsmValidationInvalid.png "VSM の検証が無効です")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
-有効な電話番号を入力すると、現在の状態になります"Valid"です。 2 番目`Entry`は表示されなくなりますと`Button`が有効になりました。
+有効な電話番号を入力したらの 現在の状態が"Valid"。 2 番目の`Entry`は表示されなくなります、`Button`が有効になりました。
 
-[![VSM 検証: 有効な状態](vsm-images/VsmValidationValid.png "VSM 検証 - 有効")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![VSM 検証: 有効な状態](vsm-images/VsmValidationValid.png "有効な VSM の検証")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
-分離コード ファイルが処理するための広範囲、`TextChanged`からイベントを`Entry`です。 ハンドラーでは、正規表現を使用して、入力文字列が有効かどうを調べます。 という名前の分離コード ファイル内のメソッド`GoToState`呼び出す静的`VisualStateManager.GoToState`両方のメソッド`helpLabel`と`submitButton`:
+分離コード ファイルは、役割の処理を担います、`TextChanged`からイベントを`Entry`します。 ハンドラーは、入力文字列が有効かどうかを判断するのに正規表現を使用します。 という名前の分離コード ファイル内のメソッド`GoToState`呼び出す静的`VisualStateManager.GoToState`両方のメソッド`helpLabel`と`submitButton`:
 
 ```csharp
 public partial class VsmValidationPage : ContentPage
@@ -523,35 +523,35 @@ public partial class VsmValidationPage : ContentPage
 }
 ```
 
-また、`GoToState`メソッドは、状態を初期化するコンス トラクターから呼び出されます。 現在の状態は、常にあります。 含まれていませんコードではあります表示状態グループの名前への参照わかりやすくするための目的で"ValidationStates"としての XAML で参照されています。 
+また、`GoToState`メソッドは、状態を初期化するコンス トラクターから呼び出されます。 現在の状態が常にする必要があります。 それに遠く及ばず、コードでがあります、表示状態グループの名前への参照わかりやすくするための目的で"ValidationStates"として、XAML で参照されています。 
 
-分離コード ファイルも、これらのビジュアルの状態を呼び出すには、すべてのオブジェクトのアカウントに影響を受けるページを受け取る必要がありますに注意してください。`VisualStateManager.GoToState`のこれらの各オブジェクトです。 この例では 2 つのオブジェクト (、`Label`と`Button`)、複数ある可能性がありますが、詳細です。
+呼び出すと、これらの表示状態で、分離コード ファイルに影響を受けるページ上のすべてのオブジェクトのアカウントを実行する必要がありますに注意してください。`VisualStateManager.GoToState`のこれらの各オブジェクト。 この例では 2 つのオブジェクト (、 `Label` 、 `Button`)、いくつかが考えられますが、詳細。
 
-でしょうか場合は、分離コード ファイルには、これらの表示状態の影響を受けるページ上のすべてのオブジェクトを参照する必要があります、理由ことはできません、分離コード ファイルだけで、オブジェクトに直接アクセスしますか?。 間違いなく可能性があります。 ただし、VSM を使用する利点は、どのようにビジュアル要素を制御できることを XAML UI のデザインのすべてを 1 つの場所に保持するだけでさまざまな状態に対応します。 設定視覚的な外観を視覚的要素を分離コードから直接アクセスすることによって回避できます。
+疑問に思うかもしれません。 場合は、分離コード ファイルには、これらの表示状態の影響を受けるページのすべてのオブジェクトを参照する必要があります、分離コード ファイルだけにアクセスできない理由オブジェクト直接でしょうか。 これは間違いでした。 ただし、VSM を使用する利点は、どの視覚的要素を制御できることだけで、XAML UI 設計のすべてを 1 つの場所に保持する別の状態に対応します。 視覚的な外観の設定を視覚的要素を分離コードから直接アクセスすることによって回避できます。
 
-クラスを派生することが検討される可能性があります`Entry`とおそらく外部検証関数に設定できるプロパティを定義します。 派生したクラス`Entry`呼び出すことができますし、`VisualStateManager.GoToState`メソッドです。 このスキームは場合にのみが正常に機能は、`Entry`されたビジュアル状態の影響を受けたオブジェクトのみです。 この例では、`Label`と`Button`も影響を受けます。 VSM マークアップがアタッチされているために、方法はありません、 `Entry` VSM マークアップでは、表示状態の変更を別のオブジェクトから参照するには、その他のオブジェクトをこれらに接続 ページで、および一切の他のオブジェクトを制御します。
+クラスを派生することが検討される可能性があります`Entry`とおそらく外部検証関数を設定できるプロパティを定義します。 派生したクラス`Entry`を呼び出して、`VisualStateManager.GoToState`メソッド。 このスキームは場合にのみが正常に機能は、`Entry`されたさまざまな視覚的な状態の影響を受ける唯一のオブジェクト。 この例で、`Label`と`Button`も影響します。 VSM マークアップに接続されているために、方法はありません、 `Entry` VSM マークアップでは、ビジュアルの状態に変更を別のオブジェクトから参照するには、その他のオブジェクトをこれらに接続 ページと方法がないその他のオブジェクトを制御します。
 
 <a name="adaptive-layout" />
 
-## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>レイアウトのアダプティブ Visual State Manager を使用します。
+## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>Visual State Manager を使用してアダプティブのレイアウト
 
-スマート フォンで実行されているアプリケーションは、縦または横の縦横比、あり、Xamarin.Forms プログラムでデスクトップ上で実行で通常表示できる Xamarin.Forms と多くのさまざまなサイズと縦横比を想定するサイズを変更できます。 適切に設計されたアプリケーションがこれらのさまざまなページまたはウィンドウ フォーム ファクターの異なる方法でそのコンテンツを表示します。 
+スマート フォンで実行されているアプリケーションは、縦または横の縦横比とデスクトップで実行されている Xamarin.Forms プログラムに通常表示できます Xamarin.Forms と多くのさまざまなサイズと縦横比を想定するサイズを変更できます。 適切に設計されたアプリケーションがこれらのさまざまなページまたはウィンドウ フォーム ファクターの異なる方法では、そのコンテンツを表示します。 
 
-この手法とも呼ばれます_アダプティブ レイアウト_です。 アダプティブ レイアウトには、プログラムのビジュアルのみ含まれているために、Visual State Manager の理想的なアプリケーションを勧めします。
+この手法とも呼ばれる_アダプティブ レイアウト_します。 アダプティブ レイアウトには、プログラムのビジュアルのみが含まれる、ため、Visual State Manager の理想的なアプリケーションになります。
 
-単純な例は、アプリケーションのコンテンツに影響するボタンの小規模のコレクションを表示するアプリケーションです。 縦向きモードの場合は、これらのボタンに表示されるページの上部の水平方向の行。
+簡単な例は、アプリケーションのコンテンツに影響するボタンの小規模なコレクションを表示するアプリケーションです。 縦モードの場合でこれらのボタンをページ上部にある水平方向の行で表示される可能性があります。
 
-[![レイアウトのアダプティブ VSM: 縦](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM アダプティブ レイアウト - 縦")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
+[![VSM アダプティブ レイアウト: 縦](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM アダプティブ レイアウト - 縦")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
 
-横モードでボタンの配列を一方の側に移動され、列に表示される可能性があります。
+横モードでボタンの配列が 1 つの側に移動され、列に表示。
 
-[![レイアウトのアダプティブ VSM: 横](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM アダプティブ レイアウト - 横")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
+[![VSM アダプティブ レイアウト: 横](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM アダプティブ レイアウト - 横")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
 
-上から下に、プログラムのユニバーサル Windows プラットフォーム、Android、および iOS を実行します。
+上から下に、プログラムのユニバーサル Windows プラットフォーム、Android、iOS で実行します。
 
-**VSM アダプティブ レイアウト** ページで、 [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)サンプルが 2 つの表示状態が「縦」および「横 ()」という名前に"OrientationStates"をという名前のグループを定義します。 (より複雑な方法はいくつかの異なるページまたはウィンドウの幅に基づく可能性があります)。 
+**VSM アダプティブ レイアウト**ページで、 [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)サンプルは、「Portrait」と「Landscape」という 2 つのビジュアル状態を"OrientationStates"をという名前のグループを定義します。 (より複雑な方法はいくつかの異なるページまたはウィンドウの幅に基づく可能性があります)。 
 
-VSM マークアップは、XAML ファイルで 4 つの場所で発生します。 `StackLayout`という`mainStack`、メニューとは、コンテンツの両方を含む、`Image`要素。 これは、`StackLayout`縦向きモードの向きを縦方向と横モードで水平方向にある必要があります。
+VSM マークアップは、XAML ファイル内の 4 つの場所で発生します。 `StackLayout`という`mainStack`、メニューとは、コンテンツの両方を含む、`Image`要素。 これは、`StackLayout`縦モードでの垂直方向と横モードでの水平方向にある必要があります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -664,11 +664,11 @@ VSM マークアップは、XAML ファイルで 4 つの場所で発生しま�
 </ContentPage>
 ```
 
-内部`ScrollView`という名前`menuScroll`と`StackLayout`という名前`menuStack`ボタンのメニューを実装します。 これらのレイアウトの方向が逆の`mainStack`します。 縦向きモードの水平方向および横モードで垂直、メニューがあります。
+内部`ScrollView`という名前の`menuScroll`と`StackLayout`という名前の`menuStack`ボタンのメニューを実装します。 これらのレイアウトの方向が逆の`mainStack`します。 メニューは、縦モードで水平方向と横モードで垂直にする必要があります。
 
-VSM マークアップの 4 番目のセクションでは、自身のボタンの暗黙的なスタイルでです。 このマークアップ`VerticalOptions`、 `HorizontalOptions`、および`Margin`portait 方向と横方向に固有のプロパティです。
+VSM マークアップの 4 番目のセクションでは、ボタン自体の暗黙的なスタイルでです。 このマークアップは`VerticalOptions`、 `HorizontalOptions`、および`Margin`portait と横長の向きに固有のプロパティ。
 
-分離コード ファイルのセット、`BindingContext`プロパティの`menuStack`を実装する`Button`、コマンド実行ともにハンドラーをアタッチ、`SizeChanged`ページのイベント。
+分離コード ファイルのセット、`BindingContext`プロパティの`menuStack`を実装する`Button`コマンド、およびにハンドラーも、`SizeChanged`ページのイベント。
 
 ```csharp
 public partial class VsmAdaptiveLayoutPage : ContentPage
@@ -702,15 +702,15 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 }
 ```
 
-`SizeChanged`ハンドラーの呼び出し`VisualStateManager.GoToState`、2 つの`StackLayout`と`ScrollView`要素、および、ループの子を`menuStack`を呼び出す`VisualStateManager.GoToState`の`Button`要素。
+`SizeChanged`ハンドラー呼び出し`VisualStateManager.GoToState`、2 つの`StackLayout`と`ScrollView`要素、およびの子をループし`menuStack`を呼び出す`VisualStateManager.GoToState`の`Button`要素。
 
-分離コード ファイルは、XAML ファイルで要素のプロパティを設定して直接向きの変更を処理できますが、Visual State Manager は、構造化されたアプローチ、明らかかのように思われる場合があります。 すべてのビジュアルに確認しやすくなる、XAML ファイルで保持されますを維持し、変更します。
+分離コード ファイルは、XAML ファイルで要素のプロパティを設定して直接向きの変更を処理することができますが、Visual State Manager より構造化されたアプローチでは間違いなく場合のように思えるかもしれません。 すべてのビジュアルは、調査が容易になる、XAML ファイルで保持されますにより、保守、および変更します。
 
 ## <a name="visual-state-manager-with-xamarinuniversity"></a>Xamarin.University で visual State Manager
 
 > [!VIDEO https://youtube.com/embed/qhUHbVP5mIQ]
 
-**Xamarin.Forms 3.0 Visual State Manager により、 [Xamarin 大学](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 Visual State Manager により、 [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>関連リンク
 

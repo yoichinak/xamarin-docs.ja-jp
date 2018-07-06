@@ -1,26 +1,26 @@
 ---
-title: 目標ペンを使わずツールとコマンド
-description: このドキュメントでは、それらを使用するには、目標ペンを使わずとコマンドライン引数に付属のツールの概要を示します。
+title: 目標油性ツールとコマンド
+description: このドキュメントでは、それらで使用するには、目的の油性とコマンドライン引数に含まれているツールの概要を示します。
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 9ef566559249caca75281d9490d5314e08e26d44
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 718b5104ddc4593d080b88b062c42d371d9e8e2e
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781066"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855069"
 ---
-# <a name="objective-sharpie-tools--commands"></a>目標ペンを使わずツールとコマンド
+# <a name="objective-sharpie-tools--commands"></a>目標油性ツールとコマンド
 
-_それらを使用するには、目的のペンを使わずとコマンドライン引数に付属のツールの概要です。_
+_それらを使用するには、目的の油性とコマンドライン引数に含まれるツールの概要です。_
 
 <style type="text/css"> .terminal 青 {色: rgb(10,96,254);} .terminal 緑 {color: rgb(12,156,26);} .terminal マゼンタ {色: rgb(152,12,103);} </style>
 
 
-目標ペンを使わずが正常に[インストール](~/cross-platform/macios/binding/objective-sharpie/get-started.md)端末を開き、理解しておく、<em>コマンド</em>目標ペンを使わずが提供するには。
+目標油性が正常に[インストール](~/cross-platform/macios/binding/objective-sharpie/get-started.md)ターミナルを開き、理解して、<em>コマンド</em>目標油性が提供する必要があります。
 
 <pre>$ <b>sharpie -help</b>
 usage: sharpie [OPTIONS] TOOL [TOOL_OPTIONS]
@@ -50,18 +50,18 @@ Available Tools:
   verify-docs        Show cross reference documentation for [Verify] attributes
   docs               Open the Objective Sharpie online documentation</pre>
 
-目標ペンを使わずには、次のツールが用意されています。
+目標油性には、次のツールが用意されています。
 
 |ツール|説明|
 |--- |--- |
-|**xcode**|現在の Xcode インストールと iOS および Mac の Sdk を利用できますがのバージョンに関する情報を提供します。 使用するこの情報は後で、バインディングが生成されたとき。|
-|**pod**|検索、構成、(ローカル ディレクトリ) にインストールすると、およびバインド Objective C [CocoaPod](https://cocoapods.org/)マスター Spec リポジトリから使用可能なライブラリです。 このツールに渡す正しい入力を自動的に推測にインストールされている CocoaPod の評価、`bind`以下のツールです。 3.0 の新機能!|
-|**bind**|ヘッダー ファイルを解析して (`*.h`)、最初に Objective C ライブラリの[ApiDefinition.cs と StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)ファイル。|
-|**update**|目標ペンを使わずの新しいバージョンを確認し、ダウンロードし、1 つが利用可能な場合は、インストーラーを起動します。|
-|**verify-docs**|に関する詳細情報が表示`[Verify]`属性。|
+|**xcode**|現在の Xcode インストールと iOS デバイスと使用可能な Mac Sdk のバージョンに関する情報を提供します。 使用するこの情報は後で、バインドが生成されたとき。|
+|**pod**|検索、構成、(ローカル ディレクトリ) にインストールすると、および OBJECTIVE-C のバインド[CocoaPod](https://cocoapods.org/)マスター Spec リポジトリから使用可能なライブラリ。 このツールで評価を渡すための適切な入力を自動的に推測にインストールされている CocoaPod、`bind`以下のツール。 3.0 の新機能です。|
+|**bind**|ヘッダー ファイルの解析 (`*.h`)、最初に、OBJECTIVE-C ライブラリ[ApiDefinition.cs と StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)ファイル。|
+|**update**|目標油性の新しいバージョンをチェックし、ダウンロードがある場合、インストーラーを起動します。|
+|**verify-docs**|に関する詳細情報が表示されます`[Verify]`属性。|
 |**docs**|既定の web ブラウザーでは、このドキュメントに移動します。|
 
-特定の目標ペンを使わずツールのヘルプを表示するには、ツールの名前を入力し、`-help`オプション。 たとえば、`sharpie xcode -help`次の出力を返します。
+特定の目標油性ツールのヘルプを表示するには、ツールの名前を入力し、`-help`オプション。 たとえば、`sharpie xcode -help`次の出力を返します。
 
 <pre>$ <b>sharpie xcode -help</b>
 usage: sharpie xcode [OPTIONS]
@@ -73,7 +73,7 @@ Options:
 Xcode Options:
   -sdks            List all available Xcode SDKs. Pass -verbose for more details.</pre>
 
-バインディング プロセスを始めることができます、前に、ターミナルに次のコマンドを入力して、現在インストールされている Sdk に関する情報を取得する必要があります`sharpie xcode -sdks`です。 出力は、インストールした Xcode のバージョンによって異なる場合があります。 いずれかにインストールされている Sdk の次の目標ペンを使わず`Xcode*.app`下にある、`/Applications`ディレクトリ。
+バインディング プロセスを始めることができます、前に、ターミナルに次のコマンドを入力して、現在インストールされている各種 Sdk についての情報を取得する必要があります`sharpie xcode -sdks`します。 出力は、インストールされている Xcode のバージョンによって異なる場合があります。 いずれかにインストールされている Sdk の次の目標油性`Xcode*.app`下、`/Applications`ディレクトリ。
 
 <pre>$ <b>sharpie xcode -sdks</b>
 <span class="terminal-blue">sdk:</span> appletvos9.0    <span class="terminal-green">arch:</span> arm64
@@ -84,5 +84,9 @@ Xcode Options:
 <span class="terminal-blue">sdk:</span> macosx10.10     <span class="terminal-green">arch:</span> x86_64  i386
 <span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
 
-上記から、表示があること、 `iphoneos9.1` 、マシンの SDK がインストールされておりが`arm64`アーキテクチャのサポート。 私たちはこの値を使用このセクションのすべてのサンプルです。 配置でこの情報を使用する準備が整いました Objective C ライブラリ ヘッダー ファイルを最初に解析`ApiDefinition.cs`と`StructsAndEnums.cs`バインド プロジェクト。
+上記からわかりますがあること、 `iphoneos9.1` SDK は、コンピューターにインストールされているしが`arm64`アーキテクチャ サポート。 このセクションでは、すべてのサンプルについてはこの値が使用されます。 この情報が、最初に Objective C ライブラリ ヘッダー ファイルを解析する準備ができて`ApiDefinition.cs`と`StructsAndEnums.cs`バインド プロジェクト。
 
+## <a name="related-links"></a>関連リンク
+
+- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
