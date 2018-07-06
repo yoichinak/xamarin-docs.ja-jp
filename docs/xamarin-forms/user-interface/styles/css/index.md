@@ -1,6 +1,6 @@
 ---
-title: カスケード スタイル シート (CSS) を使用して Xamarin.Forms アプリのスタイルを設定
-description: Xamarin.Forms では、カスケード スタイル シート (CSS) を使用してスタイル ビジュアル要素をサポートします。
+title: カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
+description: Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
 ms.technology: xamarin-forms
@@ -15,11 +15,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/05/2018
 ms.locfileid: "34794086"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用して Xamarin.Forms アプリのスタイルを設定
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
-_Xamarin.Forms では、カスケード スタイル シート (CSS) を使用してスタイル ビジュアル要素をサポートします。_
+_Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。_
 
-Xamarin.Forms 3.0 には、CSS を使用してアプリのスタイルを設定する機能が導入されています。 スタイル シートは、1 つまたは複数のセレクターと宣言ブロックで構成される各規則と、規則の一覧で構成されます。 宣言ブロックは、プロパティ、コロン、および値から成る各宣言に、中かっこ内の宣言の一覧で構成されます。 ブロック内の複数の宣言が存在する場合、区切り記号としてセミコロンが挿入されます。 次のコード例は、Xamarin.Forms 一部準拠している CSS を示しています。
+Xamarin.Forms 3.0 には、CSS を使用してアプリのスタイルを設定する機能が導入されています。 スタイル シートは、規則の一覧で構成され、各規則は 1 つまたは複数のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこ内の宣言の一覧で構成され、各宣言はプロパティ・コロン・値から構成されます。 ブロック内に複数の宣言が存在する場合、区切り記号としてセミコロンが挿入されます。 次のコード例は、Xamarin.Forms に対応した CSS の一部を示しています。
 
 ```css
 ^contentpage {
@@ -65,34 +65,34 @@ stacklayout>image {
 }
 ```
 
-Xamarin.Forms で CSS スタイル シートが解析され、コンパイル時ではなく、実行時に評価し、スタイル シートが使用するときに再解析します。
+Xamarin.Forms では、CSS スタイル シートはコンパイル時ではなく、実行時に解析・評価され、使用時に再解析されます。
 
 > [!NOTE]
-> 現時点では、すべての XAML のスタイルを持つことが、スタイリング CSS を実行できません。 ただし、XAML のスタイルは、Xamarin.Forms で現在サポートされていないプロパティの CSS を補足するものを使用できます。 XAML のスタイルの詳細については、次を参照してください。[スタイル Xamarin.Forms を使ったアプリの XAML スタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)です。
+> 現時点では、XAML のスタイルを使ってできるすべてのスタイリングが、CSS で表現できるわけではありません。 しかし、XAML のスタイルは、Xamarin.Forms で現在サポートされていないプロパティの CSS を補足するために使用できます。 XAML のスタイルの詳細については、次を参照してください。[XAML スタイルを使った Xamarin.Forms アプリのスタイリング](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
-[MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)サンプル CSS を使用して、簡単なアプリのスタイルを設定して、次のスクリーン ショットに表示されます。
+[MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/) サンプルは、CSS を使用して簡単なアプリのスタイルを設定するデモで、次のスクリーン ショットのように表示されます。
 
 [![CSS スタイルを持つ MonkeyApp メインページ](css-images/MonkeyAppMainPage.png "CSS スタイルを持つ MonkeyApp メインページ")](css-images/MonkeyAppMainPage-Large.png#lightbox "CSS スタイルを持つ MonkeyApp メイン ページ")
 
 [![CSS スタイルを持つ MonkeyApp 詳細ページ](css-images/MonkeyAppDetailPage.png "CSS スタイルを持つ MonkeyApp 詳細ページ")](css-images/MonkeyAppDetailPage-Large.png#lightbox "CSS スタイルを持つ MonkeyApp 詳細ページ")
 
 > [!NOTE]
-> 現在の背景色のスタイルを設定することはできません、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)スタイル シートを使用します。 したがって、サンプル アプリケーションで、 [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)コードでプロパティを設定します。
+> 現在、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) の背景色をスタイルシートを使ってスタイルすることはできません。 したがって、サンプル アプリケーションでは、 [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) プロパティをコードで設定しています。
 
 ## <a name="consuming-a-style-sheet"></a>スタイル シートの使用
 
 ソリューションに、スタイル シートを追加する手順は次のとおりです。
 
 1. .NET 標準ライブラリ プロジェクトに空の CSS ファイルを追加します。
-1. CSS ファイルのビルド アクション設定**EmbeddedResource**です。
+1. CSS ファイルのビルド アクションを **EmbeddedResource** に設定します。
 
 ### <a name="loading-a-style-sheet"></a>スタイル シートの読み込み
 
-さまざまなスタイル シートの読み込みに使用できる方法があります。
+スタイル シートの読み込みに使用できるさまざまな方法があります。
 
 ### <a name="xaml"></a>XAML
 
-スタイル シートがロードされ、使用して解析することができます、 [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet)クラスに追加される前に、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページ。
+スタイル シートは、ページに [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) が加えられる前に [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) クラス でロード・解析することができます。
 
 ```xaml
 <ContentPage ...>
@@ -103,12 +103,12 @@ Xamarin.Forms で CSS スタイル シートが解析され、コンパイル時
 </ContentPage>
 ```
 
-[ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)プロパティは、URI である場合、外側の XAML ファイルの場所への相対またはプロジェクトのルートからの相対 URI として、スタイル シートを指定、`/`です。
+[ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) プロパティは、XAML ファイルを含む位置からの相対 URI、また `/` から始まる URI の場合はプロジェクトのルートからの相対 URI としてスタイルシートを指定します。
 
 > [!WARNING]
-> CSS ファイルがある場合の読み込みに失敗するビルド アクションに設定されていない**EmbeddedResource**です。
+> ビルド アクションに **EmbeddedResource** が設定されていない場合、CSS ファイルは読み込みに失敗します。
 
-スタイル シートを読み込むし、を使用して解析または、 [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet)クラスによってインライン展開で、`CDATA`セクション。
+また、スタイルシートは、`CDATA` セクション内にインライン展開することで、[ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) クラス でロード・解析することもできます。
 
 ```xaml
 <ContentPage ...>
@@ -127,7 +127,7 @@ Xamarin.Forms で CSS スタイル シートが解析され、コンパイル時
 
 ### <a name="c"></a>C#
 
-C# の場合は、スタイル シートをロード埋め込みリソースとしてに追加された、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページ。
+C# の場合、スタイル シートは埋め込みリソースとして読み込ませて、ページの[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) に加えることができます。
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -143,9 +143,9 @@ public partial class MyPage : ContentPage
 }
 ```
 
-1 番目の引数、`StyleSheet.FromAssemblyResource`メソッドはスタイル シートを含むアセンブリでは、2 番目の引数は、`string`リソース識別子を表すです。 リソース識別子を取得できます、**プロパティ**ウィンドウ、CSS ファイルを選択するとします。
+1 番目の引数 `StyleSheet.FromAssemblyResource` メソッドは、スタイル シートを含んでいるアセンブリで、2 番目の引数は、リソース識別子を表す `string` です。 リソース識別子は、CSS ファイルを選択したときに、**プロパティ** ウィンドウから取得することができます。
 
-代わりに、スタイル シートから読み込める、`StringReader`に追加し、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページの。
+また、スタイル シートは、`StringReader` から読み込ませて、ページの[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) に追加することもできます。
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -162,17 +162,17 @@ public partial class MyPage : ContentPage
 }
 ```
 
-引数、`StyleSheet.FromReader`メソッドは、`TextReader`スタイル シートを読み取ることができます。
+`StyleSheet.FromReader` メソッドの引数は、スタイルシートを読み込ませた `TextReader` です。
 
-## <a name="selecting-elements-and-applying-properties"></a>要素を選択し、プロパティの適用
+## <a name="selecting-elements-and-applying-properties"></a>要素の選択とプロパティの適用
 
-CSS セレクターを使用してを対象とする要素を確認します。 セレクターが一致するスタイルは、定義の順序で、連続して適用されます。 特定のアイテムで定義されているスタイルは常に最後に適用します。 サポートされているセレクターの詳細については、次を参照してください。[セレクター参照](#selector-reference)です。
+CSS は、セレクターを使用して対象とする要素を決定します。 セレクターが一致するスタイルは、定義した順序で順番に適用されます。 特定のアイテムに定義されているスタイルは、常に最後に適用されます。 サポートされているセレクターの詳細については、[セレクター参照](#selector-reference) を参照してください。
 
-CSS は、選択した要素のスタイルを設定するのにプロパティを使用します。 各プロパティには、一連の可能な値と、一部のプロパティに影響する可能性の要素の任意の型の要素のグループに適用されるものです。 サポートされているプロパティの詳細については、次を参照してください。[プロパティ リファレンス](#property-reference)です。
+CSS は、プロパティを使用して選択した要素のスタイルを設定します。 各プロパティは有効な値のセットを持ち、一部のプロパティは任意の要素の型に影響を与えることができます。また一方で要素のグループに適用されるものもあります。 サポートされているプロパティの詳細については、[プロパティ リファレンス](#property-reference) を参照してください。
 
-### <a name="selecting-elements-by-type"></a>型で要素の選択
+### <a name="selecting-elements-by-type"></a>型による要素の選択
 
-ビジュアル ツリー内の要素は、大文字と小文字を持つ型が選択できる`element`セレクター。
+大文字と小文字を区別しない `element` セレクターを使うと、ビジュアルツリー内の要素を型を指定して選択することができます。
 
 ```css
 stacklayout {
@@ -180,14 +180,14 @@ stacklayout {
 }
 ```
 
-このセレクターは、いずれかを識別[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)スタイル シートを使用して、20 の均一の幅を余白を設定したページの要素。
+このセレクタは、スタイルシートを適用したページ上のすべての [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) 要素を特定し、余白を均一20に設定します。
 
 > [!NOTE]
-> `element`セレクターは、指定した型のサブ クラスを識別できません。
+> `element` セレクターは、指定した型のサブクラスを特定することはできません。
 
-### <a name="selecting-elements-by-base-class"></a>基本クラスによって要素の選択
+### <a name="selecting-elements-by-base-class"></a>基本クラスによる要素の選択
 
-ビジュアル ツリー内の要素は、大文字と小文字を持つ基本クラスが選択できる`^base`セレクター。
+大文字と小文字を区別しない `^base` セレクターを使うと、ビジュアルツリー内の要素を基本クラスを指定して選択することができます。
 
 ```css
 ^contentpage {
@@ -195,12 +195,12 @@ stacklayout {
 }
 ```
 
-このセレクターは、いずれかを識別[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)スタイル シートを使用して、背景を設定する要素の色を`lightgray`です。
+このセレクターは、スタイルシートを適用したページ上のすべての [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) を特定し、背景色を `lightgray` に設定します。
 
 > [!NOTE]
-> `^base`セレクターは、Xamarin.Forms の固有であり、CSS 仕様の一部ではありません。
+> `^base`セレクターは、Xamarin.Forms 固有のものであり、CSS 仕様の一部ではありません。
 
-### <a name="selecting-an-element-by-name"></a>名前で要素の選択
+### <a name="selecting-an-element-by-name"></a>名前による要素の選択
 
 大文字と小文字を区別する `#id` セレクターを使うと、ビジュアルツリー内の個々の要素を選択することができます。
 
@@ -210,7 +210,7 @@ stacklayout {
 }
 ```
 
-このセレクターは、要素を識別が[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティに設定されている`listView`です。 ただし場合、`StyleId`プロパティが設定されていない、セレクターがフォールバックして、使用して、`x:Name`要素のです。 したがって、次の XAML の例で、`#listView`セレクターが示されます、 [ `ListView` ](xref:Xamarin.Forms.ListView)が`x:Name`属性に設定されている`listView`に背景色を設定および`lightgray`です。
+このセレクターは、[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) プロパティに `listView` が設定されている要素を特定します。 ただし、`StyleId` プロパティが設定されていない場合、セレクターは要素の `x:Name` を使ってフォールバックします。 したがって、次の XAML の例では、`#listView` セレクターは、`x:Name` 属性に `listView` が設定されている [ `ListView` ](xref:Xamarin.Forms.ListView) を特定し、背景色を `lightgray` に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -225,9 +225,9 @@ stacklayout {
 </ContentPage>
 ```
 
-### <a name="selecting-elements-with-a-specific-class-attribute"></a>特定のクラスの属性を持つ要素を選択します。
+### <a name="selecting-elements-with-a-specific-class-attribute"></a>特定のクラス属性を使った要素の選択
 
-大文字と小文字で特定のクラス属性を持つ要素を選択できる`.class`セレクター。
+大文字と小文字を区別する `.class` セレクターを使うと、特定のクラス属性を持つ要素を選択できます。
 
 ```css
 .detailPageTitle {
@@ -242,7 +242,7 @@ stacklayout {
 }
 ```
 
-設定して、XAML 要素に CSS クラスを割り当てることが、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) CSS クラス名に要素のプロパティです。 そのため、次の XAML の例で、スタイルによって定義、`.detailPageTitle`クラスは、最初に割り当てられた[ `Label` ](xref:Xamarin.Forms.Label)、によって定義されたスタイルの中に、`.detailPageSubtitle`クラスは、2 番目に割り当てられた`Label`です。
+CSS クラスは、要素の [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) プロパティに CSS クラス名を設定して、XAML 要素に 割り当てることができます。 したがって、次の XAML の例では、`.detailPageTitle` クラスによって定義されたスタイルが、最初の [ `Label` ](xref:Xamarin.Forms.Label) に割り当てられ、`.detailPageSubtitle` クラスは 2 番目の `Label` に割り当てられます。
 
 ```xaml
 <ContentPage ...>
@@ -261,7 +261,7 @@ stacklayout {
 
 ### <a name="selecting-child-elements"></a>子要素の選択
 
-ビジュアル ツリー内の子要素は、大文字と小文字で選択できる`element element`セレクター。
+大文字と小文字を区別しない `element element` セレクターを使うと、ビジュアル ツリー内の子要素を選択できます。
 
 ```css
 listview image {
@@ -270,7 +270,7 @@ listview image {
 }
 ```
 
-このセレクターは、いずれかを識別[ `Image` ](xref:Xamarin.Forms.Image)要素の子である[ `ListView` ](xref:Xamarin.Forms.ListView)要素、およびの高さと幅を 60 に設定します。 したがって、次の XAML の例で、`listview image`セレクターが示されます、 [ `Image` ](xref:Xamarin.Forms.Image)の子である、 [ `ListView` ](xref:Xamarin.Forms.ListView)、およびその高さと幅を 60 に設定します。
+このセレクターは、[ `ListView` ](xref:Xamarin.Forms.ListView) 要素の子であるすべての [ `Image` ](xref:Xamarin.Forms.Image) 要素を特定し、高さと幅を 60 に設定します。 したがって、次の XAML の例では、`listview image` セレクターは、[ `ListView` ](xref:Xamarin.Forms.ListView) の子である [ `Image` ](xref:Xamarin.Forms.Image) を特定し、高さと幅を 60 に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -346,7 +346,7 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 |`element+element`|`label+entry`|すべて選択`Entry`要素の後に直接、`Label`です。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 |`element~element`|`label~entry`|すべて選択`Entry`要素に続く、`Label`です。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 
-セレクターが一致するスタイルは、定義の順序で、連続して適用されます。 特定のアイテムで定義されているスタイルは常に最後に適用します。
+セレクターが一致するスタイルは、定義した順序で順番に適用されます。 特定のアイテムに定義されているスタイルは、常に最後に適用されます。
 
 > [!TIP]
 > セレクターを組み合わせて、制限なしなど`StackLayout>ContentView>label.email`です。
