@@ -1,67 +1,70 @@
 ---
-title: 消費し、Xamarin.Forms プラグインを作成します。
-description: この記事では、使用し、Xamarin.Forms のプラグインを作成する方法について説明します。 プラグインは通常、簡単にネイティブ プラットフォームの機能を公開に使用されます。
+title: 使用し、Xamarin.Forms のプラグインを作成します。
+description: この記事では、使用し、Xamarin.Forms のプラグインを作成する方法について説明します。 プラグインは、ネイティブ プラットフォームの機能を簡単に公開する通常使用されます。
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2016
-ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/05/2018
+ms.openlocfilehash: 4d121c2dfcca380e1735da1a4ca47c42d1957b8a
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242558"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854741"
 ---
-# <a name="consuming-and-creating-xamarinforms-plugins"></a>消費し、Xamarin.Forms プラグインを作成します。
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>使用し、Xamarin.Forms のプラグインを作成します。
 
-すべてのプラットフォームにわたって存在するネイティブ プラットフォーム機能が多数ありますが、若干異なる Api があります。 開発者は、他のユーザーと共有することもできます。 その機能の抽象クロスプラット フォーム インターフェイスを作成するプラグインを記述します。
+すべてのプラットフォーム間に存在する多くのネイティブ プラットフォーム機能がありますが、若干異なる Api があります。 これらの機能を使用する開発者の 1 つの方法は、抽象のクロス プラットフォームのインターフェイスを作成して、さまざまなプラットフォームでそのインターフェイスを実装することです。 次に、Xamarin.Forms アプリケーションにアクセスを使用してこれらのプラットフォーム実装[ `DependencyService`](~/xamarin-forms/app-fundamentals/dependency-service/index.md)します。
 
-これらの機能が含まれます。 バッテリの状態、コンパス、センサー、地理的位置情報、音声合成、および、もっとです。 プラグインは、Xamarin.Forms のアプリケーションで簡単にアクセスできるこれらの機能を許可します。
+開発者が記述することでこの作業を共有できます、_プラグイン_NuGet に公開するとします。
+
+> [!NOTE]
+> 以前、プラグインによってのみ使用可能な多くのクロス プラットフォーム機能、オープン ソースの一部になった**[Xamarin.Essentials](~/essentials/index.md)** ライブラリ。 これらの機能が含まれます: バッテリの状態、コンパス、モーション センサー、位置情報、音声合成、およびそうですね。 今後、 **Xamarin.Essentials** Xamarin.Forms アプリケーションのクロス プラットフォームの機能の主要なソースになります。 開発者を作成してプラグインを発行できますが、検討に貢献する**Xamarin.Essentials**します。
 
 ## <a name="finding-and-adding-plugins"></a>検索とプラグインの追加
 
-Xamarin コミュニティが作成多くのプラグインのクロスプラット フォーム - Xamarin.Forms を使用した互換性のある大規模なコレクションにあります。
+Xamarin コミュニティには多くのクロスプラット フォーム対応のプラグインが Xamarin.Forms と互換性のある作成します。 大規模なコレクションはあることができます。
 
-[**Xamarin のプラグイン**](https://github.com/xamarin/plugins)
+[**Xamarin プラグイン**](https://github.com/xamarin/XamarinComponents)
 
-NuGet パッケージをプロジェクトに追加する場合に、ガイド用のチュートリアルを参照してください。 [、プロジェクトの NuGet パッケージを含む](/visualstudio/mac/nuget-walkthrough/)です。
-
+NuGet パッケージをプロジェクトに追加する場合にガイドについてで、チュートリアルを参照してください。 [NuGet パッケージをプロジェクトに含める](/visualstudio/mac/nuget-walkthrough/)します。
 
 ## <a name="creating-plugins"></a>プラグインを作成します。
 
-作成して Nuget パッケージ (、および Xamarin コンポーネント) として独自のプラグインを発行することもできます。 多くの既存のプラグインはオープン ソース writtern をされている方法を理解するためのコードを確認することができます。
+作成して、独自のプラグインを Nuget パッケージ (および Xamarin コンポーネント) として発行することもできます。 多くの既存のプラグインはオープン ソース writtern をされている方法を理解するには、そのコードを確認することができます。
 
-たとえば、次のプラグインの一覧は、すべてのオープン ソースとサンプルに対応する、 [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)セクション。
+たとえば、プラグインは次の一覧は、すべてのオープン ソースとのいくつかのサンプルに対応する、 [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)セクション。
 
-- **音声合成**James Montemagno によって&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech)と[NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
-- **バッテリの状態**James Montemagno によって&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)と[NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
+- **音声合成**James montemagno &ndash; [GitHub](https://github.com/jamesmontemagno/TextToSpeechPlugin)と[NuGet  ](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech)
+- **バッテリの状態**James montemagno &ndash; [GitHub](https://github.com/jamesmontemagno/BatteryPlugin)と[NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 
-Github、これらのプロジェクトに次の手順と同様に、独自のクロスプラット フォームのプラグインを作成するための適切な開始点を提供できます[Xamarin 用のプラグインを作成する](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin)です。
+これらのプロジェクトを Github は、次の手順と同様に、独自のクロスプラット フォーム対応のプラグインを作成するための出発点として適していますを提供できます[for Xamarin プラグインを作成する](https://github.com/xamarin/XamarinComponents#create-a-plugin-for-xamarin)します。
 
-### <a name="structuring-cross-platform-plugin-projects"></a>クロス プラットフォームのプラグインのプロジェクトを構成します。
+### <a name="structuring-cross-platform-plugin-projects"></a>クロスプラット フォーム対応のプラグインのプロジェクトの構成
 
-NuGet パッケージをデザインするための特定の要件はありませんが、クロスプラット フォーム アプリのパッケージを作成するためのガイドラインがあります。
+NuGet パッケージを設計するための特定の要件はありませんが、クロス プラットフォーム アプリのパッケージを作成するためのガイドラインがあります。
 
-クロスプラット フォームのプラグインは必要があります、通常、次のコンポーネントで構成されます。
+以前は、クロスプラット フォーム対応のプラグインは、一般に、次のコンポーネントのとおりです。
 
-- API は、プラグインを表すインターフェイスを使用して PCL
-- iOS、Android、および Windows はクラス、インターフェイスの実装を持つライブラリです。
+- プラグイン用の API を表すインターフェイスを使用して PCL
+- iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) はクラス、インターフェイスの実装とライブラリです。
 
-読み取り James Montemagno[ブログの投稿](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/)Xamarin 用のプラグインを作成する手順について説明します。
+読み取り James Montemagno 氏[ブログの投稿](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/)Xamarin プラグインを作成するための手順について説明します。
 
-お勧め、Xamarin.Forms をプラグインから直接参照しないようにします。
-これにより、他の開発者が、プラグインを使用しようとしています。 バージョン競合の問題が作成することができます。 代わりに Xamarin または .NET アプリケーションが使用できるように、API をデザインしてください。
+最近では、プラグインが単一のターゲットが複数のプラットフォームで作成することがことができます。 このアプローチは、James Montemagno 氏で説明[ブログの投稿](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/)します。 この方法は、上のリンクから James Montemagno 氏のプラグインで使用して、形式にも使用**Xamarin.Essentials**します。
 
-### <a name="publishing-nuget-packages"></a>NuGet パッケージの発行
+Xamarin.Forms をプラグインから直接参照しないようにする方が望ましいです。
+バージョン競合の問題は、他の開発者が、プラグインを使用しようとしています。 ときにこの作成できます。 代わりに、任意の Xamarin または .NET アプリケーションで使用できるように、API を設計するみてください。
 
-NuGet パッケージが、 **nuspec**ファイル、プロジェクトのどの部分がパッケージに公開されるを定義する xml ファイルです。 **Nuspec**ファイルには、id、タイトル、作成者など、パッケージに関する情報も含まれています。
+### <a name="publishing-nuget-packages"></a>NuGet パッケージを公開します。
 
-参照してください[NuGet のドキュメント](http://docs.nuget.org/create/creating-and-publishing-a-package)を作成して、NuGet パッケージを発行の詳細についてはします。
+NuGet パッケージが、 **nuspec**ファイルで、プロジェクトのどの部分が、パッケージで公開されるを定義する xml ファイルです。 **Nuspec**ファイルには、id、タイトル、作成者など、パッケージに関する情報も含まれています。
 
+参照してください[NuGet のドキュメント](/nuget/create-packages/creating-a-package.md)の作成と NuGet パッケージの公開の詳細についてはします。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms の再利用可能なプラグインを作成します。](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms)
-- [Xamarin (ビデオ) 用にプラグインを使用すると開発](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)
+- [Xamarin.Forms 用の再利用可能なプラグインの作成](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms)
+- [Xamarin (ビデオ) の使用と開発のプラグイン](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)

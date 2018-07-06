@@ -1,28 +1,28 @@
 ---
 title: CocoaPods を使用して実際の例
-description: このドキュメントでは、目標ペンを使わずを使用して、CocoaPod から c# バインディングの定義を自動的に生成する方法を示します。
+description: このドキュメントでは、目的の油性を使用して、CocoaPod から c# バインディングの定義を自動的に生成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2018
-ms.openlocfilehash: 026b2c46f7c294d4ac4a110376131ec83c7c112e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: bac34f662e24c6b08a67cd8da1f41b37b43b3faf
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33947395"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855209"
 ---
 # <a name="real-world-example-using-cocoapods"></a>CocoaPods を使用して実際の例
 
 > [!NOTE]
-> この例では、 [AFNetworking CocoaPod](https://cocoapods.org/pods/AFNetworking)です。
+> この例では、 [AFNetworking CocoaPod](https://cocoapods.org/pods/AFNetworking)します。
 
-バージョン 3.0 の新目標ペンを使わずをサポートします。 バインド CocoaPods、さらにコマンドが含まれます (`sharpie pod`) をダウンロード、構成、および CocoaPods 非常に簡単に構築します。 行う必要があります[CocoaPods に慣れ親しみ](https://cocoapods.org)一般にこの機能を使用する前にします。
+バージョン 3.0 の新機能目標油性が、CocoaPods をバインドをサポートし、さらにコマンドが含まれます (`sharpie pod`) をダウンロードし、構成、および、CocoaPods を非常に簡単に構築します。 必要があります[CocoaPods 慣れる](https://cocoapods.org)一般にこの機能を使用する前にします。
 
-## <a name="creating-a-binding-for-a-cocoapod"></a>A CocoaPod のバインドを作成します。
+## <a name="creating-a-binding-for-a-cocoapod"></a>CocoaPod のバインディングの作成
 
-`sharpie pod`コマンドが 1 つのグローバル オプションと次の 2 つのサブコマンドには。
+`sharpie pod`コマンドは、1 つのグローバル オプションと 2 つのサブコマンドには。
 
 ```bash
 $ sharpie pod -help
@@ -37,7 +37,7 @@ Available Commands:
   bind         Bind an existing Xamarin C# CocoaPods project
 ```
 
-`init`サブコマンドがあります助けに便利です。
+`init`サブコマンドがいくつかの便利なヘルプにあります。
 
 ```bash
 $ sharpie pod init -help
@@ -48,7 +48,7 @@ Init Options:
                    it even if one already exists
 ```
 
-複数の CocoaPod 名および subspec 名に提供できる`init`です。
+複数の CocoaPod 名および subspec 名に提供できる`init`します。
 
 ```bash
 $ sharpie pod init ios AFNetworking
@@ -67,13 +67,13 @@ Sending stats
 ** 🍻 Success! You can now use other `sharpie podn`  commands.
 ```
 
-いったん、CocoaPod がセットアップされるようになりましたバインディングを作成できます。
+CocoaPod は設定されていると、バインドを作成できます。
 
 ```bash
 $ sharpie pod bind
 ```
 
-これにより、CocoaPod Xcode プロジェクトされているビルドを評価し、目標ペンを使わずによって解析が発生します。 多数のコンソール出力は生成されますが、最後に、バインディングの定義が発生する必要があります。
+これにより、ビルドしし、評価および目標油性によって解析 CocoaPod Xcode プロジェクトが発生します。 多くのコンソール出力は生成されますが、最後に、バインド定義の結果します。
 
 ```bash
 (... lots of build output ...)
@@ -89,9 +89,10 @@ Done.
 
 ## <a name="next-steps"></a>次の手順
 
-生成した後、 **ApiDefinitions.cs**と**StructsAndEnums.cs**ファイルを見て、次のドキュメントでは、アプリを使用するアセンブリを生成します。
+生成した後、 **ApiDefinitions.cs**と**StructsAndEnums.cs**ファイルをアプリで使用するアセンブリを生成する、次のドキュメントを参照してください。
 
-- [バインディング Objective C の概要](~/cross-platform/macios/binding/overview.md)
-- [Objective C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [チュートリアル: バインド iOS Objective C ライブラリ](~/ios/platform/binding-objective-c/walkthrough.md)
-
+- [OBJECTIVE-C のバインディングの概要](~/cross-platform/macios/binding/overview.md)
+- [OBJECTIVE-C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
+- [チュートリアル: iOS の Objective C ライブラリのバインド](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
