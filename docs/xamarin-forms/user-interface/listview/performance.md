@@ -1,18 +1,18 @@
 ---
 title: ListView のパフォーマンス
-description: リスト ビューには、データを表示するための強力なビューが、いくつかの制限があります。 この記事では、アプリケーション内の Xamarin.Forms ListView で優れたパフォーマンスを確保する方法について説明します。
+description: ListView はデータを表示するための強力なビューが、いくつかの制限があります。 この記事では、アプリケーションで Xamarin.Forms ListView で優れたパフォーマンスを確保する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: f1707a6b2a1dc03ae1346520bf29ff83f0fe74fb
-ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
+ms.openlocfilehash: 906fd60954b18064467e665295dba8bb75ed5a45
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36309812"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935590"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
@@ -40,23 +40,23 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> Universal Windows Platform (UWP) では常にパフォーマンス向上のためにキャッシュ機能を使用するので、Caching Strategy の [`RetainElement`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) は無視されます。 そのため、デフォルトで、[`RecycleElement`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) が適用されるような動作をします。
+> Universal Windows Platform (UWP) では常にパフォーマンス向上のためにキャッシュ機能を使用するので、Caching Strategy の [`RetainElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) は無視されます。 そのため、デフォルトで、[`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) が適用されるような動作をします。
 
 ### <a name="retainelement"></a>RetainElement
 
-[ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/)の caching strategy は、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) がリストの各項目ごとに1つのセルを生成することを指定します。これは `ListView` の規定の動作です。 一般的には次のような状況での使用が推奨されます。
+[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)の caching strategy は、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) がリストの各項目ごとに1つのセルを生成することを指定します。これは `ListView` の規定の動作です。 一般的には次のような状況での使用が推奨されます。
 
 - 各セルが多数の binding を持つ場合。 (20〜30以上)
 - セルの template が頻繁に変更される場合。
 - テストによって `RecycleElement` が実行速度を下げる結果になることが判明した場合。
 
-カスタムセルを使って動かす場合は、 [`RetainElement`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) での結果を認識することが大切です。 どんなセルの初期化コードでも各セルの生成ごとに走らせる必要があり、1秒間に複数回になる場合もあります。 その状況では、ページでの凝った Layout テクニック（複数のネストされた[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) を使っているような場合）は、それらがスクロールの際にリアルタイムで生成され破棄されるときに、パフォーマンスのボトルネックになります。
+カスタムセルを使って動かす場合は、 [`RetainElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) での結果を認識することが大切です。 どんなセルの初期化コードでも各セルの生成ごとに走らせる必要があり、1秒間に複数回になる場合もあります。 その状況では、ページでの凝った Layout テクニック（複数のネストされた[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) を使っているような場合）は、それらがスクロールの際にリアルタイムで生成され破棄されるときに、パフォーマンスのボトルネックになります。
 
 <a name="recycleelement" />
 
 ### <a name="recycleelement"></a>RecycleElement
 
-[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)の caching strategy を指定すると、[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)はリストのセルを再利用することによって、メモリ使用量と実行速度を最小にすることを試みます。 このモードは常にパフォーマンスの向上を提供するわけではなく、どのような改善があるかを判断するためにはテストを実施する必要があります。 しかし、これは一般的に好ましい選択であり、次のような状況での使用が推奨されます。
+[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)の caching strategy を指定すると、[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)はリストのセルを再利用することによって、メモリ使用量と実行速度を最小にすることを試みます。 このモードは常にパフォーマンスの向上を提供するわけではなく、どのような改善があるかを判断するためにはテストを実施する必要があります。 しかし、これは一般的に好ましい選択であり、次のような状況での使用が推奨されます。
 
 - 各セルの binding の数が小〜中程度の場合。
 - 各セルの [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) が全てのセルのデータを定義している場合。
@@ -93,21 +93,21 @@ iOS や Android でセルに CustomRenderer を使用している場合、プロ
 
 #### <a name="recycleelement-with-a-datatemplateselector"></a>DataTemplateSelector を使った RecycleElement
 
-[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) が [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択するために [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) を使用している場合、[`RecycleElement`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) の caching strategy は `DataTemplate` をキャッシュしません。 その代わり、 `DataTemplate` はリストのデータの項目ごとに選択されます。
+[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) が [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択するために [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) を使用している場合、[`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) の caching strategy は `DataTemplate` をキャッシュしません。 その代わり、 `DataTemplate` はリストのデータの項目ごとに選択されます。
 
 > [!NOTE]
-> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)caching strategy には Xamarin.Forms 2.4 で導入された前提条件があります。それは [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) が [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択することを要求されると、それぞれの `DataTemplate` は同じ [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) の型を返さなければならないということです 例として、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)で、`DataTemplateSelector`いずれかを返すことができます`MyDataTemplateA`(ここで`MyDataTemplateA`を返します、`ViewCell`型の`MyViewCellA`)、または`MyDataTemplateB`(ここで`MyDataTemplateB`を返します、`ViewCell`型の`MyViewCellB`) ときに、`MyDataTemplateA`を返す必要があるれる`MyViewCellA`または例外がスローされます。
+> [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)caching strategy には Xamarin.Forms 2.4 で導入された前提条件があります。それは [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) が [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) を選択することを要求されると、それぞれの `DataTemplate` は同じ [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) の型を返さなければならないということです 例として、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)で、`DataTemplateSelector`いずれかを返すことができます`MyDataTemplateA`(ここで`MyDataTemplateA`を返します、`ViewCell`型の`MyViewCellA`)、または`MyDataTemplateB`(ここで`MyDataTemplateB`を返します、`ViewCell`型の`MyViewCellB`) ときに、`MyDataTemplateA`を返す必要があるれる`MyViewCellA`または例外がスローされます。
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
-[`RecycleElementAndDataTemplate`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) の caching strategy は [`RecycleElement`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) を拡張したもので、 [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) が [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) を使う場合に、 [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) をリスト内の項目の型ごとにキャッシュする機能を加えたものです。これにより `DataTemplate` は、項目のインスタンスごとに1つではなく、項目の型ごとに1つ選択されるようになります。 したがって、 `DataTemplate`s は項目のインスタンスごとに 1 回ではなく、項目の種類ごと 1 回選択します。
+[`RecycleElementAndDataTemplate`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate) の caching strategy は [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) を拡張したもので、 [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) が [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) を使う場合に、 [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) をリスト内の項目の型ごとにキャッシュする機能を加えたものです。これにより `DataTemplate` は、項目のインスタンスごとに1つではなく、項目の型ごとに1つ選択されるようになります。 そのため、 `DataTemplate`s は項目インスタンスごとに 1 回ではなく、項目の種類あたり 1 回選択します。
 
 > [!NOTE]
-> [`RecycleElementAndDataTemplate`](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) は前提条件があり、 [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) によって返される`DataTemplate` は `Type` 型 を引数にとる [`DataTemplate`](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) のコンストラクタを使わなければなりません。
+> [`RecycleElementAndDataTemplate`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate) は前提条件があり、 [`DataTemplateSelector`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) によって返される`DataTemplate` は `Type` 型 を引数にとる [`DataTemplate`](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) のコンストラクタを使わなければなりません。
 
 ### <a name="setting-the-caching-strategy"></a>Caching strategy の設定
 
-[ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/)列挙型の値は、次のコード例で示すように、[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) のコンストラクタのオーバーロードで指定します。
+[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy)列挙型の値は、次のコード例で示すように、[`ListView`](xref:Xamarin.Forms.ListView) のコンストラクタのオーバーロードで指定します。
 
 ```csharp
 var listView = new ListView(ListViewCachingStrategy.RecycleElement);

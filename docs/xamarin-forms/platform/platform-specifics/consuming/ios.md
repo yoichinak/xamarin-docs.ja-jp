@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/30/2018
-ms.openlocfilehash: dbcf97248c1d4537319691f6e18e0d41c931f423
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: be378a60a9d9a7b206b64f07ee70edb432cec8e3
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848266"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935655"
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
@@ -22,15 +22,15 @@ iOS では、Xamarin.Forms に次のプラットフォーム仕様が含まれ�
 
 - [ `VisualElement`](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)へに対するぼかしのサポート。 詳細については、「[ぼかしの適用](#blur)」を参照してください。
 - ナビゲーションバーでページタイトルを大タイトルとして表示するかどうかを制御します。 詳細については、「[大タイトルの表示](#large_title)」を参照してください。
-- すべての iOS デバイスに対して安全では、画面の領域には、そのページのコンテンツを確保するが配置されています。 詳細については、「[セーフ エリア レイアウト ガイドの有効化](#safe_area_layout)」を参照してください。
+- すべての iOS デバイスの安全である画面の領域には、そのページの内容の確認が配置されています。 詳細については、「[セーフ エリア レイアウト ガイドの有効化](#safe_area_layout)」を参照してください。
 - 透明のナビゲーション バー。 詳細については「[ナビゲーション バーの透明化](#translucent_navigation_bar)」を参照してください。
 - [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)上のステータスバーのテキストの色をナビゲーションバーの明るさに合わせて調整するかどうかを制御します。 詳細については、「[ステータス バーのテキストの色モードの調整](#status_bar_color_mode)」を参照してください。
-- フォントサイズを調整することで入力した文字が [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)内に収まるようにします。 詳細については、次を参照してください。[エントリのフォント サイズを調整する](#adjust_font_size)です。
+- フォントサイズを調整することで入力した文字が [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)内に収まるようにします。 詳細については、次を参照してください。[エントリのフォント サイズを調整する](#adjust_font_size)します。
 - [`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)でアイテムの選択が発生するタイミングを制御します。 詳細については、「[Picker のアイテム選択の制御](#picker_update_mode)」を参照してください。
 - [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) のステータス バーの可視性を設定します。 詳細については、「[Page でのステータスバーの可視性の設定](#set_status_bar_visibility)」を参照してください。
-- [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)がタッチ ジェスチャを処理するか、そのコンテンツに渡すかを制御します。 詳細については、次を参照してください。 [、ScrollView でのコンテンツの調整を遅らせること](#delay_content_touches)です。
-- 区分線のスタイルを設定、 [ `ListView`](xref:Xamarin.Forms.ListView)です。 詳細については、次を参照してください。 [ListView に区分線のスタイルを設定](#listview-separatorstyle)です。
-- サポートされているレガシの色のモードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)です。 詳細については、次を参照してください。[レガシ色のモードを無効にすると](#legacy-color-mode)です。
+- [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)がタッチ ジェスチャを処理するか、そのコンテンツに渡すかを制御します。 詳細については、次を参照してください。 [、ScrollView でのコンテンツの仕上げを遅らせる](#delay_content_touches)します。
+- 区切り記号のスタイルを設定、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、次を参照してください。 [、ListView の区切り記号のスタイルを設定](#listview-separatorstyle)します。
+- サポートされている従来のカラー モードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。[レガシ カラー モードを無効にすると](#legacy-color-mode)します。
 
 <a name="blur" />
 
@@ -50,7 +50,7 @@ iOS では、Xamarin.Forms に次のプラットフォーム仕様が含まれ�
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -60,7 +60,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 ```
 
-`BoxView.On<iOS>`メソッドは、このプラットフォーム仕様が iOS でのみ動作することを指定します。 [ `VisualElement.UseBlurEffect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)メソッドは [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)名前空間に存在し、 [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)列挙型が適用する4つの値（[ `None` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None/)、 [ `ExtraLight` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight/)、 [ `Light` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light/)、[ `Dark`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark/)）を使ってぼかし効果を適用するために使用されます。
+`BoxView.On<iOS>`メソッドは、このプラットフォーム仕様が iOS でのみ動作することを指定します。 [ `VisualElement.UseBlurEffect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)メソッドは [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間に存在し、 [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle)列挙型が適用する4つの値（[ `None` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None)、 [ `ExtraLight` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight)、 [ `Light` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light)、[ `Dark`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark)）を使ってぼかし効果を適用するために使用されます。
 
 
 結果として、指定された[ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/)が [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)のインスタンスに適用され、下に重なっている [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)をぼかします。
@@ -83,7 +83,7 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 </NavigationPage>
 ```
 
-または fluent API を使用して、c# から使用できます。
+または、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -170,7 +170,7 @@ switch (On<iOS>().LargeTitleDisplay())
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -217,7 +217,7 @@ protected override void OnAppearing()
 </NavigationPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -268,7 +268,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -289,12 +289,12 @@ IsPresentedChanged += (sender, e) =>
 };
 ```
 
-`NavigationPage.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 [`NavigationPage.SetStatusBarTextColorMode`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/) メソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) のステータスバーのテキスト色をナビゲーションバーの明るさに合うように調整するかどうかを、[`StatusBarTextColorMode`](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙型が提供する2つの値を使って制御します。
+`NavigationPage.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 [`NavigationPage.SetStatusBarTextColorMode`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/) メソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) 名前空間に存在し、[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) のステータスバーのテキスト色をナビゲーションバーの明るさに合うように調整するかどうかを、[`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)列挙型が提供する2つの値を使って制御します。
 
-- [`DoNotAdjust`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust/) – ステータスバーのテキストの色を調整しないことを示します。
-- [`MatchNavigationBarTextLuminosity`](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.MatchNavigationBarTextLuminosity/) – ステータスバーのテキスト色をナビゲーションバーの明るさに合わせることを示します。
+- [`DoNotAdjust`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust) – ステータスバーのテキストの色を調整しないことを示します。
+- [`MatchNavigationBarTextLuminosity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.MatchNavigationBarTextLuminosity) – ステータスバーのテキスト色をナビゲーションバーの明るさに合わせることを示します。
 
-さらに、 [`GetStatusBarTextColorMode`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/)メソッドは[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)に適用された現在の[`StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/)列挙型の値を取得するために使用できます。
+さらに、 [`GetStatusBarTextColorMode`](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/)メソッドは[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)に適用された現在の[`StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)列挙型の値を取得するために使用できます。
 
 その結果、[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)のステータスバーのテキストの色はナビゲーションバーの明るさに合わせて調整されます。 この例では、ステータスバーのテキストの色は [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) の [`Master`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) ページと[`Detail`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) ページをユーザが切り替えたときに変化します。
 
@@ -319,7 +319,7 @@ IsPresentedChanged += (sender, e) =>
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -357,7 +357,7 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -406,7 +406,7 @@ switch (picker.On<iOS>().UpdateMode())
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -453,7 +453,7 @@ iOSでは、[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.
 </MasterDetailPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -475,9 +475,9 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 <a name="listview-separatorstyle" />
 
-## <a name="setting-the-separator-style-on-a-listview"></a>ListView の区分線のスタイルを設定
+## <a name="setting-the-separator-style-on-a-listview"></a>区切り記号のスタイルを ListView の設定
 
-このプラットフォームに固有のセルの間の区切り記号かどうかを制御する、 [ `ListView` ](xref:Xamarin.Forms.ListView)の幅全体を使用して、`ListView`です。 これは、 XAML で[`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty)添付プロパティを[`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列挙型の値に設定して使用します。
+このプラットフォームに固有のセルの間の区切り記号かどうかを制御する、 [ `ListView` ](xref:Xamarin.Forms.ListView)の幅全体を使用して、`ListView`します。 これは、 XAML で[`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty)添付プロパティを[`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列挙型の値に設定して使用します。
 
 ```xaml
 <ContentPage ...
@@ -490,7 +490,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -500,25 +500,25 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 ```
 
-`ListView.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `ListView.SetSeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SetSeparatorStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)セル間の区切り記号かどうか、名前空間を使用して、 [ `ListView` ](xref:Xamarin.Forms.ListView)全体の使用幅、`ListView`で、 [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列挙型の 2 つの値を提供します。
+`ListView.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `ListView.SetSeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SetSeparatorStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)セル間の区切り記号かどうか、名前空間を使用して、 [ `ListView` ](xref:Xamarin.Forms.ListView)完全な使用幅、`ListView`で、 [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列挙型の 2 つの値を提供します。
 
 - [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default) – 既定の iOS の区切り記号の動作を示します。 これは Xamarin.Forms の既定の動作です。
-- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) – の 1 つの辺から区切り記号が描画されることを示す、`ListView`にします。
+- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) – の 1 つの端から区切り記号が描画されることを示します、`ListView`にします。
 
-結果は、指定した[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)値に適用されます、 [ `ListView`](xref:Xamarin.Forms.ListView)セル間の区切り記号の幅を制御します。
+結果はするが、指定された[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)値に適用されます、 [ `ListView`](xref:Xamarin.Forms.ListView)セル間の区切り記号の幅を制御します。
 
 ![](ios-images/listview-separatorstyle.png "後のプラットフォームに固有の ListView")
 
 > [!NOTE]
-> 区分線のスタイル設定されると`FullWidth`に変更することはできません`Default`実行時にします。
+> 区切り記号のスタイルに設定されていると`FullWidth`に変更することはできません`Default`実行時にします。
 
 <a name="legacy-color-mode" />
 
-## <a name="disabling-legacy-color-mode"></a>レガシ色のモードを無効にします。
+## <a name="disabling-legacy-color-mode"></a>レガシ カラー モードを無効にします。
 
-Xamarin.Forms ビューの一部の機能、従来の色のモード。 このモードでときに、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)ビューのプロパティに設定されて`false`ビューには、既定のネイティブ色無効の状態を使用して、ユーザーが設定した色がよりも優先されます。 旧バージョンと互換性のため、この従来の色のモードはサポートされているビューの既定の動作のままです。
+Xamarin.Forms のビューのいくつかの機能の色をレガシ モード。 このモードでは、ときに、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)ビューのプロパティに設定されて`false`ビューが既定のネイティブ色無効の状態を使用してユーザー設定の色をオーバーライドします。 旧バージョンと互換性のため、この色のレガシ モードでは、サポートされているビューの既定の動作は残ります。
 
-このプラットフォームに固有では、ビューが無効になっている場合でも、ユーザーがビューに設定した色が維持されるよう、この従来の色のモードが無効にします。 使用される XAML で設定して、 [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty)添付プロパティ`false`:
+このプラットフォームに固有では、ビューが無効になっている場合でも、ユーザーがビューの設定の色が維持されるようにこの色のレガシ モードが無効にします。 XAML で設定して使用される、 [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty)添付プロパティを`false`:
 
 ```xaml
 <ContentPage ...
@@ -534,7 +534,7 @@ Xamarin.Forms ビューの一部の機能、従来の色のモード。 この�
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -544,14 +544,14 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 _legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
 ```
 
-`VisualElement.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用して、従来の色のモードが無効になっているかどうか。 さらに、 [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))を従来の色のモードが無効になっているかどうかを返すメソッドを使用できます。
+`VisualElement.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用してレガシのカラー モードが無効になっているかどうか。 さらに、 [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))を従来のカラー モードが無効になっているかどうかを返すメソッドを使用できます。
 
-結果は、レガシ カラー モードを無効にすること、ように、ユーザーがビューに設定した色もビューが無効になっています。
+結果は、ことは、従来のカラー モードを無効にできます、ように、ユーザーがビューの設定の色もビューが無効になっています。
 
-![](ios-images/legacy-color-mode-disabled.png "従来の色のモードが無効になっています")
+![](ios-images/legacy-color-mode-disabled.png "従来のカラー モードを無効になっています")
 
 > [!NOTE]
-> 設定するときに、 [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)レガシ色のモードが完全に無視されますをビューにします。 表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)です。
+> 設定するときに、 [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)レガシ カラー モードが完全に無視されます、ビューにします。 表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)します。
 
 ## <a name="summary"></a>まとめ
 

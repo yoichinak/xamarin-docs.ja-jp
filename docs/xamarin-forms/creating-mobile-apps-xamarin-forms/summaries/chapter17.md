@@ -1,45 +1,45 @@
 ---
-title: 17 章の概要です。 マスター グリッド
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 17 章の概要です。 マスター グリッド'
+title: 第 17 章の概要です。 マスター グリッド
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 17 章の概要。 マスター グリッド'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 55418f24b1519dcab3b107f23976d50b401c813b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b71859d0848d7bf790b3cc4beddc67a5ea86d340
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240949"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935479"
 ---
-# <a name="summary-of-chapter-17-mastering-the-grid"></a>17 章の概要です。 マスター グリッド
+# <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章の概要です。 マスター グリッド
 
-[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)セルの行と列にその子を整列する強力なレイアウト メカニズムです。 ような HTML とは異なり`table`要素、`Grid`プレゼンテーションではなく、レイアウトの目的でのみです。
+[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)は行とセルの列にその子を配置するレイアウトの強力なメカニズムです。 ような HTML とは異なり`table`要素、`Grid`プレゼンテーションではなく、レイアウトの目的でのみです。
 
-## <a name="the-basic-grid"></a>基本のグリッド
+## <a name="the-basic-grid"></a>基本的なグリッド
 
-`Grid` 派生した[ `Layout<View>`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)を定義する、 [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/)プロパティを`Grid`を継承します。 このコレクションで、XAML またはコードを入力できます。
+`Grid` 派生[ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)、定義する、 [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/)プロパティを`Grid`を継承します。 XAML またはコードのいずれかで、このコレクションを入力することができます。
 
-### <a name="the-grid-in-xaml"></a>XAML のグリッド
+### <a name="the-grid-in-xaml"></a>XAML でグリッド
 
-定義、 `Grid` XAML で一般に始まりますいっぱいになる、 [ `RowDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowDefinitions/)と[ `ColumnDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnDefinitions/)のコレクション、`Grid`で[ `RowDefinition`。](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/)と[ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)オブジェクト。 これは、行の数との列を確立する方法、 `Grid`、およびそれらのプロパティです。
+定義、 `Grid` XAML で一般的には、開始いっぱいになると、 [ `RowDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowDefinitions/)と[ `ColumnDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnDefinitions/)のコレクション、`Grid`で[ `RowDefinition`](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/)と[ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)オブジェクト。 これは、行の数との列を確立する方法、 `Grid`、およびそれらのプロパティ。
 
-`RowDefinition` [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.RowDefinition.Height/)プロパティおよび`ColumnDefinition`が、 [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ColumnDefinition.Width/)プロパティの型の両方の[ `GridLength` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLength/)、構造体。
+`RowDefinition` [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.RowDefinition.Height/)プロパティと`ColumnDefinition`が、 [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ColumnDefinition.Width/)プロパティは、両方の種類の[ `GridLength` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLength/)、構造体。
 
-XAML では、 [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/)に単純なテキスト文字列に変換する`GridLength`値。 背後では、 [ `GridLength`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/)を作成、`GridLength`値が数値と型の値に基づいて[ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/)、3 つのメンバーを持つ列挙します。
+XAML、 [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/)に単純なテキスト文字列に変換する`GridLength`値。 バック グラウンドで、 [ `GridLength`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/)を作成、`GridLength`値が、数と型の値に基づく[ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/)、3 つのメンバーを持つ列挙体。
 
-- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) &mdash; 幅または高さがデバイスに依存しない単位 (XAML の番号) で指定されました。
-- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) &mdash; 高さまたは幅は、セルの内容 (XAML での"Auto") に基づいて自動的に設定
-- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) &mdash; 残された高さまたは幅が比例的に割り当てられます (数値に"\*"と呼ばれる、*スター*XAML で)
+- [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; 幅または高さがデバイスに依存しない単位 (XAML の番号) で指定されます。
+- [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; 高さまたは幅がセルの内容 (XAML では"Auto") に基づく自動調整です。
+- [`Star`](xref:Xamarin.Forms.GridUnitType.Star) &mdash; 残っている高さまたは幅がそれに比例して割り当てられます (数値で"\*"と呼ばれる、*スター*XAML で)
 
-それぞれの子の`Grid`必要がありますも指定した行と列 (明示的または暗黙的に)。 行にまたがるし、列の範囲は省略可能です。 これらはすべて指定接続されているバインド可能なプロパティを使用して&mdash;プロパティによって定義されている、`Grid`の子で、設定、`Grid`です。 `Grid` 次の 4 つの静的な接続されているバインド可能なプロパティを定義します。
+それぞれの子の`Grid`する必要がありますも割り当てる行と列 (明示的または暗黙的に)。 行にまたがるし、列の範囲は省略可能です。 これらはすべて指定添付のバインド可能なプロパティを使用して&mdash;プロパティで定義されている、`Grid`の子の設定が、`Grid`します。 `Grid` 接続されているバインド可能な 4 つの静的プロパティを定義します。
 
 - [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; 0 から始まる行です。既定値は 0
 - [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; 0 から始まる列です。既定値は 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; 数の行の子にまたがるです。既定値は 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; 数値列の子にまたがるです。既定値は 1
+- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; 数の行の子にまたがる;既定値は 1
+- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; 数値列の子にまたがる;既定値は 1
 
 コードでは、プログラムは、設定およびこれらの値を取得する 8 つの静的メソッドを使用できます。
 
@@ -57,53 +57,53 @@ XAML では、これらの値を設定するため、次の属性を使用しま
 
 [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo)サンプルの作成と初期化、 `Grid` XAML でします。
 
-`Grid`継承、 [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)プロパティから`Layout`し、行および列間のスペースを提供する 2 つの追加プロパティを定義します。
+`Grid`継承、 [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)プロパティから`Layout`行と列の間隔を提供する 2 つのプロパティを定義します。
 
 - [`RowSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowSpacing/) 6 の既定値を持つ
 - [`ColumnSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnSpacing/) 6 の既定値を持つ
 
-`RowDefinitions`と`ColumnDefinitions`コレクションは必須です。 指定しない場合、`Grid`の行と列を作成、`Grid`子はすべて、既定値と`GridLength`の"\*"(アスタリスク) です。
+`RowDefinitions`と`ColumnDefinitions`コレクションは厳密に必要ありません。 指定しない場合、`Grid`の行および列を作成、`Grid`子と、既定値は、すべて`GridLength`の"\*"(アスタリスク)。
 
-### <a name="the-grid-in-code"></a>コード内のグリッド
+### <a name="the-grid-in-code"></a>コードのグリッド
 
-[ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)サンプルを作成し、設定する方法を示します、`Grid`のコードにします。 添付プロパティを設定するには、それぞれの子、直接または間接的を呼び出して追加`Add`などのメソッド[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)によって定義された、 [Grid.IGridList<T> ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid+IGridList%3CT%3E/)インターフェイスです。
+[ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)サンプルを作成し、`Grid`コード。 添付プロパティを設定するには、それぞれの子、直接または間接的に呼び出して追加`Add`などのメソッド[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)によって定義された、 [Grid.IGridList<T> ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid+IGridList%3CT%3E/)インターフェイスです。
 
-### <a name="the-grid-bar-chart"></a>グリッドの棒グラフ
+### <a name="the-grid-bar-chart"></a>グリッドの横棒グラフ
 
-[ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)サンプルは、複数を追加する方法を示します`BoxView`要素を`Grid`一括[ `AddHorizontal` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.AddHorizontal/p/System.Collections.Generic.IEnumerable%7BXamarin.Forms.View%7D/)メソッドです。 既定では、これら`BoxView`要素を持つ幅を等しくします。 それぞれの高さ`BoxView`を横棒グラフのように制御できます。
+[ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)サンプルは、複数追加する方法を示しています。`BoxView`要素を、`Grid`一括[ `AddHorizontal` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.AddHorizontal/p/System.Collections.Generic.IEnumerable%7BXamarin.Forms.View%7D/)メソッド。 既定では、これら`BoxView`要素がある等幅。 高さ`BoxView`を横棒グラフのように制御できます。
 
-`Grid`で、 **GridBarChart**サンプルの共有、`AbsoluteLayout`最初に非表示に親`Frame`です。 また、プログラム、設定、`TapGestureRecognizer`各`BoxView`を使用する、`Frame`タップされたバーの情報を表示します。
+`Grid`で、 **GridBarChart**サンプル共有、`AbsoluteLayout`最初に非表示に親`Frame`します。 また、プログラム、設定、`TapGestureRecognizer`各`BoxView`を使用する、`Frame`タップされたバーに関する情報を表示します。
 
 ### <a name="alignment-in-the-grid"></a>グリッド内の配置
 
-[ **GridAlignment** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridAlignment)サンプルを使用する方法を示します、`VerticalOptions`と`HorizontalOptions`プロパティ内の子に合わせて、`Grid`セル。
+[ **GridAlignment** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridAlignment)サンプルを使用する方法を示して、`VerticalOptions`と`HorizontalOptions`プロパティ内の子に合わせて、`Grid`セル。
 
-[ **SpacingButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SpacingButtons)スペースを均等にサンプリング`Button`要素中心に`Grid`セル。
+[ **SpacingButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SpacingButtons)スペースを均等にサンプル`Button`要素中心に`Grid`セル。
 
 ### <a name="cell-dividers-and-borders"></a>セルの分割線と境界線
 
-`Grid`セルの区分線または罫線を描画する機能はありません。 ただし、行うことができます独自です。
+`Grid`セルの区分線または境界線を描画する機能は含まれません。 ただし、行うことができます独自です。
 
 [ **GridCellDividers** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellDividers)シン追加の行と専用の列を定義する方法を示します`BoxView`区切り線を模倣する要素。
 
-[ **GridCellBorders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellBorders)プログラムの追加のセルでは作成されませんが、代わりに揃えて配置`BoxView`セルの枠線を模倣するためには、各セル内の要素。
+[ **GridCellBorders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellBorders)プログラムは、他のセルは作成されませんが、代わりに揃えて配置`BoxView`セルの境界線を模倣するためには、各セル内の要素。
 
-## <a name="almost-real-life-grid-examples"></a>ほとんどの現実のグリッドの例
+## <a name="almost-real-life-grid-examples"></a>ほとんどの現実 Grid の例
 
-[ **KeypadGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/KeypadGrid)サンプルは、`Grid`キーパッドを表示します。
+[ **KeypadGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/KeypadGrid)使用して、`Grid`キーパッドを表示します。
 
-[![キーパッド グリッドのトリプル スクリーン ショット](images/ch17fg12-small.png "キーパッド グリッド")](images/ch17fg12-large.png#lightbox "キーパッド グリッド")
+[![キーパッド グリッドの 3 倍になるスクリーン ショット](images/ch17fg12-small.png "キーパッド グリッド")](images/ch17fg12-large.png#lightbox "キーパッド グリッド")
 
-### <a name="responding-to-orientation-changes"></a>印刷の向きの変更に対応
+### <a name="responding-to-orientation-changes"></a>印刷の向きの変更に応答します。
 
-`Grid`向きの変更に応答するプログラムを構成できます。 [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders)サンプルでは、縦向きでスマート フォンの 2 番目の行と横向きのスマート フォンの 2 番目の列の間で要素を移動する技法。
+`Grid`向きの変更に応答するプログラムを構成できます。 [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders)縦向きでスマート フォンの 2 つ目の行と横向きのスマート フォンの 2 番目の列の間の要素を移動する方法を示します。
 
-プログラムを初期化します`Slider`要素には、0 から 255 までおよび 16 進数で、スライダーの値を表示するデータ バインドを使用します。 `Slider`ポイント、および .NET の 16 進数のみ動作するかを整数と文字列の書式設定に値が浮動小数点、 [ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)クラス内で、 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリに役立ちます。
+プログラムを初期化します`Slider`範囲 0 ~ 255 の 16 進数で、スライダーの値を表示するデータ バインドを使用する要素。 `Slider`ポイント、および .NET の 16 進数の整数でのみ動作の文字列の書式設定に値が浮動小数点、 [ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)クラス、 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリに役立ちます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Chapter 17 フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
-- [Chapter 17 サンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+- [第 17 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
+- [第 17 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 - [グリッド](~/xamarin-forms/user-interface/layouts/grid.md)

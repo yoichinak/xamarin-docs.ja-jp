@@ -1,120 +1,120 @@
 ---
-title: 第 25 章の概要です。 ページの種類
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 25 章の概要です。 ページの種類'
+title: 第 25 章の概要です。 ページの変数
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 25 章の概要。 ページの変数'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: ecee7866f4bf9ac1a4f706853434dce2b9cef7f6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9c7fd87579d0c35c9efe31edf5c25b8ed8f40658
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241156"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935399"
 ---
-# <a name="summary-of-chapter-25-page-varieties"></a>第 25 章の概要です。 ページの種類
+# <a name="summary-of-chapter-25-page-varieties"></a>第 25 章の概要です。 ページの変数
 
-これまでに 2 つのクラスから派生するを見てきました`Page`:`ContentPage`と`NavigationPage`です。 この章では、他の 2 つのユーザーが表示されます。
+ここまではから派生する 2 つのクラスを説明した`Page`:`ContentPage`と`NavigationPage`します。 この章では、他の 2 つ表示されます。
 
-- [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) 2 つのページ、マスター詳細を管理します。
-- [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) 複数の子ページのタブを通じてアクセスを管理します。
+- [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) 2 つのページ、マスターと詳細を管理します。
+- [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) 複数の子ページのタブを通じてアクセスの管理します。
 
-これらのページの種類より高度なのナビゲーション オプションを提供、`NavagationPage`で説明した[章 24 です。ページ ナビゲーション](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md)です。
+これらのページ型よりもより高度なナビゲーション オプションを提供する、`NavagationPage`で説明した[第 24 章です。ページ ナビゲーション](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md)します。
 
 ## <a name="master-and-detail"></a>マスター/詳細
 
-[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)型の 2 つのプロパティを定義`Page`: [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/)と[ `Detail`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)です。 通常、これらの各プロパティを設定、`ContentPage`です。 `MasterDetailPage`が表示され、これら 2 つのページに切り替えます。
+[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)型の 2 つのプロパティを定義`Page`: [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/)と[ `Detail`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)します。 通常、これらの各プロパティを設定、`ContentPage`します。 `MasterDetailPage`が表示され、これら 2 つのページに切り替えます。
 
-これにはこれら 2 つのページ間を切り替える 2 つの基本的な方法があります。
+これら 2 つのページ間を切り替える 2 つの基本的な方法はあります。
 
-- *分割*マスターと詳細がサイド バイ サイド
-- *重なって*または詳細ページがカバー、マスターが部分的にカバー ページ
+- *分割*マスターと詳細が並行して
+- *ポップ オーバー*詳細ページがについて説明しますまたは、マスターが部分的にカバー ページ
 
-いくつかのバリエーションがある、*重なって*アプローチ (*スライド*、*重複*、および*スワップ*)、プラットフォームは、一般には依存します。 設定することができます、 [ `MasterDetailBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/)のプロパティ`MasterDetailPage`のメンバーに、 [ `MasterBehavior` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterBehavior/)列挙します。
+いくつかのバリエーションがある、*ポップ オーバー*アプローチ (*スライド*、*重複*、および*スワップ*)、プラットフォームは、一般には依存します。 設定することができます、 [ `MasterDetailBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/)プロパティの`MasterDetailPage`のメンバーに、 [ `MasterBehavior` ](xref:Xamarin.Forms.MasterBehavior)列挙体。
 
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterBehavior.Default/)
-- [`Split`](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterBehavior.Split/)
-- [`SplitOnLandscape`](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterBehavior.SplitOnLandscape/)
-- [`SplitOnPortrait`](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterBehavior.SplitOnPortrait/)
-- [`Popover`](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterBehavior.Popover/)
+- [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
+- [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
+- [`SplitOnLandscape`](xref:Xamarin.Forms.MasterBehavior.SplitOnLandscape)
+- [`SplitOnPortrait`](xref:Xamarin.Forms.MasterBehavior.SplitOnPortrait)
+- [`Popover`](xref:Xamarin.Forms.MasterBehavior.Popover)
 
-ただし、このプロパティは、携帯電話に影響を与えません。 携帯電話には、常に重なって動作があります。 タブレットやデスクトップ ウィンドウのみには、分割動作を持つことができます。
+ただし、このプロパティは、スマート フォン上の影響を与えません。 スマート フォンには、常にポップ オーバー動作があります。 タブレットとデスクトップの windows のみには、分割動作を持つことができます。
 
-### <a name="exploring-the-behaviors"></a>動作を調べる
+### <a name="exploring-the-behaviors"></a>動作の調査
 
-[ **MasterDetailBehaviors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MasterDetailBehaviors)サンプルでは、さまざまなデバイス上の既定の動作をテストすることができます。 プログラムには、2 つの異なるが含まれています。`ContentPage`マスター/詳細の派生 (で、`Title`プロパティの両方に設定)、および別のクラスから派生した`MasterDetailPage`を結合します。 詳細ページがで囲まれた、 `NavigationPage` UWP プログラムがないと機能はありません。
+[ **MasterDetailBehaviors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MasterDetailBehaviors)さまざまなデバイスで既定の動作で実験することができます。 プログラムには、2 つの異なるが含まれています。`ContentPage`マスター/詳細の派生物 (で、`Title`プロパティの両方に設定)、および別のクラスから派生した`MasterDetailPage`これらを結合します。 詳細ページがで囲まれた、`NavigationPage`のため、UWP プログラムなしで機能しません。
 
-Windows 8.1 および Windows Phone 8.1 のプラットフォームでは、ビットマップに設定することが必要、`Icon`マスター ページのプロパティです。
+Windows 8.1 および Windows Phone 8.1 プラットフォームでは、ビットマップに設定することが必要です、`Icon`マスター ページのプロパティ。
 
-### <a name="back-to-school"></a>学校に戻る
+### <a name="back-to-school"></a>新学期
 
-[ **SchoolAndDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/SchoolAndDetail)サンプルのアプローチを若干異なるから受講者を表示するプログラムの構築、 [ **SchoolOfFineArt**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt)ライブラリです。
+[ **SchoolAndDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/SchoolAndDetail)サンプルでは、若干異なるアプローチを採用から受講者を表示するプログラムを構築する、 [ **SchoolOfFineArt**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt)ライブラリ。
 
-`Master`と`Detail`のビジュアル ツリーを持つプロパティが定義されている、 [SchoolAndDetailPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml)から派生するファイル`MasterDetailPage`です。 このような配置では、マスター/詳細のページ間で設定するデータ バインドを許可します。
+`Master`と`Detail`プロパティがビジュアル ツリー内で定義されている、 [SchoolAndDetailPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml)ファイルから派生した`MasterDetailPage`します。 この配置では、マスター/詳細ページ間で設定するデータ バインドを使用します。
 
-XAML ファイルも設定される、 [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/)プロパティ`MasterDetailPage`に`True`です。 これが原因でスタートアップ; に表示されるマスター ページ既定では、[詳細] ページが表示されます。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)ファイルのセットを`IsPresented`に`false`から項目を選択すると、`ListView`がマスター ページ。 詳細ページが表示されます。
+XAML ファイルも設定される、 [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/)プロパティの`MasterDetailPage`に`True`します。 これにより、起動時に表示するマスター ページ既定では、詳細ページが表示されます。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)ファイルのセット`IsPresented`に`false`から項目を選択すると、`ListView`でマスター ページ。 詳細ページが表示されます。
 
 [![学校と詳細のスクリーン ショットをトリプル](images/ch25fg09-small.png "詳細ページ、MasterDetailPage から")](images/ch25fg09-large.png#lightbox "MasterDetailPage から詳細ページ")
 
 ### <a name="your-own-user-interface"></a>独自のユーザー インターフェイス
 
-Xamarin.Forms では、マスター/詳細ビューを切り替えるためのユーザー インターフェイスを提供しますが、指定できます独自です。 次の手順に従います。
+Xamarin.Forms には、マスター/詳細ビューを切り替えるためのユーザー インターフェイスが用意されていますを指定できます独自。 次の手順に従います。
 
-- 設定、 [ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/)プロパティを`false`スワイプを無効にするには
+- 設定、 [ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/)プロパティを`false`方向のスワイプ操作を無効にするには
 - 上書き、 [ `ShouldShowToolbarButton` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton()/)メソッドと戻り値`false`Windows 8.1 および Windows Phone 8.1 のツール バー ボタンを非表示にします。
 
-必要がありますで示されるなど、マスター/詳細のページ間で切り替える手段を提供し、 [ **ColorsDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails)サンプルです。
+示されているなど、マスター/詳細ページ間で切り替える手段を提供する必要がありますし、 [ **ColorsDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails)サンプル。
 
 [ **MasterDetailTaps** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MasterDetailTaps)サンプルでは別のアプローチを使用して、`TapGestureRecognizer`マスター/詳細ページにします。
 
 ## <a name="tabbedpage"></a>TabbedPage
 
-[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)タブを使用する間で切り替えることができるページのコレクションです。 派生して`MultiPage<Page>`し、独自のパブリック プロパティまたはメソッドが定義されません。 [`MultiPage<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/)、ただし、で、プロパティを定義します。
+[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)タブを使用して切り替えるにはページのコレクションです。 派生した`MultiPage<Page>`し、独自のパブリック プロパティまたはメソッドは定義されません。 [`MultiPage<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/)、ただし、プロパティを定義します。
 
 - [`Children`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/) 型のプロパティ `IList<T>`
 
-これを入力する`Children`ページのオブジェクトのコレクション。
+これを入力する`Children`ページ オブジェクトのコレクション。
 
-別の方法では、定義することができます、`TabbedPage`子とほぼ同様に、`ListView`タブ付きページを自動的に生成する 2 つのプロパティを使用します。
+別の方法を定義することにより、`TabbedPage`子はほぼ同じように、`ListView`タブ付きページを自動的に生成する 2 つのプロパティを使用します。
 
 - [`ItemsSource`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/) 型の `IEnumerable`
 - [`ItemTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/) 型の `DataTemplate`
 
-ただし、この方法では使えませんも iOS コレクションには、複数の項目が含まれている場合。
+ただし、この方法は使えません iOS でも、コレクションには、複数のいくつかの項目が含まれている場合。
 
-`MultiPage<T>` 追跡が現在どのページを表示するのに便利な 2 つの他のプロパティを定義します。
+`MultiPage<T>` ページが現在表示されているを追跡できる 2 つのプロパティを定義します。
 
-- [`CurrentPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.CurrentPage/) 型の`T`ページを参照します。
-- [`SelectedItem`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.SelectedItem/) 型の`Object`内のオブジェクトを参照する、`ItemsSource`コレクション
+- [`CurrentPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.CurrentPage/) 型の`T`ページを参照
+- [`SelectedItem`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.SelectedItem/) 型の`Object`、内のオブジェクトを参照、`ItemsSource`コレクション
 
-`MultiPage<T>` 2 つのイベントも定義されています。
+`MultiPage<T>` 2 つのイベントを定義します。
 
 - [`PagesChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.PagesChanged/) ときに、`ItemsSource`コレクションの変更
-- [`CurrentPageChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.CurrentPageChanged/) 表示されたページが変更されたとき
+- [`CurrentPageChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.CurrentPageChanged/) 表示されているページが変更されたとき
 
 ### <a name="discrete-tab-pages"></a>個別のタブ ページ
 
-[ **DiscreteTabbedColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/DiscreteTabbedColors)サンプルは、次の 3 つの異なる方法で色を表示する次の 3 つのタブ付きページで構成されます。 各タブは、`ContentPage`から派生した、し、`TabbedPage`派生[DiscreteTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColorsPage.xaml) 3 つのページを結合します。
+[ **DiscreteTabbedColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/DiscreteTabbedColors)サンプルは、次の 3 つの異なる方法で色を表示する 3 つのタブ付きページで構成されます。 各タブは、`ContentPage`派生クラスをクリックし、`TabbedPage`から派生[DiscreteTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColorsPage.xaml) 3 つのページを結合します。
 
-表示されるページごとに、 `TabbedPage`、 `Title`  タブで、テキストを指定するプロパティは必要であり、Apple ストアは、アイコンが同様に、使用することが必要ですので、`Icon`プロパティが iOS の設定。
+表示されるページごとに、 `TabbedPage`、 `Title`  タブで、テキストを指定するプロパティが必要し、Apple ストアでは、同様に、アイコンを使用する必要があるため、`Icon`プロパティが iOS の設定。
 
-[![個別のタブ付きの色のトリプル スクリーン ショット](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
+[![個別のタブ付きの色の 3 倍になるスクリーン ショット](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
 
-[ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes)サンプルでは、すべての受講者を一覧するホーム ページです。 受講者をタップすると、これが移動する、`TabbedPage`から派生した、 [ `StudentNotesDataPage` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml)、3 を組み込んだ`ContentPage`そのビジュアル ツリー内のうちの 1 つにより、その受講者のいくつかの注意事項を入力するオブジェクトします。
+[ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes)サンプルでは、すべての学生を一覧表示するホーム ページ。 これに移動、学生がタップされたときに、`TabbedPage`派生クラス[ `StudentNotesDataPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml)が組み込まれている 3 つ`ContentPage`その学生の注意事項を入力することにより、うちの 1 つのビジュアル ツリー内のオブジェクトします。
 
 ### <a name="using-an-itemtemplate"></a>ItemTemplate を使用します。
 
-[ **MultiTabbedColor** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors)サンプルは、 [ `NamedColor` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs)クラス内で、 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリです。 [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml)ファイルのセットを`DataTemplate`プロパティ`TabbedPage`のビジュアル ツリーを最初に`ContentPage`のプロパティへのバインディングを格納している`NamedColor`(、へのバインドを含む`Title`プロパティ)。
+[ **MultiTabbedColor** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors)使用して、 [ `NamedColor` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs)クラス、 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリ。 [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml)ファイルのセット、`DataTemplate`プロパティの`TabbedPage`とビジュアル ツリーの先頭に`ContentPage`のプロパティへのバインドを格納している`NamedColor`(、へのバインドを含む`Title`プロパティ)。
 
-ただし、これは iOS の問題です。 項目の一部のみが表示されることができ、アイコンを付与することはありません。
+ただし、これは、iOS で問題が発生します。 項目の一部のみを表示でき、およびそれらのアイコンを提供する優れた方法はありません。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 25 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)
+- [第 25 章のフル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)
 - [第 25 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
-- [マスター/詳細 ページ](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)
-- [タブ ページ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
+- [マスター/詳細ページ](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)
+- [タブ付きページ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)

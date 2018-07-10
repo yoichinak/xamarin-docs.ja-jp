@@ -102,7 +102,7 @@ Jenkins が実行されている、起動するたびにでコンピューター
 
 ### <a name="installing-plugins"></a>プラグインのインストール
 
-Jenkins.App インストーラーが完了したら、Jenkins を開始して、URL を使用して web ブラウザーを起動http://localhost:8080の次のスクリーン ショットに示すようにします。
+Jenkins.App インストーラーが完了したら、Jenkins を開始して、URL を使用して web ブラウザーを起動 http://localhost:8080 の次のスクリーン ショットに示すようにします。
 
  [![](jenkins-walkthrough-images/image10.png "このスクリーン ショットに示すように、8080")](jenkins-walkthrough-images/image10.png#lightbox)
 
