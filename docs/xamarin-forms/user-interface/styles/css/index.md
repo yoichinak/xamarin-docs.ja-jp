@@ -296,11 +296,11 @@ listview image {
 ```
 
 > [!NOTE]
-> `element element`セレクターに子要素は必要ありません、_直接_親-子要素の子は、別の親を持つ可能性があります。 選択は、その先祖とは、指定された最初の要素を発生します。
+> `element element` セレクターは、子要素が親の_直接_の子である必要はありません。子要素は異なる親を持つ可能性があります。 選択は、その先祖が指定された最初の要素と一致する場合に発生します。
 
 ### <a name="selecting-direct-child-elements"></a>直接の子要素の選択
 
-大文字と小文字のビジュアル ツリー内の子要素を選択することができますを直接`element>element`セレクター。
+大文字と小文字を区別しない `element>element` セレクターを使うと、ビジュアル ツリー内の直接の子要素を選択することができます。
 
 ```css
 stacklayout>image {
@@ -309,7 +309,7 @@ stacklayout>image {
 }
 ```
 
-このセレクターは、いずれかを識別[ `Image` ](xref:Xamarin.Forms.Image)である要素の直接の子[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)要素、およびの高さと幅を 200 に設定します。 したがって、次の XAML の例で、`stacklayout>image`セレクターが示されます、 [ `Image` ](xref:Xamarin.Forms.Image)の直接の子である、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)、およびその高さと幅を 200 に設定します。
+このセレクターは、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) 要素の直接の子であるすべての [ `Image` ](xref:Xamarin.Forms.Image) 要素を特定し、高さと幅を 200 に設定します。 したがって、次の XAML の例では、`stacklayout>image` セレクターは、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) の直接の子である [ `Image` ](xref:Xamarin.Forms.Image) を特定し、高さと幅を 200 に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -327,29 +327,29 @@ stacklayout>image {
 ```
 
 > [!NOTE]
-> `element>element`セレクターは、子要素がである必要があります、_直接_親の子です。
+> `element>element` セレクターは、子要素が親の_直接_の子である必要があります。
 
-## <a name="selector-reference"></a>セレクターの参照
+## <a name="selector-reference"></a>セレクター リファレンス
 
 Xamarin.Forms では、次の CSS セレクターがサポートされています。
 
 |[セレクター]|例|説明|
 |---|---|---|
-|`.class`|`.header`|すべての要素を選択、 `StyleClass` 'ヘッダー' を含むプロパティです。 このセレクターは、大文字小文字を区別ことに注意してください。|
-|`#id`|`#email`|すべての要素を選択`StyleId`'éý'`email`です。 場合`StyleId`が設定されていない、フォールバック ツー`x:Name`です。 XAML を使用するときに`x:Name`が優先`StyleId`です。 このセレクターは、大文字小文字を区別ことに注意してください。|
+|`.class`|`.header`|`StyleClass` プロパティに `header` を含むすべての要素を選択します。 このセレクターは、大文字小文字を区別することに注意してください。|
+|`#id`|`#email`|`StyleId` に `email` が設定されているすべての要素を選択します。 `StyleId` が設定されていない場合は、`x:Name` でフォールバックします。 XAML を使用する場合は、`StyleId` より `x:Name`が優先されます。 このセレクターは、大文字小文字を区別することに注意してください。|
 |`*`|`*`|すべての要素を選択します。|
-|`element`|`label`|型の要素をすべて選択`Label`、いないサブ クラスが、します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`^base`|`^contentpage`|すべての要素を選択`ContentPage`、基本クラスとして含む`ContentPage`自体です。 このセレクターは大文字と小文字および CSS の仕様の一部でないことに注意してください。|
-|`element,element`|`label,button`|すべて選択`Button`要素とすべて`Label`要素。 このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element element`|`stacklayout label`|すべて選択`Label`内の要素、`StackLayout`です。 このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element>element`|`stacklayout>label`|すべて選択`Label`を持つ要素`StackLayout`直接の親として。 このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element+element`|`label+entry`|すべて選択`Entry`要素の後に直接、`Label`です。 このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element~element`|`label~entry`|すべて選択`Entry`要素に続く、`Label`です。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element`|`label`|`Label` 型の要素をすべて選択します。ただしサブクラスは選択しません。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`^base`|`^contentpage`|基本クラスが `ContentPage` であるすべての要素を選択します。これには `ContentPage` 自体も含みます。 このセレクターは大文字と小文字を区別せず、また CSS の仕様の一部ではないことに注意してください。|
+|`element,element`|`label,button`|すべての `Button` 要素とすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element element`|`stacklayout label`|`StackLayout` 内のすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element>element`|`stacklayout>label`|`StackLayout` を直接の親として持つすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element+element`|`label+entry`|`Label` の後に隣接するすべての `Entry`  要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element~element`|`label~entry`|`Label` に続くすべての `Entry` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 
 セレクターが一致するスタイルは、定義した順序で順番に適用されます。 特定のアイテムに定義されているスタイルは、常に最後に適用されます。
 
 > [!TIP]
-> セレクターを組み合わせて、制限なしなど`StackLayout>ContentView>label.email`です。
+> セレクターは、`StackLayout>ContentView>label.email` のように無制限に組み合わせることができます。
 
 次のセレクターは、現在サポートされていません。
 
@@ -358,78 +358,78 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 - `:` および `::`
 
 > [!NOTE]
-> 、の特異性と特異性上書きはサポートされていません。
+> 詳細度と詳細度の上書きはサポートされていません。
 
-## <a name="property-reference"></a>プロパティの参照
+## <a name="property-reference"></a>プロパティ リファレンス
 
-Xamarin.Forms では次の CSS プロパティがサポートされている (で、**値** 列の型は_斜体_文字列リテラルは、 `gray`)。
+Xamarin.Forms では次の CSS プロパティがサポートされています。 ( **値** 列の型は _斜体_ で文字列リテラルは `gray` で表記します)
 
 |プロパティ|対象|値|例|
 |---|---|---|---|
-|`background-color`|`VisualElement`|_色_ \| `initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_文字列_ \| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`, `Frame`|_色_ \| `initial`|`border-color: #9acd32;`|
-|`border-width`|`Button`|_double 型_ \| `initial` |`border-width: .5;`|
-|`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_色_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`background-color`|`VisualElement`|_color_ \| `initial` |`background-color: springgreen;`|
+|`background-image`|`Page`|_string_ \| `initial` |`background-image: bg.png;`|
+|`border-color`|`Button`, `Frame`|_color_ \| `initial`|`border-color: #9acd32;`|
+|`border-width`|`Button`|_double_ \| `initial` |`border-width: .5;`|
+|`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_color_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_文字列_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_二重_\| _namedsize_ \| `initial` |`font-size: 12;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_string_ \| `initial` |`font-family: Consolas;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_  \| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_double 型_ \| `initial` |`min-height: 250;`|
-|`margin`|`View`|_太さ_ \| `initial` |`margin: 6 12;`|
-|`margin-left`|`View`|_太さ_ \| `initial` |`margin-left: 3;`|
-|`margin-top`|`View`|_太さ_ \| `initial` |`margin-top: 2;`|
-|`margin-right`|`View`|_太さ_ \| `initial` |`margin-right: 1;`|
-|`margin-bottom`|`View`|_太さ_ \| `initial` |`margin-bottom: 6;`|
-|`min-height`|`VisualElement`|_double 型_ \| `initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_double 型_ \| `initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_double 型_ \| `initial` |`opacity: .3;`|
-|`padding`|`Layout`, `Page`|_太さ_ \| `initial` |`padding: 6 12 12;`|
-|`padding-left`|`Layout`, `Page`|_double 型_ \| `initial`|`padding-left: 3;`|
-|`padding-top`|`Layout`, `Page`| _double 型_ \| `initial` |`padding-top: 4;`|
-|`padding-right`|`Layout`, `Page`| _double 型_ \| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Layout`, `Page`| _double 型_ \| `initial` |`padding-bottom: 6;`|
-|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `right` \| `center` \| `start` \| `end` \| `initial`. `left` および`right`右から左へ記述する環境では避ける必要があります。| `text-align: right;`|
+|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
+|`margin`|`View`|_thickness_ \| `initial` |`margin: 6 12;`|
+|`margin-left`|`View`|_thickness_ \| `initial` |`margin-left: 3;`|
+|`margin-top`|`View`|_thickness_ \| `initial` |`margin-top: 2;`|
+|`margin-right`|`View`|_thickness_ \| `initial` |`margin-right: 1;`|
+|`margin-bottom`|`View`|_thickness_ \| `initial` |`margin-bottom: 6;`|
+|`min-height`|`VisualElement`|_double_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
+|`padding`|`Layout`, `Page`|_thickness_ \| `initial` |`padding: 6 12 12;`|
+|`padding-left`|`Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
+|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `right` \| `center` \| `start` \| `end` \| `initial`. `left` と `right` は 文字方向が右から左の環境においては避けるべきです。| `text-align: right;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial `|`visibility: hidden;`|
-|`width`|`VisualElement`|_double 型_ \| `initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
-> `initial` すべてのプロパティの有効な値です。 別のスタイル設定された値 (既定値にリセット) をクリアします。
+> `initial` は、すべてのプロパティで有効な値です。 別のスタイルが設定された値をクリア(既定値にリセット)します。
 
 次のプロパティは現在サポートされていません。
 
 - `all: initial`。
-- レイアウト プロパティ (ボックス、またはグリッド)。
-- 短縮形のプロパティなど`font`、および`border`です。
+- レイアウト プロパティ (box または grid)。
+- `font` や `border` などの短縮形のプロパティ。
 
-さらに、あるありません`inherit`値などの継承はサポートされていません。 したがって、たとえば、設定できません、`font-size`レイアウトのプロパティすべてを予定があり、 [ `Label` ](xref:Xamarin.Forms.Label)値を継承するレイアウト内のインスタンス。 1 つの例外は、`direction`を既定値を持つプロパティの`inherit`します。
+さらに、`inherit` 値は存在しないため、継承はサポートされていません。 したがって、たとえば、`font-size` プロパティをレイアウトに設定し、そのレイアウト内のすべての [ `Label` ](xref:Xamarin.Forms.Label) インスタンスにその値が継承されることは期待できません。 1つの例外として、`direction` プロパティがあり、それは `inherit` の規定値を持ちます。
 
 ### <a name="color"></a>色
 
-次`color`値がサポートされます。
+次のような `color` 値がサポートされます。
 
-- `X11` [色](https://en.wikipedia.org/wiki/X11_color_names/)、CSS カラー、UWP 定義済みの色、および Xamarin.Forms 色に一致します。 これらの色値は大文字小文字を区別しないことに注意してください。
+- `X11` [colors](https://en.wikipedia.org/wiki/X11_color_names/) は、CSS の色、UWP 定義済みの色、および Xamarin.Forms の色に一致します。 これらの色値は大文字小文字を区別しないことに注意してください。
 - 16 進数の色: `#rgb`、 `#argb`、 `#rrggbb`、 `#aarrggbb`
-- rgb 色: `rgb(255,0,0)`、`rgb(100%,0%,0%)`です。 値は範囲 0 ~ 255 0 ~ 100% です。
-- rgba 色: `rgba(255, 0, 0, 0.8)`、`rgba(100%, 0%, 0%, 0.8)`です。 不透明度の値は 0.0 ~ 1.0 の範囲内でです。
-- hsl の色:`hsl(120, 100%, 50%)`です。 H の値は 0 ~ 360 の範囲内では s と l 中で、範囲 0 ~ 100% です。
-- hsla のカラー:`hsla(120, 100%, 50%, .8)`です。 不透明度の値は 0.0 ~ 1.0 の範囲内でです。
+- rgb 色: `rgb(255,0,0)`、`rgb(100%,0%,0%)`。 値は 0 ~ 255 0 ~ 100% の範囲です。
+- rgba 色: `rgba(255, 0, 0, 0.8)`、`rgba(100%, 0%, 0%, 0.8)`。 不透明度の値は 0.0 ~ 1.0 の範囲です。
+- hsl の色:`hsl(120, 100%, 50%)`です。 H の値は 0 ~ 360 の範囲で s と l は範囲 0 ~ 100% です。
+- hsla のカラー:`hsla(120, 100%, 50%, .8)`です。 不透明度の値は 0.0 ~ 1.0 の範囲です。
 
 ### <a name="thickness"></a>太さ
 
-1 つ、2、3、または 4`thickness`値がサポートされている、空白で区切られた各。
+1、2、3、または 4つの `thickness` 値がサポートされています。各値は空白で区切ります。
 
 - 1 つの値では、均一の太さを示します。
-- 2 つの値は、縦、横方向の幅を示します。
-- 次の 3 つの値は、top、横方向 (左、右下) は、下端の太さを示します。
-- 次の 4 つの値は、top、右上、、下部にある 左側の太さを示します。
+- 2 つの値は、上下・左右の太さを示します。
+- 3 つの値は、上・左右・下の太さを示します。
+- 4 つの値は、上・右・下・左の太さを示します。
 
 > [!NOTE]
-> CSS`thickness`値と異なる XAML [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/)値。 たとえば、XAML 2 つの値で`Thickness`4 値中に、水平、垂直方向の幅を示す`Thickness`太さ下、左、上、右側を示します。 さらに、XAML`Thickness`値は、コンマで区切られました。
+> CSS の `thickness` 値と XAML の [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/) 値は異なります。 たとえば、XAML では、2 つの値の `Thickness` は左右・上下の順で、4 つの値の `Thickness` は、左・上・右・下の順で太さを示します。 さらに、XAML の `Thickness` 値は、コンマで区切られます。
 
 ### <a name="namedsize"></a>NamedSize
 
-大文字と小文字の次`namedsize`値がサポートされます。
+次のような大文字と小文字を区別する `namedsize` 値がサポートされています。
 
 - `default`
 - `micro`
@@ -437,13 +437,13 @@ Xamarin.Forms では次の CSS プロパティがサポートされている (�
 - `medium`
 - `large`
 
-それぞれの意味は、`namedsize`値がプラットフォームに依存し、ビューに依存します。
+それぞれの `namedsize` 値 の厳密な意味は、プラットフォームやビューに依存します。
 
-## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.University と Xamarin.Forms の CSS
+## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.Forms CSS を Xamarin.University で
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS により、 [Xamarin 大学](https://university.xamarin.com/)**
+**[Xamarin University](https://university.xamarin.com/) による Xamarin.Forms 3.0 CSS**
 
 ## <a name="related-links"></a>関連リンク
 
