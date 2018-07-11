@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: 加速度計'
-description: Xamarin.Essentials で加速度計クラスでは、次の 3 つの次元空間内のデバイスのアクセラレータを示すデバイスの加速度計センサーを監視できます。
+description: Xamarin.Essentials で加速度計クラスでは、次の 3 つの次元空間内のデバイスの高速化を示すデバイスの加速度計センサーを監視できます。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 8229a372659e7918457a9d2f358b871e1a3f5978
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080492"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947310"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: 加速度計
 
-![プレリリース NuGet](~/media/shared/pre-release.png)
+![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-**加速度計**クラスでは、次の 3 つの次元空間内のデバイスのアクセラレータを示すデバイスの加速度計センサーを監視できます。
+**加速度計**クラスでは、次の 3 つの次元空間内のデバイスの高速化を示すデバイスの加速度計センサーを監視できます。
 
-## <a name="using-accelerometer"></a>加速度計の使用
+## <a name="using-accelerometer"></a>加速度計を使用します。
 
-クラスの Xamarin.Essentials への参照を追加します。
+クラスで Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-加速度計機能が呼び出すことによって、`Start`と`Stop`アクセラレータへの変更をリッスンするメソッド。 加えた変更はを通じて送信、`ReadingChanged`イベント。 サンプルの使用方法を次に示します。
+加速度計機能が呼び出すことによって、`Start`と`Stop`アクセラレータへの変更をリッスンするメソッド。 加えた変更は通過して送信、`ReadingChanged`イベント。 使用例を次に示します。
 
 ```csharp
 
@@ -69,28 +69,21 @@ public class AccelerometerTest
 }
 ```
 
-加速度計の測定値は、報告 G. でG は gravitation 単位 force 地球の重力フィールドに作用するのと等しい (= 9.81 m/秒 ^2)。
+加速度計の測定値を G. で示されますG が gravitation の単位を以下に、地球の重力フィールドに作用する強制 (9.81 m/s ^2)。
 
-座標システムは、その既定の向きに電話の画面に対して相対的に定義されます。 デバイスの画面の向きが変更されたときに、軸は交換されません。
+座標システムは、その既定の向きで、電話の画面を基準と定義されます。 デバイスの画面の向きが変更されたときに、軸は交換されません。
 
-X 軸は水平方向と右へのポインター、Y 軸は縦方向上向き、画面の前面の外側をポイントして、Z 軸です。 このシステムでは、画面の座標は、負の値の Z 値を持ちます。
+X 軸は水平方向と、右側にポイントして、Y 軸は縦方向上を向きし、画面の前面の外側をポイントして、Z 軸。 このシステムで座標は画面の背景には負の Z 値があります。
 
 次に例を示します。
 
-* デバイスは、テーブルの上にあるしがその左側にある右方向にプッシュ、アクセラレータの x 値が正の値。
+* デバイスは、フラット テーブル上にあるし、その左側にある右方向にプッシュされます、x の高速化の値が正の値。
 
-* アクセラレータ値は +1.00 G でフラット テーブルで、デバイスがある場合または (+ = 9.81 m/秒 ^2)、デバイスの高速化に対応する (0 m/秒 ^2) 重力の force マイナス (-= 9.81 m/秒 ^2) と G. と同様に正規化されました。
+* 高速化の値は +1.00 G でフラット テーブルで、デバイスがある場合または (9.81 m/s + ^2)、対応デバイスの高速化する (0 m/秒 ^2) 重力の force マイナス (-9.81 m/秒 ^2) と G. のように正規化されました。
 
-* デバイスがフラット テーブル上にある、m/秒の高速化を空にプッシュは ^2、アクセラレータ値は、デバイスの高速化に対応する A + 9.81 に (+ m/秒 ^2) 重力の force マイナス (-= 9.81 m/秒 ^2) と G. で正規化されました。 
+* デバイスが平らなテーブル上にあるし、高速化の m/秒の空の方に移動されますが ^2 の高速化の値は、デバイスの高速化に対応する A + 9.81 と等しく (+ m/s ^2) 重力の force マイナス (-9.81 m/秒 ^2) と G. で正規化されました。 
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[センサー速度](xref:Xamarin.Essentials.SensorSpeed)
-
-- **最も高速な**– (UI スレッドで返されるとは限りません) できる限り高速のセンサー データを取得します。
-- **ゲーム**– ゲーム (UI スレッドで返されるとは限りません) に適したを評価します。
-- **標準**– 既定のレートが画面の向きの変更に適してします。
-- **Ui** – 一般的なユーザー インターフェイスの適切なを評価します。
-
-かどうか、イベント ハンドラーは、UI スレッドでを実行し、イベント ハンドラーは、ユーザー インターフェイス要素にアクセスする必要がある場合は保証されません、 [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md)メソッドを UI スレッドでそのコードを実行します。
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
