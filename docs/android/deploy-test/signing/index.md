@@ -1,32 +1,30 @@
 ---
 title: Android アプリケーション パッケージに署名する
+description: 公開用の Android アプリケーション パッケージ (APK) に署名する方法
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/21/2018
-ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 07/02/2018
+ms.openlocfilehash: 4afcf42750cd9366bfd9fa5855fe1e7c0f114162
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34458802"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403313"
 ---
 # <a name="signing-the-android-application-package"></a>Android アプリケーション パッケージに署名する
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」では、**アーカイブ マネージャー**を使用してアプリをビルドし、署名および公開するためにそれをアーカイブに配置しました。 このセクションでは、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アーカイブしたアプリの*アドホック*をディスクに公開する方法について説明します。 結果として得られる APK は、アプリ ストアを経由せずに Android デバイスにサイドロードすることができます。
 
-このセクションでは、Visual Studio によって提供される APK に署名するための統合された公開ワークフローについて説明します。 「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」では、**アーカイブ マネージャー**を使用してアプリをビルドし、署名および公開するためにそれをアーカイブに配置しました。 このセクションでは、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アーカイブしたアプリの*アドホック*をディスクに公開する方法について説明します。
-結果として得られる APK は、アプリ ストアを経由せずに Android デバイスにサイドロードすることができます。
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 [公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、**[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[アドホック]** を選択します。
 
 [![[配布チャネル] ダイアログ](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-このセクションでは、Visual Studio for Mac の統合された公開ワークフローを使用して、APK に署名します。 「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」では、**アーカイブ マネージャー**を使用してアプリをビルドし、署名および公開するためにそれをアーカイブに配置しました。 このセクションでは、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アーカイブしたアプリの*アドホック*をディスクに公開する方法を学習します。 結果として得られる APK は、アプリ ストアを経由せずに Android デバイスにサイドロードすることができます。
 
 [公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、**[署名と配布...]** ダイアログに 2 種類の配布方法が表示されました。 **[アドホック]** を選択して **[次へ]** をクリックします。
 
@@ -58,14 +56,14 @@ ms.locfileid: "34458802"
 
 結果として得られるキーストアは、次の場所に存在します。
 
-**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\alias\\alias.keystore**
+**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\*別名*\\*別名*.keystore**
 
-たとえば、上記の手順では、次の場所に新しい署名キーが作成される場合があります。
+たとえば、**chimp** を別名として使用する場合、上記の手順では、次の場所に新しい署名キーが作成されます。
 
-**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
+**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
 > [!NOTE]
-> 結果として得られるキーストア ファイルは、必ず安全な場所にバックアップを作成しておきます &ndash; これはソリューションには含まれません。 (たとえば、別のコンピューターに移動したり Windows を再インストールしたことが原因で) キーストア ファイルを紛失した場合、以前のバージョンと同じ証明書を使用してアプリに署名できなくなります。
+> 結果として得られるキーストア ファイルとパスワードは、必ず安全な場所にバックアップを作成しておきます &ndash; これはソリューションには含まれません。 (たとえば、別のコンピューターに移動したり Windows を再インストールしたことが原因で) キーストア ファイルを紛失した場合、以前のバージョンと同じ証明書を使用してアプリに署名できなくなります。
 
 キーストアの詳細については、「[キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」を参照してください。
 
@@ -89,7 +87,7 @@ ms.locfileid: "34458802"
 
 
 > [!NOTE]
-> 結果として得られるキーストア ファイルは、必ず安全な場所にバックアップを作成しておきます &ndash; これはソリューションには含まれません。 (たとえば、別のコンピューターに移動したり Mac を再インストールしたことが原因で) キーストア ファイルを紛失した場合、以前のバージョンと同じ証明書を使用してアプリに署名できなくなります。
+> 結果として得られるキーストア ファイルとパスワードは、必ず安全な場所にバックアップを作成しておきます &ndash; これはソリューションには含まれません。 (たとえば、別のコンピューターに移動したり macOS を再インストールしたりしたことが原因で) キーストア ファイルを紛失した場合、以前のバージョンと同じ証明書を使用してアプリに署名できなくなります。
 
 キーストアの詳細については、「[キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」を参照してください。
 
