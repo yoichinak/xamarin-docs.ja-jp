@@ -1,5 +1,5 @@
 ---
-title: Azure Active Directory B2C のユーザーの認証
+title: Azure Active Directory B2C でユーザーを認証します。
 description: Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド ID 管理ソリューションです。 この記事では、Microsoft Authentication Library と Azure Active Directory B2C を使用して、モバイル アプリケーションにコンシューマーの ID 管理を統合する方法を示します。
 ms.prod: xamarin
 ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
@@ -7,21 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 627c6773c099c9cf45f871a9bb73a201bf98271a
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
-ms.translationtype: HT
+ms.openlocfilehash: b6989782c438ec41911cc9317d9f911d6518132d
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32020340"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38872723"
 ---
-# <a name="authenticating-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C のユーザーの認証
+# <a name="authenticating-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C でユーザーを認証します。
 
 _Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。この記事では、Microsoft Authentication Library と Azure Active Directory B2C を使用して、モバイル アプリケーションにコンシューマーの id 管理を統合する方法を示します。_
 
 ![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
 > [!NOTE]
-> [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)は、まだプレビュー段階ですが、運用環境での使用に適しています。 ただし、ライブラリのAPIや内部のキャッシュ形式、およびその他のメカニズムに破壊的変更の可能性があり、アプリケーションに重大な影響を与える可能性があります。
+> [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)は、まだプレビュー段階ですが、運用環境での使用に適しています。 ただし、ライブラリのAPIや内部のキャッシュ形式、およびその他のメカニズムに重大な変更の可能性があり、アプリケーションに多大な影響を与える可能性があります。
 
 ## <a name="overview"></a>概要
 
@@ -48,9 +48,9 @@ MSAL では、デバイスの web ブラウザーを使用して、認証を行�
 Azure Active Directory B2C テナントに送信される各要求には *ポリシー* を指定します。 ポリシーでは、サインアップまたはサインインなどのコンシューマー ID エクスペリエンスを記述します。 たとえば、サインアップ ポリシーは、Azure Active Directory B2C テナントの動作を次の設定を使用して構成することができます。
 
 - コンシューマーが、アプリケーションへのサインインに使用できるアカウントの種類。
-- サインアップ時に、コンシューマーから収集するデータ。
+- サインアップ中にコンシューマーから収集されるデータ。
 - 多要素認証。
-- サインアップ ページのコンテンツ。
+- [サインアップ] ページのコンテンツ。
 - ポリシーが実行されたときに、モバイル アプリケーションが受け取るトークンの要求。
 
 Azure Active Directory テナントには、さまざまな種類の複数のポリシーを含めることができ、必要に応じて、アプリケーションで使用することができます。 さらに、ポリシーは、複数のアプリケーションで再利用でき、コードを変更せずにコンシューマー ID エクスペリエンスの定義や変更をすることができます。 ポリシーの詳細については、[Azure Active Directory B2C: 組み込みポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)を参照してください。
@@ -65,7 +65,7 @@ MSAL を使用する PCL には、Profile7 を使用して再ターゲットす�
 
 ### <a name="ios"></a>iOS
 
-Ios の場合は、Azure Active Directory B2C に登録されているカスタムの URL スキームに登録する必要があります**Info.plist**の次のスクリーン ショットに示すようにします。
+Ios では、Azure Active Directory B2C に登録されたカスタムの URL スキームに登録する必要があります**Info.plist**の次のスクリーン ショットに示すようにします。
 
 ![](azure-ad-b2c-images/customurl-ios.png "iOS でカスタム URL スキームを登録する。")
 
@@ -118,7 +118,7 @@ using Microsoft.Identity.Client;
 namespace TodoAzure.Droid
 {
     ...
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -150,7 +150,7 @@ Universal Windows Platform に MSAL を使用する追加の設定は必要あ�
 
 ## <a name="initialization"></a>初期化
 
-Microsoft Authentication Library は、`PublicClientApplication` クラスのメンバーを使用して、認証ワークフローを開始します。 サンプル アプリケーションは、宣言および初期化し、`public`この型は、という名前のプロパティ`ADB2CClient`で、`AuthenticationProvider`クラスです。 次のコードサンプルは、このプロパティを初期化する方法を示しています。
+Microsoft Authentication Library は、`PublicClientApplication` クラスのメンバーを使用して、認証ワークフローを開始します。 サンプル アプリケーションを宣言および初期、`public`という名前のこの型のプロパティ`ADB2CClient`の`AuthenticationProvider`クラス。 次のコードサンプルは、このプロパティを初期化する方法を示しています。
 
 ```csharp
 ADB2CClient = new PublicClientApplication(Constants.ClientID, Constants.Authority);
@@ -164,7 +164,7 @@ ADB2CClient = new PublicClientApplication(Constants.ClientID, Constants.Authorit
 
 ![](azure-ad-b2c-images/login.png "ログイン ページ")
 
-サインインのソーシャル id プロバイダーまたはローカル アカウントを使用して、許可されます。 Microsoft、Google、Facebook、上記のように組み合わせて使用する場合、ソーシャル id プロバイダーとして他の id プロバイダーこともできます。
+ソーシャル id プロバイダーまたはローカル アカウントでのサインインが使用できます。 ソーシャル id プロバイダーとして、上記のようを使用し、Microsoft、Google、Facebook、他の id プロバイダーが使用こともできます。
 
 次のコードサンプルは、サインイン処理を呼び出す方法を示しています。
 
@@ -240,4 +240,4 @@ public async Task<bool> LogoutAsync()
 
 - [AzureADB2CAuth (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
 - [Azure Active Directory B2C](/azure/active-directory-b2c/)
-- [Microsoft 認証ライブラリ](https://www.nuget.org/packages/Microsoft.Identity.Client)
+- [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)

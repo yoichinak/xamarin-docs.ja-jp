@@ -1,6 +1,6 @@
 ---
 title: Azure Active Directory B2C を Azure Mobile Apps に統合する
-description: Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Xamarin.Forms で Azure Active Directory B2C を使って、認証および承認を Azure Mobile Apps インスタンスに提供する方法を示します。
+description: Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Xamarin.Forms で Azure Active Directory B2C を使って、認証および承認を Azure Mobile Apps インスタンスに提供する方法を示します。
 ms.prod: xamarin
 ms.assetid: 53F52036-A997-4D0F-86B4-4302C6913136
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: cafc1e78779dc393fa0409daa08b3daa8948a1ee
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30787975"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815678"
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure Active Directory B2C を Azure Mobile Apps に統合する
 
@@ -36,7 +36,7 @@ Azure Active Directory B2C の詳細については、[Azure Active Directory B2
 
 Azure Active Directory B2C は、Azure Mobile App の認証ワークフローの管理に使用できます。  この方法を使えば、id 管理エクスペリエンスを完全にクラウドで定義でき、モバイル アプリケーションのコードを変更することなく修正できます。
 
-Azure Mobile Apps インスタンスと Azure Active Directory B2C テナントの統合に採用できる 2 つの認証ワークフローがあります。
+Azure Active Directory B2C テナントを Azure Mobile Apps インスタンスに統合するときに採用できる 2 つの認証ワークフローがあります。
 
 - [クライアント管理](#client_managed)– この方法では、Xamarin.Forms モバイルアプリケーションは Azure Active Directory B2C テナントを使って認証処理を開始し、Azure Mobile Apps インスタンスに受信した認証トークンを渡します。
 - [サーバー管理](#server_managed)– この方法では、Azure Mobile Apps インスタンスが Azure Active Directory B2C テナントを使用して、web ベースのワークフローによって、認証プロセスを開始します。
@@ -72,7 +72,7 @@ Azure Mobile Apps インスタンスと Azure Active Directory B2C テナント�
 
 次のスクリーン ショットは、この構成を示しています。
 
-[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Azure Active Directory B2C 構成")](azure-ad-b2c-mobile-app-images/client-flow-config.png#lightbox "Azure Active Directory B2C の構成")
+[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Azure Active Directory B2C の構成")](azure-ad-b2c-mobile-app-images/client-flow-config.png#lightbox "Azure Active Directory B2C の構成")
 
 Azure Active Directory B2C テナントで使用するポリシーも、応答 URL に 後ろに`://auth/` が続く同じカスタム URL スキームが設定されるように構成する必要があります。 次のスクリーン ショットは、この構成を示しています。
 

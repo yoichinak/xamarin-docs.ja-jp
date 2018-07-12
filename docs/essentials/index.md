@@ -1,66 +1,66 @@
 ---
 title: Xamarin.Essentials
-description: このドキュメントには、クロス プラットフォーム Api を使用した、モバイル アプリケーションの開発者に提供する Xamarin.Essentials を記述するさまざまなガイドへのリンクがします。
+description: このドキュメントは、クロス プラットフォーム Api を使用した、モバイル アプリケーションの開発者を提供する、Xamarin.Essentials を記述するさまざまなガイドにリンクしています。
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080487"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831554"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
-![プレリリース NuGet](~/media/shared/pre-release.png)
+![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-Xamarin.Essentials は、モバイル アプリケーションの開発者向けのクロスプラット フォームの Api を提供します。
+Xamarin.Essentials は、モバイル アプリケーションの開発者向けのクロス プラットフォーム Api を提供します。
 
-Android、iOS、および UWP、一意のオペレーティング システムとプラットフォーム Api を開発者がある C# での Xamarin を活用することで、すべてへのアクセスを提供します。 Xamarin.Essentials には、任意の Xamarin.Forms、Android、iOS、またはユーザー インターフェイスを作成する方法に関係なく、共有コードからアクセスできる UWP アプリケーションで動作する単一のクロス プラットフォーム API が用意されています。
+Android、iOS、および UWP は、一意のオペレーティング システムとプラットフォーム Api を開発者があるすべての C# と Xamarin を活用することへのアクセスを提供します。 Xamarin.Essentials、Xamarin.Forms、Android、iOS、またはユーザー インターフェイスを作成する方法に関係なく、共有コードからアクセス可能な UWP アプリケーションで動作する 1 つのクロス プラットフォーム API を提供します。
 
 ## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Xamarin.Essentials を概要します。](get-started.md?context=xamarin/xamarin-forms)
 
-以下の[ファースト ステップ ガイド](get-started.md)をインストールする、 **Xamarin.Essentials**既存または新規の Xamarin.Forms、Android、iOS、または UWP プロジェクトの NuGet パッケージです。
+に従って、[ファースト ステップ ガイド](get-started.md)をインストールする、 **Xamarin.Essentials**既存または新規の Xamarin.Forms、Android、iOS、または UWP プロジェクトに NuGet パッケージ。
 
 ## <a name="feature-guides"></a>機能ガイド
 
-これらの Xamarin.Essentials 機能をアプリケーションに統合するガイドに従います。
+これら Xamarin.Essentials の機能をアプリケーションに統合する、ガイドに従います。
 
-* [加速度計](accelerometer.md?context=xamarin/xamarin-forms)– 3 つの次元空間内のデバイスの高速化データを取得します。
-* [アプリ情報](app-information.md?context=xamarin/xamarin-forms)– アプリケーションについての情報を確認します。
-* [バッテリ](battery.md?context=xamarin/xamarin-forms)– 簡単にバッテリ低下レベルは、ソース、および状態を検出
-* [クリップボード](clipboard.md?context=xamarin/xamarin-forms)-迅速かつ簡単に設定、またはクリップボードにテキストを読み取る。
-* [コンパス](compass.md?context=xamarin/xamarin-forms)– モニター コンパスを変更します。
-* [接続](connectivity.md?context=xamarin/xamarin-forms)– 接続状態を確認して変更を検出します。
-* [データ転送](data-transfer.md?context=xamarin/xamarin-forms)– テキストと web サイトを送信する他のアプリへの uri。
+* [加速度計](accelerometer.md?context=xamarin/xamarin-forms)– 3 次元空間内のデバイスの高速化データを取得します。
+* [アプリ情報](app-information.md?context=xamarin/xamarin-forms)– アプリケーションの情報を確認します。
+* [バッテリ](battery.md?context=xamarin/xamarin-forms)– 簡単にバッテリ レベル、ソース、および状態の検出
+* [クリップボード](clipboard.md?context=xamarin/xamarin-forms): 迅速かつ簡単に設定、またはクリップボードにテキストを読み取る。
+* [Compass](compass.md?context=xamarin/xamarin-forms) – モニターのコンパスの変更。
+* [接続](connectivity.md?context=xamarin/xamarin-forms)– 接続状態を確認し、変更を検出します。
+* [データ転送](data-transfer.md?context=xamarin/xamarin-forms)– テキスト、web サイトを送信する他のアプリへの uri。
 * [デバイス情報を表示](device-display.md?context=xamarin/xamarin-forms)– デバイスの画面のメトリックと印刷の向きを取得します。
-* [デバイス情報](device-information.md?context=xamarin/xamarin-forms)– デバイスについて簡単に確認します。
+* [デバイス情報](device-information.md?context=xamarin/xamarin-forms)– を簡単に、デバイスの詳細について確認します。
 * [電子メール](email.md?context=xamarin/xamarin-forms)– 簡単に電子メール メッセージを送信します。
-* [ファイル システム ヘルパー](file-system-helpers.md?context=xamarin/xamarin-forms) – ファイルをアプリ データを簡単に保存します。
+* [ファイル システム ヘルパー](file-system-helpers.md?context=xamarin/xamarin-forms) – アプリのデータ ファイルを簡単に保存します。
 * [懐中電灯](flashlight.md?context=xamarin/xamarin-forms)– オン/オフ、懐中電灯を有効にする簡単な方法です。
-* [ジオコード化](geocoding.md?context=xamarin/xamarin-forms)– Geocode と逆引きジオコーディングと座標。
-* [地理的位置情報](geolocation.md?context=xamarin/xamarin-forms)– デバイスの GPS の場所を取得します。
+* [ジオコーディング](geocoding.md?context=xamarin/xamarin-forms)– ジオコードと逆引き地理コードのアドレス、座標。
+* [地理的位置情報](geolocation.md?context=xamarin/xamarin-forms)– デバイスの GPS の位置を取得します。
 * [ジャイロスコープ](gyroscope.md?context=xamarin/xamarin-forms)– デバイスの 3 つのプライマリ軸の周りの回転を追跡します。
-* [磁力計](magnetometer.md?context=xamarin/xamarin-forms)– 地球の磁場の基準としたデバイスの方向を検出します。
+* [磁力計](magnetometer.md?context=xamarin/xamarin-forms)– 磁場の地球の基準としたデバイスの向きを検出します。
 * [MainThread](main-thread.md?content=xamarin/xamarin-forms) – アプリケーションのメイン スレッドでコードを実行します。 
 * [ブラウザーを開いて](open-browser.md?context=xamarin/xamarin-forms)– 迅速かつ簡単に特定の web サイトにブラウザーを開きます。
-* [印刷の向きセンサー](orientation-sensor.md?context=xamarin/xamarin-forms) – 3 つの次元空間でデバイスの向きを取得します。
-* [ダイヤラー](phone-dialer.md?context=xamarin/xamarin-forms) – ダイヤラーを開きます。
-* [電源](power.md?context=xamarin/xamarin-forms)– デバイスの省電力状態を取得します。
-* [環境設定](preferences.md?context=xamarin/xamarin-forms)– 永続的な環境設定をすばやく簡単に追加します。
-* [画面のロック](screen-lock.md?context=xamarin/xamarin-forms)– デバイスの画面を起動状態にしてください。
+* [方向センサー](orientation-sensor.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの向きを取得します。
+* [ダイヤラー](phone-dialer.md?context=xamarin/xamarin-forms) –、ダイヤラを開きます。
+* [Power](power.md?context=xamarin/xamarin-forms) – デバイスの電力を節約の状態を取得します。
+* [基本設定](preferences.md?context=xamarin/xamarin-forms)– 迅速かつ簡単には、永続的な設定を追加します。
+* [画面のロック](screen-lock.md?context=xamarin/xamarin-forms)– デバイスの画面を起動状態に維持します。
 * [記憶域をセキュリティで保護された](secure-storage.md?context=xamarin/xamarin-forms)– 安全にデータを格納します。
-* [SMS](sms.md?context=xamarin/xamarin-forms) – SMS メッセージの送信を作成します。
+* [SMS](sms.md?context=xamarin/xamarin-forms) : SMS メッセージを送信するために作成します。
 * [音声合成](text-to-speech.md?context=xamarin/xamarin-forms)– Vocalize デバイス上のテキスト。
-* [バージョンを追跡する](version-tracking.md?context=xamarin/xamarin-forms)– アプリケーションのバージョンを追跡し、ビルド番号。
-* [振動させられる](vibrate.md?context=xamarin/xamarin-forms)– デバイスを振動させられるようにします。
+* [バージョンの追跡](version-tracking.md?context=xamarin/xamarin-forms)– アプリケーションのバージョンを追跡し、ビルド番号。
+* [バイブレーション](vibrate.md?context=xamarin/xamarin-forms)– バイブレーション デバイスを作成します。
 
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[トラブルシューティング](troubleshooting.md?context=xamarin/xamarin-forms)
 
-問題が発生している場合は、ヘルプを検索します。
+問題が発生する場合は、ヘルプを検索します。
 
-## <a name="api-documentationxrefxamarinessentials"></a>[API のドキュメント](xref:Xamarin.Essentials)
+## <a name="api-documentationxrefxamarinessentials"></a>[API ドキュメント](xref:Xamarin.Essentials)
 
 Xamarin.Essentials のすべての機能の API ドキュメントを参照します。

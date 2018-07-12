@@ -1,6 +1,6 @@
 ---
 title: Mac プラットフォームのセットアップ
-description: この記事では、Mac のプロジェクトを macOS Sierra や macOS 許可されてに実行できるアプリを生成する Xamarin.Forms プロジェクトに追加する方法について説明します。
+description: この記事では、Mac のプロジェクトを macOS Sierra および El Capitan を macOS で実行できるアプリを生成する Xamarin.Forms プロジェクトに追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -9,44 +9,44 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
 ms.openlocfilehash: ae0fbfc7862a0d2147b2c3bbdbae7dd53dfce78f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242597"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831690"
 ---
 # <a name="mac-platform-setup"></a>Mac プラットフォームのセットアップ
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-始める前に、作成 (または既存の使用) Xamarin.Forms プロジェクト。
-ファルダ for Visual Studio を使用して Mac アプリのみを追加することができます。
+開始する前に作成 (または、既存の使用) Xamarin.Forms プロジェクト。
+Visual Studio for mac を使用する Mac アプリを追加することができますのみ
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
-**Xamarin.forms、macOS プロジェクトを追加すると、によって[Xamarin 大学](https://university.xamarin.com/)**
+**Xamarin.Forms での macOS プロジェクトを追加すると、によって[Xamarin University](https://university.xamarin.com/)**
 
-## <a name="adding-a-mac-app"></a>Mac アプリケーションを追加します。
+## <a name="adding-a-mac-app"></a>Mac アプリを追加します。
 
-MacOS Sierra や macOS 許可されてが実行される Mac アプリを追加する手順に従います。
+MacOS Sierra および El Capitan を macOS で実行される Mac アプリを追加するこれらの手順に従います。
 
-1. Mac 用 Visual Studio で既存の Xamarin.Forms ソリューションを右クリックし、選択**追加 > 新しいプロジェクトの追加.**
+1. Visual studio for Mac では、既存の Xamarin.Forms ソリューションを右クリックし、選択**追加 > 新しいプロジェクトの追加.**
 
-2. **新しいプロジェクト**ウィンドウを選択**Mac > アプリ > Cocoa アプリ**とキーを押します**次**です。
+2. **新しいプロジェクト**ウィンドウを選択して**Mac > アプリ > Cocoa アプリ**キーを押します**次**します。
 
-3. 型、**アプリ名**(および必要に応じて、ドッキング項目の別の名前を選択)、キーを押します**次**です。
+3. 型、**アプリ名**(および必要に応じて、Dock 項目の別の名前を選択)、キーを押します**次**します。
 
-4. 構成を確認し、キーを押して**作成**です。 次の手順は以下に示します。
+4. 構成とキーを押して確認**作成**です。 次の手順で以下に示します。
 
-  ![Cocoa アプリを追加する方法を示すアニメーションの手順](mac-images/add-macos-proj.gif)
+  ![Cocoa アプリを追加する方法を示すアニメーション化された手順](mac-images/add-macos-proj.gif)
 
-5. Mac プロジェクトを右クリックして**パッケージ > パッケージを追加しています.** を追加する、 [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet です。 このバージョンへの他のプロジェクトを更新することも必要があります。
+5. 右クリックし、Mac のプロジェクトで**パッケージ > パッケージを追加しています.** を追加する、 [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet です。 他のプロジェクトは、このバージョンにも更新する必要があります。
 
-6. Mac プロジェクトを右クリックして**参照**Xamarin.Forms プロジェクト (共有プロジェクトまたは .NET 標準ライブラリ プロジェクト) への参照を追加します。
+6. 右クリックし、Mac のプロジェクトで**参照**Xamarin.Forms プロジェクト (共有プロジェクトまたは .NET Standard ライブラリ プロジェクト) への参照を追加します。
 
-  ![Xamarin.Forms 共有コード プロジェクトへの参照を追加します。](mac-images/references-sml.png)
+  ![Xamarin.Forms の共有コード プロジェクトへの参照を追加します。](mac-images/references-sml.png)
 
-7. 更新**Main.cs**初期化するために、 `AppDelegate`:
+7. Update **Main.cs**初期化するために、 `AppDelegate`:
 
     ```csharp
     static class MainClass
@@ -60,7 +60,7 @@ MacOS Sierra や macOS 許可されてが実行される Mac アプリを追加�
     }
     ```
 
-8. 更新`AppDelegate`Xamarin.Forms を初期化するために、ウィンドウを作成し、Xamarin.Forms アプリケーションの読み込み (適切な設定を記述する`Title`)。 _初期化する必要がある他の依存関係があれば、ここでことがもできます。_
+8. Update `AppDelegate` Xamarin.Forms を初期化するために、ウィンドウを作成し、Xamarin.Forms アプリケーションの読み込み (適切な設定を記憶`Title`)。 _初期化する必要がある他の依存関係があれば、ここでことがもできます。_
 
     ```csharp
     using Xamarin.Forms;
@@ -95,21 +95,21 @@ MacOS Sierra や macOS 許可されてが実行される Mac アプリを追加�
     }
     ```
 
-9. ダブルクリックして**Main.storyboard** Xcode で編集します。 選択、**ウィンドウ**と_をオフに_、**は最初のコント ローラー** (これは上記のコード ウィンドウを作成するため) チェック ボックス。
+9. ダブルクリック**Main.storyboard** Xcode で編集します。 選択、**ウィンドウ**と_をオフに_、**は最初のコント ローラー** (これは上記のコード ウィンドウを作成するため) チェック ボックス。
 
-  [![Xcode では、最初のコント ローラー チェック ボックスをオフに](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
+  [![Xcode では、最初のコント ローラーのチェック ボックスをオフにします。](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
-  望ましくない項目を削除するストーリー ボードにメニュー システムを編集することができます。
+  望ましくない項目を削除するストーリー ボードのメニュー システムを編集することができます。
 
-10. 最後に、(ローカル リソースを追加します。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトからです。
+10. 最後に、追加、ローカル リソースを (例。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトから。
 
-11. Mac プロジェクトでは、macos Xamarin.Forms コードを実行する必要があります!
+11. Mac のプロジェクトでは、macOS で Xamarin.Forms コードを実行する必要があります!
 
 ## <a name="next-steps"></a>次の手順
 
 ### <a name="styling"></a>[スタイル]
 
-加えられた最近の変更と`OnPlatform`任意の数のプラットフォームを対象にできますようになりました。 MacOS が含まれます。
+加えられた最近の変更と`OnPlatform`さまざまなプラットフォームを対象にできますようになりました。 MacOS が含まれます。
 
 ```xml
 <Button.TextColor>
@@ -121,7 +121,7 @@ MacOS Sierra や macOS 許可されてが実行される Mac アプリを追加�
 </Button.TextColor>
 ```
 
-次のようなプラットフォームでも倍加可能性がありますに注意してください:`<On Platform="iOS, macOS" ...>`です。
+このようなプラットフォームでも倍加可能性がありますに注意してください:`<On Platform="iOS, macOS" ...>`します。
 
 ### <a name="window-size-and-position"></a>ウィンドウのサイズと位置
 
@@ -133,28 +133,28 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ## <a name="known-issues"></a>既知の問題
 
-これは、プレビューわけではないが実稼働の準備完了であることが予想されます。 次には、macOS をプロジェクトに追加するときに発生する、いくつかの点を示します。
+これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 MacOS をプロジェクトに追加するときに発生するいくつかの点を次に示します。
 
-### <a name="not-all-nugets-are-ready-for-macos"></a>すべての NuGets の準備ができて macOS
+### <a name="not-all-nugets-are-ready-for-macos"></a>MacOS のすべての NuGets 準備が整いました
 
-パッケージは、macOS プロジェクトで作業を対象に"xamarinmac20"する必要があります。 MacOS をまだサポートしていないを使用するライブラリのいくつかあります。
+パッケージは、macOS project で作業する"xamarinmac20"をターゲットする必要があります。 MacOS をまだサポートしていない一部のライブラリを使用することがわかります。
 
-この場合、追加するプロジェクトのメンテナンス ツールに要求を送信する必要があります。 サポートを取得するまでは、ソリューションを検索する必要があります。
+この場合、追加するプロジェクトのメンテナンス ツールに要求を送信する必要があります。 サポートがインストールされるまでは、代わりとなるものを検索する必要があります。
 
-### <a name="missing-xamarinforms-features"></a>Xamarin.Forms 機能がありません。
+### <a name="missing-xamarinforms-features"></a>不足している Xamarin.Forms の機能
 
-Xamarin.Forms のすべての機能はこのプレビューでは; で完了しましたまだ実装されていない機能の一部の一覧を次に示します。
+Xamarin.Forms のすべての機能がこのプレビューで完了まだ実装されていない機能の一部を次に示します。
 
 * [フッター]
 * イメージの側面
-* ListView-も、UnevenRows サポート、更新、SeparatorColor、SeparatorVisibility
+* ListView – ScrollTo、UnevenRows サポート、更新、SeparatorColor、SeparatorVisibility
 * MasterDetailPage – BackgroundColor
 * ナビゲーション: InsertPageBefore
 * OpenGLRenderer
 * ピッカー-Bindable/観測可能なオブジェクトの実装
 * TabbedPage – BarBackgroundColor、BarTextColor
-* テーブル – UnevenRows
-* ViewCell – IsEnabled、ForceUpdateSize
+* テーブル-UnevenRows
+* ViewCell – IsEnabled ForceUpdateSize
 * WebView – ほとんど WebNavigationEvents
 
 

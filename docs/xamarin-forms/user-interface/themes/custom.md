@@ -1,6 +1,6 @@
 ---
-title: カスタム Xamarin.Forms テーマの作成
-description: この記事では、アプリ内で参照するためのカスタム Xamarin.Forms テーマを作成する方法について説明します。
+title: Xamarin.Forms のカスタム テーマの作成
+description: この記事では、アプリ内で参照するカスタム Xamarin.Forms テーマを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245580"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838171"
 ---
-# <a name="creating-a-custom-xamarinforms-theme"></a>カスタム Xamarin.Forms テーマの作成
+# <a name="creating-a-custom-xamarinforms-theme"></a>Xamarin.Forms のカスタム テーマの作成
 
-![](~/media/shared/preview.png "この API は現在プレビュー中")
+![](~/media/shared/preview.png "この API は現在プレビュー段階")
 
-Nuget パッケージからテーマを追加するだけでなく (など、[ライト](~/xamarin-forms/user-interface/themes/light.md)と[濃い](~/xamarin-forms/user-interface/themes/dark.md)テーマ)、アプリで、独自のリソースを参照できますディクショナリ テーマを作成できます。
+Nuget パッケージからテーマを追加するだけでなく (など、 [Light](~/xamarin-forms/user-interface/themes/light.md)と[濃い](~/xamarin-forms/user-interface/themes/dark.md)テーマ)、アプリで、独自のリソース参照可能なディクショナリのテーマを作成できます。
 
 ## <a name="example"></a>例
 
-3 つ`BoxView`s に表示される、[テーマ ページ](~/xamarin-forms/user-interface/themes/index.md)が 2 つのダウンロード可能なテーマで定義された 3 つのクラスに従ってスタイルします。
+3 つ`BoxView`秒で示すように、[テーマ ページ](~/xamarin-forms/user-interface/themes/index.md)は 2 つのダウンロード可能なテーマで定義されている 3 つのクラスに従ってスタイル指定されます。
 
-これらの作業を理解するのに次のマークアップ、相当するスタイルを作成に直接追加することも、 **App.xaml**です。
+これらの機能については、次のマークアップに直接追加することも、同等のスタイルを作成、 **App.xaml**します。
 
-注、`Class`属性`Style`(はなく、 [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) Xamarin.Forms の以前のバージョンで利用可能な属性)。
+注、`Class`属性`Style`(ではなく、 [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) Xamarin.Forms の以前のバージョンで使用可能な属性)。
 
 ```xml
 <ResourceDictionary>
@@ -63,17 +63,17 @@ Nuget パッケージからテーマを追加するだけでなく (など、[�
 </ResourceDictionary>
 ```
 
-わかります、`Rounded`クラスは、カスタムの効果を参照`CornerRadius`です。
-この特殊効果のコードは次のとおり、参照正しくカスタム`xmlns`に追加する必要があります、 **App.xaml**のルート要素。
+わかります、`Rounded`クラスをカスタム効果を指す`CornerRadius`します。
+次を参照する、正しくカスタムはこのコードが指定された`xmlns`に追加する必要があります、 **App.xaml**のルート要素。
 
 ```csharp
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>.NET 標準のライブラリ プロジェクト、または共有プロジェクト内の c# コード
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>.NET Standard ライブラリ プロジェクトまたは共有プロジェクトで c# コード
 
-ラウンド角を作成するコード`BoxView`使用[効果](~/xamarin-forms/app-fundamentals/effects/index.md)です。
-使用して角の半径を適用、`BindableProperty`適用することによって実装されると、[効果](~/xamarin-forms/app-fundamentals/effects/index.md)です。 効果でプラットフォーム固有のコードが必要です、 [iOS](#ios)と[Android](#android)プロジェクト (下図参照)
+ラウンド角を作成するコード`BoxView`使用[効果](~/xamarin-forms/app-fundamentals/effects/index.md)します。
+使用して、角の半径を適用、`BindableProperty`適用することによって実装されると、[効果](~/xamarin-forms/app-fundamentals/effects/index.md)。 効果でプラットフォーム固有のコードが必要です、 [iOS](#ios)と[Android](#android)プロジェクト (下記参照)。
 
 ```csharp
 namespace ThemesDemo
@@ -128,7 +128,7 @@ namespace ThemesDemo
 
 <a name="ios" />
 
-### <a name="c-code-in-the-ios-project"></a>IOS プロジェクトでの c# コード
+### <a name="c-code-in-the-ios-project"></a>IOS プロジェクトで c# コード
 
 ```csharp
 using System;
@@ -184,7 +184,7 @@ namespace ThemesDemo.iOS
 
 <a name="android" />
 
-### <a name="c-code-in-the-android-project"></a>Android プロジェクトでの c# コード
+### <a name="c-code-in-the-android-project"></a>Android プロジェクトで c# コード
 
 ```csharp
 using System;
@@ -257,8 +257,8 @@ namespace ThemesDemo.Droid
 
 ## <a name="summary"></a>まとめ
 
-カスタムの外観を必要とする各コントロールのスタイルを定義することで、カスタム テーマを作成できます。 さまざまなコントロールの複数のスタイルを識別する必要があります`Class`リソース ディクショナリ内の属性し、設定して適用し、`StyleClass`コントロールの属性です。
+カスタムの外観を必要とする各コントロールのスタイルを定義することで、カスタム テーマを作成できます。 さまざまなコントロールの複数のスタイルを識別する必要があります`Class`、リソース ディクショナリに属性し、設定を適用し、`StyleClass`コントロールの属性。
 
-スタイルを利用することも[効果](~/xamarin-forms/app-fundamentals/effects/index.md)をさらに、コントロールの外観をカスタマイズします。
+スタイルを利用できますも[効果](~/xamarin-forms/app-fundamentals/effects/index.md)をさらに、コントロールの外観をカスタマイズします。
 
-[暗黙的なスタイル](~/xamarin-forms/user-interface/styles/implicit.md)(なし、`x:Key`または`Style`属性) と一致するすべてのコントロールに適用されるは引き続き、`TargetType`です。
+[暗黙的なスタイル](~/xamarin-forms/user-interface/styles/implicit.md)(ことがなく、`x:Key`または`Style`属性) 継続に一致するすべてのコントロールに適用される、`TargetType`します。

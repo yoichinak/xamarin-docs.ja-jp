@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms テーマ
-description: この記事では、Xamarin.Forms のテーマは、標準のビューの特定の視覚的外観を定義するが導入されています。
+title: Xamarin.Forms のテーマ
+description: この記事では、Xamarin.Forms のテーマは、標準的なビューの特定の視覚的外観の定義について説明します。
 ms.prod: xamarin
 ms.assetid: 3DFB7C55-69F6-4980-A501-588719143482
 ms.technology: xamarin-forms
@@ -8,28 +8,28 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 0f49eeba072d6aeb7ead40d5d56d4af9e9bf5e27
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245733"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38814708"
 ---
-# <a name="xamarinforms-themes"></a>Xamarin.Forms テーマ
+# <a name="xamarinforms-themes"></a>Xamarin.Forms のテーマ
 
-![](~/media/shared/preview.png "この API は現在プレビュー中")
+![](~/media/shared/preview.png "この API は現在プレビュー段階")
 
-Xamarin.Forms テーマする 2016年で発表されたおよびフィードバックを提供する顧客用のプレビューとして利用できます。
+Xamarin.Forms のテーマの進化 2016年で発表されたおよびフィードバックを提供するお客様向けのプレビューとして利用できます。
 
-テーマは含めることで Xamarin.Forms アプリケーションに追加、 **Xamarin.Forms.Theme.Base**プラス (の特定のテーマを定義する追加のパッケージの Nuget パッケージ Xamarin.Forms.Theme.Light) またはローカルのテーマを定義して、アプリケーションのそれ以外の場合。
+テーマは含めることで、Xamarin.Forms アプリケーションに追加されます、 **Xamarin.Forms.Theme.Base** (例: 特定のテーマを定義する追加のパッケージと、Nuget パッケージ Xamarin.Forms.Theme.Light) またはそれ以外の場合、アプリケーションのローカルのテーマを定義できます。
 
-参照してください、[ライト テーマ](light.md)と[ダーク テーマ](dark.md)、アプリに追加するか、チェック アウトする方法についてのページ、[例カスタム テーマ](custom.md)です。
+参照してください、[ライト テーマ](light.md)と[ダーク テーマ](dark.md)確認したり、アプリに追加する方法についてのページ、[例のカスタム テーマ](custom.md)します。
 
-**重要:** する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に定型コードを追加することによって`AppDelegate`および Android`MainActivity`です。 これが、将来のプレビュー リリースでは改善されます。
+**重要:** する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
 
 
 ## <a name="control-appearance"></a>コントロールの外観
 
-[ライト](light.md)と[濃い](dark.md)両方のテーマが標準コントロールの特定の外観を定義します。 アプリケーションのリソース ディクショナリにテーマを追加すると、標準のコントロールの外観が変更されます。
+[Light](light.md)と[濃い](dark.md)両方のテーマは、標準のコントロールの特定の外観を定義します。 アプリケーションのリソース ディクショナリにテーマを追加すると、標準のコントロールの外観が変更されます。
 
 次の XAML マークアップは、いくつかの一般的なコントロールを示しています。
 
@@ -43,10 +43,10 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 </StackLayout>
 ```
 
-これらのスクリーン ショットでは、これらのコントロールで表示します。
+これらのスクリーン ショットでは、これらのコントロールに表示します。
 
-* テーマが適用なし
-* ライト テーマ (テーマを持たないに微妙な差異のみ)
+* テーマが適用されていません
+* ライト テーマ (テーマを持たないに微妙な違いのみ)
 * ダーク テーマ
 
 ![](images/standard-none-sml.png "テーマせずコントロール") ![](images/standard-light-sml.png "ライト テーマでのコントロール") ![](images/standard-dark-sml.png "ダーク テーマでのコントロール")
@@ -55,9 +55,9 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 
 ## <a name="styleclass"></a>StyleClass
 
-`StyleClass`プロパティは、テーマによって提供される定義に応じて変更するビューの外観を使用します。
+`StyleClass`プロパティがビューの外観はテーマによって提供される定義に従って変更することができます。
 
-[ライト](light.md)と[濃い](dark.md)両方のテーマの 3 つの異なる外観を定義する、 `BoxView`: `HorizontalRule`、 `Circle`、および`Rounded`です。 このマークアップを表示する 3 つの異なる`BoxView`s 適用とは異なるスタイル クラスを使用します。
+[光](light.md)と[濃い](dark.md)両方のテーマの 3 つの異なる外観を定義する、 `BoxView`: `HorizontalRule`、 `Circle`、および`Rounded`します。 このマークアップを表示する 3 つの異なる`BoxView`を別のスタイル クラスを適用します。
 
 ```xaml
 <StackLayout Padding="40">
@@ -67,7 +67,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 </StackLayout>
 ```
 
-これによって、薄いおよび濃いとおり。
+これは、ように表示されます光と暗い。
 
 ![](images/boxview-light-sml.png "ライト テーマ StyleClass で BoxView") ![](images/boxview-dark-sml.png "ダーク テーマ StyleClass で BoxView")
 
@@ -75,7 +75,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 
 ## <a name="built-in-classes"></a>組み込みクラス
 
-自動的にスタイル設定だけでなく、一般的なは、光を制御し、濃色のテーマが現在の設定を適用できる次のクラスをサポート、`StyleClass`これらのコントロールに。
+自動的にスタイル設定だけでなく、一般的なは、ライトを制御および濃色のテーマが現在設定して適用できる次のクラスをサポート、`StyleClass`これらのコントロールに。
 
 **BoxView**
 
@@ -87,7 +87,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 
 * [円]
 * 丸められます
-* 縮小表示
+* サムネイル
 
 **Button**
 
@@ -107,7 +107,7 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 * サブヘッダー
 * 本文
 * リンク
-* 逆の操作
+* 逆関数
 
 
 ## <a name="troubleshooting"></a>トラブルシューティング
@@ -116,11 +116,11 @@ Xamarin.Forms テーマする 2016年で発表されたおよびフィードバ�
 
 ### <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>ファイルまたはアセンブリ 'Xamarin.Forms.Theme.Light' またはその依存関係の 1 つを読み込めませんでした。
 
-プレビュー リリースでテーマの実行時に読み込むこといない場合があります。 このエラーを解決するのには、関連するプロジェクトに、以下に示すコードを追加します。
+プレビュー リリースでは、テーマの実行時に読み込むことがない場合があります。 このエラーを修正するのには、関連するプロジェクトに、以下に示すコードを追加します。
 
 **iOS**
 
-**<code>appdelegate.cs</code>** 後に次の行を追加 `LoadApplication`
+**AppDelegate.cs**後に次の行を追加 `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

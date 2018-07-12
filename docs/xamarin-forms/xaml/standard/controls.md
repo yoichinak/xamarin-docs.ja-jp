@@ -1,6 +1,6 @@
 ---
-title: XAML (プレビュー) の標準コントロール
-description: この記事では、Xamarin.Forms で使用できる XAML 標準コントロールについて説明します。
+title: XAML Standard (プレビュー) のコントロール
+description: この記事では、Xamarin.Forms で使用できる XAML 標準のコントロールについて説明します。
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
 ms.technology: xamarin-forms
@@ -8,23 +8,23 @@ author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
 ms.openlocfilehash: 1b01d0773f0c2150db575875b770957eb6452f41
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245571"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38843944"
 ---
-# <a name="xaml-standard-preview-controls"></a>XAML (プレビュー) の標準コントロール
+# <a name="xaml-standard-preview-controls"></a>XAML Standard (プレビュー) のコントロール
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-このページでは、同等の Xamarin.Forms コントロールと共に、プレビューで使用できる標準的な XAML コントロールが一覧表示します。
+このページには、プレビューでの同等の Xamarin.Forms コントロールと共に使用できる標準的な XAML コントロールが一覧表示されます。
 
-Standard では XAML のプロパティおよび列挙体の新しい名前を持つコントロールの一覧もあります。
+XAML Standard で新しいプロパティと列挙型の名前を持つコントロールの一覧もあります。
 
 ## <a name="controls"></a>コントロール
 
-|Xamarin.Forms|XAML の標準|
+|Xamarin.Forms|XAML Standard|
 |--- |--- |
 |フレーム|境界線|
 |ピッカー|ComboBox|
@@ -36,18 +36,18 @@ Standard では XAML のプロパティおよび列挙体の新しい名前を�
 |ContentView|UserControl|
 
 
-## <a name="properties-and-enumerations"></a>プロパティおよび列挙
+## <a name="properties-and-enumerations"></a>プロパティと列挙型
 
-|更新されたプロパティを持つ Xamarin.Forms コントロール|Xamarin.Forms プロパティまたは列挙型|該当するショートカットは標準的な XAML|
+|更新されたプロパティを持つ Xamarin.Forms コントロール|Xamarin.Forms プロパティまたは列挙型|標準的な XAML と同等|
 |--- |--- |--- |
-|ボタン、エントリ、ラベル、DatePicker、エディター、SearchBar、TimePicker|textColor|前景|
+|ボタン、エントリ、ラベル、DatePicker、エディター、SearchBar、TimePicker|TextColor|前景|
 |VisualElement|BackgroundColor|バック グラウンド *|
-|ボタンの選択|BorderColor、囲んで|BorderBrush|
+|ボタンの選択|BorderColor、OutlineColor|BorderBrush|
 |ボタン|BorderWidth|BorderThickness|
 |ProgressBar|進行状況|[値]|
-|ボタン、エントリ、ラベル、エディター、SearchBar、スパン、フォント|FontAttributesBold、斜体、なし|FontStyleItalic、標準|
+|ボタン、エントリ、ラベル、エディター、SearchBar、スパン、フォント|FontAttributesBold、斜体、なし|通常、FontStyleItalic|
 |ボタン、エントリ、ラベル、エディター、SearchBar、スパン、フォント|FontAttributes|FontWeights * 太字、標準|
-|InputView|KeyboardDefault、Url、番号、電話、テキスト、チャット、電子メールで送信します。|InputScopeNameValue * 既定、Url、番号、TelephoneNumber、テキスト、チャット、EmailNameOrAddress|
+|InputView|電子メール KeyboardDefault、Url、番号、電話、テキスト、チャット、|InputScopeNameValue * 既定、Url、数値、TelephoneNumber、テキスト、チャット、EmailNameOrAddress|
 |StackPanel|StackOrientation|印刷の向き *|
 
 > [!IMPORTANT]
