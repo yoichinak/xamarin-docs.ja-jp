@@ -6,13 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: 52895564ef327845940d687a58b007fb1502e62b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.date: 07/10/2018
+ms.openlocfilehash: 43a681350035c3e965798bd63f49cd39f472ebfd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935124"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998417"
 ---
 # <a name="windows-platform-specifics"></a>Windows プラットフォーム固有
 
@@ -20,19 +20,21 @@ _プラットフォーム仕様はカスタム レンダラーや特殊効果を
 
 ユニバーサル Windows プラットフォーム (UWP) で Xamarin.Forms には、次のプラットフォームの設定が含まれています。
 
-- ツールバーの配置オプションを設定します。 詳細については、次を参照してください。[ツールバーの配置を変更する](#toolbar_placement)します。
-- 折りたたみ、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)ナビゲーション バー。 詳細については、次を参照してください。 [MasterDetailPage のナビゲーション バーを折りたたみ](#collapsable_navigation_bar)します。
+- ツールバーの配置オプションを設定します。 詳細については、次を参照してください。[ページのツールバーの配置を変更する](#toolbar_placement)します。
+- 折りたたみ、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)ナビゲーション バー。 詳細については、次を参照してください。 [MasterDetailPage のナビゲーション バーを折りたたみ](#collapsable_navigation_bar)します。
 - 有効にすると、 [ `WebView` ](xref:Xamarin.Forms.WebView) UWP メッセージ ダイアログ ボックスで、JavaScript のアラートを表示します。 詳細については、次を参照してください。 [JavaScript のアラートを表示する](#webview-javascript-alert)します。
 - 有効にすると、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)スペル チェック エンジンと対話します。 詳細については、次を参照してください。 [SearchBar スペル チェックを有効にする](#searchbar-spellcheck)します。
 - 検出、テキスト コンテンツからの読み取り順序[ `Entry` ](xref:Xamarin.Forms.Entry)、 [ `Editor` ](xref:Xamarin.Forms.Editor)、および[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 詳細については、次を参照してください。[コンテンツからの読み取り順序を検出する](#inputview-readingorder)します。
 - サポートされている従来のカラー モードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。[レガシ カラー モードを無効にすると](#legacy-color-mode)します。
 - タップ ジェスチャのサポートを有効にすると、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、次を参照してください。[タップ ジェスチャのサポート、ListView で有効にする](#listview-selectionmode)します。
+- 表示されるページのアイコンを有効にすると、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)ツールバー。 詳細については、次を参照してください。[を TabbedPage にアイコンを有効にする](#tabbedpage-icons)します。
+- アクセス キーの設定、 [ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。[設定 VisualElement アクセスキー](#visualelement-accesskeys)します。
 
 <a name="toolbar_placement" />
 
-## <a name="changing-the-toolbar-placement"></a>ツールバーの配置を変更します。
+## <a name="changing-the-page-toolbar-placement"></a>ページのツールバーの配置を変更します。
 
-このプラットフォームに固有の使用のツールバーの配置を変更する、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)、設定によって、XAML で使用されると、 [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/)添付プロパティの値を[`ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/)列挙体。
+このプラットフォームに固有の使用のツールバーの配置を変更する、 [ `Page` ](xref:Xamarin.Forms.Page)、設定によって、XAML で使用されると、 [ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty)添付プロパティの値を[`ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)列挙体。
 
 ```xaml
 <TabbedPage ...
@@ -52,9 +54,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 ```
 
-`Page.On<Windows>`メソッドは、このプラットフォームに固有が Windows でのみ実行されるを指定します。 [ `Page.SetToolbarPlacement` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/)メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)でツールバーの配置を設定するため、名前空間、 [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)列挙体を提供します。3 つの値: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default)、 [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top)、および[ `Bottom`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom)します。
+`Page.On<Windows>`メソッドは、このプラットフォームに固有が Windows でのみ実行されるを指定します。 [ `Page.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)でツールバーの配置を設定するため、名前空間、 [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)列挙体を提供します。3 つの値: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default)、 [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top)、および[ `Bottom`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom)します。
 
-指定されたツールバーの配置が適用されることになります、 [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)インスタンス。
+指定されたツールバーの配置が適用されることになります、 [ `Page` ](xref:Xamarin.Forms.Page)インスタンス。
 
 [![](windows-images/toolbar-placement.png "ツールバーの配置のプラットフォーム固有")](windows-images/toolbar-placement-large.png#lightbox "ツールバーの配置のプラットフォームに固有")
 
@@ -62,7 +64,7 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 ## <a name="collapsing-a-masterdetailpage-navigation-bar"></a>MasterDetailPage のナビゲーション バーの折りたたみ
 
-このプラットフォームに固有のナビゲーション バーを縮小するために使用する[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)、設定によって、XAML で使用されると、 [ `MasterDetailPage.CollapseStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty/)と[ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty/)添付プロパティ。
+このプラットフォームに固有のナビゲーション バーを縮小するために使用する[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)、設定によって、XAML で使用されると、 [ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty)と[ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)添付プロパティ。
 
 ```xaml
 <MasterDetailPage ...
@@ -84,9 +86,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(148);
 ```
 
-`MasterDetailPage.On<Windows>`メソッドは、このプラットフォームに固有が Windows でのみ実行されるを指定します。 [ `Page.SetCollapseStyle` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/)メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)と折りたたみのスタイルを指定する名前空間が使用される、 [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/)列挙型の 2 つを提供します。値: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full)と[ `Partial`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial)します。 [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/System.Double/)メソッドを使用して、部分的に折りたたまれたナビゲーション バーの幅を指定します。
+`MasterDetailPage.On<Windows>`メソッドは、このプラットフォームに固有が Windows でのみ実行されるを指定します。 [ `Page.SetCollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)と折りたたみのスタイルを指定する名前空間が使用される、 [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)列挙型の 2 つを提供します。値: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full)と[ `Partial`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial)します。 [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},System.Double))メソッドを使用して、部分的に折りたたまれたナビゲーション バーの幅を指定します。
 
-結果は、指定されたを[ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/)に適用される、 [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)も指定されている幅でのインスタンス。
+結果は、指定されたを[ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)に適用される、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)も指定されている幅でのインスタンス。
 
 [![](windows-images/collapsed-navigation-bar.png "プラットフォームに固有のナビゲーション バーが折りたたまれている")](windows-images/collapsed-navigation-bar-large.png#lightbox "プラットフォームに固有のナビゲーション バーが折りたたまれています。")
 
@@ -293,6 +295,153 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 結果はするが、指定された[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)に適用される、 [ `ListView` ](xref:Xamarin.Forms.ListView)、どのコントロールかどうか内の項目、`ListView`タップ ジェスチャに応答できるため、かどうか、ネイティブ`ListView`発生、`ItemClick`または`Tapped`イベント。
 
+<a name="tabbedpage-icons" />
+
+## <a name="enabling-icons-on-a-tabbedpage"></a>アイコンを TabbedPage を有効にします。
+
+表示されるページのアイコンにより、このプラットフォームに固有の[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)ツールバーで、し、必要に応じて、アイコンのサイズを指定する機能を提供します。 XAML で設定して使用される、 [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty)添付プロパティを`true`、および必要に応じて設定して、 [ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty)添付プロパティを[ `Size`](xref:Xamarin.Forms.Size)値。
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+            windows:TabbedPage.HeaderIconsEnabled="true">
+    <windows:TabbedPage.HeaderIconsSize>
+        <Size>
+            <x:Arguments>
+                <x:Double>24</x:Double>
+                <x:Double>24</x:Double>
+            </x:Arguments>
+        </Size>
+    </windows:TabbedPage.HeaderIconsSize>
+    <ContentPage Title="Todo" Icon="todo.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Reminders" Icon="reminders.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Contacts" Icon="contacts.png">
+        ...
+    </ContentPage>
+</TabbedPage>
+```
+
+代わりに、fluent API を使用して c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
+{
+  public WindowsTabbedPageIconsCS()
+    {
+    On<Windows>().SetHeaderIconsEnabled(true);
+    On<Windows>().SetHeaderIconsSize(new Size(24, 24));
+
+    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+  }
+}
+```
+
+`TabbedPage.On<Windows>`メソッドは、このプラットフォームに固有はユニバーサル Windows プラットフォームでのみ実行されるを指定します。 [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間はヘッダー アイコンをオンまたはオフにするために使用します。 [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size))メソッドは、必要に応じてでヘッダーのアイコンのサイズを指定します、 [ `Size` ](xref:Xamarin.Forms.Size)値。
+
+さらに、`TabbedPage`クラス、`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`名前空間があります、 [ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*)ヘッダーのアイコンをできるようにするメソッド、 [ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*)ヘッダーのアイコンを無効にするメソッドと[ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*)を返すメソッドを`boolean`ヘッダーのアイコンが有効になっているかどうかを示す値です。
+
+結果は、そのページのアイコンを表示することができます、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) 、オプションで必要なサイズに設定されているアイコンのサイズを含むツールバー。
+
+![TabbedPage プラットフォーム固有のアイコンが有効になっている](windows-images/tabbedpage-icons.png "TabbedPage プラットフォーム固有のアイコンが有効になっています。")
+
+<a name="visualelement-accesskeys" />
+
+## <a name="setting-visualelement-access-keys"></a>VisualElement アクセス キーの設定
+
+アクセス キーは、キーボードの代わりにタッチを使用して、アプリの表示の UI を使用したにすばやく移動し、対話ユーザー向けの直感的な方法を提供することで、使いやすさとユニバーサル Windows プラットフォームでアプリのアクセシビリティを向上させるためのキーボード ショートカット、またはマウス。 これらは、Alt キーと 1 つまたは複数英数字キー、順番に押された通常の組み合わせです。 キーボード ショートカットは自動的に 1 つの英数字を使用して、アクセス キーのサポートします。
+
+アクセス キーのヒントの縦棒は浮動バッジのアクセス キーを含むコントロールの横に表示されます。 各アクセス キーのヒントには、関連付けられているコントロールをアクティブ化する英数字キーが含まれています。 ユーザーは、Alt キーを押すと、アクセス キーのヒントが表示されます。
+
+このプラットフォームに固有の使用のアクセス キーを指定する、 [ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 XAML で設定して使用される、 [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty)添付プロパティの英数字の値に設定し、必要に応じて、 [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty)添付プロパティを@property[ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)列挙型で、 [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty)添付プロパティを`double`、および[ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty)添付プロパティを`double`:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <ContentPage Title="Page 1"
+                 windows:VisualElement.AccessKey="1">
+        <StackLayout Margin="20">
+            ...
+            <Switch windows:VisualElement.AccessKey="A" />
+            <Entry Placeholder="Enter text here"
+                   windows:VisualElement.AccessKey="B" />
+            ...
+            <Button Text="Access key F, placement top with offsets"
+                    Margin="20"
+                    Clicked="OnButtonClicked"
+                    windows:VisualElement.AccessKey="F"
+                    windows:VisualElement.AccessKeyPlacement="Top"
+                    windows:VisualElement.AccessKeyHorizontalOffset="20"
+                    windows:VisualElement.AccessKeyVerticalOffset="20" />
+            ...
+        </StackLayout>
+    </ContentPage>
+    ...
+</TabbedPage>
+```
+
+代わりに、fluent API を使用して c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var page = new ContentPage { Title = "Page 1" };
+page.On<Windows>().SetAccessKey("1");
+
+var switchView = new Switch();
+switchView.On<Windows>().SetAccessKey("A");
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.On<Windows>().SetAccessKey("B");
+...
+
+var button4 = new Button { Text = "Access key F, placement top with offsets", Margin = new Thickness(20) };
+button4.Clicked += OnButtonClicked;
+button4.On<Windows>()
+    .SetAccessKey("F")
+    .SetAccessKeyPlacement(AccessKeyPlacement.Top)
+    .SetAccessKeyHorizontalOffset(20)
+    .SetAccessKeyVerticalOffset(20);
+...
+```
+
+`VisualElement.On<Windows>`メソッドは、このプラットフォームに固有はユニバーサル Windows プラットフォームでのみ実行されるを指定します。 [ `VisualElement.SetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.String))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間のアクセス キーの値を設定するため、`VisualElement`します。 [ `VisualElement.SetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},Xamarin.Forms.AccessKeyPlacement))メソッドでアクセス キーのヒントを表示するために使用する位置を指定、 [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)次の値を提供する列挙体。
+
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) – アクセス キーのヒントの配置は、オペレーティング システムによって決定されることを示します。
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) – より上のアクセス キーのヒントが表示されることを示します、`VisualElement`します。
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) – アクセス キーのヒントが下のエッジの下に表示されることを示します、`VisualElement`します。
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) – アクセス キーのヒントの右端の右側に表示されることを示します、`VisualElement`します。
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) – の左エッジから左へのアクセス キーのヒントが表示されることを示します、`VisualElement`します。
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) – の中心をアクセス キーのヒントを重ねて表示はことを示します、`VisualElement`します。
+
+> [!NOTE]
+> 通常、 [ `Auto` ](xref:Xamarin.Forms.AccessKeyPlacement.Auto)キー ヒントの配置が不十分で、適応ユーザー インターフェイスのサポートが含まれています。
+
+[ `VisualElement.SetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double))と[ `VisualElement.SetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double))アクセス キーのヒントの場所のより詳細なコントロールには、メソッドを使用することができます。 引数、`SetAccessKeyHorizontalOffset`メソッドは、アクセス キー ヒント左に移動する距離または右側に、方法と引数を示します、`SetAccessKeyVerticalOffset`メソッドは、アクセス キーのヒントを上下に移動するまでの方法を示します。
+
+>[!NOTE]
+> アクセス キーの配置が設定されている場合は、アクセス キーのヒントのオフセットを設定することはできません`Auto`します。
+
+さらに、 [ `GetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))、 [ `GetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))、 [ `GetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))、および[ `GetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))メソッドを使用することができますアクセスを取得するキーの値とその場所。
+
+結果は、アクセス キーのヒントは、いずれかの横に表示できる[ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Alt キーを押してアクセス キーを定義するインスタンス。
+
+![VisualElement アクセス プラットフォームに固有のキー](windows-images/visualelement-accesskeys.png "VisualElement アクセス プラットフォームに固有のキー")
+
+ユーザー アクセス後に Alt キーを押してアクセス キーをアクティブにしたときのキーの既定のアクション、`VisualElement`が実行されます。 などの場合、ユーザーがアクティブにアクセス キーで、 [ `Switch` ](xref:Xamarin.Forms.Switch)、`Switch`が切り替えられました。 ユーザーがアクセス キーをアクティブ化のときに、 [ `Entry` ](xref:Xamarin.Forms.Entry)、`Entry`がフォーカスを取得します。 ユーザーがアクセス キーをアクティブ化のときに、 [ `Button`](xref:Xamarin.Forms.Button)のイベント ハンドラー、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)イベントを実行します。
+
+アクセス キーの詳細については、次を参照してください。[アクセス キー](/windows/uwp/design/input/access-keys#key-tip-positioning)します。
+
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.Forms に組み込まれている Windows プラットフォームの詳細を使用する方法を示しました。 プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
@@ -301,4 +450,4 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)
+- [WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

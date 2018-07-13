@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935372"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998268"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms のデバイス クラス
 
@@ -24,11 +24,11 @@ ms.locfileid: "37935372"
 
 ## <a name="providing-platform-specific-values"></a>プラットフォーム固有の値を提供します。
 
-Xamarin.Forms 2.3.4、前に、アプリケーションが実行されていたプラットフォームを調べることによって入手でした、 [ `Device.OS` ](xref:Xamarin.Forms.Device.OS)プロパティと比較することに、 [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS)、 [`TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android)、 [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone)、および[ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows)列挙値。 同様に、1 つの[ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/)コントロールにプラットフォーム固有の値を指定するオーバー ロードを使用する可能性があります。
+Xamarin.Forms 2.3.4、前に、アプリケーションが実行されていたプラットフォームを調べることによって入手でした、 [ `Device.OS` ](xref:Xamarin.Forms.Device.OS)プロパティと比較することに、 [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS)、 [`TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android)、 [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone)、および[ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows)列挙値。 同様に、1 つの[ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))コントロールにプラットフォーム固有の値を指定するオーバー ロードを使用する可能性があります。
 
-ただし、Xamarin.Forms 2.3.4 以降これらの Api 非推奨とされ、置き換えられました。 [ `Device` ](xref:Xamarin.Forms.Device)クラスでは、プラットフォームを識別するパブリック文字列定数に含まれて[ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS)、 [ `Device.Android` ](xref:Xamarin.Forms.Device.Android)、 `Device.WinPhone`(非推奨)、 `Device.WinRT` (非推奨)、 [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP)、および[ `Device.macOS`](xref:Xamarin.Forms.Device.macOS)します。 同様に、 [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/)オーバー ロードに置き換えられましたが、 [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/)と[ `On` ](xref:Xamarin.Forms.On) Api。
+ただし、Xamarin.Forms 2.3.4 以降これらの Api 非推奨とされ、置き換えられました。 [ `Device` ](xref:Xamarin.Forms.Device)クラスでは、プラットフォームを識別するパブリック文字列定数に含まれて[ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS)、 [ `Device.Android` ](xref:Xamarin.Forms.Device.Android)、 `Device.WinPhone`(非推奨)、 `Device.WinRT` (非推奨)、 [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP)、および[ `Device.macOS`](xref:Xamarin.Forms.Device.macOS)します。 同様に、 [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))オーバー ロードに置き換えられましたが、 [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)と[ `On` ](xref:Xamarin.Forms.On) Api。
 
-C# で作成してプラットフォーム固有の値を指定できます、`switch`のステートメントで、 [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/)プロパティ、および提供`case`ステートメントの必要なプラットフォーム。
+C# で作成してプラットフォーム固有の値を指定できます、`switch`のステートメントで、 [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform)プロパティ、および提供`case`ステートメントの必要なプラットフォーム。
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/)と[ `On` ](xref:Xamarin.Forms.On)クラスは、XAML で同じ機能を提供します。
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)と[ `On` ](xref:Xamarin.Forms.On)クラスは、XAML で同じ機能を提供します。
 
 ```xaml
 <StackLayout>
@@ -60,7 +60,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/)クラスはジェネリック クラスでありでインスタンス化する必要があります、`x:TypeArguments`ターゲット型と一致する属性。 [ `On` ](xref:Xamarin.Forms.On)クラス、 [ `Platform` ](xref:Xamarin.Forms.On.Platform)属性は、1 つを受け入れることができる`string`値、またはコンマで区切られた複数`string`値。
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)クラスはジェネリック クラスでありでインスタンス化する必要があります、`x:TypeArguments`ターゲット型と一致する属性。 [ `On` ](xref:Xamarin.Forms.On)クラス、 [ `Platform` ](xref:Xamarin.Forms.On.Platform)属性は、1 つを受け入れることができる`string`値、またはコンマで区切られた複数`string`値。
 
 > [!IMPORTANT]
 > 提供が不適切な`Platform`属性の値、`On`クラスは、エラーは発生しません。 代わりに、コードは、適用されているプラットフォームに固有の値を指定せずに実行されます。
@@ -75,6 +75,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 -  **タブレット**: iPad、Windows デバイス、および Android デバイスの 600 dip よりも広い ^
 -  **デスクトップ**– で返されるのみ[UWP アプリ](~/xamarin-forms/platform/windows/installation/index.md)Windows 10 のデスクトップ コンピューター (返します`Phone`Continuum シナリオにおけるを含む、Windows のモバイル デバイスで)
 -  **テレビ**– Tizen TV のデバイス
+-  **ウォッチ**– Tizen watch デバイス
 -  **サポートされていない**– 使用されていません。
 
 *^ dip とは限りません物理ピクセル数*
@@ -172,7 +173,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-ユーザー インターフェイス要素は、タイマーまたは web 要求などの非同期操作の完了ハンドラーで実行されるコードなどのバック グラウンド スレッドによってアクセスすることことはありません。 ユーザー インターフェイスを更新する必要がある任意のバック グラウンド コード内でラップする必要があります[ `BeginInvokeOnMainThread`](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/)します。 これは、相当の`InvokeOnMainThread`ios では、 `RunOnUiThread` android と`Dispatcher.RunAsync`ユニバーサル Windows プラットフォームで。
+ユーザー インターフェイス要素は、タイマーまたは web 要求などの非同期操作の完了ハンドラーで実行されるコードなどのバック グラウンド スレッドによってアクセスすることことはありません。 ユーザー インターフェイスを更新する必要がある任意のバック グラウンド コード内でラップする必要があります[ `BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))します。 これは、相当の`InvokeOnMainThread`ios では、 `RunOnUiThread` android と`Dispatcher.RunAsync`ユニバーサル Windows プラットフォームで。
 
 Xamarin.Forms コードです。
 

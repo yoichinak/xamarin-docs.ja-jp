@@ -1,39 +1,39 @@
 ---
-title: Xamarin.Forms バインド パス
-description: この記事では、Xamarin.Forms データ バインディングを使用してサブプロパティとバインディング クラスのパスのプロパティを使用してコレクションのメンバーにアクセスする方法について説明します。
+title: Xamarin.Forms のバインド パス
+description: この記事では、Xamarin.Forms のデータ バインディングを使用してサブプロパティとバインディング クラスのパスのプロパティを持つコレクションのメンバーにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: d7c3b1ba991380451b4a82c389c4d46e950bc914
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 887a20f1791a190c182e6d179cfabb46c6e0eb48
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240474"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998948"
 ---
-# <a name="xamarinforms-binding-path"></a>Xamarin.Forms バインド パス
+# <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
 
-例ではすべて、以前のデータ バインディング、 [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/)のプロパティ、`Binding`クラス (または[ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/)のプロパティ、`Binding`マークアップ拡張機能) が設定されています。1 つのプロパティです。 設定を実際に可能であれば`Path`を*サブプロパティ*(プロパティのプロパティ)、またはコレクションのメンバーにします。
+前のデータ バインディング例をすべてで、 [ `Path` ](xref:Xamarin.Forms.Binding.Path)のプロパティ、`Binding`クラス (または[ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path)のプロパティ、`Binding`マークアップ拡張機能) が設定されています。1 つのプロパティ。 実際には、設定することは`Path`を*サブプロパティ*(プロパティのプロパティ)、またはコレクションのメンバーにします。
 
-たとえば、ページが含まれている、 `TimePicker`:
+たとえば、ページが含まれています、 `TimePicker`:
 
 ```xaml
 <TimePicker x:Name="timePicker">
 ```
 
-`Time`プロパティの`TimePicker`の種類は`TimeSpan`を参照するデータ バインドを作成したい場合は、`TotalSeconds`そのプロパティ`TimeSpan`値。 データ バインディングを次に示します。
+`Time`プロパティの`TimePicker`の種類は`TimeSpan`を参照するデータ バインディングを作成する場合がありますが、`TotalSeconds`プロパティを`TimeSpan`値。 データ バインディングを次に示します。
 
 ```xaml
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
 
-`Time`プロパティの型は`TimeSpan`を持つ、`TotalSeconds`プロパティです。 `Time`と`TotalSeconds`プロパティがピリオドで接続しています。 内の項目、`Path`プロパティには、これらのプロパティの型が文字列は常に参照します。
+`Time`プロパティの型は`TimeSpan`を持つ、`TotalSeconds`プロパティ。 `Time`と`TotalSeconds`プロパティは、ピリオドで接続しています。 内の項目、`Path`プロパティには、これらのプロパティの型が文字列は常に参照します。
 
-例およびその他のいくつかで表示されている、**パス バリエーション**ページ。
+例と他のいくつかのユーザーに表示されている、**パス バリエーション**ページ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,11 +89,11 @@ ms.locfileid: "35240474"
 </ContentPage>
 ```
 
-2 番目の`Label`、バインド ソースは、ページ自体です。 `Content`プロパティの型は`StackLayout`を持つ、`Children`型のプロパティ`IList<View>`を持つ、`Count`子供の数を示すプロパティです。
+2 番目の`Label`、バインディング ソースは、ページ自体。 `Content`プロパティの型は`StackLayout`を持つ、`Children`型のプロパティ`IList<View>`を持つ、`Count`子の数を示すプロパティです。
 
 ## <a name="paths-with-indexers"></a>インデクサーのパス
 
-3 番目のバインディング`Label`で、**パス バリエーション**ページを参照、 [ `CultureInfo` ](https://developer.xamarin.com/api/type/System.Globalization.CultureInfo/)クラス内で、`System.Globalization`名前空間。
+3 番目のバインド`Label`で、**パス バリエーション**ページを参照、 [ `CultureInfo` ](xref:System.Globalization.CultureInfo)クラス、`System.Globalization`名前空間。
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -101,9 +101,9 @@ ms.locfileid: "35240474"
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-ソースが、静的に設定されている`CultureInfo.CurrentCulture`プロパティと型のオブジェクトは`CultureInfo`します。 クラスをという名前のプロパティを定義する`DateTimeFormat`型の[ `DateTimeFormatInfo` ](https://developer.xamarin.com/api/type/System.Globalization.DateTimeFormatInfo/)を格納している、`DayNames`コレクション。 インデックスでは、4 番目の項目を選択します。
+ソースが、静的に設定されている`CultureInfo.CurrentCulture`型のオブジェクトであるプロパティ`CultureInfo`します。 クラスがという名前のプロパティを定義する`DateTimeFormat`型の[ `DateTimeFormatInfo` ](xref:System.Globalization.DateTimeFormatInfo)を格納している、`DayNames`コレクション。 インデックスは、4 番目の項目を選択します。
 
-4 番目`Label`何かフランスに関連付けられているカルチャが似ています。 `Source`バインドのプロパティに設定されて`CultureInfo`コンス トラクターを持つオブジェクト。
+4 番目`Label`フランスに関連付けられているカルチャが同様の処理を実行します。 `Source`バインドのプロパティに設定されて`CultureInfo`コンス トラクターを持つオブジェクト。
 
 ```xaml
 <Label>
@@ -124,7 +124,7 @@ ms.locfileid: "35240474"
 
 参照してください[コンス トラクターの引数を渡す](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)XAML でコンス トラクターの引数を指定する方法の詳細についてはします。
 
-最後に、最後の例がに似ていますが、2 番目の子のいずれかを参照する点を除いて、 `StackLayout`:
+最後に、最後の例では、似ていますが、2 番目の子のいずれかを参照して、 `StackLayout`:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -132,22 +132,22 @@ ms.locfileid: "35240474"
                       StringFormat='The first Label has {0} characters'}" />
 ```
 
-その子は、`Label`を持つ、`Text`型のプロパティ`String`を持つ、`Length`プロパティです。 最初の`Label`レポート、`TimeSpan`で設定、`TimePicker`そのテキストが変更されたときに、最終的な`Label`も変わります。
+その子は、`Label`を持つ、`Text`型のプロパティ`String`を持つ、`Length`プロパティ。 最初の`Label`レポート、`TimeSpan`設定、`TimePicker`そのテキストが変更されたときに、最終的な`Label`にも変更します。
 
 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
 
 [![パスのバリエーション](binding-path-images/pathvariations-small.png "パス バリエーション")](binding-path-images/pathvariations-large.png#lightbox "パスのバリエーション")
 
-## <a name="debugging-complex-paths"></a>複合パスのデバッグ
+## <a name="debugging-complex-paths"></a>複雑なパスのデバッグ
 
-複合パスの定義を構築するが困難にすることができます。 各サブ プロパティの型、または正しくサブプロパティ [次へ] を追加するコレクション内の項目の種類を理解する必要がありますが、型自体は、パスには表示されません。 適切な手法の 1 つでは、インクリメンタル ビルド パスを構成し、中間結果を確認します。 その最後の例のなしで起動することが`Path`すべてで定義します。
+複合パスの定義の作成は難しい。 各サブ プロパティの型か、[次へ] サブ プロパティが正常に追加するコレクション内の項目の種類を知っておく必要がありますが、型自体は、パスには表示されません。 1 つの優れた手法では、インクリメンタル ビルドをパスして、中間結果を見てです。 その最後の例のなしで開始でした`Path`ですべての定義。
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
                       StringFormat='{0}'}" />
 ```
 
-バインディング ソースの種類を表示するか、`DataBindingDemos.PathVariationsPage`です。 わかって`PathVariationsPage`から派生した`ContentPage`があるので、`Content`プロパティ。
+バインディング ソースの種類を表示するか、`DataBindingDemos.PathVariationsPage`します。 わかって`PathVariationsPage`から派生した`ContentPage`のでがある、`Content`プロパティ。
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -155,15 +155,15 @@ ms.locfileid: "35240474"
                       StringFormat='{0}'}" />
 ```
 
-型、`Content`プロパティに明らかにするようになりました`Xamarin.Forms.StackLayout`です。 追加、`Children`プロパティを`Path`され、型は`Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`、これは、Xamarin.Forms が明らかに、コレクション型の内部クラス。 インデックスを追加して、型が`Xamarin.Forms.Label`です。 この方法で続行します。
+種類、`Content`プロパティにある明らかになったようになりました`Xamarin.Forms.StackLayout`します。 追加、`Children`プロパティを`Path`、種類が`Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`、これは、Xamarin.Forms が明らかに、コレクション型の内部クラスです。 インデックスを追加して、型が`Xamarin.Forms.Label`します。 この方法で続行します。
 
-Xamarin.Forms では、バインド パスを処理すると、インストール、`PropertyChanged`ハンドラーを実装するパスの任意のオブジェクトに、`INotifyPropertyChanged`インターフェイスです。 最後のバインドが、最初の変更に反応するなど、`Label`ため、`Text`プロパティが変更されました。
+Xamarin.Forms では、バインド パスを処理すると、インストール、`PropertyChanged`ハンドラーを実装するパスの任意のオブジェクト、`INotifyPropertyChanged`インターフェイス。 最終的なバインドが 1 つ目の変更に反応するなど、`Label`ため、`Text`プロパティの変更。
 
-バインド パスでは、プロパティを実装しないかどうか`INotifyPropertyChanged`、そのプロパティへの変更は無視されます。 いくつかの変更には、決してプロパティとサブプロパティの文字列が無効になる場合にのみ、この手法を使用する必要がありますので、バインド パスが無効にまったく可能性があります。
+かどうか、バインド パスにプロパティを実装しません`INotifyPropertyChanged`、そのプロパティに変更が無視されます。 いくつかの変更には、決してプロパティおよびサブプロパティの文字列が無効になる場合にのみ、この手法を使用する必要がありますので、バインド パスが無効にまったくでした。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディング デモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Xamarin.Forms 帳からのデータ バインディング章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms book からデータ バインド」の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

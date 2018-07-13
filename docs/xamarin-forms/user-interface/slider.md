@@ -1,48 +1,58 @@
 ---
-title: Xamarin.Forms スライダー
-description: Xamarin.Forms スライダーは、連続した範囲から double 型の値を選択する、ユーザーが操作できる水平バーです。 この記事では、スライダーのクラスを使用して、連続値の範囲から値を選択する方法について説明します。
+title: Xamarin.Forms のスライダー
+description: Xamarin.Forms、スライダーは、水平のバーから連続する範囲を double 型の値を選択するユーザーによって操作できます。 この記事では、スライダーのクラスを使用して、継続的な値の範囲から値を選択する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 03/16/2018
-ms.openlocfilehash: 33c26abe2de017b6d8070053baf917cdd7a0dfc6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/10/2018
+ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245808"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998242"
 ---
-# <a name="xamarinforms-slider"></a>Xamarin.Forms スライダー
+# <a name="xamarinforms-slider"></a>Xamarin.Forms のスライダー
 
-_連続値の範囲から選択する場合、スライダーを使用します。_
+_継続的な値の範囲から選択するためには、スライダーを使用します。_
 
-Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)水平のバーを選択する、ユーザーが操作できる、`double`連続した範囲からの値。
+Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)水平のバーを選択する、ユーザーが操作できる、`double`を連続する範囲の値。
 
-`Slider`型の 3 つのプロパティを定義`double`:
+`Slider`型の 3 つのプロパティを定義します`double`:。
 
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) 既定値は 0、範囲の最小です。
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) 既定値 1 の範囲の最大です。
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) 間の範囲は、スライダーの値は、`Minimum`と`Maximum`あり、既定値は 0 です。
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) 既定値が 0 で、範囲の最小値です。
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) 既定値は 1 の範囲の最大となります。
+- [`Value`](xref:Xamarin.Forms.Slider.Value) 間の範囲スライダーの値は、`Minimum`と`Maximum`あり、既定値は 0 です。
 
-3 つすべてのプロパティが裏付け`BindableProperty`オブジェクト。 `Value`プロパティがの既定のバインド モード`BindingMode.TwoWay`、使用するアプリケーションでバインディング ソースとして適切であることを意味する、[モデル View-viewmodel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャ。
-
-> [!WARNING]
-> 内部的には、`Slider`確実`Minimum`はより小さい`Maximum`です。 場合`Minimum`または`Maximum`これまでに設定できるように`Minimum`はより小さくない`Maximum`例外が発生します。 参照してください、 [**予防措置**](#precautions)設定の詳細については、後述の「、`Minimum`と`Maximum`プロパティです。
-
-`Slider`型に変換、`Value`プロパティ間であること、`Minimum`と`Maximum`、包括的です。 場合、`Minimum`プロパティがより大きい値に設定、 `Value` 、プロパティ、`Slider`設定、`Value`プロパティを`Minimum`です。 同様に場合、`Maximum`値に設定されているより小さい`Value`、し`Slider`設定、`Value`プロパティを`Maximum`です。
-
-`Slider` 定義、 [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/)ときに発生するイベント、`Value`いずれかのユーザー操作によって変更、`Slider`プログラムが設定した場合や、`Value`プロパティを直接です。 A`ValueChanged`イベントが発生時にも、`Value`プロパティは、前の段落で説明したように強制変換されます。
-
-[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/)に付属しているオブジェクト、`ValueChanged`イベントの種類の両方の 2 つのプロパティには、 `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/)と[ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). 時に、イベントが発生したの値`NewValue`と同じ、`Value`のプロパティ、`Slider`オブジェクト。
+3 つすべてのプロパティが支え`BindableProperty`オブジェクト。 `Value`プロパティの既定のバインド モードは、 `BindingMode.TwoWay`、使用するアプリケーションでバインディング ソースとして適切であることを意味する、[モデル-ビュー-ビューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャ。
 
 > [!WARNING]
-> 制約なしの水平レイアウト オプションを使用しない`Center`、 `Start`、または`End`で`Slider`です。 Android と UWP の両方で、`Slider`が折りたたまれて、長さが 0 と ios の場合、バーのバーには非常に短い時間です。 既定値を保持`HorizontalOptions`の設定`Fill`、しの幅を使用しないように`Auto`設定時に`Slider`で、`Grid`レイアウトです。
+> 内部的には、`Slider`により`Minimum`がより小さい`Maximum`します。 場合`Minimum`または`Maximum`がこれまでに設定できるように`Minimum`はより小さくない`Maximum`例外が発生します。 参照してください、 [**予防策**](#precautions)設定の詳細については、以下のセクション、`Minimum`と`Maximum`プロパティ。
+
+`Slider`型に変換、`Value`プロパティ間なるように`Minimum`と`Maximum`までの値。 場合、`Minimum`プロパティがより大きい値に設定、`Value`プロパティ、`Slider`設定、`Value`プロパティを`Minimum`します。 同様に場合、`Maximum`値に設定されているより小さい`Value`、し`Slider`設定、`Value`プロパティを`Maximum`します。
+
+`Slider` 定義、 [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)ときに発生するイベント、`Value`いずれかのユーザー操作によって、変更、`Slider`プログラムを設定した場合、または、`Value`プロパティを直接。 A`ValueChanged`イベントがときに発生することはまた、`Value`プロパティは、前の段落で説明したように強制変換されます。
+
+[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)に付属しているオブジェクト、`ValueChanged`イベントには 2 つのプロパティが両方の種類の`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)と[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 時にイベントが発生して、値の`NewValue`と同じ、`Value`のプロパティ、`Slider`オブジェクト。
+
+> [!WARNING]
+> 水平レイアウトの制約のないオプションを使用しない`Center`、 `Start`、または`End`で`Slider`します。 Android と、UWP の両方で、`Slider`バーの長さが 0、および ios では、バーに折りたたまれては非常に短いです。 既定値を保持`HorizontalOptions`設定`Fill`の幅を使用しないと`Auto`設定時に`Slider`で、`Grid`レイアウト。
+
+`Slider`も外観に影響を与えるいくつかのプロパティを定義します。
+
+- [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) バーのつまみの左側にある色です。
+- [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) バーのつまみの右側にある色です。
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) つまみの色です。 このプロパティは、ユニバーサル Windows プラットフォームでサポートされていません。
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 一般的に、型に使用するイメージ[ `FileImageSource`](xref:Xamarin.Forms.FileImageSource)します。 このプロパティは、ユニバーサル Windows プラットフォームでサポートされていません。
+
+> [!NOTE]
+> `ThumbColor`と`ThumbImage`プロパティは相互に排他的です。 両方のプロパティが設定されている場合、`ThumbImage`プロパティが優先されます。
 
 ## <a name="basic-slider-code-and-markup"></a>スライダーの基本的なコードとマークアップ
 
-[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプル機能的に同等ですが、さまざまな方法で実装されている 3 つのページから始まります。 最初のページのみの c# コードを使用して、2 つ目はコードでは、イベント ハンドラーと XAML を使用および 3 番目は XAML ファイルでデータ バインディングを使用して、イベント ハンドラーを回避することです。
+[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプル機能的に同等ですが、さまざまな方法で実装されている 3 つのページから始まります。 最初のページは、c# コードを使用して、2 つ目は、コードでは、イベント ハンドラーで XAML を使用して、3 番目は、XAML ファイルでデータ バインディングを使用して、イベント ハンドラーを回避すること。
 
 ### <a name="creating-a-slider-in-code"></a>コードで、スライダーの作成
 
@@ -93,17 +103,17 @@ public class BasicSliderCodePage : ContentPage
 }
 ```
 
-`Slider`が初期化されて、 `Maximum` 360 のプロパティです。 `ValueChanged`のハンドラー、`Slider`を使用して、`Value`のプロパティ、`slider`を設定するオブジェクト、`Rotation`最初の`Label`を使用して、`String.Format`メソッドを`NewValue`のプロパティ、イベント引数を設定する、 `Text` 2 番目のプロパティ`Label`です。 現在の値を取得する 2 つの方法、`Slider`は互換性があります。
+`Slider`が初期化されて、 `Maximum` 360 のプロパティ。 `ValueChanged`のハンドラー、`Slider`を使用して、`Value`のプロパティ、`slider`を設定するオブジェクト、`Rotation`最初の`Label`を使用して、`String.Format`メソッドを`NewValue`のプロパティ、イベント引数を設定する、`Text`プロパティは、2 つ目の`Label`します。 現在の値を取得する 2 つの方法、`Slider`を交換できます。
 
 デバイスを iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) で実行されているプログラムを次に示します。
 
-[![基本的なスライダー コード](slider-images/BasicSliderCode.png "基本的なスライダー コード")](slider-images/BasicSliderCode-Large.png#lightbox)
+[![基本的なスライダー コード](slider-images/BasicSliderCode.png "スライダーの基本的なコード")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-2 番目`Label`まで「(初期化されていない)」のテキストを表示、`Slider`操作は、最初のケースを`ValueChanged`イベントが発生します。 表示される小数点以下桁数が 3 つのプラットフォームの異なることに注意してください。 これらの相違点は、実装に関連する、プラットフォームの`Slider`セクションでは、この記事の後半で説明して[プラットフォームの実装の違い](#implementations)です。
+2 番目の`Label`まで「(初期化されていない)」のテキストが表示されます、`Slider`操作は、1 つ目のケースを`ValueChanged`イベントが。 表示される小数点以下桁数が 3 つのプラットフォームのさまざまなことに注意してください。 これらの違いに関連するプラットフォームの実装の`Slider`セクションでは、この記事の後半で説明[プラットフォームの実装の違い](#implementations)します。
 
 ### <a name="creating-a-slider-in-xaml"></a>XAML でスライダーの作成
 
-**スライダーの基本的な XAML**はページが機能的には、同じ**基本的なスライダー コード**は実装が XAML でほとんどの場合。
+**スライダーの基本的な XAML**ページは機能的に同じ**スライダーの基本的なコード**は実装が XAML でほとんどの場合。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -148,13 +158,13 @@ public partial class BasicSliderXamlPage : ContentPage
 }
 ```
 
-イベント ハンドラーを取得することも、`Slider`を通じてイベントを発生させているを`sender`引数。 `Value`プロパティには、現在の値が含まれています。
+イベント ハンドラーを取得することも、`Slider`を介してイベントを発生させるですが、`sender`引数。 `Value`プロパティには、現在の値が含まれています。
 
 ```csharp
 double value = ((Slider)sender).Value;
 ```
 
-場合、`Slider`オブジェクトの XAML ファイルの名前が指定された、`x:Name`属性 (たとえば、"slider")、イベント ハンドラーがそのオブジェクトを直接参照します。
+場合、`Slider`オブジェクトが使用して、XAML ファイルの名前が付与された、`x:Name`属性 (たとえば、"slider")、イベント ハンドラーがそのオブジェクトを直接参照します。
 
 ```csharp
 double value = slider.Value;
@@ -162,7 +172,7 @@ double value = slider.Value;
 
 ### <a name="data-binding-the-slider"></a>データ バインディング、スライダー
 
-**スライダーの基本的なバインディング**ページはほぼ同等性を排除するプログラムを記述する方法を示します、`Value`イベント ハンドラーを使用して[データ バインディングの](~/xamarin-forms/app-fundamentals/data-binding/index.md):
+**スライダーの基本的なバインディング**ページは、ほぼ等価性を排除するプログラムを記述する方法を示しています、`Value`イベント ハンドラーを使用して[データ バインディングの](~/xamarin-forms/app-fundamentals/data-binding/index.md):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -191,13 +201,13 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`をそのまま、 `Text` 2 番目のプロパティ`Label`で、`StringFormat`仕様です。 **スライダーの基本的なバインディング**ページ関数は少し異なる方法で、次の 2 つ前のページから: ページが最初に表示される、2 番目`Label`値を持つテキスト文字列が表示されます。 これは、データ バインディングを使用すると便利です。 具体的には初期化するために必要データ バインドせずにテキストを表示する、`Text`のプロパティ、`Label`の発生をシミュレートまたは、`ValueChanged`クラス コンス トラクターからイベント ハンドラーを呼び出すことによってイベント。
+`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`は、`Text`プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **スライダーの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから: ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、`ValueChanged`クラス コンス トラクターからイベント ハンドラーを呼び出すことによってイベント。
 
 <a name="precautions" />
 
 ## <a name="precautions"></a>注意事項
 
-値、`Minimum`プロパティの値より小さくする必要があります常に、`Maximum`プロパティです。 次のコード スニペットの原因として、`Slider`から例外が発生します。
+値、`Minimum`プロパティの値より小さくする必要があります常に、`Maximum`プロパティ。 次のコード スニペットの原因、`Slider`例外が発生します。
 
 ```csharp
 // Throws an exception!
@@ -208,7 +218,7 @@ Slider slider = new Slider
 };
 ```
 
-C# コンパイラが順番に、これら 2 つのプロパティを設定するコードを生成、いつ、 `Minimum` 10 に設定されて、既定値より大きい`Maximum`1 の値。 設定してここで例外を回避することができます、`Maximum`プロパティ最初。
+C# コンパイラが順番に、これら 2 つのプロパティを設定するコードを生成とタイミング、 `Minimum` 10 に設定されて、既定値より大きい`Maximum`1 の値。 設定してここで、例外を回避することができます、`Maximum`プロパティ最初。
 
 ```csharp
 Slider slider = new Slider
@@ -218,23 +228,23 @@ Slider slider = new Slider
 };
 ```
 
-設定`Maximum`20 に問題はありませんが、既定値より大きいため`Minimum`0 を設定します。 ときに`Minimum`が設定されている、値より小さい`Maximum`20 の値。
+設定`Maximum`20 に問題には、既定値より大きいため、 `Minimum` 0 に設定します。 ときに`Minimum`が設定された場合、値がより小さい`Maximum`20 の値。
 
-XAML で、同じ問題が存在します。 確実にする順序でプロパティを設定`Maximum`よりも大きいは常に`Minimum`:
+XAML で同じ問題が存在します。 確実な順序でプロパティを設定`Maximum`よりも大きいは常に`Minimum`:
 
 ```xaml
 <Slider Maximum="20"
         Minimum="10" ... />
 ```
 
-設定することができます、`Minimum`と`Maximum`値、負の数値には、順序でのみ、`Minimum`は常により小さい`Maximum`:
+設定することができます、`Minimum`と`Maximum`値の順序でのみが、負の数値を`Minimum`は常により小さい`Maximum`:
 
 ```xaml
 <Slider Minimum="-20"
         Maximum="-10" ... />
 ```
 
-`Value`以上に、プロパティは常に、`Minimum`値に等しいまたはそれよりも小さいと`Maximum`です。 場合`Value`設定が範囲外の値に値が、範囲内でに強制変換されますが、例外は発生しません。 このコードは、たとえば、*いない*で例外が発生します。
+`Value`より大きいまたは等しい、プロパティは常に、`Minimum`値以下と等しい、`Maximum`します。 場合`Value`設定されている範囲外の値に値が、範囲でなければに強制変換されますが、例外は発生しません。 このコードは、たとえば、*いない*例外を発生させます。
 
 ```csharp
 Slider slider = new Slider
@@ -255,9 +265,9 @@ Slider slider = new Slider
 };
 ```
 
-ときに`Minimum`に設定されている、10、`Value`も 10 に設定します。
+ときに`Minimum`は 10 に設定し、`Value`も 10 に設定されます。
 
-場合、`ValueChanged`時にイベント ハンドラーがアタッチされている、`Value`プロパティが 0 の場合の既定値以外に強制変換、`ValueChanged`イベントが発生します。 XAML のスニペットを次に示します。
+場合、`ValueChanged`時にイベント ハンドラーがアタッチされている、`Value`プロパティが 0 の場合の既定値以外に強制変換、`ValueChanged`イベントが発生します。 次の XAML スニペットに示します。
 
 ```xaml
 <Slider ValueChanged="OnSliderValueChanged"
@@ -265,35 +275,37 @@ Slider slider = new Slider
         Minimum="10" />
 ```
 
-ときに`Minimum`を 10 に設定されている`Value`を 10 に設定されても、`ValueChanged`イベントが発生します。 これは、ページの残りの部分を構築すると、およびハンドラーは可能性があります ページで、まだ作成されていないその他の要素を参照しようとします。 前に発生する可能性があります。 一部のコードを追加する、`ValueChanged`をチェックするハンドラー`null`ページ上の他の要素の値。 または、設定することができます、`ValueChanged`後のイベント ハンドラー、`Slider`値が初期化されています。
+ときに`Minimum`10 に設定されている`Value`10 に設定されても、`ValueChanged`イベントが発生します。 これは、エラーは、ページの残りの部分が作成されると、ハンドラーは、まだ作成されていない他の要素 ページを参照しよう前に発生する可能性があります。 いくつかのコードを追加したい場合があります、`ValueChanged`をチェックするハンドラー`null`ページ上の他の要素の値。 または、設定することができます、`ValueChanged`後のイベント ハンドラー、`Slider`値が初期化されています。
 
 <a name="implementations" />
 
 ## <a name="platform-implementation-differences"></a>プラットフォームの実装の違い
 
-値を表示する前に示したスクリーン ショット、 `Slider` 10 進数のポイントの数が異なる。 これは、方法に関係の`Slider`Android と UWP プラットフォーム上に実装されています。
+値を表示する前に示したスクリーン ショット、 `Slider` 10 進数のポイントの数が異なる。 これは、方法に関係、 `Slider` Android、UWP プラットフォームで実装されます。
 
 ### <a name="the-android-implementation"></a>Android の実装
 
-Android 実装`Slider`は、Android に基づいて[ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/)常に設定し、 [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) 1000 プロパティです。 つまり、 `Slider` Android でのみ 1,001 不連続の値を持ちます。 設定した場合、`Slider`が、 `Minimum` 0 のおよび`Maximum`5000、として、`Slider`操作は、`Value`プロパティが 0、5、10、15 などの値。
+Android の実装の`Slider`は、Android に基づいて[ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) 、常に設定し、 [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) 1000 プロパティ。 つまり、 `Slider` android が 1,001 のみ個別の値。 設定した場合、`Slider`が、 `Minimum` 0 と`Maximum`5000、として、`Slider`操作は、`Value`プロパティが 0、5、10、15、およびその他の値。
 
-### <a name="the-uwp-implementation"></a>UWP 実装では、
+### <a name="the-uwp-implementation"></a>UWP の実装
 
-UWP 実装`Slider`UWP に基づきます[ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider)コントロール。 `StepFrequency`の UWP プロパティ`Slider`の差に設定されている、`Maximum`と`Minimum`プロパティが 10 日ですが 1 より大きくないで割った値します。
+UWP 実装`Slider`は UWP に基づいて[ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider)コントロール。 `StepFrequency`プロパティ、UWP の`Slider`の差に設定されている、`Maximum`と`Minimum`プロパティが 10 日ですが 1 より大きくないで割った値します。
 
-たとえば、0 ~ 1 の既定の範囲、 `StepFrequency` 0.1 にプロパティを設定します。 として、`Slider`操作は、`Value`プロパティは 0、0.1、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、および 1.0 に制限します。 (これは、最後のページで、 [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプルです)。ときの違い、`Maximum`と`Minimum`プロパティは、10 以上、`StepFrequency`を 1 に設定されていると`Value`プロパティが整数値。
+たとえば、既定の 0 ~ 1 の範囲、 `StepFrequency` 0.1 にプロパティを設定します。 として、`Slider`は、操作、`Value`プロパティは 0、0.1、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、または 1.0 に制限されます。 (これは、最後のページで、 [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプル)。間の差、`Maximum`と`Minimum`プロパティが 10 以上し`StepFrequency`を 1 に設定されていると、`Value`プロパティが整数値。
+
+さらに、 [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty)と[ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty)プロパティは、UWP ではサポートされません。
 
 ### <a name="the-stepslider-solution"></a>StepSlider ソリューション
 
-汎用性`StepSlider`は、後ほど[章 27。カスタム レンダラー](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)書籍の*Xamarin.Forms を使用したモバイル アプリを作成する*です。 `StepSlider`に似ていますが`Slider`が追加、`Steps`間の値の数を指定するプロパティ`Minimum`と`Maximum`です。
+汎用的な`StepSlider`は、後ほど[第 27 章です。カスタム レンダラー](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)書籍の*を Xamarin.Forms での Mobile Apps の作成*です。 `StepSlider`のような`Slider`が追加されて、`Steps`までの値の数を指定するプロパティ`Minimum`と`Maximum`。
 
-## <a name="sliders-for-color-selection"></a>色の選択 のスライダー
+## <a name="sliders-for-color-selection"></a>スライダーの色の選択
 
-最後の 2 つのページ、 [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)どちらも使用する 3 つのサンプル`Slider`の色の選択用のインスタンス。 最初のページでは、分離コード ファイル内のすべての対話を処理し、2 番目のページで、ViewModel データ バインディングを使用する方法を示しています。
+最終的な 2 つのページ、 [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)両方を使用して 3 つのサンプル`Slider`色の選択のインスタンス。 最初のページは、2 番目のページは、ViewModel でデータ バインディングを使用する方法を示しています。 中に、分離コード ファイル内のすべての対話を処理します。
 
-### <a name="handling-sliders-in-the-code-behind-file"></a>分離コード ファイルでスライダーの処理
+### <a name="handling-sliders-in-the-code-behind-file"></a>スライダーを分離コード ファイルの処理
 
-**RGB 色スライダー**ページをインスタンス化、 `BoxView` 、色を表示する次の 3 つ`Slider`、色、および 3 の赤、緑、および青のコンポーネントを選択するインスタンス`Label`それらの色を表示するための要素値:
+**RGB カラー スライダー**ページをインスタンス化、 `BoxView` 、色を表示する 3 つ`Slider`色、および 3 の赤、緑、および青のコンポーネントを選択するインスタンス`Label`これらの色を表示するための要素値:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -335,7 +347,7 @@ UWP 実装`Slider`UWP に基づきます[ `Slider` ](/uwp/api/windows.ui.xaml.co
 </ContentPage>
 ```
 
-A `Style` 3 つすべては、 `Slider` 0 ~ 255 の範囲を要素。 `Slider`要素が同じ`ValueChanged`分離コード ファイルで実装されるハンドラー。
+A`Style`では 3 つすべて`Slider`0 ~ 255 の範囲の要素。 `Slider`要素が同じ共有`ValueChanged`ハンドラーで、分離コード ファイルに実装されます。
 
 ```csharp
 public partial class RgbColorSlidersPage : ContentPage
@@ -367,13 +379,13 @@ public partial class RgbColorSlidersPage : ContentPage
 }
 ```
 
-最初のセクションを設定、`Text`のいずれかのプロパティ、`Label`インスタンスの値を示す短いテキスト文字列を`Slider`16 進数。 3 つを次に、すべて`Slider`インスタンスが作成するためにアクセスは、 `Color` RGB コンポーネントからの値。
+最初のセクションの設定、`Text`のいずれかのプロパティ、`Label`インスタンスの値を示す短いテキスト文字列を`Slider`16 進数。 3 つは、すべて`Slider`のインスタンスを作成するアクセスされる、 `Color` RGB コンポーネントからの値。
 
-[![RGB 色スライダー](slider-images/RgbColorSliders.png "RGB 色スライダー")](slider-images/RgbColorSliders-Large.png#lightbox)
+[![RGB 色スライダー](slider-images/RgbColorSliders.png "RGB カラー スライダー")](slider-images/RgbColorSliders-Large.png#lightbox)
 
 ### <a name="binding-the-slider-to-a-viewmodel"></a>スライダーを ViewModel にバインドします。
 
-**HSL の色スライダー**ページ、ViewModel を使用して作成するために使用する計算を実行する方法を示しています、`Color`色合い、鮮やかさ、明るさの値からの値。 すべての ViewModels と同様に、`HSLColorViewModel`クラスが実装する、`INotifyPropertyChanged`インターフェイス、および発生、`PropertyChanged`イベント プロパティの 1 つが変更されるたびに。
+**HSL カラー スライダー**ページは、ViewModel を使用して作成するために使用する計算を実行する方法を示しています、`Color`色合い、鮮やかさ、および明るさの値から値。 などのすべての Viewmodel、`HSLColorViewModel`クラスが実装する、`INotifyPropertyChanged`インターフェイス、および発生、`PropertyChanged`プロパティの 1 つが変更されるたびにイベント。
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -448,9 +460,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-ViewModels と`INotifyPropertyChanged`インターフェイスは、記事で説明した[データ バインド](~/xamarin-forms/app-fundamentals/data-binding/index.md)です。
+Viewmodel と`INotifyPropertyChanged`インターフェイスが、情報の記事で説明した[データ バインディングの](~/xamarin-forms/app-fundamentals/data-binding/index.md)します。
 
-**HslColorSlidersPage.xaml**ファイルをインスタンス化、`HslColorViewModel`をページの設定と`BindingContext`プロパティです。 これにより、ViewModel でプロパティにバインドする XAML ファイル内のすべての要素です。
+**HslColorSlidersPage.xaml**ファイルをインスタンス化、`HslColorViewModel`にページの設定と`BindingContext`プロパティ。 これにより、ビューモデルのプロパティにバインドする XAML ファイル内のすべての要素。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -487,13 +499,13 @@ ViewModels と`INotifyPropertyChanged`インターフェイスは、記事で説
 </ContentPage>
 ```
 
-として、`Slider`要素を操作すると、`BoxView`と`Label`ViewModel から要素が更新されます。
+として、`Slider`要素を操作すると、`BoxView`と`Label`の ViewModel から要素が更新されます。
 
-[![HSL の色スライダー](slider-images/HslColorSliders.png "HSL の色スライダー")](slider-images/HslColorSliders-Large.png#lightbox)
+[![HSL カラー スライダー](slider-images/HslColorSliders.png "HSL カラー スライダー")](slider-images/HslColorSliders-Large.png#lightbox)
 
-`StringFormat`コンポーネント、`Binding`小数点以下 2 桁を表示する"F2"の形式のマークアップ拡張機能を設定します。 (データ バインディングの書式設定文字列が、記事で説明した[文字列の書式設定](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md))。ただし、UWP バージョンのプログラムは、0、0.1、0.2 の値に制限しています.0.9、または 1.0 です。 これは、UWP の実装の直接の結果`Slider`セクションで説明した[プラットフォームの実装の違い](#implementations)です。
+`StringFormat`のコンポーネントである、`Binding`マークアップ拡張機能は 2 つの小数点以下桁数を表示する"F2"の形式を設定します。 (データ バインドで書式設定文字列が、記事で説明した[文字列の書式設定](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md))。ただし、UWP バージョンのプログラムは、0、0.1、0.2 の値に制限しています.0.9、または 1.0。 これは、UWP の実装の直接的な結果`Slider`でセクションの説明に従って[プラットフォームの実装の違い](#implementations)します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [スライダーのデモ サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
-- [スライダー API](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)
+- [スライダー API](xref:Xamarin.Forms.Slider)

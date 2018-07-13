@@ -1,41 +1,41 @@
 ---
 title: Xamarin.Forms AbsoluteLayout
-description: この記事では、Xamarin.Forms AbsoluteLayout クラスを使用して、ピクセルの完全な Ui を作成する方法について説明します。 このクラスは、配置、または絶対値によってサイズと位置に比例します。 子要素のサイズします。
+description: この記事では、Xamarin.Forms AbsoluteLayout クラスを使用して、ピクセル単位で正確 Ui を作成する方法について説明します。 このクラスの位置し、サイズの子要素のサイズと位置、または絶対値によってに比例します。
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0d49b8c50db08ad07952425492591ee246de4f8b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244458"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998349"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
-[`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) 配置し、子要素のサイズと位置または絶対値によって比例のサイズします。 静的な値を混在させることができます、位置指定と相対値または静的な値を使用してサイズおよび比例して、子ビューがあります。
+[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 位置し、サイズ子要素のサイズと位置、または絶対値によってに比例します。 位置指定と相対値または静的な値を使用してサイズと比例子ビューがあり、静的な値を混在させることができます。
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms レイアウト")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
+[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms のレイアウト")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
 
-この記事を取り上げます。
+この記事では説明します。
 
-- **[目的](#Purpose)** &ndash;の一般的な使用`AbsoluteLayout`です。
-- **[使用状況](#Usage)** &ndash;の使用方法`AbsoluteLayout`目的の設計を実現するためにします。
-  - **[比例レイアウト](#Proportional_Layouts)** &ndash;方法比例値理解で職場、`AbsoluteLayout`です。
-  - **[値を指定する](#Specifying_Values)** &ndash;比例と絶対パスの値を指定する方法を理解します。
-  - **[相対値を](#Proportional_Values)** &ndash;方法に比例した値を理解して動作します。
+- **[目的](#Purpose)** &ndash;の一般的な使用`AbsoluteLayout`します。
+- **[使用状況](#Usage)** &ndash;を使用する`AbsoluteLayout`目的の設計を実現するためにします。
+  - **[比例レイアウト](#Proportional_Layouts)** &ndash;比例する方法の値を理解で作業を`AbsoluteLayout`します。
+  - **[値を指定する](#Specifying_Values)** &ndash;プロポーショナルと絶対値が指定する方法を理解します。
+  - **[比例値](#Proportional_Values)** &ndash;比例する方法の値を理解する機能します。
     - **[絶対値](#Absolute_Values)** &ndash;絶対値のしくみを理解します。
 
 <a name="Purpose" />
 
 ## <a name="purpose"></a>目的
 
-配置モデルにより`AbsoluteLayout`レイアウトでは、要素を配置できるようにして、レイアウトの任意の辺と揃えるまたは中央揃えを比較的簡単です。 プロポーショナル サイズと位置内の要素で、`AbsoluteLayout`任意のビュー サイズに自動的に拡張できます。 アイテムの位置だけがサイズではなくを拡張する必要があります、絶対と割合の値を混在させることができます。
+配置モデルであるため`AbsoluteLayout`レイアウトでは、比較的簡単に、レイアウトの任意の辺と揃えるか中央揃えで要素を配置します。 比例サイズと位置、内の要素、`AbsoluteLayout`任意のビュー サイズに自動的にスケールできます。 項目の位置のみがサイズではなくをスケールする必要があります、絶対と比例して値を混在させることができます。
 
-`AbsoluteLayout` 使用できます anywhere 要素をビュー内に配置する必要があるし、要素の端に揃えて配置する場合に特に便利です。
+`AbsoluteLayout` でした使用 anywhere 要素は、ビュー内で配置する必要があり、要素の端に揃えて配置する場合に特に便利です。
 
 <a name="Usage" />
 
@@ -43,50 +43,50 @@ ms.locfileid: "35244458"
 
 <a name="Proportional_Layouts" />
 
-### <a name="proportional-layouts"></a>プロポーショナル レイアウト
+### <a name="proportional-layouts"></a>比例レイアウト
 
-`AbsoluteLayout` それにより、要素のアンカーが配置されているその要素に相対的な比例して配置を使用するときに、レイアウトの基準とした要素は、一意のアンカー モデルを持ちます。 絶対位置を使用すると、アンカーは、ビュー内で (0, 0) です。 これは、2 つの重要な影響があります。
+`AbsoluteLayout` 要素のアンカーがその要素に対する相対的な配置されているように比例して配置を使用するときに、レイアウトを基準とした、要素が配置されているという一意のアンカー モデルがあります。 絶対配置を使用すると、アンカーは、ビュー内 (0, 0) には。 これは、2 つの重要な影響があります。
 
 - 要素は比例値を使用して画面をオフに配置することはできません。
-- 要素は、レイアウトまたはデバイスのサイズに関係なく、センター、またはレイアウトの任意の辺に確実に配置できます。
+- 要素は、任意の辺のレイアウトまたはレイアウトまたはデバイスのサイズに関係なく、中央に確実に配置できます。
 
-`AbsoluteLayout`、のような`RelativeLayout`、が重複しているため、要素を配置することができます。
+`AbsoluteLayout`、のような`RelativeLayout`、重なるように要素を配置することができます。
 
-次のスクリーン ショットで、ボックスのアンカー メモは、白点です。 レイアウトを移動するときに、アンカーおよびボックス間のリレーションシップを確認してください。
+次のスクリーン ショットで、ボックスのアンカーのメモは、白点です。 アンカーと、ボックス間のリレーションシップのことを確認して、レイアウト内を移動します。
 
-![](absolute-layout-images/anchor-start.png "開始時にアンカー")
-![](absolute-layout-images/anchor-center.png "センターでアンカー")
+![](absolute-layout-images/anchor-start.png "開始時のアンカー")
+![](absolute-layout-images/anchor-center.png "センター アンカー")
 ![](absolute-layout-images/anchor-end.png "最後のアンカー")
 
 <a name="Specifying_Values" />
 
 ### <a name="specifying-values"></a>値を指定します。
 
-ビュー内で、 `AbsoluteLayout` 4 つの値を使用して配置します。
+内にあるビュー、 `AbsoluteLayout` 4 つの値を使用して配置されます。
 
 - **X** &ndash;ビューのアンカーの x (水平) 座標
-- **Y** &ndash;ビューのアンカーの y (垂直) 位置
+- **Y** &ndash;ビューのアンカーの y (垂直) の位置
 - **幅**&ndash;ビューの幅
 - **高さ**&ndash;ビューの高さ
 
-これらの値の各として設定できます。、[比例](#Proportional_Values)値または[絶対](#Absolute_Values)値。
+値として設定できる、[比例](#Proportional_Values)値または[絶対](#Absolute_Values)値。
 
-値は、境界とフラグの組み合わせとして指定されます。 `LayoutBounds` [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) 4 つの値から成る: `x`、 `y`、 `width`、`height`です。
+値は、境界とフラグの組み合わせとして指定されます。 `LayoutBounds` [ `Rectangle` ](xref:Xamarin.Forms.Rectangle) 4 つの値から成る: `x`、 `y`、 `width`、`height`します。
 
 ### <a name="absolutelayoutflags"></a>AbsoluteLayoutFlags
 
-[`AbsoluteLayoutFlags`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayoutFlags/) 値の解釈方法を指定し、次の定義済みオプションがあります。
+[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags) 値を解釈する方法を指定し、次の定義済みのオプションがあります。
 
-- **None** &ndash;ですべての値は絶対パスとして解釈します。 これは、レイアウト フラグが指定されていない場合、既定値です。
+- **None** &ndash;絶対値としてすべての値を解釈します。 これは、レイアウトのフラグが指定されていない場合、既定値です。
 - **すべて**&ndash;比例としてすべての値を解釈します。
-- **WidthProportional** &ndash;解釈、`Width`比例し、その他のすべての値と絶対値としての値。
+- **WidthProportional** &ndash;解釈、`Width`絶対値としてプロポーショナルとその他のすべての値として値。
 - **HeightProportional** &ndash;のみ高さの値として比例絶対他のすべての値を解釈します。
-- **XProportional** &ndash;解釈、`X`比例して、他のすべての値を絶対パスとして扱いながら値します。
-- **YProportional** &ndash;解釈、`Y`比例して、他のすべての値を絶対パスとして扱いながら値します。
+- **XProportional** &ndash;解釈、`X`絶対値として他のすべての値を扱っているときに、比例として値します。
+- **YProportional** &ndash;解釈、`Y`絶対値として他のすべての値を扱っているときに、比例として値します。
 - **PositionProportional** &ndash;解釈、`X`と`Y`比例、として値をサイズの値が絶対値として解釈されます。
-- **SizeProportional** &ndash;解釈、`Width`と`Height`位置の値は絶対に値としての比例します。
+- **SizeProportional** &ndash;解釈、`Width`と`Height`位置の値は絶対に比例してとして値します。
 
-Xaml では、レイアウト内のビューの定義の一部としての境界とフラグを設定します。 を使用して、`AbsoluteLayout.LayoutBounds`プロパティです。 境界は、値のコンマ区切りリストとして設定されて`X`、 `Y`、 `Width`、および`Height`点で、注文します。 使用して、レイアウト ビューの宣言でフラグが指定されても、`AbsoluteLayout.LayoutFlags`プロパティです。 フラグは、コンマ区切りのリストを使用して XAML で組み合わせることができますに注意してください。 次に例を示します。
+XAML では、ビュー、レイアウト内の定義の一部としての境界とフラグを設定します。 を使用して、`AbsoluteLayout.LayoutBounds`プロパティ。 境界は、値のコンマ区切りリストとして設定されます。 `X`、 `Y`、 `Width`、および`Height`点で、注文します。 レイアウトを使用して、ビューの宣言でフラグが指定されても、`AbsoluteLayout.LayoutFlags`プロパティ。 フラグは、コンマ区切りのリストを使用して XAML で組み合わせることができますに注意してください。 次に例を示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -112,15 +112,15 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "AbsoluteLayout 例")
+![](absolute-layout-images/exploration.png "AbsoluteLayout の例")
 
 次の点に注意してください。
 
-- 絶対サイズと位置の値を使用して、中央にラベルが配置されます。 そのため、iPhone 4 秒を中心としたと低いが大規模なデバイスでない中央揃えに表示されます。
-- レイアウトの下部にあるテキストは比例サイズと位置の値を使用して配置されます。 常に、レイアウトの下部中央に表示されますが、レイアウトのサイズの大きなサイズが増大します。
-- 次の 3 つの色`BoxView`s は比例位置および絶対サイズを使用して、画面の上、左、および右のエッジに配置します。
+- 絶対サイズと位置の値を使用して、中央にラベルが配置されていること。 そのため、iPhone 4 s を中心とした、以下で、大型のデバイスでない中央揃えに表示されます。
+- 比例サイズと位置の値を使用して、レイアウトの下部にあるテキストを配置します。 常に、レイアウトの下部中央に表示されますが、そのサイズがレイアウト サイズの大きな拡張されます。
+- 次の 3 つの色`BoxView`s は比例位置と絶対サイズを使用して、画面の上、左、および右のエッジに配置されます。
 
-C# の場合、同じレイアウトを次に実現します。
+次は、c# で同じレイアウトを実現します。
 
 ```csharp
 public class AbsoluteLayoutExplorationCode : ContentPage
@@ -165,15 +165,15 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 ```
 <a name="Proportional_Values" />
 
-### <a name="proportional-values"></a>相対値
+### <a name="proportional-values"></a>比例値
 
-比例値は、レイアウトは、ビュー間のリレーションシップを定義します。 このリレーションシップは、親のレイアウトの対応する値の比率として子ビューの位置またはスケール値を定義します。 これらの値として表されます`double`0 ~ 1 の値とします。
+比例した値は、レイアウトとビュー間のリレーションシップを定義します。 この関係は、親のレイアウトの対応する値の比率として子ビューの位置またはスケール値を定義します。 これらの値として表現されます`double`を 0 ~ 1 の値。
 
-位置とサイズ ビュー、レイアウト内に比例した値が使用されます。 そのため、ビューの幅が、割合として設定されている場合に、結果の幅の値は比率を掛けた値によって、`AbsoluteLayout`の幅。 たとえば、`AbsoluteLayout`幅の`500`.5 は、表示されるビューの幅に比例幅に設定することが可能 250 (500 x.5). と
+位置とサイズ ビュー、レイアウト内に比例した値が使用されます。 そのため、ビューの幅に対する比率として設定すると場合、に、結果の幅の値は乗算割合、`AbsoluteLayout`の幅。 たとえば、`AbsoluteLayout`幅の`500`と比例幅.5、ビューの描画時の幅の設定ビューを 250 (500 x.5 ハンドルとなります
 
-使用するには相対値を次のように設定します。 `LayoutBounds` (x, y) を使用して縦横比比例、およびサイズを設定し、`LayoutFlags`に`All`です。
+比例した値を使用するには、次のように設定します。 `LayoutBounds` (x, y) を使用して設定し、縦横比と比例サイズは、`LayoutFlags`に`All`します。
 
-XAML:
+で XAML:
 
 ```xaml
 <Label Text="I'm bottom center on every device."
@@ -192,13 +192,13 @@ AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 
 ### <a name="absolute-values"></a>絶対値
 
-絶対値では、レイアウト内でのビューの位置を明示的に定義します。 割合の値とは異なり絶対値が位置およびサイズ、レイアウトの境界内に適合しない表示可能です。
+絶対値では、レイアウト内でビューを配置する場所を明示的に定義します。 プロポーショナルの値とは異なりは絶対値が位置およびサイズ、レイアウトの境界内に適合しない表示可能です。
 
-絶対値の位置を決定を使用すると危険なレイアウトのサイズは認識されていない場合。 絶対位置を使用する場合に 1 つのサイズ、画面の中央に要素が他のサイズを問わず、オフセットでした。 これが、サポートされているデバイスのさまざまな画面サイズ間でアプリをテストする重要です。
+絶対値を使用して位置を指定できます危険なレイアウトのサイズは認識されていない場合です。 絶対位置を使用する場合、要素 1 つのサイズで画面の中央には他の任意のサイズにオフセットでした。 サポートされているデバイスのさまざまな画面サイズ全体でアプリのテストは重要です。
 
-絶対レイアウトの値を使用する設定`LayoutBounds`(x, y) を使用して座標と、明示的なサイズを設定し、`LayoutFlags`に`None`です。
+絶対レイアウトの値を使用する設定`LayoutBounds`(x, y) を使用して座標と、明示的なサイズを設定し、`LayoutFlags`に`None`します。
 
-XAML:
+で XAML:
 
 ```xaml
 <Label Text="I'm centered on iPhone 4 but no other device."
@@ -212,11 +212,11 @@ var label = new Label {Text = "I'm centered on iPhone 4 but no other device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(115,150,100,100));
 ```
 
-## <a name="exploring-a-complex-layout"></a>複雑なレイアウトを調べる
+## <a name="exploring-a-complex-layout"></a>複雑なレイアウトの調査
 
-レイアウトの各は、特定のレイアウトを作成するの長所と短所があります。 この一連のレイアウトの記事では、全体で同じページ レイアウトを次の 3 つの異なるレイアウトを使用して実装されているサンプル アプリケーションが作成されました。
+レイアウトの各は、特定のレイアウトを作成する長所と短所があります。 この一連のレイアウトの記事では、全体で同じページ レイアウトを次の 3 つの異なるレイアウトを使用して実装されているサンプル アプリが作成されました。
 
-次の XAML を考慮してください。
+次の XAML を検討してください。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -283,11 +283,11 @@ Title="AbsoluteLayout">
 
 ![](absolute-layout-images/abs.png "複雑な AbsoluteLayout")
 
-注意して`AbsoluteLayout`s が入れ子になった場合によってはレイアウトを入れ子が許容されるので、同じレイアウト内のすべての要素を表示するよりも簡単です。
+注意`AbsoluteLayout`s が入れ子になった場合によってはレイアウトを入れ子できるので、同じレイアウト内のすべての要素を表示するよりも簡単です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms、章 14 を使用したモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
-- [AbsoluteLayout](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)
+- [第 14 章、Xamarin.Forms でモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
+- [AbsoluteLayout](xref:Xamarin.Forms.AbsoluteLayout)
 - [レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 例 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

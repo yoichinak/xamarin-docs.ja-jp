@@ -1,48 +1,48 @@
 ---
-title: 特殊効果を作成します。
-description: 効果は、コントロールのカスタマイズを簡略化します。 この記事では、コントロールがフォーカスを取得するときに、入力コントロールの背景色を変更する効果を作成する方法を示します。
+title: 効果を作成します。
+description: 効果は、コントロールのカスタマイズを簡略化します。 この記事では、コントロールがフォーカスを獲得したときに、入力コントロールの背景色を変更する効果を作成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: d308ea4a9d4055c75ef3a4a1283b5d6a5ab24b0a
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b29d83999724a35293882f7b9efc0158171c4fd2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846806"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998161"
 ---
-# <a name="creating-an-effect"></a>特殊効果を作成します。
+# <a name="creating-an-effect"></a>効果を作成します。
 
-_効果は、コントロールのカスタマイズを簡略化します。この記事では、コントロールがフォーカスを取得するときに、入力コントロールの背景色を変更する効果を作成する方法を示します。_
+_効果は、コントロールのカスタマイズを簡略化します。この記事では、コントロールがフォーカスを獲得したときに、入力コントロールの背景色を変更する効果を作成する方法を示します。_
 
-各プラットフォームに固有のプロジェクトで、特殊効果を作成するプロセスは次のとおりです。
+各プラットフォーム固有プロジェクトで効果を作成するためのプロセスは次のとおりです。
 
-1. サブクラスを作成、`PlatformEffect`クラスです。
-1. 上書き、`OnAttached`コントロールをカスタマイズする方法と書き込みのロジックです。
-1. 上書き、`OnDetached`メソッドと書き込みのロジックが必要な場合に、コントロールのカスタマイズをクリーンアップします。
-1. 追加、 [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/)効果クラスに属性します。 この属性は、特殊効果、その他の効果と同じ名前の衝突を回避するための会社ワイド名前空間を設定します。 この属性適用できることのみ 1 回プロジェクトごとに注意してください。
-1. 追加、 [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/)効果クラスに属性します。 この属性は、影響をコントロールに適用する前に影響を検索すると、グループ名、Xamarin.Forms で使用される一意の ID を登録します。 属性は、次の 2 つのパラメーター –、効果、およびコントロールに適用する前に影響を検索するために使用する一意の文字列の型名を受け取ります。
+1. サブクラスを作成、`PlatformEffect`クラス。
+1. 上書き、`OnAttached`制御をカスタマイズする方法と書き込みのロジック。
+1. 上書き、`OnDetached`メソッドと書き込みのロジックを必要な場合は、コントロールのカスタマイズをクリーンアップします。
+1. 追加、 [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute)効果クラスに属性します。 この属性は、その他の効果と同じ名前の競合を防ぐ効果の会社のワイド名前空間を設定します。 この属性適用できることのみ 1 回プロジェクトごとに注意してください。
+1. 追加、 [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)効果クラスに属性します。 この属性は、コントロールに適用する前に、効果を検索するグループ名と共に、Xamarin.Forms で使用される一意の id の効果を登録します。 属性は、2 つのパラメーター –、効果、およびコントロールに適用する前に、効果を検索するために使用する一意の文字列の型名を受け取ります。
 
 効果は、適切なコントロールにアタッチして使用できます。
 
 > [!NOTE]
-> 各プラットフォームのプロジェクトで効果を提供する省略可能であります。 いずれかが登録されていない場合に効果を使用しようとしています。 には、何も null 以外の値が返されます。
+> 各プラットフォーム プロジェクトに効果を提供する省略可能になります。 1 つが登録されていない場合に効果を使用すると、何も実行しない null 以外の値を返します。
 
-サンプル アプリケーションは、`FocusEffect`フォーカスを得るとき、コントロールの背景色を変更します。 次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
+サンプル アプリケーションでは、`FocusEffect`フォーカスを得るときにコントロールの背景色を変更します。 次の図は、サンプル アプリケーションとそれらの間のリレーションシップ内の各プロジェクトの役割を示します。
 
 ![](creating-images/focus-effect.png "フォーカス効果プロジェクトの責任")
 
-[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)の control 権限、`HomePage`によってカスタマイズ、`FocusEffect`各プラットフォームに固有のプロジェクト内のクラスです。 各`FocusEffect`から派生したクラス、`PlatformEffect`各プラットフォームのクラスです。 これは、結果、`Entry`コントロールがフォーカスする場合に変更すると、次のスクリーン ショットに示すように、プラットフォーム固有の背景の色でレンダリングされるかを制御します。
+[ `Entry` ](xref:Xamarin.Forms.Entry)の control 権限、`HomePage`によってカスタマイズされた、`FocusEffect`各プラットフォーム固有プロジェクト内のクラス。 各`FocusEffect`クラスから派生、`PlatformEffect`各プラットフォームのクラス。 これは、結果、`Entry`次のスクリーン ショットに示すように、コントロールがフォーカスを獲得したときの変更、プラットフォーム固有のバック グラウンドの色でレンダリングされるかを制御します。
 
-![](creating-images/screenshots-1.png "各プラットフォームには影響を集中")
-![](creating-images/screenshots-2.png "プラットフォームごとに影響を集中")
+![](creating-images/screenshots-1.png "各プラットフォームで効果を集中")
+![](creating-images/screenshots-2.png "集中各プラットフォームへの影響")
 
-## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームの効果を作成します。
+## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームで効果を作成します。
 
-次のセクションでは、説明のプラットフォームに固有の実装、`FocusEffect`クラスです。
+次のセクションでは、プラットフォーム固有の実装の説明、`FocusEffect`クラス。
 
 ## <a name="ios-project"></a>iOS プロジェクト
 
@@ -93,9 +93,9 @@ namespace EffectsDemo.iOS
 }
 ```
 
-`OnAttached`メソッドのセット、`BackgroundColor`とライト紫色にコントロールのプロパティ、`UIColor.FromRGB`メソッド、し、またこの色をフィールドに格納します。 この機能をラップする`try` / `catch`ブロックに影響が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+`OnAttached`メソッドのセット、`BackgroundColor`ライト紫でコントロールのプロパティ、`UIColor.FromRGB`メソッド、しもこの色をフィールドに格納します。 この機能にラップされて、 `try` / `catch`ブロックに効果が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティ。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないので。
 
-`OnElementPropertyChanged`オーバーライドが Xamarin.Forms コントロールにバインド可能なプロパティの変更に応答します。 ときに、 [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/)プロパティの変更、`BackgroundColor`コントロールのプロパティが白に変更されるコントロールにフォーカスがある場合、それ以外の場合ライト紫に変更されます。 この機能をラップする`try` / `catch`ブロックに影響が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティです。
+`OnElementPropertyChanged`オーバーライドは、Xamarin.Forms コントロールにバインド可能なプロパティの変更に応答します。 ときに、 [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused)プロパティの変更、`BackgroundColor`コントロールのプロパティが白に変更されるコントロールにフォーカスがある場合、それ以外の場合ライト紫に変更されます。 この機能にラップされて、 `try` / `catch`ブロックに効果が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティ。
 
 ## <a name="android-project"></a>Android プロジェクト
 
@@ -147,13 +147,13 @@ namespace EffectsDemo.Droid
 }
 ```
 
-`OnAttached`メソッドの呼び出し、`SetBackgroundColor`光を当てるコントロールの背景色を設定するメソッドを緑、およびフィールドにもこのカラーを格納します。 この機能をラップする`try` / `catch`ブロックに影響が接続されているコントロールがあるない場合に、`SetBackgroundColor`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+`OnAttached`メソッドの呼び出し、`SetBackgroundColor`光をコントロールの背景色を設定するメソッドを緑、およびフィールドにこの色も格納されます。 この機能にラップされて、 `try` / `catch`ブロックに効果が接続されているコントロールがあるない場合に、`SetBackgroundColor`プロパティ。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないので。
 
-`OnElementPropertyChanged`オーバーライドが Xamarin.Forms コントロールにバインド可能なプロパティの変更に応答します。 ときに、 [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/)プロパティの変更、コントロールの背景色が白に変更されるコントロールにフォーカスがある場合、それ以外の場合明るい緑に変更されます。 この機能をラップする`try` / `catch`ブロックに影響が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティです。
+`OnElementPropertyChanged`オーバーライドは、Xamarin.Forms コントロールにバインド可能なプロパティの変更に応答します。 ときに、 [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused)プロパティの変更をコントロールの背景色が白に変更されるコントロールにフォーカスがある場合、それ以外の場合明るい緑に変更されます。 この機能にラップされて、 `try` / `catch`ブロックに効果が接続されているコントロールがあるない場合に、`BackgroundColor`プロパティ。
 
 ## <a name="universal-windows-platform-projects"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
-次のコード例は、`FocusEffect`プロジェクトのユニバーサル Windows プラットフォーム (UWP) の実装。
+次のコード例は、`FocusEffect`ユニバーサル Windows プラットフォーム (UWP) プロジェクトの実装。
 
 ```csharp
 using Xamarin.Forms;
@@ -185,21 +185,21 @@ namespace EffectsDemo.UWP
 }
 ```
 
-`OnAttached`メソッドのセット、`Background`シアン、およびセットへのコントロールのプロパティ、`BackgroundFocusBrush`プロパティを白にします。 この機能をラップする`try` / `catch`に効果が接続されているコントロールには、これらのプロパティがない場合にブロックします。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+`OnAttached`メソッドのセット、`Background`シアン、およびセットへのコントロールのプロパティ、`BackgroundFocusBrush`プロパティを白にします。 この機能にラップされて、 `try` / `catch`ブロックする場合に効果が接続されているコントロールにこれらのプロパティが不足しています。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないので。
 
 ## <a name="consuming-the-effect"></a>効果の使用
 
-Xamarin.Forms .NET 標準ライブラリまたはライブラリの共有プロジェクトから効果を使用するためのプロセスは次のとおりです。
+Xamarin.Forms .NET Standard ライブラリまたは共有ライブラリ プロジェクトから効果を使用するためのプロセスは次のとおりです。
 
-1. 効果は、カスタマイズする、コントロールを宣言します。
-1. コントロールの追加して、コントロールに影響をアタッチ[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)コレクション。
+1. 効果はカスタマイズするコントロールを宣言します。
+1. コントロールの追加することによってコントロールに影響をアタッチ[ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション。
 
 > [!NOTE]
-> 効果インスタンスは、1 つのコントロールにのみアタッチできます。 このため、2 つのコントロールで使用するには、2 回、特殊効果を解決する必要があります。
+> 効果インスタンスは、1 つのコントロールにのみ接続できます。 このため、効果は、2 つのコントロールで使用するには、2 回解決する必要があります。
 
-## <a name="consuming-the-effect-in-xaml"></a>XAML の使用
+## <a name="consuming-the-effect-in-xaml"></a>XAML で効果の使用
 
-XAML コード例を次に、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)先のコントロール、`FocusEffect`がアタッチされています。
+次の XAML コード例は、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールを`FocusEffect`がアタッチされています。
 
 ```xaml
 <Entry Text="Effect attached to an Entry" ...>
@@ -210,7 +210,7 @@ XAML コード例を次に、 [ `Entry` ](https://developer.xamarin.com/api/type
 </Entry>
 ```
 
-`FocusEffect` .NET 標準ライブラリ内のクラスを XAML では、効果の消費をサポートします。 次のコード例に示します。
+`FocusEffect` .NET Standard ライブラリのクラスが XAML で効果の消費をサポートし、次のコード例に示した。
 
 ```csharp
 public class FocusEffect : RoutingEffect
@@ -221,13 +221,13 @@ public class FocusEffect : RoutingEffect
 }
 ```
 
-`FocusEffect`クラスのサブクラス、 [ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)クラスで、通常は、プラットフォーム固有の内部の効果をラップするプラットフォームに依存しない効果を表します。 `FocusEffect`クラスを連結した名前解決のグループ名から成るパラメーターを渡して基底クラスのコンス トラクターを呼び出します (を使用して指定、 [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/)効果クラスの属性)、される一意の ID と使用して指定された、 [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/)効果クラスの属性です。 したがって、ときに、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)は実行時の新しいインスタンスを初期化、`MyCompany.FocusEffect`をコントロールの追加[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)コレクション。
+`FocusEffect`クラスのサブクラスの[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)クラスで、通常はプラットフォーム固有の内部の効果をラップするプラットフォームに依存しない効果を表します。 `FocusEffect`クラスは、解像度のグループ名の連結で構成されるパラメーターを渡して基底クラスのコンス トラクターを呼び出します (を使用して指定、 [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute)効果クラスの属性)、一意の ID と使用して指定された、 [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)効果クラスの属性。 そのため、ときに、 [ `Entry` ](xref:Xamarin.Forms.Entry)の新しいインスタンスを実行時に初期化されます、`MyCompany.FocusEffect`をコントロールの追加は[ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション。
 
-効果は、添付することもコントロールに、動作を使用してまたはアタッチされるプロパティを使用しています。 動作を使用して、コントロールへの効果のアタッチの詳細については、次を参照してください。[再利用可能な EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md)です。 添付プロパティを使用して、コントロールへの効果のアタッチの詳細については、次を参照してください。[効果にパラメーターを渡す](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)です。
+効果は、動作を使用してコントロールにも接続するまたはを使用して添付プロパティ。 動作を使用して、コントロールに効果を添付する方法の詳細については、次を参照してください。[再利用可能な EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md)します。 添付プロパティを使用して、コントロールに効果を添付する方法の詳細については、次を参照してください。[効果にパラメーターを渡す](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)します。
 
-## <a name="consuming-the-effect-in-cnum"></a>C での影響の使用&num;
+## <a name="consuming-the-effect-in-cnum"></a>C で効果の使用&num;
 
-該当するショートカットは、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) c# では次のコード例で示すようにします。
+相当[ `Entry` ](xref:Xamarin.Forms.Entry) c# では次のコード例で示すようにします。
 
 ```csharp
 var entry = new Entry {
@@ -236,7 +236,7 @@ var entry = new Entry {
 };
 ```
 
-`FocusEffect`にアタッチされて、`Entry`をコントロールの効果を追加することによってインスタンス[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)次のコード例で示したように、コレクション。
+`FocusEffect`にアタッチされて、`Entry`をコントロールの効果を追加することによってインスタンス[ `Effects` ](xref:Xamarin.Forms.Element.Effects)の次のコード例に示す、コレクション。
 
 ```csharp
 public HomePageCS ()
@@ -247,17 +247,17 @@ public HomePageCS ()
 }
 ```
 
-[ `Effect.Resolve` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.Resolve/p/System.String/)を返します、 [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)を連結した名前解決のグループ名は、指定した名前の (を使用して指定、 [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/)効果クラスの属性)、および一意の ID を使用して指定された、 [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/)効果クラスの属性です。 プラットフォームには、効果が用意されていない場合、`Effect.Resolve`メソッドが返す以外`null`値。
+[ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String))を返します、 [ `Effect` ](xref:Xamarin.Forms.Effect)解像度のグループ名の連結は、指定した名前に対する (を使用して指定、 [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute)効果クラスの属性)、および一意の ID を使用して指定された、 [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)効果クラスの属性。 プラットフォームは、効果に備わっていない場合、`Effect.Resolve`メソッドは以外`null`値。
 
 ## <a name="summary"></a>まとめ
 
-この記事の背景色を変更する効果を作成する方法を説明する、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロールがフォーカスを取得する場合を制御します。
+この記事では、の背景色を変更する効果を作成する方法を示しました、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールがフォーカスを取得するときを制御します。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [効果](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
-- [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
+- [効果](xref:Xamarin.Forms.Effect)
+- [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [背景色の効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)
 - [フォーカスの効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)

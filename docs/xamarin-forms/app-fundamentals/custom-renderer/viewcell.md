@@ -7,36 +7,36 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3cb4d7f152e0f9540275f12f0ade568cd0552784
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935577"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999000"
 ---
 # <a name="customizing-a-viewcell"></a>Viewcell のカスタマイズ
 
 _Xamarin.Forms ViewCell は、ListView、開発者が定義したビューを含むテーブルを追加できるセルです。この記事では、Xamarin.Forms の ListView コントロールの内部でホストされている ViewCell のカスタム レンダラーを作成する方法を示します。これを停止します Xamarin.Forms のレイアウト計算が ListView のスクロール中に繰り返し呼び出されます。_
 
-Xamarin.Forms のすべてのセルには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用の付随するレンダラーがあります。 ときに、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) iOS での Xamarin.Forms アプリケーションによって表示される、`ViewCellRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`UITableViewCell`コントロール。 Android のプラットフォームで、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブ`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブ`DataTemplate`します。 レンダラーと Xamarin.Forms コントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)します。
+Xamarin.Forms のすべてのセルには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用の付随するレンダラーがあります。 ときに、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) iOS での Xamarin.Forms アプリケーションによって表示される、`ViewCellRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`UITableViewCell`コントロール。 Android のプラットフォームで、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブ`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`ViewCellRenderer`クラスのインスタンスを作成、ネイティブ`DataTemplate`します。 レンダラーと Xamarin.Forms コントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)します。
 
-次の図の間のリレーションシップを示しています、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)およびそれを実装するネイティブ コントロールの対応します。
+次の図の間のリレーションシップを示しています、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)およびそれを実装するネイティブ コントロールの対応します。
 
 ![](viewcell-images/viewcell-classes.png "ViewCell コントロールと実装のネイティブ コントロール間のリレーションシップ")
 
-レンダリング プロセスに実行できる活用用のカスタム レンダラーを作成してプラットフォーム固有のカスタマイズを実装する[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)各プラットフォームで。 これを行うためのプロセスは次のとおりです。
+レンダリング プロセスに実行できる活用用のカスタム レンダラーを作成してプラットフォーム固有のカスタマイズを実装する[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)各プラットフォームで。 これを行うためのプロセスは次のとおりです。
 
 1. [作成](#Creating_the_Custom_Cell)Xamarin.Forms カスタム セル。
 1. [消費](#Consuming_the_Custom_Cell)Xamarin.Forms からカスタム セル。
 1. [作成](#Creating_the_Custom_Renderer_on_each_Platform)プラットフォームごとのセルのカスタム レンダラーです。
 
-各項目が実装するためにさらに、説明するようになりましたが、`NativeCell`活用、Xamarin.Forms 内でホストされている各セルのプラットフォームに固有のレイアウト レンダラー [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)コントロール。 これが停止中に繰り返し呼び出されるから Xamarin.Forms のレイアウトの計算`ListView`スクロールします。
+各項目が実装するためにさらに、説明するようになりましたが、`NativeCell`活用、Xamarin.Forms 内でホストされている各セルのプラットフォームに固有のレイアウト レンダラー [ `ListView` ](xref:Xamarin.Forms.ListView)コントロール。 これが停止中に繰り返し呼び出されるから Xamarin.Forms のレイアウトの計算`ListView`スクロールします。
 
 <a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>カスタムのセルを作成します。
 
-セルのカスタム コントロールをサブクラス化して作成できます、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)クラスに、次のコード例に示すようにします。
+セルのカスタム コントロールをサブクラス化して作成できます、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)クラスに、次のコード例に示すようにします。
 
 ```csharp
 public class NativeCell : ViewCell
@@ -143,9 +143,9 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Xamarin.Forms を[ `ListView` ](xref:Xamarin.Forms.ListView)を介して作成される、データの一覧を表示するコントロールが使用される、 [ `ItemSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemsSource/)プロパティ。 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)を最小化しようとしてキャッシング戦略、`ListView`メモリ フット プリントと実行を一覧のセルのリサイクルによって高速化します。 詳細については、次を参照してください。[キャッシュ戦略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)します。
+Xamarin.Forms を[ `ListView` ](xref:Xamarin.Forms.ListView)を介して作成される、データの一覧を表示するコントロールが使用される、 [ `ItemSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティ。 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)を最小化しようとしてキャッシング戦略、`ListView`メモリ フット プリントと実行を一覧のセルのリサイクルによって高速化します。 詳細については、次を参照してください。[キャッシュ戦略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)します。
 
-リスト内の各行には、名前、カテゴリ、およびイメージのファイル名 – データの 3 つの項目が含まれています。 一覧内の各行のレイアウトが定義されている、`DataTemplate`を通じて参照される、 [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemTemplate/)バインド可能なプロパティ。 `DataTemplate`リスト内のデータの行ごとになることを定義、`NativeCell`を表示するその`Name`、`Category`と`ImageFilename`プロパティ データ バインディングを使用します。 詳細については、`ListView`コントロールを参照してください[ListView](~/xamarin-forms/user-interface/listview/index.md)します。
+リスト内の各行には、名前、カテゴリ、およびイメージのファイル名 – データの 3 つの項目が含まれています。 一覧内の各行のレイアウトが定義されている、`DataTemplate`を通じて参照される、 [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)バインド可能なプロパティ。 `DataTemplate`リスト内のデータの行ごとになることを定義、`NativeCell`を表示するその`Name`、`Category`と`ImageFilename`プロパティ データ バインディングを使用します。 詳細については、`ListView`コントロールを参照してください[ListView](~/xamarin-forms/user-interface/listview/index.md)します。
 
 カスタム レンダラーは、各セルのプラットフォームに固有のレイアウトをカスタマイズするには、各アプリケーション プロジェクトを今すぐ追加できます。
 
@@ -315,9 +315,9 @@ internal class NativeiOSCell : UITableViewCell, INativeElementView
 }
 ```
 
-このクラスは、セルの内容、およびそれらのレイアウトを表示するために使用されているコントロールを定義します。 クラスの実装、 [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/)インターフェイスで、ときに必要です、 [ `ListView` ](xref:Xamarin.Forms.ListView)を使用して、 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)戦略をキャッシュします。 このインターフェイスは、クラスを実装する必要がありますを指定します、 [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/)プロパティで、再利用されるセルのセルのカスタム データを返す必要があります。
+このクラスは、セルの内容、およびそれらのレイアウトを表示するために使用されているコントロールを定義します。 クラスの実装、 [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView)インターフェイスで、ときに必要です、 [ `ListView` ](xref:Xamarin.Forms.ListView)を使用して、 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)戦略をキャッシュします。 このインターフェイスは、クラスを実装する必要がありますを指定します、 [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element)プロパティで、再利用されるセルのセルのカスタム データを返す必要があります。
 
-`NativeiOSCell`コンス トラクターの初期化の外観、 `HeadingLabel`、 `SubheadingLabel`、および`CellImageView`プロパティ。 これらのプロパティに格納されているデータを表示する使用、`NativeCell`インスタンスで、`UpdateCell`各プロパティの値を設定する呼び出されるメソッド。 さらに、ときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)を使用して、 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)戦略によって表示されるデータをキャッシュ、 `HeadingLabel`、 `SubheadingLabel`、および`CellImageView`プロパティを指定できますによって更新、`OnNativeCellPropertyChanged`カスタム レンダラーのメソッド。
+`NativeiOSCell`コンス トラクターの初期化の外観、 `HeadingLabel`、 `SubheadingLabel`、および`CellImageView`プロパティ。 これらのプロパティに格納されているデータを表示する使用、`NativeCell`インスタンスで、`UpdateCell`各プロパティの値を設定する呼び出されるメソッド。 さらに、ときに、 [ `ListView` ](xref:Xamarin.Forms.ListView)を使用して、 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)戦略によって表示されるデータをキャッシュ、 `HeadingLabel`、 `SubheadingLabel`、および`CellImageView`プロパティを指定できますによって更新、`OnNativeCellPropertyChanged`カスタム レンダラーのメソッド。
 
 セルのレイアウトは、`LayoutSubviews`の座標を設定する上書きします。 `HeadingLabel`、 `SubheadingLabel`、および`CellImageView`セル内で。
 
@@ -358,19 +358,19 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`GetCellCore`表示するには、各セルを構築するメソッドが呼び出されます。 各セルが、`NativeAndroidCell`インスタンスで、セルとそのデータのレイアウトを定義します。 操作、`GetCellCore`メソッドが依存、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)戦略をキャッシュします。
+`GetCellCore`表示するには、各セルを構築するメソッドが呼び出されます。 各セルが、`NativeAndroidCell`インスタンスで、セルとそのデータのレイアウトを定義します。 操作、`GetCellCore`メソッドが依存、 [ `ListView` ](xref:Xamarin.Forms.ListView)戦略をキャッシュします。
 
-- ときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)戦略のキャッシュは[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)、`GetCellCore`各セルのメソッドが呼び出されます。 A`NativeAndroidCell`ごとに作成`NativeCell`画面に表示される最初のインスタンス。 を通じて、ユーザーがスクロールすると、 `ListView`、`NativeAndroidCell`インスタンスを再利用になります。 Android のセルが再利用の詳細については、次を参照してください。[行ビューを再利用](~/android/user-interface/layouts/list-view/populating.md)します。
+- ときに、 [ `ListView` ](xref:Xamarin.Forms.ListView)戦略のキャッシュは[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)、`GetCellCore`各セルのメソッドが呼び出されます。 A`NativeAndroidCell`ごとに作成`NativeCell`画面に表示される最初のインスタンス。 を通じて、ユーザーがスクロールすると、 `ListView`、`NativeAndroidCell`インスタンスを再利用になります。 Android のセルが再利用の詳細については、次を参照してください。[行ビューを再利用](~/android/user-interface/layouts/list-view/populating.md)します。
 
   > [!NOTE]
-  > このカスタム レンダラーのコードがいくつかのセルを再利用することに注意してください場合でも、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)セルを保持するよう設定されます。
+  > このカスタム レンダラーのコードがいくつかのセルを再利用することに注意してください場合でも、 [ `ListView` ](xref:Xamarin.Forms.ListView)セルを保持するよう設定されます。
 
   各によって表示されるデータ`NativeAndroidCell`インスタンス、新しく作成または再利用、かどうかはデータで更新される、各から`NativeCell`インスタンスによって、`UpdateCell`メソッド。
 
   > [!NOTE]
-  > 注意してください、`OnNativeCellPropertyChanged`メソッドになります呼び出されたときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)がセルを保持するよう設定は更新されません、`NativeAndroidCell`プロパティの値。
+  > 注意してください、`OnNativeCellPropertyChanged`メソッドになります呼び出されたときに、 [ `ListView` ](xref:Xamarin.Forms.ListView)がセルを保持するよう設定は更新されません、`NativeAndroidCell`プロパティの値。
 
-- ときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)戦略のキャッシュは[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)、`GetCellCore`初期画面に表示される各セルのメソッドが呼び出されます。 A`NativeAndroidCell`の各インスタンスが作成されます`NativeCell`画面に表示される最初のインスタンス。 各によって表示されるデータ`NativeAndroidCell`インスタンスからのデータで更新されます、`NativeCell`インスタンスによって、`UpdateCell`メソッド。 ただし、`GetCellCore`をユーザーがスクロール メソッドを呼び出されなくなって、`ListView`します。 代わりに、`NativeAndroidCell`インスタンスを再利用になります。  `PropertyChanged` イベントを発生させる、`NativeCell`インスタンスのデータが変更されたときに、`OnNativeCellPropertyChanged`イベント ハンドラーでは、再使用される各データを更新します。`NativeAndroidCell`インスタンス。
+- ときに、 [ `ListView` ](xref:Xamarin.Forms.ListView)戦略のキャッシュは[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)、`GetCellCore`初期画面に表示される各セルのメソッドが呼び出されます。 A`NativeAndroidCell`の各インスタンスが作成されます`NativeCell`画面に表示される最初のインスタンス。 各によって表示されるデータ`NativeAndroidCell`インスタンスからのデータで更新されます、`NativeCell`インスタンスによって、`UpdateCell`メソッド。 ただし、`GetCellCore`をユーザーがスクロール メソッドを呼び出されなくなって、`ListView`します。 代わりに、`NativeAndroidCell`インスタンスを再利用になります。  `PropertyChanged` イベントを発生させる、`NativeCell`インスタンスのデータが変更されたときに、`OnNativeCellPropertyChanged`イベント ハンドラーでは、再使用される各データを更新します。`NativeAndroidCell`インスタンス。
 
 次のコード例は、`OnNativeCellPropertyChanged`がときに呼び出されてメソッド、`PropertyChanged`イベントが発生します。
 
@@ -474,7 +474,7 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 }
 ```
 
-このクラスは、セルの内容、およびそれらのレイアウトを表示するために使用されているコントロールを定義します。 クラスの実装、 [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/)インターフェイスで、ときに必要です、 [ `ListView` ](xref:Xamarin.Forms.ListView)を使用して、 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)戦略をキャッシュします。 このインターフェイスは、クラスを実装する必要がありますを指定します、 [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/)プロパティで、再利用されるセルのセルのカスタム データを返す必要があります。
+このクラスは、セルの内容、およびそれらのレイアウトを表示するために使用されているコントロールを定義します。 クラスの実装、 [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView)インターフェイスで、ときに必要です、 [ `ListView` ](xref:Xamarin.Forms.ListView)を使用して、 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)戦略をキャッシュします。 このインターフェイスは、クラスを実装する必要がありますを指定します、 [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element)プロパティで、再利用されるセルのセルのカスタム データを返す必要があります。
 
 `NativeAndroidCell`コンス トラクターの拡張、`NativeAndroidCell`レイアウト、および初期化、 `HeadingTextView`、 `SubheadingTextView`、および`ImageView`を高めのレイアウト コントロールのプロパティ。 これらのプロパティに格納されているデータを表示する使用、`NativeCell`インスタンスで、`UpdateCell`各プロパティの値を設定する呼び出されるメソッド。 さらに、ときに、 [ `ListView` ](xref:Xamarin.Forms.ListView)を使用して、 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)戦略によって表示されるデータをキャッシュ、 `HeadingTextView`、 `SubheadingTextView`、および`ImageView`プロパティを指定できますによって更新、`OnNativeCellPropertyChanged`カスタム レンダラーのメソッド。
 
@@ -569,7 +569,7 @@ namespace CustomRenderer.UWP
 
 ## <a name="summary"></a>まとめ
 
-この記事では、用のカスタム レンダラーを作成する方法を示しましたが、 [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) 、Xamarin.Forms 内でホストされている[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)コントロール。 これが停止中に繰り返し呼び出されるから Xamarin.Forms のレイアウトの計算`ListView`スクロールします。
+この記事では、用のカスタム レンダラーを作成する方法を示しましたが、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) 、Xamarin.Forms 内でホストされている[ `ListView` ](xref:Xamarin.Forms.ListView)コントロール。 これが停止中に繰り返し呼び出されるから Xamarin.Forms のレイアウトの計算`ListView`スクロールします。
 
 
 ## <a name="related-links"></a>関連リンク

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: 7585138cd6c33c2a5dc537ba28101a84e1c4b7ae
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a6c1b0a4e0df1c25f595ca4eb53079c74b84972e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921837"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998584"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -23,7 +23,7 @@ Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) は Xamarin.Forms 3.
 
 `FlexLayout` は スタックに水平および垂直方向に配置することができる Xamarin.Forms の [`StackLayout`](~/xamarin-forms/user-interface/layouts/stack-layout.md) に似ています。 ただし、`FlexLayout` は、1行または1列に多すぎて収められない場合に子を折り返す機能もあります。また配置方向や配置属性やさまざまな画面サイズへ対応するための多くのオプションもあります。
 
-`FlexLayout` は [`Layout<View>`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) から派生し、`IList<View>` 型の [`Children`](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) プロパティを継承しています。
+`FlexLayout` は [`Layout<View>`](xref:Xamarin.Forms.Layout`1) から派生し、`IList<View>` 型の [`Children`](xref:Xamarin.Forms.Layout`1.Children) プロパティを継承しています。
 
 `FlexLayout` は、6 つのパブリックなバインド可能なプロパティと、サイズ・向き・およびその子要素の配置に影響する 5 つのバインド可能な添付プロパティが定義されています。 (バインド可能な添付プロパティについてご不明な点があれば、**[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)** の記事を参照してください。)これらのプロパティは、以下の **[添付プロパティの詳細](#bindable-properties)** と **[バインド可能な添付プロパティの詳細](#attached-properties)** のセクションで詳しく説明されています。 しかし、この記事はこれらのプロパティの多くをより簡略に説明する `FlexLayout` の **[一般的な使用シナリオ](#common-scenarios)** のセクションから始まります。 この記事の最後に、`FlexLayout` と [CSS スタイルシート](~/xamarin-forms/user-interface/styles/css/index.md) を組み合わせる方法を参照できます。
 
@@ -455,7 +455,7 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは、4 つのメンバーを列挙する [`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) 型です。
 
-- `Stretch`、既定値
+- `Stretch` 既定値
 - `Center`
 - `Start` ( XAML では "flex-start" も可 )
 - `End` ( XAML では "flex-end" も可 )
@@ -474,7 +474,7 @@ iOS のスクリーンショットでは、すべての子は上揃えになっ�
 
 [`AlignContent`](xref:Xamarin.Forms.FlexLayout.AlignContent)プロパティは、7 つのメンバーを列挙する [`FlexAlignContent`](xref:Xamarin.Forms.FlexAlignContent) 型です。
 
-- `Stretch`、既定値
+- `Stretch` 既定値
 - `Center`
 - `Start` ( XAML では "flex-start" も可 )
 - `End` ( XAML では "flex-end" も可 )
@@ -504,7 +504,7 @@ iOS のスクリーンショットでは、すべての行は上部にありま�
 
 [`AlignSelf`](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) 添付プロパティは、 5 つのメンバーを列挙する [`FlexAlignSelf`](xref:Xamarin.Forms.FlexAlignContent) 型です。
 
-- `Auto`、既定値
+- `Auto` 既定値
 - `Stretch`
 - `Center`
 - `Start` ( XAML では "flex-start" も可 )
@@ -518,7 +518,7 @@ iOS のスクリーンショットでは、すべての行は上部にありま�
 FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
-`Label` の親である `FlexLayout` への参照がないことに注意してください。 XAML では、次のようにプロパティを設定します。
+`Label` の親である `FlexLayout` への参照がないことに注意してください。 XAML では、このようなプロパティを設定します。
 
 ```xaml
 <Label ... FlexAlign.AlignSelf="Center" ... />
