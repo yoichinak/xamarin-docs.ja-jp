@@ -1,26 +1,26 @@
 ---
-title: パン ジェスチャ レコグナイザーを追加します。
-description: イメージの大きさよりも小さいビューポートに表示されているときに、すべてのイメージのコンテンツ表示できますようには、水平方向にパン ジェスチャを使用して、イメージを垂直方向にドラッグする方法を説明します。
+title: パン ジェスチャ認識エンジンを追加します。
+description: この記事では、イメージのサイズより小さいビューポートに表示されているすべてのイメージ コンテンツ表示できるように、水平方向にパン ジェスチャを使用して、イメージを垂直方向にドラッグする方法が説明します。
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: d3e4dfc57678ff75fb8f9761360748d94aeefcc2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 45c0a1452916f193236e5ba741f8e8e19b6691aa
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239985"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996807"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ レコグナイザーを追加します。
+# <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンを追加します。
 
-_パン ジェスチャでは、ドラッグすることを検出するために使用され、PanGestureRecognizer クラスに実装されます。パン ジェスチャの一般的なシナリオは水平方向および垂直方向にドラッグ イメージようにするイメージの大きさよりも小さいビューポートに表示されているときに、すべてのイメージのコンテンツ表示できます。これは、ビューポート内の画像を移動することによって実現し、は、この記事で説明します。_
+_パン ジェスチャでは、ドラッグすることを検出するために使用し、PanGestureRecognizer クラスを使用して実装されます。パン ジェスチャの一般的なシナリオは、イメージのサイズより小さいビューポートに表示されているすべてのイメージ コンテンツ表示できるようにイメージを水平および垂直方向にドラッグします。これは、ビューポート内のイメージを移動することによって実現されますであり、この記事で説明が。_
 
 ## <a name="overview"></a>概要
 
-ユーザー インターフェイス要素をパン ジェスチャにドラッグするためには、作成、 [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/)インスタンス、処理、 [ `PanUpdated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.PanGestureRecognizer.PanUpdated/)イベントを新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/)ユーザー インターフェイス要素のコレクション。 次のコード例は、`PanGestureRecognizer`にアタッチされている、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)要素。
+ユーザー インターフェイス要素をパン ジェスチャをドラッグ可能にするために、作成、 [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)インスタンスを処理、 [ `PanUpdated` ](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated)イベントを新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ユーザー インターフェイスの要素のコレクション。 次のコード例は、`PanGestureRecognizer`にアタッチされている、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
 
 ```csharp
 var panGesture = new PanGestureRecognizer();
@@ -30,7 +30,7 @@ panGesture.PanUpdated += (s, e) => {
 image.GestureRecognizers.Add(panGesture);
 ```
 
-またこれを行う XAML では、次のコード例に示すようにします。
+これ行うこともできます、XAML で次のコード例に示すようにします。
 
 ```xaml
 <Image Source="MonoMonkey.jpg">
@@ -50,11 +50,11 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 ```
 
 > [!NOTE]
-> Android で正しいパン必要があります、 [Xamarin.Forms 2.1.0-pre1 NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1)最低限です。
+> Android で正しいパンが必要です、 [Xamarin.Forms 2.1.0-pre1 NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1)には、少なくともします。
 
 ## <a name="creating-a-pan-container"></a>パン コンテナーを作成します。
 
-このセクションには、通常に適したイメージまたはマップ内でのナビゲート自由形式のパンを実行する汎用化されたヘルパー クラスが含まれています。 ドラッグ操作を実行するパン ジェスチャの処理には、いくつかの数学、ユーザー インターフェイスを変換する必要があります。 この数式を使用して、ラップされたユーザー インターフェイス要素の境界内でのみをドラッグします。 次に示すのは、`PanContainer` クラスのコード例です。
+このセクションには通常、イメージまたはマップ内を移動するために適していますが、自由形式パンを実行する汎用化されたヘルパー クラスが含まれています。 ドラッグ操作を実行するパン ジェスチャの処理には、ユーザー インターフェイスを変換するいくつかの計算が必要です。 この数式を使用して、ラップされたユーザー インターフェイス要素の境界内でのみをドラッグします。 次に示すのは、`PanContainer` クラスのコード例です。
 
 ```csharp
 public class PanContainer : ContentView
@@ -77,7 +77,7 @@ public class PanContainer : ContentView
 }
 ```
 
-このクラスは、パン ジェスチャは、ラップされたユーザー インターフェイス要素をドラッグできるように、ユーザー インターフェイス要素を囲むラップできます。 XAML コード例を次に、`PanContainer`ラッピング、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)要素。
+このクラスは、パン ジェスチャのラップされたユーザー インターフェイス要素をドラッグできるように、ユーザー インターフェイス要素を囲むラップできます。 次の XAML コード例は、`PanContainer`の折り返し、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -94,7 +94,7 @@ public class PanContainer : ContentView
 </ContentPage>
 ```
 
-次のコード例に示す方法、`PanContainer`ラップ、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) c# ページ内の要素。
+次のコード例に示す方法、`PanContainer`ラップ、 [ `Image` ](xref:Xamarin.Forms.Image) c# ページ内の要素。
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -117,9 +117,9 @@ public class HomePageCS : ContentPage
 }
 ```
 
-どちらの例で、 [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)と[ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/)プロパティが表示されるイメージの幅と高さの値に設定されます。
+どちらの例で、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティが表示されるイメージの幅と高さの値に設定されます。
 
-ときに、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)要素は、パン ジェスチャを受け取り、表示されるイメージをドラッグします。 によって、ドラッグを実行、`PanContainer.OnPanUpdated`メソッドは、次のコード例に示されています。
+ときに、 [ `Image` ](xref:Xamarin.Forms.Image)要素は、パン ジェスチャを受け取り、表示されるイメージをドラッグします。 によって、ドラッグを実行、`PanContainer.OnPanUpdated`メソッドは、次のコード例に示されています。
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -142,21 +142,21 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-このメソッドは、ユーザーのパン ジェスチャに基づく、ラップされたユーザー インターフェイス要素の表示可能なコンテンツを更新します。 値を使用して、これは、 [ `TotalX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PanUpdatedEventArgs.TotalX/)と[ `TotalY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PanUpdatedEventArgs.TotalY/)のプロパティ、 [ `PanUpdatedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanUpdatedEventArgs/)方向を計算するインスタンスとパンの距離です。 `App.ScreenWidth`と`App.ScreenHeight`プロパティが、ビューポートの幅と高さを指定し、それぞれのプラットフォーム固有のプロジェクトで、画面の幅とデバイスの画面の高さの値に設定されています。 設定して、ラップされたユーザー要素をドラッグし、その[ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)と[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)プロパティを計算される値。
+このメソッドは、ユーザーのパン ジェスチャに基づき、ラップされたユーザー インターフェイス要素の表示可能なコンテンツを更新します。 値を使用してこれは、 [ `TotalX` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX)と[ `TotalY` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY)のプロパティ、 [ `PanUpdatedEventArgs` ](xref:Xamarin.Forms.PanUpdatedEventArgs)方向を計算するインスタンスとパンの距離です。 `App.ScreenWidth`と`App.ScreenHeight`プロパティは、ビューポートの幅と高さを提供し、それぞれのプラットフォーム固有プロジェクトで、画面の幅とデバイスの画面の高さの値に設定されます。 ラップされたユーザーの要素が設定してドラッグし、その[ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)と[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)プロパティの値を計算します。
 
-ビューポートの幅と高さを要素から取得できますと全画面表示を占有しない要素のコンテンツをパン、 [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/)と[ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/)プロパティです。
+ビューポートの幅と高さを要素から取得できますと全画面表示を占有しない要素のコンテンツをパン[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)と[ `Width` ](xref:Xamarin.Forms.VisualElement.Width)プロパティ。
 
 > [!NOTE]
-> 高解像度のイメージを表示すると、アプリのメモリ使用量が大幅に向上できます。 そのため、必要がありますのみ作成する必要が必須であり、不要になったアプリで必要とすぐに解放する必要があるとします。 詳細については、「[イメージ リソースを最適化する](~/xamarin-forms/deploy-test/performance.md#optimizeimages)」を参照してください。
+> 高解像度のイメージを表示すると、アプリのメモリ フット プリントが大幅に向上します。 そのため、する必要がありますのみ作成する必要が必要し、不要になったアプリで必要とすぐに解放する必要があります。 詳細については、「[イメージ リソースを最適化する](~/xamarin-forms/deploy-test/performance.md#optimizeimages)」を参照してください。
 
 ## <a name="summary"></a>まとめ
 
-パン ジェスチャをドラッグすることを検出するために使用し、使用して実装されて、 [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/)クラスです。
+パン ジェスチャをドラッグすることが検出され、は実装されて、 [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)クラス。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [PanGesture (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [PanGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [PanGestureRecognizer](xref:Xamarin.Forms.PanGestureRecognizer)

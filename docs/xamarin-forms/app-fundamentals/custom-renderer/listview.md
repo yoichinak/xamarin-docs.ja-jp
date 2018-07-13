@@ -1,42 +1,42 @@
 ---
 title: ListView のカスタマイズ
-description: Xamarin.Forms ListView は、垂直方向の一覧としてデータのコレクションを表示するビューです。 この記事では、カスタム レンダラーを作成のプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブのリスト コントロールのパフォーマンスをより細かく制御できるようにする方法を示します。
+description: Xamarin.Forms の ListView は、データのコレクションを垂直方向の一覧として表示するビューです。 この記事では、カスタム レンダラーをプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブ リスト コントロールのパフォーマンスをさらに制御できるように作成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 69640c1cdea6d7dbe3ec82dacbc77991c7b28c99
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b3b73d542faebdb8ab85c989d7812368f4f3ffac
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847401"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997490"
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
-_Xamarin.Forms ListView は、垂直方向の一覧としてデータのコレクションを表示するビューです。この記事では、カスタム レンダラーを作成のプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブのリスト コントロールのパフォーマンスをより細かく制御できるようにする方法を示します。_
+_Xamarin.Forms の ListView は、データのコレクションを垂直方向の一覧として表示するビューです。この記事では、カスタム レンダラーをプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブ リスト コントロールのパフォーマンスをさらに制御できるように作成する方法を示します。_
 
-各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`ListViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UITableView`コントロール。 Android のプラットフォームでは、`ListViewRenderer`クラスのインスタンスを作成、ネイティブな`ListView`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`ListViewRenderer`クラスのインスタンスを作成、ネイティブな`ListView`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+すべての Xamarin.Forms のビューには、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ListView` ](xref:Xamarin.Forms.ListView) iOS での Xamarin.Forms アプリケーションによって表示される、`ListViewRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`UITableView`コントロール。 Android のプラットフォームで、`ListViewRenderer`クラスのインスタンスを作成、ネイティブ`ListView`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`ListViewRenderer`クラスのインスタンスを作成、ネイティブ`ListView`コントロール。 レンダラーと Xamarin.Forms コントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)します。
 
-次の図の間のリレーションシップを示しています、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)コントロールおよびそれを実装する対応するネイティブ コントロール。
+次の図の間のリレーションシップを示しています、 [ `ListView` ](xref:Xamarin.Forms.ListView)コントロールとそれを実装するネイティブ コントロールの対応します。
 
 ![](listview-images/listview-classes.png "ListView コントロールと実装のネイティブ コントロール間のリレーションシップ")
 
-表示処理に実行できるの利点のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズ設定を実装する、 [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)プラットフォームごとにします。 これを行うためのプロセスは次のとおりです。
+レンダリング プロセスに実行できる活用用のカスタム レンダラーを作成してプラットフォーム固有のカスタマイズを実装する[ `ListView` ](xref:Xamarin.Forms.ListView)各プラットフォームで。 これを行うためのプロセスは次のとおりです。
 
-1. [作成](#Creating_the_Custom_ListView_Control)Xamarin.Forms のカスタム コントロールです。
-1. [消費](#Consuming_the_Custom_Control)Xamarin.Forms からカスタム コントロールです。
+1. [作成](#Creating_the_Custom_ListView_Control)Xamarin.Forms カスタム コントロール。
+1. [消費](#Consuming_the_Custom_Control)Xamarin.Forms からカスタム コントロール。
 1. [作成](#Creating_the_Custom_Renderer_on_each_Platform)各プラットフォームでコントロールのカスタム レンダラーです。
 
-各項目を実装する順番に説明するようになりましたが、`NativeListView`レンダラーのプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトを利用します。 このシナリオは、一覧を含む既存のネイティブ アプリと再利用できるセルのコードを移植するときに便利です。 さらに、データの仮想化などのパフォーマンスに影響を与えることができますリスト コントロールの機能の詳細なカスタマイズができます。
+各項目が実装するためにさらに、説明するようになりましたが、`NativeListView`プラットフォームに固有のリスト コントロールとネイティブのセルのレイアウトを活用したレンダラーです。 このシナリオは、リストを含む既存のネイティブ アプリと再利用できるセルのコードを移植するときに便利です。 さらに、データ仮想化などのパフォーマンスに影響を与えるリスト コントロールの機能の詳細なカスタマイズができます。
 
 <a name="Creating_the_Custom_ListView_Control" />
 
-## <a name="creating-the-custom-listview-control"></a>カスタムの ListView コントロールの作成
+## <a name="creating-the-custom-listview-control"></a>カスタム ListView コントロールを作成します。
 
-カスタム[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)サブクラス化してコントロールを作成することができます、`ListView`クラスに、次のコード例に示すようにします。
+カスタム[ `ListView` ](xref:Xamarin.Forms.ListView)をサブクラス化してコントロールを作成することができます、`ListView`クラスに、次のコード例に示すようにします。
 
 ```csharp
 public class NativeListView : ListView
@@ -60,13 +60,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView` .NET 標準のライブラリ プロジェクトで作成され、カスタム コントロールの API を定義します。 このコントロールは、公開、`Items`を設定するために使用されているプロパティ、`ListView`にバインドされているデータは表示目的、データとなることができます。 また、`ItemSelected`プラットフォーム固有のネイティブ リスト コントロールの項目が選択されるたびに発生するイベントです。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
+`NativeListView`は .NET Standard ライブラリ プロジェクトで作成され、カスタム コントロールの API を定義します。 このコントロールは、公開、`Items`プロパティを設定するために使用される、 `ListView` for にバインドされたデータの表示目的で、データとなることができます。 また、公開、`ItemSelected`プラットフォームに固有のネイティブ リスト コントロールの項目が選択されるたびに起動されるイベント。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
-`NativeListView`カスタム コントロールで参照できます Xaml で標準的な .NET のライブラリ プロジェクトの場所の名前空間の宣言してコントロールに名前空間プレフィックスを使用します。 次のコード例に示す方法、`NativeListView`カスタム コントロールを XAML ページで利用できることができます。
+`NativeListView`カスタム コントロールを参照できます Xaml で .NET Standard ライブラリ プロジェクトの場所の名前空間を宣言して、コントロールの名前空間プレフィックスを使用します。 次のコード例に示す方法、 `NativeListView` XAML ページで、カスタム コントロールを使用できます。
 
 ```xaml
 <ContentPage ...
@@ -86,9 +86,9 @@ public class NativeListView : ListView
 </ContentPage>
 ```
 
-`local`何も名前空間プレフィックスを付けることができます。 ただし、`clr-namespace`と`assembly`値がカスタム コントロールの詳細情報と一致する必要があります。 名前空間が宣言されると、カスタム コントロールを参照する、プレフィックスを使用します。
+`local`何も名前空間プレフィックスを付けることができます。 ただし、`clr-namespace`と`assembly`値は、カスタム コントロールの詳細と一致する必要があります。 名前空間が宣言されると、プレフィックスを使用して、カスタム コントロールを参照します。
 
-次のコード例に示す方法、`NativeListView`カスタム コントロールは、c# のページで利用できることができます。
+次のコード例に示す方法、 `NativeListView` (C#) ページで、カスタム コントロールを使用できます。
 
 ```csharp
 public class MainPageCS : ContentPage
@@ -131,39 +131,39 @@ public class MainPageCS : ContentPage
 }
 ```
 
-`NativeListView`カスタム コントロールを介して作成される、データの一覧を表示するプラットフォーム固有のカスタム レンダラーを使用して、`Items`プロパティです。 リスト内の各行には、データの名前、カテゴリ、および画像のファイル名の 3 つの項目が含まれています。 リスト内の各行のレイアウトは、プラットフォーム固有のカスタム レンダラーによって定義されます。
+`NativeListView`カスタム コントロールを介して作成される、データの一覧を表示するプラットフォーム固有のカスタム レンダラーを使用して、`Items`プロパティ。 リスト内の各行には、名前、カテゴリ、およびイメージのファイル名 – データの 3 つの項目が含まれています。 リスト内の各行のレイアウトは、プラットフォーム固有のカスタム レンダラーによって定義されます。
 
 > [!NOTE]
-> `NativeListView`スクロール機能が含まれるプラットフォーム固有のリスト コントロールを使用してカスタム コントロールをレンダリングする、カスタム コントロール ホストしてはならないスクロール可能なレイアウト コントロールなど、 [ `ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)です。
+> `NativeListView`スクロール機能を含むプラットフォーム固有のリスト コントロールを使用してカスタム コントロールをレンダリングする、カスタム コントロールをなど、スクロール可能なレイアウト コントロールでホストするされません、 [ `ScrollView`](xref:Xamarin.Forms.ScrollView)します。
 
 カスタム レンダラーは、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトを作成するには、各アプリケーション プロジェクトを今すぐ追加できます。
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォームでは、カスタム レンダラーを作成します。
+## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォームでのカスタム レンダラーの作成
 
 カスタム レンダラー クラスを作成するプロセスは次のとおりです。
 
-1. サブクラスを作成、`ListViewRenderer`カスタム コントロールを表示するクラス。
-1. 上書き、`OnElementChanged`をカスタマイズするカスタム コントロールと書き込みのロジックを表示するメソッド。 このメソッドが呼び出されます対応する Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)を作成します。
-1. 追加、`ExportRenderer`属性をカスタム レンダラー クラス Xamarin.Forms のカスタム コントロールを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
+1. サブクラスを作成、`ListViewRenderer`カスタム コントロールをレンダリングするクラス。
+1. 上書き、`OnElementChanged`それをカスタマイズするカスタム コントロールと書き込みロジックをレンダリングするメソッド。 このメソッドが呼び出されます、対応する Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView)が作成されます。
+1. 追加、`ExportRenderer`属性をカスタム レンダラー クラスは、Xamarin.Forms カスタム コントロールを表示するために使用するように指定します。 この属性は、Xamarin.Forms でのカスタム レンダラーの登録に使用されます。
 
 > [!NOTE]
-> 各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能であります。 カスタム レンダラーが登録されていない場合は、セルの基本クラスの既定のレンダラーが使用されます。
+> 各プラットフォーム プロジェクトにカスタム レンダラーを提供する省略可能になります。 カスタム レンダラーが登録されていない場合は、セルの基本クラスの既定のレンダラーが使用されます。
 
-次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
+次の図は、サンプル アプリケーションとそれらの間のリレーションシップ内の各プロジェクトの役割を示します。
 
 ![](listview-images/solution-structure.png "NativeListView カスタム レンダラーのプロジェクトの責任")
 
-`NativeListView`カスタム コントロールがから派生するプラットフォーム固有のレンダラー クラスによって表示される、`ListViewRenderer`各プラットフォームのクラスです。 これは、結果、各`NativeListView`カスタム コントロールが次のスクリーン ショットに示すように、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウト、レンダリングされます。
+`NativeListView`でプラットフォーム固有のレンダラー クラスから派生するカスタム コントロールが表示される、`ListViewRenderer`各プラットフォームのクラス。 これは、結果、各`NativeListView`の次のスクリーン ショットに示すようにプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウト、レンダリングされるカスタム コントロール。
 
 ![](listview-images/screenshots.png "各プラットフォームで NativeListView")
 
-`ListViewRenderer`クラスが公開、 `OnElementChanged` Xamarin.Forms のカスタム コントロールが、対応するネイティブ コントロールを表示するために作成されたときに呼び出されるメソッド。 このメソッドは、`ElementChangedEventArgs`を含むパラメーター`OldElement`と`NewElement`プロパティです。 これらのプロパティは、Xamarin.Forms 要素を表すをレンダラーでは、*が*に接続されていると Xamarin.Forms の要素をレンダラーでは、*は*に、それぞれをアタッチします。 サンプル アプリケーションで、`OldElement`プロパティ`null`と`NewElement`プロパティへの参照が格納されます、`NativeListView`インスタンス。
+`ListViewRenderer`クラスでは、`OnElementChanged`メソッドで、Xamarin.Forms カスタム コントロールが、対応するネイティブ コントロールを表示するために作成されたときに呼び出されます。 このメソッドは、`ElementChangedEventArgs`を含むパラメーター`OldElement`と`NewElement`プロパティ。 これらのプロパティは、Xamarin.Forms 要素を表すをレンダラー*が*に接続されていると Xamarin.Forms 要素をレンダラー*は*に、それぞれに接続されています。 サンプル アプリケーションで、`OldElement`プロパティになります`null`と`NewElement`プロパティへの参照には、`NativeListView`インスタンス。
 
-オーバーライドのバージョン、`OnElementChanged`メソッドは、各プラットフォームに固有のレンダラー クラスでは、ネイティブ コントロールのカスタマイズを実行する場所です。 型指定されたコントロールへの参照、ネイティブ プラットフォームで使用されている経由でアクセスできる、`Control`プロパティです。 さらに、を通じて表示される Xamarin.Forms コントロールへの参照を取得できます、`Element`プロパティです。
+オーバーライドされたバージョン、`OnElementChanged`各プラットフォームに固有のレンダラー クラスのメソッドはネイティブ コントロールのカスタマイズを実行する場所です。 を介してアクセスできる、プラットフォームで使用されているネイティブ コントロールへの参照を型指定された、`Control`プロパティ。 さらでレンダリングされている Xamarin.Forms コントロールへの参照を取得できます、`Element`プロパティ。
 
-注意が必要でイベント ハンドラーをサブスクライブしているとき、`OnElementChanged`メソッドを次のコード例で示したようにします。
+内のイベント ハンドラーをサブスクライブしているときは注意する必要がある、`OnElementChanged`メソッドは、次のコード例で示した。
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
@@ -180,17 +180,17 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-ネイティブ コントロールで構成するようにし、カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられている場合は、イベント ハンドラーをサブスクライブします。 同様に、イベント ハンドラーをサブスクライブしていたをすることはできませんのサブスクライブ レンダラーでは、要素が変更に関連付けられている場合にのみです。 このアプローチを採用することは、メモリ リークは発生しないこと、カスタム レンダラーを作成するのに役立ちます。
+ネイティブ コントロールで構成するようにし、カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられている場合は、イベント ハンドラーをサブスクライブします。 同様に、サブスクライブされたイベント ハンドラーがサブスクリプションを解除する要素は、レンダラーが変更に関連付けられている場合にのみです。 このアプローチを採用すると、メモリ リークが発生しませんが、カスタム レンダラーを作成するのに役立ちます。
 
-オーバーライドのバージョン、`OnElementPropertyChanged`メソッドは、各プラットフォームに固有のレンダラー クラスでは、Xamarin.Forms のカスタム コントロールにバインド可能なプロパティの変更に応答する場所です。 このオーバーライドは、何度も呼び出すことができるよう、変更されているプロパティのチェックを実行常にする必要があります。
+オーバーライドされたバージョン、`OnElementPropertyChanged`各プラットフォームに固有のレンダラー クラスのメソッドは、Xamarin.Forms カスタム コントロールにバインド可能なプロパティの変更に対応するためです。 この上書きは、何度も呼び出すことが、変更されているプロパティのチェックを行った常にする必要があります。
 
-各カスタム レンダラー クラスがで修飾された、 `ExportRenderer` Xamarin.Forms では、レンダラーを登録する属性。 属性は、–、表示される Xamarin.Forms カスタム コントロールの型名とカスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスで修飾された、`ExportRenderer`レンダラーを Xamarin.Forms で登録される属性。 属性は、– 表示するには、Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションでは、各プラットフォームに固有のカスタム レンダラー クラスの実装について説明します。
 
-### <a name="creating-the-custom-renderer-on-ios"></a>IOS では、カスタム レンダラーを作成します。
+### <a name="creating-the-custom-renderer-on-ios"></a>IOS でのカスタム レンダラーの作成
 
-次のコード例は、iOS プラットフォーム用のカスタム レンダラーを示しています。
+次のコード例では、iOS プラットフォーム用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer (typeof(NativeListView), typeof(NativeiOSListViewRenderer))]
@@ -214,7 +214,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`UITableView`コントロールがのインスタンスを作成することで構成されている、`NativeiOSListViewSource`クラス、カスタムのレンダラーが新しい Xamarin.Forms 要素にアタッチされています。 このクラスにデータを提供する、`UITableView`オーバーライドすることでコントロール、`RowsInSection`と`GetCell`メソッドを`UITableViewSource`クラス、および公開することによって、`Items`プロパティを表示するデータの一覧を含むです。 クラスにも用意されています、`RowSelected`メソッドのオーバーライドを呼び出す、`ItemSelected`によって提供されるイベント、`NativeListView`カスタム コントロールです。 詳細については、メソッドをオーバーライドするを参照してください。[サブクラス化 UITableViewSource](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)です。 `GetCell`メソッドを返します、`UITableCellView`を一覧で、各行のデータが設定され、次のコード例に示します。
+`UITableView`コントロールがのインスタンスを作成して構成されている、`NativeiOSListViewSource`クラス、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていること。 このクラスにデータを提供する、`UITableView`オーバーライドすることでコントロール、`RowsInSection`と`GetCell`メソッドを`UITableViewSource`クラス、および公開することによって、`Items`プロパティを表示するデータの一覧が含まれています。 クラスも用意されています。、`RowSelected`メソッドのオーバーライドを呼び出す、`ItemSelected`によって提供されるイベント、`NativeListView`カスタム コントロール。 メソッドの詳細を上書きするを参照してください。[サブクラス化 UITableViewSource](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)します。 `GetCell`メソッドを返します。 を`UITableCellView`次のコード例に示したを一覧で、各行のデータが表示されます。
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -241,9 +241,9 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 }
 ```
 
-このメソッドを作成、`NativeiOSListViewCell`画面に表示されるデータの各行のインスタンス。 `NativeiOSCell`インスタンスは、各セルとセルのデータのレイアウトを定義します。 セルは、スクロールのための画面から消えます、ときに、セルになります再利用します。 これを回避できますのみが存在しているメモリを確保無駄使い`NativeiOSCell`リスト内のデータのすべてではなく、画面に表示されるデータ用のインスタンス。 セルの再利用の詳細については、次を参照してください。[セルが再利用](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)です。 `GetCell`メソッドも読み取ります、`ImageFilename`ことと、あることと、画像を読み込みますとして格納を指定されたデータの各行のプロパティ、`UIImage`更新する前に、インスタンス、`NativeiOSListViewCell`データ (名前、カテゴリ、およびイメージ) のインスタンス。行。
+このメソッドを作成、`NativeiOSListViewCell`画面に表示されるデータの各行のインスタンス。 `NativeiOSCell`インスタンスは、各セルとセルのデータのレイアウトを定義します。 セルは、スクロールのための画面からが消える、ときに、セルになります再利用可能です。 のみがあることを確認してメモリは無駄使いを回避できます`NativeiOSCell`リスト内のデータのすべてではなく、画面に表示されているデータのインスタンス。 セルの再利用の詳細については、次を参照してください。[セルが再利用](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)します。 `GetCell`メソッドは読み取りも、`ImageFilename`をそれが存在して、画像を読み込みますおよび保存として提供されているデータの各行のプロパティを`UIImage`インスタンス、更新する前に、 `NativeiOSListViewCell` (名前、カテゴリ、およびイメージ) のデータのインスタンス。行。
 
-`NativeiOSListViewCell`クラスは、各セルのレイアウトを定義し、次のコード例に示します。
+`NativeiOSListViewCell`クラスが、各セルのレイアウトを定義し、次のコード例に示した。
 
 ```csharp
 public class NativeiOSListViewCell : UITableViewCell
@@ -295,11 +295,11 @@ public class NativeiOSListViewCell : UITableViewCell
 }
 ```
 
-このクラスは、セルの内容、およびそれらのレイアウトを表示するために使用されているコントロールを定義します。 `NativeiOSListViewCell`コンス トラクターのインスタンスを作成する`UILabel`と`UIImageView`コントロール、およびその外観を初期化します。 これらのコントロールを使用すると、すべての行のデータを表示、`UpdateCell`このデータを設定するために使用されるメソッド、`UILabel`と`UIImageView`インスタンス。 これらのインスタンスの場所を設定して、オーバーライドされた`LayoutSubviews`セル内のそれぞれの座標を指定することによって、メソッド。
+このクラスは、セルの内容、およびそれらのレイアウトを表示するために使用されているコントロールを定義します。 `NativeiOSListViewCell`コンス トラクターのインスタンスを作成する`UILabel`と`UIImageView`コントロール、およびそれらの外観を初期化します。 これらのコントロールを使用すると、すべての行のデータを表示、`UpdateCell`メソッドでこのデータを設定するために使用される、`UILabel`と`UIImageView`インスタンス。 これらのインスタンスの場所を設定して、オーバーライドされた`LayoutSubviews`セル内の座標を指定することで、メソッド。
 
 #### <a name="responding-to-a-property-change-on-the-custom-control"></a>カスタム コントロールのプロパティの変更に応答してください。
 
-場合、`NativeListView.Items`カスタム レンダラーは、変更内容を表示することによって応答する必要があります、プロパティが項目に追加されているため、変更、または一覧から削除します。 これには、オーバーライドすることで、`OnElementPropertyChanged`メソッドは、次のコード例に示されています。
+場合、`NativeListView.Items`カスタム レンダラーは、変更内容を表示して応答する必要があります、プロパティが項目に追加されるため、変更、または一覧から削除します。 これは、オーバーライドすることで実現できます、`OnElementPropertyChanged`メソッドは、次のコード例に示されています。
 
 ```csharp
 protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -312,11 +312,11 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 }
 ```
 
-メソッドの新しいインスタンスを作成する、`NativeiOSListViewSource`データを提供するクラス、`UITableView`コントロールを提供する、バインド可能な`NativeListView.Items`プロパティが変更されました。
+メソッドの新しいインスタンスを作成し、`NativeiOSListViewSource`データを提供するクラス、`UITableView`コントロールを提供する、バインド可能な`NativeListView.Items`プロパティが変更されました。
 
-### <a name="creating-the-custom-renderer-on-android"></a>Android では、カスタム レンダラーを作成します。
+### <a name="creating-the-custom-renderer-on-android"></a>Android でのカスタム レンダラーの作成
 
-次のコード例は、Android プラットフォーム用のカスタム レンダラーを示しています。
+次のコード例では、Android プラットフォーム用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeListView), typeof(NativeAndroidListViewRenderer))]
@@ -358,9 +358,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-ネイティブ`ListView`カスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているコントロールが構成されます。 この構成ではのインスタンスを作成する、`NativeAndroidListViewAdapter`ネイティブにデータを提供するクラス`ListView`制御、および処理するイベント ハンドラーを登録、`ItemClick`イベント。 さらに、このハンドラーを呼び出す、`ItemSelected`によって提供されるイベント、`NativeListView`カスタム コントロールです。 `ItemClick` Xamarin.Forms 要素は、レンダラーが変更に関連付けられている場合、イベントを購読解除します。
+ネイティブ`ListView`カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされているコントロールが構成されます。 この構成では、インスタンスを作成する必要があります、`NativeAndroidListViewAdapter`データをネイティブに提供するクラス`ListView`制御、および処理するイベント ハンドラーを登録、`ItemClick`イベント。 このハンドラーを呼び出しますが、さらに、`ItemSelected`によって提供されるイベント、`NativeListView`カスタム コントロール。 `ItemClick` Xamarin.Forms 要素は、レンダラーが変更にアタッチされている場合、イベントを購読解除します。
 
-`NativeAndroidListViewAdapter`から派生した、`BaseAdapter`クラスを公開、`Items`をオーバーライドするとともに、表示されるデータの一覧を含むプロパティ、 `Count`、 `GetView`、 `GetItemId`、および`this[int]`メソッドです。 これらのメソッド オーバーライドの詳細については、次を参照してください。 [、ListAdapter を実装する](~/android/user-interface/layouts/list-view/populating.md)です。 `GetView`メソッドはデータを読み込んだ、各行のビューを返し、次のコード例に示します。
+`NativeAndroidListViewAdapter`から派生した、`BaseAdapter`クラスと公開、`Items`プロパティを表示するデータの一覧を含むようオーバーライド、 `Count`、 `GetView`、 `GetItemId`、および`this[int]`メソッド。 これらのメソッド オーバーライドの詳細については、次を参照してください。 [、ListAdapter を実装する](~/android/user-interface/layouts/list-view/populating.md)します。 `GetView`メソッドは、行ごとにデータを含むビューを返し、次のコード例に示します。
 
 ```csharp
 public override View GetView (int position, View convertView, ViewGroup parent)
@@ -405,11 +405,11 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 }
 ```
 
-`GetView` 、描画するセルを取得するメソッドが呼び出されたとして、`View`リスト内のデータの行ごとにします。 作成、`View`の外観を備えた、画面に表示されるデータの各行のインスタンス、`View`レイアウト ファイルで定義されているインスタンス。 セルは、スクロールのための画面から消えます、ときに、セルになります再利用します。 これを回避できますのみが存在しているメモリを確保無駄使い`View`リスト内のデータのすべてではなく、画面に表示されるデータ用のインスタンス。 ビューを再利用の詳細については、次を参照してください。[行ビューを再利用](~/android/user-interface/layouts/list-view/populating.md)です。
+`GetView`をレンダリングするセルを返すメソッドが呼び出されるとして、`View`リスト内のデータの行ごとにします。 作成、`View`の外観を備えた、画面に表示されるデータの各行のインスタンス、`View`レイアウト ファイルで定義されているインスタンス。 セルは、スクロールのための画面からが消える、ときに、セルになります再利用可能です。 のみがあることを確認してメモリは無駄使いを回避できます`View`リスト内のデータのすべてではなく、画面に表示されているデータのインスタンス。 ビューの再利用の詳細については、次を参照してください。[行ビューを再利用](~/android/user-interface/layouts/list-view/populating.md)します。
 
-`GetView`メソッドが読み込まれます、`View`で指定されたファイル名から画像データの読み込みなどのデータ インスタンス、`ImageFilename`プロパティです。
+`GetView`メソッドも作成されます、`View`で指定されたファイル名から画像データの読み込みなどのデータ インスタンス、`ImageFilename`プロパティ。
 
-各セル dispayed ネイティブでのレイアウト`ListView`で定義されて、`NativeAndroidListViewCell.axml`レイアウト ファイルは、によって大きく、`LayoutInflater.Inflate`メソッドです。 次のコード例は、レイアウトの定義を示しています。
+ネイティブでは、各セル dispayed のレイアウト`ListView`で定義されている、`NativeAndroidListViewCell.axml`膨らませるレイアウト ファイル、`LayoutInflater.Inflate`メソッド。 次のコード例では、レイアウト定義を示します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -449,11 +449,11 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 </RelativeLayout>
 ```
 
-このレイアウトを指定する 2 つ`TextView`コントロールと`ImageView`コントロールがセルの内容を表示するために使用します。 2 つ`TextView`コントロールは垂直方向に配置内で、`LinearLayout`中に含まれるすべてのコントロールのコントロール、`RelativeLayout`です。
+このレイアウトは、その 2 つを指定`TextView`コントロールと`ImageView`コントロールがセルの内容を表示するために使用します。 2 つ`TextView`コントロールは垂直方向に内で、`LinearLayout`内に含まれているすべてのコントロールのコントロール、`RelativeLayout`します。
 
 #### <a name="responding-to-a-property-change-on-the-custom-control"></a>カスタム コントロールのプロパティの変更に応答してください。
 
-場合、`NativeListView.Items`カスタム レンダラーは、変更内容を表示することによって応答する必要があります、プロパティが項目に追加されているため、変更、または一覧から削除します。 これには、オーバーライドすることで、`OnElementPropertyChanged`メソッドは、次のコード例に示されています。
+場合、`NativeListView.Items`カスタム レンダラーは、変更内容を表示して応答する必要があります、プロパティが項目に追加されるため、変更、または一覧から削除します。 これは、オーバーライドすることで実現できます、`OnElementPropertyChanged`メソッドは、次のコード例に示されています。
 
 ```csharp
 protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -466,11 +466,11 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 }
 ```
 
-メソッドの新しいインスタンスを作成する、`NativeAndroidListViewAdapter`ネイティブにデータを提供するクラス`ListView`コントロールを提供する、バインド可能な`NativeListView.Items`プロパティが変更されました。
+メソッドの新しいインスタンスを作成し、`NativeAndroidListViewAdapter`データをネイティブに提供するクラス`ListView`コントロールを提供する、バインド可能な`NativeListView.Items`プロパティが変更されました。
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>UWP にカスタム レンダラーを作成します。
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP のカスタム レンダラーを作成します。
 
-次のコード例は、UWP のカスタム レンダラーを示しています。
+次のコード例では、UWP 用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeListView), typeof(NativeUWPListViewRenderer))]
@@ -511,9 +511,9 @@ namespace CustomRenderer.UWP
 }
 ```
 
-ネイティブ`ListView`カスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているコントロールが構成されます。 この構成設定は、どのネイティブ`ListView`コントロールが選択されているアイテムに応答は、各セルの内容と外観を定義して、を処理するイベントハンドラーの登録は、コントロールによって表示されるデータを設定します。`SelectionChanged`イベント。 さらに、このハンドラーを呼び出す、`ItemSelected`によって提供されるイベント、`NativeListView`カスタム コントロールです。 `SelectionChanged` Xamarin.Forms 要素は、レンダラーが変更に関連付けられている場合、イベントを購読解除します。
+ネイティブ`ListView`カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされているコントロールが構成されます。 この構成設定は、どのネイティブ`ListView`コントロールが選択されている項目に応答が、各セルの内容と外観を定義して、を処理するイベントハンドラーを登録、コントロールによって表示されるデータの設定`SelectionChanged`イベント。 このハンドラーを呼び出しますが、さらに、`ItemSelected`によって提供されるイベント、`NativeListView`カスタム コントロール。 `SelectionChanged` Xamarin.Forms 要素は、レンダラーが変更にアタッチされている場合、イベントを購読解除します。
 
-各ネイティブの内容と外観`ListView`セルがによって定義された、`DataTemplate`という`ListViewItemTemplate`です。 これは、`DataTemplate`はアプリケーション レベル リソース ディクショナリに格納され、次のコード例に示します。
+各ネイティブの内容と外観`ListView`セルがによって定義されている、`DataTemplate`という`ListViewItemTemplate`。 これは、`DataTemplate`は、アプリケーション レベルのリソース ディクショナリに格納され、次のコード例に示した。
 
 ```xaml
 <DataTemplate x:Key="ListViewItemTemplate">
@@ -538,11 +538,11 @@ namespace CustomRenderer.UWP
 </DataTemplate>
 ```
 
-`DataTemplate`セル、およびレイアウトと外観の内容を表示するために使用するコントロールを指定します。 2 つ`TextBlock`コントロールと`Image`コントロールがデータ バインディングによってセルの内容を表示するために使用します。 さらのインスタンス、`ConcatImageExtensionConverter`連結するために使用、`.jpg`ファイルを各イメージ ファイル名拡張子。 これにより、`Image`コントロールが読み込むし、ある場合に、イメージをレンダリング`Source`プロパティを設定します。
+`DataTemplate`セル、およびレイアウトと外観の内容を表示するために使用するコントロールを指定します。 2 つ`TextBlock`コントロールと`Image`コントロールがデータ バインドによって、セルの内容を表示するために使用します。 さらのインスタンス、`ConcatImageExtensionConverter`連結するために使用、`.jpg`ファイルに各イメージのファイル名拡張子。 これにより、`Image`コントロールの読み込みし、なったときに、イメージのレンダリング`Source`プロパティを設定します。
 
 #### <a name="responding-to-a-property-change-on-the-custom-control"></a>カスタム コントロールのプロパティの変更に応答してください。
 
-場合、`NativeListView.Items`カスタム レンダラーは、変更内容を表示することによって応答する必要があります、プロパティが項目に追加されているため、変更、または一覧から削除します。 これには、オーバーライドすることで、`OnElementPropertyChanged`メソッドは、次のコード例に示されています。
+場合、`NativeListView.Items`カスタム レンダラーは、変更内容を表示して応答する必要があります、プロパティが項目に追加されるため、変更、または一覧から削除します。 これは、オーバーライドすることで実現できます、`OnElementPropertyChanged`メソッドは、次のコード例に示されています。
 
 ```csharp
 protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -556,11 +556,11 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 }
 ```
 
-メソッドは、ネイティブを再設定`ListView`コントロールに変更されたデータを提供する、バインド可能な`NativeListView.Items`プロパティが変更されました。
+メソッドは、ネイティブを再設定`ListView`コントロール、変更されたデータを提供する、バインド可能な`NativeListView.Items`プロパティが変更されました。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、カスタム レンダラーのプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブのリスト コントロールのパフォーマンスをより細かく制御できるようにを作成する方法を説明しました。
+この記事では、カスタム レンダラーをプラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するネイティブ リスト コントロールのパフォーマンスをさらに制御できるように作成する方法について説明しました。
 
 
 ## <a name="related-links"></a>関連リンク

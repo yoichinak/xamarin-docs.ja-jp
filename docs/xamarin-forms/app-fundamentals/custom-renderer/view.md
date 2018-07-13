@@ -1,42 +1,42 @@
 ---
 title: ビューを実装します。
-description: この記事では、デバイスのカメラからプレビュー ビデオ ストリームの表示に使用される Xamarin.Forms のカスタム コントロールのカスタム レンダラーを作成する方法について説明します。
+description: この記事では、デバイスのカメラからのプレビュー ビデオ ストリームを表示するため、Xamarin.Forms カスタム コントロール用のカスタム レンダラーを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: eb0bc199bfd31ac631ca9d131796b606960d76aa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 8ee9926eb3b726673711141e7c75a68b607d02d3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240487"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994703"
 ---
 # <a name="implementing-a-view"></a>ビューを実装します。
 
-_Xamarin.Forms カスタム ユーザー インターフェイス コントロールは、レイアウトと、画面上のコントロールを配置に使用されるビュー クラスから派生する必要があります。この記事では、デバイスのカメラからプレビュー ビデオ ストリームの表示に使用される Xamarin.Forms のカスタム コントロールのカスタム レンダラーを作成する方法を示します。_
+_Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、レイアウトと画面上のコントロールを配置するために使用するビュー クラスから派生する必要があります。この記事では、デバイスのカメラからのプレビュー ビデオ ストリームを表示するため、Xamarin.Forms カスタム コントロール用のカスタム レンダラーを作成する方法を示します。_
 
-各 Xamarin.Forms ビューには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ios では、Xamarin.Forms アプリケーションによって表示される、`ViewRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIView`コントロール。 Android のプラットフォームでは、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`ViewRenderer`クラスのインスタンスを作成、ネイティブな`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+すべての Xamarin.Forms のビューには、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `View` ](xref:Xamarin.Forms.View)で iOS、Xamarin.Forms アプリケーションによって表示される、`ViewRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`UIView`コントロール。 Android のプラットフォームで、`ViewRenderer`クラスのインスタンスを作成、ネイティブ`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`ViewRenderer`クラスのインスタンスを作成、ネイティブ`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms コントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)します。
 
-次の図の間のリレーションシップを示しています、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)とそれを実装する、対応するネイティブ コントロール。
+次の図の間のリレーションシップを示しています、 [ `View` ](xref:Xamarin.Forms.View)およびそれを実装するネイティブ コントロールの対応します。
 
-![](view-images/view-classes.png "ビュー クラスとその実装のネイティブ クラス間のリレーションシップ")
+![](view-images/view-classes.png "ビュー クラスとそのネイティブ クラスの実装間のリレーションシップ")
 
-カスタマイズを実装するプラットフォーム固有のカスタム レンダラーを作成することで、表示プロセスを使用できます、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)プラットフォームごとにします。 これを行うためのプロセスは次のとおりです。
+レンダリング プロセスのカスタム レンダラーを作成してプラットフォーム固有のカスタマイズを実装するために使用できます、 [ `View` ](xref:Xamarin.Forms.View)各プラットフォームで。 これを行うためのプロセスは次のとおりです。
 
-1. [作成](#Creating_the_Custom_Control)Xamarin.Forms のカスタム コントロールです。
-1. [消費](#Consuming_the_Custom_Control)Xamarin.Forms からカスタム コントロールです。
+1. [作成](#Creating_the_Custom_Control)Xamarin.Forms カスタム コントロール。
+1. [消費](#Consuming_the_Custom_Control)Xamarin.Forms からカスタム コントロール。
 1. [作成](#Creating_the_Custom_Renderer_on_each_Platform)各プラットフォームでコントロールのカスタム レンダラーです。
 
-各項目を実装する順番に説明するようになりましたが、`CameraPreview`レンダラーにデバイスのカメラからプレビュー ビデオ ストリームを表示します。 ビデオ ストリームをタップするは停止し、それを開始します。
+各項目が実装するためにさらに、説明するようになりましたが、`CameraPreview`レンダラー デバイスのカメラからのプレビュー ビデオ ストリームを表示します。 ビデオ ストリームをタップは停止し、それを開始します。
 
 <a name="Creating_the_Custom_Control" />
 
-## <a name="creating-the-custom-control"></a>カスタム コントロールの作成
+## <a name="creating-the-custom-control"></a>カスタム コントロールを作成します。
 
-サブクラス化して、カスタム コントロールを作成することができます、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)クラスに、次のコード例に示すようにします。
+サブクラス化して、カスタム コントロールを作成することができます、 [ `View` ](xref:Xamarin.Forms.View)クラスに、次のコード例に示すようにします。
 
 ```csharp
 public class CameraPreview : View
@@ -54,13 +54,13 @@ public class CameraPreview : View
 }
 ```
 
-`CameraPreview`カスタム コントロールは、ポータブル クラス ライブラリ (PCL) プロジェクトに作成され、コントロールの API を定義します。 カスタム コントロールは、公開、`Camera`前面またはデバイスの背面カメラからビデオ ストリームを表示するかどうかを制御するために使用されるプロパティです。 値が指定されていない場合、`Camera`プロパティ、コントロールが作成されたときに、既定値は、背面カメラを指定します。
+`CameraPreview`カスタム コントロールは、ポータブル クラス ライブラリ (PCL) プロジェクトが作成され、コントロールの API を定義します。 カスタム コントロールは、公開、`Camera`前面またはデバイスの背面カメラからビデオ ストリームを表示するかどうかを制御するために使用されるプロパティです。 値が指定されていない場合、`Camera`プロパティ、コントロールが作成されたときに、背面カメラを指定することを既定値します。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
-`CameraPreview`カスタム コントロールで参照できます XAML PCL プロジェクト内の場所の名前空間の宣言してカスタム コントロール要素で名前空間プレフィックスを使用します。 次のコード例に示す方法、`CameraPreview`カスタム コントロールを XAML ページで利用できることができます。
+`CameraPreview`カスタム コントロールで参照できます XAML PCL プロジェクトでの場所の名前空間の宣言してカスタム コントロール要素で名前空間プレフィックスを使用します。 次のコード例に示す方法、 `CameraPreview` XAML ページで、カスタム コントロールを使用できます。
 
 ```xaml
 <ContentPage ...
@@ -76,9 +76,9 @@ public class CameraPreview : View
 </ContentPage>
 ```
 
-`local`何も名前空間プレフィックスを付けることができます。 ただし、`clr-namespace`と`assembly`値がカスタム コントロールの詳細情報と一致する必要があります。 名前空間が宣言されると、カスタム コントロールを参照する、プレフィックスを使用します。
+`local`何も名前空間プレフィックスを付けることができます。 ただし、`clr-namespace`と`assembly`値は、カスタム コントロールの詳細と一致する必要があります。 名前空間が宣言されると、プレフィックスを使用して、カスタム コントロールを参照します。
 
-次のコード例に示す方法、`CameraPreview`カスタム コントロールは、c# のページで利用できることができます。
+次のコード例に示す方法、 `CameraPreview` (C#) ページで、カスタム コントロールを使用できます。
 
 ```csharp
 public class MainPageCS : ContentPage
@@ -100,36 +100,36 @@ public class MainPageCS : ContentPage
 }
 ```
 
-インスタンス、`CameraPreview`カスタム コントロールは、デバイスのカメラからプレビュー ビデオ ストリームを表示するために使用されます。 必要に応じて値を指定する場合を除いて、`Camera`プロパティ、コントロールのカスタマイズを実行するカスタムのレンダラーでします。
+インスタンス、`CameraPreview`カスタム コントロールを使用して、デバイスのカメラからのプレビュー ビデオ ストリームを表示します。 必要に応じて値を指定するとは別に、`Camera`プロパティ、コントロールのカスタマイズをカスタム レンダラーで実行されます。
 
-カスタム レンダラーは、プラットフォーム固有のカメラ プレビュー コントロールを作成するには、各アプリケーション プロジェクトを今すぐ追加できます。
+カスタム レンダラーは、プラットフォーム固有のカメラのプレビュー コントロールを作成するには、各アプリケーション プロジェクトを今すぐ追加できます。
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォームでは、カスタム レンダラーを作成します。
+## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォームでのカスタム レンダラーの作成
 
 カスタム レンダラー クラスを作成するプロセスは次のとおりです。
 
-1. サブクラスを作成、`ViewRenderer<T1,T2>`カスタム コントロールを表示するクラス。 最初の型引数は、この例では、レンダラーでは、カスタム コントロールをする必要があります`CameraPreview`です。 2 番目の型引数は、カスタム コントロールを実装するネイティブ コントロールにする必要があります。
-1. 上書き、`OnElementChanged`をカスタマイズするカスタム コントロールと書き込みのロジックを表示するメソッド。 このメソッドは、Xamarin.Forms、対応するコントロールの作成時に呼び出されます。
-1. 追加、`ExportRenderer`属性をカスタム レンダラー クラス Xamarin.Forms のカスタム コントロールを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
+1. サブクラスを作成、`ViewRenderer<T1,T2>`カスタム コントロールをレンダリングするクラス。 最初の型引数は、この例では、レンダラーでは、カスタム コントロールをする必要があります`CameraPreview`します。 2 番目の型引数がカスタム コントロールを実装するネイティブ コントロールがあります。
+1. 上書き、`OnElementChanged`それをカスタマイズするカスタム コントロールと書き込みロジックをレンダリングするメソッド。 対応する Xamarin.Forms コントロールの作成時に、このメソッドが呼び出されます。
+1. 追加、`ExportRenderer`属性をカスタム レンダラー クラスは、Xamarin.Forms カスタム コントロールを表示するために使用するように指定します。 この属性は、Xamarin.Forms でのカスタム レンダラーの登録に使用されます。
 
 > [!NOTE]
-> Xamarin.Forms のほとんどの要素は各プラットフォームのプロジェクトでのカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラーが必要に各プラットフォームのプロジェクトでレンダリングするときに、[ビュー](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)要素。
+> ほとんどの Xamarin.Forms 要素では、各プラットフォーム プロジェクトにカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラー必要は各プラットフォーム プロジェクトに表示するときに、[ビュー](xref:Xamarin.Forms.View)要素。
 
-次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
+次の図は、サンプル アプリケーションとそれらの間のリレーションシップ内の各プロジェクトの役割を示します。
 
 ![](view-images/solution-structure.png "CameraPreview カスタム レンダラーのプロジェクトの責任")
 
-`CameraPreview`カスタム コントロールがから派生するプラットフォーム固有のレンダラー クラスによって表示される、`ViewRenderer`各プラットフォームのクラスです。 これは、結果、各`CameraPreview`次のスクリーン ショットに示すように、プラットフォーム固有のコントロールに表示されるカスタム コントロール。
+`CameraPreview`でプラットフォーム固有のレンダラー クラスから派生するカスタム コントロールが表示される、`ViewRenderer`各プラットフォームのクラス。 これは、結果、各`CameraPreview`カスタム コントロールが次のスクリーン ショットに示すようにプラットフォーム固有のコントロールを表示します。
 
 ![](view-images/screenshots.png "各プラットフォームで CameraPreview")
 
-`ViewRenderer`クラスが公開、 `OnElementChanged` Xamarin.Forms のカスタム コントロールが、対応するネイティブ コントロールを表示するために作成されたときに呼び出されるメソッド。 このメソッドは、`ElementChangedEventArgs`パラメーターを含む`OldElement`と`NewElement`プロパティです。 これらのプロパティは、Xamarin.Forms 要素を表すをレンダラーでは、*が*に接続されていると Xamarin.Forms の要素をレンダラーでは、*は*に、それぞれをアタッチします。 サンプル アプリケーションで、`OldElement`プロパティ`null`と`NewElement`プロパティへの参照が格納されます、`CameraPreview`インスタンス。
+`ViewRenderer`クラスでは、`OnElementChanged`メソッドで、Xamarin.Forms カスタム コントロールが、対応するネイティブ コントロールを表示するために作成されたときに呼び出されます。 このメソッドは、`ElementChangedEventArgs`パラメーターを含む`OldElement`と`NewElement`プロパティ。 これらのプロパティは、Xamarin.Forms 要素を表すをレンダラー*が*に接続されていると Xamarin.Forms 要素をレンダラー*は*に、それぞれに接続されています。 サンプル アプリケーションで、`OldElement`プロパティになります`null`と`NewElement`プロパティへの参照には、`CameraPreview`インスタンス。
 
-オーバーライドのバージョン、`OnElementChanged`メソッドは、各プラットフォームに固有のレンダラー クラスでは、ネイティブ コントロールのインスタンス化とカスタマイズを実行する場所です。 `SetNativeControl`ネイティブのコントロールをインスタンス化するメソッドを使用し、このメソッドはコントロールの参照を代入しても、`Control`プロパティです。 さらに、を通じて表示される Xamarin.Forms コントロールへの参照を取得できます、`Element`プロパティです。
+オーバーライドされたバージョン、`OnElementChanged`各プラットフォームに固有のレンダラー クラスのメソッドはネイティブ コントロールのインスタンス化およびカスタマイズを実行する場所です。 `SetNativeControl`ネイティブ コントロールをインスタンス化するメソッドを使用する必要があり、このメソッドは、コントロールの参照を割り当てることも、`Control`プロパティ。 さらでレンダリングされている Xamarin.Forms コントロールへの参照を取得できます、`Element`プロパティ。
 
-いくつかの状況で、`OnElementChanged`メソッドは、複数回呼び出すことができます。 したがって、メモリ リークを防ぐためには、注意が必要、新しいネイティブのコントロールをインスタンス化するとき。 カスタム レンダラーで新しいネイティブ コントロールをインスタンス化するときに使用する手法を次のコード例に示します。
+いくつかの状況で、`OnElementChanged`メソッドは、複数回呼び出すことができます。 そのため、メモリ リークを防ぐためには、注意が必要、新しいネイティブ コントロールをインスタンス化するとき。 カスタム レンダラーで新しいネイティブ コントロールをインスタンス化するときに使用する手法を次のコード例に示します。
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<NativeListView> e)
@@ -151,15 +151,15 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーをサブスクライブします。 同様に、イベント ハンドラーがサブスクライブされたのみすることはできません、レンダラーにアタッチされている要素が変更されたときからの購読します。 このアプローチを採用することは、メモリ リークを回避することが、パフォーマンスの高いカスタム レンダラーを作成するのに役立ちます。
+新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーをサブスクライブします。 同様に、イベント ハンドラーがサブスクライブしている必要がありますのみサブスクリプションを解除するのには、レンダラーが関連付けられている要素が変更されたとき。 このアプローチを採用すると、メモリ リークが発生しないパフォーマンスの高い、カスタム レンダラーを作成するのに役立ちます。
 
-各カスタム レンダラー クラスがで修飾された、 `ExportRenderer` Xamarin.Forms では、レンダラーを登録する属性。 属性は、–、表示される Xamarin.Forms カスタム コントロールの型名とカスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスで修飾された、`ExportRenderer`レンダラーを Xamarin.Forms で登録される属性。 属性は、– 表示するには、Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションでは、各プラットフォームに固有のカスタム レンダラー クラスの実装について説明します。
 
-### <a name="creating-the-custom-renderer-on-ios"></a>IOS では、カスタム レンダラーを作成します。
+### <a name="creating-the-custom-renderer-on-ios"></a>IOS でのカスタム レンダラーの作成
 
-次のコード例は、iOS プラットフォーム用のカスタム レンダラーを示しています。
+次のコード例では、iOS プラットフォーム用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
@@ -202,11 +202,11 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`Control`プロパティは`null`、`SetNativeControl`メソッドは、新しいインスタンスを作成する`UICameraPreview`コントロールにへの参照を割り当てると、`Control`プロパティです。 `UICameraPreview`コントロールは、プラットフォーム固有のカスタム コントロールを使用する、`AVCapture`をカメラからプレビュー ストリームを提供する Api。 公開される、`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止およびがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントがサブスクライブするいるとカスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているレンダラーでは、要素が変更にアタッチされている場合にのみを購読解除します。
+されるとき、`Control`プロパティは`null`、`SetNativeControl`メソッドを呼び出して、新しいインスタンスを作成する`UICameraPreview`コントロールにへの参照を割り当てると、`Control`プロパティ。 `UICameraPreview`コントロールが使用するプラットフォームに固有のカスタム コントロール、`AVCapture`をカメラからのストリームをプレビューを提供する Api。 これは、公開、`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止し、それがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントをサブスクライブするときに、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされ、レンダラーでは、要素が変更にアタッチされている場合にのみからサブスクライブを解除します。
 
-### <a name="creating-the-custom-renderer-on-android"></a>Android では、カスタム レンダラーを作成します。
+### <a name="creating-the-custom-renderer-on-android"></a>Android でのカスタム レンダラーの作成
 
-次のコード例は、Android プラットフォーム用のカスタム レンダラーを示しています。
+次のコード例では、Android プラットフォーム用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomRenderer.CameraPreview), typeof(CameraPreviewRenderer))]
@@ -262,11 +262,11 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`Control`プロパティは`null`、`SetNativeControl`新しいのインスタンスを作成するメソッドが呼び出された`CameraPreview`を制御し、するために参照を代入、`Control`プロパティです。 `CameraPreview`コントロールは、プラットフォーム固有のカスタム コントロールを使用する、`Camera`カメラからプレビュー ストリームを提供する API。 `CameraPreview`コントロールは、構成、カスタムのレンダラーが新しい Xamarin.Forms 要素にアタッチされています。 この構成では、新しいネイティブを作成する`Camera`、特定のハードウェア カメラにアクセスするオブジェクトを処理するイベント ハンドラーを登録、`Click`イベント。 さらにこのハンドラーは停止しがタップされたときに、ビデオのプレビューを開始します。 `Click` Xamarin.Forms 要素は、レンダラーが変更に関連付けられている場合、イベントを購読解除します。
+されるとき、`Control`プロパティは`null`、`SetNativeControl`メソッドを呼び出して、新しいインスタンスを作成する`CameraPreview`制御し、そのにへの参照を割り当てる、`Control`プロパティ。 `CameraPreview`コントロールが使用するプラットフォームに固有のカスタム コントロール、`Camera`カメラからのストリームをプレビューを提供する API。 `CameraPreview`コントロールが、構成されている、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていること。 この構成では、新しいネイティブを作り`Camera`オブジェクトを特定のハードウェア カメラへのアクセスおよび処理するイベント ハンドラーを登録、`Click`イベント。 さらにこのハンドラーは停止し、それがタップされたときに、ビデオのプレビューを開始します。 `Click` Xamarin.Forms 要素は、レンダラーが変更にアタッチされている場合、イベントを購読解除します。
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>UWP にカスタム レンダラーを作成します。
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP のカスタム レンダラーを作成します。
 
-次のコード例は、UWP のカスタム レンダラーを示しています。
+次のコード例では、UWP 用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(CameraPreview), typeof(CameraPreviewRenderer))]
@@ -320,14 +320,14 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`Control`プロパティは`null`、新しい`CaptureElement`がインスタンス化されると、`SetupCamera`メソッドは、使用する、`MediaCapture`カメラからプレビュー ストリームを提供する API。 `SetNativeControl`への参照を割り当てるにはメソッドが呼び出されます、`CaptureElement`インスタンスを`Control`プロパティです。 `CaptureElement`公開を制御、`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止およびがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントがサブスクライブするいるとカスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされているレンダラーでは、要素が変更にアタッチされている場合にのみを購読解除します。
+されるとき、`Control`プロパティが`null`、新しい`CaptureElement`がインスタンス化されると、`SetupCamera`メソッドが呼び出されると、使用、`MediaCapture`カメラからのストリームをプレビューを提供する API。 `SetNativeControl`への参照を割り当てるにはメソッドが呼び出されます、`CaptureElement`インスタンスを`Control`プロパティ。 `CaptureElement`公開を制御する`Tapped`によって処理されるイベント、`OnCameraPreviewTapped`メソッドを停止し、それがタップされたときに、ビデオのプレビューを開始します。 `Tapped`イベントをサブスクライブするときに、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされ、レンダラーでは、要素が変更にアタッチされている場合にのみからサブスクライブを解除します。
 
 > [!NOTE]
-> 停止し、UWP アプリケーションでカメラへのアクセスを提供するオブジェクトの破棄に重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。[カメラのプレビューを表示](/windows/uwp/audio-video-camera/simple-camera-preview-access/)です。
+> 停止し、UWP アプリケーションでのカメラへのアクセスを提供するオブジェクトの破棄に重要です。 そのためにはエラーは、デバイスのカメラにアクセスしようとする他のアプリケーションに干渉します。 詳細については、次を参照してください。[カメラ プレビュー表示](/windows/uwp/audio-video-camera/simple-camera-preview-access/)します。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、デバイスのカメラからプレビュー ビデオ ストリームの表示に使用される Xamarin.Forms のカスタム コントロールのカスタム レンダラーを作成する方法を説明しました。 Xamarin.Forms カスタム ユーザー インターフェイス コントロールがから派生する必要があります、 [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)クラスは、レイアウトと、画面上のコントロールを配置するために使用します。
+この記事では、デバイスのカメラからのプレビュー ビデオ ストリームを表示するため、Xamarin.Forms カスタム コントロール用のカスタム レンダラーを作成する方法について説明しました。 Xamarin.Forms のカスタム ユーザー インターフェイス コントロールがから派生する必要があります、 [ `View` ](xref:Xamarin.Forms.View)クラスは、レイアウトと画面上のコントロールを配置するために使用します。
 
 
 ## <a name="related-links"></a>関連リンク

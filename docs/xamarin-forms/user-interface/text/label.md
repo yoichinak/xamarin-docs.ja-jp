@@ -1,46 +1,46 @@
 ---
-title: Xamarin.Forms ラベル
-description: この記事では、Xamarin.Forms ラベル クラスを使用して、アプリケーションで単一およびマルチ ライン テキストを表示する方法について説明します。
+title: Xamarin.Forms のラベル
+description: この記事では、Xamarin.Forms ラベル クラスを使用して、アプリケーションで単一と複数行のテキストを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: e9f99ace64e013dfa681e497b9d33376d79555ed
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ce602a84ea1024dc22298a3ec1567a9a34ad4a82
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245499"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995967"
 ---
-# <a name="xamarinforms-label"></a>Xamarin.Forms ラベル
+# <a name="xamarinforms-label"></a>Xamarin.Forms のラベル
 
-_Xamarin.Forms でテキストを表示します。_
+_Xamarin.Forms にテキストを表示_
 
-`Label`テキスト、単一およびマルチ ラインを表示するビューを使用します。 ラベルには、(ファミリ、サイズ、およびオプション) カスタム フォントおよびカラーのテキストを持つことができます。 ここでは、次のトピックについて説明します。
+`Label`単一と複数行のテキストを表示するビューを使用します。 ラベルには、(ファミリ、サイズ、およびオプション) カスタムのフォントおよびカラーのテキストを持つことができます。 ここでは、次のトピックについて説明します。
 
-- **[切り捨てと折り返し](#Truncation_and_Wrapping)** &ndash;切り捨てとテキスト 1 行に収まらないで状況を処理するためのオプションをラップします。
+- **[切り捨てと折り返し](#Truncation_and_Wrapping)** &ndash;切り捨てと折り返しテキストを 1 行に収めることはできません、状況を処理するためのオプション。
 - **[フォント](#Font)** &ndash;フォント オプション。
-- **[色](#Color)** &ndash;ラベル テキストの色のオプションです。
-- **[書式付きテキスト](#Formatted_Text)** &ndash;テキストの書式とスタイルの複数のインラインを表示するためのオプションです。
+- **[色](#Color)** &ndash;ラベル テキストの色のオプション。
+- **[書式設定されたテキスト](#Formatted_Text)** &ndash;形式/スタイルの複数のインライン テキストを表示するためのオプション。
 
-## <a name="styling-label"></a>ラベルのスタイル処理
+## <a name="styling-label"></a>スタイル ラベル
 
-次のセクションでは、対象のプロパティの設定`Label`-インスタンスごとに手動でします。 プロパティのセットは、1 つまたは複数のビューに一貫して適用される 1 つのスタイルに分類できます。 コードの読みやすさを向上し、設計の変更を簡単に実装する、このできます。 参照してください[スタイル](~/xamarin-forms/user-interface/text/styles.md)詳細についてはします。
+次のセクションでは、対象のプロパティの設定`Label`インスタンスごとに手動でします。 プロパティのセットは、一貫した方法を 1 つまたは複数のビューに適用される 1 つのスタイルに分類できます。 コードの読みやすさを向上でき設計の変更を簡単に実装できます。 参照してください[スタイル](~/xamarin-forms/user-interface/text/styles.md)詳細についてはします。
 
 <a name="Truncation_and_Wrapping" />
 
 ## <a name="truncation-and-wrapping"></a>切り捨てと折り返し
 
-によって公開されているいくつかの方法のいずれかで 1 つの行に収まらないテキスト処理にラベルを設定することができます、`LineBreakMode`プロパティです。 [`LineBreakMode`](https://developer.xamarin.com/api/type/Xamarin.Forms.LineBreakMode/) 次のオプションの列挙型を示します。
+によって公開されているいくつかの方法のいずれかで 1 つの行に収まらないテキストを処理するためにラベルを設定することができます、`LineBreakMode`プロパティ。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) 次のオプションの列挙体を示します。
 
 - **HeadTruncation** &ndash;末尾を示す、テキストの先頭を切り捨てます。
-- **CharacterWrap** &ndash;文字境界で新しい行にテキストをラップします。
-- **MiddleTruncation** &ndash;の先頭と末尾の省略記号によって中間置換後の文字列で、テキストが表示されます。
-- **[Nowrap]** &ndash;のみを表示するテキストを折り返しませんと多くのテキストに合わせて 1 つの行にします。
-- **TailTruncation** &ndash;最後の切り捨て、テキストの先頭を示します。
-- **右端で折り返す**&ndash;ワード境界でテキストが折り返されます。
+- **CharacterWrap** &ndash;文字境界でテキストを新しい行をラップします。
+- **MiddleTruncation** &ndash;先頭と末尾の省略記号によって中間置換後の文字列で、テキストが表示されます。
+- **NoWrap** &ndash;のみを表示するテキストを折り返しませんしたりできるだけ多くのテキストに合わせて 1 つの行にします。
+- **TailTruncation** &ndash;末尾を切り捨てる、テキストの先頭を示します。
+- **WordWrap** &ndash;ワード境界でテキストをラップします。
 
 ## <a name="font"></a>フォント
 
@@ -48,9 +48,9 @@ _Xamarin.Forms でテキストを表示します。_
 
 ## <a name="color"></a>色
 
-`Label`s は、バインド可能なを使用してカスタム テキスト色を使用する設定できます`TextColor`プロパティです。
+`Label`s は、バインド可能なを使用してカスタムのテキストの色を使用して、設定することができます`TextColor`プロパティ。
 
-特別な注意は、色を各プラットフォームで使用可能になることを確認する必要があります。 各プラットフォームには、テキスト色と背景色ごとに異なる既定があるために、各で動作する、既定値を取得するように注意する必要があります。
+特別な注意は、色は各プラットフォームで使用できることを確認する必要があります。 各プラットフォームには、テキストと背景の色の既定値があるためには、それぞれで動作する、既定値を選択するように注意する必要があります。
 
 ラベルのテキストの色を設定するのにには、次のコードを使用します。
 
@@ -70,7 +70,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-XAML:
+で XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -90,20 +90,20 @@ Title="Label Demo">
 
 <a name="Formatted_Text" />
 
-## <a name="formatted-text"></a>書式設定テキスト
+## <a name="formatted-text"></a>書式設定されたテキスト
 
-ラベルの公開、`FormattedText`プロパティと同じビューで色の複数のフォントのテキストを表示することができます。
+ラベルの公開を`FormattedText`プロパティの複数のフォントとテキストを表示することができますし、同じビューでの色します。
 
-`FormattedText`プロパティの型は[ `FormattedString`](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/)です。 1 つ以上の書式設定された文字列が構成される`Span`s、次のプロパティを持つ 1 つずつ。
+`FormattedText`プロパティの型は[ `FormattedString`](xref:Xamarin.Forms.FormattedString)します。 1 つ以上の書式設定された文字列は、 `Span`s、それぞれ次のプロパティ。
 
-- **BackgroundColor** &ndash;蛍光ペンの効果を実現する例については、背景色を設定するために使用できます。
-- **FontAttributes** &ndash;太字に設定する、斜体、またはそのどちらも指定できます。
+- **BackgroundColor** &ndash;蛍光ペンの効果を実現する例については、背景の色を設定するために使用できます。
+- **FontAttributes** &ndash;に設定すると、太字、斜体、またはそのどちらも指定できます。
 - **FontFamily** &ndash;使用するフォントを設定します。
 - **FontSize** &ndash;テキストのサイズを設定します。
 - **ForegroundColor** &ndash;テキストの色を設定します。
-- **テキスト**&ndash;を提示するテキスト。
+- **テキスト**&ndash;表示するテキスト。
 
-次の c# コードでは、ここで、最初の単語は太字、最後の単語が赤のラベルを示します。
+次の c# コードでは、場所の最初の単語が太字であり、最後の単語が赤色のラベルを示します。
 
 ```csharp
 public partial class LabelPage : ContentPage
@@ -124,7 +124,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-XAML:
+で XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -148,11 +148,11 @@ Title="Label Demo">
 </ContentPage>
 ```
 
-![](label-images/formattedtext.png "FormattedText 例ラベルを付ける")
+![](label-images/formattedtext.png "ラベルの FormattedText の例")
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 3 章、Xamarin.Forms を使用したモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
+- [第 3 章、Xamarin.Forms でモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [ラベルの API](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)
+- [ラベルの API](xref:Xamarin.Forms.Label)

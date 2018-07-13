@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 9c698d539ab671ee2a033ae5943a46e0cc870f76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ba9be51daa32be1034e2bdfafafe80c45d00d83c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30791127"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995233"
 ---
 # <a name="layout-compression"></a>レイアウト圧縮
 
@@ -20,14 +20,14 @@ _レイアウト圧縮は、ページのレンダリング パフォーマンス
 
 ## <a name="overview"></a>概要
 
-Xamarin.Forms では、再帰的なメソッド呼び出しの 2 つの系列を使用してレイアウトを実行します。
+Xamarin.Forms では、レイアウトを再帰的なメソッド呼び出しの 2 つの系列を使用して実行します。
 
 - Layout は、ページのビジュアル ツリーの上部から始まり、ページ上のすべての視覚要素を網羅するためにビジュアル ツリーのすべての分岐を進みます。 その他の要素の親である要素は、相対自体の子を配置してサイズ変更を行います。
 - Invalidation は、ページ上の要素の変更によって新しいレイアウトサイクルを引き起こさせるための処理です。 要素は、サイズと位置が正しくなくなった時に、無効と見なされます。 子を持つビジュアルツリー内の全ての要素は、子のひとつがサイズを変更するときは常に警告されます。 そのため、ビジュアルツリー内の要素のひとつのサイズ変更は、ツリーに遡って波及する変更になる可能性があります。
 
 Xamarin.Forms でレイアウトを実行する方法の詳細については、[カスタム レイアウトの作成](~/xamarin-forms/user-interface/layouts/custom.md)を参照してください。
 
-レイアウトの処理の結果は、ネイティブ コントロールの階層です。 ただし、この階層はプラットフォームレンダラーのために、追加のコンテナレンダラーとラッパーを含み、さらにそのビューの入れ子の階層を含めます。 入れ子のレベルが深くなるにつれて、Xamarin.Forms がページを表示するために実行する作業量が増加します。 複雑なレイアウトのために、複数のレベルの入れ子を使って、ビュー階層を深く広くすることができます。
+レイアウト処理の結果は、ネイティブ コントロールの階層です。 ただし、この階層はプラットフォームレンダラーのために、追加のコンテナレンダラーとラッパーを含み、さらにそのビューの入れ子の階層を含めます。 入れ子のレベルが深くなるにつれて、Xamarin.Forms がページを表示するために実行する作業量が増加します。 複雑なレイアウトのために、複数のレベルの入れ子を使って、ビュー階層を深く広くすることができます。
 
 たとえば、Facebook にログインするためのサンプル アプリケーションに次のようなボタンがあるとします。
 
@@ -80,7 +80,7 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 ```
 
 > [!IMPORTANT]
-> レイアウト圧縮は、ビジュアル ツリーからレイアウトを削除するため、視覚的な外観のあるレイアウトや、タッチ入力があるレイアウトには適していません。 このため、[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) プロパティ ([ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)、 [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/)、 [ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/)、 [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/)、 [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)と[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)など) が設定されているレイアウト、またはジェスチャを受け付けるレイアウトはレイアウト圧縮の対象ではありません。 ただし、視覚的な外観のプロパティを設定したレイアウトやジェスチャを受け付けるレイアウトで、レイアウト圧縮を有効にした場合でも、ビルド時または実行時にエラーにはなりません。 その代わり、レイアウト圧縮が適用され、視覚的外観のプロパティやジェスチャー認識は失敗します。
+> レイアウト圧縮は、ビジュアル ツリーからレイアウトを削除するため、視覚的な外観のあるレイアウトや、タッチ入力があるレイアウトには適していません。 そのため、レイアウトを設定[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)プロパティ (など[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)、 [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible)、 [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)、 [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)、 [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)と[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)またはジェスチャを受け入れ、レイアウトの候補ではありません圧縮します。 ただし、視覚的な外観のプロパティを設定したレイアウトやジェスチャを受け付けるレイアウトで、レイアウト圧縮を有効にした場合でも、ビルド時または実行時にエラーにはなりません。 その代わり、レイアウト圧縮が適用され、視覚的外観のプロパティやジェスチャー認識は失敗します。
 
 Facebook ボタンは、次の 3 つのレイアウトのクラスにレイアウト圧縮を有効にすることができます。
 
@@ -99,7 +99,7 @@ Android では、この結果として 14 個のビューの入れ子のビュ�
 
 ![](layout-compression-images/layout-compression.png "レイアウト圧縮を使った Facebook ボタンのビュー階層表示")
 
-17 個のビューがある元の入れ子のビュー階層と比較すると、ビューの数を 17% 削減したことが分かります。このような削減は意味のないように思えるかもしれませんが、ページ全体にわたるビューの削減は、より重要になる可能性があります。 このような削減を意味のないに見えますが、ページ全体に対してビュー リダクションがさらに重要なあります。
+17 個のビューがある元の入れ子のビュー階層と比較すると、ビューの数を 17% 削減したことが分かります。このような削減は意味のないように思えるかもしれませんが、ページ全体にわたるビューの削減は、より重要になる可能性があります。 この短縮は、意味のない見えますが、ページ全体をビューの削減がより重要なあります。
 
 ### <a name="fast-renderers"></a>高速レンダラー
 

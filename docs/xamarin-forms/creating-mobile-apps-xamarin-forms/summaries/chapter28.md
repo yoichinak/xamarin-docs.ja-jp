@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c10a3c1a0ed2755734fe351df39caadc88dd61c4
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935126"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998099"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要です。 場所とマップ
 
-Xamarin.Forms のサポート、 [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)から派生した要素`View`します。 マップの使用に関連する特殊なプラットフォームの要件のために別のアセンブリに実装されます**Xamarin.Forms.Maps**を別の名前空間が含まれる:`Xamarin.Forms.Maps`します。
+Xamarin.Forms のサポート、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)から派生した要素`View`します。 マップの使用に関連する特殊なプラットフォームの要件のために別のアセンブリに実装されます**Xamarin.Forms.Maps**を別の名前空間が含まれる:`Xamarin.Forms.Maps`します。
 
 ## <a name="the-geographic-coordinate-system"></a>地理の座標系
 
@@ -118,13 +118,13 @@ Windows ランタイム アプリケーションでは、Bing Maps を使用す�
 
 [ **MapDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28/MapDemos)サンプルから成る、 [MapsDemoHomePage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml)ファイルと[MapsDemoHomePage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml.cs)分離コード ファイルさまざまなデモンストレーション プログラムに移動できます。
 
-[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml)ファイルを表示する方法を示しています、 [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)ビュー。 既定では、ローマ都市が表示されますが、ユーザーが、マップを操作できます。
+[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml)ファイルを表示する方法を示しています、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)ビュー。 既定では、ローマ都市が表示されますが、ユーザーが、マップを操作できます。
 
-水平方向と垂直方向のスクロールを無効にするには設定、 [ `HasScrollEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasScrollEnabled/)プロパティを`false`します。 ズームを無効にするには設定[ `HasZoomEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasZoomEnabled/)に`false`します。 これらのプロパティは、すべてのプラットフォームで動作しない可能性があります。
+水平方向と垂直方向のスクロールを無効にするには設定、 [ `HasScrollEnabled` ](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled)プロパティを`false`します。 ズームを無効にするには設定[ `HasZoomEnabled` ](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled)に`false`します。 これらのプロパティは、すべてのプラットフォームで動作しない可能性があります。
 
 ### <a name="streets-and-terrain"></a>通りや地形
 
-設定して、さまざまな種類のマップを表示することができます、`Map`プロパティ[ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/)型の[ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/)、3 つのメンバーを列挙します。
+設定して、さまざまな種類のマップを表示することができます、`Map`プロパティ[ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType)型の[ `MapType` ](xref:Xamarin.Forms.Maps.MapType)、3 つのメンバーを列挙します。
 
 - [`Street`](xref:Xamarin.Forms.Maps.MapType.Street)、既定値
 - [`Satellite`](xref:Xamarin.Forms.Maps.MapType.Satellite)
@@ -134,32 +134,32 @@ Windows ランタイム アプリケーションでは、Bing Maps を使用す�
 
 ### <a name="map-coordinates"></a>マップ座標
 
-プログラムを取得できます、現在の領域を`Map`を通じて表示されて、 [ `VisibleRegion` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.VisibleRegion/)プロパティ。 このプロパティは*いない*バインド可能なプロパティでサポートされるため、目的のために、タイマーを使ってくださいプロパティを監視することを希望するプログラムが変更されたときを示す通知メカニズムはありません。
+プログラムを取得できます、現在の領域を`Map`を通じて表示されて、 [ `VisibleRegion` ](xref:Xamarin.Forms.Maps.Map.VisibleRegion)プロパティ。 このプロパティは*いない*バインド可能なプロパティでサポートされるため、目的のために、タイマーを使ってくださいプロパティを監視することを希望するプログラムが変更されたときを示す通知メカニズムはありません。
 
-`VisibleRegion` 種類は[ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/)、4 つの読み取り専用プロパティを持つクラス。
+`VisibleRegion` 種類は[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)、4 つの読み取り専用プロパティを持つクラス。
 
-- [`Center`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Center/) 型の [`Position`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/)
-- [`LatitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LatitudeDegrees/) 型の`double`マップの表示領域の高さを示す
-- [`LongitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LongitudeDegrees/) 型の`double`マップの表示領域の幅を示す
-- [`Radius`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Radius/) 型の[ `Distance`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/)マップに表示される円形領域の最大のサイズを示す
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) 型の [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) 型の`double`マップの表示領域の高さを示す
+- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) 型の`double`マップの表示領域の幅を示す
+- [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) 型の[ `Distance`](xref:Xamarin.Forms.Maps.Distance)マップに表示される円形領域の最大のサイズを示す
 
-`Position` `Distance`は両方の構造体。 `Position` 設定を使用して、2 つの読み取り専用プロパティを定義、 [ `Position`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Position.Position/p/System.Double/System.Double/):
+`Position` `Distance`は両方の構造体。 `Position` 設定を使用して、2 つの読み取り専用プロパティを定義、 [ `Position`コンス トラクター](xref:Xamarin.Forms.Maps.Position.%23ctor(System.Double,System.Double)):
 
-- [`Latitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Latitude/)
-- [`Longitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Longitude/)
+- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)
+- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)
 
 `Distance` メトリックとヤード ポンド単位間で変換することで、単位に依存しない距離を提供するものです。 A`Distance`値は、いくつかの方法で作成できます。
 
-- [`Distance` コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Distance.Distance/p/System.Double/)メートル単位の距離
-- [`Distance.FromMeters`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMeters/p/System.Double/) 静的メソッド
-- [`Distance.FromKilometers`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromKilometers/p/System.Double/) 静的メソッド
-- [`Distance.FromMiles`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMiles/p/System.Double/) 静的メソッド
+- [`Distance` コンス トラクター](xref:Xamarin.Forms.Maps.Distance.%23ctor(System.Double))メートル単位の距離
+- [`Distance.FromMeters`](xref:Xamarin.Forms.Maps.Distance.FromMeters(System.Double)) 静的メソッド
+- [`Distance.FromKilometers`](xref:Xamarin.Forms.Maps.Distance.FromKilometers(System.Double)) 静的メソッド
+- [`Distance.FromMiles`](xref:Xamarin.Forms.Maps.Distance.FromMiles(System.Double)) 静的メソッド
 
 値は、3 つのプロパティから入手できます。
 
-- [`Meters`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Meters/) 型の `double`
-- [`Kilometers`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Kilometers/) 型の `double`
-- [`Miles`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Miles/) 型の `double`
+- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters) 型の `double`
+- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers) 型の `double`
+- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles) 型の `double`
 
 [MapCoordinatesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml)ファイルでは、いくつか含まれています`Label`要素を表示するため、`MapSpan`情報。 [MapCoordinatesPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml.cs)分離コード ファイルでは、タイマーを使用して、ユーザーは、マップを操作するため、更新情報を保持します。
 
@@ -169,16 +169,16 @@ Windows ランタイム アプリケーションでは、Bing Maps を使用す�
 
 ### <a name="setting-an-initial-location"></a>初期の場所の設定
 
-呼び出すことができます、 [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion/p/Xamarin.Forms.Maps.MapSpan/)メソッドの`Map`をプログラムで、マップ上の場所とズーム レベルを設定します。 型の引数は、`MapSpan`します。 作成することができます、`MapSpan`オブジェクトを使用して、次のいずれか。
+呼び出すことができます、 [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan))メソッドの`Map`をプログラムで、マップ上の場所とズーム レベルを設定します。 型の引数は、`MapSpan`します。 作成することができます、`MapSpan`オブジェクトを使用して、次のいずれか。
 
-- [`MapSpan` コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.MapSpan.MapSpan/p/Xamarin.Forms.Maps.Position/System.Double/System.Double/)で、`Position`と緯度と経度のスパン
-- [`MapSpan.FromCenterAndRadius`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius/p/Xamarin.Forms.Maps.Position/Xamarin.Forms.Maps.Distance/) `Position`と半径
+- [`MapSpan` コンス トラクター](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))で、`Position`と緯度と経度のスパン
+- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) `Position`と半径
 
-新たに作成することも`MapSpan`メソッドを使用して、既存のものから[ `ClampLatitude` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.ClampLatitude/p/System.Double/System.Double/)または[ `WithZoom`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.WithZoom/p/System.Double/)します。
+新たに作成することも`MapSpan`メソッドを使用して、既存のものから[ `ClampLatitude` ](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double))または[ `WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double))します。
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml)ファイルと[WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs)分離コード ファイルが使用する方法を示します、`MoveToRegion`ワイオミングの状態を表示するメソッド。
 
-また使用することができます、 [ `Map`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Map.Map/p/Xamarin.Forms.Maps.MapSpan/)で、`MapSpan`マップの場所を初期化するオブジェクト。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml)ファイルが完全にサンフランシスコの Xamarin の本社の表示を XAML でこれを実行する方法を示します。
+また使用することができます、 [ `Map`コンス トラクター](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan))で、`MapSpan`マップの場所を初期化するオブジェクト。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml)ファイルが完全にサンフランシスコの Xamarin の本社の表示を XAML でこれを実行する方法を示します。
 
 ### <a name="dynamic-zooming"></a>動的ズーム
 
@@ -188,7 +188,7 @@ Windows ランタイム アプリケーションでは、Bing Maps を使用す�
 
 ### <a name="the-phones-location"></a>スマート フォンの場所
 
-[ `IsShowingUser` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.IsShowingUser/)プロパティの`Map`動作は少し異なる方法でとして 3 つのプラットフォームで、 [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)ファイルを示します。
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser)プロパティの`Map`動作は少し異なる方法でとして 3 つのプラットフォームで、 [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)ファイルを示します。
 
 - Ios では、青い点が、電話の場所を示しますが、ある手動で移動する必要があります。
 - Android では、アイコンが表示されるときにプッシュ移動、電話の場所へのマップ
@@ -200,12 +200,12 @@ Windows ランタイム アプリケーションでは、Bing Maps を使用す�
 
 ### <a name="pins-and-science-museums"></a>Pin と科学美術館
 
-最後に、`Map`クラスを定義、 [ `Pins` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.Pins/)型のプロパティ`IList<Pin>`します。 [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/)クラスは、4 つのプロパティを定義します。
+最後に、`Map`クラスを定義、 [ `Pins` ](xref:Xamarin.Forms.Maps.Map.Pins)型のプロパティ`IList<Pin>`します。 [ `Pin` ](xref:Xamarin.Forms.Maps.Pin)クラスは、4 つのプロパティを定義します。
 
-- [`Label`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Label/) 型の`string`、必須プロパティ
-- [`Address`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Address/) 型の`string`人間が判読できる省略可能なアドレス
-- [`Position`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Position/) 型の`Position`pin がマップに表示される場所を示す
-- [`Type`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Type/) 型の[ `PinType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.PinType/)、列挙体は、使用されていません
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label) 型の`string`、必須プロパティ
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address) 型の`string`人間が判読できる省略可能なアドレス
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) 型の`Position`pin がマップに表示される場所を示す
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) 型の[ `PinType` ](xref:Xamarin.Forms.Maps.PinType)、列挙体は、使用されていません
 
 **MapDemos**プロジェクトには、ファイルが含まれています[ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml)、米国での科学美術館を一覧表示すると[ `Locations` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs)と[。`Site` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs)クラスのこのデータを逆シリアル化します。
 
@@ -223,7 +223,7 @@ Windows ランタイム アプリケーションでは、Bing Maps を使用す�
 
 ## <a name="geocoding-and-back-again"></a>ジオコーディングとの間
 
-[ **Xamarin.Forms.Maps** ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)アセンブリも含まれています、 [ `Geocoder` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Geocoder/)クラス、 [ `GetPositionsForAddressAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync/p/System.String/)に変換するメソッド0 またはより多くの地理的位置や別のメソッドにテキスト アドレス[ `GetAddressesForPositionAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync/p/Xamarin.Forms.Maps.Position/)他の方向に変換します。
+[ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps)アセンブリも含まれています、 [ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder)クラス、 [ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))に変換するメソッド0 またはより多くの地理的位置や別のメソッドにテキスト アドレス[ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position))他の方向に変換します。
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml)ファイルと[GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs)分離コード ファイルは、この機能を示します。
 

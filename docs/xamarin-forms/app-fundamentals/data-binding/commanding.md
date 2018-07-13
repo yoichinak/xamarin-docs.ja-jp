@@ -1,41 +1,41 @@
 ---
 title: Xamarin.Forms コマンド インターフェイス
-description: この記事では、Xamarin.Forms データ バインドでのコマンド プロパティを実装する方法について説明します。 コマンド実行のインターフェイスは、使用が適しています MVVM アーキテクチャには、コマンドを実装する別のアプローチを提供します。
+description: この記事では、Xamarin.Forms のデータ バインドとコマンド プロパティを実装する方法について説明します。 コマンド実行のインターフェイスは、MVVM アーキテクチャに適しているコマンドの実装に代わるアプローチを提供します。
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 37fe5bbcfa3dbc6aa5483c89b49c1698a00ecbb6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b18d042e34146a72b488da9017648a430c9cd353
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241313"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996374"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
-派生したクラスでは、通常、ViewModel プロパティ間アーキテクチャでは、モデル View-viewmodel (MVVM)、データ バインディングが定義されている`INotifyPropertyChanged`、およびビューでは、これは一般に、XAML ファイルのプロパティです。 場合があります、アプリケーションをユーザーが、ViewModel で何かに影響するコマンドの開始を要求することによって、これらのプロパティ バインディングを超える必要があります。 これらのコマンド ボタンのクリックによって通知は、通常、タップにお問い合わせや従来のハンドラーで分離コード ファイルで処理される、`Clicked`のイベント、`Button`または`Tapped`のイベント、`TapGestureRecognizer`です。
+これは一般にから派生したクラス、ビューモデルのプロパティ間アーキテクチャでは、モデル-ビュー-ビューモデル (MVVM)、データ バインディングが定義されている`INotifyPropertyChanged`、し、これは一般に、XAML ファイルと、ビューのプロパティ。 場合があります、アプリケーションでは、ビューモデルで何かに影響するコマンドを開始するユーザーを要求することで、これらのプロパティのバインドを超える必要があります。 従来のハンドラーで分離コード ファイルで処理されるとこれらのコマンド ボタンのクリックによって通知は通常、または本の指でタップ、`Clicked`のイベント、`Button`または`Tapped`のイベントを`TapGestureRecognizer`します。
 
-コマンド実行のインターフェイスは、使用が適しています MVVM アーキテクチャには、コマンドを実装する別のアプローチを提供します。 ViewModel 自体は、コマンドは、ビューで、特定のアクティビティに反応などが実行されるメソッドを含めることができます、 `Button`  をクリックします。 これらのコマンド間でデータ バインディングが定義されていると、`Button`です。
+コマンド実行のインターフェイスは、MVVM アーキテクチャに適しているコマンドの実装に代わるアプローチを提供します。 ViewModel 自体は、コマンド、ビューで特定のアクティビティに反応などが実行されるメソッドを含めることができます、 `Button`  をクリックします。 これらのコマンドの間でデータ バインドの定義と`Button`します。
 
-間のデータ バインドを許可する、`Button`と ViewModel、 `Button` 2 つのプロパティを定義します。
+間のデータ バインディングを許可する、 `Button` 、ViewModel、 `Button` 2 つのプロパティを定義します。
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) 型の <xref:System.Windows.Input.ICommand>
-- [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) 型の `Object`
+- [`Command`](xref:Xamarin.Forms.Button.Command) 型の <xref:System.Windows.Input.ICommand>
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) 型の `Object`
 
-対象とするデータ バインドを定義するコマンド インターフェイスを使用する、`Command`のプロパティ、`Button`型の ViewModel では、プロパティは、ソースの場所`ICommand`です。 ViewModel に関連付けられているコードが含まれています`ICommand`ボタンがクリックされたときに実行されるプロパティです。 設定することができます`CommandParameter`すべてしている場合、複数のボタンを区別するために任意のデータを同じバインド`ICommand`ViewModel プロパティ。
+対象とするデータ バインドを定義するコマンド インターフェイスを使用する、`Command`のプロパティ、`Button`型の ViewModel のプロパティのソースの`ICommand`します。 ビューモデルには、関連するコードが含まれています。`ICommand`ボタンがクリックされたときに実行されるプロパティ。 設定できる`CommandParameter`すべてしている場合、複数のボタンを区別するために任意のデータを同じバインド`ICommand`ビューモデルのプロパティ。
 
-`Command`と`CommandParameter`プロパティは、次のクラスでも定義されています。
+`Command`と`CommandParameter`プロパティは、次のクラスによっても定義します。
 
-- [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) したがって、 [ `ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)から派生しています `MenuItem`
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) したがって、 [ `ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/)から派生しています `TextCell`
-- [`TapGestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [`MenuItem`](xref:Xamarin.Forms.MenuItem) そのため、および[ `ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)から派生します。 `MenuItem`
+- [`TextCell`](xref:Xamarin.Forms.TextCell) そのため、および[ `ImageCell`](xref:Xamarin.Forms.ImageCell)から派生します。 `TextCell`
+- [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)
 
-[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 定義、 [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/)型のプロパティ`ICommand`と[ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/)プロパティです。 [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/)プロパティ[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)型も`ICommand`します。
+[`SearchBar`](xref:Xamarin.Forms.SearchBar) 定義、 [ `SearchCommand` ](xref:Xamarin.Forms.SearchBar.SearchCommand)型のプロパティ`ICommand`と[ `SearchCommandParameter` ](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)プロパティ。 [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)プロパティの[ `ListView` ](xref:Xamarin.Forms.ListView)型も`ICommand`します。
 
-これらすべてのコマンドは、ビュー内の特定のユーザー インターフェイス オブジェクトに依存しない方法で ViewModel 内で処理できます。
+これらすべてのコマンドは、ビューモデル、ビュー内の特定のユーザー インターフェイス オブジェクトに依存しない方法で処理できます。
 
 ## <a name="the-icommand-interface"></a>ICommand インターフェイス
 
@@ -52,41 +52,41 @@ public interface ICommand
 }
 ```
 
-ViewModel にはコマンド インターフェイスを使用するには型のプロパティが含まれています`ICommand`:
+自分の ViewModel にはコマンド インターフェイスを使用するには型のプロパティが含まれています`ICommand`:
 
 ```csharp
 public ICommand MyCommand { private set; get; }
 ```
 
-ViewModel 必要がありますを実装するクラスを参照しても、`ICommand`インターフェイスです。 このクラスは、少し説明します。 ビューで、`Command`のプロパティ、`Button`そのプロパティにバインドします。
+ビューモデルを実装するクラスを参照する必要がありますも、`ICommand`インターフェイス。 このクラスはすぐに説明します。 ビューで、`Command`のプロパティを`Button`そのプロパティにバインドされます。
 
 ```xaml
 <Button Text="Execute command"
         Command="{Binding MyCommand}" />
 ```
 
-押されたとき、 `Button`、`Button`呼び出し、`Execute`メソッドで、`ICommand`オブジェクトにバインドされてその`Command`プロパティです。 コマンド実行のインターフェイスの最も簡単な一部であります。
+押されたとき、 `Button`、`Button`呼び出し、`Execute`メソッドで、`ICommand`オブジェクトにバインドされてその`Command`プロパティ。 コマンド実行のインターフェイスの簡単な部分です。
 
-`CanExecute`メソッドは複雑です。 バインディングで最初に定義されている場合、`Command`のプロパティ、 `Button`、およびデータ バインディングがいくつかの方法で変更されたときに、`Button`呼び出し、`CanExecute`メソッドで、`ICommand`オブジェクト。 場合`CanExecute`返します`false`、`Button`自体が無効になります。 これは、特定のコマンドが現在使用できないか無効なことを示します。
+`CanExecute`メソッドはより複雑です。 バインディングで最初に定義されている場合、`Command`のプロパティ、 `Button`、何らかの方法でデータ バインディングが変更されたときと、`Button`呼び出し、`CanExecute`メソッドで、`ICommand`オブジェクト。 場合`CanExecute`返します`false`、`Button`自体を無効にします。 これは、特定のコマンドが利用できない、または無効なが現在ことを示します。
 
-`Button`ものハンドラーをアタッチ、`CanExecuteChanged`のイベント`ICommand`です。 イベントは、ViewModel 内で起動します。 そのイベントが発生したときに、`Button`呼び出し`CanExecute`もう一度です。 `Button`場合を有効にする`CanExecute`返します`true`場合自体または無効に`CanExecute`を返します`false`です。
+`Button`もでハンドラーをアタッチ、`CanExecuteChanged`のイベント`ICommand`します。 イベントはビューモデル内から起動されます。 そのイベントが発生したときに、`Button`呼び出し`CanExecute`もう一度です。 `Button`場合を有効にする`CanExecute`返します`true`と無効になります。`CanExecute`返します`false`します。
 
 > [!IMPORTANT]
-> 使用しないで、`IsEnabled`プロパティ`Button`コマンド インターフェイスを使用している場合。  
+> 使用しないでください、`IsEnabled`プロパティの`Button`コマンド インターフェイスを使用している場合。  
 
 ## <a name="the-command-class"></a>コマンド クラス
 
-ViewModel が型のプロパティを定義する場合`ICommand`、ViewModel が含まれても、またはを実装するクラスを参照する必要があります、`ICommand`インターフェイスです。 このクラスが含むまたは参照する必要があります、`Execute`と`CanExecute`メソッド、および火災、`CanExecuteChanged`イベントされるたびに、`CanExecute`メソッドは、別の値を返す場合があります。
+自分の ViewModel がの型のプロパティを定義する場合`ICommand`、ビューモデルが含まれても、または実装するクラスを参照する必要があります、`ICommand`インターフェイス。 このクラスは、含むまたは参照する必要があります、`Execute`と`CanExecute`メソッド、および火災、`CanExecuteChanged`イベントたびに、`CanExecute`メソッドは、別の値を返す可能性があります。
 
-自分で、このようなクラスを記述できます。 または他のユーザーが書き込まクラスを使用することができます。 `ICommand`一部である Microsoft windows を使用した Windows MVVM アプリケーションと長年にわたっています。 Windows を実装するクラスを使用して`ICommand`Windows アプリケーションと Xamarin.Forms のアプリケーション間、ViewModels を共有することができます。
+このようなクラスを自分で記述できます。 または他のユーザーが記述するクラスを使用することができます。 `ICommand`一部の Microsoft Windows では、使用された Windows MVVM アプリケーションの年。 実装する Windows クラスを使用して`ICommand`Windows アプリケーションと Xamarin.Forms アプリケーションの間、ViewModels を共有することができます。
 
-ViewModels Windows と Xamarin.Forms の間の共有は問題にならなければではないかどうかは、使用することができます、 [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/)または[ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command%3CT%3E/) を実装するXamarin.Formsに含まれるクラス`ICommand`インターフェイスです。 本文を指定することはこれらのクラス、`Execute`と`CanExecute`クラスのコンス トラクターのメソッドです。 使用して`Command<T>`を使用する場合、`CommandParameter`複数のビューを区別するためにプロパティに同じバインド`ICommand`プロパティ、およびより単純な`Command`要件ではないクラスです。
+Windows と Xamarin.Forms のビューモデルの共有は、問題ではないかどうかは、使用することができます、 [ `Command` ](xref:Xamarin.Forms.Command)または[ `Command<T>` ](xref:Xamarin.Forms.Command`1) を実装するためにXamarin.Formsに含まれるクラス`ICommand`インターフェイス。 本文を指定することはこれらのクラス、`Execute`と`CanExecute`クラスのコンス トラクター内のメソッド。 使用して、`Command<T>`を使用すると、`CommandParameter`複数のビューを区別するためにプロパティに同じバインド`ICommand`プロパティ、およびより単純な`Command`クラスの要件ではありません。
 
 ## <a name="basic-commanding"></a>基本的なコマンドの実行
 
-**人記事** ページで、 [**データ バインディング デモ**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)プログラムを ViewModel に実装されているいくつかの簡単なコマンドを示しています。
+**Person エントリ**ページで、 [**データ バインディング デモ**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)プログラムは、ViewModel で実装されたいくつかの単純なコマンドを示します。
 
-`PersonViewModel`という 3 つのプロパティを定義`Name`、 `Age`、および`Skills`人物を定義します。 このクラスは*いない*を含める`ICommand`プロパティ。
+`PersonViewModel`という名前の 3 つのプロパティを定義します。 `Name`、 `Age`、および`Skills`人を定義します。 このクラスは*いない*を含む`ICommand`プロパティ。
 
 ```csharp
 public class PersonViewModel : INotifyPropertyChanged
@@ -137,7 +137,7 @@ public class PersonViewModel : INotifyPropertyChanged
 }
 ```
 
-`PersonCollectionViewModel`表示以下の種類の新しいオブジェクトを作成`PersonViewModel`でき、ユーザーがデータを入力します。 クラスはプロパティを定義するために、`IsEditing`型の`bool`と`PersonEdit`型の`PersonViewModel`します。 クラスが型の 3 つのプロパティを定義するさらに、`ICommand`という名前のプロパティと`Persons`型の`IList<PersonViewModel>`:
+`PersonCollectionViewModel`に示す次の種類の新しいオブジェクトを作成します`PersonViewModel`ユーザーにデータを入力できるようにします。 プロパティを定義するクラスは、そのため、`IsEditing`型の`bool`と`PersonEdit`型の`PersonViewModel`します。 さらに、クラスは型の 3 つのプロパティを定義します`ICommand`という名前のプロパティと`Persons`型の`IList<PersonViewModel>`:。
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -186,9 +186,9 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-この簡単な一覧は、クラスのコンス トラクターは含まれません型の 3 つのプロパティ`ICommand`定義は間もなく表示されます。 型の 3 つのプロパティに変わることに注意してください`ICommand`と`Persons`プロパティが発生しない`PropertyChanged`のイベントが発生します。 これらのプロパティは、すべての設定は、クラスが最初に作成した場合と、それ以降に変更しないでください。
+この簡略化したリストには、クラスのコンス トラクターが含まれません型の 3 つのプロパティ`ICommand`定義すると、間もなく表示されます。 型の 3 つのプロパティに変化`ICommand`と`Persons`プロパティが発生しない`PropertyChanged`のイベントが発生します。 これらのプロパティは、すべての設定は、クラスが最初に作成した場合と、その後は変更しないでください。
 
-コンス トラクターを調べる前に、`PersonCollectionViewModel`クラスの XAML ファイルを見てみましょう、**人記事**プログラムです。 これが含まれています、`Grid`でその`BindingContext`プロパティに設定、`PersonCollectionViewModel`です。 `Grid`が含まれています、`Button`テキストで**新規**でその`Command`プロパティにバインドされて、 `NewCommand` 、ViewModel でプロパティをプロパティを持つ入力フォームがバインドされている、`IsEditing`プロパティとしてプロパティとしても`PersonViewModel`にバインドされている 2 つのボタンを増やすと、`SubmitCommand`と`CancelCommand`ViewModel プロパティ。 最終的な`ListView`担当者が入力済みのコレクションを表示します。
+コンス トラクターを調べる前に、`PersonCollectionViewModel`クラスでは、XAML ファイルを見てみましょう、 **Person エントリ**プログラム。 これが含まれています、`Grid`でその`BindingContext`プロパティに設定、`PersonCollectionViewModel`します。 `Grid`が含まれています、`Button`テキスト**新規**でその`Command`プロパティにバインドされて、`NewCommand`ビューモデルでプロパティをプロパティを持つ入力フォームがバインドされている、`IsEditing`プロパティとしてプロパティとしても`PersonViewModel`にバインドされている他の 2 つのボタンと、`SubmitCommand`と`CancelCommand`ビューモデルのプロパティ。 最終的な`ListView`既に入力された人物のコレクションを表示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -275,17 +275,17 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-動作方法を次に示します: ユーザーの先頭が、**新規**ボタンをクリックします。 これにより、入力フォームが無効にします**新規**ボタンをクリックします。 ユーザーは、名前、年齢、およびスキルを入力します。 編集中にいつでも、キーを押す、**キャンセル**やり直すボタンをクリックします。 名前と有効な経過日数が入力された場合のみ、**送信**有効になっているボタンをクリックします。 このキーを押して**送信**ボタンによって表示されるコレクションにユーザーを転送する、`ListView`です。 いずれかの後に、**キャンセル**または**送信**ボタンが押された、入力フォームがオフになって、**新規**ボタンが再度有効にします。
+そのしくみを次に示します: ユーザーの最初が、**新規**ボタンをクリックします。 これにより、入力フォームが無効にします、**新規**ボタンをクリックします。 ユーザーは、名前、年齢、およびスキルを入力します。 ユーザーが押す、編集中にいつでも、**キャンセル**最初からやり直すボタンをクリックします。 名前と年齢が無効ですが入力されている場合のみ、**送信**ボタンが有効です。 このキーを押して**送信**ボタンによって表示されるコレクションにユーザーを転送する、`ListView`します。 いずれかの後に、**キャンセル**または**送信**ボタンが押された、入力フォームがオフになって、**新規**ボタンをもう一度有効にします。
 
-有効な経過日数を入力する前に、左側にある iOS の画面はレイアウトを示します。 Android および UWP 画面表示、**送信**有効期間が設定された後に有効になっているボタン。
+有効な時間を入力する前に、左側にある iOS の画面はレイアウトを示します。 Android、UWP の画面表示、**送信**年齢が設定された後に有効になっているボタン。
 
-[![ユーザー エントリ](commanding-images/personentry-small.png "人記事")](commanding-images/personentry-large.png#lightbox "Person エントリ")
+[![ユーザー エントリ](commanding-images/personentry-small.png "Person エントリ")](commanding-images/personentry-large.png#lightbox "Person エントリ")
 
-プログラムでは、既存のエントリを編集するための機能はありませんし、ページから移動するときに、エントリは保存されません。
+プログラムでは、既存のエントリを編集するための機能がないし、ページから移動するときに、エントリは保存されません。
 
-すべてのロジック、**新規**、**送信**、および**キャンセル**でボタンが処理される`PersonCollectionViewModel`の定義を介して、 `NewCommand`、 `SubmitCommand`、および`CancelCommand`プロパティです。 コンス トラクター、`PersonCollectionViewModel`型のオブジェクトにこれら 3 つのプロパティを設定`Command`です。  
+すべてのロジック、**新規**、**送信**、および**キャンセル**でボタンが処理される`PersonCollectionViewModel`での定義、 `NewCommand`、`SubmitCommand`と`CancelCommand`プロパティ。 コンス トラクター、`PersonCollectionViewModel`型のオブジェクトにこれら 3 つのプロパティを設定`Command`します。  
 
-A[コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action/System.Func%7BSystem.Boolean%7D/)の`Command`クラス型の引数を渡すことができる`Action`と`Func<bool>`に対応する、`Execute`と`CanExecute`メソッドです。 ラムダの右側に関数としてこれらのアクションと関数を定義する最も簡単なである、`Command`コンス トラクターです。 定義をここでは、`Command`オブジェクトに対して、`NewCommand`プロパティ。
+A[コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))の`Command`クラス型の引数を渡すことができる`Action`と`Func<bool>`に対応する、`Execute`と`CanExecute`メソッド。 ラムダ関数内で直接としてこれらのアクションと関数を定義する最も簡単ですが、`Command`コンス トラクター。 定義をここでは、`Command`オブジェクト、`NewCommand`プロパティ。
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -329,13 +329,13 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-ユーザーがクリックしたとき、**新規** ボタン、`execute`に渡される関数、`Command`コンス トラクターが実行します。 こうと、新しい`PersonViewModel`オブジェクト、そのオブジェクトの上のハンドラーを設定`PropertyChanged`イベント、`IsEditing`に`true`を呼び出すと、`RefreshCanExecutes`コンス トラクターに定義されたメソッドです。
+ユーザーがクリックすると、**新規** ボタン、`execute`に渡される関数、`Command`コンス トラクターが実行します。 これは、新しいを作成します`PersonViewModel`オブジェクト、そのオブジェクトの上のハンドラーを設定します。`PropertyChanged`イベント、`IsEditing`に`true`、を呼び出すと、`RefreshCanExecutes`コンス トラクターに定義されたメソッド。
 
-実装するだけでなく、 `ICommand` 、インターフェイス、`Command`クラスもという名前のメソッドを定義`ChangeCanExecute`です。 呼び出す必要があります、ViewModel`ChangeCanExecute`の`ICommand`何も発生するたびに、プロパティの戻り値を変更する可能性があります、`CanExecute`メソッドです。 呼び出し`ChangeCanExecute`により、`Command`発生させるクラス、`CanExecuteChanged`メソッドです。 `Button`はそのイベントのハンドラーをアタッチし、呼び出すことによって応答`CanExecute`もう一度、し、そのメソッドの戻り値に基づく自体を有効にします。
+実装するだけでなく、 `ICommand` 、インターフェイス、`Command`クラスは、という名前のメソッドも定義されています。`ChangeCanExecute`します。 自分の ViewModel を呼び出す必要があります`ChangeCanExecute`の`ICommand`何かが発生するたびにプロパティの戻り値を変更する可能性があります、`CanExecute`メソッド。 呼び出し`ChangeCanExecute`により、`Command`させるクラス、`CanExecuteChanged`メソッド。 `Button`がそのイベントのハンドラーをアタッチし、呼び出すことによって応答`CanExecute`ここでも、そのメソッドの戻り値に基づく自体を有効にするとします。
 
-ときに、`execute`メソッドの`NewCommand`呼び出し`RefreshCanExecutes`、`NewCommand`プロパティへの呼び出しを取得する`ChangeCanExecute`、および`Button`呼び出し、`canExecute`今すぐを返すメソッド`false`のため、 `IsEditing`プロパティは、現在`true`です。
+ときに、`execute`メソッドの`NewCommand`呼び出し`RefreshCanExecutes`、`NewCommand`プロパティへの呼び出しを取得します`ChangeCanExecute`、および`Button`呼び出し、`canExecute`メソッドを返すようになりました`false`ため、 `IsEditing`。プロパティは、現在`true`します。
 
-`PropertyChanged` 、新しいハンドラー`PersonViewModel`オブジェクトの呼び出し、`ChangeCanExecute`メソッドの`SubmitCommand`します。 次にそのコマンドのプロパティを実装する方法を示します。
+`PropertyChanged`新しいハンドラー`PersonViewModel`オブジェクトの呼び出し、`ChangeCanExecute`メソッドの`SubmitCommand`します。 そのコマンドのプロパティを実装する方法を次に示します。
 
 
 ```csharp
@@ -374,11 +374,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute`関数を`SubmitCommand`で変更されたプロパティがあるたびに呼び出される、`PersonViewModel`編集されているオブジェクトします。 返します`true`される場合にのみ、`Name`プロパティは、少なくとも 1 文字以上、および`Age`が 0 より大きい。 その時点で、**送信**ボタンが有効になります。
+`canExecute`機能`SubmitCommand`で変更されたプロパティがあるたびに呼び出されます、`PersonViewModel`編集されているオブジェクトします。 返します`true`場合にのみ、`Name`プロパティは、少なくとも 1 つの文字と`Age`が 0 より大きい。 その時点で、**送信**ボタンが有効になります。
 
-`execute`関数を**送信**からプロパティ変更ハンドラーを削除、 `PersonViewModel`、オブジェクトを追加、`Persons`コレクション、および初期条件へのすべてのものを返します。
+`execute`関数**送信**からプロパティ変更ハンドラーを削除します、`PersonViewModel`にオブジェクトを追加、`Persons`コレクション、初期条件をすべて返します。
 
-`execute`関数を**キャンセル**ボタンはすべてのものを**送信**ボタンの機能は execept オブジェクトをコレクションに追加します。
+`execute`関数を**キャンセル**ボタンはすべて、**送信**ボタンは execept オブジェクトをコレクションに追加します。
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -410,21 +410,21 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute`メソッドを返します。`true`いつでも、`PersonViewModel`編集されています。
+`canExecute`メソッドを返します。 `true` 、いつでも、`PersonViewModel`編集されています。
 
-これらの手法より複雑なシナリオに適合させる可能性があります: プロパティに`PersonCollectionViewModel`にバインドされている可能性があります、`SelectedItem`のプロパティ、`ListView`既存の項目を編集するため、**削除**を削除するボタンを追加できませんでしたこれらの項目。
+これらの手法はより複雑なシナリオに適用可能: プロパティ`PersonCollectionViewModel`にバインドすることが、`SelectedItem`のプロパティ、`ListView`既存の項目を編集するため、**削除** ボタンを削除する追加でしたこれらの項目。
 
-定義する必要はありません、`execute`と`canExecute`ラムダ関数のメソッドです。 ViewModel 内で正規のプライベート メソッドを記述しでそれらを参照することができます、`Command`コンス トラクターです。 ただし、この方法はたくさんの 1 回だけ、ViewModel で参照されているメソッドで発生する傾向があります。
+定義する必要はありません、`execute`と`canExecute`ラムダ関数のメソッド。 ビューモデルで、通常のプライベート メソッドを記述し、で参照、`Command`コンス トラクター。 ただし、この方法はたくさんのビューモデルで 1 回だけ参照されているメソッドで発生する傾向があります。
 
-## <a name="using-command-parameters"></a>コマンド パラメーターを使用します。
+## <a name="using-command-parameters"></a>コマンドのパラメーターを使用します。
 
-同じを共有する 1 つまたは複数のボタン (またはその他のユーザー インターフェイス オブジェクト) の便利な場合があります`ICommand`ViewModel プロパティ。 この場合、使用して、`CommandParameter`ボタンを区別するプロパティです。
+同じ共有に 1 つまたは複数のボタン (またはその他のユーザー インターフェイス オブジェクト) の便利な場合があります`ICommand`ビューモデルのプロパティ。 この場合、使用して、`CommandParameter`プロパティをボタンを区別します。
 
-使用を続行することができます、`Command`これらの共有クラス`ICommand`プロパティです。 このクラスを定義、[代替コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action%7BSystem.Object%7D/System.Func%7BSystem.Object,System.Boolean%7D/)を受け入れる`execute`と`canExecute`型のパラメーターを持つメソッド`Object`です。 これは、どのように`CommandParameter`はこれらのメソッドに渡されます。
+引き続き使用できます、`Command`これらの共有クラス`ICommand`プロパティ。 クラスは、定義、[代替コンス トラクターが](xref:Xamarin.Forms.Command.%23ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean}))を受け入れる`execute`と`canExecute`型のパラメーターを持つメソッド`Object`します。 これは、どのように`CommandParameter`これらのメソッドに渡されます。
 
-ただしを使用する場合`CommandParameter`、ジェネリックを使用する方が簡単[ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command%3CT%3E/)クラスに設定するオブジェクトの種類を指定する`CommandParameter`です。 `execute`と`canExecute`を指定する方法は、その型のパラメーターを持ちます。
+ただしを使用する場合`CommandParameter`は、ジェネリックを使用する最も簡単な[ `Command<T>` ](xref:Xamarin.Forms.Command`1)クラスに設定するオブジェクトの種類を指定する`CommandParameter`します。 `execute`と`canExecute`を指定するメソッドは、その型のパラメーターを指定します。
 
-**10 進数のキーボード**ページが 10 進数を入力するためのキーパッドを実装する方法を示すことでこの方法を示します。 `BindingContext`の`Grid`は、`DecimalKeypadViewModel`です。 `Entry`この ViewModel のプロパティにバインドされる、`Text`のプロパティ、`Label`です。 すべての`Button`オブジェクトは、ViewModel のさまざまなコマンドにバインドされて: `ClearCommand`、 `BackspaceCommand`、および`DigitCommand`:
+**10 進数のキーボード**ページは、10 進数を入力するためのキーパッドを実装する方法を示す、この方法を示します。 `BindingContext`の`Grid`は、`DecimalKeypadViewModel`します。 `Entry`このビューモデルのプロパティにバインドする、`Text`のプロパティを`Label`します。 すべての`Button`オブジェクトは、ViewModel でさまざまなコマンドにバインドされます: `ClearCommand`、 `BackspaceCommand`、および`DigitCommand`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -527,13 +527,13 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-10 桁の数字と小数点 11 ボタン共有へのバインド`DigitCommand`です。 `CommandParameter`これらのボタンを区別します。 設定されている値`CommandParameter`は、通常、中間のドット文字が表示され、これをわかりやすく小数点を除くボタンによって表示されるテキストと同じです。
+10 桁と小数部の 11 のボタンの共有へのバインドを`DigitCommand`します。 `CommandParameter`これらのボタンを識別するためです。 値に設定`CommandParameter`一般的にはわかりやすくするための中央のドット文字で表示される小数点を除くボタンによって表示されるテキストと同じです。
 
-アクションで、プログラムを次に示します。
+アクションで、プログラムを示します。
 
 [![10 進数のキーボード](commanding-images/decimalkeyboard-small.png "10 進数のキーボード")](commanding-images/decimalkeyboard-large.png#lightbox "10 進数のキーボード")
 
-入力した数に既に小数点が含まれているために次の 3 つすべてのスクリーン ショットの中で小数点のボタンが無効になっていることを確認します。
+入力した数値に小数点 10 進数が既に含まれているため、次の 3 つすべてのスクリーン ショットでは、小数点のボタンが無効になっていることを確認します。
 
 `DecimalKeypadViewModel`定義、`Entry`型のプロパティ`string`(をトリガーする唯一のプロパティは、`PropertyChanged`イベント) 型の 3 つのプロパティと`ICommand`:
 
@@ -570,7 +570,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-対応するボタン、`ClearCommand`常に有効にし、単に「0」にエントリを設定します。
+対応するボタン、`ClearCommand`常に有効になっているし、単にエントリを「0」を設定します。
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -602,11 +602,11 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-指定する必要はありません、ボタンが常に有効になって、`canExecute`の引数、`Command`コンス トラクターです。
+指定する必要はありません、ボタンが常に有効になって、`canExecute`引数、`Command`コンス トラクター。
 
-番号を入力して、バック スペースのロジックは少しわかりにくいため桁の数字が入力されていない場合、`Entry`プロパティが「0」の文字列。 ユーザーが複数 0 (ゼロ) を入力した場合、`Entry`まだ 1 つだけ含まれているゼロです。 その他の任意の数字を入力すると、その数字はゼロを置き換えます。 ユーザーが、その他の任意の数字の前に小数点を入力した場合、`Entry`文字列「0」です。
+に番号を入力して、バック スペースのロジックは少し注意が必要桁の数字が入力されていない場合、`Entry`プロパティが「0」の文字列。 場合は、ユーザーが複数のゼロ、`Entry`まだ 1 つだけ含まれているゼロ。 その他の任意の数字を入力すると、その桁はゼロを置き換えます。 場合は、ユーザーを小数点 10 進数の他の任意の数字の前に型しますが、`Entry`は文字列「0。」です。
 
-**Backspace**エントリの長さが 1 より大きい場合、または、ボタンが有効になっている`Entry`が文字列「0」と等しくないです。
+**Backspace**エントリの長さが 1 より大きい場合にのみ、または場合に、ボタンが有効になっている`Entry`文字列「0」と等しくないです。
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -643,9 +643,9 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-ロジック、`execute`関数を**Backspace**ボタン確実に、 `Entry` 「0」の文字列には、少なくともです。
+ロジックを`execute`関数を**Backspace**ボタンにより、 `Entry` 「0」の文字列には少なくともです。
 
-`DigitCommand` 11 ボタン、それぞれの識別には、自らにプロパティがバインドされて、`CommandParameter`プロパティです。 `DigitCommand` 、通常のインスタンスに設定できる`Command`クラスがの使いやすい、`Command<T>`ジェネリック クラスです。 コマンド実行のインターフェイスを XAML を使用すると、`CommandParameter`プロパティは、通常文字列、および汎用引数の型であります。 `execute`と`canExecute`関数は、型の引数を持つ`string`:
+`DigitCommand`プロパティ自体と識別の 11 のボタンにバインドする、`CommandParameter`プロパティ。 `DigitCommand` 、通常のインスタンスに設定できる`Command`がクラスの使いやすく、`Command<T>`ジェネリック クラスです。 コマンド実行のインターフェイスを XAML を使用する場合、`CommandParameter`プロパティは、文字列では、通常、およびジェネリック引数の型です。 `execute`と`canExecute`関数が、型の引数を持つ`string`:
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -679,19 +679,19 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-`execute`メソッドへの文字列引数の追加、`Entry`プロパティです。 ただし、結果が 0 (がいない 0 と小数点) で始まる場合、その初期 0 必要がありますは削除を使用して、`Substring`関数。
+`execute`メソッドへの文字列引数の追加、`Entry`プロパティ。 ただし、結果は 0 (がいないゼロと小数点 10 進数) で始まる場合、その初期 0 削除する必要を使用して、`Substring`関数。
 
-`canExecute`メソッドを返します。`false`引数が小数点 (小数が押されたされていることを示す) 場合にのみ、`Entry`小数点が既に存在します。
+`canExecute`メソッドを返します。`false`引数が小数点 (小数部が押されたことを示す) 場合にのみ、`Entry`小数点 10 進数が既に含まれています。
 
-すべての`execute`メソッド呼び出し`RefreshCanExecutes`、呼び出す`ChangeCanExecute`両方の`DigitCommand`と`ClearCommand`です。 小数点および backspace ボタンが有効になっているか、入力した数字の現在のシーケンスに基づいて無効になります。
+すべての`execute`メソッドを呼び出す`RefreshCanExecutes`、呼び出す`ChangeCanExecute`両方の`DigitCommand`と`ClearCommand`します。 これにより、小数点と backspace ボタンが有効になっていること、または入力した数字の現在のシーケンスに基づいて無効になっています。
 
-## <a name="adding-commands-to-existing-views"></a>既存のビューへのコマンドの追加
+## <a name="adding-commands-to-existing-views"></a>既存のビューにコマンドを追加します。
 
-サポートしているビューとコマンド実行のインターフェイスを使用する場合は、可能であれば、コマンドにイベントを変換する Xamarin.Forms の動作を使用します。 これは、記事で説明[**再利用可能な EventToCommandBehavior**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md)です。
+サポートされていないビューでコマンド実行のインターフェイスを使用したい場合は、イベントをコマンドに変換する Xamarin.Forms の動作を使用すること。 これは、記事、「 [**再利用可能な EventToCommandBehavior**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md)します。
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>非同期のナビゲーション メニューのコマンド実行
 
-などのナビゲーション メニューを実装するための便利なコマンド実行は、 [**データ バインディング デモ**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)プログラム自体です。 一部を次に示します**MainPage.xaml**:
+などのナビゲーション メニューを実装するための便利なコマンドの実行は、 [**データ バインディング デモ**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)自体をプログラムします。 一部を次に示します**MainPage.xaml**:
 
 
 ```xaml
@@ -729,9 +729,9 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-XAML でのコマンドを使用する場合`CommandParameter`プロパティは通常の文字列に設定します。 この場合、ただし、XAML マークアップ拡張機能が使用できるように、`CommandParameter`の種類は`System.Type`します。
+XAML でコマンドの実行を使用する場合`CommandParameter`プロパティは、通常、文字列に設定します。 この場合、ただし、XAML マークアップ拡張機能は使用ように、`CommandParameter`の種類は`System.Type`します。
 
-各`Command`プロパティがという名前のプロパティにバインドされる`NavigateCommand`です。 プロパティが、分離コード ファイルで定義されている**MainPage.xaml.cs**:
+各`Command`プロパティという名前のプロパティにバインドする`NavigateCommand`します。 プロパティが、分離コード ファイルで定義されている**MainPage.xaml.cs**:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -754,19 +754,19 @@ public partial class MainPage : ContentPage
 }
 ```
 
-コンス トラクターのセット、`NavigateCommand`プロパティを`execute`インスタンス化するメソッド、`System.Type`パラメーターに移動するとします。 `PushAsync`呼び出しが必要です、 `await` 、演算子、`execute`メソッドに非同期とフラグを設定する必要があります。 これは、使用、`async`パラメーター リストの前にキーワード。
+コンス トラクターのセット、`NavigateCommand`プロパティを`execute`インスタンス化するメソッド、`System.Type`パラメーターを移動するとします。 `PushAsync`呼び出しが必要です、 `await` 、演算子、`execute`メソッドに非同期フラグを設定する必要があります。 これを行うと、`async`パラメーター リストの前にキーワード。
 
-コンス トラクターにも設定、`BindingContext`自身へのページのバインドを参照できるように、`NavigateCommand`このクラスでします。
+コンス トラクターも設定、`BindingContext`自体をページのバインドで参照するため、`NavigateCommand`このクラスにします。
 
-このコンス トラクター内のコードの順序による違い:`InitializeComponent`呼び出しと、解析する XAML が、その時点でプロパティにバインドがという名前`NavigateCommand`ために解決できません。`BindingContext`に設定されている`null`です。 場合、`BindingContext`コンス トラクターで設定されている*する前に*`NavigateCommand`が設定された場合、バインディング解決できるときに`BindingContext`が設定されているが、その時点で`NavigateCommand`が`null`です。 設定`NavigateCommand`後`BindingContext`は効果がなく、バインディングのために変更`NavigateCommand`イベントは発生しません、`PropertyChanged`イベント、およびバインドしないことに注意して`NavigateCommand`は有効です。
+このコンス トラクター内のコードの順序の違い:`InitializeComponent`プロパティにバインドの名前をその時点で呼び出すと、XAML を解析することは`NavigateCommand`ために解決できません`BindingContext`に設定されている`null`します。 場合、`BindingContext`コンス トラクターで設定されている*する前に*`NavigateCommand`バインドを解決できる場合に、設定が`BindingContext`が設定されているが、その時点で`NavigateCommand`が`null`します。 設定`NavigateCommand`後`BindingContext`効果はありません、バインディングのための変更`NavigateCommand`が作動する、`PropertyChanged`イベント、およびバインディングを知らない`NavigateCommand`は有効です。
 
-両方を設定`NavigateCommand`と`BindingContext`で任意の順序) を呼び出す前`InitializeComponent`はバインドの両方のコンポーネントは、XAML パーサーは、バインド定義を検出したときに設定されているために機能します。
+両方を設定`NavigateCommand`と`BindingContext`(で任意の順序) を呼び出す前`InitializeComponent`は、XAML パーサーは、バインド定義を検出したときに、バインドの両方のコンポーネントが設定されているためです。
 
-データ バインディングが、わかりにくいことがありますが、この一連の記事で説明したよう、強力で多目的のユーザー インターフェイスから基になるロジックを分離することにより、コードを整理する助けにします。
+データ バインドが複雑になることができる場合がありますが、この一連の記事で説明したように、強力で用途が広く、ユーザー インターフェイスから基になるロジックを分離することで、コードを整理する助けにします。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディング デモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Xamarin.Forms 帳からのデータ バインディング章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)
+- [Xamarin.Forms book からデータ バインド」の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

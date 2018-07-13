@@ -7,29 +7,29 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 31422f1067473ccb49a681098bd0809c451e7369
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935359"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994927"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
 _ユーザーが日付を選択できる Xamarin.Forms のビュー_
 
-Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)プラットフォームの日付の選択コントロールを呼び出すし、ユーザーは日付を選択できます。 `DatePicker` 8 つのプロパティを定義します。
+Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker)プラットフォームの日付の選択コントロールを呼び出すし、ユーザーは日付を選択できます。 `DatePicker` 8 つのプロパティを定義します。
 
-- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) 型の[ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/)、既定では 1900 年の最初の日。
-- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) 型の`DateTime`2100 年の最終日にどの既定値。
-- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) 型の`DateTime`、既定値を選択した日付[ `DateTime.Today`](https://developer.xamarin.com/api/property/System.DateTime.Today/)します。
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) 型の`string`、[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)または[カスタム](/dotnet/standard/base-types/custom-date-and-time-format-strings/)書式設定文字列で、既定値は"D"に、.NET、時間の長い日付パターン。
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) 型の[ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/)、既定値は、選択した日付を表示するために使用する色[ `Color.Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/)します。
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) 型の[ `DateTime` ](xref:System.DateTime)、既定では 1900 年の最初の日。
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) 型の`DateTime`2100 年の最終日にどの既定値。
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date) 型の`DateTime`、既定値を選択した日付[ `DateTime.Today`](xref:System.DateTime.Today)します。
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format) 型の`string`、[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)または[カスタム](/dotnet/standard/base-types/custom-date-and-time-format-strings/)書式設定文字列で、既定値は"D"に、.NET、時間の長い日付パターン。
+- [`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor) 型の[ `Color` ](xref:Xamarin.Forms.Color)、既定値は、選択した日付を表示するために使用する色[ `Color.Default`](xref:Xamarin.Forms.Color.Default)します。
 - [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) 型の[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)、既定では[ `FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None)します。
 - [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) 型の`string`、既定では`null`します。
 - [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) 型の`double`、既定では-1.0。
 
-`DatePicker`発生、 [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/)イベント、ユーザーが日付を選択します。
+`DatePicker`発生、 [ `DateSelected` ](xref:Xamarin.Forms.DatePicker.DateSelected)イベント、ユーザーが日付を選択します。
 
 > [!WARNING]
 > 設定するときに`MinimumDate`と`MaximumDate`、ことを確認します`MinimumDate`が常に等しいまたはそれよりも小さい`MaximumDate`します。 それ以外の場合、`DatePicker`で例外が発生します。
@@ -192,4 +192,4 @@ public partial class MainPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [DaysBetweenDates サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
-- [DatePicker API](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)
+- [DatePicker API](xref:Xamarin.Forms.DatePicker)

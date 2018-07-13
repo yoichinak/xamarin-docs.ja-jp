@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ea7ec0d297e144966f8ff7545e6b12160f66c9b0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 47fbe67561ea9150d0fdc0b41eb5c70edbeac75e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935541"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996270"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
@@ -31,19 +31,19 @@ _イメージは、Xamarin.Forms のプラットフォームで共有できる�
 
 ## <a name="displaying-images"></a>イメージを表示します。
 
-Xamarin.Forms を使用して、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)をページにイメージを表示するビュー。 2 つの重要なプロパティがあります。
+Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をページにイメージを表示するビュー。 2 つの重要なプロパティがあります。
 
-- [`Source`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) - [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/)インスタンス、ファイル、Uri またはリソースで、表示するイメージを設定します。
-- [`Aspect`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) -(Stretch、トリミングまたはレター ボックスかどうか) 内で表示されている範囲内のイメージのサイズを変更する方法。
+- [`Source`](xref:Xamarin.Forms.Image.Source) - [ `ImageSource` ](xref:Xamarin.Forms.ImageSource)インスタンス、ファイル、Uri またはリソースで、表示するイメージを設定します。
+- [`Aspect`](xref:Xamarin.Forms.Image.Aspect) -(Stretch、トリミングまたはレター ボックスかどうか) 内で表示されている範囲内のイメージのサイズを変更する方法。
 
-[`ImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) インスタンスは、画像ソースの種類ごとに静的メソッドを使用して取得できます。
+[`ImageSource`](xref:Xamarin.Forms.ImageSource) インスタンスは、画像ソースの種類ごとに静的メソッドを使用して取得できます。
 
-- [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) -ファイル名または各プラットフォームで解決可能なファイル パスが必要です。
-- [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) -次のような Uri オブジェクトが必要です。  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -で、アプリケーションまたは .NET Standard ライブラリ プロジェクトに埋め込まれた画像ファイルへのリソース識別子が必要です、**ビルド アクション: EmbeddedResource**します。
-- [`FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) -イメージ データを提供するストリームが必要です。
+- [`FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) -ファイル名または各プラットフォームで解決可能なファイル パスが必要です。
+- [`FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) -次のような Uri オブジェクトが必要です。  `new Uri("http://server.com/image.jpg")` .
+- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) -で、アプリケーションまたは .NET Standard ライブラリ プロジェクトに埋め込まれた画像ファイルへのリソース識別子が必要です、**ビルド アクション: EmbeddedResource**します。
+- [`FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) -イメージ データを提供するストリームが必要です。
 
-[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/)プロパティが表示領域に合わせて、イメージをスケーリングする方法を決定します。
+[ `Aspect` ](xref:Xamarin.Forms.Image.Aspect)プロパティが表示領域に合わせて、イメージをスケーリングする方法を決定します。
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -完全かつ正確には、表示領域を塗りつぶすイメージを拡大します。 これにより、イメージ遠近法されている可能性があります。
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -縦横比を維持しながら、表示領域を塗りつぶすようにイメージをクリップ (ie。 ゆがむことなく)。
@@ -109,13 +109,13 @@ Android の代替解像度のイメージを配置する必要があります[�
 
 一部のコントロールでは、イメージを表示するプロパティがあります。
 
-- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) -すべてのページから派生した型`Page`が[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)と[ `BackgroundImage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.BackgroundImage/)プロパティは、ローカル ファイルの参照を割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)が表示されて、 [ `ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)プラットフォームでサポートされている場合、アイコンが表示されます。
+- [`Page`](xref:Xamarin.Forms.Page) -すべてのページから派生した型`Page`が[ `Icon` ](xref:Xamarin.Forms.Page.Icon)と[ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage)プロパティは、ローカル ファイルの参照を割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)が表示されて、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)プラットフォームでサポートされている場合、アイコンが表示されます。
 
   > [!IMPORTANT]
-  > Ios では、 [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)資産カタログの画像セット内のイメージからプロパティを設定することはできません。 代わりのアイコン イメージを読み込む、`Page.Icon`プロパティから、**リソース**iOS プロジェクトのフォルダー。
+  > Ios では、 [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon)資産カタログの画像セット内のイメージからプロパティを設定することはできません。 代わりのアイコン イメージを読み込む、`Page.Icon`プロパティから、**リソース**iOS プロジェクトのフォルダー。
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) は、 [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/)ローカル ファイルの参照を設定できるプロパティです。
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) -は、 [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/)ローカル ファイル、埋め込みリソース、または URI からイメージを設定できるプロパティを取得します。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) は、 [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)ローカル ファイルの参照を設定できるプロパティです。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -は、 [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)ローカル ファイル、埋め込みリソース、または URI からイメージを設定できるプロパティを取得します。
 
 <a name="embedded_images" />
 
@@ -150,7 +150,7 @@ IDE によってこの既定値を連結して生成された、**既定 Namespa
 
 リソース ID では、ピリオド (.) で、フォルダー名も区切られた、プロジェクト内にフォルダーに埋め込まれた画像を配置する場合 移動、 **beach.jpg**という名前のフォルダーにイメージ**MyImages**のリソース ID になる**WorkingWithImages.MyImages.beach.jpg**
 
-埋め込み画像を読み込むためのコードを渡すだけ、**リソース ID**を[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)メソッドを次に示すよう。
+埋め込み画像を読み込むためのコードを渡すだけ、**リソース ID**を[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*)メソッドを次に示すよう。
 
 ```csharp
 var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
@@ -159,7 +159,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 > [!NOTE]
 > オーバー ロードを使用する必要はユニバーサル Windows プラットフォームでのリリース モードでの埋め込み画像の表示をサポートする`ImageSource.FromResource`のイメージを検索するためのソース アセンブリを指定します。
 
-現在のリソース識別子の暗黙的な変換ではありません。 代わりに、使用する必要があります[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)または`new ResourceImageSource()`埋め込み画像を読み込めません。
+現在のリソース識別子の暗黙的な変換ではありません。 代わりに、使用する必要があります[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*)または`new ResourceImageSource()`埋め込み画像を読み込めません。
 
 次のスクリーン ショットは、埋め込み画像を表示する各プラットフォームでの結果を表示します。
 
@@ -265,7 +265,7 @@ var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTy
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
 ```
 
-[ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/)メソッドが必要です、`Uri`オブジェクト、および新しいを返します[ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)から読み取る、`Uri`します。
+[ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri))メソッドが必要です、`Uri`オブジェクト、および新しいを返します[ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)から読み取る、`Uri`します。
 
 暗黙の変換が、URI 文字列のため、次の例は、動作も。
 
@@ -281,10 +281,10 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 ### <a name="downloaded-image-caching"></a>ダウンロードしたイメージのキャッシュ
 
-A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)も、次のプロパティを使用して構成、ダウンロードしたイメージのキャッシュをサポートしています。
+A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)も、次のプロパティを使用して構成、ダウンロードしたイメージのキャッシュをサポートしています。
 
-- [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) のキャッシュが有効なかどうか (`true`既定)。
-- [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) は、`TimeSpan`イメージをローカルに格納するはどのくらいの期間を定義します。
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) のキャッシュが有効なかどうか (`true`既定)。
+- [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity) は、`TimeSpan`イメージをローカルに格納するはどのくらいの期間を定義します。
 
 キャッシュは既定で有効になっているし、24 時間のローカルでイメージを格納します。 特定のイメージのキャッシュを無効にするには、イメージ ソースを次のようにインスタンス化します。
 
@@ -309,7 +309,7 @@ webImage.Source = new UriImageSource
 
 ## <a name="icons-and-splashscreens"></a>アイコンと
 
-関連していないときに、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)ビュー、アプリケーションのアイコンとも、Xamarin.Forms プロジェクト内のイメージの重要な使用。
+関連していないときに、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー、アプリケーションのアイコンとも、Xamarin.Forms プロジェクト内のイメージの重要な使用。
 
 アイコンと Xamarin.Forms アプリと設定は、各アプリケーション プロジェクトで行われます。 これは、サイズの iOS、Android、および UWP 用のイメージを正しく生成することを意味します。 これらのイメージは、各プラットフォームの要件に従って配置してという名前をする必要があります。
 

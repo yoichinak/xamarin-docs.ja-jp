@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms ControlTemplate からバインド
-description: テンプレート バインディングは、プロパティの値を簡単に変更するコントロール テンプレート内のコントロールを有効にすると、データにコントロール テンプレート内のコントロールのパブリック プロパティは、バインドを許可します。 テンプレート バインディングを使用して、コントロール テンプレートからのデータ バインディングを実行するかを説明します。
+title: Xamarin.Forms の ControlTemplate からバインド
+description: テンプレート バインディングは、簡単に変更するコントロール テンプレート内のコントロールのプロパティの値を有効にすると、データをコントロール テンプレート内のコントロールは、パブリック プロパティにバインドを許可します。 この記事では、コントロール テンプレートからのデータ バインディングを実行するテンプレート バインディングを使用してを示します。
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 99d798ce2c74da0cf7fa0d497128db628a12ead5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241582"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995567"
 ---
-# <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms ControlTemplate からバインド
+# <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms の ControlTemplate からバインド
 
-_テンプレート バインディングは、プロパティの値を簡単に変更するコントロール テンプレート内のコントロールを有効にすると、データにコントロール テンプレート内のコントロールのパブリック プロパティは、バインドを許可します。テンプレート バインディングを使用して、コントロール テンプレートからのデータ バインディングを実行するかを説明します。_
+_テンプレート バインディングは、簡単に変更するコントロール テンプレート内のコントロールのプロパティの値を有効にすると、データをコントロール テンプレート内のコントロールは、パブリック プロパティにバインドを許可します。この記事では、コントロール テンプレートからのデータ バインディングを実行するテンプレート バインディングを使用してを示します。_
 
-A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)コントロール テンプレート内の親にバインド可能なプロパティに、コントロールのプロパティをバインドするために使用、*ターゲット*コントロール テンプレートを所有するビュー。 によって表示されるテキストを定義するのではなく、たとえば、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)内インスタンス、 [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)、テンプレート バインディングを使用してバインドする可能性があります、 [ `Label.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)プロパティを表示するテキストを定義するバインド可能なプロパティです。
+A [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)コントロールのプロパティをコントロール テンプレート内の親でバインド可能なプロパティにバインドするために使用、*ターゲット*コントロール テンプレートを所有するビューです。 によって表示されるテキストを定義するのではなく、たとえば、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンス内で、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)、テンプレートのバインドを使用してバインドすることが、 [ `Label.Text`](xref:Xamarin.Forms.Label.Text)プロパティを表示するテキストを定義するバインド可能なプロパティ。
 
-A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)を既存のような[ `Binding`](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/)する点を除いて、*ソース*の`TemplateBinding`の親に常に自動的に設定されている、*ターゲット*コントロール テンプレートを所有するビュー。 ただしを使用して、`TemplateBinding`の外側、 [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)はサポートされていません。
+A [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)を既存のような[ `Binding`](xref:Xamarin.Forms.Binding)ことを除いて、*ソース*の`TemplateBinding`の親に常に自動的に設定されますが、*ターゲット*コントロール テンプレートを所有するビューです。 ただしを使用して、`TemplateBinding`の外部、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)はサポートされていません。
 
-## <a name="creating-a-templatebinding-in-xaml"></a>XAML で、TemplateBinding を作成します。
+## <a name="creating-a-templatebinding-in-xaml"></a>TemplateBinding を XAML で作成します。
 
-XAML では、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)を使用して作成されて、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TemplateBindingExtension/)マークアップ拡張機能で、次のコード例で示したようにします。
+XAML、 [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)を使用して作成、 [ `TemplateBinding` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension)マークアップ拡張機能で、次のコード例で示した。
 
 ```xaml
 <ControlTemplate x:Key="TealTemplate">
@@ -37,7 +37,7 @@ XAML では、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xama
 </ControlTemplate>
 ```
 
-設定ではなく、 [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)プロパティを静的なテキストに、プロパティを使用できますテンプレート バインディングの親にバインド可能なプロパティにバインドする、*ターゲット*を所有するビュー、 [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). ただし、テンプレート バインディングにバインドする`Parent.HeaderText`と`Parent.FooterText`、なく`HeaderText`と`FooterText`です。 これは、祖父のこの例では、バインド可能なプロパティが定義されているため、*ターゲット*表示、親ではなく、次のコード例に示すようにします。
+設定ではなく、 [ `Label.Text` ](xref:Xamarin.Forms.Label.Text)静的テキストのプロパティ、プロパティ テンプレート バインディング バインドに使用できるバインド可能なプロパティの親に、*ターゲット*ビューを所有する、 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). ただし、テンプレート バインディングにバインドする`Parent.HeaderText`と`Parent.FooterText`、なく`HeaderText`と`FooterText`します。 これは、祖父母でこの例では、バインド可能なプロパティが定義されているため、*ターゲット*を表示、親ではなく、次のコード例で示した。
 
 ```xaml
 <ContentPage ...>
@@ -47,7 +47,7 @@ XAML では、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xama
 </ContentPage>
 ```
 
-*ソース*テンプレートのバインドが常に自動的の親を設定、*ターゲット*ここでは、コントロール テンプレートを所有するビュー、 [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)インスタンス。 バインディングが使用するテンプレート、 [ `Parent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Parent/)の親要素を取得するプロパティ、`ContentView`インスタンスの場合、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)インスタンス。 したがってを使用して、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)で、 [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)にバインドする`Parent.HeaderText`と`Parent.FooterText`で定義されているバインド可能なプロパティを検索し、 `ContentPage`、として次のコード例で説明します。
+*ソース*テンプレートのバインドは常に自動的の親に設定、*ターゲット*コントロール テンプレートでは、ここでは、これを所有するビュー、 [ `ContentView` ](xref:Xamarin.Forms.ContentView)インスタンス。 バインディングが使用するテンプレート、 [ `Parent` ](xref:Xamarin.Forms.Element.Parent)プロパティの親要素を返す、`ContentView`インスタンスの場合、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)インスタンス。 したがってを使用して、 [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)で、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)にバインドする`Parent.HeaderText`と`Parent.FooterText`で定義されているバインド可能なプロパティを検索、 `ContentPage`、として次のコード例で示されています。
 
 ```csharp
 public static readonly BindableProperty HeaderTextProperty =
@@ -64,13 +64,13 @@ public string FooterText {
 }
 ```
 
-これは、結果、次のスクリーン ショットに示すように表示されます。
+次のスクリーン ショットに示すように外観が発生します。
 
-![](template-binding-images/teal-theme.png "テンプレート バインディングを使用して青緑コントロール テンプレート")
+![](template-binding-images/teal-theme.png "青緑のコントロール テンプレートがテンプレート バインディングの使用")
 
-## <a name="creating-a-templatebinding-in-c35"></a>C では、TemplateBinding を作成します。&#35;
+## <a name="creating-a-templatebinding-in-c35"></a>C で、TemplateBinding を作成します。&#35;
 
-C# の場合は、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)を使用して作成された、`TemplateBinding`コンス トラクターは、次のコード例で示したようにします。
+C# で、 [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)を使用して作成されて、`TemplateBinding`コンス トラクターは、次のコード例で示した。
 
 ```csharp
 class TealTemplate : Grid
@@ -88,7 +88,7 @@ class TealTemplate : Grid
 }
 ```
 
-設定ではなく、 [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)プロパティを静的なテキストに、プロパティを使用できますテンプレート バインディングの親にバインド可能なプロパティにバインドする、*ターゲット*を所有するビュー、 [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). 使用してテンプレート バインディングを作成、 [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)メソッドを指定する、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) 2 番目のパラメーターとインスタンス。 テンプレート バインディングをバインドすることに注意してください`Parent.HeaderText`と`Parent.FooterText`の祖父のバインド可能なプロパティが定義されているため、*ターゲット*表示、親ではなく、次のコード例に示すようにします。
+設定ではなく、 [ `Label.Text` ](xref:Xamarin.Forms.Label.Text)静的テキストのプロパティ、プロパティ テンプレート バインディング バインドに使用できるバインド可能なプロパティの親に、*ターゲット*ビューを所有する、 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). 使用して、テンプレートのバインドが作成された、 [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))メソッドを指定する、 [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)インスタンスが 2 番目のパラメーターとして。 テンプレート バインディングをバインド注`Parent.HeaderText`と`Parent.FooterText`の祖父母でバインド可能なプロパティが定義されているため、*ターゲット*を表示、親ではなく、次のコード例で示した。
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -108,13 +108,13 @@ public class HomePageCS : ContentPage
 }
 ```
 
-バインド可能なプロパティが定義されている、`ContentPage`先に触れたとおり、します。
+バインド可能なプロパティが定義されている、 `ContentPage`、先ほど説明したようです。
 
-### <a name="binding-a-bindableproperty-to-a-viewmodel-property"></a>ViewModel プロパティへの BindableProperty のバインド
+### <a name="binding-a-bindableproperty-to-a-viewmodel-property"></a>ViewModel のプロパティへの BindableProperty のバインド
 
-前述のよう、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)バインド可能なプロパティの親にコントロール テンプレートのコントロールのプロパティをバインド、*ターゲット*コントロール テンプレートを所有するビュー。 さらに、これらのバインド可能なプロパティは、ViewModels のプロパティにバインドできます。
+前述のようを[ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)コントロールのプロパティをコントロール テンプレート内の親でバインド可能なプロパティにバインド、*ターゲット*コントロール テンプレートを所有するビューです。 さらに、これらのバインド可能なプロパティは、Viewmodel のプロパティにバインドできます。
 
-次のコード例は、ViewModel で 2 つのプロパティを定義します。
+次のコード例では、ViewModel で 2 つのプロパティを定義します。
 
 ```csharp
 public class HomePageViewModel
@@ -124,7 +124,7 @@ public class HomePageViewModel
 }
 ```
 
-`HeaderText`と`FooterText`ViewModel プロパティを次の XAML コードの例に示すようにバインドすることができます。
+`HeaderText`と`FooterText`ビューモデルのプロパティを次の XAML コード例に示すようにバインドできます。
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:SimpleTheme;assembly=SimpleTheme"
@@ -138,7 +138,7 @@ public class HomePageViewModel
 </ContentPage>
 ```
 
-`HeaderText`と`FooterText`バインド可能なプロパティにバインドされます、`HomePageViewModel.HeaderText`と`HomePageViewModel.FooterText`の設定のため、プロパティ、 [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)のインスタンスに、`HomePageViewModel`クラスです。 コントロールのプロパティで全体的に見て、この結果、 [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)にバインドされている[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)インスタンス、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)、順番にバインドします。ViewModel プロパティ。
+`HeaderText`と`FooterText`バインド可能なプロパティをバインドする、`HomePageViewModel.HeaderText`と`HomePageViewModel.FooterText`設定により、プロパティ、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)のインスタンスに、`HomePageViewModel`クラス。 コントロールのプロパティで全体的に見て、この結果、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)にバインドされている[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)インスタンス、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)、順番にバインドします。ViewModel のプロパティです。
 
 これと同じ C# コードの例は次のとおりです。
 
@@ -156,20 +156,20 @@ public class HomePageCS : ContentPage
 }
 ```
 
-ViewModels へのデータ バインディングの詳細については、次を参照してください。 [MVVM へのデータのバインドから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)です。
+ViewModels へのデータ バインディングの詳細については、次を参照してください。[データ バインディングから mvvm まで](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)します。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、テンプレート バインディングを使用して、コントロール テンプレートからのデータ バインディングを実行するかを説明します。 テンプレート バインディングは、プロパティの値を簡単に変更するコントロール テンプレート内のコントロールを有効にすると、データにコントロール テンプレート内のコントロールのパブリック プロパティは、バインドを許可します。
+この記事では、テンプレート バインディングを使用して、コントロール テンプレートからのデータ バインディングを実行するかを説明します。 テンプレート バインディングは、簡単に変更するコントロール テンプレート内のコントロールのプロパティの値を有効にすると、データをコントロール テンプレート内のコントロールは、パブリック プロパティにバインドを許可します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [データのバインドの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [MVVM へのデータ バインディング](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
-- [テンプレート バインディング (サンプル) を含む単純なテーマ](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
-- [テンプレート バインディングと ViewModel (サンプル) を含む単純なテーマ](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
-- [TemplateBinding](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentView](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
+- [データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [テンプレートのバインド (サンプル) を含む単純なテーマ](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+- [テンプレートのバインドと ViewModel (サンプル) を含む単純なテーマ](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
+- [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentView](xref:Xamarin.Forms.ContentView)

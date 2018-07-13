@@ -1,31 +1,31 @@
 ---
 title: レンダラーの基本クラスおよびネイティブ コントロール
-description: 各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 この記事では、レンダラーと各 Xamarin.Forms ページ、レイアウト、ビュー、およびセルを実装するコントロールのネイティブ クラスを示します。
+description: すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 この記事では、レンダラー、および各 Xamarin.Forms ページ、レイアウト、ビュー、およびセルを実装するネイティブ コントロール クラスを示します。
 ms.prod: xamarin
 ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2016
-ms.openlocfilehash: 513b9b3738b9481444cdad10daa9b11a8441c9dd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 01610581a0fd72401cb6daa4d5c8c2cb99fe6a2f
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32019686"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995109"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>レンダラーの基本クラスおよびネイティブ コントロール
 
-_各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。この記事では、レンダラーと各 Xamarin.Forms ページ、レイアウト、ビュー、およびセルを実装するコントロールのネイティブ クラスを示します。_
+_すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。この記事では、レンダラー、および各 Xamarin.Forms ページ、レイアウト、ビュー、およびセルを実装するネイティブ コントロール クラスを示します。_
 
-例外を除いて、`MapRenderer`クラス、プラットフォーム固有のレンダラーが含まれる次の名前空間内。
+例外として、`MapRenderer`クラス、プラットフォーム固有のレンダラーは、次の名前空間で見つかんだことができます。
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
 - **Android (AppCompat)** – Xamarin.Forms.Platform.Android.AppCompat
 - **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms.Platform.UWP
 
-`MapRenderer`次の名前空間のクラスが見つかりません。
+`MapRenderer`クラスは次の名前空間にあります。
 
 - **iOS** – Xamarin.Forms.Maps.iOS
 - **Android** – Xamarin.Forms.Maps.Android
@@ -33,76 +33,75 @@ _各 Xamarin.Forms コントロールには、ネイティブなコントロー�
 
 ## <a name="pages"></a>ページ数
 
-次の表は、レンダラーと各 Xamarin.Forms を実装するコントロールのネイティブ クラス[ページ](~/xamarin-forms/user-interface/controls/pages.md)型。
+次の表は、レンダラー、および各 Xamarin.Forms を実装するネイティブ コントロール クラス[ページ](~/xamarin-forms/user-interface/controls/pages.md)型。
 
 |ページ|レンダラー|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
-|[`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)|[PageRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/contentpage.md)|UIViewController|ビュー||FrameworkElement|
-|[`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)|PhoneMasterDetailRenderer (– 電話)、iOS TabletMasterDetailPageRenderer タブレット (iOS –)、MasterDetailRenderer (Android)、MasterDetailPageRenderer (Android AppCompat)、MasterDetailPageRenderer (UWP)|UIViewController (Phone) UISplitViewController (タブレット)|DrawerLayout (v4)|DrawerLayout (v4)|FrameworkElement (カスタム制御)|
-|[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)|(IOS および Android) NavigationRenderer、NavigationPageRenderer (Android AppCompat)、NavigationPageRenderer (UWP)|UIToolbar|ビュー|ビュー|FrameworkElement (カスタム制御)|
-|[`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)|(IOS および Android) TabbedRenderer、TabbedPageRenderer (Android AppCompat)、TabbedPageRenderer (UWP)|UIView|ViewPager|ViewPager|FrameworkElement (Pivot)|
-|[`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/)|PageRenderer|UIViewController|ビュー||FrameworkElement|
-|[`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)|CarouselPageRenderer|UIScrollView|ViewPager|ViewPager|FrameworkElement (FlipView)|
+|[`ContentPage`](xref:Xamarin.Forms.ContentPage)|[PageRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/contentpage.md)|UIViewController|ViewGroup||FrameworkElement|
+|[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)|PhoneMasterDetailRenderer (iOS – Phone)、TabletMasterDetailPageRenderer (iOS – タブレット)、MasterDetailRenderer (Android)、MasterDetailPageRenderer (Android AppCompat)、MasterDetailPageRenderer (UWP)|UIViewController (電話) UISplitViewController (タブレット)|DrawerLayout (v4)|DrawerLayout (v4)|FrameworkElement (カスタム コントロール)|
+|[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)|NavigationRenderer (iOS と Android)、NavigationPageRenderer (Android AppCompat)、NavigationPageRenderer (UWP)|UIToolbar|ViewGroup|ViewGroup|FrameworkElement (カスタム コントロール)|
+|[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)|TabbedRenderer (iOS と Android)、TabbedPageRenderer (Android AppCompat)、TabbedPageRenderer (UWP)|UIView|ViewPager|ViewPager|FrameworkElement (ピボット)|
+|[`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)|PageRenderer|UIViewController|ViewGroup||FrameworkElement|
+|[`CarouselPage`](xref:Xamarin.Forms.CarouselPage)|CarouselPageRenderer|UIScrollView|ViewPager|ViewPager|FrameworkElement (FlipView)|
 
 ## <a name="layouts"></a>レイアウト
 
-次の表は、レンダラーと各 Xamarin.Forms を実装するコントロールのネイティブ クラス[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)型。
+次の表は、レンダラー、および各 Xamarin.Forms を実装するネイティブ コントロール クラス[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)型。
 
 |レイアウト|レンダラー|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
-|[`ContentPresenter`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)|ViewRenderer|UIView|表示|FrameworkElement|
-|[`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)|ViewRenderer|UIView|表示|FrameworkElement|
-|[`Frame`](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/)|FrameRenderer|UIView|ビュー|境界線|
-|[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
-|[`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/)|ViewRenderer|UIView|表示|FrameworkElement|
-|[`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)|ViewRenderer|UIView|表示|FrameworkElement|
-|[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)|ViewRenderer|UIView|表示|FrameworkElement|
-|[`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)|ViewRenderer|UIView|表示|FrameworkElement|
-|[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)|ViewRenderer|UIView|表示|FrameworkElement|
+|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|表示|FrameworkElement|
+|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|表示|FrameworkElement|
+|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|境界線|
+|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
+|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|表示|FrameworkElement|
+|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|表示|FrameworkElement|
+|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|表示|FrameworkElement|
+|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|表示|FrameworkElement|
+|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|表示|FrameworkElement|
 
-## <a name="views"></a>ビュー
+## <a name="views"></a>Views
 
-次の表は、レンダラーと各 Xamarin.Forms を実装するコントロールのネイティブ クラス[ビュー](~/xamarin-forms/user-interface/controls/views.md)型。
+次の表は、レンダラー、および各 Xamarin.Forms を実装するネイティブ コントロール クラス[ビュー](~/xamarin-forms/user-interface/controls/views.md)型。
 
-|ビュー|レンダラー|iOS|Android|Android (AppCompat)|UWP|
+|Views|レンダラー|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
-|[`ActivityIndicator`](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
-|[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)|(IOS および Android) BoxRenderer、BoxViewRenderer (UWP)|UIView|ビュー||四角形|
-|[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)|ButtonRenderer|UIButton|ボタン|AppCompatButton|ボタン|
-|[`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/)|CarouselViewRenderer|UIScrollView|RecyclerView||flipView|
-|[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)|DatePickerRenderer|UITextField|EditText||DatePicker|
-|[`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/)|EditorRenderer|UITextView|EditText||TextBox|
-|[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
-|[`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)|ImageRenderer|UIImageView|ImageView||イメージ|
-|[`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)|LabelRenderer|UILabel|TextView||TextBlock|
-|[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|ListView||ListView|
-|[`Map`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)|MKMapView|MapView||MapControl|
-|[`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)|PickerRenderer|UITextField|EditText|EditText|ComboBox|
-|[`ProgressBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
-|[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)|SearchBarRenderer|UISearchBar|検索ビュー||AutoSuggestBox|
-|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)|SliderRenderer|UISlider|SeekBar||スライダー|
-|[`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|StepperRenderer|UIStepper|LinearLayout||コントロール|
-|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|SwitchRenderer|UISwitch|切り替え|SwitchCompat|ToggleSwitch|
-|[`TableView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/)|TableViewRenderer|UITableView|ListView||ListView|
-|[`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|TimePickerRenderer|UITextField|EditText||TimePicker|
-|[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)|WebViewRenderer|UIWebView|WebView||WebView|
+|[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
+|[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS と Android)、BoxViewRenderer (UWP)|UIView|ViewGroup||四角形|
+|[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|ボタン|AppCompatButton|ボタン|
+|[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
+|[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||TextBox|
+|[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
+|[`Image`](xref:Xamarin.Forms.Image)|ImageRenderer|UIImageView|ImageView||イメージ|
+|[`Label`](xref:Xamarin.Forms.Label)|LabelRenderer|UILabel|TextView||TextBlock|
+|[`ListView`](xref:Xamarin.Forms.ListView)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|ListView||ListView|
+|[`Map`](xref:Xamarin.Forms.Maps.Map)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)|MKMapView|MapView||MapControl|
+|[`Picker`](xref:Xamarin.Forms.Picker)|PickerRenderer|UITextField|EditText|EditText|ComboBox|
+|[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
+|[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|検索ビュー||AutoSuggestBox|
+|[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|あり||スライダー|
+|[`Stepper`](xref:Xamarin.Forms.Stepper)|StepperRenderer|UIStepper|LinearLayout||コントロール|
+|[`Switch`](xref:Xamarin.Forms.Switch)|SwitchRenderer|UISwitch|切り替え|SwitchCompat|ToggleSwitch|
+|[`TableView`](xref:Xamarin.Forms.TableView)|TableViewRenderer|UITableView|ListView||ListView|
+|[`TimePicker`](xref:Xamarin.Forms.TimePicker)|TimePickerRenderer|UITextField|EditText||TimePicker|
+|[`WebView`](xref:Xamarin.Forms.WebView)|WebViewRenderer|UIWebView|Web ビュー||Web ビュー|
 
 ## <a name="cells"></a>セル
 
-次の表は、レンダラーと各 Xamarin.Forms を実装するコントロールのネイティブ クラス[セル](~/xamarin-forms/user-interface/controls/cells.md)型。
+次の表は、レンダラー、および各 Xamarin.Forms を実装するネイティブ コントロール クラス[セル](~/xamarin-forms/user-interface/controls/cells.md)型。
 
 |セル|レンダラー|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
-|[`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/)|EntryCellRenderer|UITextField UITableViewCell|TextView EditText と LinearLayout|データ テンプレートのテキスト ボックス|
-|[`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/)|SwitchCellRenderer|UISwitch UITableViewCell|切り替え|DataTemplate を TextBlock と ToggleSwitch を含むグリッド|
-|[`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/)|TextCellRenderer|UITableViewCell|2 つするテキスト ビューで LinearLayout|2 つのテキスト ブロックを含む StackPanel で DataTemplate|
-|[`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/)|ImageCellRenderer|UIImage UITableViewCell|2 つするテキスト ビューと、ImageView LinearLayout|DataTemplate をイメージと 2 つのテキスト ブロックを含むグリッド|
-|[`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|表示|DataTemplate、ContentPresenter と|
+|[`EntryCell`](xref:Xamarin.Forms.EntryCell)|EntryCellRenderer|UITextField で UITableViewCell|TextView と EditText LinearLayout|TextBox で DataTemplate|
+|[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)|SwitchCellRenderer|UISwitch UITableViewCell|切り替え|DataTemplate の TextBlock と ToggleSwitch を含むグリッド|
+|[`TextCell`](xref:Xamarin.Forms.TextCell)|TextCellRenderer|UITableViewCell|2 つするテキスト ビューで LinearLayout|2 つの Textblock を含む StackPanel と DataTemplate|
+|[`ImageCell`](xref:Xamarin.Forms.ImageCell)|ImageCellRenderer|UIImage UITableViewCell|2 つするテキスト ビューと、ImageView LinearLayout|イメージと 2 つの Textblock を含む Grid と DataTemplate|
+|[`ViewCell`](xref:Xamarin.Forms.ViewCell)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|表示|Contentpresenter DataTemplate|
 
 ## <a name="summary"></a>まとめ
 
-この記事には、レンダラーと各 Xamarin.Forms ページ、レイアウト、ビュー、およびセルを実装するコントロールのネイティブ クラスが一覧表示されます。 各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。
+この記事には、レンダラー、および各 Xamarin.Forms ページ、レイアウト、ビュー、およびセルを実装するネイティブ コントロールのクラスが一覧表示されます。 すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [カスタム レンダラー (Xamarin 大学ビデオ)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)
+- [カスタム レンダラー (Xamarin University のビデオ)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

@@ -7,28 +7,28 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b71859d0848d7bf790b3cc4beddc67a5ea86d340
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 5f5b934b5f828bf6f5e8d4a0f0738c7db633aefb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935479"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995841"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章の概要です。 マスター グリッド
 
-[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)は行とセルの列にその子を配置するレイアウトの強力なメカニズムです。 ような HTML とは異なり`table`要素、`Grid`プレゼンテーションではなく、レイアウトの目的でのみです。
+[ `Grid` ](xref:Xamarin.Forms.Grid)は行とセルの列にその子を配置するレイアウトの強力なメカニズムです。 ような HTML とは異なり`table`要素、`Grid`プレゼンテーションではなく、レイアウトの目的でのみです。
 
 ## <a name="the-basic-grid"></a>基本的なグリッド
 
-`Grid` 派生[ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)、定義する、 [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/)プロパティを`Grid`を継承します。 XAML またはコードのいずれかで、このコレクションを入力することができます。
+`Grid` 派生[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1)、定義する、 [ `Children` ](xref:Xamarin.Forms.Layout`1.Children)プロパティを`Grid`を継承します。 XAML またはコードのいずれかで、このコレクションを入力することができます。
 
 ### <a name="the-grid-in-xaml"></a>XAML でグリッド
 
-定義、 `Grid` XAML で一般的には、開始いっぱいになると、 [ `RowDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowDefinitions/)と[ `ColumnDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnDefinitions/)のコレクション、`Grid`で[ `RowDefinition`](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/)と[ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)オブジェクト。 これは、行の数との列を確立する方法、 `Grid`、およびそれらのプロパティ。
+定義、 `Grid` XAML で一般的には、開始いっぱいになると、 [ `RowDefinitions` ](xref:Xamarin.Forms.Grid.RowDefinitions)と[ `ColumnDefinitions` ](xref:Xamarin.Forms.Grid.ColumnDefinitions)のコレクション、`Grid`で[ `RowDefinition`](xref:Xamarin.Forms.RowDefinition)と[ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)オブジェクト。 これは、行の数との列を確立する方法、 `Grid`、およびそれらのプロパティ。
 
-`RowDefinition` [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.RowDefinition.Height/)プロパティと`ColumnDefinition`が、 [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ColumnDefinition.Width/)プロパティは、両方の種類の[ `GridLength` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLength/)、構造体。
+`RowDefinition` [ `Height` ](xref:Xamarin.Forms.RowDefinition.Height)プロパティと`ColumnDefinition`が、 [ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width)プロパティは、両方の種類の[ `GridLength` ](xref:Xamarin.Forms.GridLength)、構造体。
 
-XAML、 [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/)に単純なテキスト文字列に変換する`GridLength`値。 バック グラウンドで、 [ `GridLength`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/)を作成、`GridLength`値が、数と型の値に基づく[ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/)、3 つのメンバーを持つ列挙体。
+XAML、 [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter)に単純なテキスト文字列に変換する`GridLength`値。 バック グラウンドで、 [ `GridLength`コンス トラクター](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType))を作成、`GridLength`値が、数と型の値に基づく[ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType)、3 つのメンバーを持つ列挙体。
 
 - [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; 幅または高さがデバイスに依存しない単位 (XAML の番号) で指定されます。
 - [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; 高さまたは幅がセルの内容 (XAML では"Auto") に基づく自動調整です。
@@ -36,17 +36,17 @@ XAML、 [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xam
 
 それぞれの子の`Grid`する必要がありますも割り当てる行と列 (明示的または暗黙的に)。 行にまたがるし、列の範囲は省略可能です。 これらはすべて指定添付のバインド可能なプロパティを使用して&mdash;プロパティで定義されている、`Grid`の子の設定が、`Grid`します。 `Grid` 接続されているバインド可能な 4 つの静的プロパティを定義します。
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; 0 から始まる行です。既定値は 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; 0 から始まる列です。既定値は 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; 数の行の子にまたがる;既定値は 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; 数値列の子にまたがる;既定値は 1
+- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; 0 から始まる行です。既定値は 0
+- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; 0 から始まる列です。既定値は 0
+- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; 数の行の子にまたがる;既定値は 1
+- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; 数値列の子にまたがる;既定値は 1
 
 コードでは、プログラムは、設定およびこれらの値を取得する 8 つの静的メソッドを使用できます。
 
-- [`Grid.SetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRow/p/Xamarin.Forms.BindableObject/System.Int32/) および [`Grid.GetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRow/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumn/p/Xamarin.Forms.BindableObject/System.Int32/) および [`Grid.GetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumn/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRowSpan/p/Xamarin.Forms.BindableObject/System.Int32/) および [`Grid.GetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRowSpan/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumnSpan/p/Xamarin.Forms.BindableObject/System.Int32/) および [`Grid.GetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumnSpan/p/Xamarin.Forms.BindableObject/)
+- [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
+- [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
 
 XAML では、これらの値を設定するため、次の属性を使用します。
 
@@ -57,10 +57,10 @@ XAML では、これらの値を設定するため、次の属性を使用しま
 
 [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo)サンプルの作成と初期化、 `Grid` XAML でします。
 
-`Grid`継承、 [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)プロパティから`Layout`行と列の間隔を提供する 2 つのプロパティを定義します。
+`Grid`継承、 [ `Padding` ](xref:Xamarin.Forms.Layout.Padding)プロパティから`Layout`行と列の間隔を提供する 2 つのプロパティを定義します。
 
-- [`RowSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowSpacing/) 6 の既定値を持つ
-- [`ColumnSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnSpacing/) 6 の既定値を持つ
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 6 の既定値を持つ
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 6 の既定値を持つ
 
 `RowDefinitions`と`ColumnDefinitions`コレクションは厳密に必要ありません。 指定しない場合、`Grid`の行および列を作成、`Grid`子と、既定値は、すべて`GridLength`の"\*"(アスタリスク)。
 

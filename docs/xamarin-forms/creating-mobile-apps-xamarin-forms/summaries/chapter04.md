@@ -7,36 +7,36 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7860df998fbfe580362aff0f4f01374a4ae1f923
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935554"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997427"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要です。 スタックをスクロール
 
 この章は主の概念を導入する有用なデータ*レイアウト*、クラスおよび Xamarin.Forms を使用して、ページ上の複数のビューの表示画面を整理する方法の全体的な用語であります。
 
-レイアウトは、いくつかのクラスから派生した[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)と[ `Layout<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)します。 この章で[ `StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)します。
+レイアウトは、いくつかのクラスから派生した[ `Layout` ](xref:Xamarin.Forms.Layout)と[ `Layout<T>`](xref:Xamarin.Forms.Layout`1)します。 この章で[ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。
 
-この章でも導入されましたが、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)、 [ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/)、および[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)クラス。
+この章でも導入されましたが、 [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)、 [ `Frame` ](xref:Xamarin.Forms.Frame)、および[ `BoxView` ](xref:Xamarin.Forms.BoxView)クラス。
 
 ## <a name="stacks-of-views"></a>ビューのスタック
 
-[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 派生した`Layout<View>`を継承し、 [ `Children` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)型のプロパティ`IList<View>`します。 このコレクションに複数のビュー項目を追加して`StackLayout`水平または垂直方向のスタックに表示されます。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) 派生した`Layout<View>`を継承し、 [ `Children` ](xref:Xamarin.Forms.Layout`1)型のプロパティ`IList<View>`します。 このコレクションに複数のビュー項目を追加して`StackLayout`水平または垂直方向のスタックに表示されます。
 
 設定、 [ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation)プロパティの`StackLayout`のメンバーに、 [ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation)列挙型でいずれか[ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical)または[`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). 既定値は `Vertical` です。
 
-設定、 [ `Spacing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Spacing/)プロパティの`StackLayout`を`double`子間の間隔を指定する値。 既定値は、6 です。
+設定、 [ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing)プロパティの`StackLayout`を`double`子間の間隔を指定する値。 既定値は、6 です。
 
 コードでは、項目を追加することができます、`Children`のコレクション`StackLayout`で、`for`または`foreach`ループで示した、 [ **ColorLoop** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop)またはサンプルについては、初期化、`Children`のとおり、個々 のビューの一覧でコレクション[ **ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList)します。 子がから派生する必要があります`View`他を含めることができますが、`StackLayout`オブジェクト。
 
 ## <a name="scrolling-content"></a>コンテンツをスクロール
 
-場合、 `StackLayout`  ページでは、表示するが多すぎるの子を含む配置することができます、`StackLayout`で、 [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)スクロールを許可します。
+場合、 `StackLayout`  ページでは、表示するが多すぎるの子を含む配置することができます、`StackLayout`で、 [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)スクロールを許可します。
 
-設定、 [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Content/)プロパティの`ScrollView`をスクロールするビュー。 これは、多くの場合、`StackLayout`が任意のビューができます。
+設定、 [ `Content` ](xref:Xamarin.Forms.ScrollView.Content)プロパティの`ScrollView`をスクロールするビュー。 これは、多くの場合、`StackLayout`が任意のビューができます。
 
 設定、 [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation)プロパティの`ScrollView`のメンバーに、 [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation)プロパティ、 [ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical)、 [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal)、または[ `Both`](xref:Xamarin.Forms.ScrollOrientation.Both)します。 既定値は `Vertical` です。 場合のコンテンツを`ScrollView`は、 `StackLayout`、2 つの方向を一貫性のあるにする必要があります。
 
@@ -53,14 +53,14 @@ ms.locfileid: "37935554"
 
 便宜上、`LayoutOptions`構造体は、型の 8 つ静的読み取り専用のフィールドも定義されています。 `LayoutOptions` 、2 つのインスタンスのプロパティのすべての組み合わせを包含します。
 
-- [`LayoutOptions.Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
-- [`LayoutOptions.Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
-- [`LayoutOptions.End`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/)
-- [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/)
-- [`LayoutOptions.StartAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/)
-- [`LayoutOptions.CenterAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.CenterAndExpand/)
-- [`LayoutOptions.EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
-- [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
+- [`LayoutOptions.Start`](xref:Xamarin.Forms.LayoutOptions.Start)
+- [`LayoutOptions.Center`](xref:Xamarin.Forms.LayoutOptions.Center)
+- [`LayoutOptions.End`](xref:Xamarin.Forms.LayoutOptions.End)
+- [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)
+- [`LayoutOptions.StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)
+- [`LayoutOptions.CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand)
+- [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
+- [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
 次の説明では、`StackLayout`縦方向の既定値。 水平`StackLayout`は類似しています。
 
@@ -78,21 +78,21 @@ ms.locfileid: "37935554"
 
 これら 2 つの四角形のビューは、プレゼンテーションの目的でよく使用されます。
 
-[ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/)など、レイアウトを指定できますが、別のビューを囲む四角形の枠が表示`StackLayout`します。 `Frame` 継承、 [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)プロパティから[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)内に表示するビューに設定した、`Frame`します。 `Frame`は既定でに対して透過的です。 フレームの外観をカスタマイズする次の 3 つのプロパティを設定します。
+[ `Frame` ](xref:Xamarin.Forms.Frame)など、レイアウトを指定できますが、別のビューを囲む四角形の枠が表示`StackLayout`します。 `Frame` 継承、 [ `Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティから[ `ContentView` ](xref:Xamarin.Forms.ContentView)内に表示するビューに設定した、`Frame`します。 `Frame`は既定でに対して透過的です。 フレームの外観をカスタマイズする次の 3 つのプロパティを設定します。
 
-- [ `OutlineColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.OutlineColor/)プロパティを表示します。 設定するが一般的`OutlineColor`に`Color.Accent`基になる配色パターンがわからない場合。
-- [ `HasShadow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.HasShadow/)にプロパティを設定することができます`true`を iOS デバイスで黒の影を表示します。
-- 設定、 [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)プロパティを`Thickness`コンテンツのフレームとフレームの間に空白のままにする値。 既定値は、辺すべてにつき 20 単位です。
+- [ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor)プロパティを表示します。 設定するが一般的`OutlineColor`に`Color.Accent`基になる配色パターンがわからない場合。
+- [ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow)にプロパティを設定することができます`true`を iOS デバイスで黒の影を表示します。
+- 設定、 [ `Padding` ](xref:Xamarin.Forms.Layout.Padding)プロパティを`Thickness`コンテンツのフレームとフレームの間に空白のままにする値。 既定値は、辺すべてにつき 20 単位です。
 
 `Frame`既定値あり`HorizontalOptions`と`VerticalOptions`の値`LayoutOptions.Fill`、です。 つまり、`Frame`コンテナーを入力します。 サイズは、他の設定で、`Frame`コンテンツのサイズに基づきます。
 
 `Frame`方法については、 [ **FramedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText)サンプル。
 
-[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)で指定された色の四角形の領域を表示します。 その[ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/)プロパティ。
+[ `BoxView` ](xref:Xamarin.Forms.BoxView)で指定された色の四角形の領域を表示します。 その[ `Color` ](xref:Xamarin.Forms.BoxView.Color)プロパティ。
 
 場合、`BoxView`制限されます (その`HorizontalOptions`と`VerticalOptions`プロパティの既定の設定がある`LayoutOptions.Fill`)、`BoxView`の使用可能な領域を塗りつぶします。 場合、`BoxView`は制約がありません (で`HorizontalOptions`と`LayoutOptions`設定の`Start`、 `Center`、または`End`)、40 単位正方形の既定のディメンションがあります。 A `BoxView` 1 つのディメンションでは制限し、制約、それ以外のことができます。
 
-設定する多くの場合、 [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)と[ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/)プロパティの`BoxView`を特定のサイズを付けます。 これには、 [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView)サンプル。
+設定する多くの場合、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティの`BoxView`を特定のサイズを付けます。 これには、 [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView)サンプル。
 
 複数のインスタンスを使用することができます`StackLayout`を結合する、`BoxView`といくつか`Label`インスタンス、`Frame`に特定の色を表示し、これらの各ビューで、`StackLayout`で、`ScrollView`魅力的なものを作成するには表示される色の一覧、 [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)サンプル。
 

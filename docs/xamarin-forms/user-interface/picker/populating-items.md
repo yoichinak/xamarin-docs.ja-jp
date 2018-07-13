@@ -1,26 +1,26 @@
 ---
-title: ピッカーの項目コレクションへのデータの追加
-description: ピッカー ビューは、データの一覧からテキスト アイテムを選択するためのコントロールです。 この記事では、項目コレクションに追加してデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。
+title: データ選択コントロールの項目のコレクションを追加します。
+description: ピッカーの表示は、データの一覧から、テキスト項目を選択するためのコントロールです。 この記事では、項目のコレクションに追加することによってデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 63a72861895f79d2d0154297f88610ddb8bb8beb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8d911108d7d72586a37a3281803eab9c0841f16c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30792655"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997110"
 ---
-# <a name="adding-data-to-a-pickers-items-collection"></a>ピッカーの項目コレクションへのデータの追加
+# <a name="adding-data-to-a-pickers-items-collection"></a>データ選択コントロールの項目のコレクションを追加します。
 
-_ピッカー ビューは、データの一覧からテキスト アイテムを選択するためのコントロールです。この記事では、項目コレクションに追加してデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。_
+_ピッカーの表示は、データの一覧から、テキスト項目を選択するためのコントロールです。この記事では、項目のコレクションに追加することによってデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。_
 
-## <a name="populating-a-picker-with-data"></a>データ ピッカーを設定します。
+## <a name="populating-a-picker-with-data"></a>データの選択の設定
 
-Xamarin.Forms 2.3.4 への書き込みを処理する前に、 [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) 、読み取り専用に表示するデータを追加するのに使用データ[ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/)型は、コレクション`IList<string>`. コレクション内の各項目は、型でなければなりません`string`です。 初期化することによって XAML で項目を追加することができます、`Items`プロパティの一覧を`x:String`項目。
+Xamarin.Forms 2.3.4 を設定するためのプロセスの前に、 [ `Picker` ](xref:Xamarin.Forms.Picker)データが、読み取り専用に表示するデータを追加する[ `Items` ](xref:Xamarin.Forms.Picker.Items) 型のコレクション、`IList<string>`. コレクション内の各項目は、型でなければなりません`string`します。 初期化することにより XAML で項目を追加できる、`Items`プロパティの一覧を`x:String`項目。
 
 ```xaml
 <Picker Title="Select a monkey">
@@ -36,7 +36,7 @@ Xamarin.Forms 2.3.4 への書き込みを処理する前に、 [ `Picker` ](http
 </Picker>
 ```
 
-同等の c# コードは、次に示します。
+同等の c# コードは、以下に示します。
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey" };
@@ -49,16 +49,16 @@ picker.Items.Add("Howler Monkey");
 picker.Items.Add("Japanese Macaque");
 ```
 
-使用してデータを追加するだけでなく、`Items.Add`メソッドを使用して、コレクションにデータが挿入もできる、`Items.Insert`メソッドです。
+使用してデータを追加するだけでなく、`Items.Add`メソッドを使用してデータがコレクションに挿入することもできます、`Items.Insert`メソッド。
 
 ## <a name="responding-to-item-selection"></a>項目の選択への応答
 
-A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)一度に 1 つの項目の選択をサポートします。 ユーザーが、項目を選択したときに、 [ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)イベントの起動と[ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)プロパティが更新され、一覧で選択した項目のインデックスを表す整数。 `SelectedIndex`プロパティは、ユーザーが選択された項目を示す 0 から始まる番号。 項目が選択されていない場合は、ケースときに、`Picker`が最初に作成され、初期化、`SelectedIndex`は-1 になります。
+A [ `Picker` ](xref:Xamarin.Forms.Picker)が一度に 1 つの項目の選択をサポートします。 ユーザーが、項目を選択すると、 [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)イベントが発生、 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティが更新され、一覧で選択された項目のインデックスを表す整数。 `SelectedIndex`プロパティは、ユーザーが選択した項目を示す 0 から始まる番号。 項目が選択されていない場合ですが、ときに、`Picker`が最初に作成され、初期化、`SelectedIndex`は-1 になります。
 
 > [!NOTE]
-> 項目の選択の動作で、 [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) iOS プラットフォーム固有の仕様と上でカスタマイズできます。 詳細については、次を参照してください。[の選択項目の選択を制御する](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode)です。
+> 項目の選択動作を[ `Picker` ](xref:Xamarin.Forms.Picker)プラットフォーム固有の iOS 上でカスタマイズできます。 詳細については、「[Picker のアイテム選択の制御](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode)」を参照してください。
 
-次のコード例は、`OnPickerSelectedIndexChanged`はイベント ハンドラー メソッドは、実行すると実行、 [ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)イベントの起動。
+次のコード例は、 `OnPickerSelectedIndexChanged` 、イベント ハンドラー メソッドがあるときに実行、 [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)イベントが発生します。
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -73,17 +73,17 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 }
 ```
 
-このメソッドは、取得、 [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)プロパティの値から選択した項目を取得する値を使用して、 [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/)コレクション。 内の各項目があるため、`Items`コレクションは、`string`で表示すること、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)キャストを必要とせずします。
+このメソッドは、取得、 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティの値は、値から選択した項目を取得して、 [ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション。 内の各項目であるため、`Items`コレクションが、`string`で表示することができます、 [ `Label` ](xref:Xamarin.Forms.Label)キャストを必要とせずします。
 
 > [!NOTE]
-> A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)設定して、特定のアイテムを表示する初期化することができます、 [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)プロパティです。 ただし、`SelectedIndex`初期化した後にプロパティを設定する必要があります、 [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/)コレクション。
+> A [ `Picker` ](xref:Xamarin.Forms.Picker)設定して、特定のアイテムを表示する初期化することができます、 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティ。 ただし、`SelectedIndex`初期化した後にプロパティを設定する必要があります、 [ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション。
 
 ## <a name="summary"></a>まとめ
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)ビューは、コントロールのデータの一覧からテキスト アイテムを選択します。 この記事の内容を設定する方法を説明した、`Picker`データに追加することによって、 [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/)コレクション、およびユーザーが項目の選択に応答する方法です。 これは、プロセスを使用するため、 `Picker` Xamarin.Forms 2.3.4 する前にします。
+[ `Picker` ](xref:Xamarin.Forms.Picker)ビューは、データの一覧から、テキスト項目を選択するコントロール。 この記事の説明を設定する方法、`Picker`にデータに追加することを[ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション、およびユーザーが項目の選択に応答する方法。 これは、プロセスを使用するため、 `Picker` Xamarin.Forms 2.3.4 する前にします。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ピッカー デモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
-- [ピッカー](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
+- [ピッカーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+- [ピッカー](xref:Xamarin.Forms.Picker)
