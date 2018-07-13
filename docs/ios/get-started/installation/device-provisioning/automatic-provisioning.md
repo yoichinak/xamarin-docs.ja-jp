@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: 323174b4a37a12828a32acb398fef63cd9b849e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a0c3179dc8e349c23d5521230e0957d1be9384ec
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785818"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986188"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
@@ -71,9 +71,9 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
 1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2017 と Mac をペアリングします。
 
-2. **[プロジェクト]、[Provisioning Properties…]\(プロパティのプロビジョニング...\)** の順に選択し、プロビジョニング オプションを開きます。
+2. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、**[プロパティ]** を選択します. 次に、**[iOS バンドル署名]** タブに移動します。
 
-3. **[Automatically Provisioning]\(自動プロビジョニング\)** スキームを選択します。
+3. **[自動プロビジョニング]** スキームを選択します。
 
     ![自動スキームの選択](automatic-provisioning-images/prov4.png)
 

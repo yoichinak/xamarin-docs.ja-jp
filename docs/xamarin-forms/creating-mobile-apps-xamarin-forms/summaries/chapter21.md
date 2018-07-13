@@ -1,129 +1,129 @@
 ---
-title: 21 章の概要です。 変換
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 21 章の概要です。 変換'
+title: 第 21 章の概要です。 変換
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 21 章の概要。 変換'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8f24a500c0d1a8359641c62e88779b795b0577a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 885a281d57a8ec83a949eba199667ea95679c5eb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240558"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998296"
 ---
-# <a name="summary-of-chapter-21-transforms"></a>21 章の概要です。 変換
+# <a name="summary-of-chapter-21-transforms"></a>第 21 章の概要です。 変換
 
-Xamarin.Forms ビューの位置と、その親では、通常、これによって決定されるサイズ、画面に表示されます、`Layout`または`Layout<View>`から派生します。 *変換*Xamarin.Forms 機能であり、その場所、サイズ、または偶数方向に変更できます。
+Xamarin.Forms のビューは、場所とこれは一般に、その親によって決定されるサイズで画面に表示、`Layout`または`Layout<View>`から派生します。 *変換*Xamarin.Forms 機能であり、その場所、サイズ、または偶数の向きを変更できます。
 
-Xamarin.Forms は、次の 3 つの基本的な種類の変換をサポートします。
+Xamarin.Forms には、次の 3 つの基本的な種類の変換がサポートされています。
 
 - *翻訳*&mdash;要素を水平方向または垂直方向にシフト
 - *スケール*&mdash;要素のサイズを変更します。
 - *回転*&mdash;ポイントまたは軸の周りの要素を有効にします。
 
-Xamarin.Forms でスケーリングはアイソトロ ピックです。影響の幅と高さ一様に分布します。 回転には、両方で 2 次元表面画面の 3D スペースではサポートされています。 ないずれ (または膨大な) 変換、汎用化された行列変換されません。
+Xamarin.Forms では、スケーリング アイソトロ ピック; は幅と高さを均等に影響がします。 両方の画面とは、2 次元表面に 3 次元空間で、回転はサポートされています。 傾斜 (または膨大な) 変換となしの汎用化された行列変換がありません。
 
-型の 8 つのプロパティでサポートされている変換`double`によって定義された、`VisualElement`クラス。
+型の 8 つのプロパティでは、変換がサポートされて`double`によって定義された、`VisualElement`クラス。
 
-- [`TranslationX`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)
-- [`TranslationY`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)
-- [`Scale`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/)
-- [`Rotation`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/)
-- [`RotationX`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.RotationX/)
-- [`RotationY`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.RotationY/)
-- [`AnchorX`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.AnchorX/)
-- [`AnchorY`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.AnchorY/)
+- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)
+- [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
+- [`Scale`](xref:Xamarin.Forms.VisualElement.Scale)
+- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)
+- [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX)
+- [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
+- [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
+- [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-これらすべてのプロパティは、バインド可能なプロパティでサポートされます。 データ バインディングのターゲットにすることができます、スタイルを設定します。 [**章 22 です。アニメーション**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)これらのプロパティをアニメーション化できる方法を示しますが、この章で一部のサンプルを表示、Xamarin.Forms を使用してアニメーション化[タイマー](~/xamarin-forms/platform/device.md#Device_StartTimer)です。
+これらすべてのプロパティは、バインド可能なプロパティでサポートされます。 データ バインディングのターゲットにする、スタイルを設定します。 [**第 22 章です。アニメーション**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)どのようにこれらのプロパティをアニメーション化できるを示しますが、この章では一部のサンプルの表示、Xamarin.Forms を使用してアニメーション化[タイマー](~/xamarin-forms/platform/device.md#Device_StartTimer)します。
 
-変換方法のみ、要素が含まれ、操作を行いますのプロパティは、*いない*レイアウトで要素を認識する方法に影響します。
+プロパティは、要素が表示され、は方法だけで変換*いない*レイアウトで要素を認識する方法に影響します。
 
-## <a name="the-translation-transform"></a>変換の変換
+## <a name="the-translation-transform"></a>移動変換
 
-0 以外の値の[ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)と[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)プロパティは、水平方向または垂直方向に要素をシフトします。
+値が 0 以外の場合、 [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)と[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)プロパティは、水平方向または垂直方向に要素をシフトします。
 
-[ **TranslationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TranslationDemo)プログラムでは、これらのプロパティを 2 つを実験する`Slider`を制御する要素、`TranslationX`と`TranslationY`のプロパティ`Frame`. 変換にも影響するすべての子`Frame`です。
+[ **TranslationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TranslationDemo)プログラムでは、これらの 2 つのプロパティを実験できます`Slider`を制御する要素、`TranslationX`と`TranslationY`プロパティ、の`Frame`. 変換にも影響するすべての子`Frame`します。
 
 ### <a name="text-effects"></a>テキスト効果
 
-変換のプロパティの 1 つの一般的な用途では、テキストのレンダリングでオフセットわずかです。 これに示されている、 [ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets)サンプル。
+変換のプロパティの 1 つの一般的な用途は、少しテキストのレンダリングをオフセットします。 これは、方法については、 [ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets)サンプル。
 
-[![テキストのオフセットのトリプル スクリーン ショット](images/ch21fg03-small.png "テキスト オフセット")](images/ch21fg03-large.png#lightbox "テキスト オフセット")
+[![テキストのオフセットの 3 倍になるスクリーン ショット](images/ch21fg03-small.png "テキスト オフセット")](images/ch21fg03-large.png#lightbox "テキスト オフセット")
 
-別の効果はの複数のコピーを表示するためには、`Label`に示されているなど、3 D のブロックと同じように、 [ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText)サンプルです。
+別の効果はの複数のコピーを表示するためには、 `Label` 3D ブロックと同じように示すように、 [ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText)サンプル。
 
 ### <a name="jumps-and-animations"></a>ジャンプとアニメーション
 
-[ **ButtonJump** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ButtonJump)サンプルでは、翻訳を使用して、移動、`Button`タップすると、主な目的は、デモンストレーションをするときに、`Button`位置にユーザー入力を受け取り、ボタンが表示されます。
+[ **ButtonJump** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ButtonJump)サンプルでは、変換を使用して、移動、`Button`タップすると、主な目的は、デモンストレーションをするときに、`Button`場所にユーザー入力を受け取る場所ボタンが表示されます。
 
-[ **ButtonGlide** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ButtonGlide)サンプルと似ていますが、タイマーを使用して、アニメーション、`Button`を別の 1 つのポイントから。
+[ **ButtonGlide** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ButtonGlide)サンプルは似ていますが、タイマーを使用してアニメーション化する、`Button`を別の 1 つのポイントから。
 
-## <a name="the-scale-transform"></a>スケールの変換
+## <a name="the-scale-transform"></a>スケール変換
 
-[ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/)トランス フォームは増やすことも、レンダリングされる要素のサイズを減らします。 既定値は 1 です。 値 0 は、表示する要素です。 負の値には、要素を 180 度回転する表示が発生します。 `Scale`プロパティには影響しません、`Width`または`Height`要素のプロパティです。 これらの値は変わりません。
+[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)変換は増やすことも、レンダリングされる要素のサイズを減らします。 既定値は 1 です。 値 0 は、表示する要素です。 負の値では、180 度回転表示する要素が発生します。 `Scale`プロパティには影響しません、`Width`または`Height`要素のプロパティ。 これらの値は変わりません。
 
-試すことができます、`Scale`プロパティを使用して、 [ **SimpleScaleDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/SimpleScaleDemo)サンプルです。
+試すことができます、`Scale`プロパティを使用して、 [ **SimpleScaleDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/SimpleScaleDemo)サンプル。
 
-[ **ButtonScaler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ButtonScaler)サンプルでは、アニメーションの違い、`Scale`のプロパティ、`Button`をアニメーション化して、`FontSize`プロパティです。 `FontSize`プロパティに影響する方法、`Button`レイアウトでは、見かけ上の`Scale`プロパティはありません。
+[ **ButtonScaler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ButtonScaler)サンプルではアニメーション化の違い、`Scale`のプロパティを`Button`アニメーション化して、`FontSize`プロパティ。 `FontSize`プロパティに影響する方法、`Button`レイアウトで認識される場合は、`Scale`プロパティはありません。
 
 [ **ScaleToSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ScaleToSize)サンプルを計算、`Scale`プロパティに適用される、`Label`要素をページ内に収まる中に可能な限り大きくなります。
 
-### <a name="anchoring-the-scale"></a>固定小数点以下桁数
+### <a name="anchoring-the-scale"></a>アンカーのスケール
 
-前の 3 つのサンプルにスケーリング要素がすべて増加または要素の中心を基準としてサイズでは減少します。 つまり、要素が増加またはすべての方向に同じサイズ減少します。 要素の中央に点だけでは、スケーリング中に同じ場所に残ります。
+前の 3 つのサンプルでスケール要素がすべて増加または減少サイズ要素の中央を基準にします。 つまり、要素が増加またはすべての方向に同じサイズが減少します。 要素の中心点のみが同じ場所に、スケーリング中に残ります。
 
-設定でスケーリングの中心を変更することができます、 [ `AnchorX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.AnchorX/)と[ `AnchorY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.AnchorY/)プロパティです。 これらのプロパティは、要素自体です。 `AnchorX`0 の値を指す要素の左側にある、および 1 は、右側にあるを参照します。 同様に`AnchorY`0 は、top、および 1 は、下部にあります。 両方のプロパティでは、中央は 0.5 の既定値を設定します。
+設定でスケーリングの中心を変更することができます、 [ `AnchorX` ](xref:Xamarin.Forms.VisualElement.AnchorX)と[ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY)プロパティ。 これらのプロパティでは、要素自体に関連します。 `AnchorX`1 は右側にある、0 の値は、要素の左側にあるを参照します。 同様に`AnchorY`0 は、上部、および、1 は、下部にあります。 両方のプロパティでは、中心である 0.5 の既定値を指定します。
 
-[ **AnchoredScaleDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/AnchoredScaleDemo)サンプルを試すことができます、`AnchorX`と`AnchorY`プロパティだけでなく`Scale`プロパティです。
+[ **AnchoredScaleDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/AnchoredScaleDemo)を実験することができます、`AnchorX`と`AnchorY`プロパティだけでなく`Scale`プロパティ。
 
-Ios の場合の既定以外の値を使用して`AnchorX`と`AnchorY`プロパティは、電話の向きの変更と互換性のある一般的にします。
+Ios での既定以外の値を使用して`AnchorX`と`AnchorY`プロパティは、電話の向きの変更と互換性のある一般的に、します。
 
 ## <a name="the-rotation-transform"></a>回転変換
 
-[ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/)プロパティ度で指定され、によって定義された要素の点を中心に時計回りの回転を示す`AnchorX`と`AnchorY`です。 [ **PlaneRotationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/PlaneRotationDemo)これら 3 つのプロパティをテストすることができます。
+[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)プロパティが度で指定され、によって定義される要素の点を中心に時計回りの回転を示す`AnchorX`と`AnchorY`します。 [ **PlaneRotationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/PlaneRotationDemo)これら 3 つのプロパティを実験することができます。
 
-### <a name="rotated-text-effects"></a>回転したテキスト効果
+### <a name="rotated-text-effects"></a>回転のテキスト効果
 
 [ **BoxViewCircle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewCircle)サンプルでは回転小さな 64 を使用して円を描画するために必要な数学`BoxView`要素。
 
-[ **RotatedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/RotatedText)サンプルには、複数が表示され`Label`スポークと同じように同じテキスト文字列を持つ要素を回転します。
+[ **RotatedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/RotatedText)サンプル表示複数`Label`に同じテキスト文字列を持つ要素を回転してスポークのように表示されます。
 
-[ **CircularText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/CircularText)サンプルは、円で囲んだをラップする表示されるテキスト文字列を表示します。
+[ **CircularText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/CircularText)サンプルには、円でラップする表示されるテキスト文字列が表示されます。
 
 ### <a name="an-analog-clock"></a>アナログ時計
 
-[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリに含まれる、 [ `AnalogClockViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnalogClockViewModel.cs)時計の針の角度を計算するクラス。 ViewModel、クラスの使用のプラットフォームの依存関係を回避する`Task.Delay`新しいを検索するためのタイマーではなく`DateTime`値。
+[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリが含まれています、 [ `AnalogClockViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnalogClockViewModel.cs)時計の針の角度を計算するクラス。 クラスは、ViewModel でプラットフォームの依存関係を回避するために`Task.Delay`新しいを検索するためのタイマーではなく`DateTime`値。
 
-含まれます**Xamarin.FormsBook.Toolkit**は、 [ `SecondTickConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondTickConverter.cs)を実装するクラス`IValueConverter`を最も近い秒を 2 つ目の角度を丸めるに機能します。
+含まれます**Xamarin.FormsBook.Toolkit**は、 [ `SecondTickConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondTickConverter.cs)を実装するクラス`IValueConverter`に最も近い 2 番目の 2 つ目の角度を丸める機能します。
 
 [ **MinimalBoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/MinimalBoxViewClock) 3 つの回転を使用して`BoxView`アナログ時計を描画する要素。
 
-[ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock)使用`BoxView`より広範な画像のティックを含む、クロックの顔周りをマークし、それぞれの端からほとんど距離を回転を渡しません。
+[ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock)使用`BoxView`より広範な画像の目盛りを含む、クロックの表面の周りをマークし、それぞれの端からほとんど距離を回転を渡しません。
 
-[![BoxView クロックのスクリーン ショットをトリプル](images/ch21fg17-small.png "アナログ時計の表面")](images/ch21fg17-large.png#lightbox "アナログ時計の表面")
+[![BoxView クロックのスクリーン ショットをトリプル](images/ch21fg17-small.png "アナログ クロック表面")](images/ch21fg17-large.png#lightbox "アナログ時計の表面")
 
-さらに、 [ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs)クラス**Xamarin.FormsBook.Toolkit**秒針を引き出せなかった少し先、見る前に表示すると、し、正しい位置に戻します。
+さらに、 [ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs)クラス**Xamarin.FormsBook.Toolkit**を引き出せなかった少し、先に進む前に表示される 2 番目の手札を発生し、正しい位置に戻す。
 
-### <a name="vertical-sliders"></a>垂直スライダーしますか。
+### <a name="vertical-sliders"></a>垂直スライダーですか。
 
-[ **VerticalSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/VerticalSliders)サンプルを`Slider`要素が 90 度回転でき、機能します。 ただし、回転これらの配置が難しいは`Slider`要素のレイアウトでれているためにと思われる水平方向です。
+[ **VerticalSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/VerticalSliders)サンプルを`Slider`要素が 90 度回転できるし、も引き続き機能します。 ただし、回転したこれらの配置が難しいは`Slider`要素のレイアウトで、ままであるために表示を水平方向。
 
 ## <a name="3d-ish-rotations"></a>3D らしく回転
 
-[ `RotationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.RotationX/)に向かってまたはビューアーから離れた場所に移動する要素の上下に見えるため、3 D の x 軸の周りの要素を回転させたときにプロパティが表示されます。 同様に、 [ `RotationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.RotationY/)に向かってまたはビューアーから離れた場所に移動するよう左および要素の右側に y 軸の周りの要素を回転するように見えます。
+[ `RotationX` ](xref:Xamarin.Forms.VisualElement.RotationX)要素の上下方向にまたはビューアーから離れた場所に移動すると思われるように、3 D の x 軸の周りの要素を回転するプロパティが表示されます。 同様に、 [ `RotationY` ](xref:Xamarin.Forms.VisualElement.RotationY)に向かってまたはビューアーから離れた場所に移動すると思われる左辺と要素の右辺を y 軸の周りの要素を回転させるようです。
 
-`AnchorX`プロパティに影響を与えます`RotationY`ではなく`RotationX`です。 `AnchorY`プロパティに影響を与えます`RotationX`ではなく`RotationY`です。 試すことができます、 [ **ThreeDeeRotationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ThreeDeeRotationDemo)をこれらのプロパティの相互作用を調査するサンプルです。
+`AnchorX`プロパティに影響`RotationY`なく`RotationX`します。 `AnchorY`プロパティに影響`RotationX`なく`RotationY`します。 試すことができます、 [ **ThreeDeeRotationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ThreeDeeRotationDemo)これらのプロパティの相互作用を調査するためのサンプルです。
 
-Xamarin.Forms で暗黙的に指定 3D 座標系では、左利きします。 ポイントする場合は、(右側) に増加する X の方向で、左側の人差し指を調整し、(ダウン)、Z 座標 (画面) 外を増加させる方向で、thumb ポイントし、増加する Y の方向に中央指を調整します。
+Xamarin.Forms で暗黙的に指定する 3D 座標系は、左手座標系です。 ポイントした場合は、(右) に増加の X 方向に左手の人差し指を調整し、中指を Y の増加方向には、(ダウン)、Z 座標 (画面) 外を増加させる方向で、thumb ポイントし、調整します。
 
-またの 3 つの軸のいずれか、値を増加させる方向で、左側のつまみをポイントする場合、指の曲線方向を示す回転の角度に正の回転の。
+また、3 つの軸のいずれかの値を増加させる方向で、左側の親指をポイントする場合、指の曲線方向を示します正の回転角度の回転の。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [21 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch21-Apr2016.pdf)
-- [21 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
+- [第 21 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch21-Apr2016.pdf)
+- [第 21 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
