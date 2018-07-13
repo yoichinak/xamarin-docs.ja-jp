@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a20c68d5f86dad852a4425206846292c1c6c5838
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84870de28ffd30b2d29fb5d8fbea815e1fd0d9c4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241661"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996439"
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
 
-ビデオ プレーヤーのトランスポート コントロールには、機能を実行するボタンが含まれます。**再生**、**一時停止**、および**停止**です。 これらのボタンがテキストではなく、使い慣れたアイコンで識別される一般に、**再生**と**一時停止**関数が 1 つのボタンに結合され、通常します。
+ビデオ プレーヤーのトランスポート コントロールに、機能を実行するボタンは、**再生**、**一時停止**、および**停止**します。 これらのボタンがテキストではなく、使い慣れたアイコンで識別される一般に、**再生**と**一時停止**関数は 1 つのボタンに一般的に結合されます。
 
-既定では、`VideoPlayer`表示トランスポート コントロールの各プラットフォームでサポートされています。 設定すると、`AreTransportControlsEnabled`プロパティを`false`、これらのコントロールが抑制されます。 制御できます、`VideoPlayer`プログラムによって。 または、独自のトランスポート コントロールを指定します。
+既定で、`VideoPlayer`トランスポート コントロールの各プラットフォームでサポートされているが表示されます。 設定すると、`AreTransportControlsEnabled`プロパティを`false`、これらのコントロールは表示されません。 制御することができますし、`VideoPlayer`プログラムで。 または、独自のトランスポート コントロールを指定します。
 
 ## <a name="the-play-pause-and-stop-methods"></a>再生、一時停止、および停止方法
 
-`VideoPlayer`クラスという 3 つのメソッドを定義`Play`、 `Pause`、および`Stop`イベントを発生させるにより実装されます。
+`VideoPlayer`クラスという 3 つのメソッドを定義する`Play`、 `Pause`、および`Stop`イベントを発生させるにより実装されます。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -54,11 +54,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-これらのイベントのイベント ハンドラーが設定されて、`VideoPlayerRenderer`次に示すように、各プラットフォームのクラスします。
+これらのイベントのイベント ハンドラーによって設定、`VideoPlayerRenderer`次に示すように、各プラットフォームのクラスします。
 
 ### <a name="ios-transport-implementations"></a>iOS のトランスポートの実装
 
-IOS のバージョンの`VideoPlayerRenderer`を使用して、`OnElementChanged`これら 3 つのイベントのハンドラーを設定するメソッドをときに、`NewElement`プロパティは使用されません`null`とイベント ハンドラーの関連付けを解除時に`OldElement`は`null`:
+IOS バージョン`VideoPlayerRenderer`を使用して、`OnElementChanged`これら 3 つのイベントのハンドラーを設定する方法と、`NewElement`プロパティが`null`をイベント ハンドラーをデタッチするとき`OldElement`でない`null`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -107,11 +107,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-イベント ハンドラーを実装してメソッドを呼び出すことによって、`AVPlayer`オブジェクト。 ない`Stop`メソッドを`AVPlayer`でビデオを一時停止と位置を先頭に移動、シミュレートしたため、します。
+イベント ハンドラーを実装してメソッドを呼び出すことによって、`AVPlayer`オブジェクト。 ない`Stop`メソッドの`AVPlayer`ビデオを一時停止して、位置を先頭に移動して、シミュレートしたため、します。
 
-### <a name="android-transport-implementations"></a>Android のトランスポートを実装
+### <a name="android-transport-implementations"></a>Android のトランスポートの実装
 
-Android の実装は、iOS の実装に似ています。 ときに 3 つの関数に対応するハンドラーが設定されます`NewElement`は`null`およびタイミングはデタッチ`OldElement`は`null`:
+Android の実装では、iOS のカスタム実装に似ています。 ときに 3 つの関数のハンドラーが設定されます`NewElement`ない`null`デタッチされたときに、`OldElement`ない`null`:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -158,11 +158,11 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-3 つの関数によって定義されたメソッドを呼び出す`VideoView`です。
+3 つの関数によって定義されたメソッドを呼び出す`VideoView`します。
 
-### <a name="uwp-transport-implementations"></a>UWP トランスポートを実装
+### <a name="uwp-transport-implementations"></a>UWP のトランスポートの実装
 
-UWP、トランスポートの 3 つの関数の実装は、iOS と Android の実装の両方によく似ています。
+トランスポートの 3 つの関数の UWP 実装は、iOS と Android の実装の両方によく似ています。
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -208,13 +208,13 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="the-video-player-status"></a>ビデオ プレーヤー ステータス
+## <a name="the-video-player-status"></a>ビデオ プレーヤーの状態
 
-実装する、**再生**、 **Pause**、および**停止**関数は、トランスポート コントロールをサポートするためだけでは不十分です。 多くの場合、**再生**と**一時停止**コマンドは、ビデオが再生中または一時停止中は現在あるかどうかを示すためにその外観を変更する同じボタンで実装されます。 さらに、このボタンは、ビデオがまだ読み込まれていないときにも有効べきではありません。
+実装する、**再生**、**一時停止**、および**停止**関数は、トランスポート コントロールをサポートするためには、不十分です。 多くの場合、**再生**と**一時停止**ビデオが再生または一時停止中では現在あるかどうかを示すには、その外観を変更する ボタンが同じコマンドが実装されます。 さらに、ビデオがまだ読み込まれていない場合、ボタンが有効でもべきではないにします。
 
-これらの要件は、ビデオ プレーヤーを利用できるように、現在の状態を示す再生または一時停止している場合、またはその準備ができていませんビデオを再生する必要があることを意味します。 (3 つのプラットフォームでサポートされていないために、これらのプロパティは、ビデオ ファイルではなく、ストリーミング ビデオの該当するかどうか、ビデオ、一時停止できるかの新しい位置に移動することができますを示すプロパティをサポートしても、`VideoPlayer`ここで説明します)。
+これらの要件は、ビデオ プレーヤーを使用できるようにする、現在の状態を示すがまだビデオを再生する準備ができていない場合は再生または一時停止すると場合、または必要があることを意味します。 (3 つのプラットフォームでサポートされていないために、これらのプロパティは、ビデオ ファイルではなく、ストリーミング ビデオの該当するかどうかは、ビデオの一時停止できる、またはの新しい位置に移動することができますを示すプロパティをサポートしても、`VideoPlayer`ここで説明します)。
 
-**VideoPlayerDemos**プロジェクトに含まれる、 `VideoStatus` 3 つのメンバーを持つ列挙します。
+**VideoPlayerDemos**プロジェクトが含まれています、 `VideoStatus` 3 つのメンバーの列挙。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -228,7 +228,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`VideoPlayer`クラスという名前の実専用バインド可能なプロパティを定義する`Status`型の`VideoStatus`します。 このプロパティは、プラットフォーム レンダラーからしか設定する必要がありますので、読み取り専用として定義されます。
+`VideoPlayer`クラスという名前の現実専用バインド可能なプロパティを定義する`Status`型の`VideoStatus`します。 このプロパティは、プラットフォームのレンダラーからしか設定する必要がありますので、読み取り専用として定義されます。
 
 ```csharp
 using System;
@@ -260,9 +260,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-通常、読み取り専用のバインド可能なプロパティには、プライベート`set`でアクセサー、`Status`プロパティをクラス内から設定することを許可します。 `View`レンダラー、ただしでサポートされている派生する必要がありますプロパティからプラットフォーム レンダラーによってのみが、クラスの外部です。
+プライベートする読み取り専用のバインド可能なプロパティが、通常なら`set`でアクセサー、`Status`プロパティをクラス内から設定することを許可します。 `View`レンダラー、ただしでサポートされている派生クラス、プロパティからプラットフォーム レンダラーによってのみが、クラスの外部です。
 
-名前を持つため、別のプロパティが定義されている`IVideoPlayerController.Status`です。 これは、明示的なインターフェイスの実装であり、によって可能になりますが、`IVideoPlayerController`インターフェイスを`VideoPlayer`クラスを実装します。
+名前を持つため、別のプロパティが定義されている`IVideoPlayerController.Status`します。 これは、明示的なインターフェイスの実装でありはによって可能になります、`IVideoPlayerController`インターフェイス、`VideoPlayer`クラスが実装します。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -276,9 +276,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-これは、方法に似ています[ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)コントロール、 [ `IWebViewController` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IWebViewController/)インターフェイスを実装する、`CanGoBack`と`CanGoForward`プロパティです。 (のソース コードを参照してください[ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs)および詳細については、そのレンダラー)。
+これは、方法に似ています[ `WebView` ](xref:Xamarin.Forms.WebView)コントロール、 [ `IWebViewController` ](xref:Xamarin.Forms.IWebViewController)インターフェイスを実装するために、`CanGoBack`と`CanGoForward`プロパティ。 (のソース コードを参照してください[ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs)と詳細については、そのレンダラー。)。
 
-これにより、クラスの外部に`VideoPlayer`を設定する、`Status`プロパティを参照することによって、`IVideoPlayerController`インターフェイスです。 (わかりますコード間もなく。)同様に、他のクラスからプロパティを設定できますが、誤って設定される可能性はほとんどありません。 最も重要な`Status`プロパティを設定して、データ バインディングを使用できません。
+これにより、クラスの外部に`VideoPlayer`を設定する、`Status`プロパティを参照して、`IVideoPlayerController`インターフェイス。 (わかりますコードすぐ。)同様に、他のクラスからプロパティを設定できますが、誤って設定される可能性はほとんどありません。 最も重要なこととして、`Status`データ バインドを通じてプロパティを設定することはできません。
 
 これを保つためのレンダラーを支援するために`Status`更新されると、プロパティ、`VideoPlayer`クラスを定義、`UpdateStatus`イベントはトリガーの秒部分の 10 分ごと。
 
@@ -302,9 +302,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-### <a name="the-ios-status-setting"></a>IOS ステータスの設定
+### <a name="the-ios-status-setting"></a>IOS の状態の設定
 
-IOS`VideoPlayerRenderer`のハンドラーを設定、`UpdateStatus`イベント (とそのハンドラーの関連付けを解除するときに、基になる`VideoPlayer`要素が存在しない)、ハンドラーを使用して設定して、`Status`プロパティ。
+IOS`VideoPlayerRenderer`のハンドラーを設定、`UpdateStatus`イベント (とそのハンドラーをデタッチときに、基になる`VideoPlayer`要素が存在しない)、ハンドラーを使用して設定して、`Status`プロパティ。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -358,11 +358,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-2 つのプロパティの`AVPlayer`アクセスする必要があります。 [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/)型のプロパティ`AVPlayerStatus`と[ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/)型のプロパティ`AVPlayerTimeControlStatus`です。 注意して、`Element`プロパティ (これは、 `VideoPlayer`) にキャストする必要があります`IVideoPlayerController`を設定する、`Status`プロパティです。
+2 つのプロパティの`AVPlayer`アクセスする必要があります。 [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/)型のプロパティ`AVPlayerStatus`と[ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/)型のプロパティ`AVPlayerTimeControlStatus`します。 注意、`Element`プロパティ (これは、 `VideoPlayer`) にキャストする必要があります`IVideoPlayerController`を設定する、`Status`プロパティ。
 
 ### <a name="the-android-status-setting"></a>Android のステータスの設定
 
-[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) 、Android のプロパティ`VideoView`を示すブール値のみ、ビデオが再生中または一時停止しているかどうかは、します。 かどうかを`VideoView`したりすることも再生は、ビデオを一時停止をまだ、`Prepared`のイベント`VideoView`処理する必要があります。 これら 2 つのハンドラーが設定されている、`OnElementChanged`メソッド、およびデタッチ中に、`Dispose`オーバーライドします。
+[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/)プロパティは、Android の`VideoView`のみ、ビデオは再生または一時停止中のかどうかを示すブール値です。 あるかどうかを`VideoView`したりすることも再生はビデオを一時停止をまだ、`Prepared`のイベント`VideoView`処理する必要があります。 これら 2 つのハンドラーが設定されて、`OnElementChanged`メソッドをおよびデタッチ中に、`Dispose`オーバーライドします。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -415,7 +415,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`UpdateStatus`ハンドラーを使用して、`isPrepared`フィールド (設定、`Prepared`ハンドラー) および`IsPlaying`プロパティを設定、`Status`プロパティ。
+`UpdateStatus`ハンドラーを使用して、`isPrepared`フィールド (設定、`Prepared`ハンドラー) および`IsPlaying`プロパティを設定する、`Status`プロパティ。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -447,9 +447,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="the-uwp-status-setting"></a>UWP ステータスの設定
+### <a name="the-uwp-status-setting"></a>UWP のステータス設定
 
-UWP`VideoPlayerRenderer`では、使用、`UpdateStatus`イベントでなく、その必要はありません、設定、`Status`プロパティです。 `MediaElement`定義、 [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged)レンダラーは、イベント通知を受けるときに、 [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState)プロパティが変更されました。 プロパティにデタッチ、`Dispose`をオーバーライドします。
+UWP`VideoPlayerRenderer`の利用、`UpdateStatus`イベントではなく、不要の設定、`Status`プロパティ。 `MediaElement`定義、 [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged)レンダラーは、イベント時に通知が、 [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState)プロパティが変更されました。 プロパティがデタッチ、`Dispose`をオーバーライドします。
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -520,25 +520,25 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>再生、一時停止、および中止 ボタン
 
-Unicode 文字を使用してシンボリック**再生**、**一時停止**と**停止**イメージは問題が発生します。 [その他の技術](https://unicode-table.com/en/blocks/miscellaneous-technical/)Unicode 標準のセクションは、この目的に適した見かけ上の 3 つの記号を定義します。 これらの数値は、次のとおりです。
+Unicode 文字を使用してシンボリック**再生**、**一時停止**、および**停止**イメージは問題になります。 [その他のテクニカル](https://unicode-table.com/en/blocks/miscellaneous-technical/)Unicode 標準のセクションは、一見、この目的に適した次の 3 つの記号を定義します。 これらの数値は、次のとおりです。
 
-- 0x23F5 (黒中程度の右向きの三角形) または&#x23F5;の**再生**
+- 0x23F5 (黒中程度の右向き三角形) または&#x23F5;の**再生**
 - 0x23F8 (二重の縦棒) または&#x23F8;の**一時停止**
-- 0x23F9 (黒の四角形) または&#x23F9;の**停止**
+- 0x23F9 (黒い四角) または&#x23F9;の**停止**
 
-関係なく方法お使いのブラウザーでこれらのシンボルが表示されます (およびさまざまな方法でさまざまなブラウザーの処理)、Xamarin.Forms でサポートされているプラットフォームで一貫して、表示されません。 IOS および UWP デバイスで、**一時停止**と**停止**文字がグラフィカルな外観を 3D の背景色を青と白のフォア グラウンドがあります。 これは、Android、シンボルが単に青色でケースがありません。 ただしの 0x23F5 codepoint**再生**UWP と上の同じ外観が iOS および Android 上であってもサポートされていることはありません。
+関係なく方法お使いのブラウザーでこれらのシンボルが表示されます (およびさまざまな方法でさまざまなブラウザーの処理)、Xamarin.Forms でサポートされるプラットフォームで一貫した方法が表示されません。 IOS および UWP デバイスで、**一時停止**と**停止**文字がある 3D 青色の背景と白い前景色をグラフィカル表示します。 Android では、シンボルが単に青は発生しません。 ただしの 0x23F5 codepoint**再生**UWP とで同じ外観が iOS および Android 上であってもサポートされていることはありません。
 
-そのための 0x23F5 コード ポイントを使用できません**再生**です。 適切な代替です。
+そのための 0x23F5 コード ポイントを使用することはできません**再生**します。 有効な代替方法は次のとおりです。
 
-- 0x25B6 (黒の右向き三角形) または&#x25B6;の**再生**
+- 0x25B6 (黒右向き三角形) または&#x25B6;の**再生**
 
-3D の外観は似ていませんプレーンの黒い三角形がする点を除いてすべての 3 つのプラットフォームでサポートされる**Pause**と**停止**です。 1 つの可能性は、バリアント型のコードで 0x25B6 コード ポイントには。
+3D の外観が似ていないプレーンの黒い三角形が点が 3 つすべてのプラットフォームでサポートされる**一時停止**と**停止**します。 1 つの方法では、バリアントのコードで 0x25B6 codepoint に従ってください。
 
-- 0xFE0F (バリアント型 16) 続けて 0x25B6 または&#x25B6;&#xFE0F;の**再生**
+- 0xFE0F (バリアント型は 16) 続けて 0x25B6 または&#x25B6;&#xFE0F;の**再生**
 
-これは、次に示すマークアップで使用されるものです。 これにより、iOS で、**再生**記号と同じ 3D 外観、**一時停止**と**停止**Android および UWP でボタンが、バリアント型は機能しません。
+これは、次に示すマークアップで使用されるものです。 Ios では、その、**再生**記号と同じ 3D の外観、**一時停止**と**停止**ボタンが、バリアントは、Android、UWP で機能しません。
 
-**カスタム トランスポート**セット ページ、 **AreTransportControlsEnabled**プロパティを**false**が含まれています、`ActivityIndicator`ビデオの読み込み時に表示されると 2 つのボタン。 `DataTrigger` オブジェクトを使用して有効にして、無効化、`ActivityIndicator`とボタンのとの間での最初のボタンを切り替えるには**再生**と**一時停止**:
+**カスタム トランスポート**ページ セット、 **AreTransportControlsEnabled**プロパティを**false**が含まれています、`ActivityIndicator`ビデオの読み込み時に表示されると 2 つのボタン。 `DataTrigger` オブジェクトを使用して有効にして、無効にする、`ActivityIndicator`とボタンの最初のボタン間を切り替えると**再生**と**一時停止**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -611,9 +611,9 @@ Unicode 文字を使用してシンボリック**再生**、**一時停止**と*
 </ContentPage>
 ```
 
-データ トリガーが、記事で詳しく説明されている[データ トリガー](~/xamarin-forms/app-fundamentals/triggers.md#data)です。
+データ トリガーは、情報の記事で詳しく説明[データ トリガー](~/xamarin-forms/app-fundamentals/triggers.md#data)します。
 
-分離コード ファイルは、ボタンに対応するハンドラー`Clicked`イベント。
+分離コード ファイルは、ボタンのハンドラーを持つ`Clicked`イベント。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -645,15 +645,15 @@ namespace VideoPlayerDemos
 }
 ```
 
-`AutoPlay`に設定されている`false`で、 **CustomTransport.xaml**ファイル、キーを押す必要があります、**再生**が有効にビデオを開始するときにボタンをクリックします。 ボタンが定義され、上記で説明した Unicode 文字が、対応するテキスト付加されます。 ボタンは、各プラットフォームで、一貫した外観があるビデオを再生する場合。
+`AutoPlay`に設定されている`false`で、 **CustomTransport.xaml**ファイル、キーを押す必要があります、**再生**ビデオの開始を有効になるときにボタンをクリックします。 ボタンが定義され、前に説明した Unicode 文字には、対応するテキストが付いています。 ボタンは、各プラットフォームで、一貫した外観があるビデオを再生するとき。
 
 [![カスタム トランスポート再生](custom-transport-images/customtransportplaying-small.png "カスタム トランスポート再生")](custom-transport-images/customtransportplaying-large.png#lightbox "カスタム トランスポートの再生")
 
-Android と UWP、ですが、**再生**ボタンの外観、ビデオが一時停止しているときに非常に異なる。
+Android、UWP、**再生**ビデオを一時停止すると、ボタンが大きく異なります。
 
 [![カスタム トランスポートを一時停止](custom-transport-images/customtransportpaused-small.png "カスタム トランスポートを一時停止")](custom-transport-images/customtransportpaused-large.png#lightbox "カスタム トランスポートを一時停止")
 
-実稼働アプリケーションでおそらくにしておく visual 統一性を実現するために、ボタンの独自のビットマップ イメージを使用します。
+実稼働アプリケーションでは、visual 統一性を実現するために、独自のビットマップ イメージのボタンを使用するをする可能性があります。
 
 
 ## <a name="related-links"></a>関連リンク

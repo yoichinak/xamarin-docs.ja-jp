@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 3088fa4b5cfa21ac57533ef331ffcc15414e14b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47e1eda2f701b654f81f664050847677fba8bcc5
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763749"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986035"
 ---
 # <a name="foreground-services"></a>フォア グラウンド サービス
 
-フォア グラウンド サービスは、特殊な種類のバインドされているサービスまたは開始されるサービスです。 場合によってはサービスでは、ユーザーがアクティブに認識する必要があるタスクを実行、これらのサービスと呼ばれます_フォア グラウンド サービス_です。 フォア グラウンド サービスの例は、運転または徒歩中に指示をユーザーに提供されているアプリです。 アプリは、バック グラウンドでは、場合でもはサービスが正常に動作するための十分なリソースであると、ユーザーがアプリへのアクセスを迅速かつ便利な方法を持っていることも重要です。 Android アプリで、つまり、フォア グラウンド サービスは、「標準」サービスよりも高い優先順位を受信する必要があります、フォア グラウンド サービスを提供する必要があります、`Notification`サービスが実行されている限り、Android が表示されます。
+フォア グラウンド サービスは、特殊な種類のバインドされているサービスまたは開始されるサービスです。 場合によってはサービスでは、ユーザーがアクティブに意識する必要があるタスクを実行、これらのサービスと呼ばれます_フォア グラウンド サービス_します。 フォア グラウンド サービスの例では、方向が運転または徒歩中にユーザーを提供しているアプリです。 場合でも、アプリは、バック グラウンドでは、サービスに適切に機能するための十分なリソースと、ユーザーがアプリにアクセスする迅速かつ便利な手段を持っていることも重要です。 Android アプリで、つまり、フォア グラウンド サービスは、「通常の」サービスよりも高い優先順位を受信する必要があります、フォア グラウンド サービスを提供する必要があります、`Notification`サービスが実行されている限り、Android が表示されます。
  
-フォア グラウンド サービスを開始するには、アプリは、サービスを開始する Android に通知する目的をディスパッチする必要があります。 その後サービス必要があります登録自体 Android とフォア グラウンド サービスとして。 Android 8.0 で (またはそれ以上) に実行されているアプリを使用する必要があります、`Context.StartForegroundService`古いバージョンの Android デバイスで実行されているアプリが使用中に、サービスを開始するメソッド `Context.StartService`
+フォア グラウンド サービスを開始するには、アプリは Android サービスを開始するかを示す、インテントをディスパッチする必要があります。 サービスする必要があります登録 Android とフォア グラウンド サービスとして。 Android 8.0 (またはそれ以降) で実行されているアプリを使用する必要があります、`Context.StartForegroundService`古いバージョンの Android デバイスで実行されているアプリを使用する必要があります、サービスを開始する方法 `Context.StartService`
 
 この c# 拡張メソッドは、フォア グラウンド サービスを開始する方法の例です。 Android 8.0 以降が使用されます、`StartForegroundService`メソッド、それ以外の場合、古い`StartService`メソッドが使用されます。  
 
@@ -43,16 +43,16 @@ public static void StartForegroundServiceComapt<T>(this Context context, Bundle 
 
 ## <a name="registering-as-a-foreground-service"></a>フォア グラウンド サービスとして登録します。
 
-フォア グラウンド サービスが開始する必要があります自体が登録 Android を呼び出すことによって、 [ `StartForeground`](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)です。 サービスが開始された場合、`Service.StartForegroundService`メソッド自体が登録されない、Android は、サービスを停止し、応答しないように、アプリのフラグを設定しがします。
+フォア グラウンド サービスが開始する必要がありますそれ自体が登録 Android を呼び出すことによって、 [ `StartForeground`](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)します。 サービスが開始された場合、`Service.StartForegroundService`メソッドを登録しません自体には、Android は、サービスを停止し、応答しないように、アプリにフラグを設定し、します。
 
 `StartForeground` どちらも必須の 2 つのパラメーターを受け取ります。
  
-* サービスの識別にアプリケーション内で一意である整数値。
-* A`Notification`サービスが実行されている限り、Android がステータス バーに表示されるオブジェクト。
+* 整数値は、サービスを識別するために、アプリケーション内で一意です。
+* A`Notification`サービスが実行されている限り、ステータス バーに Android が表示されるオブジェクト。
 
-サービスが実行されている限り、android のステータス バーに通知が表示されます。 少なくとも、通知は、サービスが実行されていることをユーザーに視覚上の手掛かりを提供します。 理想的には、通知は、アプリケーションを制御するには、アプリケーションまたは一部のアクション ボタン可能性のあるへのショートカットを使用して、ユーザーを提供する必要があります。 この例は、ミュージック プレーヤー&ndash;表示されている通知は、前の曲に戻るか、次の楽曲にスキップ、音楽の再生/一時停止するためにボタンを必要があります。 
+サービスが実行されている限り、android のステータス バーで、通知が表示されます。 少なくとも、通知は、サービスが実行されていることをユーザーに視覚的な合図を提供します。 理想的には、通知は、アプリケーションを制御するには、アプリケーションまたはいくつかのアクション ボタン可能性がありますのショートカットを持つユーザーを提供する必要があります。 この例は、ミュージック プレーヤー&ndash;通知が表示されますが一時停止]/[play ミュージック、前の曲を振り返ってまたは、次の楽曲にスキップするボタンがあります。 
 
-このコード スニペットは、フォア グラウンド サービスとして、サービスを登録する次の例を示します。   
+このコード スニペットでは、フォア グラウンド サービスとしてのサービスを登録する例を示します。   
 
 ```csharp
 // This is any integer value unique to the application.
@@ -78,31 +78,31 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 }
 ```
 
-以前の通知が次のように、ステータス バー通知が表示されます。
+前回の通知は、次のようなあるステータス バーの通知が表示されます。
 
-![ステータス バーの通知の画像](foreground-services-images/foreground-services-01.png "ステータス バーの通知の画像")
+![ステータス バーの通知を示す画像](foreground-services-images/foreground-services-01.png "ステータス バーの通知を示す画像")
 
-このスクリーン ショットは、サービスを制御するユーザーに許可する 2 つのアクションがあるトレイで展開された通知を示しています。
+このスクリーン ショットは、サービスを制御するユーザーを許可する 2 つのアクションを含む通知トレイの展開の通知を示しています。
 
-![展開された通知の画像](foreground-services-images/foreground-services-02.png "イメージが展開された通知を表示します。")
+![展開された通知を示す画像](foreground-services-images/foreground-services-02.png "イメージが展開された通知を表示します。")
 
-通知の詳細についてで使用できる、[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)のセクションで、 [Android 通知](~/android/app-fundamentals/notifications/index.md)ガイドです。
+通知の詳細についてで使用できる、[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)のセクション、 [Android の通知](~/android/app-fundamentals/notifications/index.md)ガイド。
 
-## <a name="unregistering-as-a-foreground-service"></a>フォア グラウンド サービスとして登録解除しています
+## <a name="unregistering-as-a-foreground-service"></a>フォア グラウンド サービスとして登録を解除します。
 
-サービス除外一覧できます自体、フォア グラウンド サービスとしてメソッドを呼び出して`StopForeground`です。 `StopForeground` サービスは停止されませんが、通知アイコンと必要な場合、このサービスをシャット ダウンすることができます Android の信号が削除されます。
+サービスを除外一覧できます自体フォア グラウンド サービスとしてメソッドを呼び出して`StopForeground`します。 `StopForeground` サービス停止されませんが、通知アイコンとシグナルに応じて、このサービスをシャット ダウンすることが Android が削除されます。
 
-表示されるステータス バーの通知も渡すことによって削除`true`メソッドに。 
+表示されるステータス バーの通知も渡すことによって削除`true`メソッド。 
 
 ```csharp
 StopForeground(true);
 ```
 
-呼び出して、サービスが停止した場合`StopSelf`または`StopService`、ステータス バーの通知が削除される予定です。
+呼び出して、サービスが停止した場合`StopSelf`または`StopService`、ステータス バーの通知は削除されます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.App.Service.StartForegrond](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
+- [Android.App.Service.StartForeground](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
 - [ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)
 - [ForegroundServiceDemo (サンプル)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/ForegroundServiceDemo/)
