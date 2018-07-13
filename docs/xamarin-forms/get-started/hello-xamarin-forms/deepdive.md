@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269070"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996234"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms の詳細
 
@@ -118,7 +118,7 @@ namespace Phoneword
 }
 ```
 
-このコードは、`App` クラスの `MainPage` プロパティを、[`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) クラスの新しいインスタンスに設定します。 また、XAML コンパイラで [`XamlCompilation`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/) 属性が有効なので、XAML は中間言語に直接コンパイルされます。 詳細については、「[XAML Compilation](~/xamarin-forms/xaml/xamlc.md)」(XAML のコンパイル) を参照してください。
+このコードは、`App` クラスの `MainPage` プロパティを、[`MainPage`](xref:Xamarin.Forms.Application.MainPage) クラスの新しいインスタンスに設定します。 また、XAML コンパイラで [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 属性が有効なので、XAML は中間言語に直接コンパイルされます。 詳細については、「[XAML Compilation](~/xamarin-forms/xaml/xamlc.md)」(XAML のコンパイル) を参照してください。
 
 ## <a name="launching-the-application-on-each-platform"></a>各プラットフォームでのアプリケーションの起動
 
@@ -214,14 +214,14 @@ Xamarin.Forms アプリケーションは `LoadApplication` メソッドを使�
 
 Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するために、主に 4 つのコントロール グループが使用されます。
 
-1. **ページ**: Xamarin.Forms のページは、クロスプラットフォーム モバイル アプリケーション画面を表しています。 Phoneword アプリケーションは、1 つの画面を表示するために [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) クラスを使用します。 ページの詳細については、「[Xamarin.Forms Pages](~/xamarin-forms/user-interface/controls/pages.md)」(Xamarin.Forms のページ) を参照してください。
-1. **レイアウト**: Xamarin.Forms のレイアウトは、ビューを論理構造にまとめるために使用されるコンテナーです。 Phoneword アプリケーションは、[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) クラスを使用して水平方向のスタックにコントロールを整列します。 レイアウトの詳細については、「[Xamarin.Forms Layouts](~/xamarin-forms/user-interface/controls/layouts.md)」(Xamarin.Forms のレイアウト) を参照してください。
-1. **ビュー**: Xamarin.Forms のビューは、ユーザー インターフェイスに表示されるコントロールです。たとえば、ラベル、ボタン、テキスト入力ボックスなどです。 Phoneword アプリケーションは、[`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)、[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)、[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) コントロールを使用します。 ビューの詳細については、「[Xamarin.Forms Views](~/xamarin-forms/user-interface/controls/views.md)」(Xamarin.Forms のビュー) を参照してください。
+1. **ページ**: Xamarin.Forms のページは、クロスプラットフォーム モバイル アプリケーション画面を表しています。 Phoneword アプリケーションは、1 つの画面を表示するために [`ContentPage`](xref:Xamarin.Forms.ContentPage) クラスを使用します。 ページの詳細については、「[Xamarin.Forms Pages](~/xamarin-forms/user-interface/controls/pages.md)」(Xamarin.Forms のページ) を参照してください。
+1. **レイアウト**: Xamarin.Forms のレイアウトは、ビューを論理構造にまとめるために使用されるコンテナーです。 Phoneword アプリケーションは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスを使用して水平方向のスタックにコントロールを整列します。 レイアウトの詳細については、「[Xamarin.Forms Layouts](~/xamarin-forms/user-interface/controls/layouts.md)」(Xamarin.Forms のレイアウト) を参照してください。
+1. **ビュー**: Xamarin.Forms のビューは、ユーザー インターフェイスに表示されるコントロールです。たとえば、ラベル、ボタン、テキスト入力ボックスなどです。 Phoneword アプリケーションは、[`Label`](xref:Xamarin.Forms.Label)、[`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button) コントロールを使用します。 ビューの詳細については、「[Xamarin.Forms Views](~/xamarin-forms/user-interface/controls/views.md)」(Xamarin.Forms のビュー) を参照してください。
 1. **セル**: Xamarin.Forms セルは、一覧内の項目に使用される特殊な要素です。一覧内の各項目を描画する方法を示しています。 Phoneword アプリケーションはセルを利用していません。 セルの詳細については、「[Xamarin.Forms Cells](~/xamarin-forms/user-interface/controls/cells.md)」(Xamarin.Forms のセル) を参照してください。
 
 実行時に、各コントロールはネイティブの同等のものにマップされます。そしてそれがレンダリングされます。
 
-どのプラットフォームでも、Phoneword アプリケーションを実行すると、Xamarin.Forms の [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) に対応する 1 つの画面が表示されます。 `Page` は、Android では *ViewGroup*、iOS では *View Controller*、ユニバーサル Windows プラットフォームでは *Page* を表します。 また、Phoneword アプリケーションは、`MainPage` クラスを表す [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) オブジェクトをインスタンス化します。その XAML マークアップを次のコード例に示します。
+どのプラットフォームでも、Phoneword アプリケーションを実行すると、Xamarin.Forms の [`Page`](xref:Xamarin.Forms.Page) に対応する 1 つの画面が表示されます。 `Page` は、Android では *ViewGroup*、iOS では *View Controller*、ユニバーサル Windows プラットフォームでは *Page* を表します。 また、Phoneword アプリケーションは、`MainPage` クラスを表す [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトをインスタンス化します。その XAML マークアップを次のコード例に示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,13 +238,13 @@ Xamarin.Forms アプリケーションのユーザー インターフェイス�
 </ContentPage>
 ```
 
-画面サイズに関係なく、`MainPage` クラスは [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) コントロールを使用して画面上のコントロールを自動的に整列します。 各子要素は、追加した順に、垂直方向に 1 つずつ配置されます。 `StackLayout` コントロールには、ページにテキストを表示する 1 つの [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) コントロール、テキスト ユーザー入力を受け入れる 1 つの [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) コントロール、タッチ イベントに応答してコードを実行するために使用される 2 つの [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) コントロールが含まれています。
+画面サイズに関係なく、`MainPage` クラスは [`StackLayout`](xref:Xamarin.Forms.StackLayout) コントロールを使用して画面上のコントロールを自動的に整列します。 各子要素は、追加した順に、垂直方向に 1 つずつ配置されます。 `StackLayout` コントロールには、ページにテキストを表示する 1 つの [`Label`](xref:Xamarin.Forms.Label) コントロール、テキスト ユーザー入力を受け入れる 1 つの [`Entry`](xref:Xamarin.Forms.Entry) コントロール、タッチ イベントに応答してコードを実行するために使用される 2 つの [`Button`](xref:Xamarin.Forms.Button) コントロールが含まれています。
 
 Xamarin.Forms の XAML の詳細については、「[Xamarin.Forms XAML Basics](~/xamarin-forms/xaml/xaml-basics/index.md)」(Xamarin.Forms XAML の基礎) を参照してください。
 
 ### <a name="responding-to-user-interaction"></a>ユーザー操作に対する応答
 
-XAML に定義されているオブジェクトによって、分離コード ファイルで処理されるイベントが発生する可能性があります。 次のコード例は、`MainPage` クラスの分離コードの `OnTranslate` メソッドを示しています。*[Translate]\(変換\)* ボタンによって発生する [`Clicked`](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) イベントに応答して実行されます。
+XAML に定義されているオブジェクトによって、分離コード ファイルで処理されるイベントが発生する可能性があります。 次のコード例は、`MainPage` クラスの分離コードの `OnTranslate` メソッドを示しています。*[Translate]\(変換\)* ボタンによって発生する [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントに応答して実行されます。
 
 ```csharp
 void OnTranslate(object sender, EventArgs e)
@@ -272,13 +272,13 @@ void OnTranslate(object sender, EventArgs e)
 
 Xamarin.Forms 用 Phoneword アプリケーションは、このガイドでは説明していない概念をいくつか導入しました。 たとえば、次のような概念です。
 
-- ボタンの有効化と無効化。 [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) は、[`IsEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) プロパティを変更することでオン/オフを切り替えることができます。 たとえば、次のコード例は `callButton` を無効にしています。
+- ボタンの有効化と無効化。 [`Button`](xref:Xamarin.Forms.Button) は、[`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) プロパティを変更することでオン/オフを切り替えることができます。 たとえば、次のコード例は `callButton` を無効にしています。
 
     ```csharp
     callButton.IsEnabled = false;
     ```
 
-- アラート ダイアログを表示します。 ユーザーが呼び出し**ボタン**を押すと、Phoneword アプリケーションは、発信または通話のキャンセルを行うオプションを含む*アラート ダイアログ*を表示します。 [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) メソッドは、次のコード例のようにダイアログを作成するために使用されます。
+- アラート ダイアログを表示します。 ユーザーが呼び出し**ボタン**を押すと、Phoneword アプリケーションは、発信または通話のキャンセルを行うオプションを含む*アラート ダイアログ*を表示します。 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)) メソッドは、次のコード例のようにダイアログを作成するために使用されます。
 
     ```csharp
     await this.DisplayAlert (
@@ -288,7 +288,7 @@ Xamarin.Forms 用 Phoneword アプリケーションは、このガイドでは�
             "No");
     ```
 
-- [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) クラス経由でネイティブ機能にアクセスします。 Phoneword アプリケーションは `DependencyService` クラスを使用して `IDialer` インターフェイスをプラットフォーム固有の電話ダイヤル処理の実装に解決します。次に Phoneword プロジェクトのコード例を示します。
+- [`DependencyService`](xref:Xamarin.Forms.DependencyService) クラス経由でネイティブ機能にアクセスします。 Phoneword アプリケーションは `DependencyService` クラスを使用して `IDialer` インターフェイスをプラットフォーム固有の電話ダイヤル処理の実装に解決します。次に Phoneword プロジェクトのコード例を示します。
 
     ```csharp
     async void OnCall (object sender, EventArgs e)
@@ -299,7 +299,7 @@ Xamarin.Forms 用 Phoneword アプリケーションは、このガイドでは�
     }
     ```
 
-  [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) クラスの詳細については、「[Accessing Native Features via the DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)」(DependencyService 経由でネイティブ機能にアクセスする) を参照してください。
+  [`DependencyService`](xref:Xamarin.Forms.DependencyService) クラスの詳細については、「[Accessing Native Features via the DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)」(DependencyService 経由でネイティブ機能にアクセスする) を参照してください。
 
 - URL を使用して電話をかけます。 Phoneword アプリケーションは `OpenURL` を使用してシステム電話アプリを起動します。 URL は、`tel:` プレフィックスと、それに続く発信先電話番号から構成されます。次に iOS プロジェクトのコード例を示します。
 
@@ -307,7 +307,7 @@ Xamarin.Forms 用 Phoneword アプリケーションは、このガイドでは�
     return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
     ```
 
-- プラットフォーム レイアウトの調整 開発者は [`Device`](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) クラスを使用して、プラットフォームごとのアプリケーションのレイアウトと機能をカスタマイズすることができます。次のコード例では、さまざまなプラットフォーム上のさまざまな [`Padding`](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) 値を使用して、各ページを正しく表示しています。
+- プラットフォーム レイアウトの調整 開発者は [`Device`](xref:Xamarin.Forms.Device) クラスを使用して、プラットフォームごとのアプリケーションのレイアウトと機能をカスタマイズすることができます。次のコード例では、さまざまなプラットフォーム上のさまざまな [`Padding`](xref:Xamarin.Forms.Layout.Padding) 値を使用して、各ページを正しく表示しています。
 
     ```xaml
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >

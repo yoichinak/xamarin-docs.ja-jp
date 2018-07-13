@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 66234bb44bb0cae9580c119c6029603a528f882e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781983"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997440"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
@@ -38,7 +38,7 @@ Xamarin Profiler では、アプリケーションでのパラメーターに関
 `IDisposable` インターフェイスは、リソースを解放するためのメカニズムを提供します。 リソースを明示的に解放するために実装する必要がある `Dispose` メソッドを提供します。 `IDisposable` はデストラクターではありません。以下の状況でのみ実装する必要があります。
 
 - クラスがアンマネージ リソースを所有している場合。 インクルード ファイル、ストリーム、およびネットワーク接続の解放が必要な一般的なアンマネージ リソース。
-- クラスがマネージ `IDisposable` リソースを所有している場合。
+- クラスがマネージド `IDisposable` リソースを所有している場合。
 
 インスタンスが必要でなくなったときに、型コンシューマーは `IDisposable.Dispose` 実装を呼び出してリソースを解放できます。 これには、次の 2 つのアプローチがあります。
 
@@ -87,7 +87,7 @@ public void ReadText (string filename)
 
 `StreamReader` クラスは `IDisposable` を実装し、`finally` ブロックはリソースを解放するために `StreamReader.Dispose` メソッドを呼び出します。
 
-詳細については、[IDisposable インターフェイス](https://developer.xamarin.com/api/type/System.IDisposable/)に関するページを参照してください。
+詳細については、[IDisposable インターフェイス](xref:System.IDisposable)に関するページを参照してください。
 
 <a name="events" />
 
@@ -255,7 +255,7 @@ public class FaceDetection
 
 ## <a name="use-the-sgen-garbage-collector"></a>SGen ガベージ コレクターを使用する
 
-使用されなくなったオブジェクトに割り当てられているメモリを再利用するために、C# などのマネージ言語ではガーベジ コレクションが使用されます。 Xamarin プラットフォームで使用される 2 つのガベージ コレクターは次のとおりです。
+使用されなくなったオブジェクトに割り当てられているメモリを再利用するために、C# などのマネージド言語ではガーベジ コレクションが使用されます。 Xamarin プラットフォームで使用される 2 つのガベージ コレクターは次のとおりです。
 
 - [**SGen** ](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – これは世代別ガベージ コレクターであり、Xamarin のプラットフォームの既定のガベージ コレクターです。
 - [**Boehm** ](http://www.hboehm.info/gc/) – これは、保守的な、非世代別ガベージ コレクターです。 Classic API を使用する Xamarin.iOS アプリケーションで使用される既定のガベージ コレクターです。
@@ -331,7 +331,7 @@ SGen がガベージ コレクションを開始すると、メモリの再利�
 - リリース ビルドが生成されていることを確認します。
 - FAT バイナリが生成されないように、アプリケーションがビルドされるアーキテクチャの数を減らします。
 - より最適化された実行可能ファイルを生成するために、LLVM コンパイラが使用されていることを確認します。
-- アプリケーションのマネージ コード サイズを減らします。 これは、すべてのアセンブリでリンカーを有効にすることで行うことができます (iOS プロジェクトの場合は *[すべてリンク]*、Android プロジェクトの場合は *[すべてのアセンブリをリンクする]*)。
+- アプリケーションのマネージド コード サイズを減らします。 これは、すべてのアセンブリでリンカーを有効にすることで行うことができます (iOS プロジェクトの場合は *[すべてリンク]*、Android プロジェクトの場合は *[すべてのアセンブリをリンクする]*)。
 
 Android アプリは、ABI ("アーキテクチャ") ごとに別の APK に分割することもできます。
 詳細については、このブログの投稿「[How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)」 (Android アプリのサイズを小さくしておく方法) を参照してください。
@@ -379,5 +379,5 @@ Web サービスから取得されたデータはローカルでキャッシュ�
 - [Xamarin Profiler の概要](~/tools/profiler/index.md)
 - [Xamarin.Forms のパフォーマンス](~/xamarin-forms/deploy-test/performance.md)
 - [非同期サポートの概要](~/cross-platform/platform/async.md)
-- [IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
+- [IDisposable](xref:System.IDisposable)
 - [Xamarin アプリのよくある落とし穴の回避 (動画)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
