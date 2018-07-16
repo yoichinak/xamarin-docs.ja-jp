@@ -22,6 +22,7 @@ ms.locfileid: "34784498"
 
 この記事はiOS 9アプリにおいてApp Transport Securityによって必要となるセキュリティに関する変更とそれがあなたのXamarin.iOSプロジェクトにもたらす意味を紹介します。この記事はATS構成オプションと必要な場合にATSからオプトアウトする方法を説明します。ATSは既定で有効となっているため、iOS 9アプリでは(明示的に許可しない限り)あらゆるセキュアでないインターネット接続によって例外が発生します。
 
+
 ## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)
 
 バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、アプリケーションにバック グラウンドでタスクを実行させる処理です。 このガイドは、iOSにおけるバック グラウンド処理の概要を説明します。
