@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f62842c3b2aea93d28303b7f47c5d50df6381387
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774383"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998428"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: 詳細説明
 
@@ -98,9 +98,9 @@ Visual Studio for Mac は、コードを_ソリューション_と_プロジェ�
 
 プロジェクト内の各アイテムを見て、各フォルダーとその目的を確認します。
 
--   **Properties** &ndash;名前、バージョン番号、アクセス許可を含む Xamarin.Android アプリケーションのすべての要件を記述する [AndroidManifest.xml](~/android/platform/android-manifest.md) ファイルを含んでいます。 **Properties** フォルダーには、.NET アセンブリ メタデータ ファイルである [AssemblyInfo.cs](http://msdn.microsoft.com/en-us/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx) も含まれています。 このファイルには、アプリケーションに関する基本的な情報を入力しておくことをお勧めします。
+-   **Properties** &ndash;名前、バージョン番号、アクセス許可を含む Xamarin.Android アプリケーションのすべての要件を記述する [AndroidManifest.xml](~/android/platform/android-manifest.md) ファイルを含んでいます。 **Properties** フォルダーには、.NET アセンブリ メタデータ ファイルである [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo) も含まれています。 このファイルには、アプリケーションに関する基本的な情報を入力しておくことをお勧めします。
 
--   **References**&ndash; アプリケーションのビルドと実行に必要なアセンブリが含まれています。 References ディレクトリを展開すると、[System](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx)、System.Core、[System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx) などの .NET アセンブリ、および Xamarin の Mono.Android アセンブリへの参照が表示されます。
+-   **References**&ndash; アプリケーションのビルドと実行に必要なアセンブリが含まれています。 References ディレクトリを展開すると、[System](xref:System)、System.Core、[System.Xml](xref:System.Xml) などの .NET アセンブリ、および Xamarin の Mono.Android アセンブリへの参照が表示されます。
 
 
 -   **Assets**&ndash; フォント、ローカル データ ファイル、テキスト ファイルなどのアプリケーションで実行する必要があるファイルが含まれています。 ここに含まれるファイルは、生成された `Assets` クラスを介してアクセスできます。 Android の資産の詳細については、Xamarin の「[Using Android Assets](~/android/app-fundamentals/resources-in-android/android-assets.md)」 (Android 資産の使用) ガイドを参照してください。
