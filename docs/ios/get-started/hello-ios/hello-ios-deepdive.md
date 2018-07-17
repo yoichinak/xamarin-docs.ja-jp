@@ -344,9 +344,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-Phoneword アプリでは、`TouchUpInside` というタッチ イベントを使用してユーザーのタッチを待ち受けるようにします。 `TouchUpInside` は、コントロールのボタン内でのタッチ ダウン (指が画面に触れる) に続くタッチ アップ イベント (指が画面から離れる) を待ち受けます。 `TouchUpInside` の逆は、ユーザーがコントロールを下に押したときに発生する `TouchDown` イベントです。 `TouchDown` イベントを使うと、多数のノイズを取り込んでしまう上に、ユーザーは指をスライドさせてコントロールから離してタッチをキャンセルするという選択肢がなくなります。 `TouchUpInside` は、**ボタン** タッチに応答するための最も一般的の方法であり、ユーザーがボタンを押すときに期待するエクスペリエンスを作成します。 これの詳細については、Apple の「[iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html)」(iOS ヒューマン インターフェイス ガイドライン) を参照してください。
+Phoneword アプリでは、`TouchUpInside` というタッチ イベントを使用してユーザーのタッチを待ち受けるようにします。 `TouchUpInside` は、コントロールのボタン内でのタッチ ダウン (指が画面に触れる) に続くタッチ アップ イベント (指が画面から離れる) を待ち受けます。 `TouchUpInside` の逆は、ユーザーがコントロールを下に押したときに発生する `TouchDown` イベントです。 `TouchDown` イベントを使うと、多数のノイズを取り込んでしまう上に、ユーザーは指をスライドさせてコントロールから離してタッチをキャンセルするという選択肢がなくなります。 `TouchUpInside` は、**ボタン** タッチに応答するための最も一般的な方法であり、ユーザーがボタンを押すときに期待するエクスペリエンスを作成します。 これの詳細については、Apple の「[iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html)」(iOS ヒューマン インターフェイス ガイドライン) を参照してください。
 
-このアプリでは、`TouchUpInside` イベントをラムダ式で処理しますが、デリゲートまたは名前付きイベント ハンドラーを使用することもできます。 最後のボタン コードは次のようになります。
+このアプリでは、`TouchUpInside` イベントがラムダで処理されますが、デリゲートまたは名前付きイベント ハンドラーを使用することもできます。 最後のボタン コードは次のようになります。
 
 ```csharp
 public override void ViewDidLoad ()
