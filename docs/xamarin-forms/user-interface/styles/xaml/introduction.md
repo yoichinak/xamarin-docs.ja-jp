@@ -1,24 +1,24 @@
 ---
-title: Introduction to Xamarin.Forms スタイル
-description: スタイルは、カスタマイズする視覚要素の外観を許可します。 スタイルは、特定の種類に対して定義されてし、型に使用できるプロパティの値を含むです。
+title: Xamarin.Forms のスタイルの概要
+description: スタイルをカスタマイズするビジュアル要素の外観を許可します。 スタイルは、特定の種類に対して定義されてし、その型で使用できるプロパティの値を含みます。
 ms.prod: xamarin
 ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 071cfa2ba145775c179bc85dce4fac29ba0bd8fa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 8f84c960f17f56fce2a1bba143a215ce930f6f4e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245821"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996111"
 ---
-# <a name="introduction-to-xamarinforms-styles"></a>Introduction to Xamarin.Forms スタイル
+# <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms のスタイルの概要
 
-_スタイルは、カスタマイズする視覚要素の外観を許可します。スタイルは、特定の種類に対して定義されてし、型に使用できるプロパティの値を含むです。_
+_スタイルをカスタマイズするビジュアル要素の外観を許可します。スタイルは、特定の種類に対して定義されてし、その型で使用できるプロパティの値を含みます。_
 
-Xamarin.Forms アプリケーションは、多くの場合と同じ外観を持つ複数のコントロールを含んでいます。 たとえば、アプリケーションの複数がある[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)を次の XAML コードの例で示すように、同じフォント オプションとレイアウト オプションを持つインスタンス。
+Xamarin.Forms アプリケーションには、複数のコントロール同一の外観を持つには多くの場合が含まれます。 たとえば、アプリケーションの複数がある[ `Label` ](xref:Xamarin.Forms.Label)を次の XAML コード例に示すように、同じフォントのオプションとレイアウトのオプションを持つインスタンス。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -45,7 +45,7 @@ Xamarin.Forms アプリケーションは、多くの場合と同じ外観を持
 </ContentPage>
 ```
 
-次のコード例は、c# で作成された同等のページを示しています。
+次のコード例では、c# で作成した同等のページを示します。
 
 ```csharp
 public class NoStylesPageCS : ContentPage
@@ -82,35 +82,35 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-各[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンスによって表示されるテキストの外観を制御するのと同じプロパティ値には、`Label`です。 これは、結果、次のスクリーン ショットに示すように表示されます。
+各[ `Label` ](xref:Xamarin.Forms.Label)インスタンスが同じプロパティ値によって表示されるテキストの外観を制御するため、`Label`します。 次のスクリーン ショットに示すように外観が発生します。
 
-[![](introduction-images/no-styles.png "表示スタイルをせずにラベルを付ける")](introduction-images/no-styles-large.png#lightbox "スタイルせず外観にラベルを付ける")
+[![](introduction-images/no-styles.png "ラベルの外観のスタイルなし")](introduction-images/no-styles-large.png#lightbox "外観のスタイルなしのラベル")
 
-繰り返し発生することができます個々 のコントロールの外観を設定し、エラーが発生します。 代わりに、スタイルを作成できます、外観を定義し、必要なコントロールに適用します。
+個々 のコントロールの外観の設定は繰り返し発生することがあります、エラーが発生します。 代わりに、スタイルを作成できる外観を定義し、必要なコントロールに適用されます。
 
 ## <a name="creating-a-style"></a>スタイルを作成します。
 
-[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)クラスが複数のビジュアル要素のインスタンスに適用できるし、1 つのオブジェクトにプロパティ値のコレクションをグループ化します。 これで、反復的なマークアップを削減し、アプリケーションの外観を変更するより簡単にできます。
+[ `Style` ](xref:Xamarin.Forms.Style)クラスにグループ化し、複数のビジュアル要素のインスタンスに適用できる 1 つのオブジェクトにプロパティ値のコレクション。 これで、繰り返しのマークアップを削減し、アプリケーションの外観を変更するより簡単にできます。
 
-スタイルは、主に XAML ベース アプリケーション用に設計された、C# の場合、作成できます。
+スタイルは、主に XAML ベース アプリケーション用に設計された、c# では、作成できます。
 
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) XAML で作成されたインスタンスが通常で定義されている、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)に割り当てられている、 [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) 、コントロールのコレクションページで、または、 [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/) 、アプリケーションのコレクション。
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) c# で作成されたインスタンスには、ページのクラス、またはグローバルにアクセス可能なクラスで通常定義されます。
+- [`Style`](xref:Xamarin.Forms.Style) XAML で作成されたインスタンスが通常で定義されている、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)に割り当てられている、 [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) 、コントロールのコレクションページで、または、 [ `Resources` ](xref:Xamarin.Forms.Application.Resources) 、アプリケーションのコレクション。
+- [`Style`](xref:Xamarin.Forms.Style) ページのクラス、またはグローバルにアクセスできるクラスで、c# で作成されたインスタンスが通常定義されます。
 
-定義する場所を選択する、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)インパクトを使用できます。
+定義する場所を選択する、 [ `Style` ](xref:Xamarin.Forms.Style)に及ぼす影響を使用できます。
 
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) コントロールのレベルで定義されているインスタンスは、コントロールとその子にのみ適用できます。
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) ページ レベルで定義されているインスタンスは、ページとその子にのみ適用できます。
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) アプリケーション レベルで定義されているインスタンスは、アプリケーション全体に適用できます。
+- [`Style`](xref:Xamarin.Forms.Style) コントロールのレベルで定義されているインスタンスは、コントロールとその子にのみ適用できます。
+- [`Style`](xref:Xamarin.Forms.Style) ページ レベルで定義されているインスタンスは、ページとその子にのみ適用できます。
+- [`Style`](xref:Xamarin.Forms.Style) アプリケーション レベルで定義されているインスタンスは、アプリケーション全体で適用できます。
 
-各[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)インスタンスには、1 つまたは複数のコレクションが含まれています[ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)オブジェクトは、各`Setter`を持つ、 [ `Property` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Setter.Property/)および[`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Setter.Value/)。 `Property` 、スタイルを適用する要素のバインド可能なプロパティの名前を指定し、`Value`プロパティに適用される値です。
+各[ `Style` ](xref:Xamarin.Forms.Style)インスタンスには、1 つまたは複数のコレクションが含まれています[ `Setter` ](xref:Xamarin.Forms.Setter)オブジェクトは、各`Setter`を持つ、 [ `Property` ](xref:Xamarin.Forms.Setter.Property)および[`Value`](xref:Xamarin.Forms.Setter.Value)。 `Property`にスタイルを適用するのには、要素のバインド可能なプロパティの名前を指定し、`Value`プロパティに適用される値です。
 
-各[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)インスタンスできます*明示的な*、または*暗黙的な*:
+各[ `Style` ](xref:Xamarin.Forms.Style)インスタンスは*明示的な*、または*暗黙的な*:
 
-- *明示的な* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)インスタンスが指定することで定義されている、 [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/)と`x:Key`値に設定して、ターゲット要素の設定[`Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)プロパティを`x:Key`参照します。 詳細については*明示的な*スタイルを参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)です。
-- *暗黙的な* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)のみを指定してインスタンスが定義されている、 [ `TargetType`](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/)です。 `Style`インスタンスに自動的に適用されるその型のすべての要素にします。 注のサブクラス、`TargetType`は自動的にはありません、`Style`適用します。 詳細については*暗黙的な*スタイルを参照してください[暗黙的なスタイル](~/xamarin-forms/user-interface/styles/implicit.md)です。
+- *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)インスタンスが指定することで定義されている、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)と`x:Key`値し、ターゲット要素の設定[`Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを`x:Key`参照。 詳細については*明示的な*スタイルを参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)します。
+- *暗黙的な* [ `Style` ](xref:Xamarin.Forms.Style)のみを指定してインスタンスが定義されている、 [ `TargetType`](xref:Xamarin.Forms.Style.TargetType)します。 `Style`は、自動的にその型のすべての要素に適用されますし、インスタンス。 注そのサブクラスの`TargetType`が自動的にない、`Style`適用します。 詳細については*暗黙的な*スタイルを参照してください[暗黙的スタイル](~/xamarin-forms/user-interface/styles/implicit.md)します。
 
-作成するときに、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)、 [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/)プロパティは常に必要です。 次のコード例は、*明示的な*スタイル (注、 `x:Key`) XAML で作成します。
+作成するときに、 [ `Style` ](xref:Xamarin.Forms.Style)、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティは常に必要です。 次のコード例は、*明示的な*スタイル (注、 `x:Key`) XAML で作成します。
 
 ```xaml
 <Style x:Key="labelStyle" TargetType="Label">
@@ -120,28 +120,28 @@ public class NoStylesPageCS : ContentPage
 </Style>
 ```
 
-適用する、 `Style`、ターゲット オブジェクトである必要があります、 [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)に一致する、 [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/)のプロパティの値、`Style`次の XAML コードの例のように。
+適用する、 `Style`、ターゲット オブジェクトである必要があります、 [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)と一致する、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティの値、`Style`次の XAML コード例のように。
 
 ```xaml
 <Label Text="Demonstrating an explicit style" Style="{StaticResource labelStyle}" />
 ```
 
-ビュー階層内の下位のスタイルをそれ以上定義されているものよりも優先されます。 たとえば、設定、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)が設定された[ `Label.TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)に`Red`アプリケーションで、レベルは、ページ レベルのスタイルで設定する上書きされている`Label.TextColor`に`Green`. 同様に、ページ レベルのスタイルは、コントロール レベル スタイルによってオーバーライドされます。 さらに場合、`Label.TextColor`が直接コントロールのプロパティでよりも優先、スタイルが設定されています。
+スタイルのビュー階層の下位には、アップ以上定義されているものよりも優先されます。 設定など、 [ `Style` ](xref:Xamarin.Forms.Style)設定[ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor)に`Red`アプリケーションでレベルを設定ページのレベルのスタイルによってオーバーライドされます`Label.TextColor`に`Green`. 同様に、ページ レベルのスタイルはコントロールのレベルのスタイルによってオーバーライドされます。 さらに場合、`Label.TextColor`が直接コントロール プロパティをこれよりも優先任意のスタイルを設定します。
 
-このセクションの記事で試行して、作成して適用する方法について説明して*明示的な*と*暗黙的な*スタイル、グローバルのスタイルを作成、継承、スタイルを設定する方法、実行時にスタイルの変更に応答する方法Xamarin.Forms で含まれている組み込みのスタイルを使用する方法とします。
+このセクションの記事に説明し、作成して適用する方法について説明します*明示的な*と*暗黙的な*スタイル、スタイルの継承、グローバルなスタイルを作成する方法、実行時にスタイルの変更に応答する方法Xamarin.Forms で含まれている組み込みのスタイルを使用する方法とします。
 
 > [!NOTE]
 > **StyleId とは何ですか。**
 >
-> Xamarin.Forms 2.2 より前、 [ `StyleId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.StyleId/) UI テスト、および Pixate などテーマ エンジンでの識別用のアプリケーションで個々 の要素を識別するプロパティが使用されました。 ただし、Xamarin.Forms 2.2 が導入され、 [ `AutomationId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.AutomationId/)プロパティは置き換え、 [ `StyleId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.StyleId/)プロパティです。 詳細については、次を参照してください。 [Xamarin.UITest と Test Cloud でテストする自動化 Xamarin.Forms](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md)です。
+> Xamarin.Forms 2.2 では、前に、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティは、UI テスト、およびテーマ エンジン Pixate などの識別用のアプリケーションの個々 の要素を識別するために使用されました。 ただし、Xamarin.Forms 2.2 が導入された、 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)は置き換えられて、プロパティ、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティ。 詳細については、次を参照してください。 [Xamarin.UITest と Test Cloud による Xamarin.Forms の自動化テスト](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md)します。
 
 ## <a name="summary"></a>まとめ
 
-Xamarin.Forms アプリケーションは、多くの場合と同じ外観を持つ複数のコントロールを含んでいます。 繰り返し発生することができます個々 のコントロールの外観を設定し、エラーが発生します。 代わりに、スタイルを作成できますコントロールの外観をカスタマイズしてグループ化と設定のプロパティ、コントロール型で使用できます。
+Xamarin.Forms アプリケーションには、複数のコントロール同一の外観を持つには多くの場合が含まれます。 個々 のコントロールの外観の設定は繰り返し発生することがあります、エラーが発生します。 代わりに、スタイルを作成できますコントロールの外観をカスタマイズしてグループ化とコントロールの種類に使用できる設定プロパティ。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [スタイル](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Set アクセス操作子](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [スタイル](xref:Xamarin.Forms.Style)
+- [Set アクセス操作子](xref:Xamarin.Forms.Setter)

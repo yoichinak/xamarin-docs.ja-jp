@@ -7,16 +7,16 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935200"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995470"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要です。 ビットマップ
 
-Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)要素には、ビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートします。
+Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)要素には、ビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートします。
 
 ビットマップを Xamarin.Forms では、4 つの場所から取得されます。
 
@@ -27,30 +27,30 @@ Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.I
 
 PCL のビットマップ リソースはプラットフォームに依存せず、プラットフォーム プロジェクトでビットマップ リソースはプラットフォームに固有です。
 
-設定して、ビットマップが指定されて、 [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/)プロパティの`Image`型のオブジェクトに[ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/)、3 つの派生クラスで抽象クラス。
+設定して、ビットマップが指定されて、 [ `Source` ](xref:Xamarin.Forms.Image.Source)プロパティの`Image`型のオブジェクトに[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)、3 つの派生クラスで抽象クラス。
 
-- [`UriImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) 基づく web 経由でビットマップにアクセスするため、`Uri`オブジェクトに設定してその[ `Uri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.Uri/)プロパティ
-- [`FileImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/) プラットフォームのアプリケーション プロジェクトに格納されているビットマップにアクセスするために設定フォルダーとファイル パスに基づくその[ `File` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FileImageSource.File/)プロパティ
-- [`StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/) .NET を使用してビットマップを読み込むため`Stream`を返すことによって指定されたオブジェクトを`Stream`から、`Func`に設定、 [ `Stream` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StreamImageSource.Stream/)プロパティ
+- [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) 基づく web 経由でビットマップにアクセスするため、`Uri`オブジェクトに設定してその[ `Uri` ](xref:Xamarin.Forms.UriImageSource.Uri)プロパティ
+- [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) プラットフォームのアプリケーション プロジェクトに格納されているビットマップにアクセスするために設定フォルダーとファイル パスに基づくその[ `File` ](xref:Xamarin.Forms.FileImageSource.File)プロパティ
+- [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) .NET を使用してビットマップを読み込むため`Stream`を返すことによって指定されたオブジェクトを`Stream`から、`Func`に設定、 [ `Stream` ](xref:Xamarin.Forms.StreamImageSource.Stream)プロパティ
 
 または (およびより一般的な) の次の静的メソッドを使用することができます、`ImageSource`を返しますのすべてのクラス`ImageSource`オブジェクト。
 
-- [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) 基づく web 経由でビットマップにアクセスするため、`Uri`オブジェクト
-- [`ImageSource.FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) PCL は、アプリケーション内の埋め込みリソースとして格納されているビットマップにアクセスするため、または[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Type/)または[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Reflection.Assembly/)別のソース アセンブリ内のビットマップにアクセスするには
-- [`ImageSource.FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) プラットフォームのアプリケーション プロジェクトからビットマップにアクセスします。
-- [`ImageSource.FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) 基づくビットマップを読み込むため、`Stream`オブジェクト
+- [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) 基づく web 経由でビットマップにアクセスするため、`Uri`オブジェクト
+- [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) PCL は、アプリケーション内の埋め込みリソースとして格納されているビットマップにアクセスするため[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Type))または[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Reflection.Assembly))別のソース アセンブリ内のビットマップにアクセスするには
+- [`ImageSource.FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) プラットフォームのアプリケーション プロジェクトからビットマップにアクセスします。
+- [`ImageSource.FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) 基づくビットマップを読み込むため、`Stream`オブジェクト
 
 クラスのメソッドは、`Image.FromResource`メソッド。 `UriImageSource`クラスは、キャッシュを制御する必要がある場合に便利です。 `FileImageSource`クラスは XAML で便利です。 `StreamImageSource` 非同期読み込みの役に立ちます`Stream`オブジェクトの場合、一方`ImageSource.FromStream`が同期されます。
 
 ## <a name="platform-independent-bitmaps"></a>プラットフォームに依存しないビットマップ
 
-[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode)プロジェクトでは、ビットマップを読み込みを使用して、web 経由で`ImageSource.FromUri`します。 `Image`要素に設定されて、`Content`のプロパティ、`ContentPage`ので、ページのサイズに制限されます。 ビットマップのサイズの制約に関係なく`Image`要素は、コンテナーのサイズに拡大し、ビットマップ内の最大サイズを表示する、`Image`ビットマップの縦横比を維持しながら要素。 領域、`Image`以外にも、ビットマップを色付きの[ `BackgroundColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)します。
+[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode)プロジェクトでは、ビットマップを読み込みを使用して、web 経由で`ImageSource.FromUri`します。 `Image`要素に設定されて、`Content`のプロパティ、`ContentPage`ので、ページのサイズに制限されます。 ビットマップのサイズの制約に関係なく`Image`要素は、コンテナーのサイズに拡大し、ビットマップ内の最大サイズを表示する、`Image`ビットマップの縦横比を維持しながら要素。 領域、`Image`以外にも、ビットマップを色付きの[ `BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)します。
 
-[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml)サンプルと似ていますが、単に設定、`Source`プロパティに、URL。 変換が処理されますが、 [ `ImageSourceConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSourceConverter/)クラス。
+[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml)サンプルと似ていますが、単に設定、`Source`プロパティに、URL。 変換が処理されますが、 [ `ImageSourceConverter` ](xref:Xamarin.Forms.ImageSourceConverter)クラス。
 
 ### <a name="fit-and-fill"></a>調整と塗りつぶし
 
-設定して、ビットマップを拡大する方法を制御することができます、 [ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/)のプロパティ、`Image`の次のメンバーのいずれかに、 [ `Aspect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect/)列挙体。
+設定して、ビットマップを拡大する方法を制御することができます、 [ `Aspect` ](xref:Xamarin.Forms.Image.Aspect)のプロパティ、`Image`の次のメンバーのいずれかに、 [ `Aspect` ](xref:Xamarin.Forms.Aspect)列挙体。
 
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit): 縦横比 (既定値) の尊重
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill): 領域で埋め、縦横比が適用されません
@@ -84,7 +84,7 @@ PCL のビットマップ リソースはプラットフォームに依存せず
 
 [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)サンプルには、Xamarin の web サイトに格納されているストック イメージをブラウズできます。 .NET を使用して`WebRequest`ビットマップの一覧を含む JSON ファイルをダウンロードするクラス。
 
-プログラムを使用して、 [ `ActivityIndicator` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/)を処理が行われているかを示します。 各ビットマップを読み込み、読み取り専用として[ `IsLoading` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.IsLoading/)プロパティの`Image`は`true`します。 `IsLoading`ためプロパティは、バインド可能なプロパティによって支えられて、`PropertyChanged`そのプロパティを変更するときに発生します。 プログラムは、このイベントにハンドラーをアタッチしの現在の設定を使用して`IsLoaded`を設定する、 [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)のプロパティ、`ActivityIndicator`します。
+プログラムを使用して、 [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)を処理が行われているかを示します。 各ビットマップを読み込み、読み取り専用として[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)プロパティの`Image`は`true`します。 `IsLoading`ためプロパティは、バインド可能なプロパティによって支えられて、`PropertyChanged`そのプロパティを変更するときに発生します。 プログラムは、このイベントにハンドラーをアタッチしの現在の設定を使用して`IsLoaded`を設定する、 [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)のプロパティ、`ActivityIndicator`します。
 
 ## <a name="streaming-bitmaps"></a>ビットマップのストリーミング
 
@@ -102,11 +102,11 @@ PCL のビットマップ リソースはプラットフォームに依存せず
 
 ## <a name="platform-specific-bitmaps"></a>プラットフォーム固有のビットマップ
 
-すべての Xamarin.Forms プラットフォームは、プラットフォームのアプリケーション アセンブリにビットマップを格納するを許可します。 これらのプラットフォームのビットマップがの型は、Xamarin.Forms アプリケーションで取得するとき[ `FileImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/)します。 使用すること。
+すべての Xamarin.Forms プラットフォームは、プラットフォームのアプリケーション アセンブリにビットマップを格納するを許可します。 これらのプラットフォームのビットマップがの型は、Xamarin.Forms アプリケーションで取得するとき[ `FileImageSource`](xref:Xamarin.Forms.FileImageSource)します。 使用すること。
 
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/)のプロパティ [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/)のプロパティ [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
-- [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)のプロパティ `Button`
+- [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)のプロパティ [`MenuItem`](xref:Xamarin.Forms.MenuItem)
+- [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)のプロパティ [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)
+- [ `Image` ](xref:Xamarin.Forms.Button)のプロパティ `Button`
 
 プラットフォーム アセンブリには、アイコンとスプラッシュ スクリーン用のビットマップには既にが含まれます。
 
@@ -170,23 +170,23 @@ Windows ランタイム プロジェクトでは、名前付けスキームで�
 
 ### <a name="toolbars-and-their-icons"></a>ツールバーとアイコン
 
-Xamarin.Forms のツールバーでは、構築するには、プラットフォーム固有のビットマップの主な用途の 1 つ[ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)オブジェクトを[ `ToolbarItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.ToolbarItems/) により定義されたコレクション`Page`. `ToobarItem` 派生した[ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)元である、いくつかのプロパティを継承します。
+Xamarin.Forms のツールバーでは、構築するには、プラットフォーム固有のビットマップの主な用途の 1 つ[ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)オブジェクトを[ `ToolbarItems` ](xref:Xamarin.Forms.Page.ToolbarItems) により定義されたコレクション`Page`. `ToobarItem` 派生した[ `MenuItem` ](xref:Xamarin.Forms.MenuItem)元である、いくつかのプロパティを継承します。
 
 最も重要な`ToolbarItem`のプロパティします。
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Text/) プラットフォームによって表示されるテキストと `Order`
-- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) 型の`FileImageSource`プラットフォームによって表示されるイメージと `Order`
+- [`Text`](xref:Xamarin.Forms.MenuItem.Text) プラットフォームによって表示されるテキストと `Order`
+- [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) 型の`FileImageSource`プラットフォームによって表示されるイメージと `Order`
 - [`Order`](xref:Xamarin.Forms.ToolbarItem.Order) 型の[ `ToolbarItemOrder` ](xref:Xamarin.Forms.ToolbarItemOrder)、3 つのメンバーを持つ列挙[ `Default` ](xref:Xamarin.Forms.ToolbarItemOrder.Default)、 [ `Primary` ](xref:Xamarin.Forms.ToolbarItemOrder.Primary)、および[ `Secondary` ](xref:Xamarin.Forms.ToolbarItemOrder.Secondary).
 
 数`Primary`項目 3 または 4 に限定されます。 含める必要があります、`Text`のすべての項目を設定します。 ほとんどのプラットフォームでのみ、`Primary`項目が必要です、 `Icon` Windows 8.1 が必要ですが、`Icon`のすべての項目。 32 のデバイスに依存しない単位正方形のアイコンがあります。 `FileImageSource`型では、プラットフォーム固有であることを示します。
 
-`ToolbarItem`発生、 [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/)非常によく似たタップしたときにイベントを`Button`します。 `ToolbarItem` サポートしています[ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/)と[ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) MVVM 関連多くの場合に使用されるプロパティ。 (を参照してください[第 18 章、MVVM](chapter18.md))。
+`ToolbarItem`発生、 [ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked)非常によく似たタップしたときにイベントを`Button`します。 `ToolbarItem` サポートしています[ `Command` ](xref:Xamarin.Forms.MenuItem.Command)と[ `CommandParameter` ](xref:Xamarin.Forms.MenuItem.CommandParameter) MVVM 関連多くの場合に使用されるプロパティ。 (を参照してください[第 18 章、MVVM](chapter18.md))。
 
-IOS と Android の両方は、ツールバーを表示するページである必要があります、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)またはに移動ページ、`NavigationPage`します。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)プログラムのセット、`MainPage`プロパティの`App`クラスを[`NavigationPage`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/)で、 `ContentPage`引数は、ツールバーの構築とイベント ハンドラーを示しています。
+IOS と Android の両方は、ツールバーを表示するページである必要があります、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)またはに移動ページ、`NavigationPage`します。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)プログラムのセット、`MainPage`プロパティの`App`クラスを[`NavigationPage`コンス トラクター](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))で、 `ContentPage`引数は、ツールバーの構築とイベント ハンドラーを示しています。
 
 ### <a name="button-images"></a>ボタンのイメージ
 
-設定する、プラットフォーム固有のビットマップを使用することもできます、 [ `Image` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Image/)プロパティの`Button`に示すようには、32 のデバイスに依存しない単位正方形のビットマップに、 [ **ButtonImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage)サンプル。
+設定する、プラットフォーム固有のビットマップを使用することもできます、 [ `Image` ](xref:Xamarin.Forms.Button.Image)プロパティの`Button`に示すようには、32 のデバイスに依存しない単位正方形のビットマップに、 [ **ButtonImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage)サンプル。
 
 
 
