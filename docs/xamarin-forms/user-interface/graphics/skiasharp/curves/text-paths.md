@@ -7,30 +7,30 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7ce6994541ae947fa714d3c67acbc5d5d816975
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243906"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130781"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>パスと SkiaSharp 内のテキスト
 
 _パスとテキストの交差部分を調べる_
 
-最新のグラフィックス システムでは、テキストのフォントは、2 次ベジエ曲線によって定義された通常の文字のアウトラインのコレクションです。 そのため、多くの最新のグラフィックス システムには、テキストの文字をグラフィックス パスに変換する機能が含まれます。
+最新のグラフィックス システムでは、テキストのフォントは、文字アウトラインは、通常は 2 次ベジエ曲線で定義のコレクションです。 その結果、多くの最新のグラフィックス システムには、テキストの文字をグラフィックス パスに変換する機能が含まれます。
 
-既に見たようことするテキストの文字の輪郭を描画したりできるように入力します。 」の説明に従って、特定のストロークの幅とパスの効果も文字アウトラインを表示できます、 [**パス効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)資料です。 文字列に変換することも、`SKPath`オブジェクト。 つまりで説明した手法でクリッピングのテキストのアウトラインを使用できること、 [**パスおよび領域でクリッピング**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)資料です。
+できますテキスト文字の輪郭をストロークだけでなくは既に説明しました。 」の説明に従って、特定のストロークの幅とパスの効果も文字アウトラインを表示することができます、 [**パスの効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)記事。 文字の文字列に変換することも、`SKPath`オブジェクト。 つまり、テキスト アウトラインで説明した手法に精通するクリッピングに使用できること、 [**パスおよび領域でクリッピング**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)記事。
 
-文字のアウトラインを描画するパスの効果を使用して、だけでなく、パスに基づいている効果は、文字の文字列から派生するパスを作成することもできます。 と 2 つの効果を組み合わせることもできます。
+だけでなく、文字の輪郭をストロークを描画するパスの効果を使用して、効果をパスに基づくは文字の文字列から派生したパスを作成することもでき、2 つの効果を組み合わせることもできます。
 
 ![](text-paths-images/pathsandtextsample.png "パスのテキスト効果")
 
-[前の記事](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)という方法、 [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/)メソッドの`SKPaint`ストロークのパスの概要を取得できます。 文字アウトラインから派生したパスが、このメソッドを使用することもできます。
+[前の記事](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)いただく方法、 [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/)メソッドの`SKPaint`ストロークのパスのアウトラインを取得できます。 文字アウトラインから派生したパスにこのメソッドを使用することもできます。
 
-この記事の内容が最後に、パスとテキストのもう 1 つの交差部分を示します。 [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)メソッドの`SKCanvas`テキストのベースライン曲線のパスに依存するように、テキスト文字列を表示することができます。
+最後に、この記事ではパスとテキストのもう 1 つの交差部分を示します。 [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)メソッドの`SKCanvas`テキストのベースラインに依存して、曲線のパスをテキスト文字列を表示することができます。
 
-## <a name="text-to-path-conversion"></a>テキストをパスに変換する
+## <a name="text-to-path-conversion"></a>テキスト パスへの変換から
 
 [ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/)メソッドの`SKPaint`文字の文字列に変換する`SKPath`オブジェクト。
 
@@ -38,15 +38,15 @@ _パスとテキストの交差部分を調べる_
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x`と`y`引数は、テキストの左側のベースラインの開始時点を指定します。 役割を果たします、同じここで、`DrawText`メソッドの`SKCanvas`します。 パス内でテキストの左側のベースラインは座標 (x, y) があります。
+`x`と`y`引数が、テキストの左側にあるのベースラインの開始点を示します。 同じロールは、ここでとしてを果たす、`DrawText`メソッドの`SKCanvas`します。 このパス内の左側にあるテキストのベースラインが (x, y) 座標があります。
 
-`GetTextPath`を入力するか、または結果のパスの境界線の描画だけを実行する場合、メソッドが過剰です。 法線`DrawText`メソッドを実行することができます。 `GetTextPath`メソッドは、パスに関連するその他のタスクの方が実用的です。
+`GetTextPath`単に入力するか、または結果のパスの境界線の描画する場合、メソッドは大げさすぎます。 通常の`DrawText`メソッドは、そのことができます。 `GetTextPath`メソッドは、パスに関連するその他のタスクの方が実用的です。
 
-これらのタスクのいずれかがクリッピングされます。 **クリッピング テキスト**ページは、単語"CODE"の文字のアウトラインに基づいてクリッピング パスを作成します。 このパスのイメージを含むビットマップをクリップするページのサイズに合わせて引き伸ばされます、**クリッピング テキスト**ソース コード。
+これらのタスクのいずれかをクリッピングするとします。 **クリッピング テキスト**ページでは、「コードです。」という単語の文字アウトラインに基づいてクリッピング パスを作成します。 このパスは、のイメージを含むビットマップをクリップするページのサイズに拡大されます、**テキストをクリッピング**ソース コード。
 
-[![](text-paths-images/clippingtext-small.png "領域のテキスト ページのスクリーン ショットをトリプル")](text-paths-images/clippingtext-large.png#lightbox "クリッピング テキスト ページのトリプル スクリーン ショット")
+[![](text-paths-images/clippingtext-small.png "クリッピングのテキスト ページのスクリーン ショットをトリプル")](text-paths-images/clippingtext-large.png#lightbox "クリッピング テキスト ページの 3 倍になるスクリーン ショット")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)クラスのコンス トラクターが内の埋め込みリソースとして格納されているビットマップを読み込み、**メディア**ソリューションのフォルダー。
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)クラスのコンス トラクター内の埋め込みリソースとして格納されているビットマップを読み込み、**メディア**ソリューションのフォルダー。
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -65,18 +65,17 @@ public class ClippingTextPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-`PaintSurface`ハンドラーが作成した後、`SKPaint`オブジェクトのテキストに適してします。 `Typeface`プロパティの設定だけでなく、 `TextSize`、特定のアプリケーションについては、`TextSize`プロパティは、純粋な arbirtrary です。 あることを確認もない`Style`設定します。
+`PaintSurface`ハンドラーを作成して開始、`SKPaint`テキストに適したオブジェクト。 `Typeface`プロパティの設定だけでなく`TextSize`、特定のアプリケーションについては、`TextSize`プロパティは、純粋な arbirtrary します。 また、あるありません`Style`設定。
 
-`TextSize`と`Style`プロパティ設定が必要ないためこれ`SKPaint`専用のオブジェクトを使用して、`GetTextPath`テキスト文字列「コード」を使用して呼び出します。 ハンドラーが、結果を測定し、`SKPath`オブジェクトを中央に配置し、ページのサイズに拡大する 3 つの変換を適用します。 パスは、クリッピング パスとして設定できます。
+`TextSize`と`Style`プロパティの設定は必要ありませんので、この`SKPaint`専用のオブジェクトを使用して、`GetTextPath`テキスト文字列「コード」を使用して呼び出します。 ハンドラーが、結果を測定し、`SKPath`オブジェクトし、中央に配置し、ページのサイズに拡大する 3 つの変換を適用します。 パスは、クリッピング パスとして設定できます。
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -121,13 +120,13 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-クリッピング パスを設定すると、ビットマップを表示することができます、および文字のアウトラインをクリップされます。 使用に注意してください、 [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/)メソッドの`SKRect`縦横比を維持しながら、ページを塗りつぶすときの四角形を計算します。
+クリッピング パスを設定するとビットマップを表示でき、文字アウトラインを揃えることができます。 使用に注意してください、 [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/)メソッドの`SKRect`縦横比を維持しながら、ページの塗りつぶしの四角形を計算します。
 
-**パスのテキスト効果**ページ 1 D パス効果を作成するパスを単一のアンパサンド文字を変換します。 大きなバージョンの同じ文字のアウトラインを描画する効果がこのパスの描画オブジェクトを使用しています。
+**パスのテキスト効果**ページは、単一のアンパサンド文字を 1 D パスの効果を作成するパスに変換します。 その同じ文字の拡大版の輪郭をストロークを描画するでこの現象がパスの描画オブジェクトを使用しています。
 
-[![](text-paths-images/textpatheffect-small.png "パスのテキスト効果 ページのスクリーン ショットをトリプル")](text-paths-images/textpatheffect-large.png#lightbox "パスのテキスト効果 ページのトリプル スクリーン ショット")
+[![](text-paths-images/textpatheffect-small.png "パスのテキスト効果のページのスクリーン ショットをトリプル")](text-paths-images/textpatheffect-large.png#lightbox "パスのテキスト効果のページの 3 倍になるスクリーン ショット")
 
-含まれる作業の量、 [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)クラスは、フィールドとコンス トラクターで発生します。 2 つ`SKPaint`2 つの異なる目的のために使用されるフィールドが定義されているオブジェクト: 最初の (という名前`textPathPaint`) でアンパサンドを変換するために使用、`TextSize`の 1 D パス効果のパスを 50 です。 2 番目 (`textPaint`)、アンパサンドとそのパスの効果の大きいバージョンを表示するために使用します。 そのため、`Style`に設定されているオブジェクトのこの 2 つ目のペイント`Stroke`、ですが、`StrokeWidth`プロパティが設定されていないため、1 D パス効果を使用したときにそのプロパティが必要はありません。
+作業の量、 [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)クラスは、フィールドとコンス トラクターで発生します。 2 つ`SKPaint`フィールドは、2 つの異なる目的で使用するように定義されたオブジェクト: 最初の (という名前`textPathPaint`) でアンパサンドを変換するために使用、 `TextSize` 1d パス効果のパスに 50 の。 2 番目 (`textPaint`) パスの影響はそのアンパサンドの拡大版を表示するために使用します。 そのため、`Style`この 2 つ目のペイントのオブジェクトに設定`Stroke`が、 `StrokeWidth` 1d パスの効果を使用する場合、そのプロパティが必要はありませんので、プロパティが設定されていません。
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -172,9 +171,9 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-最初のコンス トラクターを使用して、`textPathPaint`でアンパサンドを計測するオブジェクト、 `TextSize` 50 です。 渡されている四角形の中心の座標の符号を反転、`GetTextPath`テキストをパスに変換します。 結果のパスが、(0, 0) の 1 D パス効果に最適であり、文字の中央にポイントします。
+コンス トラクターが最初に使用して、`textPathPaint`でアンパサンドを測定するオブジェクト、 `TextSize` 50。 渡されますが、四角形の中心の座標の符号を反転、`GetTextPath`テキストをパスに変換します。 結果のパスが、(0, 0) 1 D パスの効果に最適であり、文字の中央にポイントします。
 
-考えることも、`SKPathEffect`コンス トラクターの最後に作成されたオブジェクトに設定できる、`PathEffect`プロパティ`textPaint`フィールドとして保存するのではなくです。 非常を適切に機能の結果が音がひずむためこのをオンにできません、`MeasureText`で呼び出し、`PaintSurface`ハンドラー。
+あると考えることがあります、`SKPathEffect`コンス トラクターの末尾に作成されたオブジェクトに設定できる、`PathEffect`プロパティの`textPaint`フィールドとして保存するのではなく。 結果を変形ため非常にうまく機能するこのをオンになっていませんが、`MeasureText`呼び出し、`PaintSurface`ハンドラー。
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -206,17 +205,17 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-ある`MeasureText`呼び出しが、ページ上の文字を中央に使用します。 問題を回避する、`PathEffect`が表示されるまでは、テキストが測定された後、ペイント オブジェクトにプロパティが設定されます。
+ある`MeasureText`ページ上の文字を中央に呼び出しを使用します。 問題を回避するために、`PathEffect`プロパティは、テキストが測定された後、表示されるまで、ペイント オブジェクトに設定されています。
 
-## <a name="outlines-of-character-outlines"></a>文字の枠のアウトライン
+## <a name="outlines-of-character-outlines"></a>文字アウトラインのアウトライン
 
-通常、 [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/)のメソッド`SKPaint`ペイントのプロパティを適用することで別に 1 つのパスを変換します。 最も顕著な、境界線の幅とパス効果。 パス効果なしで使わ場合`GetFillPath`実質的に別のパスが説明されているパスを作成します。 示されているこれが、**パスをタップすると、アウトライン** ページで、 [**パス効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)資料です。
+通常、 [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/)メソッドの`SKPaint`ペイントのプロパティを適用して、別に 1 つのパスを変換します線の幅とパス効果最も顕著な。 パスの効果を指定せずに使用時に`GetFillPath`実質的に別のパスが説明されているパスを作成します。 これで示されています、**パスをタップすると、アウトライン**ページで、 [**パスの効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)記事。
 
-呼び出すこともできます`GetFillPath`から返されるパスで`GetTextPath`なる場合が最初にすることですが、そのを次に示します。
+呼び出すこともできます`GetFillPath`から返されるパスに`GetTextPath`最初必要しますが、ありますいないか、完全をどのようなを次に示します。
 
-**文字アウトライン アウトライン**ページは、方法を示します。 関連するすべてのコードが、`PaintSurface`のハンドラー、 [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs)クラスです。
+**文字アウトライン アウトライン**ページは、この手法を示します。 関連するすべてのコードは、`PaintSurface`のハンドラー、 [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs)クラス。
 
-コンス トラクターは、作成した後、`SKPaint`という名前のオブジェクト`textPaint`で、`TextSize`プロパティ ページのサイズに基づきます。 これを使用してパスに変換されます、`GetTextPath`メソッドです。 座標の引数`GetTextPath`画面上のパスを効果的にセンターします。
+コンス トラクターを作成して開始、`SKPaint`という名前のオブジェクト`textPaint`で、`TextSize`プロパティ ページのサイズに基づきます。 これを使用してパスに変換、`GetTextPath`メソッド。 座標の引数`GetTextPath`画面上のパスを効果的に center:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -268,27 +267,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`PaintSurface`ハンドラーという名前の新しいパスを作成し`outlinePath`です。 これは、呼び出しでは、移行先パスになります`GetFillPath`です。 `StrokeWidth` 25 原因のプロパティ`outlinePath`テキスト文字の描画、ピクセル幅の 25 パスのアウトラインを記述します。 このパスが 5 のストロークの幅が赤で表示されます。
+`PaintSurface`ハンドラーという名前の新しいパスを作成し、`outlinePath`します。 呼び出しで宛先パスになるこの`GetFillPath`します。 `StrokeWidth` 25 の原因のプロパティ`outlinePath`テキスト文字の描画ピクセル幅の 25 パスのアウトラインを記述します。 このパスが 5 のストロークの幅が赤色で表示されます。
 
-[![](text-paths-images/characteroutlineoutlines-small.png "文字のアウトライン アウトライン ページのスクリーン ショットをトリプル")](text-paths-images/characteroutlineoutlines-large.png#lightbox "文字アウトライン アウトライン ページのトリプル スクリーン ショット")
+[![](text-paths-images/characteroutlineoutlines-small.png "文字アウトライン アウトライン ページのスクリーン ショットをトリプル")](text-paths-images/characteroutlineoutlines-large.png#lightbox "文字アウトライン アウトライン ページの 3 倍になるスクリーン ショット")
 
-詳しく調べるし、わかります overlaps パス アウトラインが鋭い角をによりします。 これらは、このプロセスの標準の成果物です。
+よく見るし、パスのアウトラインがシャープな角をにより、重複が表示されます。 これらは、このプロセスの通常の成果物です。
 
-## <a name="text-along-a-path"></a>パスに沿ったテキスト
+## <a name="text-along-a-path"></a>テキストをパスに沿って
 
-テキストは通常、水平方向のベースラインに表示されます。 垂直方向にまたは斜めを実行するテキストを回転することができますが、ベースラインは、直線のままです。
+テキストは通常、水平方向のベースラインを表示します。 垂直方向にまたは斜めを実行するテキストを回転することができますが、ベースラインが直線では引き続き。
 
-ただし、テキストを曲線に沿った実行をする場合があります。 目的は、これは、 [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)メソッドの`SKCanvas`:
+ただし、テキストを曲線に沿って実行する場合があります。 目的は、これは、 [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)メソッドの`SKCanvas`:
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-最初の引数で指定したテキストが 2 番目の引数として指定されたパスに沿ったを実行しようとしています。 テキストを使用してパスの先頭からのオフセットを開始することができます、`hOffset`引数。 パスが、テキストのベースラインを形成する通常: テキスト アセンダーは、パスの 1 つの側で、テキスト ディセンダー互いにします。 使用してパスからテキストのベースラインをオフセットできますが、`vOffset`引数。
+最初の引数で指定したテキストが 2 番目の引数として指定されたパスに沿って実行しようとしています。 テキストを使用してパスの先頭からのオフセットを開始することができます、`hOffset`引数。 通常、テキストのベースラインのフォームのパス: テキスト アセンダーが、パスの 1 つの側があり、もう一方がテキスト ディセンダーします。 使用してパスからテキストのベースラインを補うことができますが、`vOffset`引数。
 
-このメソッドの設定に関するガイダンスを提供する機能はありません、`TextSize`プロパティ`SKPaint`テキストを完璧にサイズ設定すると、パスの先頭から末尾を実行します。 場合によって、自分でそのテキストのサイズを理解できます。 それ以外の時間は、今後の記事で説明するパスの測定機能を使用する必要があります。
+このメソッドの設定に関するガイダンスを提供する機能はありません、`TextSize`プロパティの`SKPaint`テキストをパスの先頭から最後まで実行を完全にサイズします。 自分でそのテキストのサイズを確認できる場合があります。 それ以外の場合は、今後の記事で説明を取得する - パスを測定する関数を使用する必要があります。
 
-**循環テキスト**プログラムは、円記号のテキストをラップします。 これは、円の円周を判断するので、簡単に正確に合わせてテキストのサイズに簡単です。 `PaintSurface`のハンドラー、 [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs)クラスは、ページのサイズに基づく円の半径を計算します。 その円になります`circularPath`:
+**循環テキスト**プログラムは、円の周囲のテキストをラップします。 円の円周を判断するので、簡単にちょうど収まるようにテキストのサイズを簡単になります。 `PaintSurface`のハンドラー、 [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs)クラスは、ページのサイズに基づいて円の半径を計算します。 円になります`circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage
@@ -321,13 +320,13 @@ public class CircularTextPage : ContentPage
 }
 ```
 
-`TextSize`プロパティ`textPaint`テキストの幅が、円の円周と一致するようには、調整。
+`TextSize`プロパティの`textPaint`テキストの幅は、円の円周を一致するように、調整します。
 
-[![](text-paths-images/circulartext-small.png "循環テキスト ページのスクリーン ショットをトリプル")](text-paths-images/circulartext-large.png#lightbox "循環テキスト ページのトリプル スクリーン ショット")
+[![](text-paths-images/circulartext-small.png "循環テキスト ページのスクリーン ショットをトリプル")](text-paths-images/circulartext-large.png#lightbox "循環テキスト ページの 3 倍になるスクリーン ショット")
 
-ある程度循環させることに、テキスト自体が選択されました:"circle"という単語が両方の文の件名と前置詞句のオブジェクト。
+多少循環テキスト自体が選択されました:"circle"という単語が両方の文の件名と前置詞句のオブジェクト。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
