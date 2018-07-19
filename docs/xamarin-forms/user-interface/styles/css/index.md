@@ -1,4 +1,4 @@
----
+﻿---
 title: カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 description: Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。
 ms.prod: xamarin
@@ -296,7 +296,7 @@ listview image {
 ```
 
 > [!NOTE]
-> `element element` セレクターは、子要素が親の_直接_の子である必要はありません。子要素は異なる親を持つ可能性があります。 選択は、その先祖が指定された最初の要素と一致する場合に発生します。
+> `element element` セレクターは、子要素が親の直接の子である必要はありません。子要素は異なる親を持つ可能性があります。 選択は、その先祖が指定された最初の要素と一致する場合に発生します。
 
 ### <a name="selecting-direct-child-elements"></a>直接の子要素の選択
 
@@ -327,7 +327,7 @@ stacklayout>image {
 ```
 
 > [!NOTE]
-> `element>element` セレクターは、子要素が親の_直接_の子である必要があります。
+> `element>element` セレクターは、子要素が親の直接の子である必要があります。
 
 ## <a name="selector-reference"></a>セレクター リファレンス
 

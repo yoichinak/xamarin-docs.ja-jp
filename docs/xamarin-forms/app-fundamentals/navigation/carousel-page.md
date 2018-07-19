@@ -1,4 +1,4 @@
----
+﻿---
 title: Xamarin.Forms CarouselPage
 description: Xamarin.Forms CarouselPage には、ギャラリーなどのコンテンツのページ間を移動するユーザーが左右にスワイプできるページです。 この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。
 ms.prod: xamarin

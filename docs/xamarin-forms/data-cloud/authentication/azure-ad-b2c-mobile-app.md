@@ -1,4 +1,4 @@
----
+﻿---
 title: Azure Active Directory B2C を Azure Mobile Apps に統合する
 description: Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Xamarin.Forms で Azure Active Directory B2C を使って、認証および承認を Azure Mobile Apps インスタンスに提供する方法を示します。
 ms.prod: xamarin
@@ -197,7 +197,7 @@ public async Task<bool> AuthenticateAsync()
 
 `MobileServiceClient.LoginAsync` メソッドが呼ばれると、Azure Mobile Apps インスタンスは、リンクされた Azure Active Directory B2C のポリシーを実行し、OAuth 2.0 認証フローを開始します。  各 `AuthenticateAsync`メソッドはプラットフォームに固有であることに注意してください。 ただし、どちらの `AuthenticateAsync` メソッドも、`MobileServiceClient.LoginAsync` メソッドを使用して、Azure Active Directory テナントが、認証プロセスで使用されることを指定します。 詳細については、[ユーザー ログイン](~/xamarin-forms/data-cloud/authentication/azure.md#logging-in) を参照してください。
 
-`MobileServiceClient.LoginAsync`メソッドは、`MobileServiceClient.CurrentUser` プロパティに格納される `MobileServiceUser` インスタンスを返します このプロパティは、`UserId` と `MobileServiceAuthenticationToken` プロパティを提供します。 これらは、認証されたユーザーと有効期限が切れるまで使用できるユーザーの認証トークンを表します。 認証トークンは、Azure Mobile Apps インスタンスに向けて作られるすべての要求に含まれ、Xamarin.Forms アプリケーションが、認証されたユーザーのアクセス許可を必要とする Azure Mobile Apps インスタンス上の操作の実行を可能にします。
+`MobileServiceClient.LoginAsync`メソッドは、`MobileServiceClient.CurrentUser` プロパティに格納される `MobileServiceUser` インスタンスを返します。このプロパティは、`UserId` と `MobileServiceAuthenticationToken` プロパティを提供します。これらは、認証されたユーザーと有効期限が切れるまで使用できるユーザーの認証トークンを表します。認証トークンは、Azure Mobile Apps インスタンスに向けて作られるすべての要求に含まれ、Xamarin.Forms アプリケーションが、認証されたユーザーのアクセス許可を必要とする Azure Mobile Apps インスタンス上の操作の実行を可能にします。
 
 ### <a name="signing-out"></a>サインアウト
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Xamarin.Forms FlexLayout
 description: FlexLayout を使用して、子ビューのコレクションの配置と折り返しを行う。
 ms.prod: xamarin
@@ -70,7 +70,7 @@ iOS、Android、および Universal Windows Platform で実行したページを
 
     `FlexLayout` のアイテムが1列で配置されたとき、 `FlexLayout` は垂直の _主軸_ と水平の _交差軸_ を持つとされます。
 
-- [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは、[`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) 型で、交差軸上にアイテムを配置する方法を指定します。 `Center`オプションは、各アイテムを水平方向に中央揃えにします。
+- [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) プロパティは、[ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) 型で、交差軸上にアイテムを配置する方法を指定します。 `Center` オプションは、各アイテムを水平方向に中央揃えにします。
 
     もしこのタスクに `FlexLayout` ではなく `StackLayout` を使用していたら、各アイテムの `HorizontalOptions` を `Center` に設定することで、全てのアイテムを中央揃えにする必要があったでしょう。 `HorizontalOptions` プロパティは、 `FlexLayout` の子では動作しませんが、 1つの `AlignItems` プロパティだけで同じ目標を達成できます。 必要であれば、 `AlignSelf` の添付されたバインド可能なプロパティを使って、個別のアイテムの `AlignItems` プロパティを上書きできます。
 
@@ -82,9 +82,9 @@ iOS、Android、および Universal Windows Platform で実行したページを
 
     この変更によって、 この `Label` は、読み順が左から右の場合、`FlexLayout` の左の端に配置されます。
 
-- [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティは、[`FlexJustify`](xref:Xamarin.Forms.FlexJustify) 型で、主軸上にアイテムを配置する方法を指定します。 `SpaceEvenly`オプションは、全ての垂直の余白を全てのアイテム間と最初のアイテムの上と最後のアイテムの下とで均等に割り当てます。
+- [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) プロパティは、 [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify) 型で、主軸上にアイテムを配置する方法を指定します。 `SpaceEvenly` オプションは、全ての垂直の余白を全てのアイテム間と最初のアイテムの上と最後のアイテムの下とで均等に割り当てます。
 
-    もし `StackLayout` を使用していたら、同様の効果を実現するために、各アイテムの `VerticalOptions` プロパティに `CenterAndExpand` を設定する必要があったでしょう。 しかし`CenterAndExpand` オプションは、最初のアイテムの前と最後のアイテムの後の余白の2倍の余白を各アイテム間に割り当ててしまいます。 `FlexLayout` の `JustifyContent` プロパティを `SpaceAround` に設定することで、 `VerticalOptions` の `CenterAndExpand` オプションを再現できます。
+    もし `StackLayout` を使用していたら、同様の効果を実現するために、各アイテムの `VerticalOptions` プロパティに `CenterAndExpand` を設定する必要があったでしょう。しかし `CenterAndExpand` オプションは、最初のアイテムの前と最後のアイテムの後の余白の2倍の余白を各アイテム間に割り当ててしまいます。 `FlexLayout` の `JustifyContent` プロパティを `SpaceAround` に設定することで、 `VerticalOptions` の `CenterAndExpand` オプションを再現できます。
 
 これらの `FlexLayout` プロパティは、下にある **[バインド可能なプロパティの詳細](#bindable-properties)** セクションでより詳しく説明します。
 
@@ -113,11 +113,11 @@ iOS、Android、および Universal Windows Platform で実行したページを
 
 この `FlexLayout` の `Direction` プロパティは未設定なので、規定の設定 `Row` になり、子が行に配置されて主軸が水平方向になることを意味します。
 
-[`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap)プロパティは、 [`FlexWrap`](xref:Xamarin.Forms.FlexWrap)列挙型です。 アイテムが多くて行に収まらない場合は、このプロパティの設定によってアイテムを次の行に折り返すことができます。
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) プロパティは、 [ `FlexWrap`](xref:Xamarin.Forms.FlexWrap) 列挙型です。アイテムが多くて行に収まらない場合は、このプロパティの設定によってアイテムを次の行に折り返すことができます。
 
-`FlexLayout` は `ScrollView` の子であることに注意してください。 ページに収まらないほどの多くの行がある場合、 `ScrollView` は、`Vertical` という既定の `Orientation` プロパティを持ち、 垂直スクロールできるようになります。
+`FlexLayout` は `ScrollView` の子であることに注意してください。ページに収まらないほどの多くの行がある場合、 `ScrollView` は、`Vertical` という既定の `Orientation` プロパティを持ち、 垂直スクロールできるようになります。
 
-`JustifyContent`プロパティは、各アイテムが同じ量の空白によって囲まれるように、主軸（水平方向軸）の余った領域を割り当てます。
+`JustifyContent` プロパティは、各アイテムが同じ量の空白によって囲まれるように、主軸（水平方向軸）の余った領域を割り当てます。
 
 次の分離コード ファイルでは、サンプル写真のコレクションにアクセスし、 `FlexLayout` の `Children` コレクションに追加します。
 
@@ -367,7 +367,7 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 </ContentPage>
 ```
 
-`Image` のための暗黙的なスタイルは、`Flexlayout` の2つのバインド可能な添付プロパティの設定を含みます。
+`Image` のための暗黙的なスタイルは、`FlexLayout` の2つのバインド可能な添付プロパティの設定を含みます。
 
 ```xaml
 <Style TargetType="Image">
@@ -384,29 +384,32 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 
 ## <a name="the-bindable-properties-in-detail"></a>バインド可能なプロパティの詳細
 
+`FlexLayout` のいくつかの一般的なアプリケーションを見てきた今なら、`FlexLayout` のプロパティをより詳しく調査できるはずです。
+`FlexLayout` には、XAML またはコードのどちらかで `FlexLayout` 自身に設定する 6 つのバインド可能なプロパティが定義されており、方向や整列を制御します。（これらのプロパティの1つに [`Position`](xref:Xamarin.Forms.FlexLayout.Position) がありますが、これはこの記事では説明しません。）
+
 `FlexLayout` のいくつかの一般的なアプリケーションを見てきた今なら、`FlexLayout` のプロパティをより詳しく調査できるはずです。 
 `FlexLayout` には、XAML またはコードのどちらかで `FlexLayout` 自身に設定する 6 つのバインド可能なプロパティが定義されており、方向や整列を制御します。 （これらのプロパティの1つに [`Position`](xref:Xamarin.Forms.FlexLayout.Position) がありますが、これはこの記事では説明しません。）
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル の **Experiment** ページ を使って、残り 5 つのバインド可能なプロパティを試すことができます。 このページは、`FlexLayout` から子を追加・削除したり、5 つのバインド可能なプロパティの組み合わせを設定したりすることができます。 `FlexLayout` の全ての子は、様々な色やサイズの `Label` view で、`Text` プロパティには `Children` コレクションの位置に対応する番号がセットされます。
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル の **Experiment** ページ を使って、残り 5 つのバインド可能なプロパティを試すことができます。このページは、`FlexLayout` から子を追加・削除したり、5 つのバインド可能なプロパティの組み合わせを設定したりすることができます。`FlexLayout` の全ての子は、様々な色やサイズの `Label` view で、`Text` プロパティには `Children` コレクションの位置に対応する番号がセットされます。
 
-プログラムを起動すると、5 つの `Picker` view に、これら 5 つの `FlexLayout` のプロパティの規定値が表示されます。 画面下部の `FlexLayout` は 3 つの子を含んでいます。
+プログラムを起動すると、5 つの `Picker` view に、これら 5 つの `FlexLayout` のプロパティの規定値が表示されます。画面下部の `FlexLayout` は 3 つの子を含んでいます。
 
 [![The Experiment Page: Default](flex-layout-images/ExperimentDefault.png "The Experiment Page - Default")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
-各 `Label` view は、 `FlexLayout` 内で `Label` に割り当てられた領域を示すグレーの背景を持っています。 `FlexLayout` 自身の背景はアリスブルーです。 それはページ下部の左右の少量の余白を除いた領域全体を占めます。
+各 `Label` view は、 `FlexLayout` 内で `Label` に割り当てられた領域を示すグレーの背景を持っています。`FlexLayout` 自身の背景はアリスブルーです。それはページ下部の左右の少量の余白を除いた領域全体を占めます。
 
 <a name="direction" />
 
 ### <a name="the-direction-property"></a>Direction プロパティ
 
-[`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) プロパティは 4 つのメンバーを列挙する [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) 型です。
+[ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) プロパティは 4 つのメンバーを列挙する [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) 型です。
 
 - `Column`
 - `ColumnReverse` ( XAML 内では "cloumn-reverse" も可 )
 - `Row` 既定値
 - `RowReverse` ( XAML 内では "row-reverse" も可 )
 
-XAML では、このプロパティの値を大文字や小文字、またはそれらの混在で列挙メンバー名を指定できます。また、CSSの指定方法と同様の括弧内に示す2つの追加された文字列も使用可能です。 （"column-reverse" と "row-reverse" は [`FlexDirectionTypeConverter`](xref:Xamarin.Forms.FlexDirectionTypeConverter) クラスに定義され、XAML パーサーによって使用されます。
+XAML では、このプロパティの値を大文字や小文字、またはそれらの混在で列挙メンバー名を指定できます。また、CSSの指定方法と同様の括弧内に示す2つの追加された文字列も使用可能です。（"column-reverse" と "row-reverse" は [ `FlexDirectionTypeConverter` ](xref:Xamarin.Forms.FlexDirectionTypeConverter) クラスに定義され、XAML パーサーによって使用されます。）
 
 ここに、 (左から右へ順番に) `Row` direction、`Column` direction、および`ColumnReverse` direction で表示した **Experiment** ページ を示します。
 
@@ -418,7 +421,7 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 ### <a name="the-wrap-property"></a>Wrap プロパティ
 
-[`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap)プロパティは 3 つのメンバーを列挙する [`FlexWrap`](xref:Xamarin.Forms.FlexWrap) 型です。
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap)プロパティは 3 つのメンバーを列挙する [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap) 型です。
 
 - `NoWrap` 既定値
 - `Wrap`
@@ -428,13 +431,13 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 [![The Experiment Page: Wrap](flex-layout-images/ExperimentWrap.png "The Experiment Page - Wrap")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
-`Wrap` プロパティに `NoWrap` が設定されていて、主軸が (このプログラム) のように制約されていると、主軸は全ての子を合わせるほどの十分な高さや幅がありません。`FlexLayout` は、iOSのデモのスクリーンショットのように、アイテムを小さくさせることを試みます。 [`Shrink`](#shrink) 添付プロパティを使って、これらのアイテムの縮小を制御することができます。
+`Wrap` プロパティに `NoWrap` が設定されていて、主軸が (このプログラム) のように制約されていると、主軸は全ての子を合わせるほどの十分な高さや幅がありません。`FlexLayout` は、iOSのデモのスクリーンショットのように、アイテムを小さくさせることを試みます。[ `Shrink` ](#shrink) 添付プロパティを使って、これらのアイテムの縮小を制御することができます。
 
 <a name="justify-content" />
 
 ### <a name="the-justifycontent-property"></a>JustifyContent プロパティ
 
-[`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティは 6 つのメンバーを列挙する [`FlexJustify`](xref:Xamarin.Forms.FlexJustify) 型です。
+[ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティは 6 つのメンバーを列挙する [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify) 型です。
 
 - `Start` ( XAML では "flex-start" も可 )、既定値
 - `Center`
@@ -447,32 +450,32 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 [![The Experiment Page: Justify Content](flex-layout-images/ExperimentJustifyContent.png "The Experiment Page - Justify Content")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
-3 つのすべてのスクリーン ショットでは、`Wrap` プロパティには `Wrap` が設定されています。 規定値である `Start` は、Android のスクリーンショットで示しています。 iOS のスクリーンショットには `Center` オプション （すべてのアイテムが中央に移動）が示されています。 `Space` という単語で始まるその他3つのオプションは、アイテムに使用されなかった余白を割り当てます。 `SpaceBetween` はアイテムの間に余白を均等に割り当て、`SpaceAround` は各アイテムの両端に均等に余白を置きます。一方、`SpaceEvenly` は各アイテムの間と行の最初のアイテムの前と最後のアイテムの後に均等に余白を置きます。
+3 つのすべてのスクリーン ショットでは、`Wrap` プロパティには `Wrap` が設定されています。規定値である `Start` は、Android のスクリーンショットで示しています。iOS のスクリーンショットには `Center` オプション （すべてのアイテムが中央に移動）が示されています。`Space` という単語で始まるその他3つのオプションは、アイテムに使用されなかった余白を割り当てます。`SpaceBetween` はアイテムの間に余白を均等に割り当て、`SpaceAround` は各アイテムの両端に均等に余白を置きます。一方、`SpaceEvenly` は各アイテムの間と行の最初のアイテムの前と最後のアイテムの後に均等に余白を置きます。
 
 <a name="align-items" />
 
 ### <a name="the-alignitems-property"></a>AlignItems プロパティ
 
-[`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは、4 つのメンバーを列挙する [`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) 型です。
+[ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは、4 つのメンバーを列挙する [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) 型です。
 
 - `Stretch` 既定値
 - `Center`
 - `Start` ( XAML では "flex-start" も可 )
 - `End` ( XAML では "flex-end" も可 )
 
-これは、 交差軸上に子を整列する方法を示す 2 つのプロパティの 1 つ（もう 1 つは[`AlignContent`](#align-content)）です。 各行内で（上のスクリーンショットで示すように）子は引き伸ばされますが、以下の3つのスクリーンショットのように、各アイテムの開始・中央・終了位置に揃えられます。
+これは、 交差軸上に子を整列する方法を示す 2 つのプロパティの 1 つ（もう 1 つは[ `AlignContent` ](#align-content)）です。各行内で（上のスクリーンショットで示すように）子は引き伸ばされますが、以下の3つのスクリーンショットのように、各アイテムの開始・中央・終了位置に揃えられます。
 
 [![The Experiment Page: Align Items](flex-layout-images/ExperimentAlignItems.png "The Experiment Page - Align Items")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
-iOS のスクリーンショットでは、すべての子は上揃えになっています。 Android のスクリーンショットでは、全てのアイテムはもっとも高い子に合わせて垂直方向に中央揃えになっています。 UWP のスクリーンショットでは、すべてのアイテムは下揃えになっています。
+iOS のスクリーンショットでは、すべての子は上揃えになっています。Android のスクリーンショットでは、全てのアイテムはもっとも高い子に合わせて垂直方向に中央揃えになっています。UWP のスクリーンショットでは、すべてのアイテムは下揃えになっています。
 
-すべての個々のアイテムは、[`AlignSelf`](#align-self) 添付プロパティを使って `AlignItems` の設定を上書きすることができます。
+すべての個々のアイテムは、[ `AlignSelf` ](#align-self) 添付プロパティを使って `AlignItems` の設定を上書きすることができます。
 
 <a name="align-content" />
 
 ### <a name="the-aligncontent-property"></a>AlignContent プロパティ
 
-[`AlignContent`](xref:Xamarin.Forms.FlexLayout.AlignContent)プロパティは、7 つのメンバーを列挙する [`FlexAlignContent`](xref:Xamarin.Forms.FlexAlignContent) 型です。
+[ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent)プロパティは、7 つのメンバーを列挙する [ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent) 型です。
 
 - `Stretch` 既定値
 - `Center`
@@ -496,13 +499,13 @@ iOS のスクリーンショットでは、すべての行は上部にありま�
 
 ## <a name="the-attached-bindable-properties-in-detail"></a>バインド可能な添付プロパティの詳細
 
-`FlexLayout` は 5 つの添付プロパティが定義されています。これらのプロパティは `Flexlayout` の子に設定され、その特定の子のみに影響します。 子でこれらのプロパティを設定、`FlexLayout`し、その特定の子にのみ関連します。
+`FlexLayout` は 5 つの添付プロパティが定義されています。これらのプロパティは `Flexlayout` の子に設定され、その特定の子のみに影響します。
 
 <a name="align-self" />
 
 ### <a name="the-alignself-property"></a>AlignSelf プロパティ
 
-[`AlignSelf`](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) 添付プロパティは、 5 つのメンバーを列挙する [`FlexAlignSelf`](xref:Xamarin.Forms.FlexAlignContent) 型です。
+[ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) 添付プロパティは、 5 つのメンバーを列挙する [ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent) 型です。
 
 - `Auto` 既定値
 - `Stretch`
@@ -510,9 +513,9 @@ iOS のスクリーンショットでは、すべての行は上部にありま�
 - `Start` ( XAML では "flex-start" も可 )
 - `End` ( XAML では "flex-end" も可 )
 
-`FlexLayout` の任意の個別の子のために、このプロパティの設定は `FlexLayout` 自身の [`AlignItems`](#align-items) プロパティ設定を上書きします。 規定の設定である `Auto` は `AlignItems` の設定を使用することを意味します。
+`FlexLayout` の任意の個別の子のために、このプロパティの設定は `FlexLayout` 自身の [ `AlignItems` ](#align-items) プロパティ設定を上書きします。規定の設定である `Auto` は `AlignItems` の設定を使用することを意味します。
 
-例えば `Label` という名前の `label` 要素には、以下のようにコードで `AlignSelf` プロパティをセットすることができます。
+例えば `label` という名前の `Label` 要素には、以下のようにコードで `AlignSelf` プロパティをセットすることができます。
 
 ```csharp
 FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
@@ -526,15 +529,15 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 ### <a name="the-order-property"></a>Order プロパティ
 
-[`Order`](xref:Xamarin.Forms.FlexLayout.OrderProperty) プロパティは `int` 型で、 既定値は 0 です。
+[ `Order` ](xref:Xamarin.Forms.FlexLayout.OrderProperty) プロパティは `int` 型で、既定値は 0 です。
 
-`Order` プロパティは、`FlexLayout` の子が配置される順番を変更することができます。 通常、`FlexLayout` の子は `Children` コレクションの出現順と同じ順番で配置されます。 この順番は、1つ以上の子の `Order` 添付プロパティに 0 以外の数値を設定することで上書きすることができます。 `FlexLayout` はその場合、それぞれの子の `Order` プロパティの設定に基づいて自身の子を配置します。ただし、同じ `Order` 設定を持つ子は、`Children` コレクションの出現順に配置されます。
+`Order` プロパティは、`FlexLayout` の子が配置される順番を変更することができます。通常、`FlexLayout` の子は `Children` コレクションの出現順と同じ順番で配置されます。この順番は、1つ以上の子の `Order` 添付プロパティに 0 以外の数値を設定することで上書きすることができます。`FlexLayout` はその場合、それぞれの子の `Order` プロパティの設定に基づいて自身の子を配置します。ただし、同じ `Order` 設定を持つ子は、`Children` コレクションの出現順に配置されます。
 
 ### <a name="the-basis-property"></a>Basis プロパティ
 
-[`Basis`](xref:Xamarin.Forms.FlexLayout.BasisProperty) 添付プロパティは、主軸上で `FlexLayout` の子に割り当てられている領域の量を示します。 `Basis` プロパティによって指定されたサイズは、親の `FlexLayout` の主軸に沿ったサイズです。 したがって、`Basis` は、行に子が配置された時の子の幅、または列に子が配置された時の高さを示します。
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) 添付プロパティは、主軸上で `FlexLayout` の子に割り当てられている領域の量を示します。`Basis` プロパティによって指定されたサイズは、親の `FlexLayout` の主軸に沿ったサイズです。したがって、`Basis` は、行に子が配置された時の子の幅、または列に子が配置された時の高さを示します。
 
-`Basis`プロパティは、[`FlexBasis`](xref:Xamarin.Forms.FlexBasis) 型の構造体です。 サイズはデバイスに依存しない単位、または `FlexLayout` のサイズの割合のどちらかで指定することができます。 `Basis` プロパティの規定値は、静的プロパティの `FlexBasis.Auto` で、これは子に要求した幅や高さが使用されることを意味します。 
+`Basis`プロパティは、[ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis) 型の構造体です。サイズはデバイスに依存しない単位、または `FlexLayout` のサイズの割合のどちらかで指定することができます。`Basis` プロパティの規定値は、静的プロパティの `FlexBasis.Auto` で、これは子に要求した幅や高さが使用されることを意味します。 
 
 コードでは、以下のように `label` という名前の `Label` の `Basis` プロパティに 40 デバイス非依存単位を設定することができます。
 
@@ -735,7 +738,7 @@ button {
 
 様々な `FlexLayout` の添付プロパティがここを参照しています。 `label.empty`セレクタでは、`flex-grow` 属性が確認できますが、これは `Button` の上の空白を埋めるために空の `Label` をスタイルしています。 `image`セレクタは、`order`属性と `align-self` 属性を含んでおり、その両方が `FlexLayout` の添付プロパティに対応しています。
 
-これまで `FlexLayout` 上に直接プロパティを設定できることと、`FlexLayout` の子に添付プロパティを設定できること、 またこれらのプロパティに従来の XAML に基づくスタイルや CSS スタイルを使って間接的に設定できることを見てきました 重要なことはこれらのプロパティを知って理解することです。 これらのプロパティは `FlexLayout` を真に柔軟にさせます。 
+これまで `FlexLayout` 上に直接プロパティを設定できることと、`FlexLayout` の子に添付プロパティを設定できること、またこれらのプロパティに従来の XAML に基づくスタイルや CSS スタイルを使って間接的に設定できることを見てきました。重要なことはこれらのプロパティを知って理解することです。これらのプロパティは `FlexLayout` を真に柔軟にさせます。
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>Xamarin.University で FlexLayout
 
