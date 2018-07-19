@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
-ms.date: 04/03/2017
-ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995190"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130960"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp のビットマップの基礎
 
@@ -22,7 +22,7 @@ SkiaSharp のビットマップのサポートは非常に広範です。 この
 
 ![](bitmaps-images/bitmapssample.png "2 つのビットマップの表示")
 
-SkiaSharp ビットマップの種類のオブジェクトである[ `SKBitmap`](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)します。 ビットマップを作成する方法はたくさんありますが、この記事に制限する、 [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/)メソッドからビットマップを読み込み、 [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/)ビットマップ ファイルを参照するオブジェクト。 使用すると便利です、 [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/)クラスから派生した`SKStream`.NET を受け取るコンス トラクターがあるため、 [ `Stream` ](xref:System.IO.Stream)オブジェクト。
+SkiaSharp ビットマップの種類のオブジェクトである[ `SKBitmap`](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)します。 ビットマップを作成する方法はたくさんありますが、この記事に制限する、 [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/)メソッドは、.NET からビットマップを読み込み`Stream`オブジェクト。
 
 **基本的なビットマップ**ページで、 **SkiaSharpFormsDemos**プログラムは、次の 3 つの異なるソースからビットマップを読み込む方法を示します。
 
@@ -55,39 +55,46 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>Web からビットマップを読み込む
 
-URL に基づくビットマップを読み込むには、使用することができます、 [ `WebRequest` ](xref:System.Net.WebRequest)クラスで実行される次のコードに示すように、`BasicBitmapsPage`コンス トラクター。 ここで、URL は、いくつかのサンプルのビットマップの Xamarin の web サイト上の領域を指します。 Web サイト上のパッケージでは特定の幅にビットマップのサイズを変更するための仕様を追加できます。
+URL に基づくビットマップを読み込むには、使用することができます、 [ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0)クラス。 インスタンスを 1 つだけをインスタンス化する必要があります`HttpClient`と再利用であるため、そのフィールドとして。
 
 ```csharp
-Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
-WebRequest request = WebRequest.Create(uri);
-request.BeginGetResponse((IAsyncResult arg) =>
+HttpClient httpClient = new HttpClient();
+```
+
+使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります**[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
+
+使用する最も便利なので、`await`演算子`HttpClient`では、コードを実行できません、`BasicBitmapsPage`コンス トラクター。 代わりの一部では、`OnAppearing`をオーバーライドします。 ここで、URL は、いくつかのサンプルのビットマップの Xamarin の web サイト上の領域を指します。 Web サイト上のパッケージでは特定の幅にビットマップのサイズを変更するための仕様を追加できます。
+
+
+```csharp
+protected override async void OnAppearing()
 {
+    base.OnAppearing();
+
+    // Load web bitmap.
+    string url = "https://developer.xamarin.com/demo/IMG_3256.JPG?width=480";
+
     try
     {
-        using (Stream stream = request.EndGetResponse(arg).GetResponseStream())
+        using (Stream stream = await httpClient.GetStreamAsync(url))
         using (MemoryStream memStream = new MemoryStream())
         {
-            stream.CopyTo(memStream);
+            await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            using (SKManagedStream skStream = new SKManagedStream(memStream))
-            {
-                webBitmap = SKBitmap.Decode(skStream);
-            }
-        }
+            webBitmap = SKBitmap.Decode(stream);
+            canvasView.InvalidateSurface();
+        };
     }
     catch
     {
     }
-
-    Device.BeginInvokeOnMainThread(() => canvasView.InvalidateSurface());
-
-}, null);
+}
 ```
 
-コールバック メソッドが渡される、ビットマップが正常にダウンロードされると、`BeginGetResponse`メソッドを実行します。 `EndGetResponse`呼び出しである必要があります、`try`ブロックする場合は、エラーが発生しました。 `Stream`オブジェクトから取得`GetResponseStream`が十分でない一部のプラットフォームで、ビットマップの内容にコピーされますので、`MemoryStream`オブジェクト。 この時点で、`SKManagedStream`オブジェクトを作成することができます。 ここでは、JPEG または PNG ファイルの可能性がビットマップ ファイルを参照します。 `SKBitmap.Decode`メソッドは、ビットマップ ファイルをデコードし、内部 SkiaSharp 形式で結果を格納します。
+使用する場合、android の例外が発生する、`Stream`から返された`GetStreamAsync`で、`SKBitmap.Decode`メソッド メイン スレッドで時間のかかる操作を実行することがあるためです。 このためにビットマップ ファイルの内容をコピー、`MemoryStream`オブジェクトを使用して`CopyToAsync`します。
 
-コールバック メソッドに渡されます`BeginGetResponse`つまり実行コンス トラクターの実行が完了した後、`SKCanvasView`許可を無効にする必要があります、`PaintSurface`ハンドラーの表示を更新します。 ただし、`BeginGetResponse`を使用する必要があるため、実行のセカンダリ スレッドでコールバックを実行`Device.BeginInvokeOnMainThread`を実行する、`InvalidateSurface`ユーザー インターフェイス スレッドでメソッド。
+静的な`SKBitmap.Decode`メソッドはビットマップ ファイルをデコードします。 JPEG、PNG、GIF、およびその他のいくつかの一般的なビットマップ形式と連携し、内部 SkiaSharp 形式で結果を格納します。 この時点で、`SKCanvasView`許可を無効にする必要があります、`PaintSurface`ハンドラーの表示を更新します。 
 
 ## <a name="loading-a-bitmap-resource"></a>ビットマップ リソースの読み込み
 
@@ -100,19 +107,18 @@ string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
 Assembly assembly = GetType().GetTypeInfo().Assembly;
 
 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-using (SKManagedStream skStream = new SKManagedStream(stream))
 {
-    resourceBitmap = SKBitmap.Decode(skStream);
+    resourceBitmap = SKBitmap.Decode(stream);
 }
 ```
 
-これは、`Stream`に直接変換できるオブジェクト、`SKManagedStream`オブジェクト。
+これは、`Stream`オブジェクトに直接渡すことができます、`SKBitmap.Decode`メソッド。
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>フォト ライブラリからビットマップを読み込む
 
 ユーザーがデバイスの画像ライブラリから写真を読み込むこともできます。 この機能は、Xamarin.Forms 自体によって提供されていません。 ジョブには、資料に記載されているものなどの依存関係サービスが必要です。[画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)します。
 
-**IPicturePicker.cs**ファイルと、3 つ**PicturePickerImplementation.cs**のさまざまなプロジェクトにその記事からのファイルがコピーされたら、 **SkiaSharpFormsDemos**ソリューションでは、新しい名前空間の名前を指定します。 さらに、Android **MainActivity.cs**ように、この記事で説明されているファイルが変更されていて、iOS プロジェクトに 2 行の下部に、フォト ライブラリへのアクセス許可が与えられて、 **info.plist**ファイル。
+**IPhotoLibrary.cs**ファイル、 **SkiaSharpFormsDemos**プロジェクトと、3 つ**PhotoLibrary.cs**プラットフォーム プロジェクト ファイルをその記事から引用したものにされています。 さらに、Android **MainActivity.cs**ように、この記事で説明されているファイルが変更されていて、iOS プロジェクトに 2 行の下部に、フォト ライブラリへのアクセス許可が与えられて、 **info.plist**ファイル。
 
 `BasicBitmapsPage`コンス トラクターを追加、`TapGestureRecognizer`を`SKCanvasView`タップの通知を受け取る。 タップの受信時に、`Tapped`ハンドラーは、依存関係サービスの画像の選択と呼び出しへのアクセスを取得します。`GetImageStreamAsync`します。 場合、`Stream`オブジェクトが返された後に内容がコピーされます、`MemoryStream`一部のプラットフォームで必要があります。 コードの残りの部分は、その他の 2 つの手法と同様です。
 
@@ -122,22 +128,13 @@ TapGestureRecognizer tapRecognizer = new TapGestureRecognizer();
 tapRecognizer.Tapped += async (sender, args) =>
 {
     // Load bitmap from photo library
-    IPicturePicker picturePicker = DependencyService.Get<IPicturePicker>();
+    IPhotoLibrary photoLibrary = DependencyService.Get<IPhotoLibrary>();
 
-    using (Stream stream = await picturePicker.GetImageStreamAsync())
+    using (Stream stream = await photoLibrary.PickPhotoAsync())
     {
         if (stream != null)
         {
-            using (MemoryStream memStream = new MemoryStream())
-            {
-                stream.CopyTo(memStream);
-                memStream.Seek(0, SeekOrigin.Begin);
-
-                using (SKManagedStream skStream = new SKManagedStream(memStream))
-                {
-                    libraryBitmap = SKBitmap.Decode(skStream);
-                }
-            }
+            libraryBitmap = SKBitmap.Decode(stream);
             canvasView.InvalidateSurface();
         }
     }

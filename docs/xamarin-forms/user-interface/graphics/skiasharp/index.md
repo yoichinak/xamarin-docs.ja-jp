@@ -1,61 +1,64 @@
 ---
-title: Xamarin.Forms で SkiaSharp の使用
-description: SkiaSharp は、.NET と c# Google 製品で広範囲に使用されるオープン ソース Skia グラフィックス engine によって 2 次元グラフィックス システムです。 このガイドでは、Xamarin.Forms アプリケーションで 2 D グラフィックスの SkiaSharp を使用する方法について説明します。
+title: Xamarin.Forms で SkiaSharp を使用します。
+description: SkiaSharp は、.NET と c# は Google の製品で広く使用されるオープン ソース Skia グラフィック エンジンを利用した 2D グラフィックス システムです。 このガイドでは、Xamarin.Forms アプリケーションの 2D グラフィックスを SkiaSharp を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: 272e70af83c8946d0c3eacadac9726487121ac0f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: bdc0603c6ae406adac42533e251106ccccf2cb7c
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243939"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130947"
 ---
-# <a name="using-skiasharp-in-xamarinforms"></a>Xamarin.Forms で SkiaSharp の使用
+# <a name="using-skiasharp-in-xamarinforms"></a>Xamarin.Forms で SkiaSharp を使用します。
 
-_Xamarin.Forms アプリケーションで 2 D グラフィックスの SkiaSharp を使用します。_
+_SkiaSharp を使用して、Xamarin.Forms アプリケーションでの 2D グラフィック_
 
-SkiaSharp は、.NET と c# Google 製品で広範囲に使用されるオープン ソース Skia グラフィックス engine によって 2 次元グラフィックス システムです。 Xamarin.Forms アプリケーションで SkiaSharp を使用すると、2 次元ベクター グラフィックス、ビットマップ、およびテキストを描画します。 参照してください、 [2D 図面](~/graphics-games/skiasharp/index.md)SkiaSharp ライブラリに関する一般的な情報およびその他のいくつかのチュートリアルについてガイドします。
+SkiaSharp は、.NET と c# は Google の製品で広く使用されるオープン ソース Skia グラフィック エンジンを利用した 2D グラフィックス システムです。 2 次元ベクター グラフィックス、ビットマップ、およびテキストを描画するために、Xamarin.Forms アプリケーションで SkiaSharp を使用できます。 参照してください、 [2D 描画](~/graphics-games/skiasharp/index.md)SkiaSharp ライブラリに関する一般的な情報とその他のいくつかのチュートリアル ガイド。
 
-このガイドでは、Xamarin.Forms プログラミングに慣れていることを前提としています。
+このガイドでは、Xamarin.Forms のプログラミングに精通していることを前提としています。
 
 > [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
 **Xamarin.Forms のウェビナー: SkiaSharp**
 
-## <a name="skiasharp-preliminaries"></a>SkiaSharp 準備
+## <a name="skiasharp-preliminaries"></a>SkiaSharp の準備作業
 
-Xamarin.Forms の SkiaSharp は、NuGet パッケージとしてパッケージされています。 検索する NuGet パッケージ マネージャーを使用するには Mac を Visual Studio または Visual Studio で、まず Xamarin.Forms ソリューションを作成した後、 **SkiaSharp.Views.Forms**パッケージ化し、ソリューションに追加します。 チェックする場合、**参照**セクション SkiaSharp を追加した後の各プロジェクトのことがわかりますさまざまな**SkiaSharp**ライブラリが各ソリューションのプロジェクトに追加されました。
+SkiaSharp の Xamarin.Forms は NuGet パッケージとしてパッケージ化されます。 For Mac、Visual Studio または Visual Studio で Xamarin.Forms ソリューションを作成したら、検索する NuGet パッケージ マネージャーを使用することができます、 **SkiaSharp.Views.Forms**パッケージ化し、ソリューションに追加します。 チェックする場合、**参照**セクション SkiaSharp を追加した後、各プロジェクトのことがわかりますさまざまな**SkiaSharp**ライブラリが各ソリューションのプロジェクトに追加されました。
 
-場合は、Xamarin.Forms アプリケーションは、iOS をターゲット、iOS 8.0 に最小の配置ターゲットを変更するプロジェクトのプロパティ ページを使用します。
+Xamarin.Forms アプリケーションが iOS を対象と場合は、プロジェクトのプロパティ ページを使用して、iOS 8.0 を最小展開ターゲットを変更します。
 
-SkiaSharp を使用する (C#) ページを追加する、`using`ディレクティブを[ `SkiaSharp` ](https://developer.xamarin.com/api/namespace/SkiaSharp/)名前空間は、すべて SkiaSharp クラス、構造体、および、グラフィックスで使用する列挙体が含まれますプログラミングします。 必要もあります、`using`ディレクティブを[ `SkiaSharp.Views.Forms` ](https://developer.xamarin.com/api/namespace/SkiaSharp.Views.Forms/) Xamarin.Forms に固有のクラスの名前空間。 これは、容量より小さい名前空間で最も重要なクラスは[ `SKCanvasView`](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKCanvasView/)です。 このクラスは、Xamarin.Forms から派生`View`クラスし、SkiaSharp グラフィック出力をホストします。
+SkiaSharp を使用する (C#) ページに含める必要あります、`using`ディレクティブを[ `SkiaSharp` ](https://developer.xamarin.com/api/namespace/SkiaSharp/)すべて SkiaSharp クラス、構造体、および、グラフィックスで使用する列挙体を含む名前空間プログラミングします。 必要、`using`ディレクティブを[ `SkiaSharp.Views.Forms` ](https://developer.xamarin.com/api/namespace/SkiaSharp.Views.Forms/) Xamarin.Forms に固有のクラスの名前空間。 これは、くらい小さい名前空間、最も重要なクラスが[ `SKCanvasView`](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKCanvasView/)します。 このクラスは、Xamarin.Forms から派生`View`クラスし、SkiaSharp グラフィックスの出力をホストします。
 
 > [!IMPORTANT]
-> `SkiaSharp.Views.Forms`名前空間も含まれています、`SKGLView`から派生したクラス`View`が、グラフィックのレンダリングの OpenGL を使用します。 わかりやすくするための目的では、このガイドに制限する`SKCanvasView`を使用して`SKGLView`が代わりに、非常に似ています。
+> `SkiaSharp.Views.Forms`名前空間にも含まれています、`SKGLView`クラスから派生した`View`が、グラフィックのレンダリングの OpenGL を使用します。 このガイドでは簡潔さのために、制限自体に`SKCanvasView`を使用していますが`SKGLView`は代わりによく似ています。
 
 ## <a name="skiasharp-drawing-basicsbasicsindexmd"></a>[SkiaSharp 描画の基礎](basics/index.md)
 
-SkiaSharp で描画できる最も単純なグラフィックス図形には、円、楕円、および四角形などがあります。 これらの数値を表示するのには、SkiaSharp 座標、サイズ、および色について学習します。
+SkiaSharp で描画できる最も簡単なグラフィック図形には、円、楕円、四角形などがあります。 これらの数値を表示するためには、SkiaSharp 座標、サイズ、および色について学びます。
 
 ## <a name="skiasharp-lines-and-pathspathsindexmd"></a>[SkiaSharp の線とパス](paths/index.md)
 
-グラフィックス パスは、接続されている直線と曲線の系列です。 データの格納、パスを描画できますまたはその両方です。 このトピックにはと、点線は曲線ジオメトリ不足して停止する線の描画、ストロークの端との結合、点線などの多くの側面が含まれます。
+グラフィック パスは、一連の接続された直線と曲線です。 データの格納、パスを指定できますかまたは両方。 このトピックには、線の描画ストロークの端との結合、破線などと、点線がジオメトリのカーブできない場合は停止の多くの側面が含まれます。
 
 ## <a name="skiasharp-transformstransformsindexmd"></a>[SkiaSharp の変換](transforms/index.md)
 
-変換を一様に翻訳、拡大/縮小、回転、または傾斜グラフィック オブジェクトを許可します。 この記事では、非アフィン変換を作成して、パスへの変換の適用の標準的な 3-3 での変換行列を使用する方法も示しています。
+変換では、グラフィックス オブジェクトを一様に変換、拡大縮小、回転、または傾斜を許可します。 この記事では、非アフィン変換を作成すると、パスに変換を適用する標準的な 3-3 での変換行列を使用する方法も示します。
 
 ## <a name="skiasharp-curves-and-pathscurvesindexmd"></a>[SkiaSharp の曲線とパス](curves/index.md)
 
-パスの探索は、パス オブジェクトでは、曲線を追加すると、その他のパスの強力な機能を利用して続行します。 簡潔な文字列のパス全体を指定する方法、パスの効果を使用する方法、およびパスの内部構造を調べる方法が表示されます。
+パスの探索は、パス オブジェクトに曲線を追加し、その他のパスの強力な機能を利用してで続行されます。 簡潔な文字列のパス全体を指定する方法、パスの効果を使用する方法、およびパスの内部を詳しく調査する方法を確認します。
 
+## <a name="skiasharp-bitmapsbitmapsindexmd"></a>[SkiaSharp のビットマップ](bitmaps/index.md)
+
+ビットマップは、ディスプレイ デバイスのピクセルに対応するビットの四角形の配列です。 この一連の記事では、ロード、保存、表示、作成、上に描画をアニメーション化する、SkiaSharp ビットマップのビットにアクセスする方法を示します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Xamarin.Forms ウェビナー (ビデオ) と SkiaSharp](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)
+- [SkiaSharp 付き Xamarin.Forms ウェビナー (ビデオ)](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)
