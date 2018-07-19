@@ -1,21 +1,20 @@
 ---
 title: Xamarin.iOS for Visual Studio の概要
-description: この記事では、Visual Studio を使用する Xamarin iOS アプリケーションのビルドおよびテスト方法を示します。 Visual Studio を使用して新しい iOS プロジェクトを作成し、iOS アプリケーションをビルドした後で、Apple のコンパイラとシミュレーターをホストするためにネットワークに接続された Mac と、Xamarin のビルド ツールチェーンを使用して、コンパイル、テスト、およびデバッグを行う方法を説明します。
+description: このドキュメントでは、Visual Studio を使用して Xamarin iOS アプリケーションをビルドし、テストする方法を示します。 プロジェクトを作成する方法、アプリを実行し、デバッグする方法、Windows から Mac ビルド ホストに接続する方法について説明しています。
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: e07119bee6478a503ca6c586fa3348206ccd16f7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786201"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
-
-_この記事では、Visual Studio を使用する Xamarin iOS アプリケーションのビルドおよびテスト方法を示します。Visual Studio を使用して新しい iOS プロジェクトを作成し、iOS アプリケーションをビルドした後で、Apple のコンパイラとシミュレーターをホストするためにネットワークに接続された Mac と、Xamarin のビルド ツールチェーンを使用して、コンパイル、テスト、およびデバッグを行う方法を説明します。_
 
 Xamarin for Windows では、iOS アプリケーションを Visual Studio 内で作成してテストすることができます。その際に、ビルドと配置サービスを提供するネットワークに接続された Mac を使用します。
 
@@ -27,7 +26,6 @@ Visual Studio 内での iOS 向けの開発には、次のような多くの利�
 -  iOS ソース コードを含む、すべてのクロスプラットフォーム プロジェクトでのお気に入りの Visual Studio ツール (**Resharper** や **Team Foundation Server** など) の使用。
 -  Apple のすべての API の Xamarin.iOS バインディングを活用しながら、使い慣れた IDE を使用。
 
-
 <a name="Requirements_and_Installation" />
 
 ## <a name="requirements-and-installation"></a>要件とインストール
@@ -38,7 +36,6 @@ Visual Studio での iOS 向けの開発時に従う必要があるいくつか�
 
 -  メインの開発用コンピューターとして Mac を使用して、Visual Studio がインストールされている Windows 仮想マシンを実行します。 [Parallels](http://www.parallels.com/products/desktop/) や [VMWare](http://www.vmware.com/products/fusion/) などの VM ソフトウェアを使用することをお勧めします。
 -  ビルド ホストと同じように Mac を使用します。 このシナリオでは、[必要な](~/cross-platform/get-started/installation/windows.md#installation)ツールがインストールされている Windows コンピューターと同じネットワークに接続されます。
-
 
 いずれの場合も、次の手順に従う必要があります。
 
@@ -64,7 +61,6 @@ Xamarin iOS 開発に関連するコントロールは赤い円で囲まれて�
 -  **ソリューション構成** – 使用する構成 (デバッグ、リリースなど) を選択できます。
 -  **ソリューション プラットフォーム** - 展開する iPhone または iPhoneSimulator を選択できます。
 
-
 ### <a name="ios-toolbar"></a>iOS ツール バー
 
 Visual Studio の各バージョンでの、Visual Studio の iOS ツール バーは似ています。 それらすべてを以下に示します。
@@ -77,10 +73,7 @@ Visual Studio の各バージョンでの、Visual Studio の iOS ツール バ�
 -  **iOS シミュレーターの表示** – Mac の前面に iOS シミュレーター ウィンドウを移動します。
 -  **ビルド サーバーに IPA ファイルを表示** - アプリケーションの IPA 出力ファイルの場所に Mac のファインダーを開きます。
 
-
-
 ## <a name="ios-output-options"></a>iOS 出力オプション
-
 
 ### <a name="output-window"></a>[出力] ウィンドウ
 
@@ -108,29 +101,23 @@ Visual Studio の各バージョンでの、Visual Studio の iOS ツール バ�
 
     [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 出力")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
-
 ## <a name="ios-project-properties"></a>iOS プロジェクト プロパティ
 
 Visual Studio のプロジェクト プロパティには、プロジェクト名を右クリックし、コンテキスト メニューの *[プロパティ]* を選択することでアクセス可能です。 これにより、次のスクリーンショットのように、iOS アプリケーションを構成できるようになります。
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "iOS アプリケーションの構成")
 
 -  *iOS バンドル署名* – Mac に接続して、コード署名 ID とプロビジョニング プロファイルを設定します。
 
-
  ![](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png "コード署名 ID とプロビジョニング プロファイルを設定します")
 
 -  *iOS IPA オプション* – IPA ファイルが Mac のファイル システムに保存されます。
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png "iOS IPA オプション")
 
 -  *iOS 実行オプション* – その他のパラメーターを構成します。
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png "iOS 実行オプション")
-
-
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>iOS アプリケーション用の新しいプロジェクトの作成
 
@@ -156,7 +143,6 @@ Visual Studio 内からの新しい iOS プロジェクトの作成は、他の�
 
  iOS Designer の使用の詳細については、[Designer](~/ios/user-interface/designer/index.md) のガイドを参照してください。
 
-
 ## <a name="running--debugging-ios-applications"></a>iOS アプリケーションの実行とデバッグ
 
 ### <a name="device-logging"></a>デバイスのログ
@@ -175,7 +161,6 @@ Visual Studio 用の新しい [デバイス ログ] ツール ウィンドウで
 
 このツール ウィンドウでは、ログ エントリのテーブル、デバイス選択用のドロップダウン リスト、ログ エントリをクリアする方法、検索ボックス、および再生/停止/一時停止ボタンが提供されます。
 
-
 ### <a name="set-debugging-stops"></a>デバッグの停止を設定する
 
 ブレークポイントは、プログラムの実行を一時的に停止するように、アプリケーションがデバッガーに通知する任意の時点に設定できます。 Visual Studio でブレークポイントを設定するには、エディターで、中断するコードの行番号の横にある余白領域をクリックします。
@@ -185,7 +170,6 @@ Visual Studio 用の新しい [デバイス ログ] ツール ウィンドウで
 デバッグを開始し、シミュレーターまたはデバイスを使用して、ブレークポイントにアプリケーションを移動します。 ブレークポイントにヒットすると、行が強調表示され、Visual Studio の通常のデバッグ動作が有効になります。コードのステップ イン、ステップ オーバー、またはステップ アウトを行ったり、ローカル変数を確認したり、あるいはイミディエイト ウィンドウを使用することができます。
 
 このスクリーンショットでは、OS X の Parallels を使用する Visual Studio の横に実行されている iOS シミュレーターが示されています。
-
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/image19.png "このスクリーンショットでは、OS X の Parallels を使用する Visual Studio の横に実行されている iOS シミュレーターが示されています")
 

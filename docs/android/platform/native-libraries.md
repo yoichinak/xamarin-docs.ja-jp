@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30774812"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリを使用します。
 
@@ -44,7 +45,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 ## <a name="debugging-native-code-with-visual-studio-2015"></a>Visual Studio 2015 でのネイティブ コードのデバッグ
 
 使用する場合*Visual Studio 2015*、(前述のように)、プロジェクト ファイルを変更する必要はありません。
-ビルドして、C++ へのプロジェクト参照を追加するだけで、Xamarin.Android ソリューション内の C++ をデバッグ**ダイナミック共有ライブラリ (Android)**プロジェクト。
+ビルドして、C++ へのプロジェクト参照を追加するだけで、Xamarin.Android ソリューション内の C++ をデバッグ**ダイナミック共有ライブラリ (Android)** プロジェクト。
 
 Visual Studio C 開発者できますを参照してください、 [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/) Xamarin; を使用した Visual Studio 2015 から C++ のデバッグを実行するサンプルを参照してください、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)詳細についてはします。
 

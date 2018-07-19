@@ -7,17 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3cf27e48fe23b9a0f035689e55a72fcc706ab266
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73d74b59ef6e59028eec7cad19feec21908b6329
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241332"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269045"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Azure Mobile Appsの使用
 
 _Azure Mobile Appsでは、モバイル認証、オフライン同期、およびプッシュ通知のサポートにより、Azure App Serviceでホストされているスケーラブルなバックエンドでアプリを開発できます。この記事は、Azure Mobile AppsでNode.jsバックエンドを使用する場合にのみ適用され、Azure Mobile Appsインスタンスのテーブルに格納されたデータのクエリ、挿入、更新、および削除方法について説明しています。_ 
 
+
+> [!NOTE]
+> 6 月 30 日以降は、すべての新しい Azure Mobile Apps 作成されます TLS 1.2 を既定では。 さらに、それがもお勧め既存 Azure Mobile Apps TLS 1.2 を使用するように再構成します。 Azure のモバイル アプリでの TLS 1.2 を適用する方法については、次を参照してください。 [TLS 1.2 の強制](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112)です。 TLS 1.2 を使用する Xamarin のプロジェクトを構成する方法については、次を参照してください。[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)です。
 
 Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。 これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます。`Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続します。
 

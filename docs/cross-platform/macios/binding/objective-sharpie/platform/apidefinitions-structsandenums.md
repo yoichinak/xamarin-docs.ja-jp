@@ -1,36 +1,40 @@
 ---
-title: ApiDefinitions & StructsAndEnums ファイル
-description: このドキュメントでは、目標ペンを使わずを生成する ApiDefinitions.cs および StructsAndEnums.cs ファイルについて説明します。 これらのファイルは、コードへのアクセス、OBJECTIVE-C c# から使用されます。
+title: ApiDefinitions と StructsAndEnums ファイル
+description: このドキュメントでは、目標油性を生成する ApiDefinitions.cs および StructsAndEnums.cs ファイルについて説明します。 これらのファイルは、c# から OBJECTIVE-C コードへのアクセスに使用されます。
 ms.prod: xamarin
 ms.assetid: AC2087C0-BA54-46D8-B70C-6972941C8F73
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 3b991f6105c6053f473b049d195aaef63cbcdd57
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: df8d4508db14116a5b36e893f161ac891d58dc46
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780894"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855183"
 ---
-# <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions & StructsAndEnums ファイル
+# <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions と StructsAndEnums ファイル
 
-目標ペンを使わずが正常に実行する場合は生成`Binding/ApiDefinitions.cs`と`Binding/StructsAndEnums.cs`ファイル。
-これら 2 つのファイルがプロジェクトに追加、バインド Visual Studio for Mac またはに直接渡されます、`btouch`または`bmac`最後のバインドを作成するためのツールです。
+目的の油性が正常に実行されたらと、が生成されます`Binding/ApiDefinitions.cs`と`Binding/StructsAndEnums.cs`ファイル。
+これら 2 つのファイルを Mac に Visual Studio でのバインド プロジェクトに追加またはに直接渡される、`btouch`または`bmac`最終的なバインドを生成するツール。
 
-*一部*これら生成されたファイルがあります、必要なすべてが、(そのフラグが設定されたなどのツールによって自動的に処理できなかった問題を修正するファイルを生成、開発者がこれらを手動で変更する必要があります頻度が高い場合[ `Verify`属性](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md))。
+*一部*これら生成されたファイルがあります、必要な (など、フラグが設定されたツールによって自動的に処理できなかった問題を修正するファイルを生成、開発者はこれらを手動で変更する必要があります多くの場合、詳細がの場合[ `Verify`属性](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md))。
 
 次の手順のとおりです。
 
-- **名前を調整する**: メソッドと .NET Framework デザイン ガイドラインを照合するクラスの名前を調整したいが場合があります。
-- **メソッドまたはプロパティ**: 目標ペンを使わずでも使用するヒューリスティックはプロパティに変換するメソッドを取得します。 この時点では、かどうかであるが意図した動作かを決定する可能性があります。
-- **イベントをフック**: クラス、デリゲート クラスとをリンクし、それらのイベントを自動的に生成することができます。
-- **通知フック**: 純粋なヘッダー ファイルからの通知 API コントラクトを抽出することはできません、API のドキュメントへのトリップが必要です。 厳密に型指定された通知する場合は、結果を更新する必要があります。
-- **API キュレーション**: この時点に余分なコンス トラクターを提供、(c# の初期化の構築に構文の許可) をメソッド、演算子のオーバー ロード、実装を選択する可能性があります、余分な定義ファイルに独自のインターフェイスです。
+- **名前を調整する**: メソッドと、.NET Framework デザイン ガイドラインに一致するようにクラスの名前を調整することがありますします。
+- **メソッドまたはプロパティ**: も油性の目的で使用するヒューリスティックがプロパティに有効にする方法を選択します。 この時点では、これが意図した動作かどうかを決定できます。
+- **イベントをフックする**: リンク、クラス、デリゲート クラスを使用して自動的にこれらのイベントを生成します。
+- **通知フック**: 純粋なヘッダー ファイルからの通知 API コントラクトを抽出することはできません、API のドキュメントへのトリップが必要になります。 厳密に型指定された通知を設定する場合は、結果を更新する必要があります。
+- **API キュレーション**: この時点で余分なコンス トラクターを提供、(c# の初期化の構築の構文の許可) するメソッド、演算子のオーバー ロードおよび実装を追加する選択が、追加の定義ファイルに独自のインターフェイス。
 
-参照してください、 [API をバインド](~/cross-platform/macios/binding/objective-c-libraries.md)の説明を次の図に示すように、バインディング プロセスにこれらのファイルがどのように適合するかを参照してください。
+参照してください、[バインド API](~/cross-platform/macios/binding/objective-c-libraries.md)説明を次の図に示すように、これらのファイルが、バインディング プロセスに適合させる方法を確認します。
 
-![](apidefinitions-structsandenums-images/binding-flowchart.png "バインディング プロセスは、このダイアグラムに表示されます。")
+![](apidefinitions-structsandenums-images/binding-flowchart.png "バインディング プロセスは、この図には")
 
-参照してください、[型参照をバインド](~/cross-platform/macios/binding/binding-types-reference.md)のこれらのファイルの内容に関する詳細情報。
+参照してください、[型参照をバインド](~/cross-platform/macios/binding/binding-types-reference.md)のこれらのファイルの内容の詳細について。
 
+## <a name="related-links"></a>関連リンク
+
+- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

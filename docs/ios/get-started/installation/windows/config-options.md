@@ -1,17 +1,18 @@
 ---
 title: Visual Studio 2017 の構成
-description: この記事では、Visual Studio 2017 用の Xamarin.iOS のさまざまな構成オプションについて説明します。
+description: この記事では、Xamarin.iOS 開発のために Visual Studio 2017 を構成する方法について説明しています。 具体的には、インストールしたバージョンの Xamarin.iOS、iOS ツールバー、[ソリューション プラットフォーム] ドロップダウン メニューを構成する方法について説明しています。
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: ee08cf7d68bd9d10026f1c15d4438077349fe367
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: 70633877fb07f52ce4e7a399668be6268942b137
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785955"
 ---
 # <a name="configuring-visual-studio-2017"></a>Visual Studio 2017 の構成
 

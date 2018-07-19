@@ -1,26 +1,26 @@
 ---
-title: タップ ジェスチャのジェスチャ レコグナイザーを追加します。
-description: この記事では、Xamarin.Forms アプリケーションでの tap 検出のタップ ジェスチャを使用する方法について説明します。 Tap の検出は、TapGestureRecognizer クラスで実装されます。
+title: タップ ジェスチャのジェスチャ認識エンジンを追加します。
+description: この記事では、Xamarin.Forms アプリケーションでのタップ検出のタップ ジェスチャを使用する方法について説明します。 Tap の検出は、TapGestureRecognizer クラスで実装されます。
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: bbe4ca7a1080459b8aeb33640be5158b15e97715
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240666"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994855"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>タップ ジェスチャのジェスチャ レコグナイザーを追加します。
+# <a name="adding-a-tap-gesture-gesture-recognizer"></a>タップ ジェスチャのジェスチャ認識エンジンを追加します。
 
-_タップ ジェスチャでは、タップ検出のために使用され、TapGestureRecognizer クラスで実装されます。_
+_タップ ジェスチャでは、tap の検出に使用し、TapGestureRecognizer クラスを使用して実装されます。_
 
 ## <a name="overview"></a>概要
 
-ユーザー インターフェイス要素のタップ ジェスチャのクリック可能な作成、 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)インスタンス、処理、 [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/)イベントに新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/)ユーザー インターフェイス要素のコレクション。 次のコード例は、`TapGestureRecognizer`にアタッチされている、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)要素。
+ユーザー インターフェイス要素をタップ ジェスチャでクリック可能にするために、作成、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)インスタンスを処理、 [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)イベントに新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ユーザー インターフェイスの要素のコレクション。 次のコード例は、`TapGestureRecognizer`にアタッチされている、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -30,19 +30,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-既定では、イメージは、シングル タップに応答します。 設定、 [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/)ダブルタップ (または必要な場合は複数回のタップ) まで待機するプロパティです。
+既定では、イメージを 1 つタップに応答します。 設定、 [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired)ダブルタップします (または複数回のタップに必要な場合) を待機するプロパティ。
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-ときに[ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/)設定は、1 を超えるイベント ハンドラーのみ実行されます (この期間は構成できません) 時間の設定時間内に 2 回のタップが発生した場合。 その期間内に 2 つ目 (またはそれ以降) のタップが発生しない場合は実質的に無視され、'タップ数' を再起動します。
+ときに[ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired)設定は、1 を超えるイベント ハンドラーのみ場合に実行される、タップは、一定の時間 (この期間は構成できません) 内で発生します。 2 番目 (またはそれ以降) のタップは、その期間内は発生しない場合は、それらは実質的に無視され、タップ数を再起動します。
 
 <a name="Using_Xaml" />
 
 ## <a name="using-xaml"></a>Xaml を使用してください。
 
-ジェスチャ レコグナイザーは、アタッチされるプロパティを使用して、Xaml 内のコントロールに追加できます。 追加するための構文、 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)をイメージには、次に示す (ここで定義する、*ダブルタップ*イベント)。
+ジェスチャ レコグナイザーは、添付プロパティを使用して、Xaml でコントロールに追加できます。 追加するための構文を[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)イメージを以下に示します (ここで定義する、*ダブルタップ*イベント)。
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -54,7 +54,7 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 </Image>
 ```
 
-(サンプル) のイベント ハンドラーのコードをカウンターをインクリメントして色からを黒にイメージを変更&amp;白です。
+(サンプル) のイベント ハンドラーのコードは、カウンターをインクリメントして、色からイメージを黒に変更&amp;白。
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -72,7 +72,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>ICommand を使用します。
 
-通常、Mvvm パターンを使用するアプリケーションを使用して`ICommand`直接イベント ハンドラーを配線ではなくです。 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)簡単にサポートできます`ICommand`コードで、バインドを設定するか。
+通常、Mvvm パターンを使用するアプリケーションを使用して、`ICommand`イベント ハンドラーを直接接続ではなく。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)簡単にサポートできる`ICommand`をコードでバインディングを設定します。
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -92,7 +92,7 @@ image.GestureRecognizers.Add(tapGestureRecognizer);
 </Image>
 ```
 
-このビューのモデルの完全なコードは、このサンプルで確認できます。 関連する`Command`実装の詳細を以下に示します。
+このサンプルでは、このビュー モデルの完全なコードを確認できます。 関連する`Command`実装の詳細を以下に示します。
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged
@@ -116,11 +116,11 @@ public class TapViewModel : INotifyPropertyChanged
 
 ## <a name="summary"></a>まとめ
 
-タップ ジェスチャがタップ検出に使用され、使用して実装されて、 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)クラスです。 タップ数をダブルタップを認識するように指定することができます (またはトリプル タップ以上がタップ) の動作です。
+タップ ジェスチャがタップ検出が使用され、使用して実装されます、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)クラス。 ダブルタップを認識するタップ数を指定することができます (またはトリプル タップ、または複数をタップ) 動作します。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [TapGesture (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [TapGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [TapGestureRecognizer](xref:Xamarin.Forms.TapGestureRecognizer)

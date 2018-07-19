@@ -1,52 +1,52 @@
 ---
-title: Xamarin.iOS で OBJECTIVE-C セレクター
-description: このドキュメントでは、c# から OBJECTIVE-C セレクターと対話する方法について説明します。 これには、セレクターとその際に考慮する必要があります、技術的な考慮事項を起動する方法について説明します。
+title: Xamarin.iOS での OBJECTIVE-C セレクター
+description: このドキュメントでは、c# から OBJECTIVE-C セレクターと対話する方法について説明します。 これには、セレクターとその際に考慮する必要がありますが、技術的な考慮事項を呼び出す方法について説明します。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25276851879ba828361d3236cbf7896cf748588c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d8708e518e967083bcfb95c88f8c20fddbb44b53
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787043"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998795"
 ---
-# <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS で OBJECTIVE-C セレクター
+# <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS での OBJECTIVE-C セレクター
 
-Objective C の言語がに基づいて*セレクター*です。 セレクターがオブジェクトに送信できるメッセージまたは*クラス*です。 [Xamarin.iOS](~/ios/internals/api-design/index.md)マップがインスタンス化するインスタンス メソッド、セレクターとクラスの静的メソッド セレクター。
+Objective C の言語がに基づいて*セレクター*します。 セレクターがオブジェクトに送信できるメッセージまたは*クラス*します。 [Xamarin.iOS](~/ios/internals/api-design/index.md)マップのインスタンス、インスタンス メソッドへのセレクターおよびクラスの静的メソッドへのセレクター。
 
-標準 C 関数とは異なり、C++ メンバー関数と同様に) 直接呼び出すことができませんセレクターを使用して、 [P/invoke](http://www.mono-project.com/docs/advanced/pinvoke/)です。
-(*確保*: 理論的には、C++ メンバー関数の非仮想、P/invoke を使用する可能性がありますより無視ペインの世界である名前のマングル コンパイラごと、について心配する必要があります)。セレクターが代わりに、OBJECTIVE-C クラスに送信されるか、インスタンスを使用して、 [ `objc_msgSend`関数](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend)です。
+通常の C 関数とは異なり、C++ メンバー関数と同様に) 呼び出すことができません直接セレクターを使用して、 [P/invoke](http://www.mono-project.com/docs/advanced/pinvoke/)します。
+(*確保*: 理論上は、非仮想の C++ メンバー関数の P/invoke を使用できますより無視痛みの世界はコンパイラごと名前マングル、について心配する必要があります)。代わりに、セレクターは、OBJECTIVE-C のクラスに送信されるか、インスタンスを使用して、 [ `objc_msgSend`関数](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend)します。
 
-検索することがあります[Objective C のメッセージングに役立つこのガイド](http://developer.apple.com/iphone/library/documentation/cocoa/conceptual/ObjCRuntimeGuide/Articles/ocrtHowMessagingWorks.html)に便利です。
+わかります[Objective C のメッセージングについて、この便利なガイド](http://developer.apple.com/iphone/library/documentation/cocoa/conceptual/ObjCRuntimeGuide/Articles/ocrtHowMessagingWorks.html)に便利です。
 
 <a name="Example" />
 
 ## <a name="example"></a>例
 
-呼び出し先とすると、 [-[NSString sizeWithFont:forWidth:lineBreakMode:]](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:)セレクター。
-(Apple のドキュメント) から、宣言は次のとおりです。
+起動すると、 [-[NSString sizeWithFont:forWidth:lineBreakMode:]](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:)セレクター。
+(Apple のドキュメント) から宣言です。
 
 ```csharp
 - (CGSize)sizeWithFont:(UIFont *)font forWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
 ```
 
--  戻り値の型は*CGSize* Unified api です。
--  *フォント*パラメーターは、 [UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) (型 () から間接的に派生と[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) ) にマップされてしたがって[System.IntPtr](https://developer.xamarin.com/api/type/System.IntPtr/)です。
--  *幅*、パラメーター、 *CGFloat*にマップされて*nfloat*です。
--  *LineBreakMode* 、パラメーター、 *UILineBreakMode* 、として Xamarin.iOS に既にバインドされて、 [UILineBreakMode 列挙](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/)です。
+-  戻り値の型は*CGSize* Unified api。
+-  *フォント*パラメーターが、 [UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) (型が (直接) から派生しない[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) ) にマップされますので、 [System.IntPtr](xref:System.IntPtr)します。
+-  *幅*パラメーター、 *CGFloat*にマップされて*nfloat*します。
+-  *LineBreakMode*パラメーター、 *UILineBreakMode* 、として Xamarin.iOS で既にバインドされて、 [UILineBreakMode 列挙](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/)します。
 
 
-すべてをまとめるとに一致する objc_msgSend 宣言します。
+すべてをまとめた、配置し、一致する objc_msgSend 宣言します。
 
 ```csharp
 CGSize objc_msgSend(IntPtr target, IntPtr selector,
     IntPtr font, nfloat width, UILineBreakMode mode);
 ```
 
-宣言する必要があります。
+変数を宣言する必要があります。
 
 ```csharp
 [DllImport (Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend")]
@@ -57,7 +57,7 @@ static extern CGSize cgsize_objc_msgSend_IntPtr_float_int (
     UILineBreakMode mode);
 ```
 
-宣言されると、適切なパラメーターを作成したら呼び出すことができます。
+宣言されると、適切なパラメーターを取得したら呼び出すことができます。
 
 ```csharp
 NSString      target = ...
@@ -73,7 +73,7 @@ CGSize size = cgsize_objc_msgSend_IntPtr_float_int(
     mode);
 ```
 
-返された値がサイズが 8 バイト未満となった構造体をされていた (旧バージョンと同様に`SizeF`Unified Api に切り替える前に使用)、上記のコードはデバイスでクラッシュしたが、シミュレーターで実行がします。 サイズは、その結果 8 ビット未満の値を返すセレクターを呼び出すために*も*を宣言する必要があります、`objc_msgSend_stret()`関数。
+返される値は、サイズが 8 バイト未満であった構造体をされていた (などの古い`SizeF`Unified Api に切り替える前に使用)、デバイスでクラッシュしたが、シミュレーターで実行は、上記のコード。 サイズは、その結果 8 ビット未満の値を返すセレクターを呼び出すために*も*を宣言する必要があります、`objc_msgSend_stret()`関数。
 
 ```csharp
 [DllImport (MonoTouch.Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend_stret")]
@@ -116,7 +116,7 @@ else
 
 ## <a name="invoking-a-selector"></a>セレクターの起動
 
-セレクターを呼び出すには、3 つの手順があります。
+セレクターを呼び出すと、3 つの手順があります。
 
 1.  選択対象を取得します。
 1.  セレクターの名前を取得します。
@@ -127,47 +127,47 @@ else
 
 ### <a name="selector-targets"></a>セレクターのターゲット
 
-セレクター ターゲットとは、オブジェクトのインスタンスまたは OBJECTIVE-C クラスのいずれかです。 ときに、ターゲット インスタンスは、バインド Xamarin.iOS 型から使用して、 [ObjCRuntime.INativeObject.Handle](https://developer.xamarin.com/api/property/ObjCRuntime.INativeObject.Handle/)プロパティです。
+セレクターをターゲットとは、オブジェクトのインスタンスまたは OBJECTIVE-C クラスのいずれかです。 ターゲットがインスタンスであり、バインドされた Xamarin.iOS 型の取得元である場合は、使用、 [ObjCRuntime.INativeObject.Handle](https://developer.xamarin.com/api/property/ObjCRuntime.INativeObject.Handle/)プロパティ。
 
-ターゲットが、クラスの場合を使用して[ObjCRuntime.Class](https://developer.xamarin.com/api/type/ObjCRuntime.Class/) 、クラスのインスタンスへの参照を取得するを使用し、 [Class.Handle](https://developer.xamarin.com/api/property/ObjCRuntime.Class.Handle/)プロパティです。
+ターゲットが、クラスの場合を使用して、 [ObjCRuntime.Class](https://developer.xamarin.com/api/type/ObjCRuntime.Class/)クラスのインスタンスへの参照を取得するを使用し、 [Class.Handle](https://developer.xamarin.com/api/property/ObjCRuntime.Class.Handle/)プロパティ。
 
 
 <a name="Selector_Names" />
 
-### <a name="selector-names"></a>セレクターの名前
+### <a name="selector-names"></a>セレクター名
 
-セレクターの名前は、Apple のドキュメントに記載されています。 たとえば、 [UIKit NSString 拡張メソッド](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html)含める[sizeWithFont:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:)と[sizeWithFont:forWidth:lineBreakMode:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:)です。 埋め込みおよび後続のコロンが重要であり、セレクターの名前の一部であります。
+セレクター名は、Apple のドキュメント内で一覧表示されます。 たとえば、 [UIKit NSString 拡張メソッド](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html)含める[sizeWithFont:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:)と[sizeWithFont:forWidth:lineBreakMode:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:)します。 埋め込みおよび末尾のコロンは重要ですとセレクターの名前の一部であります。
 
-セレクターの名前を作成したら、作成、 [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)のインスタンス。
+セレクターの名前を使用すると、作成できます、 [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)のインスタンス。
 
 
 <a name="Calling_objc_msgSend()" />
 
-### <a name="calling-objcmsgsend"></a>通話 objc_msgSend()
+### <a name="calling-objcmsgsend"></a>Objc_msgSend() を呼び出す
 
- `objc_msgSend()` メッセージを送信する (セレクター) オブジェクトを使用します。 このファミリの関数は、少なくとも 2 つの必要な引数を受け取り: セレクター ターゲット (インスタンスまたは処理クラス)、自体、セレクターとし、特定のセレクターの必要な引数。 インスタンスとセレクターの引数にする必要があります`System.IntPtr`、残りのすべての引数は、セレクターが必要ですが、例: 型を一致させる必要があります、`nint`の`int`、または`System.IntPtr`すべて`NSObject`-派生型です。 使用して、 [NSObject.Handle](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)を取得するプロパティ、 `IntPtr` Objective C 型のインスタンスにします。
+ `objc_msgSend()` オブジェクトへのメッセージ (セレクター) の送信に使用されます。 このファミリの関数は、少なくとも 2 つの必要な引数を受け取ります。 セレクターのターゲット (インスタンスまたはクラスの処理)、自体、セレクターとし、特定のセレクターに必要な引数。 インスタンスとセレクター引数には、 `System.IntPtr`、し、残りのすべての引数は、セレクターが必要ですが、例: 型と一致する必要があります、`nint`の`int`、または`System.IntPtr`すべて`NSObject`-派生型。 使用して、 [NSObject.Handle](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)プロパティを取得する、`IntPtr`の Objective C 型のインスタンス。
 
-残念ながら、複数の 1 つある`objc_msgSend()`関数。
+残念ながらは 1 つ以上`objc_msgSend()`関数。
 
-使用して[ `objc_msgSend_stret()` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret)構造体を返すことがセレクター用です。
-「興味深い」、ARM 上このやすくするためにすべての戻り型が含まれますが*いない*列挙体、または C の組み込み型 (char、short、int、long、float、double) のいずれか。 X86 (シミュレーター) では、すべての構造体のサイズが 8 バイトより大きいために使用するこの必要があります。 (CGSize----上記の例で使用される 8 バイト、厳密には、使用していないため`objc_msgSend_stret()`シミュレーター)。
+使用[ `objc_msgSend_stret()` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret)セレクター構造体を返します。
+"興味のあること"ARM でこれにはすべて戻り値の型が含まれています。*いない*列挙体、または C の組み込み型 (char、short、int、long、float、double) のいずれか。 On x86 (シミュレーター) では、すべての構造体のサイズが 8 バイトより大きいために使用するこの必要があります。 (CGSize----上記の例では使用が 8 バイトを正確があり、したがって使用しない`objc_msgSend_stret()`シミュレーター)。
 
-使用して[ `objc_msgSend_fpret()` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_fpret)浮動を返すセレクターは、x86 のみに値をポイントします。 この関数は、ARM; で使用する必要はありません。代わりに、`objc_msgSend()`です。
+使用[ `objc_msgSend_fpret()` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_fpret)浮動を返すセレクターは、x86 のみに値をポイントします。 この関数は、ARM; で使用する必要はありません。代わりに、`objc_msgSend()`します。
 
-メイン[objc_msgSend()](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend)関数は他のすべてのセレクターを使用します。
+メイン[objc_msgSend()](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend)関数は、他のすべてのセレクターを使用します。
 
-これが決まったら、`objc_msgSend()`関数を呼び出す必要があります (および、1 つ以上、シミュレーターおよびデバイスの例があります)、通常を使用することができます[ `[DllImport]` ](https://developer.xamarin.com/api/type/System.Runtime.InteropServices.DllImportAttribute/)以降の呼び出しに関数を宣言するメソッド。
+決まったら、`objc_msgSend()`関数を呼び出す必要があります (および、1 つ以上、シミュレーターやデバイス用などがあります)、通常を使用することができます[ `[DllImport]` ](xref:System.Runtime.InteropServices.DllImportAttribute)メソッドの後に呼び出す関数を宣言します。
 
-一連の事前に作成された`objc_msgSend()`宣言は含まれて[ `ObjCRuntime.Messaging`](https://developer.xamarin.com/api/type/ObjCRuntime.Messaging/)です。
+一連の事前に作成された`objc_msgSend()`で見つかる宣言[ `ObjCRuntime.Messaging`](https://developer.xamarin.com/api/type/ObjCRuntime.Messaging/)します。
 
 
 <a name="ugly" />
 
 ## <a name="the-ugly"></a>悪い
 
-Objective C が次の 3 種類の`objc_msgSend`メソッド: を浮動小数点値 (x86 のみ) を返すための呼び出しとの呼び出しで構造体の値を返す正規の呼び出しに 1 つです。 後者にサフィックスを含む`_stret`で`ObjCRuntime.Messaging`です。
+Objective C が 3 種類の`objc_msgSend`メソッド: 通常の呼び出し、浮動小数点値 (x86 のみ) を返す呼び出しおよび構造体の値を返す呼び出しのいずれか。 後者の場合、サフィックスを含む`_stret`で`ObjCRuntime.Messaging`します。
 
-特定の構造 (ルールは、次に示す) を返すメソッドを呼び出す場合は、次のように、out 値として最初のパラメーターとして、戻り値を持つメソッドを呼び出す必要があります。
+特定の構造 (ルールは、以下の説明) を返すメソッドを呼び出す場合は、次のように、out 値として最初のパラメーターとして戻り値を持つメソッドを呼び出す必要があります。
 
 ```csharp
 // The following returns a PointF structure:
@@ -175,7 +175,7 @@ PointF ret;
 Messaging.PointF_objc_msgSend_stret_PointF_IntPtr (out ret, this.Handle, selConvertPointFromWindow.Handle, point, window.Handle);
 ```
 
-点はここでわかりにくくなるため、使用する必要がある場合のルール_stret_が異なる X86 と ARM では、する場合は、バインド、シミュレーターと、デバイスの両方で動作する必要がありますを次のようなコードを追加します。
+処理はここでわかりにくくなるため、使用する必要がある場合のルール_stret_は異なる X86 と ARM では、する場合は、バインディングが、シミュレーターと、デバイスの両方で動作する必要がありますを次のようなコードを追加します。
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE){
@@ -188,16 +188,16 @@ if (Runtime.Arch == Arch.DEVICE){
     return Messaging.PointF_objc_msgSend_PointF_IntPtr (myHandle, selector.Handle);
 ```
 
-### <a name="using-the-objcmsgsendstret-method"></a>使用して、objc\_msgSend\_stret メソッド
+### <a name="using-the-objcmsgsendstret-method"></a>Objc を使用して\_msgSend\_stret メソッド
 
-ルールを使用する場合、 [ `objc_msgSend_stret` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret)の次のように、 **ARM**:
+ルールを使用する場合、 [ `objc_msgSend_stret` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret)のこのような**ARM**:
 
 -  値の列挙型または列挙型の基本型のいずれかではない型 (int, byte、short、long、double、float)。
 
 
-ルールを使用する場合、 [ `objc_msgSend_stret` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret)の次のように、 **X86**:
+ルールを使用する場合、 [ `objc_msgSend_stret` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret)のこのような**X86**:
 
--  値の列挙型、または列挙型の基本型のいずれかではない型 (int, byte、short、long、double、float) ネイティブ サイズが 8 バイトを超えるとします。
+-  値の列挙体、または列挙型の基本型のいずれかではない型 (int, byte、short、long、double、float) ネイティブ サイズが 8 バイトを超えるとします。
 
 
 ### <a name="creating-your-own-signatures"></a>独自の署名を作成します。

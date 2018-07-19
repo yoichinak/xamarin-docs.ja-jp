@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30773632"
 ---
 # <a name="material-design-features"></a>素材のデザイン機能
 
@@ -290,7 +291,7 @@ Xamarin.Android デザイナーには、材料、設計に準拠しないレイ�
 -----
 
 
-色リソースが変更されたときにメッセージがポップアップ表示されたメッセージを*、現在のテーマの変更が保存されて*:
+色リソースが変更されたときにメッセージがポップアップ表示されたメッセージを *、現在のテーマの変更が保存されて*:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

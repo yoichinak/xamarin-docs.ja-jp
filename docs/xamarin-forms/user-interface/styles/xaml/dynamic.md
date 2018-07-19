@@ -1,26 +1,26 @@
 ---
-title: Xamarin.Forms で動的なスタイル
-description: この記事では、動的なリソースを使用して、Xamarin.Forms アプリケーションを実行時に動的にスタイルの変更に応答できる方法について説明します。
+title: Xamarin.Forms での動的なスタイル
+description: この記事では、動的リソースを使用して、Xamarin.Forms アプリケーションを実行時に動的にスタイルの変更に応答できる方法について説明します。
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0f82e0cfde29921ea768000f17b93d04f8ad307e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cedf9e3daed9a2d5f8bfa0962bf66510748b592a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245222"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997147"
 ---
-# <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms で動的なスタイル
+# <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms での動的なスタイル
 
-_せずスタイルにプロパティの変更に応答して、アプリケーションの実行中は変更されません。たとえば、視覚的要素を 1 つの set アクセス操作子インスタンスが変更された場合、削除、または追加された新しい set アクセス操作子インスタンスに割り当てると、スタイル、変更は視覚要素に適用されません。ただし、アプリケーションは、動的なリソースを使用して、実行時に動的にスタイルの変更に応答できます。_
+_スタイルはないプロパティの変更に応答し、アプリケーションの実行中は変更されません。たとえば、スタイル ビジュアル要素、1 つの set アクセス操作子インスタンスが変更された場合、削除、または追加された新しい set アクセス操作子インスタンスに割り当てると、変更は視覚要素に適用されません。ただし、アプリケーションは、動的リソースを使用して実行時に動的にスタイルの変更に応答することができます。_
 
-`DynamicResource`マークアップ拡張機能がに似ていますが、`StaticResource`から値をフェッチする辞書のキーを使用して両方のマークアップ拡張機能、 [ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)です。 ただし、while、 `StaticResource` 1 つのディクショナリの参照を実行、`DynamicResource`ディクショナリ キーへのリンクを維持します。 そのため、キーに関連付けられているディクショナリ エントリが置き換えられた場合、変更が視覚要素に適用されます。 これにより、アプリケーションで実行するランタイムのスタイル変更できます。
+`DynamicResource`マークアップ拡張機能に似ています、`StaticResource`から値をフェッチする辞書のキーを使用して両方のマークアップ拡張機能、 [ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。 ただし、中に、`StaticResource`は 1 つのディクショナリ参照を実行、`DynamicResource`ディクショナリ キーへのリンクを保持します。 そのため、キーに関連付けられているディクショナリ エントリが置き換えられている場合、変更は、ビジュアル要素に適用されます。 これにより、アプリケーションで作成するランタイム スタイルの変更ができます。
 
-次のコード例を示します*動的*XAML ページのスタイル。
+次のコード例に示します*動的*XAML ページのスタイル。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" Icon="xaml.png">
@@ -51,9 +51,9 @@ _せずスタイルにプロパティの変更に応答して、アプリケー�
 </ContentPage>
 ```
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)インスタンスを使用して、`DynamicResource`を参照するマークアップ拡張機能、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)という名前`searchBarStyle`、これが、XAML で定義されていません。 ただし、ため、 [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)のプロパティ、`SearchBar`インスタンスを使用して設定されて、 `DynamicResource`、不足しているディクショナリのキーが返されないと例外がスローされます。
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、`DynamicResource`を参照するマークアップ拡張機能、 [ `Style` ](xref:Xamarin.Forms.Style)という`searchBarStyle`、XAML で定義されていません。 ただし、ため、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)のプロパティ、`SearchBar`を使用してインスタンスが設定されて、 `DynamicResource`、ディクショナリ キーがないことはない例外がスローされます。
 
-代わりに、分離コード ファイルで、コンス トラクターを作成、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)キーを持つエントリ`searchBarStyle`の次のコード例に示すようにします。
+代わりに、分離コード ファイルでコンス トラクターは、作成、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`次のコード例のように。
 
 ```csharp
 public partial class DynamicStylesPage : ContentPage
@@ -79,12 +79,12 @@ public partial class DynamicStylesPage : ContentPage
 }
 ```
 
-ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`切り替えることは`blueSearchBarStyle`と`greenSearchBarStyle`です。 これは、結果、次のスクリーン ショットに示すように表示されます。
+ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 次のスクリーン ショットに示すように外観が発生します。
 
-[![](dynamic-images/dynamic-style-blue.png "青の動的スタイル例")](dynamic-images/dynamic-style-blue-large.png#lightbox "青の動的なスタイルの使用例")
-[![](dynamic-images/dynamic-style-green.png "緑色の動的スタイル例")](dynamic-images/dynamic-style-green-large.png#lightbox "緑色の動的なスタイルの例")
+[![](dynamic-images/dynamic-style-blue.png "動的なスタイルの例の青")](dynamic-images/dynamic-style-blue-large.png#lightbox "動的スタイルの例を青")
+[![](dynamic-images/dynamic-style-green.png "緑の動的なスタイルの使用例")](dynamic-images/dynamic-style-green-large.png#lightbox "緑の動的なスタイルの例")
 
-次のコード例では、C# の場合と同じページを示しています。
+次のコード例では、c# で最初のページを示しています。
 
 ```csharp
 public class DynamicStylesPageCS : ContentPage
@@ -120,15 +120,15 @@ public class DynamicStylesPageCS : ContentPage
 }
 ```
 
-C# で、 [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)インスタンスを使用して、 [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/)メソッドを参照する`searchBarStyle`です。 `OnButtonClicked`イベント ハンドラーのコードは XAML の例と、実行時に同じ`searchBarStyle`切り替えることは`blueSearchBarStyle`と`greenSearchBarStyle`です。
+C# で、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)参照メソッドを`searchBarStyle`します。 `OnButtonClicked`イベント ハンドラーのコードは、XAML の例では、および実行すると、同じです。`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。
 
 <a name="dynamic-style-inheritance">
 
 ## <a name="dynamic-style-inheritance"></a>動的なスタイルの継承
 
-動的なスタイルのスタイルを派生することを使用して、 [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/)プロパティです。 代わりに、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)クラスが含まれています、 [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/)値を持つにディクショナリのキーを設定できるプロパティを動的に変更があります。
+動的なスタイルのスタイルを派生することを実現できないを使用して、 [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)プロパティ。 代わりに、 [ `Style` ](xref:Xamarin.Forms.Style)クラスが含まれています、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)値を持つにディクショナリのキーに設定できるプロパティを動的に変更可能性があります。
 
-次のコード例を示します*動的*XAML ページのスタイルを継承します。
+次のコード例に示します*動的*XAML ページで継承をスタイル設定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" Icon="xaml.png">
@@ -158,14 +158,14 @@ C# で、 [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.S
 </ContentPage>
 ```
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)インスタンスを使用して、`StaticResource`を参照するマークアップ拡張機能、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)という`tealSearchBarStyle`です。 これは、`Style`追加のプロパティを設定し、使用して、 [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/)プロパティ参照を`searchBarStyle`です。 `DynamicResource`マークアップ拡張機能は必要ありませんので`tealSearchBarStyle`変更されませんが、を除き、`Style`から派生します。 したがって、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、`StaticResource`を参照するマークアップ拡張機能、 [ `Style` ](xref:Xamarin.Forms.Style)という`tealSearchBarStyle`します。 これは、`Style`いくつか追加のプロパティを設定しを使用して、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティ参照を`searchBarStyle`します。 `DynamicResource`マークアップ拡張機能は必要ありませんので`tealSearchBarStyle`は変更されませんを除き、`Style`から派生します。 そのため、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
 
-分離コード ファイルでは、コンス トラクターを作成、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)キーを持つエントリ`searchBarStyle`、動的なスタイルを例示されている前の例としてごとです。 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`切り替えることは`blueSearchBarStyle`と`greenSearchBarStyle`です。 これは、結果、次のスクリーン ショットに示すように表示されます。
+コンス トラクターを作成、分離コード ファイルで、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`、動的なスタイルを示す前の例のようです。 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 次のスクリーン ショットに示すように外観が発生します。
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "青の動的なスタイルの継承の例")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "動的スタイルの継承の例の青")
-[![](dynamic-images/dynamic-style-inheritance-green.png "緑色の動的なスタイル継承の例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "緑色の動的なスタイルの継承の例")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "動的なスタイル継承の例の青")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "動的スタイル継承の例の青")
+[![](dynamic-images/dynamic-style-inheritance-green.png "緑の動的なスタイル継承の例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "緑の動的なスタイル継承の例")
 
-次のコード例では、C# の場合と同じページを示しています。
+次のコード例では、c# で最初のページを示しています。
 
 ```csharp
 public class DynamicStylesInheritancePageCS : ContentPage
@@ -205,11 +205,11 @@ public class DynamicStylesInheritancePageCS : ContentPage
 }
 ```
 
-`tealSearchBarStyle`に直接割り当ては、 [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)のプロパティ、 [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)インスタンス。 これは、`Style`いくつか追加のプロパティを設定し、使用して、 [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/)プロパティ参照を`searchBarStyle`です。 [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/)メソッドは必要ありませんここため`tealSearchBarStyle`変更されませんが、を除き、`Style`から派生します。 したがって、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
+`tealSearchBarStyle`に直接割り当てられている、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)のプロパティ、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンス。 これは、`Style`いくつか追加のプロパティを設定しを使用して、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティ参照を`searchBarStyle`します。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)メソッドは必要ありませんここため`tealSearchBarStyle`は変更されませんを除き、`Style`から派生します。 そのため、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
 
 ## <a name="summary"></a>まとめ
 
-せずスタイルにプロパティの変更に応答して、アプリケーションの実行中は変更されません。 ただし、アプリケーションは、動的なリソースを使用して、実行時に動的にスタイルの変更に応答できます。 さらに、*動的*のスタイルから派生することができます、 [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/)プロパティです。
+スタイルはないプロパティの変更に応答し、アプリケーションの実行中は変更されません。 ただし、アプリケーションは、動的リソースを使用して実行時に動的にスタイルの変更に応答することができます。 さらに、*動的*でスタイルから派生できる、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティ。
 
 
 
@@ -218,6 +218,6 @@ public class DynamicStylesInheritancePageCS : ContentPage
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [動的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [スタイル](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Set アクセス操作子](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [スタイル](xref:Xamarin.Forms.Style)
+- [Set アクセス操作子](xref:Xamarin.Forms.Setter)

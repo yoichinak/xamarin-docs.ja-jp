@@ -1,5 +1,5 @@
 ---
-title: デバイスの方向を確認しています
+title: デバイスの向きの確認
 description: この記事では、Xamarin.Forms DependencyService クラスを使用して共有コードからデバイスの向きにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5F60975F-47DB-4361-B97C-2290D6F77D2F
@@ -7,29 +7,29 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: e21531b7f39d3876d91eea8fa6cb9e409a9deffa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 620404a217b2e8a31192ae6613dcec023ac366cd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240057"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995642"
 ---
-# <a name="checking-device-orientation"></a>デバイスの方向を確認しています
+# <a name="checking-device-orientation"></a>デバイスの向きの確認
 
-この記事を使用する方法は[ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/)を各プラットフォームでネイティブの Api を使用して共有コードから、デバイスの方向を確認します。 このチュートリアルは、既存の基づいて`DeviceOrientation`アリ Özgür によるプラグインします。 参照してください、 [GitHub リポジトリの](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
+この記事では使用することに送り[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)を各プラットフォームでネイティブ Api を使用して共有コードから、デバイスの方向を確認します。 このチュートリアルは、既存に基づいて`DeviceOrientation`Ali Özgür をプラグインします。 参照してください、 [GitHub リポジトリ](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
 
-- **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;を理解するインターフェイスに方法は共有コードで作成します。
-- **[iOS 実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[Android 実装](#Android_Implementation)** &ndash; for Android のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[UWP 実装](#WindowsImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法を学習`DependencyService`に共有コードからネイティブの実装を呼び出します。
+- **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;を理解する方法、インターフェイスに共有コードに作成されます。
+- **[iOS 実装](#iOS_Implementation)** &ndash; iOS のネイティブ コードにインターフェイスを実装する方法について説明します。
+- **[Android の実装](#Android_Implementation)** &ndash; Android のネイティブ コードでインターフェイスを実装する方法について説明します。
+- **[UWP 実装](#WindowsImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードでインターフェイスを実装する方法について説明します。
+- **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法について説明します`DependencyService`共有コードからネイティブの実装を呼び出す。
 
-アプリケーションを使用して、`DependencyService`次のような構造になります。
+アプリケーションを使用して、`DependencyService`次の構造になります。
 
 ![](device-orientation-images/orientation-diagram.png "DependencyService アプリケーション構造")
 
 > [!NOTE]
-> 示されているようにするかどうか、デバイスが縦または横方向に共有コードを検出するために可能であればでの [デバイス Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation)。 この記事で説明した方法では、ネイティブの機能を使用して、詳細については、デバイスが上下逆にかどうかなどの向きを取得します。
+> 説明するようデバイスの共有コードは、縦または横方向があるかどうかを検出することがでの [デバイス Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation)。 この記事で説明されているメソッドでは、向き、デバイスが上下かどうかなどの詳細を取得するのにネイティブ機能を使用します。
 
 <a name="Creating_the_Interface" />
 
@@ -54,16 +54,16 @@ namespace DependencyServiceSample.Abstractions
 }
 ```
 
-共有コードでは、このインターフェイスに対するコーディングすると、各プラットフォームでデバイスの向き Api にアクセスする Xamarin.Forms アプリが許可されます。
+共有コードでは、このインターフェイスに対するコーディングで、各プラットフォームでデバイスの向きの Api にアクセスする Xamarin.Forms アプリを許可します。
 
 > [!NOTE]
-> インターフェイスを実装するクラスを使用するパラメーターなしのコンス トラクターを持つ必要があります、`DependencyService`です。
+> インターフェイスを実装するクラスには、パラメーターなしのコンス トラクターを使用する必要があります、`DependencyService`します。
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS の実装
 
-各プラットフォームに固有のアプリケーション プロジェクトでこのインターフェイスを実装する必要があります。 クラスが、パラメーターなしのコンス トラクターを持つことに注意してくださいできるように、`DependencyService`新しいインスタンスを作成できます。
+各プラットフォームに固有のアプリケーション プロジェクトでインターフェイスを実装する必要があります。 クラスは、パラメーターなしのコンス トラクターように、`DependencyService`新しいインスタンスを作成できます。
 
 ```csharp
 using UIKit;
@@ -87,7 +87,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-最後に、この追加`[assembly]`など必要な属性のクラス上 (および定義されている任意の名前空間の外部)、`using`ステートメント。
+最後に、この追加`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
 
 ```csharp
 using UIKit;
@@ -105,7 +105,7 @@ namespace DependencyServiceSample.iOS {
 
 ## <a name="android-implementation"></a>Android の実装
 
-次のコードを実装して`IDeviceOrientation`Android で。
+次のコードで実装`IDeviceOrientation`Android で。
 
 ```csharp
 using DependencyServiceSample.Droid;
@@ -131,7 +131,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-この追加`[assembly]`など必要な属性のクラス上 (および定義されている任意の名前空間の外部)、`using`ステートメント。
+この追加`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
 
 ```csharp
 using DependencyServiceSample.Droid; //enables registration outside of namespace
@@ -148,7 +148,7 @@ namespace DependencyServiceSample.Droid {
 
 ## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームの実装
 
-次のコードを実装して、`IDeviceOrientation`ユニバーサル Windows プラットフォーム上のインターフェイス。
+次のコードの実装、`IDeviceOrientation`ユニバーサル Windows プラットフォーム上のインターフェイス。
 
 ```csharp
 namespace DependencyServiceSample.WindowsPhone
@@ -171,7 +171,7 @@ namespace DependencyServiceSample.WindowsPhone
 }
 ```
 
-追加、`[assembly]`など必要な属性のクラス上 (および定義されている任意の名前空間の外部)、`using`ステートメント。
+追加、`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
 
 ```csharp
 using DependencyServiceSample.WindowsPhone; //enables registration outside of namespace
@@ -187,7 +187,7 @@ namespace DependencyServiceSample.WindowsPhone {
 
 ## <a name="implementing-in-shared-code"></a>共有コードで実装します。
 
-お記述して共有にアクセスするコードをテストできるようになりました、`IDeviceOrientation`インターフェイスです。 この単純なページには、デバイスの向きに基づく独自のテキストを更新するボタンが含まれています。 使用して、`DependencyService`のインスタンスを取得する、`IDeviceOrientation`インターフェイス&ndash;実行時にこのインスタンスになりますが、ネイティブの SDK へのフル アクセス プラットフォームに固有の実装。
+記述し、アクセスする共有コードをテストするので、`IDeviceOrientation`インターフェイス。 この単純なページには、デバイスの向きに基づいて、独自のテキストを更新するボタンが含まれています。 使用して、`DependencyService`のインスタンスを取得する、`IDeviceOrientation`インターフェイス&ndash;実行時にこのインスタンスは、ネイティブ SDK へのフル アクセスのあるプラットフォーム固有の実装になります。
 
 ```csharp
 public MainPage ()
@@ -215,7 +215,7 @@ public MainPage ()
 }
 ```
 
-IOS、Android、または Windows プラットフォームにこのアプリケーションを実行し、ボタンを押すが、デバイスの向きを使用する更新ボタンのテキスト。
+IOS、Android、または Windows プラットフォームでこのアプリケーションを実行し、ボタンを押すが、デバイスの向きを更新するボタンのテキスト。
 
 ![](device-orientation-images/orientation.png "デバイスの向きのサンプル")
 

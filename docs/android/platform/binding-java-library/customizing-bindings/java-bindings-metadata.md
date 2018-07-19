@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30771019"
 ---
 # <a name="java-bindings-metadata"></a>Java バインディング メタデータ
 
@@ -245,7 +246,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>難読化
 
-Java ライブラリを難読化ツール Xamarin.Android バインディング ジェネレーターと c# のラッパー クラスを生成するには、その機能に影響します。 難読化されたクラスの特性を含める: * クラス名が含まれています、 **$**、つまり**$.class** * クラス名が完全セキュリティが侵害の小文字、つまり**a.class**
+Java ライブラリを難読化ツール Xamarin.Android バインディング ジェネレーターと c# のラッパー クラスを生成するには、その機能に影響します。 難読化されたクラスの特性を含める: * クラス名が含まれています、 **$**、つまり **$.class** * クラス名が完全セキュリティが侵害の小文字、つまり**a.class**
 
 このスニペットは、C# の場合、「難読化されていない」型を生成する方法の例を示します。
 

@@ -1,6 +1,6 @@
 ﻿---
-title: 'Hello, iOS: 詳細説明'
-description: この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して基本的な Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について理解を深めます。 ガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順を紹介します。
+title: Hello, iOS – 詳細説明
+description: このドキュメントでは、"Hello, iOS" サンプル アプリケーションについて詳しく解説し、そのアーキテクチャ、ユーザー インターフェイス、コンテンツ ビュー階層、テスト、展開などを考察しています。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786401"
 ---
-# <a name="hello-ios-deep-dive"></a>Hello, iOS の詳細説明
+# <a name="hello-ios--deep-dive"></a>Hello, iOS – 詳細説明
 
 クイックスタート チュートリアルでは、基本的な Xamarin.iOS アプリケーションのビルドと実行について説明しました。 次は、より複雑なプログラムをビルドできるように、iOS アプリケーションの仕組みの理解を深めます。 このガイドでは、iOS アプリケーション開発の基本的な概念についての理解できるように、Hello, iOS チュートリアルの手順について説明します。
 
 この記事では、次のトピックについて説明します。
-
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -285,7 +285,7 @@ _コンテンツ ビュー階層_は、次の図に示すように、1 つのビ
 
 ![](hello-ios-deepdive-images/vs-image44.png "ビュー コントローラーを選択すると、プロパティ ウィンドウにそのプロパティが表示されます")
 
-このシーンによって表されるコンテンツビュー階層のカスタマのビュー コントローラー クラスは、**プロパティ ウィンドウ**の **[ID]** セクションで **[Class]** プロパティを編集することによって設定できます。 たとえば、弊社の **Phoneword** アプリケーションでは、下のスクリーンショットに示すように、最初の画面のビュー コントローラーとして `ViewController` を設定します。
+このシーンによって表されるコンテンツビュー階層のカスタマのビュー コントローラー クラスは、**プロパティ ウィンドウ**の **[ID]** セクションで **[Class]** プロパティを編集することによって設定できます。 たとえば、私たちの **Phoneword** アプリケーションでは、下のスクリーンショットに示すように、最初の画面のビュー コントローラーとして `ViewController` を設定します。
 
 ![](hello-ios-deepdive-images/vs-image45.png "Phoneword アプリケーションは、ビュー コントローラーとして ViewController を設定します")
 
@@ -344,7 +344,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Phoneword アプリでは、`TouchUpInside` というタッチ イベントを使用してユーザーのタッチを待ち受けるようにします。 `TouchUpInside` は、コントロールのボタン内でのタッチ ダウン (指が画面に触れる) に続くタッチ アップ イベント (指が画面から離れる) を待ち受けます。 `TouchUpInside` の逆は、ユーザーがコントロールを下に押したときに発生する `TouchDown` イベントです。 `TouchDown` イベントを使うと、多数のノイズを取り込んでしまう上に、ユーザーは指をスライドさせてコントロールから離してタッチをキャンセルするという選択肢がなくなります。 `TouchUpInside` は、**ボタン** タッチに応答するための最も一般的な方法であり、ユーザーがボタンを押すときに期待するエクスペリエンスを作成します。 これの詳細については、Apple の「[iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html)」(iOS ヒューマン インターフェイス ガイドライン) を参照してください。
+Phoneword アプリでは、`TouchUpInside` というタッチ イベントを使用してユーザーのタッチを待ち受けるようにします。 `TouchUpInside` は、コントロールのボタン内でのタッチ ダウン (指が画面に触れる) に続くタッチ アップ イベント (指が画面から離れる) を待ち受けます。 `TouchUpInside` の逆は、ユーザーがコントロールを下に押したときに発生する `TouchDown` イベントです。 `TouchDown` イベントを使うと、多数のノイズを取り込んでしまう上に、ユーザーは指をスライドさせてコントロールから離してタッチをキャンセルするという選択肢がなくなります。 `TouchUpInside` は、**ボタン** タッチに応答するための最も一般的の方法であり、ユーザーがボタンを押すときに予想するエクスペリエンスを作成します。 これの詳細については、Apple の「[iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html)」(iOS ヒューマン インターフェイス ガイドライン) を参照してください。
 
 このアプリでは、`TouchUpInside` イベントがラムダで処理されますが、デリゲートまたは名前付きイベント ハンドラーを使用することもできます。 最後のボタン コードは次のようになります。
 

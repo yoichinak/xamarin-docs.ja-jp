@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30773616"
 ---
 # <a name="lollipop-features"></a>ロリポップ機能
 
@@ -72,7 +73,7 @@ Android 5.0 プロジェクトを作成するには、最新のツールおよ�
    詳細については、Android SDK Manager を使用して、次を参照してください。 [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html)です。
 
 4. 新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android 開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md) Android プロジェクトの作成について学習します。 Android プロジェクトを作成する場合は、Android 5.0 バージョン設定を構成することを確認します。
-   Mac 用 Visual Studio に移動**プロジェクト オプション&gt;ビルド&gt;全般**設定と**ターゲット フレームワーク**に**Android 5.0 (ロリポップ)**またはあとで：
+   Mac 用 Visual Studio に移動**プロジェクト オプション&gt;ビルド&gt;全般**設定と**ターゲット フレームワーク**に**Android 5.0 (ロリポップ)** またはあとで：
 
     ![ターゲット Framwework を Android 5.0 ロリポップに設定します。](lollipop-images/target-framework.png)
 

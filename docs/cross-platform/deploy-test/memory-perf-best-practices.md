@@ -1,23 +1,21 @@
 ---
 title: クロスプラットフォームのパフォーマンス
-description: Xamarin プラットフォームでビルドされたアプリケーションのパフォーマンスを高めるための手法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。 この記事では、これらの方法について説明します。
+description: このドキュメントでは、モバイル アプリケーションのパフォーマンスを向上させるために使用できるさまざまな手法について説明します。 プロファイラー、IDisposable のリソース、弱い参照、SGen ガベージ コレクター、サイズ縮小の手法などを説明します。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997440"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
-_Xamarin プラットフォームでビルドされたアプリケーションのパフォーマンスを高めるための手法は多数あります。これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。この記事では、これらの方法について説明します。_
-
 低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
-
 
 <a name="profiler" />
 
@@ -40,7 +38,7 @@ Xamarin Profiler では、アプリケーションでのパラメーターに関
 `IDisposable` インターフェイスは、リソースを解放するためのメカニズムを提供します。 リソースを明示的に解放するために実装する必要がある `Dispose` メソッドを提供します。 `IDisposable` はデストラクターではありません。以下の状況でのみ実装する必要があります。
 
 - クラスがアンマネージ リソースを所有している場合。 インクルード ファイル、ストリーム、およびネットワーク接続の解放が必要な一般的なアンマネージ リソース。
-- クラスがマネージ `IDisposable` リソースを所有している場合。
+- クラスがマネージド `IDisposable` リソースを所有している場合。
 
 インスタンスが必要でなくなったときに、型コンシューマーは `IDisposable.Dispose` 実装を呼び出してリソースを解放できます。 これには、次の 2 つのアプローチがあります。
 
@@ -89,7 +87,7 @@ public void ReadText (string filename)
 
 `StreamReader` クラスは `IDisposable` を実装し、`finally` ブロックはリソースを解放するために `StreamReader.Dispose` メソッドを呼び出します。
 
-詳細については、[IDisposable インターフェイス](https://developer.xamarin.com/api/type/System.IDisposable/)に関するページを参照してください。
+詳細については、[IDisposable インターフェイス](xref:System.IDisposable)に関するページを参照してください。
 
 <a name="events" />
 
@@ -257,7 +255,7 @@ public class FaceDetection
 
 ## <a name="use-the-sgen-garbage-collector"></a>SGen ガベージ コレクターを使用する
 
-使用されなくなったオブジェクトに割り当てられているメモリを再利用するために、C# などのマネージ言語ではガーベジ コレクションが使用されます。 Xamarin プラットフォームで使用される 2 つのガベージ コレクターは次のとおりです。
+使用されなくなったオブジェクトに割り当てられているメモリを再利用するために、C# などのマネージド言語ではガーベジ コレクションが使用されます。 Xamarin プラットフォームで使用される 2 つのガベージ コレクターは次のとおりです。
 
 - [**SGen** ](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – これは世代別ガベージ コレクターであり、Xamarin のプラットフォームの既定のガベージ コレクターです。
 - [**Boehm** ](http://www.hboehm.info/gc/) – これは、保守的な、非世代別ガベージ コレクターです。 Classic API を使用する Xamarin.iOS アプリケーションで使用される既定のガベージ コレクターです。
@@ -333,7 +331,7 @@ SGen がガベージ コレクションを開始すると、メモリの再利�
 - リリース ビルドが生成されていることを確認します。
 - FAT バイナリが生成されないように、アプリケーションがビルドされるアーキテクチャの数を減らします。
 - より最適化された実行可能ファイルを生成するために、LLVM コンパイラが使用されていることを確認します。
-- アプリケーションのマネージ コード サイズを減らします。 これは、すべてのアセンブリでリンカーを有効にすることで行うことができます (iOS プロジェクトの場合は *[すべてリンク]*、Android プロジェクトの場合は *[すべてのアセンブリをリンクする]*)。
+- アプリケーションのマネージド コード サイズを減らします。 これは、すべてのアセンブリでリンカーを有効にすることで行うことができます (iOS プロジェクトの場合は *[すべてリンク]*、Android プロジェクトの場合は *[すべてのアセンブリをリンクする]*)。
 
 Android アプリは、ABI ("アーキテクチャ") ごとに別の APK に分割することもできます。
 詳細については、このブログの投稿「[How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)」 (Android アプリのサイズを小さくしておく方法) を参照してください。
@@ -381,5 +379,5 @@ Web サービスから取得されたデータはローカルでキャッシュ�
 - [Xamarin Profiler の概要](~/tools/profiler/index.md)
 - [Xamarin.Forms のパフォーマンス](~/xamarin-forms/deploy-test/performance.md)
 - [非同期サポートの概要](~/cross-platform/platform/async.md)
-- [IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
+- [IDisposable](xref:System.IDisposable)
 - [Xamarin アプリのよくある落とし穴の回避 (動画)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)

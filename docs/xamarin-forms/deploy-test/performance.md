@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: bcc265c4d8410bb1aa2305f8a137c96a63c60fae
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d7719f231a6d70594985a1158340104d68367ffe
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847720"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998616"
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms のパフォーマンス
 
@@ -59,7 +59,7 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 
 ## <a name="choose-the-correct-layout"></a>適切なレイアウトを選択する
 
-複数の子を表示できるが、子が 1 つしかないレイアウトは不経済です。 たとえば、次のコード例では、[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) と 1 つの子を確認できます。
+複数の子を表示できるが、子が 1 つしかないレイアウトは不経済です。 たとえば、次のコード例では、[`StackLayout`](xref:Xamarin.Forms.StackLayout) と 1 つの子を確認できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,7 +73,7 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 </ContentPage>
 ```
 
-これは無駄です。[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 要素は次のコード例のように削除してください。
+これは無駄です。[`StackLayout`](xref:Xamarin.Forms.StackLayout) 要素は次のコード例のように削除してください。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -85,7 +85,7 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 </ContentPage>
 ```
 
-また、他のレイアウトを組み合わせ、特定のレイアウトの外観を再現することはお控えください。不要なレイアウト計算が実行されます。 たとえば、[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) インスタンスを組み合わせ、[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) レイアウトを再現することはお止めください。 次のコード例は、この悪い行為の見本です。
+また、他のレイアウトを組み合わせ、特定のレイアウトの外観を再現することはお控えください。不要なレイアウト計算が実行されます。 たとえば、[`StackLayout`](xref:Xamarin.Forms.StackLayout) インスタンスを組み合わせ、[`Grid`](xref:Xamarin.Forms.Grid) レイアウトを再現することはお止めください。 次のコード例は、この悪い行為の見本です。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,7 +115,7 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 </ContentPage>
 ```
 
-不要なレイアウト計算が行われるため、不経済です。 代わりに、次のコード例のように、[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) を利用すれば望ましいレイアウトが作られます。
+不要なレイアウト計算が行われるため、不経済です。 代わりに、次のコード例のように、[`Grid`](xref:Xamarin.Forms.Grid) を利用すれば望ましいレイアウトが作られます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -163,7 +163,7 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 
 ## <a name="reduce-unnecessary-bindings"></a>不要なバインドを減らす
 
-簡単に静的に設定できるコンテンツにはバインドを利用しないでください。 バインドする必要のないデータをバインドすることには何の利点もありません。バインドはコスト効果が高くありません。 たとえば、`Button.Text = "Accept"` を設定すると、値 "Accept" で [`Button.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/) を ViewModel `string` プロパティにバインドするよりオーバーヘッドが少なくなります。
+簡単に静的に設定できるコンテンツにはバインドを利用しないでください。 バインドする必要のないデータをバインドすることには何の利点もありません。バインドはコスト効果が高くありません。 たとえば、`Button.Text = "Accept"` を設定すると、値 "Accept" で [`Button.Text`](xref:Xamarin.Forms.Button.Text) を ViewModel `string` プロパティにバインドするよりオーバーヘッドが少なくなります。
 
 <a name="optimizelayout" />
 
@@ -171,36 +171,36 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 
 Xamarin.Forms 2 では、最適化されたレイアウト エンジンが導入されました。これでレイアウト更新が変わります。 可能な限り最高のレイアウト パフォーマンスを得るために、次のガイドラインに従ってください。
 
-- [`Margin`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) プロパティ値を指定し、レイアウト階層の深さを減らし、ビューの重なりが少ないレイアウトを作成できます。 詳細については「[余白とスペース](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
-- [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) を使用するとき、[`Auto`](https://developer.xamarin.com/api/property/Xamarin.Forms.GridLength.Auto/) サイズに設定する行と列を可能な限り減らしてください。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させます。 可能であれば、固定サイズの行と列を使用してください。 あるいは、親のツリーがこのレイアウト ガイドラインに従うのであれば、[`GridUnitType.Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) 列挙値を利用し、ある比率の領域を占めるように行と列を設定します。
-- 必要でない限り、レイアウトの [`VerticalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) プロパティと [`HorizontalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) プロパティは設定しないでください。 既定値の [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) と [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/) でレイアウトの最適化が可能になります。 このプロパティの変更にはコストがあり、メモリを使います。既定値に設定した場合でも同じです。
-- 可能であれば、[`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) は使用しないでください。 CPU で相当な量の作業を実行しなければならなくなります。
-- [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) を使用するときは、可能な限り、[`AbsoluteLayout.AutoSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) プロパティを使用しないでください。
-- [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) を使用するときは、[`LayoutOptions.Expands`](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/) に設定する子を 1 つだけにしてください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
-- [`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) クラスのメソッドは呼び出さないでください。高くつくレイアウト計算が実行されることになります。 望ましいレイアウト動作は、[`TranslationX`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) プロパティと [`TranslationY`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) プロパティを設定することで得られる場合が多いです。 あるいは、[`Layout<View>`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) クラスをサブクラスにして望ましいレイアウト動作を得ます。
-- [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) インスタンスは不必要に更新しないでください。ラベルのサイズを変更すると、画面レイアウト全体が再計算されることがあります。
-- 必要でない限り、[`Label.VerticalTextAlignment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) プロパティは設定しないでください。
-- 可能であれば、[`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) インスタンスの [`LineBreakMode`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) を [`NoWrap`](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.NoWrap/) に設定してください。
+- [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティ値を指定し、レイアウト階層の深さを減らし、ビューの重なりが少ないレイアウトを作成できます。 詳細については「[余白とスペース](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
+- [`Grid`](xref:Xamarin.Forms.Grid) を使用するとき、[`Auto`](xref:Xamarin.Forms.GridLength.Auto) サイズに設定する行と列を可能な限り減らしてください。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させます。 可能であれば、固定サイズの行と列を使用してください。 あるいは、親のツリーがこのレイアウト ガイドラインに従うのであれば、[`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) 列挙値を利用し、ある比率の領域を占めるように行と列を設定します。
+- 必要でない限り、レイアウトの [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティと [`HorizontalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティは設定しないでください。 既定値の [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) と [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) でレイアウトの最適化が可能になります。 このプロパティの変更にはコストがあり、メモリを使います。既定値に設定した場合でも同じです。
+- 可能であれば、[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) は使用しないでください。 CPU で相当な量の作業を実行しなければならなくなります。
+- [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) を使用するときは、可能な限り、[`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) プロパティを使用しないでください。
+- [`StackLayout`](xref:Xamarin.Forms.StackLayout) を使用するときは、[`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) に設定する子を 1 つだけにしてください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
+- [`Layout`](xref:Xamarin.Forms.Layout) クラスのメソッドは呼び出さないでください。高くつくレイアウト計算が実行されることになります。 望ましいレイアウト動作は、[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) プロパティと [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) プロパティを設定することで得られる場合が多いです。 あるいは、[`Layout<View>`](xref:Xamarin.Forms.Layout`1) クラスをサブクラスにして望ましいレイアウト動作を得ます。
+- [`Label`](xref:Xamarin.Forms.Label) インスタンスは不必要に更新しないでください。ラベルのサイズを変更すると、画面レイアウト全体が再計算されることがあります。
+- 必要でない限り、[`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) プロパティは設定しないでください。
+- 可能であれば、[`Label`](xref:Xamarin.Forms.Label) インスタンスの [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) を [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap) に設定してください。
 
 <a name="optimizelistview" />
 
 ## <a name="optimize-listview-performance"></a>ListView パフォーマンスを最適化する
 
-[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) コントロールを使用するとき、さまざまなユーザー エクスペリエンスを最適化する必要があります。
+[`ListView`](xref:Xamarin.Forms.ListView) コントロールを使用するとき、さまざまなユーザー エクスペリエンスを最適化する必要があります。
 
 - **初期化** – コントロールが作成されたときに始まり、項目が画面に表示されたときに終わる時間間隔。
 - **スクロール** – 一覧をスクロール表示し、UI がタッチ ジェスチャに遅れないようにする機能。
 - 項目の追加、削除、選択の**相互作用**。
 
-[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) コントロールは、アプリケーションがデータとセルのテンプレートを提供することを要求します。 その提供方法は、コントロールのパフォーマンスを大きな影響を与えます。 詳しくは、「[ListView のパフォーマンス](~/xamarin-forms/user-interface/listview/performance.md)」を参照してください。
+[`ListView`](xref:Xamarin.Forms.ListView) コントロールは、アプリケーションがデータとセルのテンプレートを提供することを要求します。 その提供方法は、コントロールのパフォーマンスを大きな影響を与えます。 詳しくは、「[ListView のパフォーマンス](~/xamarin-forms/user-interface/listview/performance.md)」を参照してください。
 
 <a name="optimizeimages" />
 
 ## <a name="optimize-image-resources"></a>イメージ リソースを最適化する
 
-画像リソースを表示すると、アプリのメモリの占有領域が大幅に増える場合があります。 そのため、必要な場合にのみ作成し、アプリケーションで不要になったらすぐに解放する必要があります。 たとえば、アプリケーションがストリームからデータを読み込み、イメージを表示する場合、必要なときだけストリームが作成されるようにします。また、不要になったら、ストリームを解放するようにします。 これは、ページが作成されたときや [`Page.Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) イベントが発生したときにストリームを作成し、[`Page.Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Disappearing/) イベントが発生したときにストリームを解放することで達成されます。
+画像リソースを表示すると、アプリのメモリの占有領域が大幅に増える場合があります。 そのため、必要な場合にのみ作成し、アプリケーションで不要になったらすぐに解放する必要があります。 たとえば、アプリケーションがストリームからデータを読み込み、イメージを表示する場合、必要なときだけストリームが作成されるようにします。また、不要になったら、ストリームを解放するようにします。 これは、ページが作成されたときや [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing) イベントが発生したときにストリームを作成し、[`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing) イベントが発生したときにストリームを解放することで達成されます。
 
-[`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) メソッドで表示するためにイメージをダウンロードするとき、[`UriImageSource.CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) プロパティを `true` に設定することで、ダウンロードしたイメージがキャッシュに保存されます。 詳細については、「[イメージの処理](~/xamarin-forms/user-interface/images.md)」を参照してください。
+[`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) メソッドで表示するためにイメージをダウンロードするとき、[`UriImageSource.CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) プロパティを `true` に設定することで、ダウンロードしたイメージがキャッシュに保存されます。 詳細については、「[イメージの処理](~/xamarin-forms/user-interface/images.md)」を参照してください。
 
 詳細については、「[イメージ リソースを最適化する](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)」を参照してください。
 
@@ -208,9 +208,9 @@ Xamarin.Forms 2 では、最適化されたレイアウト エンジンが導入
 
 ## <a name="reduce-the-visual-tree-size"></a>ビジュアル ツリーのサイズを減らす
 
-ページ上の要素の数を減らすと、ページのレンダリングが速くなります。 これは主に 2 つの手法で達成できます。 最初の手法は、表示されない要素を隠すことです。 各要素の [`IsVisible`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) プロパティは、要素をビジュアル ツリーに含めるかどうかを決定します。 そのため、ある要素が他の要素の後ろに隠れているために見えない場合、その要素を取り除くか、その `IsVisible` プロパティを `false` に設定します。
+ページ上の要素の数を減らすと、ページのレンダリングが速くなります。 これは主に 2 つの手法で達成できます。 最初の手法は、表示されない要素を隠すことです。 各要素の [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) プロパティは、要素をビジュアル ツリーに含めるかどうかを決定します。 そのため、ある要素が他の要素の後ろに隠れているために見えない場合、その要素を取り除くか、その `IsVisible` プロパティを `false` に設定します。
 
-2 番目の手法は、不要な要素を取り除くことです。 たとえば、次のコード例では、一連の [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) 要素を表示するページ レイアウトを確認できます。
+2 番目の手法は、不要な要素を取り除くことです。 たとえば、次のコード例では、一連の [`Label`](xref:Xamarin.Forms.Label) 要素を表示するページ レイアウトを確認できます。
 
 ```xaml
 <ContentPage.Content>
@@ -330,5 +330,5 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 - [高速レンダラー](~/xamarin-forms/internals/fast-renderers.md)
 - [レイアウトの圧縮](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Xamarin.Forms イメージ拡大/縮小サンプル](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
-- [XamlCompilation](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilation/)
-- [XamlCompilationOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationOptions/)
+- [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
+- [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)

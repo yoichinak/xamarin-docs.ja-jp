@@ -1,6 +1,6 @@
 ---
-title: Hello, iOS マルチスクリーン
-description: 2 部構成のこのガイドでは、2 つ目の画面を処理するために、「Hello, iOS」ガイドで作成された Phoneword アプリケーションを展開します。 その過程で、モデル ビュー コントローラー設計パターンについて紹介し、最初の iOS ナビゲーションを実装し、iOS アプリケーションの構造と機能について理解を深めます。
+title: Hello, iOS マルチスクリーン – クイック スタート
+description: このドキュメントでは、Phoneword サンプル アプリケーションを拡張し、2 つ目の画面を追加する方法について説明しています。モデル ビュー コントローラー、iOS ナビゲーション、他の iOS 開発概念についても同時に取り上げています。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 3b59b942b3c256418d60436a1c4ba8b4aea14aa4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 469032dc7caa46c6a89b350dc37bc9a93366066a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785672"
 ---
-# <a name="helloios-multiscreen-quickstart"></a>Hello, iOS マルチスクリーンのクイック スタート
+# <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS マルチスクリーン – クイック スタート
 
 チュートリアルのこの部分では、アプリでかけた電話番号の履歴を表示する 2 つ目の画面を Phoneword アプリケーションに追加します。 最終的なアプリケーションには、以下のスクリーン ショットのように、通話履歴を表示する 2 つ目の画面が表示されます。
 
@@ -88,7 +89,7 @@ ms.lasthandoff: 04/04/2018
   ![](hello-ios-multiscreen-quickstart-images/11new.png "ボタンの [名前] を CallHistoryButton に変更し、[タイトル]を通話履歴に変更します")
 
 
-11. **通話履歴**画面を作成します。 **[ツールボックス]**から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
+11. **通話履歴**画面を作成します。 **[ツールボックス]** から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
 
  ![](hello-ios-multiscreen-quickstart-images/12new.png "テーブル ビュー コントローラーをデザイン サーフェイスにドラッグします")
 
@@ -345,7 +346,7 @@ ms.lasthandoff: 04/04/2018
   ![](hello-ios-multiscreen-quickstart-images/image9.png "ボタンの [名前] を CallHistoryButton に変更し、[タイトル] を通話履歴に変更します")
 
 
-11. **通話履歴**画面を作成します。 **[ツールボックス]**から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
+11. **通話履歴**画面を作成します。 **[ツールボックス]** から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
 
   ![](hello-ios-multiscreen-quickstart-images/image10.png "テーブル ビュー コントローラーをデザイン サーフェイスにドラッグします")
 

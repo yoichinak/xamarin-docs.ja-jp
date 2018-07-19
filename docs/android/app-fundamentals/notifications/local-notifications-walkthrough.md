@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30766583"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>チュートリアル - Xamarin.Android でローカルの通知の使用
 
@@ -170,7 +171,7 @@ namespace LocalNotifications
 
 ### <a name="add-a-notification-icon"></a>通知アイコンを追加します。
 
-最後に、この通知が起動されたときに、通知領域に表示される小さいアイコンを追加してみましょう。 コピーすることができます[このアイコン](local-notifications-walkthrough-images/ic-stat-button-click.png)をプロジェクトにするか、独自のカスタム アイコンを作成します。 という名前をアイコン ファイル**ic\_stat\_ボタン\_click.png**にコピーし、**リソース/描画**フォルダーです。 使用してください**追加 > 既存アイテム.**にこのアイコン ファイルをプロジェクトに含めます。
+最後に、この通知が起動されたときに、通知領域に表示される小さいアイコンを追加してみましょう。 コピーすることができます[このアイコン](local-notifications-walkthrough-images/ic-stat-button-click.png)をプロジェクトにするか、独自のカスタム アイコンを作成します。 という名前をアイコン ファイル**ic\_stat\_ボタン\_click.png**にコピーし、**リソース/描画**フォルダーです。 使用してください**追加 > 既存アイテム.** にこのアイコン ファイルをプロジェクトに含めます。
 
 
 ### <a name="run-the-application"></a>アプリケーションを実行する

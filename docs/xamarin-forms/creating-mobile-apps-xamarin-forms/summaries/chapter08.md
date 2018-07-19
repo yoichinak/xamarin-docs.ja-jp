@@ -1,32 +1,32 @@
 ---
-title: 第 8 章の概要です。 コードと調和で XAML
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 8 章の概要です。 コードと調和で XAML'
+title: 第 8 章の概要です。 コードと XAML の調和
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 8 章の概要。 コードと XAML の調和'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 70c2babef55ee6cb886b0e7da26ee57b086fa558
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b08355db6cc90381b16f51ce7bf23be8e8bd4e14
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241020"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994534"
 ---
-# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要です。 コードと調和で XAML
+# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要です。 コードと XAML の調和
 
 この章では XAML をより深くについて説明し、特にコードと XAML の相互作用します。
 
-## <a name="passing-arguments"></a>引数渡し
+## <a name="passing-arguments"></a>引数の受け渡し
 
-一般的には、XAML でインスタンス化されるクラスがあります、パブリック パラメーターなしコンス トラクターです。結果オブジェクトはプロパティの設定を初期化します。 ただし、他の 2 つの方法はオブジェクトのインスタンス化し、初期化されることがあります。
+一般的なケースでは、XAML でインスタンス化されるクラスのパブリック コンス トラクター; が必要結果のオブジェクトは、プロパティの設定を使用して初期化されます。 ただし、オブジェクトのインスタンスが作成され初期化されているその他の 2 つの方法はあります。
 
-汎用的な手法は、ほとんどの場合 MVVM ビュー モデルに関連して使用されます。
+これらは、汎用的な手法が、ほとんどの場合 MVVM ビュー モデルに関連して使用されます。
 
 ### <a name="constructors-with-arguments"></a>引数を持つコンス トラクター
 
-[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo)サンプルを使用する方法を示します、`x:Arguments`タグ コンス トラクター引数を指定します。 これらの引数は、引数の型を示す要素タグで区切る必要があります。 基本的な .NET データ型を使用して、次のタグを使用できます。
+[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo)サンプルを使用する方法を示して、`x:Arguments`コンス トラクター引数を指定するタグ。 これらの引数は、引数の型を示す要素タグで区切る必要があります。 .NET の基本のデータ型で、次のタグを使用できます。
 
 - `x:Object`
 - `x:Boolean`
@@ -45,35 +45,35 @@ ms.locfileid: "35241020"
 
 ### <a name="can-i-call-methods-from-xaml"></a>XAML からメソッドを呼び出すことはできますか。
 
-[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo)サンプルを使用する方法を示します、`x:FactoryMethod`が呼び出され、オブジェクトを作成するファクトリ メソッドを指定する要素。 このようなファクトリ メソッドがパブリックで静的なをする必要があり、定義されている型のオブジェクトを作成する必要があります。 (たとえば、 [ `Color.FromRgb` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Double/System.Double/System.Double/)) メソッドを修飾ためパブリックで静的な型の値を返します`Color`)。ファクトリ メソッドの引数が内で指定された`x:Arguments`タグ。
+[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo)サンプルを使用する方法を示して、`x:FactoryMethod`オブジェクトを作成するために呼び出されるファクトリ メソッドを指定する要素。 このようなファクトリ メソッドは public と static をする必要があり、定義されている型のオブジェクトを作成する必要があります。 (たとえば、 [ `Color.FromRgb` ](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double))メソッドを修飾がパブリックであり、静的な型の値を返しますので`Color`)。内でファクトリ メソッドに引数が指定されて`x:Arguments`タグ。
 
 ## <a name="the-xname-attribute"></a>X:name 属性
 
-`x:Name`属性では、名前にする、XAML でインスタンス化されるオブジェクト。 これらの名前のルールは、c# 変数名と同じです。 戻り値の後、`InitializeComponent`コンス トラクターで呼び出して、分離コード ファイルは、XAML の対応する要素にアクセスするこれらの名前を参照できます。 名前は、生成された部分クラスのプライベート フィールドに、XAML パーサーで実際に変換されます。
+`x:Name`属性は、名前を指定するのには XAML でインスタンス化されるオブジェクトを使用できます。 これらの名前の規則は、c# 変数名の場合と同様です。 戻り値の後、`InitializeComponent`コンス トラクターで呼び出して、分離コード ファイルは、これらの名前に対応する XAML 要素にアクセスするを参照できます。 名前は、生成された部分クラスのプライベート フィールドに、XAML パーサーによって実際に変換されます。
 
-[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock)サンプルでの使用`x:Name`して、2 つの分離コード ファイルを許可する`Label`現在の日付と時間で更新された XAML で定義された要素。
+[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock)サンプルの使用を示します`x:Name`して、2 つの分離コード ファイルを許可する`Label`現在の日付と時刻で更新する XAML で定義された要素。
 
-同じ名前は、同じページ上の複数の要素を使用できません。 これを使用する場合は、特定の問題が、`OnPlatform`プラットフォームごとにオブジェクトの名前を付けたを並列で作成します。 [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels)ようなことを向上させる方法のサンプルに示します。
+同じ名前は、同じページに複数の要素を使用できません。 これを使用する場合、特定の問題は、`OnPlatform`プラットフォームごとに名前付きオブジェクトを並列で作成します。 [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels)ようなことにより良い方法を示します。
 
 ## <a name="custom-xaml-based-views"></a>XAML ベースのカスタム ビュー
 
-XAML のマークアップの繰り返しを避けるためにいくつかの方法はあります。 1 つの一般的な方法は XAML ベースの新しいクラスから派生した[ `ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)です。 この手法はではデモンストレーション、 [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList)サンプルです。 `ColorView`クラスから派生`ContentView`特定の色とその名前を表示するときに、`ColorViewListPage`クラスから派生`ContentPage`17 インスタンスを作成し、通常どおりに明示的に`ColorView`です。
+XAML のマークアップの繰り返しを回避するためにいくつかの方法はあります。 1 つの一般的な方法は XAML ベースの新しいクラスから派生した[ `ContentView`](xref:Xamarin.Forms.ContentView)します。 この手法の説明については、 [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList)サンプル。 `ColorView`クラスから派生`ContentView`特定の色とその名前を表示するときに、`ColorViewListPage`クラスから派生`ContentPage`通常どおり、明示的に作成のインスタンス数は 17`ColorView`します。
 
-アクセス、 `ColorView` XAML でのクラスには、よくという別の XML 名前空間宣言が必要があります`local`の同じアセンブリ内のクラス。
+アクセス、 `ColorView` XAML でクラスには、よくという名前の別の XML 名前空間宣言が必要があります`local`同じアセンブリ内のクラス。
 
 ## <a name="events-and-handlers"></a>イベントとハンドラー
 
-イベントは、XAML では、イベント ハンドラーに割り当てることができますが、分離コード ファイル内自体、イベント ハンドラーを実装する必要があります。 [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad)を実装する方法と、XAML でのキーボード ユーザー インターフェイスを構築する方法を示しています、`Clicked`分離コード ファイル内のハンドラー。
+イベントは、XAML 内のイベント ハンドラーに割り当てることができますが、分離コード ファイルにイベント ハンドラー自体を実装する必要があります。 [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) XAML でのキーボード ユーザー インターフェイスを構築する方法および実装する方法を示しています、`Clicked`分離コード ファイル内のハンドラー。
 
-## <a name="tap-gestures"></a>タップ ジェスチャ
+## <a name="tap-gestures"></a>ジェスチャをタップします。
 
-どの`View`オブジェクトがタッチ入力を取得し、その入力からのイベントを生成します。 `View`クラスを定義、 [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/)から派生したクラスの 1 つまたは複数のインスタンスを含めることができるコレクション プロパティ[ `GestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)です。
+すべて`View`オブジェクトは、タッチ入力を取得し、その入力からイベントを生成します。 `View`クラスを定義、 [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)コレクション プロパティから派生するクラスの 1 つまたは複数のインスタンスを含むことのできる[ `GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer)します。
 
-[ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)生成[ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/)イベント。 [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap)プログラムは、アタッチする方法を示します`TapGestureRecognizer`4 オブジェクト`BoxView`装ってゲームを作成する要素。
+[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)生成[ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)イベント。 [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap)プログラムは、アタッチする方法を示します`TapGestureRecognizer`オブジェクトを 4 つ`BoxView`偽造品のゲームを作成する要素。
 
-[![サル タップのトリプル スクリーン ショット](images/ch08fg07-small.png "模倣ゲーム")](images/ch08fg07-large.png#lightbox "模倣ゲーム")
+[![Monkey タップの 3 倍になるスクリーン ショット](images/ch08fg07-small.png "まがい物ゲーム")](images/ch08fg07-large.png#lightbox "まがい物ゲーム")
 
-**MonkeyTap**プログラムは、サウンドを本当に必要です。 (を参照してください[次のチャプター](chapter09.md))。
+**MonkeyTap**プログラムは、サウンドを本当に必要です。 (を参照してください[[次へ] の章](chapter09.md))。
 
 
 

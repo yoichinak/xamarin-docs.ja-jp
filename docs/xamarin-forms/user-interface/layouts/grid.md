@@ -1,64 +1,64 @@
 ---
-title: Xamarin.Forms グリッド
-description: この記事では、クラスを使用する、Xamarin.Forms グリッドのグリッドで、行と列を持つビューを表示する方法について説明します。
+title: Xamarin.Forms のグリッド
+description: この記事では、Xamarin.Forms グリッド クラスを使用して、グリッドで、行と列を持つでビューを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245154"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994503"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin.Forms グリッド
+# <a name="xamarinforms-grid"></a>Xamarin.Forms のグリッド
 
-[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) ビューの行と列に配置をサポートします。 比例してサイズまたは絶対サイズを持つ行と列を設定できます。 `Grid`レイアウトは、従来のテーブルと混同しないでし、表形式のデータを表示するものではありません。 `Grid` 行、列またはセルの書式設定の概念はありません。 HTML テーブルとは異なり`Grid`コンテンツをレイアウトするため、純粋な目的としています。
+[`Grid`](xref:Xamarin.Forms.Grid) ビューの行と列に配置をサポートします。 比例サイズや絶対サイズを持つ行と列を設定できます。 `Grid`レイアウトは、従来のテーブルに混同しない必要があり、表形式のデータを提示するものではありません。 `Grid` 行、列またはセルの書式の概念はありません。 HTML のテーブルとは異なり`Grid`コンテンツをレイアウトするためのものが純粋です。
 
-[![](grid-images/layouts-sml.png "Xamarin.Forms レイアウト")](grid-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
+[![](grid-images/layouts-sml.png "Xamarin.Forms のレイアウト")](grid-images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
 
-この記事を取り上げます。
+この記事では説明します。
 
-- **[目的](#Purpose)** &ndash;の一般的な使用`Grid`です。
-- **[使用状況](#Usage)** &ndash;の使用方法`Grid`目的の設計を実現するためにします。
-  - **[行と列](#Rows_and_Columns)** &ndash;の行と列の指定、`Grid`です。
+- **[目的](#Purpose)** &ndash;の一般的な使用`Grid`します。
+- **[使用状況](#Usage)** &ndash;を使用する`Grid`目的の設計を実現するためにします。
+  - **[行と列](#Rows_and_Columns)** &ndash;行と列の指定、`Grid`します。
   - **[ビューを配置する](#Placing_Views)** &ndash;ビューを特定の行と列のグリッドに追加します。
   - **[間隔](#Spacing)** &ndash;行と列の間のスペースを構成します。
   - **[スパン](#Spans)** &ndash;複数の行または列にまたがるように要素を構成します。
 
-![](grid-images/grid.png "グリッドの探索")
+![](grid-images/grid.png "グリッド探索")
 
 ## <a name="purpose"></a>目的
 
-`Grid` グリッド ビューを配置するために使用します。 これは、機能は、ケースの数に便利です。
+`Grid` グリッド ビューを配置するために使用できます。 これはさまざまなケースで役立ちます。
 
 - 電卓アプリ内のボタンの配置
-- IOS または Android のホーム画面のように、グリッドに並べたりボタン/選択肢
-- 1 つのディメンション (一部のツールバーに似た) のサイズのように、ビューを配置します。
+- IOS または Android のホーム画面のように、グリッドに整列ボタン/選択肢
+- 1 つのディメンション (一部のツールバーのように) に等しいサイズのように、ビューを配置します。
 
 ## <a name="usage"></a>使用法
 
-従来のテーブルとは異なり`Grid`数およびコンテンツの行と列のサイズを推論することはありません。 代わりに、`Grid`が`RowDefinitions`と`ColumnDefinitions`コレクション。 これらは、行と列の数がレイアウトの定義を保持します。ビューに追加`Grid`行と列でビューを配置する必要がありますを識別する指定した行と列のインデックスでは、します。
+従来のテーブルとは異なり`Grid`コンテンツから行と列のサイズと数を推論することはありません。 代わりに、`Grid`が`RowDefinitions`と`ColumnDefinitions`コレクション。 これらは、行と列の数がレイアウトの定義を保持します。ビューに追加されます`Grid`行と列でビューを配置する必要がありますを識別する指定された行および列のインデックスを使用します。
 
 <a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>行と列
 
-行および列情報が格納されている`Grid`の`RowDefinitions`  &  `ColumnDefinitions`各コレクションであるプロパティの[ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/)と[ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)オブジェクトをそれぞれします。 `RowDefinition` 1 つのプロパティを持つ`Height`、および`ColumnDefinition`1 つのプロパティを持つ`Width`します。 高さと幅のオプションは次のとおりです。
+行および列情報が格納されている`Grid`の`RowDefinitions`  &  `ColumnDefinitions`は各コレクションのプロパティの[ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition)と[ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)オブジェクトをそれぞれします。 `RowDefinition` 1 つのプロパティを持つ`Height`と`ColumnDefinition`1 つのプロパティを持つ`Width`します。 高さと幅のオプションは次のとおりです。
 
-- **自動**&ndash;行または列の内容に合わせて自動的にサイズ。 として指定された[ `GridUnitType.Auto` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/) (C#) またはとして`Auto`XAML でします。
-- **Proportional(*)** &ndash;残りの領域の割合として列および行のサイズを設定します。 値として指定し、 `GridUnitType.Star` C# の場合と`#*`XAML で`#`目的の値をされています。 行/列が 1 つを指定する`*`使用可能な領域を覆うようになります。
-- **絶対**&ndash;固定、特定の高さと幅の値を持つ行と列のサイズを設定します。 値として指定し、 `GridUnitType.Absolute` C# の場合と`#`XAML で`#`目的の値をされています。
+- **自動**&ndash;行または列の内容に合わせて自動的にサイズ。 として指定された[ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) (C#) またはとして`Auto`XAML でします。
+- **Proportional(*)** &ndash;残りの領域の割合としての列と行のサイズを設定します。 値として指定し、 `GridUnitType.Star` (C#) と`#*`、XAML で`#`目的の値をされています。 1 つの行/列を指定する`*`使用可能な領域をいっぱいになるようになります。
+- **絶対**&ndash;列と、特定の固定の高さと幅の値を持つ行のサイズを設定します。 値として指定し、 `GridUnitType.Absolute` (C#) と`#`、XAML で`#`目的の値をされています。
 
 > [!NOTE]
-> 列の幅の値として設定は、' * ' Xamarin.Forms で既定では、これにより、列が使用可能な領域いっぱいになります。
+> 列の幅の値として設定 ' * '、列が使用可能なスペースを埋めることこれによりを Xamarin.Forms で既定では、します。
 
-3 つの行と 2 つの列が必要とするアプリを検討してください。 一番下の行が縦 200px 正確である必要があり、先頭の行が中央の行と高さが同じ 2 回クリックする必要があります。 左の列が、コンテンツに合わせて十分な幅にする必要があり、右側の列が残りの領域を入力する必要があります。
+次の 3 つの行と 2 つの列が必要なアプリケーションを考えてみます。 一番下の行を正確に 200px (縦) をある必要があり、一番上の行は、中央の行と高さが同じである 2 回必要があります。 左側の列に合わせたコンテンツ幅にする必要があるし、右側の列は、残りのスペースを埋める必要があります。
 
-XAML:
+で XAML:
 
 ```xaml
 <Grid>
@@ -86,17 +86,17 @@ grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) }
 
 <a name="Placing_Views" />
 
-### <a name="placing-views-in-a-grid"></a>グリッド内のビューを配置します。
+### <a name="placing-views-in-a-grid"></a>グリッド ビューを配置します。
 
-ビューを配置する、`Grid`グリッドに子として追加し、内で所属する行と列を指定する必要があります。
+ビューを配置する、`Grid`をグリッドに子として追加しに属している行と列を指定する必要があります。
 
-XAML では、次のように使用します。`Grid.Row`と`Grid.Column`配置を指定する各個々 のビューにします。 なお`Grid.Row`と`Grid.Column`行と列の 0 から始まるリストに基づく場所を指定します。 つまり、4 × 4 のグリッドで左上のセル (0, 0) は、右下のセル (3, 3)。
+XAML を使用して`Grid.Row`と`Grid.Column`配置を指定する各個々 のビュー。 なお`Grid.Row`と`Grid.Column`行と列の 0 から始まるリストに基づく場所を指定します。 つまり、4 × 4 のグリッドで右下のセルは (3, 3)、左上のセルは (0, 0)。
 
-`Grid`表示次に示す 4 つのセルが含まれています。
+`Grid`に示す次の 4 つのセルが含まれています。
 
-![](grid-images/label-grid.png "4 つのビューを含むグリッド")
+![](grid-images/label-grid.png "4 つのビューとグリッド")
 
-XAML:
+で XAML:
 
 ```xaml
 <Grid>
@@ -136,9 +136,9 @@ grid.Children.Add(bottomLeft, 0, 1);
 grid.Children.Add(bottomRight, 1, 1);
 ```
 
-上記のコードは、次の 4 つのラベル、2 つの列、および 2 つの行をグリッドを作成します。 各ラベルが同じサイズを持つ行をすべて使用可能な領域を使用する展開を注意してください。
+上記のコードでは、4 つのラベル、2 つの列では、2 つの行とグリッドを作成します。 各ラベルが同じサイズにあるし、行をすべて使用可能な領域を使用する展開はことに注意してください。
 
-上記の例ではビューに追加されます、 [ `Grid.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.Children/)コレクションを使用して、 [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/)左と上の引数を指定するオーバー ロードします。 使用する場合、 [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)左を指定するオーバー ロード、右、上部と下部にある引数、while、左と上の引数が常に内のセルを参照してください、 [ `Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)右側と外側にあるセルを参照する引数の下部にある場合があります、`Grid`です。 これは、右の引数を常に、左の引数よりも大きい値にする必要があります、下部にある引数を常に最上位の引数よりも大きい値にする必要があります。 次の例は、両方を使用して同等のコードを示しています。`Add`オーバー ロードします。
+上記の例ではビューに追加されます、 [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)コレクションを使用して、 [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/)左と上の引数を指定するオーバー ロードします。 使用する場合、 [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) left を指定するオーバー ロード、右、上、および、下部にある引数の中に、左と上の引数は、常に内のセルを参照、 [ `Grid`](xref:Xamarin.Forms.Grid)右と外部にあるセルを参照する引数の下部にある場合があります、`Grid`します。 これは、右の引数は、左の引数より大きい必ず下部にある引数を最上位の引数よりも大きい必ずためです。 次の例は、両方を使用して同等のコードを示しています。`Add`オーバー ロードします。
 
 ```csharp
 // left, top
@@ -158,8 +158,8 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 `Grid` 行と列の間隔を制御するプロパティがあります。  次のプロパティをカスタマイズするために使用できる、 `Grid`:
 
-- **ColumnSpacing** &ndash;列間のスペースの量。
-- **RowSpacing** &ndash;行の間の領域の量。
+- **ColumnSpacing** &ndash;列間のスペース量。
+- **間隔を広げる**&ndash;行の間の領域の量。
 
 次の XAML を指定します、`Grid`で 2 つの列、1 行、および 5 px 列間の間隔。
 
@@ -182,11 +182,11 @@ grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, Grid
 
 ### <a name="spans"></a>範囲
 
-グリッドを使用する場合に多くの場合、要素がある 1 つ以上の行または列を占有する必要があります。 簡単な電卓アプリケーションを考えてみます。
+グリッドを使用する場合に多くの場合は、要素を 1 つ以上の行または列を占有する必要があります。 簡単な電卓アプリケーションを検討してください。
 
 ![](grid-images/calculator.png "Calulator アプリケーション")
 
-0 のボタンにまたがって表示される 2 つの列と同じように各プラットフォームの組み込みの電卓に注目してください。 これは、`ColumnSpan`プロパティは、要素が列の数で占有する必要がありますを指定します。 そのボタンの XAML:
+0 のボタンにまたがって表示される 2 つの列と同じように各プラットフォーム用の組み込みの計算ツールに注目してください。 これは、`ColumnSpan`プロパティで、要素が列の数が占有するを指定します。 そのボタンの XAML:
 
 ```xaml
 <Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
@@ -200,7 +200,7 @@ controlGrid.Children.Add (zeroButton, 0, 4);
 Grid.SetColumnSpan (zeroButton, 2);
 ```
 
-静的メソッドのコードを注意してください、`Grid`クラスを使用して変更を含む位置の変更を加えるを`ColumnSpan`と`RowSpan`です。 また、いつでも設定できるその他のプロパティとは異なり設定された静的メソッドを使用する必要があります既に、グリッドで前に変更されます。
+静的メソッドのコードを注意してください、`Grid`クラスへの変更をなどの変更を配置する際に使用`ColumnSpan`と`RowSpan`します。 また、いつでも設定できるその他のプロパティとは異なりプロパティの静的メソッドを使用して設定する必要が既に、グリッドで前に、変更されました。
 
 上記の電卓アプリケーションの完全な XAML は次のとおりです。
 
@@ -294,7 +294,7 @@ BackgroundColor="#404040">
 </ContentPage>
 ```
 
-両方のグリッドの上部にあるラベルとゼロ ボタンが occuping 以上の 1 つの列があることを確認します。 同様のレイアウトは、入れ子になったグリッドを使用して行うことも、 `ColumnSpan`  &  `RowSpan`アプローチの方が簡単です。
+両方のグリッドの上部にあるラベルと 0 個、ボタンが occuping 複数の列があることを確認します。 入れ子になったグリッドを使用して同様のレイアウトを達成できるが、 `ColumnSpan`  &  `RowSpan`アプローチの方が簡単です。
 
 C# で実装します。
 
@@ -383,7 +383,7 @@ public CalculatorGridCode ()
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms、Chapter 17 を使用したモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
-- [グリッド](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)
+- [第 17 章である Xamarin.Forms によるモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
+- [グリッド](xref:Xamarin.Forms.Grid)
 - [レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 例 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

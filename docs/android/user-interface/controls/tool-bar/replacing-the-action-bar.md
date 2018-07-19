@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30772592"
 ---
 # <a name="replacing-the-action-bar"></a>操作バーを置き換える
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-いう新しい Android プロジェクトを作成する**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、Android プロジェクトを新規作成) します。 このプロジェクトを作成した後にターゲットと最低限の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)**またはそれ以降。 Android バージョン レベルの設定の詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。 アプリがビルドされ、実行、ときに、このスクリーン ショットに示すよう、既定値アクション バーを表示します。
+いう新しい Android プロジェクトを作成する**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、Android プロジェクトを新規作成) します。 このプロジェクトを作成した後にターゲットと最低限の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)** またはそれ以降。 Android バージョン レベルの設定の詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。 アプリがビルドされ、実行、ときに、このスクリーン ショットに示すよう、既定値アクション バーを表示します。
 
 [![既定のアクションのバーのスクリーン ショット](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -188,7 +189,7 @@ ActionBar.Title = "My Toolbar";
 
 ### <a name="install-menu-icons"></a>メニューのアイコンをインストールします。
 
-続行、`ToolbarFun`例のアプリ、アプリ プロジェクトにメニューのアイコンを追加します。 ダウンロード[ツールバーのアイコン](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)、展開、および、抽出の内容をコピー *mipmap -*フォルダーをプロジェクトに*mipmap -*の下にフォルダー **ToolbarFun/リソース**プロジェクトに追加したアイコンの各ファイルを含めるとします。
+続行、`ToolbarFun`例のアプリ、アプリ プロジェクトにメニューのアイコンを追加します。 ダウンロード[ツールバーのアイコン](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)、展開、および、抽出の内容をコピー *mipmap -* フォルダーをプロジェクトに*mipmap -* の下にフォルダー **ToolbarFun/リソース**プロジェクトに追加したアイコンの各ファイルを含めるとします。
 
 
 ### <a name="define-a-menu-resource"></a>メニュー リソースを定義します。

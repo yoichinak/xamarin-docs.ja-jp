@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: 音声合成'
-description: アプリケーション使用のデバイスから、エンジンでは、クエリの使用可能な言語をさらにバックのテキストを読み上げるために音声合成エンジン組み込み Xamarin.Essentials により TextToSpeech クラスです。
+description: アプリケーションをデバイスからと、エンジンがサポートできる使用可能な言語のクエリにも、バックのテキストを読み上げる音声合成エンジンで、組み込み利用 Xamarin.Essentials で TextToSpeech クラスです。
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782802"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815662"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: 音声合成
 
-![プレリリース NuGet](~/media/shared/pre-release.png)
+![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-**TextToSpeech**クラスにより、アプリケーションをデバイスから、エンジンでは、クエリの使用可能な言語をさらにバックのテキストを読み上げるために音声合成エンジンで組み込みを使用します。
+**TextToSpeech**クラスは、デバイスからと、エンジンがサポートできる使用可能な言語のクエリにも、バックのテキストを読み上げる音声合成エンジンで、ビルドを利用するアプリケーションを使用できます。
 
-## <a name="using-text-to-speech"></a>音声合成を使用します。
+## <a name="using-text-to-speech"></a>音声合成を使用
 
-クラスの Xamarin.Essentials への参照を追加します。
+クラスで Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-音声合成機能が呼び出すことによって、`SpeakAsync`テキストと省略可能なパラメーターを返します、発話が完了した後を持つメソッドです。 
+音声合成機能が呼び出すことによって、`SpeakAsync`メソッドでは、テキストと省略可能なパラメーター、発話が完了した後に返します。 
 
 ```csharp
 public async Task SpeakNowDefaultSettings()
@@ -46,7 +46,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-このメソッドは、いったん開始、発話を停止する、省略可能な CancellationToken で受け取ります。 
+このメソッドは、これが起動したら、発話を停止するオプションの CancellationToken で受け取ります。 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -66,7 +66,7 @@ public void CancelSpeech()
 }
 ```
 
-音声合成では、同じスレッドからの音声の要求を自動的にキューがします。 
+音声合成では、同じスレッドからの音声要求を自動的にキューされます。 
 
 ```csharp
 bool isBusy = false;
@@ -92,7 +92,7 @@ public void SpeakMultiple()
 
 ### <a name="speech-settings"></a>音声認識の設定
 
-オーディオが話される方法をより細かく制御でバックアップ`SpeakSettings`ボリューム、ピッチ、およびロケールを設定することができます。
+オーディオがどのように話されているかをより細かく制御して、バックアップ`SpeakSettings`ボリューム、ピッチ、およびロケールを設定することができます。
 
 ```csharp
 public async Task SpeakNow()
@@ -107,16 +107,16 @@ public async Task SpeakNow()
 }
 ```
 
-これらのパラメーターのサポートされている値を次に示します。
+次に、これらのパラメーターのサポートされている値を示します。
 
 | パラメーター | 最小要件 | 最大 |
 | --- | :---: | :---: |
-| 声の高さ | 0 | 2.0 |
+| ピッチ | 0 | 2.0 |
 | ボリューム | 0 | 1 |
 
-### <a name="speech-locales"></a>音声認識のロケール
+### <a name="speech-locales"></a>音声のロケール
 
-各プラットフォームでは、複数の言語とアクセントのバックのテキストを読み上げるためにロケールを提供します。 各プラットフォームにはさまざまなコードとは、これを指定する方法 Essentials は、クロスプラット フォーム`Locale`クラスとそれらのクエリを実行する方法`GetLocalesAsync`です。
+各プラットフォームでは、複数の言語とアクセントのバックのテキストを読み上げるロケールを提供します。 各プラットフォームにさまざまなコードとは、これを指定する方法は Essentials は、クロス プラットフォームを提供します。`Locale`クラスと、使用してクエリを実行する方法`GetLocalesAsync`します。
 
 ```csharp
 public async Task SpeakNow()
@@ -139,8 +139,8 @@ public async Task SpeakNow()
 
 ## <a name="limitations"></a>制限事項
 
-- 発話キューは、複数のスレッドで呼び出された場合に保証されません。
-- バック グラウンド オーディオ再生が正式にサポートされていません。
+- 複数のスレッドで呼び出された場合は、発話のキューは保証されません。
+- バック グラウンド オーディオ再生は公式にサポートされていません。
 
 ## <a name="api"></a>API
 

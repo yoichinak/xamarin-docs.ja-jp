@@ -1,5 +1,5 @@
 ---
-title: Xamarin.UITest と App Center による Xamarin.Forms テストの自動化
+title: App Center で Xamarin.Forms テストを自動化する
 description: Xamarin の UITest コンポーネントを Xamarin.Forms で使用して、数百台のデバイスを対象にクラウドで実行する UI テストを作成できます。
 ms.prod: xamarin
 ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: 71084aaaaf335473a425bc988c2bb17437cfbb70
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: dc43d8b5623b83be16d437e30290bc8b059be4bb
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847356"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35242948"
 ---
-# <a name="automate-xamarinforms-testing-with-xamarinuitest-and-app-center"></a>Xamarin.UITest と App Center による Xamarin.Forms テストの自動化
+# <a name="automate-xamarinforms-testing-with-app-center"></a>App Center で Xamarin.Forms テストを自動化する
 
 _Xamarin の UITest コンポーネントを Xamarin.Forms で使用して、数百台のデバイスを対象にクラウドで実行する UI テストを作成できます。_
 

@@ -1,42 +1,42 @@
 ---
-title: コンテンツ ページをカスタマイズします。
-description: コンテンツ ページは、1 つのビューを表示し、画面の大部分を占める visual 要素です。 この記事では、開発者は、独自のプラットフォーム固有のカスタマイズと既定のネイティブ レンダリングをオーバーライドするコンテンツ ページのページで、カスタム レンダラーを作成する方法を示します。
+title: コンテンツ ページのカスタマイズ
+description: コンテンツ ページは、1 つのビューを表示し、画面の大部分を占める視覚的要素です。 この記事では、開発者は独自のプラットフォームに固有のカスタマイズを使用した既定のネイティブ レンダリングをオーバーライドするコンテンツ ページのページのカスタム レンダラーを作成する方法を示します。
 ms.prod: xamarin
 ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 5fe7250b5b8fcea97d4fbe6846999be60e8e8673
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848175"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995743"
 ---
-# <a name="customizing-a-contentpage"></a>コンテンツ ページをカスタマイズします。
+# <a name="customizing-a-contentpage"></a>コンテンツ ページのカスタマイズ
 
-_コンテンツ ページは、1 つのビューを表示し、画面の大部分を占める visual 要素です。この記事では、開発者は、独自のプラットフォーム固有のカスタマイズと既定のネイティブ レンダリングをオーバーライドするコンテンツ ページのページで、カスタム レンダラーを作成する方法を示します。_
+_コンテンツ ページは、1 つのビューを表示し、画面の大部分を占める視覚的要素です。この記事では、開発者は独自のプラットフォームに固有のカスタマイズを使用した既定のネイティブ レンダリングをオーバーライドするコンテンツ ページのページのカスタム レンダラーを作成する方法を示します。_
 
-各 Xamarin.Forms コントロールには、ネイティブなコントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) iOS 内の Xamarin.Forms アプリケーションによって表示される、`PageRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`UIViewController`コントロール。 Android のプラットフォームでは、`PageRenderer`クラスをインスタンス化、`ViewGroup`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`PageRenderer`クラスをインスタンス化、`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms のコントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラー基底クラスとネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)です。
+すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) iOS での Xamarin.Forms アプリケーションによって表示される、`PageRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`UIViewController`コントロール。 Android のプラットフォームで、`PageRenderer`クラスをインスタンス化、`ViewGroup`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`PageRenderer`クラスをインスタンス化、`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms コントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)します。
 
-次の図の間のリレーションシップを示しています、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)とそれを実装する、対応するネイティブ コントロール。
+次の図の間のリレーションシップを示しています、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)およびそれを実装するネイティブ コントロールの対応します。
 
-![](contentpage-images/contentpage-classes.png "コンテンツ ページ クラスとネイティブの制御を実装する間のリレーションシップ")
+![](contentpage-images/contentpage-classes.png "コンテンツ ページのクラスとネイティブ コントロールを実装する間のリレーションシップ")
 
-表示処理に実行できるの利点のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズ設定を実装する、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)プラットフォームごとにします。 これを行うためのプロセスは次のとおりです。
+レンダリング プロセスに実行できる活用用のカスタム レンダラーを作成してプラットフォーム固有のカスタマイズを実装する[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)各プラットフォームで。 これを行うためのプロセスは次のとおりです。
 
 1. [作成](#Creating_the_Xamarin.Forms_Page)Xamarin.Forms ページ。
-1. [消費](#Consuming_the_Xamarin.Forms_Page)Xamarin.Forms からページ。
-1. [作成](#Creating_the_Page_Renderer_on_each_Platform)各プラットフォームでのページのカスタム レンダラーです。
+1. [消費](#Consuming_the_Xamarin.Forms_Page)Xamarin.Forms のページ。
+1. [作成](#Creating_the_Page_Renderer_on_each_Platform)各プラットフォームで、ページのカスタム レンダラーです。
 
-各項目を実装する順番に説明するようになりましたが、`CameraPage`フィード ライブ カメラと写真をキャプチャする権限を提供します。
+各項目が実装するためにさらに、説明するようになりましたが、`CameraPage`ライブ カメラのフィード、および写真をキャプチャする機能を提供します。
 
 <a name="Creating_the_Xamarin.Forms_Page" />
 
-## <a name="creating-the-xamarinforms-page"></a>Xamarin.Forms ページを作成します。
+## <a name="creating-the-xamarinforms-page"></a>Xamarin.Forms のページを作成します。
 
-変更されていない[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の XAML コードの例を次に示すように、共有の Xamarin.Forms プロジェクトに追加できます。
+変更されていない[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)の XAML コードの例を次に示すように、共有の Xamarin.Forms プロジェクトに追加できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ _コンテンツ ページは、1 つのビューを表示し、画面の大部�
 </ContentPage>
 ```
 
-分離コード ファイルを同様に、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)の次のコード例に示すように変更されていないもする必要があります。
+同様に、分離コード ファイルの[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)の次のコード例に示すように変更されていないもする必要があります。
 
 ```csharp
 public partial class CameraPage : ContentPage
@@ -60,7 +60,7 @@ public partial class CameraPage : ContentPage
 }
 ```
 
-次のコード例は、c# でのページの作成方法を示しています。
+次のコード例では、c# では、ページを作成する方法を示します。
 
 ```csharp
 public class CameraPageCS : ContentPage
@@ -71,13 +71,13 @@ public class CameraPageCS : ContentPage
 }
 ```
 
-インスタンス、`CameraPage`フィードの各プラットフォームで実際のカメラを表示するために使用されます。 コントロールのカスタマイズを実行するカスタムのレンダラーでの他の実装は必要ありませんので、`CameraPage`クラスです。
+インスタンス、`CameraPage`ライブ カメラの各プラットフォームでフィードを表示するために使用されます。 コントロールのカスタマイズを実行するカスタムのレンダラーでの他の実装は必要ありませんので、`CameraPage`クラス。
 
 <a name="Consuming_the_Xamarin.Forms_Page" />
 
-## <a name="consuming-the-xamarinforms-page"></a>Xamarin.Forms ページを使用
+## <a name="consuming-the-xamarinforms-page"></a>使用している Xamarin.Forms のページ
 
-空の`CameraPage`Xamarin.Forms アプリケーションで表示される必要があります。 これは、ボタン、`MainPage`インスタンスをタップすると、順番が実行される、`OnTakePhotoButtonClicked`メソッドを次のコード例に示すように。
+空の`CameraPage`Xamarin.Forms アプリケーションで表示する必要があります。 これは、上のボタンの場合に発生、`MainPage`インスタンスをタップすると、順番に実行する、`OnTakePhotoButtonClicked`メソッドを次のコード例に示すようにします。
 
 ```csharp
 async void OnTakePhotoButtonClicked (object sender, EventArgs e)
@@ -86,7 +86,7 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 }
 ```
 
-このコードは、単に移動、 `CameraPage`、どのカスタム レンダラーでは各プラットフォームでのページの外観をカスタマイズします。
+このコードに移動しただけで、 `CameraPage`、どのカスタム レンダラーでは各プラットフォームで、ページの外観をカスタマイズします。
 
 <a name="Creating_the_Page_Renderer_on_each_Platform" />
 
@@ -94,32 +94,32 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 カスタム レンダラー クラスを作成するプロセスは次のとおりです。
 
-1. サブクラスを作成、`PageRenderer`クラスです。
-1. 上書き、`OnElementChanged`ページをカスタマイズするネイティブのページと書き込みのロジックを表示するメソッド。 `OnElementChanged` Xamarin.Forms、対応するコントロールの作成時に、メソッドが呼び出されます。
-1. 追加、`ExportRenderer`属性、ページ レンダラーをクラスに Xamarin.Forms ページを表示するために使用することを指定します。 この属性を使用して、Xamarin.Forms を使用したカスタム レンダラーを登録します。
+1. サブクラスを作成、`PageRenderer`クラス。
+1. 上書き、`OnElementChanged`ページをカスタマイズするネイティブのページと書き込みのロジックをレンダリングするメソッド。 `OnElementChanged`メソッドは、対応する Xamarin.Forms コントロールが作成されたときに呼び出されます。
+1. 追加、`ExportRenderer`ページ レンダラー クラスの Xamarin.Forms ページを表示するために使用するように指定する属性します。 この属性は、Xamarin.Forms でのカスタム レンダラーの登録に使用されます。
 
 > [!NOTE]
-> 省略可能なページ レンダラーな各プラットフォームのプロジェクトでの提供になります。 ページ レンダラーが登録されていない場合は、ページの既定のレンダラーが使用されます。
+> 各プラットフォーム プロジェクトにページ レンダラーを提供する省略可能になります。 ページ レンダラーが登録されていない場合は、ページの既定のレンダラーが使用されます。
 
-次の図は、その間の関係と共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
+次の図は、それらの間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示します。
 
 ![](contentpage-images/solution-structure.png "CameraPage カスタム レンダラーのプロジェクトの責任")
 
-`CameraPage`インスタンスがプラットフォーム固有の仕様を表示する`CameraPageRenderer`から派生するクラス、`PageRenderer`そのプラットフォームのクラスです。 これは、結果、各`CameraPage`インスタンス化、カメラのライブ フィードに表示される次のスクリーン ショットに示すようにします。
+`CameraPage`インスタンスは、プラットフォーム固有によってレンダリングされる`CameraPageRenderer`から派生するクラス、`PageRenderer`そのプラットフォーム用のクラス。 これは、結果、各`CameraPage`次のスクリーン ショットに示すように、カメラのライブ フィードを表示するインスタンスします。
 
 ![](contentpage-images/screenshots.png "各プラットフォームで CameraPage")
 
-`PageRenderer`クラスが公開、 `OnElementChanged` Xamarin.Forms ページが、対応するネイティブ コントロールを表示するために作成されるときに呼び出されるメソッド。 このメソッドは、`ElementChangedEventArgs`パラメーターを含む`OldElement`と`NewElement`プロパティです。 これらのプロパティは、Xamarin.Forms 要素を表すをレンダラーでは、*が*に接続されていると Xamarin.Forms の要素をレンダラーでは、*は*に、それぞれをアタッチします。 サンプル アプリケーションで、`OldElement`プロパティ`null`と`NewElement`プロパティへの参照が格納されます、`CameraPage`インスタンス。
+`PageRenderer`クラスでは、`OnElementChanged`メソッドで、対応するネイティブ コントロールを表示するために、Xamarin.Forms のページが作成されたときに呼び出されます。 このメソッドは、`ElementChangedEventArgs`パラメーターを含む`OldElement`と`NewElement`プロパティ。 これらのプロパティは、Xamarin.Forms 要素を表すをレンダラー*が*に接続されていると Xamarin.Forms 要素をレンダラー*は*に、それぞれに接続されています。 サンプル アプリケーションでは、`OldElement`プロパティになります`null`と`NewElement`プロパティへの参照には、`CameraPage`インスタンス。
 
-オーバーライドのバージョン、`OnElementChanged`メソッドで、`CameraPageRenderer`クラスは、ネイティブのページのカスタマイズを実行する場所です。 表示される Xamarin.Forms ページ インスタンスへの参照を取得できます、`Element`プロパティです。
+オーバーライドされたバージョン、`OnElementChanged`メソッドで、`CameraPageRenderer`クラスは、ネイティブのページのカスタマイズを実行する場所。 レンダリングされている Xamarin.Forms のページ インスタンスへの参照を取得できます、`Element`プロパティ。
 
-各カスタム レンダラー クラスがで修飾された、 `ExportRenderer` Xamarin.Forms では、レンダラーを登録する属性。 属性は、– 表示するには、Xamarin.Forms ページの型名とカスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスで修飾された、`ExportRenderer`レンダラーを Xamarin.Forms で登録される属性。 属性は、– 表示するには、Xamarin.Forms のページの型名と、カスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションでは、説明の実装、`CameraPageRenderer`各プラットフォーム用のカスタム レンダラーです。
 
-### <a name="creating-the-page-renderer-on-ios"></a>IOS でページ レンダラーを作成します。
+### <a name="creating-the-page-renderer-on-ios"></a>IOS でのページ レンダラーの作成
 
-次のコード例は、iOS プラットフォーム用のページ レンダラーを示しています。
+次のコード例では、iOS プラットフォーム用のページ レンダラーを示します。
 
 ```csharp
 [assembly:ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -151,13 +151,13 @@ namespace CustomRenderer.iOS
 }
 ```
 
-基本クラスの呼び出し`OnElementChanged`メソッドは、iOS をインスタンス化`UIViewController`コントロール。 カメラのライブ ストリームがレンダリングされるは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、なるは、カスタム レンダラーによってレンダリングされるページ インスタンスが存在するだけです。
+基本クラスの呼び出し`OnElementChanged`メソッドは、iOS をインスタンス化`UIViewController`コントロール。 カメラのライブ ストリームは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、カスタム レンダラーによってレンダリングされるページのインスタンスが存在することにのみ表示されます。
 
-ページが、一連のメソッドを使用するしてカスタマイズし、`AVCapture`をカメラ写真をキャプチャする権限からがライブ ストリームを提供する Api。
+ページは、一連のメソッドを使用してカスタマイズし、`AVCapture`をカメラ写真をキャプチャする機能から、ライブ ストリームを提供する Api。
 
-### <a name="creating-the-page-renderer-on-android"></a>Android でページ レンダラーを作成します。
+### <a name="creating-the-page-renderer-on-android"></a>Android でのページ レンダラーの作成
 
-次のコード例は、Android プラットフォーム用のページ レンダラーを示しています。
+次のコード例では、Android プラットフォーム用のページ レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -195,13 +195,13 @@ namespace CustomRenderer.Droid
 }
 ```
 
-基本クラスの呼び出し`OnElementChanged`メソッドは、Android をインスタンス化`ViewGroup`ビューのグループにあるコントロールです。 カメラのライブ ストリームがレンダリングされるは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、なるは、カスタム レンダラーによってレンダリングされるページ インスタンスが存在するだけです。
+基本クラスの呼び出し`OnElementChanged`メソッドには、Android がインスタンス化`ViewGroup`コントロールで、ビューのグループです。 カメラのライブ ストリームは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、カスタム レンダラーによってレンダリングされるページのインスタンスが存在することにのみ表示されます。
 
-ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`Camera`カメラと前に、写真をキャプチャする権限からライブ ストリームを提供する API、`AddView`ライブのカメラを追加するメソッドが呼び出されるストリームの UI を`ViewGroup`です。
+ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`Camera`カメラと、前に、写真をキャプチャする機能からライブ ストリームを提供する API、`AddView`ライブのカメラを追加するメソッドが呼び出されるストリーミングするための UI、`ViewGroup`します。
 
-### <a name="creating-the-page-renderer-on-uwp"></a>UWP にページ レンダラーを作成します。
+### <a name="creating-the-page-renderer-on-uwp"></a>UWP のページ レンダラーを作成します。
 
-次のコード例は、UWP 用ページ レンダラーを示しています。
+次のコード例では、UWP 用ページ レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -241,16 +241,16 @@ namespace CustomRenderer.UWP
 
 ```
 
-基本クラスの呼び出し`OnElementChanged`メソッドがインスタンス化、`FrameworkElement`ページがレンダリングされたコントロール。 カメラのライブ ストリームがレンダリングされるは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、なるは、カスタム レンダラーによってレンダリングされるページ インスタンスが存在するだけです。 ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`MediaCapture`カメラと、カスタマイズされたページに追加する前に、写真をキャプチャする権限からライブ ストリームを提供する API、`Children`表示用のコレクション。
+基本クラスの呼び出し`OnElementChanged`メソッドをインスタンス化、`FrameworkElement`コントロール、ページがレンダリングされます。 カメラのライブ ストリームは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、カスタム レンダラーによってレンダリングされるページのインスタンスが存在することにのみ表示されます。 ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`MediaCapture`カメラと、カスタマイズされたページに追加する前に、写真をキャプチャする機能からライブ ストリームを提供する API、`Children`表示用のコレクション。
 
-派生するカスタム レンダラーを実装するときに`PageRenderer`UWP、上、`ArrangeOverride`基本レンダラーが不明な関連付けを行うためにも、メソッドを実装ページ コントロールを配置する必要があります。 それ以外の場合、空白のページが発生します。 そのため、この例では、`ArrangeOverride`メソッドの呼び出し、`Arrange`メソッドを`Page`インスタンス。
+派生したカスタム レンダラーを実装するときに`PageRenderer`、UWP の`ArrangeOverride`ベース レンダラーは、それらの処理方法を認識しないためも、メソッドを実装、ページ コントロールを配置する必要があります。 それ以外の場合、空白のページになります。 そのため、この例では、`ArrangeOverride`メソッドの呼び出し、`Arrange`メソッドを`Page`インスタンス。
 
 > [!NOTE]
-> 停止し、UWP アプリケーションでカメラへのアクセスを提供するオブジェクトの破棄に重要です。 デバイスのカメラにアクセスしようとする他のアプリケーションと干渉するようにエラーがあります。 詳細については、次を参照してください。[カメラのプレビューを表示](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)です。
+> 停止し、UWP アプリケーションでのカメラへのアクセスを提供するオブジェクトの破棄に重要です。 そのためにはエラーは、デバイスのカメラにアクセスしようとする他のアプリケーションに干渉します。 詳細については、次を参照してください。[カメラ プレビュー表示](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)します。
 
 ## <a name="summary"></a>まとめ
 
-この記事は、用のカスタム レンダラーを作成する方法を示しましたが、 [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) ページで、開発者は、独自のプラットフォーム固有のカスタマイズと既定のネイティブ レンダリングをオーバーライドします。 A`ContentPage`は、1 つのビューを表示し、画面の大部分を占める視覚的要素。
+この記事は、用のカスタム レンダラーを作成する方法を示しましたが、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) ページで、開発者は、独自のプラットフォーム固有のカスタマイズと既定のネイティブ レンダリングをオーバーライドします。 A`ContentPage`は 1 つのビューを表示し、画面の大部分を占める視覚的要素。
 
 
 ## <a name="related-links"></a>関連リンク

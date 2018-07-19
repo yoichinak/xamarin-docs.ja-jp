@@ -8,7 +8,7 @@
            /p:IpaPackageDir="$HOME/Builds" \
            /t:Build MyProject.sln
 
-**Xbuild**コマンドは、ディレクトリでよく見られる**/Library/Frameworks/Mono.framework/Commands**です。
+**Xbuild**コマンドは、ディレクトリでよく見られる **/Library/Frameworks/Mono.framework/Commands**です。
 
  - Windows を使用して**msbuild**:
 

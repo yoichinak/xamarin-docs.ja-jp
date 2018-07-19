@@ -1,34 +1,35 @@
 ---
-title: C# でネイティブのビュー
-description: IOS、Android、および UWP からネイティブのビューは、c# を使用して作成された Xamarin.Forms ページから直接参照できます。 この記事では、c# を使用して作成された Xamarin.Forms レイアウトにネイティブのビューを追加する方法と API の使用状況の測定を解決するカスタム ビューのレイアウトをオーバーライドする方法を示します。
+title: C# でのネイティブ ビュー
+description: IOS、Android、および UWP からのネイティブ ビューは、c# を使用して作成された Xamarin.Forms ページから直接参照できます。 この記事では、c# を使用して作成された Xamarin.Forms レイアウトにネイティブ ビューを追加する方法と API の使用状況の測定を修正するカスタム ビューのレイアウトを上書きする方法を示します。
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996195"
 ---
-# <a name="native-views-in-c"></a>C# でネイティブのビュー
+# <a name="native-views-in-c"></a>C# でのネイティブ ビュー
 
-_IOS、Android、および UWP からネイティブのビューは、c# を使用して作成された Xamarin.Forms ページから直接参照できます。この記事では、c# を使用して作成された Xamarin.Forms レイアウトにネイティブのビューを追加する方法と API の使用状況の測定を解決するカスタム ビューのレイアウトをオーバーライドする方法を示します。_
+_IOS、Android、および UWP からのネイティブ ビューは、c# を使用して作成された Xamarin.Forms ページから直接参照できます。この記事では、c# を使用して作成された Xamarin.Forms レイアウトにネイティブ ビューを追加する方法と API の使用状況の測定を修正するカスタム ビューのレイアウトを上書きする方法を示します。_
 
 ## <a name="overview"></a>概要
 
-任意 Xamarin.Forms コントロールを許可する`Content`を設定するにまたはを持つ、`Children`コレクションは、プラットフォーム固有のビューを追加できます。 たとえば、iOS`UILabel`に直接追加することができます、 [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)プロパティ、または、 [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/)コレクション。 ただし、この機能を使用する必要ある`#if`Xamarin.Forms 共有プロジェクトのソリューションで定義し、Xamarin.Forms .NET 標準ライブラリのソリューションから使用できません。
+できるすべての Xamarin.Forms コントロール`Content`を設定するにするかを持つ、`Children`コレクションは、プラットフォーム固有のビューを追加できます。 たとえば、iOS`UILabel`に直接追加することができます、 [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ、または、 [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children)コレクション。 ただし、この機能を使用する必要ある`#if`Xamarin.Forms 共有プロジェクトのソリューションで定義し、Xamarin.Forms .NET Standard ライブラリのソリューションから使用できません。
 
-次のスクリーン ショットは、プラットフォーム固有のビューを Xamarin.Forms に追加されたことを示す[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
+次のスクリーン ショットは、プラットフォーム固有のビューを Xamarin.Forms に追加されたことを示す[ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 
-[![](code-images/screenshots-sml.png "プラットフォーム固有のビューを含む StackLayout")](code-images/screenshots.png#lightbox "StackLayout プラットフォーム固有のビューを含む")
+[![](code-images/screenshots-sml.png "プラットフォーム固有のビューを含む StackLayout")](code-images/screenshots.png#lightbox "プラットフォームに固有のビューを含む StackLayout")
 
 Xamarin.Forms のレイアウトにプラットフォーム固有のビューを追加する機能は、各プラットフォームでの 2 つの拡張メソッドで有効です。
 
-- `Add` – するプラットフォーム固有のビューを追加、 [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/)レイアウトのコレクション。
-- `ToView` – プラットフォームに固有のビューを取得し、Xamarin.Forms としてラップ[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)として設定できる、`Content`コントロールのプロパティです。
+- `Add` – するプラットフォームに固有のビューを追加、 [ `Children` ](xref:Xamarin.Forms.Layout`1.Children)レイアウトのコレクション。
+- `ToView` – プラットフォームに固有のビューを受け取り、Xamarin.Forms としてラップ[ `View` ](xref:Xamarin.Forms.View)として設定できる、`Content`コントロールのプロパティ。
 
 Xamarin.Forms 共有プロジェクトでこれらのメソッドを使用するには、適切なプラットフォーム固有の Xamarin.Forms 名前空間をインポートする必要があります。
 
@@ -38,11 +39,11 @@ Xamarin.Forms 共有プロジェクトでこれらのメソッドを使用する
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>各プラットフォームでプラットフォーム固有のビューを追加します。
 
-次のセクションでは、各プラットフォームで Xamarin.Forms レイアウトにプラットフォーム固有のビューを追加する方法を示します。
+次のセクションでは、各プラットフォームで Xamarin.Forms のレイアウトにプラットフォーム固有のビューを追加する方法を示します。
 
 ### <a name="ios"></a>iOS
 
-次のコード例は、追加する方法を示します、`UILabel`を[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+次のコード例は、追加する方法を示します、`UILabel`を[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)と[ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var uiLabel = new UILabel {
@@ -55,11 +56,11 @@ stackLayout.Children.Add (uiLabel);
 contentView.Content = uiLabel.ToView();
 ```
 
-例では、`stackLayout`と`contentView`インスタンスは、XAML または c# で既に作成しています。
+例では、`stackLayout`と`contentView`XAML または c# で作成したインスタンス。
 
 ### <a name="android"></a>Android
 
-次のコード例は、追加する方法を示します、`TextView`を[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+次のコード例は、追加する方法を示します、`TextView`を[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)と[ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
@@ -67,11 +68,11 @@ stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
 
-例では、`stackLayout`と`contentView`インスタンスは、XAML または c# で既に作成しています。
+例では、`stackLayout`と`contentView`XAML または c# で作成したインスタンス。
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-次のコード例は、追加する方法を示します、`TextBlock`を[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)と[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+次のコード例は、追加する方法を示します、`TextBlock`を[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)と[ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textBlock = new TextBlock
@@ -85,17 +86,17 @@ stackLayout.Children.Add(textBlock);
 contentView.Content = textBlock.ToView();
 ```
 
-例では、`stackLayout`と`contentView`インスタンスは、XAML または c# で既に作成しています。
+例では、`stackLayout`と`contentView`XAML または c# で作成したインスタンス。
 
 ## <a name="overriding-platform-measurements-for-custom-views"></a>カスタム ビューのプラットフォーム測定値をオーバーライドします。
 
-各プラットフォームでのカスタム ビューは、多くの場合のみ正しくデザイン対象のレイアウト シナリオの測定を実装します。 たとえば、カスタム ビューがのみ、デバイスの使用可能な幅の半分を占有するように設計されています可能性があります。 ただし、他のユーザーと共有されているの後に、カスタム ビュー必要があります、デバイスの利用可能な幅を占有するようにします。 したがって、Xamarin.Forms レイアウトで再利用されるときに、カスタム ビューの測定の実装をオーバーライドする必要であることができます。 そのため、`Add`と`ToView`拡張メソッドは、Xamarin.Forms のレイアウトに追加されたとき、カスタム ビューのレイアウトをオーバーライドできます測定デリゲートを指定するをできる上書きします。
+各プラットフォームでのカスタム ビューは、多くの場合のみ正しくデザイン対象のレイアウト シナリオの測定を実装します。 たとえば、カスタム ビューがのみ、デバイスの使用可能な幅の半分を占有するよう設計されています可能性があります。 ただし後、他のユーザーと共有されている、カスタム ビューが必要、デバイスの利用可能な幅を占有するように可能性があります。 そのため、Xamarin.Forms のレイアウトで再利用されるときに、カスタム ビューの測定の実装をオーバーライドする必要があります。 そのため、`Add`と`ToView`拡張メソッドは、Xamarin.Forms のレイアウトに追加されたときに、カスタム ビュー レイアウトをオーバーライドできます測定デリゲートを指定するを許可する上書きを提供します。
 
-次のセクションでは、API の使用状況の測定を解決する、カスタム ビューのレイアウトをオーバーライドする方法を示します。
+次のセクションでは、API の使用状況の測定を修正する、カスタム ビューのレイアウトをオーバーライドする方法を示します。
 
 ### <a name="ios"></a>iOS
 
-次のコード例は、`CustomControl`から継承されるクラスが`UILabel`:
+次のコード例は、`CustomControl`クラスから継承`UILabel`:
 
 ```csharp
 public class CustomControl : UILabel
@@ -112,7 +113,7 @@ public class CustomControl : UILabel
 }
 ```
 
-このビューのインスタンスを追加、 [ `StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)次のコード例に示すように、します。
+このビューのインスタンスを追加、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)次のコード例に示すように。
 
 ```csharp
 var customControl = new CustomControl {
@@ -126,9 +127,9 @@ stackLayout.Children.Add (customControl);
 
 ただし、ため、`CustomControl.SizeThatFits`オーバーライドは常に 150 の高さを返します、次のスクリーン ショットに示すように、上下に空の領域で、ビューが表示されます。
 
-![](code-images/ios-bad-measurement.png "iOS SizeThatFits 実装が不適切なカスタム コントロール")
+![](code-images/ios-bad-measurement.png "iOS SizeThatFits の不適切な実装でのカスタム コントロール")
 
-この問題の解決策が提供することです、`GetDesiredSizeDelegate`実装では、次のコード例で示したようにします。
+この問題を解決が提供するには、`GetDesiredSizeDelegate`実装は、次のコード例で示した。
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double height)
@@ -149,19 +150,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double h
 }
 ```
 
-このメソッドによって提供される幅の使用、`CustomControl.SizeThatFits`メソッドでは、70 の高さの 150 の高さが置き換えられます。 ときに、`CustomControl`インスタンスに追加される、 [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)、`FixSize`としてメソッドを指定することができます、`GetDesiredSizeDelegate`によって提供される不適切な測定値の修正、`CustomControl`クラス。
+このメソッドによって提供される幅の使用、`CustomControl.SizeThatFits`メソッドは、高さ 70 の場合は 150 の高さが置換されます。 ときに、`CustomControl`インスタンスに追加される、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)、`FixSize`としてメソッドを指定することができます、`GetDesiredSizeDelegate`によって提供される無効な測定値を修正する、`CustomControl`クラス。
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-これは、結果、次のスクリーン ショットに示すようにせず、上下に空の領域が正しく表示されるカスタム ビューに。
+これは、結果、次のスクリーン ショットに示すように、上と下、空のスペースのないが正しく表示されているカスタム ビュー。
 
-![](code-images/ios-good-measurement.png "iOS GetDesiredSize 上書きを使ってカスタム コントロール")
+![](code-images/ios-good-measurement.png "iOS GetDesiredSize 上書きでカスタム コントロール")
 
 ### <a name="android"></a>Android
 
-次のコード例は、`CustomControl`から継承されるクラスが`TextView`:
+次のコード例は、`CustomControl`クラスから継承`TextView`:
 
 ```csharp
 public class CustomControl : TextView
@@ -183,7 +184,7 @@ public class CustomControl : TextView
 }
 ```
 
-このビューのインスタンスを追加、 [ `StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)次のコード例に示すように、します。
+このビューのインスタンスを追加、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)次のコード例に示すように。
 
 ```csharp
 var customControl = new CustomControl (MainActivity.Instance) {
@@ -193,11 +194,11 @@ var customControl = new CustomControl (MainActivity.Instance) {
 stackLayout.Children.Add (customControl);
 ```
 
-ただし、ため、`CustomControl.OnMeasure`オーバーライドが常に要求された幅の半分を返します、ビューに表示されます、デバイスの使用可能な幅の半分だけを使用していた次のスクリーン ショットに示すようにします。
+ただし、ため、`CustomControl.OnMeasure`オーバーライドが常に要求された幅の半分を返します、ビューが表示されます、デバイスの使用可能な幅の半分だけを占有している次のスクリーン ショットに示すようにします。
 
-![](code-images/android-bad-measurement.png "不適切な OnMeasure 実装と android のカスタム コントロール")
+![](code-images/android-bad-measurement.png "不適切な OnMeasure 実装で android カスタム コントロール")
 
-この問題の解決策が提供することです、`GetDesiredSizeDelegate`実装では、次のコード例で示したようにします。
+この問題を解決が提供するには、`GetDesiredSizeDelegate`実装は、次のコード例で示した。
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, int heightConstraint)
@@ -216,19 +217,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, i
 }
 ```
 
-このメソッドによって提供される幅の使用、`CustomControl.OnMeasure`メソッドが乗算して 2 つです。 ときに、`CustomControl`インスタンスに追加される、 [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)、`FixSize`としてメソッドを指定することができます、`GetDesiredSizeDelegate`によって提供される不適切な測定値の修正、`CustomControl`クラス。
+このメソッドによって提供される幅の使用、`CustomControl.OnMeasure`メソッドが乗算して 2 つです。 ときに、`CustomControl`インスタンスに追加される、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)、`FixSize`としてメソッドを指定することができます、`GetDesiredSizeDelegate`によって提供される無効な測定値を修正する、`CustomControl`クラス。
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-これは、結果カスタム ビューの中で正しく表示すると、デバイスの幅を使用していた、次のスクリーン ショットに示すように。
+これにより、カスタム ビューが正しく表示されたら、デバイスの幅を占有している次のスクリーン ショットに示すように。
 
-![](code-images/android-good-measurement.png "カスタム GetDesiredSize デリゲートを使用して android のカスタム コントロール")
+![](code-images/android-good-measurement.png "カスタム GetDesiredSize デリゲートを使用して android カスタム コントロール")
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-次のコード例は、`CustomControl`から継承されるクラスが`Panel`:
+次のコード例は、`CustomControl`クラスから継承`Panel`:
 
 ```csharp
 public class CustomControl : Panel
@@ -281,7 +282,7 @@ public class CustomControl : Panel
 }
 ```
 
-このビューのインスタンスを追加、 [ `StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)次のコード例に示すように、します。
+このビューのインスタンスを追加、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)次のコード例に示すように。
 
 ```csharp
 var brokenControl = new CustomControl {
@@ -290,11 +291,11 @@ var brokenControl = new CustomControl {
 stackLayout.Children.Add(brokenControl);
 ```
 
-ただし、ため、`CustomControl.ArrangeOverride`オーバーライドが常に要求された幅の半分を返します、ビューは、次のスクリーン ショットに示すように、デバイスの使用可能な幅の半分にクリップされます。
+ただし、ため、`CustomControl.ArrangeOverride`オーバーライドが常に要求された幅の半分を返します、次のスクリーン ショットで示すようにそのビューが、デバイスの使用可能な幅の半分に切り取られます。
 
-![](code-images/winrt-bad-measurement.png "不適切な ArrangeOverride 実装と UWP CustomControl")
+![](code-images/winrt-bad-measurement.png "不適切な ArrangeOverride 実装で、UWP のカスタム コントロール")
 
-この問題を解決が提供するには、`ArrangeOverrideDelegate`実装では、ビューを追加するときに、 [ `StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)次のコード例に示すように。
+この問題を解決が提供するには、`ArrangeOverrideDelegate`にビューを追加するときに、実装、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)次のコード例に示すように。
 
 ```csharp
 stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, finalSize) =>
@@ -309,13 +310,13 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 });
 ```
 
-このメソッドによって提供される幅の使用、`CustomControl.ArrangeOverride`メソッドが乗算して 2 つです。 これは、結果カスタム ビューの中で正しく表示すると、デバイスの幅を使用していた、次のスクリーン ショットに示すように。
+このメソッドによって提供される幅の使用、`CustomControl.ArrangeOverride`メソッドが乗算して 2 つです。 これにより、カスタム ビューが正しく表示されたら、デバイスの幅を占有している次のスクリーン ショットに示すように。
 
-![](code-images/winrt-good-measurement.png "ArrangeOverride デリゲートを使用して UWP CustomControl")
+![](code-images/winrt-good-measurement.png "ArrangeOverride デリゲートを使用して、UWP のカスタム コントロール")
 
 ## <a name="summary"></a>まとめ
 
-この記事では、c# を使用して作成された Xamarin.Forms レイアウトにネイティブのビューを追加する方法と API の使用状況の測定を解決するカスタム ビューのレイアウトをオーバーライドする方法について説明します。
+この記事では、c# を使用して作成された Xamarin.Forms レイアウトにネイティブ ビューを追加する方法と API の使用状況の測定を修正するカスタム ビューのレイアウトを上書きする方法について説明します。
 
 
 ## <a name="related-links"></a>関連リンク

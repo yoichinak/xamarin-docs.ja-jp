@@ -1,19 +1,20 @@
 ---
-title: コード署名とプロビジョニング
-description: 高度な設定
+title: Xamarin.iOS アプリ用のコード署名とプロビジョニング
+description: このドキュメントは、デバイスのプロビジョニング、機能の使用、権利の使用、Info.plist ファイル、fastlane について説明するガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: ff9d9e779f246c0cd2fde4332f6c80aae4b43d49
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfbb36dc7298563987bcd688927649366094ae89
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785536"
 ---
-# <a name="code-signing-and-provisioning"></a>コード署名とプロビジョニング
+# <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリ用のコード署名とプロビジョニング
 
 ## <a name="device-provisioning--introductioniosget-startedinstallationdevice-provisioningindexmd"></a>[Device Provisioning – Introduction](~/ios/get-started/installation/device-provisioning/index.md) (デバイスのプロビジョニング: 概要)
 
@@ -24,7 +25,6 @@ Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手�
 App Services を使用して iOS アプリの機能を拡張する
 
 アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、すべての機能に必要なセットアップについて説明します。
-
 
 ## <a name="working-with-entitlementsentitlementsmd"></a>[Working with Entitlements](entitlements.md) (権利の使用)
 
@@ -37,4 +37,3 @@ Info.plist キーのリファレンス ガイドです。
 ## <a name="introduction-to-fastlane-for-iosiosdeploy-testprovisioningfastlaneindexmd"></a>[Introduction to Fastlane for iOS](~/ios/deploy-test/provisioning/fastlane/index.md) (fastlane for iOS の概要)
 
 このガイドでは、コード署名 iOS アプリケーションで使用できるさまざまな fastlane ツールを紹介します。
-

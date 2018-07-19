@@ -1,21 +1,21 @@
 ---
-title: 目標ペンを使わずにバインディングを作成します。
-description: このセクションで説明目的ペンを使わず、Objective C ライブラリへのバインドを作成するプロセスを自動化するため、Xamarin のコマンド ライン ツールの概要
+title: 目標油性とバインディングの作成
+description: このセクションは、目標油性、Xamarin のコマンドライン ツールは、OBJECTIVE-C ライブラリへのバインドを作成するプロセスを自動化するために使用の概要を提供します。
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: ae644038aa8b54f0d57b61767882dec8754040c8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 53fcbbc408ae147405a3285d9391457051d6e16e
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780758"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854798"
 ---
-# <a name="creating-bindings-with-objective-sharpie"></a>目標ペンを使わずにバインディングを作成します。
+# <a name="creating-bindings-with-objective-sharpie"></a>目標油性とバインディングの作成
 
-_このセクションで説明目的ペンを使わず、Objective C ライブラリへのバインドを作成するプロセスを自動化するため、Xamarin のコマンド ライン ツールの概要_
+_このセクションは、目標油性、Xamarin のコマンドライン ツールは、OBJECTIVE-C ライブラリへのバインドを作成するプロセスを自動化するために使用の概要を提供します。_
 
 - [概要](#overview) & [履歴](#history)
 - [はじめに](get-started.md)
@@ -27,25 +27,27 @@ _このセクションで説明目的ペンを使わず、Objective C ライブ�
 
 ## <a name="overview"></a>概要
 
-目標ペンを使わずは、ブートス トラップ バインディングの最初のパスを支援するコマンド ライン ツールです。
-パブリック API をマップするネイティブ ライブラリのヘッダー ファイルを解析して、それと、[バインディング定義](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file)(以前は手動で実行する処理)。
+油性の目標は、バインディングの最初のパスをブートス トラップするコマンド ライン ツールです。
+パブリック API をマップするネイティブ ライブラリのヘッダー ファイルを解析することによって動作、[バインディング定義](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file)(以前実行された手動でプロセス)。
 
-目標ペンを使わず Clang 解析ヘッダー、ファイルを使用するバインディングは、完全一致と完全可能で、します。 これは、時間と品質のバインドを生成するためにかかる労力に大幅に減らすことができます。
+バインディングは、完全一致と可能な限り徹底的なので、目標油性は Clang 解析のヘッダー ファイルを使用します。 これは、時間と品質のバインドを生成するためにかかる労力に大幅に削減できます。
 
 > [!IMPORTANT]
-> 目標ペンを使わず、Objective C の (および C の拡張機能によって) 高度な知識と経験を積んだ開発者向けツールです。 Objective C ライブラリをバインドする前に、コマンドライン (およびのネイティブ ライブラリのしくみをよく理解) ネイティブ ライブラリを構築する方法を十分に理解が必要です。
+> 油性の目標は、OBJECTIVE-C の (および C の拡張機能によって) 高度な知識と経験豊富な Xamarin 開発者向けツールです。 Objective C ライブラリをバインドしようとする前に、コマンドライン (およびネイティブ ライブラリの動作をよく理解) でネイティブ ライブラリを構築する方法を十分に理解が必要です。
 
 ## <a name="history"></a>履歴
 
-おがされて進化ありを使用目的ペンを使わず内部的に Xamarin で最後の 3 年間です。 目標ペンを使わずのべき乗に運営、Api は、iOS、Mac OS X 10.10 8 以降、Xamarin.iOS および Xamarin.Mac で導入されたおよび watchOS 2.0 が完全目標ペンを使わずにブートス トラップします。 Xamarin に大きく依存して目標ペンを使わず内部的には、独自の製品をビルドするためです。
+進化し、xamarin 過去 3 年間の目標油性を内部的に使用されているしました。 目標油性の運営、Api は、iOS、Mac OS X 10.10 を 8 以降、Xamarin.iOS および Xamarin.Mac で導入された、watchOS 2.0 された目標油性だけでブートス トラップします。 Xamarin に大きく依存目標油性内部的には、独自の製品を構築するためです。
 
-ただし、目的のペンを使わず、Objective C、C、clang コンパイラ、コマンドラインを使用する方法および一般にネイティブ ライブラリをまとめるの高度な知識を必要とする非常に高度なツールです。 この高いバーが原因とフル インストールを所有するウィザードで、間違った期待値を設定、そのため、目標ペンを使わず現在のみコマンド ライン ツールとして使用できます。
+ただし、目的の油性は Objective C、C、コマンドラインで、clang コンパイラを使用する方法および一般的にどのネイティブ ライブラリがまとめての高度な知識を必要とする非常に高度なツールです。 この高いバーが原因と、GUI を持つそのウィザードの設定、間違った予測を行い、あり、そのため、目標油性現在のみコマンド ライン ツールとして使用できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [目標のペンを使わずダウンロード](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
-- [チュートリアル: バインド Objective C ライブラリ](~/ios/platform/binding-objective-c/walkthrough.md)
+- [目標油性ダウンロード](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
+- [チュートリアル: OBJECTIVE-C ライブラリのバインド](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Objective-C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [バインディングの詳細](~/cross-platform/macios/binding/overview.md)
-- [バインディングの種類のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)
+- [バインドの種類のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Objective-C 開発者向けの Xamarin](~/ios/get-started/objective-c-developers/index.md)
+- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

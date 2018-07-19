@@ -8,24 +8,24 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: 7585138cd6c33c2a5dc537ba28101a84e1c4b7ae
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a6c1b0a4e0df1c25f595ca4eb53079c74b84972e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921837"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998584"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
 _FlexLayout を使用して、子ビューのコレクションの配置と折り返しを行う。_
 
-Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) は Xamarin.Forms 3.0 の新機能です。 これは CSS [フレキシブル ボックス レイアウト モジュール](http://www.w3.org/TR/css-flexbox-1/) に基づいており、通常 _flex layout_ や _flex-box_ として知られています。これはレイアウトに子を整列するための多くの柔軟なオプションが含まれているためそう呼ばれています。
+Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) は Xamarin.Forms 3.0 の新機能です。 これは CSS [フレキシブル ボックス レイアウト モジュール](http://www.w3.org/TR/css-flexbox-1/) に基づいており、通常 _flex layout_ や _flex-box_ として知られています。これはレイアウトに子を整列するための多くの柔軟なオプションが含まれているためそう呼ばれています。
 
-`FlexLayout` は スタックに水平および垂直方向に配置することができる Xamarin.Forms の [ `StackLayout` ](~/xamarin-forms/user-interface/layouts/stack-layout.md) に似ています。ただし、`FlexLayout` は、1行または1列に多すぎて収められない場合に子を折り返す機能もあります。また配置方向や配置属性やさまざまな画面サイズへ対応するための多くのオプションもあります。
+`FlexLayout` は スタックに水平および垂直方向に配置することができる Xamarin.Forms の [`StackLayout`](~/xamarin-forms/user-interface/layouts/stack-layout.md) に似ています。 ただし、`FlexLayout` は、1行または1列に多すぎて収められない場合に子を折り返す機能もあります。また配置方向や配置属性やさまざまな画面サイズへ対応するための多くのオプションもあります。
 
-`FlexLayout` は [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) から派生し、`IList<View>` 型の [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) プロパティを継承しています。
+`FlexLayout` は [`Layout<View>`](xref:Xamarin.Forms.Layout`1) から派生し、`IList<View>` 型の [`Children`](xref:Xamarin.Forms.Layout`1.Children) プロパティを継承しています。
 
-`FlexLayout` は、6 つのパブリックなバインド可能なプロパティと、サイズ・向き・およびその子要素の配置に影響する 5 つのバインド可能な添付プロパティが定義されています。 (バインド可能な添付プロパティについてご不明な点があれば、**[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)** の記事を参照してください。) これらのプロパティは、以下の **[添付プロパティの詳細](#bindable-properties)** と **[バインド可能な添付プロパティの詳細](#attached-properties)** のセクションで詳しく説明されています。しかし、この記事はこれらのプロパティの多くをより簡略に説明する `FlexLayout` の **[一般的な使用シナリオ](#common-scenarios)** のセクションから始まります。この記事の最後に、`FlexLayout` と [CSS スタイルシート](~/xamarin-forms/user-interface/styles/css/index.md) を組み合わせる方法を参照できます。
+`FlexLayout` は、6 つのパブリックなバインド可能なプロパティと、サイズ・向き・およびその子要素の配置に影響する 5 つのバインド可能な添付プロパティが定義されています。 (バインド可能な添付プロパティについてご不明な点があれば、**[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)** の記事を参照してください。)これらのプロパティは、以下の **[添付プロパティの詳細](#bindable-properties)** と **[バインド可能な添付プロパティの詳細](#attached-properties)** のセクションで詳しく説明されています。 しかし、この記事はこれらのプロパティの多くをより簡略に説明する `FlexLayout` の **[一般的な使用シナリオ](#common-scenarios)** のセクションから始まります。 この記事の最後に、`FlexLayout` と [CSS スタイルシート](~/xamarin-forms/user-interface/styles/css/index.md) を組み合わせる方法を参照できます。
 
 <a name="common-scenarios" />
 
@@ -35,7 +35,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) は Xamarin.Forms 
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>単純なスタックで FlexLayout を使用する
 
-**Simple Stack** のページは、`FlexLayout` を `StackLayout` の代わりにどのように、よりシンプルなマークアップで使用できるかを示します。 このサンプルは全てXAMLで定義されています。この `FlexLayout` は 4 つの子が含まれています。
+**Simple Stack** のページは、`FlexLayout` を `StackLayout` の代わりにどのように、よりシンプルなマークアップで使用できるかを示します。 このサンプルは全てXAMLで定義されています。 この `FlexLayout` は 4 つの子が含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -64,15 +64,15 @@ iOS、Android、および Universal Windows Platform で実行したページを
 
 [![Simple Stack ページ](flex-layout-images/SimpleStack.png "Simple Stack ページ")](flex-layout-images/SimpleStack-Large.png#lightbox)
 
- **SimpleStackPage.xaml** ファイルに `FlexLayout` の 3 つのプロパティが示されています。
+`FlexLayout`SimpleStackPage.xaml**ファイルに** の 3 つのプロパティが示されています。
 
-- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) プロパティは、[ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) 列挙型の値が設定されます。既定値は `Row` です。このプロパティを `Column` に設定すると、 `FlexLayout` の子はアイテムを 1 つの列に配置します。
+- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)プロパティは、[`FlexDirection`](xref:Xamarin.Forms.FlexDirection)列挙型の値が設定されます。 既定値は `Row` です。 このプロパティを `Column` に設定すると、 `FlexLayout` の子はアイテムを 1 つの列に配置します。
 
     `FlexLayout` のアイテムが1列で配置されたとき、 `FlexLayout` は垂直の _主軸_ と水平の _交差軸_ を持つとされます。
 
 - [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) プロパティは、[ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) 型で、交差軸上にアイテムを配置する方法を指定します。 `Center` オプションは、各アイテムを水平方向に中央揃えにします。
 
-    もしこのタスクに `FlexLayout` ではなく `StackLayout` を使用していたら、各アイテムの `HorizontalOptions` を `Center` に設定することで、全てのアイテムを中央揃えにする必要があったでしょう。 `HorizontalOptions` プロパティは、 `FlexLayout` の子では動作しませんが、 1つの `AlignItems` プロパティだけで同じ目標を達成できます。必要であれば、 `AlignSelf` の添付されたバインド可能なプロパティを使って、個別のアイテムの `AlignItems` プロパティを上書きできます。
+    もしこのタスクに `FlexLayout` ではなく `StackLayout` を使用していたら、各アイテムの `HorizontalOptions` を `Center` に設定することで、全てのアイテムを中央揃えにする必要があったでしょう。 `HorizontalOptions` プロパティは、 `FlexLayout` の子では動作しませんが、 1つの `AlignItems` プロパティだけで同じ目標を達成できます。 必要であれば、 `AlignSelf` の添付されたバインド可能なプロパティを使って、個別のアイテムの `AlignItems` プロパティを上書きできます。
 
     ```xaml
     <Label Text="FlexLayout in Action"
@@ -193,9 +193,9 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="page-layout-with-flexlayout"></a>FlexLayout を使ったページレイアウト
 
-非常に望ましいレイアウト形式ですが、完全に実現することがしばしば困難であることから、[_聖杯_](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) と呼ばれる webデザインの標準的なレイアウトがあります。そのレイアウトは、ページの上部にあるヘッダーと下部にあるフッターで構成され、そのどちらもページの幅全体に及びます。ページの中央を占めるものは、メインコンテンツですが、しばしばコンテンツの左側に縦型のメニューと右側に補助的な情報（_aside_ エリア とも呼ばれる）があります。 [Section 5.4.1 of the CSS Flexible Box Layout specification 5.4.1](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) で 聖杯レイアウトを flex box を使って実現する方法について説明されています。
+非常に望ましいレイアウト形式ですが、完全に実現することがしばしば困難であることから、 [_聖杯_](https://en.wikipedia.org/wiki/Holy_grail_(web_design))と呼ばれる webデザインの標準的なレイアウトがあります。 そのレイアウトは、ページの上部にあるヘッダーと下部にあるフッターで構成され、そのどちらもページの幅全体に及びます。 ページの中央を占めるものは、メインコンテンツですが、しばしばコンテンツの左側に縦型のメニューと右側に補助的な情報（_aside_ エリア とも呼ばれる）があります。 [Section 5.4.1 of the CSS Flexible Box Layout specification 5.4.1](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) で 聖杯レイアウトを flex box を使って実現する方法について説明されています。
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル の **Holy Grail Layout** のページは、`FlexLayout` の入れ子を使った聖杯レイアウトの簡単な実装を示しています。このページは縦向きモードの電話用にデザインされているため、コンテンツ領域の右側および左側の領域は50ピクセル幅です。
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル の **Holy Grail Layout** のページは、`FlexLayout` の入れ子を使った聖杯レイアウトの簡単な実装を示しています。 このページは縦向きモードの電話用にデザインされているため、コンテンツ領域の右側および左側の領域は50ピクセル幅です。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -248,17 +248,17 @@ public partial class PhotoWrappingPage : ContentPage
 
 ナビゲーションと aside エリアは、左側と右側に `BoxView` を使ってレンダリングしています。
 
-XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に配置された3つの子を含んでいます。 それらは ヘッダー、ページ本体、フッターとなります。入れ子の `FlexLayout` は水平の主軸と行に配置された3つの子を持ちます。
+XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に配置された3つの子を含んでいます。 それらは ヘッダー、ページ本体、フッターとなります。 入れ子の `FlexLayout` は水平の主軸と行に配置された3つの子を持ちます。
 
 このプログラムでは、次の 3 つのバインド可能な添付プロパティについて説明します。
 
-- `Order` のバインド可能な添付プロパティは、最初の `BoxView` にセットされています。このプロパティは、既定値 0 を持つ整数型です。このプロパティを使ってレイアウトの順序を変更することができます。 一般的に開発者は、ナビゲーション項目と aside 項目より前にページのコンテンツがマークアップに表示されることを好みます。最初の `BoxView` の `Order` プロパティに他の兄弟要素より小さい値を設定すると、その行の最初のアイテムとして表示することができます。同様に、`Order` プロパティに兄弟要素より大きい値を設定することでアイテムを最後に表示させることができます。
+- `Order`のバインド可能な添付プロパティは、最初の `BoxView` にセットされています。 このプロパティは、既定値 0 を持つ整数型です。 このプロパティを使ってレイアウトの順序を変更することができます。 一般的に開発者は、ナビゲーション項目と aside 項目より前にページのコンテンツがマークアップに表示されることを好みます。 最初の `BoxView` の `Order` プロパティに他の兄弟要素より小さい値を設定すると、その行の最初のアイテムとして表示することができます。 同様に、`Order` プロパティに兄弟要素より大きい値を設定することでアイテムを最後に表示させることができます。
 
-- `Basis` 添付プロパティは、2 つの `BoxView` に 50 ピクセル幅を与えるために設定されています。このプロパティは、 `FlexBasis` 型で、 `Auto` という名前の `FlexBasis` 型の静的プロパティが定義されている構造体で、`Auto` が既定値となります。`Basis` を使って、ピクセルのサイズまたは主軸上でそのアイテムが占める領域の量を示すパーセンテージを指定することができます。_basis_ と呼ばれる理由は、全ての後続のレイアウトの基本となるアイテムのサイズを指定するためです。
+- `Basis`添付プロパティは、2 つの `BoxView` に 50 ピクセル幅を与えるために設定されています。 このプロパティは、 `FlexBasis` 型で、 `Auto` という名前の `FlexBasis` 型の静的プロパティが定義されている構造体で、`Auto` が既定値となります。 `Basis` を使って、ピクセルのサイズまたは主軸上でそのアイテムが占める領域の量を示すパーセンテージを指定することができます。 _basis_ と呼ばれる理由は、全ての後続のレイアウトの基本となるアイテムのサイズを指定するためです。
 
-- `Grow` プロパティは、 入れ子の `Layout` と コンテンツを表す子の `Label` に設定されています。このプロパティは `float` 型で、既定値は 0 です。正の値を設定すると、主軸上にある残りの全ての領域が、そのアイテムと正の値の `Grow` を持つ兄弟要素に割り当てられます。その領域は `Grow` の値の比率にしたがって割り当てられます。これは `Grid` の星形のプロパティにやや似ています。
+- `Grow`プロパティは、 入れ子の `Layout` と コンテンツを表す子の `Label` に設定されています。 このプロパティは `float` 型で、既定値は 0 です。 正の値を設定すると、主軸上にある残りの全ての領域が、そのアイテムと正の値の `Grow` を持つ兄弟要素に割り当てられます。その領域は `Grow` の値の比率にしたがって割り当てられます。 これは `Grid` の星形のプロパティにやや似ています。
 
-    最初の `Grow` 添付プロパティは、 入れ子の `FlexLayout` 上に設定されており、この `FlexLayout` が外側の `FlexLayout` 内の未使用の垂直の領域全てを使用することを示しています。2つめの `Grow` 添付プロパティは、コンテンツを表す `Label` 上に設定されており、このコンテンツが 内部の `FlexLayout` の未使用の水平の領域全てを使用することを示します。
+    最初の `Grow` 添付プロパティは、 入れ子の `FlexLayout` 上に設定されており、この `FlexLayout` が外側の `FlexLayout` 内の未使用の垂直の領域全てを使用することを示しています。 2つめの `Grow` 添付プロパティは、コンテンツを表す `Label` 上に設定されており、このコンテンツが 内部の `FlexLayout` の未使用の水平の領域全てを使用することを示します。
 
     同様に、子のサイズの合計が (折り返ししない) `FlexLayout` のサイズを超える場合に使うことができる `Shrink` のバインド可能な添付プロパティもあります。
 
@@ -268,7 +268,7 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 
 [![Catalog Items ページ](flex-layout-images/CatalogItems.png "Catalog Items ページ")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
-3匹のそれぞれのサルは、明示的に高さと幅を与えられた `Frame` に含まれた `FlexLayout` の中に表示します。またそれは、より大きな `FlexLayout` の子となっています。この XAML ファイルでは、`FlexLayout` の子のプロパティのほとんどは、スタイルで指定されており、そのうちの一つ以外は暗黙的なスタイルが使われています。
+3匹のそれぞれのサルは、明示的に高さと幅を与えられた `Frame` に含まれた `FlexLayout` の中に表示します。またそれは、より大きな `FlexLayout` の子となっています。 この XAML ファイルでは、`FlexLayout` の子のプロパティのほとんどは、スタイルで指定されており、そのうちの一つ以外は暗黙的なスタイルが使われています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -376,9 +376,9 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 </Style>
 ```
 
-`Order`の設定の &ndash;1 は、`Image` 要素を子コレクション内の位置に関係なく、それぞれの入れ子の `FlexLayout` で最初に表示させるようにします。`AlignSelf` プロパティの `Center` は、`Image` を `FlexLayout` 内で中央揃えにします。このプロパティは `AlignItems` プロパティの設定を上書きします。`AlignItems` プロパティは規定値として `Strech` を持つので、`Label` と `Button` は `FlexLayout` の全幅に引き延ばされるということになります。
+`Order`の設定の &ndash;1 は、`Image` 要素を子コレクション内の位置に関係なく、それぞれの入れ子の `FlexLayout` で最初に表示させるようにします。 `AlignSelf`プロパティの `Center` は、`Image` を `FlexLayout` 内で中央揃えにします。 このプロパティは `AlignItems` プロパティの設定を上書きします。`AlignItems` プロパティは規定値として `Stretch` を持つので、`Label` と `Button` は `FlexLayout` の全幅に引き延ばされるということになります。
 
-3 つの各 `FlexLayout` の中には、空白の `Label` が `Button` の前にあり、それには `Grow` に 1 が設定されています。これは全ての余分な垂直の領域がこの空白の `Label` に割り当てられることを意味します。これによって `Button` を最下部に効果的に押し出すことができます。
+3 つの各 `FlexLayout` の中には、空白の `Label` が `Button` の前にあり、それには `Grow` に 1 が設定されています。 これは全ての余分な垂直の領域がこの空白の `Label` に割り当てられることを意味します。これによって `Button` を最下部に効果的に押し出すことができます。
 
 <a name="bindable-properties" />
 
@@ -387,6 +387,8 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 `FlexLayout` のいくつかの一般的なアプリケーションを見てきた今なら、`FlexLayout` のプロパティをより詳しく調査できるはずです。
 `FlexLayout` には、XAML またはコードのどちらかで `FlexLayout` 自身に設定する 6 つのバインド可能なプロパティが定義されており、方向や整列を制御します。（これらのプロパティの1つに [`Position`](xref:Xamarin.Forms.FlexLayout.Position) がありますが、これはこの記事では説明しません。）
 
+`FlexLayout` のいくつかの一般的なアプリケーションを見てきた今なら、`FlexLayout` のプロパティをより詳しく調査できるはずです。 
+`FlexLayout` には、XAML またはコードのどちらかで `FlexLayout` 自身に設定する 6 つのバインド可能なプロパティが定義されており、方向や整列を制御します。 （これらのプロパティの1つに [`Position`](xref:Xamarin.Forms.FlexLayout.Position) がありますが、これはこの記事では説明しません。）
 
 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル の **Experiment** ページ を使って、残り 5 つのバインド可能なプロパティを試すことができます。このページは、`FlexLayout` から子を追加・削除したり、5 つのバインド可能なプロパティの組み合わせを設定したりすることができます。`FlexLayout` の全ての子は、様々な色やサイズの `Label` view で、`Text` プロパティには `Children` コレクションの位置に対応する番号がセットされます。
 
@@ -456,7 +458,7 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは、4 つのメンバーを列挙する [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) 型です。
 
-- `Stretch`、既定値
+- `Stretch` 既定値
 - `Center`
 - `Start` ( XAML では "flex-start" も可 )
 - `End` ( XAML では "flex-end" も可 )
@@ -475,7 +477,7 @@ iOS のスクリーンショットでは、すべての子は上揃えになっ�
 
 [ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent)プロパティは、7 つのメンバーを列挙する [ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent) 型です。
 
-- `Stretch`、既定値
+- `Stretch` 既定値
 - `Center`
 - `Start` ( XAML では "flex-start" も可 )
 - `End` ( XAML では "flex-end" も可 )
@@ -505,7 +507,7 @@ iOS のスクリーンショットでは、すべての行は上部にありま�
 
 [ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) 添付プロパティは、 5 つのメンバーを列挙する [ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent) 型です。
 
-- `Auto`、既定値
+- `Auto` 既定値
 - `Stretch`
 - `Center`
 - `Start` ( XAML では "flex-start" も可 )
@@ -519,7 +521,7 @@ iOS のスクリーンショットでは、すべての行は上部にありま�
 FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
-`Label` の親である `FlexLayout` への参照がないことに注意してください。XAML では次のようにこのプロパティをセットします。
+`Label` の親である `FlexLayout` への参照がないことに注意してください。 XAML では、このようなプロパティを設定します。
 
 ```xaml
 <Label ... FlexAlign.AlignSelf="Center" ... />
@@ -537,13 +539,13 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 `Basis`プロパティは、[ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis) 型の構造体です。サイズはデバイスに依存しない単位、または `FlexLayout` のサイズの割合のどちらかで指定することができます。`Basis` プロパティの規定値は、静的プロパティの `FlexBasis.Auto` で、これは子に要求した幅や高さが使用されることを意味します。 
 
-コードでは、以下のように `labal` という名前の `Label` の `Basis` プロパティに 40 デバイス非依存単位を設定することができます。
+コードでは、以下のように `label` という名前の `Label` の `Basis` プロパティに 40 デバイス非依存単位を設定することができます。
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(40, false));
 ```
 
-`FlexBasis` コンストラクタの 2 番目の引数は `isRelative` という名前で、相対サイズ（ `true` ）にするか絶対サイズ（ `false` ）にするかどうかを示します。この引数は規定値として `false` を持っています。したがって次のコードのように書くこともできます。
+`FlexBasis` コンストラクタの 2 番目の引数は `isRelative` という名前で、相対サイズ（`true`）にするか絶対サイズ（`false`）にするかどうかを示します。 この引数は規定値として `false` を持っています。したがって次のコードのように書くこともできます。
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(40));
@@ -575,49 +577,49 @@ XAML では、デバイス非依存単位のサイズの数値を使用できま
 <Label ... FlexLayout.Basis="25%" ... />
 ```
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルの **Basis Experiment** のページでは、`Basis` プロパティを試すことができます。このページは交互に異なる背景色と前景色を持つ 5 つの `Label` 要素の折り返しする列が表示されます。2 つの `Slider` 要素は 2 番目と 4 番目の `Label` に `Basis` 値を指定します。
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルの **Basis Experiment** のページでは、`Basis` プロパティを試すことができます。 このページは交互に異なる背景色と前景色を持つ 5 つの `Label` 要素の折り返しする列が表示されます。 2 つの `Slider` 要素は 2 番目と 4 番目の `Label` に `Basis` 値を指定します。
 
 [![The Basis Experiment Page](flex-layout-images/BasisExperiment.png "The Basis Experiment Page")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-左の iOS のスクリーンショットは、2 つの `Label` 要素がデバイス非依存単位で高さが与えられていること示しています。。Android のスクリーンショットは、それらの要素が `FlexLayout` の 合計の高さに対する割合での高さが与えられていることを示しています。`Basis` に 100% がセットされた場合、UWP のスクリーンショットで示すように、子は `FlexLayout` の高さになり、次の列に折り返され、その列の全体の高さを占有します。さも 5 つの子が行に配置されたかのように見えますが、それらは実際は 5 つの列に配置されています。
+左の iOS のスクリーンショットは、2 つの `Label` 要素がデバイス非依存単位で高さが与えられていること示しています。 Android のスクリーンショットは、それらの要素が `FlexLayout` の 合計の高さに対する割合での高さが与えられていることを示しています。 `Basis` に 100% がセットされた場合、UWP のスクリーンショットで示すように、子は `FlexLayout` の高さになり、次の列に折り返され、その列の全体の高さを占有します。さも 5 つの子が行に配置されたかのように見えますが、それらは実際は 5 つの列に配置されています。
 
 ### <a name="the-grow-property"></a>Grow プロパティ
 
-[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty) 添付プロパティは `int` 型です。規定値は 0 でこの値は 0以上でなければなりません。
+[`Grow`](xref:Xamarin.Forms.FlexLayout.GrowProperty)添付プロパティは `int` 型です。 規定値は 0 でこの値は 0以上でなければなりません。
 
-`Grow` プロパティは、`Wrap` プロパティに `NoWrap` が設定されていて、1行の子の合計幅が `FlexLayout` の幅より小さい場合、または1列の子の合計の高さが `FlexLayout` の高さより低い場合に機能します。`Grow` プロパティは子に余った領域を分配する方法を示します。
+`Grow` プロパティは、`Wrap` プロパティに `NoWrap` が設定されていて、1行の子の合計幅が `FlexLayout` の幅より小さい場合、または1列の子の合計の高さが `FlexLayout` の高さより低い場合に機能します。 `Grow` プロパティは子に余った領域を分配する方法を示します。
 
-**Grow Experiment** ページでは、交互に異なる色の 5 つの `Label` 要素が列に配置されています。そして 2 つの `Slider` で 2 番目と 4 番目の `Label` の `Grow` プロパティを調整できます。一番左の iOS のスクリーンショットは、`Grow` プロパティが 0 であるデフォルトの状態を示しています。
+**Grow Experiment** ページでは、交互に異なる色の 5 つの `Label`要素が列に配置されています。そして 2 つの `Slider` で 2 番目と 4 番目の `Label` の `Grow` プロパティを調整できます。 一番左の iOS のスクリーンショットは、`Grow` プロパティが 0 であるデフォルトの状態を示しています。
 
 [![The Grow Experiment Page](flex-layout-images/GrowExperiment.png "The Grow Experiment Page")](flex-layout-images/GrowExperiment-Large.png#lightbox)
 
-ある子要素に正の `Grow` 値が設定されている場合、Android のスクリーンショットで示すように、その子要素は残りの全ての領域を取得します。この領域は2つ以上の子の間で割り当てることもできます。UWP のスクリーンショットでは、2 番目の `Label` の `Grow` プロパティに 0.5 を、4 番目の `Label` の `Grow` プロパティに 1.5 を設定しています。それによって 4 番目の `Label` に 2 番目の `Label` の 3 倍の領域が残りの領域から与えられます。
+ある子要素に正の `Grow` 値が設定されている場合、Android のスクリーンショットで示すように、その子要素は残りの全ての領域を取得します。 この領域は2つ以上の子の間で割り当てることもできます。 UWP のスクリーンショットでは、2 番目の `Label` の `Grow` プロパティに 0.5 を、4 番目の `Label` の `Grow` プロパティに 1.5 を設定しています。それによって 4 番目の `Label` に 2 番目の `Label` の 3 倍の領域が残りの領域から与えられます。
 
-子ビューがその領域をどのように使用するかは、子の特定の型によって異なります。`Label` では、テキストは `HorizontalTextAlignment` と `VerticalTextAlignment` のプロパティを使って `Label` の合計領域内に配置することができます。
+子ビューがその領域をどのように使用するかは、子の特定の型によって異なります。 `Label` では、テキストは `HorizontalTextAlignment` と `VerticalTextAlignment` のプロパティを使って `Label` の合計領域内に配置することができます。
 
 <a name="shrink" />
 
 ### <a name="the-shrink-property"></a>Shrink プロパティ
 
-[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty) 添付プロパティは `int` 型です。規定値は 1 でその値は 0 以上でなければなりません。
+[`Shrink`](xref:Xamarin.Forms.FlexLayout.ShrinkProperty)添付プロパティは `int` 型です。 規定値は 1 でその値は 0 以上でなければなりません。
 
-`Shrink` プロパティは、`Wrap` プロパティに `NoWrap` が設定されていて、1行の子の合計幅が `FlexLayout` の幅よりも大きくなる場合、または1列の子の合計の高さが `FlexLayout` の高さより大きくなる場合に機能します。通常、`FlexLayout` は子のサイズを収縮させることで子を表示しようとします。`Shrink` プロパティは、子がフルサイズで表示されることに優先度を与えることができます。
+`Shrink` プロパティは、`Wrap` プロパティに `NoWrap` が設定されていて、1行の子の合計幅が `FlexLayout` の幅よりも大きくなる場合、または1列の子の合計の高さが `FlexLayout` の高さより大きくなる場合に機能します。 通常、`FlexLayout` は子のサイズを収縮させることで子を表示しようとします。 `Shrink`プロパティは、子がフルサイズで表示されることに優先度を与えることができます。
 
-**Shrink Experiment** ページは、`FlexLayout` の幅より大きい領域を要求する 5 つの `Label` の子要素を1行で持つ `FlexLayout` を生成します。左の iOS のスクリーンショットでは、全て規定値 1 の `Label` 要素を表示しています。
+**Shrink Experiment** ページは、`FlexLayout` の幅より大きい領域を要求する 5 つの `Label` の子要素を1行で持つ `FlexLayout` を生成します。 左の iOS のスクリーンショットでは、全て規定値 1 の `Label` 要素を表示しています。
 
 [![The Shrink Experiment Page](flex-layout-images/ShrinkExperiment.png "The Shrink Experiment Page")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-Android のスクリーンショットでは、2 番目の `Label` の `Shrink` 値に 0 が設定され、その `Label` はフルサイズで表示されています。また、4 番目の `Label` には `Shrink` に 1 より大きい値が与えられ、それは収縮しています。UWP のスクリーンショットは、両方の `Label` 要素に `Shrink` 値 0 が与えられ、可能であれば、それらをフルサイズで表示できることを示しています。
+Android のスクリーンショットでは、2 番目の `Label` の `Shrink` 値に 0 が設定され、その `Label` はフルサイズで表示されています。 また、4 番目の `Label` には `Shrink` に 1 より大きい値が与えられ、それは収縮しています。 UWP のスクリーンショットは、両方の `Label` 要素に `Shrink` 値 0 が与えられ、可能であれば、それらをフルサイズで表示できることを示しています。
 
 子の合計サイズが `FlexLayout` のサイズより小さくなったり大きくなったりすることがあるような状況に対応するために、`Grow` と `Shrink` 値を両方設定することができます。
 
 ## <a name="css-styling-with-flexlayout"></a>FlexLayout を使った CSS スタイル
 
-`FlexLayout` に関連して Xamarin.Forms 3.0 に導入された [CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md) を使うことができます。**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルの **CSS Catalog Items** ページは、**Catalog Items** ページのレイアウトを複写したものですが、多くのスタイルに CSS スタイルシートを使っています。
+`FlexLayout` に関連して Xamarin.Forms 3.0 に導入された [CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md) を使うことができます。 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルの **CSS Catalog Items** ページは、**Catalog Items** ページのレイアウトを複写したものですが、多くのスタイルに CSS スタイルシートを使っています。
 
 [![The CSS Catalog Items Page](flex-layout-images/CssCatalogItems.png "The CSS Catalog Items Page")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-オリジナルの **CatalogItemsPage.xaml** ファイルには 5 つの `Style` があり、自身の `Resources` セクション内に 15 の `Setter` オブジェクトが定義されています。**CssCatalogItemsPage.xaml** ファイルでは、4 つだけの `Setter` オブジェクトが定義された 2 つの `Style` に減少しています。これらのスタイルは、Xamarin.Forms CSS スタイル機能が現在サポートしていないプロパティのために、その CSS スタイルシートを補っています。
+オリジナルの **CatalogItemsPage.xaml** ファイルには 5 つの `Style` があり、自身の `Resources` セクション内に 15 の `Setter` オブジェクトが定義されています。 **CssCatalogItemsPage.xaml** ファイルでは、4 つだけの `Setter` オブジェクトが定義された 2 つの `Style` に減少しています。 これらのスタイルは、Xamarin.Forms CSS スタイル機能が現在サポートしていないプロパティのために、その CSS スタイルシートを補っています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -683,7 +685,7 @@ Android のスクリーンショットでは、2 番目の `Label` の `Shrink` 
 </ContentPage>
 ```
 
-`Resource` セクションの最初の行で CSS スタイルシートを参照しています。
+`Resources` セクションの最初の行で CSS スタイルシートを参照しています。
 
 ```xaml
 <StyleSheet Source="CatalogItemsStyles.css" />
@@ -734,7 +736,7 @@ button {
 }
 ```
 
-様々な `FlexLayout` の添付プロパティがここを参照しています。`label.empty` セレクタでは、`flex-grow` 属性が確認できますが、これは `Button` の上の空白を埋めるために空の `Label` をスタイルしています。`image` セレクタは、`order` 属性と `align-self` 属性を含んでおり、その両方が `FlexLayout` の添付プロパティに対応しています。
+様々な `FlexLayout` の添付プロパティがここを参照しています。 `label.empty`セレクタでは、`flex-grow` 属性が確認できますが、これは `Button` の上の空白を埋めるために空の `Label` をスタイルしています。 `image`セレクタは、`order`属性と `align-self` 属性を含んでおり、その両方が `FlexLayout` の添付プロパティに対応しています。
 
 これまで `FlexLayout` 上に直接プロパティを設定できることと、`FlexLayout` の子に添付プロパティを設定できること、またこれらのプロパティに従来の XAML に基づくスタイルや CSS スタイルを使って間接的に設定できることを見てきました。重要なことはこれらのプロパティを知って理解することです。これらのプロパティは `FlexLayout` を真に柔軟にさせます。
 

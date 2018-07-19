@@ -1,19 +1,20 @@
 ---
-title: ワイヤレス展開
-description: この機能を使用すると、ネットワーク接続経由で iOS または Apple TV のデバイスに展開できます
+title: Xamarin.iOS および tvOS アプリのワイヤレス展開
+description: このドキュメントでは、Visual Studio for Mac や Visual Studio 2017 から iOS デバイスに Xamarin.iOS アプリをワイヤレス展開する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: b331ea61915b4f202aa971658a5a54d1a8038d64
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ade7eb7ff26fec8df616401801585e499ddf4206
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785519"
 ---
-# <a name="wireless-deployment"></a>ワイヤレス展開
+# <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS および tvOS アプリのワイヤレス展開
 
 開発者ワークフローの重要なフローの 1 つは、デバイスの展開です。 Xcode 9 では、ネットワークを介して iOS デバイスや Apple TV に展開するオプションが導入されました。アプリを展開およびデバッグするたびにデバイスを配線する必要はありません。 この機能は Visual Studio for Mac 7.4 と Visual Studio 15.6 リリースで導入されました。
 

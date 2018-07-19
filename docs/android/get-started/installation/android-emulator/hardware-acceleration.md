@@ -1,28 +1,43 @@
 ---
-title: Android Emulator ハードウェアの高速化
-description: Google Android Emulator の性能を最大まで上げるための準備をコンピューターに行う方法
+title: エミュレーター パフォーマンスのためのハードウェア高速化
+description: この記事では、お使いのコンピューターのハードウェア高速化機能を利用し、Android Emulator のパフォーマンスを最大化する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/10/2018
-ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 06/22/2018
+ms.openlocfilehash: c2bef2c614d4cc0655deb9732ccefec223a8318a
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38848468"
 ---
-# <a name="android-emulator-hardware-acceleration"></a>Android Emulator ハードウェアの高速化
+# <a name="hardware-acceleration-for-emulator-performance"></a>エミュレーター パフォーマンスのためのハードウェア高速化
 
-ハードウェアの高速化なしでは Google Android Emulator は遅すぎて使用がためらわれます。 x86 ハードウェアを対象とする特別なエミュレーター ハードウェア イメージと 2 つある仮想化技術のいずれかを使用することで Google Android Emulator のパフォーマンスを大幅に改善できます。仮想化テクノロジは次のようになります。
+_この記事では、お使いのコンピューターのハードウェア高速化機能を利用し、Android Emulator のパフォーマンスを最大化する方法について説明します。_
 
-1. **Microsoft の Hyper-V と Hypervisor Platform** &ndash; Hyper-V は Windows 10 で利用できる仮想化コンポーネントであり、仮想化したコンピューター システムを物理ホスト上で実行できます。 高速化した Android Emulator イメージにお勧めの仮想化テクノロジです。 Hyper-V の詳細については、[Windows 10 の Hyper-V ガイド](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/)をご覧ください。
-2. **Intel の Hardware Accelerated Execution Manager (HAXM)** &ndash; これは Intel CPU を実行しているコンピューターのための仮想化エンジンです。 Hyper-V を使用できない開発者にお勧めの仮想化エンジンです。
+## <a name="overview"></a>概要
 
-Android SDK Manager では、**x86** ベースの仮想デバイスのためのエミュレーター イメージを実行しているとき、自動的にハードウェア高速化が使用されます (詳細は[構成と使用](~/android/deploy-test/debugging/android-sdk-emulator/index.md)に関するページに説明されています)。
+Visual Studio で開発すると、Android デバイスが利用できないか、実用的でない状況でも、Android Emulator を利用することで Xamarin.Android アプリケーションを簡単にテストしたり、デバッグしたりできます。
+ただし、Android エミュレーターを実行するコンピューターにハードウェア高速化がない場合、エミュレーターの実行速度があまりにも遅くなります。 Android エミュレーターのパフォーマンスは、x86 ハードウェアを対象とする特別な仮想デバイス イメージと次の 2 つの仮想化技術のいずれかを併用することで大幅に改善できます。
 
-## <a name="hyper-v-overview"></a>Hyper-V の概要
+1. **Microsoft の Hyper-V と Hypervisor Platform**。 Hyper-V は Windows の仮想化技術の 1 つであり、物理的ホスト コンピューター上で、仮想化されたコンピューター システムを実行できます。 Android Emulator を高速化するための仮想化技術としてお勧めです。 Hyper-V の詳細については、「[Windows 10 の Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/)」を参照してください。
+
+2. **Intel の Hardware Accelerated Execution Manager (HAXM)**。 
+   HAXM は Intel CPU を実行するコンピューターのための仮想化エンジンです。
+   コンピューターで Hyper-V を実行できない場合にお勧めの仮想化エンジンです。
+
+Android Emulator は、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
+
+-   開発コンピューターにハードウェア高速化機能があり、それが有効になっている。
+
+-   **x86** ベースの仮想デバイスのために作成されたエミュレーター イメージをエミュレーターが実行している。
+
+Android Emulator の起動とデバッグについては、「[Debugging on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md)」 (Android Emulator でデバッグする) を参照してください。
+
+## <a name="hyper-v"></a>Hyper-V
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,38 +46,41 @@ Android SDK Manager では、**x86** ベースの仮想デバイスのための�
 > [!NOTE]
 > Hyper-V サポートは現在プレビュー段階です。
 
-Windows 10 (2018 年 4 月更新) を使用している開発者には、Microsoft の Hyper-V の使用を強くお勧めします。 Visual Studio Tools for Xamarin で開発すると、Android デバイスが利用できないか、実効的ない状況でも Xamarin.Android アプリケーションを簡単にテストしたり、デバッグしたりすることができます。
+Windows 10 (April 2018 Update 以降) を使用している開発者には、Android Emulator の高速化に Microsoft の Hyper-V の使用を強くお勧めします。 Hyper-V で Android Emulator を使用するには:
 
-Hyper-V と Google Android Emulator の使用を始めるには:
-
-1. **Windows 10 2018 年 4 月更新 (ビルド 1803) に更新する** &ndash; 実行している Windows のバージョンを確認するには、Cortana 検索バー内をクリックし、「**バージョン情報**」と入力します。 検索結果から **[PC 情報]** を選択します。 **[バージョン情報]** ダイアログ内で下にスクロールし、**[Windows の仕様]** セクションを表示します。 **バージョン**は 1803 以降になります。
+1. **Windows 10 April 2018 Update (ビルド 1803) 以降への更新**。
+   実行している Windows のバージョンを確認するには、Cortana 検索バー内をクリックし、「**バージョン情報**」と入力します。 検索結果から **[PC 情報]** を選択します。 **[バージョン情報]** ダイアログ内で下にスクロールし、**[Windows の仕様]** セクションを表示します。 **バージョン**は 1803 以降になります。
 
     [![Windows の仕様](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
 
-2. **Hyper-V と Windows Hypervisor Platform の両方を有効にする** &ndash; Cortana 検索バーに「**Windows の機能の有効化または無効化**」と入力します。
+2. **Windows Hypervisor Platform を有効にします**。
+   Cortana 検索バーに、「**Windows 機能を有効または無効にする**」と入力します。
    **[Windows の機能]** ダイアログ内で下にスクロールし、**[Windows Hypervisor Platform]** が有効になっていることを確認します。
 
-    [![Hyper-V と Windows Hypervisor Platform が有効になっています](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
+    [![Windows Hypervisor Platform が有効になっています](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
 
-    場合によっては、Hyper-V と Windows Hypervisor Platform を有効にしてから、Windows を再起動する必要があります。
+   **Windows Hypervisor Platform** を有効にすると、Hyper-V が自動的に有効になります。 この変更後に Windows を再起動することをお勧めします。
 
-3. **[Visual Studio 15.8 プレビュー 1 以降](https://www.visualstudio.com/vs/preview/)をインストールします。**&ndash; このバージョンの Visual Studio は、Google Android Emulator と共に Hyper-V を使用するための IDE に対応しています。
-
-4. **Google Android エミュレーター パッケージ 27.2.7 以降をインストールします**。&ndash; このパッケージをインストールするには、Visual Studio で **[ツール]、[Android]、[Android SDK Manager]** の順に移動します。 **[ツール]** タブを選択し、Android Emulator コンポーネントがバージョン 27.2.7 以降であることを確認します。
+3. **[Visual Studio 15.8 Preview 1 以降](https://visualstudio.microsoft.com/vs/preview/)** をインストールします。
+   このバージョンの Visual Studio は Hyper-V で Android Emulator を実行するための IDE に対応しています。
+ 
+4. **Android Emulator パッケージ 27.2.7 以降をインストールします**。 このパッケージをインストールするには、Visual Studio で **[ツール]、[Android]、[Android SDK Manager]** の順に移動します。 **[ツール]** タブを選択し、Android Emulator バージョンが 27.2.7 以降であることを確認します。 また、Android SDK Tools バージョンが 26.1.1 以降であることを確認します。
 
     [![[Android SDK とツール] ダイアログ](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 
-5. Android Emulator バージョンが 27.3.1 未満の場合、**既知の問題** (次のセクション) で説明する追加の回避策を適用します。
+5. エミュレーターのバージョンが 27.2.7 以上、27.3.1 未満の場合、Hyper-V を使用するには次の回避策が必要になります。
 
-
-### <a name="known-issues"></a>既知の問題
-
--   エミュレーターのバージョンが 27.2.7 以上、27.3.1 未満の場合、Hyper-V を使用するには次の回避策が必要になります。
     1.  **C:\\Users\\_username_\\.android** フォルダーに **advancedFeatures.ini** という名前のファイルがなければ、それを作成します。
+
     2.  次の行を **advancedFeatures.ini** に追加します。
         ```
         WindowsHypervisorPlatform = on
         ```
+
+
+### <a name="known-issues"></a>既知の問題
+
+-   Visual Studio プレビューに更新した後、エミュレーター バージョン 27.2.7 以降に更新できないときは、場合によっては、[プレビュー インストーラー](http://aka.ms/hyperv-emulator-dl)を直接インストールし、最新版のエミュレーターを有効にする必要があります。
 
 -   Intel または AMD ベースの一部のプロセッサでは、パフォーマンスが下がることがあります。
 
@@ -77,36 +95,36 @@ Hyper-V を使用するには Windows 10 が必要です。 詳細について�
 
 -----
 
-## <a name="haxm-overview"></a>HAXM の概要
+## <a name="haxm"></a>HAXM
 
-HAXM は、Intel Virtualization Technology (VT) を使用してホスト コンピューター上の Android アプリのエミュレーションを高速化するハードウェア依存の仮想化エンジン (ハイパーバイザー) です。 Intel が提供する Android x86 エミュレーター イメージと公式の Android SDK Manager を組み合わせることで、HAXM は VT 対応のシステムで Android のエミュレーションを高速化することができます。 
+HAXM は、Intel Virtualization Technology (VT) を使用してホスト コンピューター上の Android アプリのエミュレーションを高速化するハードウェア依存の仮想化エンジン (ハイパーバイザー) です。 Intel が提供する Android x86 エミュレーター イメージとの連動で HAXM を使用する場合、VT 対応システムで Android エミュレーションが速くなります。
 
-VT 機能を備えている Intel CPU を搭載したコンピューターで開発している場合は、HAXM を利用して Google Android Emulator を大幅に高速化できます (ご使用の CPU が VT をサポートしているかどうかがわからない場合は、「[使用中のプロセッサーはインテル® バーチャライゼーション・テクノロジーに対応していますか?](https://www.intel.com/content/www/us/en/support/processors/000005486.html)」を参照してください)。
+VT 機能を備えている Intel CPU を搭載したコンピューターで開発している場合は、HAXM を利用して Android Emulator を大幅に高速化できます (ご使用の CPU が VT をサポートしているかどうかがわからない場合は、「[使用中のプロセッサはインテル® バーチャライゼーション・テクノロジに対応していますか?](https://www.intel.com/content/www/us/en/support/processors/000005486.html)」を参照してください)。
 
 > [!NOTE]
-> VirtualBox、VMWare、Docker などでホストされる別の VM 内では VM による高速エミュレーターを実行できません。 Google Android エミュレーターは、[システム ハードウェアで直接](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)実行する必要があります。
+> VirtualBox、VMWare、Docker などでホストされる別の VM 内では VM による高速エミュレーターを実行できません。 Android Emulator は、[システム ハードウェアで直接](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)実行する必要があります。
 
-初めて Google Android Emulator を使用する場合は、事前に HAXM がインストールされ、Google Android Emulator を使用できることを確認することをお勧めします。
+初めて Android Emulator を使用する場合は、HAXM がインストールされ、Android Emulator を使用できることを事前に確認することをお勧めします。
 
 ### <a name="verifying-haxm-installation"></a>HAXM インストールの確認
 
-エミュレーターの起動時に、**[Starting Android Emulator]\(Android エミュレーターの起動\)** ウィンドウを表示して HAXM が使用可能かどうかを確認することができます。 Google Android Emulator を起動するには、次の操作を行います。
+エミュレーターの起動時に、**[Starting Android Emulator]\(Android エミュレーターの起動\)** ウィンドウを表示して HAXM が使用可能かどうかを確認することができます。 Android Emulator を起動するには、次の操作を行います。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **[ツール]、[Android]、[Android エミュレーター マネージャー]** の順にクリックして、Android エミュレーター マネージャーを起動します。
+1. **[ツール]、[Android]、[Android Device Manager]** の順にクリックし、Android Device Manager を起動します。
 
-    [![Android エミュレーター マネージャーのメニュー項目の場所](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
+    [![Android Device Manager のメニュー項目の場所](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
 
 2. 次のような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示される場合は、HAXM がまだインストールされていないか、コンピューター上で正しく構成されていません。
 
     ![HAXM の準備ができていないことを示す [Performance Warning]\(パフォーマンスに関する警告\) ダイアログ](hardware-acceleration-images/win/11-perf-warn.png)
 
-   このような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示された場合は、「[パフォーマンスに関する警告](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#perfwarn)」で原因を特定し、根本的な問題を解決します。
+   このような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示された場合は、「[パフォーマンスに関する警告](~/android/get-started/installation/android-emulator/troubleshooting.md#perfwarn)」で原因を特定し、根本的な問題を解決します。
 
-3. **x86** イメージ (**VisualStudio\_android 23\_x86\_phone** など) を選択し、**[Start]\(開始\)**、**[Launch]\(起動\)** の順にクリックします。
+3. **x86** イメージ (**VisualStudio\_android 23\_x86\_phone** など) を選択し、**[Start]\(開始\)** をクリックします。
 
-    ![既定の仮想デバイス イメージを使って Google Android Emulator を起動](hardware-acceleration-images/win/02-start-default-avd.png)
+    ![既定の仮想デバイス イメージを使って Android Emulator を起動](hardware-acceleration-images/win/02-start-default-avd.png)
 
 4. エミュレーターの起動中は **[Starting Android Emulator]\(Android エミュレーターの起動\)** ダイアログ ウィンドウを監視します。 HAXM がインストールされている場合は、次のスクリーンショットに示されているように、"**HAX is working and emulator runs in fast virt mode**" (HAX は動作しており、エミュレーターは高速仮想モードで実行されています) のメッセージが表示されます。
 
@@ -120,26 +138,25 @@ VT 機能を備えている Intel CPU を搭載したコンピューターで開
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **[ツール]、[Google エミュレーター マネージャー]** の順にクリックして、Android エミュレーター マネージャーを起動します。
+1. **[ツール]、[デバイス マネージャー]** の順にクリックし、Android Device Manager を起動します。
 
-    [![Android エミュレーター マネージャーのメニュー項目の場所](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
+    [![Android Device Manager のメニュー項目の場所](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
 
 2. 次のような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示される場合は、HAXM がまだインストールされていないか、コンピューター上で正しく構成されていません。
 
     ![HAXM の準備ができていないことを示す [Performance Warning]\(パフォーマンスに関する警告\) ダイアログ](hardware-acceleration-images/mac/04-avd-warning.png)
 
-   このような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示された場合は、「[パフォーマンスに関する警告](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#perfwarn)」で原因を特定し、根本的な問題を解決します。
+   このような **[Performance Warning]\(パフォーマンスに関する警告\)** ダイアログが表示された場合は、「[パフォーマンスに関する警告](~/android/get-started/installation/android-emulator/troubleshooting.md#perfwarn)」で原因を特定し、根本的な問題を解決します。
 
-3. **x86** イメージ (**Android\_Accelerated\_x86** など) を選択し、**[Start]\(開始\)**、**[Launch]\(起動\)** の順にクリックします。
+3. **x86** イメージ (**Android\_Accelerated\_x86** など) を選択し、**[再生]** をクリックします。
 
-    [![既定の仮想デバイス イメージを使って Google Android Emulator を起動](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
+    [![既定の仮想デバイス イメージを使って Android Emulator を起動](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. エミュレーターの起動中は **[Starting Android Emulator]\(Android エミュレーターの起動\)** ダイアログ ウィンドウを監視します。 HAXM がインストールされている場合は、次のスクリーンショットに示されているように、"**HAX is working and emulator runs in fast virt mode**" (HAX は動作しており、エミュレーターは高速仮想モードで実行されています) のメッセージが表示されます。
 
     ![HAXM が使用可能であることを示す [Starting Android Emulator]\(Android エミュレーターの起動\) ダイアログ](hardware-acceleration-images/mac/03-haxm-detected.png)
 
    お使いのコンピューターで HAXM が利用できない場合 (たとえば、"_Please ensure Intel HAXM is propertly installed and usable_" (HAXM が正しくインストールされ使用できることを確認してください) のようなエラー メッセージが表示される場合)、次のセクションの手順を使用して HAXM をインストールします。
-
 
 -----
 
@@ -165,7 +182,7 @@ VT 機能を備えている Intel CPU を搭載したコンピューターで開
 
 ## <a name="hardware-acceleration-and-amd-cpus"></a>ハードウェアの高速化と AMD の CPU
 
-Google の Android エミュレーターは現在 [Linux でのみ](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies) AMD ハードウェア アクセラレーションをサポートしているため、Windows を実行している AMD ベースのコンピューターではハードウェア アクセラレーションを実行できません。
+Android Emulator は現在 [Linux でのみ](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies) AMD ハードウェア アクセラレーションをサポートしているため、Windows を実行している AMD ベースのコンピューターではハードウェア アクセラレーションを実行できません。
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)

@@ -1,19 +1,20 @@
 ---
-title: Mac の概要
-description: Xamarin.Mac の概要
+title: Xamarin.Mac の概要
+description: このドキュメントは、Xamarin.Mac をインストールする方法について記したガイドにリンクされています。また、サンプル Xamarin.Mac アプリをビルドする方法のチュートリアルがあります。
 ms.prod: xamarin
 ms.assetid: 6CE7C634-6495-3517-B004-21C9EBF4C462
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 66bd2509c6b35d4391a9d04ad955b4a22cd9d39a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1ef978abac220f4ea20264922a85fc6dd0a006c3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792259"
 ---
-# <a name="getting-started-with-mac"></a>Mac の概要
+# <a name="getting-started-with-xamarinmac"></a>Xamarin.Mac の概要
 
 ##  <a name="installationmacget-startedinstallationmd"></a>[インストール](~/mac/get-started/installation.md)
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30784259"
 ---
 # <a name="ios-designer-basics"></a>iOS デザイナーの基礎
 
@@ -433,7 +434,7 @@ IOS デザイナーでは、6 つの主要セクションがあります。
 
 ### <a name="outline-view"></a>アウトライン表示
 
-IOS デザイナーは、アウトラインとしてコントロールのインターフェイスの階層を表示することもできます。 選択して、アウトラインが利用可能な**[ドキュメント アウトライン**] タブで次のようにします。
+IOS デザイナーは、アウトラインとしてコントロールのインターフェイスの階層を表示することもできます。 選択して、アウトラインが利用可能な **[ドキュメント アウトライン**] タブで次のようにします。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

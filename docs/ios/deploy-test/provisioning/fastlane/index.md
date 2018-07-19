@@ -1,21 +1,20 @@
 ---
 title: iOS 向け fastlane の概要
-description: このガイドでは、iOS アプリケーションのコード署名で使用できるさまざまな fastlane ツールを紹介します。
+description: このガイドでは、コード署名 iOS アプリケーションで使用できるさまざまな fastlane ツールを紹介します。 fastlane ツールの更新、インストール、使用方法について説明します。
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 68c252edecc4ebffb764c0de328ab605975471c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb7e0a088bcd227f45b97229f089ef59d4d6608
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785490"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>iOS 向け fastlane の概要
-
-_このガイドでは、iOS アプリケーションのコード署名で使用できるさまざまな fastlane ツールを紹介します_
 
 fastlane はオープン ソース プロジェクトであり、iOS および Android アプリのリリースの、わかりにくく煩雑に感じられることが多いプロセスを簡略化するために作成されています。 以下のようなアプリ リリースの特定の側面をそれぞれ処理するいくつかのユーティリティで構成されています。
 

@@ -1,50 +1,50 @@
 ---
 title: XAML マークアップ拡張機能
-description: Xamarin.Forms XAML マークアップ拡張機能を使用して、リテラル テキスト文字列以外のソースから設定する要素の属性を許可することで、電源と XAML の柔軟性を拡張する方法を説明します。
+description: この記事では、Xamarin.Forms の XAML マークアップ拡張機能を使用して、リテラル テキスト文字列以外のソースから設定する要素の属性を許可することで、電源と XAML の柔軟性を拡張する方法について説明します。
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d507ff3c74de6bb4ea36c1a7b7dc2cd5dd60823b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245886"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996741"
 ---
 # <a name="xaml-markup-extensions"></a>XAML マークアップ拡張機能
 
 XAML マークアップ拡張機能では、リテラル テキスト文字列以外のソースから設定する要素の属性を許可することで、電源と XAML の柔軟性を拡張するのに役立ちます。
 
-たとえば、通常、設定、`Color`のプロパティ`BoxView`次のようにします。
+設定する通常など、`Color`プロパティの`BoxView`次のように。
 
 ```xaml
 <BoxView Color="Blue" />
 ```
 
-または、RGB 色の 16 進数の値に設定することができます。
+または、16 進数の RGB 色の値に設定することができます。
 
 ```xaml
 <BoxView Color="#FF0080" />
 ```
 
-どちらの場合、テキスト文字列に設定、`Color`属性に変換されます、`Color`値に、 [ `ColorTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColorTypeConverter/)クラスです。
+いずれの場合も、テキスト文字列の設定`Color`属性に変換を`Color`値を[ `ColorTypeConverter` ](xref:Xamarin.Forms.ColorTypeConverter)クラス。
 
-設定する代わりにたい場合があります、`Color`属性リソース ディクショナリに格納されている値、作成したクラスの静的プロパティの値からまたは型のプロパティから`Color` ページで、別の要素から構築された、または色合い、鮮やかさ、明るさの値を区切ります。
+設定する方が、`Color`属性、リソース ディクショナリに格納されている値か、作成したクラスの静的プロパティの値または型のプロパティから`Color` ページで、別の要素から構築された、または色合い、鮮やかさ、および明るさの値を区切ります。
 
-これらすべてのオプションは、XAML マークアップ拡張機能の使用可能です。 でも、語句「マークアップ拡張機能」がコンピューターを保護する: XAML マークアップ拡張機能は*いない*to XML 拡張機能です。 XAML マークアップ拡張機能を使用しても XAML は常に有効な XML です。
+これらすべてのオプションは、XAML マークアップ拡張機能を使用できます。 しかし、語句「マークアップ拡張機能」を恐ろしい: XAML マークアップ拡張機能は*いない*to XML 拡張機能。 XAML マークアップ拡張機能でも XAML は常に有効な XML です。
 
-マークアップ拡張機能は、要素の属性を表すさまざまな方法では実際にです。 XAML マークアップ拡張機能は、中かっこで囲まれた属性の設定によって通常識別は。
+マークアップ拡張機能は、要素の属性を表現する別の方法にすぎません。 XAML マークアップ拡張機能は、通常は、中かっこで囲まれた属性の設定で識別できます。
 
 ```xaml
 <BoxView Color="{StaticResource themeColor}" />
 ```
 
-中かっこで属性の設定が*常に*XAML マークアップ拡張機能です。 ただし、説明するように、XAML マークアップ拡張機能参照することも、中かっこを使用せずします。
+属性の設定中かっこが*常に*XAML マークアップ拡張機能。 ただし、わかりますが、XAML マークアップ拡張機能もせずに参照できる中かっこを使用します。
 
-この記事は、2 つの部分に分かれています。
+この記事では、2 つの部分に分かれています。
 
 ## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[XAML マークアップ拡張の使用](consuming.md)  
 
@@ -52,14 +52,14 @@ Xamarin.Forms で定義されている XAML マークアップ拡張機能を使
 
 ## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML マークアップ拡張の作成](creating.md)
 
-独自のカスタム XAML マークアップ拡張を書き込みます。
+独自のカスタム XAML マークアップ拡張を記述します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [マークアップ拡張機能 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [Xamarin.Forms 帳から XAML マークアップ拡張機能の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [Xamarin.Forms book から XAML マークアップ拡張機能の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)

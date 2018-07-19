@@ -1,18 +1,20 @@
 ---
-title: 各種デバイス向けコンパイル
+title: Xamarin.iOS の各種デバイス向けコンパイル
+description: このドキュメントでは、各種デバイス用に Xamarin.iOS ビルドをカスタマイズするために使用できる、さまざまなビルド構成オプションについて説明します。
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 039e0a931613ec79ccd6f2b13bc18ae6b80f5195
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b1bfab36646256eee706316c70004aef8399994
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784846"
 ---
-# <a name="compiling-for-different-devices"></a>各種デバイス向けコンパイル
+# <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS の各種デバイス向けコンパイル
 
 実行可能ファイルのビルド プロパティは、プロジェクトの **iOS ビルド**のプロパティ ページから設定できます。このページは、プロジェクト名を右クリックし、**[オプション]、[iOS ビルド]** の順に移動するか (Visual Studio for Mac)、**[プロパティ]** に移動します (Visual Studio)。
 

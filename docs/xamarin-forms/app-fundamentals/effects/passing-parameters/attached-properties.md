@@ -1,47 +1,47 @@
 ---
-title: 添付プロパティとして効果のパラメーターの引き渡し
-description: ランタイム プロパティの変更に応答する効果パラメーターを定義する添付プロパティを使用できます。 この記事では、効果、および実行時にパラメーターを変更するパラメーターを渡すプロパティを使用するアタッチを示します。
+title: 添付プロパティとして効果パラメーターの引き渡し
+description: ランタイム プロパティの変更に応答する効果のパラメーターを定義する添付プロパティを使用できます。 この記事では、効果、および実行時にパラメーターを変更するパラメーターを渡すプロパティを使用して接続されているを示します。
 ms.prod: xamarin
 ms.assetid: DFCDCB9F-17DD-4117-BD53-B4FB206BB387
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 2ad27289fb7a4d34b9a951c8132f0147577dfc55
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9483e424a74a88ce3f0eb49624bb5315551f2062
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847918"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996452"
 ---
-# <a name="passing-effect-parameters-as-attached-properties"></a>添付プロパティとして効果のパラメーターの引き渡し
+# <a name="passing-effect-parameters-as-attached-properties"></a>添付プロパティとして効果パラメーターの引き渡し
 
-_ランタイム プロパティの変更に応答する効果パラメーターを定義する添付プロパティを使用できます。この記事では、効果、および実行時にパラメーターを変更するパラメーターを渡すプロパティを使用するアタッチを示します。_
+_ランタイム プロパティの変更に応答する効果のパラメーターを定義する添付プロパティを使用できます。この記事では、効果、および実行時にパラメーターを変更するパラメーターを渡すプロパティを使用して接続されているを示します。_
 
-ランタイム プロパティの変更に応答する効果パラメーターを作成するプロセスは次のとおりです。
+ランタイム プロパティの変更に応答する効果のパラメーターを作成するプロセスは次のとおりです。
 
 1. 作成、`static`効果に渡される各パラメーターの添付プロパティを含むクラスです。
-1. 添付プロパティの追加を追加または削除、クラスが接続されているコントロールに影響の制御に使用されるクラスに追加します。 このプロパティのレジスタがアタッチされていることを確認してください、`propertyChanged`プロパティの値が変更されたときに実行されるデリゲート。
-1. 作成`static`添付プロパティの get アクセス操作子および set アクセス操作子ごとにします。
-1. ロジックを実装、`propertyChanged`デリゲートを追加して、効果を削除します。
-1. 内の入れ子になったクラスを実装する、`static`効果、どのサブクラス後という名前のクラス、`RoutingEffect`クラスです。 コンス トラクターで連結したもの、解像度グループ名、および各プラットフォームに固有の効果クラスで指定された一意の ID を渡して基底クラスのコンス トラクターを呼び出します。
+1. 追加の添付プロパティを追加または削除、クラスが接続されているコントロールに影響の制御に使用されるクラスに追加します。 このプロパティのレジスタがアタッチされていることを確認、`propertyChanged`プロパティの値が変更されたときに実行されるデリゲート。
+1. 作成`static`添付プロパティの getter および setter ごと。
+1. 内のロジックを実装、`propertyChanged`デリゲートを追加して、効果を削除します。
+1. 内で入れ子になったクラスを実装、 `static` 、効果、つまりサブクラス後という名前のクラス、`RoutingEffect`クラス。 コンス トラクターでは、解像度のグループ名、および各プラットフォームに固有のエフェクト クラスで指定された一意の ID の連結を渡して基底クラスのコンス トラクターを呼び出します。
 
-パラメーターは、適切なコントロールに接続されているプロパティは、およびプロパティの値を追加することによって効果に渡すことができます。 さらに、新しい添付プロパティの値を指定することによって、実行時にパラメーターを変更できます。
+パラメーターは、適切なコントロールに添付プロパティ、およびプロパティの値を追加することで効果に渡すできます。 さらに、新しい添付プロパティの値を指定することで、実行時にパラメーターを変更できます。
 
 > [!NOTE]
-> 添付プロパティは、特殊な種類のクラスとピリオドで区切ったプロパティ名を含む属性として、他のオブジェクトにアタッチされ、XAML で認識可能な 1 つのクラスで定義されているバインド可能なプロパティです。 詳細については、次を参照してください。[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)です。
+> 添付プロパティは、特殊な種類のバインド可能なプロパティ、属性クラスとピリオドで区切ったプロパティ名が含まれていると、その他のオブジェクトにアタッチされていると、XAML で認識可能な 1 つのクラスで定義されています。 詳細については、次を参照してください。[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)します。
 
-サンプル アプリケーションは、`ShadowEffect`によって表示されるテキストに影を追加する、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)コントロール。 さらに、実行時に影の色を変更できます。 次の図は、両者間のリレーションシップと共に、サンプル アプリケーション内の各プロジェクトの役割を示しています。
+サンプル アプリケーションでは、`ShadowEffect`によって表示されるテキストに影を追加する、 [ `Label` ](xref:Xamarin.Forms.Label)コントロール。 さらに、実行時に影の色を変更できます。 次の図は、サンプル アプリケーションとそれらの間のリレーションシップ内の各プロジェクトの役割を示します。
 
-![](attached-properties-images/shadow-effect.png "シャドウ効果のプロジェクトの責任")
+![](attached-properties-images/shadow-effect.png "シャドウ効果プロジェクトの責任")
 
-A [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)の control 権限、`HomePage`によってカスタマイズ、`LabelShadowEffect`プラットフォーム固有のプロジェクトごとにします。 パラメーターが渡される各`LabelShadowEffect`経由でのプロパティをアタッチ、`ShadowEffect`クラスです。 各`LabelShadowEffect`から派生したクラス、`PlatformEffect`各プラットフォームのクラスです。 によって表示されるテキストに追加されているシャドウでこの結果、`Label`を制御する次のスクリーン ショットに示すようにします。
+A [ `Label` ](xref:Xamarin.Forms.Label)の control 権限、`HomePage`によってカスタマイズされた、`LabelShadowEffect`各プラットフォーム固有プロジェクト。 パラメーターが渡される各`LabelShadowEffect`添付プロパティを通じて、`ShadowEffect`クラス。 各`LabelShadowEffect`クラスから派生、`PlatformEffect`各プラットフォームのクラス。 によって表示されるテキストに追加されるシャドウでこの結果、`Label`コントロールが次のスクリーン ショットに示すようにします。
 
-![](attached-properties-images/screenshots.png "各プラットフォームでシャドウ効果")
+![](attached-properties-images/screenshots.png "各プラットフォームでのシャドウ効果")
 
-## <a name="creating-effect-parameters"></a>効果のパラメーターを作成します。
+## <a name="creating-effect-parameters"></a>パラメーターの効果を作成します。
 
-A`static`の次のコード例に示すように、効果パラメーターを表すクラスを作成する必要があります。
+A`static`の次のコード例に示す、効果のパラメーターを表すクラスを作成する必要があります。
 
 ```csharp
 public static class ShadowEffect
@@ -95,16 +95,16 @@ public static class ShadowEffect
 }
 ```
 
-`ShadowEffect` 5 つの添付プロパティを持つ`static`添付プロパティの get アクセス操作子および set アクセス操作子ごとにします。 各プラットフォーム固有に渡されるパラメーターを表すこれらのプロパティのうち 4 つ`LabelShadowEffect`です。 `ShadowEffect`クラスも定義、`HasShadow`添付プロパティを追加または削除、コントロールに、その効果を制御するために使用する、`ShadowEffect`にクラスをアタッチします。 この添付プロパティに、プロパティの値が変更された時に実行される `OnHasShadowChanged` メソッドを登録します。 このメソッドを追加または削除の値に基づいて有効、`HasShadow`添付プロパティ。
+`ShadowEffect` 5 つの添付プロパティを持つ`static`添付プロパティの getter および setter ごと。 各プラットフォーム固有に渡されるパラメーターを表す 4 つのこれらのプロパティ`LabelShadowEffect`します。 `ShadowEffect`クラスも定義、`HasShadow`添付プロパティを追加または削除のコントロールに影響を制御するために使用される、`ShadowEffect`にクラスが接続されています。 この添付プロパティに、プロパティの値が変更された時に実行される `OnHasShadowChanged` メソッドを登録します。 このメソッドを追加またはの値に基づいて効果の削除、`HasShadow`添付プロパティ。
 
-入れ子になった`LabelShadowEffect`クラス、どのサブクラス、 [ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)クラスをサポートしている効果の追加と削除されます。 `RoutingEffect`クラスは、通常は、プラットフォーム固有の内部の効果をラップするプラットフォームに依存しない効果を表します。 プラットフォーム固有の効果の種類の情報へのコンパイル時アクセスは存在しないために、効果削除プロセスが簡略化します。 `LabelShadowEffect`コンス トラクターは、解像度グループ名、および各プラットフォームに固有の効果クラスで指定された一意の ID の連結で構成されるパラメーターを渡して基底クラスのコンス トラクターを呼び出します。 これにより、効果の追加と削除、`OnHasShadowChanged`メソッドは、次のようにします。
+入れ子になった`LabelShadowEffect`クラスをサブクラス、 [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)クラスをサポートする効果の追加と削除。 `RoutingEffect`クラスは、通常はプラットフォーム固有の内部の効果をラップするプラットフォームに依存しない効果を表します。 プラットフォーム固有の効果の型情報をコンパイル時のアクセスがないために、効果の削除プロセスが簡略化します。 `LabelShadowEffect`コンス トラクターは、解像度のグループ名、および各プラットフォームに固有のエフェクト クラスで指定された一意の ID の連結で構成されるパラメーターを渡して基底クラスのコンス トラクターを呼び出します。 これにより、効果の追加と削除、`OnHasShadowChanged`メソッドは、次のようにします。
 
-- **追加の影響を与える**– の新しいインスタンス、`LabelShadowEffect`をコントロールの追加は[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)コレクション。 これは、置換を使用して、 [ `Effect.Resolve` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.Resolve/p/System.String/)効果を追加するメソッド。
-- **削除の影響を与える**– の最初のインスタンス、 `LabelShadowEffect` 、コントロールの[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)コレクションが取得され、削除します。
+- **追加の影響を与える**– の新しいインスタンス、`LabelShadowEffect`をコントロールの追加は[ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション。 使用してこれに置き換えられます、 [ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String))効果を追加するメソッド。
+- **削除の影響を与える**– の最初のインスタンス、 `LabelShadowEffect` 、コントロールの[ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクションが取得され、削除します。
 
 ## <a name="consuming-the-effect"></a>効果の使用
 
-各プラットフォームに応じた`LabelShadowEffect`にアタッチされるプロパティを追加することで消費されることができます、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)コントロールが次の XAML コードの例に示されています。
+各プラットフォーム固有`LabelShadowEffect`する添付プロパティを追加することで使用できる、 [ `Label` ](xref:Xamarin.Forms.Label)制御、次の XAML コード例で示した。
 
 ```xaml
 <Label Text="Label Shadow Effect" ...
@@ -120,7 +120,7 @@ public static class ShadowEffect
 </Label>
 ```
 
-該当するショートカットは、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) c# では次のコード例で示すようにします。
+相当[ `Label` ](xref:Xamarin.Forms.Label) c# では次のコード例で示すようにします。
 
 ```csharp
 var label = new Label {
@@ -149,17 +149,17 @@ ShadowEffect.SetDistanceY (label, 5);
 ShadowEffect.SetColor (label, color));
 ```
 
-設定、`ShadowEffect.HasShadow`添付プロパティ`true`実行、`ShadowEffect.OnHasShadowChanged`メソッドを追加または削除、`LabelShadowEffect`を[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)コントロール。 両方のコード例で、`ShadowEffect.Color`添付プロパティがプラットフォーム固有の色の値を提供します。 詳細については、次を参照してください。[デバイス クラス](~/xamarin-forms/platform/device.md)です。
+設定、`ShadowEffect.HasShadow`添付プロパティを`true`実行、`ShadowEffect.OnHasShadowChanged`メソッドを追加または削除、`LabelShadowEffect`を[ `Label` ](xref:Xamarin.Forms.Label)コントロール。 両方のコード例では、`ShadowEffect.Color`添付プロパティは、プラットフォーム固有のカラー値を提供します。 詳細については、次を参照してください。[デバイス クラス](~/xamarin-forms/platform/device.md)します。
 
-さらに、 [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)により、実行時に変更する影の色。 ときに、`Button`がクリックすると、影の色を設定して、次のコード変更、`ShadowEffect.Color`添付プロパティ。
+さらに、 [ `Button` ](xref:Xamarin.Forms.Button)により、実行時に変更する影の色。 ときに、`Button`がクリックされた、影の色を設定して、次のコード変更、`ShadowEffect.Color`添付プロパティ。
 
 ```csharp
 ShadowEffect.SetColor (label, Color.Teal);
 ```
 
-### <a name="consuming-the-effect-with-a-style"></a>スタイルと効果の使用
+### <a name="consuming-the-effect-with-a-style"></a>スタイルで効果の使用
 
-コントロールにアタッチされるプロパティを追加することで利用できる効果をスタイルで使用できます。 XAML コード例を次に、*明示的な*スタイルを適用できるシャドウ効果を[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)コントロール。
+添付プロパティをコントロールに追加することで消費可能な効果は、スタイルによっても使用できます。 次の XAML コード例は、*明示的な*のシャドウ効果に適用できるスタイル[ `Label` ](xref:Xamarin.Forms.Label)コントロール。
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -172,17 +172,17 @@ ShadowEffect.SetColor (label, Color.Teal);
 </Style>
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)に適用できる、 [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)を設定してその[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)プロパティを`Style`を使用してインスタンス`StaticResource`マークアップ拡張機能で、次のコード例で示したようにします。
+[ `Style` ](xref:Xamarin.Forms.Style)に適用できる、 [ `Label` ](xref:Xamarin.Forms.Label)を設定してその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを`Style`インスタンス、を使用して`StaticResource`マークアップ拡張機能で、次のコード例で示した。
 
 ```xaml
 <Label Text="Label Shadow Effect" ... Style="{StaticResource ShadowEffectStyle}" />
 ```
 
-スタイルの詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/styles/index.md)です。
+スタイルの詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/styles/index.md)します。
 
-## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームの効果を作成します。
+## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームで効果を作成します。
 
-次のセクションでは、説明のプラットフォームに固有の実装、`LabelShadowEffect`クラスです。
+次のセクションでは、プラットフォーム固有の実装の説明、`LabelShadowEffect`クラス。
 
 ### <a name="ios-project"></a>iOS プロジェクト
 
@@ -231,11 +231,11 @@ namespace EffectsDemo.iOS
     }
 ```
 
-`OnAttached`メソッドを使用して添付プロパティの値を取得するメソッドを呼び出します、 `ShadowEffect` getter、および設定`Control.Layer`プロパティをシャドウを作成するプロパティの値にします。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+`OnAttached`メソッドを使用して添付プロパティの値を取得するメソッドを呼び出し、 `ShadowEffect` getter、および設定`Control.Layer`プロパティをシャドウを付けるプロパティの値にします。 この機能にラップされて、 `try` / `catch`ブロックに効果がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティ。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないので。
 
-#### <a name="responding-to-property-changes"></a>プロパティが変更された場合の対処
+#### <a name="responding-to-property-changes"></a>プロパティの変更に応答します。
 
-いずれかの場合、`ShadowEffect`プロパティ値変更時に、変更内容を表示することによって応答する効果のニーズをアタッチします。 オーバーライドのバージョン、`OnElementPropertyChanged`プラットフォーム固有の効果クラスでのメソッドは、次のコード例に示すようにバインド可能なプロパティの変更に応答する場所は。
+場合、`ShadowEffect`プロパティ値の変更時に、変更内容を表示することで応答する効果のニーズをアタッチします。 オーバーライドされたバージョン、`OnElementPropertyChanged`手法、プラットフォーム固有のエフェクト クラスでは、バインド可能なプロパティの変更に対応するための次のコード例に示す。
 
 ```csharp
 public class LabelShadowEffect : PlatformEffect
@@ -256,7 +256,7 @@ public class LabelShadowEffect : PlatformEffect
 }
 ```
 
-`OnElementPropertyChanged`メソッドは、radius、色、または、影のオフセットを更新します。 提供される、適切な`ShadowEffect`添付プロパティの値が変更されました。 このオーバーライドは、何度も呼び出すことができるよう、変更されているプロパティのチェックを実行常にする必要があります。
+`OnElementPropertyChanged`メソッドは、radius、色、または、影のオフセットに更新されている、適切な`ShadowEffect`添付プロパティの値が変更されました。 この上書きは、何度も呼び出すことが、変更されているプロパティのチェックを行った常にする必要があります。
 
 ### <a name="android-project"></a>Android プロジェクト
 
@@ -316,11 +316,11 @@ namespace EffectsDemo.Droid
     }
 ```
 
-`OnAttached`メソッドを使用して添付プロパティの値を取得するメソッドを呼び出します、`ShadowEffect`の getter を呼び出すメソッドを呼び出すと、 [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/)プロパティ値を使用してシャドウを作成する方法です。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+`OnAttached`メソッドを使用して添付プロパティの値を取得するメソッドを呼び出します、`ShadowEffect`の getter メソッドを呼び出すと、 [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/)プロパティ値を使用して影を作成する方法。 この機能にラップされて、 `try` / `catch`ブロックに効果がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティ。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないので。
 
-#### <a name="responding-to-property-changes"></a>プロパティが変更された場合の対処
+#### <a name="responding-to-property-changes"></a>プロパティの変更に応答します。
 
-いずれかの場合、`ShadowEffect`プロパティ値変更時に、変更内容を表示することによって応答する効果のニーズをアタッチします。 オーバーライドのバージョン、`OnElementPropertyChanged`プラットフォーム固有の効果クラスでのメソッドは、次のコード例に示すようにバインド可能なプロパティの変更に応答する場所は。
+場合、`ShadowEffect`プロパティ値の変更時に、変更内容を表示することで応答する効果のニーズをアタッチします。 オーバーライドされたバージョン、`OnElementPropertyChanged`手法、プラットフォーム固有のエフェクト クラスでは、バインド可能なプロパティの変更に対応するための次のコード例に示す。
 
 ```csharp
 public class LabelShadowEffect : PlatformEffect
@@ -344,7 +344,7 @@ public class LabelShadowEffect : PlatformEffect
 }
 ```
 
-`OnElementPropertyChanged`メソッドは、radius、色、または、影のオフセットを更新します。 提供される、適切な`ShadowEffect`添付プロパティの値が変更されました。 このオーバーライドは、何度も呼び出すことができるよう、変更されているプロパティのチェックを実行常にする必要があります。
+`OnElementPropertyChanged`メソッドは、radius、色、または、影のオフセットに更新されている、適切な`ShadowEffect`添付プロパティの値が変更されました。 この上書きは、何度も呼び出すことが、変更されているプロパティのチェックを行った常にする必要があります。
 
 ### <a name="universal-windows-platform-project"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
@@ -402,11 +402,11 @@ namespace EffectsDemo.UWP
 }
 ```
 
-ユニバーサル Windows プラットフォームが影付き効果を提供しないため、`LabelShadowEffect`両方のプラットフォームで実装された 2 つ目のオフセットを追加することでシミュレートする[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)プライマリの背後にある`Label`です。 `OnAttached`メソッドが、新たに作成`Label`のいくつかのレイアウト プロパティを設定し、`Label`です。 使用して添付プロパティの値を取得するメソッドを呼び出して、 `ShadowEffect` get アクセス操作子を設定して影を作成し、 [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)、 [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)、および[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)の位置と色を制御するプロパティ、`Label`です。 `shadowLabel`が挿入される、プライマリの背後にあるオフセット`Label`です。 この機能をラップする`try` / `catch`ブロックに影響がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティです。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないためです。
+ユニバーサル Windows プラットフォームは、シャドウ効果を行いません。 そのため、`LabelShadowEffect`両方のプラットフォームで実装では、2 つ目のオフセットを追加することで 1 つをシミュレート[ `Label` ](xref:Xamarin.Forms.Label)プライマリの背後にある`Label`。 `OnAttached`メソッドを作成、新しい`Label`のいくつかのレイアウト プロパティを設定し、`Label`します。 使用して添付プロパティの値を取得するメソッドを呼び出して、 `ShadowEffect` get アクセス操作子、設定して影を作成し、 [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)、 [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)、および[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)の場所と色を制御するプロパティ、`Label`します。 `shadowLabel`挿入し、プライマリの背後にあるオフセット`Label`します。 この機能にラップされて、 `try` / `catch`ブロックに効果がアタッチされているコントロールがあるない場合に、`Control.Layer`プロパティ。 によって実装が指定されていない、`OnDetached`メソッド クリーンアップする必要がないので。
 
-#### <a name="responding-to-property-changes"></a>プロパティが変更された場合の対処
+#### <a name="responding-to-property-changes"></a>プロパティの変更に応答します。
 
-いずれかの場合、`ShadowEffect`プロパティ値変更時に、変更内容を表示することによって応答する効果のニーズをアタッチします。 オーバーライドのバージョン、`OnElementPropertyChanged`プラットフォーム固有の効果クラスでのメソッドは、次のコード例に示すようにバインド可能なプロパティの変更に応答する場所は。
+場合、`ShadowEffect`プロパティ値の変更時に、変更内容を表示することで応答する効果のニーズをアタッチします。 オーバーライドされたバージョン、`OnElementPropertyChanged`手法、プラットフォーム固有のエフェクト クラスでは、バインド可能なプロパティの変更に対応するための次のコード例に示す。
 
 ```csharp
 public class LabelShadowEffect : PlatformEffect
@@ -425,17 +425,17 @@ public class LabelShadowEffect : PlatformEffect
 }
 ```
 
-`OnElementPropertyChanged`メソッドは、色や、影のオフセットを更新します。 提供される、適切な`ShadowEffect`添付プロパティの値が変更されました。 このオーバーライドは、何度も呼び出すことができるよう、変更されているプロパティのチェックを実行常にする必要があります。
+`OnElementPropertyChanged`色または影のオフセットにメソッドが更新されている、適切な`ShadowEffect`添付プロパティの値が変更されました。 この上書きは、何度も呼び出すことが、変更されているプロパティのチェックを行った常にする必要があります。
 
 ## <a name="summary"></a>まとめ
 
-この記事は、効果、および実行時にパラメーターを変更するパラメーターを渡すプロパティを使用して接続されている説明しました。 ランタイム プロパティの変更に応答する効果パラメーターを定義する添付プロパティを使用できます。
+この記事では、効果、および実行時にパラメーターを変更するパラメーターを渡すプロパティを使用して接続されている説明しました。 ランタイム プロパティの変更に応答する効果のパラメーターを定義する添付プロパティを使用できます。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [効果](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
-- [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
-- [RoutingEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)
-- [影付き効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+- [効果](xref:Xamarin.Forms.Effect)
+- [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
+- [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
+- [シャドウ効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)

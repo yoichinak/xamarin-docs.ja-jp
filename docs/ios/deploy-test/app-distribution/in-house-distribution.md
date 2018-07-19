@@ -1,5 +1,5 @@
 ---
-title: 社内配布
+title: Xamarin.iOS アプリ用の社内配布
 description: このドキュメントでは、Apple Enterprise Developer Program のメンバーとして、アプリケーションの社内配布の概要を提供します。
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: c11148928ab0fa028f9cc4a9cb50b27a0e195847
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 657370705233e923b482b67fc5afed12631c8187
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785029"
 ---
-# <a name="in-house-distribution"></a>社内配布
+# <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
 _このドキュメントでは、Apple Enterprise Developer Program のメンバーとして、アプリケーションの社内配布の概要を提供します。_
 
@@ -94,7 +95,7 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 作成する他のプロビジョニング プロファイルと同じく、ユーザーのデバイスに配布するアプリを識別するため、App ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
 
 
-1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]**\(ID\) の下で **[App IDs]**\(App ID\) を選択します。
+1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 [Explicit]\(明示的\) または [Wildcard App ID]\(ワイルドカード App ID\) のいずれかを選択し、次のように逆引き DNS 形式でバンドル ID を入力します。**Explicit**: com.[DomainName].[AppName] **Wildcard**:com.[DomainName].*
 4. アプリで必要な任意の [App Services](~/ios/get-started/installation/device-provisioning/index.md#appservices) を選択します。

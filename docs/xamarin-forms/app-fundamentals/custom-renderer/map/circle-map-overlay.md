@@ -1,18 +1,18 @@
 ---
 title: マップ上の円形の領域を強調表示
-description: この記事では、円形のマップの領域を強調表示する、マップに循環オーバーレイを追加する方法について説明します。 IOS および Android Api を提供、マップに循環オーバーレイを追加するため、UWP 上では、オーバーレイは多角形としてレンダリングされます。
+description: この記事では、円形のマップの領域を強調表示する、マップに循環オーバーレイを追加する方法について説明します。 IOS および Android、Api が循環のオーバーレイをマップに追加するため、UWP のでは、オーバーレイが多角形としてレンダリングされます。
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 06ea1e788add0064571f01dc1080147e64bb8397
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3064296d4c78a3342fb27afc971c37a029987e5e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240286"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998558"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>マップ上の円形の領域を強調表示
 
@@ -20,20 +20,20 @@ _この記事では、円形のマップの領域を強調表示する、マッ�
 
 ## <a name="overview"></a>概要
 
-オーバーレイは、マップ上の複数層グラフィックです。 オーバーレイに拡大されると、マップされた拡大縮小描画のグラフィカルなコンテンツをサポートします。 次のスクリーン ショットは、マップに循環オーバーレイを追加する結果を表示します。
+オーバーレイは、マップ上の複数層の図です。 オーバーレイに拡大されると、マップを使用して拡大/縮小するグラフィカル コンテンツを描画をサポートします。 次のスクリーン ショットは、マップへの循環のオーバーレイの追加の結果を表示します。
 
 ![](circle-map-overlay-images/screenshots.png)
 
-ときに、 [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)コントロールが iOS での Xamarin.Forms アプリケーションによって表示される、`MapRenderer`クラスをインスタンス化、これがインスタンス化ネイティブ`MKMapView`コントロール。 Android のプラットフォームでは、`MapRenderer`クラスのインスタンスを作成、ネイティブな`MapView`コントロール。 ユニバーサル Windows プラットフォーム (UWP) に、`MapRenderer`クラスのインスタンスを作成、ネイティブな`MapControl`します。 表示処理に実行できるの利点のカスタム レンダラーを作成することで、プラットフォーム固有のマップのカスタマイズ設定を実装する、`Map`プラットフォームごとにします。 これを行うためのプロセスは次のとおりです。
+ときに、 [ `Map` ](xref:Xamarin.Forms.Maps.Map) iOS での Xamarin.Forms アプリケーションでコントロールが表示される、`MapRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`MKMapView`コントロール。 Android のプラットフォームで、`MapRenderer`クラスのインスタンスを作成、ネイティブ`MapView`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`MapRenderer`クラスのインスタンスを作成、ネイティブ`MapControl`します。 レンダリング プロセスに実行できる活用用のカスタム レンダラーを作成してプラットフォーム固有のマップのカスタマイズを実装する`Map`各プラットフォームで。 これを行うためのプロセスは次のとおりです。
 
-1. [作成](#Creating_the_Custom_Map)Xamarin.Forms カスタム マップします。
+1. [作成](#Creating_the_Custom_Map)Xamarin.Forms のカスタム マップします。
 1. [消費](#Consuming_the_Custom_Map)Xamarin.Forms からカスタムのマップ。
-1. [カスタマイズ](#Customizing_the_Map)各プラットフォームで、マップのカスタム レンダラーを作成することでマップします。
+1. [カスタマイズ](#Customizing_the_Map)各プラットフォームで、マップのカスタム レンダラーを作成してマップします。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/") 初期化して使用する前に構成されている必要があります。 詳細については、次を参照してください。 [`Maps Control`](~/xamarin-forms/user-interface/map.md)
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 初期化して使用する前に構成されている必要があります。 詳細については、次を参照してください。 [`Maps Control`](~/xamarin-forms/user-interface/map.md)
 
-カスタム レンダラーを使用してマップをカスタマイズする方法の詳細については、次を参照してください。[マップ暗証番号 (pin) をカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)です。
+カスタム レンダラーを使用してマップをカスタマイズする方法については、次を参照してください。[マップ ピンのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)します。
 
 <a name="Creating_the_Custom_Map" />
 
@@ -49,7 +49,7 @@ public class CustomCircle
 }
 ```
 
-次のサブクラスを作成、 [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)型のプロパティを追加するクラス`CustomCircle`:
+サブクラスを作成し、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)型のプロパティを追加するには、クラス`CustomCircle`:
 
 ```csharp
 public class CustomMap : Map
@@ -60,9 +60,9 @@ public class CustomMap : Map
 
 <a name="Consuming_the_Custom_Map" />
 
-### <a name="consuming-the-custom-map"></a>カスタムのマップの使用
+### <a name="consuming-the-custom-map"></a>カスタム マップの使用
 
-使用する、 `CustomMap` XAML ページ インスタンスでそのインスタンスを宣言することによって制御します。
+使用、 `CustomMap` XAML ページのインスタンスでそのインスタンスを宣言することで制御します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +75,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-または、使用、 `CustomMap` c# ページ インスタンスでそのインスタンスを宣言することによって制御します。
+または、使用、 `CustomMap` c# ページ インスタンスでそのインスタンスを宣言することによってコントロール。
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -93,7 +93,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-初期化、`CustomMap`必要に応じてを制御します。
+初期化、`CustomMap`必要に応じて制御します。
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -120,15 +120,15 @@ public partial class MapPage : ContentPage
 }
 ```
 
-この初期化を追加[ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/)と`CustomCircle`カスタムのマップをインスタンス化されでマップのビューが置か、 [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/)位置とズームを変更する方法作成することで、マップのレベル、 [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/)から、 [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/)と[ `Distance`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/)です。
+この初期化を追加[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)と`CustomCircle`カスタム マップにインスタンスし、のマップのビューを配置、 [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*)メソッドは、位置とズームを変更します。作成して、マップのレベルを[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)から、 [ `Position` ](xref:Xamarin.Forms.Maps.Position)と[ `Distance`](xref:Xamarin.Forms.Maps.Distance)します。
 
 <a name="Customizing_the_Map" />
 
-### <a name="customizing-the-map"></a>マップをカスタマイズします。
+### <a name="customizing-the-map"></a>マップのカスタマイズ
 
-カスタム レンダラーをマップに循環オーバーレイを追加するには、各アプリケーション プロジェクトに追加されます必要があります。
+カスタム レンダラーは、マップに循環のオーバーレイを追加するには、各アプリケーション プロジェクトにようになりました追加する必要があります。
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>IOS では、カスタム レンダラーを作成します。
+#### <a name="creating-the-custom-renderer-on-ios"></a>IOS でのカスタム レンダラーの作成
 
 サブクラスを作成、`MapRenderer`クラスし、オーバーライドの`OnElementChanged`循環オーバーレイを追加する方法。
 
@@ -170,11 +170,11 @@ namespace MapOverlay.iOS
 
 ```
 
-このメソッドは、カスタムのレンダラーが新しい Xamarin.Forms 要素にアタッチされている、次の構成を実行します。
+このメソッドは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることに、次の構成を実行します。
 
 - `MKMapView.OverlayRenderer`プロパティが対応するデリゲートに設定します。
-- 円が静的なを設定して作成した`MKCircle`メートル単位で、円の中心と、円の半径を指定するオブジェクト。
-- 円が呼び出しによって、マップに追加される、`MKMapView.AddOverlay`メソッドです。
+- 静的なを設定して円が作成される`MKCircle`メートル単位で、円の中心と円の半径を指定するオブジェクト。
+- 円は、呼び出すことによって、マップに追加されます、`MKMapView.AddOverlay`メソッド。
 
 次に、実装、`GetOverlayRenderer`オーバーレイの表示をカスタマイズする方法。
 
@@ -198,7 +198,7 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Android では、カスタム レンダラーを作成します。
+#### <a name="creating-the-custom-renderer-on-android"></a>Android でのカスタム レンダラーの作成
 
 サブクラスを作成、`MapRenderer`クラスし、オーバーライドの`OnElementChanged`と`OnMapReady`循環オーバーレイを追加する方法。
 
@@ -248,9 +248,9 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged`メソッドの呼び出し、`MapView.GetMapAsync`メソッドは、基になる`GoogleMap`が関連付けられているビューには、カスタム レンダラーは、新しい Xamarin.Forms 要素にアタッチされています。 1 回、`GoogleMap`インスタンスが、使用可能な`OnMapReady`円がインスタンス化して作成される場所、メソッドが呼び出されます、`CircleOptions`メートル単位で、円の中心と、円の半径を指定するオブジェクト。 円が呼び出すことによって、マップに追加し、`NativeMap.AddCircle`メソッドです。
+`OnElementChanged`メソッドの呼び出し、`MapView.GetMapAsync`メソッドは、基になる`GoogleMap`カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていること、ビューに関連付けられているです。 1 回、`GoogleMap`インスタンスが、使用可能な`OnMapReady`円がインスタンス化して作成されている、メソッドが呼び出されます、`CircleOptions`メートル単位で、円の中心と円の半径を指定するオブジェクト。 円が呼び出すことによって、マップに追加し、`NativeMap.AddCircle`メソッド。
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>ユニバーサル Windows プラットフォームには、カスタム レンダラーを作成します。
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>ユニバーサル Windows プラットフォームでのカスタム レンダラーの作成
 
 サブクラスを作成、`MapRenderer`クラスし、オーバーライドの`OnElementChanged`循環オーバーレイを追加する方法。
 
@@ -296,12 +296,12 @@ namespace MapOverlay.UWP
 }
 ```
 
-このメソッドは、カスタムのレンダラーが新しい Xamarin.Forms 要素にアタッチされている、次の操作を実行します。
+このメソッドは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることに、次の操作を実行します。
 
-- 円を位置および radius がから取得、`CustomMap.Circle`プロパティに渡されると、`GenerateCircleCoordinates`緯度と経度を生成するメソッドの円の境界の座標。 このヘルパー メソッドのコードは、以下に示します。
+- 円の位置と半径がから取得した、`CustomMap.Circle`プロパティに渡されると、`GenerateCircleCoordinates`緯度と経度を生成するメソッドは、円の境界の座標。 このヘルパー メソッドのコードは、以下に示します。
 - 円の境界の座標に変換する`List`の`BasicGeoposition`座標。
-- 円がインスタンス化して作成された、`MapPolygon`オブジェクト。 `MapPolygon`マルチポイント図形を設定して、マップに表示するクラスが使用されるその`Path`プロパティを`Geopath`図形の座標を格納しているオブジェクト。
-- 追加することによって、マップの多角形が表示される、`MapControl.MapElements`コレクション。
+- 円がインスタンス化によって作成された、`MapPolygon`オブジェクト。 `MapPolygon`マルチポイント図形を設定して、マップに表示するクラスが使用されるその`Path`プロパティを`Geopath`図形の座標を格納しているオブジェクト。
+- 多角形は、マップ上に追加することによって表示される、`MapControl.MapElements`コレクション。
 
 
 ```
@@ -335,4 +335,4 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 - [円形のマップ Ovlerlay (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
 - [マップ ピンのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

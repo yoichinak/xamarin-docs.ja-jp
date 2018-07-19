@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30776691"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>IOS のビルドが失敗する理由と: キーチェーンに有効な iPhone コードの署名キーが見つかりませんか?
 
@@ -36,7 +37,7 @@ Codesign シミュレーターに Entitlements.plist ビルド; を追加する�
 *警告: ため、これを行う前に、ファイルをバックアップすることをお勧め、.csproj ファイル内のエラーで、プロジェクトを中断できます。*
 
 1. ソリューションのウィンドウで iOS プロジェクトを右クリックし、選択**プロジェクトのアンロード**
-2. プロジェクトを再び右クリックし、選択**[ProjectName] .csproj の編集**
+2. プロジェクトを再び右クリックし、選択 **[ProjectName] .csproj の編集**
 3. デバッグ Propertygroup の検索は、次のようにするフラグを使って開始する必要があります。
    - デバッグ: `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
    - リリース: `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`

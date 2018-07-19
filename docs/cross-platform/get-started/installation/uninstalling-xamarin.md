@@ -1,16 +1,17 @@
 ---
 title: Xamarin のアンインストール
-description: コンピューターから Xamarin 製品をアンインストールする
+description: このドキュメントでは、Mac と Windows の両方で Xamarin をアンインストールする方法について説明します。 Mono、Xamarin.Android、Xamarin.iOS、およびその他のツールのアンインストールに関する特定の手順を示します。
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: d1b88ad97a1cecaadd84226bca61c7f2b262438d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 265833c3b1453dfb21064860a747651d45c2c4a0
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066469"
 ---
 # <a name="uninstalling-xamarin"></a>Xamarin のアンインストール
 
@@ -26,7 +27,7 @@ Universal Installer を使用して Xamarin を再インストールする必要
 - [Xamarin.Android](#uninstallandroid)
 - [Xamarin.iOS](#uninstallios)
 - [Xamarin.Mac](#uninstallmac)
-- [Inspector と Workbooks](#uninstallworkbooks)
+- [Workbooks](#uninstallworkbooks)
 - [Xamarin Profiler](#uninstallprofiler)
 - [インストーラー](#uninstallinstaller)
 
@@ -145,9 +146,9 @@ rm -rf ~/Library/Xamarin.Mac
 
 <a name="uninstallworkbooks" />
 
-### <a name="uninstall-workbooks-and-inspector"></a>Workbooks と Inspector をアンインストールする
+### <a name="uninstall-workbooks"></a>Workbooks のアンインストール
 
-Xamarin Inspector と Workbooks のバージョン 1.2.2 以上を削除するには、ターミナルで次のコマンドを使います。
+Xamarin Workbooks バージョン 1.2.2 以上を削除するには、ターミナルで次のコマンドを使用します。
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -268,7 +269,7 @@ Visual Studio 2017 を完全にアンインストールするには、**[起動]
 
 ### <a name="visual-studio-2015-and-earlier"></a>Visual Studio 2015 以前
 
-Visual Studio 2015 を完全にアンインストールするには、[visualstudio.com のサポート回答](https://www.visualstudio.com/vs/support/vs2015/uninstall-visual-studio-2015/)を使用してください。
+Visual Studio 2015 を完全にアンインストールするには、[visualstudio.com のサポート回答](https://visualstudio.microsoft.com/vs/support/vs2015/uninstall-visual-studio-2015/)を使用してください。
 
 Xamarin は、**コントロール パネル**を使って Windows コンピューターからアンインストールできます。 次の図に示すように、**[プログラムと機能]** または **[プログラム] > [プログラムのアンインストール]** に移動します。
 

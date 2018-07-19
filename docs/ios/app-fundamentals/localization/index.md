@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7f05243196a9b916ac5c7b73df957262604ccb11
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785267"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268811"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin.iOS でのローカライズ
 
@@ -55,6 +55,16 @@ Xamarin を使用した両方の Apple の iOS クラスへのアクセスがあ
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 最初の値は、オペレーティング システムをキャッシュすることができます、したがって常に反映していないこと、ユーザーの現在選択されているロケール。 2 番目の値を使用すると、現在選択されているロケールを取得できます。
+
+> [!NOTE]
+> モノラル (Xamarin.iOS の基となる .NET ランタイム)、Apple の iOS Api はまったく同じ言語/地域の組み合わせのセットをサポートしていません。
+> このため、可能であれば、iOS で言語/地域の組み合わせを選択する**設定**モノラルで有効な値にマップされていないアプリです。 たとえば、スペイン iPhone の言語を英語とその地域の設定を譲渡して別の値は、次の Api が発生します。
+> 
+> - `CurrentThead.CurrentCulture`: EN-US (モノラル API)
+> - `CurrentThread.CurrentUICulture`: EN-US (モノラル API)
+> - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple API)
+>
+> モノラルを使用してので`CurrentThread.CurrentUICulture`リソースを選択して`CurrentThread.CurrentCulture`日付および通貨の書式を設定する (たとえば、.resx ファイル) でのローカライズのモノラル ベースとしてはこれらの言語/地域の組み合わせに対して期待される結果。 これらの状況では、必要に応じてをローカライズする Apple の Api に依存します。
 
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 

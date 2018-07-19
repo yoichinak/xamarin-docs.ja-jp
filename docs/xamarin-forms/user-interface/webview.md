@@ -1,49 +1,40 @@
 ---
-title: Xamarin.Forms WebView
-description: この記事では、ユーザーに、Xamarin.Forms WebView クラスを使用してローカルに存在する方法、または web コンテンツをネットワークおよびドキュメントについて説明します。
+title: Xamarin.Forms の WebView
+description: この記事では、ユーザーに Xamarin.Forms WebView クラスを使用して、ローカルを表示する方法、またはネットワークの web コンテンツおよびドキュメントについて説明します。
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/09/2016
-ms.openlocfilehash: df004bd2a580e48137162d28ca3974521266ae7a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/10/2018
+ms.openlocfilehash: ed7bec4e25628d938218a40d157442debad8f835
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245645"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998375"
 ---
-# <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
+# <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
-[WebView](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) web と HTML を表示するビューは、アプリのコンテンツ。 異なり`OpenUri`、ユーザー、デバイス上の web ブラウザーを扱う`WebView`アプリ内の HTML コンテンツが表示されます。
-
-このガイドは、次のセクションで構成されます。
-
-- **[コンテンツ](#Content)** &ndash; WebView 埋め込み HTML、web ページ、HTML 文字列など、さまざまなコンテンツ ソースをサポートしています。
-- **[ナビゲーション](#Navigation)** &ndash; WebView には、特定のページに移動して戻ってのサポートが含まれています。
-- **[イベント](#Events)** &ndash;リッスンし、WebView でユーザーが実行されたアクションに応答します。
-- **[パフォーマンス](#Performance)** &ndash;各プラットフォームで WebView のパフォーマンス特性について説明します。
-- **[アクセス許可](#Permissions)** &ndash; WebView アプリで動作するように、アクセス許可を設定する方法について説明します。
-- **[レイアウト](#Layout)** &ndash; WebView がそれを配置する方法のいくつかの非常に特定の要件です。WebView が正しく表示されるかどうかを確認する方法を学習します。
+[`WebView`](xref:Xamarin.Forms.WebView) アプリで web および HTML コンテンツを表示するためのビューです。 異なり`OpenUri`、ユーザーをデバイス上の web ブラウザーを受け取ります`WebView`アプリ内の HTML コンテンツを表示します。
 
 ![](webview-images/in-app-browser.png "アプリのブラウザーで")
 
 ## <a name="content"></a>Content
 
-WebView は、次の種類のコンテンツがサポートされています。
+`WebView` 次の種類のコンテンツをサポートしています。
 
-- HTML および CSS の web サイト&ndash;WebView が HTML と CSS、JavaScript のサポートなどを使用して作成された web サイトを完全にサポートします。
-- ドキュメント&ndash;WebView は各プラットフォームで表示可能なドキュメントを表示できないネイティブ コンポーネントを使用して、各プラットフォームで WebView が実装されたためです。 IOS および Android で PDF ファイルが機能することを意味します。
+- HTML と CSS の web サイト&ndash;WebView が HTML & CSS、JavaScript のサポートなどを使用して記述された web サイトを完全にサポートします。
+- ドキュメント&ndash;WebView が各プラットフォームで表示可能なドキュメントを表示できないネイティブ コンポーネントを使用して、各プラットフォームで WebView が実装されているためです。 IOS と Android で PDF ファイルが動作することを意味します。
 - HTML 文字列&ndash;WebView がメモリから HTML 文字列を表示することができます。
-- ローカル ファイル&ndash;WebView は上記のコンテンツの種類のいずれかのアプリに埋め込むを提示できます。
+- ローカル ファイル&ndash;WebView がアプリに埋め込まれている上記のコンテンツの種類のいずれかを提示します。
 
 > [!NOTE]
-> `WebView` Windows ではサポートしません Silverlight、Flash またはすべての ActiveX コントロールでは、そのプラットフォームで Internet Explorer ではサポートされている場合でも。
+> `WebView` Windows をサポートしません Silverlight、Flash、またはすべての ActiveX コントロール場合でも、これらは、そのプラットフォームで Internet Explorer でサポートされます。
 
 ### <a name="websites"></a>Websites
 
-表示するには、インターネットから web サイトを設定、`WebView`の[ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/)プロパティを文字列 URL:
+インターネットから web サイトを表示する設定、`WebView`の[ `Source` ](xref:Xamarin.Forms.WebViewSource)プロパティに文字列 URL:
 
 ```csharp
 var browser = new WebView {
@@ -52,14 +43,14 @@ var browser = new WebView {
 ```
 
 > [!NOTE]
-> Url は、指定されたプロトコルに完全な形式でなければなりません (つまりが必要"http://"または"https://"に付加される)。
+> Url が指定されているプロトコルに完全形式でなければなりません (つまりが必要"http://"または先頭に"https://")。
 
 #### <a name="ios-and-ats"></a>iOS および ATS
 
-バージョン 9、iOS のみにより、アプリケーションは既定でセキュリティのベスト プラクティスを実装しているサーバーと通信します。 値を設定する必要があります`Info.plist`安全でないサーバーとの通信を有効にします。
+バージョン 9、以降、iOS は、既定でセキュリティのベスト プラクティスを実装しているサーバーと通信するアプリケーションにのみ許可はします。 値を設定する必要があります`Info.plist`安全でないサーバーとの通信を有効にします。
 
 > [!NOTE]
-> 使用して、例外として、ドメインを入力する、アプリケーションでは、安全ではないの web サイトへの接続を必要とする場合は、常にする必要があります`NSExceptionDomains`ATS を使用して完全にオフではなく`NSAllowsArbitraryLoads`です。 `NSAllowsArbitraryLoads` 緊急の極端な状況でのみ使用する必要があります。
+> アプリケーションでは、安全でない web サイトへの接続が必要とする場合を使用して、例外としてのドメインを入力する必要がありますは常に`NSExceptionDomains`ATS を使用して完全にオフにすることではなく`NSAllowsArbitraryLoads`します。 `NSAllowsArbitraryLoads` 極端な緊急の状況でのみ使用する必要があります。
 
 ATS 要件をバイパスする (このケース xamarin.com) で特定のドメインを有効にする方法を次に示します。
 
@@ -81,7 +72,7 @@ ATS 要件をバイパスする (このケース xamarin.com) で特定のドメ
     </dict>
 ```
 
-のみを信頼済みサイトを使用して、信頼されていないドメインに追加のセキュリティを利用しながら、ATS をバイパスする一部のドメインを有効にすることをお勧めします。 アプリの ATS の無効化の安全性の低いメソッドを次に示します。
+ベスト プラクティスのみを信頼済みサイトを使用して、信頼されていないドメインに追加のセキュリティを活用しながら、ATS をバイパスする一部のドメインを有効にすることをお勧めします。 アプリの ATS を無効にするとの安全性の低いメソッドを次に示します。
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -91,11 +82,11 @@ ATS 要件をバイパスする (このケース xamarin.com) で特定のドメ
     </dict>
 ```
 
-参照してください[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)iOS 9 に、この新しい機能についての詳細。
+参照してください[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)iOS 9 のこの新機能に関する詳細について。
 
 ### <a name="html-strings"></a>HTML 文字列
 
-コードで動的に定義されている HTML の文字列を表示する場合のインスタンスを作成する必要があります[ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
+インスタンスを作成する必要がありますのコードで動的に定義されている HTML 文字列を表示する場合は、 [ `HtmlWebViewSource` ](xref:Xamarin.Forms.HtmlWebViewSource):
 
 ```csharp
 var browser = new WebView();
@@ -109,11 +100,11 @@ browser.Source = htmlSource;
 
 ![](webview-images/html-string.png "Web ビューを表示する HTML 文字列")
 
-上記のコードで`@`リテラル、つまり、すべての通常のエスケープ文字は無視されますを文字列として HTML を示すために使用します。
+上記のコードで`@`リテラル、つまりすべての通常のエスケープ文字は無視されますを文字列として、HTML を示すために使用します。
 
 ### <a name="local-html-content"></a>ローカルの HTML コンテンツ
 
-WebView を HTML、CSS からコンテンツを表示し、Javascript アプリに埋め込みます。 例えば:
+WebView は、HTML、CSS からのコンテンツを表示でき、アプリ内で Javascript が埋め込まれています。 例えば:
 
 ```html
 <html>
@@ -128,7 +119,7 @@ WebView を HTML、CSS からコンテンツを表示し、Javascript アプリ�
 </html>
 ```
 
-CSS:
+CSS の場合:
 
 ```css
 html,body {
@@ -140,19 +131,19 @@ body,p,h1 {
 }
 ```
 
-上記の CSS で指定したフォント必要がある各プラットフォーム用にカスタマイズするようにすべてのプラットフォームがあるあります。 同じフォントに注意してください。
+上記の CSS で指定したフォントは、すべてのプラットフォームに同じフォントをプラットフォームごとにカスタマイズする必要に注意してください。
 
-表示のローカル コンテンツを使用してに、`WebView`と同様に、他の HTML ファイルを開きに文字列として内容をロードする必要があります、`Html`のプロパティ、`HtmlWebViewSource`です。 ファイルを開くの詳細については、次を参照してください。[ファイルで作業](~/xamarin-forms/app-fundamentals/files.md)です。
+表示のローカル コンテンツを使用してに、 `WebView`、するなど、他の HTML ファイルを開きに文字列として内容を読み込む必要があります、`Html`のプロパティ、`HtmlWebViewSource`します。 開く、ファイルの詳細については、次を参照してください。[ファイルを扱う](~/xamarin-forms/app-fundamentals/files.md)します。
 
 次のスクリーン ショットは、ローカル コンテンツを表示する各プラットフォームでの結果を表示します。
 
-![](webview-images/local-content.png "WebView ローカル コンテンツを表示します。")
+![](webview-images/local-content.png "ローカル コンテンツを表示する WebView")
 
-最初のページが読み込まれていますが、 `WebView` HTML が元の情報を持たない。 ローカル リソースを参照するページを処理するときに問題があります。 ときに発生する可能性がありますの例には、別の JavaScript ファイルの各もう 1 つのページは、ローカルのページ リンクを使用したり、CSS スタイル シートにページが含まれます。  
+最初のページが読み込まれていますが、`WebView`の HTML の出所に関する知識を持たない。 ローカル リソースを参照するページを処理するときに問題です。 ときに発生する可能性がありますの例には、それぞれにその他 ページは、ローカルのページ リンクを別の JavaScript ファイルの使用し、CSS スタイル シートにページが含まれます。  
 
-これを解決するには指定する必要があります、`WebView`ファイルシステム上のファイルを検索する場所です。 設定によって、`BaseUrl`プロパティを`HtmlWebViewSource`によって使用される、`WebView`です。
+これを解決するには通知する必要があります、`WebView`ファイル システムにファイルを検索する場所。 設定して実行、`BaseUrl`プロパティを`HtmlWebViewSource`で使用される、`WebView`します。
 
-各オペレーティング システム上のファイル システムは異なるため、確認する必要があります。 各プラットフォームでその URL。 Xamarin.Forms を公開、`DependencyService`各プラットフォーム上で実行時の依存関係を解決するためです。
+各オペレーティング システム上のファイル システムが異なるため、確認する必要があります。 各プラットフォームでその URL。 Xamarin.Forms は、`DependencyService`各プラットフォーム上で実行時の依存関係を解決するためです。
 
 使用する、 `DependencyService`、まず、各プラットフォームで実装できるインターフェイスを定義します。
 
@@ -160,18 +151,18 @@ body,p,h1 {
 public interface IBaseUrl { string Get(); }
 ```
 
-各プラットフォームで、インターフェイスを実装するまで、アプリを実行できないことに注意してください。 共通のプロジェクトを設定するように留意することを確認してください、`BaseUrl`を使用して、 `DependencyService`:
+各プラットフォームで、インターフェイスを実装するまで、アプリを実行できないことに注意してください。 共通のプロジェクトで設定するを忘れないことことを確認、`BaseUrl`を使用して、 `DependencyService`:
 
 ```csharp
 var source = new HtmlWebViewSource();
 source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 ```
 
-各プラットフォーム用のインターフェイスの実装を指定し、必要があります。
+各プラットフォーム用のインターフェイスの実装が提供する必要があります。
 
 #### <a name="ios"></a>iOS
 
-プロジェクトのルート ディレクトリに、iOS に web コンテンツを配置する必要がありますまたは**リソース**ディレクトリ ビルド アクションが*BundleResource*以下に示すように、します。
+Ios では、プロジェクトのルート ディレクトリで web コンテンツを配置する必要がありますまたは**リソース**ディレクトリ ビルド アクションが*BundleResource*以下に示すように、します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -183,7 +174,7 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 -----
 
-`BaseUrl`メインのバンドルのパスに設定する必要があります。
+`BaseUrl`メイン バンドルのパスに設定する必要があります。
 
 ```csharp
 [assembly: Dependency (typeof (BaseUrl_iOS))]
@@ -198,7 +189,7 @@ namespace WorkingWithWebview.iOS{
 
 #### <a name="android"></a>Android
 
-Android でビルド アクション Assets フォルダーに HTML、CSS、およびイメージを配置*AndroidAsset*以下に示すようにします。
+Android では、ビルド アクションで、Assets フォルダーに HTML、CSS、およびイメージを配置*AndroidAsset*次のようにします。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -210,7 +201,7 @@ Android でビルド アクション Assets フォルダーに HTML、CSS、お�
 
 -----
 
-Android で、`BaseUrl`に設定する必要があります`"file:///android_asset/"`:
+Android の場合、`BaseUrl`に設定する必要があります`"file:///android_asset/"`:
 
 ```csharp
 [assembly: Dependency (typeof(BaseUrl_Android))]
@@ -223,7 +214,7 @@ namespace WorkingWithWebview.Android {
 }
 ```
 
-Android でのファイル、**資産**フォルダーは、によって公開される現在の Android コンテキストを通じてアクセスすることも、`MainActivity.Instance`プロパティ。
+Android では、ファイル、**資産**フォルダーは、によって公開される現在の Android コンテキストを介してアクセスすることも、`MainActivity.Instance`プロパティ。
 
 ```csharp
 var assetManager = MainActivity.Instance.Assets;
@@ -234,7 +225,7 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 
 #### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-ユニバーサル Windows プラットフォーム (UWP) プロジェクトでは、HTML、CSS、および画像の配置プロジェクトのルートに設定するビルド アクション*コンテンツ*です。
+ユニバーサル Windows プラットフォーム (UWP) プロジェクトでは、HTML、CSS、およびイメージ プロジェクトのルートに配置するビルド アクションで*コンテンツ*します。
 
 `BaseUrl`に設定する必要があります`"ms-appx-web:///"`:
 
@@ -254,18 +245,18 @@ namespace WorkingWithWebview.UWP
 
 ## <a name="navigation"></a>ナビゲーション
 
-WebView には、いくつかのメソッドと使用可能なプロパティ内の移動がサポートされています。
+Web ビューには、いくつかのメソッドとプロパティが使用可能なナビゲーションがサポートされています。
 
-- **GoForward()** &ndash;場合`CanGoForward`が true の場合、呼び出す`GoForward`へ、[次へ] に表示したページに移動します。
-- **GoBack()** &ndash;場合`CanGoBack`が true の場合、呼び出す`GoBack`を最後に表示したページに移動します。
-- **CanGoBack** &ndash; `true`ページに戻るには場合`false`ブラウザーの開始 URL にある場合。
-- **CanGoForward** &ndash; `true`ユーザーに戻っている場合とが既にアクセスしたページに進むことができます。
+- **GoForward()** &ndash;場合`CanGoForward`が true の場合、呼び出す`GoForward`[次へ]、アクセスしたページへ移動します。
+- **GoBack()** &ndash;場合`CanGoBack`が true の場合、呼び出す`GoBack`を最後にアクセスしたページに移動します。
+- **CanGoBack** &ndash; `true`がページに戻る場合`false`ブラウザーが開始 URL にある場合。
+- **CanGoForward** &ndash; `true`ユーザーが後方移動し、既ににアクセスしたページに進むことができます。
 
-ページ内で`WebView`マルチタッチ ジェスチャをサポートしていません。 重要であることを確認するコンテンツをモバイル最適化は、ズームがなくても表示されます。
+ページ内で`WebView`マルチタッチ ジェスチャをサポートしていません。 重要なことを確認するコンテンツをモバイルに最適化されたし、ズームがなくても表示されます。
 
-アプリケーション内のリンクを表示するが一般的な`WebView`デバイスのブラウザーではなくです。 ような場合、通常のナビゲーションを許可すると便利ですが、ユーザー ヒットは、開始のリンクになっている間にバックアップ、アプリは、通常のアプリのビューに返す必要があります。
+アプリケーション内のリンクを表示するが一般的な`WebView`デバイスのブラウザーではなく。 これらの状況では、通常のナビゲーションを許可すると便利ですが、ユーザーからのバックアップ開始リンク上にあるときに、アプリは、通常のアプリ ビューを返す必要があります。
 
-このシナリオを有効にするのにには、組み込みのナビゲーション メソッドおよびプロパティを使用します。
+このシナリオを有効にするのにには、組み込みのナビゲーション メソッドとプロパティを使用します。
 
 ブラウザー ビューのページを作成して開始します。
 
@@ -287,7 +278,7 @@ Title="In App Browser">
 </ContentPage>
 ```
 
-この分離コードで。
+で、コードの分離。
 
 ```csharp
 public partial class InAppDemo : ContentPage
@@ -321,16 +312,16 @@ public partial class InAppDemo : ContentPage
 
 これで完了です。
 
-![](webview-images/in-app-browser.png "WebView ナビゲーション ボタン")
+![](webview-images/in-app-browser.png "Web ビューのナビゲーション ボタン")
 
 ## <a name="events"></a>イベント
 
-Web ビューには、状態の変化に対応するための 2 つのイベントを発生させます。
+Web ビューは、状態の変化に対応するための 2 つのイベントを発生させます。
 
-- **移動する** &ndash; WebView 新しいページの読み込みの開始時に発生するイベントです。
-- **移動**&ndash;ページが読み込まれ、ナビゲーションが停止したときに発生するイベントです。
+- **移動**&ndash;新しいページを読み込む、WebView の開始時に発生するイベントです。
+- **移動**&ndash;イベント ページが読み込まれ、ナビゲーションが停止したときに発生します。
 
-読み込みに長い時間がかかるの web ページを使用してを予測している場合は、これらのイベントを使用して、状態インジケーターを実装することを検討します。 たとえば、XAML は、次のようになります。
+読み込みに長い時間がかかるの web ページを使用する見込みがある場合は、これらのイベントを使用して、状態インジケーターを実装することを検討します。 たとえば、XAML は、次のようになります。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -367,35 +358,35 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 }
 ```
 
-これは、結果、次の出力 (読み込み) になります。
+これは、(読み込み)、次の出力が得られます。
 
 ![](webview-images/loading-start.png "WebView を移動するイベントの例")
 
-読み込みの終了:
+完成した読み込み:
 
-![](webview-images/loading-end.png "WebView 移動イベントの例")
+![](webview-images/loading-end.png "WebView は、イベントの例を移動します。")
 
 ## <a name="performance"></a>パフォーマンス
 
-最新きたようにそれぞれの一般的な web ブラウザーのハードウェア アクセラレーション レンダリングと JavaScript のコンパイルと同様のテクノロジを採用します。 残念ながら、セキュリティ制限によりこれらの機能のほとんどで利用できなかったの iOS equaivalent `WebView`、`UIWebView`です。 Xamarin.Forms`WebView`使用`UIWebView`です。 問題がある場合は、カスタム レンダラーを使用してを記述する必要があります`WKWebView`、高速な参照をサポートします。 なお`WKWebView`は iOS 8 以降でのみサポートされます。
+最近の進歩それぞれ一般的な web ブラウザーのハードウェア アクセラレータのレンダリングや JavaScript のコンパイルと同様に、テクノロジを採用してきました。 残念ながら、セキュリティ制限によりこれらの機能強化の多くで使用できなかったの iOS equaivalent `WebView`、`UIWebView`します。 Xamarin.Forms`WebView`使用`UIWebView`します。 問題がある場合を使用して、カスタム レンダラーを作成する必要があります`WKWebView`、高速な参照をサポートしています。 なお`WKWebView`は iOS 8 以降でのみサポートします。
 
-既定では Android で WebView はの組み込みブラウザーと同じ速度で約です。
+既定で android WebView は、約、組み込みのブラウザーと同じです。
 
-[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge のレンダリング エンジンを使用します。 デスクトップとタブレット デバイス自体 Edge ブラウザーを使用する場合と同等のパフォーマンスが表示されます。
+[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)は Microsoft Edge のレンダリング エンジンを使用します。 デスクトップ、タブレット デバイスには、Edge ブラウザー自体を使用する場合と同じパフォーマンスが表示されます。
 
 ## <a name="permissions"></a>アクセス許可
 
-順序で`WebView`するために、各プラットフォーム用のアクセス許可が設定されていることを確認してください。 一部のプラットフォームでなお`WebView`リリース用にビルドされたときではなく、デバッグ モードでは動作します。 Android でのインターネット アクセスの場合と同様に、いくつかのアクセス許可がデバッグ モードのときに Mac を Visual Studio で既定で設定するためです。
+順序で`WebView`するのには、各プラットフォーム用のアクセス許可が設定されていることを確認してください。 一部のプラットフォームでなお`WebView`リリース用にビルドされたときではなく、デバッグ モードでは動作します。 Android では、インターネット アクセスと同様の一部のアクセス許可は、デバッグ モードでの Mac の Visual Studio によって既定で設定されているためにです。
 
-- **UWP** &ndash;ネットワークのコンテンツを表示するときに、インターネット (クライアントとサーバー) の機能が必要です。
+- **UWP** &ndash;ネットワーク コンテンツを表示するときに、インターネット (クライアントとサーバー) の機能が必要です。
 - **Android** &ndash;必要`INTERNET`ネットワークからコンテンツを表示する場合にのみです。 ローカル コンテンツには、特殊なアクセス許可は不要です。
 - **iOS** &ndash;特殊なアクセス許可は必要ありません。
 
 ## <a name="layout"></a>レイアウト
 
-その他のほとんどの Xamarin.Forms ビューとは異なり`WebView`いる必要があります`HeightRequest`と`WidthRequest`は StackLayout または [相対レイアウト] に含まれているときに指定します。 これらのプロパティを指定しない場合、`WebView`は表示されません。
+その他のほとんどの Xamarin.Forms ビューとは異なり`WebView`いる必要があります`HeightRequest`と`WidthRequest`StackLayout または [相対レイアウト] に含まれるときに指定されます。 これらのプロパティを指定しなかった場合、`WebView`は表示されません。
 
-次の例では、レイアウトを使用して作業の結果をレンダリング`WebView`s:
+次の例では、レイアウトを使用して作業の結果をレンダリング`WebView`: %s
 
 WidthRequest & HeightRequest StackLayout:
 
@@ -436,7 +427,7 @@ AbsoluteLayout*せず*WidthRequest & HeightRequest:
 </AbsoluteLayout>
 ```
 
-グリッド*せず*WidthRequest & HeightRequest です。 グリッドは、要求された高さと幅を指定することが不要ないくつかのレイアウトのいずれかです。 します。
+グリッド*せず*WidthRequest & HeightRequest します。 グリッドは、要求された高さと幅を指定することを必要としないいくつかのレイアウトの 1 つです。 します。
 
 ```xaml
 <Grid>
@@ -449,6 +440,39 @@ AbsoluteLayout*せず*WidthRequest & HeightRequest:
 </Grid>
 ```
 
+## <a name="invoking-javascript"></a>JavaScript の呼び出し
+
+[ `WebView` ](xref:Xamarin.Forms.WebView)を c# から JavaScript 関数を呼び出し、呼び出し元の c# コードを任意の結果を返す機能が含まれています。 これを行うと、 [ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)メソッドは、次の例に示した、 [WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)サンプル。
+
+```csharp
+var numberEntry = new Entry { Text = "5" };
+var resultLabel = new Label();
+var webView = new WebView();
+...
+
+int number = int.Parse(numberEntry.Text);
+string result = await webView.EvaluateJavaScriptAsync($"factorial({number})");
+resultLabel.Text = $"Factorial of {number} is {result}.";
+```
+
+[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)メソッドは JavaScript は、引数として指定し、すべての結果として返しますが、評価、`string`します。 この例で、`factorial`の階乗を返します JavaScript 関数が呼び出される`number`のためです。 この JavaScript 関数がローカル HTML で定義されているファイルを[ `WebView` ](xref:Xamarin.Forms.WebView)が読み込まれ、次の例に示します。
+
+```html
+<html>
+<body>
+<script type="text/javascript">
+function factorial(num) {
+        if (num === 0 || num === 1)
+            return 1;
+        for (var i = num - 1; i >= 1; i--) {
+            num *= i;
+        }
+        return num;
+}
+</script>
+</body>
+</html>
+```
 
 ## <a name="related-links"></a>関連リンク
 

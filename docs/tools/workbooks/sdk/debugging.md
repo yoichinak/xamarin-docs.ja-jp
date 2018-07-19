@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 6e37b1ac3d0fb78b5737ebe97b5a28ab40adb648
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794021"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269058"
 ---
 # <a name="debugging-integrations"></a>デバッグの統合
 
@@ -23,8 +23,8 @@ Macos、ログ メッセージは、両方のログ ビューアー メニュー
 
 クライアント ログは、Windows および macOS 次の場所には。
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 注意すべき 1 つの点となるは、通常を使用して統合を読み込み`#r`開発時にメカニズム integration アセンブリが取得されますとして、_依存関係_ブックの場合は、絶対パスが一緒にパッケージと使用しません。 これには、変更を何も行われませんでした、統合を再構築する場合と同様に伝達されません反映する可能性があります。
 
@@ -39,7 +39,7 @@ Macos、ログ メッセージは、両方のログ ビューアー メニュー
 Mac で Xamarin ブックで、開発者ツールを有効にするのには、端末の次のコマンドを実行します。
 
 ```shell
-defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
+defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
 Xamarin ブックを再起動します。 ようにを設定すると表示されます**検査要素**、右クリック コンテキスト メニューおよび新しいに表示される**開発者**ペインはブックの設定 で使用可能になります。 このオプションでは、開発者ツールの起動時に開かれたかどうかに選択することができます。

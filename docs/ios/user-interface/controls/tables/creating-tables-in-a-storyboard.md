@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30780724"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>IOS デザイナーでテーブルを操作します。
 
@@ -45,7 +46,7 @@ StoryboardTable 例には、ストーリー ボードで UITableView の両方�
 
 ## <a name="walkthrough"></a>チュートリアル
 
-Visual Studio を使用して、新しいソリューションを作成する**(作成) の新しいプロジェクト > 1 つのビュー App(C#)**、および呼び出し_StoryboardTables_です。
+Visual Studio を使用して、新しいソリューションを作成する **(作成) の新しいプロジェクト > 1 つのビュー App(C#)**、および呼び出し_StoryboardTables_です。
 
  [![新しいプロジェクト ダイアログ ボックスを作成します。](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
@@ -114,7 +115,7 @@ Visual Studio を使用して、新しいソリューションを作成する**(
 次の手順で行います。 
 
 -  ドラッグ、**バー ボタン項目**をツールボックスから、_ナビゲーション バーの右側にある_です。
--  **プロパティ パッド****バー ボタンの項目**選択**識別子: 追加**(やすく、 *+*プラス ボタン)。 
+-  **プロパティ パッド****バー ボタンの項目**選択**識別子: 追加**(やすく、 *+* プラス ボタン)。 
 -  名前を付けます後の段階でのコードに識別できるようにします。 ルート ビュー コント ローラー クラス名を指定する必要がありますに注意してください (たとえば**ItemViewController**) バー ボタンの項目の名前を設定することにします。
 
 

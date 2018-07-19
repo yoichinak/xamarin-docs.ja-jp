@@ -1,38 +1,38 @@
 ---
 title: 'Xamarin.Essentials: バージョン管理'
-description: Xamarin.Essentials で VersionTracking クラスでは、アプリケーションのバージョンを確認することができ、ビルド番号と共に、最初にある場合は、このような追加の情報を見ることが起動するアプリケーションまたは現在のバージョンについては、前のビルドを取得情報、および詳細。
+description: Xamarin.Essentials で VersionTracking クラスでは、アプリケーションのバージョンを確認することができ、ビルド番号が、最初にある場合、このような追加情報を表示すると共に、アプリケーションの起動をこれまでの時間または、現在のバージョンでは、前回のビルドを取得については、その他
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783003"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815649"
 ---
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: バージョン管理
 
-![プレリリース NuGet](~/media/shared/pre-release.png)
+![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-**VersionTracking**クラスでは、アプリケーションのバージョンを確認することができ、これまでに起動するアプリケーションまたは現在のバージョンの取得前のビルド番号と共に、最初にある場合は、このような追加情報を表示ビルド情報、および詳細。
+**VersionTracking**クラスでは、アプリケーションのバージョンを確認することができ、これまでに起動するアプリケーションまたは現在のバージョンの取得前が最初にある場合、このような追加情報を表示すると共に、ビルド番号ビルド情報など。
 
-## <a name="using-version-tracking"></a>バージョン管理を使用します。
+## <a name="using-version-tracking"></a>バージョンの追跡を使用
 
-クラスの Xamarin.Essentials への参照を追加します。
+クラスで Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-初めて使用するとき、 **VersionTracking**クラスの現在のバージョンの追跡を開始します。 呼び出す必要があります`Track`早い段階が読み込まれた現在のバージョン情報が追跡されるたびに、アプリケーションでのみ。
+初めて使用する、 **VersionTracking**クラスの現在のバージョンの追跡を開始します。 呼び出す必要があります`Track`が読み込まれた現在のバージョン情報が追跡されるたびに、アプリケーションにのみ。
 
 ```csharp
 VersionTracking.Track();
 ```
 
-初期後`Track`が呼び出されたバージョン情報を読み取ることができます。
+初期後`Track`と呼びますバージョン情報を読み取ることができます。
 
 ```csharp
 
@@ -72,11 +72,11 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-使用してすべてのバージョン情報を格納、[設定](preferences.md)Xamarin.Essentials で API のファイル名で保存および **[、-アプリ-パッケージの ID] .xamarinessentials**です。
+使用してすべてのバージョン情報を格納、[設定](preferences.md)Xamarin.Essentials で API のファイル名では **[YOUR-アプリのパッケージの ID] .xamarinessentials**します。
 
-アプリケーションのアンインストールにより、 _LocalSettings_、および追跡情報を削除するすべてのバージョン。
+により、アプリケーションのアンインストール、 _LocalSettings_、およびすべてのバージョンを削除する情報を追跡します。
 
 ## <a name="api"></a>API
 
 - [バージョンの追跡のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
-- [バージョン管理の API ドキュメント](xref:Xamarin.Essentials.VersionTracking)
+- [バージョンの追跡の API ドキュメント](xref:Xamarin.Essentials.VersionTracking)

@@ -1,20 +1,22 @@
 ---
-title: iOS でのリンク
+title: Xamarin.iOS アプリをリンクする
+description: このドキュメントでは Xamarin.iOS リンカーについて説明します。このリンカーは、Xamarin.iOS アプリケーションから未使用のコードを削除してサイズを縮小するために使用します。
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/24/2017
-ms.openlocfilehash: 1d83a152c0949abe0221f6eb6dfb42f4e79eaf38
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bcfc821359e74b34dc2ee11419e8ee86f8cccee
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321458"
 ---
-# <a name="linking-on-ios"></a>iOS でのリンク
+# <a name="linking-xamarinios-apps"></a>Xamarin.iOS アプリをリンクする
 
-アプリケーションをビルドするとき、Visual Studio for Mac または Visual Studio は **mtouch** という名前のツールを呼び出します。このツールには、マネージ コードのリンカーが含まれています。 アプリケーションで利用されない機能をクラス ライブラリから削除するために使用されます。 これが目標としているのは、アプリケーションのサイズを小さくし、必要なデータだけで出荷することです。
+アプリケーションをビルドするとき、Visual Studio for Mac または Visual Studio は **mtouch** という名前のツールを呼び出します。このツールには、マネージド コードのリンカーが含まれています。 アプリケーションで利用されない機能をクラス ライブラリから削除するために使用されます。 これが目標としているのは、アプリケーションのサイズを小さくし、必要なデータだけで出荷することです。
 
 リンカーではスタティック分析を利用し、アプリケーションが選択するさまざまなコード パスを判断します。 検出可能なものが何も削除されないように各アセンブリのあらゆる細部まで分析するため、少し重くなります。 デバッグ中のビルド時間を早めるために、シミュレーター ビルドでは既定で有効になっていません。 ただし、アプリケーションが小さくなるため、AOT コンパイルとデバイスへのアップロードが速くなります。*デバイス (リリース) ビルド*ではすべて、既定でリンカーが使用されます。
 
@@ -157,9 +159,7 @@ Xamarin リンカーは `LinkerSafe` 属性を実際の型ではなく、名前�
 ```csharp
 [assembly:LinkerSafe]
 // ... assembly attribute should be at top, before source
-class LinkerSafeAttribute : System.Attribute {
-    public LinkerSafeAttribute : System.base {}
-}
+class LinkerSafeAttribute : System.Attribute {}
 ```
 
 ## <a name="custom-linker-configuration"></a>カスタム リンカーの構成

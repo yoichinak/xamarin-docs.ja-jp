@@ -5,19 +5,18 @@ ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 67cc6b42901521226322d964514f19b4b639148b
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793480"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268824"
 ---
 # <a name="inspecting-live-applications"></a>ライブ アプリケーションの検査
 
 ライブ アプリ検査は、企業ユーザーが利用できます。
 
-1. [インスペクター (&)、Xamarin のブックをインストールします。](~/tools/inspector/install.md)
 1. いずれかを開いて[アプリ プロジェクトはサポートされて](~/tools/inspector/install.md#supported-platforms)Mac または Visual Studio の Visual Studio でします。
 1. デバッグ モードでアプリケーションを実行します。
 1. をクリックして、**検査**IDE ツールバーのボタン (Visual Studio で、**検査現在アプリ...** から使用可能なメニュー項目も、**ツール**または**デバッグ**メニュー)。

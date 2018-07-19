@@ -1,19 +1,20 @@
 ---
 title: Mac App Store 用のバンドル
-description: このガイドでは、Mac App Store に Xamarin.Mac アプリを発行するためのバンドルの手順について説明します。
+description: このドキュメントでは、Mac App Store に公開するために Xamarin.Mac アプリをバンドルする方法について説明します。 コード署名オプションとビルドについて説明します。
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792061"
 ---
-# <a name="bundle-for-mac-app-store"></a>Mac App Store 用のバンドル
+# <a name="bundling-for-the-mac-app-store"></a>Mac App Store 用のバンドル
 
 このセクションでは、Visual Studio for Mac を使用して、Mac App Store でリリースするためのアプリケーションを構築する基礎について説明します。 iCloud アクセスやプッシュ通知などの追加の機能によっては、この記事で扱っていない追加のセットアップが必要になる場合があります。
 

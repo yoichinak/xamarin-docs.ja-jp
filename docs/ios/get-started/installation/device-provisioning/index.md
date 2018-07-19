@@ -1,21 +1,20 @@
 ---
-title: デバイスのプロビジョニング
-description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、開発証明書とプロファイルの要求、アプリケーション サービスの使用、デバイスへのアプリの展開について説明します。
+title: Xamarin.iOS のデバイス プロビジョニング
+description: このドキュメントでは、アプリケーションのテストに利用できるようにデバイスをプロビジョニングする方法について説明します。 プッシュ通知などの機能を使用できるようにアプリを構成する方法についても説明します。
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785789"
 ---
-# <a name="device-provisioning"></a>デバイスのプロビジョニング
-
-_Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、開発証明書とプロファイルの要求、アプリケーション サービスの使用、デバイスへのアプリの展開について説明します。_
+# <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS のデバイス プロビジョニング
 
 Xamarin.iOS アプリケーションを開発する場合、シミュレーターだけでなく、物理デバイスにもアプリを展開してテストすることが重要です。 デバイスで実行すると、メモリやネットワーク接続などのハードウェアの制限があるため、デバイス独自のバグやパフォーマンスの問題が発生する可能性があります。 物理デバイスでテストするには、デバイスを*プロビジョニング*し、Apple にテスト用にデバイスが使用されることを通知する必要があります。
 

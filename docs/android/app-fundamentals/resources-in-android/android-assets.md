@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762998"
 ---
 # <a name="using-android-assets"></a>Android のアセットを使用してください。
 
@@ -38,7 +39,7 @@ Visual Studio for Mac を設定する必要がありますが、**ビルド ア�
 
 -----
 
-適切な選択**"ビルド アクション"**により、コンパイル時に、APK にファイルをパッケージ化されます。
+適切な選択 **"ビルド アクション"** により、コンパイル時に、APK にファイルをパッケージ化されます。
 
 
 ## <a name="reading-assets"></a>資産の読み取り

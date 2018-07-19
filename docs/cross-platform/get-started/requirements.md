@@ -1,16 +1,17 @@
 ---
 title: システム要件
-description: Xamarin を使用するための前提条件
+description: このドキュメントでは、Mac と Windows の両方のコンピューターで Xamarin を使用してアプリをビルドする場合のシステム要件をリストします。 インストール手順にもリンクしています。
 ms.prod: xamarin
 ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: asb3993
 ms.author: amburns
 ms.date: 08/28/2017
-ms.openlocfilehash: eb0fabf55362888b766c13d1ead3f82db3e680b4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 04db2fe4e3385c55ecf653b002b909f16e99a101
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780725"
 ---
 # <a name="system-requirements"></a>システム要件
 

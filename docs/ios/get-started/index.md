@@ -1,6 +1,6 @@
 ---
-title: iOS の概要
-description: Hello World から Hello App Store へ
+title: Xamarin.iOS の概要
+description: このドキュメントは、Xamarin.iOS の設定方法と最初のアプリケーションのビルド方法について説明し、Objective-C 開発者に Xamarin に関する情報を提供するガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785602"
 ---
-# <a name="getting-started-with-ios"></a>iOS の概要
+# <a name="getting-started-with-xamarinios"></a>Xamarin.iOS の概要
 
 Xamarin.iOS を使用すると、開発者は Objective-C と Xcode で使用できるのと同じ UI コントロール (最新の言語 (C#) の高い柔軟性と洗練さ、NET Base Class Library (BCL) のパワー、2 つのファーストクラス IDE (Visual Studio for Mac と Visual Studio) を活用する場合を除く) を使用して、ネイティブの iOS アプリケーションを作成することができます。 このシリーズでは、Xamarin.iOS のセットアップとインストール方法を紹介し、Xamarin.iOS 開発の基本に取り組みます。
 

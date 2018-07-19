@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7171142951a2893233233bb8a1c44c5a84c57b5c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 47ea437be8a1570517f37cc59aab17431c5af7f0
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848201"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291326"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -44,6 +44,9 @@ TodoLocalized サンプルが含まれています、[共有プロジェクト �
 このドキュメントで RESX ファイルを使用して、それらの文字列を格納され、ユーザーの設定に応じて表示を取得する方法について確認します。
 
 サンプルは、英語、フランス語、スペイン語、ドイツ語、中国語、日本語、ロシア語、およびブラジル ポルトガル語の言語を対象します。 アプリケーションは、必要に応じてできるだけ少ないまたは多くの言語に翻訳することができます。
+
+> [!NOTE]
+> ユニバーサル Windows プラットフォームでは、RESX ファイルではなく、プッシュ通知のローカライズの RESW ファイルを使用してください。 詳細については、次を参照してください。 [UWP ローカリゼーション](/windows/uwp/design/globalizing/globalizing-portal/)です。
 
 ### <a name="adding-resources"></a>リソースを追加します。
 
@@ -458,6 +461,8 @@ public class Localize : UsingResxLocalization.ILocalize
 > [、Docs](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2): _「として使用して pt 言語 ID は、ポルトガル語として使用されるブラジルおよび PT-PT で言語 ID は、ポルトガル語のポルトガルで使用されていると」_ です。
 > つまり、ときに、フォールバック言語になりますブラジル ポルトガル語、iOS でこの動作を変更するコードを記述しない限り、非標準のロケールでポルトガル語の言語が選択されて (など、`ToDotnetFallbackLanguage`上)。
 
+IOS のローカライズの詳細については、次を参照してください。 [iOS ローカリゼーション](~/ios/app-fundamentals/localization/index.md)です。
+
 #### <a name="android-application-project"></a>Android アプリケーション プロジェクト
 
 Android を使用して、現在選択されているロケールの公開`Java.Util.Locale.Default`とをダッシュ (これは、次のコードに置き換え) ではなくアンダー スコアの区切り記号を使用しています。 Android アプリケーション プロジェクトにこの依存関係サービスの実装を追加します。
@@ -548,11 +553,12 @@ namespace UsingResxLocalization.Android
 >
 > 開発者が変更する必要があります、`iOSToDotnetLanguage`と`ToDotnetFallbackLanguage`サポートされる言語の必要な特定のケースを処理するメソッド。
 
-
 Android アプリケーション プロジェクトにこのコードを追加するは、翻訳された文字列を自動的に表示することがあります。
 
 > [!NOTE]
 >️**警告:** 翻訳済みの文字列を使用している Android リリース ビルドでは、デバッグ中にない場合を右クリックし、 **Android プロジェクト**選択**オプション > ビルド > Androidビルド**ことを確認して、**アセンブリの展開を高速**チェック マークがないです。 このオプションは、リソースの読み込みで問題が発生しは、ローカライズされたアプリをテストしている場合、使用できません。
+
+Android のローカライズの詳細については、次を参照してください。 [Android ローカリゼーション](~/android/app-fundamentals/localization.md)です。
 
 #### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
@@ -573,6 +579,8 @@ Android アプリケーション プロジェクトにこのコードを追加�
 プラットフォーム固有のプロジェクトとして表示されている上記を更新して、翻訳済みの RESX ファイルで、アプリを再コンパイル後、は、更新された翻訳を各アプリケーションで使用可能なになります。 簡体字中国語に変換するサンプル コードのスクリーン ショットを次に示します。
 
 ![](text-images/simple-example-hans.png "簡体字中国語に変換されるクロスプラット フォームの Ui")
+
+UWP ローカライズの詳細については、次を参照してください。 [UWP ローカリゼーション](/windows/uwp/design/globalizing/globalizing-portal/)です。
 
 ## <a name="localizing-xaml"></a>XAML のローカライズ
 
@@ -713,7 +721,7 @@ switch (Device.RuntimePlatform)
 
 ### <a name="ios-application-project"></a>iOS アプリケーション プロジェクト
 
-iOS プロジェクトのローカリゼーションをという名前の名前付け標準を使用してまたは **.lproj**イメージと文字列のリソースを格納するディレクトリ。 これらのディレクトリは、アプリで使用されるイメージのローカライズ版を含めることができます、さらに、 **InfoPlist.strings**アプリ名をローカライズするために使用するファイル。
+iOS プロジェクトのローカリゼーションをという名前の名前付け標準を使用してまたは **.lproj**イメージと文字列のリソースを格納するディレクトリ。 これらのディレクトリは、アプリで使用されるイメージのローカライズ版を含めることができます、さらに、 **InfoPlist.strings**アプリ名をローカライズするために使用するファイル。 IOS のローカライズの詳細については、次を参照してください。 [iOS ローカリゼーション](~/ios/app-fundamentals/localization/index.md)です。
 
 #### <a name="images"></a>イメージ
 
@@ -737,7 +745,7 @@ iOS プロジェクトのローカリゼーションをという名前の名前�
 
 ### <a name="android-application-project"></a>Android アプリケーション プロジェクト
 
-Android のようなさまざまなを使用して、ローカライズされた画像を格納するためのさまざまなされます**ドロウアブル**と**文字列**言語コードのサフィックスを持つディレクトリ。 4 文字のロケールのコードが (ZH-TW PT-BR など) 必要な場合は、Android が必要である、さらに注意してください**r** dash/前述の次のロケールの (コード zh rTW または pt rBR)。
+Android のようなさまざまなを使用して、ローカライズされた画像を格納するためのさまざまなされます**ドロウアブル**と**文字列**言語コードのサフィックスを持つディレクトリ。 4 文字のロケールのコードが (ZH-TW PT-BR など) 必要な場合は、Android が必要である、さらに注意してください**r** dash/前述の次のロケールの (コード zh rTW または pt rBR)。 Android のローカライズの詳細については、次を参照してください。 [Android ローカリゼーション](~/android/app-fundamentals/localization.md)です。
 
 #### <a name="images"></a>イメージ
 
@@ -773,7 +781,7 @@ Android のようなさまざまなを使用して、ローカライズされた
 
 ### <a name="universal-windows-platform-application-projects"></a>ユニバーサル Windows プラットフォーム アプリケーション プロジェクト
 
-ユニバーサル Windows プラットフォームでは、イメージとアプリ名のローカライズを簡単にするリソース インフラストラクチャが適用されます。
+ユニバーサル Windows プラットフォームでは、イメージとアプリ名のローカライズを簡単にするリソース インフラストラクチャが適用されます。 UWP ローカライズの詳細については、次を参照してください。 [UWP ローカリゼーション](/windows/uwp/design/globalizing/globalizing-portal/)です。
 
 #### <a name="images"></a>イメージ
 
@@ -796,5 +804,6 @@ RESX ファイルおよび .NET グローバリゼーションのクラスを使
 - [クロスプラット フォームのローカリゼーション](~/cross-platform/app-fundamentals/localization.md)
 - [iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)
 - [Android のローカライズ](~/android/app-fundamentals/localization.md)
+- [UWP ローカリゼーション](/windows/uwp/design/globalizing/globalizing-portal/)
 - [CultureInfo クラス (MSDN) を使用します。](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
 - [検索して、特定のカルチャ (MSDN) のリソースを使用します。](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)

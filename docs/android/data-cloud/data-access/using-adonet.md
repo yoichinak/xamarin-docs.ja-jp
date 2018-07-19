@@ -11,6 +11,7 @@ ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/20/2018
+ms.locfileid: "31646782"
 ---
 # <a name="using-adonet-with-android"></a>ADO.NET を使用する Android と
 
@@ -31,7 +32,7 @@ Xamarin では、Android で使用できるは、使い慣れた ADO.NET に似�
 -----
 
 
-右クリック**参照 > 参照を編集しています.**必要なアセンブリを選択するには、をクリックします。
+右クリック**参照 > 参照を編集しています.** 必要なアセンブリを選択するには、をクリックします。
 
 ## <a name="about-monodatasqlite"></a>Mono.Data.Sqlite について
 

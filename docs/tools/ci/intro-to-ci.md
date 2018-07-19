@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 333e672b054c38370847338e9a4ffad94c90bb5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 67fc32fc9f79d54274642fbab2d0c2f8afd14d8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793663"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066508"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的な統合の概要
 
@@ -48,14 +48,14 @@ _継続的インテグレーションは、ソフトウェア エンジニア �
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services と Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) および[Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) は、継続的インテグレーションのコラボレーション ツールを Microsoft のサービス、タスクの追跡、アジャイル計画およびレポート作成ツール、およびバージョンのビルドコントロール。 バージョン管理、VSTS と TFS 作業ができ、独自のシステム Team Foundation バージョン管理 (TFVC) または GitHub でホストされるプロジェクトです。
+[Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) (VSTS) および[Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) は、継続的インテグレーションのコラボレーション ツールを Microsoft のサービス、タスクの追跡、アジャイル計画およびレポート作成ツール、およびバージョンのビルドコントロール。 バージョン管理、VSTS と TFS 作業ができ、独自のシステム Team Foundation バージョン管理 (TFVC) または GitHub でホストされるプロジェクトです。
 
  - Visual Studio Team Services では、クラウド経由でサービスを提供します。 主な利点は、専用のハードウェアやインフラストラクチャは必要ありませんからアクセスできる任意の場所と地理的には、チームに魅力的なので、Visual Studio などの一般的な開発ツールの web ブラウザーを通じて分散されます。 これは無料の 5 人の開発者のチーム以下後に、増大するチームを対応する追加するライセンスを購入することができます。
  - TFS は、内部設置型 Windows サーバー用に設計され、ローカル ネットワークまたはそのネットワークに VPN 接続経由でアクセスします。 その主な利点は、完全にビルド サーバーの構成を制御してインストールすることをどのような追加のソフトウェアまたはサービスが必要なです。 TFS では、小規模なチーム向けの空きエントリ レベル Express edition があります。
 
 TFS および VSTS の両方が Visual Studio と密接に統合し、開発者に多くのバージョン管理と快適なシングル IDE 内から CI タスクを実行できるようにします。 Team Explorer Everywhere plugin for Eclipse (下記参照) も使用できます。 Mac 用の visual Studio では、TFS または VSTS の任意のサポートは提供しません。
 
-ビジュアルの Studio チーム サービスのビルド システムが、Xamarin プロジェクトでは、(Android、iOS、および Windows) のターゲットにする各プラットフォームのビルド定義を作成する内部での直接サポートします。 Xamarin ライセンスを適切な各ビルド定義が必要です。 ローカルに接続することも、Xamarin 対応 TFS は、この目的のための Visual Studio Team Services にサーバーを構築します。 この設定により、VSTS をキューに入っているビルドは、ローカル サーバーに委任されます。 詳細についてを参照してください[配置ビルド サーバーを構成および](https://msdn.microsoft.com/library/ms181712.aspx)です。 また、Jenkins またはチームの市区町村などの別のビルド ツールを使用することができます。
+ビジュアルの Studio チーム サービスのビルド システムが、Xamarin プロジェクトでは、(Android、iOS、および Windows) のターゲットにする各プラットフォームのビルド定義を作成する内部での直接サポートします。 Xamarin ライセンスを適切な各ビルド定義が必要です。 ローカルに接続することも、Xamarin 対応 TFS は、この目的のための Visual Studio Team Services にサーバーを構築します。 この設定により、VSTS をキューに入っているビルドは、ローカル サーバーに委任されます。 詳細についてを参照してください[配置ビルド サーバーを構成および](https://docs.microsoft.com/vsts/pipelines/agents/agents?view=vsts)です。 また、Jenkins またはチームの市区町村などの別のビルド ツールを使用することができます。
 
 Visual Studio、Visual Studio Team Services、および Team Foundation Server では、参照のすべてのアプリケーション ライフ サイクル管理 (ALM) 機能の概要については、 [Xamarin アプリでのアプリケーション ライフ サイクル管理](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx)msdn です。
 
@@ -74,7 +74,7 @@ Visual Studio、Visual Studio Team Services、および Team Foundation Server �
 Visual Studio 2015 と Visual Studio for Mac Git; に対するネイティブ サポートを提供します。以前のバージョン、Microsoft が提供しています、 [Git のダウンロード可能な拡張](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)です。 前述のようは、TFVC の代わりにバージョン管理の Visual Studio Team Services と TFS が Git を使用できます。
 
 
-### <a name="subversion"></a>subversion
+### <a name="subversion"></a>Subversion
 
 [Subversion](http://subversion.apache.org) (SVN) は、人気のオープン ソース バージョン コントロール システムを 2000年以降使用されています。 SVN は、OS X、Windows、FreeBSD、Linux および Unix のすべての最新バージョンで実行されます。 Visual Studio for Mac は、SVN に対するネイティブ サポートがします。 Visual Studio に SVN サポートをもたらすサード パーティ製の拡張機能があります。
 
@@ -107,7 +107,7 @@ VSTS ビルドは、ローカル サーバーに委任するように、Visual S
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services と Jenkins
 
-Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納しを引き続き使用する Jenkins CI ビルドできます。 チーム プロジェクトの Git リポジトリまたはチェックインするときにコードを TFVC にコードをプッシュするときに、Jenkins ビルドをトリガーできます。 詳細については、「[の Visual Studio Team Services Jenkins](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins)です。
+Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納しを引き続き使用する Jenkins CI ビルドできます。 チーム プロジェクトの Git リポジトリまたはチェックインするときにコードを TFVC にコードをプッシュするときに、Jenkins ビルドをトリガーできます。 詳細については、「[の Visual Studio Team Services Jenkins](https://docs.microsoft.com/en-us/vsts/service-hooks/services/jenkins?view=vsts)です。
 
 [![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを格納およびを引き続き使用する Jenkins CI ビルド")](intro-to-ci-images/intro04.png#lightbox)
 

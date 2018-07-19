@@ -1,55 +1,55 @@
 ---
 title: Xamarin.Forms BoxView
-description: この記事では、装飾、グラフィックス、および Xamarin.Forms アプリケーションでの操作の色付きの四角形を使用する方法について説明します。
+description: この記事では、装飾、グラフィック、および Xamarin.Forms アプリケーションでの操作を色付きの四角形を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: edb2785362f2cc7377d9adb0c1a89a6fa2b08111
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244316"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997053"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) 指定した幅、高さ、および色の単純な四角形を表示します。 使用することができます`BoxView`装飾、基本的なグラフィックス、およびタッチを介してユーザーと対話するためです。
+[`BoxView`](xref:Xamarin.Forms.BoxView) 指定した幅、高さ、および色の単純な四角形をレンダリングします。 使用することができます`BoxView`の装飾は、基本的なグラフィックス、およびタッチ機能によるユーザーとの対話します。
 
-Xamarin.Forms で組み込みのベクトル グラフィックス システムでは、があるないため、`BoxView`補正するために役立ちます。 この記事の使用中で説明されているサンプル プログラムのいくつか`BoxView`グラフィックのレンダリングにします。 `BoxView`サイズを特定の幅と太さの線のようにして角度を使用して、回転、`Rotation`プロパティです。
+Xamarin.Forms には、組み込みのベクター グラフィックス システムがあるないため、`BoxView`補正するために役立ちます。 この記事で使用中で説明されているサンプル プログラムの一部`BoxView`グラフィックのレンダリングにします。 `BoxView`と、特定の幅と太さの線と同じようにサイズを使用して、角度で回転し、`Rotation`プロパティ。
 
-`BoxView`単純なグラフィックスを模倣、調査することができます[xamarin.forms を使用して SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)のより高度なグラフィックス要件です。
+`BoxView`単純なグラフィックスを模倣することができます、調査したい場合があります[Xamarin.Forms で SkiaSharp を使用して](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)のより高度なグラフィックスの要件。
 
 この記事では、次のトピックについて説明します。
 
-- **[BoxView 色とサイズを設定](#colorandsize)** &ndash;設定、`BoxView`プロパティです。
-- **[レンダリング テキスト装飾](#textdecorations)** &ndash;を使用して、`BoxView`の線を表示します。
-- **[BoxView で色を一覧表示する](#listingcolors)** &ndash;で、システム カラーをすべて表示、`ListView`です。
-- **[サブクラス化 BoxView してゲームの寿命を再生](#subclassing)** &ndash;有名なオートマトンを実装します。
+- **[BoxView 色とサイズ設定](#colorandsize)** &ndash;設定、`BoxView`プロパティ。
+- **[文字装飾のレンダリング](#textdecorations)** &ndash;を使用して、`BoxView`の線を表示します。
+- **[BoxView 色のカラーを一覧表示する](#listingcolors)** &ndash;で、システム カラーをすべて表示、`ListView`します。
+- **[サブクラス化 BoxView でゲームの人生を再生](#subclassing)** &ndash;有名なオートマトンを実装します。
 - **[デジタル時計を作成する](#digitalclock)** &ndash;ドット マトリックスの表示をシミュレートします。
-- **[アナログ時計を作成する](#analogclock)** &ndash;変換し、アニメーション化`BoxView`要素。
+- **[作成、アナログ時計](#analogclock)** &ndash;変換およびアニメーション化`BoxView`要素。
 
 <a name="colorandsize" />
 
 ## <a name="setting-boxview-color-and-size"></a>設定 BoxView 色とサイズ
 
-ほとんどの場合、次の 3 つのプロパティの設定`BoxView`:
+非常に多くの場合、次の 3 つのプロパティを設定します`BoxView`:
 
-- [`Color`](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) 色を設定します。
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) 幅を設定する、`BoxView`デバイスに依存しない単位。
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) 高さを設定する、`BoxView`です。
+- [`Color`](xref:Xamarin.Forms.BoxView.Color) その色を設定します。
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 幅を設定する、`BoxView`デバイスに依存しない単位。
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 高さを設定する、`BoxView`します。
 
-`Color`プロパティの型は`Color`; プロパティは、いずれかに設定できます`Color`アルファベット順の範囲の色の名前付きの 141 静的読み取り専用フィールドを含む値、`AliceBlue`に`YellowGreen`です。
+`Color`プロパティの型は`Color`; に、プロパティを設定できます`Color`値の 141 静的読み取り専用フィールドを含む名前付きの色からアルファベット順に至るまで`AliceBlue`に`YellowGreen`します。
 
-`WidthRequest`と`HeightRequest`プロパティは、場合のみ、役割を果たす、`BoxView`は*制約のない*レイアウトでします。 これは、レイアウト コンテナーを子 's、たとえば、する場合のサイズを知る必要がある場合の場合、`BoxView`で自動サイズ設定するセルの子である、`Grid`レイアウトです。 A`BoxView`もない制約されたときにその`HorizontalOptions`と`VerticalOptions`プロパティが以外の値に設定されます`LayoutOptions.Fill`です。 場合、 `BoxView` 、制約がありませんが、`WidthRequest`と`HeightRequest`プロパティが設定されていない、し、幅または高さが 40 単位、またはモバイル デバイスで約 1/4 インチの既定値に設定されます。
+`WidthRequest`と`HeightRequest`プロパティは、場合のみ、役割を果たす、`BoxView`は*制約のない*レイアウトにします。 これは、場合、レイアウト コンテナーは、子 's、たとえば、する場合のサイズを把握する必要がある場合、`BoxView`で自動サイズ設定するセルの子である、`Grid`レイアウト。 A`BoxView`でないことも制限されたときにその`HorizontalOptions`と`VerticalOptions`プロパティが以外の値に設定されて`LayoutOptions.Fill`します。 場合、 `BoxView` 、制約がありませんが、`WidthRequest`と`HeightRequest`プロパティが設定されていない、し、幅または高さが 40 単位、またはモバイル デバイスに約 1/4 インチの既定値に設定します。
 
-`WidthRequest`と`HeightRequest`プロパティが無視される場合、`BoxView`は*制約付き*レイアウトをレイアウト コンテナーの場合、自分のサイズに基づいてに課す、`BoxView`です。
+`WidthRequest`と`HeightRequest`プロパティが無視される場合、`BoxView`は*制約付き*をレイアウト コンテナーの場合に独自のサイズを課すレイアウトでは、`BoxView`します。
 
-A `BoxView` 1 つのディメンション内で制限して、他の制約します。 たとえば場合、`BoxView`垂直方向の子である`StackLayout`の垂直方向、`BoxView`が制約し、水平方向に制限が一般にします。 水平方向の例外がありますが、: 場合、`BoxView`がその`HorizontalOptions`以外の何かに設定するプロパティ`LayoutOptions.Fill`、水平方向にも制約付きはできません。 ことも、`StackLayout`自体に制約なしの水平方向、その場合、`BoxView`も制約付きの水平方向にできません。
+A `BoxView` 1 つのディメンションでは制限し、制約、それ以外のことができます。 たとえば場合、`BoxView`垂直方向の子である`StackLayout`の垂直方向、`BoxView`は制約し、水平方向は一般に制約付き。 水平方向の例外もありますが、: 場合、`BoxView`がその`HorizontalOptions`プロパティ以外に何か設定`LayoutOptions.Fill`、水平方向にも制約付きはできません。 ことも、`StackLayout`自体に制約なしの水平方向、その場合、`BoxView`も水平方向に制約されません。
 
-[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)サンプルを表示、1 インチの正方形制約なし`BoxView`そのページの中央に。
+[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)サンプル表示を 1 インチの正方形無制限`BoxView`そのページの中央に。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -68,19 +68,19 @@ A `BoxView` 1 つのディメンション内で制限して、他の制約しま
 
 結果を次に示します。
 
-[![基本的な BoxView](boxview-images/basicboxview-small.png "基本 BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
+[![基本的な BoxView](boxview-images/basicboxview-small.png "基本的な BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
-場合、`VerticalOptions`と`HorizontalOptions`プロパティはから削除、`BoxView`タグまたはに設定されている`Fill`、`BoxView`ページのサイズによって制限が、ページ全体に拡張されます。
+場合、`VerticalOptions`と`HorizontalOptions`プロパティから削除されて、`BoxView`タグを付けるかに設定されます`Fill`、`BoxView`ページのサイズによって制約になり、ページ全体に展開します。
 
-A`BoxView`の子であることができますも、`AbsoluteLayout`です。 その場合、両方の場所のサイズと、`BoxView`使用して設定された、`LayoutBounds`添付バインド可能なプロパティです。 `AbsoluteLayout`記事で説明した[ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)です。
+A`BoxView`の子にすることもできます、`AbsoluteLayout`します。 その場合、両方の場所とサイズの`BoxView`を使用して設定、`LayoutBounds`添付プロパティのバインド可能な。 `AbsoluteLayout`については、情報の記事で説明[ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)します。
 
-次のサンプル プログラムでこれらすべてのケースの例が表示されます。
+次のサンプル プログラムでこれらすべてのケースの例を確認します。
 
 <a name="textdecorations" />
 
-## <a name="rendering-text-decorations"></a>レンダリング テキスト装飾
+## <a name="rendering-text-decorations"></a>文字装飾のレンダリング
 
-使用することができます、`BoxView`を水平方向および垂直の線の形式で、ページのいくつかの単純な装飾を追加します。 [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)サンプルを示します。 定義されているすべてのプログラムのビジュアルは、 **MainPage.xaml**をいくつかを含むファイル`Label`と`BoxView`内の要素、`StackLayout`次に示します。
+使用することができます、`BoxView`水平および垂直の線の形式で、ページの単純ないくつか飾りを追加します。 [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)のサンプルで例示します。 定義されているすべてのプログラムのビジュアルは、 **MainPage.xaml**をいくつかを含むファイル`Label`と`BoxView`内の要素、`StackLayout`次に示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,11 +111,11 @@ A`BoxView`の子であることができますも、`AbsoluteLayout`です。 �
 </ContentPage>
 ```
 
-子であるすべてのマークアップに続く、`StackLayout`です。 装飾用の複数の型は、このマークアップ`BoxView`で使用される要素、`Label`要素。
+子であるすべてのマークアップに続く、`StackLayout`します。 このマークアップから成る複数の種類の装飾的な`BoxView`で使用される要素、`Label`要素。
 
-[![文字飾り](boxview-images/textdecoration-small.png "文字飾り")](boxview-images/textdecoration-large.png#lightbox "テキスト装飾")
+[![テキスト装飾](boxview-images/textdecoration-small.png "装飾")](boxview-images/textdecoration-large.png#lightbox "テキスト装飾")
 
-ページの上部にあるスタイリッシュ ヘッダーが得られます、`AbsoluteLayout`子は、4 つ`BoxView`要素と`Label`、すべては割り当ての特定の場所とサイズ。
+ページの上部にあるスタイリッシュなヘッダーにより実現されます、`AbsoluteLayout`子とは、4 つ`BoxView`要素と`Label`、すべては、特定の場所とサイズを割り当てます。
 
 ```xaml
 <AbsoluteLayout>
@@ -129,9 +129,9 @@ A`BoxView`の子であることができますも、`AbsoluteLayout`です。 �
 </AbsoluteLayout>
 ```
 
-XAML ファイルで、`AbsoluteLayout`が続く、`Label`で説明するテキストを書式設定、`AbsoluteLayout`です。
+XAML ファイルで、`AbsoluteLayout`が続く、`Label`で説明するテキストを書式設定、`AbsoluteLayout`します。
 
-それを囲む両方によってテキスト文字列に下線を追加することができます、`Label`と`BoxView`で、`StackLayout`を持つその`HorizontalOptions`以外の値が何かに設定`Fill`です。 幅、`StackLayout`の幅に従いますが、 `Label`、しに幅を課す、`BoxView`です。 `BoxView`明示的な高さのみが割り当てられます。
+両方を囲むことで、テキスト文字列に下線を追加することができます、`Label`と`BoxView`で、`StackLayout`を持つその`HorizontalOptions`以外の値が何かに設定`Fill`します。 幅、`StackLayout`の幅は、準拠するもの、 `Label`、そこにその幅を課す、`BoxView`します。 `BoxView`明示的な高さのみが割り当てられます。
 
 ```xaml
 <StackLayout HorizontalOptions="Center">
@@ -143,13 +143,13 @@ XAML ファイルで、`AbsoluteLayout`が続く、`Label`で説明するテキ�
 
 この手法を使用して、長いテキスト文字列または段落内の個々 の単語に下線を付けることはできません。
 
-使用することも、`BoxView`を HTML のように`hr`(水平線) 要素です。 自動的の幅、`BoxView`このケースでは、親コンテナーによって決定されます、 `StackLayout`:
+使用することも、`BoxView`を HTML のように`hr`(水平方向の規則) の要素。 幅で自動的に、`BoxView`ここでは、親コンテナーによって決定されます、 `StackLayout`:
 
 ```xaml
 <BoxView HeightRequest="3" />
 ```
 
-それを囲む両方によって、テキストの段落の一方の側で垂直線を描画する最後に、`BoxView`と`Label`水平方向に`StackLayout`です。 この場合の高さ、`BoxView`の高さと同じ`StackLayout`、これはの高さを受ける、 `Label`:
+両方を囲むことで、テキストの段落の 1 つにある垂直線を描画する最後に、`BoxView`と`Label`を横`StackLayout`します。 ここでの高さ、`BoxView`の高さと同じ`StackLayout`の高さが適用される`Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -160,17 +160,17 @@ XAML ファイルで、`AbsoluteLayout`が続く、`Label`で説明するテキ�
         ···
 
     </Label>
-/StackLayout>
+</StackLayout>
 ```
 <a name="listingcolors" />
 
-## <a name="listing-colors-with-boxview"></a>BoxView で色を一覧表示します。
+## <a name="listing-colors-with-boxview"></a>色のカラー BoxView を一覧表示します。
 
-`BoxView`色を表示するため便利です。 このプログラムを使用して、`ListView`パブリック静的な読み取り専用のフィールドはすべて、Xamarin.Forms を一覧表示する`Color`構造体。
+`BoxView`色を表示するため便利です。 このプログラムを使用して、`ListView`すべて静的な読み取り専用のパブリック フィールド、Xamarin.Forms を一覧表示する`Color`構造体。
 
 [![ListView 色](boxview-images/listviewcolors-small.png "ListView 色")](boxview-images/listviewcolors-large.png#lightbox "ListView の色")
 
-[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/)プログラムには、という名前のクラスが含まれています。`NamedColor`です。 静的コンス トラクターのすべてのフィールドにアクセスするリフレクションを使用して、`Color`構造体を作成、`NamedColor`それぞれのオブジェクト。 これらは、静的に格納されている`All`プロパティ。
+[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/)プログラムには、という名前のクラスが含まれています。`NamedColor`します。 静的コンス トラクターのすべてのフィールドにアクセスするリフレクションを使用して、`Color`構造体し、作成、`NamedColor`それぞれのオブジェクト。 静的に格納される`All`プロパティ。
 
 ```csharp
 public class NamedColor
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-XAML ファイルでは、プログラムのビジュアルがについて説明します。 `ItemsSource`のプロパティ、 `ListView` 、静的に設定されている`NamedColor.All`プロパティ、つまり、 `ListView` 、すべての個々 の表示`NamedColor`オブジェクト。
+XAML ファイルでは、プログラムのビジュアルがについて説明します。 `ItemsSource`のプロパティ、 `ListView` 、静的に設定されている`NamedColor.All`プロパティ、つまり、`ListView`すべてを表示します。`NamedColor`オブジェクト。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,15 +293,15 @@ XAML ファイルでは、プログラムのビジュアルがについて説明
 </ContentPage>
 ```
 
-`NamedColor`オブジェクトが書式設定される、`ViewCell`のデータ テンプレートとして設定されているオブジェクト、`ListView`です。 このテンプレートに含まれる、`BoxView`が`Color`プロパティにバインドされる、`Color`のプロパティ、`NamedColor`オブジェクト。
+`NamedColor`オブジェクトが書式設定される、`ViewCell`オブジェクトのデータ テンプレートとして設定されている、`ListView`します。 このテンプレートに含まれて、`BoxView`が`Color`プロパティにバインドする、`Color`のプロパティ、`NamedColor`オブジェクト。
 
 <a name="subclassing" />
 
-## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>サブクラス化 BoxView によってライフのゲームで遊ぶ
+## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>サブクラス化 BoxView でライフ サイクルのゲームをプレイ
 
-ゲームの寿命は数学的 John Conway により考案およびのページで普及したオートマトン*科学 American* 1970 年代にします。 概要は、Wikipedia の記事「によって提供される[Conway のゲームの寿命](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)です。
+ゲームの人生はオートマトンちなんで John Conway により考案およびのページで普及*Scientific American* 1970 年代にします。 Wikipedia の記事で概要が提供される[Conway のゲームの人生](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)します。
 
-Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/)プログラムという名前のクラスを定義する`LifeCell`から派生した`BoxView`です。 このクラスは、ゲームの有効期間内の各セルのロジックをカプセル化します。
+Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/)プログラムという名前のクラスを定義する`LifeCell`から派生した`BoxView`します。 このクラスは、個々 のセルのライフ サイクルのゲームのロジックをカプセル化します。
 
 ```csharp
 class LifeCell : BoxView
@@ -344,23 +344,23 @@ class LifeCell : BoxView
 }
 ```
 
-`LifeCell` 次の 3 つ以上のプロパティを追加`BoxView`:`Col`と`Row`プロパティが、グリッド内のセルの位置を格納および`IsAlive`プロパティの状態を示します。 `IsAlive`プロパティも設定、`Color`のプロパティ、`BoxView`黒、セルが有効でない場合、セルがアライブと白の場合にします。
+`LifeCell` 次の 3 つのプロパティを追加します`BoxView`:`Col`と`Row`プロパティは、グリッド内のセルの位置を格納し、`IsAlive`プロパティの状態を示します。 `IsAlive`プロパティも設定、`Color`のプロパティ、`BoxView`を黒、セルが有効でない場合、セルが生きてと白の場合。
 
-`LifeCell` また、インストール、`TapGestureRecognizer`をタップすることによって、セルの状態を切り替えることを許可します。 クラスの変換、`Tapped`独自にジェスチャ レコグナイザーからイベント`Tapped`イベント。
+`LifeCell` また、インストール、`TapGestureRecognizer`をタップすることによって、セルの状態を切り替えることを許可します。 クラスは、変換、`Tapped`イベントに独自のジェスチャ認識エンジンから`Tapped`イベント。
 
-**GameOfLife**プログラムも含まれています、`LifeGrid`ほとんどのゲームのロジックをカプセル化するクラスと`MainPage`プログラムのビジュアルを処理するクラスです。 これらには、ゲームのルールを示すオーバーレイが含まれます。 数百のいくつかを示すアクションで、プログラムを次に示します`LifeCell`ページ上のオブジェクト。
+**GameOfLife**プログラムも含まれています、 `LifeGrid` 、ゲームのロジックの大部分をカプセル化するクラスと`MainPage`プログラムのビジュアルを処理するクラスです。 ゲームのルールを示すオーバーレイが含まれます。 数百のいくつかを示すアクションのプログラムを次に示します`LifeCell`ページ上のオブジェクト。
 
-[![有効期間のゲーム](boxview-images/gameoflife-small.png "人生ゲーム")](boxview-images/gameoflife-large.png#lightbox "人生ゲーム")
+[![ライフ サイクルのゲーム](boxview-images/gameoflife-small.png "人生ゲーム")](boxview-images/gameoflife-large.png#lightbox "ライフ サイクルのゲーム")
 
 <a name="digitalclock" />
 
 ## <a name="creating-a-digital-clock"></a>デジタル時計を作成します。
 
-[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/)プログラム作成 210`BoxView`昔ながらの 5 ~ 7 をドット マトリックス ディスプレイのドットをシミュレートする要素。 縦方向または横モードでの時間を読み取ることができますが、ランドス ケープが大きい。
+[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/)プログラム作成 210`BoxView`昔ながらの 5 ~ 7 でドット マトリックス ディスプレイのドットをシミュレートする要素。 縦または横モードでの時間を読み取ることができますが、ランドス ケープが大きい。
 
 [![ドット マトリックス クロック](boxview-images/dotmatrixclock-small.png "ドット マトリックス クロック")](boxview-images/dotmatrixclock-large.png#lightbox "ドット マトリックス クロック")
 
-XAML ファイルをインスタンス化がよりは少し多く、`AbsoluteLayout`時計のために使用します。
+XAML ファイルをインスタンス化は少々、`AbsoluteLayout`時計のために使用します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -375,7 +375,7 @@ XAML ファイルをインスタンス化がよりは少し多く、`AbsoluteLay
 </ContentPage>
 ```
 
-他のすべては、分離コード ファイル内に発生します。 ドット マトリックス表示ロジックは 10 桁とコロンのそれぞれに対応するドットを記述する複数の配列の定義によって大幅に簡略化します。
+他のすべては、分離コード ファイルで発生します。 ドット マトリックスの表示ロジックは 10 桁とコロンのそれぞれに対応する点を記述する複数の配列の定義によって大幅に簡略化します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -447,9 +447,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-これらのフィールドの最後の 3 次元配列に`BoxView`6 桁のドット パターンを格納するための要素。
+これらのフィールドの最後の 3 次元配列に`BoxView`6 桁のドットのパターンを格納するための要素。
 
-コンス トラクターをすべて作成、 `BoxView` 、数字、コロン、およびも初期化用の要素、`Color`のプロパティ、`BoxView`コロンの要素。
+コンス トラクターをすべて作成、 `BoxView` 、桁の数字とコロン、および初期化の要素、`Color`のプロパティ、`BoxView`コロン要素。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -528,9 +528,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-このプログラムは、相対位置とサイズ変更機能の`AbsoluteLayout`します。 幅と高さをそれぞれの`BoxView`水平および垂直方向のドット数で割った値 1 の 85% を具体的には、小数部の値に設定されます。 位置は、小数部の値にも設定されます。
+このプログラムは、相対位置とサイズ変更機能の`AbsoluteLayout`します。 幅と高さをそれぞれの`BoxView`水平および垂直のドット数で割った値 1 の 85% を具体的には、小数部の値に設定されます。 位置は、小数部の値にも設定されます。
 
-すべての位置とサイズの合計サイズの基準としたがあるため、 `AbsoluteLayout`、 `SizeChanged` 、ページのハンドラーを設定のみ必要があります、`HeightRequest`の`AbsoluteLayout`:
+すべての位置とサイズはの合計サイズを基準とするため、 `AbsoluteLayout`、`SizeChanged`ページのハンドラーが設定のみが必要、`HeightRequest`の`AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -549,9 +549,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-幅、`AbsoluteLayout`のため、ページの幅全体に広がることが自動的に設定します。
+幅、`AbsoluteLayout`はページの幅に収まらないほど長くなるため、自動的に設定します。
 
-最終的なコード、`MainPage`クラスは、タイマー コールバックを処理し、各桁のピリオドの色します。 プログラムの最も簡単な部分にこのロジックを作成、分離コード ファイルの先頭に多次元配列の定義に役立ちます。
+最後のコードで、`MainPage`クラスがタイマーのコールバックを処理し、各桁の点の色します。 このロジックのプログラムの最も簡単な部分を作成、分離コード ファイルの先頭に多次元配列の定義に役立ちます。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -592,13 +592,13 @@ public partial class MainPage : ContentPage
 
 ## <a name="creating-an-analog-clock"></a>アナログ時計の作成
 
-ドット マトリックス クロックがのアプリケーションが明らかになるように思えます`BoxView`が`BoxView`要素では、アナログ時計を実現できます。
+明確なアプリケーションのドット マトリックス クロックが見えるかもしれません`BoxView`が`BoxView`要素は、アナログ時計の実現も。
 
 [![BoxView クロック](boxview-images/boxviewclock-small.png "BoxView クロック")](boxview-images/boxviewclock-large.png#lightbox "BoxView クロック")
 
-内のすべてのビジュアル、 [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)プログラムの子である、`AbsoluteLayout`です。 使用してこれらの要素のサイズは、`LayoutBounds`添付プロパティ、および回転を使用して、`Rotation`プロパティです。
+内のすべてのビジュアル、 [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)プログラムの子である、`AbsoluteLayout`します。 使用してこれらの要素のサイズは、`LayoutBounds`添付プロパティ、および回転を使用して、`Rotation`プロパティ。
 
-3 つ`BoxView`時計の針の要素の XAML ファイルでインスタンス化が、配置されたりしないサイズします。
+3 つ`BoxView`時計の針の要素は、XAML ファイル内でインスタンス化がいない配置またはサイズします。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -626,7 +626,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-分離コード ファイルのコンス トラクターは、60 をインスタンス化`BoxView`目盛りは、クロックの円周上での要素。
+分離コード ファイルのコンス トラクターは、60 をインスタンス化`BoxView`時計の外周部に目盛りの要素。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -655,7 +655,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-サイズとすべての配置、`BoxView`で要素が発生した、`SizeChanged`のハンドラーは、`AbsoluteLayout`です。 少し構造体、クラスの内部と呼ばれる`HandParams`クロックの合計サイズの基準とした 3 つのハンドのそれぞれのサイズを説明します。
+サイズとすべての配置、`BoxView`で要素が発生した、`SizeChanged`のハンドラー、`AbsoluteLayout`します。 クラスの内部の小さな構造体と呼ばれる`HandParams`クロックの合計サイズを基準と 3 つのハンドのそれぞれのサイズについて説明します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -684,7 +684,7 @@ public partial class MainPage : ContentPage
  }
 ```
 
-`SizeChanged`ハンドラー center との半径を決定する、 `AbsoluteLayout`、およびサイズを設定し、され、60 が置か`BoxView`目盛りとして使用される要素。 `for`ループが終了を設定して、`Rotation`これらの各プロパティ`BoxView`要素。 最後に、`SizeChanged`ハンドラー、`LayoutHand`サイズおよび位置情報、クロックの 3 つの手をメソッドが呼び出されます。
+`SizeChanged` Center との半径を決定するハンドラー、 `AbsoluteLayout`、60 の位置し、サイズを変更し、`BoxView`目盛りとして使用される要素。 `for`ループの最後を設定して、`Rotation`これらの各プロパティ`BoxView`要素。 最後に、`SizeChanged`ハンドラー、`LayoutHand`サイズし、位置のクロックの 3 つの手をメソッドが呼び出されます。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -735,9 +735,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LayoutHand`メソッドがサイズを設定し、12時 00分位置まで直接指す各ハンドを配置します。 メソッドの最後に、`AnchorY`プロパティは、クロックの中央に対応する位置に設定します。 これは、回転の中心を示します。
+`LayoutHand`メソッドは、サイズを変更し、12時 00分まで直接ポイントする各ハンドを配置します。 メソッドの最後に、`AnchorY`プロパティが、クロックの中心に対応する位置に設定します。 これは、回転の中心を示します。
 
-手は、タイマー コールバック関数に回転します。
+タイマーのコールバック関数では、手が回転します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -770,19 +770,19 @@ public partial class MainPage : ContentPage
 }
 ```
 
-秒針は少し異なる方法で扱われます: 滑らかなのではなく、機械的ないように見える場合、移動するイージング機能アニメーションを適用します。 各ティック秒針少し戻るをプルし、送信先を所定します。 少しのコードは、移動のよりリアルに多く追加します。
+2 番目の手札が少し異なる方法で扱われる: スムーズではなく機械的なと思われる移動するイージング機能、アニメーションを適用します。 刻みごとに、2 番目の手札を少し戻るをプルし、送信先を所定します。 この少しのコードは、動きのリアリティをたくさん追加します。
 
 ## <a name="conclusion"></a>まとめ
 
-`BoxView`するとしては最初に、単純に見えるかもしれませんこれまで見てきたことができます、非常に多様なグラフィックスおよびベクター グラフィックスをのみで通常使用できる再現ビジュアルほぼことができます。 高度なグラフィックスを参照してください[xamarin.forms を使用して SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)です。
+`BoxView`としてするが、最初で単純に見えますが、きわめて用途が広くなりますグラフィックスやベクター グラフィックスをのみで通常使用できるビジュアルほぼを再現できる説明しました。 高度なグラフィックスを参照してください。 [Xamarin.Forms で SkiaSharp を使用して](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)します。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [基本的な BoxView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
-- [文字飾り (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
+- [文字の装飾 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
 - [色のリスト ボックス (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)
 - [ゲームの有効期間 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
 - [ドット マトリックス クロック (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
 - [BoxView クロック (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock)
-- [BoxView](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)
+- [BoxView](xref:Xamarin.Forms.BoxView)
