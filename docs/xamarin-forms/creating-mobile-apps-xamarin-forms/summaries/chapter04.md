@@ -6,19 +6,22 @@ ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997427"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156718"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要です。 スタックをスクロール
 
 この章は主の概念を導入する有用なデータ*レイアウト*、クラスおよび Xamarin.Forms を使用して、ページ上の複数のビューの表示画面を整理する方法の全体的な用語であります。
 
 レイアウトは、いくつかのクラスから派生した[ `Layout` ](xref:Xamarin.Forms.Layout)と[ `Layout<T>`](xref:Xamarin.Forms.Layout`1)します。 この章で[ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。
+
+> [!NOTE]
+> [ `FlexLayout` ](~/xamarin-forms/user-interface/layouts/flex-layout.md)で導入された Xamarin.Forms 3.0 に類似した方法で使用できます`StackLayout`がより柔軟です。
 
 この章でも導入されましたが、 [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)、 [ `Frame` ](xref:Xamarin.Forms.Frame)、および[ `BoxView` ](xref:Xamarin.Forms.BoxView)クラス。
 
@@ -104,7 +107,7 @@ ms.locfileid: "38997427"
 
 これには、`ScrollView`の子、 `StackLayout` 、`VerticalOptions`の設定`FillAndExpand`します。 これは、方法については、 [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat)サンプル。
 
-**BlackCat**サンプルも定義して、ポータブル クラス ライブラリ (PCL) に埋め込まれているプログラムのリソースにアクセスする方法を示します。 共有資産プロジェクト (Sap) とこれに行うこともできますが、プロセスは少し複雑で、として、 [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)サンプルを示します。
+**BlackCat**サンプルも定義して、共有ライブラリに埋め込まれているプログラムのリソースにアクセスする方法を示します。 共有資産プロジェクト (Sap) とこれに行うこともできますが、プロセスは少し複雑で、として、 [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)サンプルを示します。
 
 
 
@@ -115,3 +118,4 @@ ms.locfileid: "38997427"
 - [第 4 章 f# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [BoxView](~/xamarin-forms/user-interface/boxview.md)

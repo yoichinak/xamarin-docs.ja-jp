@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 36d208f2326c7584bc03c351b4a5b05a3f3928c9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: c82e222fd47f3a3f13043c076c488b4769659352
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995454"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156497"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要です。 サイズの処理
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms でいくつかのサイズがこれまでに発生しました。
 
@@ -36,7 +39,10 @@ Apple の iPhone および iPad デバイスを対象とするプログラマは
 
 Android は似ています。 プログラマが作業の単位で*密度に依存しないピクセル*(dp)、dps とピクセル間のリレーションシップが 160 dp は 1 インチに基づいています。
 
-Windows ランタイムは、160 のデバイスに依存しない単位は 1 インチの近くに何のスケーリング因子も確立しました。
+Windows のスマート フォンとモバイル デバイスでは、160 のデバイスに依存しない単位は 1 インチの近くに何のスケーリング因子も確立しています。
+
+> [!NOTE]
+> Xamarin.Forms には、任意の Windows ベースの電話またはモバイル デバイスがサポートされていません。
 
 要約すると、スマート フォンやタブレットを対象とする Xamarin.Forms のプログラマはすべての測定単位が次の条件に基づいていると想定できます。
 

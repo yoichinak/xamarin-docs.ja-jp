@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: d1daceba29e45adf64947c89555cc4e75a850d32
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995278"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156685"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要です。 アプリの詳細
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms アプリケーションで画面上の空き領域オブジェクトと呼ばれる*ビジュアル要素*、によってカプセル化された、 [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラス。 ビジュアル要素は、これらのクラスに対応する 3 つのカテゴリに分割できます。
 
@@ -28,7 +31,12 @@ A`Page`派生物が画面全体、または画面全体ではほぼを占有し�
 
 ## <a name="say-hello"></a>開始します。
 
-インストールされている、Xamarin プラットフォームで作成新しい Xamarin.Forms ソリューションを Visual Studio または Visual Studio for mac。 [**こんにちは**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello)ソリューションでは、共通のコードにポータブル クラス ライブラリを使用します。 変更なしで Visual Studio で作成された Xamarin.Forms ソリューションを示します。 ソリューションは、6 つのプロジェクト (最後の 2 つの現在の Xamarin.Forms ソリューション テンプレートでは作成されません) で構成されます。
+インストールされている、Xamarin プラットフォームで作成新しい Xamarin.Forms ソリューションを Visual Studio または Visual Studio for mac。 [**こんにちは**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello)ソリューションでは、共通のコードにポータブル クラス ライブラリを使用します。 
+
+> [!NOTE] 
+> ポータブル クラス ライブラリが .NET Standard ライブラリに置き換えられました。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
+
+このサンプルでは、変更なしで Visual Studio で作成された Xamarin.Forms ソリューションを示します。 ソリューションは、6 つのプロジェクトで構成されます。
 
 - [**こんにちは**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello)、ポータブル クラス ライブラリ (PCL) が、その他のプロジェクトで共有
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid)、android アプリケーション プロジェクト
@@ -37,13 +45,19 @@ A`Page`派生物が画面全体、または画面全体ではほぼを占有し�
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows)、Windows 8.1 のアプリケーション プロジェクト
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone)、Windows Phone 8.1 用アプリケーション プロジェクト
 
+> [!NOTE] 
+> Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。 
+
 これらのアプリケーション プロジェクトのいずれかのスタートアップ プロジェクトを作成しのビルド/デバイスまたはシミュレーターで、プログラムを実行します。
 
-Xamarin.Forms プログラムの多くでは、アプリケーション プロジェクトを変更しません。 これら多くの場合、プログラムを起動するだけの小さいスタブを残ります。 フォーカスのほとんどは、すべてのアプリケーションに共通するポータブル クラス ライブラリになります。
+Xamarin.Forms プログラムの多くでは、アプリケーション プロジェクトを変更しません。 これら多くの場合、プログラムを起動するだけの小さいスタブを残ります。 フォーカスのほとんどは、すべてのアプリケーションに共通のライブラリになります。
 
 ## <a name="inside-the-files"></a>ファイルの内部
 
 によって表示されるビジュアル、**こんにちは**プログラムが、コンス トラクターで定義されている、 [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs)クラス。 `App` Xamarin.Forms クラスから派生した[ `Application`](xref:Xamarin.Forms.Application)します。
+
+> [!NOTE] 
+> Xamarin.Forms 用の Visual Studio のソリューション テンプレートは、XAML ファイルを使用して、ページを作成します。 XAML は、まで、この本では説明しません[第 7 章](chapter07.md)します。
 
 **参照**のセクション、**こんにちは**PCL プロジェクトには、次の Xamarin.Forms アセンブリが含まれています。
 
@@ -60,21 +74,20 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
+> [!NOTE] 
+> **参照**セクションでは、これらのプロジェクトが不要になった、アセンブリを一覧表示します。 代わりに、プロジェクト ファイルには、 **PackageReference** Xamarin.Forms NuGet パッケージを参照するタグ。 **参照**セクションでは、Visual Studio のリスト、 **Xamarin.Forms** Xamarin.Forms アセンブリではなくパッケージ化します。 
+
 静的な呼び出しを含むアプリケーション プロジェクトの各`Forms.Init`メソッドで、`Xamarin.Forms`名前空間。 これには、Xamarin.Forms ライブラリを初期化します。 別のバージョンの`Forms.Init`プラットフォームごとに定義されます。 このメソッドの呼び出しは、次のクラスを参照してください。
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [ `App`クラス、`OnLaunched`メソッド](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- Windows 8.1: [ `App`クラス、`OnLaunched`メソッド](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
-- Windows Phone 8.1: [ `App`クラス、`OnLaunched`メソッド](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
 
-さらに、各プラットフォームのインスタンスを作成する必要があります、`App`クラス、PCL に位置します。 これは、問題への呼び出しで発生`LoadApplication`次のクラス。
+さらに、各プラットフォームのインスタンスを作成する必要があります、`App`クラスの共有ライブラリ内の場所。 これは、問題への呼び出しで発生`LoadApplication`次のクラス。
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
-- Windows 8.1： [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
-- Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
 それ以外の場合、これらのアプリケーション プロジェクトは、通常の「何」のプログラムです。
 
@@ -82,30 +95,20 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 
 ポータブル クラス ライブラリ (PCL) または共有資産プロジェクト (SAP) のいずれかの一般的なコードで Xamarin.Forms ソリューションを作成することになります。 SAP ソリューションを作成するには、Visual Studio で共有オプションを選択します。 [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap)ソリューションは変更なしでの SAP テンプレートを示します。
 
-すべての一般的なプラットフォームのアプリケーション プロジェクトによって参照されるライブラリ プロジェクトでコードの PCL アプローチ バンドル。 SAP アプローチでは、共通のコードは効果的にプラットフォームのすべてのアプリケーション プロジェクト内に存在して、それらの間で共有されます。
+> [!NOTE] 
+> ポータブル クラス ライブラリは .NET Standard ライブラリによって置き換えられました。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。 それ以外の場合、PCL および .NET Standard ライブラリは、概念的には非常に似ています。
 
-Xamarin.Forms のほとんどの開発者では、PCL のアプローチを選択します。 この本では、ソリューションのほとんどは、PCL です。 SAP を使用するものが含まれて、 **Sap**プロジェクト名にサフィックス。
+プラットフォームのアプリケーション プロジェクトによって参照されるライブラリ プロジェクト内のすべての一般的なコード ライブラリ アプローチ バンドルします。 SAP アプローチでは、共通のコードは効果的にプラットフォームのすべてのアプリケーション プロジェクト内に存在して、それらの間で共有されます。
 
-すべての Xamarin.Forms プラットフォームをサポートするために、PCL で使用される .NET のバージョンが、次のプラットフォームに対応する必要があります。
-
-- .NET Framework 4.5
-- Windows 8
-- Windows Phone 8.1
-- Xamarin.Android
-- Xamarin.iOS
-- Xamarin.IOS (クラシック)
-
-これは、PC プロファイル 111 と呼ばれます。
+Xamarin.Forms のほとんどの開発者では、ライブラリのアプローチを選択します。 この本では、ソリューションの多くは、ライブラリを使用します。 SAP を使用するものが含まれて、 **Sap**プロジェクト名にサフィックス。
 
 SAP アプローチでは、共有プロジェクト内のコードは、c# プリプロセッサ ディレクティブを使用して、さまざまなプラットフォームのさまざまなコードを実行できます (`#if`、#`elif`、および`#endif`) これらの定義済みの識別子。
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
 - UWP: `WINDOWS_UWP`
-- Windows 8.1： `WINDOWS_APP`
-- Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
-PCL では、この章では後でわかります、実行時実行しているプラットフォームを判断できます。
+共有ライブラリでは、この章では後でわかります、実行時実行しているプラットフォームを判断できます。
 
 ## <a name="labels-for-text"></a>テキストのラベル
 
@@ -138,17 +141,13 @@ Xamarin.Forms は、ブックの使用のバージョンで、`Padding`を使っ
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
-- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) Windows 8.1、Windows Phone 8.1、およびすべての UWP デバイス。
-- [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone)、以前は Windows Phone 8.0 を識別するために使用されるが、現在未使用
-- [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) 使用されません。
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) UWP デバイス。
 
 `Device.OnPlatform`メソッド、`Device.OS`プロパティ、および`TargetPlatform`列挙型はすべての非推奨のようになりました。 代わりに、使用、 [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform)プロパティと比較、`string`以下の静的フィールドの値を返します。
 
 - [`iOS`](xref:Xamarin.Forms.Device.iOS)、文字列"iOS"
 - [`Android`](xref:Xamarin.Forms.Device.Android)、文字列"Android"
-- [`UWP`](xref:Xamarin.Forms.Device.UWP)、文字列"UWP"、Windows ランタイムのプラットフォームを参照します。
-- `Windows`、文字列 (Windows 8.1 および Windows Phone 8.1、非推奨とされます)、Windows ランタイム用には、"Windows"
-- `WinPhone`、文字列"WinPhone"Windows Phone 8.0 の (非推奨)
+- [`UWP`](xref:Xamarin.Forms.Device.UWP)、文字列"UWP"、ユニバーサル Windows プラットフォームを参照します。
 
 [ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom)静的読み取り専用プロパティが関連付けられています。 メンバーが返されます、 [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)、これらのメンバーを持ちます。
 
@@ -157,7 +156,7 @@ Xamarin.Forms は、ブックの使用のバージョンで、`Padding`を使っ
 - [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
 - [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) 使用されません。
 
-IOS と Android の間のカットオフの`Tablet`と`Phone`は 600 ユニットの縦幅。 Windows プラットフォームの`Desktop`UWP アプリケーションが Windows 10 で実行されていることを示します`Tablet`は、Windows 8.1 のプログラムと`Phone`UWP アプリケーションが Windows 10 または Windows Phone 8.1 アプリケーションで実行されていることを示します。
+IOS と Android の間のカットオフの`Tablet`と`Phone`は 600 ユニットの縦幅。 Windows プラットフォームの`Desktop`UWP アプリケーションが Windows 10 で実行されていることを示しますと`Phone`UWP アプリケーションが Windows 10 のアプリケーションで実行されていることを示します。
 
 ## <a name="solution-3a-set-margin-on-the-label"></a>ソリューションの 3 a。 ラベルに余白を設定
 
@@ -199,8 +198,6 @@ IOS と Android の間のカットオフの`Tablet`と`Phone`は 600 ユニッ�
 - [`End`](xref:Xamarin.Forms.TextAlignment.End)、つまり右または下 (に応じて向き)
 
 これら 2 つのプロパティがでのみ定義されている`Label`であるのに対し、`HorizontalAlignment`と`VerticalAlignment`によってプロパティが定義されている`View`すべてによって継承されて`View`派生クラス。 ビジュアルの結果と同様に思えますが、[次へ] の章で示すように非常に異なるいます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

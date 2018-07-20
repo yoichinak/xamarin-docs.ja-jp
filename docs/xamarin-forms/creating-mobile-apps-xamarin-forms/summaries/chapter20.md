@@ -6,21 +6,27 @@ ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996283"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156731"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章の概要です。 非同期およびファイル I/O
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
  グラフィカル ユーザー インターフェイスは、順番にユーザー入力イベントに応答する必要があります。 つまり、ユーザー入力イベントの処理はすべてが、多くの場合と呼ばれる 1 つのスレッドで発生しなければならない、*メイン スレッド*または*UI スレッド*します。
 
 ユーザーは、グラフィカル ユーザー インターフェイスが応答を期待します。 つまり、プログラムの処理でユーザー入力イベントがすばやく処理する必要があります。 方法が使用できない場合にセカンダリ スレッド処理を移行する必要があります。
 
 この本でいくつかのサンプル プログラムが使用される、 [ `WebRequest` ](xref:System.Net.WebRequest)クラス。 このクラスで、 [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))メソッドは、これが完了すると、コールバック関数を呼び出すワーカー スレッドを開始します。 ただし、そのコールバック関数で実行されるワーカー スレッド、ため、プログラムを呼び出す必要があります[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))ユーザー インターフェイスにアクセスするメソッド。
+
+> [!NOTE]
+> Xamarin.Forms のプログラムを使用する必要があります[ `HttpClient` ](xref:System.Net.Http.HttpClient)なく[ `WebRequest` ](xref:System.Net.WebRequest)インターネット経由でファイルにアクセスするためです。 `HttpClient` 非同期操作をサポートしています。
 
 非同期処理するための最新のアプローチは .NET と c# で使用できます。 これは、ためには、 [ `Task` ](xref:System.Threading.Tasks.Task)と[ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1)クラス、およびその他の種類で、 [ `System.Threading` ](xref:System.Threading)と[ `System.Threading.Tasks` ](xref:System.Threading.Tasks)名前空間には、c# 5.0 と`async`と`await`キーワード。 この章の説明です。
 
@@ -74,13 +80,16 @@ Xamarin.iOS および Xamarin.Android ライブラリには、これら 2 つの
 
 つまり、使用する必要があります、 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (に説明した[**第 9 章です。プラットフォーム固有の API 呼び出し**](chapter09.md)ファイル I/O を実装します。
 
+> [!NOTE]
+> ポータブル クラス ライブラリは、.NET Standard 2.0 ライブラリ、置き換えられましたが、.NET Standard 2.0 をサポートしています[ `System.IO` ](xref:System.IO)のすべての Xamarin.Forms プラットフォームの種類。 使用する必要ができなくなった、`DependencyService`のほとんどのファイル I/O タスク。 参照してください[Xamarin.Forms でのファイル処理](~/xamarin-forms/app-fundamentals/files.md)ファイル I/O には最新のアプローチです。
+
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>クロス プラットフォーム ファイル I/O の最初のショット
 
 [ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout)サンプルを定義、 [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs)ファイル I/O、およびすべてのプラットフォームでは、このインターフェイスの実装のためのインターフェイス。 ただし、Windows ランタイムの実装は、Windows ランタイムのファイルの I/O メソッドは非同期であるために、このインターフェイスのメソッドで機能しません。
 
 ### <a name="accommodating-windows-runtime-file-io"></a>Windows ランタイムのファイル I/O を考慮に入れるため
 
-Windows ランタイムで実行されるプログラム クラスを使用して、 [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx)と[ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx)ファイル I/O、アプリケーションのローカル記憶域を含む名前空間。 Microsoft では、50 を超える (ミリ秒) を UI スレッドがブロックされないようにするために非同期にする必要がありますが必要なすべての操作を特定、ため、これらのファイル I/O メソッドは非同期ほとんどの場合です。
+Windows ランタイムで実行されるプログラム クラスを使用して、 [ `Windows.Storage` ](/uwp/api/Windows.Storage)と[ `Windows.Storage.Streams` ](/uwp/api/Windows.Storage.Streams)ファイル I/O、アプリケーションのローカル記憶域を含む名前空間。 Microsoft では、50 を超える (ミリ秒) を UI スレッドがブロックされないようにするために非同期にする必要がありますが必要なすべての操作を特定、ため、これらのファイル I/O メソッドは非同期ほとんどの場合です。
 
 他のアプリケーションで使用できるように、この新しいアプローチを示すコードは、ライブラリになります。
 
@@ -94,8 +103,6 @@ Windows ランタイムで実行されるプログラム クラスを使用し�
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS)iOS のクラス ライブラリ
 - [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), an Android class library
 - [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP)、ユニバーサル Windows クラス ライブラリ
-- [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows), a PCL for Windows 8.1.
-- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), a PCL for Windows Phone 8.1
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT)、コードでは、すべての Windows プラットフォームに共通の共有プロジェクト
 
 すべての個別のプラットフォーム プロジェクト (例外として**Xamarin.FormsBook.Platform.WinRT**) への参照がある**Xamarin.FormsBook.Platform**します。 3 つの Windows プロジェクトへの参照がある**Xamarin.FormsBook.Platform.WinRT**します。

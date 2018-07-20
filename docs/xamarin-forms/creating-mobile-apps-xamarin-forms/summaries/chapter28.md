@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: da8ce02a0185364c2b833238ee04ebc29e8d3bb2
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998099"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156614"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要です。 場所とマップ
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms のサポート、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)から派生した要素`View`します。 マップの使用に関連する特殊なプラットフォームの要件のために別のアセンブリに実装されます**Xamarin.Forms.Maps**を別の名前空間が含まれる:`Xamarin.Forms.Maps`します。
 
@@ -48,6 +51,9 @@ Xamarin.Forms のサポート、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)から派
 
 Xamarin.Forms`Map`クラスには、ユーザーの地理的な場所を取得する機能が含まれていませんが、これは多くの場合、望ましい場合に、マップのための依存関係サービス操作とそれが処理する必要があります。
 
+> [!NOTE]
+> Xamarin.Forms アプリケーションは代わりに使用できます、 [ `Geolocation` ](~/essentials/geolocation.md) Xamarin.Essentials に含まれるクラス。
+
 ### <a name="the-location-tracker-api"></a>API の場所のトラッカー
 
 [ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)ソリューションには、API の場所のトラッカーのコードが含まれています。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)構造体には、緯度と経度がカプセル化します。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)インターフェイスを起動し、場所のトラッカーと新しい場所が使用可能なときにイベントを一時停止の 2 つのメソッドを定義します。
@@ -60,9 +66,9 @@ IOS のカスタム実装の`ILocationTracker`は、 [ `LocationTracker` ](https
 
 Android の実装の`ILocationTracker`は、 [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) 、Android の使用により、クラス[ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)クラス。
 
-#### <a name="the-windows-runtime-geo-locator"></a>Windows ランタイムの geo ロケーター
+#### <a name="the-uwp-geo-locator"></a>UWP の geo ロケーター
 
-Windows ランタイムの実装`ILocationTracker`は、 [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) 、UWP は、クラス[ `Geolocator`](https://msdn.microsoft.com/library/windows/apps/br225534)します。
+ユニバーサル Windows プラットフォーム実装`ILocationTracker`は、 [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) 、UWP は、クラス[ `Geolocator`](/uwp/api/Windows.Devices.Geolocation.Geolocator)します。
 
 ### <a name="display-the-phones-location"></a>スマート フォンの場所を表示します。
 
@@ -82,9 +88,9 @@ Ios の場合、 **info.plist**ファイルは、そのユーザーの場所の�
 
 ユーザーの場所を取得する android アプリケーションは、ACCESS_FILE_LOCATION のアクセス許可を AndroidManifest.xml ファイルが必要です。
 
-#### <a name="location-permissions-for-the-windows-runtime"></a>Windows ランタイムの場所のアクセス許可
+#### <a name="location-permissions-for-the-uwp"></a>UWP の場所のアクセス許可
 
-Windows または Windows Phone アプリケーションをする必要がありますが、 `location` Package.appxmanifest ファイルでマークされているデバイスの機能です。
+ユニバーサル Windows プラットフォーム アプリケーションする必要がありますが、 `location` Package.appxmanifest ファイルでマークされているデバイスの機能です。
 
 ## <a name="working-with-xamarinformsmaps"></a>Xamarin.Forms.Maps の操作
 
@@ -110,9 +116,9 @@ Windows または Windows Phone アプリケーションをする必要があり
 
 承認キーは、Google マップ サービスを使用する必要があります。 このキーが挿入、 **AndroidManifest.xml**ファイル。 さらに、 **AndroidManifest.xml**ファイルが必要な`manifest`ユーザーの場所の取得中に関連するタグ。
 
-#### <a name="enabling-windows-runtime-maps"></a>マップの Windows ランタイムを有効にします。
+#### <a name="enabling-uwp-maps"></a>マップ UWP を有効にします。
 
-Windows ランタイム アプリケーションでは、Bing Maps を使用するために承認キーが必要です。 このキーが引数として渡される、`Xamarin.FormsMaps.Init`メソッド。 アプリケーションは、位置情報サービスにも有効にする必要があります。
+ユニバーサル Windows プラットフォーム アプリケーションには、Bing Maps を使用するための承認キーが必要です。 このキーが引数として渡される、`Xamarin.FormsMaps.Init`メソッド。 アプリケーションは、位置情報サービスにも有効にする必要があります。
 
 ### <a name="the-unadorned-map"></a>非マップ
 
@@ -233,4 +239,4 @@ Windows ランタイム アプリケーションでは、Bing Maps を使用す�
 
 - [第 28 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)
 - [第 28 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
-- [マップ コントロール](~/xamarin-forms/user-interface/map.md)
+- [Xamarin.Forms のマップ](~/xamarin-forms/user-interface/map.md)

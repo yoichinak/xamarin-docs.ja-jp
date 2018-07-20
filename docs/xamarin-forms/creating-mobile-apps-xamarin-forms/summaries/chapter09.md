@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 8a035da3dec468df291a19849ca89964c6707589
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: e7b2eea22758155db7d79fa26f3376e16cf16a45
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994758"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39157017"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章の概要です。 プラットフォーム固有の API 呼び出し
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 プラットフォームによって異なるいくつかのコードを実行する必要があります。 この章では、手法について説明します。
 
@@ -32,19 +35,20 @@ SAP でプラットフォーム固有のコードを実行する方法のより�
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService とポータブル クラス ライブラリ
 
-ライブラリは、アプリケーション プロジェクトでクラスを通常どおりアクセスできません。 この制限のように示した手法を防ぐために**PlatInfoSap2** PCL に使用されているからです。 ただし、Xamarin.Forms には、という名前のクラスが含まれます。 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) .NET リフレクションを使用して、PCL から、アプリケーション プロジェクトでクラスをパブリックにアクセスします。
+> [!NOTE] 
+> ポータブル クラス ライブラリが .NET Standard ライブラリに置き換えられました。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
 
-PCL を定義する必要があります、`interface`メンバーの各プラットフォームで使用する必要があるとします。 次に、そのインターフェイスの実装には各プラットフォームが含まれます。 インターフェイスを実装するクラスを識別する必要があります、 [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute)アセンブリ レベル上。
+ライブラリは、アプリケーション プロジェクトでクラスを通常どおりアクセスできません。 この制限のように示した手法を防ぐために**PlatInfoSap2**ライブラリで使用されているからです。 ただし、Xamarin.Forms には、という名前のクラスが含まれます。 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) .NET リフレクションを使用して、ライブラリから、アプリケーション プロジェクトでクラスをパブリックにアクセスします。
 
-PCL を使用して、ジェネリック[ `Get` ](xref:Xamarin.Forms.DependencyService.Get*)メソッドの`DependencyService`インターフェイスを実装するプラットフォームのクラスのインスタンスを取得します。
+ライブラリを定義する必要があります、`interface`メンバーの各プラットフォームで使用する必要があるとします。 次に、そのインターフェイスの実装には各プラットフォームが含まれます。 インターフェイスを実装するクラスを識別する必要があります、 [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute)アセンブリ レベル上。
+
+ライブラリは、ジェネリックを使用して[ `Get` ](xref:Xamarin.Forms.DependencyService.Get*)メソッドの`DependencyService`インターフェイスを実装するプラットフォームのクラスのインスタンスを取得します。
 
 これは、方法については、 [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo)サンプル。
 
 ## <a name="platform-specific-sound-generation"></a>プラットフォーム固有のサウンドの生成
 
 [ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound)サンプルにビープ音を追加する、 **MonkeyTap**各プラットフォームでのサウンド生成機能にアクセスしてプログラム。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

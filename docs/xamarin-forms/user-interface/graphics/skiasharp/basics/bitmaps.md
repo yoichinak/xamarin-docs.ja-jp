@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 5a535d60dd01e32dc1d888d3372db13312cc069a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130960"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156965"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp のビットマップの基礎
 
@@ -21,6 +21,8 @@ _さまざまなソースからビットマップを読み込むし、それら�
 SkiaSharp のビットマップのサポートは非常に広範です。 この記事では、のみの基本を説明します&mdash;ビットマップを読み込む方法と、それらを表示する方法。
 
 ![](bitmaps-images/bitmapssample.png "2 つのビットマップの表示")
+
+ビットマップの量により詳細な検証は、セクションで見つかる[SkiaSharp ビットマップ](../bitmaps/index.md)します。
 
 SkiaSharp ビットマップの種類のオブジェクトである[ `SKBitmap`](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)します。 ビットマップを作成する方法はたくさんありますが、この記事に制限する、 [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/)メソッドは、.NET からビットマップを読み込み`Stream`オブジェクト。
 
