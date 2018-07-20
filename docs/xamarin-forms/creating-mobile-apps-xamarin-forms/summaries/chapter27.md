@@ -6,51 +6,54 @@ ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 0497770909b33108eaac0fa5044e98febeb61763
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: c8b149cfeb814e2a1e0a0d1b38cca24ea096d112
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996309"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156526"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>第 27 章の概要です。 カスタム レンダラー
 
-など、Xamarin.Forms 要素`Button`という名前のクラスにカプセル化されたプラットフォームに固有のボタンでレンダリングされて`ButtonRenderer`します。  ここでは、[の iOS バージョン`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs)、[の Android バージョン`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)、および[の Windows ランタイムのバージョン`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.WinRT/ButtonRenderer.cs)。
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
+
+など、Xamarin.Forms 要素`Button`という名前のクラスにカプセル化されたプラットフォームに固有のボタンでレンダリングされて`ButtonRenderer`します。  ここでは、[の iOS バージョン`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs)、[の Android バージョン`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)、および[UWP バージョンの`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs)。
 
 この章では、プラットフォーム固有のオブジェクトにマップするカスタム ビューを作成、独自のレンダラーを作成する方法について説明します。
 
 ## <a name="the-complete-class-hierarchy"></a>完全なクラス階層
 
-Xamarin.Forms のプラットフォーム固有のコードが含まれている 7 つのアセンブリがあります。
+Xamarin.Forms のプラットフォーム固有のコードが含まれている 4 つのアセンブリがあります。
 これらのリンクを使用して GitHub でソースを表示できます。
 
 - [**Xamarin.Forms.Platform** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform) (非常に小さい)
 - [**Xamarin.Forms.Platform.iOS**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.iOS)
 - [**Xamarin.Forms.Platform.Android**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.Android)
-- [**Xamarin.Forms.Platform.WinRT**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT) (larger than the next three)
 - [**Xamarin.Forms.Platform.UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
-- [**Xamarin.Forms.Platform.WinRT.Tablet**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT.Tablet)
-- [**Xamarin.Forms.Platform.WinRT.Phone**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT.Phone)
+
+> [!NOTE]
+> `WinRT`書籍に記載されているアセンブリは、このソリューションの一部では不要になった。 
 
 [ **PlatformClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/PlatformClassHierarchy)サンプルが実行されているプラットフォームに対して有効なアセンブリのクラス階層が表示されます。
 
 という名前の重要なクラスがわかります`ViewRenderer`します。 これは、プラットフォーム固有のレンダラーを作成するときから派生するクラスです。 ターゲット プラットフォームのシステム ビューに結び付けられているので、次の 3 つの異なるバージョンで存在します。
 
-IOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L26)はジェネリック引数があります。
+IOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25)はジェネリック引数があります。
 
 - `TView` 制限されます。 [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
 - `TNativeView` 制限されます。 [`UIKit.UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/)
 
-Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L14)はジェネリック引数があります。
+Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17)はジェネリック引数があります。
 
 - `TView` 制限されます。 [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
 - `TNativeView` 制限されます。 [`Android.Views.View`](https://developer.xamarin.com/api/type/Android.Views.View/)
 
-Windows ランタイム[ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.WinRT/ViewRenderer.cs#L12)ジェネリック引数をという名前が異なります。
+UWP [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ViewRenderer.cs#L6)ジェネリック引数をという名前が異なります。
 
 - `TElement` 制限されます。 [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeElement` 制限されます。 [`Windows.UI.Xaml.FrameworkElement`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx)
+- `TNativeElement` 制限されます。 [`Windows.UI.Xaml.FrameworkElement`](/uwp/api/Windows.UI.Xaml.FrameworkElement)
 
 クラスを派生するレンダラーを作成するときに`View`を作成し、複数`ViewRenderer`クラス、サポートされているプラットフォームごとに 1 つ。 各プラットフォームに固有の実装はネイティブなクラスとして指定した型から派生した、参照、`TNativeView`または`TNativeElement`パラメーター。
 
@@ -87,7 +90,7 @@ Windows ランタイム[ `ViewRenderer<TElement, TNativeElement>` ](https://gith
 
 - iOS: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseViewRenderer.cs)、使用、 [ `EllipseUIView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseUIView.cs)楕円のクラス。
 - Android: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseViewRenderer.cs)、使用、 [ `EllipseDrawableView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseDrawableView.cs)楕円のクラス。
-- Windows ランタイム: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs)、ネイティブの Windows を使用する[ `Ellipse` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.ellipse.aspx)クラス。
+- UWP: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs)、ネイティブの Windows を使用する[ `Ellipse` ](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)クラス。
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo)クラスでは、これらのいくつかが表示されます`EllipseView`オブジェクト。
 
@@ -103,7 +106,7 @@ Windows ランタイム[ `ViewRenderer<TElement, TNativeElement>` ](https://gith
 
 - iOS: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/StepSliderRenderer.cs)
 - Android: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/StepSliderRenderer.cs)
-- Windows ランタイム: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
+- UWP: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
 
 レンダラーがネイティブのコントロールへの変更を検出し、呼び出す`SetValueFromRenderer`で定義されているバインド可能なプロパティを参照する、 `StepSlider`、原因となるへの変更、`StepSlider`させる、`ValueChanged`イベント。
 

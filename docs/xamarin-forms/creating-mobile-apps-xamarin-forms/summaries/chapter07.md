@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 02e4ea44d87360deed361d161759fa3a2808100f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995158"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156913"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章の概要です。 コードと XAML
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms では、Extensible Application Markup Language と呼ばれる XML ベースのマークアップ言語または XAML (「ザムル」) をサポートしています。 XAML では、c# する代わりに、Xamarin.Forms アプリケーションのユーザー インターフェイスのレイアウトの定義とユーザー インターフェイス要素間のバインドを定義して、基になるデータを提供します。
 
@@ -35,6 +38,9 @@ XAML では、クラスとそこから作成されたオブジェクトは、XML
 ## <a name="adding-a-xaml-page-to-your-project"></a>プロジェクトに XAML ページを追加します。
 
 Xamarin.Forms ポータブル クラス ライブラリは、これが最初に作成、または既存のプロジェクトに XAML ページを追加するときに、XAML ページを含めることができます。 新しい項目を追加するダイアログ ボックスで、XAML ページを参照する項目を選択または`ContentPage`と XAML。 (いない、 `ContentView`)。
+
+> [!NOTE] 
+> この章が書き込まれるために、visual Studio のオプションが変わりました。
 
 2 つのファイルが作成されます。 ファイル名拡張子 .xaml、XAML ファイルと、拡張機能の c# ファイル。 xaml.cs。 C# ファイルと呼ばれる多くの場合、*コード ビハインド*XAML ファイルの。 分離コード ファイルは、部分クラス定義から派生した`ContentPage`します。 ビルド時に、XAML が解析され、同じクラスに対して別の部分クラス定義が生成されます。 この生成されたクラスには、という名前のメソッドが含まれています。`InitializeComponent`分離コード ファイルのコンス トラクターから呼び出されます。
 
@@ -72,10 +78,9 @@ XAML、 [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)プラットフォー�
 
  [![共有テキスト バリエーションの 3 倍になるスクリーン ショット](images/ch07fg03-small.png "テキストの書式設定されたバリエーション")](images/ch07fg03-large.png#lightbox "書式設定されたテキストのバリエーション")
 
-
-
 ## <a name="related-links"></a>関連リンク
 
 - [第 7 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [第 7 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 - [第 7 章 f# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [XAML の基礎](~/xamarin-forms/xaml/xaml-basics/index.md)

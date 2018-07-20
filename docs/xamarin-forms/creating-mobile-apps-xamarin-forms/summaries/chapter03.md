@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3ef8f14bd60cf612408bb9e3885ef319d3efc8c5
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: eabd001587034ac0bf1b86962fe63b016fe651e9
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998336"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156575"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要です。 テキストに進む
 
@@ -100,8 +100,6 @@ ms.locfileid: "38998336"
 - iOS: 明るい背景に濃いテキスト
 - Android: ライト (書籍) の暗い背景にテキストまたは明るい背景に濃いテキスト (マテリアル デザインに AppCompat 経由での**マスター**サンプル コード リポジトリのブランチ)
 - 明るい背景に濃いテキストを UWP:
-- 暗い背景に明るいテキストを Windows 8.1:
-- 暗い背景に明るいテキストを Windows Phone 8.1:
 
 `Color.Accent`暗色または明色の背景に表示されているプラットフォーム固有 (および場合によってユーザーが選択可能な) の色で結果の値します。
 

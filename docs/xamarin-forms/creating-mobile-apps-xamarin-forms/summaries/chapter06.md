@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: f06d0b312422889072be634768611ea1cc25088d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 464fbdb043ac35eba7a4cc2d9ec76b78cc91ac5b
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997173"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156513"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>第 6 章の概要です。 ボタンのクリック
 
@@ -80,10 +80,12 @@ ms.locfileid: "38997173"
 
 [ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad)サンプルはほぼ**SimplestKeypad**プログラムを使用する点を除いて、`OnSleep`キーパッドの現在のエントリを保存するオーバーライドとそのデータを復元するページのコンス トラクターです。
 
-
+> [!NOTE]
+> プログラムの設定を保存する方法もありますが、Xamarin.Essentials によって提供される[設定](~/essentials/preferences.md)クラス。
 
 ## <a name="related-links"></a>関連リンク
 
 - [第 6 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [第 6 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 - [第 6 章 f# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [Xamarin.Forms のボタン](~/xamarin-forms/user-interface/button.md)

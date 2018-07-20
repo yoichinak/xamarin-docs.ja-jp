@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: c4ad067778203759a54ed8141db0b82602e40f6c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 083cb4ed57df989a55a26394cbf8440d53a9e769
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997453"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156666"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>16 章の概要です。 データ バインディング
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 多くの場合、プログラマは、1 つのオブジェクトのプロパティが変更されたときを検出するイベント ハンドラーの記述の湧くや、別のオブジェクトのプロパティの値を変更するに使用します。 この処理を自動化するための手法で*データ バインディング*します。 データ バインディングは、通常、XAML で定義されておよびユーザー インターフェイスの定義の一部になります。
 
@@ -85,6 +88,9 @@ ms.locfileid: "38997453"
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) ソースとターゲットの変更が互いに影響するため
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default) 使用する、 [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode)ときに指定されたターゲット`BindableProperty`が作成されました。 指定されていない場合、既定値は`OneWay`の通常のバインド可能なプロパティと`OneWayToSource`のバインド可能なプロパティが読み取り専用です。
 
+> [!NOTE]
+> `BindingMode`列挙を今すぐも含まれています。`OnTime`ときではなく、バインディング コンテキストが変更された場合にのみ、バインドを適用するため、ソース プロパティを変更します。
+
 一般に MVVM シナリオでのデータ バインドの対象とする可能性があるプロパティを`DefaultBindingMode`の`TwoWay`します。 これらの数値は、次のとおりです。
 
 - `Value` プロパティの`Slider`と `Stepper`
@@ -137,3 +143,4 @@ ms.locfileid: "38997453"
 
 - [16 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
 - [16 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
