@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eaf77dd68895a3fbf677e1d0aa68125d81d709c1
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785659"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111226"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
@@ -43,7 +43,6 @@ MVC パターンを使用すると、GUI アプリケーションの各部分を
 > [!NOTE]
 > 大枠でとらえると、MVC パターンは ASP.NET ページや WPF アプリケーションの構造と似ています。 これらの例では、ビューは、実際には UI を説明する処理を担当するコンポーネントです。ASP.NET では ASPX (HTML) ページ、WPF アプリケーションでは XAML に対応します。 コントローラーは、ビューの管理を担当するコンポーネントです。ASP.NET または WPF ではコード分離に対応します。
 
-
 ### <a name="model"></a>モデル
 
 通常、モデル オブジェクトは、ビューに表示または入力されるデータのアプリケーション固有の表現です。 多くの場合、モデルは大まかに定義されています。たとえば、**Phoneword_iOS** アプリでは、(文字列の一覧として表現される) 電話番号の一覧はモデルです。 クロスプラットフォーム アプリケーションを構築していた場合は、iOS アプリケーションと Android アプリケーション間で **PhonewordTranslator** コードを共有することもできます。 この共有コードはモデルと考えることもできます。
@@ -54,7 +53,6 @@ MVC は、モデルの*データの永続性*と*アクセス*をまったく認
 
 > [!NOTE]
 > 資料によっては、MVC パターンのモデル部分は、UI に表示されるデータだけでなく、アプリケーション バックエンド全体を指すことがあります。 このガイドでは、モデルの最新の解釈を使用しますが、違いは特に重要ではありません。
-
 
 ### <a name="view"></a>表示
 
@@ -68,7 +66,7 @@ MVC は、モデルの*データの永続性*と*アクセス*をまったく認
 
 ## <a name="navigation-controller"></a>ナビゲーション コントローラー
 
-Phoneword アプリケーションでは、複数画面間のナビゲーションを管理するために*ナビゲーション コントローラー*を使用しました。 ナビゲーション コントローラーは、`UINavigationController` クラスで表現される特殊な `UIViewController` です。 ナビゲーション コントローラーでは、単一のコンテンツ ビュー階層を管理するのではなく、他のビュー コントローラーを管理します。さらに、タイトル、戻るボタンなどのオプション機能を含むナビゲーション ツールバー形式の特殊なコンテンツ ビュー階層を持っています。
+Phoneword アプリケーションでは、複数画面間のナビゲーションを管理するためにナビゲーション コントローラーを使用しました。 ナビゲーション コントローラーは、`UINavigationController` クラスで表現される特殊な `UIViewController` です。 ナビゲーション コントローラーでは、単一のコンテンツ ビュー階層を管理するのではなく、他のビュー コントローラーを管理します。さらに、タイトル、戻るボタンなどのオプション機能を含むナビゲーション ツールバー形式の特殊なコンテンツ ビュー階層を持っています。
 
 ナビゲーション コントローラーは iOS アプリでは一般的であり、以下のスクリーンショットのように、**設定**アプリのようなステープル iOS アプリケーションのナビゲーションとして機能します。
 
@@ -86,29 +84,26 @@ Phoneword アプリケーションでは、複数画面間のナビゲーショ�
     [![](hello-ios-multiscreen-deepdive-images/03.png "この図は、スタックからのカードの 'ポップ' を示しています")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **タイトル バー機能**: **ナビゲーション コントローラー**の上部は*タイトル バー*と呼ばれます。 次の図のように、ビュー コントローラーのタイトルを表示する処理を担当します。  
+-  **タイトル バー機能**: ナビゲーション コントローラーの上部は*タイトル バー*と呼ばれます。 次の図のように、ビュー コントローラーのタイトルを表示する処理を担当します。  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "タイトル バーは、ビュー コントローラーのタイトルを表示します")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
-
-
-
 ### <a name="root-view-controller"></a>ルート ビュー コントローラー
 
-**ナビゲーション コントローラー**はコンテンツ ビュー階層を管理しないため、ナビゲーション コントローラー自体には何も表示されません。
-その代わりに、**ナビゲーション コントローラー**は*ルート ビュー コントローラー*と組み合わされています。
+ナビゲーション コントローラーはコンテンツ ビュー階層を管理しないため、ナビゲーション コントローラー自体には何も表示されません。
+その代わりに、ナビゲーション コントローラーは*ルート ビュー コントローラー*と組み合わされています。
 
  [![](hello-ios-multiscreen-deepdive-images/05.png "ナビゲーション コントローラーはルート ビュー コントローラーと組み合わされています")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
-ルート ビュー コントローラーは、**ナビゲーション コントローラー**のスタックで最初のビュー コントローラーを表します。ルート ビュー コントローラーのコンテンツ ビュー階層は、ウィンドウに最初に読み込まれるコンテンツ ビュー階層です。 ユース ケースのスタックにアプリケーション全体を配置するには、Phoneword アプリの場合と同様に、ソースレス セグエを**ナビゲーション コントローラー**に移動し、最初の画面のビュー コントローラーをルート ビュー コントローラーとして設定します。
+ルート ビュー コントローラーは、ナビゲーション コントローラーのスタックで最初のビュー コントローラーを表します。ルート ビュー コントローラーのコンテンツ ビュー階層は、ウィンドウに最初に読み込まれるコンテンツ ビュー階層です。 ナビゲーション コントローラーのスタックにアプリケーション全体を配置するには、Phoneword アプリの場合と同様に、ソースレス セグエをナビゲーション コントローラーに移動し、最初の画面のビュー コントローラーをルート ビュー コントローラーとして設定します。
 
  [![](hello-ios-multiscreen-deepdive-images/06.png "ソースレス セグエは、最初の画面のビュー コントローラーをルート ビュー コントローラーとして設定します")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>その他のナビゲーション オプション
 
-**ナビゲーション コントローラー**は、iOS のナビゲーションを処理する一般的な方法ですが、唯一のオプションではありません。 [タブ バー コントローラー](~/ios/user-interface/controls/creating-tabbed-applications.md)は、アプリケーションを複数の機能領域に分割することができます。[分割ビュー コントローラー](https://developer.xamarin.com/recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers)は、マスター/詳細ビューを作成できます。[フライアウト ナビゲーション コントローラー](http://components.xamarin.com/view/flyoutnavigation)は、ユーザーが横からスワイプできるナビゲーションを作成します。 **ナビゲーション コントローラー**でこれらすべてをまとめて、直感的にコンテンツを表示することができます。
+ナビゲーション コントローラーは、iOS のナビゲーションを処理する一般的な方法ですが、唯一のオプションではありません。 たとえば、[タブ バー コントローラー](~/ios/user-interface/controls/creating-tabbed-applications.md)はアプリケーションをさまざまな機能領域に分割でき、[分割ビュー コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers)はマスター/詳細ビューを作成するために使用できます。 このようなその他のナビゲーション パラダイムをナビゲーション コントローラーと組み合わせると、iOS でコンテンツを多くの柔軟な方法で表示したり移動したりできます。
 
-## <a name="handling-transitions"></a>遷移の処理
+## <a name="handling-transitions"></a>切り替えの処理
 
 Phoneword チュートリアルでは、2 つの異なる方法で 2 つのコントローラー間の切り替えを処理しました。1 つ目はストーリーボードのセグエを使用する方法で、2 つ目はプログラムを使用する方法です。 これら 2 つのオプションについて、詳しく見てみましょう。
 
@@ -202,7 +197,6 @@ Phoneword アプリケーションでは、このガイドでは説明してい�
 -  **テーブル ビュー コントローラー**: `CallHistoryController` はテーブル ビュー コントローラーです。 テーブル ビュー コントローラーには、iOS でよく使われるレイアウトおよびデータ表示ツールであるテーブル ビューが含まれています。 テーブルはこのガイドで取り扱う範囲を超えているので触れません。 テーブル ビュー コントローラーの詳細については、「[Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md)」(テーブルとセルの操作) ガイドを参照してください。
 -   **ストーリーボード ID**: ストーリーボード ID を設定すると、ストーリーボードにビュー コントローラーの分離コードを含む Objective-C のビュー コントローラー クラスが作成されます。 ここでは、ストーリーボード ID を使用して Objective-C クラスを検出し、ストーリーボードでビュー コントローラーをインスタンス化します。 ストーリーボード ID の詳細については、「[Introduction to Storyboards](~/ios/user-interface/storyboards/index.md)」(ストーリーボードの概要) ガイドを参照してください。
 
-
 ## <a name="summary"></a>まとめ
 
 これで最初のマルチスクリーン iOS アプリケーションが完成しました。
@@ -210,7 +204,6 @@ Phoneword アプリケーションでは、このガイドでは説明してい�
 このガイドでは、MVC パターンについて紹介し、マルチスクリーン アプリケーションの作成に利用しました。 また、iOS ナビゲーションを強化するために利用できるナビゲーション コントローラーとその役割についても説明しました。 独自の Xamarin.iOS アプリケーションを開発するために必要な、強固な基盤ができました。
 
 次は、「[Introduction to Mobile Development](~/cross-platform/get-started/introduction-to-mobile-development.md)」(モバイル開発の概要) ガイドと「[Building Cross-Platform Applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)」(クロスプラットフォーム アプリケーションの構築) ガイドを参照して、Xamarin を使用してクロスプラットフォーム アプリケーションを構築する方法を学びましょう。
-
 
 ## <a name="related-links"></a>関連リンク
 

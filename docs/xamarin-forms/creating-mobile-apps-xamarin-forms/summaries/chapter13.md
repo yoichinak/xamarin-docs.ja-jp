@@ -6,26 +6,32 @@ ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d863ce1c6195ddaef164c3a15817a4ff87a3c332
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995470"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156627"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要です。 ビットマップ
+
+> [!NOTE] 
+> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)要素には、ビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートします。
 
 ビットマップを Xamarin.Forms では、4 つの場所から取得されます。
 
 - URL で指定された web 経由で
-- 一般的なポータブル クラス ライブラリ内のリソースとして埋め込まれています。
+- 共有ライブラリ内のリソースとして埋め込まれています。
 - プラットフォームのアプリケーション プロジェクトにリソースとして埋め込まれて
 - .NET で参照できる任意の場所から`Stream`を含むオブジェクト。 `MemoryStream`
 
-PCL のビットマップ リソースはプラットフォームに依存せず、プラットフォーム プロジェクトでビットマップ リソースはプラットフォームに固有です。
+共有ライブラリでビットマップ リソースはプラットフォームに依存せず、プラットフォーム プロジェクトでビットマップ リソースがプラットフォームに固有です。
+
+> [!NOTE] 
+> 書籍のテキストでは、.NET Standard ライブラリに置き換えられているポータブル クラス ライブラリへの参照。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
 
 設定して、ビットマップが指定されて、 [ `Source` ](xref:Xamarin.Forms.Image.Source)プロパティの`Image`型のオブジェクトに[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)、3 つの派生クラスで抽象クラス。
 
@@ -63,7 +69,7 @@ PCL のビットマップ リソースはプラットフォームに依存せず
 プログラムのセット、`VerticalOptions`と`HorizontalOptions`のプロパティ、`Image`に`LayoutOptions.Center`、これにより、`Image`制約なしの要素。 `Image`ビットマップは同じサイズ。
 
 - IOS と Android での`Image`はビットマップのピクセル サイズです。 ビットマップのピクセルと画面ピクセルの間の一対一のマッピングがあります。
-- Windows ランタイムのプラットフォームで、`Image`はデバイスに依存しない単位で、ビットマップのピクセル サイズです。 ほとんどのデバイスでは、各ビットマップのピクセルは、複数の画面のピクセルを占有します。
+- ユニバーサル Windows プラットフォームで、`Image`はデバイスに依存しない単位で、ビットマップのピクセル サイズです。 ほとんどのデバイスでは、各ビットマップのピクセルは、複数の画面のピクセルを占有します。
 
 [ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) put のサンプル、`Image`垂直で`StackLayout`XAML でします。 という名前のマークアップ拡張[ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) XAML 内の埋め込みリソースを参照するために役立ちます。 このクラスはのみ、そのアセンブリからリソースを読み込みますが配置されている、ため、ライブラリ内に配置することはできません。
 
@@ -82,7 +88,10 @@ PCL のビットマップ リソースはプラットフォームに依存せず
 
 ### <a name="browsing-and-waiting"></a>参照して、待機しています
 
-[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)サンプルには、Xamarin の web サイトに格納されているストック イメージをブラウズできます。 .NET を使用して`WebRequest`ビットマップの一覧を含む JSON ファイルをダウンロードするクラス。
+[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)サンプルには、Xamarin の web サイトに格納されているストック イメージをブラウズできます。 .NET を使用して[ `WebRequest` ](xref:System.Net.WebRequest)ビットマップの一覧を含む JSON ファイルをダウンロードするクラス。
+
+> [!NOTE]
+> Xamarin.Forms のプログラムを使用する必要があります[ `HttpClient` ](xref:System.Net.Http.HttpClient)なく[ `WebRequest` ](xref:System.Net.WebRequest)インターネット経由でファイルにアクセスするためです。 
 
 プログラムを使用して、 [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)を処理が行われているかを示します。 各ビットマップを読み込み、読み取り専用として[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)プロパティの`Image`は`true`します。 `IsLoading`ためプロパティは、バインド可能なプロパティによって支えられて、`PropertyChanged`そのプロパティを変更するときに発生します。 プログラムは、このイベントにハンドラーをアタッチしの現在の設定を使用して`IsLoaded`を設定する、 [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)のプロパティ、`ActivityIndicator`します。
 
@@ -154,7 +163,7 @@ Ios では、これらのビットマップは、ファイル名にサフィッ�
 
 ビットマップは、160 のデバイスに依存しない単位で常に表示されます。 (標準の Xamarin.Forms ソリューション テンプレートのみを含む hdpi、xhdpi、および xxhdpi フォルダー)
 
-Windows ランタイム プロジェクトでは、名前付けスキームで構成されているデバイスに依存しない単位あたりのピクセル単位でスケール ファクターのパーセンテージなどのビットマップをサポートします。
+UWP プロジェクトには、ビットマップの名前付けスキームで構成されているデバイスに依存しない単位あたりのピクセル単位でスケール ファクターのパーセンテージなどがサポートされています。
 
 - MyImage.scale-200.jpg 320 ピクセルの正方形で
 
@@ -164,7 +173,7 @@ Windows ランタイム プロジェクトでは、名前付けスキームで�
 
 - iOS: **BundleResource**
 - Android: **AndroidResource**
-- Windows ランタイム:**コンテンツ**
+- UWP:**コンテンツ**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)サンプルから成る 2 つのボタンのようなオブジェクトを作成します`Image`を持つ要素を`TapGestureRecognizer`をインストールします。 オブジェクトが 1 インチの四角形をすることが目的です。 `Source`プロパティの`Image`を使用して設定されている`OnPlatform`と`On`プラットフォームで可能性のあるさまざまなファイル名を参照するオブジェクト。 ビットマップ イメージには、どのサイズ ビットマップが取得され、表示を表示できるように、ピクセル サイズを示す番号が含まれます。
 
@@ -182,16 +191,18 @@ Xamarin.Forms のツールバーでは、構築するには、プラットフォ
 
 `ToolbarItem`発生、 [ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked)非常によく似たタップしたときにイベントを`Button`します。 `ToolbarItem` サポートしています[ `Command` ](xref:Xamarin.Forms.MenuItem.Command)と[ `CommandParameter` ](xref:Xamarin.Forms.MenuItem.CommandParameter) MVVM 関連多くの場合に使用されるプロパティ。 (を参照してください[第 18 章、MVVM](chapter18.md))。
 
-IOS と Android の両方は、ツールバーを表示するページである必要があります、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)またはに移動ページ、`NavigationPage`します。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)プログラムのセット、`MainPage`プロパティの`App`クラスを[`NavigationPage`コンス トラクター](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))で、 `ContentPage`引数は、ツールバーの構築とイベント ハンドラーを示しています。
+IOS と Android の両方は、ツールバーを表示するページである必要があります、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)またはに移動 ページ、`NavigationPage`します。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)プログラムのセット、`MainPage`プロパティの`App`クラスを[`NavigationPage`コンス トラクター](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))で、 `ContentPage`引数は、ツールバーの構築とイベント ハンドラーを示しています。
 
 ### <a name="button-images"></a>ボタンのイメージ
 
 設定する、プラットフォーム固有のビットマップを使用することもできます、 [ `Image` ](xref:Xamarin.Forms.Button.Image)プロパティの`Button`に示すようには、32 のデバイスに依存しない単位正方形のビットマップに、 [ **ButtonImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage)サンプル。
 
-
+> [!NOTE]
+> ボタンのイメージの使用が強化されました。 参照してください[ボタンにビットマップを使用して](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [第 13 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
 - [第 13 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [イメージの処理](~/xamarin-forms/user-interface/images.md)
+- [ボタンにビットマップを使用します。](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)
