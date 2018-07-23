@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ab810a2fdfc659e2f5f24d2646c044e9c8638258
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998987"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175191"
 ---
-# <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
+# <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様 
 
 _プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。この記事では Xamarin.Forms に組み込まれている iOS のプラットフォーム仕様の使い方を説明します。_
 
@@ -623,7 +623,7 @@ boxView.On<iOS>()
 
 ときに、 [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)がすべてのジェスチャがによってキャプチャされた pan のスクロール ビュー内のビューにアタッチされている、`PanGestureRecognizer`は、スクロール ビューに渡されます。 そのため、スクロール ビュー不要になったスクロールします。
 
-このプラットフォームに固有の有効、`PanGestureRecognizer`キャプチャしてビューをスクロール、パン ジェスチャを共有するスクロール ビュー。 XAML で設定して使用される、 [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms)添付プロパティを`true`:
+このプラットフォームに固有の有効、`PanGestureRecognizer`キャプチャしてビューをスクロール、パン ジェスチャを共有するスクロール ビュー。 XAML で設定して使用される、 [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty)添付プロパティを`true`:
 
 ```xaml
 <Application ...
@@ -643,7 +643,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms)メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用して、スクロール ビューでのパン ジェスチャ認識エンジンは、パン ジェスチャのキャプチャまたはキャプチャおよびパンを共有するかどうかジェスチャのビューをスクロールします。 さらに、 [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms)メソッドを使用して、パン ジェスチャは、スクロール ビューを含むと共有されているかどうかを返す、 [ `PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer)します。
+`Application.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.SetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用して、スクロール ビューでのパン ジェスチャ認識エンジンは、パン ジェスチャのキャプチャまたはキャプチャおよびパンを共有するかどうかジェスチャのビューをスクロールします。 さらに、 [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.GetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application}))メソッドを使用して、パン ジェスチャは、スクロール ビューを含むと共有されているかどうかを返す、 [ `PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer)します。
 
 そのため、有効にすると、このプラットフォーム固有で、 [ `ListView` ](xref:Xamarin.Forms.ListView)が含まれています、 [ `PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer)の両方を`ListView`、`PanGestureRecognizer`パン ジェスチャが表示されますおよびそれを処理します。 ただし、無効にすると、このプラットフォーム固有で、`ListView`が含まれています、 `PanGestureRecognizer`、`PanGestureRecognizer`をパン ジェスチャをキャプチャしてそれを処理し、`ListView`パン ジェスチャを受信しません。
 

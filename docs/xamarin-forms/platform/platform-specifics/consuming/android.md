@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 5ed11e4afb4c061eb7b9dd8f10c67090b4134888
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: faec35ec9eb579327972471e7747ad8a38504850
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996387"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175178"
 ---
 # <a name="android-platform-specifics"></a>Android プラットフォーム仕様
 
@@ -411,7 +411,7 @@ button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
 
 ## <a name="setting-tabbedpage-toolbar-placement-and-color"></a>TabbedPage ツールバーの配置と色の設定
 
-これらのプラットフォーム固有の配置と、ツールバーの色を設定に使用する[ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 設定して XAML で使用された、 [ `TabbedPage.ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.toolbarplacementproperty?view=xamarin-forms)添付プロパティの値を[ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms)列挙型、および[ `TabbedPage.BarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.baritemcolorproperty?view=xamarin-forms)と[ `TabbedPage.BarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.barselecteditemcolorproperty?view=xamarin-forms)添付プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+これらのプラットフォーム固有の配置と、ツールバーの色を設定に使用する[ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 設定して XAML で使用された、 [ `TabbedPage.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.ToolbarPlacementProperty)添付プロパティの値を[ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement)列挙型、および[ `TabbedPage.BarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarItemColorProperty)と[ `TabbedPage.BarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarSelectedItemColorProperty)添付プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
 <TabbedPage ...
@@ -435,16 +435,16 @@ On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarSelectedItemColor(Color.Red);
 ```
 
-`TabbedPage.On<Android>`メソッドは、Android でのこれらのプラットフォーム固有の実行はのみを指定します。 [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms)メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)でツールバーの配置を設定するため、名前空間、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)で、 [`ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms)列挙体の次の値を指定します。
+`TabbedPage.On<Android>`メソッドは、Android でのこれらのプラットフォーム固有の実行はのみを指定します。 [ `TabbedPage.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)でツールバーの配置を設定するため、名前空間、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)で、 [`ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement)列挙体の次の値を指定します。
 
-- [`Default`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Default) –、ページの既定の場所にツールバーを配置することを示します。 これは、デバイスは、ページの上部およびその他のデバイスの表現方法ではページの下部にあります。
-- [`Top`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Top) ページの上部にあるツールバーを配置することを示します。
-- [`Bottom`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Bottom) ツールバーがページの下部に配置されることを示します。
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Default) –、ページの既定の場所にツールバーを配置することを示します。 これは、デバイスは、ページの上部およびその他のデバイスの表現方法ではページの下部にあります。
+- [`Top`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Top) ページの上部にあるツールバーを配置することを示します。
+- [`Bottom`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom) ツールバーがページの下部に配置されることを示します。
 
-さらに、 [ `TabbedPage.SetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_)と[ `TabbedPage.SetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_)メソッドを使用してツールバー項目と、選択したツールバー項目の色をそれぞれ設定します。
+さらに、 [ `TabbedPage.SetBarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color))と[ `TabbedPage.SetBarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color))メソッドを使用してツールバー項目と、選択したツールバー項目の色をそれぞれ設定します。
 
 > [!NOTE]
-> [ `GetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.gettoolbarplacement?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetToolbarPlacement_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__)、 [ `GetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__)、および[ `GetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__)メソッドを使用して、配置との色を取得すること、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)ツールバー。
+> [ `GetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage}))、 [ `GetBarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage}))、および[ `GetBarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage}))メソッドを使用して、配置との色を取得すること、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)ツールバー。
 
 ツールバーの配置、ツールバーの項目の色および選択したツール バー アイテムの色に設定できることになります、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage):
 
