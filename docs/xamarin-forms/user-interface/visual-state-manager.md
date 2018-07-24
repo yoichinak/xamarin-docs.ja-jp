@@ -253,7 +253,6 @@ Visual State Manager を使用すると、XAML ファイルに、ビューが通
 
 [![VSM on View: disabled](vsm-images/VsmOnViewDisabled.png "VSM on View - disabled")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
-
 現在の visual state が "Disabled" のため、iOS および Android の画面では、2 番目の `Entry` の背景はピンクになっています。`Entry` の UWP 実装では、`Entry` が無効の場合の背景色を設定することができません。 
 
 3 つ目の `Entry` にいくつかのテキストを入力すると、2 つ目の `Entry` は "Normal" 状態に切り替わり、背景がライムになります。
@@ -309,7 +308,6 @@ Visual State Manager を使用すると、XAML ファイルに、ビューが通
 ```
 
 `Setter` の Content プロパティは `Value` なので、`Value` プロパティの値は、このタグ内に直接指定できます。このプロパティの型は、`VisualStateGroupList` です。
-
 
 ```xaml
 <Style TargetType="Entry">
@@ -708,7 +706,6 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 
 分離コードファイルで、XAML ファイルの要素のプロパティを設定すれば、より直接的に向きの変更を処理できるかのように思われるかもしれませんが、Visual State Manager は間違いなくより構造化されたアプローチです。 全てのビジュアルは XAML ファイル内で保持されるため、調査・メンテナンス・変更がしやすくなります。
 
-
 ## <a name="visual-state-manager-with-xamarinuniversity"></a>Xamarin.University で visual State Manager
 
 > [!VIDEO https://youtube.com/embed/qhUHbVP5mIQ]
@@ -718,4 +715,3 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
-
