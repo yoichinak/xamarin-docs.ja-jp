@@ -1,19 +1,20 @@
 ---
-title: Developer ID を使用して署名する
-description: このガイドでは、パブリケーションのために Developer ID を使用して Xamarin.Mac アプリを署名する方法について説明します。
+title: 開発者 ID で Xamarin.Mac アプリに署名する
+description: このドキュメントでは、Mac App Store の外で配布できるように、開発者 ID で Xamarin.Mac アプリに署名する方法について説明します。 コード署名オプションとビルドについて説明します。
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1a2726ec46ac51ae9848b318798afba74183360c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 130766ef7f9ab8e311db97a7209f4ec62a2ceee4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792305"
 ---
-# <a name="sign-with-developer-id"></a>Developer ID を使用して署名する
+# <a name="signing-xamarinmac-apps-with-a-developer-id"></a>開発者 ID で Xamarin.Mac アプリに署名する
 
 開発者が macOS ユーザーに直接アプリを配布する計画をしている場合、**GateKeeper** を有効にして macOS システムにインストールできるよう、Developer ID を使用してコード署名することを Apple では推奨しています。 アプリが署名されていない場合、**GateKeeper** によって警告メッセージが表示され、ユーザーはインストールできなくなります (この制限は、起動時に Ctrl キーを押下することによって回避できます)。
 

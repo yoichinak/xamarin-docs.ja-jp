@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms でレイアウト
-description: Xamarin.Forms はいくつかのレイアウトと、画面上のコンテンツを整理するための機能と、この記事では、それらについて説明します。
+title: Xamarin.Forms のレイアウト
+description: Xamarin.Forms がいくつかのレイアウトと、画面上のコンテンツを整理するための機能と、この記事では、それらについて説明します。
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
@@ -8,52 +8,52 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: d11e0e286c25f11c24dc788be8d1c29155261b7a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cff5f9c15f4608ecfb643d2c49dd636df8b18b5c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244891"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995756"
 ---
-# <a name="layouts-in-xamarinforms"></a>Xamarin.Forms でレイアウト
+# <a name="layouts-in-xamarinforms"></a>Xamarin.Forms のレイアウト
 
-Xamarin.Forms では、いくつかのレイアウトと画面上のコンテンツを整理するための機能があります。
+Xamarin.Forms は、いくつかのレイアウトと画面上のコンテンツを整理するための機能があります。
 
 > [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
 
-**Xamarin.Forms レイアウトにより、 [Xamarin 大学](https://university.xamarin.com/)**
+**Xamarin.Forms のレイアウトにより、 [Xamarin University](https://university.xamarin.com/)**
 
-各レイアウト コントロールは画面の向きの変更を処理する方法の詳細だけでなく、以下について説明します。
+各レイアウト コントロールは画面の向きの変更を処理する方法の詳細と、以下について説明します。
 
-* **[StackLayout](stack-layout.md)**  &ndash;直線的に、ビューを配置に使用される、水平方向または垂直方向にします。 StackLayout 内のビューは、左または右のレイアウトの中央に配置できます。
-* **[AbsoluteLayout](absolute-layout.md)**  &ndash;座標の設定によってビューを整列 & 絶対値または比率の単位でサイズを変更するために使用します。 レイヤーのビューだけでなく左、右、または center に固定するには、AbsoluteLayout を使用できます。
+* **[StackLayout](stack-layout.md)**  &ndash;線形にビューを配置に使用される水平方向または垂直方向にします。 ビュー、StackLayout 内では、左または右のレイアウトの中央に配置できます。
+* **[AbsoluteLayout](absolute-layout.md)**  &ndash;座標を設定してビューを配置およびサイズを絶対値または比率の観点からするために使用します。 ビューのレイヤーだけでなく、左、右または中央に固定する AbsoluteLayout を使用できます。
 * **[[相対レイアウト]](relative-layout.md)**  &ndash;親のサイズと位置を基準とした制約を設定してビューを配置するために使用します。
-* **[グリッド](grid.md)** &ndash;をグリッドに表示を配置するために使用します。 絶対値または比率の観点からは、行と列を指定できます。
-* **[FlexLayout](flex-layout.md)**  &ndash;の折り返しを行うビューを水平方向または垂直方向に配置するために使用します。
-* **[ScrollView](scroll-view.md)**  &ndash;ビューが、画面の境界内に完全に収めることができなかったときにスクロールを提供するために使用します。
-* **[LayoutOptions](layout-options.md)**  &ndash;アラインメントとその親のビューでの展開を定義します。
+* **[グリッド](grid.md)** &ndash;グリッド ビューを配置するために使用します。 絶対値または比率の観点からは、行と列を指定できます。
+* **[FlexLayout](flex-layout.md)**  &ndash;の折り返し、ビューを水平方向または垂直方向に配置するために使用します。
+* **[ScrollView](scroll-view.md)**  &ndash;スクロールすると表示されますが、画面の境界内に完全に収めることはできませんを提供するために使用します。
+* **[LayoutOptions](layout-options.md)**  &ndash;アラインメントとその親に対する相対的な表示は、拡張を定義します。
 * **[透明度を入力](#input_transparency)** &ndash;要素が入力を受け取るかどうかを指定します。
-* **[マージンと埋め込み](margin-and-padding.md)** &ndash;要素がユーザー インターフェイスに表示される場合は、レイアウトの動作を制御する方法を示します。
+* **[余白とパディング](margin-and-padding.md)** &ndash;要素は、ユーザー インターフェイスに表示されるときに、レイアウトの動作を制御する方法を示します。
 * **[デバイスの向き](device-orientation.md)** &ndash;デバイスの向きの変更を処理する方法について説明します。
-* **[タブレットおよびデスクトップ デバイスでレイアウト](tablet.md)** &ndash;各プラットフォームでより大きな画面を最適化する方法を示しています。
-* **[カスタム レイアウトの作成](custom.md)** &ndash;カスタム レイアウトのクラスを作成する方法について説明します。
-* **[レイアウト圧縮](layout-compression.md)** &ndash;では、ページのレンダリング パフォーマンスを向上させるために、特定のビジュアル ツリーからレイアウトを削除します。
+* **[タブレットとデスクトップ デバイス上のレイアウト](tablet.md)** &ndash;各プラットフォームでの大きい画面を最適化する方法を示しています。
+* **[カスタム レイアウトを作成する](custom.md)** &ndash;カスタム レイアウトのクラスを作成する方法について説明します。
+* **[レイアウト圧縮](layout-compression.md)** &ndash;ページのレンダリング パフォーマンスを向上させるために指定したビジュアル ツリーからレイアウトを削除します。
 
-プラットフォーム コントロールこともできますで Xamarin.Forms レイアウト内で直接[**ネイティブ埋め込み**](~/xamarin-forms/platform/native-views/index.md) (Xamarin.Forms 2.2 で新規)、することができます、 [ **のカスタムレイアウトを作成**](custom.md)を特定の要件を満たすようにします。
+プラットフォームのコントロールと Xamarin.Forms のレイアウトで直接も使用できます[**ネイティブな埋め込み**](~/xamarin-forms/platform/native-views/index.md) (Xamarin.Forms 2.2 で新規)、し[ **のカスタムレイアウトを作成します。**](custom.md)を特定の要件を満たすようにします。
 
 次の図は、レイアウト コントロールを視覚化します。
 
-[![](images/layouts-sml.png "Xamarin.Forms レイアウト")](images/layouts.png#lightbox "Xamarin.Forms レイアウト")
+[![](images/layouts-sml.png "Xamarin.Forms のレイアウト")](images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
 
-## <a name="choosing-the-right-layout"></a>右のレイアウトを選択します。
+## <a name="choosing-the-right-layout"></a>適切なレイアウトを選択します。
 
-アプリで選択したレイアウト ヘルプか不都合は魅力的で使用可能な Xamarin.Forms アプリを作成するいるとします。 クリーナーと拡張性の UI コードを記述する各レイアウト動作がどのように役立つ検討するまでに時間を取得しています。 画面には、特定の設計を実現するためにさまざまなレイアウトの組み合わせを持つことができます。
+アプリで選択したレイアウトするヘルプか不都合は魅力的で使用可能な Xamarin.Forms アプリを作成するとします。 各レイアウト機能が役立つクリーナー スケーラブルな UI コードを記述する方法を検討するまでに時間がかかっています。 画面には、特定のデザインを実現するためにさまざまなレイアウトの組み合わせを持つことができます。
 
 ### <a name="stacklayoutstack-layoutmd"></a>[StackLayout](stack-layout.md)
 
-`StackLayout`水平または垂直の線に沿ったビューを表示するためです。 位置とサイズをレイアウト内、に基づいて決定ビューの`HeightRequest`、 `WidthRequest`、`HorizontalOptions`と`VerticalOptions`です。 `StackLayout` 基本のレイアウトでは、画面上の他のレイアウトの配置としてよく使用されます。
+`StackLayout`に沿って水平または垂直のいずれかである行ビューを表示するためです。 位置とサイズ、レイアウト内、に基づいて決定ビューの`HeightRequest`、 `WidthRequest`、`HorizontalOptions`と`VerticalOptions`します。 `StackLayout` 基本のレイアウトでは、画面上の他のレイアウトの配置としてよく使用されます。
 
-場合の例については`StackLayout`適切な選択をすると、ボタンと左揃えのラベルと右揃えボタン付きのラベルを表示する必要があるアプリを検討してください。
+タイミングの例については`StackLayout`適していますが、ボタンと左揃えのラベルと右揃え ボタン、ラベルを表示する必要があるアプリを検討してください。
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -64,7 +64,7 @@ Xamarin.Forms では、いくつかのレイアウトと画面上のコンテン
 
 ### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
 
-`FlexLayout`に似ていますが`StackLayout`水平方向または垂直方向には、子ビューを表示します。
+`FlexLayout`のような`StackLayout`水平方向または垂直方向には、子ビューを表示します。
 
 ```xaml
 <FlexLayout Direction="Column"
@@ -77,15 +77,15 @@ Xamarin.Forms では、いくつかのレイアウトと画面上のコンテン
 </FlexLayout>
 ```
 
-ただし、単一行、列に収まるように多数の子がある場合`FlexLayout`はそれらのビューをラップすることもできます。 `FlexLayout` CSS フレキシブル ボックス レイアウト モジュールに基づいておりが、同じ組み込みのオプションの多くを配置し、その子を整列します。
+ただし入りますを 1 つの行に収まるように多数の子が存在する場合は、`FlexLayout`はこれらのビューをラップすることもできます。 `FlexLayout` CSS フレキシブル ボックス レイアウト モジュールに基づいており、配置とその子のアラインメントの同じの組み込みオプションの多くが。
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 
-`AbsoluteLayout`サイズと位置のいずれかに指定されている明示的な値またはレイアウトのサイズに対して相対的な値としてのビューを表示するためです。 異なり`StackLayout`と`Grid`、`AbsoluteLayout`子ビューの重複を許可します。 異なり`RelativeLayout`、`AbsoluteLayout`画面外の要素を配置することはできます。
+`AbsoluteLayout`サイズと位置のいずれかに指定されている明示的な値またはレイアウトのサイズに対して相対的な値としてのビューを表示するためです。 異なり`StackLayout`と`Grid`、`AbsoluteLayout`子が重複するビューを使用します。 異なり`RelativeLayout`、`AbsoluteLayout`が画面外の要素を配置することができます。
 
-場合の例については`AbsoluteLayout`適切な選択をすると、スタックとして、オブジェクトのコレクションを提示する必要があるアプリを検討してください。 これは、写真や音楽のアルバムを表示する場合、多くの場合、表示されます。 次のコードは、積み上がりの内容をヒントに回転して要素を持つ山の外観を与えます。
+タイミングの例については`AbsoluteLayout`適していますが、スタックとしてオブジェクトのコレクションを提示する必要があるアプリを検討してください。 これは多くの場合、写真や音楽のアルバムを表示する場合に発生します。 次のコードでは、積みの内容をヒントに回転して要素を持つ、山の外観を与えます。
 
-XAML:
+で XAML:
 
 ```xaml
 <AbsoluteLayout Padding="15">
@@ -98,18 +98,18 @@ XAML:
 </AbsoluteLayout>
 ```
 
-上記のコードの次の点に注意してください。
+上記のコードの以下の点に注意してください。
 
 - 各`Image`(水平方向の領域) の途中で同じ位置に表示されます。
-- `Padding`でと見なされます`AbsoluteLayout`とは異なり、 `RelativeLayout`、これは無視されます。
-- `AbsoluteLayout.LayoutFlags` レイアウトの境界を解釈する方法を指定します。 ここでは`PositionProportional`サイズは明示的なサイズとして解釈するときに、座標が、レイアウトのサイズの比率をことを示します。
-- `AbsoluteLayout.Layoutbounds` その注文で水平方向の位置、垂直方向の位置、幅と高さを指定します。
+- `Padding`でと見なされます`AbsoluteLayout`とは異なり、`RelativeLayout`を無視します。
+- `AbsoluteLayout.LayoutFlags` レイアウトの境界を解釈する方法を指定します。 ここで`PositionProportional`サイズは、明示的なサイズとして解釈されます中に、座標が、レイアウトのサイズの比率をことを示します。
+- `AbsoluteLayout.Layoutbounds` この順序で水平方向の位置、垂直方向の位置、幅と高さを指定します。
 
 ### <a name="relativelayoutrelative-layoutmd"></a>[RelativeLayout](relative-layout.md)
 
-`RelativeLayout`サイズとレイアウトや別のビューの値に対して相対的な値として指定された位置でのビューを表示するためです。 相対値は、彼は対応する、関連するビューの値と一致する必要はありません。 例として、可能であれば、ビューを設定する`Width`プロパティを別のビューに比例する`X`プロパティです。
+`RelativeLayout`サイズとレイアウトまたは別のビューの値に対して相対的な値として指定された位置でのビューを表示するためです。 相対値は、関連するビューの値を対応する彼と一致する必要はありません。 例については、ビューを設定することが`Width`プロパティを別のビューに比例して`X`プロパティ。
 
-デバイスのサイズに比例して Ui を作成するのには、[相対レイアウト] を使用できます。 次の XAML では、中央にフラグを使って flagpole での一番上の隅にあるボックスを使用してデザインを実装します。
+デバイスのサイズに比例して Ui を作成するのには、[相対レイアウト] を使用できます。 次の XAML は、センターのフラグの flagpole で最上位の角にあるボックスを使用してデザインを実装します。
 
 ```xaml
 <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -131,17 +131,17 @@ XAML:
 </RelativeLayout>
 ```
 
-上記のコードの次の点に注意してください。
+上記のコードの以下の点に注意してください。
 
 - 位置とサイズの両方が、制約として指定されます。
 - 名前は、flagpole ようにフラグの (緑色のボックスの)、flagpole に対する相対位置を設定することができます。
-- 制約の式が`Factor`と`Constant`位置とサイズの倍数として定義するために使用するプロパティ (または分数)、他のオブジェクトと定数のプロパティのです。 定数は負の値にすることができます。
+- 制約の式が`Factor`と`Constant`プロパティは、位置とサイズの倍数として定義するために使用できます (または端数) の定数、他のオブジェクトのプロパティ。 定数は負の値にすることはできます。
 
 ### <a name="gridgridmd"></a>[グリッド](grid.md)
 
-`Grid`行と列の要素を表示するためです。 グリッド テーブルではありません、セル、ヘッダーとフッター行、または行と列の間の罫線の概念があるないように注意してください。 一般に、グリッドでは、表形式のデータを表示する適していません。 その使用を検討してください、 [ListView](~/xamarin-forms/user-interface/listview/index.md)または[テーブル](~/xamarin-forms/user-interface/tableview.md)です。
+`Grid`行と列の要素を表示するためです。 グリッド テーブルではありません、セル、行のヘッダーとフッター、または行と列の間の罫線の概念があるないように注意してください。 一般に、グリッドでは、表形式のデータを表示するには適していません。 使用するを検討してください、 [ListView](~/xamarin-forms/user-interface/listview/index.md)または[テーブル](~/xamarin-forms/user-interface/tableview.md)します。
 
-場合の例については、`Grid`が右のレイアウトを使用して、電卓の数値の入力を検討してください。 電卓の数値の入力は、4 つの行とボタン 3 つの列で構成可能性があります。 次のコードでは、この設計を実装します。
+タイミングの例については、`Grid`が右のレイアウトを使用するには、電卓の数値の入力を検討してください。 電卓の数値の入力が 4 つの行とボタンを 3 つの列で構成されます。 次のコードは、この設計を実装します。
 
 ```xaml
 <Grid>
@@ -171,53 +171,53 @@ XAML:
 </Grid>
 ```
 
-上記のコードの次の点に注意してください。
+上記のコードの以下の点に注意してください。
 
 - グリッドと列が明示的に指定されて、コンテンツから推論できません。
-- `Height` および`Width`値に設定できますスター、グリッドが使用可能な領域がいっぱいにそれらの値を設定することを意味します。
-- 各ボタンの位置が指定された`Grid.Row`  &  `Grid.Column`プロパティです。
+- `Height` `Width`値に設定できますスター、つまり、グリッドが空き領域の塗りつぶしにそれらの値を設定します。
+- 各ボタンの位置が指定された`Grid.Row`  &  `Grid.Column`プロパティ。
 
 ### <a name="layoutoptionslayout-optionsmd"></a>[LayoutOptions](layout-options.md)
 
-[ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/)アラインメントとその親のビューでの展開を定義する構造体を使用することができます。
+[ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions)配置とその親に対する相対的な表示は、拡張を定義する構造体を使用できます。
 
 ### <a name="margin-and-paddingmargin-and-paddingmd"></a>[余白とスペース](margin-and-padding.md)
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)と[ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)要素がユーザー インターフェイスに表示される場合、プロパティがレイアウトの動作を制御します。
+[ `Margin` ](xref:Xamarin.Forms.View.Margin)と[ `Padding` ](xref:Xamarin.Forms.Layout.Padding)プロパティが、ユーザー インターフェイス要素が表示されるときに、レイアウトの動作を制御します。
 
 <a name="input_transparency" />
 
 ### <a name="input-transparency"></a>入力の透過性
 
-各要素には、 [ `InputTransparent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.InputTransparent/)プロパティ要素が入力を受け取るかどうかを定義するために使用します。 既定値は`false`要素が入力を受信することを確認します。
+各要素には、 [ `InputTransparent` ](xref:Xamarin.Forms.VisualElement.InputTransparent)要素が入力を受け取るかどうかを定義するために使用するプロパティ。 既定値は`false`要素が入力を受け取ることを確認します。
 
-レイアウトのクラスでは、子要素に値を転送するなどのコンテナー クラスのこのプロパティを設定するとします。 そのため、設定、 [ `InputTransparent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.InputTransparent/)プロパティを`true`レイアウトのクラスと、入力を受け取っていませんレイアウト内の要素。
+レイアウト クラスであり、その子要素に値の転送などのコンテナー クラスでこのプロパティを設定するとします。 そのため、設定、 [ `InputTransparent` ](xref:Xamarin.Forms.VisualElement.InputTransparent)プロパティを`true`レイアウト上の入力を受信していないレイアウト内の要素のクラスが発生します。
 
 ### <a name="device-orientationdevice-orientationmd"></a>[デバイスの向き](device-orientation.md)
 
-Xamarin.Forms と、組み込みのレイアウトをデバイスの向きの変更を処理します。 アプリがサポートされているとすれば、どのようにどの向きの考慮の横と縦置きモードで表示されたスペースを使用します。
+Xamarin.Forms と、組み込みのレイアウトは、デバイスの向きの変更を処理できます。 アプリがサポートされているにも方法をどの向きを検討してください。 横、縦モードで表示されたスペースを使用します。
 
-### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[タブレットおよびデスクトップ アプリのレイアウト](tablet.md)
+### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[タブレットとデスクトップ アプリのレイアウト](tablet.md)
 
-iOS、Android、およびユニバーサル Windows プラットフォームでより大きな画面サイズをサポートしてすべてのタブレット デバイス (ラップトップと Windows のデスクトップ) およびします。 Xamarin.Forms を使用して、デバイスの種類とページ レイアウトを調整するかを検出するか、まったく別のページをより大きな画面の完全を使用してより大きな画面用のアプリを最適化できます。
+iOS、Android、およびユニバーサル Windows プラットフォームでより大きな画面サイズをサポートしてすべてのタブレット デバイス (ラップトップと Windows のデスクトップ) と同様です。 Xamarin.Forms を使用して、デバイスの種類と、ページ レイアウトを調整するかを検出するか、大きい画面の完全、まったく違うページを使用して、大きい画面のアプリを最適化できます。
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[カスタム レイアウトの作成](custom.md)
 
-Xamarin.Forms の 4 つのレイアウト クラスを定義する[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)、 [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)、 [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)、および[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)、別の方法でその子を整列各とします。 ただし、場合がありますいないレイアウトを使用してページの内容を整理する、必要なによる Xamarin.Forms です。 この記事は、カスタム レイアウト クラスを作成する方法について説明し、印刷の向き依存型を示しています`WrapLayout`ページの上、その子を水平方向に整列し、追加の行に後続の子の表示をラップするクラス。
+Xamarin.Forms の 4 つのレイアウト クラスを定義する[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)、 [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)、 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)、および[ `Grid` ](xref:Xamarin.Forms.Grid)、し、その子を別の方法で配置の各します。 Xamarin.Forms によって、必要なレイアウトを使用していないページ コンテンツの編成が提供される場合がありますただし、します。 この記事では、カスタム レイアウト クラスを作成する方法について説明し、区別の向きを示します`WrapLayout`クラスを追加の行に後続の子の表示をラップし、ページ間で、その子を水平方向に整列します。
 
 ### <a name="layout-compressionlayout-compressionmd"></a>[レイアウトの圧縮](layout-compression.md)
 
-レイアウトの圧縮は、ページのレンダリング パフォーマンスを向上させるためにでは、ビジュアル ツリーから指定したレイアウトを削除します。 この操作によって得られるパフォーマンスのメリットは、ページの複雑さ、使用しているオペレーティング システムのバージョン、このアプリケーションが実行されているデバイスによって異なります。 ただし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
+レイアウト圧縮は、ページのレンダリング パフォーマンスを向上させるために、ビジュアル ツリーから指定したレイアウトを削除します。 この機能が提供するパフォーマンスの効果は、ページの複雑さ、使用しているオペレーティング システムのバージョン、およびアプリケーションを実行しているデバイスによって異なります。 しかし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
 
 ## <a name="making-your-choice"></a>選択を行う
 
-ほとんどの場合、複数のレイアウト オプション使用できることを目的の設計を実装するのには注意してください。 複数の有効な選択肢がある場合は、どちらの方法は、簡単に、状況に応じたを検討してください。
-として入れ子レイアウトがより複雑なデザインの作成に必要なために、1 つのレイアウトを持つほとんどの設計を認識できません。
+ほとんどの場合、1 つ以上のレイアウトの選択した使用できること、必要な設計を実装するためにあります。 複数の有効な選択肢が存在する場合、ユーザーの状況に最も簡単なため、どのアプローチを検討してください。
+入れ子のレイアウトとしてより複雑なデザインを作成するために必要なため、1 つのレイアウトとほとんどの設計を認識できません。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [Apple のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG)
-- [Android デザインの web サイト](https://developer.android.com/design/index.html)
+- [Android のデザインの web サイト](https://developer.android.com/design/index.html)
 - [レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 例 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

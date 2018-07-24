@@ -1,26 +1,26 @@
 ---
 title: 'Xamarin.Essentials: SMS'
-description: Xamarin.Essentials で Sms クラスには、指定したメッセージの受信者に送信する既定の SMS アプリケーションを開くためのアプリケーションができるようにします。
+description: Xamarin.Essentials で Sms クラスは、指定されたメッセージの受信者に送信すると、既定の SMS アプリケーションを開くためのアプリケーションを使用できます。
 ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: a93a67b83ea8f435a5e3ad5d26e1d6cbbb7092f7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783088"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815598"
 ---
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials: SMS
 
-![プレリリース NuGet](~/media/shared/pre-release.png)
+![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-**Sms**クラスには、指定したメッセージの受信者に送信する既定の SMS アプリケーションを開くためのアプリケーションができるようにします。
+**Sms**クラスは、指定されたメッセージの受信者に送信すると、既定の SMS アプリケーションを開くためのアプリケーションを使用できます。
 
 ## <a name="using-sms"></a>Sms を使用します。
 
-クラスの Xamarin.Essentials への参照を追加します。
+クラスで Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

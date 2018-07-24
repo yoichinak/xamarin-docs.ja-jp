@@ -1,46 +1,46 @@
 ---
 title: 'Xamarin.Essentials: バッテリ'
-description: このドキュメントでは、変更を監視し、デバイスのバッテリに関する情報を確認できる Xamarin.Essentials でバッテリ クラスについて説明します。
+description: このドキュメントでは、Xamarin.Essentials で、デバイスのバッテリに関する情報との変更の監視を確認することができますにバッテリ クラスについて説明します。
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 35764b4c2270359a7c010e1186f882e236e17fd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782087"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855056"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: バッテリ
 
-![プレリリース NuGet](~/media/shared/pre-release.png)
+![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-**バッテリ**クラスを使用して、デバイスのバッテリに関する情報を監視し、変更を確認できます。
+**バッテリ**クラスを使用して、デバイスのバッテリに関する情報との変更の監視を確認できます。
 
 ## <a name="getting-started"></a>作業の開始
 
-アクセスする、**バッテリ**次のプラットフォーム固有のセットアップの機能が必要です。
+アクセスする、**バッテリ**次のプラットフォーム固有設定の機能が必要です。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`Battery`権限が必要と Android プロジェクトで構成する必要があります。 これは、次の方法で追加できます。
+`Battery`アクセス許可は必須であり、Android プロジェクトで構成する必要があります。 これは、次の方法で追加できます。
 
-開く、 **AssemblyInfo.cs**下にあるファイル、**プロパティ**フォルダーを追加。
+開く、 **AssemblyInfo.cs**ファイル、**プロパティ**フォルダーを追加。
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Battery)]
 ```
 
-または、Android のマニフェストを更新します。
+または、Android マニフェストを更新します。
 
-開く、 **AndroidManifest.xml**下にあるファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
+開く、 **AndroidManifest.xml**ファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY" />
 ```
 
-または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**権限が必要:** 領域とチェック、**バッテリ**権限です。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**バッテリ**権限。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -54,7 +54,7 @@ ms.locfileid: "34782087"
 
 ## <a name="using-battery"></a>バッテリを使用します。
 
-クラスの Xamarin.Essentials への参照を追加します。
+クラスで Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -108,7 +108,7 @@ switch (source)
 }
 ```
 
-バッテリのプロパティのいずれかが変更されるたびにイベントがトリガーされました。
+バッテリのプロパティのいずれかが変更されるたびにイベントがトリガーされます。
 
 ```csharp
 public class BatteryTest
@@ -131,11 +131,21 @@ public class BatteryTest
 
 ## <a name="platform-differences"></a>プラットフォームの違い
 
-| プラットフォーム | 相違点 |
-| --- | --- |
-| iOS | デバイスを使用して、Api をテストする必要があります。 |
-| iOS | のみは Ac またはバッテリを返します PowerSource。 |
-| UWP | のみは Ac またはバッテリを返します PowerSource。 |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+プラットフォームの違いはありません。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* デバイスは、Api をテストするために使用する必要があります。 
+* しか返さない`Ac`または`Battery`の`PowerSource`します。 
+* 振動をキャンセルすることはできません。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+* しか返さない`Ac`または`Battery`の`PowerSource`します。 
+
+-----
 
 ## <a name="api"></a>API
 

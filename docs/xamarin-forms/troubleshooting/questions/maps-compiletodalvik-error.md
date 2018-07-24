@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30790666"
 ---
 # <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>理由は Xamarin.Forms.Maps Android プロジェクト COMPILETODALVIK 予期しない最上位のエラーで失敗しますか。
 
@@ -31,7 +32,7 @@ Mac 用または Visual Studio 以外のビルド出力 ウィンドウで Visua
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 1.  Android プロジェクトを右クリックし、プロジェクトのオプションを開きます。
-2.  移動して**-> Android ビルドのビルド]-> [詳細設定**
+2.  移動して **-> Android ビルドのビルド]-> [詳細設定**
 3.  Java では、ヒープ サイズ テキスト ボックスは、1 G を入力します。
 4.  プロジェクトをリビルドします。  
 

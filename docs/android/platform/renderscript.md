@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30772017"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript の概要
 
@@ -45,7 +46,7 @@ Android アプリケーションで Renderscripts を使用するための 3 つ
 
 2. **A_カーネルをコンピューティング_** &ndash;とも呼ばれる、_ルート カーネル_または_カーネル_、この処理を行うルーチンです。 カーネルが C の関数とよく似ています。これは、割り当てられたメモリ内のすべてのデータ上で実行される並列ルーチンです。
 
-3. **割り当てられたメモリ**&ndash;と経由のカーネル データが渡される、 _[割り当て](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_です。 カーネルは、1 つの入力を必要がありますか、1 つの出力の割り当て。
+3. **割り当てられたメモリ**&ndash;と経由のカーネル データが渡される、 _[割り当て](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_ です。 カーネルは、1 つの入力を必要がありますか、1 つの出力の割り当て。
 
 [Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/)名前空間には、Renderscript ランタイムとやり取りするためのクラスが含まれています。 具体的には、 [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/)ライフ サイクルと Renderscript エンジンのリソースを管理するクラス。 Android アプリは、1 つまたは複数を初期化する必要があります[ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)オブジェクト。 割り当ては、マネージ API の割り当てと Android アプリと Renderscript ランタイムの間で共有されるメモリへのアクセスを担当します。 通常、入力には、1 つの割り当てを作成し、カーネルの出力を保持するために必要に応じて別の割り当てを作成します。 Renderscript ランタイム エンジンと関連付けられているマネージ ラッパー クラスは、割り当てによって保持されているメモリへのアクセスを管理するを追加の作業を行うには、Android アプリの開発者の必要はありません。
 

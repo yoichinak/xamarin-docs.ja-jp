@@ -1,28 +1,28 @@
 ---
 title: Xamarin.Forms 文字列の書式設定
-description: この記事では、Xamarin.FOrms データ バインディングを使用して書式設定し、オブジェクトを文字列として表示する方法について説明します。 これは、バインドの StringFormat をプレース ホルダーを持つ標準 .NET 書式指定文字列に設定します。
+description: この記事では、Xamarin.FOrms のデータ バインディングを使用して書式設定し、オブジェクトを文字列として表示する方法について説明します。 これは、バインドの StringFormat をプレース ホルダーと標準 .NET 書式設定文字列に設定して実現されます。
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a876e81c67b6ec61a2cb29143cb001a7d6160032
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240302"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998148"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 文字列の書式設定
 
-オブジェクトまたは値の文字列表現を表示するデータ バインドを使用すると便利な場合があります。 使用するなど、`Label`の現在の値を表示する、`Slider`です。 このデータ バインドで、 `Slider` 、ソースであり、ターゲットは、`Text`のプロパティ、`Label`です。
+データ バインドを使用して、オブジェクトまたは値の文字列形式を表示する便利な場合があります。 使用するなど、`Label`の現在の値を表示する、`Slider`します。 このデータ バインドで、 `Slider` 、ソースし、ターゲットが、`Text`のプロパティ、`Label`します。
 
-文字列を表示する、コードで、最も強力なツールは、静的な[ `String.Format` ](https://developer.xamarin.com/api/member/System.String.Format/p/System.String/System.Object/)メソッドです。 書式指定文字列は、さまざまな種類のオブジェクトに固有のコードを書式設定し、書式が設定される値とその他のテキストを含めることができます。 参照してください、 [.NET 型の書式設定](/dotnet/standard/base-types/formatting-types/)文字列の書式設定の詳細については資料です。
+コードで文字列を表示するときに最も強力なツールは、静的な[ `String.Format` ](xref:System.String.Format(System.String,System.Object))メソッド。 書式指定文字列は、さまざまな種類のオブジェクトに固有のコードを書式設定と書式設定される値とその他のテキストを含めることができます。 参照してください、 [.NET 型の書式設定](/dotnet/standard/base-types/formatting-types/)文字列の書式設定の詳細については資料。
 
 ## <a name="the-stringformat-property"></a>StringFormat プロパティ
 
-この機能は、データ バインディングに引き継がれます: を設定する、 [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.StringFormat/)プロパティの`Binding`(または[ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.StringFormat/)のプロパティ、`Binding`マークアップ拡張機能) には標準 .NET が 1 つのプレース ホルダーで文字列の書式設定:
+この機能は、データ バインドに引き継がれます: 設定する、 [ `StringFormat` ](xref:Xamarin.Forms.BindingBase.StringFormat)プロパティの`Binding`(または[ `StringFormat` ](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat)のプロパティ、`Binding`マークアップ拡張機能) を標準 .NET が 1 つのプレース ホルダーと文字列の書式設定:
 
 ```xaml
 <Slider x:Name="slider" />
@@ -31,13 +31,13 @@ ms.locfileid: "35240302"
                       StringFormat='The slider value is {0:F2}'}" />
 ```
 
-書式指定文字列は、XAML パーサーは中かっこを別の XAML マークアップ拡張機能として扱うことを回避するための単一引用符 (アポストロフィ) 文字で区切られますことに注意してください。 含まない単一引用符文字は浮動小数点値への呼び出しで表示する使用する同じ文字列を文字列をそれ以外の場合、`String.Format`です。 書式指定`F2`小数点以下 2 桁で表示される値が発生します。
+書式指定文字列は、XAML パーサーが中かっこを別の XAML マークアップ拡張機能として扱うことを回避するための単一引用符 (アポストロフィ) 文字で区切られますことに注意してください。 含まない単一引用符文字は浮動小数点値への呼び出しで表示する使用するのと同じ文字列を文字列をそれ以外の場合、`String.Format`します。 書式指定`F2`と小数点以下 2 桁で表示される値。
 
-`StringFormat`プロパティ場合にだけターゲット プロパティの型は`string`、バインディング モードと`OneWay`または`TwoWay`です。 双方向のバインディングを`StringFormat`ソースからターゲットに渡す値に対してのみ適用されます。
+`StringFormat`プロパティときにのみ意味ターゲット プロパティの型は`string`、バインディング モードおよび`OneWay`または`TwoWay`します。 双方向のバインディングを`StringFormat`はのみ、ソースからターゲットに渡す値に適用されます。
 
-次の記事で後ほど、[バインド パス](binding-path.md)、非常に複雑になり、複雑なデータ バインドになります。 これらのデータ バインディングをデバッグするときに追加できます、`Label`持つ XAML ファイルに、`StringFormat`いくつかの中間結果を表示します。 オブジェクトの種類を表示するだけで使用する場合でもすることができます。
+次の記事でわかる、[バインド パス](binding-path.md)、データ バインドは非常に複雑な複雑になることができます。 これらのデータ バインディングをデバッグするときに追加できます、`Label`で XAML ファイルに、`StringFormat`いくつかの中間結果を表示します。 場合でも、役に立つオブジェクトの型の表示にのみ使用するとします。
 
-**文字列の書式設定**ページの複数の用途を示しています、`StringFormat`プロパティ。
+**文字列の書式設定**ページのいくつかの使用を示しています、`StringFormat`プロパティ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -101,33 +101,33 @@ ms.locfileid: "35240302"
 </ContentPage>
 ```
 
-バインディング、`Slider`と`TimePicker`に特定の書式指定の使用を表示する`double`と`TimeSpan`データ型。 `StringFormat`からテキストを表示する、`Entry`ビューでの使用で書式指定文字列は二重引用符を指定する方法を示します、 `&quot;` HTML エンティティです。
+バインド、`Slider`と`TimePicker`に特定の形式の仕様の使用方法を示して`double`と`TimeSpan`データ型。 `StringFormat`からテキストを表示する、`Entry`ビューは、使用量の書式指定文字列では、二重引用符を指定する方法を示します、 `&quot;` HTML エンティティ。
 
-XAML ファイルで次のセクションは、`StackLayout`で、`BindingContext`に設定、 `x:Static` 、静的なを参照するマークアップ拡張機能`DateTime.Now`プロパティです。 最初のバインドには、プロパティはありません。
+XAML ファイルで次のセクションは、`StackLayout`で、`BindingContext`に設定、 `x:Static` 、静的なを参照するマークアップ拡張機能`DateTime.Now`プロパティ。 最初のバインドには、プロパティがありません。
 
 ```xaml
 <Label Text="{Binding}" />
 ```
 
-これを表示するだけ、`DateTime`の値、`BindingContext`で既定の書式設定します。 2 つ目のバインドを表示、`Ticks`のプロパティ`DateTime`他の 2 つのバインディングの表示中に、`DateTime`固有の書式設定には、自らです。 これを通知`StringFormat`:
+だけが表示されます、`DateTime`の値、`BindingContext`で既定の書式設定します。 2 番目のバインドが表示されます、`Ticks`プロパティの`DateTime`が表示されるその他の 2 つのバインディング、`DateTime`自体と特定の書式設定します。 この点に気付く`StringFormat`:
 
 ```xaml
 <Label Text="{Binding StringFormat='The {{0:MMMM}} specifier produces {0:MMMM}'}" />
 ```
 
-書式設定文字列に左または右中かっこを表示する場合は、それらのペアを使用します。
+書式設定文字列の左または右中かっこを表示する必要がある場合は、それらのペアを使用だけです。
 
-最後のセクションを設定、`BindingContext`の値に`Math.PI`し、それを既定の書式設定し、2 種類の数値の書式設定を表示します。
+最後のセクションの設定、`BindingContext`の値に`Math.PI`され、既定の書式設定、数値の書式設定の 2 つのさまざまな種類と表示されます。
 
 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
 
-[![書式設定文字列](string-formatting-images/stringformatting-small.png "書式設定文字列")](string-formatting-images/stringformatting-large.png#lightbox "文字列の書式設定")
+[![文字列の書式設定](string-formatting-images/stringformatting-small.png "文字列の書式設定")](string-formatting-images/stringformatting-large.png#lightbox "文字列の書式設定")
 
-## <a name="viewmodels-and-string-formatting"></a>ViewModels と文字列の書式設定
+## <a name="viewmodels-and-string-formatting"></a>ビューモデル、および文字列の書式設定
 
-使用すると、`Label`と`StringFormat`、ViewModel の対象になっているビューの値を表示するをビューからバインドを定義することができますか、`Label`またはに ViewModel から、`Label`です。 一般に、2 番目の方法では最適なビューと ViewModel 間のバインドが動作していることを確認します。
+使用すると、`Label`と`StringFormat`ViewModel の対象でもあるビューの値を表示する、ビューからバインドを定義することができますか、`Label`またはに ViewModel から、`Label`します。 一般に、2 番目のアプローチはビューと ViewModel 間のバインドが動作しているを検証するために最適です。
 
-この方法を示す、 **[カラー セレクター] 向上**サンプルは、同じ ViewModel としてを使用して、**単純なカラー セレクター**プログラムに示すように、 [**バインド モード**](binding-mode.md)資料。
+この方法を示した、**より良い色セレクター**として同じ ViewModel を使用して、サンプル、**単純なカラー セレクター**プログラムに示すように、 [**バインド モード**](binding-mode.md)記事。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,18 +172,18 @@ XAML ファイルで次のセクションは、`StackLayout`で、`BindingContex
 </ContentPage>    
 ```
 
-ペアがあります。 今すぐ次の 3 つの`Slider`と`Label`を同じバインドされている要素のソースのプロパティ、`HslColorViewModel`オブジェクト。 唯一の違いは`Label`が、`StringFormat`プロパティを表示する各`Slider`値。
+現在の 3 つのペアがある`Slider`と`Label`ソースでプロパティを同じにバインドされている要素、`HslColorViewModel`オブジェクト。 唯一の違いは`Label`が、`StringFormat`プロパティを表示する各`Slider`値。
 
-[![色セレクターのより](string-formatting-images/bettercolorselector-small.png "色セレクターのより")](string-formatting-images/bettercolorselector-large.png#lightbox "色セレクターの向上")
+[![色セレクターのより](string-formatting-images/bettercolorselector-small.png "色セレクターのより")](string-formatting-images/bettercolorselector-large.png#lightbox "色セレクターの強化")
 
-だろう、従来の 2 桁の 16 進数形式の RGB (赤、緑、青) 値の表示方法できます。 これらの整数値がない直接から、`Color`構造体。 1 つのソリューションは、ViewModel 内の色要素の整数値を計算し、プロパティとして公開することです。 フォーマットする可能性がありますを使用して、`X2`仕様を書式設定します。
+かもしれません。 RGB (赤、緑、青) 値を従来の 2 桁の 16 進数形式の方法で表示できます。 これらの整数値がから直接使用できない、`Color`構造体。 1 つのソリューションは、ビューモデル内での色要素の整数値を計算し、プロパティとして公開することです。 フォーマットする可能性がありますを使用して、`X2`仕様を書式設定します。
 
-別のアプローチがより一般的な: 記述することができます、*バインディング値コンバーター* 、以降の記事で説明したよう[**バインディング値コンバーター**](converters.md)です。
+別のアプローチがより一般的な: 記述することができます、*バインディング値コンバーター*後の記事で説明したよう[**値コンバーターのバインディング**](converters.md)します。
 
-ただし、次の記事を検討、 [**バインド パス**](binding-path.md)さらに詳細、およびサブプロパティとコレクション内のアイテム参照を使用する方法を表示します。
+ただし、次の記事を紹介します[**バインド パス**](binding-path.md)さらに詳細、およびサブプロパティとコレクション内の項目参照の使用方法を示します。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディング デモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Xamarin.Forms 帳からのデータ バインディング章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms book からデータ バインド」の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

@@ -1,31 +1,31 @@
 ---
-title: SkiaSharp で基本的なアニメーション
-description: この記事では、Xamarin.Forms のアプリケーションで、SkiaSharp グラフィックスをアニメーション化する方法について説明し、サンプル コードを示します。
+title: SkiaSharp の基本的なアニメーション
+description: この記事では、Xamarin.Forms アプリケーションで、SkiaSharp グラフィックスをアニメーション化する方法を説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 08583a62719927b900c6aeede1b3b4398ed803de
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 393716e17b042224f2b0bae8c526132489af26c6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243344"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994819"
 ---
-# <a name="basic-animation-in-skiasharp"></a>SkiaSharp で基本的なアニメーション
+# <a name="basic-animation-in-skiasharp"></a>SkiaSharp の基本的なアニメーション
 
-_SkiaSharp グラフィックスをアニメーション化する方法を説明します。_
+_SkiaSharp、グラフィックスをアニメーション化する方法を検出します。_
 
-発生させて xamarin.forms SkiaSharp グラフィックスをアニメーション化することができます、`PaintSurface`に非常に頻繁に呼び出されるメソッドごとに少し異なる方法でグラフィックスを描画します。 同心円一見センターから展開すると、この記事の後半に示すように、アニメーションを次に示します。
+それによって Xamarin.Forms で SkiaSharp グラフィックスをアニメーション化することができます、`PaintSurface`メソッドが非常に頻繁に呼び出されるたびに少し異なる方法でグラフィックスを描画します。 一見センターから展開同心円でこの記事の後半で示すようにアニメーションを次に示します。
 
-![](animation-images/animationexample.png "いくつかの同心円センターから展開するように見える")
+![](animation-images/animationexample.png "一見、センターから展開するいくつかの同心円")
 
 **いた楕円** ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラムいたでに表示されないように、楕円の 2 つの軸をアニメーション化して、制御することも、この pulsation の比率。
 
 
-[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、Xamarin.Forms をインスタンス化`Slider`と`Label`スライダーの現在の値を表示します。 これは、一般的な方法で、統合、 `SKCanvasView` Xamarin.Forms 他のビューと。
+[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルには、Xamarin.Forms がインスタンス化`Slider`と`Label`スライダーの現在の値を表示します。 これは、一般的な方法を統合する、`SKCanvasView`を他の Xamarin.Forms のビューと。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -60,7 +60,7 @@ _SkiaSharp グラフィックスをアニメーション化する方法を説明
 </ContentPage>
 ```
 
-分離コード ファイルをインスタンス化、`Stopwatch`高精度クロックとして機能するオブジェクト。 `OnAppearing`セットを上書き、`pageIsActive`フィールドを`true`という名前のメソッドを呼び出すと`AnimationLoop`です。 `OnDisappearing`上書きを設定する`pageIsActive`フィールドを`false`:
+分離コード ファイルをインスタンス化、`Stopwatch`と精度の高いクロックとして機能するオブジェクト。 `OnAppearing`セットを上書き、`pageIsActive`フィールドを`true`という名前のメソッドを呼び出すと`AnimationLoop`します。 `OnDisappearing`上書きを設定する`pageIsActive`フィールドを`false`:
 
 ```csharp
 Stopwatch stopwatch = new Stopwatch();
@@ -86,7 +86,7 @@ protected override void OnDisappearing()
 }
 ```
 
-`AnimationLoop`メソッドの開始、`Stopwatch`と中にループし、`pageIsActive`は`true`します。 ページ アクティブですが、ループの最後の呼び出しにハングするプログラムが原因で、これは、本質的には、「無限ループ」`Task.Delay`で、`await`演算子で、プログラムの関数の他の部分をことができます。 引数に`Task.Delay`1/30 秒後に完了するとします。 これには、アニメーションのフレーム レートを定義します。
+`AnimationLoop`メソッドの開始、`Stopwatch`と中にループし`pageIsActive`は`true`します。 ページがアクティブですが、ループの最後の呼び出しにハングするプログラムが原因で、これは、基本的に、「無限ループ」`Task.Delay`で、`await`演算子で、プログラムの関数の他の部分のことができます。 引数に`Task.Delay`1/30 秒後に完了すると、そのします。 これには、アニメーションのフレーム レートを定義します。
 
 ```csharp
 async Task AnimationLoop()
@@ -107,9 +107,9 @@ async Task AnimationLoop()
 
 ```
 
-`while`ループを開始からのサイクル時間を取得することによって、`Slider`です。 たとえば、5 秒単位で時間です。 2 番目のステートメントの値を計算する`t`の*時間*です。 `cycleTime` 5、 `t` 1 に 5 秒ごとに 0 から増加します。 引数、`Math.Sin`関数の 2 番目のステートメントの範囲が 0 から 2 π 5 秒ごとにします。 `Math.Sin`関数は、0 から 0 と 1 の背面まで値を返します&ndash;1 と 0、5 秒ごと、値が 1 または – 1 の近くに遅く変更値しますが、します。 値 1 が加算されるは、正の値は常に、値とし、これが 2 で割った値、値が約 1 および 0 の場合にお勧めの 1/2 に 0 に 1/2 に 1 ~ ½ 値の範囲、ためです。 設定されて、`scale`フィールド、および`SKCanvasView`は無効になります。
+`while`ループの開始からのサイクル時間を取得することによって、`Slider`します。 たとえば、5 秒単位での時間です。 2 番目のステートメントの値を計算する`t`の*時間*します。 `cycleTime` 5 の`t`1 を 5 秒ごとに 0 から増加します。 引数、`Math.Sin`関数の 2 つ目のステートメントの範囲が 0 から 2 π 5 秒ごとにします。 `Math.Sin`関数は、0 ~ 1 のバックアップ、0 に値を返します&ndash;1 と 0 5 秒ごとに、値が 1 または – 1 近く遅く変更値。 値は正の値は常に、値が約 1 と 0 の場合は、お勧めの 1/2 に 0 に 1/2 に 1 ~ ½ 値の範囲であるために、2 で割ったは、値 1 は追加します。 保存されて、`scale`フィールド、および`SKCanvasView`は無効になります。
 
-`PaintSurface`メソッドを使用してこの`scale`楕円の 2 つの軸を計算する値。
+`PaintSurface`メソッドがこれを使用して`scale`楕円の 2 つの軸を計算する値。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -140,17 +140,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-メソッドは、表示領域のサイズに基づく最大 radius および最大半径に基づく最小 radius を計算します。 `scale`を計算するメソッドを使用するため、値を 0 ~ 1 の間、および 0 にはアニメーション、`xRadius`と`yRadius`間の範囲を`minRadius`と`maxRadius`です。 塗りつぶし楕円を描画し、これらの値が使用されます。
+メソッドは、表示領域のサイズに基づく最大半径と最大の半径に基づく最小半径を計算します。 `scale`値は、0 ~ 1 の間、および 0 にアニメーション化を計算するメソッドを使用するよう、`xRadius`と`yRadius`間の範囲を`minRadius`と`maxRadius`します。 これらの値は、描画し、楕円の塗りつぶしに使用されます。
 
-[![](animation-images/pulsatingellipse-small.png "点滅するフロッピー楕円ページのスクリーン ショットをトリプル")](animation-images/pulsatingellipse-large.png#lightbox "点滅するフロッピー楕円ページのトリプル スクリーン ショット")
+[![](animation-images/pulsatingellipse-small.png "点滅するフロッピー楕円ページのスクリーン ショットをトリプル")](animation-images/pulsatingellipse-large.png#lightbox "点滅するフロッピー楕円ページの 3 倍になるスクリーン ショット")
 
-注意して、`SKPaint`でオブジェクトを作成、`using`ブロックします。 などの多くの SkiaSharp クラス`SKPaint`から派生した`SKObject`から派生した`SKNativeObject`を実装する、 [ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/)インターフェイスです。 `SKPaint` 上書き、`Dispose`アンマネージ リソースを解放します。
+注意、`SKPaint`でオブジェクトを作成、`using`ブロックします。 などの多くの SkiaSharp クラス`SKPaint`から派生した`SKObject`から派生した`SKNativeObject`、実装、 [ `IDisposable` ](xref:System.IDisposable)インターフェイス。 `SKPaint` 上書き、`Dispose`アンマネージ リソースを解放します。
 
- 配置`SKPaint`で、`using`ブロックにより`Dispose`はこれらのアンマネージ リソースを解放する、ブロックの最後に呼び出されます。 いる場合、このままでメモリが使用される、`SKPaint`オブジェクトの解放を適切な方法でメモリの解放で若干積極的に取り組むことをお勧め .NET ガベージ コレクターによっては、アニメーションのコードでします。
+ 配置する`SKPaint`で、`using`ブロックにより`Dispose`はこれらのアンマネージ リソースを解放するブロックの最後に呼び出されます。 これは起こりますでメモリが使用するとき、`SKPaint`オブジェクトが解放されるより規則正しく方法でメモリを解放することで、ある程度積極的にすることをお勧め、.NET ガベージ コレクターによってがアニメーションのコードでは、します。
 
- 2 つを作成することでこの特定のケースのより良いソリューション`SKPaint`フィールドとしてオブジェクトの 1 回、および保存します。
+ このケースでより良いソリューションは 2 つ作成すること`SKPaint`フィールドとして保存し、1 回のオブジェクトします。
 
-その目的、**展開円**アニメーションはします。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)クラスの開始など、いくつかのフィールドを定義することによって、`SKPaint`オブジェクト。
+これが、**展開円**アニメーションは。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)クラスの開始など、いくつかのフィールドを定義することで、`SKPaint`オブジェクト。
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -178,7 +178,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-このプログラムは、Xamarin.Forms に基づいてアニメーションを別のアプローチを使用して`Device.StartTimer`です。 `t`フィールドが 0 から 1 をアニメーション化すべて`cycleTime`(ミリ秒)。
+このプログラムは、Xamarin.Forms に基づくアニメーションを別のアプローチを使用して`Device.StartTimer`します。 `t`フィールドが 0 から 1 をアニメーション化すべて`cycleTime`(ミリ秒)。
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -212,7 +212,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーはアニメーション radii して 5 つの同心円を描画します。 場合、`baseRadius`変数として計算されます、100、として`t`0 1、5 つの円の増加を 0 から 100、100 ~ 200、200 ~ 300、300 ~ 400、400 ~ 500 の半径をアニメーション化します。 ほとんどの円の`strokeWidth`は 50 ですが、最初の円、 `strokeWidth` 0 から 50 までアニメーション化します。 円のほとんどは、色が青が、最後の円には、青と色をアニメーションを透明に。
+`PaintSurface`ハンドラーして、半径をアニメーション化された 5 つの同心円を描画します。 場合、`baseRadius`変数として計算されます、100、として`t`が 0 から 1、0 から 100、100 ~ 200、200 ~ 300、300 ~ 400、400 ~ 500 に 5 つの円増加の半径をアニメーション化します。 ほとんどの円の`strokeWidth`50 ですが 1 つ目の円は、 `strokeWidth` 0 から 50 までアニメーション化します。 円のほとんどは、色が青ですが最後の円は、青から色をアニメーション透過的になります。
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -243,12 +243,12 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-結果は同じときに、画質`t`場合に 0 に等しい`t`1 と等しいし、円が永久に展開を続行しましょう。
+結果が同じ場合に画質`t`場合と同様の 0 に等しい`t`1 と等しいし、円を永久に展開を続行すると思われます。
 
-[![](animation-images/expandingcircles-small.png "円の展開 ページのスクリーン ショットをトリプル")](animation-images/expandingcircles-large.png#lightbox "円の展開 ページのトリプル スクリーン ショット")
+[![](animation-images/expandingcircles-small.png "円の展開 ページのスクリーン ショットをトリプル")](animation-images/expandingcircles-large.png#lightbox "円の展開 ページの 3 倍になるスクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

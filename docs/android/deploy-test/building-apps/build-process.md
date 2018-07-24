@@ -6,11 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998259"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -75,7 +76,7 @@ Xamarin.Android プロジェクトに対して、次のビルド ターゲット
 
 ## <a name="build-properties"></a>[ビルド プロパティ]
 
-MSBuild プロパティは、ターゲットの動作を制御します。 これらは、[MSBuild PropertyGroup 要素](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx)内のプロジェクト ファイル (**MyApp.csproj** など) 内で指定されます。 
+MSBuild プロパティは、ターゲットの動作を制御します。 これらは、[MSBuild PropertyGroup 要素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)内のプロジェクト ファイル (**MyApp.csproj** など) 内で指定されます。
 
 -   **Configuration** &ndash; 使用するビルド構成 ("Debug" または "Release" など) を指定します。 Configuration プロパティは、ターゲットの動作を決定するその他のプロパティの既定値を決定するために使用されます。 追加の構成は、IDE 内で作成できます。
 
@@ -85,7 +86,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **DebugSymbols** &ndash; `$(DebugType)` プロパティと組み合わせて、Android パッケージが*デバッグ可能*かどうかを決定するブール値。 デバッグ可能パッケージには、デバッグ シンボルが含まれており、`//application/@android:debuggable` 属性を `true` に設定し、`INTERNET` アクセス許可を自動的に追加して、デバッガーがプロセスにアタッチできるようにします。 `DebugSymbols` が `True` *で* `DebugType` が空の文字列または `Full` の場合、アプリケーションはデバッグ可能です。
 
--   **DebugType** &ndash; ビルドの一部として生成するための[デバッグ シンボルの型](http://msdn.microsoft.com/en-us/library/s5c8athz.aspx)を指定します。これはアプリケーションがデバッグ可能かどうかにも影響します。 次の値を使用できます。
+-   **DebugType** &ndash; ビルドの一部として生成するための[デバッグ シンボルの型](https://docs.microsoft.com/visualstudio/msbuild/csc-task)を指定します。これはアプリケーションがデバッグ可能かどうかにも影響します。 次の値を使用できます。
 
     - **Full**: 完全なシンボルが生成されます。 `DebugSymbols` MSBuild プロパティも `True` の場合、アプリケーション パッケージはデバッグ可能です。
 
@@ -182,7 +183,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     既定値は `System.Net.Http.HttpClientHandler, System.Net.Http` です。
 
-    これは、Android Java API を使用してネットワーク要求を実行する `Xamarin.Android.Net.AndroidClientHandler` を代わりに含むように上書きできます。 これにより、基になる Android バージョンが TLS 1.2 をサポートする場合、TLS 1.2 の URL にアクセスできます。  
+    これは、Android Java API を使用してネットワーク要求を実行する `Xamarin.Android.Net.AndroidClientHandler` を代わりに含むようにオーバーライドできます。 これにより、基になる Android バージョンが TLS 1.2 をサポートする場合、TLS 1.2 の URL にアクセスできます。  
     TLS 1.2 のサポートが Java を通じて確実に提供されるのは、Android 5.0 以降のみです。
 
     *注*: TLS 1.2 のサポートがバージョン 5.0 より前の Android で必要な場合、"*または*" TLS 1.2 のサポートが `System.Net.WebClient` および関連する API で必要な場合、`$(AndroidTlsProvider)` を使用する必要があります。
@@ -197,7 +198,8 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
     - `btls`: [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx) との TLS 通信に [BoringSSL](https://boringssl.googlesource.com/boringssl) を使用します。
       これにより、Android のすべてのバージョンで TLS 1.2 を使用できます。
 
-    - `legacy`: ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。
+    - 
+        `legacy`: ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。
 
     - `default`: *Mono* で既定の TLS プロバイダーを選択することを許可します。
       Xamarin.Android 7.3 でも、これは `legacy` と同等です。  
@@ -238,7 +240,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **AndroidSdkBuildToolsVersion** &ndash; Android SDK ビルド ツール パッケージは、特に、**aapt** ツールと **zipalign** ツールを提供します。 複数の異なるバージョンのビルド ツール パッケージを同時にインストールすることができます。 パッケージ化するビルド ツール パッケージの選択は、"優先" ビルド ツールのバージョンをチェックして、ある場合はそれを使用して行われます。"優先" バージョンが "*ない*" 場合は、インストールされている最も高いバージョンのビルド ツール パッケージが使用されます。
 
-    `$(AndroidSdkBuildToolsVersion)` MSBuild プロパティには、優先ビルド ツールのバージョンが含まれています。 Xamarin.Android ビルド システムは `Xamarin.Android.Common.targets` に既定値を提供します。たとえば、最新の aapt がクラッシュして、前のバージョンの aapt が機能することがわかっている場合には、その既定値をプロジェクト ファイル内で上書きして、別のビルド ツール バージョンを選択できます。
+    `$(AndroidSdkBuildToolsVersion)` MSBuild プロパティには、優先ビルド ツールのバージョンが含まれています。 Xamarin.Android ビルド システムは `Xamarin.Android.Common.targets` に既定値を提供します。たとえば、最新の aapt がクラッシュして、前のバージョンの aapt が機能することがわかっている場合には、その既定値をプロジェクト ファイル内でオーバーライドして、別のビルド ツール バージョンを選択できます。
 
 -   **AndroidSupportedAbis** &ndash; `.apk` に含める必要がある ABI のセミコロン (`;`) で区切られたリストを含む文字列プロパティ。
 
@@ -305,7 +307,8 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     -   **Other**: *キリル語 (Windows)* \[CP1251\]、*バルト語 (Windows)* \[iso-8859-4, CP1257\]、*ベトナム語 (Windows)* \[CP1258\]、*キリル語 (KOI8-R)* \[koi8-r, CP1251\]、*ウクライナ語 (KOI8 U)* \[koi8-u, CP1251\]、*バルト語 (ISO)* \[iso-8859-4, CP1257\]、*キリル語 (ISO)* \[iso-8859-5, CP1251\]、 *ISCII デーヴァナーガリー語* \[x-iscii-de, CP57002\]、*ISCII ベンガル語* \[x-iscii-be, CP57003\]、*ISCII タミール語* \[x-iscii-ta, CP57004\]、*ISCII テルグ語* \[x-iscii-te, CP57005\]、*ISCII アッサム語* \[x-iscii-as, CP57006\]、*ISCII オリヤー語* \[x-iscii-or, CP57007\]、*ISCII カンナダ語* \[x-iscii-ka, CP57008\]、*ISCII マラヤーラム語* \[x-iscii-ma, CP57009\]、*ISCII グジャラート語* \[x-iscii-gu, CP57010\]、*ISCII パンジャーブ語* \[x-iscii-pa, CP57011\]、および*タイ語 (Windows)* \[CP874\] などのその他のエンコーディングが含まれます。
 
-    -   **Rare**: *IBM EBCDIC (トルコ語)* \[CP1026\]、*IBM EBCDIC (オープン システム ラテン 1)* \[CP1047\]、*IBM EBCDIC (米国-カナダとユーロ)* \[CP1140\]、*IBM EBCDIC (ドイツとユーロ)* \[CP1141\]、*IBM EBCDIC (デンマーク/ノルウェーとユーロ)* \[CP1142\]、*IBM EBCDIC (フィンランド/スウェーデンとユーロ)* \[CP1143\]、*IBMEBCDIC (イタリアとユーロ)* \[CP1144\]、*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)* \[CP1145\]、*IBM EBCDIC (英国とユーロ)* \[CP1146\]、*IBM EBCDIC (フランスとユーロ)* \[CP1147\]、*IBM EBCDIC (インターナショナルとユーロ)* \[CP1148\]、*IBM EBCDIC (アイスランド語とユーロ)* \[CP1149\]、*IBM EBCDIC (ドイツ)* \[CP20273\]、*IBM EBCDIC (デンマーク/ノルウェー)* \[CP20277\]、*IBM EBCDIC (フィンランド/スウェーデン)* \[CP20278\]、*IBM EBCDIC (イタリア)* \[CP20280\]、*IBM EBCDIC (ラテン アメリカ/スペイン)* \[CP20284\]、*IBM EBCDIC (英国)* \[CP20285\]、*IBM EBCDIC (日本語カタカナ拡張)* \[CP20290\]、*IBM EBCDIC (フランス)* \[CP20297\]、*IBM EBCDIC (アラビア語)* \[CP20420\]、*IBM EBCDIC (ヘブライ語)* \[CP20424\]、*IBM EBCDIC (アイスランド語)* \[CP20871\]、*IBM EBCDIC (キリル、セルビア語、ブルガリア語)* \[CP21025\]、*IBM EBCDIC (米国-カナダ)* \[CP37\]、 *IBM EBCDIC (インターナショナル)* \[CP500\]、*アラビア語 (ASMO 708)* \[CP708\]、*中央ヨーロッパ言語 (DOS)* \[CP852\]*, キリル言語 (DOS)* \[CP855\]、*トルコ語 (DOS)* \[CP857\]*西ヨーロッパ言語 (DOS とユーロ)* \[CP858\]、*ヘブライ語 (DOS)* \[CP862\]、*アラビア語 (DOS)* \[CP864\]、*ロシア語 (DOS)* \[CP866\]、*ギリシャ語 (DOS)* \[CP869\]、*IBM EBCDIC (ラテン 2)* \[CP870\]、*IBM EBCDIC (ギリシャ語)* \[CP875\] などのまれなエンコーディングが含まれます。
+    -   
+          **Rare**: *IBM EBCDIC (トルコ語)*\[CP1026\]、*IBM EBCDIC (オープン システム ラテン 1)*\[CP1047\]、*IBM EBCDIC (米国-カナダとユーロ)*\[CP1140\]、*IBM EBCDIC (ドイツとユーロ)*\[CP1141\]、*IBM EBCDIC (デンマーク/ノルウェーとユーロ)*\[CP1142\]、*IBM EBCDIC (フィンランド/スウェーデンとユーロ)*\[CP1143\]、*IBMEBCDIC (イタリアとユーロ)*\[CP1144\]、*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)*\[CP1145\]、*IBM EBCDIC (イギリスとユーロ)*\[CP1146\]、*IBM EBCDIC (フランスとユーロ)*\[CP1147\]、*IBM EBCDIC (インターナショナルとユーロ)*\[CP1148\]、*IBM EBCDIC (アイスランド語とユーロ)*\[CP1149\]、*IBM EBCDIC (ドイツ)*\[CP20273\]、*IBM EBCDIC (デンマーク/ノルウェー)*\[CP20277\]、*IBM EBCDIC (フィンランド/スウェーデン)*\[CP20278\]、*IBM EBCDIC (イタリア)*\[CP20280\]、*IBM EBCDIC (ラテン アメリカ/スペイン)*\[CP20284\]、*IBM EBCDIC (イギリス)*\[CP20285\]、*IBM EBCDIC (日本語カタカナ拡張)*\[CP20290\]、*IBM EBCDIC (フランス)*\[CP20297\]、*IBM EBCDIC (アラビア語)*\[CP20420\]、*IBM EBCDIC (ヘブライ語)*\[CP20424\]、*IBM EBCDIC (アイスランド語)*\[CP20871\]、*IBM EBCDIC (キリル、セルビア語、ブルガリア語)*\[CP21025\]、*IBM EBCDIC (米国-カナダ)*\[CP37\]、 *IBM EBCDIC (インターナショナル)*\[CP500\]、*アラビア語 (ASMO 708)*\[CP708\]、*中央ヨーロッパ言語 (DOS)*\[CP852\]*, キリル言語 (DOS)*\[CP855\]、*トルコ語 (DOS)*\[CP857\]*西ヨーロッパ言語 (DOS とユーロ)*\[CP858\]、*ヘブライ語 (DOS)*\[CP862\]、*アラビア語 (DOS)*\[CP864\]、*ロシア語 (DOS)*\[CP866\]、*ギリシャ語 (DOS)*\[CP869\]、*IBM EBCDIC (ラテン 2)*\[CP870\]、*IBM EBCDIC (ギリシャ語)*\[CP875\] などのまれなエンコーディングが含まれます。
 
     -   **West**: *西ヨーロッパ言語 (Mac)* \[macintosh, CP10000\]、*アイスランド語 (Mac)* \[x-mac-icelandic, CP10079\]、*中央ヨーロッパ言語 (Windows)* \[iso-8859-2, CP1250\]、*西ヨーロッパ言語 (Windows)* \[iso-8859-1, CP1252\]、*ギリシャ語 (Windows)* \[iso-8859-7, CP1253\]、*中央ヨーロッパ言語 (ISO)* \[iso-8859-2, CP28592\]、*ラテン 3 (ISO)* \[iso-8859-3, CP28593\]、*ギリシャ語 (ISO)* \[iso-8859-7, CP28597\]、*ラテン 9 (ISO)* \[iso-8859-15, CP28605\]、 *OEM 米国* \[CP437\]、*西ヨーロッパ言語 (DOS)* \[CP850\]、*ポルトガル語 (DOS)* \[CP860\]、*アイスランド語 (DOS)* \[CP861\]、 *フランス語 (カナダ) (DOS)* \[CP863\]、および*北欧語 (DOS)* \[CP865\] などの欧文のエンコーディングが含まれます。
 
@@ -345,7 +348,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     `$(AndroidVersionCodeProperties)` プロパティ (次で定義) を使用してカスタム項目を定義することができます。
 
-    既定では、値は `{abi}{versionCode:D6}` に設定されます。 開発者が古い動作を保持する必要がある場合は、`$(AndroidUseLegacyVersionCode)` プロパティを `true` に設定することで既定値を上書きできます。
+    既定では、値は `{abi}{versionCode:D6}` に設定されます。 開発者が古い動作を保持する必要がある場合は、`$(AndroidUseLegacyVersionCode)` プロパティを `true` に設定することで既定値をオーバーライドできます。
 
     Xamarin.Android 7.2 で追加されました。
 
@@ -357,7 +360,8 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     Xamarin.Android 8.2 で追加されました。
 
--  **AndroidUseManagedDesignTimeResourceGenerator** &ndash;デザイン時のビルドを、`aapt` ではなくマネージド リソース パーサーの使用に切り替えるブール型プロパティ。
+-  
+     **AndroidUseManagedDesignTimeResourceGenerator**&ndash;デザイン時のビルドを、`aapt` ではなくマネージド リソース パーサーの使用に切り替えるブール型プロパティ。
 
     Xamarin.Android 8.1 で追加されました。
 
@@ -483,7 +487,7 @@ Enter key password for keystore.alias
 
 ## <a name="build-actions"></a>ビルド アクション
 
-*ビルド アクション*は、プロジェクト内の[ファイルに適用](http://msdn.microsoft.com/en-us/library/bb629388.aspx)され、ファイルの処理方法を制御します。 
+*ビルド アクション*は、プロジェクト内の[ファイルに適用](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)され、ファイルの処理方法を制御します。 
 
 <a name="AndroidEnvironment" />
 

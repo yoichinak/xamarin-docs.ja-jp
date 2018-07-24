@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 05/03/2018
+  ms.locfileid: "32436386"
 abstract:
   description: Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発ソリューションが用意されています。 このセクションでは、どのプラットフォームを対象とするかは問われません。
   menu:

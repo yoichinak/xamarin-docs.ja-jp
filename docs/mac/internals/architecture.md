@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30785557"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin.Mac アーキテクチャ
 
@@ -45,7 +46,7 @@ Xamarin.Mac で作成された Mac アプリケーションを実行するには
 
 ## <a name="compilation"></a>コンパイル
 
-Xamarin プラットフォーム アプリケーションをコンパイルするときに、モノラル c# (f#) コンパイラが実行され、Microsoft Intermediate Language (MSIL または IL) に、c# および f# コードがコンパイルされます。 Xamarin.Mac を使用して、*ジャスト イン タイム (JIT)*必要に応じて、適切なアーキテクチャでの実行を許可する、ネイティブ コードをコンパイルする実行時にコンパイラです。
+Xamarin プラットフォーム アプリケーションをコンパイルするときに、モノラル c# (f#) コンパイラが実行され、Microsoft Intermediate Language (MSIL または IL) に、c# および f# コードがコンパイルされます。 Xamarin.Mac を使用して、*ジャスト イン タイム (JIT)* 必要に応じて、適切なアーキテクチャでの実行を許可する、ネイティブ コードをコンパイルする実行時にコンパイラです。
 
 これは、Xamarin.iOS AOT コンパイルを使用するとは対照的です。 AOT コンパイラを使用する場合、ビルド時にすべてのアセンブリとそれらに含まれるすべてのメソッドはコンパイルされます。 JIT でコンパイルにのみこれらのメソッドが実行を要求時に発生します。
 

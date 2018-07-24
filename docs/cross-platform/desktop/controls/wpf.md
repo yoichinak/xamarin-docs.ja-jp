@@ -1,41 +1,41 @@
 ---
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
 title: 'WPF とします。Xamarin.Forms: 類似点と相違点'
-description: このドキュメントでは、比較し、Xamarin.Forms の WPF を比較します。 これは、コントロール テンプレート、XAML、バインド インフラストラクチャは、データ テンプレート、ItemsControl、ユーザー コントロール、ナビゲーション、および URL ナビゲーションについて説明します。
+description: このドキュメントでは、比較し、Xamarin.Forms の WPF は対照的です。 これは、コントロール テンプレート、XAML、バインド インフラストラクチャ、データ テンプレート、ItemsControl、ユーザー コントロール、ナビゲーション、および URL のナビゲーションについて説明します。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 232ddd5ea06891c70125adc9b8bf77f3e857dbd6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4d6585715b2fc118bb350c242abccbc68791ec0b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781970"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998519"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF とします。Xamarin.Forms: 類似点と相違点
 
 ## <a name="control-templates"></a>コントロール テンプレート
 
-WPF の概念をサポートしている*コントロール テンプレート*コントロールの視覚エフェクトの指示を提供する (`Button`、 `ListBox`, などです。)。 Xamarin.Forms は具象型を使用する前述のように、_レンダリング_このコントロールを視覚化するにはネイティブ プラットフォーム (iOS、Android など) とやり取りするクラス。
+WPF の概念をサポートして*コントロール テンプレート*コントロールの視覚エフェクトの指示を提供する (`Button`、`ListBox`など。)。 Xamarin.Forms は具象型を使用して前述のように、_レンダリング_コントロールを視覚化するのには、ネイティブ プラットフォーム (iOS、Android など) と対話するこのクラス。
 
-ただし、Xamarin.Forms_は_が、`ControlTemplate`の種類 - テーマの使用される`Page`オブジェクト。 定義を提供する`Page`を一貫性のある内容を提供しますが、色やフォントなどの変更を追加し、アプリケーションを一意にする要素をページのユーザーに許可します。
+ただし、Xamarin.Forms_は_が、`ControlTemplate`の種類 - テーマの使用されて`Page`オブジェクト。 定義を提供します、`Page`を一貫性のあるコンテンツは、用意されていますが、色やフォントなどの変更も、アプリケーションを一意にする要素を追加して、ページのユーザーに許可します。
 
-この一般的な使用法とは、認証ダイアログ、画面の指示など、アプリ内のカスタマイズ可能な標準化ですが themable ページのルック アンド フィールを提供することです。 このサポートの一環として、多くの使い慣れた WPF という名前のコントロールが使用されます。
+この一般的な使用法とは、アプリ内でカスタマイズ可能な標準化が themable ページのルック アンド フィールを提供して、認証ダイアログ プロンプトなどの点です。 このサポートの一環として、多くの使い慣れたという名前の WPF コントロールが使用されます。
 
 1. `ContentPage`
 2. `ContentView`
 3. `ContentPresenter`
 4. `TemplateBinding`
 
-これらがあることを確認することが重要ですが_いない_Xamarin.Forms で同じ目的のサービスを提供します。 この機能の詳細については、チェック アウト、[ドキュメント ページ](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)です。
+これらがあることを知っておく必要が_いない_Xamarin.Forms で同じ目的のサービスを提供します。 この機能の詳細については、チェック アウト、[ドキュメント ページ](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)します。
 
 ## <a name="xaml"></a>XAML
 
-XAML は、WPF と Xamarin.Forms の宣言型マークアップ言語として使用されます。 ほとんどの場合、構文は同じです。-主な違いは、XAML をグラフで定義されている作成されるオブジェクト。
+XAML は、WPF と Xamarin.Forms の宣言型マークアップ言語として使用されます。 ほとんどの場合、構文は同じです。-主な違いは、XAML のグラフで定義されている作成されるオブジェクト。
 
-- Xamarin.Forms をサポートしている、 [XAML 2009 の仕様](/dotnet/framework/xaml-services/xaml-2009-language-features/); データを定義するなどが簡単になります。 `string`s、`int`などもとして定義するジェネリック型、およびコンス トラクターに渡す引数。
+- Xamarin.Forms のサポート、 [XAML 2009 仕様](/dotnet/framework/xaml-services/xaml-2009-language-features/); などのデータを定義するが簡単になります。 `string`s、`int`などもとして定義するジェネリック型、およびコンス トラクターに引数を渡す。
 
-- WPF のように、XAML を動的に読み込む方法は現在ありません`XamlReader`です。 使用して同じ基本的な機能を取得することができます、 [NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)もします。
+- 現在を WPF が使用できるように、XAML を動的に読み込む方法はありません`XamlReader`します。 使用して同じ基本的な機能を取得できます、 [NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)場合。
 
 ### <a name="markup-extensions"></a>マークアップ拡張機能
 
@@ -49,41 +49,41 @@ Xamarin.Forms は XAML の WPF と同様に、マークアップ拡張機能を�
 6. `{StaticResource}`
 7. `{x:Type}`
 
-また、`{x:Reference}`の XAML 2009 の仕様と`{TemplateBinding}`の特殊化バージョンに使用されるマークアップ拡張機能`ControlTemplate`Xamarin.Forms でサポートされています。
+また、 `{x:Reference}` XAML 2009 の仕様と`{TemplateBinding}`特殊化されたバージョンに使用されるマークアップ拡張機能`ControlTemplate`Xamarin.Forms でサポートされています。
 
 > [!WARNING]
-> `ControlTemplate`サポート、同じではありません - がある場合でも、同じ名前です。
+> `ControlTemplate`サポート、同じではありません - 場合でも、同じ名前にします。
 
-Xamarin.Forms がカスタム マークアップ拡張機能だけでなくをサポートしますが、実装がわずかに異なります。 WPF から派生する必要があります`MarkupExtension`の抽象基本クラスです。 Xamarin.Forms ではインターフェイスに置き換えは`IMarkupExtension`または`IMarkupExtension<T>`はより柔軟です。
+Xamarin.Forms は、カスタム マークアップ拡張機能だけでなくをサポートしますが、実装は少し異なります。 WPF から派生する必要があります`MarkupExtension`の抽象基本クラス。 インターフェイスで交換する Xamarin.Forms で`IMarkupExtension`または`IMarkupExtension<T>`より柔軟であります。
 
-1 つの必要なメソッドは、WPF と同じように、`ProvideValue`マークアップ拡張機能の値を返します。
+1 つの必要なメソッドには、WPF と同様、`ProvideValue`マークアップ拡張機能の値を返します。
 
 ## <a name="binding-infrastructure"></a>バインド インフラストラクチャ
 
-引き継が主要な概念の 1 つは、データ バインド インフラストラクチャ visual プロパティ .NET データ プロパティを接続します。 これにより、アーキテクチャ パターン MVVM などです。 基本的な設計と同じ - バインド可能な基本クラスがある[BindableObject](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)、これは、WPF では、 [DependencyObject](https://msdn.microsoft.com/en-us/library/system.windows.dependencyobject(v=vs.110).aspx)クラスです。 この基本クラスは、データ バインディングのターゲットとして参加するすべてのオブジェクトの先祖をルートとして使用されます。 派生クラスを公開し、 [BindableProperty](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)バッキング ストレージのプロパティの値として機能するオブジェクト (として定義される[DependencyProperty](https://msdn.microsoft.com/library/system.windows.dependencyproperty(v=vs.110).aspx) WPF 内のオブジェクト)。
+引き継がコア概念の 1 つは、.NET のデータ プロパティにビジュアルのプロパティを接続するデータ バインド インフラストラクチャです。 これにより、アーキテクチャのパターンを MVVM などができます。 基本のデザインは同じです - バインド可能な基底クラスを含んだりする[BindableObject](xref:Xamarin.Forms.BindableObject)、これは、WPF では、 [DependencyObject](https://msdn.microsoft.com/en-us/library/system.windows.dependencyobject(v=vs.110).aspx)クラス。 この基本クラスは、データ バインディングのターゲットとして参加するすべてのオブジェクトの先祖をルートとして使用されます。 派生クラスを公開し、 [BindableProperty](xref:Xamarin.Forms.BindableProperty)プロパティ値のバックアップ用ストレージとして機能するオブジェクト (として定義される[DependencyProperty](https://msdn.microsoft.com/library/system.windows.dependencyproperty(v=vs.110).aspx) WPF 内のオブジェクト)。
 
 ### <a name="defining-bindable-properties"></a>バインド可能なプロパティを定義します。
 
-Xamarin.Forms では、バインド可能なプロパティの定義は、WPF と同じです。
-1. オブジェクトから派生しなければなりません`BindableObject`です。
-2. 型のパブリックな静的フィールドである必要があります`BindableProperty`プロパティのバッキング ストレージのキーを定義するために宣言します。
+Xamarin.Forms のバインド可能なプロパティの定義では、WPF の場合と同じです。
+1. オブジェクトがから派生する必要があります`BindableObject`します。
+2. 型のパブリックな静的フィールドがある`BindableProperty`プロパティのバッキング ストレージ キーを定義する宣言します。
 3. パブリック インスタンス プロパティのラッパーを使用する必要があります`GetValue`と`SetValue`を取得し、プロパティ値を変更します。
 
-完全な例では、次を参照してください。 [Xamarin.Forms でバインド可能なプロパティ](~/xamarin-forms/xaml/bindable-properties.md)です。
+完全な例を参照してください。 [Xamarin.Forms でのバインド可能なプロパティ](~/xamarin-forms/xaml/bindable-properties.md)します。
 
 ### <a name="attached-properties"></a>添付プロパティ
 
-添付プロパティは、バインド可能なプロパティのサブセットされ WPF では同じようになります。 主な違いでありことプロパティのラッパー省略したをここでは、所有クラスで静的 get と set メソッドのセットに置き換えられます。 参照してください[Xamarin.Forms で接続されているプロパティ](~/xamarin-forms/xaml/attached-properties.md)詳細についてはします。
+添付プロパティは、バインド可能なプロパティのサブセットと WPF と同じように動作します。 主な違いは、プロパティのラッパーを省略したをここでは、所有元クラスの静的な取得/設定メソッドのセットに置き換えられますが。 参照してください[Xamarin.Forms でのプロパティのアタッチ](~/xamarin-forms/xaml/attached-properties.md)詳細についてはします。
 
 ### <a name="using-the-binding-engine"></a>バインディング エンジンを使用します。
 
-バインディング エンジンを使用するプロセスは、WPF では同じです。 分離コードで作成することで利用できますが、`Binding`オブジェクトは、ソース オブジェクト (すべての .NET 型) と省略可能なプロパティ値に関連付けられています (かどうか省略した、ソース オブジェクトとして処理自体のプロパティと同じように WPF)。 使用してできます`SetBinding`いずれかで`BindableObject`をバインドに関連付ける、`BindableProperty`です。
+バインディング エンジンを使用するためのプロセスでは、WPF では同じです。 作成すること、分離コードで使用できる、`Binding`ソース オブジェクト (任意の .NET 型) に省略可能なプロパティの値をオブジェクトが関連付けられている (かどうか省略したソース オブジェクトとして処理自体のプロパティと同じように WPF)。 使用することができます`SetBinding`いずれかで`BindableObject`をバインドに関連付ける、`BindableProperty`します。
 
-または、XAML を使用してバインド リレーションシップを定義すれば、`BindingExtension`です。 WPF では、拡張機能と同じ基本的な値があります。
+また、XAML を使用して、バインドの関係を定義、`BindingExtension`します。 WPF では、拡張機能と同じ基本的な値があります。
 
-バインディングのサポートとエンジンは、WPF を Silverlight 実装より類似します。 Xamarin.Forms で実装されていなかったをいくつか不足している機能。
+バインドのサポートとエンジンは、WPF よりもより Silverlight の実装に似ています。 Xamarin.Forms では実装しませんでしたが、いくつか不足している機能があります。
 
-- 次の機能のバインディングでサポートされていません。
+- バインドでは、次の機能のサポートはありません。
     - BindingGroupName
     - BindsDirectlyToSource
     - IsAsync
@@ -98,11 +98,11 @@ Xamarin.Forms では、バインド可能なプロパティの定義は、WPF �
     - ValidationRules コレクション
     - XPath
     - XmlNamespaceManager
-- `Binding.Mode` サポートしていません`OneTime`、代わりにだけ使用`OneWay`です。
+- `Binding.Mode` サポートしていません`OneTime`、代わりにだけ使用`OneWay`します。
 
 #### <a name="relativesource"></a>RelativeSource
 
-サポートされていません`RelativeSource`バインドします。 WPF では、XAML で定義されている他のビジュアル要素にバインドする実現します。 Xamarin.Forms でこの機能を実現できますを使用して、`{x:Reference}`マークアップ拡張機能です。 たとえば、テキスト プロパティを持つ名前 "otherControl"を持つコントロールがあると仮定した場合、バインドできる、次のように。
+サポートされていません`RelativeSource`バインドします。 WPF では、XAML で定義されている他のビジュアル要素にバインドする実現します。 Xamarin.Forms では、この同じ機能を実現するを使用して、`{x:Reference}`マークアップ拡張機能。 たとえば、テキスト プロパティを持つ名前 "otherControl"を持つコントロールがあると仮定すると、ことができますにバインドします、このような。
 
 **WPF**
 
@@ -116,66 +116,66 @@ Text={Binding RelativeSource={RelativeSource otherControl}, Path=Text}
 Text={Binding Source={x:Reference otherControl}, Path=Text}
 ```
 
-同じ機能を使用できる、`{RelativeSource Self}`機能します。 ただしはサポートされていません型での先祖を見つけるため (`{RelativeSource FindAncestor}`)。
+同じ機能に使用できる、`{RelativeSource Self}`機能します。 ただし、種類別の先祖を検索するためのサポートされていません (`{RelativeSource FindAncestor}`)。
 
-#### <a name="binding-context"></a>バインド コンテキスト
+#### <a name="binding-context"></a>バインディング コンテキスト
 
-WPF では、定義することができます、`DataContext`どの reprents ソースにバインドする既定のプロパティ値します。 バインディングのソースが定義されていない場合は、このプロパティ値が使用されます。 値は、ビジュアル ツリーより高いレベルで定義することができると、子を使用してダウン継承されます。
+WPF では、定義することができます、`DataContext`プロパティ値のどの reprents、既定のソースをバインドします。 バインディングのソースが定義されていない場合は、このプロパティの値が使用されます。 値より高いレベルで定義することができ、子によって使用は、ビジュアル ツリーの下位に継承されます。
 
-Xamarin.Forms でこの同じ機能 avaialable が、プロパティ名が`BindingContext`です。
+Xamarin.Forms でこの同じ機能を利用可能なが、プロパティ名は`BindingContext`します。
 
 #### <a name="value-converters"></a>値コンバーター
 
-値コンバーターは、WPF と同じように、Xamarin.Forms で完全にサポートされます。 同じ [インターフェイス] 図形を使用し、Xamarin.Forms がで定義されているインターフェイスが、`Xamarin.Forms`名前空間。
+値コンバーターは、WPF と同様に、Xamarin.Forms で完全にサポートします。 同じインターフェイスの図形を使用するが Xamarin.Forms は、インターフェイスで定義されている、`Xamarin.Forms`名前空間。
 
-### <a name="model-view-viewmodel"></a>モデル View-viewmodel
+### <a name="model-view-viewmodel"></a>モデル-ビュー-ビューモデル
 
-MVVM は WPF と Xamarin.Forms の両方で完全にサポートします。
+MVVM は WPF と Xamarin.Forms の両方で完全にサポートされています。
 
-WPF 組み込まれておりで`RoutedCommand`使用される場合があります。Xamarin.Forms はを超えて組み込みコマンド実行のサポートを持たず、`ICommand`インターフェイス定義です。 MVVM を実装するために必要な基本クラスを追加する MVVM フレームワークのさまざまなを含めることができます。
+WPF に組み込まれている`RoutedCommand`使用される場合があります。Xamarin.Forms を超える組み込みのコマンド実行のサポートを持たない、`ICommand`インターフェイス定義です。 さまざまな MVVM を実装するために必要な基本クラスを追加する MVVM フレームワークを含めることができます。
 
 #### <a name="inotifypropertychanged-and-inotifycollectionchanged"></a>INotifyPropertyChanged と INotifyCollectionChanged
 
-両方のインターフェイスは、Xamarin.Forms バインドで完全にサポートされます。 多くの XAML ベースのフレームワークとは異なり Xamarin.Forms (WPF) と同様に、バック グラウンド スレッドでプロパティの変更通知を発生させることができ、バインディング エンジンは、UI スレッドに移行し正しくです。
+両方のインターフェイスは、Xamarin.Forms のバインドで完全にサポートします。 多くの XAML ベースのフレームワークとは異なりプロパティの変更通知は、Xamarin.Forms (WPF) と同様に、バック グラウンド スレッドで発生することができ、バインディング エンジンから UI スレッドへの移行正しくします。
 
-また、両方の環境をサポート`SynchronziationContext`と`async` / `await`を適切なスレッドにマーシャ リングを行うには。 WPF が含まれています、`Dispatcher`クラス Xamarin.Forms が静的メソッドを持つすべてのビジュアル要素の`Device.BeginInvokeOnMainThread`することもできます (が`SynchronizationContext`はクロスプラット フォームのコーディングの推奨)。
+さらに、両方の環境サポート`SynchronziationContext`と`async` / `await`適切なスレッドにマーシャ リングを行う。 WPF が含まれています、`Dispatcher`クラス Xamarin.Forms が静的メソッドを持つすべてのビジュアル要素に`Device.BeginInvokeOnMainThread`することもできます (が`SynchronizationContext`クロスプラット フォームでのコーディングの勧め)。
 
-- Xamarin.Forms を含む、`ObservableCollection<T>`コレクションの変更通知をサポートします。
-- 使用することができます`BindingBase.EnableCollectionSynchronization`コレクションのスレッド間の更新を有効にします。 API とは少し異なる WPF バリエーション[docs 使用方法の詳細を確認して](https://developer.xamarin.com/api/member/Xamarin.Forms.BindingBase.EnableCollectionSynchronization/)です。
+- Xamarin.Forms を含む、`ObservableCollection<T>`コレクションの変更通知をサポートしています。
+- 使用することができます`BindingBase.EnableCollectionSynchronization`コレクションのスレッド間の更新を有効にします。 API は WPF のバリエーションが若干異なる[は、ドキュメントの使用方法の詳細を確認してください。](xref:Xamarin.Forms.BindingBase.EnableCollectionSynchronization*)します。
 
 ## <a name="data-templates"></a>データ テンプレート
 
-データ テンプレートの表示をカスタマイズする Xamarin.Forms ではサポートされて、`ListView`行 (セル)。 利用できる WPF とは異なり`DataTemplate`任意コンテンツ指向コントロールは、Xamarin.Forms 現在 s のみが使用には、`ListView`です。 テンプレートの定義はインラインで定義することができます (に割り当てられている、`ItemTemplate`プロパティ)、または内のリソースとして、`ResourceDictionary`です。
+データ テンプレートの表示をカスタマイズする Xamarin.Forms ではサポートされて、`ListView`行 (セル)。 WPF を利用できるとは異なり`DataTemplate`コントロール コンテンツ指向、Xamarin.Forms を現在のそれらの使用のみ`ListView`します。 テンプレートの定義はインラインで定義することができます (に割り当てられている、`ItemTemplate`プロパティ)、または内のリソースとして、`ResourceDictionary`します。
 
-さらはありません、WPF の対応すると、非常に柔軟です。
+さらに、非常に、WPF の対応するほどの柔軟性はありません。
 
-1. ルート要素、`DataTemplate`必要があります_常に_する、`ViewCell`オブジェクト。
-2. データのトリガーは、データ テンプレートで完全にサポートが、含める必要があります、`DataType`トリガーに関連付けられているプロパティの型を示すプロパティです。
+1. ルート要素、`DataTemplate`する必要があります_常に_する、`ViewCell`オブジェクト。
+2. データ トリガーは、データ テンプレートで完全にサポートされますが、含める必要があります、`DataType`トリガーが関連付けられているプロパティの型を示すプロパティです。
 3. `DataTemplateSelector` サポートされていますから派生した`DataTemplate`し、そのために直接割り当てられただけ、`ItemTemplate`プロパティ (と`ItemTemplateSelector`WPF で)。
 
 ## <a name="itemscontrol"></a>ItemsControl
 
-組み込みの分にはありません、 `ItemsControl` xamarin.forms; がある、 [Xamarin.Forms の使用可能な次のいずれかをカスタム](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)です。
+組み込みの分がない、 `ItemsControl` Xamarin.Forms; では、[カスタムの 1 つの Xamarin.Forms こちらで入手できます](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)。
 
 ## <a name="user-controls"></a>ユーザー コントロール
 
-WPF では、`UserControl`動作が関連付けられている UI のセクションを提供するために使用されます。 Xamarin.Forms では使用して、`ContentView`を同じ目的。 両方により、バインドと包含が XAML でサポートします。
+WPF では、`UserControl`動作が関連付けられている UI のセクションを提供するために使用されます。 Xamarin.Forms で使用して、`ContentView`を同じ目的。 XAML でバインドと包含をサポート両方。
 
 ## <a name="navigation"></a>ナビゲーション
 
-WPF が含まれていますが、あまり使用されない`NavigationService`「ブラウザーのような」ナビゲーション機能を提供する使用可能性があります。 ただし、代わりに使用されるこのほとんどのアプリはたいした問題別`Window`要素、またはデータを表示するウィンドウのさまざまなセクションです。
+WPF が含まれていますが、あまり使用されない`NavigationService`「ブラウザーのような」ナビゲーション機能を提供するが使用される可能性があります。 ただし、代わりに使用されるこのほとんどのアプリを割り当てませんでした異なる`Window`要素、またはデータを表示するウィンドウのさまざまなセクションです。
 
-Phone デバイスでさまざまな_画面_ソリューションは、多くの場合と Xamarin.Forms のナビゲーションの形式のいくつかサポートしていますので。
+Phone デバイス、異なる_画面_ソリューションでは多くの場合と、Xamarin.Forms にいくつかの形式のナビゲーションのサポートが含まれていますので。
 
 | ナビゲーション スタイル | ページの種類 |
 |--- |--- |
-|スタックに基づく (プッシュ/ポップ)|NavigationPage|
+|スタック ベース (プッシュ/ポップ)|NavigationPage|
 |マスター/詳細|MasterDetailPage|
 |タブ|TabbedPage|
 |左/右の方向にスワイプ|CarouselView|
 
-`NavigationPage` 、最も一般的な方法は、すべてのページが、`Navigation`プッシュまたはポップのオンとオフ ナビゲーション スタックのページを使用できるプロパティです。 これは、最も近い分に、 `NavigationService` wpf が見つかりました。
+`NavigationPage` 、最も一般的なアプローチは、すべてのページが、`Navigation`プロパティ プッシュやポップをページで、ナビゲーション スタックからポップするために使用できます。 これに最も近い分、 `NavigationService` WPF で見つかった。
 
 ### <a name="url-navigation"></a>URL ナビゲーション
 
-WPF は、デスクトップ指向のテクノロジは、起動時の動作を指示するコマンド ライン パラメーターを受け取ることができます。 Xamarin.Forms を使用できる[URL のディープ リンク](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/)スタートアップ時に、ページにジャンプします。
+WPF は、デスクトップ指向のテクノロジは、起動の動作を指示するコマンド ライン パラメーターを受け入れることができます。 Xamarin.Forms を使用できる[URL のディープ リンク](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/)起動時に、ページにジャンプします。

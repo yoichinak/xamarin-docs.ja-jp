@@ -1,87 +1,88 @@
 ---
-title: Apple アカウント管理
-description: このドキュメントでは、Mac と Visual Studio 2017 の Visual Studio で、Apple のアカウントの管理機能を使用する方法について説明します。
+title: Apple アカウントの管理
+description: このドキュメントでは、Mac と Visual Studio 2017 の Visual Studio で、Apple アカウント管理機能を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f77ab1c48e3200088d8c582634921df1ecf1001c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4557d3b055e5c49842b9fdcff1dac9ee996e8bab
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781508"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986019"
 ---
-# <a name="apple-account-management"></a>Apple アカウント管理
+# <a name="apple-account-management"></a>Apple アカウントの管理
 
-Apple アカウント管理のインターフェイスは、Apple ID を持つ関連するすべての開発チームを表示する方法を提供します。 一覧を表示することによって各チームの詳細を表示することもできます_署名 Id_と_プロビジョニング プロファイル_コンピューターにインストールされています。
+Apple アカウントの管理インターフェイスは、Apple ID に関連付けられているすべての開発チームを表示する方法を提供します。 一覧が表示される各チームの詳細を表示することもできます_署名 Id_と_Provisioning Profiles_コンピューターにインストールされています。
 
-Apple ID の認証は使用してコマンドラインで実行[がありません](https://fastlane.tools/)です。 ありませんは、正常に認証するためのコンピューターにインストールする必要があります。 詳細についてがなく、そのインストール方法の詳細について、[がありません](~/ios/deploy-test/provisioning/fastlane/index.md)ガイドです。
+Apple ID の認証は使用してコマンドラインで実行[fastlane](https://fastlane.tools/)します。 fastlane は、正常に認証するためのコンピューターにインストールする必要があります。 Fastlane とそのインストール方法の詳細についての詳細については、 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)ガイド。
 
 Apple アカウント ダイアログでは、次の操作を行うことができます。
 
-* **作成し、証明書の管理** 
-* **作成し、プロビジョニング プロファイルの管理** 
+* **作成し、証明書の管理**
+* **作成し、プロビジョニング プロファイルの管理**
 
-これを行う方法の詳細については、このガイドで説明します。
+これを行う方法については、このガイドで説明します。
 
-また、自動的に作成し、署名 Id、アプリケーションの Id およびプロビジョニング プロファイルを管理する iOS のツールの自動プロビジョニングを使用することができます。
+> [!NOTE]
+> Apple アカウント管理用の Xamarin のツールでは、有料の Apple 開発者アカウントに関する情報のみ表示されます。 有料の Apple developer アカウントを使用せず、デバイス上のアプリをテストする方法については、次を参照してください、 [Xamarin.iOS アプリの無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)ガイド。
 
-これらの機能を使用する方法についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
-️
+自動的に作成し、署名 Id、アプリの Id とプロビジョニング プロファイルを管理する iOS 自動プロビジョニング ツールを使用することもできます。 これらの機能の使用に関する詳細についてを参照してください、 [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md)ガイド。
+
 ## <a name="requirements"></a>必要条件
 
-Apple アカウントの管理は Visual Studio for Mac と Visual Studio 2017 (15.7 以降のバージョン) で使用できます。
+Apple アカウントの管理は、Visual Studio for Mac と Visual Studio 2017 (バージョン 15.7 以降) でご確認いただけます
 
-この機能を使用する Apple 開発者アカウントが必要です。 Apple 開発者アカウントの詳細についてで使用できる、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
+この機能を使用する Apple Developer アカウントが必要です。 Apple 開発者アカウントの詳細についてで使用できる、 [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md)ガイド。
 
-- インターネットに接続していることを確認します。 ありませんが、Apple 開発者ポータルに直接通信するためです。
-- いることを確認[がありませんツールがインストールされて](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)です。
-- 最新のありませんツールがあることを確認[ https://download.fastlane.tools](https://download.fastlane.tools)です。
-- 開始する前に確認で、ユーザーのライセンス契約を受け入れるように、[開発者ポータル](https://developer.apple.com/account/)です。
+- インターネットに接続していることを確認します。 Fastlane が Apple Developer ポータルに直接通信するためです。
+- 確保[fastlane ツールがインストールされている](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)します。
+- 最新の fastlane ツールがあることを確認[ https://download.fastlane.tools](https://download.fastlane.tools)します。
+- 開始する前にことで、ユーザーのライセンス契約に同意することを確認して、[開発者ポータル](https://developer.apple.com/account/)します。
 
 ## <a name="adding-an-apple-developer-account"></a>Apple 開発者アカウントを追加します。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 移動するアカウントの管理 ダイアログを開くには**Visual Studio > 設定 > Apple の開発者アカウント**:
+1. 移動するアカウント管理ダイアログ ボックスを開くには**Visual Studio > 設定 > Apple 開発者アカウント**:
 
-    ![Apple の開発者アカウント オプション](apple-account-management-images/image1.png)
+    ![Apple 開発者アカウントのオプション](apple-account-management-images/image1.png)
 
 2. キーを押して、 **+** 次のように、ダイアログ ボックスで、記号を表示するボタンをクリックします。 
 
-    ![ダイアログがありません。](apple-account-management-images/image2.png)
+    ![fastlane ダイアログ。](apple-account-management-images/image2.png)
 
-4. Apple ID とパスワードを入力し、クリックして、**サイン イン**ボタンをクリックします。 このコンピューターで、資格情報をセキュリティで保護されたキーチェーンにこれは、保存されます。 [ありません](~/ios/deploy-test/provisioning/fastlane/index.md)資格情報を安全に処理し、Apple の開発者ポータルに渡すために使用します。
+4. Apple ID とパスワードを入力し、クリックして、**サインイン**ボタンをクリックします。 このコンピューターで、資格情報をセキュリティで保護されたキーチェーンにこれは、保存されます。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)資格情報を安全に処理して、Apple の開発者ポータルに渡したりするために使用します。
  
-5. 選択**常に許可する**[Visual Studio での資格情報を使用するようにする警告] ダイアログ ボックス。
+5. 選択**常に許可する**アラート ダイアログに Visual Studio、資格情報を使用することを許可します。
 
-    ![常に警告ダイアログを許可します。](apple-account-management-images/image4.png)
+    ![アラート ダイアログを常に許可します。](apple-account-management-images/image4.png)
 
-6. 自分のアカウントが正常に追加したら、Apple ID が含まれるチームおよび Apple ID が表示されます。
+6. 自分のアカウントを正常に追加された後は、Apple ID と、Apple ID の一部である任意のチームを確認します。
 
-    ![追加されたアカウントの Apple の開発者アカウント ダイアログ](apple-account-management-images/image5.png)
+    ![Apple 開発者アカウントのダイアログ ボックスがアカウントの追加](apple-account-management-images/image5.png)
 
-7. 任意のチームとキーを押して選択、**の詳細を表示しています.** を追加します。 これにより、すべての署名 Id と、コンピューターにインストールされているプロビジョニング プロファイルの一覧が表示されます。
+7. チームおよびキーを押して選択、**の詳細を表示しています.** を追加します。 これにより、すべての署名 Id と、コンピューターにインストールされているプロビジョニング プロファイルの一覧が表示されます。
 
-    ![詳細画面を示すビュー署名 id と、コンピューター上のプロファイルのプロビジョニング](apple-account-management-images/image6.png)
+    ![署名 id とプロビジョニング プロファイルがコンピューターにビューの詳細画面が表示されました。](apple-account-management-images/image6.png)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Visual Studio 2017 への Apple ID の追加を開始する前に必ず、開発環境が[Mac ビルド ホストにペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)です。
+1. Visual Studio 2017 への Apple ID の追加を開始する前に、開発環境が確認[Mac ビルド ホストにペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)します。
 
 1. アカウントの管理 ウィンドウを開くには、するには**ツール > オプション > Xamarin > Apple アカウント**:
 
-    ![アカウントの Apple のオプション 画面](apple-account-management-images/prov1.png)
+    ![Apple アカウントのオプション 画面](apple-account-management-images/prov1.png)
 
 1. 選択、**追加**ボタンをクリックし、Apple ID とパスワードを入力します。
 
     ![ユーザー名とパスワード ダイアログ ボックス](apple-account-management-images/prov1a.png)
 
-1. 自分のアカウントが正常に追加したら、Apple ID が含まれるチームおよび Apple ID が表示されます。
+1. 自分のアカウントを正常に追加された後は、Apple ID と、Apple ID の一部である任意のチームを確認します。
  
-1. 任意のチームとキーを押して選択、**の詳細を表示しています.** を追加します。 これにより、すべての署名 Id と、コンピューターにインストールされているプロビジョニング プロファイルの一覧が表示されます。
+1. チームおよびキーを押して選択、**の詳細を表示しています.** を追加します。 これにより、すべての署名 Id と、コンピューターにインストールされているプロビジョニング プロファイルの一覧が表示されます。
 
     ![ユーザー名とパスワード ダイアログ ボックス](apple-account-management-images/prov2.png)
 
@@ -90,31 +91,31 @@ Apple アカウントの管理は Visual Studio for Mac と Visual Studio 2017 (
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>署名 Id の管理とプロビジョニング プロファイル
 
-チームの詳細 ダイアログには、型ごとに構成された署名 Id の一覧が表示されます。 **ステータス**列するように勧めるかどうか、証明書は。 
+チームの詳細 ダイアログでは、種類別に整理、署名 Id の一覧が表示されます。 **状態**列ではお勧めするかどうか、証明書は。 
 
-* **有効な**– 署名 id (証明書と秘密キーの両方) がコンピューターにインストールされているしが切れていません。
+* **有効な**– 署名 id (証明書と秘密キーの両方) がコンピューターにインストールされているし、期限が切れていません。
 
-* **キーチェーン内にない**– Apple のサーバーに有効な署名 id があります。 これをコンピューターにインストールするに別のコンピューターからエクスポートする必要があります。 ように、秘密キーは含まれません、Apple 開発者ポータルから署名 id をダウンロードすることはできません。
+* **キーチェーン内にありません**– Apple のサーバーで有効な署名 id があります。 これは、コンピューターにインストールするに別のコンピューターからエクスポートする必要があります。 秘密キーは含まれません、Apple Developer Portal から署名 id をダウンロードできません。
 
-* **秘密キーが不足している**– キーチェーンに秘密キーがないと、証明書がインストールされています。
+* **秘密キーが見つかりません**– 証明書と秘密キーがありませんが、キーチェーンにインストールされています。
 
-* **有効期限が切れて**– 証明書の有効期限が切れています。 これは、キーチェーンから削除する必要があります。
+* **有効期限が切れて**– 証明書の期限が切れています。 これは、キーチェーンから削除する必要があります。
 
   ![チームの詳細 ダイアログの情報](apple-account-management-images/image7.png)
 
 ## <a name="create-a-signing-identities"></a>署名 Id を作成します。
 
-新しい署名 id を作成するには、選択、**証明書の作成**ドロップダウン ボタンをクリックし、必要な型を選択します。 新しい署名適切なアクセス許可がある場合は、identity が数秒後に表示されます。
+新しい署名 id を作成するには、選択、**証明書の作成**ドロップダウン ボタンをクリックして、必要な種類を選びます。 新しい署名の正しいアクセス許可がある場合は、identity が数秒後に表示されます。
 
-ドロップダウン リストのオプションがグレーで表示、選択されていない場合は、この種類の証明書を作成する適切なチームのアクセス許可があるいないことを意味します。
+ドロップダウン リストのオプションがグレーで表示、選択解除されている場合は、この種類の証明書を作成する適切なチームのアクセス許可がないことを意味します。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![証明書のオプションを作成します。](apple-account-management-images/image8.png)
+![証明書オプションを作成します。](apple-account-management-images/image8.png)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![証明書のオプションを作成します。](apple-account-management-images/prov3.png)
+![証明書オプションを作成します。](apple-account-management-images/prov3.png)
 
 -----
 
@@ -134,28 +135,28 @@ Apple アカウントの管理は Visual Studio for Mac と Visual Studio 2017 (
 
 ## <a name="ios-bundle-signing"></a>iOS バンドル署名
 
-デバイスにアプリを配置する方法の詳細についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイドです。
+デバイスにアプリを展開する方法の詳細についてを参照してください、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイド。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-### <a name="view-details-dialog-is-empty"></a>ビューの詳細 ダイアログ ボックスが空
+### <a name="view-details-dialog-is-empty"></a>ビューの詳細 ダイアログが空です。
 
-これは、バグに関連する既知の問題では現在[#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906)です。 Mac の最新の安定したバージョンの Visual Studio を使用していることを確認してください。
+これは現在、既知の問題に関連するバグ[#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906)します。 Mac 用の Visual Studio の最新の安定バージョンを使用しているかどうかを確認します。
 
-### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>自分のアカウントでのログ記録の問題が発生する場合は、次の点をやり直してください。
+### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>自分のアカウントでのログ記録の問題が発生する場合は、次をやり直してください。
 
-* キーチェーン アプリケーションを開き、カテゴリ で *パスワード*です。 検索`deliver.`、およびすべてのエントリを削除します。
+* キーチェーンのアプリケーションを開き、カテゴリを選択します*パスワード*します。 検索`deliver.`、すべてのエントリを削除します。
 
-### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"アカウントの追加のエラーです。 特定のアプリ パスワードでサインインしてください。"
+### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"エラー アカウントを追加します。 アプリ固有のパスワードでサインインしてください"
 
-これは、アカウントの 2 要素認証が有効になっているためです。 Mac の最新の安定したバージョンの Visual Studio を使用していることを確認してください。
+これは、アカウントで 2 要素認証が有効になっているためにです。 Mac 用の Visual Studio の最新の安定バージョンを使用しているかどうかを確認します。
 
 ### <a name="failed-to-create-new-certificate"></a>新しい証明書を作成できませんでした。
 「この種類の証明書の上限に達しました」
 
 ![証明書の制限 ダイアログ](apple-account-management-images/image10.png)
 
-許可される証明書の最大数が生成されました。 この問題を解決する」を参照、 [Apple Developer Center](https://developer.apple.com/account/ios/certificate/distribution)運用証明書のいずれかを取り消すとします。
+許可されている証明書の最大数が生成されました。 この問題を解決する」を参照、 [Apple Developer Center](https://developer.apple.com/account/ios/certificate/distribution)運用の証明書のいずれかを取り消すとします。
 
 ## <a name="known-issues"></a>既知の問題
 

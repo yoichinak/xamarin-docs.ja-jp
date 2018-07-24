@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762527"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Amazon App Store に公開する
 

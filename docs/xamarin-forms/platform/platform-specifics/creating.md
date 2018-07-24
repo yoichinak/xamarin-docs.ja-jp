@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: a07ff2e206a08ee40355733ab2c1026f29de2f2f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1d9f07a089eabedf07bef49c9815fe7e93128f09
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242785"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997257"
 ---
 # <a name="creating-platform-specifics"></a>Platform Specific の作成
 
@@ -33,7 +33,7 @@ Platform-specific として Effect を公開すると、 fluent API や XAML を
 > [!NOTE]
 > ベンダーがユーザーの負担軽減のために、この技術を使って、独自の platform-specific を作成することを想定しています。 ユーザーが独自の platform-specific の作成を選択しようとする場合は、 Effect を作成して使用する場合より多くのコードが要求されるということに注意すべきです。
 
-サンプルアプリケーションでは、 [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) コントロールによって表示されるテキストに影を加える `Shadow` platform-specific について説明します。
+サンプルアプリケーションでは、 [`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を加える `Shadow` platform-specific について説明します。
 
 ![](creating-images/screenshots.png "Shadow Platform-Specific")
 
@@ -136,7 +136,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-`IsShadowed` 添付プロパティは、`MyCompany.LabelShadowEffect` クラスが添付されたコントロールに `Shadow` の Effect を追加したり取り除いたりするために使われます。 この添付プロパティに、プロパティの値が変更された時に実行される `OnIsShadowedPropertyChanged` メソッドを登録します。 次に、このメソッドは `IsShadowed` 添付プロパティの値に基づいて Effect を追加したり取り除いたりするための `AttachEffect` または `DetachEffect` メソッドを呼び出します。 コントロールの [`Effects`](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) コレクションを変更することによって、 その Effect をコントロールに追加したり取り除いたりします。
+`IsShadowed` 添付プロパティは、`MyCompany.LabelShadowEffect` クラスが添付されたコントロールに `Shadow` の Effect を追加したり取り除いたりするために使われます。 この添付プロパティに、プロパティの値が変更された時に実行される `OnIsShadowedPropertyChanged` メソッドを登録します。 次に、このメソッドは `IsShadowed` 添付プロパティの値に基づいて Effect を追加したり取り除いたりするための `AttachEffect` または `DetachEffect` メソッドを呼び出します。 コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションを変更することによって、 その Effect をコントロールに追加したり取り除いたりします。
 
 > [!NOTE]
 > Effect は resolution group 名と Effect の実装を特定するユニークな識別子を連結した値によって決定されることに注意してください。 詳細については、[Effect の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)を参照してください。
@@ -175,13 +175,13 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-`IsShadowed` と `SetIsShadowed` 拡張メソッドは、それぞれ `IsShadowed` 添付プロパティのための get / set アクセサーを呼び出します。 各拡張メソッドは、 `IPlatformElementConfiguration<iOS, FormsElement>` 型で操作します。これによって platform-specific を iOS から [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) のインスタンスを使って呼び出すことができるようになります。
+`IsShadowed` と `SetIsShadowed` 拡張メソッドは、それぞれ `IsShadowed` 添付プロパティのための get / set アクセサーを呼び出します。 各拡張メソッドは、 `IPlatformElementConfiguration<iOS, FormsElement>` 型で操作します。これによって platform-specific を iOS から [`Label`](xref:Xamarin.Forms.Label) のインスタンスを使って呼び出すことができるようになります。
 
 <a name="creating_the_effect" />
 
 ### <a name="creating-the-effect"></a>Effect の作成
 
-`Shadow` platform-specific は、 `MyCompany.LabelShadowEffect` を [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) に追加したり削除したりします。 次のコードサンプルでは、 iOS プロジェクトの `LabelShadowEffect` 実装を示します。
+`Shadow` platform-specific は、 `MyCompany.LabelShadowEffect` を [`Label`](xref:Xamarin.Forms.Label) に追加したり削除したりします。 次のコードサンプルでは、 iOS プロジェクトの `LabelShadowEffect` 実装を示します。
 
 ```csharp
 [assembly: ResolutionGroupName("MyCompany")]
@@ -252,7 +252,7 @@ Effect の作成の詳細については、 [Effect の作成](~/xamarin-forms/a
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

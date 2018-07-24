@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762085"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Android のリリース ビルドが、インターネットに接続できない理由をしますか。
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 04/04/2018
 
 問題を解決するには、Android のマニフェストでインターネット アクセス許可を要求できます。 これは、マニフェスト エディターまたはマニフェストのソースコードから実行できます。
 
--   エディターで修正: Android のプロジェクトに移動**プロパティ AndroidManifest.xml]-> [必要なアクセス許可]-> [**チェックと**インターネット**
+-   エディターで修正: Android のプロジェクトに移動**プロパティ AndroidManifest.xml]-> [必要なアクセス許可]-> [** チェックと**インターネット**
 
 -   ソースコードで修正: ソース エディターで、AndroidManifest を開き、内のアクセス許可のタグを追加、`<Manifest>`タグ。
 

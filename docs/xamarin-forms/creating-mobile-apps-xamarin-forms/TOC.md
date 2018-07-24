@@ -1,5 +1,4 @@
 # [Xamarin.Forms Book で Mobile Apps を作成する](index.md)
-## [章の概要](summaries/index.md)
 ## [1.Xamarin.Forms どのように適合しますか。](summaries/chapter01.md)
 ## [2.アプリの詳細](summaries/chapter02.md)
 ## [3.テキストに進む](summaries/chapter03.md)

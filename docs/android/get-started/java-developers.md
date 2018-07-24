@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209337"
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
@@ -50,7 +51,7 @@ Java と C# はどちらも、マネージ実行環境で実行される中間�
 
 -   Java は、`#define` のようなプリプロセッサ ディレクティブをサポートしていません。
 
--   Java は符号なし整数型をサポートしていませんが、C では `ulong`、`uint`、`ushort`、`byte` などの符号なし整数型が提供されます。
+-   Java は符号なし整数型をサポートしていませんが、C# では `ulong`、`uint`、`ushort`、`byte` などの符号なし整数型がサポートされます。
 
 -   Java は演算子のオーバーロードをサポートしていませんが、C# では演算子と変換をオーバーロードできます。
 
@@ -463,7 +464,8 @@ Java で使われている言語キーワードの多くは、C# でも使われ
 |[in](https://msdn.microsoft.com/en-us/library/dd469484.aspx)|パラメーターがジェネリック インターフェイスの弱い派生型を受け付けられるようにします。|
 |[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|.NET Framework のオブジェクト型の別名です。|
 |[out](https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx)|パラメーター修飾子またはジェネリック型パラメーターの宣言です。|
-|[override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|継承されたメンバーの実装を拡張または修正します。|
+|
+  [override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|継承されたメンバーの実装を拡張または修正します。|
 |[partial](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|定義が複数のファイルに分割されることを宣言します。または、実装からのメソッド定義を分割します。|
 |[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)|クラスのメンバーが、宣言時にのみ、またはクラス コンストラクターによってのみ、割り当てられることを宣言します。|
 |[ref](https://msdn.microsoft.com/en-us/library/14akc2c7.aspx)|値ではなく、参照によって引数が渡されるようにします。|

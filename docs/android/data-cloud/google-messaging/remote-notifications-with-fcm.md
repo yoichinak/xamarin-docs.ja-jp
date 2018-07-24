@@ -12,6 +12,7 @@ ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31044939"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート Firebase 通知クラウド メッセージング
 
@@ -534,7 +535,7 @@ subscribeButton.Click += delegate {
 
 5.  デバイスが準備完了 をクリックして**メッセージの送信**Firebase コンソールでします。 
 
-6.  チェック、IDE の出力を表示するウィンドウ**/トピック/ニュース**ログの出力。 
+6.  チェック、IDE の出力を表示するウィンドウ **/トピック/ニュース**ログの出力。 
 
     [![/Topic/news からメッセージが表示されます。](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 

@@ -1,15 +1,17 @@
 ---
 title: Windows に Xamarin (プレビュー) をインストールする
+description: このドキュメントでは、プレビュー リリース チャネルを使用して、Visual Studio 2017 にプレビュー バージョンの Xamarin をインストールする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 20b9bbfcdcc698f19c6400cd738ba7f6d5db7e44
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 12a661a7cb0e92046e56c5c2ece6e8504252ca10
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066859"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Windows に Xamarin (プレビュー) をインストールする
 
@@ -19,7 +21,7 @@ Visual Studio 2017 では、アルファ、ベータ、安定チャネルのサ�
 - **プレビュー** – Visual Studio for Mac の "_アルファ_" および "_ベータ_" チャネルと同等です
 
 > [!TIP] 
-> プレリリース機能を試すには、[Visual Studio 2017 Preview インストーラーをダウンロードする](https://www.visualstudio.com/vs/preview/)必要があります。このインストーラーには、Visual Studio の**プレビュー** バージョンと安定 (リリース) バージョンをサイド バイ サイドでインストールするオプションがあります。 Visual Studio 2017 の新機能について詳しくは、[リリース ノート](/visualstudio/releasenotes/vs2017-preview-relnotes)をご覧ください。
+> プレリリース機能を試すには、[Visual Studio 2017 Preview インストーラーをダウンロードする](https://visualstudio.microsoft.com/vs/preview/)必要があります。このインストーラーには、Visual Studio の**プレビュー** バージョンと安定 (リリース) バージョンをサイド バイ サイドでインストールするオプションがあります。 Visual Studio 2017 の新機能について詳しくは、[リリース ノート](/visualstudio/releasenotes/vs2017-preview-relnotes)をご覧ください。
 
 Visual Studio のプレビュー バージョンには、次のような、Xamarin の機能の対応するプレビュー バージョンが含まれる場合があります。
 
@@ -27,7 +29,8 @@ Visual Studio のプレビュー バージョンには、次のような、Xamar
 - Xamarin.iOS
 - Xamarin.Android
 - Xamarin Profiler
-- Xamarin Workbooks/インスペクター
+- Xamarin Workbooks
+- Xamarin Inspector
 - Xamarin Remote iOS Simulator
 
 次の**プレビュー インストーラー**のスクリーンショットでは、プレビューとリリース両方のオプションが示されています (灰色のバージョン番号に注意してください: バージョン 15.0 はリリースで、バージョン 15.1 はプレビューです)。

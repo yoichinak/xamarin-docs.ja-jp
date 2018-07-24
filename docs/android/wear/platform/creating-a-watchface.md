@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30772940"
 ---
 # <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成します。
 
@@ -75,7 +76,7 @@ Android 5.0 が、最小 API レベル ウォッチ フェイス サービス、
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-最低限の Android バージョンを設定**Android 5.1 (API レベル 22)**です。 また、有効にする、**インターネット**と**WakeLock**アクセス許可。
+最低限の Android バージョンを設定**Android 5.1 (API レベル 22)** です。 また、有効にする、**インターネット**と**WakeLock**アクセス許可。
 
 [![アクセス許可を必要な](creating-a-watchface-images/05-required-permissions-xs.png "を有効にするインターネットおよび WakeLock のアクセス許可")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 

@@ -6,12 +6,12 @@ ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 84ef5d047b3f70635d74ef5bee7741a7447db677
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 53871a5311cdba824b0bddca37dd5c416d06e272
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793218"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066810"
 ---
 # <a name="getting-started-with-java"></a>Java の概要
 
@@ -35,10 +35,10 @@ Windows の場合。
 
 Android:
 
-* [Xamarin.Android 7.5](https://www.visualstudio.com/xamarin/)以降
+* [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)以降
 * [Android Studio 3.x](https://developer.android.com/studio/index.html) with Java 1.8
 
-使用することができます[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)を編集し、c# コードをコンパイルします。
+使用することができます[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)を編集し、c# コードをコンパイルします。
 
 > [!NOTE]
 > 以前のバージョンの Xcode、Visual Studio、Xamarin.Android、Android Studio、およびモノラル_可能性があります_機能しますが、テスト、サポートされていません。

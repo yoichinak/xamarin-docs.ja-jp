@@ -1,32 +1,37 @@
 ---
-title: 目標ペンを使わず機能
-description: このドキュメントは、目的のペンを使わずに記述するのに役立つさまざまなガイドにリンクし、生成された出力を使用する方法です。
+title: 目標油性機能
+description: このドキュメントは、目的の油性を記述するのに役立つさまざまなガイドにリンクし、生成される出力を使用する方法。
 ms.prod: xamarin
 ms.assetid: 9A17A2C6-AFFD-41E2-BE9B-9BC1AA57E1E1
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: f95458052dbab7dec2cf9edb463401812d235330
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8eaff208632d907d8c630f696adbbc1856f4bc57
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780657"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855124"
 ---
-# <a name="objective-sharpie-features"></a>目標ペンを使わず機能
+# <a name="objective-sharpie-features"></a>目標油性機能
 
-目標ペンを使わずの機能を理解するのにはこれらのページを参照してください。
+目標油性の機能を理解するこれらのページを参照します。
 
 ## <a name="apidefinitionscs--structsandenumscsapidefinitions-structsandenumsmd"></a>[**ApiDefinitions.cs & StructsAndEnums.cs**](apidefinitions-structsandenums.md)
 
-バインド プロジェクトに含まれる、目標ペンを使わずによっては、これら 2 つのファイルが生成されます。 詳細については、それら[ここ](apidefinitions-structsandenums.md)です。
+バインド プロジェクトに含まれる、目的の油性によっては、これら 2 つのファイルが生成されます。 詳細については、[ここ](apidefinitions-structsandenums.md)します。
 
 ## <a name="native-frameworksnative-frameworksmd"></a>[**ネイティブ フレームワーク**](native-frameworks.md)
 
-一部のライブラリは、ソースではなくフレームワークとして配布されます。
-目標ペンを使わずでは、これらのライブラリを使用することができます、`-framework`オプション。
+いくつかのライブラリは、ソースではなくフレームワークとして配布されます。
+これらのライブラリを使用することができます目標油性、`-framework`オプション。
 
-## <a name="verifyverifymd"></a>[**確認してください。**](verify.md)
+## <a name="verifyverifymd"></a>[**確認します**](verify.md)
 
-目標ペンを使わずに追加`Verify`属性を手動で調査して、生成されたバインディングを更新する必要があることを通知します。 
+目標油性追加`Verify`属性を手動で検査して、生成されたバインディングを更新する必要があることを通知します。 
+
+## <a name="related-links"></a>関連リンク
+
+- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
 

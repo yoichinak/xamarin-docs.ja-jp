@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Mac リンカー オプション
-description: リンクは、使用していないコードを削除してアプリケーションのサイズを縮小する強力な最適化ツールです。
+description: このドキュメントでは、Xamarin.Mac のリンクについて説明します。 リンクは、使用していないコードを削除してアプリケーションのサイズを縮小する強力な最適化ツールです。
 ms.prod: xamarin
 ms.assetid: F03176C3-F8D4-4DE8-870C-7F27D8CE525A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: f98953574f33612395500787a09351d2ba451802
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e565511d96ac85d89ec51be01934695def3e20bb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791869"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac リンカー オプション
 
@@ -32,7 +33,7 @@ _リンクは、使用していないコードを削除してアプリケーシ�
 
 Full の[ターゲット フレームワーク](~/mac/platform/target-framework.md)を使用したアプリケーションのリンクは一般に安全ではありませんが、非常に制限された形式のリンクが必要なシナリオがいくつかあります。
 
-たとえば、macOS App Store に送信されるアプリケーションは、いくつかの非推奨 API (QTKit など) を参照してはなりません。これらの API の一部は Xamarin.Mac にバインディングが含まれます。 アプリケーションがこれらのバインディングを呼び出さない場合でも、呼び出しは SDK 内に存在するため、拒否されます。
+たとえば、macOS App Store に送信されるアプリケーションは、いくつかの非推奨の API (QTKit など) を参照してはなりません。これらの API の一部は Xamarin.Mac にバインディングが含まれます。 アプリケーションがこれらのバインディングを呼び出さない場合でも、呼び出しは SDK 内に存在するため、拒否されます。
 
 プラットフォームのリンクは、アプリケーションと BCL が安全でないリンカーであると想定し、Xamarin.Mac.dll から使用していないコードを削除します。 
 

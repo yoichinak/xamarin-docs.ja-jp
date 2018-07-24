@@ -7,15 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: b54313668a2cb87a6cce0b8c519a06247524df81
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 05492f866bb083326ef1eccb8db3d624d8dc4806
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209311"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
-_この記事では、iTunes Connect で Xamarin.iOS アプリケーションを App Store で配布するためにリリースできるように、設定および維持するために必要な手順について説明します。_
+> [!IMPORTANT]
+> Apple は、2018 年 7 月以降に App Store に申請されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイに対応](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)する必要があることを[通知](https://developer.apple.com/news/?id=05072018a)しました。
 
 iTunes Connect は、特に App Store で iOS アプリケーションを管理するための Web ベースのツール群です。 Xamarin.iOS アプリケーションをレビューのために Apple に提出し、最終的に App Store で販売または無償アプリとしてリリースする前に、アプリケーションを正しく設定して、iTunes Connect で構成する必要があります。
 

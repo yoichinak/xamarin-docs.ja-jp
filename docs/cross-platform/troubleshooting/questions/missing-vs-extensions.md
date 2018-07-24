@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917890"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>インストール後に不足している Visual Studio の拡張機能
 

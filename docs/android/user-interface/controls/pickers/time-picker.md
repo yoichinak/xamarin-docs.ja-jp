@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30769898"
 ---
 # <a name="time-picker"></a>時刻の選択
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 04/04/2018
 
 [![アプリで表示される既定の時刻の選択ダイアログのスクリーン ショット](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
-`TimePickerDialog`、時刻を選択しをクリックすると、 **[ok]**原因のボタンをクリックして、`TimePickerDialog`メソッドを呼び出す[IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/)です。
+`TimePickerDialog`、時刻を選択しをクリックすると、 **[ok]** 原因のボタンをクリックして、`TimePickerDialog`メソッドを呼び出す[IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/)です。
 このインターフェイスは、ホストによって実装`DialogFragment`(`TimePickerFragment`、以下の説明)。 クリックすると、**キャンセル**ボタンをクリックすると、フラグメントとダイアログ ボックスを破棄できます。
 
 `DialogFragment` 3 つの方法のいずれかでホスティング Actvity に、選択された時刻を返します。

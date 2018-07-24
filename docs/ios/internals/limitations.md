@@ -1,42 +1,42 @@
 ---
 title: Xamarin.iOS の制限事項
-description: このドキュメントでは、Xamarin.iOS、ジェネリック、NSObjects、汎用のオブジェクトでは、P/invoke などの汎用サブクラスについて議論の制限事項について説明します。
+description: このドキュメントでは、ジェネリック、NSObjects、汎用のオブジェクトでは、P/invoke などの汎用サブクラスについて説明する Xamarin.iOS の制限事項について説明します。
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e154e4e1688b8a3d03459956934409fa9d5aef35
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786230"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998086"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS の制限事項
 
-Xamarin.iOS を使用して iPhone 上のアプリケーションが静的コードにコンパイルされるので、実行時にコード生成を必要とするすべての機能を使用することはできません。
+Xamarin.iOS を使用して iPhone 上のアプリケーションが静的コードにコンパイルされるため、実行時コード生成を必要とする機能を使用することはできません。
 
-デスクトップ モノラルと比較して、Xamarin.iOS 制限事項を次に示します。
+これらは、Mono デスクトップに比べて Xamarin.iOS の制限事項です。
 
  <a name="Limited_Generics_Support" />
 
 
-## <a name="limited-generics-support"></a>限られたジェネリックのサポート
+## <a name="limited-generics-support"></a>制限付きのジェネリックのサポート
 
-従来の Mono/.NET とは異なり、iPhone 上のコードは、前もって JIT コンパイラによって要求時にコンパイルされるのではなく静的にコンパイルされます。
+Mono と .NET の従来とは異なり、iPhone 上のコードは前もって必要に応じて、JIT コンパイラでコンパイルされているのではなく静的にコンパイルされます。
 
-モノラルの[完全 AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot)テクノロジ ジェネリックに関していくつかの制限には、これらはすべてジェネリック インスタンス化はコンパイル時に事前に決定できるため、発生します。 コードのコンパイル時のコンパイラで、のみを使用して実行時に常に、通常の .NET またはモノラル ランタイムの問題はありません。 このするという難題 Xamarin.iOS などの静的コンパイラ。
+Mono の[AOT の完全な](http://www.mono-project.com/docs/advanced/aot/#full-aot)テクノロジ ジェネリックに関していくつかの制限には、これらはすべてジェネリック インスタンス化を事前コンパイル時に決定できるためが発生します。 コードのコンパイル時にコンパイラで、だけを使用して常に、通常の .NET または Mono ランタイムの問題はありません。 これにより、Xamarin.iOS のような静的コンパイラにとっての課題です。
 
-開発者が遭遇する一般的な問題のものがあります。
+開発者が直面する一般的な問題のいくつか挙げます。
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
-### <a name="generic-subclasses-of-nsobjects-are-limited"></a>ジェネリック NSObjects サブクラスが制限されます。
+### <a name="generic-subclasses-of-nsobjects-are-limited"></a>ジェネリック NSObjects サブクラスは制限されています
 
-Xamarin.iOS 現在に対するサポートが制限などのジェネリック メソッドはサポートされていません、NSObject クラスの汎用のサブクラスを作成します。 7.2.1、時点では、NSObjects の汎用のサブクラスを使用可能であれば、次のようです。
+Xamarin.iOS には、現在の状態で、ジェネリック メソッドのサポートなしなど、NSObject クラスの汎用サブクラスを作成するためのサポートが限られています。 7.2.1、時点では、NSObjects の汎用サブクラスを使用可能であれば、次のようなです。
 
 ```csharp
 class Foo<T> : UIView {
@@ -45,11 +45,11 @@ class Foo<T> : UIView {
 ```
 
 > [!NOTE]
-> NSObjects の汎用的なサブクラスが可能ですが、いくつかの制限があります。 読み取り、 [NSObject の汎用サブクラス](~/ios/internals/api-design/nsobject-generics.md)詳細についてはドキュメント
+> NSObjects の汎用サブクラスが可能ですが、いくつかの制限があります。 読み取り、 [NSObject の](~/ios/internals/api-design/nsobject-generics.md)詳細については、ドキュメント
 
 
 
-### <a name="pinvokes-in-generic-types"></a>ジェネリック型で P/呼び出し
+### <a name="pinvokes-in-generic-types"></a>ジェネリック型の P/呼び出します
 
 ジェネリック クラスの P/invoke はサポートされていません。
 
@@ -65,18 +65,18 @@ class GenericType<T> {
 
 ### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Property.SetInfo null 許容型ではサポートされていません
 
-リフレクションの Property.SetInfo を使用して、null 許容の値に設定する&lt;T&gt;は現在サポートされていません。
+リフレクションの Property.SetInfo を使用して、null 許容の値を設定する&lt;T&gt;は現在サポートされていません。
 
  <a name="Value_types_as_Dictionary_Keys" />
 
 
-### <a name="value-types-as-dictionary-keys"></a>ディクショナリのキーと値の型
+### <a name="value-types-as-dictionary-keys"></a>Dictionary のキーと値の型
 
-値の型を使用してディクショナリとして&lt;TKey, TValue&gt;キーが問題のある、既定値として、ディクショナリのコンス トラクターが EqualityComparer の使用を試みます&lt;TKey&gt;です。既定値です。 EqualityComparer&lt;TKey&gt;です。既定では、さらにしようとすると、IEqualityComparer を実装する新しい型をインスタンス化にリフレクションを使用して&lt;TKey&gt;インターフェイスです。
+値の型を使用して、ディクショナリとして&lt;TKey, TValue&gt;キーは、問題のある、既定値として、ディクショナリのコンス トラクターが EqualityComparer の使用を試みます&lt;TKey&gt;します。既定値です。 EqualityComparer&lt;TKey&gt;します。既定がさらに、リフレクションを使用して、IEqualityComparer を実装する新しい型をインスタンス化を試みる&lt;TKey&gt;インターフェイス。
 
-これは参照型の機能 (、リフレクションを新規作成 + 型手順はスキップされます)、クラッシュの種類し、デバイス上で使用しようとしました。 後ではなくすばやく焼き付けるが値。
+これは参照型の機能 (として、リフレクションを新規作成 + 型手順はスキップされます)、値がクラッシュの種類の場合と、デバイスで使用しようとしました。 後ではなく迅速に焼き付けます。
 
- **回避策**: 手動で実装する、 [IEqualityComparer&lt;TKey&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/)新しい型のインターフェイスし、その種類のインスタンスを提供、[ディクショナリ&lt;TKey、TValue&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.Dictionary%3CTKey,TValue%3E/) [(IEqualityComparer&lt;TKey&gt;)](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/)コンス トラクターです。
+ **回避策**: 手動で実装、 [IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1)新しい型でインターフェイスを提供するには、その型のインスタンス、[ディクショナリ&lt;TKey、TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1)コンス トラクター。
 
 
  <a name="No_Dynamic_Code_Generation" />
@@ -84,12 +84,12 @@ class GenericType<T> {
 
 ## <a name="no-dynamic-code-generation"></a>動的なコードを生成しません。
 
-IPhone のカーネルにより、アプリケーション コードを動的に生成するため、iPhone の Mono は、何らかの動的なコード生成をサポートしていません。 次の設定があります。
+IPhone のカーネルにより、アプリケーション コードを動的に生成するため、Mono、iPhone では、何らかの動的なコード生成をサポートしていません。 次の設定があります。
 
 -  System.Reflection.Emit は使用できません。
 -  System.Runtime.Remoting はサポートされていません。
--  型の動的作成はサポートされていません (なしで、Type.GetType (以下"MyType"1")) が、既存の型 (で、Type.GetType ("System.String") などのはうまく) を検索します。 
--  逆方向のコールバックは、コンパイル時に、ランタイムに登録する必要があります。
+-  型の動的作成はサポートされていません (ありません Type.GetType (以下"MyType"1")) が、既存の型 (Type.GetType ("System.String") うまく機能など) を検索します。 
+-  逆方向のコールバックは、コンパイル時に、ランタイムを登録する必要があります。
 
 
  
@@ -101,22 +101,22 @@ IPhone のカーネルにより、アプリケーション コードを動的に
 System.Reflection の欠如。 **出力**ランタイム コードの生成に依存するコードが動作しないことを意味します。 これなどが含まれます。
 
 -  動的言語ランタイム。
--  言語では、動的言語ランタイムの上に構築します。
--  リモート処理の TransparentProxy、またはその他の要素が発生するコードを動的に生成するランタイム。 
+-  任意の言語は、動的言語ランタイムの上に構築します。
+-  リモート処理の TransparentProxy、またはその他のコードを動的に生成する実行時になるもの。 
 
 
- **重要:** と混同しないでください**Reflection.Emit**で**リフレクション**です。 Reflection.Emit は、コードを動的に生成するについて説明して、jit 処理のコードとネイティブ コードにコンパイルします。 IPhone (JIT コンパイルされません) の制限によりこれがサポートされていません。
+ **重要:** と混同しないでください**Reflection.Emit**で**リフレクション**します。 Reflection.Emit はコードを動的に生成する詳細については、その jit 処理コードとネイティブにコンパイルされたコードがあります。 IPhone (JIT コンパイルなし) の制限があるためこれはサポートされていません。
 
-で、Type.GetType ("someClass")、メソッドを一覧表示する属性と値をフェッチするプロパティを一覧表示を含む、全体のリフレクション API は正常に機能します。
+全体のリフレクション API など Type.GetType ("someClass") を一覧表示するメソッド、プロパティを一覧表示する属性と値をフェッチしていますが問題なく動作します。
 
 ### <a name="using-delegates-to-call-native-functions"></a>ネイティブ関数を呼び出すデリゲートの使用
 
-C# デリゲートを使用してネイティブ関数を呼び出すには、次の属性のいずれかで、デリゲートの宣言を装飾する必要があります。
+C# のデリゲートを使用してネイティブ関数を呼び出すには、次の属性のいずれかのデリゲートの宣言を装飾する必要があります。
 
-- [UnmanagedFunctionPointerAttribute](https://developer.xamarin.com/api/type/System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute/) (推奨、クロスプラット フォームおよび .NET Standard 1.1 以降と互換性があるため)
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (推奨、クロス プラットフォームと .NET Standard 1.1 以降と互換性があるため)
 - [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
-これらの属性のいずれかの提供に失敗するなど、実行時エラーが発生します。
+これらの属性のいずれかの指定に失敗するなどのランタイム エラーが発生します。
 
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
@@ -125,28 +125,28 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
  <a name="Reverse_Callbacks" />
 
 
-### <a name="reverse-callbacks"></a>コールバックを取り消す
+### <a name="reverse-callbacks"></a>逆方向のコールバック
 
-標準モノラルを c# デリゲート インスタンスを代わりに、関数ポインターのアンマネージ コードに渡すことはできます。 ランタイムは、により、マネージ コードにコールバックするアンマネージ コードを小さなサンクにこれらの関数ポインターを変換すると通常します。
+標準の Mono でを c# のデリゲートのインスタンスを代わりに関数ポインターをアンマネージ コードに渡すことができます。 ランタイムでは、マネージ コードにコールバックするアンマネージ コードを許可する小さなサンクにこれらの関数ポインターを変換は通常します。
 
-モノラルでこれらのブリッジは、ジャスト イン タイムによって実装されるコンパイラです。 ときに、時間の先行コンパイラを使用して必要な iPhone でこの時点では 2 つの重要な制限があります。
+ジャストイン タイムで Mono でこれらのブリッジが実装されているコンパイラ。 ときに、時間の先行コンパイラを使用して必要な iPhone でこの時点では 2 つの重要な制限があります。
 
--  使用してコールバック メソッドのすべてのフラグを設定する必要があります、 [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
--  メソッドが静的メソッドである必要はありませんサポートのインスタンス メソッドです。 
+-  すべてのコールバック メソッドでフラグを設定する必要があります、 [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
+-  メソッドが静的メソッドにする必要はありませんサポートのインスタンス メソッド。 
  
 <a name="No_Remoting" />
 
-## <a name="no-remoting"></a>ないリモート処理
+## <a name="no-remoting"></a>なしのリモート処理
 
-リモート処理スタックでは、Xamarin.iOS で使用できません。
+リモート処理スタックは、Xamarin.iOS でご利用いただけません。
 
 
  <a name="Runtime_Disabled_Features" />
 
 
-## <a name="runtime-disabled-features"></a>実行時に、機能が無効になっています
+## <a name="runtime-disabled-features"></a>ランタイムの機能を無効になっています
 
-モノラルの iOS ランタイムでは、次の機能を無効になっています。
+Mono の iOS ランタイムでは、次の機能を無効になっています。
 
 -  プロファイラー
 -  Reflection.Emit
@@ -161,8 +161,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ## <a name="net-api-limitations"></a>.NET API の制限事項
 
-公開される .NET API は、iOS で使用できるわけではないが、完全なフレームワークのサブセットです。 FAQ を参照してください、[現在サポートされているアセンブリのリスト](~/cross-platform/internals/available-assemblies.md)です。
+公開される .NET API は、iOS で使用できるわけではないが、完全なフレームワークのサブセットです。 FAQ を参照してください、[現在サポートされているアセンブリの一覧](~/cross-platform/internals/available-assemblies.md)します。
 
 
 
-具体的には、外部 XML ファイルを使用して、ランタイムの動作を構成することはできませんので、Xamarin.iOS で使用される API のプロファイルには、System.Configuration は含みません。
+具体的には、外部 XML ファイルを使用して、ランタイムの動作を構成することはできませんので、Xamarin.iOS で使用される API プロファイルは、System.Configuration を含まれません。

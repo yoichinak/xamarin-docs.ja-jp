@@ -1,5 +1,5 @@
 ---
-title: 権利の使用
+title: Xamarin.iOS での権利の使用
 description: 権利は特殊なアプリの機能およびセキュリティのアクセス許可であり、これらを使用するように正しく構成されたアプリケーションに付与されます。
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 7e5ace306b580ba76986e89367de84e5bfd9cc40
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785305"
 ---
-# <a name="working-with-entitlements"></a>権利の使用
+# <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
 _権利は特殊なアプリの機能およびセキュリティのアクセス許可であり、これらを使用するように正しく構成されたアプリケーションに付与されます。_
 

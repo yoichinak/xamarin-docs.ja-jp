@@ -1,5 +1,5 @@
 ---
-title: プロビジョニング プロファイル
+title: Xamarin.Mac アプリのプロビジョニング プロファイル
 description: このガイドでは、Xamarin.Mac アプリを発行するのに必要なプロビジョニング プロファイルを作成する手順について説明します。
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 4f3120c45de5022dca1e522be251f453f9f5b4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9660d5373cc5213f648b145ef38ddbf25c7633ce
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792152"
 ---
-# <a name="provisioning-profiles"></a>プロビジョニング プロファイル
+# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac アプリのプロビジョニング プロファイル
 
 プロビジョニング プロファイルを使用すると、開発者が複数の macOS (旧称 Mac OS X) 固有の機能 (iCloud やプッシュ通知など) を Xamarin.Mac アプリに組み込むことができます。 これらの機能を使用する開発中の各アプリケーション用の Mac プロビジョニング プロファイルを作成、ダウンロード、およびインストールする必要があります。
 
@@ -54,7 +55,7 @@ ms.lasthandoff: 04/04/2018
 8. [プロファイルの設定] ウィンドウにインストールされているすべてのプロファイルが表示されます。 
 
      [![](profiles-images/image47.png "すべてのインストールされているプロファイルの表示")](profiles-images/image47.png#lightbox)
-9. もう一度ダウンロードする必要がある場合は、プロファイルは、**[Developer Certificate Utility]**\(開発者の証明書ユーティリティ\) にも表示されます。 
+9. もう一度ダウンロードする必要がある場合は、プロファイルは、**[Developer Certificate Utility]** \(開発者の証明書ユーティリティ\) にも表示されます。 
 
      [![](profiles-images/image48.png "Developer Certificate Utility")](profiles-images/image48.png#lightbox)
 

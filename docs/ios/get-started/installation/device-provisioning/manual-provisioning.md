@@ -1,23 +1,25 @@
 ---
-title: 手動プロビジョニング
-description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、開発証明書とプロファイルの要求、アプリケーション サービスの使用、デバイスへのアプリの展開について説明します。
+title: Xamarin.iOS の手動プロビジョニング
+description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、手動プロビジョニングを利用し、開発の証明書とプロファイルを設定する方法について説明しています。
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: dd0afe03adbd021717a88cd4409e3e1351ba9b50
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111187"
 ---
-# <a name="manual-provisioning"></a>手動プロビジョニング
+# <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS の手動プロビジョニング
 
-_Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、開発証明書とプロファイルの要求、アプリケーション サービスの使用、デバイスへのアプリの展開について説明します。_
+_Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、手動プロビジョニングを利用し、開発の証明書とプロファイルを設定する方法について説明しています。_
 
-<a name="signingidentity" />
+> [!NOTE]
+> このページの指示は、Apple Developer Program に有料でアクセスしている開発者に関連します。 無料アカウントがある場合は、[無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)のガイドでデバイス上でのテストの詳細を確認してください。
 
 ## <a name="creating-a-signing-identity"></a>署名 ID を作成する
 
@@ -26,9 +28,9 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 - 開発証明書
 - 秘密キー
 
-開発証明書と関連付けられている[キー](#keypairs)は iOS 開発者にとって重要です。つまり、それらは、Apple との間に ID を確立し、開発のために開発者を特定のデバイスおよびプロファイルに関連付け、開発者のアプリケーションに開発者のデジタル署名を付けます。 Apple は、展開を許可されているデバイスへのアクセスをコントロールするために証明書をチェックします。
+開発証明書と関連付けられている[キー](#understanding-certificate-key-pairs)は iOS 開発者にとって重要です。つまり、それらは、Apple との間に ID を確立し、開発のために開発者を特定のデバイスおよびプロファイルに関連付け、開発者のアプリケーションに開発者のデジタル署名を付けます。 Apple は、展開を許可されているデバイスへのアクセスをコントロールするために証明書をチェックします。
 
-開発チーム、証明書、およびプロファイルを管理するには、Apple の Members Center の [[Certificates, Identifiers & Profiles]](https://developer.apple.com/account/overview.action) セクションにアクセスします。 Apple は、デバイスまたはシミュレーター用のコードを構築するために、署名 ID を要求します。  
+開発チーム、証明書、およびプロファイルを管理するには、Apple の Member Center の [[Certificates, Identifiers &amp; Profiles]](https://developer.apple.com/account/overview.action) セクションにアクセスします (要ログイン)。 Apple は、デバイスまたはシミュレーター用のコードを構築するために、署名 ID を要求します。  
 
 > [!IMPORTANT]
 > 一度に使用できるのは 2 つの iOS 開発証明書だけであることに注意することが重要です。 これ以上作成する必要がある場合は、既存の証明書を取り消す必要があります。 失効した証明書を使用しているコンピューターは、アプリに署名できません。
@@ -68,8 +70,6 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 8. ダウンロードした証明書をダブルクリックして、キーチェーン アクセスを起動し、**[My Certificates]** \(自分の証明書\) パネルを開いて、新しい証明書と関連付けられている秘密キーを表示します。
 
     [![](manual-provisioning-images/keychain.png "キーチェーン アクセスの証明書")](manual-provisioning-images/keychain.png#lightbox)
-
-<a name="keypairs" />
 
 ### <a name="understanding-certificate-key-pairs"></a>証明書キー ペアについて
 
@@ -134,7 +134,6 @@ Apple と ID を確立し、開発証明書を持っているので、プロビ�
 Xamarin.iOS アプリケーションのテストまたはデバッグに使用されるすべての iOS デバイスについて上記の手順を繰り返します。
 
 Developer ポータルにデバイスを追加した後に、プロビジョニング プロファイルを作成し、デバイスを追加する必要があります。
-
 
 <a name="provisioningprofile" />
 
@@ -227,9 +226,7 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 * このアプリ ID が含まれる新しい[プロビジョニング プロファイル](#provisioningprofile)を作成します。
 * Xamarin.iOS プロジェクトでの権利を設定します。
 
-<a name="deploy" />
-
-## <a name="deploying-to-a-device"></a>デバイスの展開
+## <a name="deploying-to-a-device"></a>デバイスへの展開
 
 この時点で、プロビジョニングが完了し、アプリをデバイスに展開する準備ができている必要があります。 この操作を行うには、次の手順に従います。
 
@@ -275,7 +272,6 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 ## <a name="summary"></a>まとめ
 
 このガイドでは、Xamarin.iOS 用の開発環境のセットアップに必要な手順について説明しました。 開発者、チーム、アプリを実行できるデバイス、個々のアプリ ID に関する情報を使用してアプリケーションのコードに署名する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

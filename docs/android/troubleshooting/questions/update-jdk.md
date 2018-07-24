@@ -7,12 +7,13 @@ ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: dcfc5e406e60ac72fb1ca1e9cfb0395d17074b2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: 979bf4572e0e0865c2254c3e1c2f707c8eecae8d
+ms.sourcegitcommit: 57f9a9ba2f199697cb75e7be67f1a372c35a861b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36269661"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Java Development Kit (JDK) バージョンを更新する方法は?
 
@@ -38,7 +39,7 @@ Xamarin.Android では、Java Development Kit (JDK) を使用して、Android �
 
 4.  Visual Studio と更新プログラムを開く、 **Java Development Kit 場所**下にある新しい JDK を指す**ツール > オプション > Xamarin > Android 設定 > Java Development Kit の場所 > 変更**:
 
-    ![IDE のオプションの Android の設定 ページで、JDK のパスの設定](update-jdk-images/image4.png)
+    [![IDE のオプションの Android の設定 ページで、JDK のパスの設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 必ず、場所を更新した後に Visual Studio を再起動してください。
 
@@ -52,7 +53,7 @@ Xamarin.Android では、Java Development Kit (JDK) を使用して、Android �
 
     ![Macos JDK のインストーラーを実行](update-jdk-images/image5.png)
 
-Mac OS は更新することで既定値として新しい JDK のバージョンを自動的に設定が**/System/Library/Frameworks/JavaVM.framework/Versions/Current**です。 再確認することができますし、 **Java SDK (JDK)**場所が必要な既定値に設定されている**/usr**  **Visual Studio for Mac > 設定 > プロジェクト > SDK の場所 >Android > Java SDK (JDK) > 場所**:
+Mac OS は更新することで既定値として新しい JDK のバージョンを自動的に設定が **/System/Library/Frameworks/JavaVM.framework/Versions/Current**です。 再確認することができますし、 **Java SDK (JDK)** 場所が必要な既定値に設定されている **/usr**  **Visual Studio for Mac > 設定 > プロジェクト > SDK の場所 >Android > Java SDK (JDK) > 場所**:
 
 ![Android SDK の場所 ページで、JDK の場所の設定](update-jdk-images/image6.png)
 

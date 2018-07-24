@@ -1,197 +1,197 @@
 ---
-title: 26 章の概要です。 カスタム レイアウト
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 26 章の概要です。 カスタム レイアウト'
+title: 第 26 章の概要です。 カスタム レイアウト
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 26 章の概要。 カスタム レイアウト'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1c8fec34c0bc7f38d360f76122d851ae653ce15e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: bdd86595c3c0805d50241eac3a131a50656a9985
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241172"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156588"
 ---
-# <a name="summary-of-chapter-26-custom-layouts"></a>26 章の概要です。 カスタム レイアウト
+# <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章の概要です。 カスタム レイアウト
 
-Xamarin.Forms から派生したクラスがいくつかを含む[ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/):
+Xamarin.Forms から派生したいくつかのクラスが含まれています[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1):。
 
 * `StackLayout`、
 * `Grid`、
 * `AbsoluteLayout`、および
 * `RelativeLayout`。
 
-派生する独自のクラスを作成する方法を説明`Layout<View>`です。
+派生する独自のクラスを作成する方法を説明`Layout<View>`します。
 
 ## <a name="an-overview-of-layout"></a>レイアウトの概要
 
-Xamarin.Forms のレイアウトを処理する一元的なシステムはありません。 各要素はどのような独自サイズ必要があります、および特定の領域内でそれ自体をレンダリングする方法を決定するために行います。
+Xamarin.Forms のレイアウトを処理する一元的なシステムではありません。 各要素は、どのような独自のサイズは、および特定の領域内で自身をレンダリングする方法を決定する責任を負います。
 
 ### <a name="parents-and-children"></a>親と子
 
-子を持つすべての要素は、それ自体には、その子の位置を調整します。 親の子のサイズを新機能を最終的に決定に基づく必要がありますがサイズが使用できると、子のサイズしたいです。
+子が存在するすべての要素は、それ自体の中には、その子の位置を指定します。 最終的にその子のサイズを決定する親に基づく必要がありますが、サイズ上で使用できると、子のサイズを考えています。
 
-### <a name="sizing-and-positioning"></a>サイズおよび位置
+### <a name="sizing-and-positioning"></a>配置してサイズ変更
 
-レイアウトでは、ページのビジュアル ツリーの上部にある開始し、すべての分岐を進めします。 レイアウト内で最も重要なパブリック メソッドは[ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/)によって定義された`VisualElement`です。 その他の要素の呼び出しの親であるすべての要素`Layout`のそれぞれのサイズと位置自体の形式では、子を提供する子、 [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/)値。 これら`Layout`ビジュアル ツリーを通じて伝達されるまでの呼び出しです。
+レイアウトは、ページとビジュアル ツリーの先頭にあるし、すべての分岐に続きます。 レイアウトの最も重要なパブリック メソッドは[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))によって定義された`VisualElement`します。 その他の要素の呼び出しを親になっているすべての要素`Layout`サイズと位置自体の形式で、子を提供するには、その子の各、 [ `Rectangle` ](xref:Xamarin.Forms.Rectangle)値。 これら`Layout`ビジュアル ツリーからの呼び出しを伝達します。
 
-呼び出し`Layout`は、画面に表示する要素の必須であり、次の読み取り専用プロパティを設定すると、します。 対応する、`Rectangle`メソッドに渡されます。
+呼び出し`Layout`の画面に表示する要素が必要ですし、次の読み取り専用プロパティを設定します。 対応、`Rectangle`メソッドに渡されます。
 
-- [`Bounds`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Bounds/) 型の `Rectangle`
-- [`X`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.X/) 型の `double`
-- [`Y`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Y/) 型の `double`
-- [`Width`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) 型の `double`
-- [`Height`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) 型の `double`
+- [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) 型の `Rectangle`
+- [`X`](xref:Xamarin.Forms.VisualElement.X) 型の `double`
+- [`Y`](xref:Xamarin.Forms.VisualElement.Y) 型の `double`
+- [`Width`](xref:Xamarin.Forms.VisualElement.Width) 型の `double`
+- [`Height`](xref:Xamarin.Forms.VisualElement.Height) 型の `double`
 
-前のバージョン、`Layout`を呼び出すと、`Height`と`Width`のモックの値を持つ&ndash;1 です。
+前のバージョン、`Layout`を呼び出すと、`Height`と`Width`のモックの値を持つ&ndash;1。
 
 呼び出し`Layout`も次の保護されたメソッドの呼び出しをトリガーします。
 
-- [`SizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.SizeAllocated/p/System.Double/System.Double/)を呼び出す
-- [`OnSizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeAllocated/p/System.Double/System.Double/)、これをオーバーライドすることができます。
+- [`SizeAllocated`](xref:Xamarin.Forms.VisualElement.SizeAllocated(System.Double,System.Double))を呼び出す
+- [`OnSizeAllocated`](xref:Xamarin.Forms.VisualElement.OnSizeAllocated(System.Double,System.Double))をオーバーライドできます。
 
 最後に、次のイベントが発生します。
 
-- [`SizeChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/)
+- [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
-`OnSizeAllocated`メソッドはによってオーバーライド`Page`と`Layout`、これらは子を持つことができる Xamarin.Forms で 2 つのクラスです。 オーバーライドされたメソッドの呼び出し
+`OnSizeAllocated`メソッドによってオーバーライドされます`Page`と`Layout`、xamarin.forms の子を持つことができますのみの 2 つのクラスであります。 オーバーライドされたメソッドの呼び出し
 
-- [`UpdateChildrenLayout`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.UpdateChildrenLayout()/) `Page`派生型および[ `UpdateChildrenLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.UpdateChildrenLayout()/)の`Layout`呼び出しから派生しました。
-- [`LayoutChildren`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) `Page`派生型および[ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/)の`Layout`派生します。
+- [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout) `Page`導関数と[ `UpdateChildrenLayout` ](xref:Xamarin.Forms.Layout.UpdateChildrenLayout)の`Layout`実行く先の呼び出し
+- [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) `Page`導関数と[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))の`Layout`派生クラス。
 
-`LayoutChildren` 呼び出して`Layout`要素の子の各します。 少なくとも 1 つの子がある新しい場合`Bounds`設定すると、次のイベントが発生し、します。
+`LayoutChildren` 呼び出して`Layout`の各要素の子。 少なくとも 1 つの子がある新しい場合`Bounds`設定すると、次のイベントが発生し。
 
-- [`LayoutChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.LayoutChanged/) `Page`派生型および[ `LayoutChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Layout.LayoutChanged/)の`Layout`派生クラス
+- [`LayoutChanged`](xref:Xamarin.Forms.Page.LayoutChanged) `Page`導関数と[ `LayoutChanged` ](xref:Xamarin.Forms.Layout.LayoutChanged)の`Layout`派生物
 
-### <a name="constraints-and-size-requests"></a>制約とサイズの要求
+### <a name="constraints-and-size-requests"></a>制約と要求のサイズ
 
-`LayoutChildren`をインテリジェントに呼び出す`Layout`すべての子である必要がありますを認識して、*優先*または*目的*子のサイズ。 そのため、呼び出し`Layout`それぞれの子が一般的に付きますへの呼び出し
+`LayoutChildren`をインテリジェントに呼び出す`Layout`そのすべての子で知る必要があります、*優先*または*目的*子のサイズ。 そのために呼び出し`Layout`のそれぞれの子がへの呼び出しによって前通常
 
-- [`GetSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)
+- [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double))
 
-ブックは、パブリッシュした後、`GetSizeRequest`メソッドが非推奨し、置き換えられます
+この書籍が発行された後、`GetSizeRequest`メソッドが非推奨し、置き換えられます
 
-- [`Measure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)
+- [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))
 
-`Measure`メソッドに対応、 [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)プロパティ型の引数が含まれていますと[ `MeasureFlag` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MeasureFlags/)、2 つのメンバーを持ちます。
+`Measure`メソッドに対応、 [ `Margin` ](xref:Xamarin.Forms.View.Margin)プロパティ型の引数が含まれています[ `MeasureFlag` ](xref:Xamarin.Forms.MeasureFlags)、2 つのメンバーを持ちます。
 
-- [`IncludeMargins`](https://developer.xamarin.com/api/field/Xamarin.Forms.MeasureFlags.IncludeMargins/)
-- [`None`](https://developer.xamarin.com/api/field/Xamarin.Forms.MeasureFlags.None/) 余白を含まない
+- [`IncludeMargins`](xref:Xamarin.Forms.MeasureFlags.IncludeMargins)
+- [`None`](xref:Xamarin.Forms.MeasureFlags.None) 余白を含まない
 
-多くの要素、`GetSizeRequest`または`Measure`レンダラーからネイティブの要素のサイズを取得します。 どちらの方法は、幅と高さのパラメーターを持つ*制約*です。 たとえば、`Label`複数行のテキストをラップする方法を決定する、幅を使用します。
+多くの要素に関する`GetSizeRequest`または`Measure`そのレンダラーからネイティブの要素のサイズを取得します。 どちらの方法は、幅と高さのパラメーターを持つ*制約*します。 たとえば、`Label`幅制約を使用して、複数行のテキストをラップする方法が特定されます。
 
-両方`GetSizeRequest`と`Measure`型の値を返す[ `SizeRequest`](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/)を持つ 2 つのプロパティ。
+両方`GetSizeRequest`と`Measure`型の値を返す[ `SizeRequest`](xref:Xamarin.Forms.SizeRequest)を持つ 2 つのプロパティ。
 
-- [`Request`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Request/) 型の `Size`
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Minimum/) 型の `Size`
+- [`Request`](xref:Xamarin.Forms.SizeRequest.Request) 型の `Size`
+- [`Minimum`](xref:Xamarin.Forms.SizeRequest.Minimum) 型の `Size`
 
-ほとんどの場合、これら 2 つの値が同じで、`Minimum`通常値は無視されます。
+非常に多くの場合、これら 2 つの値が同じで、`Minimum`通常、値は無視できます。
 
-`VisualElement` ような保護されたメソッドを定義も`GetSizeRequest`から呼び出される`GetSizeRequest`:
+`VisualElement` ような保護対象のメソッドも定義`GetSizeRequest`から呼び出される`GetSizeRequest`:
 
-- [`OnSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeRequest/p/System.Double/System.Double/) 返します、`SizeRequest`値
+- [`OnSizeRequest`](xref:Xamarin.Forms.VisualElement.OnSizeRequest(System.Double,System.Double)) 返します、`SizeRequest`値
 
-そのメソッドが非推奨に置き換えられますなりました。
+そのメソッドに置き換えられます:、非推奨となりました。
 
-- [`OnMeasure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/)
+- [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))
 
-すべてのクラスから派生した`Layout`または`Layout<T>`オーバーライドする必要があります`OnSizeRequest`または`OnMeasure`です。 これは、レイアウトのクラスが、独自のサイズは、一般的にこれを呼び出すことによって取得、その子のサイズに基づいてが決定される`GetSizeRequest`または`Measure`子にします。 呼び出しの前後に`OnSizeRequest`または`OnMeasure`、`GetSizeRequest`または`Measure`次のプロパティに基づく調整。
+すべてのクラスから派生した`Layout`または`Layout<T>`オーバーライドする必要があります`OnSizeRequest`または`OnMeasure`します。 これは、レイアウトのクラスがその子には、これを呼び出すことによって取得のサイズに基づく一般的に、独自のサイズを決定`GetSizeRequest`または`Measure`子にします。 呼び出しの前後に`OnSizeRequest`または`OnMeasure`、`GetSizeRequest`または`Measure`次のプロパティに基づく調整。
 
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)型の`double`、影響を与える、`Request`のプロパティ `SizeRequest`
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) 型の`double`、影響を与える、`Request`のプロパティ `SizeRequest`
-- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/) 型の`double`、影響を与える、`Minimum`のプロパティ `SizeRequest`
-- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/) 型の`double`、影響を与える、`Minimum`のプロパティ `SizeRequest`
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)型の`double`、影響を与える、`Request`のプロパティ `SizeRequest`
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 型の`double`、影響を与える、`Request`のプロパティ `SizeRequest`
+- [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest) 型の`double`、影響を与える、`Minimum`のプロパティ `SizeRequest`
+- [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest) 型の`double`、影響を与える、`Minimum`のプロパティ `SizeRequest`
 
 ### <a name="infinite-constraints"></a>無限の制約
 
-制約の引数に渡されます`GetSizeRequest`(または`Measure`) および`OnSizeRequest`(または`OnMeasure`) 有限ことができます (の値、つまり`Double.PositiveInfinity`)。 ただし、`SizeRequest`これらから返されたメソッドは、無限のディメンションを含めることはできません。
+渡される制約引数`GetSizeRequest`(または`Measure`) と`OnSizeRequest`(または`OnMeasure`) 有限ことができます (の値、つまり`Double.PositiveInfinity`)。 ただし、`SizeRequest`これらから返されるメソッドは、無限のディメンションを含めることはできません。
 
-無限の制約は、要求されたサイズが、要素の自然なサイズを反映する必要がありますを指定します。 垂直方向`StackLayout`呼び出し`GetSizeRequest`(または`Measure`) 無限高さ制約を使用してその子にします。 水平方向のスタックのレイアウトを呼び出す`GetSizeRequest`(または`Measure`) 無限幅制約を使用してその子にします。 `AbsoluteLayout`呼び出し`GetSizeRequest`(または`Measure`) 無限の幅と高さの制約とその子にします。
+無限の制約は、要求されたサイズは、要素の自然なサイズを反映させることを示します。 垂直`StackLayout`呼び出し`GetSizeRequest`(または`Measure`) 無限の高さ制約を使用してその子にします。 水平方向のスタック レイアウトを呼び出す`GetSizeRequest`(または`Measure`) 無限の幅とその子にします。 `AbsoluteLayout`呼び出し`GetSizeRequest`(または`Measure`) 無限の幅と高さの制約とその子にします。
 
-### <a name="peeking-inside-the-process"></a>プロセスの内部のピーク
+### <a name="peeking-inside-the-process"></a>プロセス内でピークします。
 
 [ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes)表示制約とサイズは、単純なレイアウトの情報を要求します。
 
-## <a name="deriving-from-layoutview"></a>レイアウトから派生します。<View>
+## <a name="deriving-from-layoutview"></a>レイアウトからの派生<View>
 
-カスタム レイアウトのクラスから派生`Layout<View>`です。 2 つの役割があります。
+カスタム レイアウトのクラスから派生`Layout<View>`します。 2 つの役割があります。
 
-- オーバーライド`OnMeasure`を呼び出す`Measure`レイアウトのすべての子にします。 レイアウトの種類の要求されたサイズを返します
+- オーバーライド`OnMeasure`を呼び出す`Measure`レイアウトのすべての子にします。 レイアウトの種類の要求されたサイズを返す
 - オーバーライド`LayoutChildren`を呼び出す`Layout`レイアウトのすべての子で
 
-`for`または`foreach`これらのオーバーライド内のループは、任意の子をスキップする必要がありますが`IsVisible`プロパティに設定されている`false`です。
+`for`または`foreach`これらのオーバーライドでのループは、すべての子をスキップする必要がありますが`IsVisible`プロパティに設定されて`false`します。
 
-呼び出し`OnMeasure`は保証されません。 `OnMeasure` 呼び出されません、レイアウトの親がレイアウトのサイズ (たとえば、ページを格納するレイアウト) を制御する場合。 このため、`LayoutChildren`中に取得された子のサイズに依存できない、`OnMeasure`呼び出します。 非常に多くの場合、`LayoutChildren`自体を呼び出す必要あります`Measure`レイアウトの子供のロジック (後述) のキャッシュ サイズのいくつかの種類を実装することもできます。
+呼び出し`OnMeasure`は保証されません。 `OnMeasure` 呼び出されません、レイアウトの親がレイアウトのサイズ (ページ、レイアウトなど) を制御する場合。 このため、`LayoutChildren`中に取得された子のサイズに依存できない、`OnMeasure`呼び出します。 非常に多くの場合、`LayoutChildren`自体呼び出す必要があります`Measure`レイアウトの子である種のキャッシュ ロジック (後で説明) にサイズを実装することもできます。
 
 ### <a name="an-easy-example"></a>簡単な例
 
-[ **VerticalStackDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo)サンプルが含まれていますが、簡略化された[ `VerticalStack` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs)クラスとその使用方法のデモします。
+[ **VerticalStackDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo)サンプルが含まれていますが、簡略化された[ `VerticalStack` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs)クラスとその使用方法のデモンストレーションします。
 
 ### <a name="vertical-and-horizontal-positioning-simplified"></a>垂直および水平方向の配置の簡略化
 
-ジョブのいずれかを`VerticalStack`実行する必要があります中に発生した、`LayoutChildren`をオーバーライドします。 メソッドは、子の使用`HorizontalOptions`でスロット内の子の位置を決定するプロパティ、`VerticalStack`です。 代わりに静的メソッドを呼び出すことができます[ `Layout.LayoutChildIntoBoundingRect`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/)です。 このメソッドを呼び出す`Measure`使用して子の`HorizontalOptions`と`VerticalOptions`プロパティに指定された四角形内の子を配置します。
+ジョブのいずれかを`VerticalStack`を実行する必要があります中に発生します、`LayoutChildren`をオーバーライドします。 メソッドは、子の使用`HorizontalOptions`プロパティでは、そのスロット内の子の位置を決定する、`VerticalStack`します。 代わりに静的メソッドを呼び出すことができます[ `Layout.LayoutChildIntoBoundingRect`](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle))します。 このメソッドを呼び出します`Measure`子を使用してその`HorizontalOptions`と`VerticalOptions`プロパティを指定した四角形内の子を配置します。
 
 ### <a name="invalidation"></a>無効化
 
-多くの場合、要素のプロパティの変更は、その要素をレイアウトで表示する方法に影響します。 レイアウトは、新しいレイアウトをトリガーする検証する必要があります。
+多くの場合、要素のプロパティの変更は、その要素がレイアウトで表示する方法に影響します。 レイアウトは、新しいレイアウトをトリガーする検証されたことがあります。
 
-`VisualElement` 保護されたメソッドを定義[ `InvalidateMeasure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/)要素のサイズに影響を与える、通常によって呼び出される任意のバインド可能なプロパティのプロパティ変更ハンドラーを変更します。 `InvalidateMeasure`メソッドが起動、 [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/)イベント。
+`VisualElement` 保護されているメソッドを定義します。 [ `InvalidateMeasure` ](xref:Xamarin.Forms.VisualElement.InvalidateMeasure)、一般にと呼ばれる任意のバインド可能なプロパティのプロパティ変更ハンドラーによって変更が、要素のサイズに影響を与えます。 `InvalidateMeasure`メソッドの起動、 [ `MeasureInvalidated` ](xref:Xamarin.Forms.VisualElement.MeasureInvalidated)イベント。
 
-`Layout`クラスという名前のような保護されたメソッドを定義する[ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/)、どの、`Layout`派生物は、任意の変更方法を配置し、その子のサイズに影響を与える呼び出す必要があります。
+`Layout`クラスという名前のような保護されたメソッドを定義する[ `InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout)を`Layout`方法を配置し、その子のサイズに影響する変更の派生物を呼び出す必要があります。
 
-### <a name="some-rules-for-coding-layouts"></a>レイアウトをコーディングするためのいくつかのルール
+### <a name="some-rules-for-coding-layouts"></a>レイアウトのコーディングの一部のルール
 
-1. によって定義されたプロパティ`Layout<T>`バインド可能なプロパティは、派生型をバックアップするか、プロパティ変更ハンドラーを呼び出す必要があります`InvalidateLayout`です。
+1. によって定義されたプロパティ`Layout<T>`バインド可能なプロパティは、派生物をバックアップする必要があり、プロパティ変更ハンドラーを呼び出す必要があります`InvalidateLayout`します。
 
-2. A`Layout<T>`接続されているバインド可能なプロパティを定義する派生物をオーバーライドする必要があります[ `OnAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnAdded/p/T/)自身の子にプロパティ変更ハンドラーを追加して[ `OnRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnRemoved/p/T/)を削除するにはハンドラー。 ハンドラーは、これらの変更には、バインド可能なプロパティが接続されているをチェックして呼び出すことによって応答`InvalidateLayout`です。
+2. A`Layout<T>`接続されているバインド可能なプロパティを定義する派生クラスでオーバーライドする必要があります[ `OnAdded` ](xref:Xamarin.Forms.Layout`1.OnAdded*)プロパティ変更ハンドラーをその子に追加して[ `OnRemoved` ](xref:Xamarin.Forms.Layout`1.OnRemoved*)を削除するにはハンドラー。 ハンドラーは、する必要がありますでこれらの変更には、バインド可能なプロパティがアタッチされているを確認し、呼び出すことによって応答`InvalidateLayout`します。
 
-3. A`Layout<T>`子のサイズのキャッシュを実装する派生物をオーバーライドする必要があります`InvalidateLayout`と[ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/)し、これらのメソッドが呼び出されたときに、キャッシュをクリアします。
+3. A`Layout<T>`子のサイズのキャッシュを実装する派生クラスでオーバーライドする必要があります`InvalidateLayout`と[ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)し、これらのメソッドが呼び出されたときに、キャッシュをクリアします。
 
 ### <a name="a-layout-with-properties"></a>プロパティを持つレイアウト
 
-[ `WrapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs)クラス内で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)そのすべての子がサイズ、同一であり、子を 1 つの行 (または列) からに折り返されることを前提としています次に、します。 定義する、`Orientation`のようにプロパティ`StackLayout`、および`ColumnSpacing`と`RowSpacing`のようなプロパティ`Grid`子のサイズがキャッシュとします。
+[ `WrapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)同じサイズのいずれかとに 1 つの行 (または列) から、子をラップしますが、すべての子があると仮定次に、します。 定義、`Orientation`のようにプロパティ`StackLayout`と`ColumnSpacing`と`RowSpacing`などのプロパティ`Grid`、し、子のサイズをキャッシュします。
 
-[ **PhotoWrap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) puts のサンプル、`WrapLayout`で、`ScrollView`ストックの写真を表示するためです。
+[ **PhotoWrap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) put のサンプルを`WrapLayout`で、`ScrollView`の写真を表示するためです。
 
 ### <a name="no-unconstrained-dimensions-allowed"></a>制約のないディメンションが許可されていません。
 
-[ `UniformGridLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs)で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリはそれ自体のすべての子を表示するためのものです。 そのため、制約のないディメンションを扱うことはできませんし、いずれかが発生した場合、例外が発生します。
+[ `UniformGridLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs)で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリがそれ自体の中のすべての子を表示するためのものです。 したがって、制約のないディメンションを扱うことはできませんし、いずれかが発生した場合に例外を発生させます。
 
-[ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid)サンプル`UniformGridLayout`:
+[**フォト グリッド**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid)サンプル`UniformGridLayout`:
 
-[![写真のグリッドのトリプル スクリーン ショット](images/ch26fg08-small.png "均一なグリッド レイアウト")](images/ch26fg08-large.png#lightbox "均一なグリッド レイアウト")
+[![フォト グリッドの 3 倍になるスクリーン ショット](images/ch26fg08-small.png "統一されたグリッド レイアウト")](images/ch26fg08-large.png#lightbox "統一されたグリッド レイアウト")
 
 ### <a name="overlapping-children"></a>重複する子
 
-A`Layout<T>`から派生したその子に重複できます。 ただし、子での順序でレンダリングされます、`Children`コレクション、および順序にない、`Layout`メソッドが呼び出されます。
+A`Layout<T>`派生物は、その子を重複ことができます。 ただし、子が内の順序でレンダリング、`Children`コレクション、およびの順序ではない、`Layout`メソッドが呼び出されます。
 
-`Layout`クラス、コレクション内にある子に移動することは 2 つのメソッドを定義します。
+`Layout`クラスは、コレクション内の子を移動するための 2 つのメソッドを定義します。
 
-- [`LowerChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LowerChild/p/Xamarin.Forms.View/) 子をコレクションの先頭に移動するには
-- [`RaiseChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.RaiseChild/p/Xamarin.Forms.View/) 子をコレクションの末尾に移動するには
+- [`LowerChild`](xref:Xamarin.Forms.Layout.LowerChild(Xamarin.Forms.View)) 子をコレクションの先頭に移動するには
+- [`RaiseChild`](xref:Xamarin.Forms.Layout.RaiseChild(Xamarin.Forms.View)) 子をコレクションの末尾に移動するには
 
-重複する子は、コレクションの末尾で子を視覚的にコレクションの先頭の子の上に表示されます。
+重複する子、コレクションの末尾にある子はコレクションの先頭の子の上に視覚的に表示されます。
 
-[ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs)クラス内で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリ レンダリングの順序を指定でき、したがってのいずれかに接続されているプロパティを定義する、その他の上部に表示される子。 [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile)サンプルを示します。
+[ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリは、レンダリング順序を指定し、そのための 1 つできるようにする添付プロパティを定義しますその。その他の上部に表示される子。 [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile)のサンプルで例示します。
 
-[![学生カード ファイル グリッドのトリプル スクリーン ショット](images/ch26fg10-small.png "レイアウトの子供の重複")](images/ch26fg10-large.png#lightbox "レイアウトの子供の重複")
+[![学生カード ファイル グリッドの 3 倍になるスクリーン ショット](images/ch26fg10-small.png "レイアウトの重複する子")](images/ch26fg10-large.png#lightbox "レイアウトの子の重複")
 
-### <a name="more-attached-bindable-properties"></a>アタッチされる複数のバインド可能なプロパティ
+### <a name="more-attached-bindable-properties"></a>バインド可能なプロパティがアタッチされる方
 
-[ `CartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs)クラス内で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリは 2 つを指定する接続のバインド可能なプロパティを定義`Point`値と太さ値を操作および`BoxView`行と同じように要素。
+[ `CartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリ定義の 2 つを指定するバインド可能なプロパティが添付`Point`値と太さの値を操作および`BoxView`要素を行のようにします。
 
-[ **UnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube)サンプルでは、を使用して、3 D キューブを描画します。
+[ **UnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) 3 D キューブを描画するためにサンプルを使用します。
 
 ### <a name="layout-and-layoutto"></a>レイアウトと LayoutTo
 
-A`Layout<T>`派生物を呼び出すことができます`LayoutTo`なく`Layout`レイアウトをアニメーション化します。 [ `AnimatedCartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs)クラスが、これと[ **AnimatedUnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube)サンプルでは、ことを示しています。
+A`Layout<T>`派生物を呼び出すことができます`LayoutTo`なく`Layout`レイアウトをアニメーション化します。 [ `AnimatedCartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs)クラスがこれには、実行、および[ **AnimatedUnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube)サンプルでは、します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [章 26 フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf)
-- [26 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
+- [第 26 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf)
+- [第 26 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
 - [カスタム レイアウトを作成します。](~/xamarin-forms/user-interface/layouts/custom.md)

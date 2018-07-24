@@ -1,48 +1,48 @@
 ---
 title: バインドのトラブルシューティング
-description: このガイドでは、バインド Objective C ライブラリが難しい場合の対処方法について説明します。 具体的には、不足しているバインディング、バインディング、およびバグ レポートに null を渡すときに、引数の例外について説明します。
+description: このガイドでは、OBJECTIVE-C ライブラリのバインドできない場合の対処方法について説明します。 具体的には、不足しているバインディング、バインディング、およびバグ レポートに null を渡すとき、引数の例外について説明します。
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: b0ce6c3792d6495cabdf8acdab1a644fe75f1219
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: aaceada84b151856506ede66907274e2457c23d4
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780236"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854806"
 ---
 # <a name="binding-troubleshooting"></a>バインドのトラブルシューティング
 
-(旧称 OS X) macOS へのバインドのトラブルシューティングのヒントをいくつか Xamarin.Mac の Api です。
+MacOS (旧称 OS X) へのバインドのトラブルシューティングのヒントをいくつか Xamarin.Mac で Api。
 
 ## <a name="missing-bindings"></a>バインドがありません。
 
-Xamarin.Mac は、Apple の Api の多くをカバーしているときに必要がある場合、バインドがない一部の Apple API の呼び出しにまだです。 それ以外の場合に呼び出す必要がサード パーティ製 C/OBJECTIVE-C ある Xamarin.Mac バインディングのスコープ外になります。
+Xamarin.Mac は、Apple Api の多くをカバーしているときに必要がある場合、バインドがない一部の Apple API を呼び出すまだします。 それ以外の場合は、サード パーティ製 C/Objective C を呼び出す必要があります、Xamarin.Mac のバインドの対象外のことです。
 
-Apple API を使用して処理する場合、最初の手順は、Xamarin があるヒット API のセクションでまだの範囲がないことを確認できるようにするは。 [バグを](#reporting-bugs)不足している API を注意してください。 お客様からのレポートを使用する Api を次の優先順位を設定します。 さらに、Business または Enterprise のライセンスがあり、このバインディングが不足しているが、進行状況をブロックしている場合もある手順に従って[サポート](http://xamarin.com/support)チケットをファイルにします。 バインディング、ことをお約束ことはできませんが、場合によってはを回避する、作業します。
+Apple API を扱う場合、最初の手順は、Xamarin のことに達している、API のセクションをまだカバレッジがないことを把握できるようにします。 [バグを報告](#reporting-bugs)不足している API を注意してください。 お客様からのレポートを使用して次の作業 Api の優先順位を付けます。 さらに、Business または Enterprise ライセンスがあり、このバインディングが不足しているが、進行状況をブロックしている場合もある手順に従って[サポート](http://xamarin.com/support)チケットを提出します。 バインディング、約束できませんが場合によってはことができますを得する、作業します。
 
-Xamarin (該当する場合)、不足しているバインディングの通知した後、次の手順は、自分でバインディングを考慮する必要はします。 詳細なガイドがある[ここ](~/cross-platform/macios/binding/overview.md)といくつかの非公式なドキュメント[ここ](http://brendanzagaeski.appspot.com/xamarin/0002.html)Objective C のバインドを手動でラップするためです。 # の P/invoke 機構を使用すると、ドキュメントは C API を呼び出す場合[ここ](http://www.mono-project.com/docs/advanced/pinvoke/)です。
+場合に通知する Xamarin (該当する場合)、不足しているバインディングのしたら次にはバインドことを検討してください。 完全なガイドがある[ここ](~/cross-platform/macios/binding/overview.md)と非公式のドキュメントはいくつか[ここ](http://brendanzagaeski.appspot.com/xamarin/0002.html)OBJECTIVE-C のバインドを手動でラップするためです。 C API を呼び出す場合は、# の P/invoke メカニズムを使用して、ドキュメントは[ここ](http://www.mono-project.com/docs/advanced/pinvoke/)します。
 
-作業をする場合、バインディングで、自分でに注意してくださいのバインドに誤りがあらゆる種類のネイティブのランタイムでの興味深いクラッシュを生成できます。 具体的には、C# の場合、署名が引数の数と各引数のサイズでネイティブのシグネチャと一致することに注意します。 そのためにはエラーには、メモリおよびスタックが破損している可能性があり、直ちに、またはある任意の時点を今後クラッシュまたはデータが破損することができます。
+作業する場合、バインディング、自分でするバインディングの誤りがあらゆる種類のネイティブ ランタイムで興味深いクラッシュを生成できるに注意してください。 具体的には、c# では、シグネチャに引数の数と各引数のサイズでネイティブのシグネチャと一致することは十分に注意します。 これに失敗には、メモリまたはスタックが破損している可能性があり、直ちに、または任意の時点での今後のクラッシュまたはデータが破損する可能性があります。
 
-## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>バインディングに null を渡すときに、引数の例外
+## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>バインドする場合は null を渡すときに、引数の例外
 
-高いを提供する Xamarin の動作中に品質と Apple の api もテスト済みのバインド場合があります、誤りのおよびバグの明細です。 最もよくある問題が発生した可能性がありますですが、API スロー`ArgumentNullException`を渡す場合に null を受け入れると、基になる API`nil`です。 多くの場合、API を定義するネイティブのヘッダー ファイルは、API に nil 同意を渡した場合がクラッシュするのに十分な情報を提供しません。
+高を提供する Xamarin のしくみの中に品質と、Apple Api のバインドを十分にテストされたことがありますは誤りし、の明細をバグします。 最も一般的な問題に実行する可能性のある API は、スロー`ArgumentNullException`渡すと null を受け入れると、基になる API`nil`します。 多くの場合、API を定義するネイティブのヘッダー ファイルでは、API は nil をそのまま適用し、値を渡す場合がクラッシュするのに十分な情報は提供されません。
 
-場合に発生した場合に渡して、`null`をスロー、`ArgumentNullException`と考えられる作業、次の手順に従って、必要がありますが。
+場合に発生した場合に渡すことが`null`スロー、`ArgumentNullException`動作に次の手順に従ってする必要がありますと考えられるが。
 
-1. Apple のドキュメントと例をどうかを受け取ることの証明を参照してください。 確認`nil`です。 Objective C に慣れている場合は、することを確認する小規模なテスト プログラムを作成することができます。
-2. [バグを](#reporting-bugs)です。
-3. バグを回避することができますか。 API を呼び出すことは避けることができる場合`null`呼び出しの周囲の簡単な null チェックが簡単な解決法を指定できます。
-4. ただし、一部の Api では、オフにするか、一部の機能を無効にするのには null を渡すことが必要です。 アセンブリのブラウザーを戻すことによってこのような場合は、問題を回避することができます (を参照してください[指定されたセレクターの c# メンバーを検索する](~/mac/app-fundamentals/mac-apis.md#finding_selector))、コピー、バインディング、および null チェックを削除します。 バグを登録する (手順 2.) 更新プログラムと修正を行って Xamarin.Mac、コピーされたバインディングは取得されません、これを行うし、この見なす必要がある短期的な回避策を確認してください。
+1. Apple のドキュメントやを受け取って実証見つかりますを表示する例を確認`nil`します。 Objective C に慣れている場合は、検証のための小規模なテスト プログラムを記述できます。
+2. [バグを報告](#reporting-bugs)します。
+3. バグを回避することができますか。 API を呼び出さない場合`null`呼び出しを囲む場合は、単純な null チェックが簡単に回避できます。
+4. ただし、一部の Api では、オフにするか、一部の機能を無効にするには null を渡すことが必要です。 アセンブリ ブラウザーを導入することでこのような場合は、問題を回避することができます (を参照してください[c# メンバーの指定されたセレクターの検索](~/mac/app-fundamentals/mac-apis.md#finding_selector))、コピー、バインディング、および null チェックを削除します。 更新プログラムと修正を行うものでは、Xamarin.Mac でコピーしたバインドが受信されませんとしてこれを行うし、短期的な対応策を考慮するこの場合、バグを (ステップ 2) を報告してください。
 
 <a name="reporting-bugs"/>
 
 ## <a name="reporting-bugs"></a>バグの報告
 
-お客様のフィードバックは弊社にとって重要です。 : Xamarin.Mac で問題が見つかった場合
+お客様のフィードバックは弊社にとって重要です。 Xamarin.Mac を使って問題を検出する: 場合
 
 - [Xamarin.Mac フォーラム](https://forums.xamarin.com/categories/mac)を確認する
 - [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する 
@@ -56,3 +56,8 @@ GitHub の問題はすべて公開されています。 コメントまたは添
 - 問題を再現する簡単な例。 これは**重要**です (可能な場合)。 
 - クラッシュの完全なスタック トレース。
 - クラッシュの周囲の C# コード。 
+
+## <a name="related-links"></a>関連リンク
+
+- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

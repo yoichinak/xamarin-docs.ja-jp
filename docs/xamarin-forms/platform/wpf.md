@@ -1,6 +1,6 @@
 ---
-title: WPF のプラットフォームのセットアップ
-description: Xamarin.Forms ようになりました、WPF プラットフォーム用のプレビューがサポート
+title: WPF プラットフォームのセットアップ
+description: Xamarin.Forms が WPF プラットフォームのプレビューをサポート
 ms.prod: xamarin
 ms.assetid: 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E
 ms.technology: xamarin-forms
@@ -9,62 +9,63 @@ author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2018
 ms.openlocfilehash: 416e33f131c6e1ef144608f98964fd8372f454f8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831320"
 ---
-# <a name="wpf-platform-setup"></a>WPF のプラットフォームのセットアップ
+# <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-Xamarin.Forms では、Windows Presentation Foundation (WPF) のプレビューがサポートできるようになりました。 この記事では、まず Xamarin.Forms ソリューションを WPF プロジェクトを追加する方法を示します。
+Xamarin.Forms では、Windows Presentation Foundation (WPF) のプレビューをサポートできるようになりました。 この記事では、WPF プロジェクトを Xamarin.Forms ソリューションに追加する方法を示します。
 
-開始、Visual Studio 2017 で新しい Xamarin.Forms ソリューションを作成または既存の Xamarin.Forms ソリューションをたとえば、使用前に[ **BoxViewClock**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)です。 WPF アプリは Xamarin.Forms ソリューションを Windows にのみ追加できます。
+開始、Visual Studio 2017 で新しい Xamarin.Forms ソリューションを作成または既存の Xamarin.Forms ソリューションを使用して、たとえば、前に[ **BoxViewClock**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)します。 WPF アプリは、Windows での Xamarin.Forms ソリューションにのみ追加できます。
 
-## <a name="add-a-wpf-project-to-a-xamarinforms-app-with-xamarinuniversity"></a>WPF プロジェクト Xamarin.University と Xamarin.Forms のアプリを追加します。
+## <a name="add-a-wpf-project-to-a-xamarinforms-app-with-xamarinuniversity"></a>WPF プロジェクト Xamarin.University で Xamarin.Forms アプリを追加します。
 
 > [!VIDEO https://youtube.com/embed/Fy9N6OSxK64]
 
-**Xamarin.Forms 3.0 WPF をサポートして[Xamarin 大学](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 WPF をサポートして[Xamarin University](https://university.xamarin.com/)**
 
-## <a name="adding-a-wpf-app"></a>WPF アプリを追加します。
+## <a name="adding-a-wpf-app"></a>WPF アプリの追加
 
-Windows 7、8、および 10 のデスクトップで実行される WPF アプリを追加する手順に従います。
+Windows 7、8、および 10 のデスクトップ上で実行される WPF アプリを追加するこれらの手順に従います。
 
 1. Visual Studio 2017 でソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
-2. **新しいプロジェクト**ウィンドウで、左クリックで**Visual c#** と**Windows クラシック デスクトップ**です。 プロジェクトの種類の一覧で選択**WPF アプリケーション (.NET Framework)** です。 
+2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual c#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**WPF アプリ (.NET Framework)** します。 
 
-3. 使用してプロジェクトの名前を入力、 **WPF**拡張子、たとえば、 **BoxViewClock.WPF**です。 をクリックして、**参照**ボタン、、 **BoxViewClock**フォルダー、およびキーを押して**フォルダーの選択**です。 これにより、WPF プロジェクト、ソリューション内の他のプロジェクトと同じディレクトリに入ります。
+3. 使用してプロジェクトの名前を入力、 **WPF**拡張子、たとえば、 **BoxViewClock.WPF**します。 をクリックして、**参照**ボタンを選択、 **BoxViewClock**フォルダー、およびキーを押して**フォルダーの選択**します。 これにより、WPF プロジェクト、ソリューション内の他のプロジェクトと同じディレクトリに入ります。
 
     ![新しい WPF プロジェクトの追加](wpf-images/add-new-project.png "新しい WPF プロジェクトの追加")
 
     プロジェクトを作成するには、[ok] を押します。
 
-4. **ソリューション エクスプ ローラー**、 を右クリックして、新しい**BoxViewClock.WPF**プロジェクトし、選択**NuGet パッケージの管理**です。 選択、**参照**タブをクリックし、**プレリリースを含める** チェック ボックスを検索し、 **Xamarin.Forms**です。
+4. **ソリューション エクスプ ローラー**、新しいを右クリックして**BoxViewClock.WPF**順に選択して**NuGet パッケージの管理**します。 選択、**参照** タブで、をクリックして、**プレリリースを含める**チェック ボックスをオンの検索と**Xamarin.Forms**します。
 
-    ![NuGet パッケージを選択して](wpf-images/select-nuget-package.png "NuGet パッケージの選択")
+    ![NuGet パッケージを選択して](wpf-images/select-nuget-package.png "NuGet パッケージを選択します。")
 
-    パッケージ化しをクリックしてあることを選択、**インストール**ボタンをクリックします。
+    パッケージ化し、をクリックするものを選択、**インストール**ボタンをクリックします。
 
-5. 今すぐ検索**Xamarin.Forms.Platform.WPF**パッケージ化し、その 1 つもインストールします。 パッケージが Microsoft から確認してください。
+5. 今すぐ検索**Xamarin.Forms.Platform.WPF**パッケージ化し、その 1 つもインストールします。 パッケージは、Microsoft から確認するには!
 
-6. ソリューション名を右クリックして、**ソリューション エクスプ ローラー**選択**Manage NuGet Packages for Solution**です。 選択、**更新** タブおよび**Xamarin.Forms**パッケージです。 すべてのプロジェクトを選択し、同じ Xamarin.Forms バージョンに更新します。
+6. ソリューション名を右クリックして、**ソリューション エクスプ ローラー**選択**ソリューションの NuGet パッケージの管理**します。 選択、 **Update**タブおよび**Xamarin.Forms**パッケージ。 すべてのプロジェクトを選択し、同じ Xamarin.Forms バージョンに更新します。
 
-    ![NuGet パッケージを更新](wpf-images/update-nuget-package.png "NuGet パッケージの更新") 
+    ![NuGet パッケージの更新](wpf-images/update-nuget-package.png "NuGet パッケージの更新") 
 
-7. 右クリックし、WPF プロジェクトで**参照**です。 **参照マネージャー**ダイアログで、**プロジェクト**、左右のチェックの横にあるチェック ボックスで、 **BoxViewClock**プロジェクト。
+7. 右クリックし、WPF プロジェクトで**参照**します。 **参照マネージャー**ダイアログ ボックスで、**プロジェクト**チェックの横にあるチェック ボックス、左側にある、 **BoxViewClock**プロジェクト。
 
-    ![共有プロジェクト参照](wpf-images/reference-shared-project.png "共有プロジェクト参照")
+    ![共有プロジェクト参照](wpf-images/reference-shared-project.png "共有プロジェクトの参照")
 
-8. 編集、 **MainWindow.xaml** WPF プロジェクトのファイルです。 `Window`タグの XML 名前空間宣言を追加、 **Xamarin.Forms.Platform.WPF**アセンブリと名前空間。
+8. 編集、 **MainWindow.xaml** WPF プロジェクトのファイル。 `Window`タグでの XML 名前空間宣言を追加、 **Xamarin.Forms.Platform.WPF**アセンブリと名前空間。
 
     ```xaml
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    ここで変更、`Window`タグを`wpf:FormsApplicationPage`です。 変更、`Title`設定、アプリケーションの名前を**BoxViewClock**です。 完成した XAML ファイルは、次のようになります。
+    ここで変更、`Window`タグを`wpf:FormsApplicationPage`します。 変更、`Title`をアプリケーションの名前に設定**BoxViewClock**します。 完成した XAML ファイルは、次のようになります。
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
@@ -82,21 +83,21 @@ Windows 7、8、および 10 のデスクトップで実行される WPF アプ�
     </wpf:FormsApplicationPage>
     ```
 
-9. 編集、 **MainWindow.xaml.cs** WPF プロジェクトのファイルです。 新しい 2 つ追加`using`ディレクティブ。
+9. 編集、 **MainWindow.xaml.cs** WPF プロジェクトのファイル。 2 つの新しい追加`using`ディレクティブ。
 
     ```csharp
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.WPF;
     ```
 
-    基本クラスを変更する`MainWindow`から`Window`に`FormsApplicationPage`です。 次の`InitializeComponent`呼び出し、次の 2 つのステートメントを追加します。
+    基本クラスを変更`MainWindow`から`Window`に`FormsApplicationPage`します。 次の`InitializeComponent`呼び出しは、次の 2 つのステートメントを追加します。
 
     ```csharp
     Forms.Init();
     LoadApplication(new BoxViewClock.App());
     ```
     
-    コメントを除くと未使用`using`ディレクティブ、完全な**MainWindows.xaml.cs**ファイルは次のようになります。
+    コメントを除くと、未使用`using`ディレクティブ、完全な**MainWindows.xaml.cs**ファイルは、次のようになります。
 
     ```csharp
     using Xamarin.Forms;
@@ -117,17 +118,17 @@ Windows 7、8、および 10 のデスクトップで実行される WPF アプ�
     }
     ```
 
-10. WPF プロジェクトを右クリックし、**ソリューション エクスプ ローラー**選択**スタートアップ プロジェクトとして設定**です。 F5 キーを押して、Windows デスクトップで、Visual Studio デバッガーでプログラムを実行します。
+10. WPF プロジェクトを右クリックし、**ソリューション エクスプ ローラー**選択と**スタートアップ プロジェクトとして設定**。 F5 キーを押して、Windows デスクトップで、Visual Studio デバッガーでプログラムを実行します。
 
-    ![WPF BoxView クロック](wpf-images/wpf-boxviewclock.png "WPF BoxView クロック" )
+    ![BoxView の WPF クロック](wpf-images/wpf-boxviewclock.png "BoxView の WPF クロック" )
 
 ## <a name="next-steps"></a>次の手順
 
-### <a name="platform-specifics"></a>プラットフォームの詳細
+### <a name="platform-specifics"></a>プラットフォーム固有設定
 
-コードか XAML のいずれかから Xamarin.Forms アプリケーションが実行されているプラットフォームを指定できます。 これにより、WPF で実行されているときに、プログラムの特性を変更することができます。 コードでは、値を比較`Device.RuntimePlatform`で、`Device.WPF`定数 (これは、文字列"WPF"に相当します)。 一致がある場合は、WPF で、アプリケーションが実行されています。
+コードまたは XAML のいずれかから、Xamarin.Forms アプリケーションが実行されているプラットフォームを判断できます。 これにより、WPF で実行されているときに、プログラムの特性を変更することができます。 コードでは、値を比較`Device.RuntimePlatform`で、`Device.WPF`定数 (これは、文字列"WPF"と等しくなります)。 一致がある場合は、WPF で、アプリケーションが実行されています。
 
-XAML では、使用することができます、`OnPlatform`タグをプラットフォームに固有のプロパティ値を選択します。
+XAML で使用できます、`OnPlatform`タグをプラットフォームに固有のプロパティ値を選択します。
 
 ```xaml
 <Button.TextColor>
@@ -150,5 +151,5 @@ Title="BoxViewClock" Height="450" Width="800"
 
 ## <a name="issues"></a>Issues
 
-これは、プレビューわけではないが実稼働の準備完了であることが予想されます。 Xamarin.Forms のすべての NuGet パッケージの準備ができて、WPF と一部の機能が完全に機能していない可能性があります。
+これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 Xamarin.Forms 用のすべての NuGet パッケージは、WPF の準備が整ったし、一部の機能が完全に機能していない可能性があります。
 

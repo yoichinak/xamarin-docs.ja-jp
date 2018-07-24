@@ -1,6 +1,6 @@
 ---
-title: Hello, iOS クイック スタート
-description: この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して基本的な Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について理解を深めます。 ガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順を紹介します。
+title: Hello, iOS – クイックスタート
+description: このチュートリアルは、"Hello, iOS" という名前の単純な Xamarin.iOS アプリケーションをビルドする方法について段階的に説明しています。 その過程で、Xamarin.iOS アプリケーションをビルドするために理解する必要がある基本的なツールや概念を紹介しています。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: d9f5894f03bbfaa2145aec462dbd0ede7774354a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785987"
 ---
-# <a name="helloios-quickstart"></a>Hello.iOS クイックスタート
+# <a name="hello-ios--quickstart"></a>Hello, iOS – クイックスタート
 
 このガイドでは、ユーザーが入力した英字の電話番号を数値の電話番号に変換してから、その番号に電話をかけるアプリケーションの作成方法を説明します。 最終的にアプリケーションは次のようになります。
 
@@ -320,7 +321,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
 1. デザイン サーフェイスで**ラベル**が選択されている状態で、**[プロパティ]** ウィンドウを利用し、**[ラベル]** の **[テキスト]** プロパティを "Enter a Phoneword:" に変更します。
 
-  ![](hello-ios-quickstart-images/vs-image10.png "ラベルの Text プロパティを "Enter a Phoneword" に設定します")
+  ![](hello-ios-quickstart-images/vs-image10.png "ラベルの Text プロパティを \"Enter a Phoneword\" に設定します")
 
   > [!NOTE]
   > **[表示]** メニューに移動すれば、**[プロパティ]** や **[ツールボックス]** をいつでも表示できます。

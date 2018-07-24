@@ -12,6 +12,7 @@ ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33798415"
 ---
 # <a name="hello-wear"></a>こんにちは, 損傷
 

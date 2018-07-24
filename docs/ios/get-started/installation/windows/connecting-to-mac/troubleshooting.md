@@ -1,5 +1,5 @@
 ---
-title: 接続のトラブルシューティング
+title: Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 description: このガイドでは、新しい接続マネージャーの使用中に発生する可能性がある問題を解決する方法について説明します。接続できない問題や SSH の問題などを解決します。
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8aac58546e51525ae22c09218f90addef911669a
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 575e6705679539af6d3e5fae3ffc5721d9f79ba6
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291049"
 ---
-# <a name="connection-troubleshooting"></a>接続のトラブルシューティング
+# <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
 _このガイドでは、新しい接続マネージャーの使用中に発生する可能性がある問題を解決する方法について説明します。接続できない問題や SSH の問題などを解決します。_
 
@@ -90,7 +91,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
     ssh amyb@10.1.8.95 'ls'
     ```
     
-    Mac のホーム ディレクトリのコンテンツが一覧表示されるはずです。 `ls` コマンドは正しく機能するが、Visual Studio 接続に失敗する場合は、「[既知の問題と制限事項](#knownissues)」セクションで Xamarin に固有の問題を確認してください。 該当する問題が見当たらない場合は、[新しいバグ レポートを提出](https://bugzilla.xamarin.com/newbug)し、ログを添付してください。詳細は、[詳細ログ ファイルの確認](#verboselogs)に関するセクションにあります。
+    Mac のホーム ディレクトリのコンテンツが一覧表示されるはずです。 `ls` コマンドは正しく機能するが、Visual Studio 接続に失敗する場合は、「[既知の問題と制限事項](#knownissues)」セクションで Xamarin に固有の問題を確認してください。 該当する問題が見当たらない場合は、Visual Studio で **[ヘルプ]、[フィードバックの送信]、[問題の報告]** の順に移動して開発者コミュニティに新しいバグ レポートを提出し、ログを添付してください (詳細については、[詳細ログ ファイルの確認](#verboselogs)に関するページを参照)。
 
 10. **手順 8 で失敗した**場合、Mac のターミナルで次のコマンドを実行し、SSH サーバーが_何らか_の接続を受信しているか確認します。
 

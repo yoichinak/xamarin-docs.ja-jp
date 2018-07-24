@@ -1,70 +1,70 @@
 ---
-title: Xamarin.Forms の画像
-description: イメージは、Xamarin.Forms を使用したプラットフォーム間で共有することができます、具体的には、各プラットフォーム用に読み込むことができる、または表示をダウンロードすることができます。
+title: Xamarin.Forms でのイメージ
+description: イメージは、Xamarin.Forms のプラットフォームで共有できる、具体的には、各プラットフォーム用に読み込むことができるまたは表示をダウンロードすることができます。
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 47fbe67561ea9150d0fdc0b41eb5c70edbeac75e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244546"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996270"
 ---
-# <a name="images-in-xamarinforms"></a>Xamarin.Forms の画像
+# <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
-_イメージは、Xamarin.Forms を使用したプラットフォーム間で共有することができます、具体的には、各プラットフォーム用に読み込むことができる、または表示をダウンロードすることができます。_
+_イメージは、Xamarin.Forms のプラットフォームで共有できる、具体的には、各プラットフォーム用に読み込むことができるまたは表示をダウンロードすることができます。_
 
-イメージは、アプリケーションのナビゲーション、使いやすさ、およびブランド化の重要な部分です。 Xamarin.Forms アプリケーションは、各プラットフォームでも可能性があるさまざまなイメージを表示では、すべてのプラットフォームでイメージを共有できる必要があります。
+イメージは、アプリケーションのナビゲーション、ユーザビリティ、およびブランド化の重要な部分です。 Xamarin.Forms アプリケーションは、すべてのプラットフォームでは、イメージを共有するが、各プラットフォームでも可能性があるさまざまなイメージを表示することができる必要があります。
 
-プラットフォーム固有のイメージものアイコンとスプラッシュ スクリーン; 必要です。これらは、プラットフォームごとに構成する必要があります。
+プラットフォーム固有のイメージもアイコンとスプラッシュ スクリーン; に必要です。これらは、プラットフォームごとに構成する必要があります。
 
 このドキュメントでは、次のトピックについて説明します。
 
-- [ **ローカル イメージ**](#Local_Images) -iOS Retina、Android または UWP 高 DPI のバージョンの画像のようなネイティブの解像度の解決を含め、アプリケーション付属のイメージを表示します。
+- [ **ローカル イメージ**](#Local_Images) -iOS Retina、Android、または UWP の高解像度バージョンの画像のようなネイティブの解像度の解決を含め、アプリケーションに付属のイメージを表示します。
 - [ **埋め込み画像**](#Embedded_Images) -アセンブリ リソースとして埋め込まれた画像を表示します。
-- [ **イメージをダウンロード**](#Downloading_Images) - ダウンロードし、イメージを表示します。
-- [ **アイコンとスプラッシュ スクリーン**](#Icons_and_splashscreens) -プラットフォーム固有のアイコンとスタートアップ イメージ。
+- [ **イメージをダウンロード**](#Downloading_Images) - ダウンロードし、画像を表示します。
+- [ **アイコンと**](#Icons_and_splashscreens) -プラットフォーム固有のアイコンと起動イメージ。
 
 ## <a name="displaying-images"></a>イメージを表示します。
 
-Xamarin.Forms を使用して、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)画像を表示するページに表示します。 2 つの重要なプロパティがあります。
+Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をページにイメージを表示するビュー。 2 つの重要なプロパティがあります。
 
-- [`Source`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) - [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/)インスタンス、ファイル、Uri またはリソースで、表示するイメージを設定します。
-- [`Aspect`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) -方法が (stretch、トリミングまたはレター ボックスするかどうか) 内で表示されている境界内の画像のサイズを変更します。
+- [`Source`](xref:Xamarin.Forms.Image.Source) - [ `ImageSource` ](xref:Xamarin.Forms.ImageSource)インスタンス、ファイル、Uri またはリソースで、表示するイメージを設定します。
+- [`Aspect`](xref:Xamarin.Forms.Image.Aspect) -(Stretch、トリミングまたはレター ボックスかどうか) 内で表示されている範囲内のイメージのサイズを変更する方法。
 
-[`ImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) インスタンスは、イメージ ソースの種類ごとに静的メソッドを使用して取得できます。
+[`ImageSource`](xref:Xamarin.Forms.ImageSource) インスタンスは、画像ソースの種類ごとに静的メソッドを使用して取得できます。
 
-- [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) -ファイル名または各プラットフォームで解決可能なファイル パスが必要です。
-- [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) -たとえば、Uri オブジェクトが必要です。  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -アプリケーションまたは .NET 標準のライブラリ プロジェクトに埋め込む画像ファイルへのリソース識別子が必要です、**ビルド アクション: EmbeddedResource**です。
-- [`FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) -イメージ データを提供するストリームが必要です。
+- [`FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) -ファイル名または各プラットフォームで解決可能なファイル パスが必要です。
+- [`FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) -次のような Uri オブジェクトが必要です。  `new Uri("http://server.com/image.jpg")` .
+- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) -で、アプリケーションまたは .NET Standard ライブラリ プロジェクトに埋め込まれた画像ファイルへのリソース識別子が必要です、**ビルド アクション: EmbeddedResource**します。
+- [`FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) -イメージ データを提供するストリームが必要です。
 
-[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/)プロパティは、表示領域に合わせて、イメージをスケーリングする方法を決定します。
+[ `Aspect` ](xref:Xamarin.Forms.Image.Aspect)プロパティが表示領域に合わせて、イメージをスケーリングする方法を決定します。
 
-- [`Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.Fill/) -完全かつ正確には、表示領域を占めるように画像を拡大します。 これにより、ゆがんで表示されるイメージ可能性があります。
-- [`AspectFill`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.AspectFill/) -を縦横比を維持しながら、表示領域を占めるよう、イメージをクリップ (ie。 ゆがむことなく)。
-- [`AspectFit`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.AspectFit/) -Letterboxes (必要な場合) イメージ全体のイメージが表示領域に収まるように、かどうかに応じて境界線の上/下に追加される空白の領域で、イメージは幅または高さ。
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -完全かつ正確には、表示領域を塗りつぶすイメージを拡大します。 これにより、イメージ遠近法されている可能性があります。
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -縦横比を維持しながら、表示領域を塗りつぶすようにイメージをクリップ (ie。 ゆがむことなく)。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -レター ボックス (必須) の場合は、イメージ全体のイメージが表示領域に収まるように空白かどうかに応じて境界線の上/下に追加で、イメージは幅または高さ。
 
-イメージを読み込むことが、[ローカルファイル](#Local_Images_in_Xaml)、[埋め込みリソース](#embedded_images)、または[ダウンロード](#Downloading_Images)です。
+イメージを読み込むことが、[ローカルファイル](#Local_Images_in_Xaml)、[埋め込みリソース](#embedded_images)、または[ダウンロード](#Downloading_Images)します。
 
 <a name="Local_Images" />
 
-## <a name="local-images"></a>ローカルの画像
+## <a name="local-images"></a>ローカルのイメージ
 
-イメージ ファイルを各アプリケーション プロジェクトに追加し、Xamarin.Forms 共有コードから参照されていることができます。 すべてのアプリ間で 1 つのイメージを使用する*すべてのプラットフォームで同じファイル名を使用する必要があります*、有効な Android リソース名を指定する必要があります (ie。 小文字のみ、数字、アンダー スコア、および期間が許可されている)。
+イメージ ファイルを各アプリケーション プロジェクトに追加し、Xamarin.Forms の共有コードから参照します。 すべてのアプリ間で 1 つのイメージを使用する*すべてのプラットフォームで同じファイル名を使用する必要があります*、有効な Android のリソース名を指定する必要があります (つまり。 のみ小文字、数字、アンダー スコア、および期間が許可されている)。
 
-- **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**アセット カタログのイメージ セット**、すべてのさまざまなデバイスをサポートし、規模の要素に必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
-- **Android** -内のイメージを配置、**リソース/描画**ディレクトリが**ビルド アクション: AndroidResource**です。 高 DPI と低のバージョンの画像も提供されます (で適切に名前付き**リソース**などサブディレクトリ**ドロウアブル ldpi**、**ドロウアブル hdpi**、および**ドロウアブル xhdpi**)。
-- **ユニバーサル Windows プラットフォーム (UWP)** -アプリケーションのルート ディレクトリでイメージを配置**ビルド アクション: コンテンツ**です。
+- **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**資産カタログの画像セット**、すべてのスケール ファクターのさまざまなデバイスをサポートするために必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
+- **Android** -内のイメージを配置、**リソース/drawable**ディレクトリが**ビルド アクション: AndroidResource**します。 高 DPI と低いバージョンの画像が指定することもできます (で適切に名前付き**リソース**など、サブディレクトリ**ldpi drawable**、 **drawable hdpi**と**drawable xhdpi**)。
+- **ユニバーサル Windows プラットフォーム (UWP)** -アプリケーションのルート ディレクトリにイメージを配置**ビルド アクション: コンテンツ**します。
 
 > [!IMPORTANT]
-> IOS 9 の場合は、前にイメージ通常に配置されていた、**リソース**フォルダー**ビルド アクション: BundleResource**です。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
+> IOS 9 の場合は、前にイメージが通常の配置、**リソース**フォルダー**ビルド アクション: BundleResource**します。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
-ファイルの名前付けおよび配置についてこれらの規則に準拠するには、次の XAML を読み込むし、すべてのプラットフォームでイメージを表示することができます。
+ファイルの名前付けおよび配置についてこれらの規則に準拠するには、次の XAML を読み込み、すべてのプラットフォーム イメージを表示することができます。
 
 ```xaml
 <Image Source="waterfront.jpg" />
@@ -76,9 +76,9 @@ Xamarin.Forms を使用して、 [ `Image` ](https://developer.xamarin.com/api/t
 var image = new Image { Source = "waterfront.jpg" };
 ```
 
-次のスクリーン ショットは、ローカルのイメージを表示する各プラットフォームでの結果を表示します。
+次のスクリーン ショットは、ローカル イメージを表示する各プラットフォームでの結果を表示します。
 
-[![ローカルの ImageSource](images-images/local-sml.png "サンプル アプリケーションがローカルのイメージを表示する")](images-images/local.png#lightbox "サンプル アプリケーションがローカルのイメージを表示します。")
+[![ローカルの ImageSource](images-images/local-sml.png "サンプル アプリケーションをローカルのイメージを表示する")](images-images/local.png#lightbox "サンプル アプリケーションをローカルのイメージを表示します。")
 
 柔軟性を高めるため、`Device.RuntimePlatform`このコード例で示すように、別のイメージ ファイルまたはパスの一部またはすべてのプラットフォームを選択するプロパティを使用できます。
 
@@ -87,86 +87,89 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 ```
 
 > [!IMPORTANT]
-> すべてのプラットフォームで同じイメージ ファイル名を使用するには、名前はすべてのプラットフォームで有効にする必要があります。 Android ドロウアブル名前付けの制限 – 小文字のアルファベット、数字、アンダー スコア、およびピリオドのみが許可されている – 持ちプラットフォーム間の互換性のためこの従う必要がありますの他のすべてのプラットフォームですぎます。 ファイル名の例**waterfront.png**次の手順では、ルールが無効なファイル名の例は、"水 front.png、""WaterFront.png"を含む"水-front.png"と"wåterfront.png"です。
+> すべてのプラットフォームで同じイメージ ファイル名を使用するには、名前は、すべてのプラットフォームでは有効である必要があります。 ドローアブルの android では、名前付けに関する制約がある-小文字アルファベット、数字、アンダー スコア、およびピリオドのみが許可されている – とクロス プラットフォームの互換性のためこの従う必要があるその他のすべてのプラットフォームでも。 ファイル名の例**waterfront.png**規則に従いますが、無効なファイル名の例は、"water front.png、""WaterFront.png"、"water-front.png"と"wåterfront.png"。
 
 <a name="Native_Resolutions" />
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>ネイティブの解像度 (Retina と高 DPI)
 
-iOS、Android、および UWP には、別の画像の解像度、オペレーティング システムが実行時に、デバイスの機能に基づく適切なイメージを選択のサポートが含まれます。 Xamarin.Forms は、場合は、ファイルが正しくという名前し、プロジェクト内に別の解像度を自動的にサポートするために、ローカルのイメージを読み込むためのネイティブ プラットフォームの Api を使用します。
+iOS、Android、および UWP には、オペレーティング システムがデバイスの機能に基づいて実行時に適切なイメージを選択、さまざまな画像の解像度のサポートが含まれます。 Xamarin.Forms では、ローカルのイメージを読み込み、ファイルが正しくという名前し、プロジェクト内にある場合に自動的に代替の解像度をサポートに、ネイティブ プラットフォームの Api を使用します。
 
-IOS 9 以降のイメージを管理することをお勧め適切な資産カタログ イメージ セットに必要な各解像度のイメージのドラッグを開始します。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
+IOS 9 以降のイメージの管理の推奨される方法は、適切な資産カタログの画像セットに必要な各解像度のイメージをドラッグすることです。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
-IOS 9 の場合は前に、retina バージョンのイメージを配置する可能性があります、**リソース**フォルダー - 2 と 3 回の解像度、 **@2x**または**@3x**(ファイル拡張子の前にファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)です。
+Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、**リソース**フォルダー - 2 と 3 回の解像度、 **@2x**または**@3x**(例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
-Android の代替解像度のイメージを配置する必要があります[特別にという名前のディレクトリ](http://developer.android.com/guide/practices/screens_support.html)Android プロジェクトで、次のスクリーン ショットに示すようにします。
+Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](http://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
 
 [![Android の複数の解像度のイメージの場所](images-images/xs-highdpisolution-sml.png "Android の複数の解像度のイメージの場所")](images-images/xs-highdpisolution.png#lightbox "Android の複数の解像度のイメージの場所")
 
-イメージ ファイルの名前を UWP[を付けることができます`.scale-xxx`ファイル拡張子の前に](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ここで、`xxx`の拡大/縮小すると、資産などの割合をパーセント**myimage.scale 200.png**です。 コードまたは XAML スケール修飾子を指定せず、たとえばだけにイメージを参照できます**myimage.png**です。 プラットフォームでは、ディスプレイの現在の DPI に基づく最も近い適切な資産のスケールを選択します。
+イメージ ファイルの名前を UWP[付くことができます`.scale-xxx`ファイル拡張子の前に](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ここで、`xxx`など、資産に適用されるスケーリングの割合をパーセント**myimage.scale 200.png**。 イメージは、コードまたは XAML スケール修飾子を指定せず、だけなどに参照する**myimage.png**します。 プラットフォームでは、ディスプレイの現在の DPI に基づいて最も近い適切な資産のスケールを選択します。
 
 ### <a name="additional-controls-that-display-images"></a>その他のコントロール イメージを表示します。
 
 一部のコントロールでは、イメージを表示するプロパティがあります。
 
-- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) -すべてのページから派生する型`Page`が[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)と[ `BackgroundImage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.BackgroundImage/)プロパティで、ローカル ファイルの参照を割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)が表示されて、 [ `ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)プラットフォームでサポートされている場合、アイコンが表示されます。
+- [`Page`](xref:Xamarin.Forms.Page) -すべてのページから派生した型`Page`が[ `Icon` ](xref:Xamarin.Forms.Page.Icon)と[ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage)プロパティは、ローカル ファイルの参照を割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)が表示されて、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)プラットフォームでサポートされている場合、アイコンが表示されます。
 
   > [!IMPORTANT]
-  > Ios の場合、 [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)アセット カタログのイメージ セット内のイメージからプロパティを設定することはできません。 代わりのアイコン イメージを読み込む、`Page.Icon`プロパティから、**リソース**iOS プロジェクト フォルダーにします。
+  > Ios では、 [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon)資産カタログの画像セット内のイメージからプロパティを設定することはできません。 代わりのアイコン イメージを読み込む、`Page.Icon`プロパティから、**リソース**iOS プロジェクトのフォルダー。
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) は、 [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/)ローカル ファイルの参照を設定できるプロパティです。
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) は、 [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/)をイメージに設定できるプロパティですが、ローカル ファイル、埋め込みリソース、または URI から取得します。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) は、 [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)ローカル ファイルの参照を設定できるプロパティです。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -は、 [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)ローカル ファイル、埋め込みリソース、または URI からイメージを設定できるプロパティを取得します。
 
 <a name="embedded_images" />
 
 ## <a name="embedded-images"></a>[埋め込み画像]
 
-埋め込み画像も付属していますが (ローカル イメージの場合) のようなアプリケーションが、各アプリケーションのファイルの構造、イメージのイメージのコピーではなく、ファイルがリソースとしてアセンブリに埋め込まれました。 イメージを配布するには、このメソッドは、イメージがコードにバンドルされているコンポーネントの作成に特に適しています。
+埋め込み画像は (ローカルのイメージ) のようなアプリケーションにも付属しますが、各アプリケーションのファイル構造、イメージ、イメージのコピーではなく、ファイルがリソースとしてアセンブリに埋め込まれました。 イメージを配布するには、このメソッドは、イメージが、コードにバンドルされているコンポーネントの作成に特に適しています。
 
-プロジェクトで画像を埋め込むには、新しい項目を追加したり、追加する画像/秒を選択して右クリックします。 既定では、イメージになります**ビルド アクション: None**; に設定する必要があります**ビルド アクション: EmbeddedResource**です。
+プロジェクトには、画像を埋め込む、新しい項目を追加し、追加するイメージ/秒を選択して右クリックします。 既定では、イメージに**ビルド アクション: None**; に設定する必要があります**ビルド アクション: EmbeddedResource**します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ![](images-images/vs-buildaction.png "ビルド アクションを設定します埋め込まれたリソース。")
 
-**ビルド アクション**表示および変更、**プロパティ**ファイルのウィンドウ。
+**ビルド アクション**表示および変更できる、**プロパティ**ファイル ウィンドウ。
 
-この例では、リソース ID は**WorkingWithImages.beach.jpg**です。
-IDE によってこの既定値を連結して生成された、**既定 Namespace**ファイル名でこのプロジェクトの各値の間のピリオド (.) を使用します。
+この例では、リソース ID は**WorkingWithImages.beach.jpg**します。
+IDE によってこの既定値を連結して生成された、**既定 Namespace**ファイル名では、このプロジェクトの各値の間のピリオド (.) を使用します。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ![](images-images/xs-buildaction.png "ビルド アクションを設定します埋め込まれたリソース。")
 
-**ビルド アクション**も表示および変更、**プロパティ**ファイルのパッド。
-このパッドを示しています、**リソース ID**コード内のリソースを参照するためです。 以下のスクリーン ショットで、**リソース ID**は**WorkingWithImages.beach.jpg**です。
-IDE によってこの既定値を連結して生成された、**既定 Namespace**ファイル名でこのプロジェクトの各値の間のピリオド (.) を使用します。
-この ID を編集することができます、**プロパティ**パッドがこれらの例の値**WorkingWithImages.beach.jpg**使用されます。
+**ビルド アクション**表示および変更できるようも、**プロパティ**ファイルのパッド。
+このパッドを示しています、**リソース ID**コード内のリソースの参照に使用します。 次のスクリーン ショット、**リソース ID**は**WorkingWithImages.beach.jpg**します。
+IDE によってこの既定値を連結して生成された、**既定 Namespace**ファイル名では、このプロジェクトの各値の間のピリオド (.) を使用します。
+この ID を編集できます、**プロパティ**パッドがこれらの例の値**WorkingWithImages.beach.jpg**使用されます。
 
-![](images-images/xs-embeddedproperties.png "埋め込まれたリソース プロパティ パッド")
+![](images-images/xs-embeddedproperties.png "EmbeddedResource プロパティ パッド")
 
 -----
 
-フォルダー名がリソース ID でピリオド (.) で区切られても、プロジェクト内のフォルダーに埋め込み画像を配置する場合 移動、 **beach.jpg**という名前のフォルダーにイメージ**により**のリソース ID になる**WorkingWithImages.MyImages.beach.jpg**
+リソース ID では、ピリオド (.) で、フォルダー名も区切られた、プロジェクト内にフォルダーに埋め込まれた画像を配置する場合 移動、 **beach.jpg**という名前のフォルダーにイメージ**MyImages**のリソース ID になる**WorkingWithImages.MyImages.beach.jpg**
 
-埋め込み画像を読み込むようにコードを渡すだけ、**リソース ID**を[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)メソッドを次のように。
+埋め込み画像を読み込むためのコードを渡すだけ、**リソース ID**を[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*)メソッドを次に示すよう。
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
 
-現在リソース識別子の暗黙的な変換はありません。 代わりに、使用する必要があります[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)または`new ResourceImageSource()`埋め込み画像を読み込めません。
+> [!NOTE]
+> オーバー ロードを使用する必要はユニバーサル Windows プラットフォームでのリリース モードでの埋め込み画像の表示をサポートする`ImageSource.FromResource`のイメージを検索するためのソース アセンブリを指定します。
 
-次のスクリーン ショットは、各プラットフォームで埋め込み画像を表示する結果を表示します。
+現在のリソース識別子の暗黙的な変換ではありません。 代わりに、使用する必要があります[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*)または`new ResourceImageSource()`埋め込み画像を読み込めません。
+
+次のスクリーン ショットは、埋め込み画像を表示する各プラットフォームでの結果を表示します。
 
 [![ResourceImageSource](images-images/resource-sml.png "サンプル アプリケーションの埋め込み画像を表示する")](images-images/resource.png#lightbox "サンプル アプリケーションの埋め込み画像を表示します。")
 
 <a name="Embedded_Images_in_Xaml" />
 
-### <a name="using-xaml"></a>XAML を使用してください。
+### <a name="using-xaml"></a>XAML を使用します。
 
-組み込み型コンバーターが存在しないため`string`に`ResourceImageSource`、これらの種類のイメージは XAML でネイティブに読み込むことができません。 単純なカスタム XAML マークアップ拡張機能を記述してを使用してイメージを読み込む代わりに、**リソース ID** XAML で指定します。
+組み込み型コンバーターがないため`string`に`ResourceImageSource`、XAML によって、これらの種類のイメージをネイティブに読み込むことができません。 使用してイメージを読み込む代わりに、単純なカスタム XAML マークアップ拡張機能を記述できます、**リソース ID** XAML で指定します。
 
 ```csharp
 [ContentProperty (nameof(Source))]
@@ -182,14 +185,17 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
 
-この拡張機能を使用するには、追加のカスタム`xmlns`XAML をプロジェクトの名前空間とアセンブリの正しい値を使用します。 この構文を使用して、イメージ ソースを設定することができますし:`{local:ImageResource WorkingWithImages.beach.jpg}`です。 XAML の完全な例を次に示します。
+> [!NOTE]
+> オーバー ロードを使用する必要はユニバーサル Windows プラットフォームでのリリース モードでの埋め込み画像の表示をサポートする`ImageSource.FromResource`のイメージを検索するためのソース アセンブリを指定します。
+
+この拡張機能を使用するには、追加のカスタム`xmlns`XAML をプロジェクトの名前空間とアセンブリの正しい値を使用します。 この構文を使用して、イメージのソースを設定することができますし:`{local:ImageResource WorkingWithImages.beach.jpg}`します。 完全な XAML の例は、以下に示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -211,7 +217,7 @@ public class ImageResourceExtension : IMarkupExtension
 
 #### <a name="debugging-code"></a>コードのデバッグ
 
-特定のイメージ リソースが読み込まれていない理由を理解しにくい場合があります、ため、次のデバッグ コードが、リソースが正しく構成されていることを確認するために、アプリケーションを一時的に追加できます。 特定のアセンブリに埋め込まれた認識されているすべてのリソースを出力は、<span class="UIItem">コンソール</span>リソース読み込みの問題をデバッグする際にします。
+特定のイメージ リソースが読み込まれていない理由を理解しにくい場合があります、ため、次のコードのデバッグが、リソースが正しく構成されていることを確認するためのアプリケーションを一時的に追加できます。 特定のアセンブリに埋め込まれているすべての既知のリソースの出力には、<span class="UIItem">コンソール</span>リソース読み込みの問題をデバッグする際にします。
 
 ```csharp
 using System.Reflection;
@@ -224,15 +230,21 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>他のプロジェクトに埋め込まれた画像が表示されません。
+#### <a name="images-embedded-in-other-projects"></a>他のプロジェクトに埋め込まれた画像
 
-`Image.FromResource` コードの呼び出しと同じアセンブリ内のイメージだけを検索`FromResource`です。 対象のアセンブリが変更することによって、特定のリソースを含むを判断できます上記デバッグ コードを使用して、`typeof()`ステートメントを`Type`各アセンブリ内にあります。
+既定で、`ImageSource.FromResource`だけメソッドを呼び出すコードと同じアセンブリ内のイメージの検索、`ImageSource.FromResource`メソッド。 どのアセンブリは、変更することで、特定のリソースを含めることが確認できます、デバッグ コードを使用して、`typeof()`ステートメントを`Type`各アセンブリ内にあります。
+
+ただし、ソース アセンブリの埋め込み画像の検索対象をへの引数として指定できます、`ImageSource.FromResource`メソッド。
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
-## <a name="downloading-images"></a>イメージをダウンロードします。
+## <a name="downloading-images"></a>イメージのダウンロード
 
-イメージに自動的にダウンロードできます、表示のため次の XAML で示すように。
+イメージに自動的にダウンロードできます、表示のための次の XAML に示すよう。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -253,15 +265,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
 ```
 
-[ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/)メソッドが必要な`Uri`オブジェクト、および新しいを返します[ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)から読み取る、`Uri`です。
+[ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri))メソッドが必要です、`Uri`オブジェクト、および新しいを返します[ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)から読み取る、`Uri`します。
 
-暗黙の変換が URI 文字列のため、次の例はでも機能します。
+暗黙の変換が、URI 文字列のため、次の例は、動作も。
 
 ```csharp
 webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
 ```
 
-次のスクリーン ショットは、各プラットフォームでのリモート イメージを表示する結果を表示します。
+次のスクリーン ショットは、リモート イメージを表示する各プラットフォームでの結果を表示します。
 
 [![ダウンロード ImageSource](images-images/download-sml.png "サンプル アプリケーションをダウンロードしたイメージを表示する")](images-images/download.png#lightbox "サンプル アプリケーションをダウンロードしたイメージを表示します。")
 
@@ -269,18 +281,18 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 ### <a name="downloaded-image-caching"></a>ダウンロードしたイメージのキャッシュ
 
-A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)も次のプロパティを通じて、構成、ダウンロードしたイメージのキャッシュをサポートします。
+A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)も、次のプロパティを使用して構成、ダウンロードしたイメージのキャッシュをサポートしています。
 
-- [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) にキャッシュが有効するかどうか (`true`既定)。
-- [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) A`TimeSpan`イメージをローカルに保存はどのくらいの期間を定義します。
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) のキャッシュが有効なかどうか (`true`既定)。
+- [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity) は、`TimeSpan`イメージをローカルに格納するはどのくらいの期間を定義します。
 
-キャッシュは既定で有効にし、24 時間、ローカルにイメージを格納します。 特定のイメージのキャッシュを無効にするには、次のように イメージ ソースをインスタンス化します。
+キャッシュは既定で有効になっているし、24 時間のローカルでイメージを格納します。 特定のイメージのキャッシュを無効にするには、イメージ ソースを次のようにインスタンス化します。
 
 ```csharp
 image.Source = new UriImageSource { CachingEnabled = false, Uri="http://server.com/image" };
 ```
 
-特定のキャッシュ期間 (たとえば、5 日) を設定するには、次のように 画像のソースをインスタンス化します。
+特定のキャッシュ期間 (たとえば、5 日) を設定するには、次のように イメージ ソースをインスタンス化します。
 
 ```csharp
 webImage.Source = new UriImageSource
@@ -291,36 +303,35 @@ webImage.Source = new UriImageSource
 };
 ```
 
-組み込みのキャッシュとで各セルにイメージを設定 (またはできるバインド) イメージの一覧をスクロールするようなシナリオをサポートし、組み込みキャッシュのセルがビューにスクロールするときに、イメージを再読み込みを処理できるように非常に簡単です。
+組み込みキャッシュすると、各セルにイメージを設定 (またはできるバインド) イメージの一覧をスクロールなどのシナリオをサポートし、組み込みのキャッシュのセルがビューにスクロールされたとき、イメージの再読み込みを処理できるようにする非常に簡単になります。
 
 <a name="Icons_and_splashscreens" />
 
-## <a name="icons-and-splashscreens"></a>アイコンとスプラッシュ スクリーン
+## <a name="icons-and-splashscreens"></a>アイコンと
 
-関連していないときに、 [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)ビュー、アプリケーションのアイコンとスプラッシュ スクリーンも Xamarin.Forms プロジェクト内のイメージの重要な使い方として。
+関連していないときに、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー、アプリケーションのアイコンとも、Xamarin.Forms プロジェクト内のイメージの重要な使用。
 
-アイコンと Xamarin.Forms のアプリのスプラッシュ スクリーンの設定は、各アプリケーション プロジェクトで行われます。 これは、iOS、Android、および UWP 用のイメージ サイズが正しく生成することを意味します。 これらのイメージは、という名前し、各プラットフォームの要件に従って配置する必要があります。
+アイコンと Xamarin.Forms アプリと設定は、各アプリケーション プロジェクトで行われます。 これは、サイズの iOS、Android、および UWP 用のイメージを正しく生成することを意味します。 これらのイメージは、各プラットフォームの要件に従って配置してという名前をする必要があります。
 
 ## <a name="icons"></a>アイコン
 
-参照してください、 [iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)、 [Google 物](http://developer.android.com/design/style/iconography.html)、および[タイルおよびアイコン アセットに関するガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)これらのアプリケーション リソースを作成する方法の詳細についてです。
+参照してください、 [iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)、 [Google リモコン](http://developer.android.com/design/style/iconography.html)、および[タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)これらのアプリケーション リソースの作成の詳細についてはします。
 
-## <a name="splashscreens"></a>スプラッシュ スクリーン
+## <a name="splashscreens"></a>と
 
-IOS および UWP アプリケーションのみ (スタートアップ画面または既定のイメージとも呼ばれます)、スプラッシュ スクリーンが必要です。
+IOS と UWP アプリケーションのみ (スタートアップ画面または既定のイメージとも呼ばれます) スプラッシュ スクリーンが必要です。
 
-マニュアルを参照してください[iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)と[スプラッシュ スクリーン](/windows/uwp/launch-resume/splash-screens/)Windows デベロッパー センターにします。
+ドキュメントを参照してください[iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)と[スプラッシュ スクリーン](/windows/uwp/launch-resume/splash-screens/)Windows デベロッパー センターでします。
 
 ## <a name="summary"></a>まとめ
 
-Xamarin.Forms では、さまざまなプラットフォーム間で使用する同じイメージまたはプラットフォーム固有のイメージを指定するを許可する、クロスプラット フォームのアプリケーションに画像を挿入するさまざまな方法が用意されています。 ダウンロードしたイメージも自動的にキャッシュされる一般的なコーディングのシナリオを自動化します。
+Xamarin.Forms には、さまざまなプラットフォーム間で使用する同じイメージまたはプラットフォーム固有のイメージを指定することができます、クロス プラットフォーム アプリケーションに画像を挿入するさまざまな方法が用意されています。 ダウンロードしたイメージが自動的にキャッシュされる、一般的なコーディングのシナリオを自動化します。
 
-アプリケーションのアイコンとスプラッシュ スクリーンのイメージはセットアップ、プラットフォーム固有のアプリに使用される同じガイダンスに従う Xamarin.Forms 以外のアプリケーションの場合と構成
-
+アプリケーション アイコンとスプラッシュ スクリーン イメージ セットアップは、プラットフォーム固有のアプリに使用される同じガイダンスに従う以外 Xamarin.Forms アプリケーションの構成します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [WorkingWithImages (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
-- [iOS イメージの操作](~/ios/app-fundamentals/images-icons/index.md)
+- [iOS 画像の操作](~/ios/app-fundamentals/images-icons/index.md)
 - [Android のアイコン](http://developer.android.com/design/style/iconography.html)
-- [タイルおよびアイコン アセットに関するガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)
+- [タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

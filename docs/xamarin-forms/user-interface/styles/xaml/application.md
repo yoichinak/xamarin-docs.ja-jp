@@ -1,28 +1,28 @@
 ---
-title: Xamarin.Forms でのグローバルのスタイル
-description: スタイルが利用できるグローバルに、アプリケーションのリソース ディクショナリに追加します。 これにより、ページまたはコントロールにわたってスタイルの重複を回避します。
+title: Xamarin.Forms でグローバル スタイル
+description: スタイル利用できるグローバルに、アプリケーションのリソース ディクショナリに追加することで。 これは、ページまたはコントロールの間でスタイルの重複を回避するのに役立ちます。
 ms.prod: xamarin
 ms.assetid: BDC65F82-65E0-4C8E-BB91-8E340EB2D15A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c5ce0f3e4ff906f9bdef06e605e71d4ed64d2a68
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7b2a37b868ea03ca626ffd2dcddb006a235b0cc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245349"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995402"
 ---
-# <a name="global-styles-in-xamarinforms"></a>Xamarin.Forms でのグローバルのスタイル
+# <a name="global-styles-in-xamarinforms"></a>Xamarin.Forms でグローバル スタイル
 
-_スタイルが利用できるグローバルに、アプリケーションのリソース ディクショナリに追加します。これにより、ページまたはコントロールにわたってスタイルの重複を回避します。_
+_スタイル利用できるグローバルに、アプリケーションのリソース ディクショナリに追加することで。これは、ページまたはコントロールの間でスタイルの重複を回避するのに役立ちます。_
 
-## <a name="creating-a-global-style-in-xaml"></a>XAML でグローバル スタイルの作成
+## <a name="creating-a-global-style-in-xaml"></a>XAML でのグローバルなスタイルの作成
 
-既定では、テンプレートから作成されたすべての Xamarin.Forms アプリケーションを使用して、**アプリ**を実装するクラス、 [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/)サブクラスです。 宣言する、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)アプリケーションのアプリケーション レベルで[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) XAML、既定値を使用して**アプリ**クラスを XAML で置き換える必要があります**アプリ**クラスと関連付けられているコードの分離。 詳細については、次を参照してください。 [App クラスの使用](~/xamarin-forms/app-fundamentals/application-class.md)です。
+既定では、テンプレートから作成したすべての Xamarin.Forms アプリケーションを使用して、**アプリ**を実装するクラス、 [ `Application` ](xref:Xamarin.Forms.Application)サブクラスです。 宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)アプリケーションのアプリケーション レベルで[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) XAML、既定値を使用して**アプリ**クラスを XAML で置き換える必要があります**アプリ**クラスと関連付けられているコード ビハインドです。 詳細については、次を参照してください。[アプリ クラスで操作して](~/xamarin-forms/app-fundamentals/application-class.md)します。
 
-次のコード例に示す、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)アプリケーション レベルで宣言します。
+次のコード例は、 [ `Style` ](xref:Xamarin.Forms.Style)アプリケーション レベルで宣言されています。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.App">
@@ -42,9 +42,9 @@ _スタイルが利用できるグローバルに、アプリケーションの�
 </Application>
 ```
 
-これは、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) 、1 つの定義*明示的な*スタイル、`buttonStyle`の外観の設定に使用される[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)インスタンス。 ただし、グローバルのスタイルは、*明示的な*または*暗黙*です。
+これは、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) 、1 つを定義します。*明示的な*スタイル、 `buttonStyle`、の外観を設定に使用される[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。 ただし、グローバルなスタイルは、*明示的な*または*暗黙的な*します。
 
-次のコード例は、適用する XAML ページを示しています、`buttonStyle`をページの[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)インスタンス。
+次のコード例に示します、XAML ページを適用する、`buttonStyle`をページの[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
@@ -58,15 +58,15 @@ _スタイルが利用できるグローバルに、アプリケーションの�
 </ContentPage>
 ```
 
-これは、結果、次のスクリーン ショットに示すように表示されます。
+次のスクリーン ショットに示すように外観が発生します。
 
 [![](application-images/application-styles-1.png "グローバル スタイル例")](application-images/application-styles-1-large.png#lightbox "グローバル スタイルの例")
 
-ページのスタイルを作成する方法について[ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)を参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)と[暗黙的なスタイル](~/xamarin-forms/user-interface/styles/implicit.md)です。
+ページのスタイルを作成する方法について[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)と[暗黙的スタイル](~/xamarin-forms/user-interface/styles/implicit.md)します。
 
 ### <a name="overriding-styles"></a>スタイルをオーバーライドします。
 
-ビュー階層内の下位のスタイルをそれ以上定義されているものよりも優先されます。 たとえば、設定、 [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)が設定された[ `Button.TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.TextColor/)に`Red`アプリケーションで、レベルは、ページ レベルのスタイルで設定する上書きされている`Button.TextColor`に`Green`. 同様に、ページ レベルのスタイルは、コントロール レベル スタイルによってオーバーライドされます。 さらに場合、`Button.TextColor`が直接コントロールのプロパティにこれは優先任意のスタイルを設定します。 この優先順位は、次のコード例について説明します。
+スタイルのビュー階層の下位には、アップ以上定義されているものよりも優先されます。 設定など、 [ `Style` ](xref:Xamarin.Forms.Style)設定[ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor)に`Red`アプリケーションでレベルを設定ページのレベルのスタイルによってオーバーライドされます`Button.TextColor`に`Green`. 同様に、ページ レベルのスタイルはコントロールのレベルのスタイルによってオーバーライドされます。 さらに場合、`Button.TextColor`が直接コントロール プロパティにこれは優先任意のスタイルを設定します。 この優先順位は次のコード例について説明します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
@@ -96,13 +96,13 @@ _スタイルが利用できるグローバルに、アプリケーションの�
 </ContentPage>
 ```
 
-元の`buttonStyle`、アプリケーション レベルで定義されている、によってオーバーライドされる、`buttonStyle`ページ レベルで定義されているインスタンス。 さらに、ページ レベルのスタイルは、制御レベルによってオーバーライド`buttonStyle`です。 したがって、 [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)次のスクリーン ショットに示すように、青のテキストのインスタンスが表示されます。
+元の`buttonStyle`、アプリケーション レベルで定義されている、によってオーバーライドされる、`buttonStyle`ページ レベルで定義されているインスタンス。 コントロールのレベルでページ レベルのスタイルをオーバーライドするさらに、`buttonStyle`します。 そのため、 [ `Button` ](xref:Xamarin.Forms.Button)の次のスクリーン ショットに示すように青色のテキストのインスタンスが表示されます。
 
-[![](application-images/application-styles-2.png "スタイルの例をオーバーライドする")](application-images/application-styles-2-large.png#lightbox "スタイルの例をオーバーライドします。")
+[![](application-images/application-styles-2.png "例のスタイルをオーバーライドする")](application-images/application-styles-2-large.png#lightbox "スタイルの例をオーバーライドします。")
 
-## <a name="creating-a-global-style-in-c35"></a>C では、グローバルなスタイルを作成します。&#35;
+## <a name="creating-a-global-style-in-c35"></a>C でグローバルなスタイルを作成します。&#35;
 
-[`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) アプリケーションのインスタンスを追加することができます[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)新しいを作成して c# でのコレクション[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)、追加してから、`Style`インスタンスを`ResourceDictionary`、として次のコード例に示します。
+[`Style`](xref:Xamarin.Forms.Style) アプリケーションのインスタンスを追加することができます[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)によって新しいを作成する (C#) コレクション[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、追加してから、`Style`インスタンスを`ResourceDictionary`、として次のコード例に示します。
 
 ```csharp
 public class App : Application
@@ -124,9 +124,9 @@ public class App : Application
 }
 ```
 
-コンス トラクターは、1 つの定義*明示的な*スタイルを適用するため[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)アプリケーション全体でのインスタンス。 *明示的な* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)にインスタンスが追加される、 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)を使用して、 [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ResourceDictionary.Add/p/System.String/System.Object/) を指定して、メソッド`key`を参照する文字列、`Style`インスタンス。 `Style`インスタンス アプリケーションで適切な型の任意のコントロールに適用できます。 ただし、グローバルのスタイルは、*明示的な*または*暗黙*です。
+コンス トラクターは、1 つを定義します。*明示的な*に適用するためのスタイル[ `Button` ](xref:Xamarin.Forms.Button)アプリケーション全体でのインスタンス。 *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)にインスタンスが追加される、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) を指定して、メソッド`key`を参照する文字列、`Style`インスタンス。 `Style`インスタンス、アプリケーションで適切な種類のコントロールに適用できます。 ただし、グローバルなスタイルは、*明示的な*または*暗黙的な*します。
 
-次のコード例は、C# の場合 ページの適用を示しています、`buttonStyle`をページの[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)インスタンス。
+次のコード例に示します、c# のページを適用する、`buttonStyle`をページの[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
 
 ```csharp
 public class ApplicationStylesPageCS : ContentPage
@@ -146,11 +146,11 @@ public class ApplicationStylesPageCS : ContentPage
 }
 ```
 
-`buttonStyle`に適用される、 [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)を設定して、インスタンス、 [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)プロパティの外観を制御し、`Button`インスタンス。
+`buttonStyle`に適用される、 [ `Button` ](xref:Xamarin.Forms.Button)インスタンスを設定して、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティの外観を制御し、`Button`インスタンス。
 
 ## <a name="summary"></a>まとめ
 
-スタイルが利用できるグローバルにそれらをアプリケーションの追加[ `ResourceDictionary`](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)です。 これにより、ページまたはコントロールにわたってスタイルの重複を回避します。
+スタイルが利用できるグローバルに、アプリケーションに追加することによって[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。 これは、ページまたはコントロールの間でスタイルの重複を回避するのに役立ちます。
 
 
 
@@ -159,6 +159,6 @@ public class ApplicationStylesPageCS : ContentPage
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [基本的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [スタイル](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Set アクセス操作子](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [スタイル](xref:Xamarin.Forms.Style)
+- [Set アクセス操作子](xref:Xamarin.Forms.Setter)

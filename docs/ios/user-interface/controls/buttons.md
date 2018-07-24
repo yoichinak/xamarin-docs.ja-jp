@@ -1,72 +1,72 @@
 ---
-title: Xamarin.iOS ボタン
-description: UIButton クラスは、iOS の画面でボタンのさまざまな種類のスタイルを表すために使用します。 このセクションでは、iOS でのボタンを使用するためのさまざまなオプションについて説明します。
+title: Xamarin.iOS のボタン
+description: UIButton クラスは、iOS 画面のボタンのさまざまな異なるスタイルを表すために使用されます。 このガイドでは、iOS のボタンを使用するためのさまざまなオプションについて説明します。
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/21/2017
-ms.openlocfilehash: bf9a36c63e0c153ed950f4c3531e99e6baf77687
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/11/2018
+ms.openlocfilehash: 32f6330ad2fddc2e8386d6e574918a011f3bebad
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789480"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986005"
 ---
-# <a name="buttons-in-xamarinios"></a>Xamarin.iOS ボタン
+# <a name="buttons-in-xamarinios"></a>Xamarin.iOS のボタン
 
-_UIButton クラスは、iOS の画面でボタンのさまざまな種類のスタイルを表すために使用します。このセクションでは、iOS でのボタンを使用するためのさまざまなオプションについて説明します。_
+Ios で、`UIButton`クラスは、ボタン コントロールを表します。
 
-`UIButton`クラスは、iOS でボタン コントロールを表します。 
+プログラムから、または、ボタンのプロパティを変更できる、 **Properties Pad** iOS Designer の。
 
-ボタンのプロパティを編集することができます、 `Properties Pad` iOS デザイナーの。
+![IOS Designer の Properties Pad](buttons-images/properties.png "iOS Designer の Properties Pad")
 
+## <a name="creating-a-button-programmatically"></a>ボタンをプログラムで作成します。
 
-![](buttons-images/properties.png "IOS デザイナーのプロパティの埋め込み")
+A`UIButton`のみ、わずか数行のコードで作成できます。
 
-## <a name="creating-a-button"></a>ボタンを作成します。
+- ボタンのインスタンスを作成し、その型を指定します。
 
-のみ、数行のコード経由で、UIButton を作成できます。
+  ```csharp
+  UIButton myButton = new UIButton(UIButtonType.System);
+  ```
 
-最初に、新しいボタンをインスタンス化し、必要があるボタンの種類を指定します。
+  ボタンの種類が指定された、 `UIButtonType`:
 
-```csharp
-UIButton myButton = new UIButton(UIButtonType.System);
-```
+  - `UIButtonType.System` 汎用-ボタン
+  - `UIButtonType.DetailDisclosure` 詳細については、テーブル内の特定の項目の詳細については、通常の可用性を示します
+  - `UIButtonType.InfoDark` -情報の構成の可用性をことを示します。暗い色
+  - `UIButtonType.InfoLight` -情報の構成の可用性をことを示します。明るい色
+  - `UIButtonType..AddContact` -連絡先を追加できることを示します
+  - `UIButtonType.Custom` -カスタマイズ可能なボタン
 
-次の 1 つとして、UIButtonType を指定する必要があります。
+  ボタンのさまざまな種類の詳細についてを参照してください。
+  
+  - [カスタム ボタンの種類](#custom-button-types)このドキュメントの「
+  - [ボタンの種類](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/create_different_types_of_buttons)レシピ
+  - Apple の[iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/)します。
 
-- **システム**-これは、iOS で使用される標準のボタンの種類は、最も頻繁に使用する型。
-- **DetailDisclosure** -詳細な情報を表示または非表示に使用されるボタンの「有効にする」の型を表示します。
-- **InfoDark** -dark 詳細情報 ボタンは、円で囲んだ"i"を表示します。
-- **InfoLight** -簡単な詳細情報 ボタンは、円で囲んだ"i"を表示します。
-- **AddContact** -メンバーの追加ボタンとして、ボタンを表示します。
-- **カスタム**- ボタンのいくつかの特性をカスタマイズすることができます。
+- ボタンのサイズと位置を定義します。
 
-ボタンの種類の詳細については含まれて、[ボタンの種類](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/create_different_types_of_buttons/)レシピします。
+  ```csharp
+  myButton.Frame = new CGRect(25, 25, 300, 150);
+  ```
 
-次に、画面に表示されるサイズを定義し、ボタンの場所。 例:
+- ボタンのテキストを設定します。 使用して、`SetTitle`メソッドでは、テキストが必要ですが、および`UIControlState`値。
 
-```csharp
-myButton.Frame = new CGRect (25, 25, 300, 150);
-```
+  ```csharp
+  myButton.SetTitle("Hello, World!", UIControlState.Normal);
+  ```
 
-ボタンのテキストを変更するには、使用、`SetTitle`プロパティ、ボタンのテキスト文字列を設定する必要があります、`UIControlStyle`です。 例えば:
+  ボタンのスタイルを設定し、そのテキストを設定する方法の詳細についてを参照してください。
 
-```csharp
-myButton.SetTitle("Hello, World!", UIControlState.Normal);
-```
+  - [ボタンをスタイル設定](#styling-a-button)このドキュメントの「
+  - [ボタン設定テキスト](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/set_button_text)レシピです。
 
-詳細については、ユーザーの (通信に状態のそれぞれに異なるプロパティを設定できます。 作成するテキストの色無効状態の灰色)。 IOS デザイナーを使用して各状態の間で切り替えることができます、またはプログラムによって行うことができます。 ボタンのテキストに設定し、状態の詳細についてを参照してください、[設定 ボタンのテキスト](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/set_button_text/)レシピします。
+## <a name="handling-a-button-tap"></a>ボタンのタップの処理
 
-## <a name="dealing-with-user-interactions"></a>ユーザーの操作を処理します。
-
-
-ボタンがクリックされたときに何かそうでない限りいない非常に便利です! 
-
-ボタンのイベントは、ほとんどの場合、iOS で使用がこれを変更することによって、画面上のボタンと対話するので、イベントをタッチします。 すべての可能な < イベントの一覧が表示されます[ここ](https://developer.apple.com/documentation/uikit/uicontrolevents)、iOS で最もよく使用されるイベントですが、`TouchUpInside`です。 処理を行う、ボタンが押された後、イベント ハンドラーを作成できます。
-
+ボタンのハンドラーを提供するボタンのタップに対応する`TouchUpInside`イベント。
 
 ```csharp
 button.TouchUpInside += (sender, e) => {
@@ -74,38 +74,44 @@ button.TouchUpInside += (sender, e) => {
 };
 ```
 
-### <a name="adding-events-in-the-ios-designer"></a>IOS デザイナー内でイベントを追加します。
- 
-コントロールにイベントを追加するのにプロパティ パッドで、[イベント] タブを使用します。
+> [!NOTE]
+> `TouchUpInside` 使用できる唯一のボタン イベントはありません。 `UIButton` 子クラスは、`UIControl`を定義する[さまざまなイベント](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/)します。
 
-イベントを選択し、新しいイベント ハンドラーまたは一覧からいずれかの選択の名前を入力するか。 これを行うと、ビューのコント ローラー クラスに新しい部分メソッドが作成されます。
+### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>IOS Designer を使用して、ボタンのイベント ハンドラーを指定するには
 
-![[イベント] タブ](buttons-images/image1.png)
+使用して、**イベント**のタブ、 **Properties Pad**ボタンのさまざまなイベントのイベント ハンドラーを指定します。
 
-## <a name="styling-a-button"></a>ボタンのスタイルを設定
+適切なイベントには、新しいイベント ハンドラーの名前を入力するか、一覧から 1 つを選択します。 これを行うと、ボタンのビュー コント ローラーのコードにイベント ハンドラーが作成されます。
 
-UIButtons はほとんど UIKit 制御単タイトルを変更することはできませんので、状態がある点で異なって、ごとに変更する必要がある`UIControlState`です。 タイトルの色と影の色の設定は、同様の方法で行います。
+![Properties Pad の [イベント] タブ](buttons-images/image1.png "Properties Pad の [イベント] タブ")
+
+## <a name="styling-a-button"></a>ボタンのスタイル設定
+
+`UIButton` コントロールができるさまざまな種類の状態で存在する各で指定された、`UIControlState`値 – `Normal`、 `Disabled`、 `Focused`、`Highlighted`など。各状態には、プログラムから、または iOS Designer で指定された一意のスタイルを指定できます。
+
+> [!NOTE]
+> すべての完全な一覧については`UIControlState`を値で見て、 [ `UIKit.UIControlState enumeration` ](https://developer.xamarin.com/api/type/UIKit.UIControlState/)ドキュメント。
+
+たとえば、タイトルの色と影の色を設定する`UIControlState.Normal`:
 
 ```csharp
-button.SetTitleColor (UIColor.White, UIControlState.Normal);
+button.SetTitleColor(UIColor.White, UIControlState.Normal);
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例えば:
+次のコードの属性 (スタイル) 文字列にボタンのタイトルを設定する`UIControlState.Normal`と`UIControlState.Highlighted`:
 
 ```csharp
-var normalAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
-myButton.SetAttributedTitle (normalAttributedTitle, UIControlState.Normal);
+var normalAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
+myButton.SetAttributedTitle(normalAttributedTitle, UIControlState.Normal);
 
-var highlightedAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Green, strikethroughStyle: NSUnderlineStyle.Thick);
-myButton.SetAttributedTitle (highlightedAttributedTitle, UIControlState.Highlighted);
+var highlightedAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Green, strikethroughStyle: NSUnderlineStyle.Thick);
+myButton.SetAttributedTitle(highlightedAttributedTitle, UIControlState.Highlighted);
 ```
 
 ## <a name="custom-button-types"></a>カスタム ボタンの種類
 
-
-設定すると、`Custom`ボタンの種類、オブジェクトには、既定のレンダリングがありません。 ボタンの外観を構成するには、さまざまな状態のイメージを設定します。 たとえば、次のコードには、ごとに異なるイメージを追加する方法を示しています。、 `Normal`、`Highlighted`と`Selected`状態。
-
+ボタン、`UIButtonType`の`Custom`ある既定のスタイルはありません。 ただし、そのさまざまな状態のイメージを設定してボタンの外観を構成することは。
 
 ```csharp
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
@@ -113,16 +119,13 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UICont
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
 ```
 
+次のイメージの 1 つとして表示するかどうかどうかは、ユーザーに触れると、ボタンには、によって (`UIControlState.Normal`、`UIControlState.Highlighted`と`UIControlState.Selected`状態、それぞれ)。
 
-かどうかユーザーがボタンか、触れてに応じてにスクリプトが表示は次のイメージの 1 つとして (`Normal`、`Highlighted`と`Selected`それぞれを示します)。
+![UIControlState.Normal](buttons-images/image22.png "UIControlState.Normal")
+![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted") 
+![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
 
-
-![](buttons-images/image22.png "UIButton 状態が 正常")
-![](buttons-images/image23.png "強調表示されている UIButton 状態")
-![](buttons-images/image24.png "UIButton 状態の選択")
-
-カスタム ボタンの操作の詳細についてを参照してください、[ボタンのイメージを使用して](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/use_an_image_for_a_button/)です。
-
+カスタム ボタンの使用方法の詳細についてを参照してください、[ボタンのイメージを使用して](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button)レシピです。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33918527"
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>PCL ケース スタディ: Microsoft TPL データ フローの NuGet パッケージの System.Diagnostics.Tracing に関連する問題を解決する方法ですか?
 
@@ -117,7 +118,7 @@ _具体的にはこれら 2 つの手順を使用して問題を解決するの�
 
 #### <a name="answer"></a>応答
 
-いいえ、NuGet 3.0"System.Diagnostics.Tracing"パッケージには、"DNXCore50"と"netcore50"のプラットフォーム固有の実装にはのみが含まれます。 明示的に_省略_Xamarin.Android ("MonoAndroid") と Xamarin.iOS ("MonoTouch"および"xamarinios") の実装です。 つまり、パッケージをインストールする必要は_影響しない_Xamarin.Android および Xamarin.iOS プロジェクト。 NuGet パッケージは、これらのプラットフォームの両方を提供する前提としています。 その_独自_型の実装です。 この想定はモノラルがあるという意味では「適切」 _、_実装は、名前空間の下で説明したポイントとして\#2 と\#詳細」エラーの 3 つのレイヤーについて、上記の 3、実装が完全ではありません。 適切な修正されるため、解決するのには、Mono チームの[バグ 27337](https://bugzilla.xamarin.com/show_bug.cgi?id=27337)と[バグ 34890](https://bugzilla.xamarin.com/show_bug.cgi?id=34890)です。
+いいえ、NuGet 3.0"System.Diagnostics.Tracing"パッケージには、"DNXCore50"と"netcore50"のプラットフォーム固有の実装にはのみが含まれます。 明示的に_省略_Xamarin.Android ("MonoAndroid") と Xamarin.iOS ("MonoTouch"および"xamarinios") の実装です。 つまり、パッケージをインストールする必要は_影響しない_Xamarin.Android および Xamarin.iOS プロジェクト。 NuGet パッケージは、これらのプラットフォームの両方を提供する前提としています。 その_独自_型の実装です。 この想定はモノラルがあるという意味では「適切」 _、_ 実装は、名前空間の下で説明したポイントとして\#2 と\#詳細」エラーの 3 つのレイヤーについて、上記の 3、実装が完全ではありません。 適切な修正されるため、解決するのには、Mono チームの[バグ 27337](https://bugzilla.xamarin.com/show_bug.cgi?id=27337)と[バグ 34890](https://bugzilla.xamarin.com/show_bug.cgi?id=34890)です。
 
 ## <a name="next-steps"></a>次の手順
 

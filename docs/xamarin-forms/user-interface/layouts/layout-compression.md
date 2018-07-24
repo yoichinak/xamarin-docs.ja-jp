@@ -1,38 +1,39 @@
----
+﻿---
 title: レイアウト圧縮
-description: レイアウトの圧縮は、ページのレンダリング パフォーマンスを向上させるためにでは、ビジュアル ツリーから指定したレイアウトを削除します。 この記事では、レイアウトの圧縮とがもたらす利点を有効にする方法について説明します。
+description: レイアウト圧縮は、ページのレンダリング パフォーマンスを向上させるために、ビジュアル ツリーから指定したレイアウトを削除します。 この記事では、レイアウト圧縮を有効にする方法とそれがもたらす利点について説明します。
 ms.prod: xamarin
 ms.assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 9c698d539ab671ee2a033ae5943a46e0cc870f76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ba9be51daa32be1034e2bdfafafe80c45d00d83c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995233"
 ---
 # <a name="layout-compression"></a>レイアウト圧縮
 
-_レイアウトの圧縮は、ページのレンダリング パフォーマンスを向上させるためにでは、ビジュアル ツリーから指定したレイアウトを削除します。この記事では、レイアウトの圧縮とがもたらす利点を有効にする方法について説明します。_
+_レイアウト圧縮は、ページのレンダリング パフォーマンスを向上させるために、ビジュアル ツリーから指定したレイアウトを削除します。この記事では、レイアウト圧縮を有効にする方法とそれがもたらす利点について説明します。_
 
 ## <a name="overview"></a>概要
 
-Xamarin.Forms では、再帰的なメソッド呼び出しの 2 つの系列を使用してレイアウトを実行します。
+Xamarin.Forms では、レイアウトを再帰的なメソッド呼び出しの 2 つの系列を使用して実行します。
 
-- レイアウトがビジュアル ツリーをページの上部にあるが開始され、ページ上のすべての visual 要素が含まれるようにビジュアル ツリーのすべての分岐進みます。 その他の要素の親である要素は、相対自体の子を配置してサイズ変更を行います。
-- 無効化は、ページ上の要素の変更が新しいレイアウト サイクルをトリガーするプロセスです。 要素は不要になったがインストールされている正しいサイズや位置が、無効と見なされます。 子を持つビジュアル ツリー内のすべての要素がその子の 1 つのサイズが変更されるたびに警告を表示します。 そのため、ビジュアル ツリー内の要素のサイズの変更には、ツリーに波及変更可能性があります。
+- Layout は、ページのビジュアル ツリーの上部から始まり、ページ上のすべての視覚要素を網羅するためにビジュアル ツリーのすべての分岐を進みます。 その他の要素の親である要素は、相対自体の子を配置してサイズ変更を行います。
+- Invalidation は、ページ上の要素の変更によって新しいレイアウトサイクルを引き起こさせるための処理です。 要素は、サイズと位置が正しくなくなった時に、無効と見なされます。 子を持つビジュアルツリー内の全ての要素は、子のひとつがサイズを変更するときは常に警告されます。 そのため、ビジュアルツリー内の要素のひとつのサイズ変更は、ツリーに遡って波及する変更になる可能性があります。
 
-Xamarin.Forms でレイアウトを実行する方法の詳細については、次を参照してください。[カスタム レイアウトの作成](~/xamarin-forms/user-interface/layouts/custom.md)です。
+Xamarin.Forms でレイアウトを実行する方法の詳細については、[カスタム レイアウトの作成](~/xamarin-forms/user-interface/layouts/custom.md)を参照してください。
 
-レイアウトの処理の結果は、ネイティブ コントロールの階層です。 ただし、この階層が含まれるコンテナーを追加レンダラーとラッパー プラットフォーム レンダラー、さらに入れ子階層の表示を拡大します。 入れ子のレベルが深くなるにつれて、Xamarin.Forms のページを表示するために実行にある作業量は大きくします。 複雑なレイアウトは、階層の表示の詳細と、広範囲にわたって、複数レベルの入れ子にできます。
+レイアウト処理の結果は、ネイティブ コントロールの階層です。 ただし、この階層はプラットフォームレンダラーのために、追加のコンテナレンダラーとラッパーを含み、さらにそのビューの入れ子の階層を含めます。 入れ子のレベルが深くなるにつれて、Xamarin.Forms がページを表示するために実行する作業量が増加します。 複雑なレイアウトのために、複数のレベルの入れ子を使って、ビュー階層を深く広くすることができます。
 
-たとえば、Facebook にログインするためのサンプル アプリケーションから次のボタンがあるとします。
+たとえば、Facebook にログインするためのサンプル アプリケーションに次のようなボタンがあるとします。
 
 ![](layout-compression-images/facebook-button.png "Facebook のボタン")
 
-このボタンは、次の XAML ビュー階層にカスタム コントロールとして指定されます。
+このボタンは、次の XAML のビュー階層を使ったカスタム コントロールとして指定されます。
 
 ```xaml
 <ContentView ...>
@@ -52,18 +53,19 @@ Xamarin.Forms でレイアウトを実行する方法の詳細については、
 </ContentView>
 ```
 
-結果の入れ子になったビュー階層に調査できる[Xamarin インスペクター](~/tools/inspector/index.md)です。 Android では、入れ子になったビュー階層には、17 ビューが含まれています。
+結果の入れ子のビュー階層は、[Xamarin インスペクター](~/tools/inspector/index.md) で
+調査することができます。 Android では、入れ子のビュー階層には、17 個のビューが含まれています。
 
-![](layout-compression-images/no-compression.png "Facebook のボタンの階層の表示")
+![](layout-compression-images/no-compression.png "Facebook のボタンのビュー階層\")")
 
-レイアウトの圧縮は、iOS および Android プラットフォームで Xamarin.Forms アプリケーションで使用できますは、ページのレンダリング パフォーマンスを向上させることができます、ビジュアル ツリーから指定したレイアウトを削除することで入れ子ビューを平坦化する目的としています。 提供されるパフォーマンスの利点は、ページ、使用されているオペレーティング システムのバージョンおよびアプリケーションが実行されているデバイスの複雑さによって異なります。 ただし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
+レイアウト圧縮は、iOS および Android プラットフォームの Xamarin.Forms アプリケーションで使用でき、ビジュアル ツリーから指定したレイアウトを削除することでビュー階層を平坦化することを目的とし、ページレンダリングのパフォーマンスを向上させることができます。 この機能が提供するパフォーマンスの効果は、ページの複雑さ、使用しているオペレーティング システムのバージョン、およびアプリケーションを実行しているデバイスによって異なります。 しかし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
 
 > [!NOTE]
-> この記事では、Android でレイアウトの圧縮を適用した結果に焦点を当てていますは、iOS にも適用されます。
+> この記事では、Android でレイアウト圧縮を適用した結果に焦点を当てていますが、iOS も同様に適用できます。
 
 ## <a name="layout-compression"></a>レイアウト圧縮
 
-XAML では、レイアウト圧縮できますを有効に設定して、`CompressedLayout.IsHeadless`添付プロパティ`true`レイアウト クラスで。
+XAML では、レイアウト圧縮はレイアウトクラス上で `CompressedLayout.IsHeadless` 添付プロパティに `true` を設定することで有効にできます。
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -71,16 +73,16 @@ XAML では、レイアウト圧縮できますを有効に設定して、`Compr
 </StackLayout>   
 ```
 
-または、有効にする (C#) 1 番目の引数として、レイアウトのインスタンスを指定することによって、`CompressedLayout.SetIsHeadless`メソッド。
+または、C# で第一引数としてレイアウトのインスタンスを `CompressedLayout.SetIsHeadless` メソッドに設定することで有効にできます。
 
 ```csharp
 CompressedLayout.SetIsHeadless(stackLayout, true);
 ```
 
 > [!IMPORTANT]
-> レイアウト圧縮は、ビジュアル ツリーからレイアウトを削除したので、レイアウト、外観があるか、タッチ入力を取得するのに適したはありません。 このため、レイアウトを設定[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)プロパティ (など[ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)、 [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/)、 [ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/)、 [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/)、 [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)と[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)) またはジェスチャをそのまま使用する、レイアウトの対象ではありません圧縮します。 ただし、視覚的な外観のプロパティを設定するか、ジェスチャを受け入れるレイアウトでレイアウトの圧縮を有効にするは、ビルドまたは実行時エラーは発生しません。 代わりに、レイアウトの圧縮が適用され、視覚的な外観のプロパティ、および、ジェスチャ認識は失敗します。
+> レイアウト圧縮は、ビジュアル ツリーからレイアウトを削除するため、視覚的な外観のあるレイアウトや、タッチ入力があるレイアウトには適していません。 そのため、レイアウトを設定[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)プロパティ (など[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)、 [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible)、 [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)、 [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)、 [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)と[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)またはジェスチャを受け入れ、レイアウトの候補ではありません圧縮します。 ただし、視覚的な外観のプロパティを設定したレイアウトやジェスチャを受け付けるレイアウトで、レイアウト圧縮を有効にした場合でも、ビルド時または実行時にエラーにはなりません。 その代わり、レイアウト圧縮が適用され、視覚的外観のプロパティやジェスチャー認識は失敗します。
 
-Facebook ボタンには、次の 3 つのレイアウトのクラスにレイアウトの圧縮を有効にすることができます。
+Facebook ボタンは、次の 3 つのレイアウトのクラスにレイアウト圧縮を有効にすることができます。
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -93,27 +95,27 @@ Facebook ボタンには、次の 3 つのレイアウトのクラスにレイ�
 </StackLayout>  
 ```
 
-Android では、14 ビューの入れ子になったビュー階層でこの結果します。
+Android では、この結果として 14 個のビューの入れ子のビュー階層になります。
 
-![](layout-compression-images/layout-compression.png "Facebook ボタン レイアウトの圧縮で階層の表示")
+![](layout-compression-images/layout-compression.png "レイアウト圧縮を使った Facebook ボタンのビュー階層表示")
 
-17 ビューの元の階層の入れ子になった表示と比較して、17% のビューの数を削減することを表します。 このような削減を意味のないに見えますが、ページ全体に対してビュー リダクションがさらに重要なあります。
+17 個のビューがある元の入れ子のビュー階層と比較すると、ビューの数を 17% 削減したことが分かります。このような削減は意味のないように思えるかもしれませんが、ページ全体にわたるビューの削減は、より重要になる可能性があります。 この短縮は、意味のない見えますが、ページ全体をビューの削減がより重要なあります。
 
 ### <a name="fast-renderers"></a>高速レンダラー
 
-高速レンダラー コストの削減が増加レンダリング Xamarin.Forms コントロール Android での結果として得られるネイティブ ビュー階層をフラット化しています。 さらに、これは、さらに結果が複雑のビジュアル ツリー内、およびメモリ使用量を少なくする少数のオブジェクトを作成することでパフォーマンスを向上します。 高速のレンダラーについての詳細については、次を参照してください。[高速レンダラー](~/xamarin-forms/internals/fast-renderers.md)です。
+高速レンダラーは、Android 上で、結果として得られるネイティブ ビュー階層をフラット化することによって、Xamarin.Forms コントロールのレンダリングとインフレーションコストを削減します。 これは、より少数のオブジェクトを生成することでパフォーマンスをさらに向上させ、より複雑でないビジュアルツリーとより少ないメモリー使用をもたらします。 高速レンダラーについての詳細は、[高速レンダラー](~/xamarin-forms/internals/fast-renderers.md) を参照してください。
 
-サンプル アプリケーションで [Facebook] ボタンのレイアウトの圧縮と高速のレンダラーを組み合わせることにより、8 ビューの入れ子になったビュー階層が生成されます。
+サンプル アプリケーションの [Facebook] ボタンに、レイアウト圧縮と高速のレンダラーを組み合わせることにより、8 個の入れ子のビュー階層が生成されます。
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "Facebook ボタン レイアウトの圧縮と高速なレンダラーで階層の表示")
+![](layout-compression-images/layout-compression-with-fast-renderers.png "レイアウトの圧縮と高速なレンダラーを使った Facebook ボタン のビュー階層表示")
 
-17 ビューの元の階層の入れ子になった表示と比較して、52% を小さくすることを表します。
+元の 17 個の入れ子のビュー階層と比較して、52% 削減したことが分かります。
 
-サンプル アプリケーションには、実際のアプリケーションから抽出されたページが含まれています。 レイアウトの圧縮と高速なレンダラーでは、なし、ページには、Android での 130 のビューの入れ子になったビュー階層が生成されます。 高速レンダラーと適切なレイアウトのクラスのレイアウトの圧縮を有効にすると、入れ子になったビュー階層が 46% の削減、70 のビューが減少します。
+サンプル アプリケーションには、実際のアプリケーションから抽出されたページが含まれています。 レイアウト圧縮と高速レンダラーが無ければ、そのページは、Android で 130 個のビューの入れ子ビュー階層が生成されます。 高速レンダラーと適切なレイアウトクラスでのレイアウト圧縮を有効にすると、入れ子のビュー階層が 70 個のビューに減少し、46% の削減になります。
 
 ## <a name="summary"></a>まとめ
 
-レイアウトの圧縮は、ページのレンダリング パフォーマンスを向上させるためにでは、ビジュアル ツリーから指定したレイアウトを削除します。 この操作によって得られるパフォーマンスのメリットは、ページの複雑さ、使用しているオペレーティング システムのバージョン、このアプリケーションが実行されているデバイスによって異なります。 ただし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
+レイアウト圧縮は、ページのレンダリング パフォーマンスを向上させるために、ビジュアル ツリーから指定したレイアウトを削除します。 この機能が提供するパフォーマンスの効果は、ページの複雑さ、使用しているオペレーティング システムのバージョン、およびアプリケーションを実行しているデバイスによって異なります。 しかし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
 
 
 ## <a name="related-links"></a>関連リンク

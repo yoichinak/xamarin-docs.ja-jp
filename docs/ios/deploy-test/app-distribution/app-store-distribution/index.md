@@ -1,28 +1,30 @@
 ---
 title: App Store 配布
-description: このドキュメントでは、Apple の App Store に配布するための要件について説明します。
+description: このドキュメントでは、App Store で Xamarin.iOS アプリケーションを配布する方法について説明します。 配布証明書および配布プロビジョニング プロファイルの作成方法と、iTunes Connect を構成してアプリを提出する方法を説明します。
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209260"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
-
-_このドキュメントでは、Apple の App Store に配布するための要件について説明します。_
 
 Xamarin.iOS アプリの開発が完了したら、ソフトウェア開発ライフサイクルの次の手順は、iTunes App Store を使用してアプリをユーザーに配布することです。 これは、アプリケーションを配布する最も一般的な方法です。 Apple の App Store でアプリケーションを発行することにより、世界中のコンシューマーが使用できるようになります。
 
 > [!IMPORTANT]
-> iTunes Connect を使用して、アプリを App Store に発行するには、個人または組織の Apple Developer Program に参加する**必要がある**ことに**注意**してください。 Apple Developer **Enterprise** Program のメンバーの場合、このページの手順に従うことはできません。
+> Apple は、2018 年 7 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイをサポートする](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)必要があることを[通知しました](https://developer.apple.com/news/?id=05072018a)。
 
 アプリケーションを配布するには、アプリケーションの開発の場合と同じように、適切な*プロビジョニング プロファイル*を使用してアプリケーションをプロビジョニングする必要があります。 プロビジョニング プロファイルは、コード署名情報だけでなく、アプリケーションの ID と使用する配布メカニズムも含むファイルです。 App Store 以外の配布では、アプリを展開できるデバイスに関する情報も含まれています。
+
+> [!IMPORTANT]
+> iTunes Connect を使用して、アプリを App Store に発行するには、個人または組織の Apple Developer Program に参加する**必要がある**ことに**注意**してください。 Apple Developer **Enterprise** Program のメンバーの場合、このページの手順に従うことはできません。
 
 <a name="provisioning" />
 
@@ -79,7 +81,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 作成する他のプロビジョニング プロファイルと同じように、ユーザーのデバイスに配布するアプリを識別するためにアプリ ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
 
 
-1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]**\(ID\) の下で **[App IDs]**\(App ID\) を選択します。
+1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 明示的またはワイルドカード アプリ ID を選択し、次のように逆引き DNS 形式でバンドル ID を入力します。
     - **明示的**: com.[DomainName].[AppName]

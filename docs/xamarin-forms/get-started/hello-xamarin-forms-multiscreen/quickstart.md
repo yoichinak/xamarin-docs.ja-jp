@@ -1,16 +1,18 @@
 ---
 title: Xamarin.Forms マルチスクリーン クイックスタート
+description: この記事では、Phoneword アプリケーションの拡張方法を紹介します。アプリケーションの通話履歴を追跡記録するための 2 つ目の画面を追加します。
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 06/13/2018
+ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996182"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms マルチスクリーン クイックスタート
 
@@ -57,11 +59,11 @@ Phoneword アプリケーションを次のように拡張します。
 
     **CTRL + S** を押し、**CallHistoryPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
-5. **ソリューション エクスプローラー**で、**App.xaml.cs** をダブルクリックして開きます。
+5. **ソリューション エクスプローラー**で、共有 **Phoneword** プロジェクトの **App.xaml.cs** ファイルをダブルクリックして開きます。
 
     ![](quickstart-images/vs/open-app-class.png "App.xaml.cs を開く")
 
-6. **App.xaml.cs** で、`System.Collections.Generic` 名前空間をインポートし、`PhoneNumbers` プロパティの宣言を追加し、`App` コンストラクターでこのプロパティを初期化し、[`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) プロパティを初期化して [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) にします。 `PhoneNumbers` コレクションは、アプリケーションに呼び出され、変換された各電話番号の一覧を保存するときに使用されます。
+6. **App.xaml.cs** で、`System.Collections.Generic` 名前空間をインポートし、`PhoneNumbers` プロパティの宣言を追加し、`App` コンストラクターでこのプロパティを初期化し、[`MainPage`](xref:Xamarin.Forms.Application.MainPage) プロパティを初期化して [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) にします。 `PhoneNumbers` コレクションは、アプリケーションに呼び出され、変換された各電話番号の一覧を保存するときに使用されます。
 
     ```csharp
     using System.Collections.Generic;
@@ -88,11 +90,11 @@ Phoneword アプリケーションを次のように拡張します。
 
     **CTRL + S** を押し、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
-7. **ソリューション エクスプローラー**で、**MainPage.xaml** をダブルクリックして開きます。
+7. **ソリューション エクスプローラー**で、共有 **Phoneword** プロジェクトの **MainPage.xaml** ファイルをダブルクリックして開きます。
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "MainPage.xaml を開く")
 
-8. **MainPage.xaml** で、[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) コントロールの終わりに [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) コントロールを追加します。 このボタンは通話履歴ページに移動するために使用されます。
+8. **MainPage.xaml** で、[`StackLayout`](xref:Xamarin.Forms.StackLayout) コントロールの終わりに [`Button`](xref:Xamarin.Forms.Button) コントロールを追加します。 このボタンは通話履歴ページに移動するために使用されます。
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"
@@ -207,7 +209,7 @@ Phoneword アプリケーションを次のように拡張します。
 
     ![](quickstart-images/xs/open-app-class.png "App.xaml.cs を開く")
 
-7. **App.xaml.cs** で、`System.Collections.Generic` 名前空間をインポートし、`PhoneNumbers` プロパティの宣言を追加し、`App` コンストラクターでこのプロパティを初期化し、[`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) プロパティを初期化して [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) にします。 `PhoneNumbers` コレクションは、アプリケーションに呼び出され、変換された各電話番号の一覧を保存するときに使用されます。
+7. **App.xaml.cs** で、`System.Collections.Generic` 名前空間をインポートし、`PhoneNumbers` プロパティの宣言を追加し、`App` コンストラクターでこのプロパティを初期化し、[`MainPage`](xref:Xamarin.Forms.Application.MainPage) プロパティを初期化して [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) にします。 `PhoneNumbers` コレクションは、アプリケーションに呼び出され、変換された各電話番号の一覧を保存するときに使用されます。
 
     ```csharp
     using System.Collections.Generic;
@@ -238,7 +240,7 @@ Phoneword アプリケーションを次のように拡張します。
 
     ![](quickstart-images/xs/open-mainpage-xaml.png "MainPage.xaml を開く")
 
-9. **MainPage.xaml** で、[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) コントロールの終わりに [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) コントロールを追加します。 このボタンは通話履歴ページに移動するために使用されます。
+9. **MainPage.xaml** で、[`StackLayout`](xref:Xamarin.Forms.StackLayout) コントロールの終わりに [`Button`](xref:Xamarin.Forms.Button) コントロールを追加します。 このボタンは通話履歴ページに移動するために使用されます。
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"

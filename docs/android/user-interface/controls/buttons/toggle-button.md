@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762299"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
@@ -45,7 +46,7 @@ togglebutton.Click += (o, e) => {
 アプリケーションを実行します。
 
 
-**ヒント:**状態を変更する必要がある場合 (場合など、保存された読み込み[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))、使用、 [ `Checked` ](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)プロパティ set アクセス操作子または[ `Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)メソッドです。
+**ヒント:** 状態を変更する必要がある場合 (場合など、保存された読み込み[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))、使用、 [ `Checked` ](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)プロパティ set アクセス操作子または[ `Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)メソッドです。
 
 
 ## <a name="related-links"></a>関連リンク

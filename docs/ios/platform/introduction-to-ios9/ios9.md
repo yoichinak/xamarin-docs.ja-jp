@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30777552"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 の互換性
 
@@ -60,7 +61,7 @@ Xamarin.iOS の安定した最新のリリースでは、アプリを再構築�
 
 **理由:** iOS 9 に、`initWithFrame:`コンス トラクターは、今すぐとして iOS 9 の動作の変更により、必要な[UICollectionView ドキュメント状態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)です。 セルが呼び出すことによって初期化これで、指定した識別子のクラスを登録すると、別のセルを作成する必要があります、その`initWithFrame:`メソッドです。
 
-**修正:**追加、`initWithFrame:`次のようにコンス トラクター。
+**修正:** 追加、`initWithFrame:`次のようにコンス トラクター。
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -78,7 +79,7 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 **理由:** 、`initWithCoder:`コンス トラクターは、1 つのインターフェイスのビルダー Xib ファイルからビューを読み込むときに呼び出されます。 このコンス トラクターがエクスポートされていない場合、アンマネージ コードは、管理されているバージョンを呼び出すことはできません。 以前 (リフレッシュ レート。 iOS 8) で、`IntPtr`ビューを初期化するコンス トラクターが呼び出されました。
 
-**修正:**の作成とエクスポート、`initWithCoder:`次のようにコンス トラクター。
+**修正:** の作成とエクスポート、`initWithCoder:`次のようにコンス トラクター。
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -100,7 +101,7 @@ Dyld Error Message:
 Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**理由:**これは、パブリック、プライベートのフレームワークを行うときに発生する Apple のネイティブ リンカーのバグ (JavaScriptCore 公開された iOS 7 で前にプライベート framework した)、あり、アプリの配置ターゲットを iOS 版の場合、フレームワークは、プライベートでした。 ここでは Apple のリンカーは、プライベート framework のバージョンで、公開されているバージョンの代わりにリンクします。
+**理由:** これは、パブリック、プライベートのフレームワークを行うときに発生する Apple のネイティブ リンカーのバグ (JavaScriptCore 公開された iOS 7 で前にプライベート framework した)、あり、アプリの配置ターゲットを iOS 版の場合、フレームワークは、プライベートでした。 ここでは Apple のリンカーは、プライベート framework のバージョンで、公開されているバージョンの代わりにリンクします。
 
 **修正:** ios 9、これに対応する予定しますが、ある、簡単な対応策が当面の間に自分で適用することができます。 (iOS 7 をここではに再試行することができます)、プロジェクトの後で iOS バージョンを対象にだけです。 その他のフレームワークは、類似した問題を示す可能性があります、たとえば WebKit フレームワークが 8、iOS で公開された (および iOS 8 を実行し、アプリ内の WebKit の使用の対象にする必要があります。 このエラーが発生、iOS 7 を対象とするように) します。
 

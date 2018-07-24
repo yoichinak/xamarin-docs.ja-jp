@@ -1,19 +1,20 @@
 ---
-title: トラブルシューティング
-description: スムーズな展開を作成するためのヒントと秘訣
+title: Xamarin.iOS のテストと展開 - トラブルシューティング
+description: このドキュメントでは、コード署名とプロビジョニング、TestFlight、Mac ビルド ホストから Windows への iOS アプリ バンドルのコピーに関連するトラブルシューティングのヒントを示します。
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: fe7425bbf6440317cc856d2c727874298f66bc33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 056b9ba5c1625093cd7fdd2914fa5df919a2f426
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785386"
 ---
-# <a name="troubleshooting"></a>トラブルシューティング
+# <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS のテストと展開 - トラブルシューティング
 
 ## <a name="code-signing--provisioning"></a>コード署名とプロビジョニング
 
@@ -32,7 +33,6 @@ iOS ではコード署名とプロビジョニングは非常に厄介な場合�
 * 必要なすべての証明書および対応する秘密キーが使用できることを確認します。 チームごとに開発者の証明書 (独自のデバイスにアプリをインストールするため) と配布証明書 (その他のデバイスにインストールするため) が必要になります。
 
 * 新しいプロビジョニング プロファイルまたは証明書をインストールする場合は、Xcode と、Visual Studio for Mac または Visual Studio を再起動します。
-
 
 ## <a name="testflight"></a>TestFlight
 

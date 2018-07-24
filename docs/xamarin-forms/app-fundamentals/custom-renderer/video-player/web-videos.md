@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: f9b52398efbd189153ca74ce80433863b25bd578
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 566f056bd616c918ce274b9c7406d94fdc265ea2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240978"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994560"
 ---
 # <a name="playing-a-web-video"></a>Web ビデオを再生します。
 
-`VideoPlayer`クラスを定義、 `Source` 、ビデオ ファイルのソースを指定するために使用するプロパティだけでなく、`AutoPlay`プロパティです。 `AutoPlay` 既定の設定を持つ`true`、ビデオが後に自動的に再生を開始することを意味する`Source`が設定されています。
+`VideoPlayer`クラスを定義、 `Source` 、ビデオ ファイルのソースを指定するために使用するプロパティだけでなく、`AutoPlay`プロパティ。 `AutoPlay` 既定の設定が`true`、ビデオが後に自動的に再生を開始することを意味する`Source`が設定されています。
 
 ```csharp
 using System;
@@ -52,11 +52,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-`Source`プロパティの型は`VideoSource`、Xamarin.Forms 後でパターン化されている[ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/)クラス、およびその 3 つの派生クラスを抽象化[ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)、 [`FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/)、および[ `StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/)です。 使用できるストリームのオプションがない、`VideoPlayer`ただし、iOS および Android をサポートしないため、ストリームからビデオを再生します。
+`Source`プロパティの型は`VideoSource`、Xamarin.Forms にならって作成されるされて[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)抽象クラスとその 3 つの派生物[ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)、 [`FileImageSource` ](xref:Xamarin.Forms.FileImageSource)、および[ `StreamImageSource`](xref:Xamarin.Forms.StreamImageSource)します。 使用できるストリームのオプションがない、`VideoPlayer`ただし、iOS および Android をサポートしないため、ストリームからのビデオを再生します。
 
-## <a name="video-sources"></a>ビデオ ソース
+## <a name="video-sources"></a>ビデオのソース
 
-抽象`VideoSource`クラスのみで構成される 3 つの静的メソッドから派生した 3 つのクラスをインスタンス化を`VideoSource`:
+抽象`VideoSource`だけから派生する 3 つのクラスをインスタンス化する 3 つの静的メソッドのクラスで構成されます`VideoSource`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -82,7 +82,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`UriVideoSource`の URI でダウンロード可能なビデオ ファイルを指定するクラスを使用します。 型の 1 つのプロパティを定義`string`:
+`UriVideoSource`クラスを使用して、URI を持つ、ダウンロード可能なビデオ ファイルを指定します。 型の 1 つのプロパティを定義`string`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -101,9 +101,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-型のオブジェクトを処理`UriVideoSource`次のとおりです。
+型のオブジェクトを処理`UriVideoSource`以下に示します。
 
-`ResourceVideoSource`も指定されて、プラットフォームのアプリケーション内の埋め込みリソースとして格納されているビデオ ファイルにアクセスするクラスが使用される、`string`プロパティ。
+`ResourceVideoSource`も指定されているプラットフォーム アプリケーション内の埋め込みリソースとして格納されているビデオ ファイルにアクセスするクラスが使用される、`string`プロパティ。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -122,9 +122,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-型のオブジェクトを処理`ResourceVideoSource`、資料に記載されて[アプリケーション リソースのビデオの読み込み](loading-resources.md)です。 `VideoPlayer`クラスには、標準の .NET ライブラリのリソースとして保存されたビデオ ファイルを読み込むための機能はありません。
+型のオブジェクトを処理`ResourceVideoSource`、資料に記載されて[アプリケーション リソース ビデオの読み込み](loading-resources.md)します。 `VideoPlayer`クラスには、.NET Standard ライブラリにリソースとして格納されているビデオ ファイルを読み込むための機能がありません。
 
-`FileVideoSource`クラスは、デバイスのビデオ ライブラリからのビデオ ファイルのアクセスに使用します。 1 つのプロパティは型も`string`:
+`FileVideoSource`クラスは、デバイスのビデオ ライブラリからビデオ ファイルへのアクセスに使用されます。 1 つのプロパティは型も`string`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -143,9 +143,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-型のオブジェクトを処理`FileVideoSource`、資料に記載されて[、デバイスのビデオ ライブラリへのアクセス](accessing-library.md)です。
+型のオブジェクトを処理`FileVideoSource`、資料に記載されて[デバイスのビデオ ライブラリへのアクセス](accessing-library.md)します。
 
-`VideoSource`クラスが含まれています、`TypeConverter`を参照する属性`VideoSourceConverter`:
+`VideoSource`クラスが含まれています、`TypeConverter`参照属性`VideoSourceConverter`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -158,7 +158,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-この型コンバーターが呼び出されるときに、`Source`プロパティが XAML 内の文字列に設定します。 ここでは、`VideoSourceConverter`クラス。
+型コンバーターが呼び出されるときに、 `Source` XAML の文字列にプロパティを設定します。 ここでは、`VideoSourceConverter`クラス。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -180,15 +180,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-`ConvertFromInvariantString`メソッドが、対象の文字列を変換しようとしています。、`Uri`オブジェクト。 成功すると、スキームがない場合`file:`、メソッドから返されます、`UriVideoSource`です。 返しますそれ以外の場合、`ResourceVideoSource`です。
+`ConvertFromInvariantString`メソッドは、文字列に変換しようとしています、`Uri`オブジェクト。 成功して、スキームが場合`file:`、メソッドから返されます、`UriVideoSource`します。 それ以外を返します、`ResourceVideoSource`します。
 
-## <a name="setting-the-video-source"></a>ビデオ ソースを設定します。
+## <a name="setting-the-video-source"></a>ビデオのソースを設定します。
 
-ビデオ ソースに関連するその他のすべてのロジックは、個々 のプラットフォームのレンダラーに実装されます。 次のセクションでは、プラットフォームのレンダラーでビデオを再生する方法を表示するときに、`Source`プロパティに設定されている、`UriVideoSource`オブジェクト。
+ビデオ ソースに関連するその他のすべてのロジックは、個別のプラットフォームのレンダラーに実装されます。 次のセクションでは、プラットフォームのレンダラーがビデオを再生する方法を表示するときに、`Source`プロパティに設定されて、`UriVideoSource`オブジェクト。
 
 ### <a name="the-ios-video-source"></a>IOS のビデオ ソース
 
-2 つのセクション、`VideoPlayerRenderer`ビデオ プレーヤーのビデオ ソースを設定するのには必要です。 型のオブジェクトが最初に作成 Xamarin.Forms とき`VideoPlayer`、`OnElementChanged`メソッドが呼び出された、`NewElement`引数オブジェクトのプロパティを設定する`VideoPlayer`です。 `OnElementChanged`メソッド呼び出し`SetSource`:
+2 つのセクション、`VideoPlayerRenderer`ビデオ プレーヤーのビデオ ソースを設定するには。 最初の Xamarin.Forms の型のオブジェクトの作成と`VideoPlayer`、`OnElementChanged`メソッドを呼び出すと、`NewElement`引数オブジェクトのプロパティを設定する`VideoPlayer`します。 `OnElementChanged`メソッド呼び出し`SetSource`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -221,9 +221,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-後で、ときに、`Source`プロパティが変更された、`OnElementPropertyChanged`メソッドが呼び出された、 `PropertyName` "Source"のプロパティと`SetSource`が再度呼び出されます。
+後で、ときに、`Source`プロパティが変更された、`OnElementPropertyChanged`メソッドを呼び出すと、 `PropertyName` "Source"のプロパティと`SetSource`が再度呼び出されます。
 
-IOS、型のオブジェクトでのビデオ ファイルを再生する[ `AVAsset` ](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/)をカプセル化、ビデオ ファイルを最初に作成されたの作成に使用して、 [ `AVPlayerItem` ](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/)、これに渡す、 `AVPlayer`オブジェクト。 ここでは、方法、`SetSource`メソッド ハンドル、`Source`プロパティ型であるときに`UriVideoSource`:
+IOS では、型のオブジェクトでビデオ ファイルを再生する[ `AVAsset` ](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/)が最初に、ビデオ ファイルをカプセル化する作成を作成するために使用する、 [ `AVPlayerItem` ](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/)、に渡しますが、`AVPlayer`オブジェクト。 ここでは、方法、`SetSource`メソッド ハンドル、`Source`プロパティ型であるときに`UriVideoSource`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -268,9 +268,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`AutoPlay`プロパティを持たないアナログ iOS ビデオ クラスでの最後に、プロパティを調べるので、`SetSource`メソッドを呼び出す、`Play`メソッドを`AVPlayer`オブジェクト。
+`AutoPlay`プロパティを持たないアナログ iOS ビデオ クラスでの最後に、プロパティが調べられるように、`SetSource`メソッドを呼び出す、`Play`メソッドを`AVPlayer`オブジェクト。
 
-ページの後の再生がビデオ場合によっては、引き続き、`VideoPlayer`ホーム ページに移動します。 ビデオを停止する、`ReplaceCurrentItemWithPlayerItem`で設定されても、`Dispose`オーバーライドします。
+ページの後に再生がビデオでは、場合によっては、続き、`VideoPlayer`ホーム ページに戻ります。 ビデオを停止する、`ReplaceCurrentItemWithPlayerItem`設定されても、`Dispose`オーバーライドします。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -294,7 +294,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-source"></a>Android のビデオ ソース
 
-Android`VideoPlayerRenderer`プレーヤーのビデオ ソースを設定する必要があるときに、`VideoPlayer`が最初に作成され、後でいつ、`Source`プロパティの変更。
+Android`VideoPlayerRenderer`プレーヤーのビデオ ソースを設定する必要がときに、`VideoPlayer`が最初に作成され以降と、`Source`プロパティの変更。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -327,7 +327,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`SetSource`メソッドの型のオブジェクトを処理する`UriVideoSource`を呼び出して`SetVideoUri`上、 `VideoView` 、Android と`Uri`文字列 URI から作成されたオブジェクト。 `Uri`クラスは、完全修飾ここで、.NET から区別するために`Uri`クラス。
+`SetSource`メソッドは型のオブジェクトを処理`UriVideoSource`呼び出して`SetVideoUri`上、 `VideoView` Android で`Uri`文字列 URI から作成されたオブジェクト。 `Uri` .NET から区別するためにクラスがここで完全に修飾された`Uri`クラス。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -362,15 +362,15 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Android`VideoView`対応がない`AutoPlay`プロパティのため、`Start`新しいビデオが設定されている場合、メソッドが呼び出されます。
+Android`VideoView`しないのは、対応する`AutoPlay`プロパティ、そのため、`Start`新しい動画が設定されている場合、メソッドが呼び出されます。
 
-IOS の動作と Android のレンダラーの違いがある場合、`Source`プロパティの`VideoPlayer`に設定されている`null`、または、`Uri`プロパティの`UriVideoSource`に設定されている`null`または空の文字列。 IOS ビデオ プレーヤーはビデオについては、現在再生中の場合と`Source`に設定されている`null`(または文字列が`null`または空白)、`ReplaceCurrentItemWithPlayerItem`で呼び出された`null`値。 現在のビデオは置き換えられ、再生を停止します。
+IOS の動作と Android のレンダラーの違いがある場合、`Source`プロパティの`VideoPlayer`に設定されている`null`、または、`Uri`プロパティの`UriVideoSource`に設定されている`null`または空の文字列。 IOS ビデオ プレーヤーはビデオについては、現在再生中の場合と`Source`に設定されている`null`(または文字列が`null`または空白)、`ReplaceCurrentItemWithPlayerItem`を使用して呼び出した`null`値。 現在のビデオが置き換えられ、再生を停止します。
 
-Android では、同様の機能をサポートしていません。 場合、`Source`プロパティに設定されている`null`、`SetSource`メソッドだけでは無視されます、および現在のビデオの再生を続行します。
+Android は、同様の機能をサポートしていません。 場合、`Source`プロパティに設定されて`null`、`SetSource`メソッドは単にそれを無視し、現在のビデオの再生を続行します。
 
-### <a name="the-uwp-video-source"></a>UWP ビデオ ソース
+### <a name="the-uwp-video-source"></a>UWP のビデオ ソース
 
-UWP`MediaElement`定義、`AutoPlay`プロパティで、他のプロパティなどのレンダラーで処理されます。
+UWP`MediaElement`定義、`AutoPlay`プロパティで、他のプロパティと同様のレンダラーで処理されます。
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -447,7 +447,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>URL のソースを設定します。
 
-3 つのレンダラーでこれらのプロパティの実装では、URL ソースからビデオを再生することはできます。 **Web ビデオの再生** ページで、 [ **VideoPlayDemos** ]( https://developer.xamarin.com/samples/xamarin-forms/customrenderers/videoplayerdemos/index.md)プログラムが次の XAML ファイルで定義されています。
+次の 3 つのレンダラーでこれらのプロパティの実装は、URL のソースからビデオを再生できます。 **Web ビデオの再生** ページで、 [ **VideoPlayDemos** ]( https://developer.xamarin.com/samples/xamarin-forms/customrenderers/videoplayerdemos/index.md)プログラムが次の XAML ファイルで定義されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -461,13 +461,13 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-`VideoSourceConverter`クラスを変換する文字列、`UriVideoSource`です。 移動すると、 **Web ビデオの再生** ページで、ビデオの開始と読み込みのための十分な量のデータをダウンロードし、バッファー内のときに、再生を開始します。 ビデオは、約 10 分の長さを示します。
+`VideoSourceConverter`に変換する文字列のクラス、`UriVideoSource`します。 移動すると、 **Web ビデオの再生** ページで、ビデオは、読み込みとデータのための十分な量をダウンロードし、バッファーの再生開始を開始します。 このビデオでは、約 10 分の長さです。
 
-[![Web のビデオの再生](web-videos-images/playwebvideo-small.png "Web ビデオの再生")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオの再生")
+[![Web ビデオを再生する](web-videos-images/playwebvideo-small.png "Web ビデオを再生する")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオを再生します。")
 
-各 3 つのプラットフォームで、トランスポート コントロールをフェードアウトする場合は、使用されていないが、ビデオをタップして表示するのには復元できます。
+各 3 つのプラットフォームで、トランスポート コントロールをフェードアウトする場合、これらの使用に慣れていないが、ビデオをタップして表示状態に復元できます。
 
-設定を自動的に開始からビデオを防ぐことができます、`AutoPlay`プロパティを`false`:
+ビデオを防ぐ設定を自動的に開始することができます、`AutoPlay`プロパティを`false`:
 
 ```xaml
 <video:VideoPlayer Source="https://archive.org/download/BigBuckBunny_328/BigBuckBunny_512kb.mp4"
@@ -483,9 +483,9 @@ namespace FormsVideoLibrary.UWP
                    AreTransportControlsEnabled="False" />
 ```
 
-両方のプロパティを設定した場合`false`ビデオの再生を開始しないおよびは行われませんを起動する方法です。 呼び出す必要がある`Play`分離コード ファイル、またはアーティクルの説明に従って、独自のトランスポート コントロールを作成する[カスタム ビデオ トランスポート コントロールを実装する](custom-transport.md)です。
+両方のプロパティを設定した場合`false`ビデオの再生を開始しないし、それを開始することはありません。 呼び出すことになる`Play`分離コード ファイル、または、記事の説明に従って、独自のトランスポート コントロールを作成する[を実装するカスタムのビデオ トランスポート コントロール](custom-transport.md)します。
 
-**App.xaml**ファイルには、追加のビデオを 2 つのリソースが含まれています。
+**App.xaml**ファイルに追加のビデオを 2 つのリソースが含まれています。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -509,13 +509,13 @@ namespace FormsVideoLibrary.UWP
 </Application>
 ```
 
-これらの他のビデオのいずれかの参照 を明示的な URL を置き換えることができます、 **PlayWebVideo.xaml**ファイルと、`StaticResource`マークアップ拡張機能の場合、`VideoSourceConverter`を作成する必要はありません、`UriVideoSource`オブジェクト。
+これらの他の作品のいずれかの参照にで明示的な URL を置き換えることができます、 **PlayWebVideo.xaml**ファイルと、`StaticResource`マークアップ拡張機能の場合、`VideoSourceConverter`を作成する必要はありません、`UriVideoSource`オブジェクト。
 
 ```xaml
 <video:VideoPlayer Source="{StaticResource ElephantsDream}" />
 ```
 
-また、設定することができます、`Source`でビデオ ファイルのプロパティ、`ListView`次の記事で説明されている[プレーヤーにビデオ ソースをバインド](source-bindings.md)です。
+または、設定、`Source`でビデオ ファイルからプロパティを`ListView`」の説明に従って、次の記事[プレーヤーへのビデオのソースをバインド](source-bindings.md)。
 
 
 

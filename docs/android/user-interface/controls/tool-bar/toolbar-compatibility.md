@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30768702"
 ---
 # <a name="toolbar-compatibility"></a>ツールバーの互換性
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="set-the-minimum-and-target-android-version"></a>最小値とターゲットの Android バージョンを設定します。
 
-API レベル 21 以上、アプリのターゲット フレームワークを設定する必要がありますか、アプリが正常に展開できなくなります。 場合など、エラー**リソース識別子の属性 'tileModeX' に見つかりませんパッケージ 'android'**に見られる、アプリを展開するときにこれは、ターゲット フレームワークに設定されていないために、 **Android 5.0 (API レベル 21 - ロリポップ)**以上です。 
+API レベル 21 以上、アプリのターゲット フレームワークを設定する必要がありますか、アプリが正常に展開できなくなります。 場合など、エラー**リソース識別子の属性 'tileModeX' に見つかりませんパッケージ 'android'** に見られる、アプリを展開するときにこれは、ターゲット フレームワークに設定されていないために、 **Android 5.0 (API レベル 21 - ロリポップ)** 以上です。 
 
 API レベル 21 レベル以上のターゲット フレームワークを設定し、Android API レベルのプロジェクトの設定をサポートするために、アプリは、最低限の Android バージョンに設定します。 Android API レベルの設定についての詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。 `ToolbarFun`例では、最低限の Android バージョンに設定されている KitKat (API レベル 4.4)。 
 

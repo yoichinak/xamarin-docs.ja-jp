@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Forms レイアウト
-description: Xamarin.Forms のレイアウトは visual 構造にユーザー インターフェイス コントロールの作成に使用されます。 この記事では、Xamarin.Forms に含まれるレイアウトが一覧表示します。
+title: Xamarin.Forms のレイアウト
+description: Xamarin.Forms のレイアウトは、visual 構造にユーザー インターフェイス コントロールの作成に使用されます。 この記事では、Xamarin.Forms のレイアウトを示します。
 ms.prod: xamarin
 ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 6e9889bf8ec748ed2034d63acfec9784d074ca44
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 224eb2ee3958e5979382a3dc5e70110fdce51879
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243091"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994603"
 ---
-# <a name="xamarinforms-layouts"></a>Xamarin.Forms レイアウト
+# <a name="xamarinforms-layouts"></a>Xamarin.Forms のレイアウト
 
-_Xamarin.Forms のレイアウトは visual 構造にユーザー インターフェイス コントロールの作成に使用されます。_
+_Xamarin.Forms のレイアウトは、visual 構造にユーザー インターフェイス コントロールの作成に使用されます。_
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout)と[ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) Xamarin.Forms クラスは、ビューおよびその他のレイアウト コンテナーとして機能するビューの特殊なサブタイプです。 `Layout`自体クラスから派生[ `View`](views.md)です。 A`Layout`派生には通常 Xamarin.Forms アプリケーションで、子要素のサイズと位置を設定するためのロジックが含まれています。
+[ `Layout` ](xref:Xamarin.Forms.Layout)と[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) Xamarin.Forms クラスは、ビュー、およびその他のレイアウト コンテナーとして機能するビューの特殊なサブタイプ。 `Layout`自体クラスから派生[ `View`](views.md)します。 A`Layout`派生物には通常 Xamarin.Forms アプリケーションの子要素のサイズと位置を設定するためのロジックが含まれています。
 
-[![Xamarin.Forms レイアウト型](layouts-images/layouts-sml.png "Xamarin.Forms レイアウト型")](layouts-images/layouts.png#lightbox "Xamarin.Forms レイアウトの種類")
+[![Xamarin.Forms のレイアウト型](layouts-images/layouts-sml.png "Xamarin.Forms レイアウト型")](layouts-images/layouts.png#lightbox "Xamarin.Forms のレイアウトの種類")
 
-派生したクラス`Layout`2 つのカテゴリに分類できます。
+派生するクラス`Layout`2 つのカテゴリに分類できます。
 
-## <a name="layouts-with-single-content"></a>単一のコンテンツのレイアウト
+## <a name="layouts-with-single-content"></a>単一のコンテンツとレイアウト
 
-これらのクラスから派生して[ `Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)を定義する[ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)と[ `IsClippedToBounds` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.IsClippedToBounds/)プロパティです。
+これらのクラスから派生[ `Layout` ](xref:Xamarin.Forms.Layout)、定義する[ `Padding` ](xref:Xamarin.Forms.Layout.Padding)と[ `IsClippedToBounds` ](xref:Xamarin.Forms.Layout.IsClippedToBounds)プロパティ。
 
 <a name="contentView" />
 
@@ -34,7 +34,7 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 
 |     |     |
 | --- | --- |
-| [`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) 設定されている 1 つの子が含まれています、 [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)プロパティです。 `Content`プロパティは、いずれかに設定することができます`View`から派生したその他を含む`Layout`派生します。 `ContentView` ほとんどの場合、構造体の要素として使用されに基底クラスとして機能[ `Frame`](#frame)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) | [![ContentView 例](layouts-images/ContentView.png "ContentView 例")](layouts-images/ContentView-Large.png#lightbox "ContentView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) 設定されている 1 つの子が含まれています、 [ `Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ。 `Content`プロパティを任意に設定できます`View`などその他の派生物`Layout`派生クラス。 `ContentView` 構造体の要素として提供されるほとんどの場合と機能する基底クラスとして[ `Frame`](#frame)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentView) | [![ContentView 例](layouts-images/ContentView.png "ContentView 例")](layouts-images/ContentView-Large.png#lightbox "ContentView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />
@@ -43,7 +43,7 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 
 |     |     |
 | --- | --- |
-| [ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/)クラスから派生[ `ContentView` ](#contentView)し、その子の周囲に四角形のフレームを表示します。 `Frame` 既定値を持つ[ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) 20 の値も定義と[ `OutlineColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.OutlineColor/)、 [ `CornerRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.CornerRadius/)、および[ `HasShadow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.HasShadow/)プロパティです。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/) | [![例をフレーム](layouts-images/Frame.png "例をフレーム")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| [ `Frame` ](xref:Xamarin.Forms.Frame)クラスから派生[ `ContentView` ](#contentView)し、その子の周囲に四角形のフレームを表示します。 `Frame` 既定値を持つ[ `Padding` ](xref:Xamarin.Forms.Layout.Padding) 20, の値も定義します[ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor)、 [ `CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)と[ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Frame) | [![例のフレーム](layouts-images/Frame.png "フレーム例")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
 
 <a name="scrollView" />
@@ -52,26 +52,26 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) その内容をスクロールできます。 設定、 [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Content/)プロパティを画面に収まるようにビューまたはレイアウトが大きすぎます。 (の内容、`ScrollView`は非常に多くの場合、 [ `StackLayout` ](#stackLayout))。設定、 [ `Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Orientation/)プロパティを指定するかどうかのスクロールは、垂直方向に水平方向、またはその両方です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) / [ガイド](~/xamarin-forms/user-interface/layouts/scroll-view.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![ScrollView 例](layouts-images/ScrollView.png "ScrollView 例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView) その内容をスクロールすることができます。 設定、 [ `Content` ](xref:Xamarin.Forms.ScrollView.Content)プロパティを画面に合わせるには、表示またはレイアウトが大きすぎます。 (のコンテンツを`ScrollView`は非常に多くの場合、 [ `StackLayout` ](#stackLayout))。設定、 [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation)プロパティを指定するかどうかはスクロールは垂直、水平、またはその両方です。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ScrollView) / [ガイド](~/xamarin-forms/user-interface/layouts/scroll-view.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![ScrollView 例](layouts-images/ScrollView.png "ScrollView 例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView
 
 |     |     |
 | --- | --- |
-| [`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/) コントロール テンプレート付きコンテンツを表示しの基本クラスは、 [ `ContentView`](#contentView)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/) / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![TemplatedView 例](layouts-images/TemplatedView.png "TemplatedView 例")](layouts-images/TemplatedView.png#lightbox "TemplatedView 例") |
+| [`TemplatedView`](xref:Xamarin.Forms.TemplatedView) コントロール テンプレートでのコンテンツを表示し、基本クラスです[ `ContentView`](#contentView)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TemplatedView) / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![TemplatedView 例](layouts-images/TemplatedView.png "TemplatedView 例")](layouts-images/TemplatedView.png#lightbox "TemplatedView 例") |
 |     |     |
 
 ### <a name="contentpresenter"></a>ContentPresenter
 
 |     |     |
 | --- | --- |
-| [`ContentPresenter`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) 内で使用されるテンプレートのビューのレイアウト マネージャー、 [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)マークが表示される内容が表示されます。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![ContentPresenter 例](layouts-images/ContentPresenter.png "ContentPresenter 例")](layouts-images/ContentPresenter.png#lightbox "ContentPresenter 例") |
+| [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 内で使用される、テンプレート化されたビューのレイアウト マネージャー、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)マークが表示されるコンテンツが表示されます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentPresenter) / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![ContentPresenter 例](layouts-images/ContentPresenter.png "ContentPresenter 例")](layouts-images/ContentPresenter.png#lightbox "ContentPresenter の例") |
 |     |     |
 
-## <a name="layouts-with-multiple-children"></a>複数の子でレイアウト
+## <a name="layouts-with-multiple-children"></a>複数の子要素のレイアウト
 
-これらのクラスから派生して[ `Layout<View>`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)です。
+これらのクラスから派生[ `Layout<View>`](xref:Xamarin.Forms.Layout`1)します。
 
 <a name="stackLayout" />
 
@@ -79,7 +79,7 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 
 |     |     |
 | --- | --- |
-| [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 水平方向または垂直方向にに基づいてスタック内の子要素を移動、 [ `Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/)プロパティです。 [ `Spacing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Spacing/)プロパティは、既定値は 6 があり、子の間のスペースを制御します。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) / [ガイド](~/xamarin-forms/user-interface/layouts/stack-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)| [![StackLayout 例](layouts-images/StackLayout.png "StackLayout 例")](layouts-images/StackLayout-Large.png#lightbox "StackLayout 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
+| [`StackLayout`](xref:Xamarin.Forms.StackLayout) 水平方向または垂直方向にベースのいずれかのスタックに子要素を配置、 [ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation)プロパティ。 [ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing)プロパティは、子の間の間隔を制御し、6 の既定値を持ちます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.StackLayout) / [ガイド](~/xamarin-forms/user-interface/layouts/stack-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)| [![StackLayout 例](layouts-images/StackLayout.png "StackLayout 例")](layouts-images/StackLayout-Large.png#lightbox "StackLayout 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
 |     |     |
 
 <a name="grid" />
@@ -88,28 +88,28 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 
 |     |     |
 | --- | --- |
-| [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) 行と列のグリッドで、その子要素を配置します。 使用して子の位置が示されます、[アタッチされるプロパティ](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/)、 [ `Column` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/)、 [ `RowSpan` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/)、および[ `ColumnSpan`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) / [ガイド](~/xamarin-forms/user-interface/layouts/grid.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![グリッドの例](layouts-images/Grid.png "グリッド例")](layouts-images/Grid-Large.png#lightbox "グリッドの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
+| [`Grid`](xref:Xamarin.Forms.Grid) 行と列のグリッドには、その子要素を配置します。 使用して、子の位置が示される、[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](xref:Xamarin.Forms.Grid.RowProperty)、 [ `Column` ](xref:Xamarin.Forms.Grid.ColumnProperty)、 [ `RowSpan` ](xref:Xamarin.Forms.Grid.RowSpanProperty)、および[ `ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Grid) / [ガイド](~/xamarin-forms/user-interface/layouts/grid.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![グリッドの例](layouts-images/Grid.png "グリッド例")](layouts-images/Grid-Large.png#lightbox "グリッドの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
 |     |     |
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
 |     |     |
 | --- | --- |
-| [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) 子要素を親に対して特定の位置に配置します。 使用して子の位置が示されます、[アタッチされるプロパティ](~/xamarin-forms/xaml/attached-properties.md) [ `LayoutBounds` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty/)と[ `LayoutFlags`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty/)です。 `AbsoluteLayout`はビューの位置をアニメーション化するのに便利です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) / [ガイド](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![AbsoluteLayout 例](layouts-images/AbsoluteLayout.png "AbsoluteLayout 例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutdDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
+| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) その親に対する相対的な特定の位置に子要素を配置します。 使用して、子の位置が示される、[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md) [ `LayoutBounds` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)と[ `LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)します。 `AbsoluteLayout`はビューの位置をアニメーション化するために便利です。<br /><br />[API ドキュメント](xref:Xamarin.Forms.AbsoluteLayout) / [ガイド](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![AbsoluteLayout の使用例](layouts-images/AbsoluteLayout.png "AbsoluteLayout の使用例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout の使用例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutdDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="relativelayout"></a>RelativeLayout
 
 |     |     |
 | --- | --- |
-| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) 基準に子要素を配置、`RelativeLayout`自体またはその兄弟にします。 使用して子の位置が示されます、[アタッチされるプロパティ](~/xamarin-forms/xaml/attached-properties.md)型のオブジェクトに設定されている[ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/)と[ `BoundsConstraint`](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/)です。<br /><br />[API のドキュメント](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) / [ガイド](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![[相対レイアウト] 例](layouts-images/RelativeLayout.png "[相対レイアウト] 例")](layouts-images/RelativeLayout-Large.png#lightbox "[相対レイアウト] の使用例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+| [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) に対して相対的な子要素を配置、`RelativeLayout`自体または兄弟にします。 使用して、子の位置が示される、[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)型のオブジェクトに設定されている[ `Constraint` ](xref:Xamarin.Forms.Constraint)と[ `BoundsConstraint`](xref:Xamarin.Forms.Constraint)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.RelativeLayout) / [ガイド](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![[相対レイアウト] 例](layouts-images/RelativeLayout.png "[相対レイアウト] 例")](layouts-images/RelativeLayout-Large.png#lightbox "[相対レイアウト] の使用例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
 |     |     |
 
 ### <a name="flexlayout"></a>FlexLayout
 
 |     |     |
 | --- | --- |
-| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) CSS に基づきます[フレキシブル ボックス レイアウト モジュール](http://www.w3.org/TR/css-flexbox-1/)とよく呼ばれる、_レイアウトをフレックス_または_フレックス ボックス_です。 `FlexLayout` 6 つのバインド可能なプロパティおよび積み上げまたは多くの配置と印刷の向きのオプションでラップする子を許可する 5 つの接続されているバインド可能なプロパティを定義します。<br /><br />[API のドキュメント](xref:Xamarin.Forms.FlexLayout) / [ガイド](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/) | [![FlexLayout 例](layouts-images/FlexLayout.png "FlexLayout 例")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
+| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) CSS に基づいて[フレキシブル ボックス レイアウト モジュール](http://www.w3.org/TR/css-flexbox-1/)とよく呼ばれる、 _flex レイアウト_または_フレックス ボックス_します。 `FlexLayout` 6 つのバインド可能なプロパティと積み上げまたは多くの配置と向きのオプションを使用してラップする子を許可する 5 つの接続されているバインド可能なプロパティを定義します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.FlexLayout) / [ガイド](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/) | [![FlexLayout 例](layouts-images/FlexLayout.png "FlexLayout 例")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
 |     |     |
 
 ## <a name="related-links"></a>関連リンク
@@ -117,4 +117,4 @@ _Xamarin.Forms のレイアウトは visual 構造にユーザー インター�
 - [Xamarin.Forms の概要](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
-- [Xamarin.Forms API ドキュメント](https://developer.xamarin.com/api/root/Xamarin.Forms/)
+- [Xamarin.Forms API ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

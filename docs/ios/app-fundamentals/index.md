@@ -1,69 +1,71 @@
----
+﻿---
 title: Xamarin.iOS アプリケーションの基礎
-description: このドキュメント ガイドへのリンクさまざまなトランスポート セキュリティのアプリなど、Xamarin.iOS 開発に基本的な概念について説明した backgrounding、イベント、およびスレッドです。
+description: このドキュメント ガイドへのリンクさまざまなアプリのトランスポート セキュリティなどの Xamarin.iOS の開発の基礎となる概念について説明したバック グラウンド処理は、イベント、およびスレッド処理します。
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: cdace50d851b2c99f9241b869f248e58d5b93377
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: de337291554e81a2434dcc30c163f4789fc832eb
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784498"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111213"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS アプリケーションの基礎
 
-このセクションでは、いくつかの一般的な処理タスクまたは開発者は、Xamarin.iOS (旧称 MonoTouch) アプリケーションを開発するときに注意する必要がある概念にガイドを提供します。
+このセクションでは、いくつかの一般的なモ ノのタスクまたは開発者は、Xamarin.iOS (旧称 MonoTouch) アプリケーションを開発するときに注意する必要がある概念にガイドを提供します。
+
+## <a name="accessibilityiosapp-fundamentalsaccessibilitymd"></a>[ユーザー補助](~/ios/app-fundamentals/accessibility.md)
+
+このドキュメントでは、さまざまな Api や、できるだけ多くのユーザーにアクセスできるアプリケーションの構築に役立つ使用できるツールについて説明します。
 
 ## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[アプリケーション トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
 
-この記事で iOS 9 アプリおよびこれが意味、Xamarin.iOS プロジェクト用のアプリのトランスポート セキュリティを適用するセキュリティの変更を導入する ATS 構成オプションに適用されます、必要な場合は、ATS の脱退する方法はについて説明します。 (明示的に許可した) 場合を除き、ATS が既定で有効になっているためには、すべてのセキュリティ保護されていないインターネット接続で iOS 9 のアプリで例外が発生します。
-
+この記事では、iOS 9 アプリ、つまり、Xamarin.iOS プロジェクト用のアプリのトランスポート セキュリティを適用するセキュリティの変更を紹介します。、ATS の構成オプションが含まれ、必要な場合は、ATS のオプトアウトする方法をについて説明します。 (明示的に許可した) 場合を除き、ATS が既定で有効になってには、保護されていないインターネット接続で iOS 9 アプリで例外が発生します。
 
 ## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)
 
-バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、バック グラウンドでタスクを実行するアプリケーションのプロセスです。 このガイドは、バック グラウンドで iOS 処理の概要として機能します。
-
-
-## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[イベント、プロトコル、およびデリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)
-
-この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定するために使用するキー iOS テクノロジを表示します。 これらのテクノロジは、イベント、プロトコル、およびデリゲートです。この記事では、新機能について説明しますがこれらの各および c# から使用は、各方法です。 Xamarin.iOS が iOS コントロールを使用して、Xamarin.iOS Objective C の概念のプロトコルおよびデリゲートなどのサポートを提供する方法と、使い慣れた .NET イベントもを公開する方法を示しています (OBJECTIVE-C デリゲート混同しないように c# デリゲートを使用)。 この記事では、使用方法を示すプロトコルは、両方の基礎として OBJECTIVE-C デリゲート用とデリゲート以外のシナリオで例も提供します。
-
-## <a name="threadingiosapp-fundamentalsthreadingmd"></a>[スレッド化](~/ios/app-fundamentals/threading.md)
-
-この記事は、Xamarin.iOS アプリケーションでスレッド処理について説明し、について少し説明、.NET スレッド プール、応答性の高いアプリケーション、およびガベージ コレクション。&nbsp;
-
-## <a name="working-with-imagesiosapp-fundamentalsimages-iconsindexmd"></a>[イメージの処理](~/ios/app-fundamentals/images-icons/index.md)
-
-この記事では、Xamarin.iOS、(画像などの読み込みのアイコン) などのアプリケーションのサポートのイメージと (イメージなどのコントロールに適用) アプリケーション内のイメージの両方でイメージを使用する方法について説明します。 Visual Studio for Mac を使用してイメージを組み込む方法と、コードからのイメージと対話する方法についても説明します。
-
-## <a name="working-with-property-listsiosapp-fundamentalsindexmd"></a>[プロパティ リストの使用](~/ios/app-fundamentals/index.md)
-
-このドキュメントでは、Info.plist と Entitlements.plist の操作に Mac のグラフィックと高度なプロパティ一覧 (.plist) のエディターの Visual Studio を紹介します。 設定アイコンが示されていると、起動の iOS アプリケーションのイメージおよびからアプリの機能 (権限) を指定する例を示します Visual Studio for mac 内
-
-## <a name="working-with-the-file-systemiosapp-fundamentalsfile-systemmd"></a>[ファイル システムの処理](~/ios/app-fundamentals/file-system.md)
-
-Xamarin.iOS は、任意の .NET アプリケーションで使用する iOS でファイルおよびディレクトリを使用する同じ System.IO クラスを使用することができます。 ただし、使い慣れたクラスとメソッドに関係なく、iOS は作成またはアクセスできるファイルのいくつかの制限を実装し、機能も提供特別な特定のディレクトリ。 この記事では、これらの制限およびの機能について説明し、Xamarin.iOS アプリケーションでファイルへのアクセスがどのように動作するかを示します。
+バック グラウンド処理またはバック グラウンド処理は、アプリケーションが別のアプリケーションがフォア グラウンドで実行中にバック グラウンドでタスクを実行できるようにすることのプロセスです。 このガイドは、バック グラウンド処理で iOS の概要として機能します。
 
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[コードで iOS アプリケーションの作成](~/ios/app-fundamentals/ios-code-only.md)
 
-この記事は、for mac Visual Studio および Visual Studio を使用してコードを完全に iOS アプリケーションを作成する方法を説明します。 UIKit からビューの階層を作成することでコント ローラーでアプリケーションの画面を構築する空のプロジェクト テンプレートからを起動する方法を示します。 その後、コント ローラーで読み込むことができるカスタム ビューを作成する方法について説明します。
+この記事では、Visual Studio と Visual Studio for mac を使用するコードだけで iOS アプリケーションを作成する方法を説明します。 UIKit からビューの階層を作成して、コント ローラーで、アプリケーションの画面を構築する空のプロジェクト テンプレートから開始する方法を示します。 次に、コント ローラーで読み込むことができるカスタム ビューを作成する方法について説明します。
 
-## <a name="working-with-user-defaultsiosapp-fundamentalsuser-defaultsmd"></a>[ユーザーの既定値の操作](~/ios/app-fundamentals/user-defaults.md)
+## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[イベント、プロトコル、およびデリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 
-`NSUserDefaults`クラスは、ios アプリと拡張機能は、システム全体の既定のシステムとの対話方法を提供します。 既定でシステムを使用すると、ユーザーはアプリの動作または (アプリのデザインに基づく) の設定に応じたスタイル設定を構成できます。 たとえば、ヤード メトリックの vs でのデータを表示または指定した UI のテーマを選択します。
+この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定するために使用するキー iOS テクノロジを示します。 これらのテクノロジは、イベント、プロトコル、およびデリゲートです。この記事では、何について説明しますがこれらの各と c# からそれぞれの使用方法。 Xamarin.iOS が Xamarin.iOS では、プロトコル、デリゲートなどの Objective C の概念のサポート方法と、使い慣れた .NET イベントもを公開する iOS のコントロールを使用する方法を示していますが (Objective C デリゲート混同しないように c# のデリゲートを使用)。 また、この記事では、プロトコルの使用方法の両方として基礎 Objective C のデリゲートとデリゲート以外のシナリオで表示する例を示します。
+
+## <a name="working-with-the-file-systemiosapp-fundamentalsfile-systemmd"></a>[ファイル システムの操作](~/ios/app-fundamentals/file-system.md)
+
+Xamarin.iOS は、ファイルとディレクトリの任意の .NET アプリケーションで使用する iOS を使用する同じ System.IO クラスを使用することができます。 ただし、使い慣れたクラスとメソッドに関係なく、iOS は作成またはアクセスできるファイルのいくつかの制限を実装し、機能も提供します特別な特定のディレクトリ。 この記事では、これらの制限と機能の概要を説明します。 し、Xamarin.iOS アプリケーションでのファイル アクセスのしくみを示します。
+
+## <a name="working-with-imagesiosapp-fundamentalsimages-iconsindexmd"></a>[画像の操作](~/ios/app-fundamentals/images-icons/index.md)
+
+この記事では、Xamarin.iOS、(このアイコンを使用して、画像などの読み込み) などのアプリケーションのサポート イメージとイメージがコントロールに適用) などのアプリケーション内のイメージの両方でイメージを使用する方法について説明します。 Visual Studio for Mac を使用して画像を組み合わせたりする方法とコードからイメージを操作する方法についても説明します。
+
+## <a name="localizationiosapp-fundamentalslocalizationindexmd"></a>[ローカリゼーション](~/ios/app-fundamentals/localization/index.md)
+
+このガイドでは、エンコーディングの国際化をサポートするために Xamarin.iOS アプリケーションを追加します。
+
+## <a name="working-with-property-listsiosapp-fundamentalsindexmd"></a>[プロパティ リストを使用します。](~/ios/app-fundamentals/index.md)
+
+このドキュメントは、Info.plist と Entitlements.plist を操作するため、Mac のグラフィックと高度なプロパティ一覧 (.plist) のエディターの Visual Studio を紹介します。 アイコンを設定する方法について説明し、起動、iOS アプリケーションのイメージしアプリの機能 (権利) を指定してから例を示します Visual Studio for mac 内
+
+## <a name="working-with-security-and-privacyiosapp-fundamentalssecurity-privacymd"></a>[セキュリティとプライバシーの使用](~/ios/app-fundamentals/security-privacy.md)
+
+Apple は iOS 10 (以降) でのプライバシーとセキュリティの両方に、開発者がアプリのセキュリティを強化し、エンドユーザーのプライバシーを確保に役立ついくつかの強化されています。 この記事では、Xamarin.iOS アプリでこれらの機能の実装について説明します。
+
+## <a name="threadingiosapp-fundamentalsthreadingmd"></a>[スレッド化](~/ios/app-fundamentals/threading.md)
+
+この記事では、Xamarin.iOS アプリケーションでのスレッドについて説明し、について少し説明、.NET スレッド プール、応答性の高いアプリケーション、およびガベージ コレクション。
 
 ## <a name="touchiosapp-fundamentalstouchindexmd"></a>[タッチ](~/ios/app-fundamentals/touch/index.md)
 
-現在のデバイスの多くのタッチ スクリーンでは、迅速かつ効率的に、自然で直感的な方法でデバイスと対話するようにします。 この連携では簡単なタッチの検出にのみ限定されません – もジェスチャを使用して行うことができます。 たとえば、ピンチ、ズーム ジェスチャは、はさむ、ユーザーは拡大または縮小する 2 本の指で画面の一部で – この非常に一般的な例を示します。このガイドでは、タッチとジェスチャで iOS を調べます。
+現在のデバイスの多くのタッチ スクリーンでは、迅速かつ効率的に、自然で直感的な方法でデバイスと対話するようにします。 この相互作用は簡単なタッチの検出だけに制限されています – もジェスチャを使用することができます。 たとえば、ピンチ ズーム ジェスチャは – この非常に一般的な例、ユーザーは拡大または縮小する 2 本の指で画面の一部をピンチしています。このガイドでは、タッチとジェスチャで iOS を調べます。
 
-## <a name="working-with-security-and-privacyiosapp-fundamentalssecurity-privacymd"></a>[セキュリティとプライバシーの扱い](~/ios/app-fundamentals/security-privacy.md)
+## <a name="working-with-user-defaultsiosapp-fundamentalsuser-defaultsmd"></a>[ユーザーの既定値の操作](~/ios/app-fundamentals/user-defaults.md)
 
-Apple には、セキュリティとプライバシーに iOS 10 (以降) の両方に、開発者がアプリのセキュリティを強化し、エンドユーザーのプライバシーを確保に役立ついくつかの強化が行われます。 この記事では、Xamarin.iOS アプリでこれらの機能を実装することを説明します。
-
-##  <a name="localizationiosapp-fundamentalslocalizationindexmd"></a>[ローカリゼーション](~/ios/app-fundamentals/localization/index.md)
-
-ここでは、国際化をサポートするために、Xamarin.iOS アプリケーションへのエンコーディングを追加します。
+`NSUserDefaults`クラスは、ios アプリと拡張機能は、システム全体の既定のシステムとの対話方法を提供します。 既定でシステムを使用して、ユーザーはアプリの動作や、ユーザー設定 (アプリのデザインに基づく) を満たすためにスタイル設定を構成できます。 たとえば、ヤード メトリックの vs でのデータを表示または指定した UI テーマを選択します。

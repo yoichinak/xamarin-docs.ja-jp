@@ -11,6 +11,7 @@ ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/20/2018
+ms.locfileid: "31647035"
 ---
 # <a name="using-data-in-an-app"></a>アプリでのデータの使用
 
@@ -97,7 +98,7 @@ public int DeleteStock(Stock stock)
 
 一致するどのようなコードが必要ですが、c# のクラスおよびプロパティと一致する名前を必要となる SQLite.NET を使用している場合に特にことを確認するテーブルと列の名前付けでアプリを配布用のデータベース ファイルを作成する際は注意 (または、関連付けられているカスタム属性の場合)。
 
-Android アプリで他の何らかの前にいくつかのコードを実行するためには、ロードする最初のアクティビティに配置できますまたは作成することができます、`Application`任意のアクティビティの前に読み込まれるサブクラスです。 次のコード、`Application`既存のデータベース ファイルをコピーするサブクラス**data.sqlite**のうち、 **/ResourcesRaw/**ディレクトリ。
+Android アプリで他の何らかの前にいくつかのコードを実行するためには、ロードする最初のアクティビティに配置できますまたは作成することができます、`Application`任意のアクティビティの前に読み込まれるサブクラスです。 次のコード、`Application`既存のデータベース ファイルをコピーするサブクラス**data.sqlite**のうち、 **/ResourcesRaw/** ディレクトリ。
 
 ```csharp
 [Application]

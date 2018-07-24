@@ -1,4 +1,4 @@
----
+﻿---
 title: カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 description: Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。
 ms.prod: xamarin
@@ -19,7 +19,7 @@ ms.locfileid: "34794086"
 
 _Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。_
 
-Xamarin.Forms 3.0 には、CSS を使用してアプリのスタイルを設定する機能が導入されています。 スタイル シートは、規則の一覧で構成され、各規則は 1 つまたは複数のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこ内の宣言の一覧で構成され、各宣言はプロパティ・コロン・値から構成されます。ブロック内に複数の宣言が存在する場合、区切り記号としてセミコロンが挿入されます。 次のコード例は、Xamarin.Forms に対応した CSS の一部を示しています。
+Xamarin.Forms 3.0 には、CSS を使用してアプリのスタイルを設定する機能が導入されています。 スタイル シートは、規則の一覧で構成され、各規則は 1 つまたは複数のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこ内の宣言の一覧で構成され、各宣言はプロパティ・コロン・値から構成されます。 ブロック内に複数の宣言が存在する場合、区切り記号としてセミコロンが挿入されます。 次のコード例は、Xamarin.Forms に対応した CSS の一部を示しています。
 
 ```css
 ^contentpage {
@@ -68,7 +68,7 @@ stacklayout>image {
 Xamarin.Forms では、CSS スタイル シートはコンパイル時ではなく、実行時に解析・評価され、使用時に再解析されます。
 
 > [!NOTE]
-> 現時点では、XAML のスタイルを使ってできるすべてのスタイリングが、CSS で表現できるわけではありません。しかし、XAML のスタイルは、Xamarin.Forms で現在サポートされていないプロパティの CSS を補足するために使用できます。 XAML のスタイルの詳細については、次を参照してください。[XAML スタイルを使った Xamarin.Forms アプリのスタイリング ](~/xamarin-forms/user-interface/styles/xaml/index.md)。
+> 現時点では、XAML のスタイルを使ってできるすべてのスタイリングが、CSS で表現できるわけではありません。 しかし、XAML のスタイルは、Xamarin.Forms で現在サポートされていないプロパティの CSS を補足するために使用できます。 XAML のスタイルの詳細については、次を参照してください。[XAML スタイルを使った Xamarin.Forms アプリのスタイリング](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
 [MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/) サンプルは、CSS を使用して簡単なアプリのスタイルを設定するデモで、次のスクリーン ショットのように表示されます。
 
@@ -77,7 +77,7 @@ Xamarin.Forms では、CSS スタイル シートはコンパイル時ではな�
 [![CSS スタイルを持つ MonkeyApp 詳細ページ](css-images/MonkeyAppDetailPage.png "CSS スタイルを持つ MonkeyApp 詳細ページ")](css-images/MonkeyAppDetailPage-Large.png#lightbox "CSS スタイルを持つ MonkeyApp 詳細ページ")
 
 > [!NOTE]
-> 現在、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) の背景色をスタイルシートを使ってスタイルすることはできません。したがって、サンプル アプリケーションでは、 [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) プロパティをコードで設定しています。
+> 現在、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) の背景色をスタイルシートを使ってスタイルすることはできません。 したがって、サンプル アプリケーションでは、 [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) プロパティをコードで設定しています。
 
 ## <a name="consuming-a-style-sheet"></a>スタイル シートの使用
 
@@ -166,7 +166,7 @@ public partial class MyPage : ContentPage
 
 ## <a name="selecting-elements-and-applying-properties"></a>要素の選択とプロパティの適用
 
-CSS は、セレクターを使用して対象とする要素を決定します。セレクターが一致するスタイルは、定義した順序で順番に適用されます。特定のアイテムに定義されているスタイルは、常に最後に適用されます。サポートされているセレクターの詳細については、[セレクター参照](#selector-reference) を参照してください。
+CSS は、セレクターを使用して対象とする要素を決定します。 セレクターが一致するスタイルは、定義した順序で順番に適用されます。 特定のアイテムに定義されているスタイルは、常に最後に適用されます。 サポートされているセレクターの詳細については、[セレクター参照](#selector-reference) を参照してください。
 
 CSS は、プロパティを使用して選択した要素のスタイルを設定します。 各プロパティは有効な値のセットを持ち、一部のプロパティは任意の要素の型に影響を与えることができます。また一方で要素のグループに適用されるものもあります。 サポートされているプロパティの詳細については、[プロパティ リファレンス](#property-reference) を参照してください。
 
@@ -210,7 +210,7 @@ stacklayout {
 }
 ```
 
-このセレクターは、[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) プロパティに `listView` が設定されている要素を特定します。ただし、`StyleId` プロパティが設定されていない場合、セレクターは要素の `x:Name` を使ってフォールバックします。したがって、次の XAML の例では、`#listView` セレクターは、`x:Name` 属性に `listView` が設定されている [ `ListView` ](xref:Xamarin.Forms.ListView) を特定し、背景色を `lightgray` に設定します。
+このセレクターは、[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) プロパティに `listView` が設定されている要素を特定します。 ただし、`StyleId` プロパティが設定されていない場合、セレクターは要素の `x:Name` を使ってフォールバックします。 したがって、次の XAML の例では、`#listView` セレクターは、`x:Name` 属性に `listView` が設定されている [ `ListView` ](xref:Xamarin.Forms.ListView) を特定し、背景色を `lightgray` に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -242,7 +242,7 @@ stacklayout {
 }
 ```
 
-CSS クラスは、要素の [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) プロパティに CSS クラス名を設定して、XAML 要素に 割り当てることができます。したがって、次の XAML の例では、`.detailPageTitle` クラスによって定義されたスタイルが、最初の [ `Label` ](xref:Xamarin.Forms.Label) に割り当てられ、`.detailPageSubtitle` クラスは 2 番目の `Label` に割り当てられます。
+CSS クラスは、要素の [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) プロパティに CSS クラス名を設定して、XAML 要素に 割り当てることができます。 したがって、次の XAML の例では、`.detailPageTitle` クラスによって定義されたスタイルが、最初の [ `Label` ](xref:Xamarin.Forms.Label) に割り当てられ、`.detailPageSubtitle` クラスは 2 番目の `Label` に割り当てられます。
 
 ```xaml
 <ContentPage ...>
@@ -270,7 +270,7 @@ listview image {
 }
 ```
 
-このセレクターは、[ `ListView` ](xref:Xamarin.Forms.ListView) 要素の子であるすべての [ `Image` ](xref:Xamarin.Forms.Image) 要素を特定し、高さと幅を 60 に設定します。したがって、次の XAML の例では、`listview image` セレクターは、[ `ListView` ](xref:Xamarin.Forms.ListView) の子である [ `Image` ](xref:Xamarin.Forms.Image) を特定し、高さと幅を 60 に設定します。
+このセレクターは、[ `ListView` ](xref:Xamarin.Forms.ListView) 要素の子であるすべての [ `Image` ](xref:Xamarin.Forms.Image) 要素を特定し、高さと幅を 60 に設定します。 したがって、次の XAML の例では、`listview image` セレクターは、[ `ListView` ](xref:Xamarin.Forms.ListView) の子である [ `Image` ](xref:Xamarin.Forms.Image) を特定し、高さと幅を 60 に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -309,7 +309,7 @@ stacklayout>image {
 }
 ```
 
-このセレクターは、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) 要素の直接の子であるすべての [ `Image` ](xref:Xamarin.Forms.Image) 要素を特定し、高さと幅を 200 に設定します。したがって、次の XAML の例では、`stacklayout>image` セレクターは、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) の直接の子である [ `Image` ](xref:Xamarin.Forms.Image) を特定し、高さと幅を 200 に設定します。
+このセレクターは、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) 要素の直接の子であるすべての [ `Image` ](xref:Xamarin.Forms.Image) 要素を特定し、高さと幅を 200 に設定します。 したがって、次の XAML の例では、`stacklayout>image` セレクターは、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) の直接の子である [ `Image` ](xref:Xamarin.Forms.Image) を特定し、高さと幅を 200 に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -335,18 +335,18 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 
 |[セレクター]|例|説明|
 |---|---|---|
-|`.class`|`.header`|`StyleClass` プロパティに `header` を含むすべての要素を選択します。このセレクターは、大文字小文字を区別することに注意してください。|
-|`#id`|`#email`|`StyleId` に `email` が設定されているすべての要素を選択します。`StyleId` が設定されていない場合は、`x:Name` でフォールバックします。XAML を使用する場合は、`StyleId` より `x:Name`が優先されます。このセレクターは、大文字小文字を区別することに注意してください。|
+|`.class`|`.header`|`StyleClass` プロパティに `header` を含むすべての要素を選択します。 このセレクターは、大文字小文字を区別することに注意してください。|
+|`#id`|`#email`|`StyleId` に `email` が設定されているすべての要素を選択します。 `StyleId` が設定されていない場合は、`x:Name` でフォールバックします。 XAML を使用する場合は、`StyleId` より `x:Name`が優先されます。 このセレクターは、大文字小文字を区別することに注意してください。|
 |`*`|`*`|すべての要素を選択します。|
-|`element`|`label`|`Label` 型の要素をすべて選択します。ただしサブクラスは選択しません。このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`^base`|`^contentpage`|基本クラスが `ContentPage` であるすべての要素を選択します。これには `ContentPage` 自体も含みます。このセレクターは大文字と小文字を区別せず、また CSS の仕様の一部ではないことに注意してください。|
-|`element,element`|`label,button`|すべての `Button` 要素とすべての `Label` 要素を選択します。このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element element`|`stacklayout label`|`StackLayout` 内のすべての `Label` 要素を選択します。このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element>element`|`stacklayout>label`|`StackLayout` を直接の親として持つすべての `Label` 要素を選択します。このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element+element`|`label+entry`|`Label` の後に隣接するすべての `Entry` 要素を選択します。このセレクターは、大文字小文字を区別しないことに注意してください。|
-|`element~element`|`label~entry`|`Label` に続くすべての `Entry` 要素を選択します。このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element`|`label`|`Label` 型の要素をすべて選択します。ただしサブクラスは選択しません。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`^base`|`^contentpage`|基本クラスが `ContentPage` であるすべての要素を選択します。これには `ContentPage` 自体も含みます。 このセレクターは大文字と小文字を区別せず、また CSS の仕様の一部ではないことに注意してください。|
+|`element,element`|`label,button`|すべての `Button` 要素とすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element element`|`stacklayout label`|`StackLayout` 内のすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element>element`|`stacklayout>label`|`StackLayout` を直接の親として持つすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element+element`|`label+entry`|`Label` の後に隣接するすべての `Entry`  要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element~element`|`label~entry`|`Label` に続くすべての `Entry` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 
-セレクターが一致するスタイルは、定義の順序で、連続して適用されます。 特定のアイテムで定義されているスタイルは常に最後に適用します。
+セレクターが一致するスタイルは、定義した順序で順番に適用されます。 特定のアイテムに定義されているスタイルは、常に最後に適用されます。
 
 > [!TIP]
 > セレクターは、`StackLayout>ContentView>label.email` のように無制限に組み合わせることができます。
@@ -402,7 +402,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 - レイアウト プロパティ (box または grid)。
 - `font` や `border` などの短縮形のプロパティ。
 
-さらに、`inherit` 値は存在しないため、継承はサポートされていません。 したがって、たとえば、`font-size` プロパティをレイアウトに設定し、そのレイアウト内のすべての [ `Label` ](xref:Xamarin.Forms.Label) インスタンスにその値が継承されることは期待できません。1つの例外として、`direction` プロパティがあり、それは `inherit` の規定値を持ちます。
+さらに、`inherit` 値は存在しないため、継承はサポートされていません。 したがって、たとえば、`font-size` プロパティをレイアウトに設定し、そのレイアウト内のすべての [ `Label` ](xref:Xamarin.Forms.Label) インスタンスにその値が継承されることは期待できません。 1つの例外として、`direction` プロパティがあり、それは `inherit` の規定値を持ちます。
 
 ### <a name="color"></a>色
 
@@ -425,7 +425,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 - 4 つの値は、上・右・下・左の太さを示します。
 
 > [!NOTE]
-> CSS の `thickness` 値と XAML の [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/) 値は異なります。たとえば、XAML では、2 つの値の `Thickness` は左右・上下の順で、4 つの値の `Thickness` は、左・上・右・下の順で太さを示します。さらに、XAML の `Thickness` 値は、コンマで区切られます。
+> CSS の `thickness` 値と XAML の [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/) 値は異なります。 たとえば、XAML では、2 つの値の `Thickness` は左右・上下の順で、4 つの値の `Thickness` は、左・上・右・下の順で太さを示します。 さらに、XAML の `Thickness` 値は、コンマで区切られます。
 
 ### <a name="namedsize"></a>NamedSize
 
@@ -443,7 +443,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**[Xamarin University](https://university.xamarin.com/) による Xamarin.Forms 3.0 CSS** 
+**[Xamarin University](https://university.xamarin.com/) による Xamarin.Forms 3.0 CSS**
 
 ## <a name="related-links"></a>関連リンク
 

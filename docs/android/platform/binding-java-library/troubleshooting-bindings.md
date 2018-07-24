@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30771097"
 ---
 # <a name="troubleshooting-bindings"></a>バインディングのトラブルシューティング
 
@@ -20,7 +21,7 @@ _この記事は、バインディング、および考えられる原因と問�
 
 ## <a name="overview"></a>概要
 
-Android ライブラリのバインド (、 **.aar**または**.jar**) ファイルが簡単な問題ではほとんどありません。 手間 Java と .NET の違いに起因する問題を軽減するために通常必要があります。
+Android ライブラリのバインド (、 **.aar**または **.jar**) ファイルが簡単な問題ではほとんどありません。 手間 Java と .NET の違いに起因する問題を軽減するために通常必要があります。
 これらの問題は Xamarin.Android が Android ライブラリをバインドするを防ぐし、ビルド ログのエラー メッセージとしてそれ自体を表示します。 このガイドは、問題のトラブルシューティングのヒントを提供のより一般的な問題とシナリオ、ボックスの一覧を Android ライブラリを正常にバインド可能なソリューションを提供します。
 
 既存の Android ライブラリをバインドするときに、次の点に留意する必要があります。
@@ -42,7 +43,7 @@ Android ライブラリをコンパイルし、種類とバインドしようと
 クラスと Java クラスのメソッドを調べることで、ライブラリのバインドに役立つ重要な情報を提供できます。
 [JD GUI](http://jd.benow.ca/)グラフィカル ユーティリティから Java ソース コードを表示できるは、**クラス**JAR に含まれるファイル。 実行できますスタンド アロン アプリケーションまたはプラグインとして IntelliJ または Eclipse 用。
 
-Android ライブラリ開くをデコンパイル、**です。JAR** Java コンパイラを持つファイルです。 ライブラリがある場合、**です。[Aar]**ファイルでは、ファイルを抽出するために必要な**classes.jar**アーカイブ ファイルからです。 使用した JD GUI 分析のサンプルのスクリーン ショットを次に示します、[ピカソ](http://square.github.io/picasso/)JAR:
+Android ライブラリ開くをデコンパイル、**です。JAR** Java コンパイラを持つファイルです。 ライブラリがある場合、**です。[Aar]** ファイルでは、ファイルを抽出するために必要な**classes.jar**アーカイブ ファイルからです。 使用した JD GUI 分析のサンプルのスクリーン ショットを次に示します、[ピカソ](http://square.github.io/picasso/)JAR:
 
 ![Java コンパイラを使用してピカソ 2.5.2.jar を分析するには](troubleshooting-bindings-images/troubleshoot-bindings-01.png)
 
@@ -50,7 +51,7 @@ Android ライブラリをデコンパイルしたが後、は、ソース コ�
 
 - **難読化の特性を持つクラス**&ndash;難読化されたクラスの特性を含めます。
 
-    - クラス名が含まれています、 **$**、つまり**$.class**
+    - クラス名が含まれています、 **$**、つまり **$.class**
     - クラス名が完全セキュリティが侵害の小文字、つまり**a.class**      
 
 - **`import` 参照されていないライブラリ ステートメント**&ndash;未参照のライブラリを識別し、Xamarin.Android バインディングでプロジェクトにこれらの依存関係を追加、**ビルド アクション**の**ReferenceJar**または**EmbedddedReferenceJar**です。
@@ -99,7 +100,7 @@ Xamarin.Android が XML ファイル名を生成、バインディングのプ�
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>問題: では、c# で生成された出力の種類がありません。
 
-バインディング**.dll**ビルドが一部の種類の Java をミスまたは C# の場合、生成されたソースが不足している型があることを示すエラーのために構築されません。
+バインディング **.dll**ビルドが一部の種類の Java をミスまたは C# の場合、生成されたソースが不足している型があることを示すエラーのために構築されません。
 
 #### <a name="possible-causes"></a>考えられる原因:
 
@@ -235,9 +236,9 @@ Java では、必須ではありませんが、派生クラスは、その親と
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>: 問題**.so**バインディングに必要なライブラリが読み込まれていません
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>: 問題 **.so**バインディングに必要なライブラリが読み込まれていません
 
-一部のバインド プロジェクトによっても異なりますで機能を**.so**ライブラリです。 Xamarin.Android は自動的に読み込まれません可能であれば、 **.so**ライブラリです。 Xamarin.Android は JNI 呼び出しと、エラー メッセージを失敗ラップの Java コードが実行されると、 _java.lang.UnsatisfiedLinkError: ネイティブ メソッドが見つかりません:_アプリケーションをアウト logcat に表示されます。
+一部のバインド プロジェクトによっても異なりますで機能を **.so**ライブラリです。 Xamarin.Android は自動的に読み込まれません可能であれば、 **.so**ライブラリです。 Xamarin.Android は JNI 呼び出しと、エラー メッセージを失敗ラップの Java コードが実行されると、 _java.lang.UnsatisfiedLinkError: ネイティブ メソッドが見つかりません:_ アプリケーションをアウト logcat に表示されます。
 
 この修正プログラムは、手動で読み込む、 **.so**ライブラリへの呼び出しが`Java.Lang.JavaSystem.LoadLibrary`です。 たとえば Xamarin.Android プロジェクトがライブラリを共有すると仮定して**libpocketsphinx_jni.so**ビルド アクションが使用してプロジェクトをバインドに含まれる**EmbeddedNativeLibrary**では、以下スニペット (共有ライブラリを使用する前に実行) が読み込まれます、 **.so**ライブラリ。
 

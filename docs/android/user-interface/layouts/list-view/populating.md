@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30774851"
 ---
 # <a name="populating-a-listview-with-data"></a>データで ListView を設定します。
 
@@ -72,7 +73,7 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 -   **GetItemId** &ndash;行識別子を返す (通常、行番号を long 型の値ができます)。
 
--   **この [int]**インデクサー&ndash;特定の行番号に関連付けられているデータを返します。
+-   **この [int]** インデクサー&ndash;特定の行番号に関連付けられているデータを返します。
 
 コード例**BasicTableAdapter/HomeScreenAdapter.cs**示しますサブクラス`BaseAdapter`:
 

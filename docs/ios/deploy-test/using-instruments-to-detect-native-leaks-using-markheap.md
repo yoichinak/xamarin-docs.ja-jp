@@ -1,21 +1,20 @@
 ---
 title: Instruments を使用した Xamarin.iOS アプリケーションのプロファイリング
-description: デバイスまたはシミュレーター上の Xamarin.iOS アプリケーションでの Instruments の使用方法。
+description: このドキュメントでは、Apple の Instruments アプリを使用して、デバイスやシミュレーターにインストールされている Xamarin.iOS アプリケーションをプロファイリングする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a5c44531a8f05529b169390f25b2946133411098
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785613"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Instruments を使用した Xamarin.iOS アプリケーションのプロファイリング
-
-_デバイスまたはシミュレーター上の Xamarin.iOS アプリケーションでの Instruments の使用方法。_
 
 Xcode **Instruments** は、デバイスまたはシミュレーターで Xamarin.iOS アプリをプロファイリングするために使用できるツールです。 Mono はその Just-in-Time モデルを使用してコードをコンパイルし、Instruments はこの種のデータをうまく解釈できません。そのため、Instruments を使用するシミュレーター ベースのアプリケーションからの出力を使用するのが困難な場合があります。
 この問題のため、このガイドでは、このドキュメントで Instruments の出力を解釈するための開発者アプリの使用法を重点的に説明します。

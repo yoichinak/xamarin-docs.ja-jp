@@ -1,65 +1,64 @@
 ---
 title: デバイスの向き
-description: この記事で説明しますレイアウト Xamarin.Forms アプリケーションの方向を縦長と横長のすばらしい方法です。
+description: この記事で説明します美しく表示縦長と横長の向きで Xamarin.Forms アプリケーションのレイアウト方法。
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244352"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999091"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
-アプリケーションの使用方法と、ユーザー エクスペリエンスを向上させる方法横向きに組み込むことに注意してください。 複数の向きに合わせて個々 のレイアウトを設計することができ、最適なが使用可能な領域を使用します。 アプリケーション レベルでは、回転を無効または有効にすることができます。
+アプリケーションの使用方法と、ユーザー エクスペリエンスを向上させるためにどのようにランドス ケープ方向を組み込むことが考慮すべき重要なは。 複数の向きに対応する個々 のレイアウトを設計することができ、最適なが使用可能な領域を使用します。 アプリケーション レベルでは、回転を無効または有効にすることができます。
 
 <a name="Controlling_Orientation" />
 
 ## <a name="controlling-orientation"></a>方向を制御します。
 
-Xamarin.Forms を使用する場合、デバイスの方向を制御するサポートされているメソッドは、それぞれのプロジェクトの設定を使用するです。
+Xamarin.Forms を使用する場合、デバイスの向きを制御するためのサポートされているメソッドは、個々 のプロジェクトの設定を使用するがします。
 
 ### <a name="ios"></a>iOS
 
-使用するアプリケーションで、iOS デバイスの方向が構成されている、 **Info.plist**ファイル。 アプリは、ターゲットとして含まれている場合、このファイルは iPhone と iPod、向きの設定と iPad の設定を含まれます。 IDE に固有の手順を次に示します。 このドキュメントの上部にある IDE オプションを使用すると、表示するにはどの手順を選択します。
+Ios では、デバイスの向きを使用してアプリケーション用に構成された、 **Info.plist**ファイル。 アプリは、ターゲットとして含まれている場合、このファイルは iPhone と iPod の向きの設定と iPad の設定を含まれます。 お使いの IDE に固有の手順を次に示します。 このドキュメントの上部にある IDE オプションを使用すると、表示するにはどの手順を選択します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio で、iOS プロジェクトを開き、開き**Info.plist**です。 以降、iPhone の展開情報 タブで、構成パネルにファイルが開きます。
+Visual Studio で iOS プロジェクトを開き、開く**Info.plist**します。 以降、iPhone 展開情報 タブで、構成パネルにファイルが開きます。
 
 ![iPhone Visual Studio での展開情報](device-orientation-images/orientation-vs-iphone.png)
 
-IPad の向きを構成するには、選択、 **iPad 展開情報**の左パネル、し、利用可能な向きから上部にあるタブ。
+IPad の向きを構成するには、選択、 **iPad 展開情報**の左、パネル、使用できる向きから上部のタブ。
 
 ![Visual Studio でサポートされているデバイスの向き](device-orientation-images/orientation-vs-ipad.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Mac 用 Visual Studio で iOS プロジェクトを開き、開き**Info.plist**です。 下にある、**アプリケーション** タブで、セクションが利用できる印刷の向きを設定します。
+Visual studio for Mac、iOS プロジェクトを開き、開く**Info.plist**します。 で、**アプリケーション** タブのセクションでは印刷の向きを設定を利用できなくなります。
 
-![iPhone で Visual Studio for Mac の展開情報](device-orientation-images/orientation-xam-ui.png)
+![iPhone では、Visual Studio for Mac の展開情報](device-orientation-images/orientation-xam-ui.png)
 
-キーと値のエディターのインターフェイスでは、選択を使用して値の編集を希望する場合、**ソース**> 画面の下部にあるタブ。
+キー/値エディターのインターフェイスでは、選択を使用して値を編集する場合、**ソース**>、画面の下部にあるタブ。
 
-![Mac 用 Visual Studio でのデバイスの向きをサポート](device-orientation-images/orientation-xam-source.png)
+![Visual studio for Mac デバイスの向きをサポート](device-orientation-images/orientation-xam-source.png)
 
 -----
 
 ### <a name="android"></a>Android
 
-Android の方向を制御するには、開く**MainActivity.cs**属性装飾を使用して印刷の向きを設定し、`MainActivity`クラス。
+Android の方向を制御するには、開く**MainActivity.cs**属性の修飾を使用して、印刷の向きを設定して、`MainActivity`クラス。
 
 ```csharp
 namespace MyRotatingApp.Droid
 {
-    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-    ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate (Bundle bundle)
 ...
@@ -69,35 +68,35 @@ Xamarin.Android には、印刷の向きを指定するためのいくつかの�
 
 - **ランドス ケープ**&ndash;センサー データに関係なく、横にあるアプリケーションの向きを強制します。
 - **縦**&ndash;センサー データに関係なく、縦向きにするアプリケーションの向きを強制します。
-- **ユーザー** &ndash;により、アプリケーションは、ユーザーの表示に望ましい方向を使用して表示します。
-- **背後にある**&ndash;の方向と同じである、アプリケーションの向きをにより、[アクティビティ](https://developer.xamarin.com/api/type/Android.App.Activity/)背後にあります。
-- **センサー** &ndash;ユーザーが自動的に回転を無効な場合でも、センサーが決定する、アプリケーションの向きをによりします。
-- **SensorLandscape** &ndash;により、アプリケーションの画面が (ようにとして上下逆に、画面が表示されていない) に直接つながっている方向を変更するセンサー データを使用しているときに横向きに印刷します。
-- **SensorPortrait** &ndash;により、アプリケーションの画面が (ようにとして上下逆に、画面が表示されていない) に直接つながっている方向を変更するセンサー データを使用しているときに縦向きを使用します。
-- **ReverseLandscape** &ndash;により、アプリケーションは通常、「上下逆にします」が表示するための反対方向が直面している、横方向を使用するには。
-- **ReversePortrait** &ndash;により、アプリケーションは通常、「上下逆にします」が表示するための反対方向が直面している、縦向きを使用するには。
-- **FullSensor** &ndash;により、アプリケーションは (外の考えられる 4) 正しい向きを選択するセンサー データに依存します。
-- **FullUser** &ndash;により、ユーザーの印刷の向きの設定を使用するアプリケーション。 自動的に回転が有効になっている 4 つすべての向きを使用できます。
-- **UserLandscape** &ndash; _\[はサポートされていません\]_ によって、横方向を使用するアプリケーションをユーザーが有効にすると、自動的に回転を使用している場合、向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
-- **UserPortrait** &ndash; _\[はサポートされていません\]_ によって、縦向きを使用するアプリケーションをユーザーが有効にすると、自動的に回転を使用している場合、向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
-- **ロックされている** &ndash; _\[はサポートされていません\]_ により、アプリケーションは、画面の向きを使用するものは、起動時にデバイスでの変更に応答することがなくの物理方向。 このオプションは、コンパイルに中断されます。
+- **ユーザー** &ndash;により、アプリケーションは、ユーザーの表示に望ましい方向で表示されます。
+- **背後にある**&ndash;により、アプリケーションの向きの方向と同じである、[アクティビティ](https://developer.xamarin.com/api/type/Android.App.Activity/)その背後にあります。
+- **センサー** &ndash;センサーが決定する、アプリケーションの向きが場合でも、ユーザーが自動的に回転を無効にします。
+- **SensorLandscape** &ndash;により横向き (その画面は、上下として認識されていない)、画面が向いている方向を変更するセンサー データを使用しているときに使用するアプリケーション。
+- **SensorPortrait** &ndash;と縦向き (その画面は、上下として認識されていない)、画面が向いている方向を変更するセンサー データを使用しているときに使用するアプリケーションが発生します。
+- **ReverseLandscape** &ndash;により、アプリケーションは、「上下」に表示されるため、通常から反対方向に接続する横方向を使用するには。
+- **ReversePortrait** &ndash;により、アプリケーションは「上下」に表示されるため、通常から反対方向に接続する、縦向きを使用するには。
+- **FullSensor** &ndash;により、アプリケーションは (可能な 4) から正しい向きを選択するセンサー データに依存します。
+- **FullUser** &ndash;により、アプリケーションはユーザーの向きの設定を使用します。 自動ローテーションが有効になっているすべての 4 つの向きを使用できます。
+- **UserLandscape** &ndash; _\[はサポートされていません\]_ 、横方向を使用するアプリケーションをユーザーが有効にすると、自動的に回転に使用されますが、印刷の向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
+- **UserPortrait** &ndash; _\[はサポートされていません\]_ 縦向きを使用するアプリケーションをユーザーが有効にすると、自動的に回転に使用されますが、印刷の向きを決定するセンサーです。 このオプションは、コンパイルに中断されます。
+- **ロックされている** &ndash; _\[はサポートされていません\]_ により、アプリケーションは、画面の向きを使用するデバイスでの変更に応答することがなくは起動時の物理方向。 このオプションは、コンパイルに中断されます。
 
-ネイティブの Android Api は、多数の向きを管理する方法を制御を提供する、基本設定を表す、ユーザーを明示的に矛盾するオプションを含むことに注意してください。
+ネイティブの Android Api の向きを管理する方法を制御の多くを提供する、基本設定が表されるユーザーを明示的に矛盾するオプションを含むことに注意してください。
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-ユニバーサル Windows プラットフォーム (UWP) でサポートされる向きで設定されている、 **Package.appxmanifest**ファイル。 マニフェストを開くと、サポートされる向きを選択できる構成パネルが表示されます。
+ユニバーサル Windows プラットフォーム (UWP) 上でサポートされる向きが設定されて、 **Package.appxmanifest**ファイル。 マニフェストを開くと、サポートされる向きを選択できる構成パネルが表示されます。
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
 ## <a name="reacting-to-changes-in-orientation"></a>印刷の向きの変更に反応します。
 
-Xamarin.Forms では、共有コードで向きの変更のアプリに通知するため、ネイティブのイベントを提供していません。 ただし、`SizeChanged`のイベント、`Page`ときに発生幅または高さのいずれか、`Page`変更します。 ときの幅、`Page`が高さよりも大きい、デバイスが横モードにします。 詳細については、次を参照してください。[画像を画面の向きに基づく表示](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)です。
+Xamarin.Forms は、アプリの共有コードで向きの変更を通知するため、ネイティブのイベントを提供していません。 ただし、`SizeChanged`のイベント、`Page`ときに発生の高さまたは幅、`Page`変更します。 ときの幅、`Page`が高さよりも大きい、デバイスが横モードでします。 詳細については、次を参照してください。[画面の向きに基づいてイメージを表示](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)します。
 
 > [!NOTE]
-> 共有コードで印刷の向きの変更の通知を受信するため、既存の無料の NuGet パッケージがあります。 参照してください、 [GitHub リポジトリの](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
+> 共有コードで向きの変更の通知を受信するため、既存の無料の NuGet パッケージがあります。 参照してください、 [GitHub リポジトリ](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
 
-代わりに、オーバーライドされる可能性が、 [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/)メソッドを`Page`ロジックがありますを変更して任意のレイアウトを挿入します。 `OnSizeAllocated`メソッドが呼び出されるたびに、 `Page` whenver デバイスの回転で発生する、新しいサイズが割り当てられます。 なおの基本実装`OnSizeAllocated`するオーバーライドの基本実装を呼び出すことが重要であるため、重要なレイアウト機能を実行します。
+代わりに、オーバーライドすることは、 [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*)メソッドを`Page`、任意のレイアウトを挿入するロジックがありますを変更します。 `OnSizeAllocated`メソッドが呼び出されるたびに、`Page`新しいサイズをデバイスを回転 whenver の動作が割り当てられます。 注意の基本実装`OnSizeAllocated`オーバーライド時に基本の実装を呼び出すには、ので、重要なレイアウト機能を実行します。
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -106,9 +105,9 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-その手順を実行するエラーは、機能していないページになります。
+その手順を実行に失敗すると、機能していないページが発生します。
 
-なお、`OnSizeAllocated`デバイスを回転したときに、メソッドで何度もする呼び出すことがあります。 たびに、レイアウトを変更するリソースの浪費になります、ちらつきにつながることができます。 印刷の向きは横または縦、かどうかを追跡するために、ページ内のインスタンス変数の使用を検討し、変更があるときにのみ再描画します。
+なお、`OnSizeAllocated`デバイスを回転したときに、メソッドで何度もするということがあります。 毎回レイアウトの変更はリソースの無駄であり、ちらつきする可能性があります。 印刷の向きが横または縦、かどうかを追跡するために、ページ内のインスタンス変数の使用を検討し、変更があるときにのみ再描画します。
 
 ```csharp
 private double width = 0;
@@ -126,7 +125,7 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-デバイスの向きの変更が検出されると、追加または使用可能な領域の変更に反応するため、ユーザー インターフェイスとの間追加のビューを削除する可能性があります。 たとえば、縦向きでは、各プラットフォームで組み込みの電卓を考慮してください。
+デバイスの向きの変更が検出されると、追加または使用可能な領域の変更に対応するため、ユーザー インターフェイスとの間追加のビューを削除することがあります。 たとえば、縦向きでは、各プラットフォーム上で組み込みの電卓を考えてみます。
 
 ![](device-orientation-images/calculator-portrait.png "縦向きで電卓アプリケーション")
 
@@ -134,33 +133,33 @@ protected override void OnSizeAllocated(double width, double height)
 
 ![](device-orientation-images/calculator-landscape.png "横に電卓アプリケーション")
 
-アプリの使用可能な領域を利用とりまく環境で多くの機能を追加することを確認します。
+アプリがランドス ケープで多くの機能を追加することで、使用可能な領域の利点を実行することに注意してください。
 
 <a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>レスポンシブ レイアウト
 
-デバイスを回転したときに正常に遷移する組み込みのレイアウトを使用してデザイン インターフェイスを行うことができます。 引き続き向きの変更に応答する場合に、魅力的なインターフェイスを設計するときは、次の一般的な規則を考慮してください。
+組み込みのレイアウトを使用して、デバイスを回転したときに正常に移行するようにデザイン インターフェイスを行うことができます。 引き続き向きの変更に応答するときに、魅力的なインターフェイスを設計するときに、次の一般的な規則を考慮してください。
 
-- **比率に注意を払う**&ndash;向きの変更は、比に関する仮定が行われると、問題が発生します。 たとえば、縦向きで画面の縦方向の空白の 1/3 に十分な領域は、ビューは可能性がありますランドス ケープの垂直方向のスペースの 1/3 に適合しません。
-- **絶対値で指定するには注意する**&ndash;縦向きで意味のある絶対値 (ピクセル) で指定することがあります、とりまく環境で意味を持ちません。 絶対値が必要なときに、その影響を分離するのに入れ子になったレイアウトを使用します。 たとえば、ことができますの絶対値を使用する、 `TableView` `ItemTemplate`項目テンプレートが保証される uniform 高さが場合。
+- **比率に注意を払う**&ndash;向きの変更は、比率に関する仮定が行われると、問題が発生します。 たとえば、縦向きで、画面の垂直方向のスペースの 1/3 に必要十分な領域がビューはランドス ケープの垂直方向のスペースの 1/3 に適合しない可能性です。
+- **絶対値気を付ける**&ndash;絶対値 (ピクセル) で指定する縦向きで意味のある可能性があります、ランドス ケープで意味を成しません。 絶対値が必要な場合は、その影響を分離する入れ子になったレイアウトを使用します。 などにするが妥当で絶対値を使用して、 `TableView` `ItemTemplate`項目テンプレートが保証された均一な高さを持っている場合。
 
-上記の規則は、ベスト プラクティスと見なされる一般的な複数の画面サイズとは、インターフェイスを実装するときにも適用されます。 このガイドの残りの部分では、xamarin.forms を使用して、プライマリのレイアウトの各応答のレイアウトの具体的な例についてを説明します。
+上記の規則は、ベスト プラクティスと見なされる通常の複数の画面のサイズとは、インターフェイスを実装するときにも適用されます。 このガイドの残りの部分には、xamarin.forms を使用して、プライマリのレイアウトの各応答性の高いレイアウトの具体的な例については説明します。
 
 > [!NOTE]
-> 次のセクションでは、デモンストレーションの 1 つの種類を使用して応答のレイアウトを実装する方法をわかりやすくするため、`Layout`一度にです。 実際はできるだけを混在させる`Layout`単純または最も直観的なを使用して目的のレイアウトを実現するために s`Layout`コンポーネントごとにします。
+> 次のセクションでは、デモンストレーションの 1 つの種類を使用してレスポンシブのレイアウトを実装する方法をわかりやすくするため、`Layout`一度にします。 実際が多くの場合、簡単に混在させる`Layout`簡単または最も直感的なを使用して目的のレイアウトを実現するために s`Layout`コンポーネントごとにします。
 
 ### <a name="stacklayout"></a>StackLayout
 
-縦に表示される、次のアプリケーションについて考えてみます。
+縦に表示される、次のアプリケーションを検討してください。
 
-![](device-orientation-images/photo-stack-portrait.png "縦向きでフォト アプリケーション")
+![](device-orientation-images/photo-stack-portrait.png "フォト アプリケーション (縦向き)")
 
 ランドス ケープ:
 
-![](device-orientation-images/photo-stack-landscape.png "写真のアプリケーション (横向き)")
+![](device-orientation-images/photo-stack-landscape.png "フォト アプリケーション (横向き)")
 
-次の xaml を行われます。
+次の XAML とことで実現されます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,7 +202,7 @@ Title="Stack Photo Editor - XAML">
 </ContentPage>
 ```
 
-いくつか c# 使用の方向を変更する`outerStack`デバイスの向きに基づきます。
+いくつか c# を使用の方向を変更する`outerStack`ベースのデバイスの向き。
 
 ```csharp
 protected override void OnSizeAllocated (double width, double height){
@@ -222,20 +221,20 @@ protected override void OnSizeAllocated (double width, double height){
 
 次の点に注意してください。
 
-- `outerStack` 最適な活用するために使用可能な領域の向きに応じて水平または垂直スタックとしてイメージとコントロールを表示するには、調整されます。
+- `outerStack` 最適な活用するために使用可能な領域の向きに応じて、水平または垂直スタックとして、画像とコントロールを表示するには、調整されます。
 
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
-縦に表示される、次のアプリケーションについて考えてみます。
+縦に表示される、次のアプリケーションを検討してください。
 
-![](device-orientation-images/photo-abs-portrait.png "縦向きでフォト アプリケーション")
+![](device-orientation-images/photo-abs-portrait.png "フォト アプリケーション (縦向き)")
 
 ランドス ケープ:
 
-![](device-orientation-images/photo-abs-landscape.png "写真のアプリケーション (横向き)")
+![](device-orientation-images/photo-abs-landscape.png "フォト アプリケーション (横向き)")
 
-次の xaml を行われます。
+次の XAML とことで実現されます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -274,21 +273,21 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 
 次の点に注意してください。
 
-- ページのレイアウトされているため、応答性を紹介する手順のコードの必要はありません。
-- `ScrollView`が場合でも、画面の高さ固定のボタンと、イメージの高さの合計より小さいかを表示するラベルを許可するが使用されています。
+- ページのレイアウトされているため、手続き型コードの応答性を導入する必要はありません。
+- `ScrollView`が場合でも、画面の高さのボタンとイメージの固定の高さの合計より小さいかを表示するラベルに使用されています。
 
 
 ### <a name="relativelayout"></a>RelativeLayout
 
-縦に表示される、次のアプリケーションについて考えてみます。
+縦に表示される、次のアプリケーションを検討してください。
 
-![](device-orientation-images/photo-rel-portrait.png "縦向きでフォト アプリケーション")
+![](device-orientation-images/photo-rel-portrait.png "フォト アプリケーション (縦向き)")
 
 ランドス ケープ:
 
-![](device-orientation-images/photo-rel-landscape.png "写真のアプリケーション (横向き)")
+![](device-orientation-images/photo-rel-landscape.png "フォト アプリケーション (横向き)")
 
-次の xaml を行われます。
+次の XAML とことで実現されます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -366,20 +365,20 @@ BackgroundImage="deer.jpg">
 
 次の点に注意してください。
 
-- ページのレイアウトされているため、応答性を紹介する手順のコードの必要はありません。
-- `ScrollView`が場合でも、画面の高さ固定のボタンと、イメージの高さの合計より小さいかを表示するラベルを許可するが使用されています。
+- ページのレイアウトされているため、手続き型コードの応答性を導入する必要はありません。
+- `ScrollView`が場合でも、画面の高さのボタンとイメージの固定の高さの合計より小さいかを表示するラベルに使用されています。
 
 ### <a name="grid"></a>グリッド
 
-縦に表示される、次のアプリケーションについて考えてみます。
+縦に表示される、次のアプリケーションを検討してください。
 
-![](device-orientation-images/photo-grid-portrait.png "縦向きでフォト アプリケーション")
+![](device-orientation-images/photo-grid-portrait.png "フォト アプリケーション (縦向き)")
 
 ランドス ケープ:
 
-![](device-orientation-images/photo-grid-landscape.png "写真のアプリケーション (横向き)")
+![](device-orientation-images/photo-grid-landscape.png "フォト アプリケーション (横向き)")
 
-次の xaml を行われます。
+次の XAML とことで実現されます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -468,7 +467,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 次の点に注意してください。
 
-- ページのレイアウトされているため、コントロールのグリッド配置を変更する方法があります。
+- ページのレイアウトされているため、コントロールのグリッドの配置を変更する方法があります。
 
 
 ## <a name="related-links"></a>関連リンク

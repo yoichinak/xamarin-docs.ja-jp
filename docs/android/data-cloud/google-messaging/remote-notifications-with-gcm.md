@@ -12,6 +12,7 @@ ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31045134"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging でリモートの通知
 

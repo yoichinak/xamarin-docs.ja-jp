@@ -1,50 +1,50 @@
 ---
 title: 'Xamarin.Essentials: 懐中電灯'
-description: このドキュメントでは、懐中電灯をオンまたはオフ、デバイスのカメラにする場合は、懐中電灯をフラッシュすることのできる Xamarin.Essentials クラスについて説明します。
+description: このドキュメントでは、懐中電灯化フラッシュ オンまたはオフ、デバイスのカメラを有効にすることのできる、Xamarin.Essentials で懐中電灯クラスについて説明します。
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782425"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831412"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: 懐中電灯
 
-![プレリリース NuGet](~/media/shared/pre-release.png)
+![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-**懐中電灯**クラスをオンまたはオフ、デバイスのカメラにする場合は、懐中電灯をフラッシュする権限を持ちます。
+**懐中電灯**クラスには、懐中電灯化フラッシュ オンまたはオフ、デバイスのカメラを有効にする機能。
 
 ## <a name="getting-started"></a>作業の開始
 
-アクセスする、**懐中電灯**次のプラットフォーム固有のセットアップの機能が必要です。
+アクセスする、**懐中電灯**次のプラットフォーム固有設定の機能が必要です。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-懐中電灯とカメラのアクセス許可は、必要な Android プロジェクトで構成する必要があります。 これは、次の方法で追加できます。
+フラッシュ ライトとカメラのアクセス許可は、必要な Android プロジェクトで構成する必要があります。 これは、次の方法で追加できます。
 
-開く、 **AssemblyInfo.cs**下にあるファイル、**プロパティ**フォルダーを追加。
+開く、 **AssemblyInfo.cs**ファイル、**プロパティ**フォルダーを追加。
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
 [assembly: UsesPermission(Android.Manifest.Permission.Camera)]
 ```
 
-または、Android のマニフェストを更新します。
+または、Android マニフェストを更新します。
 
-開く、 **AndroidManifest.xml**下にあるファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
+開く、 **AndroidManifest.xml**ファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**権限が必要:** 領域とチェック、**懐中電灯**と**カメラ**アクセス許可。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**懐中電灯**と**カメラ**アクセス許可。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
 
-これらのアクセス許可を追加することによって[Google Play が自動的にフィルタで除外デバイス](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)特定のハードウェアなし。 この問題を回避、Android プロジェクトの AssemblyInfo.cs ファイルに、次を追加することによって取得できます。
+これらのアクセス許可を追加することで[Google Play がデバイスを自動的にフィルター処理](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)特定のハードウェアなし。 この問題を回避を Android プロジェクトで AssemblyInfo.cs ファイルに、次を追加することで取得できます。
 
 ```csharp
 [assembly: UsesFeature("android.hardware.camera", Required = false)]
@@ -63,7 +63,7 @@ ms.locfileid: "34782425"
 
 ## <a name="using-flashlight"></a>懐中電灯を使用します。
 
-クラスの Xamarin.Essentials への参照を追加します。
+クラスで Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -102,23 +102,23 @@ catch (Exception ex)
 
 #### <a name="api-level-23-and-higher"></a>API レベル 23 以上
 
-新しい API レベルで[たいまつモード](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode)オンまたはオフ、デバイスのフラッシュ単位に使用されます。
+新しい API レベルで[Torch モード](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode)はオン/オフ、デバイスのフラッシュ単位に使用されます。
 
 #### <a name="api-level-22-and-lower"></a>API レベル 22 と下限
 
-オンまたはオフにするカメラ表面のテクスチャが作成、`FlashMode`カメラ単位のです。 
+オンまたはオフにするカメラの表面のテクスチャが作成、`FlashMode`カメラ単位。 
 
 ### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
 
-[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/)オンまたはたいまつとデバイスのフラッシュのモードをオフにするために使用します。
+[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/)オンとオフ、トーチとデバイスのモードをフラッシュするために使用します。
 
 ### <a name="uwptabuwp-specifics"></a>[UWP](#tab/uwp-specifics)
 
-[ランプ](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp)オンまたはオフにするデバイスの背面の最初のランプを検出するために使用します。
+[Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp)最初に lamp をオンまたはオフにするデバイスの背面を検出するために使用します。
 
 -----
 
 ## <a name="api"></a>API
 
 - [懐中電灯ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
-- [懐中 API ドキュメント](xref:Xamarin.Essentials.Flashlight)
+- [懐中電灯 API ドキュメント](xref:Xamarin.Essentials.Flashlight)

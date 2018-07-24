@@ -1,45 +1,45 @@
 ---
-title: Xamarin for tvOS 可能なアセンブリ
-description: TvOS アプリケーションで使用できる機能をわかりやすく、するためには、このドキュメントは、tvOS の開発の Xamarin でサポートされているアセンブリの一覧を提供します。
+title: TvOS 用の Xamarin でのアセンブリのサポートされています。
+description: TvOS アプリケーションで使用できる機能を明確には、するためには、このドキュメントは、Xamarin で tvOS 開発のサポートされるアセンブリの一覧を提供します。
 ms.prod: xamarin
 ms.assetid: 0B1ACF06-65FF-49E2-B6BC-7AEC55638ED8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 217ec5ea81b304555bcaf19e53c8132628628627
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 89f2d4b1a4b58f49ab859d3603433427d05c7393
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788824"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996562"
 ---
-# <a name="assemblies-supported-by-xamarin-for-tvos"></a>Xamarin for tvOS 可能なアセンブリ
+# <a name="assemblies-supported-by-xamarin-for-tvos"></a>TvOS 用の Xamarin でのアセンブリのサポートされています。
 
 ## <a name="supported-assemblies"></a>サポートされているアセンブリ
 
-これは、Xamarin で Xamarin.tvOS アプリのサポート アセンブリの一覧です。これらの詳細な一覧は、以下に記載されています。  注目すべきいくつか不作為含める`System.EnterpriseServices`、ASP.NET スタックと Windows.Forms です。
+Xamarin.tvOS アプリを Xamarin でサポートされるアセンブリの一覧です。これらの詳細な一覧は、以下に記載されています。  いくつか注目すべき漏れを含める`System.EnterpriseServices`、ASP.NET スタックと Windows.Forms します。
 
 |Assembly|追加|API の互換性|
 |---|---|---|
-|Mono.CompilerServices.SymbolWriter.dll|1|コンパイラのライターです。|
-|Mono.Data.Sqlite.dll|1.2|SQLite; 用 ADO.NET プロバイダー参照してください[制限](~/ios/data-cloud/system.data.md)です。|
-|Mono.Data.Tds.dll|1.2|TDS プロトコルをサポートします。使用[System.Data.SqlClient](https://developer.xamarin.com/api/namespace/System.Data.SqlClient/)内でサポート[System.Data](~/ios/data-cloud/system.data.md)です。|
-|Mono.Security.dll|1|暗号化 Api。|
-|monotouch.dll|1|このアセンブリに含まれる、 [c# CocoaTouch API へのバインド](https://developer.xamarin.com/api/root/ios-unified/)です。|
+|Mono.CompilerServices.SymbolWriter.dll|1|コンパイラ ライター。|
+|Mono.Data.Sqlite.dll|1.2|SQLite の ADO.NET プロバイダー参照してください[制限](~/ios/data-cloud/system.data.md)します。|
+|Mono.Data.Tds.dll|1.2|TDS プロトコルのサポート。使用される[System.Data.SqlClient](xref:System.Data.SqlClient)内サポート[System.Data](~/ios/data-cloud/system.data.md)します。|
+|Mono.Security.dll|1|暗号化 Api です。|
+|monotouch.dll|1|このアセンブリに含まれる、 [c# CocoaTouch API へのバインド](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)します。|
 |mscorlib.dll|1|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|OpenTK.dll|1|OpenGL/OpenAL オブジェクト指向の Api、 [iPhone デバイスのサポートを提供する拡張](https://developer.xamarin.com/api/namespace/OpenGLES/)です。|
+|OpenTK.dll|1|OpenGL/OpenAL オブジェクト指向 Api、 [iPhone デバイス サポートを提供する拡張](https://developer.xamarin.com/api/namespace/OpenGLES/)します。|
 |System.dll|1|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)、さらに次の名前空間の型。 <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|
 |System.Core.dll|1|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.Data.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)、[削除いくつかの機能を持つ](~/ios/data-cloud/system.data.md)します。|
-|System.Data.Service.Client.dll|3.x|完全 oData クライアント。|
-|System.Drawing|1|System.drawing の各 API - クラシック API のみです。<br />_Xamarin.Mac .NET 4.5 またはモバイル フレームワークの Unified API では、System.Drawing がサポートされていません。_|
+|System.Data.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)、[削除いくつかの機能を備えた](~/ios/data-cloud/system.data.md)します。|
+|System.Data.Service.Client.dll|3.x|完全な oData クライアント。|
+|System.Drawing|1|System.Drawing API - クラシック API のみです。<br />_Xamarin.Mac .NET 4.5 またはモバイル フレームワークの Unified API では、System.Drawing がサポートされていません。_|
 |System.Json.dll|1.1|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |System.Runtime.Serialization.dll|?|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |System.ServiceModel.dll|1.1|[WCF](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)スタック内に存在として[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |System.ServiceModel.Web.dll|?|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)、さらに次の名前空間の型。 <ul><li>システム</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
-|System.Transactions.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)の一部です。 [System.Data](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)をサポートします。|
-|System.Web.Services|1.1|[基本的な Web サービス](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)削除されたサーバー機能で、.NET 3.5 プロファイルから。|
+|System.Transactions.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx); の一部[System.Data](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)をサポートします。|
+|System.Web.Services|1.1|[基本的な Web サービス](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)削除されたサーバーの機能で、.NET 3.5 プロファイルから。|
 |System.Xml.dll|1|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|
 |System.Xml.Linq.dll|1|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|
 
@@ -47,10 +47,10 @@ ms.locfileid: "34788824"
 
 ## <a name="portable-class-libraries"></a>ポータブル クラス ライブラリ
 
-Mac のバインドだけでなく Xamarin.tvOS が利用できる[.NET ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)です。
+Xamarin.tvOS が利用できるだけでなく、Mac バインド[.NET ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [TvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [TvOS 用のアプリのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

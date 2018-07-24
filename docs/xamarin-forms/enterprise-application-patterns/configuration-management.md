@@ -1,37 +1,37 @@
 ---
 title: 構成管理
-description: この章では、eShopOnContainers モバイル アプリがアプリの設定とユーザー設定を提供する構成管理を実装する方法について説明します。
+description: この章では、eShopOnContainers のモバイル アプリでアプリ設定とユーザー設定を提供する構成管理の実装方法について説明します。
 ms.prod: xamarin
 ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: d6cd9771760bc2932345fec24887842ce1c47376
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6f32d8f328232bdfc644da57bdb3201c60010063
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243952"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995361"
 ---
 # <a name="configuration-management"></a>構成管理
 
-設定は、アプリをリビルドしなくても変更する動作を許可する、コードからのアプリの動作を構成するデータの分離を許可します。 設定の 2 種類があります: アプリの設定、およびユーザー設定。
+設定は、コードから、アプリの動作を構成するデータの分離を許可する、アプリを再構築せずに変更する動作。 設定の 2 種類があります。 アプリの設定、およびユーザー設定。
 
-アプリの設定は、アプリを作成および管理されるデータです。 固定の web サービスのエンドポイント、API キー、およびランタイム状態などのデータに含めることができます。 アプリの設定は、アプリの存在の有無に関係し、そのアプリにわかりやすいのみです。
+アプリの設定は、アプリを作成および管理するデータです。 固定 web サービス エンドポイント、API キー、およびランタイムの状態などのデータに含めることができます。 アプリの設定は、アプリケーションの存在に関連付けられているされ、そのアプリにとって意味のあるのみです。
 
-ユーザー設定は、アプリの動作に影響し、頻繁に再調整を必要としないアプリのカスタマイズ可能な設定です。 たとえば、アプリは、ユーザーから、データを取得する場所と、画面に表示する方法を指定を使用できます可能性があります。
+ユーザー設定は、アプリの動作に影響を頻繁に再調整を必要としないアプリのカスタマイズ可能な設定です。 たとえば、アプリ ユーザーが、データの取得方法と、画面上に表示する方法を指定することができます。
 
-Xamarin.Forms には、設定データの格納に使用できる永続的なディクショナリが含まれています。 このディクショナリを使用してアクセスできる、 [ `Application.Current.Properties` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Properties/)アプリ、スリープ状態になり、アプリが再開されるかを再び起動するときに、復元時にプロパティ、およびそこに配置されているすべてのデータを保存します。 さらに、 [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/)クラスもあります、 [ `SavePropertiesAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.SavePropertiesAsync()/)メソッドを使用して、その設定のために必要なときに保存するアプリをします。 このディクショナリの詳細については、次を参照してください。[プロパティ ディクショナリ](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary)です。
+Xamarin.Forms には、設定データの格納に使用できる永続的なディクショナリが含まれています。 このディクショナリを使用してアクセスできる、 [ `Application.Current.Properties` ](xref:Xamarin.Forms.Application.Properties)プロパティ、およびそこに配置されているすべてのデータには、アプリが、スリープ状態になるし、アプリが再び起動または再開時に復元するときに保存されます。 さらに、 [ `Application` ](xref:Xamarin.Forms.Application)クラスがあります、 [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync)アプリの設定の保存に必要な場合に許可するメソッド。 このディクショナリの詳細については、次を参照してください。 [Properties ディクショナリ](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary)します。
 
-Xamarin.Forms の永続的なディクショナリを使用してデータを格納する欠点は、れていない簡単にデータ バインドです。 EShopOnContainers モバイル アプリがから利用可能な Xam.Plugins.Settings ライブラリを使用するため、 [NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/)です。 このライブラリは、永続化し、各プラットフォームで提供されるネイティブの設定の管理を使用しているときにアプリとユーザーの設定を取得するための一貫した、タイプ セーフ、クロスプラット フォームのアプローチを提供します。 さらに、これはデータ バインディングを使用して、ライブラリによって公開されている設定データをアクセスする簡単です。
+Xamarin.Forms の永続的なディクショナリを使用してデータを格納する欠点は簡単にバインドされたデータです。 EShopOnContainers のモバイル アプリがから利用可能な Xam.Plugins.Settings ライブラリを使用するため、 [NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/)します。 このライブラリは、永続化すると、各プラットフォームで提供されるネイティブの設定の管理を使用しているときにアプリとユーザーの設定を取得する一貫した、タイプ セーフ、クロス プラットフォームのアプローチを提供します。 さらに、これは、データ バインディングを使用して、ライブラリによって公開される設定データにアクセスする簡単です。
 
 > [!NOTE]
-> Xam.Plugin.Settings ライブラリは、アプリとユーザーの両方の設定を保存できる、これによりなし、2 つの違い。
+> Xam.Plugin.Settings ライブラリは、アプリとユーザーの両方の設定を保存できるが 2 つの区別、ありませんなります。
 
 ## <a name="creating-a-settings-class"></a>設定クラスを作成します。
 
-Xam.Plugins.Settings ライブラリを使用する場合、1 つの静的クラスを記述をアプリに必要なアプリとユーザーの設定にが含まれます。 次のコード例では、eShopOnContainers モバイル アプリで設定クラスを示しています。
+Xam.Plugins.Settings ライブラリを使用する場合、1 つの静的クラスが作成をアプリに必要なアプリとユーザー設定が格納されます。 次のコード例では、eShopOnContainers のモバイル アプリで設定クラスを示しています。
 
 ```csharp
 public static class Settings  
@@ -47,14 +47,14 @@ public static class Settings
 }
 ```
 
-設定を読み取るし、書き込む、 `ISettings` Xam.Plugins.Settings ライブラリによって提供される API。 このライブラリを提供する、API にアクセスするために使用するシングルトン`CrossSettings.Current`、およびアプリの設定クラスを使用してこのシングルトンを公開する必要があります、`ISettings`プロパティです。
+設定を読み取り、書き込むことができます、 `ISettings` Xam.Plugins.Settings ライブラリによって提供される API。 このライブラリは、API にアクセスするために使用するシングルトン`CrossSettings.Current`、およびアプリの設定クラスを使用してこのシングルトンを公開する必要があります、`ISettings`プロパティ。
 
 > [!NOTE]
-> Plugin.Settings および Plugin.Settings.Abstractions 名前空間の using ディレクティブは、Xam.Plugins.Settings ライブラリの型へのアクセスを必要とするクラスに追加する必要があります。
+> Plugin.Settings と Plugin.Settings.Abstractions 名前空間の using ディレクティブは、Xam.Plugins.Settings ライブラリの型へのアクセスを必要とするクラスに追加する必要があります。
 
 ## <a name="adding-a-setting"></a>設定を追加
 
-各設定は、キーを既定値、およびプロパティで構成されます。 次のコード例では、eShopOnContainers モバイル アプリに接続するオンライン サービスのベース URL を表すユーザー設定の 3 つすべての項目を示します。
+各設定は、キー、既定値、およびプロパティで構成されます。 次のコード例では、eShopOnContainers のモバイル アプリに接続するオンライン サービスのベース URL を表すユーザー設定の 3 つすべての項目を示します。
 
 ```csharp
 public static class Settings  
@@ -78,11 +78,11 @@ public static class Settings
 }
 ```
 
-キーは、キー名を定義する定数の文字列では常に、設定の既定値が必要な型の静的な読み取り専用値です。 既定値を提供することにより、有効な値が設定されていない設定が取得される場合に使用できます。
+キーは常に、const 文字列キーの名前を定義する、設定の既定値は、必要な型の静的読み取り専用値です。 既定値を提供することにより、有効な値が未設定の設定が取得された場合に使用できます。
 
-`UrlBase`静的プロパティから 2 つのメソッドを使用して、`ISettings`設定値を読み取ったり書き込んだりする API。 `ISettings.GetValueOrDefault`プラットフォーム固有の記憶域の設定の値を取得するメソッドを使用します。 設定の値が定義されていない場合は、代わりに、既定値が取得されます。 同様に、`ISettings.AddOrUpdateValue`にプラットフォーム固有の記憶域の設定の値を永続化するメソッドを使用します。
+`UrlBase`静的プロパティから 2 つのメソッドを使用して、`ISettings`設定値を読み書きする API。 `ISettings.GetValueOrDefault`メソッドを使用して、プラットフォーム固有の記憶域から設定の値を取得します。 設定の値が定義されていない場合は、代わりに、既定値が取得されます。 同様に、`ISettings.AddOrUpdateValue`メソッドを使用してプラットフォーム固有のストレージ設定の値を保持します。
 
-内の既定値を定義するではなく、`Settings`クラス、`UrlBaseDefault`文字列から値を取得する、`GlobalSetting`クラスです。 次のコード例は、`BaseEndpoint`プロパティおよび`UpdateEndpoint`このクラスのメソッド。
+内の既定値を定義するではなく、`Settings`クラス、`UrlBaseDefault`文字列から値を取得する、`GlobalSetting`クラス。 次のコード例は、`BaseEndpoint`プロパティと`UpdateEndpoint`このクラスのメソッド。
 
 ```csharp
 public class GlobalSetting  
@@ -115,25 +115,25 @@ public class GlobalSetting
 }
 ```
 
-毎回、`BaseEndpoint`プロパティが設定されて、`UpdateEndpoint`メソッドが呼び出されます。 このメソッドは、一連のうちすべてに基づいているプロパティを更新、`UrlBase`によって提供されるユーザー設定、 `Settings` eShopOnContainers モバイル アプリに接続する別のエンドポイントを表すクラス。
+毎回、`BaseEndpoint`プロパティが設定されて、`UpdateEndpoint`メソッドが呼び出されます。 このメソッドは、一連のに基づいてすべてのプロパティを更新、`UrlBase`によって提供されるユーザー設定、 `Settings` eShopOnContainers のモバイル アプリに接続するさまざまなエンドポイントを表すクラスです。
 
-## <a name="data-binding-to-user-settings"></a>ユーザーの設定へのデータ バインディング
+## <a name="data-binding-to-user-settings"></a>ユーザー設定へのデータ バインディング
 
-EShopOnContainers のモバイル アプリで、 `SettingsView` 2 つのユーザー設定を公開します。 これらの設定には、かどうか、アプリからデータを取得して、Docker コンテナーとして展開されている microservices またはアプリが、インターネット接続を必要としないモック サービスからデータを取得する必要があるかどうかの構成ができるようにします。 コンテナー化 microservices からデータを取得する場合、microservices の基本のエンドポイント URL を指定する必要があります。 図 7-1 は、`SettingsView`コンテナー化 microservices からデータを取得するユーザーが選択された場合。
+EShopOnContainers のモバイル アプリで、 `SettingsView` 2 つのユーザー設定を公開します。 これらの設定は、アプリが、Docker コンテナーとして展開されているマイクロ サービスからデータを取得する必要があるかどうかや、アプリがインターネットに接続を必要としないモック サービスからデータを取得する必要があるかどうかの構成を許可します。 コンテナー化されたマイクロ サービスからデータを取得する場合、マイクロ サービスのベース エンドポイント URL を指定する必要があります。 図 7-1 は、`SettingsView`コンテナー化されたマイクロ サービスからデータを取得するときにユーザーを選択します。
 
-![](configuration-management-images/settings-endpoint.png "EShopOnContainers モバイル アプリによって公開されているユーザーの設定")
+![](configuration-management-images/settings-endpoint.png "EShopOnContainers のモバイル アプリによって公開されているユーザーの設定")
 
-**図 7-1**: eShopOnContainers モバイル アプリによって公開されているユーザーの設定
+**図 7-1**: eShopOnContainers のモバイル アプリによって公開されているユーザーの設定
 
-データ バインディングを取得し、によって公開されている設定を使用することができます、`Settings`クラスです。 これはのプロパティにアクセスするモデル プロパティを表示するビューのバインド上のコントロールで実現、`Settings`クラス、およびプロパティを発生させる変更、通知の設定値が変更された場合。 EShopOnContainers モバイル アプリでのビューの作成方法に関する情報をモデル化にビューに関連付けられます、参照してください。[ビュー モデル ロケーターにビュー モデルを自動的に作成する](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)です。
+データ バインディングを使用し、によって公開されている設定を取得することができます、`Settings`クラス。 プロパティにアクセスするモデル プロパティを表示するビューのバインド上のコントロールがこれは、`Settings`クラス、およびプロパティを発生させる変更、通知の設定値が変更された場合。 モデルし、ビューに関連付けられますは eShopOnContainers のモバイル アプリでビューを作成する方法についてを参照してください。[自動的にビュー モデルを作成するビュー モデル ロケーターと](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)します。
 
-次のコード例は、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)から制御、`SettingsView`ユーザー コンテナー化 microservices の基本のエンドポイント URL を入力することができます。
+次のコード例は、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールから、`SettingsView`コンテナー化されたマイクロ サービスのベース エンドポイント URL を入力するユーザーを許可します。
 
 ```xaml
 <Entry Text="{Binding Endpoint, Mode=TwoWay}" />
 ```
 
-これは、 [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)コントロールのバインド先、`Endpoint`のプロパティ、`SettingsViewModel`クラス、双方向のバインドを使用します。 次のコード例は、エンドポイントのプロパティを示しています。
+これは、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールがバインド、`Endpoint`のプロパティ、`SettingsViewModel`クラス、双方向のバインドを使用します。 次のコード例では、エンドポイントのプロパティを示します。
 
 ```csharp
 public string Endpoint  
@@ -153,7 +153,7 @@ public string Endpoint
 }
 ```
 
-ときに、`Endpoint`プロパティが設定されて、`UpdateEndpoint`メソッドが呼び出されると、指定された値が有効となるプロパティは変更通知が発生します。 次のコード例は、`UpdateEndpoint`メソッド。
+ときに、`Endpoint`プロパティが設定されて、`UpdateEndpoint`メソッドが呼び出されると、指定された値が有効で、プロパティ変更通知が発生します。 次のコード例は、`UpdateEndpoint`メソッド。
 
 ```csharp
 private void UpdateEndpoint(string endpoint)  
@@ -162,9 +162,9 @@ private void UpdateEndpoint(string endpoint)
 }
 ```
 
-このメソッドは、更新、`UrlBase`プロパティに、`Settings`ベース エンドポイント URL の値を持つクラスは、プラットフォーム固有の記憶域に永続化される場合は、そのユーザーが入力しました。
+このメソッドは、更新、`UrlBase`プロパティ、`Settings`ベース エンドポイント URL の値を持つクラスは、プラットフォーム固有の記憶域に保存すると、そのユーザーが入力しました。
 
-ときに、`SettingsView`への移動が、`InitializeAsync`メソッドで、`SettingsViewModel`クラスを実行します。 次のコード例では、このメソッドを示します。
+ときに、`SettingsView`への移動が、`InitializeAsync`メソッドで、`SettingsViewModel`クラスを実行します。 次のコード例では、このメソッドは示しています。
 
 ```csharp
 public override Task InitializeAsync(object navigationData)  
@@ -175,18 +175,18 @@ public override Task InitializeAsync(object navigationData)
 }
 ```
 
-メソッドのセット、`Endpoint`プロパティの値を`UrlBase`プロパティに、`Settings`クラスです。 アクセス、`UrlBase`プロパティにより、Xam.Plugins.Settings ライブラリ プラットフォーム固有の記憶域から設定値を取得します。 方法に関する情報の`InitializeAsync`メソッドが呼び出されを参照してください[ナビゲーション中にパラメーターを渡す](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)です。
+メソッドのセット、`Endpoint`プロパティの値を`UrlBase`プロパティ、`Settings`クラス。 アクセス、`UrlBase`プロパティにより、Xam.Plugins.Settings ライブラリは、プラットフォーム固有の記憶域の設定値を取得します。 方法については`InitializeAsync`メソッドが呼び出されるは、「[ナビゲーション中にパラメーターを渡す](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)します。
 
-このメカニズムによって、こと、ユーザーが、SettingsView に移動、されるたびにユーザーの設定はプラットフォーム固有の記憶域から取得され、示さデータ バインディングを使用します。 次に、ユーザーは、設定の値を変更、データ バインディングにより場合をすぐに永続化するプラットフォーム固有の記憶域にされます。
+このメカニズムにより、SettingsView に移動した、ときにユーザー設定はプラットフォームに固有の記憶域から取得され、データ バインドを通じて表示されます。 次に、ユーザーに、設定値が変更された場合データ バインディングによりプラットフォーム固有の記憶域には保存すぐに。
 
 ## <a name="summary"></a>まとめ
 
-設定は、アプリをリビルドしなくても変更する動作を許可する、コードからのアプリの動作を構成するデータの分離を許可します。 アプリの設定は、アプリを作成および管理するには、データとユーザー設定は、アプリの動作に影響し、頻繁に再調整を必要としないアプリのカスタマイズ可能な設定です。
+設定は、コードから、アプリの動作を構成するデータの分離を許可する、アプリを再構築せずに変更する動作。 アプリの設定は、アプリを作成および管理するには、データとユーザー設定は、アプリの動作に影響を頻繁に再調整を必要としないアプリのカスタマイズ可能な設定です。
 
-ライブラリで作成した設定にアクセスする永続化し、アプリとユーザー設定、およびデータ バインディングを取得するためのクロスプラット フォームのアプローチを使用できます、Xam.Plugins.Settings ライブラリが一貫性のある、タイプ セーフを提供します。
+ライブラリを使用した作成の設定にアクセス、永続化およびアプリとユーザー設定、およびデータ バインディングを取得するためのクロスプラット フォーム対応方法を使用できます、Xam.Plugins.Settings ライブラリが一貫性のある、タイプ セーフを提供します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [電子 (2 Mb PDF) のダウンロードします。](https://aka.ms/xamarinpatternsebook)
+- [(2 Mb の PDF) 電子ブックをダウンロードします。](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (サンプル)](https://github.com/dotnet-architecture/eShopOnContainers)

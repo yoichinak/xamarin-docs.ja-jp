@@ -1,35 +1,35 @@
 ---
 title: Xamarin.Forms でのデバイスのスタイル
-description: Xamarin.Forms には、Device.Styles クラスでのデバイスのスタイルと呼ばれる、6 つの動的なスタイルが含まれています。 この記事では、Xamarin.Forms アプリケーションでのデバイスのスタイルを使用する方法について説明します。
+description: Xamarin.Forms には、Device.Styles クラスで、デバイスのスタイルと呼ばれる、6 つの動的なスタイルが含まれています。 この記事では、Xamarin.Forms アプリケーションでデバイスのスタイルを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 6b5d4623bb331f4bf52faa096afeacb21d6d7489
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: bba42c966c6a606790655751db8b294d9ca7b6f9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245596"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994378"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Xamarin.Forms でのデバイスのスタイル
 
-_Xamarin.Forms には、Device.Styles クラスでのデバイスのスタイルと呼ばれる、6 つの動的なスタイルが含まれています。_
+_Xamarin.Forms には、Device.Styles クラスで、デバイスのスタイルと呼ばれる、6 つの動的なスタイルが含まれています。_
 
-*デバイス*スタイルは。
+*デバイス*スタイルします。
 
-- [`BodyStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyle/)
-- [`CaptionStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.CaptionStyle/)
-- [`ListItemDetailTextStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemDetailTextStyle/)
-- [`ListItemTextStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemTextStyle/)
-- [`SubtitleStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.SubtitleStyle/)
-- [`TitleStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.TitleStyle/)
+- [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)
+- [`CaptionStyle`](xref:Xamarin.Forms.Device.Styles.CaptionStyle)
+- [`ListItemDetailTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemDetailTextStyle)
+- [`ListItemTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemTextStyle)
+- [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
+- [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-6 つのすべてのスタイルのみに適用することができます[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンス。 たとえば、`Label`段落の本文が表示されている設定がその[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)プロパティを[ `BodyStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyle/)です。
+6 つのすべてのスタイルにのみ適用[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 など、`Label`段落の本文が表示されている設定がその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを[ `BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)します。
 
-次のコード例では、使用方法を示します、*デバイス*XAML ページのスタイル。
+次のコード例に示しますを使用して、*デバイス*XAML ページのスタイル。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" Icon="xaml.png">
@@ -63,13 +63,13 @@ _Xamarin.Forms には、Device.Styles クラスでのデバイスのスタイル
 </ContentPage>
 ```
 
-使用するデバイスのスタイルがバインドされている、`DynamicResource`マークアップ拡張機能です。 スタイルの動的な性質見なすことができ、iOS で変更することによって、**アクセシビリティ**テキストのサイズの設定。 外観、*デバイス*スタイルは、次のスクリーン ショットに示すように、各プラットフォームで異なります。
+使用するデバイスのスタイルがバインドされている、`DynamicResource`マークアップ拡張機能。 スタイルの動的な性質は、iOS で変更することで確認できます、**アクセシビリティ**テキストのサイズを設定します。 外観、*デバイス*スタイルは、次のスクリーン ショットに示すように、各プラットフォームで異なります。
 
 ![](device-images/device-styles.png "各プラットフォームでデバイスのスタイル")
 
-*デバイス*を設定して、スタイルからの派生させることも、 [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/)をスタイルとして、デバイスのキー名のプロパティです。 上記のコード例で`myBodyStyle`から継承[ `BodyStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyle/)し、アクセント記号付きテキストの色を設定します。 動的なスタイルの継承の詳細については、次を参照してください。[動的スタイルの継承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)です。
+*デバイス*スタイルも設定から派生した、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティをデバイスのスタイルのキーの名前。 上記のコード例で`myBodyStyle`継承[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)およびアクセント記号付きテキストの色を設定します。 動的なスタイルの継承の詳細については、次を参照してください。[動的スタイル継承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)します。
 
-次のコード例では、C# の場合と同じページを示しています。
+次のコード例では、c# で最初のページを示しています。
 
 ```csharp
 public class DeviceStylesPageCS : ContentPage
@@ -107,23 +107,23 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)の各プロパティ[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンスからプロパティを適切に設定されて、 [ `Devices.Styles` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/)クラスです。
+[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)の各プロパティ[ `Label` ](xref:Xamarin.Forms.Label)インスタンスから適切なプロパティに設定されて、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。
 
 ## <a name="accessibility"></a>ユーザー補助
 
-*デバイス*フォント サイズは各プラットフォームのユーザー補助の設定が変更されるように変更されますので、スタイルがユーザー補助の設定を尊重します。 そのため、アクセス可能なテキストをサポートすることを確認、*デバイス*スタイルは、アプリケーション内の任意のテキスト スタイルの基礎として使用されます。
+*デバイス*スタイルがアクセシビリティ設定が各プラットフォームで変更されるように、フォント サイズが変更されますので、ユーザー補助の設定を尊重します。 そのため、アクセス可能なテキストをサポートすることを確認、*デバイス*スタイルは、アプリケーション内の任意のテキスト スタイルの基礎として使用されます。
 
-次のスクリーン ショットは、最小のアクセス可能なフォント サイズを各プラットフォームでデバイスのスタイルを示しています。
+次のスクリーン ショットは、最小のアクセス可能なフォント サイズで、各プラットフォームでデバイスのスタイルを示しています。
 
-[![](device-images/minimum-size.png "各プラットフォームのモバイル デバイスのアクセス可能な小さいスタイル")](device-images/minimum-size-large.png#lightbox "各プラットフォームのモバイル デバイスのアクセス可能な小さいスタイル")
+[![](device-images/minimum-size.png "各プラットフォームでアクセス可能な小さいデバイス スタイル")](device-images/minimum-size-large.png#lightbox "各プラットフォームでアクセスできる小型のデバイスのスタイル")
 
-次のスクリーン ショットは、最大のアクセス可能なフォント サイズで、各プラットフォームでデバイスのスタイルを示しています。
+次のスクリーン ショットは、アクセス可能なフォントの最大サイズで、各プラットフォームでデバイスのスタイルを示しています。
 
-![](device-images/maximum-size.png "各プラットフォームでアクセス可能な大型デバイス スタイル")
+![](device-images/maximum-size.png "各プラットフォームでの大規模なデバイスをアクセス可能なスタイル")
 
 ## <a name="summary"></a>まとめ
 
-Xamarin.Forms では、6 つ含まれています*動的*スタイルと呼ばれる*デバイス*スタイルで、 [ `Devices.Styles` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/)クラスです。 6 つのすべてのスタイルのみに適用することができます[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)インスタンス。
+Xamarin.Forms には、6 が含まれます*動的*と呼ばれるスタイル*デバイス*スタイル設定で、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。 6 つのすべてのスタイルにのみ適用[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。
 
 
 ## <a name="related-links"></a>関連リンク
@@ -132,7 +132,7 @@ Xamarin.Forms では、6 つ含まれています*動的*スタイルと呼ば�
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [動的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Device.Styles](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [スタイル](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Set アクセス操作子](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [Device.Styles](xref:Xamarin.Forms.Device.Styles)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [スタイル](xref:Xamarin.Forms.Style)
+- [Set アクセス操作子](xref:Xamarin.Forms.Setter)

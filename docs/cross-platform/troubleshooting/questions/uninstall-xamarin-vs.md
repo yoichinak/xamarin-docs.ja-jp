@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917669"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>実行する方法の詳細な for Xamarin for Visual Studio をアンインストールしますか?
 

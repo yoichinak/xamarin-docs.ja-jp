@@ -7,13 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: 4e808736fd92fa40ecbf0c24938c0fedd7afcff9
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732867"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935452"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK ツールへの変更
 
@@ -56,7 +56,7 @@ Visual Studio と Visual Studio for Mac Xamarin の提供が中止された Goog
 
 **追加されました:** Android SDK ツール 25.3.0 (年 3 月、2017) 以上です。
 
-呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダーです。 このツールは、Google Android エミュレーターの場合、Avd を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)です。
+呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダーです。 このツールは、Android エミュレーターの場合、Avd を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)です。
 
 ### <a name="downgrading"></a>ダウン グレード
 

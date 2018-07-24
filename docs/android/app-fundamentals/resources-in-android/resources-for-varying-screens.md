@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30770964"
 ---
 # <a name="creating-resources-for-varying-screens"></a>さまざまな画面のリソースの作成
 
@@ -35,7 +36,7 @@ Android 自体で実行されます多数の異なるデバイスでは、それ
 
 これらの概念の最初の 3 つが相互に関連することに注意してください。&ndash;密度を増やすと、画面サイズが増加せずに、解像度を高くします。 ただし、密度と解像度の両方が増加している場合、画面のサイズを変更されません。 画面サイズ、密度と解像度の間のリレーションシップでは、画面のサポートは非常に迅速に複雑になります。
 
-このような複雑さに対処するために Android framework 優先的に使用して*密度非依存ピクセル (dp)*画面レイアウトの場合。 非依存のピクセルの密度を使用すると、UI 要素は、異なる密度の画面で、同じ物理サイズをユーザーに表示されます。
+このような複雑さに対処するために Android framework 優先的に使用して*密度非依存ピクセル (dp)* 画面レイアウトの場合。 非依存のピクセルの密度を使用すると、UI 要素は、異なる密度の画面で、同じ物理サイズをユーザーに表示されます。
 
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>さまざまな画面サイズと密度のサポート

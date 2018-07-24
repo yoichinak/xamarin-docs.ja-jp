@@ -1,5 +1,5 @@
 ---
-title: 自動プロビジョニング
+title: Xamarin.iOS の自動プロビジョニング
 description: Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: a0c3179dc8e349c23d5521230e0957d1be9384ec
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986188"
 ---
-# <a name="automatic-provisioning"></a>自動プロビジョニング
+# <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
 _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。_
 
@@ -70,9 +71,9 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
 1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2017 と Mac をペアリングします。
 
-2. **[プロジェクト]、[Provisioning Properties…]\(プロパティのプロビジョニング...\)** の順に選択し、プロビジョニング オプションを開きます。
+2. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、**[プロパティ]** を選択します. 次に、**[iOS バンドル署名]** タブに移動します。
 
-3. **[Automatically Provisioning]\(自動プロビジョニング\)** スキームを選択します。
+3. **[自動プロビジョニング]** スキームを選択します。
 
     ![自動スキームの選択](automatic-provisioning-images/prov4.png)
 

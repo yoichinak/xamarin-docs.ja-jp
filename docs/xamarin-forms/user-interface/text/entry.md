@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms エントリ
-description: この記事では、Xamarin.Forms エントリ クラスを使用して、単一行のテキストまたはアプリケーションでパスワードの入力をそのまま使用する方法について説明します。
+title: Xamarin.Forms のエントリ
+description: この記事では、Xamarin.Forms エントリ クラスを使用して、1 行のテキストまたはアプリケーションでパスワードの入力をそのまま使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/16/2018
+ms.openlocfilehash: 57304f2f07a0834c31e32bb89a4742a2de7e861c
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245554"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202995"
 ---
-# <a name="xamarinforms-entry"></a>Xamarin.Forms エントリ
+# <a name="xamarinforms-entry"></a>Xamarin.Forms のエントリ
 
-_単一行のテキストまたはパスワードの入力_
+_単一行のテキストまたはパスワードを入力_
 
-Xamarin.Forms`Entry`単一行のテキストの入力として使用されます。 `Entry`同様に、`Editor`ビューで、複数のキーボードの種類をサポートしています。 さらに、`Entry`パスワード フィールドとして使用できます。
+Xamarin.Forms`Entry`を単一行のテキスト入力に使用します。 `Entry`と同様に、`Editor`ビューで、複数のキーボードの種類をサポートしています。 さらに、`Entry`パスワード フィールドとして使用できます。
 
 ## <a name="display-customization"></a>表示のカスタマイズ
 
 ### <a name="setting-and-reading-text"></a>設定やテキストの読み取り
 
-`Entry`、他のテキストを表すビューと同様に公開、`Text`プロパティです。 このプロパティは設定で表示されるテキストを参照して、使用することができます、`Entry`です。 次の例では、設定、 `Text` XAML でのプロパティ。
+`Entry`などの他のテキストを表すビューを公開、`Text`プロパティ。 このプロパティは、設定し、によって提示されるテキストの読み取りに使用できます、`Entry`します。 次の例では、設定、 `Text` XAML のプロパティ。
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -36,18 +36,18 @@ C# の場合:
 var MyEntry = new Entry { Text = "I am an Entry" };
 ```
 
-テキストを読み取り、アクセス、`Text`プロパティ (C#)。
+テキストを読み取るには、アクセス、`Text`プロパティ (C#)。
 
 ```csharp
 var text = MyEntry.Text;
 ```
 
 > [!NOTE]
-> 幅、`Entry`設定で定義されていることができます、`WidthRequest`プロパティです。 幅に依存しない、`Entry`の値に基づいて定義されているその`Text`プロパティです。
+> 幅、`Entry`設定によってはその`WidthRequest`プロパティ。 幅に依存しない、`Entry`の値に基づいて定義されているその`Text`プロパティ。
 
 ### <a name="limiting-input-length"></a>入力の長さの制限
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)で使用できる入力文字列の長さを制限するプロパティを使用することができます、 [ `Entry`](xref:Xamarin.Forms.Entry)です。 このプロパティは、正の整数に設定する必要があります。
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)で使用できるように入力文字列の長さを制限するプロパティを使用できます、 [ `Entry`](xref:Xamarin.Forms.Entry)します。 このプロパティは、正の整数に設定する必要があります。
 
 ```xaml
 <Entry ... MaxLength="10" />
@@ -57,28 +57,100 @@ var text = MyEntry.Text;
 var entry = new Entry { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)を入力することはできません、0 のプロパティの値を示します、値を`int.MaxValue`の既定値は、 [ `Entry` ](xref:Xamarin.Forms.Entry)、あることを示してありません入力できる文字数の有効な制限です。
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)プロパティ値が 0 のでは、ある入力は許可されません、ことを示しますの値と`int.MaxValue`の既定値は、 [ `Entry` ](xref:Xamarin.Forms.Entry)、ことを示しますなし有効な入力可能性がありますの文字数制限。
 
-### <a name="keyboards"></a>キーボード
+### <a name="customizing-the-keyboard"></a>キーボードのカスタマイズ
 
-ユーザーが対話するときに表示されるキーボード、`Entry`経由でプログラムで設定することができます、`Keyboard`プロパティです。
+ユーザーが対話する際に表示されるキーボード、 [ `Entry` ](xref:Xamarin.Forms.Entry)経由でプログラムによって設定できる、 [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) から次のプロパティのいずれかのプロパティ[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラス。
 
-キーボードの種類のオプションは次のとおりです。
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – テキストの使用と絵文字が便利な場所。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 既定のキーボード。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 電子メール アドレスを入力するときに使用します。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 数値を入力するときに使用します。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – なしのテキストを入力するときに使用される[ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags)指定します。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 電話番号を入力するときに使用します。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – テキストを入力するときに使用します。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – web アドレス (&)、ファイルのパスを入力するために使用します。
 
-- **既定**&ndash;既定のキーボード
-- **チャット**&ndash;のためのテキストとプレース emoji は役立ちます
-- **電子メール**&ndash;電子メール アドレスを入力するときに使用
-- **数値**&ndash;番号を入力するときに使用
-- **電話**&ndash;電話番号を入力するときに使用
-- **Url** &ndash;ファイルのパスと web アドレスを入力するために使用
+これで実行できます XAML には、次のようにします。
 
-[各キーボードの使用例](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)のレシピのセクションでします。
+```xaml
+<Entry Keyboard="Chat" />
+```
 
-### <a name="enabling-and-disabling-spell-checking"></a>有効にして、スペル チェックを無効にします。
+同等の c# コードに示します。
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティ コントロールかどうかスペル チェックを有効にします。 既定では、プロパティに設定が`true`です。 テキストを入力すると、スペル ミスが示されます。
+```csharp
+var entry = new Entry { Keyboard = Keyboard.Chat };
+```
 
-ただし、ユーザー名を入力するなど、一部のテキスト エントリ シナリオ スペル チェックは、負経験しているため無効に設定して、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティを`false`:
+各キーボードの例が記載されて、[レシピ](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)リポジトリ。
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラスがあります、 [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)大文字と小文字、スペル チェック、および修正候補の動作を指定することで、キーボードをカスタマイズするために使用するファクトリ メソッド。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値として、カスタマイズされた、メソッドに引数として指定された`Keyboard`返されます。 `KeyboardFlags`列挙には、次の値が含まれています。
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – キーボード機能は追加されません。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – を各入力文の最初の単語の最初の文字は自動的に大文字で入力することを示します。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 入力したテキストでそのスペル チェックは実行を示します。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 入力したテキストの入力候補が提供されるその単語を示します。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 各単語の最初の文字が自動的に大文字にすることを示します。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – すべての文字が自動的に大文字にすることを示します。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – 自動大文字と小文字が発生しないことを示します。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – スペル チェック、単語の入力候補、および大文字が入力したテキストで発生することを示します。
+
+次の XAML コード例は、既定値をカスタマイズする方法を示しています。 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)をの単語候補を提供し、すべての入力した文字を大文字に変換します。
+
+```xaml
+<Entry Placeholder="Enter text here">
+    <Entry.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Entry.Keyboard>
+</Entry>
+```
+
+同等の c# コードに示します。
+
+```csharp
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
+
+#### <a name="customizing-the-return-key"></a>戻り値のキーのカスタマイズ
+
+これは、ソフト キーボードの戻り値のキーの外観ときに表示される、 [ `Entry` ](xref:Xamarin.Forms.Entry)フォーカスを設定してカスタマイズすることができます、 [ `ReturnType` ](xref:Xamarin.Forms.Entry.ReturnType)プロパティ値をの[ `ReturnType` ](xref:Xamarin.Forms.ReturnType)列挙体。
+
+- [`Default`](xref:Xamarin.Forms.ReturnType.Default) – 特定の戻り値のキーが不要であると、プラットフォームの既定値が使用されることを示します。
+- [`Done`](xref:Xamarin.Forms.ReturnType.Done) –"Done"戻り値のキーを示します。
+- [`Go`](xref:Xamarin.Forms.ReturnType.Go) –"Go"戻り値のキーを示します。
+- [`Next`](xref:Xamarin.Forms.ReturnType.Next) -[次へ] の戻り値のキーを示します。
+- [`Search`](xref:Xamarin.Forms.ReturnType.Search) –「検索」の戻り値のキーを示します。
+- [`Send`](xref:Xamarin.Forms.ReturnType.Send) –「送信」の戻り値のキーを示します。
+
+次の XAML の例では、戻り値のキーを設定する方法を示します。
+
+```xaml
+<Entry ReturnType="Send" />
+```
+
+同等の c# コードに示します。
+
+```csharp
+var entry = new Entry { ReturnType = ReturnType.Send };
+```
+
+> [!NOTE]
+> 戻り値のキーの正確な外観は、プラットフォームによって異なります。 Ios では、戻り値のキーは、テキスト ベースのボタンです。 ただし、Android およびユニバーサル Windows プラットフォームでは、戻り値のキーは、アイコンに基づくボタンです。
+
+戻り値のキーが押されたときに、 [ `Completed` ](xref:Xamarin.Forms.Entry.Completed)イベントが発生して、`ICommand`で指定された、 [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand)プロパティを実行します。 さらに、すべて`object`で指定された、 [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter)プロパティに渡される、`ICommand`をパラメーターとして。 コマンドの詳細については、次を参照してください。 [、のコマンド インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)します。
+
+### <a name="enabling-and-disabling-spell-checking"></a>有効にして、スペル チェックを無効化
+
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティ コントロールかどうかスペル チェックを有効にします。 既定では、プロパティに設定が`true`します。 テキストを入力すると、スペル ミスが示されます。
+
+ただし、ユーザー名を入力するなど、いくつかのテキスト エントリ シナリオのスペル チェック、負のエクスペリエンスを提供します、設定して無効にする必要があります、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティを`false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -89,11 +161,28 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> ときに、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティに設定されている`false`、カスタム キーボードが使用されていないと、ネイティブのスペル チェック機能は無効になります。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)がされてスペルを無効にする設定の確認など[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`プロパティは無視されます。 そのため、スペル チェックを有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
+> ときに、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティに設定されて`false`、およびカスタムのキーボードが使用されていない、ネイティブのスペル チェックが無効になります。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)がされているセットをスペル チェックを無効にするチェックを行うなど[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`プロパティは無視されます。 そのため、スペル チェックを有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
+
+### <a name="enabling-and-disabling-text-prediction"></a>有効にして、予測入力を無効化
+
+[ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)プロパティ コントロールかどうか予測入力と自動テキストの修正を有効にします。 既定では、プロパティに設定が`true`します。 テキストを入力すると、word の予測が表示されます。
+
+ただし、テキスト エントリ シナリオによっては、ユーザー名、予測入力とテキストの自動入力など修正負のエクスペリエンスを提供しますを設定して無効にする必要があります、 [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)プロパティを`false`:。
+
+```xaml
+<Entry ... IsTextPredictionEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsTextPredictionEnabled = false };
+```
+
+> [!NOTE]
+> ときに、 [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)プロパティに設定されて`false`、カスタムのキーボードがされていないと予測入力と自動的に使用されるテキストの修正が無効になっています。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)を無効にします。 テキストの予測が設定されている、`IsTextPredictionEnabled`プロパティは無視されます。 そのための予測の入力を有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
 
 ### <a name="placeholders"></a>プレース ホルダー
 
-`Entry` ユーザー入力を格納するがない場合は、プレース ホルダー テキストを表示するのには設定できます。 実際には、このよく見られます。 フォームを指定したフィールドを適切なコンテンツを明確にします。 プレース ホルダー テキストの色はカスタマイズできず、、同じであるかに関係なく、`TextColor`設定します。 カスタム プレース ホルダーの色を呼び出すと、デザイン場合に、フォールバックする必要があります、[カスタム レンダラー]()です。 次を作成、 `Entry` "Username"XAML 内のプレース ホルダーとして使用します。
+`Entry` ユーザー入力を格納するがない場合は、プレース ホルダー テキストを表示するのには設定できます。 実際には、これは多くの場合、見フォームでは、特定のフィールドの適切なコンテンツを明確にします。 プレース ホルダー テキストの色のカスタマイズすることはできず、関係なく同じになります、`TextColor`設定します。 カスタム プレース ホルダーの色を呼び出すと、設計場合に、フォールバックする必要があります、[カスタム レンダラー]()します。 次を作成、 `Entry` "Username"XAML 内のプレース ホルダーとして使用します。
 
 ```xaml
 <Entry Placeholder="Username" />
@@ -109,9 +198,9 @@ var MyEntry = new Entry { Placeholder = "Username" };
 
 ### <a name="password-fields"></a>パスワード フィールド
 
-`Entry` 提供、`IsPassword`プロパティです。 ときに`IsPassword`は`true`フィールドの内容は、黒の円として表示されます。
+`Entry` 提供、`IsPassword`プロパティ。 ときに`IsPassword`は`true`フィールドの内容が黒の円として表示されます。
 
-XAML:
+で XAML:
 
 ```xaml
 <Entry IsPassword="true" />
@@ -127,7 +216,7 @@ var MyEntry = new Entry { IsPassword = true };
 
 インスタンスで使用できるプレース ホルダー`Entry`パスワード フィールドとして構成されています。
 
-XAML:
+で XAML:
 
 ```xaml
 <Entry IsPassword="true" Placeholder="Password" />
@@ -139,21 +228,20 @@ C# の場合:
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "エントリ IsPassword とプレース ホルダーの例")
-
+![](entry-images/passwordplaceholder.png "エントリ IsPassword およびプレース ホルダーの例")
 
 ### <a name="colors"></a>色
 
-エントリを設定して、カスタムの背景と、次のバインド可能なプロパティを使用してテキストの色を使用できます。
+カスタムの背景と、次のバインド可能なプロパティを使用してテキストの色を使用するエントリを設定できます。
 
 - **TextColor** &ndash;テキストの色を設定します。
-- **BackgroundColor** &ndash;表示テキストの背景色を設定します。
+- **BackgroundColor** &ndash;テキストの背景の色を設定します。
 
-特別な注意は、色を各プラットフォームで使用可能になることを確認する必要があります。 各プラットフォームは、テキスト色と背景色の既定値は異なるが、多くの場合、いずれかに設定した場合は、両方を設定する必要があります。
+特別な注意は、色は各プラットフォームで使用できることを確認する必要があります。 各プラットフォームのテキストと背景色に異なる既定値には、ため多くの場合、いずれかを設定した場合は、両方を設定する必要あります。
 
 エントリのテキストの色を設定するのにには、次のコードを使用します。
 
-XAML:
+で XAML:
 
 ```xaml
 <Entry TextColor="Green" />
@@ -168,7 +256,7 @@ entry.TextColor = Color.Green;
 
 ![](entry-images/textcolor.png "エントリ TextColor 例")
 
-指定されたプレース ホルダーはありませんが影響を受ける`TextColor`です。
+プレース ホルダーはありませんが、指定した影響を受ける`TextColor`します。
 
 XAML では、背景色を設定します。
 
@@ -183,20 +271,20 @@ var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "エントリ BackgroundColor 例")
+![](entry-images/textbackgroundcolor.png "エントリの BackgroundColor 例")
 
-確認して、背景色とテキスト色を選択する各プラットフォームで使用可能な任意のプレース ホルダー テキストが不明瞭になるように注意します。
+選択した色の背景とテキストの色が各プラットフォームで使用可能なし、任意のプレース ホルダー テキストが不明瞭かどうかを確認するように注意します。
 
-## <a name="events-and-interactivity"></a>イベントと対話機能
+## <a name="events-and-interactivity"></a>イベントと対話
 
 エントリは、2 つのイベントを公開します。
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) &ndash;エントリのテキストが変更されたときに発生します。 前に、と変更後のテキストを提供します。
-- [完了](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/)&ndash;ユーザーには、キーボードの戻り値のキーを押して、入力が終了したときに発生します。
+- [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) &ndash; エントリのテキストが変更されたときに発生します。 変更の前後にテキストを提供します。
+- [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; ユーザーには、キーボードの戻り値のキーを押して、入力が終了したときに発生します。
 
 ### <a name="completed"></a>完了
 
-`Completed`イベントは、エントリとのやり取りの完了に対応するために使用します。 `Completed` キーボードの戻り値のキーを入力して、ユーザーがフィールドに入力を終了するときに発生します。 イベントのハンドラーは、ジェネリック イベント ハンドラーは、送信者を取得し、 `EventArgs`:
+`Completed`エントリとのやり取りの完了に反応するイベントを使用します。 `Completed` ユーザー、キーボードの戻り値のキーを押して、フィールドを使用して入力が終了したときに発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -205,24 +293,26 @@ void Entry_Completed (object sender, EventArgs e)
 }
 ```
 
-XAML を完了イベントをサブスクライブすることができます。
+XAML の完了イベントにサブスクライブできます。
 
 ```xaml
 <Entry Completed="Entry_Completed" />
 ```
 
-および C# の場合:
+c#:
 
 ```csharp
 var entry = new Entry ();
 entry.Completed += Entry_Completed;
 ```
 
+後に、 [ `Completed` ](xref:Xamarin.Forms.Entry.Completed)どのイベントが発生`ICommand`で指定された、 [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand)プロパティを実行するで、`object`で指定された、 [ `ReturnCommandParameter`](xref:Xamarin.Forms.Entry.ReturnCommandParameter)プロパティに渡される、`ICommand`します。
+
 ### <a name="textchanged"></a>TextChanged
 
 `TextChanged`イベントは、フィールドの内容の変更に対応するために使用します。
 
-`TextChanged` 発生するたびに、`Text`の`Entry`変更します。 インスタンスを受け取り、イベントのハンドラー`TextChangedEventArgs`です。 `TextChangedEventArgs` 新旧の値にアクセスできるように、 `Entry` `Text`を介して、`OldTextValue`と`NewTextValue`プロパティ。
+`TextChanged` ときに発生しますが、`Text`の`Entry`変更します。 インスタンスを受け取り、イベントのハンドラーは`TextChangedEventArgs`します。 `TextChangedEventArgs` 新旧の値にアクセスできるように、 `Entry` `Text`を使用して、`OldTextValue`と`NewTextValue`プロパティ。
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -232,13 +322,13 @@ void Entry_TextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-`TextChanged` XAML でイベントをサブスクライブすることができます。
+`TextChanged` XAML イベントにサブスクライブできます。
 
 ```xaml
 <Entry TextChanged="Entry_TextChanged" />
 ```
 
-および C# の場合:
+c#:
 
 ```csharp
 var entry = new Entry ();
@@ -249,4 +339,4 @@ entry.TextChanged += Entry_TextChanged;
 ## <a name="related-links"></a>関連リンク
 
 - [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [API のエントリ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)
+- [入力 API](xref:Xamarin.Forms.Entry)

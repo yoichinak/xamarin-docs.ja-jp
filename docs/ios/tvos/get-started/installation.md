@@ -7,18 +7,21 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: a278a4715ffbcd4b1457f846be6bdf8394143cb4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9168b84b169d2f7919acaf88597919a48cd6710c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788983"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066846"
 ---
 # <a name="installing-tvos-support-in-xamarin"></a>Xamarin で tvOS のサポートをインストールします。
 
+> [!TIP]
+> IOS 12 および tvOS 12 の Xamarin のプレビューがサポートでの試みを開始するには、読み取り、 [iOS 12 取得ガイド](~/ios/platform/introduction-to-ios12/get-started.md)です。
+
 Apple TV 4 K と tvOS 11、Apple がリリースされました。 Apple TV のプラットフォームでは、開発者は、豊富な実体験のアプリを作成し、Apple TV の組み込みアプリ ストアをリリースすることを開いています。
 
-Xamarin.iOS 11 以降 tvOS 11 をサポートする SDK 付属している Apple の Xcode 9 にします。 
+Xamarin.iOS 11 以降 tvOS 11 をサポートする SDK 付属している Apple の Xcode 9 にします。
 
 - [Xamarin.iOS のリリース ノート](https://developer.xamarin.com/releases/ios/)
 - [Xcode のリリース ノート](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)

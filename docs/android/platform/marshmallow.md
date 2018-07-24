@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30774949"
 ---
 # <a name="marshmallow-features"></a>Marshmallow 機能
 
@@ -111,7 +112,7 @@ Android SDK Manager を使用して、Android 6.0 SDK をインストールす�
 
 新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android 開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md) Android プロジェクトの作成について学習します。 
 
-Android プロジェクトを作成するときに、Android 6.0 MarshMallow をターゲットにバージョン設定を構成する必要があります。 Marshmallow 用プロジェクトを対象とするには、プロジェクトを構成する必要があります**API level 23 (Xamarin.Android v6.0 サポート)**です。 Android API レベル レベルの構成に関する詳細は、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。
+Android プロジェクトを作成するときに、Android 6.0 MarshMallow をターゲットにバージョン設定を構成する必要があります。 Marshmallow 用プロジェクトを対象とするには、プロジェクトを構成する必要があります**API level 23 (Xamarin.Android v6.0 サポート)** です。 Android API レベル レベルの構成に関する詳細は、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。
 
 
 

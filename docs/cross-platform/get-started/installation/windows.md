@@ -1,15 +1,17 @@
 ---
 title: Visual Studio 2017 での Xamarin のインストール
+description: このドキュメントでは、Visual Studio 2017 で Xamarin をインストールする方法を説明します。 要件、インストール プロセス、インストールの確認について説明します。
 ms.prod: xamarin
 ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: 8aad42717d2408f97d40f5d244d797727ea12588
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6c2fe10b9b29901dfbb6173df131d093fe726bff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066953"
 ---
 # <a name="installing-xamarin-in-visual-studio-2017"></a>Visual Studio 2017 での Xamarin のインストール
 
@@ -34,7 +36,7 @@ Xamarin をインストールして使用するための前提条件の詳細に
 Xamarin は、新しい Visual Studio 2017 の一部としてインストールできます。
 そのためには、次の手順を使用します。
 
-1. [Visual Studio](https://www.visualstudio.com/vs/) ページから、Visual Studio 2017 Community、Visual Studio Professional、または Visual Studio Enterprise をダウンロードします (ダウンロード リンクは下部にあります)。
+1. [Visual Studio](https://visualstudio.microsoft.com/vs/) ページから、Visual Studio 2017 Community、Visual Studio Professional、または Visual Studio Enterprise をダウンロードします (ダウンロード リンクは下部にあります)。
 
 2. ダウンロードしたパッケージをダブルクリックしてインストールを開始します。
 
