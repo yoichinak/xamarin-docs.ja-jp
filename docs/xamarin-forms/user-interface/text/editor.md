@@ -6,19 +6,19 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 4879ff88d5bbdab5aa92024bee7f50239a141e3b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/13/2018
+ms.openlocfilehash: 2ec9ba6e39673b5a60911f9a9ae70474dbe2443b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995867"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203112"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
 _複数行テキスト入力_
 
-`Editor`コントロールを使用すると、複数行の入力をそのまま使用します。 この記事では説明します。
+[ `Editor` ](xref:Xamarin.Forms.Editor)コントロールを使用すると、複数行の入力をそのまま使用します。 この記事では次の内容について説明します。
 
 - **[カスタマイズ](#customization)** &ndash;キーボードと色のオプション。
 - **[対話機能](#interactivity)** &ndash;対話機能を提供する待機可能イベント。
@@ -27,7 +27,7 @@ _複数行テキスト入力_
 
 ### <a name="setting-and-reading-text"></a>設定やテキストの読み取り
 
-`Editor`などの他のテキストを表すビューを公開、`Text`プロパティ。 このプロパティは、設定し、によって提示されるテキストの読み取りに使用できます、`Editor`します。 次の例では、設定、 `Text` XAML のプロパティ。
+[ `Editor`](xref:Xamarin.Forms.Editor)などの他のテキストを表すビューを公開、`Text`プロパティ。 このプロパティは、設定し、によって提示されるテキストの読み取りに使用できます、`Editor`します。 次の例では、設定、 `Text` XAML のプロパティ。
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -59,20 +59,86 @@ var editor = new Editor { ... MaxLength = 10 };
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)プロパティ値が 0 のでは、ある入力は許可されません、ことを示しますの値と`int.MaxValue`の既定値は、 [ `Editor` ](xref:Xamarin.Forms.Editor)、ことを示しますなし有効な入力可能性がありますの文字数制限。
 
-### <a name="keyboards"></a>キーボード
+### <a name="auto-sizing-an-editor"></a>エディターを自動サイズ調整
 
-ユーザーが対話する際に表示されるキーボード、`Editor`経由でプログラムによって設定できる、 [ ``Keyboard`` ](xref:Xamarin.Forms.Keyboard)プロパティ。
+[ `Editor` ](xref:Xamarin.Forms.Editor)を設定してそのコンテンツへの自動-サイズに行んだことができます、 [ `Editor.AutoSize` ](xref:Xamarin.Forms.Editor.AutoSize)プロパティを[ `TextChanges` ](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)、これは、値、の[ `EditoAutoSizeOption` ](xref:Xamarin.Forms.EditorAutoSizeOption)列挙体。 この列挙体では、2 つの値があります。
 
-キーボードの種類のオプションがあります。
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 自動サイズ変更を無効にし、既定値を示します。
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 自動サイズ変更が有効になっていることを示します。
 
-- **既定**&ndash;既定のキーボード
-- **チャット**&ndash;のためのテキストとプレース絵文字が便利です
-- **電子メール**&ndash;電子メール アドレスを入力するときに使用
-- **数値**&ndash;数値を入力するときに使用
-- **電話**&ndash;電話番号を入力するときに使用
-- **Url** &ndash; web アドレス (&)、ファイルのパスを入力するために使用
+これは、ことができますように実行コードで。
 
-[各キーボードの使用例](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)レシピ セクションでします。
+```xaml
+<Editor Text="Enter text here" AutoSize="TextChanges" />
+```
+
+```csharp
+var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOption.TextChanges };
+```
+
+自動サイズ変更を有効にするの高さ、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストで、ユーザーの入力し、ユーザーは、テキストを削除します。 高さは減らすが増加します。
+
+> [!NOTE]
+> [ `Editor` ](xref:Xamarin.Forms.Editor)は場合に自動-サイズではなく、 [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティが設定されています。
+
+### <a name="customizing-the-keyboard"></a>キーボードのカスタマイズ
+
+ユーザーが対話する際に表示されるキーボード、 [ `Editor` ](xref:Xamarin.Forms.Editor)経由でプログラムによって設定できる、 [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) から次のプロパティのいずれかのプロパティ[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラス。
+
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – テキストの使用と絵文字が便利な場所。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 既定のキーボード。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 電子メール アドレスを入力するときに使用します。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 数値を入力するときに使用します。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – なしのテキストを入力するときに使用される[ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags)指定します。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 電話番号を入力するときに使用します。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – テキストを入力するときに使用します。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – web アドレス (&)、ファイルのパスを入力するために使用します。
+
+これで実行できます XAML には、次のようにします。
+
+```xaml
+<Editor Keyboard="Chat" />
+```
+
+同等の c# コードに示します。
+
+```csharp
+var editor = new Editor { Keyboard = Keyboard.Chat };
+```
+
+各キーボードの例が記載されて、[レシピ](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)リポジトリ。
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラスがあります、 [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)大文字と小文字、スペル チェック、および修正候補の動作を指定することで、キーボードをカスタマイズするために使用するファクトリ メソッド。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値として、カスタマイズされた、メソッドに引数として指定された`Keyboard`返されます。 `KeyboardFlags`列挙には、次の値が含まれています。
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – キーボード機能は追加されません。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – を各入力文の最初の単語の最初の文字は自動的に大文字で入力することを示します。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 入力したテキストでそのスペル チェックは実行を示します。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 入力したテキストの入力候補が提供されるその単語を示します。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 各単語の最初の文字が自動的に大文字にすることを示します。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – すべての文字が自動的に大文字にすることを示します。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – 自動大文字と小文字が発生しないことを示します。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – スペル チェック、単語の入力候補、および大文字が入力したテキストで発生することを示します。
+
+次の XAML コード例は、既定値をカスタマイズする方法を示しています。 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)をの単語候補を提供し、すべての入力した文字を大文字に変換します。
+
+```xaml
+<Editor>
+    <Editor.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Editor.Keyboard>
+</Editor>
+```
+
+同等の c# コードに示します。
+
+```csharp
+var editor = new Editor();
+editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
 
 ### <a name="enabling-and-disabling-spell-checking"></a>有効にして、スペル チェックを無効化
 

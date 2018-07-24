@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998317"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203086"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
@@ -240,7 +240,7 @@ namespace CustomRenderer.iOS
 `GetViewForAnnotation`メソッドは、`IMKAnnotation`を注釈のデータを返す、`MKAnnotationView`マップ上に表示して、次のコード例に示した。
 
 ```csharp
-MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
 {
     MKAnnotationView annotationView = null;
 
@@ -273,12 +273,12 @@ MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotatio
 1. `GetCustomPin`注釈のピン留めするカスタム データを返すメソッドが呼び出されます。
 1. 注釈の表示がへの呼び出しで再利用するためにプール メモリを節約するために[ `DequeueReusableAnnotation`](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/)します。
 1. `CustomMKAnnotationView`クラスを拡張、`MKAnnotationView`クラス`Id`と`Url`のと同じプロパティに対応するプロパティ、`CustomPin`インスタンス。 新しいインスタンス、`CustomMKAnnotationView`が作成、注釈が`null`:
-  - `CustomMKAnnotationView.Image`プロパティがマップに注釈を表すイメージに設定します。
-  - `CustomMKAnnotationView.CalloutOffset`プロパティに設定されて、`CGPoint`引き出し線は、注釈の上中央に配置することを指定します。
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView`プロパティ注釈のタイトルとアドレスの左側に表示される monkey のイメージに設定されます。
-  - `CustomMKAnnotationView.RightCalloutAccessoryView`プロパティに設定されて、*情報*注釈タイトルとアドレスの右側に表示されるボタンをクリックします。
-  - `CustomMKAnnotationView.Id`プロパティに設定されて、`CustomPin.Id`プロパティによって返される、`GetCustomPin`メソッド。 これによりが識別できる注釈[吹き出しをさらにカスタマイズできます](#Selecting_the_Annotation)必要な場合、します。
-  - `CustomMKAnnotationView.Url`プロパティに設定されて、`CustomPin.Url`プロパティによって返される、`GetCustomPin`メソッド。 URL をナビゲートするときに、ユーザー[正しいコールアウトのアクセサリ ビューで表示されるボタンのタップ](#Tapping_on_the_Right_Callout_Accessory_View)。
+    - `CustomMKAnnotationView.Image`プロパティがマップに注釈を表すイメージに設定します。
+    - `CustomMKAnnotationView.CalloutOffset`プロパティに設定されて、`CGPoint`引き出し線は、注釈の上中央に配置することを指定します。
+    - `CustomMKAnnotationView.LeftCalloutAccessoryView`プロパティ注釈のタイトルとアドレスの左側に表示される monkey のイメージに設定されます。
+    - `CustomMKAnnotationView.RightCalloutAccessoryView`プロパティに設定されて、*情報*注釈タイトルとアドレスの右側に表示されるボタンをクリックします。
+    - `CustomMKAnnotationView.Id`プロパティに設定されて、`CustomPin.Id`プロパティによって返される、`GetCustomPin`メソッド。 これによりが識別できる注釈[吹き出しをさらにカスタマイズできます](#Selecting_the_Annotation)必要な場合、します。
+    - `CustomMKAnnotationView.Url`プロパティに設定されて、`CustomPin.Url`プロパティによって返される、`GetCustomPin`メソッド。 URL をナビゲートするときに、ユーザー[正しいコールアウトのアクセサリ ビューで表示されるボタンのタップ](#Tapping_on_the_Right_Callout_Accessory_View)。
 1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/)プロパティに設定されて`true`注釈がタップされたときに、吹き出しが表示されます。
 1. マップの表示の注釈が返されます。
 
