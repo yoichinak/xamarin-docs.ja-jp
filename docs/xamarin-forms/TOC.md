@@ -310,6 +310,7 @@
 ## [高度な概念と内部構造](internals/index.md)
 ### [高速レンダラー](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
+### [依存関係の解決](internals/dependency-resolution.md)
 ## [トラブルシューティング](troubleshooting/index.md)
 ### [よく寄せられる質問](troubleshooting/questions/index.md)
 #### [Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。](troubleshooting/questions/update-forms-template.md)
