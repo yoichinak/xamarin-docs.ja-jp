@@ -113,6 +113,8 @@
 ## [プラットフォーム機能](platform/index.md)
 ### [Android ビーム](platform/android-beam.md)
 ### [Android マニフェスト](platform/android-manifest.md)
+### [Xamarin.Android でのファイル アクセス](platform/files/index.md)
+#### [外部ストレージ](platform/files/external-storage.md)
 ### [指紋認証](platform/fingerprint-authentication/index.md)
 #### [はじめに](platform/fingerprint-authentication/get-started.md)
 #### [指紋のスキャン](platform/fingerprint-authentication/scanning.md)
