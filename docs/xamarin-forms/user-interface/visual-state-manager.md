@@ -715,3 +715,4 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
+
