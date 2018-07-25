@@ -55,7 +55,7 @@ ms.locfileid: "38830414"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています.。**
+Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています...**
 
 ![[デバイス] ウィンドウを管理します。](player-images/manage-tools-menu-vs.png)
 
@@ -69,7 +69,7 @@ Visual Studio で、次のように選択します**ツール > Xamarin Live Pla
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual studio for Mac では、次のように選択します**ツール > (Xamarin Live Player) デバイスを管理しています.。**
+Visual studio for Mac では、次のように選択します**ツール > (Xamarin Live Player) デバイスを管理しています...**
 
 ![[デバイス] ウィンドウを管理します。](player-images/manage-tools-menu.png)
 
