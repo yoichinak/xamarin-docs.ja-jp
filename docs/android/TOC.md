@@ -9,6 +9,7 @@
 ##### [デバイスのプロパティ](get-started/installation/android-emulator/device-properties.md)
 ##### [トラブルシューティング](get-started/installation/android-emulator/troubleshooting.md)
 #### [Android デバイスのセットアップ](get-started/installation/set-up-device-for-development.md)
+#### [Microsoft OpenJDK のプレビュー](get-started/installation/openjdk.md)
 ### [Hello Android](get-started/hello-android/index.md)
 #### [パート 1: クイック スタート](get-started/hello-android/hello-android-quickstart.md)
 #### [パート 2: 深い分析](get-started/hello-android/hello-android-deepdive.md)
