@@ -420,7 +420,7 @@ Xamarin.iOS のみをサポートしている組み込みフレームワーク�
 
 <a name="MT0071" />
 
-### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: 不明なプラットフォーム: * です。 これは通常 Xamarin.iOS; のバグを示しますバグ報告を送信してくださいhttp://bugzilla.xamarin.comとテスト_ケースをします。
+### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: 不明なプラットフォーム: * です。 これは通常 Xamarin.iOS; のバグを示しますバグ報告を送信してください http://bugzilla.xamarin.com とテスト_ケースをします。
 
 これは通常 Xamarin.iOS; のバグを示しますバグ報告を送信してください[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)とテスト_ケースをします。
 
@@ -917,7 +917,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 <a name="MT1013" />
 
-### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013: 依存関係のエラーを追跡します。 比較するファイルがありません。 バグ報告を送信してくださいhttp://bugzilla.xamarin.comとテスト_ケースをします。
+### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013: 依存関係のエラーを追跡します。 比較するファイルがありません。 バグ報告を送信してください http://bugzilla.xamarin.com とテスト_ケースをします。
 
 これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)テスト caes とします。
 
@@ -1123,7 +1123,7 @@ Xcode の古いバージョンを使用するか、それを起動するには�
 
 デバイスがロックされていることを確認してください。
 
-信頼開発者の場合は、エンタープライズ アプリケーションを配置するか、無料のプロビジョニング プロファイルを使用する必要があります (詳細については<a href="http://stackoverflow.com/a/30726375/183422">ここ</a>)。
+信頼開発者の場合は、エンタープライズ アプリケーションを配置するか、無料のプロビジョニング プロファイルを使用する必要があります (詳細については <a href="http://stackoverflow.com/a/30726375/183422">ここ</a> )。
 
 <a name="MT1108" />
 
@@ -1143,7 +1143,7 @@ Mtouch からいくつかの操作が必要、 <tt>DeveloperDiskImage.dmg</tt>�
 
 ### <a name="mt1110-application-failed-to-launch-because-of-ios-security-restrictions-please-ensure-the-developer-is-trusted"></a>MT1110: アプリケーションは iOS セキュリティ制限があるため起動できませんでした。 開発者が信頼されていることを確認してください。
 
-信頼開発者の場合は、エンタープライズ アプリケーションを配置するか、無料のプロビジョニング プロファイルを使用する必要があります (詳細については<a href="http://stackoverflow.com/a/30726375/183422">ここ</a>)。
+信頼開発者の場合は、エンタープライズ アプリケーションを配置するか、無料のプロビジョニング プロファイルを使用する必要があります (詳細については <a href="http://stackoverflow.com/a/30726375/183422">ここ</a> )。
 
 <a name="MT1111" />
 
@@ -1659,7 +1659,7 @@ Parameter name: instruction
 
 混合モード アセンブリは、リンカーによっては処理できません。
 
-参照してくださいhttps://msdn.microsoft.com/library/x0w2664k.aspx混合モード アセンブリの詳細についてはします。
+参照してください https://msdn.microsoft.com/library/x0w2664k.aspx 混合モード アセンブリの詳細についてはします。
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT エラー メッセージ
 
@@ -1988,7 +1988,7 @@ Xamarin.iOS がここではよりも優先されます`retain`、`release`と`de
 
 <a name="MT4144" />
 
-### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>: MT4144 メソッドを登録できません ' *' 関連付けられているトランポリンがないためです。 バグ報告を送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>: MT4144 メソッドを登録できません ' *' 関連付けられているトランポリンがないためです。 バグ報告を送信してください http://bugzilla.xamarin.com です。
 
 これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
@@ -2913,13 +2913,13 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 <a name="MT8008" />
 
-### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008: Xamarin.iOS.dll の読み込まれているバージョンは用にコンパイルされた * 処理中に、ビット * ビットです。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008: Xamarin.iOS.dll の読み込まれているバージョンは用にコンパイルされた * 処理中に、ビット * ビットです。 バグを送信してください http://bugzilla.xamarin.com です。
 
-これは、ビルド処理で問題があることを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、ビルド処理で問題があることを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: メソッドの変換メソッドを委任するブロックが見つかりません *.*'s パラメーター # * です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: メソッドの変換メソッドを委任するブロックが見つかりません *.*'s パラメーター # * です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 これは、API が正しくバインドされていないを示します。 Xamarin によって公開される API の場合は、当社 bugzilla でバグを送信してください ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) 場合は、サード パーティ製のバインディングでは、製造元に問い合わせてください。
 
@@ -2927,11 +2927,11 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 ### <a name="mt8010-native-type-size-mismatch-between-xamariniosmacdll-and-the-executing-architecture-xamariniosmacdll-was-built-for--bit-while-the-current-process-is--bit"></a>Xamarin 間 MT8010: ネイティブ型のサイズの不一致です。[iOS |Mac] .dll と実行中のアーキテクチャです。 Xamarin。[iOS |Mac] .dll が構築された *-bit で、現在のプロセスは *-ビットです。
 
-これは、ビルド処理で問題があることを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、ビルド処理で問題があることを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: メソッドの戻り値のブロック変換属性 ([DelegateProxy]) にデリゲートが見つかりません *.* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: メソッドの戻り値のブロック変換属性 ([DelegateProxy]) にデリゲートが見つかりません *.* です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、必要なメソッドを検索できませんでした。
 
@@ -2939,7 +2939,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8012" />
 
-### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012: メソッドの戻り値の無効な DelegateProxyAttribute *.*: DelegateType が null です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012: メソッドの戻り値の無効な DelegateProxyAttribute *.*: DelegateType が null です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2947,7 +2947,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: メソッドの戻り値の無効な DelegateProxyAttribute *.*: DelegateType ({2}) 'Handler' フィールドがない型を指定します。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: メソッドの戻り値の無効な DelegateProxyAttribute *.*: DelegateType ({2}) 'Handler' フィールドがない型を指定します。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2955,7 +2955,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType ({2}) 'Handler' フィールド null です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType ({2}) 'Handler' フィールド null です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2963,7 +2963,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType ({2}) 'Handler' フィールドは、デリゲートではないのは、* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: メソッドの戻り値の無効な DelegateProxyAttribute *.*:「DelegateType ({2}) 'Handler' フィールドは、デリゲートではないのは、* です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2971,7 +2971,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: メソッドの戻り値のブロックをデリゲートに変換できません *.* 入力には、委任が存在しないためは、* です。 バグを送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: メソッドの戻り値のブロックをデリゲートに変換できません *.* 入力には、委任が存在しないためは、* です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
@@ -2981,42 +2981,42 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 <a name="MT8018" />
 
-### <a name="mt8018-internal-consistency-error-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8018: 内部の一貫性エラーがあります。 バグ報告を送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8018-internal-consistency-error-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8018: 内部の一貫性エラーがあります。 バグ報告を送信してください http://bugzilla.xamarin.com です。
 
-これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、Xamarin.iOS のバグを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8019" />
 
 ### <a name="mt8019-could-not-find-the-assembly--in-the-loaded-assemblies"></a>MT8019: 見つかりませんでした。 アセンブリ * 読み込まれたアセンブリからです。
 
-これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、Xamarin.iOS のバグを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8020" />
 
 ### <a name="mt8020-could-not-find-the-module-with-metadatatoken--in-the-assembly-"></a>MT8020: MetadataToken でモジュールが見つかりませんでした *、アセンブリ内で * です。
 
-これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、Xamarin.iOS のバグを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8021" />
 
 ### <a name="mt8021-unknown-implicit-token-type-"></a>MT8021: 不明な暗黙的なトークンの種類: * です。
 
-これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、Xamarin.iOS のバグを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8022" />
 
-### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022: 予想トークンへの参照 * である、* は、* です。 バグ報告を送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022: 予想トークンへの参照 * である、* は、* です。 バグ報告を送信してください http://bugzilla.xamarin.com です。
 
-これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、Xamarin.iOS のバグを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8023" />
 
-### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: インスタンス オブジェクトがオープン ジェネリック メソッドのクローズ ジェネリック メソッドを構築するために必要な: * (トークンの参照: *)。 バグ報告を送信してくださいhttp://bugzilla.xamarin.comです。
+### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: インスタンス オブジェクトがオープン ジェネリック メソッドのクローズ ジェネリック メソッドを構築するために必要な: * (トークンの参照: *)。 バグ報告を送信してください http://bugzilla.xamarin.com です。
 
-これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、Xamarin.iOS のバグを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: は、スマート enum '{smart_type}' の拡張機能の有効な型を見つけられませんでした。 バグを送信してくださいhttps://bugzilla.xamarin.comです。
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: は、スマート enum '{smart_type}' の拡張機能の有効な型を見つけられませんでした。 バグを送信してください https://bugzilla.xamarin.com です。
 
-これは、Xamarin.iOS のバグを示します。 バグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは、Xamarin.iOS のバグを示します。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
