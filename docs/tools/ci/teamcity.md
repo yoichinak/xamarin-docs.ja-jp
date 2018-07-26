@@ -1,5 +1,5 @@
 ---
-title: Xamarin を使用したチームの市区町村を使用します。
+title: Xamarin での TeamCity の使用
 description: このガイドを使って、TeamCity するモバイル アプリケーションをコンパイルして Xamarin Test Cloud に送信するには必要な手順を説明します。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/25/2018
 ms.locfileid: "36935416"
 ---
-# <a name="using-team-city-with-xamarin"></a>Xamarin を使用したチームの市区町村を使用します。
+# <a name="using-team-city-with-xamarin"></a>Xamarin での TeamCity の使用
 
 _このガイドを使って、TeamCity するモバイル アプリケーションをコンパイルして Xamarin Test Cloud に送信するには必要な手順を説明します。_
 
