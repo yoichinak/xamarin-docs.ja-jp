@@ -1,42 +1,42 @@
 ---
-title: Android アプリでのデータの使用
+title: Android アプリでデータを使用
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b79b2e44e79a6ff75b096c7443f6d46c20e27144
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 563c04ef1c8eec00108844894c5f9bdc0e9950e3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31647035"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241891"
 ---
-# <a name="using-data-in-an-app"></a>アプリでのデータの使用
+# <a name="using-data-in-an-app"></a>アプリでデータを使用
 
-**DataAccess_Adv**サンプルは、ユーザー入力と CRUD (作成、読み取り、更新、削除) データベースの機能を許可する作業アプリケーションを示しています。 アプリケーションは、2 つの画面で構成されます。 一覧と、データ エントリ フォーム。 すべてのデータ アクセス コードは変更せず、iOS および Android で再利用可能です。
+**DataAccess_Adv**サンプルにより、ユーザー入力とデータベース機能の CRUD (作成、読み取り、更新、削除) する作業アプリケーションを示しています。 アプリケーションは、2 つの画面で構成されています。 一覧と、データ エントリ フォーム。 すべてのデータ アクセス コードは変更しなくても iOS と Android で再利用できます。
 
-アプリケーション画面は、一部のデータを追加した後、Android で次のようになります。
+一部のデータを追加した後アプリケーション画面は Android で次のようになります。
 
 ![Android のサンプル一覧](using-data-in-an-app-images/image11.png "Android のサンプル一覧")
 
 ![Android のサンプルの詳細](using-data-in-an-app-images/image12.png "Android のサンプルの詳細")
 
-Android のプロジェクトが次に示す&ndash;ここに示すようにコードが含まれる、 **Orm**ディレクトリ。
+Android プロジェクトが次に示す&ndash;内でこのセクションで示すコードが含まれている、 **Orm**ディレクトリ。
 
-![Android プロジェクト ツリー](using-data-in-an-app-images/image14.png "Android プロジェクトのツリー")
+![プロジェクトを android ツリー](using-data-in-an-app-images/image14.png "プロジェクトが Android ツリー")
 
-Android のアクティビティのネイティブの UI コードは、このドキュメントの対象外です。 参照してください、 [Android の Listview およびアダプター](~/android/user-interface/layouts/list-view/index.md) UI コントロールの詳細についてガイドします。
+Android でのアクティビティのネイティブの UI コードは、このドキュメントの対象外です。 参照してください、 [Android Listview と Adapter](~/android/user-interface/layouts/list-view/index.md) UI コントロールの詳細についてはガイド。
 
 ## <a name="read"></a>読み取り
 
-サンプルの読み取り操作のいくつかあります。
+このサンプルでの読み取り操作のいくつかがあります。
 
 -  一覧の読み取り
 -  個々 のレコードの読み取り
 
-2 つの方法で、`StockDatabase`クラスには。
+2 つのメソッド、`StockDatabase`クラスには。
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -53,11 +53,11 @@ public Stock GetStock (int id)
 }
 ```
 
-Android としてデータを表示する、`ListView`です。
+Android としてデータを表示する、`ListView`します。
 
-## <a name="create-and-update"></a>作成および更新
+## <a name="create-and-update"></a>作成し、更新
 
-アプリケーション コードを簡略化 save メソッドの 1 つが、Insert は提供または 更新、主キーが設定されているかどうかによって異なります。 `Id`プロパティが付いて、`[PrimaryKey]`属性のコードに設定しないでください。 このメソッドがされたかどうかの値以前 (主キーのプロパティをチェック) によって保存されるかを検出および挿入するか、それに応じてオブジェクトを更新します。
+アプリケーション コードを簡素化するには、1 つの save メソッドが挿入は提供または 更新の主キーが設定されているかどうかによって異なります。 `Id`プロパティが付いて、`[PrimaryKey]`属性は、コードで設定しないでください。 このメソッドが検出されたかどうか、値が前 (主キー プロパティをチェック) を保存し、挿入するか、それに応じてオブジェクトを更新、します。
 
 ```csharp
 public int SaveStock (Stock item)
@@ -73,11 +73,11 @@ public int SaveStock (Stock item)
 }
 ```
 
-実際のアプリケーションは (必要なフィールド、最低限の長さやその他のビジネス ルール) などのいくつかの検証に通常必要とします。 適切なクロスプラット フォーム アプリケーションは、できるだけ多くの共有コード、プラットフォームの機能に従って表示するための UI へのバックアップの検証エラーを渡すことで可能な論理の検証の実装します。
+実践的なアプリケーションは (必要なフィールド、最低限の長さやその他のビジネス ルール) などのいくつかの検証に通常必要とします。 優れたクロスプラット フォーム対応のアプリケーションは、共有コード、プラットフォームの機能に従って表示するための UI へのバックアップの検証エラーを渡すことで可能な論理の検証の実装します。
 
 ## <a name="delete"></a>削除
 
-異なり、`Insert`と`Update`メソッド、`Delete<T>`メソッドが完全ではなく、プライマリ キーの値だけを受け入れる`Stock`オブジェクト。 この例では、`Stock`オブジェクトがメソッドに渡されますに Id プロパティのみが渡され、`Delete<T>`メソッドです。
+異なり、`Insert`と`Update`、メソッド、`Delete<T>`メソッドが完全ではなく主キーの値だけを受け入れる`Stock`オブジェクト。 この例では、`Stock`オブジェクトは、メソッドに渡されますに Id プロパティのみが渡され、`Delete<T>`メソッド。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -88,17 +88,17 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>事前設定済み SQLite データベース ファイルの使用
+## <a name="using-a-pre-populated-sqlite-database-file"></a>事前設定された SQLite データベース ファイルを使用します。
 
-一部のアプリケーションには、既にデータが設定されるデータベースは同梱されています。 簡単にこれを行うモバイル アプリでアプリを既存の SQLite データベース ファイルを配布してアクセスする前に書き込み可能なディレクトリにコピーすることです。 SQLite は、多くのプラットフォームで使用される標準的なファイル形式であるため、SQLite データベース ファイルの作成に使用できるツールの数があります。
+一部のアプリケーションには、データに読み込まれているデータベースは同梱されています。 簡単にこれを行うモバイル アプリケーションで、アプリで既存の SQLite データベース ファイルを配布して書き込み可能なディレクトリにアクセスする前にコピーすることです。 SQLite は、多くのプラットフォームで使用される標準的なファイル形式であるためには、さまざまな SQLite データベース ファイルの作成に使用できるツールがあります。
 
--   **SQLite Manager Firefox 拡張** &ndash; iOS および Android と互換性があるファイルを Mac および Windows が生成されます。
+-   **Firefox 拡張機能の SQLite Manager** &ndash; iOS および Android と互換性があるファイルを Mac と Windows が生成されます。
 
--   **コマンド ライン**&ndash;を参照してください[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html)です。
+-   **コマンド ライン**&ndash;を参照してください[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html)します。
 
-一致するどのようなコードが必要ですが、c# のクラスおよびプロパティと一致する名前を必要となる SQLite.NET を使用している場合に特にことを確認するテーブルと列の名前付けでアプリを配布用のデータベース ファイルを作成する際は注意 (または、関連付けられているカスタム属性の場合)。
+アプリを配布用のデータベース ファイルを作成するときと確実に、コードでは、c# のクラスおよびプロパティに一致する名前を必要とする SQLite.NET を使用している場合に特にテーブルと列の名前付けを使用処理 (または、関連付けられているカスタム属性の場合)。
 
-Android アプリで他の何らかの前にいくつかのコードを実行するためには、ロードする最初のアクティビティに配置できますまたは作成することができます、`Application`任意のアクティビティの前に読み込まれるサブクラスです。 次のコード、`Application`既存のデータベース ファイルをコピーするサブクラス**data.sqlite**のうち、 **/ResourcesRaw/** ディレクトリ。
+いくつかのコードは、前に、Android アプリで何が実行されることを確認するには、読み込むには、最初のアクティビティに配置することができますまたは作成することができます、`Application`任意のアクティビティの前に読み込まれるサブクラスです。 次のコードを`Application`既存のデータベース ファイルをコピーするサブクラス**data.sqlite**のうち、 **/ResourcesRaw/** ディレクトリ。
 
 ```csharp
 [Application]
@@ -139,5 +139,5 @@ public class YourAndroidApp : Application {
 
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android データ レシピ](https://developer.xamarin.com/recipes/android/data/)
-- [Xamarin.Forms データ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Android のデータのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)

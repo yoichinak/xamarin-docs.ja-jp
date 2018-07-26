@@ -45,8 +45,8 @@ Visual State Manager を使用すると、ビューは通常、または無効�
 などがあるとします、`Entry`ページには、ビューの外観にして、`Entry`を次の方法で変更します。
 
 - `Entry` 、Pink」と入力する必要がありますがあるときにバック グラウンド、`Entry`は無効です。
-- `Entry`ライム バック グラウンド通常がある必要があります。
-- `Entry`に入力フォーカスがある場合と通常の高さに 2 回展開する必要があります。
+- `Entry`は、通常時はライムの背景を持つ。
+- `Entry`は、入力フォーカスがある場合、通常の高さの 2 倍に拡大する。
 
 VSM マークアップをアタッチするには、個々 のビューにまたは複数のビューに適用する場合はスタイルで定義することができます。 次の 2 つのセクションでは、これらの方法を説明します。
 
@@ -92,7 +92,7 @@ VSM マークアップをアタッチする、`Entry`ビューで、最初の分
 <VisualStateGroup Name="CommonStates">
 ```
 
-いずれかを使用する`x:Name`または`Name`両方で同じ要素ではなく。
+`x:Name` と `Name` のどちらも使用することができますが、同じ要素に両方を使うことはできません。
 
 `VisualStateGroup`クラスという名前のプロパティを定義する[ `States`](xref:Xamarin.Forms.VisualStateGroup.States)のコレクションである[ `VisualState` ](xref:Xamarin.Forms.VisualState)オブジェクト。 `States` _プロパティをコンテンツ_の`VisualStateGroups`含めることができますので、`VisualState`タグの間で直接、`VisualStateGroup`タグ。 (プロパティが、情報の記事で説明されているコンテンツ[Essential XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties))。
 

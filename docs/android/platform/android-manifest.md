@@ -1,32 +1,32 @@
 ---
-title: Android マニフェストを伴う作業
+title: Android マニフェストの使用
 ms.prod: xamarin
 ms.assetid: CB7CCF60-FEF1-3B28-215F-159391E74347
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 18817063900437baa625d8572f0ae28fec77be1e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0857b70e6e1d9104f62ec2e26f8edbab385d06f3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30769807"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242252"
 ---
-# <a name="working-with-the-android-manifest"></a>Android マニフェストを伴う作業
+# <a name="working-with-the-android-manifest"></a>Android マニフェストの使用
 
 
 ## <a name="overview"></a>概要
 
-**AndroidManifest.xml**機能と Android アプリケーションの要件を記述できる Android プラットフォームの強力なファイルです。 ただしでの作業は簡単ではありません。 Xamarin.Android するマニフェストを自動的に生成し、使用される、クラスにカスタム属性を追加することによってこの問題を最小限に抑えるに役立ちます。 目標は、ユーザーの 99% を手動で変更する必要はありません、 **AndroidManifest.xml**です。 
+**AndroidManifest.xml**は、Android プラットフォーム機能と android アプリケーションの要件について説明するために強力なファイルです。 ただし、扱うことは簡単ではありません。 Xamarin.Android は、マニフェストを自動的に生成するを使用してクラスをカスタム属性を追加することによってこの問題を最小限に抑えるには役立ちます。 目標は、ユーザーの 99% が手動で変更する必要があることはありません**AndroidManifest.xml**します。 
 
-**AndroidManifest.xml**ビルド プロセスと内の XML の一部として生成される**Properties/AndroidManifest.xml**カスタム属性から生成される XML のトピックとマージされます。 結合の結果として得られる**AndroidManifest.xml**に存在する、 **obj**サブディレクトリ; に配置されているなど、 **obj/Debug/android/AndroidManifest.xml**デバッグ ビルドの. マージ プロセスは単純な: コード内でカスタム属性を使用して、XML 要素を生成することと*挿入*にそれらの要素**AndroidManifest.xml**です。 
+**AndroidManifest.xml**は、ビルド プロセスと内にある XML の一部として生成**Properties/AndroidManifest.xml**カスタム属性から生成される XML に結合されます。 マージ結果**AndroidManifest.xml**に存在する、 **obj**サブディレクトリ; に存在するなど、 **obj/Debug/android/AndroidManifest.xml**デバッグ ビルドには. マージ プロセスは簡単です: コード内のカスタム属性を使用して、XML 要素の生成と*挿入*それらの要素に**AndroidManifest.xml**します。 
 
 
 
 ## <a name="the-basics"></a>基本事項
 
-ため、コンパイル時にアセンブリがスキャンされる以外`abstract`から派生したクラス[アクティビティ](https://developer.xamarin.com/api/type/Android.App.Activity/)いて、 [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/)に属性が宣言されています。 使用して、これらのクラスと属性、マニフェストをビルドします。 次に例を示します。 
+ため、コンパイル時にアセンブリがスキャンされる以外`abstract`から派生するクラス[アクティビティ](https://developer.xamarin.com/api/type/Android.App.Activity/)いて、 [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/)属性で宣言されています。 使用して、これらのクラスと属性、マニフェストをビルドします。 次に例を示します。 
 
 ```csharp
 namespace Demo
@@ -37,7 +37,7 @@ namespace Demo
 }
 ```
 
-これは、結果で生成されても、何も**AndroidManifest.xml**です。 場合は、`<activity/>`を生成する要素を使用する必要があります、 [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute)カスタム属性。 
+これは、結果内で生成される何も、 **AndroidManifest.xml**します。 場合は、 `<activity/>` 、生成される要素を使用する必要がある、 [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute)カスタム属性。 
 
 ```csharp
 namespace Demo
@@ -55,15 +55,15 @@ namespace Demo
 <activity android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
 
-`[Activity]`属性も何も起こりません`abstract`型です。`abstract`型は無視されます。
+`[Activity]`属性も何も起こりません`abstract`型です。`abstract`種類は無視されます。
 
 
 
 ### <a name="activity-name"></a>活動名
 
-Xamarin.Android 5.1 から始まり、アクティビティの型名はエクスポートされる型のアセンブリ修飾名の md5 チェックサムに基づいています。 これにより、2 つのアセンブリから指定して、パッケージのエラーを取得できませんに同じ完全修飾名です。 (Xamarin.Android 5.1 の前に、アクティビティの既定値の型名が作成、小文字に変換した名前空間とクラス名から)。 
+Xamarin.Android 5.1 以降では、アクティビティの型名がエクスポートされる型のアセンブリ修飾名の md5 チェックサムに基づいています。 これにより、2 つの異なるアセンブリから指定して、パッケージのエラーを取得できませんに同じ完全修飾名です。 (Xamarin.Android 5.1 では、前に、アクティビティの既定の型名が作成、小文字の名前空間とクラス名から)。 
 
-この既定の動作をオーバーライドし、使用して、アクティビティの名前を明示的に指定する場合、 [ `Name` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Name/)プロパティ。 
+この既定をオーバーライドし、使用して、アクティビティの名前を明示的に指定する場合、 [ `Name` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Name/)プロパティ。 
 
 ```csharp
 [Activity (Name="awesome.demo.activity")]
@@ -78,12 +78,12 @@ public class MyActivity : Activity
 <activity android:name="awesome.demo.activity" />
 ```
 
-*注*: 使用する必要があります、`Name`旧バージョンと互換性のため、名前を変更するように対してのみプロパティは、実行時に型の検索速度が低下します。 小文字に変換した名前空間に基づく活動の既定値の型名とクラス名を参照してください。 必要とするレガシ コードがあれば[Android 呼び出し可能ラッパーの名前付け](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming)ヒントについては、互換性を維持することにします。 
+*注*: 使用する必要があります、`Name`プロパティは下位互換性の理由から、その名前を変更するには実行時に型の照合の速度が低下します。 小文字の名前空間に基づくアクティビティの既定の型名とクラス名では、参照が必要とするレガシ コードがあれば[Android 呼び出し可能ラッパー名前付け](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming)互換性の維持に関するヒント。 
 
 
-### <a name="activity-title-bar"></a>活動のタイトル バー
+### <a name="activity-title-bar"></a>アクティビティのタイトル バー
 
-既定では、Android ことで、アプリケーションのタイトル バーを実行するとします。 このために使用する値は[ `/manifest/application/activity/@android:label`](http://developer.android.com/guide/topics/manifest/activity-element.html#label)です。 ほとんどの場合、この値は、クラス名と異なります。 タイトル バーで、アプリのラベルを指定するには、使用、 [ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)プロパティです。
+既定では、Android ことで、アプリケーションのタイトル バーを実行した場合。 このために使用する値は[ `/manifest/application/activity/@android:label`](http://developer.android.com/guide/topics/manifest/activity-element.html#label)します。 ほとんどの場合、この値は、クラス名と異なります。 タイトル バーに、アプリのラベルを指定するには、使用、 [ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)プロパティ。
 例えば: 
 
 ```csharp
@@ -101,9 +101,9 @@ public class MyActivity : Activity
 ```
 
 
-### <a name="launchable-from-application-chooser"></a>アプリケーションの選択 ウィンドウから起動可能です
+### <a name="launchable-from-application-chooser"></a>アプリケーションの選択 ダイアログ ボックスから起動可能
 
-既定では、アクティビティは表示されません [Android のアプリケーション ランチャー] 画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションごとのアイコンをたくないためです。 どちらかをアプリケーション起動プログラムから起動可能にする必要がありますを指定する、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティです。 例えば: 
+既定では、アクティビティは表示されませんで Android のアプリケーションの起動画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションでは、1 つにつき、アイコンが必要ないためです。 アプリケーション起動プログラムから起動可能なものがありますを指定するには、使用、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティ。 例えば: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -126,9 +126,9 @@ public class MyActivity : Activity
 
 
 
-### <a name="activity-icon"></a>[アクティビティ] アイコン
+### <a name="activity-icon"></a>アクティビティのアイコン
 
-既定では、システムによって提供される既定ランチャー アイコンに、アクティビティが与えられます。 カスタム アイコンを使用するには、まず追加、 **.png**に**リソース/描画**、そのビルド アクションに設定**AndroidResource**を使用して、 [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)プロパティを使用するアイコンを指定します。 例えば: 
+既定では、システムによって提供される既定のランチャー アイコン、アクティビティが指定されます。 カスタム アイコンを使用するには、まず追加、 **.png**に**リソース/drawable**、ビルド アクションを設定**AndroidResource**を使用して、 [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)プロパティを使用するアイコンを指定します。 例えば: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -152,22 +152,22 @@ public class MyActivity : Activity
 
 ### <a name="permissions"></a>アクセス許可
 
-Android マニフェストへのアクセス許可を追加すると (」の説明に従って[Android マニフェストへのアクセス許可を追加](https://developer.xamarin.com/recipes/android/general/projects/add_permissions_to_android_manifest/))、これらのアクセス許可に記録される**Properties/AndroidManifest.xml**です。 たとえば、設定した場合、 `INTERNET` 、アクセス許可に、次の要素が追加**Properties/AndroidManifest.xml**: 
+Android マニフェストにアクセス許可を追加すると (」の説明に従って[Android マニフェストへのアクセス許可を追加](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest))、これらのアクセス許可に記録される**Properties/AndroidManifest.xml**します。 たとえば、設定した場合、 `INTERNET` 、アクセス許可に次の要素が追加**Properties/AndroidManifest.xml**: 
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-デバッグ ビルドは自動的にデバッグを容易にするいくつかのアクセス許可を設定 (など`INTERNET`と`READ_EXTERNAL_STORAGE`)&ndash;これらの設定を設定だけで、生成された**obj/Debug/android/AndroidManifest.xml**ではありません有効になっているように、**アクセス許可を必要な**設定します。 
+デバッグ ビルドが容易にデバッグする一部のアクセス許可を自動的に設定 (など`INTERNET`と`READ_EXTERNAL_STORAGE`)&ndash;これらの設定を設定のみに生成された**obj/Debug/android/AndroidManifest.xml**はできません有効になっていると表示される、**アクセス許可が必要な**設定します。 
 
-生成されたマニフェスト ファイルを確認する場合など、 **obj/Debug/android/AndroidManifest.xml**、アクセス許可の要素を追加する、次を参照してください可能性があります。 
+生成されたマニフェスト ファイルを確認する場合など、 **obj/Debug/android/AndroidManifest.xml**次の追加の permission 要素を参照してください可能性があります。 
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-リリース ビルド マニフェストのバージョン (で**obj/Debug/android/AndroidManifest.xml**)、これらの権限は*いない*自動的に構成されています。 リリース ビルドへの切り替えはデバッグ ビルドで使用可能なアクセス許可を失ったにアプリで発生する場合にこのアクセス許可を明示的に設定することを確認してください、**アクセス許可を必要な**(参照、アプリの設定**ビルド > Android アプリケーション**Mac; 用の Visual Studio で、次を参照してください。**プロパティ > Android マニフェスト**Visual Studio で)。 
+リリースでのビルド マニフェストのバージョン (で**obj/Debug/android/AndroidManifest.xml**)、これらの権限は*いない*自動的に構成されています。 リリース ビルドに切り替えると、アプリをデバッグ ビルドで使用可能なアクセス許可を失ったで発生する場合このアクセス許可を明示的に設定することを確認、**アクセス許可が必要な**(参照アプリの設定**ビルド > Android アプリケーション**Visual studio for Mac は、次を参照してください。**プロパティ > Android マニフェスト**Visual Studio で)。 
 
 
 
@@ -175,9 +175,9 @@ Android マニフェストへのアクセス許可を追加すると (」の説�
 ## <a name="advanced-features"></a>高度な機能
 
 
-### <a name="intent-actions-and-features"></a>インテントの動作と機能
+### <a name="intent-actions-and-features"></a>インテント アクションと機能
 
-Android マニフェストでは、アクティビティの機能を記述する方法を提供します。 使用してこれを行う[インテント](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)と[ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)カスタム属性です。 アクティビティの適切なアクションを指定できます、 [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/)コンス トラクター、およびカテゴリが適切な[ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/)プロパティです。 少なくとも 1 つのアクティビティには、(そのため、コンス トラクターで指定されるアクティビティ) を指定する必要があります。 `[IntentFilter]` 複数回、され、別の結果は各を使用して提供されます`<intent-filter/>`内の要素、`<activity/>`です。 例えば:
+Android マニフェストでは、アクティビティの機能を記述するための手段を提供します。 使用してこれには[インテント](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)と[ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)カスタム属性。 アクティビティの適切なアクションを指定することができます、 [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/)コンス トラクター、および対象のカテゴリは適切な[ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/)プロパティ。 少なくとも 1 つのアクティビティには、(これは、コンス トラクターでアクティビティが提供されているためにです) を提供する必要があります。 `[IntentFilter]` 複数回、および使用するたびの個別の結果に用意できる`<intent-filter/>`内の要素、`<activity/>`します。 例えば:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -208,9 +208,9 @@ public class MyActivity : Activity
 
 ### <a name="application-element"></a>Application 要素
 
-Android マニフェストでは、アプリケーション全体のプロパティを宣言するための手段も提供します。 使用してこれを行う、`<application>`要素と、対応する、[アプリケーション](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/)カスタム属性です。 これらの活動の設定ではなく、アプリケーション全体 (アセンブリ全体に適用) 設定があることに注意してください。 宣言する通常、`<application>`アプリケーション全体のプロパティをオーバーライドしてこれらの設定 (必要に応じて)、アクティビティごとに、します。 
+Android マニフェストでは、アプリケーション全体のプロパティを宣言することもできます。 使用してこれには、`<application>`要素と、対応する、[アプリケーション](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/)カスタム属性。 アクティビティごとの設定ではなく、アプリケーション全体 (アセンブリ全体) の設定できることに注意してください。 通常を宣言する`<application>`全体のアプリケーションのプロパティをオーバーライドしてこれらの設定 (必要に応じて)、アクティビティごとに、します。 
 
-たとえば、次`Application`属性が追加**AssemblyInfo.cs**アプリケーションをデバッグできること、そのユーザーが判読できる名前を示すために**My App**、こと、および使用、 `Theme.Light`のすべてのアクティビティの既定のテーマとスタイル。 
+たとえば、次`Application`属性が追加されます**AssemblyInfo.cs**をアプリケーションをデバッグできること、そのユーザーが判読できる名前が示す**My App**、し、を使用して`Theme.Light`としてすべてのアクティビティの既定のテーマのスタイル。 
 
 ```csharp
 [assembly: Application (Debuggable=true,   
@@ -226,18 +226,18 @@ Android マニフェストでは、アプリケーション全体のプロパテ
              android:theme="@android:style/Theme.Light"
                 ... />
 ```
-この例では、アプリのすべての活動は既定で、`Theme.Light`スタイル。 設定すると、アクティビティのテーマ`Theme.Dialog`、アクティビティを使用する、`Theme.Dialog`スタイルのアプリ内の他のすべてのアクティビティは既定値中に、`Theme.Light`で設定されているスタイル、`<application>`要素。 
+この例で、アプリのすべての活動は既定になります、`Theme.Light`スタイル。 アクティビティのテーマを設定した場合`Theme.Dialog`、アクティビティを使用するだけ、`Theme.Dialog`スタイルの既定値は、アプリの他のすべてのアクティビティ中に、`Theme.Light`スタイルで設定されている、`<application>`要素。 
 
-`Application`要素は、構成する唯一の方法ではありません`<application>`属性。 直接属性を挿入する代わりに、`<application>`要素の**Properties/AndroidManifest.xml**です。 これらの設定が最後にマージされます`<application>`要素内にある**obj/Debug/android/AndroidManifest.xml**です。 なおの内容**Properties/AndroidManifest.xml**カスタム属性によって提供されるデータを常にオーバーライドします。 
+`Application`要素は、構成する唯一の方法ではありません`<application>`属性。 直接属性を挿入する代わりに、`<application>`要素の**Properties/AndroidManifest.xml**します。 これらの設定が最後にマージされる`<application>`要素内にある**obj/Debug/android/AndroidManifest.xml**します。 注意の内容**Properties/AndroidManifest.xml**カスタム属性によって提供されるデータを常にオーバーライドします。 
 
-構成できる多くのアプリケーション全体属性がある、`<application>`要素ですこれらの設定に関する詳細については、次を参照してください。、[パブリック プロパティ](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties)のセクション[ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
+構成できる多くのアプリケーション全体の属性がある、`<application>`要素ですこれらの設定の詳細については、次を参照してください。、[パブリック プロパティ](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties)の[ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
 
 ## <a name="list-of-custom-attributes"></a>カスタム属性の一覧
 
 -   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) : 生成、 [/manifest/application/activity](http://developer.android.com/guide/topics/manifest/activity-element.html) XML フラグメント 
--   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) : 生成、 [/マニフェスト/アプリケーション](http://developer.android.com/guide/topics/manifest/application-element.html)XML フラグメント 
+-   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) : 生成、[マニフェスト/アプリケーション](http://developer.android.com/guide/topics/manifest/application-element.html)XML フラグメント 
 -   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) : 生成、[インストルメンテーションマニフェスト/](http://developer.android.com/guide/topics/manifest/instrumentation-element.html) XML フラグメント 
 -   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) : 生成、 [//intent-filter](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML フラグメント 
 -   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) : 生成、 [//meta-data](http://developer.android.com/guide/topics/manifest/meta-data-element.html) XML フラグメント 
