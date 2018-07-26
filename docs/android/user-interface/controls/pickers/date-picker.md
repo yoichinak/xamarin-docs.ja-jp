@@ -1,58 +1,58 @@
 ---
 title: 日付の選択
-description: DatePickerDialog および DialogFragment を使用して、カレンダーの日付を選択します。
+description: DatePickerDialog と DialogFragment を使用して予定表の日付を選択します。
 ms.prod: xamarin
 ms.assetid: F2BCD8D4-8957-EA53-C5A8-6BB603ADB47B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 916a9c74fa28b99e799eef80db822e86cfda617d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8f4e6318d904efb2f77c36732fc6519699f72ac9
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764984"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241137"
 ---
 # <a name="date-picker"></a>日付の選択
 
 ## <a name="overview"></a>概要
 
-ときに、ユーザーは、Android のアプリケーションへのデータを入力する必要がありますの機会があります。 この作業に役立つ、Android のフレームワークを提供、 [ `DatePicker` ](https://developer.xamarin.com/api/type/Android.Widget.DatePicker/)ウィジェットと[ `DatePickerDialog` ](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog/)です。 `DatePicker`デバイスやアプリケーション間で一貫性のあるインターフェイスの年、月、および日を選択することができます。 `DatePickerDialog`をカプセル化するヘルパー クラスには、`DatePicker`ダイアログでします。
+ときに、ユーザーは、Android のアプリケーションへのデータを入力する必要がありますの状況があります。 これを支援する Android のフレームワークを提供します、 [ `DatePicker` ](https://developer.xamarin.com/api/type/Android.Widget.DatePicker/)ウィジェットと[ `DatePickerDialog` ](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog/)します。 `DatePicker`デバイスやアプリケーション間で一貫性のあるインターフェイスの年、月、日を選択することができます。 `DatePickerDialog`をカプセル化するヘルパー クラスには、`DatePicker`ダイアログでします。
 
-最新の Android アプリケーションを表示する必要があります、`DatePickerDialog`で、 [ `DialogFragment`](https://developer.xamarin.com/api/type/Android.App.DialogFragment/)です。 これを DatePicker をポップアップ ダイアログ ボックスとして表示するアプリケーションを許可またはアクティビティに埋め込まれます。 さらに、`DialogFragment`ライフ サイクル、および実装する必要があるコードの量を減らすと、ダイアログの表示を管理します。
+最新の Android アプリケーションを表示する必要があります、`DatePickerDialog`で、 [ `DialogFragment`](https://developer.xamarin.com/api/type/Android.App.DialogFragment/)します。 これにより、ポップアップ ダイアログ ボックスとして、DatePicker を表示するアプリケーションまたはアクティビティに埋め込まれています。 さらに、`DialogFragment`ライフ サイクルおよび実装する必要があるコードの量を減らす ダイアログ ボックスの表示を管理します。
 
-このガイドは、使用する方法をデモンストレーションします、`DatePickerDialog`でラップされた、`DialogFragment`です。 サンプル アプリケーションが表示されます、`DatePickerDialog`モーダル ダイアログ アクティビティ上のボタンをクリックするとします。 日付が、ユーザーが設定されている場合、`TextView`選択された日付が更新されます。
+このガイドは、使用する方法を示しますが、`DatePickerDialog`でラップされた、`DialogFragment`します。 サンプル アプリケーションが表示されます、`DatePickerDialog`として、ユーザーがアクティビティ上のボタンをクリックすると、モーダル ダイアログ。 日付が、ユーザーが設定されている場合、`TextView`選択された日付が更新されます。
 
-[![日付の選択 ダイアログ ボックスでその後に日付の選択のスクリーン ショット ボタン](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
+[![日付の選択 ダイアログ ボックスでその後に日付の選択のスクリーン ショットのボタン](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-このガイドのサンプル アプリケーションは、Android 4.1 (API レベルをターゲットします。
-16) またはそれ以降、Android 3.0 (API レベル 11 以上) に適用されますが、します。 Android の古いバージョンの追加により、プロジェクトとコードを変更する Android のサポート ライブラリ v4 のサポートを行うことができます。
+このガイドのサンプル アプリケーションの対象が Android 4.1 (API レベル
+16) またはそれ以降、Android 3.0 (API レベル 11 以上) に適用されますが、します。 古いバージョンの Android プロジェクトとコードを変更する Android サポート ライブラリ v4 の追加をサポートできるようになります。
 
-## <a name="using-the-datepicker"></a>DatePicker を使用します。
+## <a name="using-the-datepicker"></a>DatePicker の使用
 
-このサンプルを拡張`DialogFragment`です。 サブクラスがホストされ、表示、 `DatePickerDialog`:
+このサンプルは拡張`DialogFragment`します。 サブクラスがホストされ、表示、 `DatePickerDialog`:
 
 ![クローズ アップの日付の選択 ダイアログ](date-picker-images/image-02.png)
 
-ユーザーが日付を選択し、クリックして、 **OK**  ボタン、`DatePickerDialog`メソッドを呼び出して[ `IOnDateSetListener.OnDateSet`](https://developer.xamarin.com/api/member/Android.App.DatePickerDialog+IOnDateSetListener.OnDateSet/p/Android.Widget.DatePicker/System.Int32/System.Int32/System.Int32/)です。
-このインターフェイスは、ホストによって実装`DialogFragment`です。 ユーザーがクリックした場合、**キャンセル** ボタン、フラグメントおよび ダイアログ ボックスはそれ自体で終了されます。
+ユーザーが日付を選択し、クリックして、 **OK**  ボタン、`DatePickerDialog`メソッドを呼び出す[ `IOnDateSetListener.OnDateSet` ](https://developer.xamarin.com/api/member/Android.App.DatePickerDialog+IOnDateSetListener.OnDateSet/p/Android.Widget.DatePicker/System.Int32/System.Int32/System.Int32/)。
+このインターフェイスは、ホストによって実装`DialogFragment`します。 ユーザーがクリックした場合、**キャンセル**ボタンをクリック、フラグメントおよび ダイアログ ボックスは自体で無視されます。
 
-いくつかの方法、`DialogFragment`ホスティングのアクティビティを選択した日付を返すことができます。
+いくつかの方法がある、`DialogFragment`ホスティングのアクティビティを選択した日付を返すことができます。
 
-1. **メソッドの呼び出しまたはプロパティを設定**&ndash;アクティビティは、プロパティまたは具体的には、この値を設定するためのメソッドを提供できます。
+1. **メソッドの呼び出しやプロパティを設定する**&ndash;アクティビティは、プロパティまたは具体的には、この値を設定するためのメソッドを提供できます。
 
-2. **イベントを発生させる** &ndash; 、`DialogFragment`となるイベントを定義できる場合に発生`OnDateSet`が呼び出されます。
+2. **イベントを発生させる** &ndash; 、`DialogFragment`となるイベントを定義できる場合に発生します`OnDateSet`が呼び出されます。
 
-3. **使用して、 `Action`**  &ndash; 、`DialogFragment`呼び出すことができます、`Action<DateTime>`アクティビティで日付を表示します。 活動が提供する、`Action<DateTime`インスタンス化するとき、`DialogFragment`です。 このサンプルは 3 番目の手法を使用して、アクティビティを指定する必要があります、`Action<DateTime>`を`DialogFragment`です。
+3. **使用して、 `Action`**  &ndash; 、`DialogFragment`呼び出すことができます、`Action<DateTime>`アクティビティの日付を表示します。 アクティビティを提供、`Action<DateTime`インスタンス化するとき、`DialogFragment`します。 このサンプルは、3 番目の手法を使用し、アクティビティを指定する必要があります、`Action<DateTime>`を`DialogFragment`します。
 
 
 
 ### <a name="extending-dialogfragment"></a>DialogFragment を拡張します。
 
-表示するために、まず、`DatePickerDialog`をサブクラス化`DialogFragment`を実装して、`IOnDateSetListener`インターフェイス。
+表示するために、まず、`DatePickerDialog`をサブクラス化`DialogFragment`を実装すること、`IOnDateSetListener`インターフェイス。
 
 ```csharp
 public class DatePickerFragment : DialogFragment, 
@@ -92,19 +92,19 @@ public class DatePickerFragment : DialogFragment,
 }
 ```
 
-`NewInstance`新しいのインスタンスを作成するメソッドが呼び出される`DatePickerFragment`です。 このメソッドは、`Action<DateTime>`をユーザーがクリックしたときに呼び出される、 **OK**ボタンをクリックして、`DatePickerDialog`です。
+`NewInstance`新しいインスタンスを作成するメソッドが呼び出される`DatePickerFragment`します。 このメソッドは、`Action<DateTime>`をユーザーがクリックしたときに呼び出される、 **OK**ボタン、 `DatePickerDialog`。
 
-Android がメソッドを呼び出して、フラグメントは、表示されるが、`OnCreateDialog`です。 このメソッドが、新しい作成`DatePickerDialog`オブジェクトを現在の日付と、コールバック オブジェクトの初期化 (の現在のインスタンスは、 `DatePickerFragment`)。
+Android でメソッドを呼び出して、フラグメントは、表示されるが、`OnCreateDialog`します。 このメソッドが、新しい作成`DatePickerDialog`オブジェクトし、現在の日付とコールバック オブジェクトで初期化 (の現在のインスタンスである、 `DatePickerFragment`)。
 
 
 > [!NOTE]
-> 注意してくださいを月の値と`IOnDateSetListener.OnDateSet`が呼び出されますが 0 ~ 11 しない 1 ~ 12 の範囲内です。 月の日は、1 ~ 31 (に応じて月が選択されている) の範囲になります。
+> 注意してくださいを月の値と`IOnDateSetListener.OnDateSet`が呼び出されますが 0 ~ 11 としない 1 ~ 12 の範囲内です。 月の日は、1 ~ 31 (に応じて月が選択されている) の範囲になります。
 
 
 
 ### <a name="showing-the-datepickerfragment"></a>表示、DatePickerFragment
 
-これで、`DialogFragment`が実装されると、このセクションの内容は検査してフラグメントをアクティビティで使用する方法です。 このガイドに付属するサンプル アプリで、アクティビティがインスタンス化され、`DialogFragment`を使用して、`NewInstance`ファクトリ メソッドを呼び出すことを表示`DialogFragment.Show`です。 インスタンス化の一環として、 `DialogFragment`、アクティビティから渡さ、 `Action<DateTime>`、日付に表示される、`TextView`アクティビティによってホストされています。
+これで、`DialogFragment`されました実装されると、このセクションではアクティビティで、フラグメントを使用する方法が確認されます。 このガイドに付属しているサンプル アプリで、アクティビティがインスタンスを作成、`DialogFragment`を使用して、`NewInstance`ファクトリ メソッドを呼び出すことを表示`DialogFragment.Show`します。 インスタンス化の一部として、 `DialogFragment`、アクティビティに渡します、`Action<DateTime>`で日付が表示されます、`TextView`アクティビティによってホストされています。
 
 ```csharp
 [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]
@@ -137,7 +137,7 @@ public class MainActivity : Activity
 
 ## <a name="summary"></a>まとめ
 
-このサンプルを表示する方法を説明した、 `DatePicker` Android アクティビティの一部としてポップアップのモーダル ダイアログ ボックスとしてウィジェット。 DialogFragment 実装のサンプルを提供し、説明、`IOnDateSetListener`インターフェイスです。 このサンプルでは、DialogFragment 可能性があります、ホストを選択した日付を表示するアクティビティと対話する方法も示されています。
+このサンプルを表示する方法を説明した、 `DatePicker` Android アクティビティの一部としてモーダル ポップアップ ダイアログとしてウィジェット。 DialogFragment 実装のサンプルを提供し、説明、`IOnDateSetListener`インターフェイス。 このサンプルでは、ホストを選択した日付を表示するアクティビティに、DialogFragment が対話する方法も示されています。
 
 
 ## <a name="related-links"></a>関連リンク
@@ -146,4 +146,4 @@ public class MainActivity : Activity
 - [DatePicker](https://developer.xamarin.com/api/type/Android.Widget.DatePicker/)
 - [DatePickerDialog](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog/)
 - [DatePickerDialog.IOnDateSetListener](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog+IOnDateSetListener/)
-- [日付を選択します。](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/android/controls/datepicker/select_a_date)
+- [日付を選択します。](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/datepicker/select_a_date)

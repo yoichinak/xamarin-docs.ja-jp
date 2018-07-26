@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Forms での依存関係の解決
-description: この記事では、アプリケーションの依存関係注入コンテナーがある構築およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法をについて説明します.
+description: この記事では、アプリケーションの依存関係注入コンテナーがある構築およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: b9e49d32dd4b0b02c742cd829eafabd1c55230f0
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203185"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242382"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
 
-_この記事では、アプリケーションの依存関係注入コンテナーがある構築およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法をについて説明します.コード例がから取得した、[依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)サンプル。_
+_この記事では、アプリケーションの依存関係注入コンテナーがある構築およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。コード例がから取得した、[依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)サンプル。_
 
 モデル-ビュー-ビューモデル (MVVM) パターンを使用して、Xamarin.Forms アプリケーションのコンテキストでは、依存関係の注入コンテナーを登録およびモデルの表示を解決するため、サービスを登録すると、ビュー モデルに挿入することに使用できます。 ビュー モデルの作成時に、コンテナーは、必要なすべての依存関係を挿入します。 これらの依存関係が作成されていない場合、コンテナーが作成し、最初の依存関係を解決します。 ビューのモデルへの依存関係の挿入の例など、依存関係の挿入の詳細については、次を参照してください。[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)します。
 
@@ -170,7 +170,7 @@ void RegisterTypes()
 }
 ```
 
-この例で、`App.RegisterTypeWithParameters`メソッド レジスタ、`VideoPlayerRenderer`依存関係注入コンテナーの登録方法のことを確認する、`MainActivity`として挿入されるインスタンス、`Context`引数とする、 `Logger`型として挿入される、`ILogger`引数。
+この例で、`App.RegisterTypeWithParameters`メソッド レジスタ、`VideoPlayerRenderer`依存関係の注入コンテナーでします。 登録方法により、`MainActivity`として挿入されるインスタンス、`Context`引数とする、`Logger`型として挿入される、`ILogger`引数。
 
 ### <a name="registering-effects"></a>効果を登録します。
 

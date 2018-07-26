@@ -1,26 +1,26 @@
 ---
-title: Xamarin.iOS のラベル
-description: このドキュメントでは、Xamarin.iOS でラベルを使用する方法について説明します。 これには、プログラムで iOS デザイナーを使用してラベルを作成する方法について説明します。
+title: Xamarin.iOS でのラベル
+description: このドキュメントでは、Xamarin.iOS でラベルを使用する方法について説明します。 これには、プログラムを使用して、iOS Designer では、ラベルを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 653c6cf8e7d0d3499402ec4f0d62cdd118707176
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b52bdbd41eaafbc5e6c78e1f8514b701fd78bd6b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789890"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241914"
 ---
-# <a name="labels-in-xamarinios"></a>Xamarin.iOS のラベル
+# <a name="labels-in-xamarinios"></a>Xamarin.iOS でのラベル
 
 `UILabel`コントロールが単一および複数の行を表示するための読み取り専用のテキスト。 
 
 ## <a name="implementing-a-label"></a>ラベルを実装します。
 
-新しいラベルがインスタンス化して作成された、 [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
+新しいラベルがインスタンス化によって作成された、 [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
 
 ```csharp
 UILabel label = new UILabel();
@@ -28,33 +28,33 @@ UILabel label = new UILabel();
 
 ### <a name="labels-and-storyboards"></a>ラベルとストーリー ボード
 
-IOS デザイナーを使用する場合を UI にラベルを追加することもできます。 検索**ラベル**で、**ツールボックス**し、ビューにドラッグします。
+IOS Designer を使用する場合に、UI ラベルを追加できます。 検索**ラベル**で、**ツールボックス**ビューにドラッグします。
 
-![[ツールボックス] 内のラベルします。](labels-images/image3.png)
+![ツールボックス内のラベルします。](labels-images/image3.png)
 
-プロパティ パッド上、次のプロパティを調整できます。
+プロパティ パッドで、次のプロパティを調整することができます。
 
 ![ラベルのプロパティ パネル](labels-images/image2.png)
 
-- **テキストのコンテキスト**-プレーン テキストまたは属性です。 プレーン テキストでは、設定することができます、[書式属性](#Formatting_Text_and_Label)文字列全体にします。 属性付きのテキストでは、別の文字または文字列内の単語に書式を設定することができます。
-- **色、フォント、アラインメント**– のラベルに適用できる書式設定の属性です。
-- **行**– 行数を設定、ラベルにまたがることができます。 この設定を必要に応じて多くの行を使用するラベルを許可する 0 にします。
-- **動作**– 有効] または [強調表示のいずれかに設定することができます。 有効になっている既定の設定、無効なテキストが表示されます明るいグレー色にします。 強調表示されている既定で無効にでき、ユーザーが選択されている強調表示された状態で再描画されるラベルです。
+- **テキストのコンテキスト**– プレーンまたは属性。 プレーン テキストでは、設定、[書式属性](#Formatting_Text_and_Label)文字列全体でします。 属性付きのテキストを別の文字または文字列内の単語の書式設定することができます。
+- **色、フォント、アラインメント**– ラベルに適用できる属性の書式設定します。
+- **行**– ラベルにまたがることができる行の数を設定します。 この設定を 0 に、必要に応じて多くの行を使用するラベルを許可します。
+- **動作**– 有効] または [反転表示されたに設定することができます。 有効になっている既定の設定を無効になっているテキストは明るいグレー色で表示されます。 強調表示されている既定で無効にでき、ユーザーが選択されている強調表示された状態で再描画されるラベル。
 - **Baselane と改行**– 
-    - ベースラインは、テキストがされる方法を決定フォント サイズが指定されたものと異なる場合に配置します。
-    - 改行は、文字列のラップまたはも 1 つの行を超える場合は切り捨てを決定します。
-- **Autoshrink** – 必要に応じて、ラベル内で、フォント サイズを最小化する方法を決定します。
-- **強調表示されている、影のオフセット**– 強調表示されて、影の色を設定することができ、影のオフセットします。
+    - ベースラインは、テキストがされる方法を決定します。 フォント サイズが指定されたものと異なる場合に配置します。
+    - 改行は、文字列のラップまたは 1 つの行より長い場合は切り捨てを決定します。
+- **Autoshrink** – 必要に応じて、ラベル内サイズのフォントの最小化する方法を決定します。
+- **強調表示、影のオフセット**: 強調表示されて、影の色を設定することができ、影のオフセットします。
 
-## <a name="truncating-and-wrapping"></a>切り捨てとラッピング
+## <a name="truncating-and-wrapping"></a>切り捨てと折り返し
 
-行の使用の詳細については、iOS で区切りを参照してください、 [Truncate およびテキストを折り返す](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/)レシピします。
+行の使用方法については、iOS で区切りを参照してください、[切り捨てし、テキストを折り返す](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text)レシピです。
 
 <a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>テキストとラベルの書式設定
 
-ラベルに使用する文字列の書式設定を設定するか、書式文字列全体で属性ことも属性付きの文字列を使用することができます。 次の例では、これらを実装する方法を示します。
+ラベルで使用する文字列書式設定文字列全体の属性を書式設定するか、または属性付きの文字列を使用することができます。 次の例では、これらを実装する方法を示します。
 
 ```csharp
 label = new UILabel(){
@@ -74,19 +74,19 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-スタイル設定のテキストを使用する方法について`NSAttributedString`を参照してください、[テキストのスタイル設定](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/style_text/)レシピします。
+スタイル設定を使用するテキストの詳細については`NSAttributedString`を参照してください、[テキストのスタイル設定](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)レシピです。
 
-ラベルが既定では、`Enabled`は true に設定に設定するには、可能な限り無効になっているユーザーに提供する、特定のコントロールが無効になっているヒント。
+ラベルが既定では、`Enabled`が true に設定に設定するには、可能な限り無効になっているユーザーに特定のコントロールが無効になっているヒントを指定します。
 
 ```csharp
 label.Enabled = false;
 ```
 
-IOS での制限の画面の次の例の画像に示すように、ラベルを明るいグレー色では、この設定します。
+IOS での制限の画面の次の図に示すように、ラベルを明るいグレー色では、この設定します。
 
 ![IOS で無効にされたボタン](labels-images/image1.png)
 
-他の効果のラベル テキストにシャドウと強調表示テキストの色を設定することもできます。
+ラベル テキストの追加の効果をシャドウと強調表示のテキストの色を設定することもできます。
 
 ```csharp
 label.Highlighted = true;
@@ -96,11 +96,11 @@ label.ShadowColor = UIColor.Black;
 label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 ```
 
-これには、次のようにテキストが表示されます。
+これには、このようなテキストが表示されます。
 
-![シャドウと強調表示をテキストに設定](labels-images/image4.png)
+![テキストの強調表示とシャドウ設定](labels-images/image4.png)
 
-UILabel のフォントを変更する方法の詳細についてを参照してください、 [、フォントの変更](https://developer.xamarin.com/recipes/ios/standard_controls/labels/change_the_font/)レシピします。
+UILabel のフォントを変更する方法の詳細についてを参照してください、 [、フォントの変更](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font)レシピです。
 
 
 
