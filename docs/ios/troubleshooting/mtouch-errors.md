@@ -2141,7 +2141,7 @@ BindAs 属性内の型にアタッチされているメンバーの種類に対�
 
 レジストラーでは、上記の種類間の変換はサポートされていません。
 
-これは、対象の API は、Xamarin.iOS; によって提供される場合の Xamarin.iOS のバグバグを送信してください[ http://bugzilla.xamarin.com ] [1]です。
+これは、対象の API は、Xamarin.iOS; によって提供される場合の Xamarin.iOS のバグバグを送信してください [http://bugzilla.xamarin.com][1]です。
 
 ネイティブ ライブラリ用のバインド プロジェクトの開発中に、これを実行する場合があれば型の新しい組み合わせのサポートを追加します。 大文字と小文字の場合は、拡張機能により要求を送信してください ([http://bugzilla.xamarin.com][2]) テストでケース テーブルとおを評価します。
 
@@ -2179,7 +2179,7 @@ BindAs 属性内の型にアタッチされているメンバーの種類に対�
 
 ### <a name="mt5106-could-not-compile-the-files--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5106: ファイルをコンパイルできませんでした ' *'。 バグ報告を送信してください。 http://bugzilla.xamarin.com
 
-これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 ### <a name="mt52xx-linking"></a>MT52xx: リンク
 
@@ -2338,7 +2338,7 @@ class MyImports {
 
 AOT コンパイラからの出力をリンクするときに、このエラーは報告されます。
 
-このエラーの最も可能性の高いは、Xamarin.iOS のバグを示します。 バグ報告を送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+このエラーの最も可能性の高いは、Xamarin.iOS のバグを示します。 バグ報告を送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT5217" />
 
@@ -2935,7 +2935,7 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、必要なメソッドを検索できませんでした。
 
-これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8012" />
 
@@ -2943,7 +2943,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
-これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8013" />
 
@@ -2951,7 +2951,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
-これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8014" />
 
@@ -2959,7 +2959,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
-これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8015" />
 
@@ -2967,7 +2967,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
-これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <a name="MT8016" />
 
@@ -2975,7 +2975,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に、�
 
 該当するメソッドの DelegateProxy 属性が正しくありません。
 
-これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[ http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
+これは通常 Xamarin.iOS; のバグを示しますバグを送信してください[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 <!-- 8017 is used by mmp -->
 
