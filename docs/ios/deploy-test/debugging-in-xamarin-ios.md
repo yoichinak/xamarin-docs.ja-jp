@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4b21a69e49c8c7fd79de8edac9858c4714657f1c
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785435"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242317"
 ---
 # <a name="debugging-xamarinios-apps"></a>Xamarin.iOS アプリのデバッグ
 
@@ -30,7 +30,7 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 ## <a name="setting-breakpoints"></a>ブレークポイントの設定
 
-アプリケーションのデバッグを始める準備ができたら、まずアプリケーションの[ブレークポイントを設定](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)します。 エディターの余白領域で、ブレークポイントにするコードの行番号の隣をクリックします。
+アプリケーションのデバッグを始める準備ができたら、まずアプリケーションの[ブレークポイントを設定](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)します。 エディターの余白領域で、ブレークポイントにするコードの行番号の隣をクリックします。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -121,7 +121,7 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio 2015 で条件付きブレークポイントを設定するには、最初に[普通のブレークポイントを設定](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)します。 そのブレークポイントを右クリックし、コンテキスト メニューを表示します。
+Visual Studio 2015 で条件付きブレークポイントを設定するには、最初に[普通のブレークポイントを設定](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)します。 そのブレークポイントを右クリックし、コンテキスト メニューを表示します。
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "ブレークポイント コンテキスト メニュー")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
@@ -241,6 +241,6 @@ Visual Studio でクラス ライブラリをデバッグするには、_[デバ
 
 - [Xamarin を使ったデバッグ](/visualstudio/mac/debugging/)
 - [データの視覚化](/visualstudio/mac/data-visualizations/)
-- [ブレークポイントの設定](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)
-- [コードのステップ実行](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)
-- [ログ ウィンドウに情報を出力する](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)
+- [ブレークポイントの設定](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
+- [コードのステップ実行](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
+- [ログ ウィンドウに情報を出力する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)

@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7eff7f4413b533caadcf2aa8b5eed8c4ab65449d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996234"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242226"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms の詳細
 
@@ -79,7 +79,7 @@ Visual Studio for Mac は、コードを*ソリューション*と*プロジェ�
 - **MainPage.xaml.cs**: `MainPage` クラスの分離コード。ユーザーがページを操作したときに実行されるビジネス ロジックが含まれています。
 - **PhoneTranslator.cs**: フォン ワード (電話のボタンに印字されている英数字を使った単語) を電話番号に変換する処理を担当するビジネス ロジックです。**MainPage.xaml.cs** から呼び出します。
 
-Xamarin.iOS アプリケーションの構造については、「[Anatomy of a Xamarin.iOS Application](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy)」(Xamarin.iOS アプリケーションの構造) を参照してください。 Xamarin.Android アプリケーションの構造については、「[Anatomy of a Xamarin.Android Application](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy)」(Xamarin.Android アプリケーションの構造) を参照してください。
+Xamarin.iOS アプリケーションの構造については、「[Anatomy of a Xamarin.iOS Application](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy-of-a-xamarinios-application)」(Xamarin.iOS アプリケーションの構造) を参照してください。 Xamarin.Android アプリケーションの構造については、「[Anatomy of a Xamarin.Android Application](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy)」(Xamarin.Android アプリケーションの構造) を参照してください。
 
 ## <a name="architecture-and-application-fundamentals"></a>アーキテクチャとアプリケーションの基礎
 
@@ -325,7 +325,7 @@ Xamarin.Forms 用 Phoneword アプリケーションは、このガイドでは�
 
 ## <a name="testing-and-deployment"></a>テストと展開
 
-Visual Studio for Mac と Visual Studio のいずれも、アプリケーションをテストおよび展開するためのオプションを多数用意しています。 アプリケーションのデバッグは、アプリケーション開発ライフサイクルの一般的な部分であり、コードの問題を診断するときに役立ちます。 詳細については、「[Set a Breakpoint](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)」(ブレークポイントの設定)、「[Step Through Code](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)」(コードのステップ スルー)、「[Output Information to the Log Window](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)」(ログ ウィンドウへの出力情報) を参照してください。
+Visual Studio for Mac と Visual Studio のいずれも、アプリケーションをテストおよび展開するためのオプションを多数用意しています。 アプリケーションのデバッグは、アプリケーション開発ライフサイクルの一般的な部分であり、コードの問題を診断するときに役立ちます。 詳細については、「[Set a Breakpoint](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)」(ブレークポイントの設定)、「[Step Through Code](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)」(コードのステップ スルー)、「[Output Information to the Log Window](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)」(ログ ウィンドウへの出力情報) を参照してください。
 
 シミュレーターは、アプリケーションの展開とテストを始めるにはおすすめの場所です。また、テスト アプリケーションに役立つ機能があります。 ただし、ユーザーは完成したアプリケーションをシミュレーター上では使用しないので、早期に、そして何度も実際のデバイス上でアプリケーションをテストすることをお勧めします。 iOS デバイスのプロビジョニングの詳細については、「[Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md)」(デバイスのプロビジョニング) を参照してください。 Android デバイスのプロビジョニングの詳細については、「[Set Up Device for Development](~/android/get-started/installation/set-up-device-for-development.md)」(開発用のデバイスの設定) を参照してください。
 

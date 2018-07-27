@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: f62842c3b2aea93d28303b7f47c5d50df6381387
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3aa70469c5916a22a22d7857c62a4b46c1637124
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998428"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242421"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: 詳細説明
 
@@ -302,7 +302,7 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 
 ### <a name="debugging-tools"></a>デバッグ ツール
 
-アプリケーション コード内の問題の診断は困難なことがあります。 複雑なコードの問題の診断に役立てるために、[ブレークポイントを設定する](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)、[コードのステップを実行する](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)、または[ログ ウィンドウに情報を出力する](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)ことができます。
+アプリケーション コード内の問題の診断は困難なことがあります。 複雑なコードの問題の診断に役立てるために、[ブレークポイントを設定する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)、[コードのステップを実行する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)、または[ログ ウィンドウに情報を出力する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)ことができます。
 
 
 ### <a name="deploy-to-a-device"></a>デバイスを展開する
