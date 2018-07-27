@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242382"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270489"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
 
@@ -111,7 +111,7 @@ public partial class App : Application
 
 プラットフォームのプロジェクトから次の種類の登録、`IContainer`呼び出すことによって実現されるオブジェクトを構築する必要があります、`BuildContainer`メソッド。 このメソッドは Autofac の`Build`メソッドを`ContainerBuilder`インスタンスで、行われた登録を含む新しい依存関係注入コンテナーをビルドします。
 
-次のセクションで、`Logger`を実装するクラス、`ILogger`インターフェイス、クラスのコンス トラクターに挿入されます。 `Logger`クラス実装の簡単なログ記録機能を使用して、`Debug.WriteLine`メソッド、カスタム レンダラーでは、特殊効果にサービスを挿入する方法をデモンストレーションするために使用して、 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装します。
+次のセクションで、`Logger`を実装するクラス、`ILogger`インターフェイスはクラスのコンス トラクターに挿入されます。 `Logger`クラス実装の簡単なログ記録機能を使用して、`Debug.WriteLine`メソッド、カスタム レンダラーでは、特殊効果にサービスを挿入する方法をデモンストレーションするために使用して、 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装します。
 
 ### <a name="registering-custom-renderers"></a>カスタム レンダラーを登録します。
 
