@@ -6,6 +6,7 @@
 ## [アプリケーションの基礎](app-fundamentals/index.md)
 ### [ユーザー補助](app-fundamentals/accessibility.md)
 ### [一般的なパターンと成句](app-fundamentals/patterns.md)
+### [コンソール アプリ](app-fundamentals/console.md)
 ### [macOS API](app-fundamentals/mac-apis.md)
 ### [.xib ファイル](app-fundamentals/xib.md)
 ### [.storyboard/.xib-less ユーザー インターフェイスの設計](app-fundamentals/xibless-ui.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b6168eba91a87af88891b9e07e3dd395301cc48
+ms.sourcegitcommit: 021027b78cb2f8061b03a7c6ae59367ded32d587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785613"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182209"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Instruments を使用した Xamarin.iOS アプリケーションのプロファイリング
 
@@ -27,11 +27,11 @@ Xcode Instruments は Mac でのみ実行されます。
 
 デバイスを選択し、Instruments アプリを実行します。
 
-1.  Visual Studio for Mac で Xamarin.iOS プロジェクトを開きます。
-2.  **[Debug|iPhone]\(デバッグ|iPhone\)** 構成を選択します。
-3.  iOS デバイスをコンピューターに接続します。
-4.  **[実行]** メニューで **[デバイスにアップロード]** を選択します。 これでアプリケーションがビルドされ、デバイスにアップロードされます。
-5.  **[ツール]** メニューで、**[Instruments の起動]** を選択します。
+1. Visual Studio for Mac で Xamarin.iOS プロジェクトを開きます。
+2. **[Debug|iPhone]\(デバッグ|iPhone\)** 構成を選択します。
+3. iOS デバイスをコンピューターに接続します。
+4. **[実行]** メニューで **[デバイスにアップロード]** を選択します。 これでアプリケーションがビルドされ、デバイスにアップロードされます。
+5. **[ツール]** メニューで、**[Instruments の起動]** を選択します。
 
 
 Instruments が開き、次のダイアログが表示されます。
@@ -65,4 +65,4 @@ Instruments が開き、次のダイアログが表示されます。
 ## <a name="related-links"></a>関連リンク
 
 - [Instruments のチュートリアル](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Xamarin.iOS ガベージ コレクション](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)
+- [Xamarin.iOS ガベージ コレクション (ブログ記事)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

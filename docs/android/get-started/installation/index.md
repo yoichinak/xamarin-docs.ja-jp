@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 5991c907b85188581db105a8db9d17460954f56f
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935491"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241416"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
@@ -38,3 +38,7 @@ Visual Studio には、Google のスタンドアロン Android SDK Manager の�
 ## <a name="android-device-setupandroidget-startedinstallationset-up-device-for-developmentmd"></a>[Android デバイスのセットアップ](~/android/get-started/installation/set-up-device-for-development.md)
 
 この記事では、デバイスを Xamarin.Android アプリケーションの実行とデバッグに使用できるように、物理 Android デバイスを設定して開発用のコンピューターに接続する方法について説明します。
+
+## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft OpenJDK のプレビュー](~/android/get-started/installation/openjdk.md)
+
+このガイドでは、Microsoft が配布する OpenJDK のプレビュー リリースに切り替えるための手順が説明されています。
