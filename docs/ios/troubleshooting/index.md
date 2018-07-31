@@ -1,28 +1,29 @@
 ---
 title: Xamarin.iOS のトラブルシューティング
-description: このドキュメントは、よく寄せられる質問とトラブルシューティング情報については、Xamarin.iOS、Xamarin.iOS アプリケーションを構築するときに潜在的なエラーの一覧を提供するさまざまなリソースをリンクしています。
+description: このドキュメントは、Xamarin.iOS、Xamarin.iOS アプリケーションを構築するときに、潜在的なエラーの一覧のトラブルシューティング情報を提供し、よく寄せられる質問のさまざまなリソースをリンクしています。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 1DE5E667-A671-47CE-A0AC-F0D8B00ACFCE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5ba0da3ffaf7c4a3e8b5dbb439e01385406f9e0c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/27/2018
+ms.openlocfilehash: cc8ac2c1492388723cb13c81bd72114c6b0df43c
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788505"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351045"
 ---
 # <a name="troubleshooting-xamarinios"></a>Xamarin.iOS のトラブルシューティング
 
-##  <a name="troubleshootingiostroubleshootingtroubleshootingmd"></a>[トラブルシューティング](~/ios/troubleshooting/troubleshooting.md)
+## <a name="troubleshootingiostroubleshootingtroubleshootingmd"></a>[トラブルシューティング](~/ios/troubleshooting/troubleshooting.md)
 
 トラブルシューティングのヒントとテクニック
 
-##  <a name="xamarinios-errorsiostroubleshootingmtouch-errorsmd"></a>[Xamarin.iOS エラー](~/ios/troubleshooting/mtouch-errors.md)
+## <a name="xamarinios-errorsiostroubleshootingmtouch-errorsmd"></a>[Xamarin.iOS のエラー](~/ios/troubleshooting/mtouch-errors.md)
 
-Mac を Visual Studio で Xamarin.iOS を使用する場合に発生する可能性が最も一般的なエラーを示すエラー リファレンス ガイド
+Xamarin.iOS を Visual studio for Mac を使用する場合に発生する可能性が最も一般的なエラーを示すエラーのリファレンス ガイド
 
 ## <a name="frequently-asked-questionsquestionsindexmd"></a>[よく寄せられる質問](questions/index.md)
 

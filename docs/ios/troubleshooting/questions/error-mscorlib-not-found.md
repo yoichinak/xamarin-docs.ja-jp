@@ -1,19 +1,20 @@
 ---
-title: '実行時エラー: アセンブリ mscorlib.dll が見つからなかったか、読み込めませんでした'
+title: '実行時エラー: アセンブリ mscorlib.dll が見つからないか、読み込めませんでした'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 1027E16C-2C14-4BB5-AAAB-342F3E28E22E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 1470396e782fd2343de72e9bea042f45cd07e555
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 3510ccafed3ed1b57d8ecd1b99ee8d10f952c57c
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30778423"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350889"
 ---
-# <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>実行時エラー: アセンブリ mscorlib.dll が見つからなかったか、読み込めませんでした
+# <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>実行時エラー: アセンブリ mscorlib.dll が見つからないか、読み込めませんでした
 
 ```
 <Warning>: The assembly mscorlib.dll was not found or could not be loaded.
@@ -21,5 +22,5 @@ ms.locfileid: "30778423"
 <Warning>: Service exited with abnormal code: 1
 ```
 
-この問題が発生したときに、*非表示*`.monotouch-32`と`.monotouch-64`フォルダーが見つかりません、`.xcarchive`の署名/IPA 作成、実行時エラーをトリガーします。
+この問題が発生したときに、*隠し*`.monotouch-32`と`.monotouch-64`フォルダーが見つかりません、`.xcarchive`の署名/IPA の作成、実行時エラーをトリガーします。
 

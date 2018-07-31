@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 07/16/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: fc4f851d25837690cd3412ca142a52b1312a08b3
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d78c0e52b96403ad27a7c5ac69a367746781b589
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270203"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351744"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>モバイル ソリューションを提供するコンサルティング パートナーの認定
 
@@ -112,6 +112,7 @@ _プライマリの場所で表示されている、多くのパートナーは�
 |[Interknowlogy](http://www.interknowlogy.com/)|サンディエゴ, CA, USA|カスタム アプリの開発の世界的リーダー、InterKnowlogy がタッチ ジェスチャや音声を介して接続されているエクスペリエンスを提供する既存および新種のテクノロジーを活用します。|
 |[Intouch ソリューション](http://www.intouchsol.com )|Overland パーク, KS, USA;ロンドン (英国)。Chicago, IL, USA;New York, NY, USA|製薬および医療領域内で先頭するデジタル エージェンシーしています|
 |[iTexico](http://www.itexico.com)|米国テキサス州オースティンにある州|iTexico は企業で、プロジェクト全体でモバイル開発の支援に重点を置いたグローバル ソフトウェア テクノロジ企業 ' nearshore アウトソーシングを通じて Äôs ライフ サイクルです。|
+|[JBS](https://www.jbssolutions.com)|ペンシルベニア州 (米国)|JBS は、カスタム ソフトウェア ソリューション プロバイダーです。|
 |[Kaonsoft](http://www.kaonsoft.net/)|Palo Alto, CA, USA;Chicago, IL, USA;Toledo, OH, USA;Seongnam si Gyeonggi do (韓国)|Kaonsoft とは、アプリケーションを作成するエンタープライズ モビリティのクロス プラットフォームの完全なエンド ツー エンド ソリューションを提供する革新的なソフトウェア会社です。|
 |[Katalyst Technologies inc. ](http://www.katalysttech.com )|Evanston, IL, USA;アトランタ、GA、USA;ムンバイ、インド、マハラシュトラ;ハイデラバード、Telangana (インド)。プネ、マハラシュトラ (インド)|Katalyst、テクノロジがイネーブラーを本当と考えています。 主要な企業がだけでなくを信頼している理由を提供する製品とサービスも、企業にまたがる、インパクトのあるカスタマイズされたソリューションを通じて、コア ビジネスの動作を変更します。|
 |[Kleio Technology LLC](http://kleiotechnology.com)|Royal Palm ビーチ、FL|これまでに取り組んでいます、教育、ブランド、および Id。 クライアントのビジネス上の問題を調査設計、UX、およびコンテンツの戦略で問題に対処します。 クライアントのニーズに到達し、収益性の高い、名刺を支援します。|

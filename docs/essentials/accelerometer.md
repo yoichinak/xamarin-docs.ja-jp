@@ -5,12 +5,12 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: b5a24e214eb129b4d53b94586632791c8827447b
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947310"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353842"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: 加速度計
 
@@ -33,7 +33,7 @@ using Xamarin.Essentials;
 public class AccelerometerTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public AccelerometerTest()
     {
@@ -41,7 +41,7 @@ public class AccelerometerTest
         Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
     }
 
-    void Accelerometer_ReadingChanged(AccelerometerChangedEventArgs e)
+    void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
     {
         var data = e.Reading;
         Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
@@ -81,7 +81,7 @@ X 軸は水平方向と、右側にポイントして、Y 軸は縦方向上を�
 
 * 高速化の値は +1.00 G でフラット テーブルで、デバイスがある場合または (9.81 m/s + ^2)、対応デバイスの高速化する (0 m/秒 ^2) 重力の force マイナス (-9.81 m/秒 ^2) と G. のように正規化されました。
 
-* デバイスが平らなテーブル上にあるし、高速化の m/秒の空の方に移動されますが ^2 の高速化の値は、デバイスの高速化に対応する A + 9.81 と等しく (+ m/s ^2) 重力の force マイナス (-9.81 m/秒 ^2) と G. で正規化されました。 
+* デバイスが平らなテーブル上にあるし、高速化の m/秒の空の方に移動されますが ^2 の高速化の値は、デバイスの高速化に対応する A + 9.81 と等しく (+ m/s ^2) 重力の force マイナス (-9.81 m/秒 ^2) と G. で正規化されました。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

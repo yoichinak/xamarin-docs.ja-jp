@@ -1,63 +1,64 @@
 ---
-title: Google Play の統合サービスのコンポーネントと NuGet
+title: Google Play の統合サービス コンポーネントと NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: cfd417f4fc01b07b4334259c45472eb24b73abd8
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/08/2018
+ms.openlocfilehash: 3f5c5f75ae1c7a44537afa59ff4a15d54b1df50b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919873"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351484"
 ---
-# <a name="unifying-google-play-services-components-and-nuget"></a>Google Play の統合サービスのコンポーネントと NuGet
+# <a name="unifying-google-play-services-components-and-nuget"></a>Google Play の統合サービス コンポーネントと NuGet
 
-### <a name="history"></a>履歴
+## <a name="history"></a>履歴
 
-Google プレイ サービス コンポーネントと NuGet パッケージのいくつかにするために使用があります。
+いくつかの Google Play Services のコンポーネントと NuGet パッケージを使用してがあります。
 
--   Google Play サービス (Froyo)
--   Google Play サービス (ジンジャーブレッド)
--   Google Play サービス (ICS)
--   Google Play サービス (JellyBean)
--   Google Play サービス (KitKat)
+-   Google play 開発者サービス (Froyo)
+-   Google play 開発者サービス (Gingerbread)
+-   Google play 開発者サービス (ICS)
+-   Google play 開発者サービス (JellyBean)
+-   Google play 開発者サービス (KitKat)
 
-Google Play サービス用の Google 実際にのみ付属 2 .jar ファイルします。
+Google play 開発者サービス用の Google のみを実際には、2 つ .jar ファイルします。
 
 -   `google-play-services-froyo.jar`
 -   `google-play-services.jar`
 
-このツールは紹介しませんでした正しくためでは、不一致が存在していた`aapt.exe`が特定のアプリをするための最大リソース API レベルです。 これは、ため、ジンジャーブレッドと同様より低い API レベルで Google Play サービス (KitKat) バインドを使用しようとした場合は、コンパイル エラーを受け取りました。
+このツールは紹介しませんでした正しくため不一致が存在して`aapt.exe`API レベルのリソースを最大限が、特定のアプリに使用します。 つまり、Gingerbread のような下位 API レベルの Google play 開発者サービス (KitKat) バインドを使用しようとすると、コンパイル エラーを受信しました。
 
-### <a name="unifying-google-play-services"></a>Google Play サービスの統合
+## <a name="unifying-google-play-services"></a>Google Play Services の統合
 
-Xamarin.Android のより新しいバージョンは、今すぐ通知`aapt.exe`うえでこの問題がなくなるため、使用するリソースの最大バージョン。
+最近のバージョンの Xamarin.Android では、ここで言って`aapt.exe`のため、この問題が私たちを使用するには、どのようなリソースの最大バージョン。
 
-つまりはありませんジンジャーブレッド/ICS/JellyBean/KitKat (ただし行う必要があります、個別のバインディング Froyo のまったく異なる .jar ファイルであるため) 用に別々 のパッケージを本当の理由。
+これは、ことはありません Gingerbread/ICS/JellyBean/KitKat (ただし行う必要があります、個別のバインド (Froyo 用) まったく異なる .jar ファイルであるため) 用に個別のパッケージを本当の理由。
 
-わかりやすくするための開発者、おした統合され、マイクロソフトのコンポーネントと NuGet パッケージを 2 つに。
+わかりやすくするための開発者、おした統合され、コンポーネントと NuGet パッケージを 2 つに。
 
--   Google Play サービス (Froyo) (バインド`google-play-services-froyo.jar`)
--   Google Play サービス (バインド`google-play-services.jar`)
+-   Google play 開発者サービス (Froyo) (バインド`google-play-services-froyo.jar`)
+-   Google play 開発者サービス (バインド`google-play-services.jar`)
 
 ### <a name="which-one-should-be-used"></a>どれを使用する必要がありますか。
 
-ほぼすべてのケースでは、Google Play サービスを使用してください。 (Froyo) パッケージを使用する唯一の理由は、Froyo は積極的に対象とするかどうかです。 Google からこの個別の .jar ファイルが存在する唯一の理由が Froyo がデバイスのほんの一部であるので、自体にこの .jar ファイルが Google Play サービスの固定された、サポートされていないスナップショットであるため、サポートを停止しました。
+ほとんどの場合、Google play 開発者サービスを使用する必要があります。 (Froyo) パッケージを使用する唯一の理由は、Froyo は積極的に対象とするかどうかです。 Google からこの個別の .jar ファイルが存在する唯一の理由が Froyo がデバイスのごく一部であるので、自分にこの .jar ファイルが Google play 開発者サービスの固定された、サポートされていないスナップショットであるため、サポートを停止しました。
 
-### <a name="note-about-gingerbread"></a>ジンジャーブレッドに関する注意事項
+### <a name="note-about-gingerbread"></a>Gingerbread に関する注意事項
 
-ジンジャーブレッドには、フラグメントが既定では、サポートはありません。 とこのため、バインディング内のクラスの一部はされませんジンジャーブレッド デバイス上で実行時、アプリで使用できるようにします。 クラスに`MapFragment`ジンジャーブレッドでが動作しなくなり、そのサポート バリアントを代わりに使用する必要があります`SupportMapFragment`です。 開発者は次のトピックを使用することです。 この非互換性は、Google からの Google Play サービス ドキュメントに記録されます。
+Gingerbread には、フラグメントが既定では、サポートはありません。 このため、一部のバインディングのクラスは役に立ちません Gingerbread デバイス上で実行時、アプリで. クラスのような`MapFragment`Gingerbread では動作しないと、サポートのバリアントを代わりに使用する必要があります`SupportMapFragment`します。 開発者が使用するバージョンの確認です。 この非互換性は、Google によって、Google Play Services のドキュメントに記録されます。
 
-### <a name="what-happens-to-the-old-componentsnugets"></a>古いコンポーネント/NuGet への対処方法
+### <a name="what-happens-to-the-old-componentsnugets"></a>古いコンポーネント/NuGet の動作
 
-必要なくなりましたのでおある Delisted/無効になっている次のコンポーネント/NuGets:
+必要がなくなったらためにある無効/Delisted 次のコンポーネント/NuGets:
 
--   Google Play サービス (ジンジャーブレッド)
--   Google Play サービス (JellyBean)
--   Google Play サービス (KitKat)
+-   Google play 開発者サービス (Gingerbread)
+-   Google play 開発者サービス (JellyBean)
+-   Google play 開発者サービス (KitKat)
 
-既存の_Google プレイ サービス (ICS)_ コンポーネント/Nuget の名前は_Google Play サービス_最新今後で保持されるとします。 この 1 つを使用するには、無効化/Delisted パッケージの 1 つを参照するすべてのプロジェクトを更新する必要があります。
+既存の_Google Play サービス (ICS)_ /Nuget コンポーネントの名前は_Google play 開発者サービス_と最新将来的に保持されます。 この 1 つを使用する無効/Delisted パッケージの 1 つを参照するすべてのプロジェクトを更新する必要があります。
 
-無効になっているコンポーネントがまだ存在し、それらを破損しないようにするでは、参照いるプロジェクトの復元可能な必要があります。 同様に delisted NuGet パッケージは引き続き存在し、復元することができます。 これらは更新されません前方に移動します。
+無効になっているコンポーネントがまだ存在し、それらを回避するために、参照がプロジェクトの復元を可能にする必要があります。 同様に、delisted NuGet パッケージは引き続き存在し、復元することができます。 これらは更新されません今後します。

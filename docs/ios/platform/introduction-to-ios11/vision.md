@@ -1,47 +1,47 @@
 ---
 title: Xamarin.iOS でビジョン フレームワーク
-description: このドキュメントは、iOS 11 を使用する方法を説明 Xamarin.iOS でビジョン フレームワークです。 具体的には、四角形の検出についても説明し、検出に直面しています。
+description: このドキュメントは、iOS 11 を使用する方法を説明します。 Xamarin.iOS でビジョン フレームワーク。 四角形の検出について具体的には、説明や、顔検出します。
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/31/2016
-ms.openlocfilehash: c44c4b3ab12c1ba448f1befb6f831f5ad9119f18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/31/2017
+ms.openlocfilehash: 4746de2f351e866fd72946b204f97e997c3e88c4
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787420"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350665"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin.iOS でビジョン フレームワーク
 
-ビジョン フレームワークは、新しいイメージが iOS を含む 11 の機能を処理の数を追加します。
+ビジョン フレームワークは、さまざまな処理機能を iOS 11 を含む新しいイメージを追加します。
 
 - [四角形の検出](#rectangles)
-- [顔の検出](#faces)
-- 機械学習画像分析 (で説明した[CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
+- [顔検出](#faces)
+- Machine Learning の画像の分析 (で説明した[CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
 - バーコードの検出
 - イメージの配置の分析
 - テキストの検出
 - 水平線の検出
-- オブジェクトの検出および追跡
+- オブジェクトの検出と追跡
 
-![検出された 3 つの四角形を写真します。](vision-images/found-rectangles-tiny.png) ![検出された 2 つの面での写真します。](vision-images/xamarin-home-faces-tiny.png)
+![検出された 3 つの四角形を写真します。](vision-images/found-rectangles-tiny.png) ![検出された 2 つの顔を写真します。](vision-images/xamarin-home-faces-tiny.png)
 
-四角形の検出と顔の検出で詳しく説明します。
+四角形の検出と顔検出については、以下で詳しく説明します。
 
 <a name="rectangles" />
 
 ## <a name="rectangle-detection"></a>四角形の検出
 
-[VisionRects サンプル](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)イメージを処理し、それに検出された四角形を描画する方法を示します。
+[VisionRects サンプル](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)イメージを処理し、検出された四角形を描画する方法を示します。
 
-### <a name="1-initialize-the-vision-request"></a>1.ビジョン要求を初期化します。
+### <a name="1-initialize-the-vision-request"></a>1.ビジョンの要求を初期化します。
 
 `ViewDidLoad`、作成、`VNDetectRectanglesRequest`を参照する、`HandleRectangles`要求ごとの最後に呼び出されるメソッド。
 
-`MaximumObservations`プロパティを設定することも、それ以外の場合、既定値は 1 および 1 つの結果のみが返されます。
+`MaximumObservations`プロパティも設定する必要がありますを 1 に既定では、それ以外の場合、単一の結果のみが返されます。
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
@@ -50,7 +50,7 @@ RectangleRequest.MaximumObservations = 10;
 
 ### <a name="2-start-the-vision-processing"></a>2.ビジョンの処理を開始します。
 
-次のコードでは、要求の処理を開始します。 **VisionRects**サンプルをユーザーがイメージを選択した後、このコードが実行されます。
+次のコードでは、要求の処理を開始します。 **VisionRects**サンプルでは、ユーザーがイメージを選択した後、このコードが実行されます。
 
 ```csharp
 // Run the rectangle detector
@@ -62,9 +62,9 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 
 このハンドラーは、`ciImage`ビジョン framework`VNDetectRectanglesRequest`手順 1. で作成されました。
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3.ビジョン処理の結果を処理します。
+### <a name="3-handle-the-results-of-vision-processing"></a>3.ビジョンの処理の結果を処理します。
 
-四角形の検出が完了したら、フレームワークが実行される、`HandleRectangles`メソッドの概要を次に示します。
+四角形の検出が完了すると、フレームワークは、実行、`HandleRectangles`メソッドのうちの概要を次に示します。
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -86,30 +86,30 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4.結果を表示します。
+### <a name="4-display-the-results"></a>4.結果を表示します
 
 `OverlayRectangles`メソッドで、 **VisionRectangles**サンプルでは、3 つの関数。
 
 - ソース イメージのレンダリング
-- 1 つずつが検出されたを示すために四角形を描画し、
+- それぞれが検出されたかを示す四角形を描画し、
 - CoreGraphics を使用して各四角形のテキスト ラベルを追加します。
 
-ビュー、[サンプルのソース](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)正確な CoreGraphics メソッドです。
+ビュー、[サンプルのソース](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)の正確な CoreGraphics メソッド。
 
 ![検出された 3 つの四角形を写真します。](vision-images/found-rectangles-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5.さらに処理します。
 
-四角形の検出は多くの場合、操作のチェーン内の第一歩にすぎませんなどで[この CoreMLVision 例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)、四角形が手書きの桁を解析する CoreML モデルに渡しています。
+四角形の検出は、多くの場合、操作のチェーンの最初の手順だけなどで[この CoreMLVision 例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)、四角形が手書き数字を解析する CoreML モデルに渡しています。
 
 
 <a name="faces" />
 
-## <a name="face-detection"></a>顔の検出
+## <a name="face-detection"></a>顔検出
 
-[VisionFaces サンプル](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)と同様の方法で動作、 **VisionRectangles**サンプルは、異なるビジョン要求クラスを使用します。
+[VisionFaces サンプル](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)と同様の方法で動作、 **VisionRectangles**サンプリングには、さまざまなビジョン要求クラスを使用します。
 
-### <a name="1-initialize-the-vision-request"></a>1.ビジョン要求を初期化します。
+### <a name="1-initialize-the-vision-request"></a>1.ビジョンの要求を初期化します。
 
 `ViewDidLoad`、作成、`VNDetectFaceRectanglesRequest`を参照する、`HandleRectangles`要求ごとの最後に呼び出されるメソッド。
 
@@ -131,9 +131,9 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 
 このハンドラーは、`ciImage`ビジョン framework`VNDetectFaceRectanglesRequest`手順 1. で作成されました。
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3.ビジョン処理の結果を処理します。
+### <a name="3-handle-the-results-of-vision-processing"></a>3.ビジョンの処理の結果を処理します。
 
-ハンドラーが実行される顔の検出が完了した後、`HandleRectangles`エラー処理を実行し、検出された面、および呼び出しの境界を表示する方法、`OverlayRectangles`元の画像に外接する四角形を描画します。
+ハンドラーが実行される顔の検出が完了すると、`HandleRectangles`エラー処理を実行し、検出された顔と呼び出しの境界を表示するメソッド、`OverlayRectangles`元の画像に外接する四角形を描画します。
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -160,25 +160,25 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4.結果を表示します。
+### <a name="4-display-the-results"></a>4.結果を表示します
 
 `OverlayRectangles`メソッドで、 **VisionFaces**サンプルでは、3 つの関数。
 
 - ソース イメージのレンダリング
-- 検出されると、各フォント フェイスの四角形を描画し、
-- CoreGraphics を使用して各フォント フェイスのテキスト ラベルを追加します。
+- 顔が検出されると、各四角形を描画し、
+- 各面 CoreGraphics を使用してテキスト ラベルを追加します。
 
-ビュー、[サンプルのソース](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)正確な CoreGraphics メソッドです。
+ビュー、[サンプルのソース](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)の正確な CoreGraphics メソッド。
 
-![検出された 2 つの面での写真します。](vision-images/found-faces-phone-sml.png)
+![検出された 2 つの顔を写真します。](vision-images/found-faces-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5.さらに処理します。
 
-ビジョン フレームワークには、目と口などの顔の機能を検出するためにその他の機能が含まれています。 使用して、`VNDetectFaceLandmarksRequest`を返す型`VNFaceObservation`結果、上記の手順 3 と同様に、追加された`VNFaceLandmark`データ。
+ビジョン フレームワークには、口目など、顔の機能を検出する追加の機能が含まれています。 使用して、`VNDetectFaceLandmarksRequest`を返しますの種類`VNFaceObservation`結果、上記の手順 3 のように、追加`VNFaceLandmark`データ。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビジョン四角形 (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
+- [ビジョンの四角形 (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
 - [ビジョン面 (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
-- [強化され、Core のイメージのフィルター、金属、ビジョン、および複数 (WWDC) (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/510/)
+- [Core のイメージのフィルター、金属、ビジョン、およびより (WWDC) (ビデオ) の進歩](https://developer.apple.com/videos/play/wwdc2017/510/)

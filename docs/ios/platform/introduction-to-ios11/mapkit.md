@@ -1,41 +1,41 @@
 ---
-title: IOS 11 で MapKit の新機能
-description: IOS 11 MapKit の新機能について説明します。 マーカー、コンパス ボタン、スケール ビュー、およびユーザーの追跡 ボタンをグループ化します。
+title: IOS 11 での MapKit の新機能
+description: このドキュメントは、iOS 11 での MapKit の新機能を説明します。 マーカー、コンパスのボタン、スケール ビュー、およびユーザーの追跡 ボタンをグループ化します。
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: f73078a2dcbaeefeb5608ce7ec1e2c12b261acad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: c060a7bbc8d5968aeaca5f84743cdf22513dfbec
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787407"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350587"
 ---
-# <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 で MapKit の新機能
+# <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 での MapKit の新機能
 
-iOS 11 では、MapKit に次の新機能を追加します。
+iOS 11 では、MapKit に次の新機能が追加されます。
 
-- [クラスタ リング注釈](#clustering)
+- [注釈のクラスタ リング](#clustering)
 - [コンパス ボタン](#compass)
-- [スケールの表示](#scale)
+- [スケール ビュー](#scale)
 - [ユーザーの追跡 ボタン](#user-tracking)
 
-![クラスター化されたマーカーの表示をマップし、コンパス ボタン](mapkit-images/cyclemap-heading.png)
+![クラスター化されたマーカーを示すマップし、コンパス ボタン](mapkit-images/cyclemap-heading.png)
 
 <a name="clustering" />
 
-## <a name="automatically-grouping-markers-while-zooming"></a>拡大表示中に自動的にグループ化マーカー
+## <a name="automatically-grouping-markers-while-zooming"></a>ズーム中に自動的にグループ化マーカー
 
-サンプル[MapKit サンプル"Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)新しい iOS 11 注釈がクラスタ リング機能を実装する方法を示します。
+サンプル[MapKit サンプル"Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)新しい iOS 11 注釈がクラスタ リング機能を実装する方法を示しています。
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1.作成、`MKPointAnnotation`サブクラス
 
-ポイント注釈クラスでは、マップ上の各マーカーを表します。 使用して個別に追加できる`MapView.AddAnnotation()`または使用して、配列から`MapView.AddAnnotations()`です。
+Point 注釈クラスは、マップ上の各マーカーを表します。 使用して個別に追加できる`MapView.AddAnnotation()`またはを使用して、配列から`MapView.AddAnnotations()`します。
 
-ポイント注釈クラスには、視覚的に表現はありません、マーカーに関連付けられているデータを表すためだけに必要な (最も重要な`Coordinate`プロパティは、緯度と経度、マップに)、および任意のカスタム プロパティ。
+ポイント注釈クラスには、視覚的に表現はありません、マーカーに関連付けられているデータを表すためだけに必要な (最も重要なこととして、`Coordinate`緯度と経度、マップ上であるプロパティ)、およびカスタム プロパティ。
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,18 +57,18 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2.作成、 `MKMarkerAnnotationView` 1 つのマーカーに対してサブクラス
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2.作成、`MKMarkerAnnotationView`サブクラスの 1 つのマーカー
 
-マーカー注釈ビューをそれぞれの注釈のビジュアル表現してなどのプロパティを使用してのスタイルします。
+マーカー注釈ビューをそれぞれの注釈の視覚的表現してなどのプロパティを使用してスタイルします。
 
-- **MarkerTintColor** – マーカーの色。
-- **GlyphText** – マーカーにテキストが表示されます。
+- **MarkerTintColor** : マーカーの色。
+- **GlyphText** – テキスト マーカーに表示されます。
 - **GlyphImage** – マーカーに表示されるイメージを設定します。
-- **DisplayPriority** – z オーダー (スタックの動作) を決定が、マップのマーカーが多くなりすぎる場合です。 いずれかを使用して`Required`、 `DefaultHigh`、または`DefaultLow`です。
+- **DisplayPriority** – z オーダー (スタックの動作) を決定しますが、マップのマーカーが多くなりすぎる場合。 いずれかを使用して、 `Required`、 `DefaultHigh`、または`DefaultLow`します。
 
 自動のクラスタ リングをサポートするには、必要がありますも設定します。
 
-- **ClusteringIdentifier** – これは、どのマーカー取得一緒にクラスター化を制御します。 同じ識別子を使用して、すべてのマーカーのまたは異なる識別子を使用してグループ化されている方法を制御できます。
+- **ClusteringIdentifier** – これは、マーカーまとめてクラスター化を制御します。 同じ識別子を使用して、すべてのマーカーのまたは異なる識別子を使用して、グループ化する方法を制御できます。
 
 ```csharp
 [Register("BikeView")]
@@ -106,14 +106,14 @@ public class BikeView : MKMarkerAnnotationView
 
 ### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3.作成、`MKAnnotationView`を表すマーカーのクラスター
 
-マーカーのクラスターを表す注釈の表示中に_でした_単純なイメージをするには、ユーザーが期待をアプリにどのくらいマーカーが一緒にグループ化に関する視覚的な手掛かりを提供します。
+マーカーのクラスターを表す注釈ビューの中に_でした_ユーザーが期待する単純なイメージには、マーカーの数がまとめてグループ化に関する視覚的な手掛かりを提供するアプリです。
 
-[のサンプル コード](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)CoreGraphics を各マーカーの種類の割合の円グラフ形式と同様に、クラスター内のマーカーの数を表示するために使用します。
+[サンプル コード](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)CoreGraphics を各マーカーの種類の割合の円グラフ表現と同様に、クラスター内のマーカーの数を表示するために使用します。
 
 設定もする必要があります。
 
-- **DisplayPriority** – z オーダー (スタックの動作) を決定が、マップのマーカーが多くなりすぎる場合です。 いずれかを使用して`Required`、 `DefaultHigh`、または`DefaultLow`です。
-- **CollisionMode** –`Circle`または`Rectangle`です。
+- **DisplayPriority** – z オーダー (スタックの動作) を決定しますが、マップのマーカーが多くなりすぎる場合。 いずれかを使用して、 `Required`、 `DefaultHigh`、または`DefaultLow`します。
+- **CollisionMode** –`Circle`または`Rectangle`します。
 
 ```csharp
 [Register("ClusterView")]
@@ -181,7 +181,7 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4.ビュー クラスを登録します。
 
-マップ ビュー コントロールが作成されると、マップは、サインアウト拡大されると、自動のクラスタ リングの動作を有効にする注釈の表示の種類を登録ビューに追加する場合。
+マップのビュー コントロールが作成されると、自動のクラスタ リングの動作を有効にするように、マップを縮小拡大表示する注釈ビューの種類を登録するビューに追加する。
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
@@ -190,23 +190,23 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 ### <a name="5-render-the-map"></a>5.マップを表示します。
 
-マップがレンダリングされると、コメント マーカーがクラスター化またはズーム レベルによってレンダリングされます。 ズーム レベル変更では、クラスターとの間にマーカーがアニメーション化します。
+マップがレンダリングされると、注釈マーカーをクラスター化か、ズーム レベルによってレンダリングされます。 ズーム レベルを変更すると、クラスターとの間のマーカーがアニメーション化します。
 
 ![シミュレーターがマップ上のクラスター化されたマーカーの表示](mapkit-images/cyclemap-sml.png)
 
-参照してください、[セクションをマップ](~/ios/user-interface/controls/ios-maps/index.md)MapKit を使用してデータを表示する方法の詳細。
+参照してください、[マップ セクション](~/ios/user-interface/controls/ios-maps/index.md)MapKit でデータの表示の詳細についてはします。
 
 <a name="compass" />
 
 ## <a name="compass-button"></a>コンパス ボタン
 
-iOS 11 では、コンパスをマップからのポップして別の場所へのレンダリング、表示する機能を追加します。 参照してください、 [Tandm サンプル アプリ](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)例についてはします。
+iOS 11 では、マップから compass をポップし、別の場所を表示にする機能を追加します。 参照してください、 [Tandm サンプル アプリ](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)例についてはします。
 
-(を含むライブ アニメーション マップの向きを変更すると)、コンパスのようなボタンを作成し、別のコントロールに表示します。
+(を含むライブ アニメーション マップの向きが変更されたとき)、コンパスのようなボタンを作成し、それを別のコントロールをレンダリングします。
 
-![ナビゲーション バーでコンパス ボタン](mapkit-images/compass-sml.png)
+![ナビゲーション バーのコンパスのボタン](mapkit-images/compass-sml.png)
 
-次のコードでは、コンパス ボタンを作成し、ナビゲーション バーで表示します。
+次のコードでは、コンパスのボタンを作成し、ナビゲーション バーで表示します。
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);
@@ -215,15 +215,15 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-`ShowsCompass`既定コンパス マップ ビュー内の可視性を制御するプロパティを使用できます。
+`ShowsCompass`マップ ビュー内で既定のコンパスの可視性を制御するプロパティを使用できます。
 
 <a name="scale" />
 
-## <a name="scale-view"></a>スケールの表示
+## <a name="scale-view"></a>スケール ビュー
 
-ビューを使用して、他の場所で、スケールを追加、`MKScaleView.FromMapView()`ビュー階層内で他の場所を追加するスケール ビューのインスタンスを取得します。
+ビューを使用して、他の場所で、スケールを追加、`MKScaleView.FromMapView()`ビュー階層に別の場所を追加するスケール ビューのインスタンスを取得します。
 
-![マップにオーバーレイされるスケール ビュー](mapkit-images/scale-sml.png)
+![スケール ビューのマップにオーバーレイ](mapkit-images/scale-sml.png)
 
 ```csharp
 var scale = MKScaleView.FromMapView(MapView);
@@ -233,15 +233,15 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-`ShowsScale`既定コンパス マップ ビュー内の可視性を制御するプロパティを使用できます。
+`ShowsScale`マップ ビュー内で既定のコンパスの可視性を制御するプロパティを使用できます。
 
 <a name="user-tracking" />
 
 ## <a name="user-tracking-button"></a>ユーザーの追跡 ボタン
 
-ユーザー追跡ボタン センターは、ユーザーの現在の場所にマップします。 使用して、`MKUserTrackingButton.FromMapView()`メソッド ボタンのインスタンスを取得し、書式設定の変更を適用し、ビュー階層内で他の場所を追加します。
+ユーザーの追跡 ボタンは、ユーザーの現在の場所にマップを中央揃えします。 使用して、`MKUserTrackingButton.FromMapView()`メソッドは、ボタンのインスタンスを取得し、書式設定の変更を適用し、ビュー階層に別の場所を追加します。
 
-![マップにオーバーレイされるユーザーの場所 ボタン](mapkit-images/user-location-sml.png)
+![ユーザーの場所 ボタンをマップにオーバーレイ](mapkit-images/user-location-sml.png)
 
 ```csharp
 var button = MKUserTrackingButton.FromMapView(MapView);
@@ -258,4 +258,4 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 - [MapKit サンプル 'Tandm'](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
-- [新で MapKit (WWDC) (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/237/)
+- [新機能で MapKit (WWDC) (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/237/)

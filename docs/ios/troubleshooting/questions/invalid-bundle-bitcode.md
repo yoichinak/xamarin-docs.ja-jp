@@ -1,22 +1,23 @@
 ---
-title: アプリ ストアに送信するときのエラー:「送信で検出された無効なバンドルのオプションを bitcode に埋め込むことはできません」
+title: App Store に送信するときに、エラー:「無効なバンドル - オプションをビットコードに埋め込むことはできませんが、送信で検出された」
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 137313FB-3D29-428B-93C1-5A05DC8F7C03
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: cacb9040ddc8582490c68bcfd24e80c4c4679eb4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 393c1ed81c68d21b610781dfe09de97969e031d1
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30777705"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350925"
 ---
-# <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submission"></a>アプリ ストアに送信するときのエラー:「送信で検出された無効なバンドルのオプションを bitcode に埋め込むことはできません」
+# <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submission"></a>App Store に送信するときに、エラー:「無効なバンドル - オプションをビットコードに埋め込むことはできませんが、送信で検出された」
 
-watchOS 用アプリと tvOS_必要_bitcode App Store に送信するときにします。 構築と Xcode 8.3 またはそれ以前を使用して watchOS および tvOS アプリを送信して、次のエラーが発生する (電子メール通知) を使用して、アプリ ストアにアップロードしようとするとき。
+watchOS アプリおよび tvOS アプリ_必要_bitcode が App Store に送信するときにします。 (電子メール通知) を使用して、次のエラーが発生するときに、ビルドして、Xcode 8.3 以前を使用して、watchOS、tvOS のアプリの提出、App Store にアップロードしようとしています。
 
->無効なバンドルは、オプションを bitcode に埋め込むことはできませんが、送信の検出されたために、アプリを処理できません。 Xcode で提供されるツール チェーンでアプリをビルドしていないことが可能性があります。
+>無効なバンドル - 送信でビットコードに埋め込まれることができませんオプションが検出されたために、アプリを処理できません。 Xcode で提供されるツール チェーンでアプリをビルドしていないこと可能性があります。
 
-この問題を解決 Xcode 9 および Xamarin.iOS の最新バージョンのアプリケーションの構築を開始します。
+Xcode 9 と最新バージョンの Xamarin.iOS アプリケーションを構築するこの問題を解決することです。

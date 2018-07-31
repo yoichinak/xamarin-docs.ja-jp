@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 2dfdb7051b269e73c68290a557849b9ae606c165
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830454"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353296"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: セキュリティで保護されたストレージ
 
@@ -51,13 +51,27 @@ using Xamarin.Essentials;
 値を保存する、指定された_キー_でセキュリティで保護された記憶域。
 
 ```csharp
-await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+try
+{
+  await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 セキュリティで保護された記憶域から値を取得します。
 
 ```csharp
-var oauthToken = await SecureStorage.GetAsync("oauth_token");
+try
+{
+  var oauthToken = await SecureStorage.GetAsync("oauth_token");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 > [!NOTE]
@@ -80,7 +94,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android キーストア](https://developer.android.com/training/articles/keystore.html)に保存されるまで、値の暗号化に使用される暗号キーを格納するために使用、[共有設定](https://developer.android.com/training/data-storage/shared-preferences.html)のファイル名を持つ **[YOUR-アプリのパッケージの ID] .xamarinessentials**.  共有設定ファイルで使用されるキーは、 _MD5 ハッシュ_に渡されたキーの`SecureStorage`の API。
+[Android キーストア](https://developer.android.com/training/articles/keystore.html)に保存されるまで、値の暗号化に使用される暗号キーを格納するために使用、[共有設定](https://developer.android.com/training/data-storage/shared-preferences.html)のファイル名を持つ **[YOUR-アプリのパッケージの ID] .xamarinessentials**.  共有設定ファイルで使用されるキーは、 _MD5 ハッシュ_に渡されたキーの`SecureStorage`Api。
 
 ## <a name="api-level-23-and-higher"></a>API レベル 23 以上
 
@@ -90,7 +104,7 @@ SecureStorage.RemoveAll();
 
 以前の API レベルで、Android キーストアのみをサポートを格納する**RSA**と共に使用される、キー、 **RSA/ECB/PKCS1Padding**を暗号化する暗号、 **AES** (ランダムにキー実行時に生成)、キーの下で、共有設定ファイルに格納されていると_SecureStorageKey_、1 つ既に生成されていない場合。
 
-すべての暗号化された値は、デバイスからアプリをアンインストールしても削除されます。
+**SecureStorage**を使用して、[設定](preferences.md)API と同じデータの永続化に記載されている次のように、[設定](preferences.md#persistence)ドキュメント。 この種類の暗号化によって、アプリをアンインストールしない限り、使用は引き続き場合は、デバイスは、API レベル 22 またはそれ以下の API レベル 23 以上にアップグレード、または**RemoveAll**が呼び出されます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -104,7 +118,7 @@ SecureStorage.RemoveAll();
 
 暗号化された値が格納されている`ApplicationData.Current.LocalSettings`、という名前のコンテナーの内部 **[YOUR APP ID] .xamarinessentials**します。
 
-により、アプリケーションのアンインストール、 _LocalSettings_と暗号化されたすべての値を削除することもできます。
+**SecureStorage**を使用して、[設定](preferences.md)API と同じデータの永続化に記載されている次のように、[設定](preferences.md#persistence)ドキュメント。
 
 -----
 

@@ -1,36 +1,36 @@
 ---
-title: ネイティブ ライブラリを使用します。
+title: ネイティブ ライブラリの使用
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 0fa66f3a16047c18af19cb7257c778b498bc0c9b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9175996f516a980d915d1501b4b18ea23ec86cef
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774812"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353581"
 ---
-# <a name="using-native-libraries"></a>ネイティブ ライブラリを使用します。
+# <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
 
-Xamarin.Android には、標準の PInvoke メカニズムを使用してネイティブ ライブラリの使用がサポートされています。 .Apk に OS の一部ではないその他のネイティブ ライブラリをバンドルすることもできます。
+Xamarin.Android では、標準の PInvoke メカニズムを使用してネイティブ ライブラリの使用をサポートします。 .Apk に OS の一部ではないその他のネイティブ ライブラリをバンドルすることもできます。
 
-Xamarin.Android アプリケーションと共にネイティブ ライブラリを展開するバイナリのライブラリをプロジェクトに追加し、設定、**ビルド アクション**に**AndroidNativeLibrary**です。
+Xamarin.Android アプリケーションでネイティブ ライブラリを展開するには、バイナリのライブラリをプロジェクトに追加し、設定、**ビルド アクション**に**AndroidNativeLibrary**します。
 
-Xamarin.Android ライブラリ プロジェクトでネイティブ ライブラリを展開するバイナリのライブラリをプロジェクトに追加し、設定、**ビルド アクション**に**EmbeddedNativeLibrary**です。
+Xamarin.Android ライブラリ プロジェクトでネイティブ ライブラリを展開するには、バイナリのライブラリをプロジェクトに追加し、設定、**ビルド アクション**に**EmbeddedNativeLibrary**します。
 
-Android では、複数のアプリケーション バイナリ インターフェイス (ABIs) をサポートするため Xamarin.Android によってのネイティブ ライブラリをビルドする ABI 知る必要がありますに注意してください。
+Android では、複数のアプリケーション バイナリ インターフェイス (Abi) をサポートするため Xamarin.Android によって、ネイティブ ライブラリが用にビルドされたどの ABI 知る必要がありますに注意してください。
 これを行うには 2 つの方法があります。
 
 1.  パス「スニッフィング」
 1.  使用して、`AndroidNativeLibrary/Abi`プロジェクト ファイル内の要素
 
 
-パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 したがって、追加した場合`lib/armeabi/libfoo.so`をプロジェクトにし、ABI がある「見つけ出す」として`armeabi`です。
+パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 そのため、追加する場合`lib/armeabi/libfoo.so`をプロジェクトにし、ABI は「スニッフィング」されますとして`armeabi`します。
 
-または、使用する ABI を明示的に指定するプロジェクト ファイルを編集することができます。
+または、明示的に使用する ABI を指定するプロジェクト ファイルを編集することができます。
 
 ```xml
 <ItemGroup>
@@ -40,17 +40,24 @@ Android では、複数のアプリケーション バイナリ インターフ�
 </ItemGroup>
 ```
 
-詳細については、ネイティブ ライブラリを使用して、次を参照してください。[ネイティブ ライブラリとの相互運用](http://www.mono-project.com/docs/advanced/pinvoke/)です。
+ネイティブ ライブラリの使用に関する詳細については、次を参照してください。[ネイティブ ライブラリとの相互運用](http://www.mono-project.com/docs/advanced/pinvoke/)します。
 
-## <a name="debugging-native-code-with-visual-studio-2015"></a>Visual Studio 2015 でのネイティブ コードのデバッグ
+## <a name="debugging-native-code-with-visual-studio-2017"></a>Visual Studio 2017 でのネイティブ コードのデバッグ
 
-使用する場合*Visual Studio 2015*、(前述のように)、プロジェクト ファイルを変更する必要はありません。
-ビルドして、C++ へのプロジェクト参照を追加するだけで、Xamarin.Android ソリューション内の C++ をデバッグ**ダイナミック共有ライブラリ (Android)** プロジェクト。
+使用している場合*Visual Studio 2017*以上で、前述のように、プロジェクト ファイルを変更する必要はありません。
+ビルドして、C++ への参照をプロジェクトに追加することで、Xamarin.Android ソリューション内で C++ をデバッグ**ダイナミック共有ライブラリ (Android)** プロジェクト。 
 
-Visual Studio C 開発者できますを参照してください、 [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/) Xamarin; を使用した Visual Studio 2015 から C++ のデバッグを実行するサンプルを参照してください、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)詳細についてはします。
+プロジェクトでネイティブの C++ コードをデバッグするには、次の手順を実行します。
+
+1. プロジェクトをダブルクリックして**プロパティ**を選択し、 **Android オプション**ページ。
+2. 下へスクロールして**デバッグ オプション**します。
+3. **デバッガー**ドロップダウン メニューで、 **C++** (既定ではなく **.Net (Xamarin)**)。
+
+Visual Studio の C++ 開発者を参照してください、 [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)サンプルを Visual Studio 2017 と Xamarin; から C のデバッグを試すしを参照してください、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)詳細についてはします。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [SanAngeles_NativeDebug (サンプル)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [Xamarin Android のネイティブ アプリケーションの開発](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

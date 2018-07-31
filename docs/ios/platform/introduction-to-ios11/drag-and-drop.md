@@ -1,67 +1,67 @@
 ---
-title: Xamarin.iOS でドラッグ アンド ドロップ
-description: このドキュメントでは、ドラッグを実装して、iOS 11 で導入された Api を使用して Xamarin.iOS アプリで削除する方法について説明します。 具体的には、についても説明を有効にする UITableView でドラッグ アンド ドロップします。
+title: Xamarin.iOS にドラッグ アンド ドロップ
+description: このドキュメントでは、ドラッグを実装して、iOS 11 で導入された Api を使用して Xamarin.iOS アプリを削除する方法について説明します。 有効化について説明します、具体的には、UITableView をドラッグ アンド ドロップします。
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 09/05/2016
-ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 09/05/2017
+ms.openlocfilehash: bc58c866a4a754bccea8d851f79e73fe5a415eed
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786965"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351136"
 ---
-# <a name="drag-and-drop-in-xamarinios"></a>Xamarin.iOS でドラッグ アンド ドロップ
+# <a name="drag-and-drop-in-xamarinios"></a>Xamarin.iOS にドラッグ アンド ドロップ
 
-_ドラッグ アンド ドロップ iOS 11 用の実装_
+_ドラッグ アンド ドロップの iOS 11 を実装します。_
 
-iOS 11 を含むドラッグ アンド ドロップのサポートを iPad でのアプリケーション間でデータをコピーします。 ユーザーは、選択し、アプリが配置されているサイド バイ サイドからを開くには、削除するデータを許可するアプリをトリガーするアプリ アイコンの上にドラッグするか、すべての種類のコンテンツをドラッグします。
+iOS 11 含むドラッグ アンド ドロップのサポート、iPad 上のアプリケーション間のデータをコピーします。 ユーザーを選択し、配置されているアプリのサイドからまたはを開くし、削除するデータを許可するアプリをトリガーするアプリ アイコンの上にドラッグして、すべての種類のコンテンツをドラッグします。
 
-![メモ アプリにカスタム アプリからのドラッグ アンド ドロップの例](drag-and-drop-images/drag-drop-sml.png)
+![Notes アプリケーションのカスタム アプリからのドラッグ アンド ドロップの例](drag-and-drop-images/drag-drop-sml.png)
 
 > [!NOTE]
-> ドラッグ アンド ドロップでは、iPhone 上の同じアプリケーション内で使用できるのみです。
+> ドラッグ アンド ドロップでは、iPhone で同じアプリ内で使用できるのみです。
 
-ドラッグをサポートし、ドロップ操作の任意の場所にコンテンツを作成または編集することができます。
+ドラッグのサポートを検討およびドロップ操作を任意の場所にコンテンツを作成または編集できます。
 
-- テキスト コントロールは、iOS 11 で、追加の作業なしに対してビルドされたすべてのアプリのドラッグ アンド ドロップをサポートします。
-- テーブルのビューとコレクション ビューは、追加のドラッグを簡略化し、ドロップ動作する iOS 11 に拡張機能を含めます。
-- ドラッグをサポートし、さらにカスタマイズを削除し、その他のビューを作成できます。
+- テキスト コントロールは、iOS 11 の追加作業なしに対して作成されたすべてのアプリのドラッグ アンド ドロップをサポートします。
+- テーブルのビューとコレクション ビューは、追加のドラッグを簡素化し、ドロップ動作を iOS 11 の機能強化が含まれます。
+- その他のビューは、ドラッグをサポートし、さらにカスタマイズを削除するにできます。
 
-追加のドラッグ アンド ドロップ サポートされる場合、アプリに、さまざまなレベルのコンテンツの忠実性; を使用できます。たとえば、受信側のアプリが収まる最適なドラッグ先を選択できるように書式設定されたテキストとデータのプレーン テキスト バージョンの両方を提供可能性があります。 ドラッグの視覚エフェクトをカスタマイズし、一度に複数の項目をドラッグすることを有効にすることもできます。
+追加のドラッグ アンド ドロップをサポートして、アプリをときに、さまざまなレベルのコンテンツの忠実性; を行うことができます。たとえばをドラッグ先に最適に適合する受信側のアプリを選択できます書式設定されたテキストとプレーン テキスト バージョンのデータの両方を提供可能性があります。 ドラッグの視覚エフェクトをカスタマイズし、一度に複数の項目をドラッグできるようにすることもできます。
 
 ## <a name="drag-and-drop-with-text-controls"></a>テキスト コントロールによるドラッグ アンド ドロップ
 
-`UITextView` および`UITextField`自動的に、選択したテキストをドラッグして、テキスト コンテンツの削除をサポートします。
+`UITextView` `UITextField`自動的に、選択したテキストをドラッグして、テキスト コンテンツの削除をサポートします。
 
 <a name="uitableview" />
 
 ## <a name="drag-and-drop-with-uitableview"></a>UITableView によるドラッグ アンド ドロップ
 
-`UITableView` 組み込みの処理をドラッグ アンド ドロップを既定の動作を有効にするいくつかのメソッドだけを必要とするテーブルの行とのやり取りがあります。
+`UITableView` 組み込みドラッグ アンド ドロップの既定の動作を有効にするいくつかのメソッドのみを必要とするテーブルの行との対話を処理しています
 
-2 つのインターフェイスを必要があります。
+関連するは 2 つのインターフェイスがあります。
 
-- `IUITableViewDragDelegate` – テーブル ビューで、ドラッグが開始される情報のパッケージです。
-- `IUITableViewDropDelegate` – ドロップされているときに情報を処理しようし、して、完了します。
+- `IUITableViewDragDelegate` – テーブル ビューで、ドラッグが開始される情報のパッケージ。
+- `IUITableViewDropDelegate` –、ドロップダウンがされているときに情報を処理しようとして完了します。
 
-[DragAndDropTableView サンプル](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)これら 2 つのインターフェイスが両方で実装されている、`UITableViewController`クラス、デリゲートとデータ ソースと共にします。 割り当てられた、`ViewDidLoad`メソッド。
+[DragAndDropTableView サンプル](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)これら 2 つのインターフェイスは両方の実装、`UITableViewController`クラスをデリゲートとデータ ソースと共に使用します。 割り当てられている、`ViewDidLoad`メソッド。
 
 ```csharp
 this.TableView.DragDelegate = this;
 this.TableView.DropDelegate = this;
 ```
 
-これら 2 つのインターフェイスの最低限必要なコードは、以下について説明します。
+これら 2 つのインターフェイスに必要な最小限のコードは以下について説明します。
 
-### <a name="table-view-drag-delegate"></a>テーブル ビュー ドラッグ デリゲート
+### <a name="table-view-drag-delegate"></a>テーブル ビューのドラッグ デリゲート
 
-唯一の方法_必要_テーブル ビューから行をドラッグすることをサポートするためには`GetItemsForBeginningDragSession`します。 ユーザーは、行のドラッグを開始して、このメソッドが呼び出されます。
+唯一の方法_必要_テーブル ビューから行をドラッグすることをサポートするためには、`GetItemsForBeginningDragSession`します。 ユーザーは、行のドラッグを開始して、このメソッドが呼び出されます。
 
-実装は、以下に示します。 ドラッグした行に関連付けられているデータを取得、それには、エンコードされ、構成、`NSItemProvider`アプリケーションが操作の"drop"の一部を処理する方法を決定する (たとえば、かどうか、処理できるデータ型`PlainText`の例)。
+実装は、以下に示します。 ドラッグ中の行に関連付けられたデータを取得、エンコード、およびを構成します、`NSItemProvider`アプリケーションが操作の"drop"の一部を処理する方法を決定する (たとえば、かどうか処理できるデータ型、`PlainText`の例)。
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-対象アプリでの利点を実行することができますが、複数のデータ表現を提供するなどのドラッグ動作のカスタマイズに実装できるドラッグ デリゲートでは多くの省略可能な方法 (プレーン テキストとして well またはベクターとして書式設定テキストなど、ビットマップのバージョンの描画)。 ドラッグ アンド ドロップして同じアプリケーション内に使用するカスタム データ表現を指定することもできます。
+多くの省略可能なメソッドが対象のアプリケーションでの利点を実行できる複数のデータ表現を提供するなどのドラッグ動作をカスタマイズする実装できるドラッグ デリゲートでは (なども、プレーン テキスト、またはベクターとして書式設定されたテキストとビットマップのバージョンの描画)。 ドラッグ アンド ドロップ、同じアプリ内に使用するカスタム データ表現を指定することもできます。
 
-### <a name="table-view-drop-delegate"></a>テーブル ビュー ドロップ デリゲート
+### <a name="table-view-drop-delegate"></a>テーブル ビューのドロップ デリゲート
 
-ドロップ デリゲートのメソッドは、ドラッグ操作が表形式ビューを経由して行われますまたはその上に終了したときと呼ばれます。 必要なメソッドは、データが削除されるを許可されているかどうかと、削除が完了した場合に実行する動作を決定します。
+ドラッグ操作またはテーブル ビューでは、上に発生しますが、その上が完了すると、ドロップ デリゲートにメソッドが呼び出されます。 必要なメソッドは、データを削除するには、許可するかどうかと、削除が完了した場合に実行するアクションを決定します。
 
-- `CanHandleDropSession` – の中に、ドラッグ進行状況、およびアプリケーションにドロップされる可能性のある、このメソッドは、ドラッグされているデータが削除されるを許可されているかどうかを判断します。
-- `DropSessionDidUpdate` – 中に、ドラッグが実行中のものではどのようなアクションを決定するこのメソッドが呼び出されます。 テーブル ビューの上にドラッグされている、ドラッグ セッションと使用可能なインデックスのパスの情報をすべて使用できますの動作と、ユーザーに提供される視覚的なフィードバックを確認します。
-- `PerformDrop` – ときにユーザーには、(その指を持ち上げる) によって、削除が完了すると、このメソッドはドラッグされるデータを抽出し、新しい行または行のデータを追加するテーブルのビューを変更します。
+- `CanHandleDropSession` – ドラッグが進行状況、およびアプリケーションにドロップされる可能性がありますのある中、このメソッドは、ドラッグされているデータが削除されるを許可されているかどうかを決定します。
+- `DropSessionDidUpdate` – ドラッグの進行中は、このメソッドが呼び出され、どのようなアクションを決定します。 動作と、ユーザーに提供される視覚的なフィードバックを確認する、上にドラッグしたテーブルのビュー、ドラッグ セッション、および使用可能なインデックスのパスからの情報をすべてに使用することができます。
+- `PerformDrop` – ときに、ユーザーには、(指を持ち上げる) で、削除が完了すると、このメソッドはドラッグされているデータを抽出し、新しい行 (または行) のデータを追加するテーブルのビューを変更します。
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession` テーブル ビューがドラッグされるデータを受け入れるかどうかを示します。 このコード スニペットで`CanLoadObjects`このテーブルのビューが文字列データをそのまま使用できることを確認するために使用します。
+`CanHandleDropSession` テーブル ビューがドラッグされているデータを受け入れるかどうかを示します。 このコード スニペットで`CanLoadObjects`このテーブルのビューが文字列データを受け入れることを確認するために使用します。
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,9 +108,9 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-`DropSessionDidUpdate`ドラッグ操作の進行状況を視覚的な手掛かりをユーザーに提供するためには、メソッドが繰り返し呼び出されます。
+`DropSessionDidUpdate`ドラッグ操作の進行中は、ユーザーに視覚的な手掛かりを提供する、メソッドが繰り返し呼び出されます。
 
-下のコードで`HasActiveDrag`操作が現在のテーブル ビューで生成されたかどうかを決定するために使用します。 単一行のみが移動する許可されます。
+次のコードで`HasActiveDrag`操作が現在のテーブル ビューで発生したかどうかを判断するために使用します。 その場合は、単一行のみが移動する許可されます。
 別のソースからドラッグする場合は、コピー操作が示されます。
 
 ```csharp
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Drop 操作には、いずれかを指定できる`Cancel`、 `Move`、または`Copy`です。
+ドロップの操作には、いずれかを指定できます`Cancel`、 `Move`、または`Copy`します。
 
-ドロップの目的は、新しい行を挿入または既存の行にデータを追加/追加可能性があります。
+ドロップ目的は、新しい行を挿入または既存の行にデータを追加/追加できます。
 
 #### <a name="performdrop"></a>PerformDrop
 
-`PerformDrop`メソッドは、ユーザーは、操作を完了して、ドロップされたデータを反映するようにテーブルのビューとデータ ソースを変更します。
+`PerformDrop`ユーザーは、操作が完了して、ドロップしたデータを反映するように、テーブル ビューとデータ ソースを変更します。 メソッドが呼び出されます。
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)
@@ -180,10 +180,10 @@ public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coord
 
 ### <a name="testing-drag-and-drop"></a>テストのドラッグ アンド ドロップ
 
-IPad を使用してテストする必要があります、[サンプル](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)です。
+IPad を使用してテストする必要があります、[サンプル](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)します。
 (注を参照) などの別のアプリと共にサンプルを開き、それらの間の行とテキストをドラッグします。
 
-![ドラッグ操作が進行中のスクリーン ショット](drag-and-drop-images/01-sml.png)
+![実行中のドラッグ操作のスクリーン ショット](drag-and-drop-images/01-sml.png)
 
 
 ## <a name="related-links"></a>関連リンク
@@ -192,4 +192,4 @@ IPad を使用してテストする必要があります、[サンプル](https:
 - [ドラッグ アンド ドロップ テーブルのビューのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)
 - [ドラッグ アンド ドロップ コレクション ビューのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
 - [ドラッグ アンド ドロップ (WWDC) (ビデオ) の概要](https://developer.apple.com/videos/play/wwdc2017/203/)
-- [コレクションとテーブル ビュー (WWDC) (ビデオ) によるドラッグ アンド ドロップ](https://developer.apple.com/videos/play/wwdc2017/223/)
+- [コレクションおよびテーブル ビュー (WWDC) (ビデオ) によるドラッグ アンド ドロップ](https://developer.apple.com/videos/play/wwdc2017/223/)

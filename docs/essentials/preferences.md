@@ -5,12 +5,12 @@ ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831765"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353751"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: 基本設定
 
@@ -83,6 +83,10 @@ Preferences.Clear();
 [ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer)デバイス上の値を格納するために使用します。 ない場合は`sharedName`が指定されて、`LocalSettings`は、それ以外の場合、名前が使用中の新しいコンテナーを作成する`LocalSettings`します。
 
 --------------
+
+## <a name="persistence"></a>永続性
+
+アプリケーションをアンインストールすると、すべて_設定_を削除します。 これが対象として、Android 6.0 (API レベル 23) 以降を実行するアプリを使用している 1 つの例外がある[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)します。 この機能は既定で、アプリなど、データが保持されます__共有基本設定__、何である、**設定**API を利用します。 これを無効に、次の Google によってできます[ドキュメント](https://developer.android.com/guide/topics/data/autobackup)します。
 
 ## <a name="limitations"></a>制限事項
 

@@ -6,27 +6,49 @@ ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 17c353844a7ddc808e5d9f0632434472913170a4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/30/2018
+ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995207"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351497"
 ---
 # <a name="listview-data-sources"></a>ListView のデータ ソース
 
-ListView は、データのリストを表示するために使用されます。 データ、私たちが選択した項目にバインドする方法と、ListView の設定について説明します。
+A [ `ListView` ](xref:Xamarin.Forms.ListView)データのリストを表示するためです。 データ、私たちが選択した項目にバインドする方法と、ListView の設定について説明します。
 
 - **[設定の ItemsSource](#ItemsSource)**  &ndash;単純なリストまたは配列を使用します。
 - **[データ バインディング](#Data_Binding)** &ndash;モデルと、ListView の間の関係を確立します。 バインディングは、MVVM パターンに最適です。
 
 ## <a name="itemssource"></a>ItemsSource
-ListView を使用してデータが表示されます、`ItemsSource`プロパティを実装するコレクションを受け入れることができる`IEnumerable`します。 設定する最も簡単な方法を`ListView`文字列の配列を使用する必要があります。
+
+A [ `ListView` ](xref:Xamarin.Forms.ListView)を使用してデータが表示されます、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティを実装するコレクションを受け入れることができる`IEnumerable`します。 設定する最も簡単な方法を`ListView`文字列の配列を使用する必要があります。
+
+```xaml
+<ListView>
+      <ListView.ItemsSource>
+          <x:Array Type="{x:Type x:String}">
+            <x:String>mono</x:String>
+            <x:String>monodroid</x:String>
+            <x:String>monotouch</x:String>
+            <x:String>monorail</x:String>
+            <x:String>monodevelop</x:String>
+            <x:String>monotone</x:String>
+            <x:String>monopoly</x:String>
+            <x:String>monomodal</x:String>
+            <x:String>mononucleosis</x:String>
+          </x:Array>
+      </ListView.ItemsSource>
+</ListView>
+```
+
+同等の c# コードに示します。
 
 ```csharp
 var listView = new ListView();
-listView.ItemsSource = new string[]{
+listView.ItemsSource = new string[]
+{
   "mono",
   "monodroid",
   "monotouch",
@@ -145,10 +167,6 @@ XAML の前のビットを定義、`ContentPage`を格納している、`ListVie
 
 想定`listView`の`ItemsSource`文字列のリストは、 `SomeLabel` text プロパティにバインドする必要があります、 `SelectedItem`。
 
-
-
 ## <a name="related-links"></a>関連リンク
 
 - [2 つの方法 (サンプル) をバインド](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
-- [1.4 リリース ノート](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 リリース ノート](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

@@ -5,12 +5,12 @@ ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 81dc67fa5a4975f31d0fbf9f7219637596a827ce
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815649"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353660"
 ---
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: バージョン管理
 
@@ -72,9 +72,7 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-使用してすべてのバージョン情報を格納、[設定](preferences.md)Xamarin.Essentials で API のファイル名では **[YOUR-アプリのパッケージの ID] .xamarinessentials**します。
-
-により、アプリケーションのアンインストール、 _LocalSettings_、およびすべてのバージョンを削除する情報を追跡します。
+使用してすべてのバージョン情報を格納、[設定](preferences.md)Xamarin.Essentials で API のファイル名では **[YOUR-アプリのパッケージの ID].xamarinessentials.versiontracking**に従って同じ記載されているデータの永続化、[設定](preferences.md#persistence)ドキュメント。
 
 ## <a name="api"></a>API
 

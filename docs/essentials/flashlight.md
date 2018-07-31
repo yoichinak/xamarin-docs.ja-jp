@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831412"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353361"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: 懐中電灯
 
@@ -42,7 +42,7 @@ ms.locfileid: "38831412"
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**懐中電灯**と**カメラ**アクセス許可。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**懐中電灯**と**カメラ**アクセス許可。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
 
 これらのアクセス許可を追加することで[Google Play がデバイスを自動的にフィルター処理](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)特定のハードウェアなし。 この問題を回避を Android プロジェクトで AssemblyInfo.cs ファイルに、次を追加することで取得できます。
 
@@ -96,9 +96,9 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-懐中電灯クラスは、デバイスのオペレーティング システムに基づく optmized されました。
+懐中電灯クラスは、デバイスのオペレーティング システムに基づく最適化されています。
 
 #### <a name="api-level-23-and-higher"></a>API レベル 23 以上
 
@@ -108,11 +108,11 @@ catch (Exception ex)
 
 オンまたはオフにするカメラの表面のテクスチャが作成、`FlashMode`カメラ単位。 
 
-### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/)オンとオフ、トーチとデバイスのモードをフラッシュするために使用します。
 
-### <a name="uwptabuwp-specifics"></a>[UWP](#tab/uwp-specifics)
+### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp)最初に lamp をオンまたはオフにするデバイスの背面を検出するために使用します。
 
