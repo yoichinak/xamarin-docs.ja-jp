@@ -6,13 +6,13 @@ ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/13/2018
-ms.openlocfilehash: abc21c3830126346ffb877639657c973da474812
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.date: 07/30/2018
+ms.openlocfilehash: d48796b3c62fc342bd86f2d58e74c5f1710174bb
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038392"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360839"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的な RecyclerView の例
 
@@ -368,7 +368,15 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 [![写真のカードに垂直方向にスクロールできるアプリを表示する写真の 2 つのスクリーン ショット](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
+(上記のスクリーン ショットに表示) と影の描画されていない、編集**Properties/AndroidManifest.xml**に次の属性設定を追加して、`<application>`要素。
+
+```xml
+android:hardwareAccelerated="true"
+```
+
 この基本的なアプリでは、フォト アルバムの閲覧のみサポートされます。 項目タッチ イベントに応答しません。 また基になるデータの変更が処理されること。 この機能が追加された[RecyclerView の例を拡張](~/android/user-interface/layouts/recycler-view/extending-the-example.md)します。
+
+
 
 
 ### <a name="changing-the-layoutmanager"></a>LayoutManager を変更します。
