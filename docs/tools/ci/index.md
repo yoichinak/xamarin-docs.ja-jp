@@ -1,5 +1,5 @@
 ---
-title: Xamarin を使用した継続的な統合の概要
+title: Xamarin を使用した継続的インテグレーションの概要
 description: このドキュメントには、Xamarin を使用した継続的インテグレーションを説明するガイドへのリンクがします。 リンクされたコンテンツは、継続的インテグレーションの概要を説明し、Center ビルドのアプリ、TeamCity、および Jenkins を説明します。
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/05/2018
 ms.locfileid: "34793745"
 ---
-# <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的な統合の概要
+# <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的インテグレーションの概要
 
 > [!Video https://youtube.com/embed/wXgnh2Q7Uv8]
 
