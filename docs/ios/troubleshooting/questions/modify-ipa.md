@@ -46,7 +46,7 @@ ms.locfileid: "39350983"
 
 9.  目的のファイルから削除、`.ipa`します。 Finder を使用してごみ箱に移動またはを使用して、コマンドラインでそれらを削除することができます`Terminal.app`します。 内容を表示する、 `Payload/iPhone` finder で、コントロールのクリック、ファイルのファイルおよび選択した**パッケージの内容**します。
 
-10.  ログ ファイルを検索して、手順 3. のように、同じ一般的な方法を使用して`~/Library/Logs/Xamarin/MonoTouchVS/`プロジェクト名を持つ、`generated session id`名: ![ ] (modify-ipa-images/build-log.png "Finder で、プロジェクトのビルド ログを見つける")
+10.  ログ ファイルを検索して、手順 3. のように、同じ一般的な方法を使用して`~/Library/Logs/Xamarin/MonoTouchVS/`プロジェクト名を持つ、`generated session id`名: ![](modify-ipa-images/build-log.png "Finder で、プロジェクトのビルド ログを見つける")
 
 11.  ダブルクリックしてなど手順 10 からのビルド ログを開きます。
 
