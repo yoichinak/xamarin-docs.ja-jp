@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995983"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393673"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
@@ -24,12 +24,12 @@ XAML マークアップ拡張機能は、さまざまなソースから設定す
 - [`x:Array`](#array) &ndash; 特定の種類のオブジェクトの配列を構築します。
 - [`x:Null`](#null) &ndash; 属性を設定、`null`値。
 
-他の 3 つの XAML マークアップ拡張機能では、従来の他の XAML 実装によってサポートされていて、Xamarin.Forms でもサポートされます。 これらは、他の記事で詳しく説明されます。
+XAML マークアップ拡張機能を追加では、従来の他の XAML 実装によってサポートされていて、Xamarin.Forms でもサポートされます。 これらは、他の記事で詳しく説明されます。
 
 - `StaticResource` &ndash; 記事の説明に従って、リソース ディクショナリからオブジェクトを参照[**リソース ディクショナリ**](~/xamarin-forms/xaml/resource-dictionaries.md)します。
 - `DynamicResource` &ndash; 記事の説明に従って、リソース ディクショナリ内のオブジェクトの変更に応答[**動的なスタイル**](~/xamarin-forms/user-interface/styles/dynamic.md)します。
 - `Binding` &ndash; 2 つのオブジェクトのプロパティ間のリンクを確立、記事の説明に従って[**データ バインディングの**](~/xamarin-forms/app-fundamentals/data-binding/index.md)します。
-- `TemplateBinding` &ndash; 記事に説明したように、コントロール テンプレートからデータのバインドを実行 **[コントロール テンプレートからバインド]**/ガイド/xamarin-フォーム/アプリケーションの基礎/テンプレート/コントロールのテンプレート/テンプレートのバインド/)
+- `TemplateBinding` &ndash; この記事で説明したようにコントロール テンプレートからデータ バインディングを実行します[**からコントロール テンプレートのバインド**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/)します。
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)レイアウト カスタム マークアップ拡張機能を利用[ `ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)します。 このマークアップ拡張機能が、情報の記事で説明されている[ **[相対レイアウト]**](~/xamarin-forms/user-interface/layouts/relative-layout.md)します。
 

@@ -1,55 +1,53 @@
 ---
 title: ポップアップ メニュー
+description: 固定されるポップアップ メニューを特定のビューに追加する方法。
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/18/2017
-ms.openlocfilehash: e7fad84133ca712c531ab0d12a67db78103c7cdd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/31/2018
+ms.openlocfilehash: d7cadde88e9ae7ee30815ee9323785038dbb1a39
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763151"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393660"
 ---
 # <a name="popup-menu"></a>ポップアップ メニュー
 
-`PopupMenu`クラスは、特定のビューに関連付けられているポップアップ メニューを表示するためのサポートを追加します。 次の図は、2 番目の項目が選択されているのと同じように強調表示を伴うこのボタンをクリックするには、ポップアップ メニューを示しています。
+[ポップアップ メニュー](https://developer.xamarin.com/api/type/Android.Widget.PopupMenu/) (とも呼ばれる、_ショートカット メニューの _) が特定の表示が固定されるメニューです。 次の例では、1 つのアクティビティには、ボタンが含まれています。 ユーザーがボタンをタップする 3 つのアイテムをポップアップ メニューが表示されます。
 
- [![3 つの項目を 3 つ PopopMenu の例](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
-
-Android 4 は、いくつかの新機能を追加`PopupMenu`ビットを容易に操作、つまりを作成します。
-
--   **展開**&ndash;拡張メソッドは、ポップアップ メニュー クラスで直接利用できるようになりました。
--   **DismissEvent** &ndash;ポップアップ メニュー クラスが、DismissEvent になりました。
-
-これらの機能強化を見てみましょう。 この例では、ボタンを含む 1 つのアクティビティがあります。 ユーザーには、ボタンがクリックすると、次に示すようにポップアップ メニューが表示されます。
-
- [![ボタンとポップアップ メニューの項目 3 に、エミュレーターで実行されているアプリの例](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
+[![ボタンとポップアップ メニューの 3 つの項目を使用してアプリの例](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 
 ## <a name="creating-a-popup-menu"></a>ポップアップ メニューを作成します。
 
-インスタンスを作成するとき、 `PopupMenu`、そのコンス トラクターへの参照を渡す必要があります、 `Context`、だけでなく、ビュー、メニューが接続されています。 この場合、作成、`PopupMenu`で、ボタンの click イベント ハンドラー、これは名前`showPopupMenu`です。
-このボタンは、ビューを添付しますでも、`PopupMenu`次のコードに示すように、します。
+最初の手順では、メニューのメニュー リソース ファイルを作成しで配置を**リソース/メニュー**します。 たとえば、前のスクリーン ショットに表示される 3 つの項目 メニューのコードは、次の XML **Resources/menu/popup_menu.xml**:
 
-```csharp
-showPopupMenu.Click += (s, arg) => {
-    PopupMenu menu = new PopupMenu (this, showPopupMenu);
-}
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item1"
+          android:title="item 1" />
+    <item android:id="@+id/item1"
+          android:title="item 2" />
+    <item android:id="@+id/item1"
+          android:title="item 3" />
+</menu>
 ```
 
-Android 3 は、XML リソースのメニューを展開するためのコードに必要な最初への参照を取得する、 `MenuInflator`、まずその`Inflate`に展開するには、メニューとメニュー インスタンスに含まれる XML のリソース ID を持つメソッドです。 このようなアプローチでは、Android 4 では次のコードとして後で引き続き動作します。
+インスタンスを次に、作成`PopupMenu`し、そのビューを固定します。 インスタンスを作成するときに`PopupMenu`への参照をそのコンス トラクターに渡す、`Context`ビュー、メニューをアタッチするとします。 その結果、その構築時に、このビューには、ポップアップ メニューが固定されます。
+
+次の例では、`PopupMenu`ボタンの click イベント ハンドラーが作成されます (名前は`showPopupMenu`)。 このボタンは、ビューでも、`PopupMenu`アンカーは、次のコード例に示すようにします。
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
     PopupMenu menu = new PopupMenu (this, showPopupMenu);
-    menu.MenuInflater.Inflate (Resource.Menu.popup_menu, menu.Menu);
 };
 ```
 
-Android 4 以降、今すぐ呼び出せます`Inflate`のインスタンスに直接、`PopupMenu`です。 これにより、コードが次のようより簡潔に。
+最後に、ポップアップ メニューがある必要があります*膨張*で以前に作成されたメニュー リソース。 次の例では、メニューの呼び出しで[展開](https://developer.xamarin.com/api/member/Android.Views.LayoutInflater.Inflate/p/System.Int32/Android.Views.ViewGroup/)メソッドを追加し、その[表示](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Show%28%29/)メソッドを呼び出してそれを表示します。
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -59,12 +57,10 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-上記のコードで、メニューを膨張させる後を呼び出して`menu.Show`を画面に表示します。
 
+## <a name="handling-menu-events"></a>メニュー イベントの処理
 
-## <a name="handling-menu-events"></a>メニュー イベントを処理します。
-
-ユーザーがメニュー項目を選択したときに、`MenuItemClick`イベントを発生させるし、メニューは非表示にします。 メニューの外側の任意の場所をタップするだけでも消去されます。 Android 4 では、メニューが破棄されたときに、どちらの場合、`DismissEvent`が生成されます。 次のコードは、両方のイベント ハンドラーを追加、`MenuItemClick`と`DismissEvent`イベント。
+ユーザーがメニュー項目を選択すると、 [MenuItemClick](https://developer.xamarin.com/api/event/Android.Widget.PopupMenu.MenuItemClick/)クリックしてイベントが発生し、メニューは非表示にします。 メニューの外側の任意の場所をタップすると、単に通知を閉じた。 どちらの場合、メニューが閉じられたときにその[DismissEvent](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Dismiss%28%29/)が発生します。 次のコードは、両方のイベント ハンドラーを追加、`MenuItemClick`と`DismissEvent`イベント。
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,7 +74,7 @@ showPopupMenu.Click += (s, arg) => {
     menu.DismissEvent += (s2, arg2) => {
         Console.WriteLine ("menu dismissed");
     };
-            menu.Show ();
+    menu.Show ();
 };
 ```
 
@@ -87,5 +83,3 @@ showPopupMenu.Click += (s, arg) => {
 ## <a name="related-links"></a>関連リンク
 
 - [PopupMenuDemo (サンプル)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
-- [アイスクリーム サンドイッチの概要](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 プラットフォーム](http://developer.android.com/sdk/android-4.0.html)
