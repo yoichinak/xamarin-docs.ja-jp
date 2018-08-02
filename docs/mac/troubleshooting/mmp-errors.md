@@ -113,7 +113,7 @@ ms.locfileid: "34792760"
 
 <a name="MM0071" />
 
-#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071: 不明なプラットフォーム: * です。 これは通常 Xamarin.Mac; のバグを示しますバグ報告を送信してくださいhttps://bugzilla.xamarin.comとテスト_ケースをします。
+#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071: 不明なプラットフォーム: * です。 これは通常 Xamarin.Mac; のバグを示しますバグ報告を送信してください https://bugzilla.xamarin.com とテスト_ケースをします。
 
 これは通常 Xamarin.Mac; のバグを示しますバグ報告を送信してください[ https://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)とテスト_ケースをします。
 
@@ -308,7 +308,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 混合モード アセンブリは、リンカーによっては処理できません。
 
-参照してくださいhttps://msdn.microsoft.com/library/x0w2664k.aspx混合モード アセンブリの詳細についてはします。
+参照してください https://msdn.microsoft.com/library/x0w2664k.aspx 混合モード アセンブリの詳細についてはします。
 
 ## <a name="mm3xxx-aot"></a>MM3xxx: AOT
 

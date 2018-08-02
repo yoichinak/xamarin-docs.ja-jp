@@ -64,7 +64,7 @@ Xamarin Live Player タップ内**ペア**または**ペアをもう一度**、�
 
 **手順 4: GUID を生成します。**
 
-移動:https://www.guidgenerator.com/online-guid-generator.aspx新しい guid を生成して、大文字のことを確認します。
+移動: https://www.guidgenerator.com/online-guid-generator.aspx 新しい guid を生成して、大文字のことを確認します。
 
 **手順 5: デバイスを構成します。**
 
