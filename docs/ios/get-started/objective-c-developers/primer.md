@@ -6,12 +6,13 @@ ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 514841bb18ebed72c07377ff95127dff247f0d71
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 7fbc37a561b0a1c0b0d5a16fea2892e7faf1a86b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786214"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351510"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Objective-C 開発者向けの C# Primer
 
@@ -43,7 +44,7 @@ Objective-C と C# はどちらも単一継承言語です。 ただし、どち
 
 Objective-C では、"*カテゴリ*" を使用して、実装コードがないクラスにメソッドを追加できます。 C# では、"*拡張メソッド*" と呼ばれるものを通じて同様の概念を利用できます。
 
-拡張メソッドでは、クラスに静的メソッドを追加できます。C# の静的メソッドは Objective-C のクラス メソッドに似ています。 たとえば、次のコードは `ScrollToBottom` という名前のメソッドを `UITextView` クラスに追加します。このクラスは UIKit から Objective-C の `UITextView` クラスにバインドされているマネージ クラスです。
+拡張メソッドでは、クラスに静的メソッドを追加できます。C# の静的メソッドは Objective-C のクラス メソッドに似ています。 たとえば、次のコードは `ScrollToBottom` という名前のメソッドを `UITextView` クラスに追加します。このクラスは UIKit から Objective-C の `UITextView` クラスにバインドされているマネージド クラスです。
 
 ```csharp
 public static class UITextViewExtensions

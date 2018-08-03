@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111158"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353322"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
 
@@ -35,7 +35,7 @@ ms.locfileid: "39111158"
 - Xamarin.iOS アプリが、ワイルドカードのアプリ ID ではなく明示的なアプリ ID を使用する必要があります。
 - Xamarin.iOS アプリで使用するバンドル ID は一意である必要があり、別のアプリで過去に使用したものは使用できません。 無料プロビジョニングで使用されたバンドル ID は再利用**できません**。
 - 既にアプリを配布している場合、そのアプリは無料プロビジョニングで展開できません。
-- アプリで App Services を使用している場合は、[デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md#appservices)のガイドを参照してプロビジョニング プロファイルを作成する必要があります。 
+- アプリで App Services を使用している場合は、[デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)のガイドを参照してプロビジョニング プロファイルを作成する必要があります。 
 
 無料プロビジョニングに関連する制限事項についてはこのドキュメントの「[制限事項](#limitations)」のセクションを、iOS アプリケーションの配布については、[アプリ配布のガイド](~/ios/deploy-test/app-distribution/index.md)を参照してください。
 
@@ -144,4 +144,4 @@ Apple は、無料プロビジョニングを使用して iOS デバイスでア
 ## <a name="related-links"></a>関連リンク
 
 - [デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)
-- [アプリケーション サービスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [アプリケーション サービスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)

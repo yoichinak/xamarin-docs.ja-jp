@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 657370705233e923b482b67fc5afed12631c8187
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785029"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353205"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
@@ -98,7 +98,7 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 [Explicit]\(明示的\) または [Wildcard App ID]\(ワイルドカード App ID\) のいずれかを選択し、次のように逆引き DNS 形式でバンドル ID を入力します。**Explicit**: com.[DomainName].[AppName] **Wildcard**:com.[DomainName].*
-4. アプリで必要な任意の [App Services](~/ios/get-started/installation/device-provisioning/index.md#appservices) を選択します。
+4. アプリで必要な任意の [App Services](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) を選択します。
 5. **[Continue]\(続行\)** ボタンをクリックし、画面の指示に従って新しいアプリ ID を作成します。
 
 配布プロファイルを作成するのに必要なコンポーネントがそろったら、次の手順に従って配布プロファイルを作成します。
