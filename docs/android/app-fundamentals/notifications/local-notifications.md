@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 6c8abbdb18bcaee405f8fe7fe8c22a930435c7e5
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242447"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514532"
 ---
 # <a name="local-notifications"></a>ローカル通知
 
@@ -366,8 +366,8 @@ string message = Intent.Extras.GetString ("message", "");
 保留中のインテントを作成する詳細については、次を参照してください。 [PendingIntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/)します。
 
 
-<a name="notif-chan" />
-
+<a name="notif-chan"></a>
+<a name="notification-channels"></a>
 ## <a name="notification-channels"></a>通知チャネル
 
 Android 8.0 (Oreo) 以降を使えば、*通知チャネル*を表示する通知の種類ごとにユーザーがカスタマイズできるチャネルを作成する機能。 通知チャネルでは、チャネルの展示に同じ動作にポストされたすべての通知できるように、グループの通知を使用します。 たとえば、即時の注意が必要な通知が想定されている通知チャネルと情報メッセージに使用される個別の「静か」チャネルがあります。
