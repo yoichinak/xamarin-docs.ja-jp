@@ -329,6 +329,7 @@
 ### [Xamarin.iOS の分析規則](troubleshooting/xamarin-ios-analysis.md)
 ### [エラー メッセージ (mtouch)](troubleshooting/mtouch-errors.md)
 ### [よく寄せられる質問](troubleshooting/questions/index.md)
+#### [Xcode でのデバッグ](troubleshooting/questions/debugging-with-xcode.md)
 #### [Xamarin で Mac VM を使用できますか。](troubleshooting/questions/mac-vm.md)
 #### [Xcode の以前のバージョンのダウンロード](troubleshooting/questions/previous-xcode.md)
 #### [iOS SDK の場所はどこで設定できますか。](troubleshooting/questions/ios-sdk.md)
