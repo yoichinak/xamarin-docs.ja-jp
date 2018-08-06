@@ -29,7 +29,7 @@ Xamarin.iOS アプリケーションでは、従来の .NET アプリケーシ�
 
 プロトコルとバリアント汎用デリゲートを示すため、ここには、次に示すように、マップに注釈を追加する単純なマップ アプリケーションを構築します。
 
- [![](delegates-protocols-and-events-images/01-map.png "マップに注釈を追加する単純なマップ アプリケーションの一例")](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "マップに追加された例注釈")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/01-map.png "マップに注釈を追加する単純なマップ アプリケーションの一例")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "マップに追加された例注釈")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 このアプリへの取り組み、前に開始しましょう、UIKit の下にある .NET イベントを確認しています。
 

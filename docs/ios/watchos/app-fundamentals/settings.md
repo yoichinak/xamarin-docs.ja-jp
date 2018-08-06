@@ -63,7 +63,7 @@ var userName = shared.StringForKey ("name_preference");
 
 ユーザーが新しいを介して設定**Apple Watch** iPhone 上のアプリです。 このアプリがユーザーに視聴、およびもを使用して、設定が公開される編集上のアプリの表示/非表示を許可、**設定 Watch.bundle**です。
 
-![](settings-images/applewatch-1.png "アプリの設定例") ![ ](settings-images/applewatch-2.png "アプリ設定の例")
+![](settings-images/applewatch-1.png "アプリの設定例") ![](settings-images/applewatch-2.png "アプリ設定の例")
 
 
 

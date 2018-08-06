@@ -19,7 +19,7 @@ ms.locfileid: "34787956"
 
 _iOS 9 には、同時に、スライドを使用して、上または分割ビューで実行されている 2 つのアプリがサポートされています。ビデオの再生ピクチャ ピクチャもサポートします。_
 
-![](multitasking-images/about02-sml.png "画面の例を分割") ![ ](multitasking-images/about03-sml.png "ピクチャ ピクチャの使用例")
+![](multitasking-images/about02-sml.png "画面の例を分割") ![](multitasking-images/about03-sml.png "ピクチャ ピクチャの使用例")
 
 iOS 9 iPad の特定のハードウェアで同時に 2 個のアプリを実行するには、マルチタスク処理サポートを追加します。 IPad のマルチタス キングは、次の機能を使用してサポートされます。
 

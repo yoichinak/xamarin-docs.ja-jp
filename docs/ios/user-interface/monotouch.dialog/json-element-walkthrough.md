@@ -21,7 +21,7 @@ MT.D には、JSON で宣言されているユーザー インターフェイス
 
 MT.D には、さまざまな JSON を使用する場合は、要素 API で使用できる機能がサポートされています。 たとえば、次のスクリーン ショットで、アプリケーションが完全を使用して宣言 JSON:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "たとえば、このスクリーン ショットでは、アプリケーションが完全に宣言されている JSON を使用して")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ](json-element-walkthrough-images/01-load-from-file.png "など、このスクリーン ショットでは、アプリケーションが完全を使用して宣言JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "たとえば、このスクリーン ショットでは、アプリケーションが完全に宣言されている JSON を使用して")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [![](json-element-walkthrough-images/01-load-from-file.png "など、このスクリーン ショットでは、アプリケーションが完全を使用して宣言JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 例では、ここでも、[要素 API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)JSON を使用してタスクの詳細画面を追加する方法を示すチュートリアル。
 

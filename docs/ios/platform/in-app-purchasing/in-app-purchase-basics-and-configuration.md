@@ -109,8 +109,8 @@ ms.locfileid: "34787244"
 
 新しい製品を追加するプロセスには、2 つの手順があります。
 
-1.   製品の種類を選択します[ ![ ](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類の選択。")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   製品の属性、製品 Id を含む、価格レベルとローカライズされた説明を入力: [ ![ ](in-app-purchase-basics-and-configuration-images/image9.png "製品属性を入力します。")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   製品の種類を選択します[![](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類の選択。")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   製品の属性、製品 Id を含む、価格レベルとローカライズされた説明を入力: [![](in-app-purchase-basics-and-configuration-images/image9.png "製品属性を入力します。")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 アプリ内購入製品ごとに必要なフィールドを以下に示します。
 

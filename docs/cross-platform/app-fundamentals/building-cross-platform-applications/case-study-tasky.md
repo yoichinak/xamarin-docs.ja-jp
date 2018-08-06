@@ -479,7 +479,7 @@ MainPage クラスの使用、 `TaskListViewModel` XAML のデータ バイン�
 
 'Add' ボタンなどの iOS の標準のユーザー インターフェイスのデザインを使用して、ナビゲーション バーに配置されていると、組み込みを使用して**プラス (+)** アイコン。 既定値も使用`UINavigationController`[戻る] ボタンの動作とテーブルの ' スワイプ delete' をサポートしています。
 
- [![](case-study-tasky-images/ios-taskylist.png "また既定 UINavigationController [戻る] ボタンの動作をサポートしてスワイプ-削除の表に")](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ](case-study-tasky-images/ios-taskylist.png "既定 UINavigationController でも使用ボタンの動作をバックアップし、テーブルにスワイプして、削除をサポートしています")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "また既定 UINavigationController [戻る] ボタンの動作をサポートしてスワイプ-削除の表に")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "既定 UINavigationController でも使用ボタンの動作をバックアップし、テーブルにスワイプして、削除をサポートしています")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -495,7 +495,7 @@ Android アプリでは、組み込みの表示 'ティック' が必要な行�
 
 Windows Phone アプリでは、上部のナビゲーション バーではなく、画面の下部にあるアプリ バーを設定する、標準のレイアウトを使用します。
 
- [![](case-study-tasky-images/wp-taskylist.png "Windows Phone アプリで使用する標準のレイアウトでは、上部のナビゲーション バーではなく、画面の下部にあるアプリ バーを設定する")](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/wp-taskylist.png "Windows Phone アプリ標準を使用します。レイアウト、上部のナビゲーション バーではなく、画面の下部にあるアプリ バーを設定します。")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [![](case-study-tasky-images/wp-taskylist.png "Windows Phone アプリで使用する標準のレイアウトでは、上部のナビゲーション バーではなく、画面の下部にあるアプリ バーを設定する")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "Windows Phone アプリ標準を使用します。レイアウト、上部のナビゲーション バーではなく、画面の下部にあるアプリ バーを設定します。")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 
