@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
-ms.date: 07/18/2018
-ms.openlocfilehash: 82a73619e4c0507e8857cc91d88ababa870013de
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 08/06/2018
+ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
+ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270473"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520286"
 ---
 # <a name="sharing-code-overview"></a>共有コードの概要
 
@@ -19,7 +19,7 @@ _このドキュメントは、クロス プラットフォーム プロジェ�
 
 クロスプラット フォーム対応のアプリケーション間でコードを共有するための 3 つの方法はあります。
 
-- [**.NET standard ライブラリ**](#Net_Standard) – .NET Standard プロジェクトを複数のプラットフォームで共有できるコードを実装することができ、(バージョン) によって多数の .NET Api にアクセスできます。 .NET Standard 2.0 の最適なカバレッジを提供しますが、Api の .NET standard 1.0 ~ 1.6 の実装が徐々 に大きくなるを設定します。
+- [**.NET standard ライブラリ**](#Net_Standard) – .NET Standard プロジェクトを複数のプラットフォームで共有できるコードを実装することができ、(バージョン) によって多数の .NET Api にアクセスできます。 .NET standard 1.0 ~ 1.6 は、.NET Standard 2.0 (Xamarin アプリで利用できる .NET Api を含む) は .NET BCL の最適なカバレッジを提供しますが、Api のセットを徐々 に大きくなるを実装します。
 - [**共有プロジェクト**](#Shared_Projects) – 共有アセット プロジェクトの種類を使用して、ソース コードを整理し、使用`#if`コンパイラ ディレクティブのプラットフォームに固有の要件を管理するために必要とします。
 - [**ポータブル クラス ライブラリ**](#Portable_Class_Libraries) (非推奨)-ポータブル クラス ライブラリ (Pcl) ことができます、共通 API サーフェイスで複数のプラットフォームをターゲットし、プラットフォーム固有の機能を提供するインターフェイスを使用します。 最新バージョンの Visual Studio での Pcl は非推奨&ndash;代わりに .NET Standard を使用します。
 
