@@ -254,7 +254,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: によって参照される{0}.{1}    * * このメッセージは MM2006 に関連する * *
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: によって参照される{0}.{1}    ** このメッセージは MM2006 に関連する **
 
 <a name="MM2010" />
 
@@ -266,7 +266,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: のみ最初{0}の{1}「によって参照される」警告を表示します。 * * このメッセージは、2009 年に関連する * *
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: のみ最初{0}の{1}「によって参照される」警告を表示します。 ** このメッセージは、2009 年に関連する \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac 拡張機能をサポートしませんリンク。 要求のリンクは無視されます。 * * このメッセージは XM 3.6 以降で不使用 * *
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac 拡張機能をサポートしませんリンク。 要求のリンクは無視されます。 ** このメッセージは XM 3.6 以降で不使用 \*\*
 
 <!-- 2015 used by mtouch -->
 
