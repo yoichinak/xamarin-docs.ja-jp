@@ -2,16 +2,17 @@
 title: SkiaSharp の 2D 描画
 description: このドキュメントでは、SkiaSharp 描画クロスプラット フォーム 2D の概要を示します。 SkiaSharp を記述するさまざまなガイドとそのさまざまな Api にリンクします。
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 0c8cbc14308c8c4131e5aaa2bcc0ddfa798af610
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 7207f33e56f566a5528d93f9957e2ff780a22a65
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130921"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615523"
 ---
 # <a name="2d-drawing-with-skiasharp"></a>SkiaSharp の 2D 描画
 
@@ -62,12 +63,12 @@ SkiaSharp とサンプルの主要な概念の概要については、グラフ�
   * [パス情報と列挙](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 - [ビットマップ](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/index.md)
   * [ビットマップの表示](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
-  * [作成して、ビットマップの描画](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
-  * [ビットマップをトリミングします。](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
+  * [ビットマップの作成と描画](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
+  * [ビットマップのトリミング](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
   * [ビットマップのセグメント化された表示](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
-  * [ビットマップをファイルに保存します。](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
+  * [ビットマップのファイルへの保存](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
   * [ビットマップのピクセル ビットへのアクセス](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
-  * [ビットマップをアニメーション化](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
+  * [ビットマップのアニメーション化](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[プラットフォーム固有の注意事項](~/graphics-games/skiasharp/platform.md)
 

@@ -3,16 +3,15 @@ title: Xamarin.Forms で SkiaSharp を使用します。
 description: SkiaSharp は、.NET と c# は Google の製品で広く使用されるオープン ソース Skia グラフィック エンジンを利用した 2D グラフィックス システムです。 このガイドでは、Xamarin.Forms アプリケーションの 2D グラフィックスを SkiaSharp を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
-ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: bdc0603c6ae406adac42533e251106ccccf2cb7c
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: f7d97b798bf2a5a75af0731a665fe212491a6516
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130947"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615874"
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>Xamarin.Forms で SkiaSharp を使用します。
 

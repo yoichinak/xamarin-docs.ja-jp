@@ -1,57 +1,57 @@
 ---
-title: SkiaSharp でパスの効果
-description: この記事には、さまざまな SkiaSharp パスに及ぼす影響を描画し、入力するためのパスを許可して、サンプル コードを示しますがについて説明します。
+title: SkiaSharp のパスの効果
+description: この記事では、さまざまな SkiaSharp パス効果を描画し、入力に使用するパスを許可して、サンプル コードでこのについて説明します。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 28f628fb4e8ab77e9c36e6e1972d7269ad0dad4d
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244111"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615679"
 ---
-# <a name="path-effects-in-skiasharp"></a>SkiaSharp でパスの効果
+# <a name="path-effects-in-skiasharp"></a>SkiaSharp のパスの効果
 
-_線の描画と、入力に使用するパスを許可するさまざまなパス効果を検出します。_
+_入力し、線の描画に使用するパスを許可するパスのさまざまな効果を検出します。_
 
-A*パス効果*のインスタンス、 [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/)を 8 つの静的のいずれかで作成したクラス`Create`メソッドです。 `SKPathEffect`オブジェクトに設定し、 [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/)のプロパティ、`SKPaint`小規模のレプリケートされたパスの線を描画興味深い効果のさまざまなオブジェクト。
+A*パス効果*のインスタンスである、 [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) 8 つの静的のいずれかで作成されるクラス`Create`メソッド。 `SKPathEffect`オブジェクトに設定し、 [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/)のプロパティ、`SKPaint`小規模のレプリケートされたパスの線の描画などの興味深い効果のさまざまなオブジェクト。
 
-![](effects-images/patheffectsample.png "リンクされたチェーン サンプル")
+![](effects-images/patheffectsample.png "リンクされたチェーンのサンプル")
 
 パスの効果を使用します。
 
-- ドットとダッシュを使用した直線を描く
-- 塗りつぶされた任意のパスを使用した直線を描く
-- 領域を塗りつぶす縞模様です。
-- タイル化されたパス、領域を塗りつぶす
-- 鋭い角の丸めを行う
-- 直線と曲線をランダム「ジッター」を追加します。
+- ストロークの行をドットとダッシュ
+- 任意の塗りつぶされたパスの線の境界線の描画します。
+- ハッチ線で領域を塗りつぶす
+- 並べて表示されたパスを使用して領域を塗りつぶす
+- 鋭い角丸めを行う
+- 直線と曲線をランダムな「ジッター」を追加します。
 
-さらに、2 つ以上のパスの効果を組み合わせることができます。
+さらに、2 つまたは複数のパスの効果を組み合わせることができます。
 
-この資料を使用する方法も示します、`GetFillPath`メソッドの`SKPaint`のプロパティを適用することで、1 つのパスを別のパスに変換する`SKPaint`など、`StrokeWidth`と`PathEffect`です。 これにより、別のパスの概要ではパスを取得するなど、いくつかの興味深い方法。 `GetFillPath` パス効果関連便利です。
+この記事では使用する方法も示します、`GetFillPath`メソッドの`SKPaint`のプロパティを適用することで、1 つのパスを別のパスに変換する`SKPaint`など、`StrokeWidth`と`PathEffect`します。 これにより、別のパスのアウトライン パスを取得するなど、いくつかの興味深い手法。 `GetFillPath` パスの効果に関連便利です。
 
 ## <a name="dots-and-dashes"></a>ドットとダッシュ
 
-使用、 [ `PathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/)メソッドは、記事で説明した[**点線および破線**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)です。 メソッドの最初の引数は、偶数個のダッシュの長さとダッシュの間隔の長さの間で切り替えると、2 つ以上の値を格納する配列を示します。
+使用、 [ `PathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/)メソッドは、この記事で説明した[**ドットし、ダッシュ**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)します。 メソッドの最初の引数は、偶数のダッシュの長さと、ダッシュの間隔の長さの間で切り替えると、2 つ以上の値を格納する配列。
 
 ```csharp
 public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 ```
 
-これらの値は*いない*ストロークの幅に対して相対的です。 たとえば、ストロークの幅は 10 ですが、行と正方形の空白の四角形の破線で構成する場合は、設定、`intervals`配列 {10, 10}。 `phase`破線パターン内の行の始点の引数を示します。 この例では、四角形の間隔で始まる行を実行する場合に、設定`phase`を 10 にします。
+これらの値は*いない*ストロークの幅を基準とします。 ストロークの幅が 10 で、行を四角形の破線と空白の正方形で構成する場合の設定など、`intervals`配列 {10, 10}。 `phase`引数は、破線パターン内の行の開始位置を示します。 この例では、正方形の間隔で始まる行を実行する場合が設定`phase`を 10 にします。
 
-破線の両端が影響を受けました、`StrokeCap`プロパティ`SKPaint`です。 幅の広い線の幅は、このプロパティを設定非常に一般的な`SKStrokeCap.Round`破線の両端に丸める。 この場合、内の値、`intervals`配列は*されません*から丸め、結果として得られる循環ドットがゼロの幅を指定する必要があることを意味する追加の長さが含まれます。 、10 のストロークの幅を循環ドットと同じ形の直径のドットの間のギャップには、行を作成、使用、`intervals`の配列 {0, 20}。
+ダッシュの両端が受ける、`StrokeCap`プロパティの`SKPaint`します。 幅のストロークの幅は、このプロパティを設定する非常に一般的な`SKStrokeCap.Round`ダッシュの両端に丸める。 この場合、値、`intervals`配列*いない*循環ドットは、0 の幅を指定することが必要であることを意味する余分な長さ、丸め処理の結果が含まれます。 10 のストロークの幅の点と同じ大きさの点の間のギャップには、行を作成、使用、`intervals`の配列 {0, 20}。
 
-**ドットで区切られたテキストのアニメーション**ページがに似ていますが、**記載されているテキスト**、資料に記載されたページ[**を統合するテキストとグラフィックス**](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)で設定してテキストの文字が表示される説明されている、`Style`のプロパティ、`SKPaint`オブジェクトを`SKPaintStyle.Stroke`です。 さらに、**ドットで区切られたテキストのアニメーション**使用`SKPathEffect.CreateDash`点線の外観を説明これに付与し、プログラムをアニメーション化も、`phase`の引数、`SKPathEffect.CreateDash`を旅行のテキストを囲むドットを作成するメソッド文字があります。 横モードでページを次に示します。
+**ドット形式のテキストをアニメーション化**に似ている、**中抜きの文字列を**、情報の記事で説明されているページ[**統合テキストとグラフィックス**](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)で設定してテキストの文字が表示される説明されている、`Style`のプロパティ、`SKPaint`オブジェクトを`SKPaintStyle.Stroke`します。 さらに、**ドット形式のテキストをアニメーション化**使用`SKPathEffect.CreateDash`点線の外観をアウトラインこの付与して、プログラムをアニメーション化も、`phase`の引数、`SKPathEffect.CreateDash`旅行のテキストを囲む点を作成するメソッド文字。 横モードでページを示します。
 
-[![](effects-images/animateddottedtext-small.png "ドットで区切られたテキストのアニメーションをページのスクリーン ショットをトリプル")](effects-images/animateddottedtext-large.png#lightbox "ドットで区切られたテキストのアニメーションをページのトリプル スクリーン ショット")
+[![](effects-images/animateddottedtext-small.png "ドット形式のテキストをアニメーション化されるページのスクリーン ショットをトリプル")](effects-images/animateddottedtext-large.png#lightbox "ドット形式のテキストをアニメーション化されるページの 3 倍になるスクリーン ショット")
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスは、一部の定数を定義することで開始しもオーバーライド、`OnAppearing`と`OnDisappearing`アニメーションのメソッド。
+[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスがいくつかの定数を定義することで開始しもオーバーライド、`OnAppearing`と`OnDisappearing`アニメーションのメソッド。
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -93,7 +93,7 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーが作成した後、`SKPaint`テキストを表示するオブジェクト。 `TextSize`プロパティを画面の幅に基づいてに調整されます。
+`PaintSurface`ハンドラーを作成して開始、`SKPaint`テキストを表示するオブジェクト。 `TextSize`プロパティは、画面の幅に基づいて調整されます。
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -147,19 +147,19 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-メソッドの末尾にかけて、`SKPathEffect.CreateDash`を使用してメソッドを呼び出す、`dashArray`フィールド、およびアニメーション化されたとして定義されている`phase`値。 `SKPathEffect`インスタンスに設定されて、`PathEffect`のプロパティ、`SKPaint`テキストを表示するオブジェクト。
+メソッドの最後の方、`SKPathEffect.CreateDash`を使用してメソッドを呼び出す、`dashArray`フィールド、およびアニメーション化されたとして定義されている`phase`値。 `SKPathEffect`インスタンスに設定されて、`PathEffect`のプロパティ、`SKPaint`テキストを表示するオブジェクト。
 
-また、設定することができます、`SKPathEffect`オブジェクトを`SKPaint`テキストを測定し、ページで、中央に配置する前にオブジェクト。 その場合は、ただし、アニメーション ドットとダッシュ若干のバリエーションをレンダリングするテキストのサイズとテキストは、少し振動させられる傾向があります。 (試してみる)
+また、設定、`SKPathEffect`オブジェクトを`SKPaint`テキストを計測し、ページの中央に配置する前にオブジェクト。 その場合は、ただし、アニメーション ドットとダッシュ レンダリングされたテキストのサイズに若干のバリエーションが発生して、テキストを少しバイブレーション傾向があります。 (試してみる)
 
-テキストの文字を囲むアニメーション ドット円としてがある特定の時点で各閉じた曲線の存在との間のポップをドットが短い場合にも注目します。 これは、文字のアウトラインを定義するパスの開始位置し、終了位置。 パスの長さが、ダッシュのパターン (ここでは 20 ピクセル単位) の長さの整数倍ではない場合、そのパターンの一部だけは、パスの最後に適合できます。
+テキスト文字を囲む点をアニメーション化された円としてが特定の時点で各閉じた曲線ドットのポップ表示が存在すると思われる場所もわかります。 これは、文字アウトラインを定義するパスの開始位置し、終了位置。 パスの長さが破線パターン (ここで 20 ピクセル単位) の長さの整数倍でない場合、そのパターンの一部だけは、パスの最後に適合できます。
 
-破線パターンで、パスの長さに合わせてまでの長さを調整することはできますが、ある手法、パスの長さを決定するを必要とする今後の記事で説明します。
+パスの長さに合わせてダッシュ パターンの長さを調整することができますが、ある手法は、パスの長さを確認する必要がありますを今後の記事で説明します。
 
-**ドット (.)/ダッシュ Morph**ダッシュように点線で、もう一度を組み合わせてフォーム ダッシュを分割できるように、プログラムが、dash パターン自体をアニメーション化します。
+**ドット/ダッシュ Morph**ダッシュがドットで、もう一度フォーム ダッシュを結合に分割すると思われるように、プログラムが、dash パターン自体をアニメーション化します。
 
-[![](effects-images/dotdashmorph-small.png "ドット Dash Morph ページのスクリーン ショットをトリプル")](effects-images/dotdashmorph-large.png#lightbox "ドット Dash Morph ページのトリプル スクリーン ショット")
+[![](effects-images/dotdashmorph-small.png "ドット Dash Morph ページのスクリーン ショットをトリプル")](effects-images/dotdashmorph-large.png#lightbox "ドット Dash Morph ページの 3 倍になるスクリーン ショット")
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)クラスのオーバーライド、`OnAppearing`と`OnDisappearing`メソッドの前のプログラムがでしたが、定義されているクラスと同様、`SKPaint`フィールドとしてオブジェクト。
+[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)オーバーライド、`OnAppearing`と`OnDisappearing`メソッドは前のプログラムが、クラス定義と同じように、`SKPaint`フィールドとしてのオブジェクト。
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -241,11 +241,11 @@ public class DotDashMorphPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーは、ページのサイズに基づく楕円パスを作成し、長いセクションを設定するコードの実行、`dashArray`と`phase`変数。 アニメーション変数として`t`範囲は 1、0、`if`ブロックがその時点でその四半期の各および 4 つの四半期に分割`tsub`も 0 の範囲を 1 にします。 最後に、プログラムを作成、`SKPathEffect`設定し、`SKPaint`描画オブジェクトです。
+`PaintSurface`ハンドラーが、ページのサイズに基づいて、楕円のモーション パスを作成し、長のセクションを設定するコードの実行、`dashArray`と`phase`変数。 アニメーション変数として`t`0 ~ 1 の範囲、`if`ブロックがその時間に 4 つの四半期とそれらの四半期の各分割`tsub`も 0 から 1 の範囲します。 最後に、プログラムを作成、`SKPathEffect`に設定し、`SKPaint`描画オブジェクト。
 
 ## <a name="from-path-to-path"></a>パスへのパスから
 
-[ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/)メソッドの`SKPaint`に別の設定に基づいて 1 つのパスをオンに、`SKPaint`オブジェクト。 このしくみを表示するには、置換、`canvas.DrawPath`を次のコードは、前のプログラムで呼び出します。
+[ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/)メソッドの`SKPaint`の設定に基づいて別に 1 つのパスを変換、`SKPaint`オブジェクト。 この動作を確認するには置き換えます、`canvas.DrawPath`を次のコードは前のプログラムで呼び出します。
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -258,15 +258,15 @@ canvas.DrawPath(newPath, newPaint);
 
 ```
 
-この新しいコードで、`GetFillPath`変換を呼び出し、 `ellipsePath` (楕円だけです) に`newPath`に表示される、`newPaint`です。 `newPaint`オブジェクトがすべての既定のプロパティ設定で作成された点を除いて、`Style`プロパティに基づいて、ブール値から値を返す`GetFillPath`です。
+この新しいコードで、`GetFillPath`に変換を呼び出し、 `ellipsePath` (楕円だけです) に`newPath`を表示する`newPaint`します。 `newPaint`オブジェクトがすべての既定のプロパティ設定で作成されたことを除いて、`Style`プロパティをベースに設定されてから値を返すブール値`GetFillPath`。
 
-ビジュアルに設定されている色を除いて同一`ellipsePaint`ではなく`newPaint`です。 単純な楕円で定義されているのではなく`ellipsePath`、`newPath`ドットとダッシュの系列を定義する多数のパスの輪郭が含まれています。 さまざまなプロパティを適用した結果は次の`ellipsePaint`— `StrokeWidth`、 `StrokeCap`、および`PathEffect`— に`ellipsePath`結果のパスに配置することと`newPath`です。 `GetFillPath`メソッドが転送先のパスを入力するかどうかを示すブール値を返します。 戻り値は、この例では`true`のパスを入力します。
+ビジュアルに設定されているこの色は除いて同一である`ellipsePaint`なく`newPaint`します。 単純な楕円で定義されているのではなく`ellipsePath`、`newPath`ドットとダッシュの系列を定義する多数のパスの輪郭が含まれています。 さまざまなプロパティを適用した結果は、この`ellipsePaint`- `StrokeWidth`、`StrokeCap`と`PathEffect`— に`ellipsePath`に結果のパスを配置することと`newPath`します。 `GetFillPath`メソッドは変換先のパスを入力するかどうかを示すブール値を返します。 この例では、戻り値は`true`のパスを入力します。
 
-変更してみて、`Style`設定`newPaint`に`SKPaintStyle.Stroke`と、1 ピクセル幅線が記載されている個々 のパスの輪郭が表示されます。
+変更してみてください、`Style`設定`newPaint`に`SKPaintStyle.Stroke`とピクセル幅の 1 つの行に記載されている個々 のパスの輪郭が表示されます。
 
-## <a name="stroking-with-a-path"></a>パスの描画
+## <a name="stroking-with-a-path"></a>パスを使用して線の描画
 
-[ `SKPathEffect.Create1DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create1DPath/p/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPath1DPathEffectStyle/)メソッドは、概念的に似ています`SKPathEffect.CreateDash`破線のパターンではなく、パスを指定する点が異なります。 このパスは、線、行または曲線に複数回がレプリケートされます。
+[ `SKPathEffect.Create1DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create1DPath/p/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPath1DPathEffectStyle/)メソッドは、概念的に似ています`SKPathEffect.CreateDash`破線と空白のパターンではなく、パスを指定する点が異なります。 このパスは、線、線や曲線を複数回にレプリケートされます。
 
 構文は次のとおりです。
 
@@ -276,17 +276,17 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 ```
 
 > [!IMPORTANT]
-> 注意: のオーバー ロードがある`Create1DPath`列挙型の引数で定義されている`SkPath1DPathEffect`を小文字 'k' この名前は、エラーと、その列挙型とメソッドは推奨されなくなりましたが、非常に簡単に、コードの一部にするメソッドは推奨されませんしする内容を正確に表示することは困難が間違っています。
+> 注意: のオーバー ロードがある`Create1DPath`列挙型の引数で定義されている`SkPath1DPathEffect`小文字 'k です '。 この名前は、エラーとその結果、列挙型とメソッドが非推奨とされますが、非推奨のメソッド、コードの一部となるは非常に簡単し、正確に何を表示することは困難ですが間違っています。
 
-一般に、渡されたパス`Create1DPath`小規模で中央に配置します (0, 0) のポイントを中心になります。 `advance`パラメーターが行にパスがレプリケートされると、パス センターからの距離を示します。 通常、この引数は、パスのおおよその幅を設定します。 `phase`引数アプローチでは、同じとしての役割は、ここに、`CreateDash`メソッドです。
+一般に、パスに渡す`Create1DPath`中小ポイント (0, 0) を中央揃えになります。 `advance`行にパスがレプリケートされると、パラメーターがパス センターからの距離を示します。 通常、この引数は、パスのおおよその幅を設定します。 `phase`引数再生されるのと同じロールは、ここには、`CreateDash`メソッド。
 
-[ `SKPath1DPathEffectStyle` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath1DPathEffectStyle/)は 3 つのメンバーがあります。
+[ `SKPath1DPathEffectStyle` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath1DPathEffectStyle/)に 3 つのメンバーがあります。
 
 - [`Translate`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Translate/)
 - [`Rotate`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Rotate/)
 - [`Morph`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Morph/)
 
-`Translate`メンバーにより、パスを直線または曲線に沿ってレプリケートされるように、同じ方向に保持します。 `Rotate`パスが、曲線の接線に基づいて回転します。 パスには、水平の線の通常の方向がします。 `Morph` ような`Rotate`パス自体が描画される線の曲率を一致するように曲線も点が異なります。
+`Translate`メンバーがそのまま同じ方向でレプリケートする直線または曲線に沿ってへのパス。 `Rotate`パスは、曲線の接線をに基づいて回転されます。 パスが、本の横線の通常の方向。 `Morph` ような`Rotate`パス自体が描画される線の曲率を一致するように曲線も点が異なります。
 
 **1 D 効果**ページは、これら 3 つのオプションを示します。 [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml)ファイルが列挙体の 3 つのメンバーに対応する 3 つの項目を含むピッカーを定義します。
 
@@ -324,7 +324,7 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPathEffect`フィールドとしてオブジェクト。 これらはすべてを使用して作成`SKPathEffect.Create1DPath`で`SKPath`を使用して作成されたオブジェクト`SKPath.ParseSvgPathData`です。 最初は簡単なボックス、2 番目はダイヤモンド形、3 番目は四角形。 これらは、次の 3 つの効果のスタイルを示すために使用されます。
+[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPathEffect`フィールドとしてのオブジェクト。 これらはすべてを使用して作成`SKPathEffect.Create1DPath`で`SKPath`を使用して作成されたオブジェクト`SKPath.ParseSvgPathData`します。 単純なボックス 1 つ目は、2 つ目は、菱形および 3 番目が四角形。 これらは、3 つの効果のスタイルを示すために使用されます。
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -395,35 +395,35 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラー自体でループ処理を決定するため、ピッカーにアクセスするベジエ曲線を作成する`PathEffect`に線を使用する必要があります。 3 つのオプション- `Translate`、 `Rotate`、および`Morph`-左から右に表示されます。
+`PaintSurface`ハンドラー自体でループ処理を判断するために、ピッカーにアクセスするベジエ曲線を作成する`PathEffect`に線を使用する必要があります。 3 つのオプション- `Translate`、 `Rotate`、および`Morph`-左から右に表示されます。
 
-[![](effects-images/1dpatheffect-small.png "トリプル ページのスクリーン ショットの 1 D パス効果")](effects-images/1dpatheffect-large.png#lightbox "トリプル ページのスクリーン ショットの 1 D パスの効果")
+[![](effects-images/1dpatheffect-small.png "1 D 効果 ページのスクリーン ショットをトリプル")](effects-images/1dpatheffect-large.png#lightbox "1 D 効果 ページの 3 倍になるスクリーン ショット")
 
-指定されたパス、`SKPathEffect.Create1DPath`メソッドは常に入力します。 指定されたパス、`DrawPath`メソッド常にストロークを付ける場合、`SKPaint`オブジェクトがその`PathEffect`プロパティの 1 D パス効果に設定します。 注意して、`pathPaint`オブジェクトを持たない`Style`設定は、通常の既定値は`Fill`、パス ストロークを付けるかに関係なく、します。
+指定されたパス、`SKPathEffect.Create1DPath`メソッドが必ず塗りつぶされます。 指定されたパス、`DrawPath`メソッドは常に線を付ける場合、`SKPaint`オブジェクトがその`PathEffect`プロパティ 1 D パスの効果を設定します。 注意して、`pathPaint`オブジェクトにない`Style`設定で、既定では通常`Fill`パスに線を付けるかに関係なく、します。
 
-使用される、ボックス、`Translate`の例は、20 ピクセルの四角形、および`advance`引数 24 に設定されています。 この違いは、水平または垂直方向、行はほぼ同じですが、ボックスの対角線が 28.3 ピクセルであるため、行を斜めのボックスとは少し重複ボックス間のギャップをによりします。
+ボックスで使用される、`Translate`例は、20 ピクセルの正方形、および`advance`引数は 24 に設定されます。 この相違では、水平方向または垂直方向に行が約ですが、ボックスの対角線が 28.3 ピクセルであるため、行を斜めのボックスが少し重複のボックス間のギャップが原因です。
 
-菱形、`Rotate`例も 20 ピクセルです。 `advance`ひし形が線の曲率と一緒に回転させるようにタッチするポイントが続行するために、20 に設定します。
+菱形、`Rotate`例は 20 ピクセル幅でも。 `advance`点は、ダイヤモンドが線の曲率と一緒に回転させるようにタッチを続けることは 20 に設定します。
 
-内の四角形、`Morph`の例で幅 50 ピクセル、 `advance` 55 のベジエ曲線周囲が曲がっている四角形の差を小規模に設定します。
+内の四角形、`Morph`例は、50 ピクセルで、 `advance` 55 ベジエ曲線の周りが曲がっている四角形の間の小さな間隔に設定します。
 
-場合、`advance`パスのサイズより小さい引数は、レプリケートされたパスが重なることができます。 これにより、いくつかおもしろい効果。 **リンク チェーン**ページには、一連の重複を catenary の個性的な形でハングするリンクのチェーンのように見える円が表示されます。
+場合、`advance`引数は、パスのサイズより小さい、レプリケートされたパスが重複することができます。 これは、結果、いくつかの興味深い効果。 **リンク チェーン**ページには、一連の重複を catenary の特徴的な形状にハングする、リンクされたチェーンのようにすると思われる円が表示されます。
 
-[![](effects-images/linkedchain-small.png "リンクされたチェーン ページのスクリーン ショットをトリプル")](effects-images/linkedchain-large.png#lightbox "リンク チェーン ページのトリプル スクリーン ショット")
+[![](effects-images/linkedchain-small.png "リンクされたチェーンのページのスクリーン ショットをトリプル")](effects-images/linkedchain-large.png#lightbox "リンク チェーン ページの 3 倍になるスクリーン ショット")
 
-非常に見るし、実際には円をされないものが表示されます。 チェーン内の各リンクは、2 つの円弧、サイズし、置か隣接リンクで接続しているようです。
+とても近接検索し、実際に円をものがないことを確認します。 チェーン内の各リンクは、2 つの円弧、サイズし、置か隣接リンクで接続しているようです。
 
-チェーンまたは uniform 重み付けの分散のケーブル、catenary の形式でハングします。 反転された catenary の形式で構築された、arch メリットがある、アーキテクチャの重みの負荷を均等に配分します。 Catenary には、一見単純な数学的な説明があります。
+チェーンまたは uniform 重みの配分のケーブル、catenary の形式でハングします。 反転されたコピーの catenary の形式で構築された、arch アーチの重み付けによる負荷を均等に配分からメリットがあります。 Catenary では、一見単純な数学的な説明があります。
 
-y、· を =cosh(x/a)
+y を押しを =cosh(x/a)
 
-*Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、* です。 Catenary の中心です。 同様に、*コサイン*関数、 *cosh*と呼ばれます*でも*、つまり*cosh(–x)* equals *cosh(x)*、正または負の値の引数を高めるために値が大きくなるとします。 これらの値では、曲線、catenary の辺を形成するについて説明します。
+*Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、*。 Catenary の中心です。 ように、*コサイン*関数、 *cosh*と呼ばれます*でも*、ですつまり*cosh(–x)* equals *cosh(x)*。、正または負の値の引数を高めるための値を増やすとします。 これらの値には、曲線、catenary の面を形成するについて説明します。
 
-適切な値の検索 *、* catenary 電話のページの寸法に合わせてが直接計算します。 場合*w*と*h*幅と高さの四角形の最適な値は、 *、* が次の式を満たします。
+適切な値の検索 *、* に合わせて、電話のページの寸法を catenary を利用する直接計算はありません。 場合*w*と*h*の最適値、四角形の高さと幅は *、* 次の式を満たします。
 
-cosh (w/2、/) 1 + h を =、/
+cosh (w/2/、) = 1 + h、/
 
-次の方法で、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)として等号 (=) の右側と左側の 2 つの式を参照して、等しいかどうかがクラスに組み込まれています`left`と`right`です。 値が小さい *、*、`left`がより大きい`right`; の値が大きい *、*、`left`はより小さい`right`です。 `while`ループを内の最適な値を絞り込みます *、*:
+次のメソッド、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)クラスには、左側のおよびと等号の右側の 2 つの式を参照して、等しいかどうかが組み込まれています`left`と`right`します。 値が小さい *、*、`left`がより大きい`right`; の値が大きい *、*、`left`がより小さい`right`します。 `while`の最適な値でループを絞り込みます *、*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -452,7 +452,7 @@ float FindOptimumA(float width, float height)
 }
 ```
 
-`SKPath`オブジェクトのクラスのコンス トラクターと、結果内のリンクが作成`SKPathEffect`オブジェクトに設定し、`PathEffect`のプロパティ、`SKPaint`フィールドとして格納されているオブジェクト。
+`SKPath`オブジェクト クラスのコンス トラクターと、結果で、リンクが作成されたの`SKPathEffect`オブジェクトに設定し、`PathEffect`のプロパティ、`SKPaint`フィールドとして格納されているオブジェクト。
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -500,7 +500,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-メインのジョブ、`PaintSurface`ハンドラーは catenary 自体のパスを作成します。 最適なを決定した後 *、* で格納して、`optA`変数もする必要があるウィンドウの上部からのオフセットを計算します。 コレクションを累積できるし、 `SKPoint` 、catenary の値が、パスに有効にして、以前に作成して、パスの描画`SKPaint`オブジェクト。
+主な仕事、`PaintSurface`ハンドラーは、catenary 自体のパスを作成します。 最適な決定した後 *、* を格納することで、`optA`変数もする必要があるウィンドウの上部からのオフセットを計算します。 コレクションを蓄積できますし、 `SKPoint` 、catenary の値は、パスに有効にして、以前に作成したを使用してパスを描画`SKPaint`オブジェクト。
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -544,15 +544,15 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-このプログラムで使用されるパスを定義する`Create1DPath`がその (0, 0) 中央にポイントします。 これは、必然的にあるため、(0, 0) パスのポイントは、行または装飾曲線に揃えられます。 中央揃え以外を使用するただし、(0, 0) 特殊効果をポイントします。
+このプログラムで使用されるパスを定義する`Create1DPath`がその (0, 0)、センターのポイントします。 これが妥当に見えますため、(0, 0)、パスのポイントが直線または曲線を装飾に揃えられます。 ただし、中央揃え以外を使用できます (0, 0) 特殊効果をいくつかのポイントします。
 
-**コンベヤ ベルト**ページは、長方形コンベヤ ベルト曲線の上部と下部のウィンドウの次元のサイズがこのようなパスを作成します。 シンプルなそのパスのストロークを付ける`SKPaint`20 ピクセル幅の広いと、灰色のオブジェクトを別の再描画`SKPaint`オブジェクトを`SKPathEffect`ほとんどバケットのようなパスを参照するオブジェクト。
+**コンベヤ ベルト**ページが曲線の上部と下部にあるこのサイズは、ウィンドウのサイズにしっぽコンベヤ ベルトのようなパスを作成します。 そのパスには、単純なを付けた`SKPaint`20 ピクセルの幅と色の灰色のオブジェクトし、別にもう一度描画`SKPaint`オブジェクトを`SKPathEffect`ほとんどバケットのようなパスを参照するオブジェクト。
 
-[![](effects-images/conveyorbelt-small.png "コンベヤ ベルトのページのスクリーン ショットをトリプル")](effects-images/conveyorbelt-large.png#lightbox "コンベヤ ベルトのページのトリプル スクリーン ショット")
+[![](effects-images/conveyorbelt-small.png "コンベヤ ベルトのページのスクリーン ショットをトリプル")](effects-images/conveyorbelt-large.png#lightbox "コンベヤ ベルトのページの 3 倍になるスクリーン ショット")
 
-(0, 0) のバケットのパスのポイントは、ハンドル、ため、`phase`引数はアニメーション、コンベヤ ベルト、おそらく下部水をスコープとアウトを上部にあるダンプ中心となるように、バケット。
+(0, 0) バケット パスのポイントは、ハンドル、したがって、`phase`引数がアニメーション化、バケットは、コンベヤ ベルト、おそらく、下部に水をスコープとアウトの上部にあるダンプに焦点を絞っているようです。
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)クラスのオーバーライドによるアニメーション、`OnAppearing`と`OnDisappearing`メソッドです。 バケットのパスは、ページのコンス トラクターで定義されます。
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)クラス実装のオーバーライドでアニメーションを`OnAppearing`と`OnDisappearing`メソッド。 バケットのパスは、ページのコンス トラクターで定義されます。
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -620,9 +620,9 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-バケット作成コードを少し大きくのバケットを横向きにするに次の 2 つの変換を完了します。 これらの変換を適用することは、前のコードですべての座標を調整するよりも簡単でした。
+バケットの作成コードは、2 つの変換を少し拡大のバケットを横向きにするには完了します。 これらの変換を適用することは、前のコードのすべての座標を調整するよりも簡単でした。
 
-`PaintSurface`自体コンベヤ ベルトのパスを定義することによってハンドラーを開始します。 これは、行のペアだけとは、20-ピクセル幅灰色の線で描画を円のセミコロンのペア。
+`PaintSurface`自体コンベヤ ベルトのパスを定義することでハンドラーを開始します。 これは、単に行のペアと 20 ピクセル幅灰色の線で描画するセミコロンの円のペア。
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -681,9 +681,9 @@ public class ConveyorBeltPage : ContentPage
 
 コンベヤ ベルトを描画するためのロジックは、横モードでは機能しません。
 
-バケットは、200 ピクセル、コンベヤ ベルトの上に離れてに関する等間隔に配置する必要があります。 ただし、コンベヤ ベルトはおそらくありません 200 ピクセルの長さとしてつまり複数、`phase`の引数`SKPathEffect.Create1DPath`は、アニメーション化バケット ポップアップの存在の出入り。
+バケットは、200 ピクセル コンベヤ ベルトの間隔について等間隔に配置する必要があります。 ただし、コンベヤ ベルト倍数でない可能性があります 200 ピクセルの長い、としているので、`phase`の引数`SKPathEffect.Create1DPath`がアニメーションが存在して、バケットは表示されます。
 
-このため、最初に計算という名前の値`length`コンベヤ ベルトの長さはします。 コンベヤ ベルトは、直線とセミコロンの円は、これは、単純な計算。 バケットの数を割ることによって計算は、次に、 `length` 200 でします。 これは、最も近い整数に丸められます、分割数が、そのこと`length`です。 バケット数は整数の間隔になります。 `phase`引数は、その一部だけです。
+このため、最初に計算という値を`length`コンベヤ ベルトの長さは。 コンベヤ ベルトは、直線と円をセミコロンで構成され、ため、これは単純な計算になります。 次に、バケットの数を割ることによって計算`length`200 でします。 これは、最も近い整数に丸められます、分割数が、そのこと`length`します。 結果は、バケット数は整数の間隔です。 `phase`引数は、その一部だけです。
 
 ## <a name="from-path-to-path-again"></a>もう一度パスへのパスから
 
@@ -699,21 +699,21 @@ SKPaint newPaint = new SKPaint
 canvas.DrawPath(newPath, newPaint);
 ```
 
-前の例と同様に`GetFillPath`結果が異なる色を除くが表示されます。 実行した後`GetFillPath`、`newPath`アニメーション配置されていることに、呼び出し時に同じ場所に配置の各、オブジェクトには、バケットのパスの複数のコピーが含まれています。
+前の例と同様`GetFillPath`結果は、色を除けば同じことを確認します。 実行した後`GetFillPath`、`newPath`オブジェクトには、バケットのパスの複数のコピーが含まれています、アニメーションの配置を呼び出し時に、同じ場所に配置の各します。
 
-## <a name="hatching-an-area"></a>陰影の領域
+## <a name="hatching-an-area"></a>区分の陰影
 
-[ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DLine/p/System.Single/SkiaSharp.SKMatrix/)メソッドは、平行線とも呼ばを使用して領域を塗りつぶします*行をハッチ*です。 メソッドには、次の構文。
+[ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DLine/p/System.Single/SkiaSharp.SKMatrix/)メソッドは、多くの場合と呼ばれる平行線がある領域を塗りつぶします*ハッチ線*します。 メソッドでは、次の構文があります。
 
 ```csharp
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-`width`ハッチ線の太さを指定します。 `matrix`パラメーターはスケーリングと省略可能な回転の組み合わせ。 スケール ファクターでは、Skia は陰影の行間を使用してピクセル インクリメントを示します。 線の間の分離は、スケール ファクター マイナス、`width`引数。 かどうか、スケール ファクターは以下に、`width`値は、スペースを入れないで陰影線の間および格納する領域が表示されます。 水平および垂直方向のスケーリングに同じ値を指定します。
+`width`ハッチ線のストロークの幅を指定します。 `matrix`パラメーターはスケーリングと省略可能な回転を組み合わせたものです。 スケール ファクターでは、ピクセル インクリメント Skia はハッチ線のスペースを使用していることを示します。 線の間の分離はマイナスのスケール ファクターでは、`width`引数。 スケール ファクターと等しいまたはそれよりも小さいかどうか、`width`値は、スペースを入れないでハッチ線の間および格納する領域が表示されます。 水平および垂直方向のスケーリングの同じ値を指定します。
 
-既定では、ハッチ行は、水平方向です。 場合、`matrix`パラメーターには、回転が含まれています、ハッチ行が時計回りに回転します。
+既定では、ハッチ線が水平方向です。 場合、`matrix`パラメーターには、回転が含まれています、ハッチ線が時計回りに回転します。
 
-**ハッチ塗りつぶし**ページは、このパスの効果を示します。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)クラスでは、次の 3 つのパスの効果を定義フィールドとして、されている最初の幅を示すスケール ファクターを 3 ピクセルの水平線ハッチ線間隔 6 ピクセルの各要素を区別します。 線の間の分離は、そのため、3 ピクセルです。 2 番目のパスの効果はピクセル単位の間隔 (そのため、分離が 18 ピクセルの位置)、24 の間隔の 6 ピクセル幅で行を垂直方向の陰影の斜線行 12 ピクセル幅スペース区切り 36 ピクセル間隔について、3 番目、およびです。
+**ハッチの塗りつぶし**ページは、このパスの効果を示します。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)クラスでは、次の 3 つのパスの効果を定義フィールドとして、いることを示すスケール ファクターで 3 つのピクセルの幅と水平方向のハッチ線の最初の 6 ピクセル離れた間隔。 線の間の分離は、そのため、3 ピクセルです。 2 番目のパスの効果は 6 ピクセルの幅の垂直方向のハッチ線の間隔 (そのため、分離が 18 ピクセル)、離れている 24 ピクセルの対角線の陰影の 12 ピクセル幅間隔 36 ピクセル離れた行について、3 番目、およびします。
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -744,9 +744,9 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-マトリックスに注意してください`Multiply`メソッドです。 水平および垂直方向のスケール ファクターが同じであるためにスケールおよび回転の行列の乗算に使用される順序は重要でありません。
+マトリックスに注意してください`Multiply`メソッド。 水平および垂直方向のスケーリング因子は同じであるために、拡大縮小および回転行列の乗算に使用される順序は関係ありません。
 
-`PaintSurface`ハンドラーでは、これら 3 つのパスの効果を使用と組み合わせて、次の 3 つの異なる色で`fillPaint`角丸四角形に合わせてページ サイズを入力します。 `Style`プロパティに設定`fillPaint`は無視されます。 ときに、`SKPaint`オブジェクトから作成されたパスの効果が含まれています`SKPathEffect.Create2DLine`、かに関係なく、領域を塗りつぶします。
+`PaintSurface`ハンドラーでは、これら 3 つのパスの効果を使用して、次の 3 つの異なる色と組み合わせてで`fillPaint`角丸四角形に合わせてページ サイズを入力します。 `Style`プロパティ セットを`fillPaint`無視する場合はときに、`SKPaint`オブジェクトにはから作成されたパスの効果が含まれています`SKPathEffect.Create2DLine`に関係なく、領域が塗りつぶされます。
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -793,27 +793,27 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-結果を注意深く確認する場合、角の丸い四角形に正確に赤と青の陰影の行が制限されないことが表示されます。 (これは一見、基になる Skia コードの特性です。)その他の方法が緑色で斜線の陰影の行に対して表示されるこのが不十分な場合は、: 角の丸い四角形はクリッピング パスとして使用され、ページ全体にハッチ線が描画されます。
+結果を慎重に確認すると、赤、青のハッチ線を角丸四角形に正確に制限されないことが表示されます。 (これは一見、基になる Skia コードの特性。)別のアプローチが緑色で斜線行に対して表示される満足のいく場合: 角丸四角形はクリッピング パスとして使用され、ページ全体にハッチ線が描画されます。
 
-`PaintSurface`ハンドラーの呼び出しだけを赤と青の陰影の行では、不一致を確認できるように角の丸い四角形の境界線の描画を終了します。
+`PaintSurface`赤、青のハッチ線に不一致が確認できるように、角の丸い四角形を単にストロークを描画する呼び出しでハンドラーの終了します。
 
-[![](effects-images/hatchfill-small.png "トリプル ページのスクリーン ショット、ハッチ塗りつぶし")](effects-images/hatchfill-large.png#lightbox "陰影の塗りつぶし ページのトリプル スクリーン ショット")
+[![](effects-images/hatchfill-small.png "ハッチの塗りつぶし ページのスクリーン ショットをトリプル")](effects-images/hatchfill-large.png#lightbox "ハッチの塗りつぶし ページの 3 倍になるスクリーン ショット")
 
-Android の画面に表示されない本当にそのような: スクリーン ショットのスケーリング、赤の細い線とシン広くするように見える赤色の線に統合するおよび幅のスペースが原因です。
+Android の画面がそのような検索しない実際: シン赤色の線とシン広くする一見赤色の線に統合するおよびより多くのスペースが原因のスクリーン ショットのスケーリングします。
 
-## <a name="filling-with-a-path"></a>パスにデータを読み込む
+## <a name="filling-with-a-path"></a>パスの入力
 
-[ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DPath/p/SkiaSharp.SKMatrix/SkiaSharp.SKPath/)領域を並べて表示有効にすると、水平方向および垂直方向にレプリケートされるパスを持つ領域を埋めることができます。
+[ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DPath/p/SkiaSharp.SKMatrix/SkiaSharp.SKPath/)領域を有効に並べて表示領域を水平および垂直方向にレプリケートされるパスを入力できます。
 
 ```csharp
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-`SKMatrix`スケール ファクターは、レプリケートされたパスの水平方向および垂直のスペースを指定します。 これを使用してパスを回転することはできませんが、`matrix`引数以外の場合は、回転、パス、パス自体の回転を使用して、`Transform`によって定義されたメソッド`SKPath`です。
+`SKMatrix`スケール ファクターは、レプリケートされたパスの水平および垂直方向の間隔を示します。 これを使用してパスを回転することはできませんが、`matrix`引数は、回転、パスを作成するかどうか、パス自体の回転を使用して、`Transform`メソッドによって定義された`SKPath`します。
 
-レプリケートされたパスは通常塗りつぶし対象の領域ではなく、画面の左と上端に揃えられます。 この動作をオーバーライドするには、0 と左と上の辺から水平および垂直方向のオフセットを指定するスケール ファクターの間での平行移動の係数を提供します。
+レプリケートされたパスは、塗りつぶし対象の領域ではなく、画面の左と上端に揃え通常られます。 0 と左と上の各辺の水平および垂直方向のオフセットを指定する倍率変換要素を提供することで、この動作をオーバーライドできます。
 
-**パス タイル塗りつぶし**ページは、このパスの効果を示します。 領域を並べて表示するために使用されるパスがフィールドとして定義されている、 [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)クラスです。 水平および垂直方向の座標の範囲 – 40 を 40、つまりこのパスは 80 ピクセルの四角形:
+**パス タイル入力**ページは、このパスの効果を示します。 領域を並べて表示するために使用されるパスがフィールドとして定義されている、 [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)クラス。 水平および垂直座標 – 40 ~ 範囲 40、つまりこのパスは 80 ピクセルの正方形:
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -849,27 +849,27 @@ public class PathTileFillPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラー、`SKPathEffect.Create2DPath`呼び出しがオーバー ラップする 80 ピクセルの四角形タイルが 64 水平および垂直方向の間隔を設定します。 さいわい、パスには、部分のピース、隣接するタイルで適切にメッシュがようになります。
+`PaintSurface`ハンドラー、`SKPathEffect.Create2DPath`呼び出しが重複する 80 ピクセルの四角形のタイルを 64 に水平および垂直方向の間隔を設定します。 さいわい、パスには、タイルを隣接と適切にメッシュ、パズルのピースがようになります。
 
-[![](effects-images/pathtilefill-small.png "パスのタイルの塗りつぶし ページのスクリーン ショットをトリプル")](effects-images/pathtilefill-large.png#lightbox "パス タイルの塗りつぶし ページのトリプル スクリーン ショット")
+[![](effects-images/pathtilefill-small.png "パスのタイルの入力 ページのスクリーン ショットをトリプル")](effects-images/pathtilefill-large.png#lightbox "パス タイルの入力 ページの 3 倍になるスクリーン ショット")
 
-元のスクリーン ショットからのスケーリングと、Android の画面上特に、ゆがみが行われます。
+Android の画面で特に、歪みを元のスクリーン ショットからスケーリングします。
 
-これらのタイルが常に全体表示され、切り捨てられなければことに注意してください。 最初の 2 つのスクリーン ショットに、塗りつぶし対象の領域には、角の丸い四角形もわかりにくいことはできません。 特定の領域にこれらのタイルを切り捨てるする場合は、クリッピング パスを使用します。
+これらのタイルが常に全体表示されが切り詰められていないことに注意してください。 最初の 2 つのスクリーン ショットでは、上も明らかに指定されている領域が角丸四角形であることはできません。 これらのタイルには、特定の領域を切り捨てる場合は、クリッピング パスを使用します。
 
 設定を試みてください、`Style`のプロパティ、`SKPaint`オブジェクトを`Stroke`と入力するのではなく、記載されている個々 のタイルが表示されます。
 
-## <a name="rounding-sharp-corners"></a>とがった角を丸める
+## <a name="rounding-sharp-corners"></a>シャープな角を丸める
 
-**丸め七角形**プログラムに表示される、 [**円弧を描画する方法は 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)記事が 7 つの辺の図のポイントを曲線に正接円弧を使用します。 **別丸め七角形**ページから作成されたパスの効果を使用する程度簡単な解決方法を示しています、 [ `SKPathEffect.CreateCorner` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCorner/p/System.Single/)メソッド。
+**丸め七角形**でプログラムが表示されます、 [**円弧を描画する方法は 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)記事が 7 両面の図のポイントを曲線に接線の円弧を使用します。 **別の丸め七角形**ページから作成されたパスの効果を使用量をより簡単な方法を示しています、 [ `SKPathEffect.CreateCorner` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCorner/p/System.Single/)メソッド。
 
 ```csharp
 public static SKPathEffect CreateCorner (Single radius)
 ```
 
-1 つの引数が名前付き`radius`目的角の半径を半分に設定する必要があります。 (これは、基になる Skia コードの特性です)。
+1 つの引数が名前付き`radius`目的の角の半径を半分に設定する必要があります。 (これは、基になる Skia コードの特性です)。
 
-ここでは、`PaintSurface`ハンドラー、 [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs)クラス。
+ここでは、`PaintSurface`ハンドラーで、 [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -922,30 +922,30 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-この特殊効果を使用するには、線の描画またはに基づいていっぱいになると、`Style`のプロパティ、`SKPaint`オブジェクト。 ここで 3 つすべてのプラットフォームには。
+この効果を使用するには、線の描画またはに基づいていっぱいになると、`Style`のプロパティ、`SKPaint`オブジェクト。 ここでは 3 つすべてのプラットフォームには。
 
-[![](effects-images/anotherroundedheptagon-small.png "別の丸め七角形ページのスクリーン ショットをトリプル")](effects-images/anotherroundedheptagon-large.png#lightbox "別丸め七角形ページのトリプル スクリーン ショット")
+[![](effects-images/anotherroundedheptagon-small.png "別の丸め七角形ページのスクリーン ショットをトリプル")](effects-images/anotherroundedheptagon-large.png#lightbox "別の丸め七角形ページの 3 倍になるスクリーン ショット")
 
-この丸められた七角形が以前のバージョンのプログラムと同じことが表示されます。 詳細納得させる必要がある場合、角の半径は 100 では完全ではなくで指定された、50、`SKPathEffect.CreateCorner`呼び出しできますコメントを解除する、コーナーに重ね合わせて示す最後のステートメントで、プログラムと 100 radius 円を参照してください。
+この丸められた七角形が以前のバージョンのプログラムと同じことを確認します。 詳細納得させる必要がある場合、角の半径は 100 ではなくで指定された、50、`SKPathEffect.CreateCorner`呼び出しでコメントを解除できます上に重なって表示される最後のステートメントで、プログラムと 100 半径の円を参照してください。
 
-## <a name="random-jitter"></a>ランダムなジッター
+## <a name="random-jitter"></a>ランダム ジッター
 
-場合がありますコンピューター_グラフィックスの完璧な直線は非常に目的の動作であり、少しランダム性が必要な。 その場合を実行する、 [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/)メソッド。
+場合によってコンピューター_グラフィックスの完璧な直線は非常に目的の動作であり少しランダム性が必要な。 お試しくださいしたい場合は、 [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/)メソッド。
 
 ```csharp
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-このパスの効果は、線の描画または入力のいずれかを使用できます。 行が接続されているセグメントに分割されます — のおおよその長さがで指定された`segLength`— とさまざまな方向に拡張します。 元の行からの偏差の範囲が指定された`deviation`です。
+このパスの効果は、線の描画または入力のいずれかを使用できます。 接続されたセグメントに線が分かれています — のおおよその長さがで指定された`segLength`およびさまざまな方向に拡張します。 元の行からの偏差の範囲がで指定された`deviation`します。
 
-最後の引数は、結果を得るのために使用される擬似乱数シーケンスの生成に使用されるシードです。 ジッター効果は、異なるシードを少し異なる外観されます。 引数には、という効果は同じプログラムを実行するたびに、ゼロの既定値があります。 する場合は異なるジッター画面が再描画されるたびシードを設定することができます、`Millisecond`のプロパティ、`DataTime.Now`値 (たとえば)。
+最後の引数には、効果のために使用する擬似乱数シーケンスの生成に使用されるシードです。 ジッターの効果の外観は、異なるシードを少し異なります。 引数が、既定値は 0 で、効果が同じであるプログラムを実行するたびにです。 シードを設定するにはさまざまなジッターが必要なは、画面が再描画されるたびに場合、`Millisecond`のプロパティを`DataTime.Now`値 (たとえば)。
 
 
-**実験ジッター**  ページでは、四角形を描画のさまざまな値をテストすることができます。
+**実験ジッター**  ページでは、さまざまな値で四角形を描画できます。
 
-[![](effects-images/jitterexperiment-small.png "3 つのジッター実験ページのスクリーン ショット")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
+[![](effects-images/jitterexperiment-small.png "トリプル ジッター実験ページのスクリーン ショット")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-プログラムは、直接的なです。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)ファイルでは、2 つをインスタンス化`Slider`要素および`SKCanvasView`:
+プログラムは、直接的なです。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)ファイルでは、2 つのインスタンス化します`Slider`要素と`SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1001,7 +1001,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 </ContentPage>
 ```
 
-`PaintSurface`ハンドラーに、 [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)分離コード ファイルを呼び出すたびに、`Slider`値の変更。 呼び出す`SKPathEffect.CreateDiscrete`、2 つを使用して`Slider`値を四角形の境界線の描画に使用しています。
+`PaintSurface`ハンドラーで、 [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)分離コード ファイルと呼ばれますたびに、`Slider`値の変更。 呼び出す`SKPathEffect.CreateDiscrete`、2 つを使用して`Slider`プロパティと値を使用して四角形のストロークを。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1032,7 +1032,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-この効果は、このランダム偏差に従って塗りつぶす領域のアウトラインがの場合は同様に、入力を使用できます。 **ジッター テキスト** ページでは、このパスの効果を使用してテキストを表示するを示しています。 内のコードのほとんど、`PaintSurface`のハンドラー、 [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs)クラスのためのサイズ変更と、テキストを中央揃えにします。
+この効果は、この場合、塗りつぶされた領域のアウトラインはこれらのランダムな誤差の対象は同様に、入力の使用できます。 **ジッター テキスト**ページは、このパスの効果を使用して、テキストを表示するを示します。 コードのほとんどは、`PaintSurface`のハンドラー、 [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs)サイズ変更や、テキストを中央揃えにクラスを使用します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1069,11 +1069,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで 3 つすべてのプラットフォームで横モードで実行されています。
 
-[![](effects-images/jittertext-small.png "3 つのテキストのジッターのページのスクリーン ショット")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
+[![](effects-images/jittertext-small.png "トリプル ジッターのテキスト ページのスクリーン ショット")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 
 ## <a name="path-outlining"></a>パスのアウトライン表示
 
-既に見たようほとんどの 2 つの例、 [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/)メソッドの`SKPaint`にも存在している、[オーバー ロード](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/):
+ほとんどの 2 つの例は既に説明した、 [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/)メソッドの`SKPaint`でも存在する、[オーバー ロード](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/):
 
 ```csharp
 public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale)
@@ -1081,13 +1081,13 @@ public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale)
 public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resScale)
 ```
 
-最初の 2 つの引数のみが必要です。 メソッドによって参照されているパスにアクセスする、`src`引数、ストロークのプロパティに基づくパスのデータの変更、`SKPaint`オブジェクト (など、`PathEffect`プロパティ)、し、結果を書き込みます、`dst`パス。 `resScale`パラメーターを使用して、小規模な移行先パスを作成する有効桁数を減らすこと、および`cullRect`引数は、四角形の外側の輪郭を除去できます。
+最初の 2 つの引数のみが必要です。 メソッドによって参照されているパスにアクセスする、`src`引数、ストロークのプロパティに基づいてパスのデータを変更する、`SKPaint`オブジェクト (など、`PathEffect`プロパティ)、しに結果を書き込みます、`dst`パス。 `resScale`パラメーターは、小規模な移行先パスを作成する桁数を減らすことができます、`cullRect`引数は、四角形の外側の輪郭を排除できます。
 
-このメソッドの 1 つの基本的な使い方では、パスの効果をまったく関与しません。 場合、`SKPaint`オブジェクトがその`Style`プロパティに設定`SKPaintStyle.Stroke`の場合は*いない*がその`PathEffect`設定、`GetFillPath`を表すパスを作成、*アウトライン*ソース パスのペイントのプロパティで、描画されていた場合と同様です。
+このメソッドの 1 つの基本的な使用では、パスの効果をまったく関与しません。 場合、`SKPaint`オブジェクトがその`Style`プロパティに設定`SKPaintStyle.Stroke`と*いない*がその`PathEffect`設定し、`GetFillPath`を表すパスを作成、*アウトライン*ソース パスの描画したペイント プロパティであるかのようです。
 
-たとえば場合、`src`パスは、単純な円の半径、500 のおよび`SKPaint`オブジェクトは、100 の線幅を指定します。、`dst`半径 550 の 450 および、その他の radius で 1 つ、2 つの同心円をパスになります。 メソッドを呼び出した`GetFillPath`これを埋めるため`dst`パスは、線の描画と同じ、`src`パス。 境界線を描くことができますが、`dst`パス枠線が表示へのパス。
+たとえば場合、`src`パスは、単純な円の半径、500 の`SKPaint`オブジェクトが 100 のストロークの幅を指定します、`dst`半径 550 の半径が 450 および、その他の 1 つ、2 つの同心円をパスになります。 メソッドは`GetFillPath`ため、この入力`dst`ストロークと同じパスでは、`src`パス。 ストロークを描画することができますもが、`dst`パス、パスのアウトラインを参照してください。
 
-**パスをタップすると、アウトライン**を次に示します。 `SKCanvasView`と`TapGestureRecognizer`でインスタンス化される、 [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)ファイル。 [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPaint`と線の描画に 2 つのフィールドとしてオブジェクトのストローク 100 と 20、および塗りつぶしの 3 つ目の幅。
+**パスをタップすると、アウトライン**この例を示します。 `SKCanvasView`と`TapGestureRecognizer`でインスタンス化される、 [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)ファイル。 [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)分離コード ファイルでは、3 つを定義します`SKPaint`で線の描画に 2 つのフィールドとしてオブジェクトのストローク幅 100 と 20、および塗りつぶしの 3 つ目の。
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1128,7 +1128,7 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-画面がタップされていない場合、`PaintSurface`ハンドラーを使用して、`blueFill`と`redThickStroke`の円形パスを表示するためにオブジェクトの塗りつぶし。
+画面がタップされたされていない場合、`PaintSurface`ハンドラーを使用して、`blueFill`と`redThickStroke`の円形パスを表示するためにオブジェクトの塗りつぶし。
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1168,28 +1168,28 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-円が入力し、想定されるように描画します。
+円は入力し、期待どおりに線を付けます。
 
-[![](effects-images/taptooutlinethepathnormal-small.png "通常、タップをアウトライン Path ページのトリプル スクリーン ショット")](effects-images/taptooutlinethepathnormal-large.png#lightbox "標準をタップするアウトライン Path ページのトリプル スクリーン ショット")
+[![](effects-images/taptooutlinethepathnormal-small.png "タップするアウトライン、パスの通常のページのスクリーン ショットをトリプル")](effects-images/taptooutlinethepathnormal-large.png#lightbox "タップにアウトライン、パスの通常のページの 3 倍になるスクリーン ショット")
 
-画面をタップしたときに`outlineThePath`に設定されている`true`、および`PaintSurface`ハンドラーを作成新規`SKPath`オブジェクトおよびへの呼び出しで、移行先パスとして使用する`GetFillPath`上、`redThickStroke`ペイント オブジェクト。 移行先パスを入力し、線に適用した`redThinStroke`、その結果、次に。
+画面をタップすると`outlineThePath`に設定されている`true`、および`PaintSurface`ハンドラーは、新しいを作成します。`SKPath`オブジェクトへの呼び出しで移行先パスとしてを使用して`GetFillPath`で、`redThickStroke`ペイント オブジェクト。 移行先パスの塗りつぶしや線に適用したし`redThinStroke`次の結果として得られる。
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "アウトライン表示 をタップするアウトライン Path ページのトリプル スクリーン ショット")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "アウトライン表示 をタップするアウトライン Path ページのトリプル スクリーン ショット")
+[![](effects-images/taptooutlinethepathoutlined-small.png "中抜きタップにアウトラインのパス ページのスクリーン ショットをトリプル")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "中抜きタップにアウトラインのパス ページの 3 倍になるスクリーン ショット")
 
-2 つの赤い円では、明確に元の円形パスが 2 つの循環配分に変換されたことを示します。
+2 つの赤い円では、元の円形パスが 2 つの循環輪郭に変換されたことを明確に表示します。
 
-このメソッドが開発に使用するパスに非常に役に立ちます、`SKPathEffect.Create1DPath`メソッドです。 パスがレプリケートされるときに、これらのメソッドで指定したパスが必ず塗りつぶされます。 入力へのパス全体しない場合は、慎重にアウトラインを定義する必要があります。
+この方法は、開発に使用するパスで非常に便利な`SKPathEffect.Create1DPath`メソッド。 パスがレプリケートされるときに、これらのメソッドで指定したパスが必ず塗りつぶされます。 格納するパス全体をしたくない場合、アウトラインを慎重に定義する必要があります。
 
-たとえば、**リンク チェーン**サンプルでは、リンクの各ペアを格納するパスの領域のアウトラインの 2 つの半径に基づく 4 つの円弧の一連の定義がします。 内のコードを交換することは、`LinkedChainPage`は少し異なる方法でこれを実行するクラス。
+など、**リンク チェーン**サンプルでは、各ペアの 2 つの半径を入力するパスの領域の説明がに基づいて、4 つの円弧の一連のリンクが定義されています。 内のコードを置換することは、`LinkedChainPage`が少し異なる方法で実行するためにします。
 
-最初を再定義する、`linkRadius`定数。
+最初に、再定義したいが、`linkRadius`定数。
 
 ```csharp
 const float linkRadius = 27.5f;
 const float linkThickness = 5;
 ```
 
-`linkPath`目的で、その単一 radius に基づいて 2 つの円弧開始角度および掃引角度には。
+`linkPath`が目的でその 1 つの半径に基づく 2 つの円弧の角度を開始し、角度をスイープします。
 
 ```csharp
 using (SKPath linkPath = new SKPath())
@@ -1218,13 +1218,13 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-`outlinePath`オブジェクトが、受信者の輪郭の`linkPath`場合、ストロークを付けるで指定されたプロパティを持つ`strokePaint`します。
+`outlinePath`オブジェクトは、受信者のアウトラインの`linkPath`ときを付けたで指定したプロパティ`strokePaint`します。
 
-この手法を使用して別の例では、直近の見通しで使用されるパスには、次へ、`SKPathEffect.Create2DPath`メソッドです。
+この手法を使用して別の例で使用されるパスの [次へ] が開始されて、`SKPathEffect.Create2DPath`メソッド。
 
-## <a name="combining-path-effects"></a>結合パス効果
+## <a name="combining-path-effects"></a>パスの効果を組み合わせること
 
-2 つの最後の静的な作成方法`SKPathEffect`は[ `SKPathEffect.CreateSum` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateSum/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/)と[ `SKPathEffect.CreateCompose` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCompose/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/):
+2 つの最終的な静的な作成方法`SKPathEffect`は[ `SKPathEffect.CreateSum` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateSum/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/)と[ `SKPathEffect.CreateCompose` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCompose/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/):
 
 ```csharp
 public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
@@ -1232,15 +1232,15 @@ public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
 public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner)
 ```
 
-これら両方の方法では、複合パスの効果を作成する 2 つのパスの効果を結合します。 `CreateSum`メソッドは、次の 2 つのパス効果とは別に、次のようなパス効果を作成中に`CreateCompose`パスの 1 つの効果を適用 (、 `inner`) を適用してから、`outer`です。
+これら両方のメソッドは、複合パスの効果を作成する 2 つのパスの効果を結合します。 `CreateSum`メソッドは、個別に適用される 2 つのパスの効果を次のようなパスの効果を作成中に`CreateCompose`パスの 1 つの効果を適用 (、 `inner`) し、適用、`outer`です。
 
-既に見たよう方法、`GetFillPath`メソッドの`SKPaint`に基づいて別のパスを 1 つのパスを変換できます`SKPaint`プロパティ (含む`PathEffect`)、これ*すぎます*方法、不可解な`SKPaint`オブジェクトで指定された 2 つのパスの効果を 2 回の操作を実行できる、`CreateSum`または`CreateCompose`メソッドです。
+既に説明した方法、`GetFillPath`メソッドの`SKPaint`に基づいて別のパスを 1 つのパスを変換できる`SKPaint`プロパティ (を含む`PathEffect`) ではありませんので*すぎる*方法、不可解な`SKPaint`で指定された 2 つのパスの効果を 2 回、オブジェクトがその操作の実行、`CreateSum`または`CreateCompose`メソッド。
 
-明らかな用途の 1 つ`CreateSum`を定義するのには、`SKPaint`効果が 1 つのパス、パスを入力し、別のパスの効果を使用してパスの線にするオブジェクト。 これに示されている、**フレーム Cats**サンプルについては、キャプション、縁 cats フレーム内の配列を表示します。
+明確な用途の 1 つ`CreateSum`を定義するには、`SKPaint`オブジェクトの影響は 1 つのパス、パスを入力し、別のパスの効果を使用してパスの線です。 これは、方法については、**フレームで猫**サンプルは、キャプションの境界が付いたフレーム内で猫の配列を表示します。
 
-[![](effects-images/catsinframe-small.png "Cats のフレームのページのスクリーン ショットをトリプル")](effects-images/catsinframe-large.png#lightbox "Cats のフレームのページのトリプル スクリーン ショット")
+[![](effects-images/catsinframe-small.png "猫のフレームのページのスクリーン ショットをトリプル")](effects-images/catsinframe-large.png#lightbox "猫のフレームのページの 3 倍になるスクリーン ショット")
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)クラスがいくつかのフィールドを定義することで開始します。 最初のフィールドを認識する可能性があります、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラス、 [ **SVG パス データ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)資料です。 2 番目のパスは、直線およびフレームのひだパターンを円弧に基づきます。
+[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)クラスがいくつかのフィールドを定義することで開始します。 最初のフィールドを認識する可能性があります、 [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)クラスから、 [ **SVG パス データ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)記事。 2 番目のパスは、行と円弧のフレームのひだパターンに基づいています。
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1282,9 +1282,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-`catPath`で使用できる、`SKPathEffect.Create2DPath`メソッド場合、`SKPaint`オブジェクト`Style`プロパティに設定されている`Stroke`です。 ただし場合、`catPath`このプログラムにし、cat の全体の先頭がいっぱいになるし、ひげは表示されませんでも直接は使用できます。 (試してみる)パスのアウトラインを取得しでそのアウトラインを使用する必要は、`SKPathEffect.Create2DPath`メソッドです。
+`catPath`で使用できる、`SKPathEffect.Create2DPath`メソッド場合、`SKPaint`オブジェクト`Style`プロパティに設定されて`Stroke`します。 ただし場合、`catPath`このプログラムで、猫の全体の頭がいっぱいになるし、表示されていることすらひげ直接に使用されます。 (試してみる)パスのアウトラインを取得してそのアウトラインでを使用する必要がある、`SKPathEffect.Create2DPath`メソッド。
 
-このジョブでは、コンス トラクター。 最初に 2 つの変換を適用`catPath`を移動する、(0, 0) の中央をポイントし、サイズにスケール ダウンします。 `GetFillPath` 輪郭のすべてのアウトラインを取得`outlinedCatPath`でそのオブジェクトを使用して、`SKPathEffect.Create2DPath`呼び出します。 の要素のスケーリング、`SKMatrix`値が水平よりも少し多めと翻訳要因が、タイルの間の小さなバッファーを提供する、cat の縦のサイズが多少を派生経験的表示できるように完全 cat で、フレームの左上隅:
+このジョブでは、コンス トラクター。 最初に 2 つの変換が適用されます`catPath`を移動する、(0, 0) の中央をポイントし、サイズにスケール ダウンします。 `GetFillPath` 輪郭のすべてのアウトラインを取得します`outlinedCatPath`でそのオブジェクトが使用して、`SKPathEffect.Create2DPath`呼び出します。 の要素、スケーリング、`SKMatrix`値が水平よりも少し大きめと翻訳の要因が、タイルの間の小さなバッファーを提供する cat の縦のサイズが多少を派生完全 cat に表示されるように経験的、フレームの左上隅。
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1327,9 +1327,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-コンス トラクターを呼び出します`SKPathEffect.Create1DPath`キャプション フレーム。 パスの幅が 100 (ピクセル単位) が事前 75 ピクセル枠、レプリケートされたパスがオーバー ラップされるように注意してください。 コンス トラクターの呼び出しの最後のステートメント`SKPathEffect.CreateSum`を 2 つのパスの効果を結合し、結果に設定する、`SKPaint`オブジェクト。
+コンス トラクターを呼び出して`SKPathEffect.Create1DPath`のキャプションのフレーム。 パスの幅が 100 ピクセルは、レプリケートされたパスが枠の周りにオーバー ラップしたように、事前は 75 ピクセルことに注目してください。 コンス トラクターの呼び出しの最後のステートメント`SKPathEffect.CreateSum`2 つのパスの効果を結合し、結果を設定する、`SKPaint`オブジェクト。
 
-により、この作業はすべて、`PaintSurface`ハンドラーを非常に単純なを指定します。 四角形を定義しを使用して描画するだけで済みます`framePaint`:
+により、この作業はすべて、`PaintSurface`非常に簡単にするハンドラー。 四角形を定義しを使用して描画するだけで済みます`framePaint`:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1350,11 +1350,11 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-パスの効果の背後にあるアルゴリズムには、常に、全体で使用されるパス線の描画または塗りつぶし、表示される四角形の外側に表示するいくつかのビジュアルが発生することができますが発生します。 `ClipRect`より前のバージョンを呼び出す、`DrawRect`呼び出しがかなりクリーナーするビジュアルを許可します。 (みるクリッピングなし)
+パスの効果の背後にあるアルゴリズムは、いくつかのビジュアルに四角形の外側に表示される可能性がある、表示されるストロークまたは塗りつぶしに使用全体パスを常に発生します。 `ClipRect`より前のバージョンを呼び出す、`DrawRect`呼び出しが大幅に簡潔にするビジュアルを使用します。 (お試しください、クリッピングなし。)
 
-使用するが一般的`SKPathEffect.CreateCompose`別のパスの効果をいくつかのジッターを追加します。 確かに自分で試すことができますが、若干異なる例を次に示します。
+使用するが一般的`SKPathEffect.CreateCompose`別のパスの効果をいくつかのジッターを追加します。 確かに、自分で試すことができますが、若干異なる例を次に示します。
 
-**破線ハッチ**破線でハッチ行で楕円を塗りつぶします。 ほとんどの作業の[ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs)クラスが実行されるフィールド定義の右側にします。 これらのフィールドは、dash 効果と陰影効果を定義します。 として定義されている`static`にし、参照されているため、`SKPathEffect.CreateCompose`で呼び出し、`SKPaint`定義。
+**破線ハッチ**破線はハッチ線で楕円を塗りつぶします。 作業のほとんどの[ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs)クラスが実行されるフィールドの定義で右。 これらのフィールドは、dash 効果と陰影効果を定義します。 として定義されている`static`で、参照されているため、`SKPathEffect.CreateCompose`呼び出し、`SKPaint`定義。
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1382,7 +1382,7 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-`PaintSurface`標準的なオーバーヘッドおよび 1 回の呼び出しのみを格納するハンドラーの必要性`DrawOval`:
+`PaintSurface`標準のオーバーヘッドとに 1 回の呼び出しのみを格納するハンドラーの必要性`DrawOval`:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1404,15 +1404,15 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-した既に説明したように、ハッチ行が、領域の内部に正確に制限はなく、この例では、常に始まる左側全体をダッシュに。
+まだ探索したハッチ線は、領域の内側に正確に制限されていると、この例では、常に開始全体ダッシュを左にあります。
 
-[![](effects-images/dashedhatchlines-small.png "陰影の破線のページのスクリーン ショットをトリプル")](effects-images/dashedhatchlines-large.png#lightbox "ハッチ破線ページのトリプル スクリーン ショット")
+[![](effects-images/dashedhatchlines-small.png "ハッチの破線のページのスクリーン ショットをトリプル")](effects-images/dashedhatchlines-large.png#lightbox "ハッチ破線ページの 3 倍になるスクリーン ショット")
 
-これで、単純なパスの効果を確認したドットと、予想外の組み合わせにダッシュを想像して作成することができますを参照してください。
+奇妙な組み合わせに単純なドットとダッシュからその範囲は、パスの効果を確認したら、想像して作成することができますを参照してください。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

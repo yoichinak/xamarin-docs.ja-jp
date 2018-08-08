@@ -1,42 +1,42 @@
 ---
-title: 行とストローク キャップ
-description: この記事では、Xamarin.Forms のアプリケーションで異なるストローク キャップを持つ行を描画する SkiaSharp を使用する方法について説明し、サンプル コードを示します。
+title: 線とストローク キャップ
+description: この記事では、SkiaSharp を使用して、Xamarin.Forms アプリケーションで異なるストローク キャップを持つ行を描画する方法を説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f63d14ae0dff5f94580c86d1c5bfdfc66bbee7f9
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 000bf24c1b06baab892f0b165c8b9eeebebce49d
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244095"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615263"
 ---
-# <a name="lines-and-stroke-caps"></a>行とストローク キャップ
+# <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
-_異なるストローク キャップを持つ線を描画する SkiaSharp を使用する方法をについてください。_
+_SkiaSharp を使用して異なるストローク キャップを持つ行を描画する方法について説明します_
 
-SkiaSharp で 1 行の表示とは大きく異なります、一連の接続の直線を描画します。 でも単一の線を描画するときに、特定ストローク、および幅が広い、行、行を付与する必要がありますと呼ばれる、直線の終点の外観をより重要になります、*キャップのストローク*:
+SkiaSharp、1 行のレンダリングは、一連の接続された直線のレンダリングと大きく異なります。 1 つの行を描画するときにただし、特定のストローク幅、および幅の行の行を提供する必要がありますと呼ばれる、直線の終点の外観をより重要になります、*ストローク キャップ*:
 
-![](lines-images/strokecapsexample.png "次の 3 つのストローク cap オプション")
+![](lines-images/strokecapsexample.png "次の 3 つのストローク キャップのオプション")
 
-1 つの線を描画するため`SKCanvas`定義、単純な[ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/)メソッドの引数は、開始と終了値では、行の座標を示すため、`SKPaint`オブジェクト。
+1 つの行を描画するため`SKCanvas`定義、単純な[ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/)メソッドの引数は、開始日と終了では、行の座標を指定、`SKPaint`オブジェクト。
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-既定では、`StrokeWidth`新しくインスタンス化のプロパティ`SKPaint`オブジェクトが 0 で、太さで 1 ピクセルの線の表示では 1 の値と同じ効果がします。 これが表示される、電話などの高解像度のデバイスで薄すぎてのでを設定する可能性がありますが、`StrokeWidth`より大きい値にします。 別の問題を発生させるかなりの数の太さの線を描画を開始すると、: する必要がありますが開始されるとシック (thick) これらの線の端点の表示方法ですか?
+既定で、`StrokeWidth`新しくインスタンス化のプロパティ`SKPaint`オブジェクトが 0 で、太さで 1 ピクセルの行の表示では 1 の値と同じ効果があります。 これは表示を設定する可能性がありますので、携帯電話などの高解像度のデバイスで非常に軽量、`StrokeWidth`より大きい値にします。 別の問題が発生しますがかなり大きな太さの線を描画を開始すると: を開始し、これら太い線の両端表示する方法でしょうか。
 
-開始および線の端の外観が呼び出された、*ライン キャップ*または Skia、*キャップのストローク*です。 このコンテキストでは、"cap"という単語は hat の種類を参照&mdash;行の末尾に位置するものです。 設定する、 [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)のプロパティ、`SKPaint`オブジェクトの次のメンバーのいずれかを[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列挙型。
+開始と終了行の外観と呼ばれる、*ライン キャップ*または Skia、*ストローク キャップ*します。 このコンテキストでは、「上限」という単語がある種の hat を指す&mdash;行の末尾に位置するものです。 設定する、 [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)のプロパティ、`SKPaint`オブジェクトの次のメンバーのいずれかに、 [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列挙体。
 
-- [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (既定)
+- [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (既定値)
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-サンプル プログラムを使用してこれらは、最適な説明します。 ホーム ページの 2 番目のセクション、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)というタイトルのページでプログラムが始まる**ストローク Cap**に基づいて、 [ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)クラスです。 このページを定義、`PaintSurface`の 3 つのメンバーをループ処理するイベント ハンドラー、`SKStrokeCap`列挙体、列挙体メンバーの両方に名前を表示して、その線幅を使用して線を描画します。
+サンプル プログラムでこれらを最適に示します。 ホーム ページの 2 番目のセクション、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)というタイトルでページとプログラムの開始**ストローク キャップ**に基づいて、 [ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)クラス。 このページを定義、`PaintSurface`の 3 つのメンバーをループ処理するイベント ハンドラー、`SKStrokeCap`列挙体、列挙型メンバーの両方の名前を表示して、そのストローク キャップを使用して線を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,25 +90,25 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-各メンバーに対して、`SKStrokeCap`列挙型、ハンドラーが 50 ピクセルと 2 ピクセルのストロークの太さの一番上に配置されている別の行のストロークの太さを持つ 2 つの行を描画します。 この 2 行目は、幾何学模様の開始と終了の線の太さと線の幅からの行を示すために対象としています。
+各メンバーに対して、`SKStrokeCap`列挙型で、ハンドラーはストロークの太さを 50 ピクセルから 2 ピクセルのストロークの太さで一番上に配置されている別の行のいずれか 2 つの行を描画します。 この 2 行目は、幾何学の開始と線の太さとストローク キャップの独立した行の末尾を示すために対象としています。
 
-[![](lines-images/strokecaps-small.png "キャップのストロークのページのスクリーン ショットをトリプル")](lines-images/strokecaps-large.png#lightbox "ストローク線端 ページのトリプル スクリーン ショット")
+[![](lines-images/strokecaps-small.png "ストローク キャップ ページのスクリーン ショットをトリプル")](lines-images/strokecaps-large.png#lightbox "ストローク キャップ ページの 3 倍になるスクリーン ショット")
 
-ご覧のように、`Square`と`Round`ストローク cap がストローク幅の半分だけ行の先頭に、最後にもう一度、行の長さを効果的に拡張します。 この拡張機能は、レンダリングされたグラフィック オブジェクトのサイズを決定する必要がある場合に重要になります。
+ご覧のとおり、`Square`と`Round`ストローク キャップはストローク幅の半分だけ行の先頭に、最後にもう一度、行の長さを効果的に拡張します。 この拡張機能は、レンダリングされたグラフィック オブジェクトのサイズを決定する必要がある場合に重要になります。
 
-`SKCanvas`クラスには少し変わった複数行を描画するための別のメソッドも含まれています。
+`SKCanvas`クラスにはやや特殊な複数の行を描画するための別のメソッドも含まれています。
 
 ```csharp
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-`points`パラメーターは配列の`SKPoint`値および`mode`のメンバーである、 [ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/)列挙体は、次の 3 つのメンバーがあります。
+`points`パラメーターが配列の`SKPoint`値と`mode`のメンバーである、 [ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/)を 3 つのメンバーを持つ列挙型。
 
 - [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) 個々 のポイントを表示するには
 - [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) ポイントの各ペアを接続するには
-- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) すべての連続する点を接続するには
+- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) すべての連続するポイントを接続するには
 
-**複数行**ページは、このメソッドを示しています。 [ `MultipleLinesPage` XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)2 つのインスタンスを作成`Picker`できるビューのメンバーを選択して、`SKPointMode`列挙型でありのメンバー、`SKStrokeCap`列挙。
+**複数行**ページは、この方法を示します。 [ `MultipleLinesPage` XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)2 つのインスタンスを作成`Picker`できるビューのメンバーの選択、`SKPointMode`列挙体のメンバーと、`SKStrokeCap`列挙体。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -178,7 +178,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 }
 ```
 
-このハンドラーは、の有無を確認する必要があります、`SKCanvasView`オブジェクト イベント ハンドラーは最初のためときに呼び出されます、`SelectedIndex`のプロパティ、 `Picker` XAML ファイルで 0 に設定されている前に発生して、`SKCanvasView`がインスタンス化されています。
+このハンドラーは、の有無を確認する必要があります、`SKCanvasView`オブジェクトはイベント ハンドラーは最初のためというときに、`SelectedIndex`のプロパティ、 `Picker` 、XAML ファイルで 0 に設定されて前に発生して、`SKCanvasView`がインスタンス化されました。
 
 `PaintSurface`ハンドラーから 2 つの選択した項目を取得するためのジェネリック メソッドにアクセスする、`Picker`ビューおよび列挙値に変換します。
 
@@ -228,20 +228,20 @@ T GetPickerItem<T>(Picker picker)
 }
 ```
 
-このスクリーン ショットに、さまざまな`Picker`3 つのプラットフォームを選択します。
+スクリーン ショットは、さまざまな`Picker`3 つのプラットフォームを選択します。
 
-[![](lines-images/multiplelines-small.png "複数行のページのスクリーン ショットをトリプル")](lines-images/multiplelines-large.png#lightbox "複数行のページのトリプル スクリーン ショット")
+[![](lines-images/multiplelines-small.png "複数の行のページのスクリーン ショットをトリプル")](lines-images/multiplelines-large.png#lightbox "複数行のページの 3 倍になるスクリーン ショット")
 
-左側には iPhone 方法、`SKPointMode.Points`列挙体メンバーにより`DrawPoints`内の地点のそれぞれを表示するために、`SKPoint`ライン キャップの場合、四角形配列`Butt`または`Square`です。 ライン キャップの場合、円が表示される`Round`です。
+左側には iPhone 方法、`SKPointMode.Points`列挙体メンバーにより`DrawPoints`の各ポイントで表示するために、`SKPoint`ライン キャップがある場合は、四角形として配列`Butt`または`Square`します。 ライン キャップがある場合、円が表示される`Round`します。
 
-代わりに使用する場合`SKPointMode.Lines`センターでは、Android の画面に示すように、`DrawPoints`メソッドでは、直線を描画の各ペア間`SKPoint`値は、ここでは、指定した行 cap を使用して`Round`です。
+代わりに使用すると`SKPointMode.Lines`センターでは、Android の画面上に示すように、`DrawPoints`メソッドの各ペアの間に線を描画します`SKPoint`cap を使用して、指定した行、ここで、値`Round`します。
 
-UWP スクリーン ショットがの結果を表示、`SKPointMode.Polygon`値。 線を描画して、配列内の連続する点の間が非常に密接に確認する場合は、これらの行が接続されていないことが表示されます。 これらの個別の行のそれぞれで終わります指定ライン キャップ。 選択した場合、 `Round` cap を接続する線が表示されるが、実際に接続していません。
+UWP のスクリーン ショットの結果を示しています、`SKPointMode.Polygon`値。 配列で、連続する点の間に線を描画しますが、非常に密接に確認する場合これらの行が接続されていないことが表示されます。 これらの個別の行の各は、開始し、指定のライン キャップで終了します。 選択した場合、 `Round` cap、接続されている行が表示されるが、実際に接続していません。
 
 線を接続または接続されていないかどうかは、グラフィックス パスの作業の重要な側面です。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

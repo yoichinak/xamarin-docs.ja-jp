@@ -1,53 +1,53 @@
 ---
-title: SkiaSharp 図面の基礎
-description: このガイドでは、SkiaSharp グラフィックの概念と Xamarin.Forms のアプリケーションでの座標の基本について説明します。
+title: SkiaSharp 描画の基礎
+description: このガイドでは、SkiaSharp グラフィックの概念と Xamarin.Forms アプリケーションでの座標の基本について説明します。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 736921665664e559263fd56a456c5504a90124b3
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbd0b50d41908f41ef301f883050e9837dfcaace
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244020"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615380"
 ---
-# <a name="skiasharp-drawing-basics"></a>SkiaSharp 図面の基礎
+# <a name="skiasharp-drawing-basics"></a>SkiaSharp 描画の基礎
 
-_SkiaSharp グラフィックの概念と座標の基本をについてください。_
+_SkiaSharp のグラフィックの概念と座標の基礎を学習します_
 
-Xamarin.Forms アプリケーションに SkiaSharp NuGet パッケージを追加した後に SkiaSharp グラフィックスを使用して開始できます。 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) SkiaSharp 徐々 により高度なレッスンでプログラミング手法を説明するいくつかのページがソリューションに含まれています。
+SkiaSharp の NuGet パッケージを Xamarin.Forms アプリケーションに追加した後、SkiaSharp グラフィックスを使用を開始できます。 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ソリューションにはプログラミング手法を徐々 により高度なレッスンで SkiaSharp を説明するいくつかのページが含まれています。
 
-という見出しの下に表示されるこのセクションのすべてのサンプル プログラム**SkiaSharp 基礎**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**基礎**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)ソリューションのフォルダーです。
+このセクションでは、すべてのサンプル プログラムが、見出しの下に表示**SkiaSharp の基本**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)ソリューションのフォルダー。
 
 ## <a name="drawing-a-simple-circlecirclemd"></a>[単純な円を描画](circle.md)
 
-キャンバスとペイントを含め、SkiaSharp 図面の基礎を学習します。
+SkiaSharp 描画、キャンバスとペイントなどの基本について説明します。
 
 ## <a name="integrating-with-xamarinformsintegrationmd"></a>[Xamarin.Forms との統合](integration.md)
 
-タッチ入力および Xamarin.Forms 要素との統合に応答することにより、対話型の SkiaSharp グラフィックスを作成します。
+SkiaSharp の対話型のグラフィックスを作成するには、タッチ入力および Xamarin.Forms 要素との統合に応答します。
 
 ## <a name="pixels-and-device-independent-unitspixelsmd"></a>[ピクセル、およびデバイスに依存しない単位](pixels.md)
 
-SkiaSharp 座標と Xamarin.Forms の座標の違いについて説明します。
+SkiaSharp の座標と Xamarin.Forms の座標間の違いについて説明します。
 
 ## <a name="basic-animationanimationmd"></a>[基本的なアニメーション](animation.md)
 
-SkiaSharp グラフィックスをアニメーション化する方法を検出します。
+SkiaSharp、グラフィックスをアニメーション化する方法を説明します。
 
 ## <a name="integrating-text-and-graphicstextmd"></a>[テキストとグラフィックスの統合](text.md)
 
-SkiaSharp グラフィックスとテキストを統合するレンダリングされたテキスト文字列のサイズを決定する方法を参照してください。
+SkiaSharp のグラフィックスとテキストを統合するレンダリングされたテキスト文字列のサイズを決定する方法を参照してください。
 
 ## <a name="bitmap-basicsbitmapsmd"></a>[ビットマップの基礎](bitmaps.md)
 
-さまざまなソースからビットマップを読み込み、それらを表示します。
+さまざまなソースからビットマップを読み込むし、それらを表示します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -2,17 +2,17 @@
 title: 非アフィン変換
 description: この記事では、パースペクティブとテーパ効果、変換行列の 3 番目の列を作成する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: f4b1926fd21f7df4ea9231887032742fdc96f465
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 13f2a1160d012a6b7720bd84340a1cdd0f991535
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130882"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615653"
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
