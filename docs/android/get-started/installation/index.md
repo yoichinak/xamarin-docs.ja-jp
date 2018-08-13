@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241416"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573517"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
@@ -39,6 +39,6 @@ Visual Studio には、Google のスタンドアロン Android SDK Manager の�
 
 この記事では、デバイスを Xamarin.Android アプリケーションの実行とデバッグに使用できるように、物理 Android デバイスを設定して開発用のコンピューターに接続する方法について説明します。
 
-## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft OpenJDK のプレビュー](~/android/get-started/installation/openjdk.md)
+## <a name="microsoft-mobile-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft Mobile OpenJDK のプレビュー](~/android/get-started/installation/openjdk.md)
 
-このガイドでは、Microsoft が配布する OpenJDK のプレビュー リリースに切り替えるための手順が説明されています。
+このガイドでは、Microsoft が配布する OpenJDK のプレビュー リリースに切り替えるための手順が説明されています。 この OpenJDK のディストリビューションは、モバイル開発を目的としています。

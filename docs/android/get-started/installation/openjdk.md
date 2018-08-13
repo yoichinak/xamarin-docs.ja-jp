@@ -1,28 +1,28 @@
 ---
-title: Microsoft の OpenJDK ディストリビューションのプレビュー
-description: Microsoft が配布する OpenJDK の構成に向けたステップ バイ ステップ ガイドです。
+title: Microsoft の Mobile OpenJDK ディストリビューションのプレビュー
+description: モバイル開発のための、Microsoft OpenJDK ディストリビューションの構成に向けたステップ バイ ステップ ガイドです。
 ms.prod: xamarin
 ms.assetid: B5F8503D-F4D1-44CB-8B29-187D1E20C979
 ms.technology: xamarin-android
 author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
-ms.openlocfilehash: 6c1346918ca6881e551f6c5b89ab16ad13d3f804
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2022337ebd65997c7b2492137193586278f2dffd
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242530"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573595"
 ---
-# <a name="microsofts-openjdk-distribution-preview"></a>Microsoft の OpenJDK ディストリビューションのプレビュー
+# <a name="microsofts-mobile-openjdk-distribution-preview"></a>Microsoft の Mobile OpenJDK ディストリビューションのプレビュー
 
-_このガイドでは、Microsoft が配布する OpenJDK のプレビュー リリースに切り替えるための手順が説明されています。_
+_このガイドでは、Microsoft の OpenJDK のプレビュー リリースに切り替えるための手順が説明されています。このディストリビューションは、モバイル開発を目的としています。_
 
 ![プレビュー機能](~/media/shared/preview.png)
 
 ## <a name="overview"></a>概要
 
-Visual Studio 15.9 および Visual Studio for Mac 7.7 以降、Xamarin 用の Visual Studio ツールは、Oracle の JDK から、Android 開発に特化した OpenJDK の軽量バージョンへと移行します。
+Visual Studio 15.9 および Visual Studio for Mac 7.7 以降、Visual Studio Tools for Xamarin は、Oracle の JDK から、**Android 開発に特化した OpenJDK の軽量バージョン**へと移行します。
 
 ![VS 15.8 Preview 5 の OpenJDK の Web プレビューを提供する新しいワークフロー](openjdk-images/openjdk.png)
 
@@ -36,7 +36,7 @@ Visual Studio 15.9 および Visual Studio for Mac 7.7 以降、Xamarin 用の V
 
 - サード パーティ製のサーバーやインストーラーによる問題を回避できます。
 
-改善されたエクスペリエンスにすぐに移行する場合は、Microsoft の OpenJDK ディストリビューションのビルドを利用して Windows と Mac 上でテストできます。 以下でセットアップ処理について説明しますが、いつでも Oracle JDK に戻すことができます。
+改善されたエクスペリエンスにすぐに移行する場合は、Microsoft の Mobile OpenJDK ディストリビューションのビルドを利用して Windows と Mac 上でテストできます。 以下でセットアップ処理について説明しますが、いつでも Oracle JDK に戻すことができます。
 
 ## <a name="download"></a>ダウンロード
 
@@ -60,17 +60,17 @@ IDE に新しい JDK を示します。
 
 - **Mac** &ndash; **[ツール] > [SDK マネージャー] > [場所]** の順にクリックして、**[Java SDK (JDK) の場所]** を OpenJDK インストールの完全なパスに変更します。 次の例では、このパスに **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9** を設定します。
 
-![Mac での Microsoft の OpenJDK ディストリビューションに向けた JDK パスの設定](openjdk-images/vsm.png)
+![Mac での Microsoft の Mobile OpenJDK ディストリビューションに向けた JDK パスの設定](openjdk-images/vsm.png)
 
 - **Windows** &ndash; **[ツール] > [オプション] > [Xamarin] > [Android 設定]** の順にクリックして、**[Java Development Kit の位置情報]** を OpenJDK インストールの完全なパスに変更します。 次の例では、このパスに **C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9** を設定します。
 
-![Windows での Microsoft の OpenJDK ディストリビューションに向けた JDK パスの設定](openjdk-images/vs.png)
+![Windows での Microsoft の Mobile OpenJDK ディストリビューションに向けた JDK パスの設定](openjdk-images/vs.png)
 
 ## <a name="revert"></a>元に戻す
 
 Oracle JDK に戻すには、Java SDK の場所を以前に使用していた Oracle JDK のパスに変更して、ソリューションをリビルドします。 Mac では、**[既定値にリセット]** をクリックすることで Oracle JDK のパスに戻すことができます。
 
-Microsoft の OpenJDK ディストリビューションで問題が発生した場合は、問題の追跡と迅速な修正を可能にするために、IDE のフィードバック ツールを使用して問題を報告してください。
+Microsoft の Mobile OpenJDK ディストリビューションで問題が発生した場合は、問題の追跡と迅速な修正を可能にするために、IDE のフィードバック ツールを使用して問題を報告してください。
 
 ## <a name="known-issues--planned-fix-dates"></a>既知の問題と計画された修正日
 
@@ -78,4 +78,4 @@ Microsoft の OpenJDK ディストリビューションで問題が発生した�
 
 ## <a name="summary"></a>まとめ
 
-この記事では、IDE を構成して Microsoft が配布する OpenJDK のプレビュー リリースを使用する方法について説明しました。安定版は 2018 年後半にリリースされる予定です。
+この記事では、IDE を構成して Microsoft の Mobile OpenJDK ディストリビューションのプレビュー リリースを使用する方法について説明しました。安定版は 2018 年後半にリリースされる予定です。
