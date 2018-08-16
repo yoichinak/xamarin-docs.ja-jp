@@ -63,7 +63,7 @@ URL に基づくビットマップを読み込むには、使用することが�
 HttpClient httpClient = new HttpClient();
 ```
 
-使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります**[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
+使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります **[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
 
 使用する最も便利なので、`await`演算子`HttpClient`では、コードを実行できません、`BasicBitmapsPage`コンス トラクター。 代わりの一部では、`OnAppearing`をオーバーライドします。 ここで、URL は、いくつかのサンプルのビットマップの Xamarin の web サイト上の領域を指します。 Web サイト上のパッケージでは特定の幅にビットマップのサイズを変更するための仕様を追加できます。
 
