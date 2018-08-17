@@ -16,7 +16,7 @@ ms.locfileid: "39615315"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>SkiaSharp のビットマップの表示
 
-SkiaSharp のビットマップのサブジェクトが、情報の記事で導入された **[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** します。 その記事では、負荷のビットマップに 3 つの方法とビットマップを表示する 3 つの方法を示しました。 この記事では、ビットマップを読み込む方法を確認しより深いがの使用になる、`DrawBitmap`メソッドの`SKCanvas`します。
+SkiaSharp のビットマップのサブジェクトが、情報の記事で導入された**[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** します。 その記事では、負荷のビットマップに 3 つの方法とビットマップを表示する 3 つの方法を示しました。 この記事では、ビットマップを読み込む方法を確認しより深いがの使用になる、`DrawBitmap`メソッドの`SKCanvas`します。
 
 ![サンプルを表示する](displaying-images/DisplayingSample.png "サンプルを表示します。")
 

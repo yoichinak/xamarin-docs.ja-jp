@@ -49,8 +49,7 @@ iOS デバイスをプロビジョニングする方法は 2 つあります。
 
 * **自動 (推奨)** - プロジェクトで **[自動プロビジョニング]** スキームを選択すると、Visual Studio で署名 ID、アプリ ID、プロビジョニング プロファイルが自動的に作成され、管理されます。 プロビジョニングを自動的に管理する方法については、「[自動プロビジョニング](automatic-provisioning.md)」ガイドを参照してください。 これは、iOS デバイスをプロビジョニングする場合にお勧めの方法です。
 
-* 
-  **手動** - ID、アプリケーション ID、およびプロビジョニング プロファイルの署名は、「[手動プロビジョニング](manual-provisioning.md)」ガイドに記載されているように、Apple Developer Portal を使用して作成および管理できます。 これらのアーティファクトは、「[Apple Account Management](~/cross-platform/macios/apple-account-management.md)」(Apple アカウント管理) ガイドの説明に従って管理できます。
+*  **手動** - ID、アプリケーション ID、およびプロビジョニング プロファイルの署名は、「[手動プロビジョニング](manual-provisioning.md)」ガイドに記載されているように、Apple Developer Portal を使用して作成および管理できます。 これらのアーティファクトは、「[Apple Account Management](~/cross-platform/macios/apple-account-management.md)」(Apple アカウント管理) ガイドの説明に従って管理できます。
 
 ## <a name="provisioning-for-application-services"></a>アプリケーション サービスのプロビジョニング
 

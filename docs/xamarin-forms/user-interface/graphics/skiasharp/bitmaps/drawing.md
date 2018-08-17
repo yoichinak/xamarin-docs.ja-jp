@@ -260,7 +260,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 メソッド`SKCanvas`描画するために使用できるビットマップを含める`DrawBitmap`します。 これは、描画できるビットマップが 1 つ、別の通常、何らかの方法で変更することを意味します。
 
-ビットマップを変更する最も汎用的な方法は、実際のピクセル ビットへのアクセスを使用、サブジェクトが、記事で取り上げる**[にアクセスする SkiaSharp ビットマップ ピクセル](pixel-bits.md)** します。 ビットマップのピクセル ビットへのアクセスを必要としないを変更するその他の多くの手法があります。
+ビットマップを変更する最も汎用的な方法は、実際のピクセル ビットへのアクセスを使用、サブジェクトが、記事で取り上げる **[にアクセスする SkiaSharp ビットマップ ピクセル](pixel-bits.md)** します。 ビットマップのピクセル ビットへのアクセスを必要としないを変更するその他の多くの手法があります。
 
 次に含まれているビットマップ、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションは 360 ピクセル、高さが 480 ピクセル。
 
