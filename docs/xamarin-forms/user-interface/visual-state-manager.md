@@ -251,17 +251,17 @@ Visual State Manager を使用すると、XAML ファイルに、ビューが通
 
 注意して、2 つ目`Entry`もが、`DataTrigger`の一部としてその`Trigger`コレクション。 これにより、 `Entry` 、3 つ目に何かが入力されるまで無効にする`Entry`します。 IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) で実行されているスタートアップでページを示します。
 
-[![ビューで VSM: 無効になっている](vsm-images/VsmOnViewDisabled.png "VSM ビュー - 無効になっています")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
+[![VSM on View: 無効](vsm-images/VsmOnViewDisabled.png "VSM on View - disabled")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
 現在の表示状態が"Disabled"ため、2 つ目のバック グラウンド`Entry`ピンクで iOS および Android の画面であります。 UWP 実装`Entry`背景を設定することはない色のときに、`Entry`は無効です。 
 
 3 番目にいくつかのテキストを入力すると`Entry`、2 番目の`Entry`"Normal"の状態と、バック グラウンドにスイッチがライム。
 
-[![ビューで VSM: 標準](vsm-images/VsmOnViewNormal.png "VSM ビュー - 標準")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
+[![VSM on View: 標準](vsm-images/VsmOnViewNormal.png "VSM on View - normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
 2 つ目をタッチする`Entry`、入力フォーカスを取得します。 「フォーカス」状態に切り替わります、その高さの 2 倍に展開されます。
 
-[![ビューで VSM: 重点を置いた](vsm-images/VsmOnViewFocused.png "VSM ビューに重点を置いています")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![VSM on View: 優先](vsm-images/VsmOnViewFocused.png "VSM on view - focused")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
 なお、`Entry`入力フォーカスを取得した場合は、ライム バック グラウンドを保持しません。 Visual State Manager は切り替える表示状態の間、以前の状態によって設定されるプロパティは設定されません。 視覚的な状態は相互に排他的なことに注意してください。 "Normal"の状態があることを意味のみ、`Entry`を有効にします。 つまり、`Entry`を有効にして、入力フォーカスがないです。 
 
@@ -282,7 +282,7 @@ Visual State Manager を使用すると、XAML ファイルに、ビューが通
 <VisualState x:Name="Normal" />
 ``` 
 
-### <a name="visual-state-manager-markup-in-a-style"></a>スタイルの表示状態マネージャーのマークアップ
+### <a name="visual-state-manager-markup-in-a-style"></a>Style での Visual State Manager マークアップ
 
 2 つまたは複数のビューの間で共通の Visual State Manager マークアップを共有する必要があります。 マークアップを配置したいここで、`Style`定義します。
 
@@ -412,7 +412,7 @@ VSM マークアップの残りの部分では前に、と同じです。
 
 今すぐすべて、`Entry`のこのページ ビューの表示状態にも同様の応答します。 「フォーカス」状態が 2 つ目を今すぐが含まれることにも注意してください`Setter`により、各`Entry`とそれに入力フォーカスをライムもバック グラウンドします。
 
-[![スタイルで VSM](vsm-images/VsmInStyle.png "スタイルで VSM")](vsm-images/VsmInStyle-Large.png#lightbox)
+[![VSM in Style](vsm-images/VsmInStyle.png "VSM in style")](vsm-images/VsmInStyle-Large.png#lightbox)
 
 ## <a name="defining-your-own-visual-states"></a>独自のビジュアル状態を定義します。
 
@@ -494,7 +494,7 @@ VSM マークアップが、2 つ目に接続されている`Label`(という名
 
 有効な電話番号を入力したらの 現在の状態が"Valid"。 2 番目の`Entry`は表示されなくなります、`Button`が有効になりました。
 
-[![VSM 検証: 有効な状態](vsm-images/VsmValidationValid.png "有効な VSM の検証")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![VSM Validation: Valid State](vsm-images/VsmValidationValid.png "VSM validation - valid")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
 分離コード ファイルは、役割の処理を担います、`TextChanged`からイベントを`Entry`します。 ハンドラーは、入力文字列が有効かどうかを判断するのに正規表現を使用します。 という名前の分離コード ファイル内のメソッド`GoToState`呼び出す静的`VisualStateManager.GoToState`両方のメソッド`helpLabel`と`submitButton`:
 
@@ -533,7 +533,7 @@ public partial class VsmValidationPage : ContentPage
 
 <a name="adaptive-layout" />
 
-## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>Visual State Manager を使用してアダプティブのレイアウト
+## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>アダプティブレイアウトのための Visual State Manager の使用
 
 スマート フォンで実行されているアプリケーションは、縦または横の縦横比とデスクトップで実行されている Xamarin.Forms プログラムに通常表示できます Xamarin.Forms と多くのさまざまなサイズと縦横比を想定するサイズを変更できます。 適切に設計されたアプリケーションがこれらのさまざまなページまたはウィンドウ フォーム ファクターの異なる方法では、そのコンテンツを表示します。 
 
@@ -710,7 +710,7 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 
 > [!VIDEO https://youtube.com/embed/qhUHbVP5mIQ]
 
-**Xamarin.Forms 3.0 Visual State Manager により、 [Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 Visual State Manager、[Xamarin University](https://university.xamarin.com/) 提供**
 
 ## <a name="related-links"></a>関連リンク
 
