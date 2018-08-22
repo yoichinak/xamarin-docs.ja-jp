@@ -339,7 +339,7 @@ Visual State Manager を使用すると、XAML ファイルに、ビューが通
 
 VSM マークアップの残りの部分では前に、と同じです。
 
-ここでは、**スタイルで VSM** VSM の完全なマークアップを表示するページ。
+ここでは、**VSM in Style** ページの完全な VSM マークアップを示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -410,25 +410,25 @@ VSM マークアップの残りの部分では前に、と同じです。
 </ContentPage>
 ```
 
-今すぐすべて、`Entry`のこのページ ビューの表示状態にも同様の応答します。 「フォーカス」状態が 2 つ目を今すぐが含まれることにも注意してください`Setter`により、各`Entry`とそれに入力フォーカスをライムもバック グラウンドします。
+現在このページのすべての `Entry` ビューは、それぞれの表示状態に対して同じ反応をします。 「優先」状態には、各 `Entry` が入力フォーカスを持っている時、黄緑色の背景に変わる 2 つ目の `Setter` が含まれていることにも注意してください。
 
 [![VSM in Style](vsm-images/VsmInStyle.png "VSM in style")](vsm-images/VsmInStyle-Large.png#lightbox)
 
-## <a name="defining-your-own-visual-states"></a>独自のビジュアル状態を定義します。
+## <a name="defining-your-own-visual-states"></a>独自の表示状態を定義する
 
-すべてのクラスから派生した`VisualElement`3 つ一般的な状態"Normal"、「フォーカス」および"Disabled"をサポートしています。 内部的には、 [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs)有効または無効になっている、またはフォーカスがある、またはフォーカスされていないになると呼び出す静的クラスを検出した[ `VisualStateManager.GoToState` ](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String))メソッド。
+`VisualElement` から派生したすべてのクラスは、3 つの一般的な状態「標準」、「優先」、「無効」をサポートしています。 内部的には、[`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) クラスは、いつ有効/無効または優先/非優先になるかを検出し、静的な[`VisualStateManager.GoToState`](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String)) メソッドを呼び出します。
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");
 ```
 
-これでのみの Visual State Manager コード、`VisualElement`クラス。 `GoToState`から派生したすべてのクラスに基づくすべてのオブジェクトが呼び出されると`VisualElement`、Visual State Manager を使用して、いずれかで`VisualElement`これらの変更に応答するオブジェクト。
+`VisualElement` クラス内で見つけることのできる Visual State Manager のコードはこれだけです。 `GoToState` は、`VisualElement` から派生するすべてのクラスに基づくすべてのオブジェクトのために呼び出されるため、どの `VisualElement` オブジェクトからも Visual State Manager を使用して、変更に対応することができます。
 
-興味深いことに、"CommonStates"の表示状態グループの名前が明記されていないで`VisualElement`します。 Visual State Manager の API の一部でないグループ名。 これまでに示した 2 つのサンプル プログラムの 1 つを"CommonStates"から、それ以外のグループの名前を変更することができ、プログラムは引き続き動作します。 グループ名は、そのグループの状態の一般的な説明だけです。 任意のグループの表示状態は相互に排他的であるが暗黙的に認識します。 1 つの状態と 1 つだけの状態はいつでも現在します。
+興味深いことに、"CommonStates" という表示状態グループの名前は、`VisualElement` 内で明示的に参照されていません。 グループ名は、Visual State Manager 用の API の一部ではありません。 これまでに示した 2 つのサンプルプログラムの 1 つでは、グループ名を "CommonStates" から別の名前に変更することができ、そのプログラムは引き続き動作します。 グループ名は、単にそのグループ内の状態の一般的な説明にすぎません。 どのグループの表示状態も相互に排他的であるということが暗黙的に認識されます。いつでもただ 1 つの状態だけが現在の状態になります。
 
-呼び出す必要があります、独自のビジュアル状態を実装する場合は、`VisualStateManager.GoToState`コードから。 ほとんどの場合、ページ クラスの分離コード ファイルからのこの呼び出しを行います。
+独自の表示状態を実装する場合は、コードから `VisualStateManager.GoToState` を呼び出す必要があります。 ほとんどの場合、ページクラスの分離コードファイルからこのメソッドを呼ぶことになるでしょう。
 
-**VSM 検証**ページで、 **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** サンプルは、入力の検証に関連 Visual State Manager を使用する方法を示します。 XAML ファイルには、2 つの`Label`、要素、 `Entry`、および`Button`:
+**[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** サンプルの **VSM Validation** ページは、入力検証に関連する Visual State Manager の使用方法を示します。 以下の XAML ファイルには、`Entry` と `Button` の 2 つの`Label` 要素が含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -486,13 +486,13 @@ VisualStateManager.GoToState(this, "Focused");
 </ContentPage>
 ```
 
-VSM マークアップが、2 つ目に接続されている`Label`(という名前`helpLabel`) および`Button`(という`submitButton`)。 「有効」および「が無効です」という名前の 2 つの相互に排他的な状態があります。 これらの 2 つの"ValidationState"グループに含まれる`VisualState`"Valid"と「無効」の両方のタグのうち 1 つは各ケースで空にします。 
+VSM マークアップは、2 番目の (`helpLabel` という名前の) `Label` と (`submitButton` という名前の) `Button` に添付されています。 「有効」と「無効」という名前の 2 つの相互に排他的な状態があります。 これら 2 つの "ValidationState" グループのそれぞれで、「有効」と「無効」の両方に `VisualState` タグが含まれていますが、それぞれのケースでそのうちの 1 つは空になっていることに注意してください。 
 
-場合、`Entry`現在の状態は「無効」で、そのため、有効な電話番号を含まない、2 つ目`Label`が表示されると、`Button`は無効です。
+`Entry` に有効な電話番号が含まれない場合、現在の状態は「無効」になるので、 2 番目の `Label` が表示され、`Button` は無効になります。
 
-[![VSM 検証: 無効な状態](vsm-images/VsmValidationInvalid.png "VSM の検証が無効です")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
+[![VSM Validation: Invalid State](vsm-images/VsmValidationInvalid.png "VSM validation - invalid")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
-有効な電話番号を入力したらの 現在の状態が"Valid"。 2 番目の`Entry`は表示されなくなります、`Button`が有効になりました。
+有効な電話番号を入力すると、現在の状態は「有効」になります。 2 番目の `Entry` は消えて、`Button` が有効になります。
 
 [![VSM Validation: Valid State](vsm-images/VsmValidationValid.png "VSM validation - valid")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
