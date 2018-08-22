@@ -1,136 +1,118 @@
 ---
-title: Xamarin.iOS でイメージを表示します。
-description: この記事は、Xamarin.iOS アプリと c# コードを使用して、または iOS デザイナー内のコントロールに代入することで、そのイメージを表示するイメージ アセットなどについて説明します。
+title: Xamarin.iOS でのイメージの表示
+description: この記事では、Xamarin.iOS アプリと c# コードを使用するか、iOS デザイナーのコントロールに割り当てることで、そのイメージを表示する内のイメージ アセットなどについて説明します。
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/24/2018
-ms.openlocfilehash: 3ae63bb30c7759a1915939a2199d5ffc7dc75d15
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4b2bddeb6b04b5c5288f501fce0d6bb03e0b6584
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784274"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40250986"
 ---
-# <a name="displaying-an-image-in-xamarinios"></a>Xamarin.iOS でイメージを表示します。
+# <a name="displaying-an-image-in-xamarinios"></a>Xamarin.iOS でのイメージの表示
 
-_この記事は、Xamarin.iOS アプリと c# コードを使用して、または iOS デザイナー内のコントロールに代入することで、そのイメージを表示するイメージ アセットなどについて説明します。_
+_この記事では、Xamarin.iOS アプリと c# コードを使用するか、iOS デザイナーのコントロールに割り当てることで、そのイメージを表示する内のイメージ アセットなどについて説明します。_
 
-ここでは、次のトピックについて詳しく説明します。
+## <a name="adding-and-organizing-images-in-a-xamarinios-app"></a>追加して、Xamarin.iOS アプリで画像を整理します。
 
-- [Xamarin.iOS アプリでの整理のイメージの追加および](#adding-assets)- のイメージ アセットをについて説明し、含まれる可能性がある、どのように編成され、Xamarin.iOS プロジェクト内で管理します。
-- [アセット カタログにイメージを追加する](#asset-catalogs)-資産カタログを含むイメージを管理します。
-    - [資産のカタログにベクター イメージを使用して](#Using-Vector-Images-in-Asset-Catalogs)-すべてのイメージのサイズを 1 つのベクトルを提供します。
-- [テンプレート イメージを操作](#Working-with-Template-Images)-テンプレート イメージのイメージ アセットを設定することにより、開発者できます簡単に色分けして表示、イメージを設定して、アプリの UI のテーマの変更に合わせてそれを`Tint`プロパティです。
-- [コントロールでイメージを使用する](#controls)- などの UI コントロールを持つ Xamarin.iOS プロジェクトに含まれるイメージ アセットを使用して表紙`UIButton`と`UIImageView`c# を使用してイメージを操作する方法と、`UIImage`オブジェクトの[FromBundle](#frombundle)メソッドです。
-- [ストーリー ボードにイメージを表示する](#Displaying-an-Image-in-a-Storyboards)-ストーリー ボードを使用してイメージを表示する例を示します。
-- [コードでイメージを表示する](#Displaying-an-Image-in-Code)の c# コードを使用してイメージを表示する例を示します。
+開発者が使用して Xamarin.iOS アプリで使用するイメージを追加するときに、_資産カタログ_すべての iOS デバイスとアプリで必要な解像度をサポートするためにします。
 
-<a name="adding-assets" />
+IOS 7 で追加された**資産カタログの画像セット**すべてのバージョンまたはさまざまなデバイスをサポートし、スケール ファクターをアプリに必要なイメージの表現が含まれています。 イメージの資産ファイル名ではなく (を参照してください[解像度の独立したイメージとイメージの用語体系](~/ios/app-fundamentals/images-icons/displaying-an-image.md))、**画像セット**Json ファイルを使用して、どのデバイスと解像度にどのイメージが属しているを指定するには. これは、管理および iOS (iOS 9 以降) からのイメージをサポートすることをお勧めします。
 
-## <a name="adding-and-organizing-images-in-a-xamarinios-app"></a>追加して、Xamarin.iOS アプリで画像の整理
+## <a name="adding-images-to-an-asset-catalog-image-set"></a>資産カタログ イメージへのイメージの追加設定
 
-Xamarin.iOS アプリで使用するイメージを追加、ときに、開発者が使用する_アセット カタログ_すべての iOS デバイスとアプリが必要な解像度をサポートするためにします。
-
-IOS 7 で追加された**アセット カタログのイメージ セット**すべてのバージョンまたはさまざまなデバイスをサポートし、規模のアプリの要素に必要なイメージの表現が含まれています。 イメージの資産ファイル名ではなく (を参照してください[解像度の独立したイメージとイメージの命名規則](~/ios/app-fundamentals/images-icons/displaying-an-image.md))、**イメージ セット**Json ファイルを使用して、どのデバイスや解像度に属しているどのイメージを指定するには. これは、管理および iOS (iOS 9 以上) からのイメージをサポートすることをお勧めします。
-
-<a name="asset-catalogs" />
-
-## <a name="adding-images-to-an-asset-catalog-image-set"></a>資産カタログ イメージに追加するイメージを設定します。
-
-、前述のよう、**アセット カタログのイメージ セット**すべてのバージョンまたはさまざまなデバイスをサポートし、規模のアプリの要素に必要なイメージの表現が含まれています。 イメージの資産ファイル名ではなく**イメージ セット**Json ファイルを使用して、どのデバイスや解像度に属しているどのイメージを指定します。
+、前述のよう、**資産カタログの画像セット**すべてのバージョンまたはさまざまなデバイスをサポートし、スケール ファクターをアプリに必要なイメージの表現が含まれています。 イメージの資産ファイル名ではなく**画像セット**Json ファイルを使用して、どのデバイスと解像度にどのイメージが属しているを指定します。
 
 新しいイメージ セットを作成し、イメージを追加して、次の操作を行います。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **ソリューション エクスプ ローラー**をダブルクリックして、`Assets.xcassets`ファイルを開いて編集するファイル。
+1. **ソリューション エクスプ ローラー**、ダブルクリックして、`Assets.xcassets`ファイルを開き、編集します。
 
     ![](displaying-an-image-images/imageset01.png "ソリューション エクスプ ローラーで Assets.xcassets")
-2. 右クリックし、**資産一覧**選択**イメージは新しい設定**:
+2. 右クリックし、 **Assets リスト**選択**新しいイメージ セット**:
 
-    ![](displaying-an-image-images/imageset02.png "新しいイメージ セットを追加します。")
+    ![](displaying-an-image-images/imageset02.png "新しいイメージ セットの追加")
 3. 新しいイメージ セットを選択し、エディターが表示されます。
 
-    ![](displaying-an-image-images/imageset03.png "イメージの設定エディター")
-4. ここでは、さまざまなデバイスの各イメージでドラッグおよびと解決策が必要です。 (注: これらの解決策がで指定した解像度に対応する、[イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)ドキュメントです)。
-5. ダブルクリックして、新しいイメージ セットの**名前**で、**資産一覧**編集: ![ ](displaying-an-image-images/imageset04.png "新しいイメージ セットの名前を編集")
+    ![](displaying-an-image-images/imageset03.png "セットのイメージ エディター")
+4. ここでは、さまざまなデバイスの各イメージにドラッグしと解決策が必要です。 
+5. 新しいイメージ セットをダブルクリックして**名前**で、 **Assets リスト**編集する: ![](displaying-an-image-images/imageset04.png "新しいイメージ セットの名前を編集")
 
-使用する場合、**イメージ設定**デザイナー、iOS での単にプロパティ エディターでのドロップダウン リストから、セットの名前を選択します。
+使用する場合、**セット イメージ**で iOS Designer では、プロパティ エディターでのドロップダウン リストから単純にセットの名前を選択します。
 
-![](displaying-an-image-images/imageset06.png "ドロップダウン リストから、イメージ セットの名前を選択します。")
+![](displaying-an-image-images/imageset06.png "ドロップダウン リストからイメージ セットの名前を選択します。")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 資産カタログを開く、**ソリューション エクスプ ローラー**、左上隅のをクリックし、 **Plus**ボタン。
+1. 資産カタログを開く、**ソリューション エクスプ ローラー**、左上隅でをクリックし、 **Plus**ボタン。
 
-    ![](displaying-an-image-images/asset5.png "プラス記号をクリックしてボタン")
+    ![](displaying-an-image-images/asset5.png "プラス記号をクリックします ボタン")
 
-2. 選択**イメージ セットを追加**され、新しいイメージ セットのイメージの設定エディターが表示されます。 ここでは、さまざまなデバイスの各イメージでドラッグおよびと解決策が必要です。 (注: これらの解決策がで指定した解像度に対応する、[イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)ドキュメント)。
+2. 選択**イメージ セットの追加**と新しいイメージ セットのセットのイメージ エディターが表示されます。 ここでは、さまざまなデバイスの各イメージにドラッグしと解決策が必要です。 
 
     ![](displaying-an-image-images/asset7.png "イメージ エディターの設定")
 
-### <a name="renaming-an-image-set"></a>イメージ セットの名前を変更します。
+### <a name="renaming-an-image-set"></a>イメージ設定の名前を変更します。
 
-イメージの設定、名前を変更するには、次の操作を行います。
+イメージのセットを名前を変更するには、次の操作を行います。
 
-1. **ソリューション エクスプ ローラー**をダブルクリックして、**アセット カタログ**ファイルを開いて編集するファイル。
+1. **ソリューション エクスプ ローラー**、ダブルクリックして、**資産カタログ**ファイルを開き、編集します。
 
     ![](displaying-an-image-images/rename01.png "ソリューション エクスプ ローラーで、資産カタログ")
-2. 選択、**イメージ設定**名前を変更します。
+2. 選択、**セット イメージ**名前を変更します。
 
-    ![](displaying-an-image-images/rename02.png "名前を変更するイメージのセットを選択します。")
-3. **プロパティ エクスプ ローラー**下部までスクロールし、選択、**名前**(下にある、**その他**セクション)。
+    ![](displaying-an-image-images/rename02.png "名前を変更するイメージのセットを選択します")
+3. **プロパティ エクスプ ローラー**、一番下までスクロールし、選択、**名前**(下、**その他**セクション)。
 
-    ![](displaying-an-image-images/rename03.png "[その他] セクションの名前を選択します。")
-4. 新しい入力**名前**の**イメージ設定**し、変更を保存します。
+    ![](displaying-an-image-images/rename03.png "その他 セクションで名前を選択します。")
+4. 新しい入力**名前**の**セット イメージ**変更を保存します。
 
 -----
 
-使用する場合、**イメージ設定**コードでは、名前で参照を呼び出して、`FromBundle`のメソッド、`UIImage`クラスです。 たとえば、次のように入力します。
+使用する場合、**セット イメージ**コードでは、名前で参照を呼び出して、`FromBundle`のメソッド、`UIImage`クラス。 たとえば、次のように入力します。
 
 ```csharp
 MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> イメージ セットに割り当てられているイメージが表示されない場合正常に正しいファイル名を使用していることを確認してください、`FromBundle`メソッド (、**イメージ設定**であり、親**アセット カタログ**名)。 PNG イメージは、`.png`拡張機能は省略できます。 他のイメージ形式を拡張機能が必要 (例です。 `PurpleMonkey.jpg`)
+> 場合は、イメージのセットに割り当てられているイメージが正しく表示されない、正しいファイル名で使用されていることを確認、`FromBundle`メソッド (、**セット イメージ**であり、親**資産カタログ**名前)。 PNG イメージの場合、`.png`拡張機能は省略できます。 他のイメージ形式の拡張機能が必要です (例。 `PurpleMonkey.jpg`)
 
-<a name="Using-Vector-Images-in-Asset-Catalogs" />
+### <a name="using-vector-images-in-asset-catalogs"></a>資産カタログでベクター イメージの使用
 
-### <a name="using-vector-images-in-asset-catalogs"></a>資産のカタログでベクター イメージの使用
-
-IOS 8、特別な時点で**ベクター**クラスに追加された**イメージ セット**、開発者に含めることができます、 **PDF**形式の代わりに含むカセットでベクター イメージ別の解像度で個々 のビットマップ ファイルです。 1 つのベクトル ファイルを指定してこのメソッドを使用して、 `@1x` (ベクター PDF ファイル形式) の解決と`@2x`と`@3x`のバージョンのファイルがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
+IOS 8、特別な時点で**ベクター**クラスに追加された**画像セット**、開発者ができる、 **PDF**形式の代わりに含むカセットでベクター イメージさまざまな解像度で個々 のビットマップ ファイル。 1 つのベクトル ファイルを指定して、このメソッドを使用して、 `@1x` (ベクターの PDF ファイル形式) の解決と`@2x`と`@3x`ファイルのバージョンがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![](displaying-an-image-images/imageset05.png "アセット カタログのエディターでベクター イメージ")
+![](displaying-an-image-images/imageset05.png "資産カタログ エディターでベクター イメージ")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![](displaying-an-image-images/asset8.png "アセット カタログのエディターでベクター イメージ")
+![](displaying-an-image-images/asset8.png "資産カタログ エディターでベクター イメージ")
 
 -----
 
-たとえば、開発者が含まれている場合、 `MonkeyIcon.pdf` 150px x 150px、コンパイルされたときに、最終的なアプリのバンドルに含まれます資産次ビットマップの解像度を持つアセット カタログのベクトルとしてファイル。
+たとえば、開発者が含まれている場合、 `MonkeyIcon.pdf` 150px x 150px、資産は、コンパイルされたときに、最終的なアプリ バンドルに含めると、次のビットマップの解像度のアセット カタログのベクターとしてファイル。
 
 - `MonkeyIcon@1x.png` -150px x 150px 解決します。
 - `MonkeyIcon@2x.png` -300 ピクセル x 300px 解決します。
 - `MonkeyIcon@3x.png` -450px x 450px 解決します。
 
-次を考慮する資産カタログで PDF ベクター イメージを使用する場合。
+次を考慮する資産カタログを PDF ベクター イメージを使用する場合。
 
-- PDF がコンパイル時と最終的なアプリケーションに付属してビットマップのビットマップにラスタライズになる完全ベクターのサポートはありません。
-- アセット カタログに設定されると、イメージのサイズを調整できません。 開発者 (またはのいずれかのコードに自動レイアウトおよびサイズのクラスを使用して) イメージのサイズを変更しようとすると、イメージは他の任意のビットマップと同じようにゆがんで表示されます。
-- 資産カタログは、のみ iOS 7 との互換性およびそれ以降、iOS 6 をサポートするために、アプリが必要か低いほど、資産カタログを使用できません。
-
-<a name="Working-with-Template-Images" />
+- PDF がコンパイル時と、最終的なアプリケーションに付属してビットマップ ビットマップにラスタライズになるベクトルの完全なサポートはありません。
+- アセット カタログに設定されていると、イメージのサイズを調整できません。 開発者 (またはコードに自動レイアウトとサイズ クラスを使用して) イメージのサイズを変更しようとすると、イメージは他の任意のビットマップと同じようにゆがんで表示されます。
+- 資産カタログ、iOS 7 と互換性があり、大きい場合にのみ、アプリの iOS 6 をサポートするために必要または下に、資産カタログは使用できません。
 
 ## <a name="working-with-template-images"></a>テンプレート イメージの操作
 
-IOS アプリの設計に基づき、あります、開発者がアイコンまたは画面の配色 (たとえば、ユーザー設定に基づいた) の変更を一致するように、ユーザー インターフェイスの内部でイメージをカスタマイズする必要がある場合。
+IOS アプリの設計に基づきがあります、開発者がアイコンまたはイメージ内の (たとえば、ユーザー設定に基づく) の配色の変更に合わせてユーザー インターフェイスをカスタマイズする必要がある場合。
 
 この効果を簡単に実現するには、スイッチ、_レンダリング モード_イメージ資産の**テンプレート イメージ**:
 
@@ -140,11 +122,11 @@ IOS アプリの設計に基づき、あります、開発者がアイコンま�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](displaying-an-image-images/templateimage01vs.png "テンプレートに設定されている表示モード")](displaying-an-image-images/templateimage01vs.png#lightbox)
+[![](displaying-an-image-images/templateimage01vs.png "表示モード テンプレートに設定")](displaying-an-image-images/templateimage01vs.png#lightbox)
 
 -----
 
-IOS デザイナーでは、UI コントロールにイメージ アセットを割り当てるし、設定、**濃淡**イメージの色分けに。
+IOS Designer では、UI コントロールにイメージの資産を割り当てるし、設定、**濃淡**イメージを色分けして表示します。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -156,14 +138,14 @@ IOS デザイナーでは、UI コントロールにイメージ アセットを
 
 -----
 
-必要に応じて、イメージの資産および濃淡は、コード内で直接設定できます。
+必要に応じて、イメージの資産や濃淡は、コード内で直接設定できます。
 
 ```csharp
 MyIcon.Image = UIImage.FromBundle ("MessageIcon");
 MyIcon.TintColor = UIColor.Red;
 ```
 
-コードから完全には、テンプレート イメージを使用するのには、次の操作を行います。
+コードから完全には、テンプレート イメージを使用するには、次の操作を行います。
 
 ```csharp
 if (MyIcon.Image != null) {
@@ -173,133 +155,121 @@ if (MyIcon.Image != null) {
 }
 ```
 
-`RenderMode`のプロパティ、`UIImage`が読み取り専用を使用して、`ImageWithRenderingMode`メソッドを適切な表示モード設定とイメージの新しいインスタンスを作成します。
+`RenderMode`のプロパティを`UIImage`は読み取り専用を使用して、`ImageWithRenderingMode`目的のレンダリング モード設定で、イメージの新しいインスタンスを作成するメソッド。
 
-3 つの可能性のある設定`UIImage.RenderMode`を介して、`UIImageRenderingMode`列挙型。
+3 つの可能性がある設定`UIImage.RenderMode`を使用して、`UIImageRenderingMode`列挙型。
 
-* `AlwaysOriginal` -強制的に変更を行わず、元のソース イメージ ファイルとして描画する画像。
-* `AlwaysTemplate` -強制的に指定されたピクセルを色分けして、テンプレート イメージとして描画する画像`Tint`色。
-* `Automatic` の使用されている環境に基づいて、テンプレート、または元のイメージをレンダリングいずれかとします。 イメージを使用する場合など、 `UIToolBar`、 `UINavigationBar`、`UITabBar`または`UISegmentControl`をテンプレートとして扱われます。
-
-<a name="Adding-new-Assets-Collections" />
+* `AlwaysOriginal` -何も変更せず、元のソース イメージ ファイルとして表示される画像を強制します。
+* `AlwaysTemplate` -テンプレート イメージとして、指定したピクセルを色分けして表示するイメージの強制`Tint`色。
+* `Automatic` の使用されている環境に基づいて、テンプレート、または元か、イメージを表示します。 イメージを使用する場合など、 `UIToolBar`、 `UINavigationBar`、`UITabBar`または`UISegmentControl`をテンプレートとして扱われます。
 
 ## <a name="adding-new-assets-collections"></a>新しい資産のコレクションを追加します。
 
-新しいコレクションことがありますすべてのアプリのイメージを追加する代わりに、必要がある可能性がありますアセット カタログ内のイメージを使用する場合、`Assets.xcassets`コレクション。 たとえば、オンデマンドでリソースを設計するときです。
+新しいコレクションはすべてのアプリのイメージを追加する代わりに、必要になりますと時間がある可能性があります資産カタログ内のイメージを使用する場合、`Assets.xcassets`コレクション。 たとえば、次のように、オンデマンド リソースを設計するときです。
 
-新しい資産カタログをプロジェクトに追加します。
+プロジェクトに新しいアセット カタログを追加するには
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 右クリックし、**プロジェクト名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**
-2. 選択**iOS** > **アセット カタログ**、入力、**名前**をクリックして、コレクションの**新規**ボタン。
+2. 選択**iOS** > **資産カタログ**、入力、**名前**コレクションをクリックして、**新規**ボタン。
 
-    ![](displaying-an-image-images/asset01.png "新しい資産カタログを作成します。")
+    ![](displaying-an-image-images/asset01.png "新しいアセット カタログを作成します。")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 右クリックし、ソリューション エクスプ ローラーで、**資産カタログ**フォルダー、および選択**追加 > 新しい資産カタログ**です。
-2. 名前を指定し、をクリックして**追加**:
+1. ソリューション エクスプ ローラーで右クリック**資産カタログ**フォルダー、および選択**追加 > 新しいアセット カタログ**します。
+2. 名前を付け、**追加**:
 
-    ![](displaying-an-image-images/asset1.png "新しい資産カタログを作成します。")
+    ![](displaying-an-image-images/asset1.png "新しいアセット カタログを作成します。")
 
 -----
 
-
-ここでは、コレクションで使用できます、既定値と同じ方法で`Assets.xcassets`コレクション、プロジェクトに自動的に追加します。
-
-<a name="controls" />
+ここでは、コレクションで使用できます、既定値と同じ方法で`Assets.xcassets`プロジェクトで自動的に含まれているコレクション。
 
 ## <a name="using-images-with-controls"></a>コントロールでイメージを使用します。
 
-イメージを使用してアプリをサポートするために、に加えて iOS はタブ バー、ツールバー、ナビゲーション バー、テーブル、およびボタンなどのアプリのコントロール型にもデータのイメージを使用します。 コントロールに表示されるイメージを作成する簡単な方法を割り当てるには、`UIImage`をコントロールのインスタンス`Image`プロパティです。
-
-<a name="frombundle" />
+IOS はイメージを使用してアプリをサポートするために、だけでなく、タブ バー、ツールバー、ナビゲーション バー、テーブル、およびボタンなどのコントロール型のアプリでイメージを使用します。 コントロールに表示されるイメージを作成する簡単な方法を割り当てるには、`UIImage`をコントロールのインスタンス`Image`プロパティ。
 
 ### <a name="frombundle"></a>FromBundle
 
-`FromBundle`メソッドの呼び出しは同期 (ブロック) をいくつかの組み込みサポートとさまざまな解像度用のイメージ ファイルの自動処理をキャッシュなど、イメージの読み込みと管理機能を持ちます。  
+`FromBundle`メソッドの呼び出しは、多くの組み込みサポートとさまざまな解像度のイメージ ファイルの自動処理のキャッシュなど、イメージの読み込みと管理機能を持つ同期 (ブロックする) 呼び出しをします。  
 
-次の例は、のイメージを設定する方法を示します、`UITabBarItem`上、 `UITabBar`:
-
-```csharp
-TabBarItem.Image = UIImage.FromBundle ("MyImage");
-```
-
-想定される`MyImage`上記アセット カタログに追加したイメージ資産の名前を指定します。 アセット カタログのイメージを使用する場合を指定するだけでは、イメージの設定の名前、`FromBundle`メソッドを**PNG**画像の書式を設定します。
+次の例のイメージを設定する方法を示しています、`UITabBarItem`上、 `UITabBar`:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-その他のイメージ形式の名前を持つ拡張機能が含まれます。 例えば:
+仮定`MyImage`上のアセット カタログに追加のイメージ アセットの名前を指定します。 資産カタログのイメージを使用する場合、イメージ セットの名前を指定だけ、`FromBundle`メソッド**PNG**イメージの形式します。
+
+```csharp
+TabBarItem.Image = UIImage.FromBundle ("MyImage");
+```
+
+その他のイメージ形式用の拡張機能は名前が含まれます。 例えば:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 ```
 
-アイコンとイメージの詳細については、Apple のドキュメントを参照して[カスタム アイコンをクリックしてイメージ作成のガイドライン](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)です。
+アイコンとイメージの詳細については、Apple のドキュメントを参照してください。[カスタム アイコンとイメージの作成ガイドライン](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)します。
 
-<a name="Displaying-an-Image-in-a-Storyboards" />
+## <a name="displaying-an-image-in-a-storyboards"></a>ストーリー ボードにイメージを表示
 
-## <a name="displaying-an-image-in-a-storyboards"></a>ストーリー ボードにイメージを表示します。
-
-簡単にすることができます資産カタログを使用して、Xamarin.iOS プロジェクトにイメージを追加するを使用して、ストーリー ボードに表示される、 `UIImageView` ios デザイナー。 たとえば、次のイメージ アセットが追加されている場合。
+簡単にすることができます、イメージは、資産カタログを使用して Xamarin.iOS プロジェクトに追加されると、ストーリー ボードを使用して、表示される、 `UIImageView` iOS Designer でします。 たとえば、次のイメージ アセットが追加されている場合。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ![](displaying-an-image-images/display01.png "サンプル イメージ アセットが追加されました")
 
-ストーリー ボード上に表示するには、次の操作を行います。
+ストーリー ボードに表示するには、次の操作を行います。
 
-1. ダブルクリックして、`Main.storyboard`ファイルで、**ソリューション エクスプ ローラー** iOS デザイナーで編集用に開きます。
-2. 選択、**ビューのイメージ**から、**ツールボックス**:
+1. ダブルクリックして、`Main.storyboard`ファイル、**ソリューション エクスプ ローラー** iOS Designer での編集用に開きます。
+2. 選択、**イメージ ビュー**から、**ツールボックス**:
 
      ![](displaying-an-image-images/display02.png "ツールボックスからイメージのビューを選択します。")
-3. 位置とデザイン画面にイメージのビューをドラッグし、必要に応じてサイズします。
+3. デザイン画面と位置にイメージのビューをドラッグし、必要に応じてサイズします。
 
-    ![](displaying-an-image-images/display03.png "デザイン サーフェイスに新しいイメージのビュー")
-4. **ウィジェット**のセクションで、**プロパティ エクスプ ローラー**目的**イメージ**資産を表示します。
+    ![](displaying-an-image-images/display03.png "デザイン画面で新しいイメージ ビュー")
+4. **ウィジェット**のセクション、**プロパティ エクスプ ローラー**目的**イメージ**資産を表示します。
 
-    ![](displaying-an-image-images/display04.png "表示する目的のイメージ アセットを選択します。")
-5. **ビュー**セクションで、使用して、**モード**イメージがある方法を制御するときにサイズ変更、**イメージ ビュー**のサイズを変更します。
-6. **イメージ ビュー**選択すると、クリックしてもう一度追加**制約**:
+    ![](displaying-an-image-images/display04.png "表示するのには、目的のイメージ アセットを選択します。")
+5. **ビュー**セクションで、使用、**モード**イメージがある方法を制御するときにサイズ変更、 **Image View**のサイズを変更します。
+6. **Image View**を追加するには、もう一度クリックして選択すると、**制約**:
 
     ![](displaying-an-image-images/display05.png "制約の追加")
-7. 各辺の"T"の形をしたハンドルをドラッグ、**イメージ ビュー** 「ピン留め」両側へ画像を画面の対応する端にします。 この方法で、**イメージ ビュー**画面のサイズを拡大および縮小されます。
-8. ストーリー ボードに、変更を保存します。
+7. 各辺の"T"の形をしたハンドルをドラッグ、 **Image View**両側に画像を「ピン留め」画面の対応する側にします。 この方法で、 **Image View**画面のサイズを拡大および縮小されます。
+8. ストーリー ボードに変更を保存します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ![](displaying-an-image-images/display01vs.png "サンプル イメージ アセットが追加されました")
 
-ストーリー ボード上に表示するには、次の操作を行います。
+ストーリー ボードに表示するには、次の操作を行います。
 
-1. ダブルクリックして、`Main.storyboard`ファイルで、**ソリューション エクスプ ローラー** iOS デザイナーで編集用に開きます。
-2. 選択、**ビューのイメージ**から、**ツールボックス**:
+1. ダブルクリックして、`Main.storyboard`ファイル、**ソリューション エクスプ ローラー** iOS Designer での編集用に開きます。
+2. 選択、**イメージ ビュー**から、**ツールボックス**:
 
      ![](displaying-an-image-images/display02vs.png "ツールボックスからイメージのビューを選択します。")
-3. 位置とデザイン画面にイメージのビューをドラッグし、必要に応じてサイズします。
+3. デザイン画面と位置にイメージのビューをドラッグし、必要に応じてサイズします。
 
-    ![](displaying-an-image-images/display03vs.png "デザイン サーフェイスに新しいイメージのビュー")
-4. **ウィジェット**のセクションで、**プロパティ エクスプ ローラー**目的**イメージ**資産を表示します。
+    ![](displaying-an-image-images/display03vs.png "デザイン画面で新しいイメージ ビュー")
+4. **ウィジェット**のセクション、**プロパティ エクスプ ローラー**目的**イメージ**資産を表示します。
 
-    ![](displaying-an-image-images/display04vs.png "表示する目的のイメージ アセットを選択します。")
-5. **ビュー**セクションで、使用して、**モード**イメージがある方法を制御するときにサイズ変更、**イメージ ビュー**のサイズを変更します。
-6. **イメージ ビュー**選択すると、クリックしてもう一度追加**制約**:
+    ![](displaying-an-image-images/display04vs.png "表示するのには、目的のイメージ アセットを選択します。")
+5. **ビュー**セクションで、使用、**モード**イメージがある方法を制御するときにサイズ変更、 **Image View**のサイズを変更します。
+6. **Image View**を追加するには、もう一度クリックして選択すると、**制約**:
 
     ![](displaying-an-image-images/display05vs.png "制約の追加")
-7. 各辺の"T"の形をしたハンドルをドラッグ、**イメージ ビュー** 「ピン留め」両側へ画像を画面の対応する端にします。 この方法で、**イメージ ビュー**画面のサイズを拡大および縮小されます。
-8. ストーリー ボードに、変更を保存します。
+7. 各辺の"T"の形をしたハンドルをドラッグ、 **Image View**両側に画像を「ピン留め」画面の対応する側にします。 この方法で、 **Image View**画面のサイズを拡大および縮小されます。
+8. ストーリー ボードに変更を保存します。
 
 -----
 
-
-<a name="Displaying-an-Image-in-Code" />
-
 ## <a name="displaying-an-image-in-code"></a>コードでイメージを表示します。
 
-ストーリー ボードにイメージを表示すると同じようにイメージが、資産カタログを使用して、Xamarin.iOS プロジェクトに追加されると簡単に表示できる c# コードを使用します。
+画像をストーリー ボードを表示と同じようにイメージが、資産カタログを使用して Xamarin.iOS プロジェクトに追加されると簡単に表示できる c# コードを使用しています。
 
 次の例を参照してください。
 
@@ -315,10 +285,10 @@ imageView.Image = UIImage.FromBundle ("Kemah");
 View.AddSubview (imageView);
 ```
 
-このコードでは、新しい`UIImageView`し、初期サイズと位置が与えられます。 プロジェクトに追加のイメージ アセットからイメージを読み込みますそれを追加であり、`UIImageView`親に`UIView`を表示します。
+このコードを作成する新しい`UIImageView`を初期サイズと位置を付けます。 次に、プロジェクトに追加のイメージ アセットからイメージを読み込み、追加します、`UIImageView`親`UIView`表示します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [イメージ (サンプル) の操作](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [画像 (サンプル) の操作](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
-- [カスタム アイコンをクリックしてイメージ作成のガイドライン](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [イメージのサイズと解像度 (Apple)](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/)

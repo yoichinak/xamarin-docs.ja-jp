@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/14/2017
-ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2017
+ms.openlocfilehash: b3166aa440cbe2981d597771b360373fadc6451b
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830414"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251243"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player アプリ
 
@@ -19,17 +19,17 @@ ms.locfileid: "38830414"
 
 次のスマート フォンにアプリをインストールすると、[セットアップ手順](~/tools/live-player/install.md)コンピューターに接続します。 いずれかの操作を再試行してください、[サンプル アプリ](~/tools/live-player/samples.md)これを利用します。
 
-スタートアップ時に、次のように次の Xamarin Live Player アプリ (iOS と Android でそれぞれ)。
+スタートアップ時に、Xamarin Live Player アプリは、ようになります。
 
-![Live Player の iOS アプリのスクリーン ショット](player-images/app-iphone-sml.png) ![Live Player の Android アプリのスクリーン ショット](player-images/app-android-sml.png)
+![Live Player の Android アプリのスクリーン ショット](player-images/app-android-sml.png)
 
 キーを押すと**Visual Studio とペアリング**カメラを使用して、コンピューターに表示されているバーコードをスキャンします。
 
-![IOS のバーコード スキャナーのスクリーン ショット](player-images/scan-iphone-sml.png) ![Android のバーコード スキャナーのスクリーン ショット](player-images/scan-android-sml.png)
+![Android のバーコード スキャナーのスクリーン ショット](player-images/scan-android-sml.png)
 
 接続が成功した場合と、コードがほぼ瞬時にデバイスで実行する必要があります (など、[電卓のサンプル](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator))。
 
-![デバイスで実行されているサンプルの電卓アプリケーション](player-images/basic-calculator-iphone-sml.png)
+![デバイスで実行されているサンプルの電卓アプリケーション](player-images/basic-calculator-sml.png)
 
 ## <a name="options"></a>オプション
 
@@ -51,7 +51,7 @@ ms.locfileid: "38830414"
 
 ## <a name="managing-devices"></a>デバイスを管理します。
 
-最初にデバイスを接続する手順については、[要件およびセットアップ](~/tools/live-player/install.md)します。 (たとえば、iOS および Android) の複数のデバイスをペアリングし、IDE を使用して管理できます。
+最初にデバイスを接続する手順については、[要件およびセットアップ](~/tools/live-player/install.md)します。 複数のデバイスをペアリングし、IDE を使用して管理できます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
