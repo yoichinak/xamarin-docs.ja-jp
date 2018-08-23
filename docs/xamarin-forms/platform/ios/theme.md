@@ -112,7 +112,7 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 
 これら 2 つの画面キャプチャは、既定値を表示する`UISwitch`左に、カスタマイズされたバージョン コントロール (設定`Appearance`) の右側、 [Todo サンプル](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
-![](theme-images/switch-default.png "既定の色の UISwitch") ![ ] (theme-images/switch-custom.png "UISwitch 色のカスタマイズ")
+![](theme-images/switch-default.png "既定の色の UISwitch") ![](theme-images/switch-custom.png "UISwitch 色のカスタマイズ")
 
 ### <a name="other-controls"></a>その他のコントロール
 
