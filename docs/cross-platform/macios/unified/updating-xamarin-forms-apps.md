@@ -195,7 +195,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 場合によっては、Xamarin.Forms NuGet パッケージを更新した後は、次のようなエラーが表示されます。 NuGet updater がから以前のバージョンへの参照を完全に削除していないときに発生、 **csproj**ファイル。
 
->\_PROJECT.csproj: エラー: このプロジェクトは、このコンピューターに不足している NuGet パッケージを参照します。 ダウンロードする NuGet パッケージの復元を有効にします。  詳細については、「http://go.microsoft.com/fwlink/?LinkID=322105」を参照してください。 見つからないファイルは、./../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets です。 (、\_プロジェクト)
+>\_PROJECT.csproj: エラー: このプロジェクトは、このコンピューターに不足している NuGet パッケージを参照します。 ダウンロードする NuGet パッケージの復元を有効にします。  詳細については、「 http://go.microsoft.com/fwlink/?LinkID=322105 」を参照してください。 見つからないファイルは、./../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets です。 (、\_プロジェクト)
 
 これらのエラーを修正するには、開きます、 **csproj**をテキスト エディターでファイルを探します.`<Target`要素を次に示す要素など、Xamarin.Forms の古いバージョンを参照してください。 この全体の要素から手動で削除する必要があります、 **csproj**ファイルし、変更を保存します。
 

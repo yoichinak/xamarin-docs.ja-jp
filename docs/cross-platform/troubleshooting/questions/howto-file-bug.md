@@ -1,68 +1,66 @@
 ---
-title: タイミングと方法はバグのレポートをファイル必要がありますか。
-description: このドキュメントについて説明します、いつどこに、バグのレポートをファイルにします。 バグのレポートに最もエンジニアを有効にするためのベスト プラクティス、問題の診断も提供します。
+title: タイミングと方法は、バグ レポートをファイルする必要がありますか。
+description: このドキュメントが説明される場所、および方法にバグを報告します。 バグ レポートの問題を診断する最適なエンジニアを有効にするベスト プラクティスも提供します。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
-author: asb3993
-ms.author: amburns
-ms.openlocfilehash: 08a782e9637442a43e9c63305ddf161403519169
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 08/01/2018
+ms.openlocfilehash: f20740ff1e16187be3d3703b3da07329f6f52daf
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781944"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514339"
 ---
-# <a name="when-and-how-should-i-file-a-bug-report"></a>タイミングと方法はバグのレポートをファイル必要がありますか。
+# <a name="when-and-how-should-i-file-a-bug-report"></a>タイミングと方法は、バグ レポートをファイルする必要がありますか。
 
+> [!TIP]
+> 使用して、**問題を報告する**Visual Studio でメニュー項目&ndash;診断情報を問題を解決するために、バグ レポートと共に送信されます。
+>
+> 詳細な手順については[Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)と[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)します。
+>
+> 既存のレポートを検索することができます、 [Visual Studio Developer Community](https://developercommunity.visualstudio.com/) web サイト。
 
-Xamarin の Bugzilla バグの追跡ツールでは、ここにバグのファイル: [ https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all](https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all)です。
+## <a name="file-a-bug-if"></a>場合は、バグをファイルにしてください.
 
-## <a name="file-a-bug-if"></a>場合は、バグをファイルしてください.
-
-
-Xamarin エンジニアを使用して Xamarin によって引き起こされる問題を再現できると思われるステップのセットがあります。
+セットがある場合の手順と思われる、エンジニアが問題を再現するために使用することになります。
 
 OR
 
-特に問題に関連するいくつかの正確な状況を説明することも、場合、表示されている問題の現象、慎重に記述できます。<sup> [[1]](#note-1)</sup>
+問題の目に見える現象は、問題に関連するいくつかの正確な状況を記述することもできます。 場合に特に慎重に記述できます。<sup> [[1]](#note-1)</sup>
 
+## <a name="best-practices-to-help-address-bugs-quickly-and-efficiently"></a>アドレスのバグを迅速かつ効率的に役立つベスト プラクティス
 
-## <a name="best-practices-to-help-xamarin-address-bugs-quickly-and-efficiently"></a>Xamarin アドレス バグを迅速かつ効率的に役立つベスト プラクティス
+1. <a name="ref-1" />検索[Visual Studio Developer Community](https://developercommunity.visualstudio.com/)とバグのレポートや、使用状況の提案、問題を直接解決する可能性がありますを既存の web<sup> 。[[2]](#note-2)</sup><sup>[[3]](#note-3)</sup>
 
+1. <a name="ref-2" />何が発生し、発生すると想定されての説明などを明確にし、できるだけ簡潔として問題について説明します。
 
-1. <a name="ref-1" />検索[Bugzilla](https://bugzilla.xamarin.com/query.cgi?format=specific&amp;bug_status=__all__)と既存のバグのレポートまたは直接問題に対処する提案を使用状況 web<sup> 。[[2]](#note-2)</sup><sup>[[3]](#note-3)</sup>
+1. <a name="ref-3" />すべての関連するスタック トレース、エラー メッセージのテキストを含めるか、クラッシュ ログ (を使用する場合、**問題を報告する**機能、これらは自動的に含まれます)。 <sup>[[4]](#note-4)</sup>
 
-1. <a name="ref-2" />に従って、[文書作成のガイドライン バグ](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)を明確にし、可能な限り簡潔に何が発生してがの説明を含むで期待どおりに発生する問題を記述します。
+1. <a name="ref-4" />プレーン テキストとしても添付ファイルのスクリーン ショットに表示されるすべての重要なエラー メッセージを書き留めます。
 
-1. <a name="ref-3" />すべての関連するスタック トレース、エラー メッセージ テキストを含めるか、クラッシュ ログします。 <sup>[[4]](#note-4)</sup>
+1. <a name="ref-5" />できるだけ小さなコードとしてのバグを再現する、小さい自己完結型のテスト ケースが含まれます。  (いずれかの組み込みのテンプレートを使用して作成した) 新しいプロジェクト、問題を再現することはできません、問題を再現するプロジェクトを zip くださいし、バグ レポートに添付します。  アタッチする前にことプロジェクト例をできるだけ簡単に。<sup> [[5]](#note-5)</sup><sup>[[6]](#note-6)</sup>
 
-1. <a name="ref-4" />プレーン テキストとしてすぎるスクリーン ショットの添付ファイルに表示されるすべての重要なエラー メッセージを書き留めます。
-
-1. <a name="ref-5" />限り小さなコードのバグを再現する小さな、自己完結型のテスト ケースが含まれます。  (いずれかの組み込みのテンプレートを使用して作成した) 新しいプロジェクトでの問題を再現できない場合は、ししてください、問題を示しているプロジェクトを zip 圧縮し、バグ レポートに追加します。  アタッチすることする前に、できるだけ単純なサンプル プロジェクトを作成します。<sup> [[5]](#note-5)</sup><sup>[[6]](#note-6)</sup>
-
-1. <a name="ref-6" />ここで、バグが見つかりましたが、オペレーティング システムを含む環境について説明し、[のバージョンの Xamarin](~/cross-platform/troubleshooting/questions/version-logs.md)と任意の依存関係。
-
----
+1. <a name="ref-6" />オペレーティング システムを含むバグが見つかった場所の環境について説明し、[のバージョンの Xamarin](~/cross-platform/troubleshooting/questions/version-logs.md)とすべての依存関係。
 
 ## <a name="additional-details"></a>追加の詳細
 
-1. <a name="note-1" />[*^*](#ref-1) 理想的には「表示されている現象」の説明には情報が含まれます十分なその他の顧客が、同様の問題を表示するかどうかを確認できるように (同じエラー メッセージ、同じパフォーマンスの低下、同じのスタック トレース、クラッシュの_などです。_). 「正確な状況」は、1 つの好例なるかどうかのようなものを言うことができます:「は通常問題が発生した日時の 75% が、この 1 つの点を変更する場合は問題を回避できます完全に」。 「正確な状況」のような別の例は、Xamarin の以前のバージョンにダウン グレード問題を停止するかどうかです。
+1. <a name="note-1" />[*^*](#ref-1) 理想的には「に見える現象」の説明含める必要があります十分な情報を他の顧客が同じ問題が発生するかどうかを確認することができます (同じエラー メッセージ、同じパフォーマンスの低下、同じのスタック トレース、クラッシュから_など。_). 「環境」、1 つの良い例になります。 場合、ようなものを言うことができます:"は通常問題が発生、時間の 75% が、この 1 つを変更した場合、は問題を回避できます、完全に"。 「正確な状況」のような別の例では、Xamarin の以前のバージョンにダウン グレードする問題を停止するかどうかです。
 
-1. <a name="note-2" />[*^*](#ref-2) 予想できるようにエラー テキスト (またはその他の一意のわかりやすいテキスト) のスニペットは、通常、最適なキーワードです。 既存のバグのレポートが不完全な場合、詳細を追加または新しいファイルへようこそ が、バグ レポートが向上します。
+1. <a name="note-2" />[*^*](#ref-2) 予想どおり、エラーのテキスト (またはその他の一意のわかりやすいテキスト) のスニペットは最適な検索用語では、通常は。 既存のバグのレポートが不完全な場合は、詳細を追加またはファイルの新しいバグ レポートを強化する [ようこそ] は。
 
-1. <a name="note-3" />[*^*](#ref-3) 別の適切な質問は、java の場合、同じ問題が報告されたかどうか、OBJECTIVE-C または Swift アプリ。 場合は、し、問題は、Xamarin の一部ではなく、Android または iOS 自体の一部が非常に高くなります。
+1. <a name="note-3" />[*^*](#ref-3) もう 1 つ良い質問は、java の場合、同じ問題が報告されたかどうか、OBJECTIVE-C または Swift のアプリ。 場合は、問題が Xamarin の一部ではなく、Android または iOS 自体のほとんどの一部です。
 
-1. <a name="note-4" />[*^*](#ref-4) 含める情報の例をいくつか:
+1. <a name="note-4" />[*^*](#ref-4) 含める情報のいくつかの例:
 
-    1. プロジェクトを作成するときに発生したエラーくださいに含まれている完全な[診断ビルド出力](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)バグ レポートにします。
-    
-    1. 構築または Visual Studio から iOS プロジェクトのデバッグ時に発生するエラーの場合を実行してください_ヘルプ > Xamarin > Zip ログ_後エラー発生とバグのレポートの結果として得られる .zip ファイルをインクルードします。
-    
-    1. 例外またはクラッシュ Android または iOS のアプリを記入して、関連する"[Xamarin.Android および Xamarin.iOS アプリのログをデバッグ](~/cross-platform/troubleshooting/questions/version-logs.md#debug-logs-for-xamarin-apps)"。
+    1. プロジェクトを作成するときに発生したエラーを記入して、完了の[診断のビルド出力](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)バグ レポートにします。
 
-1. <a name="note-5" />[*^*](#ref-5) 可能であれば、特定の問題の 1 つの優れたオプションですをまったく新しいソリューションに、元のソリューションから少数のファイルを追加することで、問題を再作成します。 Xamarin チームはより大きなテスト_ケース (を再現する手順が明確に説明されている場合) は単純なテスト_ケース付与が最適な機会がバグを迅速に解決される場合でも問題を調査する多くの場合、できます。
+    1. ビルドまたは Visual Studio から iOS プロジェクトをデバッグするときに発生するエラーの場合は、実行**ヘルプ > Xamarin > ログの Zip**後エラーに達すると、バグ レポートの結果として得られる .zip ファイルが含まれます。
 
+    1. 例外または Android や iOS のアプリでのクラッシュの場合を含めてください、関連する[Xamarin.Android と Xamarin.iOS アプリのログをデバッグ](~/cross-platform/troubleshooting/questions/version-logs.md#debug-logs-for-xamarin-apps)します。
 
-1. <a name="note-6" />[*^*](#ref-6) 場合は_いない_可能であれば問題を再現するファイルの数が少ないをまったく新しいソリューションに追加することによって、ことができます zip 圧縮し、アプリが完全ソリューション全体のフォルダーをアタッチします。 削除してください、 `bin`、 `obj`、 `Components`、および`packages`郵便番号の小さいファイルを作成するフォルダーです。 (IDE およびビルド プロセスは通常の復元または必要に応じて、これらのフォルダーの内容を再作成してください)。結果として得られるソリューションでは、元の問題もを示している限りは、多くのコード ファイルとリソース ファイル プロジェクトから、好きなようにも削除できます。
+1. <a name="note-5" />[*^*](#ref-5) 可能であれば、特定の問題では、1 つのオプションは、元のソリューションから新しいソリューションに少数のファイルを追加することで、問題を再作成するがします。 Xamarin のチームは (を再現する手順が明確に説明したと仮定した場合、) 大規模なテスト_ケースが単純なテスト_ケースことが最適な機会、バグを迅速に解決することであっても問題を調査する多くの場合、できます。
 
+1. <a name="note-6" />[*^*](#ref-6) 場合は_いない_少数のファイルを新しいソリューションに追加することで、問題の再現可能であれば、ことができますを zip 圧縮し、完全なアプリのソリューション全体のフォルダーをアタッチします。 削除してください、 `bin`、 `obj`、 `Components`、および`packages`する郵便番号の小さいファイル フォルダー。 (IDE とのビルド プロセスを通常の復元または必要に応じて、これらのフォルダーの内容を再作成します。)限り、結果として得られるソリューションには、元の問題が示されています同数コードおよびリソース ファイル プロジェクトから必要なを削除することもできます。

@@ -2,17 +2,17 @@
 title: SkiaSharp のビットマップをファイルに保存します。
 description: ユーザーのフォト ライブラリでのビットマップの保存の SkiaSharp でサポートされるさまざまなファイル形式について説明します。
 ms.prod: xamarin
-ms.technology: xamarin-forms++++++
+ms.technology: xamarin-skiasharp
 ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: ee9690d52d18c1b0da2b35144b41ae856d64a85d
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: e957134ecceee84962e5a4fc153285ea0a2a5906
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39131524"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615562"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp のビットマップをファイルに保存します。
 

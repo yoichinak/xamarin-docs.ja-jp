@@ -5,12 +5,12 @@ ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b7246afca19607ef2f70288d4643696f4ac35d52
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 18fe081372cc190e5ead2045f36d63652f8702c3
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831488"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353803"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: デバイス情報
 
@@ -29,7 +29,7 @@ using Xamarin.Essentials;
 次の情報は、API を介して公開されます。
 
 ```csharp
-// Device Model (SMG-950U)
+// Device Model (SMG-950U, iPhone10,6)
 var device = DeviceInfo.Model;
 
 // Manufacturer (Samsung)
@@ -72,7 +72,15 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="device-type"></a>デバイスの種類
 
-`DeviceInfo.DeviceType` かどうか、アプリケーションは実行する物理または仮想デバイスを決定する列挙体を関連付けます。 仮想デバイスは、シミュレーターやエミュレーターです。
+`DeviceInfo.DeviceType` アプリケーションが、物理または仮想デバイスで実行されているかどうかを決定する列挙体を関連付けます。 仮想デバイスは、シミュレーターやエミュレーターです。
+
+## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+iOS では、開発者が特定の iOS デバイスの名前を取得するための API を公開しません。 などのハードウェア識別子が返される代わりに_iPhone10、6_ iPhone X を指します。これらの識別子のマッピングが Apple によって指定されていないがご覧[iPhone Wiki](https://www.theiphonewiki.com/wiki/Models) (非公式ソース ソース)。
+
+--------------
 
 ## <a name="api"></a>API
 

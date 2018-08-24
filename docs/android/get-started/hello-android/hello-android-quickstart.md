@@ -7,13 +7,13 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9e4349b807c98e6f5cfbc55fa57153f99054d474
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 07/20/2018
+ms.openlocfilehash: beb90587e0d720de7770056c8b51264099edecdc
+ms.sourcegitcommit: fb55eba393e43bcc9e9d1fef9ef1f1310e99f620
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732467"
+ms.lasthandoff: 07/21/2018
+ms.locfileid: "39189022"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: クイック スタート
 
@@ -49,15 +49,8 @@ _このガイドは 2 つに分かれています。最初に (Visual Studio ま
 
 ## <a name="configuring-emulators"></a>エミュレーターの構成
 
-Google の Android SDK エミュレーターを使用している場合は、ハードウェア アクセラレータを使用するようにエミュレーターを構成することをお勧めします。 ハードウェア アクセラレータを構成するための手順は、「[エミュレーター パフォーマンスのためのハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)」で確認できます。
+Android のエミュレーターを使用している場合は、ハードウェア アクセラレータを使用するようにエミュレーターを構成することをお勧めします。 ハードウェア アクセラレータを構成するための手順は、「[エミュレーター パフォーマンスのためのハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)」で確認できます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Visual Studio の Android エミュレーターを使用している場合は、コンピューターで Hyper-V を有効にする必要があります。 Visual Studio の Android エミュレーターの構成の詳細については、「[Visual Studio Emulator for Android のシステム要件](https://msdn.microsoft.com/en-us/library/mt228280.aspx)」を参照してください。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
------
 
 ## <a name="walkthrough"></a>チュートリアル
 
@@ -66,16 +59,20 @@ Visual Studio の Android エミュレーターを使用している場合は、
 Visual Studio を起動します。  **[ファイル]、[新規]、[プロジェクト]** の順にクリックして、新しいプロジェクトを作成します。
 
 **[新しいプロジェクト]** ダイアログで、**[Android アプリ]** テンプレートをクリックします。
-新しいプロジェクトに `Phoneword` という名前を付けます。 **[OK]** をクリックして、新しいプロジェクトを作成します。
+新しいプロジェクトに `Phoneword` という名前を付けます。 **[OK]** をクリックします。
 
-[![新しいプロジェクトが Phoneword であることを示すスクリーンショット](hello-android-quickstart-images/vs/02-new-project-name-sml.w157.png)](hello-android-quickstart-images/vs/02-new-project-name.w157.png#lightbox)
+[![新しいプロジェクトが Phoneword であることを示すスクリーンショット](hello-android-quickstart-images/vs/01-new-project-name-w157-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w157.png#lightbox)
+
+**[New Android App]\(新しい Android アプリ\)** ダイアログ ボックスで、**[空のアプリ]**、**[OK]** の順にクリックして新しいプロジェクトを作成します。
+
+[![空のアプリのテンプレートの選択](hello-android-quickstart-images/vs/02-blank-app-w157-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w157.png#lightbox)
 
 ### <a name="creating-the-layout"></a>レイアウトの作成
 
 新しいプロジェクトが作成されたら、**ソリューション エクスプローラー**で **Resources** フォルダーを展開してから **layout** フォルダーを展開します。
-**Main.axml** をダブルクリックして、Android Designer で開きます。 アプリの画面の layout ファイルを以下に示します。
+**activity_main.axml** をダブルクリックして、Android Designer で開きます。 アプリの画面の layout ファイルを以下に示します。
 
-[![Main.axml を開く](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
+[![アクティビティ main.axml を開く](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
 
 **[ツールボックス]** (左側の領域) の検索フィールドに「`text`」と入力し、デザイン サーフェイス (中央の領域) に **Text (Large)** ウィジェットをドラッグします。
 
@@ -115,7 +112,7 @@ Visual Studio を起動します。  **[ファイル]、[新規]、[プロジェ
 
 **[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[コード ファイル]** の順に選択し、新しいコード ファイルに **PhoneTranslator.cs** という名前を付けます。
 
-[![PhoneTranslator.cs を追加する](hello-android-quickstart-images/vs/14-add-class-sml.w157.png)](hello-android-quickstart-images/vs/14-add-class.w157.png#lightbox)
+[![PhoneTranslator.cs を追加する](hello-android-quickstart-images/vs/14-add-class-sml-w157.png)](hello-android-quickstart-images/vs/14-add-class-w157.png#lightbox)
 
 これで、新しい空の C# クラスが作成されます。 このファイルに次のコードを挿入します。
 
@@ -287,6 +284,8 @@ namespace Phoneword
 
 [![完成時のアプリのスクリーンショット](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
+
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 **Applications** フォルダーまたは**スポットライト**から Visual Studio for Mac を起動します。 
@@ -418,7 +417,7 @@ namespace Core
 次の手順では、`MainActivity` クラスにバッキング コードを追加し、ユーザー インターフェイスを接続するためのコードを追加します。
 **Solution Pad** で **MainActivity.cs** をダブルクリックして開きます。
 
-まず、**[変換]** ボタンにイベント ハンドラーを追加します。 `MainActivity` クラスで、`OnCreate` メソッドを見つけます。 `OnCreate` 内 (`base.OnCreate(bundle)` および `SetContentView (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 `OnCreate` メソッドが次のようになるように、テンプレート ボタン処理コードを削除します。
+まず、**[変換]** ボタンにイベント ハンドラーを追加します。 `MainActivity` クラスで、`OnCreate` メソッドを見つけます。 `OnCreate` 内 (`base.OnCreate(bundle)` および `SetContentView (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 `OnCreate` メソッドが次のようになるように、既存のボタン処理コード (つまり、`Resource.Id.myButton` を参照してそのためのクリック ハンドラーを作成するコード) をすべて削除します。
 
 ```csharp
 using System;

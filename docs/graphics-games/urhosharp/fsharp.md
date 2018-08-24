@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 430c4eca7c6dbd7107692246b70ff93bafa44d01
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111200"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241835"
 ---
 # <a name="programming-urhosharp-with-f"></a>F# による UrhoSharp のプログラミング
 
@@ -19,11 +19,11 @@ ms.locfileid: "39111200"
 
 C++ の世界で発生した多くのライブラリと同様には、多くの UrhoSharp 関数は、ブール値または整数の成功または失敗を示す値を返します。 使用する必要があります`|> ignore`をこれらの値を無視します。
 
-[サンプル プログラム](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp f# からは、"Hello World"です。
+[サンプル プログラム](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp f# からは、"Hello World"です。
 
 ## <a name="creating-an-empty-project"></a>空のプロジェクトを作成します。
 
-F# UrhoSharp のテンプレートがないまだ UrhoSharp プロジェクトを作成するため、使用可能なことができますを開始するか、[サンプル](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)またはこれらの手順に従います。
+F# UrhoSharp のテンプレートがないまだ UrhoSharp プロジェクトを作成するため、使用可能なことができますを開始するか、[サンプル](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)またはこれらの手順に従います。
 
 1. Visual Studio for Mac では、作成、新しい**ソリューション**します。 選択**iOS > アプリ > 単一ビュー アプリ**選択**f#** 実装言語として。 
 1. 削除、 **Main.storyboard**ファイル。 開く、 **Info.plist**ファイルし、 **iPhone/iPod 展開情報**ウィンドウで、削除、`Main`内の文字列、**メイン インターフェイス**ドロップダウンします。
@@ -114,4 +114,4 @@ type AppDelegate () =
 
 ## <a name="related-links"></a>関連リンク
 
-- [GitHub (サンプル) で参照します。](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [GitHub (サンプル) で参照します。](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

@@ -1,33 +1,33 @@
 ---
 title: Xamarin.Forms での依存関係の解決
-description: この記事では、アプリケーションの依存関係注入コンテナーがある構築およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法をについて説明します.
+description: この記事では、アプリケーションの依存関係注入コンテナーがある作成およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/23/2018
-ms.openlocfilehash: b9e49d32dd4b0b02c742cd829eafabd1c55230f0
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.date: 07/27/2018
+ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203185"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351585"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
 
-_この記事では、アプリケーションの依存関係注入コンテナーがある構築およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法をについて説明します.コード例がから取得した、[依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)サンプル。_
+_この記事では、アプリケーションの依存関係注入コンテナーがある作成およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。この記事のコード例がから取得した、[コンテナーを使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)サンプル。_
 
 モデル-ビュー-ビューモデル (MVVM) パターンを使用して、Xamarin.Forms アプリケーションのコンテキストでは、依存関係の注入コンテナーを登録およびモデルの表示を解決するため、サービスを登録すると、ビュー モデルに挿入することに使用できます。 ビュー モデルの作成時に、コンテナーは、必要なすべての依存関係を挿入します。 これらの依存関係が作成されていない場合、コンテナーが作成し、最初の依存関係を解決します。 ビューのモデルへの依存関係の挿入の例など、依存関係の挿入の詳細については、次を参照してください。[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)します。
 
-作成の制御のプラットフォーム プロジェクトの種類の有効期間は従来、Xamarin.Forms を使用して実行し、`Activator.CreateInstance`カスタム レンダラーでは、特殊効果のインスタンスを作成するメソッドをおよび[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装。 残念ながら、これは開発者の作成と、これらの型とそれらに依存関係を挿入する機能の有効期間の制御点を制限します。 ただし、この動作は、Xamarin.Forms にアプリケーションの依存関係注入コンテナー、または Xamarin.Forms 制御の種類を作成する方法: 依存関係の解決方法を挿入することで変更できます。
+作成の制御のプラットフォーム プロジェクトの種類の有効期間は従来、Xamarin.Forms を使用して実行し、`Activator.CreateInstance`カスタム レンダラーでは、特殊効果のインスタンスを作成するメソッドをおよび[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装。 残念ながら、これは開発者の作成と、これらの型とそれらに依存関係を挿入する機能の有効期間の制御点を制限します。 この動作は、Xamarin.Forms にアプリケーションの依存関係注入コンテナー、または Xamarin.Forms 制御の種類を作成する方法: 依存関係の解決方法を挿入することで変更できます。 ただし、依存関係の解決方法を Xamarin.Forms に挿入するための要件がないことに注意してください。 Xamarin.Forms は引き続き作成し、依存関係の解決方法が挿入されていない場合は、プラットフォームのプロジェクト内の型の有効期間を管理します。
 
 > [!NOTE]
-> Xamarin.Forms に依存関係の解決方法を挿入する必要はありません。 Xamarin.Forms は引き続き作成し、依存関係の解決方法が挿入されていない場合は、プラットフォームのプロジェクト内の型の有効期間を管理します。
+> 解決するのにはファクトリ メソッドを使用する依存関係解決メソッドを挿入できるもこの記事は、依存関係の注入コンテナーを使用して登録済みの型を解決する Xamarin.Forms に依存関係の解決方法を挿入するのでは、登録済みの型。 詳細については、次を参照してください。、[ファクトリ メソッドを使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/)サンプル。
 
 ## <a name="injecting-a-dependency-resolution-method"></a>依存関係の解決方法を挿入します。
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver)クラスは、Xamarin.Forms に依存関係の解決方法を挿入する機能を提供のいずれかを使用して、 [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)メソッド。 次に、Xamarin.Forms に特定の型のインスタンスが必要がある場合、依存関係の解決方法にインスタンスを提供する機会が与えられます。 依存関係の解決方法を返す場合`null`の種類を作成しようとしてにフォールバックを Xamarin.Forms では、要求された型のインスタンスを使用して自体、`Activator.CreateInstance`メソッド。
+[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver)を Xamarin.Forms では、依存関係の解決方法を挿入する機能を提供するクラスを使用して、 [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)メソッド。 次に、Xamarin.Forms に特定の型のインスタンスが必要がある場合、依存関係の解決方法にインスタンスを提供する機会が与えられます。 依存関係の解決方法を返す場合`null`の種類を作成しようとしてにフォールバックを Xamarin.Forms では、要求された型のインスタンスを使用して自体、`Activator.CreateInstance`メソッド。
 
 次の例と依存関係の解決方法を設定する方法を示しています、 [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)メソッド。
 
@@ -99,6 +99,18 @@ public partial class App : Application
         });
     }
 
+    public static void RegisterTypeWithParameters<TInterface, T>(Type param1Type, object param1Value, Type param2Type, string param2Name) where TInterface : class where T : class, TInterface
+    {
+        builder.RegisterType<T>()
+               .WithParameters(new List<Parameter>()
+        {
+            new TypedParameter(param1Type, param1Value),
+            new ResolvedParameter(
+                (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
+                (pi, ctx) => ctx.Resolve(param2Type))
+        }).As<TInterface>();
+    }
+
     public static void BuildContainer()
     {
         container = builder.Build();
@@ -111,7 +123,7 @@ public partial class App : Application
 
 プラットフォームのプロジェクトから次の種類の登録、`IContainer`呼び出すことによって実現されるオブジェクトを構築する必要があります、`BuildContainer`メソッド。 このメソッドは Autofac の`Build`メソッドを`ContainerBuilder`インスタンスで、行われた登録を含む新しい依存関係注入コンテナーをビルドします。
 
-次のセクションで、`Logger`を実装するクラス、`ILogger`インターフェイス、クラスのコンス トラクターに挿入されます。 `Logger`クラス実装の簡単なログ記録機能を使用して、`Debug.WriteLine`メソッド、カスタム レンダラーでは、特殊効果にサービスを挿入する方法をデモンストレーションするために使用して、 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装します。
+次のセクションで、`Logger`を実装するクラス、`ILogger`インターフェイスはクラスのコンス トラクターに挿入されます。 `Logger`クラス実装の簡単なログ記録機能を使用して、`Debug.WriteLine`メソッド、カスタム レンダラーでは、特殊効果にサービスを挿入する方法をデモンストレーションするために使用して、 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装します。
 
 ### <a name="registering-custom-renderers"></a>カスタム レンダラーを登録します。
 
@@ -170,7 +182,7 @@ void RegisterTypes()
 }
 ```
 
-この例で、`App.RegisterTypeWithParameters`メソッド レジスタ、`VideoPlayerRenderer`依存関係注入コンテナーの登録方法のことを確認する、`MainActivity`として挿入されるインスタンス、`Context`引数とする、 `Logger`型として挿入される、`ILogger`引数。
+この例で、`App.RegisterTypeWithParameters`メソッド レジスタ、`VideoPlayerRenderer`依存関係の注入コンテナーでします。 登録方法により、`MainActivity`として挿入されるインスタンス、`Context`引数とする、`Logger`型として挿入される、`ILogger`引数。
 
 ### <a name="registering-effects"></a>効果を登録します。
 
@@ -219,7 +231,7 @@ public interface IPhotoPicker
 
 各プラットフォーム プロジェクトで、`PhotoPicker`クラスが実装する、`IPhotoPicker`プラットフォーム Api を使用してインターフェイス。 これらの依存関係サービスの詳細については、次を参照してください。[画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)します。
 
-次の 3 つすべてのプラットフォームで、`PhotoPicker`クラスに必要と次のコンス トラクター、`ILogger`引数。
+IOS と UWP での`PhotoPicker`クラスが必要と次のコンス トラクターがある、`ILogger`引数。
 
 ```csharp
 public PhotoPicker(ILogger logger)
@@ -239,7 +251,32 @@ void RegisterTypes()
 }
 ```
 
-この例で、`Logger`具象型がそのインターフェイスの型に対してマッピングを使用して登録されていると、`PhotoPicker`型はインターフェイス マップを使用しても登録されます。 ユーザーが写真の選択 ページに移動すると、写真を選択することを選択、`OnSelectPhotoButtonClicked`ハンドラーが実行されます。
+この例で、`Logger`具象型がそのインターフェイスの型に対してマッピングを使用して登録されていると、`PhotoPicker`型はインターフェイス マップを使用しても登録されます。
+
+`PhotoPicker` Android プラットフォームでのコンス トラクターには少し複雑になりますが、`Context`引数に加え、`ILogger`引数。
+
+```csharp
+public PhotoPicker(Context context, ILogger logger)
+{
+    _context = context ?? throw new ArgumentNullException(nameof(context));
+    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+}
+```
+
+次の例は、`RegisterTypes`メソッドは、Android プラットフォーム。
+
+```csharp
+void RegisterTypes()
+{
+    App.RegisterType<ILogger, Logger>();
+    App.RegisterTypeWithParameters<IPhotoPicker, Services.Droid.PhotoPicker>(typeof(Android.Content.Context), this, typeof(ILogger), "logger");
+    App.BuildContainer();
+}
+```
+
+この例で、`App.RegisterTypeWithParameters`メソッド レジスタ、`PhotoPicker`依存関係の注入コンテナーでします。 登録方法により、`MainActivity`として挿入されるインスタンス、`Context`引数とする、`Logger`型として挿入される、`ILogger`引数。
+
+ユーザーが写真の選択 ページに移動すると、写真を選択することを選択、`OnSelectPhotoButtonClicked`ハンドラーが実行されます。
 
 ```csharp
 async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
@@ -262,7 +299,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [依存関係の解決 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)
+- [コンテナー (サンプル) を使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 - [依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [ビデオ プレーヤーを実装します。](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [効果からのイベントの呼び出し](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

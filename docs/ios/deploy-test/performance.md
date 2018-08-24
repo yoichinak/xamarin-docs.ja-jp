@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/29/2016
-ms.openlocfilehash: afff9d3924c673edc363292efa1a9b7df43a9218
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798591"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514464"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
@@ -56,9 +56,9 @@ container.AddSubview (new MyView (container));
 
 このコードで `Container` インスタンスを作成すると、C# オブジェクトは Objective-C オブジェクトに対して強い参照を持つことになります。 同様に、`MyView` インスタンスも、Objective-C オブジェクトへの強い参照を持つことになります。
 
-さらに、`container.AddSubview` を呼び出すと、アンマネージ インスタンス `MyView` の参照カウントが増えます。 このとき、Xamarin.iOS ランタイムは `GCHandle` インスタンスを作成することで、マネージ コードの `MyView` オブジェクトを維持し続けます。これは、マネージ オブジェクトが参照を維持し続ける保証がないためです。 マネージ コードの観点からは、`GCHandle` に対する [`AddSubview`](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/) の呼び出しではなくなった後に `MyView` オブジェクトは再要求されます。
+さらに、`container.AddSubview` を呼び出すと、アンマネージ インスタンス `MyView` の参照カウントが増えます。 このとき、Xamarin.iOS ランタイムは `GCHandle` インスタンスを作成することで、マネージド コードの `MyView` オブジェクトを維持し続けます。これは、マネージド オブジェクトが参照を維持し続ける保証がないためです。 マネージド コードの観点からは、`GCHandle` に対する [`AddSubview`](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/) の呼び出しではなくなった後に `MyView` オブジェクトは再要求されます。
 
-アンマネージ `MyView` オブジェクトは、マネージ オブジェクトを示す `GCHandle` を持つことになります。これは*強いリンク*と呼ばれます。 マネージ オブジェクトには、`Container` インスタンスへの参照が含まれます。 そして `Container` インスタンスには `MyView` オブジェクトへのマネージ参照が含まれます。
+アンマネージド `MyView` オブジェクトは、マネージド オブジェクトを示す `GCHandle` を持つことになります。これは*強いリンク*と呼ばれます。 マネージド オブジェクトには、`Container` インスタンスへの参照が含まれます。 そして `Container` インスタンスには `MyView` オブジェクトへのマネージド参照が含まれます。
 
 含まれるオブジェクトがコンテナーに対するリンクを維持する場合、循環参照の処理に使用できる選択肢がいくつかあります。
 
@@ -213,7 +213,7 @@ class MyChild : UIView
 
 ### <a name="more-information"></a>詳細情報
 
-詳細については、Cocoa With Love の「[Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html)」(循環の保持を回避する規則)、StackOverflow の「[Is this a bug in MonoTouch GC](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc)」(これは MonoTouch GC のバグですか)、StackOverflow の「[Why can't MonoTouch GC kill managed objects with refcount > 1?](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1)」(参照カウントが 1 を超えるマネージ オブジェクトを MonoTouch GC でキルできないのはなぜですか?) を参照してください。
+詳細については、Cocoa With Love の「[Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html)」(循環の保持を回避する規則)、StackOverflow の「[Is this a bug in MonoTouch GC](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc)」(これは MonoTouch GC のバグですか)、StackOverflow の「[Why can't MonoTouch GC kill managed objects with refcount &gt; 1?](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1)」(参照カウントが 1 を超えるマネージド オブジェクトを MonoTouch GC でキルできないのはなぜですか?) を参照してください。
 
 ## <a name="optimize-table-views"></a>テーブル ビューを最適化する
 

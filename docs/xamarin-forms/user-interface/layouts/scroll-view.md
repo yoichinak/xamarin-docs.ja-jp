@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 54fdec74a6e1d0aee71ec0ca6809a5b40680de9f
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997362"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360813"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
@@ -22,11 +22,11 @@ ms.locfileid: "38997362"
 
 この記事では次の内容について説明します。
 
-- **[目的](#Purpose)** &ndash;の目的は、`ScrollView`使われているとします。
-- **[使用状況](#Usage)** &ndash;を使用する`ScrollView`実際にします。
-- **[プロパティ](#Properties)** &ndash;パブリック プロパティを読み取り、変更することができます。
-- **[メソッド](#Methods)** &ndash;パブリック メソッド ビューをスクロールするために呼び出すことができます。
-- **[イベント](#Events)** &ndash;ビューの状態の変化をリッスンするために使用できるイベント。
+- **[目的](#purpose)** &ndash;の目的は、`ScrollView`使われているとします。
+- **[使用状況](#usage)** &ndash;を使用する`ScrollView`実際にします。
+- **[プロパティ](#properties)** &ndash;パブリック プロパティを読み取り、変更することができます。
+- **[メソッド](#methods)** &ndash;パブリック メソッド ビューをスクロールするために呼び出すことができます。
+- **[イベント](#events)** &ndash;ビューの状態の変化をリッスンするために使用できるイベント。
 
 ## <a name="purpose"></a>目的
 

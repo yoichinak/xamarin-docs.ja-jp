@@ -30,7 +30,7 @@ MonoGame として追加できる追加の Visual studio for mac Mac で次の�
 ![MonoGame を選択すると、Mac の拡張機能ギャラリー用の visual Studio](part1-images/image2.png)
 
 > [!IMPORTANT]
-> **注**: 場合、**ゲーム開発**セクションがない、アドイン マネージャーから、手動でダウンロードし、ここから最新バージョンをインストールできます:http://www.monogame.net/downloads/です。 表示されるテンプレート用に Mac を Visual Studio を再起動する必要があります。
+> **注**: 場合、**ゲーム開発**セクションがない、アドイン マネージャーから、手動でダウンロードし、ここから最新バージョンをインストールできます: http://www.monogame.net/downloads/ です。 表示されるテンプレート用に Mac を Visual Studio を再起動する必要があります。
 
 インストールされると、MonoGame テンプレートに表示されます Visual Studio for Mac, ように、次のセクションが表示されます。
 

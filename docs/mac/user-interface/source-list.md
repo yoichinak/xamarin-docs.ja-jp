@@ -1,58 +1,58 @@
 ---
 title: Xamarin.Mac でソース リスト
-description: この記事では、ソース リスト Xamarin.Mac アプリケーションでの作業について説明します。 これは、作成および Xcode およびインターフェイスのビルダーでのソース リストを維持し、c# コードでこれらと対話するについて説明します。
+description: この記事では、Xamarin.Mac アプリケーションでのソース リストを使用した作業について説明します。 作成および Xcode と Interface Builder でのソース リストを維持し、c# コードで操作することについて説明します。
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c93d4b0855fb96897da2018596766b16e5385ab4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: de51395192ab009f5c7fa338a4414ba553610b8c
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792773"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251099"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin.Mac でソース リスト
 
-_この記事では、ソース リスト Xamarin.Mac アプリケーションでの作業について説明します。これは、作成および Xcode およびインターフェイスのビルダーでのソース リストを維持し、c# コードでこれらと対話するについて説明します。_
+_この記事では、Xamarin.Mac アプリケーションでのソース リストを使用した作業について説明します。作成および Xcode と Interface Builder でのソース リストを維持し、c# コードで操作することについて説明します。_
 
-同じアクセス権がある Xamarin.Mac アプリケーションでは、c# と .NET で作業するときソース リストで作業する開発者*OBJECTIVE-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、ソースの一覧を維持 (または必要に応じて c# コードで直接作成すること)。
+同じへのアクセス、Xamarin.Mac アプリケーションで c# と .NET を使用する場合があるソースをリストで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ソース リストを維持 (またはに応じて c# コードで直接作成する)。
 
-ソースの一覧は、特殊な種類のアウトライン表示 Finder または iTunes でサイド バーと同様に、操作のソースを表示するために使用します。
+ソースの一覧は、特殊な種類のアウトライン ビューの Finder または iTunes でサイド バーなどの操作のソースを表示するために使用します。
 
 [![](source-list-images/source05.png "ソース一覧の例")](source-list-images/source05.png#lightbox)
 
-この記事で Xamarin.Mac アプリケーションのソースを一覧表示の操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
+この記事では、Xamarin.Mac アプリケーションでのソースのリストを使用した操作の基本を説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[Outlet と Action](~/mac/get-started/hello-mac.md#outlets-and-actions)ほどのセクションでは、主要な概念と、この記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`コマンドObjective C のオブジェクトと UI 要素に、c# クラスをワイヤ アップするために使用します。
+見てしたい場合があります、 [c# を公開するクラス/メソッドを OBJECTIVE-C](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac の内部](~/mac/internals/how-it-works.md)、について説明します、ドキュメント、`Register`と`Export`コマンドObjective C のオブジェクトと UI 要素を c# クラスをワイヤ アップするために使用します。
 
 <a name="Introduction_to_Outline_Views" />
 
 ## <a name="introduction-to-source-lists"></a>ソース リストの概要
 
-前述のように、ソース一覧は特殊な種類のアウトライン表示の Finder または iTunes でサイド バーと同様に、操作のソースを表示するために使用されます。 ソース リストは、ユーザーがテーブルの種類の展開または階層データの行を折りたたむです。 テーブル ビューとは異なり、ソース リスト内の項目は単純なリストではありません、階層では、ハード ドライブのファイルとフォルダーのように構成されます。 ソース リスト内の項目に他の項目が含まれている場合に、展開または折りたたむユーザーによってことができます。
+前述のように、ソース一覧は特殊な種類のアウトライン ビューの Finder または iTunes でサイド バーなどの操作のソースを表示するために使用されます。 ソースの一覧は、ユーザーができるテーブルの種類の展開または階層データの行を折りたたむには。 テーブル ビューとは異なり、ソース リスト内の項目がフラット リストに含まれていないは、ハード ドライブのファイルとフォルダーのように、階層構造で編成されました。 ソース リスト内の項目に他の項目が含まれている場合に、展開またはユーザーが折りたたまれていることができます。
 
-元のリストが特別にスタイルのアウトライン表示 (`NSOutlineView`)、自体は、テーブル ビューのサブクラス (`NSTableView`) し、そのため、多くの動作をその親クラスから継承します。 その結果、アウトライン ビューでサポートされているさまざまな操作は、ソース リストとしてもサポートされます。 Xamarin.Mac アプリケーションは、これらの機能のコントロールを持ち、特定の操作を許可または拒否する (コードまたはインターフェイスのビルダーにいずれか)、ソース リストのパラメーターを構成できます。
+ソースの一覧は、特殊なスタイルのアウトライン ビュー (`NSOutlineView`)、自体は、テーブル ビューのサブクラス (`NSTableView`) し、そのため、多くの動作をその親クラスから継承します。 その結果、ソース リストにアウトライン モードでサポートされている多くの操作もサポートされます。 Xamarin.Mac アプリケーションは、これらの機能の制御を備え、特定の操作を許可または拒否する (コードまたはインターフェイス ビルダーでいずれか)、ソース リストのパラメーターを構成できます。
 
-ソースの一覧は、独自のデータを格納していない、代わりに、データ ソースに依存しています (`NSOutlineViewDataSource`) を行と、必要に応じてごとに、必要な列の両方を提供します。
+ソースの一覧は、独自のデータを保存しませんに代わりに、データ ソースには、(`NSOutlineViewDataSource`) を行と、必要に応じてごとに、必要な列の両方を提供します。
 
-アウトライン表示デリゲートのサブクラスを提供することにより、ソースの一覧の動作をカスタマイズすることができます (`NSOutlineViewDelegate`) 機能を選択するアウトラインの種類をサポートするために選択し、編集、カスタムの追跡、および個々 のアイテムのカスタム ビューの項目。
+アウトライン ビューのデリゲートのサブクラスを提供することで、ソースの一覧の動作をカスタマイズすることができます (`NSOutlineViewDelegate`) 選択し、編集、カスタムの追跡、および個々 のアイテムのカスタム ビューの項目のアウトライン機能の選択をサポートします。
 
-ソースの一覧は、テーブルのビューおよびアウトライン ビューとの動作と機能の多くを共有、以降は、通過することができます、[テーブル ビュー](~/mac/user-interface/table-view.md)と[アウトライン ビュー](~/mac/user-interface/outline-view.md)操作を続行する前にドキュメントこの記事ではします。
+ソースの一覧は、テーブルのビューとアウトライン ビューでの動作と機能の多くを共有するためを経由する可能性があります、[テーブル ビュー](~/mac/user-interface/table-view.md)と[アウトライン ビュー](~/mac/user-interface/outline-view.md)続行する前にドキュメントこの記事では。
 
 <a name="Working_with_Source_Lists" />
 
 ## <a name="working-with-source-lists"></a>ソース リストを使用します。
 
-ソースの一覧は、特殊な種類のアウトライン表示 Finder または iTunes でサイド バーと同様に、操作のソースを表示するために使用します。 アウトライン表示とは異なりインターフェイス ビルダーで、[ソース] ボックスの一覧を定義して前に作成してみましょうバッキング クラス Xamarin.Mac で。
+ソースの一覧は、特殊な種類のアウトライン ビューの Finder または iTunes でサイド バーなどの操作のソースを表示するために使用します。 アウトライン ビューとは異なり前にインターフェイス ビルダーで、ソース リストを定義しますみましょう作成バッキング クラスは、Xamarin.Mac で。
 
-最初に、新しいを作成してみましょう`SourceListItem`ソース リストからデータを保持するクラス。 **ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`SourceListItem`の**名前**] をクリック、**新規**ボタン。
+最初に、新しいを作成しましょう`SourceListItem`ソースの一覧については、データを保持するクラス。 **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** 選択**一般的な** > **空のクラス**、入力`SourceListItem`の**名前** をクリックし、**新規**ボタン。
 
 [![](source-list-images/source01.png "空のクラスを追加します。")](source-list-images/source01.png#lightbox)
 
-ように、`SourceListItem.cs`次のようなファイルの内容。 
+ように、`SourceListItem.cs`ファイルの次のようになります。 
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-**ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`SourceListDataSource`の**名前**] をクリック、**新規**ボタンをクリックします。 ように、`SourceListDataSource.cs`次のようなファイルの内容。
+**ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`SourceListDataSource`の**名前** をクリック、**新規**ボタン。 ように、`SourceListDataSource.cs`ファイルの次のようになります。
 
 ```csharp
 using System;
@@ -352,9 +352,9 @@ namespace MacOutlines
 }
 ```
 
-これは、ソース リストからデータを提供します。
+これにより、ソース リストから、データが提供されます。
 
-**ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`SourceListDelegate`の**名前**] をクリック、**新規**ボタンをクリックします。 ように、`SourceListDelegate.cs`次のようなファイルの内容。
+**ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`SourceListDelegate`の**名前** をクリック、**新規**ボタン。 ように、`SourceListDelegate.cs`ファイルの次のようになります。
 
 ```csharp
 using System;
@@ -444,9 +444,9 @@ namespace MacOutlines
 }
 ```
 
-これにより、ソース一覧の動作が提供されます。
+これにより、ソースの一覧の動作が提供されます。
 
-最後に、**ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`SourceListView`の**名前**] をクリック、**新規**ボタンをクリックします。 ように、`SourceListView.cs`次のようなファイルの内容。
+最後に、**ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`SourceListView`の**名前** をクリック、**新規**ボタン。 ように、`SourceListView.cs`ファイルの次のようになります。
 
 ```csharp
 using System;
@@ -524,35 +524,35 @@ namespace MacOutlines
 }
 ```
 
-これにより、作成の再利用可能なカスタム サブクラス`NSOutlineView`(`SourceListView`) を行う場合を Xamarin.Mac アプリケーションで元のリストをドライブに使用できます。
+再利用可能なカスタムのサブクラスを作成しますこの`NSOutlineView`(`SourceListView`) 行ったすべての Xamarin.Mac アプリケーションで、ソースの一覧を促進するために使用できます。
 
 <a name="Creating_and_Maintaining_Source_Lists_in_Xcode" />
 
-## <a name="creating-and-maintaining-source-lists-in-xcode"></a>作成して、Xcode でのソースの一覧を維持します。
+## <a name="creating-and-maintaining-source-lists-in-xcode"></a>作成して、Xcode でのソース リストの管理
 
-ここで、インターフェイスのビルダーで、ソース リストを設計してみましょう。 ダブルクリックして、`Main.storyboard`ファイルをインターフェイスのビルダーで編集してファイルを開いてから分割ビューをドラッグして、**ライブラリ インスペクター**ビュー コント ローラーを追加、およびビューでのサイズを変更するように設定、**制約エディター**:
+ここで、インターフェイス ビルダーで、ソース リストを設計しましょう。 ダブルクリックして、`Main.storyboard`ファイルを開き、インターフェイス ビルダーで編集してから分割ビューをドラッグし、**ライブラリ インスペクター**、ビュー コント ローラーを追加し、ビューでのサイズを変更するように設定、**制約エディター**:
 
 [![](source-list-images/source00.png "制約の編集")](source-list-images/source00.png#lightbox)
 
-次に、ソースの一覧からドラッグして、**ライブラリ インスペクター**、分割ビューの左側に追加しとで、ビューのサイズを変更するように設定、**制約エディター**:
+次に、ソースの一覧からドラッグして、**ライブラリ インスペクター**、分割ビューの左側に追加し、ビューでのサイズを変更するように設定、**制約エディター**:
 
 [![](source-list-images/source02.png "制約の編集")](source-list-images/source02.png#lightbox)
 
-次に切り替え、 **Identity ビュー**ソース リストを選択し、変更の**クラス**に`SourceListView`:
+次に切り替え、 **Identity ビュー**、ソースの一覧を選択し、変更の**クラス**に`SourceListView`:
 
 [![](source-list-images/source03.png "クラス名を設定します。")](source-list-images/source03.png#lightbox)
 
-最後に、作成、**コンセント**、ソース リストと呼ばれる`SourceList`で、`ViewController.h`ファイル。
+最後に、作成、**アウトレット**、ソースの一覧と呼ばれる`SourceList`で、`ViewController.h`ファイル。
 
-[![](source-list-images/source04.png "コンセントを構成します。")](source-list-images/source04.png#lightbox)
+[![](source-list-images/source04.png "アウトレットを構成します。")](source-list-images/source04.png#lightbox)
 
-変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 <a name="Populating the Source List" />
 
-## <a name="populating-the-source-list"></a>ソースの一覧を設定します。
+## <a name="populating-the-source-list"></a>ソース リストを生成します。
 
-編集しましょう、 `RotationWindow.cs` Mac 用の Visual Studio でファイルをそれの`AwakeFromNib`次のようなメソッドの検索。
+編集しましょう、`RotationWindow.cs`し、ファイルの Visual studio for Mac の`AwakeFromNib`メソッドの次のようになります。
 
 ```csharp
 public override void AwakeFromNib ()
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-`Initialize ()`ソース一覧のに対して呼び出されるメソッドが必要な**コンセント**_する前に_にすべての項目が追加されます。 アイテムの各グループの親項目を作成し、そのグループの項目にサブ項目を追加します。 各グループは、ソース リストのコレクションに追加し、`SourceList.AddItem (...)`です。 最後の 2 行は、ソースの一覧については、データを読み込むし、すべてのグループを展開します。
+`Initialize ()`メソッドは、ソース リストのに対して呼び出される必要があります**アウトレット**_する前に_すべての項目が追加されます。 項目の各グループでは、親項目を作成し、そのグループの項目をサブ項目を追加します。 各グループは、ソース リストのコレクションに追加されます`SourceList.AddItem (...)`します。 最後の 2 つの行では、ソースの一覧については、データを読み込むし、すべてのグループを展開します。
 
 ```csharp
 // Display side list
@@ -599,7 +599,7 @@ SourceList.ReloadData ();
 SourceList.ExpandItem (null, true);
 ```
 
-最後に、編集、`AppDelegate.cs`ファイルし、`DidFinishLaunching`次のようなメソッドの検索。
+最後に、編集、`AppDelegate.cs`ファイル、`DidFinishLaunching`メソッドの次のようになります。
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -612,15 +612,15 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-アプリケーションを実行する場合、次が表示されます。
+アプリケーションを実行した場合、次が表示されます。
 
-[![](source-list-images/source05.png "実行のサンプル アプリ")](source-list-images/source05.png#lightbox)
+[![](source-list-images/source05.png "アプリの実行例")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.Mac アプリケーションでのソースの一覧の使用についての詳細を取得しました。 作成して、Xcode のインターフェイスのビルダー内のソースの一覧を管理する方法と c# コードでソースの一覧を使用する方法を説明しました。
+この記事では、Xamarin.Mac アプリケーションでのソースのリストを使用した作業について詳しく説明をしました。 作成し、Xcode の Interface Builder でソースを一覧表示を維持する方法と c# コードで、ソース リストを操作する方法を説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
@@ -629,7 +629,7 @@ public override void DidFinishLaunching (NSNotification notification)
 - [テーブル ビュー](~/mac/user-interface/table-view.md)
 - [アウトライン ビュー](~/mac/user-interface/outline-view.md)
 - [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [ビューを説明する概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
+- [アウトライン ビューの概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
 - [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)

@@ -121,7 +121,7 @@ Xamarin のアプローチは、2 種類のプロジェクトにコードをグ�
 
 アプリケーション プロジェクトの各共有プロジェクト参照し、これらのスクリーン ショットに示すように、ユーザーに現在の機能に必要なユーザー インターフェイスのコードを含めます。
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "アプリケーションは、共有プロジェクトの参照をプロジェクト") ![ ](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "アプリケーション プロジェクトの共有プロジェクトの参照")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "アプリケーションは、共有プロジェクトの参照をプロジェクト") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "アプリケーション プロジェクトの共有プロジェクトの参照")
 
 
 プロジェクトの構築方法の具体的な例については、ケース スタディで表されます。

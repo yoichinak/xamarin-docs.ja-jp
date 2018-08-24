@@ -1,50 +1,51 @@
 ---
-title: Android での Xamarin のブックのトラブルシューティング
-description: このドキュメントでは、Android での Xamarin のブックの操作のトラブルシューティングのヒントを提供します。 これは、エミュレーターのサポートが読み込まないブックおよびその他のトピックについて説明します。
+title: Android での Xamarin Workbooks のトラブルシューティング
+description: このドキュメントでは、android、Xamarin Workbooks を操作するためのトラブルシューティングのヒントを提供します。 これは、エミュレーターのサポート、読み込まれないブックおよびその他のトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b01fa5b67f8a7f5577c6598f63f8c38e8fa4cf3c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/30/2017
+ms.openlocfilehash: b0333e1a40570374ee6218b7a848d2dd1c06b872
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793985"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351718"
 ---
-# <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android での Xamarin のブックのトラブルシューティング
+# <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android での Xamarin Workbooks のトラブルシューティング
 
 ## <a name="emulator-support"></a>エミュレーターのサポート
 
-Android のブックを実行するには、Android エミュレーターを使用可能にする必要があります。 物理的な Android デバイスがサポートされていません。
+Android のブックを実行するには、Android エミュレーターを使用できるようにする必要があります。 物理 Android デバイスがサポートされていません。
 
-HAXM と共に Google のエミュレーターは、コンピューターでサポートする場合はお勧めします。
-HYPER-V では、システムで有効にする必要があります、代わりに Visual Studio の Android エミュレーターに移動します。
+コンピューターがサポートされている場合は、HAXM と Google のエミュレーターを勧めします。
+HYPER-V、システムで有効にする必要があります、代わりに Visual Studio Android Emulator を使用した移動します。
 
-5.0 以降、Android を実行するエミュレーターが必要です。 ARM エミュレーターはサポートされていません。 使用して`x86`または`x86_64`デバイスのみです。
+5.0 以降、Android を実行しているエミュレーターが必要です。 ARM のエミュレーターがサポートされていません。 使用`x86`または`x86_64`デバイスのみです。
 
-お読みください[Android エミュレーターを設定する方法、ドキュメント][ android-emu]プロセスに慣れていない場合。
+お読みください[Android エミュレーターの設定に関するドキュメント][ android-emu]プロセスに慣れていない場合。
 
 > [!NOTE]
-> 1.1 およびそれ以前のブックを再試行してください (され失敗!) を使用して ARM エミュレーター可能な場合にします。 開く、または Android のブックを作成する前に、選択した場合は、この、起動、x86 エミュレーターを回避します。 ブックは、互換性がある限り、実行中のエミュレーターへの接続に常に優先します。
+> 1.1 またはそれ以前のブック (を失敗!) を使用している場合、ARM エミュレーターを使用します。 開く、または Android のブックを作成する前に、選択した場合は、この、起動、x86 エミュレーターを回避します。 ブックは互換性がある限り、実行中のエミュレーターへの接続に常に優先します。
 
-## <a name="workbooks-wont-load"></a>ブックは読み込まれません
+## <a name="workbooks-wont-load"></a>ブックが読み込まれない
 
-### <a name="workbook-window-spins-forever-never-loads-windows"></a>ブック ウィンドウの回転、forever しない読み込み (Windows)
+### <a name="workbook-window-spins-forever-never-loads-windows"></a>ブック ウィンドウには (Windows) の負荷を回転、永久にことはありません。
 
-最初に、エミュレーターがエミュレーターの web ブラウザーで任意の web サイトをテストすることによって完全作業用のネットワーク アクセスを持つことを確認してください。
+最初に、エミュレーターが、エミュレーターの web ブラウザーで任意の web サイトをテストして、ネットワーク アクセスを完全に作業が持つことを確認します。
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio の Android エミュレーターは、インターネットに接続できません。
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio Android Emulator は、インターネットに接続できません。
 
-エミュレーターがネットワーク アクセスを持たない場合は、HYPER-V ネットワーク スイッチの修正手順に従う必要があります。 Wi-fi ネットワークに頻繁に切り替える場合は、これを定期的に繰り返す必要があります。
+エミュレーターがネットワーク アクセスを持たない場合は、HYPER-V ネットワーク スイッチを解決する手順に従う必要があります。 Wi-fi ネットワークに頻繁に切り替えた場合は、これを定期的に繰り返す必要があります。
 
-0. **インターネットから Windows を一時的に切断することがありますこれは、すべての重要なネットワーク操作が完了したら、確認してください。**
-1. エミュレーターを終了します。
+0. **すべての重要なネットワーク操作は完了するは、インターネットから Windows を一時的に切断することがありますこれを確認します。**
+1. エミュレーターを閉じます。
 2. `Hyper-V Manager` を開きます。
-3. `Actions`、開かれている`Virtual Switch Manager...`です。
+3. `Actions`オープン`Virtual Switch Manager...`します。
 4. すべての仮想スイッチを削除します。
 5. [`OK`] をクリックします。
-6. VS Android エミュレーターを起動します。 仮想ネットワーク スイッチを再作成を求められます可能性があります。
+6. VS Android エミュレーターを起動します。 おそらく、仮想ネットワーク スイッチを再作成するように求めされます。
 7. VS の Android エミュレーターのブラウザーがインターネットにアクセスできることをテストします。
 
 [android-emu]: https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debug-on-emulator/

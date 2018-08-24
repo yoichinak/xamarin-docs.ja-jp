@@ -1,39 +1,39 @@
 ---
 title: パスの塗りつぶしの種類
-description: この記事は、SkiaSharp パスの塗りつぶし型で可能なさまざまな効果を検査しのサンプル コードを示します。
+description: この記事では、SkiaSharp パスの塗りつぶしの種類、使用可能なさまざまな効果を検査し、サンプル コードを示します。
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d54ebd157fcc76b0fcc15bf89c72edbcd88b42f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 17043054c920a69570f38b227d05980494e29139
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243708"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615471"
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
-_SkiaSharp パスの塗りつぶし型で実行できるさまざまな特殊効果を検出します。_
+_SkiaSharp のパスの塗りつぶしの種類で可能なさまざまな効果を検出します。_
 
-パス内の 2 つの輪郭が重なることができます、1 つの輪郭を構成する行が重複する可能性がします。 かっこで囲んだ任意領域は塗りつぶさ可能性があることができます、あっても取り込まれているすべての領域を塗りつぶすする可能性があります。 次に例を示します。
+パス内の 2 つの輪郭がオーバー ラップできるし、1 つの輪郭を構成する行が重複することができます。 任意の囲まれた領域は塗りつぶさ可能性があることができますが含まれているすべての領域を塗りつぶすしない可能性があります。 次に例を示します。
 
 ![](fill-types-images/filltypeexample.png "5 ポイント filles を部分的に星")
 
-これを少しの制御があります。 いっぱいになるアルゴリズムを受ける、 [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/)プロパティ`SKPath`のメンバーに設定する、 [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/)列挙。
+この少しのコントロールがあります。 いっぱいになるアルゴリズムが適用されます、 [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/)プロパティの`SKPath`のメンバーに設定する、 [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/)列挙体。
 
 - [`Winding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.Winding/)、既定値
 - [`EvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.EvenOdd/)
 - [`InverseWinding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseWinding/)
 - [`InverseEvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseEvenOdd/)
 
-ワインディングと偶の両方のアルゴリズムでは、任意の領域で囲まれたが入力または無限にその領域から描画される線で仮定に基づいて入力されていないかどうかを決定します。 その行は、パスを 1 つまたは複数の境界線を越えます。 モードでは、ワインディング、逆方向の領域に描画された直線の数を 1 つの方向のバランスに描画される境界線の数がない場合が入力されます。 それ以外の場合、領域は塗りつぶされます。 偶アルゴリズムは、境界の行の数が奇数の場合、領域を塗りつぶします。
+ワインディングと偶の両方のアルゴリズムでは、任意の囲まれた領域が入力または無限にその領域から抽出された架空の行に基づいて入力されていないかどうかを決定します。 その行には、パスを構成する 1 つまたは複数の境界の行が交差します。 ワインディングのモードでは、逆方向の領域に描画される線の数を 1 つの方向のバランスに描画される境界線の数でない場合が入力されます。 それ以外の場合、領域が塗りつぶされます。 偶アルゴリズムは、境界の行の数が奇数の場合、領域を塗りつぶします。
 
-多くの日常的なパスを持つワインディング アルゴリズムは多くの場合、パスの含まれているすべての領域を塗りつぶします。 一般に、偶アルゴリズムには、さらに興味深い結果が生成されます。
+多くの日常的なパスを持つワインディングのアルゴリズムは多くの場合、パスのすべての囲まれた領域を塗りつぶします。 一般に、偶アルゴリズムより興味深い結果が生成されます。
 
-典型的な例は、5 ポイントの星で示したように、 **Five-Pointed スター**ページ。 [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)ファイルでは、2 つをインスタンス化`Picker`パスを選択するビューは入力型とパスを描画または入力するかどうかまたは両方とどのような順序で。
+示した、典型的な例は、5 ポイントの星、 **Five-Pointed スター**ページ。 [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)ファイルでは、2 つのインスタンス化します`Picker`パスを選択するビューの種類とパスの線を付けるまたは入力するかどうかまたはその両方を入力し、どのような順序で。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -162,20 +162,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-通常、パスの塗りつぶしの種類には影響はのみですがいっぱいになったと線ではありませんが、2 つ`Inverse`モードは、塗りつぶしとストロークの両方に影響します。 いっぱいになった 2 つの`Inverse`型領域を塗りつぶす oppositely 星の外側の領域が入力されるようにします。 2 つのストロークの`Inverse`色の線を除くすべての種類。 これら逆フィルの型を使用すると、iOS スクリーン ショットに示すようにいくつか奇数効果を生成できます。
+パスの塗りつぶしの種類の塗りつぶし、ストロークではないいて、2 つに影響は通常、`Inverse`モードは、塗りつぶしとストロークの両方に影響します。 2 つの塗りつぶし`Inverse`型領域を塗りつぶす oppositely 星の外側の領域が入力されるようにします。 2 つのストロークの`Inverse`色の線を除くすべての種類。 これらの逆の塗りつぶしの種類を使用すると、iOS のスクリーン ショットに示すように、奇数の効果をいくつかが生成することができます。
 
-[![](fill-types-images/fivepointedstar-small.png "Five-Pointed スター ページのスクリーン ショットをトリプル")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed スター ページのトリプル スクリーン ショット")
+[![](fill-types-images/fivepointedstar-small.png "Five-Pointed スター ページのスクリーン ショットをトリプル")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed スター ページの 3 倍になるスクリーン ショット")
 
-Android および UWP スクリーン ショットでは、一般的な偶ワインディングとの効果を表示するには塗りつぶし、ストロークの順序は、結果も影響します。
+Android、UWP のスクリーン ショットは、一般的な偶とワインディングの効果を示しますが、ストロークおよび塗りつぶしの順序は結果にも影響します。
 
-ワインディング アルゴリズムは、線を描画する方向に左右されます。 通常、パスを作成している場合、制御できますその方向別に行が 1 つのポイントから描画されることを指定します。 ただし、`SKPath`クラスもなどのメソッドを定義`AddRect`と`AddCircle`全体の輪郭を描画します。 これらのオブジェクトの描画方法を制御するには、メソッドは型のパラメーターを含めます。 [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/)、2 つのメンバーを持ちます。
+ワインディングのアルゴリズムでは、線が描画される方向に依存します。 通常、パスを作成する際を制御できますその方向の行が 1 つの点から描画される間を指定します。 ただし、`SKPath`クラスなどのメソッドも定義されています。`AddRect`と`AddCircle`全体の輪郭を描画します。 これらのオブジェクトを描画する方法を制御するため、メソッドが型のパラメーターを含める[ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/)、2 つのメンバーを持ちます。
 
 - [`Clockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.Clockwise/)
 - [`CounterClockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.CounterClockwise/)
 
-メソッドは、`SKPath`が含まれ、`SKPathDirection`パラメーター付けます、既定値は`Clockwise`します。
+メソッドは、`SKPath`が含まれる、`SKPathDirection`パラメーターを指定の既定値`Clockwise`します。
 
-**重なり合う円**ページ偶パスの塗りつぶし型の 4 つの重なり合う円にパスを作成します。
+**重なり合う円**ページ偶パスの塗りつぶしの種類を次の 4 つの重なり合う円のパスを作成します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -215,12 +215,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-最小限のコードで作成した興味深いイメージです。
+最小限のコードで作成した興味深いイメージであります。
 
-[![](fill-types-images/overlappingcircles-small.png "円の重複するページのスクリーン ショットをトリプル")](fill-types-images/overlappingcircles-large.png#lightbox "円の重複するページのトリプル スクリーン ショット")
+[![](fill-types-images/overlappingcircles-small.png "円の重複するページのスクリーン ショットをトリプル")](fill-types-images/overlappingcircles-large.png#lightbox "円の重複するページの 3 倍になるスクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

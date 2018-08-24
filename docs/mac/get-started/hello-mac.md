@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f06bf6736b427a4d77ac34957d75cd321f3dae3a
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792786"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275938"
 ---
 # <a name="hello-mac--walkthrough"></a>Hello, Mac – チュートリアル
 
@@ -249,7 +249,7 @@ Xamarin.Mac アプリ プロジェクトを作成し、そのコンポーネン�
 
 [![](hello-mac-images/infoplist01.png "Visual Studio for Mac plist エディター")](hello-mac-images/infoplist01.png#lightbox)
 
-また、**メイン インターフェイス** ドロップダウンの Xamarin.Mac アプリのユーザー インターフェイスを表示するために使用される_ストーリーボード_も定義します。 上記の例の場合、ドロップダウンの `Main` は、**ソリューション エクスプローラー**のプロジェクト ツリーにある `Main.storyboard` に関連しています。 また、それらを含む*アセット カタログ* (この場合は AppIcons) を指定することによって、アプリのアイコンを定義します。
+また、**メイン インターフェイス** ドロップダウンの Xamarin.Mac アプリのユーザー インターフェイスを表示するために使用される_ストーリーボード_も定義します。 上記の例の場合、ドロップダウンの `Main` は、**ソリューション エクスプローラー**のプロジェクト ツリーにある `Main.storyboard` に関連しています。 また、それらを含む*アセット カタログ* (この場合は **AppIcons**) を指定することによって、アプリのアイコンを定義します。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 

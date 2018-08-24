@@ -410,7 +410,7 @@ async Task<ImageList> GetImageListAsync()
 
 ![](custom-images/landscape-ios.png "サンプル iOS アプリケーションの横のスクリーン ショット")
 ![](custom-images/landscape-android.png "サンプル Android アプリケーション ランドス ケープ スクリーン ショット")
- ![ ] (custom-images/landscape-uwp.png "サンプル UWP アプリケーションの横のスクリーン ショット")
+![](custom-images/landscape-uwp.png "サンプル UWP アプリケーションの横のスクリーン ショット")
 
 各行の列の数は、写真のサイズ、画面の幅、およびデバイスに依存しない単位あたりのピクセルの数によって異なります。 [ `Image` ](xref:Xamarin.Forms.Image)要素は、写真を非同期的に読み込むため、`WrapLayout`クラスの呼び出し頻度を受け取りますその[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))メソッドとして各`Image`。要素は、読み込まれた写真に基づく新しいサイズを受け取ります。
 

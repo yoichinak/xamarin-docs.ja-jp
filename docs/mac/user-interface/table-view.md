@@ -1,183 +1,183 @@
 ---
-title: 表形式ビュー Xamarin.Mac で
-description: この記事では、表形式ビュー Xamarin.Mac アプリケーションでの操作について説明します。 これには、Xcode、インターフェイスのビルダー、およびコード内とやり取りする内のテーブル ビューの作成について説明します。
+title: Xamarin.Mac のテーブル ビュー
+description: この記事では、Xamarin.Mac アプリケーションでのテーブル ビューの使用について説明します。 これには、Xcode と Interface Builder とコードで操作するテーブル ビューの作成について説明します。
 ms.prod: xamarin
 ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: da26810869f23b8861ffb4409248c56bff12a521
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 68b52fb4b7a3a65b45fcbecdc865bc64d9865fd9
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793231"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251111"
 ---
-# <a name="table-views-in-xamarinmac"></a>表形式ビュー Xamarin.Mac で
+# <a name="table-views-in-xamarinmac"></a>Xamarin.Mac のテーブル ビュー
 
-_この記事では、表形式ビュー Xamarin.Mac アプリケーションでの操作について説明します。これには、Xcode、インターフェイスのビルダー、およびコード内とやり取りする内のテーブル ビューの作成について説明します。_
+_この記事では、Xamarin.Mac アプリケーションでのテーブル ビューの使用について説明します。これには、Xcode と Interface Builder とコードで操作するテーブル ビューの作成について説明します。_
 
-Xamarin.Mac アプリケーションでは、c# と .NET で作業するときに同じアクセスがあるテーブルをビューで作業する開発者*OBJECTIVE-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、テーブルのビューの管理 (または必要に応じて c# コードで直接作成すること)。
+同じへのアクセス、Xamarin.Mac アプリケーションで c# と .NET を使用する場合があるテーブルをビューで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成およびテーブル ビューを維持 (または必要に応じて c# コードで直接作成する)。
 
-テーブル ビューでは、複数の行の情報の 1 つまたは複数の列を含む表形式でデータを表示します。 作成されるテーブル ビューの種類に基づいて、ユーザーことができますの列で並べ替える、列の再編成、列の追加、列を削除またはテーブル内に含まれるデータを編集します。
+テーブル ビューでは、複数の行の情報の 1 つまたは複数の列を含む表形式でデータを表示します。 作成されるテーブル ビューの種類に基づいて、ユーザーの列で並べ替える、列の再編成、追加列、列を削除または編集できますテーブル内に含まれるデータ。
 
-[![](table-view-images/intro01.png "表な例")](table-view-images/intro01.png#lightbox)
+[![](table-view-images/intro01.png "テーブルな例")](table-view-images/intro01.png#lightbox)
 
-この記事で Xamarin.Mac アプリケーションでテーブルのビューの操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
+この記事で、Xamarin.Mac アプリケーションでテーブルのビューの基本について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[Outlet と Action](~/mac/get-started/hello-mac.md#outlets-and-actions)ほどのセクションでは、主要な概念と、この記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`コマンドObjective C のオブジェクトと UI 要素に、c# クラスをワイヤ アップするために使用します。
+見てしたい場合があります、 [c# を公開するクラス/メソッドを OBJECTIVE-C](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac の内部](~/mac/internals/how-it-works.md)、について説明します、ドキュメント、`Register`と`Export`コマンドObjective C のオブジェクトと UI 要素を c# クラスをワイヤ アップするために使用します。
 
 <a name="Introduction_to_Table_Views" />
 
-## <a name="introduction-to-table-views"></a>テーブルのビューの概要
+## <a name="introduction-to-table-views"></a>テーブル ビューの概要
 
-テーブル ビューでは、複数の行の情報の 1 つまたは複数の列を含む表形式でデータを表示します。 スクロール ビュー内でテーブルのビューが表示されます (`NSScrollView`) macOS 10.7 から始めて、使用できますと`NSView`セルではなく (`NSCell`) を行と列の両方を表示します。 ただし、使用することもできます`NSCell`ただし、次の手順通常サブクラス`NSTableCellView`し、カスタムの行と列を作成します。
+テーブル ビューでは、複数の行の情報の 1 つまたは複数の列を含む表形式でデータを表示します。 スクロール ビューの内部テーブルのビューが表示されます (`NSScrollView`) および macOS 10.7 以降では、使用できます`NSView`セルではなく (`NSCell`) を行と列の両方を表示します。 ただし、使用することもできます`NSCell`ただしが通常サブクラス`NSTableCellView`し、カスタムの行と列を作成します。
 
-データ ソースには代わりに、テーブル ビューでは、独自のデータを格納しません (`NSTableViewDataSource`) を行と、必要に応じてごとに、必要な列の両方を提供します。
+テーブル ビューでは、独自のデータを保存しませんに代わりに、データ ソースには、(`NSTableViewDataSource`) を行と、必要に応じてごとに、必要な列の両方を提供します。
 
-テーブル ビューのデリゲートのサブクラスを提供することによって、テーブル ビューの動作をカスタマイズすることができます (`NSTableViewDelegate`) テーブルの列の管理をサポートする機能、行の選択、編集、カスタムの追跡、および個々 の列のカスタム ビューを選択する種類と行です。
+テーブル ビューのデリゲートのサブクラスを提供することで、テーブル ビューの動作をカスタマイズすることができます (`NSTableViewDelegate`) テーブルの列の管理をサポートする機能、行の選択、編集、カスタムの追跡、および個々 の列のカスタム ビューを選択する入力し、行。
 
-テーブルのビューを作成するときに Apple 次示しています。
+テーブルのビューを作成するときに Apple は、次は示しています。
 
 * 列ヘッダーをクリックしてテーブルの並べ替えにユーザーを許可します。
-* 名詞またはその列に表示されているデータを説明する短い名詞句は、列ヘッダーを作成します。
+* 名詞または短い語句をその列に表示されているデータを記述する列ヘッダーを作成します。
 
-詳細についてを参照してください、[コンテンツ ビュー](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) Apple のセクション[OS X のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)です。
+詳細についてを参照してください、[コンテンツ ビュー](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1)の Apple の「 [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)します。
 
 <a name="Creating-and-Maintaining-Table-Views-in-Xcode" />
 
-## <a name="creating-and-maintaining-table-views-in-xcode"></a>作成し、Xcode でのテーブルのビューの管理
+## <a name="creating-and-maintaining-table-views-in-xcode"></a>作成および保守の Xcode でのテーブル ビュー
 
-新しい Xamarin.Mac Cocoa アプリケーションを作成するときに、既定で標準の空白、ウィンドウを取得します。 この windows がで定義されている、`.storyboard`プロジェクトに自動的に含まれるファイル。 Windows のデザインを編集する、**ソリューション エクスプ ローラー**、ダブルクリックして、`Main.storyboard`ファイル。
+新しい Xamarin.Mac Cocoa アプリケーションを作成するときに、既定で標準の空白、ウィンドウを取得します。 この windows がで定義されている、`.storyboard`プロジェクトに自動的に含まれるファイル。 Windows のデザインを編集する、**ソリューション エクスプ ローラー**、ダブルクリック、`Main.storyboard`ファイル。
 
 [![](table-view-images/edit01.png "メインのストーリー ボードを選択します。")](table-view-images/edit01.png#lightbox)
 
-Xcode のインターフェイスのビルダーで、ウィンドウのデザインが開きます。
+これが、Xcode の Interface Builder でウィンドウのデザインを開きます。
 
-[![](table-view-images/edit02.png "Xcode で UI を編集")](table-view-images/edit02.png#lightbox)
+[![](table-view-images/edit02.png "Xcode では、UI の編集")](table-view-images/edit02.png#lightbox)
 
-型`table`に、**ライブラリ インスペクター**テーブル ビュー コントロールを検索するが容易に検索ボックス。
+型`table`に、**ライブラリ インスペクターの**テーブル ビュー コントロールを検索するが容易に検索ボックス。
 
-[![](table-view-images/edit03.png "ライブラリからテーブル ビューの選択")](table-view-images/edit03.png#lightbox)
+[![](table-view-images/edit03.png "ライブラリからのテーブル ビューの選択")](table-view-images/edit03.png#lightbox)
 
-テーブル ビューでビュー コント ローラーにドラッグ、**インターフェイス エディター**、ビュー コント ローラーのコンテンツ領域を入力し、縮小して、ウィンドウにも拡張に設定して、**制約エディター**:
+ビュー コント ローラー上にテーブル ビューをドラッグして、**インターフェイス エディター**、ビュー コント ローラーのコンテンツ領域を入力し、縮小して、ウィンドウにも拡張に設定して、**制約エディター**:
 
 [![](table-view-images/edit04.png "制約の編集")](table-view-images/edit04.png#lightbox)
 
-テーブル ビューを選択して、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
+テーブル ビューを選択して、**インターフェイス階層**し、次のプロパティが使用可能、**属性インスペクター**:
 
-[![](table-view-images/edit05.png "属性の検査")](table-view-images/edit05.png#lightbox)
+[![](table-view-images/edit05.png "属性インスペクター")](table-view-images/edit05.png#lightbox)
 
-- **コンテンツのモード**-いずれかのビューを使用することができます (`NSView`) またはセル (`NSCell`) を行と列にデータを表示します。 MacOS 10.7 から始めて、ビューを使用する必要があります。
-- **行をグループ化を寄せて配置**場合 - `true`、表形式ビューは、フローティング、グループ化セルが描画されます。
+- **コンテンツのモード**-いずれかのビューを使用することができます (`NSView`) またはセル (`NSCell`) 行と列にデータを表示します。 MacOS 10.7 以降では、ビューを使用する必要があります。
+- **行のグループ化をフローティング**- 場合`true`は、フローティングかのようにテーブル ビューがグループ化されたセルを描画します。
 - **列**に表示される列の数を定義します。
 - **ヘッダー**場合 - `true`、列ヘッダーになります。
 - **並べ替え**場合 -`true`ユーザーがドラッグできる、テーブル内の列の順序を変更します。
 - **サイズ変更**場合 -`true`ユーザーが列のサイズを変更する列ヘッダーをドラッグできます。
-- **列のサイズ変更**-どのテーブルが自動的にサイズの列を制御します。
-- **強調表示**-コントロールのセルが選択されているときに使用するテーブルを強調表示の種類。
-- **代替行**場合 - `true`、これまで他の行が別の背景色になります。
-- **水平グリッド**-横方向に描画セル間の境界線の種類を選択します。
-- **垂直グリッド**-セル間垂直方向に描画される境界線の種類を選択します。
-- **グリッド色**のセルの境界線の色を設定します。
+- **列のサイズ変更**-テーブルのサイズの列が自動方法を制御します。
+- **強調表示**-テーブルを強調表示の型のセルが選択されているときに使用するコントロール。
+- **代替行の**場合 -`true`これまで、その他の行が別の背景色になります。
+- **水平グリッド**-セル間で水平方向に描画される境界線の種類を選択します。
+- **垂直グリッド**-セル間を垂直方向に描画される境界線の種類を選択します。
+- **グリッドの色**のセルの境界線の色を設定します。
 - **バック グラウンド**のセルの背景色を設定します。
-- **選択**-とテーブルに、ユーザーがセルを選択する方法を制御できます。
+- **選択**-としてテーブルで、ユーザーがセルを選択する方法を制御できます。
     - **複数**場合 -`true`ユーザーは、複数の行と列を選択できます。
-    - **列**場合 -`true`ユーザーが列を選択できます。
-    - **入力選択**場合 -`true`ユーザーが行を選択する文字を入力します。
-    - **空**場合 -`true`ユーザーは、行または列を選択する必要はありません、テーブルでは、選択されていないすべてのです。
-- **自動保存**の下にあるテーブルの形式が自動的に名前を保存します。
-- **列情報**場合 -`true`列の幅と順序が自動的に保存されます。
-- **改行**- セルは改行文字を処理する方法を選択します。
+    - **列**場合 -`true`ユーザーは、列を選択できます。
+    - **入力選択**場合 -`true`ユーザーが行を選択する、文字を入力できます。
+    - **空**場合 -`true`ユーザーは、行または列を選択する必要はありません、テーブルでは、選択されていないすべての。
+- **自動保存**-テーブル形式が自動的に名前を保存します。
+- **列情報**場合 -`true`順序と列の幅の内容は自動的に保存します。
+- **改行**- セル改行の処理方法を選択します。
 - **表示されている最後の行を切り捨てます**場合 -`true`セルの境界内に収まらないデータで切り捨てられます。
 
 > [!IMPORTANT]
-> 従来の Xamarin.Mac アプリケーションを保持している場合を除き、`NSView`経由でベース テーブルのビューを使用する必要があります`NSCell`ベース テーブルのビューです。 `NSCell` レガシと見なされ、今後はサポートされません。
+> 従来の Xamarin.Mac アプリケーションを保持している場合を除き、`NSView`経由でベース テーブルのビューを使用する必要があります`NSCell`ベースのテーブルのビュー。 `NSCell` 従来と見なされ、今後はサポートされません。
 
-テーブルの列を選択して、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
+テーブル列の選択、**インターフェイス階層**し、次のプロパティが使用可能、**属性インスペクター**:
 
-[![](table-view-images/edit06.png "属性の検査")](table-view-images/edit06.png#lightbox)
+[![](table-view-images/edit06.png "属性インスペクター")](table-view-images/edit06.png#lightbox)
 
 - **タイトル**-列のタイトルを設定します。
-- **配置**-セル内でテキストの配置を設定します。
+- **配置**-セル内のテキストの配置を設定します。
 - **タイトルのフォント**のセルのヘッダー テキストのフォントを選択します。
-- **並べ替えキー** -列のデータの並べ替えに使用するキーします。 空白のままに場合は、ユーザーは、この列を並べ替えることはできません。
-- **セレクター** -は、**アクション**並べ替えを実行するために使用します。 空白のままに場合は、ユーザーは、この列を並べ替えることはできません。
+- **並べ替えキー** -列のデータの並べ替えに使用するキーします。 ユーザーがこの列を並べ替える場合は空白のままにします。
+- **セレクター** -は、**アクション**の並べ替えを実行するために使用します。 ユーザーがこの列を並べ替える場合は空白のままにします。
 - **順序**-は、列のデータの並べ替え順序。
 - **サイズ変更**-列のサイズ変更の種類を選択します。
 - **編集可能な**場合 -`true`ユーザーがセルのベース テーブル内のセルを編集できます。
-- **非表示に**場合 -`true`列を非表示にします。
+- **非表示に**場合 -`true`列が非表示になります。
 
-列を変更するには、そのハンドル (列の右側に垂直方向に中央揃え) の左または右にドラッグすることもできます。
+ハンドル (列の右側に垂直方向に中央揃え) の左または右にドラッグして、列サイズを変更することもできます。
 
-みましょう、テーブル ビューで、各列を選択し、最初の列を与える、**タイトル**の`Product`し、もう 1 つ`Details`です。
+テーブル、ビューの各列を選択して最初の列に付ける、**タイトル**の`Product`、もう 1 つ`Details`します。
 
-テーブル セルのビューを選択 (`NSTableViewCell`) で、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
+テーブル セルのビューを選択します (`NSTableViewCell`) で、**インターフェイス階層**し、次のプロパティが使用可能、**属性インスペクター**:
 
-[![](table-view-images/edit07.png "属性の検査")](table-view-images/edit07.png#lightbox)
+[![](table-view-images/edit07.png "属性インスペクター")](table-view-images/edit07.png#lightbox)
 
-これらは、すべての標準的なビューのプロパティです。 また、この列は、ここに行サイズの変更オプションがあります。
+これらは、すべての標準的なビューのプロパティです。 また、ここで、この列の行のサイズ変更オプションがあります。
 
-テーブル ビューのセルを選択 (既定では、これは、 `NSTextField`) で、**インターフェイス階層**あり、次のプロパティでは使用、**属性インスペクター**:
+Table View Cell を選択します (既定では、これは、 `NSTextField`) で、**インターフェイス階層**し、次のプロパティが使用可能、**属性インスペクター**:
 
-[![](table-view-images/edit08.png "属性の検査")](table-view-images/edit08.png#lightbox)
+[![](table-view-images/edit08.png "属性インスペクター")](table-view-images/edit08.png#lightbox)
 
-ここで設定する標準的なテキスト フィールドのすべてのプロパティがあります。 既定では、標準的なテキスト フィールドは列のセルのデータを表示するために使用します。
+ここで設定する標準のテキスト フィールドのすべてのプロパティがあります。 既定では、標準のテキスト フィールドは、列に、セルのデータを表示する使用します。
 
-テーブル セルのビューを選択 (`NSTableFieldCell`) で、**インターフェイス階層**、次のプロパティがで利用できる、**属性インスペクター**:
+テーブル セルのビューを選択します (`NSTableFieldCell`) で、**インターフェイス階層**し、次のプロパティが使用可能、**属性インスペクター**:
 
-[![](table-view-images/edit09.png "属性の検査")](table-view-images/edit09.png#lightbox)
+[![](table-view-images/edit09.png "属性インスペクター")](table-view-images/edit09.png#lightbox)
 
 ここでの最も重要な設定は次のとおりです。
 
 - **レイアウト**- この列のセルのレイアウト方法を選択します。
-- **単一行モードを使用して**場合 -`true`セルが 1 行に制限されます。
-- **最初のランタイム レイアウト**場合 -`true`セルの幅を設定 (手動または自動的に) とを選びます初めてアプリケーションを実行して表示されます。
-- **アクション**のタイミングを制御、編集**アクション**セルに送信します。
-- **動作**のセルが選択可能または編集可能な場合を定義します。
-- **リッチ テキスト**場合 -`true`セルは、書式設定およびスタイル設定されたテキストを表示できます。
-- **元に戻す**場合 - `true`、に対しては、セルが責任を引き継ぎます動作を元に戻します。
+- **単一行モードを使用して**場合 -`true`セルが 1 行に制限されています。
+- **最初の実行時レイアウト**場合 -`true`セルの幅の設定を (手動または自動で) 場合は優先初めて、アプリケーションの実行が表示されます。
+- **アクション**のタイミングを制御、編集**アクション**セルが送信されます。
+- **動作**のセルが選択可能なまたは編集可能な場合を定義します。
+- **リッチ テキスト**場合 -`true`セルは、書式設定とスタイル設定されたテキストを表示できます。
+- **元に戻す**場合 - `true`、に対しては、セルが責任を負います動作を元に戻します。
 
-テーブル セルのビューを選択 (`NSTableFieldCell`) のテーブルの列の下部にある、**インターフェイス階層**:
+テーブル セルのビューを選択します (`NSTableFieldCell`) のテーブルの列の下部にある、**インターフェイス階層**:
 
 [![](table-view-images/edit10.png "テーブル セルのビューを選択します。")](table-view-images/edit10.png#lightbox)
 
-これにより、ベースとして使用されるテーブル セルのビューを編集して_パターン_指定された列用に作成されたすべてのセル。
+ベースとして使用するテーブル セル ビューを編集できます_パターン_のすべてのセルを指定した列を作成します。
 
 <a name="Adding_Actions_and_Outlets" />
 
-### <a name="adding-actions-and-outlets"></a>アクションとコンセントを追加します。
+### <a name="adding-actions-and-outlets"></a>アクションとアウトレットを追加します。
 
-だけ Cocoa UI コントロールと同様に、テーブル ビューを公開する必要があり、その列は、c# コードを使用するセル**アクション**と**コンセント**(必要な機能に基づく)。
+だけ Cocoa UI コントロールと同様に、テーブル ビューを公開する必要があり、その列は、c# コードを使用するセル**アクション**と**Outlet** (必要な機能に基づく)。
 
-プロセスは、テーブル ビュー要素を公開する必要の場合と同じです。
+プロセスは、任意のテーブル ビュー要素を公開することで同じです。
 
-1. 切り替えて、**アシスタント エディター**ことを確認して、`ViewController.h`ファイルが選択されています。 
+1. 切り替えて、**アシスタント エディター**いることを確認し、`ViewController.h`ファイルが選択されています。 
 
     [![](table-view-images/edit11.png "アシスタント エディター")](table-view-images/edit11.png#lightbox)
-2. テーブル ビューを選択して、**インターフェイス階層**コントロールをクリックし、ドラッグする、`ViewController.h`ファイル。
-3. 作成、**コンセント**テーブル ビューと呼ばれる`ProductTable`: 
+2. テーブル ビューの選択、**インターフェイス階層**、コントロールのクリックおよびドラッグ、`ViewController.h`ファイル。
+3. 作成、**アウトレット**テーブル ビューと呼ばれる`ProductTable`: 
 
-    [![](table-view-images/edit13.png "コンセントを構成します。")](table-view-images/edit13.png#lightbox)
-4. 作成**コンセント**テーブルの列にも呼び出さ`ProductColumn`と`DetailsColumn`: 
+    [![](table-view-images/edit13.png "アウトレットを構成します。")](table-view-images/edit13.png#lightbox)
+4. 作成**Outlet**と呼ばれるテーブルの列も`ProductColumn`と`DetailsColumn`: 
 
-    [![](table-view-images/edit14.png "コンセントを構成します。")](table-view-images/edit14.png#lightbox)
-5. 変更を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+    [![](table-view-images/edit14.png "アウトレットを構成します。")](table-view-images/edit14.png#lightbox)
+5. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-次に、作成してコードの表示、テーブルの一部のデータ、アプリケーションの実行時にします。
+次に、データを書き込むコードの表示によってテーブルのアプリケーションの実行時にします。
 
 <a name="Populating_the_Table_View" />
 
-## <a name="populating-the-table-view"></a>テーブル ビューを設定します。
+## <a name="populating-the-table-view"></a>テーブル ビューの作成
 
-テーブルの私たちのインターフェイスのビルダーでデザインし、を介して公開される、**コンセント**、次に読み込むための c# コードを作成する必要があります。
+テーブル、ビューでは、Interface Builder で設計され、を介して公開される、**アウトレット**、次に読み込むための c# コードを作成する必要があります。
 
-最初に、新しいを作成してみましょう`Product`個々 の行の情報を保持するクラス。 **ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`Product`の**名前**] をクリック、**新規**ボタン。
+最初に、新しいを作成しましょう`Product`個々 の行の情報を保持するクラス。 **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** 選択**一般的な** > **空のクラス**、入力`Product`の**名前** をクリックし、**新規**ボタン。
 
 [![](table-view-images/populate01.png "空のクラスを作成します。")](table-view-images/populate01.png#lightbox)
 
-ように、`Product.cs`次のようなファイルの内容。
+ように、`Product.cs`ファイルの次のようになります。
 
 ```csharp
 using System;
@@ -207,9 +207,9 @@ namespace MacTables
 
 ```
 
-次に、私たちのサブクラスを作成する必要があります`NSTableDataSource`が要求されるように、このテーブルのデータを提供します。 **ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`ProductTableDataSource`の**名前**] をクリック、**新規**ボタンをクリックします。
+次に、私たちのサブクラスを作成する必要があります`NSTableDataSource`を要求に応じて、テーブルのデータを提供します。 **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`ProductTableDataSource`の**名前** をクリック、**新規**ボタン。
 
-編集、`ProductTableDataSource.cs`ファイルし、次のようになります。
+編集、`ProductTableDataSource.cs`ファイルを開き、次のようになります。
 
 ```csharp
 using System;
@@ -244,11 +244,11 @@ namespace MacTables
 
 ```
 
-このクラスは、テーブル ビューの項目の記憶域を持つし、オーバーライド、`GetRowCount`をテーブルの行の数を返します。
+このクラスが、テーブル ビューの項目用のストレージと上書き、`GetRowCount`をテーブルの行の数を返します。
 
-最後に、私たちのサブクラスを作成する必要があります`NSTableDelegate`をこのテーブルの動作を提供します。 **ソリューション エクスプ ローラー**、プロジェクトを右クリックし [**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`ProductTableDelegate`の**名前**] をクリック、**新規**ボタンをクリックします。
+最後に、私たちのサブクラスを作成する必要があります`NSTableDelegate`テーブルの動作を提供します。 **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** 選択**全般** > **空のクラス**、入力`ProductTableDelegate`の**名前** をクリック、**新規**ボタン。
 
-編集、`ProductTableDelegate.cs`ファイルし、次のようになります。
+編集、`ProductTableDelegate.cs`ファイルを開き、次のようになります。
 
 ```csharp
 using System;
@@ -310,9 +310,9 @@ namespace MacTables
 }
 ```
 
-インスタンスを作成するとき、 `ProductTableDelegate`、私たちのインスタンスに渡すことも、`ProductTableDataSource`テーブルのデータを提供します。 `GetViewForItem`メソッドは、指定した列と行のセルを表示するビュー (データ) を返すことを担当します。 可能であれば、既存のビューは、セルを表示する再利用する以外の場合、新しいビューを作成する必要があります。
+インスタンスを作成するとき、 `ProductTableDelegate`、私たちのインスタンスに渡すことも、`ProductTableDataSource`テーブルのデータを提供します。 `GetViewForItem`メソッドが指定した列と行のセルを表示するビュー (データ) が返されます。 可能であれば、既存のビューは、セルを表示する再利用するでない場合、新しいビューを作成する必要があります。
 
-テーブル作成するには、編集、`ViewController.cs`ファイルし、`AwakeFromNib`次のようなメソッドの検索。
+テーブルの作成、編集、`ViewController.cs`ファイル、`AwakeFromNib`メソッドの次のようになります。
 
 ```csharp
 public override void AwakeFromNib ()
@@ -331,25 +331,25 @@ public override void AwakeFromNib ()
 }
 ```
 
-アプリケーションを実行している場合、次のように表示されます。
+アプリケーションを実行した場合、次のように表示されます。
 
-[![](table-view-images/populate02.png "実行のサンプル アプリ")](table-view-images/populate02.png#lightbox)
+[![](table-view-images/populate02.png "サンプル アプリの実行")](table-view-images/populate02.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
-## <a name="sorting-by-column"></a>列による並べ替え
+## <a name="sorting-by-column"></a>列で並べ替え
 
-ユーザーを列ヘッダーをクリックして、テーブル内のデータを並べ替えるを許可してみましょう。 最初をダブルクリックして、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 選択、`Product`列、入力`Title`の**並べ替えキー**、`compare:`の**セレクター**を選択し、`Ascending`の**順序**:
+列ヘッダーをクリックして、テーブル内のデータの並べ替えにユーザーを許可します。 最初をダブルクリック、`Main.storyboard`ファイルを開き、インターフェイス ビルダーで編集します。 選択、`Product`列、入力`Title`の**並べ替えキー**、`compare:`の**セレクター**選択と`Ascending`の**順序**:
 
 [![](table-view-images/sort01.png "並べ替えキーの設定")](table-view-images/sort01.png#lightbox)
 
-選択、`Details`列、入力`Description`の**並べ替えキー**、`compare:`の**セレクター**を選択し、`Ascending`の**順序**:
+選択、`Details`列、入力`Description`の**並べ替えキー**、`compare:`の**セレクター**選択と`Ascending`の**順序**:
 
 [![](table-view-images/sort02.png "並べ替えキーの設定")](table-view-images/sort02.png#lightbox)
 
-変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-今すぐ編集しましょう、`ProductTableDataSource.cs`ファイルし、次のメソッドを追加します。
+今すぐ編集しましょう、`ProductTableDataSource.cs`ファイルを開き、次のメソッドを追加します。
 
 ```csharp
 public void Sort(string key, bool ascending) {
@@ -391,24 +391,24 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 }
 ```
 
-`Sort`メソッドにより、データに基づくデータ ソースの並べ替え、指定された`Product`昇順または降順のどちらかのクラス フィールドです。 オーバーライドされた`SortDescriptorsChanged`を使用する列見出しをクリックするたびにメソッドが呼び出されます。 渡されます、**キー**インターフェイス ビルダーとその列の並べ替え順序で設定した値がします。
+`Sort`メソッドでは、データに基づくデータ ソースの並べ替えにより、指定された`Product`昇順または降順のどちらかのクラス フィールド。 オーバーライドされた`SortDescriptorsChanged`使用列見出しをクリックするたびにメソッドが呼び出されます。 渡される、**キー** Interface Builder とその列の並べ替え順序で設定される値。
 
-アプリケーションを実行すると、列ヘッダーをクリックして、その列で行が並べ替えられます。
+アプリケーションを実行し、列ヘッダーをクリックした場合、行がその列で並べ替えられます。
 
-[![](table-view-images/sort03.png "実行のサンプル アプリ")](table-view-images/sort03.png#lightbox)
+[![](table-view-images/sort03.png "アプリの実行例")](table-view-images/sort03.png#lightbox)
 
 <a name="Row_Selection" />
 
 ## <a name="row-selection"></a>行の選択
 
-1 つの行を選択し、ダブルクリックして、ユーザーを許可するかどうか、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 テーブル ビューを選択して、**インターフェイス階層**をオフにし、**複数**のチェック ボックス、**属性インスペクター**:
+ユーザーが 1 つの行を選択し、ダブルクリックできるようにするかどうか、`Main.storyboard`ファイルを開き、インターフェイス ビルダーで編集します。 テーブル ビューを選択して、**インターフェイス階層**をオフにし、**複数**でチェック ボックスをオン、**属性インスペクター**:
 
-[![](table-view-images/select01.png "属性の検査")](table-view-images/select01.png#lightbox)
+[![](table-view-images/select01.png "属性インスペクター")](table-view-images/select01.png#lightbox)
 
-変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 
-次に、編集、`ProductTableDelegate.cs`ファイルし、次のメソッドを追加します。
+次に、編集、`ProductTableDelegate.cs`ファイルを開き、次のメソッドを追加します。
 
 ```csharp
 public override bool ShouldSelectRow (NSTableView tableView, nint row)
@@ -417,7 +417,7 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 }
 ```
 
-これによって、ユーザーのテーブル ビューの 1 行を選択します。 返す`false`の`ShouldSelectRow`のいずれかの行を選択できるユーザーをたくないまたは`false`すべての行が任意の行を選択できるユーザーをたくない場合。
+これによって、ユーザーのテーブル ビューの 1 行を選択します。 返す`false`の`ShouldSelectRow`のいずれかの行を選択できるユーザーをしたくないまたは`false`任意の行を選択できるユーザーをしたくない場合、すべての行にします。
 
 テーブル ビュー (`NSTableView`) 行の選択を操作するための次のメソッドが含まれています。
 
@@ -430,14 +430,14 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 
 ## <a name="multiple-row-selection"></a>複数行の選択
 
-複数の行を選択し、ダブルクリックして、ユーザーを許可するかどうか、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 テーブル ビューを選択して、**インターフェイス階層**を確認し、**複数**のチェック ボックス、**属性インスペクター**:
+ユーザーが複数の行を選択し、ダブルクリックできるようにするかどうか、`Main.storyboard`ファイルを開き、インターフェイス ビルダーで編集します。 テーブル ビューを選択して、**インターフェイス階層**を確認し、**複数**でチェック ボックスをオン、**属性インスペクター**:
 
-[![](table-view-images/select02.png "属性の検査")](table-view-images/select02.png#lightbox)
+[![](table-view-images/select02.png "属性インスペクター")](table-view-images/select02.png#lightbox)
 
-変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 
-次に、編集、`ProductTableDelegate.cs`ファイルし、次のメソッドを追加します。
+次に、編集、`ProductTableDelegate.cs`ファイルを開き、次のメソッドを追加します。
 
 ```csharp
 public override bool ShouldSelectRow (NSTableView tableView, nint row)
@@ -446,17 +446,17 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 }
 ```
 
-これによって、ユーザーのテーブル ビューの 1 行を選択します。 返す`false`の`ShouldSelectRow`のいずれかの行を選択できるユーザーをたくないまたは`false`すべての行が任意の行を選択できるユーザーをたくない場合。
+これによって、ユーザーのテーブル ビューの 1 行を選択します。 返す`false`の`ShouldSelectRow`のいずれかの行を選択できるユーザーをしたくないまたは`false`任意の行を選択できるユーザーをしたくない場合、すべての行にします。
 
 テーブル ビュー (`NSTableView`) 行の選択を操作するための次のメソッドが含まれています。
 
-- `DeselectAll(NSObject)` -テーブル内のすべての行を選択解除します。 使用して`this`最初のパラメーターを選択を行っているオブジェクトに送信します。 
+- `DeselectAll(NSObject)` -テーブル内のすべての行を選択解除します。 使用`this`でこれを選択するオブジェクトを送信する最初のパラメーター。 
 - `DeselectRow(nint)` -テーブルの特定の行を選択解除します。
-- `SelectAll(NSobject)` -テーブルのすべての行を選択します。 使用して`this`最初のパラメーターを選択を行っているオブジェクトに送信します。
-- `SelectRow(nint,bool)` -特定の行を選択します。 渡す`false`2 番目のパラメーターの選択をクリアし、単一行のみを選択、渡す`true`を選択範囲を拡張し、この行を含めます。
-- `SelectRows(NSIndexSet,bool)` -指定した行のセットを選択します。 渡す`false`2 番目のパラメーターの選択を解除し、選択、のみこれらの行を渡す`true`を選択範囲を拡張し、これらの行を含めます。
+- `SelectAll(NSobject)` -テーブルのすべての行を選択します。 使用`this`でこれを選択するオブジェクトを送信する最初のパラメーター。
+- `SelectRow(nint,bool)` -特定の行を選択します。 渡す`false`2 番目のパラメーターの選択を解除し、1 行だけを選択、渡す`true`選択範囲を拡張し、この行が含まれます。
+- `SelectRows(NSIndexSet,bool)` -指定した行のセットを選択します。 渡す`false`2 番目のパラメーターをオフにし、のみこれらを選択します。 行を渡す`true`、選択範囲を拡張し、これらの行が含まれます。
 - `SelectedRow` -テーブルで選択されている現在の行を返します。
-- `SelectedRows` 返します、`NSIndexSet`選択された行のインデックスを格納します。
+- `SelectedRows` -を返します、`NSIndexSet`選択された行のインデックスを格納します。
 - `SelectedRowCount` -選択した行の数を返します。
 - `IsRowSelected(nint)` -返します`true`特定の行が選択されている場合。
 
@@ -464,13 +464,13 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 
 ## <a name="type-to-select-row"></a>行を選択する種類
 
-その文字を持つテーブル ビューが選択されている文字を入力するユーザーを許可して、最初の行を選択する場合、ダブルクリック、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 テーブル ビューを選択して、**インターフェイス階層**を確認し、**の種類を選択**のチェック ボックス、**属性インスペクター**:
+その文字を持つユーザーが選択されているテーブル ビューで文字を入力できるようにして、最初の行を選択する場合、ダブルクリックして、`Main.storyboard`ファイルを開き、インターフェイス ビルダーで編集します。 テーブル ビューを選択して、**インターフェイス階層**を確認し、**の種類を選択**でチェック ボックスをオン、**属性インスペクター**:
 
-[![](table-view-images/type01.png "選択範囲の種類を設定")](table-view-images/type01.png#lightbox)
+[![](table-view-images/type01.png "選択の種類の設定")](table-view-images/type01.png#lightbox)
 
-変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-今すぐ編集しましょう、`ProductTableDelegate.cs`ファイルし、次のメソッドを追加します。
+今すぐ編集しましょう、`ProductTableDelegate.cs`ファイルを開き、次のメソッドを追加します。
 
 ```csharp
 public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRow, nint endRow, string searchString)
@@ -488,25 +488,25 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 }
 ```
 
-`GetNextTypeSelectMatch`メソッドは、指定された`searchString`し、最初の行を返す`Product`にその文字列を含む`Title`です。
+`GetNextTypeSelectMatch`メソッドは、指定された`searchString`し、最初の行を返す`Product`での文字列を持つ`Title`します。
 
-アプリケーションを実行すると、文字を入力、行を選択します。
+アプリケーションを実行し、文字を入力する場合、行が選択されます。
 
-[![](table-view-images/type02.png "実行のサンプル アプリ")](table-view-images/type02.png#lightbox)
+[![](table-view-images/type02.png "サンプル アプリの実行")](table-view-images/type02.png#lightbox)
 
 <a name="Reordering_Columns" />
 
 ## <a name="reordering-columns"></a>列の並べ替え
 
-ユーザーがドラッグできるようにする場合は、テーブル ビューで列を並べ替えるをダブルクリック、`Main.storyboard`編集のためインターフェイス ビルダーで開くファイル。 テーブル ビューを選択して、**インターフェイス階層**を確認し、**並べ替え**のチェック ボックス、**属性インスペクター**:
+ユーザーがドラッグできるようにする場合は、テーブル ビューで列を並べ替えるをダブルクリックします、`Main.storyboard`ファイルを開き、インターフェイス ビルダーで編集します。 テーブル ビューを選択して、**インターフェイス階層**を確認し、**並べ替え**でチェック ボックスをオン、**属性インスペクター**:
 
-[![](table-view-images/reorder01.png "属性の検査")](table-view-images/reorder01.png#lightbox)
+[![](table-view-images/reorder01.png "属性インスペクター")](table-view-images/reorder01.png#lightbox)
 
-値を提供する場合、**自動保存**プロパティとチェック、**列情報**フィールドでは、テーブルのレイアウトを変更しましたがご利用の米国自動的に保存され、次回アプリケーションを復元実行されます。
+値をプレゼントした場合、 **Autosave**プロパティとチェック、**列情報**フィールドでは、テーブルのレイアウトに行った変更を加えた私たちにとっては自動的に保存して、次回アプリケーションを復元実行されます。
 
-変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-今すぐ編集しましょう、`ProductTableDelegate.cs`ファイルし、次のメソッドを追加します。
+今すぐ編集しましょう、`ProductTableDelegate.cs`ファイルを開き、次のメソッドを追加します。
 
 ```csharp
 public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nint newColumnIndex)
@@ -515,9 +515,9 @@ public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nin
 }
 ```
 
-`ShouldReorder`メソッドが返す`true`ドラッグに並べ替えることを許可する任意の列の`newColumnIndex`、それ以外の場合の戻り値`false`;
+`ShouldReorder`メソッドが返す必要があります`true`にそれを許可する任意の列のドラッグの順序変更、 `newColumnIndex`, それ以外の場合、return `false`;
 
-アプリケーションを実行する場合に、列の順序を変更する周囲の列ヘッダーをドラッグしたことができます。
+アプリケーションを実行した場合、列の順序を変更する列の見出しをドラッグしたことができます。
 
 [![](table-view-images/reorder02.png "並べ替えられた列の例")](table-view-images/reorder02.png#lightbox)
 
@@ -525,7 +525,7 @@ public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nin
 
 ## <a name="editing-cells"></a>セルの編集
 
-ユーザーが指定されたセルの値を編集、編集を許可する場合、`ProductTableDelegate.cs`ファイルし、変更、`GetViewForItem`メソッドを次のようにします。
+ユーザーが特定のセルの値を編集、編集を許可する場合、`ProductTableDelegate.cs`ファイルし、変更、`GetViewForItem`メソッドとして、次のとおりです。
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -573,15 +573,15 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-今すぐアプリケーションを実行して、ユーザーはテーブル ビュー内のセルを編集できます。
+今すぐアプリケーションを実行、ユーザーはテーブル ビュー内のセルを編集できます。
 
 [![](table-view-images/editing01.png "セルの編集の例")](table-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Table_Views" />
 
-## <a name="using-images-in-table-views"></a>テーブルのビューでのイメージの使用
+## <a name="using-images-in-table-views"></a>テーブル ビューでイメージを使用します。
 
-内のセルの一部として画像を含める、 `NSTableView`、データをテーブル ビューのによって返される方法を変更する必要があります`NSTableViewDelegate's``GetViewForItem`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例えば:
+内のセルの一部としてイメージを含める、 `NSTableView`、によって、テーブル ビューのデータを返す方法を変更する必要があります`NSTableViewDelegate's``GetViewForItem`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例えば:
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -640,21 +640,21 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-詳細についてを参照してください、[テーブルのビューを使用してイメージ](~/mac/app-fundamentals/image.md)のセクションで、[画像](~/mac/app-fundamentals/image.md)ドキュメント。
+詳細についてを参照してください、[テーブル ビューの使用を使用してイメージ](~/mac/app-fundamentals/image.md)のセクション、[画像](~/mac/app-fundamentals/image.md)ドキュメント。
 
 <a name="Adding-a-Delete-Button-to-a-Row" />
 
 ## <a name="adding-a-delete-button-to-a-row"></a>行を削除 ボタンを追加します。
 
-アプリの要件に基づき、ありますテーブルの各行の動作設定ボタンを指定する必要。 これの例は、上記で作成した対象テーブル ビューの例の拡大みましょう、**削除**行ごとにボタンをクリックします。
+アプリの要件に基づき、ありますテーブルの各行のアクション ボタンを指定する必要。 これの例は、上記で作成した対象テーブル ビューの例の拡大しましょう、**削除**行ごとにボタンをクリックします。
 
-最初に、編集、 `Main.storyboard` Xcode のインターフェイス ビルダーでは、テーブル ビューを選択し、列の数を増やす 3 (3)。 次に、変更、**タイトル**する新しい列の`Action`:
+最初に、編集、 `Main.storyboard` Xcode の Interface Builder で テーブル ビューを選択して列の数を増やす 3 つ (3)。 次に、変更、**タイトル**する新しい列の`Action`:
 
 [![](table-view-images/delete01.png "列名の編集")](table-view-images/delete01.png#lightbox)
 
-ストーリー ボードに変更を保存し、Mac の変更を同期用の Visual Studio に戻ります。
+ストーリー ボードに変更を保存し、Visual Studio for Mac の変更を同期するに戻ります。
 
-次に、編集、`ViewController.cs`ファイルし、次のパブリック メソッドを追加します。
+次に、編集、`ViewController.cs`ファイルを開き、次のパブリック メソッドを追加します。
 
 ```csharp
 public void ReloadTable ()
@@ -663,7 +663,7 @@ public void ReloadTable ()
 }
 ```
 
-同じファイルで変更、デリゲートの作成、新しいテーブルのビュー内の`ViewDidLoad`メソッドを次のようにします。
+同じファイル内の新しいテーブル表示デリゲートの作成を変更`ViewDidLoad`メソッドとして、次のとおりです。
 
 ```csharp
 // Populate the Product Table
@@ -671,7 +671,7 @@ ProductTable.DataSource = DataSource;
 ProductTable.Delegate = new ProductTableDelegate (this, DataSource);
 ```
 
-ここで、編集、`ProductTableDelegate.cs`ファイル ビュー コント ローラーにプライベート接続を含めると、デリゲートの新しいインスタンスを作成するときに、パラメーターとして、コント ローラーを実行します。
+これで、編集、`ProductTableDelegate.cs`ビュー コント ローラーにプライベート接続を含めると、デリゲートの新しいインスタンスを作成するときに、パラメーターとして、コント ローラーを実行するファイル。
 
 ```csharp
 #region Private Variables
@@ -722,9 +722,9 @@ private void ConfigureTextField (NSTableCellView view, nint row)
 }
 ```
 
-これにかかる時間が以前に実行されているテキスト ビュー構成をすべて、`GetViewForItem`メソッド (テーブルの最後の列は、テキスト ビューがボタンには含まれません) してから、呼び出し可能な単一の場所に配置します。
+これにより、すべてのテキスト ビューの構成で行っていたされている、`GetViewForItem`メソッド、(テーブルの最後の列は、テキスト ビューがボタンには含まれません) ため、呼び出し可能な単一の場所に配置します。
 
-最後に、編集、`GetViewForItem`メソッドされ次のようになります。
+最後に、編集、`GetViewForItem`メソッドと、次のようになります。
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -815,9 +815,9 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-さらに詳しくは、このコードのセクションではいくつか見てみましょう。 まず、新しい`NSTableViewCell`がアクションを作成するに対してが行われるに基づいて列の名前。 最初の 2 つの列 (**製品**と**詳細**)、新しい`ConfigureTextField`メソッドが呼び出されます。
+詳しくは、このコードのセクションではいくつか見てみましょう。 新しい場合は、まず`NSTableViewCell`がアクションを作成中に実行されますに基づいて列の名前。 最初の 2 つの列 (**製品**と**詳細**)、新しい`ConfigureTextField`メソッドが呼び出されます。
 
-**アクション**列も、新しい`NSButton`が作成され、Sub ビューとしてのセルに追加します。
+**アクション**列、新しい`NSButton`が作成され、サブ ビューとしてのセルに追加します。
 
 ```csharp
 // Create new button
@@ -831,7 +831,7 @@ button.Tag = row;
 view.AddSubview (button);
 ```
 
-ボタンの`Tag`プロパティは、現在処理されている行の数を保持するために使用します。 ユーザーがボタンの削除する行を要求したときに、この番号を後で使用が`Activated`イベント。
+ボタンの`Tag`プロパティは、現在処理されている行の数を保持するために使用します。 ユーザーがボタンの削除する行を要求したときに、この数を後で使用が`Activated`イベント。
 
 ```csharp
 // Wireup events
@@ -859,7 +859,7 @@ button.Activated += (sender, e) => {
 };
 ```
 
-イベント ハンドラーの初めにのボタンと、指定されたテーブル行にある製品を取得します。 アラートは、行の削除を確認するユーザーに表示されます。 ユーザーは、行を削除するが、データ ソースから特定の行が削除されたが、テーブルが再読み込み。
+イベント ハンドラーの先頭には、ボタンと、特定のテーブル行の上にある製品を取得します。 行の削除を確認するユーザーにアラートが表示されます。 ユーザーは、行を削除するが、特定の行がデータ ソースから削除されますが、テーブルが再読み込み。
 
 ```csharp
 // Remove the given row from the dataset
@@ -867,7 +867,7 @@ DataSource.Products.RemoveAt((int)btn.Tag);
 Controller.ReloadTable ();
 ```
 
-最後に、テーブル ビューのセルは、新規に作成されるのではなく再利用されるは、次のコードが構成処理中の列に基づくこと。
+最後に、テーブル ビューのセルが新規に作成されているのではなく再利用されている場合、次のコードを構成します処理されている列に基づきます。
 
 ```csharp
 // Setup view based on the column selected
@@ -893,35 +893,35 @@ case "Action":
 
 ```
 
-**アクション**列で、すべてのサブ ビュー スキャンまで、`NSButton`が見つかるが`Tag`プロパティが更新され、現在の行。
+**アクション**列で、すべてのサブ ビューがまでスキャン、`NSButton`が見つかった`Tag`プロパティは次のように、現在の行で更新されます。
 
-これらの場所の変更、アプリの実行時に各の行がある、**削除**ボタンをクリックします。
+これらの場所の変更、アプリの実行時に各の行がある、**削除**ボタン。
 
 [![](table-view-images/delete02.png "削除ボタンを持つテーブル ビュー")](table-view-images/delete02.png#lightbox)
 
-ユーザーがクリックしたとき、**削除**ボタン、特定の行を削除するように求める警告が表示されます。
+ユーザーがクリックすると、**削除**ボタン、特定の行を削除するかを確認する警告が表示されます。
 
 [![](table-view-images/delete03.png "削除行のアラート")](table-view-images/delete03.png#lightbox)
 
-場合は、ユーザーが、削除、行が削除され、テーブルが再描画されます。
+ユーザーが削除を選択した場合、行が削除され、テーブルが再描画されます。
 
 [![](table-view-images/delete04.png "行が削除された後の表に、")](table-view-images/delete04.png#lightbox)
 
 <a name="Data_Binding_Table_Views" />
 
-## <a name="data-binding-table-views"></a>データ バインディングのテーブルのビュー
+## <a name="data-binding-table-views"></a>データ バインド テーブル ビュー
 
-Xamarin.Mac アプリケーションのコーディングのキー値と、データ バインドの手法を使用するの記述し、保守を作成し、UI 要素を使用する必要のあるコードの量を大幅に削減できます。 また、バックアップ データをさらに分離することの利点がある場合 (_データ モデル_)、正面からのユーザー インターフェイスを終了 (_モデル-ビュー-コント ローラー_) より柔軟なアプリケーションの保守が容易に先行します。デザインします。
+キー値コーディングとデータ バインディングの手法を使用すると、Xamarin.Mac アプリケーションで、コードの記述し、保守を設定し、UI 要素を使用する必要があるの量を大幅に短縮できます。 さらに、バックアップ データを分離の利点がある場合も (_データ モデル_)、正面からのユーザー インターフェイスを終了します (_モデル-ビュー-コント ローラー_)、柔軟性の高いアプリケーションを管理しやすくします。デザインします。
 
-キーと値のコーディング (KVC) は、インスタンス変数からアクセスするのではなくプロパティを識別するキー (特殊な形式の文字列) またはアクセサー メソッドを使用して、オブジェクトのプロパティを直接アクセスするための機構 (`get/set`)。 Xamarin.Mac アプリの準拠のアクセサーをキーと値のコーディングを実装すると、キーと値を観察し (KVO)、データ バインディング、基本データ、Cocoa バインディング、および scriptability などその他の macOS 機能へのアクセスを取得します。
+キー値コーディング (KVC) は、オブジェクトのプロパティを直接アクセスする、インスタンス変数からアクセスするのではなくプロパティを識別するキー (特殊な形式の文字列) またはアクセサー メソッドを使用するためのメカニズム (`get/set`)。 キー値コーディング準拠アクセサーを実装すると、Xamarin.Mac アプリケーションで、キーと値を観察し (KVO)、データ バインディング、Core Data、Cocoa バインディング、およびあることを示すなどの他の macOS 機能へのアクセスを行えます。
 
-詳細についてを参照してください、[テーブル ビューのデータ バインド](~/mac/app-fundamentals/databinding.md#Table_View_Data_Binding)のセクションで、[データ バインディングと、キーと値のコーディング](~/mac/app-fundamentals/databinding.md)ドキュメント。
+詳細についてを参照してください、[テーブル ビューのデータ バインド](~/mac/app-fundamentals/databinding.md#Table_View_Data_Binding)のセクション、[データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)ドキュメント。
 
 <a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.Mac アプリケーションでテーブルのビューの操作についての詳細を取得しました。 おにより、さまざまな種類を説明し、テーブルのビューを作成し、Xcode のインターフェイスのビルダーでテーブルのビューを管理する方法および c# コードで、テーブルのビューを使用する方法の使用します。
+この記事では、Xamarin.Mac アプリケーションでテーブルのビューの使用方法について詳しく説明をしました。 さまざまな種類を説明し、テーブルのビューを作成し、Xcode の Interface Builder でのテーブル ビューを維持する方法および c# コードでテーブルのビューを操作する方法を使用します。
 
 ## <a name="related-links"></a>関連リンク
 

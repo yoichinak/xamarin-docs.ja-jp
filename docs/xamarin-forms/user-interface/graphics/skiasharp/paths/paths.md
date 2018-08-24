@@ -1,44 +1,44 @@
 ---
-title: SkiaSharp におけるパスの基本事項
-description: この記事では、接続されている直線と曲線を組み合わせる場合の SkiaSharp SKPath オブジェクトについて説明し、サンプル コードを示します。
+title: SkiaSharp のパスの基礎
+description: この記事では、接続されている直線と曲線を結合するための SkiaSharp SKPath オブジェクトについて説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 2fc492f723a7a009da506d241ddf2e8459908633
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3c07614c12fb503638d3d5e63b24eb5367ba691a
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244046"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615536"
 ---
-# <a name="path-basics-in-skiasharp"></a>SkiaSharp におけるパスの基本事項
+# <a name="path-basics-in-skiasharp"></a>SkiaSharp のパスの基礎
 
-_接続されている直線と曲線を組み合わせる場合の SkiaSharp SKPath オブジェクトを探索します。_
+_接続された直線と曲線を結合するための SkiaSharp SKPath オブジェクトを詳細します。_
 
-グラフィックス パスの最も重要な機能の 1 つは、複数の行を接続するときと、ときに、接続されていないを定義する機能です。 これら 2 つの三角形の最上部が示すように、違いは非常に表示できます。
+グラフィックス パスの最も重要な機能の 1 つは、複数の行を接続するときとすると、接続できませんを定義する機能です。 違いは、これら 2 つの三角形の上部で示す非常に表示できます。
 
-![](paths-images/connectedlinesexample.png "接続および切断されている行の差異を示す 2 つの三角形")
+![](paths-images/connectedlinesexample.png "2 つの三角形を接続および切断されている行の間の差異の表示")
 
-グラフィックス パスがによってカプセル化、 [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)オブジェクト。 1 つまたは複数のコレクションが、パスが*輪郭*です。 コレクションは、各輪郭*接続*直線と曲線。 輪郭が相互に接続されていないが、視覚的に重複する可能性があります。 場合があります単一輪郭は、自体に重複できます。
+グラフィックス パスがカプセル化、 [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)オブジェクト。 パスを 1 つまたは複数のコレクションである*輪郭*します。 コレクションである各輪郭*接続*直線と曲線。 輪郭が相互に接続されていないが、視覚的に重複する必要があります。 場合があります単一の輪郭が自体で重複ことができます。
 
-輪郭が通常の次のメソッドの呼び出しで始まる`SKPath`:
+輪郭が通常の次のメソッドの呼び出しで開始`SKPath`:
 
 - `MoveTo` 新しい輪郭を開始するには
 
-そのメソッドに引数がいずれかを示すことができます、単一のポイントでは、`SKPoint`値または個別の X と Y 座標します。 `MoveTo`呼び出しが、先頭の輪郭と最初のポイントを確立*現在ポイント*です。 行または現在のポイントから新しい点となると、メソッドで指定したポイントに曲線の輪郭を続行する次のメソッドを呼び出すことができます。
+メソッドに引数が 1 つのポイントとして表すことができます、`SKPoint`値または個別 X と Y 座標します。 `MoveTo`の呼び出しによって確立輪郭と、初期の先頭にあるポイント*現在ポイント*します。 行または現在の新しい点となると、メソッドで指定したポイントに現在のポイントから曲線の輪郭を続行するのには、次のメソッドを呼び出すことができます。
 
 - `LineTo` 直線をパスに追加するには
 - `ArcTo` 円または楕円の円周上の行には、円弧を追加します
 - `CubicTo` 3 次ベジエ スプラインを追加するには
 - `QuadTo` 2 次ベジエ スプラインを追加するには
-- `ConicTo` 円錐曲線のセクションでは (省略記号ボタン、parabolas、および hyperbolas) を正確に表示できる合理性のある 2 次ベジエ スプラインを追加するには
+- `ConicTo` 円錐のセクションでは (省略記号、放物線、および hyperbolas) で表示できる正確に合理的な二次ベジエ スプラインを追加するには
 
-これら 5 つのメソッドのいずれには、直線または曲線を記述するために必要なすべての情報が含まれています。 これらの 5 つメソッドと連携します直前にあるメソッドの呼び出しによって確立された現在のポイント。 たとえば、`LineTo`メソッドは曲線を直線に基づいて、現在のポイントので、パラメーターを追加`LineTo`ポイントは 1 つだけです。
+これら 5 つのメソッドのいずれには、直線または曲線を記述するために必要なすべての情報が含まれています。 これら 5 つのメソッドのそれぞれは、直前にあるメソッドの呼び出しによって確立された現在の点と組み合わせて動作します。 たとえば、`LineTo`メソッドに基づいて追加します直線輪郭を現在のポイントので、パラメーターを`LineTo`ポイントは 1 つのみです。
 
-`SKPath`クラスもが、これら 6 つのメソッドとして同じ名前を持つメソッドを定義、`R`先頭に。
+`SKPath`クラスもこれら 6 つの方法としては、同じ名前を持つメソッドを定義、`R`先頭。
 
 - `RMoveTo`
 - `RLineTo`
@@ -47,11 +47,11 @@ _接続されている直線と曲線を組み合わせる場合の SkiaSharp SK
 - `RQuadTo`
 - `RConicTo`
 
-`R`の略*相対*です。 対応することがなくメソッドと同じ構文がある、`R`が現在のポイントに対してはします。 これらは、パスを複数回呼び出すメソッド内の類似した部分を描画するために便利です。
+`R`略*相対*します。 なく対応するメソッドと同じ構文がある、`R`は、現在の点を基準とします。 これらは、メソッドを複数回呼び出すことで、パスの類似した部分を描画するのに便利です。
 
-輪郭が別の呼び出しで終わる`MoveTo`または`RMoveTo`、新しい輪郭またはへの呼び出しを開始する`Close`輪郭を終了します。 `Close`メソッドに自動的に、輪郭の最初のポイントに現在の位置から、直線を追加し、パスとしてマークを閉じると、任意ストローク線端なしに描画されることを意味します。
+別の呼び出しを終わる輪郭`MoveTo`または`RMoveTo`、新しい輪郭またはへの呼び出しを開始する`Close`輪郭を終了します。 `Close`メソッドに自動的に現在のポイントから直線、曲線の最初のポイントを追加し、パスとしてマークを閉じると、つまり、すべてのストローク キャップせずレンダリングされます。
 
-オープンおよびクローズされた輪郭の違いを示す、 **2 つの三角形輪郭**ページを使用して、 `SKPath` 2 つの三角形を表示するために 2 つの輪郭を使用したオブジェクト。 最初の輪郭が開いていて、2 つ目が閉じられます。 ここでは、 [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs)クラス。
+オープンおよびクローズされた輪郭の違いを示します、 **2 つの三角形の輪郭**ページの使用、 `SKPath` 2 つの三角形を表示するために 2 つの輪郭を持つオブジェクト。 最初の輪郭が開いており、2 つ目が終了します。 ここでは、 [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -97,15 +97,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-最初の輪郭への呼び出しから成る[ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) X と Y 座標を使用してではなく、`SKPoint`値の 3 つの呼び出し後に[ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/)の 3 つの辺を描画する、三角形です。 2 番目の輪郭への 2 つの呼び出しがある`LineTo`線への呼び出しを完了するが、 [ `Close`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/)輪郭を終了します。 違いは重要では。
+最初の輪郭の呼び出しから成る[ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) X と Y 座標を使用してなく`SKPoint`値の 3 つの呼び出し後に[ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/)の 3 つの辺を描画するために、三角形です。 2 番目の輪郭が 2 つしか呼び出し`LineTo`への呼び出しで輪郭を終了するが、 [ `Close`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/)輪郭を終了します。 違いは重要では。
 
-[![](paths-images/twotrianglecontours-small.png "2 つの三角形の輪郭のページのスクリーン ショットをトリプル")](paths-images/twotrianglecontours-large.png#lightbox "2 つの三角形輪郭ページのトリプル スクリーン ショット")
+[![](paths-images/twotrianglecontours-small.png "2 つの三角形の輪郭のページのスクリーン ショットをトリプル")](paths-images/twotrianglecontours-large.png#lightbox "2 つの三角形の輪郭のページの 3 倍になるスクリーン ショット")
 
-ご覧のように、最初の輪郭明らかに一連の 3 つの接続された線は先頭と末尾にアクセスできなかった。 上部にある 2 つの行が重複します。 2 番目の輪郭が明らかに閉じられ、以下のいずれかで完了しました`LineTo`ためにを呼び出し、`Close`メソッドが自動的に輪郭を閉じるには最後の行を追加します。
+ご覧のとおり、最初の輪郭は明らかに一連の 3 つの接続線ですが先頭と末尾が接続されません。 上部にある 2 つの行が重複します。 2 番目の輪郭が明らかに閉じられるし、少ないのいずれかで完了しました`LineTo`ためにを呼び出し、`Close`メソッドが自動的に輪郭を閉じる最後の行を追加します。
 
-`SKCanvas` 1 つだけ定義[ `DrawPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawPath/p/SkiaSharp.SKPath/SkiaSharp.SKPaint/)メソッド、このデモで呼び出される 2 回入力し、パスの境界線の描画にします。 すべての輪郭が入力を終了していないものもされます。 閉じられたパスの入力のために、直線は、始点と終点の輪郭の間に存在すると見なされます。 最後に削除する場合`LineTo`から最初の輪郭、または削除する、`Close`はのみに 2 つの辺を三角形の場合と同様に格納する、2 番目の輪郭各輪郭からの呼び出し。
+`SKCanvas` 1 つだけ定義[ `DrawPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawPath/p/SkiaSharp.SKPath/SkiaSharp.SKPaint/)メソッド、このデモで 2 回呼び出されるを入力し、パスのストロークを描画します。 すべての輪郭がいっぱいが閉じている場合でもです。 閉じられていないパスの入力のために、直線が開始し、輪郭の始点と終点の間に存在すると見なされます。 最後を削除する場合`LineTo`最初の輪郭または削除から、`Close`のみ両側が三角形の場合と同様に入力する 2 つ目の輪郭の各輪郭からの呼び出しが必要があります。
 
-`SKPath` その他の多くのメソッドやプロパティを定義します。 次の方法では、終了または方法によっては、終了していない可能性がありますパスに全体の輪郭を追加します。
+`SKPath` その他の多くのメソッドとプロパティを定義します。 次のメソッドは、閉じているか、メソッドによって終了していない可能性がありますパスに全体の輪郭を追加します。
 
 - `AddRect`
 - [`AddRoundedRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddRoundedRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPathDirection/)
@@ -115,15 +115,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - `AddPath` 現在のパスに別のパスを追加するには
 - [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) 逆の順序で別のパスを追加するには
 
-注意してください、`SKPath`オブジェクト定義のみ geometry&mdash;一連のポイントとの接続。 場合にのみ、`SKPath`と組み合わせて、`SKPaint`オブジェクトが特定の色や線幅などのレンダリングにパスします。 またを注意してください、`SKPaint`オブジェクトに渡される、`DrawPath`メソッドは、パス全体の特性を定義します。 いくつかの色を必要とするものを描画する場合は、それぞれの色の独立したパスを使用する必要があります。
+注意を`SKPath`オブジェクト定義のジオメトリを&mdash;一連のポイントとの接続。 場合にのみ、`SKPath`を組み合わせて、`SKPaint`オブジェクトが特定の色、線の幅などのレンダリング パス。 また、ことに注意、`SKPaint`オブジェクトに渡される、`DrawPath`メソッドは、パス全体の特性を定義します。 いくつかの色を必要とする何かを描画する場合は、各色の別のパスを使用する必要があります。
 
-2 本の線の間の接続の外観がによって定義された線幅を開始および行の末尾の外観が定義されていると同様、*ストローク結合*です。 これの設定を指定する、 [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/)のプロパティ`SKPaint`のメンバーに、 [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/)列挙します。
+2 つの行の間の接続の外観が定義されている先頭と末尾の行の外観を定義している線の幅と同様、*ストローク結合*します。 これを設定して指定する、 [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/)プロパティの`SKPaint`のメンバーに、 [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/)列挙型。
 
-- [`Miter`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Miter/) いや結合
-- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) 角丸の結合
-- [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) 切り詰めるオフ結合
+- [`Miter`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Miter/) 会議の参加
+- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) 丸みのある結合
+- [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) 細分化オフ結合
 
-**ストローク結合**番組のようなコードとの結合を描くこれら 3 つのページ、**ストローク Cap**ページ。 これは、`PaintSurface`内のイベント ハンドラー、 [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs)クラス。
+**ストローク結合**ページこれら 3 つのストロークのようなコードとの結合を示しています、**ストローク キャップ**ページ。 これは、`PaintSurface`内のイベント ハンドラー、 [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs)クラス。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -187,14 +187,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-3 つのプラットフォームで実行されているプログラムを次に示します。
+次の 3 つのプラットフォームで実行されるプログラムを次に示します。
 
-[![](paths-images/strokejoins-small.png "トリプル ページのスクリーン ショット、ストロークの結合")](paths-images/strokejoins-large.png#lightbox "トリプル ページのスクリーン ショット、ストロークの結合")
+[![](paths-images/strokejoins-small.png "ストロークの結合 ページのスクリーン ショットをトリプル")](paths-images/strokejoins-large.png#lightbox "3 倍になるページのスクリーン ショット、ストロークの結合")
 
-マイター結合は、行の接続先シャープなポイントで構成されます。 2 つの行は、小さな角度で参加するときにマイター結合がかなり長くなることができます。 極端に長くマイター結合を回避するのには、マイター結合の長さの値によって制限されます、 [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/)プロパティ`SKPaint`です。 この長さを超えるマイター結合が切り取られるベベルにします。
+マイター結合は、行の接続先シャープなポイントで構成されます。 2 つの行は、小さい角度に参加させる、マイター結合は非常に長くなります。 極端に長いマイター結合を防ぐためには、マイター結合の長さがの値によって制限されます、 [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/)プロパティの`SKPaint`します。 この長さを超えるマイター結合はベベル結合に切り取ったします。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

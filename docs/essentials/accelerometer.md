@@ -1,39 +1,39 @@
 ---
 title: 'Xamarin.Essentials: 加速度計'
-description: Xamarin.Essentials で加速度計クラスでは、次の 3 つの次元空間内のデバイスの高速化を示すデバイスの加速度計センサーを監視できます。
+description: Xamarin.Essentials の加速度計クラスでは、デバイスの加速を 3 つの次元空間で示す、デバイスの加速度計センサーを監視できます。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 53e7ca70184270662d27043387da836ad44432fe
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947310"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40184429"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: 加速度計
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**加速度計**クラスでは、次の 3 つの次元空間内のデバイスの高速化を示すデバイスの加速度計センサーを監視できます。
+**加速度計**クラスでは、デバイスの加速を 3 つの次元空間で示す、デバイスの加速度計センサーを監視できます。
 
-## <a name="using-accelerometer"></a>加速度計を使用します。
+## <a name="using-accelerometer"></a>加速度計の使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-加速度計機能が呼び出すことによって、`Start`と`Stop`アクセラレータへの変更をリッスンするメソッド。 加えた変更は通過して送信、`ReadingChanged`イベント。 使用例を次に示します。
+加速度計の機能は、加速度計の変更をリッスンする `Start` と `Stop` のメソッドを呼び出すことで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
 
 ```csharp
 
 public class AccelerometerTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public AccelerometerTest()
     {
@@ -41,14 +41,14 @@ public class AccelerometerTest
         Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
     }
 
-    void Accelerometer_ReadingChanged(AccelerometerChangedEventArgs e)
+    void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
     {
         var data = e.Reading;
         Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
         // Process Acceleration X, Y, and Z
     }
 
-    public void ToggleAcceleromter()
+    public void ToggleAccelerometer()
     {
         try
         {
@@ -69,23 +69,23 @@ public class AccelerometerTest
 }
 ```
 
-加速度計の測定値を G. で示されますG が gravitation の単位を以下に、地球の重力フィールドに作用する強制 (9.81 m/s ^2)。
+加速度計の測定値は G の単位で報告されます。A G は地球の重力場にかかる重力 (9.81 m/s^2) と同等の重力の単位です。
 
-座標システムは、その既定の向きで、電話の画面を基準と定義されます。 デバイスの画面の向きが変更されたときに、軸は交換されません。
+座標系は携帯電話の既定の画面の向きを基準にして定義されます。 デバイスの画面の向きが変わっても軸は切り替えられません。
 
-X 軸は水平方向と、右側にポイントして、Y 軸は縦方向上を向きし、画面の前面の外側をポイントして、Z 軸。 このシステムで座標は画面の背景には負の Z 値があります。
+X 軸は水平方向で右に、Y 軸は垂直方向で上に、Z 軸は画面前面から外側に向かいます。 このシステムでは画面より後ろにある座標の Z 値は負の値になります。
 
 次に例を示します。
 
-* デバイスは、フラット テーブル上にあるし、その左側にある右方向にプッシュされます、x の高速化の値が正の値。
+* テーブルの上に水平に置いたデバイスを、左側から右側に向かって押した場合、X の加速値は正の値になります。
 
-* 高速化の値は +1.00 G でフラット テーブルで、デバイスがある場合または (9.81 m/s + ^2)、対応デバイスの高速化する (0 m/秒 ^2) 重力の force マイナス (-9.81 m/秒 ^2) と G. のように正規化されました。
+* デバイスがテーブルの上に水平に置かれている場合、加速値は +1.00 G または (+9.81 m/s^2) になります。これは、デバイスの加速 (0 m/s^2) から重力 (-9.81 m/s^2) を引き、G の単位で正規化したものに相当します。
 
-* デバイスが平らなテーブル上にあるし、高速化の m/秒の空の方に移動されますが ^2 の高速化の値は、デバイスの高速化に対応する A + 9.81 と等しく (+ m/s ^2) 重力の force マイナス (-9.81 m/秒 ^2) と G. で正規化されました。 
+* テーブルの上に水平に置いたデバイスを加速 A m/s^2 で上に持ち上げた場合、加速値は A+9.81 と同等になります。これは、デバイスの加速 (+A m/s^2) から重力 (-9.81 m/s^2) を引き、G の単位で正規化したものに相当します。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
 - [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [加速度計 API ドキュメント](xref:Xamarin.Essentials.Accelerometer)
+- [加速度計の API ドキュメント](xref:Xamarin.Essentials.Accelerometer)

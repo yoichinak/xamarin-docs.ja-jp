@@ -1,76 +1,76 @@
 ---
 title: Xamarin.Mac の macOS ユーザー インターフェイス コントロール
-description: このドキュメントには、Xamarin.Mac 開発者が利用できる各種のユーザー インターフェイス コントロールについて説明するガイドへのリンクがします。 リンクされたコンテンツは、windows、ダイアログ ボックス、アラート、メニューのツールバー、テーブルのビュー、アウトライン ビュー、および詳細を確認します。
+description: このドキュメントは、Xamarin.Mac 開発者が利用できる各種のユーザー インターフェイス コントロールについて説明するガイドにリンクしています。 リンクされたコンテンツは、windows、ダイアログ、アラート、メニューのツールバー、テーブルのビュー、アウトライン ビュー、および詳細の説明です。
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b2392f05a03015f903918f15013919be14b99292
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792955"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40250988"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin.Mac の macOS ユーザー インターフェイス コントロール
 
-_この記事には、さまざまな macOS UI コントロールについて説明するガイドへのリンクがします。_
+_この記事では、さまざまな macOS UI コントロールについて説明するガイドを使用するページにリンクしています。_
 
-アクセス権がある Xamarin.Mac アプリケーションでは、c# と .NET で作業するときに、同じユーザー インターフェイス コントロールで作業する開発者*Objective C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、ユーザー インターフェイスを維持 (または必要に応じて c# コードで直接作成すること)。
+アクセス権がある、Xamarin.Mac アプリケーションで c# と .NET を使用する場合に、同じユーザー インターフェイス コントロールで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ユーザー インターフェイスを維持 (またはに応じて c# コードで直接作成する)。
 
-以下に示すガイドでは、アプリケーションで Xamarin.Mac macOS UI 要素の操作に関する詳細情報を提供します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念とすべての記事で使用する方法について説明します。
+以下のガイドでは、Xamarin.Mac アプリケーションでの macOS UI 要素の使用に関する詳細情報を提供します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[Outlet と Action](~/mac/get-started/hello-mac.md#outlets-and-actions)ほどのセクションでは、主要な概念とすべての記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)について説明しますと同様に、ドキュメント、`Register`と`Export`Objective C のオブジェクトと UI 要素に、c# クラスをワイヤ アップに使用する属性。
+見てしたい場合があります、 [c# を公開するクラス/メソッドを OBJECTIVE-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c)のセクション、 [Xamarin.Mac の内部](~/mac/internals/how-it-works.md)、について説明しますと同様に、ドキュメント、`Register`と`Export`Objective C のオブジェクトと UI 要素を c# クラスをワイヤ アップに使用する属性。
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
-この記事では、windows と Xamarin.Mac アプリケーション内のパネルでの作業について説明します。 作成してウィンドウと Xcode とインターフェイスのビルダー、読み込みのウィンドウ内のパネルと .storyboard または .xib ファイルからのパネルを維持する、windows を使用して c# コードでの windows への応答方法を説明します。
+この記事では、ウィンドウとパネルは、Xamarin.Mac アプリケーションでの操作について説明します。 作成する、windows および Xcode と Interface Builder、読み込みのウィンドウ内のパネルとパネル .storyboard または .xib ファイルからのメンテナンスし windows を使用して、c# コードでウィンドウへの応答がについて説明します。
 
 ## <a name="dialogsmacuser-interfacedialogmd"></a>[ダイアログ](~/mac/user-interface/dialog.md)
 
-この記事では、ダイアログ ボックスとモーダル ウィンドウ Xamarin.Mac アプリケーションでの操作について説明します。 これは、作成し、Xcode とインターフェイスのビルダー、標準のダイアログを使用し、表示と c# コードでの windows への応答でモーダル ウィンドウの管理について説明します。
+この記事では、ダイアログとモーダル ウィンドウ、Xamarin.Mac アプリケーションでの操作について説明します。 作成および保守 Xcode と Interface Builder、標準のダイアログを使用し、表示と c# コードでの windows 応答でモーダル ウィンドウについて説明します。
 
 ## <a name="alertsmacuser-interfacealertmd"></a>[アラート](~/mac/user-interface/alert.md)
 
-この記事では、Xamarin.Mac アプリケーションでアラートの使用について説明します。 作成して c# コードからのアラートを表示してアラートへの対応方法を説明します。
+この記事では、Xamarin.Mac アプリケーションでのアラートの操作について説明します。 作成、c# コードからのアラートの表示とアラートへの対応について説明します。
 
 ## <a name="menusmacuser-interfacemenumd"></a>[メニュー](~/mac/user-interface/menu.md)
 
-メニューは、Mac アプリケーションのユーザー インターフェイスのさまざまな部分で使用します。ポップアップ メニューおよびコンテキスト メニューを画面の上部にあるアプリケーションのメイン メニューから表示できる任意の場所のウィンドウでします。 メニューは、Mac アプリケーションのユーザー エクスペリエンスの不可欠な部分です。 この記事と Cocoa メニュー Xamarin.Mac アプリケーションでの作業について説明します。
+メニューを使用して、Mac アプリケーションのユーザー インターフェイスのさまざまな部分でアプリケーションのメイン メニューのポップアップ メニューとコンテキスト メニュー ウィンドウをどこにでも表示できる画面の上部にあります。 メニューは、Mac アプリケーションのユーザー エクスペリエンスの不可欠な部分です。 この記事では、Xamarin.Mac アプリケーションでの Cocoa メニューの操作について説明します。
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[標準コントロール](~/mac/user-interface/standard-controls.md)
 
-ボタン、ラベル、テキスト フィールド、チェック ボックス、および Xamarin.Mac アプリケーションでセグメント化されたコントロールなどの標準の AppKit コントロールを使用します。 このガイドでは、Xcode のインターフェイスのビルダーでのユーザー インターフェイスのデザインに追加すること、コンセントと操作を使用してコードには公開および c# コードで AppKit コントロールの操作について説明します。
+ボタン、ラベル、テキスト フィールド、チェック ボックス、および、Xamarin.Mac アプリケーションでのセグメント付きコントロールなどの標準の AppKit コントロールを使用します。 このガイドでは、Xcode の Interface Builder でのユーザー インターフェイスのデザインに追加すること、outlet と action を使用してコードに公開すること、および c# コードでの AppKit コントロールの操作について説明します。
 
 ## <a name="toolbarsmacuser-interfacetoolbarmd"></a>[ツールバー](~/mac/user-interface/toolbar.md)
 
-この記事では、ツールバーを Xamarin.Mac アプリケーションでの作業について説明します。 作成して、Xcode とインターフェイスのビルダーのツールバーを維持する方法を説明するコード コンセントとアクションを使用して、有効化しツールバー項目を無効にするおよび c# コードでツールバー項目に最後に応答してツールバー項目を公開する方法です。
+この記事では、Xamarin.Mac アプリケーションでツールバーの使用について説明します。 作成すると、Xcode と Interface Builder でツールバーを維持管理コード outlet と action を使用して、有効にすると、ツールバーの項目を無効にして、最後に c# コードでのツールバー項目への応答にツールバー項目を公開する方法。
 
-## <a name="table-viewsmacuser-interfacetable-viewmd"></a>[テーブルのビュー](~/mac/user-interface/table-view.md)
+## <a name="table-viewsmacuser-interfacetable-viewmd"></a>[テーブル ビュー](~/mac/user-interface/table-view.md)
 
-この記事では、表形式ビュー Xamarin.Mac アプリケーションでの操作について説明します。 作成して、Xcode とインターフェイスのビルダーでテーブルのビューを維持する方法を説明テーブル ビューを公開するには、コードをコンセントとアクションを使用する項目、テーブルのビューを設定して c# コードでのテーブル ビューの項目に応答します。
+この記事では、Xamarin.Mac アプリケーションでのテーブル ビューの使用について説明します。 作成すると、Xcode と Interface Builder では、テーブルのビューを維持管理方法、テーブル ビューを公開する outlet と action を使用してコードに項目をテーブルのビューを設定し、c# コードでのテーブル ビュー項目への応答します。
 
 ## <a name="outline-viewsmacuser-interfaceoutline-viewmd"></a>[アウトライン ビュー](~/mac/user-interface/outline-view.md)
 
-この記事では、Xamarin.Mac アプリケーションでのアウトライン ビューでの作業について説明します。 作成して、Xcode とインターフェイスのビルダーのアウトライン表示を維持する方法を説明、アウトライン表示を公開するには、コードをコンセントとアクションを使用する項目、アウトライン モードを設定して c# コードでアイテムの表示を説明する応答します。
+この記事では、Xamarin.Mac アプリケーションでのアウトライン ビューの使用について説明します。 作成すると、Xcode と Interface Builder でのアウトライン ビューを維持管理アウトライン ビューを公開する outlet と action を使用してコードに項目を方法、アウトライン ビューを設定し、応答を c# コードでアイテムの表示を説明します。
 
 ## <a name="source-listsmacuser-interfacesource-listmd"></a>[ソース リスト](~/mac/user-interface/source-list.md)
 
-この記事では、ソース リスト Xamarin.Mac アプリケーションでの作業について説明します。 作成して、Xcode とインターフェイスのビルダーのソースの一覧を維持する方法を説明コンセントとアクションを使用し、ソース リストを設定し、c# コードでソース一覧の項目への応答コードをソース一覧の項目を公開する方法です。
+この記事では、Xamarin.Mac アプリケーションでのソース リストを使用した作業について説明します。 作成すると、Xcode と Interface Builder では、ソース リストを維持管理 outlet と action を使用し、ソース リストを設定して、c# コードでのソース リスト項目への応答コードをソース リスト項目を公開する方法。
 
 ## <a name="collection-viewsmacuser-interfacecollection-viewmd"></a>[コレクション ビュー](~/mac/user-interface/collection-view.md)
 
-この記事では、アプリケーションで Xamarin.Mac コレクション ビューの使用について説明します。 作成して、Xcode とインターフェイスのビルダー コレクション ビューを維持する方法を説明コレクション ビューを公開するには、コードをコンセントとアクションを使用する項目、コレクション ビューを設定してコレクション ビューの c# コードで応答します。
+この記事では、Xamarin.Mac アプリケーションでのコレクション ビューの使用について説明します。 作成すると、Xcode と Interface Builder では、コレクション ビューを維持管理、コレクション ビューを公開する outlet と action を使用してコードに項目をコレクションのビューの設定とコレクション ビューは、c# コードで応答します。
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[カスタム コントロールの作成](~/mac/user-interface/custom-controls.md)
 
-ここでは、カスタム ユーザー インターフェイス コントロールの作成について説明 (から継承することによって`NSControl`)、コントロールは、カスタムのインターフェイスを描画し、Xcode のインターフェイスのビルダーを使用できるカスタムの動作を作成します。
+この記事では、カスタム ユーザー インターフェイス コントロールの作成では (から継承することによって`NSControl`)、コントロールのカスタム インターフェイスを描画し、Xcode の Interface Builder で使用できるカスタム アクションを作成します。
 
 ## <a name="mac-samples-gallery"></a>Mac サンプル ギャラリー
 
-見ることもお勧め、 [Mac サンプル ギャラリー](https://developer.xamarin.com/samples/mac/all/)です。 これには、さまざまな地上から Xamarin.Mac プロジェクトを迅速に取得するのに役立つ、すぐに使用できるコードが含まれます。
+見ることもお勧め、 [Mac サンプル ギャラリー](https://developer.xamarin.com/samples/mac/all/)します。 これには、すぐに使用できるコードを上手 Xamarin.Mac プロジェクトを迅速に取得するのに役立つ豊富なが含まれます。
 
 ## <a name="related-links"></a>関連リンク
 

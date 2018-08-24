@@ -62,11 +62,11 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Android で HeroImage コントロール") ![ ] (controls-images/heroimage-dark-android.png "android HeroImage コントロール")
+![](controls-images/heroimage-light-android.png "Android で HeroImage コントロール") ![](controls-images/heroimage-dark-android.png "android HeroImage コントロール")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "IOS で HeroImage コントロール") ![ ] (controls-images/heroimage-dark-ios.png "ios HeroImage コントロール")
+![](controls-images/heroimage-light-ios.png "IOS で HeroImage コントロール") ![](controls-images/heroimage-dark-ios.png "ios HeroImage コントロール")
 
 
 <a name="listitem" />
@@ -97,11 +97,11 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Android で ListItem コントロール") ![ ] (controls-images/listitem-dark-android.png "android ListItem コントロール")
+![](controls-images/listitem-light-android.png "Android で ListItem コントロール") ![](controls-images/listitem-dark-android.png "android ListItem コントロール")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "IOS で ListItem コントロール") ![ ] (controls-images/listitem-dark-ios.png "ios ListItem コントロール")
+![](controls-images/listitem-light-ios.png "IOS で ListItem コントロール") ![](controls-images/listitem-dark-ios.png "ios ListItem コントロール")
 
 
 ## <a name="custom-control-example"></a>カスタム コントロールの例
@@ -128,11 +128,11 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Android で CardView カスタム コントロール") ![ ] (controls-images/cardview-dark-android.png "android CardView カスタム コントロール")
+![](controls-images/cardview-light-android.png "Android で CardView カスタム コントロール") ![](controls-images/cardview-dark-android.png "android CardView カスタム コントロール")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "IOS でのカスタム コントロールの CardView") ![ ] (controls-images/cardview-dark-ios.png "ios CardView カスタム コントロール")
+![](controls-images/cardview-light-ios.png "IOS でのカスタム コントロールの CardView") ![](controls-images/cardview-dark-ios.png "ios CardView カスタム コントロール")
 
 <a name="custom" />
 

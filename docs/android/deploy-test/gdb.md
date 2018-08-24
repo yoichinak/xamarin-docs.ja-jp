@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 1292db3534570dace90639958a3d5be9f6466716
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 886cc1de87bd8225bd0389d2e7b84b546ffb39d7
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765247"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241498"
 ---
 # <a name="gdb"></a>GDB
 
@@ -145,7 +145,7 @@ GNU gdb (GDB) 7.3.1-gg2
 2.  有効なアプリ デバッグ。
 3.  アクセス可能な `gdbserver`。
 
-アプリ デバッグでは `INTERNET` アクセス許可は既定で有効になります。 アプリケーションにまだ存在しない場合は、**Properties/AndroidManifest.xml** を編集するか、[[プロジェクトのプロパティ]](https://developer.xamarin.com/recipes/android/general/projects/add_permissions_to_android_manifest/) を編集して追加することができます。
+アプリ デバッグでは `INTERNET` アクセス許可は既定で有効になります。 アプリケーションにまだ存在しない場合は、**Properties/AndroidManifest.xml** を編集するか、[[プロジェクトのプロパティ]](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest) を編集して追加することができます。
 
 アプリ デバッグは、[ApplicationAttribute.Debugging](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Debuggable/) カスタム属性プロパティを `true` に設定するか、次のように **Properties/AndroidManifest.xml** を編集して `//application/@android:debuggable` 属性を `true` に設定することで有効にすることできます。
 
@@ -163,7 +163,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` が機能しない
 
-`mono_pmip` 関数 ([マネージ スタック フレームを取得する](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
+`mono_pmip` 関数 ([マネージド スタック フレームを取得する](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
 
 `libmonosgen-2.0.so` にある関数の呼び出しを有効にするには、次のようにターゲット デバイスから `gdb-symbols` ディレクトリにコピーします。
 

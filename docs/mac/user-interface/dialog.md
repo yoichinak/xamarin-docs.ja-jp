@@ -1,138 +1,138 @@
 ---
 title: Xamarin.Mac でダイアログ ボックス
-description: この記事では、ダイアログ ボックスとモーダル ウィンドウ Xamarin.Mac アプリケーションでの操作について説明します。 これは、標準のダイアログの操作と c# コードでこれらのコントロールと対話する、Xcode とインターフェイスのビルダーでモーダル ウィンドウを作成するについて説明します。
+description: この記事では、ダイアログとモーダル ウィンドウ、Xamarin.Mac アプリケーションでの操作について説明します。 これは、Xcode とインターフェイス ビルダーで標準のダイアログを使用して、c# コードでこれらのコントロールと対話するモーダル ウィンドウの作成について説明します。
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 7d9a93c8503d7e25f098e871378a22455b597e90
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2f28b52b4904b73f97cd9da575e90ef583e443da
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792695"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40250959"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.Mac でダイアログ ボックス
 
-同じダイアログおよびモーダル ウィンドウへのアクセスがある Xamarin.Mac アプリケーションでは、c# と .NET で作業するときをで作業する開発者*OBJECTIVE-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_を作成し、モーダル ウィンドウの管理 (または必要に応じて c# コードで直接作成すること)。
+同じダイアログとモーダル Windows へのアクセスがある、Xamarin.Mac アプリケーションで c# と .NET を使用する場合をで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、モーダル、Windows の管理 (または必要に応じて c# コードで直接作成する)。
 
-ダイアログでは、ユーザー アクションへの応答に表示され、通常の方法のユーザーが操作を完了できますを提供します。 ダイアログ ボックスを終了する前に、ユーザーからの応答が必要です。
+ダイアログ ボックスでは、ユーザー アクションへの応答に表示され、通常の方法のユーザーは、操作を完了できますを提供します。 ダイアログ ボックスを閉じる前に、ユーザーからの応答が必要です。
 
-Windows は、(アプリケーションを続行する前に閉じる必要があります、エクスポート ダイアログ) などのモーダルまたはモードレスの状態 (などを同時に開いて複数のドキュメントを持つことができるテキスト エディター) で使用することができます。
+Windows は、(エクスポート ダイアログ アプリケーションを続行する前に閉じる必要がありますが) などのモーダルまたはモードレスの状態 (など複数のドキュメントを一度に開くことができますが、テキスト エディター) で使用できます。
 
-[![](dialog-images/dialog03.png "[開く] ダイアログ ボックス")](dialog-images/dialog03.png#lightbox)
+[![](dialog-images/dialog03.png "開く ダイアログ ボックス")](dialog-images/dialog03.png#lightbox)
 
-この記事で Xamarin.Mac アプリケーションでダイアログおよびモーダル ウィンドウの操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
+この記事では、Xamarin.Mac アプリケーションでダイアログとモーダルの Windows での操作の基本を説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[Outlet と Action](~/mac/get-started/hello-mac.md#outlets-and-actions)ほどのセクションでは、主要な概念と、この記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/OBJECTIVE-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`コマンドObjective C のオブジェクトと UI 要素に、c# クラスをワイヤ アップするために使用します。
+見てしたい場合があります、 [c# を公開するクラス/メソッドを OBJECTIVE-C](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac の内部](~/mac/internals/how-it-works.md)、について説明します、ドキュメント、`Register`と`Export`コマンドObjective C のオブジェクトと UI 要素を c# クラスをワイヤ アップするために使用します。
 
 <a name="Introduction_to_Dialogs" />
 
 ## <a name="introduction-to-dialogs"></a>ダイアログ ボックスの概要
 
-ダイアログ ボックスでは、(ファイルを保存する) などのユーザー アクションへの応答が表示され、そのアクションを完了するための手段を提供します。 ダイアログ ボックスを終了する前に、ユーザーからの応答が必要です。
+ダイアログ ボックスでは、(ファイルの保存) などのユーザー アクションへの応答に表示され、ユーザーがそのアクションを完了する方法を提供します。 ダイアログ ボックスを閉じる前に、ユーザーからの応答が必要です。
 
-Apple にに従っては、ダイアログを表示する次の 3 つの方法があります。
+に従って、Apple は、ダイアログを表示する 3 つの方法があります。
 
-- **ドキュメントのモーダル**-A ドキュメント モーダル ダイアログを防止、ユーザーは非表示にするまで、特定のドキュメント内の他の処理を実行します。
-- **アプリのモーダル**- アプリケーションのモーダル ダイアログを防止、ユーザーは非表示にするまで、アプリケーションと対話します。
-- **モードレス**A モードレス ダイアログ設定を変更するダイアログ ボックスで、ドキュメント ウィンドウとも対話中にユーザーを有効にします。
+- **ドキュメントのモーダル**-A ドキュメント モーダル ダイアログは非表示にするまでは、特定のドキュメント内の他の操作を行うことから、ユーザーをできないようにします。
+- **アプリのモーダル**- アプリのモーダル ダイアログ ボックスは非表示にするまで、アプリケーションとの対話から、ユーザーをできないようにします。
+- **モードレス**A モードレス ダイアログにより、ユーザーがドキュメント ウィンドウとも対話中に、ダイアログ ボックスで設定を変更します。
 
 ### <a name="modal-window"></a>モーダル ウィンドウ
 
 任意の標準`NSWindow`モーダルとして表示することによってカスタマイズされたダイアログとして使用できます。
 
-[![](dialog-images/modal01.png "例のモーダル ウィンドウ")](dialog-images/modal01.png#lightbox)
+[![](dialog-images/modal01.png "モーダル ウィンドウの例")](dialog-images/modal01.png#lightbox)
 
 ### <a name="document-modal-dialog-sheets"></a>ドキュメントのモーダル ダイアログ シート
 
-A_シート_ダイアログ ボックスを閉じる、まで、ウィンドウとの対話をしないように、特定のドキュメント ウィンドウにアタッチされているモーダル ダイアログ ボックスします。 シートは、元の現れたでき、1 つだけのシート ウィンドウを開いている任意の時点でウィンドウにアタッチされています。
+A_シート_ユーザーがダイアログ ボックスを閉じるまで、ウィンドウとの対話ができないように、特定のドキュメント ウィンドウに関連付けられているモーダル ダイアログ ボックスします。 シートが接続されている、ウィンドウから明らかになり、1 つだけのシートはいつでも、ウィンドウ用に開かれることができます。
 
 [![](dialog-images/sheet08.png "例のモーダル シート")](dialog-images/sheet08.png#lightbox)
 
 ### <a name="preferences-windows"></a>Windows の設定
 
-環境設定ウィンドウは、ユーザーの変更頻度が低いアプリケーションの設定を含むモードレス ダイアログです。 環境設定ウィンドウは、多くの場合、設定の異なるグループ間で切り替えるには、ユーザーを許可するツールバーを含めます。
+[Preferences] ウィンドウは、ユーザーの変更頻度の低いアプリケーションの設定を含むモードレス ダイアログです。 基本設定の Windows は、多くの場合、ユーザー設定の異なるグループ間で切り替えを許可するツールバーを含めます。
 
-[![](dialog-images/dialog02.png "例の基本設定 ウィンドウ")](dialog-images/dialog02.png#lightbox)
+[![](dialog-images/dialog02.png "基本設定ウィンドウの例")](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>[開く] ダイアログ
 
-開く ダイアログ ボックスは、ユーザーを見つけて、アプリケーションでアイテムを開く一貫した方法を示します。
+開く ダイアログ ボックスは、ユーザーを検索して、アプリケーションで項目を開くには、一貫した方法を示します。
 
 [![](dialog-images/dialog03.png "[開く] ダイアログ ボックス")](dialog-images/dialog03.png#lightbox)
 
 
-### <a name="print-and-page-setup-dialogs"></a>印刷とページ セットアップ ダイアログ
+### <a name="print-and-page-setup-dialogs"></a>印刷とページ設定ダイアログ ボックス
 
-標準の印刷 macOS およびを使用するすべてのアプリケーションで発生するページ セットアップ ダイアログ ボックスをユーザーが一貫した印刷できるように、アプリケーションを表示できます。
+macOS は、標準的な印刷を使用しているすべてのアプリケーションでの経験ページ セットアップ ダイアログをユーザーが一貫性のある印刷できるようにアプリケーションを表示できます。
 
-印刷 ダイアログ ボックスは、両方無料浮動 ダイアログ ボックスとして表示できます。
+印刷 ダイアログ ボックスは、両方の浮動無料のダイアログ ボックスとして表示できます。
 
-[![](dialog-images/print01.png "印刷ダイアログ ボックス")](dialog-images/print01.png#lightbox)
+[![](dialog-images/print01.png "[印刷] ダイアログ ボックス")](dialog-images/print01.png#lightbox)
 
-または、シートとして表示することができます。
+またははシートとして表示されます。
 
 [![](dialog-images/print02.png "印刷のシート")](dialog-images/print02.png#lightbox)
 
-ページの 設定 ダイアログ ボックスは、両方無料浮動 ダイアログ ボックスとして表示できます。
+ページの [設定] ダイアログ ボックスは、両方の浮動無料のダイアログ ボックスとして表示できます。
 
-[![](dialog-images/print03.png "ページの設定 ダイアログ ボックス")](dialog-images/print03.png#lightbox)
+[![](dialog-images/print03.png "ページ設定 ダイアログ")](dialog-images/print03.png#lightbox)
 
-または、シートとして表示することができます。
+またははシートとして表示されます。
 
 [![](dialog-images/print04.png "ページ セットアップ シート")](dialog-images/print04.png#lightbox)
 
 ### <a name="save-dialogs"></a>ファイルの保存
 
-[保存] ダイアログ ボックスでは、ユーザー アプリケーションの項目を保存する方法を統一できます。 [保存] ダイアログ ボックスが 2 つの状態:**最小限**(折りたたまれたとも呼ばれます)。
+[保存] ダイアログ ボックスは、ユーザーがアプリケーションの項目を保存する方法を統一できます。 保存ダイアログに 2 つの状態があります:**最小限**(折りたたまれているとも呼ばれます)。
 
 [![](dialog-images/save01.png "保存 ダイアログ")](dialog-images/save01.png#lightbox)
 
-および**展開**状態。
+および**Expanded**状態。
 
-[![](dialog-images/save02.png "展開保存ダイアログ")](dialog-images/save02.png#lightbox)
+[![](dialog-images/save02.png "広い保存ダイアログ")](dialog-images/save02.png#lightbox)
 
-**最小限**シートとして保存 ダイアログ ボックスを表示することも。
+**最小限**シートとして保存 ダイアログ ボックスを表示することもします。
 
-[![](dialog-images/save03.png "最小限のシート保存")](dialog-images/save03.png#lightbox)
+[![](dialog-images/save03.png "最小限のシートの保存")](dialog-images/save03.png#lightbox)
 
-同様、**展開**保存 ダイアログ ボックス。
+同様、 **Expanded**保存 ダイアログ ボックス。
 
-[![](dialog-images/save04.png "展開のシートを保存します。")](dialog-images/save04.png#lightbox)
+[![](dialog-images/save04.png "広いシートを保存します。")](dialog-images/save04.png#lightbox)
 
-詳細については、次を参照してください、[ダイアログ](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1)Apple のセクション[OS X のヒューマン インターフェイス ガイドライン。](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+詳細については、次を参照してください、[ダイアログ](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1)の Apple の「 [OS X ヒューマン インターフェイス ガイドライン。](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
 <a name="Adding_a_Modal_Window_to_a_Project" />
 
 ## <a name="adding-a-modal-window-to-a-project"></a>モーダル ウィンドウをプロジェクトに追加します。
 
-メイン ドキュメント ウィンドウとは別に Xamarin.Mac アプリケーションは、設定や検査パネルなどのユーザーにその他の種類のウィンドウを表示する必要があります。
+メイン ドキュメント ウィンドウとは別に、Xamarin.Mac アプリケーションは、基本設定や検査パネルなど、ユーザーに他の種類のウィンドウを表示する必要があります。
 
 新しいウィンドウを追加するには、次の操作を行います。
 
-1. **ソリューション エクスプ ローラー**を開き、 `Main.storyboard` Xcode のインターフェイスのビルダーで編集するためのファイルです。
+1. **ソリューション エクスプ ローラー**、オープン、 `Main.storyboard` Xcode の Interface Builder で編集するためのファイル。
 2. 新しいドラッグ**ビュー コント ローラー**デザイン サーフェイスに。
 
-    [![](dialog-images/new01.png "ライブラリからビュー コント ローラーを選択します。")](dialog-images/new01.png#lightbox)
-3. **Identity インスペクター**、入力`CustomDialogController`の**クラス名**: 
+    [![](dialog-images/new01.png "ビュー コント ローラーをライブラリから選択します。")](dialog-images/new01.png#lightbox)
+3. **Identity Inspector**、入力`CustomDialogController`の**クラス名**: 
 
     [![](dialog-images/new02.png "クラス名を設定します。")](dialog-images/new02.png#lightbox)
-4. Mac 用 Visual Studio に切り替えます、Xcode と同期し、作成できるように、`CustomDialogController.h`ファイル。
-5. Xcode に戻るし、インターフェイスをデザインします。 
+4. Visual Studio に切り替えて Mac、Xcode と同期し、作成を許可するよう、`CustomDialogController.h`ファイル。
+5. Xcode に戻りをインターフェイスをデザインします。 
 
-    [![](dialog-images/new03.png "Xcode で UI のデザイン")](dialog-images/new03.png#lightbox)
-6. 作成、**モーダル話題**ダイアログのウィンドウ ダイアログを開いて、UI 要素から、新しいビュー コント ローラーにコントロールをドラッグして、アプリのメイン ウィンドウからです。 割り当てる、**識別子** `ModalSegue`: 
+    [![](dialog-images/new03.png "Xcode では、UI の設計")](dialog-images/new03.png#lightbox)
+6. 作成、**モーダル セグエ**ダイアログのウィンドウにダイアログ ボックスが開きますされる UI 要素のコントロールをドラッグして新しいビュー コント ローラーへのアプリのメイン ウィンドウから。 割り当てる、**識別子** `ModalSegue`: 
 
-    [![](dialog-images/new06.png "モーダル segue")](dialog-images/new06.png#lightbox)
-6. いずれかのワイヤ アップ**アクション**と**コンセント**: 
+    [![](dialog-images/new06.png "モーダルのセグエ")](dialog-images/new06.png#lightbox)
+6. いずれかのワイヤ アップ**アクション**と**Outlet**: 
 
     [![](dialog-images/new04.png "アクションを設定します。")](dialog-images/new04.png#lightbox)
-6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-ように、`CustomDialogController.cs`次のようなファイルの内容。
+ように、`CustomDialogController.cs`ファイルの次のようになります。
 
 ```csharp
 using System;
@@ -220,9 +220,9 @@ namespace MacDialog
 }
 ```
 
-このコードは、タイトルと、ダイアログ ボックスの説明を設定するいくつかのプロパティとキャンセルまたは許容されるダイアログ ボックスに反応するためのいくつかのイベントを公開します。
+このコードは、タイトルと、ダイアログの説明を設定するいくつかのプロパティとキャンセルされたり、同意ダイアログに対応するためのいくつかのイベントを公開します。
 
-次に、編集、`ViewController.cs`ファイルを上書き、`PrepareForSegue`メソッドされ次のようになります。
+次に、編集、`ViewController.cs`ファイルで上書き、`PrepareForSegue`メソッドと、次のようになります。
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -245,41 +245,41 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-このコードは、ダイアログ ボックスに定義した Xcode のインターフェイスのビルダー segue を初期化し、タイトルと説明を設定します。 また、ダイアログ ボックスで、ユーザーは、選択を処理します。
+このコードでは、セグエをダイアログに Xcode の Interface Builder で定義を初期化し、タイトルと説明を設定します。 また、ユーザーがダイアログ ボックスで選択を処理します。
 
-アプリケーションを実行したり、カスタム ダイアログを表示できます。
+アプリケーションを実行してカスタム ダイアログを表示します。
 
 [![](dialog-images/new05.png "ダイアログ ボックスの例")](dialog-images/new05.png#lightbox)
 
-詳細については、Xamarin.Mac アプリケーションで windows を使用して、参照してください、[ウィンドウの操作](~/mac/user-interface/window.md)ドキュメント。
+詳細については、Xamarin.Mac アプリケーションで windows を使用して、参照してください、 [Windows 操作](~/mac/user-interface/window.md)ドキュメント。
 
 <a name="Creating_a_Custom_Sheet" />
 
 ## <a name="creating-a-custom-sheet"></a>カスタムのシートの作成
 
-A_シート_ダイアログ ボックスを閉じる、まで、ウィンドウとの対話をしないように、特定のドキュメント ウィンドウにアタッチされているモーダル ダイアログ ボックスします。 シートは、元の現れたでき、1 つだけのシート ウィンドウを開いている任意の時点でウィンドウにアタッチされています。 
+A_シート_ユーザーがダイアログ ボックスを閉じるまで、ウィンドウとの対話ができないように、特定のドキュメント ウィンドウに関連付けられているモーダル ダイアログ ボックスします。 シートが接続されている、ウィンドウから明らかになり、1 つだけのシートはいつでも、ウィンドウ用に開かれることができます。 
 
 Xamarin.Mac でカスタムのシートを作成するには次の操作してみましょう。
 
-1. **ソリューション エクスプ ローラー**を開き、 `Main.storyboard` Xcode のインターフェイスのビルダーで編集するためのファイルです。
+1. **ソリューション エクスプ ローラー**、オープン、 `Main.storyboard` Xcode の Interface Builder で編集するためのファイル。
 2. 新しいドラッグ**ビュー コント ローラー**デザイン サーフェイスに。
 
-    [![](dialog-images/new01.png "ライブラリからビュー コント ローラーを選択します。")](dialog-images/new01.png#lightbox)
-2. ユーザー インターフェイスを設計します。
+    [![](dialog-images/new01.png "ビュー コント ローラーをライブラリから選択します。")](dialog-images/new01.png#lightbox)
+2. ユーザー インターフェイスを設計するには。
 
     [![](dialog-images/sheet01.png "UI の設計")](dialog-images/sheet01.png#lightbox)
-3. 作成、**シート話題**メイン ウィンドウに新しいビュー コント ローラーから。 
+3. 作成、**シート セグエ**メイン ウィンドウに新しいビュー コント ローラーから。 
 
-    [![](dialog-images/sheet02.png "シート segue 種類を選択します。")](dialog-images/sheet02.png#lightbox)
-4. **Identity インスペクター**、ビューのコント ローラーの名前を付けます**クラス** `SheetViewController`: 
+    [![](dialog-images/sheet02.png "シート セグエの種類の選択")](dialog-images/sheet02.png#lightbox)
+4. **Identity Inspector**、ビュー コント ローラーの名前を**クラス** `SheetViewController`: 
 
     [![](dialog-images/sheet03.png "クラス名を設定します。")](dialog-images/sheet03.png#lightbox)
-5. 必要に応じていずれかを定義**コンセント**と**アクション**: 
+5. 必要な定義**Outlet**と**アクション**: 
 
-    [![](dialog-images/sheet04.png "必須のコンセントとアクションを定義します。")](dialog-images/sheet04.png#lightbox)
-6. 変更内容を保存し、同期する Mac 用の Visual Studio に戻ります。
+    [![](dialog-images/sheet04.png "必要な Outlet と Action を定義します。")](dialog-images/sheet04.png#lightbox)
+6. 変更を保存し、Visual Studio for Mac を同期に戻ります。
 
-次に、編集、`SheetViewController.cs`ファイルし、次のようになります。
+次に、編集、`SheetViewController.cs`ファイルを開き、次のようになります。
 
 ```csharp
 using System;
@@ -375,7 +375,7 @@ namespace MacDialog
 }
 ```
 
-次に、編集、`ViewController.cs`ファイルで、編集、`PrepareForSegue`メソッドされ次のようになります。
+次に、編集、`ViewController.cs`ファイルで、編集、`PrepareForSegue`メソッドと、次のようになります。
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -405,15 +405,15 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-アプリケーションを実行すると、シートを開きは、ウィンドウにアタッチされます。
+アプリケーションを実行し、シートを開く場合は、ウィンドウにアタッチされます。
 
-[![](dialog-images/sheet08.png "例シート")](dialog-images/sheet08.png#lightbox)
+[![](dialog-images/sheet08.png "シートの例では、")](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog" />
 
-## <a name="creating-a-preferences-dialog"></a>環境設定 ダイアログを作成します。
+## <a name="creating-a-preferences-dialog"></a>ユーザー設定 ダイアログを作成します。
 
-インターフェイスのビルダーで基本設定のビューをレイアウトお前に、設定、切り替えを処理するカスタム segue 型を追加する必要になります。 新しいクラスをプロジェクトに追加し、それを呼び出す`ReplaceViewSeque `です。 クラスを編集し、次のようになります。
+インターフェイス ビルダーで基本設定の表示、レイアウト前に、基本設定の切り替えを処理するためにカスタムのセグエの種類を追加する必要になります。 新しいクラスをプロジェクトに追加し、それを呼び出す`ReplaceViewSeque `します。 クラスを編集し、次のようになります。
 
 ```csharp
 using System;
@@ -474,55 +474,55 @@ namespace MacWindows
 }
 ```
 
-作成したカスタム segue で新しいウィンドウ、環境設定を処理する Xcode のインターフェイスのビルダーに追加できます。
+作成、カスタム セグエを新しいウィンドウ、環境設定を処理するために、Xcode の Interface Builder で追加できます。
 
 新しいウィンドウを追加するには、次の操作を行います。
 
-1. **ソリューション エクスプ ローラー**を開き、 `Main.storyboard` Xcode のインターフェイスのビルダーで編集するためのファイルです。
+1. **ソリューション エクスプ ローラー**、オープン、 `Main.storyboard` Xcode の Interface Builder で編集するためのファイル。
 2. 新しいドラッグ**ウィンドウ コント ローラー**デザイン サーフェイスに。
 
     [![](dialog-images/pref01.png "ライブラリからウィンドウ コント ローラーを選択します。")](dialog-images/pref01.png#lightbox)
 3. 近くのウィンドウを整列、**メニュー バー**デザイナー。
 
     [![](dialog-images/pref02.png "新しいウィンドウを追加します。")](dialog-images/pref02.png#lightbox)
-4. あるタブで、基本設定のビューには、接続されているビュー コント ローラーのコピーを作成します。
+4. タブには、基本設定のビューには、接続されているビュー コント ローラーのコピーを作成します。
 
-    [![](dialog-images/pref03.png "必須のコント ローラーの表示を追加します。")](dialog-images/pref03.png#lightbox)
-5. 新しいドラッグ**ツールバー コント ローラー**から、**ライブラリ**:
+    [![](dialog-images/pref03.png "必要なビュー コント ローラーの追加")](dialog-images/pref03.png#lightbox)
+5. 新しいドラッグ**コント ローラーのツールバー**から、**ライブラリ**:
 
-    [![](dialog-images/pref04.png "ライブラリからツールバーのコント ローラーを選択します。")](dialog-images/pref04.png#lightbox)
+    [![](dialog-images/pref04.png "ライブラリから、ツールバーのコント ローラーを選択します。")](dialog-images/pref04.png#lightbox)
 6. デザイン画面で、ウィンドウの上にドロップします。
 
     [![](dialog-images/pref05.png "新しいツールバー コント ローラーの追加")](dialog-images/pref05.png#lightbox)
-7. レイアウトのデザイン、ツールバーの:
+7. レイアウト、ツールバーの設計:
 
     [![](dialog-images/pref06.png "ツールバーのレイアウト")](dialog-images/pref06.png#lightbox)
-8. コントロールをクリックし、それぞれからドラッグ**ツール バー ボタン**を上記で作成したビューにします。 選択、**カスタム**話題型。
+8. コントロールをクリックし、各からドラッグ**ツール バー ボタン**を上記で作成したビューにします。 選択、**カスタム**セグエの種類。
 
-    [![](dialog-images/pref07.png "Segue の種類を設定")](dialog-images/pref07.png#lightbox)
-9. 新しい Segue を選択し、設定、**クラス**に`ReplaceViewSegue`:
+    [![](dialog-images/pref07.png "セグエの種類の設定")](dialog-images/pref07.png#lightbox)
+9. 新しいセグエを選択し、設定、**クラス**に`ReplaceViewSegue`:
 
-    [![](dialog-images/pref08.png "Setting segue クラス")](dialog-images/pref08.png#lightbox)
-10. **Menubar デザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.** コントロールをクリックし、ドラッグ、環境設定ウィンドウを作成するには**表示**話題。
+    [![](dialog-images/pref08.png "セグエ クラスの設定")](dialog-images/pref08.png#lightbox)
+10. **メニュー バーのデザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.**、コントロールのクリック、および作成の基本設定ウィンドウにドラッグ、**表示**セグエします。
 
-    [![](dialog-images/pref09.png "Segue の種類を設定")](dialog-images/pref09.png#lightbox)
-11. 変更内容を保存し、同期する Mac 用の Visual Studio に戻ります。
+    [![](dialog-images/pref09.png "セグエの種類の設定")](dialog-images/pref09.png#lightbox)
+11. 変更を保存し、Visual Studio for Mac を同期に戻ります。
 
-コードを実行すると、選択、**設定しています.** から、**アプリケーション メニュー**ウィンドウが表示されます。
+コードを実行すると選択、**設定しています.** から、**アプリケーション メニュー**ウィンドウが表示されます。
 
-[![](dialog-images/pref10.png "例の設定 ウィンドウ")](dialog-images/pref10.png#lightbox)
+[![](dialog-images/pref10.png "環境設定ウィンドウの例")](dialog-images/pref10.png#lightbox)
 
-Windows とツールバーの操作の詳細についてを参照してください、 [Windows](~/mac/user-interface/window.md)と[ツールバー](~/mac/user-interface/toolbar.md)ドキュメント。
+Windows およびツールバーの操作方法の詳細についてを参照してください、 [Windows](~/mac/user-interface/window.md)と[ツールバー](~/mac/user-interface/toolbar.md)ドキュメント。
 
 <a name="Saving-and-Loading-Preferences" />
 
 ### <a name="saving-and-loading-preferences"></a>保存と読み込みの基本設定
 
-一般的な macOS アプリでユーザーが、アプリのユーザー設定のいずれかに変更を行うときにそれらの変更自動的に保存されます。 Xamarin.Mac アプリで、これを処理する最も簡単な方法では、システム全体のすべてのユーザーの設定を管理し、共有する 1 つのクラスを作成します。
+一般的な macOS アプリのユーザーがアプリのユーザーの設定のいずれかに変更を加えるときに加えた変更を自動的に保存されます。 Xamarin.Mac アプリケーションでは、これを処理する最も簡単な方法では、システム全体のすべてのユーザーの設定を管理し、共有する 1 つのクラスを作成します。
 
-最初に、追加、新しい`AppPreferences`をプロジェクトにクラスし、継承`NSObject`です。 環境設定が使用するように設計する[データ バインディングと、キーと値のコーディング](~/mac/app-fundamentals/databinding.md)の作成プロセスがようにし、はるかに簡単にフォーム、基本設定を維持します。 少量の単純なデータ型の環境設定ためを使用して組み込み`NSUserDefaults`を格納および値を取得します。
+最初に、新しい追加`AppPreferences`をプロジェクトにクラスし、継承`NSObject`します。 環境設定は使用するように設計[データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)なるように、プロセスを作成してはるかに簡単にフォーム、基本設定を維持します。 環境設定は、少量の単純なデータ型から構成されているが、ビルドを使用して`NSUserDefaults`を格納および値を取得します。
 
-編集、`AppPreferences.cs`ファイルし、次のようになります。
+編集、`AppPreferences.cs`ファイルを開き、次のようになります。
 
 ```csharp
 using System;
@@ -683,9 +683,9 @@ namespace SourceWriter
 }
 ```
 
-など、このクラスにいくつかのヘルパー ルーチンが含まれています`SaveInt`、 `LoadInt`、 `SaveColor`、 `LoadColor`、操作をするためなど`NSUserDefaults`容易にします。 また、`NSUserDefaults`を処理する機能を組み込むことはありません`NSColors`、`NSColorToHexString`と`NSColorFromHexString`メソッドを使用して色を web ベースの 16 進文字列に変換 (`#RRGGBBAA`場所`AA`アルファの透過性は、) することができます簡単に保存され取得します。
+など、このクラスにいくつかのヘルパー ルーチンが含まれています`SaveInt`、 `LoadInt`、 `SaveColor`、`LoadColor`などを使用した処理を`NSUserDefaults`容易にします。 また、`NSUserDefaults`は処理する組み込みの方法がありません`NSColors`、`NSColorToHexString`と`NSColorFromHexString`メソッドを使用して色を web ベースの 16 進文字列に変換 (`#RRGGBBAA`場所`AA`アルファ透明度は、) することができます簡単に保存され取得します。
 
-`AppDelegate.cs`ファイルのインスタンスを作成、 **AppPreferences**アプリ全体を使用するオブジェクトです。
+`AppDelegate.cs`ファイルでのインスタンスを作成、 **AppPreferences**アプリ全体を使用するオブジェクト。
 
 ```csharp
 using AppKit;
@@ -715,13 +715,13 @@ namespace SourceWriter
 
 <a name="Wiring-Preferences-to-Preference-Views" />
 
-### <a name="wiring-preferences-to-preference-views"></a>基本設定のビューに配線設定
+### <a name="wiring-preferences-to-preference-views"></a>基本設定のビューに配線の基本設定
 
-次に、上記で作成したビューと基本設定ウィンドウの UI 要素に基本設定クラスを接続します。 インターフェイス ビルダーでは、基本設定のビューのコント ローラーを選択に切り替えると、 **Identity インスペクター**、コント ローラーのカスタム クラスを作成します。 
+次に、基本設定クラスを基本設定ウィンドウの UI 要素に接続し、上記で作成したビュー。 インターフェイス ビルダーでは、基本設定のビュー コント ローラーを選択しに切り替える、 **Identity Inspector**、コント ローラーのカスタム クラスを作成します。 
 
-[![](dialog-images/prefs12.png "Id 検査")](dialog-images/prefs12.png#lightbox)
+[![](dialog-images/prefs12.png "Id インスペクター")](dialog-images/prefs12.png#lightbox)
 
-編集するため、新しく作成されたクラスを開き、変更を同期する Mac 用の Visual Studio に切り替えます。 次のようにクラスを行います。
+Visual Studio for Mac を編集するため、新しく作成されたクラスを開き、変更を同期するに切り替えます。 次のようなクラスを行います。
 
 ```csharp
 using System;
@@ -754,23 +754,23 @@ namespace SourceWriter
 }
 ```
 
-このクラスがここでは、次の 2 つのことを行うことに注意してください。 最初に、ヘルパーがある`App`プロパティへのアクセスを、 **AppDelegate**簡単にします。 2 番目、`Preferences`プロパティは、グローバルな公開**AppPreferences**クラスの UI コントロールとデータ バインディングは、このビューに配置します。
+このクラスがここでは、2 つのことを行うことに注意してください。 最初に、ヘルパーがある`App`プロパティにアクセスすることを、 **AppDelegate**簡単です。 2 番目、`Preferences`プロパティは、グローバルな公開**AppPreferences**クラスは、このビューにデータ バインディングの UI コントロールを配置します。
 
-次に、ストーリー ボード ファイルをダブルクリックして再びインターフェイス ビルダーで開く (および上だけに行われた変更を参照してください)。 インターフェイスを作成の基本設定のビューに必要な UI コントロールをドラッグします。 各コントロールに切り替え、**バインド インスペクター**の個々 のプロパティにバインドし、 **AppPreference**クラス。
+次に、Interface Builder で再度開きます (および上だけに行われた変更を参照してください)、ストーリー ボード ファイルをダブルクリックします。 ビューに、基本設定のインターフェイスを構築するために必要な UI コントロールをドラッグします。 各コントロールでは、スイッチ、**バインド インスペクター**の個々 のプロパティにバインドし、 **AppPreference**クラス。
 
-[![](dialog-images/prefs13.png "バインディングの検査")](dialog-images/prefs13.png#lightbox)
+[![](dialog-images/prefs13.png "バインド インスペクター")](dialog-images/prefs13.png#lightbox)
 
-パネル (コント ローラーの表示) のすべての上記の手順を繰り返して、基本設定のプロパティが必要なします。
+(ビュー コント ローラー) パネルのすべての上記の手順を繰り返してし、基本設定のプロパティが必要です。
 
 <a name="Applying-Preference-Changes-to-All-Open-Windows" />
 
 ### <a name="applying-preference-changes-to-all-open-windows"></a>開いているすべての Windows に基本設定を適用する変更します。
 
-前述のように、ユーザーがアプリのユーザー設定、それらの変更のいずれかに変更を加えます時に、アプリケーションが自動的に保存され、任意の windows に適用される一般的な macOS で、ユーザーが持っている、アプリケーションで開いてです。
+前述のように、ユーザーがこれらの変更、アプリのユーザー設定のいずれかに変更を行ったときのアプリが自動的に保存され、任意の windows に適用される一般的な macOS で、ユーザーがアプリケーションで開かれています。
 
-最小限のコーディング作業の量で、エンドユーザーに円滑かつ透過的を実行するには、このプロセスは、慎重に計画し、アプリの設定と windows のデザインが許可されます。
+慎重に計画し、アプリの設定と windows の設計により、このプロセスを円滑かつ透過的に最小限のコーディング作業の量で、エンド ユーザーで発生します。
 
-利用するアプリの環境設定ウィンドウで、コンテンツ ビュー コント ローラーにアクセスする次のヘルパー プロパティの追加、 **AppDelegate**容易にします。
+アプリ設定を利用する任意のウィンドウのコンテンツ ビュー コント ローラーにアクセスする次のようなヘルパー プロパティを追加、 **AppDelegate**容易にします。
 
 ```csharp
 #region Application Access
@@ -780,7 +780,7 @@ public static AppDelegate App {
 #endregion
 ```
 
-次に、目次またはユーザーの設定に基づく動作を構成するクラスを追加します。
+次に、コンテンツまたはユーザーの設定に基づく動作を構成するクラスを追加します。
 
 ```csharp
 public void ConfigureEditor() {
@@ -793,7 +793,7 @@ public void ConfigureEditor() {
 }
 ``` 
 
-ユーザーの設定に準拠しているかどうかを確認するウィンドウを最初に開いたときに、構成メソッドを呼び出す必要があります。
+ユーザーの設定に準拠しているかどうかを確認するウィンドウを最初に開いたときに configuration メソッドを呼び出す必要があります。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -806,7 +806,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-次に、編集、`AppDelegate.cs`ファイルおよび任意の基本設定を適用する次のメソッドは、すべての開いているウィンドウに変更を追加します。
+次に、編集、`AppDelegate.cs`ファイルを開き、基本設定を適用する次のメソッドがすべての開いているウィンドウに変更を追加します。
 
 ```csharp
 public void UpdateWindowPreferences() {
@@ -868,7 +868,7 @@ namespace SourceWriter
 }
 ```
 
-これを基本設定ウィンドウを閉じるときに、すべての開いているウィンドウに送信される基本設定変更となります。
+これを基本設定ウィンドウを閉じるときに、開いているすべての Windows に送信される基本設定の変更となります。
 
 最後に、基本設定ウィンドウ コント ローラーを編集し、上記で作成したデリゲートを追加します。
 
@@ -901,15 +901,15 @@ namespace SourceWriter
 }
 ```
 
-これらすべての変更にでは、場合は、ユーザーがアプリの設定を編集し、基本設定ウィンドウを閉じます変更は、すべての開いているウィンドウに適用されます。
+これらすべての変更場所に ユーザーがアプリの設定を編集すると、基本設定ウィンドウを閉じる、変更は、開いているすべての Windows に適用されます。
 
-[![](dialog-images/prefs14.png "例の設定 ウィンドウ")](dialog-images/prefs14.png#lightbox)
+[![](dialog-images/prefs14.png "環境設定ウィンドウの例")](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog" />
 
 ## <a name="the-open-dialog"></a>[開く] ダイアログ
 
-開く ダイアログ ボックスでは、一貫した方法を見つけて、アプリケーションでアイテムを開いたユーザーを表示します。 Xamarin.Mac アプリケーションで開く ダイアログを表示するには、次のコードを使用します。
+開く ダイアログ ボックスは、ユーザーを検索して、アプリケーションで項目を開くには、一貫した方法を示します。 Xamarin.Mac アプリケーションで、[開く] ダイアログを表示するには、次のコードを使用します。
 
 ```csharp
 var dlg = NSOpenPanel.OpenPanel;
@@ -938,29 +938,29 @@ if (dlg.RunModal () == 1) {
 }
 ```
 
-上記のコードで、ファイルの内容を表示する、新しいドキュメント ウィンドウを開いています。 これを交換する必要があります機能を持つコードは、アプリケーションで必要です。
+上記のコードで、ファイルの内容を表示する新しいドキュメント ウィンドウを開いています。 これを置換する必要があります、アプリケーションで機能を使用したコードが必要です。
 
 使用する場合は、次のプロパティは使用可能な`NSOpenPanel`:
 
 - **CanChooseFiles**場合 -`true`ユーザーがファイルを選択できます。
 - **CanChooseDirectories**場合 -`true`ユーザーがディレクトリを選択できます。
 - **AllowsMultipleSelection**場合 -`true`ユーザーは一度に 1 つ以上のファイルを選択することができます。
-- **ResolveAliases**場合 -`true`を選択して、エイリアスは、元のファイルのパスに解決します。
-- **AllowedFileTypes** -ユーザーがいずれかの拡張として選択できるファイルの種類の文字列配列または_ユーティリ ティー_です。 既定値は`null`、これにより、任意のファイルを開くことができません。
+- **ResolveAliases**場合 -`true`を選択し、エイリアス、元のファイルのパスに解決します。
+- **Allowedfiletypes です**-いずれかの拡張機能として、ユーザーが選択できるファイルの種類の文字列の配列または_UTI_します。 既定値は`null`、任意のファイルを開くことができます。
 
-`RunModal ()`メソッドは、[開く] ダイアログを表示およびユーザーがファイルまたはディレクトリで指定されているプロパティ) を選択できるようにしを返します`1`、ユーザーがクリックした場合、**開く**ボタンをクリックします。
+`RunModal ()`メソッドは、[開く] ダイアログを表示し、ユーザーがファイルまたはディレクトリ (前述のプロパティによって指定) を選択できるようにを返します`1`、ユーザーがクリックした場合、**オープン**ボタンをクリックします。
 
-[開く] ダイアログをユーザーの選択したファイルまたはディレクトリ内の Url の配列として返します、`URL`プロパティです。
+[開く] ダイアログ内の Url の配列として、ユーザーの選択したファイルまたはディレクトリを返します、`URL`プロパティ。
 
-プログラムを実行すると、選択、**オープンしています.** 項目を**ファイル**メニューで、次が表示されます。 
+プログラムを実行し、選択した場合、**オープンしています.** 項目から、**ファイル**メニューで、次が表示されます。 
 
-[![](dialog-images/dialog03.png "[開く] ダイアログ ボックス")](dialog-images/dialog03.png#lightbox)
+[![](dialog-images/dialog03.png "開く ダイアログ ボックス")](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs" />
 
-## <a name="the-print-and-page-setup-dialogs"></a>印刷とページ セットアップ ダイアログ
+## <a name="the-print-and-page-setup-dialogs"></a>印刷とページ設定ダイアログ ボックス
 
-標準の印刷 macOS およびを使用するすべてのアプリケーションで発生するページ セットアップ ダイアログ ボックスをユーザーが一貫した印刷できるように、アプリケーションを表示できます。
+macOS は、標準的な印刷を使用しているすべてのアプリケーションでの経験ページ セットアップ ダイアログをユーザーが一貫性のある印刷できるようにアプリケーションを表示できます。
 
 次のコードは、標準の印刷 ダイアログ ボックスに表示されます。
 
@@ -989,15 +989,15 @@ void ShowDocument (NSObject sender) {
 
 ```
 
-設定している場合、`ShowPrintAsSheet`プロパティを`false`アプリケーションを実行し、印刷ダイアログ ボックスを表示、次が表示されます。
+設定した場合、`ShowPrintAsSheet`プロパティを`false`アプリケーションを実行し、印刷ダイアログ ボックスを表示、次が表示されます。
 
-[![](dialog-images/print01.png "印刷ダイアログ ボックス")](dialog-images/print01.png#lightbox)
+[![](dialog-images/print01.png "[印刷] ダイアログ ボックス")](dialog-images/print01.png#lightbox)
 
 場合設定、`ShowPrintAsSheet`プロパティを`true`アプリケーションを実行し、印刷ダイアログ ボックスを表示、次が表示されます。
 
 [![](dialog-images/print02.png "印刷のシート")](dialog-images/print02.png#lightbox)
 
-次のコード ページ レイアウト ダイアログが表示されます。
+次のコード ページの [レイアウト] ダイアログが表示されます。
 
 ```csharp
 [Export ("showLayout:")]
@@ -1020,21 +1020,21 @@ void ShowLayout (NSObject sender) {
 }
 ```
 
-設定している場合、`ShowPrintAsSheet`プロパティを`false`アプリケーションを実行し、印刷レイアウト ダイアログを表示、次が表示されます。
+設定した場合、`ShowPrintAsSheet`プロパティを`false`アプリケーションを実行し、印刷レイアウト ダイアログを表示、次が表示されます。
 
-[![](dialog-images/print03.png "ページの設定 ダイアログ ボックス")](dialog-images/print03.png#lightbox)
+[![](dialog-images/print03.png "ページ設定 ダイアログ")](dialog-images/print03.png#lightbox)
 
 場合設定、`ShowPrintAsSheet`プロパティを`true`アプリケーションを実行し、印刷レイアウト ダイアログを表示、次が表示されます。
 
 [![](dialog-images/print04.png "ページ セットアップ シート")](dialog-images/print04.png#lightbox)
 
-印刷とセットアップのダイアログ ボックスのページの操作の詳細については、Apple を参照してください[NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092)、 [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080)と[印刷の概要](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1)ドキュメントです。
+印刷とセットアップ ダイアログ ボックスの使用方法の詳細については、Apple を参照してください[NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092)、 [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080)と[印刷の概要](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1)ドキュメントです。
 
 <a name="The_Save_Dialog" />
 
 ## <a name="the-save-dialog"></a>保存ダイアログ
 
-[保存] ダイアログ ボックスでは、ユーザー アプリケーションの項目を保存する方法を統一できます。
+[保存] ダイアログ ボックスは、ユーザーがアプリケーションの項目を保存する方法を統一できます。
 
 次のコードは、標準的な保存ダイアログに表示されます。
 
@@ -1072,31 +1072,31 @@ void ShowSaveAs (NSObject sender)
 }
 ```
 
-`AllowedFileTypes`プロパティは、ファイルに保存する、ユーザーが選択できるファイルの種類の文字列配列。 拡張機能としてか、ファイルの種類を指定することができますか_ユーティリ ティー_です。 既定値は`null`、これにより、ファイルの種類を使用します。
+`AllowedFileTypes`プロパティは、ファイルに保存する、ユーザーが選択できるファイルの種類の文字列配列。 拡張機能として、ファイルの種類を指定することができますか_UTI_します。 既定値は`null`、あらゆるファイルタイプを使用することができます。
 
-設定している場合、`ShowSaveAsSheet`プロパティを`false`アプリケーションを実行し、選択、**名前を付けて保存しています.** から、**ファイル**メニューで、次が表示されます。
+設定した場合、`ShowSaveAsSheet`プロパティを`false`アプリケーションを実行し、選択、**名前を付けて保存.** から、**ファイル**メニューで、次が表示されます。
 
-[![](dialog-images/save01.png "A 保存 ダイアログ ボックス")](dialog-images/save01.png#lightbox)
+[![](dialog-images/save01.png "保存 ダイアログ ボックス")](dialog-images/save01.png#lightbox)
 
-ユーザーは、ダイアログ ボックスを拡大できます。
+ユーザーは、ダイアログ ボックスを展開できます。
 
 [![](dialog-images/save02.png "展開の保存 ダイアログ ボックス")](dialog-images/save02.png#lightbox)
 
-設定している場合、`ShowSaveAsSheet`プロパティを`true`アプリケーションを実行し、選択、**名前を付けて保存しています.** から、**ファイル**メニューで、次が表示されます。
+設定した場合、`ShowSaveAsSheet`プロパティを`true`アプリケーションを実行し、選択、**名前を付けて保存.** から、**ファイル**メニューで、次が表示されます。
 
-[![](dialog-images/save03.png "シート保存")](dialog-images/save03.png#lightbox)
+[![](dialog-images/save03.png "シートの保存")](dialog-images/save03.png#lightbox)
 
-ユーザーは、ダイアログ ボックスを拡大できます。
+ユーザーは、ダイアログ ボックスを展開できます。
 
-[![](dialog-images/save04.png "展開のシートを保存します。")](dialog-images/save04.png#lightbox)
+[![](dialog-images/save04.png "広いシートを保存します。")](dialog-images/save04.png#lightbox)
 
-詳細については、[保存] ダイアログ ボックスの操作で、Apple を参照してください[NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098)ドキュメント。
+詳細、[保存] ダイアログ ボックスの使用については、Apple を参照してください[NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098)ドキュメント。
 
 <a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 
-この記事では、モーダル ウィンドウ、シートおよび Xamarin.Mac アプリケーション内の標準のシステム ダイアログ ボックスの作業についての詳細を取得しました。 型が異なり、モーダル ウィンドウ、シートとダイアログの使用方法を説明しましたモーダル ウィンドウおよび Xcode でシートを作成および管理のインターフェイスのビルダーとモーダル ウィンドウを操作する方法、シートし、ダイアログ ボックスの c# コードです。
+この記事では、Windows のモーダル、シート、および、Xamarin.Mac アプリケーションでは、標準のシステム ダイアログ ボックスの使用方法について詳しく説明をしました。 さまざまな種類とモーダル Windows、シートとダイアログの使用方法を説明しましたモーダル Windows および Xcode 内のシートを作成および管理の Interface Builder とモーダルの Windows を操作する方法、シートし、ダイアログ ボックスの c# コードです。
 
 ## <a name="related-links"></a>関連リンク
 

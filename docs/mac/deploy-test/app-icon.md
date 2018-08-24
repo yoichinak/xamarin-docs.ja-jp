@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9c81138aea57c0027ad0f53e3116878ffb800eae
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792036"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39276042"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac アプリのアプリケーション アイコン
 
@@ -23,9 +23,9 @@ _この記事では、Xamarin.Mac アプリケーションのアイコンに必�
 
 Xamarin.Mac アプリケーションで C# と .NET を使用している場合、開発者は、*Objective-C* と *Xcode* で作業している開発者と同じ画像およびアイコンツールにアクセスできます。
 
-優れたアイコンは、Xamarin.Mac アプリの主な目的を伝え、アプリを使用するときにユーザーが期待するエクスペリエンスのヒントになる必要があります。 この記事では、アイコンのイメージ アセットを作成して、それらのアセットを `AppIcons.appiconset` ファイルにパッケージ化し、そのファイルを Xamarin.Mac アプリで利用するために必要なすべての手順について説明します。
+優れたアイコンは、Xamarin.Mac アプリの主な目的を伝え、アプリを使用するときにユーザーが期待するエクスペリエンスのヒントになる必要があります。 この記事では、アイコンのイメージ アセットを作成して、それらのアセットを `AppIcon.appiconset` ファイルにパッケージ化し、そのファイルを Xamarin.Mac アプリで利用するために必要なすべての手順について説明します。
 
-![AppIcons.appiconset エディター](app-icon-images/intro01.png "AppIcons.appiconset エディター")
+![AppIcon.appiconset エディター](app-icon-images/intro01.png "AppIcon.appiconset エディター")
 
 
 ## <a name="application-icon"></a>アプリケーション アイコン
@@ -85,7 +85,7 @@ Xamarin.Mac アプリのアイコンをデザインする前に、[Apple アプ�
 
 1. **Solution Pad** で、**Assets.xcassets** > **AppIcons.appiconset** を開きます。 
 
-    ![AppIcons.appiconset の編集](app-icon-images/intro01.png "AppIcons.appiconset の編集")
+    ![AppIcon.appiconset の編集](app-icon-images/intro01.png "AppIcon.appiconset の編集")
 2. 必要な各アイコン サイズについて、アイコンをクリックし、上で作成した対応する画像ファイルを選択します。 
 
     [![アイコン画像の選択](app-icon-images/intro02.png "アイコン画像の選択")](app-icon-images/intro02-large.png#lightbox)
@@ -94,12 +94,12 @@ Xamarin.Mac アプリのアイコンをデザインする前に、[Apple アプ�
 
 ## <a name="using-the-icon"></a>アイコンを使用する
 
-`AppIcons.appiconset` ファイルがビルドされたら、Visual Studio for Mac で Xamarin.Mac プロジェクトに割り当てる必要があります。
+`AppIcon.appiconset` ファイルがビルドされたら、Visual Studio for Mac で Xamarin.Mac プロジェクトに割り当てる必要があります。
 
 次の手順で行います。
 
 1. **Solution Pad** で **Info.plist** をダブルクリックし、**[プロジェクト オプション]** を開きます。
-2. **[Mac OS X アプリケーション ターゲット]** セクションで、をクリックして、**アプリ アイコン**をクリックし、`AppIcons.appiconset` ファイルを選択します。 
+2. **[Mac OS X アプリケーション ターゲット]** セクションで、をクリックして、**アプリ アイコン**をクリックし、`AppIcon.appiconset` ファイルを選択します。 
 
     [![アイコン セットの設定](app-icon-images/icon01.png "アイコン セットの設定")](app-icon-images/icon01-large.png#lightbox)
 3. 変更を保存します。

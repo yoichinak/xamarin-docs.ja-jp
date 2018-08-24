@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/13/2018
-ms.openlocfilehash: 2ec9ba6e39673b5a60911f9a9ae70474dbe2443b
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 6e3cf12431440823b1d32d91927bc634f60fd5e2
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203112"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270457"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
@@ -106,9 +106,9 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 var editor = new Editor { Keyboard = Keyboard.Chat };
 ```
 
-各キーボードの例が記載されて、[レシピ](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)リポジトリ。
+各キーボードの例が記載されて、[レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)リポジトリ。
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラスがあります、 [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)大文字と小文字、スペル チェック、および修正候補の動作を指定することで、キーボードをカスタマイズするために使用するファクトリ メソッド。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値として、カスタマイズされた、メソッドに引数として指定された`Keyboard`返されます。 `KeyboardFlags`列挙には、次の値が含まれています。
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラスがあります、 [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)大文字と小文字、スペル チェック、および修正候補の動作を指定することで、キーボードをカスタマイズするために使用するファクトリ メソッド。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値は、カスタマイズされたメソッドに引数として指定`Keyboard`返されます。 `KeyboardFlags`列挙には、次の値が含まれています。
 
 - [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – キーボード機能は追加されません。
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – を各入力文の最初の単語の最初の文字は自動的に大文字で入力することを示します。

@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 6b87625b3305d0a9ec40593d8b3fe29eb551bbf4
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855056"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514311"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: バッテリ
 
@@ -29,7 +29,7 @@ ms.locfileid: "37855056"
 開く、 **AssemblyInfo.cs**ファイル、**プロパティ**フォルダーを追加。
 
 ```csharp
-[assembly: UsesPermission(Android.Manifest.Permission.Battery)]
+[assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
 または、Android マニフェストを更新します。
@@ -37,10 +37,10 @@ ms.locfileid: "37855056"
 開く、 **AndroidManifest.xml**ファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
 
 ```xml
-<uses-permission android:name="android.permission.BATTERY" />
+<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**バッテリ**権限。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**バッテリ**権限。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -93,7 +93,7 @@ switch (source)
     case BatteryPowerSource.Battery:
         // Being powered by the battery
         break;
-    case BatteryPowerSource.Ac:
+    case BatteryPowerSource.AC:
         // Being powered by A/C unit
         break;
     case BatteryPowerSource.Usb:
@@ -119,7 +119,7 @@ public class BatteryTest
         Battery.BatteryChanged += Battery_BatteryChanged;
     }
 
-    void Battery_BatteryChanged(BatteryChangedEventArgs   e)
+    void Battery_BatteryChanged(object sender, BatteryChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -138,12 +138,12 @@ public class BatteryTest
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 * デバイスは、Api をテストするために使用する必要があります。 
-* しか返さない`Ac`または`Battery`の`PowerSource`します。 
+* しか返さない`AC`または`Battery`の`PowerSource`します。
 * 振動をキャンセルすることはできません。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* しか返さない`Ac`または`Battery`の`PowerSource`します。 
+* しか返さない`AC`または`Battery`の`PowerSource`します。
 
 -----
 

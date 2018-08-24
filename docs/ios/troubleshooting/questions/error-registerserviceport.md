@@ -1,32 +1,33 @@
 ---
-title: iOS デザイナー エラー RegisterServicePort が発生しました
+title: iOS Designer エラー RegisterServicePort で
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 929A0080-B126-4744-BF88-A4A1EFBB6CC2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 62d4a06c62bffb23566f4f59f42a0c980f417c45
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 9edcc822b170c3463908b9f5fb1db8b798346e3e
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30776717"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350707"
 ---
-# <a name="ios-designer-error-with-registerserviceport"></a>iOS デザイナー エラー RegisterServicePort が発生しました
+# <a name="ios-designer-error-with-registerserviceport"></a>iOS Designer エラー RegisterServicePort で
 
 ## <a name="sample-error"></a>エラーの例
-> System.AggregateException: System.SystemException---> に 1 つまたは複数のエラーが発生しました: (com.xamarin.MTHosting.2a0b1、com.apple.PowerManagement.control) RegisterServicePort: 返されるカーネル:-308 (-308): (ipc/mig) サーバーが失われました
+> System.AggregateException: System.SystemException---> に 1 つまたは複数のエラーが発生しました: (com.xamarin.MTHosting.2a0b1、com.apple.PowerManagement.control) RegisterServicePort: 返されるカーネル:-308 (-308): 亡くなった (ipc/mig) サーバー
 
 ## <a name="explanation"></a>説明
-エラーの`RegisterServicePort`上と同様に同様のエラー メッセージは通常、コンピューターにスパイウェア/マルウェアの問題とします。 検討してください、[このバグ レポートにコメント](https://bugzilla.xamarin.com/show_bug.cgi?id=21907#c4)詳細についてへのリンクと共に、 [Apple フォーラムのディスカッション](https://discussions.apple.com/thread/5596008)で可能なウイルス感染を削除する方法です。 
+エラーの`RegisterServicePort`上などのようなエラー メッセージは通常、コンピューターにスパイウェア/マルウェアの問題があるとします。 検討してください、[このバグ レポートにコメント](https://bugzilla.xamarin.com/show_bug.cgi?id=21907#c4)詳細についてへのリンクと共に、 [Apple フォーラム ディスカッション](https://discussions.apple.com/thread/5596008)考えられる感染を削除する方法の。 
 
-問題の診断に役立てるため、macOS アプリケーションを開く**コンソール**内のすべてのファイルを削除し、**ユーザー診断レポート**セクション[ http://screencast.com/t/y9i3NKcuMy](http://screencast.com/t/y9i3NKcuMy)です。 Mac 用 Visual Studio を起動し、デザイナーを使用しようとします。 場合は、新しいログ ファイルは、デザイナーの初期化に失敗した後、このセクションに表示、分析するために、これらを保存してください。  
+MacOS アプリケーションを開きに、問題の診断に役立てるため、**コンソール**内のすべてのファイルを削除し、**ユーザー診断レポート**セクション[ http://screencast.com/t/y9i3NKcuMy](http://screencast.com/t/y9i3NKcuMy)します。 Mac の Visual Studio を起動し、次に、デザイナーを使用しようとします。 場合は、新しいログ ファイルがこのセクションに表示するは、デザイナーが初期化に失敗した後、これらを分析するために保存してください。  
 
-最も重要なことを確認するには、このファイルに注意してください。 
+確認する最も重要な点は、このファイルに注意してください。 
 > /usr/lib/libimckit.dylib
 
-そのファイルが存在する場合は、上記の結果に関係なく、ここに挙げたマルウェア/スパイウェア問題がコンピューター上に存在します。  
+そのファイルが存在する場合は上記の結果に関係なく、前述のスパイウェア/マルウェア問題がコンピューターに存在します。  
 
 次のリンクには、このスパイウェア/マルウェアを削除する手順があります。 [http://www.thesafemac.com/arg-genieo/](http://www.thesafemac.com/arg-genieo/)  
 

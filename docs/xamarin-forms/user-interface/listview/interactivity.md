@@ -157,7 +157,7 @@ listView.IsPullToRefreshEnabled = true;
 
 ![](interactivity-images/refresh-start.png "ListView のプルで進行状況を更新するには")
 
-ユーザーとプルは更新するには、プルがリリースされました。 これは、ユーザーがリストを更新している間に表示: ![ ](interactivity-images/refresh-in-progress.png "完了を更新する ListView のプル")
+ユーザーとプルは更新するには、プルがリリースされました。 これは、ユーザーがリストを更新している間に表示: ![](interactivity-images/refresh-in-progress.png "完了を更新する ListView のプル")
 
 ListView は、プルして更新イベントに応答するためのいくつかのイベントを公開します。
 

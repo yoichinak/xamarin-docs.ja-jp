@@ -1,38 +1,38 @@
 ---
 title: パス情報は、列挙型
-description: この記事では、SkiaSharp パスに関する情報を取得し、内容を列挙する方法について説明し、サンプル コードを示します。
+description: この記事では、SkiaSharp パスに関する情報を取得し、コンテンツを列挙する方法を説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 53d1fce20a0e3bc75ba34ab84b2549211567e222
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 65c614e9a6eb26bc0d027a4a67bec19b036d0a70
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243793"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615276"
 ---
 # <a name="path-information-and-enumeration"></a>パス情報は、列挙型
 
-_パスに関する情報を取得し、コンテンツの列挙_
+_パスに関する情報を取得し、内容を列挙_
 
-[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)クラスは、いくつかのプロパティとパスに関する情報を取得できるようにするメソッドを定義します。 [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/)と[ `TightBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.TightBounds/)プロパティ (および関連するメソッド) は、パスの metrical 次元を取得します。 [ `Contains` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Contains/p/System.Single/System.Single/)メソッドでは、パス内の特定のポイントがかどうかを判断することができます。
+[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)クラスは、いくつかのプロパティとパスに関する情報を取得するためのメソッドを定義します。 [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/)と[ `TightBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.TightBounds/)プロパティ (と関連するメソッド) は、パスの metrical ディメンションを取得します。 [ `Contains` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Contains/p/System.Single/System.Single/)メソッドを使用して、パス内の特定のポイントが判断できます。
 
-すべての直線と曲線のパスを構成するの合計の長さを決定に役立つ場合があります。 これは、作業ではありません、アルゴリズムによって単純なため、クラス全体がという名前[ `PathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/)割り当てられます。
+すべての行とパスを構成する曲線の長さの合計を確認すると役立つ場合があります。 これにはクラス全体がという名前であるために、単純なアルゴリズムをタスクのではありません[ `PathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/)を使用します。
 
-描画操作とパスを形成する点を取得するには役立ちます。 これでがあります。 最初は、この機能は不要なかもしれません: プログラムがコンテンツを既に知っている場合は、プログラムのパスが作成されます。 ただし、見たことのパスがによって作成することも[パス効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)および変換することで[パスへの文字列のテキスト](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)です。 描画操作とこれらのパスを形成する点を取得することもできます。 1 つの方法では、すべてのポイントに、アルゴリズムの変換を適用します。 これによりの半球に収まらないテキストの折り返しなどの手法です。
+描画操作とパスを構成する点を取得する便利なことでがあります。 最初は、この機能は不要なかもしれません: プログラムが既に内容を認識している場合は、プログラムのパスが作成されます。 パスが作成することも、見た[パスの効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)と変換することで[パスへの文字列のテキスト](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)します。 描画操作とこれらのパスを構成するポイントを取得することもできます。 1 つの方法では、すべてのポイントにアルゴリズムの変換を適用します。 これにより、半球テキストの折り返しなどの手法です。
 
 ![](information-images/pathenumerationsample.png "半球でラップされたテキスト")
 
 ## <a name="getting-the-path-length"></a>パスの長さを取得します。
 
-アーティクルで[**パスとテキスト**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)を使用する方法を説明する、 [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)を基準に依存して、パスのテキスト文字列を描画するメソッド。 しかし、テキストのサイズのパスを正確に収まるようにする場合でしょうか。 円の周囲のテキストの描画、これは簡単な円の円周を計算する単純なためです。 楕円の円周またはベジエ曲線の長さがそれほど単純ではありません。
+この記事で[**パスとテキスト**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)を使用する方法を説明しました、 [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)がベースラインに依存してパスのテキスト文字列を描画するメソッド。 しかし、テキストのサイズのパスを正確に収まるようにする場合でしょうか。 テキストの描画を円の周囲、これは簡単な円の円周を計算する単純なためです。 楕円の円周やベジエ曲線の長さはそう簡単ではありません。
 
-[ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/)クラスに役立つことができます。 [コンス トラクター](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/)を受け入れる、`SKPath`引数、および[ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/)プロパティは、その長さを表示します。
+[ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/)クラスが役立つことができます。 [コンス トラクター](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/)を受け入れる、`SKPath`引数、および[ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/)プロパティが、長さが表示されます。
 
-これに示されている、**パスの長さ**に基づくサンプル、**ベジエ曲線**ページ。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)から派生したファイル`InteractivePage`タッチ インターフェイスが含まれています。
+これは、方法については、**パスの長さ**、サンプルに基づいています、**ベジエ曲線**ページ。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)から派生したファイル`InteractivePage`タッチ インターフェイスが含まれています。
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -53,7 +53,7 @@ _パスに関する情報を取得し、コンテンツの列挙_
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)分離コード ファイルでは、端点を定義および 3 次ベジエ曲線の点を制御する 4 つのタッチ ポイントを移動することができます。 3 つのフィールドをテキスト文字列を定義する、`SKPaint`オブジェクト、およびテキストの計算された幅。
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)分離コード ファイルでは、エンドポイントを定義および 3 次ベジエ曲線のポイントを制御する 4 つのタッチ ポイントを移動することができます。 3 つのフィールド定義のテキスト文字列を`SKPaint`オブジェクト、およびテキストの計算された幅。
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -72,9 +72,9 @@ public partial class PathLengthPage : InteractivePage
 }
 ```
 
-`baseTextWidth`フィールドは、基にテキストの幅、 `TextSize` 10 に設定します。
+`baseTextWidth`フィールドに基づいて、テキストの幅では、 `TextSize` 10 の設定。
 
-`PaintSurface`ハンドラー ベジエ曲線を描画し、端から端に合わせてテキストのサイズを設定します。
+`PaintSurface`ハンドラーは、ベジエ曲線を描画し、端から端に合わせてテキストのサイズを設定します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -108,15 +108,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`Length`プロパティの新しく作成した`SKPathMeasure`オブジェクトは、パスの長さを取得します。 割った値がこの、 `baseTextWidth` (これは、基にテキストを 10 文字のテキスト サイズの幅) を値し、し、基本のテキストのサイズが 10 を乗算します。 結果は、そのパスに沿ってテキストを表示するための新しいテキスト サイズです。
+`Length`プロパティの新しく作成した`SKPathMeasure`オブジェクトは、パスの長さを取得します。 これで割ります、`baseTextWidth`値 (10 のテキストのサイズに基づいて、テキストの幅は) と基本のテキストのサイズが 10 を乗算します。 結果は、そのパスに沿ってテキストを表示するための新しいテキスト サイズです。
 
-[![](information-images/pathlength-small.png "パスの長さ ページのスクリーン ショットをトリプル")](information-images/pathlength-large.png#lightbox "パスの長さ ページのトリプル スクリーン ショット")
+[![](information-images/pathlength-small.png "パスの長さのページのスクリーン ショットをトリプル")](information-images/pathlength-large.png#lightbox "パスの長さ ページの 3 倍になるスクリーン ショット")
 
-長いまたは短い、ベジエ曲線を取得、テキストのサイズ変更を確認できます。
+長いまたは短い、ベジエ曲線を取得、変更、テキストのサイズを確認できます。
 
-## <a name="traversing-the-path"></a>パスを走査します。
+## <a name="traversing-the-path"></a>パスの走査
 
-`SKPathMeasure` 以上のメジャーのパスの長さを実行できます。 任意の値 0 と、パスの長さの間、`SKPathMeasure`オブジェクトがその時点で、パス、およびパス曲線に正接での位置を取得できます。 タンジェントがの形式でのベクトルとして利用可能な`SKPoint`オブジェクト、または回転としてにカプセル化されて、`SKMatrix`オブジェクト。 以下の方法を示します`SKPathMeasure`可変で柔軟な方法でこの情報を取得します。
+`SKPathMeasure` 以上のメジャーのパスの長さを実行できます。 0 から、パスの長さまでの値を`SKPathMeasure`オブジェクトでは、パス、およびパスの曲線の接線の位置をその時点で取得できます。 形式でのベクトルとして使用できますが、タンジェント、`SKPoint`オブジェクト、または回転としてにカプセル化されて、`SKMatrix`オブジェクト。 以下の方法を示します`SKPathMeasure`多様かつ柔軟な方法でこの情報を取得します。
 
 ```csharp
 Boolean GetPosition (Single distance, out SKPoint position)
@@ -134,11 +134,11 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 - [`GetTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
 - [`GetPositionAndTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
 
-**一輪車半分パイプ**ページ 3 次ベジエ曲線に沿った前後にオーバーライドすると思われる一輪車上にスティック図形をアニメーション化します。
+**一輪車半分パイプ**ページ 3 次ベジエ曲線に沿った前後をオーバーライドすると思われる一輪車上にスティック図形をアニメーション化します。
 
-[![](information-images/unicyclehalfpipe-small.png "一輪車半分パイプ ページのスクリーン ショットをトリプル")](information-images/unicyclehalfpipe-large.png#lightbox "一輪車半分パイプ ページのトリプル スクリーン ショット")
+[![](information-images/unicyclehalfpipe-small.png "一輪車半分パイプ ページのスクリーン ショットをトリプル")](information-images/unicyclehalfpipe-large.png#lightbox "一輪車半分パイプ ページの 3 倍になるスクリーン ショット")
 
-`SKPaint`半分パイプと、一輪車線の描画に使用されるオブジェクトがフィールドとして定義されている、 [ `UnicycleHalfPipePage` ]()クラスです。 定義されても、`SKPath`一輪車のオブジェクト。
+`SKPaint`半分パイプと、一輪車線の描画に使用されるオブジェクトがフィールドとして定義されている、 [ `UnicycleHalfPipePage` ]()クラス。 定義されていることも、`SKPath`一輪車のオブジェクト。
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -163,7 +163,7 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-クラスには標準の上書きが含まれています、`OnAppearing`と`OnDisappearing`アニメーションのメソッドです。 `PaintSurface`ハンドラーが半分パイプのパスを作成し、描画します。 `SKPathMeasure`オブジェクトはこのパスのベースが作成されます。
+クラスには標準的な上書きが含まれています、`OnAppearing`と`OnDisappearing`メソッド アニメーションを実行します。 `PaintSurface`ハンドラーが半分パイプのパスを作成し、描画します。 `SKPathMeasure`オブジェクトがこのパスに基づいて、作成します。
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -209,15 +209,15 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーの値を計算する`t`数式の 0 から 1 を 5 秒ごとです。 次を使用して、`Math.Cos`関数の値を変換する`t`の範囲は 0 から 1 および 0 へが 0 に対応する左、上の先頭に一輪車 1 は右上の一輪車に対応中にします。 コサイン関数は、パイプの上部にある最も低速と下部にある最も高速にする速度をによりします。
+`PaintSurface`ハンドラーの値を計算する`t`が 0 から 1 を 5 秒ごとです。 次を使用して、`Math.Cos`関数の値を変換する`t`範囲 0 から 1 および 0 へ 1 は右上にある一輪車に対応中に、左、上の先頭にある一輪車に 0 が対応する場所。 コサイン関数は、パイプの上部にある最も低速なと下部にある最も高速にする速度とします。
 
-注意してこの値の`t`1 番目の引数のパスの長さで乗算する必要があります`GetMatrix`です。 マトリックスに適用されます、`SKCanvas`一輪車パスを描画するためのオブジェクト。
+注意この値の`t`最初の引数のパスの長さで乗算する必要があります`GetMatrix`します。 マトリックスに適用されます、`SKCanvas`一輪車パスを描画するためのオブジェクト。
 
 ## <a name="enumerating-the-path"></a>パスを列挙します。
 
-2 つのクラスの埋め込み`SKPath`パスの内容を列挙することです。 これらのクラスは[ `SKPath.Iterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+Iterator/)と[ `SKPath.RawIterator`](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+RawIterator/)です。 2 つのクラスは、よく似ていますが、`SKPath.Iterator`長さが 0 で、または長さがゼロに近いへのパス内の要素を除去できます。 `RawIterator`は、次の例で使用します。
+2 つのクラスの埋め込み`SKPath`パスの内容を列挙できます。 これらのクラスは[ `SKPath.Iterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+Iterator/)と[ `SKPath.RawIterator`](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+RawIterator/)します。 2 つのクラスは非常に似ていますが、`SKPath.Iterator`パスの長さが 0 で、または長さが 0 に近い要素を削除することができます。 `RawIterator`は次の例で使用します。
 
-型のオブジェクトを取得する`SKPath.RawIterator`を呼び出して、 [ `CreateRawIterator` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CreateRawIterator()/)メソッドの`SKPath`します。 繰り返し呼び出すことにより実現は、パスの列挙、 [ `Next` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.Next/p/SkiaSharp.SKPoint[]/)メソッドです。 4 つの配列を渡す`SKPoint`値。
+型のオブジェクトを取得する`SKPath.RawIterator`呼び出すことによって、 [ `CreateRawIterator` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CreateRawIterator()/)メソッドの`SKPath`します。 繰り返し呼び出すことにより実現は、パスを列挙、 [ `Next` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.Next/p/SkiaSharp.SKPoint[]/)メソッド。 4 つの配列を渡す`SKPoint`値。
 
 ```csharp
 SKPoint[] points = new SKPoint[4];
@@ -225,25 +225,25 @@ SKPoint[] points = new SKPoint[4];
 SKPathVerb pathVerb = rawIterator.Next(points);
 ```
 
-`Next`のメンバーを返します、 [ `SKPathVerb` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathVerb/)列挙します。 これらの値は、パス内の特定の描画コマンドを示します。 有効なポイントが、配列で挿入の数は、この動詞によって決まります。
+`Next`メソッドのメンバーを返します、 [ `SKPathVerb` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathVerb/)列挙体。 これらの値は、パス内の特定の描画コマンドを示します。 配列に挿入された有効なポイントの数は、この動作によって異なります。
 
-- [`Move`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Move/) 1 つのポイントと
-- [`Line`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Line/) 2 つの点で
-- [`Cubic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Cubic/) 次の 4 つのポイントを持つ
-- [`Quad`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Quad/) 次の 3 つのポイントを持つ
-- [`Conic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Conic/) 次の 3 つのポイントを持つ (も呼び出すと、 [ `ConicWeight` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.ConicWeight/)の重みメソッド)
-- [`Close`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Close/) 1 つのポイントと
+- [`Move`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Move/) 1 つのポイント
+- [`Line`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Line/) 2 つの点を持つ
+- [`Cubic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Cubic/) 次の 4 つの点を持つ
+- [`Quad`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Quad/) 次の 3 つの点を持つ
+- [`Conic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Conic/) 次の 3 つの点を持つ (も呼び出すと、 [ `ConicWeight` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.ConicWeight/)メソッドの重み)
+- [`Close`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Close/) 1 つのポイント
 - [`Done`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Done/)
 
 `Done`動詞は、列挙が完了したことを示します。
 
-あることに注意してくださいありません`Arc`動詞です。 これは、すべての円弧をベジエ曲線のパスに追加されたときに変換されることを示します。
+あることに注意してくださいありません`Arc`動詞。 これは、すべての円弧をベジエ曲線のパスに追加されたときに変換されることを示します。
 
-一部の情報は、の`SKPoint`配列が重複します。 たとえば場合、`Move`動詞が続く、`Line`動詞を最初に付随する 2 つのポイントの`Line`と同じ、`Move`ポイントします。 実際には、このような冗長性は非常に便利です。 取得するときに、`Cubic`動詞、3 次ベジエ曲線を定義する 4 つのすべてのポイントが付属します。 以前の動詞によって確立された現在の位置を保持する必要はありません。
+一部の情報の`SKPoint`配列が冗長です。 たとえば場合、`Move`動詞の後に、`Line`動詞、最初に付随する 2 つのポイントの`Line`と同じです、`Move`ポイントします。 実際には、この冗長性は、非常に便利です。 取得するときに、`Cubic`動詞、3 次ベジエ曲線を定義する 4 つのすべてのポイントが付属します。 前の動詞で確立されている現在の位置を保持する必要はありません。
 
-ただしは、問題のある動詞`Close`です。 このコマンドでは、現在の位置から直線を描画によって以前に確立された輪郭の先頭に、`Move`コマンド。 理想的には、`Close`動詞は、1 つのポイントではなく、これら 2 つのポイントを提供する必要があります。 さらに悪い付随するポイントは、`Close`動詞は、常に (0, 0) です。 これは、必要があるパスを列挙するときにあります可能性を保持する、`Move`ポイントと、現在の位置。
+ただし、問題の動詞は、`Close`します。 このコマンドでは、現在の位置から直線を描画によって以前に確立された輪郭の先頭に、`Move`コマンド。 理想的には、`Close`動詞は、1 つのポイントではなく、これら 2 つのポイントを提供する必要があります。 さらに悪いことは、関連するポイント、`Close`動詞は常に (0, 0)。 つまり、パスを列挙する場合はおそらく必要があるを保持する、`Move`ポイントと、現在の位置。
 
-静的な[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)クラスには、小さな直線、曲線のおおよその系列に次の 3 つの種類のベジエ曲線に変換するいくつかのメソッドが含まれています。 (パラメーターの数式は、アーティクルで表示された[ **3 つの種類のベジエ曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md))。`Interpolate`直線長さ単位の 1 つだけである多数の短い行に分割する方法。
+静的な[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)クラスには、一連の小さな直線、曲線を近似する 3 つの種類のベジエ曲線に変換するいくつかのメソッドが含まれています。 (パラメーターの数式は、情報の記事で表示された[**ベジエ曲線の型を次の 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md))。`Interpolate`メソッドが直線の長さ単位の 1 つだけである多数の短い行に分割します。
 
 ```csharp
 static class PathExtensions
@@ -328,9 +328,9 @@ static class PathExtensions
 }
 ```
 
-これらすべてのメソッドが拡張メソッドから参照される`CloneWithTransform`の下に表示します。 このメソッドは、パスのコマンドを列挙して、データに基づく新しいパスを作成するパスを複製します。 ただし、新しいパスだけで構成されて`MoveTo`と`LineTo`呼び出しです。 一連の小さな線には、すべての直線と曲線が縮小されます。
+これらすべてのメソッドは、拡張メソッドから参照される`CloneWithTransform`の下に表示します。 このメソッドは、パスのコマンドを列挙して、データに基づく新しいパスを作成して、パスを複製します。 ただし、新しいパスだけで構成されて`MoveTo`と`LineTo`呼び出し。 すべての直線と曲線は、一連の小さな線に縮小されます。
 
-呼び出すときに`CloneWithTransform`、メソッドに渡す、`Func<SKPoint, SKPoint>`を持つ関数は、`SKPaint`パラメーターを返す、`SKPoint`値。 この関数は、カスタム アルゴリズムの変換を適用するポイントごとに呼び出されます。
+呼び出すときに`CloneWithTransform`、メソッドに渡す、`Func<SKPoint, SKPoint>`での関数は、`SKPaint`パラメーターを返す、`SKPoint`値。 この関数は、カスタム アルゴリズムの変換を適用するすべてのポイントの呼び出されます。
 
 ```csharp
 static class PathExtensions
@@ -419,15 +419,15 @@ static class PathExtensions
 }
 ```
 
-小さな直線、複製のパスを短縮するため、変換関数の直線を曲線に変換する機能はします。
+複製されたパスは、小さな直線を削減のため、変換関数には、直線を曲線に変換する機能があります。
 
-メソッドが各輪郭と呼ばれる、変数内の最初のポイントを保持することに注意してください`firstPoint`とそれぞれの後に現在の位置が、変数にコマンドを描画`lastPoint`です。 これらは、最後の閉じを構築するために必要なときに行、`Close`動詞が発生しました。
+メソッドはという変数には、各輪郭の最初のポイントを保持することに注意してください`firstPoint`とそれぞれの後の現在の位置が変数にコマンドを描画`lastPoint`します。 これらは、最後の閉じを構築するために必要なときに行を`Close`動詞が発生しました。
 
-**GlobularText**サンプルでは、見かけ上のテキストを折り返す半球の周囲に 3D 効果この拡張メソッドを使用します。
+**GlobularText**サンプルでは、この拡張メソッドを使用して、3 D 効果で一見半球の周りでテキストをラップします。
 
-[![](information-images/globulartext-small.png "Globular テキスト ページのスクリーン ショットをトリプル")](information-images/globulartext-large.png#lightbox "Globular テキスト ページのトリプル スクリーン ショット")
+[![](information-images/globulartext-small.png "Globular テキスト ページのスクリーン ショットをトリプル")](information-images/globulartext-large.png#lightbox "Globular テキスト ページの 3 倍になるスクリーン ショット")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスのコンス トラクターは、この変換を実行します。 作成、 `SKPaint` 、テキストのオブジェクトし、を取得し、`SKPath`オブジェクトから、`GetTextPath`メソッドです。 渡されるパスは、`CloneWithTransform`変換関数と共に拡張メソッド。
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスのコンス トラクターは、この変換を実行します。 作成、`SKPaint`オブジェクトのテキスト、および取得し、`SKPath`オブジェクトから、`GetTextPath`メソッド。 これは、パスに渡される、`CloneWithTransform`変換関数と共に拡張メソッド。
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -474,9 +474,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-変換関数は、まずという 2 つの値を計算`longitude`と`latitude`上部と、テキストの左には、– π/2 ~ π/2 の権限と、テキストの下での範囲です。 これらの値の範囲は、0.75 を掛けることで、縮小効果が、視覚的に満足できればはありません。 (これらの調整なしのコードを実行してください。 テキストになり、北と南の極地の漠然辺に薄すぎる。)これらの 3 次元球座標は、2 次元に変換されます`x`と`y`標準の数式での座標。
+変換関数は、まずという名前の 2 つの値を計算する`longitude`と`latitude`上部と、テキストの左側には、– π/2 ~ π/2 右とテキストの下での範囲。 これらの値の範囲は、0.75 を掛けることによって削減されますが、視覚的に満足はありません。 (これらの調整なしのコードを実行してください。 テキストになります、南北、北米にある漠然と辺にシンすぎます。)これらの 3 次元球座標は、2 次元に変換されます`x`と`y`標準の数式で座標。
 
-新しいパスは、フィールドとして保存されます。 `PaintSurface`ハンドラーしだけを実行する必要があります、画面に表示へのパスを拡大/縮小センターします。
+新しいパスは、フィールドとして保存されます。 `PaintSurface`ハンドラー、単なる必要がありますの中心や画面上に表示するパスを拡張します。
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -506,9 +506,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-これは、非常に多様な手法です。 パスの効果の配列が記述されている場合、 [**パス効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)資料は、含める必要があるとするものを含む非常これは、ギャップを埋めるための方法です。
+これは、非常に汎用的な手法です。 パスの効果の配列で説明されている場合、 [**パスの効果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)記事で非常に encompass 動いた、含める必要があるものはこれは、ギャップを埋めるための方法です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -6,13 +6,13 @@ ms.assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2017
-ms.openlocfilehash: 292b0814cba446c97042ba1fe52ad9414ba74760
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.date: 07/19/2018
+ms.openlocfilehash: 8ed643619e5a22e9a1febe419eb42d45901dec63
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203060"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350746"
 ---
 # <a name="advanced-concepts--internals"></a>高度な概念と内部構造
 
@@ -26,4 +26,4 @@ ms.locfileid: "39203060"
 
 ## <a name="dependency-resolutiondependency-resolutionmd"></a>[依存関係の解決](dependency-resolution.md)
 
-アプリケーションの依存関係注入コンテナーがある構築およびカスタム レンダラーでは、効果の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明し、`DependencyService`実装します。
+この記事は、アプリケーションの依存関係注入コンテナーがある作成およびカスタム レンダラーでは、効果の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法を説明しますと`DependencyService`実装します。

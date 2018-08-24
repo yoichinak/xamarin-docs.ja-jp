@@ -116,7 +116,7 @@ _このセクションでは、Xamarin.iOS アプリケーションでローカ�
 
 1. 最後に、アプリケーションを実行します。 IOS で、通知を許可する 8 ように求められます。 をクリックして**OK**順にクリックします、**通知を追加する**ボタンをクリックします。 しばらくすると次のスクリーン ショットで示すように、警告のダイアログが表示されます。
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "通知を送信することを確認する") ![ ](local-notifications-in-ios-walkthrough-images/image1.png "通知の追加ボタン") ![ ](local-notifications-in-ios-walkthrough-images/image2.png "通知アラート ダイアログ")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "通知を送信することを確認する") ![](local-notifications-in-ios-walkthrough-images/image1.png "通知の追加ボタン") ![](local-notifications-in-ios-walkthrough-images/image2.png "通知アラート ダイアログ")
 
 ## <a name="summary"></a>まとめ
 

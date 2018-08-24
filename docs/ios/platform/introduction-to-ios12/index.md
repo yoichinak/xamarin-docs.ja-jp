@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/08/2018
-ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030705"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615149"
 ---
 # <a name="introduction-to-ios-12"></a>12 iOS の概要
 
@@ -21,11 +21,12 @@ ms.locfileid: "39030705"
 > [!WARNING]
 > Xamarin の iOS の 12 のサポートは現在プレビュー段階で、バグが含まれていることを意味でない機能は完全なし、変わる可能性があります。 実験目的でのみ使用します。
 
-> [!NOTE]
-> - レビュー、[概要](get-started.md)Xamarin を使用した 12 の iOS アプリを構築する方法についてガイドします。
-> - 詳細については、Xamarin のプレビューをお読みください。[ブログの投稿をリリース](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)します。
-
 このドキュメントを提供する Xamarin のプレビュー リリースで c# バインディングは、一部の iOS 12 Api の概要を説明します。
+
+Xamarin を使った iOS 12 のアプリの構築を開始を参照してください。
+
+- [ファースト ステップ ガイド](get-started.md)
+- Xamarin プレビュー[ブログの投稿をリリース](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
 
 ## <a name="arkit-2"></a>ARKit 2
 
@@ -69,8 +70,12 @@ iOS 11.3 導入[カルテ](https://www.apple.com/healthcare/health-records/)、�
 
 12、iOS では、iMessage アプリは、通常 iMessage アプリとしてまたは写真またはビデオ特殊効果のコンテキストで実行するアプリを許可するプレゼンテーションのコンテキストをサポートします。
 
+## <a name="vision-framework"></a>ビジョン フレームワーク
+
+ビジョン フレームワークには、さまざまな方向に顔を検出できる強化された顔検出機能が含まれています。 また、要求のリビジョンはビジョン framework アルゴリズムの特定のリビジョンを選択するようになりました使用できます。
+
 ## <a name="related-links"></a>関連リンク
 
 - [IOS (Apple) の 12 の準備](https://developer.apple.com/ios/)
 - [iOS 12 プレビュー (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin プレビュー[ブログの投稿をリリース](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Xamarin プレビュー[ブログの投稿をリリース](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

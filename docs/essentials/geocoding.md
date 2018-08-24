@@ -5,18 +5,18 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: a4d6e4d9b32e665893d82693a3c858630b63d372
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831449"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353676"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: ジオコーディング
 
 ![NuGet にプレリリースします。](~/media/shared/pre-release.png)
 
-**ジオコーディング**クラスは、Api geocode、placemark 位置座標を placemark に geocode coordincates を破棄したりします。
+**ジオコーディング**クラスは、Api geocode、placemark 位置座標を placemark に geocode 座標を破棄したりします。
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -32,7 +32,7 @@ ms.locfileid: "38831449"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-ジオコーディング %1%2 を使用するには、Bing マップ API キーが必要です。 無料のサインアップ[Bing Maps](https://www.bingmapsportal.com/)アカウント。 **自分のアカウント > キーを**新しいキーを作成し、アプリケーションの種類に基づく情報を入力 (が**向けの Windows アプリ (UWP、8.x、以前のバージョン)** UWP アプリ用)。
+ジオコーディングの機能を使用するには、Bing Maps API キーが必要です。 無料のサインアップ[Bing Maps](https://www.bingmapsportal.com/)アカウント。 **自分のアカウント > キーを**新しいキーを作成し、アプリケーションの種類に基づく情報を入力 (が**向けの Windows アプリ (UWP、8.x、以前のバージョン)** UWP アプリ用)。
 
 呼び出す前に、アプリケーションのライフ サイクルの早い段階で**ジオコーディング**メソッドは、API キーを設定します。
 
@@ -70,11 +70,11 @@ catch (FeatureNotSupportedException fnsEx)
 }
 catch (Exception ex)
 {
-    // Handle exception that may have occured in geocoding
+    // Handle exception that may have occurred in geocoding
 }
 ```
 
-高度は常に使用できません。 使用できない場合、`Altitude`プロパティがあります`null`または値を 0 にすることがあります。 高度を使用できる場合、値は海面上のメートル単位では。 
+高度は常に使用できません。 使用できない場合、`Altitude`プロパティがあります`null`または値を 0 にすることがあります。 高度を使用できる場合、値は海面上のメートル単位では。
 
 取得する[placemarks](xref:Xamarin.Essentials.Placemark)の既存の座標のセット。
 

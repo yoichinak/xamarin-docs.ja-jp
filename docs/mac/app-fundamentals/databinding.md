@@ -1,42 +1,42 @@
 ---
-title: データのバインドと Xamarin.Mac でキーと値のコーディング
-description: この記事では、キーと値のコーディングおよびキーと値の Xcode のインターフェイスのビルダーでの UI 要素にデータ バインドを許可する確認の使用方法について説明します。
+title: データ バインディングとキー値は、Xamarin.Mac でコーディング
+description: この記事では、キーと値のコーディングと観察の Xcode の Interface Builder での UI 要素へのデータ バインディングを許可するキーと値を使用してについて説明します。
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0adb8cda71ca8803c535679da2aecf00f3fa46a5
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792139"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251192"
 ---
-# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>データのバインドと Xamarin.Mac でキーと値のコーディング
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>データ バインディングとキー値は、Xamarin.Mac でコーディング
 
-_この記事では、キーと値のコーディングおよびキーと値の Xcode のインターフェイスのビルダーでの UI 要素にデータ バインドを許可する確認の使用方法について説明します。_
+_この記事では、キーと値のコーディングと観察の Xcode の Interface Builder での UI 要素へのデータ バインディングを許可するキーと値を使用してについて説明します。_
 
 ## <a name="overview"></a>概要
 
-同じキーと値のコーディングおよびデータ バインディング技術へのアクセスがある Xamarin.Mac アプリケーションでは、c# と .NET で作業するときをで作業する開発者*OBJECTIVE-C*と*Xcode*はします。 Xamarin.Mac は、Xcode と直接統合を使用すると Xcode の_インターフェイス ビルダー_データは、コードを記述する代わりに UI 要素にバインドします。
+同じキー値コーディングとデータ バインド手法へのアクセスがある、Xamarin.Mac アプリケーションで c# と .NET を使用する場合をで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_データは、コードを記述する代わりに UI 要素にバインドします。
 
-キーと値のコーディングおよびでのデータ バインディング技術 Xamarin.Mac アプリケーションを使用するの記述し、保守を作成し、UI 要素を使用する必要のあるコードの量を大幅に削減できます。 また、バックアップ データをさらに分離することの利点がある場合 (_データ モデル_)、正面からのユーザー インターフェイスを終了 (_モデル-ビュー-コント ローラー_) より柔軟なアプリケーションの保守が容易に先行します。デザインします。
+キーと値のコーディングおよびデータ バインド、Xamarin.Mac アプリケーションで技術を使用して、コードの記述し、保守を設定し、UI 要素を使用する必要があるの量を大幅に短縮できます。 さらに、バックアップ データを分離の利点がある場合も (_データ モデル_)、正面からのユーザー インターフェイスを終了します (_モデル-ビュー-コント ローラー_)、柔軟性の高いアプリケーションを管理しやすくします。デザインします。
 
-[![実行中のアプリの使用例](databinding-images/intro01.png "実行中のアプリの例")](databinding-images/intro01-large.png#lightbox)
+[![実行中のアプリの例](databinding-images/intro01.png "実行中のアプリの例")](databinding-images/intro01-large.png#lightbox)
 
-この記事でキーと値のコーディングおよび Xamarin.Mac アプリケーションでのデータ バインディングの操作の基礎について説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode とインターフェイスのビルダーの概要を](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)と[コンセントとアクション](~/mac/get-started/hello-mac.md#Outlets_and_Actions)セクションでは、これとは、主な概念と、この記事で使用する方法について説明します。
+この記事では、キー値コーディングし、Xamarin.Mac アプリケーションでのデータ バインディングの操作の基礎を取り上げます。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[Outlet と Action](~/mac/get-started/hello-mac.md#outlets-and-actions)ほどのセクションでは、主要な概念と、この記事で使用する方法について説明します。
 
 確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 <a name="What_is_Key-Value_Coding" />
 
-## <a name="what-is-key-value-coding"></a>コーディングのキー値とは
+## <a name="what-is-key-value-coding"></a>キー値コーディング
 
-アクセサー メソッドまたはインスタンス変数からアクセスするのではなくプロパティを識別するキー (特殊な形式の文字列) を使用して、オブジェクトのプロパティを直接アクセスするためのメカニズムは、キーと値 (KVC) のコーディング (`get/set`)。 Xamarin.Mac アプリケーションでは、キーと値のコーディング準拠アクセサーを実装、により、キーと値観測 (KVO)、データ バインディング、基本データ、Cocoa バインディング、および scriptability などの他の macOS (旧称 OS X) 機能にアクセスできます。
+オブジェクトのプロパティを直接アクセスする、インスタンス変数からアクセスするのではなくプロパティを識別するキー (特殊な形式の文字列) またはアクセサー メソッドを使用するためのメカニズムは、キー値コーディング (KVC) (`get/set`)。 キー値コーディング準拠アクセサーを実装すると、Xamarin.Mac アプリケーションで、キーと値観測 (KVO)、データ バインディング、Core Data、Cocoa バインド、およびあることを示すなどの他の macOS (旧称 OS X) 機能へのアクセスを行えます。
 
-キーと値のコーディングおよびでのデータ バインディング技術 Xamarin.Mac アプリケーションを使用するの記述し、保守を作成し、UI 要素を使用する必要のあるコードの量を大幅に削減できます。 また、バックアップ データをさらに分離することの利点がある場合 (_データ モデル_)、正面からのユーザー インターフェイスを終了 (_モデル-ビュー-コント ローラー_) より柔軟なアプリケーションの保守が容易に先行します。デザインします。 
+キーと値のコーディングおよびデータ バインド、Xamarin.Mac アプリケーションで技術を使用して、コードの記述し、保守を設定し、UI 要素を使用する必要があるの量を大幅に短縮できます。 さらに、バックアップ データを分離の利点がある場合も (_データ モデル_)、正面からのユーザー インターフェイスを終了します (_モデル-ビュー-コント ローラー_)、柔軟性の高いアプリケーションを管理しやすくします。デザインします。 
 
 たとえば、KVC 準拠しているオブジェクトの次のクラス定義を見てみましょう。
 
@@ -68,9 +68,9 @@ namespace MacDatabinding
 }
 ```
 
-最初に、`[Register("PersonModel")]`属性クラスを登録し、目標 C. に公開します。 次に、クラスから継承する必要があります。 `NSObject` (またはそのサブクラスから継承する`NSObject`)、いくつかの基本 KVC 準拠にするクラスを許可するメソッドが追加されます。 次に、`[Export("Name")]`属性の公開、`Name`プロパティをプロパティにアクセスする、KVC と KVO の手法を後で使用されるキー値を定義します。 
+まず、`[Register("PersonModel")]`属性クラスを登録し、OBJECTIVE-C に公開します。 継承するクラスが必要し、 `NSObject` (またはそのサブクラスから継承する`NSObject`)、いくつかの基本クラスに KVC 準拠にできるようにするメソッドが追加されます。 次に、`[Export("Name")]`属性の公開、`Name`プロパティ KVC と KVO 手法を通じてプロパティへのアクセスを後で使用されるキー値を定義します。 
 
-最後に、プロパティの値に変更のキー値測定するには、アクセサー ラップする必要がありますにはその値への変更`WillChangeValue`と`DidChangeValue`メソッドの呼び出し (と同じキーを指定する、`Export`属性)。  例えば:
+最後に、キーと値の確認プロパティの値を変更するには、アクセサーする必要があります変更をラップするのにはその値を`WillChangeValue`と`DidChangeValue`メソッドの呼び出し (と同じキーを指定する、`Export`属性)。  例えば:
 
 ```csharp
 set {
@@ -80,15 +80,15 @@ set {
 }
 ```
 
-この手順は_非常に_Xcode でのデータ バインディングの重要なのインターフェイスのビルダー (ようにこの記事で後述)。
+この手順は_非常に_Xcode でのデータ バインディングの重要なの Interface Builder (この記事の後半でここに表示されます)。
 
-詳細については、Apple を参照してください[キーと値のコーディング プログラミング ガイド](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)です。
+詳細については、Apple を参照してください[キー値コーディング プログラミング ガイド](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)します。
 
 ### <a name="keys-and-key-paths"></a>キーとキーのパス
 
-A_キー_オブジェクトの特定のプロパティを識別する文字列です。 通常、キーは、準拠しているオブジェクトのコーディングのキーと値のアクセサー メソッドの名前に対応します。 キーが ASCII エンコーディングを使用する必要があります通常は小文字アルファベットで始まり、空白文字を含めることはできません。 上記の例を指定された`Name`のキー値になります`Name`のプロパティ、`PersonModel`クラスです。 ただしはほとんどの場合、キーとそれが公開するプロパティの名前が、同じにするがありません。
+A_キー_オブジェクトの特定のプロパティを識別する文字列します。 通常、キーは、準拠しているオブジェクトのコーディングのキーと値のアクセサー メソッドの名前に対応します。 キーは ASCII エンコーディングを使用する必要があります、通常は、小文字で始まるし、空白文字を含めることはできません。 上記の例のように指定`Name`のキー値になります`Name`のプロパティ、`PersonModel`クラス。 キーとそれが公開するプロパティの名前は、ほとんどの場合は、同じにする必要はありません。
 
-A_キー パス_はドットの文字列を走査するオブジェクトのプロパティの階層の指定に使用するキーで区切って指定します。 シーケンス内の最初のキーのプロパティは、受信側に対する相対あり、それぞれの後続のキーが前のプロパティの値を基準として評価されます。 同じ方法では、c# クラス内でそのプロパティとオブジェクトを走査するのにドット表記を使用します。
+A_キー パス_はドットの文字列をスキャンするには、オブジェクトのプロパティの階層の指定に使用されるキーの分離します。 受信側に対する相対パス、シーケンス内の最初のキーのプロパティですし、各後続のキーが前のプロパティの値を基準に評価されます。 同じ方法では、オブジェクトと c# クラスでは、そのプロパティを走査するのにドット表記を使用します。
 
 たとえば、展開した場合、`PersonModel`クラスし、追加`Child`プロパティ。
 
@@ -131,35 +131,35 @@ namespace MacDatabinding
 }
 ```
 
-お子様の名前のキー パスになります`self.Child.Name`または単に`Child.Name`(キー値が使用されている方法に基づく)。
+お子様の名前をキー パスになります。`self.Child.Name`または単に`Child.Name`(キー値が使用されている方法に基づく)。
 
-### <a name="getting-values-using-key-value-coding"></a>コーディングのキー値を使用して値を取得します。
+### <a name="getting-values-using-key-value-coding"></a>キー値コーディングを使用して値を取得します。
 
-`ValueForKey`メソッドは、指定されたキーの値を返します (として、 `NSString`)、要求を受信 KVC クラスのインスタンスに相対パスです。 たとえば場合、`Person`のインスタンス、`PersonModel`上記で定義されたクラス。
+`ValueForKey`メソッドは、指定したキーの値を返します (として、 `NSString`) 要求を受信 KVC クラスのインスタンスからの相対します。 たとえば場合、`Person`のインスタンスである、`PersonModel`上で定義したクラス。
 
 ```csharp
 // Read value 
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-値が返されます、`Name`のインスタンスをプロパティ`PersonModel`です。 
+値が返されます、`Name`プロパティのインスタンスを`PersonModel`します。 
 
-### <a name="setting-values-using-key-value-coding"></a>コーディングのキー値を使用して値の設定
+### <a name="setting-values-using-key-value-coding"></a>キー値コーディングを使用して値の設定
 
-同様に、`SetValueForKey`指定したキーの値を設定 (として、 `NSString`)、要求を受信 KVC クラスのインスタンスに相対パスです。 ここでものインスタンスを使用して、`PersonModel`クラス、次のようにします。
+同様に、`SetValueForKey`指定したキーの値を設定 (として、 `NSString`) 要求を受信 KVC クラスのインスタンスからの相対します。 繰り返しますのインスタンスを使用して、`PersonModel`クラスを次に示すよう。
 
 ```csharp
 // Write value
 Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 ```
 
-値を変更、`Name`プロパティを`Jane Doe`です。
+値を変更、`Name`プロパティを`Jane Doe`します。
 
 <a name="Observing_Value_Changes" />
 
-### <a name="observing-value-changes"></a>値の変更を確認します。
+### <a name="observing-value-changes"></a>値の変更を監視すること
 
-キーと値 (KVO) を観察しを使用して、オブザーバーを KVC 準拠クラスの特定のキーに関連付けることができます、いつでも (KVC 手法を使用して、または c# コードで指定されたプロパティに直接アクセスする)、そのキーの値が変更された通知。 例えば:
+キーと値の確認 (KVO) を使用して、KVC 準拠のクラスの特定のキーにオブザーバーをアタッチすることができ、そのキーの値を変更すると、(KVC 手法を使用してまたは、c# コードで指定されたプロパティに直接アクセスする) たびに通知します。 例えば:
 
 ```csharp
 // Watch for the name value changing
@@ -169,21 +169,21 @@ Person.AddObserver ("Name", NSKeyValueObservingOptions.New, (sender) => {
 });
 ```
 
-ここで、いつでも、`Name`のプロパティ、`Person`のインスタンス、`PersonModel`クラスを変更すると、新しい値コンソールに出力します。 
+ここで、いつでも、`Name`のプロパティ、`Person`のインスタンス、`PersonModel`クラスを変更すると、新しい値コンソールに書き込みます。 
 
-詳細については、Apple を参照してください[キーと値を観察しプログラミング ガイドの概要](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i)です。
+詳細については、Apple を参照してください[キーと値を観察しプログラミング ガイドの概要](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i)します。
 
 ## <a name="data-binding"></a>データ バインディング
 
-次のセクションでは、コーディングのキー値とキー値が準拠しているクラスを観察しを使用して、読み取りと書き込みの c# コードを使用して値の代わりに、Xcode のインターフェイスのビルダーでの UI 要素にデータをバインドする方法に表示されます。 この方法で区別する、_データ モデル_それらを表示するために使用するビューからアプリケーションを作成する、Xamarin.Mac より柔軟かつ容易に管理します。 書き込まれる必要のあるコードの量も大幅に低下します。
+次のセクションでは、キー値コーディングと準拠のクラスを観察するキーと値を使用して、読み取りと書き込みの c# コードを使用して値の代わりに、Xcode の Interface Builder の UI 要素にデータをバインドする方法に表示されます。 この方法で分離する、_データ モデル_からそれらを表示するために使用するビューには、Xamarin.Mac アプリケーションをより柔軟で保守が簡単に行います。 書き込まれる必要のあるコードの量も大幅に低下します。
 
 <a name="Defining_your_Data_Model" />
 
 ### <a name="defining-your-data-model"></a>データ モデルを定義します。
 
-Xamarin.Mac として動作するアプリケーションで定義されている KVC/KVO 準拠しているクラスがある必要がある前にデータ バインド インターフェイスのビルダーでの UI 要素を_データ モデル_バインドにします。 データ モデルは、すべてのユーザー インターフェイスに表示されますで、ユーザーがアプリケーションの実行中に、ui がデータに変更を加えるを送受信するデータを提供します。
+として機能する、Xamarin.Mac アプリケーションで定義されている KVC/KVO 準拠しているクラスがある必要がある前にデータ バインド インターフェイス ビルダーでの UI 要素を_データ モデル_バインディング。 データ モデルは、すべてのユーザー インターフェイスに表示されます、ユーザーがアプリケーションの実行中に UI で、データへの変更を送受信するデータを提供します。
 
-たとえば、従業員のグループが管理されるアプリケーションを作成していた場合は、データ モデルを定義する次のクラスを使用します。
+たとえば、従業員のグループを管理するアプリケーションを作成していた場合は、データ モデルを定義する次のクラスを使用できます。
 
 ```csharp
 using System;
@@ -317,9 +317,9 @@ namespace MacDatabinding
 }
 ```
 
-このクラスの機能のほとんどで説明した、[キーと値のコーディングは](#What_is_Key-Value_Coding)前のセクションです。 ただし、いくつかの特定の要素とのデータ モデルとして機能するには、このクラスの許可に加えられたいくつかの追加機能を見てみましょう**配列コント ローラー**と**ツリー コント ローラー** (これは、データを後で使用します。バインド**ツリー ビュー**、**アウトライン ビュー**と**コレクション ビュー**)。
+このクラスの機能の大半が記載された、[はキー値コーディング](#What_is_Key-Value_Coding)前のセクション。 ただし、いくつかの特定の要素とのデータ モデルとして機能するには、このクラスの許可に加えられたいくつかの追加を見てみましょう**配列コント ローラー**と**コント ローラーのツリー** (これは、データを後で使用します。バインド**ツリー ビュー**、**アウトライン ビュー**と**コレクション ビュー**)。
 
-最初であるため、従業員がマネージャーを使用して、 `NSArray` (具体的には、`NSMutableArray`値を変更できるように) を添付することを管理する社員を許可します。
+最初に、従業員とマネージャーは、ため、使用した、 `NSArray` (具体的には、`NSMutableArray`値を変更できるように) を添付するを管理する社員を許可します。
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -331,12 +331,12 @@ public NSArray People {
 }
 ```
 
-2 つの処理には、ここに注意してください:
+ここで注意する 2 つは、
 
-1. 使用して、 `NSMutableArray` 、c# の配列またはコレクション AppKit コントロールにデータをバインドする必要はなどのための標準ではなく**テーブル ビュー**、**アウトライン ビュー**と**コレクション**.
-2. キャストにして、従業員の配列を公開お、`NSArray`書式指定済みの名前のデータ バインディングのため、変更、c# `People`、データ バインディングが必要ですが、その`personModelArray`形式で **{class_name} 配列**(注意してください最初の文字が行われたこと小文字のみ)。
+1. 使用して、`NSMutableArray`標準の c# の配列またはコレクションのため、これは、AppKit コントロールにデータをバインドする要件などではなく**テーブル ビュー**、**アウトライン ビュー**と**コレクション**.
+2. キャストして従業員の配列を公開しました、`NSArray`書式指定済みの名前のデータ バインディングのため、変更するには、c# `People`、データ バインディングが想定する 1 つに`personModelArray`形式で **{class_name} 配列**(注意してください最初の文字が行われたこと小文字を区別)。
 
-次に、いくつか特別な名前公開をサポートするメソッドを追加する必要があります**配列コント ローラー**と**ツリー コント ローラー**:
+次に、いくつか特別な名前のパブリック メソッドをサポートするを追加する必要があります**配列コント ローラー**と**コント ローラーのツリー**:
 
 ```csharp
 [Export("addObject:")]
@@ -369,16 +369,16 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-これにより、コント ローラーを要求し、それらを表示するデータを変更できます。 などの公開されている`NSArray`非常に特定の名前付け規則 (つまり、一般的な c# の名前付け規則とは異なります) があるこれら上記。
+これにより、コント ローラーを要求し、それらを表示するデータを変更できます。 などの公開されている`NSArray`非常に特定の名前付け規則 (一般的な c# 名前付け規則とは異なる) ことがあるこれら上記。
 
 - `addObject:` -配列にオブジェクトを追加します。
-- `insertObject:in{class_name}ArrayAtIndex:` -場所`{class_name}`クラスの名前を指定します。 このメソッドは、オブジェクトを配列の指定したインデックス位置に挿入します。
-- `removeObjectFrom{class_name}ArrayAtIndex:` -場所`{class_name}`クラスの名前を指定します。 このメソッドは、配列の指定したインデックスにあるオブジェクトを削除します。
-- `set{class_name}Array:` -場所`{class_name}`クラスの名前を指定します。 このメソッドを使用すると、既存の実行を新しいものに置き換えます。
+- `insertObject:in{class_name}ArrayAtIndex:` -場所`{class_name}`クラスの名前を指定します。 このメソッドは、指定したインデックス位置にある配列にオブジェクトを挿入します。
+- `removeObjectFrom{class_name}ArrayAtIndex:` -場所`{class_name}`クラスの名前を指定します。 このメソッドは、指定したインデックス位置にある配列内のオブジェクトを削除します。
+- `set{class_name}Array:` -場所`{class_name}`クラスの名前を指定します。 このメソッドを使用すると、新しい、既存の実行に置き換えることができます。
 
-これらのメソッドの内部では、配列に変更をラップした`WillChangeValue`と`DidChangeValue`KVO コンプライアンスのためのメッセージ。
+これらのメソッドの内部では、内の配列への変更をラップした`WillChangeValue`と`DidChangeValue`KVO コンプライアンス メッセージ。
 
-最後に、以降、`Icon`プロパティの値に依存、 `isManager` 、プロパティに対する変更を`isManager`プロパティに反映されない可能性があります、 `Icon` (KVO) 中にデータ バインドされている UI 要素の。
+最後に、以降、`Icon`の値にプロパティが依存して、 `isManager` 、プロパティに対する変更を`isManager`プロパティに反映されない可能性があります、 `Icon` (KVO) 中にデータ バインドされている UI 要素の。
 
 ```csharp
 [Export("Icon")]
@@ -409,21 +409,21 @@ public bool isManager {
 }
 ```
 
-注意して、独自のキーだけでなく、`isManager`アクセサーは送信も、`WillChangeValue`と`DidChangeValue`のメッセージの`Icon`も変更が表示されるようにキーします。
+独自のキーだけでなく、`isManager`アクセサーが送信することも、`WillChangeValue`と`DidChangeValue`向けのメッセージ、`Icon`キーの変更も表示されるようにします。
 
-使用する、`PersonModel`この記事の残りの部分のデータ モデル。
+使用する、`PersonModel`この記事の残りの部分でのデータ モデル。
 
 <a name="Simple_Data_Binding" />
 
 ### <a name="simple-data-binding"></a>単純データ バインディング
 
-モデルでは、データ定義、Xcode のインターフェイスのビルダーでのデータ バインディングの簡単な例を見てみましょう。 たとえば、Xamarin.Mac アプリケーションを編集するために使用するのにフォームを追加してみましょう、`PersonModel`上に定義しました。 モデルのプロパティを表示および編集には、いくつかのテキスト フィールドとチェック ボックスを追加します。
+定義されている、データ モデルには、Xcode の Interface Builder でのデータ バインディングの簡単な例を見てみましょう。 など、Xamarin.Mac アプリケーションを編集するために使用するのには、フォームを追加しましょう、`PersonModel`上で定義したです。 私たちのモデルのプロパティを表示および編集には、いくつかのテキスト フィールドとチェック ボックスを追加します。
 
-最初に、新しく追加してみましょう**ビュー コント ローラー**を弊社**Main.storyboard**インターフェイス ビルダー内のファイルとそのクラスの名前を`SimpleViewController`:。 
+最初に、新しい追加**ビュー コント ローラー**を**Main.storyboard**インターフェイス ビルダーでファイルし、そのクラスの名前を`SimpleViewController`: 
 
-[![新しいビュー コント ローラーを追加する](databinding-images/simple01.png "新しいビュー コント ローラーを追加します。")](databinding-images/simple01-large.png#lightbox)
+[![新しいビュー コント ローラーの追加](databinding-images/simple01.png "新しいビュー コント ローラーの追加")](databinding-images/simple01-large.png#lightbox)
 
-次に、Mac を Visual Studio に戻り、編集、 **SimpleViewController.cs** (つまり、プロジェクトに自動的に追加された) ファイルのインスタンスを公開し、`PersonModel`おになるデータをフォームをバインドします。 次のコードを追加します。
+次に、Mac に Visual Studio に戻り、編集、 **SimpleViewController.cs** (つまり、プロジェクトに自動的に追加された) ファイルのインスタンスを公開し、`PersonModel`データ バインディングをフォームをいたします。 次のコードを追加します。
 
 ```csharp
 private PersonModel _person = new PersonModel();
@@ -440,7 +440,7 @@ public PersonModel Person {
 }
 ```
 
-次に、ビューが読み込まれるときにみましょうのインスタンスを作成、`PersonModel`し、次のコードを設定します。
+次に、ビューが読み込まれるときにみましょうのインスタンスを作成、`PersonModel`し、このコードを設定します。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -459,55 +459,55 @@ public override void ViewDidLoad ()
 }
 ```
 
-フォームを作成する必要があります、これをダブルクリックして、 **Main.storyboard**編集のためインターフェイス ビルダーで開くファイル。 次のように表示するフォームのレイアウト:
+フォームを作成する必要があります、ダブルクリック、 **Main.storyboard**ファイルを開き、インターフェイス ビルダーで編集します。 レイアウト フォームは、次のようになります。
 
-[![Xcode でストーリー ボードの編集](databinding-images/simple02.png "Xcode でストーリー ボードの編集")](databinding-images/simple02-large.png#lightbox)
+[![Xcode でストーリー ボードを編集](databinding-images/simple02.png "Xcode でストーリー ボードの編集")](databinding-images/simple02-large.png#lightbox)
 
-データ バインド フォームを`PersonModel`を介して公開されることを`Person`キーを次の操作します。
+データにバインドするためのフォーム、`PersonModel`経由で公開しました、`Person`キーを次の操作を行います。
 
-1. 選択、 **Employee Name**テキスト フィールドに切り替えると、**バインド インスペクター**です。
-2. チェック、**バインド**ボックスし、**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.Name`の**キー パス**: 
+1. 選択、 **Employee Name**テキスト フィールドに切り替えると、**バインド インスペクター**します。
+2. チェック、**バインド**ボックスを選択します**単純なビュー コント ローラー**ドロップダウン リストから。 次に入力`self.Person.Name`の**キー パス**: 
 
     [![キーのパスを入力する](databinding-images/simple03.png "キーのパスを入力します。")](databinding-images/simple03-large.png#lightbox)
-3. 選択、**職業**テキスト フィールドおよびチェック、**にバインド**ボックスし、選択**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.Occupation`の**キー パス**:  
+3. 選択、**職業**テキスト フィールドとチェック、**バインド**ボックスを選択します**単純なビュー コント ローラー**ドロップダウン リストから。 次に入力`self.Person.Occupation`の**キー パス**:  
 
     [![キーのパスを入力する](databinding-images/simple04.png "キーのパスを入力します。")](databinding-images/simple04-large.png#lightbox)
-4. 選択、**従業員がマネージャー**  チェック ボックスを確認し、**にバインド**ボックスし、**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.isManager`の**キー パス**:  
+4. 選択、**従業員がマネージャー**チェック ボックスを確認し、**にバインド**ボックスを選択します**単純なビュー コント ローラー**ドロップダウン リストから。 次に入力`self.Person.isManager`の**キー パス**:  
 
     [![キーのパスを入力する](databinding-images/simple05.png "キーのパスを入力します。")](databinding-images/simple05-large.png#lightbox)
-5. 選択、**管理された従業員の数**テキスト フィールドおよびチェック、**にバインド**ボックスし、選択**ビューの単純なコント ローラー**ドロップダウン リストからです。 次に入力`self.Person.NumberOfEmployees`の**キー パス**:  
+5. 選択、**管理された従業員の数**テキスト フィールドとチェック、**にバインド**ボックスを選択します**単純なビュー コント ローラー**ドロップダウン リストから。 次に入力`self.Person.NumberOfEmployees`の**キー パス**:  
 
     [![キーのパスを入力する](databinding-images/simple06.png "キーのパスを入力します。")](databinding-images/simple06-large.png#lightbox)
-6. 数の従業員管理のラベルとテキスト フィールドを非表示にたい場合は、従業員がマネージャーではありません。
-7. 選択、**管理された従業員の数**ラベル、展開、 **Hidden** turndown とチェック、**にバインド**ボックスし、選択**単純なビュー コント ローラー**ドロップダウン リストからです。 次に入力`self.Person.isManager`の**キー パス**:  
+6. 数の従業員管理されているラベルとテキスト フィールドを非表示にたい場合は、従業員がマネージャーではありません。
+7. 選択、**管理された従業員の数**ラベル、展開、 **Hidden**折り返しとチェック、**にバインド**ボックスを選択します**単純なビュー コント ローラー**ドロップダウン リストから。 次に入力`self.Person.isManager`の**キー パス**:  
 
     [![キーのパスを入力する](databinding-images/simple07.png "キーのパスを入力します。")](databinding-images/simple07-large.png#lightbox)
-8. 選択`NSNegateBoolean`から、**値トランスフォーマー**ドロップダウンします。  
+8. 選択`NSNegateBoolean`から、**値トランスフォーマー**ドロップダウン。  
 
-    ![NSNegateBoolean キーの変換を選択すると](databinding-images/simple08.png "NSNegateBoolean キーの変換を選択します。")
-9. データ バインディングを示すこの場合、ラベルを非表示にすることの値、`isManager`プロパティは`false`します。
-10. 手順 7 と 8 を繰り返します、**数の従業員マネージ**テキスト フィールド。
-11. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+    ![NSNegateBoolean キーの変換を選択する](databinding-images/simple08.png "NSNegateBoolean キーの変換を選択します。")
+9. データ バインディングを示しますこの場合、ラベルを非表示にすることの値、`isManager`プロパティは`false`します。
+10. 手順 7. および 8 を繰り返して、**数の従業員管理**テキスト フィールド。
+11. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-値をアプリケーションを実行する場合、`Person`プロパティは、フォームを自動的に設定します。
+アプリケーションからの値を実行する場合、`Person`プロパティは、フォームを自動的に設定します。
 
-[![自動設定されたフォームを示す](databinding-images/simple09.png "自動設定されたフォームを表示")](databinding-images/simple09-large.png#lightbox)
+[![自動設定フォームを示す](databinding-images/simple09.png "を自動に設定されたフォームを表示")](databinding-images/simple09-large.png#lightbox)
 
-ユーザーがフォームに変更を加えた書き戻されますを`Person`ビュー コント ローラー内のプロパティです。 たとえば、選択を解除する**従業員がマネージャー**更新プログラム、`Person`のインスタンス、`PersonModel`と**管理された従業員の数**ラベルとテキスト フィールドが自動的に (経由で非表示データ バインディングの場合):
+ユーザーがフォームにすべての変更にライトバックは、`Person`ビュー コント ローラーのプロパティ。 たとえば、選択を解除する**従業員がマネージャー**更新プログラム、`Person`のインスタンス、`PersonModel`と**管理された従業員の数**ラベルとテキスト フィールドが自動的に (を介して非表示データ バインディングの場合):
 
-[![管理者以外のメンバーの従業員の数を非表示にする](databinding-images/simple10.png "管理者以外のメンバーの従業員の数を非表示にします。")](databinding-images/simple10-large.png#lightbox)
+[![管理者以外の従業員の数を非表示](databinding-images/simple10.png "管理者以外の従業員の数を非表示")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
 ### <a name="table-view-data-binding"></a>テーブル ビューのデータ バインディング
 
-これでがデータ バインドを邪魔の基礎、見てみましょうより複雑なデータ バインドのタスクを使用して、_配列コント ローラー_およびテーブル ビューにデータをバインドします。 テーブルのビューの操作の詳細についてを参照してください、[テーブル ビュー](~/mac/user-interface/table-view.md)ドキュメント。
+データ バインディングの基礎をしたらを見てみましょうより複雑なデータ バインドのタスクを使用して、_配列コント ローラー_およびテーブル ビューにデータをバインドします。 テーブル ビューの使用の詳細についてを参照してください、[テーブル ビュー](~/mac/user-interface/table-view.md)ドキュメント。
 
-最初に、新しく追加してみましょう**ビュー コント ローラー**を弊社**Main.storyboard**インターフェイス ビルダー内のファイルとそのクラスの名前を`TableViewController`:。
+最初に、新しい追加**ビュー コント ローラー**を**Main.storyboard**インターフェイス ビルダーでファイルし、そのクラスの名前を`TableViewController`:
 
-[![新しいビュー コント ローラーを追加する](databinding-images/table01.png "新しいビュー コント ローラーを追加します。")](databinding-images/table01-large.png#lightbox)
+[![新しいビュー コント ローラーの追加](databinding-images/table01.png "新しいビュー コント ローラーの追加")](databinding-images/table01-large.png#lightbox)
 
-次に、編集しましょう、 **TableViewController.cs**ファイル (つまり、プロジェクトに自動的に追加された) と配列を公開して (`NSArray`) の`PersonModel`おなるはデータ バインディングをフォームのクラスです。 次のコードを追加します。
+次に、編集、 **TableViewController.cs** (つまり、プロジェクトに自動的に追加された) ファイル サービスおよび公開配列 (`NSArray`) の`PersonModel`クラスのデータ バインディングをフォームをいたします。 次のコードを追加します。
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -548,9 +548,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-上と同様、`PersonModel`クラス上の[、データ モデルを定義する](#Defining_your_Data_Model) セクションで、特別に指定された 4 つのパブリック メソッドを公開したおように配列コント ローラーおよび読み取りと書き込みのデータのコレクションを`PersonModels`です。
+上と同様、`PersonModel`クラス上の[、データ モデルを定義する](#Defining_your_Data_Model) セクションで、特別に指定された 4 つのパブリック メソッドを公開していますようにのコレクションから配列コント ローラーおよび読み取りと書き込みデータ`PersonModels`。
 
-次に、ビューが読み込まれるときにこのコードを持つ配列を設定する必要があります。
+次に、ビューが読み込まれるときにこのコードで配列を設定する必要があります。
 
 ```csharp
 public override void AwakeFromNib ()
@@ -570,59 +570,59 @@ public override void AwakeFromNib ()
 }
 ```
 
-テーブル、ビューを作成する必要があります、これをダブルクリックして、 **Main.storyboard**編集のためインターフェイス ビルダーで開くファイル。 次のように表示するテーブルのレイアウト:
+テーブル、ビューを作成する必要があります、ダブルクリック、 **Main.storyboard**ファイルを開き、インターフェイス ビルダーで編集します。 レイアウト テーブルは、次のようになります。
 
-[![新しい表形式ビューのレイアウト](databinding-images/table02.png "新しい表形式ビューのレイアウト")](databinding-images/table02-large.png#lightbox)
+[![新しいテーブルのビュー レイアウト](databinding-images/table02.png "新しい表形式ビューのレイアウト")](databinding-images/table02-large.png#lightbox)
 
 追加する必要があります、**配列コント ローラー**このテーブルにバインドされたデータを提供する、次の操作します。
 
 1. ドラッグ、**配列コント ローラー**から、**ライブラリ インスペクター**上に、**インターフェイス エディター**:  
 
-    ![ライブラリから配列コント ローラーを選択すると](databinding-images/table03.png "ライブラリから配列コント ローラーを選択します。")
+    ![配列コント ローラーをライブラリから選択](databinding-images/table03.png "ライブラリから、配列コント ローラーを選択します。")
 2. 選択**配列コント ローラー**で、**インターフェイス階層**に切り替えると、**属性インスペクター**:  
 
-    [![属性のインスペクターを選択すると](databinding-images/table04.png "属性インスペクターを選択します。")](databinding-images/table04-large.png#lightbox)
+    [![属性インスペクターを選択する](databinding-images/table04.png "Attributes Inspector の選択")](databinding-images/table04-large.png#lightbox)
 3. 入力`PersonModel`の**クラス名**、 をクリックして、 **Plus**ボタンをクリックし、3 つのキーを追加します。 名前を付けます`Name`、`Occupation`と`isManager`:  
 
-    ![必須のキーのパスを追加する](databinding-images/table05.png "必須のキーのパスを追加します。")
-4. 新機能は、管理の配列、配列コント ローラーに指示このありプロパティ (キー) を使用して公開する必要があります。
-5. 切り替えて、**バインド インスペクター**し、**コンテンツ配列**選択**にバインド**と**テーブル ビューのコント ローラー**です。 入力、**キーのパスをモデル**の`self.personModelArray`:  
+    ![必要なキー パスを追加する](databinding-images/table05.png "必要なキー パスを追加します。")
+4. 内容は、管理の配列、配列コント ローラーこれはありプロパティ (キー) を使用して公開する必要があります。
+5. 切り替えて、**バインド インスペクター** **コンテンツ配列**選択**にバインド**と**テーブル ビュー コント ローラー**。 入力、**キーのパスをモデル化**の`self.personModelArray`:  
 
     ![キーのパスを入力する](databinding-images/table06.png "キーのパスを入力します。")
-6. これにより、関連付けの配列を配列コント ローラー`PersonModels`ビューのコント ローラーは公開されています。
+6. 配列を配列コント ローラーを結び付けるこの`PersonModels`ビュー コント ローラーで公開します。
 
-配列コント ローラーに、テーブル ビューをバインドする必要があります、これは、次の操作を行います。
+テーブル、ビューを配列コント ローラーにバインドする必要があります、これで、次の操作を行います。
 
-1. テーブル ビューを選択し、**インスペクターをバインド**:  
+1. テーブル ビューを選択し、**バインド インスペクター**:  
 
-    [![バインディング インスペクターを選択すると](databinding-images/table07.png "バインディング インスペクターを選択します。")](databinding-images/table07-large.png#lightbox)
-2. 下にある、**テーブルの内容**turndown、select**バインド**と**配列コント ローラー**です。 入力`arrangedObjects`の**コント ローラー キー**フィールド。  
+    [![バインド インスペクターを選択する](databinding-images/table07.png "バインド インスペクターを選択します。")](databinding-images/table07-large.png#lightbox)
+2. 、**テーブルの内容**折り返しで、**バインド**と**配列コント ローラー**します。 入力`arrangedObjects`の**コント ローラー キー**フィールド。  
 
     ![コント ローラーのキーを定義する](databinding-images/table08.png "コント ローラーのキーを定義します。")
-3. 選択、**テーブル ビューのセル**下にある、**従業員**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Name`の**キーのパスをモデル**:  
+3. 選択、 **Table View Cell**下、**従業員**列。 **バインド インスペクター**下、**値**折り返しで、**にバインド**と**テーブル セル ビュー**。 入力`objectValue.Name`の**キーのパスをモデル化**:  
 
-    [![モデルのキー パスを設定して](databinding-images/table09.png "モデルのキー パスを設定します。")](databinding-images/table09-large.png#lightbox)
-4. `objectValue` 現在`PersonModel`配列コント ローラーによって管理されている配列。
-5. 選択、**テーブル ビューのセル**下にある、**職業**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Occupation`の**キーのパスをモデル**:  
+    [![モデルのキー パスを設定する](databinding-images/table09.png "モデルのキー パスを設定します。")](databinding-images/table09-large.png#lightbox)
+4. `objectValue` 現在は、`PersonModel`配列コント ローラーによって管理されている配列。
+5. 選択、 **Table View Cell**下、**職業**列。 **バインド インスペクター**下、**値**折り返しで、**にバインド**と**テーブル セル ビュー**。 入力`objectValue.Occupation`の**キーのパスをモデル化**:  
 
-    [![モデルのキー パスを設定して](databinding-images/table10.png "モデルのキー パスを設定します。")](databinding-images/table10-large.png#lightbox)
-6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+    [![モデルのキー パスを設定する](databinding-images/table10.png "モデルのキー パスを設定します。")](databinding-images/table10-large.png#lightbox)
+6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-配列で、テーブルにデータを設定して、アプリケーションを実行する場合`PersonModels`:
+配列で、テーブルにデータを設定して、アプリケーションを実行した場合`PersonModels`:
 
 [![アプリケーションを実行している](databinding-images/table11.png "アプリケーションを実行します。")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
-### <a name="outline-view-data-binding"></a>アウトライン表示のデータ バインディング
+### <a name="outline-view-data-binding"></a>アウトライン ビューのデータ バインディング
 
-アウトライン ビューに対してデータ バインドは、テーブル ビューに対するバインドとよく似ています。 主な違いは、使用すること、**ツリー コント ローラー**の代わりに、**配列コント ローラー**をアウトライン表示にバインドされたデータを提供します。 アウトライン ビューの使用の詳細についてを参照してください、[アウトライン ビュー](~/mac/user-interface/outline-view.md)ドキュメント。
+アウトライン表示に対してデータ バインディングは、テーブル ビューに対するバインディングによく似ています。 主な違いは、使用すること、**コント ローラーのツリー**の代わりに、**配列コント ローラー**アウトライン ビューにバインドされたデータを提供します。 アウトライン ビューの使用の詳細についてを参照してください、[アウトライン ビュー](~/mac/user-interface/outline-view.md)ドキュメント。
 
-最初に、新しく追加してみましょう**ビュー コント ローラー**を弊社**Main.storyboard**インターフェイス ビルダー内のファイルとそのクラスの名前を`OutlineViewController`:。 
+最初に、新しい追加**ビュー コント ローラー**を**Main.storyboard**インターフェイス ビルダーでファイルし、そのクラスの名前を`OutlineViewController`: 
 
-[![新しいビュー コント ローラーを追加する](databinding-images/outline01.png "新しいビュー コント ローラーを追加します。")](databinding-images/outline01-large.png#lightbox)
+[![新しいビュー コント ローラーの追加](databinding-images/outline01.png "新しいビュー コント ローラーの追加")](databinding-images/outline01-large.png#lightbox)
 
-次に、編集しましょう、 **OutlineViewController.cs**ファイル (つまり、プロジェクトに自動的に追加された) と配列を公開して (`NSArray`) の`PersonModel`おなるはデータ バインディングをフォームのクラスです。 次のコードを追加します。
+次に、編集、 **OutlineViewController.cs** (つまり、プロジェクトに自動的に追加された) ファイル サービスおよび公開配列 (`NSArray`) の`PersonModel`クラスのデータ バインディングをフォームをいたします。 次のコードを追加します。
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -663,9 +663,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-上と同様、`PersonModel`クラス上の[、データ モデルを定義する](#Defining_your_Data_Model) セクションで、特別に指定された 4 つのパブリック メソッドを公開したおように、ツリーのコント ローラーおよび読み取りと書き込みのデータのコレクションから`PersonModels`です。
+上で実行したよう、`PersonModel`クラスの上、 [、データ モデルを定義する](#Defining_your_Data_Model) セクションで、特別に指定された 4 つのパブリック メソッドを公開していますようにコント ローラーのツリーおよび読み取りと書き込みデータのコレクションから`PersonModels`します。
 
-次に、ビューが読み込まれるときにこのコードを持つ配列を設定する必要があります。
+次に、ビューが読み込まれるときにこのコードで配列を設定する必要があります。
 
 ```csharp
 public override void AwakeFromNib ()
@@ -688,58 +688,58 @@ public override void AwakeFromNib ()
 }
 ```
 
-当社のアウトライン ビューを作成する必要があります、これをダブルクリックして、 **Main.storyboard**編集のためインターフェイス ビルダーで開くファイル。 次のように表示するテーブルのレイアウト:
+アウトライン ビューを作成する必要がありますをダブルクリック、 **Main.storyboard**ファイルを開き、インターフェイス ビルダーで編集します。 レイアウト テーブルは、次のようになります。
 
-[![アウトライン表示を作成して](databinding-images/outline02.png "アウトライン表示を作成します。")](databinding-images/outline02-large.png#lightbox)
+[![アウトライン ビューを作成する](databinding-images/outline02.png "アウトライン ビューの作成")](databinding-images/outline02-large.png#lightbox)
 
-追加する必要があります、**ツリー コント ローラー**アウトラインにバインドされたデータを提供する、次の操作します。
+追加する必要があります、**コント ローラーのツリー**アウトラインにバインドされたデータを提供する、次の操作します。
 
 1. ドラッグ、**コント ローラーのツリー**から、**ライブラリ インスペクター**上に、**インターフェイス エディター**:  
 
-    ![ライブラリからツリー コント ローラーを選択すると](databinding-images/outline03.png "ライブラリからツリー コント ローラーを選択します。")
-2. 選択**ツリー コント ローラー**で、**インターフェイス階層**に切り替えると、**属性インスペクター**:  
+    ![ツリーのコント ローラーをライブラリから選択](databinding-images/outline03.png "ライブラリからツリー コント ローラーを選択します。")
+2. 選択**コント ローラーのツリー**で、**インターフェイス階層**に切り替えると、**属性インスペクター**:  
 
-    [![属性のインスペクターを選択すると](databinding-images/outline04.png "属性インスペクターを選択します。")](databinding-images/outline04-large.png#lightbox)
+    [![属性インスペクターを選択する](databinding-images/outline04.png "属性インスペクターを選択します。")](databinding-images/outline04-large.png#lightbox)
 3. 入力`PersonModel`の**クラス名**、 をクリックして、 **Plus**ボタンをクリックし、3 つのキーを追加します。 名前を付けます`Name`、`Occupation`と`isManager`:  
 
-    ![必須のキーのパスを追加する](databinding-images/outline05.png "必須のキーのパスを追加します。")
-4. こうこと、ツリーのコント ローラーとは、管理の配列およびプロパティ (キー) を介した公開が必要があります。
-5. 下にある、**ツリー コント ローラー**セクションで、入力`personModelArray`の**子**、入力`NumberOfEmployees`下にある、**カウント**を入力し、 `isEmployee` **リーフ**:  
+    ![必要なキー パスを追加する](databinding-images/outline05.png "必要なキー パスを追加します。")
+4. 配列を管理にどのようなツリーのコント ローラーこれはありプロパティ (キー) を使用して公開する必要があります。
+5. 、**コント ローラーのツリー**セクションに、入力`personModelArray`の**子**、入力`NumberOfEmployees`、**数**入力と`isEmployee`下**リーフ**:  
 
-    ![ツリーのコント ローラーのキーのパスを設定](databinding-images/outline05.png "ツリー コント ローラーのキー パスの設定")
-6. これは、ツリーのコント ローラーに、ノードがある子ノードの数は、および現在のノードに子ノードがあるかどうかは、すべての子を検索する場所を示しています。
-7. 切り替えて、**バインド インスペクター**し、**コンテンツ配列**選択**にバインド**と**ファイルの所有者**です。 入力、**キーのパスをモデル**の`self.personModelArray`:  
+    ![コント ローラーのツリーのキー パスの設定](databinding-images/outline05.png "コント ローラーのツリーのキー パスの設定")
+6. これは、ツリーのコント ローラーに、ノードはある子ノードの数は、現在のノードに子ノードがあるかどうかは、すべての子を検索する場所を指示します。
+7. 切り替えて、**バインド インスペクター** **コンテンツ配列**選択**にバインド**と**ファイルの所有者**。 入力、**キーのパスをモデル化**の`self.personModelArray`:  
 
-    ![キーのパスを編集](databinding-images/outline06.png "キー パスの編集")
-8. これにより、関連付けの配列に、ツリーのコント ローラー`PersonModels`ビューのコント ローラーは公開されています。
+    ![キー パスの編集](databinding-images/outline06.png "キー パスの編集")
+8. これによって、ツリーのコント ローラーの配列を`PersonModels`ビュー コント ローラーで公開します。
 
-ツリーのコント ローラーに、アウトライン表示をバインドする必要があります、これは、次の操作を行います。
+ツリーのコント ローラーに、アウトライン ビューをバインドする必要があります、これで、次の操作を行います。
 
-1. アウトライン表示を選択し、、**インスペクターのバインド**を選択します。  
+1. アウトライン ビューを選択し、、**バインド インスペクター**を選択します。  
 
-    [![バインディング インスペクターを選択すると](databinding-images/outline07.png "バインディング インスペクターを選択します。")](databinding-images/outline07-large.png#lightbox)
-2. 下にある、**内容のアウトライン表示**turndown、select**にバインド**と**ツリー コント ローラー**です。 入力`arrangedObjects`の**コント ローラー キー**フィールド。  
+    [![バインド インスペクターを選択する](databinding-images/outline07.png "バインド インスペクターを選択します。")](databinding-images/outline07-large.png#lightbox)
+2. 下、**アウトライン ビューの内容**折り返しで、**バインド**と**コント ローラーのツリー**。 入力`arrangedObjects`の**コント ローラー キー**フィールド。  
 
     ![コント ローラーのキーを設定する](databinding-images/outline08.png "コント ローラーのキーを設定します。")
-3. 選択、**テーブル ビューのセル**下にある、**従業員**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Name`の**キーのパスをモデル**:  
+3. 選択、 **Table View Cell**下、**従業員**列。 **バインド インスペクター**下、**値**折り返しで、**にバインド**と**テーブル セル ビュー**。 入力`objectValue.Name`の**キーのパスをモデル化**:  
 
     [![モデルのキーのパスを入力する](databinding-images/outline09.png "モデルのキーのパスを入力します。")](databinding-images/outline09-large.png#lightbox)
-4. `objectValue` 現在`PersonModel`ツリー コント ローラーによって管理されている配列。
-5. 選択、**テーブル ビューのセル**下にある、**職業**列です。 **バインド インスペクター**下にある、**値**turndown、select**にバインド**と**テーブル セル ビュー**です。 入力`objectValue.Occupation`の**キーのパスをモデル**:  
+4. `objectValue` 現在は、`PersonModel`ツリー コント ローラーによって管理されている配列。
+5. 選択、 **Table View Cell**下、**職業**列。 **バインド インスペクター**下、**値**折り返しで、**にバインド**と**テーブル セル ビュー**。 入力`objectValue.Occupation`の**キーのパスをモデル化**:  
 
     [![モデルのキーのパスを入力する](databinding-images/outline10.png "モデルのキーのパスを入力します。")](databinding-images/outline10-large.png#lightbox)
-6. 変更内容を保存し、Xcode と同期する Mac 用の Visual Studio に戻ります。
+6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
-アプリケーションを実行している場合、アウトラインが設定されます、配列の`PersonModels`:
+アプリケーションを実行した場合、アウトラインが設定されます、配列の`PersonModels`:
 
 [![アプリケーションを実行している](databinding-images/outline11.png "アプリケーションを実行します。")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>コレクション ビューのデータ バインディング
 
-データ バインディング コレクション ビューにはテーブル ビューでは、バインドとよく似て配列コント ローラーは、データ コレクションを提供するために使用します。 コレクション ビューが既定の表示形式があるないためより多くの作業はユーザー操作のフィードバックを提供し、ユーザーの選択を追跡するために必要です。
+コレクション ビューを使用してデータ バインディングには、配列コント ローラーを使用して、コレクションのデータを提供するにはテーブル ビューでは、バインドとよく似て。 コレクション ビューを事前設定された表示形式を持たない、ため多くの作業がユーザーの相互作用のフィードバックを提供して、ユーザーの選択を追跡するために必要です。
 
 > [!IMPORTANT]
-> 問題のため、Xcode 7 および macOS 10.11 (以降) で、コレクション ビューでは、ストーリー ボード (.storyboard) ファイル内で使用できません。 その結果、引き続き Xamarin.Mac アプリに、コレクション ビューの定義に .xib ファイルを使用する必要があります。 参照してください、[コレクション ビュー](~/mac/user-interface/collection-view.md)詳細についてはドキュメントです。
+> Xcode 7 および macOS 10.11 (以降) で問題は、コレクション ビューでは、ストーリー ボード (.storyboard) ファイルで使用するのにはできません。 その結果、.xib ファイルを使用して Xamarin.Mac アプリのコレクション ビューを定義する続行する必要があります。 参照してください、[コレクション ビュー](~/mac/user-interface/collection-view.md)詳細についてはドキュメントです。
 
 <!--KKM 012/16/2015 - Once Apple fixes the issue with Xcode and Collection Views in Storyboards, we can uncomment this section.
 
@@ -856,52 +856,52 @@ If we run the application, the table will be populated with our array of `Person
 
 For more information on working with Collection Views, please see our [Collection Views](~/mac/user-interface/collection-view.md) documentation.-->
 
-## <a name="debugging-native-crashes"></a>ネイティブのクラッシュをデバッグ
+## <a name="debugging-native-crashes"></a>ネイティブ クラッシュのデバッグ
 
-データ バインドに間違いを犯す可能性、_ネイティブ クラッシュ_でアンマネージ コードと、Xamarin.Mac アプリケーションで完全に失敗する、`SIGABRT`エラー。
+データ バインドで間違いを犯す可能性を_ネイティブ クラッシュ_アンマネージ コードになり、Xamarin.Mac アプリケーションで完全に失敗する、`SIGABRT`エラー。
 
-[![ネイティブのクラッシュ ダイアログ ボックスの例](databinding-images/debug01.png "ネイティブ クラッシュ ダイアログ ボックスの例")](databinding-images/debug01-large.png#lightbox)
+[![ネイティブ クラッシュのダイアログ ボックスの例](databinding-images/debug01.png "ネイティブ クラッシュのダイアログ ボックスの例")](databinding-images/debug01-large.png#lightbox)
 
-データ バインド中には通常するクラッシュをネイティブの 4 つの主要な原因があります。
+データ バインド時に通常はネイティブ クラッシュの 4 つの主な原因があります。
 
-1. データ モデルがから継承していない`NSObject`またはそのサブクラスの`NSObject`します。
-2. Objective C を使用するプロパティが公開されていません、`[Export("key-name")]`属性。
+1. データ モデルを継承しない`NSObject`またはそのサブクラス`NSObject`します。
+2. Objective C を使用するプロパティを公開しなかった、`[Export("key-name")]`属性。
 3. アクセサーの値に変更をラップしなかった`WillChangeValue`と`DidChangeValue`メソッドの呼び出し (と同じキーを指定する、`Export`属性)。
-4. 正しくないか、入力の間違いキーがある、**バインド インスペクター**インターフェイスのビルダー。
+4. 間違っているか、入力の間違いキーがある、**バインド インスペクター**インターフェイス ビルダーでします。
 
 ### <a name="decoding-a-crash"></a>クラッシュのデコード
 
-みましょうを探して、その修正方法を説明できるように、データ バインディングでネイティブのクラッシュが発生します。 インターフェイスのビルダーからコレクション ビューの例の最初のラベルのバインディングを変更してみましょう`Name`に`Title`:
+みましょうを見つけて、その修正方法を紹介できるように、データ バインドでネイティブのクラッシュが発生します。 インターフェイス ビルダーでは、最初のラベルからコレクション ビューの例では、バインドを変更してみましょう`Name`に`Title`:
 
 [![バインド キーを編集](databinding-images/debug02.png "バインド キーを編集")](databinding-images/debug02-large.png#lightbox)
 
-みましょう変更を保存、Xcode と同期し、アプリケーションを実行する Mac 用の Visual Studio に戻ります。 アプリケーションがすぐにクラッシュし、コレクション ビューが表示される場合、`SIGABRT`エラー (で示すように、**アプリケーション出力**Mac 用の Visual Studio で) ため、`PersonModel`キーを持つプロパティを公開しません`Title`:
+変更を保存、Visual Studio for Mac は Xcode と同期され、アプリケーションの実行に戻り、みましょう。 アプリケーションが一時的にクラッシュし、コレクション ビューが表示されるときに、`SIGABRT`エラー (ように、**アプリケーション出力**Visual Studio for Mac で) ため、`PersonModel`キーを持つプロパティを公開しません`Title`:
 
-[![バインディング エラーの例](databinding-images/debug03.png "バインディング エラーの例")](databinding-images/debug03-large.png#lightbox)
+[![バインド エラーの例](databinding-images/debug03.png "バインド エラーの例")](databinding-images/debug03-large.png#lightbox)
 
-内のエラーの最上部までスクロールする場合、**アプリケーション出力**お問題を解決するためのキーを参照してください。
+内のエラーの最上部までスクロールする場合、**アプリケーション出力**問題を解決する鍵ことがわかります。
 
-[![エラー ログで問題を発見して](databinding-images/debug04.png "エラー ログで問題を検索します。")](databinding-images/debug04-large.png#lightbox)
+[![エラー ログで問題を見つける](databinding-images/debug04.png "エラー ログで、問題の検索")](databinding-images/debug04-large.png#lightbox)
 
-この行は、お客様の認証をキー`Title`にバインドすることをオブジェクト上に存在しません。 おを変更する場合、バインド バックアップ`Name`インターフェイス ビルダーで、保存、同期を再構築し、実行に問題なく正常に、アプリケーションは実行されます。
+この行は、ことを通知する、キー`Title`にバインドしているオブジェクトに存在しません。 変更する場合、バインド元に戻す`Name`インターフェイス ビルダーで、保存、同期、再構築し、実行に問題なく期待どおりに、アプリケーションは実行されます。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、データ バインディングと Xamarin.Mac アプリケーションのコーディングのキーと値の操作についての詳細を取得しました。 最初に、キーと値 (KVC) のコーディングを使用し、キーと値 (KVO) を観察しによって Objective C に c# クラスを公開する調べるとします。 次に、KVO 準拠のクラスを使用する方法を示したし、データは Xcode のインターフェイスのビルダーでの UI 要素にバインドします。 複合データ バインディングを使用して最後に、示しました**配列コント ローラー**と**ツリー コント ローラー**です。
+この記事では、データ バインディングとキー値は、Xamarin.Mac アプリケーションでコーディングの使用方法について詳しく説明をしました。 最初に、キー値コーディング (KVC) を使用して、キーと値 (KVO) を観察する OBJECTIVE-C を c# クラスを公開することについて説明しました。 次に、KVO 準拠のクラスを使用する方法を説明しましたし、データは Xcode の Interface Builder での UI 要素にバインドします。 最後に、複雑なデータ バインディングを使用して示しました**配列コント ローラー**と**コント ローラーのツリー**します。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [MacDatabinding ストーリー ボード (サンプル)](https://developer.xamarin.com/samples/mac/MacDatabinding-Storyboard/)
-- [MacDatabinding XIBs (サンプル)](https://developer.xamarin.com/samples/mac/MacDatabinding-XIBs/)
+- [MacDatabinding Xib (サンプル)](https://developer.xamarin.com/samples/mac/MacDatabinding-XIBs/)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [標準コントロール](~/mac/user-interface/standard-controls.md)
-- [テーブルのビュー](~/mac/user-interface/table-view.md)
+- [テーブル ビュー](~/mac/user-interface/table-view.md)
 - [アウトライン ビュー](~/mac/user-interface/outline-view.md)
 - [コレクション ビュー](~/mac/user-interface/collection-view.md)
-- [キーと値のコーディングのプログラミング ガイド](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
+- [キー値コーディングのプログラミング ガイド](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
 - [キーと値を観察しプログラミング ガイドの概要](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
-- [プログラミングのトピック Cocoa バインディングの概要](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
+- [Cocoa バインドのプログラミングのトピックの概要](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
 - [Cocoa バインド参照の概要](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
 - [macOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

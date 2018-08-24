@@ -1,32 +1,32 @@
 ---
-title: SkiaSharp で本の指の描画
-description: この記事では、Xamarin.Forms のアプリケーションで SkiaSharp キャンバス上の描画に指を使用する方法について説明し、サンプル コードを示します。
+title: SkiaSharp の指による描画
+description: この記事では、指を使用して、Xamarin.Forms アプリケーションで SkiaSharp キャンバスに描画する方法を説明し、サンプル コードを示します。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: f4c3d2ef2f6d1253f58b95559ef83af291f87b03
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0f28cd3e8a928a6da3169dee96ec089178a64e2
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243780"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615822"
 ---
-# <a name="finger-painting-in-skiasharp"></a>SkiaSharp で本の指の描画
+# <a name="finger-painting-in-skiasharp"></a>SkiaSharp の指による描画
 
 _指を使用して、キャンバスに描画します。_
 
-`SKPath`オブジェクトは継続的に更新して表示することができます。 この機能は、finger-painting プログラムでなどの対話型の描画に使用するパスを使用します。
+`SKPath`オブジェクトは継続的に更新および表示されることができます。 この機能は、フィンガーペインティング プログラムなど、対話型の描画に使用するパスを使用できます。
 
-![](finger-paint-images/fingerpaintsample.png "本の指の描画の課題")
+![](finger-paint-images/fingerpaintsample.png "指による描画の課題")
 
-Xamarin.Forms でタッチのサポートでは、Xamarin.Forms タッチ追跡効果は、追加のタッチ サポートを提供する開発が完了するために、画面で、個々 の本の指を追跡することはできません。 この効果は、資料に記載されて[**効果からイベントを呼び出す**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)です。 サンプル プログラム[**タッチ追跡効果デモ**](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) SkiaSharp、finger-painting プログラムなどを使用する 2 つのページが含まれています。
+Xamarin.Forms でのタッチ サポートでは、Xamarin.Forms のタッチ追跡効果は、追加のタッチ サポートを提供する開発が完了するために、画面で、個々 の本の指を追跡することはできません。 この効果は、情報の記事に記載されて[**効果からイベントを呼び出す**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)します。 サンプル プログラム[**タッチ追跡効果デモ**](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) SkiaSharp、フィンガーペインティング プログラムなどを使用する 2 つのページが含まれています。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ソリューションには、このタッチ追跡イベントが含まれています。 .NET 標準のライブラリ プロジェクトに含まれる、`TouchEffect`クラス、`TouchActionType`列挙型、`TouchActionEventHandler`デリゲート、および`TouchActionEventArgs`クラスです。 プラットフォーム プロジェクトそれぞれを含める、`TouchEffect`そのプラットフォームのクラス以外の場合は、iOS プロジェクトにも含まれています、`TouchRecognizer`クラスです。
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ソリューションには、このタッチ追跡イベントが含まれています。 .NET Standard ライブラリ プロジェクトが含まれています、`TouchEffect`クラス、`TouchActionType`列挙型で、`TouchActionEventHandler`デリゲートと`TouchActionEventArgs`クラス。 各プラットフォーム プロジェクトを含めて、`TouchEffect`そのプラットフォームのクラスは、iOS プロジェクトにも含まれています、`TouchRecognizer`クラス。
 
-**指ペイント**ページに**SkiaSharpFormsDemos**本の指の描画のシンプルな実装です。 色を選択できるようにしたり、幅の境界線の描画しないキャンバスをクリアすることがない、および、もちろん、アートワークを保存することはできません。
+**指ペイント**ページ**SkiaSharpFormsDemos**指による描画の簡略化された実装です。 色の選択を許可したり、ストロークの幅しない、キャンバスをクリアする方法がない、および、もちろん、アートワークを保存することはできません。
 
 [ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml)ファイルの配置、 `SKCanvasView` 1 つのセルで`Grid`アタッチし、`TouchEffect`に`Grid`:
 
@@ -49,9 +49,9 @@ Xamarin.Forms でタッチのサポートでは、Xamarin.Forms タッチ追跡�
 </ContentPage>
 ```
 
-アタッチする、`TouchEffect`に直接、`SKCanvasView`すべてのプラットフォームにおいては使用できません。
+アタッチ、`TouchEffect`に直接、`SKCanvasView`はすべてのプラットフォームでは動作しません。
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)分離コード ファイルを格納するための 2 つのコレクションを定義する、`SKPath`オブジェクトだけでなく、`SKPaint`これらのパスを表示するためのオブジェクト。
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)分離コード ファイルを格納するための 2 つのコレクションを定義する、`SKPath`オブジェクト、および`SKPaint`これらのパスを表示するためのオブジェクト。
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -76,9 +76,9 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-名前推奨として、`inProgressPaths`辞書が 1 つまたは複数の指で現在描画されているパスを格納します。 ディクショナリのキーは、タッチ イベントを伴うタッチ ID です。 `completedPaths`フィールドが完了した場合、指が画面からリフトのパスを描画するパスのコレクション。
+名前の提案、として、`inProgressPaths`が 1 つ以上の指で描画される現在のパスを格納するディクショナリ。 ディクショナリのキーは、タッチ イベントに付属しているタッチ ID です。 `completedPaths`フィールドは、本の指を画面から無効になるパスを描画するときに終了したパスのコレクション。
 
-`TouchAction`ハンドラーは、これら 2 つのコレクションを管理します。 まず、画面に触れると、新しい`SKPath`に追加`inProgressPaths`です。 その指を移動すると、追加の点は、パスに追加されます。 パスが転送された指がリリースされたときに、`completedPaths`コレクション。 同時に複数指で描くことができます。 パスまたはコレクションのいずれかに変更するたびに、`SKCanvasView`は無効になります。
+`TouchAction`ハンドラーは、これら 2 つのコレクションを管理します。 まず、画面に触れると、新しい`SKPath`に追加されます`inProgressPaths`します。 その指を移動すると、追加の点がパスに追加されます。 パスを転送、本の指がリリースされたときに、`completedPaths`コレクション。 同時に複数の指で描画できます。 パスまたはコレクションのいずれかに変更するたびに、`SKCanvasView`は無効になります。
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -134,9 +134,9 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-タッチ追跡イベントに付属している点は、Xamarin.Forms 座標です。これらは、SkiaSharp 座標は、ピクセルに変換する必要があります。 目的は、`ConvertToPixel`メソッドです。
+タッチの追跡イベントに付属するポイントは Xamarin.Forms の座標です。これらは、ピクセルである SkiaSharp 座標に変換する必要があります。 目的は、`ConvertToPixel`メソッド。
 
-`PaintSurface`しハンドラーだけで、パスの両方のコレクションを表示します。 進行中のパスの下に完了した前のパスが表示されます。
+`PaintSurface`しハンドラー単に、パスの両方のコレクションを表示します。 進行中のパスの下にある完了した前のパスが表示されます。
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -161,14 +161,14 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-指絵画は才能によってのみ制限されます。
+指、絵画はあなたの才能によってのみ制限されます。
 
-[![](finger-paint-images/fingerpaint-small.png "指ペイント ページのスクリーン ショットをトリプル")](finger-paint-images/fingerpaint-large.png#lightbox "指ペイント ページのトリプル スクリーン ショット")
+[![](finger-paint-images/fingerpaint-small.png "本の指ペイント ページのスクリーン ショットをトリプル")](finger-paint-images/fingerpaint-large.png#lightbox "指ペイント ページの 3 倍になるスクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [タッチ追跡効果デモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
-- [呼び出し元のイベントの効果を適用](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
+- [効果からのイベントの呼び出し](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

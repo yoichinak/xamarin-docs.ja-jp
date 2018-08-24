@@ -5,12 +5,12 @@ ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 96b4ee0487034c651bec1dfb168fed7567b63c96
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38848610"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353699"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: 接続
 
@@ -40,7 +40,7 @@ ms.locfileid: "38848610"
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-または、Anroid プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**ネットワークのアクセス状態**権限。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**ネットワークのアクセス状態**権限。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

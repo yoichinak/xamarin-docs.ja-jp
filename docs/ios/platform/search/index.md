@@ -1,99 +1,100 @@
 ---
-title: Xamarin.iOS で search Api
-description: この記事では、Api を使用して、新しいアプリ検索 iOS 9 によって提供される情報と、Xamarin.iOS アプリ内の機能を検索できるようにするについて説明します。
+title: Xamarin.iOS での search Api
+description: この記事では、iOS 9 で提供される新しいアプリ検索 Api を使用して、情報と、Xamarin.iOS アプリ内の機能を検索するユーザーを許可するについて説明します。
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/20/2017
+ms.openlocfilehash: 4e73e1bc34df8628790a3734e5b3b32a687fdf14
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788177"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351653"
 ---
-# <a name="search-apis-in-xamarinios"></a>Xamarin.iOS で search Api
+# <a name="search-apis-in-xamarinios"></a>Xamarin.iOS での search Api
 
 _この記事では、iOS 9 で提供されるアプリの検索 Api を使用して、情報と、Xamarin.iOS アプリ内の機能を検索するユーザーを許可するについて説明します。_
 
-検索は、iOS 9 情報や、Xamarin.iOS アプリ内の機能にアクセスする新しい方法を提供するで展開されています。 新しいアプリの検索 Api を使用して、アプリのコンテンツが行われますハンドオフと Siri アラームと推奨事項など、メディア、および Safari の検索結果を検索可能です。 これにより、アクティビティと、アプリ内で詳細な情報にすばやくアクセスできます。
+検索は、iOS 9 で、提供情報と Xamarin.iOS アプリ内の機能にアクセスする新しい方法で拡張されています。 新しいアプリの検索 Api を使用して、アプリのコンテンツは、Siri アラームと提案など、スポット ライトと Safari の検索結果を検索可能なされます。 これにより、アクティビティと、アプリ内で詳細な情報にすばやくアクセスできます。
 
-さらに、新しい Search Api を使用すると、以前の検索の実装機能せず、アプリで検索を統合しやすくします。 このため、Apple は、通常して、iOS 9 アプリのコンテンツを検索可能ユニバーサル アプリの検索を使用してほんの数時間を要することを要求します。
+さらに、新しい検索 Api を使用すると、以前の検索の実装機能せず、アプリで検索を統合しやすくします。 このため、Apple は iOS 9 アプリのコンテンツをアプリの検索を使用して検索可能な汎用的に数時間を要するそのことを要求します。
 
-[![](images/intro01.png "IOS 9 アプリ コンテンツ アプリの検索を使用して検索可能な汎用の例")](images/intro01.png#lightbox)
+[![](images/intro01.png "IOS 9 アプリのコンテンツ アプリの検索を使用して検索可能な汎用の例")](images/intro01.png#lightbox)
 
-アプリの検索は、3 つの独立した Api で構成されます。
+アプリの検索では、3 つの個別の Api で構成されます。
 
-1. [**NSUserActivity** ](nsuseractivity.md) -これは、Apple は iOS 8 でリリースされたハンドオフ API の拡張機能です。 公開および非公開でアプリの相互作用の履歴を検索できるようにするために使用されます)、ユーザーがします。
+1. [**NSUserActivity** ](nsuseractivity.md) -これは、Apple は iOS 8 でリリースされたハンドオフ API の拡張機能。 アプリの操作の履歴を検索できるようにパブリックとプライベートの両方に使用されます)、ユーザーがいます。
 
-2. [**スポット ライトのコア**](corespotlight.md) -を使用するアプリに検索結果に表示するには、そのコンテンツのインデックスを作成します。 データベース API で項目を追加、削除であり、アプリ内でプライベート コンテンツのインデックスに最適な方法と同様に動作します。
+2. [**コア スポット ライト**](corespotlight.md) -アプリに検索結果に表示する内容のインデックスを許可します。 データベース API は、アプリ内でプライベート コンテンツのインデックスする最善の方法および項目を追加および削除できる場所のように動作します。
 
-3. [**WebMarkup** ](web-markup.md) - web インターフェイスを使用して、コンテンツへのアクセスを提供するアプリ (からだけでなく、アプリ内で)。 Web コンテンツは、Apple によってクロールされ、ユーザーの iOS 9 デバイスにアプリのディープ リンクを提供できる特別なリンクでマークできます。
+3. [**WebMarkup** ](web-markup.md) - web インターフェイスを使用してそのコンテンツへのアクセスを提供するアプリ (からだけでなく、アプリ内)。 Web コンテンツは、Apple によってクロールして、ユーザーの iOS 9 デバイスのアプリへのディープ リンクを提供できる特別なリンクでマークできます。
 
 ## <a name="selecting-an-app-search-approach"></a>アプリの検索方法の選択
 
-これらのメソッドの実装の決定は、アプリによって提供される操作の種類とコンテンツの表示の種類によって異なります。
+これらのメソッドを実装するを決定は、アプリによって提供される対話の種類とコンテンツの表示の種類によって異なります。
 
 次のガイドラインに従います。
 
-- [**NSUserActivity** ](nsuseractivity.md) : パブリックおよびプライベートのコンテンツとの両方も、アプリ内でナビゲーション ポイントの検索機能の検索機能を提供するこのフレームワークを使用します。
+- [**NSUserActivity** ](nsuseractivity.md) – このフレームワークを使用して、パブリックおよびプライベートのコンテンツ両方と、アプリ内でのナビゲーションのポイントの検索機能の検索機能を提供します。
 
-- [**スポット ライトのコア**](corespotlight.md) : デバイスに格納されている秘密データの検索機能を提供するこのフレームワークを使用します。
+- [**コア スポット ライト**](corespotlight.md) – このフレームワークを使用して、デバイスに格納されているプライベート データの検索機能を提供します。
 
-- [**マークアップを web** ](web-markup.md) – からだけでなく、アプリの web サイトもからでは、アプリ内でコンテンツを表示するアプリの検索機能を提供するこのフレームワークを使用します。
+- [**Web マークアップ**](web-markup.md) – からだけでなく、アプリ内では、アプリの web サイトもからコンテンツを表示するアプリの検索機能を提供するこのフレームワークを使用します。
 
-アプリの検索方法が異なるでき、それぞれを個別に使用、しかし Apple が設計に連携して動作します。 特定の項目のインデックスを作成する方法の 1 つ以上を使用している場合は、同じを使用することを確認してください。**項目 ID**それぞれの方法でためその個人とをつなぐ作業します。
+アプローチは distinct とは、アプリ検索の各個別に使用、しかし Apple が設計に連携して動作します。 アプローチの 1 つ以上の特定の項目のインデックスを使用する場合は、同じを使用することを確認**項目 ID**それぞれの方法でそのためその個人結び付ける作業します。
 
-複数の方法を使用するだけでなくにより、コンテンツは、エンドユーザーによって検出されますは検索から項目の順位付けを向上するのにも役立ちます。
+アプローチの 1 つ以上のだけでなくを使うと、コンテンツは、エンドユーザーが見つかるが、検索内の項目の順位付けを向上させることができます。
 
-ランク付けプロセス中にほとんどの場合は開発者に透過的な特定のアイテムでのユーザー操作、評価頻度の高いこのランク (たとえば、ユーザーのリンクをタップ) にします。
-豊富な役に立つアイテムを提供すること、ユーザーが高くなります、コンテンツと対話するため、ランクの発生を確認することができます。
+順位付けのプロセス中にほとんどの場合は開発者に透過的な特定の項目との対話をユーザーの重さが大きくこの順位付け (たとえばユーザー リンクをタップ) するとします。
+豊富な情報の項目を提供すること、ユーザーが高くなります、コンテンツと対話するため、ランクの発生を保証できます。
 
 ## <a name="what-content-to-index"></a>インデックスにどのようなコンテンツ
 
-Apple では、どのようなコンテンツと操作に関して、アプリ内のインデックスの検索を提供する次の提案を提供します。
+Apple では、アプリでの検索インデックスを提供するどのようなコンテンツと操作に関して次の推奨事項を提供します。
 
- - 任意のコンテンツでは、作成、またはから、アプリ内でのユーザーによって curated 表示。
- - ナビゲーション ポイントと、アプリ内で機能します。
- - 新しいメッセージ、コンテンツまたは他の種類のデバイスにダウンロードした最新のアプリで表示できるアイテムをなどです。
+ - 任意のコンテンツは、表示、作成またはアプリ内からユーザーが管理します。
+ - ナビゲーションのポイントとアプリ内で機能します。
+ - 新しいメッセージやコンテンツなど、デバイスを最近ダウンロードされたアプリで表示される項目の種類をなど。
 
 ## <a name="app-search-enhancements"></a>アプリの検索の機能強化
 
-IOS 10 の主要なメディアは、次のアプリを検索するいくつかの拡張機能を提供します。
+IOS 10 でコア スポット ライトは、次のアプリを検索するいくつかの機能強化を提供します。
 
-- **(差分プライバシー) の Crowdsourced ディープ リンク人気**-検索結果にコンテンツをディープ リンク アプリを昇格する方法を提供します。
-- **アプリ内検索**-新しい`CSSearchQuery`メール、Messages や Notes アプリの作業と同様に、アプリ内・ Spotlight 検索機能を提供するクラス。
-- **継続タスクを検索**- により、ユーザーはアプリを開き、メディアまたは Safari、検索を開始して、その検索を続行します。
-- **検証結果の視覚化**-Apple の[アプリの検索 API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)preforming テストと web サイトのマークアップとディープ リンクの視覚的表現が表示されます。
-- **アプリ画像の共有をメッセージ**-Spotlight 検索で表示するメッセージ (メッセージ アプリ拡張機能) 経由で共有するために提供される一般的なアプリでイメージを使用します。
+- **(差分プライバシー) のディープ リンクの支持を引き出します**-検索結果でのディープ リンク アプリのコンテンツを昇格する方法を提供します。
+- **アプリ内検索**-使用して、新しい`CSSearchQuery`メール、Messages や Notes アプリの動作方法と同様のアプリ内スポット ライト検索機能を提供するクラス。
+- **継続を検索**- ユーザーをスポット ライトや、Safari で検索を開始し、アプリを開くし、その検索を続行します。
+- **検証結果の視覚化**-Apple の[アプリ検索 API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)テストの実行時に web サイトのマークアップとディープ リンクのビジュアル表現が表示されます。
+- **アプリの画像の共有をメッセージ**-スポット ライト検索で表示するメッセージ (メッセージ アプリ拡張機能) 経由で共有するために提供される一般的なアプリ内のイメージを使用します。
 
-詳細については、次を参照してください、[アプリ検索の機能強化](~/ios/platform/search/app-search-enhancements.md)ガイドです。
+詳細については、次を参照してください、[アプリ検索の機能強化](~/ios/platform/search/app-search-enhancements.md)ガイド。
 
-### <a name="proactive-suggestions"></a>プロアクティブなご提案
+### <a name="proactive-suggestions"></a>プロアクティブな候補
 
-iOS 10 では、事前対応的に提示する役に立つ情報自動的にユーザーに適切な時点ではシステムによって推進エンゲージメント アプリへの新しい方法を表示します。 同様に iOS 9 には、ios 10 アプリは、次の場所内で、システムにより、ユーザーに表示できる機能を公開できますスポット ライト、ハンドオフおよび Siri の推奨事項を使用してアプリに詳細な検索を追加する機能が用意されています。
+iOS 10 では、事前に提示する役に立つ情報に自動的にユーザーに適切なタイミングでシステムを許可することで運転 engagement アプリへの新しい方法を表示します。 同様の iOS 9 には、ディープ検索アプリは、次の場所内で、システムにより、ユーザーに表示することができます機能を公開できる iOS 10 のスポット ライト、ハンドオフおよび Siri の推奨事項を使用してアプリを追加する機能が用意されています。
 
-- アプリのスイッチャー
+- アプリケーションのスイッチャー
 - ロック画面
 - CarPlay
 - マップ
 - Siri の相互作用
 - QuickType 提案 
 
-アプリがなど、テクノロジのコレクションを使用して、システムには、この機能を公開[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)コアのスポット ライト、MapKit、Media Player および UIKit web マークアップ。
+アプリなどのテクノロジのコレクションを使用して、システムには、この機能を公開[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)、コア スポット ライト、MapKit、Media Player、UIKit、web マークアップ。
 
-詳細については、次を参照してください、[プロアクティブ提案](~/ios/platform/search/proactive-suggestions.md)ガイドです。
+詳細については、次を参照してください、[プロアクティブな候補](~/ios/platform/search/proactive-suggestions.md)ガイド。
 
 ## <a name="summary"></a>まとめ
 
-この記事は、新しいカバーされて Xamarin.iOS アプリの検索 API の機能を iOS 9 を提供します。 対応して[NSUserActivity](nsuseractivity.md)、[コアのスポット ライト](corespotlight.md)と[Web マークアップ](web-markup.md)コンテンツのインデックス作成の方法です。 特定の検索方法を使用すべき状況およびコンテンツの種類にする必要がありますの簡単に説明を完了してインデックスを作成します。
+この記事では、新しい対象が Xamarin.iOS アプリの検索 API の機能を iOS 9 を提供します。 対応して[NSUserActivity](nsuseractivity.md)、[コア スポット ライト](corespotlight.md)と[Web マークアップ](web-markup.md)コンテンツのインデックス作成の方法です。 特定の検索方法を使用して、コンテンツの種類にする必要がありますの簡単な説明と終了インデックスを作成します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [開発者向けの iOS 9](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [アプリの検索プログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [アプリの検索のプログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

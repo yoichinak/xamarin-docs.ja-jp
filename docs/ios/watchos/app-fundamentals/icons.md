@@ -1,37 +1,38 @@
 ---
-title: WatchOS Xamarin のアイコンの使用
-description: このドキュメントでは、watchOS アプリケーションおよびこれらのアイコンを含むようにソリューションを設定する方法に必要な各種のアイコンについて説明します。
+title: WatchOS で Xamarin のアイコンの使用
+description: このドキュメントでは、watchOS アプリケーションおよびこれらのアイコンを含むようにソリューションを設定する方法に必要なさまざまなアイコンについて説明します。
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 150cca754de26edffcf97bb5d39b26166662c75b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/26/2018
+ms.openlocfilehash: e46ecc9d78ccc5dcfbe571c9ec5350fe6c391b7e
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790667"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275925"
 ---
-# <a name="working-with-watchos-icons-in-xamarin"></a>WatchOS Xamarin のアイコンの使用
+# <a name="working-with-watchos-icons-in-xamarin"></a>WatchOS で Xamarin のアイコンの使用
 
-Apple Watch ソリューションには、2 つのアイコンのセットが必要です。
+Apple Watch のソリューションには、2 つのアイコンのセットが必要です。
 
 * IPhone で表示される iOS アプリのアイコン。
-* Apple Watch と通知の画面で、円で囲んだ [ウォッチ] メニューに表示されるアイコン。 Watch アプリのアイコンにも表示されます、 [Apple Watch](~/ios/watchos/app-fundamentals/settings.md) iOS アプリ。
+* Apple Watch 通知画面と [ウォッチ] メニューの円で表示されるアイコン。 Watch アプリのアイコンにも表示されます、 [Apple Watch](~/ios/watchos/app-fundamentals/settings.md) iOS アプリ。
 
-## <a name="apple-watch-icons"></a>Apple Watch アイコン
+## <a name="apple-watch-icons"></a>Apple Watch のアイコン
 
 | | | |
 |-|-|-|
-|iOS アプリのアイコン|IPhone で表示され、親アプリケーションを起動します|![](icons-images/icon-ios.png)|
-|[ウォッチ アプリ] アイコン|Apple Watch のホーム画面に表示されます。|![](icons-images/icon-home.png)|
-||ウォッチ通知に表示されます。|![](icons-images/notification-icon.png)|
-||表示されます、 [iOS Apple Watch アプリ](~/ios/watchos/app-fundamentals/settings.md)|![](icons-images/watch-app-sml.png)|
+|iOS アプリのアイコン|IPhone で表示され、親アプリを起動|![iOS アプリのアイコン](icons-images/icon-ios.png)|
+|アプリのアイコンをご覧ください。|Apple Watch ホーム画面に表示されます。|![watchOS アプリのアイコン](icons-images/icon-home.png)|
+||ウォッチの通知が表示されます。|![watchOS の通知アイコン](icons-images/notification-icon.png)|
+||表示されます、 [iOS Apple Watch アプリ](~/ios/watchos/app-fundamentals/settings.md)|![iOS Watch アプリ アイコン](icons-images/watch-app-sml.png)|
 
 ## <a name="configuring-your-solution"></a>ソリューションを構成します。
 
-IOS アプリと watch アプリは、アイコンと正しい名前を表示するためには、各プロジェクトに次の手順に従います。
+IOS アプリと watch アプリは、正しい名前とアイコンを表示するためには、各プロジェクトに次の手順に従います。
 
 ### <a name="ios-app"></a>iOS アプリ
 
@@ -39,9 +40,9 @@ IOS アプリと watch アプリは、アイコンと正しい名前を表示す
 
 #### <a name="infoplist"></a>Info.plist
 
-ウォッチのアプリケーションの横に表示される文字列、 [Apple Watch 設定アプリ](~/ios/watchos/app-fundamentals/settings.md)で構成された、 **iOS アプリの Info.plist**です。
+Watch アプリで横に表示される文字列、 [Apple Watch の設定 アプリ](~/ios/watchos/app-fundamentals/settings.md)で構成されている場合は、 **iOS アプリの Info.plist**します。
 
-いることを確認、 **Info.plist**が、`CFBundleName`キーと値 (注: これは、異なる、 `CFBundleDisplayName`、両方を持つことができます)。
+いることを確認、 **Info.plist**が、`CFBundleName`キーと値 (注: これとは異なります、 `CFBundleDisplayName`、両方があることができます)。
 
 ```xml
 <key>CFBundleName</key>
@@ -50,39 +51,39 @@ IOS アプリと watch アプリは、アイコンと正しい名前を表示す
 
 ### <a name="apple-watch-app"></a>Apple Watch アプリ
 
-1 回、[親アプリ](~/ios/watchos/app-fundamentals/parent-app.md)watch アプリにアプリケーション アイコン資産カタログを追加する必要がありますが、アイコンで構成されています。
+1 回、[親アプリ](~/ios/watchos/app-fundamentals/parent-app.md)watch アプリにアプリケーション アイコンのアセット カタログを追加する必要がありますが、アイコンが構成されます。
 
-1. Watch アプリ プロジェクトを右クリックし、選択**ファイル > 追加 > 新しい File… > iOS > アセット カタログ**資産カタログをプロジェクトに追加します。
+1. Watch アプリのプロジェクトを右クリックし、選択**ファイル > 追加 > 新しいファイル... > iOS > 資産カタログ**アセット カタログをプロジェクトに追加します。
 
- ![](icons-images/newasset.png "資産カタログをプロジェクトに追加します。")
+ ![](icons-images/newasset.png "アセット カタログをプロジェクトに追加します。")
 
-2. ダブルクリックして、 **AppIcons.appiconset/Contents.json**ファイル
+2. ダブルクリックして、 **AppIcon.appiconset/Contents.json**ファイル
 
-  ![](icons-images/xcassets-iconset-sml.png "AppIcons 内容")
+  ![](icons-images/xcassets-iconset-sml.png "AppIcon 内容")
 
-3. このスクリーン ショットに示すように、すべての watchOS イメージを追加します。
+3. このスクリーン ショットで示すように、すべての watchOS イメージを追加します。
 
-  [![](icons-images/appicons-sml.png "このスクリーン ショットに示すように、すべての watchOS イメージを追加します。")](icons-images/appicons.png#lightbox)
+  [![](icons-images/appicons-sml.png "このスクリーン ショットで示すように、すべての watchOS イメージを追加します。")](icons-images/appicons.png#lightbox)
 
-  参照してください[Apple のアイコンのガイドライン](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/IconandImageSizes.html)(サイズは画面には表示も) 必要なサイズにします。 円で表示するためにこれらのアイコンを自動的にクリップすることに注意してください。
+  参照してください[Apple のアイコンのガイドライン](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)(寸法が画面の表示も)、必要なサイズにします。 円で表示するためにこれらのアイコンを自動的にクリップすることに注意してください。
 
-  アイコン リストは、次のようになります。
+  アイコンの一覧は、次のようになります。
 
-  ![](icons-images/xcassets-complete-sml.png "ソリューション エクスプ ローラーでアイコンのリスト")
+  ![](icons-images/xcassets-complete-sml.png "ソリューション エクスプ ローラーでアイコンの一覧")
 
-4. アプリで資産カタログが含まれていることを確認するには、次のキーを追加し、値を**Watch アプリの Info.plist**:
+4. 資産カタログが、アプリに含まれることを確認するには、次のキーを追加し、値を**Watch アプリの Info.plist**:
 
 ```xml
 <key>XSAppIconAssets</key>
-<string>Images.xcassets/AppIcons.appiconset</string>
+<string>Images.xcassets/AppIcon.appiconset</string>
 ```
 
-チェックして、アイコンが正しく構成されてことを確認することができます、 [Apple Watch 設定アプリ](~/ios/watchos/app-fundamentals/settings.md)の iPhone シミュレーター、または生成、[通知](~/ios/watchos/platform/notifications.md)通知に表示されるアイコンを確認します。画面。
+アイコンがチェックして適切な構成を確認することができます、 [Apple Watch の設定 アプリ](~/ios/watchos/app-fundamentals/settings.md)iPhone シミュレーターで生成するか、[通知](~/ios/watchos/platform/notifications.md)通知に表示されるアイコンを確認します。画面。
 
 > [!NOTE]
-> アイコン (アプリは拒否アプリ ストアの送信中に、アルファ チャネルが存在する場合)、アルファ チャネルことはできません。 アルファ チャネルが存在し、それを削除するかどうかにチェックすることができます[プレビュー アプリを使用して、Mac OS X で](~/ios/watchos/troubleshooting.md#noalpha)です。
+> アイコンは、アルファ チャネル (アプリは拒否されますアプリ ストアの送信中に、アルファ チャネルが存在する場合) を含めることはできません。 アルファ チャネルが存在し、削除するかどうかにチェックすることができます[プレビュー アプリを使用して、Mac OS X で](~/ios/watchos/troubleshooting.md#noalpha)します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Apple のアイコンとイメージを説明します。](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/IconandImageSizes.html)
+- [Apple の watchOS のアイコンとイメージのガイド](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/)

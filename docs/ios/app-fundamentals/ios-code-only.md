@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: 5e9bf9555d10c8b34ad9323529d4af5ea66110f8
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 688457ab25398e8c5b9848a7e58f6163db4c0a05
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156783"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242395"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS でのコードで iOS ユーザー インターフェイスの作成
 
@@ -607,7 +607,7 @@ Apple は、.xib またはストーリー ボード ファイルを使用して 
 
 起動画面を作成する方法の詳細については、次のドキュメントを参照してください。
 
-- [.Xib を使用して起動画面を作成します。](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
+- [.Xib を使用して起動画面を作成します。](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 - [ストーリー ボードの起動画面を管理します。](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]

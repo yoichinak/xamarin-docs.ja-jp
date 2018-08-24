@@ -6,13 +6,13 @@ ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/23/2018
-ms.openlocfilehash: 762df7322607588344d570830dafc745a89ea165
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.date: 07/27/2018
+ms.openlocfilehash: 8e2bb43f885c162eb6dca0cf4a8ed14490ff092b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212005"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351565"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
@@ -45,6 +45,10 @@ Android 3.0 には、携帯電話とタブレットで検出された多くの�
 
 このガイドは、Android 6.0 をサポートする方法について説明_アプリ リンク_、web サイトの Url に応答するモバイル アプリに許可する手法です。 これは、Android 6.0 アプリケーションでのアプリ リンクを実装する方法と、ドメインのアプリのリンクを処理するためにモバイル アプリにアクセス許可を付与する web サイトを構成する方法について説明します。
 
+
+##  <a name="android-p-previewandroidplatformandroid-pmd"></a>[Android の P プレビュー](~/android/platform/android-p.md)
+
+この記事では、Android の P プレビューの新機能の概要を示します、P の Android 開発用の Xamarin.Android を準備する方法について説明します、およびを Xamarin.Android アプリで重要な Android P 機能を使用する方法を示したサンプル コードを提供します。
 
 
 ##  <a name="android-8-oreoandroidplatformoreomd"></a>[Android 8 Oreo](~/android/platform/oreo.md)

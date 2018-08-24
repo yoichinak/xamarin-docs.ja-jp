@@ -2,17 +2,17 @@
 title: 作成して、SkiaSharp ビットマップの描画
 description: SkiaSharp のビットマップを作成し、それらに基づくキャンバスを作成してこれらのビットマップ上で描画する方法について説明します。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: fa32b2bdb95044c8171542ff4156ec3c15747372
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: c8ddf8c0829cea319dd93dd9c3686b94ed8eb89e
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39131497"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615591"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
 
@@ -260,7 +260,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 メソッド`SKCanvas`描画するために使用できるビットマップを含める`DrawBitmap`します。 これは、描画できるビットマップが 1 つ、別の通常、何らかの方法で変更することを意味します。
 
-ビットマップを変更する最も汎用的な方法は、実際のピクセル ビットへのアクセスを使用、サブジェクトが、記事で取り上げる**[にアクセスする SkiaSharp ビットマップ ピクセル](pixel-bits.md)** します。 ビットマップのピクセル ビットへのアクセスを必要としないを変更するその他の多くの手法があります。
+ビットマップを変更する最も汎用的な方法は、実際のピクセル ビットへのアクセスを使用、サブジェクトが、記事で取り上げる **[にアクセスする SkiaSharp ビットマップ ピクセル](pixel-bits.md)** します。 ビットマップのピクセル ビットへのアクセスを必要としないを変更するその他の多くの手法があります。
 
 次に含まれているビットマップ、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションは 360 ピクセル、高さが 480 ピクセル。
 

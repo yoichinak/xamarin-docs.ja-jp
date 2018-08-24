@@ -1,40 +1,41 @@
 ---
 title: Xamarin.iOS でのスレッド
-description: このドキュメントでは、Xamarin.iOS アプリケーションで System.Threading Api を使用する方法について説明します。 これには、応答性の高いアプリケーション、およびガベージ コレクションの作成タスク並列ライブラリで、について説明します。
+description: このドキュメントでは、Xamarin.iOS アプリケーションで System.Threading Api を使用する方法について説明します。 これには、応答性の高いアプリケーションは、およびガベージ コレクションの作成タスク並列ライブラリで、について説明します。
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 05d015d8d255ccc8c6230b1a89e098e187b22b37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 8e4ee10fdabdcbb4c6cefe02b15dc93459708364
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784918"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350421"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin.iOS でのスレッド
 
-Xamarin.iOS ランタイム開発者へアクセスを提供、.NET Api では、スレッドを使用するときに明示的に両方のスレッド (`System.Threading.Thread, System.Threading.ThreadPool`) と暗黙的に非同期的なデリゲート パターンまたは BeginXXX メソッドだけでなく、完全範囲の Api をサポートするを使用して、タスク並列ライブラリです。
+Xamarin.iOS ランタイムにより、開発者にアクセス、.NET Api では、スレッドを使用するときに明示的に両方のスレッド (`System.Threading.Thread, System.Threading.ThreadPool`) デリゲートの非同期パターンまたは BeginXXX メソッドだけでなく、完全な範囲をサポートする Api を使用するときに暗黙的に、タスク並列ライブラリ。
 
 
 
-Xamarin の使用を強く推奨、[タスク並列ライブラリ](http://msdn.microsoft.com/library/dd460717.aspx)(TPL) のいくつかの理由からアプリケーションを構築するため。
--  既定の TPL スケジューラでは、さらに、動的に拡張処理が行わ、スレッドが多すぎるがどこで CPU 時間の競合を終了するシナリオを回避しながら、必要なスレッドの数のスレッド プールにタスクの実行を委任します。 
--  TPL のタスクに関する操作について考えると簡単です。 簡単にして、操作にスケジュール、それらの実行をシリアル化したり、多く機能豊富な一連の Api と並列でを起動できます。 
--  これは、新しい c# 非同期言語拡張機能を使用したプログラミングの基盤です。 
+Xamarin の使用を強く推奨、[タスク並列ライブラリ](http://msdn.microsoft.com/library/dd460717.aspx)(TPL) のいくつかの理由からアプリケーションを構築します。
+-  既定の TPL スケジューラでは、さらに、プロセスは、スレッドが多すぎるが CPU 時間の競合する最終的なシナリオを回避しながら行わときに、必要なスレッドの数を増加は動的にスレッド プールにタスクの実行を委任します。 
+-  TPL のタスクに関する操作について検討しやすくなります。 簡単に操作、スケジュール設定でそれらの実行をシリアル化したり、多くの Api の豊富なセットと並列で起動できます。 
+-  新しい c# async 言語拡張を使用したプログラミングの基礎となります。 
 
 
-スレッド プールが緩やかに変化に応じてスレッドの数に基づいて拡張システム、システムの負荷とアプリケーションのニーズに使用できる CPU コアの数。 いずれかのメソッドを呼び出すことによってこのスレッド プールを使用できます`System.Threading.ThreadPool`または既定値を使用して`System.Threading.Tasks.TaskScheduler`(の一部、*並列フレームワーク*)。
+スレッド プールが緩やかに変化に応じてスレッドの数に基づいて拡張、システム、システムの負荷およびアプリケーションの要求で使用可能な CPU コアの数。 いずれかのメソッドを呼び出すことによってこのスレッド プールを使用できる`System.Threading.ThreadPool`または既定値を使用して`System.Threading.Tasks.TaskScheduler`(の一部、*並列処理フレームワーク*)。
 
-通常の開発者は、応答性の高いアプリケーションを作成して、ループを実行する主要な UI をブロックしないようにするときに、スレッドを使用します。
+通常の開発者は、応答性の高いアプリケーションを作成して、ループを実行する主な UI をブロックしないときに、スレッドを使用します。
 
  <a name="Developing_Responsive_Applications" />
 
 
 ## <a name="developing-responsive-applications"></a>応答性の高いアプリケーションの開発
 
-UI 要素へのアクセスは、アプリケーションのメイン ループを実行しているのと同じスレッドに制限する必要があります。 スレッドのスレッドから主要な UI を変更する場合は、する必要がありますキューに配置し、コードを使用して[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/)、次のようにします。
+UI 要素へのアクセスは、アプリケーションのメイン ループを実行している同じスレッドに制限する必要があります。 使用して、コードをキューがスレッドからの主要な UI を変更する場合は、 [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/)、次のようにします。
 
 ```csharp
 MyThreadedRoutine ()  
@@ -51,16 +52,16 @@ MyThreadedRoutine ()
 }
 ```
 
-上記のアプリケーションがクラッシュする可能性がある可能性がありますのある競合状態を引き起こすことがなく、メイン スレッドのコンテキストでは、デリゲート内のコードを呼び出します。
+上記は、アプリケーションがクラッシュする可能性がある可能性がありますのある競合状態を発生させることがなく、メイン スレッドのコンテキストでデリゲート内のコードを呼び出します。
 
  <a name="Threading_and_Garbage_Collection" />
 
 
-## <a name="threading-and-garbage-collection"></a>スレッドとガベージ コレクション
+## <a name="threading-and-garbage-collection"></a>スレッド処理とガベージ コレクション
 
-実行の過程で Objective C のランタイムは作成し、オブジェクトを解放します。 「自動リリース」Objective C ランタイムでは、それらのオブジェクトを解放します。 オブジェクトは、フラグが設定された場合、スレッドの現在`NSAutoReleasePool`です。 Xamarin.iOS 作成`NSAutoRelease`からすべてのスレッドのプール、`System.Threading.ThreadPool`とメイン スレッドに対してです。 この拡張機能では、System.Threading.Tasks で既定の TaskScheduler を使用して作成されたすべてのスレッドをについて説明します。
+実行の過程では、OBJECTIVE-C ランタイムを作成し、オブジェクトを解放します。 オブジェクトは、「自動リリース」OBJECTIVE-C ランタイムでそれらのオブジェクトはリリースのフラグが設定されている場合、スレッドの現在`NSAutoReleasePool`します。 Xamarin.iOS を作成します`NSAutoRelease`からすべてのスレッドのプール、`System.Threading.ThreadPool`とメインのスレッド。 この拡張機能では、System.Threading.Tasks で既定の TaskScheduler を使用して作成されたすべてのスレッドについて説明します。
 
-使用して、独自のスレッドを作成する場合`System.Threading`自分が所有するを指定する必要は`NSAutoRelease`をデータがリークしていることを防ぐためにプールします。 これを行うには、単に次のコードでスレッドをラップします。
+使用して、独自のスレッドを作成する場合`System.Threading`自分が所有するを指定する必要が`NSAutoRelease`データがリークしていることを防ぐためにプールします。 これを行うには、単に次のコードでスレッドをラップします。
 
 ```csharp
 void MyThreadStart (object arg)
@@ -71,7 +72,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-注: Xamarin.iOS 5.2 以降されませんが、独自に提供する`NSAutoReleasePool`を自動的にいずれかの指定ができなくなります。
+注: Xamarin.iOS 5.2 以降されませんが、独自に提供する`NSAutoReleasePool`を自動的に 1 つ提供はできなくなります。
 
 
 ## <a name="related-links"></a>関連リンク

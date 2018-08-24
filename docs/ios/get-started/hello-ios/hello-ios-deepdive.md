@@ -1,5 +1,5 @@
-﻿---
-title: Hello, iOS – 詳細説明
+---
+title: Hello, iOS – 深い分析
 description: このドキュメントでは、"Hello, iOS" サンプル アプリケーションについて詳しく解説し、そのアーキテクチャ、ユーザー インターフェイス、コンテンツ ビュー階層、テスト、展開などを考察しています。
 ms.topic: quickstart
 ms.prod: xamarin
@@ -8,38 +8,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 16920f27a1830dc6a3ab1a3cb0a267eb3b1d90ea
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786401"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203024"
 ---
-# <a name="hello-ios--deep-dive"></a>Hello, iOS – 詳細説明
+# <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
 クイックスタート チュートリアルでは、基本的な Xamarin.iOS アプリケーションのビルドと実行について説明しました。 次は、より複雑なプログラムをビルドできるように、iOS アプリケーションの仕組みの理解を深めます。 このガイドでは、iOS アプリケーション開発の基本的な概念についての理解できるように、Hello, iOS チュートリアルの手順について説明します。
-
-この記事では、次のトピックについて説明します。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-- **Visual Studio for Mac の概要**: Visual Studio for Mac の概要と新しいアプリケーションの作成。
-- **Xamarin.iOS アプリケーションの構造**: Xamarin.iOS アプリケーションの重要なパーツの説明。
-- **アーキテクチャ ツールとアプリケーションの基本**: iOS アプリケーションのパーツとそれらの間の関係を説明します。
-- **ユーザー インターフェイス (UI)**: iOS Designer を使用したユーザー インターフェイスの作成。
-- **ビュー コントローラーとビュー ライフサイクル**: ビュー ライフサイクルの概要とビュー コントローラーを使用したコンテンツ ビュー階層の管理。
-- **テスト、展開、仕上げ**: テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-- **Visual Studio の概要**: Visual Studio の概要と新しいアプリケーションの作成。
-- **Xamarin.iOS アプリケーションの構造**: Xamarin.iOS アプリケーションの重要なパーツの説明。
-- **アーキテクチャ ツールとアプリケーションの基本**: iOS アプリケーションのパーツとそれらの間の関係を説明します。
-- **ユーザー インターフェイス (UI)**: iOS Designer を使用したユーザー インターフェイスの作成。
-- **ビュー コントローラーとビュー ライフサイクル**: ビュー ライフサイクルの概要とビュー コントローラーを使用したコンテンツ ビュー階層の管理。
-- **テスト、展開、仕上げ**: テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成
-
------
 
 このガイドでは、1 つの画面の iOS アプリケーションの構築に必要なスキルと知識を開発できます。 作業した後、Xamarin.iOS アプリケーションのさまざまな部分とそれらをまとめる方法を理解できます。
 
@@ -64,8 +42,6 @@ Visual Studio は、コードを_ソリューション_と*プロジェクト*�
 ![](hello-ios-deepdive-images/vs-image30.png "最初のソリューションのスクリーンショット")
 
 -----
-
-<a name="anatomy" />
 
 ## <a name="anatomy-of-a-xamarinios-application"></a>Xamarin.iOS アプリケーションの構造
 
@@ -126,7 +102,7 @@ namespace Phoneword_iOS
 }
 ```
 
-### <a name="application-delegate"></a>Application Delegate
+### <a name="application-delegate"></a>アプリケーション デリゲート
 
 iOS では、*Application Delegate* クラスはシステム イベントを処理します。このクラスは `AppDelegate.cs` 内にあります。 `AppDelegate` クラスは、アプリケーションの*ウィンドウ*を管理します。 ウィンドウはユーザー インターフェイスのコンテナーとして機能する `UIWindow` クラスの 1 つのインスタンスです。 既定では、アプリケーションがそのコンテンツを読み込む先の 1 つのウィンドウのみを取得し、ウィンドウは*画面* (単一 `UIScreen` インスタンス) に接続されます。画面は物理デバイス画面のサイズに一致する境界の四角形を提供します。
 
@@ -157,7 +133,7 @@ namespace Phoneword_iOS
 
 アプリケーションがウィンドウを定義したら、ユーザー インターフェイスの読み込みを開始できます。 次のセクションでは、UI の作成について説明します。
 
-## <a name="user-interface"></a>ユーザー インターフェイス
+## <a name="user-interface"></a>[ユーザー インターフェイス]
 
 iOS アプリのユーザー インターフェイスは店舗の正面のようなものです。アプリケーションは、通常、1 つのウィンドウを取得しますが、必要な数のオブジェクトをウィンドウいっぱいに表示し、表示するアプリの必要に応じてオブジェクトの配置を変更することもできます。 このシナリオのオブジェクト (ユーザーに表示される物事) はビューと呼ばれます。 アプリケーションで 1 つの画面をビルドするには、*コンテンツ ビュー階層*にビューが相互に積み重ねられ、階層が単一のビュー コントローラーによって管理されます。 複数の画面を持つアプリケーションには、複数のコンテンツ ビュー階層、それぞれに独自のビュー コントローラー、およびウィンドウ内のアプリケーションの場所のビューがあり、ユーザーに表示される画面に基づいて異なるコンテンツ ビュー階層を作成します。
 
@@ -241,7 +217,8 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 ## <a name="content-view-hierarchy"></a>コンテンツ ビュー階層
 
-_コンテンツ ビュー階層_は、次の図に示すように、1 つのビュー コントローラーによって管理されるビューとサブビューのスタックです。
+
+  _コンテンツ ビュー階層_は、次の図に示すように、1 つのビュー コントローラーによって管理されるビューとサブビューのスタックです。
 
  [![](hello-ios-deepdive-images/image41.png "コンテンツ ビュー階層")](hello-ios-deepdive-images/image41.png#lightbox)
 
@@ -322,7 +299,7 @@ public partial class ViewController : UIViewController
 
 ライフサイクルのいずれかの段階にカスタム コードを追加するときは、そのライフサイクル メソッドの*基本実装*を*オーバーライド*する必要があります。 これは、既に一部のコードをアタッチされている既存のライフサイクル メソッドを利用し、追加のコードで拡張することによって実現されます。 新しいコードの前に確実に元のコードが実行されるようにベースの実装がメソッドの内部から呼び出されます。 次のセクションでこの例を示します。
 
-ビュー コントローラーの操作の詳細については、Apple の「[View Controller Programming Guide for iOS](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/ViewLoadingandUnloading/ViewLoadingandUnloading.html)」(iOS 用ビュー コントローラー プログラミング ガイド) と [UIViewController リファレンス](https://developer.apple.com/library/ios/documentation/uikit/reference/UIViewController_Class/Reference/Reference.html)を参照してください。
+ビュー コントローラーの操作の詳細については、Apple の「[View Controller Programming Guide for iOS](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1)」(iOS 用ビュー コントローラー プログラミング ガイド) と [UIViewController リファレンス](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc)を参照してください。
 
 ### <a name="responding-to-user-interaction"></a>ユーザー操作に対する応答
 
@@ -344,7 +321,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Phoneword アプリでは、`TouchUpInside` というタッチ イベントを使用してユーザーのタッチを待ち受けるようにします。 `TouchUpInside` は、コントロールのボタン内でのタッチ ダウン (指が画面に触れる) に続くタッチ アップ イベント (指が画面から離れる) を待ち受けます。 `TouchUpInside` の逆は、ユーザーがコントロールを下に押したときに発生する `TouchDown` イベントです。 `TouchDown` イベントを使うと、多数のノイズを取り込んでしまう上に、ユーザーは指をスライドさせてコントロールから離してタッチをキャンセルするという選択肢がなくなります。 `TouchUpInside` は、**ボタン** タッチに応答するための最も一般的の方法であり、ユーザーがボタンを押すときに予想するエクスペリエンスを作成します。 これの詳細については、Apple の「[iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html)」(iOS ヒューマン インターフェイス ガイドライン) を参照してください。
+Phoneword アプリでは、`TouchUpInside` というタッチ イベントを使用してユーザーのタッチを待ち受けるようにします。 `TouchUpInside` は、コントロールのボタン内でのタッチ ダウン (指が画面に触れる) に続くタッチ アップ イベント (指が画面から離れる) を待ち受けます。 `TouchUpInside` の逆は、ユーザーがコントロールを下に押したときに発生する `TouchDown` イベントです。 `TouchDown` イベントは、多数のノイズをキャプチャし、ユーザーはコントロールから指をスライドさせて離してタッチをキャンセルするオプションを与えられません。 `TouchUpInside` は、**ボタン** タッチに応答するための最も一般的の方法であり、ユーザーがボタンを押すときに予想するエクスペリエンスを作成します。 これの詳細については、Apple の「[iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html)」(iOS ヒューマン インターフェイス ガイドライン) を参照してください。
 
 このアプリでは、`TouchUpInside` イベントがラムダで処理されますが、デリゲートまたは名前付きイベント ハンドラーを使用することもできます。 最後のボタン コードは次のようになります。
 
@@ -379,7 +356,7 @@ Phoneword アプリケーションでは、このガイドでは説明してい�
     CallButton.SetTitle ("Call", UIControlState.Normal);
     ```
 - **ボタンの有効化と無効化** - **ボタン**は、`Enabled` または `Disabled` 状態になります。 無効になっている**ボタン**はユーザー入力に応答しません。 たとえば、CallButton.Enabled = false; は `CallButton` を無効にします。ボタンの詳細については、[ボタン](~/ios/user-interface/controls/buttons.md) ガイドを参照してください。
-- **キーボードを消去** – ユーザーがテキスト フィールドをタップすると、ユーザーが値を入力できるようにするキーボードが iOS によって表示されます。 残念ながら、キーボードを消去する組み込みの機能はありません。 ユーザーが `TranslateButton` を押したときにキーボードを消去するために次のコードが `TranslateButton` に追加されます。PhoneNumberText.ResignFirstResponder (); キーボードを消去する方法の別の例については、「[Dismiss the Keyboard](https://developer.xamarin.com/recipes/ios/input/keyboards/dismiss_the_keyboard)」(キーボードの消去) レシピを参照してください。
+- **キーボードを消去** – ユーザーがテキスト フィールドをタップすると、ユーザーが値を入力できるようにするキーボードが iOS によって表示されます。 残念ながら、キーボードを消去する組み込みの機能はありません。 ユーザーが `TranslateButton` を押したときにキーボードを消去するために次のコードが `TranslateButton` に追加されます。PhoneNumberText.ResignFirstResponder (); キーボードを消去する方法の別の例については、「[Dismiss the Keyboard](https://github.com/xamarin/recipes/tree/master/Recipes/ios/input/keyboards/dismiss_the_keyboard)」(キーボードの消去) レシピを参照してください。
 - **URL を使用して電話をかける** – Phoneword アプリで Apple URL スキームを使用してシステム電話アプリを起動します。 次のコードに示すように、カスタムの URL スキームは、"tel:" プレフィックスと変換された電話番号で構成されます。
 
     ```csharp
@@ -399,7 +376,7 @@ Phoneword アプリケーションでは、このガイドでは説明してい�
                 }
     ```
 
-iOS の警告ビューの詳細については、[Alert Controller のレシピ](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)を参照してください。
+iOS の警告ビューの詳細については、[Alert Controller のレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)を参照してください。
 
 ## <a name="testing-deployment-and-finishing-touches"></a>テスト、展開、および最後の仕上げ
 
@@ -407,11 +384,11 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 
 ### <a name="debugging-tools"></a>デバッグ ツール
 
-アプリケーション コード内の問題の診断は困難なことがあります。 複雑なコードの問題の診断に役立てるために、[ブレークポイントを設定する](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)、[コードのステップを実行する](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)、または[ログ ウィンドウに情報を出力する](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)ことができます。
+アプリケーション コード内の問題の診断は困難なことがあります。 複雑なコードの問題の診断に役立てるために、[ブレークポイントを設定する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)、[コードのステップを実行する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)、または[ログ ウィンドウに情報を出力する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)ことができます。
 
-### <a name="deploy-to-a-device"></a>デバイスを展開する
+### <a name="deploy-to-a-device"></a>デバイスに展開する
 
-iOS シミュレーターは、アプリケーションをテストする簡単な方法です。 シミュレーターには、場所の偽装、[移動のシミュレーション](https://developer.xamarin.com/recipes/ios/multitasking/test_location_changes_in_simulator/)などのいくつかの役に立つテストのための最適化が用意されています。 ただし、ユーザーは、最終的なアプリをシミュレーターで使用しません。 すべてのアプリケーションは、早い段階で頻繁に実際のデバイスでテストしてください。
+iOS シミュレーターは、アプリケーションをテストする簡単な方法です。 シミュレーターには、場所の偽装、[移動のシミュレーション](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/test_location_changes_in_simulator)などのいくつかの役に立つテストのための最適化が用意されています。 ただし、ユーザーは、最終的なアプリをシミュレーターで使用しません。 すべてのアプリケーションは、早い段階で頻繁に実際のデバイスでテストしてください。
 
 デバイスは、プロビジョニングに時間がかかり、Apple 開発者アカウントが必要です。 [デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md) ガイドでは、開発用デバイスを準備する詳細な手順を説明しています。
 
@@ -464,5 +441,5 @@ iOS デバイスにアプリが展開されます。
 ## <a name="related-links"></a>関連リンク
 
 - [Hello, iOS (サンプル)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS ヒューマン インターフェイス ガイドライン](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
-- [iOS プロビジョニング ポータル](https://developer.apple.com/ios/manage/overview/index.action)
+- [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
+- [iOS プロビジョニング ポータル](http://developer.apple.com/account/#/overview)

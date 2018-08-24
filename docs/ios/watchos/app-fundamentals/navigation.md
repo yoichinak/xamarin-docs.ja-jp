@@ -49,7 +49,7 @@ DismissController();
 
 使用可能なを後方に移動する方法と同様、スタックのようにシーンを提示`UINavigationController`iOS で動作します。 シーンをナビゲーション スタックにプッシュおよびポップ (プログラムまたはユーザーの選択によって) できます。
 
-![](navigation-images/hierarchy-1.png "シーンをナビゲーション スタックにプッシュできる") ![ ](navigation-images/hierarchy-2.png "シーンをナビゲーション スタックからポップすることができます")
+![](navigation-images/hierarchy-1.png "シーンをナビゲーション スタックにプッシュできる") ![](navigation-images/hierarchy-2.png "シーンをナビゲーション スタックからポップすることができます")
 
 同様に、iOS は、左のエッジ スワイプは、階層間を移動スタック内の親のコント ローラーに移動します。
 
@@ -94,7 +94,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 ページ ベースのインターフェイスは、左から右と同様の方法をスワイプ`UIPageViewController`iOS で動作します。 現在表示されているどのページを表示する画面の下部では、インジケーターのドットが表示されます。
 
-![](navigation-images/paged-1.png "サンプルの最初のページ") ![ ](navigation-images/paged-2.png "サンプル 2 ページ目") ![ ] (navigation-images/paged-5.png "5 ページ目のサンプル")
+![](navigation-images/paged-1.png "サンプルの最初のページ") ![](navigation-images/paged-2.png "サンプル 2 ページ目") ![](navigation-images/paged-5.png "5 ページ目のサンプル")
 
 
 ページ ベースのインターフェイス、watch アプリの主要な UI を使用します`ReloadRootControllers`インターフェイス コント ローラー コンテキストとコンテキストの配列を使用します。

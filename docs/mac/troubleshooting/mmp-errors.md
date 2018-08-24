@@ -113,7 +113,7 @@ ms.locfileid: "34792760"
 
 <a name="MM0071" />
 
-#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071: 不明なプラットフォーム: * です。 これは通常 Xamarin.Mac; のバグを示しますバグ報告を送信してくださいhttps://bugzilla.xamarin.comとテスト_ケースをします。
+#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071: 不明なプラットフォーム: * です。 これは通常 Xamarin.Mac; のバグを示しますバグ報告を送信してください https://bugzilla.xamarin.com とテスト_ケースをします。
 
 これは通常 Xamarin.Mac; のバグを示しますバグ報告を送信してください[ https://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)とテスト_ケースをします。
 
@@ -254,7 +254,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: によって参照される{0}.{1}    * * このメッセージは MM2006 に関連する * *
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: によって参照される{0}.{1}    ** このメッセージは MM2006 に関連する **
 
 <a name="MM2010" />
 
@@ -266,7 +266,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: のみ最初{0}の{1}「によって参照される」警告を表示します。 * * このメッセージは、2009 年に関連する * *
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: のみ最初{0}の{1}「によって参照される」警告を表示します。 ** このメッセージは、2009 年に関連する \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac 拡張機能をサポートしませんリンク。 要求のリンクは無視されます。 * * このメッセージは XM 3.6 以降で不使用 * *
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac 拡張機能をサポートしませんリンク。 要求のリンクは無視されます。 ** このメッセージは XM 3.6 以降で不使用 \*\*
 
 <!-- 2015 used by mtouch -->
 
@@ -308,7 +308,7 @@ Xamarin.Mac には、静的なレジストラーを使用してアプリケー�
 
 混合モード アセンブリは、リンカーによっては処理できません。
 
-参照してくださいhttps://msdn.microsoft.com/library/x0w2664k.aspx混合モード アセンブリの詳細についてはします。
+参照してください https://msdn.microsoft.com/library/x0w2664k.aspx 混合モード アセンブリの詳細についてはします。
 
 ## <a name="mm3xxx-aot"></a>MM3xxx: AOT
 

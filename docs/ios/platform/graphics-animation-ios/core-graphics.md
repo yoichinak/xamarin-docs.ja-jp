@@ -1,50 +1,50 @@
 ---
-title: Xamarin.iOS のコア グラフィック
-description: この記事では、コア グラフィックスの iOS フレームワークについて説明します。 コア グラフィックスを使用して、geometry、イメージ、および Pdf を描画する方法を示します。
+title: Xamarin.iOS でコア グラフィックス
+description: この記事では、Core Graphics の iOS フレームワークについて説明します。 コア グラフィックスを使用して、geometry、画像、Pdf を描画する方法を示します。
 ms.prod: xamarin
 ms.assetid: 4A30F480-0723-4B8A-9049-7CEB6211304A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7d7124c7d09ca4e36ce22d60f578ea4a75d4a05b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 82c54074db722824c56ae3ae86620c804b8d109e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786757"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241950"
 ---
-# <a name="core-graphics-in-xamarinios"></a>Xamarin.iOS のコア グラフィック
+# <a name="core-graphics-in-xamarinios"></a>Xamarin.iOS でコア グラフィックス
 
-_この記事では、コア グラフィックスの iOS フレームワークについて説明します。コア グラフィックスを使用して、geometry、イメージ、および Pdf を描画する方法を示します。_
+_この記事では、Core Graphics の iOS フレームワークについて説明します。コア グラフィックスを使用して、geometry、画像、Pdf を描画する方法を示します。_
 
-iOS を含む、 [*コア グラフィックス*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)低レベルの描画サポートを提供するフレームワークです。 これらのフレームワークは、UIKit 内での豊富なグラフィカルな機能を有効にする新機能です。 
+iOS を含む、 [ *Core Graphics* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)低レベルの描画のサポートを提供するフレームワークです。 これらのフレームワークは、UIKit 内で豊富なグラフィカル機能できるようになります。 
 
-コア グラフィックスは、デバイスの独立したグラフィックスの描画をできるようにする低レベルの 2 次元グラフィックス フレームワークです。 すべての 2D UIKit で図面は、内部コア グラフィックスを使用します。
+コア グラフィックスは、デバイス非依存グラフィックスを描画できるようにする低レベルの 2D グラフィックス フレームワークです。 すべての 2D 描画 UIKit では、Core Graphics を内部的に使用します。
 
-コア グラフィックスは、多くのシナリオなどで描画をサポートします。
+コア グラフィックスでは、多くのシナリオなどでの描画をサポートします。
 
--  [使用して、画面に描画する`UIView`](#Drawing_in_a_UIView_Subclass)です。
--  [メモリまたは画面にイメージを描画](#Drawing_Images_and_Text)です。
--  作成して、PDF を描画します。
+-  [使用して、画面に描画を`UIView`](#Drawing_in_a_UIView_Subclass)します。
+-  [メモリ内、または画面上のイメージの描画](#Drawing_Images_and_Text)します。
+-  作成して、PDF に描画します。
 -  読み取りと既存の PDF を描画します。
 
 
-## <a name="geometric-space"></a>幾何学的空間
+## <a name="geometric-space"></a>ジオメトリの領域
 
-シナリオに関係なくすべての描画をコア グラフィックスの完了 (ピクセル) ではなく、抽象ポイント内で機能を意味幾何学模様の領域で行われます。 対象 geometry と状態の色、線のスタイルなどの描画の観点から描画を説明し、コア グラフィックスがピクセルに変換することで、すべてを処理します。 画家のキャンバスのように考えることができます、グラフィックスのコンテキストには、このような状態を追加します。
+シナリオに関係なくコア グラフィックスですべての描画ピクセルではなく、抽象ポイントでうまくつまり幾何学領域で実行されます。 対象のジオメトリと状態の色、線のスタイルなどの描画の観点から描画を説明し、Core Graphics がピクセルに変換することで、すべてを処理します。 このような状態は、コピー/貼り付けのキャンバスのように考えることができます、グラフィックスのコンテキストに追加されます。
 
-この方法にいくつかの利点があります。
+これにはこの方法にいくつかの利点があります。
 
--  描画コードを動的になり実行時にグラフィックスを後で変更できます。
--  アプリケーション バンドルの静的なイメージが減少すると、アプリケーションのサイズを小さきます。
--  グラフィックスは、デバイス間で解像度の変更を回復可能になります。
+-  描画コードを動的になり、実行時にグラフィックスを後で変更できます。
+-  アプリケーション バンドルの静的なイメージの必要性を減らすと、アプリケーションのサイズを縮小できます。
+-  グラフィックスは、デバイス間での解像度の変更に回復力のあるようになります。
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
-## <a name="drawing-in-a-uiview-subclass"></a>描画 (UIView サブクラスで)
+## <a name="drawing-in-a-uiview-subclass"></a>UIView サブクラスで描画
 
-各`UIView`が、`Draw`それが描画されなければならないときに、システムによって呼び出されるメソッド。 ビューに描画コードを追加するサブクラス`UIView`オーバーライドと`Draw`:
+すべて`UIView`が、`Draw`を描画する必要があるときに、システムによって呼び出されるメソッド。 描画コードをビューに追加するサブクラス`UIView`オーバーライドと`Draw`:
 
 ```csharp
 public class TriangleView : UIView
@@ -56,17 +56,17 @@ public class TriangleView : UIView
 }
 ```
 
-描画を直接呼び出すことはありません必要があります。 実行ループ処理中に、システムによって呼び出されます。 最初に、ループの実行、ビューが階層の表示に追加された後、`Draw`メソッドが呼び出されます。 後続の呼び出し`Draw`を呼び出して、描画する必要があると、ビューが付いているときに発生する`SetNeedsDisplay`または`SetNeedsDisplayInRect`ビュー。
+描画を直接呼び出すことはありません必要があります。 実行ループの処理中に、システムによって呼び出されます。 ビューがビューの階層構造に追加された後に実行ループを最初にその`Draw`メソッドが呼び出されます。 後続の呼び出し`Draw`ビューがいずれかを呼び出すことで描画する必要があるとマークされている場合に発生する`SetNeedsDisplay`または`SetNeedsDisplayInRect`ビュー。
 
-### <a name="pattern-for-graphics-code"></a>グラフィックスのコード パターン
+### <a name="pattern-for-graphics-code"></a>グラフィックス コードのパターン
 
-内のコード、`Draw`実装が必要なもの描画を記述する必要があります。 描画用のコードは、パターンをいくつかの描画状態を設定して描画することを要求するメソッドを呼び出すに従います。 このパターンは、次のように一般化することができます。
+内のコード、`Draw`実装が必要なもの描画を記述する必要があります。 描画のコードは、いくつかの描画状態を設定し、描画を要求するメソッドを呼び出すをパターンに従います。 このパターンは次のように汎用化できます。
 
 1. グラフィックス コンテキストを取得します。
 
 2. 描画属性を設定します。
 
-3. 描画プリミティブの geometry を作成します。
+3. プリミティブを描画からの geometry を作成します。
 
 4. 描画またはストロークにメソッドを呼び出します。
 
@@ -99,14 +99,14 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 }
 ```
 
-このコードを分割してみましょう。
+は、このコードを分割してみましょう。
 
 ```csharp
 using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
-次の行は、最初に描画に使用する現在のグラフィックス コンテキストを取得します。 考えることができますグラフィックス コンテキストのキャンバス図面を実施するなど、線、塗りつぶしの色だけでなくを描画するジオメトリの描画に関するすべての状態を格納します。
+この行では、まず描画に使用する現在のグラフィックス コンテキストを取得します。 考えることができますグラフィックス コンテキスト キャンバスとしてこと描画では、ストロークや塗りつぶしの色を描画するために、ジオメトリなど、描画の概要のすべての状態を格納します。
 
 ```csharp
 g.SetLineWidth (10);
@@ -114,9 +114,9 @@ UIColor.Blue.SetFill ();
 UIColor.Red.SetStroke ();
 ``` 
 
-コードは、グラフィックス コンテキストを取得した後、描画、上記のようにするときに使用するいくつかの属性を設定します。 ここでは線の幅、線、および塗りつぶしの色が設定されます。 すべての後続の描画のグラフィックス コンテキストの状態で維持されるためこれらの属性が使用されます。
+コードは、グラフィックス コンテキストを取得した後、描画、前述のようにするときに使用するいくつかの属性を設定します。 この場合、線の幅、ストロークおよび塗りつぶしの色が設定されます。 すべての後続の描画ではこれらの属性を使用してグラフィックス コンテキストの状態で維持されるため。
 
-使用するには、コードのジオメトリを作成、`CGPath`直線と曲線から説明するグラフィックス パスを許可します。 この場合、パスは、三角形を構成する点の配列を結ぶ線を追加します。 次に示すコア グラフィックス使用してビューの描画の座標系、場所原点は正の x - ダイレクト権限、および正の値と y 方向下に、左上には。
+使用するには、コードを作成するには、geometry、 `CGPath`、グラフィック パス直線と曲線の説明を取得することができます。 この場合、パスは、三角形を構成するには点の配列を結ぶ線を追加します。 コア グラフィックスは、ビューの描画の座標系を表示、配信元が、右、下の正の y 方向に正の x ダイレクトでは、左上。
 
 ```csharp
 var path = new CGPath ();
@@ -129,15 +129,15 @@ new CGPoint (220, 200)});
 path.CloseSubpath ();
 ``` 
 
-パスが作成した後に追加されますグラフィックス コンテキストを呼び出すように`AddPath`と`DrawPath`それぞれ描画できます。
+呼び出すように、パスが作成されると、そのはグラフィックス コンテキストに追加`AddPath`と`DrawPath`それぞれ描画できます。
 
-結果のビューは、次に示します。
+結果のビューは、以下に示します。
 
  ![](core-graphics-images/00-bluetriangle.png "サンプル出力の三角形")
 
-## <a name="creating-gradient-fills"></a>塗りつぶしのグラデーションを作成します。
+## <a name="creating-gradient-fills"></a>グラデーション塗りつぶしを作成します。
 
-描画の高度なフォームも使用できます。 たとえば、コア グラフィックスは、塗りつぶしのグラデーションを作成し、クリッピング パスを適用することができます。 前の例に、パス内のグラデーションの塗りつぶしを描くには、最初のパスする必要がありますクリッピング パスとして設定します。
+描画の豊富なフォームも使用できます。 たとえば、Core Graphics は、グラデーション塗りつぶしを作成して、クリッピング パスの適用を使用できます。 前の例からのパス内のグラデーションの塗りつぶしを描画するために最初のパスする必要がクリッピング パスとして設定します。 ある
 
 ```csharp
 // add the path back to the graphics context so that it is the current path
@@ -146,7 +146,7 @@ g.AddPath (path);
 g.Clip ();
 ```
 
-線形グラデーションを描画するクリッピング パスは、次のコードなど、パスの geometry 内のすべての後続描画を制約としては、現在のパスを設定します。
+線形グラデーションを描画するクリッピング パスは、次のコードなど、パスのジオメトリ内すべての後続の描画を制約として、現在のパスを設定します。
 
 ```csharp
 // the color space determines how Core Graphics interprets color information
@@ -165,30 +165,30 @@ g.Clip ();
     }
 ```
 
-これらの変更は、次に示すように、グラデーション塗りつぶしを生成します。
+これらの変更は、次に示すようにグラデーション塗りつぶしを生成します。
 
  ![](core-graphics-images/01-gradient-fill.png "塗りつぶしのグラデーションの例では、")
 
 ## <a name="modifying-line-patterns"></a>線の種類を変更します。
 
-線の描画属性は、コア グラフィックに変更できます。 線の幅と線の色と線パターン自体には、次のコードに示すよう。
+コア グラフィックス、線の描画属性を変更こともできます。 これが含まれています行パターン自体と線の幅とストロークの色を変更する次のコードに示すよう。
 
 ```csharp
 //use a dashed line
 g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 ```
 
-次に示すように、ダッシュの間隔の 4 つの単位に長い、破線ストローク 10 単位で描画操作結果の前にこのコードを追加しています。
+次に示すようにダッシュの間隔の 4 つの単位に長破線ストローク 10 単位で描画操作結果の前にこのコードを追加します。
 
  ![](core-graphics-images/02-dashed-stroke.png "破線のストロークで描画操作結果の前にこのコードを追加します。")
  
-Xamarin.iOS で Unified API を使用している場合、配列の型する必要があります、`nfloat`も Math.PI を明示的にキャストする必要があります。
+Unified API Xamarin.iOS でを使用する場合に、配列の型が必要、`nfloat`も Math.PI を明示的にキャストする必要があります。
 
 <a name="Drawing_Images_and_Text"/>
 
-## <a name="drawing-images-and-text"></a>描画画像とテキスト
+## <a name="drawing-images-and-text"></a>描画イメージとテキスト
 
-コア グラフィックスだけでなく、ビューのグラフィックス コンテキストでパスの描画、イメージとテキストの描画がもサポートします。 イメージを描画するだけで作成、`CGImage`に渡すと、`DrawImage`呼び出し。
+コア グラフィックスだけでなく、ビューのグラフィックス コンテキストでパスの描画、イメージとテキストの描画がもサポートします。 イメージを描画するために作成、`CGImage`に渡すと、`DrawImage`呼び出し。
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -201,13 +201,13 @@ public override void Draw (CGRect rect)
 }
 ```
 
-ただし、上下逆に、次のように描画されるイメージを生成します。
+ただし、上下逆に、次に示すように描画されるイメージが生成されます。
 
- ![](core-graphics-images/03-upside-down-monkey.png "上下逆に描画されるイメージ")
+ ![](core-graphics-images/03-upside-down-monkey.png "上下に描画されるイメージ")
 
-その理由は、コア グラフィックスの元の画像の描画の左、下の間は、ビューが、左上の原点です。 そのため、イメージを正しく表示する、原点変更する必要は、変更することで実行する、*現在の変換行列* *(CTM)* です。 CTM 定義ポイント住まいとも呼ばれる*ユーザー領域*です。 Y 方向の CTM を反転し、負の値の y 方向の境界の高さでシフト、イメージを反転します。
+この理由はイメージの描画のためのコア グラフィックの原点左、下にあるビューが左上の原点です。 そのため、イメージを正しく表示する、配信元の変更が必要、変更することで実現できますが、*変換行列を現在* *(CTM)* します。 CTM 定義ポイントどことも呼ばれます*ユーザー空間*します。 Y 方向の CTM を反転し、シフトが負の値の y 方向の境界の高さは、イメージを反転できます。
 
-グラフィックス コンテキストでは、CTM を変換するヘルパー メソッドがあります。 ここでは、`ScaleCTM`図面の「反転」と`TranslateCTM`次のように、左にシフトします。
+グラフィックス コンテキストでは、変換、CTM するヘルパー メソッドがあります。 ここでは、`ScaleCTM`図面の「反転」と`TranslateCTM`次に示すように、左にシフトします。
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -225,14 +225,14 @@ public override void Draw (CGRect rect)
 
 結果のイメージが表示されます、垂直。
 
- ![](core-graphics-images/04-upright-monkey.png "サンプル表示されるイメージ直立")
+ ![](core-graphics-images/04-upright-monkey.png "サンプルに表示されるイメージの直立")
 
 > [!IMPORTANT]
-> グラフィックス コンテキストへの変更は、後続のすべての描画操作に適用されます。 したがって、CTM を変換すると、その他の描画に影響します。 たとえば、CTM 変換後の三角形を描画した場合は、表示される上下逆にします。
+> グラフィックス コンテキストへの変更は、すべての後続の描画操作に適用されます。 そのため、CTM が変換されるときに、追加の描画に影響されます。 たとえば、CTM 変換後の三角形を描画した場合は、表示される上下。
 
 ### <a name="adding-text-to-the-image"></a>テキスト、イメージを追加します。
 
-パスと、イメージとして、コア グラフィックスとテキストを描画は、グラフィックスの状態の設定およびを描画するメソッドを呼び出すと、同じ基本的なパターンです。 テキストを表示する方法は、文字列は、`ShowText`です。 例の描画、イメージに追加すると、次のコードはコア グラフィックスを使用するいくつかのテキストを描画します。
+パスとイメージ、として、コア グラフィックスと描画のテキストは、によってグラフィックスの状態を設定し、描画するメソッドを呼び出すのと同じ基本的なパターンです。 テキストを表示する方法は、文字列は、`ShowText`します。 イメージの描画を例に追加すると、次のコードはコア グラフィックスを使用していくつかのテキストを描画します。
 
 ```csharp
 public override void Draw (RectangleF rect)
@@ -260,31 +260,31 @@ public override void Draw (RectangleF rect)
 }
 ```
 
-ご覧のようは、ジオメトリの描画に似ていますがテキストの描画のグラフィックスの状態を設定します。 ただしテキストを描画するは、テキスト モードとフォントを描画はも適用されます。 この例では、影も適用、影を適用する動作しますが、パスの描画の同じされます。
+、ご覧のとおり、テキストの描画のグラフィックスの状態を設定するはジオメトリの描画に似ています。 ただしテキストを描画、テキストの描画モードとフォントはも適用されます。 この場合、影も適用されます、同じパスの描画の影を適用することは動作します。
 
-次のように、イメージを生成されるテキストが表示されます。
+次に示すよう、イメージと、結果のテキストが表示されます。
 
- ![](core-graphics-images/05-text-on-image.png "イメージが表示され、生成されるテキスト")
+ ![](core-graphics-images/05-text-on-image.png "イメージと、結果のテキストが表示されます。")
 
-## <a name="memory-backed-images"></a>メモリに格納された画像
+## <a name="memory-backed-images"></a>メモリ ベースのイメージ
 
-ビューのグラフィックス コンテキストに描画、に加えては、メモリの描画を主要なグラフィック サポートとも呼ばれる画面の描画、イメージをバックアップします。 これが必要です。
+ビューのグラフィックス コンテキストに描画、だけでなくメモリの描画をコア グラフィックス サポート イメージ、画面外に描画とも呼ばれます支えられています。 これが必要です。
 
--  メモリにバックアップするようにグラフィックス コンテキストを作成するビットマップ
--  描画の状態に設定し、描画コマンドを発行します。
--  コンテキストからイメージを取得します。
+-  メモリ内でサポートするグラフィックス コンテキストを作成するビットマップ
+-  描画の状態を設定し、描画コマンドの発行
+-  コンテキストからのイメージの取得
 -  コンテキストを削除します。
 
 
-異なり、`Draw`メソッド、コンテキストは、ビューによって提供される、ここでコンテキストを作成する、2 つの方法のいずれかで。
+異なり、`Draw`メソッド、コンテキストは、ビューによって提供される、このケースでコンテキストを作成する、2 つの方法のいずれかで。
 
 1. 呼び出して`UIGraphics.BeginImageContext`(または`BeginImageContextWithOptions`)
 
-2. で新たに作成します。 `CGBitmapContextInstance`
+2. で新しいを作成します。 `CGBitmapContextInstance`
 
- `CGBitmapContextInstance` カスタム イメージ操作のアルゴリズムを使用している場合のようにイメージのビットを直接操作している場合に役立ちます。 それ以外の場合は、使用することは`BeginImageContext`または`BeginImageContextWithOptions`です。
+ `CGBitmapContextInstance` カスタム イメージの操作のアルゴリズムを使用している場合のように、イメージ ビットを直接操作している場合に役立ちます。 その他のすべてのケースで使用する必要があります`BeginImageContext`または`BeginImageContextWithOptions`します。
 
-イメージ コンテキストを作成したら、追加は描画コード内にあるのと同じように、`UIView`サブクラスです。 使用して三角形を描画するコード例を使用しての代わりに、メモリ内のイメージを描画するなど、`UIView`次のように、します。
+内にあるのと同じように、描画コードを追加する、イメージのコンテキストを作成したら、`UIView`サブクラスです。 三角形を描画するために以前に使用するコード例を使用して、代わりにメモリ内のイメージを描画するなど、`UIView`以下に示すように。
 
 ```csharp
 UIImage DrawTriangle ()
@@ -324,7 +324,7 @@ UIImage DrawTriangle ()
 }
 ```
 
-メモリに格納されたビットマップを描画の一般的な用途はいずれかからイメージをキャプチャする`UIView`です。 たとえば、次のコードはビットマップ コンテキストにビューのレイヤーを表示し、作成、`UIImage`から。
+メモリ ベースのビットマップの描画の一般的な用途は、いずれかからイメージをキャプチャする`UIView`します。 次のコードがビットマップのコンテキストにビューのレイヤーを表示し、作成など、`UIImage`から。
 
 ```csharp
 UIGraphics.BeginImageContext (cellView.Frame.Size);
@@ -339,13 +339,13 @@ UIGraphics.EndImageContext ();
 
 ## <a name="drawing-pdfs"></a>Pdf の描画
 
-イメージ、他は、コア グラフィックスは、PDF の描画をサポートします。 画像、するメモリ内の PDF を表示したりできるよう、PDF で表示するための読み取り、`UIView`です。
+に加えて、イメージは、Core Graphics は、PDF 描画をサポートします。 イメージのようにすることができますメモリ内の PDF をレンダリングするだけでなくで表示するための PDF の読み取り、`UIView`します。
 
-### <a name="pdf-in-a-uiview"></a>PDF、UIView
+### <a name="pdf-in-a-uiview"></a>UIView PDF
 
-コア グラフィックス ファイルから、PDF の読み取りとサポートを使用してビューで表示、`CGPDFDocument`クラスです。 `CGPDFDocument`クラスがコードでは、PDF を表し、読み取りし、ページの描画に使用できます。
+コア グラフィックス ファイルから PDF の読み取りとサポートを使用してビューにレンダリングされる、`CGPDFDocument`クラス。 `CGPDFDocument`クラスがコードでは、PDF を表し、読み取りし、ページの描画に使用できます。
 
-内の次のコード例については、`UIView`サブクラス PDF ファイルから読み取りますに、 `CGPDFDocument`:
+次のコードなど、`UIView`サブクラスですが、ファイルから PDF を読み取ります、 `CGPDFDocument`:
 
 ```csharp
 public class PDFView : UIView
@@ -365,7 +365,7 @@ public class PDFView : UIView
 }
 ```
 
-`Draw`メソッドを使用し、`CGPDFDocument`にページを読み取る`CGPDFPage`し、呼び出すことによってレンダリング`DrawPDFPage`、次のように。
+`Draw`メソッドを使用できますし、`CGPDFDocument`にページを読み取る`CGPDFPage`呼び出すことでレンダリングする`DrawPDFPage`以下に示すように。
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -393,11 +393,11 @@ public override void Draw (CGRect rect)
 }
 ```
 
-### <a name="memory-backed-pdf"></a>メモリに格納された PDF
+### <a name="memory-backed-pdf"></a>メモリ ベースの PDF
 
-インメモリ PDF では、を呼び出して PDF コンテキストを作成する必要があります。`BeginPDFContext`です。 PDF へ描画は、粒度のページにです。 各ページは呼び出すことによって開始`BeginPDFPage`呼び出しで完了と`EndPDFContent`には、コードの間にします。 また、画像の描画にメモリ バックアップ済みとして描画は PDF、origin だけ、CTM を変更することで把握できる左下に使用するようなイメージです。
+メモリ内 PDF では、PDF コンテキストを呼び出すことによって作成する必要があります。`BeginPDFContext`します。 PDF への描画がページに細分化されました。 各ページが呼び出しによって開始された`BeginPDFPage`を呼び出して完了と`EndPDFContent`、間に、グラフィックス コードします。 また、イメージの描画、使用メモリ バックアップ描画は PDF、CTM を単に変更することで考慮できる左下に、配信元は、イメージなど。
 
-次のコードは、PDF へテキストを描画する方法を示しています。
+次のコードでは、PDF にテキストを描画する方法を示します。
 
 ```csharp
 //data buffer to hold the PDF
@@ -420,16 +420,16 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 UIGraphics.EndPDFContent ();
 ```
 
-結果として得られるテキストを描画し、含まれている PDF に、`NSData`を保存する、アップロードされた、電子メールで送信されたなどです。
+含まれているし、PDF に、生成されるテキストを描画、`NSData`を保存できる、アップロードされた、電子メールで送信したなど。
 
 
 ## <a name="summary"></a>まとめ
 
-この記事の内容について説明しましたを介して提供されるグラフィックス機能、*コア グラフィックス*フレームワークです。 コンテキスト内でジオメトリ、イメージ、および Pdf を描画する主要なグラフィックスを使用する方法を説明しました、`UIView,`だけメモリ サポートのグラフィックス コンテキスト。
+この記事で経由で提供されるグラフィックス機能でしました、 *Core Graphics*フレームワーク。 コンテキスト内のジオメトリ、画像、Pdf の描画にコア グラフィックスを使用する方法を説明しました、`UIView,`メモリ サポートのグラフィックス コンテキストにもします。
 
 ## <a name="related-links"></a>関連リンク
 
 - [コア グラフィックスのサンプル](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [グラフィックスおよびアニメーションのチュートリアル](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
+- [グラフィックスとアニメーションのチュートリアル](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [コア アニメーション](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [アニメーションのレシピをコアします。](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [コア アニメーションのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

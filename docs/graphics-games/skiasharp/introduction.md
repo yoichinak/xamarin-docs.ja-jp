@@ -1,27 +1,28 @@
 ---
 title: SkiaSharp の概要
-description: このドキュメントでは、中核となる SkiaSharp 概念の概要を示します。 具体的には、取得して、SKCanvas で描画について説明します。
+description: このドキュメントでは、中核となる SkiaSharp の概念の概要を示します。 具体的には、取得して、SKCanvas 上に描画について説明します。
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: a42836a49560a73b9e35ef97bfb2ba83d15812e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783062"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615497"
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp の概要
 
-_これにより、SkiaSharp 概念の概要_
+_これにより、SkiaSharp の概念の概要_
 
-SkiaSharp 豊富で強力な 2 次元グラフィックス 2D バッファーに表示するために使用できる API を提供します。  これらを使用して、カスタム ユーザー インターフェイス要素と、アプリケーションに組み込むことが 2 次元グラフィックスを実装することができます。  SkiaSharp は、.NET バインディングを[Skia](https://skia.org)ライブラリ機能とこのライブラリの電源を継承します。
+SkiaSharp、豊富で強力な 2D グラフィックスを 2D のバッファーに表示するために使用できる API を提供します。  カスタム ユーザー インターフェイス要素や、アプリケーションに組み込むことが 2D グラフィックスを実装するために、これらを使用することができます。  SkiaSharp は .NET へのバインドを[Skia](https://skia.org)ライブラリ機能とこのライブラリの電源を継承します。
 
-ライブラリは現在、クロス プラットフォームとして使用[NuGet パッケージ](https://www.nuget.org/packages/SkiaSharp)NuGet の参照を追加することで、プロジェクトに追加できます。
+ライブラリは現在、クロス プラットフォームとして提供[NuGet パッケージ](https://www.nuget.org/packages/SkiaSharp)、NuGet 参照を追加することで、プロジェクトに追加できます。
 
-を描画する、コードは、作成、 `SkCanvas` 、画面の描画操作を行う場所を記述します。
+を描画するために、コードは、作成、 `SkCanvas` 、画面の描画操作を行う場所について説明します。
 
 ## <a name="obtaining-an-skcanvas"></a>SKCanvas を取得します。
 
@@ -35,9 +36,9 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>SKCanvas の描画
 
-`SKCanvas`に精通している可能性がありますを使用して基本の他の図のよう図面モデルをモデル化、省略可能な透過性チャネルで色を使用し、線、円弧、テキストおよびイメージを描画できます。
+`SKCanvas`は描画のモデルを他の描画に似たモデルで使い慣れていたかもしれないこと、透明度の省略可能なチャネルを持つ色を使用し、線、円弧、テキストおよびイメージを描画できます。
 
-SkiaSharp で実行できる多くのさまざまな処理の一部だけを次に示します。  変数の下の例で`canvas`SKCanvas の種類です。
+SkiaSharp で実行できる多くのさまざまなことのほんの一部を次に示します。  変数の下の例で`canvas`SKCanvas 型です。
 
 ### <a name="drawing-xamagon"></a>描画 Xamagon
 
@@ -110,7 +111,7 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-### <a name="drawing-with-image-filters"></a>イメージ フィルターを使用した描画
+### <a name="drawing-with-image-filters"></a>イメージ フィルターによる描画
 
 ```csharp
 Stream fileStream = File.OpenRead ("MyImage.png"); // open a stream to an image file
@@ -134,9 +135,9 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>詳細情報
 
-SkiaSharp の使用に関する詳細についてにあります、 [API のドキュメントをオンライン](https://developer.xamarin.com/api/namespace/SkiaSharp/)
+SkiaSharp の使用に関する詳細についてで見つかんだことができます、[オンラインの API ドキュメント](https://developer.xamarin.com/api/namespace/SkiaSharp/)
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp iOS ブック](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+- [SkiaSharp iOS ワークブック](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
