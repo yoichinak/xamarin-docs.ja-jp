@@ -76,7 +76,7 @@ try {
 
 これは、マネージ OBJECTIVE-C スタック アンワインダーが認識していないため`catch`句、およびどちらが、`finally`句が実行されます。
 
-ときに上記のコード サンプル_は_効果的では Objective C 例外 Objective C の通知のメソッドがありますので[ `NSSetUncaughtExceptionHandler` ] [ 2]、Xamarin.iOS と Xamarin.Mac を使用して、その時点でしようとマネージ コードの例外をすべて Objective C の例外に変換します。
+ときに上記のコード サンプル_は_効果的では Objective C 例外 Objective C の通知のメソッドがありますので[`NSSetUncaughtExceptionHandler`][2]、Xamarin.iOS と Xamarin.Mac を使用して、その時点でしようとマネージ コードの例外をすべて Objective C の例外に変換します。
 
 ## <a name="scenarios"></a>シナリオ
 
