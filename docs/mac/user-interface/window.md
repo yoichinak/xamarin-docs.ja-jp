@@ -762,7 +762,7 @@ void OpenDialog (NSObject sender)
 5. 既存のウィンドウを削除してからパネルをドラッグして、**ライブラリ インスペクター**では、**インターフェイス エディター**: 
 
     [![](window-images/panels01.png "既存のウィンドウを削除します。")](window-images/panels01.png#lightbox)
-6. フック、パネル、**ファイルの所有者*-**ウィンドウ*- **アウトレット**: 
+6. フック、パネル、**ファイルの所有者*- **ウィンドウ*- **アウトレット**: 
 
     [![](window-images/panels02.png "パネルの線をドラッグします。")](window-images/panels02.png#lightbox)
 7. 切り替えて、 **Identity Inspector**パネルのクラスを設定および`DocumentPanel`: 

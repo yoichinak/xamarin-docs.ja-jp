@@ -38,9 +38,9 @@ _継続的インテグレーションは、ソフトウェア エンジニア �
 
 [アプリ Center Test](https://docs.microsoft.com/appcenter/test-cloud)数百台の物理デバイスに直接アプリのテストでこの特定の問題に対処します。 開発者は、強力な UI テストのため、自動承諾テストを記述します。 これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部として次の図に示すように。
 
-[![](intro-to-ci-images/intro02-small.png "これらのテストは、アプリのセンターにアップロード CI サーバーに自動的に実行できます CI のプロセスの一部としてこの図に示すように")](intro-to-ci-images/intro02.png#lightbox)
+[![](intro-to-ci-images/intro02-small.png "これらのテストが App Center にアップロードされると、CI サーバーは、この図が示すように CI のプロセスの一部として自動的にそれらを実行できます. ")](intro-to-ci-images/intro02.png#lightbox)
 
-# <a name="components-of-continuous-integration"></a>継続的インテグレーションのコンポーネント
+# <a name="components-of-continuous-integration"></a>継続的インテグレーションの構成要素
 
 構成項目をサポートするように設計および商用のオープン ソースのツールの広範なエコシステムです。 このセクションでは、いくつかの最も一般的な原因について説明します。
 
