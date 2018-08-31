@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: b60b8a6a7c56347d6abf71f8c5149ddd556d3da8
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "40251003"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac での Windows
@@ -762,7 +762,7 @@ void OpenDialog (NSObject sender)
 5. 既存のウィンドウを削除してからパネルをドラッグして、**ライブラリ インスペクター**では、**インターフェイス エディター**: 
 
     [![](window-images/panels01.png "既存のウィンドウを削除します。")](window-images/panels01.png#lightbox)
-6. フック、パネル、**ファイルの所有者*- **ウィンドウ*- **アウトレット**: 
+6. フック、パネル、**ファイルの所有者** - **ウィンドウ** - **アウトレット**: 
 
     [![](window-images/panels02.png "パネルの線をドラッグします。")](window-images/panels02.png#lightbox)
 7. 切り替えて、 **Identity Inspector**パネルのクラスを設定および`DocumentPanel`: 

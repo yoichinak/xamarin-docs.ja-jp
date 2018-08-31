@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
 ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "39654816"
 ---
 # <a name="push-notifications-in-ios"></a>IOS でプッシュ通知
@@ -81,12 +81,10 @@ Apple APNS の 2 つの環境の保持: を*サンド ボックス*と*運用*�
 
 8.  開発プロビジョニング プロファイルを作成するに移動、 **Provisioning Profiles**セクションし、先ほど作成したアプリ Id を使用してこれを作成する手順に従います。
 
-9.  プロビジョニング プロファイルを作成したら、開く**Xcode オーガナイザー**し、それを更新します。 プロビジョニング プロファイルを作成した場合は表示されません、プロファイルを iOS プロビジョニング ポータルからダウンロードし、手動でインポートする必要があります。 次のスクリーン ショットは、プロビジョニング プロファイルを追加、オーガナイザーの例を示します。
-
+9.  プロビジョニング プロファイルを作成したら、開く**Xcode オーガナイザー**し、それを更新します。 プロビジョニング プロファイルを作成した場合は表示されません、プロファイルを iOS プロビジョニング ポータルからダウンロードし、手動でインポートする必要があります。 次のスクリーン ショットは、プロビジョニング プロファイルを追加、オーガナイザーの例を示します。  
     [![](remote-notifications-in-ios-images/image13new.png "このスクリーン ショットがプロビジョニング プロファイルを追加、オーガナイザーの例を示します")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  この時点でこの新しく作成されたプロビジョニング プロファイルを使用する Xamarin.iOS プロジェクトを構成する必要があります。 これから**プロジェクト オプション**ダイアログ **[iOS バンドル署名]** タブで、次のスクリーン ショットに示すように。
-
+10.  この時点でこの新しく作成されたプロビジョニング プロファイルを使用する Xamarin.iOS プロジェクトを構成する必要があります。 これから**プロジェクト オプション**ダイアログ **[iOS バンドル署名]** タブで、次のスクリーン ショットに示すように。  
     [![](remote-notifications-in-ios-images/image11.png "この新しく作成されたプロビジョニング プロファイルを使用する Xamarin.iOS プロジェクトを構成します。")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 この時点でアプリケーションがプッシュ通知と連携するように構成します。 ただし、証明書に必要ないくつかの手順がまだです。 この証明書では、DER 形式では、Personal Information Exchange (PKCS12) 証明書を必要とする、PushSharp と互換性がありません。 PushSharp で使用できるように、証明書を変換するには、最後の手順を実行します。
