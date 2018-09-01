@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 08/31/2018
 ms.locfileid: "38995743"
 ---
 # <a name="customizing-a-contentpage"></a>コンテンツ ページのカスタマイズ
@@ -197,7 +197,7 @@ namespace CustomRenderer.Droid
 
 基本クラスの呼び出し`OnElementChanged`メソッドには、Android がインスタンス化`ViewGroup`コントロールで、ビューのグループです。 カメラのライブ ストリームは、レンダラーは、既存の Xamarin.Forms 要素に既に接続されていないし、カスタム レンダラーによってレンダリングされるページのインスタンスが存在することにのみ表示されます。
 
-ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`Camera`カメラと、前に、写真をキャプチャする機能からライブ ストリームを提供する API、`AddView`ライブのカメラを追加するメソッドが呼び出されるストリーミングするための UI、`ViewGroup`します。
+ページは、一連を使用するメソッドを呼び出すことによってカスタマイズし、`Camera`カメラと、前に、写真をキャプチャする機能からライブ ストリームを提供する API、`AddView`ライブのカメラを追加するメソッドが呼び出されるストリーミングするための UI、`ViewGroup`します。 Android でですもオーバーライドするために必要な`OnLayout`ビューでメジャーとレイアウトの操作を実行するメソッド。 詳細については、次を参照してください。、 [ContentPage レンダラー サンプル](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/)します。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP のページ レンダラーを作成します。
 
