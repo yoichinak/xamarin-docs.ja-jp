@@ -6,24 +6,18 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 6d16f01965b6b3bcba35cf14d4000f53a4400653
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 422eb24b86ba14ff4e5362db8aeec5775fab5833
+ms.sourcegitcommit: aa16f267c59725cc88bd84b049544ecfbec297ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241979"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43263507"
 ---
 # <a name="system-requirements"></a>システム要件
 
 Xamarin 製品は、iOS または Android をターゲットとする際に Apple および Google のプラットフォーム SDK に依存するため、システム要件を合わせる必要があります。 このページでは、Xamarin プラットフォームのシステムの互換性と、推奨される開発環境および SDK バージョンについて概説します。
 
-- [開発環境](#devenv)
-- [macOS の要件](#mac)
-- [Windows の要件](#windows)
-
-ソフトウェアと必要な SDK の取得の詳細については、「[インストール手順](#install)」を参照してください。
-
-<a name="devenv" />
+ソフトウェアと必要な SDK の取得の詳細については、「[インストール手順](#installation-instructions)」を参照してください。
 
 ## <a name="development-environments"></a>開発環境
 
@@ -31,15 +25,12 @@ Xamarin 製品は、iOS または Android をターゲットとする際に Appl
 
 [!include[](~/cross-platform/includes/development-environment.md)]
 
-
 > [!NOTE]
 > Windows コンピューターの iOS 用に開発するには、リモート コンパイルおよびデバッグのために、[ネットワークから Mac コンピューターにアクセスできる](~/ios/get-started/installation/windows/connecting-to-mac/index.md)必要があります。 これは、Mac コンピューター上の Windows VM 内で Visual Studio が実行されている場合にも当てはまります。
 
-<a name="mac" />
-
 ## <a name="macos-requirements"></a>macOS の要件
 
-Xamarin の開発に Mac コンピューターを使用するには、次のソフトウェア/SDK バージョンが必要です。 オペレーティング システムのバージョンを確認し、[Xamarin インストーラー](#install)の指示に従ってください。
+Xamarin の開発に Mac コンピューターを使用するには、次のソフトウェア/SDK バージョンが必要です。 オペレーティング システムのバージョンを確認し、[Xamarin インストーラー](#installation-instructions)の指示に従ってください。
 
 [!include[](~/cross-platform/includes/macos-requirements.md)]
 
@@ -48,11 +39,14 @@ Xamarin の開発に Mac コンピューターを使用するには、次のソ�
 
 ### <a name="testing--debugging-on-macos"></a>macOS でのテストとデバッグ
 
-Xamarin モバイル アプリケーションを USB 経由で物理デバイスに展開し、テストおよびデバッグを行うことができます (Xamarin.Mac アプリは開発用コンピューターで直接テストできます。Apple Watch アプリは対応する iPhone に最初に展開されます)。
+- Xamarin モバイル アプリケーションを USB 経由で物理デバイスに展開し、テストおよびデバッグを行うことができます (Apple Watch アプリは対応する iPhone に最初に展開されます)。
+- Xamarin.Mac アプリは、開発用コンピューターで直接テストすることができます。
 
 [!include[](~/cross-platform/includes/macos-testing.md)]
 
-<a name="windows" />
+> [!WARNING]
+> 今度の Xamarin.Mac 4.8 リリースでは、macOS 10.9 以降のみをサポートします。
+> 以前のバージョンの Xamarin.Mac では macOS 10.7 以降をサポートしていましたが、これらの古い macOS バージョンは TLS 1.2 をサポートするための十分な TLS インフラストラクチャがありませんでした。 macOS 10.7 または macOS 10.8 をターゲットにするには、Xamarin.Mac 4.6 以前を使用してください。
 
 ## <a name="windows-requirements"></a>Windows の要件
 
@@ -63,20 +57,16 @@ Visual Studio 2017 インストーラーには、Xamarin を自動的にイン�
 [!include[](~/cross-platform/includes/windows-requirements.md)]
 
 > [!NOTE]
->
->- Xamarin for Visual Studio では Visual Studio 2017 (Community、Professional、および Enterprise) がサポートされています。
->
->- ユニバーサル Windows プラットフォーム (UWP) 用に Xamarin.Forms アプリを開発するには、Visual Studio 2017 がインストールされている Windows 10 が必要です。
+> - Xamarin for Visual Studio では Visual Studio 2017 (Community、Professional、および Enterprise) がサポートされています。
+> - ユニバーサル Windows プラットフォーム (UWP) 用に Xamarin.Forms アプリを開発するには、Visual Studio 2017 がインストールされている Windows 10 が必要です。
 
 ### <a name="testing--debugging-on-windows"></a>Windows でのテストとデバッグ
 
-Xamarin モバイル アプリケーションを USB 経由で物理デバイスに展開し、テストおよびデバッグを行うことができます (iOS デバイスは、Visual Studio を実行しているコンピューターではなく、Mac コンピューターに接続する必要があります)。
+Xamarin モバイル アプリケーションを USB 経由またはワイヤレスで物理デバイスに展開し、テストおよびデバッグを行うことができます (iOS デバイスは、Visual Studio を実行しているコンピューターではなく、Mac コンピューターに接続する必要があります)。
 
 [!include[](~/cross-platform/includes/windows-testing.md)]
 
-<a name="install" />
-
-## <a name="installation-instructions"></a>インストールの指示:
+## <a name="installation-instructions"></a>インストール手順
 
 macOS 用の最新の Xamarin リリースは、[xamarin.com/download](http://xamarin.com/download) からダウンロードできます。 Windows の場合は、[Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) のインストール手順に従ってください。
 
