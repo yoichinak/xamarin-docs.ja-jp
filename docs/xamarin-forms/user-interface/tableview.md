@@ -16,7 +16,7 @@ ms.locfileid: "38996054"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
-[テーブル](xref:Xamarin.Forms.TableView)データや選択肢のスクロール可能な一覧を表示するビューを同じテンプレートを共有しない行がある場合。 [ListView](~/xamarin-forms/user-interface/listview/index.md)と異なり、テーブルには`ItemsSource`の概念が無いため、項目を子として手動で追加する必要があります。
+[テーブル](xref:Xamarin.Forms.TableView)データやスクロール可能な選択肢の一覧を表示するビューに同じテンプレートを共有しない行がある場合 [ListView](~/xamarin-forms/user-interface/listview/index.md)と異なり、テーブルには`ItemsSource`の概念が無いため、項目を子として手動で追加する必要があります。
 
 このガイドでは、次のセクションで構成されます。
 
@@ -120,7 +120,7 @@ SwitchCells には、1行のテキストと on / off のプロパティがあり
 ### <a name="entrycell"></a>EntryCell
 [`EntryCell`](xref:Xamarin.Forms.EntryCell) ユーザーが編集できるテキスト データを表示する必要がある場合に役立ちます。 `EntryCell`にはカスタマイズ可能な次のプロパティがあります。
 
-- `Keyboard` &ndash; 編集中に表示するキーボード。 数値、電子メール、電話番号などのようなもののオプションがあります。[API ドキュメントを参照してください。](xref:Xamarin.Forms.Keyboard)
+- `Keyboard` &ndash; 編集中に表示するキーボード。 数値、電子メール、電話番号などのオプションがあります。[API ドキュメントを参照してください。](xref:Xamarin.Forms.Keyboard)	
 - `Label` &ndash; テキスト入力フィールドの右側に表示するラベル テキスト。
 - `LabelColor` &ndash; ラベルのテキストの色。
 - `Placeholder` &ndash; Null または空のときに、入力フィールドに表示するテキスト。 このテキストは、テキスト エントリの開始時に表示されなくなります。
