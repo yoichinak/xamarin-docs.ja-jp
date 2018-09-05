@@ -92,7 +92,7 @@ Xamarin.Forms には 20 のインスタンス化可能なクラスから派生�
 
 - [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 型の`double`1 に初期化されました。
 
-視覚的に、`Stepper`というラベルの付いた 2 つのボタンから成る**&ndash;** と **+** します。 キーを押して**&ndash;** 減少`Value`によって`Increment`を最小限の`Minimum`します。 キーを押して**+** 増加`Value`によって`Increment`最大`Maximum`します。
+視覚的に、`Stepper`というラベルの付いた 2 つのボタンから成る **&ndash;** と **+** します。 キーを押して **&ndash;** 減少`Value`によって`Increment`を最小限の`Minimum`します。 キーを押して **+** 増加`Value`によって`Increment`最大`Maximum`します。
 
 これを示します、 [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo)サンプル。
 

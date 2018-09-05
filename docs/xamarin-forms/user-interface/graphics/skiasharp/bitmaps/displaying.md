@@ -16,7 +16,7 @@ ms.locfileid: "39615315"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>SkiaSharp のビットマップの表示
 
-SkiaSharp のビットマップのサブジェクトが、情報の記事で導入された**[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** します。 その記事では、負荷のビットマップに 3 つの方法とビットマップを表示する 3 つの方法を示しました。 この記事では、ビットマップを読み込む方法を確認しより深いがの使用になる、`DrawBitmap`メソッドの`SKCanvas`します。
+SkiaSharp のビットマップのサブジェクトが、情報の記事で導入された **[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** します。 その記事では、負荷のビットマップに 3 つの方法とビットマップを表示する 3 つの方法を示しました。 この記事では、ビットマップを読み込む方法を確認しより深いがの使用になる、`DrawBitmap`メソッドの`SKCanvas`します。
 
 ![サンプルを表示する](displaying-images/DisplayingSample.png "サンプルを表示します。")
 
@@ -40,13 +40,13 @@ SkiaSharp アプリケーションで、新しいビットマップを作成し�
 SKBitmap bitmap;
 ```
 
-アーティクルとして **[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** 言えば、最善の方法をインターネット経由でビットマップを読み込むとでは、 [ `HttpClient` ](xref:System.Net.Http.HttpClient)クラス。 クラスの 1 つのインスタンスは、フィールドとして定義できます。
+アーティクルとして **[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** 言えば、最善の方法をインターネット経由でビットマップを読み込むとでは、 [`HttpClient`](xref:System.Net.Http.HttpClient)クラス。 クラスの 1 つのインスタンスは、フィールドとして定義できます。
 
 ```csharp
 HttpClient httpClient = new HttpClient();
 ```
 
-使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります**[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
+使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります **[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
 
 使用するコード`HttpClient`多くの場合、`await`に存在する必要があるため、演算子、`async`メソッド。
 
