@@ -16,7 +16,7 @@ ms.locfileid: "38996054"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
-[テーブル](xref:Xamarin.Forms.TableView)データやスクロール可能な選択肢の一覧を表示するビューに同じテンプレートを共有しない行がある場合 [ListView](~/xamarin-forms/user-interface/listview/index.md)と異なり、テーブルには`ItemsSource`の概念が無いため、項目を子として手動で追加する必要があります。
+[テーブル](xref:Xamarin.Forms.TableView)データや選択肢のスクロール可能な一覧を表示するビューを同じテンプレートを共有しない行がある場合。 異なり[ListView](~/xamarin-forms/user-interface/listview/index.md)、テーブルには、概念はありません、`ItemsSource`ので、項目を子として手動で追加する必要があります。
 
 このガイドでは、次のセクションで構成されます。
 
@@ -44,7 +44,7 @@ ms.locfileid: "38996054"
 
 ## <a name="tableview-structure"></a>テーブルの構造体
 
-`TableView`の要素はセクションで構成されています。`TableView`のルートは`TableRoot`であり、1つ以上の`TableSections`の親になります。
+`TableView`の要素はセクションで構成されています。 `TableView`のルートは`TableRoot`であり、1つ以上の`TableSections`の親になります。
 
 ```csharp
 Content = new TableView {
@@ -55,7 +55,7 @@ Content = new TableView {
 };
 ```
 
-各`TableSection`は見出しと1つ以上の`ViewCells`で構成されます。 ここでは、`TableSection`の`Title`プロパティにコンストラクターで *「Ring」* が設定されています。
+各`TableSection`見出しと 1 つまたは複数の ViewCells で構成されます。 ここで、`TableSection`の`Title`プロパティに設定 *「リング」* コンス トラクターで。
 
 ```csharp
 var section = new TableSection ("Ring") { //TableSection constructor takes title as an optional parameter
@@ -81,7 +81,7 @@ var section = new TableSection ("Ring") { //TableSection constructor takes title
 
 ## <a name="tableview-appearance"></a>テーブルの外観
 
-`TableView`は`Intent`プロパティを公開しており、次のオプションの列挙値です。
+テーブルを公開、`Intent`プロパティで、次のオプションの列挙値です。
 
 - **データ**&ndash;データ エントリを表示するときに使用します。 なお[ListView](~/xamarin-forms/user-interface/listview/index.md)データのリストをスクロールするための優れた選択肢があります。
 - **フォーム**&ndash;形式として、テーブルが動作しているときに使用します。
@@ -99,12 +99,12 @@ Xamarin.Forms を収集して情報を表示するための組み込みのセル
 - **SwitchCell** &ndash;を提示すると、テキスト ラベルと共に、true または false の状態をキャプチャします。
 - **EntryCell** &ndash;表示とテキストをキャプチャします。
 
-[TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell)と[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell)の詳細な説明は、[ListView セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)を参照してください。
+[TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)と[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell)の詳細な説明は、[ListView セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell)を参照してください。
 
 <a name="switchcell" />
 
 ### <a name="switchcell"></a>SwitchCell
-[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)は、`on` / `off`または`true` / `false`の状態を表示し、キャプチャするために使用するコントロールです。
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) コントロールを表示およびキャプチャを使用するには、オン/オフまたは`true` / `false`状態。
 
 SwitchCells には、1行のテキストと on / off のプロパティがあります。 これらのプロパティの両方がバインド可能です。
 
@@ -120,12 +120,12 @@ SwitchCells には、1行のテキストと on / off のプロパティがあり
 ### <a name="entrycell"></a>EntryCell
 [`EntryCell`](xref:Xamarin.Forms.EntryCell) ユーザーが編集できるテキスト データを表示する必要がある場合に役立ちます。 `EntryCell`にはカスタマイズ可能な次のプロパティがあります。
 
-- `Keyboard` &ndash; 編集中に表示するキーボード。 数値、電子メール、電話番号などのオプションがあります。[API ドキュメントを参照してください。](xref:Xamarin.Forms.Keyboard)	
+- `Keyboard` &ndash; 編集中に表示するキーボード。 数値、電子メール、電話番号などのようなもののオプションがあります。[API ドキュメントを参照してください。](xref:Xamarin.Forms.Keyboard)します。
 - `Label` &ndash; テキスト入力フィールドの右側に表示するラベル テキスト。
 - `LabelColor` &ndash; ラベルのテキストの色。
 - `Placeholder` &ndash; Null または空のときに、入力フィールドに表示するテキスト。 このテキストは、テキスト エントリの開始時に表示されなくなります。
 - `Text` &ndash; エントリ フィールド内のテキスト。
-- `HorizontalTextAlignment` &ndash; テキストの水平方向の配置。 センター、左、または右に配置できます。 [API ドキュメントを参照してください。](xref:Xamarin.Forms.TextAlignment)
+- `HorizontalTextAlignment` &ndash; テキストの水平方向の配置。 センター、左、または適切な配置できます。 [API ドキュメントを参照してください。](xref:Xamarin.Forms.TextAlignment)します。
 
 なお`EntryCell`は`Completed`イベントを公開しており、ユーザーがテキストの編集中にキーボードの 'done' を押すと発生します。
 
@@ -174,7 +174,7 @@ SwitchCells には、1行のテキストと on / off のプロパティがあり
 
 - `TableView`のルート要素は、`TableRoot`です。
 - `TableRoot`のすぐ下に`TableSection`があります。
-- `ViewCell`は`TableSection`の直下で定義されています。 `ListView`とは異なり、 `TableView`ではカスタムセル (またはそのいずれか) が`ItemTemplate`で定義されている必要はありません。
+- `ViewCell`テーブル セクションですで直接定義されています。 異なり`ListView`、 `TableView` (またはそのいずれか) をそのカスタムは不要でセルが定義されている、`ItemTemplate`します。
 - StackLayout を使用して、カスタムのセルのレイアウトを管理できます。 任意のレイアウトは、ここで使用できます。
 
 ### <a name="cnum"></a>C&num;
@@ -210,8 +210,8 @@ Content = table;
 上記 C# は多くのことを行っています。 分割してみましょう。
 
 - `TableView`のルート要素は、`TableRoot`です。
-- `TableRoot`のすぐ下に`TableSection`があります。
-- `ViewCell`は`TableSection`の直下で定義されています。 `ListView`とは異なり、 `TableView`ではカスタムセル (またはそのいずれか) が`ItemTemplate`で定義されている必要はありません。
+- `TableSection`のすぐ下に`TableRoot`があります。
+- `ViewCell`テーブル セクションですで直接定義されています。 異なり`ListView`、 `TableView` (またはそのいずれか) をそのカスタムは不要でセルが定義されている、`ItemTemplate`します。
 - StackLayout を使用して、カスタムのセルのレイアウトを管理できます。 任意のレイアウトは、ここで使用できます。
 
 カスタムのセルのクラスが定義されていないことに注意してください。 代わりに、`ViewCell`のビューのプロパティは、`ViewCell`の特定のインスタンスに対して設定されています。
