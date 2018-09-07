@@ -16,7 +16,7 @@ ms.locfileid: "38996054"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
-[テーブル](xref:Xamarin.Forms.TableView)データや選択肢のスクロール可能な一覧を表示するビューを同じテンプレートを共有しない行がある場合。 異なり[ListView](~/xamarin-forms/user-interface/listview/index.md)、テーブルには、概念はありません、`ItemsSource`ので、項目を子として手動で追加する必要があります。
+[テーブル](xref:Xamarin.Forms.TableView)データやスクロール可能な選択肢の一覧を表示するビューに同じテンプレートを共有しない行がある場合 [ListView](~/xamarin-forms/user-interface/listview/index.md)と異なり、テーブルには`ItemsSource`の概念が無いため、項目を子として手動で追加する必要があります。
 
 このガイドでは、次のセクションで構成されます。
 
