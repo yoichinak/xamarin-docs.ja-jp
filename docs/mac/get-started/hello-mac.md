@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: f06bf6736b427a4d77ac34957d75cd321f3dae3a
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: 81a15f85c3b3b10525e2eb4966900edc95224fe0
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275938"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780520"
 ---
 # <a name="hello-mac--walkthrough"></a>Hello, Mac – チュートリアル
 
@@ -33,22 +33,21 @@ Xamarin.Mac を使うと、*Objective-C* と *Xcode* で開発するときに使
 -  **Outlet と Action** – Outlet と Action を使用してユーザー インターフェイスのコントロールを接続する方法。
 -  **配置/テスト** – Xamarin.Mac アプリを実行してテストする方法。
 
-
-<a name="Requirements" />
-
 ## <a name="requirements"></a>必要条件
 
-Xamarin.Mac を使って macOS アプリケーションを開発するには、以下のものが必要です。
+最新の macOS API を使用して Xamarin.Mac アプリを開発するには、次が必要です。
 
-- macOS Yosemite(10.10) 以上を搭載している Mac コンピューター。
-- Xcode 7 以上 ([App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) から最新の安定バージョンをインストールすることをお勧めします)。
-- Xamarin.Mac と Visual Studio for Mac の最新バージョン。
+- macOS High Sierra (10.13) 以上を実行している Mac コンピューター。
+- [Xcode 9 以上](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- [Xamarin.Mac と Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation) の最新バージョン。
 
-Xamarin.Mac で作成された Mac アプリケーションを実行するには、次のシステム要件があります。
+Xamarin.Mac を使って構築されたアプリケーションを実行するには、次が必要です。
 
 - Mac OS X 10.7 以上を搭載している Mac コンピューター。
 
-<a name="Starting_a_new_Xamarin.Mac_App_in_Xamarin_Studio" />
+> [!WARNING]
+> 今度の Xamarin.Mac 4.8 リリースでは、macOS 10.9 以降のみをサポートします。
+> 以前のバージョンの Xamarin.Mac では macOS 10.7 以降をサポートしていましたが、これらの古い macOS バージョンは TLS 1.2 をサポートするための十分な TLS インフラストラクチャがありませんでした。 macOS 10.7 または macOS 10.8 をターゲットにするには、Xamarin.Mac 4.6 以前を使用してください。
 
 ## <a name="starting-a-new-xamarinmac-app-in-visual-studio-for-mac"></a>Visual Studio for Mac で新しい Xamarin.Mac アプリを起動する
 
@@ -86,8 +85,6 @@ Visual Studio for Mac での**ソリューション**と**プロジェクト**�
 
 必要に応じて開発者は、共通の共有コードを含む 1 つ以上のコード ライブラリ プロジェクトを作成できます。 これらのライブラリ プロジェクトは、アプリのプロジェクトで使用することも、他の Xamarin.Mac アプリ プロジェクト (またはコードの種類によっては Xamarin.iOS と Xamarin.Android) と共有することもできます。これは標準の .NET アプリケーションと同様です。
 
-<a name="The_Project" />
-
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac アプリケーションの構造
 
 iOS プログラミングになじみがある場合、多くの類似点があります。 実際、iOS は Mac で使われている Cocoa をスリムにしたバージョンである CocoaTouch フレームワークを使用しているため、多くの概念が共通します。
@@ -103,8 +100,6 @@ iOS プログラミングになじみがある場合、多くの類似点があ�
 -   `ViewController.designer.cs` – このファイルには、メイン画面のユーザー インターフェイスとの統合に役立つ統合コードが含まれています。
 
 以下のセクションでは、これらのファイルのいくつかを簡単に見ていきます。 後で詳しく説明しますが、まず基本を理解することをお勧めします。
-
-<a name="Main_cs" />
 
 ### <a name="maincs"></a>Main.cs
 
@@ -129,8 +124,6 @@ namespace Hello_Mac
         }
 }
 ```
-
-<a name="AppDelegate_cs" />
 
 ### <a name="appdelegatecs"></a>AppDelegate.cs
 
@@ -167,8 +160,6 @@ namespace Hello_Mac
 `DidFinishLaunching` メソッドは、アプリがインスタンス化された後に実行され、実際にアプリのウィンドウを作成して、その中にビューを表示するプロセスを開始します。
 
 `WillTerminate` メソッドは、ユーザーまたはシステムがアプリのシャットダウンをインスタンス化したときに呼び出されます。 開発者はこのメソッドを使用して、アプリが終了する前に最終処理を行う必要があります (ユーザー設定やウィンドウのサイズと位置を保存するなど)。
-
-<a name="ViewController_cs" />
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
@@ -210,8 +201,6 @@ namespace Hello_Mac
 }
 ```
 
-<a name="ViewController_Designer_cs" />
-
 ### <a name="viewcontrollerdesignercs"></a>ViewController.Designer.cs
 
 メイン ウィンドウ クラスのデザイナー ファイルは現在空ですが、Xcode 内の Interface Builder を使用してユーザー インターフェイスを作成すると、Visual Studio for Mac によって自動的に作成されます。
@@ -241,8 +230,6 @@ namespace Hello_Mac
 
 Xamarin.Mac アプリ プロジェクトを作成し、そのコンポーネントの基本を理解したので、Xcode に切り替え、Interface Builder を使用してユーザー インターフェイスを作成します。
 
-<a name="Info_plist" />
-
 ### <a name="infoplist"></a>Info.plist
 
 `Info.plist` ファイルには、**名前**や**バンドル ID** などの Xamarin.Mac アプリに関する情報が含まれています。
@@ -258,8 +245,6 @@ Xamarin.Mac アプリ プロジェクトを作成し、そのコンポーネン�
 [![](hello-mac-images/entitlements01.png "Visual Studio for Mac 権利エディター")](hello-mac-images/entitlements01.png#lightbox)
 
 Hello World の例に権利は不要です。 次のセクションでは、Xcode の Interface Builder を使用して `Main.storyboard` ファイルを編集し、Xamarin.Mac アプリの UI を定義する方法を示します。
-
-<a name="Introduction_to_Xcode_and_Interface_Builder" />
 
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode と Interface Builder の概要
 
@@ -279,8 +264,6 @@ Xcode が起動し、次のように表示されます。
 > 開発者は、Xamarin.Mac アプリのユーザー インターフェイスを作成するのに必ずしも Xcode と Interface Builder を使用する必要はありません。C# コードから UI を直接作成できますが、それについてはこの記事では説明しません。 わかりやすくするために、このチュートリアルでは Interface Builder を使用してユーザー インターフェイスを作成します。
 
 
-<a name="Components_of_Xcode" />
-
 ### <a name="components-of-xcode"></a>Xcode のコンポーネント
 
 Visual Studio for Mac から Xcode で `.storyboard` ファイルを開くと、左側に**プロジェクト ナビゲーター**、中央に**インターフェイス階層**と**インターフェイス エディター**、右側に**プロパティとユーティリティ**のセクションが表示されます。
@@ -289,27 +272,19 @@ Visual Studio for Mac から Xcode で `.storyboard` ファイルを開くと、
 
 以下のセクションでは、これらの Xcode の各機能と Xamarin.Mac アプリのインターフェイスを作成する方法について説明します。
 
-<a name="Project_Navigation" />
-
 ### <a name="project-navigation"></a>プロジェクトのナビゲーション
 
 Xcode で `.storyboard` ファイルを開くと、Visual Studio for Mac によって *Xcode プロジェクト ファイル*がバックグラウンドで作成され、Visual Studio for Mac と Xcode の間で変更が通知されます。 その後、開発者が Xcode から Visual Studio for Mac に戻ると、このプロジェクトに対する変更は Visual Studio for Mac によって Xamarin.Mac プロジェクトと同期されます。
 
 **プロジェクト ナビゲーション** セクションでは、開発者はこの _shim_ Xcode プロジェクトを構成するすべてのファイル間を移動できます。 通常、開発者の関心の対象は、この一覧の `.storyboard` ファイル (`Main.storyboard`など) のみです。
 
-<a name="Interface_Hierarchy" />
-
 ### <a name="interface-hierarchy"></a>インターフェイス階層
 
 **インターフェイス階層**セクションでは、開発者は**プレースホルダー**やメイン **ウィンドウ**などのユーザー インターフェイスの主要な複数のプロパティに簡単にアクセスできます。 このセクションを使用すると、ユーザー インターフェイスを構成する個々の要素 (ビュー) にアクセスしたり、階層内でそれらの要素をドラッグして、入れ子にする方法を調整したりできます。
 
-<a name="Interface_Editor" />
-
 ### <a name="interface-editor"></a>インターフェイス エディター
 
 **インターフェイス エディター**のセクションでは、ユーザー インターフェイスをグラフィカルにレイアウトする画面が提供されます。**プロパティとユーティリティ**のセクションにある**ライブラリ** セクションから要素をドラッグして、デザインを作成します。 ユーザー インターフェイス要素 (ビュー) をデザイン サーフェイスに追加すると、**インターフェイス エディター**に表示されている順序で**インターフェイス階層**セクションに追加されます。
-
-<a name="Properties_Utilities" />
 
 ### <a name="properties--utilities"></a>プロパティとユーティリティ
 
@@ -322,8 +297,6 @@ Xcode で `.storyboard` ファイルを開くと、Visual Studio for Mac によ�
 **プロパティ** セクション内には、次の図に示すように 8 つの異なる*インスペクター タブ*があります。
 
 [![](hello-mac-images/xcode05.png "すべてのインスペクターの概要")](hello-mac-images/xcode05.png#lightbox)
-
-<a name="Properties_Utility_Types" />
 
 ### <a name="properties--utility-types"></a>プロパティとユーティリティの種類
 
@@ -341,8 +314,6 @@ Xcode で `.storyboard` ファイルを開くと、Visual Studio for Mac によ�
 **ライブラリ** セクションでは、コントロールとオブジェクトを探してデザイナーに配置し、グラフィカルにユーザー インターフェイスを構築します。
 
 [![](hello-mac-images/xcode06.png "Xcode ライブラリ インスペクター")](hello-mac-images/xcode06.png#lightbox)
-
-<a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
@@ -404,8 +375,6 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 ユーザー インターフェイスを作成したら、開発者は UI 項目を公開して、Xamarin.Mac が C# コードでそれらの項目にアクセスして対話できるようにする必要があります。 次の「**Outlet と Action**」のセクションで、その方法を説明します。
 
-<a name="Outlets_and_Actions" />
-
 ### <a name="outlets-and-actions"></a>Outlet と Action
 
 **Outlet** と **Action** とは何でしょうか?  従来の .NET ユーザー インターフェイス プログラミングでは、ユーザー インターフェイスのコントロールは追加時にプロパティとして自動的に公開されます。 Mac では事情が異なり、ビューにコントロールを追加しただけでは、コントロールはコードにアクセスできません。 開発者は、UI 要素を明示的にコードに公開する必要があります。 これを行うために、Apple は 2 つのオプションを提供しています。
@@ -420,8 +389,6 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 [![](hello-mac-images/xcode16.png "Xcode でのソースの表示")](hello-mac-images/xcode16.png#lightbox)
 
 このスタブ `.h` ファイルは、新しい `NSWindow` が作成されたときに自動的に Xamarin.Mac プロジェクトに追加される `ViewController.designer.cs` を反映しています。 このファイルは、Interface Builder によって行われた変更を同期するためにも使用されます。そしてこのファイルで **Outlet** と **Action** が作成され、UI 要素が C# コードに公開されます。
-
-<a name="Adding_an_Outlet" />
 
 #### <a name="adding-an-outlet"></a>アウトレットの追加
 
@@ -461,8 +428,6 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 10. 変更内容をファイルに保存します。
 
-<a name="Adding_an_Action" />
-
 #### <a name="adding-an-action"></a>アクションの追加
 
 次に、ボタンを C# コードに公開します。 上記のラベルと同じように、開発者はボタンを**アウトレット**に接続できます。 クリックされたボタンにのみ応答するようにしたいので、代わりに**アクション**を使用します。
@@ -492,8 +457,6 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 > [!NOTE]
 > この最初のアプリのユーザー インターフェイスおよび **Outlet** と **Action** を作成するには時間がかかったことでしょう。作業量が多いように思われるかもしれませんが、多くの新しい概念が導入されているため、時間をかけて新しい作業方法を紹介しました。 Interface Builder を使用してしばらく練習すれば、このインターフェイスおよびすべての **Outlet** と **Action** をわずか 1、2 分で作成できるようになります。
-
-<a name="Synchronizing_Changes_with_Xcode" />
 
 ### <a name="synchronizing-changes-with-xcode"></a>Xcode との変更の同期
 
@@ -526,8 +489,6 @@ Visual Studio for Mac は **.h** ファイルの変更をリッスンし、そ�
 
 > [!NOTE]
 > ほとんどの場合、Visual Studio for Mac は Xcode で行われた変更を自動的に確認し、Xamarin.Mac プロジェクトに同期します。 同期が自動的に行われないときは Xcode に戻り、再び Visual Studio for Mac に戻ります。 こうすると通常、同期サイクルが開始します。
-
-<a name="Writing_the_Code" />
 
 ## <a name="writing-the-code"></a>コードの記述
 
@@ -574,8 +535,6 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 このコードは、Xcode と Interface Builder で作成された**アクション**にアタッチされ、ユーザーがボタンをクリックするたびに呼び出されます。
 
-<a name="Testing_the_Application" />
-
 ## <a name="testing-the-application"></a>アプリケーションのテスト
 
 アプリをビルドして実行し、期待どおりに動作することを確認します。 開発者は 1 つのステップですべてをビルドして実行することも、実行せずビルドすることもできます。
@@ -589,15 +548,11 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 [![](hello-mac-images/run01.png "デバッグ ビルドを選択する")](hello-mac-images/run01.png#lightbox)
 
-<a name="Building_the_Application" />
-
 ## <a name="building-the-application"></a>アプリケーションのビルド
 
 この例ではデバッグ ビルドで十分なので、**[デバッグ]** が選択されていることを確認してください。 **⌘B** を押すか、**[ビルド]** メニューの **[すべてビルド]** を選択して、最初にアプリをビルドします。
 
 エラーがなければ、Visual Studio for Mac のステータス バーに "**ビルドが成功しました**" というメッセージが表示されます。 エラーがあった場合はプロジェクトを見直し、上記の手順に正しく従っていることを確認してください。 まず、コード (Xcode と Visual Studio for Mac の両方) がチュートリアルのコードと一致していることを確認します。
-
-<a name="Running_the_Application" />
 
 ## <a name="running-the-application"></a>アプリケーションの実行
 
@@ -614,8 +569,6 @@ partial void ClickedButton (Foundation.NSObject sender) {
 ボタンが何回かクリックさると、ラベルのカウントが更新されます。
 
 [![](hello-mac-images/run03.png "ボタンをクリックした結果の表示")](hello-mac-images/run03.png#lightbox)
-
-<a name="Where_to_Next" />
 
 ## <a name="where-to-next"></a>次の場所
 
