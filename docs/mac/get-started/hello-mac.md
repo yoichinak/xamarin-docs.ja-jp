@@ -35,13 +35,13 @@ Xamarin.Mac を使うと、*Objective-C* と *Xcode* で開発するときに使
 
 ## <a name="requirements"></a>必要条件
 
-最新の macOS API を使用して Xamarin.Mac アプリを開発するには、次が必要です。
+最新の macOS API を使用して Xamarin.Mac アプリを開発するには、次のものが必要です。
 
 - macOS High Sierra (10.13) 以上を実行している Mac コンピューター。
-- [Xcode 9 以上](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- [Xcode 9 以上](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 。
 - [Xamarin.Mac と Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation) の最新バージョン。
 
-Xamarin.Mac を使って構築されたアプリケーションを実行するには、次が必要です。
+Xamarin.Mac を使って構築されたアプリケーションを実行するには、次のものが必要です。
 
 - Mac OS X 10.7 以上を搭載している Mac コンピューター。
 
@@ -87,7 +87,7 @@ Visual Studio for Mac での**ソリューション**と**プロジェクト**�
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac アプリケーションの構造
 
-iOS プログラミングになじみがある場合、多くの類似点があります。 実際、iOS は Mac で使われている Cocoa をスリムにしたバージョンである CocoaTouch フレームワークを使用しているため、多くの概念が共通します。
+Xamarin.Mac のアプリケーション プログラミングは Xamarin.iOS での動作に非常に似ています。 実際、iOS は Mac で使われている Cocoa をスリムにしたバージョンである CocoaTouch フレームワークを使用しているため、多くの概念が共通します。
 
 プロジェクト内のファイルを見てください。
 
@@ -97,7 +97,7 @@ iOS プログラミングになじみがある場合、多くの類似点があ�
 -   `Entitlements.plist` - このファイルにはアプリの権利が含まれています。アプリの権利によってサンドボックスや iCloud のサポートなどにアクセスできます。
 -  `Main.storyboard` – アプリのユーザー インターフェイス (ウィンドウとメニュー) を定義し、ウィンドウ間の相互接続を Segues 経由でレイアウトします。 ストーリーボードは、ビュー (ユーザー インターフェイス要素) の定義を含む XML ファイルです。 このファイルは、Xcode 内の Interface Builder で作成、維持管理することができます。
 -   `ViewController.cs` – これはメイン ウィンドウのコントローラーです。 コントローラーについては別の記事で詳しく説明しますが、ここでは、コントローラーを特定のビューのメイン エンジンと考えることができます。
--   `ViewController.designer.cs` – このファイルには、メイン画面のユーザー インターフェイスとの統合に役立つ統合コードが含まれています。
+-   `ViewController.designer.cs` – このファイルには、メイン画面のユーザー インターフェイスとの統合のための組み込みコードが含まれています。
 
 以下のセクションでは、これらのファイルのいくつかを簡単に見ていきます。 後で詳しく説明しますが、まず基本を理解することをお勧めします。
 
@@ -163,7 +163,7 @@ namespace Hello_Mac
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-Cocoa (と派生の CocoaTouch) は、*モデル ビュー コント ローラー* (MVC) パターンと呼ばれるパターンを使用します。 `ViewController` 宣言は、オブジェクトが実際のアプリ ウィンドウを制御することを表します。 一般に、作成されたすべてのウィンドウ (およびウィンドウ内の他の多くの要素) には、ウィンドウのライフサイクルに関する処理を行うコントローラーがあります。コントローラーは、ウィンドウを表示したり、ウィンドウに新しいビュー (コントロール) を追加したりします。
+Cocoa (と派生の CocoaTouch) は、*モデル ビュー コントローラー* (MVC) パターンと呼ばれるパターンを使用します。 `ViewController` 宣言は、オブジェクトが実際のアプリ ウィンドウを制御することを表します。 一般に、作成されたすべてのウィンドウ (およびウィンドウ内の他の多くの要素) には、ウィンドウのライフサイクルに関する処理を行うコントローラーがあります。コントローラーは、ウィンドウを表示したり、ウィンドウに新しいビュー (コントロール) を追加したりします。
 
 `ViewController` クラスはメイン ウィンドウのコントローラーです。 つまり、メイン ウィンドウのライフ サイクルに関する処理を行います。 これについては後で詳しく説明します。ここでは簡単に見ていきます。
 
@@ -498,7 +498,7 @@ Visual Studio for Mac は **.h** ファイルの変更をリッスンし、そ�
 
 [![](hello-mac-images/code01.png "Visual Studio for Mac で ViewController.cs ファイルを表示する")](hello-mac-images/code01.png#lightbox)
 
-まず、`ViewController` クラスにクラスレベル変数を作成して、発生したクリックの回数を追跡します。 クラス定義を編集し、次のようにします。
+まず、`ViewController` クラスにクラスレベル変数を作成して、発生したクリックの回数を記録します。 クラス定義を編集し、次のようにします。
 
 ```csharp
 namespace Hello_Mac
@@ -566,7 +566,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 [![](hello-mac-images/run02.png "アプリケーションの実行")](hello-mac-images/run02.png#lightbox)
 
-ボタンが何回かクリックさると、ラベルのカウントが更新されます。
+ボタンを何回かクリックすると、ラベルのカウントが更新されます。
 
 [![](hello-mac-images/run03.png "ボタンをクリックした結果の表示")](hello-mac-images/run03.png#lightbox)
 
