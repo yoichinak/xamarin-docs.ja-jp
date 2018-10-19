@@ -3,14 +3,14 @@ title: Xamarin Live Player の制限事項
 description: このドキュメントでは、Xamarin Live Player の制限事項について説明します。 デバイスの要件について説明します、機能、プロジェクトの種類、およびその他の他のトピックで動作します。
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 99ed8d06331ac7e423791309da79d72d5a10d70f
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: aff6990df1b710190f11c2d7fa09c8399e94f8af
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "40251244"
 ---
 # <a name="limitations-of-xamarin-live-player"></a>Xamarin Live Player の制限事項
@@ -53,7 +53,7 @@ Live Player は、iOS のご利用いただけません。
 - F# プロジェクトはサポートされていません
 - カスタムのジェネリック クラスとインターフェイスを使用して、高度なシナリオは、サポートされていません。
 
-その他の問題を報告してください[bugzilla](https://aka.ms/live-player-report-issue)します。
+使用**問題を報告する**で[Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)または[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem) Xamarin Live Player の問題を報告します。
 
 ## <a name="related-links"></a>関連リンク
 

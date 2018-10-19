@@ -4,14 +4,14 @@ description: この記事では、特定の領域にクリップのグラフィ�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0c07d68535349004eeefeaa18daa9c59b889a6a7
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 87f1ad3956bdb43c82a7ab57ea9171e9a28dd558
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615289"
 ---
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でクリッピング
@@ -22,7 +22,7 @@ _クリップ グラフィックスへのパスを使用して、特定の領域
 
 ![](clipping-images/clippingsample.png "Monkey、keyhole 経由")
 
-*のクリッピング領域*はグラフィックスのレンダリングを画面の領域です。 クリッピング領域の外側に表示されるものは表示されません。 クリッピング領域を定義は、通常、 [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)オブジェクトが別の方法として定義できますを使用してクリッピング領域を[ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/)オブジェクト。 これら 2 種類のオブジェクトは、パスからの領域を作成するために最初に、関連ようです。 ただし、リージョンからパスを作成することはできず、それらが内部的に非常に異なる: パスは一連の線の水平方向のスキャンによって定義されていますが、リージョン、一連の直線と曲線で構成されます。
+*のクリッピング領域*はグラフィックスのレンダリングを画面の領域です。 クリッピング領域の外側に表示されるものは表示されません。 クリッピング領域は通常、四角形によって定義または[ `SKPath` ](xref:SkiaSharp.SKPath)オブジェクトが別の方法として定義できますを使用してクリッピング領域を[ `SKRegion` ](xref:SkiaSharp.SKRegion)オブジェクト。 これら 2 種類のオブジェクトは、パスからの領域を作成するために最初に、関連ようです。 ただし、リージョンからパスを作成することはできず、それらが内部的に非常に異なる: パスは一連の線の水平方向のスキャンによって定義されていますが、リージョン、一連の直線と曲線で構成されます。
 
 上の図は、によって作成された、 **Keyhole を通じて Monkey**ページ。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)クラスは、SVG のデータを使用して、パスを定義し、コンス トラクターを使ってプログラム リソースからビットマップを読み込みます。
 
@@ -104,15 +104,15 @@ canvas.ClipPath(keyholePath);
 
 ## <a name="combining-clipping-paths"></a>クリッピング パスの結合
 
-厳密に言えば、クリッピング領域「は設定されていません」、`ClipPath`メソッド。 代わりに、四角形の画面サイズと同じように始めます。 既存のクリッピング パスと組み合わされます。 クリッピング領域を使用して、四角形の境界を取得することができます、 [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/)プロパティまたは[ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/)プロパティ。 `ClipBounds`プロパティが返す、`SKRect`変換いずれかを反映した値が有効にすることがあります。 `ClipDeviceBounds`プロパティが返す、`RectI`値。 これは整数のディメンションを含む四角形であり、実際のピクセル寸法のクリッピング領域について説明します。
+厳密に言えば、クリッピング領域「は設定されていません」、`ClipPath`メソッド。 代わりに、四角形をキャンバスにサイズと同じように始めます。 既存のクリッピング パスと組み合わされます。 クリッピング領域を使用して、四角形の境界を取得することができます、 [ `ClipBounds` ](xref:SkiaSharp.SKCanvas.ClipBounds)プロパティまたは[ `ClipDeviceBounds` ](xref:SkiaSharp.SKCanvas.ClipDeviceBounds)プロパティ。 `ClipBounds`プロパティが返す、`SKRect`変換いずれかを反映した値が有効にすることがあります。 `ClipDeviceBounds`プロパティが返す、`RectI`値。 これは整数のディメンションを含む四角形であり、実際のピクセル寸法のクリッピング領域について説明します。
 
-すべての呼び出しに`ClipPath`新しい領域でクリッピング領域を組み合わせることで、クリッピング領域を削減します。 完全な構文、 [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/)メソッドは。
+すべての呼び出しに`ClipPath`新しい領域でクリッピング領域を組み合わせることで、クリッピング領域を削減します。 完全な構文、 [ `ClipPath` ](xref:SkiaSharp.SKCanvas.ClipPath(SkiaSharp.SKPath,SkiaSharp.SKClipOperation,System.Boolean))メソッドは。
 
 ```csharp
 public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-[ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/)クリッピング領域を四角形と組み合わせたメソッド。
+[ `ClipRect` ](xref:SkiaSharp.SKCanvas.ClipRect(SkiaSharp.SKRect,SkiaSharp.SKClipOperation,System.Boolean))クリッピング領域を四角形と組み合わせたメソッド。
 
 ```csharp
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
@@ -167,11 +167,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](clipping-images//fourcircleintersectclip-small.png "次の 4 つの円が交差するクリップのページのスクリーン ショットをトリプル")](clipping-images/fourcircleintersectclip-large.png#lightbox "円が交差するクリップの 4 つのページの 3 倍になるスクリーン ショット")
 
-[ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/)列挙体が 2 つのみのメンバーには。
+[ `SKClipOperation` ](xref:SkiaSharp.SKClipOperation)列挙体が 2 つのみのメンバーには。
 
-- [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Difference/) 既存のクリッピング領域から、指定されたパスまたは四角形を削除します
+- `Difference` 既存のクリッピング領域から、指定されたパスまたは四角形を削除します
 
-- [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Intersect/) 指定されたパスまたは既存のクリッピング領域を含む四角形と交差しています。
+- `Intersect` 指定されたパスまたは既存のクリッピング領域を含む四角形と交差しています。
 
 4 つに置き換える場合`SKClipOperation.Intersect`の引数、`FourCircleIntersectClipPage`クラス`SKClipOperation.Difference`次が表示されます。
 
@@ -248,33 +248,31 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKClipOperation clipOp)
 
 ## <a name="exploring-regions"></a>リージョンの調査
 
-API ドキュメントにしている場合`SKCanvas`、お気付きのオーバー ロード、`ClipPath`と`ClipRect`メソッドは、上記の方法に似ていますが、代わりをという名前のパラメーターがある[ `SKRegionOperation`](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/)なく`SKClipOperation`します。 `SKRegionOperation` フォームのクリッピング領域へのパスを組み合わせることでやや柔軟性の向上、6 つのメンバーがあります。
+クリッピング領域を定義することも、 [ `SKRegion` ](xref:SkiaSharp.SKRegion)オブジェクト。
 
-- [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Difference/)
+新しく作成された`SKRegion`オブジェクトが空の領域について説明します。 通常、オブジェクトの最初の呼び出しは[ `SetRect` ](xref:SkiaSharp.SKRegion.SetRect(SkiaSharp.SKRectI))を領域に四角形の領域がについて説明します。 パラメーターを`SetRect`は、`SKRectI`値&mdash;整数値で四角形座標をピクセル単位で四角形が指定されているためです。 呼び出して[ `SetPath` ](xref:SkiaSharp.SKRegion.SetPath(SkiaSharp.SKPath,SkiaSharp.SKRegion))で、`SKPath`オブジェクト。 これは、パスの内部の場合と同じですが、初期の四角形の領域にクリップされる領域を作成します。
 
-- [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Intersect/)
-
-- [`Union`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Union/)
-
-- [`XOR`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.XOR/)
-
-- [`ReverseDifference`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.ReverseDifference/)
-
-- [`Replace`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Replace/)
-
-ただし、オーバー ロードの`ClipPath`と`ClipRect`で`SKRegionOperation`パラメーターは廃止され、使用することはできません。
-
-使用することもできます、`SKRegionOperation`が列挙体の観点でのクリッピング領域を定義する必要があります、 [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/)オブジェクト。
-
-新しく作成された`SKRegion`オブジェクトが空の領域について説明します。 通常、オブジェクトの最初の呼び出しは[ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/)領域に四角形の領域がについて説明するようにします。 パラメーターを`SetRect`、`SKRectI`値&mdash;整数のプロパティを持つ四角形の値。 呼び出して[ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/)で、`SKPath`オブジェクト。 これは、パスの内部の場合と同じですが、初期の四角形の領域にクリップされる領域を作成します。
-
-`SKRegionOperation`列挙型のみが関与のいずれかを呼び出すときに、 [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/)ようなメソッドのオーバー ロードします。
+いずれかを呼び出すことによって、リージョンを変更することも、 [ `Op` ](xref:SkiaSharp.SKRegion.Op*)ようなメソッドのオーバー ロードします。
 
 ```csharp
 public Boolean Op(SKRegion region, SKRegionOperation op)
 ```
 
-作成するリージョン、`Op`に基づくパラメーターとして指定したリージョンと組み合わせて使用で呼び出し、`SKRegionOperation`メンバー。 最後に取得する領域の領域に適した、ときにを使用して、キャンバスのクリッピング領域として設定することができます、 [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/)メソッドの`SKCanvas`:
+[ `SKRegionOperation` ](xref:SkiaSharp.SKRegionOperation)列挙型はのような`SKClipOperation`がさらにメンバーがあります。
+
+- `Difference`
+
+- `Intersect`
+
+- `Union`
+
+- `XOR`
+
+- `ReverseDifference`
+
+- `Replace`
+
+作成するリージョン、`Op`に基づくパラメーターとして指定したリージョンと組み合わせて使用で呼び出し、`SKRegionOperation`メンバー。 最後に取得する領域の領域に適した、ときにを使用して、キャンバスのクリッピング領域として設定することができます、 [ `ClipRegion` ](xref:SkiaSharp.SKCanvas.ClipRegion(SkiaSharp.SKRegion,SkiaSharp.SKClipOperation))メソッドの`SKCanvas`:
 
 ```csharp
 public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperation.Intersect)
@@ -364,9 +362,9 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 この違いの"the rationale"を理解するのには理解するどのリージョンです。 方法クリップ操作または地域の操作が内部的に実装されるを見た場合おそらくよう非常に複雑です。 いくつかの可能性のある非常に複雑なパスが結合されているし、結果のパスのアウトラインは、アルゴリズムの悪夢では可能性があります。
 
-ただし、このジョブは大幅に簡略化、一連の昔ながらの掃除機 tube Tv などの水平方向のスキャン ラインに各パスが短縮された場合。 各スキャン ラインは、始点と終点で水平な線だけです。 たとえば、10 の半径の円は、20 の水平方向のスキャン ラインをそれぞれの円の左端から始まり、右側の部分で終わりますに分解することができます。 リージョンのいずれかの操作を 2 つの円を組み合わせること、単に対応するスキャン ラインの各ペアの開始と終了座標を調べることである非常に簡単になります。
+一連の昔ながらの掃除機 tube Tv などの水平方向のスキャン ラインの各パスが短縮された場合、このジョブがかなり簡素化します。 各スキャン ラインは、始点と終点で水平な線だけです。 たとえば、10 ピクセルの半径の円は、20 の水平方向のスキャン ラインをそれぞれの円の左端から始まり、右側の部分で終わりますに分解することができます。 リージョンのいずれかの操作を 2 つの円を組み合わせること、単に対応するスキャン ラインの各ペアの開始と終了座標を調べることである非常に簡単になります。
 
-これは、どのようなリージョンが: 領域を定義する一連の線の水平方向にスキャンします。
+これは、どのようなリージョンが: 一連の領域を定義する水平方向のスキャン ライン。
 
 ただし、一連のスキャンに領域を縮小するときに行、行は、特定のピクセル寸法に基づいて、これらのスキャンします。 厳密に言えば、領域は、ベクター グラフィックス オブジェクトではありません。 パスよりも圧縮モノクロ ビットマップと本質的に似ています。 そのため、リージョンを拡大または忠実度を失うことがなく、このような理由のクリッピング領域を使用すると、変換されませんを回転することはできません。
 
@@ -514,5 +512,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

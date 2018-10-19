@@ -4,14 +4,14 @@ description: UIButton クラスは、iOS 画面のボタンのさまざまな異
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2018
-ms.openlocfilehash: 32f6330ad2fddc2e8386d6e574918a011f3bebad
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 35fc743944c04dd1fdb8e035ba94ad6aeb6156ea
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38986005"
 ---
 # <a name="buttons-in-xamarinios"></a>Xamarin.iOS のボタン
@@ -90,7 +90,8 @@ button.TouchUpInside += (sender, e) => {
 `UIButton` コントロールができるさまざまな種類の状態で存在する各で指定された、`UIControlState`値 – `Normal`、 `Disabled`、 `Focused`、`Highlighted`など。各状態には、プログラムから、または iOS Designer で指定された一意のスタイルを指定できます。
 
 > [!NOTE]
-> すべての完全な一覧については`UIControlState`を値で見て、 [ `UIKit.UIControlState enumeration` ](https://developer.xamarin.com/api/type/UIKit.UIControlState/)ドキュメント。
+> すべての完全な一覧については`UIControlState`を値で見て、 [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> ドキュメントです。
 
 たとえば、タイトルの色と影の色を設定する`UIControlState.Normal`:
 
@@ -127,6 +128,3 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlStat
 
 カスタム ボタンの使用方法の詳細についてを参照してください、[ボタンのイメージを使用して](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button)レシピです。
 
-## <a name="related-links"></a>関連リンク
-
-- [UIButton ブック](https://developer.xamarin.com/workbooks/ios/user-interface/UIbutton/uibutton.workbook)

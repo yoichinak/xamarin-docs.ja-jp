@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 37befdcd4ccbcd49e3cebda92d55ae6f70da2ad6
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f67cbb136c42a4bc476c1715ea6fd15255d71dc7
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998703"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ認識エンジンを追加します。
 
 _ピンチ ジェスチャでは、対話型ズームを実行するために使用し、PinchGestureRecognizer クラスを使用して実装されます。ピンチ ジェスチャの一般的なシナリオでは、ピンチ場所にイメージの対話型ズームを実行します。これは、ビューポートのコンテンツをスケールすることによって実現され、、この記事で説明します。_
-
-## <a name="overview"></a>概要
 
 ピンチ ジェスチャとズーム可能なユーザー インターフェイス要素をように、作成、 [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer)インスタンスを処理、 [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated)イベントに新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ユーザー インターフェイスの要素のコレクション。 次のコード例は、`PinchGestureRecognizer`にアタッチされている、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
 
@@ -161,11 +159,6 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 ```
 
 このメソッドは、ユーザーの指をつまむジェスチャに基づいてラップされたユーザー インターフェイス要素のズーム レベルを更新します。 値を使用してこれは、 [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale)、 [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin)と[ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status)のプロパティ、 [ `PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs)ピンチ ジェスチャの原点に適用されるスケール ファクターを計算するインスタンス。 設定して、ラップされたユーザーの要素が拡大ピンチ ジェスチャの原点を注視し、その[ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)、 [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)、および[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)プロパティの計算される値。
-
-## <a name="summary"></a>まとめ
-
-ピンチ ジェスチャは対話型ズームを実行するために使用され、は実装されて、 [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer)クラス。
-
 
 ## <a name="related-links"></a>関連リンク
 

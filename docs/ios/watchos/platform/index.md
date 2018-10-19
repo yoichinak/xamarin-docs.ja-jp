@@ -4,23 +4,19 @@ description: このドキュメントは、Apple Pay、通知など、複雑な�
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: e915ec38ed29b6ef2a0710c9dad10cf339c3a3ab
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 09200ba5968838edf829b30a50a8ad0f4a3ab3aa
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39030679"
 ---
 # <a name="watchos-platform-features"></a>watchOS プラットフォーム機能
 
-## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[WatchOS 5 の概要](introduction-to-watchos5/index.md)
-
-> [!WARNING]
-> Xamarin の watchOS 5 のサポートは現在プレビュー段階で、バグが含まれていることを意味でない機能は完全なし、変わる可能性があります。
-> 実験目的でのみ使用します。
+## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[watchOS 5 の概要](introduction-to-watchos5/index.md)
 
 このドキュメントでは、Xamarin で watchOS アプリを構築するときに使用するために使用できる 5 watchOS で新規および更新された機能の概要を提供します。
 

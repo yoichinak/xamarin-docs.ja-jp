@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 0069e59c1c09e242a74573ae66c8efade7d7f2a5
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998242"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms のスライダー
@@ -44,8 +44,8 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)水平のバーを選択す
 
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) バーのつまみの左側にある色です。
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) バーのつまみの右側にある色です。
-- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) つまみの色です。 このプロパティは、ユニバーサル Windows プラットフォームでサポートされていません。
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 一般的に、型に使用するイメージ[ `FileImageSource`](xref:Xamarin.Forms.FileImageSource)します。 このプロパティは、ユニバーサル Windows プラットフォームでサポートされていません。
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) つまみの色です。
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 一般的に、型に使用するイメージ[ `FileImageSource`](xref:Xamarin.Forms.FileImageSource)します。
 
 > [!NOTE]
 > `ThumbColor`と`ThumbImage`プロパティは相互に排他的です。 両方のプロパティが設定されている場合、`ThumbImage`プロパティが優先されます。
@@ -109,7 +109,7 @@ public class BasicSliderCodePage : ContentPage
 
 [![基本的なスライダー コード](slider-images/BasicSliderCode.png "スライダーの基本的なコード")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-2 番目の`Label`まで「(初期化されていない)」のテキストが表示されます、`Slider`操作は、1 つ目のケースを`ValueChanged`イベントが。 表示される小数点以下桁数が 3 つのプラットフォームのさまざまなことに注意してください。 これらの違いに関連するプラットフォームの実装の`Slider`セクションでは、この記事の後半で説明[プラットフォームの実装の違い](#implementations)します。
+2 番目の`Label`まで「(初期化されていない)」のテキストが表示されます、`Slider`操作は、これにより、最初`ValueChanged`イベントが。 表示される小数点以下桁数が 3 つのプラットフォームのさまざまなことに注意してください。 これらの違いに関連するプラットフォームの実装の`Slider`セクションでは、この記事の後半で説明[プラットフォームの実装の違い](#implementations)します。
 
 ### <a name="creating-a-slider-in-xaml"></a>XAML でスライダーの作成
 
@@ -228,7 +228,7 @@ Slider slider = new Slider
 };
 ```
 
-設定`Maximum`20 に問題には、既定値より大きいため、 `Minimum` 0 に設定します。 ときに`Minimum`が設定された場合、値がより小さい`Maximum`20 の値。
+設定`Maximum`20 に問題には、既定値より大きいため、 `Minimum` 0 の値。 ときに`Minimum`が設定された場合、値がより小さい`Maximum`20 の値。
 
 XAML で同じ問題が存在します。 確実な順序でプロパティを設定`Maximum`よりも大きいは常に`Minimum`:
 
@@ -292,8 +292,6 @@ Android の実装の`Slider`は、Android に基づいて[ `SeekBar` ](https://d
 UWP 実装`Slider`は UWP に基づいて[ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider)コントロール。 `StepFrequency`プロパティ、UWP の`Slider`の差に設定されている、`Maximum`と`Minimum`プロパティが 10 日ですが 1 より大きくないで割った値します。
 
 たとえば、既定の 0 ~ 1 の範囲、 `StepFrequency` 0.1 にプロパティを設定します。 として、`Slider`は、操作、`Value`プロパティは 0、0.1、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、または 1.0 に制限されます。 (これは、最後のページで、 [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプル)。間の差、`Maximum`と`Minimum`プロパティが 10 以上し`StepFrequency`を 1 に設定されていると、`Value`プロパティが整数値。
-
-さらに、 [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty)と[ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty)プロパティは、UWP ではサポートされません。
 
 ### <a name="the-stepslider-solution"></a>StepSlider ソリューション
 

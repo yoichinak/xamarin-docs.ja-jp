@@ -3,14 +3,14 @@ title: Xamarin を使用した継続的インテグレーションの概要
 description: このドキュメントでは、Xamarin を使用した継続的インテグレーションについて説明します。 これは、バージョン管理およびさまざまな継続的インテグレーション環境について説明します。
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 67fc32fc9f79d54274642fbab2d0c2f8afd14d8c
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 5468495885e3af2afa2692ccad9191b669fa3328
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "37066508"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的インテグレーションの概要
@@ -23,8 +23,8 @@ _継続的インテグレーションは、プロジェクトのバージョン�
 
 継続的インテグレーション システムでは、2 つの主要な部分があります。
 
--  **バージョン コントロール** – バージョン コントロール (VC)、またはソースコントロールやソースコードマネージメントとも呼ばれるものは、1 つの共有リポジトリにすべてのプロジェクトのコードを統合し、すべてのファイルのすべての変更の完全な履歴を保持します。 このリポジトリは、よく *mainline* または *master* ブランチと呼ばれ、 アプリの本番環境またはリリースバージョンをビルドするために使われる最終的なソースコートが含まれています。 このタスクには多くのオープンソースと商用の製品があり、通常、チームまたは個人が、マスターブランチへのリスクなしで、広範囲の変更や検証の実施を行える二次的なブランチへコードのコピーを分岐することを許可しています。 二次的なブランチの変更が検証されると、それらはマスターブランチに全てまとめてマージすることができます。
--  **継続的インテグレーション サーバー** – 継続的インテグレーション サーバーは、プロジェクトの全ての成果物（ソースコード、画像、動画、データベース、自動テストなど）の収集、アプリのコンパイル、自動テストの実行を担当します。 これも、多くのオープンソースおよび商用の CI サーバー ツールが存在します。
+- **バージョン コントロール** – バージョン コントロール (VC)、またはソースコントロールやソースコードマネージメントとも呼ばれるものは、1 つの共有リポジトリにすべてのプロジェクトのコードを統合し、すべてのファイルのすべての変更の完全な履歴を保持します。 このリポジトリは、よく *mainline* または *master* ブランチと呼ばれ、 アプリの本番環境またはリリースバージョンをビルドするために使われる最終的なソースコートが含まれています。 このタスクには多くのオープンソースと商用の製品があり、通常、チームまたは個人が、マスターブランチへのリスクなしで、広範囲の変更や検証の実施を行える二次的なブランチへコードのコピーを分岐することを許可しています。 二次的なブランチの変更が検証されると、それらはマスターブランチに全てまとめてマージすることができます。
+- **継続的インテグレーション サーバー** – 継続的インテグレーション サーバーは、プロジェクトの全ての成果物（ソースコード、画像、動画、データベース、自動テストなど）の収集、アプリのコンパイル、自動テストの実行を担当します。 これも、多くのオープンソースおよび商用の CI サーバー ツールが存在します。
 
 開発者は通常、各自のワークステーションに、1 つまたは複数のブランチの作業コピーを持っており、そこで最初のうちは作業します。 作業の適切なセットが完了したら、変更は適切なブランチへ "チェックイン" または "コミット" され、他の開発者の作業コピーへそれらを伝搬します。 このようにして、チームが同じコード上で全て作業できるようにします。
 
@@ -46,24 +46,22 @@ CI をサポートするように設計された商用およびオープンソ�
 
 ## <a name="version-control"></a>バージョン コントロール
 
-### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services と Team Foundation Server
+### <a name="azure-devops-and-team-foundation-server"></a>Azure DevOps と Team Foundation Server
 
-[Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) (VSTS) および [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) は、継続的インテグレーション ビルドサービスである、タスクの追跡・アジャイルの計画・レポート作成のツール、およびバージョンコントロールのための Microsoft のコラボレーションツールです。 バージョンコントロールを使うと、VSTS と TFS は独自のシステム (Team Foundation Version Control または TFVC) または GitHubでホストされるプロジェクトで作業ができます。
+[Azure DevOps](https://azure.microsoft.com/services/devops/)と[Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) は、継続的インテグレーションのマイクロソフトのコラボレーション ツールは、サービス、タスクの追跡、アジャイル計画およびレポート ツール、およびバージョン管理を構築します。 バージョン管理、Azure DevOps と TFS 作業できます独自のシステム (Team Foundation バージョン管理または TFVC) または GitHub でホストされるプロジェクト。
 
- - Visual Studio Team Services では、クラウド経由でサービスを提供します。 主な利点は、専用のハードウェアやインフラストラクチャが不要で、どこからでも web ブラウザや Visual Studio などの一般的な開発ツールを通じてアクセスできることで、これは地理的に離れたチームにとって魅力的です。 これは 5 人以下の開発者のチームまで無料で使用でき、その後、増大するチームに対応するために追加のライセンスを購入することができます。
- - TFS は、オンプレミスな Windows サーバー用に設計されており、ネットワークにローカルネットワークまたは VPN 接続経由でアクセスします。 その主な利点は、ビルドサーバーの構成を完全に制御でき、追加のソフトウェアや必要なサービスを自由にインストールできることです。 TFS は、小規模なチーム向けに無料のエントリーレベルの Express edition があります。
+- Visual Studio Team Services では、クラウド経由でサービスを提供します。 主な利点は、専用のハードウェアやインフラストラクチャが不要で、どこからでも web ブラウザや Visual Studio などの一般的な開発ツールを通じてアクセスできることで、これは地理的に離れたチームにとって魅力的です。 これは 5 人以下の開発者のチームまで無料で使用でき、その後、増大するチームに対応するために追加のライセンスを購入することができます。
+- TFS は、オンプレミスな Windows サーバー用に設計されており、ネットワークにローカルネットワークまたは VPN 接続経由でアクセスします。 その主な利点は、ビルドサーバーの構成を完全に制御でき、追加のソフトウェアや必要なサービスを自由にインストールできることです。 TFS は、小規模なチーム向けに無料のエントリーレベルの Express edition があります。
 
-TFS および VSTS の両方は Visual Studio と密接に統合しており、開発者に多くのバージョン管理と CI タスクを 1つの IDE 内から快適に実行できるようにします。 Team Explorer Everywhere plugin for Eclipse (下記参照) も使用できます。 Visual Studio for Mac では、TFS または VSTS のサポートは提供しません。
+TFS と Azure DevOps の両方は Visual Studio と緊密に統合し、開発者に多くのバージョン管理との 1 つの IDE 内からの CI タスクを実行できるようにします。 Team Explorer Everywhere plugin for Eclipse (下記参照) も使用できます。 Visual Studio for Mac は[の TFVC を使用可能なプレビュー](/visualstudio/mac/tf-version-control/)します。
 
-Visual Studio Team Service のビルドシステムは、Xamarin プロジェクトを直接サポートします。その中で、希望するターゲット (Android、iOS、および Windows) の各プラットフォームのビルド定義を作成します。 適切な Xamarin ライセンスが各ビルド定義のために必要です。 この目的のために、ローカルや Xamarin 対応 TFS ビルドサーバーを Visual Studio Team Service に接続することも可能です。 この設定により、VSTS のキューに入っているビルドは、ローカル サーバーに委任されます。 詳細については [ビルドサーバーのデプロイと構成](https://docs.microsoft.com/vsts/pipelines/agents/agents?view=vsts) を参照してください。 また、Jenkins や Team City などの別のビルドツールを使用することもできます。
+[Azure DevOps パイプライン](https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin/)Xamarin プロジェクトでは、ターゲット (Android、iOS、および Windows) する各プラットフォームのビルド定義の作成を直接サポートしています。 適切な Xamarin ライセンスが各ビルド定義のために必要です。 ローカルに接続することも、Xamarin 対応の TFS は、この目的のため Azure DevOps へのサーバーをビルドします。 この設定により、Azure DevOps にキューに置かれたビルドは、ローカル サーバーに委任されます。 詳細については、[ビルドし、リリース エージェント](https://docs.microsoft.com/azure/devops/pipelines/agents/agents)します。 また、Jenkins や Team City などの別のビルドツールを使用することもできます。
 
-Visual Studio、Visual Studio Team Services、および Team Foundation Server のすべてのアプリケーション ライフ サイクル管理 (ALM) の機能の完全な概要については、 [Xamarin アプリでのアプリケーション ライフ サイクル管理](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) msdn を参照してください。
-
+Visual Studio、Azure DevOps、および Team Foundation Server では、参照のすべてのアプリケーション ライフ サイクル管理 (ALM) 機能の完全な概要[Xamarin アプリを使用した DevOps](https://docs.microsoft.com/visualstudio/cross-platform/application-lifecycle-management-alm-with-xamarin-apps)します。
 
 ### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](http://msdn.microsoft.com/library/gg413285.aspx) により Visual Studio 外のチーム開発に、Team Foundation Server と Visual Studio Team Services の機能を利用できます。 これにより、開発者がオンプレミスで、または OS X と Linux 版の Eclipse やクロスプラットフォームのコマンドラインから、クラウド内のチームプロジェクトに接続できるようになります。 Team Explorer Everywhere は、バージョン管理 (Gitを含む) 、作業アイテム、Windows 以外のプラットフォームのビルド機能への完全なアクセスを提供します。
-
+[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) により Visual Studio 外のチーム開発に、Team Foundation Server と Visual Studio Team Services の機能を利用できます。 これにより、開発者がオンプレミスで、または OS X と Linux 版の Eclipse やクロスプラットフォームのコマンドラインから、クラウド内のチームプロジェクトに接続できるようになります。 Team Explorer Everywhere は、バージョン管理 (Gitを含む) 、作業アイテム、Windows 以外のプラットフォームのビルド機能への完全なアクセスを提供します。
 
 ### <a name="git"></a>Git
 
@@ -73,41 +71,39 @@ Git は、web ブラウザーや Linux、Mac OSX、Windows 上の [GUI クライ
 
 Visual Studio 2015 と Visual Studio for Mac は Git のネイティブ サポートを提供します。以前のバージョンについては、Microsoft が [Git のダウンロード可能な拡張](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c) を提供しています。 前述したように、Visual Studio Team Services と TFS は、TFVC の代わりにバージョン管理として Git を使用できます。
 
-
 ### <a name="subversion"></a>Subversion
 
 [Subversion](http://subversion.apache.org) (SVN) は、2000年から使用されている一般的なオープン ソース バージョン コントロール システムです。 SVN は、OS X、Windows、FreeBSD、Linux および Unix のすべての最新バージョンで動作します。 Visual Studio for Mac は、SVN に対するネイティブ サポートがあります。 Visual Studio に SVN サポートをもたらすサード パーティ製の拡張機能があります。
-
 
 ## <a name="continuous-integration-environments"></a>継続的インテグレーション環境
 
 継続的インテグレーション環境のセットアップは、バージョン管理システムとビルドサービスを組み合わせることを意味します。  後者で最も一般的な2つとして以下のようなものがあります。
 
-- [Team Foundation Build](https://msdn.microsoft.com/Library/vs/alm/Build/overview) は、Visual Studio Team Services と TFS のビルド システムです。 これは Visual Studio と緊密に統合されており、開発者がビルドをトリガーしたり、自動的にテストを実行したり、結果を確認したりすることを容易にします。
+- [Azure のパイプライン](https://docs.microsoft.com/azure/devops/pipelines/)は Azure DevOps と TFS のビルド システムです。 これは Visual Studio と緊密に統合されており、開発者がビルドをトリガーしたり、自動的にテストを実行したり、結果を確認したりすることを容易にします。
 - Jenkins はオープン ソース CI サーバーで、すべての種類のソフトウェア開発をサポートするプラグインの豊富なエコシステムを備えています。 これは Windows と Mac OS X で動作します。 Jenkins は、特定の IDE とは統合しません。 その代わり、web インターフェイスを通して設定と管理を行います。 Jenkins CI もインストールと設定は容易で、小規模なチームにとって魅力的です。
 
-TFS/VSTS は単独で使用することができますが、次のセクションで説明するように、Jenkins を TFS/VSTS や Git と組み合わせて使用することもできます。
+TFS/Azure DevOps を使用するには、単独でまたは、次のセクションで説明されていると、TFS または Azure DevOps または Git での組み合わせに Jenkins を使用できます。
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services と Team Foundation Server
 
 前述したように、Visual Studio Team Services と Team Foundation Server は、バージョン管理とビルドサービスの両方を提供します。 ビルドサービスは、常にターゲットプラットフォームごとに、Xamarin Business または Enterprise のライセンスが必要です。
 
-Visual Studio Team Services では、ターゲットプラットフォームごとに個別のビルド定義を作成し、そこに適切なライセンスを入力します。 一度設定すると、VSTS はクラウドでビルドとテストを実行します。 詳細は [Team Foundation ビルド](https://msdn.microsoft.com/Library/vs/alm/Build/overview) を参照してください。
+Visual Studio Team Services では、ターゲットプラットフォームごとに個別のビルド定義を作成し、そこに適切なライセンスを入力します。 構成されている、Azure DevOps し実行をビルドおよびクラウドでテストします。 参照してください[Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/)の詳細。
 
 Team Foundation Server では、特定のターゲット プラットフォームに対して次のようにビルドマシンを構成します。
 
-- **Android および Windows:** Visual Studio と Xamarin ツール (Android および Windows 用両方) をインストールし、Xamarin ライセンスを設定します。 また Android SDK の場所を TFS ビルドエージェントが見つけられるサーバー上の共有の場所に移動する必要があります。 詳細については、[TFVC の構成](https://docs.microsoft.com/vsts/tfvc/overview) を参照してください。
+- **Android および Windows:** Visual Studio と Xamarin ツール (Android および Windows 用両方) をインストールし、Xamarin ライセンスを設定します。 また Android SDK の場所を TFS ビルドエージェントが見つけられるサーバー上の共有の場所に移動する必要があります。 詳細については、[TFVC の構成](https://docs.microsoft.com/azure/devops/repos/tfvc/overview) を参照してください。
 - **iOS および Xamarin:** Visual Studio と Xamarin ツール を適切なライセンスを使って Windows server にインストールします。 そして、Visual Studio for Mac をネットワークアクセスが可能な Mac OS X マシンにインストールします。 これはビルドホストとして機能し、最終的なアプリのパッケージ (iOS の場合は IPS、OS X の場合は APP) を作成します。
 
 次の図は、上記のトポロジを示しています。
 
 [![](intro-to-ci-images/intro03-small.png "この図では、このトポロジを示しています。")](intro-to-ci-images/intro03.png#lightbox)
 
-VSTS ビルドをローカル サーバーへ委任するために、Visual Studio Team Services プロジェクトにローカル TFS サーバーをリンクすることもできます。 詳細については、MSDN の [ビルドサーバーの配置と構成](http://msdn.microsoft.com/library/ms181712.aspx) を参照してください。
+プロジェクトは Azure DevOps を構築するため、ローカル サーバーに委任は、Visual Studio Team Services にローカル、TFS サーバーをリンクすることもできます。 詳細については、次を参照してください。[ビルドとリリース エージェント](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)します。
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services と Jenkins
 
-Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます。 チーム プロジェクトの Git リポジトリにプッシュしたとき、または TFVC にコードをチェックインしたときに、Jenkins ビルドをトリガーできます。 詳細については、[Jenkins with Visual Studio Team Services](https://docs.microsoft.com/en-us/vsts/service-hooks/services/jenkins?view=vsts) を参照してください。
+Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます。 チーム プロジェクトの Git リポジトリにプッシュしたとき、または TFVC にコードをチェックインしたときに、Jenkins ビルドをトリガーできます。 詳細については、次を参照してください。 [Azure DevOps での Jenkins](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)します。
 
 [![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます. ")](intro-to-ci-images/intro04.png#lightbox)
 
@@ -118,9 +114,8 @@ Jenkins を使用して、アプリをビルドする場合は、Visual Studio T
 [![](intro-to-ci-images/intro05-small.png "これは、前のセクションで説明した Visual Studio Team Services + Jenkins の環境によく似ています. ")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
-> **注: Jenkins は[Xamarin でサポートされていません](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)。**
-
+> **Jenkins は[Microsoft でサポートされていない](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)します。**
 
 # <a name="summary"></a>まとめ
 
-このドキュメントでは、継続的インテグレーションの概念と、それがソフトウェア開発チームにもたらす利点を紹介しました。 バージョン管理の重要度は、その役割とビルドサーバーの責務と一緒に説明しました。 ドキュメントは次に、ソースコード管理とビルドサーバーに使用できるツールの一部について説明しました。 また、App Center Test についても紹介しました。これにより、開発者は、アプリの品質と機能を証明する自動テストを実行して、優れたアプリを発行しやすくなります。 App Center へのアプリとテストの送信に関するより詳細なドキュメントは [ここ](https://docs.microsoft.com/appcenter/test-cloud) で探すことができます。 最後に、これらすべてのツールとコンポーネントをどのように組み合わせたら良いかということを理解しやすくするために、私たちは、組織が継続的インテグレーションのために構築するであろうさまざまな異なる CI 環境の要点をまとめました。 Xamarin プロジェクトで Visual Studio Team Services と Team Foundation Server を使う場合の詳細については、[TFVC の構成](https://docs.microsoft.com/vsts/tfvc/overview) や こちらの [継続的インテグレーションの概要](https://docs.microsoft.com/vsts/build-release/actions/ci-cd-part-1) を参照してください。 同様に、Jenkinsを使用する場合は、継続的インテグレーションの設定方法の詳細について [Xamarin を使用して Jenkins](~/tools/ci/jenkins-walkthrough.md) を参照してください。
+このドキュメントでは、継続的インテグレーションの概念と、それがソフトウェア開発チームにもたらす利点を紹介しました。 バージョン管理の重要度は、その役割とビルドサーバーの責務と一緒に説明しました。 ドキュメントは次に、ソースコード管理とビルドサーバーに使用できるツールの一部について説明しました。 また、App Center Test についても紹介しました。これにより、開発者は、アプリの品質と機能を証明する自動テストを実行して、優れたアプリを発行しやすくなります。 App Center へのアプリとテストの送信に関するより詳細なドキュメントは [ここ](https://docs.microsoft.com/appcenter/test-cloud) で探すことができます。 最後に、これらすべてのツールとコンポーネントをどのように組み合わせたら良いかということを理解しやすくするために、私たちは、組織が継続的インテグレーションのために構築するであろうさまざまな異なる CI 環境の要点をまとめました。 Xamarin プロジェクトで Visual Studio Team Services と Team Foundation Server を使う場合の詳細については、[TFVC の構成](https://docs.microsoft.com/azure/devops/repos/tfvc/overview/) や こちらの [継続的インテグレーションの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer/) を参照してください。 同様に、Jenkinsを使用する場合は、継続的インテグレーションの設定方法の詳細について [Xamarin を使用して Jenkins](~/tools/ci/jenkins-walkthrough.md) を参照してください。

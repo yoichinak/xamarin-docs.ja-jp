@@ -1,32 +1,24 @@
 ---
 title: MacOS Mojave の概要
-description: このドキュメントを提供する Xamarin のプレビュー リリース現在では c# バインディング macOS Mojave で新規および更新された機能の概要についての概要。
+description: このドキュメントは、macOS Mojave で新規および更新された機能の概要の大まかな説明します。
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 07/08/2018
-ms.openlocfilehash: 916a1323127ac9be387c9465fb660dd0e7569a93
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: ce293a7c97a2cb4975baef807ded9a8fd0a90476
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615835"
 ---
 # <a name="introduction-to-macos-mojave"></a>MacOS Mojave の概要
 
-![[プレビュー]](~/media/shared/preview.png)
+このドキュメントは、macOS Mojave で新規および更新された機能の概要の大まかな説明します。
 
-> [!WARNING]
-> Xcode 10 と共に配布 Mojave SDK macOS 用の Xamarin のサポートは現在プレビューの段階、つまり、バグが含まれている機能が完全でないし、変更可能性があります。 実験目的でのみ使用します。
-
-このドキュメントを提供する Xamarin のプレビュー リリース現在では c# バインディング macOS Mojave で新規および更新された機能の概要についての概要。
-
-MacOS で Xamarin Mojave アプリの構築を開始を参照してください。
-
-- [ファースト ステップ ガイド](~/mac/platform/introduction-to-macos-mojave/get-started.md)
-- Xamarin プレビュー[ブログの投稿をリリース](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+Xamarin を使った Mojave アプリを macOS にビルドを開始するを参照してください、[ファースト ステップ ガイド](~/mac/platform/introduction-to-macos-mojave/get-started.md)の[Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)します。
 
 ## <a name="dark-mode"></a>ダーク モード
 
@@ -44,8 +36,16 @@ MacOS Mojave、Mac アプリを使用して、ユーザー通知と連携する 
 
 ビジョン フレームワークには、さまざまな方向に顔を検出できる強化された顔検出機能が含まれています。 また、要求のリビジョンはビジョン framework アルゴリズムの特定のリビジョンを選択するようになりました使用できます。
 
+## <a name="network-framework"></a>ネットワーク フレームワーク
+
+基になるネットワーク フレームワークの場合は、ネットワーク スタック、 `URLSession` iOS アプリケーションでよく使用される Api は TCP、UDP、TLS、IPv4 および IPv6 を操作しやすく、スタンドアロン フレームワークとして使用できるようになりました。
+
+## <a name="deprecations"></a>廃止された機能
+
+OpenGL ES と OpenCL、macOS Mojave で Apple が非推奨が[開発者](https://developer.apple.com/macos/whats-new/)メタルとメタル パフォーマンス シェーダーを採用します。
+
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Mac サンプル](https://developer.xamarin.com/samples/mac/)
 - [macOS-Apple の開発者](https://developer.apple.com/macos/)
-- Xamarin プレビュー[ブログの投稿をリリース](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+- [Xamarin.Mac 5.0 リリース ノート](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)

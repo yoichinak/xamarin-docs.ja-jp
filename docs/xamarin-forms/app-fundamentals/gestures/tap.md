@@ -1,5 +1,5 @@
 ---
-title: タップ ジェスチャのジェスチャ認識エンジンを追加します。
+title: タップ ジェスチャ認識エンジンを追加します。
 description: この記事では、Xamarin.Forms アプリケーションでのタップ検出のタップ ジェスチャを使用する方法について説明します。 Tap の検出は、TapGestureRecognizer クラスで実装されます。
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994855"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>タップ ジェスチャのジェスチャ認識エンジンを追加します。
+# <a name="adding-a-tap-gesture-recognizer"></a>タップ ジェスチャ認識エンジンを追加します。
 
 _タップ ジェスチャでは、tap の検出に使用し、TapGestureRecognizer クラスを使用して実装されます。_
-
-## <a name="overview"></a>概要
 
 ユーザー インターフェイス要素をタップ ジェスチャでクリック可能にするために、作成、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)インスタンスを処理、 [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)イベントに新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ユーザー インターフェイスの要素のコレクション。 次のコード例は、`TapGestureRecognizer`にアタッチされている、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
 
@@ -72,7 +70,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>ICommand を使用します。
 
-通常、Mvvm パターンを使用するアプリケーションを使用して、`ICommand`イベント ハンドラーを直接接続ではなく。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)簡単にサポートできる`ICommand`をコードでバインディングを設定します。
+通常、モデル-ビュー-ビューモデル (MVVM) パターンを使用するアプリケーションを使用して、`ICommand`イベント ハンドラーを直接接続ではなく。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)簡単にサポートできる`ICommand`をコードでバインディングを設定します。
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -113,10 +111,6 @@ public class TapViewModel : INotifyPropertyChanged
     //region INotifyPropertyChanged code omitted
 }
 ```
-
-## <a name="summary"></a>まとめ
-
-タップ ジェスチャがタップ検出が使用され、使用して実装されます、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)クラス。 ダブルタップを認識するタップ数を指定することができます (またはトリプル タップ、または複数をタップ) 動作します。
 
 
 ## <a name="related-links"></a>関連リンク

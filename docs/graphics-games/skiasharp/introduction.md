@@ -1,24 +1,24 @@
 ---
-title: SkiaSharp の概要
+title: SkiaSharp のプラットフォームに依存しない例
 description: このドキュメントでは、中核となる SkiaSharp の概念の概要を示します。 具体的には、取得して、SKCanvas 上に描画について説明します。
 ms.prod: xamarin
 ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
-author: charlespetzold
-ms.author: chape
-ms.date: 09/14/2017
-ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/03/2018
+ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615497"
 ---
-# <a name="an-introduction-to-skiasharp"></a>SkiaSharp の概要
+# <a name="skiasharp-platform-independent-examples"></a>SkiaSharp のプラットフォームに依存しない例
 
-_これにより、SkiaSharp の概念の概要_
+_これにより、プラットフォームに依存しない SkiaSharp の概念の概要_
 
-SkiaSharp、豊富で強力な 2D グラフィックスを 2D のバッファーに表示するために使用できる API を提供します。  カスタム ユーザー インターフェイス要素や、アプリケーションに組み込むことが 2D グラフィックスを実装するために、これらを使用することができます。  SkiaSharp は .NET へのバインドを[Skia](https://skia.org)ライブラリ機能とこのライブラリの電源を継承します。
+SkiaSharp、豊富で強力な 2D グラフィックスを 2D のバッファーに表示するために使用できる API を提供します。  カスタム ユーザー インターフェイス要素や、アプリケーションに組み込むことが 2D グラフィックスを実装するために、これらを使用することができます。 SkiaSharp は .NET へのバインドを[Skia](https://skia.org)ライブラリ機能とこのライブラリの電源を継承します。
 
 ライブラリは現在、クロス プラットフォームとして提供[NuGet パッケージ](https://www.nuget.org/packages/SkiaSharp)、NuGet 参照を追加することで、プロジェクトに追加できます。
 
@@ -135,9 +135,4 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>詳細情報
 
-SkiaSharp の使用に関する詳細についてで見つかんだことができます、[オンラインの API ドキュメント](https://developer.xamarin.com/api/namespace/SkiaSharp/)
-
-
-## <a name="related-links"></a>関連リンク
-
-- [SkiaSharp iOS ワークブック](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+SkiaSharp の使用に関する詳細についてで見つかんだことができます、 [API ドキュメント](https://docs.microsoft.com/dotnet/api/skiasharp)

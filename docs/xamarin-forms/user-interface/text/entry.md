@@ -6,25 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/16/2018
-ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 08eb77878dad9c89754585b87394d2c33900fe83
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39270113"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms のエントリ
 
 _単一行のテキストまたはパスワードを入力_
 
-Xamarin.Forms`Entry`を単一行のテキスト入力に使用します。 `Entry`と同様に、`Editor`ビューで、複数のキーボードの種類をサポートしています。 さらに、`Entry`パスワード フィールドとして使用できます。
+Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry)を単一行のテキスト入力に使用します。 `Entry`と同様に、 [ `Editor` ](xref:Xamarin.Forms.Editor)ビューで、複数のキーボードの種類をサポートしています。 さらに、`Entry`パスワード フィールドとして使用できます。
 
 ## <a name="display-customization"></a>表示のカスタマイズ
 
 ### <a name="setting-and-reading-text"></a>設定やテキストの読み取り
 
-`Entry`などの他のテキストを表すビューを公開、`Text`プロパティ。 このプロパティは、設定し、によって提示されるテキストの読み取りに使用できます、`Entry`します。 次の例では、設定、 `Text` XAML のプロパティ。
+`Entry`などの他のテキストを表すビューを公開、 [ `Text` ](xref:Xamarin.Forms.Entry.Text)プロパティ。 このプロパティは、設定し、によって提示されるテキストの読み取りに使用できます、`Entry`します。 次の例では、設定、 `Text` XAML のプロパティ。
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -58,6 +58,32 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)プロパティ値が 0 のでは、ある入力は許可されません、ことを示しますの値と`int.MaxValue`の既定値は、 [ `Entry` ](xref:Xamarin.Forms.Entry)、ことを示しますなし有効な入力可能性がありますの文字数制限。
+
+### <a name="setting-the-cursor-position-and-text-selection-length"></a>カーソルの位置とテキスト選択範囲の長さの設定
+
+[ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition)に格納された文字列に、次の文字を挿入先である位置を設定するプロパティを使用できます、 [ `Text` ](xref:Xamarin.Forms.Entry.Text)プロパティ。
+
+```xaml
+<Entry Text="Cursor position set" CursorPosition="5" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position set", CursorPosition = 5 };
+```
+
+既定値、 [ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition)プロパティが 0 で、テキストの先頭に挿入することを示します、`Entry`します。
+
+さらに、 [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength)内のテキスト選択範囲の長さを設定するプロパティを使用できます、 `Entry`:
+
+```xaml
+<Entry Text="Cursor position and selection length set" CursorPosition="2" SelectionLength="10" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position and selection length set", CursorPosition = 2, SelectionLength = 10 };
+```
+
+既定値、 [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength)プロパティが 0 で、テキストが選択されていないことを示します。
 
 ### <a name="customizing-the-keyboard"></a>キーボードのカスタマイズ
 
@@ -180,21 +206,17 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > ときに、 [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)プロパティに設定されて`false`、カスタムのキーボードがされていないと予測入力と自動的に使用されるテキストの修正が無効になっています。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)を無効にします。 テキストの予測が設定されている、`IsTextPredictionEnabled`プロパティは無視されます。 そのための予測の入力を有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
 
-### <a name="placeholders"></a>プレース ホルダー
+### <a name="setting-placeholder-text"></a>プレース ホルダー テキストを設定
 
-`Entry` ユーザー入力を格納するがない場合は、プレース ホルダー テキストを表示するのには設定できます。 実際には、これは多くの場合、見フォームでは、特定のフィールドの適切なコンテンツを明確にします。 プレース ホルダー テキストの色のカスタマイズすることはできず、関係なく同じになります、`TextColor`設定します。 カスタム プレース ホルダーの色を呼び出すと、設計場合に、フォールバックする必要があります、[カスタム レンダラー]()します。 次を作成、 `Entry` "Username"XAML 内のプレース ホルダーとして使用します。
+[ `Entry` ](xref:Xamarin.Forms.Entry)プレース ホルダー テキストを表示するユーザー入力を格納するがない場合に設定することができます。 これは、設定によって実現されます、 [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder)プロパティを`string`は適切なコンテンツの種類を示すためによく使用して、 `Entry`。 さらに、プレース ホルダー テキストの色を設定して制御できます、 [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor)プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
-<Entry Placeholder="Username" />
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
 ```
-
-C# の場合:
 
 ```csharp
-var MyEntry = new Entry { Placeholder = "Username" };
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
 ```
-
-![](entry-images/placeholder.png "エントリのプレース ホルダーの例")
 
 ### <a name="password-fields"></a>パスワード フィールド
 
