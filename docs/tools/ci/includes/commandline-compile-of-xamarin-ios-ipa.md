@@ -1,16 +1,16 @@
 
-ソリューションのリリース ビルドを指定する次のコマンド ライン**SOLUTION_FILE.sln** iPhone 用です。 指定して、IPA の場所を設定することができます、`IpaPackageDir`コマンドラインでのプロパティ。
+以下のコマンドラインは、iPhone 用の **SOLUTION_FILE.sln** というソリューションのリリースビルドを指定するものです。IPAの場所は、コマンドラインで `IpaPackageDir` プロパティを指定することで設定できます。
 
- - Mac でを使用して**xbuild**:
+ - Mac における **xbuild** の使用:
 
         xbuild /p:Configuration="Release" \ 
            /p:Platform="iPhone" \ 
            /p:IpaPackageDir="$HOME/Builds" \
            /t:Build MyProject.sln
 
-**Xbuild**コマンドは、ディレクトリでよく見られる **/Library/Frameworks/Mono.framework/Commands**です。
+**xbuild** コマンドは、通常 **/Library/Frameworks/Mono.framework/Commands** ディレクトリにあります。
 
- - Windows を使用して**msbuild**:
+ - Windows における **msbuild** の使用:
 
         msbuild /p:Configuration="Release" 
             /p:Platform="iPhone" 
@@ -19,7 +19,7 @@
             /t:Build MyProject.sln
 
 
-**msbuild**は自動的に展開されません`$( )`コマンドラインによって渡される式です。 この理由からお勧めを設定する場合は、完全なパスを使用する、`IpaPackageDir`コマンドライン。
+**msbuild** は、コマンドラインによって渡される `$( )` 式を、自動的に展開しません。このため、コマンドラインで `IpaPackageDir` を設定する場合は、フルパスを使うことをお勧めします。
 
 
-参照してください、 [iOS 9.8 のリリース ノート](https://developer.xamarin.com/releases/ios/xamarin.ios_9/xamarin.ios_9.8/#New_MSBuild_property_IpaPackageDir_to_customize_.ipa_output_location)の詳細については、`IpaPackageDir`プロパティです。
+`IpaPackageDir` プロパティについてのより詳しい情報は、[iOS 9.8 のリリースノート](https://developer.xamarin.com/releases/ios/xamarin.ios_9/xamarin.ios_9.8/#New_MSBuild_property_IpaPackageDir_to_customize_.ipa_output_location) を参照してください。
