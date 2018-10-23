@@ -16,13 +16,13 @@ ms.locfileid: "35245860"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms の XAML プレビューアー
 
-_入力すると表示される Xamarin.Forms レイアウトを参照してください!_
+_入力するたびに描画されるXamarin.Formsレイアウトを表示しましょう!_
 
 ## <a name="requirements"></a>必要条件
 
-プロジェクトでは、作業を XAML プレビュー用のプログラムの最新の Xamarin.Forms NuGet パッケージが必要です。 Android アプリをプレビューする必要があります[JDK 1.8 x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)です。
+XAMLプレビューアーが動作するためにはプロジェクトに最新の Xamarin.Forms NuGetパッケージが必要です。 Androidアプリをプレビューするには[JDK 1.8 x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)が必要です。
 
-詳細については、[リリース ノート](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#Xamarin_Forms_Previewer)です。
+[リリース ノート](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#Xamarin_Forms_Previewer)により詳細な情報があります。
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -53,9 +53,9 @@ _入力すると表示される Xamarin.Forms レイアウトを参照してく�
 
 ## <a name="adding-design-time-data"></a>デザイン時のデータを追加します。
 
-一部のレイアウトは、ユーザー インターフェイス コントロールにバインドされているデータを含まない視覚化が難しい可能性があります。 ようにするプレビューでは、役に立つ、静的データの一部に割り当てますコントロール ハードコーディングするによって、バインディング コンテキスト (分離コードまたは XAML を使用していずれか)。
+一部のレイアウトは、ユーザーインターフェイスコントロールにバインドされているデータを含まない視覚化が難しい可能性があります。プレビューを使いやすくするにはハードコーディングまたはバインディングコンテキストによってコントロールに静的データを割り当てます。(コードビハインドまたはXAMLを使用)
 
-James Montemagno を参照してください[デザイン時のデータの追加に関するブログの投稿](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)XAML で静的 ViewModel にバインドする方法を確認します。
+XAMLの静的なViewModelにバインドする方法については、James Montemagnoの[デザイン時のデータの追加に関するブログ記事](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)を参照してください。
 
 ## <a name="detecting-design-mode"></a>デザイン モードの検出
 
@@ -70,7 +70,7 @@ if (DesignMode.IsDesignModeEnabled)
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-以下の問題の確認と[Xamarin フォーラム](https://forums.xamarin.com/categories/xamarin-forms)問題が発生する場合は、します。
+問題が発生する場合は以下の問題と[Xamarinフォーラム](https://forums.xamarin.com/categories/xamarin-forms)を確認してください。
 
 ### <a name="xaml-preview-isnt-showing"></a>XAML のプレビューが表示されません。
 
