@@ -1,6 +1,6 @@
 ---
-title: Xamarin で f# の使用
-description: F# は、.NET 上で実行するように設計されている、厳密に型指定されたプログラミング言語です。 このドキュメントでは、機能、および f# でビルドされたサンプルへのリンクの概要を示します。
+title: Xamarin で F# の使用
+description: F# は、.NET 上で実行するように設計されている、厳密に型指定されたプログラミング言語です。 このドキュメントでは、機能、および F# でビルドされたサンプルへのリンクの概要を示します。
 ms.prod: xamarin
 ms.assetid: 506410BD-F89C-4FEB-8915-760FE250A206
 author: asb3993
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/05/2018
 ms.locfileid: "34781150"
 ---
-# <a name="using-f-with-xamarin"></a>Xamarin で f# の使用
+# <a name="using-f-with-xamarin"></a>Xamarin で F# の使用
 
 F# では for .NET オープン ソース、クロス プラットフォームの機能第一プログラミング言語です。
 
