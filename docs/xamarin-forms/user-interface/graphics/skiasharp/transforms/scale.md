@@ -4,21 +4,21 @@ description: Thhis 記事では、オブジェクトをさまざまな規模を�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 94105cbb83e4c6eb3558ca3fc55e505ab41f28fe
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d4ab7ad5a0fc645c13388d76eb11cbd4e2dd72f8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615604"
 ---
 # <a name="the-scale-transform"></a>スケール変換
 
 _SkiaSharp のスケール変換オブジェクトをさまざまなサイズを拡張するための検出します。_
 
-説明したように[、変換の変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)記事では、平行移動変換は、1 つの場所からグラフィカル オブジェクトを別に移動できます。 これに対し、スケール変換は、グラフィカル オブジェクトのサイズを変更します。
+説明したように[ **、変換の変換**](translate.md)記事では、平行移動変換は、1 つの場所からグラフィカル オブジェクトを別に移動できます。 これに対し、スケール変換は、グラフィカル オブジェクトのサイズを変更します。
 
 ![](scale-images/scaleexample.png "サイズにスケーリング (縦) word")
 
@@ -38,7 +38,7 @@ y' sy 押しを =y
 
 翻訳の要素の既定値は 0 です。スケール ファクターの既定値は、1 です。
 
-`SKCanvas`クラスは、4 つ定義`Scale`メソッド。 最初の[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/)メソッドは、同じ水平および垂直スケーリングする場合を考慮します。
+`SKCanvas`クラスは、4 つ定義`Scale`メソッド。 最初の[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single))メソッドは、同じ水平および垂直スケーリングする場合を考慮します。
 
 ```csharp
 public void Scale (Single s)
@@ -46,14 +46,14 @@ public void Scale (Single s)
 
 呼ばれます*アイソトロ ピック*スケーリング&mdash;でのスケーリングは、同じ双方向。 アイソトロ ピック スケーリングには、オブジェクトの縦横比が保持されます。
 
-2 番目の[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/)メソッドを使用して、水平および垂直方向のスケーリングに別の値を指定できます。
+2 番目の[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single))メソッドを使用して、水平および垂直方向のスケーリングに別の値を指定できます。
 
 ```csharp
 public void Scale (Single sx, Single sy)
 ```
 
 これは、結果、*異方性*スケーリングします。
-3 番目[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/)メソッドは、1 つの 2 つのスケール ファクターを組み合わせた`SKPoint`値。
+3 番目[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(SkiaSharp.SKPoint))メソッドは、1 つの 2 つのスケール ファクターを組み合わせた`SKPoint`値。
 
 ```csharp
 public void Scale (SKPoint size)
@@ -61,7 +61,7 @@ public void Scale (SKPoint size)
 
 4 番目`Scale`メソッドはまもなく説明します。
 
-**基本的なスケール**ページを示して、`Scale`メソッド。 [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML ファイルには 2 つ`Slider`できる要素が 0 から 10 までの水平および垂直方向のスケール ファクターを選択します。 [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs)分離コード ファイルでは、これらの値を使用して、呼び出す`Scale`破線が付いている線を付けるし、サイズを左上でいくつかのテキストに合わせて角丸四角形を表示する前にキャンバスの下隅。
+**基本的なスケール**ページを示して、`Scale`メソッド。 [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml)ファイルには 2 つ`Slider`できる要素が 0 から 10 までの水平および垂直方向のスケール ファクターを選択します。 [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs)分離コード ファイルでは、これらの値を使用して、呼び出す`Scale`破線が付いている線を付けるし、サイズを左上でいくつかのテキストに合わせて角丸四角形を表示する前にキャンバスの下隅。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -113,7 +113,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 水平および垂直の軸に揃えになる別の線のストロークの幅をエラーの原因をスケーリング異方性。 (これはもこのページの最初の図からわかります) です。スケーリングの要因によって影響を受けるストロークの幅をしたくない場合は 0 に設定しに関係なく 1 ピクセルは常に、`Scale`設定します。
 
-スケーリングは、キャンバスの左上隅に対して相対的です。 これは厳密にあります目的の動作ができない可能性があります。 キャンバスで、テキストと四角形の別の場所に移動して、その中心を基準としたサイズを変更するとします。 4 番目のバージョンを使用する場合、 [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/)メソッドで、スケーリングの中心を指定する 2 つのパラメーターが含まれています。
+スケーリングは、キャンバスの左上隅に対して相対的です。 これは厳密にあります目的の動作ができない可能性があります。 キャンバスで、テキストと四角形の別の場所に移動して、その中心を基準としたサイズを変更するとします。 4 番目のバージョンを使用する場合、 [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single))メソッドで、スケーリングの中心を指定する 2 つのパラメーターが含まれています。
 
 ```csharp
 public void Scale (Single sx, Single sy, Single px, Single py)
@@ -170,7 +170,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Slider`このプログラム内の要素の範囲がある&ndash;10 ~ 10。 ご覧のように、負の値の垂直スケール (画面の中央で、android など) が発生するスケーリングの中心を通過する水平方向の軸を中心に反転するオブジェクト。 水平スケーリング (右側の UWP 画面など) の負の値では、スケーリングの中心を通過する垂直軸を中心に反転するオブジェクトが発生します。
 
-この 4 番目のバージョンの`Scale`メソッドは実際のショートカットです。 置き換えることで、この動作を確認したい場合があります、`Scale`このコードを次のメソッド。
+バージョン、 [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single))ピボット ポイントを持つメソッドが 3 つの系列のショートカット`Translate`と`Scale`呼び出し。 置き換えることで、この動作を確認したい場合があります、`Scale`メソッドで、**スケールの中央に**を次のページ。
 
 ```csharp
 canvas.Translate(-px, -py);
@@ -191,7 +191,7 @@ canvas.Translate(–px, –py);
 
 連続する`Scale`と`Translate`左上隅で呼び出し、角丸四角形の中心は、角丸四角形の中心でもあると、キャンバスの左上隅に対する相対スケールすることができますようになりました。
 
-その前に、`Scale`呼び出しは、もう 1 つ追加`Translate`中央値を使用して呼び出します。
+その前に、`Scale`呼び出し、もう 1 つ追加`Translate`中央値を使用して呼び出します。
 
 ```csharp
 canvas.Translate(px, py);
@@ -215,7 +215,7 @@ canvas.Scale(sx, sy, px, py);
 
 結合すると`Translate`と`Scale`呼び出し、順序は重要です。 場合、`Translate`の後に続く、`Scale`翻訳の要因はスケール ファクターで効果的に拡大/縮小されます。 場合、`Translate`の前に、`Scale`翻訳の要因をスケールできません。 このプロセスが少し明確になります (ただしより数学的な) の変換行列のサブジェクトを導入したとき。
 
-`SKPath`クラス定義の読み取り専用[ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/)プロパティを返す、`SKRect`パスで、座標の範囲を定義します。 たとえば、`Bounds`プロパティが以前に作成した hendecagram パスから取得した、`Left`と`Top`四角形のプロパティは、約 –100、`Right`と`Bottom`プロパティは、約 100 と`Width`と`Height`プロパティは、約 200 です。 (ほとんどの実際の値はほとんどない星のポイントが 100 の半径の円で定義されているが、上のポイントのみが水平または垂直の軸を持つ並列ため)。
+`SKPath`クラス定義の読み取り専用[ `Bounds` ](xref:SkiaSharp.SKPath.Bounds)プロパティを返す、`SKRect`パスで、座標の範囲を定義します。 たとえば、`Bounds`プロパティが以前に作成した hendecagram パスから取得した、`Left`と`Top`四角形のプロパティは、約 –100、`Right`と`Bottom`プロパティは、約 100 と`Width`と`Height`プロパティは、約 200 です。 (ほとんどの実際の値はほとんどない星のポイントが 100 の半径の円で定義されているが、上のポイントのみが水平または垂直の軸を持つ並列ため)。
 
 この情報の可用性は、スケールを派生し、キャンバスのサイズへのパスを拡張するための適切な要素を変換することができます、ことを意味します。 [**異方性スケーリング**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) 11 星とこのページを示します。 *異方性*スケールではないこと、水平および垂直方向に等しい星が元の縦横比を保持されないことを意味することを意味します。 関連するコードをここでは、`PaintSurface`ハンドラー。
 
@@ -337,12 +337,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-コードがさらに 10 回も星に表示されます、によって 10% と赤から青に徐々 に色を変更するたびに、スケーリングの減少を考慮します。
+によって 10% と赤から青に徐々 に色を変更するたびに、スケーリングの減少を考慮、コードが他にもスター 10 に表示されます。
 
 [![](scale-images/isotropicscaling-small.png "アイソトロ ピック スケーリング ページのスクリーン ショットをトリプル")](scale-images/isotropicscaling-large.png#lightbox "アイソトロ ピック スケール ページの 3 倍になるスクリーン ショット")
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

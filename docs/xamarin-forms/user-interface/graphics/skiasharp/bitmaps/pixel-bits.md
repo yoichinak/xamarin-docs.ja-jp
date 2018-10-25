@@ -1,20 +1,20 @@
 ---
-title: SkiaSharp のピクセル ビットへのアクセス
+title: SkiaSharp のビットマップのピクセル ビットへのアクセス
 description: アクセスおよび SkiaSharp ビットマップのピクセル ビットを変更するためのさまざまな手法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 5d79dd89b5313d5d7ead665c54e9a27026cea38c
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6d223dd051dccf7af84e4e6c35238f4ad026b00a
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615627"
 ---
-# <a name="accessing-skiasharp-pixel-bits"></a>SkiaSharp のピクセル ビットへのアクセス
+# <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp のビットマップのピクセル ビットへのアクセス
 
 この記事で示した[**保存 SkiaSharp ビットマップ ファイルを**](saving.md)ビットマップは一般に JPEG または PNG などの圧縮形式でファイルに格納されています。 異なり、メモリに格納されている SkiaSharp ビットマップは圧縮されません。 ピクセルの連番として格納されます。 この非圧縮形式には、ビットマップの表示サーフェイスへの転送が容易になります。
 
@@ -39,7 +39,7 @@ SkiaSharp は、ビットマップのピクセル ビットにアクセスする
 
 ### <a name="the-setpixel-method"></a>SetPixel メソッド
 
-いくつかの個々 のピクセルを取得または設定するだけの場合、 [ `SetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixel/p/System.Int32/System.Int32/SkiaSharp.SKColor/)と[ `GetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixel/p/System.Int32/System.Int32/)メソッドは最適です。 これら 2 つのメソッドごとに、整数型の列と行を指定します。 ピクセル形式に関係なくこれら 2 つのメソッドを使用するを取得したり設定としてピクセル、`SKColor`値。
+いくつかの個々 のピクセルを取得または設定するだけの場合、 [ `SetPixel` ](xref:SkiaSharp.SKBitmap.SetPixel(System.Int32,System.Int32,SkiaSharp.SKColor))と[ `GetPixel` ](xref:SkiaSharp.SKBitmap.GetPixel(System.Int32,System.Int32))メソッドは最適です。 これら 2 つのメソッドごとに、整数型の列と行を指定します。 ピクセル形式に関係なくこれら 2 つのメソッドを使用するを取得したり設定としてピクセル、`SKColor`値。
 
 ```csharp
 bitmap.SetPixel(col, row, color);
@@ -85,7 +85,7 @@ public class GradientBitmapPage : ContentPage
 
 ### <a name="the-pixels-property"></a>ピクセル プロパティ
 
-`SKBitmap` 定義、 [ `Pixels` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Pixels/)プロパティの配列を返す`SKColor`ビットマップ全体の値。 使用することも`Pixels`ビットマップの色の値の配列を設定します。
+`SKBitmap` 定義、 [ `Pixels` ](xref:SkiaSharp.SKBitmap.Pixels)プロパティの配列を返す`SKColor`ビットマップ全体の値。 使用することも`Pixels`ビットマップの色の値の配列を設定します。
 
 ```csharp
 SKColor[] pixels = bitmap.Pixels;
@@ -129,7 +129,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
 ### <a name="the-getpixels-pointer"></a>GetPixels ポインター
 
-ビットマップのピクセルにアクセスする最も強力な手法は、可能性のある[ `GetPixels`](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixels()/)と混同しないように、`GetPixel`メソッドまたは`Pixels`プロパティ。 違いにすぐ気付く`GetPixels`ことで、c# プログラミングで非常に一般的な結果が返されます。
+ビットマップのピクセルにアクセスする最も強力な手法は、可能性のある[ `GetPixels`](xref:SkiaSharp.SKBitmap.GetPixels)と混同しないように、`GetPixel`メソッドまたは`Pixels`プロパティ。 違いにすぐ気付く`GetPixels`ことで、c# プログラミングで非常に一般的な結果が返されます。
 
 ```csharp
 IntPtr pixelsAddr = bitmap.GetPixels();
@@ -145,7 +145,7 @@ byte* ptr = (byte*)pixelsAddr.ToPointer();
 
 `ptr`型の変数は、_バイト ポインター_します。 これは、`ptr`変数では、ビットマップのピクセルの格納に使用される個々 のバイトのメモリにアクセスできます。 このメモリからバイトを読み取りまたはメモリにバイトを書き込むには、このようなコードを使用します。
 
-```sharp
+```csharp
 byte pixelComponent = *ptr;
 
 *ptr = pixelComponent;
@@ -282,7 +282,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 
 ### <a name="the-setpixels-method"></a>SetPixels メソッド
 
-`SKBitmap` という名前のメソッドも定義[ `SetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixels/p/System.IntPtr/)、次のように呼び出すもの。
+`SKBitmap` という名前のメソッドも定義[ `SetPixels` ](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr))、次のように呼び出すもの。
 
 ```csharp
 bitmap.SetPixels(intPtr);
@@ -741,7 +741,55 @@ public partial class ColorAdjustmentPage : ContentPage
 
 このメソッドのパフォーマンスが元とコピー先のビットマップの色の種類のさまざまな組み合わせについての個別のメソッドを作成してさらに改善可能性があるし、すべてのピクセルに対して型チェックを避けるために可能性があります。 別のオプションは、複数`for`のループ、`col`変数色の種類に基づいています。
 
+## <a name="posterization"></a>ポスタリゼーション
+
+ピクセル ビットへのアクセスを必要とする別の一般的なジョブは_ポスタリゼーション_します。 制限付きのカラー パレットを使用して、手書きのポスターのように、結果をビットマップのピクセルの色がエンコードされている場合の数が減少します。
+
+**「ポスタリゼーション」** ページ monkey イメージのいずれかでこのプロセスを実行します。
+
+```csharp
+public class PosterizePage : ContentPage
+{
+    SKBitmap bitmap =
+        BitmapExtensions.LoadBitmapResource(typeof(FillRectanglePage),
+                                            "SkiaSharpFormsDemos.Media.Banana.jpg");
+    public PosterizePage()
+    {
+        Title = "Posterize";
+
+        unsafe
+        {
+            uint* ptr = (uint*)bitmap.GetPixels().ToPointer();
+            int pixelCount = bitmap.Width * bitmap.Height;
+
+            for (int i = 0; i < pixelCount; i++)
+            {
+                *ptr++ &= 0xE0E0E0FF; 
+            }
+        }
+
+        SKCanvasView canvasView = new SKCanvasView();
+        canvasView.PaintSurface += OnCanvasViewPaintSurface;
+        Content = canvasView;
+    }
+
+    void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+    {
+        SKImageInfo info = args.Info;
+        SKSurface surface = args.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+        canvas.DrawBitmap(bitmap, info.Rect, BitmapStretch.Uniform;
+    }
+}
+```
+
+コンス トラクターでコードは、各ピクセルにアクセスする、0xE0E0E0FF、値のビットごとの AND 演算を実行します。 および、ビットマップに戻り、結果を格納します。 0xE0E0E0FF 値は、各色成分の上位 3 ビットを保持し、下位 5 ビットを 0 に設定します。 2 ではなく<sup>24</sup> 16,777, 216 色、ビットマップが 2 に減少または<sup>9</sup>または 512 色。
+
+[![ポスタリゼーション](pixel-bits-images/Posterize.png "ポスタリゼーション")](pixel-bits-images/ポスタリゼーション-Large.png#lightbox)
+
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

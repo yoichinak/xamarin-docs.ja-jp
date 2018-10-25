@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: a6eaf08d17f70c43f451361e27555a09c39f26a9
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 420c1de0691de419180dd497a9031ea5e7dd1054
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "37935668"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインド モード
@@ -312,6 +312,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 ```
 
 今すぐ、 `Slider` 1 に初期化されます (の既定値`Scale`) 操作ですが、`Slider`には影響しません、`Scale`プロパティ、これは非常に便利ではありません。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラスも定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)と[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)プロパティ、拡張することが、`VisualElement`異なる方法で、水平および垂直方向。
 
 既定のバインド モードをオーバーライドする側の非常に便利なアプリケーション`TwoWay`では、`SelectedItem`プロパティの`ListView`します。 既定のバインド モードは`OneWayToSource`します。 データ バインディングを設定すると、`SelectedItem`からそのソースのプロパティを設定し、ViewModel でソースのプロパティを参照するプロパティを`ListView`選択します。 ただし、状況によっては、することも、 `ListView` ViewModel から初期化します。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 16d1970b5e9d8f9c2b7c8be875c81136525c4fb7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: b52f249b184d49731fd5decdb5877c70e29a3b84
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38998073"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms Basic バインド
@@ -197,6 +197,9 @@ public partial class AlternativeCodeBindingPage : ContentPage
 問題なは、`Slider`が初期値は 0。 これにより、`Scale`のプロパティ、`Label`も 1 の場合は、その既定値をオーバーライドする 0 に設定します。 これは、結果、`Label`最初は表示されません。 操作できるように Android およびユニバーサル Windows プラットフォーム (UWP) のスクリーン ショットに示すため、`Slider`させる、 `Label` 、もう一度表示されますが、その初期消滅の混乱を招く。
 
 わかる、[次の記事](binding-mode.md)初期化することによってこの問題を回避する方法、`Slider`の既定値から、`Scale`プロパティ。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラスも定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)と[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)プロパティ、拡張することが、`VisualElement`異なる方法で、水平および垂直方向。
 
 **代わりに XAML バインディング**ページ全体を XAML で等価なバインドが表示されます。
 

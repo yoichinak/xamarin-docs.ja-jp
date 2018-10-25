@@ -1,235 +1,232 @@
 ---
 title: Xamarin.iOS の種類のレジストラー
-description: このドキュメントでは、c# のクラスを Objective C のランタイムを使用できるように、Xamarin.iOS 型レジストラーについて説明します。
+description: このドキュメントには、これにより、Xamarin.iOS 型レジストラーがについて説明しますC#OBJECTIVE-C ランタイムに使用できるクラス。
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: e818d6a2092f408823e4a635a70c4f6666e3a7a9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 8/29/2018
+ms.openlocfilehash: cdd57095b03c24472abec5646ee3a70350770d7c
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "34786175"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin.iOS の種類のレジストラー
 
-このドキュメントでは、Xamarin.iOS によって使用される型登録システムについて説明します。
+このドキュメントでは、Xamarin.iOS で使用される型の登録システムについて説明します。
 
 ## <a name="registration-of-managed-classes-and-methods"></a>マネージ クラスとメソッドの登録
 
-スタートアップ中に、Xamarin.iOS が登録されます。
+起動時に、Xamarin.iOS は登録します。
 
-  - クラスと、 [[登録]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Objective C のクラスと属性。
-  - クラスと、 [[Category]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute) Objective C のカテゴリとして属性。
-  - インターフェイスを持つ、 [[プロトコル]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/) Objective C のプロトコルの属性です。
+- クラスと、 [[登録]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Objective C のクラスと属性。
+- クラスと、 [[Category]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute) Objective C カテゴリとして属性。
+- 連動する、 [[Protocol]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/) OBJECTIVE-C プロトコルとして属性。
+- 持つメンバーを[[エクスポート]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)OBJECTIVE-C でそれらにアクセスできるようにします。
 
-持つ各ケースのメンバーで、 [[エクスポート]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)目標 C. にエクスポートされ、属性 これにより、マネージ クラスを作成および Objective C から呼び出されるメソッドのマネージ c# world と OBJECTIVE-C いずれかのメソッドとプロパティがリンクされている方法です。
+たとえば、マネージ`Main`Xamarin.iOS アプリケーションで一般的なメソッド。
 
-1 つの非常に単純な例は、すべてのアプリケーションがある AppDelegate クラスです。 管理対象の Main メソッドがこのいずれかのような行を持つことを思い出してくださいされます。
+```csharp
+UIApplication.Main (args, null, "AppDelegate");
+```
 
-    UIApplication.Main (args, null, "AppDelegate");
+このコードと呼ばれる型を使用する OBJECTIVE-C ランタイムに指示`AppDelegate`として、アプリケーションのデリゲート クラス。 Objective C ランタイムのインスタンスを作成できるように、 C# `AppDelegate`クラス、クラスを登録する必要があります。
 
-これは、アプリケーションのデリゲート クラスとして"AppDelegate"と呼ばれる型を作成する Objective C のランタイムを示しています。  C# で記述された"AppDelegate"クラスのインスタンスを作成する方法を知って Objective C ランタイムの登録するこのクラスがあります。
+Xamarin.iOS は、(動的な登録) の実行時またはコンパイル時 (静的登録) に自動的に登録を実行します。
 
-Xamarin.iOS ランタイム登録の注意が、内部的には、(動的登録) を実行時に完全この登録を実行できます。 またはコンパイル時 (静的登録) に実行できます。  動的なアプローチには、起動時にリフレクションを使用して、すべてのクラスとメソッドを登録し、Objective C のランタイムに渡すを検索するが含まれます。  静的なアプローチでは、コンパイル時にアプリケーションによって使用されるアセンブリを検査します。  クラスと OBJECTIVE-C に登録する方法を決定し、これは、バイナリに埋め込むマップを生成します。  次に、起動時に、マップに登録 Objective C ランタイム。
+動的登録リフレクションを使用して起動時にすべてのクラスとメソッドを登録するには、検索、OBJECTIVE-C ランタイムに渡すことです。 動的登録は、シミュレーターのビルドの場合、既定で使用されます。
+
+静的登録には、アプリケーションによって使用されるアセンブリがコンパイル時に検査します。 クラスおよび OBJECTIVE-C を登録する方法を決定しは、バイナリに埋め込まれているマップを生成します。
+次に、起動時に、登録、マップ、OBJECTIVE-C ランタイムでします。 静的登録は、デバイスのビルドに使用されます。
 
 ### <a name="categories"></a>カテゴリ
 
-Xamarin.iOS 8.10 で始まることは、c# の構文を使用して OBJECTIVE-C カテゴリを作成することになります。
+以降で Xamarin.iOS 8.10 を使用して、OBJECTIVE-C でカテゴリを作成することC#構文。
 
-これは、属性の引数として拡張する型を指定する、[Category] 属性を使用します。
-次の例では、NSString が拡張のインスタンスは。
+カテゴリを作成するには、使用、`[Category]`属性し、拡張する型を指定します。 たとえば、次のコードを拡張`NSString`:
 
-    [Category (typeof (NSString))]
+```csharp
+[Category (typeof (NSString))]
+```
 
-各カテゴリのメソッドは、通常メカニズムを使用して、Objective C の [エクスポート] 属性を使用するメソッドをエクスポートするのには。
+各カテゴリのメソッドは、`[Export]`属性、OBJECTIVE-C ランタイムで使用できるようにします。
 
-    [Export ("today")]
-    public static string Today ()
-    {
-        return "Today";
-    }
+```csharp
+[Export ("today")]
+public static string Today ()
+{
+    return "Today";
+}
+```
 
-すべてのマネージ拡張メソッドは静的である必要がありますが、c# での拡張メソッドの標準構文を使用して、OBJECTIVE-C インスタンス メソッドを作成すること。
+すべてのマネージ拡張メソッドは静的である必要がありますが、標準を使用して、OBJECTIVE-C でインスタンス メソッドを作成することはC#拡張メソッドの構文。
 
+```csharp
+[Export ("toUpper")]
+public static string ToUpper (this NSString self)
+{
+    return self.ToString ().ToUpper ();
+}
+```
+
+拡張メソッドの最初の引数は、メソッドが呼び出されたインスタンスを示します。
+
+```csharp
+[Category (typeof (NSString))]
+public static class MyStringCategory
+{
     [Export ("toUpper")]
-    public static string ToUpper (this NSString self)
+    static string ToUpper (this NSString self)
     {
         return self.ToString ().ToUpper ();
     }
+ }
+ ```
 
-され、拡張メソッドの最初の引数は、メソッドが呼び出されたインスタンスになります。
+この例は、ネイティブの追加`toUpper`インスタンス メソッドを`NSString`クラス。 C: の目的からこのメソッドを呼び出すことができます。
 
-完全な例:
-
-    [Category (typeof (NSString))]
-    public static class MyStringCategory
+```csharp
+[Category (typeof (UIViewController))]
+public static class MyViewControllerCategory
+{
+    [Export ("shouldAutoRotate")]
+    static bool GlobalRotate ()
     {
-        [Export ("toUpper")]
-        static string ToUpper (this NSString self)
-        {
-            return self.ToString ().ToUpper ();
-        }
+        return true;
     }
-
-この例はネイティブ toUpper インスタンス メソッドに追加されます、NSString クラス、目標 C. から呼び出すことができます。
-
-    [Category (typeof (UIViewController))]
-    public static class MyViewControllerCategory
-    {
-        [Export ("shouldAutoRotate")]
-        static bool GlobalRotate ()
-        {
-            return true;
-        }
-    }
+}
+```
 
 ### <a name="protocols"></a>プロトコル
 
-以降では、Xamarin.iOS 8.10 [プロトコル] 属性を持つインターフェイスにエクスポートされます OBJECTIVE-C プロトコルとして。
+Xamarin.iOS 8.10 から始めて、インターフェイス、`[Protocol]`属性は、プロトコルとして OBJECTIVE-C にエクスポートされます。
 
-例:
+```csharp
+[Protocol ("MyProtocol")]
+interface IMyProtocol
+{
+    [Export ("method")]
+    void Method ();
+}
 
-    [Protocol ("MyProtocol")]
-    interface IMyProtocol
+class MyClass : IMyProtocol
+{
+    void Method ()
     {
-        [Export ("method")]
-        void Method ();
     }
+}
+```
 
-    class MyClass : IMyProtocol
-    {
-        void Method ()
-        {
-        }
-    }
-
-これは、プロトコル (MyProtocol) とプロトコルを実装するクラス (MyClass) として Objective C にエクスポートされます。
-
- **動的登録**
-
-ビルドとデバッグのサイクルを高速化と、シミュレーターのビルドに使用されます。  これは、手順を削除するたびに、アプリケーションを起動して、一般的な用途にランチャーが毎回を使用する代わりに、クラスへのマッピングと、アプリケーション起動プログラムにこのマップ テーブルのコンパイルを生成する結果です。  デスクトップ コンピューターに十分なパワー ランタイムを実行するため、パフォーマンスに問題が決してクラスの迅速にスキャンします。
-
- **静的登録**
-
-デバイスのビルド モバイル デバイスが、デスクトップ コンピューターよりも低速の低速スキャンは、ランタイムを実行するものです。  デバイスのビルドは常に新しいバイナリを作成する必要があります、ビルドとデバッグのサイクルが登録のマッピングを作成して影響はありません。
+このコードがエクスポート`IMyProtocol`という名前のプロトコルとしては、OBJECTIVE-C に`MyProtocol`という名前のクラスと`MyClass`プロトコルを実装します。
 
 ## <a name="new-registration-system"></a>新しい登録システム
 
-安定した 6.2.6 以降のバージョンと新しい静的レジストラーが追加されました。 ベータ 6.3.4 バージョン。 7.2.1 バージョン行いました新しいレジストラー既定値です。
+安定した 6.2.6 以降のバージョンとベータ 6.3.4 バージョンでは、新しい静的レジストラーが追加されました。 7.2.1 バージョンについては、行った新しいレジストラー既定値。
 
 この新しい登録システムでは、次の新機能を提供します。
 
-- コンパイル時にプログラマのエラーの検出します。
-    - 2 つのクラスが登録されると、同じ名前です。
-    - 同じセレクターに対応するエクスポートされた 1 つ以上のメソッド
+- コンパイル時にプログラマ エラーの検出:
+    - 同じ名前で登録されている 2 つのクラス。
+    - 1 つ以上のメソッドは、同じセレクターに対応するエクスポート
+- 未使用のネイティブ コードの削除:
+    - 新しい登録システムでは、結果のバイナリから未使用のネイティブ コードを除去するネイティブ リンカーの動作を許可するスタティック ライブラリで使用するコードへの強参照を追加します。 Xamarin のサンプルのバインディングのほとんどのアプリケーションは小さい少なくとも 300 k になります。
 
+- サポートの汎用サブクラス`NSObject`; を参照してください[NSObject ジェネリック](~/ios/internals/api-design/nsobject-generics.md)詳細についてはします。 さらに、新しい登録システムでは、可能性があった以前実行時にランダムな動作なジェネリック コンストラクトがサポートされていないをキャッチします。
 
+### <a name="errors-caught-by-the-new-registrar"></a>新しいレジストラーによってキャッチ エラー
 
-- 未使用のネイティブ コードを削除することができます。
-    - 新しい登録システムでは、結果のバイナリから未使用のネイティブ コードを取り除くネイティブ リンカーを許可するスタティック ライブラリで使用されるコードに対する強い参照を追加します。
-      Xamarin のサンプルのバインド、ほとんどのアプリケーションになるには、少なくとも 300 k より小さい。
+次に、新しいレジストラーによってキャッチ、エラーの例をいくつか示します。
 
-- NSObject の汎用のサブクラスをサポートします。 参照してください[NSObject ジェネリック](~/ios/internals/api-design/nsobject-generics.md)詳細についてはします。 さらに、新しい登録システムでは、原因となる以前実行時にランダムな動作がサポートされていないジェネリック コンストラクトをキャッチします。
+- 同じクラスで複数回、同じセレクターをエクスポートします。
 
-新しい registar によってキャッチ、エラーのいくつかの例を次に示します。
+    ```csharp
+    [Register]
+    class MyDemo : NSObject 
+    {
+        [Export ("foo:")]
+        void Foo (NSString str);
+        [Export ("foo:")]
+        void Foo (string str)
+    }
+    ```
 
-同じクラス内に 2 回以上同じセレクターをエクスポートしています。
+- OBJECTIVE-C で同じ名前の 1 つ以上のマネージ クラスをエクスポートするには。
 
-```csharp
-[Register]
-class MyDemo : NSObject {
-    [Export ("foo:")]
-    void Foo (NSString str);
-    [Export ("foo:")]
-    void Foo (string str)
-}
-```
+    ```csharp
+    [Register ("Class")]
+    class MyClass : NSObject {}
 
-同じ Objective C の名前を持つ 2 つ以上のマネージ クラスをエクスポートしています。
+    [Register ("Class")]
+    class YourClass : NSObject {}
+    ```
 
-```csharp
-[Register ("Class")]
-class MyClass : NSObject {}
+- ジェネリック メソッドをエクスポートするには。
 
-[Register ("Class")]
-class YourClass : NSObject {}
-```
+    ```csharp
+    [Register]
+    class MyDemo : NSObject
+    {
+        [Export ("foo")]
+        void Foo<T> () {}
+    }
+    ```
 
-ジェネリック メソッドをエクスポートしています。
+### <a name="limitations-of-the-new-registrar"></a>新しい登録者の制限事項
 
-```csharp
-[Register]
-class MyDemo : NSObject {
-    [Export ("foo")]
-    void Foo<T> () {}
-}
-```
+新しい登録者に関する留意点:
 
+- 新しい登録システムを使用するいくつかのサード パーティ製ライブラリを更新する必要があります。 参照してください[変更に必要な](#required_modifications)以下の詳細。
 
+- 短期的な欠点は、アカウントのフレームワークを使用する場合に Clang を使用する必要がありますも (これは Apple の**accounts.h**ヘッダーは Clang でのみコンパイルできます)。 追加`--compiler:clang`Xcode 4.6 以降を使用している場合は、Clang を使用するその他の mtouch 引数に (Xamarin.iOS は、Clang Xcode 5.0 以降を選択が自動的に)。
 
-新しいレジストラーに関する留意事項:
-- 一部のサード パーティ ライブラリは、新しい登録システムを使用する更新する必要がありますが、セクションを参照して[以下の変更に必要な](#required_modifications)詳細についてはします。
-- 短期的なマイナス面もですアカウント フレームワークを使用する場合に、Clang を使用する必要がある (これは、Apple の accounts.h ヘッダーは Clang によってのみコンパイルできません)。 追加<code>--compiler:clang</code>場合は、Clang を使用する追加 mtouch 引数に、Xcode 4.6 以降を使用している (Xamarin.iOS が自動的に選択 Clang Xcode 5.0 またはそれ以降)。
+- 場合、Xcode 4.6 (またはそれ以前) は、使用、GCC、g++ 型をエクスポートする場合は選択する必要があります/名 (これは Xcode 4.6 出荷 Clang のバージョンでは、識別子内の非 ASCII 文字 Objective C コードでサポートされていません)、非 ASCII 文字を含めます。 追加`--compiler:gcc`GCC を使用するその他の mtouch 引数にします。
 
-    <li>Xcode 4.6 (またはそれ以前) の場合使用、GCC/g++ 必要がありますを選択する場合はエクスポートされた型名 (これは Xcode 4.6 に出荷 Clang のバージョンでは、識別子内の非 ascii 文字 Objective C コードでサポートされていません) 非 ascii 文字を含めます。 追加<code>--compiler:gcc</code>GCC を使用する追加 mtouch 引数にします。
+## <a name="selecting-a-registrar"></a>レジストラーの選択
 
+異なるレジストラーを選択するには、次のオプションのいずれかのプロジェクトの追加 mtouch 引数に追加することで**iOS ビルド**設定。
 
-## <a name="selecting-a-registrar"></a>レジストラーを選択します。
+- `--registrar:static` – デバイスのビルドの既定値
+- `--registrar:dynamic` – シミュレーターのビルドの既定値
 
-次のオプションのいずれかのプロジェクトの iOS のビルド オプションの追加 mtouch 引数に追加することで、異なるレジストラーを選択できます。
-
--  `--registrar:static` : デバイスのビルドの既定値
--  `--registrar:dynamic` : シミュレーターのビルドの既定値
--  `--registrar:legacystatic` : デバイスは、Xamarin.iOS 7.2.1 に準拠するまでビルドの既定値
--  `--registrar:legacydynamic` : シミュレーターは、Xamarin.iOS 7.2.1 に準拠するまでビルドの既定値
-
+> [!NOTE]
+> サポートされているその他のオプションをなど、Xamarin のクラシック API`--registrar:legacystatic`と`--registrar:legacydynamic`します。 ただし、これらのオプションは、Unified API でサポートされていません。
 
 ## <a name="shortcomings-in-the-old-registration-system"></a>古い登録システムの欠点
 
 古い登録システムでは、次の欠点があります。
 
--  Objective C のクラスとしたネイティブ リンカー (すべてのものが削除されます) のために使用されなかった実際にサード パーティ製のネイティブ コードを削除するように依頼できませんでした。 意図したもので、サードパーティ ネイティブ ライブラリ内のメソッドへの (ネイティブ) の静的参照がありませんでした。 これは、原因、"--force_load libNative.a"すべてのサードパーティのバインドを行う必要があること (またはときに、等価、ForceLoad [ソースコードファ] 属性で指定)。
--  警告なしで同じの Objective C の名前を持つ 2 つのマネージ型をエクスポートすることができます。 まれなシナリオの 2 つ AppDelegate クラス (別の名前空間) 終了することでした。 実行時になります完全にランダムな (非常に複雑ですしにくいデバッグ機能の作成されませんでした - も再構築するアプリの実行の間にさまざまなファクト) で選択されたものです。
--  同じ OBJECTIVE-C シグネチャを持つ 2 つのメソッドをエクスポートする可能性があります。 もう一度ランダムがどれが Objective C から呼び出されます (ただし実際にこの不具合が発生する唯一の方法が不吉マネージ メソッドをオーバーライドするためにほとんどの場合、この問題が以前のものでは、一般的なされませんでした)。
--  エクスポートされたメソッドのセットが、動的および静的なビルドの間で若干異なります。
--  これが正しく機能しませんジェネリック クラスをエクスポートするときに (実行時に実行される正確などの一般的な実装なりますランダム、実質的に何らかの動作)。
+- OBJECTIVE-C のクラスおよびメソッド (ため、すべてが削除されます) が実際に使用されるサード パーティのネイティブ コードを削除するには、ネイティブ リンカーの動作を願いできなかったもので、サードパーティ ネイティブ ライブラリにする (ネイティブ) の静的参照がありませんでした。 これは、理由、`-force_load libNative.a`行う必要があるすべてのサード パーティのバインドを (または同等の`ForceLoad=true`で、`[LinkWith]`属性)。
+- 警告なしで同じ Objective C の名前を持つ 2 つのマネージ型をエクスポートすることができます。 まれなシナリオが 2 つを終了するが`AppDelegate`異なる名前空間のクラス。 実行時に完全にランダムな (非常に複雑ですしにくいデバッグ エクスペリエンスの作成されませんでした - も再構築するアプリの実行の間さまざまなファクト、) で取得されたもの。
+- OBJECTIVE-C で同じシグネチャを持つ 2 つのメソッドをエクスポートする可能性があります。 さらにもう一度ランダムが OBJECTIVE-C からどれが呼び出されます (ただし実際にこのバグが発生する唯一の方法が不吉マネージ メソッドをオーバーライドするためにほとんどの場合は、前と一般的でこの問題がありませんでした)。
+- エクスポートされたメソッドのセットが、動的および静的なビルドの間で若干異なります。
+- 正しく機能しませんジェネリック クラスをエクスポートするときに (実行時に実行される正確などの一般的な実装がランダムになります、効果的に未定義の動作になります)。
 
+## <a name="new-registrar-required-changes-to-bindings"></a>新しいレジストラー: バインドへの変更が必要
 
- <a name="required_modifications" />
-
-
-## <a name="new-registrar-required-changes-to-bindings"></a>バインディングに必要な変更を新しいレジストラーは:
-
-
-Objective C の既存のバインディングは、新しい registar と連動して更新する必要があります。
-
-実行する必要がある変更の一覧を次に示します。
+このセクションでは、新しいレジストラーを使用するために行う必要があるバインディングの変更について説明します。
 
 ### <a name="protocols-must-have-the-protocol-attribute"></a>プロトコルは、[プロトコル] 属性を持つ必要があります。
 
-プロトコルの実装は、[プロトコル] 属性を適用を今すぐが必要です。  いないこの場合、このようなネイティブ リンカー エラーがされます。
+プロトコルが必要になります、`[Protocol]`属性。 これを行わない場合、ネイティブ リンカー エラーがなどは。
 
-```csharp
+```console
 Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", referenced from: ...
 ```
 
-### <a name="selectors-must-have-a-valid-number-of-parameters"></a>セレクターは、有効な数のパラメーターが必要
+### <a name="selectors-must-have-a-valid-number-of-parameters"></a>セレクターは、パラメーターの有効な数値をいる必要があります。
 
-すべてのセレクターは、正しくパラメーターの数を示す必要があります。  以前は、これらのエラーは無視されたされ、実行時の問題が発生する可能性があります。
+すべてのセレクターでは、正しくパラメーターの数を指定する必要があります。 以前は、これらのエラーが無視された、実行時の問題が発生する可能性があります。
 
-要するに、コロンの数は、パラメーターの数と一致する必要があります。
+簡単に言えば、コロンの数は、パラメーターの数と一致する必要があります。
 
-例えば:
+- パラメーターのない: `foo`
+- 1 つのパラメーター: `foo:`
+- 2 つのパラメーター: `foo:parameterName2:`
 
--  パラメーターなし:"foo"
--  1 つのパラメーター: ' foo:'
--  2 つのパラメーター: ' foo:parameterName2:'
-
-
-不適切な使用方法を次に示します。
+次に、不適切な使用方法を示します。
 
 ```csharp
 // Invalid: export takes no arguments, but function expects one
@@ -243,7 +240,7 @@ void Display ();
 
 ### <a name="use-isvariadic-parameter-in-export"></a>エクスポートで IsVariadic パラメーターを使用します。
 
-可変個引数関数は、[エクスポート] 属性でこれを言う必要があります (これは、セレクターが引数の数は正しくないため、つまり 2 をポイントします。 上記の違反)。
+可変個引数関数を使用する必要があります、`IsVariadic`への引数、`[Export]`属性。
 
 ```csharp
 [Export ("variadicMethod:", IsVariadic = true)]
@@ -253,8 +250,4 @@ void VariadicMethod (NSObject first, IntPtr subsequent);
 ### <a name="must-link-to-existing-symbols"></a>既存のシンボルにリンクする必要があります。
 
 ネイティブ ライブラリに存在しないクラスをバインドすることはできません。
-
-存在しないクラスをバインドしようとする場合、ネイティブ リンカー エラーが表示されます。
-
-これは通常、バインディングは、しばらくの間、存在しており、ネイティブ コードが変更されてその期間中にいるため、特定のネイティブ クラスが、削除または名前変更、バインディングが更新されていないときに場合に発生します。
-
+クラスがから削除またはネイティブ ライブラリの名前が変更された場合は、一致するようにバインドを更新することを確認してください。

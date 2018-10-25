@@ -4,14 +4,14 @@ description: SkiaSharp のピクセルのビットマップのサイズし、縦
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cbe3166c4edb147f7179f2c719901b382db8ec80
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: f4cc13a5e8794eb5f2f883f35d6a0e4d34788507
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615315"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>SkiaSharp のビットマップの表示
@@ -71,7 +71,7 @@ catch
 
 注意、`Stream`オブジェクトから取得`GetStreamAsync`にコピーされます、`MemoryStream`します。 Android ではできません、`Stream`から`HttpClient`を非同期メソッドでは、メイン スレッド以外で処理できます。 
 
-[ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/)は多くの作業:`Stream`に渡されたオブジェクトは、一般的なビットマップ ファイル形式、通常、JPEG、PNG、または GIF のいずれかでビットマップ全体を格納しているメモリのブロックを参照します。 `Decode`メソッドが、形式が決定し、SkiaSharp の内部ビットマップ形式にビットマップ ファイルをデコードする必要があります。
+[ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))は多くの作業:`Stream`に渡されたオブジェクトは、一般的なビットマップ ファイル形式、通常、JPEG、PNG、または GIF のいずれかでビットマップ全体を格納しているメモリのブロックを参照します。 `Decode`メソッドが、形式が決定し、SkiaSharp の内部ビットマップ形式にビットマップ ファイルをデコードする必要があります。
 
 コードの呼び出し後`SKBitmap.Decode`、おそらくが無効になります、`CanvasView`ように、`PaintSurface`ハンドラーが新しく読み込まれたビットマップを表示できます。
 
@@ -107,16 +107,16 @@ using (Stream stream = await picturePicker.GetImageStreamAsync())
 
 一般に、このようなコードも無効になります、`CanvasView`ように、`PaintSurface`ハンドラーは、新しいビットマップを表示できます。
 
-`SKBitmap`クラスなど、いくつかの便利なプロパティを定義します[ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/)と[ `Height`](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/)を含む、多くのメソッドと同様に、ビットマップのピクセル寸法を表示します。ビットマップ、ピクセル ビットを公開して、それらをコピーを作成するメソッド。 
+`SKBitmap`クラスなど、いくつかの便利なプロパティを定義します[ `Width` ](xref:SkiaSharp.SKBitmap.Width)と[ `Height`](xref:SkiaSharp.SKBitmap.Height)を含む、多くのメソッドと同様に、ビットマップのピクセル寸法を表示します。ビットマップ、ピクセル ビットを公開して、それらをコピーを作成するメソッド。 
 
 ## <a name="displaying-in-pixel-dimensions"></a>ピクセル数で表示します。
 
-SkiaSharp、 [ `Canvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)クラスは、4 つ定義`DrawBitmap`メソッド。 これらのメソッドは、根本的に異なる 2 つの方法で表示されるビットマップを許可します。 
+SkiaSharp、 [ `Canvas` ](xref:SkiaSharp.SKCanvas)クラスは、4 つ定義`DrawBitmap`メソッド。 これらのメソッドは、根本的に異なる 2 つの方法で表示されるビットマップを許可します。 
 
 - 指定する、`SKPoint`値 (または個別`x`と`y`値) のピクセル寸法のビットマップを表示します。 ビットマップのピクセルは、ビデオ ディスプレイのピクセルに直接マップされます。
 - 四角形を指定すると、四角形の形状とサイズに拡大するビットマップとします。 
 
-使用してそのピクセル寸法のビットマップを表示する[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKPoint/SkiaSharp.SKPaint/)で、`SKPoint`パラメーターまたは[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/)で`x`と`y`パラメーター。
+使用してそのピクセル寸法のビットマップを表示する[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint))で、`SKPoint`パラメーターまたは[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))で`x`と`y`パラメーター。
 
 ```csharp
 DrawBitmap(SKBitmap bitmap, SKPoint pt, SKPaint paint = null)
@@ -126,7 +126,21 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 これら 2 つの方法では、機能的に同じです。 指定したポイントでは、ビットマップをキャンバスの左上隅の場所を示します。 モバイル デバイスのピクセルの解像度は非常に高いため、小さいビットマップは通常、これらのデバイスでは非常に狭かった表示されます。
 
-省略可能な`SKPaint`パラメーターでは、blend モードを使用してビットマップを表示または効果をフィルター処理することができます。 これらは、それ以降の記事で説明されます。
+省略可能な`SKPaint`パラメーターでは、透明度を使用してビットマップを表示することができます。 これを行うには、作成、`SKPaint`オブジェクトし、設定、`Color`プロパティにいずれか`SKColor`値、アルファ チャネルの 1 より小さい。 例えば:
+
+```csharp
+paint.Color = new SKColor(0, 0, 0, 0x80);
+```
+
+最後の引数として渡される 0x80 では、透明度が 50% を示します。 定義済みの色のいずれかでアルファ チャネルを設定することもできます。
+
+```csharp
+paint.Color = SKColors.Red.WithAlpha(0x80);
+```
+
+ただし、色自体では、関係ありません。 使用するときに、アルファ チャネルだけが調べられる、`SKPaint`オブジェクト、`DrawBitmap`呼び出します。
+
+`SKPaint`オブジェクトは、表示するビットマップを使用して、blend のモードまたは効果をフィルター処理とも、役割を果たします。 これらの記事で説明されています[SkiaSharp 合成と blend モード](../effects/blend-modes/index.md)と[SkiaSharp イメージ フィルター](../effects/image-filters.md)します。
 
 **ピクセル寸法**ページで、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** サンプル プログラムは、320 ピクセル 240 ピクセル、高さのビットマップ リソースを表示します。
 
@@ -202,7 +216,7 @@ static class BitmapExtensions
 
 ## <a name="stretching-to-fill-a-rectangle"></a>四角形の塗りつぶしへの拡張
 
-`SKCanvas`クラスも定義、 [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/)別の四角形をビットマップをレンダリングするメソッド[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/)するビットマップの四角形のサブセットを表示するメソッド、四角形。
+`SKCanvas`クラスも定義、 [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))別の四角形をビットマップをレンダリングするメソッド[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))するビットマップの四角形のサブセットを表示するメソッド、四角形。
 
 ```
 DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
@@ -242,7 +256,7 @@ public class FillRectanglePage : ContentPage
 }
 ```
 
-新しい使用`BitmapExtensions.LoadBitmapResource`を設定するメソッド、`SKBitmap`フィールド。 先の四角形がから取得した、 [ `Rect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Rect/)プロパティの`SKImageInfo`を画面のサイズについて説明します。
+新しい使用`BitmapExtensions.LoadBitmapResource`を設定するメソッド、`SKBitmap`フィールド。 先の四角形がから取得した、 [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect)プロパティの`SKImageInfo`を画面のサイズについて説明します。
 
 [![四角形の塗りつぶし](displaying-images/FillRectangle.png "四角形の塗りつぶし")](displaying-images/FillRectangle-Large.png#lightbox)
 
@@ -649,6 +663,6 @@ public partial class ScalingModesPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 

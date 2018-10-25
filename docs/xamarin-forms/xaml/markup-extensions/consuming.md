@@ -6,23 +6,25 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 01/05/2018
-ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
-ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
+ms.date: 08/01/2018
+ms.openlocfilehash: e483716952aa97de4411733006f4fa12c3e6da98
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39393673"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
-XAML マークアップ拡張機能は、さまざまなソースから設定する要素の属性を許可することで、電源と XAML の柔軟性の向上に役立ちます。 いくつかの XAML マークアップ拡張機能は、XAML 2009 の仕様の一部です。 これらをよく使用される XAML ファイルには表示`x`名前空間プレフィックス、およびは一般的に呼ばれるこのプレフィックスを持つ。 以下のセクションで以下のとおりです。
+XAML マークアップ拡張機能は、さまざまなソースから設定する要素の属性を許可することで、電源と XAML の柔軟性の向上に役立ちます。 いくつかの XAML マークアップ拡張機能は、XAML 2009 の仕様の一部です。 これらをよく使用される XAML ファイルには表示`x`名前空間プレフィックス、およびは一般的に呼ばれるこのプレフィックスを持つ。 この記事では、次のマークアップ拡張機能について説明します。
 
-- [`x:Static`](#static) &ndash; 静的プロパティ、フィールド、または列挙型メンバーを参照します。
-- [`x:Reference`](#reference) &ndash; ページ上の要素をという名前の参照。
-- [`x:Type`](#type) &ndash; 属性を設定、`System.Type`オブジェクト。
-- [`x:Array`](#array) &ndash; 特定の種類のオブジェクトの配列を構築します。
-- [`x:Null`](#null) &ndash; 属性を設定、`null`値。
+- [`x:Static`](#static) – 静的プロパティ、フィールド、または列挙型メンバーを参照します。
+- [`x:Reference`](#reference) ページ上の要素をという名前の参照。
+- [`x:Type`](#type) –、属性を設定して、`System.Type`オブジェクト。
+- [`x:Array`](#array) – 特定の型のオブジェクトの配列を構築します。
+- [`x:Null`](#null) –、属性を設定して、`null`値。
+- [`OnPlatform`](#onplatform) – プラットフォームごとに UI の外観をカスタマイズします。
+- [`OnIdiom`](#onidiom) – で、アプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズします。
 
 XAML マークアップ拡張機能を追加では、従来の他の XAML 実装によってサポートされていて、Xamarin.Forms でもサポートされます。 これらは、他の記事で詳しく説明されます。
 
@@ -453,10 +455,89 @@ public partial class TypeDemoPage : ContentPage
 
 その 4 つの通知、`Label`要素中心がセリフ フォントのある`Label`が既定の sans-serif フォント。
 
+<a name="onplatform" />
+
+## <a name="onplatform-markup-extension"></a>OnPlatform マークアップ拡張機能
+
+`OnPlatform`マークアップ拡張機能では、プラットフォームごとに UI の外観をカスタマイズすることができます。 同じ機能を提供します、 [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)と[ `On` ](xref:Xamarin.Forms.On)クラスがより簡潔な表現。
+
+`OnPlatform`によってマークアップ拡張機能がサポートされている、 [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension)クラスは、次のプロパティを定義します。
+
+- `Default` 型の`object`プラットフォームを表すプロパティに適用される、既定値に設定します。
+- `Android` 型の`object`Android に適用する値に設定します。
+- `GTK` 型の`object`、GTK プラットフォームに適用する値に設定します。
+- `iOS` 型の`object`iOS に適用する値に設定します。
+- `macOS` 型の`object`macOS に適用する値に設定します。
+- `Tizen` 型の`object`、Tizen プラットフォームに適用する値に設定します。
+- `UWP` 型の`object`、ユニバーサル Windows プラットフォームに適用する値に設定します。
+- `WPF` 型の`object`、Windows Presentation Foundation プラットフォームに適用する値に設定します。
+- `Converter` 型の`IValueConverter`に設定する、`IValueConverter`実装します。
+- `ConverterParameter` 型の`object`に渡す値に設定した、`IValueConverter`実装します。
+
+> [!NOTE]
+> により、XAML パーサー、 [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension)のように短縮するにはクラス`OnPlatform`します。
+
+`Default`プロパティは、コンテンツのプロパティの`OnPlatformExtension`します。 そのため、XAML マークアップの式が中かっこで表された、削除できます、`Default=`最初の引数については、式の一部です。
+
+> [!IMPORTANT]
+> XAML パーサーでは、プロパティを使用する適切な型の値が提供されることが必要ですが、`OnPlatform`マークアップ拡張機能。 型変換が必要な場合、`OnPlatform`マークアップ拡張機能は、Xamarin.Forms によって提供される既定のコンバーターを使用して実行しようとしています。 ただし、一部の型変換、既定のコンバーターとこのような場合に行うことはできませんが、`Converter`にプロパティを設定する必要があります、`IValueConverter`実装します。
+
+**OnPlatform デモ**ページを使用する方法を示しています、`OnPlatform`マークアップ拡張機能。
+
+```xaml
+<BoxView Color="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}"
+         WidthRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"  
+         HeightRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"
+         HorizontalOptions="Center" />
+```
+
+この例では、3 つすべて`OnPlatform`式の短縮形を使用して、`OnPlatformExtension`クラス名。 3 つ`OnPlatform`マークアップ拡張機能セット、 [ `Color` ](xref:Xamarin.Forms.BoxView.Color)、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)、および[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)のプロパティ、 [`BoxView` ](xref:Xamarin.Forms.BoxView)を iOS、Android、UWP での値。 マークアップ拡張機能を排除しながら、指定されていないプラットフォームでこれらのプロパティの既定値を提供することも、`Default=`式の一部です。 設定されているマークアップ拡張機能プロパティがコンマで区切られたことに注意してください。
+
+3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+
+[![OnPlatform デモ](consuming-images/onplatformdemo-small.png "OnPlatform デモ")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform デモ")
+
+<a name="onidiom" />
+
+## <a name="onidiom-markup-extension"></a>OnIdiom マークアップ拡張機能
+
+`OnIdiom`マークアップ拡張機能でアプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズできます。 サポートされている、 [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)クラスは、次のプロパティを定義します。
+
+- `Default` 型の`object`デバイスの表現形式を表すプロパティに適用される、既定値に設定します。
+- `Phone` 型の`object`、携帯電話に適用する値に設定します。
+- `Tablet` 型の`object`タブレットに適用する値に設定します。
+- `Desktop` 型の`object`、デスクトップ プラットフォームに適用する値に設定します。
+- `TV` 型の`object`テレビのプラットフォームに適用する値に設定します。
+- `Watch` 型の`object`、ウォッチ プラットフォームに適用する値に設定します。
+- `Converter` 型の`IValueConverter`に設定する、`IValueConverter`実装します。
+- `ConverterParameter` 型の`object`に渡す値に設定した、`IValueConverter`実装します。
+
+> [!NOTE]
+> により、XAML パーサー、 [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)のように短縮するにはクラス`OnIdiom`します。
+
+`Default`プロパティは、コンテンツのプロパティの`OnIdiomExtension`します。 そのため、XAML マークアップの式が中かっこで表された、削除できます、`Default=`最初の引数については、式の一部です。
+
+> [!IMPORTANT]
+> XAML パーサーでは、プロパティを使用する適切な型の値が提供されることが必要ですが、`OnIdiom`マークアップ拡張機能。 型変換が必要な場合、`OnIdiom`マークアップ拡張機能は、Xamarin.Forms によって提供される既定のコンバーターを使用して実行しようとしています。 ただし、一部の型変換、既定のコンバーターとこのような場合に行うことはできませんが、`Converter`にプロパティを設定する必要があります、`IValueConverter`実装します。
+
+**OnIdiom デモ**ページを使用する方法を示しています、`OnIdiom`マークアップ拡張機能。
+
+```xaml
+<BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
+         WidthRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HeightRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HorizontalOptions="Center" />
+```
+
+この例では、3 つすべて`OnIdiom`式の短縮形を使用して、`OnIdiomExtension`クラス名。 3 つ`OnIdiom`マークアップ拡張機能セット、 [ `Color` ](xref:Xamarin.Forms.BoxView.Color)、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)、および[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)のプロパティ、 [`BoxView` ](xref:Xamarin.Forms.BoxView)電話、タブレット、およびデスクトップの表現方法でさまざまな値にします。 マークアップ拡張機能を排除しながら、指定されていない手法でこれらのプロパティの既定値を提供することも、`Default=`式の一部です。 設定されているマークアップ拡張機能プロパティがコンマで区切られたことに注意してください。
+
+3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+
+[![OnIdiom デモ](consuming-images/onidiomdemo-small.png "OnIdiom デモ")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom デモ")
+
 ## <a name="define-your-own-markup-extensions"></a>独自のマークアップ拡張機能を定義します。
 
 Xamarin.Forms で使用可能でない XAML マークアップ拡張機能の必要性が発生した場合は、[独自に作成](creating.md)です。
-
 
 ## <a name="related-links"></a>関連リンク
 

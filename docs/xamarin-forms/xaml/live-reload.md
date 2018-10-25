@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38860668"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin のライブの再読み込み
@@ -26,10 +26,12 @@ Xamarin Live の再読み込みを使用する **、XAML に変更を加える�
 
 ライブの再読み込みは、現在 Visual Studio 2017 での使用のみ。
 
+[![チャットに参加します。 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## <a name="requirements"></a>必要条件
 
-* [Visual Studio 2017 バージョン 15.7 以降](https://visualstudio.microsoft.com/vs/)以上で、 **.NET によるモバイル開発**ワークロード。
-* [Xamarin.Forms 3.0.0 以降](https://www.nuget.org/packages/Xamarin.Forms/)以降。
+* [Visual Studio 2017 バージョン 15.7 以降](https://visualstudio.microsoft.com/vs/)で、 **.NET によるモバイル開発**ワークロード。
+* [Xamarin.Forms 3.0.0 以降](https://www.nuget.org/packages/Xamarin.Forms/)します。
 
 ## <a name="getting-started"></a>作業の開始
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1.Visual Studio Marketplace からライブの再読み込みの Xamarin をインストールします。
@@ -121,6 +123,8 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 * Visual Studio でのみサポートされます。
 * 設定する必要がありますリンク**リンクしない**または**リンク フレームワーク Sdk のみ** 
 * アプリ全体にわたるリソースを再読み込み (つまり**App.xaml**またはリソース ディクショナリの共有)、アプリのナビゲーションをリセットします。 これは、次のプレビュー リリースで修正されます。
+* 現在 ContentView の再読み込みするには、格納されているページを再読み込みする必要があります。 これは、次のプレビュー リリースで修正されます。
+* AutomationId を含む要素の再読み込みエラーが発生する可能性があります。
 * ランタイム クラッシュが発生する可能性があります UWP のデバッグ中には、XAML を編集します。 回避策: 使用 **(Ctrl + F5) をデバッグなしで開始**の代わりに**デバッグ (F5) で開始**します。
 
 ## <a name="troubleshooting"></a>トラブルシューティング

@@ -4,14 +4,14 @@ description: この記事では、SkiaSharp を使用して、Xamarin.Forms ア�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 0ad722f22cf5ed8dc06fdf0d1e063d285e2ddb2f
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 1da0ee6155548a38057e4c7bf49ae5b90d445d79
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615341"
 ---
 # <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
@@ -20,17 +20,19 @@ _SkiaSharp を使用して、円錐、二次方程式、3 次ベジエ曲線を�
 
 サンピエール ベジエ (1910 – 1999 年)、フランス語のエンジニア、自動車会社 Renault、車の本文のコンピューター支援型のデザインの曲線を使用した後、ベジエ曲線と呼びます。
 
-ベジエ曲線が対話型の設計に最適であることがわかって: は正常に動作&mdash;が無限または扱いにくくする曲線の特異点がない、つまり&mdash;見栄えの良いは一般に、. コンピューターのフォントの文字アウトラインは通常、ベジエ曲線を定義します。
+ベジエ曲線が対話型の設計に最適であることがわかって: は正常に動作&mdash;が無限または扱いにくくする曲線の特異点がない、つまり&mdash;見栄えの良いは一般に、:
 
 ![](beziers-images/beziersample.png "サンプルのベジエ曲線")
 
-Wikipedia の記事で[ベジエ曲線](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)有用な情報が含まれています。 用語*ベジエ曲線*のような曲線のファミリを実際に参照します。 SkiaSharp のベジエ曲線、という 3 種類をサポートしています、*立方*、*二次*、および*円錐*します。 円錐とも呼ばれますが、*合理的な二次方程式*します。
+コンピューターのフォントの文字アウトラインは通常、ベジエ曲線で定義されます。
+
+Wikipedia の記事で[**ベジエ曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)便利な背景情報が含まれています。 用語*ベジエ曲線*のような曲線のファミリを実際に参照します。 SkiaSharp のベジエ曲線、という 3 種類をサポートしています、*立方*、*二次*、および*円錐*します。 円錐とも呼ばれますが、*合理的な二次方程式*します。
 
 ## <a name="the-cubic-bzier-curve"></a>3 次ベジエ曲線
 
 3 次ベジエ曲線の件名表示されたら、ほとんどの開発者が考えるベジエ曲線の種類です。
 
-3 次ベジエ曲線を追加することができます、`SKPath`オブジェクトを使用して、 [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/)メソッドで 3 つ`SKPoint`パラメーター、または[ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) でオーバーロード`x`と`y`パラメーター。
+3 次ベジエ曲線を追加することができます、`SKPath`オブジェクトを使用して、 [ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKPoint))メソッドで 3 つ`SKPoint`パラメーター、または[ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)) でオーバーロード`x`と`y`パラメーター。
 
 ```csharp
 public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
@@ -45,7 +47,7 @@ public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Sing
 - 2 つ目のコントロール ポイント:`point2`で、`CubicTo`を呼び出す
 - エンドポイント:`point3`で、`CubicTo`を呼び出す
 
-結果の曲線が開始時点で始まり終了時点で終了します。 曲線は、一般的にはパススルーされず、2 つの制御点。代わりにそれらに曲線をプルする程度 like 磁石を果たします。
+結果の曲線が開始時点で始まり終了時点で終了します。 曲線は、一般的にはパススルーされず、2 つの制御点。代わりに、コントロールは、それらに曲線をプルする磁石と同様に機能を指します。
 
 実験は 3 次ベジエ曲線をおおまかに把握することをお勧めします。 目的は、これは、**ベジエ曲線** ページから派生した`InteractivePage`します。 [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)ファイルをインスタンス化、`SKCanvasView`と`TouchEffect`します。 [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)分離コード ファイルには、4 つ作成します`TouchPoint`コンス トラクター内のオブジェクト。 `PaintSurface`イベント ハンドラーを作成、`SKPath`ベースの 4 つのベジエ曲線を表示するために`TouchPoint`オブジェクトし、も管理ポイントから終了ポイントにピリオドで区切られた接線を描画します。
 
@@ -101,7 +103,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - これは、2 番目の曲線の開始点でも最初の曲線の終点
 - 2 番目の曲線の最初の制御点
 
-次の記事で[ **SVG パス データ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) smooth 接続されたベジエ曲線の定義を容易にする機能がわかるでしょう。
+次の記事で[ **SVG パス データ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)、スムーズな接続されたベジエ曲線の定義を容易にする機能がわかるでしょう。
 
 3 次ベジエ曲線をレンダリングする、基になるパラメーターの式を把握する便利な場合があります。 *T* 0 ~ 1、パラメーターの式は次のようにします。
 
@@ -111,7 +113,7 @@ y(t) = (t) 1 日 ~ ³y₀ 3t + (1 – t) ²y₁ 3t² + (1 – t) y₂ + t³y₃�
 
 これらは三次 polynomials 3 の最大指数を確認します。 簡単にすることを確認します。`t`が 0 と等しいポイントは、(x₀ y₀)、これは、開始点とタイミング`t`が 1 に等しいポイントは、(x₃ y₃)、終点であります。 始点の近く (の値が低い`t`)、最初の制御点 (x₁、y₁) は強力な効果し、終了点の方が (' t の値が高い ')、2 つ目のコントロール ポイント (x₂、y₂) が大きな影響を与える。
 
-## <a name="bzier-curve-approximation-to-circular-arcs"></a>円弧を近似をベジエ曲線
+## <a name="bezier-curve-approximation-to-circular-arcs"></a>円弧を近似をベジエ曲線
 
 円弧のレンダリングにベジエ曲線を使用する便利な場合があります。3 次ベジエ曲線概算の円弧も非常に最大で 4 分の 1 円 4 つの接続されたベジエ曲線は、完全な円を定義できるようします。 この推定は、25 年以上前に公開する 2 つの記事でについて説明します。
 
@@ -203,7 +205,7 @@ float Magnitude(SKPoint v)
 
 ```
 
-始点と終点 (`point0`と`point3`)、円の通常のパラメーターの式に基づいて計算されます。 円の中央にあるため (0, 0)、これらのポイントもとして処理できる放射状のベクトルの円の中心から円周をします。 コントロール ポイントは、これらの放射状ベクトルに直角に交わっているので、円のタンジェントである行には。 直角にベクトルとは、元のベクター スワップ X および Y 座標と負の値に加えられたうち 1 つだけです。
+始点と終点 (`point0`と`point3`)、円の通常のパラメーターの式に基づいて計算されます。 円の中央にあるため (0, 0)、これらのポイントもとして処理できる放射状のベクトルの円の中心から円周をします。 コントロール ポイントは、これらの放射状ベクトルに直角に交わっているので、円のタンジェントである行には。 右の山を別のベクトルとは、元のベクター スワップ X および Y 座標と負の値に加えられたうち 1 つだけです。
 
 次の 3 つの異なる角度の 3 つのプラットフォームで実行されているプログラムを次に示します。
 
@@ -350,7 +352,7 @@ x(t) = (1 – t)²x₀ + 2t(1 – t)x₁ + t²x₂
 
 y(t) = (1 – t)²y₀ + 2t(1 – t)y₁ + t²y₂
 
-パスには、2 次ベジエ曲線を追加するには、使用、 [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/)メソッドまたは[ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/)個別にオーバー ロード`x`と`y`座標。
+パスには、2 次ベジエ曲線を追加するには、使用、 [ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint))メソッドまたは[ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(System.Single,System.Single,System.Single,System.Single))個別にオーバー ロード`x`と`y`座標。
 
 ```csharp
 public void QuadTo (SKPoint point1, SKPoint point2)
@@ -427,7 +429,7 @@ y(t) = ((1 – t)²y₀ + 2wt(1 – t)y₁ + t²y₂)) ÷ d(t)
 
 有理数の 2 次ベジエ曲線とも呼ばれます*conics*円錐セクションのセグメントを正確に表現するため、 &mdash; hyperbolas、放物線、省略記号、および円。
 
-パスには、有理数の 2 次ベジエ曲線を追加するには、使用、 [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/)メソッドまたは[ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/)個別にオーバー ロード`x`と`y`座標。
+パスには、有理数の 2 次ベジエ曲線を追加するには、使用、 [ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single))メソッドまたは[ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(System.Single,System.Single,System.Single,System.Single,System.Single))個別にオーバー ロード`x`と`y`座標。
 
 ```csharp
 public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
@@ -552,5 +554,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

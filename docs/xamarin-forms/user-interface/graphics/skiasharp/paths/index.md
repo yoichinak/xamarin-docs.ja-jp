@@ -4,25 +4,25 @@ description: この記事では、SkiaSharp を使用して、Xamarin.Forms ア�
 ms.prod: xamarin
 ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9febfabb7b44b1ec09abda4b352691b37565cb48
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 3f2597c67459e407ac066ee19d54d134d60f3076
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615136"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp の線とパス
 
 _SkiaSharp を使用して、行とグラフィックスのパスを描画するには_
 
-[前のセクション](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)を示す、SkiaSharp`SKCanvas`クラスには、四角形、楕円、および角の丸い四角形を描画するためにいくつかのメソッドが含まれています。 このセクションと以降のセクションの作成とレンダリングに接続されているさまざまなクラスをカバー*グラフィックス パス*します。
+[前のセクション](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)を示す、SkiaSharp`SKCanvas`クラスには、円、楕円、四角形、角の丸い四角形、テキスト、およびビットマップを描画するためにいくつかのメソッドが含まれています。 このセクションと以降のセクションの作成とレンダリングに接続されているさまざまなクラスをカバー*グラフィックス パス*します。
 
-グラフィック パスは、行と SkiaSharp の曲線を描画する最も一般的なアプローチです。 ここを使用して、`SKPath`オブジェクトの小さな直線のコレクションを使用して、直線を描画するために (と呼ばれる、*ポリライン*) 数学的に定義できる曲線を描画するためにします。 以降のセクションには、さまざまな種類でサポートされている曲線がについて説明しますが`SKPath`します。
+グラフィック パスは、行と SkiaSharp の曲線を描画する最も一般的なアプローチです。 ここを使用して、 [ `SKPath` ](xref:SkiaSharp.SKPath)オブジェクトの小さな直線のコレクションを使用して、直線を描画するために (と呼ばれる、*ポリライン*) アルゴリズムを定義できます曲線を描画するためにします。 以降のセクション[ **SkiaSharp の曲線とパス**](../curves/index.md)でサポートされている曲線のさまざまな種類について説明します`SKPath`します。
 
-という見出しの下に表示されるこのセクションのすべてのサンプル プログラム**線およびパス**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、し、 [**パス**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)ソリューションのフォルダーです。
+このセクションでは、すべてのサンプル プログラムが、見出しの下に表示**の線とパス**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**パス**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)をソリューションのフォルダー。
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[線とストローク キャップ](lines.md)
 
@@ -30,7 +30,7 @@ SkiaSharp を使用して異なるストローク キャップを持つ行を描
 
 ## <a name="path-basicspathsmd"></a>[パスの基礎](paths.md)
 
-直線と曲線を結合するための SkiaSharp SKPath オブジェクトについて説明します。
+探索、SkiaSharp`SKPath`直線と曲線を結合するためのオブジェクト。
 
 ## <a name="the-path-fill-typesfill-typesmd"></a>[パスの塗りつぶしの種類](fill-types.md)
 
@@ -51,5 +51,5 @@ SkiaSharp を使用して、パラメーターの式を定義できる任意の�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

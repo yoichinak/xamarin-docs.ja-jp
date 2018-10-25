@@ -3,24 +3,29 @@ title: オート コンプリート
 ms.prod: xamarin
 ms.assetid: D4C8CA49-8369-35B7-798D-B147FDC24185
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 333264e65e814ad73eabeb7be55abb320400a59a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: conceptdev
+ms.author: crdun
+ms.date: 08/31/2018
+ms.openlocfilehash: 134b8e93279dd60f860e44a444e75e0200e66b99
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "30764451"
 ---
 # <a name="auto-complete"></a>オート コンプリート
 
+`AutoCompleteTextView` ユーザーの入力中に自動的に入力候補を表示する編集可能なテキスト ビュー要素です。 入力候補の一覧は、ユーザーが編集ボックスのコンテンツを置換する項目を選択できるメニュー ドロップダウンで表示されます。
+
+![オート コンプリートの使用例](images/auto-complete.png)
 
 ## <a name="overview"></a>概要
 
-オートコンプリートの候補を提供するテキスト エントリ ウィジェットを作成するには、使用、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェット。 を介して、ウィジェットに関連付けられている文字列のコレクションから受信した提案、 [ `ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)です。
+オート コンプリートの候補を提供するテキスト エントリ ウィジェットを作成するを使用して、 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+ウィジェット。 ウィジェットに関連付けられている文字列のコレクションから受信した提案、 [ `ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)します。
 
-このチュートリアルでは作成、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)国名のための推奨事項を提供するウィジェット。
+このチュートリアルでは作成します。 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+国の名前の候補を提供するウィジェット。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -40,14 +45,15 @@ ms.locfileid: "30764451"
 </LinearLayout>
 ```
 
-[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)を導入するラベル、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェット。
+[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)はラベルが導入されていますが、 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+ウィジェット。
 
 
 ## <a name="tutorial"></a>チュートリアル
 
-という名前の新しいプロジェクトを開始*HelloAutoComplete*です。
+という名前の新しいプロジェクトを開始*HelloAutoComplete*します。
 
-という XML ファイルを作成する`list_item.xml`内で保存し、**リソース/レイアウト**フォルダーです。 設定するには、このファイルのビルド アクション`AndroidResource`です。 次のようにファイルを編集します。
+という名前の XML ファイルを作成`list_item.xml`内で保存し、**リソース/レイアウト**フォルダー。 設定するには、このファイルのビルド アクション`AndroidResource`します。 次のようにファイルを編集します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,9 +67,9 @@ ms.locfileid: "30764451"
 </TextView>
 ```
 
-このファイルは定義単純な[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)修正候補の一覧に表示される各項目に対して使用されます。
+このファイルは定義単純な[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)候補の一覧に表示される各項目に対して使用されます。
 
-開いている**Resources/Layout/Main.axml**し、次の挿入します。
+開いている**Resources/Layout/Main.axml**し、次を挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -83,7 +89,8 @@ ms.locfileid: "30764451"
 </LinearLayout>
 ```
 
-開いている**MainActivity.cs**の次のコードを挿入し、 [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))メソッド。
+開いている**MainActivity.cs**の次のコードを挿入し、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
+方法:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -100,9 +107,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-コンテンツ ビューに設定した後、`main.xml`レイアウト、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェットが持つレイアウトからキャプチャされた[ `FindViewById`](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/)です。 新しい[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)はバインドに初期化し、`list_item.xml`レイアウト内の各リスト項目を`COUNTRIES`(次の手順で定義されている) 文字列の配列。 最後に、`SetAdapter()`を関連付けるために呼び出される、 [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)で、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェット文字列の配列が提案の一覧に表示できるようにします。
+コンテンツ ビューに設定した後、`main.xml`レイアウト、 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+ウィジェットをレイアウトからキャプチャされた[ `FindViewById`](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/)します。 新しい[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)バインドを初期化し、`list_item.xml`レイアウト内の各リスト項目を`COUNTRIES`(次の手順で定義されている) 文字列の配列。 最後に、`SetAdapter()`を関連付けるために呼び出される、 [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)で、 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+ウィジェットの文字列配列が候補の一覧に表示されるようにします。
 
-内部、`MainActivity`クラス、文字列の配列を追加します。
+内で、`MainActivity`クラスで文字列の配列を追加します。
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -150,17 +159,19 @@ static string[] COUNTRIES = new string[] {
 };
 ```
 
-これは、ユーザーに入力する場合に、ドロップダウン リストで指定する提案の一覧、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェット。
+これは、ユーザーにすると、ドロップダウン リストで提供される修正候補の一覧、 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+ウィジェット。
 
-アプリケーションを実行します。 入力するを参照して次のようにする必要があります。
+アプリケーションを実行します。 入力すると、このようなものを表示する必要があります。
 
-[![例オート コンプリートのスクリーン ショットを"ca"を含む名前を一覧表示します。](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
+[![オート コンプリート スクリーン ショットの例"ca"を含む名前を一覧表示します。](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 
 
 ## <a name="more-information"></a>説明
 
-ハード コーディングされた文字列配列を使用して、推奨される設計プラクティスいないコンテンツの動作を集中的に、アプリケーション コードに注意してください。 文字列などのアプリケーションのコンテンツは、コンテンツへの変更が容易し、コンテンツのローカライズを容易にするために、コードから外部化する必要があります。 ハードコーディングされた文字列を使用する簡単と重点にのみこのチュートリアルでは使用が、 [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)ウィジェット。 代わりに、アプリケーションでは、XML ファイルにそのような文字列の配列を宣言する必要があります。 これで、`<string-array>`プロジェクトのリソース`res/values/strings.xml`ファイル。 例えば:
+注意ハード コーディングされた文字列の配列を使用して、アプリケーション コードは、動作、コンテンツに注目する必要がありますので、推奨される設計手法ではありません。 文字列などのアプリケーションのコンテンツは、コンテンツへの変更を簡単にコンテンツのローカライズを容易にコードから外部化する必要があります。 ハードコーディングされた文字列は、このチュートリアルでは簡素化し、重点にのみ使用されます、 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+ウィジェット。 代わりに、アプリケーションでは、XML ファイルには、このような文字列配列を宣言する必要があります。 これで、`<string-array>`プロジェクトのリソース`res/values/strings.xml`ファイル。 例えば:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -177,7 +188,8 @@ static string[] COUNTRIES = new string[] {
 </resources>
 ```
 
-これらのリソース文字列を使用する、 [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)、置換元[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)を次のコンス トラクター行。
+これらのリソースの文字列を使用する、 [ `ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)元の置換 [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
+次の行をコンス トラクター:
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
@@ -187,10 +199,11 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 ### <a name="references"></a>参照
 
+-   [AutoCompleteTextView レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input)&ndash;用の Xamarin.Android サンプル プロジェクト、`AutoCompleteTextView`します。
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
 -   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
 
-*このページの部分は変更を作成し、Android のオープン ソース プロジェクトで共有しての条項に従って使用作業に基づく、* 
- [ *クリエイティブ コモンズ 2.5 Attribution ライセンス*](http://creativecommons.org/licenses/by/2.5/) *.このチュートリアルがに基づいて、* 
+*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、* 
+ [ *Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/) *.このチュートリアルがに基づいて、* 
  [ *Android 自動の完全なチュートリアル*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
-*です。*
+*します。*

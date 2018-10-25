@@ -4,14 +4,14 @@ description: この記事では、SkiaSharp を使用して、次の 3 つの異
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: e862a663b35124c1470ae5239c93409c298b19ba
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 2bb5729ff369abb6e432bfd72ab240c0ce07f28a
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615406"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
@@ -24,11 +24,11 @@ _SkiaSharp を使用して、次の 3 つの異なる方法で円弧を定義す
 
 その定義の簡単なコード、円弧の描画をすべてのニーズを満たす関数を定義する方法はありませんし、そのため、円弧を描画する最善の方法のグラフィックス システム間で意見の一致なし。このため、`SKPath`クラスは制限されません自体アプローチの 1 つだけにします。
 
-`SKPath` 定義、`AddArc`メソッドは、5 つの異なる`ArcTo`メソッド、および 2 つの相対`RArcTo`メソッド。 これらのメソッドは、3 つのまったく異なるアプローチを表す円弧を指定する 3 つのカテゴリに分類されます。これ 1 つを使用して、円弧とこの円弧を描画している他のグラフィックスを使用して収める方法を定義する情報によって異なります。
+`SKPath` 定義、 [ `AddArc` ](xref:SkiaSharp.SKPath.AddArc*)メソッドは、5 つの異なる[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo*)メソッド、および 2 つの相対[ `RArcTo` ](xref:SkiaSharp.SKPath.RArcTo*)メソッド。 これらのメソッドは、3 つのまったく異なるアプローチを表す円弧を指定する 3 つのカテゴリに分類されます。これ 1 つを使用して、円弧とこの円弧を描画している他のグラフィックスを使用して収める方法を定義する情報によって異なります。
 
 ## <a name="the-angle-arc"></a>円弧の角度
 
-円弧を描画する角度のアーク アプローチでは、楕円の外接する四角形を指定することが必要です。 この楕円の円周上、円弧は楕円の円弧とその長さの先頭のための中心からの角度で示されます。 2 つの方法では、円弧の角度を描画します。 これらは、 [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/)メソッドと[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/)メソッド。
+円弧を描画する角度のアーク アプローチでは、楕円の外接する四角形を指定することが必要です。 この楕円の円周上、円弧は円弧とその長さの先頭を示す、楕円の中心からの角度で示されます。 2 つの方法では、円弧の角度を描画します。 これらは、 [ `AddArc` ](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single))メソッドと[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKRect,System.Single,System.Single,System.Boolean))メソッド。
 
 ```csharp
 public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
@@ -44,15 +44,15 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 円弧は、この楕円の円周の一部です。
 
-`startAngle`引数が右側に楕円の中心から描画された水平線からの角度の時計回りの角度。 `sweepAngle`引数が関連して、`startAngle`します。 ここでは`startAngle`と`sweepAngle`と 100 の 60 度の値それぞれ。
+`startAngle`引数が右側に楕円の中心から描画された水平線からの角度の時計回りの角度。 `sweepAngle`引数が関連して、`startAngle`します。 ここでは`startAngle`と`sweepAngle`60 度の 100 度をそれぞれ値します。
 
 ![](arcs-images/anglearcangles.png "円弧の角度を定義する角度")
 
-開始角度で、円弧が開始されます。 掃引角度の長さが適用されます。
+開始角度で、円弧が開始されます。 掃引角度の長さが適用されます。 円弧が赤のとおりです。
 
 ![](arcs-images/anglearchighlight.png "強調表示されている角度円弧")
 
-曲線のパスに追加、`AddArc`または`ArcTo`メソッドが赤で示される、楕円の円周の部分だけです。
+曲線のパスに追加された、`AddArc`または`ArcTo`メソッドは、楕円の円周の部分だけです。
 
 ![](arcs-images/anglearc.png "単独で角度円弧")
 
@@ -216,7 +216,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 2 番目の型でサポートされている円弧の`SKPath`は、*アーク タンジェント*円弧が接続されている 2 つの直線をタンジェントである円の円周であるためにと呼ばれます。
 
-接線の円弧がへの呼び出しで、パスに追加、 [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/)メソッドの 2 つ`SKPoint`パラメーター、または[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/)個別にオーバー ロード`Single`パラメーターをポイント:
+接線の円弧がへの呼び出しで、パスに追加、 [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single))メソッドの 2 つ`SKPoint`パラメーター、または[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single))個別にオーバー ロード`Single`パラメーターをポイント:
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -224,7 +224,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-これは、`ArcTo`メソッドは、PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (PDF ドキュメントで 532 ページ) の関数と、iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)メソッドです。
+これは、`ArcTo`メソッドは、PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (ページ 532) 関数および iOS は、 [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)メソッド。
 
 `ArcTo`メソッドが 3 つのポイントが含まれます。
 
@@ -250,7 +250,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 ![](arcs-images/tangentarctangentcircle.png "2 行の間のアーク タンジェント円")
 
-指定されたポイントのいずれかに追加される曲線に接触しない、`ArcTo`メソッド。 現在のポイントから最初の接点と 2 つ目の接点で終わる円弧を直線で構成されます。
+指定されたポイントのいずれかに追加される曲線に接触しない、`ArcTo`メソッド。 現在のポイントから最初の接点と赤で示される 2 番目接点で終わる円弧を直線で構成されます。
 
 ![](arcs-images/tangentarchighlight.png "2 行の間の強調表示されている接線円弧")
 
@@ -493,7 +493,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-elliptical-arc"></a>楕円の円弧
 
-楕円の円弧がへの呼び出しで、パスに追加、 [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/)メソッドを持つ 2 つ`SKPoint`パラメーター、または[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/)個別 X と Y 座標をオーバー ロードします。
+楕円の円弧がへの呼び出しで、パスに追加、 [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint))メソッドを持つ 2 つ`SKPoint`パラメーター、または[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single))個別 X と Y 座標をオーバー ロードします。
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -503,7 +503,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 楕円の円弧が矛盾、[楕円の円弧](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands)スケーラブル ベクター グラフィックス (SVG) とユニバーサル Windows プラットフォームに含まれる[ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/)クラス。
 
-これら`ArcTo`メソッドは、輪郭の現在のポイントが 2 つのポイント間の円弧を描画し、最後のパラメーターを`ArcTo`メソッド (、`xy`パラメーターまたは個別の`x`と`y`パラメーター)。
+これら`ArcTo`メソッドは、輪郭の現在のポイントは、2 つのポイント間の円弧を描画し、最後のパラメーターを`ArcTo`メソッド (、`xy`パラメーターまたは個別の`x`と`y`パラメーター)。
 
 ![](arcs-images/ellipticalarcpoints.png "楕円の円弧が定義されている 2 つのポイント")
 
@@ -531,7 +531,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 ![](arcs-images/ellipticalarccolors.png "すべての 4 つの楕円の円弧")
 
-これら 4 つの円弧が 4 つの組み合わせによって識別されます、 [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/)と[ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/)列挙体の型引数、`ArcTo`メソッド。
+これら 4 つの円弧が 4 つの組み合わせによって識別されます、 [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)と[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)列挙体の型引数、`ArcTo`メソッド。
 
 - 赤: SKPathArcSize.Large と SKPathDirection.Clockwise
 - 緑: SKPathArcSize.Small と SKPathDirection.Clockwise
@@ -662,10 +662,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](arcs-images/arcinfinitytightbounds-small.png "緊密な境界を持つ弧無限大ページのスクリーン ショットをトリプル")](arcs-images/arcinfinitytightbounds-large.png#lightbox "緊密な境界を持つ弧無限大ページの 3 倍になるスクリーン ショット")
 
-弧と直線間の接続は、滑らかな数学的には、直線を円弧から変更を少し突然に見えるかもしれません。 次のページより優れた無限大記号が表示されます。
-
+弧と直線間の接続は、滑らかな数学的には、直線を円弧から変更を少し突然に見えるかもしれません。 次の記事でより良い無限大記号が表示される[**ベジエ曲線の型を次の 3 つ**](beziers.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

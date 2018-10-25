@@ -6,12 +6,12 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/13/2018
-ms.openlocfilehash: 6e3cf12431440823b1d32d91927bc634f60fd5e2
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/31/2018
+ms.openlocfilehash: 23ba73eb4099a9db9e989c68ae7f381e1c96541d
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39270457"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
@@ -156,6 +156,18 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 
 > [!NOTE]
 > ときに、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティに設定されて`false`、およびカスタムのキーボードが使用されていない、ネイティブのスペル チェックが無効になります。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)がされているセットをスペル チェックを無効にするチェックを行うなど[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`プロパティは無視されます。 そのため、スペル チェックを有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
+
+### <a name="setting-placeholder-text"></a>プレース ホルダー テキストを設定
+
+[ `Editor` ](xref:Xamarin.Forms.Editor)プレース ホルダー テキストを表示するユーザー入力を格納するがない場合に設定することができます。 これは、設定によって実現されます、 [ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)プロパティを`string`は適切なコンテンツの種類を示すためによく使用して、 `Editor`。 さらに、プレース ホルダー テキストの色を設定して制御できます、 [ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+```
+
+```csharp
+var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
+```
 
 ### <a name="colors"></a>色
 

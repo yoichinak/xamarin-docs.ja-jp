@@ -1,22 +1,22 @@
 ---
 title: SkiaSharp の単純な円を描画
-description: この記事では、キャンバス ペイントをなど、Xamarin.Forms アプリケーションで、SkiaSharp 描画の基礎について説明し、サンプル コードを示します。
+description: この記事では、Xamarin.Forms アプリケーションで、キャンバスとペイントのオブジェクトを含む、SkiaSharp 描画の基礎について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: e06a1310fad01da11c8d8b115df504cc19426344
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 32fa126d1990839a98ce03cdbfa245a2df97671d
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615224"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp の単純な円を描画
 
-_SkiaSharp 描画、キャンバスとペイントなどの基本を学ぶ_
+_SkiaSharp 描画、キャンバスのなどの基本を学習し、オブジェクトの塗りつぶし_
 
 この記事の作成など、SkiaSharp を使った xamarin.forms のグラフィックスの描画の概念を説明する、 `SKCanvasView` 、グラフィックス、処理をホストするオブジェクト、`PaintSurface`イベント、およびを使用して、`SKPaint`とその他の描画の色を指定するオブジェクト属性。
 
@@ -31,7 +31,7 @@ using SkiaSharp;
 using SkiaSharp.Views.Forms;
 ```
 
-次のクラスのコンス トラクターを作成、 [ `SKCanvasView` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKCanvasView/)オブジェクト、ハンドラーをアタッチします、 [ `PaintSurface` ](https://developer.xamarin.com/api/event/SkiaSharp.Views.Forms.SKCanvasView.PaintSurface/)イベント、およびセット、`SKCanvasView`オブジェクトをページのコンテンツ。
+次のクラスのコンス トラクターを作成、 [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView)オブジェクト、ハンドラーをアタッチします、 [ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)イベント、およびセット、`SKCanvasView`オブジェクトをページのコンテンツ。
 
 ```csharp
 public SimpleCirclePage()
@@ -46,7 +46,7 @@ public SimpleCirclePage()
 
 `SKCanvasView`ページのコンテンツ全体の領域を占有します。 または組み合わせることができます、`SKCanvasView`を他の Xamarin.Forms で`View`から派生しますがわかります。 その他の例でします。
 
-`PaintSurface`イベント ハンドラーは、すべての描画を実行します。 このメソッドは、プログラムの実行中に複数回呼び出さ一般に、グラフィックの表示を再作成するために必要なすべての情報を維持する必要があります。
+`PaintSurface`イベント ハンドラーは、すべての描画を実行します。 プログラムの実行中に、このメソッドで複数回が呼び出すことが、グラフィックの表示を再作成するために必要なすべての情報を維持する必要があります。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -56,14 +56,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-[ `SKPaintSurfaceEventArgs` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs/)イベントに付属しているオブジェクトが 2 つのプロパティ。
+[ `SKPaintSurfaceEventArgs` ](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)イベントに付属しているオブジェクトが 2 つのプロパティ。
 
-- [`Info`](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info/) 型の [`SKImageInfo`](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/)
-- [`Surface`](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface/) 型の [`SKSurface`](https://developer.xamarin.com/api/type/SkiaSharp.SKSurface/)
+- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) 型の [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
+- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) 型の [`SKSurface`](xref:SkiaSharp.SKSurface)
 
-`SKImageInfo`構造については、描画サーフェイスに最も重要なは含まれる、幅と高さ (ピクセル単位)。 `SKSurface`オブジェクト自体の描画サーフェイスを表します。 このプログラムで描画サーフェイスはビデオ ディスプレイの場合が他のプログラムで、`SKSurface`オブジェクトを描画する SkiaSharp を使用するビットマップを表すこともできます。
+`SKImageInfo`構造については、描画サーフェイスに最も重要なは、含まれる、幅と高さ (ピクセル単位)。 `SKSurface`オブジェクト自体の描画サーフェイスを表します。 このプログラムで描画サーフェイスはビデオ ディスプレイの場合が他のプログラムで、`SKSurface`オブジェクトを描画する SkiaSharp を使用するビットマップを表すこともできます。
 
-最も重要なプロパティ`SKSurface`は[ `Canvas` ](https://developer.xamarin.com/api/property/SkiaSharp.SKSurface.Canvas/)型の[ `SKCanvas`](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)します。 このクラスは、実際の描画の実行に使用するコンテキストを描画するグラフィックです。 `SKCanvas`オブジェクトは、グラフィックス変換やクリッピングが含まれています、グラフィックスの状態をカプセル化します。
+最も重要なプロパティ`SKSurface`は[ `Canvas` ](xref:SkiaSharp.SKSurface.Canvas)型の[ `SKCanvas`](xref:SkiaSharp.SKCanvas)します。 このクラスは、実際の描画の実行に使用するコンテキストを描画するグラフィックです。 `SKCanvas`オブジェクトは、グラフィックス変換やクリッピングが含まれています、グラフィックスの状態をカプセル化します。
 
 ここでは、一般的なスタートを`PaintSurface`イベント ハンドラー。
 
@@ -80,9 +80,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-[ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear()/)メソッドは、透明色でキャンバスをクリアします。 オーバー ロードを使用して、キャンバスの背景色を指定できます。
+[ `Clear` ](xref:SkiaSharp.SKCanvas.Clear)メソッドは、透明色でキャンバスをクリアします。 オーバー ロードを使用して、キャンバスの背景色を指定できます。
 
-ここでの目的は、ブルーで塗りつぶされた赤い円を描画するためには。 この特定のグラフィック イメージには、2 つの異なる色が含まれている、ため、ジョブを 2 つの手順で行う必要があります。 最初の手順は、円のアウトラインを描画するためにです。 色と線の他の特性を指定する作成し、初期化、 [ `SKPaint` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPaint/)オブジェクト。
+ここでの目的は、ブルーで塗りつぶされた赤い円を描画するためには。 この特定のグラフィック イメージには、2 つの異なる色が含まれている、ため、ジョブを 2 つの手順で行う必要があります。 最初の手順は、円のアウトラインを描画するためにです。 色と線の他の特性を指定する作成し、初期化、 [ `SKPaint` ](xref:SkiaSharp.SKPaint)オブジェクト。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -98,17 +98,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.Style/)プロパティは、することを示します*ストローク*行 (この例では、円のアウトライン) ではなく*塗りつぶし*内部。 3 つのメンバー、 [ `SKPaintStyle` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPaintStyle/)列挙体は、次のとおり。
+[ `Style` ](xref:SkiaSharp.SKPaint.Style)プロパティは、することを示します*ストローク*行 (この例では、円のアウトライン) ではなく*塗りつぶし*内部。 3 つのメンバー、 [ `SKPaintStyle` ](xref:SkiaSharp.SKPaintStyle)列挙体は、次のとおり。
 
-- [`Fill`](https://developer.xamarin.com/api/field/SkiaSharp.SKPaintStyle.Fill/)
-- [`Stroke`](https://developer.xamarin.com/api/field/SkiaSharp.SKPaintStyle.Stroke/)
-- [`StrokeAndFill`](https://developer.xamarin.com/api/field/SkiaSharp.SKPaintStyle.StrokeAndFill/)
+- [`Fill`](xref:SkiaSharp.SKPaintStyle.Fill)
+- [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
+- [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
 既定値は `Fill` です。 線のストロークを描画し、内部を同じ色で塗りつぶすには、3 番目のオプションを使用します。
 
-設定、 [ `Color` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.Color/)プロパティ型の値を[ `SKColor`](https://developer.xamarin.com/api/type/SkiaSharp.SKColor/)します。 取得する方法の 1 つ、`SKColor`値は、Xamarin.Forms を変換することで、`Color`値を`SKColor`拡張メソッドを使用して値[ `ToSKColor`](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.Extensions.ToSKColor/p/Xamarin.Forms.Color/)します。 [ `Extensions` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.Extensions/)クラス、`SkiaSharp.Views.Forms`名前空間には、Xamarin.Forms と SkiaSharp 値の間で変換できるその他のメソッドが含まれています。
+設定、 [ `Color` ](xref:SkiaSharp.SKPaint.Color)プロパティ型の値を[ `SKColor`](xref:SkiaSharp.SKColor)します。 取得する方法の 1 つ、`SKColor`値は、Xamarin.Forms を変換することで、`Color`値を`SKColor`拡張メソッドを使用して値[ `ToSKColor`](SkiaSharp.Views.Forms.Extensions.ToSKColor*)します。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)クラス、`SkiaSharp.Views.Forms`名前空間には、Xamarin.Forms と SkiaSharp 値の間で変換できるその他のメソッドが含まれています。
 
-[ `StrokeWidth` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeWidth/)プロパティは、線の太さを示します。 ここで 25 ピクセルに設定されます。
+[ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)プロパティは、線の太さを示します。 ここで 25 ピクセルに設定されます。
 
 使用する`SKPaint`円を描画するオブジェクト。
 
@@ -123,9 +123,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 画面の左上隅に対する相対座標が指定されます。 X は、右側に Y 座標の増加がダウンして調整します。 グラフィックスに関する詳細については、多くの場合、(x, y) の数学的表記を使用するポイントを示すためにします。 (0, 0) のポイントが画面の左上隅とも呼ばれます、*原点*します。
 
-最初の 2 つの引数の`DrawCircle`円の中心の X と Y 座標を示します。 これらには、半分の幅と高さの表示画面の中央に円の中心を配置する表示画面が割り当てられます。 3 番目の引数は、円の半径を指定し、最後の引数は、`SKPaint`オブジェクト。
+最初の 2 つの引数の`DrawCircle`円の中心の X と Y 座標を示します。 これらは、ディスプレイ画面の中央に円の中心を配置して、画面の高さの半分の幅に割り当てられます。 3 番目の引数は、円の半径を指定し、最後の引数は、`SKPaint`オブジェクト。
 
-円の内部を塗りつぶすの 2 つのプロパティを変更することができます、`SKPaint`オブジェクトと呼び出し`DrawCircle`もう一度です。 このコードも取得する代替の方法を示して、`SKColor`からの多数のフィールドのいずれかの値、 [ `SKColors` ](https://developer.xamarin.com/api/type/SkiaSharp.SKColors/)構造体。
+円の内部を塗りつぶすの 2 つのプロパティを変更することができます、`SKPaint`オブジェクトと呼び出し`DrawCircle`もう一度です。 このコードも取得する代替の方法を示して、`SKColor`からの多数のフィールドのいずれかの値、 [ `SKColors` ](xref:SkiaSharp.SKColors)構造体。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -144,7 +144,12 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 
 プログラムを自分で実行するときに、電話またはグラフィックを描画する方法を確認するシミュレーターを横方向が有効にできます。 グラフィックが再描画する必要があるたびに、`PaintSurface`イベント ハンドラーが再度呼び出されます。
 
-`SKPaint`オブジェクトは、グラフィックスの描画プロパティのコレクションよりも少し。 これらのオブジェクトでは、非常に軽量です。 再利用できる`SKPaint`このプログラムでは、または複数を作成するオブジェクト`SKPaint`描画のさまざまな組み合わせのオブジェクト。 作成してこれらのオブジェクトの外部の初期化、`PaintSurface`して、イベント ハンドラーとして保存できますフィールド、ページ クラスにします。
+色のグラデーション、ビットマップのタイルでのグラフィカル オブジェクトをこともできます。 これらのオプションは、上のセクションで説明が[ **SkiaSharp シェーダー**](../effects/shaders/index.md)します。
+
+`SKPaint`オブジェクトは、グラフィックスの描画プロパティのコレクションよりも少し。 これらのオブジェクトは軽量です。 再利用できる`SKPaint`このプログラムでは、または複数を作成するオブジェクト`SKPaint`描画のさまざまな組み合わせのオブジェクト。 作成してこれらのオブジェクトの外部の初期化、`PaintSurface`して、イベント ハンドラーとして保存できますフィールド、ページ クラスにします。
+
+> [!NOTE]
+> `SKPaint`クラスを定義、 [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)グラフィックスのレンダリングにアンチエイリアシングを有効にします。 アンチエイリアシング通常、結果視覚的により滑らかなエッジは、このプロパティに設定する可能性がありますので`true`のほとんどで、`SKPaint`オブジェクト。 このプロパティは、わかりやすくするためのために、_いない_のほとんどのサンプル ページで設定します。
 
 円のアウトラインの幅が 25 ピクセルとして指定されていますが&mdash;または 4 分の 1 円の半径&mdash;幅が狭いほど、ように見え、する正当な理由がある: します線の幅の半分は、青い円によって隠されています。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
 
@@ -153,5 +158,5 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

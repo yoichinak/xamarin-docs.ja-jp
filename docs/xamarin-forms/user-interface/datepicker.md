@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7917510e910223fc6ca276bf47b1878c19557a38
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994927"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-_ユーザーが日付を選択できる Xamarin.Forms のビュー_
+_ユーザーが日付を選択できる Xamarin.Forms のビュー。_
 
 Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker)プラットフォームの日付の選択コントロールを呼び出すし、ユーザーは日付を選択できます。 `DatePicker` 8 つのプロパティを定義します。
 
@@ -184,6 +184,9 @@ public partial class MainPage : ContentPage
 いずれかをタップすると、`DatePicker`が表示されますが、プラットフォームの日付の選択を呼び出します。 3 つのプラットフォームで非常にさまざまな方法は、この日付の選択の実装が、それぞれのアプローチは、そのプラットフォームのユーザーにとって馴染み深い。
 
 [![日付間の日数を選択](datepicker-images/DaysBetweenDatesSelect.png "の日付間の日数を選択")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "の日付間の日数を選択します")
+
+> [!TIP]
+> Android では、`DatePicker`ダイアログをオーバーライドすることでカスタマイズできる、`CreateDatePickerDialog`カスタム レンダラーのメソッド。 これにより、たとえば、ダイアログ ボックスに追加するその他のボタン。
 
 2 つの日付を選択した後、アプリケーションは、それらの日付間の日数を表示します。
 

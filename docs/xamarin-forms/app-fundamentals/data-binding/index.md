@@ -6,12 +6,12 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/16/2018
-ms.openlocfilehash: 60bf0bdc5f1a4472dfd12424c3cc0375d3f34c24
-ms.sourcegitcommit: 11c1df7594064e4e141470e092e55cc50c138068
+ms.date: 10/23/2018
+ms.openlocfilehash: def97ab77781c7a7156d4c4178097184614f3e8b
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35240354"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
@@ -64,6 +64,10 @@ Xamarin.Forms アプリケーションの通常と呼ばれる複数のユーザ
 ## <a name="the-command-interfacecommandingmd"></a>[コマンド インターフェイス](commanding.md)
 
 実装、`Command`データ バインドを持つプロパティです。
+
+## <a name="compiled-bindingscompiled-bindingsmd"></a>[コンパイル済みのバインド](compiled-bindings.md)
+
+データ バインディングのパフォーマンスを向上させるには、コンパイル済みのバインドを使用します。
 
 ## <a name="related-links"></a>関連リンク
 

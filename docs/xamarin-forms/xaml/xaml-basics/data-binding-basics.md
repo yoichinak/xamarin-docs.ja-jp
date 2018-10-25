@@ -1,40 +1,40 @@
 ---
-title: パート 4 です。 データのバインドの基礎
-description: データ バインディングを使用すると、変更を他のいずれかで変更できるようにリンクする 2 つのオブジェクトのプロパティ。
+title: パート 4 です。 データ バインディングの基礎
+description: データ バインドでは、ニォュォケォネェャ変ェ、他のいずれかが変更されるようにリンクする 2 つのオブジェクトのプロパティを許可します。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ee6571012764e7578fa9ee03493e9f96aa7b45eb
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35245951"
 ---
-# <a name="part-4-data-binding-basics"></a>パート 4 です。 データのバインドの基礎
+# <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
-_データ バインディングを使用すると、変更を他のいずれかで変更できるようにリンクする 2 つのオブジェクトのプロパティ。これは非常に重要なツールであり、すべてコードでのデータ バインドを定義する XAML 提供ショートカットと利便性。その結果、Xamarin.Forms で最も重要なマークアップ拡張機能の 1 つはバインディングします。_
+_データ バインドでは、ニォュォケォネェャ変ェ、他のいずれかが変更されるようにリンクする 2 つのオブジェクトのプロパティを許可します。これは非常に貴重なツールでは、およびショートカットと利便性全体をコードでは、データ バインドを定義できます、XAML を提供します。その結果、Xamarin.Forms で最も重要なマークアップ拡張機能の 1 つはバインドです。_
 
 ## <a name="data-bindings"></a>データ バインディング
 
-データ バインディングと呼ばれる 2 つのオブジェクトのプロパティを接続する、*ソース*と*ターゲット*です。 2 つの手順が必要なコードでは、:`BindingContext`ターゲット オブジェクトのプロパティは、ソース オブジェクトに設定する必要があります、`SetBinding`メソッド (と共にで頻繁に使用、`Binding`クラス) のプロパティにバインドする対象のオブジェクトで呼び出す必要がありますソース オブジェクトのプロパティをオブジェクトです。
+データ バインドと呼ばれる 2 つのオブジェクトのプロパティを接続、*ソース*と*ターゲット*します。 コードでは、2 つの手順が必要です。`BindingContext`ソース オブジェクトにターゲット オブジェクトのプロパティを設定する必要があります、`SetBinding`メソッド (と組み合わせて使用して多くの場合、`Binding`クラス) プロパティをバインドする対象のオブジェクトで呼び出す必要がありますソース オブジェクトのプロパティにオブジェクト。
 
-ターゲット プロパティは、バインド可能なプロパティは、ターゲット オブジェクトから派生しなければならないことを意味する必要があります`BindableObject`です。 Xamarin.Forms のオンライン ドキュメントでは、どのプロパティがバインド可能なプロパティを示します。 プロパティ`Label`など`Text`バインド可能なプロパティに関連付けられた`TextProperty`です。
+ターゲット プロパティは、バインド可能なプロパティは、ターゲット オブジェクトをする必要がありますから派生させることである必要があります`BindableObject`します。 Xamarin.Forms のオンライン ドキュメントでは、どのプロパティは、バインド可能なプロパティを示します。 プロパティの`Label`など`Text`バインド可能なプロパティに関連付けられた`TextProperty`します。
 
-マークアップでは、コードでは、必要な 2 つの手順も実行する必要がある点を除いて、`Binding`マークアップ拡張機能に代わる、`SetBinding`を呼び出すと、`Binding`クラスです。
+マークアップでは、コードでは、必要な 2 つの手順も実行する必要がある点を除いて、`Binding`のマークアップ拡張機能に代わる、`SetBinding`を呼び出すと、`Binding`クラス。
 
-ただし、XAML のデータ バインディングを定義するときにも設定するいくつかの方法、`BindingContext`のターゲット オブジェクト。 使用する、分離コード ファイルから設定されている場合があります、`StaticResource`または`x:Static`マークアップ拡張機能とのコンテンツとしても`BindingContext`プロパティ要素タグ。
+ただし、XAML でデータ バインドを定義する場合があります設定する複数の方法、`BindingContext`のターゲット オブジェクト。 使用する、分離コード ファイルから設定されても、`StaticResource`または`x:Static`マークアップ拡張機能とのコンテンツとしても`BindingContext`プロパティ要素タグ。
 
-バインディングは、最も頻繁に使用 MVVM (モデル-ビュー-ViewModel) アプリケーションのアーキテクチャの実現の通常の基になるデータ モデルと、プログラムのビジュアルを接続するで説明したよう[パート 5 です。MVVM をデータ バインドから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)が、その他のシナリオが可能です。
+バインド最もよく使用される MVVM (モデル-ビュー-ビューモデル) アプリケーション アーキテクチャの実現化では、通常、基になるデータ モデルをプログラムのビジュアルを接続するで説明したよう[パート 5 です。MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)が、その他のシナリオが考えられます。
 
-## <a name="view-to-view-bindings"></a>ビューをバインド
+## <a name="view-to-view-bindings"></a>ビューからビューへのバインド
 
-リンクは同じページ上の 2 つのビューのプロパティへのデータ バインディングを定義することができます。 この場合、設定、`BindingContext`ターゲット オブジェクトを使用して、、`x:Reference`マークアップ拡張機能です。
+リンクの同じページ上の 2 つのビューのプロパティへのデータ バインディングを定義できます。 この場合、設定、`BindingContext`ターゲット オブジェクトを使用して、`x:Reference`マークアップ拡張機能。
 
-含む XAML ファイルをここでは、`Slider`と 2 つ`Label`だけ回転うちの 1 つのビュー、`Slider`値とが表示されます、`Slider`値。
+含む XAML ファイルをここでは、`Slider`と 2 つ`Label`ビュー、うちの 1 つは、回転、`Slider`値とが表示されます、`Slider`値。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -65,9 +65,9 @@ _データ バインディングを使用すると、変更を他のいずれか
 </ContentPage>
 ```
 
-`Slider`が含まれています、 `x:Name` 2 によって参照される属性`Label`ビューを使用して、`x:Reference`マークアップ拡張機能です。
+`Slider`が含まれています、 `x:Name` 2 によって参照される属性`Label`ビューを使用して、`x:Reference`マークアップ拡張機能。
 
-`x:Reference`という名前のプロパティ バインド拡張機能を定義`Name`をここでは、参照される要素の名前に設定する`slider`です。 ただし、`ReferenceExtension`を定義するクラス、`x:Reference`マークアップ拡張機能も定義、`ContentProperty`属性`Name`、明示的に必要なことができないためです。 さまざまな、についてのみ、最初`x:Reference`が含まれています"名前 ="しますが、2 つ目は使用できません。
+`x:Reference`という名前のプロパティを定義するバインド拡張機能`Name`ここで参照先の要素の名前に設定する`slider`します。 ただし、`ReferenceExtension`クラスを定義する、`x:Reference`マークアップ拡張機能にも定義されています、`ContentProperty`属性`Name`、明示的に必要ないことを意味します。 、さまざまな最初の`x:Reference`が含まれています"名前 ="しますが、2 つ目は使用できません。
 
 ```csharp
 BindingContext="{x:Reference Name=slider}"
@@ -75,7 +75,7 @@ BindingContext="{x:Reference Name=slider}"
 BindingContext="{x:Reference slider}"
 ```
 
-`Binding`自体のマークアップ拡張機能は同じようにいくつかのプロパティを持つことができます、`BindingBase`と`Binding`クラスです。 `ContentProperty`の`Binding`は`Path`、ですが、"パス ="パスが最初の項目である場合は、マークアップ拡張機能の一部を省略するとことができます、`Binding`マークアップ拡張機能です。 最初の例は、"パス ="しますが、2 番目の例では、指定を省略します。
+`Binding`マークアップ拡張機能自体と同じようにいくつかのプロパティを持つことができます、`BindingBase`と`Binding`クラス。 `ContentProperty`の`Binding`は`Path`が、"パス ="パスが最初の項目である場合、マークアップ拡張機能の一部を省略できます、`Binding`マークアップ拡張機能。 最初の例では"パス ="しますが、2 番目の例で省略されます。
 
 ```csharp
 Rotation="{Binding Path=Value}"
@@ -83,16 +83,16 @@ Rotation="{Binding Path=Value}"
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-プロパティは、すべて 1 つの直線上に存在できます。 または複数の行に区切られました。
+プロパティは、1 行で指定できます。 または複数行に分けられます。
 
 ```csharp
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-便利な処理を行います。
+便利な操作を行います。
 
-通知、`StringFormat`プロパティの 1 秒間`Binding`マークアップ拡張機能です。 Xamarin.Forms でバインドは行われず、暗黙の型変換して型コンバーターを提供または使用する必要がありますを文字列として、非文字列オブジェクトを表示する必要がある場合`StringFormat`です。 背後では、静的な`String.Format`メソッドが実装に使用される`StringFormat`です。 問題がある可能性がある、.NET の書式指定には、マークアップ拡張機能を区切るためにも使用される、中かっこが含まれまるためです。 これには、XAML パーサーの混乱を招く危険性が作成されます。 防ぐには、するには、単一引用符で全体の書式指定文字列を配置します。
+通知、`StringFormat`プロパティの 1 秒間`Binding`マークアップ拡張機能。 Xamarin.Forms でのバインドは行いません、暗黙的な型変換と型コンバーターを提供または使用する必要がありますを文字列として文字列以外のオブジェクトを表示する必要がある場合`StringFormat`します。 背後では、静的な`String.Format`メソッドを実装するために使用`StringFormat`します。 .NET 書式設定の仕様はマークアップ拡張機能を区切るためにも使用すると、中かっこも含まれるので可能性のある問題です。 これには、XAML パーサーの混乱を招く危険性が作成されます。 これを避けるには、単一引用符で書式設定文字列全体を配置します。
 
 ```csharp
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
@@ -100,22 +100,22 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 実行中のプログラムを次に示します。
 
-[![](data-binding-basics-images/sliderbinding.png "ビューをバインド")](data-binding-basics-images/sliderbinding-large.png#lightbox "ビューをバインド ")
+[![](data-binding-basics-images/sliderbinding.png "ビューからビューへのバインド")](data-binding-basics-images/sliderbinding-large.png#lightbox "ビューからビューへのバインド ")
 
 ## <a name="the-binding-mode"></a>バインド モード
 
-1 つのビューには、複数のプロパティにデータ バインドがあります。 ただし、各ビューで保持できる 1 つだけ`BindingContext`そのビューで複数のデータ バインディングでは、すべて必要がありますので、同じオブジェクトのプロパティを参照します。
+1 つのビューには、そのプロパティのいくつかのデータ バインドをことができます。 ただし、各ビューで保持できる 1 つだけ`BindingContext`そのビューで複数のデータ バインドでは、すべて必要がありますので、同じオブジェクトのプロパティを参照します。
 
-この問題をしたり、他のソリューションに、`Mode`のメンバーに設定されているプロパティ、`BindingMode`列挙。
+この問題やその他の問題の解決策では、`Mode`プロパティのメンバーに設定されている、`BindingMode`列挙体。
 
 - `Default`
-- `OneWay` -の値は、ソースからターゲットに転送
-- `OneWayToSource` 値が、ターゲットからソースに転送
+- `OneWay` -値は、ソースからターゲットに転送されます
+- `OneWayToSource` -値は、ターゲットからソースに転送されます
 - `TwoWay` — ソースとターゲット間の値に両方の方法が転送されます。
 
-次のプログラムがの 1 つの一般的な用途を示す、`OneWayToSource`と`TwoWay`バインディング モード。 次の 4 つ`Slider`ビューがコントロールするものでは、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、`Label`です。 最初は見えますとしてのこれら 4 つのプロパティ、`Label`各が設定されているために、データ バインドのターゲットをする必要があります、`Slider`です。 ただし、`BindingContext`の`Label`1 つのオブジェクトを指定でき、4 つの異なるスライダーがあります。
+次のプログラムの 1 つの一般的な用途を示します、`OneWayToSource`と`TwoWay`バインディング モード。 4 つ`Slider`ビューは、コントロール、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティを`Label`します。 最初、見えますとしてこれら 4 つのプロパティの`Label`各によって設定されるため、データ バインドのターゲットがあります、`Slider`します。 ただし、`BindingContext`の`Label`は 1 つだけのオブジェクトとは異なる 4 つのスライダーがあります。
 
-そのため、すべてのバインディングで設定されて一見後方方法:`BindingContext`の 4 つのスライダーのそれぞれに設定されている、 `Label`、しにバインドを設定、`Value`スライダーのプロパティです。 使用して、`OneWayToSource`と`TwoWay`モードの場合、これら`Value`プロパティは、ソースのプロパティを設定できます、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、 `Label`:
+そのため、すべてのバインディング設定一見下位方法:`BindingContext`の 4 つのスライダーのそれぞれに設定されて、`Label`とに、バインドが設定されて、`Value`スライダーのプロパティ。 使用して、`OneWayToSource`と`TwoWay`モードでは、これら`Value`プロパティは、ソースのプロパティを設定できます、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、 `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -194,25 +194,28 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 </ContentPage>
 ```
 
-うち 3 つのバインディング、`Slider`ビューは`OneWayToSource`つまりを`Slider`値のプロパティで変更すると、その`BindingContext`、これは、`Label`という名前`label`です。 これらの 3 つ`Slider`ビューへの変更が発生する、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、`Label`です。
+3 つのバインド、`Slider`ビューは`OneWayToSource`つまりを`Slider`値のプロパティを変更すると、その`BindingContext`、これは、`Label`という名前`label`します。 これらの 3 つ`Slider`ビューへの変更が発生する、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、`Label`します。
 
-ただし、バインドを`Scale`プロパティは`TwoWay`します。 これは、ため、`Scale`プロパティには、既定値を使用して、1 は、`TwoWay`原因のバインド、`Slider`初期値を 0 ではなく、1 に設定してです。 バインディングが場合`OneWayToSource`、`Scale`プロパティから 0 に初期設定は、`Slider`既定値です。 `Label`見えない、およびユーザーには混乱を招く可能性があります。
+ただし、バインド、`Scale`プロパティは`TwoWay`します。 これは、ため、`Scale`プロパティを使用して、1 つの既定値を持つ、`TwoWay`バインド エラーの原因、`Slider`初期値を 0 ではなく 1 に設定しています。 場合、そのバインドが`OneWayToSource`、`Scale`プロパティから 0 に初期設定は、`Slider`既定値。 `Label`見えない、およびユーザーにによって混乱が発生する可能性があります。
 
- [![](data-binding-basics-images/slidertransforms.png "旧バージョンとのバインド")](data-binding-basics-images/slidertransforms-large.png#lightbox "逆方向のバインド")
+ [![](data-binding-basics-images/slidertransforms.png "下位のバインド")](data-binding-basics-images/slidertransforms-large.png#lightbox "下位のバインド")
+
+ > [!NOTE]
+ > [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラスもあります[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)と[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)スケールのプロパティ、 `VisualElement` x 軸と y 軸にそれぞれします。
 
 ## <a name="bindings-and-collections"></a>バインドとコレクション
 
-XAML とデータ バインディングは、テンプレートのより強力な紹介 nothing`ListView`です。
+強力な XAML とデータ バインディング、テンプレート化されたより紹介 nothing`ListView`します。
 
-`ListView` 定義、`ItemsSource`型のプロパティ`IEnumerable`、そのコレクションに項目を表示します。 これらの項目は、任意の型のオブジェクトを指定できます。 既定では、`ListView`を使用して、`ToString`そのアイテムを表示するには、各項目のメソッドです。 たい部分、つまり場合もありますが、多くの場合、`ToString`オブジェクトの完全修飾クラス名のみを返します。
+`ListView` 定義、`ItemsSource`型のプロパティ`IEnumerable`、そのコレクション内の項目を表示します。 これらのアイテムには、任意の型のオブジェクトを指定できます。 既定では、`ListView`を使用して、`ToString`その項目を表示するには、各項目のメソッド。 こそが目的の場合によっては、多くの場合、`ToString`オブジェクトの完全修飾クラス名のみを返します。
 
-ただし、内の項目、`ListView`コレクションを使用して、希望方法が表示されることができます、*テンプレート*から派生するクラスが含まれます`Cell`です。 各項目のテンプレートが複製されると、 `ListView`、され、テンプレートに設定されているデータ バインディングは、個々 のクローンに転送します。
+ただし、内の項目、`ListView`コレクションを使用するとし、希望する方法を表示できる、*テンプレート*から派生したクラスが含まれます`Cell`します。 テンプレートは各項目の複製、 `ListView`、され、テンプレートに設定されているデータ バインドは、個々 のクローンに転送します。
 
-非常に多くの場合は、カスタムのセルを使用してこれらの項目を作成するおく、`ViewCell`クラスです。 このプロセスは、コードでは、ある程度乱れたが XAML では非常に簡単です。
+カスタムのセルを使用してこれらの項目を作成したい非常に多くの場合、`ViewCell`クラス。 このプロセスがコードでは、やや面倒ですが、XAML でが非常に簡単です。
 
-含まれて、XamlSamples プロジェクトと呼ばれるクラス`NamedColor`です。 各`NamedColor`オブジェクトが持つ`Name`と`FriendlyName`型のプロパティ`string`、および`Color`型のプロパティ`Color`です。 さらに、`NamedColor`型の 141 静的な読み取り専用のフィールドを持つ`Color`、Xamarin.Forms で定義された色に対応する`Color`クラスです。 静的コンス トラクターを作成、`IEnumerable<NamedColor>`を含むコレクション`NamedColor`オブジェクトをこれらの静的フィールドに対応して、そのパブリック静的に割り当てられます`All`プロパティです。
+プロジェクトがという名前のクラスを XamlSamples に含まれる`NamedColor`します。 各`NamedColor`オブジェクトが`Name`と`FriendlyName`型のプロパティ`string`、および`Color`型のプロパティ`Color`します。 さらに、`NamedColor`型の 141 静的読み取り専用のフィールドを持つ`Color`、Xamarin.Forms で定義された色に対応する`Color`クラス。 静的コンス トラクターを作成、`IEnumerable<NamedColor>`を含むコレクション`NamedColor`オブジェクトをこれらの静的フィールドに対応して、そのパブリック静的に割り当てられます`All`プロパティ。
 
-設定する静的`NamedColor.All`プロパティを`ItemsSource`の`ListView`やすいを使用して、`x:Static`マークアップ拡張機能。
+静的な設定`NamedColor.All`プロパティを`ItemsSource`の`ListView`簡単を使用して、`x:Static`マークアップ拡張機能。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -226,13 +229,13 @@ XAML とデータ バインディングは、テンプレートのより強力�
 </ContentPage>
 ```
 
-型の真の項目が結果の表示を確立`XamlSamples.NamedColor`:
+型の項目が本当には、結果の表示の確立`XamlSamples.NamedColor`:
 
-[![](data-binding-basics-images/listview1.png "コレクションへのバインド")](data-binding-basics-images/listview1-large.png#lightbox "コレクションへのバインド")
+[![](data-binding-basics-images/listview1.png "コレクションへのバインディング")](data-binding-basics-images/listview1-large.png#lightbox "コレクションへのバインディング")
 
-多くの情報ではありませんが、`ListView`はスクロール可能なと選択可能です。
+多くの情報ではありませんが、`ListView`スクロールと選択可能なのです。
 
-項目のテンプレートを定義するにしておく離れて、`ItemTemplate`プロパティ要素としてのプロパティに設定し、 `DataTemplate`、どの参照、`ViewCell`です。 `View`のプロパティ、`ViewCell`各項目を表示する 1 つまたは複数のビューのレイアウトを定義することができます。 単純な例を次に示します。
+項目のテンプレートを定義するために分割する、`ItemTemplate`プロパティ要素としてのプロパティに設定し、 `DataTemplate`、どの参照、 `ViewCell`。 `View`のプロパティ、`ViewCell`各項目を表示する 1 つまたは複数のビューのレイアウトを定義することができます。 簡単な例を次に示します。
 
 ```xaml
 <ListView ItemsSource="{x:Static local:NamedColor.All}">
@@ -248,11 +251,11 @@ XAML とデータ バインディングは、テンプレートのより強力�
 </ListView>
 ```
 
-`Label`要素に設定されて、`View`のプロパティ、`ViewCell`です。 (、`ViewCell.View`タグ不要なため、`View`プロパティのコンテンツ プロパティは、 `ViewCell`)。このマークアップを表示、`FriendlyName`の各プロパティ`NamedColor`オブジェクト。
+`Label`要素に設定されて、`View`のプロパティ、`ViewCell`します。 (、`ViewCell.View`ため、タグが必要ありません、`View`プロパティは、コンテンツのプロパティの`ViewCell`)。このマークアップの表示、`FriendlyName`の各プロパティ`NamedColor`オブジェクト。
 
-[![](data-binding-basics-images/listview2.png "DataTemplate を含むコレクションへのバインド")](data-binding-basics-images/listview2-large.png#lightbox "DataTemplate を含むコレクションへのバインド")
+[![](data-binding-basics-images/listview2.png "DataTemplate でコレクションへのバインディング")](data-binding-basics-images/listview2-large.png#lightbox "DataTemplate でコレクションへのバインディング")
 
-ずっといいです。 今すぐ必要な詳細については、実際の色と項目テンプレートを一新します。 このテンプレートをサポートするには、いくつかの値とオブジェクトをページのリソース ディクショナリで定義されています。
+ずっといいです。 後のみが必要なは、詳細については、実際の色と項目テンプレートの見栄えをよくです。 このテンプレートをサポートするには、いくつかの値とオブジェクトをページのリソース ディクショナリで定義されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -324,13 +327,13 @@ XAML とデータ バインディングは、テンプレートのより強力�
 </ContentPage>
 ```
 
-使用に注意してください`OnPlatform`のサイズを定義する、`BoxView`との高さ、`ListView`行です。 3 つすべてのプラットフォームの値は、同じですが、マークアップがの表示を微調整するその他の値に合わせて変更簡単に可能性があります。
+使用に注意してください`OnPlatform`のサイズを定義する、`BoxView`との高さ、`ListView`行。 3 つすべてのプラットフォームの値が同じですが、マークアップが表示を微調整するその他の値に作り変える簡単に可能性があります。
 
-## <a name="binding-value-converters"></a>バインディングの値コンバーター
+## <a name="binding-value-converters"></a>値コンバーターのバインディング
 
-前の**ListView デモ**XAML ファイルは、個人、表示`R`、 `G`、および`B`、Xamarin.Forms のプロパティ`Color`構造体。 これらのプロパティが型`double`と 0 ~ 1 の範囲です。 16 進数値を表示するには場合、単には使用できません`StringFormat`"X2"仕様を書式設定にします。 整数およびだけでなくにのみ機能する、`double`値は 255 で乗算する必要があります。
+前の**ListView デモ**XAML ファイルでは、個人を表示します。 `R`、 `G`、と`B`、Xamarin.Forms のプロパティ`Color`構造体。 これらのプロパティが型`double`および 0 ~ 1 の範囲。 単に使用できません、16 進値を表示する場合は、 `StringFormat` "X2"の仕様を書式設定にします。 さらに、整数の場合にのみ機能する、`double`値は 255 で乗算する必要があります。
 
-この小さな問題が解決、*値コンバーター*もという、*バインディング コンバーター*です。 これは、クラスを実装するクラス、`IValueConverter`という 2 つのメソッドがあることを意味するインターフェイス`Convert`と`ConvertBack`です。 `Convert`メソッドは値がソースからターゲットに転送されるとき、`ConvertBack`メソッドが呼び出されて転送のターゲットからソース`OneWayToSource`または`TwoWay`バインド。
+このささいな問題が解決を*値コンバーター*も呼ばれ、*バインディング コンバーター*します。 これは、実装するクラス、`IValueConverter`という 2 つのメソッドがあることを意味するインターフェイスを`Convert`と`ConvertBack`します。 `Convert`値がソースからターゲットに転送されたときに、メソッドが呼び出された、`ConvertBack`メソッドが転送でソース ターゲットからと呼ばれる`OneWayToSource`または`TwoWay`バインド。
 
 ```csharp
 using System;
@@ -366,17 +369,17 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack`のみであるため、バインド方法の 1 つのソースからターゲットに、メソッドがこのプログラムでロールを再生できません。
+`ConvertBack`のみであるため、バインド方法の 1 つのソースからターゲットに、メソッドがこのプログラムでロールを再生されません。
 
-バインディングとバインド コンバーターを参照して、`Converter`プロパティです。 バインディングのコンバーターで指定されたパラメーターも使用できます、`ConverterParameter`プロパティです。 一部の汎用性のこれは、乗数を指定する方法。 バインディング コンバーター チェックの有効なコンバーター パラメーター`double`値。
+バインディングのバインディング コンバーターを参照して、`Converter`プロパティ。 バインディング コンバーターに指定したパラメーターを受け付けることも、`ConverterParameter`プロパティ。 いくつかの汎用性の乗数を指定する方法になります。 バインディング コンバーターの有効なコンバーターのパラメーターを確認します。`double`値。
 
-コンバーターがリソース ディクショナリでインスタンス化されるため、複数のバインディング間で共有することができます。
+コンバーターはリソース ディクショナリにインスタンス化されるので、複数のバインドの間で共有できます。
 
 ```xaml
 <local:DoubleToIntConverter x:Key="intConverter" />
 ```
 
-3 つのデータ バインディングは、この単一のインスタンスを参照します。 注意して、`Binding`マークアップ拡張機能が含まれていますが、埋め込み`StaticResource`マークアップ拡張機能。
+3 つのデータ バインドでは、この 1 つのインスタンスを参照します。 なお、`Binding`マークアップ拡張機能が含まれていますが、埋め込み`StaticResource`マークアップ拡張機能。
 
 ```xaml
 <Label Text="{Binding Color.R,
@@ -387,15 +390,15 @@ namespace XamlSamples
 
 結果を次に示します。
 
-[![](data-binding-basics-images/listview3.png "DataTemplate とコンバーター コレクションへのバインド")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate とコンバーター コレクションへのバインド")
+[![](data-binding-basics-images/listview3.png "DataTemplate とコンバーターでコレクションへのバインディング")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate とコンバーターでコレクションへのバインディング")
 
-`ListView`は特定の手順を実行する場合にのみ、基になるデータで動的に発生した変更の処理に非常に高度なです。 項目のコレクションに割り当てられている場合、`ItemsSource`のプロパティ、`ListView`実行時に変更 — に項目を追加できる場合は、またはコレクションから削除する: を使用して、`ObservableCollection`これらのアイテムのクラスです。 `ObservableCollection` 実装する、`INotifyCollectionChanged`インターフェイス、および`ListView`のハンドラーをインストール、`CollectionChanged`イベント。
+`ListView`がいくつかの手順を実行する場合にのみ、基になるデータで動的に発生した変更の処理では非常に洗練します。 項目のコレクションに割り当てられている場合、`ItemsSource`のプロパティ、`ListView`ランタイム中の変更-に項目を追加できる場合は、またはコレクションから削除する: を使用して、`ObservableCollection`これらの項目のクラス。 `ObservableCollection` 実装して、`INotifyCollectionChanged`インターフェイス、および`ListView`のハンドラーをインストール、`CollectionChanged`イベント。
 
-実行時に、項目自体のプロパティを変更する場合、コレクション内の項目を実装する必要があります、`INotifyPropertyChanged`インターフェイスとシグナル値の変更にプロパティを使用して、`PropertyChanged`イベント。 これは、このシリーズの次の部分で示されて[パート 5 です。MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)です。
+実行時に、項目自体のプロパティを変更するかどうかは、コレクション内の項目を実装する必要があります、`INotifyPropertyChanged`を使用してプロパティ値に対する変更のインターフェイスとシグナル、`PropertyChanged`イベント。 これは、説明については、このシリーズの次の部分の[パート 5 です。MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)します。
 
 ## <a name="summary"></a>まとめ
 
-データ バインディングは、プロパティ ページ内の 2 つのオブジェクト間、または visual オブジェクト間のリンクと、データを基になる強力なメカニズムを提供します。 アプリケーションでは、データ ソースに関する作業を開始、一般的なアプリケーション アーキテクチャ パターン開始の有効なパラダイムとして出現します。 これは、「[パート 5 です。MVVM をデータ バインドから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)です。
+データ バインドでは、プロパティ ページ内の 2 つのオブジェクト間、またはビジュアル オブジェクト間のリンクと、基になるデータの強力なメカニズムを提供します。 便利なパラダイムとして登場する一般的なアプリケーション アーキテクチャ パターンを開始、アプリケーションのデータ ソースでの作業の開始時にします。 これについては[パート 5 です。MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)します。
 
 
 
@@ -403,6 +406,6 @@ namespace XamlSamples
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 - [第 1 部XAML (サンプル) の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [第 2 部重要なは、XAML 構文 (サンプル)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [第 2 部重要な XAML 構文 (サンプル)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部XAML マークアップ拡張機能 (サンプル)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [第 5 部MVVM (サンプル) へのデータ バインディング](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [第 5 部MVVM (サンプル) へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

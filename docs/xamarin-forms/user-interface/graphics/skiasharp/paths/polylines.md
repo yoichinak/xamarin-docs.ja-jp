@@ -1,38 +1,44 @@
 ---
 title: 多角形やパラメーターの式
-description: この記事を任意の行を表示するために使用 SkiaSharp を定義する方法でパラメーターの式について説明し、サンプル コードを示します。
+description: この記事では、方法をレンダリングする SkiaSharp を使用するいずれかの行パラメーターの式を定義でき、サンプル コードでこのことについて説明します。
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d5896a9d4f1aac2ea90d544d638e4adf68d24140
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615796"
 ---
 # <a name="polylines-and-parametric-equations"></a>多角形やパラメーターの式
 
 _SkiaSharp を使用して、パラメーターの式を定義できる任意の行をレンダリングするには_
 
-このガイドの後半で、さまざまな方法が紹介する`SKPath`曲線の特定の種類を表示するために定義します。 ただしで直接サポートされていない曲線を描画する必要があります`SKPath`します。 このような場合は、数学的に定義できる任意の曲線を描画するためにポリライン (接続されている行のコレクション) を使用することができます。 行を十分に小さい行うし、結果が多数が不十分曲線のようになります。 場合、 このスパイラルでは、実際に 3,600 の短い行を示します。
+[ **SkiaSharp の曲線とパス**](../curves/index.md)セクションのこのガイドでは、さまざまな方法がわかりますを[ `SKPath` ](xref:SkiaSharp.SKPath)曲線の特定の種類を表示するために定義します。 ただしで直接サポートされていない曲線を描画する必要があります`SKPath`します。 このような場合は、数学的に定義できる任意の曲線を描画するためにポリライン (接続されている行のコレクション) を使用することができます。 行を十分に小さい行うし、結果が多数が不十分曲線のようになります。 場合、 このスパイラルでは、実際に 3,600 の短い行を示します。
 
 ![](polylines-images/spiralexample.png "スパイラル")
 
 通常、パラメーターの式のペアの観点から曲線を定義することをお勧めします。 これは、X および Y 座標の方程式とも呼ばれる 3 番目の変数に依存して`t`時間。 たとえば、次のパラメーターの式が 1 の中心点 (0, 0) の半径の円を定義の*t* 0 ~ 1。
 
- x = cos(2πt) y = sin(2πt)
+x cos(2πt) を =
+
+y = sin(2πt)
 
  Radius を 1 より大きい、する場合は、半径の正弦と余弦の値を乗算し、center を別の場所に移動する必要がある場合は、これらの値を追加します。
 
- x = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
+x = xCenter + radius·cos(2πt)
+
+y = yCenter + radius·sin(2πt)
 
 水平および垂直方向の軸平行に楕円の半径の 2 つが含まれます。
 
-x = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
+x = xCenter + xRadius·cos(2πt)
+
+y = yCenter + yRadius·sin(2πt)
 
 SkiaSharp の同等のコードを配置して、ループをさまざまなポイントを計算し、それらをパスに追加します。 SkiaSharp の次のコード作成、`SKPath`楕円を表示画面を読み込むためのオブジェクト。 ループは、直接 360 度を循環します。 中心が半分の幅と、表示画面の高さと 2 つの半径をそのためには。
 
@@ -116,5 +122,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
