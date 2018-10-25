@@ -6,12 +6,12 @@ ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/26/2018
+ms.openlocfilehash: 3ae2fb8110b7e0a5c6c85c489897acc1a03be8d8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38997053"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
@@ -35,13 +35,16 @@ Xamarin.Forms には、組み込みのベクター グラフィックス シス�
 
 ## <a name="setting-boxview-color-and-size"></a>設定 BoxView 色とサイズ
 
-非常に多くの場合、次の 3 つのプロパティを設定します`BoxView`:
+通常の次のプロパティを設定します`BoxView`:
 
 - [`Color`](xref:Xamarin.Forms.BoxView.Color) その色を設定します。
+- [`CornerRadius`](xref:Xamarin.Forms.BoxView.CornerRadius) その角の半径を設定します。
 - [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 幅を設定する、`BoxView`デバイスに依存しない単位。
 - [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 高さを設定する、`BoxView`します。
 
 `Color`プロパティの型は`Color`; に、プロパティを設定できます`Color`値の 141 静的読み取り専用フィールドを含む名前付きの色からアルファベット順に至るまで`AliceBlue`に`YellowGreen`します。
+
+`CornerRadius`プロパティの型は[ `CornerRadius` ](xref:Xamarin.Forms.CornerRadius); プロパティは、1 つに設定できます`double`角の半径の値を uniform または`CornerRadius`4 で定義された構造体`double`に適用される値左、右上、左、下の右下、`BoxView`します。
 
 `WidthRequest`と`HeightRequest`プロパティは、場合のみ、役割を果たす、`BoxView`は*制約のない*レイアウトにします。 これは、場合、レイアウト コンテナーは、子 's、たとえば、する場合のサイズを把握する必要がある場合、`BoxView`で自動サイズ設定するセルの子である、`Grid`レイアウト。 A`BoxView`でないことも制限されたときにその`HorizontalOptions`と`VerticalOptions`プロパティが以外の値に設定されて`LayoutOptions.Fill`します。 場合、 `BoxView` 、制約がありませんが、`WidthRequest`と`HeightRequest`プロパティが設定されていない、し、幅または高さが 40 単位、またはモバイル デバイスに約 1/4 インチの既定値に設定します。
 
@@ -58,6 +61,7 @@ A `BoxView` 1 つのディメンションでは制限し、制約、それ以外
              x:Class="BasicBoxView.MainPage">
 
     <BoxView Color="CornflowerBlue"
+             CornerRadius="10"
              WidthRequest="160"
              HeightRequest="160"
              VerticalOptions="Center"

@@ -6,12 +6,12 @@ ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 558a05b5fdc4c4f08194b708de886bca342dd860
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/15/2018
+ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38995415"
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService の概要
@@ -20,7 +20,10 @@ ms.locfileid: "38995415"
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 共有コードからプラットフォーム固有の機能を呼び出すアプリを許可します。 この機能により、ネイティブ アプリで実行できるも何もする Xamarin.Forms アプリです。
 
-`DependencyService` 依存関係リゾルバーです。 実際には、インターフェイスが定義されていると`DependencyService`さまざまなプラットフォームのプロジェクトからそのインターフェイスの適切な実装を検索します。
+`DependencyService` サービス ロケーターです。 実際には、インターフェイスが定義されていると`DependencyService`さまざまなプラットフォームのプロジェクトからそのインターフェイスの適切な実装を検索します。
+
+> [!NOTE]
+> 既定で、 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)パラメーターなしのコンス トラクターがあるプラットフォームの実装を唯一の解決になります。 ただし、依存関係の解決方法は、Xamarin.Forms プラットフォームの実装を解決するのには、依存関係注入コンテナーまたはファクトリ メソッドを使用するに挿入することができます。 この方法は、パラメーターを持つコンス トラクターがあるプラットフォームの実装を解決するのには使用できます。 詳細については、次を参照してください。 [Xamarin.Forms での依存関係の解決](~/xamarin-forms/internals/dependency-resolution.md)します。
 
 ## <a name="how-dependencyservice-works"></a>DependencyService のしくみ
 
@@ -144,7 +147,6 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 
 > [!NOTE]
 > **する必要があります**プラットフォーム プロジェクトごとに実装を提供します。 インターフェイスの実装が登録されていない場合、`DependencyService`を解決することはできません、`Get<T>()`メソッド実行時にします。
-
 
 ## <a name="related-links"></a>関連リンク
 
