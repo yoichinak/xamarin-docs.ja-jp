@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Android でユーザー インターフェイスの作成
+title: Xamarin.Android でのユーザー インターフェイスを作成します。
 description: Xamarin.Android アプリのユーザー インターフェイスの作成
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: d8311b97c24a032a7c7d4377b11b5045caafdee6
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: af94fa5b771d875a17d203a429484acfa1082b17
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32437013"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105416"
 ---
 # <a name="user-interface"></a>ユーザー インターフェイス
 
-次のセクションでは、さまざまなツールおよび Xamarin.Android アプリ内のユーザー インターフェイスの作成に使用する構成要素について説明します。
+次のセクションでは、さまざまなツールと Xamarin.Android アプリでユーザー インターフェイスの作成に使用されるビルド ブロックについて説明します。
 
 ## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android Designer](~/android/user-interface/android-designer/index.md)
 
-このセクションでは、Android デザイナーを使用してコントロールを視覚的にレイアウトおよびプロパティを編集する方法について説明します。 デザイナーを使用して、複数のテーマ、言語、およびデバイスの構成などのさまざまな構成ユーザー インターフェイスとリソースを使用する方法と、横、縦など別のビューを設計する方法についても説明します。
+このセクションでは、Android Designer を使用して、コントロールのレイアウトを視覚的にし、プロパティを編集する方法について説明します。 デザイナーを使用して、テーマ、言語、およびデバイスの構成など、さまざまな構成の間でユーザー インターフェイスとリソースを操作する方法と、横、縦向きなどの代替ビューを設計する方法についても説明します。
 
 ## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[素材のテーマ](~/android/user-interface/material-theme.md)
 
-*材料テーマ*のビューと Android でのアクティビティの外観を決定するユーザー インターフェイスのスタイルがします。 素材のテーマは、およびアプリケーション、システム UI で使用するよう Android に組み込まれています。 このガイドはマテリアル デザインの原則を紹介し、について説明組み込みマテリアル テーマまたはカスタム テーマのいずれかを使用してアプリのテーマをする方法です。
+*素材のテーマ*ビューと Android でアクティビティの外観を決定するユーザー インターフェイスのスタイルです。 素材のテーマは、アプリケーションと、システム UI によって使用されるように、Android に組み込まれています。 このガイドはマテリアル デザインの原則を紹介し、について説明します、組み込みの素材のテーマまたはカスタム テーマを使用してアプリのテーマをする方法。
 
 ## <a name="user-profileandroiduser-interfaceuser-profilemd"></a>[ユーザー プロファイル](~/android/user-interface/user-profile.md)
 
@@ -32,14 +32,14 @@ ms.locfileid: "32437013"
 
 ## <a name="splash-screenandroiduser-interfacesplash-screenmd"></a>[スプラッシュ スクリーン](~/android/user-interface/splash-screen.md)
 
-Android アプリでは、起動、特に、アプリが最初に起動した場合、デバイス上に時間がかかります。 スプラッシュ スクリーンが開始表示をユーザーに進行状況をセットアップします。 このガイドでは、アプリのスプラッシュ スクリーンを作成する方法について説明します。
+Android アプリを起動デバイスでアプリを最初に起動するときに特に時間がかかります。 スプラッシュ画面の開始が表示をユーザーに進行状況をセットアップします。 このガイドでは、アプリのスプラッシュ スクリーンを作成する方法について説明します。
 
 ## <a name="layoutsandroiduser-interfacelayoutsindexmd"></a>[レイアウト](~/android/user-interface/layouts/index.md)
 
 レイアウトを使用して、ユーザー インターフェイスの視覚的な構造を定義します。
-などのレイアウト`ListView`と`RecyclerView`Android アプリケーションの最も基本的なビルド ブロックです。 通常、レイアウトを使用する`Adapter`レイアウトからレイアウト内のデータ項目の作成に使用される基になるデータへのブリッジとして機能します。 このセクションなどのレイアウトを使用する方法を説明します。 `LinearLayout`、 `RelativeLayout`、 `TableLayout`、 `RecyclerView`、および`GridView`です。
+などのレイアウト`ListView`と`RecyclerView`は Android アプリケーションの最も基本的な構成要素です。 通常、レイアウトを使用する`Adapter`レイアウトからレイアウト内のデータ項目の設定に使用される基になるデータへのブリッジとして機能します。 このセクションのレイアウトを使用する方法を説明します`LinearLayout`、 `RelativeLayout`、 `TableLayout`、 `RecyclerView`、および`GridView`します。
 
 ## <a name="controlsandroiduser-interfacecontrolsindexmd"></a>[コントロール](~/android/user-interface/controls/index.md)
 
-Android のコントロール (とも呼ばれる*ウィジェット*) は、ユーザー インターフェイスの作成に使用できる UI 要素。 このセクションでは、ボタン、ツールバー、日付/時刻ピッカー、カレンダー、スピン ボタン、スイッチ、ポップアップ メニューのビューのポケットベル、および web ビューなどのコントロールを使用する方法について説明します。
+Android のコントロール (とも呼ばれる*ウィジェット*) は、ユーザー インターフェイスを構築するために使用する UI 要素です。 このセクションでは、ボタン、ツールバー、日付/時刻の選択、予定表、スピン、スイッチ、ポップアップ メニューのビューのポケットベル、および web ビューなどのコントロールを使用する方法について説明します。
 

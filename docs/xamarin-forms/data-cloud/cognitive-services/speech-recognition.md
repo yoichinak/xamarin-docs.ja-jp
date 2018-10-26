@@ -1,41 +1,41 @@
 ---
-title: Microsoft Speech API を使用する音声認識
-description: Microsoft Speech API は、使用言語言語を処理するアルゴリズムを提供するクラウド ベースの API です。 この記事では、Microsoft の音声認識の REST API を使用してオーディオを Xamarin.Forms アプリケーション内のテキストに変換する方法について説明します。
+title: Microsoft Speech API を使用して、音声認識
+description: Microsoft Speech API には、音声言語を処理するアルゴリズムを提供するクラウド ベースの API です。 この記事では、Microsoft の音声認識の REST API を使用して、Xamarin.Forms アプリケーションでのテキストをオーディオに変換する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c8eb991f67d54f9bacbb776b350cc5649a04ab2b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 282ebe330a370e0dda3af54287107b380c85cd80
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846855"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102816"
 ---
-# <a name="speech-recognition-using-the-microsoft-speech-api"></a>Microsoft Speech API を使用する音声認識
+# <a name="speech-recognition-using-the-microsoft-speech-api"></a>Microsoft Speech API を使用して、音声認識
 
-_Microsoft Speech API は、使用言語言語を処理するアルゴリズムを提供するクラウド ベースの API です。この記事では、Microsoft の音声認識の REST API を使用してオーディオを Xamarin.Forms アプリケーション内のテキストに変換する方法について説明します。_
+_Microsoft Speech API には、音声言語を処理するアルゴリズムを提供するクラウド ベースの API です。この記事では、Microsoft の音声認識の REST API を使用して、Xamarin.Forms アプリケーションでのテキストをオーディオに変換する方法について説明します。_
 
 ## <a name="overview"></a>概要
 
 Microsoft Speech API では、2 つのコンポーネントがあります。
 
-- テキストを読み上げられる単語を変換するための音声認識 API です。 音声認識は、REST API、クライアント ライブラリ、またはサービス ライブラリを使用して実行できます。
-- テキストを音声に変換するテキストを音声 API です。 REST API を使用してテキスト読み上げ変換が実行されます。
+- 話された単語をテキストに変換するための音声認識 API。 音声認識は、REST API、クライアント ライブラリ、またはサービス ライブラリを使用して実行できます。
+- テキストを音声に変換するためのテキストを音声 API。 テキストの音声変換は、REST API 経由で実行されます。
 
-この記事は、REST API を使用して、音声認識を実行する方法について説明します。 クライアントとサービス ライブラリは、部分的な結果を返すことをサポート、中に、REST API はのみ部分的な結果なしの 1 つの認識結果を返すことができます。
+この記事では、REST API 経由での音声認識を実行する方法について説明します。 クライアントとサービス ライブラリでは、部分的な結果を返すことをサポート、REST API はのみ、部分的な結果なしの 1 つの認識結果を返します。
 
-Microsoft Speech API を使用して API キーを取得する必要があります。 これはに[認知サービスの再試行](https://azure.microsoft.com/try/cognitive-services/)です。
+Microsoft Speech API を使用して API キーを取得する必要があります。 これは、Azure から取得できます[ポータル](https://portal.azure.com/)します。 詳細については、次を参照してください。 [、Azure portal で Cognitive Services アカウントの作成](/azure/cognitive-services/cognitive-services-apis-create-account)です。
 
-Microsoft Speech API の詳細については、次を参照してください。 [Microsoft Speech API ドキュメント](/azure/cognitive-services/speech/home/)です。
+Microsoft Speech API の詳細については、次を参照してください。 [Microsoft Speech API のドキュメント](/azure/cognitive-services/speech/home/)します。
 
 ## <a name="authentication"></a>認証
 
-Microsoft Speech REST API に加えられたすべての要求で認知サービス トークン サービスから取得できる JSON Web Token (JWT) アクセス トークンを必要と`https://api.cognitive.microsoft.com/sts/v1.0/issueToken`です。 トークンのサービスを POST 要求をすることで、トークンを取得することができますを指定する、`Ocp-Apim-Subscription-Key`ヘッダーをその値として API キーが含まれています。
+Microsoft Speech の REST API に加えられたすべての要求で cognitive services のトークン サービスから取得できる JSON Web トークン (JWT) アクセス トークンを必要と`https://api.cognitive.microsoft.com/sts/v1.0/issueToken`します。 トークンのサービスに POST 要求を行うことによって、トークンを取得できますを指定する、 `Ocp-Apim-Subscription-Key` API キーとしてその値を含むヘッダー。
 
-次のコード例は、トークンのサービスからトークンのアクセスを要求する方法を示します。
+次のコード例は、トークン、トークン サービスからのアクセスを要求する方法を示します。
 
 ```csharp
 public AuthenticationService(string apiKey)
@@ -54,7 +54,7 @@ async Task<string> FetchTokenAsync(string fetchUri)
 }
 ```
 
-Base64 テキストは、返されたアクセス トークンは、10 分間の有効期限がします。 したがって、サンプル アプリケーションは、9 分ごと、アクセス トークンを更新します。
+Base64 テキストには、返されたアクセス トークンが 10 分間の有効期限です。 そのため、サンプル アプリケーションは、9 分ごと、アクセス トークンを更新します。
 
 各 Microsoft Speech REST API でアクセス トークンを指定する必要がありますとして呼び出す、`Authorization`ヘッダー文字列で始まる`Bearer`次のコード例のように。
 
@@ -62,15 +62,15 @@ Base64 テキストは、返されたアクセス トークンは、10 分間の
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-Microsoft Speech REST API に有効なアクセス トークンを渡すエラー 403 応答エラーが発生します。
+Microsoft Speech の REST API に有効なアクセス トークンを渡すの失敗は、応答が 403 エラーが発生されます。
 
 ## <a name="performing-speech-recognition"></a>音声認識を実行します。
 
-音声認識がへの POST 要求をすることで実現は、 `recognition` API`https://speech.platform.bing.com/speech/recognition/`です。 1 つの要求は、オーディオの 10 秒以上を含めることはできませんし、要求数の合計期間は 14 秒を超えることはできません。
+音声認識がへの POST 要求をすることで実現は、`recognition`で API を`https://speech.platform.bing.com/speech/recognition/`します。 1 つの要求は、オーディオの 10 秒以上を含めることはできませんし、要求の合計期間は 14 秒を超えることはできません。
 
-Wav 形式で要求の POST の本文には、オーディオ コンテンツを配置する必要があります。
+Wav 形式の要求の POST の本文には、オーディオ コンテンツを配置する必要があります。
 
-サンプル アプリケーションで、`RecognizeSpeechAsync`メソッドは、音声認識プロセスを呼び出します。
+サンプル アプリケーションで、`RecognizeSpeechAsync`メソッドは、音声認識のプロセスを呼び出します。
 
 ```csharp
 public async Task<SpeechResult> RecognizeSpeechAsync(string filename)
@@ -92,11 +92,11 @@ public async Task<SpeechResult> RecognizeSpeechAsync(string filename)
 }
 ```
 
-、PCM の wav データとして各プラットフォームに固有のプロジェクトでオーディオを記録し、`RecognizeSpeechAsync`メソッドを使用、 `PCLStorage` NuGet パッケージをストリームとしてオーディオ ファイルを開きます。 音声認識要求 URI が生成されると、アクセス トークンは、トークンのサービスから取得されます。 音声認識の要求にポストされた、 `recognition` API で、結果を含む JSON 応答を返します。 JSON 応答の逆シリアル化、表示するための呼び出し元のメソッドに返される結果を使用します。
+PCM の wav データとしては、各プラットフォーム固有プロジェクトにオーディオを記録し、`RecognizeSpeechAsync`メソッドは、 `PCLStorage` NuGet パッケージをストリームとして音声ファイルを開きます。 URI が生成された、音声認識の要求およびアクセス トークンは、トークン サービスから取得されます。 音声認識の要求がポストされた、 `recognition` API で、結果を含む JSON 応答を返します。 JSON 応答は、表示するため、呼び出し元メソッドに返される結果を逆シリアル化です。
 
 ### <a name="configuring-speech-recognition"></a>音声認識を構成します。
 
-音声認識プロセスは、HTTP クエリ パラメーターを指定して構成できます。
+音声認識のプロセスは、HTTP クエリ パラメーターを指定して構成できます。
 
 ```csharp
 string GenerateRequestUri(string speechEndpoint)
@@ -112,11 +112,11 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-によって実行される主な構成、`GenerateRequestUri`方法は、オーディオ コンテンツのロケールを設定します。 サポートされているロケールの一覧は、次を参照してください。[サポートされる言語](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)します。
+によって実行される主な構成、`GenerateRequestUri`メソッドは、オーディオ コンテンツのロケールを設定します。 サポートされているロケールの一覧は、次を参照してください。[サポートされる言語](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)します。
 
 ### <a name="sending-the-request"></a>要求を送信します。
 
-`SendRequestAsync`メソッドの Microsoft Speech REST API に POST 要求を出すし、応答を返します。
+`SendRequestAsync`メソッドは、Microsoft Speech の REST API に POST 要求を出すし、応答を返します。
 
 ```csharp
 async Task<string> SendRequestAsync(Stream fileStream, string url, string bearerToken, string contentType)
@@ -134,19 +134,19 @@ async Task<string> SendRequestAsync(Stream fileStream, string url, string bearer
 }
 ```
 
-このメソッドで POST 要求を作成します。
+このメソッドは、POST 要求を作成します。
 
-- オーディオ ストリームでの折り返し、`StreamContent`ストリームに基づいて HTTP コンテンツを提供するインスタンス。
-- 設定、`Content-Type`への要求のヘッダー`audio/wav; codec="audio/pcm"; samplerate=16000`です。
-- アクセス トークンを追加する、`Authorization`文字列で始まるヘッダー`Bearer`です。
+- オーディオ ストリームをラップする`StreamContent`インスタンスで、ストリームに基づく HTTP コンテンツを提供します。
+- 設定、`Content-Type`への要求のヘッダー`audio/wav; codec="audio/pcm"; samplerate=16000`します。
+- アクセス トークンを追加、`Authorization`文字列で始まるヘッダー`Bearer`します。
 
-POST 要求に送信し、 `recognition` API です。 応答が読み取られ、呼び出し元メソッドに返されます。
+POST 要求に送信し、 `recognition` API。 応答が読み取られ、呼び出し元メソッドに返されます。
 
-`recognition` API は、要求が有効である、要求が成功したことを示すことと、要求された情報が応答で提供される、応答の HTTP ステータス コード 200 (OK) を送信します。 考えられるエラーの応答の一覧は、次を参照してください。[トラブルシューティング](/azure/cognitive-services/speech/troubleshooting)です。
+`recognition` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、次を参照してください。[トラブルシューティング](/azure/cognitive-services/speech/troubleshooting)します。
 
 ### <a name="processing-the-response"></a>応答の処理
 
-API の応答が認識されたテキストに含まれていることを JSON 形式で返される、`name`タグ。 次の JSON データは、標準的な成功の応答メッセージを示しています。
+認識されたテキストに含まれていることと、JSON 形式で API の応答が返される、`name`タグ。 次の JSON データは、一般的な正常な応答メッセージを示しています。
 
 ```json
 {  
@@ -157,16 +157,16 @@ API の応答が認識されたテキストに含まれていることを JSON �
 }
 ```
 
-サンプル アプリケーションで JSON 応答が逆シリアル化、`SpeechResult`次のスクリーン ショットに示すように、表示、呼び出し元のメソッドに返される結果のインスタンス。
+サンプル アプリケーションで JSON 応答が逆シリアル化、`SpeechResult`の次のスクリーン ショットに示すように、表示のため、呼び出し元メソッドに返される結果のインスタンス。
 
 ![](speech-recognition-images/speech-recognition.png "音声認識")
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Microsoft Speech REST API を使用してオーディオを Xamarin.Forms アプリケーション内のテキストに変換する方法について説明します。 音声認識機能に加え、Microsoft Speech API はテキストを読み上げられる単語に変換することもできます。
+この記事では、Microsoft の音声の REST API を使用して、Xamarin.Forms アプリケーションでのテキストをオーディオに変換する方法について説明します。 音声認識を実行するだけでなく Microsoft Speech API はテキストを音声にも変換できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Microsoft Speech API ドキュメント](/azure/cognitive-services/speech/home/)です。
+- [Microsoft Speech API のドキュメント](/azure/cognitive-services/speech/home/)します。
 - [RESTful Web サービスの使用](~/xamarin-forms/data-cloud/consuming/rest.md)
-- [Todo 認知サービス (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Todo Cognitive Services (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)

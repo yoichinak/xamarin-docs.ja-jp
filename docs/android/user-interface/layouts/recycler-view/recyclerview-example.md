@@ -4,15 +4,15 @@ description: RecyclerView を使用する方法を示す例のアプリ。
 ms.prod: xamarin
 ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: d48796b3c62fc342bd86f2d58e74c5f1710174bb
-ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
+ms.openlocfilehash: 67bf38c11fd6e82e05b2a10704973ca10de03083
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39360839"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108653"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的な RecyclerView の例
 
@@ -118,7 +118,7 @@ mRecyclerView.SetLayoutManager (mLayoutManager);
 
 このコードは、メイン アクティビティの存在`OnCreate`メソッド。 レイアウト マネージャーにコンス トラクターが必要です、*コンテキスト*であり、`MainActivity`を使用して渡される`this`上記のようです。
 
-使用する代わりに、predefind `LinearLayoutManager`、2 つを表示するカスタム レイアウト マネージャーをプラグインできる`CardView`項目をサイド バイ サイド、写真のコレクションをスキャンするページめくりのアニメーション効果を実装します。 このガイドで後で別のレイアウト マネージャーとスワップしてレイアウトを変更する方法の例が表示されます。
+Predefind を使用する代わりに`LinearLayoutManager`、2 つを表示するカスタム レイアウト マネージャーをプラグインできる`CardView`項目をサイド バイ サイド、写真のコレクションをスキャンするページめくりのアニメーション効果を実装します。 このガイドで後で別のレイアウト マネージャーとスワップしてレイアウトを変更する方法の例が表示されます。
 
 <a name="view-holder" />
 

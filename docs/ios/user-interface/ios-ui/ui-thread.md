@@ -1,30 +1,30 @@
 ---
-title: Xamarin.iOS の UI スレッドの操作
-description: このドキュメントでは、Xamarin.iOS に UI スレッドを操作する方法について説明します。 バック グラウンド スレッドの使用例を提供、および async と await を調べ、UI スレッドの実行について説明します。
+title: Xamarin.iOS で UI スレッドの操作
+description: このドキュメントでは、Xamarin.iOS で UI スレッドを操作する方法について説明します。 UI スレッドの実行について説明します、バック グラウンド スレッドの使用例を提供し、非同期/待機を検査します。
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4328b84625aff4c92d6e97029ced7dde747d4fc4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6dd55f5c4316ed8f1d4f16d9e282cc2647350518
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790410"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104857"
 ---
-# <a name="working-with-the-ui-thread-in-xamarinios"></a>Xamarin.iOS の UI スレッドの操作
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>Xamarin.iOS で UI スレッドの操作
 
-アプリケーションのユーザー インターフェイスはシングル スレッドで、マルチ スレッド化されたデバイスであっても、常に – 画面の 1 つだけ表現があるとへ表示される内容の変更を単一 'アクセス ポイント' を通して調整する必要があります。 これは複数のスレッドが (たとえば)、同時に同一のピクセルを更新しようとすることを防ぎます。
+アプリケーションのユーザー インターフェイスは、シングル スレッド、マルチ スレッドのデバイスであっても、常に – 画面の 1 つだけ表現があるし、表示される内容の変更を 1 つの 'へのアクセス ポイント' によってコーディネートされる必要があります。 これは複数のスレッドが (たとえば) と同時に同一のピクセルを更新しようとすることを防ぎます。
 
-コードを変更するユーザーのメイン インターフェイス コントロール (または UI) スレッドのみ行います。 (コールバックまたはバック グラウンドのスレッド) などの別のスレッドで発生する UI の更新は、画面にレンダリング取得されない可能性があります。 またはクラッシュが生じる場合もします。
+コード変更をユーザー インターフェイス コントロールのメイン (または UI) スレッドのみことをする必要があります。 (コールバックまたはバック グラウンドのスレッド) などの別のスレッドで発生する UI の更新は、画面にレンダリング取得されない可能性があります。 またはクラッシュを起こす可能性があります。
 
 ## <a name="ui-thread-execution"></a>UI スレッドの実行
 
-ビューでは、コントロールを作成したり、タッチなどのユーザーが開始したイベントを処理するとき、コードは既に UI スレッドのコンテキストで実行します。
+ビューでは、コントロールの作成またはタッチなどのユーザーが開始したイベントを処理するとき、コードは既に UI スレッドのコンテキストで実行します。
 
-コードがタスクまたはコールバックでバック グラウンド スレッドで実行されている場合は、メイン UI スレッドで実行されていない可能性があります。 ここへの呼び出しで、コードをラップする必要があります`InvokeOnMainThread`または`BeginInvokeOnMainThread`次のようにします。
+コードは、タスクまたはコールバックでのバック グラウンド スレッドで実行している場合は、メイン UI スレッドで実行されていない可能性があります。 ここでの呼び出しで、コードをラップする必要があります`InvokeOnMainThread`または`BeginInvokeOnMainThread`次のようにします。
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,9 +32,9 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-`InvokeOnMainThread`でメソッドが定義された`NSObject`のため、その UIKit オブジェクト (ビューまたはビュー コント ローラーの場合) などに定義されているメソッド内から呼び出すことができます。
+`InvokeOnMainThread`でメソッドが定義されている`NSObject`のため、任意の UIKit オブジェクト (ビューやビュー コント ローラー) で定義されたメソッド内から呼び出すことができます。
 
-Xamarin.iOS アプリケーションをデバッグ中に、コードが間違ったスレッドから UI コントロールにアクセスを試みた場合にエラーがスローされます。 追跡および InvokeOnMainThread メソッドを使用してこれらの問題を修復することができます。 これのみデバッグ中に発生して、リリース ビルドでエラーはスローされません。 次のように、エラー メッセージが表示されます。
+Xamarin.iOS アプリケーションをデバッグ中に、コードが間違ったスレッドから UI コントロールにアクセスしようしている場合にエラーがスローされます。 これにより、追跡して InvokeOnMainThread メソッドを使用してこれらの問題を修正することができます。 これのみ、デバッグ中に発生し、リリース ビルドでエラーをスローしません。 このようなエラー メッセージが表示されます。
 
  ![](ui-thread-images/image10.png "UI スレッドの実行")
 
@@ -43,7 +43,7 @@ Xamarin.iOS アプリケーションをデバッグ中に、コードが間違�
 
 ## <a name="background-thread-example"></a>バック グラウンド スレッドの使用例
 
-ユーザー インターフェイス コントロールにアクセスしようとする例を次に示します (、 `UILabel`) 単純なスレッドを使用して、バック グラウンド スレッドから。
+ユーザー インターフェイス コントロールにアクセスしようとする例を次に示します (、 `UILabel`) 単純なスレッドを使用してバック グラウンド スレッドから。
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -51,7 +51,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-コードがスローされます、`UIKitThreadAccessException`デバッグ中にします。 問題を修正する (ユーザー インターフェイス コントロールにのみ、メイン UI スレッドからアクセスすることを確認してください)、内部の UI コントロールを参照しているコードをラップする`InvokeOnMainThread`次のような式。
+コードがスローされます、`UIKitThreadAccessException`デバッグ中にします。 問題を修正 (およびユーザー インターフェイス コントロールにのみ、メイン UI スレッドからアクセスすることを確認します)、内部の UI コントロールを参照するコードをラップする`InvokeOnMainThread`このような式。
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -61,16 +61,16 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-しない必要がありますの例では、このドキュメントの残りの部分は、アプリがネットワーク要求を行うときに注意して重要な概念を使用して、通知センターまたは他の場所で実行される完了ハンドラーを必要とするその他のメソッドを使用スレッドです。
+行う必要がありますしないアプリがネットワーク要求を行う場合に注意する重要な概念は、これが、このドキュメントの例の残りの部分を使用して通知センターまたは別の実行完了ハンドラーを必要とするその他のメソッドを使用します。スレッドです。
 
  <a name="Async_Await_Example" />
 
 
-## <a name="asyncawait-example"></a>Async と Await の例
+## <a name="asyncawait-example"></a>非同期/待機の例
 
-C# 5 async と await キーワードを使用するときに`InvokeOnMainThread`は不要なため、待機中のタスクが完了すると、メソッドの呼び出し元のスレッドに続行されます。
+使用する場合、 C# 5 async/await キーワード`InvokeOnMainThread`必要でないため、待機中のタスクが完了したとき、メソッドが呼び出し元のスレッドで続行されます。
 
-(純粋なデモの目的で、遅延メソッドの呼び出しで待機) をこのコードの例では、(TouchUpInside ハンドラーでは)、UI スレッドで呼び出される非同期のメソッドを示します。 テキストの設定などを含むメソッドが呼び出されるため、UI スレッドで、UI 操作、`UILabel`または表示されている、`UIAlertView`バック グラウンド スレッドで非同期操作が完了した後に安全に呼び出すことができます。
+(これは純粋なデモンストレーションのために、遅延メソッドの呼び出しで待機) このコードの例では、(TouchUpInside ハンドラーは)、UI スレッドで呼び出される非同期のメソッドを示します。 UI スレッドでそれを含むメソッドを呼び出したため、UI などの操作に、テキストを設定、`UILabel`または表示されている、`UIAlertView`バック グラウンド スレッドで非同期操作が完了した後に安全に呼び出すことができます。
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -91,7 +91,7 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-バック グラウンド スレッド (いないメイン UI スレッド) から非同期メソッドが呼び出された場合、`InvokeOnMainThread`も必要になります。
+バック グラウンド スレッド (いないメイン UI スレッド) から非同期メソッドが呼び出された場合、`InvokeOnMainThread`必要なことができるようにします。
 
 
 ## <a name="related-links"></a>関連リンク

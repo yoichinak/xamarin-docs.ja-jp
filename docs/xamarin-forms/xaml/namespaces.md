@@ -6,13 +6,13 @@ ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 06/18/2018
-ms.openlocfilehash: 30cbb2c3aebdafe2ebf35598c520ae725e01ce65
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/21/2018
+ms.openlocfilehash: a83e31cd117689e3af2f5357331408de55edaecf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995145"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102751"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms の XAML 名前空間
 
@@ -42,13 +42,14 @@ XAML では、プレフィックスを使用して、名前空間内の型を参
 |--- |--- |
 |`x:Arguments`|コンス トラクター引数、既定ではないコンス トラクターまたはファクトリ メソッドのオブジェクトの宣言を指定します。|
 |`x:Class`|XAML で定義されているクラスの名前空間とクラス名を指定します。 クラス名は、分離コード ファイルのクラス名と一致する必要があります。 このコンス トラクターが XAML ファイルのルート要素でのみ表示できることに注意してください。|
+|`x:DataType`|XAML の要素とその子にバインドするオブジェクトの種類を指定します。|
 |`x:FactoryMethod`|オブジェクトを初期化するために使用できるファクトリ メソッドを指定します。|
 |`x:FieldModifier`|生成されたフィールドの名前付き XAML 要素のアクセス レベルを指定します。|
 |`x:Key`|内の各リソースにある一意のユーザー定義のキーを指定します、`ResourceDictionary`します。 キーの値を使用して、XAML リソースを取得し、通常は引数として使用、`StaticResource`マークアップ拡張機能。|
 |`x:Name`|XAML 要素のランタイム オブジェクトの名前を指定します。 設定`x:Name`コード内の変数の宣言に似ています。|
 |`x:TypeArguments`|ジェネリック型のコンス トラクターにジェネリック型引数を指定します。|
 
-詳細については、`x:FieldModifier`属性は、「[フィールド修飾子](~/xamarin-forms/xaml/field-modifiers.md)します。 詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)します。
+詳細については、`x:DataType`属性は、「[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)します。 詳細については、`x:FieldModifier`属性は、「[フィールド修飾子](~/xamarin-forms/xaml/field-modifiers.md)します。 詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)します。
 
 XAML では、名前空間の宣言は、子要素を親要素から継承します。 そのため、XAML ファイルのルート要素で名前空間を定義するときにそのファイル内のすべての要素は、名前空間宣言を継承します。
 

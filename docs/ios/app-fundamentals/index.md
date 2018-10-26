@@ -1,22 +1,22 @@
-﻿---
+---
 title: Xamarin.iOS アプリケーションの基礎
 description: このドキュメント ガイドへのリンクさまざまなアプリのトランスポート セキュリティなどの Xamarin.iOS の開発の基礎となる概念について説明したバック グラウンド処理は、イベント、およびスレッド処理します。
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: de337291554e81a2434dcc30c163f4789fc832eb
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111213"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110473"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS アプリケーションの基礎
 
-このセクションでは、いくつかの一般的なモ ノのタスクまたは開発者は、Xamarin.iOS (旧称 MonoTouch) アプリケーションを開発するときに注意する必要がある概念にガイドを提供します。
+このセクションでは、開発者がXamarin.iOS (旧称 MonoTouch) アプリケーションを開発するときに注意する必要がある一般的なタスクや概念についてガイドを提供します。
 
 ## <a name="accessibilityiosapp-fundamentalsaccessibilitymd"></a>[ユーザー補助](~/ios/app-fundamentals/accessibility.md)
 
@@ -24,11 +24,11 @@ ms.locfileid: "39111213"
 
 ## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[アプリケーション トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
 
-この記事では、iOS 9 アプリ、つまり、Xamarin.iOS プロジェクト用のアプリのトランスポート セキュリティを適用するセキュリティの変更を紹介します。、ATS の構成オプションが含まれ、必要な場合は、ATS のオプトアウトする方法をについて説明します。 (明示的に許可した) 場合を除き、ATS が既定で有効になってには、保護されていないインターネット接続で iOS 9 アプリで例外が発生します。
+この記事はiOS 9アプリにおいてApp Transport Securityによって必要となるセキュリティに関する変更とそれがあなたのXamarin.iOSプロジェクトにもたらす意味を紹介します。 この記事はATS構成オプションと必要な場合にATSからオプトアウトする方法を説明します。ATSは既定で有効となっているため、iOS 9アプリでは(明示的に許可しない限り)あらゆるセキュアでないインターネット接続によって例外が発生します。
 
 ## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)
 
-バック グラウンド処理またはバック グラウンド処理は、アプリケーションが別のアプリケーションがフォア グラウンドで実行中にバック グラウンドでタスクを実行できるようにすることのプロセスです。 このガイドは、バック グラウンド処理で iOS の概要として機能します。
+バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、アプリケーションにバック グラウンドでタスクを実行させる処理です。 このガイドは、iOSにおけるバック グラウンド処理の概要を説明します。
 
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[コードで iOS アプリケーションの作成](~/ios/app-fundamentals/ios-code-only.md)
 
@@ -36,7 +36,7 @@ ms.locfileid: "39111213"
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[イベント、プロトコル、およびデリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 
-この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定するために使用するキー iOS テクノロジを示します。 これらのテクノロジは、イベント、プロトコル、およびデリゲートです。この記事では、何について説明しますがこれらの各と c# からそれぞれの使用方法。 Xamarin.iOS が Xamarin.iOS では、プロトコル、デリゲートなどの Objective C の概念のサポート方法と、使い慣れた .NET イベントもを公開する iOS のコントロールを使用する方法を示していますが (Objective C デリゲート混同しないように c# のデリゲートを使用)。 また、この記事では、プロトコルの使用方法の両方として基礎 Objective C のデリゲートとデリゲート以外のシナリオで表示する例を示します。
+この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定する場合に鍵となるiOS テクノロジを示します。 具体的には、イベント、プロトコル、およびデリゲートです。この記事では、それぞれどのようなものであるか、それぞれの C# からの使用方法を説明します。 この記事は Xamarin.iOSが iOSコントロールを使って使い慣れた .NET イベントを公開する方法だけでなく、Xamarin.iOSが プロトコルやデリゲートといった Objective-Cの概念をサポートする方法を示します。 (Objective-C デリゲートとC# デリゲートを混同しないように) この記事は プロトコルがObjective-C デリゲートと非デリゲートシナリオの両方の基盤としてどのように使うのかについても例を示します。
 
 ## <a name="working-with-the-file-systemiosapp-fundamentalsfile-systemmd"></a>[ファイル システムの操作](~/ios/app-fundamentals/file-system.md)
 
@@ -48,7 +48,7 @@ Xamarin.iOS は、ファイルとディレクトリの任意の .NET アプリ�
 
 ## <a name="localizationiosapp-fundamentalslocalizationindexmd"></a>[ローカリゼーション](~/ios/app-fundamentals/localization/index.md)
 
-このガイドでは、エンコーディングの国際化をサポートするために Xamarin.iOS アプリケーションを追加します。
+このガイドでは、エンコーディングを国際化をサポートするために Xamarin.iOS アプリケーションの追加について説明します。
 
 ## <a name="working-with-property-listsiosapp-fundamentalsindexmd"></a>[プロパティ リストを使用します。](~/ios/app-fundamentals/index.md)
 
@@ -60,7 +60,7 @@ Apple は iOS 10 (以降) でのプライバシーとセキュリティの両方
 
 ## <a name="threadingiosapp-fundamentalsthreadingmd"></a>[スレッド化](~/ios/app-fundamentals/threading.md)
 
-この記事では、Xamarin.iOS アプリケーションでのスレッドについて説明し、について少し説明、.NET スレッド プール、応答性の高いアプリケーション、およびガベージ コレクション。
+この記事では、Xamarin.iOS アプリケーションでのスレッドについて説明し、.NET スレッド プール、応答性の高いアプリケーション、およびガベージ コレクションについて少し説明。
 
 ## <a name="touchiosapp-fundamentalstouchindexmd"></a>[タッチ](~/ios/app-fundamentals/touch/index.md)
 

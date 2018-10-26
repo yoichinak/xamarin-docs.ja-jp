@@ -1,28 +1,28 @@
 ---
-title: マップや場所
-description: Xamarin.Android でマップの使用
+title: マップと場所
+description: Xamarin.Android でマップを使用します。
 ms.prod: xamarin
 ms.assetid: B45211C5-D377-4A55-8C8E-95D4BF470AE3
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/03/2016
-ms.openlocfilehash: f58d40999c6350b1b610afc7c8c9088497473be3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4ddf884f9980de61a27bc636be7c848881a13139
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762549"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108055"
 ---
-# <a name="maps-and-location"></a>マップや場所
+# <a name="maps-and-location"></a>マップと場所
 
 
-##  <a name="location-servicesandroidplatformmaps-and-locationlocationmd"></a>[ロケーション サービス](~/android/platform/maps-and-location/location.md)
+##  <a name="location-servicesandroidplatformmaps-and-locationlocationmd"></a>[位置情報サービス](~/android/platform/maps-and-location/location.md)
 
-このガイドでは、Android アプリケーションで、場所の認識を導入し、Google の場所のサービス API で Android のロケーション サービスの API だけでなく、定着場所使用可能なプロバイダーを使用して、ユーザーの場所を取得する方法について説明します。
+このガイドは、Android アプリケーションの場所の認識を紹介し、Google の場所のサービス API を使用した Android の場所サービス API に加え、組み合わされ、場所使用可能なプロバイダーを使用して、ユーザーの場所を取得する方法を示しています。
 
 
 ##  <a name="mapsandroidplatformmaps-and-locationmapsindexmd"></a>[マップ](~/android/platform/maps-and-location/maps/index.md)
 
-この記事では、Xamarin.Android でマップや場所を使用する方法について説明します。 組み込みのマップ アプリケーション V2 を使用して、Google マップ Android API 直接を活用することからすべての情報を説明します。 さらに、ロケーション サービスを使用する単一の API を使用するアプリケーションでセル タワー場所、Wi-fi または GPS 経由での場所の修正プログラムを入手する方法について説明します。
+この記事では、Xamarin.Android でマップと場所を使用する方法について説明します。 すべてから直接、Google マップ Android API V2 を使用する組み込みの地図アプリケーションを活用することを説明します。 さらに、アプリケーション セル tower 場所、Wi-fi または GPS を使用して場所の修正プログラムを取得できる場所のサービスを使用する 1 つの API を使用する方法について説明します。
 

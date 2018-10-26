@@ -4,15 +4,15 @@ description: ユーザーのフォト ライブラリでのビットマップの
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: e957134ecceee84962e5a4fc153285ea0a2a5906
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 7f34bd5bbab4accaa30c22266dacd30692bf9ccc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615562"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107574"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp のビットマップをファイルに保存します。
 
@@ -40,13 +40,13 @@ SkiaSharp アプリケーションを作成または変更ビットマップが�
 - _デコード_&mdash;ビットマップ ファイルの形式を読み取って、圧縮解除して
 - _エンコード_&mdash;ビットマップを圧縮し、ビットマップ ファイル形式への書き込み
 
-[ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)クラスには、という名前のいくつかのメソッドが含まれています。`Decode`を作成する、`SKBitmap`圧縮ソースからです。 必須では、ファイル名、ストリーム、またはバイト配列を指定するだけです。 デコーダーは、ファイル形式を特定し、適切な内部デコードの関数に渡します。
+[ `SKBitmap` ](xref:SkiaSharp.SKBitmap)クラスには、という名前のいくつかのメソッドが含まれています。`Decode`を作成する、`SKBitmap`圧縮ソースからです。 必須では、ファイル名、ストリーム、またはバイト配列を指定するだけです。 デコーダーは、ファイル形式を特定し、適切な内部デコードの関数に渡します。
 
-さらに、 [ `SKCodec` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodec/)クラスという 2 つのメソッドには`Create`作成できる、`SKCodec`圧縮ソースからオブジェクトし、デコードの処理でより複雑なを取得するアプリケーションを許可します。 (、`SKCodec`クラスは、記事に記載[ **SkiaSharp ビットマップをアニメーション化**](animating.md#gif-animation)アニメーション GIF ファイルのデコードに関連します)。
+さらに、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)クラスという 2 つのメソッドには`Create`作成できる、`SKCodec`圧縮ソースからオブジェクトし、デコードの処理でより複雑なを取得するアプリケーションを許可します。 (、`SKCodec`クラスは、記事に記載[ **SkiaSharp ビットマップをアニメーション化**](animating.md#gif-animation)アニメーション GIF ファイルのデコードに関連します)。
 
 ビットマップをエンコードするときに詳細が必要です。 エンコーダーは、アプリケーションが (JPEG または PNG、または別のもの) を使用する、特定のファイル形式を知る必要があります。 データ損失の形式を使用する場合は、エンコードは、必要な品質レベルも知る必要があります。 
 
-`SKBitmap`クラスは、1 つ定義[ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Encode/p/SkiaSharp.SKWStream/SkiaSharp.SKEncodedImageFormat/System.Int32/)メソッドで次の構文。
+`SKBitmap`クラスは、1 つ定義[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))メソッドで次の構文。
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
@@ -54,13 +54,13 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 このメソッドはすぐについて詳しく説明します。 エンコードされたビットマップは、書き込み可能なストリームに書き込まれます。 (で 'W' `SKWStream` 「書き込み」の略します)。2 番目と 3 番目の引数は、ファイル形式を指定し、(データ損失の形式) の 0 から 100 まで必要な品質。
 
-さらに、 [ `SKImage` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImage/)と[ `SKPixmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPixmap/)クラスも定義`Encode`メソッドより用途が広くにあるとすることをお勧めします。 簡単に作成することができます、`SKImage`オブジェクトから、`SKBitmap`オブジェクト、静的なを使用して[ `SKImage.FromBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.FromBitmap/p/SkiaSharp.SKBitmap/)メソッド。 取得することができます、`SKPixmap`オブジェクトから、`SKBitmp`オブジェクトを使用して、 [ `PeekPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.PeekPixels()/)メソッド。
+さらに、 [ `SKImage` ](xref:SkiaSharp.SKImage)と[ `SKPixmap` ](xref:SkiaSharp.SKPixmap)クラスも定義`Encode`メソッドより用途が広くにあるとすることをお勧めします。 簡単に作成することができます、`SKImage`オブジェクトから、`SKBitmap`オブジェクト、静的なを使用して[ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap))メソッド。 取得することができます、`SKPixmap`オブジェクトから、`SKBitmp`オブジェクトを使用して、 [ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels)メソッド。
 
-1 つ、 [ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.Encode()/)によって定義されたメソッド`SKImage`パラメーターを持たないおよび PNG 形式に自動的に保存します。 パラメーターなしのメソッドが非常に簡単に使用します。
+1 つ、 [ `Encode` ](xref:SkiaSharp.SKImage.Encode)によって定義されたメソッド`SKImage`パラメーターを持たないおよび PNG 形式に自動的に保存します。 パラメーターなしのメソッドが非常に簡単に使用します。
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>ビットマップ ファイルを保存するためのプラットフォーム固有のコード
 
-エンコードするとき、`SKBitmap`オブジェクトを特定のファイルに書式設定、一般になります、何らかのストリーム オブジェクト、またはデータの配列になっています。 いくつかの`Encode`メソッド (によって定義されたパラメーターのない 1 つを含む`SKImage`) を返す、 [ `SKData` ](https://developer.xamarin.com/api/type/SkiaSharp.SKData/)オブジェクトを使用しているバイトの配列に変換できる、 [ `ToArray` ](https://developer.xamarin.com/api/member/SkiaSharp.SKData.ToArray()/)メソッド。 このデータをファイルに保存しする必要があります。 
+エンコードするとき、`SKBitmap`オブジェクトを特定のファイルに書式設定、一般になります、何らかのストリーム オブジェクト、またはデータの配列になっています。 いくつかの`Encode`メソッド (によって定義されたパラメーターのない 1 つを含む`SKImage`) を返す、 [ `SKData` ](xref:SkiaSharp.SKData)オブジェクトを使用しているバイトの配列に変換できる、 [ `ToArray` ](xref:SkiaSharp.SKData.ToArray)メソッド。 このデータをファイルに保存しする必要があります。 
 
 標準を使用できるため、アプリケーションのローカル ストレージ内のファイルへの保存は非常に簡単`System.IO`クラスと、このタスクのメソッド。 この手法の説明については、記事の[ **SkiaSharp ビットマップをアニメーション化**](animating.md#bitmap-animation)マンデルブロ集合のビットマップの一連のアニメーション化に関連します。
 
@@ -237,13 +237,13 @@ public class PhotoLibrary : IPhotoLibrary
 
 ## <a name="exploring-the-image-formats"></a>イメージ形式の調査
 
-ここでは、 [ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Encode/p/SkiaSharp.SKWStream/SkiaSharp.SKEncodedImageFormat/System.Int32/)メソッドの`SKImage`もう一度。
+ここでは、 [ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))メソッドの`SKImage`もう一度。
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-[`SKEncodedImageFormat`](https://developer.xamarin.com/api/type/SkiaSharp.SKEncodedImageFormat/) これらの一部はあいまいではなく、11 個のビットマップ ファイル形式を参照するメンバーを持つ列挙型を示します。
+[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat) これらの一部はあいまいではなく、11 個のビットマップ ファイル形式を参照するメンバーを持つ列挙型を示します。
 
 - `Astc` &mdash; 適応型のスケーラブルなテクスチャの圧縮
 - `Bmp` &mdash; Windows ビットマップ
@@ -688,7 +688,7 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-**保存** ボタンのハンドラーを使用して、簡略化された[ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.Encode()/)メソッドから`SKImage`します。 このメソッドは、PNG 形式を使用してエンコードします。 `SKImage`に基づいてオブジェクトを作成`saveBitmap`、および`SKData`オブジェクトには、エンコード済みの PNG ファイルが含まれています。 
+**保存** ボタンのハンドラーを使用して、簡略化された[ `Encode` ](xref:SkiaSharp.SKImage.Encode)メソッドから`SKImage`します。 このメソッドは、PNG 形式を使用してエンコードします。 `SKImage`に基づいてオブジェクトを作成`saveBitmap`、および`SKData`オブジェクトには、エンコード済みの PNG ファイルが含まれています。 
 
 `ToArray`メソッドの`SKData`バイトの配列を取得します。 これに渡される内容が、`SavePhotoAsync`メソッドと固定のフォルダー名では、および現在の日付と時刻から構築された一意のファイル名。
 
@@ -704,6 +704,6 @@ public partial class FingerPaintSavePage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [SpinPaint (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)

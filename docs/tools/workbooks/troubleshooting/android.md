@@ -3,15 +3,15 @@ title: Android での Xamarin Workbooks のトラブルシューティング
 description: このドキュメントでは、android、Xamarin Workbooks を操作するためのトラブルシューティングのヒントを提供します。 これは、エミュレーターのサポート、読み込まれないブックおよびその他のトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: b0333e1a40570374ee6218b7a848d2dd1c06b872
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: a93288829ff99027a4b33e7720a7f849df37e9b1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351718"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112612"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android での Xamarin Workbooks のトラブルシューティング
 
@@ -41,7 +41,7 @@ HYPER-V、システムで有効にする必要があります、代わりに Vis
 
 0. **すべての重要なネットワーク操作は完了するは、インターネットから Windows を一時的に切断することがありますこれを確認します。**
 1. エミュレーターを閉じます。
-2. `Hyper-V Manager` を開きます。
+2. `Hyper-V Manager`を開きます。
 3. `Actions`オープン`Virtual Switch Manager...`します。
 4. すべての仮想スイッチを削除します。
 5. [`OK`] をクリックします。

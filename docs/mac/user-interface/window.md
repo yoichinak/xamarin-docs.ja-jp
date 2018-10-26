@@ -4,15 +4,15 @@ description: この記事では、ウィンドウとパネルは、Xamarin.Mac �
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b60b8a6a7c56347d6abf71f8c5149ddd556d3da8
-ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
+ms.openlocfilehash: 2d129c72366224cedca26df6fa1499f65d04e92d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "40251003"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106976"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac での Windows
 
@@ -347,14 +347,14 @@ using Foundation;
 
 namespace SourceWriter
 {
-    public class EditorWidowDelegate : NSWindowDelegate
+    public class EditorWindowDelegate : NSWindowDelegate
     {
         #region Computed Properties
         public NSWindow Window { get; set;}
         #endregion
 
         #region constructors
-        public EditorWidowDelegate (NSWindow window)
+        public EditorWindowDelegate (NSWindow window)
         {
             // Initialize
             this.Window = window;
@@ -427,7 +427,7 @@ namespace SourceWriter
 
 ```csharp
 // Set delegate
-Window.Delegate = new EditorWidowDelegate(Window);
+Window.Delegate = new EditorWindowDelegate(Window);
 ```
 
 ### <a name="saving-changes-before-closing-the-app"></a>アプリを閉じる前に変更を保存しています
@@ -489,7 +489,7 @@ void NewDocument (NSObject sender) {
 
 開く場合、 **Windows** ] メニューの [アプリケーションが自動的に追跡され、開いているウィンドウの処理を確認できます。
 
-[![](window-images/display05.png "Widows メニュー")](window-images/display05.png#lightbox)
+[![](window-images/display05.png "Windows メニュー")](window-images/display05.png#lightbox)
 
 メニュー、Xamarin.Mac アプリケーションでの操作方法の詳細についてを参照してください、[メニューの作業](~/mac/user-interface/menu.md)ドキュメント。
 
@@ -759,7 +759,7 @@ void OpenDialog (NSObject sender)
 4. ダブルクリックして、`DocumentPanel.xib`ファイルを開き、Interface Builder での編集します。 
 
     [![](window-images/new02.png "Pannel の編集")](window-images/new02.png#lightbox)
-5. 既存のウィンドウを削除してからパネルをドラッグして、**ライブラリ インスペクター**では、**インターフェイス エディター**: 
+5. 既存のウィンドウを削除してからパネルをドラッグして、**ライブラリ インスペクター**で、**インターフェイス エディター**: 
 
     [![](window-images/panels01.png "既存のウィンドウを削除します。")](window-images/panels01.png#lightbox)
 6. フック、パネル、**ファイルの所有者** - **ウィンドウ** - **アウトレット**: 

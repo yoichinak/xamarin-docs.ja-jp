@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 47fbe67561ea9150d0fdc0b41eb5c70edbeac75e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f79ee7af9106eea8a4792c0e4bb10c5ad5a367a9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996270"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111078"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
@@ -21,13 +21,6 @@ _イメージは、Xamarin.Forms のプラットフォームで共有できる�
 イメージは、アプリケーションのナビゲーション、ユーザビリティ、およびブランド化の重要な部分です。 Xamarin.Forms アプリケーションは、すべてのプラットフォームでは、イメージを共有するが、各プラットフォームでも可能性があるさまざまなイメージを表示することができる必要があります。
 
 プラットフォーム固有のイメージもアイコンとスプラッシュ スクリーン; に必要です。これらは、プラットフォームごとに構成する必要があります。
-
-このドキュメントでは、次のトピックについて説明します。
-
-- [ **ローカル イメージ**](#Local_Images) -iOS Retina、Android、または UWP の高解像度バージョンの画像のようなネイティブの解像度の解決を含め、アプリケーションに付属のイメージを表示します。
-- [ **埋め込み画像**](#Embedded_Images) -アセンブリ リソースとして埋め込まれた画像を表示します。
-- [ **イメージをダウンロード**](#Downloading_Images) - ダウンロードし、画像を表示します。
-- [ **アイコンと**](#Icons_and_splashscreens) -プラットフォーム固有のアイコンと起動イメージ。
 
 ## <a name="displaying-images"></a>イメージを表示します。
 
@@ -49,13 +42,13 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -縦横比を維持しながら、表示領域を塗りつぶすようにイメージをクリップ (ie。 ゆがむことなく)。
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -レター ボックス (必須) の場合は、イメージ全体のイメージが表示領域に収まるように空白かどうかに応じて境界線の上/下に追加で、イメージは幅または高さ。
 
-イメージを読み込むことが、[ローカルファイル](#Local_Images_in_Xaml)、[埋め込みリソース](#embedded_images)、または[ダウンロード](#Downloading_Images)します。
-
-<a name="Local_Images" />
+イメージを読み込むことが、[ローカルファイル](#Local_Images)、[埋め込みリソース](#embedded-images)、または[ダウンロード](#Downloading_Images)します。
 
 ## <a name="local-images"></a>ローカルのイメージ
 
-イメージ ファイルを各アプリケーション プロジェクトに追加し、Xamarin.Forms の共有コードから参照します。 すべてのアプリ間で 1 つのイメージを使用する*すべてのプラットフォームで同じファイル名を使用する必要があります*、有効な Android のリソース名を指定する必要があります (つまり。 のみ小文字、数字、アンダー スコア、および期間が許可されている)。
+イメージ ファイルを各アプリケーション プロジェクトに追加し、Xamarin.Forms の共有コードから参照します。 イメージは、さまざまな解像度をさまざまなプラットフォーム上での若干異なるデザインを使用する場合など、プラットフォームに固有である場合、イメージを配布するには、このメソッドが必要です。
+
+すべてのアプリ間で 1 つのイメージを使用する*すべてのプラットフォームで同じファイル名を使用する必要があります*、有効な Android のリソース名を指定する必要があります (つまり。 のみ小文字、数字、アンダー スコア、および期間が許可されている)。
 
 - **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**資産カタログの画像セット**、すべてのスケール ファクターのさまざまなデバイスをサポートするために必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 - **Android** -内のイメージを配置、**リソース/drawable**ディレクトリが**ビルド アクション: AndroidResource**します。 高 DPI と低いバージョンの画像が指定することもできます (で適切に名前付き**リソース**など、サブディレクトリ**ldpi drawable**、 **drawable hdpi**と**drawable xhdpi**)。
@@ -89,8 +82,6 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 > [!IMPORTANT]
 > すべてのプラットフォームで同じイメージ ファイル名を使用するには、名前は、すべてのプラットフォームでは有効である必要があります。 ドローアブルの android では、名前付けに関する制約がある-小文字アルファベット、数字、アンダー スコア、およびピリオドのみが許可されている – とクロス プラットフォームの互換性のためこの従う必要があるその他のすべてのプラットフォームでも。 ファイル名の例**waterfront.png**規則に従いますが、無効なファイル名の例は、"water front.png、""WaterFront.png"、"water-front.png"と"wåterfront.png"。
 
-<a name="Native_Resolutions" />
-
 ### <a name="native-resolutions-retina-and-high-dpi"></a>ネイティブの解像度 (Retina と高 DPI)
 
 iOS、Android、および UWP には、オペレーティング システムがデバイスの機能に基づいて実行時に適切なイメージを選択、さまざまな画像の解像度のサポートが含まれます。 Xamarin.Forms では、ローカルのイメージを読み込み、ファイルが正しくという名前し、プロジェクト内にある場合に自動的に代替の解像度をサポートに、ネイティブ プラットフォームの Api を使用します。
@@ -117,15 +108,13 @@ Android の代替解像度のイメージを配置する必要があります[�
 - [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) は、 [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)ローカル ファイルの参照を設定できるプロパティです。
 - [`ImageCell`](xref:Xamarin.Forms.ImageCell) -は、 [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)ローカル ファイル、埋め込みリソース、または URI からイメージを設定できるプロパティを取得します。
 
-<a name="embedded_images" />
-
 ## <a name="embedded-images"></a>[埋め込み画像]
 
-埋め込み画像は (ローカルのイメージ) のようなアプリケーションにも付属しますが、各アプリケーションのファイル構造、イメージ、イメージのコピーではなく、ファイルがリソースとしてアセンブリに埋め込まれました。 イメージを配布するには、このメソッドは、イメージが、コードにバンドルされているコンポーネントの作成に特に適しています。
+埋め込み画像は (ローカルのイメージ) のようなアプリケーションにも付属しますが、各アプリケーションのファイル構造、イメージ、イメージのコピーではなく、ファイルがリソースとしてアセンブリに埋め込まれました。 イメージの配布には、このメソッドは、各プラットフォームで同じイメージを使用する場合に推奨し、コードにバンドルされているイメージは、コンポーネントの作成に特に適しています。
 
 プロジェクトには、画像を埋め込む、新しい項目を追加し、追加するイメージ/秒を選択して右クリックします。 既定では、イメージに**ビルド アクション: None**; に設定する必要があります**ビルド アクション: EmbeddedResource**します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](images-images/vs-buildaction.png "ビルド アクションを設定します埋め込まれたリソース。")
 
@@ -135,7 +124,7 @@ Android の代替解像度のイメージを配置する必要があります[�
 IDE によってこの既定値を連結して生成された、**既定 Namespace**ファイル名では、このプロジェクトの各値の間のピリオド (.) を使用します。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](images-images/xs-buildaction.png "ビルド アクションを設定します埋め込まれたリソース。")
 
@@ -164,8 +153,6 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 次のスクリーン ショットは、埋め込み画像を表示する各プラットフォームでの結果を表示します。
 
 [![ResourceImageSource](images-images/resource-sml.png "サンプル アプリケーションの埋め込み画像を表示する")](images-images/resource.png#lightbox "サンプル アプリケーションの埋め込み画像を表示します。")
-
-<a name="Embedded_Images_in_Xaml" />
 
 ### <a name="using-xaml"></a>XAML を使用します。
 
@@ -213,8 +200,6 @@ public class ImageResourceExtension : IMarkupExtension
 
 ### <a name="troubleshooting-embedded-images"></a>埋め込み画像のトラブルシューティング
 
-<a name="Debugging_Embedded_Images" />
-
 #### <a name="debugging-code"></a>コードのデバッグ
 
 特定のイメージ リソースが読み込まれていない理由を理解しにくい場合があります、ため、次のコードのデバッグが、リソースが正しく構成されていることを確認するためのアプリケーションを一時的に追加できます。 特定のアセンブリに埋め込まれているすべての既知のリソースの出力には、<span class="UIItem">コンソール</span>リソース読み込みの問題をデバッグする際にします。
@@ -239,8 +224,6 @@ foreach (var res in assembly.GetManifestResourceNames())
 ```csharp
 var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
 ```
-
-<a name="Downloading_Images" />
 
 ## <a name="downloading-images"></a>イメージのダウンロード
 
@@ -277,8 +260,6 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 [![ダウンロード ImageSource](images-images/download-sml.png "サンプル アプリケーションをダウンロードしたイメージを表示する")](images-images/download.png#lightbox "サンプル アプリケーションをダウンロードしたイメージを表示します。")
 
-<a name="Image_Caching" />
-
 ### <a name="downloaded-image-caching"></a>ダウンロードしたイメージのキャッシュ
 
 A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)も、次のプロパティを使用して構成、ダウンロードしたイメージのキャッシュをサポートしています。
@@ -305,21 +286,19 @@ webImage.Source = new UriImageSource
 
 組み込みキャッシュすると、各セルにイメージを設定 (またはできるバインド) イメージの一覧をスクロールなどのシナリオをサポートし、組み込みのキャッシュのセルがビューにスクロールされたとき、イメージの再読み込みを処理できるようにする非常に簡単になります。
 
-<a name="Icons_and_splashscreens" />
+## <a name="icons-and-splash-screens"></a>アイコンとスプラッシュ スクリーン
 
-## <a name="icons-and-splashscreens"></a>アイコンと
+関連していないときに、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー、アプリケーションのアイコンとスプラッシュ スクリーンの Xamarin.Forms プロジェクト内のイメージの重要な使用もします。
 
-関連していないときに、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー、アプリケーションのアイコンとも、Xamarin.Forms プロジェクト内のイメージの重要な使用。
-
-アイコンと Xamarin.Forms アプリと設定は、各アプリケーション プロジェクトで行われます。 これは、サイズの iOS、Android、および UWP 用のイメージを正しく生成することを意味します。 これらのイメージは、各プラットフォームの要件に従って配置してという名前をする必要があります。
+アイコンとスプラッシュ スクリーン Xamarin.Forms アプリの設定は、各アプリケーション プロジェクトで行われます。 これは、サイズの iOS、Android、および UWP 用のイメージを正しく生成することを意味します。 これらのイメージは、各プラットフォームの要件に従って配置してという名前をする必要があります。
 
 ## <a name="icons"></a>アイコン
 
 参照してください、 [iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)、 [Google リモコン](http://developer.android.com/design/style/iconography.html)、および[タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)これらのアプリケーション リソースの作成の詳細についてはします。
 
-## <a name="splashscreens"></a>と
+## <a name="splash-screens"></a>スプラッシュ スクリーン
 
-IOS と UWP アプリケーションのみ (スタートアップ画面または既定のイメージとも呼ばれます) スプラッシュ スクリーンが必要です。
+IOS と UWP アプリケーションのみ (スタートアップ画面または既定のイメージとも呼ばれます) のスプラッシュ スクリーンが必要です。
 
 ドキュメントを参照してください[iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)と[スプラッシュ スクリーン](/windows/uwp/launch-resume/splash-screens/)Windows デベロッパー センターでします。
 

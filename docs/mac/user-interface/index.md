@@ -4,15 +4,15 @@ description: このドキュメントは、Xamarin.Mac 開発者が利用でき�
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: b2392f05a03015f903918f15013919be14b99292
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40250988"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107834"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin.Mac の macOS ユーザー インターフェイス コントロール
 

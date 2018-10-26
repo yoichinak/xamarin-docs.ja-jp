@@ -1,174 +1,174 @@
 ---
-title: Xamarin.iOS でメッセージ アプリ拡張機能の基本事項
-description: この記事の内容表示は方法メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含めます。
+title: Xamarin.iOS でメッセージ アプリ拡張機能の基本
+description: この記事で示しますメッセージ アプリと連携し、新しい機能をユーザーに表示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含める方法です。
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: bc06d73543b9e0bd1e8715fc722b0a95af7d9f07
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7bd4a87843852e940da96f688371ddbecbf7e0b4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787911"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105780"
 ---
-# <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin.iOS でメッセージ アプリ拡張機能の基本事項
+# <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin.iOS でメッセージ アプリ拡張機能の基本
 
-_この記事の内容表示は方法メッセージ アプリとの統合を新しい機能をユーザーに提示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含めます。_
+_この記事で示しますメッセージ アプリと連携し、新しい機能をユーザーに表示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含める方法です。_
 
-新しい 10、iOS にメッセージ アプリ拡張機能 ' æ˜aœg '、**メッセージ**をユーザーにアプリと表示の新機能です。 拡張機能には、テキスト、ステッカー、メディア ファイルおよび対話型のメッセージを送信できます。
+新しいメッセージ アプリ拡張機能が統合には、10、iOS、**メッセージ**をユーザーに新しい機能がアプリを提示しています。 拡張機能には、テキスト、ステッカー、メディア ファイル、および対話型メッセージを送信できます。
 
-## <a name="about-message-app-extensions"></a>メッセージ アプリ拡張機能の概要
+## <a name="about-message-app-extensions"></a>メッセージ アプリ拡張機能について
 
-前述のように、メッセージ アプリ拡張機能と統合、**メッセージ**をユーザーにアプリと表示の新機能です。 拡張機能には、テキスト、ステッカー、メディア ファイルおよび対話型のメッセージを送信できます。 2 つの種類のメッセージ アプリ拡張機能を使用できます。
+前述のように、メッセージ アプリ拡張機能が統合、**メッセージ**をユーザーに新しい機能がアプリを提示しています。 拡張機能には、テキスト、ステッカー、メディア ファイル、および対話型メッセージを送信できます。 メッセージ アプリ拡張機能の 2 つの種類があります。
 
-- **ステッカー パック**-ユーザーがメッセージに追加できるステッカーのコレクションを格納します。 すべてのコードを記述することがなくステッカー パックを作成できます。
-- **iMessage アプリ**-ステッカーを選択すると、テキストを入力する、(省略可能な型変換) とメディア ファイルを含む、作成、編集、および操作メッセージを送信する用アプリのメッセージのカスタム ユーザー インターフェイスを提供します。
+- **ステッカー パック**-ユーザーがメッセージに追加できるステッカーのコレクションが含まれています。 ステッカー パックは、すべてのコードを記述することがなく作成できます。
+- **iMessage アプリ**-ステッカーを選択すると、テキストを入力する、(省略可能な型変換) によるメディア ファイルを含む、作成、編集、および相互作用のメッセージを送信するためのメッセージ アプリ内のカスタム ユーザー インターフェイスを表示することができます。
 
 メッセージ アプリ拡張機能は、次の 3 つの主要なコンテンツ タイプを提供します。
 
-- **対話型のメッセージ**-アプリを生成するカスタム メッセージ コンテンツの種類は、ユーザーが、メッセージは、アプリでタップしたときに、フォア グラウンドで起動されます。
-- **ステッカー** -ユーザーの間で送信されるメッセージに含めることがアプリによって生成されるイメージです。
+- **対話型メッセージ**-アプリを生成するカスタム メッセージ コンテンツの種類は、メッセージで、アプリ ユーザーがタップしたときに、フォア グラウンドで起動されます。
+- **ステッカー** -ユーザーの間で送信されるメッセージに含めることがアプリによって生成されたイメージします。
 - **その他のサポートされているコンテンツ**- アプリは、写真、ビデオ、テキストなどのコンテンツを提供できます。 またはその他のコンテンツへのリンクの種類を常にメッセージ アプリでサポートされています。
 
-新しい 10、iOS にメッセージ アプリが含まれています、独自の組み込みの専用アプリ ストアには。 メッセージ アプリ拡張機能を含むすべてのアプリが表示され、このストアで昇格します。 新しいメッセージ アプリ ドロアーのクイック アクセスをユーザーに提供するメッセージの App Store からダウンロードされているすべてのアプリが表示されます。
+新しい ios 10 では、メッセージのアプリが含まれています、独自の専用の組み込みアプリ ストアには。 メッセージ アプリ拡張機能が含まれているすべてのアプリが表示され、このストアで昇格します。 新しいメッセージ アプリ ドロワーが、ユーザーにすばやくアクセスを提供するメッセージのアプリ ストアからダウンロードされているすべてのアプリが表示されます。
 
-また新しい iOS 10、Apple が追加ユーザーがアプリを簡単に検出するインライン アプリ属性。 たとえば、1 人のユーザーは、2 番目のユーザーが持っていないアプリから別のコンテンツを送信する場合 (たとえばステッカー) のようにインストールされている送信元のアプリの名前 下にあるメッセージ履歴内のコンテンツ。 場合、ユーザーはタップ アプリの名前、開くおメッセージ アプリ ストアとストアで選択されているアプリ。
+また新しい iOS 10 では、Apple が追加ユーザーを簡単にアプリを検出できるインライン アプリ属性。 たとえば、1 人のユーザーは、2 つ目のユーザーが持っていないアプリから別にコンテンツを送信する場合 (たとえばステッカー) のようにインストールされている送信側のアプリの名前 下にあるメッセージ履歴内のコンテンツ。 ユーザーがアプリのタップした場合の名前、メッセージ アプリ ストアを開くこと、アプリ ストアで選択されています。
 
-メッセージ アプリ拡張機能は、既存の iOS アプリを作成する使い慣れている開発者し、すべての標準的なフレームワークと標準的な iOS アプリの機能へのアクセスが必要であることに似ています。 例えば:
+メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が簡単に作成し、すべての標準的なフレームワークと標準の iOS アプリの機能へのアクセスことに似ています。 例えば:
 
 - アプリ内購入へのアクセスがあります。
-- Apple Pay へのアクセスがあります。
+- これらは、Apple Pay にアクセスします。
 - カメラなどのデバイスのハードウェアへのアクセスがあります。
 
-メッセージ アプリ拡張機能が iOS 10 でのみサポート、ただし、これらの拡張機能を送信する内容は watchOS および macOS デバイスで表示できます。 新しい_最近ページ_追加 watchOS 3 にはメッセージ アプリ拡張機能のものを含む、携帯電話から送信された最新のステッカーを表示され、ウォッチからそれらのステッカーを送信するユーザーを許可します。
+メッセージ アプリ拡張機能は iOS 10 でのみサポート、ただし、これらの拡張機能を送信するコンテンツは watchOS と macOS デバイスで表示できます。 新しい_ページの [最近]_ メッセージ アプリ拡張機能のものを含む、携帯電話から送信された最新のステッカーを表示し、watch から留めませんを送信するユーザーを許可するが、watchOS 3 に追加します。
 
 ## <a name="about-the-messages-framework"></a>メッセージのフレームワークについて
 
-新しい 10、iOS にメッセージ フレームワークは、ユーザーの iOS デバイスでメッセージ アプリの拡張機能とメッセージ アプリ間のインターフェイスを提供します。 ユーザーは、メッセージのアプリ内からのアプリを起動、このフレームワークはアプリの検出を許可し、データとその UI をレイアウトするために必要なコンテキストを提供します。
+新しいメッセージ フレームワークを iOS 10 では、ユーザーの iOS デバイスでメッセージ アプリ拡張機能とメッセージ アプリ間のインターフェイスを提供します。 ユーザーがメッセージ アプリ内からアプリを起動、このフレームワークは、アプリケーションの検出し、データとその UI をレイアウトするために必要なコンテキストを提供します。
 
-アプリが起動した後、ユーザーが対話メッセージを介して共有する新しいコンテンツを作成するためにします。 アプリは、このメッセージのフレームワークを使用して処理用メッセージ アプリを新しく作成されたコンテンツを転送します。
+アプリが起動されると、ユーザーは、メッセージを使用して共有する新しいコンテンツを作成することと対話します。 アプリは、メッセージのフレームワークを使用して処理用メッセージ アプリを新しく作成されたコンテンツを転送します。
 
-フレームワークのメッセージおよびメッセージ アプリ拡張機能は、既存の iOS アプリの拡張機能のテクノロジの上に構築されます。 アプリの拡張機能の詳細については、Apple を参照してください[アプリ拡張機能プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)です。
+フレームワークのメッセージとメッセージ アプリ拡張機能は、既存の iOS アプリの拡張機能のテクノロジの上に構築されます。 アプリ拡張機能の詳細については、Apple を参照してください[アプリ拡張機能のプログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)します。
 
-システム全体で Apple から提供された他の拡張機能ポイントとは異なり、開発者はメッセージ アプリ自体が、コンテナーとして機能するために、そのメッセージ アプリ拡張機能のホスト アプリケーションを提供するには必要ありません。 ただし、開発者には、新規または既存の iOS アプリ内でメッセージ アプリの拡張機能を含むとバンドルと共に配布のオプションがあります。
+Apple によって、システム全体で提供されるその他の拡張ポイントとは異なり、開発者は、メッセージ アプリ自体が、コンテナーとして機能するためのメッセージ アプリ拡張機能のホスト アプリを提供するには必要ありません。 ただし、開発者には、新規または既存の iOS アプリ内でメッセージ アプリ拡張機能を含めると、バンドルと共に出荷のオプションがあります。
 
-メッセージ アプリ拡張機能が iOS アプリのバンドルに含まれている場合は、デバイスのホーム画面とでメッセージ アプリ内からメッセージのアプリのドロアーの両方に、アプリのアイコンが表示されます。 アプリ バンドルに含まれていない場合は、メッセージ アプリ ドロアーでメッセージ アプリの拡張機能のみが表示されます。
+メッセージ アプリ拡張機能が iOS アプリのバンドルに含まれる場合は、デバイスのホーム画面とメッセージ アプリ内からメッセージ アプリ ドロワーの両方にアプリのアイコンが表示されます。 アプリ バンドルには含まれません場合、は、メッセージのアプリ ドロワーでメッセージ アプリ拡張機能のみが表示されます。
 
-これは、システム メッセージ アプリ ドロアーや設定などの他の部分で表示されるアイコンに、開発者がメッセージ アプリの拡張機能のバンドルでアプリのアイコンを提供する必要があるホスト アプリ バンドルに含まれるメッセージ アプリ拡張機能が含まれていない場合でもを拡張します。
+これは、システム メッセージ アプリ ドロワーや設定などの他の部分に表示されるアイコンに、開発者がメッセージ アプリ拡張機能のバンドルのアプリ アイコンを提供する必要は場合でも、ホスト アプリケーションのバンドルでメッセージ アプリ拡張機能が含まれていない、、拡張機能。
 
 ## <a name="about-stickers"></a>ステッカーについて
 
-Apple ステッカー手段として設計、新しい iMessage ユーザー ステッカーを許可することで通信するための他のメッセージの内容としてインラインを送信するか、メッセージ交換内で前のメッセージ バブルにアタッチされていることができます。
+Apple では、他のメッセージの内容としてインラインを送信する iMessage ユーザー ステッカーを許可することで通信するための新しい方法としてステッカーが設計されていますか、メッセージ交換内で前のメッセージの吹き出しに接続されていることができます。
 
-ステッカーは?
+ステッカーは何ですか。
 
-- これらは、メッセージのアプリの拡張機能を提供するイメージです。
-- アニメーションまたは静的のいずれかのイメージを設定できます。
-- アプリ内からイメージのコンテンツを共有する新しい機能を提供します。
+- メッセージ アプリ拡張機能を提供するイメージです。
+- アニメーションまたは静的のいずれかのイメージがあります。
+- アプリ内からイメージのコンテンツを共有する新しい方法を提供します。
 
-これにはステッカーを作成する 2 つの方法があります。
+ステッカーを作成する 2 つの方法はあります。
 
-1. Xcode の内部では、コードを含むせずステッカー パック メッセージ アプリ拡張機能をから作成できます。 必要なは、シールとアプリのアイコンのアセットです。
-2. 標準メッセージ アプリ拡張機能を作成することで、ステッカー メッセージ フレームワークを使用してコードを提供します。
+1. ステッカー パック メッセージ アプリ拡張機能はすべてのコードを含めずに Xcode 内から作成できます。 ステッカー、およびアプリ アイコンのアセットは、必要なのです。
+2. 標準のメッセージ アプリ拡張機能を作成してメッセージのフレームワークを使用してコードからのステッカーを提供します。
 
 ### <a name="creating-sticker-packs"></a>ステッカー パックの作成
 
-ステッカー パックは、Xcode の内部で特別なテンプレートから作成され、単にステッカーとして使用できるイメージ資産の静的セットを提供します。 前述のように、すべてのコードは必要ありません、開発者がステッカー アセット カタログの内部でステッカー パック フォルダーにイメージ ファイルを単純にドラッグします。
+ステッカー パックは、Xcode 内の特殊なテンプレートから作成され、単にステッカーとして使用できるイメージ資産の静的なセットを提供します。 前述のように、すべてのコードは必要ありません、開発者は、ステッカーのアセット カタログの内部でステッカー パック フォルダーにイメージ ファイルをドラッグするだけです。
 
-ステッカー パックに含まれるイメージを次の要件を満たす必要が必要があります。
+ステッカー Pack に含まれるイメージには、次の要件を満たすする必要があります。
 
-- 画像は PNG、APNG、GIF、または JPEG 形式でなければなりません。 Apple では、形式を使用してのみ、PNG および APNG ステッカー資産を提供するときにお勧めします。
-- アニメーションのステッカーは、APNG および GIF 形式をサポートするだけです。
-- ユーザーが、メッセージ交換のメッセージのバブルを配置することができるため、ステッカーの画像で透明な背景を提供する必要があります。
-- 個々 のイメージ ファイルは、500 kb 未満である必要があります。
-- イメージは、その 206 x 206 ポイント、100 x 100 ポイントよりも小さいか大きいをすることはできません。
+- イメージは、PNG、APNG、GIF、または JPEG 形式である必要があります。 Apple は、ステッカーの資産を提供するときに PNG と APNG 形式のみを使用することを示します。
+- アニメーションのステッカーは、APNG と GIF 形式のみをサポートします。
+- ステッカーの画像は、ユーザーが、メッセージ交換のメッセージの吹き出し経由で配置できるため、透明な背景を提供します。
+- 個別のイメージ ファイルは、500 kb 未満である必要があります。
+- イメージは、その 206 x 206 ポイント、拡大または縮小、100 x 100 ポイントよりもをすることはできません。
 
 > [!IMPORTANT]
-> ステッカーの画像はで常に提供する必要があります、 `@3x` 300 x 300 に 618 x 618 ピクセルの範囲内で解決します。 システムが自動的に生成、`@2x`と`@1x`必要に応じて実行時にバージョン。
+> ステッカーの画像で常に提供する必要があります、 `@3x` 300 x 300 に 618 x 618 ピクセルの範囲内で解決します。 システムが自動的に生成、`@2x`と`@1x`必要に応じて実行時にバージョン。
 
-Apple では、テスト可能なすべての状況で最適な表示されることを確認するとさまざまな (白、黒、赤、黄色、およびマルチ色) などのさまざまな色付き背景上の写真、ステッカーのイメージ アセットを提案します。
+Apple では、考え得るあらゆる状況で最適な表示されるようにさまざまな (白、黒、赤、黄色およびマルチ色分け) などさまざまな色付きの背景と上の写真、に対してステッカーのイメージ アセットのテストをお勧めします。
 
-ステッカー パックには、3 つの利用可能なサイズのいずれかで表示するステッカーを指定できます。
+ステッカー パックには、次の 3 つの利用可能なサイズのいずれかでステッカーを指定できます。
 
 - **小さな**- 100 x 100 ポイント。
 - **Medium** - 136 x 136 ポイント。 これは、既定のサイズです。
 - **大規模な**- 206 x 206 ポイント。
 
-Xcode の属性のインスペクターをステッカー パック全体のサイズを設定し、最適な結果をメッセージ アプリ内でステッカー ブラウザーで、要求されたサイズに一致するためのイメージ アセットのみを使用します。
+ステッカー パック全体のサイズを設定し、最適な結果のメッセージ アプリ内のステッカー ブラウザーで、要求されたサイズに一致するためのイメージ アセットのみを提供するには、Xcode の Attributes Inspector を使用します。
 
-詳細についてを参照してください、[アイスクリーム ビルダー](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)アプリと Apple の[メッセージ参照](https://developer.apple.com/reference/messages)です。
+詳細についてを参照してください、 [Ice cream ビルダー](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)アプリと Apple の[メッセージ参照](https://developer.apple.com/reference/messages)します。
 
 ## <a name="creating-a-custom-sticker-experience"></a>カスタムのステッカー エクスペリエンスを作成します。
 
-アプリには、複数のコントロールまたはステッカー パックによって提供されるよりも柔軟性が必要とする場合メッセージ アプリ拡張機能を含めるし、カスタムのステッカー エクスペリエンスのメッセージ フレームワークを介してステッカーを提供できます。
+アプリに複数のコントロールまたはステッカー パックによって提供されるよりも柔軟性が必要な場合メッセージ アプリ拡張機能は、およびカスタム ステッカーのエクスペリエンスのメッセージのフレームワークを使用してステッカーを提供できます。
 
-カスタム ステッカー エクスペリエンスを作成する利点とは
+カスタム ステッカーのエクスペリエンスを作成する利点とは
 
-1. アプリのユーザーにステッカーを表示する方法をカスタマイズするアプリを許可します。 たとえば、標準的なグリッド レイアウト以外または形式のステッカーを表示する、さまざまな色付きバック グラウンド。
-2. 静的イメージの資産として含まれるのではなくコードから動的に作成されるステッカーを使用できます。
-3. アプリ ストアへの新しいバージョンをリリースすることがなく、開発者の web サーバーから動的にダウンロードされるステッカーのイメージ アセットを使用できます。
-4. で、デバイスのカメラへのアクセスするステッカー上の場を作成します。
-5. アプリ内購入のでは、アプリ内から複数のステッカーを購入するためです。
+1. アプリのユーザーにステッカーを表示する方法をカスタマイズするアプリを許可します。 などに、さまざまな色付きの背景または標準のグリッド レイアウト以外の形式で存在するステッカーです。
+2. 静的なイメージの資産として含まれているのではなくコードから動的に作成するステッカーを使用できます。
+3. App Store に新しいバージョンをリリースすることがなく、開発者の web サーバーから動的にダウンロードするステッカーのイメージ アセットを使用できます。
+4. デバイスのカメラへのアクセスをステッカーの場を作成できます。
+5. アプリ内購入は、ユーザーからのアプリ内の複数のステッカーを購入できるようにします。
 
-カスタム ステッカー エクスペリエンスを作成するには、次の操作を行います。
+カスタム ステッカーのエクスペリエンスを作成するには、次の操作を行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Visual Studio for mac を起動します。
+1. Visual Studio for mac の起動
 2. メッセージ アプリ拡張機能を追加するソリューションを開きます。 
-3. 選択**iOS** > **拡張機能** > **iMessage 拡張子** をクリックし、 **次へ**ボタン。 
+3. 選択**iOS** > **拡張機能** > **iMessage 拡張機能** をクリックし、**次**ボタン。 
 
     [![](intro-to-message-app-extensions-images/message01.png "IMessage 拡張機能を選択します。")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. 入力、**拡張機能の名前** をクリックし、**次**ボタン。 
+4. 入力、**拡張機能名** をクリックし、 **次へ**ボタン。 
 
-    [![](intro-to-message-app-extensions-images/message02.png "拡張機能の名前を入力してください。")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. クリックして、**作成**拡張機能をビルドするにはボタン。 
+    [![](intro-to-message-app-extensions-images/message02.png "拡張機能の名前を入力します。")](intro-to-message-app-extensions-images/message02.png#lightbox)
+5. をクリックして、**作成**拡張機能を構築するボタンをクリックします。 
 
-    [![](intro-to-message-app-extensions-images/message03.png "作成する をクリックします。")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message03.png "[作成] ボタンをクリックします。")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio を起動します。
 2. メッセージ アプリ拡張機能を追加するソリューションを開きます。
-3. 選択 * * iOS の拡張機能 > iMessage 拡張機能 (iOS) * * をクリックし、**次**ボタン。
+3. 選択 * * iOS 拡張機能 > iMessage 拡張機能 (iOS) * * をクリックし、**次**ボタン。
 
-    [![Select iMessage 拡張機能 (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+    [![IMessage 拡張機能 (iOS) を選択します。](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
-4. 入力してください、**名前** をクリックし、 **OK**ボタン
+4. 入力、**名前** をクリックし、 **ok**ボタン
 
 -----
 
-既定では、`MessagesViewController.cs`ファイルはソリューションに追加されます。 これは、拡張機能へのメイン エントリ ポイントと、継承元、`MSMessageAppViewController`クラスです。
+既定で、`MessagesViewController.cs`ファイルがソリューションに追加されます。 これは、拡張機能へのメイン エントリ ポイントと、継承元、`MSMessageAppViewController`クラス。
 
-メッセージ framework には、ユーザーに利用可能なステッカーを表示するためのクラスが用意されています。
+メッセージ framework には、ユーザーに使用可能なステッカーを表示するためのクラスが用意されています。
 
-- `MSStickerBrowserViewController` ステッカーに表示される表示を制御します。 準拠している、`IMSStickerBrowserViewDataSource`インターフェイス ステッカー数と、特定のブラウザーのインデックスのステッカーを返します。
-- `MSStickerBrowserView` -これは、使用可能なステッカーに表示されるビューです。
+- `MSStickerBrowserViewController` ビューで表示される、ステッカーを制御します。 準拠している、`IMSStickerBrowserViewDataSource`ステッカー カウントと、特定のブラウザーのインデックスのステッカーを返すインターフェイス。
+- `MSStickerBrowserView` -これは、ビューで表示される使用可能なステッカーです。
 - `MSStickerSize` -ブラウザー ビューで表示するステッカーのグリッドの個々 のセルのサイズを決定します。
 
 ### <a name="creating-a-custom-sticker-browser"></a>カスタムのステッカー ブラウザーを作成します。
 
-開発者が独自のステッカー ブラウザーを提供することによってユーザーにとってのステッカーをさらにカスタマイズできます (`MSMessageAppBrowserViewController`) でメッセージ アプリ拡張機能です。 独自のステッカー ブラウザーでは、メッセージ ストリームに含めるステッカーを選択するときに、ユーザーにステッカーがどのように表示されるかを変更します。
+開発者がカスタム ステッカーのブラウザーを提供することで、ユーザーのステッカー操作性をさらにカスタマイズできます (`MSMessageAppBrowserViewController`) でメッセージ アプリ拡張機能。 カスタムのステッカー ブラウザーのステッカーの表示方法をユーザーにメッセージ ストリームに含めるステッカーを選択すると変更点します。
 
 次の手順で行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **ソリューション パッド**拡張機能のプロジェクト名を右クリックし、選択、**追加** > **新しいファイル.**  >  **iOS |Apple Watch** > **コント ローラーのインターフェイス**です。
+1. **Solution Pad**拡張機能のプロジェクト名を右クリックし、選択、**追加** > **新しいファイル.**  >  **iOS |Apple Watch** > **インターフェイス コント ローラー**します。
 2. 入力`StickerBrowserViewController`の**名前** をクリックし、**新規**ボタン。 
 
-    [![](intro-to-message-app-extensions-images/browser01.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/browser01.png "名前の StickerBrowserViewController を入力します。")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. 開く、`StickerBrowserViewController.cs`ファイルを編集します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューション エクスプ ローラー**拡張機能のプロジェクト名を右クリックし、選択、**追加** > **新しいファイル.**  >  **iOS |Apple Watch** > **コント ローラーのインターフェイス**です。
+1. **ソリューション エクスプ ローラー**拡張機能のプロジェクト名を右クリックし、選択、**追加** > **新しいファイル.**  >  **iOS |Apple Watch** > **インターフェイス コント ローラー**します。
 2. 入力`StickerBrowserViewController`の**名前** をクリックし、**新規**ボタン。 
 
-    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "StickerBrowserViewController を名を入力します。")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "名前の StickerBrowserViewController を入力します。")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. 開く、`StickerBrowserViewController.cs`ファイルを編集します。
 
 -----
@@ -262,13 +262,13 @@ namespace MonkeyStickers
 }
 ```
 
-見て上記のコードの詳細。 拡張機能を提供するステッカーの記憶域を作成します。
+詳細で、上記のコードを見てに設定します。 拡張機能を提供するステッカーのストレージが作成されます。
 
 ```csharp
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-2 つのメソッドをオーバーライドして、`MSStickerBrowserViewController`ブラウザーこのデータ ストアからのデータを提供するクラス。
+2 つのメソッドをオーバーライドし、`MSStickerBrowserViewController`のブラウザーこのデータ ストアからのデータを提供するクラス。
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -282,7 +282,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-`CreateSticker`メソッドが拡張機能のバンドルからイメージ資産のパスを取得しの新しいインスタンスを作成することを使用して、`MSSticker`からこの資産は、コレクションに追加されます。
+`CreateSticker`メソッドが拡張機能のバンドルからのイメージ アセットのパスを取得しの新しいインスタンスを作成することを使用して、`MSSticker`からこの資産は、コレクションに追加します。
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -309,9 +309,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-`LoadSticker`からメソッドを呼び出した`ViewDidLoad`(アプリのバンドルに含まれる)、名前付きのイメージ アセットからステッカーを作成し、ステッカーのコレクションに追加します。
+`LoadSticker`メソッドの呼び出し元`ViewDidLoad`(アプリのバンドルに含まれる)、名前付きのイメージ資産からステッカーを作成し、ステッカーのコレクションに追加します。
 
-独自のステッカー ブラウザーを実装するのには、編集、`MessagesViewController.cs`ファイルし、次のようになります。
+カスタム ステッカーのブラウザーを実装するには、編集、`MessagesViewController.cs`ファイルを開き、次のようになります。
 
 ```csharp
 using System;
@@ -354,13 +354,13 @@ namespace MonkeyStickers
 }
 ```
 
-見てこのコードの詳細で、カスタムのブラウザーの記憶域を作成します。
+詳細で、次のコードを見てに設定、カスタムのブラウザーの記憶域を作成します。
 
 ```csharp
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-、`ViewDidLoad`メソッドがインスタンス化され、新しいブラウザー ウィンドウを構成します。
+および、`ViewDidLoad`メソッド、インスタンス化して新しいブラウザーを構成します。
 
 ```csharp
 // Create new browser and configure it
@@ -369,7 +369,7 @@ BrowserViewController.View.Frame = View.Frame;
 BrowserViewController.ChangeBackgroundColor (UIColor.Gray);
 ```
 
-それを表示するビューをブラウザーが追加されます。
+それを表示するビューに、ブラウザーが追加されます。
 
 ```csharp
 // Add to view
@@ -378,21 +378,21 @@ BrowserViewController.DidMoveToParentViewController (this);
 View.AddSubview (BrowserViewController.View);
 ```
 
-### <a name="further-sticker-customization"></a>ステッカーをさらにカスタマイズ
+### <a name="further-sticker-customization"></a>さらにステッカーのカスタマイズ
 
-メッセージ アプリ拡張機能に 2 つのクラスを含めることでステッカーをさらにカスタマイズができます。
+メッセージ アプリ拡張機能に 2 つのクラスを含めることでさらにステッカーのカスタマイズが可能です。
 
 - `MSStickerView`
 - `MSSticker`
 
-上記のメソッドを使用して、拡張機能は、標準のステッカー ブラウザー メソッドに依存しないステッカーの選択をサポートできます。 さらに、2 つの異なる表示モードのステッカーの表示を切り替えることもできます。
+上記のメソッドを使用して、拡張機能は標準のステッカー ブラウザー メソッドに依存しないステッカーの選択をサポートできます。 さらに、2 つの異なる表示モードの間でステッカーの表示を切り替えることができます。
 
-- **Compact** -ステッカー ビューがメッセージ ビューの下部にある 25% がここで、既定のモードです。
+- **Compact** -既定のモードは、このステッカー ビューが、メッセージ ビューの下部にある 25% を占める場所。
 - **展開**-ステッカー表示メッセージ ビュー全体を入力します。
 
-このステッカー ビュー切り替えることができるこれらのモード間で、プログラムまたは手動でユーザーがします。
+このステッカー ビュー切り替えることができますの間でこれらのモードは、プログラム、または手動でユーザーがします。
 
-次の 2 つの異なる表示モードの切り替えの処理の例を見てください。 2 つの異なるビュー コント ローラーは、各状態の必要があります。 `StickerBrowserViewController`ハンドル、 **Compact**ビューとは、次のような。
+次の 2 つの異なる表示モードの切り替えを処理の例を見てください。 2 つの異なるビュー コント ローラーは、各状態の必要になります。 `StickerBrowserViewController`ハンドル、 **Compact**ビューとは、次のようにします。
 
 ```csharp
 using System;
@@ -493,7 +493,7 @@ namespace MessageExtension
 }
 ```
 
-`AddStickerViewController`を処理する、**展開**ステッカー ビューと、次のような。
+`AddStickerViewController`を処理する、 **Expanded**ステッカー ビューと、次のようになります。
 
 ```csharp
 using System;
@@ -665,14 +665,14 @@ namespace MessageExtension
 }
 ```
 
-使用可能なコレクションに新しいステッカーを追加するユーザーが要求したときに、新しい`AddStickerViewController`表示されているコント ローラーとステッカー ビューが行われますが入力、**展開**ビュー。
+使用可能なコレクションに新しいステッカーを追加するユーザーが要求したときに新しい`AddStickerViewController`を作成、表示されているコント ローラーとそのステッカー ビューが入力、**展開**ビュー。
 
 ```csharp
 // Switch to expanded view mode
 Request (MSMessagesAppPresentationStyle.Expanded);
 ```
 
-選択すると、ユーザーを追加するステッカーが、その利用可能なコレクションに追加され、 **Compact**ビューが要求されます。
+使用可能なコレクションに追加されます、ユーザーが ステッカーを追加する、および**Compact**ビューが要求されます。
 
 ```csharp
 public void AddStickerToCollection (MSSticker sticker)
@@ -706,12 +706,12 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 ## <a name="summary"></a>まとめ
 
-この記事の内容がカバーされてと統合する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含む、**メッセージ**アプリとユーザーに新しい機能の存在します。 これは、テキスト、ステッカー、メディア ファイルおよび対話型のメッセージを送信する拡張機能の使用について説明します。
+この記事ではカバーされてメッセージ アプリ拡張機能を統合する Xamarin.iOS ソリューションに含める、**メッセージ**アプリとユーザーに新しい機能が存在します。 これは、テキスト、ステッカー、メディア ファイル、および対話型メッセージを送信する拡張機能の使用について説明します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [アイスクリーム ビルダー (サンプル)](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
-- [メッセージ参照](https://developer.apple.com/reference/messages)
-- [アプリ拡張機能プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)
+- [Ice cream ビルダー (サンプル)](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
+- [メッセージの参照](https://developer.apple.com/reference/messages)
+- [アプリ拡張機能のプログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

@@ -1,25 +1,25 @@
 ---
-title: Xamarin.iOS の国際化エンコーディング
-description: このドキュメントでは、Xamarin.iOS、利用可能なエンコーディングとアプリに追加する方法を説明の国際化エンコーディングについて説明します。
+title: Xamarin.iOS での国際化エンコーディング
+description: このドキュメントでは、使用可能なエンコーディングとそれらをアプリに追加する方法について説明する Xamarin.iOS の国際化エンコーディングについて説明します。
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: 4963b0f95ae48ee56462a82d2f82a8dcaa231a23
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: 7c59b6f1ac269c57ab720aeb6999c0f0d178bab3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784127"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112505"
 ---
-# <a name="internationalization-encodings-in-xamarinios"></a>Xamarin.iOS の国際化エンコーディング
+# <a name="internationalization-encodings-in-xamarinios"></a>Xamarin.iOS での国際化エンコーディング
 
-すべてのエンコーディングは、既定で Xamarin.iOS クラス ライブラリに含まれます。
+すべてのエンコーディングは、既定で Xamarin.iOS クラス ライブラリに含まれるとは限りません。
 
-アプリケーションのサイズを減らすためには、Xamarin.iOS が含まれていない特定のエンコーディングを使用してにする必要がありますのエンコーディングのサポートを含むアセンブリを含める mtouch を指示します。
+Xamarin.iOS アプリケーションのサイズを減らすためには、特定のエンコーディングを含めるしないし、mtouch エンコードする必要がありますのサポートを含むアセンブリを含めるように指示する必要があります。
 
-これは、Mac または Visual Studio の Visual Studio での iOS のビルド/詳細 ウィンドウから余分なエンコーディングを選択して行います。
+これは、Mac または Visual Studio の Visual Studio で iOS のビルド/詳細設定 ウィンドウから余分なエンコーディングを選択して行います。
 
  [![](encodings-images/00.png "余分なエンコーディングを選択します。")](encodings-images/00.png#lightbox)
 
@@ -28,11 +28,11 @@ ms.locfileid: "34784127"
 これらのいずれかを選択できます。
 
 -  cjk: Chineese、日本語および韓国語
--  mideast: アラビア語、ヘブライ語、トルコ語とラテン 5 です。
--  その他の: キリル文字、バルト語、ベトナム語、ウクライナ語、タイ語
--  まれな: EBCDIC エンコーディング、およびその他のまれなコード ページ
--  西: ラテン語の言語、内側および西ヨーロッパ
--  すべて
+-  mideast: アラビア語、ヘブライ語、トルコ語、ラテン 5。
+-  その他: キリル文字、バルト語、ベトナム語、ウクライナ語、タイ語
+-  まれな: EBCDIC エンコーディングとその他のまれなコード ページ
+-  西部: イースターと西ヨーロッパ言語ラテン語の言語
+-  all
 
 
  <a name="cjk" />

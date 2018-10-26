@@ -4,15 +4,15 @@ description: このガイドでは、Renderscript を紹介し、組み込み Re
 ms.prod: xamarin
 ms.assetid: 378793C7-5E3E-40E6-ABEE-BEAEF64E6A47
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 3331eb579f0aa2d7f29508773c588455c134f56a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 5369542552a41100443c5e91ceca9e110c5c7c3c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241189"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108731"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript の概要
 
@@ -48,11 +48,12 @@ Renderscripts を Android アプリケーションで使用するための 3 つ
 
 3. **割り当てられたメモリ**&ndash;経由のカーネルとの間でデータが渡される、 _[割り当て](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_ します。 カーネルは、1 つの入力を必要がありますや、1 つの出力の割り当て。
 
-[Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) Renderscript ランタイムとやり取りするためのクラスが名前空間に含まれています。 具体的には、 [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/)クラスは、ライフ サイクルと Renderscript エンジンのリソースを管理します。 Android アプリは、1 つまたは複数を初期化する必要があります[ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)オブジェクト。 割り当ては、割り当てと Android アプリと Renderscript ランタイム間で共有されるメモリへのアクセスを担当するマネージ API です。 通常、入力、1 つの割り当てが作成され、カーネルの出力を保持するために必要に応じて別の割り当てが作成されます。 Renderscript ランタイム エンジンと関連付けられたマネージ ラッパー クラスは、割り当てによって保持されているメモリへのアクセスを管理する、余分な作業を行うため、Android アプリ開発者の必要はありません。
+[Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) Renderscript ランタイムとやり取りするためのクラスが名前空間に含まれています。 具体的には、 [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/)クラスは、ライフ サイクルと Renderscript エンジンのリソースを管理します。 Android アプリは、1 つまたは複数を初期化する必要があります。 [`Android.Renderscripts.Allocation`](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)
+オブジェクト。 割り当ては、割り当てと Android アプリと Renderscript ランタイム間で共有されるメモリへのアクセスを担当するマネージ API です。 通常、入力、1 つの割り当てが作成され、カーネルの出力を保持するために必要に応じて別の割り当てが作成されます。 Renderscript ランタイム エンジンと関連付けられたマネージ ラッパー クラスは、割り当てによって保持されているメモリへのアクセスを管理する、余分な作業を行うため、Android アプリ開発者の必要はありません。
 
 割り当てには 1 つまたは複数が含まれます[Android.Renderscripts.Elements](https://developer.xamarin.com/api/type/Android.Renderscripts.Element/)します。
 要素は、各割り当てのデータを記述する特殊な型です。
-割り当てが一致する必要があります、出力の要素の型、入力要素の型。 実行する場合、Renderscript は入力の割り当てを並列に内の各要素を反復処理し、結果を出力に書き込む割り当て。 要素の 2 種類あります。
+要素の型の割り当て、出力の入力要素の型に一致する必要があります。 実行する場合、Renderscript は入力の割り当てを並列に内の各要素を反復処理し、結果を出力に書き込む割り当て。 要素の 2 種類あります。
 
 - **単純型**&ndash;概念的にはこれは、C データ型と同じ`float`または`char`します。
 
@@ -60,7 +61,8 @@ Renderscripts を Android アプリケーションで使用するための 3 つ
 
 Renderscript エンジンでは、各割り当ての要素が、カーネルで必要なものと互換性があることを確認するランタイム チェックを実行します。 割り当て内の要素のデータ型では、カーネルが予期しているデータ型は一致しない場合、例外がスローされます。
 
-子孫である型ですべての Renderscript カーネルが折り返される、 [ `Android.Renderscripts.Script` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/)クラス。 `Script`クラスを使用する Renderscript のパラメーターを設定、適切な設定を`Allocations`、および、Renderscript を実行します。 2 つ`Script`Android SDK のサブクラス。
+子孫である型ですべての Renderscript カーネルが折り返される、 [`Android.Renderscripts.Script`](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/)
+クラスの新しいインスタンスを初期化します。 `Script`クラスを使用する Renderscript のパラメーターを設定、適切な設定を`Allocations`、および、Renderscript を実行します。 2 つ`Script`Android SDK のサブクラス。
 
 
 - **`Android.Renderscripts.ScriptIntrinsic`** &ndash; Android SDK にバンドルされておよびのサブクラスによってアクセス可能ないくつかの一般的な Renderscript タスク、 [ScriptIntrinsic](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic/)クラス。 開発者は既に提供されているように、そのアプリケーション内でこれらのスクリプトを使用する追加の手順は必要はありません。
@@ -107,13 +109,15 @@ Renderscript エンジンでは、各割り当ての要素が、カーネルで�
 
 Android アプリケーションで Renderscript を使用するための基本的な手順について説明します。
 
-**Renderscript コンテキストを作成** &ndash; 、 [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/)クラスは、マネージ ラッパー Renderscript コンテキストとは、リソース管理の初期化を制御し、クリーンアップします。 使用して、Renderscript オブジェクトを作成、`RenderScript.Create`ファクトリ メソッドをパラメーターとして (アクティビティ) など、Android のコンテキストを取得します。 次のコード行では、Renderscript コンテキストを初期化する方法を示しています。
+**Renderscript コンテキスト作成** &ndash; [`Renderscript`](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/)
+クラスは、マネージ ラッパー Renderscript コンテキストとは、リソース管理の初期化を制御し、クリーンアップします。 使用して、Renderscript オブジェクトを作成、`RenderScript.Create`ファクトリ メソッドをパラメーターとして (アクティビティ) など、Android のコンテキストを取得します。 次のコード行では、Renderscript コンテキストを初期化する方法を示しています。
 
 ```csharp
 Android.Renderscripts.RenderScript renderScript = RenderScript.Create(this);
 ```
 
-**割り当てを作成**&ndash;組み込みのスクリプトによって 1 つまたは 2 つの作成に必要な場合があります`Allocation`秒。 [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)クラスには、組み込みの割り当てをインスタンス化を支援するいくつかのファクトリ メソッド。 例としては、次のコード スニペットは、ビットマップの割り当てを作成する方法を示します。
+**割り当てを作成**&ndash;組み込みのスクリプトによって 1 つまたは 2 つの作成に必要な場合があります`Allocation`秒。 、 [`Android.Renderscripts.Allocation`](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)
+クラスには、組み込みの割り当てをインスタンス化を支援するいくつかのファクトリ メソッドがあります。 例としては、次のコード スニペットは、ビットマップの割り当てを作成する方法を示します。
 
 ```csharp
 Android.Graphics.Bitmap originalBitmap;

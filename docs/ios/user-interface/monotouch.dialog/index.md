@@ -4,14 +4,14 @@ description: このドキュメントには、MonoTouch.Dialog (山がについ�
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: bee4b460552c7273021b16955b52ba3d95d3e07c
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: a948d5beca6c09dc77e5c86d3f281851e4839ff0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038405"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107990"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>MonoTouch.Dialog Xamarin.iOS 用の概要
 
@@ -54,7 +54,7 @@ IOS でのテーブルを使用する場合は大量の繰り返し実行する�
 MT.D のテーブルの作成の一般的な API をカプセル化するすべてのコードでを簡略化します。 宣言型のオブジェクトがいっそう簡単に構文をバインドできる API の上に抽象化を提供します。 そのため、ある 2 つの Api で利用山D:
 
 -   **低レベルの要素 API** –*要素 API*画面とそのコンポーネントを表す要素の階層ツリーの作成に基づきます。 要素 API に、開発者が最大限の柔軟性と Ui を作成することで制御できます。 さらに、要素の API に JSON で、サーバーから、UI の動的生成だけでなく、非常に高速の宣言を使用して宣言型の定義のサポートを拡張します。 
--   **高度なリフレクション API** – とも呼ばれる、*バインド**API*クラスは UI のヒントとし、山で注釈を付けるでD は自動的にオブジェクトに基づく画面を作成し、バックアップ、基になるオブジェクトとの間のバインドを表示 (および必要に応じて編集) 画面とを提供します。   上記の例では、リフレクション API の使用を示します。 この API は API の要素は、細かい制御を提供しませんが、クラスの属性に基づいて要素の階層を自動的に作成することにより複雑さ、さらに削減されます。 
+-   **高度なリフレクション API** – とも呼ばれる、*バインド**API*クラスは UI のヒントとし、山で注釈を付けるでD は自動的にオブジェクトに基づく画面を作成し、バックアップ、基になるオブジェクトとの間のバインドを表示 (および必要に応じて編集) 画面とを提供します。 上記の例では、リフレクション API の使用を示します。 この API は API の要素は、細かい制御を提供しませんが、クラスの属性に基づいて要素の階層を自動的に作成することにより複雑さ、さらに削減されます。 
 
 
 MT.D は、UI 要素の画面の作成、ビルドの大規模なセットにパックされたが、カスタム要素および高度な画面レイアウトの必要性も認識。 そのため、機能拡張では、API をファーストクラスのおすすめです。 開発者は、既存の要素を拡張または新たに作成し、シームレスに統合し、ことができます。

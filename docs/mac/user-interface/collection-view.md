@@ -4,15 +4,15 @@ description: この記事では、Xamarin.Mac アプリでのコレクション 
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: c8b4b5ff8bebf5fbbded410ae84d1aefcca2d6cc
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 904db0b97a8b21fd51722b70a63386a53e3f5347
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251248"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104038"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin.Mac でコレクション ビュー
 
@@ -375,7 +375,7 @@ public override bool Selected
 
 コレクション ビューのデータ ソース (`NSCollectionViewDataSource`) コレクション ビューのすべてのデータを提供し、作成および Collection View Cell を設定します (を使用して、`.xib`プロトタイプ)、コレクション内の各項目の必要に応じて。
 
-新しいクラスを追加、プロジェクト、それを呼び出す`CollectionViewDataSource`し、次のようになります。
+その呼び出しのプロジェクトの新しいクラスを追加`CollectionViewDataSource`し、次のようになります。
 
 ```csharp
 using System;

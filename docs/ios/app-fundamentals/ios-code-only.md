@@ -4,21 +4,21 @@ description: このドキュメントでは、コードを使用して Xamarin.i
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 688457ab25398e8c5b9848a7e58f6163db4c0a05
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 777ba2035511dfd632d64b11c2265e239a646b3a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242395"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109537"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS でのコードで iOS ユーザー インターフェイスの作成
 
 IOS アプリのユーザー インターフェイスは、ネット ショップのように、– アプリケーションは通常 1 つのウィンドウを取得しますがいっぱいに、ウィンドウのように多くのオブジェクトを必要があるし、どのようなアプリによっては、オブジェクトと配置を変更できますをする必要が表示します。 このシナリオのオブジェクト (ユーザーに表示される物事) はビューと呼ばれます。 アプリケーションで 1 つの画面を作成するビューが相互に積み重ねられたコンテンツ ビュー階層におよび、階層が単一のビュー コント ローラーによって管理されます。 複数の画面を持つアプリケーションには、複数のコンテンツ ビュー階層、それぞれに独自のビュー コントローラー、およびウィンドウ内のアプリケーションの場所のビューがあり、ユーザーに表示される画面に基づいて異なるコンテンツ ビュー階層を作成します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。 
 
@@ -26,7 +26,7 @@ IOS アプリのユーザー インターフェイスは、ネット ショッ�
 
 使用してこれらのビュー階層を構築することができます、 [iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md) Visual Studio で、ただし便利なは全体をコードで操作する方法の基本を理解します。 この記事では、いくつかの基本的なポイント取得するとコードのみのユーザー インターフェイスの開発と実行について説明します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。 
 
@@ -38,7 +38,7 @@ IOS アプリのユーザー インターフェイスは、ネット ショッ�
 
 ## <a name="creating-a-code-only-project"></a>コードのみのプロジェクトを作成します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="ios-blank-project-template"></a>iOS の空のプロジェクト テンプレート
 
@@ -54,14 +54,13 @@ IOS アプリのユーザー インターフェイスは、ネット ショッ�
 
 [![プロジェクト ファイル](ios-code-only-images/empty-project.w157-sml.png "プロジェクト ファイル")](ios-code-only-images/empty-project.w157.png#lightbox)
 
-
 1. **AppDelegate.cs** -が含まれています、`UIApplicationDelegate`サブクラスでは、 `AppDelegate` 、iOS からのアプリケーション イベントの処理に使用されます。 アプリケーション ウィンドウが作成された、`AppDelegate`の`FinishedLaunching`メソッド。
 1. **Main.cs** -クラスを指定すると、アプリケーションのエントリ ポイントを含むため、 `AppDelegate` 。
 1. **Info.plist** -アプリケーションの構成情報を含むプロパティ一覧ファイル。
 1. **Entitlements.plist** – 機能と、アプリケーションのアクセス許可に関する情報を含むプロパティ一覧ファイル。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS のテンプレート
 
@@ -72,20 +71,20 @@ Visual Studio for Mac では、空のテンプレートが提供されません�
 
 
 1. 新しい iOS プロジェクトを作成するのにには、単一ビュー アプリ テンプレートを使用します。
-    
+
     [![](ios-code-only-images/single-view-app.png "単一ビュー アプリ テンプレートを使用します。")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. 削除、`Main.Storyboard`と`ViewController.cs`ファイル。 **いない**削除、`LaunchScreen.Storyboard`します。 ストーリー ボードで作成したビュー コント ローラーの分離コードは、ビュー コント ローラーを削除する必要があります。
 1. 選択することを確認**削除**ポップアップ ダイアログ ボックス。
-    
+
     [![](ios-code-only-images/delete.png "ポップアップ ダイアログ ボックスから削除 を選択します。")](ios-code-only-images/delete.png#lightbox)
 
 1. Info.plist の内の情報を削除、**展開情報 > メイン インターフェイス**オプション。
-    
+
     [![](ios-code-only-images/main-interface.png "メイン インターフェイス オプション内の情報を削除します。")](ios-code-only-images/main-interface.png#lightbox)
 
 1. 最後に、次のコードを追加、 `FinishedLaunching` AppDelegate クラスのメソッド。
-        
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             // create a new window instance based on the screen size
@@ -102,9 +101,7 @@ Visual Studio for Mac では、空のテンプレートが提供されません�
 
 -----
 
-
-
-使用して iOS アプリケーションの構築、 [MVC パターン](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller)します。 アプリケーションが表示される最初の画面は、ウィンドウのルート ビュー コント ローラーから作成されます。 参照してください、[こんにちは, iOS マルチ スクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)の詳細については、MVC パターン自体をガイドします。
+使用して iOS アプリケーションの構築、 [MVC パターン](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc)します。 アプリケーションが表示される最初の画面は、ウィンドウのルート ビュー コント ローラーから作成されます。 参照してください、[こんにちは, iOS マルチ スクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)の詳細については、MVC パターン自体をガイドします。
 
 実装、`AppDelegate`によって追加されたテンプレートを作成、アプリケーション ウィンドウのすべての iOS アプリケーションの 1 つだけであり、次のコードで可視化します。
 
@@ -207,17 +204,17 @@ public class AppDelegate : UIApplicationDelegate
 
  [![](ios-code-only-images/image2.png "ナビゲーション コント ローラー内で入れ子になったコント ローラー")](ios-code-only-images/image2.png#lightbox)
 
-## <a name="creating-a-view-controller"></a>ビュー コント ローラーの作成
+## <a name="creating-a-view-vontroller"></a>ビュー vontroller を作成します。
 
 これでとしてコント ローラーを追加する方法を見てきました、`RootViewController`ウィンドウのコードでカスタム ビュー コント ローラーを作成する方法を見てみましょう。
 
 という名前の新しいクラスを追加`CustomViewController`次に示すよう。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](ios-code-only-images/customviewcontroller.w157-sml.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](ios-code-only-images/new-file.png "CustomViewController をという名前の新しいクラスを追加します。")](ios-code-only-images/new-file.png#lightbox)
 
@@ -236,8 +233,6 @@ namespace CodeOnlyDemo
     }
 }
 ```
-
-<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>ビューの初期化
 
@@ -413,7 +408,7 @@ submitButton.Layer.CornerRadius = 5f;
 これらの変更、ビューを次のようになります。
 
 [![](ios-code-only-images/image6.png "ビューの例の実行")](ios-code-only-images/image6.png#lightbox)
- 
+
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>ビュー階層に複数のビューを追加します。
 
 iOS を使用して、ビュー階層に複数のビューを追加する機能を提供する`AddSubviews`します。
@@ -424,7 +419,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>ボタンの機能を追加します。
 
-ボタンがクリックされたときに何かが起こる、ユーザーが期待されます。 たとえば、アラートが表示されます。 または別の画面にナビゲーションが実行されます。 
+ボタンがクリックされたときに何かが起こる、ユーザーが期待されます。 たとえば、アラートが表示されます。 または別の画面にナビゲーションが実行されます。
 
 2 つ目のビュー コント ローラーをナビゲーション スタックにプッシュするコードを追加してみましょう。
 
@@ -470,7 +465,7 @@ foreach(var subview in View.Subviews)
 
 ユーザーが横にデバイスを回転させる場合、コントロール サイズを変更しないで適切には、次のスクリーン ショットに示すように。
 
- [![](ios-code-only-images/image7.png "コントロールは適切にサイズ変更されない場合は、ユーザーは、横にデバイスを回転、")](ios-code-only-images/image7.png#lightbox)
+[![](ios-code-only-images/image7.png "コントロールは適切にサイズ変更されない場合は、ユーザーは、横にデバイスを回転、")](ios-code-only-images/image7.png#lightbox)
 
 これを解決する方法の 1 つは、設定して、`AutoresizingMask`それぞれのビューのプロパティ。 そこで各設定は水平方向に拡張するコントロールをするここで`AutoresizingMask`します。 次の例は、`usernameField`が、同じ階層の表示では、各ガジェットに適用する必要があります。
 
@@ -480,7 +475,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 今すぐデバイスまたはシミュレーターを回転ときすべて全体に引き伸ばす追加の領域では、次に示すよう。
 
- [![](ios-code-only-images/image8.png "すべてのコントロールにストレッチする追加の領域の塗りつぶし")](ios-code-only-images/image8.png#lightbox)
+[![](ios-code-only-images/image8.png "すべてのコントロールにストレッチする追加の領域の塗りつぶし")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>カスタム ビューの作成
 
@@ -585,19 +580,19 @@ submitButton.TouchUpInside += delegate
 
 ここで、アプリケーションを実行して [送信] ボタンをタップして、円で新しいビューが表示されます。
 
- [![](ios-code-only-images/circles.png "円に新しいビューが表示されます。")](ios-code-only-images/circles.png#lightbox)
+[![](ios-code-only-images/circles.png "円に新しいビューが表示されます。")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>起動画面を作成します。
 
-A[起動画面](~/ios/app-fundamentals/images-icons/launch-screens.md)応答性があるユーザーに表示する方法として、アプリの起動時に表示されます。 アプリの読み込み時に、起動画面が表示される、ため、アプリケーションはまだメモリに読み込み中にコードで作成できません。 
+A[起動画面](~/ios/app-fundamentals/images-icons/launch-screens.md)応答性があるユーザーに表示する方法として、アプリの起動時に表示されます。 アプリの読み込み時に、起動画面が表示される、ため、アプリケーションはまだメモリに読み込み中にコードで作成できません。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-ときに、プロジェクトを Visual studio の起動画面がで見つかる .xib ファイルの形式で提供されている iOS の作成、**リソース**プロジェクト内のフォルダー。 
+起動画面がで見つかる .xib ファイルの形式で提供される Visual Studio で iOS プロジェクトを作成するときに、**リソース**プロジェクト内のフォルダー。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-ときに、Mac、起動画面は、ストーリー ボード ファイルの形式で提供されます、Visual Studio で iOS プロジェクトを作成します。 
+Visual studio for Mac、iOS プロジェクトを作成するときに、起動画面は、ストーリー ボード ファイルの形式で提供されます。
 
 -----
 
@@ -622,22 +617,17 @@ Apple は、.xib またはストーリー ボード ファイルを使用して 
 > [!IMPORTANT]
 > 起動画面アプリがない場合は、画面を十分に適合しないことに注意してください可能性があります。 大文字と小文字の場合は、含めるには、少なくとも、640 x 1136 イメージがという名前を確認する必要があります`Default-568@2x.png`Info.plist にします。 
 
-
-
 ## <a name="summary"></a>まとめ
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 この記事では、Visual Studio でプログラムで iOS アプリケーションを開発する方法について説明します。 見たので、空のプロジェクト テンプレートからプロジェクトをビルドする方法を作成し、ウィンドウをルート ビュー コント ローラーを追加する方法について説明します。 UIKit からコントロールを使用して、アプリケーションの画面を開発するコント ローラー内のビュー階層を作成する方法を紹介します。 調べる方法、ビューを適切に異なる向きで配置とをサブクラス化して、カスタム ビューを作成する方法を説明しました次`UIView`方法と同様、コント ローラー内のビューを読み込めません。 最後に、アプリケーションを起動画面を追加する方法を説明します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 この記事では、プログラムで Visual Studio for mac の iOS アプリケーションを開発する方法を説明しました。 見たので、1 つのビュー テンプレートからプロジェクトをビルドする方法を作成し、ウィンドウをルート ビュー コント ローラーを追加する方法について説明します。 UIKit からコントロールを使用して、アプリケーションの画面を開発するコント ローラー内のビュー階層を作成する方法を紹介します。 調べる方法、ビューを適切に異なる向きで配置とをサブクラス化して、カスタム ビューを作成する方法を説明しました次`UIView`方法と同様、コント ローラー内のビューを読み込めません。 最後に、アプリケーションを起動画面を追加する方法を説明します。
 
 -----
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

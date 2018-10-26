@@ -1,36 +1,36 @@
 ---
-title: CursorAdapters を使用します。
+title: Cursoradapters の使用
 ms.prod: xamarin
 ms.assetid: 60DE467E-A5DA-4420-52E5-D86AD1678FE6
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 10/25/2017
-ms.openlocfilehash: 20311cc50c87638391d8b078c405bc61baceb373
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fbdd0f2ea000f0cf46178c615e7526bf7f210a41
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30766664"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103039"
 ---
-# <a name="using-cursoradapters"></a>CursorAdapters を使用します。
+# <a name="using-cursoradapters"></a>Cursoradapters の使用
 
 
 ## <a name="overview"></a>概要
 
-Android には、SQLite データベース クエリからデータを表示するには、具体的には、アダプター クラスが用意されています。
+Android は、SQLite データベース クエリからのデータを表示するには、具体的には、アダプター クラスを提供します。
 
- **SimpleCursorAdapter** -と同様に、`ArrayAdapter`サブクラス化せずに使用できるためです。 単に、コンス トラクターで、必須パラメーター (、カーソルとレイアウト情報など) を提供し、割り当てる、`ListView`です。
+ **SimpleCursorAdapter** – と同様に、`ArrayAdapter`サブクラス化せずに使用できるためです。 単に、コンス トラクターで (カーソルとレイアウト情報) などの必須のパラメーターを指定し、割り当てる、`ListView`します。
 
- **CursorAdapter** – 値とする必要がある詳細に制御データのバインドから継承できる基底クラスのレイアウト コントロール (たとえば、コントロールの表示/非表示またはプロパティの変更)。
+ **CursorAdapter** – レイアウト コントロール (たとえば、コントロールの表示/非表示またはそのプロパティを変更) するときに必要な詳細に制御するデータのバインディングを介してから継承できる基底クラスの値します。
 
-カーソルのアダプターは、SQLite に格納されているデータの長い一覧をスクロールするパフォーマンスの高い方法を提供します。 コンシューマー コードでの SQL クエリを定義する必要があります、`Cursor`オブジェクトを作成し、各行のビューを設定する方法を説明します。
+カーソルのアダプターは、長い SQLite に格納されているデータの一覧をスクロールするパフォーマンスの高い方法を提供します。 使用側コードでの SQL クエリを定義する必要があります、`Cursor`オブジェクトし、作成し、各行のビューを設定する方法について説明します。
 
 
 ## <a name="creating-an-sqlite-database"></a>SQLite データベースを作成します。
 
-カーソルのアダプターを示すために単純な SQLite データベースの実装が必要です。 内のコード**SimpleCursorTableAdapter/VegetableDatabase.cs**コードと、テーブルを作成し、一部のデータを設定する SQL が含まれています。
-完全な`VegetableDatabase`クラスを示します。
+カーソルのアダプターを説明するために単純な SQLite データベースの実装が必要です。 コードでは、 **SimpleCursorTableAdapter/VegetableDatabase.cs**コードとテーブルを作成し、データを入力する SQL が含まれています。
+完全な`VegetableDatabase`クラスを次に示します。
 
 ```csharp
 class VegetableDatabase  : SQLiteOpenHelper {
@@ -57,14 +57,14 @@ class VegetableDatabase  : SQLiteOpenHelper {
 }
 ```
 
-`VegetableDatabase`でクラスをインスタンス化は、`OnCreate`のメソッド、`HomeScreen`アクティビティ。 `SQLiteOpenHelper`基底クラスが、データベース ファイルの設定を管理し、確実に内の SQL の`OnCreate`メソッドは一度だけ実行します。 このクラスは、の次の 2 つの例では使用`SimpleCursorAdapter`と`CursorAdapter`です。
+`VegetableDatabase`でクラスをインスタンス化は、`OnCreate`のメソッド、`HomeScreen`アクティビティ。 `SQLiteOpenHelper`基底クラスがデータベース ファイルの設定を管理し、確実に SQL では、その`OnCreate`メソッドは一度だけ実行します。 このクラスの次の 2 つの例で使用されます`SimpleCursorAdapter`と`CursorAdapter`します。
 
-カーソル クエリ*必要があります*整数型の列がある`_id`の`CursorAdapter`動作をします。 かどうか、基になるテーブルが名前付き整数型の列`_id`で一意の整数を別の列の別名を使用して、`RawQuery`カーソルを構成します。 参照してください、 [Android docs](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)についてさらにします。
+カーソル クエリ*する必要があります*整数型の列がある`_id`の`CursorAdapter`させる。 基になるテーブルがという名前の整数型の列を持たないかどうか`_id`で一意の整数を別の列の別名を使用し、`RawQuery`カーソルを構成します。 参照してください、 [Android docs](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)についてさらにします。
 
 
 ### <a name="creating-the-cursor"></a>カーソルを作成します。
 
-例を使用して、`RawQuery`に SQL クエリを有効にする、`Cursor`オブジェクト。 カーソルから返される列リストでは、カーソルのアダプターでの表示に使用できるデータ列を定義します。 データベースを作成するコード、 **SimpleCursorTableAdapter/HomeScreen.cs** `OnCreate`メソッドを次に示します。
+例を使用して、`RawQuery`に SQL クエリを有効にする、`Cursor`オブジェクト。 カーソルから返される列の一覧は、カーソルのアダプターでの表示に使用できるデータ列を定義します。 データベースを作成するコード、 **SimpleCursorTableAdapter/HomeScreen.cs** `OnCreate`メソッドを次に示します。
 
 ```csharp
 vdb = new VegetableDatabase(this);
@@ -73,25 +73,25 @@ StartManagingCursor(cursor);
 // use either SimpleCursorAdapter or CursorAdapter subclass here!
 ```
 
-そのコードを呼び出す`StartManagingCursor`呼び出す必要もあります`StopManagingCursor`です。 例を使用して`OnCreate`を開始して`OnDestroy`カーソルを閉じます。 `OnDestroy`メソッドには、このコードが含まれています。
+そのコードを呼び出す`StartManagingCursor`も呼び出す必要があります`StopManagingCursor`します。 例を使用して`OnCreate`を開始して`OnDestroy`カーソルを閉じます。 `OnDestroy`メソッドには、このコードが含まれています。
 
 ```csharp
 StopManagingCursor(cursor);
 cursor.Close();
 ```
 
-いずれかの利用できるアプリケーションでは、SQLite データベースが使用されが示すようにカーソル オブジェクトを作成、`SimpleCursorAdapter`またはそのサブクラスの`CusorAdapter`内の行を表示する、`ListView`です。
+アプリケーションでは、SQLite データベースが利用可能にしが示すようにカーソル オブジェクトを作成、いずれかを活用できます、`SimpleCursorAdapter`またはそのサブクラス`CusorAdapter`内の行を表示する、`ListView`します。
 
 
 ## <a name="using-simplecursoradapter"></a>SimpleCursorAdapter を使用します。
 
-`SimpleCursorAdapter` 同様には、 `ArrayAdapter`SQLite で使用する、特殊なです。 これはサブクラス化を必要と – だけオブジェクトを作成するときにいくつかの単純なパラメーターを設定されず、単に割り当てる、`ListView`の`Adapter`プロパティです。
+`SimpleCursorAdapter` ようには、 `ArrayAdapter`SQLite で使用するため、特殊化されました。 これはサブクラス化が必要 – だけオブジェクトを作成するときにいくつかの単純なパラメーターを設定されずに割り当てる、`ListView`の`Adapter`プロパティ。
 
 SimpleCursorAdapter コンス トラクターのパラメーターは次のとおりです。
 
  **コンテキスト**–、含まれるアクティビティへの参照。
 
- **レイアウト**– 使用する行の表示のリソース ID です。
+ **レイアウト**– 使用する、行ビューのリソース ID。
 
  **ICursor** – SQLite クエリを表示するデータを含むカーソル。
 
@@ -99,9 +99,9 @@ SimpleCursorAdapter コンス トラクターのパラメーターは次のと�
 
  **整数配列へ** – 行レイアウト内のコントロールに対応するレイアウト Id の配列。 指定された列の値、`from`配列は同じインデックスには、この配列で指定された ControlID にバインドされます。
 
-`from`と`to`ビューでデータ ソースからレイアウト コントロールへのマッピングを形成するため、配列は同じ数のエントリをいる必要があります。
+`from`と`to`ビューで、データ ソースからレイアウト コントロールへのマッピングを形成するため、配列は同じ数のエントリをいる必要があります。
 
-**SimpleCursorTableAdapter/HomeScreen.cs**をコード ワイヤのサンプル、`SimpleCursorAdapter`次のようにします。
+**SimpleCursorTableAdapter/HomeScreen.cs**をコード ワイヤをサンプル、`SimpleCursorAdapter`次のように。
 
 ```csharp
 // which columns map to which layout controls
@@ -113,25 +113,25 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
        toControlIDs);
 ```
 
-`SimpleCursorAdapter` SQLite のデータを表示するための高速で単純なは、`ListView`です。 大きな限界は、あるメッセージがコントロールを表示する列の値のみバインドできます (たとえば、コントロールの表示/非表示またはプロパティを変更する) の行のレイアウトの他の側面を変更することはできません。
+`SimpleCursorAdapter` SQLite のデータを表示する高速で簡単な方法は、`ListView`します。 主要な制限は、コントロールを表示する列の値をバインドすることができますのみが、行のレイアウト (たとえば、コントロールの表示/非表示またはプロパティを変更する) の他の側面を変更することはできませんです。
 
 
 ## <a name="subclassing-cursoradapter"></a>CursorAdapter をサブクラス化
 
-A`CursorAdapter`サブクラスは、パフォーマンス上の利点として、 `SimpleCursorAdapter` SQLite からデータを表示することができますを作成し、それぞれのビューの行のレイアウトを完全に制御をします。 `CursorAdapter`実装とは大きく異なりますサブクラス化`BaseAdapter`オーバーライドしないため`GetView`、 `GetItemId`、`Count`または`this[]`インデクサーです。
+A`CursorAdapter`サブクラスには、同じパフォーマンスの利点として、`SimpleCursorAdapter`作成し、それぞれの行ビューのレイアウトを完全に制御を提供する SQLite などからデータを表示するもの。 `CursorAdapter`実装はサブクラス化と大きく異なる`BaseAdapter`オーバーライドしないため、 `GetView`、 `GetItemId`、`Count`または`this[]`インデクサーです。
 
-作業中の指定 SQLite データベースを作成する 2 つのメソッドをオーバーライドするだけでかまいません、`CursorAdapter`サブクラス。
+作業中の指定した SQLite データベースを作成する 2 つのメソッドをオーバーライドするだけでかまいません、`CursorAdapter`サブクラスです。
 
-- **BindView** – ビューを指定するには、指定されたカーソルにデータを表示するように更新します。
+- **BindView** – 指定されたカーソルでデータを表示するようにビューを指定すると、更新します。
 
-- **NewView** – ときに呼び出されます、`ListView`を表示する新しいビューが必要です。 `CursorAdapter`ビューを再利用の注意 (とは異なり、`GetView`標準アダプター上のメソッド)。
+- **NewView** – ときに呼び出されます、`ListView`新しいビューを表示する必要があります。 `CursorAdapter`ビューのリサイクルが取得されます (とは異なり、`GetView`標準アダプター上のメソッド)。
 
-前の例のアダプター サブクラスは、– 現在の項目を取得して行の数を返すメソッドを持つ、`CursorAdapter`自体、カーソルからその情報を収集できるためこれらのメソッドは必要ありません。 作成およびこれら 2 つのメソッドには、各ビューの設定を分割して、`CursorAdapter`ビューを再使用を強制します。 これはこれに対し、通常のアダプターを無視する可能性がある、`convertView`のパラメーター、`BaseAdapter.GetView`メソッドです。
+前の例のアダプターのサブクラスは、行の数を取得し、– 現在の項目を取得するメソッドを持つ、`CursorAdapter`カーソル自体からその情報を得られるためこれらのメソッドは必要ありません。 作成およびこれら 2 つのメソッドには、各ビューの設定を分割することで、`CursorAdapter`ビューを再使用を強制します。 これは、これに対し、通常のアダプターを無視すること、`convertView`のパラメーター、`BaseAdapter.GetView`メソッド。
 
 
 ### <a name="implementing-the-cursoradapter"></a>CursorAdapter を実装します。
 
-内のコード**CursorTableAdapter/HomeScreenCursorAdapter.cs**が含まれています、`CursorAdapter`サブクラスです。 アクセスできるように、コンス トラクターに渡されるコンテキストの参照を格納、`LayoutInflater`で、`NewView`メソッドです。 完全なクラスは、次のようになります。
+コードでは、 **CursorTableAdapter/HomeScreenCursorAdapter.cs**が含まれています、`CursorAdapter`サブクラスです。 アクセスできるように、コンス トラクターに渡されるコンテキストの参照を格納する`LayoutInflater`で、`NewView`メソッド。 完全なクラスのようになります。
 
 ```csharp
 public class HomeScreenCursorAdapter : CursorAdapter {
@@ -156,9 +156,9 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 
 ### <a name="assigning-the-cursoradapter"></a>CursorAdapter を割り当てる
 
-`Activity`を表示する、 `ListView`、カーソルを作成し、`CursorAdapter`し、リスト ビューに割り当てます。
+`Activity`を表示する、 `ListView`、カーソルを作成し、`CursorAdapter`リスト ビューに割り当てます。
 
-この操作を実行するコードを**CursorTableAdapter/HomeScreen.cs** `OnCreate`メソッドを次に示します。
+この操作を実行するコード、 **CursorTableAdapter/HomeScreen.cs** `OnCreate`メソッドを次に示します。
 
 ```csharp
 // create the cursor
@@ -170,7 +170,7 @@ StartManagingCursor(cursor);
 listView.Adapter = (IListAdapter)new HomeScreenCursorAdapter(this, cursor, false);
 ```
 
-`OnDestroy`メソッドが含まれています、`StopManagingCursor`前に説明したメソッドの呼び出しです。
+`OnDestroy`メソッドが含まれています、`StopManagingCursor`前に説明したメソッド呼び出し。
 
 
 

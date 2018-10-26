@@ -4,15 +4,15 @@ description: この記事では、傾斜変換が SkiaSharp に傾いている�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: 951fc02dfff1721c1391c5d0c8a21452a156cfdb
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: ecb07c69b7720f77401bf9bf454ee4b0248ad238
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615354"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113821"
 ---
 # <a name="the-skew-transform"></a>傾斜変換
 
@@ -22,17 +22,17 @@ SkiaSharp、傾斜変換は、このイメージ内のシャドウなどのグ�
 
 ![](skew-images/skewexample.png "シャドウのテキストを傾斜プログラムから傾斜の例")
 
-傾斜変換 parallelograms、四角形が傾斜楕円が楕円。
+スキュー、平行四辺形に四角形をオンにしますが、傾斜楕円が楕円。
 
 平行移動、拡大縮小、および回転のプロパティを定義しますが、Xamarin.Forms は対応するプロパティ Xamarin.Forms でスキューを
 
-[ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/System.Single/System.Single/)メソッドの`SKCanvas`スキューの水平方向および垂直の 2 つの引数の傾斜を受け入れます。
+[ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(System.Single,System.Single))メソッドの`SKCanvas`スキューの水平方向および垂直の 2 つの引数の傾斜を受け入れます。
 
 ```csharp
 public void Skew (Single xSkew, Single ySkew)
 ```
 
-1 秒あたり[ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/SkiaSharp.SKPoint/)メソッドは、1 つの引数を組み合わせた`SKPoint`値。
+1 秒あたり[ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(SkiaSharp.SKPoint))メソッドは、1 つの引数を組み合わせた`SKPoint`値。
 
 ```csharp
 public void Skew (SKPoint skew)
@@ -72,7 +72,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](skew-images/skewexperiment-small.png "傾斜の実験のページのスクリーン ショットをトリプル")](skew-images/skewexperiment-large.png#lightbox "傾斜実験ページの 3 倍になるスクリーン ショット")
 
-場合`xSkew`の負の値は、`ySkew`結果は、回転が UWP の表示に示すように少しもスケールします。
+場合、`xSkew`値が負の値、`ySkew`値、結果は、回転が、多少として拡張することも、UWP の表示を示します。
 
 変換式は次のとおりです。
 
@@ -102,7 +102,7 @@ x' = x + xSkew 押し(y – py)
 
 y' ySkew 押しを =(x – px) + y
 
-場合`ySkew`0 の場合は、0 以外の値を指定しているだけ`xSkew`、し`px`値は使用されません。 値が、関連して同様に`ySkew`と`py`します。
+場合`ySkew`0 の場合は、次に、`px`値は使用されません。 値が、関連して同様に`ySkew`と`py`します。
 
 この図では、角度 α などの傾きの角度の傾斜を指定する使いやすいを感じることがあります。
 
@@ -110,7 +110,7 @@ y' ySkew 押しを =(x – px) + y
 
 100 ピクセル垂直に 150 ピクセルのシフトの比率は、この例では、その角度のタンジェントは、56.3 度です。
 
-XAML ファイル、**傾斜角度実験**に似ている、**傾斜の角度**ページ点を除いて、`Slider`要素 –90 から 90 ° の範囲します。 [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コード ファイルは、ページ上のテキストを中央揃え、使用して`Translate`ページの中央に傾斜の中心を設定します。 短い`SkewDegrees`コードの下部にあるメソッドは、角度の傾斜の値を変換します。
+XAML ファイル、**傾斜角度実験**に似ている、**傾斜の角度**ページ点を除いて、`Slider`要素-90 から 90 ° の範囲します。 [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コード ファイルは、ページ上のテキストを中央揃え、使用して`Translate`ページの中央に傾斜の中心を設定します。 短い`SkewDegrees`コードの下部にあるメソッドは、角度の傾斜の値を変換します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -224,11 +224,11 @@ using (SKPaint textPaint = new SKPaint())
 
 [![](skew-images/skewshadowtext1-small.png "傾斜シャドウ テキスト ページのスクリーン ショットをトリプル")](skew-images/skewshadowtext1-large.png#lightbox "傾斜シャドウ テキスト ページの 3 倍になるスクリーン ショット")
 
-渡される垂直座標、`DrawText`メソッド ベースラインを基準とテキストの位置を示します。 傾斜のセンターに使用される同じ垂直座標です。 テキスト文字列にディセンダーが含まれている場合、この手法は機能しません。 たとえば、代用「シャドウ」とここは「奇妙」という単語は、結果の。
+渡される垂直座標、`DrawText`メソッド ベースラインを基準とテキストの位置を示します。 傾斜のセンターに使用される同じ垂直座標です。 テキスト文字列にディセンダーが含まれている場合、この手法は機能しません。 たとえば、「シャドウ」の「奇妙」という単語を置き換えるし、結果を次に示します。
 
 [![](skew-images/skewshadowtext2-small.png "ディセンダーと代替の word、傾斜シャドウ テキスト ページの 3 倍になるスクリーン ショット")](skew-images/skewshadowtext2-large.png#lightbox "ディセンダーと代替の word、傾斜シャドウ テキスト ページの 3 倍になるスクリーン ショット")
 
-シャドウとテキストは基本的には、配置もが、効果はだけが正しく表示します。 これを解決するにはテキストの境界を取得する必要があります。
+シャドウとテキストは基本的には、配置もが、効果はだけが正しく表示します。 これを修正するには、テキストの境界を取得する必要があります。
 
 ```csharp
 SKRect textBounds = new SKRect();
@@ -251,5 +251,5 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

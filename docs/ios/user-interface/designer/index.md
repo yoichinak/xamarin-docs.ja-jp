@@ -1,51 +1,51 @@
 ---
-title: Ios デザイナー ユーザー インターフェイスの構築
-description: このドキュメントでは、デザイナーを使用して、Xamarin for iOS 用のストーリー ボードおよび .xib ファイルと、アプリのユーザー インターフェイスを構築する方法について説明します。 ツールの可用性、その基本的な機能、設計可能なコントロールは、について説明し、その使用方法のチュートリアルを提供するドキュメントにリンクします。
+title: IOS Designer でのユーザー インターフェイスの構築
+description: このドキュメントでは、Xamarin iOS デザイナーを使用して、ストーリー ボードと .xib ファイルによるアプリのユーザー インターフェイスを構築する方法について説明します。 ツールの可用性、その基本的な機能、デザインのコントロールについて説明し、その使用方法のチュートリアルを提供するドキュメントにリンクします。
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/31/2018
-ms.openlocfilehash: a931373a6abba3084af3c7aefcdddc903ad1b577
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 7c6529c539ab502fb6c13226acd18a57f8f6d58e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209233"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109745"
 ---
-# <a name="building-user-interfaces-with-the-ios-designer"></a>Ios デザイナー ユーザー インターフェイスの構築
+# <a name="building-user-interfaces-with-the-ios-designer"></a>IOS Designer でのユーザー インターフェイスの構築
 
-_IOS 用の Xamarin デザイナーは、Mac と Visual Studio の Visual Studio に完全に統合されている iOS ストーリー ボードとインターフェイスのビルダー形式をビジュアル デザイナーです。IOS デザイナーは、Visual Studio for Mac または Xcode のインターフェイスのビルダーに加えて、Visual Studio でファイルを編集できるように、ストーリー ボードと .xib 形式と完全な互換性を維持します。さらに、iOS 用の Xamarin デザイナーは、エディターでのデザイン時に表示するカスタム コントロールなどの高度な機能をサポートします。_
+_IOS 用の Xamarin のデザイナーは、Mac と Visual Studio の Visual Studio と完全に統合されている iOS ストーリー ボードと Interface Builder の形式のビジュアル デザイナーです。IOS Designer は、Visual Studio for Mac または Xcode の Interface Builder だけでなく、Visual Studio のいずれかでファイルを編集できるように、ストーリー ボードと .xib 形式の完全な互換性を維持します。さらに、iOS 用の Xamarin のデザイナーでは、エディターのデザイン時にレンダリングするカスタム コントロールなどの高度な機能をサポートしています。_
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Mac 用の Visual Studio デザイナーでの iOS](images/designer-vsmac-sml.png "iOS デザイナー")](images/designer-vsmac.png#lightbox)
+[![iOS Visual Studio for Mac で Designer](images/designer-vsmac-sml.png "iOS Designer")](images/designer-vsmac.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Visual Studio デザイナーでの iOS](images/designer-vs.png "iOS デザイナー")](images/designer-vs.png#lightbox)
+[![Visual Studio デザイナーでの iOS](images/designer-vs.png "iOS Designer")](images/designer-vs.png#lightbox)
 
 -----
 
 ## <a name="availability"></a>可用性
 
-IOS 用の Xamarin デザイナーは、Windows 上の Visual Studio 2017 と Mac を Visual Studio で使用できます。
+IOS 用の Xamarin のデザイナーは、Windows で Visual Studio 2017 と Visual Studio for Mac で使用できます。
 
-これらのガイドで説明した内容に関する知識を前提と、 [Xamarin.iOS が概要ガイド](~/ios/get-started/index.md)です。
+これらのガイドで説明した内容を熟知することを前提としています、[ガイド Xamarin.iOS Getting Started](~/ios/get-started/index.md)します。
 
 ## <a name="ios-designer-basicsintroductionmd"></a>[iOS Designer の基本](introduction.md)
 
-このガイドでは、Xamarin iOS デザイナーの機能について説明します。 デザイナーを使用してコントロールを視覚的にレイアウトする方法とプロパティを編集する方法を示す、デザイナーの基本を説明します。
+このガイドでは、Xamarin iOS デザイナーの機能について説明します。 デザイナーを使用して、視覚的にコントロールをレイアウトする方法とプロパティを編集する方法を示す、designer の基本を説明します。
 
-## <a name="designable-controls-overviewios-designable-controls-overviewmd"></a>[コントロールのデザインの概要](ios-designable-controls-overview.md)
+## <a name="designable-controls-overviewios-designable-controls-overviewmd"></a>[デザイン可能なコントロールの概要](ios-designable-controls-overview.md)
 
-このガイドは、カスタム コントロールは、深さの検索の作成方法およびどのような要件は、デザイン画面に表示される満たしている必要があります。 また、設計可能なコントロールを使用するときに発生する一般的な問題をデバッグする方法を示します。
+このガイドでは、カスタム コントロールの深さでの作成方法およびどのような要件をデザイン サーフェイスに表示を満たしている必要があります。 さらに、デザイン可能なコントロールを使用する場合に発生する可能性がある一般的な問題をデバッグする方法を示します。
 
-## <a name="walkthrough---using-custom-controls-with-ios-designerios-designable-controls-walkthroughmd"></a>[チュートリアル - iOS デザイナーでカスタム コントロールの使用](ios-designable-controls-walkthrough.md)
+## <a name="walkthrough---using-custom-controls-with-ios-designerios-designable-controls-walkthroughmd"></a>[チュートリアル - iOS Designer でカスタム コントロールの使用](ios-designable-controls-walkthrough.md)
 
-この記事では、カスタム コントロールを作成し、iOS デザイナーで使用する方法を示す詳細なチュートリアルを提供します。 ようにコントロール デザイナーのツールボックスで使用できるドラッグ/削除するビューにする方法を示します。 また、デザイン時および実行時、正しくレンダリングされるようにコントロールを実装する方法と、デザイン時に設定できるプロパティを作成する方法を示します。
+この記事では、カスタム コントロールを作成し、iOS デザイナーで使用する方法を示すステップ バイ ステップ チュートリアルを提供します。 そのドラッグ/ドロップできますビューのためにコントロールをデザイナーのツールボックスで使用できるようにする方法を示します。 また、デザイン時およびランタイム、正しくレンダリングされるようにコントロールを実装する方法と、デザイン時に設定できるプロパティを作成する方法を示します。
 
-## <a name="auto-layout-with-the-xamarin-ios-designerdesigner-auto-layoutmd"></a>[Xamarin iOS デザイナーで自動レイアウト](designer-auto-layout.md)
+## <a name="auto-layout-with-the-xamarin-ios-designerdesigner-auto-layoutmd"></a>[Xamarin iOS Designer での自動レイアウト](designer-auto-layout.md)
 
-このガイドでは、自動レイアウトを iOS および iOS デザイナーで使用できる新しい制約のワークフローが導入されています。
+このガイドでは、自動レイアウトの iOS および iOS デザイナーで使用できる新しい制約のワークフローが導入されています。

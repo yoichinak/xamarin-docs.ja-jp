@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: af560848240fec9558cc63969bcc269eedbd5424
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: e4f0138c0177c046c1e967a3d3625604f73327d6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947287"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103193"
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -58,7 +58,7 @@ Xamarin.Android で Android Oreo の使用を開始するには、ダウンロ�
 
 Visual Studio には、Android Oreo のサポートを追加するには、次の操作を行います。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 -   : Visual Studio 2017 を使用する場合 
 
@@ -68,7 +68,7 @@ Visual Studio には、Android Oreo のサポートを追加するには、次�
 
 -   SDK Tools を 25 にダウン グレードして、使用をお勧めします、Visual Studio 2015 を使用している場合、古い Google エミュレーター マネージャー GUI です。 25 の SDK ツールは、API 26、27 日以降と共に使用でき、新しいプラットフォームの開発に影響しません。 こうインターフェイスとの古いバージョンの Android SDK を管理するためです。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 -   For Mac で説明したように Visual Studio 2017 の最新の安定したバージョンに更新[Visual Studio for Mac の更新](https://docs.microsoft.com/visualstudio/mac/update)します。
 
@@ -82,7 +82,7 @@ Android Oreo 用の Xamarin サポートの詳細については、次を参照�
 
 Xamarin.Android 8.0 でプロジェクトを作成する必要があります最初に使用する、Xamarin Android SDK Manager の SDK プラットフォームをインストールする**Android 8.0 の Oreo**またはそれ以降。 また、Android SDK Tools 26.0 以降をインストールする必要があります。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. SDK マネージャーを起動 (Visual Studio で、次のようにクリックします。**ツール > Android > Android SDK Manager**)。
 
@@ -94,7 +94,7 @@ Xamarin.Android 8.0 でプロジェクトを作成する必要があります最
 
     [![Android SDK Manager で Android SDK Tools 26 を選択します。](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. SDK マネージャーを起動 (Visual studio for Mac では、次のようにクリックします。**ツール > SDK Manager**)。
 
@@ -121,11 +121,11 @@ Android プロジェクトを作成するときに、Android 8.0 以降をター
 
 Android SDK Tools 26.0 をインストールした後、既定の Google GUI ベースの AVD マネージャーを起動しようとした場合、後で、コマンド ライン AVD マネージャー ツールを使用するように指示する、次のエラー ダイアログを get が**avdmanager**代わりに:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Android エミュレーター マネージャーの警告ダイアログ](oreo-images/win/03-avd-warning.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![Android エミュレーター マネージャーの警告ダイアログ](oreo-images/mac/03-avd-warning.png)
 
@@ -141,7 +141,7 @@ Android Device Manager なしの仮想デバイスを作成するには、次の
 
 使用する**avdmanager**を新しい仮想デバイスを作成するには、次の手順に従います。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  コマンド プロンプト ウィンドウを開き、設定`JAVA_HOME`コンピューター上の Java SDK の場所にします。 一般的な Xamarin のインストールでは、次のコマンドを使用できます。
 
@@ -168,7 +168,7 @@ Android Device Manager なしの仮想デバイスを作成するには、次の
 
 [![デバイスのプルダウン メニューに追加された新しい AVD](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  開く、**ターミナル**ウィンドウと mac の Android SDK tools ディレクトリの場所の変更 一般的な Xamarin のインストールでは、次のコマンドを使用できます。
 
@@ -182,7 +182,7 @@ Android Device Manager なしの仮想デバイスを作成するには、次の
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  メッセージが表示されたら **[いいえ] のカスタムのハードウェア プロファイルを作成する**を入力できます**ありません**と既定のハードウェア プロファイルをそのまま使用します。 答えると**はい**、 **avdmanager**をカスタマイズするための質問の一覧が表示、ハードウェア プロファイル。
+3.  メッセージが表示されたら **[いいえ] のカスタムのハードウェア プロファイルを作成する**を入力できます**ありません**と既定のハードウェア プロファイルをそのまま使用します。 答えると**はい**、 **avdmanager**ハードウェア プロファイルをカスタマイズするための質問の一覧が表示されます。
 
 使用した後**avdmanager**こと、仮想デバイスを作成するデバイスのプルダウン メニューに含めるは。
 

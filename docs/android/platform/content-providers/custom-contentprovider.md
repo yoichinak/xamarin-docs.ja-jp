@@ -1,70 +1,70 @@
 ---
-title: カスタム ContentProvider を作成します。
-description: 前のセクションでは、組み込み ContentProvider 実装からのデータを使用する方法を示しました。 このセクションでは、カスタム ContentProvider をビルドし、そのデータを使用する方法を説明します。
+title: カスタム ContentProvider の作成
+description: 前のセクションでは、組み込みの ContentProvider 実装からデータを使用する方法を示しました。 このセクションでは、カスタム ContentProvider の作成し、し、そのデータを利用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 36742B59-607E-070E-5D0E-B9C18917D3F4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 95d38fae1614bbb12ddafaeca60d50e63404ea95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da8aacac1f282fefb6b8d0e84cae168cf3a7148b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30769030"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108016"
 ---
-# <a name="creating-a-custom-contentprovider"></a>カスタム ContentProvider を作成します。
+# <a name="creating-a-custom-contentprovider"></a>カスタム ContentProvider の作成
 
-_前のセクションでは、組み込み ContentProvider 実装からのデータを使用する方法を示しました。このセクションでは、カスタム ContentProvider をビルドし、そのデータを使用する方法を説明します。_
+_前のセクションでは、組み込みの ContentProvider 実装からデータを使用する方法を示しました。このセクションでは、カスタム ContentProvider の作成し、し、そのデータを利用する方法について説明します。_
 
 ## <a name="about-contentproviders"></a>ContentProviders について
 
-コンテンツ プロバイダー クラスは継承する必要があります`ContentProvider`です。 クエリに応答するために使用する内部データ ストアので構成されている必要がありますありようにコードを使用する定数を使用するデータの有効な要求 Uri と MIME の種類を公開する必要があります。
+コンテンツ プロバイダー クラスを継承する必要があります`ContentProvider`します。 クエリに応答するために使用する内部データ ストアで構成されている必要があり、ようにコードを使用する定数を使用するデータの有効な要求 Uri と MIME の種類を公開する必要があります。
 
 ### <a name="uri-authority"></a>URI (機関)
 
-`ContentProviders` Uri を使用して Android でアクセスされます。 公開するアプリケーション、`ContentProvider`内に応答する Uri を設定、 **AndroidManifest.xml**ファイル。 アプリケーションがインストールされているときに、これらの Uri は、他のアプリケーションがアクセスできるようにするに登録されます。
+`ContentProviders` Uri を使用した Android でアクセスされます。 アプリケーションを公開する、`ContentProvider`への応答 Uri を設定、 **AndroidManifest.xml**ファイル。 アプリケーションがインストールされている場合、これらの Uri は、他のアプリケーションがアクセスできるように登録されます。
 
-Android 用の Mono でのコンテンツ プロバイダー クラスがあります、 `[ContentProvider]` 、Uri (Uri) を指定する属性に追加する必要がありますを**AndroidManifest.xml**です。
+Mono for Android でのコンテンツ プロバイダー クラスがあります、 `[ContentProvider]` Uri (または Uri) を指定する属性を追加すること**AndroidManifest.xml**します。
 
 
 ### <a name="mime-type"></a>Mime の種類
 
-MIME の種類の一般的な形式は、2 つの部分で構成されます。 Android`ContentProviders`一般的な MIME の種類の最初の部分をこれら 2 つの文字列を使用します。
+MIME の種類の一般的な形式は、2 つの部分で構成されます。 Android `ContentProviders` MIME の種類の最初の部分に、これら 2 つの文字列をよく使用します。
 
-1. `vnd.android.cursor.item` &ndash; 1 つの行を表すを使用して、`ContentResolver.CursorItemBaseType`コード内で一定です。
+1. `vnd.android.cursor.item` &ndash; 1 つの行を表すを使用して、`ContentResolver.CursorItemBaseType`コードで定数。
 
-1. `vnd.android.cursor.dir` &ndash; 複数の行を使用して、`ContentResolver.CursorDirBaseType`コード内で一定です。
+1. `vnd.android.cursor.dir` &ndash; 複数の行を使用して、`ContentResolver.CursorDirBaseType`コードで定数。
 
-MIME の種類の 2 番目の部分は、アプリケーションに固有でありと逆引き DNS 標準を使用する必要があります、`vnd.`プレフィックス。 使用するサンプル コード`vnd.com.xamarin.sample.Vegetables`です。
+MIME の種類の 2 番目の部分は、アプリケーションに固有でありの逆引き DNS の標準を使用する必要があります、`vnd.`プレフィックス。 サンプル コードを使用して`vnd.com.xamarin.sample.Vegetables`します。
 
 
 ### <a name="data-model-metadata"></a>データ モデルのメタデータ
 
-使用するアプリケーションは、異なる種類のデータにアクセスする Uri のクエリを作成する必要があります。 ベース Uri は、展開すると、データの特定のテーブルを参照してくださいおよび結果をフィルター処理パラメーターを含めることもできます。 列と句の結果として得られるカーソルでデータを表示するために使用も宣言する必要があります。
+コンシューマー側アプリケーションでは、さまざまな種類のデータにアクセスする Uri のクエリを作成する必要があります。 ベース Uri では、展開すると、データの特定のテーブルを参照してくださいし、結果をフィルター処理するパラメーターを含めることもできます。 列と句のカーソルが結果として得られるデータを表示するために使用も宣言する必要があります。
 
-有効な Uri のクエリのみが構築されることを確認してください、定数値として有効な文字列を指定する一般的なです。 これにより簡単にアクセスする、`ContentProvider`のため、値のコード補完機能を使用して探索可能になり、文字列の入力ミスを防止します。
+有効な Uri のクエリのみが構築されることを確認するには、定数値として有効な文字列を提供する慣習があります。 これにより、アクセスしやすく、`ContentProvider`コード補完機能を使用して探索可能な値は、文字列の入力ミスを防止するためです。
 
-前の例で、`android.provider.ContactsContract`クラスは、連絡先データのメタデータを公開します。 カスタムの`ContentProvider`クラス自体の定数でのみ公開されます。
+前の例では、`android.provider.ContactsContract`クラスは、連絡先データのメタデータを公開します。 カスタムの`ContentProvider`クラス自体の定数が公開されます。
 
 
 ## <a name="implementation"></a>実装
 
 3 つの手順があるカスタムの作成と`ContentProvider`:
 
-1. **データベース クラスを作成する**&ndash;実装`SQLiteOpenHelper`です。
+1. **データベース クラスを作成**&ndash;実装`SQLiteOpenHelper`します。
 
-2. **作成、`ContentProvider`クラス**&ndash;実装`ContentProvider`定数値とデータにアクセスするメソッドとして、データベースのインスタンスのメタデータが公開されています。
+2. **作成、`ContentProvider`クラス**&ndash;実装`ContentProvider`データベースのインスタンスのメタデータを定数値、およびデータにアクセスするメソッドとして公開します。
 
 3. **アクセス、`ContentProvider`その Uri を使用して** &ndash; Populate、`CursorAdapter`を使用して、 `ContentProvider`、その Uri を使用してアクセスします。
 
-既に説明したよう`ContentProviders`が定義されている以外のアプリケーションから使用できます。 この例では、データが、同じアプリケーションで使用されたが、他のアプリケーションもアクセスできます (これは通常、定数値として公開) スキーマについては、Uri が知っている場合に限り注意してください。
+前述のように、`ContentProviders`が定義されている以外のアプリケーションから利用できます。 この例では、データが、同じアプリケーションで使用されるが、他のアプリケーションもアクセスできる (これは通常、定数値として公開) スキーマについては、Uri がわかっている限りに注意してください。
 
 
 ## <a name="create-a-database"></a>データベースを作成します。
 
-ほとんど`ContentProvider`実装の基になる、`SQLite`データベース。 データベースのコード例**SimpleContentProvider/VegetableDatabase.cs**ようには非常に単純な 2 つの列データベースを作成します。
+ほとんど`ContentProvider`実装の基になる、`SQLite`データベース。 データベース コードの例で**SimpleContentProvider/VegetableDatabase.cs**に示すように、非常に単純な 2 つの列のデータベースを作成します。
 
 ```csharp
 class VegetableDatabase  : SQLiteOpenHelper {
@@ -92,17 +92,17 @@ class VegetableDatabase  : SQLiteOpenHelper {
 }
 ```
 
-データベースの実装自体には、特別な配慮を公開する必要はありません、 `ContentProvider`、ただしをバインドする場合、`ContentProvider's`にデータを`ListView`という名前の一意の整数列を制御し、`_id`の一部にする必要があります、結果セットです。 参照してください、[の Listview およびアダプター](~/android/user-interface/layouts/list-view/index.md)使用に関する詳細については、ドキュメント、`ListView`コントロール。
+データベースの実装自体には、特別な配慮を公開する必要はありません、 `ContentProvider`、ただしをバインドする場合、`ContentProvider's`データを`ListView`という名前の一意の整数列を制御し、`_id`の一部にする必要があります、結果セット。 参照してください、 [Listview と Adapter](~/android/user-interface/layouts/list-view/index.md)ドキュメントを使用しての詳細については、`ListView`コントロール。
 
 
 ## <a name="create-the-contentprovider"></a>ContentProvider を作成します。
 
-このセクションの残りの部分では、手順を説明する方法  **SimpleContentProvider/VegetableProvider.cs**クラスの例でビルドされました。
+このセクションの残りの部分でどの手順について説明**SimpleContentProvider/VegetableProvider.cs**クラスの例をビルドします。
 
 
 ### <a name="initialize-the-database"></a>データベースを初期化します。
 
-サブクラスには、まず`ContentProvider`が使用するデータベースを追加します。
+サブクラスには、まず`ContentProvider`のために使用するデータベースを追加します。
 
 ```csharp
 public class VegetableProvider : ContentProvider 
@@ -116,23 +116,23 @@ public class VegetableProvider : ContentProvider
 }
 ```
 
-コードの残りの部分は、データが検出され、クエリを実行できるようにする実際のコンテンツ プロバイダーの実装を形成します。
+コードの残りの部分は、データが検出され、クエリを実行できる実際のコンテンツ プロバイダーの実装を形成します。
 
 
 
 ## <a name="add-metadata-for-consumers"></a>コンシューマーのメタデータを追加します。
 
-4 つの異なる種類のメタデータで公開しようとしているが、`ContentProvider`クラスです。 だけで、権限が必要な残りの部分は、規約によって実行されます。
+次の 4 つの異なる種類のメタデータを公開しようとしているが、`ContentProvider`クラス。 権限が必要なだけで、残りの部分は、規則によって実行されます。
 
-- **機関** &ndash; 、`ContentProvider`属性*必要があります*アプリケーションがインストールされているときに、Android での登録できるように、クラスに追加します。
+- **機関** &ndash; 、`ContentProvider`属性*する必要があります*アプリケーションがインストールされている場合に、Android に登録されているように、クラスに追加します。
 
-- **Uri** &ndash; 、`CONTENT_URI`コードで簡単に使用されるように、定数として公開します。 機関が一致がスキームと基本パスが含まれて、必要があります。
+- **Uri** &ndash; 、`CONTENT_URI`コードで簡単に使用されるように、定数として公開されます。 これにより、機関が一致する必要がありますがスキームと基本パスが含まれます。
 
-- **MIME の種類**&ndash;結果と 1 つの結果の一覧が、さまざまなコンテンツの種類として扱われるので、それらを表す 2 つの MIME の種類を定義します。
+- **MIME の種類**&ndash;結果および 1 つの結果の一覧は、さまざまなコンテンツの種類として扱われるので、それらを表す 2 つの MIME の種類を定義します。
 
-- **InterfaceConsts** &ndash;使用コードを簡単に検出し、誤字を危険にさらすに参照できるように、各データ列名の定数値を指定します。
+- **InterfaceConsts** &ndash;が、簡単に検出して入力ミスのリスクなしに参照コードを実行できるように、各データ列名の定数値を指定します。
 
-このコードでは、これらの各項目の実装方法を示しています、前の手順からデータベースの定義を追加します。
+このコードでは、これらの各項目の実装方法、データベース定義に、前の手順を追加します。
 
 ```csharp
 [ContentProvider(new string[] { CursorTableAdapter.VegetableProvider.AUTHORITY })]
@@ -161,15 +161,15 @@ public class VegetableProvider : ContentProvider
 
 ## <a name="implement-the-uri-parsing-helper"></a>ヘルパーを解析する URI を実装します。
 
-要求を行うに Uri を使用するコードを実行するため、 `ContentProvider`、返されるデータを決定するには、その要求を解析できる必要があります。 `UriMatcher`クラスは、Uri の解析に役立つことが、後で、初期化されている場合は、Uri パターン、`ContentProvider`をサポートしています。
+要求を Uri を使用するコードを実行するため、 `ContentProvider`、どのデータを返すを判別するには、その要求を解析できる必要があります。 `UriMatcher`クラスが Uri の解析に役立つ、Uri パターンにで初期化した後、`ContentProvider`をサポートしています。
 
 `UriMatcher`の例では、2 つの Uri で初期化されます。
 
 1. *"com.xamarin.sample.VegetableProvider/vegetables"* &ndash; request to return the full list of vegetables.
 
-2. *"com.xamarin.sample.VegetableProvider/vegetables/\#"* &ndash; where the \# is a placeholder for a numeric parameter (the `_id` of the row in the database). アスタリスクのプレース ホルダー ("\*")、テキスト パラメーターに一致するようにも使用できます。
+2. *"com.xamarin.sample.VegetableProvider/vegetables/\#"* &ndash; where the \# is a placeholder for a numeric parameter (the `_id` of the row in the database). アスタリスクのプレース ホルダー ("\*") テキスト パラメーターに一致するようにも使用できます。
 
-コードでお定数を使用して、参照するように、証明機関とベース メタデータ値\_パス。 これらのリターン コードは、Uri の解析を行って、返されるデータを決定を行うメソッドで使用されます。
+コードを使用して、定数、証明機関とベースなどのメタデータ値を参照してください\_パス。 これらのリターン コードは、Uri を返すデータを決定する、解析を行うメソッドで使用されます。
 
 ```csharp
 const int GET_ALL = 0; // return code when list of Vegetables requested
@@ -185,12 +185,12 @@ static UriMatcher BuildUriMatcher()
 }
 ```
 
-このコードはすべてのプライベート、`ContentProvider`クラスです。 参照してください[Google の UriMatcher ドキュメント](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/)についてさらにします。
+このコードはすべてのプライベート、`ContentProvider`クラス。 参照してください[Google の UriMatcher ドキュメント](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/)についてさらにします。
 
 
 ## <a name="implement-the-querymethod"></a>実装、QueryMethod
 
-最も単純な`ContentProvider`メソッドを実装するのには、`Query`メソッドです。 実装、`UriMatcher`を解析、`uri`パラメーターと、適切なデータベース メソッドを呼び出します。 場合、 `uri` out の整数を解析し、ID パラメーターが含まれています (を使用して`LastPathSegment`) であり、データベース クエリに使用します。
+最も単純な`ContentProvider`メソッドを実装、`Query`メソッド。 実装、`UriMatcher`を解析、`uri`パラメーターを適切なデータベース メソッドを呼び出します。 場合、 `uri` 、整数を解析し、ID パラメーターが含まれています (を使用して`LastPathSegment`)、データベース クエリで使用します。
 
 ```csharp
 public override Android.Database.ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
@@ -215,8 +215,8 @@ Android.Database.ICursor GetFromDatabase(string id)
 }
 ```
 
-`GetType`メソッドをオーバーライドもする必要があります。 指定した Uri の返されるコンテンツの種類を特定するこのメソッドを呼び出すことがあります。
-そのデータを処理する方法を利用するアプリケーションに通知この可能性があります。
+`GetType`メソッドをオーバーライドすることも必要があります。 指定した Uri の返されるコンテンツの種類を決定するこのメソッドを呼び出すことがあります。
+そのデータを処理する方法をコンシューマー側アプリケーションに通知この可能性があります。
 
 ```csharp
 public override String GetType(Android.Net.Uri uri)
@@ -235,7 +235,7 @@ public override String GetType(Android.Net.Uri uri)
 
 ## <a name="implement-the-other-overrides"></a>その他のオーバーライドを実装します。
 
-編集またはデータの削除、単純な例ができませんが、Insert、Update および Delete メソッドを実装する必要がありますので、実装しなくても追加します。
+単純な例は、編集またはデータの削除できませんが、Insert、Update および Delete メソッドを実装する必要がありますので、実装を持たない追加。
 
 ```csharp
 public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
@@ -252,19 +252,19 @@ public override int Update(Android.Net.Uri uri, ContentValues values, string sel
 }
 ```
 
-基本的なを完了する`ContentProvider`実装します。 公開データが使用できるアプリケーションをインストールすると、アプリケーションの内部は、参照する Uri を知っているその他のアプリケーションにも両方です。
+基本的な完了`ContentProvider`実装します。 公開されるデータが利用するアプリケーションをインストールすると、アプリケーション内でどちらも参照する Uri を認識している他のアプリケーションにもします。
 
 
 ## <a name="access-the-contentprovider"></a>アクセス、ContentProvider
 
-1 回、`VegetableProvider`が実装されるにアクセスするときはこのドキュメントの先頭のアドレス帳プロバイダーと同じ方法: 指定した Uri を使用してカーソルを取得し、アダプターを使用してデータにアクセスします。
+1 回、`VegetableProvider`された実装へのアクセスはこのドキュメントの先頭にある連絡先のプロバイダーと同じ方法: 指定した Uri を使用してカーソルを取得し、アダプターを使用してデータにアクセスします。
 
 
-## <a name="bind-a-listview-to-a-contentprovider"></a>ListView を ContentProvider にバインドします。
+## <a name="bind-a-listview-to-a-contentprovider"></a>ContentProvider に、ListView をバインドします。
 
-設定する、`ListView`野菜のフィルター選択されていない一覧に対応する Uri を使用しておデータを使用します。 定数値を使用するコードでお`VegetableProvider.CONTENT_URI`に解決されることが分かっている`com.xamarin.sample.vegetableprovider/vegetables`です。 当社`VegetableProvider.Query`にバインドすることができますし、カーソルの実装を返します、`ListView`です。
+設定する、`ListView`データ野菜のフィルター処理されていない一覧に対応する Uri を使用します。 定数の値を使用してコードで`VegetableProvider.CONTENT_URI`にわかるように解決される`com.xamarin.sample.vegetableprovider/vegetables`します。 この`VegetableProvider.Query`の実装にし、バインド可能なカーソルを返します、`ListView`します。
 
-内のコード`SimpleContentProvider/HomeScreen.cs`からデータを表示するは簡単な方法を示しています、 `ContentProvider`:
+コードでは、`SimpleContentProvider/HomeScreen.cs`からデータを表示するが簡単な方法を示しています、 `ContentProvider`:
 
 ```csharp
 listView = FindViewById<ListView>(Resource.Id.List);
@@ -282,7 +282,7 @@ adapter = new SimpleCursorAdapter(this, Android.Resource.Layout.SimpleListItem1,
 listView.Adapter = adapter;
 ```
 
-次のような結果として得られるアプリケーションが表示。
+作成されたアプリケーションのようになります。
 
 [![野菜、くだもの、花バッド、Legumes、電球、Tubers を一覧表示するアプリのスクリーン ショット](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
 
@@ -290,15 +290,15 @@ listView.Adapter = adapter;
 
 ## <a name="retrieve-a-single-item-from-a-contentprovider"></a>ContentProvider から 1 つの項目を取得します。
 
-処理を行うアプリケーションすることも (たとえば) 特定の行を参照する別の Uri を構築することによって行うことが可能には、データの 1 つの行にアクセスします。
+コンシューマー側アプリケーションは、(たとえば) を参照する特定の行を別の Uri の構築を行う、データの 1 つの行へのアクセスにもかまいません。
 
-使用して`ContentResolver`、必須の Uri を構築して 1 つの項目にアクセスするには、直接`Id`です。
+使用`ContentResolver`を必須の Uri を構築することにより、1 つの項目にアクセスするには、直接`Id`します。
 
 ```csharp
 Uri.WithAppendedPath(VegetableProvider.CONTENT_URI, id.ToString());
 ```
 
-完全なメソッドは、次のようになります。
+完全なメソッドのようになります。
 
 ```csharp
 protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -319,4 +319,4 @@ protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SimpleContentProvider (sample)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [SimpleContentProvider (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)

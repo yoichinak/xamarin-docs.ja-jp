@@ -1,43 +1,43 @@
 ---
-title: WatchOS Xamarin でアプリ グループの操作
-description: このドキュメントでは、アプリのグループとその watchOS アプリケーションでの使用について説明します。 これには、要件、Entitlements.plist に関する考慮事項、および配置をプロビジョニング、アプリ グループを構成する方法について説明します。
+title: WatchOS アプリ グループが Xamarin での操作
+description: このドキュメントでは、アプリのグループおよび watchOS アプリケーションでの使用について説明します。 これには、要件、Entitlements.plist の考慮事項、およびデプロイのプロビジョニング アプリ グループを構成する方法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 5736b25af3993e2da794422a1a6f040461532497
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 78f6c03f73f0e4d8a74f826dd7bc25bbe325d545
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790680"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103674"
 ---
-# <a name="working-with-watchos-app-groups-in-xamarin"></a>WatchOS Xamarin でアプリ グループの操作
+# <a name="working-with-watchos-app-groups-in-xamarin"></a>WatchOS アプリ グループが Xamarin での操作
 
 
 アプリ グループを使用すると、さまざまなアプリケーション (またはアプリケーションとその拡張機能) から共有ファイルの保存場所にアクセスできます。 アプリ グループは次のようなデータに使用できます。
 
-- Apple Watch[設定](~/ios/watchos/app-fundamentals/settings.md)です。
-- 共有[NSUserDefaults](~/ios/watchos/app-fundamentals/parent-app.md#nsuserdefaults)です。
-- 共有[ファイル](~/ios/watchos/app-fundamentals/parent-app.md#files)です。
+- Apple Watch[設定](~/ios/watchos/app-fundamentals/settings.md)します。
+- 共有[NSUserDefaults](~/ios/watchos/app-fundamentals/parent-app.md#nsuserdefaults)します。
+- 共有[ファイル](~/ios/watchos/app-fundamentals/parent-app.md#files)します。
 
 ## <a name="configure-an-app-group"></a>アプリ グループを構成します。
 
-使用して共有の場所を構成、[アプリ グループ](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)で構成されて、**証明書、識別子、およびプロファイル**セクションで[iOS Dev Center](https://developer.apple.com/devcenter/ios/)です。 この値は、各プロジェクトの参照も必要があります**Entitlements.plist**です。
+使用して共有の場所を構成、[アプリ グループ](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)で構成されており、**証明書, Identifiers & Profiles**セクションで[iOS デベロッパー センター](https://developer.apple.com/devcenter/ios/)します。 この値は、各プロジェクトの参照も必要があります**Entitlements.plist**します。
 
 ### <a name="provisioning"></a>プロビジョニング
 
-アプリ グループは、バンドル ID は、通常、識別子を持っているはで、`group.`プレフィックス。 たとえば、バンドル ID を使用しておでした`com.xamarin.WatchSettings`とアプリ グループ`group.com.xamarin.WatchSettings`です。
+アプリ グループは、バンドル ID は、通常、識別子を持っている、使用、`group.`プレフィックス。 たとえば、バンドル ID を使用してでした`com.xamarin.WatchSettings`およびアプリ グループ`group.com.xamarin.WatchSettings`します。
 
-[![](app-groups-images/app-group-sml.png "バンドル ID com.xamarin.WatchSettings とアプリ グループ group.com.xamarin.WatchSettings を使用します。")](app-groups-images/app-group.png#lightbox)
+[![](app-groups-images/app-group-sml.png "バンドル ID com.xamarin.WatchSettings とアプリのグループ group.com.xamarin.WatchSettings を使用します。")](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-プロビジョニング プロファイルを構成するだけでなく**アプリ グループを有効にする**で、 **Entitlements.plist**し、選択した ID を入力してください。
+にプロビジョニング プロファイルを構成すると**アプリ グループを有効にする**で、 **Entitlements.plist**選択した ID を入力します。
 
-[![](app-groups-images/entitlements-sml.png "Plist を構成し、ID を入力")](app-groups-images/entitlements.png#lightbox)
+[![](app-groups-images/entitlements-sml.png "Plist を構成し、ID を入力します")](app-groups-images/entitlements.png#lightbox)
 
 
 ### <a name="deployment"></a>配置
@@ -50,5 +50,5 @@ ms.locfileid: "34790680"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Apple のアプリを含むデータを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
-- [Apple の App グループ ドキュメント](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)
+- [Apple のデータを含むアプリを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Apple のアプリ グループのドキュメント](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: f05b79e58a9fa87e13aeb45af2dbb46139051005
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38860668"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109992"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin のライブの再読み込み
 
@@ -22,11 +22,10 @@ Xamarin Live の再読み込みを使用する **、XAML に変更を加える�
 
 ライブの再読み込みを使用する場合は、アプリがコンパイルされているために、すべてのライブラリおよびサード パーティ製のコントロールでは動作します。 Xamarin.Forms は、Android、iOS、および UWP などをサポートしているし、シミュレーター、エミュレーター、および物理デバイスを含むすべての有効な配置ターゲット上で動作のすべてのプラットフォームでの再読み込み動作を live です。
 
-> [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
-
-ライブの再読み込みは、現在 Visual Studio 2017 での使用のみ。
-
-[![チャットに参加します。 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> [!NOTE]
+> [再読み込みのライブ プレビューが終了しました](https://github.com/xamarin/Xamarin.Forms/issues/4155#issuecomment-431596130)
+>
+> これについてのディスカッションが[![でチャットに参加 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## <a name="requirements"></a>必要条件
 

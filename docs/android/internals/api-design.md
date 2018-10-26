@@ -3,15 +3,15 @@ title: Xamarin.Android の API の設計原則
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8abb78f335b159223e9394b7845eccbba8d124da
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996348"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110720"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android の API の設計原則
 
@@ -167,7 +167,8 @@ Android ではたとえば、 [View.setOnKeyListener()](https://developer.xamari
 
 他のメソッドとデリゲート ベースの接続を公開する ctors のオーバー ロードを追加する予定です。 また、複数のコールバックを持つリスナーには、いくつか追加の検査変換これら特定されるため、個々 のコールバックを実装する、妥当ながあるか判断が必要です。 対応するイベントがない場合は、リスナーは、c# で使用する必要がありますが、注目するデリゲートの使用量ができたと考えられるすべてを表示してください。 行った「リスナー」サフィックスが付いていないインターフェイスの一部の変換と、それらが、デリゲートの代替のメリットは明らかでした。
 
-すべてのリスナー インターフェイスを実装、 [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)リスナー クラスは、このインターフェイスを実装する必要がありますので、バインドの実装の詳細のためのインターフェイス。 これを行うのサブクラスで、リスナー インターフェイスを実装する[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)またはその他の Android アクティビティなどの Java オブジェクトをラップします。
+すべてのリスナー インターフェイスを実装します [`Android.Runtime.IJavaObject`](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)
+リスナーのクラスは、このインターフェイスを実装する必要がありますので、バインドの実装の詳細のためのインターフェイスです。 これを行うのサブクラスで、リスナー インターフェイスを実装する[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)またはその他の Android アクティビティなどの Java オブジェクトをラップします。
 
 
 ### <a name="runnables"></a>実行可能オブジェクト
@@ -262,7 +263,7 @@ Java インターフェイスは、2 つの型に変換されます。
 その結果、Java 式*MediaStore.Video.VideoColumns.TITLE* c# の式にバインドする必要がある*MediaStore.Video.MediaColumnsConsts.Title*は読まず見つけにくい多数の Java のドキュメント。 同等の c# 式がある、1.9 で[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)します。
 
 さらに、検討してください、 [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) 、Java の実装の種類*Parcelable*インターフェイス。 そのインターフェイスのすべての定数は例:「から」バンドルの種類、アクセスできる、インターフェイスを実装しているため*Bundle.CONTENTS_FILE_DESCRIPTOR* Java 式を完全に有効です。
-以前は、この式を c# に移植することになる種類に実装されているすべてのインターフェイスを見て、 *CONTENTS_FILE_DESCRIPTOR*元します。 Xamarin.Android 1.9 以降、定数が含まれている Java インターフェイスを実装するクラスが入れ子になった*InterfaceConsts*型、継承されたインターフェイスのすべての定数が含まれます。 変換することにより、この*Bundle.CONTENTS_FILE_DESCRIPTOR*に[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)します。
+以前は、この式に移植するC#種類に実装されているすべてのインターフェイスを確認する必要があります、 *CONTENTS_FILE_DESCRIPTOR*から。 Xamarin.Android 1.9 以降、定数が含まれている Java インターフェイスを実装するクラスが入れ子になった*InterfaceConsts*型、継承されたインターフェイスのすべての定数が含まれます。 変換することにより、この*Bundle.CONTENTS_FILE_DESCRIPTOR*に[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)します。
 
 最後に、型、 *Consts*などサフィックス*Android.OS.ParcelableConsts*は古い形式には、新しく導入された InterfaceConsts 以外の入れ子にされた型。 Xamarin.Android 3.0 では削除されます。
 

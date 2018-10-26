@@ -4,21 +4,21 @@ title: XAML Live プレビュー
 description: このドキュメントでは、Xamarin Live Player を使用して XAML ページのプレビューを live、XAML に変更を加えるし、デバイスにすぐに表示されます。 変更を確認する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 200d19aa0a13d0557e52cb90021190978838ed39
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 1602c98eceaff607c79400a37c4ace60d5bf8807
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251120"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110597"
 ---
 # <a name="xaml-live-previewing"></a>XAML Live プレビュー
 
 Xamarin Live Player の利点の 1 つは、XAML ページのプレビューを live、Visual Studio でコードを変更し、デバイスにすぐに表示、変更を参照してくださいする機能です。 Android デバイスまたはシミュレーターやエミュレーター、ライブ プレビューを作成できます。 このガイドでは、ライブ プレビュー機能を使用して、XAML の個々 の画面を表示する方法を示します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -70,7 +70,7 @@ Xamarin Live Player を使用するには、Android デバイスに、前に、X
 
 ## <a name="deploying-to-android-emulator"></a>Android エミュレーターに展開します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2017 のエディターでのライブ プレビューする XAML ページを開きます。
 
@@ -84,7 +84,7 @@ Xamarin Live Player を使用するには、Android デバイスに、前に、X
 
     ![](live-view-images/vs-image3.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. エディターの Mac に Visual Studio でのライブ プレビューする XAML ページを開きます。
 

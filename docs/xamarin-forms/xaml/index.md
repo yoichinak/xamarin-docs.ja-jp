@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/18/2018
-ms.openlocfilehash: f593e5d084d8cd7071d17195663478d430d994b7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4045f3a1d31b1c0c8b69e840d3943b6ce258b894
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995483"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113587"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -37,7 +37,7 @@ XAML は任意で、XAML コンパイラ (XAMLC) を利用し、中間言語 (IL
 
 ## <a name="xaml-previewerxaml-previewermd"></a>[XAML プレビューアー](xaml-previewer.md)
 
-[XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer.md)で発表された Xamarin Evolve 2016 は、アルファ チャネルでテストします。
+[XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer.md)ページのサイドを入力するとレンダリングされますが、ユーザー インターフェイスを確認できるように、XAML マークアップでのライブ プレビューを表示します。
 
 ## <a name="xaml-namespacesnamespacesmd"></a>[XAML 名前空間](namespaces.md)
 
@@ -59,7 +59,7 @@ XAML には、値または単純な文字列で表現できる内容を超える
 
 Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの機能は、バインド可能なプロパティが拡張されます。 バインド可能なプロパティは、特殊な種類のプロパティ、プロパティの値が Xamarin.Forms プロパティ システムによって追跡されます。 この記事では、バインド可能なプロパティは、概要を示し、作成し、これらを使用する方法を示します。
 
-## <a name="attached-propertiesattached-propertiesmd"></a>[関連付けられたプロパティ](attached-properties.md)
+## <a name="attached-propertiesattached-propertiesmd"></a>[添付プロパティ](attached-properties.md)
 
 添付プロパティは、特殊な種類のバインド可能なプロパティ、1 つのクラスで定義されているが、他のオブジェクトにアタッチされ、クラスを含む属性として XAML で認識可能なプロパティ名はピリオドで区切られました。 この記事では、添付プロパティは、概要を示し、作成し、これらを使用する方法を示します。
 

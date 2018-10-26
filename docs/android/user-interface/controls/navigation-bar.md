@@ -3,37 +3,37 @@ title: ナビゲーション バー
 ms.prod: xamarin
 ms.assetid: 6023DB7E-9E72-4B90-A96A-11BC297B8A3D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 476e73906e4fbe01847740f90a8da701768b29db
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ce80fab39c814204631c5cc408c3f0ee99a329e6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762813"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110558"
 ---
 # <a name="navigation-bar"></a>ナビゲーション バー
 
-Android 4 と呼ばれる新しいシステム ユーザー インターフェイス機能を導入された、*ナビゲーション バー*、ハードウェア ボタンが含まれていないデバイス上のナビゲーション コントロールを提供する**ホーム**、**戻る**、および**メニュー**です。
-次のスクリーン ショットは、素数の Nexus デバイスからナビゲーション バーを示しています。
+Android 4 と呼ばれる新しいシステム ユーザー インターフェイス機能の導入を*ナビゲーション バー*、用のハードウェア ボタンが含まれていないデバイス上のナビゲーション コントロールを提供する**ホーム**、**戻る**、および**メニュー**します。
+次のスクリーン ショットには、素数の Nexus デバイスからナビゲーション バーが表示されます。
 
  [![Android のナビゲーション バーの例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
-いくつかの新しいフラグが使用可能なナビゲーション バーと、そのコントロールの表示だけでなく Android 3 で導入されたシステム バーの可視性を制御します。 フラグが定義されている、`Android.View.View`クラスし、以下に示します。
+いくつかの新しいフラグが使用可能なナビゲーション バーと、コントロールの可視性と Android 3 で導入されたシステム バーの可視性を制御します。 フラグが定義されている、`Android.View.View`クラスを以下に示します。
 
 -   `SystemUiFlagVisible` &ndash; ナビゲーション バーは、表示します。 
--   `SystemUiFlagLowProfile` &ndash; ナビゲーション バーでコントロールを dims です。 
+-   `SystemUiFlagLowProfile` &ndash; ナビゲーション バーでコントロールを dims します。 
 -   `SystemUiFlagHideNavigation` &ndash; ナビゲーション バーを非表示にします。 
 
 
-これらのフラグは、設定で、ビューの階層内の任意のビューに適用できる、`SystemUiVisibility`プロパティです。 複数のビューには、このプロパティ設定がある、システムは OR 演算と組み合わされたし、フラグが設定されているウィンドウがフォーカスを保持する限りは、それらを適用します。 ビューを削除するときは、任意のフラグが設定されているも削除されます。
+これらのフラグを設定して、ビューの階層内の任意のビューに適用できる、`SystemUiVisibility`プロパティ。 複数のビューには、このプロパティの設定がある、システムは、OR 演算とはそれらを結合し、フラグが設定されているウィンドウがフォーカスを保持する限り適用します。 ビューを削除すると、フラグが設定されても削除されます。
 
 次の例は、単純なアプリケーションで変更のボタンをクリックすると、 `SystemUiVisibility`:
 
- [![Visible、低プロファイル、および SystemUiVisibility の非表示を示すスクリーン ショット](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
+ [![Visible、低のプロファイルと SystemUiVisibility の非表示を示すスクリーン ショット](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
-変更するコード、`SystemUiVisibility`でプロパティを設定、`TextView`から各ボタンのクリック イベント ハンドラーを次のようにします。
+コードを変更する、`SystemUiVisibility`プロパティに設定、`TextView`から各ボタンのクリック イベント ハンドラーを次に示すよう。
 
 ```csharp
 var tv = FindViewById<TextView> (Resource.Id.systemUiFlagTextView);
@@ -56,7 +56,7 @@ visibleButton.Click += delegate {
 }
 ```
 
-また、`SystemUiVisibility`変更が発生し、`SystemUiVisibilityChange`イベント。 設定と同じように、`SystemUiVisibility`プロパティ、ハンドラーを`SystemUiVisibilityChange`階層内のすべてのビュー イベントを登録することができます。 使用して次のコードなど、`TextView`のインスタンスをイベントの登録します。
+また、`SystemUiVisibility`変更が発生する`SystemUiVisibilityChange`イベント。 設定と同様、`SystemUiVisibility`プロパティ、ハンドラーを`SystemUiVisibilityChange`階層内の任意のビューには、イベントを登録することができます。 使用して次のコードなど、`TextView`イベントに登録するインスタンス。
 
 ```csharp
 tv.SystemUiVisibilityChange +=
@@ -70,5 +70,5 @@ tv.SystemUiVisibilityChange +=
 ## <a name="related-links"></a>関連リンク
 
 - [SystemUIVisibilityDemo (sample)](https://developer.xamarin.com/samples/monodroid/SystemUIVisibilityDemo/)
-- [アイスクリーム サンドイッチの概要](http://www.android.com/about/ice-cream-sandwich/)
+- [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](http://developer.android.com/sdk/android-4.0.html)

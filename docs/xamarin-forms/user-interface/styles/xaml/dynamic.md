@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: cedf9e3daed9a2d5f8bfa0962bf66510748b592a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2f336bff19302228b9c8c3a1aa87930414c44ac2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997147"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108406"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms での動的なスタイル
 
@@ -121,8 +121,6 @@ public class DynamicStylesPageCS : ContentPage
 ```
 
 C# で、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)参照メソッドを`searchBarStyle`します。 `OnButtonClicked`イベント ハンドラーのコードは、XAML の例では、および実行すると、同じです。`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。
-
-<a name="dynamic-style-inheritance">
 
 ## <a name="dynamic-style-inheritance"></a>動的なスタイルの継承
 
