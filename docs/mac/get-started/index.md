@@ -4,15 +4,15 @@ description: このドキュメントは、Xamarin.Mac をインストールす�
 ms.prod: xamarin
 ms.assetid: 6CE7C634-6495-3517-B004-21C9EBF4C462
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 1ef978abac220f4ea20264922a85fc6dd0a006c3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 30f331304ed42a06751aa94ca9c9591aaa46e04e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792259"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102491"
 ---
 # <a name="getting-started-with-xamarinmac"></a>Xamarin.Mac の概要
 

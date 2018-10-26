@@ -4,20 +4,20 @@ description: この記事では、iTunes Connect で Xamarin.iOS アプリケー
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 05492f866bb083326ef1eccb8db3d624d8dc4806
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 97b3e5323329d2df024e05f1829b12b239b37299
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209311"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103050"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
 > [!IMPORTANT]
-> Apple は、2018 年 7 月以降に App Store に申請されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイに対応](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)する必要があることを[通知](https://developer.apple.com/news/?id=05072018a)しました。
+> Apple は、2018 年 7 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイをサポートする](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)必要があることを[通知しました](https://developer.apple.com/news/?id=05072018a)。
 
 iTunes Connect は、特に App Store で iOS アプリケーションを管理するための Web ベースのツール群です。 Xamarin.iOS アプリケーションをレビューのために Apple に提出し、最終的に App Store で販売または無償アプリとしてリリースする前に、アプリケーションを正しく設定して、iTunes Connect で構成する必要があります。
 

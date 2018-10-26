@@ -1,43 +1,43 @@
 ---
-title: UrhoSharp iOS および tvOS のサポート
-description: このドキュメントは iOS をについて説明し、UrhoSharp tvOS のサポートします。 プロジェクトを作成、構成および Urho を起動して Urho のカスタムの埋め込みを実行する方法を説明します。
+title: UrhoSharp の iOS および tvOS のサポート
+description: このドキュメントには、iOS がについて説明し、UrhoSharp の tvOS のサポートします。 これには、プロジェクトを作成、構成し起動 Urho、および Urho のカスタムの埋め込みを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7e8975b6885f6c902634e05aafca0b8ee60a981c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f15ae458c6bd613b59700908ad7c121315e377ab
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783976"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108276"
 ---
-# <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS および tvOS のサポート
+# <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp の iOS および tvOS のサポート
 
-Urho、ポータブル クラス ライブラリで、さまざまなプラットフォーム全体にわたる、ゲーム ロジックに使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化中には、特定のプラットフォーム機能を活用するためにはたいです.
+Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします.
 
-次のページであると想定`MyGame`の sublcass は、`Application`クラスです。
+以下のページにある`MyGame`がの sublcass、`Application`クラス。
 
-## <a name="ios-and-tvos"></a>iOS および tvOS
+## <a name="ios-and-tvos"></a>iOS と tvOS
 
 **サポートされているアーキテクチャ:** armv7、arm64、i386
 
 ## <a name="creating-a-project"></a>Visual C++ プロジェクト
 
-IOS プロジェクトを作成し、リソース ディレクトリにデータを追加し、すべてのファイルがあるかどうかを確認**BundleResource**として、**ビルド アクション**です。
+IOS プロジェクトを作成し、し、データ リソース ディレクトリを追加し、すべてのファイルがあるかどうかを確認**BundleResource**として、**ビルド アクション**します。
 
-![プロジェクトのセットアップ](ios-images/image-4.png "リソース ディレクトリにデータの追加")
+![セットアップ プロジェクト](ios-images/image-4.png "リソース ディレクトリにデータの追加")
 
 ## <a name="configuring-and-launching-urho"></a>構成および Urho を起動します。
 
-ステートメントを使用して追加、`Urho`と`Urho.iOS`名前空間、Urho、初期化中だけでなく、アプリケーションを起動するのには、このコードを追加します。
+ステートメントを使用して追加、`Urho`と`Urho.iOS`名前空間、Urho、初期化と、アプリケーションを起動するには、このコードを追加します。
 
 ```csharp
 new MyGame().Run();
 ```
 
-Ios のでことに注意して`FinishedLaunching`を完了する必要がありますキューに配置し、呼び出し`Run()`実行するには、メソッドが完了した後、これは、共通の表現形式。
+Ios ために注意`FinishedLaunching`を完了するへの呼び出しのキューを配置する必要があります`Run()`メソッドの完了後を実行する一般的な表現形式になります。
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -53,13 +53,13 @@ async void LaunchGame()
 }
 ```
 
-既定の iOS PNG オプティマイザーが Urho いない現在正しく使用することがイメージを生成するため PNG の最適化を無効にすることが重要であります。
+既定の iOS PNG オプティマイザーが Urho が適切では現在利用できるいないイメージを生成するため PNG の最適化を無効にすることが重要します。
 
-## <a name="custom-embedding-of-urho"></a>カスタムの埋め込み Urho の
+## <a name="custom-embedding-of-urho"></a>Urho のカスタムの埋め込み
 
-引き継ぐことができる別の方法としてを持つように Urho アプリケーション全体 画面とこれを使用するアプリケーションのコンポーネントとして作成することができます、`UrhoSurface`これは、`UIView`既存のアプリケーションに埋め込むことができます。
+ことができますまたはに Urho 引き継ぎ、アプリケーション全体の画面を作成することができます、アプリケーションのコンポーネントとして使用する、`UrhoSurface`これは、`UIView`を既存のアプリケーションに埋め込むことができます。
 
-新機能する必要がありますを行うには次に示します。
+これは、何が行う必要があります。
 
 ```csharp
 var view = new UrhoSurface () {
@@ -69,7 +69,7 @@ var view = new UrhoSurface () {
 window.AddSubview (view);
 ```
 
-これは、ため、Urho クラスをホストする、タスクは実行します。
+これは、ため、Urho クラスをホストするし、操作を行います。
 
 ```csharp
 new MyGame().Run ();

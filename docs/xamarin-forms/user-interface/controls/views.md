@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: 52d8d5f6eb38e5cb501d6284d08f7317981e0dcf
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 18/10/2018
+ms.openlocfilehash: a51a3bb7726baa9142579a518767dc722870ee06
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998974"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107528"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -93,7 +93,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`Stepper`](xref:Xamarin.Forms.Stepper) ユーザーが選択、`double`値で指定された増分値の範囲から、 [ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum)、 [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum)、および[ `Increment` ](xref:Xamarin.Forms.Stepper.Increment)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Stepper) | [![ステッパ例](views-images/Stepper.png "ステッパ例")](views-images/Stepper-Large.png#lightbox "ステッパ例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
+| [`Stepper`](xref:Xamarin.Forms.Stepper) ユーザーが選択、`double`値で指定された増分値の範囲から、 [ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum)、 [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum)、および[ `Increment` ](xref:Xamarin.Forms.Stepper.Increment)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Stepper)  / [ガイド](~/xamarin-forms/user-interface/stepper.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) | [![ステッパ例](views-images/Stepper.png "ステッパ例")](views-images/Stepper-Large.png#lightbox "ステッパ例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
 ### <a name="switch"></a>切り替え
@@ -114,7 +114,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`TimePicker`](xref:Xamarin.Forms.TimePicker) プラットフォームの時刻の選択と時刻を選択できます。 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)プロパティは、選択した時間。 アプリケーションの変更を監視できます、`Time`プロパティのハンドラーをインストールすることによって、 [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベント。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TimePicker) | [![TimePicker 例](views-images/TimePicker.png "TimePicker 例")](views-images/TimePicker-Large.png#lightbox "TimePicker の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
+| [`TimePicker`](xref:Xamarin.Forms.TimePicker) プラットフォームの時刻の選択と時刻を選択できます。 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)プロパティは、選択した時間。 アプリケーションの変更を監視できます、`Time`プロパティのハンドラーをインストールすることによって、 [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベント。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TimePicker) / [ガイド](~/xamarin-forms/user-interface/timepicker.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker) | [![TimePicker 例](views-images/TimePicker.png "TimePicker 例")](views-images/TimePicker-Large.png#lightbox "TimePicker の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
 |     |     |
 
 ## <a name="views-for-editing-text"></a>テキストを編集するためのビュー

@@ -4,15 +4,15 @@ description: このドキュメントでは、Apple Enterprise Developer Program
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: c1e1b2d7bfb43c256c71abb62e7d85a05b096419
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353205"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103583"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
@@ -125,11 +125,11 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  Visual Studio for Mac で新しい配布プロファイルを使用可能にするには、Visual Studio for Mac を終了し、(「[Requesting Signing Identities](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」 (証明 ID の要求) セクションの手順に従って) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要があります。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio で新しい配布プロファイルを使用可能にするには、Visual Studio を終了して、(「[Requesting Signing Identities](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」 (証明 ID の要求) セクションの手順に従って、ビルド ホストの Mac で) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要があります。
 

@@ -1,19 +1,20 @@
 ---
-title: ネイティブ クラッシュのデバッグ
-description: このガイドでは、Objective-C ランタイムで発生した例外をデバッグする方法について説明します。
+title: Xamarin.Mac アプリのネイティブ クラッシュをデバッグする
+description: このドキュメントでは、Objective-C ランタイムで発生した例外をデバッグする方法について説明します。 アサーション エラー、コールバックの問題、例外バブリングなどについて取り上げています。
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 211f85c32fae3ed947e01890916e0a646981a51b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6cf19efcd2fa0f9d74034214bfa6a4e60ce0f9e2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103882"
 ---
-# <a name="debugging-a-native-crash"></a>ネイティブ クラッシュのデバッグ
+# <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Xamarin.Mac アプリのネイティブ クラッシュをデバッグする
 
 ## <a name="overview"></a>概要
 
@@ -121,7 +122,7 @@ Process 79229 stopped
    frame #23: 0x9754807c AppKit`-[NSApplication run] + 1003
 ```
 
-これは追跡がはるかに困難だった問題です。 マネージ スタック トレースの一番上に `at <unknown> <0xffffffff>` または `MonoMac.ObjCRuntime.Runtime.GetNSObject (IntPtr ptr)` が表示される場合、ガベージ コレクションされたオブジェクトでマネージ コードの実行が試行されていると考えられます。 ネイティブ スタック トレースで、`trackMouse:inRect:ofView:untilMouseUp` から `NSCell _sendActionFrom` に推移していることがわかるので、どこかでクリック イベントを処理し、その結果、C# にコールバックしようとして問題が起きています。
+これは追跡がはるかに困難だった問題です。 マネージド スタック トレースの一番上に `at <unknown> <0xffffffff>` または `MonoMac.ObjCRuntime.Runtime.GetNSObject (IntPtr ptr)` が表示される場合、ガベージ コレクションされたオブジェクトでマネージド コードの実行が試行されていると考えられます。 ネイティブ スタック トレースで、`trackMouse:inRect:ofView:untilMouseUp` から `NSCell _sendActionFrom` に推移していることがわかるので、どこかでクリック イベントを処理し、その結果、C# にコールバックしようとして問題が起きています。
 
 一般的に、このようなエラーの追跡は困難です。 ここでは、`GC.Collect(2)` をボタン ハンドラーに追加して (ガベージ コレクションを強制して) この問題を追跡することで、問題を再現可能にしました。 この例を分けて、問題が解消されるまでコードのセクションを削除すると、[このバグ](https://bugzilla.xamarin.com/show_bug.cgi?id=23378)が判明しました。
 
@@ -133,11 +134,11 @@ mainWindowController.Window.StandardWindowButton (NSWindowButton.CloseButton).Ac
 
 この問題の根本原因ではありませんが、このようなスタック トレースは、関数 `[Export]` で不適切なメソッド シグネチャが Objective-C にエクスポートされることで発生する可能性があります。 たとえば、メソッドが `out string` というパラメーターを想定している場合、`string` と入力すると、同じようにクラッシュする可能性があります。
 
-## <a name="example-3-callbacks-and-managed-objects"></a>例 3: コールバックとマネージ オブジェクト
+## <a name="example-3-callbacks-and-managed-objects"></a>例 3: コールバックとマネージド オブジェクト
 
 多くの Cocoa API では、何らかのイベントが発生して応答する機会が必要なときや、タスクの実行に何らかのデータが必要なときに、ライブラリによって "コールバック" が発生します。 主に **Delegate** と **DataSource** のパターンが考えられるかもしれませんが、このような動作の API は多数あります。 たとえば、`NSView` のメソッドをオーバーライドしてビジュアル ツリーに挿入すると、特定のイベントが発生したときに AppKit からコールバックされると考えられます。
 
-ほとんどの場合、Xamarin.Mac は、これらのコールバックのマネージ オブジェクトがコールバックされている間にガベージ コレクションされないようにします。 ただし、まれではありますが、バインディングのバグでこの処理が妨害されることがあります。 この問題が発生すると、次のように不快なクラッシュが発生します。
+ほとんどの場合、Xamarin.Mac は、これらのコールバックのマネージド オブジェクトがコールバックされている間にガベージ コレクションされないようにします。 ただし、まれではありますが、バインディングのバグでこの処理が妨害されることがあります。 この問題が発生すると、次のように不快なクラッシュが発生します。
 
 ```csharp
 Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
@@ -245,9 +246,9 @@ void AddObject ()
 
 ## <a name="exception-bubbling-and-objective-c"></a>例外バブリングと Objective-C
 
-呼び出し元の Objective-C メソッドにマネージ コードを "エスケープ" することを C# 例外に許可しないでください。 許可すると、結果は未定義ですが、一般的にはクラッシュします。 ユーザーが問題を迅速に解決できるように、一般的にネイティブ クラウドとマネージ クラッシュの両方に役立つ情報を表示するよう取り組んでいます。
+呼び出し元の Objective-C メソッドにマネージド コードを "エスケープ" することを C# 例外に許可しないでください。 許可すると、結果は未定義ですが、一般的にはクラッシュします。 ユーザーが問題を迅速に解決できるように、一般的にネイティブ クラウドとマネージド クラッシュの両方に役立つ情報を表示するよう取り組んでいます。
 
-すべてのマネージ/ネイティブ境界でマネージ例外をキャッチするためのインフラストラクチャを設定する場合、技術的な理由で行き詰まることがなく、それほど費用がかからず、多くの一般的な処理で発生する遷移が_多数_あります。 多くの処理、特に UI スレッドを含む処理は短時間で完了する必要があります。そうしないと、アプリが中断し、許容できないパフォーマンスの問題が発生します。 これらのコールバックの多くは、スローされる可能性がほとんどない非常に単純なものなので、このオーバーヘッドはコストが高く、このような場合には不要です。
+すべてのマネージド/ネイティブ境界でマネージド例外をキャッチするためのインフラストラクチャを設定する場合、技術的な理由で行き詰まることがなく、それほど費用がかからず、多くの一般的な処理で発生する遷移が_多数_あります。 多くの処理、特に UI スレッドを含む処理は短時間で完了する必要があります。そうしないと、アプリが中断し、許容できないパフォーマンスの問題が発生します。 これらのコールバックの多くは、スローされる可能性がほとんどない非常に単純なものなので、このオーバーヘッドはコストが高く、このような場合には不要です。
 
 そのため、try/catches を自動的に設定しません。 (ブール値や単純な計算を返すなどの処理よりも) 重要な処理をコーディングする場合は、手動でキャッチすることができます。 
 

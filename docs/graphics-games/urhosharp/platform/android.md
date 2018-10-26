@@ -1,25 +1,25 @@
 ---
-title: UrhoSharp Android のサポート
-description: このドキュメントでは、Android 固有のセットアップや UrhoSharp 機能に関する情報について説明します。 具体的には、サポートされているアーキテクチャでは、についても説明を構成および起動 Urho、およびカスタムの埋め込み Urho のプロジェクトを作成する方法です。
+title: UrhoSharp Android サポート
+description: このドキュメントでは、Android 固有のセットアップと UrhoSharp の機能に関連する情報について説明します。 具体的には、サポートされているアーキテクチャについて説明します Urho、およびカスタムの埋め込み Urho の起動の構成と、プロジェクトを作成する方法。
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 6e489f52712989b5f94fa52d5ec6f22a13ce6252
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e7371fa85fd5955e9a0fd285adb32844001821b3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783783"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105436"
 ---
-# <a name="urhosharp-android-support"></a>UrhoSharp Android のサポート
+# <a name="urhosharp-android-support"></a>UrhoSharp Android サポート
 
 _特定の android のセットアップと機能_
 
-Urho、ポータブル クラス ライブラリで、さまざまなプラットフォーム全体にわたる、ゲーム ロジックに使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化中には、特定のプラットフォーム機能を活用するためにはたいです.
+Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします.
 
-次のページであると想定`MyGame`のサブクラスは、`Application`クラスです。
+以下のページにある`MyGame`のサブクラスには、`Application`クラス。
 
 ## <a name="architectures"></a>アーキテクチャ
 
@@ -27,15 +27,15 @@ Urho、ポータブル クラス ライブラリで、さまざまなプラッ�
 
 ## <a name="create-a-project"></a>プロジェクトの作成
 
-Android プロジェクトを作成し、UrhoSharp NuGet パッケージを追加します。
+Android プロジェクトを作成し、UrhoSharp の NuGet パッケージを追加します。
 
-資産に含まれているデータを追加、**資産**ディレクトリと必ずすべてのファイルがある**AndroidAsset**として、**ビルド アクション**です。
+アセットを格納しているデータを追加、**資産**すべてのファイルがあるディレクトリを確認**AndroidAsset**として、**ビルド アクション**します。
 
-![プロジェクトのセットアップ](android-images/image-3.png "資産ディレクトリに資産を含むデータの追加")
+![セットアップ プロジェクト](android-images/image-3.png "Assets ディレクトリに資産を格納しているデータの追加")
 
-## <a name="configure-and-launching-urho"></a>構成および Urho を起動します。
+## <a name="configure-and-launching-urho"></a>構成し、Urho を起動します。
 
-追加のステートメントを使用して、`Urho`と`Urho.Android`名前空間、Urho、初期化中だけでなく、アプリケーションを起動するのには、このコードを追加します。
+追加のステートメントを使用して、`Urho`と`Urho.Android`名前空間、Urho、初期化と、アプリケーションを起動するには、このコードを追加します。
 
 MyGame クラスに実装されているゲームを実行する最も簡単な方法を呼び出すことです。
 
@@ -43,11 +43,11 @@ MyGame クラスに実装されているゲームを実行する最も簡単な�
 UrhoSurface.RunInActivity<MyGame>();
 ```
 
-ゲームと、コンテンツとしてフルスクリーン アクティビティが開きます。
+コンテンツとしてゲームと全画面表示のアクティビティが表示されます。
 
-## <a name="custom-embedding-of-urho"></a>カスタムの埋め込み Urho の
+## <a name="custom-embedding-of-urho"></a>Urho のカスタムの埋め込み
 
-引き継ぐことができる別の方法としてを持つように Urho アプリケーション全体 画面とこれを使用するアプリケーションのコンポーネントとして作成することができます、`SurfaceView`経由。
+ことができますまたはに Urho 引き継ぎ、アプリケーション全体の画面を作成することができます、アプリケーションのコンポーネントとして使用する、`SurfaceView`経由。
 
 ```csharp
 var surface = UrhoSurface.CreateSurface<MyGame>(activity)
@@ -63,7 +63,7 @@ protected override void OnPause()
 }
 ```
 
-同じ操作を実行する必要があります: `OnResume`、 `OnPause`、 `OnLowMemory`、 `OnDestroy`、`DispatchKeyEvent`と`OnWindowFocusChanged`です。
+同じ処理を実行する必要があります: `OnResume`、 `OnPause`、 `OnLowMemory`、 `OnDestroy`、`DispatchKeyEvent`と`OnWindowFocusChanged`します。
 
 これは、ゲームを起動する一般的なアクティビティを示しています。
 
