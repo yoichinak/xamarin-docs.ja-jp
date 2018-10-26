@@ -6,25 +6,17 @@ ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2017
-ms.openlocfilehash: f8f8f9b4e5755e8b1707178fef633321b64e4e94
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/14/2018
+ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994677"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
 _NavigationPage クラスでは、ユーザーが forwards と backwards、必要に応じて、ページを移動できる階層ナビゲーション エクスペリエンスを提供します。クラスは、ページのオブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを実装します。この記事では、NavigationPage クラスを使用して、ページのスタックでナビゲーションを実行する方法を示します。_
-
-この記事では、次のトピックについて説明します。
-
-- [ナビゲーションを実行する](#Performing_Navigation)– ルート ページの作成、ページをナビゲーション スタックにプッシュ、ページをナビゲーション スタックからポップおよびページの切り替え効果をアニメーション化します。
-- [移動するときにデータを渡す](#Passing_Data_when_Navigating)– を使用してページのコンス トラクターでは、データを渡す、`BindingContext`します。
-- [ナビゲーション スタックを操作する](#Manipulating_the_Navigation_Stack)– スタックを操作するには、挿入、または削除したりします。
-
-## <a name="overview"></a>概要
 
 別に 1 つのページから移動するに、アプリケーションはそこでなるアクティブなページで、次の図に示すようをナビゲーション スタックに新しいページにプッシュします。
 
@@ -284,7 +276,7 @@ public class SecondPageCS : ContentPage
 
 [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)プロパティが公開、 [ `NavigationStack` ](xref:Xamarin.Forms.INavigation.NavigationStack)プロパティ、ナビゲーション スタック内のページを取得できます。 Xamarin.Forms の維持、ナビゲーション スタックへのアクセス中に、`Navigation`プロパティは、提供、 [ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*)と[ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*)を挿入することで、スタックを操作するメソッドページまたはそれらを削除します。
 
-[ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*)メソッドは、次の図に示すように既存の指定ページの前に、ナビゲーション スタックで指定したページを挿入します。
+[ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*)メソッドは、次の図に示すように既存の指定 ページの前に、ナビゲーション スタックで指定したページを挿入します。
 
 ![](hierarchical-images/insert-page-before.png "ナビゲーション スタックにページを挿入します。")
 
@@ -312,10 +304,58 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ユーザーの資格情報が正しいこと、`MainPage`インスタンスが現在のページの前に、ナビゲーション スタックに挿入されます。 [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync)メソッドをナビゲーション スタックから現在のページを削除し、`MainPage`インスタンスがアクティブ ページになることです。
 
-## <a name="summary"></a>まとめ
+## <a name="displaying-views-in-the-navigation-bar"></a>ナビゲーション バーでビューを表示します。
 
-この記事では、使用する方法を示しました、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)ページ スタックのナビゲーションを実行するクラス。 このクラスは、ユーザーが forwards と backwards、必要に応じて、ページを移動できる階層ナビゲーション エクスペリエンスを提供します。 このクラスは、[`Page`](xref:Xamarin.Forms.Page) オブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを提供します。
+すべての Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View)のナビゲーション バーに表示されることができます、 [ `NavigationPage`](xref:Xamarin.Forms.NavigationPage)します。 これは、設定によって実現されます、 [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)添付プロパティを`View`します。 いずれかでこの添付プロパティを設定できます[ `Page` ](xref:Xamarin.Forms.Page)、いつ、`Page`にプッシュされます、 `NavigationPage`、`NavigationPage`プロパティの値が反映されます。
 
+取得した次の例で、[タイトル ビュー サンプル](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)を設定する方法を示しています、 [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)添付プロパティを XAML から。
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationPageTitleView.TitleViewPage">
+    <NavigationPage.TitleView>
+        <Slider HeightRequest="44" WidthRequest="300" />
+    </NavigationPage.TitleView>
+    ...
+</ContentPage>
+```
+
+ここでは、相当C#コード。
+
+```csharp
+public class TitleViewPage : ContentPage
+{
+    public TitleViewPage()
+    {
+        var titleView = new Slider { HeightRequest = 44, WidthRequest = 300 };
+        NavigationPage.SetTitleView(this, titleView);
+        ...
+    }
+}
+```
+
+これは、結果、 [ `Slider` ](xref:Xamarin.Forms.Slider)のナビゲーション バーに表示されている、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+[![スライダー TitleView](hierarchical-images/titleview-small.png "スライダー TitleView")](hierarchical-images/titleview-large.png#lightbox "スライダー TitleView")
+
+> [!IMPORTANT]
+> ビューのサイズを指定しない場合、ナビゲーション バーに複数のビューは表示されません、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティ。 ビューにラップする代わりに、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)で、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)適切な値に設定します。
+
+に、注意してください、 [ `Layout` ](xref:Xamarin.Forms.Layout)クラスから派生、 [ `View` ](xref:Xamarin.Forms.View)クラス、 [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)レイアウトを表示する添付プロパティを設定することができます複数のビューを含むクラスです。 IOS、ユニバーサル Windows プラットフォーム (UWP) で、変更できないナビゲーション バーの高さとナビゲーション バーに表示されるビューがナビゲーション バーの既定のサイズより大きい場合にクリッピングが発生するようにします。 ただし、android では、ナビゲーション バーの高さは設定して、 [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)バインド可能なプロパティを`double`新しい高さを表します。 詳細については、次を参照してください。 [NavigationPage のナビゲーション バーの高さを設定](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight)します。
+
+または、上部のナビゲーション バーにする色に一致するページのコンテンツ ビューでのナビゲーション バーで、コンテンツの一部とを配置することで、拡張のナビゲーション バーを推奨します。 さらに、iOS で、区切り線とナビゲーション バーの下部にあるシャドウを取り外せるを設定して、 [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty)バインド可能なプロパティを`true`します。 詳細については、次を参照してください。 [NavigationPage のナビゲーション バーの区切り記号を非表示](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar)します。
+
+> [!NOTE]
+> [ `BackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty)、 [ `Title` ](xref:Xamarin.Forms.Page.Title)、 [ `TitleIcon` ](xref:Xamarin.Forms.NavigationPage.TitleIconProperty)、および[ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)プロパティを定義できますナビゲーション バー上の空き領域の値。 ナビゲーション バーのサイズは、プラットフォームや画面サイズによって異なります、中で利用できる限られたスペースに起因する競合が発生これらすべてのプロパティを設定します。 これらのプロパティの組み合わせを使用しようとすると、代わりにのみ設定して、目的のナビゲーション バーのデザインをより実現できますを見つけることがあります、`TitleView`プロパティ。
+
+### <a name="limitations"></a>制限事項
+
+表示するときに注意すべき制限事項がいくつか、 [ `View` ](xref:Xamarin.Forms.View)のナビゲーション バーで、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+- Ios では、ビューの配置のナビゲーション バーで、`NavigationPage`大きいタイトルが有効になっているかどうかによって別の位置に表示されます。 大規模なタイトルを有効にする方法の詳細については、次を参照してください。[大きいタイトルを表示する](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title)します。
+- Android でのナビゲーション バーでビューを配置する、`NavigationPage`アプリケーション互換性を使用するアプリでのみ実行できます。
+- など、大規模で複雑なビューを配置することは推奨されません[ `ListView` ](xref:Xamarin.Forms.ListView)と[ `TableView`](xref:Xamarin.Forms.TableView)のナビゲーション バーで、`NavigationPage`します。
 
 ## <a name="related-links"></a>関連リンク
 
@@ -323,6 +363,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 - [階層 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
+- [TitleView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
 - [Xamarin.Forms (Xamarin University のビデオ) サンプルでは画面のフローで、記号を作成する方法](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
 - [Xamarin.Forms (Xamarin University のビデオ) でフローを画面で、記号を作成する方法](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)
