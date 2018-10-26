@@ -3,15 +3,15 @@ title: GooglePlay に公開する
 ms.prod: xamarin
 ms.assetid: FB1CC234-3554-8566-48BD-2B9B3A28CC7F
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3525541ba0795f4e0b174b155c0ca219e3257bac
-ms.sourcegitcommit: 6433b424410a850f504e0f934bbb5baf8f093e49
+ms.openlocfilehash: e8b1fdd933d026875ae10e76894120c8c4504769
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2018
-ms.locfileid: "39067361"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123337"
 ---
 # <a name="publishing-to-google-play"></a>GooglePlay に公開する
 
@@ -130,7 +130,7 @@ Google Play のおすすめセクションで使われます。 このグラフ�
 
 ### <a name="publishing-to-google-play"></a>GooglePlay に公開する
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公開するためのワークフローが統合されました。 Xamarin Android 7.0 より前のバージョンを使っている場合は、Google Play Developer Console を使って APK を手動でアップロードする必要があります。 また、統合されたワークフローを使うには、その前に少なくとも 1 つの APK をアップロードしておく必要があります。 最初の APK をまだアップロードしていない場合は、手動でアップロードする必要があります。 詳細については、「[APK を手動でアップロードする](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)」をご覧ください。
 
@@ -161,7 +161,7 @@ Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公
 
 次のセクションでは、新しい Google API プロジェクトを作成し、必要な "_クライアント ID_" と "_クライアント シークレット_" を生成する方法を説明します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac は、Google Play にアプリを公開するための統合ワークフローを備えています。 バージョン 5.9 より前の Xamarin Studio を使っている場合は、Google Play Developer Console を使って手動で APK をアップロードし、それ以降の APK の更新には **[Google Play に公開する]** ダイアログを使う必要があります。 また、**[Google Play に公開する]** を使うには、その前に少なくとも 1 つの APK をアップロードしておく必要があります。 最初の APK をまだアップロードしていない場合は、手動でアップロードする必要があります。 APK を手動でアップロードする方法については、「[APK を手動でアップロードする](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)」をご覧ください。
 
@@ -227,7 +227,7 @@ OAuth クライアントの既定の名前は *Google Play Android Developer* �
 
 #### <a name="register-google-api-access"></a>Google API アクセスを登録する
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、**[登録]** をクリックします。
 
@@ -283,7 +283,7 @@ Google Play のテストおよび段階的なロールアウトの詳細につ�
 
 このエラーを解決するには、異なるバージョン番号でアプリを再ビルドし、**[配布チャネル]** ダイアログを使って Google Play に再送信します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、**[登録]** をクリックします。
 

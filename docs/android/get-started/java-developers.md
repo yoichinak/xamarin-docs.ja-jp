@@ -4,15 +4,15 @@ description: Java 開発者は、C# のコードを再利用できる利点を�
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: eb1d08c5dee6c7944fa42e7446b34a5dbbb45ad3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209337"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120412"
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
@@ -39,7 +39,7 @@ Java の重要な特徴の多くは C# にもあります。
 
 -   実行時のコンパイル
 
-Java と C# はどちらも、マネージ実行環境で実行される中間言語にコンパイルされます。 C# と Java はどちらも、静的に型指定され、文字列を変更不可能な型として処理します。
+Java と C# はどちらも、マネージド実行環境で実行される中間言語にコンパイルされます。 C# と Java はどちらも、静的に型指定され、文字列を変更不可能な型として処理します。
 どちらの言語も、単一ルートのクラス階層を使います。 Java と同様に、C# は単一継承のみをサポートし、グローバル メソッドには対応していません。
 どちらの言語においても、オブジェクトは `new` キーワードを使ってヒープ上に作成され、使われなくなるとガベージ コレクションが行われます。 どちらも、`try`/`catch` セマンティクスで正式な例外処理のサポートを提供します。 そして、スレッド管理と同期のサポートを提供します。
 
@@ -473,7 +473,7 @@ Java で使われている言語キーワードの多くは、C# でも使われ
 |[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|関連する変数のグループをカプセル化する値の型です。|
 |[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|オブジェクトの型を取得します。|
 |[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|暗黙的に型指定されたローカル変数を宣言します。|
-|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|クライアント コードがプロパティに代入する値を参照します。|
+|[値](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|クライアント コードがプロパティに代入する値を参照します。|
 |[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|派生クラスでのメソッドのオーバーライドを許可します。|
 
 
@@ -509,6 +509,6 @@ C# で最初の Xamarin.Android プロジェクトに取り組む準備ができ
 ## <a name="related-links"></a>関連リンク
 
 - [Java 統合の概要](~/android/platform/java-integration/index.md)
-- [C# プログラミング ガイド](https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx)
+- [C# プログラミングガイド](https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx)
 - [C# リファレンス](https://msdn.microsoft.com/en-us/library/618ayhy6.aspx)
 - [Java 開発者のための、C# および .NET Framework への移行](https://www.microsoft.com/en-us/download/details.aspx?id=6073)

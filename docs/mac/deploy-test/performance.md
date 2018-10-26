@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.Mac アプリのパフォ�
 ms.prod: xamarin
 ms.assetid: 54B07DED-FDF2-49B2-A5FB-3A9357E65922
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: ab02fd5048503d73390c2d64892dbec411dfd5a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 808d7aa8f886dac38ed8ff5f274ca8f4a02c8dbf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791814"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112430"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac のパフォーマンス
 

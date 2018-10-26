@@ -4,15 +4,15 @@ description: このドキュメントでは、幅広い層の人々に主に Xam
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0907c3bcca9e0955e5ad9f8ed48adac03202cbaa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5950143532b2d1d026f73bb254507d7d3022cbf1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784804"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112300"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用のアドホック配布
 
@@ -111,11 +111,11 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac で新しい配布プロファイルを使用可能にするには、Visual Studio for Mac を終了して、(「[Xcode でプロファイルと証明書をダウンロードする](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」セクションの手順に従って) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要がある場合があります。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio で新しい配布プロファイルを使用可能にするには、Visual Studio を終了して、(「[Xcode でプロファイルと証明書をダウンロードする](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」セクションの手順に従って、ビルド ホストの Mac で) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要がある場合があります。
 
@@ -127,7 +127,7 @@ Visual Studio で新しい配布プロファイルを使用可能にするには
 
 Xamarin.iOS アプリケーションの最終ビルドを行う準備ができたら、作成済みの配布プロファイルを選択します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  Visual Studio for Mac で、次の操作を行います。
 
@@ -143,7 +143,7 @@ Xamarin.iOS アプリケーションの最終ビルドを行う準備ができ�
     ![](ad-hoc-distribution-images/releasexs03.png "署名 ID と配布プロファイルを選択します")
 5. **[OK]** ボタンをクリックして、変更を保存します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
  Visual Studio で、次の操作を行います。
 
 1. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、**[プロパティ]** を選択して編集用に開きます。

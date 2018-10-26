@@ -4,15 +4,15 @@ description: この記事では、Android の物理デバイス上で Xamarin.An
 ms.prod: xamarin
 ms.assetid: 153D3746-A27F-198B-48FE-D219C0133A79
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1848bb624bf5f4bd627441a17fd077843c94edb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c30beadf7c2de618952bdf0cd5c03e7ceee2845
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762743"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109706"
 ---
 # <a name="debug-on-device"></a>デバイスでのデバッグ
 
@@ -27,7 +27,7 @@ Visual Studio for Mac または Visual Studio のいずれかを使用して、A
 
 デバイスがコンピューターに接続されると、Xamarin.Android アプリケーションのデバッグは、他の Xamarin 製品や .NET アプリケーションと同じように完了します。 **デバッグ**構成と外部デバイスが、IDE で選択されていることを確認します。これで、必要なデバッグ シンボルが使用可能になり、IDE が実行中のアプリケーションに接続できるようになります。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![選択されたデバッグ構成](debug-on-device-images/image1-vs.png)
 
@@ -39,7 +39,7 @@ Visual Studio for Mac または Visual Studio のいずれかを使用して、A
 
 ![ブレークポイントに到達](debug-on-device-images/image3-vs.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![選択されたデバッグ構成](debug-on-device-images/image1-xs.png)
 

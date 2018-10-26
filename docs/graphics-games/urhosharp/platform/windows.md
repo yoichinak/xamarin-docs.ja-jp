@@ -1,37 +1,37 @@
 ---
-title: UrhoSharp Windows のサポート
-description: このドキュメントでは、UrhoSharp 用 Windows のサポートについて説明します。 プロジェクトを作成、構成する方法を説明し、および Urho を起動して、WPF との統合、UWP と統合します。
+title: UrhoSharp の Windows のサポート
+description: このドキュメントでは、Windows UrhoSharp のサポートについて説明します。 プロジェクトを作成、構成する方法を説明し、および Urho を起動し、WPF との統合、UWP と統合します。
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 094eaf0ebe84ce8c1771bd6481ee897463349856
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8aca028ec1015616a9884cd09b7ffa5e04f2e43d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783234"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119606"
 ---
-# <a name="urhosharp-windows-support"></a>UrhoSharp Windows のサポート
+# <a name="urhosharp-windows-support"></a>UrhoSharp の Windows のサポート
 
-Urho、ポータブル クラス ライブラリで、さまざまなプラットフォーム全体にわたる、ゲーム ロジックに使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化中には、特定のプラットフォーム機能を活用するためにはたいです.
+Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします.
 
-次のページであると想定`MyGame`のサブクラスは、`Application`クラスです。
+以下のページにある`MyGame`のサブクラスには、`Application`クラス。
 
-**サポートされているアーキテクチャ:** 64 ビット Windows のみです。
+**サポートされているアーキテクチャ:** Windows 64 ビットのみです。
 
-これを使用する方法を示す完全な例を確認できます、[サンプル](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
+これを使用する方法を示す完全な例を参照できます、[サンプル](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
 
 ## <a name="standalone-project"></a>スタンドアロン プロジェクト
 
 ### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
-コンソール プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含んでいるディレクトリ) を検索できることを確認します。
+コンソール プロジェクトを作成、Urho NuGet の参照、および資産 (データ ディレクトリを含むディレクトリ) を特定できることを確認します。
 
 ### <a name="configuring-and-launching-urho"></a>構成および Urho を起動します。
 
-アプリケーションを起動するには、これの操作を行います。
+アプリケーションを起動するには、これを実行します。
 
 ```csharp
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";
@@ -46,11 +46,11 @@ new MyGame().Run();
 
 ### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
-WPF プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含んでいるディレクトリ) を検索できることを確認します。
+WPF プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含むディレクトリ) を特定できることを確認します。
 
 ### <a name="configuring-and-launching-urho-from-wpf"></a>構成および Urho WPF からを起動します。
 
-サブクラスを作成`Window`し、次のように、資産の構成します。
+サブクラスを作成`Window`し、次のように、資産を構成します。
 
 ```csharp
     public partial class MainWindow : Window
@@ -86,15 +86,15 @@ WPF プロジェクトを作成、Urho NuGet の参照し、資産 (データ �
 
 [完全な例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/WPF)
 
-## <a name="integrated-with-uwp"></a>UWP と統合
+## <a name="integrated-with-uwp"></a>UWP 統合
 
 ### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
-UWP プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含んでいるディレクトリ) を検索できることを確認します。
+UWP プロジェクトを作成、Urho NuGet の参照、および資産 (データ ディレクトリを含むディレクトリ) を特定できることを確認します。
 
 ### <a name="configuring-and-launching-urho-from-uwp"></a>構成および Urho UWP からを起動します。
 
-サブクラスを作成`Window`し、次のように、資産の構成します。
+サブクラスを作成`Window`し、次のように、資産を構成します。
 
 ```csharp
 {
@@ -123,7 +123,7 @@ UWP プロジェクトを作成、Urho NuGet の参照し、資産 (データ �
 
 ### <a name="creating-a-project"></a>Visual C++ プロジェクト
 
-Windows.Forms プロジェクトを作成し、Urho NuGet の参照を特定できること、資産 (データ ディレクトリを含んでいるディレクトリ) ことを確認します。
+Windows.Forms プロジェクトを作成し、Urho NuGet の参照、資産 (データ ディレクトリを含むディレクトリ) を特定できることを確認します。
 
 ### <a name="configuring-and-launching-urho-from-windowsforms"></a>構成および Urho Windows.Forms からを起動します。
 

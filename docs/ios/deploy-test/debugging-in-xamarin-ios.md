@@ -4,15 +4,15 @@ description: このドキュメントでは、Visual Studio for Mac や Visual S
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4b21a69e49c8c7fd79de8edac9858c4714657f1c
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 3d1a3090318649e6f04a5b8f44dc4a9b2689a870
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242317"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119632"
 ---
 # <a name="debugging-xamarinios-apps"></a>Xamarin.iOS アプリのデバッグ
 
@@ -32,11 +32,11 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 アプリケーションのデバッグを始める準備ができたら、まずアプリケーションの[ブレークポイントを設定](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)します。 エディターの余白領域で、ブレークポイントにするコードの行番号の隣をクリックします。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging1.png "ブレークポイントの設定")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging1a.png "ブレークポイントの設定")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
@@ -44,13 +44,13 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 コードに設定したすべてのブレークポイントを表示するには、**[ブレークポイント] パッド**を開きます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/image0a.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  [ブレークポイント] パッドが自動的に表示されない場合、_[表示]、[デバッグ ウィンドウ]、[ブレークポイント]_ の順に選択すると表示されます。
  
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/image0.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
@@ -60,12 +60,12 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 アプリケーションのデバッグを始める前に、構成が **[デバッグ]** に設定されていることを必ず確認してください。この構成には、ブレークポイント、データ ビジュアライザーの使用、コール スタックの表示など、デバッグに役立つ便利なツールが揃っています。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging7.png "シミュレーターでのデバッグ")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
 [![](debugging-in-xamarin-ios-images/debugging7a.png "物理デバイスでのデバッグ")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging7c.png "シミュレーターでのデバッグ")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
 [![](debugging-in-xamarin-ios-images/debugging7d.png "物理デバイスでのデバッグ")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
@@ -75,11 +75,11 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 ## <a name="start-debugging"></a>デバッグの開始
 デバッグを開始するには、IDE でターゲット デバイスまたは類似するデバイスを選択します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging7b.png "ターゲット デバイスを選択します")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging7e.png "ターゲット デバイスを選択します")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
@@ -101,7 +101,7 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 ブレークポイントが発生する状況を指示した規則を設定することもできます。これは*条件付きブレークポイント*の追加とも呼ばれます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 条件付きブレークポイントを設定するには、**[ブレークポイントのプロパティ] ウィンドウ**にアクセスします。アクセスする方法は 2 つあります。
 
@@ -119,7 +119,7 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/
 
 [![](debugging-in-xamarin-ios-images/image6.png "ブレークポイントが発生する条件を入力します")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio 2015 で条件付きブレークポイントを設定するには、最初に[普通のブレークポイントを設定](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)します。 そのブレークポイントを右クリックし、コンテキスト メニューを表示します。
 
@@ -139,7 +139,7 @@ Visual Studio 2015 で条件付きブレークポイントを設定するには�
 
 デバッグ ツールでは、ブレークポイントに達すると、プログラムの実行を制御できます。 IDE には、コードの実行とステップ実行に使用できるボタンが 4 つ表示されます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac では次のように表示されます。
 
@@ -152,7 +152,7 @@ Visual Studio for Mac では次のように表示されます。
 - **ステップ イン** - このボタンの場合も次のコード行が実行されます。 次行が関数呼び出しの場合、[ステップ イン] をクリックすると関数の最初の行で停止するので、関数のデバッグを 1 行ずつ続行できます。 次行が関数ではない場合の動作は、[ステップ オーバー] と同じです。
 - **ステップ アウト** - 現在の関数が呼び出された行に戻ります。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio では次のように表示されます。
 
@@ -217,7 +217,7 @@ Visual Studio をご利用の場合、出力ウィンドウにもログがあり
 
 Xamarin.iOS には Mono のクラス ライブラリのソース コードが付属しているため、そのソース コードを利用してデバッガーからシングル ステップ実行し、内部でどのような処理が実行されているかを確認できます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 この機能はデバッグ中に大量のメモリを使用するため、既定ではオフになっています。
 
@@ -226,7 +226,7 @@ Xamarin.iOS には Mono のクラス ライブラリのソース コードが付
 
 [![](debugging-in-xamarin-ios-images/debugging6.png "Mono のクラス ライブラリのデバッグ")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio でクラス ライブラリをデバッグするには、_[デバッグ] の [オプション]_ メニューで **[マイ コードのみ]** を無効にする必要があります。 _[デバッグ]、[全般]_ ノードで、**[マイ コードのみを有効にする]** チェック ボックスをオフにします。
 

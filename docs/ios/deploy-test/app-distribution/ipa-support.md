@@ -4,15 +4,15 @@ description: この記事では、IPA ファイルの作成方法を紹介しま
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 70d6b908beb0d04788365b104b5e4a2679b0ebe1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321364"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113249"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS の IPA サポート
 
@@ -54,7 +54,7 @@ iTunes アートワークは次の手順で指定します。
 
 ## <a name="creating-an-ipa"></a>IPA を作成する
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 IPA 作成は新しい公開ワークフローに組み込まれました。 IPA を作成するには、以下の指示に従い、アプリをアーカイブに収め、署名し、IPA を保存します。
 
@@ -138,7 +138,7 @@ CI 環境などでは、コマンド ラインから IPA をビルドしなけ�
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 プロビジョニング プロファイルが作成され、選択され、任意の **iTunesMetadata.plist** ファイルが作成され、iTunes アートワークが Visual Studio に設定されていれば、配布のために IPA をビルドできます。 次に、プロジェクトを構成します。 次の手順で行います。
 
@@ -233,11 +233,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 新しい iOS アプリケーションが **[マイ アプリ]** セクションに表示されます。アプリケーションを右クリックすると、アプリケーションに関する情報が表示されます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "新しい iOS アプリケーションが [マイ アプリ] セクションに表示されます")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "新しい iOS アプリケーションが [マイ アプリ] セクションに表示されます")
 

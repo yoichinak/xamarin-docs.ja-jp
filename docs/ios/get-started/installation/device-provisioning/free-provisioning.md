@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 503dae8253b3c0bb82038dd54b5d97ff632b439b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353322"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115043"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
 
@@ -87,7 +87,7 @@ ms.locfileid: "39353322"
 
 ### <a name="deploy-your-xamarinios-app"></a>Xamarin.iOS アプリを展開する
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。
 2. Visual Studio for Mac の **Solution Pad** で **Info.plist** をダブルクリックします。
@@ -106,7 +106,7 @@ ms.locfileid: "39353322"
 9. **[OK]** をクリックし、**[プロジェクト オプション]** を保存して閉じます。
 10. iOS デバイスを選択し、アプリを実行します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。

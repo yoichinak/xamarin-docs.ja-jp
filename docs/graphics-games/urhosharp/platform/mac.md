@@ -1,33 +1,33 @@
 ---
-title: UrhoSharp Mac サポート
-description: このドキュメントでは、UrhoSharp macOS サポートについて説明します。 プロジェクトを作成する方法について説明し、いくつかのサンプル コードへのリンクを提供します。
+title: UrhoSharp の Mac のサポート
+description: このドキュメントでは、UrhoSharp の macOS のサポートについて説明します。 プロジェクトを作成する方法について説明し、いくつかのサンプル コードへのリンクを提供します。
 ms.prod: xamarin
 ms.assetid: 95FFBD36-14E9-4C17-B1E8-9A04E81E824D
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: aae7b09231ae0e8f88bb9435f50fadd2ff822c1a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6d0a048020284319682c1bee0f9a1d7f9af00977
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783344"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113873"
 ---
-# <a name="urhosharp-mac-support"></a>UrhoSharp Mac サポート
+# <a name="urhosharp-mac-support"></a>UrhoSharp の Mac のサポート
 
-_Mac 固有のセットアップと機能_
+_Mac の具体的な設定と機能_
 
-Urho、ポータブル クラス ライブラリで、さまざまなプラットフォーム全体にわたる、ゲーム ロジックに使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化中には、特定のプラットフォーム機能を活用するためにはたいです.
+Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします.
 
-次のページであると想定`MyGame`のサブクラスは、`Application`クラスです。
+以下のページにある`MyGame`のサブクラスには、`Application`クラス。
 
 ## <a name="macos"></a>macOS
 
-**サポートされているアーキテクチャ:** 32 ビットと 64 ビットの x86/x86-64 します。
+**サポートされているアーキテクチャ:** x86/x86-64 の 32 ビットと 64 ビット。
 
 ## <a name="creating-a-project"></a>Visual C++ プロジェクト
 
-コンソール プロジェクトを作成、Urho NuGet の参照し、資産 (データ ディレクトリを含んでいるディレクトリ) を検索できることを確認します。
+コンソール プロジェクトを作成、Urho NuGet の参照、および資産 (データ ディレクトリを含むディレクトリ) を特定できることを確認します。
 
 ```csharp
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";

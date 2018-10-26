@@ -4,15 +4,15 @@ description: この記事では Xamarin.Android アプリケーション パッ�
 ms.prod: xamarin
 ms.assetid: 8D70CDDD-3D3C-9949-8045-AB8F93D18E74
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: babe45c39f6a69dd9384f3bce8fe28ada31ebfdf
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a6fe5cc3a126cc42c07f38b89c5d1de308b3c0dc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764425"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109914"
 ---
 # <a name="application-package-size"></a>アプリケーション パッケージのサイズ
 

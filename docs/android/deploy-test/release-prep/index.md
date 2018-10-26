@@ -3,15 +3,15 @@ title: リリースに向けてアプリケーションを準備する
 ms.prod: xamarin
 ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 18c49afdd08921b81573da94c23e66f1dd48a25f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a8858839c51e519ac50dd59d223a6c15cee9e6bf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32020427"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123454"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -24,9 +24,9 @@ ms.locfileid: "32020427"
 
 -   **[アプリケーションのバージョン管理](#Versioning)** &ndash; この手順では、バージョン管理情報を初期化または更新します。 これは将来、アプリケーションを更新するために、また、インストールしているアプリケーションのバージョンをユーザーに知らせるために重要です。
 
--   **[APK を圧縮する](#shrink_apk)** &ndash; マネージド コードで Xamarin.Android リンカーを使用し、Java バイトコードで ProGuard を使用することで、最終的な APK のサイズを大幅に縮小できます。
+-   **[APK を圧縮する](#shrink_apk)**&ndash; マネージド コードで Xamarin.Android リンカーを使用し、Java バイトコードで ProGuard を使用することで、最終的な APK のサイズを大幅に縮小できます。
 
--   **[アプリケーションを保護する](#protect_app)** &ndash; ユーザーや攻撃者によるアプリケーションのデバッグ、改ざん、またはリバース エンジニアリングを防ぐために、マネージド コードを難読化し、アンチデバッグとおよび改ざん防止を追加し、ネイティブ コンパイルを使用します。
+-   **[アプリケーションを保護する](#protect_app)**&ndash; ユーザーや攻撃者によるアプリケーションのデバッグ、改ざん、またはリバース エンジニアリングを防ぐために、マネージド コードを難読化し、アンチデバッグとおよび改ざん防止を追加し、ネイティブ コンパイルを使用します。
 
 -   **[パッケージング プロパティを設定する](#Set_Packaging_Properties)** &ndash; パッケージ プロパティは、Android アプリケーション パッケージ (APK) の作成を制御します。 この手順は APK を最適化し、そのアセットを保護し、必要に応じてパッケージをモジュール化します。
 
@@ -42,13 +42,13 @@ ms.locfileid: "32020427"
 
 Xamarin.Android アプリケーションそれぞれでアプリケーション アイコンを指定することを強くお勧めします。 一部のアプリケーション マーケットプレースでは、これがないと、Android アプリケーションを公開することができません。 `Application` 属性の `Icon` プロパティは、Xamarin.Android プロジェクトのアプリケーション アイコンを指定するために使用されます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio 2015 以降では、アプリケーション アイコンは、次のスクリーンショットで示すように、プロジェクトの **[プロパティ]** の **[Android マニフェスト]** セクションから指定します。
 
 [![アプリケーションのアイコンを設定する](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac では、アプリケーション アイコンは、次のスクリーンショットで示すように、**[プロジェクト オプション]** の **[Android アプリケーション]** セクションから指定することもできます。
 
@@ -75,13 +75,13 @@ Android アプリケーションの保守と配布には、バージョン管理
 
 -   **バージョン名** &ndash; (特定のデバイスにインストールされる) アプリケーションのバージョンに関する情報をユーザーに知らせるためにのみ使用される文字列。 バージョン名は、ユーザーまたは Google Play 内に表示されることを意図しています。 この文字列は、Android によって内部的に使用されることはありません。 バージョン名は、ユーザーが自分のデバイスにインストールされているビルドを識別するために役立つ文字列の値になります。 この値は、**AndroidManifest.xml** ファイルに `android:versionName` として保存されます。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio では、次のスクリーンショットで示すように、これらの値は、プロジェクトの **[プロパティ]** の **[Android マニフェスト]** セクションで設定できます。
 
 [![バージョン番号を設定する](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 以上の値は **[プロジェクト オプション]** の **[ビルド]、[Android アプリケーション]** セクションで設定できます。下のスクリーンショットをご覧ください。
 
@@ -104,7 +104,7 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 -   構成: SDK アセンブリのみ &ndash; Xamarin.Android 4.2.5 サイズ = 3.0 MB。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 プロジェクトの **[プロパティ]** の **[Android オプション]** セクションを使用してリンカー オプションを設定します。
 
@@ -119,7 +119,7 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 -   **[SDK およびユーザー アセンブリ]** &ndash; Xamarin.Android で必要になるアセンブリだけでなく、アプリケーションで必要になるすべてのアセンブリがリンクされます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 **[プロジェクト オプション]** の **[Android のビルド]** セクションの **[リンカー]** タブでリンカー オプションを設定します。次のスクリーンショットをご覧ください。
 
@@ -146,11 +146,11 @@ ProGuard は Xamarin.Android リンカーの代替ではありません。 Xamar
 
 **[ProGuard を有効にする]** がオンになっていると、Xamarin.Android が結果として得られる APK で ProGuard ツールを実行します。 ProGuard 構成ファイルが生成され、ビルド時に ProGuard で使用されます。 Xamarin.Android は、カスタムの *ProguardConfiguration* ビルド アクションもサポートしています。 下の例で示すように、カスタムの ProGuard 構成ファイルをプロジェクトに追加し、これを右クリックして、ビルド アクションとして選択することができます。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![Proguard ビルド アクション](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![Proguard ビルド アクション](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
@@ -190,7 +190,7 @@ Android マニフェストには、アプリケーションをデバッグする
 
 ### <a name="application-protection-with-dotfuscator"></a>Dotfuscator によるアプリケーションの保護
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [デバッグが無効](#Disable_Debugging)になっていても、攻撃者が、アプリケーションを再パッケージ化し、構成オプションまたはアクセス許可を追加または削除することは可能です。 これにより、攻撃者がアプリケーションをリバース エンジニアリング、デバッグ、または改ざんすることができます。
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) を使用して、マネージド コードを難読化し、ビルド時にランタイムのセキュリティ状態検出コードを Xamarin.Android アプリに挿入して、アプリがルート化されたデバイスで実行されている場合に検出して対応することができます。
@@ -200,7 +200,7 @@ Dotfuscator CE は、Visual Studio に含まれていますが、Visual Studio 2
 Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition with Xamarin](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)」(Xamarin での Dotfuscator Community Edition の使用) を参照してください。
 構成されると、Dotfuscator CE は、自動的に作成される各ビルドを保護します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [デバッグが無効](#Disable_Debugging)になっていても、攻撃者が、アプリケーションを再パッケージ化し、構成オプションまたはアクセス許可を追加または削除することは可能です。 これにより、攻撃者がアプリケーションをリバース エンジニアリング、デバッグ、または改ざんすることができます。
 Visual Studio for Mac はサポートされていませんが、[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) と Visual Studio を使用して、マネージド コードを難読化し、ビルド時にランタイムのセキュリティ状態検出コードを Xamarin.Android アプリに挿入して、アプリがルート化されたデバイスで実行されている場合に検出して対応することができます。
@@ -241,13 +241,13 @@ _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル�
 
 ## <a name="set-packaging-properties"></a>パッケージング プロパティを設定する
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 パッケージング プロパティは、次のスクリーンショットで示すように、プロジェクトの **[プロパティ]** の **[Android オプション]** セクションで設定できます。
 
 [![パッケージング プロパティ](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 パッケージング プロパティは **[プロジェクト オプション]** で設定できます。次のスクリーンショットをご覧ください。
 
@@ -280,13 +280,13 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 ## <a name="compile"></a>Compile
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 上記の手順のすべてが完了したら、アプリのコンパイルの準備ができます。 **[ビルド]、[ソリューションのリビルド]** の順に選択し、リリース モードで正常にビルドされることを確認します。 この手順ではまだ APK が生成されません。
 
 [アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションでは、パッケージ化と署名についてさらに詳しく説明します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 上記のすべての手順が完了したら、アプリケーションをコンパイルし (**[ビルド]、[すべてビルド]** の順に選択)、リリース モードで正しくビルドされることを確認できます。 この手順ではまだ APK が生成されません。
 
@@ -297,7 +297,7 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 ## <a name="archive-for-publishing"></a>発行のためのアーカイブ
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 発行プロセスを開始するには、**ソリューション エクスプローラー**でプロジェクトを右クリックし、**[アーカイブ]** コンテキスト メニュー項目を選択します。
 
@@ -356,7 +356,7 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 * **Google Play** &ndash; 署名済み APK を Google Play に発行します。 引き続き「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進み、APK を署名して Google Play ストアに発行する方法について学習してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 発行プロセスを開始するには、**[ビルド]、[発行のためのアーカイブ]** の順に選択します。
 

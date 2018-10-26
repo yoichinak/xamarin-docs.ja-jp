@@ -4,15 +4,15 @@ description: このガイドでは、Visual Studio 内で Android Emulator を�
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 9e0eade7a2e033838f78f24270ec2bf9d4abc171
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: e40178e43cfcfd261434fab9dd5ca0a9061d3f59
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935756"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113783"
 ---
 # <a name="debugging-on-the-android-emulator"></a>Android Emulator でのデバッグ
 
@@ -25,7 +25,7 @@ Android Emulator (**.NET によるモバイル開発**のワークロードの�
 
 ## <a name="using-a-pre-configured-virtual-device"></a>構成済み仮想デバイスの使用
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio には、デバイスのドロップダウン メニューに表示される構成済みの仮想デバイスが含まれます。 たとえば、次の Visual Studio 2017 のスクリーンショットでは、いくつかの構成済み仮想デバイスが使用可能です。
 
@@ -48,7 +48,7 @@ Xamarin.Android プロジェクトで、使用可能な仮想マシンと互換�
 使用可能な仮想デバイスの API レベルと一致するように、**[最小 Android ターゲットの変更]** をクリックして、プロジェクトの最小 Android バージョンを変更することができます。 また、[Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) を使用して、ターゲット API レベルをサポートする新しい仮想デバイスを作成することもできます。
 新しい API レベル用に仮想デバイスを構成するには、まず、その API レベルに対応するシステム イメージをインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac には、デバイスのドロップダウン メニューに表示される構成済みの仮想デバイスが含まれます。 たとえば、次のスクリーンショットでは、2 つの構成済み仮想デバイスを使用できます。
 
@@ -73,11 +73,11 @@ Visual Studio for Mac には、デバイスのドロップダウン メニュー
 
 VisuaI Studio の上部近くにドロップダウン メニューがあります。このメニューを使用して、**デバッグ** モードまたは**リリース** モードを選択できます。 **[デバッグ]** を選択すると、アプリの起動後にエミュレーター内で実行されているアプリケーション プロセスにデバッガーがアタッチされます。 **[リリース]** モードを選択すると、デバッガーが無効になります (ただし、アプリを実行し、ログ ステートメントを使用してデバッグすることはできます)。 デバイスのドロップダウン メニューから仮想デバイスを選択した後、**[デバッグ]** または **[リリース]** のいずれかのモードを選択し、[再生] ボタンをクリックしてアプリケーションを実行します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![[デバッグ] および [リリース] モードと [再生] ボタン](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![[デバッグ] および [リリース] モードと [再生] ボタン](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 

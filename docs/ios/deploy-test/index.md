@@ -4,15 +4,15 @@ description: このドキュメントはさまざまなガイドにリンクし�
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: a96eeefa631eb4055d8bd0af5b89160ab0899907
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eea8b37c7fe6f9c252635fa8dab6420058ad87fb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785185"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114029"
 ---
 # <a name="deploying-and-testing-xamarinios-apps"></a>Xamarin.iOS アプリの展開とテスト
 

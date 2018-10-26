@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS アプリケーショ�
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dd590b65fdf1f83ade3453fa1266d1f6724bb8de
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785464"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121829"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Xamarin.iOS アプリの単体テスト
 
@@ -21,13 +21,13 @@ Xamarin.iOS での単体テストは、Touch.Unit フレームワークを使用
 
 ## <a name="setting-up-a-test-project"></a>テスト プロジェクトの設定
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 プロジェクトの単体テスト フレームワークを設定する場合、単に **iOS 単体テスト プロジェクト**という種類のプロジェクトをソリューションに追加するだけです。 その場合、ソリューションを右クリックし、**[追加]、[新しいプロジェクトの追加]** の順に選択します。 リストから、**[iOS]、[テスト]、[Unified API]、[iOS 単体テスト プロジェクト]** の順に選択します (C# または F# を選択できます)。
 
 ![](touch.unit-images/00.png "C# または F# を選択する")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 プロジェクトの単体テスト フレームワークを設定する場合、単に **iOS 単体テスト プロジェクト**という種類のプロジェクトをソリューションに追加するだけです。 その場合、ソリューションを右クリックし、**[追加]、[新しいプロジェクト...]** の順に選択します。リストから、**[Visual C#]、[iOS]、[単体テスト アプリ (iOS)]** の順に選択します。
 
@@ -37,11 +37,11 @@ Xamarin.iOS での単体テストは、Touch.Unit フレームワークを使用
 
 これで基本的なプロジェクトが作成されます。このプロジェクトは基本的なランナー プログラムを含み、新しい MonoTouch.NUnitLite アセンブリを参照します。プロジェクトは次のようになります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](touch.unit-images/01.png "ソリューション エクスプローラーのプロジェクト")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](touch.unit-images/01a.png "ソリューション エクスプローラーのプロジェクト")
 

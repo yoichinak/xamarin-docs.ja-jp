@@ -1,27 +1,24 @@
 ---
 title: Mac アプリの構成
-description: このガイドでは、パブリケーション用の Xamarin.Mac アプリの構成の手順を説明します。
+description: このドキュメントでは、Xamarin.Mac アプリの公開設定を構成する方法について説明します。 アプリケーション設定、署名設定、ビルド設定について説明します。
 ms.prod: xamarin
 ms.assetid: fea66a34-1581-4cd6-b714-3fbff215a542
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: e47ff676b4dd02d5312a74fb699ed594b5e0f944
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1f88a429d58a09b54bb2383dbb77a3768ce64152
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115095"
 ---
 # <a name="mac-app-configuration"></a>Mac アプリの構成
-
-_このガイドでは、パブリケーション用の Xamarin.Mac アプリの構成の手順を説明します。_
-
 
 ## <a name="mac-app-configuration"></a>Mac アプリの構成
 
 Visual Studio for Mac で Mac アプリケーション プロジェクトを右クリックして、**[オプション]** を選択します。
-
 
 ### <a name="application-settings"></a>アプリケーションの設定
 
@@ -37,7 +34,6 @@ Xamarin.Mac で作成された Mac アプリケーションを実行するには
 
 - Mac OS X 10.7 以上を搭載している Mac コンピューター。
 
-
 ### <a name="signing-settings"></a>署名の設定
 
 **[プロジェクト オプション]** ダイアログ ボックスの **[Mac 署名]** セクションを使用して、開発者は、テスト用、自己リリース用、または Apple App Store からのリリース用に Xamarin.Mac アプリに署名することができます。
@@ -46,13 +42,11 @@ Xamarin.Mac で作成された Mac アプリケーションを実行するには
 
 ここで選択、ID、プロビジョニング プロファイル、コンパイル時にアプリに署名するために使用するカスタム権利を選択します。 開発者は、オプションで、他の Mac 上でアプリをインストールするために使用されるインストーラーに署名することができます。
 
-
 ### <a name="build-settings"></a>ビルド設定
 
 **[プロジェクト オプション]** ダイアログ ボックスの **[Mac ビルド]** セクションを使用して、開発者は、Xamarin.Mac アプリのアーキテクチャを選択し、アプリがサポートする macOS のバージョンを制御し、オプションでアプリが正常にコンパイルされたときのインストール パッケージを作成することができます。
 
  [![ビルド設定の編集](app-configuration-images/config03.png "ビルド設定の編集")](app-configuration-images/config03-large.png#lightbox)
-
 
 ## <a name="related-links"></a>関連リンク
 

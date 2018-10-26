@@ -4,15 +4,15 @@ description: このドキュメントでは、App Store で Xamarin.iOS アプ�
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209260"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115134"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -121,11 +121,11 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  Visual Studio for Mac で新しい配布プロファイルを使用可能にするには、Visual Studio for Mac を終了し、(「[Requesting Signing Identities](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」 (署名 ID の要求) セクションの手順に従って) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要があります。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  Visual Studio で新しい配布プロファイルを使用可能にするには、Visual Studio を終了して、([署名 ID の要求](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)に関するセクションの手順に従って、ビルド ホストの Mac で) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要があります。
 
@@ -137,7 +137,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 iTunes App Store の販売向けの Xamarin.iOS アプリケーションの最終ビルドを行う準備ができたら、作成済みの配布プロファイルを選択します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  Visual Studio for Mac で、次の操作を行います。
 
@@ -153,7 +153,7 @@ iTunes App Store の販売向けの Xamarin.iOS アプリケーションの最�
     ![](images/releasexs03.png "署名 ID と配布プロファイルを選択します")
 5. **[OK]** ボタンをクリックして、変更を保存します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  Visual Studio で、次の操作を行います。
 

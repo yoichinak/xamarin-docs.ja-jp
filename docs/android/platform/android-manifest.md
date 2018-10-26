@@ -3,15 +3,15 @@ title: Android マニフェストの使用
 ms.prod: xamarin
 ms.assetid: CB7CCF60-FEF1-3B28-215F-159391E74347
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 0857b70e6e1d9104f62ec2e26f8edbab385d06f3
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 655f988cc54cf54e346e68109271775dee2918a9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242252"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111253"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの使用
 
@@ -37,7 +37,8 @@ namespace Demo
 }
 ```
 
-これは、結果内で生成される何も、 **AndroidManifest.xml**します。 場合は、 `<activity/>` 、生成される要素を使用する必要がある、 [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute)カスタム属性。 
+これは、結果内で生成される何も、 **AndroidManifest.xml**します。 場合は、 `<activity/>` 、生成される要素を使用する必要がある、 [`[Activity]`](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute) 
+カスタム属性: 
 
 ```csharp
 namespace Demo
@@ -177,7 +178,10 @@ Android マニフェストにアクセス許可を追加すると (」の説明�
 
 ### <a name="intent-actions-and-features"></a>インテント アクションと機能
 
-Android マニフェストでは、アクティビティの機能を記述するための手段を提供します。 使用してこれには[インテント](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)と[ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)カスタム属性。 アクティビティの適切なアクションを指定することができます、 [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/)コンス トラクター、および対象のカテゴリは適切な[ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/)プロパティ。 少なくとも 1 つのアクティビティには、(これは、コンス トラクターでアクティビティが提供されているためにです) を提供する必要があります。 `[IntentFilter]` 複数回、および使用するたびの個別の結果に用意できる`<intent-filter/>`内の要素、`<activity/>`します。 例えば:
+Android マニフェストでは、アクティビティの機能を記述するための手段を提供します。 使用してこれには[インテント](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)と [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
+カスタム属性です。 アクティビティの適切なアクションを指定することができます、 [`IntentFilter`](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) 
+コンス トラクター、および対象のカテゴリは適切な [`Categories`](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) 
+プロパティを使用する方法を示します。 少なくとも 1 つのアクティビティには、(これは、コンス トラクターでアクティビティが提供されているためにです) を提供する必要があります。 `[IntentFilter]` 複数回、および使用するたびの個別の結果に用意できる`<intent-filter/>`内の要素、`<activity/>`します。 例えば:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

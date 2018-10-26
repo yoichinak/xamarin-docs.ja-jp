@@ -4,15 +4,15 @@ description: Xamarin.Android アプリをテストおよびデバッグする方
 ms.prod: xamarin
 ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 1ed6ec57365c5d3a861dd3fd947a2ad195ce5357
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 8fb647e12de621fc0772ad5c18aac21e46758715
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935387"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113106"
 ---
 # <a name="debugging"></a>デバッグ
 
@@ -35,5 +35,4 @@ Android アプリケーションを開発するには、物理ハードウェア
 開発者がアプリケーションのデバッグに使用する、よく使われるトリックに `Console.WriteLine` があります。 ただし、Android などのモバイル プラットフォームにコンソールはありません。 Android デバイスでは、アプリの書き込み中に使用する必要があることが多いログを提供します。 これは、取得するために入力するコマンドから、**logcat** と呼ばれることがあります。 この記事では、**logcat** を使用する方法について説明します。
 
 > [!WARNING]
-> 
-  **Xamarin Android Player** は非推奨とされていることに注意してください。 詳細については、[このブログ投稿のお知らせ](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/)を参照してください。 さらに、**Visual Studio の Android Emulator** は Visual Studio 2017 より非推奨とされています。
+> **Xamarin Android Player** は非推奨とされていることに注意してください。 詳細については、[このブログ投稿のお知らせ](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/)を参照してください。 さらに、**Visual Studio の Android Emulator** は Visual Studio 2017 より非推奨とされています。

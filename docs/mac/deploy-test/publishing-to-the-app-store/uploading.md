@@ -1,17 +1,18 @@
 ---
 title: Mac App Store へのアップロード
-description: このガイドでは、Mac App Store に Xamarin.Mac アプリを発行するためのアップロード手順について説明します。
+description: このドキュメントでは、iTunes Connect を使用し、Mac App Store に Xamarin.Mac アプリをアップロードする方法について説明します。 プロセスを完了する目的で iTunes Connect から要求される情報について説明します。
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4ddbbdc32ecb2de4f9dcb89162bc38803fa7159e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fa5c8a72a469f1a798cbdcfc63c07860363f6608
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109849"
 ---
 # <a name="upload-to-mac-app-store"></a>Mac App Store へのアップロード
 

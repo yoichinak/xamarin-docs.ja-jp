@@ -1,19 +1,20 @@
 ---
-title: 証明書と ID
+title: Xamarin.Mac の証明書と ID
 description: このガイドでは、Xamarin.Mac アプリを発行するのに必要な証明書と ID を作成する手順について説明します。
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f60c15ba4b57ed61405b7081ed1cc3cee99c372
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115550"
 ---
-# <a name="certificates-and-identifiers"></a>証明書と ID
+# <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac の証明書と ID
 
 _このガイドでは、Xamarin.Mac アプリを発行するのに必要な証明書と ID を作成する手順について説明します。_
 

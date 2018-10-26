@@ -1,24 +1,24 @@
 ---
 title: Xamarin.iOS で TextKit
-description: このドキュメントでは、Xamarin.iOS で TextKit を使用する方法について説明します。 TextKit は、強力なテキスト レイアウトとレンダリングの機能を提供します。
+description: このドキュメントでは、Xamarin.iOS で TextKit を使用する方法について説明します。 TextKit は、強力なテキスト レイアウトとレンダリング機能を提供します。
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ac80d1d07f5649d377dd6fdefcb4911ba9ec2dcb
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f08e37d17cc32e45232d54cc4a51bb48d7ec94b1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788336"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111422"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin.iOS で TextKit
 
-TextKit とは、強力なテキストのレイアウトとレンダリングの機能を提供する新しい API です。 低レベルの中核となるテキスト フレームワークに基づいて構築されますが、中核となるテキストよりも使用する方が簡単です。
+TextKit とは、強力なテキスト レイアウトとレンダリングの機能を提供する新しい API です。 低レベルの中核となるテキスト フレームワーク上に構築されますが、使用する主要なテキストよりもはるかに簡単です。
 
-TextKit の機能を標準コントロールで使用できるようにするいくつかの iOS テキスト コントロールは TextKit を使用する再実装されているを含みます。
+で TextKit の機能を標準コントロールに使用できるようにいくつかの iOS テキスト コントロールは TextKit、を使用する再実装されているを含みます。
 
 -  UITextView
 -  UITextField
@@ -26,14 +26,14 @@ TextKit の機能を標準コントロールで使用できるようにするい
 
 ## <a name="architecture"></a>アーキテクチャ
 
-TextKit は、レイアウトと、次のクラスを含め、表示とテキストの保存を分離する、レイヤー アーキテクチャを提供します。
+TextKit には、レイアウトと表示、次のクラスを含むからテキストの記憶域を分離する階層型アーキテクチャが用意されています。
 
--  `NSTextContainer` – 座標系とレイアウトのテキストに使用されるジオメトリを提供します。
--  `NSLayoutManager` – グリフにテキストにすることによってテキストをレイアウトします。 
--  `NSTextStorage` – テキスト データを保持するだけでなくバッチ テキストのプロパティの更新を処理します。 バッチ更新は、実際の処理のレイアウトを再計算やテキストを再描画など、変更のレイアウト マネージャーに渡されます。
+-  `NSTextContainer` – 座標系とテキストのレイアウトに使用されるジオメトリを提供します。
+-  `NSLayoutManager` – グリフにテキストにすることでは、テキストをレイアウトします。 
+-  `NSTextStorage` – テキストのデータを保持して、バッチ テキストのプロパティの更新を処理します。 バッチ更新プログラムは、レイアウトを再計算し、テキストを再描画など、変更の実際の処理のためのレイアウト マネージャーに渡されます。
 
 
-これら 3 つのクラスは、テキストをレンダリングするビューに適用されます。 ように、ビューを処理する組み込みのテキスト`UITextView`、 `UITextField`、および`UILabel`設定すると、それらを使用する必要があるが、作成してそれらを任意に適用`UIView`インスタンスもします。
+これら 3 つのクラスは、テキストをレンダリングするビューに適用されます。 組み込みのテキストなど、ビューの処理`UITextView`、 `UITextField`、および`UILabel`設定すると、それらが既にあるが、作成し、いずれかに適用できます`UIView`インスタンスもします。
 
 次の図は、このアーキテクチャを示しています。
 
@@ -41,9 +41,9 @@ TextKit は、レイアウトと、次のクラスを含め、表示とテキス
 
 ## <a name="text-storage-and-attributes"></a>テキストの保存と属性
 
-`NSTextStorage`クラスは、ビューによって表示されるテキストを保持します。 文字の変更などのテキストまたはその属性は - レイアウト マネージャーの表示には、すべての変更も通信します。 `NSTextStorage` 継承`MSMutableAttributed`文字列、バッチの間で指定するテキスト属性の変更を許可する`BeginEditing`と`EndEditing`呼び出しです。
+`NSTextStorage`クラスはビューによって表示されるテキストを保持します。 文字への変更などのテキストまたはその属性の表示のレイアウト マネージャーに変更を加えたも通信します。 `NSTextStorage` 継承`MSMutableAttributed`までのバッチに指定するテキスト属性の変更を許可する文字列`BeginEditing`と`EndEditing`呼び出し。
 
-たとえば、次のコード スニペットが前面に変更を指定し、背景色は、それぞれとし、特定の範囲を対象しします。
+など、次のコード スニペットがフォア グラウンドへの変更を指定し、背景色は、それぞれ、および特定の範囲を対象とします。
 
 ```csharp
 textView.TextStorage.BeginEditing ();
@@ -52,17 +52,17 @@ textView.TextStorage.AddAttribute(UIStringAttributeKey.BackgroundColor, UIColor.
 textView.TextStorage.EndEditing ();
 ```
 
-後に`EndEditing`が呼び出されると、変更は、さらに、必要なレイアウトと、ビューに表示されるテキストのレンダリングの計算を実行するレイアウト マネージャーに送信されます。
+後`EndEditing`が呼び出されると、変更は、さらに、必要なレイアウトとビューに表示されるテキストのレンダリングの計算を実行するレイアウト マネージャーに送信されます。
 
-## <a name="layout-with-exclusion-path"></a>除外パスを含むレイアウト
+## <a name="layout-with-exclusion-path"></a>除外パスでのレイアウト
 
-TextKit も、レイアウトをサポートでき、複雑なシナリオと呼ばれる複数の列のテキストと指定したパスの周りでフローさせるテキストなど*除外パス*です。 除外パスは、指定したパスの周囲にテキストを原因と、テキスト レイアウトのジオメトリを変更するテキスト コンテナーに適用されます。
+TextKit も、レイアウトをサポートでき、複雑なシナリオなど、複数列のテキストと指定したパスの周囲でフローさせる文字列と呼ばれます*除外パス*します。 除外パスは、指定したパスの周りをフローするテキストを原因と、テキストのレイアウトのジオメトリを変更するテキスト コンテナーに適用されます。
 
-除外するパスを追加すると設定が必要です、`ExclusionPaths`レイアウト マネージャーのプロパティです。 このプロパティの設定が原因でテキストのレイアウトを無効にし、除外パスの前後のテキストをフローするレイアウト マネージャー。
+除外するパスを追加するには、設定が必要です、`ExclusionPaths`レイアウト マネージャーのプロパティ。 このプロパティを設定すると、テキストのレイアウトを無効にして除外パスの前後のテキストをフローするレイアウト マネージャー。
 
 ### <a name="exclusion-based-on-a-cgpath"></a>CGPath に基づいて除外
 
-次の検討`UITextView`サブクラス実装。
+次を考慮`UITextView`サブクラスを実装します。
 
 ```csharp
 public class ExclusionPathView : UITextView
@@ -139,31 +139,31 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-このコードは、主要なグラフィックスを使用してテキスト ビューで描画するためのサポートを追加します。 以降、 `UITextView` TextKit をテキストのレンダリングやレイアウトに使用するクラスが組み込まれた、TextKit、除外のパスを設定するなどのすべての機能を使用できます。
+このコードは、コア グラフィックスを使用して、テキスト ビュー上に描画するためのサポートを追加します。 以降、 `UITextView` TextKit をテキスト レンダリングやレイアウトに使用するクラスが組み込まれた、TextKit、除外パスの設定などのすべての機能を使用できます。
 
 > [!IMPORTANT]
-> この例サブクラス`UITextView`タッチ描画のサポートを追加します。 サブクラス化`UITextView`TextKit の機能を取得する必要はありません。
+> この例のサブクラス`UITextView`タッチ描画のサポートを追加します。 サブクラス化`UITextView`TextKit の機能を取得する必要はありません。
 
 
 
-ユーザーが、描画、テキスト ビューで描画後`CGPath`に適用される、`UIBezierPath`インスタンスを設定して、`UIBezierPath.CGPath`プロパティ。
+ユーザーが、描画、テキスト ビュー上に描画後`CGPath`に適用される、`UIBezierPath`インスタンスを設定して、`UIBezierPath.CGPath`プロパティ。
 
 ```csharp
 bezierPath.CGPath = exclusionPath;
 ```
 
-テキスト レイアウトが、パスの前後の更新は、次のコード行を更新します。
+テキストのレイアウト パスの前後の更新は、次のコード行を更新します。
 
 ```csharp
 TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 ```
 
-次のスクリーン ショットは、描画のパスの前後をフローするテキスト レイアウトがどのように変化するかを示します。
+次のスクリーン ショットでは、描画パスの周りをフローするテキストのレイアウトがどのように変化するかを示します。
 
 <!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
-![](textkit-images/exclusionpath2.png "このスクリーン ショットは、描画のパスの前後をフローするテキストのレイアウトがどのように変化するかを示します")
+![](textkit-images/exclusionpath2.png "このスクリーン ショットは、描画パスの周りをフローするテキストのレイアウトがどのように変化するかを示します")
 
-注意して、レイアウト マネージャーの`AllowsNonContiguousLayout`ここではプロパティが false に設定します。 これにより、テキストが変更されるすべてのケースの再計算するレイアウトされます。 これを true に設定と、サイズの大きいドキュメントの場合は特に、完全レイアウトの更新を回避するでパフォーマンスを得ることがあります。 ただし、設定`AllowsNonContiguousLayout`に true を妨げる除外パス状況によっては、たとえば、レイアウトが更新されない場合末尾の改行が設定されているパスの前に返すことがなく実行時にテキストを入力します。
+注意して、レイアウト マネージャーの`AllowsNonContiguousLayout`ここでプロパティが false に設定します。 これにより、常にテキストが変更の再計算するレイアウト。 これを true に設定すると、特にサイズの大きいドキュメントの場合、完全なレイアウトの更新を回避することでパフォーマンスが向上する可能性があります。 ただし、設定`AllowsNonContiguousLayout`に true を妨げる除外パス状況によっては、たとえば、レイアウトの更新から末尾の改行が設定されているパスの前に戻ることがなく実行時にテキストを入力した場合。
 
 
 ## <a name="related-links"></a>関連リンク

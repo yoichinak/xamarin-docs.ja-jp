@@ -1,53 +1,53 @@
 ---
 title: Xamarin.iOS でマーシャ リング例外
-description: このドキュメントでは、Xamarin.iOS アプリでネイティブおよびマネージの例外を使用する方法について説明します。 これは、これらの問題のソリューションと発生する可能性がある問題について説明します。
+description: このドキュメントでは、Xamarin.iOS アプリでネイティブおよびマネージ例外を使用する方法について説明します。 これは、発生する可能性がある問題とこれらの問題の解決方法について説明します。
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/05/2017
-ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 167d6ac421bdd2652e7f8474e1ea21bd9040723f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786744"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114302"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS でマーシャ リング例外
 
-_Xamarin.iOS には、特にネイティブ コードでの例外に応答を支援する新しいイベントが含まれています。_
+_Xamarin.iOS には、ネイティブ コードでは特に、例外に応答するのに役立ちます新しいイベントが含まれています。_
 
-マネージ コードと OBJECTIVE-C の両方があるランタイムの例外 (catch または finally 句) をサポートします。
+マネージ コードと Objective C のランタイム例外 (try、catch、finally 句) のサポートがあります。
 
-ただし、その実装は、さまざまなこと、ランタイム ライブラリ (モノのランタイムと Objective C ランタイム ライブラリ) に問題がある例外を処理し、その他の言語で記述されたコードを実行していることを意味します。
+ただし、その実装は、さまざまな例外を処理し、その他の言語で記述されたコードを実行する必要があるときに、ランタイム ライブラリ (Mono ランタイムと Objective C ランタイム ライブラリ) が問題があること。
 
 このドキュメントでは、発生する可能性がある問題と考えられる解決策について説明します。
 
-サンプルのプロジェクトも含まれています。[例外がマーシャ リング](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)、さまざまなシナリオとその解決方法をテストに使用することができます。
+サンプル プロジェクトも含まれています。[例外のマーシャ リング](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)、これは、さまざまなシナリオとその解決策のテストを使用できます。
 
 ## <a name="problem"></a>問題
 
-問題は、例外がスローされ、スタック フレームをアンワインド中に発生がスローされた例外の種類と一致しないときに発生します。
+問題は、例外がスローされ、スタック フレームのアンワインド中に発生したがスローされた例外の種類と一致しないときに発生します。
 
-Xamarin.iOS または Xamarin.Mac この典型的な例は、ネイティブ API、Objective C 例外がスローし、その Objective C 例外何らかの方法で処理する必要がマネージ フレームのスタック アンワインド プロセスに達する場合にです。
+Xamarin.iOS、Xamarin.Mac これの典型的な例は、ネイティブ API、Objective C 例外がスローし、その Objective C 例外何らかの方法で処理する必要がマネージ フレームのスタック アンワインド プロセスに達する場合にです。
 
-既定のアクションは、何ができます。 このサンプルでは、Objective C のランタイム マネージ アンワインド フレームをできるようにすることを意味します。 これは、Objective C のランタイムがマネージ フレームをアンワインドする方法を把握していないため、問題があります。たとえばいずれかが実行されません`catch`または`finally`そのフレーム内の句。
+既定のアクションでは、何もしません。 このサンプルでは、OBJECTIVE-C ランタイム アンワインドのマネージ フレームできるようにすることを意味します。 Objective C のランタイムがマネージ フレームをアンワインドする方法を知らないので、これは問題のある、たとえばが実行されません`catch`または`finally`そのフレーム内の句。
 
 ### <a name="broken-code"></a>壊れたコード
 
-次のコード例を考えてみます。
+次のコード例を検討してください。
 
 ``` csharp
-var dict = new NSMutableDictionary ();
-dict.LowLevelSetObject (IntPtr.Zero, IntPtr.Zero); 
+var dict = new NSMutableDictionary ();
+dict.LowLevelSetObject (IntPtr.Zero, IntPtr.Zero); 
 ```
 
-Objective C NSInvalidArgumentException ネイティブ コードでスローされます。
+これにより、ネイティブ コードで、Objective C NSInvalidArgumentException がスローされます。
 
     NSInvalidArgumentException *** setObjectForKey: key cannot be nil
 
-され、スタック トレースは次のようになります。
+スタック トレースには、次のようになります。
 
     0   CoreFoundation          __exceptionPreprocess + 194
     1   libobjc.A.dylib         objc_exception_throw + 52
@@ -57,11 +57,11 @@ Objective C NSInvalidArgumentException ネイティブ コードでスローさ�
     5   TestApp                 Foundation.NSMutableDictionary.LowlevelSetObject (intptr,intptr)
     6   TestApp                 ExceptionMarshaling.Exceptions.ThrowObjectiveCException ()
 
-0 ~ 3 のフレームはネイティブ フレーム、および Objective C ランタイムでスタック アンワインダー_できます_フレームをアンワインドします。 具体的には、任意の OBJECTIVE-C は実行`@catch`または`@finally`句。
+0 ~ 3 のフレームはネイティブ フレーム、および、OBJECTIVE-C ランタイムでスタック アンワインダー_できます_それらのフレームをアンワインドします。 具体的には、任意の OBJECTIVE-C では実行`@catch`または`@finally`句。
 
-ただし、OBJECTIVE-C スタック アンワインダーは_いない_フレームは、アンワインドできませんが、マネージ例外のロジックは実行されませんを管理対象のフレーム数 (4 ~ 6 をフレーム) を正しくアンワインドの対応します。
+ただし、Objective C のスタック アンワインダーは_いない_フレームは、アンワインドできませんが、マネージ例外のロジックは実行されません (フレーム 4 ~ 6) の管理対象のフレームを正しくアンワインドの対応。
 
-つまり、一般的にはないことを次のようにこれらの例外をキャッチします。
+つまりことは通常、次の方法でこれらの例外をキャッチします。
 
 ```csharp
 try {
@@ -74,24 +74,24 @@ try {
 }
 ```
 
-これは、マネージ OBJECTIVE-C スタック アンワインダーが認識していないため`catch`句、およびどちらが、`finally`句が実行されます。
+Objective C のスタック アンワインダーが、管理対象について知らないので、これは`catch`句、およびどちらが、`finally`句が実行されます。
 
 ときに上記のコード サンプル_は_効果的では Objective C 例外 Objective C の通知のメソッドがありますので[`NSSetUncaughtExceptionHandler`][2]、Xamarin.iOS と Xamarin.Mac を使用して、その時点でしようとマネージ コードの例外をすべて Objective C の例外に変換します。
 
 ## <a name="scenarios"></a>シナリオ
 
-### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>シナリオ 1: 管理対象の catch ハンドラーと Objective C の例外のキャッチ
+### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>シナリオ 1 - マネージ catch ハンドラーと OBJECTIVE-C 例外のキャッチ
 
 Objective C の例外をキャッチすることは次のシナリオでは、管理を使用して`catch`ハンドラー。
 
 1. Objective C 例外がスローされます。
-2. Objective C のランタイムはスタックを走査 (ただし、アンワインドはありません)、ネイティブを探して`@catch`例外を処理できるハンドラー。
-3. Objective C のランタイムには、いずれかの検出されない`@catch`ハンドラーを呼び出して`NSGetUncaughtExceptionHandler`、Xamarin.iOS/Xamarin.Mac によってインストールされているハンドラーが呼び出されます。
-4. Xamarin.iOS/Xamarin.Mac's ハンドラーは、Objective C の例外をマネージ例外に変換し、スローされます。 Objective C 以降 (それを処理) のみ、ランタイムは履歴をアンワインドしていない、現在のフレームは、同じ Objective C 例外がスローされました。
+2. Objective C のランタイムは、スタックを走査 (ただし、アンワインドはありません)、ネイティブ探して`@catch`例外を処理できるハンドラー。
+3. Objective C のランタイムはいずれかで検出されない`@catch`ハンドラー、呼び出し`NSGetUncaughtExceptionHandler`、Xamarin.iOS/Xamarin.Mac によってインストールされているハンドラーを呼び出します。
+4. Xamarin.iOS/Xamarin.Mac's ハンドラーは、Objective C 例外にマネージ例外を変換し、それをスローします。 Objective C 以降 (これを説明しました) のみ、ランタイムは、履歴をアンワインドしていない、現在のフレームは、同じ Objective C 例外がスローされました。
 
-モノラル ランタイムが正しく Objective C のフレームをアンワインドする方法を把握していないために、別の問題はここでは、発生します。
+別の問題は、Mono ランタイムが正しく Objective C のフレームをアンワインドする方法を知らないので、ここでは、発生します。
 
-Xamarin.iOS' キャッチされない Objective C 例外コールバックが呼び出されると、スタックは、次のようには。
+Xamarin.iOS のキャッチされない Objective C 例外コールバックが呼び出されると、スタックは、次のようには。
 
      0 libxamarin-debug.dylib   exception_handler(exc=name: "NSInvalidArgumentException" - reason: "*** setObjectForKey: key cannot be nil")
      1 CoreFoundation           __handleUncaughtException + 809
@@ -105,9 +105,9 @@ Xamarin.iOS' キャッチされない Objective C 例外コールバックが呼
      9 TestApp                  Foundation.NSMutableDictionary.LowlevelSetObject (intptr,intptr) [0x00000]
     10 TestApp                  ExceptionMarshaling.Exceptions.ThrowObjectiveCException () [0x00013]
 
-ここでは、マネージ フレームだけは 8 ~ 10 のフレームが 0 のフレームにマネージ例外がスローされます。 これは、Mono ランタイム アンワインドする必要がネイティブ フレーム 0 ~ 7、上記で説明した問題と同じ問題が発生することを意味します任意 Objective C を実行しませんが、モノの実行時には、ネイティブ フレームをアンワインドは、`@catch`または`@finally`句.
+ここでは、唯一のマネージ フレームは 8 ~ 10 のフレームが 0 のフレームでマネージ例外がスローされます。 これは、Mono ランタイム アンワインドする必要がある 0 ~ 7 のネイティブ フレーム上で説明した問題と同じ問題が発生することを意味します Objective C を実行しませんが、Mono ランタイムは、ネイティブ フレームにアンワインドが、`@catch`または`@finally`句.
 
-コードの例:
+コード例:
 
 ```objc
 -(id) setObject: (id) object forKey: (id) key
@@ -121,9 +121,9 @@ Xamarin.iOS' キャッチされない Objective C 例外コールバックが呼
 }
 ```
 
-および`@finally`についてこのフレームをアンワインド モノのランタイムはわからないために、句は実行されません。
+および`@finally`このフレームをアンワインドする Mono ランタイムがそれについて知らないので、句は実行されません。
 
-これのバリエーションは、マネージ コードおよび取得するネイティブ フレームをアンワインドし、マネージ例外をスローする、最初に管理されている`catch`句。
+このバリエーションは、マネージ コードおよび取得するネイティブ フレームをアンワインドし、マネージ例外をスローする、最初に管理されている`catch`句。
 
 ```csharp
 class AppDelegate : UIApplicationDelegate {
@@ -142,7 +142,7 @@ class AppDelegate : UIApplicationDelegate {
 }
 ```
 
-マネージ`UIApplication:Main`メソッドの呼び出しは、ネイティブ`UIApplicationMain`メソッド、および、iOS は、最終的に、マネージを呼び出す前にネイティブ コードの実行の多くを実行、`AppDelegate:FinishedLaunching`ネイティブとマネージの例外は、スタック フレームの多くがあっても、メソッドスローされます。
+マネージ`UIApplication:Main`メソッドの呼び出しは、ネイティブ`UIApplicationMain`メソッドをおよび、iOS に最終的に、管理対象を呼び出す前に、ネイティブ コード実行の多くを行う`AppDelegate:FinishedLaunching`メソッドは、多くのマネージ例外がスタック上のネイティブ フレームがスローされます。
 
      0: TestApp                 ExceptionMarshaling.IOS.AppDelegate:FinishedLaunching (UIKit.UIApplication,Foundation.NSDictionary)
      1: TestApp                 (wrapper runtime-invoke) <Module>:runtime_invoke_bool__this___object_object (object,intptr,intptr,intptr) 
@@ -176,17 +176,17 @@ class AppDelegate : UIApplicationDelegate {
     29: TestApp                 UIKit.UIApplication:Main (string[],string,string)
     30: TestApp                 ExceptionMarshaling.IOS.Application:Main (string[])
 
-0 ~ 1 のフレームと 27-30 は管理、すべての人との間ではネイティブです。 モノラルがない Objective C のこれらのフレームをアンワインドかどうか`@catch`または`@finally`句が実行されます。
+0 ~ 1 のフレームと 27 ~ 30 管理されます、それらの間ではネイティブ。 Mono は Objective C、これらのフレームをアンワインドかどうか`@catch`または`@finally`句が実行されます。
 
-### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>シナリオ 2: Objective C の例外をキャッチすることができません。
+### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>シナリオ 2 - Objective C の例外をキャッチすることはできません。
 
-次のシナリオでは_いない_Objective C の例外をキャッチすることを使用して管理されている`catch`ハンドラー Objective C 例外は、別の方法で処理されたため。
+次のシナリオでは_いない_Objective C の例外をキャッチすることを使用してマネージ`catch`ハンドラー Objective C 例外が別の方法で処理されるので。
 
 1. Objective C 例外がスローされます。
-2. Objective C のランタイムはスタックを走査 (ただし、アンワインドはありません)、ネイティブを探して`@catch`例外を処理できるハンドラー。
-3. Objective C のランタイムを検索、`@catch`ハンドラーがスタックをアンワインドし、実行を開始、`@catch`ハンドラー。
+2. Objective C のランタイムは、スタックを走査 (ただし、アンワインドはありません)、ネイティブ探して`@catch`例外を処理できるハンドラー。
+3. Objective C のランタイムを検索、`@catch`ハンドラーは、スタックのアンワインドし、実行を開始、`@catch`ハンドラー。
 
-このシナリオは、メイン スレッドでないためこのようなコード Xamarin.iOS アプリによく見られます。
+このシナリオは、メイン スレッドでは通常、このようなコードがあるため、Xamarin.iOS アプリによく見られます。
 
 ``` objective-c
 void UIApplicationMain ()
@@ -203,17 +203,17 @@ void UIApplicationMain ()
 
 ```
 
-つまり、メイン スレッドではありません本当に未処理 Objective C の例外を Objective C の例外をマネージ コードの例外に変換する、コールバックが呼び出されないためです。
+つまり、メイン スレッドで例外が発生しない本当にハンドルされない Objective C、および、Objective C の例外をマネージ例外に変換する、コールバックが呼び出されないためです。
 
-これは非常に一般的にもデバッガーでのほとんどの UI オブジェクトを調べることが試行で、実行されているプラットフォーム (存在しないセレクターに対応するプロパティを取得するので Xamarin.Mac をサポートしているよりも以前の macOS バージョンで Xamarin.Mac アプリのデバッグXamarin.Mac 含まれているためより高い macOS バージョンのサポート)。 このようなセレクターを呼び出すことがスローされます、 `NSInvalidArgumentException` (「認識されないセレクターに送信しています...」) が最終的に、プロセスをクラッシュが発生します。
+これは非常に一般的にも、以前の macOS バージョンで実行中のプラットフォーム (存在しないセレクターに対応するプロパティをフェッチしようと試みるはデバッガーでのほとんどの UI オブジェクトを検査するため、Xamarin.Mac がサポートする以上の Xamarin.Mac アプリのデバッグXamarin.Mac が含まれるため高い macOS バージョンのサポート)。 このようなセレクターを呼び出すことがスローされます、 `NSInvalidArgumentException` (「認識されないセレクターに送信...」)、最終的にクラッシュするプロセスを停止します。
 
-要約するを持つ Objective C ランタイムかモノラル ランタイム アンワインド フレームがないようにプログラミングされているのか、ハンドルは、クラッシュ、メモリ リークおよびその他の種類の (誤) の予期しない動作など、未定義の動作につながることができます。
+Objective C のランタイムまたは Mono ランタイム アンワインド フレームがないようにプログラミングされてをすることをまとめると、ハンドルは、クラッシュ、メモリ リーク、およびその他の種類の (mis) 予期しない動作など、未定義の動作につながることができます。
 
-## <a name="solution"></a>ソリューション
+## <a name="solution"></a>ソリューション
 
-Xamarin.iOS 10 および Xamarin.Mac 2.10 は、任意のマネージ コードとネイティブの境界にマネージ コードと Objective C の例外をキャッチし、その例外を他の型に変換するためのサポートが追加されました。
+Xamarin.iOS 10 と Xamarin.Mac 2.10 では、任意のマネージ コードとネイティブ境界でマネージ コードと Objective C の例外をキャッチし、その例外を他の型に変換するためのサポートが追加されました。
 
-擬似コードで次のようになります。
+擬似コードは、次のように見えます。
 
 ``` csharp
 [DllImport ("libobjc.dylib")]
@@ -225,7 +225,7 @@ static void DoSomething (NSObject obj)
 }
 ```
 
-Objc_msgSend に P/invoke をインターセプトすると、し、これは、代わりに呼び出されます。
+Objc_msgSend に P/invoke をインターセプトすると、し、これは代わりに呼び出されます。
 
 ``` objective-c
 void
@@ -239,43 +239,43 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 }
 ```
 
-(Objective C の例外へのマネージ例外をマーシャ リング) 逆の場合は、以下のように実行されます。
+逆のケース (Objective C の例外をマネージ例外をマーシャ リング) のような画面が実行されます。
 
-マネージ コードとネイティブの境界で例外をキャッチするコストを必要としない、そのため、常にではありません既定で有効にします。
+マネージ コードとネイティブの境界での例外のキャッチはコストのないため、常にではありません既定で有効です。
 
-- Xamarin.iOS/tvOS: Objective C の例外のインターセプションは、シミュレーターでは有効です。
-- Xamarin.watchOS: インターセプトはすべてのケースで適用されます、フレームが、ガベージ コレクターを混乱させるため、OBJECTIVE-C ランタイム アンワインドが管理できるようにすることと、いずれかのハングまたはクラッシュなります。
-- Xamarin.Mac: Objective C の例外のインターセプションは、デバッグ ビルドの場合に有効です。
+- Xamarin.iOS/tvOS: OBJECTIVE-C 例外のインターセプションが有効なは、シミュレーターでします。
+- Xamarin.watchOS: インターセプションが常に適用するには、フレームが、ガベージ コレクターを混同ため、OBJECTIVE-C ランタイム アンワインドを管理できるようにすることおよびハングまたはクラッシュするいずれか。
+- Xamarin.Mac: デバッグ ビルドの場合、Objective C 例外のインターセプションが有効です。
 
-[ビルド時フラグ](#build_time_flags)で、既定で有効でない場合は、途中受信を有効にする方法について説明します。
+[ビルド時フラグ](#build_time_flags)セクションが既定では無効な場合は、傍受を有効にする方法について説明します。
 
 ## <a name="events"></a>イベント
 
-例外をインターセプト後に発生する 2 つの新しいイベントがある:`Runtime.MarshalManagedException`と`Runtime.MarshalObjectiveCException`です。
+例外をインターセプトすると発生する 2 つの新しいイベントがある:`Runtime.MarshalManagedException`と`Runtime.MarshalObjectiveCException`します。
 
-両方のイベントが渡される、`EventArgs`スローされた元の例外を格納しているオブジェクト (、`Exception`プロパティ)、および`ExceptionMode`例外をマーシャ リングする方法を定義するプロパティです。
+両方のイベントが渡される、`EventArgs`スローされた元の例外を格納しているオブジェクト (、`Exception`プロパティ)、および`ExceptionMode`例外をマーシャ リングする方法を定義するプロパティ。
 
-`ExceptionMode`プロパティを変更できるイベントのハンドラーで実行するすべてのカスタム処理に従って動作を変更するハンドラー。 1 つの例は、特定の例外が発生した場合、このプロセスを中止することです。
+`ExceptionMode`プロパティを変更できる、イベント ハンドラーでカスタム処理に従って動作を変更するハンドラー。 1 つの例は、特定の例外が発生した場合、プロセスを中止することです。
 
-変更、`ExceptionMode`プロパティ 1 つのイベントに適用されます、すべての例外をインターセプト、将来には影響しません。
+変更、`ExceptionMode`プロパティ 1 つのイベントに適用される、すべての例外をインターセプト、将来には影響しません。
 
 次のモードを使用できます。
 
-- `Default`: 既定値は、プラットフォームによって異なります。 `ThrowObjectiveCException` GC が協調モード (watchOS) の場合と`UnwindNativeCode`それ以外の場合 (iOS/watchOS/macOS)。 既定値は後で変更できます。
-- `UnwindNativeCode`: これは、(未定義) 以前の動作です。 GC を協調動作モードを使用する場合は使用できません (watchOS で唯一のオプションは; そのため、これは watchOS で有効なオプション) が、その他のすべてのプラットフォームの既定のオプションです。
-- `ThrowObjectiveCException`: Objective C 例外にマネージ例外を変換し、Objective C の例外をスローします。 これは、watchOS での既定値です。
-- `Abort`: このプロセスを中止します。
-- `Disable`: なさないイベント ハンドラーでこの値を設定するが、イベントの発生後に遅すぎますで無効にするための例外の途中受信、無効にします。 いずれの場合はかどうか、設定すると、その動作として`UnwindNativeCode`です。
+- `Default`: 既定値は、プラットフォームによって異なります。 `ThrowObjectiveCException` 、GC が協調モード (watchOS) の場合と`UnwindNativeCode`それ以外の場合 (iOS/watchOS/macOS)。 既定値は、今後変更可能性があります。
+- `UnwindNativeCode`: これは、(未定義) 以前の動作です。 GC を協調モードを使用する場合は使用できません (watchOS で唯一のオプションは、そのため、これは watchOS で有効なオプション) が、その他のすべてのプラットフォームの既定のオプション。
+- `ThrowObjectiveCException`: Objective C 例外にマネージ例外を変換し、Objective C の例外をスローします。 これは、watchOS の既定値です。
+- `Abort`: プロセスを中止します。
+- `Disable`: イベント ハンドラーでこの値を設定する意味をなさないが無効にする遅すぎますが、イベントが発生すると、例外のインターセプトに無効にします。 いずれの場合もかどうか、設定の動作として`UnwindNativeCode`します。
 
-Objective C の例外をマネージ コードにマーシャ リングでは、次のモードを使用できます。
+マネージ コードへの Objective C の例外をマーシャ リングには、次のモードを使用できます。
 
-- `Default`: 既定値は、プラットフォームによって異なります。 `ThrowManagedException` GC が協調モード (watchOS) の場合と`UnwindManagedCode`それ以外の場合 (iOS/tvOS/macOS)。 既定値は後で変更できます。
-- `UnwindManagedCode`: これは、(未定義) 以前の動作です。 GC を協調動作モードを使用する場合は使用できません (watchOS で唯一の有効な GC モードは; したがってこれは watchOS で有効なオプション) が、その他のすべてのプラットフォームの既定値です。
-- `ThrowManagedException`: マネージ例外を Objective C の例外に変換し、マネージ例外をスローします。 これは、watchOS での既定値です。
-- `Abort`: このプロセスを中止します。
-- `Disable`: 例外の途中受信を無効になります、なさないを設定するため、ハンドラーが、1 回、イベントが発生した場合にこの値で無効にするには遅すぎます。 いずれの場合もかどうか設定すると、そのプロセスを中断します。
+- `Default`: 既定値は、プラットフォームによって異なります。 `ThrowManagedException` 、GC が協調モード (watchOS) である場合と`UnwindManagedCode`それ以外の場合 (iOS と tvOS/macOS)。 既定値は、今後変更可能性があります。
+- `UnwindManagedCode`: これは、(未定義) 以前の動作です。 GC を協調モードを使用する場合は使用できません (watchOS で唯一の有効な GC モードは、watchOS で有効なオプションでないこのため)、その他のすべてのプラットフォームの既定値は。
+- `ThrowManagedException`: OBJECTIVE-C で例外をマネージ例外に変換し、マネージ例外をスローします。 これは、watchOS の既定値です。
+- `Abort`: プロセスを中止します。
+- `Disable`: ハンドラーが 1 回、イベントが発生したイベントには、この値を設定する意味をなさないためは、無効にするには遅すぎるを例外の傍受を無効にします。 いずれの場合もかどうか、そのプロセスを中止します。
 
-したがって、確認には、例外がマーシャ リングされるたびに、これを行うことができます。
+したがって、については、例外をマーシャ リングするたびに、これを行うことができます。
 
 ``` csharp
 Runtime.MarshalManagedException += (object sender, MarshalManagedExceptionEventArgs args) =>
@@ -297,7 +297,7 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 
 ## <a name="build-time-flags"></a>ビルド時フラグ
 
-次のオプションを渡すことは**mtouch** (Xamarin.iOS アプリ) のおよび**mmp** (Xamarin.Mac アプリの場合) が、決定されます例外インターセプションが有効になっている場合、既定のアクションを設定発生する必要があります。
+次のオプションを渡すことは**mtouch** (Xamarin.iOS アプリ) 用と**mmp** (の Xamarin.Mac アプリの場合) には、例外インターセプションが有効になっているかを判断し、既定のアクションを設定するは発生する必要があります。
 
 - `--marshal-managed-exceptions=`
   - `default`
@@ -313,13 +313,13 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
   - `abort`
   - `disable`
 
-除く`disable`、これらの値と同じ、`ExceptionMode`に渡される値、`MarshalManagedException`と`MarshalObjectiveCException`イベント。
+除く`disable`、これらの値と同じですが、`ExceptionMode`に渡される値、`MarshalManagedException`と`MarshalObjectiveCException`イベント。
 
-`disable`オプションが されます_ほとんど_実行オーバーヘッドを追加することはないときに例外をインターセプトをまだお点を除いて、途中受信を無効にします。 マーシャ リングのイベントは、実行されているプラットフォームの既定のモードをされている既定のモードで、これらの例外のも発生します。
+`disable`オプションは_ほとんど_点を除いて実行のオーバーヘッドも追加しない場合も例外をインターセプトしましたが、傍受を無効にします。 マーシャ リング イベントは、実行されているプラットフォームの既定のモードをされている既定のモードでのこれらの例外も発生します。
 
 ## <a name="limitations"></a>制限事項
 
-のみにするには、P/invoke をインターセプトお、 `objc_msgSend` Objective C の例外をキャッチしようとしているときに、関数のファミリです。 これはすべて Objective C の例外をスローし、別の C 関数に P/invoke は引き続き (これは向上しますが、将来)、古いマスター_キーと未定義の動作を実行することを意味します。
+のみにするには、P/invoke をインターセプトしました、 `objc_msgSend` Objective C の例外をキャッチしようとしたときに、関数のファミリです。 これは、OBJECTIVE-C 例外をスローし、別の C 関数に P/invoke を (これは向上しますが、今後) 古いと未定義の動作を実行してもすることを意味します。
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
 
