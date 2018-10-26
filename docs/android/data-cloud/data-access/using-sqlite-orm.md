@@ -1,57 +1,57 @@
 ---
 title: Android での SQLite.NET の使用
-description: SQLite.NET PCL NuGet ライブラリでは、Xamarin.Android アプリ用の単純なデータ アクセス メカニズムを提供します。
+description: SQLite.NET PCL NuGet ライブラリでは、Xamarin.Android アプリの単純なデータ アクセス メカニズムを提供します。
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 878b0097fc0f62e6b90d948d8a15ab39db4b2f3e
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 741e18d84c25bb4479480949a271a5845e99daa1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732256"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118462"
 ---
 # <a name="using-sqlitenet-with-android"></a>Android での SQLite.NET の使用
 
-Xamarin で推奨される SQLite.NET ライブラリとは、簡単に格納し、Android デバイス上のローカル SQLite データベース内のオブジェクトを取得できる非常に基本的な ORM です。 オブジェクト リレーショナル マッピングは、ORM &ndash; API を保存し、SQL ステートメントを記述することがなく、データベースから「オブジェクト」を取得することができます。
+Xamarin で推奨される SQLite.NET ライブラリとは、簡単に格納および Android デバイス上のローカルの SQLite データベース内のオブジェクトを取得できる非常に基本的な ORM です。 ORM のオブジェクト リレーショナル マッピング略&ndash;API を保存し、「オブジェクト」を SQL ステートメントを記述することがなく、データベースから取得することができます。
 
-含めるには、SQLite.NET ライブラリを Xamarin アプリで、次の NuGet パッケージをプロジェクトに追加します。
+SQLite.NET ライブラリを Xamarin アプリに含めるには、プロジェクトに次の NuGet パッケージを追加します。
 
-- **パッケージ名:** sqlite net pcl
+- **パッケージ名:** sqlite-net-pcl
 - **作成者:** Frank A. Krueger
-- **Id:** sqlite net pcl
+- **Id:** sqlite-net-pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet パッケージ](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet パッケージ")](using-sqlite-orm-images/image1a.png#lightbox)
 
 > [!TIP]
-> SQLite の異なるパッケージの数がある使用可能な – しいもの (場合があります検索で最上位の結果) を選択してください。
+> 多くの異なる SQLite パッケージが使用可能な – (検索で上位の検索結果は可能性がありますないあります) のいずれかを適切に選択してください。
 
-SQLite.NET ライブラリを使用した後は、データベースへのアクセスに使用するこれら 3 つの手順に従います。
+SQLite.NET ライブラリを使用すると、これらを使用してデータベースにアクセスする 3 つの手順に従います。
 
-1.  **使用して、追加ステートメント**&ndash;データ アクセスが必要な c# のファイルに次のステートメントを追加します。
+1.  **使用して、追加ステートメント**&ndash;次のステートメントを追加、C#ファイル データ アクセスが必要な場合。
 
     ```csharp
     using SQLite;
     ```
 
-2.  **空のデータベースを作成する** &ndash; SQLiteConnection クラス コンス トラクターは、ファイルのパスを渡すことによってデータベースの参照を作成することができます。 ファイルが既に存在するかどうかを確認する必要はありません&ndash;自動的に作成されますが必要な場合、それ以外の場合、既存のデータベース ファイルは表示します。 `dbPath`変数は、このドキュメントで既に説明したルールに従って決定する必要があります。
+2.  **空のデータベース作成**&ndash;ファイルのパスを SQLiteConnection クラスのコンス トラクターに渡すことによってデータベースの参照を作成できます。 ファイルが既に存在するかどうかを確認する必要はありません&ndash;必要な場合は作成自動的には、それ以外の場合、既存のデータベース ファイルが開かれます。 `dbPath`変数は、このドキュメントで前述したルールに従って決定する必要があります。
 
     ```csharp
     var db = new SQLiteConnection (dbPath);
     ```
 
-3.  **データを保存** &ndash; CreateTable と次のような挿入など、そのメソッドを呼び出すことによりデータベース コマンドが実行される SQLiteConnection オブジェクトを作成した後。
+3.  **データの保存** &ndash; CreateTable やこのような挿入など、そのメソッドを呼び出すことによって、データベース コマンドが実行される SQLiteConnection オブジェクトを作成するとします。
 
     ```csharp
     db.CreateTable<Stock> ();
     db.Insert (newStock); // after creating the newStock object
     ```
 
-4.  **データの取得**&ndash;を取得するオブジェクト (またはオブジェクトの一覧) を使用して、次の構文。
+4.  **データの取得**&ndash;を取得するオブジェクト (またはオブジェクトの一覧) で次の構文が使用します。
 
     ```csharp
     var stock = db.Get<Stock>(5); // primary key id of 5
@@ -60,19 +60,19 @@ SQLite.NET ライブラリを使用した後は、データベースへのアク
 
 ## <a name="basic-data-access-sample"></a>基本的なデータ アクセス サンプル
 
-*DataAccess_Basic* Android で実行されている場合、このドキュメントのサンプル コードは次のようです。 コードでは、単純な SQLite.NET 操作を実行する方法を示していて、アプリケーションのメイン ウィンドウでテキストとしての結果を示します。
+*DataAccess_Basic* Android で実行されているときに、このドキュメントのサンプル コードがこのような検索します。 このコードでは、SQLite.NET の単純な操作を実行する方法を示していて、アプリケーションのメイン ウィンドウでテキストとしての結果が表示されます。
 
 
 **Android**
 
-![Android SQLite.NET サンプル](using-sqlite-orm-images/image3.png "Android SQLite.NET サンプル")
+![Android の SQLite.NET サンプル](using-sqlite-orm-images/image3.png "Android SQLite.NET サンプル")
 
-次のコードは、基になるデータベースへのアクセスをカプセル化する SQLite.NET ライブラリを使用してデータベース全体のやり取りを示しています。
-これを示しています。
+次のコードを基になるデータベースへのアクセスをカプセル化する SQLite.NET ライブラリを使用して、データベース全体の相互作用を示しています。
+表示されます。
 
 1.  データベース ファイルの作成
 
-2.  オブジェクトを作成して、それらを保存して一部のデータを挿入する.
+2.  オブジェクトを作成し、それらを保存して一部のデータを挿入する.
 
 3.  データの照会
 
@@ -82,7 +82,7 @@ SQLite.NET ライブラリを使用した後は、データベースへのアク
 using SQLite; // from the github SQLite.cs class
 ```
 
-最後の 1 つは、プロジェクトに SQLite を追加することが必要です。 SQLite データベース テーブルがクラスに属性を追加することによって定義されることに注意してください (、`Stock`クラス) CREATE TABLE コマンドではなくです。
+最後の 1 つは、プロジェクトに SQLite を追加することが必要です。 属性クラスに追加して、SQLite データベースのテーブルが定義されていることに注意してください (、`Stock`クラス) CREATE TABLE コマンドではなく。
 
 ```csharp
 [Table("Items")]
@@ -119,29 +119,29 @@ public static void DoSomeDataAccess () {
 }
 ```
 
-使用して、`[Table]`テーブル名のパラメーターと、基になるデータベースは、テーブルに同じ名前のクラス (ここでは、"Stock") を指定せずに属性します。 実際のテーブル名が使用する場合、データベースに対して直接 SQL クエリを記述ではなく、ORM データ アクセス手法重要です。 同様に、`[Column("_id")]`属性は省略可能なされかどうか不在であれば、列が追加されます、クラスのプロパティと同じ名前のテーブルにします。
+使用して、`[Table]`せず、基になるデータベース テーブル (この例では、"Stock") では、クラスと同じ名前を指定すると、テーブル名のパラメーターを指定する属性します。 なくする場合、データベースに対して直接 SQL クエリを記述、ORM データ アクセス メソッドを使用して、実際のテーブル名が重要です。 同様に、`[Column("_id")]`属性は省略可能で、かどうか、列の存在しない追加クラスのプロパティと同じ名前のテーブルにします。
 
 ## <a name="sqlite-attributes"></a>SQLite 属性
 
-基になるデータベースに格納する方法を制御するクラスに適用できる共通の属性は次のとおりです。
+基になるデータベースの格納方法を制御するクラスに適用できる共通の属性は次のとおりです。
 
--   **[主キー]** &ndash;強制する、基になるテーブルの主キーにするには整数のプロパティにこの属性を適用できます。 複合主キーはサポートされていません。
+-   **[主キー]** &ndash;強制的に基になるテーブルの主キーに整数のプロパティにこの属性を適用できます。 複合主キーがサポートされていません。
 
--   **[自動増分]** &ndash;この属性は、データベースに挿入された新しいオブジェクトごとに自動的にインクリメントする整数のプロパティの値になります
+-   **[増分]** &ndash;をデータベースに挿入された新しい各オブジェクトの自動インクリメント整数プロパティの値により、この属性
 
--   **[Column(name)]** &ndash;省略可能な指定`name`パラメーターには、基になるデータベース列の名前 (プロパティと同じ) の既定値がよりも優先されます。
+-   **[Column(name)]** &ndash;省略可能な指定`name`パラメーターは、基になるデータベース列の名前 (プロパティと同じ) の既定値をオーバーライドします。
 
--   **[Table(name)]** &ndash;基になる SQLite テーブルに格納することとクラスをマークします。 省略可能な name パラメーターを指定すると、基になるデータベース テーブルの名前 (これは、クラス名と同じ) の既定値が上書きされます。
+-   **[Table(name)]** &ndash; SQLite の基盤のテーブルに格納することとクラスをマークします。 省略可能な名前のパラメーターを指定すると、基になるデータベース テーブルの名前 (クラス名と同じ) の既定値が上書きされます。
 
--   **[MaxLength(value)]** &ndash;データベースの挿入が試行されたときに、テキスト プロパティの長さを制限します。 コードを実行と、オブジェクトを挿入するようにこの属性は '' ときにのみチェック、データベースの挿入または更新操作が試行する前にこの検証必要があります。
+-   **[MaxLength(value)]** &ndash;データベース挿入が試行されたときに、text プロパティの長さを制限します。 コードを使用すると、この属性は '' ときにだけチェック、データベースの insert または update 操作が試行されたオブジェクトを挿入する前にこれ検証する必要があります。
 
--   **[無視]** &ndash;をこのプロパティを無視すると、SQLite.NET です。
+-   **[無視]** &ndash;をこのプロパティを無視すると、SQLite.NET します。
     これは、データベースに格納できない型を持つプロパティまたはプロパティが自動的に解決できないモデルのコレクションである SQLite に特に便利です。
 
--   **[Unique]** &ndash;基になるデータベース列の値が一意であることを確認します。
+-   **[Unique]** &ndash;により、基になるデータベース列の値が一意であります。
 
 
-これらの属性のほとんどは、省略可能な SQLite は、テーブルおよび列名の既定値を使用します。 データにクエリの選択と削除を効率的に処理できるように、整数型の主キーを必ず指定する必要があります。
+これらの属性のほとんどは省略可能な SQLite は、テーブルおよび列名の既定値を使用します。 データでクエリの選択と削除を効率的に実行できるように常に整数の主キーを指定する必要があります。
 
 ## <a name="more-complex-queries"></a>複雑なクエリ
 
@@ -149,20 +149,20 @@ public static void DoSomeDataAccess () {
 
 -   **挿入**&ndash;データベースに新しいオブジェクトを追加します。
 
--   **取得&lt;T&gt;**  &ndash;プライマリ キーを使用してオブジェクトを取得しようとしています。
+-   **取得&lt;T&gt;**  &ndash;主キーを使用して、オブジェクトの取得を試みます。
 
--   **テーブル&lt;T&gt;**  &ndash;テーブル内のすべてのオブジェクトを返します。
+-   **テーブル&lt;T&gt;**  &ndash;テーブルのすべてのオブジェクトを返します。
 
 -   **削除**&ndash;の主キーを使用してオブジェクトを削除します。
 
--   **クエリ&lt;T&gt;**  &ndash; (オブジェクト) として行の数を返す SQL クエリを実行します。
+-   **クエリ&lt;T&gt;**  &ndash; (オブジェクト) としての行の数を返す SQL クエリを実行します。
 
--   **実行**&ndash;このメソッドを使用して (および not `Query`) (INSERT、UPDATE および DELETE の命令) などの SQL からの行を必要がない場合。
+-   **実行**&ndash;このメソッドを使用して (および not `Query`) (INSERT、UPDATE および DELETE の命令) などの SQL から行を予定がない場合。
 
 
 ### <a name="getting-an-object-by-the-primary-key"></a>主キーによって、オブジェクトの取得
 
-SQLite.Net は、その主キーに基づく 1 つのオブジェクトを取得する Get メソッドを提供します。
+SQLite.Net では、1 つの主キーに基づいてオブジェクトを取得する Get メソッドを提供します。
 
 ```csharp
 var existingItem = db.Get<Stock>(3);
@@ -170,7 +170,7 @@ var existingItem = db.Get<Stock>(3);
 
 ### <a name="selecting-an-object-using-linq"></a>Linq を使用してオブジェクトを選択します。
 
-コレクションを返すメソッドをサポート`IEnumerable<T>`をクエリまたはテーブルの内容を並べ替える Linq を使用できるようにします。 次のコードでは、Linq を使用して、文字"A"で始まるすべてのエントリを除外する例を示します。
+コレクションを返すメソッドをサポートして`IEnumerable<T>`クエリまたはテーブルの内容を並べ替える Linq を使用できるようにします。 次のコードでは、Linq を使用して、文字"A"で始まるすべてのエントリをフィルター処理する例を示します。
 
 ```csharp
 var apple = from s in db.Table<Stock>()
@@ -181,7 +181,7 @@ Console.WriteLine ("-> " + apple.FirstOrDefault ().Symbol);
 
 ### <a name="selecting-an-object-using-sql"></a>SQL を使用してオブジェクトを選択します。
 
-SQLite.Net には、オブジェクト ベース、データにアクセスを提供できます、でもは場合もあります Linq で (またはパフォーマンスが向上する必要があります) よりも複雑なクエリを実行する必要があります。 次のようにクエリ メソッドを使用して SQL コマンドを使用できます。
+SQLite.Net には、データにオブジェクト ベースのアクセスできるように、にもかかわらずはことがありますにより、Linq (またはパフォーマンスを向上させる必要があります) よりもさらに複雑なクエリを実行する必要があります。 次に示すように、クエリ メソッドでは、SQL コマンドを使用できます。
 
 ```csharp
 var stocksStartingWithA = db.Query<Stock>("SELECT * FROM Items WHERE Symbol = ?", "A");
@@ -191,7 +191,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!NOTE]
-> SQL ステートメントを直接作成するときは、テーブルと、クラスとその属性から生成されて、データベース内の列の名前に依存関係を作成します。 コードでそれらの名前を変更する場合、手動で記述された SQL ステートメントを更新することを忘れないでください。
+> SQL ステートメントを直接作成するときは、テーブルと、クラスとその属性から生成した、データベース内の列の名前に依存関係を作成します。 コードでこれらの名前を変更する場合は、手動で書き込まれた SQL ステートメントの更新を忘れないでください。
 
 ### <a name="deleting-an-object"></a>オブジェクトを削除します。
 
@@ -201,21 +201,21 @@ foreach (var s in stocksStartingWithA) {
 var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 ```
 
-チェックすることができます、 `rowcount` (ここでは削除された) 行の数が影響を確認します。
+チェックすることができます、 `rowcount` (ここで削除された) 行の数が影響を受けたことを確認します。
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>複数のスレッドで SQLite.NET の使用
 
-SQLite は、次の 3 つの異なるスレッド モードをサポートしています:*シングル スレッド*、*マルチ スレッド*、および*シリアル化*です。 使用する SQLite を構成するには制限がまったくない複数のスレッドからデータベースにアクセスする場合、**シリアル化**モードをスレッドです。 アプリケーションの早い段階でこのモードを設定することが重要 (の先頭の位置などで、`OnCreate`メソッド)。
+SQLite は、次の 3 つの異なるスレッド処理モードをサポートしています:*シングル スレッド*、*マルチ スレッド*、および*シリアル化*します。 制限を適用せずに複数のスレッドからデータベースにアクセスする場合は、SQLite を使用するを構成することができます、**シリアル化**モードのスレッドを処理します。 アプリケーションの初期段階でこのモードを設定することが重要 (などの先頭に、`OnCreate`メソッド)。
 
-スレッド処理モードを変更するには、呼び出す`SqliteConnection.SetConfig`です。 たとえば、次のコード行は構成に対して SQLite**シリアル化**モード。 
+スレッド処理モードを変更するには、呼び出す`SqliteConnection.SetConfig`します。 たとえば、SQLite for の構成のコード行**シリアル化**モード。 
 
 ```csharp
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-SQLite の Android バージョンでは、さらに、いくつかの手順が必要な制限があります。 場合への呼び出し`SqliteConnection.SetConfig`SQLite 例外を生成するよう`library used incorrectly`、次の回避策を使用する必要があります。
+Android のバージョンの SQLite では、さらに、いくつかの手順が必要な制限があります。 場合への呼び出し`SqliteConnection.SetConfig`など SQLite 例外を生成`library used incorrectly`、次の回避策を使用する必要があります。
 
-1.  ネイティブへのリンク**libsqlite.so**ライブラリできるように、`sqlite3_shutdown`と`sqlite3_initialize`アプリで利用できる Api:
+1.  ネイティブへのリンク**libsqlite.so**ライブラリように、`sqlite3_shutdown`と`sqlite3_initialize`Api は、アプリに提供されます。
 
     ```csharp
     [DllImport("libsqlite.so")]
@@ -226,7 +226,7 @@ SQLite の Android バージョンでは、さらに、いくつかの手順が�
     ```
 
 
-2.  先頭にある、`OnCreate`メソッド、シャット ダウン SQLite にこのコードを追加、構成の**シリアル化**モード、および再初期化 SQLite:
+2.  先頭に、`OnCreate`メソッド、SQLite をシャット ダウンに次のコードを追加、構成の**シリアル化**モード、および SQLite を再初期化します。
 
     ```csharp
     sqlite3_shutdown();
@@ -234,10 +234,10 @@ SQLite の Android バージョンでは、さらに、いくつかの手順が�
     sqlite3_initialize();
     ```
 
-この回避策は、に対しても機能、`Mono.Data.Sqlite`ライブラリです。 SQLite およびマルチ スレッド処理の詳細については、次を参照してください。 [SQLite と複数のスレッド](https://www.sqlite.org/threadsafe.html)です。 
+この回避策にも適して、`Mono.Data.Sqlite`ライブラリ。 SQLite とマルチ スレッドの詳細については、次を参照してください。 [SQLite と複数のスレッド](https://www.sqlite.org/threadsafe.html)します。 
 
 ## <a name="related-links"></a>関連リンク
 
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Xamarin.Forms データ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)

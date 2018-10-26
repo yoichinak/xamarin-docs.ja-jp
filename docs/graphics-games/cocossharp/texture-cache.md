@@ -1,170 +1,170 @@
 ---
-title: テクスチャ キャッシュ CCTextureCache を使用します。
-description: CocosSharp の CCTextureCache クラスは、整理、キャッシュ、およびコンテンツをアンロードする標準的な方法を提供します。 大規模なゲーム RAM、グループ化とテクスチャの破棄のプロセスを簡略化に完全に合わない可能性がありますを特に便利です。
+title: CCTextureCache を使用して、テクスチャ キャッシュ
+description: CocosSharp の CCTextureCache クラスでは、整理、キャッシュ、およびコンテンツをアンロードする標準的な方法を提供します。 大規模なゲーム RAM、グループ化、およびテクスチャの破棄のプロセスを簡略化する完全に適合しない可能性に特に便利です。
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c217d8a935ae971aab472b05968c0251366362b2
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 232363d6ce1cb93499716b2c1247c48403cf6cea
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783689"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117383"
 ---
-# <a name="texture-caching-using-cctexturecache"></a>テクスチャ キャッシュ CCTextureCache を使用します。
+# <a name="texture-caching-using-cctexturecache"></a>CCTextureCache を使用して、テクスチャ キャッシュ
 
-_CocosSharp の CCTextureCache クラスは、整理、キャッシュ、およびコンテンツをアンロードする標準的な方法を提供します。大規模なゲーム RAM、グループ化とテクスチャの破棄のプロセスを簡略化に完全に合わない可能性がありますが特に便利です。_
+_CocosSharp の CCTextureCache クラスでは、整理、キャッシュ、およびコンテンツをアンロードする標準的な方法を提供します。大規模なゲーム RAM、グループ化、およびテクスチャの破棄のプロセスを簡略化する完全に適合しない可能性が特に便利です。_
 
-`CCTextureCache`クラスは CocosSharp ゲーム開発の不可欠な一部です。 ほとんどの CocosSharp ゲームを使用して、`CCTextureCache`オブジェクトを CocosSharp の数のメソッドを内部的に使用明示されていない場合でも、*共有*テクスチャのキャッシュします。
+`CCTextureCache`クラスは CocosSharp ゲーム開発の重要な部分です。 ほとんどの CocosSharp ゲームを使用して、`CCTextureCache`オブジェクト、任意の数の CocosSharp メソッドが内部的に使用して明示的に、場合でも、*共有*テクスチャのキャッシュ。
 
-ここでは、`CCTextureCache`およびゲーム開発の重要である理由。 具体的に説明します。
+このガイドでは、`CCTextureCache`と理由がゲーム開発のために重要です。 具体的に説明します。
 
- - テクスチャ キャッシュの問題の原因
+ - なぜテクスチャのキャッシュの問題
  - テクスチャの有効期間
  - SharedTextureCache を使用します。
- - 遅延 AddImage に事前読み込みと読み込み
- - テクスチャを破棄しています。
+ - 遅延読み込みと AddImage の事前読み込み
+ - テクスチャの破棄
 
 
-## <a name="why-texture-caching-matters"></a>テクスチャ キャッシュの問題の原因
+## <a name="why-texture-caching-matters"></a>なぜテクスチャのキャッシュの問題
 
-テクスチャ キャッシュはゲーム開発の重要な考慮事項のテクスチャの読み込み時間のかかる操作は、テクスチャには、実行時に大量の RAM が必要があります。
+テクスチャの読み込みが時間のかかる操作であるテクスチャには実行時に大量の RAM が必要なゲーム開発で重要な考慮事項は、テクスチャのキャッシュします。
 
-同様に、ファイルの操作は、ディスクからのテクスチャの読み込みは、コストの高い操作に指定できます。 テクスチャの読み込みで、読み込まれているファイル (png、jpg イメージの場合と同様) を圧縮解除されているような処理が必要な場合、余分な時間がかかる場合があります。 テクスチャ キャッシュと、アプリケーションがディスクからファイルを読み込む必要がありますを時間の数を削減できます。
+すべてのファイル操作とは、ディスクからのテクスチャの読み込みは、コストの高い操作に指定できます。 テクスチャの読み込みで、読み込まれているファイル (png および jpg イメージの場合と同様) の圧縮を解除されているなどの処理を必要とする場合、余分な時間がかかる場合があります。 テクスチャのキャッシュと、時間、アプリケーションがディスクからファイルを読み込む必要がありますの数を減らすことができます。
 
-前述のように、テクスチャもランタイム メモリの消費量を占有します。 たとえば PNG ファイルがサイズで数キロバイトのみである場合でも、iPhone 6 (1344 x 750) の解決にサイズの背景イメージが 4 メガバイトの RAM – を占有するは。 テクスチャのキャッシュは、さまざまなゲーム状態間を遷移するときに、すべてのコンテンツをアンロードする簡単な方法と、アプリ内のテクスチャの参照を共有する方法を提供します。
+前述のように、テクスチャも大量のランタイムのメモリを占有します。 たとえば PNG ファイルがサイズが数キロバイトのみである場合でも、背景画像は iPhone 6 (1344 x 750) の解像度のサイズが 4 メガバイトの RAM – を占有するは。 テクスチャのキャッシュには、アプリ内のテクスチャの参照を共有する方法とも異なるゲームの状態間を遷移するときに、すべてのコンテンツをアンロードする簡単な方法が提供します。
 
 
 ## <a name="texture-lifespan"></a>テクスチャの有効期間
 
-CocosSharp テクスチャは、アプリの実行の全体にわたってメモリに保持される場合があります、または短期的な場合があります。 メモリを最小限に抑えるテクスチャ不要になったときにアプリを使用する必要があります破棄します。 もちろんはテクスチャの破棄し、再度読み込んだ後で、読み込み時間を増やすことも時の負荷のパフォーマンスが低下する可能性があることを意味します。 
+CocosSharp のテクスチャは、アプリの実行の全体の長さのメモリに保持する可能性があります。 または短期的な場合があります。 メモリを最小限に抑えるテクスチャが不要になったときにアプリの使用状況を破棄する必要があります。 もちろんはテクスチャの破棄し、読み込み時間を増やすか、読み込み中にパフォーマンスが低下することができる後で再度読み込むことがあることを意味します。 
 
-メモリ使用量と読み込み時間の間にトレードオフ テクスチャが多くの場合に読み込む必要があります/実行時のパフォーマンスです。 少量のテクスチャのメモリを使用するゲームは、必要に応じて、メモリ内ですべてのテクスチャを保つことができますが、大規模なゲームが領域を解放するテクスチャをアンロードする必要があります。
+メモリ使用量と負荷の時間の間にトレードオフが必要ですテクスチャの多くの場合、読み込み/実行時のパフォーマンス。 少量のテクスチャのメモリを使用するゲームは、必要に応じて、メモリ内ですべてのテクスチャを保持できますが、大規模なゲームが領域を解放するテクスチャをアンロードする必要があります。
 
-次の図は、必要に応じて、テクスチャの読み込みと実行の全体にわたってメモリに保持する単純なゲームを示しています。
+次の図は、必要に応じて、テクスチャの読み込みと実行の全体の長さのメモリに保持の簡単なゲームを示しています。
 
-![](texture-cache-images/image1.png "この図では、必要に応じて、テクスチャの読み込みと実行の全体にわたってメモリに保持する単純なゲームを示しています。")
+![](texture-cache-images/image1.png "この図では、必要に応じて、テクスチャの読み込みと実行の全体の長さのメモリに保持の簡単なゲームを示しています。")
 
-最初の 2 つのバーでは、ゲームの実行時にすぐに必要なテクスチャを表します。 次の 3 つのバーは、必要に応じて読み込まれて、それぞれのレベルのテクスチャを表します。
+最初の 2 つのバーは、ゲームの実行時にすぐに必要なテクスチャを表します。 次の 3 つのバーは、テクスチャの各レベルで、必要に応じて読み込むを表します。
 
-ゲームが大きい場合は十分なことをデバイスと OS によって提供されるすべてのメモリを埋めるための十分なテクスチャ最終的にロードします。 これを解決するには、必要がなくなったときに、ゲームはテクスチャ データをアンロードすることがあります。 たとえば、次の図は、不要になった、その後、次のレベルについて Level2Texture を負荷すると、Level1Texture をアンロードするゲームを示します。 最終結果は、のみの 3 つのテクスチャは特定の時点でメモリに保持されます。 
+ゲームが大きい場合は、十分なデバイスや OS によって提供されるすべての RAM を入力するための十分なテクスチャ最終的にロードします。 これを解決するには、不要になったときに、ゲームはテクスチャ データをアンロードすることがあります。 たとえば、次の図は、必要がなくなったらその後、次のレベルに対する負荷を Level2Texture Level1Texture をアンロードするゲームを示します。 特定の時点のみの 3 つのテクスチャをメモリに保持されることを最終的には。 
 
-![](texture-cache-images/image2.png "最終結果は、3 つだけのテクスチャは特定の時点でメモリに保持されます。")
+![](texture-cache-images/image2.png "最終的な結果は 3 つのみのテクスチャは常にメモリに保持されます。")
 
 
-上記の図は、アンロード、テクスチャのメモリ使用量を削減することができますが、追加のロード時間が必要、レベルを再生するプレーヤーが決定した場合を示します。 注目に値します UITexture と MainCharacter テクスチャが読み込まれてし、アンロードされません。 つまり、これらのテクスチャが必要であるすべてのレベルのメモリ内で常に保持されているためです。 
+上記の図は、アンロード、テクスチャのメモリ使用量を削減することができますが、レベルを再生するプレーヤーが決定した場合、追加の読み込み時間がこの必要がありますを示します。 UITexture と MainCharacter テクスチャが読み込まれ、アンロードされないことに注目すべきです。 これは、ため、常にメモリに保持されているように、すべてのレベルでこれらのテクスチャが必要です。 
 
 
 ## <a name="using-sharedtexturecache"></a>SharedTextureCache を使用します。
 
-CocosSharp はテクスチャを自動的にキャッシュを使用して読み込むときに、`CCSprite`コンス トラクターです。 たとえば、次のコードでは、1 つのテクスチャ インスタンスのみを作成します。
+CocosSharp はテクスチャを自動的にキャッシュしてからの読み込み時に、`CCSprite`コンス トラクター。 たとえば、次のコードは、テクスチャの 1 つのインスタンスのみを作成します。
 
 
 ```csharp
-for (int i = 0; i < 100; i++)
+for (int i = 0; i < 100; i++)
 {
-    CCSprite starSprite = new CCSprite ("star.png");
-    starSprite.PositionX = i * 32;
-    this.AddChild (starSprite);
+    CCSprite starSprite = new CCSprite ("star.png");
+    starSprite.PositionX = i * 32;
+    this.AddChild (starSprite);
 } 
 ```
 
-CocosSharp が自動的にキャッシュされる、`star.png`を多数作成の高価な代替手段を回避するのにテクスチャと同じ`CCTexture2D`インスタンス。 これを行う`AddImage`呼び出されている共有で`CCTextureCache`具体的には、インスタンス`CCTextureCache.SharedTextureCache.Shared`です。 理解する方法、`SharedTextureCache`使用コードを呼び出すことと同じである次のコードを見ていきましょう、`CCSprite`文字列パラメーターを持つコンス トラクター。
+CocosSharp を自動的にキャッシュ、`star.png`を多数作成の負荷の高い代替手段を避けるためにテクスチャと同じ`CCTexture2D`インスタンス。 これは`AddImage`呼び出されている共有で`CCTextureCache`具体的には、インスタンス`CCTextureCache.SharedTextureCache.Shared`します。 理解する方法、`SharedTextureCache`使用のコードを呼び出すことと同じである次のコードを見て、`CCSprite`文字列パラメーターを持つコンス トラクター。
 
 
 ```
 
-CCSprite starSprite = new CCSprite ();
- starSprite.Texture = CCTextureCache.SharedTextureCache.AddImage ("star.png");
+CCSprite starSprite = new CCSprite ();
+ starSprite.Texture = CCTextureCache.SharedTextureCache.AddImage ("star.png");
 ```
 
-`AddImage` 場合にチェック引数ファイル (このケースで`star.png`) 既に読み込まれています。 その場合、キャッシュされたインスタンスが返されます。 ファイル システムから読み込まれていない、しのテクスチャへの参照が内部的に格納されている場合後続`AddImage`呼び出しです。 つまり、`star.png`イメージが一度読み込まれるだけと、追加のディスクへのアクセスやその他のテクスチャ メモリの後続の呼び出しは必要ありません。
+`AddImage` 場合にチェック引数ファイル (ここで`star.png`) 既に読み込まれています。 そうである場合は、キャッシュされたインスタンスが返されます。 ファイル システムから読み込まれてしない場合はのテクスチャへの参照が内部的に格納されている後続`AddImage`呼び出し。 つまり、`star.png`イメージは、1 回のみ読み込むし、追加のディスクへのアクセスまたはその他のテクスチャ メモリの後続の呼び出しは必要ありません。
 
 
-## <a name="lazy-loading-vs-pre-loading-with-addimage"></a>遅延 AddImage に事前読み込みと読み込み
+## <a name="lazy-loading-vs-pre-loading-with-addimage"></a>遅延読み込みと AddImage の事前読み込み
 
-`AddImage` により、コードを同じを記述するかどうか、要求されたテクスチャは既に読み込まれていないか。 必要になるまで、このコンテンツは、意味は読み込まれませんただし、予期しないコンテンツの読み込みのための実行時にパフォーマンスの問題これさせることができます。
+`AddImage` により、コードを同じを記述するかどうか、要求されたテクスチャは既に読み込まれていますか。 必要になるまで、つまり、そのコンテンツは読み込まれませんただし、予期しないコンテンツの読み込みのための実行時にパフォーマンスの問題を合わせたこれこともできます。
 
-たとえば、プレーヤーの武器をアップグレードするゲームを検討してください。 アップグレードする際、武器と弾丸は視覚的に変更され、使用されている新しいにテクスチャでします。 コンテンツが遅延読み込みの場合、アップグレードされた武器に関連付けられているテクスチャは読み込まれません最初に、わけではなく、後で、プレーヤーが、アップグレードを獲得する場合。 
+たとえば、プレイヤーの武器をアップグレードできるゲームを検討してください。 アップグレードすると、武器、弾丸が視覚的は変更され、使用されている新しいテクスチャでします。 コンテンツが遅延読み込みの場合、アップグレードされた武器に関連付けられているテクスチャは読み込まれません最初に、プレーヤーが、アップグレードを獲得する場合、後でなく。 
 
-このゲーム プレイ中旬読み込みには、ゲームをする可能性があります*pop*実行中の短いも顕著な固定であります。 これを防ぐためには、コードが、どのテクスチャは、前面の設定し、それらを事前に読み込む必要になる可能性を予測できます。 たとえば、次は使用できますにテクスチャを事前に読み込みます。
+ゲームをする可能性がこのゲームプレイ mid 読み込み*pop*実行中の短いも顕著な固定であります。 これを防ぐためには、コードが、どのテクスチャは、前面のセットアップし、それらを事前に読み込む必要になる可能性を予測できます。 たとえば、次にことができますのテクスチャを事前に読み込みます。
 
 
 ```csharp
-void PreLoadImages()
+void PreLoadImages()
 {
-    var cache = CCTextureCache.SharedTextureCache;
+    var cache = CCTextureCache.SharedTextureCache;
 
-    cache.AddImage ("powerup1.png");
-    cache.AddImage ("powerup2.png");
-    cache.AddImage ("powerup3.png");
+    cache.AddImage ("powerup1.png");
+    cache.AddImage ("powerup2.png");
+    cache.AddImage ("powerup3.png");
 
-    cache.AddImage ("enemy1.png");
-    cache.AddImage ("enemy2.png");
-    cache.AddImage ("enemy3.png");
+    cache.AddImage ("enemy1.png");
+    cache.AddImage ("enemy2.png");
+    cache.AddImage ("enemy3.png");
 
-    // pre-load any additional content here to 
-    // prevent pops at runtime
+    // pre-load any additional content here to 
+    // prevent pops at runtime
 } 
 ```
 
-この事前読み込みでは、無駄なメモリにより、開始時間を増やすことができます。 たとえば、プレーヤーが実際にを取得する電源投入によって表される、`powerup3.png`テクスチャ、不必要に読み込まれるようにします。 もちろん、ゲームの潜在的な pop を回避するため、メモリに収まる場合にコンテンツをプリロードすることをお勧めする費用のために必要なコストがあります。
+この事前読み込みは、メモリが無駄につながるし、起動時間を増やすことができます。 たとえば、プレーヤー可能性がありますによって表される電源を実際には取得、`powerup3.png`テクスチャ、不必要に読み込まれるようにします。 もちろん、ゲームプレイの潜在的な pop を避けるため、メモリに収まる場合にコンテンツをプリロードすることをお勧めに料金を支払うために必要なコストがあります。
 
 
-## <a name="disposing-textures"></a>テクスチャを破棄しています。
+## <a name="disposing-textures"></a>テクスチャの破棄
 
-ゲームには、最低限の仕様のデバイスで使用できるよりも多くのテクスチャ メモリが必要としない場合、テクスチャを破棄する必要はありません。 一方、大規模なゲームは、新しいコンテンツを確保するためにテクスチャ メモリを解放する必要があります。 たとえば、ゲームは環境のテクスチャを格納するメモリの消費量を使用する可能性があります。 環境は、特定のレベルでのみ使用し、そのするかどう読み込まれたレベルが終了するとします。
+ゲームには最小限の仕様のデバイスで使用可能なテクスチャ メモリが必要としない場合、テクスチャを破棄する必要はありません。 その一方で、大規模なゲームでは、新しいコンテンツを確保するためにテクスチャ メモリを解放する必要があります。 たとえば、ゲームでは、大量のメモリが環境のテクスチャを格納するを使用できます。 環境は、特定のレベルでのみ使用しするかどう読み込まれたレベルが終了するとします。
 
 
-### <a name="disposing-a-single-texture"></a>1 つのテクスチャを破棄しています。
+### <a name="disposing-a-single-texture"></a>1 つのテクスチャの破棄
 
-1 つのテクスチャを削除する呼び出しは必要最初、`Dispose`メソッド後から手動で削除、`CCTextureCache`です。
+1 つのテクスチャを削除する呼び出しが必要です最初、`Dispose`メソッドでは後から手動で削除、`CCTextureCache`します。
 
-バック グラウンド スプライトと共にそのテクスチャを完全に削除する方法を次に示します。
+次に、そのテクスチャと共に背景スプライトを完全に削除する方法を示します。
 
 
 ```csharp
-void DisposeBackground()
+void DisposeBackground()
 {
-    // Assuming this is called from a CCLayer:
-    this.RemoveChild (backgroundSprite);
+    // Assuming this is called from a CCLayer:
+    this.RemoveChild (backgroundSprite);
 
-    CCTextureCache.SharedTextureCache.RemoveTexture (backgroundsprite.Texture);
+    CCTextureCache.SharedTextureCache.RemoveTexture (backgroundsprite.Texture);
 
-    backgroundSprite.Texture.Dispose ();
+    backgroundSprite.Texture.Dispose ();
 } 
 ```
 
-テクスチャを直接破棄できる効果的である少数のテクスチャが、これを処理することができますになったときにエラーが発生しやすいサイズの大きいテクスチャのセットを処理する場合。
+テクスチャを直接破棄有効にできる、少数のテクスチャが、これを扱うことができますになったときにエラーが発生しやすい大きなテクスチャ セットを処理するとき。
 
-テクスチャ グループ分けできます (共有されない) カスタム`CCTextureCache`テクスチャのクリーンアップを簡略化するインスタンス。
+テクスチャは、カスタムの (非共有) に分類できます`CCTextureCache`テクスチャのクリーンアップを簡略化するインスタンス。
 
-たとえば、例を特定のレベルを使用してコンテンツをプリロード`CCTextureCache`インスタンス。 `CCTextureCache`インスタンスは、レベルを定義するクラスで定義される場合があります (である、`CCLayer`または`CCScene`)。
+たとえば、例が、特定のレベルを使用して、コンテンツがプリロードされた`CCTextureCache`インスタンス。 `CCTextureCache`レベルを定義するクラスのインスタンスを定義することがあります (なる可能性がある、`CCLayer`または`CCScene`)。
 
 
 ```csharp
-CCTextureCache levelTextures; 
+CCTextureCache levelTextures; 
 ```
 
-`levelTextures`インスタンス レベルに固有のテクスチャを事前に使用できます。 
+`levelTextures`レベルに固有のテクスチャをプリロードするインスタンスを使用することができます。 
 
 
 ```
 
-void PreloadLevelTextures(CCApplication application)
+void PreloadLevelTextures(CCApplication application)
 {
-    levelTextures = new CCTextureCache (application);
+    levelTextures = new CCTextureCache (application);
 
-    levelTextures.AddImage ("Background.png");
-    levelTextures.AddImage ("Foreground.png");
-    levelTextures.AddImage ("Enemy1.png");
-    levelTextures.AddImage ("Enemy2.png");
-    levelTextures.AddImage ("Enemy3.png");
+    levelTextures.AddImage ("Background.png");
+    levelTextures.AddImage ("Foreground.png");
+    levelTextures.AddImage ("Enemy1.png");
+    levelTextures.AddImage ("Enemy2.png");
+    levelTextures.AddImage ("Enemy3.png");
 
-    levelTextures.AddImage ("Powerups.png");
-    levelTextures.AddImage ("Particles.png");
+    levelTextures.AddImage ("Powerups.png");
+    levelTextures.AddImage ("Particles.png");
 } 
 ```
 
@@ -172,23 +172,23 @@ void PreloadLevelTextures(CCApplication application)
 
 
 ```csharp
-void EndLevel()
+void EndLevel()
 {
-    levelTextures.Dispose ();
-    // Perform any other end-level cleanup
+    levelTextures.Dispose ();
+    // Perform any other end-level cleanup
 } 
 ```
 
-Dispose メソッドは、これらのテクスチャによって使用されるメモリをオフにすると、すべての内部テクスチャを破棄します。 結合`CCTextureCache.Shared`レベルまたはゲーム モードの特定`CCTextureCache`ゲーム全体については、およびいくつかのレベルで、終了には、このガイドの先頭に表示されるようなアンロードされる永続化する一部のテクスチャで結果インスタンス。 
+Dispose メソッドは、これらのテクスチャで使用されるメモリを消去するすべての内部テクスチャで破棄されます。 結合`CCTextureCache.Shared`レベルまたはゲーム モードの特定の`CCTextureCache`結果で一部のテクスチャ全体のゲームといくつかのようにこのガイドの先頭に表示されるダイアグラムのように、レベル終了がアンロードされる永続化のインスタンス。 
 
-![](texture-cache-images/image2.png "結果を含む、レベル、またはゲーム モード固有 CCTextureCache インスタンス レベルで、終了には、このガイドの先頭に表示されるようなアンロードされている一部のゲーム全体については、して永続化する一部のテクスチャで CCTextureCache.Shared を組み合わせること。")
+![](texture-cache-images/image2.png "CCTextureCache.Shared を組み合わせる、レベル、またはゲーム モード固有 CCTextureCache インスタンスの結果で一部のテクスチャ全体のゲームといくつかのようにこのガイドの先頭に表示されるダイアグラムのように、レベル終了がアンロードされる永続化します。")
 
 
 
 
 ## <a name="summary"></a>まとめ
 
-このガイドを使用する方法を示しています、`CCTextureCache`残高メモリの使用状況と実行時のパフォーマンスへのクラスです。 `CCTexturCache.SharedTextureCache` ときに暗黙的に読み込んで、アプリケーションの有効期間のテクスチャをキャッシュするために使用、または明示的にできる`CCTextureCache`インスタンスは、メモリ使用量を削減するテクスチャをアンロードするために使用できます。
+このガイドは、使用する方法を示します、`CCTextureCache`分散メモリの使用状況と実行時のパフォーマンスをクラス。 `CCTexturCache.SharedTextureCache` 明示的にしたり、読み込みおよびアプリケーションのライフ サイクルのテクスチャのキャッシュを暗黙的に使用するには、while`CCTextureCache`メモリ使用量を削減するテクスチャをアンロードするインスタンスを使用できます。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -3,35 +3,35 @@ title: 認証コールバックへの応答
 ms.prod: xamarin
 ms.assetid: 6533AFC9-1A1C-4897-A154-4D4ECFE27761
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: b8a3ed64e66cd97faeff78b4d0b008a1a0b14477
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 17a1c94ad3b9bde67537ea7113352f0fc10d2a08
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765770"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110122"
 ---
 # <a name="responding-to-authentication-callbacks"></a>認証コールバックへの応答
 
-指紋スキャナーが独自のスレッドでバック グラウンドで実行しが完了すると、スキャンの結果の 1 つのメソッドを呼び出すことによって報告されます`FingerprintManager.AuthenticationCallback`UI スレッドにします。 Android アプリケーションは、次のすべてのメソッドを実装してこの抽象クラスを拡張する独自のハンドラーを提供する必要があります。
+指紋スキャナーは、独自のスレッドでバック グラウンドで実行し、それが完了すると、スキャンの結果の 1 つのメソッドを呼び出すことによって報告されます`FingerprintManager.AuthenticationCallback`UI スレッド上でします。 Android アプリケーションでは、次のすべてのメソッドを実装して、この抽象クラスを拡張する独自のハンドラーを提供する必要があります。
 
-* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; 回復不能なエラーがあるときに呼び出されます。 アプリケーションまたはユーザーをもう一度やり直してください可能性のある点を除いて、この状況を解決するのに実行できるものはありません。
+* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; 回復不能なエラーがあるときに呼び出されます。 もう一度お試し可能性がある点を除いて、問題を解決するアプリケーションまたはユーザーが行うものがありません。
 * **`OnAuthenticationFailed()`** &ndash; 指紋が検出されましたが、デバイスによって認識されない場合は、このメソッドが呼び出されます。
-* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; スキャナーを高速に読み取られている指など、回復可能なエラーがあるときに呼び出されます。
-* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; これは、指紋が認識されているときに呼び出されます。
+* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; スキャナーの上に高速に読み取られている指など、回復可能なエラーがあるときに呼び出されます。
+* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; 指紋が認識されているときに呼び出されます。
 
-場合、`CryptoObject`を呼び出すときに使用された`Authenticate`を呼び出すことをお勧め`Cipher.DoFinal`で`OnAuthenticationSuccessful`です。
-`DoFinal` 暗号が改ざんまたは不適切な初期化される場合、例外がスローされます、こと指紋スキャナーの結果が改ざんされて、アプリケーションの外部を示すです。
+場合、`CryptoObject`を呼び出すときに使用された`Authenticate`を呼び出すことをお勧め`Cipher.DoFinal`で`OnAuthenticationSuccessful`します。
+`DoFinal` 指紋スキャナーの結果が改ざんされたアプリケーションの外部で、暗号が改ざんされたり、正しく初期化される場合、例外がスローされます。
 
 
 > [!NOTE]
-> コールバック クラス比較的軽量を保持し、アプリケーション固有のロジックの解放をお勧めします。 コールバックが、「ように、トラフィック」Android アプリケーションと、結果の間で指紋スキャナーからとして機能します。
+> コールバック クラスの比較的軽い重みを保持し、アプリケーション固有のロジックの解放することをお勧めします。 コールバックは、"traffic cop"Android アプリケーションと、結果の指紋スキャナーからとして機能する必要があります。
 
-## <a name="a-sample-authentication-callback-handler"></a>サンプル認証コールバック ハンドラー
+## <a name="a-sample-authentication-callback-handler"></a>認証コールバック ハンドラーをサンプル
 
-次のクラスは、最小限の例`FingerprintManager.AuthenticationCallback`実装します。 
+次のクラスは、最小限の例を示します`FingerprintManager.AuthenticationCallback`実装。 
 
 ```csharp
 class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
@@ -91,47 +91,47 @@ class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
 }
 ```
 
-`OnAuthenticationSucceeded` かどうかをチェック、`Cipher`に提供された`FingerprintManager`とき`Authentication`が呼び出されました。 場合は、`DoFinal`暗号にメソッドが呼び出されます。 終了、 `Cipher`、元の状態に復元します。 あったか、暗号の問題、`DoFinal`は例外をスローし、認証の試行は失敗したものと見なされます。
+`OnAuthenticationSucceeded` かどうかをチェック、`Cipher`に提供された`FingerprintManager`とき`Authentication`が呼び出されました。 そうである場合、`DoFinal`暗号でメソッドが呼び出されます。 終了、 `Cipher`、元の状態に復元することです。 かどうかは問題があった、暗号でし`DoFinal`は例外をスローして失敗した認証の試行を考慮する必要があります。
 
-`OnAuthenticationError`と`OnAuthenticationHelp`各コールバックは、問題が何を示す整数を受信します。 次のセクションでは、個々 の可能なヘルプまたはエラー コードについて説明します。 2 つのコールバックは、同様の目的を果たします&ndash;指紋認証が失敗したことをアプリケーションに通知するためにします。 動作の違いは重大度です。 `OnAuthenticationHelp` 速すぎます。 指紋をスワイプなど、ユーザーの回復可能なエラーは、します。`OnAuthenticationError`が破損している指紋スキャナーより重大なエラーです。
+`OnAuthenticationError`と`OnAuthenticationHelp`ごとのコールバックは、問題が発生するかを示す整数値を受信します。 次のセクションでは、それぞれの可能なヘルプまたはエラー コードについて説明します。 2 つのコールバックのような目的が&ndash;その指紋認証が失敗したアプリケーションに通知します。 重大度がどのように異なるか。 `OnAuthenticationHelp` 速すぎる; フィンガー プリントをスワイプなど、ユーザーの回復可能なエラーは、します。`OnAuthenticationError`が破損した指紋スキャナーより重大なエラー。
 
-なお`OnAuthenticationError`指紋スキャンが使用して取り消されたときに呼び出される、`CancellationSignal.Cancel()`メッセージ。 `errMsgId`パラメーター 5 の値になります (`FingerprintState.ErrorCanceled`)。 実装の要件に応じて、`AuthenticationCallbacks`他のエラーとは異なるこのような状況を扱うことがあります。 
+なお`OnAuthenticationError`経由で指紋のスキャンがキャンセルされたときに呼び出される、`CancellationSignal.Cancel()`メッセージ。 `errMsgId`パラメーター 5 の値になります (`FingerprintState.ErrorCanceled`)。 実装の要件に応じて、`AuthenticationCallbacks`他のエラーとは異なるこのような状況を扱うことがあります。 
 
 `OnAuthenticationFailed` 指紋が正常にスキャンされたが、デバイスに登録されている任意の指紋が一致しませんでしたが呼び出されます。 
 
 ## <a name="help-codes-and-error-message-ids"></a>ヘルプのコードとエラー メッセージ Id 
 
-一覧と、エラー コードとコードのヘルプの説明は、「、 [Android SDK のドキュメント](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD)FingerprintManager クラスです。 Xamarin.Android がこれらの値を表す、`Android.Hardware.Fingerprints.FingerprintState`列挙型。
+一覧と、エラー コードとヘルプのコードの説明を参照して、 [Android SDK のドキュメント](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD)FingerprintManager クラス。 Xamarin.Android は、これらの値を表す、`Android.Hardware.Fingerprints.FingerprintState`列挙型。
 
 
--   **`AcquiredGood`** &ndash; (値 0)取得したイメージは問題ありませんでした。
+-   **`AcquiredGood`** &ndash; (値 0)取得したイメージは、問題ありませんでした。
 
 
--   **`AcquiredImagerDirty`** &ndash; (値 3)指紋イメージが、センサーの土の疑いがあるか、検出されたためノイズが多すぎます。 たとえば、これを複数の後に返される妥当なは`AcquiredInsufficient`またはセンサー (抜け、範囲など) の土の実際の検出。 ユーザーは、これは、返されるときに、センサーをクリーンアップするアクションを実行すると想定されます。
+-   **`AcquiredImagerDirty`** &ndash; (値 3)指紋のイメージが、センサー、疑わしいまたは検出された未舗装によりノイズが多すぎます。 たとえば、複数の後にこれを返す適切なは`AcquiredInsufficient`やセンサー (抜け、範囲など) の土の実際の検出。 これは、返されるときに、センサーをクリーンアップするアクションを実行するには、ユーザーが必要です。
 
 
--   **`AcquiredInsufficient`** &ndash; (値 2)指紋イメージが検出された状態 (つまりドライ スキン) または可能性のあるダーティ センサーのために処理にノイズが多すぎる (を参照してください`AcquiredImagerDirty`です。
-
-
-
--   **`AcquiredPartial`** &ndash; (値 1)部分的な指紋イメージのみが検出されました。 たとえば、この問題を解決する場合に発生する必要がある登録中に、ユーザーに通知する必要があります&ldquo;センサーをしっかりとします。&rdquo;
+-   **`AcquiredInsufficient`** &ndash; (値 2)指紋のイメージが検出された状態 (つまりドライ スキン) または場合によってダーティ センサーにより処理する雑音が多すぎる (を参照してください`AcquiredImagerDirty`します。
 
 
 
--   **`AcquiredTooFast`** &ndash; (値 5)指紋イメージは、クイック移行中のため完了しませんでした。 線形配列センサーのほとんどの場合、必要に応じて中に、起こる場合も取得中に、指が移動された場合。 ユーザーは、低速の本の指の移動を求める必要があります (線形) か長いセンサーの指のままにします。
+-   **`AcquiredPartial`** &ndash; (値 1)部分的な指紋イメージのみが検出されました。 たとえば、この問題を解決する場合に発生する必要があるものの登録中にユーザーに通知する必要があります&ldquo;センサーをしっかりとします。&rdquo;
+
+
+
+-   **`AcquiredTooFast`** &ndash; (値 5)指紋の画像は、クイック モーションにより完了しませんでした。 個のセンサーのほとんどの場合、必要に応じて、中には、指を取得中に移動された場合も発生これでした。 低速の指を移動するユーザーを求める必要があります (線形) か長いセンサーの指のままにします。
 
 
 
 
--   **`AcquiredToSlow`** &ndash; (値は 4)指紋イメージは、動きがないのため読み取れませんでした。 これはスワイプ動きを必要とする線形配列センサーに最適です。
+-   **`AcquiredToSlow`** &ndash; (値 4)指紋の画像をアニメーションがないのため読み取れませんでした。 これは、スワイプ動作を必要とする線形配列センサーに最も適した。
 
 
 
--   **`ErrorCanceled`** &ndash; (値 5)指紋センサーを使用できないために、操作が取り消されました。 たとえば、ユーザーが切り替えられる、デバイスがロックされている、または別の保留中の操作により、または無効にするときに可能性があります。
+-   **`ErrorCanceled`** &ndash; (値 5)指紋センサーが利用できないために、操作が取り消されました。 たとえば、ユーザーの切り替え、デバイスがロックされている、またはにより別の操作の保留中、または無効にするときにこれ可能性があります。
 
 
 
--   **`ErrorHwUnavailable`** &ndash; (値 1)ハードウェアでは使用できません。 後でもう一度やり直してください。
+-   **`ErrorHwUnavailable`** &ndash; (値 1)ハードウェアは、ご利用いただけません。 後でもう一度お試しください。
 
 
 
@@ -141,20 +141,20 @@ class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
 
 
 
--   **`ErrorNoSpace`** &ndash; (値は 4)登録; などの操作に対して返されるエラー状態残りの操作を完了するための十分な記憶域がないため、操作を完了できません。
+-   **`ErrorNoSpace`** &ndash; (値 4)登録などの操作に対して返されるエラーの状態残りの操作を完了するための十分な記憶域がないためにの操作を完了できません。
 
 
 
--   **`ErrorTimeout`** &ndash; (値 3)エラー状態が現在の要求が長時間実行されている場合に返されます。 指紋センサーを無制限に待つことからプログラムを防ぐためにこのものです。 タイムアウトはプラットフォームとセンサーに固有では一般に約 30 秒です。
+-   **`ErrorTimeout`** &ndash; (値 3)エラー状態が現在の要求が実行されている長すぎる場合に返されます。 これは、プログラムが、指紋センサーを無期限に待機していることを防止するものです。 タイムアウトはプラットフォームであり、センサー固有が、通常約 30 秒。
 
 
 
--   **`ErrorUnableToProcess`** &ndash; (値 2)エラー状態が、センサーで現在のイメージを処理できなかった場合に返されます。
+-   **`ErrorUnableToProcess`** &ndash; (値 2)エラー状態は、センサーで、現在のイメージを処理できなかった場合に返されます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Cipher](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
+- [暗号](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
 - [AuthenticationCallback](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)
 - [AuthenticationCallback](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.AuthenticationCallback.html)

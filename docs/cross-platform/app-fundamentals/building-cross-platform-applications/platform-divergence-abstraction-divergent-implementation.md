@@ -6,12 +6,12 @@ ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 4a60c99cbc9819f07b77bfe9abe046ea92a550a5
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.openlocfilehash: ef224b7410565ae15da7613c04d11e7bd6a44dcb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403326"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117942"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>パート 4 - 複数のプラットフォームを処理します。
 
@@ -23,15 +23,9 @@ ms.locfileid: "37403326"
 
 プラットフォームの違いは、機能の概要については、プラットフォームの機能ドキュメントを参照してください。
 
- <a name="Examples_of_Platform_Divergence" />
+## <a name="examples-of-platform-divergence"></a>プラットフォームの相違の例
 
-
-### <a name="examples-of-platform-divergence"></a>プラットフォームの相違の例
-
- <a name="Fundamental_elements_that_exist_across_platforms" />
-
-
-#### <a name="fundamental-elements-that-exist-across-platforms"></a>プラットフォーム間で存在する基本的な要素
+### <a name="fundamental-elements-that-exist-across-platforms"></a>プラットフォーム間で存在する基本的な要素
 
 ユニバーサルなモバイル アプリケーションのいくつかの特性があります。
 これらより高度な概念であり、すべてのデバイスの場合は true。 一般的には、アプリケーションの設計の基礎を形成できるためです。
@@ -42,13 +36,9 @@ ms.locfileid: "37403326"
 -  データの 1 つのビューの編集
 -  戻る
 
-
 画面の高度なフローを設計するときに、一般的なユーザー エクスペリエンスをこれらの概念に基づいてできます。
 
- <a name="platform-specific_attributes" />
-
-
-#### <a name="platform-specific-attributes"></a>プラットフォーム固有の属性
+### <a name="platform-specific-attributes"></a>プラットフォーム固有の属性
 
 すべてのプラットフォーム上に存在する基本的な要素だけでなく、設計の主要プラットフォーム差異をアドレスに必要になります。 これらの相違点を検討してください (および処理するには、具体的にはコードを記述) する必要があります。
 
@@ -58,11 +48,7 @@ ms.locfileid: "37403326"
 -   **タッチとジェスチャ**– 各オペレーティング システムの旧バージョンでは特に、ジェスチャ認識のサポートはオペレーティング システムが異なります。 以前のバージョンの Android が非常に古いデバイスをサポートするいると別のコードが必要があります、つまり、タッチ操作のサポートの制限
 -   **プッシュ通知**-(例: 各プラットフォームでさまざまな機能と実装があります。 Windows 上のタイルをライブします)。
 
-
- <a name="Device-specific_features" />
-
-
-#### <a name="device-specific-features"></a>デバイス固有の機能
+### <a name="device-specific-features"></a>デバイス固有の機能
 
 決定する、アプリケーションに必要な最小限の機能する必要があります。または、各プラットフォームで利用するどのような追加機能を決定する際にします。 コードは、検出機能や機能を無効にする (例: 代替手段を提供する必要があります。 代わりに地理的場所にすることにより、ユーザーの場所を入力するか、マップから選択できます)。
 
@@ -72,32 +58,18 @@ ms.locfileid: "37403326"
 -   **Twitter や Facebook** iOS5 と iOS6 '組み込み' のみ – それぞれします。 以前のバージョンとその他のプラットフォームで独自の認証機能を提供し、各と直接やり取りする必要がありますサービスの API。
 -   **近距離通信 (NFC) のほぼ**– (一部) でのみ (の執筆時点) での Android フォンです。
 
-
- <a name="Dealing_with_Platform_Divergence" />
-
-
-### <a name="dealing-with-platform-divergence"></a>プラットフォームの相違を処理します。
+## <a name="dealing-with-platform-divergence"></a>プラットフォームの相違を処理します。
 
 同じコード ベース、それぞれ長所と短所の独自セットが複数のプラットフォームをサポートする 2 つの異なるアプローチがあります。
 
 -   **プラットフォームの抽象化**– ビジネス ファサード パターンでは、プラットフォーム間で統一されたアクセスを提供し、単一で統一された API に特定のプラットフォームの実装を抽象化します。
 -   **異なる実装**– 特定のプラットフォームの呼び出しは、インターフェイス、継承、条件付きコンパイルなどのアーキテクチャ ツールを使用して異なる実装を使用して機能します。
 
-
- <a name="Platform_Abstraction" />
-
-
 ## <a name="platform-abstraction"></a>プラットフォームの抽象化
-
- <a name="Class_Abstraction" />
-
 
 ### <a name="class-abstraction"></a>クラスの抽象化
 
 インターフェイスまたは基本クラスを使用して、共有コードで定義されているし、実装またはプラットフォームに固有のプロジェクトで拡張します。 拡張クラスの抽象化で共有コードの記述とは特にために適していますポータブル クラス ライブラリが使用できるようにするフレームワークの限定されたサブセットがあるし、プラットフォーム固有のコード分岐をサポートするためにコンパイラ ディレクティブを含めることはできません。
-
- <a name="Interfaces" />
-
 
 #### <a name="interfaces"></a>インターフェイス
 
@@ -115,50 +87,24 @@ ms.locfileid: "37403326"
 
 作成し、共有コードに実装を渡すことです。 共有コード内の深いインターフェイスを使用する場合されている複数のメソッド パラメーターを通じて渡されるまたは終了呼び出しチェーンによってそれ以外の場合にプッシュ ダウンします。 共有コードは、多数の異なるインターフェイスを使用している場合する必要がありますすべてが作成し、共有コードをどこかに設定します。
 
- <a name="Inheritance" />
-
-
 #### <a name="inheritance"></a>継承
 
 共有コードは、1 つまたは複数のプラットフォーム固有プロジェクトで拡張することが抽象または仮想のクラスを実装できます。 これは似ていますが既に実装されているいくつかの動作インターフェイスを使用します。 インターフェイスまたは継承がより優れた設計の選択がかどうかに別のビュー ポイントがある。 具体的には c# のみで継承を 1 つあるため、これが決定できる今後 Api を設計する方法。 継承を慎重に使用します。
 
 長所と短所のインターフェイスの基本クラスが実装コードの一部 (おそらく、プラットフォーム全体に依存しない実装必要に応じて拡張することもできます) を含む追加の利点と、継承に等しく適用されます。
 
-<a name="Xamarin.Forms" />
-
-### <a name="xamarinforms"></a>Xamarin.Forms
+## <a name="xamarinforms"></a>Xamarin.Forms
 
 参照してください、 [Xamarin.Forms](~/xamarin-forms/get-started/index.md)ドキュメント。
 
-
-### <a name="plug-in-cross-platform-functionality"></a>プラグインのクロス プラットフォーム機能
-
-プラグインを使用して一貫した方法でクロス プラットフォーム アプリを拡張することもできます。
-
-リンクから、[プラグイン github](https://github.com/xamarin/plugins)、ほとんどのプラグインはオープン ソース プロジェクト (通常は Nuget 経由でのインストールの使用可能な) する際に役立つさまざまな設定、バッテリの状態から、プラットフォーム固有の機能を実装する、簡単に Xamarin プラットフォームおよび Xamarin.Forms アプリで使用できるは一般的な API です。
-
-
-<a name="Other_Cross-Platform_Libraries" />
-
 ### <a name="other-cross-platform-libraries"></a>その他のクロス プラットフォーム ライブラリ
 
-クロス プラットフォームの機能を提供する利用可能なサード パーティ製のライブラリを数多くあります。
+これらのライブラリでは、クロス プラットフォーム機能も提供してC#開発者。
 
--   **MvvmCross** -  [https://github.com/slodge/MvvmCross/](https://github.com/slodge/MvvmCross/)
--   **専門用語**(のローカリゼーション) -  [https://github.com/rdio/vernacular/](https://github.com/rdio/vernacular/)
--   **MonoGame** (の XNA ゲーム) -  [http://www.monogame.net](http://www.monogame.net)
--   **NGraphics** - [NGraphics](https://github.com/praeclarum/NGraphics)とその前段階 [https://github.com/praeclarum/CrossGraphics](https://github.com/praeclarum/CrossGraphics)
+- [**Xamarin.Essentials** ](~/essentials/index.md) – 一般的な機能のクロスプラット フォーム Api。
+- [**SkiaSharp** ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) – クロスプラット フォーム 2D グラフィックス。
 
-
- <a name="Divergent_Implementation" />
-
-
-### <a name="divergent-implementation"></a>分岐の実装
-
- <a name="Conditional_Compilation" />
-
-
-#### <a name="conditional-compilation"></a>条件付きコンパイル
+## <a name="conditional-compilation"></a>条件付きコンパイル
 
 これは、状況によっては、共有コードは、可能性があるクラスまたは動作が異なる機能にアクセスする、各プラットフォームで異なる方法で動作する必要があります。 条件付きコンパイルは、共有資産プロジェクトを同じソース ファイルを異なるシンボルが定義されている複数のプロジェクトで参照されているで最適に動作します。
 
@@ -169,10 +115,7 @@ Xamarin プロジェクトは常に定義`__MOBILE__`は iOS と Android アプ�
 // Xamarin iOS or Android-specific code
 #endif
 ```
-
-<a name="iOS" />
-
-##### <a name="ios"></a>iOS
+#### <a name="ios"></a>iOS
 
 Xamarin.iOS 定義`__IOS__`iOS デバイスを検出するために使用することができます。
 
@@ -194,9 +137,7 @@ Xamarin.iOS 定義`__IOS__`iOS デバイスを検出するために使用する�
 #endif
 ```
 
-<a name="Android" />
-
-##### <a name="android"></a>Android
+#### <a name="android"></a>Android
 
 Xamarin.Android アプリケーションにのみコンパイルするコードを次に使用できます。
 
@@ -214,7 +155,7 @@ Xamarin.Android アプリケーションにのみコンパイルするコード�
 #endif
 ```
 
-##### <a name="mac"></a>Mac
+#### <a name="mac"></a>Mac
 
 現在、Xamarin.Mac 向けの組み込みのシンボルはありませんが、Mac で独自のアプリ プロジェクトを追加する**オプション > ビルド > コンパイラ**で、**シンボル定義**ボックス、または編集、 **.csproj**ファイルし、追加があります (たとえば`__MAC__`)
 
@@ -222,16 +163,17 @@ Xamarin.Android アプリケーションにのみコンパイルするコード�
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
 ```
 
-<a name="Windows_Phone" />
+#### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
-##### <a name="windows-phone"></a>Windows Phone
+`WINDOWS_UWP` を使用してください。 Xamarin プラットフォームのシンボルのような文字列を囲むアンダー スコアはありません。
 
-Windows Phone アプリ – 2 つのシンボルを定義する`WINDOWS_PHONE`と`SILVERLIGHT`– コードがプラットフォームを対象にできます。 アンダー スコアなど、Xamarin プラットフォームの記号で囲まれたは必要はありません。
+```csharp
+#if WINDOWS_UWP
+// UWP-specific code
+#endif
+```
 
-
-<a name="Using_Conditional_Compilation" />
-
-##### <a name="using-conditional-compilation"></a>条件付きコンパイルを使用します。
+#### <a name="using-conditional-compilation"></a>条件付きコンパイルを使用します。
 
 条件付きコンパイルの簡単なケース スタディの例では、SQLite データベース ファイルのファイルの場所を設定します。 3 つのプラットフォームでは、ファイルの場所を指定するための若干異なる要件があります。
 
@@ -271,4 +213,3 @@ public static string DatabaseFilePath {
 ```
 
 結果は、ビルドおよび SQLite データベースのファイルを配置する各プラットフォームで別の場所ですべてのプラットフォームで使用できるクラスです。
-

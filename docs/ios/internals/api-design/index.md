@@ -4,15 +4,15 @@ description: このドキュメントでは、いくつかの適用、Xamarin.iO
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 275db96435639a60be89e0e3ddb7fa120a30de1c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: cd25e5c78885f53902c577a900958b842a70219c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996413"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116954"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
@@ -494,7 +494,7 @@ public class MyCallbacks : NSObject {
 }
 ```
 
-メソッドの c# 名前が重要です。重要なは、[エクスポート] 属性に渡される文字列です。
+C#名前、メソッドは重要です。重要なは、[エクスポート] 属性に渡される文字列です。
 
 このスタイルのプログラミングを使用する場合は、c# パラメーター、ランタイム エンジンに渡される実際の型と一致することを確認します。
 

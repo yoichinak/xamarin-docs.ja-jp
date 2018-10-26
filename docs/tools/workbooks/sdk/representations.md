@@ -1,33 +1,33 @@
 ---
-title: Xamarin のブックの表示
-description: このドキュメントでは、値を返す任意のコードの豊富な結果の表示を有効、Xamarin ブック表現パイプラインについて説明します。
+title: Xamarin Workbooks での表示
+description: このドキュメントでは、値を返す任意のコードの豊富な結果を描画すること、Xamarin Workbooks 表現パイプラインについて説明します。
 ms.prod: xamarin
 ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: d4d8fa164b9f52e2c5331aa2c08fdddf232572d4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d9aafbe13e06875b6577a4d2308e419932fd1589
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794164"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103713"
 ---
-# <a name="representations-in-xamarin-workbooks"></a>Xamarin のブックの表示
+# <a name="representations-in-xamarin-workbooks"></a>Xamarin Workbooks での表示
 
 ## <a name="representations"></a>表現
 
-ブックやインスペクターのセッション内でが実行され、結果 (値または式の結果を返すメソッドなど) を生成するコードは、エージェントで、形式をパイプラインを介して処理されます。 整数などのプリミティブを除く、すべてのオブジェクトは、対話型のメンバーのグラフを生成するために反映され、クライアントが詳しく表示できる代替の表現を提供するためのプロセスを通過します。 オブジェクトのサイズと深さは、レイジーと対話型のリフレクションとリモート処理のため (サイクルと無限列挙型) を含む安全にサポートします。
+ブックまたはインスペクターのセッション内でコードで実行され、結果 (例: 値または式の結果を返すメソッド) が得られますが、エージェントで表現パイプラインを介して処理されます。 整数などのプリミティブを除く、すべてのオブジェクトは、対話型のメンバーのグラフを生成するために反映されより表現力豊かなクライアントをレンダリングする代替の表現を提供するプロセスを通過します。 安全に、任意のサイズ、深さのオブジェクトは遅延と対話型のリフレクションとリモート処理のため (サイクルと無限の列挙) を含むサポートされています。
 
-Xamarin のブックでは、すべてのエージェントと結果の豊富なレンダリングできるようにするクライアントに一般的ないくつかの型を提供します。 [`Color`][xir-color] このような型の 1 つの例の iOS の例では、エージェントの変換を行います`CGColor`または`UIColor`オブジェクトを`Xamarin.Interactive.Representations.Color`オブジェクト。
+Xamarin Workbooks は、すべてのエージェントと結果のリッチなレンダリングでは、クライアントへの一般的ないくつかの型を提供します。 [`Color`][xir-color] このような型の 1 つの例は、ios など、エージェントが変換`CGColor`または`UIColor`にオブジェクトを`Xamarin.Interactive.Representations.Color`オブジェクト。
 
-共通の表現に加えては、SDK の統合は、エージェントのカスタム形式をシリアル化とクライアントでの表現を描画 Api を提供します。
+共通の表現だけでなく統合 SDK には、エージェントのカスタム表現をシリアル化と、クライアントでの表現をレンダリング Api が提供されます。
 
 ## <a name="external-representations"></a>外部表現
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する[ `RepresentationProvider` ] [repp]との統合が任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらの依存しない形式を実装する必要があります、 [ `ISerializableObject` ] [ serobj]インターフェイスです。
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する[ `RepresentationProvider` ] [repp]統合が、任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらに依存しない形式を実装する必要があります、 [ `ISerializableObject` ] [ serobj]インターフェイス。
 
-実装する、`ISerializableObject`インターフェイスは、オブジェクトをシリアル化する方法を正確に制御するシリアル化メソッドを追加します。 `Serialize`メソッドは、開発者ではどのプロパティがシリアル化するにし、なります最終的な名前を指定しますだけことが必要です。 見て、`Person`オブジェクトで、[`KitchenSink`サンプル] [サンプル] をこのしくみがわかります。
+実装する、`ISerializableObject`インターフェイス オブジェクトをシリアル化する方法を正確に制御する Serialize メソッドを追加します。 `Serialize`メソッドは、シリアル化するプロパティがあり、最終的な名前がなります、開発者が正確に指定ことが必要です。 見て、`Person`オブジェクトで、[`KitchenSink`サンプル] [サンプル] にこのしくみがわかります。
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -41,7 +41,7 @@ public sealed class Person : ISerializableObject
 }
 ```
 
-スーパー セットでも、元のオブジェクトからプロパティのサブセットを提供する場合、これにはで`Serialize`です。 たとえば、事前計算済みを提供する次のようなお行う可能性があります`Age`プロパティ`Person`:
+スーパー セットであるか、元のオブジェクトからプロパティのサブセットを提供する場合を使用して行いますできます`Serialize`します。 事前に計算を提供するこのようなコードを実行たとえば、`Age`プロパティ`Person`:
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -65,15 +65,15 @@ public sealed class Person : ISerializableObject
 ```
 
 > [!NOTE]
-> 生成 Api`ISerializableObject`オブジェクトがによって処理する必要はありません直接、`RepresentationProvider`です。 オブジェクトを表示する場合は**いない**、`ISerializableObject`での折り返しを処理する必要は、`RepresentationProvider`です。
+> 生成 Api`ISerializableObject`オブジェクトがによって処理される必要はありません直接、`RepresentationProvider`します。 オブジェクトを表示する場合は**いない**、`ISerializableObject`での折り返しを処理する、`RepresentationProvider`します。
 
-### <a name="rendering-a-representation"></a>内部表現を表示
+### <a name="rendering-a-representation"></a>表現のレンダリング
 
-レンダラーが JavaScript で実装され、経由で表されるオブジェクトの JavaScript のバージョンへのアクセスを持つ`ISerializableObject`します。 また、JavaScript のコピーが必要があります、`$type`文字列を .NET 型の名前を示すプロパティです。
+レンダラーは JavaScript で実装され、JavaScript を使用して表されるオブジェクトのバージョンにアクセスできるよう`ISerializableObject`します。 JavaScript のコピーがあります、 `$type` string プロパティは、.NET 型名を示します。
 
-もちろんバニラ JavaScript にコンパイルされるクライアント統合コードの TypeScript を使用することをお勧めします。 どちらの方法では、SDK の提供[型指定][ typings]は TypeScript によって直接参照または単に参照を手動でバニラを記述して、JavaScript が優先される場合できます。
+TypeScript を使用してクライアント統合コード、もちろん vanilla JavaScript にコンパイルされることをお勧めします。 どちらの方法でも、SDK が提供[typings] [ typings]は TypeScript によって直接参照または単に場合にのみ参照を手動で vanilla JavaScript をお勧めを記述できます。
 
-表示するための主な統合のポイントは`xamarin.interactive.RendererRegistry`:
+レンダリングの主な統合ポイントは`xamarin.interactive.RendererRegistry`:
 
 ```js
 xamarin.interactive.RendererRegistry.registerRenderer(
@@ -85,7 +85,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-ここでは、`PersonRenderer`を実装する、`Renderer`インターフェイスです。 参照してください、[型指定][ typings]詳細についてはします。
+ここでは、`PersonRenderer`実装、`Renderer`インターフェイス。 参照してください、 [typings] [ typings]の詳細。
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
 [xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/

@@ -7,12 +7,12 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 07/19/2018
-ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 17e62d68f8ad2c7deff500216c0bb095ca8f4275
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156718"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117448"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要です。 スタックをスクロール
 
@@ -95,7 +95,7 @@ ms.locfileid: "39156718"
 
 場合、`BoxView`制限されます (その`HorizontalOptions`と`VerticalOptions`プロパティの既定の設定がある`LayoutOptions.Fill`)、`BoxView`の使用可能な領域を塗りつぶします。 場合、`BoxView`は制約がありません (で`HorizontalOptions`と`LayoutOptions`設定の`Start`、 `Center`、または`End`)、40 単位正方形の既定のディメンションがあります。 A `BoxView` 1 つのディメンションでは制限し、制約、それ以外のことができます。
 
-設定する多くの場合、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティの`BoxView`を特定のサイズを付けます。 これには、 [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView)サンプル。
+多くの場合、設定します、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティの`BoxView`を特定のサイズを付けます。 これには、 [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView)サンプル。
 
 複数のインスタンスを使用することができます`StackLayout`を結合する、`BoxView`といくつか`Label`インスタンス、`Frame`に特定の色を表示し、これらの各ビューで、`StackLayout`で、`ScrollView`魅力的なものを作成するには表示される色の一覧、 [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)サンプル。
 

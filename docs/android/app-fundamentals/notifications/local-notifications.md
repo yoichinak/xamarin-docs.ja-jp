@@ -4,15 +4,15 @@ description: このセクションでは、Xamarin.Android でローカル通知
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
-ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
+ms.openlocfilehash: a4ffae0bde39450778b340b4a4c4da8fe90d0bec
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "39514532"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117682"
 ---
 <a name="compatibility"></a>
 
@@ -26,7 +26,7 @@ Android は、ユーザーに通知アイコンと通知情報を表示するた
 
 ![デバイスで通知領域の例](local-notifications-images/01-notification-shade.png)
 
-ユーザー通知の詳細を取得する (通知の内容を表示するには、各通知アイコンを展開) される通知ドロアーを開くことができ、通知に関連付けられているすべてのアクションを実行します。 次のスクリーン ショットは、*通知ドロアー*上に表示される通知領域に対応します。
+ユーザー通知の詳細を取得する (通知の内容を表示するには、各通知アイコンを展開) される通知ドロアーを開くことができ、通知に関連付けられているすべてのアクションを実行します。 次のスクリーン ショット、*通知ドロアー*上に表示される通知領域に対応します。
 
 [![例通知ドロアーを 3 つの通知を表示します。](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
@@ -64,11 +64,11 @@ Android の通知は、2 つの種類のレイアウトを使用します。
 
 ![単純な通知の写真](local-notifications-images/04-simple-notification-photo.png)
 
-Android 5.0 以降では、通知もに表示できる、ロック画面。
+Android 5.0 以降では、ロック画面に通知できる表示も。
 
-[![ロック画面通知の例](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
+[![例のロック画面通知](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
-ユーザーはダブルタップして、ロック画面通知デバイスのロックを解除し、その通知が送信されたアプリに移動またはスワイプして通知を破棄します。 アプリは、ロック画面に表示される内容を制御するための通知の可視性のレベルを設定でき、ユーザーがロック画面通知に表示される機密性の高いコンテンツを許可するかどうかを選択します。
+ユーザーはダブルタップして、ロック画面の通知デバイスのロックを解除し、その通知が送信されたアプリに移動またはスワイプして通知を破棄します。 アプリは、ロック画面上に表示される内容を制御するための通知の可視性のレベルを設定でき、ユーザーがロック画面の通知に表示される機密性の高いコンテンツを許可するかどうかを選択します。
 
 Android 5.0 と呼ばれる優先度の高い通知の表示形式を導入する*ヘッドアップ*します。 ヘッドアップ通知は、数秒を画面の一番上から下へスライドし、漂い、通知領域へのバックアップ。
 
@@ -76,11 +76,11 @@ Android 5.0 と呼ばれる優先度の高い通知の表示形式を導入す�
 
 ヘッドアップ通知では、システムの UI を現在実行中のアクティビティの状態を中断することがなく、ユーザーの前に重要な情報を配置できます。
 
-Android には、通知を並べ替えるし、適切に表示されるように、通知のメタデータのサポートが含まれます。 通知のメタデータは、ヘッドアップ形式と、ロック画面で通知を表示する方法も制御します。 アプリケーションでは、次の種類の通知のメタデータを設定できます。
+Android には、通知を並べ替えるし、適切に表示されるように、通知のメタデータのサポートが含まれます。 通知のメタデータは、ロック画面とヘッドアップ形式で通知を表示する方法も制御します。 アプリケーションでは、次の種類の通知のメタデータを設定できます。
 
 -   **優先順位**&ndash;優先度レベルは、通知が表示される方法とタイミングを決定します。 たとえば、Android 5.0 では、優先度の高い通知はヘッドアップ通知として表示されます。
 
--   **可視性**&ndash;通知コンテンツの量が、ロック画面に通知が表示されたときに表示されることを指定します。
+-   **可視性**&ndash;通知コンテンツの量がロック画面に通知が表示されたらに表示されることを指定します。
 
 -   **カテゴリ**&ndash;でデバイスの場合など、さまざまな状況で通知を処理する方法をシステムに通知*不可*モード。
 
@@ -117,7 +117,7 @@ Android 8.0 (Oreo) 以降を使えば、*通知チャネル*を表示する通�
 
 [![Android Oreo で YouTube の通知画面](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
-これらの各カテゴリは、通知チャネルに対応します。 YouTube のアプリの実装を**ダウンロードの通知**チャネルと**一般的な通知**チャネル。 タップする**ダウンロードの通知**アプリの通知チャネルのダウンロードの設定 画面が表示されます。
+これらの各カテゴリは、通知チャネルに対応します。 YouTube のアプリの実装を**ダウンロード通知**チャネルと**一般的な通知**チャネル。 タップする**ダウンロードの通知**アプリの通知チャネルのダウンロードの設定 画面が表示されます。
 
 [![YouTube のアプリの通知画面をダウンロードします。](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
@@ -152,7 +152,7 @@ Android 8.0 (Oreo) 以降を使えば、*通知チャネル*を表示する通�
 
 -   通知の優先度: 少なくとも、低、既定、高、または最大値。 使用して優先度を設定で Android 8.0 以降、 [_通知チャネル_](#notification-channels)します。
 
--   ロック画面の通知の可視性: パブリック、プライベート、またはシークレット。
+-   ロック画面に通知の可視性: パブリック、プライベート、またはシークレット。
 
 -   Android は、カテゴリのメタデータは、分類し、通知をフィルターします。
 
@@ -657,14 +657,14 @@ builder.SetPriority (NotificationPriority.High);
 
 ### <a name="visibility-settings"></a>可視性の設定
 
-Android 5.0 以降、*可視性*設定については、通知コンテンツの量がセキュリティで保護されたロック画面の表示を制御します。
+Android 5.0 以降、*可視性*設定は通知コンテンツの量がセキュリティで保護されたロック画面に表示を制御するために使用できます。
 Xamarin.Android では、次の列挙型の可視性の通知の設定を定義します。
 
--   `NotificationVisibility.Public` &ndash; セキュリティで保護されたロック画面通知の完全なコンテンツが表示されます。
+-   `NotificationVisibility.Public` &ndash; 通知の完全なコンテンツがセキュリティで保護されたロック画面に表示されます。
 
--   `NotificationVisibility.Private` &ndash; (通知アイコンや投稿されたことをアプリの名前)、セキュリティで保護されたロック画面で重要な情報のみが表示されますが、通知の詳細の残りの部分は表示されません。 既定ですべての通知`NotificationVisibility.Private`します。
+-   `NotificationVisibility.Private` &ndash; (通知アイコンや投稿されたことをアプリの名前)、セキュリティで保護されたロック画面に重要な情報のみが表示されますが、通知の詳細の残りの部分は表示されません。 既定ですべての通知`NotificationVisibility.Private`します。
 
--   `NotificationVisibility.Secret` &ndash; セキュリティで保護されたロック画面、通知アイコンも表示されないのは何も表示します。 通知の内容は、ユーザー、デバイスのロックを解除した後にのみ使用できます。
+-   `NotificationVisibility.Secret` &ndash; 通知アイコンであっても、セキュリティで保護されたロック画面には何も表示します。 通知の内容は、ユーザー、デバイスのロックを解除した後にのみ使用できます。
 
 アプリの呼び出し、通知の表示を設定する、`SetVisibility`のメソッド、`NotificationCompat.Builder`可視性の設定を渡して、オブジェクト。 たとえば、この呼び出しを`SetVisibility`通知は、 `Private`:
 
@@ -672,11 +672,11 @@ Xamarin.Android では、次の列挙型の可視性の通知の設定を定義�
 builder.SetVisibility (NotificationVisibility.Private);
 ```
 
-ときに、`Private`通知が投稿された、セキュリティで保護されたロック画面で、名前と、アプリのアイコンが表示されます。 通知メッセージではなくユーザーには、「この通知を表示する、デバイス ロック解除」が表示されます。
+ときに、`Private`通知が投稿された、名前と、アプリのアイコンだけが、セキュリティで保護されたロック画面に表示されます。 通知メッセージではなくユーザーには、「この通知を表示する、デバイス ロック解除」が表示されます。
 
 ![デバイスの通知メッセージのロックを解除します。](local-notifications-images/25-lockscreen-private.png)
 
-この例で**NotificationsLab**発信元のアプリの名前を指定します。 通知の修正されたこのバージョンは、ロック画面がセキュリティで保護された場合にのみ表示されます (つまり、PIN、パターン、またはパスワードを使用して保護する)&ndash;通知の完全なコンテンツは、ロック画面で使用できる、ロック画面が安全でない場合。
+この例で**NotificationsLab**発信元のアプリの名前を指定します。 通知の修正されたこのバージョンでは、ロック画面がセキュリティで保護された場合にのみが表示されます (つまり、PIN、パターン、またはパスワードを使用して保護する)&ndash;通知の完全なコンテンツは、ロック画面で使用できる、ロック画面が安全でない場合。
 
 
 ### <a name="category-settings"></a>カテゴリの設定
@@ -755,9 +755,9 @@ if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
 この例では、アプリの**ターゲット フレームワーク**Android 5.0 に設定されていると、**最小 Android バージョン**に設定されている**Android 4.1 (API レベル 16)** します。 `SetCategory`は API レベル 21 以降で使用でき、このコード例が呼び出す`SetCategory`が使用可能な&ndash;は呼び出しません`SetCategory`API レベルが 21 未満の場合。
 
 
-### <a name="lockscreen-visibility"></a>ロック画面の表示
+### <a name="lock-screen-visibility"></a>ロック画面の表示
 
-Android では、Android 5.0 (API レベル 21) の前にロック画面通知をサポートしていないため、`NotificationCompat.Builder`はサポートしていません、`SetVisibility`メソッド。 前述のように`SetCategory`、コードが実行時と呼び出し API レベルを確認できます`SetVisiblity`が使用可能な。
+Android では、Android 5.0 (API レベル 21) の前にロック画面の通知をサポートしていないため、`NotificationCompat.Builder`はサポートしていません、`SetVisibility`メソッド。 前述のように`SetCategory`、コードが実行時と呼び出し API レベルを確認できます`SetVisiblity`が使用可能な。
 
 ```csharp
 if ((int) Android.OS.Build.Version.SdkInt >= 21) {
@@ -768,7 +768,7 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Android でのローカル通知を作成する方法について説明します。 通知の詳細を説明し、使用する方法について説明し`NotificationCompat.Builder`、通知を作成する大きなアイコンのスタイルの通知方法*大きなテキスト*、*イメージ*と*受信トレイ*形式、通知の優先度、可視性、およびカテゴリなどのメタデータの設定を設定する方法、および通知からアクティビティを起動する方法。 この記事でこれらの通知設定が新しいヘッドアップ、ロック画面を使用する方法についても説明し、*不可*Android 5.0 で導入された機能です。 最後に、使用する方法を学習しました`NotificationCompat.Builder`以前のバージョンの Android の通知の互換性を維持します。
+この記事では、Android でのローカル通知を作成する方法について説明します。 通知の詳細を説明し、使用する方法について説明し`NotificationCompat.Builder`、通知を作成する大きなアイコンのスタイルの通知方法*大きなテキスト*、*イメージ*と*受信トレイ*形式、通知の優先度、可視性、およびカテゴリなどのメタデータの設定を設定する方法、および通知からアクティビティを起動する方法。 この記事でこれらの通知設定が新しいヘッドアップ、画面のロックを扱う方法についても説明し、*不可*Android 5.0 で導入された機能です。 最後に、使用する方法を学習しました`NotificationCompat.Builder`以前のバージョンの Android の通知の互換性を維持します。
 
 Android 用の通知の設計に関するガイドラインについては、次を参照してください。[通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)します。
 
