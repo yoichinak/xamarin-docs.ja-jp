@@ -4,15 +4,15 @@ description: この記事では、任意の解像度と 1 つ Unified ストー�
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 40b8c38e89e96223bbf657ff06356d9fb2e9d9b3
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40250968"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116929"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS アプリの起動画面
 
@@ -28,7 +28,7 @@ IOS 8 の場合は、前に iOS アプリの起動画面を作成すると、さ
 
 Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメージを使用する代わりに起動画面を提供する特別な Unified ストーリー ボードを作成できます。 IOS Designer の起動のストーリー ボードを作成するときに、さまざまなディスプレイ環境ごとに異なるレイアウトを定義するのにクラスのサイズと自動レイアウトを使用します。 サイズ クラスおよび自動レイアウトを使用して、開発者はすべてのデバイス上で優れた外観を 1 つの起動画面を作成し、環境を表示できます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual studio for Mac では、選択して新しいプロジェクトを作成**ファイル > 新しいソリューション**し**単一ビュー アプリ**: 
 
@@ -95,7 +95,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
 
 13. ストーリー ボードに変更を保存します。 シミュレーターまたはデバイスでアプリを実行して、アプリが起動すると、起動画面が表示されます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 新しいプロジェクトを作成します。 Visual Studio で、次のように選択します**ファイル > 新規 > プロジェクト > Visual c# > iPhone と iPad > iOS アプリ (Xamarin)**:。
 
@@ -187,7 +187,7 @@ Unified ストーリー ボードの起動画面の作成の詳細について�
 
 ## <a name="migrating-to-launch-screen-storyboards"></a>画面のストーリー ボードの起動に移行します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 その起動画面のストーリー ボードを使用する既存のアプリを更新するときに右クリックして、**プロジェクト名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**.選択**iOS** > **起動画面** をクリックし、**新規**ボタン。
 
@@ -205,7 +205,7 @@ Unified ストーリー ボードの起動画面の作成の詳細について�
 
     ![](launch-screens-images/storyboard08.png "ストーリー ボードを起動画面の設定")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. プロジェクト名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**: 
 

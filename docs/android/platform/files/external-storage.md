@@ -4,15 +4,15 @@ description: このガイドは Xamarin.Android での外部ストレージに�
 ms.prod: xamarin
 ms.assetid: 40da10b2-a207-4f9c-a2dd-165d9b662f33
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 380100d38febf567fde94096455fd846d9d3d2d3
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212208"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116018"
 ---
 # <a name="external-storage"></a>外部ストレージ
 
@@ -140,13 +140,13 @@ Android を考慮する外部ストレージへのアクセス、_危険なア�
 > [!NOTE]
 > ユーザーによって付与される場合`WRITE_EXTERNAL_STORAGE`、し`READ_EXTERNAL_STORAGE`も暗黙的に与えられます。 両方のアクセス許可を要求する必要はありません**AndroidManifest.xml**します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 使用して、アクセス許可を追加することがありますも、 **Android マニフェスト**のタブ、**ソリューションのプロパティ**:
 
 ![ソリューション エクスプ ローラー - Visual Studio 2017 の必要なアクセス許可](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 使用して、アクセス許可を追加することがありますも、 **Android マニフェスト**のタブ、**ソリューション プロパティ パッド**:
 

@@ -1,54 +1,54 @@
 ---
 title: バインドします。JAR
-description: このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成するための手順を説明します。JAR ファイルです。
+description: このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成する手順が説明します。JAR ファイル。
 ms.prod: xamarin
 ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 2d9f2198dbb88e7614944ac73729a4e6eca42647
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 3c84b29807fd4a181ed867095645005bf9ba4df0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798380"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120009"
 ---
 # <a name="binding-a-jar"></a>バインドします。JAR
 
-_このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成するための手順を説明します。JAR ファイルです。_
+_このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成する手順が説明します。JAR ファイル。_
 
 ## <a name="overview"></a>概要
 
-Android のコミュニティには、アプリで使用することがある多数の Java ライブラリが用意されています。 これらの Java ライブラリは、多くの場合にパッケージ化します。JAR (Java アーカイブ) 形式では、パッケージ化します。JAR、 *Java バインド ライブラリ*その機能を Xamarin.Android アプリに使用できるようにします。 Java バインド ライブラリの目的は、Api を実行する、します。JAR ファイルが c# コードを自動的に生成されたラッパーを使用してコードを使用できます。
+Android のコミュニティには、アプリで使用することがあります多くの Java ライブラリが用意されています。 これらの Java ライブラリで多くの場合、パッケージ化されます。JAR (Java アーカイブ) 形式では、パッケージ化します。JAR を*Java バインド ライブラリ*の機能が Xamarin.Android アプリで使用できるようにします。 Java バインド ライブラリの目的は、Api を作成する、します。JAR ファイルを使用可能なC#を通じて自動的に生成されたコード ラッパー コード。
 
-Xamarin ツールでは、1 つまたは複数の入力からバインド ライブラリを生成できます。JAR ファイル。 バインドのライブラリ (です。DLL アセンブリ) には、次のものが含まれています。 
+Xamarin ツールは、1 つまたは複数の入力からバインド ライブラリを生成できます。JAR ファイル。 バインド ライブラリ (します。DLL アセンブリ) には、次のものが含まれています。 
 
 -   元の内容。JAR ファイル。
 
--   マネージ呼び出し可能ラッパー (MCW) は c# 型内で対応する Java の型をラップします。JAR ファイル。
+-   マネージ呼び出し可能ラッパー (MCW)、あるC#型内の対応する Java 型をラップします。JAR ファイル。
 
-MCW に生成されたコードでは、API 呼び出しを転送する JNI (Java ネイティブ インターフェイス) を使用して、基になります。JAR ファイルです。 任意のバインドのライブラリを作成できます。Android (Xamarin ツールが Android Java 以外のライブラリのバインドを現在サポートしていないことに注意してください) と共に使用する本来の目的 JAR ファイルです。 内容を含めずにバインディング ライブラリをビルドすることもできます、します。JAR ファイルが DLL に依存しているようにします。実行時に JAR します。
+MCW に生成されたコードでは、API の呼び出しを転送する JNI (Java ネイティブ インターフェイス) を使用して、基になります。JAR ファイル。 バインディング ライブラリは、いずれかを作成できます。Android (Xamarin ツールが非 Android Java ライブラリのバインドを現在サポートしていないことに注意してください) で使用する本来の目的を JAR ファイルです。 内容を含めずに、バインド ライブラリを構築することもできます、します。JAR ファイルを DLL に依存しているようにします。実行時に JAR です。
 
-このガイドでは 1 つのバインドのライブラリの作成の基本おステップをします。JAR ファイルです。 どこすべて移動右例と共にについて説明します&ndash;は、カスタマイズはまたはのバインディングのデバッグが必要な場所です。 
-[バインディングを使用してメタデータを作成する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)をバインディング プロセスは完全自動ではないと、ある程度の手動による介入が必要より高度なシナリオの例を提供します。 Java ライブラリ バインドの一般 (基本的なコード例では) の概要については、次を参照してください。[バインド Java ライブラリ](~/android/platform/binding-java-library/index.md)です。 
+このガイドでは、1 つのバインド ライブラリの作成の基礎を手順説明します。JAR ファイル。 すべてが適切な例について説明します&ndash;は、カスタマイズなしまたはバインドのデバッグが必要な場合。 
+[バインドを使用してメタデータを作成する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)バインド プロセスが完全に自動化し一定の手動による介入が必要です。 より高度なシナリオの例を示します。 Java ライブラリによるバインディングの一般 (基本的なコード例では) の概要については、次を参照してください。 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)します。 
 
  
 ## <a name="walkthrough"></a>チュートリアル
 
-次のチュートリアルを作成してバインド ライブラリ[ピカソ](http://square.github.io/picasso/)、人気のある Android。イメージの読み込みとキャッシュ機能を提供する JAR です。 次の手順を使ってバインドを**ピカソ 2.x.x.jar** Xamarin.Android プロジェクトで使用できる新しい .NET アセンブリを作成します。 
+次のチュートリアルでは、バインド ライブラリを作成します[ピカソ](http://square.github.io/picasso/)、人気のある Android。イメージの読み込みとキャッシュ機能を提供する JAR です。 次の手順を使用してバインドは**ピカソ 2.x.x.jar** Xamarin.Android プロジェクトで使用できる新しい .NET アセンブリを作成します。 
 
 1. 新しい Java バインド ライブラリ プロジェクトを作成します。
 
-2. 追加します。JAR ファイルをプロジェクト。
+2. 追加します。JAR ファイルをプロジェクトにします。
 
-3. 適切なビルド アクションを設定します。JAR ファイルです。
+3. 適切なビルド アクションを設定します。JAR ファイル。
 
 4. ターゲット フレームワークを選択します。JAR をサポートします。
 
-5. バインドのライブラリをビルドします。
+5. バインド ライブラリをビルドします。
 
-バインドのライブラリで作成した後は、バインドのライブラリの Api を呼び出すために機能を示す小さな Android アプリを作成おします。 この例でのメソッドにアクセスする必要が**ピカソ 2.x.x.jar**:
+バインド ライブラリを作成したら、バインド ライブラリ Api を呼び出すことを示す小規模な Android アプリを開発します。 この例でのメソッドにアクセスする**ピカソ 2.x.x.jar**:
 
 ```java
 package com.squareup.picasso
@@ -61,10 +61,9 @@ public class Picasso
     public RequestCreator load (String path) { ... };
     ...
 }
+```
 
-```csharp
-After we generate a Bindings Library for **picasso-2.x.x.jar**,
-we can call these methods from C#. For example:
+バインド ライブラリを生成後**ピカソ 2.x.x.jar**からこれらのメソッドを呼び出しC#します。 例えば:
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -76,68 +75,68 @@ Picasso.With (this)
 ```
 
 
-### <a name="creating-the-bindings-library"></a>バインドのライブラリを作成します。
+### <a name="creating-the-bindings-library"></a>バインド ライブラリを作成します。
 
-下記の手順を開始する前にダウンロード[ピカソ 2.x.x.jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)です。
+次の手順を開始する前にダウンロード[ピカソ 2.x.x.jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)します。
 
-最初に、新しいバインドのライブラリ プロジェクトを作成します。 Mac または Visual Studio の Visual Studio で新しいソリューションを作成し、選択、 *Android バインド ライブラリ*テンプレート。 (このチュートリアルのスクリーン ショットは、Visual Studio を使用して、Visual Studio for Mac は非常に似ています)。ソリューションの名前を付けます**JarBinding**: 
+最初に、新しいバインド ライブラリ プロジェクトを作成します。 Visual Studio for Mac または Visual Studio で新しいソリューションを作成し、選択、 *Android バインド ライブラリ*テンプレート。 (このチュートリアルのスクリーン ショットは、Visual Studio を使用して、Visual Studio for Mac は非常に似ています)。ソリューションの名前を**JarBinding**: 
 
 [![JarBinding ライブラリ プロジェクトを作成します。](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
-テンプレートに含まれる、 **Jar**フォルダーを追加する場所、します。バインドのライブラリ プロジェクトへ JAR(s) です。 右クリックし、 **Jar**フォルダーと選択**追加 > 既存の項目**: 
+テンプレートに含まれる、 **Jars**フォルダーを追加する、します。バインド ライブラリ プロジェクトに JAR(s) します。 右クリックし、 **Jars**フォルダーと選択**追加 > 既存項目の**: 
 
 [![既存の項目を追加する](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
-移動し、**ピカソ 2.x.x.jar**ファイルは事前にダウンロードして選択し、をクリックして**追加**: 
+移動し、**ピカソ 2.x.x.jar**ファイルが以前にダウンロードし、選択し、をクリックして**追加**: 
 
 [![Jar ファイルを選択し、[追加] をクリックしてください](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
-いることを確認、**ピカソ 2.x.x.jar**プロジェクトにファイルを正常に追加します。 
+いることを確認、**ピカソ 2.x.x.jar**ファイルがプロジェクトに正常に追加します。 
 
-[![プロジェクトに追加 jar](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
+[![Jar をプロジェクトに追加](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
-Java バインド ライブラリ プロジェクトを作成するときにする必要がありますを指定するかどうか、します。JAR は、バインド ライブラリに埋め込まれているか、個別にパッケージ化することです。 次のいずれかの手順を実行する指定した*ビルド アクション*: 
+指定する必要があります Java バインド ライブラリ プロジェクトを作成するときにするかどうか、です。JAR は、バインド ライブラリに埋め込むか、個別にパッケージ化することです。 次のいずれかには、指定した*ビルド アクション*: 
 
--   **EmbeddedJar** &ndash;します。バインド ライブラリ JAR が埋め込まれます。
+-   **EmbeddedJar** &ndash;します。JAR をバインド ライブラリで埋め込まれます。
 
--   **InputJar** &ndash;します。バインドのライブラリから個別 JAR が保持されます。
+-   **InputJar** &ndash;します。バインド ライブラリから個別 JAR が保持されます。
 
-通常は、使用、 **EmbeddedJar**ビルド アクションできるようにします。JAR はバインドのライブラリに自動的にパッケージ化します。 これは、最も簡単なオプション&ndash;で Java バイトコード、します。JAR では、Dex バイトコードに変換され、(管理された呼び出し可能ラッパー) と共に、APK に埋め込まれます。 保持する場合、します。バインド ライブラリから個別の JAR、使用することができます、 **InputJar**オプションです。 ただし、ことを確認します。JAR ファイルは、アプリを実行しているデバイスで使用できます。 
+通常、使用して、 **EmbeddedJar**ビルド アクションようにします。JAR はバインド ライブラリに自動的にパッケージ化します。 これは、最も簡単なオプション&ndash;Java バイトコードでします。JAR は、Dex バイトコードに変換され、(管理されている呼び出し可能ラッパー) と共に、APK に埋め込まれます。 保持する場合、します。バインド ライブラリから個別の JAR を使用することができます、 **InputJar**オプション。 ただし、を確認する必要があります、します。JAR ファイルは、アプリを実行しているデバイスで使用できます。 
 
 ビルド アクション設定**EmbeddedJar**: 
 
 [![EmbeddedJar ビルド アクションを選択します。](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
 
-次に、プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*です。 場合、します。JAR、Android Api を使用して、API レベルにターゲット フレームワークを設定します。JAR が必要です。 通常、開発者のします。どの API レベル (レベル) は、JAR ファイルをします。JAR と互換性が。 (ターゲット フレームワークの設定と全般の Android API レベルの詳細については、次を参照してください[Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)。)。
+次に、プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*します。 場合、します。JAR は、Android Api を使用して、API レベルにターゲット フレームワークを設定します。JAR が必要です。 開発者では通常、します。JAR ファイルはどの API レベル (レベル) を示しますが、します。JAR と互換性が。 (ターゲット フレームワークの設定と一般的な Android API レベルの詳細については、次を参照してください[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)。)。
 
-バインド ライブラリのターゲット API レベルの設定 (この例ではを使用している API レベル 19)。 
+バインド ライブラリのターゲット API レベルの設定 (この例で使用している API レベル 19)。 
 
-[![ターゲット API レベル 19 の API に設定](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
+[![ターゲット API レベル API 19 に設定](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
 
-最後に、バインド ライブラリをビルドします。 いくつかの警告メッセージが表示されますが、バインドのライブラリ プロジェクトは正常にビルドされ、出力が生成する必要があります。次の場所に DLL: **JarBinding/bin/Debug/JarBinding.dll**
+最後に、バインド ライブラリをビルドします。 一部の警告メッセージが表示されますが、バインド ライブラリ プロジェクトは正常にビルドされ、出力が生成する必要があります。次の場所に DLL: **JarBinding/bin/Debug/JarBinding.dll**
     
 
 
-### <a name="using-the-bindings-library"></a>バインドのライブラリを使用します。
+### <a name="using-the-bindings-library"></a>バインド ライブラリを使用します。
 
-これを使用します。Xamarin.Android アプリ内の DLL は、次を操作します。
+これを使用します。Xamarin.Android アプリで DLL を以下に示します。
 
-1.  バインドのライブラリへの参照を追加します。
+1.  バインド ライブラリへの参照を追加します。
 
-2.  呼び出しを行う、します。マネージ呼び出し可能ラッパーを介して JAR します。 
+2.  呼び出しを作成します。マネージ呼び出し可能ラッパーを介して JAR です。 
 
-次の手順でアプリケーションを作成した、最小限の画像を表示しダウンロード バインド ライブラリを使用する、 `ImageView`;「たいへん」内にあるコードは、します。JAR ファイルです。 
+次の手順では、ダウンロードにイメージを表示してバインド ライブラリを使用する最小のアプリを作成します、 `ImageView`;、「複雑」内にあるコードは。JAR ファイル。 
 
-最初に、バインドのライブラリを使用する新しい Xamarin.Android アプリを作成します。 ソリューションを右クリックし **新しいプロジェクトの追加**; 新しいプロジェクトの名前**BindingTest**です。 このアプリです。 このチュートリアルを簡略化するために、バインドのライブラリと同じソリューションで作成していますただし、バインド ライブラリを使用するアプリはでした、別のソリューションに代わりに、存在します。 
+最初に、バインド ライブラリを利用する新しい Xamarin.Android アプリを作成します。 ソリューションを右クリックして**新しいプロジェクトの追加**; 新しいプロジェクトの名前**BindingTest**します。 このチュートリアルでは; を簡略化するためにこのアプリ バインド ライブラリと同じソリューションで作成していますただし、バインド ライブラリを使用するアプリは、別のソリューションで代わりに、存在します。 
 
 [![新しい BindingTest プロジェクトを追加します。](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
-右クリックし、**参照**のノード、 **BindingTest**プロジェクトし、選択**の参照を追加しています.**:
+右クリックし、**参照**のノード、 **BindingTest**順に選択して**参照の追加.**:
 
 [![右の参照を追加します。](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
 
-チェック、 **JarBinding**先ほど作成したプロジェクトとクリック**OK**:
+チェック、 **JarBinding**前に作成したプロジェクトをクリックします**OK**:
 
 [![JarBinding プロジェクトを選択します。](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
 
@@ -162,13 +161,13 @@ Java バインド ライブラリ プロジェクトを作成するときにす�
 </LinearLayout>
 ```
 
-次の追加`using`ステートメントを**MainActivity.cs** &ndash; Java ベースのメソッドを簡単にアクセスできるようになります`Picasso`バインド ライブラリに存在するクラス。
+次の追加`using`ステートメント**MainActivity.cs** &ndash;に Java ベースのメソッドを簡単にアクセスが可能になります。`Picasso`バインド ライブラリ内にあるクラス。
 
 ```csharp
 using Com.Squareup.Picasso;
 ```
 
-変更、`OnCreate`メソッドを使用するように、 `Picasso` URL からイメージを読み込み、表示するクラス、 `ImageView`: 
+変更、`OnCreate`メソッドを使用するように、 `Picasso` URL からイメージを読み込み、表示するにはクラス、 `ImageView`: 
 
 ```csharp
 public class MainActivity : Activity
@@ -187,20 +186,20 @@ public class MainActivity : Activity
 }
 ```
 
-コンパイルし、実行、 **BindingTest**プロジェクト。 アプリが起動し、(ネットワークの状態) に応じて短い遅延の後に、ダウンロードして次のスクリーン ショットのようなイメージを表示にする必要があります。
+コンパイルし、実行、 **BindingTest**プロジェクト。 アプリは起動時に、および (ネットワークの状態) に応じての短い遅延の後に、ダウンロードして次のスクリーン ショットのようなイメージを表示にする必要があります。
 
 [![スクリーン ショットの BindingTest 実行](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
-おめでとうございます!  Java ライブラリを正常に連結されています。JAR し、Xamarin.Android アプリで使用します。
+おめでとうございます! Java ライブラリを正常に連結されています。JAR し、Xamarin.Android アプリで使用します。
  
  
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、サード パーティのバインドのライブラリを作成しました。JAR ファイル、バインド ライブラリ アプリに追加して、最小限のテストと、c# コードが内に存在する Java コードを呼び出すことを確認するアプリを実行します。JAR ファイルです。 
+このチュートリアルでは、サード パーティのバインド ライブラリを作成しました。最小限のテストをアプリにバインド ライブラリを追加する JAR ファイル、されことを確認するアプリを実行し、C#コード内に存在する Java コードを呼び出すことができます、します。JAR ファイル。 
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Java バインド ライブラリ (ビデオ) のビルド](https://university.xamarin.com/classes#10090)
+- [Java バインド ライブラリ (ビデオ) を構築](https://university.xamarin.com/classes#10090)
 - [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)

@@ -1,27 +1,27 @@
 ---
-title: アプリケーションのローカリゼーションおよび文字列のリソース
+title: アプリケーションのローカライズと文字列リソース
 ms.prod: xamarin
 ms.assetid: 374A9DA6-1853-8B98-6954-7FE3F591C07C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: cfb127500f919b61788087465700dfed213d5eb2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9d90e371199c8587d61199240523cf0a23f5efd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765855"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116525"
 ---
-# <a name="application-localization-and-string-resources"></a>アプリケーションのローカリゼーションおよび文字列のリソース
+# <a name="application-localization-and-string-resources"></a>アプリケーションのローカライズと文字列リソース
 
-アプリケーションのローカライズとは、特定の地域またはターゲット ロケールに代替のリソースを提供するのです。 たとえば、さまざまな国では、ローカライズされた言語識別文字列を指定する場合があります。 または色または特定のカルチャに合わせてレイアウトを変更する可能性があります。 Android では、読み込まれて、ソース コードを変更することがなくランタイム時に、デバイスのロケールに対応するリソースを使用します。
+アプリケーションのローカライズは、特定のリージョンまたはロケールを対象とする別のリソースを提供するのです。 たとえば、さまざまな国で、ローカライズされた言語の文字列を提供する可能性があります。 または色または特定のカルチャに合わせてレイアウトを変更する可能性があります。 Android は読み込むし、ランタイム時、ソース コードに何も変更せずに、デバイスのロケールの適切なリソースを使用します。
 
-たとえば、次の図は、次の 3 つの異なるデバイス ロケールで実行されている同じアプリケーションを示していますが、各ボタンに表示されるテキストは、各デバイスに設定されているロケール固有。
+たとえば、次の図は次の 3 つの別のデバイスのロケールで実行されている同じアプリケーションが、各ボタンに表示されるテキストは各デバイスに設定されているロケールに固有。
 
 [![次の 3 つの異なるロケールの例](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
 
-この例では、レイアウト ファイルの内容で**Main.axml**は次のようになります。
+この例では、レイアウト ファイルの内容で**Main.axml**ようになります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -39,13 +39,13 @@ android:text="@string/hello"
 </LinearLayout>
 ```
 
-上記の例では、ボタンの文字列から読み込まれたリソース文字列のリソース ID を提供することで。
+上記の例では、ボタンの文字列は、文字列のリソース ID を提供することで、リソースから読み込まれました。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![3 つの言語のリソース文字列](application-localization-images/02-resource-strings-vs.png)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![3 つの言語のリソース文字列](application-localization-images/02-resource-strings-xs.png)
  
@@ -53,9 +53,9 @@ android:text="@string/hello"
  
 ## <a name="localizing-android-apps"></a>Android アプリをローカライズします。
 
-読み取り、[ローカリゼーションの概要](~/cross-platform/app-fundamentals/localization.md)のヒントとモバイル アプリのローカライズに関するガイダンス。
+読み取り、[ローカリゼーションの概要](~/cross-platform/app-fundamentals/localization.md)のヒントとモバイル アプリのローカライズについて説明します。
 
-[に Android アプリをローカライズ](~/android/app-fundamentals/localization.md)ガイドには、文字列を翻訳および Xamarin.Android を使用してイメージをローカライズする方法のより具体的な例が含まれています。
+[Android アプリのローカライズ](~/android/app-fundamentals/localization.md)ガイドには、文字列の変換し、Xamarin.Android を使用してイメージをローカライズする方法の具体的な例が含まれています。
 
 
 

@@ -4,49 +4,49 @@ description: Xamarin.Android アプリの視覚的な構造を定義します。
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/18/2017
-ms.openlocfilehash: 01ea244c7480082f2b3b39c0bdae2bad6807aa6d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e0a9ce52d70079884e7960ccfee9eb7fcbb0f2fb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765120"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116486"
 ---
 # <a name="layouts"></a>レイアウト
 
-レイアウトは、(アクティビティ) などの画面の UI インターフェイスを構成する要素を配置に使用されます。 次のセクションでは、Xamarin.Android アプリでよく使用されるレイアウトを使用する方法を説明します。
+レイアウトは、画面 (アクティビティ) などの UI インターフェイスを構成する要素の配置に使用されます。 次のセクションでは、Xamarin.Android アプリで最もよく使われるレイアウトを使用する方法を説明します。
 
--   [LinearLayout](~/android/user-interface/layouts/linear-layout.md)ビュー グループで、線形の方向に垂直または水平方向にビューの子要素が表示されます。
+-   [LinearLayout](~/android/user-interface/layouts/linear-layout.md)は垂直方向または水平方向に線形の方向にビューの子要素を表示するビューのグループです。
 
-    ![線形のレイアウトの例](images/linear-layout.png)
+    ![線形レイアウトの例](images/linear-layout.png)
 
--   [[相対レイアウト]](~/android/user-interface/layouts/relative-layout.md)は相対的な位置の子要素を表示を表示するグループの表示。 ビューの位置は、兄弟要素に対して相対的に指定できます。
+-   [[相対レイアウト]](~/android/user-interface/layouts/relative-layout.md)は相対位置でビューの子要素を表示するビューのグループです。 ビューの位置は、兄弟要素に対して相対的に指定できます。
 
     ![相対的なレイアウトの例](images/relative-layout.png)
 
--   [レイアウト](~/android/user-interface/layouts/table-layout.md)行と列に子要素を表示を表示するビュー グループです。
+-   [TableLayout](~/android/user-interface/layouts/table-layout.md)は行と列でビューの子要素を表示するビューのグループです。
 
     ![テーブル レイアウトの例](images/table-layout.png)
 
--   [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)リストまたはユーザー コレクションのスクロールを有効にすると、グリッド項目のコレクションを表示する UI 要素です。
+-   [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)がリストまたはコレクションをスクロールするユーザーを有効にすると、グリッド項目のコレクションを表示する UI 要素。
 
-    ![例 Recycler ビュー](images/recycler-view.png)
+    ![Recycler ビューの例](images/recycler-view.png)
 
--   [ListView](~/android/user-interface/layouts/list-view/index.md)ビュー グループで、スクロール可能な項目のリストを作成します。 リスト項目は、リストのアダプターを使用して、リストに自動的に挿入されます。 `ListView` Android アプリケーションの重要な UI コンポーネントは、連絡先またはインターネットのお気に入りの長い一覧にメニュー オプションの短い一覧からすべての場所で使用されるためです。 いずれかの組み込みスタイルで書式設定したりできる広範なカスタマイズされた行のスクロール ボックスの一覧を表示する簡単な方法を提供します。 ListView のインスタンスには、行のビューに含まれるデータをフィードには、アダプターが必要です。
+-   [ListView](~/android/user-interface/layouts/list-view/index.md)はスクロール可能な項目のリストを作成するビューのグループです。 リスト項目はリストのアダプターを使用してリストに自動的に挿入されます。 `ListView` Android アプリケーションの重要な UI コンポーネントは、連絡先またはインターネットのお気に入りの長い一覧にメニュー オプションの短いリストからすべての場所で使用されています。 いずれかを組み込みスタイルで書式設定したりできる広範なカスタマイズが行のスクロール リストに表示する簡単な方法を提供します。 ListView のインスタンスでは、行ビューに含まれるデータを渡すためには、アダプターが必要です。
 
     ![リスト ビューの例](images/list-view.png)
 
--   [GridView](~/android/user-interface/layouts/grid-view.md)スクロール可能な 2 次元のグリッドでアイテムを表示する UI 要素です。
+-   [GridView](~/android/user-interface/layouts/grid-view.md)がスクロール可能な 2 次元グリッド内の項目を表示する UI 要素。
 
     ![グリッド ビューの例](images/grid-view.png)
 
--   [GridLayout](~/android/user-interface/layouts/grid-layout.md) HTML テーブルのような 2 次元のグリッド内のビューのレイアウトをサポートしているグループの表示がします。
+-   [GridLayout](~/android/user-interface/layouts/grid-layout.md)は、HTML テーブルと同様に、2 次元グリッド ビューのレイアウトをサポートするビューのグループです。
 
     ![グリッド レイアウトの例](images/grid-layout.png)
 
--   [タブ付きレイアウト](~/android/user-interface/layouts/tab-layout/index.md)簡潔さと使いやすさのためのモバイル アプリケーションの一般的なユーザー インターフェイスのパターンがします。 アプリケーションでのさまざまな画面間を移動する一貫性のある、簡単な方法を提供します。
+-   [レイアウトをタブ付き](~/android/user-interface/layouts/tab-layout/index.md)モバイル アプリケーションの一般的なユーザー インターフェイスのパターンを簡潔さと使いやすさのため、します。 アプリケーションのさまざまな画面間を移動する一貫性のある簡単な方法を提供します。
 
     ![タブ付きレイアウトの例](images/tabbed-layout.png)
  

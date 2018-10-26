@@ -1,64 +1,64 @@
 ---
-title: iOS Xamarin.iOS ゲーム Api
-description: この記事では、iOS 9 Xamarin.iOS ゲームのグラフィックスとオーディオ機能を向上させるために使用できるによって提供される新しいゲーム機能強化について説明します。
+title: iOS ゲーム Api Xamarin.iOS で
+description: この記事では、Xamarin.iOS ゲームのグラフィック、オーディオ機能を向上させるために使用できる iOS 9 によって提供される、新しいゲームの機能強化について説明します。
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 263c325816867e9eee32c92edf97f703b39bda7c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d8a531e495a19be7437d4a600e758028594248ab
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786861"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116005"
 ---
-# <a name="ios-gaming-apis-in-xamarinios"></a>iOS Xamarin.iOS ゲーム Api
+# <a name="ios-gaming-apis-in-xamarinios"></a>iOS ゲーム Api Xamarin.iOS で
 
-_この記事では、iOS 9 Xamarin.iOS ゲームのグラフィックスとオーディオ機能を向上させるために使用できるによって提供される新しいゲーム機能強化について説明します。_
+_この記事では、Xamarin.iOS ゲームのグラフィック、オーディオ機能を向上させるために使用できる iOS 9 によって提供される、新しいゲームの機能強化について説明します。_
 
-Apple には、技術的な改良がいくつか iOS 9 のゲームの Api に容易にする Xamarin.iOS アプリでは、ゲーム グラフィックスおよびオーディオを実装するが行われます。
-これらには、高度なフレームワークと速度の向上やグラフィック機能について、iOS デバイスの GPU の電源を利用することによる開発の両方の簡単操作が含まれます。
+Apple は iOS 9 での Api のゲーム プレイするゲームのグラフィックとオーディオを Xamarin.iOS アプリに実装するより簡単にするいくつかの技術的な強化されています。
+高レベルのフレームワークの速度の向上とグラフィック機能、iOS デバイスの GPU の力を活用して開発の両方の容易さが含まれます。
 
-[![](images/flocking01.png "群雄を実行しているアプリの例")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "群雄実行中のアプリの例")](images/flocking01.png#lightbox)
 
-金属、SceneKit SpriteKit の新しい、拡張機能と共に GameplayKit、ReplayKit、モデルの I/O、MetalKit およびメタル パフォーマンス シェーダーが含まれます。
+金属、SceneKit SpriteKit の新しい高度な機能と共に GameplayKit、ReplayKit、モデルの I/O、MetalKit および金属パフォーマンス シェーダーが含まれます。
 
-この記事ではすべての iOS 9 の新しいゲームが強化された、Xamarin.iOS ゲームを向上させる方法の説明します。
+この記事ではすべて iOS 9 の新しいゲームが強化された Xamarin.iOS ゲームを向上させる方法の紹介します。
 
 ## <a name="introducing-gameplaykit"></a>GameplayKit の概要
 
-Apple の新しい GameplayKit フレームワークでは、簡単に実装に必要な共通の反復的なコードの量を減らすと、iOS デバイス用のゲームを作成する一連のテクノロジを提供します。 GameplayKit をすばやく、簡単と組み合わせて使用できます (SceneKit や SpriteKit) などのグラフィック エンジン ゲームのしくみを開発するためのツールが完了したゲームを配信を提供します。
+新しい GameplayKit の Apple のフレームワークを実装に必要な繰り返し発生する、共通のコードの量を減らすことで、iOS デバイス用のゲームを作成するが容易にする一連のテクノロジを提供します。 GameplayKit (SceneKit SpriteKit など) のグラフィック エンジンと簡単に結合できますゲームのメカニズムについてを迅速に開発用のツールが完了したゲームを配信を提供します。
 
-ゲーム プレイ アルゴリズムのように、GameplayKit には、いくつかは、一般的なが含まれます。
+ゲーム プレイ アルゴリズムのなど、GameplayKit には、複数、一般的なが含まれます。
 
-- 動作に基づくエージェント シミュレーションの動きや AI を追求は自動的に目標を定義することができます。
-- ゲームのプレイを有効にするベースの minmax 人工知能です。
-- 緊急の動作を提供するあいまい理由でのゲームのロジックをデータ ドリブンのルール システムです。
+- 動作に基づくエージェント シミュレーションの動きと AI の追求が自動的に目標を定義することができます。
+- ターンベースのゲーム プレイの minmax 人工知能します。
+- 緊急の動作を提供するあいまいな裏付けとなるとゲーム ロジックをデータに基づくルール システム。
 
-さらに、GameplayKit は、次の機能を提供するモジュール式アーキテクチャを使用してゲームの開発にビルディング ブロック アプローチを受け取る。
+さらに、GameplayKit は、次の機能を提供するモジュール式アーキテクチャを使用してゲーム開発へビルディング ブロック アプローチを採用します。
 
-- 複雑な手続き型コードを処理するためのステート マシン ベースのゲームのプレイでのシステム。
-- ツールを提供するランダム化されたゲーム プレイと予測不可能な動作のデバッグの問題を引き起こすことがなくです。
-- 再利用可能なコンポーネント化されたエンティティ ベースのアーキテクチャです。
+- 複雑な手続き型コードを処理するためのステート マシン ベースのゲーム プレイ システム。
+- 提供するためのツールは、ゲーム プレイ、デバッグの問題を発生させることがなく予測不能性をランダム化します。
+- 再利用可能なコンポーネント化されたエンティティ ベースのアーキテクチャ。
 
-GameplayKit に関する詳細についてを参照してください Apple の[Gameplaykit プログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)と[GameplayKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)です。
+GameplayKit の詳細については、Apple を参照してください[Gameplaykit プログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)と[GameplayKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)します。
 
 ## <a name="gameplaykit-examples"></a>GameplayKit 例
 
-ゲーム プレイ キットを使用して、Xamarin.iOS アプリでのいくつかの単純なゲーム プレイ機構の実装の概要を見てみましょう。
+ゲームのプレイ kit を使用して Xamarin.iOS アプリでいくつかの単純なゲーム プレイ メカニズムの実装の概要を見てみましょう。
 
-### <a name="pathfinding"></a>経路
+### <a name="pathfinding"></a>Pathfinding
 
-経路は、その逆はゲーム ボードを検索するゲームの AI 要素の機能です。
-たとえば、2 D 敵迷路を通じてまたは最初のユーザー-シューティング world 地形を 3D 文字を検索します。
+Pathfinding そのゲーム ボードの回避策を探すには、ゲームの AI 要素の機能があります。
+たとえば、迷路の手段や最初パーソン-シューティング ゲームの世界の地形を 3D 文字 2D の敵です。
 
-次のマップを考慮してください。
+次のマップを検討してください。
 
-[![](images/gkpathfindpath.png "経路マップの例")](images/gkpathfindpath.png#lightbox)
+[![](images/gkpathfindpath.png "Pathfinding マップの例")](images/gkpathfindpath.png#lightbox)
 
-経路を使用してこの c# コードのマップを使用する方法があります。
+Pathfinding を使用してこのC#コードには、マップを使用する方法があります。
 
 ```csharp
 var a = GKGraphNode2D.FromPoint (new Vector2 (0, 5));
@@ -82,9 +82,9 @@ Console.WriteLine(String.Join ("->", (object[]) a2e));
 Console.WriteLine(String.Join ("->", (object[]) a2f));
 ```
 
-### <a name="classical-expert-system"></a>古典エキスパート システム
+### <a name="classical-expert-system"></a>従来のエキスパート システム
 
-C# コードの次のスニペットは、GameplayKit を使用して、古典エキスパート システムを実装する方法を示しています。
+次のスニペットC#GameplayKit を使用して、従来のエキスパート システムを実装する方法のコードに示します。
 
 ```csharp
 string output = "";
@@ -145,13 +145,13 @@ protected Func<GKRuleSystem, bool> mod(int m)
 }
 ```
 
-指定された一連のルールに基づく (`GKRule`) と既知の一連の入力、エキスパート システム (`GKRuleSystem`) 予測可能な出力が作成されます (`fizzbuzz`上記の例)。
+指定された一連のルールに基づいて (`GKRule`) と既知の一連の入力、エキスパート システム (`GKRuleSystem`) 予測可能な出力が作成されます (`fizzbuzz`上記の例)。
 
 ### <a name="flocking"></a>群雄
 
-群雄 AI のグループにグループを移動および鳥インフライトの群れや泳ぐ魚の学校のような潜在顧客エンティティの操作に応答する、群れとして動作するゲームのエンティティの制御を使用できます。
+群雄、AI のグループがゲームのエンティティをグループを移動およびフライトで鳥の群れや泳ぐ魚の学校のような潜在顧客エンティティの操作に応答する、群れのように動作を制御できます。
 
-C# コードの次のスニペットでは、GameplayKit と SpriteKit グラフィック表示を使用した群れの動作を実装します。
+次のスニペットC#コードが GameplayKit と SpriteKit を使用して、グラフィックスの表示の群れの動作を実装します。
 
 ```csharp
 using System;
@@ -365,114 +365,114 @@ public override void ViewWillLayoutSubviews ()
 }
 ```
 
-実行すると、少しアニメーション _"Boids"_ 指タップ周囲 flock されます。
+実行すると、少しアニメーション _"Boids"_ 本の指のタップ周囲 flock されます。
 
-[![](images/flocking01.png "少しアニメーション Boids は指タップ周囲 flock します。")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "もう少しアニメーション Boids は本の指のタップ周囲 flock します。")](images/flocking01.png#lightbox)
 
-### <a name="other-apple-examples"></a>その他の Apple 例
+### <a name="other-apple-examples"></a>Apple の他の例
 
-上記のサンプルに加えて Apple が c# と Xamarin.iOS にトランス コードは、次のサンプル アプリを指定します。
+上記のサンプルに加えて、Apple にトランス コードは、次のサンプル アプリが提供されるC#と Xamarin.iOS:
 
-- [FourInARow: GameplayKit Minmax ストラテジストを使用して相手 AI](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
+- [FourInARow: GameplayKit Minmax ストラテジストを使用して対戦相手の AI](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
 - [AgentsCatalog: GameplayKit エージェント システムを使用します。](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
-- [DemoBots: SpriteKit と GameplayKit クロスプラット フォーム ゲームの作成](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
+- [DemoBots: SpriteKit と GameplayKit クロス プラットフォーム ゲームを構築します。](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
 ## <a name="metal"></a>メタル
 
-IOS 9、Apple がいくつかの変更と追加するように行わメタル GPU にオーバーヘッドの少ないアクセスを提供します。 金属を使用することができますを最大化する、グラフィックスに iOS アプリのコンピューティング可能性です。
+Ios 9 で Apple が行われたいくつかの変更と追加メタル GPU にオーバーヘッドの少ないアクセスを提供します。 Metal を使用したグラフィックと、iOS アプリのコンピューティングの可能性を最大限ことができます。
 
 金属製のフレームワークには、次の新機能が含まれています。
 
 - 新しいプライベートと深度ステンシル テクスチャ OS X 用です。
-- 深さを分けてそれぞれの固定されるフロントとバック ステンシル値による品質の向上シャドウします。
-- 金属製の網かけの言語および標準ライブラリのメタル向上があります。
+- 奥行の固定されると、別の前面と背面ステンシル値による品質の向上シャドウします。
+- 金属製の網掛けの言語と標準ライブラリのメタル向上があります。
 - 計算シェーダーは、広範なピクセル形式をサポートします。
 
 ### <a name="the-metalkit-framework"></a>MetalKit フレームワーク
 
-MetalKit フレームワークでは、一連のユーティリティ クラスとメタルを iOS アプリで使用するために必要な作業量を減らす機能を提供します。 MetalKit では、次の 3 つの主要領域でサポートされています。
+MetalKit フレームワークでは、一連のユーティリティ クラスとメタルを使用して、iOS アプリケーションに必要な作業の量を減らす機能を提供します。 MetalKit は、次の 3 つの主要分野におけるサポートを提供します。
 
-1. 非同期のテクスチャがさまざまな PNG、JPEG、KTX PVR などの一般的な形式を含むソースからの読み込みです。
-2. 金属製の特定のモデルを処理するための資産を簡単にモデル I/O アクセスに基づいています。 これらの機能は、モデルの I/O メッシュとメタル バッファー間で効率的なデータ転送を実現する高最適化されています。
-3. 定義済みのメタル ビューと iOS アプリ内でのグラフィックのレンダリングを表示するために必要なコードの量を大幅に削減するビューの管理。
+1. 非同期のテクスチャのさまざまな PNG、JPEG、KTX PVR などの一般的な形式を含むソースからの読み込みです。
+2. 金属製の特定のモデルの処理のために資産を簡単にモデルの I/O のアクセスに基づいています。 これらの機能は、モデルの I/O のメッシュと金属バッファー間で効率的なデータ転送を提供する高い最適化されています。
+3. 金属製の定義済みのビューとビューの管理が、iOS アプリ内でのグラフィックのレンダリングを表示するために必要なコードの量を大幅に軽減します。
 
-MetalKit に関する詳細についてを参照してください Apple の[MetalKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/MetalKit/Reference/MTKFrameworkReference/index.html#//apple_ref/doc/uid/TP40015356)、[メタル プログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221)、[メタル フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalFrameworkReference/index.html#//apple_ref/doc/uid/TP40014161)と[メタル言語のガイドを網掛け](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)です。
+MetalKit の詳細については、Apple を参照してください[MetalKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/MetalKit/Reference/MTKFrameworkReference/index.html#//apple_ref/doc/uid/TP40015356)、[メタル プログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221)、[金属製のフレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalFrameworkReference/index.html#//apple_ref/doc/uid/TP40014161)と[メタルシェーディング言語ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)します。
 
-### <a name="metal-performance-shaders-framework"></a>金属パフォーマンス シェーダー フレームワーク
+### <a name="metal-performance-shaders-framework"></a>Metal シェーダー フレームワーク
 
-金属パフォーマンス シェーダー framework グラフィックスの高度に最適化セットを提供し、計算のベース シェーダー、金属で使用する iOS アプリのベースします。 金属で高いパフォーマンスを提供するフレームワークを具体的には調整されている、金属パフォーマンス シェーダーの各シェーダーでは、iOS の Gpu がサポートされています。
+金属パフォーマンス シェーダー フレームワークは、高度に最適化された一連のグラフィックを提供し、ベースのコンピューティング、金属で使用するためのシェーダー ベースの iOS アプリ。 メタルの高パフォーマンスを提供するフレームワークが具体的には調整されてメタル パフォーマンス シェーダーの各シェーダーには、iOS の Gpu がサポートされています。
 
-金属パフォーマンス シェーダー クラスを使用すると、対象として、個々 のコード ベースを管理することがなく各特定 iOS GPU で可能な最高のパフォーマンスを実現できます。 金属製のパフォーマンス シェーダーは、バッファー、テクスチャなどの任意のメタル リソースで使用できます。
+金属パフォーマンス シェーダー クラスを使用すると、対象として、個々 のコード ベースを管理することがなく各特定の iOS GPU で考えられる最高のパフォーマンスを実現できます。 金属製のパフォーマンスのシェーダーは、バッファー、テクスチャなど、金属製のリソースで使用できます。
 
-金属パフォーマンス シェーダー フレームワークでは、共通のシェーダーなどのセットを提供します。
+金属パフォーマンス シェーダー framework などの一般的なシェーダーのセットが用意されています。
 
-- **ガウスのぼかし**(`MPSImageGaussianBlur`)
-- **Sobel エッジの検知**(`MPSImageSobel`)
-- **画像のヒストグラム**(`MPSImageHistogram`)
+- **ガウスぼかし**(`MPSImageGaussianBlur`)
+- **Sobel エッジ検出**(`MPSImageSobel`)
+- **イメージのヒストグラム**(`MPSImageHistogram`)
 
-詳細については、Apple を参照してください[メタル網掛け言語ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)です。
+詳細については、Apple を参照してください[メタル シェーディング言語ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)します。
 
 ## <a name="introducing-model-io"></a>モデルの I/O の概要
 
-Apple のモデルの I/O のフレームワークでは、モデルとその関連リソース) などの 3D アセットの深い理解を提供します。 モデルの I/O は、モデルおよび照明 GameplayKit、金属 SceneKit と使用できる物理ベース品に iOS ゲームを提供します。
+Apple のモデルの I/O のフレームワークでは、(モデルとその関連リソース) などの 3D アセットの深い理解を提供します。 モデルの I/O は、モデルとライティング GameplayKit、金属製および SceneKit を使用できる物理ベース資料で iOS ゲームを提供します。
 
-モデルの I/O で、次の種類のタスクをサポートできます。
+モデルの I/O では、次の種類のタスクをサポートできます。
 
-- 照明を有するマテリアルをインポート、データ、カメラの設定、およびさまざまな一般的なソフトウェアおよびゲーム エンジン形式から他のシーン ベースの情報をメッシュです。
-- プロシージャの作成などのテクスチャ sky ドームまたはメッシュに照明を組み込むことがシーン ベースの情報を生成または処理します。
-- MetalKit SceneKit、GLKit に効率的にゲーム アセットを表示するためのバッファーを GPU に読み込むと連動します。
-- シーン ベースの情報をさまざまな一般的なソフトウェアおよびゲーム エンジン形式にエクスポートします。
+- ライト、マテリアルをインポート、データ、カメラの設定、およびさまざまな人気のあるソフトウェアとゲーム エンジン形式からの他のシーンに基づく情報をメッシュです。
+- 処理または sky ドームまたはメッシュに照明作成テクスチャ手続きの作成など、シーンに基づく情報を生成します。
+- レンダリングのバッファーを GPU に効率的にゲーム アセットを読み込むには、MetalKit、SceneKit および GLKit で動作します。
+- シーンに基づく情報をさまざまな人気のあるソフトウェアとゲーム エンジンの形式にエクスポートします。
 
-モデルの I/O の詳細については、Apple を参照してください[モデル I/O Framework リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/ModelIO/Reference/ModelIO_Framework/index.html#//apple_ref/doc/uid/TP40015421)
+モデルの I/O の詳細については、Apple を参照してください[モデル I/O のフレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/ModelIO/Reference/ModelIO_Framework/index.html#//apple_ref/doc/uid/TP40015421)
 
 ## <a name="introducing-replaykit"></a>ReplayKit の概要
 
-Apple の新しい ReplayKit フレームワークを使用すると、簡単に iOS ゲームにゲームの記録を追加して、ユーザーが迅速かつ簡単に編集し、アプリ内からこのビデオを共有できるようにできます。
+新しい ReplayKit の Apple のフレームワークを使用すると、簡単に、iOS ゲームをゲーム プレイの記録を追加し、迅速かつ簡単に編集し、アプリ内からこの動画を共有するユーザーを許可することができます。
 
-詳細については、Apple を参照してください[ReplayKit とゲーム センターのビデオでは、ソーシャル移動](https://developer.apple.com/videos/wwdc/2015/?id=605)され、その[DemoBots: 構築、クロス プラットフォームと使用したゲーム SpriteKit GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリ。
+詳細については、Apple を参照してください[ReplayKit と Game Center のビデオでソーシャル機能と](https://developer.apple.com/videos/wwdc/2015/?id=605)とその[DemoBots: SpriteKit と GameplayKit とクロス プラットフォーム ゲームを構築](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリです。
 
 ## <a name="scenekit"></a>SceneKit
 
-シーン キットは 3D シーン グラフを 3D 画像の操作を簡略化する API です。 OS X 10.8 で初めて導入されましたし、iOS 8 に来たようになりました。 シーン キット イマーシブ 3D 視覚エフェクトとカジュアル 3D ゲームを作成する必要はありません OpenGL の専門知識。 シーン graph の一般的な概念を構築、シーン キットを抽象 OpenGL と非常に簡単に行う追加 3D コンテンツをアプリケーションに OpenGL ES の複雑な作業です。 ただし、OpenGL エキスパートの場合は、シーン キットによっても OpenGL と直接に結び付けることのサポートがあります。 また、物理学など、3 D グラフィックスを補足する多数の機能が含まれていて、いくつか他の Apple などのフレームワーク、コア アニメーション、Core のイメージおよびスプライト キット予算との統合します。
+シーンのキットは、3 D シーン グラフの 3D グラフィックスの操作を簡素化する API です。 OS X 10.8 で初めて導入し、iOS 8 に来たようになりました。 シーンのキットで没入型の 3D 視覚化およびカジュアルの 3D ゲームの作成は必要ありません OpenGL の専門知識。 シーン グラフの一般的な概念に基づき、シーンのキットを抽象 OpenGL やことが非常に簡単に追加する 3D コンテンツをアプリケーションに、OpenGL ES の複雑さです。 ただし、OpenGL の専門家の場合は、シーン キットも OpenGL と直接リンク付けするための優れたサポートしています。 また、物理学などの 3D グラフィックスを補完する多数の機能が含まれていて、いくつかその他の Apple などのフレームワーク コア アニメーション、Core イメージおよび Sprite Kit と非常にうまく連携します。
 
 詳細についてを参照してください、 [SceneKit](~/ios/platform/gaming/scenekit.md)ドキュメント。
 
 ### <a name="scenekit-changes"></a>SceneKit 変更
 
-Apple が iOS 9 の SceneKit に次の新機能を追加します。
+Apple が ios 9、SceneKit に次の新機能を追加します。
 
-- Xcode では、Xcode 内から直接シーンを編集することによって、ゲームや対話型の 3D アプリを迅速に構築できるようにするシーン エディターが用意されています。
-- `SCNView`と`SCNSceneRenderer`クラスを使用して (サポートされている iOS デバイス上) の金属製のレンダリングを有効にすることができます。
-- `SCNAudioPlayer`と`SCNNode`クラスを使用して、自動的に iOS アプリにプレーヤーの位置を追跡する空間のオーディオ エフェクトを追加することです。
+- Xcode は、シーン エディターから直接 Xcode 内でのシーンを編集することによって、ゲームや対話型の 3D アプリをすばやく構築することができますを提供します。
+- `SCNView`と`SCNSceneRenderer`(サポートされている iOS デバイス) 上でのベアメタルのレンダリングを有効にするクラスを使用できます。
+- `SCNAudioPlayer`と`SCNNode`プレイヤーの位置を iOS アプリに自動的に追跡する空間のオーディオ効果を追加するクラスを使用できます。
 
-詳細についてを参照してください、 [SceneKit ドキュメント](~/ios/platform/introduction-to-ios8.md#scenekit)と Apple の[SceneKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)と[Fox: SceneKit ゲームの Xcode シーン エディターを使用して構築](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)サンプル プロジェクト。
+詳細についてを参照してください、 [SceneKit ドキュメント](~/ios/platform/introduction-to-ios8.md#scenekit)と Apple の[SceneKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)と[Fox: SceneKit ゲームで、Xcode シーン エディター](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)サンプル プロジェクト。
 
 ## <a name="spritekit"></a>SpriteKit
 
-スプライト キット、Apple から 2D ゲーム フレームワークには、iOS 8 および OS X Yosemite のいくつか興味深いの新機能があります。 これらには、シーン キット、シェーダーのサポート、照明、影、制約、法線マップの生成、および物理学の機能強化との統合が含まれます。 具体的には、物理的な特性の新機能を使用すると、非常に簡単にゲームに現実的な効果を追加します。
+Sprite Kit、apple の 2D ゲーム フレームワークでは、いくつかの興味深い新機能では、iOS 8 および OS X Yosemite が。 シーンのキット、シェーダーのサポート、照明、影、制約、法線マップの生成、および物理学の機能強化との統合が含まれます。 具体的には、物理運動の新機能を使用すると、非常に簡単にゲームにリアルな効果を追加します。
 
 詳細についてを参照してください、 [SpriteKit](~/ios/platform/gaming/spritekit.md)ドキュメント。
 
-### <a name="spritekit-changes"></a>SpriteKit 変更
+### <a name="spritekit-changes"></a>SpriteKit の変更
 
 Apple が iOS 9 の SpriteKit に次の新機能を追加します。
 
-- プレーヤーの位置を自動的に追跡空間のオーディオ エフェクト、`SKAudioNode`クラスです。
-- Xcode は、シーンのエディターとを簡単に 2D ゲームとアプリ作成アクション エディターに今すぐ機能します。
-- カメラの新しいノードのサポートのゲームを簡単にスクロール (`SKCameraNode`) オブジェクト。
-- 金属をサポートする iOS デバイスで SpriteKit は自動的の使用レンダリングでは、カスタムの OpenGL ES シェーダーを使用している場合でもです。
+- プレイヤーの位置を自動的に追跡する空間のオーディオ エフェクト、`SKAudioNode`クラス。
+- Xcode のシーン エディターとを簡単に 2D ゲームとアプリ作成アクション エディター機能ようになりました。
+- 新しいカメラのノードを持つゲームのサポートを簡単にスクロール (`SKCameraNode`) オブジェクト。
+- 金属をサポートする iOS デバイスで SpriteKit が自動的に使用が、表示用 OpenGL ES のカスタムのシェーダーを既に使用していた場合でもです。
 
-詳細についてを参照してください、 [SpriteKit ドキュメント](~/ios/platform/introduction-to-ios8.md#spritekit)Apple の[SpriteKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)され、その[DemoBots: SpriteKit とクロス プラットフォーム ゲームを作成し、GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリケーションです。
+詳細についてを参照してください、 [SpriteKit ドキュメント](~/ios/platform/introduction-to-ios8.md#spritekit)Apple の[SpriteKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)とその[DemoBots: SpriteKit とクロス プラットフォーム ゲームを構築し、GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリです。
 
 ## <a name="summary"></a>まとめ
 
-この記事は、新しいカバーされて、Xamarin.iOS アプリを iOS 9 で提供されるゲーム機能します。
-これを導入 GameplayKit しモデル I/O です。金属; する主な機能強化および SceneKit と SpriteKit の新機能です。
+この記事では、新しいでカバーされて、Xamarin.iOS アプリをゲーム機能を iOS 9 を提供します。
+GameplayKit とモデルの I/O; がで導入されました金属の主な機能強化である SceneKit と SpriteKit の新機能です。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [開発者向けの iOS 9](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

@@ -1,111 +1,111 @@
 ---
-title: 32/64 ビット プラットフォームの考慮事項
-description: このドキュメントでは、Xamarin.iOS や Xamarin.Mac アプリケーションの 32 ビットおよび 64 ビットのアーキテクチャを対象とする場合に留意するさまざまな考慮事項について説明します。
+title: 32/64 ビットのプラットフォームに関する考慮事項
+description: このドキュメントでは、Xamarin.iOS または Xamarin.Mac アプリケーションの 32 ビットおよび 64 ビットのアーキテクチャを対象とする場合に留意するさまざまな考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-author: bradumbaugh
-ms.author: brumbaug
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: c722efc0bc6e8a4ea29af603f88c0e0644c2ed8c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 31eb0bfae58ecdca40548e46d1d9d95828be67b4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781550"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120100"
 ---
-# <a name="3264-bit-platform-considerations"></a>32/64 ビット プラットフォームの考慮事項
+# <a name="3264-bit-platform-considerations"></a>32/64 ビットのプラットフォームに関する考慮事項
 
-IOS や macOS がこれまでサポートされている 32 と 64 ビットの両方のアプリ、Apple が徐々 に 32 ビットをサポートする推奨されなくなりました。
+IOS および macOS では、32 と 64 ビットの両方のアプリをサポートすることがこれまで、中に、Apple が徐々 に 32 ビットのサポートが非推奨です。
 
-11、iOS の時点で 32 ビット アプリは起動されなく、および[アプリ ストアへの送信は、64 ビットをサポートする必要があります](https://developer.apple.com/news/?id=06282017b)です。
+IOS 11、時点では 32 ビット アプリは起動されなく、および[App Store への送信が 64 ビットをサポートする必要があります](https://developer.apple.com/news/?id=06282017b)します。
 
-以降では、年 2018年 1 月[Mac App Store に送信された新しいアプリは、64 ビットをサポートする必要があります](https://developer.apple.com/news/?id=06282017a)、年 2018年 6 月で既存のアプリを更新する必要があります。
+2018 年 1 月以降[Mac App Store に送信される新しいアプリが 64 ビットをサポートする必要があります](https://developer.apple.com/news/?id=06282017a)2018 年 6 月で既存のアプリを更新する必要があります。
 
-Xamarin の Classic API (`XamMac.dll`と`monotouch.dll`) のみの 32 ビット アプリケーションをサポートします。 ただし、新しい Xamarin.Mac、Xamarin.iOS およびアプリケーションを使用して、 [Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS`と`Xamarin.Mac`) 既定とそのため、32 と 64 ビット、必要に応じて、ターゲットを実行できます。
+Xamarin のクラシック API (`XamMac.dll`と`monotouch.dll`) のみの 32 ビット アプリケーションをサポートします。 ただし、新しい Xamarin.iOS および Xamarin.Mac アプリケーションを使用して、 [Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS`と`Xamarin.Mac`) 既定では、したがって 32 と 64 ビット、必要に応じて、ターゲットにできます。
 
 ## <a name="ios"></a>iOS
 
 <a name="enable-64" />
 
-### <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin.iOS アプリのビルド時に 64 ビットの有効化
+### <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin.iOS アプリのビルドを 64 ビットの有効化
 
 > [!WARNING]
-> このセクションでは、履歴上の理由、および Unified API に古い Xamarin.iOS プロジェクトを移動し、64 ビットをサポートするために含まれます。 すべての新しい Xamarin.iOS プロジェクトでは、既定では、Unified API と 64 ビットのターゲットが使用されます。
+> このセクションでは、歴史的な理由から、および Unified API に旧バージョンの Xamarin.iOS プロジェクトを移動すると、64 ビットのサポートに含まれます。 すべての新しい Xamarin.iOS プロジェクトでは、Unified API とターゲット 64 ビットを既定で使用されます。
 
-Xamarin.iOS モバイル アプリケーションでは、Unified API に変換されたの開発者は 64 ビットのターゲットをビルド設定を手動で更新する必要があります。
+Unified API に変換された Xamarin.iOS モバイル アプリケーション、開発者はビルド設定を 64 ビットをターゲットに手動で更新する必要があります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **ソリューション パッド**、ダブルクリックして、アプリのプロジェクトを開くには、**プロジェクト オプション**ウィンドウです。
-2. 選択**iOS ビルド**です。
-3. IPhone シミュレーター用で、**サポートされているアーキテクチャ**ドロップダウン リストで、いずれかを選択**x86\_64**または**i386 + x86\_64**:
+1. **Solution Pad**、アプリのプロジェクトを開く をダブルクリック、**プロジェクト オプション**ウィンドウ。
+2. 選択**iOS ビルド**します。
+3. IPhone シミュレーター用で、**サポートされているアーキテクチャ**ドロップダウンで、いずれかを選択**x86\_64**または**i386 + x86\_64**:
 
    [![サポートされているアーキテクチャを x86 に設定\_64 または i386 + x86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
-4. 物理デバイスの場合、使用可能なのいずれかを選択**ARM64**の組み合わせ。
+4. 物理デバイスは、使用可能ないずれかを選択**ARM64**の組み合わせ。
 
-   [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定](Images/Image02.png "ARM64 組み合わせのいずれかに設定がサポートされているアーキテクチャ")](Images/Image02-large.png#lightbox)
+   [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する](Images/Image02.png "ARM64 の組み合わせのいずれかに設定がサポートされているアーキテクチャ")](Images/Image02-large.png#lightbox)
 
 5. **[OK]** をクリックします。
 6. クリーン ビルドを実行します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューション エクスプ ローラー**をアプリのプロジェクトを右クリックし、**プロパティ**です。
-2. 選択**iOS ビルド**です。
-3. Iphone シミュレーターでは、次のように設定します**サポートされているアーキテクチャ**いずれかに**x86\_64**または**i386 + x86\_64**:。 
+1. **ソリューション エクスプ ローラー**をアプリのプロジェクトを右クリックし、**プロパティ**します。
+2. 選択**iOS ビルド**します。
+3. IPhone シミュレーターでは、設定**サポートされているアーキテクチャ**いずれかに**x86\_64**または**i386 + x86\_64**: 
 
    [![サポートされているアーキテクチャを x86_64 または i386 + x86 に設定\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
-4. 物理デバイスの場合、使用可能なのいずれかを選択**ARM64**の組み合わせ。
+4. 物理デバイスは、使用可能ないずれかを選択**ARM64**の組み合わせ。
     
-   [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定](Images/VS01.png "ARM64 組み合わせのいずれかに設定がサポートされているアーキテクチャ")](Images/VS01-large.png#lightbox)
+   [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する](Images/VS01.png "ARM64 の組み合わせのいずれかに設定がサポートされているアーキテクチャ")](Images/VS01-large.png#lightbox)
 
 5. 変更内容を保存します。
 6. クリーン ビルドを実行します。
 
 -----
 
-ARMv7s は、iPhone 5 (またはそれ以上) に含まれる A6 プロセッサでのみサポートされます。 常に ARMv7 コードは高速であり、ARMv6 よりも小さい、のみ iPhone 3GS 以降の動作および iPad または iOS の最小バージョン 5.0 の対象とする場合に、Apple が必要です。 ARMv6 では、すべてのデバイスでも動作しますが、Xcode 4.5 以降に付属するコンパイラではサポートされなくです。 
+ARMv7s は、iPhone 5 (またはそれ以上) に含まれる A6 プロセッサでのみサポートされます。 ARMv7 コードは、ARMv6 より小さくて高速です、のみ iPhone 3GS 以降の機能および iPad または最低限の iOS バージョン 5.0 の対象とする場合に、Apple が必要です。 ARMv6 では、すべてのデバイスで機能しますが、Xcode 4.5 以降に付属するコンパイラではサポートされなく。 
 
-ARM64 は iPhone 6 またはその他の 64 ビットのデバイスで iOS 8 をサポートするために必要なし、新規または iTunes App Store でアプリケーションを終了して更新を送信するときに Apple によって必要があります。
+ARM64 は iPhone 6、またはその他の 64 ビットのデバイスで iOS 8 をサポートするために必要なし、新規または iTunes App Store でアプリケーションを終了して更新を送信するときに、Apple で必要になります。
 
-さまざまな iOS デバイスの機能の包括的なについては、チェックは、Apple のアウト[デバイス互換性](https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html)ドキュメント。
+Apple の確認、さまざまな iOS デバイスの機能の包括的なについては、[デバイスとの互換性](https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html)ドキュメント。
 
-### <a name="64-bit-and-binary-size-increases"></a>64 ビット版とバイナリのサイズを増加します。
+### <a name="64-bit-and-binary-size-increases"></a>64 ビット版とバイナリのサイズが増加
 
-32 ビットから 64 ビットへの iOS から Apple の遷移中には、アプリは、32 ビットおよび 64 ビットの両方のハードウェア上で実行する必要があります。 このためは、Xamarin の Unified API は、両方を対象とする開発者をできます。
+32 ビットから 64 ビット iOS Apple の遷移中には、アプリは、32 ビットと 64 ビットの両方のハードウェア上で実行する必要があります。 このためは、Xamarin の Unified API には、両方を対象とする開発者が使用できます。
 
-32 ビットおよび 64 ビット アーキテクチャの両方を対象とすると、アプリケーションのサイズが大幅に向上します。 ただし、そのためは新しいデバイスを許可する古いデバイスをサポートしながら、最適化されたコードを実行します。
+32 ビットと 64 ビットの両方のアーキテクチャを対象とすると、アプリケーションのサイズが大幅に向上します。 ただし、そのため、古いデバイスをサポートしながら、最適化されたコードを実行する新しいデバイスできます。
 
 > [!IMPORTANT]
-> 場合は、iTunes App Store に iOS アプリケーションを送信するときに、次のメッセージが表示される _"警告 ITMS 9000: 64 ビットのサポートがありません。アプリ ストアにアップロードされたアプリでは 2015 年 2 月 1 日の新しい iOS を開始、64 ビット サポートを含める必要があります、8 SDK、Xcode 6 以降が含まれている ios ビルドします。有効にする 64 ビットのプロジェクトで使用をお勧め Xcode ビルド「標準的なアーキテクチャ」の設定の既定値を 1 つのバイナリを 32 ビットおよび 64 ビットの両方のコードをビルドします"。_ サポートされているアーキテクチャを使用可能なのいずれかに切り替える必要がある**ARM64**組み合わせ (上記のように)、再コンパイルおよび再実行してください。
+> ITunes App Store に iOS アプリケーションを送信するときに、次のメッセージが表示される場合 _"警告 ITMS 9000: 64 ビットのサポートがありません。2015 年 2 月 1 日の新しい iOS の開始、App Store にアップロードされたアプリは 64 ビットのサポートを含める必要があり、8 SDK、Xcode 6 以降に含まれる、iOS のビルドです。有効にするプロジェクトで、64 ビットをお勧め既定の Xcode ビルドの「標準的なアーキテクチャ」の設定を使用して 1 つのバイナリを 32 ビットと 64 ビットの両方のコードをビルドする"。_ サポートされているアーキテクチャを利用可能ないずれかに切り替える必要がある**ARM64**組み合わせ (前述のように)、再コンパイルと再送信します。
 
 ## <a name="mac"></a>Mac
 
 > [!IMPORTANT]
-> 年 2018年 1 月以降、Mac App Store に送信されたすべての新しい Mac アプリケーションは 64 ビットをサポートする必要があります。 既存の Mac App Store アプリ、その更新プログラムは年 2018年 6 月で 64 ビットの起動をサポートする必要があります。 参照してください[Apple のアナウンス](https://developer.apple.com/news/?id=06282017a)と[を 64 ビット Xamarin.Mac アプリを更新する方法について説明するガイド](~/cross-platform/macios/32-and-64/mac-64-bit.md)です。
+> 2018 年 1 月以降、Mac App Store に送信されたすべての新しい Mac アプリは 64 ビットをサポートする必要があります。 既存の Mac App Store アプリ、その更新プログラムは 2018 年 6 月で 64 ビットの起動をサポートする必要があります。 参照してください[Apple の発表](https://developer.apple.com/news/?id=06282017a)と[を 64 ビット、Xamarin.Mac アプリを更新する方法を説明するガイド](~/cross-platform/macios/32-and-64/mac-64-bit.md)します。
 
-最新の Mac コンピューターでは、32 ビットと 64 ビットの両方のアプリケーションをサポートします。   MacOS 10.6 (ユキヒョウ) は、32 ビット システムで実行する最後のオペレーティング システムをでした。   ほとんどの mac コンピューターのリリース以降に 2010 で両方のシステムはサポートします。
+ほとんどの最新の Mac コンピューターでは、32 ビットと 64 ビットの両方のアプリケーションをサポートします。   MacOS 10.6 (雪ヒョウ柄) は、32 ビット システムで実行する最後のオペレーティング システムをでした。   ほとんどの Mac 2010 両方のシステムをサポートするためにリリースします。
 
-異なり、iOS の macOS の最近のバージョンで導入された新しいフレームワークの多くは、のみサポート (CloudKit、EventKit GameController、LocalAuthentication、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、ソーシャル、64 ビット モードでその他の MapKit)。
+異なり iOS、macOS の最新バージョンで導入された新しいフレームワークの多くがのみサポート (CloudKit、EventKit GameController、LocalAuthentication、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、ソーシャル、64 ビット モードでおよび 他のユーザーの間での MapKit) で変更します。
 
-Unified API により、開発者を生成するアプリケーションの種類を選択します。 32 ビットまたは 64 ビット。
+Unified API を生成するアプリケーションの種類を選択する開発者を許可する: 32 ビットまたは 64 ビット。
 
-**32 ビット アプリケーション**32 ビットおよび 64 ビットの両方の Mac コンピューターで実行は、32 ビットに制限されるアドレス空間を持っておよびすべてのライブラリが 32 ビットである必要があります。
+**32 ビット アプリケーション**は 32 ビットと 64 ビットの両方の Mac コンピューターで実行、アドレス空間を 32 ビットに制限していて、すべてのライブラリが 32 ビットである必要があります。
 
-小さい、ダウンロードする場合、64 ビット モードで実行されている 32 ビットの依存関係がある場合、または 64 ビットへ移行するパフォーマンス上の利点がない場合は、通常このモードを使用するされます。
+64 ビット モードで実行されている 32 ビットの依存関係がある場合より小さいダウンロードする場合、または 64 ビットに移行する際にパフォーマンス上の利点がない場合に通常、このモードを使用します。
 
-このモードが macOS Mavericks および macOS Yosemite で使用できる多くのフレームワークを使用することはできませんとを制限します。
+このモードは、macOS Mavericks および macOS Yosemite で使用できる多くのフレームワークを使用することはできません。 が制限されます。
 
-**64 ビット アプリケーション**64 ビット Mac のデバイスでのみ実行されます。
+**64 ビット アプリケーション**は 64 ビット Mac デバイスでのみ実行します。
 
-Mac、これは、推奨されるモードの操作の使用中のほとんどの Mac が今日 64 ビット モードをサポートし、Apple によって提供されるフレームワークの完全なセットへのアクセスがあるようです。
+For Mac では、これは、優先モード操作の現在サポートして 64 ビット モードでは、使用中のほとんどの Mac と Apple によって提供されるフレームワークの完全なセットへのアクセスがあります。
 
-### <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Xamarin.Mac アプリのビルド時に 64 ビットの有効化
+### <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Xamarin.Mac アプリのビルドを 64 ビットの有効化
 
-Xamarin.Mac を使用して 64 ビット アプリケーションを構築する方法の詳細についてを参照してください、[を 64 ビット アプリケーションの更新 Xamarin.Mac Unified](~/cross-platform/macios/32-and-64/mac-64-bit.md)ガイドです。
+Xamarin.Mac を使用して 64 ビット アプリケーションを構築する方法の詳細についてを参照してください、[を 64 ビット アプリケーションの更新 Xamarin.Mac Unified](~/cross-platform/macios/32-and-64/mac-64-bit.md)ガイド。
 
 ## <a name="related-links"></a>関連リンク
 
-- [従来の vs Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [クラシックと Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

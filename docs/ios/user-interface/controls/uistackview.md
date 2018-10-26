@@ -5,22 +5,22 @@ ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a894efebe4089adefeb02007bd394c13fc77974c
-ms.sourcegitcommit: 213b0315f1d6d0791e255794f87512fb253c492f
+ms.openlocfilehash: d04ce6827f6695163c7d9a8d34acc3891d854c8d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "34790101"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122674"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin.iOS でスタック ビュー
 
 _この記事では、水平方向または垂直方向に配置後のスタックのいずれかでサブビューのセットを管理する Xamarin.iOS アプリで新しい UIStackView コントロールの使用について説明します。_
 
 > [!IMPORTANT]
-> StackView iOS Designer ではサポートされていますが、発生するユーザビリティ バグ、安定チャネルを使用する場合に注意してください。 切り替え、ベータ版またはアルファ チャネルは、この問題を軽減する必要があります。 Xcode を使用するために必要な修正プログラムは、安定チャネルで実装されるまで、このチュートリアルを提示することにしました。
+> StackView iOS Designer ではサポートされていますが、発生するユーザビリティ バグ、安定チャネルを使用する場合に注意してください。 ベータ版またはアルファ チャネルを切り替えると、この問題を軽減する必要があります。 Xcode を使用するために必要な修正プログラムは、安定チャネルで実装されるまで、このチュートリアルを提示することにしました。
 
 スタック ビュー コントロール (`UIStackView`) iOS デバイスの向きや画面サイズに動的に応答する水平方向または垂直方向に、サブビューのスタックを管理するには、自動レイアウトとサイズ クラスの機能を利用しています。
 

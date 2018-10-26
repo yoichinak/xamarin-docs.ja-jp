@@ -1,37 +1,37 @@
 ---
-title: Xamarin.iOS でレイアウト オプション
-description: このドキュメントでは、Xamarin.iOS 内のユーザー インターフェイスをレイアウトするさまざまな方法について説明します。 これは、自動と自動レイアウトについて説明します。
+title: Xamarin.iOS でのレイアウト オプション
+description: このドキュメントでは、Xamarin.iOS でのユーザー インターフェイスをレイアウトするさまざまな方法について説明します。 自動サイズ調整と自動レイアウトがについて説明します。
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: bad29eae308c8ca9f7228a1cbdfd69940894cf34
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b35149028763691c17fe526673d023cc9b707c28
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790117"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116655"
 ---
-# <a name="layout-options-in-xamarinios"></a>Xamarin.iOS でレイアウト オプション
+# <a name="layout-options-in-xamarinios"></a>Xamarin.iOS でのレイアウト オプション
 
 これには、ビューがサイズ変更、または回転したときに、レイアウトを制御するための 2 つの異なるメカニズムがあります。
 
--  **自動**– デザイナーで、自動インスペクターを設定する方法を提供する、`AutoresizingMask`プロパティです。 これにより、コントロールがコンテナーの端に固定や、そのサイズを修正、ことです。 サイズの自動変更は、iOS のすべてのバージョンで機能します。 詳細については、以下に記載されて
--  **レイアウトを自動**–、UI コントロールのリレーションシップの粒度の細かい制御を許可する iOS 6 で導入された機能です。 デザイン サーフェイス上の他の要素に対して要素の位置のコントロールが許可されます。 このトピックで詳しく説明については、 [Xamarin iOS デザイナーで自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)ガイドです。
+-  **自動サイズ調整**– デザイナーで、自動サイズ調整インスペクターを設定する方法を提供する、`AutoresizingMask`プロパティ。 これで、コントロールがコンテナーの端に固定するや、そのサイズを修正します。 自動サイズ調整は、iOS のすべてのバージョンで動作します。 これは、以下で詳しく説明されています。
+-  **自動レイアウト**– UI コントロールの関係の詳細に制御を許可する iOS 6 で導入された機能です。 デザイン サーフェイス上の他の要素を基準として要素の位置をコントロールできるようになります。 このトピックで詳しく説明については、 [Xamarin iOS Designer での自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)ガイド。
 
-## <a name="autosizing"></a>サイズの自動変更
+## <a name="autosizing"></a>自動サイズ調整
 
-ユーザーがデバイスを回転するときに、向きの変更など、ウィンドウのサイズと、システムは自動的にサイズを変更の自動規則に従ってそのウィンドウ内のビュー。 これらの規則を設定することができます (C#) を使用して、`AutoresizingMask`のプロパティ、`UIView`または、**プロパティ パッド**デザイナー、下図のように、iOS の。
+ユーザーがデバイスの回転と向きの変更など、ウィンドウをサイズ変更時に、システムは自動サイズ調整の規則に従って、そのウィンドウ内のビューに自動的にサイズ変更されます。 これらの規則を設定できるC#を使用して、`AutoresizingMask`のプロパティ、`UIView`または、 **Properties Pad** iOS デザイナー、下図の。
 
- [![](layout-options-images/image41.png "Visual Studio for Mac デザイナー")](layout-options-images/image41.png#lightbox)
+ [![](layout-options-images/image41.png "Visual Studio for Mac のデザイナー")](layout-options-images/image41.png#lightbox)
 
-これにより、コントロールのサイズと場所を手動で指定する、コントロールが選択されている場合に選択するだけでなく**自動**動作します。 次のスクリーン ショットに示すようにおおよび使用できます、springs 脚柱自動コントロール内の親を選択したビューのリレーションシップを定義します。
+これにより、コントロールのサイズと場所を手動で指定することで、コントロールが選択したときに選択すると**自動サイズ調整**動作します。 次のスクリーン ショットのように、ここで使用できます springs と struts 自動サイズ調整コントロールの親を選択したビューのリレーションシップを定義します。
 
- [![](layout-options-images/image42.png "Visual Studio for Mac デザイナー")](layout-options-images/image42.png#lightbox)
+ [![](layout-options-images/image42.png "Visual Studio for Mac のデザイナー")](layout-options-images/image42.png#lightbox)
 
-調整する、 *spring*親ビューの高さまたは幅に基づくサイズを変更するビューが発生されます。 調整、*見せつけて*自体とその特定のエッジに、親ビューの間の距離が一定の管理ビューを作成します。
+調整を*spring*幅または高さの親ビューに基づくサイズを変更するビューが発生されます。 調整を*見せつけて*自体とその特定のエッジに、親ビューの間の距離が一定の管理ビューになります。
 
 これらの設定は、コードでも設定できます。
 
@@ -41,11 +41,11 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 ```
 
 
-自動設定をテストするには、有効にするさまざまな**サポートされているデバイスの向き**プロジェクトのオプション で。
+自動サイズ調整の設定をテストするさまざまなを有効にする**サポートされているデバイスの向き**プロジェクトのオプション。
 
- [![](layout-options-images/image43a.png "自動設定")](layout-options-images/image43a.png#lightbox)
+ [![](layout-options-images/image43a.png "自動サイズ調整の設定")](layout-options-images/image43a.png#lightbox)
 
-分離コードで次のコードは、水平方向にサイズを変更する 2 つのテキスト コントロールを使用できます。
+分離コードは、次のコードは、水平方向にサイズを変更する 2 つのテキスト コントロールを使用できます。
 
 ```csharp
 textview1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
@@ -54,15 +54,15 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 ```
 
 
-デザイナーを使用してコントロールを調整することもできます。 以下が示すように、脚柱を選択すると、ビューの一番下から切り抜かれてなく右揃えを維持するイメージが発生します。
+デザイナーを使用してコントロールを調整もできます。 以下が示すように、struts を選択すると、ビューの一番下からクリッピングなしの右揃えを維持するイメージが発生します。
 
  [![](layout-options-images/autoresize.png "オートローテーション")](layout-options-images/autoresize.png#lightbox)
 
-これらのスクリーン ショットは、コントロールのサイズを変更または画面を回転したときに再配置を示します。
+これらのスクリーン ショットは、コントロールのサイズを変更または再配置、画面を回転したときに表示します。
 
  [![](layout-options-images/image44a.png "オートローテーション")](layout-options-images/image44a.png#lightbox)
 
-テキスト ビューとテキスト フィールドの両方にストレッチすると、同じのまま維持いて理由のための余白を右、`FlexibleWidth`設定します。 イメージに存在、上と左余白柔軟なので、保存、下と右余白 – 画面を回転したときにビューで、イメージを維持することを意味します。 複雑なレイアウトには、これらの設定の組み合わせすべて表示されているコントロールのユーザー インターフェイスの一貫性を維持して、ビューの境界を変更 (回転やその他のサイズ変更イベント) のためと重複しないようにするコントロールを防ぐために通常必要とします。
+テキスト ビューとテキスト フィールドを両方同じのまま維持する拡張し、理由のための余白を右に注意してください、`FlexibleWidth`設定します。 イメージは、上および左余白、柔軟なは、下と右余白 – 画面を回転したときに、イメージをビューに維持することが維持されます。 複雑なレイアウトには、これらの設定の組み合わせすべて表示されているコントロールのユーザー インターフェイスの整合性を維持し、コントロールがビューの範囲を変更 (回転、またはその他のサイズ変更イベント) が原因と重複していることを防ぐために通常必要があります。
 
 
 

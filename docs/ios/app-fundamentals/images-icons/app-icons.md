@@ -4,15 +4,15 @@ description: このドキュメントは、Xamarin.iOS のさまざまなアプ�
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: cd67c564461721ade6f3eb269b461ddea5e2d2c4
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: ef8e694bc3c617774035ad5cf7902ca3f5b06813
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39276003"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118514"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin.iOS アプリケーションのアイコン
 
@@ -109,7 +109,7 @@ Xamarin.iOS アプリも、UI コントロールとドキュメント アイコ�
 
 アセット カタログを使用するには、次の操作を行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. ダブルクリックして、`Info.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
 2. 下へスクロールして、**アプリ アイコン**セクション。
@@ -126,7 +126,7 @@ Xamarin.iOS アプリも、UI コントロールとドキュメント アイコ�
 7. をクリックして、**オープン** をクリックして、プロジェクトにイメージを含める、xcasset で設定します。
 8. 必要なすべてのイメージを繰り返します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ダブルクリックして、 **Info.plist**ファイル、**ソリューション エクスプ ローラー**:
 
@@ -155,7 +155,7 @@ Xamarin.iOS アプリ使用して、既存の`Info.plist`のアイコンを管�
 
 次の手順で行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. ダブルクリックして、`Info.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
 2. 下へスクロールして、**アプリ アイコン**セクション。
@@ -166,7 +166,7 @@ Xamarin.iOS アプリ使用して、既存の`Info.plist`のアイコンを管�
 
      ![](app-icons-images/migrate03.png "Assets.xcassets AppIcons イメージ セット")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ダブルクリックして、`Info.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
 2. Iphone の場合、「アイコン」セクションををクリックしてします。 
@@ -187,7 +187,7 @@ Xamarin.iOS アプリ使用して、既存の`Info.plist`のアイコンを管�
 
 iTunes アートワークは次の手順で指定します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. ダブルクリックして、`Info.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
 2. スクロールして、 **iTunes アートワーク**エディターのセクション。 
@@ -196,7 +196,7 @@ iTunes アートワークは次の手順で指定します。
 3. 、不足している任意のイメージ エディターでサムネイルをクリックして、ファイルを開く ダイアログ ボックスから iTunes アートワークのイメージ ファイルを選択およびクリックして、 **OK**ボタンをクリックします。
 4. 必要なイメージは、アプリに指定されているすべてまでこの手順を繰り返します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ダブルクリックして、`Info.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
 

@@ -1,37 +1,37 @@
 ---
-title: WatchOS Xamarin のテキスト入力の使用
-description: このドキュメントでは、Xamarin で watchOS テキスト入力について説明します。 PresentTextInputController メソッド、書き留めたり、プレーン テキスト、emojis、およびディクテーションについても説明します。
+title: WatchOS Xamarin でのテキスト入力の操作
+description: このドキュメントでは、Xamarin で watchOS テキスト入力について説明します。 PresentTextInputController メソッド、書き留めたり、プレーン テキスト、絵文字、および音声入力がについて説明します。
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: da668333b3549c92264af7d4da4941ac6b5bf865
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2092b12254008936f2c5b6a7d9dd610ff751e802
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791385"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122362"
 ---
-# <a name="working-with-watchos-text-input-in-xamarin"></a>WatchOS Xamarin のテキスト入力の使用
+# <a name="working-with-watchos-text-input-in-xamarin"></a>WatchOS Xamarin でのテキスト入力の操作
 
-ただし、いくつかのウォッチが容易な方法をサポートして、Apple Watch は、テキストを入力するためのキーボードを提供しません。
+ただし、いくつかの監視に適した代替をサポートして、Apple Watch のは、テキストを入力するためのキーボードを提供しません。
 
-- 定義済みのテキストのオプションのリストから選択します。
-- Siri 音声入力
-- Emoji を選択します。
-- (WatchOS 3 で導入) 文字単位の手書き認識を scribble です。
+- テキストのオプションの定義済み一覧から選択します。
+- Siri の音声入力
+- 、、の絵文字を選択します。
+- (WatchOS 3 で導入) 文字で、手書き認識を scribble します。
 
-シミュレーターは現在ディクテーション モードをサポートしていませんことができますもテストすることはテキスト入力コント ローラーの他のなどのオプション、Scribble、次のように。
+シミュレーターがディクテーションを現在サポートしていませんがすることができますもテスト テキスト入力コント ローラーの他のオプション、Scribble などは、ここに示すように。
 
-![](text-input-images/textinput-sml.png "テスト scribble オプション")
+![](text-input-images/textinput-sml.png "Scribble オプションのテスト")
 
-テキストの入力を受け付ける watch アプリで。
+Watch アプリでのテキスト入力を受け取る。
 
 1. 定義済みオプションの文字列配列を作成します。
-2. 呼び出す`PresentTextInputController`、配列を持つか、emoji を許可するかどうかと`Action`ユーザーが完了したときに呼び出されます。
-3. 完了操作の入力の結果のテストし、(ラベルのテキスト値を設定する可能性があります)、アプリで適切な操作を行ってください。
+2. 呼び出す`PresentTextInputController`、配列を持つか、絵文字を許可するかどうかと`Action`ユーザーが終了すると呼び出されます。
+3. 完了したアクションでは、入力の結果をテストし、(ラベルのテキスト値を設定する可能性があります)、アプリで適切な処置を実行します。
 
 次のコード スニペットでは、ユーザーに事前に定義された 3 つのオプションが表示されます。
 
@@ -57,33 +57,33 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 
 ## <a name="plain"></a>プレーン
 
-標準モードが設定されている場合、ユーザーが選択できます。
+プレーンなモードが設定されている場合、ユーザーが選択できます。
 
 - ディクテーション、
 - Scribble、または
-- アプリケーションを提供する定義済みリストです。
+- アプリケーションを提供する定義済みリスト。
 
-[![](text-input-images/plain-scribble-sml.png "ディクテーション、Scribble、または、アプリを提供する定義済み一覧から")](text-input-images/plain-scribble.png#lightbox)
+[![](text-input-images/plain-scribble-sml.png "ディクテーション、Scribble の場合、または、アプリを提供する定義済みリストから")](text-input-images/plain-scribble.png#lightbox)
 
-結果が常として返されます、`NSObject`にキャストできる、`string`です。
+結果が常として返されます、`NSObject`にキャストできる、`string`します。
 
-## <a name="emoji"></a>Emoji
+## <a name="emoji"></a>絵文字
 
-Emoji の 2 つの種類があります。
+絵文字の 2 種類あります。
 
-- 正規の Unicode emoji
-- アニメーションの画像
+- 正規の Unicode の絵文字
+- アニメーション化されたイメージ
 
-Unicode emoji を選択すると、文字列として返されます。
+ユーザーが Unicode 絵文字を文字列として返されます。
 
-イメージのアニメーション emoji が選択されている場合、`result`ハンドラーが完了するまでに含まれて、 `NSData` 、emoji を格納しているオブジェクト`UIImage`です。
+アニメーション画像、絵文字が選択されている場合、`result`ハンドラーが含まれますが完了するまで、`NSData`絵文字を含むオブジェクト`UIImage`します。
 
-## <a name="accepting-dictation-only"></a>ディクテーションをのみ受け入れ
+## <a name="accepting-dictation-only"></a>ディクテーションののみ受け入れ
 
-ディクテーション画面に直接ユーザー提案 (または、Scribble オプション) は表示されません。
+提案 (または Scribble オプション) を表示せず、ディクテーション画面に直接ユーザーを実行します。
 
 - 候補の一覧の空の配列を渡すと
-- Set `WatchKit.WKTextInputMode.Plain`.
+- 設定`WatchKit.WKTextInputMode.Plain`します。
 
 ```csharp
 PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (result) => {
@@ -96,15 +96,15 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 });
 ```
 
-ユーザーが言うと、ウォッチ画面 (たとえば、「これはテストです」) することを理解は、テキストが含まれます次の画面が表示されます。
+ユーザーが言うと、ウォッチ画面 (たとえば、"This is a test") することを理解は、テキストを含む次の画面が表示されます。
 
-![](text-input-images/dictation.png "ユーザーが発話中、ウォッチ画面が表示されます、テキストが認識")
+![](text-input-images/dictation.png "ウォッチの画面にテキストが表示されますが認識されることと、ユーザーが言うと、")
 
-キーを押した後、**完了**ボタンのテキストが返されます。
+キーを押した後、**完了**ボタン、テキストが返されます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Apple のドキュメントのテキストおよびラベル](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
+- [Apple のドキュメントのテキストとラベル](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
 - [watchOS 3 の概要](~/ios/watchos/platform/introduction-to-watchos3/index.md)

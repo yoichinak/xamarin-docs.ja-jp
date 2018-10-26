@@ -1,62 +1,62 @@
 ---
 title: Eclipse ライブラリ プロジェクトのバインド
-description: このチュートリアルでは、Eclipse Android ライブラリ プロジェクトをバインドする Xamarin.Android プロジェクト テンプレートを使用する方法について説明します。
+description: このチュートリアルでは、Xamarin.Android プロジェクト テンプレートを使用して、Eclipse Android ライブラリ プロジェクトをバインドする方法について説明します。
 ms.prod: xamarin
 ms.assetid: CEE90F8A-164B-4155-813A-7537A665A7E7
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1c3c33f1b958aff5818b26e4408e60f449b46f41
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a5887748eda8af89b9215e3e121db592dfa73935
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764509"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116603"
 ---
 # <a name="binding-an-eclipse-library-project"></a>Eclipse ライブラリ プロジェクトのバインド
 
-_このチュートリアルでは、Eclipse Android ライブラリ プロジェクトをバインドする Xamarin.Android プロジェクト テンプレートを使用する方法について説明します。_
+_このチュートリアルでは、Xamarin.Android プロジェクト テンプレートを使用して、Eclipse Android ライブラリ プロジェクトをバインドする方法について説明します。_
 
 
 ## <a name="overview"></a>概要
 
-します。AAR ファイルには、標準の Android ライブラリ配布がますます、場合によってはのバインドを作成するために必要な*Android ライブラリ プロジェクト*です。 Android ライブラリ プロジェクトとは、共有可能なコードが含まれる特殊な Android プロジェクトと Android アプリケーション プロジェクトで参照可能なリソースです。 通常、バインドする Android ライブラリ プロジェクトに Eclipse IDE で、ライブラリの作成時にします。
+ですが。AAR ファイルには、Android ライブラリの配布の norm がますますのバインドを作成する必要は場合によっては、 *Android ライブラリ プロジェクト*します。 Android ライブラリ プロジェクトでは、共有可能なコードが含まれている特別な Android プロジェクトと Android アプリケーション プロジェクトで参照可能なリソースが。 通常にバインドする Android ライブラリ プロジェクトを Eclipse IDE で、ライブラリが作成されたとき。
 このチュートリアルでは、Android ライブラリ プロジェクトを作成する方法の例を示します。Eclipse のプロジェクトのディレクトリ構造から zip 圧縮します。
 
-Android ライブラリ プロジェクトとは、APK にコンパイルはされないおよび自身で行われていない、正規の Android プロジェクトを異なるデバイスに展開します。 代わりに、Android ライブラリ プロジェクトは、Android アプリケーション プロジェクトが参照するものです。 Android アプリケーション プロジェクトをビルドするときに、Android ライブラリ プロジェクトが最初にコンパイルされます。 Android アプリケーション プロジェクトをコンパイル済みの Android ライブラリ プロジェクトに吸収するし、配布用 APK にコードおよびリソースを追加します。 この違いにより、Android ライブラリ プロジェクトのバインドの作成は Java のバインドを作成するよりも若干異なります。JAR またはします。[Aar] ファイルです。
+Android ライブラリ プロジェクトは、APK にコンパイルされないおよび自身では、通常の Android プロジェクトとさまざまなデバイスに展開します。 代わりに、Android ライブラリ プロジェクトを Android アプリケーション プロジェクトで参照されるものでは。 Android アプリケーション プロジェクトをビルドするときは、まず Android ライブラリ プロジェクトがコンパイルされます。 Android アプリケーション プロジェクトは、コンパイル済みの Android ライブラリ プロジェクトに吸収され、コードとリソースを配布用 APK に含めます。 この違いにより、Android ライブラリ プロジェクトのバインドの作成は Java のバインドを作成するよりも若干異なります。JAR またはします。AAR ファイルです。
 
 
 
 ## <a name="walkthrough"></a>チュートリアル
 
-Xamarin.Android Java バインドのプロジェクトでの Android ライブラリ プロジェクトを使用するには、Eclipse での Android ライブラリ プロジェクトをビルドする最初の必要を勧めします。 次のスクリーン ショットは、コンパイル後に 1 つの Android ライブラリ プロジェクトの例を示します。 
+Java バインドの Xamarin.Android プロジェクトで、Android ライブラリ プロジェクトを使用するには、Eclipse での Android ライブラリ プロジェクトをビルドする最初の必要になります。 次のスクリーン ショットは、コンパイル後に、Android ライブラリ プロジェクトを 1 つの例を示します。 
 
-[![Eclipse での使用例ライブラリ プロジェクト](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png#lightbox)
+[![Eclipse でのライブラリ プロジェクトの例](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png#lightbox)
 
-一時的なに Android ライブラリ プロジェクトからソース コードがコンパイルされたことに注意してください。という名前の JAR ファイル**android mapviewballoons.jar**、リソースにコピーされていることと、 **bin/res/破棄**フォルダーです。 
+一時的に、Android ライブラリ プロジェクトからソース コードがコンパイルされたことに注意してください。という名前の JAR ファイル**android mapviewballoons.jar**、リソースにコピーされていると、 **bin/res/crunch**フォルダー。 
 
-Eclipse の Android ライブラリ プロジェクトをコンパイルした後、Xamarin.Android Java バインド プロジェクトを使用し、バインドできます。 最初、します。含む ZIP ファイルを作成する必要があります、 **bin**と**res** Android ライブラリ プロジェクトのフォルダーです。 介在するを削除することが重要**破棄**サブディレクトリ内のリソースがあるように**bin/res**です。次のスクリーン ショットを示していますの内容は、このようなです。ZIP ファイル: 
+Eclipse で、Android ライブラリ プロジェクトをコンパイルすると、Xamarin.Android Java バインド プロジェクトを使用し、バインドできます。 最初、します。含む ZIP ファイルを作成する必要があります、 **bin**と**res** Android ライブラリ プロジェクトのフォルダー。 介在するを削除することが重要**crunch**サブディレクトリ内のリソースがあるように**bin/res**。次のスクリーン ショットの内容など。ZIP ファイル: 
 
-[![Android ライブラリ プロジェクト .zip の内容](binding-a-library-project-images/contents-of-zip-file.png)](binding-a-library-project-images/contents-of-zip-file.png#lightbox)
+[![Android ライブラリ プロジェクトの .zip の内容](binding-a-library-project-images/contents-of-zip-file.png)](binding-a-library-project-images/contents-of-zip-file.png#lightbox)
 
-これ。次のスクリーン ショットに示すように、ZIP ファイルは Xamarin.Android Java バインドのプロジェクトに追加されます。
+これ。次のスクリーン ショットに示すように、ZIP ファイルがプロジェクトの Xamarin.Android Java バインドに追加されます。
 
-[![Zip Java バインド プロジェクトに追加](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
+[![Java バインド プロジェクトに追加する zip](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
 
-注意して、ビルド アクションが、します。ZIP ファイルを自動的に設定されている**LibraryProjectZip**です。
+注意のビルド アクション、します。ZIP ファイルは自動的に設定されている**LibraryProjectZip**します。
 
-存在する場合。Android ライブラリ プロジェクトに必要な JAR ファイルを追加するのには**Jar** Java バインド ライブラリ プロジェクトのフォルダーと**ビルド アクション**に設定**ReferenceJar**. この例は、次のスクリーン ショットに表示できます。 
+存在する場合。Android ライブラリ プロジェクトで必要な JAR ファイルを追加する場所を**Jars** Java バインド ライブラリ プロジェクトのフォルダーと**ビルド アクション**に設定**ReferenceJar**. この例は、次のスクリーン ショットで確認できます。 
 
 [![ビルド アクション ReferenceJar に設定](binding-a-library-project-images/set-to-referencejar.png)](binding-a-library-project-images/set-to-referencejar.png#lightbox)
 
-これらの手順が完了した後は、このドキュメントで前述の説明に従って Xamarin.Android Java バインド プロジェクトが使用できます。
+次の手順が完了したら、このドキュメントで前述の説明に従って Xamarin.Android Java バインド プロジェクトが使用できます。
 
 > [!NOTE]
-> この時点では、他の Ide での Android ライブラリ プロジェクトのコンパイルはサポートされていません。 他の Ide では、同じディレクトリ構造や内のファイルは作成可能性があります、 **bin** Eclipse とフォルダー。 
+> この時点では、他の Ide で Android ライブラリ プロジェクトをコンパイルすることはできません。 他の Ide では、同じディレクトリ構造や内のファイルは作成可能性があります、 **bin** Eclipse とフォルダー。 
 
 
 ## <a name="summary"></a>まとめ
 
-この記事ではとおし、Android ライブラリ プロジェクトをバインドするプロセスです。 Eclipse での Android ライブラリ プロジェクトを作成したからの zip ファイルを作成した、 **bin**と**res** Android ライブラリ プロジェクトのフォルダーです。 次に、この zip を使用して Xamarin.Android Java バインド プロジェクトを作成しました。 
+この記事には、Android ライブラリ プロジェクトをバインドするプロセスを説明しました。 Eclipse で、Android ライブラリ プロジェクトを構築しから zip ファイルを作成した、 **bin**と**res** Android ライブラリ プロジェクトのフォルダー。 次に、この zip を使用して Xamarin.Android Java バインド プロジェクトを作成しました。 
 

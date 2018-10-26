@@ -4,15 +4,15 @@ description: このガイドには、Xamarin.Android でのファイル アク�
 ms.prod: xamarin
 ms.assetid: FC1CFC58-B799-4DD6-8ED1-DE36B0E56856
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 5a4ddf606bb71bef10cf99660c198c5a8fdb1b69
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.openlocfilehash: 476f1c50a2f1a4199dfaf1996fc9c16615b40598
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212204"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116798"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>ファイル格納処理および Xamarin.Android を使用したアクセス
 
@@ -24,7 +24,7 @@ Android アプリの一般的な要件は、ファイルを操作する&ndash;�
 これらのグループ化はのみ、概念と、1 つのパーティションまたはデバイス上のディレクトリに参照しないとは限りません。 Android デバイスは内部記憶域および外部記憶域のパーティションを常に提供します。 特定のデバイスが外部記憶域と見なされる複数のパーティションがあることができます。 読み取り用の Api は、パーティションに関係なく書き込み、またはファイルの作成は、同じです。 これには 2 つのファイルへのアクセス、Xamarin.Android アプリケーションが使用できる Api のセットがあります。
 
 1. **.NET Api (Mono によって提供され、Xamarin.Android によってラップされた)** &ndash;これらが含まれています、[ファイル システム ヘルパー](~/essentials/file-system-helpers.md?context=xamarin/android)によって提供される[Xamarin.Essentials](~/essentials/index.md?context=xamarin/android)します。 .NET Api が最適なクロス プラットフォームの互換性を提供し、これらの Api でこのガイドの焦点となるようします。
-1. **ネイティブの Java ファイル アクセス Api (Java によって提供され、Xamarin.Android によってラップされた)** &ndash; Java のファイルの読み書きに独自の Api を提供します。 .NET Api を完全に許容される代わりにこれらが、Android に固有し、はクロスプラット フォーム対応にすることを意図したアプリには適しません。
+1. **ネイティブの Java ファイル アクセス Api (Java によって提供され、Xamarin.Android によってラップされた)** &ndash; Java のファイルの読み書きに独自の Api を提供します。 .NET api の代わりに完全に許容されるはこれらが、Android に固有し、はクロスプラット フォーム対応にすることを意図したアプリには適しません。
 
 他の .NET アプリケーションには、読み取りと書き込みをファイルは Xamarin.Android でとほぼ同じです。 Xamarin.Android アプリでは、し、使用して標準的な .NET の表現方法ファイル アクセス、ファイル操作されるへのパスを決定します。 内部および外部の記憶域への実際のパスがデバイスからデバイスに異なる場合がありますので、または Android のバージョンの Android バージョンから、これは推奨されませんハード コードするファイルへのパス。 代わりに、Xamarin.Android Api を使用して、ファイルへのパスを決定します。 これにより、ファイルの読み取りと書き込み用の .NET Api を内部および外部の記憶域上のファイルへのパスを判断できるように、ネイティブの Android Api を公開します。
 
@@ -79,7 +79,7 @@ Xamarin.Android アプリ (または Xamarin.Android を対象とする Xamarin.
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>内部記憶域上のファイルに対する読み取りまたは書き込み
 
-いずれか、[書き込み用の c# Api](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)はファイルに必要な; に割り当てられているディレクトリにあるファイルへのパスを取得するために必要なすべてが、アプリケーション。 非同期の可能性のある問題を最小限に抑える .NET Api のバージョンが使用されますが、メイン スレッドをブロックしているファイルへのアクセスと関連付けることを強くお勧めします。
+いずれか、 [ C#書き込み用 Api](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)はファイルに必要な場合は、アプリケーションに割り当てられているディレクトリにあるファイルへのパスを取得するために必要なすべてが。 非同期の可能性のある問題を最小限に抑える .NET Api のバージョンが使用されますが、メイン スレッドをブロックしているファイルへのアクセスと関連付けることを強くお勧めします。
 
 このコード スニペットでは、アプリケーションの内部記憶域ディレクトリに utf-8 テキスト ファイルへの整数を書き込みの 1 つの例を示します。
 

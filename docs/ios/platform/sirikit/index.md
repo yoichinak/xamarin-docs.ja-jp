@@ -4,40 +4,40 @@ description: この記事では、Xamarin.iOS アプリで SiriKit を使用し�
 ms.prod: xamarin
 ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 584b694c83d6c66d6e79e1030b2e682cefb64e6a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9f7cbb3f7d9e448947ec8163a8660616910e750f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788053"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117526"
 ---
 # <a name="sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit
 
 _この記事では、Xamarin.iOS アプリで SiriKit を使用して iOS デバイスで Siri を使用してユーザーがアクセスできるサービスを提供する方法を示します。_
 
-新しい SiriKit によりアプリ拡張機能と、新しいを使用して iOS デバイスで Siri とマップのアプリを使用してユーザーがアクセスできるサービスを提供する iOS アプリ、10、iOS に**インテント**と**インテント UI**フレームワークです。
+新しい SiriKit により、アプリ拡張機能と、新しいを使用して iOS デバイスで Siri とマップ アプリを使用してユーザーがアクセスできるサービスを提供する iOS アプリを iOS 10、**インテント**と**Intents UI**フレームワーク。
 
-Siri の動作の概念を**ドメイン**のグループが関連するタスクの操作を把握します。 Siri とされているアプリの各相互作用がとおりの既知のサービスのドメインのいずれかに分類する必要があります。
+Siri の動作の概念を**ドメイン**のグループが関連するタスクの操作を把握します。 Siri をアプリに含まれる各操作は必要がありますには、次のようにその既知のサービスのドメインのいずれかに分類されます。
 
-- オーディオまたはビデオ通話です。
+- オーディオまたはビデオ通話。
 - 素敵を予約します。
-- ワークアウトを管理します。
-- メッセージングです。
-- 写真を検索しています。
-- 送信または受信支払いを処理します。
+- トレーニングを管理します。
+- メッセージング。
+- 写真を検索します。
+- 送信または支払いを受信します。
 
-ユーザーは、1 つのアプリ拡張機能のサービスに関連する Siri の要求を行う、SiriKit 送信、拡張機能、**インテント**サポート データと共に、ユーザーの要求を記述するオブジェクト。 アプリ拡張機能は、適切な生成**応答**オブジェクトを指定された**インテント**、拡張機能が、要求を処理する方法の詳細を示すです。
+SiriKit 送信、拡張機能で、ユーザーが、アプリ拡張機能のサービスのいずれかに関連する siri 要求を行うと、**インテント**の関連データと共に、ユーザーの要求を記述するオブジェクト。 アプリ拡張機能は、適切な生成**応答**オブジェクトを指定された**インテント**、拡張機能が要求を処理する方法の詳細を示します。
 
 ## <a name="understanding-sirikit-conceptsiosplatformsirikitunderstanding-sirikitmd"></a>[SiriKit の概念の理解](~/ios/platform/sirikit/understanding-sirikit.md)
 
-この記事では、Xamarin.iOS アプリで SiriKit を操作するために必要となる重要な概念について説明します。 新しい方法を説明して、意図的およびインテント UI 拡張機能ポイントしくみと、アプリ ユーザー ボキャブラリ Siri のアプリを開きます。
+この記事では、Xamarin.iOS アプリで SiriKit を操作するために必要な主要な概念について説明します。 カバー新しい Intents および Intents UI 拡張機能ポイントと Siri にアプリを開くには、アプリとユーザーのボキャブラリのしくみです。
 
 ## <a name="implementing-sirikitiosplatformsirikitimplementing-sirikitmd"></a>[SiriKit の実装](~/ios/platform/sirikit/implementing-sirikit.md)
 
-この記事では、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。 開発者は、実装を成功させるために必要となるキーについては、概念として、アプリに SiriKit サポートを追加する前に、上記 SiriKit 概念についてのガイドをお読みください。
+この記事では、Xamarin.iOS アプリで SiriKit のサポートを実装するために必要な手順について説明します。 開発者は、アプリに正しく実装するために必要なキーの概念を説明として SiriKit のサポートを追加する前に、SiriKit の概念について、上記のガイドをお読みください。
 
 
 
@@ -46,6 +46,6 @@ Siri の動作の概念を**ドメイン**のグループが関連するタス�
 ## <a name="related-links"></a>関連リンク
 
 - [ElizaChat サンプル](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
-- [SiriKit プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
-- [インテント Framework リファレンス](https://developer.apple.com/reference/intents)
-- [目的の UI フレームワークのリファレンス](https://developer.apple.com/reference/intentsui)
+- [SiriKit のプログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
+- [インテントのフレームワーク参照](https://developer.apple.com/reference/intents)
+- [Intents UI フレームワークの参照](https://developer.apple.com/reference/intentsui)

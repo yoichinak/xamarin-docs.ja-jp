@@ -3,15 +3,15 @@ title: アーキテクチャ
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: e6a30247c13deab871bf230aba53b9963981fd02
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997401"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121127"
 ---
 # <a name="architecture"></a>アーキテクチャ
 
@@ -71,7 +71,7 @@ Xamarin.Android アプリケーションを含めることも*Android 呼び出�
 呼び出し可能ラッパーをマネージ サブクラスは、「興味深い」すべてのアプリケーション固有のロジックが live 可能性があります。 以下のカスタム[Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)サブクラス (など、 [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13)で既定のプロジェクト テンプレートの種類)。 (具体的には、これらはいずれかの*Java.Lang.Object*サブクラスは*いない*を含む、 [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)カスタム属性または[RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/)は*false*、既定値です)。
 
 ような管理、呼び出し可能ラッパーをマネージ呼び出し可能ラッパーのサブクラスをからアクセスできるグローバルな参照を含めることも、 [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/)プロパティ。 管理対象の呼び出し可能ラッパーとグローバル参照に明示的に解放できる呼び出して同様[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)します。
-管理対象の呼び出し可能ラッパーとは異なり*細心*として、このようなインスタンスの破棄される前に実行する必要があります*Dispose()* インスタンスの演算を行い、Java インスタンスの間のマッピングが中断されます (のインスタンス、Android 呼び出し可能ラッパー) とマネージ インスタンス。
+管理対象の呼び出し可能ラッパーとは異なり*細心*として、このようなインスタンスの破棄される前に実行する必要があります*Dispose()* Java インスタンスの間のマッピングをインスタンスの処理が中断されます (のインスタンス、Android 呼び出し可能ラッパー) とマネージ インスタンス。
 
 
 ### <a name="java-activation"></a>Java のアクティブ化
@@ -88,7 +88,7 @@ Xamarin.Android アプリケーションを含めることも*Android 呼び出�
 
 
 注意してください (2) はリークの抽象化です。 Java、c# の場合は、ように、コンス トラクターから仮想メソッドへの呼び出しは常に最派生メソッドの実装を呼び出します。 たとえば、 [TextView (コンテキスト、です、int) コンス トラクター](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/)仮想メソッドを呼び出す[TextView.getDefaultMovementMethod()](http://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod())としてバインドされている、 [TextView.DefaultMovementMethod プロパティ](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/)します。
-そのため、型の場合[LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) を[サブクラス TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26)(2)、 [TextView.DefaultMovementMethod をオーバーライド](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)、および (3)[のインスタンスをアクティブ化XML を使用してクラス](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29)、オーバーライドされた*DefaultMovementMethod*プロパティについてコンス トラクターには機会を実行して、c# コンス トラクターを実行する前に発生する前に呼び出されます。
+そのため、型の場合[LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) を[サブクラス TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26)(2)、 [TextView.DefaultMovementMethod をオーバーライド](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)、および (3)[のインスタンスをアクティブ化XML を使用してクラス](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29)、オーバーライドされた*DefaultMovementMethod*プロパティについてコンス トラクターには機会を実行して、これが発生する前に前に呼び出される、C#コンス トラクターが発言するには実行します。
 
 LogTextBox インスタンスをインスタンス化でサポートされるを通じて、 [LogTextView (IntPtr、JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28)コンス トラクターについて LogTextBox インスタンスが最初に入るときにマネージ コード、および起動し、 [LogTextBox (コンテキスト、IAttributeSet、int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41)コンス トラクター*同じインスタンスで*についてコンス トラクターが実行される場合。
 

@@ -4,15 +4,15 @@ description: SkiaSharp のビットマップを表示するは、いくつかの
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e5bfa076a8746abd6275e9d7a8393c7c8ab53294
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615237"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119229"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp のビットマップのセグメント化された表示
 
@@ -26,7 +26,7 @@ SkiaSharp、`SKCanvas`オブジェクトという名前のメソッドを定義�
 
 ## <a name="the-nine-patch-display"></a>9-更新プログラムの表示 
 
-概念的には、 [ `DrawBitmapNinePatch` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapNinePatch/p/SkiaSharp.SKBitmap/SkiaSharp.SKRectI/SkiaSharp.SKRect/SkiaSharp.SKPaint/)ビットマップを 9 個の正方形に分割します。
+概念的には、 [ `DrawBitmapNinePatch` ](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint))ビットマップを 9 個の正方形に分割します。
 
 ![9 つの修正プログラム](segmented-images/NinePatch.png "9 つの修正プログラム")
 
@@ -119,14 +119,14 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 2 つ`DrawBitmapLattice`メソッドはのような`DrawBitmapNinePatch`、水平または垂直分割の任意の数が一般化されたが、します。 これらの分割は、ピクセルに対応する整数の配列によって定義されます。 
 
-[ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/System.Int32[]/System.Int32[]/SkiaSharp.SKRect/SkiaSharp.SKPaint/)整数の配列はこれらのパラメーターを持つメソッドは動作しません。 [ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/SkiaSharp.SKLattice/SkiaSharp.SKRect/SkiaSharp.SKPaint/)型のパラメーターを持つメソッド`SKLattice`作業は、以下に示す例で使用したものです。
+[ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint))整数の配列はこれらのパラメーターを持つメソッドは動作しません。 [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint))型のパラメーターを持つメソッド`SKLattice`作業は、以下に示す例で使用したものです。
 
-[ `SKLattice` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLattice/)構造が 4 つのプロパティを定義します。
+[ `SKLattice` ](xref:SkiaSharp.SKLattice)構造が 4 つのプロパティを定義します。
 
-- [`XDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.XDivs/)、整数の配列
-- [`YDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.YDivs/)、整数の配列
-- [`Flags`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Flags/)、配列の`SKLatticeFlags`、列挙型
-- [`Bounds`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Bounds/) 型の`Nullable<SKRectI>`ビットマップ内の省略可能なソース四角形を指定するには
+- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs)、整数の配列
+- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs)、整数の配列
+- [`Flags`](xref:SkiaSharp.SKLattice.Flags)、配列の`SKLatticeFlags`、列挙型
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) 型の`Nullable<SKRectI>`ビットマップ内の省略可能なソース四角形を指定するには
 
 `XDivs`配列は、垂直方向のストリップにビットマップの幅を分割します。 最初のストリップを拡張する左側にあるピクセル 0 から`XDivs[0]`します。 このストリップは、ピクセル幅で表示されます。 2 番目のストリップをから拡張`XDivs[0]`に`XDivs[1]`が拡大するとします。 3 番目のストリップをから拡張`XDivs[1]`に`XDivs[2]`とは、ピクセル幅で表示されます。 ビットマップの右端に、配列の最後の要素から最後のストリップを拡張します。 配列の要素数が偶数の場合は、ピクセル幅で表示されます。 それ以外の場合、拡大されます。 垂直方向のストリップの合計数は 1 つの配列の要素の数よりも詳細です。
 
@@ -134,7 +134,7 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 同時に、`XDivs`と`YDivs`配列は、ビットマップを四角形に分割します。 四角形の数が、水平方向のストリップの数と垂直方向のストリップの数の積になります。
 
-Skia のドキュメントに従って、`Flags`配列に含まれる 1 つの要素ごとの四角形の最初の四角形、一番上の行、2 番目の行となどです。 `Flags`配列の型は[ `SKLatticeFlags` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLatticeFlags/)、次のメンバーを持つ列挙体。
+Skia のドキュメントに従って、`Flags`配列に含まれる 1 つの要素ごとの四角形の最初の四角形、一番上の行、2 番目の行となどです。 `Flags`配列の型は[ `SKLatticeFlags` ](xref:SkiaSharp.SKLatticeFlags)、次のメンバーを持つ列挙体。
 
 - `Default` 値は 0
 - `Transparent` 値 1 を持つ
@@ -225,5 +225,5 @@ IOS と Android のイメージ左上では、小さな円だけは、そのピ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
