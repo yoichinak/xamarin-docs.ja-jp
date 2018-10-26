@@ -1,33 +1,33 @@
 ---
 title: MacOS の概要
-description: このドキュメントについて説明する方法 macOS と .NET の埋め込みを使用して作業を開始します。 要件について説明し、マネージ アセンブリをバインドし、Xcode プロジェクトで生成された出力を使用する方法を示すサンプル アプリケーションを表示します。
+description: このドキュメントの説明方法 macOS で .NET の埋め込みの使用を開始します。 要件について説明し、マネージ アセンブリをバインドし、Xcode プロジェクトで生成された出力を使用する方法を示すサンプル アプリケーションを表示します。
 ms.prod: xamarin
 ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 38049eae5e420e5f3610341c2682fa92d2ac426e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3de47aa57df29f52f71508977ae017dff009c282
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793690"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121569"
 ---
 # <a name="getting-started-with-macos"></a>MacOS の概要
 
 ## <a name="what-you-will-need"></a>必要があります。
 
-* 指示に従って、 [Objective C の概要](~/tools/dotnet-embedding/get-started/objective-c/index.md)ガイドです。
+* 手順については、 [Objective C の概要](~/tools/dotnet-embedding/get-started/objective-c/index.md)ガイド。
 
 ## <a name="hello-world"></a>Hello world
 
-最初に、C# の場合は、単純な hello world の例をビルドします。
+まず、c# では、単純な hello world の例を構築します。
 
 ### <a name="create-c-sample"></a>C# のサンプルを作成します。
 
-Mac 用 Visual Studio を開き、という名前の新しい Mac クラス ライブラリ プロジェクトを作成する**csharp からのこんにちは**、しに保存 **~/Projects/hello-from-csharp**です。
+Mac を Visual Studio を開き、という名前の新しい Mac クラス ライブラリ プロジェクトを作成**csharp からのこんにちは**、保存して **~/Projects/hello-from-csharp**します。
 
-コードで置き換え、**カスタム**次のスニペットを持つファイル。
+コードに置き換えます、 **MyClass.cs**を次のスニペット ファイル。
 
 ```csharp
 using AppKit;
@@ -40,38 +40,38 @@ public class MyNSView : NSTextView
 }
 ```
 
-プロジェクトをビルドします。 結果として得られるアセンブリとして保存する **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**です。
+プロジェクトをビルドします。 結果として得られるアセンブリとして保存する **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**します。
 
 ### <a name="bind-the-managed-assembly"></a>マネージ アセンブリをバインドします。
 
-マネージ アセンブリを作成したら、.NET の埋め込みを起動してバインドします。
+マネージ アセンブリを作成したら、.NET の埋め込みを呼び出すことによってバインドします。
 
-」の説明に従って、[インストール](~/tools/dotnet-embedding/get-started/install/install.md)ガイド、そのため、プロジェクトのビルド後のステップとして、カスタム MSBuild ターゲットまたは手動で。
+」の説明に従って、[インストール](~/tools/dotnet-embedding/get-started/install/install.md)ガイド、これで、プロジェクトのビルド後のステップとしてカスタム MSBuild ターゲット、または手動で。
 
 ```shell
 cd ~/Projects/hello-from-csharp
 objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll --target=framework --platform=macOS-modern --abi=x86_64 --outdir=output -c --debug
 ```
 
-配置されるフレームワーク **~/Projects/hello-from-csharp/output/hello-from-csharp.framework**です。
+フレームワークに置かれる **~/Projects/hello-from-csharp/output/hello-from-csharp.framework**します。
 
 ### <a name="use-the-generated-output-in-an-xcode-project"></a>Xcode プロジェクトで生成された出力を使用します。
 
-Xcode を開き、新しい Cocoa アプリケーションを作成します。 名前を付けます**csharp からのこんにちは**を選択し、 **OBJECTIVE-C**言語です。
+Xcode を開き、新しい Cocoa アプリケーションを作成します。 名前を付けます**csharp からのこんにちは**を選択し、 **Objective C**言語。
 
-開く、 **~/Projects/hello-from-csharp/output** Finder で、選択ディレクトリ**こんにちは-csharp.framework から**Xcode プロジェクトにドラッグ アンド ドロップすぐ上、 **csharp からのこんにちは**プロジェクト内のフォルダーです。
+開く、 **~/Projects/hello-from-csharp/output** finder で、選択ディレクトリ**こんにちは-csharp.framework から**Xcode プロジェクトにドラッグし、ドロップ、すぐ上、 **csharp からのこんにちは**プロジェクト内のフォルダー。
 
 ![ドラッグ アンド ドロップのフレームワーク](macos-images/hello-from-csharp-mac-drag-drop-framework.png)
 
-確認**ために必要な場合は、項目をコピー**がポップアップ表示されるダイアログ ボックスでチェックされ、をクリックして**完了**。
+確認します**必要な場合は、項目をコピー**がポップアップ表示されるダイアログ ボックスがオンにして**完了**します。
 
 ![必要な場合は、項目をコピーします。](macos-images/hello-from-csharp-mac-copy-items-if-needed.png)
 
-選択、 **csharp からのこんにちは**プロジェクトに移動して、 **csharp からのこんにちは**ターゲットの**全般**タブです。**埋め込みバイナリ**セクションで、追加**こんにちは-csharp.framework から**です。
+選択、 **csharp からのこんにちは**プロジェクトに移動して、 **csharp からのこんにちは**ターゲットの**全般**タブ。**埋め込みバイナリ**セクションで、追加**こんにちは-csharp.framework から**します。
 
-![埋め込まれたバイナリ](macos-images/hello-from-csharp-mac-embedded-binaries.png)
+![埋め込みバイナリ](macos-images/hello-from-csharp-mac-embedded-binaries.png)
 
-開いている**ViewController.m**の内容を置き換えます。
+開いている**ViewController.m**、開き、内容に置き換えます。
 
 ```objc
 #import "ViewController.h"
@@ -95,4 +95,4 @@ Xcode を開き、新しい Cocoa アプリケーションを作成します。 
 
 ![シミュレーターで実行されている c# のサンプルからこんにちは](macos-images/hello-from-csharp-mac.png)
 
-包括的かつ見栄えのよいサンプル[ここでは使用可能な](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)です。
+包括的かつ見栄えのよいサンプル[は](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)します。

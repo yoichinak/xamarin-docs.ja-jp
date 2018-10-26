@@ -1,54 +1,54 @@
 ---
 title: セットアップの Windows プロジェクト
-description: Xamarin.Forms ソリューションの古い (または macOS で作成したもの) がないユニバーサル Windows プラットフォーム プロジェクト、ためここで新しい UWP プロジェクトを既存の Xamarin.Forms ソリューションを追加する方法について説明します。
+description: 以前の Xamarin.Forms ソリューション (または macOS で作成されたもの) がないユニバーサル Windows プラットフォーム プロジェクトの場合、この記事が新しい UWP プロジェクトを既存の Xamarin.Forms ソリューションに追加する方法を説明しますので。
 ms.prod: xamarin
 ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 81cad7b178948ebfcf6f424be9ab62d6b6be5b92
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: fb166b69c76ca4c87746358258d97f1cb81cb301
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242638"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123233"
 ---
 # <a name="setup-windows-projects"></a>セットアップの Windows プロジェクト
 
 _既存の Xamarin.Forms ソリューションに新しい Windows プロジェクトを追加します。_
 
-Xamarin.Forms ソリューションの古い (または macOS で作成したもの) には、ユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトはありません。 そのため、Windows 10 (UWP) アプリをビルドするには、ある UWP プロジェクトを手動で追加する必要があります。
+以前の Xamarin.Forms ソリューション (または macOS で作成されたもの) には、ユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトはありません。 そのため、Windows 10 (UWP) アプリを構築する UWP プロジェクトを手動で追加する必要があります。
 
-## <a name="add-a-universal-windows-platform-app"></a>追加のユニバーサル Windows プラットフォーム アプリ
+## <a name="add-a-universal-windows-platform-app"></a>追加するユニバーサル Windows プラットフォーム アプリ
 
-実行する必要があります**Visual Studio 2017**で**Windows 10** UWP アプリをビルドします。 ユニバーサル Windows プラットフォームの詳細については、次を参照してください。[にユニバーサル Windows プラットフォーム (入門)](/windows/uwp/get-started/universal-application-platform-guide/)です。
+実行する必要があります**Visual Studio 2017**で**Windows 10** UWP アプリを構築します。 ユニバーサル Windows プラットフォームの詳細については、次を参照してください。[ユニバーサル Windows プラットフォームの紹介](/windows/uwp/get-started/universal-application-platform-guide/)します。
 
-UWP 利用可能で、Xamarin.Forms 2.1 では、後であり、Xamarin.Forms.Maps が Xamarin.Forms 2.2 以降にサポートされます。
+UWP は、Xamarin.Forms 2.1 で使用可能な以降と、Xamarin.Forms 2.2 以降、Xamarin.Forms.Maps はサポートされます。
 
-チェック、<a href="#troubleshooting">トラブルシューティング</a>のに役立つヒントについてのセクションです。
+チェック、<a href="#troubleshooting">トラブルシューティング</a>役に立つヒントのセクション。
 
-Windows 10 の携帯電話、タブレット、およびデスクトップで実行される UWP アプリを追加する手順に従います。
+Windows 10 スマート フォン、タブレット、およびデスクトップで実行される UWP アプリを追加するこれらの手順に従います。
 
- 1。 クリックし、ソリューションを右クリックして**追加 > 新しいプロジェクト.** を追加し、**空のアプリケーション (ユニバーサル Windows)** プロジェクト。
+ 1。 クリックし、ソリューションを右クリックして**追加 > 新しいプロジェクト.** を追加し、**空のアプリ (ユニバーサル Windows)** プロジェクト。
 
   ![](universal-images/add-wu.png "新しいプロジェクト ダイアログ ボックスを追加します。")
 
- 2 になります。 **新しいユニバーサル Windows プラットフォーム プロジェクト**ダイアログ ボックスで、アプリが実行される Windows 10 の最小値とターゲットのバージョンを選択します。
+ 2 です。 **新しいユニバーサル Windows プラットフォーム プロジェクト**ダイアログ ボックスで、アプリで実行される Windows 10 の最小値とターゲットのバージョンを選択します。
 
   ![](universal-images/target-version.png "新しいユニバーサル Windows プラットフォーム プロジェクト ダイアログ ボックス")
 
- 3 です。 UWP プロジェクトを右クリックし、選択**NuGet パッケージを管理しています.** を追加し、 **Xamarin.Forms**パッケージです。 ソリューション内の他のプロジェクトは、Xamarin.Forms パッケージの同じバージョンにも更新を確認します。
+ 3。 UWP プロジェクトを右クリックし、選択**NuGet パッケージの管理.** を追加し、 **Xamarin.Forms**パッケージ。 ソリューション内の他のプロジェクトは、Xamarin.Forms パッケージの同じバージョンにも更新を確認します。
 
- 4 です。 新しい UWP プロジェクトがビルドされることを確認してください、**ビルド > Configuration Manager**ウィンドウ (この可能性がありますしない起きた既定)。 ティック、**ビルド**と**展開**ユニバーサル プロジェクトのボックス。
+ 4。 新しい UWP プロジェクトはビルド確認、**ビルド > Configuration Manager**ウィンドウ (このおそらくしません起きた既定)。 ティック、**ビルド**と**デプロイ**ユニバーサル プロジェクトのボックス。
 
-  [![](universal-images/configuration-sml.png "構成マネージャー ウィンドウ")](universal-images/configuration.png#lightbox "構成マネージャー ウィンドウ")
+  [![](universal-images/configuration-sml.png "構成マネージャー ウィンドウ")](universal-images/configuration.png#lightbox "Configuration Manager ウィンドウ")
 
- 5 です。 クリックし、プロジェクトを右クリックして**追加 > 参照**Xamarin.Forms アプリケーション プロジェクト (.NET 標準またはプロジェクトの共有) への参照を作成します。
+ 5。 クリックし、プロジェクトを右クリックして**追加 > 参照**し (.NET Standard または共有プロジェクト) は、Xamarin.Forms アプリケーションのプロジェクトへの参照を作成します。
 
   ![](universal-images/addref-sml.png "参照マネージャー ダイアログ ボックス")
 
- 6。 UWP プロジェクトで、編集**App.xaml.cs**に含める、`Init`内のメソッドの呼び出し、 `OnLaunched` 52 'system.ftpserver メソッド。
+ 6。 UWP プロジェクトで編集**App.xaml.cs**に含める、`Init`内でメソッドの呼び出し、 `OnLaunched` 52 行目の周囲のメソッド。
 
 ```csharp
 // under this line
@@ -57,9 +57,9 @@ rootFrame.NavigationFailed += OnNavigationFailed;
 Xamarin.Forms.Forms.Init (e); // requires the `e` parameter
 ```
 
- 7 です。 UWP プロジェクトで、編集**MainPage.xaml**削除することによって、`Grid`内に含まれる、`Page`要素。
+ 7。 UWP プロジェクトで編集**MainPage.xaml**削除することによって、`Grid`内に含まれる、`Page`要素。
 
- 8 です。 **MainPage.xaml**、追加、新しい`xmlns`エントリ`Xamarin.Forms.Platform.UWP`:
+ 8。 **MainPage.xaml**、新しい追加`xmlns`エントリ`Xamarin.Forms.Platform.UWP`:
 
 ```csharp
 xmlns:forms="using:Xamarin.Forms.Platform.UWP"
@@ -75,13 +75,13 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 </forms:WindowsPage>
 ```
 
- 10 です。 UWP プロジェクトで、編集**MainPage.xaml.cs**を削除する、`: Page`クラス名の指定子を継承 (から継承されるようになりましたので`WindowsPage`前の手順で行われた変更により)。
+ 10。 UWP プロジェクトで編集**MainPage.xaml.cs**を削除する、`: Page`クラス名の指定子を継承 (から継承するようになりましたので`WindowsPage`前の手順で行われた変更のため)。
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11。 **MainPage.xaml.cs**、追加、`LoadApplication`で呼び出し、 `MainPage` Xamarin.Forms アプリを起動するコンス トラクター。
+ 11。 **MainPage.xaml.cs**、追加、`LoadApplication`呼び出し、 `MainPage` Xamarin.Forms アプリを起動するコンス トラクター。
 
 ```csharp
 // below this existing line
@@ -100,19 +100,19 @@ LoadApplication(new YOUR_NAMESPACE.App());
   * Location
 -->
 
-12 です。 (ローカル リソースを追加します。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトからです。
+12。 (例: ローカル リソースを追加します。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトから。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
 <a name="target-invocation-exception" />
 
-### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>「ターゲットの呼び出しの例外」「.NET ネイティブ ツール チェーンでコンパイル」を使用する場合
+### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>「ターゲット呼び出し例外」「.NET ネイティブ ツール チェーンでコンパイル」を使用する場合
 
-UWP アプリで複数のアセンブリ (たとえば、3 番目のパーティ制御ライブラリ、または、アプリ自体に複数のライブラリは、分割) を参照している場合は、Xamarin.Forms がそれらのアセンブリ (カスタム レンダラー) などからオブジェクトを読み込むことができません。
+UWP アプリが複数のアセンブリ (たとえば、3 番目のパーティ制御ライブラリ、または、アプリ自体が複数のライブラリに分割されます) を参照している場合は、Xamarin.Forms がそれらのアセンブリ (カスタム レンダラー) などからオブジェクトを読み込むことができません。
 
-これを使用する場合に発生する可能性があります、 **.NET ネイティブ ツール チェーンでコンパイル**UWP アプリのためのオプションは、**プロパティ > ビルド > 全般**プロジェクトのウィンドウ。
+これを使用する場合に発生する可能性があります、 **.NET ネイティブ ツール チェーンでコンパイル**で UWP アプリ用のオプション、**プロパティ > ビルド > 全般**プロジェクトのウィンドウ。
 
-UWP に固有のオーバー ロードを使用してこの問題を解決できる、`Forms.Init`で呼び出す**App.xaml.cs**次のコードに示すように (置換する必要があります`ClassInOtherAssembly`実際のクラスにコードを参照)。
+これを修正するにはの UWP 固有のオーバー ロードを使用して、`Forms.Init`呼び出す**App.xaml.cs**以下のコードに示すように (置き換える必要があります`ClassInOtherAssembly`実際のクラスを使用してコードを参照)。
 
 ```csharp
 // You'll need to add `using System.Reflection;`
@@ -126,13 +126,13 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 // replaces Xamarin.Forms.Forms.Init(e);
 ```
 
-アプリによって参照される各アセンブリへの参照を追加します。
+ソリューション エクスプ ローラーで直接参照または NuGet 経由での参照として追加した各アセンブリのエントリを追加します。
 
-#### <a name="dependency-services-and-net-native-compilation"></a>依存サービスおよび .NET ネイティブ コンパイル
+#### <a name="dependency-services-and-net-native-compilation"></a>依存関係サービスと .NET のネイティブ コンパイル
 
-メイン アプリケーション実行可能ファイル (このような個別のプロジェクトまたはライブラリと同様に) 外部で定義される依存サービスを解決するのには .NET ネイティブ コンパイルを使用してリリース ビルドは失敗します。
+.NET ネイティブ コンパイルを使用して、リリース ビルドは、メイン アプリケーション実行可能ファイル (別のプロジェクトやライブラリなど) の外部で定義された依存関係サービスの解決に失敗します。
 
-使用して、`DependencyService.Register<T>()`サービス クラスの依存関係を手動で登録するメソッド。 上記の例に基づいて、次のようにして register メソッドを追加します。
+使用して、`DependencyService.Register<T>()`サービス クラスの依存関係を手動で登録するメソッド。 上記の例に基づいて、このような register メソッドを追加します。
 
 ```csharp
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);

@@ -1,28 +1,28 @@
 ---
 title: Xamarin.Mac フレームワーク
-description: このドキュメントでは、Xamarin.Mac に Mac アプリケーションを開発するときに使用できるさまざまな macOS フレームワークが一覧表示します。
+description: このドキュメントでは、Xamarin.Mac を使って Mac アプリケーションを開発するときに使用できるさまざまな macOS フレームワークが一覧表示します。
 ms.prod: xamarin
 ms.assetid: E8108E77-13FE-2EC2-83FF-AFE0408D3EE6
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 8b4dc591d9fd606e9ee3ef6e34d9d29f44263392
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 605ffb23a70792a3dbaf98cd1d5b040a9dea92f5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792291"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123701"
 ---
 # <a name="xamarinmac-frameworks"></a>Xamarin.Mac フレームワーク
 
-次の macOS フレームワークは、Xamarin.Mac によってサポートされます。
+MacOS の次のフレームワークは、Xamarin.Mac でサポートされます。
 
 -  AVFoundation 
 -  高速化します。
 -  アカウント
 -  AVKit
--  AddressBook 
+-  アドレス帳 
 -  AppKit 
 -  AudioToolbox 
 -  AudioUnit 

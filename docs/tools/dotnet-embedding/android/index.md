@@ -1,49 +1,49 @@
 ---
-title: Android での埋め込み .NET
+title: .NET の Android での埋め込み
 ms.prod: xamarin
 ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/15/2018
-ms.openlocfilehash: e90d1e6258d4cfd9c918c566c9e18c358ee7668a
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 5c8d493bf54ee1a8a1e7d4b3266451c78a4aa51e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067353"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123688"
 ---
-# <a name="net-embedding-on-android"></a>Android での埋め込み .NET
+# <a name="net-embedding-on-android"></a>.NET の Android での埋め込み
 
-場合によっては、既存のネイティブの Android プロジェクトに Xamarin .NET ライブラリを追加することがあります。 これを行うには、使用することができます、 [Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)ネイティブ Java ベースの Android アプリに組み込むことがネイティブ ライブラリに .NET ライブラリを有効にするツールです。
+場合によっては、既存のネイティブの Android プロジェクトに Xamarin .NET ライブラリを追加することがあります。 これを行うには、使用することができます、 [Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)ネイティブ Java ベースの Android アプリに組み込むことができるネイティブ ライブラリに .NET ライブラリを有効にするツール。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="xamarinandroid-requirements"></a>Xamarin.Android 要件
+## <a name="xamarinandroid-requirements"></a>Xamarin.Android の要件
 
-.NET の埋め込みを使用する Xamarin.Android、次が必要です。
+.NET の埋め込みを使用する Xamarin.Android では、次が必要です。
 
 -   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) or later must be installed.
 
--   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)以降、インストールする必要があります。
+-   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)以降をインストールする必要があります。
 
--   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降、インストールする必要があります。
+-   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降をインストールする必要があります。
 
 
 ## <a name="using-embeddinator-4000"></a>Embeddinator 4000 を使用します。
 
 ネイティブの Android プロジェクトでの .NET ライブラリを使用するには、次の手順を使用します。
 
-1.  C# での Android ライブラリ プロジェクトを作成します。
+1.  作成、 C# Android ライブラリ プロジェクト。
 
-2.  インストール[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)です。
+2.  インストール[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)します。
 
-3.  検索**Embeddinator 4000.exe**に追加し、**パス**です。 例えば:
+3.  検索**Embeddinator 4000.exe**に追加し、**パス**します。 例えば:
 
     ```cmd
     set PATH=%PATH%;C:\Users\USERNAME\.nuget\packages\embeddinator-4000\0.4.0\tools
     ```
 
-4.  ライブラリのアセンブリで Embeddinator 4000 を実行します。 例えば:
+4.  ライブラリ アセンブリに Embeddinator 4000 を実行します。 例えば:
 
     ```cmd
     Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
@@ -52,37 +52,37 @@ ms.locfileid: "37067353"
 5.  Android Studio での Java プロジェクトで生成された AAR ファイルを使用します。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="xamarinandroid-requirements"></a>Xamarin.Android 要件
+## <a name="xamarinandroid-requirements"></a>Xamarin.Android の要件
 
-.NET の埋め込みを使用する Xamarin.Android、次が必要です。
+.NET の埋め込みを使用する Xamarin.Android では、次が必要です。
 
 -   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) or later must be installed.
 
--   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)以降、インストールする必要があります。
+-   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)以降をインストールする必要があります。
 
--   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降、インストールする必要があります。
+-   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降をインストールする必要があります。
 
--   **モノラル** &ndash; [モノラル 5.0](http://www.mono-project.com/download/)以降、インストールする必要があります (for Mac モノラルが Visual Studio と共にインストールされます)。
+-   **Mono** &ndash; [Mono 5.0](http://www.mono-project.com/download/)以降をインストールする必要があります (mono がインストールされている Visual studio for Mac)。
 
 
 ## <a name="using-embeddinator-4000"></a>Embeddinator 4000 を使用します。
 
 ネイティブの Android プロジェクトでの .NET ライブラリを使用するには、次の手順を使用します。
 
-1.  C# での Android ライブラリ プロジェクトを作成します。
+1.  作成、 C# Android ライブラリ プロジェクト。
 
-2.  インストール[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)です。
+2.  インストール[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)します。
 
-3.  検索**Embeddinator 4000.exe**追加**モノラル**をパスにします。 例えば:
+3.  検索**Embeddinator 4000.exe**追加**mono**をパスにします。 例えば:
 
     ```bash
     export TOOLS=~/.nuget/packages/embeddinator-4000/0.4.0/tools
     export PATH=$PATH:/Library/Frameworks/Mono.framework/Commands
     ```
 
-4.  ライブラリのアセンブリで Embeddinator 4000 を実行します。 例えば:
+4.  ライブラリ アセンブリに Embeddinator 4000 を実行します。 例えば:
 
     ```bash
     mono $TOOLS/Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
@@ -92,12 +92,12 @@ ms.locfileid: "37067353"
 
 -----
 
-使用法とコマンド ライン オプションの説明を[Embeddinator 4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c)ドキュメント。
+使用状況とコマンド ライン オプションの説明を[Embeddinator 4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c)ドキュメント。
 
 
 ## <a name="callbacks"></a>コールバック
 
-について学習[c# や Java 間の呼び出しを行う](callbacks.md)です。
+について[間呼び出しを行うC#と Java](callbacks.md)します。
 
 ## <a name="samples"></a>サンプル
 

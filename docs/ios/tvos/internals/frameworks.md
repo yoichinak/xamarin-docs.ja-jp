@@ -1,26 +1,26 @@
 ---
-title: TvOS のサポートされており、サポートされていないフレームワーク
-description: 'TvOS アプリケーションで使用できる機能を明確にするうえで役立つ、このドキュメントでは Apple フレームワークの 2 つのリスト: tvOS でサポートされるものと tvOS でサポートされていません。'
+title: TvOS のサポートされているとサポート非対象のフレームワーク
+description: TvOS アプリケーションで使用できる機能を明確には、するには、このドキュメントは、Apple のフレームワークの 2 つのリストを提供します。 tvOS、でサポートされるものと tvOS でサポートされていません。
 ms.prod: xamarin
 ms.assetid: 28EF1337-3D0E-47AB-8A13-1B333A964FB6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 8ba33d028263385eca50f8174124bbe629e3f951
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 85067d1dc95ee63cf905e81fba7afc973f7ec37e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789123"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123195"
 ---
-# <a name="supported-and-unsupported-frameworks-in-tvos"></a>TvOS のサポートされており、サポートされていないフレームワーク
+# <a name="supported-and-unsupported-frameworks-in-tvos"></a>TvOS のサポートされているとサポート非対象のフレームワーク
 
 <a name="Supported-Frameworks" />
 
 ## <a name="supported-frameworks"></a>サポートされているフレームワーク
 
-これは、Xamarin.tvOS アプリで使用するために、Apple によって提供されるフレームワークの一覧を示します。
+Xamarin.tvOS アプリで使用するために Apple によって提供されるフレームワークの一覧です。
 
 * 高速化します。
 * AudioToolbox
@@ -70,10 +70,10 @@ ms.locfileid: "34789123"
 
 ## <a name="unsupported-frameworks"></a>サポートされていないフレームワーク
 
-IOS 9 でサポートされているが、Apple によって tvOS 9 のサポート対象から削除され、Xamarin.tvOS アプリに使用することはできませんするフレームワークの一覧を次に示します。
+IOS 9 ではサポートが、Apple によって tvOS 9 のサポートから削除された、Xamarin.tvOS アプリに使用することはできませんフレームワークの一覧を次には。
 
 * アカウント
-* AddressBook
+* アドレス帳
 * AddressBookUI
 * AssetsLibrary
 * 連絡先
@@ -116,4 +116,4 @@ IOS 9 でサポートされているが、Apple によって tvOS 9 のサポー
 
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [TvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [TvOS 用のアプリのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

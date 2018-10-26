@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: d74ad52a2926fb30a528aeba29156259390c3edf
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: f787adcba78a13f6d4cad3fb446350a65e960aca
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947245"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123610"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -180,7 +180,7 @@ map.MapType == MapType.Street;
 
 ### <a name="map-region-and-mapspan"></a>マップの領域と MapSpan
 
-上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンス トラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップの位置やズーム レベルを変更する、マップ クラスのメソッドを使用し、ことができます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
+上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンス トラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
 
 -  **MapSpan.FromCenterAndRadius()** -からのスパンを作成する静的メソッド、`Position`を指定して、`Distance`します。
 -  **新しい MapSpan ()** -コンス トラクターを使用する、`Position`の緯度と経度を表示する degress とします。

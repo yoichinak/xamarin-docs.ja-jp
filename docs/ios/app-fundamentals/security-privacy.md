@@ -4,15 +4,15 @@ description: このドキュメントでは、セキュリティ、および iOS
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1a28bf394d29c09bfd264f03e0eea6c8b582f271
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1c88a5c16dbe5559f0b551a97a27ebb893991187
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854754"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120503"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS のセキュリティとプライバシーの機能
 
@@ -72,7 +72,7 @@ IOS 10 (以降) で HomeKit にアクセスするは、次の例として、開�
 
 ![アラートの例 NSHomeKitUsageDescription](security-privacy-images/info01.png "NSHomeKitUsageDescription アラートの例")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 現在の Xamarin.iOS for Visual Studio が編集をサポートしていない、 **Info.plist**マニフェスト エディターの既定の iOS 内からプライバシー キー。 代わりに、汎用の PList エディターを使用する必要はそのため、次の操作を行います。
 
@@ -90,7 +90,7 @@ IOS 10 (以降) で HomeKit にアクセスするは、次の例として、開�
     ![説明を入力します](security-privacy-images/InfoPListSetValue.png "説明を入力します")
 7. 変更内容をファイルに保存します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 プライバシー キーのいずれかを設定するには、次の操作を行います。
 

@@ -1,52 +1,52 @@
 ---
-title: Xamarin.Android で放送受信機
-description: このセクションでは、放送受信機を使用する方法について説明します。
+title: Xamarin.Android でブロードキャスト レシーバー
+description: このセクションでは、ブロードキャスト レシーバーを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 6b2e316eaf67e51801be4fcd670e80ec81c8ff08
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 51bd3dd4c27dce19344f7660c31a0d4e741e1ad4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935400"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121140"
 ---
-# <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android で放送受信機
+# <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android でブロードキャスト レシーバー
 
-_このセクションでは、放送受信機を使用する方法について説明します。_
+_このセクションでは、ブロードキャスト レシーバーを使用する方法について説明します。_
 
-## <a name="broadcast-receiver-overview"></a>放送受信機の概要
+## <a name="broadcast-receiver-overview"></a>ブロードキャスト レシーバーの概要
 
-A_放送受信機_Android コンポーネントにより、メッセージに応答するアプリケーションです (Android [ `Intent` ](https://developer.xamarin.com/api/type/Android.Content.Intent/))、Android オペレーティング システムまたはアプリケーションによっては、ブロードキャストをします。 次のブロードキャスト、_公開/定期受信_モデル&ndash;イベントの原因が発行され、イベントに関心のあるこれらのコンポーネントが受信したブロードキャストします。 
+A_ブロードキャスト レシーバー_ Android コンポーネントにより、メッセージに応答するアプリケーションです (Android [ `Intent` ](https://developer.xamarin.com/api/type/Android.Content.Intent/)) Android オペレーティング システムまたはアプリケーションをブロードキャストします。 以下のブロードキャストを_パブリッシュ/サブスクライブ_モデル&ndash;イベントが発行され、受信したイベントに関心のあるこれらのコンポーネントにブロードキャストします。
 
-Android では、2 種類のブロードキャストを識別します。
+Android では、ブロードキャストの 2 つの種類を識別します。
 
-* **明示的なブロードキャスト**&ndash;これらの種類のブロードキャストの特定のアプリケーションを対象とします。 明示的なブロードキャストの最も一般的な用途は、アクティビティを開始します。 アプリが電話番号をダイヤルする必要がある場合は、明示的なブロードキャストの例ダイヤルするには、Android と電話番号に沿ったパスの Phone アプリを対象とするインテントをディスパッチ、されます。 Android は、電話アプリに、インテントがルーティングされます。
-* **暗黙的なブロードキャスト**&ndash;これらのブロードキャストは、デバイス上のすべてのアプリケーションにディスパッチされます。 暗黙のブロードキャストの例は、`ACTION_POWER_CONNECTED`目的としました。 この目的は、Android デバイスのバッテリが充電ことを検出するたびに発行されます。 Android では、このイベントに対して登録されているすべてのアプリをこの目的をルーティングします。
+* **明示的なブロードキャスト**&ndash;ブロードキャストのこれらの型は、特定のアプリケーションを対象します。 明示的なブロードキャストの最も一般的な用途では、アクティビティを開始します。 アプリが電話番号をダイヤルする必要がある場合は、明示的なブロードキャストの例インテントをダイヤルするには、Android とパスに沿って、電話番号、電話アプリを対象とすることはディスパッチします。 Android は、Phone アプリに意図がルーティングされます。
+* **暗黙的なブロードキャスト**&ndash;ブロードキャストは、デバイス上のすべてのアプリにディスパッチされます。 暗黙のブロードキャストの例は、`ACTION_POWER_CONNECTED`インテントです。 この目的は、Android デバイスのバッテリが充電ことを検出するたびに発行されます。 Android では、この目的をこのイベントに対して登録されているすべてのアプリにルーティングします。
 
-ブロードキャストの受信者のサブクラスは、`BroadcastReceiver`型およびそれをオーバーライドする必要があります、 [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/)メソッドです。 Android を実行`OnReceive`メイン スレッドでそのためこの方法を設計する高速に実行します。 内のスレッドを起動するときは注意する必要がある`OnReceive`のため、メソッドの終了時に、Android がプロセスを終了させる可能性があります。 放送受信機が長時間実行される作業を実行する必要があるかどうかは、スケジュールを設定することをお勧め、_ジョブ_を使用して、`JobScheduler`または_Firebase ジョブ ディスパッチャー_です。 ジョブに作業をスケジュール設定については別のガイドで説明します。
+ブロードキャスト レシーバーのサブクラスは、`BroadcastReceiver`型とそれをオーバーライドする必要があります、 [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/)メソッド。 Android を実行`OnReceive`のメイン スレッドでそのためこのメソッドを設計する高速に実行します。 内のスレッドを起動するときは注意する必要がある`OnReceive`のため、メソッドが完了すると、Android は、プロセスを終了可能性があります。 かどうかには、ブロードキャスト レシーバーは、実行時間の長い作業を実行する必要がありますし、スケジュールを設定することを推奨、_ジョブ_を使用して、`JobScheduler`または_Firebase ジョブ ディスパッチャー_します。 ジョブでの作業のスケジュール設定については、別のガイドで説明します。
 
-_インテント フィルター_ Android は、メッセージを正しくルーティングできるように放送受信機の登録に使用します。 実行時にインテントのフィルターを指定することができます (これとも呼ば、_受信者のコンテキストに登録された_または_動的登録_)、Android マニフェスト (、で静的に定義することができます_レシーバーのマニフェストに登録された_)。 Xamarin.Android 提供 c# 属性、 `IntentFilterAttribute`、意図的に (このガイドの後半で詳しくは、この説明は) フィルターを静的に登録します。 Android 8.0 以降、ことはできません、アプリケーションを暗黙のブロードキャストを静的に登録します。
+_インテント フィルター_ブロードキャスト レシーバーを登録し、Android は、メッセージを正しくルーティングできるようにするために使用します。 実行時にインテント フィルターを指定できます (これとも呼ば、_受信者のコンテキストに登録された_または_動的登録_)、Android マニフェスト (、で静的に定義することができます_レシーバーのマニフェストに登録された_)。 Xamarin.Android の提供、C#属性、 `IntentFilterAttribute`、(このガイドの後半で詳しくは、この説明は)、インテント フィルターは静的に登録します。 Android 8.0 以降、ことはできませんの暗黙のブロードキャストを静的に登録するアプリケーションです。
 
-マニフェストに登録された受信機とコンテキストに登録された受信機の主な違いにマニフェストに登録された受信者が応答できるときに、アプリケーションが実行中に、コンテキストに登録された受信者がブロードキャストに応答のみアプリが実行されていない場合でもをブロードキャストします。  
+マニフェストに登録された受信機とコンテキスト登録の受信者の間の主な違いは、マニフェストに登録された受信者が応答できるときに、アプリケーションが実行中に、コンテキスト登録の受信者がブロードキャストに応答のみアプリが実行されていない場合でもをブロードキャストします。  
 
-ブロードキャストの受信者を管理およびブロードキャストを送信するためには 2 セットの Api があります。
+ブロードキャスト レシーバーを管理およびブロードキャストを送信するためには 2 つの Api のセットがあります。
 
-1. **`Context`** &ndash; `Android.Content.Context`システム全体のイベントに応答する放送受信機を登録するクラスを使用できます。 `Context`はシステム全体のブロードキャストの発行にも使用します。
-2. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** &ndash; これは、API を介して使用可能な[v4 NuGet パッケージの Xamarin サポート ライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)です。 このクラスは、ブロードキャストおよびブロードキャストの受信側がそれらを使用しているアプリケーションのコンテキスト内に分離するために使用されます。 このクラスは、他のアプリケーションのアプリケーション専用のブロードキャストに応答しておよびプライベートの受信者にメッセージの送信を回避するために役立ちます。
+1. **`Context`** &ndash; `Android.Content.Context`システム全体のイベントに応答するブロードキャスト レシーバーを登録するクラスを使用できます。 `Context`システム全体のブロードキャストの発行にも使用されます。
+2. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** &ndash; これは、API で使用可能な[v4 NuGet パッケージの Xamarin サポート ライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)します。 このクラスは、ブロードキャスト、ブロードキャスト レシーバーがそれらを使用しているアプリケーションのコンテキスト内で分離の保持に使用されます。 このクラスは、他のアプリケーションがアプリケーション専用のブロードキャストに応答してまたはプライベートの受信者にメッセージの送信を回避するために役立ちます。
 
-放送受信機は、のダイアログ ボックスを表示できない可能性があり、ブロードキャスト レシーバー内からアクティビティを開始する強くお勧めします。 放送受信機は、ユーザーに通知する必要がありますは通知を発行する必要があります。
+ブロードキャスト レシーバーは、ダイアログを表示できない可能性があり、ブロードキャスト レシーバー内からアクティビティの開始を強くお勧めします。 ブロードキャスト レシーバーは、ユーザーに通知する必要がありますは通知を発行する必要があります。
 
-バインドまたはブロードキャスト レシーバー内からのサービスを開始することはできません。 
+場合によっては、バインドまたはブロードキャスト レシーバー内からサービスを開始することはできません。 
 
-このガイドはブロードキャスト レシーバーを作成する方法とブロードキャストが生じるようにに登録する方法について説明します。
+このガイドは、ブロードキャスト レシーバーを作成する方法とブロードキャストを受け取ることができるように登録する方法について説明します。
 
 ## <a name="creating-a-broadcast-receiver"></a>ブロードキャスト レシーバーを作成します。
 
-Xamarin.Android でブロードキャスト レシーバーを作成するには、アプリケーションは、サブクラスを必要があります、`BroadcastReceiver`クラスを装飾することで、 `BroadcastReceiverAttribute`、オーバーライド、`OnReceive`メソッド。
+アプリケーション Xamarin.Android では、ブロードキャスト レシーバーを作成するにはサブクラス化する必要があります、`BroadcastReceiver`クラスを装飾することで、`BroadcastReceiverAttribute`をオーバーライドし、`OnReceive`メソッド。
 
 ```csharp
 [BroadcastReceiver(Enabled = true, Exported = false)]
@@ -61,15 +61,15 @@ public class SampleReceiver : BroadcastReceiver
 }
 ```
 
-Xamarin.Android は、クラスをコンパイルするときに、受信側を登録するために必要なメタ データと共に、AndroidManifest も更新されます。 静的に登録されているブロードキャストの受信者を表す、`Enabled`適切に設定する必要があります`true`、それ以外の場合、Android によって、受信側のインスタンスを作成できません。
+Xamarin.Android では、クラスをコンパイルするときに、受信側を登録するために必要なメタ データと共に、AndroidManifest も更新されます。 静的に登録されているブロードキャスト レシーバーの`Enabled`適切に設定する必要があります`true`、それ以外の場合、Android によって、受信側のインスタンスを作成できません。
  
-`Exported`プロパティはブロードキャストの受信側がアプリケーションの外部からのメッセージを受信できるかどうかを制御します。 プロパティが明示的に設定されていない場合、プロパティの既定値はブロードキャストの受信者に関連付けられた任意の目的フィルターがある場合に基づく Android によって決まります。 放送受信機のには、少なくとも 1 つの目的としたフィルターがあるかどうかは、Android と見なされます、`Exported`プロパティは`true`します。 放送受信機に関連付けられたを目的としたフィルターがないかどうかは、Android では、値があると想定されます`false`です。 
+`Exported`プロパティは、ブロードキャスト レシーバーがアプリケーションの外部からのメッセージを受信できるかどうかを制御します。 プロパティが明示的に設定されていない場合、プロパティの既定値は Android ブロードキャスト レシーバーに関連付けられているそのインテント フィルターがない場合に基づくによって決まります。 ブロードキャスト レシーバーに少なくとも 1 つのインテント フィルターがあるかどうかは、Android はいると仮定して、`Exported`プロパティは`true`します。 インテント フィルターに関連付けられた、ブロードキャスト レシーバーがないかどうかは、Android では、値があると想定されます`false`します。 
 
-`OnReceive`メソッドへの参照を受け取る、`Intent`放送受信機をディスパッチされました。 これによりは、ブロードキャストの受信者に値を渡すことを目的の送信者の可能性があります。
+`OnReceive`メソッドへの参照を受け取る、`Intent`ブロードキャスト レシーバーにディスパッチするでした。 これにより、ブロードキャスト レシーバーに値を渡す目的の送信者に関することができます。
 
-### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>目的としたフィルターを使用して放送受信機を静的に登録します。
+### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>インテント フィルターを使用してブロードキャスト レシーバーを静的に登録します。
 
-ときに、`BroadcastReceiver`で修飾された、 [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)、Xamarin.Android は、必要な追加`<intent-filter>`要素、Android をコンパイル時にマニフェスト。 次のスニペットは、デバイスの場合、ユーザーから、Android の適切なアクセス許可が付与された) の起動が完了したときに実行される放送受信機の例を示します。
+ときに、`BroadcastReceiver`で修飾されたが、 [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)、Xamarin.Android は、必要に応じて、追加`<intent-filter>`要素、Android をコンパイル時にマニフェスト。 次のスニペットでは、デバイスの (ユーザーが Android の適切な権限が付与された) 場合の起動が完了したときに実行するブロードキャスト レシーバーの例を示します。
 
 ```csharp
 [BroadcastReceiver(Enabled = true)]
@@ -83,7 +83,7 @@ public class MyBootReceiver : BroadcastReceiver
 }
 ```
 
-カスタムの目的に応答するインテント フィルターを作成することもできます。 次に例を示します。 
+カスタムのインテントに応答するインテント フィルターを作成することもできます。 次に例を示します。 
 
 ```csharp
 [BroadcastReceiver(Enabled = true)]
@@ -97,11 +97,11 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Android 8.0 (API レベル 26) を対象とするアプリまたは高い可能性がありますいない静的に登録暗黙のブロードキャストのです。 アプリは、明示的なブロードキャストの可能性があります登録静的のままにします。 この制限から除外される暗黙のブロードキャストの小さいリストがあります。 これらの例外に記載されて、[ブロードキャストの暗黙的な例外](https://developer.android.com/guide/components/broadcast-exceptions.html)Android ドキュメントのガイドです。 暗黙的なブロードキャストに関心のあるアプリを使用して動的に行う必要があります、`RegisterReceiver`メソッドです。 これは次に説明します。
+Android 8.0 (API レベル 26) を対象とするアプリ以降に静的に登録できません暗黙のブロードキャストまたはします。 アプリは、明示的なブロードキャストも静的を登録することがあります。 この制限から除外される暗黙のブロードキャストの小規模なリストがあります。 これらの例外が記載されて、[ブロードキャストの暗黙的な例外](https://developer.android.com/guide/components/broadcast-exceptions.html)Android ドキュメントのガイド。 暗黙的なブロードキャストに関心のあるアプリを使用して動的に行う必要があります、`RegisterReceiver`メソッド。 これは次に説明します。
 
-### <a name="context-registering-a-broadcast-receiver"></a>ブロードキャストの受信者のコンテキストの登録
+### <a name="context-registering-a-broadcast-receiver"></a>ブロードキャスト レシーバーのコンテキストの登録
 
-呼び出してコンテキスト (動的登録とも呼ばれる) の登録、受信側が実行される、`RegisterReceiver`メソッド、およびブロードキャストの受信者がへの呼び出しに登録されている必要がある、`UnregisterReceiver`メソッドです。 リソースのリークを防ぐためには、することが重要 (アクティビティまたはサービス) のコンテキストに関連が不要になったときに、受信者の登録を解除します。 たとえば、サービスはユーザーに表示される更新プログラムが利用できるアクティビティに通知することを目的をブロードキャストする可能性があります。 アクティビティを開始するときは、それらの意図的の登録はします。 ときに、アクティビティは、バック グラウンドに移動されが表示されない、ユーザーに、それを登録解除する受信側、更新プログラムを表示するための UI が表示されないためです。 次のコード スニペットは、登録して、アクティビティのコンテキストで放送受信機の登録を解除する方法の例を示します。
+コンテキスト (動的な登録とも呼ばれます) の登録、受信側が呼び出すことによって実行、`RegisterReceiver`メソッドをおよびブロードキャスト レシーバーがへの呼び出しに登録する必要がありますが、`UnregisterReceiver`メソッド。 リソースのリークを防ぐためが (アクティビティまたはサービス) のコンテキストに関連がなくなったとき、受信側の登録を解除する重要です。 たとえば、サービスをユーザーに表示される更新プログラムが利用できるアクティビティを通知するためにインテントをブロードキャストする可能性があります。 アクティビティの開始時に、インテントを登録します。 ときに、アクティビティがバック グラウンドに移動し、ユーザーには表示されなく、それを登録解除する、受信側、更新プログラムを表示するための UI が表示されないため、します。 次のコード スニペットでは、登録およびアクティビティのコンテキストでブロードキャスト レシーバーの登録を解除する方法の例を示します。
 
 ```csharp
 [Activity(Label = "MainActivity", MainLauncher = true, Icon = "@mipmap/icon")]
@@ -133,58 +133,58 @@ public class MainActivity: Activity
 }
 ```
 
-前の例で、前景色を入手したとき、アクティビティが登録されますを使用してカスタムの目的をリッスンする放送受信機、`OnResume`ライフ サイクル メソッドです。 アクティビティは、バック グラウンドに移動すると、`OnPause()`メソッドは、受信側に登録を解除します。
+前の例では、アクティビティが、フォア グラウンドには登録を使用してカスタムのインテントをリッスンするブロードキャスト レシーバー、`OnResume`ライフ サイクル メソッド。 アクティビティは、バック グラウンドに移動すると、`OnPause()`メソッドは、受信側の登録を解除します。
 
 ## <a name="publishing-a-broadcast"></a>ブロードキャストの発行
 
-ブロードキャストはインテント オブジェクトを作成してでのディスパッチのデバイスにインストールされているすべてのアプリに発行できるようにする、`SendBroadcast`または`SendOrderedBroadcast`メソッドです。  
+インテント オブジェクトを作成して、ディスパッチでデバイスにインストールされているすべてのアプリに発行できるブロードキャスト、`SendBroadcast`または`SendOrderedBroadcast`メソッド。  
 
-1. **Context.SendBroadcast メソッド**&ndash;このメソッドの実装がいくつかがあります。
-   これらのメソッドは、システム全体にインテントをブロードキャストします。 放送受信機のためには、不定な順序で、目的が表示されます。 柔軟性が大幅に向上にはこれが他のアプリケーションを登録し、目的が表示されることを意味します。 これにより、潜在的なセキュリティ リスクがもたらされます。 アプリケーションは、未承認のアクセスを防ぐために追加のセキュリティを実装する必要があります。 1 つの考えられる解決方法は、使用する、`LocalBroadcastManager`のみ、アプリのプライベート空間内のメッセージのディスパッチをされます。 このコード スニペットは 1 つのいずれかを使用して、目的をディスパッチする方法の例、`SendBroadcast`メソッド。
+1. **Context.SendBroadcast メソッド**&ndash;はこのメソッドのいくつかの実装があります。
+   これらのメソッドは、システム全体にインテントをブロードキャストします。 目的が、不定な順序で受信するブロードキャスト レシーバー。 これにより、幅広い柔軟性を提供しますは、他のアプリケーションを登録し、目的の受信を意味します。 潜在的なセキュリティ リスクが生じます。 アプリケーションは、不正アクセスを防止する追加のセキュリティを実装する必要があります。 ソリューションの 1 つは、使用する、`LocalBroadcastManager`これはのみ、アプリのプライベート領域内のメッセージをディスパッチします。 このコード スニペットは、のいずれかを使用して、インテントをディスパッチする方法の 1 つの例、`SendBroadcast`メソッド。
 
    ```csharp
    Intent message = new Intent("com.xamarin.example.TEST");
    // If desired, pass some values to the broadcast receiver.
-   intent.PutExtra("key", "value");
-   SendBroadcast(intent);
+   message.PutExtra("key", "value");
+   SendBroadcast(message);
    ```
 
-    このスニペットは、ブロードキャストを使用して、送信の別の例、`Intent.SetAction`アクションを識別する方法。
+    このスニペットを使用してブロードキャストを送信する別の例とは、`Intent.SetAction`アクションを識別するメソッド。
 
-    ```csharp 
+    ```csharp
     Intent intent = new Intent();
     intent.SetAction("com.xamarin.example.TEST");
     intent.PutExtra("key", "value");
     SendBroadcast(intent);
     ```
 
-2. **Context.SendOrderedBroadcast** &ndash;メソッドは、これとよく似ています`Context.SendBroadcast`目的が、recievers が登録されている順序でレシーバーを一度に 1 つの公開済みになる、違いです。
+2. **Context.SendOrderedBroadcast** &ndash;メソッドは、これとよく似ています`Context.SendBroadcast`目的が時、受信側が登録されている順序での受信側に公開された 1 つになるに違いです。
 
 ### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-[Xamarin サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)と呼ばれるヘルパー クラスを提供[ `LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html)です。 `LocalBroadcastManager`を送信するか、デバイス上の他のアプリからブロードキャストを受信しないようにするアプリのためのものでは、します。 `LocalBroadcastManager`に登録されているこれらのブロードキャスト レシーバーにのみ、アプリケーションのコンテキスト内でメッセージを発行するのみ、`LocalBroadcastManager`です。 このコード スニペットはブロードキャストの受信者を登録する次の例`LocalBroadcastManager`:
+[Xamarin サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)というヘルパー クラスを提供します。 [ `LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html)します。 `LocalBroadcastManager`送信またはデバイス上の他のアプリからのブロードキャストを受信したくないアプリが対象としています。 `LocalBroadcastManager`に登録されているこれらのブロードキャスト レシーバーにのみ、アプリケーションのコンテキスト内でのメッセージを発行するのみ、`LocalBroadcastManager`します。 このコード スニペットでブロードキャスト レシーバーを登録する例は、 `LocalBroadcastManager`:
 
 ```csharp
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this). RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
 ```
 
-その他のデバイスでアプリがで公開されているメッセージを受信できない、`LocalBroadcastManager`です。 このコード スニペットは、インテントを使用して、ディスパッチする方法を示しています、 `LocalBroadcastManager`:
+デバイス上の他のアプリにで公開されているメッセージが表示されることはできません、`LocalBroadcastManager`します。 このコード スニペットは、インテントを使用してディスパッチする方法を示しています、 `LocalBroadcastManager`:
 
 ```csharp
 Intent message = new Intent("com.xamarin.example.TEST");
 // If desired, pass some values to the broadcast receiver.
-intent.PutExtra("key", "value");
+message.PutExtra("key", "value");
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
 ```
 
 ## <a name="related-links"></a>関連リンク
 
-- [BroadcastReceiver](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiver/)
-- [Context.RegisterReceiver](https://developer.xamarin.com/api/member/Android.Content.Context.RegisterReceiver/p/Android.Content.BroadcastReceiver/Android.Content.IntentFilter/System.String/Android.OS.Handler/)
-- [Context.SendBroadcast](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/)
-- [Context.UnregisterReceiver](https://developer.xamarin.com/api/member/Android.Content.Context.UnregisterReceiver/p/Android.Content.BroadcastReceiver/)
-- [目的](https://developer.xamarin.com/api/type/Android.Content.Intent/)
-- [IntentFilter](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
-- [LocalBroadcastManager](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
-- [Android でのローカルの通知](~/android/app-fundamentals/notifications/local-notifications.md)
-- [Android ライブラリ v4 のサポート](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
+- [BroadcastReceiver API](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiver/)
+- [Context.RegisterReceiver API](https://developer.xamarin.com/api/member/Android.Content.Context.RegisterReceiver/p/Android.Content.BroadcastReceiver/Android.Content.IntentFilter/System.String/Android.OS.Handler/)
+- [Context.SendBroadcast API](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/)
+- [Context.UnregisterReceiver API](https://developer.xamarin.com/api/member/Android.Content.Context.UnregisterReceiver/p/Android.Content.BroadcastReceiver/)
+- [インテント API](https://developer.xamarin.com/api/type/Android.Content.Intent/)
+- [IntentFilter API](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
+- [LocalBroadcastManager (Android docs)](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
+- [Android でのローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)ガイド
+- [Android サポート ライブラリ v4 (NuGet)](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

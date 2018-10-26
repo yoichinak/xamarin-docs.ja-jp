@@ -1,246 +1,246 @@
 ---
 title: IOS 10 の概要
-description: この記事では、Xamarin.iOS 開発者向けのすべての新しいまたは変更された Api と iOS 10 で使用できる機能を紹介します。
+description: この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 10 で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: c3bee0f15016394005a67e98cd8435e6d63b3ac6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2d1e0df95b2665f7e3b33a901271b11e1c243b1b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30786475"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123565"
 ---
 # <a name="introduction-to-ios-10"></a>IOS 10 の概要
 
-_この記事では、Xamarin.iOS 開発者向けのすべての新しいまたは変更された Api と iOS 10 で使用できる機能を紹介します。_
+_この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 10 で使用できる機能を紹介します。_
 
 ## <a name="introducing-ios-10"></a>IOS 10 の概要
 
-新しい ios 10 SDK、Apple が含まれている新しい Api と、開発者はアプリおよび機能の新しいカテゴリの作成を有効にするサービスです。 IOS アプリでは、エンドユーザーが使用されていた使用可能な豊富な魅力的な機能を提供するメッセージ、Siri、Phone、およびマップのアプリを拡張できますようになりました。
+新しい ios 10 SDK、Apple に含まれている新しい Api とアプリおよび機能の新しいカテゴリを作成する開発者を有効にするサービス。 IOS アプリでは、ユーザーが以前使用したリッチで魅力的な機能を提供するメッセージ、Siri、Phone、およびマップ アプリを拡張できるようにします。
 
 IOS 10 の詳細については、Apple を参照してください[iOS + アプリ](https://developer.apple.com/ios/)ドキュメント。
 
-## <a name="whats-new-in-ios-10"></a>新機能 iOS 10
+## <a name="whats-new-in-ios-10"></a>IOS 10 で新します。
 
-Apple は iOS 10 と共になど、既存の機能に多くの機能強化にいくつかの新しい Api とサービスが追加します。
+Apple は iOS 10 と共になど、既存の機能に多くの機能強化でいくつかの新しい Api やサービスが追加します。
 
 
-## <a name="adapting-to-the-true-tone-display"></a>True トーン ディスプレイに適応させる
+## <a name="adapting-to-the-true-tone-display"></a>True のトーン表示への適応
 
-Apple の True トーン表示テクノロジは、色と現在の照明条件に一致するのにディスプレイの輝度を動的に調整するのに、iOS デバイスで環境の照明センサーを使用します。 iOS 10 は、新しい[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)キー、アプリに追加できる`Info.plist`ファイルし、True トーンが標準的な色ずれを適用する方法を制御します。 
+Apple の True トーン表示テクノロジでは、色と現在の照明条件に一致するためにディスプレイの輝度を動的に調整するのに、iOS デバイスで環境光センサーを使用します。 iOS 10 は、新しい[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)アプリの追加できるキー`Info.plist`ファイルし、True トーンが標準の色の shift キーを適用する方法を制御します。 
 
 次の値を使用できます。
 
-- `UIWhitePointAdaptivityStyleStandard` **既定の**-標準の空白ポイント adaptivity を使用します。
-- `UIWhitePointAdaptivityStyleReading` -アプリの読み取りに重点を置いたに使用されます。
-- `UIWhitePointAdaptivityStyleGame` -アプリのゲームに重点を置いたに使用されます。
-- `UIWhitePointAdaptivityStyleVideo` -ビデオに重点を置いたアプリに使用されます。
-- `UIWhitePointAdaptivityStylePhoto` -アプリに使用される写真に重点を置いた色の忠実性が環境ホワイト ポイント調整より重要です。
+- `UIWhitePointAdaptivityStyleStandard` **既定の**-標準的なホワイト ポイント関連した適性を使用します。
+- `UIWhitePointAdaptivityStyleReading` -アプリの読み取りに重点を置いたの使用。
+- `UIWhitePointAdaptivityStyleGame` -アプリのゲームに重点を置いたの使用。
+- `UIWhitePointAdaptivityStyleVideo` -アプリのビデオに重点を置いたの使用。
+- `UIWhitePointAdaptivityStylePhoto` -アプリの使用写真に重点を置いた色の忠実性が環境の白点の調整をよりも重要です。
 
 <a name="app-extensions" />
 
-## <a name="app-extensions"></a>アプリの拡張機能
+## <a name="app-extensions"></a>アプリ拡張機能
 
-Apple は iOS 10 で新しいアプリケーション拡張ポイントがいくつか用意されています。
+Apple は iOS 10 で新しいアプリ拡張機能ポイントをいくつか用意されています。
 
 - ディレクトリを呼び出す
-- インテントとインテント UI
+- Intents および Intents UI
 - メッセージ
 - 通知の内容
 - Notification Services
 - ステッカー パック
 
-また、サード パーティ製キーボード アプリ拡張機能では、次の機能強化があります。
+さらに、サード パーティ製キーボード アプリ拡張機能では、次の拡張機能があります。
 
-- 新しい`DocumentInputMode`のプロパティ、`UITextDocumentProxy`クラスは、ドキュメントの入力言語を決定、その言語に合うようにキーボード拡張子を許可できます。
-- 新しい`HandleInputModeList`メソッドにより、キーボード拡張機能がタップ球キーへの応答で、システムのキーボード ピッカー メニューを表示します。
+- 新しい`DocumentInputMode`のプロパティ、`UITextDocumentProxy`クラスは、ドキュメントの入力言語を決定、その言語の連携をキーボード拡張機能を許可できます。
+- 新しい`HandleInputModeList`方法では、キーボード拡張機能がタップされる世界中のキーへの応答で、システムのキーボード ピッカー メニューを表示できます。
 
-詳細についてを参照してください、 [Introduction to Extensions](~/ios/platform/extensions.md)、[メッセージ アプリ統合](~/ios/platform/message-app-integration/index.md)、[プロアクティブな推奨事項の概要](~/ios/platform/search/proactive-suggestions.md)、 [Introduction to SiriKit](~/ios/platform/sirikit/index.md)、[ユーザーへの通知の概要](~/ios/platform/user-notifications/index.md)と Apple の[アプリ拡張機能プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)です。
+詳細についてを参照してください、[拡張機能の概要](~/ios/platform/extensions.md)、[メッセージ アプリ統合](~/ios/platform/message-app-integration/index.md)、[プロアクティブな候補の概要](~/ios/platform/search/proactive-suggestions.md)、 [SiriKit の概要](~/ios/platform/sirikit/index.md)、[ユーザー通知の概要](~/ios/platform/user-notifications/index.md)と Apple の[アプリ拡張機能のプログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)します。
 
 ## <a name="app-search-enhancements"></a>アプリの検索の機能強化
 
-IOS 10 の主要なメディアは、次のアプリを検索するいくつかの拡張機能を提供します。
+IOS 10 でコア スポット ライトは、次のアプリを検索するいくつかの機能強化を提供します。
 
-- **(差分プライバシー) の Crowdsourced ディープ リンク人気**-検索結果にコンテンツをディープ リンク アプリを昇格する方法を提供します。
-- **アプリ内検索**-新しい`CSSearchQuery`メール、Messages や Notes アプリの作業と同様に、アプリ内・ Spotlight 検索機能を提供するクラス。
-- **継続タスクを検索**- により、ユーザーはアプリを開き、メディアまたは Safari、検索を開始して、その検索を続行します。
-- **検証結果の視覚化**-Apple の[アプリの検索 API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)preforming テストと web サイトのマークアップとディープ リンクの視覚的表現が表示されます。
-- **アプリ画像の共有をメッセージ**-Spotlight 検索で表示するメッセージ (メッセージ アプリ拡張機能) 経由で共有するために提供される一般的なアプリでイメージを使用します。
+- **(差分プライバシー) のディープ リンクの支持を引き出します**-検索結果でのディープ リンク アプリのコンテンツを昇格する方法を提供します。
+- **アプリ内検索**-使用して、新しい`CSSearchQuery`メール、Messages や Notes アプリの動作方法と同様のアプリ内スポット ライト検索機能を提供するクラス。
+- **継続を検索**- ユーザーをスポット ライトや、Safari で検索を開始し、アプリを開くし、その検索を続行します。
+- **検証結果の視覚化**-Apple の[アプリ検索 API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)テストの実行時に web サイトのマークアップとディープ リンクのビジュアル表現が表示されます。
+- **アプリの画像の共有をメッセージ**-スポット ライト検索で表示するメッセージ (メッセージ アプリ拡張機能) 経由で共有するために提供される一般的なアプリ内のイメージを使用します。
 
-詳細については、次を参照してください、[アプリ検索の機能強化](~/ios/platform/search/app-search-enhancements.md)ガイドです。
+詳細については、次を参照してください、[アプリ検索の機能強化](~/ios/platform/search/app-search-enhancements.md)ガイド。
 
-## <a name="apple-pay-enhancements"></a>Apple 給与の機能強化
+## <a name="apple-pay-enhancements"></a>Apple Pay 機能強化
 
-Apple がに対していくつかの機能強化 Apple Pay の web サイトから Siri とマップとの対話によっても、セキュリティで保護された支払にユーザーに許可する ios 10 です。
+Apple は、Siri とマップとの対話と web サイトから支払いのセキュリティで保護されたユーザーに許可する iOS 10 で、Apple Pay にいくつかの機能強化を行ったが。
 
-10、iOS でいくつかの新しい Api が追加されました iOS プラットフォームと watchOS 動的支払ネットワークと新しいサンド ボックスのテスト環境をサポートするために両方を操作します。
+IOS 10 では、いくつかの新しい Api が追加されました iOS と動的な支払いネットワークと新しいサンド ボックス テスト環境をサポートする watchOS の両方を操作します。
 
-さらに、PassKit フレームワークの外部の Apple Pay をサポートするために拡大されて`UIKit`とそれぞれのアプリ内から、カードを提示するカードの発行元を許可します。
+さらに、PassKit framework の外部の Apple Pay をサポートするために拡大されて`UIKit`とそれぞれのアプリ内から、カードを提示するカードの発行元を許可するようにします。
 
-詳細については、次を参照してください、 [Apple 料金を支払う強化](~/ios/platform/apple-pay.md)ガイドです。
+詳細については、次を参照してください、 [Apple 支払い強化](~/ios/platform/apple-pay.md)ガイド。
 
-## <a name="alternate-app-icons"></a>代替アプリのアイコン
+## <a name="alternate-app-icons"></a>代替アプリ アイコン
 
-Apple では、そのアイコンを管理するアプリを許可する iOS 10.3 にいくつかの機能強化が追加します。
+Apple には、そのアイコンを管理するアプリを許可する iOS 10.3 にいくつかの機能強化が追加されます。
 
- - `ApplicationIconBadgeNumber` -を取得またはのスプリング ボードで、アプリ アイコンのバッジを設定します。
- - `SupportsAlternateIcons` If`true`アプリは別のアイコンのセット。
- - `AlternateIconName` 現在選択されている別のアイコンの名前を返しますまたは`null`プライマリ アイコンを使用する場合。
- - `SetAlternameIconName` -指定した代替アイコンに、アプリのアイコンを切り替えるには、このメソッドを使用します。
+ - `ApplicationIconBadgeNumber` -を取得します。 または、スプリング ボードで、アプリ アイコンのバッジを設定します。
+ - `SupportsAlternateIcons` If`true`アプリには、別のアイコンのセット。
+ - `AlternateIconName` -現在選択されている代替アイコンの名前を返しますまたは`null`プライマリ アイコンを使用する場合。
+ - `SetAlternameIconName` -このメソッドを使用してアプリのアイコンを指定した代替アイコンに切り替えます。
 
-詳細については、次を参照してください、[代替アプリ アイコン](~/ios/app-fundamentals/images-icons/alternate-app-icons.md)ガイドです。
+詳細については、次を参照してください、[代替アプリ アイコン](~/ios/app-fundamentals/images-icons/alternate-app-icons.md)ガイド。
 
 
 ## <a name="introduction-to-callkit"></a>CallKit の概要
 
-IOS 10 で新しい CallKit API では、VOIP アプリ iPhone UI と統合し際に使い慣れたインターフェイスを提供し、エンドユーザーに発生するための手段を提供します。 この API を使用してユーザーが表示し、iOS デバイスのロック画面からの VOIP 呼び出しとの対話および連絡先の電話アプリの使用を管理**お気に入り**と**最近**ビュー。
+IOS 10 で新しい CallKit API は、VOIP アプリを iPhone UI と統合し使い慣れたインターフェイスを提供し、エンドユーザーに発生するための手段を提供します。 この API を使用してユーザーが表示し、iOS デバイスのロック画面から VOIP 通話との対話および連絡先の Phone アプリの使用を管理**お気に入り**と**も最近使ったもの**ビュー。
 
-さらに、CallKit API は、ことができます (呼び出し元の ID) の名前と電話番号を関連付けるか (呼び出しをブロックして)、番号がなるべきときに、システムがブロックされているアプリ拡張機能を作成する機能を提供します。
+さらに、CallKit API は、データベースを名前 (呼び出し元の ID) と電話番号を関連付けることができます、または (呼び出しをブロックして)、番号がなるべきときに、システムがブロックされているに通知するアプリの拡張機能を作成する機能を提供します。
 
-詳細については、次を参照してください、 [Callkit 概要](~/ios/platform/callkit.md)ガイドです。
+詳細については、次を参照してください、 [Callkit 概要](~/ios/platform/callkit.md)ガイド。
 
-## <a name="message-app-integration"></a>メッセージのアプリケーションの統合
+## <a name="message-app-integration"></a>メッセージ アプリの統合
 
-iOS 10 と連携し、Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含めることを許可する、**メッセージ**をユーザーにアプリと表示の新機能です。 拡張機能には、テキスト、ステッカー、メディア ファイルおよび対話型のメッセージを送信できます。 2 つの種類のメッセージ アプリ拡張機能を使用できます。
+iOS 10 と連携する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を含めることを許可する、**メッセージ**をユーザーに新しい機能がアプリを提示しています。 拡張機能には、テキスト、ステッカー、メディア ファイル、および対話型メッセージを送信できます。 メッセージ アプリ拡張機能の 2 つの種類があります。
 
-- **ステッカー パック**-ユーザーがメッセージに追加できるステッカーのコレクションを格納します。 すべてのコードを記述することがなくステッカー パックを作成できます。
-- **iMessage アプリ**-ステッカーを選択すると、テキストを入力する、(省略可能な型変換) とメディア ファイルを含む、作成、編集、および操作メッセージを送信する用アプリのメッセージのカスタム ユーザー インターフェイスを提供します。
+- **ステッカー パック**-ユーザーがメッセージに追加できるステッカーのコレクションが含まれています。 ステッカー パックは、すべてのコードを記述することがなく作成できます。
+- **iMessage アプリ**-ステッカーを選択すると、テキストを入力する、(省略可能な型変換) によるメディア ファイルを含む、作成、編集、および相互作用のメッセージを送信するためのメッセージ アプリ内のカスタム ユーザー インターフェイスを表示することができます。
 
-詳細については、次を参照してください、[メッセージ アプリ統合](~/ios/platform/message-app-integration/index.md)ガイドです。
+詳細については、次を参照してください、[メッセージ アプリ統合](~/ios/platform/message-app-integration/index.md)ガイド。
 
-## <a name="news-publisher-enhancements"></a>ニュースのパブリッシャーの機能強化
+## <a name="news-publisher-enhancements"></a>ニュースの発行元の機能強化
 
-10、iOS では、Apple は主要なマガジンと新しい組織ブロガー、サインアップする独立した発行元および製品からのすべてのユーザーおよび Apple ニュース アプリにコンテンツを配信します。 詳細については、Apple を参照してください[ニュース リソース](https://newsresources.apple.com/)ドキュメント。
+10、iOS では、Apple は主要な雑誌やブロガーとサインアップを独立した発行元、製品に新しい組織の任意のユーザーを許可して Apple News アプリにコンテンツを配信します。 詳細については、Apple を参照してください[ニュース リソース](https://newsresources.apple.com/)ドキュメント。
 
-## <a name="providing-haptic-feedback"></a>Haptic フィードバックを提供します。
+## <a name="providing-haptic-feedback"></a>Haptic フィードバックの提供
 
-IPhone 7 と iPhone で 7 さらに、Apple が含まれる、ユーザーが物理的に参加するその他の方法を提供する新しい haptics 応答します。 ユーザーの注意を取得し、それらのアクションを強化する新しい触るフィードバックのオプションを使用します。
+IPhone 7 および iPhone では、7 Plus、Apple が物理的にユーザーと関わるための追加方法を提供する新しい haptics 応答を含めるがします。 新しい触るフィードバック オプションを使用して、ユーザーの注意を引くし、そのアクションを補強します。
 
-いくつかの組み込み UI 要素は、既にピッカー、スイッチおよびスライダーなど haptic フィードバックを提供します。 iOS 10 には、今すぐプログラムでの具体的なサブクラスを使用して haptics をトリガーする機能が追加されて、`UIFeedbackGenerator`クラスです。
+いくつかの組み込み UI 要素は、既にピッカー、スイッチ、スライダーなどのハプティクス フィードバックを提供します。 iOS 10 では、プログラムでの具体的なサブクラスを使用して haptics をトリガする機能を追加、`UIFeedbackGenerator`クラス。
 
-詳細については、次を参照してください、 [Haptic フィードバックの提供](~/ios/user-interface/ios-ui/haptic-feedback.md)ガイドです。
+詳細については、次を参照してください、[ハプティクス フィードバックを提供する](~/ios/user-interface/ios-ui/haptic-feedback.md)ガイド。
 
-## <a name="proactive-suggestions"></a>プロアクティブなご提案
+## <a name="proactive-suggestions"></a>プロアクティブな候補
 
-iOS 10 では、事前対応的に提示する役に立つ情報自動的にユーザーに適切な時点ではシステムによって推進エンゲージメント アプリへの新しい方法を表示します。 同様に iOS 9 には、ios 10 アプリは、次の場所内で、システムにより、ユーザーに表示できる機能を公開できますスポット ライト、ハンドオフおよび Siri の推奨事項を使用してアプリに詳細な検索を追加する機能が用意されています。
+iOS 10 では、事前に提示する役に立つ情報に自動的にユーザーに適切なタイミングでシステムを許可することで運転 engagement アプリへの新しい方法を表示します。 同様の iOS 9 には、ディープ検索アプリは、次の場所内で、システムにより、ユーザーに表示することができます機能を公開できる iOS 10 のスポット ライト、ハンドオフおよび Siri の推奨事項を使用してアプリを追加する機能が用意されています。
 
-- アプリのスイッチャー
+- アプリケーションのスイッチャー
 - ロック画面
 - CarPlay
 - マップ
 - Siri の相互作用
 - QuickType 提案 
 
-アプリがなど、テクノロジのコレクションを使用して、システムには、この機能を公開[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)コアのスポット ライト、MapKit、Media Player および UIKit web マークアップ。
+アプリなどのテクノロジのコレクションを使用して、システムには、この機能を公開[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)、コア スポット ライト、MapKit、Media Player、UIKit、web マークアップ。
 
-詳細については、次を参照してください、[プロアクティブな推奨事項の概要](~/ios/platform/search/proactive-suggestions.md)ガイドです。
+詳細については、次を参照してください、[プロアクティブな候補の概要](~/ios/platform/search/proactive-suggestions.md)ガイド。
 
-## <a name="request-app-review"></a>アプリのレビューを要求します。
+## <a name="request-app-review"></a>アプリ レビューを要求します。
 
-IOS 10.3 に新しい、`RequestReview()`メソッドにより、iOS アプリに転送率のまたは確認をユーザーに確認してください。 このメソッドは、合理的であること、ユーザー エクスペリエンスにどの時点でも呼び出すことができる、ときにレビュー プロセスの管理し、App Store のポリシーによって処理します。 その結果、このメソッド可能性がありますまたは警告が表示されない場合があり、ボタンをタップするなどのユーザー アクションへの応答で呼び出さないでです。
+Ios 10.3、新しい、`RequestReview()`メソッド iOS アプリに許可することを確認したり評価ユーザーに確認します。 このメソッドは、ユーザー エクスペリエンスの理にかなって任意の時点で呼び出すことが、中にレビュー プロセスの管理し、アプリ ストアのポリシーによって処理されます。 結果として、このメソッド可能性がありますまたはアラートが表示されない場合があり、ボタンをタップするなどのユーザー アクションへの応答では呼び出さないでいます。
 
-詳細については、次を参照してください、[アプリ レビューの要求](~/ios/platform/request-app-review.md)ガイドです。
+詳細については、次を参照してください、[アプリ レビューの要求](~/ios/platform/request-app-review.md)ガイド。
 
 ## <a name="security-and-privacy-enhancements"></a>セキュリティとプライバシーの機能強化
 
-Apple では、両方のセキュリティとプライバシー、開発者がアプリのセキュリティを強化し、エンドユーザーのプライバシーを確保に役立つ iOS 10 にいくつかの機能強化が行わします。
+Apple は、開発者がアプリのセキュリティを強化し、エンドユーザーのプライバシーを確保に役立つ iOS 10 のプライバシーとセキュリティの両方にいくつかの機能強化をしました。
 
-結果として、iOS 10 (またはそれ以降) で実行されている必要があります静的に宣言で 1 つまたは複数のプライバシーに関する特定キーを入力して特定の機能、またはユーザー情報にアクセスしようとすると、その`Info.plist`ファイルをアプリがアクセスしようとした理由をユーザーに説明します。
+結果として、アプリが iOS 10 (以降) で実行されている必要がありますで 1 つまたは複数のプライバシーに関する特定キーを入力して特定の機能やユーザー情報にアクセスしようとすると、静的に宣言、`Info.plist`ファイルをユーザー、アプリがアクセスしようとした理由を説明します。
 
-詳細については、次を参照してください、[セキュリティとプライバシーの機能強化](~/ios/app-fundamentals/security-privacy.md)ガイドです。
+詳細については、次を参照してください、[セキュリティおよびプライバシーの強化機能](~/ios/app-fundamentals/security-privacy.md)ガイド。
 
 ## <a name="sirikit"></a>SiriKit
 
-新しい 10、iOS に SiriKit が iOS デバイスで Siri を使用してユーザーがアクセスできるサービスを提供する Xamarin.iOS アプリを許可します。 この機能は、new を使用して 1 つまたは複数のアプリ拡張機能で提供**インテント**と**インテント UI**フレームワークです。
+新しい ios 10 では、SiriKit により、Xamarin.iOS アプリ、iOS デバイスで Siri を使用してユーザーがアクセスできるサービスを提供します。 この機能は、new を使用して 1 つまたは複数のアプリの拡張機能で提供**インテント**と**Intents UI**フレームワーク。
 
 SiriKit には、次のサービスのドメインがサポートされています。
 
-- オーディオまたはビデオ通話です。
+- オーディオまたはビデオ通話。
 - 素敵を予約します。
-- ワークアウトを管理します。
-- メッセージングです。
-- 写真を検索しています。
-- 送信または受信支払いを処理します。
+- トレーニングを管理します。
+- メッセージング。
+- 写真を検索します。
+- 送信または支払いを受信します。
 
-ユーザーは、1 つのアプリ拡張機能のサービスに関連する Siri の要求を行う、SiriKit 送信、拡張機能、**インテント**サポート データと共に、ユーザーの要求を記述するオブジェクト。 アプリ拡張機能は、適切な生成**応答**オブジェクトを指定された**インテント**、拡張機能が、要求を処理する方法の詳細を示すです。
+SiriKit 送信、拡張機能で、ユーザーがアプリの拡張機能のサービスのいずれかに関連する siri 要求を行うと、**インテント**の関連データと共に、ユーザーの要求を記述するオブジェクト。 アプリ拡張機能は、適切な生成**応答**オブジェクトを指定された**インテント**、拡張機能が要求を処理する方法の詳細を示します。
 
-Siri は通常、すべてのユーザー操作を処理するときにアプリ拡張機能を使用できます、**インテント UI**豊富なカスタム ユーザー インターフェイスを機能させると、アプリのブランド化を提供するフレームワークと追加情報。
+Siri で処理されるは、すべてのユーザー操作は、通常、アプリ拡張機能を使用できる、**インテント UI**豊富なカスタム ユーザー インターフェイスを備えたアプリのブランドを表示するためにフレームワークと追加情報。
 
-詳細については、次を参照してください、 [SiriKit 概要](~/ios/platform/sirikit/index.md)ガイドです。
+詳細については、次を参照してください、 [SiriKit の概要](~/ios/platform/sirikit/index.md)ガイド。
 
 ## <a name="speech-recognition"></a>音声認識
 
-iOS 10 には、テキストにアプリを継続的な音声認識をサポートし、(生または録画のオーディオ ストリーム) からの音声議事録の作成を許可する新しい音声 API が含まれています。
+iOS 10 には、アプリを継続的な音声認識をサポートし、議事録の作成 (生または録画のオーディオ ストリーム) からの音声をテキストに許可する新しい Speech API が含まれています。
 
-音声認識は、転送および Apple のサーバー、アプリケーションのデータの一時的なストレージが必要なため_必要があります_を含めることによって認識を実行するユーザーのアクセス許可を要求、`NSSpeechRecognitionUsageDescription`キーをその`Info.plist`ファイル サービスおよび通話、`SFSpeechRecognizer.RequestAutorization`メソッドです。
+音声認識は、転送と、アプリ、Apple のサーバー上のデータの一時的なストレージが必要なため_する必要があります_などして認識を実行するユーザーのアクセス許可を要求、`NSSpeechRecognitionUsageDescription`キーでその`Info.plist`ファイルと呼び出し、`SFSpeechRecognizer.RequestAutorization`メソッド。
 
-詳細については、次を参照してください、[音声認識機能の概要](~/ios/platform/speech.md)ガイドです。
+詳細については、次を参照してください、[音声認識の概要](~/ios/platform/speech.md)ガイド。
 
-## <a name="user-notifications"></a>ユーザーへの通知
+## <a name="user-notifications"></a>ユーザー通知
 
-初めて使用する iOS 10 では、ユーザー通知の配信とローカルおよびリモートの通知の処理のフレームワークを利用します。 このフレームワークを使用して、アプリまたはアプリ拡張機能をスケジュールできますローカルに関する通知の配信場所などの条件のセットまたは 1 日の時刻を指定することで。
+新しい ios 10 では、ユーザー通知の配信とローカルとリモート通知の処理のフレームワークを使用します。 このフレームワークを使用して、アプリまたはアプリ拡張機能をスケジュールできますローカル通知の配信の場所などの条件のセットまたは 1 日の時刻を指定することで。
 
 さらに、アプリまたは拡張機能が表示される (および可能性のある変更できます) ローカルとリモートの両方の通知、ユーザーの iOS デバイスに配信されるようにします。
 
-新しいユーザー通知の UI フレームワークが使用するは、アプリまたはアプリの拡張機能をユーザーに表示するときに、ローカルおよびリモートの両方の通知の外観をカスタマイズします。
+新しいユーザー通知の UI フレームワークは、アプリまたはアプリの拡張機能をユーザーに表示するときに、ローカルとリモートの両方の通知の外観をカスタマイズできます。
 
-詳細については、次を参照してください、[ユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)ガイドです。
+詳細については、次を参照してください、[ユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)ガイド。
 
-## <a name="video-subscriber-account"></a>ビデオのサブスクライバーのアカウント
+## <a name="video-subscriber-account"></a>ビデオのサブスクライバー アカウント
 
-新しい ios 10 の場合、ビデオ サブスクライバー アカウント フレームワークにより、アプリそのストリーミング認証サポートまたはそのケーブルまたは衛星放送テレビ プロバイダーと、エンドユーザーの単一のサインイン エクスペリエンスを使用して認証するビデオ オンデマンドです。
+新しい ios 10 の場合、ビデオ サブスクライバー アカウント フレームワークにより、アプリその認証のストリーミング サポートまたはビデオ オンデマンドで、ケーブル会社または衛星テレビ放送、エンドユーザーは、単一のサインイン エクスペリエンスを使用して認証します。
 
-## <a name="wide-color"></a>広色
+## <a name="wide-color"></a>色
 
-iOS 10 では、拡張範囲のピクセル形式とコア グラフィックス、Core のイメージ、金属および AVFoundation などのフレームワークを含む、システム全体で全体の色域スペースのサポートを拡張します。 ワイド カラー ディスプレイを使用したデバイスのサポートはさらに、グラフィック スタック全体におけるこの動作を提供することにより容易になります。
+iOS 10 では、拡張範囲のピクセル形式とコア グラフィックス、Core のイメージ、金属製および AVFoundation などのフレームワークを含めて、システム全体で全体の色域スペースのサポートを拡張します。 ワイド カラー ディスプレイを使用したデバイスのサポートはさらに、全体のグラフィックス スタック全体でこの動作を提供することで緩和されました。
 
-さらに、 [UIKit](https://developer.xamarin.com/api/namespace/UIKit/)が変更された新しい機能を拡張**sRGB**大幅なパフォーマンスを失うことがなくワイド色域内の色を混在させるをやすくするための色空間です。
+さらに、 [UIKit](https://developer.xamarin.com/api/namespace/UIKit/)が変更されている、新しい機能を拡張**sRGB**大幅なパフォーマンス失わずワイド色域にカラーの混合をやすくするための色空間。
 
-幅の色を扱うときに、Apple は次のベスト プラクティスを提供します。
+Apple は、さまざまな色を使用する場合、次のベスト プラクティスを提供します。
 
-- [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)これで、使用、sRGB 領域の色およびしなくなります固定値を`0.0`に`1.0`範囲です。 アプリは、以前のクランプ動作に依存する場合は、iOS 10 に変更する必要があります。
-- カスタムの実行時に、sRGB 色空間の描画の環境を構成するは`UIView`iPad Pro で描画します。
-- アプリのカスタムの表示を実行する場合`UIImages`、使用して、新しい[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)拡張範囲または標準範囲の形式の使用を指定するクラス。
-- コア グラフィックや金属などの低レベルの API を使用して、イメージ処理を提供する、開発者は、16 ビット浮動小数点値をサポートする拡張範囲色領域とピクセル形式が使用する必要があります。 必要に応じて、開発者がコンポーネントの色の値を手動で固定する必要があります。
-- コア グラフィックス、Core のイメージとメタル パフォーマンス シェーダーは、2 つのカラー スペース間で変換するための新しいメソッドを提供します。
+- [示す UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)これは、sRGB 色空間となることはありませんクランプする値、`0.0`に`1.0`範囲。 アプリは、以前のクランプ動作に依存する場合は、iOS 10 に変更する必要があります。
+- 描画の環境は、カスタムを実行するときに、sRGB 色空間の構成は`UIView`iPad Pro で描画します。
+- アプリでのカスタム レンダリングを実行する場合`UIImages`、使用して、新しい[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)拡張範囲または範囲の標準形式の使用を指定するクラス。
+- コア グラフィックスや金属などの低レベルの API を使用して、イメージの処理を提供する、開発者は、拡張の範囲の色領域とピクセル形式 16 ビット浮動小数点値をサポートするを使用する必要があります。 必要に応じて、開発者は、色コンポーネントの値を手動でクランプする必要があります。
+- コア グラフィックス、Core イメージおよび金属パフォーマンス シェーダーは、2 つのカラー スペース間で変換するための新しいメソッドを提供します。
 
-詳細については、次を参照してください、[広色の概要](~/ios/platform/wide-color.md)ガイドです。
+詳細については、次を参照してください、[色の概要](~/ios/platform/wide-color.md)ガイド。
 
 ## <a name="widget-enhancements"></a>ウィジェットの機能強化
 
-Apple はウィジェットが優れた上にある新しい iOS 10 個のロック画面、色の背景に表示されるように、ウィジェットのシステムには拡張機能を導入しました。 [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)プロパティは廃止されており、新しいに置き換えられました[WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)プロパティです。 さらに、ウィジェットが含まれるよう、 [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode)プロパティにより、開発者は、コンテンツの量が使用可能な説明を入力しを展開して、コンテンツを折りたたむことができます。
+Apple には、ウィジェット システムをウィジェットに美しく表示で新しい iOS 10 個のロック画面に存在する任意の背景にいくつかの機能強化が導入されています。 [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)プロパティは非推奨し、は、新しいに置き換えられました[WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)プロパティ。 さらに、ウィジェットが含まれています、 [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode)プロパティにより、開発者は、コンテンツの量は、使用可能な説明を展開したり、コンテンツを折りたたんだりできます。
 
-詳細については、次を参照してください、[検索とホーム画面ウィジェット機能強化](~/ios/platform/search/widgets.md)ガイドです。
+詳細については、次を参照してください、[検索とホーム画面ウィジェット機能強化](~/ios/platform/search/widgets.md)ガイド。
 
 ## <a name="additional-framework-changes"></a>その他のフレームワークの変更
 
-に加えて、主要なフレームワークの変更と追加機能の上に示した Apple 追加マイナー フレームワークの多くの変更に向けた iOS 10 です。
+だけでなく、主要なフレームワークの変更と上記に一覧表示されます、Apple は iOS 10 の多くのマイナー framework 変更を加えたが。
 
-詳細については、次を参照してください、 [Framework の変更の追加](~/ios/platform/introduction-to-ios10/additional-framework-changes.md)ガイドです。
+詳細については、次を参照してください、 [Framework 変更](~/ios/platform/introduction-to-ios10/additional-framework-changes.md)ガイド。
 
-## <a name="deprecated-apis"></a>非推奨 API
+## <a name="deprecated-apis"></a>非推奨の API
 
-次の Api が iOS 10 で廃止されました。
+IOS 10 では、次の Api が廃止されました。
 
-- `CKDiscoverAllContactsOperation`、 `CKDiscoveredUserInfo`、`CKDiscoverUserInfosOperation`と`CKFetchRecordChangesOperation`ios 10 CloudKit でクラスが削除されています。 使用して、 [CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)、 [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)と[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/)クラス (レコードの共有をサポート) を代わりにします。
-- いくつか[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) (ゾーンおよびクエリ ベース サブスクリプション) などの Api は推奨されません。 使用して、 [CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)と[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 代わりにします。
-- [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)ユビキタス コンテンツに関連するシンボルが使用されなくなりました。
-- `ADBannerView`、`ADInterstitialAd`内のシンボルを関連して、 [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)クラスが廃止されました。
-- [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)浮動小数点値に関連付けられた記号が使用されなくなりました。
-- `UILocalNotification`、 `UIMutableUserNotificationAction`、 `UIMutableUserNotificationCategory`、 `UIUserNotificationAction`、`UIUserNotificationCategory`と`UIUserNotificationSettings`UIKit のクラスが廃止されました。 使用して、[ユーザーへの通知](#User-Notifications)framework 代わりにします。
-- `HandleActionForLocalNotification`、 `HandleActionForRemoteNotification`、`DidReceiveLocalNotification`と`DidReceiveRemoteNotification`WatchKit メソッドは廃止されます。 使用して、`HandleActionForNotification`と`DidReceiveNotification`メソッド代わりにします。
-- `DidReceiveLocalNotification`と`DidReceiveRemoteNotification`のメソッド、 [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)使用されなくなりました。 インスタンスを作成する[UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate)を適切なメソッドを実装して、それを割り当てる、`Delegate`のプロパティ、 [UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter)オブジェクト。
-- **Game Center アプリ**は廃止され iOS から削除します。 アプリが GameKit を使用している場合、_必要があります_スコアボードなど GameKit 機能の表示に独自のインターフェイスを提供します。
+- `CKDiscoverAllContactsOperation`、 `CKDiscoveredUserInfo`、`CKDiscoverUserInfosOperation`と`CKFetchRecordChangesOperation`クラス CloudKit で iOS 10 の廃止されました。 使用して、 [CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)、 [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)と[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/)クラス (レコードの共有をサポート) を代わりにします。
+- いくつか[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) (ゾーンおよびクエリ ベース サブスクリプション) などの Api が非推奨とされました。 使用して、 [CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)と[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 代わりにします。
+- [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)ユビキタス コンテンツに関連するシンボルが非推奨とされました。
+- `ADBannerView`、`ADInterstitialAd`内のシンボルに関連し、 [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)クラスが推奨されていません。
+- [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)浮動小数点値に関連するシンボルが非推奨とされました。
+- `UILocalNotification`、 `UIMutableUserNotificationAction`、 `UIMutableUserNotificationCategory`、 `UIUserNotificationAction`、`UIUserNotificationCategory`と`UIUserNotificationSettings`UIKit のクラスが非推奨とされました。 使用して、[ユーザー通知](#User-Notifications)framework 代わりにします。
+- `HandleActionForLocalNotification`、 `HandleActionForRemoteNotification`、`DidReceiveLocalNotification`と`DidReceiveRemoteNotification`WatchKit メソッドが非推奨とされました。 使用して、`HandleActionForNotification`と`DidReceiveNotification`メソッド代わりにします。
+- `DidReceiveLocalNotification`と`DidReceiveRemoteNotification`のメソッド、 [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)非推奨とされました。 インスタンスを作成[UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate)適切なメソッドを実装してに割り当てる、`Delegate`のプロパティ、 [UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter)オブジェクト。
+- **Game Center アプリ**非推奨し、iOS から削除されています。 アプリが GameKit を使用する場合、_する必要があります_GameKit 機能 (ランキングなど) の表示に独自のインターフェイスを提供します。
 
-Apple を参照してください[iOS 10.0 API の相違点を iOS 9.3](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html)機能廃止の完全な一覧についてはドキュメントです。
+Apple を参照してください。 [iOS 10.0 API の相違点を iOS 9.3](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html)廃止された機能の完全な一覧についてはドキュメントです。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 サンプル](https://developer.xamarin.com/samples/ios/iOS10/)
-- [IOS 10 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)
+- [iOS 10 のサンプル](https://developer.xamarin.com/samples/ios/iOS10/)
+- [IOS 10 の新機能新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

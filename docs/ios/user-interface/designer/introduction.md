@@ -4,15 +4,15 @@ description: このガイドでは、iOS 用の Xamarin デザイナーについ
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: 6905eddbc4488b08f9c9e896efe5f980e0e03345
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e9c2a42b9108c04f18252a410d40dbc03013f6dd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242369"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123753"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -36,13 +36,13 @@ IOS Designer では、アプリケーションのユーザー インターフェ
 
 ビュー コント ローラーが 2 つの部分: iOS Designer でビジュアルな表示と関連付けられている c# クラス。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![IOS Designer のビュー コント ローラー](introduction-images/1-storyboardwithviewcontroller-vsmac.png "iOS Designer のビュー コント ローラー")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
 
 [![ビュー コント ローラーのコード](introduction-images/2-viewcontrollercode-vsmac.png "ビュー コント ローラーのコード")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![IOS Designer のビュー コント ローラー](introduction-images/1-storyboardwithviewcontroller-vs.png "iOS Designer のビュー コント ローラー")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
 
@@ -52,11 +52,11 @@ IOS Designer では、アプリケーションのユーザー インターフェ
 
 既定の状態では、ビュー コント ローラーによって; 任意の機能が備わっていません。コントロールに入力する必要があります。 これらのコントロールは、ビュー コント ローラーのビューでは、すべての画面のコンテンツを含む四角形の領域に配置されます。 ほとんどのビュー コント ローラーには、ボタンを含むビュー コント ローラーを示しています。 次のスクリーン ショットに示すようにボタン、ラベル、テキスト フィールドなどの一般的なコントロールが含まれます。 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![ボタンを含むビュー コント ローラー](introduction-images/3-viewcontrollerwithbutton-vsmac.png "ボタンを含むビュー コント ローラー")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![ボタンを含むビュー コント ローラー](introduction-images/3-viewcontrollerwithbutton-vs.png "ボタンを含むビュー コント ローラー")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
 
@@ -64,13 +64,13 @@ IOS Designer では、アプリケーションのユーザー インターフェ
 
 静的テキストを含むラベルなど、一部のコントロールをビュー コント ローラーに追加し、単独でのままです。 ただし、たいてい、制御する必要がありますのカスタマイズ プログラムを使用します。 たとえば、ボタンの上に追加する必要がありますを行いますタップしたときにため、コードでイベント ハンドラーを追加する必要があります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 コードでボタンの操作にアクセスし、するには、一意の識別子が必要です。 開く ボタンを選択し、一意の識別子を指定、 **Properties Pad**、設定とその**名前**「ボタン」などの値にフィールド。
 
 [![Properties Pad でボタンの名前を設定](introduction-images/4-settingbuttonname-vsmac.png "Properties Pad でボタンの名前を設定します。")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 コードでボタンの操作にアクセスし、するには、一意の識別子が必要です。 開く ボタンを選択し、一意の識別子を指定、**プロパティ ウィンドウ**、設定とその**名前**「ボタン」などの値にフィールド。
 
@@ -80,13 +80,13 @@ IOS Designer では、アプリケーションのユーザー インターフェ
 
 これで、ボタンは、名前を持つ、コードでアクセスできます。 しかし、動作のでしょうか。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 **Solution Pad**に移動する、 **ViewController.cs**わかりました漏えいインジケーターをクリックすると、ビュー コント ローラーの`ViewController`2 つのクラス定義の範囲がファイルの含まれています、[部分クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義。
 
 [![2 つのファイル、ViewController クラスを構成する: ViewController.cs と ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "2 つのファイルをことで、ViewController クラス: ViewController.cs と ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 **ソリューション エクスプ ローラー**に移動する、 **ViewController.cs**わかりました漏えいインジケーターをクリックすると、ビュー コント ローラーの`ViewController`クラス定義が、それぞれの 2 つのファイルにまたがる含まれています、[部分クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義。
 
@@ -123,11 +123,11 @@ namespace Designer
 
 次のスクリーン ショットは、IntelliSense が認識されるようになりましたことを示しています、`SubmitButton`で参照**ViewController.cs**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![損害賠償参照を認識する IntelliSense](introduction-images/6-submitbuttonintellisense-vsmac.png "損害賠償参照を認識する IntelliSense")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![損害賠償参照を認識する IntelliSense](introduction-images/6-submitbuttonintellisense-vs.png "損害賠償参照を認識する IntelliSense")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
 
@@ -143,13 +143,13 @@ namespace Designer
 
 ### <a name="launching-the-ios-designer"></a>IOS Designer を起動します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac で作成された Xamarin.iOS プロジェクトには、ストーリー ボードが含まれます。 ストーリー ボードの内容を表示するで .storyboard ファイルをダブルクリック、 **Solution Pad**:
 
 [![IOS Designer でストーリー ボードが開いて](introduction-images/7-storyboardopen-vsmac.png "iOS Designer でストーリー ボードを開きます")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio 2015 または 2017 で作成されたほとんどの Xamarin.iOS プロジェクトには、ストーリー ボードが含まれます。 ストーリー ボードの内容を表示するで .storyboard ファイルをダブルクリック、**ソリューション エクスプ ローラー**:
 
@@ -163,7 +163,7 @@ Visual Studio 2015 または 2017 で作成されたほとんどの Xamarin.iOS 
 
 IOS Designer では、6 つの主要なセクションがあります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![IOS Designer のセクションでは](introduction-images/8-sixpartsofiosdesigner-vsmac.png "iOS Designer のセクション")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
@@ -174,7 +174,7 @@ IOS Designer では、6 つの主要なセクションがあります。
 5. **ドキュメント アウトライン**– 編集されているインターフェイスのレイアウトを作成するコントロールのツリーを示しています。 IOS Designer でその選択し、そのプロパティを示しています、ツリー内の項目をクリックすると、 **Properties Pad**します。 これは、深く入れ子になったユーザー インターフェイスで特定のコントロールを選択するのに便利です。
 6. **下のツールバー** – iOS Designer でのデバイス、向き、ズームなど、.storyboard または .xib ファイルの表示方法を変更するためのオプションが含まれています。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![IOS Designer のセクションでは](introduction-images/8-sixpartsofiosdesigner-vs.png "iOS Designer のセクション")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
@@ -193,11 +193,11 @@ IOS Designer では、6 つの主要なセクションがあります。
 
 インターフェイスにコントロールを追加するからをドラッグ、**ツールボックス**し、デザイン画面にドロップします。 追加またはコントロールを配置、垂直および水平方向のガイドラインに垂直方向の中心、水平方向の中央、および余白などのよく使われるレイアウト位置が強調表示します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
  
 ![ガイドラインをデザイン サーフェイスには、一般的に使用されるレイアウトの配置を強調表示](introduction-images/9-layoutguides-vsmac.png "ガイドラインをデザイン サーフェイスには、一般的に使用されるレイアウトの配置を強調表示")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![ガイドラインをデザイン サーフェイスには、一般的に使用されるレイアウトの配置を強調表示](introduction-images/9-layoutguides-vs.png "ガイドラインをデザイン サーフェイスには、一般的に使用されるレイアウトの配置を強調表示")
 
@@ -205,25 +205,25 @@ IOS Designer では、6 つの主要なセクションがあります。
 
 上記の例では青い点線は、ボタンの配置を支援する水平方向の中央 visual 配置ガイドラインを示します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 #### <a name="context-menu-commands"></a>コンテキスト メニュー コマンド
 
-コンテキスト メニューがデザイン サーフェイスとで使用可能な**ドキュメント アウトライン**します。 このメニューのコマンドを提供する、選択したコントロールとその親では、入れ子になった階層内のビューを使用する場合に便利です。
+コンテキスト メニューがデザイン サーフェイスとで使用可能な**ドキュメント アウトライン**します。 このメニューには、選択したコントロールとその親は、入れ子になった階層内のビューを使用する場合に便利ですコマンドが提供されます。
 
 [![デザイン サーフェイスのコンテキスト メニュー](introduction-images/10-contextmenudesignsurface-vsmac.png "デザイン サーフェイスのコンテキスト メニュー")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 -----
 
 ### <a name="constraints-toolbar"></a>制約ツールバー
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
  
 [![制約ツールバー](introduction-images/11-constraintstoolbar-vsmac.png "制約ツールバー")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![制約ツールバー](introduction-images/11-constraintstoolbar-vs.png "制約ツールバー")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
 
@@ -237,11 +237,11 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 
 - フレームの編集モード。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![編集モード ボタン フレーム](introduction-images/12a-frameeditingmode-vsmac.png "フレームの編集モード ボタン")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![編集モード ボタン フレーム](introduction-images/12a-frameeditingmode-vs.png "フレームの編集モード ボタン")
 
@@ -249,11 +249,11 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 
 - 制約の編集モード:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![編集モード ボタン制約](introduction-images/12b-constrainteditingmode-vsmac.png "制約編集モード ボタン")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![編集モード ボタン制約](introduction-images/12b-constrainteditingmode-vs.png "制約編集モード ボタン")
 
@@ -270,11 +270,11 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 
 下部のツールバーには、デバイス、向き、および zoom が iOS Designer でストーリー ボードまたは .xib ファイルを表示するために使用を選択する方法を提供します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![下部にあるツールバーで、デバイスと、デザイン画面の向きを選択するために使用](introduction-images/13-bottomtoolbar-vsmac.png "下部にあるツールバーで、デバイスと、デザイン画面の向きを選択するために使用")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![下部にあるツールバーで、デバイスと、デザイン画面の向きを選択するために使用](introduction-images/13-bottomtoolbar-vs.png "下部にあるツールバーで、デバイスと、デザイン画面の向きを選択するために使用")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
 
@@ -284,11 +284,11 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 
 展開すると、すべてのデバイス、向き、および適応の現在のドキュメントに適用できる下部ツールバーが表示されます。 クリックしてデザイン サーフェイスに表示されるビューを変更します。 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![下部のツールバーに展開デバイスと向きを表示する](introduction-images/14-bottomtoolbarexpanded-vsmac.png "下部にあるツールバーで、展開のデバイスや向きを表示するには")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![下部のツールバーに展開デバイスと向きを表示する](introduction-images/14-bottomtoolbarexpanded-vs.png "下部にあるツールバーで、展開のデバイスや向きを表示するには")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
 
@@ -301,11 +301,11 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 - 場合**iPhone SE** / **縦**が選択すると、ポップ オーバーは compact の幅、高さの通常サイズ クラス、インターフェイスのバリエーションを作成するオプションが提供されます。 
 - 場合**iPad Pro 9.7 インチ** / **ランドス ケープ** / **全画面表示**は選択すると、ポップ オーバー オプションが提供されるインターフェイスのバリエーションを作成するには通常の幅、高さの通常サイズ クラス。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![インターフェイスを異なるサイズ クラスによって使用されている下部ツールバー](introduction-images/15-edittraitsbutton-vsmac.png "インターフェイスを異なるサイズ クラスによって使用されている下部ツールバー")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![インターフェイスを異なるサイズ クラスによって使用されている下部ツールバー](introduction-images/15-edittraitsbutton-vs.png "インターフェイスを異なるサイズ クラスによって使用されている下部ツールバー")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
 
@@ -315,11 +315,11 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 
 デザイン画面では、いくつかのコントロールを使用してズームがサポートされています。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
  
 ![下部のツールバーで、ズーム コントロール](introduction-images/16-zoomcontrols-vsmac.png "下部ツールバーのズーム コントロール")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![下部のツールバーで、ズーム コントロール](introduction-images/16-zoomcontrols-vs.png "下部ツールバーのズーム コントロール")
 
@@ -334,7 +334,7 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 
 これらのコントロールは、デザイン サーフェイスのズームを調整します。 実行時にアプリケーションのユーザー インターフェイスには影響しません。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="properties-pad"></a>Properties Pad
 
@@ -345,7 +345,7 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 
 **Properties Pad** 3 つのセクションが含まれています。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ### <a name="properties-window"></a>[プロパティ] ウィンドウ
 
@@ -363,7 +363,7 @@ IOS Designer の以前のバージョンで既に選択されているビュー�
 2.  **レイアウト**– の制約とフレームを含む、コントロールのサイズと位置を追跡するプロパティがここに一覧表示します。
 3.  **イベント**– イベントとイベント ハンドラーがここで指定します。 (タッチ、タップ、ドラッグなど) のイベントを処理するために便利です。イベントを処理して、コード内で直接こともできます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 #### <a name="editing-properties-in-the-properties-pad"></a>Properties Pad でプロパティを編集
 
@@ -373,7 +373,7 @@ IOS Designer がでプロパティを編集をサポート ビジュアル編集
 
 [![コント ローラーのプロパティを表示](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "コント ローラーのプロパティを表示")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 #### <a name="editing-properties-in-the-properties-window"></a>[プロパティ] ウィンドウでプロパティを編集
 
@@ -390,11 +390,11 @@ IOS Designer がでプロパティを編集をサポート ビジュアル編集
 
 #### <a name="default-values"></a>既定の値
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 多くのプロパティを**Properties Pad**値または既定値を表示します。 ただし、アプリケーションのコードでは、これらの値が変更も可能性があります。 **Properties Pad**コードで設定された値は表示されません。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 多くのプロパティを**プロパティ ウィンドウ**値または既定値を表示します。 ただし、アプリケーションのコードでは、これらの値が変更も可能性があります。 **プロパティ ウィンドウ**コードで設定された値は表示されません。
 
@@ -402,13 +402,13 @@ IOS Designer がでプロパティを編集をサポート ビジュアル編集
 
 #### <a name="event-handlers"></a>イベント ハンドラー
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 さまざまなイベントのカスタム イベント ハンドラーを指定するには、使用、**イベント**のタブ、 **Properties Pad**します。 次のスクリーン ショット、`HandleClick`メソッド処理のボタンの**タッチを内部**イベント。
 
 [![[プロパティ] タブのボタンの設定をイベント ハンドラーで](introduction-images/19-buttonpropertiespadevents-vsmac.png "ボタンの設定をイベント ハンドラーで、Properties Pad")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 さまざまなイベントのカスタム イベント ハンドラーを指定するには、使用、**イベント**のタブ、**プロパティウィンドウ**します。 次のスクリーン ショット、`HandleClick`メソッド処理のボタンの**タッチを内部**イベント。
 
@@ -418,13 +418,13 @@ IOS Designer がでプロパティを編集をサポート ビジュアル編集
 
 イベント ハンドラーを指定すると、同じ名前のメソッドが対応するビュー コント ローラー クラスに追加する必要があります。 それ以外の場合、`unrecognized selector`ボタンがタップされたときに例外が発生します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![認識されないセレクター例外](introduction-images/20-unrecognizedselector-vsmac.png "セレクターが認識されていない例外")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
 イベント ハンドラーの後で指定されていること、 **Properties Pad**、iOS デザイナーがすぐに対応するコード ファイルを開き、メソッド宣言を挿入して提供します。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![認識されないセレクター例外](introduction-images/20-unrecognizedselector-vs.png "セレクターが認識されていない例外")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
@@ -436,11 +436,11 @@ IOS Designer がでプロパティを編集をサポート ビジュアル編集
 
 IOS Designer では、アウトラインとしてもコントロールのインターフェイスの階層を表示できます。 選択して、アウトラインは利用可能な**ドキュメント アウトライン**タブの次に示すよう。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![ドキュメント アウトライン](introduction-images/21-buttonoutlineview-vsmac.png "ドキュメント アウトライン")](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![ドキュメント アウトライン](introduction-images/21-buttonoutlineview-vs.png "ドキュメント アウトライン")](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
 
@@ -448,7 +448,7 @@ IOS Designer では、アウトラインとしてもコントロールのイン�
 
 アウトライン ビューの選択したコントロールがデザイン画面で選択されているコントロールとの同期が維持されます。  この機能は、深く入れ子になったインターフェイスの階層から項目を選択するために便利です。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="revert-to-xcode"></a>Xcode を元に戻す
 
@@ -458,7 +458,7 @@ IOS デザイナーと Xcode の Interface Builder を同じ意味で使用す�
 
 Xcode の Interface Builder での編集を行った後ファイルを保存し、Visual studio for mac を返す 変更は、Xamarin.iOS プロジェクトに同期されます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 -----
 

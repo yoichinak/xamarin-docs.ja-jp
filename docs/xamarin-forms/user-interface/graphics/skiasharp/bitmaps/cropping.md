@@ -4,21 +4,21 @@ description: SkiaSharp を使用して対話的に desribing をトリミング�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 3dd9011d19e77f52d1fe89a37e4d992c23c72ab1
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 653904da37354db52ef6bbd303355e98ddc1582f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615549"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122635"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>SkiaSharp のビットマップをトリミングします。
 
 [**の作成と描画 SkiaSharp ビットマップ**](drawing.md)方法を説明する記事、`SKBitmap`にオブジェクトを渡すことができます、`SKCanvas`コンス トラクター。 ビットマップにレンダリングされるそのキャンバス原因グラフィックスで呼び出される任意の描画メソッド。 描画メソッドが含まれます`DrawBitmap`、つまり、この手法でを転送する 1 つのビットマップの一部またはすべて別のビットマップにおそらく適用された変換を許可します。
 
-その方法を使用するには呼び出すことで、ビットマップをトリミングするため、 [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/)元とコピー先の四角形を持つメソッド。
+その方法を使用するには呼び出すことで、ビットマップをトリミングするため、 [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))元とコピー先の四角形を持つメソッド。
 
 ```csharp
 canvas.DrawBitmap(bitmap, sourceRect, destRect);
@@ -744,7 +744,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` ビットマップをカプセル化する Xamarin.Forms の基本型です。 さいわい、SkiaSharp SkiaSharp ビットマップから Xamarin.Forms ビットマップへの変換をできます。 **SkiaSharp.Views.Forms**アセンブリを定義、 [ `SKBitmapImageSource` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKBitmapImageSource/)クラスから派生した`ImageSource`、SkiaSharp に基づいて作成できますが、`SKBitmap`オブジェクト。 `SKBitmapImageSource` 間の変換を定義`SKBitmapImageSource`と`SKBitmap`、それで方法`SKBitmap`オブジェクトは、Xamarin.Forms のビットマップとして配列に格納されます。
+`ImageSource` ビットマップをカプセル化する Xamarin.Forms の基本型です。 さいわい、SkiaSharp SkiaSharp ビットマップから Xamarin.Forms ビットマップへの変換をできます。 **SkiaSharp.Views.Forms**アセンブリを定義、 [ `SKBitmapImageSource` ](xref:SkiaSharp.Views.Forms.SKBitmapImageSource)クラスから派生した`ImageSource`、SkiaSharp に基づいて作成できますが、`SKBitmap`オブジェクト。 `SKBitmapImageSource` 間の変換を定義`SKBitmapImageSource`と`SKBitmap`、それで方法`SKBitmap`オブジェクトは、Xamarin.Forms のビットマップとして配列に格納されます。
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
@@ -762,5 +762,5 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
