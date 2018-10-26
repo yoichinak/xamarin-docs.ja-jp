@@ -3,26 +3,29 @@ title: LinearLayout
 ms.prod: xamarin
 ms.assetid: B49D129C-AF24-3C5A-C833-5A34AFBB2442
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: b7564d95c9a472276846b4773d355d8167f37efe
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d8ee5f867c9a4d724c54c14b5afdd005f1b805d3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846407"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115771"
 ---
 # <a name="linearlayout"></a>LinearLayout
 
-[`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)子を表示する[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)要素を線形の方向に垂直または水平方向にします。
+[`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) は、 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
+子を表示します。 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+要素を線形の方向、垂直方向または水平方向にします。
 
-過剰な使用については注意する必要があります、 [ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)です。
-入れ子になった複数を開始する場合[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)s、することも検討して、 [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)代わりにします。
+過剰使用について注意が必要、 [ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)します。
+複数の入れ子を開始する場合[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)s の使用を検討する可能性があります、 [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)
+その代わりに。
 
-という名前の新しいプロジェクトを開始**HelloLinearLayout**です。
+という名前の新しいプロジェクトを開始**HelloLinearLayout**します。
 
-開いている**Resources/Layout/Main.axml**し、次の挿入します。
+開いている**Resources/Layout/Main.axml**し、次を挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -100,9 +103,14 @@ ms.locfileid: "34846407"
 </LinearLayout>
 ```
 
-この XML を慎重に検査します。 ルートがある[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)を垂直方向の方向を定義する&ndash;すべての子[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)(そのされているは 2 つ) は値には積み上げ縦方向にします。 最初の子は、別[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)を水平方向を使用して、2 番目の子は、 [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)垂直方向を使用します。 入れ子になったこれらの各[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)s には、いくつか含まれて[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)要素で、その親によって定義された方法で互いを向いた[ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/).
+この XML をよく確認します。 ルートがあります。 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+垂直方向にその向きを定義する&ndash;すべての子[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)s (どの it が 2 つあります) になります積み上げ縦方向にします。 最初の子は、別 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+水平方向の向きを使用して、2 番目の子が、 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+垂直方向を使用するとします。 入れ子になったこれらの各[ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)いくつかに含まれています [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/)
+要素で、その親によって定義された方法で互いを向いた[ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)します。
 
-これで開く**HelloLinearLayout.cs**を読み込むことを確認して、 **Resources/Layout/Main.axml**レイアウトで、 [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)メソッド。
+今すぐ開きます**HelloLinearLayout.cs**を読み込むことを確認して、 **Resources/Layout/Main.axml**レイアウトで、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
+方法:
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -112,13 +120,14 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32))メソッドのレイアウト ファイルの読み込み、 [ `Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)リソース ID で指定された&ndash;`Resources.Layout.Main`を指す、**リソース/レイアウト/[Main.axml]** レイアウト ファイルです。
+[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32))メソッドのレイアウト ファイルを読み込み、 [ `Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)リソース ID で指定された&ndash;`Resources.Layout.Main`を指す、**リソース/レイアウト/Main.axml**レイアウト ファイルです。
 
 アプリケーションを実行します。 次が表示されます。
 
-[![スクリーン ショットの最初の LinearLayout が水平方向に配置されたアプリの 2 番目の垂直方向に](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
+[![スクリーン ショット最初 LinearLayout が水平方向に配置されたアプリの 2 つ目の垂直方向に](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
-XML 属性が各ビューの動作を定義する方法に注意してください。 値が異なるを試し`android:layout_weight`の各要素の重み付けに基づいて、実際の画面に配布する方法を参照してください。 参照してください、[共通オブジェクトのレイアウト](http://developer.android.com/guide/topics/ui/declaring-layout.html)方法の詳細については、ドキュメント[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)ハンドル、`android:layout_weight`属性。
+XML 属性が各ビューの動作を定義する方法に注意してください。 さまざまな値を試し、`android:layout_weight`の各要素のウエイトに基づいて、実際の画面に配布する方法を参照してください。 参照してください、[共通レイアウト オブジェクト](http://developer.android.com/guide/topics/ui/declaring-layout.html)方法の詳細についてのドキュメント [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+ハンドル、`android:layout_weight`属性。
 
 
 ## <a name="references"></a>参照
@@ -126,6 +135,6 @@ XML 属性が各ビューの動作を定義する方法に注意してくださ�
 -   [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) 
 -   [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/) 
 
-*このページの部分は変更を作成し、Android のオープン ソース プロジェクトで共有しての条項に従って使用作業に基づく、*
-[*クリエイティブ コモンズ 2.5 Attribution ライセンス*](http://creativecommons.org/licenses/by/2.5/).
+*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
+[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).
 

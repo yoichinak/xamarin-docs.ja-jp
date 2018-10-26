@@ -4,15 +4,15 @@ description: ビットマップのアニメーションを実行するには、�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 45a009757d84aa98acc41f6cd2bf672c8472c5bb
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 78fcbae8db70a83d7d0a643e0b27f575152e9515
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615578"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112558"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>SkiaSharp のビットマップをアニメーション化
 
@@ -498,15 +498,15 @@ public partial class MainPage : ContentPage
 
 アニメーション GIF ファイルのフレームを抽出する SkisSharp の使用はしていない、任意の場所を文書化するため、次のコードの記述が通常よりも詳細。
 
-アニメーション GIF ファイルのデコードがページのコンス トラクターで発生しする必要があります、`Stream`ビットマップを参照するオブジェクトを作成するために使用する`SKManagedStream`オブジェクトをクリックし、 [ `SKCodec` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodec/)オブジェクト。 [ `FrameCount` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.FrameCount/)プロパティは、アニメーションを構成するフレームの数を示します。 
+アニメーション GIF ファイルのデコードがページのコンス トラクターで発生しする必要があります、`Stream`ビットマップを参照するオブジェクトを作成するために使用する`SKManagedStream`オブジェクトをクリックし、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)オブジェクト。 [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount)プロパティは、アニメーションを構成するフレームの数を示します。 
 
 コンス トラクターを使用して、これらのフレームは個々 のビットマップとして保存最終的には`FrameCount`型の配列を割り当てる`SKBitmap`と 2 つ`int`累積 (アニメーションのロジックが容易になります) を各フレームの期間の配列期間。
 
-[ `FrameInfo` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.FrameInfo/)プロパティの`SKCodec`クラスの配列は、 [ `SKCodecFrameInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodecFrameInfo/)値、1 つは、各フレームがこのプログラムではその構造からですだけが、 [ `Duration` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodecFrameInfo.Duration/) (ミリ秒) 内のフレームの。
+[ `FrameInfo` ](xref:SkiaSharp.SKCodec.FrameInfo)プロパティの`SKCodec`クラスの配列は、 [ `SKCodecFrameInfo` ](xref:SkiaSharp.SKCodecFrameInfo)値、1 つは、各フレームがこのプログラムではその構造からですだけが、 [ `Duration` ](xref:SkiaSharp.SKCodecFrameInfo.Duration) (ミリ秒) 内のフレームの。
 
-`SKCodec` という名前のプロパティを定義します[ `Info` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.Info/)型の[ `SKImageInfo`](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/)が、その`SKImageInfo`値を示します (少なくともこのイメージ) の色の種類がある`SKColorType.Index8`、です。 つまり。各ピクセルが、色の種類へのインデックス。 カラー テーブルを怠ってを避けるためには、プログラムを使用して、 [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Width/)と[ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Height/)フルカラーを所有していることを構築するには、その構造から情報`ImageInfo`値。 各`SKBitmap`をから作成されます。
+`SKCodec` という名前のプロパティを定義します[ `Info` ](xref:SkiaSharp.SKCodec.Info)型の[ `SKImageInfo`](xref:SkiaSharp.SKImageInfo)が、その`SKImageInfo`値を示します (少なくともこのイメージ) の色の種類がある`SKColorType.Index8`、です。 つまり。各ピクセルが、色の種類へのインデックス。 カラー テーブルを怠ってを避けるためには、プログラムを使用して、 [ `Width` ](xref:SkiaSharp.SKImageInfo.Width)と[ `Height` ](xref:SkiaSharp.SKImageInfo.Height)フルカラーを所有していることを構築するには、その構造から情報`ImageInfo`値。 各`SKBitmap`をから作成されます。
 
-`GetPixels`メソッドの`SKBitmap`を返します、`IntPtr`そのビットマップのピクセル ビットを参照します。 これらのピクセル ビットはまだ設定されていません。 ある`IntPtr`のいずれかに渡される、 [ `GetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCodec.GetPixels/p/SkiaSharp.SKImageInfo/System.IntPtr/SkiaSharp.SKCodecOptions/)メソッドの`SKCodec`します。 そのメソッドが GIF ファイルからによって参照されるメモリ領域にフレームをコピー、`IntPtr`します。 [ `SKCodecOptions` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKCodecOptions.SKCodecOptions/p/System.Int32/System.Boolean/)コンス トラクターは、フレームの数を示します。
+`GetPixels`メソッドの`SKBitmap`を返します、`IntPtr`そのビットマップのピクセル ビットを参照します。 これらのピクセル ビットはまだ設定されていません。 ある`IntPtr`のいずれかに渡される、 [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))メソッドの`SKCodec`します。 そのメソッドが GIF ファイルからによって参照されるメモリ領域にフレームをコピー、`IntPtr`します。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions.%23ctor(System.Int32,System.Boolean))コンス トラクターは、フレームの数を示します。
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -657,6 +657,6 @@ public partial class AnimatedGifPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [マンデルブロ アニメーション (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)

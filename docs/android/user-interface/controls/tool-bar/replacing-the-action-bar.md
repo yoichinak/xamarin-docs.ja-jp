@@ -1,51 +1,51 @@
 ---
-title: 操作バーを置き換える
+title: 操作バーの置き換え
 ms.prod: xamarin
 ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: d9a5db70999a79d9b968fcd9a27d45e6d73354c0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e9fa1e2651661670f89baac7fcd438b3d14bfb3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772592"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108224"
 ---
-# <a name="replacing-the-action-bar"></a>操作バーを置き換える
+# <a name="replacing-the-action-bar"></a>操作バーの置き換え
 
 ## <a name="overview"></a>概要
 
-最も一般的なのいずれかを使用して、`Toolbar`と置換する既定のアクション バー カスタム`Toolbar`(新しい Android プロジェクトの作成時に、バーを使用して、既定のアクション) です。 `Toolbar`アプリ バーのセクションに、アクティビティのブランド ロゴ、タイトル、メニュー項目、ナビゲーション ボタンとカスタム ビューを追加する機能は、UI で、既定のアクションのバーの上大幅にアップグレードを提供しています。
+最も一般的なのいずれかを使用して、`Toolbar`に置き換えて、カスタムの既定の操作バーが`Toolbar`(新しい Android プロジェクトを作成すると、使用して、既定のアクション バー)。 `Toolbar`アプリ バーのセクションにアクティビティのブランド ロゴ、タイトル、メニュー項目、ナビゲーション ボタン、およびカスタム ビューを追加する機能を提供します。 UI で、既定のアクション バーの上を大幅にアップグレードを提供しています。
 
-アプリの既定のアクションのバーを置換する、 `Toolbar`: 
+アプリの既定の操作バーを置換する、 `Toolbar`: 
 
-1.  新しいカスタム テーマを作成し、この新しいテーマを使用するようにアプリケーションのプロパティを変更します。 
+1.  新しいカスタム テーマを作成し、この新しいテーマを使用するように、アプリのプロパティを変更します。 
 
-2.  無効にする、`windowActionBar`ユーザー定義のテーマでの属性を有効にする、`windowNoTitle`属性。
+2.  無効にする、`windowActionBar`カスタム テーマの属性し、有効にする、`windowNoTitle`属性。
 
-3.  レイアウトを定義する、`Toolbar`です。
+3.  レイアウトを定義する、`Toolbar`します。
 
-4.  含める、`Toolbar`アクティビティのレイアウト**Main.axml**レイアウト ファイルです。 
+4.  含める、 `Toolbar` 、アクティビティのレイアウト**Main.axml**レイアウト ファイルです。 
 
-5.  アクティビティのコードを追加`OnCreate`を探す方法、`Toolbar`を呼び出すと`SetActionBar`をインストールする、`ToolBar`操作バーとして。
+5.  アクティビティのコードを追加`OnCreate`を検索するメソッド、`Toolbar`を呼び出すと`SetActionBar`をインストールする、`ToolBar`操作バーとして。
 
-次のセクションでは、このプロセスの詳細を説明します。 簡単なアプリの作成し、その操作バーを置き換えるカスタマイズされた`Toolbar`です。 
+次のセクションでは、このプロセスの詳細を説明します。 簡単なアプリが作成され、その操作バーが置き換えられますカスタマイズされた`Toolbar`します。 
 
 
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-いう新しい Android プロジェクトを作成する**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、Android プロジェクトを新規作成) します。 このプロジェクトを作成した後にターゲットと最低限の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)** またはそれ以降。 Android バージョン レベルの設定の詳細については、次を参照してください。 [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)です。 アプリがビルドされ、実行、ときに、このスクリーン ショットに示すよう、既定値アクション バーを表示します。
+という新しい Android プロジェクトを作成**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、新しい Android プロジェクトの作成) します。 このプロジェクトを作成すると後、は、ターゲットと最小の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)** またはそれ以降。 Android のバージョン レベルの設定の詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。 アプリをビルドして実行して、ときにこのスクリーン ショットで、既定の操作バーが表示されます。
 
-[![既定のアクションのバーのスクリーン ショット](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
+[![既定の操作バーのスクリーン ショット](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
 
 
 ## <a name="create-a-custom-theme"></a>カスタム テーマを作成します。
 
-開く、**リソース/値**ディレクトリと新しいファイルと呼ばれる、create **styles.xml**です。 その内容を次の XML に置き換えます。 
+開く、**リソース/値**ディレクトリおよびという新しいファイルを作成する**styles.xml**します。 その内容を次の XML に置き換えます。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -58,7 +58,7 @@ ms.locfileid: "30772592"
 </resources>
 ```
 
-この XML 定義と呼ばれる新しいカスタム テーマ**MyTheme**に基づく、 **Theme.Material.Light.DarkActionBar**ロリポップでテーマ。 `windowNoTitle`属性に設定されている`true`タイトル バーを非表示にします。 
+この XML の定義と呼ばれる新しいカスタム テーマ**MyTheme**に基づく、 **Theme.Material.Light.DarkActionBar** Lollipop のテーマ。 `windowNoTitle`属性に設定されて`true`タイトル バーを非表示にします。 
 
 ```xml
 <item name="android:windowNoTitle">true</item>
@@ -84,13 +84,13 @@ Olive-green`colorPrimary`ツールバーの背景色の設定を使用します�
 <application android:label="@string/app_name" android:theme="@style/MyTheme"></application>
 ```
 
-詳細については、カスタム テーマをアプリに適用する、次を参照してください。[カスタム テーマを使用して](~/android/user-interface/material-theme.md#customtheme)です。 
+アプリにカスタム テーマを適用する方法についての詳細については、次を参照してください。[カスタム テーマを使用して](~/android/user-interface/material-theme.md#customtheme)します。 
 
 
 
 ## <a name="define-a-toolbar-layout"></a>ツールバーのレイアウトを定義します。
 
-**リソース/レイアウト**ディレクトリと呼ばれる新しいファイルを作成**toolbar.xml**です。 その内容を次の XML に置き換えます。 
+**リソース/レイアウト**ディレクトリと呼ばれる新しいファイルを作成**toolbar.xml**します。 その内容を次の XML に置き換えます。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ Olive-green`colorPrimary`ツールバーの背景色の設定を使用します�
     android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"/>
 ```
 
-この XML 定義のカスタム`Toolbar`を置き換える既定のアクション バー。 最小の高さ、`Toolbar`が置き換えられる操作バーのサイズに設定します。 
+この XML 定義のカスタム`Toolbar`を置き換える既定の操作バー。 最小の高さ、`Toolbar`に置換するアクション バーのサイズに設定されます。 
 
 ```csharp
 android:minHeight="?android:attr/actionBarSize"
@@ -115,19 +115,19 @@ android:minHeight="?android:attr/actionBarSize"
 android:background="?android:attr/colorPrimary"
 ```
 
-ロリポップ、始まる、`android:theme`属性は、個々 のビューのスタイル設定を使用することができます。 `ThemeOverlay.Material`ロリポップで導入されたテーマようなります。 既定値をオーバーレイする`Theme.Material`テーマ、明るいまたは暗いように関連する属性を上書きします。 この例では、`Toolbar`ダーク テーマを使用するので、その内容は次の部分は薄い色。 
+ロリポップ、以降、`android:theme`属性を使用して、個々 のビューのスタイルを設定することができます。 `ThemeOverlay.Material` Lollipop で導入されたテーマにより、既定のオーバーレイできる`Theme.Material`テーマを淡色や濃色のいずれかにする適切な属性を上書きします。 この例で、`Toolbar`その内容が薄い色になるように、ダーク テーマを使用します。 
 
 ```csharp
 android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 ```
 
-メニュー項目は、暗い背景色と比較できるように、この設定が使用されます。
+この設定は、暗い背景色をメニュー項目を比較するために使用されます。
 
 
 
 ## <a name="include-the-toolbar-layout"></a>ツールバーのレイアウトを含める
 
-レイアウト ファイルを編集して**Resources/layout/Main.axml**しその内容を次の XML に置き換えます。
+レイアウト ファイルを編集**Resources/layout/Main.axml**内容を次の XML に置き換えます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -140,11 +140,11 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 </RelativeLayout>
 ```
 
-このレイアウトが含まれています、`Toolbar`で定義されている**toolbar.xml**を使用して、`RelativeLayout`ことを指定する、 `Toolbar` (ボタンの上に)、UI の最上部に配置します。 
+このレイアウトが含まれています、`Toolbar`で定義されている**toolbar.xml**を使用して、`RelativeLayout`ことを指定する、 `Toolbar` (上部のボタン)、UI の最上部に配置します。 
 
 
 
-## <a name="find-and-activate-the-toolbar"></a>検索し、ツールバーをアクティブ化
+## <a name="find-and-activate-the-toolbar"></a>検索して、ツールバーをアクティブ化
 
 編集**MainActivity.cs**し、以下の追加ステートメントを使用します。
 
@@ -160,41 +160,41 @@ SetActionBar(toolbar);
 ActionBar.Title = "My Toolbar";
 ```
 
-このコードを検索、`Toolbar`と呼び出し`SetActionBar`できるように、`Toolbar`アクション バー特性の既定値になります。 ツールバーのタイトルは**マイ ツールバー**です。 このコード例のように、`ToolBar`操作バーとして直接参照することができます。 コンパイルしてこのアプリを実行する&ndash;、カスタマイズされた`Toolbar`が既定のアクションのバーの代わりに表示されます。 
+このコードを検索、`Toolbar`と呼び出し`SetActionBar`ように、`Toolbar`既定アクション バーの特性になります。 ツールバーのタイトルは**My ツールバー**します。 このコード例のように、`ToolBar`アクション バーとして直接参照できます。 このアプリをコンパイルして&ndash;、カスタマイズされた`Toolbar`が既定の操作バーの代わりに表示されます。 
 
-[![緑の画面の配色とユーザー定義のツールバーのスクリーン ショット](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png#lightbox)
+[![緑のカラー スキームを使用してカスタマイズされたツールバーのスクリーン ショット](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png#lightbox)
 
-注意して、`Toolbar`のスタイルとは無関係に、`Theme.Material.Light.DarkActionBar`アプリの残りの部分に適用されているテーマ。 
+注意、`Toolbar`とは無関係のスタイルが、`Theme.Material.Light.DarkActionBar`アプリの残りの部分に適用されているテーマ。 
 
-アプリの実行中に例外が発生した場合は、次を参照してください。、[トラブルシューティング](#troubleshooting)以下のセクションです。
+アプリの実行中に例外が発生した場合は、次を参照してください。、[トラブルシューティング](#troubleshooting)以下のセクション。
 
  
 ## <a name="add-menu-items"></a>メニュー項目を追加します。 
 
-このセクションではメニューに追加されます、`Toolbar`です。 右上の領域、`ToolBar`メニュー項目用に予約されて&ndash;各メニュー項目 (とも呼ばれる、*アクション アイテム*) または実行できます。 現在のアクティビティ内のアクションは、アプリ全体の代理としてアクションを実行できます。 
+このセクションではメニューに追加されます、`Toolbar`します。 右上の領域、`ToolBar`メニュー項目用に予約されて&ndash;各メニュー項目 (とも呼ばれる、*アクション アイテム*) 現在のアクティビティ内でアクションを実行できるか、アプリ全体の代わりにアクションを実行できます。 
 
 メニューを追加する、 `Toolbar`: 
 
-1.  メニューのアイコンを (必要な場合) を追加、`mipmap-`アプリ プロジェクトのフォルダーです。 Google は、空き メニューのアイコンのセットを提供、[材料アイコン](https://design.google.com/icons/)ページ。 
+1.  メニューのアイコンを (必要な場合) を追加、`mipmap-`アプリ プロジェクトのフォルダー。 Google の無料のメニュー アイコンのセットを提供する、[素材アイコン](https://design.google.com/icons/)ページ。 
 
-2.  新しいメニュー リソース ファイルを追加することで、メニュー項目の内容を定義**リソース/メニュー**です。 
+2.  新しいメニュー リソース ファイルを追加することでメニュー項目の内容を定義する**リソース/メニュー**します。 
 
-3.  実装、 `OnCreateOptionsMenu` 、アクティビティのメソッド&ndash;このメソッドは、メニュー項目を拡張します。 
+3.  実装、`OnCreateOptionsMenu`メソッド、アクティビティの&ndash;このメソッドは、メニュー項目を拡張します。 
 
-4.  実装、 `OnOptionsItemSelected` 、アクティビティのメソッド&ndash;メニュー項目がタップされたときに、このメソッドは、アクションを実行します。 
+4.  実装、`OnOptionsItemSelected`メソッド、アクティビティの&ndash;メニュー項目がタップされたときに、このメソッドが操作を実行します。 
 
-次のセクションでは、追加することでこのプロセスの詳細を示す**編集**と**保存**にメニュー項目をカスタマイズされた`Toolbar`です。 
+次のセクションでは、追加することでこのプロセスの詳細を示す**編集**と**保存**にメニュー項目をカスタマイズされた`Toolbar`します。 
 
 
 
 ### <a name="install-menu-icons"></a>メニューのアイコンをインストールします。
 
-続行、`ToolbarFun`例のアプリ、アプリ プロジェクトにメニューのアイコンを追加します。 ダウンロード[ツールバーのアイコン](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)、展開、および、抽出の内容をコピー *mipmap -* フォルダーをプロジェクトに*mipmap -* の下にフォルダー **ToolbarFun/リソース**プロジェクトに追加したアイコンの各ファイルを含めるとします。
+進める、`ToolbarFun`例のアプリ、メニュー アイコンをアプリ プロジェクトに追加します。 ダウンロード[ツール バー アイコン](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)、解凍の抽出した内容をコピー *mipmap-* フォルダーをプロジェクトに*mipmap-* フォルダー **ToolbarFun/リソース**プロジェクトに追加したアイコンの各ファイルを含めるとします。
 
 
 ### <a name="define-a-menu-resource"></a>メニュー リソースを定義します。
 
-新しい**メニュー**の下のサブディレクトリ**リソース**です。 **メニュー**サブディレクトリと呼ばれる新しいメニュー リソース ファイルを作成**top_menus.xml**しその内容を次の XML に置き換えます。 
+新規作成**メニュー**サブディレクトリ**リソース**します。 **メニュー**サブディレクトリという新しいメニュー リソース ファイルを作成**top_menus.xml**内容を次の XML に置き換えます。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -216,15 +216,15 @@ ActionBar.Title = "My Toolbar";
 </menu>
 ```
 
-この XML では、次の 3 つのメニュー項目を作成します。
+この XML は、次の 3 つのメニュー項目を作成します。
 
--   **編集**が使用するメニュー項目、`ic_action_content_create.png`アイコン (鉛筆)。 
+-   **編集**を使用するメニュー項目、`ic_action_content_create.png`アイコン (鉛筆の形)。 
 
--   A**保存**が使用するメニュー項目、`ic_action_content_save.png`アイコン (フロッピー ディスク)。 
+-   A**保存**を使用するメニュー項目、`ic_action_content_save.png`アイコン (フロッピー ディスク)。 
 
--   A**設定**アイコンがないメニュー項目。
+-   A**設定**がアイコン メニュー項目。
 
-`showAsAction`の属性、**編集**と**保存**メニュー項目を設定する`ifRoom`&ndash;この設定により、これらのメニュー項目に表示される、`Toolbar`がある場合表示する十分な領域。 **設定**メニュー項目のセットを`showAsAction`に`never`&ndash;これが原因で、**設定**メニューに表示される、*オーバーフロー*メニュー (3垂直方向のドット数)。 
+`showAsAction`の属性、**編集**と**保存**メニュー項目を設定する`ifRoom`&ndash;この設定により、これらのメニュー項目に表示される、`Toolbar`がある場合それらを表示して用の空き領域。 **設定**メニュー項目のセット`showAsAction`に`never`&ndash;これにより、**の基本設定**メニューに表示される、*オーバーフロー* (3 つのメニュー縦向きドット) です。 
 
 
 ### <a name="implement-oncreateoptionsmenu"></a>OnCreateOptionsMenu を実装します。
@@ -239,7 +239,7 @@ public override bool OnCreateOptionsMenu(IMenu menu)
 }
 ```
 
-Android の呼び出し、`OnCreateOptionsMenu`メソッド、アプリは、アクティビティのメニュー リソースを指定できるようにします。 このメソッドで、 **top_menus.xml**リソースが大きく、渡されたに`menu`です。 このコードにより、新しい**編集**、**保存**、および**設定**に表示するメニュー項目、`Toolbar`です。 
+Android の呼び出し、`OnCreateOptionsMenu`メソッド、アプリは、アクティビティのメニュー リソースを指定できるようにします。 このメソッドで、 **top_menus.xml**リソースが大きく、渡されたに`menu`。 このコードにより、新しい**編集**、**保存**、および**設定**に表示されるメニュー項目、`Toolbar`します。 
 
 
 
@@ -256,36 +256,36 @@ public override bool OnOptionsItemSelected(IMenuItem item)
 }
 ```
 
-Android を呼び出すユーザーがメニュー項目をタップしたとき、`OnOptionsItemSelected`メソッドを選択されたメニュー項目に渡します。 この例では、実装には、どのメニュー項目がタップされたを示すためにトーストだけが表示されます。 
+Android を呼び出し、ユーザーがメニュー項目をタップしたとき、`OnOptionsItemSelected`メソッドを選択したメニュー項目に渡します。 この例で、実装には、どのメニュー項目がタップされたかを示すトーストだけが表示されます。 
 
-ビルドおよび実行する`ToolbarFun`ツールバーの新しいメニュー項目を表示します。 `Toolbar`このスクリーン ショットに示すように 3 つのメニューのアイコンが表示されます。 
+ビルドおよび実行`ToolbarFun`にツールバーで、新しいメニュー項目を参照してください。 `Toolbar`ようになりましたこのスクリーン ショットに示すように 3 つのメニュー アイコンを表示します。 
 
-[![図の保存、編集の場所を示すと、オーバーフロー メニュー項目](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png#lightbox)
+[![図に、保存、編集の場所を示すと、オーバーフロー メニュー項目](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png#lightbox)
 
-ときにユーザー タップ、**編集**メニュー アイテム、トーストを表示することを示す、`OnOptionsItemSelected`メソッドが呼び出されました。 
+ユーザーのタップ時に、**編集**ことを示すトースト、メニュー項目が表示されます、`OnOptionsItemSelected`メソッドが呼び出されました。 
 
 [![アイテムの編集がタップされたときに表示されるトーストのスクリーン ショット](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png#lightbox)
 
-ユーザーが、オーバーフロー メニューをタップしたときに、**設定**メニュー項目が表示されます。 通常より一般的なアクションをオーバーフロー メニューに配置する必要&ndash;この例のオーバーフロー メニューを使用して**設定**が頻繁に使用されないためとして**編集**と**保存**: 
+ユーザーが、オーバーフロー メニューをタップすると、**設定**メニュー項目が表示されます。 頻度の低い操作をオーバーフロー メニューに配置する通常、&ndash;この例のオーバーフロー メニューを使用して**設定**頻繁に使用されていないためとして**編集**と**保存**: 
 
-[![オーバーフロー メニューに表示されるスクリーン ショットの設定 メニュー項目](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
+[![オーバーフロー メニューに表示されるメニュー項目を基本設定のスクリーン ショット](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
 
-Android のメニューに関する詳細については、Android Developer を参照してください。[メニュー](https://developer.android.com/guide/topics/ui/menus.html)トピックです。 
+Android のメニューの詳細については、Android の開発者を参照してください。[メニュー](https://developer.android.com/guide/topics/ui/menus.html)トピック。 
  
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-次のヒントは、ツールバーで、アクションのバーを置き換え中に発生する可能性のある問題をデバッグするのに役立ちます。
+次のヒントは、ツールバーで、操作バーを交換している間に発生する問題のデバッグに役立ちます。
 
-### <a name="activity-already-has-an-action-bar"></a>アクティビティは既に操作バー
+### <a name="activity-already-has-an-action-bar"></a>アクティビティは既にアクション バー
 
-説明したように、カスタム テーマを使用するアプリが正しく構成されていない場合[カスタム テーマを適用する](#apply-the-custom-theme)アプリの実行中、次の例外が発生します。
+説明したように、カスタム テーマを使用するアプリが正しく構成されていない場合[カスタム テーマを適用する](#apply-the-custom-theme)アプリの実行中に、次の例外が発生します。
 
 ![カスタム テーマを使用しない場合に発生するエラー](replacing-the-action-bar-images/03-theme-not-defined.png)
 
-エラー メッセージは次が生成するなどのさらに、: _Java.Lang.IllegalStateException: この活動は既にウィンドウ装飾によって提供される操作バー。_ 
+エラー メッセージは次が生成するなどのさらに、: _Java.Lang.IllegalStateException: このアクティビティは既にウィンドウも親しみやすくによって提供されるアクション バー。_ 
 
-このエラーを修正することを確認、`android:theme`属性をユーザー定義のテーマが追加される`<application>`(で**Properties/AndroidManifest.xml**) 前述の[のカスタムテーマを適用する](#apply-the-custom-theme). 場合にこのエラーがさらに、発生する可能性があります、`Toolbar`レイアウト] または [カスタム テーマ正しく構成されていません。
+このエラーを修正することを確認、`android:theme`属性にユーザー定義のテーマが追加された場合`<application>`(で**Properties/AndroidManifest.xml**) 前述の[カスタムテーマを適用](#apply-the-custom-theme). 場合にこのエラーがさらに、発生する可能性があります、`Toolbar`レイアウトまたはカスタム テーマ正しく構成されていません。
 
 
 ## <a name="related-links"></a>関連リンク

@@ -1,31 +1,31 @@
 ---
-title: Android の消耗の概要
-description: ガイドでは、このセクションでは、Android を着用を紹介のインストールし、ウェア開発用コンピューターを構成する方法について説明し、作成し、最初の Android 着用アプリを実行するための手順を提供します。
+title: Android Wear を概要します。
+description: このセクションではガイドは、Android Wear を導入、インストールして Wear の開発用にコンピューターを構成する方法について説明し、作成し、最初の Android Wear アプリを実行する手順について説明します。
 ms.prod: xamarin
 ms.assetid: 8B9DC98A-773F-4E06-84A7-BA8208C4E864
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 12/18/2017
-ms.openlocfilehash: a0b022225dd670ca6da09abbca6b3db75a55f38b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88259afe72715a0c369472b1a5c0609b56db8143
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763840"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102231"
 ---
-# <a name="getting-started-with-android-wear"></a>Android の消耗の概要
+# <a name="get-started-with-android-wear"></a>Android Wear を概要します。
 
-_ガイドでは、このセクションでは、Android を着用を紹介のインストールし、ウェア開発用コンピューターを構成する方法について説明し、作成し、最初の Android 着用アプリを実行するための手順を提供します。_
+_このセクションではガイドは、Android Wear を導入、インストールして Wear の開発用にコンピューターを構成する方法について説明し、作成し、最初の Android Wear アプリを実行する手順について説明します。_
 
-## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[損傷の概要](~/android/wear/get-started/intro-to-wear.md)
+## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[Wear の概要](~/android/wear/get-started/intro-to-wear.md)
 
-Android 着用の基本的な概要、主な機能について説明します、人気のある Android 着用デバイスの一部を示しますおよび参考の不可欠な Google Android 着用ドキュメントへのリンクを提供します。
+Android Wear の基本的な概要を提供します、その主な機能について説明します、いくつかの最も一般的な Android Wear デバイスの一覧を表示および参考資料の重要な Google Android Wear のドキュメントへのリンクを提供します。
 
 ## <a name="setup--installationandroidwearget-startedinstallationmd"></a>[セットアップとインストール](~/android/wear/get-started/installation.md)
 
-インストール手順と、コンピューターと Android 着用開発用のデバイスを準備するために必要な構成の詳細について説明します。
+インストール手順と、コンピューターとデバイスの Android Wear の開発の準備に必要な構成の詳細について説明します。
 
 ## <a name="hello-wearandroidwearget-startedhello-wearmd"></a>[Wear の基本](~/android/wear/get-started/hello-wear.md)
 
-このチュートリアルでは、ボタンのクリックを処理し、損傷デバイスをクリックしてカウンターを表示する小規模な Android 着用プロジェクトを作成するための手順を説明します。
+このチュートリアルには、Android Wear ボタンのクリックを処理し、Wear デバイスでをクリックしてカウンターを表示します。 小規模なプロジェクトを作成するための手順が説明します。

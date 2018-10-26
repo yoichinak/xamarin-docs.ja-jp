@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 4557d3b055e5c49842b9fdcff1dac9ee996e8bab
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 1e353aceaf0e2c0525b82c0ccb7e7bcb73df3075
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986019"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106066"
 ---
 # <a name="apple-account-management"></a>Apple アカウントの管理
 
@@ -44,7 +44,7 @@ Apple アカウントの管理は、Visual Studio for Mac と Visual Studio 2017
 
 ## <a name="adding-an-apple-developer-account"></a>Apple 開発者アカウントを追加します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 移動するアカウント管理ダイアログ ボックスを開くには**Visual Studio > 設定 > Apple 開発者アカウント**:
 
@@ -68,7 +68,7 @@ Apple アカウントの管理は、Visual Studio for Mac と Visual Studio 2017
 
     ![署名 id とプロビジョニング プロファイルがコンピューターにビューの詳細画面が表示されました。](apple-account-management-images/image6.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2017 への Apple ID の追加を開始する前に、開発環境が確認[Mac ビルド ホストにペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)します。
 
@@ -109,11 +109,11 @@ Apple アカウントの管理は、Visual Studio for Mac と Visual Studio 2017
 
 ドロップダウン リストのオプションがグレーで表示、選択解除されている場合は、この種類の証明書を作成する適切なチームのアクセス許可がないことを意味します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![証明書オプションを作成します。](apple-account-management-images/image8.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![証明書オプションを作成します。](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ Apple アカウントの管理は、Visual Studio for Mac と Visual Studio 2017
 
 チームの詳細 ダイアログには、開発者アカウントに接続されているすべてのプロビジョニング プロファイルの一覧も表示されます。 すべてのプロビジョニング プロファイルをローカル コンピューターにダウンロードするにはキーを押して、**すべてのプロファイルをダウンロード**ボタン
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![プロビジョニング プロファイル セクションをダウンロードします。](apple-account-management-images/image9.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![プロビジョニング プロファイル セクションをダウンロードします。](apple-account-management-images/prov4.png)
 

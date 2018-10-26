@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 13730dce5d4698085abe10cb93da5ba50b87ab01
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995567"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106430"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms の ControlTemplate からバインド
 
@@ -156,13 +156,24 @@ public class HomePageCS : ContentPage
 }
 ```
 
+バインドすることも、ビュー モデルのプロパティを直接宣言する必要があるように`BindableProperty`の`HeaderText`と`FooterText`上、 `ContentPage`、コントロール テンプレートにバインドする Parent.BindingContext によって _。PropertyName_など。
+
+```xaml
+<ControlTemplate x:Key="TealTemplate">
+  <Grid>
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.HeaderText}" ... />
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.FooterText}" ... />
+  </Grid>
+</ControlTemplate>
+```
+
 ViewModels へのデータ バインディングの詳細については、次を参照してください。[データ バインディングから mvvm まで](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)します。
 
 ## <a name="summary"></a>まとめ
 
 この記事では、テンプレート バインディングを使用して、コントロール テンプレートからのデータ バインディングを実行するかを説明します。 テンプレート バインディングは、簡単に変更するコントロール テンプレート内のコントロールのプロパティの値を有効にすると、データをコントロール テンプレート内のコントロールは、パブリック プロパティにバインドを許可します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

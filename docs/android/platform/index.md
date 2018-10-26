@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Android のプラットフォーム機能
-description: このセクションのドキュメントでは、Android 固有の機能について説明します。 ここでフラグメントを使用して、マップでの作業やコンテンツ プロバイダーを使用してデータをカプセル化するなどのトピックを紹介します。
+description: このセクションのドキュメントでは、Android 固有の機能について説明します。 ここでフラグメントを使用して、マップ、操作、およびコンテンツ プロバイダーを使用してデータをカプセル化するなどのトピックが見つかります。
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 07/27/2018
-ms.openlocfilehash: 8e2bb43f885c162eb6dca0cf4a8ed14490ff092b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+author: conceptdev
+ms.author: crdun
+ms.date: 08/21/2018
+ms.openlocfilehash: 8ce50ab9a1bcd029a0db97e6dd66518d646d82ef
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351565"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104701"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
-_このセクションのドキュメントでは、Android 固有の機能について説明します。ここでフラグメントを使用して、マップでの作業やコンテンツ プロバイダーを使用してデータをカプセル化するなどのトピックを紹介します。_
+_このセクションのドキュメントでは、Android 固有の機能について説明します。ここでフラグメントを使用して、マップ、操作、およびコンテンツ プロバイダーを使用してデータをカプセル化するなどのトピックが見つかります。_
 
 ## <a name="android-beamandroidplatformandroid-beammd"></a>[Android ビーム](~/android/platform/android-beam.md)
 
@@ -46,9 +46,9 @@ Android 3.0 には、携帯電話とタブレットで検出された多くの�
 このガイドは、Android 6.0 をサポートする方法について説明_アプリ リンク_、web サイトの Url に応答するモバイル アプリに許可する手法です。 これは、Android 6.0 アプリケーションでのアプリ リンクを実装する方法と、ドメインのアプリのリンクを処理するためにモバイル アプリにアクセス許可を付与する web サイトを構成する方法について説明します。
 
 
-##  <a name="android-p-previewandroidplatformandroid-pmd"></a>[Android の P プレビュー](~/android/platform/android-p.md)
+##  <a name="android-9-pieandroidplatformpiemd"></a>[Android の 9 円](~/android/platform/pie.md)
 
-この記事では、Android の P プレビューの新機能の概要を示します、P の Android 開発用の Xamarin.Android を準備する方法について説明します、およびを Xamarin.Android アプリで重要な Android P 機能を使用する方法を示したサンプル コードを提供します。
+この記事で Android の円の新機能の概要を示します、円の Android 開発用の Xamarin.Android を準備する方法について説明します、Android 円表示素材と通知の新しい機能を使用する方法を示す例のアプリを提供します。Xamarin.Android アプリです。
 
 
 ##  <a name="android-8-oreoandroidplatformoreomd"></a>[Android 8 Oreo](~/android/platform/oreo.md)
@@ -86,7 +86,7 @@ Android 4.4 (KitKat) は、ユーザーおよび開発者向け機能学ばな�
 
 ##  <a name="android-41-jelly-beanandroidplatformjelly-beanmd"></a>[Android 4.1 Jelly Bean](~/android/platform/jelly-bean.md)
 
-このドキュメントでは、Android 4.1 で導入された開発者向け新機能の概要を説明します。 これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。
+このドキュメントでは、開発者が Android 4.1 で導入された新機能の概要が提供されます。 これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。
 
 
 
@@ -98,12 +98,12 @@ Android 4.4 (KitKat) は、ユーザーおよび開発者向け機能学ばな�
 
 ##  <a name="working-with-the-android-manifestandroid-manifestmd"></a>[Android マニフェストの使用](android-manifest.md)
 
-AndroidManifest.xml ファイルと方法がおそらくこの記事で introducts 機能を制御し、Android アプリケーション用の Mono の要件を説明するために使用します。
+この記事は、AndroidManifest.xml ファイルをについて説明し、機能を制御し、Android アプリケーション用の Mono の要件を説明することも使用する方法。
 
 
 ##  <a name="introduction-to-content-providersandroidplatformcontent-providersindexmd"></a>[コンテンツ プロバイダーの概要](~/android/platform/content-providers/index.md)
 
-ContentProvider では、データ リポジトリをカプセル化し、それにアクセスする API を提供します。 プロバイダーは、通常はも、データの表示/管理するための UI を提供する Android アプリケーションの一部として存在します。 コンテンツ プロバイダーを使用して主なメリットが簡単に (、ContentResolver と呼ばれます) プロバイダーのクライアント オブジェクトを使用してカプセル化されたデータにアクセスするには、他のアプリケーションを有効にします。 まとめてコンテンツ プロバイダーとコンテンツの競合回避モジュールは、データへのアクセスが簡単にビルドおよび使用の一貫性のあるアプリケーション間の API を提供します。 このドキュメントでは、アクセスし、Xamarin.Android で ContentProviders を構築する方法を示します。
+ContentProvider では、データ リポジトリをカプセル化し、それにアクセスする API を提供します。 また、データの表示/管理するため、UI を提供する Android アプリケーションの一部として、プロバイダーが存在します。 コンテンツ プロバイダーを使用して主なメリットが簡単に (、ContentResolver と呼ばれます) プロバイダーのクライアント オブジェクトを使用してカプセル化されたデータにアクセスするには、他のアプリケーションを有効にします。 まとめてコンテンツ プロバイダーとコンテンツの競合回避モジュールは、データへのアクセスが簡単にビルドおよび使用の一貫性のあるアプリケーション間の API を提供します。 このドキュメントでは、アクセスし、Xamarin.Android で ContentProviders を構築する方法を示します。
 
 
 

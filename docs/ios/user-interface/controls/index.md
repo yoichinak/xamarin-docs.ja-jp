@@ -1,46 +1,46 @@
 ---
-title: Xamarin.iOS のユーザー インターフェイス コントロール
-description: このドキュメントには、さまざまな iOS ユーザー インターフェイス コントロール Xamarin.iOS 開発者が利用できるを説明するガイドへのリンクがします。 リンクされたコンテンツは、アラート、ボタン、コレクション ビュー、イメージ、カメラの手動のコントロール、マップ、ラベル、ピッカー、日付の選択、および詳細について説明します。
+title: Xamarin.iOS でのユーザー インターフェイス コントロール
+description: このドキュメントは、さまざまな iOS ユーザー インターフェイス コントロール Xamarin.iOS の開発者が利用できるについて説明するガイドにリンクしています。 リンクされたコンテンツは、アラート、ボタン、コレクション ビュー、イメージ、手動カメラ コントロール、マップ、ラベル、ピッカー、日付の選択、および詳細について説明します。
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 477cb4e479224b9e795f3460e0f59e0aa2038630
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 25b17dbebebf7bcae92ebdc294c798101d39b987
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790043"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121621"
 ---
-# <a name="user-interface-controls-in-xamarinios"></a>Xamarin.iOS のユーザー インターフェイス コントロール
+# <a name="user-interface-controls-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイス コントロール
 
-このドキュメントでは、いくつかの最も一般的な iOS のユーザー インターフェイス コントロールとその使用方法を紹介します。
+このドキュメントでは、いくつかの最も一般的な iOS ユーザー インターフェイス コントロールとその使用方法を紹介します。
 
 ## <a name="alertsalertsmd"></a>[アラート](alerts.md)
 
-IOS 8 以降、UIAlertController が完了した交換 UIActionSheet とうち UIAlertView 両方は使用されなくなりました。
+IOS 8 以降、UIAlertController が完成した置換 UIActionSheet とうち UIAlertView 両方が非推奨となりました。
 
 ## <a name="buttonsbuttonsmd"></a>[ボタン](buttons.md)
 
-UIButton クラスは、iOS の画面でボタンのさまざまな種類のスタイルを表すために使用します。 このセクションでは、iOS でのボタンを使用するためのさまざまなオプションについて説明します。
+UIButton クラスは、iOS 画面のボタンのさまざまな異なるスタイルを表すために使用されます。 このセクションでは、iOS のボタンを使用するためのさまざまなオプションについて説明します。
 
 ## <a name="collection-viewsuicollectionviewmd"></a>[コレクション ビュー](uicollectionview.md)
 
-利用可能なコレクション ビュー、`UICollectionView`クラス、レイアウトを使用して、画面上の複数の項目の表示を紹介する iOS 6 での新しい概念です。 データを提供するためのパターン、`UICollectionView`項目を作成し、iOS 開発で使用される一般的なパターンを同じ委任とデータ ソース アイテムに従ってこれらと対話します。
+コレクション ビューで使用できる、`UICollectionView`クラスは、iOS 6 のレイアウトを使用して、画面で、プレゼンテーションを複数の項目を紹介する新しい概念です。 データを提供するためのパターンを`UICollectionView`を項目を作成し、同じ委任とデータ ソースの iOS 開発でよく使用されるパターンこれら項目に従って操作します。
 
 ## <a name="imagesimagemd"></a>[イメージ](image.md)
 
-2 つの手順をアプリにイメージを追加することが必要です最初に、イメージをプロジェクトに追加。次に、コントロールと、画面に表示するコードを追加します。 参照してください、[イメージを操作](~/ios/app-fundamentals/images-icons/index.md)カバレッジ イメージ Xamarin.iOS で処理の詳細な記事。
+アプリにイメージを追加するには、2 つの手順が必要です: 最初に、プロジェクトにイメージを追加次に、コントロールと、画面に表示するコードを追加します。 参照してください、[イメージを操作](~/ios/app-fundamentals/images-icons/index.md)Xamarin.iOS での画像処理のカバレッジの詳細情報の記事。
 
 ## <a name="manual-camera-controlsintro-to-manual-camera-controlsmd"></a>[手動カメラ コントロール](intro-to-manual-camera-controls.md)
 
-提供されるマニュアル カメラ コントロール、 `AVFoundation Framework` 8、iOS でモバイル アプリケーションを iOS デバイスのカメラを完全に制御を許可します。 プロフェッショナルなレベルのカメラ アプリケーションを作成し、静止画像またはビデオを作成中に、カメラのパラメーターを調整してアーティスト コンポジションを指定するのには、この制御の粒度の細かいレベルを使用できます。
+提供される、手動カメラ コントロール、`AVFoundation Framework`では、iOS 8、iOS デバイスのカメラを完全に制御を実行するモバイル アプリケーションを許可します。 この細かいレベルの制御は、プロフェッショナル レベルのカメラ アプリケーションを作成し、静止画像またはビデオを作成中に、カメラのパラメーターを調整することにより、アーティストのコンポジションを提供できます。
 
 ## <a name="mapsios-mapsindexmd"></a>[マップ](ios-maps/index.md)
 
-マップは、すべての最新のモバイル オペレーティング システムで一般的な機能です。 iOS では、マップ キット フレームワークを通じてネイティブ サポートがマッピングされています。 マップ キットを使用して、アプリケーションは、豊富な対話型のマップを簡単に追加できます。 これらのマップは、さまざまな、地図上に場所を示すために注釈を追加して、任意図形のグラフィックスのオーバーレイなどの方法でカスタマイズできます。 マップ キットでは、デバイスの現在の場所を表示するための組み込みサポートもあります。
+マップは、すべての最新のモバイル オペレーティング システムで一般的な機能です。 iOS では、Map Kit フレームワークを通じてネイティブ マッピング サポートを提供します。 マップのキット、アプリケーションは、リッチで対話型のマップを簡単に追加できます。 これらのマップは、さまざまな、マップ上の場所をマークする注釈を追加して、任意図形のグラフィックスのオーバーレイなどの方法でカスタマイズできます。 Map Kit もデバイスの現在の場所を表示するための組み込みのサポートしています。
 
 ## <a name="labelslabelsmd"></a>[ラベル](labels.md)
 
@@ -48,41 +48,41 @@ UIButton クラスは、iOS の画面でボタンのさまざまな種類のス�
 
 ## <a name="pickers-and-date-pickerspickermd"></a>[ピッカーおよび日付の選択](picker.md)
 
-ピッカー コントロールは、スクロール可能な値を強調表示されている選択した値の一覧を含む 'ホイールに似た' コントロールを表示します。 ユーザーは、必要なオプションを選択するホイールを回転します。
+ピッカー コントロールは、強調表示されている選択した値を持つ値のスクロール可能な一覧を含む 'ホイールに似た' コントロールを表示します。 ユーザーは、必要なオプションを選択するホイールを回転します。
 
-1 つの特定のユーザー場合ピッカーを日付または時刻を設定することです。 この Apple の提供には、カスタム UIDatePicker と呼ばれる UIPickerView クラスのサブクラスを作成しました。
+特定のユーザーが 1 つ場合ピッカーを日付または時刻を設定することです。 この Apple では、カスタム UIDatePicker と呼ばれる UIPickerView クラスのサブクラスを作成しました。
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[進行状況とアクティビティのインジケーター](progress-activity-indicator.md)
 
-iOS には、アプリでの進行状況を示すために 2 つの主な方法が用意されています: アクティビティのインジケーター (など、特定_ネットワーク_アクティビティのインジケーター) と進行状況バーです。
+iOS アプリでの進行状況を示す 2 つの主な方法を提供します。 アクティビティのインジケーター (など、特定_ネットワーク_アクティビティのインジケーター) と進行状況バー。
 
 ## <a name="search-barssearchbarmd"></a>[検索バー](searchbar.md)
 
-UISearchBar を使用すると、値のリストを検索します。 
+値の一覧を検索して、UISearchBar です。 
 
-## <a name="sliders-steppers-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[スライダー、ステッパ、およびセグメント化されたコントロール](slider-switch-segmented-controls.md)
+## <a name="sliders-steppers-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[スライダー、ステッパ、およびセグメント付きコントロール](slider-switch-segmented-controls.md)
 
-スライダー コントロールでは、数値の範囲内の単純な選択ができます。 iOS を使用して、`UISwitch`ブール値の入力によって他のプラットフォームでラジオ ボタンを表すことができます。 セグメント化されたコントロールは、オプションの数が少ない対話をユーザーに使用できるように整理された方法です。
+スライダー コントロールには、数値の範囲内の単純な選択ができるようにします。 iOS を使用して、`UISwitch`ブール値の入力で他のプラットフォームでラジオ ボタンを表すことができます。 セグメント化されたコントロールは、オプションの数が少ない対話をユーザーに許可する適切な手段です。
 
 ## <a name="stack-viewuistackviewmd"></a>[スタック ビュー](uistackview.md)
 
-スタック ビュー コントロール (`UIStackView`)、iOS デバイスの向きや画面のサイズを動的に応答する水平方向または垂直方向にサブビューのスタックを管理するには、自動レイアウトおよびサイズ クラスの機能を利用しています。
+スタック ビュー コントロール (`UIStackView`) iOS デバイスの向きや画面サイズに動的に応答する水平方向または垂直方向に、サブビューのスタックを管理するには、自動レイアウトとサイズ クラスの機能を利用しています。
 
 ## <a name="tables-and-cellstablesindexmd"></a>[テーブルとセル](tables/index.md)
 
-彼のセクションでは、作成し、テーブルの表示に使用するクラスが導入されていますし、Xamarin.iOS で使用する方法の例について説明します。 既定の外観を使用して、テーブルの編集、および Xamarin iOS デザイナーを使用してテーブルを視覚的にデザインするを実装する、レイアウトをカスタマイズする場合に適用されます。 場合があります、表示、明らかに (、音楽アプリなど) の行と、テーブルなどのコントロール (連絡先アプリの場合、またはメッセージ アプリにあるメッセージ交換での編集) を認識するが困難である他の時間の一覧です。
+彼のセクションでは、作成し、テーブルの表示に使用されるクラスが導入されていますし、Xamarin.iOS で使用する方法の例を紹介します。 既定の外観を使用して、テーブルの場合、編集、および Xamarin iOS Designer を使用してテーブルを視覚的に設計を実装するレイアウトをカスタマイズするには説明します。 場合があります、表示、明らかに (ミュージック アプリ) などの行とそれ以外の時間 (連絡先アプリの場合、またはメッセージ交換でメッセージ アプリでの編集) などのテーブル コントロールを認識することは困難の一覧です。
 
 ## <a name="text-inputtext-inputmd"></a>[テキスト入力](text-input.md)
 
-実現は、ユーザーのテキスト入力を受け入れ、`UITextField`単一行の入力と複数行の編集可能なテキストの UITextView します。 これらのコントロールのいずれかの画面にドラッグし、最初のテキストを設定する をダブルクリックできます。
+ユーザーのテキスト入力を受け取るためにでは、`UITextField`の単一行の入力と複数行の編集可能なテキストの UITextView します。 これらのコントロールのいずれかの画面にドラッグして、初期テキストを設定する をダブルクリックします。
 
 ## <a name="tab-bars-and-tab-bar-controllerscreating-tabbed-applicationsmd"></a>[タブ バーとタブ バー コント ローラー](creating-tabbed-applications.md)
 
-タブ ナビゲーション UI を使用して iOS アプリケーションは、UITabBarController クラスを使用して構築されます。 この記事の内容をいくつかのコント ローラーとビューを含むタブ付きアプリケーションを設定する方法を説明します。 できない場合に、ルートのコント ローラーなど、ログイン画面の後に、UITabBarController を読み込む方法について確認し、します。
+タブ ナビゲーション UI を使用して iOS アプリケーションは、UITabBarController クラスを使用して構築されます。 この記事ではいくつかのコント ローラーとビューを含むタブ付きアプリケーションを設定する方法について説明します。 できない場合に、ルートのコント ローラーなど、ログイン画面の後に、UITabBarController を読み込む方法を説明します。
 
 ## <a name="web-viewsuiwebviewmd"></a>[Web ビュー](uiwebview.md)
 
-この記事の内容について学びます Apple によって提供される 3 つの Web ビューの各: `UIWebView`、 `WKWebview`、および`SFSafariViewController`、それらの類似点と相違点、および使用方法です。
+この記事で紹介 Apple によって提供される次の 3 つの Web ビューの各: `UIWebView`、 `WKWebview`、および`SFSafariViewController`、これらの類似点と相違点、および使用方法。
 
 ## <a name="related-links"></a>関連リンク
 

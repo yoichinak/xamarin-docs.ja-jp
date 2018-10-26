@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4a1393e60422313c781010c0d70a1a85eb671d34
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996195"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112399"
 ---
 # <a name="native-views-in-c"></a>C# でのネイティブ ビュー
 
@@ -20,7 +20,7 @@ _IOS、Android、および UWP からのネイティブ ビューは、c# を使
 
 ## <a name="overview"></a>概要
 
-できるすべての Xamarin.Forms コントロール`Content`を設定するにするかを持つ、`Children`コレクションは、プラットフォーム固有のビューを追加できます。 たとえば、iOS`UILabel`に直接追加することができます、 [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ、または、 [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children)コレクション。 ただし、この機能を使用する必要ある`#if`Xamarin.Forms 共有プロジェクトのソリューションで定義し、Xamarin.Forms .NET Standard ライブラリのソリューションから使用できません。
+により、任意の Xamarin.Forms コントロール`Content`を設定するかを持つ、`Children`コレクションは、プラットフォーム固有のビューを追加できます。 たとえば、iOS`UILabel`に直接追加することができます、 [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ、または、 [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children)コレクション。 ただし、この機能を使用する必要ある`#if`Xamarin.Forms 共有プロジェクトのソリューションで定義し、Xamarin.Forms .NET Standard ライブラリのソリューションから使用できません。
 
 次のスクリーン ショットは、プラットフォーム固有のビューを Xamarin.Forms に追加されたことを示す[ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 

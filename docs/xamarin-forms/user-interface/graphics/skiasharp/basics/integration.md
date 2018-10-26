@@ -4,15 +4,15 @@ description: この記事では、Xamarin.Forms 要素、およびタッチに�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: 23dcc6f11f40283a220aba47b33717e7e5740dbe
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: bf9b0388ff3b024439cfc3488e4057ba32fdab6b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615848"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115082"
 ---
 # <a name="integrating-with-xamarinforms"></a>Xamarin.Forms との統合
 
@@ -44,7 +44,7 @@ Xamarin.Forms で SkiaSharp の対話型のグラフィックスを作成する�
 
 通知、 `skia` XML 名前空間宣言。
 
-`Tapped`のハンドラー、`TapGestureRecognizer`オブジェクトのブール型フィールドと呼び出しの値を切り替えます、 [ `InvalidateSurface` ](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface()/)メソッドの`SKCanvasView`:
+`Tapped`のハンドラー、`TapGestureRecognizer`オブジェクトのブール型フィールドと呼び出しの値を切り替えます、 [ `InvalidateSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface)メソッドの`SKCanvasView`:
 
 ```csharp
 bool showFill = true;
@@ -84,15 +84,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`StrokeWidth`プロパティが、違いを強調したり 50 に設定されています。 最初の内部を描画し、アウトライン、全体の線の幅を確認できます。 既定では、グラフィックスの図の描画、`PaintSurface`イベント ハンドラーでは、ハンドラーの前で描画されるものが見えにくきます。
+`StrokeWidth`プロパティが、違いを強調したり 50 に設定されています。 最初の内部を描画し、アウトライン、全体の線の幅を確認できます。 後で描画するグラフィックス既定では、図、`PaintSurface`イベント ハンドラーでは、ハンドラーの前で描画されるものが見えにくきます。
 
-**色探索**ページと他の Xamarin.Forms 要素 SkiaSharp グラフィックスも統合する方法について説明および SkiaSharp で色を定義するための 2 つの代替方法の違いについても示します。 静的な[ `SKColor.FromHsl` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsl/p/System.Single/System.Single/System.Single/System.Byte/)メソッドを作成、`SKColor`色合い-鮮やかさ-明るさモデルに基づいて、値。
+**色探索**ページと他の Xamarin.Forms 要素 SkiaSharp グラフィックスも統合する方法について説明および SkiaSharp で色を定義するための 2 つの代替方法の違いについても示します。 静的な[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte))メソッドを作成、`SKColor`色合い-鮮やかさ-明るさモデルに基づいて、値。
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
 ```
 
-静的な[ `SKColor.FromHsv` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsv/p/System.Single/System.Single/System.Single/System.Byte/)メソッドを作成、`SKColor`値色合い-鮮やかさ-値の類似のモデルに基づいています。
+静的な[ `SKColor.FromHsv` ](xref:SkiaSharp.SKColor.FromHsv(System.Single,System.Single,System.Single,System.Byte))メソッドを作成、`SKColor`値色合い-鮮やかさ-値の類似のモデルに基づいています。
 
 ```csharp
 public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
@@ -100,7 +100,7 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 
 どちらの場合で、`h`引数の範囲は 0 ~ 360 です。 `s`、 `l`、および`v`引数の範囲は 0 ~ 100 です。 `a` (アルファまたは不透明度) 引数範囲は 0 ~ 255 です。
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)ファイルには、2 つ作成されます`SKCanvasView`内のオブジェクトを`StackLayout`と並行して`Slider`と`Label`HSL を選択するユーザーを許可するビューとHSV 色の値:
+[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)ファイルには、2 つ作成されます`SKCanvasView`内のオブジェクトを`StackLayout`サイドで`Slider`と`Label`HSL および HSV を選択するユーザーを許可するビュー色の値。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -240,5 +240,5 @@ HSV モデルでは、純粋な色は、飽和状態と値の両方が 100 を�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,29 +1,29 @@
 ---
-title: Android でのユーザー補助機能
+title: Android でのアクセシビリティ
 ms.prod: xamarin
 ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 2a49d15651b8c6ab7417a69d934af5d20bfc13d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4eb4a97a346f3906c925dc9e324ed9378af0b560
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763905"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116187"
 ---
-# <a name="accessibility-on-android"></a>Android でのユーザー補助機能
+# <a name="accessibility-on-android"></a>Android でのアクセシビリティ
 
-Api を使用して、Android ユーザー補助機能によるとアプリをビルドする方法の説明、[アクセシビリティ チェックリスト](~/cross-platform/app-fundamentals/accessibility.md)です。
-参照してください、 [iOS アクセシビリティ](~/ios/app-fundamentals/accessibility.md)と[OS X ユーザー補助](~/mac/app-fundamentals/accessibility.md)Api の他のプラットフォーム用のページです。
+このページは、Android のユーザー補助の Api を使用して、に従ってアプリを構築する方法をについて説明します、[アクセシビリティ チェックリスト](~/cross-platform/app-fundamentals/accessibility.md)します。
+参照してください、 [iOS アクセシビリティ](~/ios/app-fundamentals/accessibility.md)と[OS X アクセシビリティ](~/mac/app-fundamentals/accessibility.md)他のプラットフォーム Api のページ。
 
 
-## <a name="describing-ui-elements"></a>UI 要素について説明します。
+## <a name="describing-ui-elements"></a>UI 要素を記述します。
 
-Android の提供、`ContentDescription`コントロールの目的のユーザー補助の説明を提供する Api の読み取り 画面で使用されるプロパティです。
+Android に用意されて、`ContentDescription`コントロールの目的のユーザー補助の説明を提供する Api の読み取り 画面で使用されるプロパティです。
 
-いずれか (C#) または AXML レイアウト ファイルで、コンテンツの説明を設定できます。
+いずれかでコンテンツの説明を設定できますC#または AXML レイアウト ファイルです。
 
 **C#**
 
@@ -35,7 +35,7 @@ saveButton.ContentDescription = "Save data";
 
 **AXML レイアウト**
 
-XML でのレイアウトを使用して、`android:contentDescription`属性。
+レイアウトを使用して、xml、`android:contentDescription`属性。
 
 ```xml
 <ImageButton
@@ -46,7 +46,7 @@ XML でのレイアウトを使用して、`android:contentDescription`属性。
 
 ### <a name="use-hint-for-textview"></a>TextView のヒントを使用します。
 
-`EditText`と`TextView`データ入力には、コントロールを使用して、`Hint`が想定されているどのような入力の説明を提供するプロパティ (の代わりに`ContentDescription`)。
+`EditText`と`TextView`データの入力コントロールを使用して、`Hint`想定されているどのような入力の説明を入力するプロパティ (の代わりに`ContentDescription`)。
 いくつかのテキストを入力すると、テキスト自体がする「読み取り」、ヒントの代わりにします。
 
 **C#**
@@ -59,7 +59,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **AXML レイアウト**
 
-レイアウト ファイルを使用して XML で、`android:hint`属性。
+レイアウト ファイルを使用して、xml、`android:hint`属性。
 
 ```xml
 <EditText
@@ -68,13 +68,13 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 ```
 
 
-### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor リンク ラベルを持つフィールドの入力
+### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor リンク ラベルを持つフィールドを入力します。
 
-データの入力コントロールにラベルを関連付けるには使用、`LabelFor`プロパティ
+データの入力コントロールにラベルを関連付けるには、`LabelFor`プロパティを
 
 **C#**
 
-C# の場合は、設定、`LabelFor`プロパティをこのコンテンツではこのコントロールのリソース ID について説明します (通常このプロパティがラベルに設定および他の入力コントロールを参照)。
+C#、設定、`LabelFor`プロパティをこのコンテンツではこのコントロールのリソース ID について説明します (通常このプロパティがラベルに設定およびその他のいくつかの入力コントロールを参照)。
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -84,7 +84,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **AXML レイアウト**
 
-XML で使用するレイアウトで、`android:labelFor`別のコントロールの識別子を参照するプロパティ。
+レイアウト XML で使用で、`android:labelFor`別のコントロールの識別子を参照するプロパティ。
 
 ```xml
 <TextView
@@ -96,11 +96,11 @@ XML で使用するレイアウトで、`android:labelFor`別のコントロー�
     android:hint="Enter some text" />
 ```
 
-### <a name="announce-for-accessibility"></a>ユーザー補助機能をアナウンスします。
+### <a name="announce-for-accessibility"></a>ユーザー補助機能を発表します。
 
-使用して、`AnnounceForAccessibility`のいずれかの方法を表示するユーザー補助機能が有効になっているときにユーザーに、イベントまたは状態変更の通信を制御します。 このメソッドは、組み込みのナレーションの十分なフィードバックを提供は追加情報がユーザーの役に立ちます使用する必要がありますが、ほとんどの操作に必要ありません。
+使用して、`AnnounceForAccessibility`いずれかのメソッドは、ユーザー補助機能が有効にすると、ユーザーに、イベントまたは状態変更を通信するためにコントロールを表示します。 このメソッドは、ナレーションの組み込みが、十分なフィードバックを提供しますが、追加情報をユーザーの役に立ちますを使用するほとんどの操作に必要です。
 
-次のコードは、簡単な例の呼び出し元を示しています`AnnounceForAccessibility`:。
+次のコードは、簡単な例の呼び出しを示しています`AnnounceForAccessibility`:。
 
 ```csharp
 button.Click += delegate {
@@ -109,13 +109,13 @@ button.Click += delegate {
 };
 ```
 
-## <a name="changing-focus-settings"></a>フォーカス設定を変更します。
+## <a name="changing-focus-settings"></a>フォーカスの設定の変更
 
-アクセス可能なナビゲーションは、どのような操作は使用を理解することで、ユーザーを支援するためにフォーカスを持つコントロールに依存します。 Android の提供、`Focusable`プロパティを具体的にはナビゲーション中にフォーカスを受け取ることができるようにコントロールにタグを付けることができます。
+アクセス可能なナビゲーションは、使用可能な操作を理解することで、ユーザーを支援するためにフォーカスを持つコントロールに依存します。 Android に用意されて、`Focusable`プロパティを具体的には、ナビゲーション中にフォーカスを受け取ることができるようにコントロールのタグを付けることができます。
 
 **C#**
 
-C# でのフォーカスを得たからコントロールを防ぐため、設定、`Focusable`プロパティを`false`:
+コントロールがフォーカスを取得するを防ぐためにC#、設定、`Focusable`プロパティを`false`:
 
 ```csharp
 label.Focusable = false;
@@ -129,12 +129,12 @@ XML ファイル セットのレイアウトで、`android:focusable`属性。
 <android:focusable="false" />
 ```
 
-フォーカス順序を制御することも、 `nextFocusDown`、 `nextFocusLeft`、 `nextFocusRight`、`nextFocusUp`レイアウト AXML で通常設定の属性です。 これらの属性を使用して、画面上のコントロールをユーザーが簡単に移動できることを確認します。
+フォーカスの順序を制御することも、 `nextFocusDown`、 `nextFocusLeft`、 `nextFocusRight`、 `nextFocusUp` AXML レイアウトで通常設定の属性。 これらの属性を使用して、ユーザーが画面上のコントロールを簡単に移動できます。
 
 
-## <a name="accessibility-and-localization"></a>ユーザー補助機能とローカライズ
+## <a name="accessibility-and-localization"></a>アクセシビリティとローカライズ
 
-ヒントとコンテンツの説明は、上記の例では、表示値に直接設定します。 内の値を使用することをお勧め、 **Strings.xml**このなどのファイル。
+ヒントとコンテンツの説明は、上記の例では、表示値に直接設定します。 値を使用することをお勧め、 **Strings.xml**このなどのファイル。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -144,11 +144,11 @@ XML ファイル セットのレイアウトで、`android:focusable`属性。
 </resources>
 ```
 
-テキスト ファイルを使用して、文字列については、c# および AXML レイアウト ファイルで次に示します。
+文字列のファイルからテキストを使用して、以下に示したC#と AXML レイアウト ファイル。
 
 **C#**
 
-コードで文字列リテラルを使用する代わりに値を検索する翻訳済みの文字列のファイルから`Resources.GetText`:
+コードで文字列リテラルを使用する代わりに検索翻訳済みの値を持つ文字列ファイルを`Resources.GetText`:
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
@@ -169,17 +169,17 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
     android:contentDescription="@string/save_info" />
 ```
 
-別のファイルにテキストを格納する利点は、アプリでファイルの複数の言語の翻訳を指定することができますです。 参照してください、 [Android ローカリゼーション ガイド](~/android/app-fundamentals/localization.md)については、アプリケーション プロジェクトにローカライズされた文字列のファイルを追加する方法です。
+別のファイルにテキストを格納する利点は、アプリ、ファイルの複数の言語の翻訳を指定することができますです。 参照してください、 [Android ローカリゼーション ガイド](~/android/app-fundamentals/localization.md)については、アプリケーション プロジェクトにファイルのローカライズされた文字列を追加する方法。
 
 
 ## <a name="testing-accessibility"></a>ユーザー補助のテスト
 
-次の[手順](http://developer.android.com/training/accessibility/testing.html#how-to)Android デバイスでユーザー補助機能をテストするには、応答とタッチで探索を有効にします。
+次の[手順](http://developer.android.com/training/accessibility/testing.html#how-to)Android デバイスでのアクセシビリティをテストするには、TalkBack とタッチして探索を有効にします。
 
-インストールする必要があります[応答](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)が表示されない場合、Google Play から**設定 > アクセシビリティ**です。
+インストールする必要があります[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)が表示されない場合、Google Play から**設定 > ユーザー補助**します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [クロスプラット フォームのユーザー補助機能](~/cross-platform/app-fundamentals/accessibility.md)
-- [Android のユーザー補助 Api](http://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [クロス プラットフォームのユーザー補助機能](~/cross-platform/app-fundamentals/accessibility.md)
+- [ユーザー補助の android Api](http://developer.android.com/guide/topics/ui/accessibility/index.html)

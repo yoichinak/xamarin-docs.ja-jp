@@ -1,38 +1,38 @@
 ---
 title: IOS 7 の概要
-description: この記事では、iOS ビュー コント ローラーの遷移、UIView アニメーション、UIKit Dynamics とテキストのキットの機能強化を含め、7 で導入された主要な新しい Api について説明します。 また、一部のユーザー インターフェイスと、新しい強化マルチタスク機能への変更について説明します。
+description: この記事では、iOS ビュー コント ローラーの遷移、UIView アニメーション、UIKit Dynamics とテキストのキットの機能強化を含め、7 で導入された主要な新しい Api について説明します。 また、一部のユーザー インターフェイス、および新しい強化マルチタスク機能への変更について説明します。
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 9ae82eba78f099f675d21bf53a250923630a0ff6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: db2ce779962947e2121ff03280544a080e193e2e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30780018"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118046"
 ---
 # <a name="introduction-to-ios-7"></a>IOS 7 の概要
 
-_この記事では、iOS ビュー コント ローラーの遷移、UIView アニメーション、UIKit Dynamics とテキストのキットの機能強化を含め、7 で導入された主要な新しい Api について説明します。また、一部のユーザー インターフェイスと、新しい強化マルチタスク機能への変更について説明します。_
+_この記事では、iOS ビュー コント ローラーの遷移、UIView アニメーション、UIKit Dynamics とテキストのキットの機能強化を含め、7 で導入された主要な新しい Api について説明します。また、一部のユーザー インターフェイス、および新しい強化マルチタスク機能への変更について説明します。_
 
-iOS 7 は、iOS に大きな更新です。 アプリケーションではなくコンテンツのクロムでのフォーカスの設定を完全に新しいユーザー インターフェイスのデザインが導入されています。 ビジュアルの変更とは、iOS 7 は、多種多様な高度な相互作用とエクスペリエンスを作成する新しい Api を追加します。 このドキュメントの調査、新しいテクノロジでは、iOS 7 で導入され、さらに調査のための開始点として機能します。
+iOS 7 では、iOS へのメジャー アップデートです。 アプリケーションではなくコンテンツのクロムでのフォーカスの設定を完全に新しいユーザー インターフェイスの設計が導入されています。 ビジュアルの変更と並行は、iOS 7 は、多くの高度な相互作用とエクスペリエンスを作成する新しい Api を追加します。 このドキュメントの調査、新しいテクノロジでは、iOS 7 で導入され、さらに探索の開始点として機能します。
 
 ## <a name="uiview-animation-enhancements"></a>UIView アニメーションの機能強化
 
-iOS 7 では、アプリケーション、アニメーションのコア フレームワークに直接ドロップする必要があったことを許可し、UIKit でアニメーションのサポートが強化されます。 たとえば、`UIView`跳ねるアニメーションのキーフレーム アニメーションなどを実行できるようになりましたが以前、`CAKeyframeAnimation`に適用される、`CALayer`です。
+iOS 7 では、UIKit、Core アニメーション フレームワークに直接ドロップするが必要だった作業を行うアプリケーションを可能でアニメーションのサポートが強化されます。 たとえば、`UIView`跳ねるアニメーションだけでなく、キーフレーム アニメーションを実行できるようになりましたが以前、`CAKeyframeAnimation`に適用される、 `CALayer`。
 
-### <a name="spring-animations"></a>跳ねるアニメーション
+### <a name="spring-animations"></a>Spring のアニメーション
 
- `UIView` spring 効果でアニメーションのプロパティの変更をサポートしています。 これを追加するには、いずれかを呼び出す、`AnimateNotify`または`AnimateNotifyAsync`以下に示すよう spring 減衰比率と spring の初期ベロシティ値に渡して、メソッド。
+ `UIView` spring 効果が適用されたプロパティの変更をアニメーション化をサポートします。 を追加するには、いずれかを呼び出す、`AnimateNotify`または`AnimateNotifyAsync`メソッドを以下に示すよう、spring の減衰率と、spring の初期速度の値で渡します。
 
--  `springWithDampingRatio` – 0 ~ 1 の場合、振幅が小さい方の値を増加値。
--  `initialSpringVelocity` – 1 秒あたりのアニメーションの総距離の割合として初期 spring 速度。
+-  `springWithDampingRatio` – 0 ~ 1 に、振動がより小さい値を増加値。
+-  `initialSpringVelocity` 1 秒あたりの合計のアニメーションの距離の割合として spring の初期速度。
 
 
-次のコードでは、イメージのビューの中心が変更されたときに、spring 効果が生成されます。
+次のコードでは、イメージのビューの中心の変更されたときに、spring 効果が生成されます。
 
 ```csharp
 void AnimateWithSpring ()
@@ -48,15 +48,15 @@ void AnimateWithSpring ()
 }
 ```
 
-この spring 効果により、イメージ ビューを以下に示すように、新しい中央の場所に、アニメーションを完了したときをバウンドを表示します。
+この spring 効果を新しい中央の場所に、アニメーションが完了するをバウンド以下に示すように表示するイメージの表示が発生します。
 
- ![](images/spring-animation.png "この spring 効果でバウンド センターの新しい場所に、アニメーションを完了したときに表示するイメージのビューは、します。")
+ ![](images/spring-animation.png "この spring 効果により、跳ねる center の新しい場所に、アニメーションが完了すると表示されるイメージ ビュー")
 
 ### <a name="keyframe-animations"></a>キーフレーム アニメーション
 
-`UIView`クラスが含まれています、`AnimateWithKeyframes`のキーフレーム アニメーションを作成する方法、`UIView`です。 このメソッドは互いに似ています`UIView`いる点を除き、アニメーション メソッドでは、追加の`NSAction`にキーフレームを含めるパラメーターとして渡されます。 内で、 `NSAction`、キーフレームが呼び出しによって追加された`UIView.AddKeyframeWithRelativeStartTime`です。
+`UIView`クラスが含まれています、`AnimateWithKeyframes`でキーフレーム アニメーションを作成するためのメソッド、`UIView`します。 このメソッドは、その他のような`UIView`いる点を除き、アニメーションのメソッドを追加`NSAction`キーフレームは、パラメーターとして渡されます。 内で、 `NSAction`、キーフレームは、呼び出しによって追加された`UIView.AddKeyframeWithRelativeStartTime`します。
 
-たとえば、次のコード スニペットでは、ビューを回転させるか、ビューの中心にもをアニメーション化するキーフレーム アニメーションを作成します。
+たとえば、次のコード スニペットは、ビューを回転させるか、ビューの中心もをアニメーション化するキーフレーム アニメーションを作成します。
 
 ```csharp
 void AnimateViewWithKeyframes ()
@@ -83,44 +83,44 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-最初の 2 つのパラメーター、`AddKeyframeWithRelativeStartTime`メソッド、開始時刻と期間を指定、キーフレームのそれぞれに、アニメーションの全体的な長さの割合として。 次の秒に 90 度回転させると、イメージ ビューをアニメーション化する新しいセンターに対する最初の 2 番目では、上での結果上の例の後にします。 アニメーションを示すため`UIViewKeyframeAnimationOptions.Autoreverse`も逆の順序でオプションとして、両方のキーフレームをアニメーション化します。 最後に、最終的な値は、完了ハンドラーに初期状態に設定されます。
+最初の 2 つのパラメーターを`AddKeyframeWithRelativeStartTime`メソッド、開始時刻と期間を指定したキーフレームのそれぞれに、全体的なアニメーションの長さの割合として。 結果は、イメージ ビューをアニメーション化にその新しいセンター経由での最初の 2 番目では、上記の例で、次の 2 つ目に 90 度の回転後にします。 アニメーションが指定するため`UIViewKeyframeAnimationOptions.Autoreverse`も逆の順序でオプションとして、両方のキーフレームをアニメーション化します。 最後に、最終的な値は、完了ハンドラーの初期状態に設定されます。
 
-次のスクリーン ショットでは、結合されたアニメーション キーフレームを示しています。
+次のスクリーン ショットは、結合されたキーフレーム アニメーションを示しています。
 
- ![](images/keyframes.png "このスクリーン ショットは、結合されたアニメーション キーフレームを通じてを示しています。")
+ ![](images/keyframes.png "このスクリーン ショットは、結合されたキーフレーム アニメーションを示しています。")
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
-UIKit UIKit Api を使用する物理的な特性に基づくアニメーションの相互作用を作成するアプリケーションの新しいセットです。 UIKit Dynamics には、これを可能 2D 物理エンジンがカプセル化します。
+UIKit UIKit での Api を使用する物理法則に基づいてアニメーションの対話を作成するアプリケーションの新しいセットです。 UIKit Dynamics は、これを可能にする、2 D 物理エンジンをカプセル化します。
 
-API は、本質的に宣言します。 呼ばれる、オブジェクトを作成することで、物理操作の動作を宣言する*動作*- 重力、競合、springs などの高速物理概念です。呼ばれる別のオブジェクトに、問題をアタッチしてから、*動的アニメーター*ビューをカプセル化します。 動的アニメーターが宣言されている物理ビヘイビアーを適用する必要を受け取る*動的アイテム*-項目を実装する`IUIDynamicItem`など、`UIView`です。
+API は、本質的に宣言します。 呼ばれる、オブジェクトを作成して、物理運動の相互作用の動作を宣言する*動作*- 重力や衝突、springs などの高速な物理学の概念をします。呼ばれる別のオブジェクトに、動作がありますをアタッチし、*動的 animator*ビューをカプセル化します。 動的アニメーターに宣言された物理学の動作を適用する必要は、*動的アイテム*-アイテムを実装する`IUIDynamicItem`など、`UIView`します。
 
-これにはいくつか異なるプリミティブの動作を含む、複雑な相互作用をトリガーに使用できるがあります。
+動作があるいくつか異なるプリミティブなど、複雑な相互作用をトリガーに使用できます。
 
--  `UIAttachmentBehavior` –、まとめて移動するような動的な 2 つの項目を付加したり、接続点に動的な項目をアタッチします。
--  `UICollisionBehavior` – は、衝突に参加する動的項目。
--  `UIDynamicItemBehavior` – 一般的な柔軟性、密度摩擦などの動的アイテムに適用するプロパティのセットを指定します。
--  `UIGravityBehavior` -重力方向に高速化する項目を原因と、動的な項目を重力を適用します。
--  `UIPushBehavior` – Force を動的項目に適用されます。
--  `UISnapBehavior` – Spring 効果のある位置にスナップする動的な項目をできます。
+-  `UIAttachmentBehavior` –、一緒に移動するよう動的の 2 つの項目を付加したり、添付ファイルのポイントに動的な項目をアタッチします。
+-  `UICollisionBehavior` – 衝突に参加する動的な項目を使用できます。
+-  `UIDynamicItemBehavior` – 一般的な一連の弾力性、密度摩擦などの動的なアイテムに適用するプロパティを指定します。
+-  `UIGravityBehavior` -重力を重力の方向に加速する項目を原因と、動的な項目に適用されます。
+-  `UIPushBehavior` – Force を項目を動的に適用されます。
+-  `UISnapBehavior` – Spring 効果が適用された位置にスナップする動的な項目をできます。
 
 
-多くのプリミティブはありますが、物理ベースの相互作用を UIKit Dynamics を使用してビューに追加するための一般的なプロセス間で一貫性が動作します。
+多くのプリミティブは UIKit Dynamics を使用してビューを物理ベースの相互作用を追加するための一般的なプロセスは一貫性のある動作の間で。
 
-1.  動的アニメーターを作成します。
+1.  動的 animator を作成します。
 1.  問題を作成します。
-1.  動的アニメーターにビヘイビアーを追加します。
+1.  動的アニメーターには、動作を追加します。
 
 
-### <a name="dynamics-example"></a>Dynamics 例
+### <a name="dynamics-example"></a>Dynamics の例
 
-重力や競合の境界を追加する例を見てみましょう、`UIView`です。
+重力や衝突の境界を追加する例を見て、`UIView`します。
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
-重力をイメージのビューに追加する、上記で説明した 3 つの手順に従います。
+重力を追加するイメージのビューに、上記で説明した 3 つの手順に従います。
 
-操作を行います。、`ViewDidLoad`この例のメソッドです。 最初に、追加、`UIImageView`インスタンスの次のようにします。
+操作を行います。、`ViewDidLoad`この例のメソッド。 最初に、追加、`UIImageView`インスタンスの次のようにします。
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -132,21 +132,21 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-これにより、画面の上端を中心とイメージ ビューが作成されます。 インスタンスを作成するのには、イメージ「秋」重力で、 `UIDynamicAnimator`:
+これには、画面の上端を中心とイメージのビューが作成されます。 重力をイメージ"fall"するためのインスタンスを作成、 `UIDynamicAnimator`:
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-`UIDynamicAnimator`の参照のインスタンスを受け取り`UIView`または`UICollectionViewLayout`、接続の問題あたりアニメーション化されるアイテムが含まれています。
+`UIDynamicAnimator`の参照のインスタンスを受け取り`UIView`または`UICollectionViewLayout`、アタッチされた問題ごと、アニメーション化する項目が含まれています。
 
-次に、作成、`UIGravityBehavior`インスタンス。 実装する 1 つまたは複数のオブジェクトを渡すことができます、`IUIDynamicItem`同様に、 `UIView`:
+次に、作成、`UIGravityBehavior`インスタンス。 実装する 1 つまたは複数のオブジェクトを渡すことができます、`IUIDynamicItem`と同様に、 `UIView`:
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-動作の配列に渡されます`IUIDynamicItem`、ここでは、1 つを含む`UIImageView`アニメーションおインスタンス。
+動作の配列を渡します`IUIDynamicItem`、ここでは、1 つを含む`UIImageView`インスタンスをアニメーション化します。
 
 最後に、動的アニメーターに動作を追加します。
 
@@ -154,16 +154,16 @@ var gravity = new UIGravityBehavior (dynItems);
 dynAnimator.AddBehavior (gravity);
 ```
 
-これは、結果重力、以下を参照として使用下方向にアニメーション化イメージになります。
+これは、結果、重力は、以下を参照として使用下方向をアニメーション化するイメージ。
 
 ![](images/gravity2.png "イメージの開始場所") 
 ![](images/gravity3.png "終了のイメージの場所")
 
-ないので、画面の境界を制限する、イメージのビューだけで外れる下部です。 イメージが、画面の端と競合するように、ビューを制限に追加できる、`UICollisionBehavior`です。 これは、次のセクションで説明します。
+何も画面の境界の制約があるためは、イメージ ビューは、一番下から単純に分類されます。 追加、イメージは、画面の端と競合するために、ビューを制約することができます、`UICollisionBehavior`します。 この次のセクションで説明します。
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-まず、作成、`UICollisionBehavior`とまったく同じよう、動的アニメーターへの追加、`UIGravityBehavior`です。
+まず、作成、`UICollisionBehavior`に対して実行したのと同じように、動的のアニメーターに追加して、`UIGravityBehavior`します。
 
 含めるコードの変更、 `UICollisionBehavior`:
 
@@ -190,9 +190,9 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-`UICollisionBehavior`というプロパティを持つ`TranslatesReferenceBoundsIntoBoundry`します。 これを設定する`true`衝突境界として使用するビューの境界、参照が発生します。
+`UICollisionBehavior`という名前のプロパティを持つ`TranslatesReferenceBoundsIntoBoundry`します。 これを設定`true`衝突境界として使用するビューの範囲、参照が発生します。
 
-ここで、イメージは、重力と下方向にアニメーション化、ときに跳ね返ります若干画面の下部からある rest 定着する前にします。
+ここで、イメージは、重力を下にアニメーション化、ときに跳ね返ります若干画面の下部に存在する前にします。
 
 <!--, as shown below:
 
@@ -200,9 +200,9 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 
 #### <a name="uidynamicitembehavior"></a>UIDynamicItemBehavior
 
-さらに落とすのイメージ ビューの他の動作での動作を制御おことができます。 たとえば、追加でした、`UIDynamicItemBehavior`と競合して画面の下部にあるときに詳細跳ね返りますイメージのビューの原因と、柔軟性を向上させる。
+さらに、落下のイメージ ビューの追加の動作の動作を制御できます。 たとえば、追加でした、`UIDynamicItemBehavior`原因で、画面の下部にぶつかったときの詳細は跳ねるイメージ ビュー、弾力性を向上させる。
 
-追加する、`UIDynamicItemBehavior`他の動作と同じ手順に従います。 最初の動作を作成します。
+追加、`UIDynamicItemBehavior`他の動作と同じ手順に従います。 まず、動作を作成します。
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {
@@ -214,32 +214,32 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 
  `dynAnimator.AddBehavior (dynBehavior);`
 
-この動作で、境界と競合しているときに複数イメージ ビューを bounces です。
+この動作で、境界ぶつかったときの詳細はイメージの表示を bounces します。
 
 ## <a name="general-user-interface-changes"></a>一般的なユーザー インターフェイスの変更
 
-だけでなく、新しい UIKit Api UIKit Dynamics、コント ローラーの遷移、および強化された UIView アニメーション上記など、iOS 7 では、さまざまな UI を視覚的な変更やさまざまなビューとコントロールに関連する API の変更が導入されています。 詳細については、次を参照してください。、 [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)です。
+Api だけでなく、新しい UIKit UIKit Dynamics、コント ローラーの切り替え、上記で説明した UIView アニメーションの強化など、iOS 7 では、さまざまな UI を視覚的な変更とさまざまなビューとコントロールの関連する API の変更が導入されています。 詳細については、次を参照してください。、 [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)します。
 
-## <a name="text-kit"></a>テキスト キット
+## <a name="text-kit"></a>テキストのキット
 
-テキスト キットは、強力なテキストのレイアウトとレンダリングの機能を提供する新しい API です。 低レベルの中核となるテキストのフレームワーク上に構築されますが、中核となるテキストよりも使用する方が簡単です。
+テキストのキットは、強力なテキスト レイアウトとレンダリングの機能を提供する新しい API です。 低レベルの主要なテキストのフレームワーク上に構築されますが、使用する主要なテキストよりもはるかに簡単です。
 
 詳細についてを参照してください、 [TextKit](~/ios/platform/textkit.md)
 
 ## <a name="multitasking"></a>マルチタスキング
 
-iOS 7 では、ときに、およびバック グラウンド処理を実行する方法を変更します。 タスクの完了 iOS 7 で不要になったによりアプリケーション起動場合、バック グラウンドでタスクが実行されていると、アプリケーションが連続していない方法で処理するバック グラウンドのウェイク アップされます。 iOS 7 には、バック グラウンドで新しいコンテンツを含むアプリケーションを更新するための 3 つの新しい Api も追加します。
+iOS 7 では、ときに、およびバック グラウンド作業を実行する方法を変更します。 タスクの完了 iOS 7 で不要になった保持アプリケーション起動状態、バック グラウンドでタスクが実行されていると、アプリケーションが連続しない複数の方法で処理するバック グラウンドのウェイク アップします。 iOS 7 には、新しいコンテンツをバック グラウンドでアプリケーションを更新するための 3 つの新しい Api も追加します。
 
--  バック グラウンドでフェッチ – コンテンツを一定の間隔でバック グラウンドで更新するアプリケーションが可能になります。
--  リモートの通知 - により、アプリケーションは、プッシュ通知を受信するときにコンテンツを更新します。 通知には、いずれかを指定できるサイレント ロック画面で、バナーを表示することもできます。
--  バック グラウンド転送サービス – 固定時間制限なしの大きなファイルなどのデータのアップロードやダウンロードが可能になります。
+-  バック グラウンドでフェッチ – コンテンツを一定の間隔でバック グラウンドで更新するアプリケーションを許可します。
+-  リモート通知 - アプリケーションがプッシュ通知を受信するときにコンテンツを更新します。 通知には、いずれかを指定できるサイレント ロック画面にバナーを表示することもできます。
+-  バック グラウンド転送サービス – 固定の時間制限なしの大きなファイルなどのデータのアップロードとダウンロードを許可します。
 
 
-マルチタスクの新機能に関する詳細については、Xamarin の iOS セクションを参照してください。 [Backgrounding ガイド](~/ios/app-fundamentals/backgrounding/index.md)です。
+マルチタスクの新機能の詳細については、xamarin iOS のセクションを参照してください。[バック グラウンド処理のガイド](~/ios/app-fundamentals/backgrounding/index.md)します。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、iOS にいくつかの主要な新しい点について説明します。 最初に、コント ローラーの表示にカスタム遷移を追加する方法を示します。 次に、両方のナビゲーションのコント ローラー内で対話的に間コレクション ビューとコレクション ビュー内の遷移が使用する方法を示します。 次に、UIView アニメーションでは、アプリケーションがコア アニメーションに対して直接プログラムを必要とした点の UIKit を使用する方法を表示するいくつかの拡張機能を紹介します。 最後に、テキスト キット フレームワークで使用できるようになりましたリッチ テキストのサポートと共に UIKit に物理エンジンを表示、新しい UIKit Dynamics API が導入されました。
+この記事では、iOS にいくつかの主要な新しい点について説明します。 最初に、ビュー コント ローラーにカスタム遷移を追加する方法を示します。 次に、コレクション ビューは、両方から、ナビゲーション コント ローラー内と対話形式でコレクション ビューの間で遷移を使用する方法を示します。 次に、アプリケーションが以前コア アニメーションに対して直接プログラミングを必要とするものについて UIKit を使用する方法を示す、UIView アニメーションに加えられたいくつかの拡張機能を紹介します。 最後に、リッチ テキストのサポートをテキスト キット フレームワークで利用できると共に、物理運動エンジンを UIKit には、新しい UIKit Dynamics API が導入されました。
 
 ## <a name="related-links"></a>関連リンク
 

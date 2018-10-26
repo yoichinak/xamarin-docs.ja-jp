@@ -1,271 +1,235 @@
 ---
-title: 別のレイアウト ビュー
-description: このトピックでは、どのようにレイアウト バージョン管理できるリソース修飾子を使用して説明します。 たとえばがありますが、デバイスを横モードでのみ使用されるレイアウトのバージョンとの縦モードのみであるレイアウト バージョン。
+title: 代替レイアウト ビュー
+description: このトピックでは、どのようにレイアウトをバージョン管理するリソース修飾子を使用して、について説明します。 たとえばがありますが、デバイスを横モードでのみ使用されるレイアウトのバージョンとは縦モードだけなレイアウト バージョン。
 ms.prod: xamarin
 ms.assetid: 5EBF51FC-9048-F0CF-624A-D8782A91C1FD
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 08/21/2017
-ms.openlocfilehash: d2228169ed5d8575c9e332c85d963fca0400dea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: conceptdev
+ms.author: crdun
+ms.date: 07/25/2018
+ms.openlocfilehash: 03b80d3fb1ed7c8db108f86b3b3923c20e1d908f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771162"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109979"
 ---
-# <a name="alternative-layout-views"></a>別のレイアウト ビュー
+# <a name="alternative-layout-views"></a>代替レイアウト ビュー
 
-_このトピックでは、どのようにレイアウト バージョン管理できるリソース修飾子を使用して説明します。たとえばがありますが、デバイスを横モードでのみ使用されるレイアウトのバージョンとの縦モードのみであるレイアウト バージョン。_
+_このトピックでは、リソース修飾子を使用して、バージョンのレイアウトを行う方法について説明します。たとえば、バージョンの場合、デバイスを横モードでのみ使用されるレイアウトと縦向きモードに対してのみであるレイアウト バージョンを作成します。_
 
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="creating-alternative-layouts"></a>別のレイアウトを作成します。
 
-クリックすると、**レイアウト ビューの代替**アイコン (の左側に**デバイス**)、プレビュー ウィンドウが開き、プロジェクトで使用できる別のレイアウトの一覧を表示します。 別のレイアウトが存在しない場合、**既定**ビューが表示されます。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+クリックすると、**代替レイアウト ビュー**アイコン (の左側に**デバイス**)、プロジェクトで使用可能な別のレイアウトを一覧表示するプレビュー ウィンドウを開きます。 別のレイアウトがない場合、**既定**ビューが表示されます。 
 
 [![代替レイアウト ビュー ペイン](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "代替レイアウト ビュー ペイン")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+横に緑色のプラス記号をクリックすると**新しいバージョン**、**作成レイアウトのバリエーション**ダイアログが開き、このレイアウトのバリエーションのリソース修飾子を選択することができます。 
 
-[![代替レイアウト ビュー ペイン](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
+[![レイアウトのバリエーションを作成する](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "レイアウトのバリエーションの作成")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
------
+次の例のリソース修飾子で**画面の向き**に設定されている**ランドス ケープ**、および**画面サイズ**に変更が**Large**. という名前のレイアウトの新しいバージョンを作成しますこの**大きな land**:
 
-横に緑色のプラス記号をクリックすると**新しいバージョン**、**作成レイアウトのバリエーション**ダイアログが開き、このレイアウトのさまざまなリソース修飾子を選択することができます。 
+[![Large land バリエーション](alternative-layout-views-images/vs/03-large-land-sml.png "Large land のバリエーション")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![レイアウトのバリエーションの作成](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "レイアウトのバリエーションの作成")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![レイアウトのバリエーションを作成します。](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
-
------
-
-
-次の例では、リソース修飾子で**画面の向き**に設定されている**ランドス ケープ**、および**画面サイズ**に変更が**大**. これによってという名前の新しいレイアウト バージョン作成**大きな土地**:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![大土地バリエーション](alternative-layout-views-images/vs/03-large-land-sml.png "大土地のバリエーション")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![大土地のバリエーション](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
-
------
-
-
-左側のプレビュー ウィンドウがリソース修飾子の選択項目の効果が表示されるに注意してください。 クリックすると**追加**代替のレイアウトが作成され、そのレイアウトにデザイナーを切り替えます。 **レイアウト ビューの代替手段**プレビュー ウィンドウでは、次のスクリーン ショットに示すように小さな右のポインターを使用してデザイナーにどのレイアウトが読み込まれることを示します。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+左側のプレビュー ウィンドウがリソース修飾子の選択項目の効果が表示されるに注意してください。 クリックすると**追加**代替レイアウトを作成し、そのレイアウトにデザイナーを切り替えます。 **代替レイアウト ビュー**プレビュー ウィンドウは、次のスクリーン ショットに記載されているレイアウトが小規模の右のポインターを使用してデザイナーに読み込まれることを示します。 
 
 [![読み込まれたレイアウト インジケーター](alternative-layout-views-images/vs/04-new-layout-sml.png "読み込まれたレイアウトのインジケーター")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![読み込まれたレイアウトのインジケーター](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
+## <a name="editing-alternative-layouts"></a>別のレイアウトの編集
 
------
+別のレイアウトを作成するときに、レイアウトのすべての分岐したバージョンに適用される 1 つの変更を加えることが望ましい場合が多くの場合。 たとえば、ボタンのテキストをすべてのレイアウトに黄色に変更する可能性があります。 多数のレイアウトがあり、すべてのバージョンに 1 つの変更を反映する必要がある場合手間がかかり、エラーが発生しやすいメンテナンスはすぐに。
 
+デザイナーでは、複数のレイアウトのバージョンのメンテナンスを簡素化する、**マルチ編集**1 つ以上のレイアウトの間で、変更を反映するモード。 1 つ以上のレイアウトが存在するときに、**マルチ編集**アイコンが表示されます。 
 
+[![複数の編集アイコン](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "マルチの編集 アイコン")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
-## <a name="editing-alternative-layouts"></a>別のレイアウトを編集
+クリックすると、**マルチ編集**アイコン、行が表示されます (下図参照) のように、レイアウトがリンクされているかを示す; は、1 つのレイアウトを変更すると、その変更が反映されます、リンクされたレイアウトにします。 すべてのレイアウトのリンクを解除するには、次のスクリーン ショットに示されている丸のアイコンをクリックします。 
 
-別のレイアウトを作成するときに、レイアウトのすべての分岐したバージョンに適用される 1 つの変更を行うことが望ましい場合は多くの場合です。 たとえば、黄色のすべてのレイアウト内に、ボタンのテキストを変更する可能性があります。 多数のレイアウトがあれば、厄介で面倒とエラーが発生しやすいすべてのバージョンに 1 つの変更を反映する必要がある場合のメンテナンスはすぐにします。 
+[![すべてのレイアウトをリンク解除](alternative-layout-views-images/vs/06-multi-linked-sml.png "すべてのレイアウトをリンク解除")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
-複数のレイアウトのバージョンのメンテナンスを簡素化には、デザイナーが用意されています、**マルチ編集**1 つまたは複数のレイアウトの間で、変更内容を伝達するモード。 1 つ以上のレイアウトが含まれているときに、**マルチ編集**アイコンが表示されます。 
+複数の 2 つのレイアウトがあれば、レイアウトが一緒にリンクを確認するには、各レイアウト プレビューの左側にある編集ボタンを選択的に切り替えることができます。 たとえば、1 つの変更を反映するようにする場合、最初と最後の 3 つのレイアウトには最初リンクを解除する中間のレイアウトは、ここに示すようにします。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[![中央のレイアウトをリンク解除](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "中間のレイアウトをリンク解除")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
 
-[![複数の編集 アイコン](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "複数の編集 アイコン")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![複数の編集 アイコン](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
-
------
-
-
-クリックすると、**マルチ編集**アイコン、線が表示されます (以下の手順に従って、レイアウトがリンクされているかを示す; は、1 つのレイアウトを変更すると、その変更が反映されます、リンクのレイアウトにします。 すべてのレイアウトのリンクを解除するには、次のスクリーン ショットに示されている丸のアイコンをクリックします。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![すべてのレイアウトのリンクを解除](alternative-layout-views-images/vs/06-multi-linked-sml.png "すべてのレイアウトのリンクを解除")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![すべてのレイアウトのリンクを解除します。](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
-
------
-
-
-複数の 2 つのレイアウトがあれば、レイアウトが相互リンクされているかを判断するには、各レイアウト プレビューの左側にある編集ボタンを選択的に切り替えることができます。 たとえばを伝達する 1 つの変更を加える場合、最初と最後の 3 つのレイアウトには最初リンクを解除する中間のレイアウトは、ここに示すようにします。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Unlink 中間レイアウト](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "Unlink 中間レイアウト")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
- 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![中央のレイアウトのリンクを解除します。](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
- 
------
- 
-
-この例では、変更が加えいずれかに、**既定**または**長い**を他のレイアウトにはレイアウトが反映される、**大きな土地**レイアウトです。 
-
-
+この例では、変更が加えいずれかに、**既定**または**長い**を他のレイアウトには、レイアウトが反映される、**大きな land**レイアウト。
 
 ### <a name="multi-edit-example"></a>複数の編集の例 
 
-一般に、1 つのレイアウトを変更すると、その同じ変更が他のすべてのリンクのレイアウトに伝達されます。 たとえば、新しいを追加する`TextView`ウィジェットに、**既定**レイアウトとテキストを変更する文字列を`Portrait`同じ変更がすべてのリンクのレイアウトに加えられると。 表示方法をここでは、**既定**レイアウト。 
+一般に、1 つのレイアウトを変更すると、その同じ変更が他のすべてのリンクされたレイアウトに反映されます。 新しいの追加など、`TextView`ウィジェットを**既定**レイアウトとテキストを変更する文字列を`Portrait`にリンクされたすべてのレイアウトになる同じ変更が発生します。 表示方法を次に示します、**既定**レイアウト。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![TextView を追加](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView を追加")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
+[![TextView を追加](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView の追加")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+`TextView`にも追加、**大きな land**レイアウト表示にリンクされているので、**既定**レイアウト。 
 
-[![TextView を追加します。](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
+[![TextView を横](alternative-layout-views-images/vs/09-landscape-textview-sml.png "TextView を横")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
  
------
+ローカル レイアウトを 1 つだけになっている変更を加える場合は (つまり、その他のレイアウトのいずれかに反映される変更をしたくない) か? これには、次に説明したように変更する前に変更するレイアウトのリンクを解除する必要があります。 
+
+### <a name="making-local-changes"></a>ローカルの変更を加える 
+
+両方のレイアウトが、追加したとします`TextView`、テキスト文字列を変更することも必要しますが、**大きな land**レイアウトを`Landscape`なく`Portrait`します。 この変更を行った場合**大きな land**に変更を反映は両方のレイアウトをリンクすると中、**既定**レイアウト。 そのため、する必要があります最初のリンクを解除、2 つのレイアウト変更を行った前にします。 内のテキストを変更すると**大きな land**に`Landscape`、デザイナーは、変更がに対してローカルであることを示す赤いフレームを使用してこの変更をマーク、**大きな land**レイアウトであり、*いない*に反映、**既定**レイアウト。 
+
+[![ローカルの変更が](alternative-layout-views-images/vs/10-local-change-sml.png "ローカルの変更")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
  
-
-`TextView`にも追加、**大きな土地**にリンクされているために、レイアウトを表示、**既定**レイアウト。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![TextView を横](alternative-layout-views-images/vs/09-landscape-textview-sml.png "TextView を横向き")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
- 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![ランドス ケープ TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
- 
------
- 
-
-ローカルのみ 1 つのレイアウトになっている変更を行う場合は (つまり、たくないその他のレイアウトのいずれかに反映されるまで変更)? これを行うには、次に説明したように、変更する前に、それを変更するレイアウトにリンクを解除する必要があります。 
-
-
-
-### <a name="making-local-changes"></a>ローカルの変更を行う 
-
-両方のレイアウトに追加したいとします`TextView`、テキスト文字列を変更する必要もが、**大規模な領土に関する**レイアウトを`Landscape`なく`Portrait`です。 この変更を行う場合**大規模な土地**に変更が反映されます両方のレイアウトがリンクされているときに、**既定**レイアウトです。 そのため、お必要があります最初のリンクを解除 2 つのレイアウト変更を行う前にします。 テキストを変更するときに**大規模な土地**に`Landscape`、Designer では、変更がに対してローカルであることを示す赤いフレームを使用してこの変更をマークする、**大規模な領土に関する**レイアウトは*いない*に反映、**既定**レイアウト。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![ローカルの変更](alternative-layout-views-images/vs/10-local-change-sml.png "ローカルの変更")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
- 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![ローカルの変更](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
- 
------
- 
-
-クリックすると、**既定**表示するため、レイアウト、`TextView`テキスト文字列が設定されている`Portrait`です。 
-
-
+クリックすると、**既定**、閲覧レイアウト、`TextView`テキスト文字列が設定`Portrait`します。 
 
 ## <a name="handling-conflicts"></a>競合の処理 
 
-内のテキストの色を変更する場合、**既定**緑にレイアウト、リンクのレイアウトで表示される警告アイコンが表示されます。 そのレイアウトをクリックすると、競合を表示するために、レイアウトが開きます。 競合の原因となったウィジェットが赤い枠で強調表示され、次のメッセージが表示されます:*最近の変更がこの代替レイアウトでは競合の原因となった*です。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+内のテキストの色を変更する場合、**既定**緑にレイアウトをリンクのレイアウトに表示される警告アイコンが表示されます。 そのレイアウト をクリックすると、競合を表示するレイアウトが開きます。 赤のフレームを使用して、競合の原因となったウィジェットが強調表示され、次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*します。 
 
 [![競合する変更](alternative-layout-views-images/vs/11-conflicting-change-sml.png "競合する変更")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![変更が競合してください。](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
- 
------
- 
-
 A*競合ボックス*が競合を説明する、ウィジェットの右側に表示されます。 
 
-[![競合に関する警告](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
+[![競合の警告](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
-競合ボックスは、変更されたプロパティが一覧表示し、その値を一覧表示します。 クリックすると**無視競合**プロパティの変更をこのウィジェットにのみ適用されます。 クリックすると**適用**に関して、リンクに対応するウィジェットでもこのウィジェットにプロパティの変更を適用**既定**レイアウトです。 すべてのプロパティ変更が適用されている場合、競合は自動的に破棄されます。 
+競合のボックスには、変更されたプロパティの一覧が表示され、その値が一覧表示されます。 クリックすると**無視競合**プロパティの変更をこのウィジェットにのみ適用されます。 クリックすると**適用**に関して、リンクされた、対応するウィジェットでもこのウィジェットにプロパティの変更を適用**既定**レイアウト。 すべてのプロパティ変更が適用されている場合、競合は自動的に破棄されます。 
 
+### <a name="view-group-conflicts"></a>グループの競合の表示 
 
-### <a name="view-group-conflicts"></a>グループの表示の競合 
+プロパティの変更は、競合の唯一のソースではありません。 挿入またはウィジェットを削除するときに、競合を検出できます。 たとえばときに、**大きな land**からレイアウトのリンクを解除、**既定**レイアウトと`TextView`で、 **land 大きな**レイアウトがドラッグ アンド上ドロップ、`Button`デザイナーは、競合を示すために移動したウィジェットをマークします。
 
-プロパティの変更は、競合の唯一のソースではありません。 挿入またはウィジェットを削除すると、競合を検出できます。 たとえば、**大規模な領土に関する**からレイアウトのリンクを解除、**既定の**レイアウト、および`TextView`で、**大規模な領土に関する**レイアウトは、ドラッグ アンド ドロップの上、`Button`デザイナーは、競合を示すために移動したウィジェットをマークします。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![グループの競合を表示](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "グループ競合の表示")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
+[![グループの競合を表示](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "グループの競合の表示")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+ただしにはありませんマーカー、`Button`します。 位置、`Button`が変更された、`Button`に固有の適用の変更が表示されない、**大きな land**構成します。 
 
-[![ビューのグループの競合](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
+場合、`CheckBox`に追加されます、**既定**レイアウト、もう 1 つの競合が発生すると、および警告のアイコン上に表示される、**大きな land**レイアウト。 
+
+[![競合のチェック ボックスをオン](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "競合のチェック ボックス")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
------
- 
-
-ただしにはありませんマーカー、`Button`です。 位置、`Button`が変更されている、`Button`に固有の変更を適用した表示されない、**大きな土地**構成します。 
-
-場合、`CheckBox`に追加、**既定**レイアウト、別の競合が生成され、経由で警告アイコンが表示されます、**大きな土地**レイアウト。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![チェック ボックスをオン競合](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "競合のチェック ボックス")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
- 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![競合のチェック ボックス](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
- 
------
- 
-
-クリックすると、**大きな土地**レイアウトが、競合を表示します。 次のメッセージが表示されます:*最近の変更がこの代替レイアウトでは競合の原因となった*です。 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+クリックすると、**大きな land**レイアウトが、競合が表示されます。 次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*: 
 
 [![Alt レイアウト競合](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt レイアウトの競合")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
- 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![Alt レイアウトの競合](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
- 
------
- 
 
 さらに、競合のボックスには、次のメッセージが表示されます。
 
 [![競合のメッセージ](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
-追加する、`CheckBox`ため、競合が原因で、**大規模な領土に関する**レイアウト変更には、`LinearLayout`含まれています。 ただし、ここでは競合ボックスが表示されます、ウィジェットに挿入した、**既定**レイアウト (、 `CheckBox`)。
+追加、`CheckBox`ため、競合が発生、**大きな land**レイアウト変更には、`LinearLayout`含まれています。 ただし、この場合、競合ボックスに表示ウィジェットに挿入した、**既定**レイアウト (、 `CheckBox`)。
 
-クリックすると**競合を無視する**、デザイナーは、ウィジェットが欠落しているドラッグ アンド ドロップをレイアウトする競合ボックスに表示されるウィジェットを許可するという、競合を解決 (ここで、**大規模な領土に関する**レイアウト)。 
+をクリックすると**競合を無視する**、デザイナーは、ウィジェットが欠落しているドラッグ アンド ドロップをレイアウトする競合ボックスに表示されるウィジェットを許可という、競合を解決 (ここで、**大きな land**レイアウト)。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[![グループの競合を解決](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "グループの競合の解決")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
 
-[![グループの競合を解決](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "グループ競合の解決")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
+前の例に示すよう、 `Button`、`CheckBox`ため、変更の赤いマーカーを持たないのみ、`LinearLayout`で適用された変更が、**大きな land**レイアウト。
+
+
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+## <a name="creating-alternative-layouts"></a>別のレイアウトを作成します。
+
+クリックすると、**代替レイアウト ビュー**アイコン (の左側に**デバイス**)、プロジェクトで使用可能な別のレイアウトを一覧表示するプレビュー ウィンドウを開きます。 別のレイアウトがない場合、**既定**ビューが表示されます。 
+
+[![代替レイアウト ビュー ペイン](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
+
+横に緑色のプラス記号をクリックすると**新しいバージョン**、**作成レイアウトのバリエーション**ダイアログが開き、このレイアウトのバリエーションのリソース修飾子を選択することができます。 
+
+[![レイアウトのバリエーションを作成します。](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
+
+次の例のリソース修飾子で**画面の向き**に設定されている**ランドス ケープ**、および**画面サイズ**に変更が**Large**. という名前のレイアウトの新しいバージョンを作成しますこの**大きな land**:
+
+[![Large land のバリエーション](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
+
+左側のプレビュー ウィンドウがリソース修飾子の選択項目の効果が表示されるに注意してください。 クリックすると**追加**代替レイアウトを作成し、そのレイアウトにデザイナーを切り替えます。 **代替レイアウト ビュー**プレビュー ウィンドウは、次のスクリーン ショットに記載されているレイアウトが小規模の右のポインターを使用してデザイナーに読み込まれることを示します。 
+
+[![読み込まれたレイアウトのインジケーター](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
+
+## <a name="editing-alternative-layouts"></a>別のレイアウトの編集
+
+別のレイアウトを作成するときに、レイアウトのすべての分岐したバージョンに適用される 1 つの変更を加えることが望ましい場合が多くの場合。 たとえば、ボタンのテキストをすべてのレイアウトに黄色に変更する可能性があります。 多数のレイアウトがあり、すべてのバージョンに 1 つの変更を反映する必要がある場合手間がかかり、エラーが発生しやすいメンテナンスはすぐに。
+
+デザイナーでは、複数のレイアウトのバージョンのメンテナンスを簡素化する、**マルチ編集**1 つ以上のレイアウトの間で、変更を反映するモード。 1 つ以上のレイアウトが存在するときに、**マルチ編集**アイコンが表示されます。 
+
+[![複数の編集 アイコン](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
+
+クリックすると、**マルチ編集**アイコン、行が表示されます (下図参照) のように、レイアウトがリンクされているかを示す; は、1 つのレイアウトを変更すると、その変更が反映されます、リンクされたレイアウトにします。 すべてのレイアウトのリンクを解除するには、次のスクリーン ショットに示されている丸のアイコンをクリックします。 
+
+[![すべてのレイアウトをリンク解除します。](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
+
+複数の 2 つのレイアウトがあれば、レイアウトが一緒にリンクを確認するには、各レイアウト プレビューの左側にある編集ボタンを選択的に切り替えることができます。 たとえば、1 つの変更を反映するようにする場合、最初と最後の 3 つのレイアウトには最初リンクを解除する中間のレイアウトは、ここに示すようにします。 
+
+[![中央のレイアウトをリンク解除します。](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
+
+この例では、変更が加えいずれかに、**既定**または**長い**を他のレイアウトには、レイアウトが反映される、**大きな land**レイアウト。 
+
+### <a name="multi-edit-example"></a>複数の編集の例 
+
+一般に、1 つのレイアウトを変更すると、その同じ変更が他のすべてのリンクされたレイアウトに反映されます。 新しいの追加など、`TextView`ウィジェットを**既定**レイアウトとテキストを変更する文字列を`Portrait`にリンクされたすべてのレイアウトになる同じ変更が発生します。 表示方法を次に示します、**既定**レイアウト。 
+
+[![TextView を追加します。](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
+
+`TextView`にも追加、**大きな land**レイアウト表示にリンクされているので、**既定**レイアウト。 
+
+[![横の [textview]](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+ローカル レイアウトを 1 つだけになっている変更を加える場合は (つまり、その他のレイアウトのいずれかに反映される変更をしたくない) か? これには、次に説明したように変更する前に変更するレイアウトのリンクを解除する必要があります。 
+
+### <a name="making-local-changes"></a>ローカルの変更を加える 
+
+両方のレイアウトが、追加したとします`TextView`、テキスト文字列を変更することも必要しますが、**大きな land**レイアウトを`Landscape`なく`Portrait`します。 この変更を行った場合**大きな land**に変更を反映は両方のレイアウトをリンクすると中、**既定**レイアウト。 そのため、する必要があります最初のリンクを解除、2 つのレイアウト変更を行った前にします。 内のテキストを変更すると**大きな land**に`Landscape`、デザイナーは、変更がに対してローカルであることを示す赤いフレームを使用してこの変更をマーク、**大きな land**レイアウトであり、*いない*に反映、**既定**レイアウト。 
+
+[![ローカルの変更](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
+
+クリックすると、**既定**、閲覧レイアウト、`TextView`テキスト文字列が設定`Portrait`します。 
+
+## <a name="handling-conflicts"></a>競合の処理 
+
+内のテキストの色を変更する場合、**既定**緑にレイアウトをリンクのレイアウトに表示される警告アイコンが表示されます。 そのレイアウト をクリックすると、競合を表示するレイアウトが開きます。 赤のフレームを使用して、競合の原因となったウィジェットが強調表示され、次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*します。 
+
+[![変更が競合しています。](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
+
+A*競合ボックス*が競合を説明する、ウィジェットの右側に表示されます。 
+
+[![競合の警告](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
+
+競合のボックスには、変更されたプロパティの一覧が表示され、その値が一覧表示されます。 クリックすると**無視競合**プロパティの変更をこのウィジェットにのみ適用されます。 クリックすると**適用**に関して、リンクされた、対応するウィジェットでもこのウィジェットにプロパティの変更を適用**既定**レイアウト。 すべてのプロパティ変更が適用されている場合、競合は自動的に破棄されます。 
+
+### <a name="view-group-conflicts"></a>グループの競合の表示 
+
+プロパティの変更は、競合の唯一のソースではありません。 挿入またはウィジェットを削除するときに、競合を検出できます。 たとえばときに、**大きな land**からレイアウトのリンクを解除、**既定**レイアウトと`TextView`で、 **land 大きな**レイアウトがドラッグ アンド上ドロップ、`Button`デザイナーは、競合を示すために移動したウィジェットをマークします。
+
+[![ビューのグループの競合](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
+ 
+ただしにはありませんマーカー、`Button`します。 位置、`Button`が変更された、`Button`に固有の適用の変更が表示されない、**大きな land**構成します。 
+
+場合、`CheckBox`に追加されます、**既定**レイアウト、もう 1 つの競合が発生すると、および警告のアイコン上に表示される、**大きな land**レイアウト。 
+
+[![競合のチェック ボックス](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
+ 
+クリックすると、**大きな land**レイアウトが、競合が表示されます。 次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*します。 
+
+[![Alt レイアウトの競合](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
+ 
+さらに、競合のボックスには、次のメッセージが表示されます。
+
+[![競合のメッセージ](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
+
+追加、`CheckBox`ため、競合が発生、**大きな land**レイアウト変更には、`LinearLayout`含まれています。 ただし、この場合、競合ボックスに表示ウィジェットに挿入した、**既定**レイアウト (、 `CheckBox`)。
+
+をクリックすると**競合を無視する**、デザイナーは、ウィジェットが欠落しているドラッグ アンド ドロップをレイアウトする競合ボックスに表示されるウィジェットを許可という、競合を解決 (ここで、**大きな land**レイアウト)。 
 
 [![グループの競合の解決](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
  
+前の例に示すよう、 `Button`、`CheckBox`ため、変更の赤いマーカーを持たないのみ、`LinearLayout`で適用された変更が、**大きな land**レイアウト。
+
+
 -----
- 
-
-前の例のように、 `Button`、`CheckBox`ため赤い変更マーカーがありませんのみ、`LinearLayout`で適用された変更が、**大規模な領土に関する**レイアウトです。
-
 
 
 ### <a name="conflict-persistence"></a>競合の永続化
 
-競合は、次のように XML のコメントとしてレイアウト ファイルに保存されます。
+競合は、次のように、XML のコメントとしてレイアウト ファイルに保存されます。
 
 ```xml
 <!-- Widget Inserted Conflict | id:__root__ | @+id/checkBox1 -->
 ```
 
-そのため、プロジェクトをいったん閉じて再び開く、すべての競合がある場合があります&ndash;は無視されたものも含めてです。
+そのため、プロジェクトのデータを閉じて、すべての競合がある場合があります&ndash;は無視されているものも含みます。
+
+
 

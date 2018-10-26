@@ -1,32 +1,32 @@
 ---
 title: Xamarin Inspector
-description: このドキュメントには、インストールして探索し、アプリケーションをデバッグする Xamarin インスペクターを使用する方法を説明するガイドへのリンクがします。
+description: このドキュメントは、インストールし、Xamarin Inspector を使用して、探索し、アプリケーションをデバッグする方法について説明するガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 823905c425b74659bbc0733ebb1f86eb1ce5fa11
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 41111a0ae87b2b1c4a7b1c77bfeeeb3c9e5fa000
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268792"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119413"
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
 
-Xamarin インスペクターは、対話的に c# コードを実行したり、デバッグや診断を目的として機能している、実行中のアプリを検査する際に、UI のプロパティを検査することができます、IDE のワークフローをデバッグするアプリと統合できます。
+Xamarin Inspector は、対話的に実行することができます、IDE のワークフローをデバッグするアプリと統合C#コードか、実行中のアプリを検査する際に、デバッグまたは診断支援として提供している、UI のプロパティを検査します。
 
-ライブ アプリ検査は、企業ユーザーが利用できます。 場合にご連絡する[バグに](~/tools/inspector/install.md#reporting-bugs)です。 お、[フォーラム](https://forums.xamarin.com/categories/inspector)すぎます。
+ライブ アプリの検査は企業のお客様に使用できます。 場合にご連絡する[バグに](~/tools/inspector/install.md#reporting-bugs)します。 ある、[フォーラム](https://forums.xamarin.com/categories/inspector)すぎます。
 
-[![](images/interactive-1.0.0-bike-inspect-3d-small.png "ライブ アプリ検査は企業のお客様の使用")](images/interactive-1.0.0-bike-inspect-3d.png#lightbox)
+[![](images/interactive-1.0.0-bike-inspect-3d-small.png "ライブ アプリの検査は企業のお客様の使用")](images/interactive-1.0.0-bike-inspect-3d.png#lightbox)
 
 ## <a name="installation-and-requirementstoolsinspectorinstallmd"></a>[インストールと要件](~/tools/inspector/install.md)
 
-Xamarin インスペクターを取得する方法については、Mac または Windows コンピューターにインストールします。
+Xamarin Inspector 取得する方法については、Mac または Windows コンピューターにインストールします。
 
 ## <a name="inspecting-live-applicationstoolsinspectorinspectmd"></a>[Live アプリケーションの検査](~/tools/inspector/inspect.md)
 
-インスペクターを使用して、その状態を調査し、一時停止せずに操作できるように、IDE から実行されているときに、アプリにアタッチする方法について説明します。
+インスペクターを使用して、その状態を調査および一時停止せずに操作できるように、IDE から実行されているときに、アプリにアタッチする方法について説明します。
 
 

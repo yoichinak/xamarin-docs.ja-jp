@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS の MapKit フレームワー�
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5343f53b77319b08424263103834ffcf10e261a0
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: d83470db23b1376d18fa36c52c1daabaf68cfe0b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242067"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117760"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin.iOS でのマップ
 
@@ -409,7 +409,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 
 ## <a name="summary"></a>まとめ
 
-この記事では調査、 *マップ* *キット* iOS 用のフレームワークです。 方法を説明しましたが、まず、`MKMapView`クラスは、アプリケーションに含まれる対話型のマップを使用できます。 注釈とオーバーレイを使用してマップをさらにカスタマイズする方法を説明します。 最後に、ios 6.1、Map Kit に追加されたローカルの検索機能を検証を使用する方法を示す観光名所の場所ベースのクエリを実行し、マップに追加します。
+この記事では調査、*マップ* *キット* iOS 用のフレームワークです。 方法を説明しましたが、まず、`MKMapView`クラスは、アプリケーションに含まれる対話型のマップを使用できます。 注釈とオーバーレイを使用してマップをさらにカスタマイズする方法を説明します。 最後に、ios 6.1、Map Kit に追加されたローカルの検索機能を検証を使用する方法を示す観光名所の場所ベースのクエリを実行し、マップに追加します。
 
 ## <a name="related-links"></a>関連リンク
 

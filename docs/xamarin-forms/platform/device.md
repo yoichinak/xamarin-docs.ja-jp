@@ -6,13 +6,13 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/01/2018
+ms.openlocfilehash: 084c0c292cb7e527d74c77937bc69f76fc8c0658
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998268"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114321"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms のデバイス クラス
 
@@ -60,16 +60,18 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)クラスはジェネリック クラスでありでインスタンス化する必要があります、`x:TypeArguments`ターゲット型と一致する属性。 [ `On` ](xref:Xamarin.Forms.On)クラス、 [ `Platform` ](xref:Xamarin.Forms.On.Platform)属性は、1 つを受け入れることができる`string`値、またはコンマで区切られた複数`string`値。
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)クラスは、ジェネリック クラスをインスタンス化する必要があります、`x:TypeArguments`ターゲット型と一致する属性。 [ `On` ](xref:Xamarin.Forms.On)クラス、 [ `Platform` ](xref:Xamarin.Forms.On.Platform)属性は、1 つを受け入れることができる`string`値、またはコンマで区切られた複数`string`値。
 
 > [!IMPORTANT]
 > 提供が不適切な`Platform`属性の値、`On`クラスは、エラーは発生しません。 代わりに、コードは、適用されているプラットフォームに固有の値を指定せずに実行されます。
+
+または、`OnPlatform`プラットフォームごとに UI の外観をカスタマイズするには、XAML マークアップ拡張機能を使用できます。 詳細については、次を参照してください。 [OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)します。
 
 <a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
-`Device.Idiom`レイアウトやで、アプリケーションが実行されているデバイスに応じて機能を変更するために使用できます。 [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)列挙には、次の値が含まれています。
+`Device.Idiom`レイアウトを変更するプロパティを使用できますか、デバイス、アプリケーションによって機能がで実行されています。 [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)列挙には、次の値が含まれています。
 
 -  **Phone** – iPhone、iPod touch、および Android デバイスの 600 dip より狭い幅 ^
 -  **タブレット**: iPad、Windows デバイス、および Android デバイスの 600 dip よりも広い ^
@@ -80,7 +82,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 
 *^ dip とは限りません物理ピクセル数*
 
-`Idiom` このような大きな画面を活用するレイアウトを構築するために特に便利ですが。
+`Idiom`プロパティは、次のように、大きな画面を活用するレイアウトを構築するために特に便利です。
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone) {
@@ -89,6 +91,25 @@ if (Device.Idiom == TargetIdiom.Phone) {
     // layout views horizontally for a larger display (tablet or desktop)
 }
 ```
+
+[ `OnIdiom` ](xref:Xamarin.Forms.OnIdiom`1)クラスには、XAML で同じ機能が用意されています。
+
+```xaml
+<StackLayout>
+    <StackLayout.Margin>
+        <OnIdiom x:TypeArguments="Thickness">
+            <OnIdiom.Phone>0,20,0,0</OnIdiom.Phone>
+            <OnIdiom.Tablet>0,40,0,0</OnIdiom.Tablet>
+            <OnIdiom.Desktop>0,60,0,0</OnIdiom.Desktop>
+        </OnIdiom>
+    </StackLayout.Margin>
+    ...
+</StackLayout>
+```
+
+[ `OnIdiom` ](xref:Xamarin.Forms.OnPlatform`1)クラスは、ジェネリック クラスをインスタンス化する必要があります、`x:TypeArguments`ターゲット型と一致する属性。
+
+または、`OnIdiom`で、アプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズするには、XAML マークアップ拡張機能を使用できます。 詳細については、次を参照してください。 [OnIdiom マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)します。
 
 ## <a name="deviceflowdirection"></a>Device.FlowDirection
 

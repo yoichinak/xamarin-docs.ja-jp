@@ -1,18 +1,18 @@
 ---
 title: WatchOS の概要
-description: このドキュメントでは、アプリケーションのライフ サイクル、ユーザー インターフェイスの種類、画面サイズ、制限事項、および詳細を説明する watchOS の概要を示します。
+description: このドキュメントでは、アプリケーションのライフ サイクル、ユーザー インターフェイスの種類、画面サイズ、制限、および詳細を説明する watchOS の概要を示します。
 ms.prod: xamarin
 ms.assetid: 99c316d6-6707-40f6-bec9-801d05888759
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 87edc24daab3239626cb904357bd2d45ce868970
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f000b75963eb7d517a124edd6f51a69b0f6ec93c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791310"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113197"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS の概要
 
@@ -21,103 +21,103 @@ ms.locfileid: "34791310"
 
 ## <a name="about-watchos"></a>WatchOS について
 
-WatchOS アプリ ソリューションには、3 つのプロジェクトがあります。
+WatchOS アプリのソリューションでは、3 つのプロジェクトがあります。
 
-- **拡張機能を見る**– watch アプリのコードを含むプロジェクトです。
-- **アプリを見る**– ユーザー インターフェイスのストーリー ボードとリソースが含まれています。
-- **iOS アプリの親**– このアプリは通常の iPhone アプリ。 Watch アプリと拡張機能は、ユーザーのウォッチへの配信用 iPhone アプリにバンドルされています。
+- **拡張機能を見る**– watch アプリのコードを含むプロジェクト。
+- **アプリを見る**: ストーリー ボードのユーザー インターフェイスとリソースが含まれています。
+- **iOS アプリの親**– このアプリは通常の iPhone アプリ。 IPhone アプリ ユーザーの監視に配信するためには、watch アプリと拡張機能がバンドルされています。
 
-WatchOS 1 アプリで、iPhone で拡張機能のコードが実行されます: Apple Watch、事実上、外付けディスプレイ。 watchOS 2 および 3 のアプリは、Apple Watch で完全に実行されます。 この違いは、次の図で示されます。
+WatchOS 1 のアプリで、拡張機能のコードは、iPhone で実行 – Apple Watch は外付けディスプレイを効果的に。 2 および 3 watchOS アプリは、Apple Watch に完全に実行されます。 この違いは、次の図に示されます。
 
-[ ![](intro-to-watchos-images/arch-sml.png "この図に示すは watchOS 1 と watchOS 2 (以降) の違い")](intro-to-watchos-images/arch.png#lightbox)
+[ ![](intro-to-watchos-images/arch-sml.png "WatchOS 1 と watchOS 2 (以降) の違いは、この図には")](intro-to-watchos-images/arch.png#lightbox)
 
-WatchOS のバージョンを対象とするに関係なく Mac のソリューション パッド用の Visual Studio での完全なソリューションは次のよう。
+WatchOS のバージョンを対象とするに関係なく Visual Studio for Mac の Solution Pad で完全なソリューションは次のようします。
 
-[![](intro-to-watchos-images/projectstructure-sml.png "ソリューションのパッド")](intro-to-watchos-images/projectstructure.png#lightbox)
+[![](intro-to-watchos-images/projectstructure-sml.png "Solution Pad")](intro-to-watchos-images/projectstructure.png#lightbox)
 
-*親アプリ*watchOS ソリューションが正規の iOS アプリ。 これは、表示されているソリューションでのみプロジェクト**電話**です。 このアプリのユース ケースは、チュートリアル、管理画面、および中間層のフィルター処理、cacheing などが含まれます。ただし、インストールし、ウォッチ アプリ/拡張機能を実行せずに、ユーザーは**れた**親アプリを開いたのでは親アプリの管理、または 1 回限りの初期化を実行する必要がある場合必要があります、ウォッチのプログラミングユーザーに伝えるためアプリ/拡張機能です。
+*親アプリ*watchOS ソリューションは、標準的な iOS アプリ。 これは、表示されているソリューションでのみプロジェクト **、スマート フォン**します。 このアプリのユース ケースは、チュートリアル、管理画面、および中間層のフィルター処理、cacheing などが含まれます。ただし、インストールして、watch アプリ/拡張機能を実行せずに、ユーザーは**これまで**親アプリを開いたので親アプリを管理、または 1 回限りの初期化の実行する必要がある場合必要があります、ウォッチのプログラミングユーザーに伝えるためのアプリ/拡張機能です。
 
-親アプリは、watch アプリや拡張を配信するが、さまざまなサンド ボックスで実行します。
+親アプリは、watch アプリと拡張機能を配信するがさまざまなサンド ボックスで実行されます。
 
-WatchOS 1 上の共有をデータ、または静的関数による共有アプリ グループで`WKInterfaceController.OpenParentApplication`が発生する、`UIApplicationDelegate.HandleWatchKitExtensionRequest`メソッドに親アプリの`AppDelegate`(を参照してください[親アプリの使用](~/ios/watchos/app-fundamentals/parent-app.md))。
+WatchOS 1 で、共有アプリ グループを使用して、または静的関数を使用してデータを共有すること`WKInterfaceController.OpenParentApplication`が発生する、`UIApplicationDelegate.HandleWatchKitExtensionRequest`メソッドが、親のアプリの`AppDelegate`(を参照してください[親アプリ使用](~/ios/watchos/app-fundamentals/parent-app.md))。
 
-WatchOS 2 またはそれ以降がウォッチ接続フレームワークが親アプリとの通信に使用されるを使用して、`WCSession`クラスです。
+WatchOS 2 以降がウォッチ接続フレームワークが、親アプリとの通信に使用されるを使用して、`WCSession`クラス。
 
 ## <a name="application-lifecycle"></a>アプリケーションのライフ サイクル
 
-ウォッチ拡張機能のサブクラスで、`WKInterfaceController`各ストーリー ボード シーンのクラスを作成します。
+ウォッチ拡張機能のサブクラスで、`WKInterfaceController`各ストーリー ボードのシーンのクラスを作成します。
 
-これら`WKInterfaceController`クラスに似ています、 `UIViewController` iOS プログラミング内のオブジェクトが、同じレベルのビューへのアクセスはありません。
-たとえば、することはできません動的にコントロールを追加するか、UI を再構築できます。
-ただし、非表示にし、コントロールを表示でき、いくつかのコントロールのサイズ、透過性、および表示オプションを変更できます。
+これら`WKInterfaceController`クラスに似ています、 `UIViewController` iOS プログラミングにオブジェクトが、同じレベルのビューへのアクセスはありません。
+たとえば、コントロールを追加するか、UI を再構築することはできません動的にします。
+ただし、非表示にしてコントロールを表示して、いくつかのコントロールのサイズ、透明性、および外観のオプションを変更できます。
 
-ライフ サイクル、`WKInterfaceController`オブジェクトには次の呼び出しが含まれます。
+ライフ サイクルを`WKInterfaceController`オブジェクトには、次の呼び出しが含まれます。
 
-- [起動状態](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.Awake/): この方法では、初期化のほとんどを行う必要があります。
-- [WillActivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.WillActivate/) : Watch アプリがユーザーに表示する少し前に呼び出されます。 最後の時点の初期化を実行、アニメーションなどを開始するには、このメソッドを使用します。
-- この時点では、Watch アプリが表示され、拡張機能がユーザーの入力し、アプリケーション ロジックあたり Watch アプリの表示を更新する応答を開始します。
-- [DidDeactivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.DidDeactivate/)ウォッチ式の後のアプリがユーザーによって閉じられた、このメソッドが呼び出されます。 ユーザー インターフェイス コントロールは、次回まで変更できませんこのメソッドから制御が戻た後`WillActivate`と呼びます。 IPhone への接続が切断された場合、このメソッドは呼び出されます。
-- 拡張機能が非アクティブ化されて後、は、プログラムにアクセスできません。 保留中の非同期関数**されません**は呼び出せません。 ウォッチ キットの拡張機能は、バック グラウンド処理モードを使用することはできません。 呼ばれる最初のメソッドがありますが、プログラムがユーザーによって再アクティブ化した場合は、オペレーティング システムによって、アプリが終了していません`WillActivate`です。
+- [起動状態](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.Awake/): このメソッドで、初期化のほとんどを実行する必要があります。
+- [WillActivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.WillActivate/) : Watch アプリはユーザーに表示する少し前に呼び出されます。 瞬間瞬間の最終初期化を実行、アニメーションなどを開始するには、このメソッドを使用します。
+- この時点では、Watch アプリが表示され、拡張機能がユーザー入力し、アプリケーション ロジックを Watch アプリの表示を更新する応答を開始します。
+- [DidDeactivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.DidDeactivate/) Watch 後のアプリがユーザーによって破棄されて、このメソッドが呼び出されます。 ユーザー インターフェイス コントロールは、次回まで変更できませんこのメソッドから制御が戻た後`WillActivate`が呼び出されます。 IPhone への接続が切断された場合、このメソッドを呼び出すこともされます。
+- 拡張機能が非アクティブ化された後に、プログラムにアクセスできません。 保留中の非同期関数**されません**呼び出せません。 ウォッチ キットの拡張機能は、バック グラウンド処理モードを使用しない可能性があります。 プログラムがユーザーによって再アクティブ化、オペレーティング システムによって、アプリが退職していない場合は、最初に呼び出されるメソッドになります`WillActivate`します。
 
 ![](intro-to-watchos-images/wkinterfacecontrollerlifecycle.png "アプリケーション ライフ サイクルの概要")
 
 ## <a name="types-of-user-interface"></a>ユーザー インターフェイスの種類
 
-ユーザーは、watch アプリを持つことができますの相互作用の 3 つの種類があります。
-カスタムのサブ クラスを使用するようにプログラミングすべてが`WKInterfaceController`までに説明したライフ サイクルのシーケンスが汎用的に適用されるため、(通知のサブクラスでプログラミング`WKUserNotificationController`、自体のサブクラスは、 `WKInterfaceController`)。
+これは、3 種類の相互作用が、ユーザーは、watch アプリを持つことができます。
+カスタムのサブ クラスを使用してプログラムすべて`WKInterfaceController`ライフ サイクルの既に説明したシーケンスが普遍的に適用されるため、(通知のクラスがサブ プログラム`WKUserNotificationController`、自体のサブクラスは、 `WKInterfaceController`)。
 
-### <a name="normal-interaction"></a>標準の相互作用
+### <a name="normal-interaction"></a>通常の操作
 
-サブクラスに watch アプリ/拡張機能の対話処理の大部分がられます`WKInterfaceController`watch アプリのシーンに対応するために作成**Interface.storyboard**です。 これについては詳しく説明、[インストール](~/ios/watchos/get-started/installation.md)と[作業の開始](~/ios/watchos/get-started/index.md)アーティクルです。
-次の図の一部を示しています、[ウォッチ キット カタログ](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)サンプルのストーリー ボードです。 ここで示した各シーンの場合は、対応するカスタム`WKInterfaceController`(`LabelDetailController`、 `ButtonDetailController`、`SwitchDetailController`など)、拡張機能プロジェクト内です。
+Watch アプリ/拡張機能の相互作用の大半のサブ クラスられます`WKInterfaceController`watch アプリの内のシーンに対応するために作成**Interface.storyboard**します。 これの詳細については、[インストール](~/ios/watchos/get-started/installation.md)と[Getting Started](~/ios/watchos/get-started/index.md)記事。
+次の図の一部を示しています、[ウォッチ キット カタログ](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)サンプルのストーリー ボード。 ここで示した各シーンには、対応するカスタム`WKInterfaceController`(`LabelDetailController`、 `ButtonDetailController`、`SwitchDetailController`など) で拡張機能プロジェクト。
 
 ![](intro-to-watchos-images/scenes.png "標準の相互作用の例")
 
 ### <a name="notifications"></a>通知
 
-[通知](~/ios/watchos/platform/notifications.md)Apple Watch の主要なユース ケースがします。 ローカルおよびリモートの両方の通知がサポートされます。 通知との対話は、短いと時間の長い外観と呼ばれる、2 つの段階的に発生します。
+[通知](~/ios/watchos/platform/notifications.md)Apple Watch の主要なユース ケースが。 ローカルとリモートの両方の通知がサポートされています。 通知との対話は、短いおよび時間の長い外観と呼ばれる 2 つの段階で発生します。
 
-短い外観が簡単に表示され、ウォッチ アプリのアイコン、その名前とタイトルを表示する (使用して、指定した`WKInterfaceController.SetTitle`)。
+短い外観について簡単に表示され、watch アプリのアイコン、名前、およびタイトルを表示 (指定された`WKInterfaceController.SetTitle`)。
 
-システム標準を組み合わせて長い検索**枠**領域と、カスタムのストーリー ボード ベースのコンテンツを持つ Dismiss ボタンをクリックします。
+システム提供を組み合わせて長い検索**枠**領域とストーリー ボード ベースのカスタム コンテンツに閉じるボタン。
 
-`WKUserNotificationInterfaceController` 拡張`WKInterfaceController`メソッドを使って`DidReceiveLocalNotification`と`DidReceiveRemoteNotification`です。
-Notification イベントに対応するためにこれらのメソッドをオーバーライドします。
+`WKUserNotificationInterfaceController` 拡張`WKInterfaceController`メソッドを使って`DidReceiveLocalNotification`と`DidReceiveRemoteNotification`します。
+Notification イベントに対応するこれらのメソッドをオーバーライドします。
 
-通知の UI の設計の詳細についてを参照してください、 [Apple Watch ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Notifications.html#//apple_ref/doc/uid/TP40014992-CH20-SW1)
+通知の UI デザインの詳細についてを参照してください、 [Apple Watch のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Notifications.html#//apple_ref/doc/uid/TP40014992-CH20-SW1)
 
 ![](intro-to-watchos-images/notifications.png "サンプルの通知")
 
 ## <a name="screen-sizes"></a>画面サイズ
 
-Apple Watch が 2 つの面サイズ: 38 mm および 42 mm、両方を 5:4 表示の割合と Retina ディスプレイを使用します。 使用可能なサイズは次のとおりです。
+Apple Watch が 2 つの顔のサイズ: 38 mm および 42 mm、両方を 5:4 表示比率と Retina ディスプレイ。 使用可能なサイズは次のとおりです。
 
-- 38 mm: 136 x 170 論理ピクセル (272 x 340 物理的なピクセル)
-- 42 mm: 156 x 195 論理ピクセル (312 x 390 物理的なピクセル) です。
+- 38 mm: 136 x 170 論理ピクセル (272 x 340 物理ピクセル単位)
+- 42 mm: 156 x 195 論理ピクセル (312 x 390 物理ピクセル単位) です。
 
-使用して`WKInterfaceDevice.ScreenBounds`をどのディスプレイ Watch アプリが実行されているかを判断します。
+使用`WKInterfaceDevice.ScreenBounds`をどのディスプレイ、Watch アプリが実行されているかを判断します。
 
-一般に、限られた 38 mm 表示で、テキストとレイアウトのデザインを開発し、スケール アップに簡単です。
-大規模な環境を起動した場合は、厄介重複またはテキスト切り捨てする可能性がありますスケール ダウンします。
+一般より制限された 38 mm ディスプレイを使用した、テキストとレイアウトのデザインを開発し、スケール アップに簡単です。
+大規模な環境で開始する場合は、厄介重複やテキストの切り捨てにつながる可能性スケール ダウンします。
 
-詳細について[画面サイズと作業](~/ios/watchos/app-fundamentals/screen-sizes.md)です。
+詳細をご覧ください[操作画面サイズ](~/ios/watchos/app-fundamentals/screen-sizes.md)します。
 
 
 ## <a name="limitations-of-watchos"></a>WatchOS の制限事項
 
-WatchOS アプリを開発するときの注意すべき watchOS のいくつかの制限があります。
+これには、watchOS アプリを開発するときに認識する watchOS のいくつかの制限があります。
 
-- Apple Watch デバイスに記憶域が限られている - (サイズの大きなファイルをダウンロードする前に使用可能な領域を認識します。 オーディオまたはビデオ ファイル)。
+- ストレージの制限されている Apple Watch デバイス - (例: 大きなファイルをダウンロードする前に、使用可能な領域を認識します。 オーディオまたはビデオ ファイル)。
 
-- 多くの watchOS[コントロール](~/ios/watchos/user-interface/index.md)UIKit に類似のものがあるが、さまざまなクラスは、(`WKInterfaceButton`なく`UIButton`、`WKInterfaceSwitch`の`UISwitch`など) いて、限られたと比較してその UIKit メソッド対応します。 さらに、一部のコントロールには watchOS など`WKInterfaceDate`(日付と時刻を表示する) その UIKit 必要はありません。
+- 多くの watchOS[コントロール](~/ios/watchos/user-interface/index.md)UIKit に類似のものがあるが、さまざまなクラス (`WKInterfaceButton`なく`UIButton`、`WKInterfaceSwitch`の`UISwitch`など) と比較して、UIKit メソッドの限定的な対応します。 さらに、いくつかのコントロールのある watchOS など`WKInterfaceDate`(日付と時刻を表示する) その UIKit 必要はありません。
 
-  - のみ、ウォッチへの通知または (ルーティング経由でのユーザーの制御の種類は発表されていない Apple によって)、iPhone のみをルーティングすることはできません。
+  - 通知のみを監視するか (ルーティングに対するユーザーのコントロールの種類が発表されていない Apple によって)、iPhone のみをルーティングすることはできません。
 
-その他のいくつかの既知の制限/よく寄せられる質問。
+その他のいくつかの既知の制限]、[よく寄せられる質問。
 
-- Apple では、サード パーティのカスタム ウォッチ面は許可しません。
+- Apple では、サード パーティ製のカスタムの腕時計型インターフェイスは許可されません。
 
-- 接続されている電話で iTunes を制御するウォッチができるようにする Api は、プライベートです。
+- 接続されている電話で iTunes を制御するウォッチができるようにする Api はプライベートです。
 
 
 ## <a name="further-reading"></a>関連項目
@@ -126,9 +126,9 @@ Apple のドキュメントをご覧ください。
 
 * [ウォッチ キット用の開発](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html#//apple_ref/doc/uid/TP40014969-CH8-SW1)
 
-* [キット プログラミング ガイドを見る](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/DesigningaWatchKitApp.html)
+* [キットのプログラミング ガイドをご覧ください。](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/DesigningaWatchKitApp.html)
 
-* [Apple Watch ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/index.html#//apple_ref/doc/uid/TP40014992-CH3-SW1)
+* [Apple Watch のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/index.html#//apple_ref/doc/uid/TP40014992-CH3-SW1)
 
 
 ## <a name="related-links"></a>関連リンク
@@ -136,7 +136,7 @@ Apple のドキュメントをご覧ください。
 - [watchOS 3 カタログ (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [watchOS 1 カタログ (サンプル)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
 - [セットアップとインストール](~/ios/watchos/get-started/installation.md)
-- [最初の Watch アプリ ビデオ](http://blog.xamarin.com/your-first-watch-kit-app/)
-- [Apple は、Watch キット ガイド用の開発](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
+- [Watch アプリの最初のビデオ](http://blog.xamarin.com/your-first-watch-kit-app/)
+- [ウォッチ キット ガイド用の Apple を開発します。](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Apple の WatchKit ヒント](https://developer.apple.com/watchkit/tips/)
 - [watchOS 3 の概要](~/ios/watchos/platform/introduction-to-watchos3/index.md)

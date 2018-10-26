@@ -1,50 +1,50 @@
 ---
-title: WatchOS Xamarin で親アプリケーションの使用
-description: このドキュメントでは、Xamarin で watchOS 親アプリケーションを操作する方法について説明します。 これは、WatchKit アプリ拡張機能、iOS アプリ、共有ストレージ、および詳細について説明します。
+title: 親アプリケーション Xamarin で watchOS の操作
+description: このドキュメントでは、Xamarin で watchOS 親アプリケーションを操作する方法について説明します。 WatchKit アプリの拡張機能、iOS アプリや、共有記憶域がについて説明します。
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 745c10b381ef2bd578278cb8d141a944ef1087e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790693"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121985"
 ---
-# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>WatchOS Xamarin で親アプリケーションの使用
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>親アプリケーション Xamarin で watchOS の操作
 
 > [!IMPORTANT]
-> 次の例をのみを使用して親アプリケーションへのアクセスは、watchOS 1 watch アプリで機能します。
+> 次の例をのみを使用して、親アプリケーションへのアクセスは、watchOS 1 watch アプリで機能します。
 
 
-Watch アプリとそれがバンドルされている iOS アプリ間で通信するさまざまな方法があります。
+Watch アプリとそれにバンドルされている iOS アプリ間で通信するさまざまな方法はあります。
 
-- ウォッチ拡張機能は[メソッドを呼び出す](#code)iPhone でバック グラウンドで実行されている親アプリに対してです。
+- ウォッチ拡張機能は[メソッドを呼び出す](#code)iPhone のバック グラウンドで実行されている親アプリに対して。
 
-- ウォッチ拡張機能は[記憶域の場所を共有](#storage)親 iPhone アプリのです。
+- ウォッチ拡張機能は[記憶域の場所を共有](#storage)親の iPhone アプリ。
 
-- ハンドオフを使用して、データ概要または通知をアプリで特定のインターフェイス コント ローラーにユーザーを送信する、Watch アプリに渡します。
+- Handoff を使用して、Watch アプリは、ユーザーをアプリで特定のインターフェイス コント ローラーに送信する通知もからデータを渡します。
 
-親アプリは、コンテナー アプリケーションと呼ばれることもあります。
+親アプリは、コンテナー アプリと呼ばれることもあります。
 
 
 <a name="code" />
 
 ## <a name="run-code"></a>コードを実行します。
 
-ウォッチ拡張機能と親の iPhone アプリ間の通信はではデモンストレーション、 [GpsWatch サンプル](https://developer.xamarin.com/samples/GpsWatch)です。
-ウォッチ拡張機能は、処理を行うものを使用して、代わりに親の iOS アプリを要求できる、`OpenParentApplication`メソッドです。
+方法については、ウォッチ拡張機能と親の iPhone アプリ間の通信、 [GpsWatch サンプル](https://developer.xamarin.com/samples/GpsWatch)します。
+ウォッチ拡張機能は、その代理の使用に関するいくつかの処理を実行して、親 iOS アプリを要求できる、`OpenParentApplication`メソッド。
 
-これは、長時間実行タスク (などのネットワーク要求) の親のみを iOS アプリを利用してこれらのタスクを完了し、ウォッチ拡張機能にアクセスできる場所で取得したデータを保存するバック グラウンドの処理のために特に便利です。
+これは、機能は、長時間実行されるタスク (などのネットワーク要求) - のみ親 iOS アプリを利用してこれらのタスクを完了して、ウォッチ拡張機能にアクセスできる場所で取得したデータを保存するためにバック グラウンド処理のために特に便利です。
 
 
 
-### <a name="watch-kit-app-extension"></a>ウォッチ キット アプリ拡張機能
+### <a name="watch-kit-app-extension"></a>キット アプリ拡張機能をご覧ください。
 
-呼び出す、`WKInterfaceController.OpenParentApplication`ウォッチ アプリの拡張機能です。 返します、`bool`メソッド要求が正常に送信されたかどうかを示すです。 チェック、`error`応答でパラメーター `Action` iPhone アプリで実行されているメソッド中に発生した場合を決定します。
+呼び出す、`WKInterfaceController.OpenParentApplication`ウォッチ アプリの拡張機能。 返します、`bool`メソッド要求が正常に送信されたかどうかを示します。 チェック、 `error` 、応答でパラメーター`Action`存在する場合を判断する iPhone アプリで実行されているメソッドの中に発生します。
 
 ```csharp
 WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, error) => {
@@ -60,8 +60,8 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 
 ### <a name="ios-app"></a>iOS アプリ
 
-IPhone アプリのを介して watch アプリ拡張機能からのすべての呼び出しがルーティングされる`HandleWatchKitExtensionRequest`メソッドです。
-Watch アプリでさまざまな要求を行うかどうかは、このメソッドはクエリを実行する必要があります、`userInfo`要求を処理する方法を決定するためのディクショナリ。
+Watch アプリ拡張機能からのすべての呼び出しは、iPhone アプリのを介してルーティングされます`HandleWatchKitExtensionRequest`メソッド。
+Watch アプリでさまざまな要求を行っているかどうかは、このメソッドがクエリを実行する必要があります、`userInfo`要求を処理する方法を決定するためのディクショナリ。
 
 
 ```csharp
@@ -87,13 +87,13 @@ public partial class AppDelegate : UIApplicationDelegate
 
 ## <a name="shared-storage"></a>共有記憶域
 
-構成する場合、[アプリ グループ](~/ios/watchos/app-fundamentals/app-groups.md)し iOS 8 の拡張機能 (ウォッチ拡張機能を含む) は、親のアプリとデータを共有することができます。
+構成する場合、[アプリ グループ](~/ios/watchos/app-fundamentals/app-groups.md)し iOS 8 の拡張機能 (ウォッチ拡張機能を含む) は、親アプリとデータを共有することができます。
 
 <a name="nsuserdefaults" />
 
 ### <a name="nsuserdefaults"></a>NSUserDefaults
 
-一連の共通参照できるように、ウォッチ アプリ拡張機能と親の iPhone アプリの両方で、次のコードを記述できます`NSUserDefaults`:
+一連の共通に参照できるように、watch アプリ拡張機能と親の iPhone アプリの両方で、次のコードを記述できます`NSUserDefaults`:
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -113,7 +113,7 @@ var count = shared.IntForKey ("count");
 
 ### <a name="files"></a>ファイル
 
-IOS アプリとウォッチ拡張機能には、共通のファイルのパスを使用してファイルを共有できます。
+IOS アプリとウォッチ拡張機能には、一般的なファイル パスを使用してファイル共有もできます。
 
 ```csharp
 var FileManager = new NSFileManager ();
@@ -124,15 +124,15 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-注: パスの場合`null`確認し、[アプリ グループ構成](~/ios/watchos/app-fundamentals/app-groups.md)プロビジョニング プロファイルが正しく構成されているし、開発用コンピューターにダウンロード/インストールされていることを確認します。
+注: パスの場合`null`確認し、[アプリ グループの構成](~/ios/watchos/app-fundamentals/app-groups.md)プロビジョニング プロファイルが正しく構成されているし、開発用コンピューターにダウンロード/インストールされていることを確認します。
 
 詳細についてを参照してください、[アプリ グループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)ドキュメント。
 
 ## <a name="wormholesharp"></a>WormHoleSharp
 
-WatchOS 1 の一般的なオープン ソース メカニズム (に基づいて[MMWormHole](https://github.com/mutualmobile/MMWormhole)) を親アプリと watch アプリ間でデータやコマンドを渡します。
+WatchOS 1 用の人気のあるオープン ソース メカニズム (に基づいて[MMWormHole](https://github.com/mutualmobile/MMWormhole)) 親 app と watch アプリ間でデータやコマンドを渡す。
 
-次のように、iOS アプリでのアプリ グループを使用して穴を構成して拡張機能を見る。
+ワームホール iOS アプリでこのようなアプリ グループを使用してを構成し、拡張機能を見ることができます。
 
 ```csharp
 // AppDelegate (iOS) or InterfaceController (watch extension)
@@ -141,7 +141,7 @@ Wormhole wormHole;
 wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 ```
 
-C# バージョンをダウンロード[WormHoleSharp](https://github.com/Clancey/WormHoleSharp)です。
+ダウンロード、C#バージョン[WormHoleSharp](https://github.com/Clancey/WormHoleSharp)します。
 
 
 
@@ -150,4 +150,4 @@ C# バージョンをダウンロード[WormHoleSharp](https://github.com/Clance
 - [GpsWatch (サンプル)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
 - [WormHoleSharp (サンプル)](https://github.com/Clancey/WormHoleSharp)
 - [Apple の WKInterfaceController 参照](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
-- [Apple のアプリを含むデータを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Apple のデータを含むアプリを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

@@ -1,23 +1,23 @@
 ---
-title: CocosSharp 内のエンティティ
-description: エンティティのパターンは、ゲーム コードを整理する強力な方法です。 読みやすさを向上、維持するため、コードを容易にし、組み込みの親/子の機能を活用します。
+title: CocosSharp のエンティティ
+description: エンティティのパターンは、ゲームのコードを整理する強力な方法です。 読みやすく、コードを簡単に維持するには、親/子の組み込み機能を活用しているとします。
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 58a8d4e6fcb8a2165fafad74a5c59481d1550351
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6445d595c9d8ca47e187fdcd158cd5a801a96407
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921912"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103206"
 ---
-# <a name="entities-in-cocossharp"></a>CocosSharp 内のエンティティ
+# <a name="entities-in-cocossharp"></a>CocosSharp のエンティティ
 
-_エンティティのパターンは、ゲーム コードを整理する強力な方法です。読みやすさを向上、維持するため、コードを容易にし、組み込みの親/子の機能を活用します。_
+_エンティティのパターンは、ゲームのコードを整理する強力な方法です。読みやすく、コードを簡単に維持するには、親/子の組み込み機能を活用しているとします。_
 
-エンティティ パターンでは、強化されたコードの組織で CocosSharp では、開発者の作業を向上できます。 このチュートリアルは、2 つのエンティティ: 出荷エンティティとの行頭文字エンティティを作成する方法を示す実践的な例になります。 これらのエンティティは、自己完結型のオブジェクトをする、1 回インスタンス化することを示します自動的にレンダリングされる、その型の適切な移動ロジックを実行します。 
+エンティティのパターンでは、改善されたコードの組織で CocosSharp による開発者の作業を向上できます。 このチュートリアルは、– 出荷エンティティと箇条書きエンティティの 2 つのエンティティを作成する方法を示す実践的な例になります。 これらのエンティティは自己完結型のオブジェクトをあるは 1 回インスタンス化です。 つまり、自動的に表示されると、型の適切な移動ロジックを実行します。 
 
 このガイドでは、次のトピックについて説明します。
 
@@ -26,7 +26,7 @@ _エンティティのパターンは、ゲーム コードを整理する強力
  - プロジェクトのセットアップ
  - エンティティ クラスを作成します。
  - エンティティ インスタンスを追加します `GameLayer`
- - 内のエンティティのロジックに反応します `GameLayer`
+ - エンティティのロジックへの対応、 `GameLayer`
 
 完成したゲームは、次のようになります。
 
@@ -35,9 +35,9 @@ _エンティティのパターンは、ゲーム コードを整理する強力
 
 ## <a name="introduction-to-game-entities"></a>ゲームのエンティティの概要
 
-ゲームのエンティティは、レンダリング、衝突、物理的、または人工知能のロジックを必要とするオブジェクトを定義するクラスです。 さいわい、ゲームのコード ベースであるエンティティには、ゲームの概念オブジェクト多くの場合と一致します。 これが true の場合、ゲームで必要となるエンティティを識別するより簡単に実現できます。 
+ゲームのエンティティは、レンダリング、衝突、物理学や人工知能のロジックを必要とするオブジェクトを定義するクラスです。 さいわい、ゲームのコード ベースに存在するエンティティには、ゲームの概念オブジェクト多くの場合と一致します。 これが true の場合、ゲームに必要なエンティティを識別するより簡単に実現できます。 
 
-テーマが適用されたスペースなど、[ゲームを撮影実践](http://en.wikipedia.org/wiki/Shoot_%27em_up)次のエンティティを含めることがあります。
+テーマが適用されたスペースなど、[ゲームをやって撮影](http://en.wikipedia.org/wiki/Shoot_%27em_up)次のエンティティを含めることができます。
 
  - `PlayerShip`
  - `EnemyShip`
@@ -47,400 +47,400 @@ _エンティティのパターンは、ゲーム コードを整理する強力
  - `HUD`
  - `Environment`
 
-これらのエンティティは、ゲームの独自のクラスは、各インスタンスのインスタンス化を超えるまったくまたはほとんどのセットアップが必要になります。
+これらのエンティティがゲームでは、独自のクラスになり、各インスタンスのインスタンス化を超えるほとんどまたはまったくのセットアップが必要になります。
 
 
 ## <a name="general-vs-specific-entity-types"></a>型と特定のエンティティ型には、[全般]
 
-どの程度のエンティティを一般化するエンティティ システムを使用してゲームの開発者が直面している最初の質問の 1 つです。 実装の中で最も固有では、いくつかの特性が異なる場合でも、すべての種類、エンティティのためのクラスが定義します。 一般的なシステムはエンティティのグループを 1 つのクラスに結合しをカスタマイズできますのインスタンスを許可します。
+システム エンティティを使用してゲームの開発者が直面している最初の質問の 1 つは、エンティティを一般化する量です。 いくつかの特性が異なる場合でも、最も具体的な実装は、エンティティの種類ごとにクラスを定義します。 一般的なシステムは、エンティティのグループを 1 つのクラスに結合をカスタマイズするインスタンスを許可します。
 
-たとえば、次のクラスを定義する空間ゲームを想像します。
+たとえば、次のクラスを定義する領域のゲームを想像します。
 
  - `PlayerDogfighter`
  - `PlayerBomber`
  - `EnemyMissileShip`
  - `EnemyLaserShip`
 
-一般的な方法は、player 付属の 1 つのクラスと別の出荷の種類をサポートするように構成できなかった敵船、1 つのクラスを作成することです。 カスタマイズは、どのイメージを読み込むには、移動の係数を撮影するときに作成する箇条書きエンティティの種類を含めることができ、敵 AI ロジックは付属しています。 ここでは、エンティティの一覧を縮小することがあります。
+一般的なアプローチは、player 船の 1 つのクラスと敵の船が別の出荷の種類をサポートするように構成が 1 つのクラスを作成することです。 カスタマイズは、どのイメージを読み込むには、作成、移動の係数を撮影するときに行頭文字エンティティの種類を含めることができ、敵の AI のロジックが用意されています。 この場合にエンティティの一覧を縮小可能性があります。
 
  - `PlayerShip`
  - `EnemyShip`
 
-もちろん、これらのエンティティ型は、移動を制御するためのインスタンスごとにカスタマイズすることによってさらに一般化することができます。 Player 出荷インスタンスは、敵出荷インスタンス可能性があります AI ロジックの実行中に、入力から読み取らとします。 つまり、エンティティを一般化することが 1 つのクラスに、さらに。
+もちろん、これらのエンティティ型は、移動を制御するためのインスタンスごとのカスタマイズを許可することでさらに一般化することができます。 Player 出荷インスタンスは入力から読み取られますが宇宙船が敵のインスタンスは、AI ロジックを実行可能性があります。 つまり、エンティティを一般化することが 1 つのクラスにさらに発展させる。
 
  - `Ship`
 
-汎化は、ゲームはすべてのエンティティの単一の基本クラスを使用することがあります、さらに – 続行できます。 この 1 つのクラス、呼び出される`GameEntity`箇条書きと収集可能な項目 (電源 ups) などの付属されていないエンティティを含む、すべてのエンティティ インスタンス全体のゲームで使用されるクラスになります。
+汎化は、ゲームはすべてのエンティティの 1 つの基本クラスを使用することがあります –、さらに続行できます。 呼び出すことはこの 1 つのクラス`GameEntity`箇条書きと収集可能な項目 (パワーアップ) などに同梱されていないエンティティを含む、ゲーム全体ですべてのエンティティ インスタンスに使用されるクラスになります。
 
-これは、システムのほとんどの一般的な多くの場合と呼びます、*コンポーネント システム*です。 このようなシステムでは、ゲームのエンティティは、物理学、AI などの個々 のコンポーネントを持つことができます。 または動作と外観をカスタマイズする追加のコンポーネントを表示します。 純粋なコンポーネント ベースのシステムでは、究極の柔軟性を有効にして、複雑な継承チェーンなどの継承の使用によって引き起こされる問題を回避できます。 その他の汎化効果的なコンポーネントのシステムを設定するが困難にすることができ、同様のコードの表現力を減らすことができます。
+これは、システムのほとんどの一般的な多くの場合と呼びます、*コンポーネント システム*します。 このようなシステムでは、ゲーム エンティティは、物理学、AI などの個々 のコンポーネントを持つことができます。 または動作と外観をカスタマイズする追加のコンポーネントをレンダリングします。 純粋なコンポーネント ベースのシステムでは、柔軟性を有効にし、複雑な継承チェーンなどの継承の使用によって発生する問題を回避できます。 同様に他の汎化、有効なコンポーネントのシステムを設定するには難しいコードの表現力を減らすことができます。
 
-使用汎化のレベルは、さまざまな考慮事項を含むによって異なります。
+使用汎化のレベルなど、さまざまな考慮事項によって異なります。
 
- - ゲーム サイズ – より小さいゲーム余裕がある大規模なゲームがクラスの数が多いと管理が難しい可能性がありますのときに、特定のクラスを作成します。
- - データ駆動型開発 – データ (イメージ、3 D モデル、および JSON または XML などのデータ ファイル) に依存するゲーム パフォーマンスが向上、エンティティ型を持つ一般化されたデータに基づいて詳細を構成するとします。 これは、開発中またはゲームがリリースされた後に、新しいコンテンツを追加する予定のゲームのインポートに特にです。
- - ゲーム エンジン パターン – 一部のゲーム エンジンを強くお勧めコンポーネントのシステムの使用法のエンティティを整理する方法を決定する開発者は、他のユーザーです。 開発者は、エンティティの任意の型を実装するため、CocosSharp によるコンポーネントのシステムでは、使用法は不要です。 
+ - ゲームのサイズ-小さなゲームにクラスの数が多いと管理が難しい大規模なゲームがあります、特定のクラスを作成する余裕があることができます。
+ - データ駆動型の開発 – データ (イメージ、3 D モデル、および JSON や XML などのデータ ファイル) に依存するゲームは、エンティティ型が汎用化されてから利用可能性があり、データに基づいて詳細を構成します。 これは、特にゲームを開発中、またはゲームが解放された後に、新しいコンテンツを追加する予定のためにインポートします。
+ - ゲーム エンジン パターン – 一部のゲーム エンジンを強くお勧めコンポーネントのシステムの使用状況のエンティティを整理する方法を決定する開発者は、他のユーザー。 CocosSharp では開発者がエンティティの任意の型を実装するため、システム コンポーネントの使用量は必要ありません。 
 
-わかりやすくするため、使用するクラス ベースのアプローチを特定出荷] および [箇条書きの単一のエンティティとこのチュートリアルでは。
+わかりやすく、使用する特定のクラス ベースのアプローチと船と箇条書きの 1 つのエンティティでこのチュートリアルでは。
 
 
 ## <a name="project-setup"></a>プロジェクトのセットアップ
 
-エンティティの実装を始める前にプロジェクトを作成する必要があります。 使用する CocosSharp プロジェクト テンプレートをプロジェクトの作成を簡略化します。 [この投稿の確認](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio)については、Visual Studio for Mac テンプレートから CocosSharp プロジェクトを作成します。 このガイドの残りの部分が、プロジェクト名を使用して**EntityProject**です。
+このエンティティの実装を始める前にプロジェクトを作成する必要があります。 使用する、CocosSharp プロジェクト テンプレート プロジェクトの作成を簡略化します。 [この投稿を確認してください。](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio)については、Visual Studio for Mac テンプレートから CocosSharp プロジェクトを作成します。 このガイドの残りの部分が、プロジェクト名を使用して**EntityProject**します。
 
-プロジェクトを作成した後は、320 x 480 で実行するゲームの解像度を設定します。 これを行うには、呼び出す`CCScene.SetDefaultDesignResolution`で、`GameAppDelegate.ApplicationDidFinishLaunching`メソッドを次のようにします。
+このプロジェクトが作成されたら、480 x 320 で実行する、ゲームの解像度を設定します。 これを行うには、呼び出す`CCScene.SetDefaultDesignResolution`で、`GameAppDelegate.ApplicationDidFinishLaunching`メソッドとして、次のとおりです。
 
 
 ```csharp
-public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
+public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
 {
-    ...
+    ...
 
-    // New code for resolution setting:
-    CCScene.SetDefaultDesignResolution(480, 320, CCSceneResolutionPolicy.ShowAll);
-    
-    CCScene scene = new CCScene (mainWindow);
-    GameLayer gameLayer = new GameLayer ();
+    // New code for resolution setting:
+    CCScene.SetDefaultDesignResolution(480, 320, CCSceneResolutionPolicy.ShowAll);
+    
+    CCScene scene = new CCScene (mainWindow);
+    GameLayer gameLayer = new GameLayer ();
 
-    scene.AddChild (gameLayer);
-    mainWindow.RunWithScene (scene);
+    scene.AddChild (gameLayer);
+    mainWindow.RunWithScene (scene);
 } 
 ```
 
-CocosSharp 解像度を処理する場合の詳細については、次を参照してください。 この[CocosSharp 内の複数の解決を処理ガイド](~/graphics-games/cocossharp/resolutions.md)です。
+CocosSharp の解像度で処理する方法の詳細については、次を参照してください。 この[CocosSharp での複数の解決を処理ガイド](~/graphics-games/cocossharp/resolutions.md)します。
 
 
 ## <a name="adding-content-to-the-project"></a>プロジェクトにコンテンツを追加します。
 
-含まれるファイルを追加おは、プロジェクトが作成されたら、[このコンテンツの zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)です。 これを行うには、zip ファイルをダウンロードして解凍します。 両方を追加**ship.png**と**bullet.png**を**コンテンツ**フォルダーです。 **コンテンツ**フォルダー内に生成されます、**資産**フォルダーには、Android、iOS にプロジェクトのルートになります。 追加されると、両方のファイルに表示する必要があります、**コンテンツ**フォルダー。
+含まれるファイルは追加、プロジェクトが作成されたら、[このコンテンツの zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)します。 これを行うには、zip ファイルをダウンロードして解凍します。 両方を追加する**ship.png**と**bullet.png**を**コンテンツ**フォルダー。 **コンテンツ**フォルダー内に生成されます、**資産**フォルダーには、Android、ios プロジェクトのルートになります。 追加するには、両方のファイルに表示する必要があります、**コンテンツ**フォルダー。
 
-![](entities-images/image2.png "追加されると、両方のファイルがコンテンツのフォルダーにする必要があります。")
+![](entities-images/image2.png "両方のファイルがコンテンツのフォルダーに配置する必要があります追加されると、")
 
 
-## <a name="creating-the-ship-entity"></a>出荷エンティティを作成します。
+## <a name="creating-the-ship-entity"></a>出荷のエンティティを作成します。
 
-`Ship`クラスは、ゲームの最初のエンティティになります。 追加する、`Ship`クラス、という名前のフォルダーをまず作成**エンティティ**プロジェクトのルート レベルにします。 新しいクラスを追加、**エンティティ**という名前のフォルダー `Ship`:
+`Ship`クラスは、ゲームの最初のエンティティになります。 追加する、`Ship`クラスは、まずという名前のフォルダーを作成**エンティティ**プロジェクトのルート レベルにします。 新しいクラスを追加、**エンティティ**という名前のフォルダー `Ship`:
 
-![](entities-images/image3.png "出荷をという名前のエンティティ フォルダーで新しいクラスを追加します。")
+![](entities-images/image3.png "出荷をという名前のエンティティ フォルダーに新しいクラスを追加します。")
 
-最初の変更は、`Ship`クラスは継承を知らせるためには、`CCNode`クラスです。 `CCNode` などの一般的な CocosSharp クラスの基底クラスとして機能`CCSprite`と`CCLayer`、次の機能を提供しています。
+最初の変更を行う、`Ship`クラスは継承を知らせるためには、`CCNode`クラス。 `CCNode` などの共通の CocosSharp クラスの基底クラスとして機能`CCSprite`と`CCLayer`、次の機能を提供しています。
 
  - `Position` 画面の周りの出荷を移動するためのプロパティです。
  - `Children` プロパティを追加するため、 `CCSprite.`
- - `Parent` プロパティで、接続に使用できる`Ship`を他のインスタンス`CCNodes`です。 このチュートリアルではこの機能を使用することはありません大規模なゲーム多くの場合、利用を他のエンティティのアタッチの`CCNodes`します。 
- - `AddEventListener` 出荷を移動するための入力に応答する方法。
- - `Schedule` 箇条書きを撮影する方法。
+ - `Parent` プロパティをアタッチするために使用できる`Ship`他のインスタンス`CCNodes`します。 このチュートリアルでこの機能を使用することはありません。大規模なゲーム多くの場合、利用を他のエンティティをアタッチした`CCNodes`します。 
+ - `AddEventListener` 宇宙船を移動するための入力に応答する方法。
+ - `Schedule` 箇条書きを撮影するためのメソッド。
 
-追加しても、`CCSprite`インスタンス化を画面に、出荷を表示できるようにします。
+追加します、`CCSprite`インスタンスの画面で、出荷を表示できます。
 
 
 ```csharp
-using System;
-using CocosSharp;
+using System;
+using CocosSharp;
 
-namespace EntityProject
+namespace EntityProject
 {
-    public class Ship : CCNode
-    {
-        CCSprite sprite;
+    public class Ship : CCNode
+    {
+        CCSprite sprite;
 
-        public Ship () : base()
-        {
-            sprite = new CCSprite ("ship.png");
-            // Center the Sprite in this entity to simplify
-            // centering the Ship when it is instantiated
-            sprite.AnchorPoint = CCPoint.AnchorMiddle;
-            this.AddChild(sprite);
-        }
-    }
+        public Ship () : base()
+        {
+            sprite = new CCSprite ("ship.png");
+            // Center the Sprite in this entity to simplify
+            // centering the Ship when it is instantiated
+            sprite.AnchorPoint = CCPoint.AnchorMiddle;
+            this.AddChild(sprite);
+        }
+    }
 }
 ```
 
-次に、出荷先を追加、`GameLayer`ゲーム表示します。
+次に、送付先を追加、`GameLayer`ゲームに表示を確認します。
 
 
 ```csharp
-public class GameLayer : CCLayer
+public class GameLayer : CCLayer
 {
-    Ship ship;
+    Ship ship;
 
-    public GameLayer ()
-    {
-        ship = new Ship ();
-        ship.PositionX = 240;
-        ship.PositionY = 50;
-        this.AddChild (ship);
-    } 
+    public GameLayer ()
+    {
+        ship = new Ship ();
+        ship.PositionX = 240;
+        ship.PositionY = 50;
+        this.AddChild (ship);
+    } 
     ...
 ```
 
-場合は、出荷エンティティおが表示されます、ゲームを実行します。
+場合は、出荷エンティティわかりますが、ゲームを実行します。
 
-![](entities-images/image4.png "ゲームを実行するには、出荷エンティティが表示されます。")
+![](entities-images/image4.png "ゲームを実行するときに、出荷のエンティティが表示されます。")
 
 
 ### <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>なぜ CCSprite ではなく CCNode から継承しますか。
 
-この時点で、`Ship`クラスは、簡単なラッパーで、`CCSprite`インスタンス。 `CCSprite`からも継承`CCNode`から直接継承されたでしたお`CCSprite`、内のコードを削減するよう`Ship.cs`です。 さらに、直接継承`CCSprite`メモリ内のオブジェクトの数を削減し、依存関係ツリーを小さくすることによってパフォーマンスを向上させることができます。
+この時点で、`Ship`クラスは、簡単なラッパーを`CCSprite`インスタンス。 `CCSprite`からも継承`CCNode`から直接継承したでした`CCSprite`、内のコードを削減するは`Ship.cs`します。 さらに、直接継承`CCSprite`メモリ内のオブジェクトの数が減るし、依存関係ツリーを小さくすることによってパフォーマンスを向上させることができます。
 
-継承したこれらの利点に関係なく`CCNode`いくつかの非表示にする、`CCSprite`各インスタンスのプロパティです。 たとえば、`Texture`以外のプロパティは変更しないで、`Ship`クラス、および継承`CCNode`このプロパティを非表示にすることができます。 エンティティのパブリック メンバーは、ゲームが大きくとその他の開発者がチームに追加されると、特に重要になります。
+継承したこれらの利点に関係なく`CCNode`の一部を非表示にする、`CCSprite`各インスタンスからのプロパティ。 たとえば、`Texture`以外のプロパティを変更しないでください、`Ship`クラスし、継承`CCNode`により、このプロパティを非表示にします。 エンティティのパブリック メンバーは、ゲームの増加に合わせてとその他の開発者がチームに追加されるときに特に重要になります。
 
 
-## <a name="adding-input-to-the-ship"></a>船への入力を追加します。
+## <a name="adding-input-to-the-ship"></a>配送先への入力を追加します。
 
-これで、出荷を画面に表示されている入力を追加する予定です。 当社のアプローチはアプローチで実行されるようになります、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)、コード内の動きを配置おする点を除いて、`Ship`クラスの親ではなく`CCLayer`または`CCScene`です。
+これで、宇宙船が画面に表示の入力を追加する予定です。 私たちのアプローチで使用される手法ようになります、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)における移動のコードを配置したことを除いて、`Ship`クラスではなく、次を含む`CCLayer`または`CCScene`します。
 
-コードを追加して`Ship`ユーザーが画面に触れては任意の場所に移動することをサポートするためにします。
+コードを追加して`Ship`ユーザーが画面に触れては任意の場所に移動することをサポートするために。
 
 
 ```csharp
-public class Ship : CCNode
+public class Ship : CCNode
 {
-    CCSprite sprite;
+    CCSprite sprite;
 
-    CCEventListenerTouchAllAtOnce touchListener;
+    CCEventListenerTouchAllAtOnce touchListener;
 
-    public Ship () : base()
-    {
-        sprite = new CCSprite ("ship.png");
-        // Center the Sprite in this entity to simplify
-        // centering the Ship on screen
-        sprite.AnchorPoint = CCPoint.AnchorMiddle;
-        this.AddChild(sprite);
+    public Ship () : base()
+    {
+        sprite = new CCSprite ("ship.png");
+        // Center the Sprite in this entity to simplify
+        // centering the Ship on screen
+        sprite.AnchorPoint = CCPoint.AnchorMiddle;
+        this.AddChild(sprite);
 
-        touchListener = new CCEventListenerTouchAllAtOnce();
-        touchListener.OnTouchesMoved = HandleInput;
-        AddEventListener(touchListener, this);
+        touchListener = new CCEventListenerTouchAllAtOnce();
+        touchListener.OnTouchesMoved = HandleInput;
+        AddEventListener(touchListener, this);
 
-    }
+    }
 
-    private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEvent touchEvent)
-    {
-        if(touches.Count > 0)
-        {
-            CCTouch firstTouch = touches[0];
+    private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEvent touchEvent)
+    {
+        if(touches.Count > 0)
+        {
+            CCTouch firstTouch = touches[0];
 
-            this.PositionX = firstTouch.Location.X;
-            this.PositionY = firstTouch.Location.Y;
-        } 
-    }
+            this.PositionX = firstTouch.Location.X;
+            this.PositionY = firstTouch.Location.Y;
+        } 
+    }
 } 
 ```
 
-多く撮影実践ゲームを実装する最大速度になっているため、コント ローラー ベースの従来の動作を模倣します。 ただし、単に短いコードを保持するイミディ エイトの動きを実装します。
+多く撮影やってゲームの実装を最大速度は、従来のコント ローラー ベースの動きを模倣します。 ただし、即時の移動、コードを短くするために単純に実装します。
 
 
 ## <a name="creating-the-bullet-entity"></a>行頭文字エンティティを作成します。
 
-単純なゲームでは、2 番目のエンティティは、エンティティの行頭文字を表示するためです。 同じように、 `Ship` 、エンティティ、`Bullet`エンティティが含まれます、`CCSprite`画面に表示されないようにします。 移動のためのロジックはという点では、移動; のユーザー入力には依存しません代わりに、`Bullet`インスタンスが速度プロパティを使用して直線的に移動します。
+単純なゲームでは、2 番目のエンティティは、行頭文字を表示するエンティティです。 同じように、`Ship`エンティティ、`Bullet`エンティティには、`CCSprite`画面に表示されるようにします。 移動; のユーザー入力には依存しませんが、移動のためのロジックとは異なる代わりに、`Bullet`インスタンスは直線速度プロパティを使用して移動します。
 
-まず追加する新しいクラス ファイル、**エンティティ**フォルダーおよび呼び出し**箇条書き**:
+最初に新しいクラス ファイルを追加します、**エンティティ**フォルダー、呼び出す**箇条書き**:
 
-![](entities-images/image5.png "エンティティ フォルダーに新しいクラス ファイルを追加して、行頭文字")
+![](entities-images/image5.png "エンティティ フォルダーに新しいクラス ファイルを追加し、行頭文字を付けます")
 
-追加すると変更してみます、`Bullet.cs`コードの次のようにします。
+変更します。 追加すると、`Bullet.cs`コードの次のようにします。
 
 
 ```csharp
-using System;
-using CocosSharp;
+using System;
+using CocosSharp;
 
-namespace EntityProject
+namespace EntityProject
 {
-    public class Bullet : CCNode
-    {
-        CCSprite sprite;
+    public class Bullet : CCNode
+    {
+        CCSprite sprite;
 
-        public float VelocityX
-        {
-            get;
-            set;
-        }
+        public float VelocityX
+        {
+            get;
+            set;
+        }
 
-        public float VelocityY
-        {
-            get;
-            set;
-        }
+        public float VelocityY
+        {
+            get;
+            set;
+        }
 
-        public Bullet () : base()
-        {
-            sprite = new CCSprite ("bullet.png");
-            // Making the Sprite be centered makes
-            // positioning easier.
-            sprite.AnchorPoint = CCPoint.AnchorMiddle;
-            this.AddChild(sprite);
+        public Bullet () : base()
+        {
+            sprite = new CCSprite ("bullet.png");
+            // Making the Sprite be centered makes
+            // positioning easier.
+            sprite.AnchorPoint = CCPoint.AnchorMiddle;
+            this.AddChild(sprite);
 
-            this.Schedule (ApplyVelocity);
-        }
+            this.Schedule (ApplyVelocity);
+        }
 
-        void ApplyVelocity(float time)
-        {
-            PositionX += VelocityX * time;
-            PositionY += VelocityY * time;
-        }
-    }
+        void ApplyVelocity(float time)
+        {
+            PositionX += VelocityX * time;
+            PositionY += VelocityY * time;
+        }
+    }
 } 
 ```
 
-使用するファイルを変更する場合を除いて、`CCSprite`に`bullet.png`、内のコード`ApplyVelocity`は 2 つの係数に基づいて移動ロジックが含まれています:`VelocityX`と`VelocityY`です。
+使用しているファイルを変更するとは別に、`CCSprite`に`bullet.png`、コードでは、`ApplyVelocity`は 2 つの係数に基づいて移動ロジックが含まれています:`VelocityX`と`VelocityY`します。
 
-`Schedule`メソッドでは、フレームごとに呼び出されるデリゲートを追加できるようにします。 ここで追加しています、`ApplyVelocity`メソッドのベロシティ値に従って、行頭に移動できるようにします。 `Schedule`メソッドは、 `Action<float>`、浮動小数点数のパラメーターが最後のフレームは、時間ベースの移動の実装を使用してから経過した時間 (単位は秒) の量を指定します。 秒単位で値を測定した時刻以降、当社ベロシティ値での移動を表します*1 秒あたりのピクセル*です。
+`Schedule`メソッドでは、フレームごとに呼び出されるデリゲートを追加できるようにします。 ここで追加しています、`ApplyVelocity`メソッドのベロシティ値に従って、行頭に移動できるようにします。 `Schedule`メソッドは、 `Action<float>`、float 型のパラメーターが時間ベースの移動の実装を使用して、最後のフレームからの秒単位で時間の量を指定します。 以来、値は秒単位で測定し、ベロシティ値での移動を表す*1 秒あたりのピクセル*します。
 
 
-## <a name="adding-bullets-to-gamelayer"></a>GameLayer に行頭文字を追加します。
+## <a name="adding-bullets-to-gamelayer"></a>箇条書き GameLayer を追加
 
-いずれかを追加する前に`Bullet`、ゲームにインスタンスおすると、コンテナー、具体的には、`List<Bullet>`です。 変更、`GameLayer`のため、箇条書きの一覧が含まれています。
+いずれかを追加する前に`Bullet`、ゲームにインスタンスいたしますコンテナーであり、具体的には、`List<Bullet>`します。 変更、`GameLayer`のため、箇条書きのリストが含まれています。
 
 
 ```csharp
-    public class GameLayer : CCLayer
-    {
-        Ship ship;
-        List<Bullet> bullets;
+    public class GameLayer : CCLayer
+    {
+        Ship ship;
+        List<Bullet> bullets;
 
-        public GameLayer ()
-        {
-            ship = new Ship ();
-            ship.PositionX = 240;
-            ship.PositionY = 50;
-            this.AddChild (ship);
+        public GameLayer ()
+        {
+            ship = new Ship ();
+            ship.PositionX = 240;
+            ship.PositionY = 50;
+            this.AddChild (ship);
 
-            bullets = new List<Bullet> ();
-        }
+            bullets = new List<Bullet> ();
+        }
         ... 
 ```
 
-次に設定する必要があります、 `Bullet`  ボックスの一覧です。 作成する場合のロジックを`Bullet`に含まれている必要があります、`Ship`エンティティ、ですが、`GameLayer`は箇条書きの一覧を格納します。 ファクトリ パターンを使用できるようにして、`Ship`を作成するエンティティ`Bullet`インスタンス。 このファクトリはイベントを公開する、`GameLayer`を処理できます。 
+次に設定する必要があります、`Bullet`一覧。 ロジックを作成する場合は、`Bullet`で含める必要があります、 `Ship` 、エンティティが、`GameLayer`は箇条書きのリストを格納する責任を負います。 ファクトリ パターンは使用できるようにしました、`Ship`を作成するエンティティ`Bullet`インスタンス。 このファクトリはイベントを公開する、`GameLayer`を処理できます。 
 
-これを行うにまず追加のフォルダーと呼ばれるプロジェクトに**ファクトリ**という新しいクラスを追加および`BulletFactory`:
+これを行うに最初に追加しますフォルダーと呼ばれるプロジェクト**ファクトリ**という新しいクラスを追加し`BulletFactory`:
 
-![](entities-images/image6.png "ファクトリと呼ばれるプロジェクトにフォルダーを追加し、BulletFactory という新しいクラスを追加")
+![](entities-images/image6.png "ファクトリをという名前のプロジェクトにフォルダーを追加し、BulletFactory という新しいクラスを追加")
 
 次に、実装、`BulletFactory`シングルトン クラス。
 
 
 ```csharp
-using System;
+using System;
 
-namespace EntityProject
+namespace EntityProject
 {
-    public class BulletFactory
-    {
-        static Lazy<BulletFactory> self = 
-            new Lazy<BulletFactory>(()=>new BulletFactory());
+    public class BulletFactory
+    {
+        static Lazy<BulletFactory> self = 
+            new Lazy<BulletFactory>(()=>new BulletFactory());
 
-        // simple singleton implementation
-        public static BulletFactory Self
-        {
-            get
-            {
-                return self.Value;
-            }
-        }
+        // simple singleton implementation
+        public static BulletFactory Self
+        {
+            get
+            {
+                return self.Value;
+            }
+        }
 
-        public event Action<Bullet> BulletCreated;
+        public event Action<Bullet> BulletCreated;
 
-        private BulletFactory()
-        {
+        private BulletFactory()
+        {
 
-        }
+        }
 
-        public Bullet CreateNew()
-        {
-            Bullet newBullet = new Bullet ();
+        public Bullet CreateNew()
+        {
+            Bullet newBullet = new Bullet ();
 
-            if (BulletCreated != null)
-            {
-                BulletCreated (newBullet);
-            }
+            if (BulletCreated != null)
+            {
+                BulletCreated (newBullet);
+            }
 
-            return newBullet;
-        }
-    }
+            return newBullet;
+        }
+    }
 } 
 ```
 
-`Ship`エンティティを作成する処理`Bullet`インスタンス – 具体的には、処理する頻度`Bullet`(つまり、どのくらいの頻度の項目が発生した)、インスタンスを作成する必要があります、それらの位置と、速度。
+`Ship`エンティティの作成を処理する`Bullet`のインスタンス、具体的には、処理する頻度`Bullet`(つまりどのくらいの頻度、箇条書きが起動される) インスタンスを作成する必要があります、それらの位置とその速度。
 
-変更、`Ship`新しいを追加するエンティティのコンス トラクター`Schedule`を呼び出すには、次のようにこのメソッドを実装します。
+変更、`Ship`新しいを追加するエンティティのコンス トラクター`Schedule`を呼び出すし、次のようにこのメソッドを実装します。
 
 
 ```csharp
 ...
-public Ship () : base()
+public Ship () : base()
 {
-    sprite = new CCSprite ("ship.png");
-    // Center the Sprite in this entity to simplify
-    // centering the Ship on screen
-    sprite.AnchorPoint = CCPoint.AnchorMiddle;
-    this.AddChild(sprite);
+    sprite = new CCSprite ("ship.png");
+    // Center the Sprite in this entity to simplify
+    // centering the Ship on screen
+    sprite.AnchorPoint = CCPoint.AnchorMiddle;
+    this.AddChild(sprite);
 
-    touchListener = new CCEventListenerTouchAllAtOnce();
-    touchListener.OnTouchesMoved = HandleInput;
-    AddEventListener(touchListener, this);
+    touchListener = new CCEventListenerTouchAllAtOnce();
+    touchListener.OnTouchesMoved = HandleInput;
+    AddEventListener(touchListener, this);
 
-    Schedule (FireBullet, interval: 0.5f);
+    Schedule (FireBullet, interval: 0.5f);
 
 }
 
-void FireBullet(float unusedValue)
+void FireBullet(float unusedValue)
 {
-    Bullet newBullet = BulletFactory.Self.CreateNew ();
-    newBullet.Position = this.Position;
-    newBullet.VelocityY = 100;
+    Bullet newBullet = BulletFactory.Self.CreateNew ();
+    newBullet.Position = this.Position;
+    newBullet.VelocityY = 100;
 } 
 ...
 ```
 
-最後に、新規の作成を処理する`Bullet`のインスタンスにある、`GameLayer`コード。 イベント ハンドラーを追加、`BulletCreated`新しく作成された追加イベント`Bullet`適切なリストに。
+最後の手順は、新規の作成を処理するためには`Bullet`インスタンス、`GameLayer`コード。 イベント ハンドラーを追加、 `BulletCreated` 、新しく作成された追加イベント`Bullet`に適切なリスト。
 
 
 ```csharp
 ...
-public GameLayer ()
+public GameLayer ()
 {
-    ship = new Ship ();
-    ship.PositionX = 240;
-    ship.PositionY = 50;
-    this.AddChild (ship);
+    ship = new Ship ();
+    ship.PositionX = 240;
+    ship.PositionY = 50;
+    this.AddChild (ship);
 
-    bullets = new List<Bullet> ();
-    BulletFactory.Self.BulletCreated += HandleBulletCreated;
+    bullets = new List<Bullet> ();
+    BulletFactory.Self.BulletCreated += HandleBulletCreated;
 }
 
-void HandleBulletCreated(Bullet newBullet)
+void HandleBulletCreated(Bullet newBullet)
 {
-    AddChild (newBullet);
-    bullets.Add (newBullet);
+    AddChild (newBullet);
+    bullets.Add (newBullet);
 }
 ... 
 ```
 
-これで、ゲームを実行して、参照してください、`Ship`撮影`Bullet`インスタンス。
+これで、ゲームを実行して参照してください、`Ship`撮影`Bullet`インスタンス。
 
-![](entities-images/image1.png "ゲームを実行し、出荷が行頭文字インスタンスを撮影します。")
+![](entities-images/image1.png "ゲームを実行し、出荷を撮影は箇条書きのインスタンス")
 
 
-## <a name="why-gamelayer-has-ship-and-bullets-members"></a>GameLayer が出荷および箇条書きのメンバーを持つ理由
+## <a name="why-gamelayer-has-ship-and-bullets-members"></a>GameLayer の出荷と箇条書きのメンバーがなぜ
 
-`GameLayer`クラスは、エンティティ インスタンスへの参照を保持するために 2 つのフィールドを定義 (`ship`と`bullets`)、それらに何も行いません。 さらに、エンティティは、移動やトラブルシューティングなど、独自の動作を担当します。 したがって理由でした追加`ship`と`bullets`フィールドを`GameLayer`しますか?
+`GameLayer`クラスは、エンティティ インスタンスへの参照を保持するために 2 つのフィールドを定義します (`ship`と`bullets`)、それらに何も行いません。 さらに、エンティティは、移動、シュートなど、独自の動作を担当します。 その理由が追加`ship`と`bullets`フィールドを`GameLayer`でしょうか。
 
-これらのメンバーを追加したためです完全ゲームの実装のロジックが必要になります、`GameLayer`別のエンティティ間の対話にします。 たとえば、プレーヤーで破壊することができます敵を含めるこのゲームをさらに開発可能性があります。 これら敵に含まれている、`List`で、 `GameLayer`、およびロジックをテストするかどうか`Bullet`と競合するインスタンス敵はで実行されます、`GameLayer`もします。 言い換えると、`GameLayer`ルート*所有者*すべてのエンティティのインスタンス、およびそれがエンティティ インスタンス間の相互作用を担当します。
+これらのメンバーを追加しました理由は、完全なゲームの実装のロジックが必要になります、`GameLayer`さまざまなエンティティ間の対話します。 たとえば、プレーヤーは破棄敵を含めるこのゲームをさらに開発可能性があります。 これらの敵に格納されて、`List`で、`GameLayer`とロジックをテストするかどうか`Bullet`と衝突するインスタンスで実行される、敵、`GameLayer`も。 つまり、`GameLayer`ルート*所有者*すべてのエンティティのインスタンス、およびその担当エンティティ インスタンス間の相互作用します。
 
 
 ## <a name="bullet-destruction-considerations"></a>箇条書きの破棄に関する考慮事項
 
-ゲームには、コードの破棄を現在がない`Bullet`インスタンス。 各`Bullet`インスタンスには、画面上を移動するためのロジックが、いずれかの画面の範囲外に破棄するためのコードを追加していません`Bullet`インスタンス。
+ゲームを破棄するためのコードを現在がない`Bullet`インスタンス。 各`Bullet`インスタンスが画面を移動するためのロジックが、いずれかを画面外に破棄するためのコードを追加していない`Bullet`インスタンス。
 
-さらに、破棄`Bullet`インスタンス可能性がありますに属していない`GameLayer`です。 画面外となるときに、破棄されるのではなく、たとえば、`Bullet`エンティティ自体を一定の時間後に破棄するためのロジックがあります。 ここで、`Bullet`を破棄する必要がありますを通信する方法が必要、 `GameLayer`、よく似て、`Ship`に伝達されるエンティティ、`GameLayer`を新しい`Bullet`で作成された、`BulletFactory`です。
+さらに、破棄`Bullet`でインスタンスが属していない可能性があります`GameLayer`します。 外となるときに、破棄されるのではなく、たとえば、`Bullet`エンティティ自体を一定の時間後に破棄するためのロジックがあります。 ここで、`Bullet`を破棄する必要がありますと通信する手段が必要、`GameLayer`同様、`Ship`にエンティティが伝達、`GameLayer`を新しい`Bullet`使用して作成された、`BulletFactory`します。
 
-最も簡単なソリューションでは、破棄をサポートするためにファクトリ クラスの役割を展開します。 破棄されているエンティティのインスタンスなど、他のオブジェクトを処理するの工場出荷時の通知を受け取ることができ、`GameLayer`その一覧からエンティティのインスタンスを削除します。 
+最も単純なソリューションでは、破棄をサポートするために、ファクトリ クラスの役割を展開します。 などの他のオブジェクトで処理できますが、破棄されているエンティティ インスタンスの工場出荷時の通知を受け取ることができ、`GameLayer`その一覧からエンティティのインスタンスを削除します。 
 
 ## <a name="summary"></a>まとめ
 
-このガイドを継承して CocosSharp エンティティを作成する方法を示しています、`CCNode`クラスです。 これらのエンティティは、自己完結型のオブジェクトの独自のビジュアルとカスタム ロジックの作成を処理します。 このガイドでは、ルート エンティティ コンテナー (衝突およびその他のエンティティの相互作用ロジック) に属しているコードからエンティティ (移動し、その他のエンティティの作成) の内部が所属するコードを指定します。
+このガイドから継承することで CocosSharp のエンティティを作成する方法を示します、`CCNode`クラス。 これらのエンティティは、自己完結型のオブジェクトの独自のカスタム ロジックとビジュアルの作成を処理します。 このガイドでは、ルート エンティティ コンテナー (衝突とその他のエンティティの相互作用ロジック) に属しているコードからコード内でのエンティティ (移動と、その他のエンティティの作成) が属しているを指定します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [CocosSharp API ドキュメント](https://developer.xamarin.com/api/namespace/CocosSharp/)
-- [Zip コンテンツ](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)
+- [コンテンツの zip](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)

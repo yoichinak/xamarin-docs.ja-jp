@@ -1,19 +1,19 @@
 ---
 title: IOS ライブラリのバインド
-description: このドキュメントでは、c# へのバインド Objective C コードでは、Xamarin.iOS アプリケーションでネイティブ ライブラリと CocoaPods を使用することを作成する方法について説明します。
+description: このドキュメントを作成する方法を説明しますC#Xamarin.iOS アプリケーションでネイティブ ライブラリと CocoaPods を使用すること、OBJECTIVE-C コードへのバインド。
 ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 75c8f9a2eea080c3da031366b314d94929080811
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: e599d4f99877e24e06de2c26ed2cafe48526f6f5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855222"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122999"
 ---
 # <a name="binding-ios-libraries"></a>IOS ライブラリのバインド
 

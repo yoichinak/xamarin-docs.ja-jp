@@ -4,29 +4,29 @@ description: この記事では、テキスト文字列を使用して、スケ�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: f3c06198ae9e677c667c9216b3ace8784a6056b2
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 5e059cc6ef3a127ae79bd2ed97ade7a8045958f1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615328"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116174"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp の SVG パス データ
 
 _スケーラブル ベクター グラフィックス形式でテキスト文字列を使用してパスを定義します。_
 
-`SKPath`クラスは、スケーラブル ベクター グラフィックス (SVG) 仕様で確立されている形式でテキスト文字列からパス全体のオブジェクトの定義をサポートしています。 文字列のようなパス全体を表現するこの記事の後半で表示されます。
+[ `SKPath` ](xref:SkiaSharp.SKPath)クラスは、スケーラブル ベクター グラフィックス (SVG) 仕様で確立されている形式でテキスト文字列からパス全体のオブジェクトの定義をサポートしています。 文字列のようなパス全体を表現するこの記事の後半で表示されます。
 
 ![](path-data-images/pathdatasample.png "SVG パス データで定義されているパスのサンプル")
 
 SVG では、プログラミング言語の web ページを XML ベースのグラフィックです。 SVG では、一連の関数呼び出しではなく、マークアップで定義するパスを許可する必要があります、ために、標準の SVG には、全体のグラフィックス パスを指定するテキスト文字列としての非常に簡潔な方法が含まれています。
 
-SkiaSharp、内でこの形式は、データと呼ば"SVG パス -" 形式は Windows XAML ベースのプログラミング環境、Windows Presentation Foundation などと呼ばれますが、ユニバーサル Windows プラットフォームでサポートされても、[パス マークアップ構文](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx)または[移動描画コマンドの構文と](/windows/uwp/xaml-platform/move-draw-commands-syntax/)します。 これは、はベクター グラフィックス イメージ、XML などのテキスト ベースのファイルで特にの交換形式としても使用できます。
+SkiaSharp、内でこの形式は、データと呼ば"SVG パス -" 形式は Windows XAML ベースのプログラミング環境、Windows Presentation Foundation などと呼ばれますが、ユニバーサル Windows プラットフォームでサポートされても、[パス マークアップ構文](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax)または[移動描画コマンドの構文と](/windows/uwp/xaml-platform/move-draw-commands-syntax/)します。 これは、はベクター グラフィックス イメージ、XML などのテキスト ベースのファイルで特にの交換形式としても使用できます。
 
-SkiaSharp 言葉で 2 つのメソッドを定義する`SvgPathData`名前にします。
+[ `SKPath` ](xref:SkiaSharp.SKPath)クラスは、言葉で 2 つのメソッドを定義します。 `SvgPathData` 、名前にします。
 
 ```csharp
 public static SKPath ParseSvgPathData(string svgPath)
@@ -34,17 +34,17 @@ public static SKPath ParseSvgPathData(string svgPath)
 public string ToSvgPathData()
 ```
 
-静的な[ `ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/)メソッドへの文字列に変換、`SKPath`オブジェクト、中に[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/)変換、`SKPath`オブジェクトを文字列。
+静的な[ `ParseSvgPathData` ](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String))メソッドへの文字列に変換、`SKPath`オブジェクト、中に[ `ToSvgPathData` ](xref:SkiaSharp.SKPath.ToSvgPathData)変換、`SKPath`オブジェクトを文字列。
 
 ポイントを中心 (0, 0) を radius で 100 の 5 ポイントの星の SVG 文字列を次に示します。
 
-```csharp
+```
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
 ```
 
-文字はビルド コマンド、`SKPath`オブジェクト。 `M` 示します、`MoveTo`を呼び出すと、`L`は`LineTo`、および`Z`は`Close`輪郭を閉じます。 各番号のペアは、点の X と Y 座標を提供します。 注意、`L`コマンドにはコンマで区切られた複数のポイントが続きます。 一連の座標とポイント、コンマと空白で同一に扱われます。 いくつかのプログラマは、点の間ではなく、X および Y 座標の間にコンマが挿入するが、コンマまたは空白のみのあいまいさを回避するために必要です。 これは、機能は、完全に有効です。
+文字はビルド コマンド、`SKPath`オブジェクト:`M`を示します、`MoveTo`を呼び出すと、`L`は`LineTo`、および`Z`は`Close`輪郭を閉じます。 各番号のペアは、点の X と Y 座標を提供します。 注意、`L`コマンドにはコンマで区切られた複数のポイントが続きます。 一連の座標とポイント、コンマと空白で同一に扱われます。 いくつかのプログラマは、点の間ではなく、X および Y 座標の間にコンマが挿入するが、コンマまたは空白のみのあいまいさを回避するために必要です。 これは、機能は、完全に有効です。
 
-```csharp
+```
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
 ```
 
@@ -52,7 +52,7 @@ SVG パス データの構文が正式に記載されている[SVG 仕様のセ�
 
 ## <a name="moveto"></a>**MoveTo**
 
-```csharp
+```
 M x y
 ```
 
@@ -60,7 +60,7 @@ M x y
 
 ## <a name="lineto"></a>**LineTo**
 
-```csharp
+```
 L x y ...
 ```
 
@@ -68,7 +68,7 @@ L x y ...
 
 ## <a name="horizontal-lineto"></a>**水平 LineTo**
 
-```csharp
+```
 H x ...
 ```
 
@@ -76,7 +76,7 @@ H x ...
 
 ## <a name="vertical-line"></a>**垂直線**
 
-```csharp
+```
 V y ...
 ```
 
@@ -84,7 +84,7 @@ V y ...
 
 ## <a name="close"></a>**閉じる**
 
-```csharp
+```
 Z
 ```
 
@@ -94,7 +94,7 @@ Z
 
 楕円の円弧を曲線に追加するコマンドは、全体の SVG パス データ仕様で最も複雑なコマンドでは圧倒的です。 数値できますを表すが座標の値以外のものだけで、コマンドは。
 
-```csharp
+```
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
@@ -108,7 +108,7 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 
 ## <a name="cubicto"></a>**CubicTo**
 
-```csharp
+```
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
@@ -118,7 +118,7 @@ C x1 y1 x2 y2 x3 y3 ...
 
 "Smooth"ベジエ曲線コマンドです。
 
-```csharp
+```
 S x2 y2 x3 y3 ...
 ```
 
@@ -126,7 +126,7 @@ S x2 y2 x3 y3 ...
 
 ## <a name="quadto"></a>**QuadTo**
 
-```csharp
+```
 Q x1 y1 x2 y2 ...
 ```
 
@@ -134,7 +134,7 @@ Q x1 y1 x2 y2 ...
 
 滑らかな二次曲線コマンドです。
 
-```csharp
+```
 T x2 y2 ...
 ```
 
@@ -144,9 +144,9 @@ T x2 y2 ...
 
 これは、SVG パス データの定義の範囲です。 コマンドのグループを繰り返し、または任意の種類の計算を実行するための機能はありません。 コマンドを使用して`ConicTo`または他の種類の円弧の仕様は利用できません。
 
-静的な[ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/)メソッドは、SVG コマンドの有効な文字列を受け取ります。 構文エラーが検出されたかどうか、メソッドを返します`null`します。 これは、エラーのみを示す値です。
+静的な[ `SKPath.ParseSvgPathData` ](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String))メソッドは、SVG コマンドの有効な文字列を受け取ります。 構文エラーが検出されたかどうか、メソッドを返します`null`します。 これは、エラーのみを示す値です。
 
-[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/)メソッドは、既存の SVG パス データを取得するための便利な`SKPath`別のプログラムに転送するか、XML などのテキスト ベースのファイル形式で格納するオブジェクト。 (、`ToSvgPathData`メソッドは、この記事のサンプル コードでは実践しません)。*いない*期待`ToSvgPathData`パスを作成したメソッドの呼び出しに正確に対応する文字列を返します。 円弧が複数に変換される具体的には、気付く`QuadTo`コマンドから返されるパス データの表示です`ToSvgPathData`。
+[ `ToSvgPathData` ](xref:SkiaSharp.SKPath.ToSvgPathData)メソッドは、既存の SVG パス データを取得するための便利な`SKPath`別のプログラムに転送するか、XML などのテキスト ベースのファイル形式で格納するオブジェクト。 (、`ToSvgPathData`メソッドは、この記事のサンプル コードでは実践しません)。*いない*期待`ToSvgPathData`パスを作成したメソッドの呼び出しに正確に対応する文字列を返します。 円弧が複数に変換される具体的には、気付く`QuadTo`コマンドから返されるパス データの表示です`ToSvgPathData`。
 
 **パス データこんにちは**ページ魔法の単語を"HELLO"SVG パス データを使用します。 両方の`SKPath`と`SKPaint`オブジェクトがフィールドとして定義されている、 [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs)クラス。
 
@@ -330,7 +330,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-時間と分の手はようになりましたこと、手を互いに異なるために、領域を囲むが、黒い輪郭と塗りつぶしの灰色を使用しての両方で描画されます、`handStrokePaint`と`handFillPaint`オブジェクト。
+これで時間と分の手は領域を囲むが。 これらの手を互いから個別にするために、黒のアウトラインと塗りつぶしの灰色を使用しての両方で描画されます、`handStrokePaint`と`handFillPaint`オブジェクト。
 
 前に示した**づらいアナログ時計**サンプルでは、小さな円、時間をマークして、分は、ループ内で描画されました。 この**アナログ時計かなり**サンプルでは、まったく異なるアプローチを使用: 時間と分のマークが点線で描画された、`minuteMarkPaint`と`hourMarkPaint`オブジェクト。
 
@@ -359,7 +359,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[**ドットし、ダッシュ**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)ガイドを使用する方法を説明した、`SKPathEffect.CreateDash`破線を作成します。 最初の引数は、`float`を一般に 2 つの要素を持つ配列: 最初の要素は、ダッシュの長さと 2 番目の要素はダッシュの間隔。 ときに、`StrokeCap`プロパティに設定されて`SKStrokeCap.Round`、丸められた、破線の端がダッシュ ボードの両方の側でストロークの幅を効果的にダッシュの長さを長くします。 したがって、配列の最初の要素を 0 に設定は、点線を作成します。
+[**ドットし、ダッシュ**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)記事では、使用する方法について説明、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)破線を作成します。 最初の引数は、`float`を一般に 2 つの要素を持つ配列: 最初の要素は、ダッシュの長さと 2 番目の要素はダッシュの間隔。 ときに、`StrokeCap`プロパティに設定されて`SKStrokeCap.Round`、丸められた、破線の端がダッシュ ボードの両方の側でストロークの幅を効果的にダッシュの長さを長くします。 したがって、配列の最初の要素を 0 に設定は、点線を作成します。
 
 これらのドットの間の距離は、2 番目の配列の要素によって制御されます。 後ほど、これら 2 つと`SKPaint`オブジェクトは、90 単位の半径の円を描画するために使用します。 この円の円周は 180π、つまり 60 分のマークが 3 π 単位ごとに表示する必要があります、これは、2 番目の値で、`float`配列`minuteMarkPaint`します。 12 時間マークは 15π 単位ごとを表示する必要があります、2 番目の値は`float`配列。
 
@@ -430,5 +430,5 @@ public class PrettyAnalogClockPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,478 +1,509 @@
 ---
-title: デザイナーの基本
-description: このトピックは、デザイナーの機能が導入されています、デザイナーを起動する方法について説明します、デザイン画面をについて説明します、およびプロパティ ペインを使用して、ウィジェットのプロパティを編集する方法について詳しく説明をします。
+title: Xamarin.Android Designer の基本
+description: このトピックでは、Xamarin.Android デザイナーの機能が導入されています、デザイナーを起動する方法について説明します、デザイン画面について説明します、およびプロパティ ペインを使用して、ウィジェットのプロパティを編集する方法について詳しく説明をします。
 ms.prod: xamarin
 ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: a8201301fc0437ecb79a81f40e865f14dc6af020
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+author: conceptdev
+ms.author: crdun
+ms.date: 09/05/2018
+ms.openlocfilehash: fe909d72f3c6d6733318b5dcbd1858a1a9e28b37
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798812"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108198"
 ---
-# <a name="designer-basics"></a>デザイナーの基本
+# <a name="xamarinandroid-designer-basics"></a>Xamarin.Android Designer の基本
 
-_このトピックは、デザイナーの機能が導入されています、デザイナーを起動する方法について説明します、デザイン画面をについて説明します、およびプロパティ ペインを使用して、ウィジェットのプロパティを編集する方法について詳しく説明をします。_
+_このトピックでは、Xamarin.Android デザイナーの機能が導入されています、デザイナーを起動する方法について説明します、デザイン画面について説明します、およびプロパティ ペインを使用して、ウィジェットのプロパティを編集する方法について詳しく説明をします。_
 
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="launching-the-designer"></a>デザイナーを起動します。
 
-デザイナーがレイアウトを作成すると、または既存の .axml ファイルをダブルクリックして起動できるときに自動的に起動します。 たとえば、ダブルクリックすると**Main.axml**で、**リソース > レイアウト**フォルダーは、次のように、デザイナーに読み込まれます。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+レイアウトを作成すると、または既存のレイアウト ファイルをダブルクリックして起動できるときに、デザイナーが自動的に起動します。 たとえばをダブルクリックすると**activity_main.axml**で、**リソース > レイアウト**フォルダーは、このスクリーン ショットで、デザイナーに読み込まれます。
 
 [![Visual Studio でのデザイナー画面](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+同様を右クリックして新しいレイアウトを追加することができます、**レイアウト**フォルダーで、**ソリューション エクスプ ローラー**選択**追加 > 新しい項目... > Android レイアウト**:
 
-[![Mac 用の Visual Studio でのデザイナー画面](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
+[![新しい項目の追加ダイアログ](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
------
-
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-同様を右クリックして新しいレイアウトを追加することができます、**レイアウト**内のフォルダー、**ソリューション エクスプ ローラー**を選択して**追加 > 新しい項目 > Android レイアウト**:
-
-[![新しい項目 ダイアログ ボックスを追加します。](designer-basics-images/vs/02-add-new-layout-sml.w157.png)](designer-basics-images/vs/02-add-new-layout.w157.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-同様を右クリックして新しいレイアウトを追加することができます、**レイアウト**内のフォルダー、**ソリューション パッド**を選択して**追加 > 新しいファイル > Android > レイアウト**:
-
-[![新しいファイル ダイアログ ボックスを追加します。](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
-
------
-
-これにより、新しい .axml ファイルを作成し、デザイン サーフェイスに読み込みます。
-
-
+これを作成、新しい **.axml**レイアウト ファイル、デザイナーに読み込みます。
 
 ## <a name="designer-features"></a>デザイナーの機能
 
-デザイナーでは、次のスクリーン ショットに示すように、いくつかのセクションでは、さまざまな機能をサポートするので構成されます。
+デザイナーは、次のスクリーン ショットに示すようにいくつかのセクションでは、さまざまな機能をサポートするので構成されます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[![デザイナーのペインのダイアグラム](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
-[![デザイナー ウィンドウの図](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
+デザイナーでレイアウトを編集するときに、設計の図形を作成し、次の機能を使用します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+-   **デザイン画面**&ndash;デバイスでのレイアウトの表示方法の編集可能な表現を提供することで、ユーザー インターフェイスのビジュアルの構築を容易にします。 **デザイン サーフェイス**内に表示される、**デザイン ペイン**(で、**デザイナーのツールバー**上に配置されている)。
 
-[![デザイナー ウィンドウの図](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
+-   **ソース ウィンドウ**&ndash;に表示されるデザインに対応する基になる XML ソースのビューを提供、**デザイン サーフェイス**します。
 
------
+-   **デザイナーのツールバーで**&ndash;セレクターの一覧を表示します:**デバイス**、**バージョン**、**テーマ**レイアウトの構成、およびアクション バーの設定。 **デザイナーのツールバー**もテーマ エディターを起動して、素材のデザイン グリッドを有効にするためのアイコンが含まれます。
 
-デザイナーのレイアウトを編集するときに、次の機能を使用する、設計の図形を作成しています。
+-   **ツールボックス**&ndash;ウィジェットとレイアウトをドラッグ アンド ドロップすることができますの一覧を示します、**デザイン サーフェイス**します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+-   **[プロパティ] ウィンドウ**&ndash;表示および編集用に選択されたウィジェットのプロパティを一覧表示されます。
 
--   **デザイン画面**&ndash;のデバイスでレイアウトがどのように表示されるか、編集可能な表現を提供することで、視覚的に、ユーザー インターフェイスの作成を容易になります。
-
--   **ツールバー** &ndash;セレクターの一覧を表示:**デバイス**、**バージョン**、**テーマ**レイアウトの構成、およびアクションのバーの設定。 ツールバーには、テーマ エディターを起動するため、マテリアル デザイン グリッドを有効にするためのアイコンも含まれています。
-
--   **ツールボックス**&ndash;ウィジェットとドラッグしてデザイン サーフェイスにドロップしたレイアウトの一覧を示します。
-
--   **[プロパティ] ウィンドウ**&ndash;選択したウィジェットの表示および編集するためのプロパティを一覧表示します。
-
--   **ドキュメント アウトライン**&ndash;レイアウトを作成できるウィジェットのツリーが表示されます。 発生し、デザイナーで選択するツリー内の項目をクリックすることができます。 また、ツリー内の項目をクリックすると、[プロパティ] ウィンドウに、項目のプロパティを読み込みます。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
--   **デザイン画面**&ndash;のデバイスでレイアウトがどのように表示されるか、編集可能な表現を提供することで、視覚的に、ユーザー インターフェイスの作成を容易になります。
-
--   **ツールバー** &ndash;セレクターの一覧を表示:**デバイス**、**バージョン**、**テーマ**レイアウトの構成、およびアクションのバーの設定。 ツールバーには、テーマ エディターを起動するため、マテリアル デザイン グリッドを有効にするためのアイコンも含まれています。
-
--   **ツールボックス**&ndash;ウィジェットとドラッグしてデザイン サーフェイスにドロップしたレイアウトの一覧を示します。
-
--   **プロパティのパッド**&ndash;選択したウィジェットの表示および編集するためのプロパティを一覧表示します。
-
--   **ドキュメント アウトライン**&ndash;レイアウトを作成できるウィジェットのツリーが表示されます。 発生し、デザイナーで選択するツリー内の項目をクリックすることができます。 また、ツリー内の項目をクリックすると、プロパティ パッドにアイテムのプロパティを読み込みます。
-
------
-
-
-
-## <a name="toolbar"></a>ツール バー
-
-ツールバー (デザイン サーフェイス上に配置) は、構成のセレクターとツールのメニューが表示されます。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![デザイナーのツールバーのダイアグラム](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![デザイナーのツールバーのダイアグラム](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
-
------
-
-
-ツールバーには、次の機能にアクセスします。
-
--   **代替のレイアウト セレクター** &ndash;別のレイアウトのバージョンからを選択することができます。
-
--   **デバイスのセレクター** &ndash;画面のサイズ、解像度、およびキーボード可用性などの特定のデバイスに関連付けられている修飾子のセットを定義します。 追加し、新しいデバイスを削除することもできます。
-
--   **Android バージョン セレクター** &ndash;レイアウトが対象とする、Android のバージョン。 デザイナーは、選択されている Android バージョンに従ってレイアウトで表示されます。
-
--   **テーマのセレクター** &ndash;レイアウトの UI のテーマを選択します。
-
--   **構成セレクター** &ndash;など、デバイスの構成の選択*縦*または*ランドス ケープ*です。
-
--   **リソース修飾子のオプション**&ndash;を選択するためのドロップダウン メニューに表示するダイアログ ボックスを開きます*言語*、 *UI モード*、*夜モード*、および*Round 画面*オプション。
-
--   **操作バーの設定**&ndash;レイアウトの操作バーの設定を構成します。
-
--   **テーマ エディター** &ndash;開きます、*テーマ エディター*、選択したテーマの要素をカスタマイズするためにできるようになります。
-
--   **材料デザイン グリッド**&ndash;を有効または無効になります、*マテリアル デザイン グリッド*です。 マテリアルのデザイン グリッドに隣接するドロップダウン メニュー項目は、グリッドをカスタマイズすることができますのダイアログを開きます。
-
-これらのトピックで詳しくは、これらの各機能について説明します。
-
-[リソース修飾子と視覚エフェクト オプション](~/android/user-interface/android-designer/resource-qualifiers.md)に関する詳細な情報を提供、**デバイス セレクター**、 **Android バージョン セレクター**、**テーマ セレクター**、**構成セレクター**、**リソース資格オプション**、および**操作バー設定**です。
-
-[レイアウト ビューの代替](~/android/user-interface/android-designer/alternative-layout-views.md)を使用する方法について説明します、**代替レイアウト セレクター**です。
-
-[素材のデザイン機能](~/android/user-interface/android-designer/material-design-features.md)の包括的な概要を説明、**テーマ エディター**と**マテリアル デザイン グリッド**です。
-
-
+-   **ドキュメント アウトライン**&ndash;レイアウトを構成するためのウィジェットのツリーを表示します。 ツリーで選択することでアイテムをクリックすることができます、**デザイン サーフェイス**します。 またにアイテムのプロパティを読み込みます、ツリー内の項目をクリックすると、**プロパティ**ウィンドウ。
 
 ## <a name="design-surface"></a>デザイン サーフェイス
 
-デザイナーをドラッグし、ウィジェットをツールボックスからデザイン サーフェイスにドロップできます。 デザイナーでのウィジェットと対話するには (新しいウィジェットを追加するか、既存の位置の変更) して、使用可能な挿入ポイントをマークする垂直線と水平線が表示されます。 次の例では、新しい`Button`ウィジェットがデザイン画面にドラッグされています。
+デザイナーにより、ドラッグ アンド ドロップのウィジェットには、ツールボックスに、**デザイン サーフェイス**します。 (新しいウィジェットを追加するか、既存の位置を変更) をデザイナーでウィジェットを操作する際は、使用可能な挿入ポイントをマークする垂直および水平の線が表示されます。 次の例では、新しい`Button`ウィジェットにドラッグしている、**デザイン サーフェイス**:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[![デザイン サーフェイス上の挿入行の例](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
-[![デザイン サーフェイス上のカーソル行の例](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
+さらに、ウィジェットをコピーすることができます。 コピーを使用すると、ウィジェットをコピー、貼り付けをドラッグ アンド ドロップのキーを押しながら、既存のウィジェット、 <kbd>CTRL</kbd>キー。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+### <a name="designer-toolbar"></a>デザイナーのツールバー
 
-[![デザイン サーフェイス上のカーソル行の例](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
+**デザイナーのツールバー** (の上に配置、**デザイン サーフェイス**) 構成セレクターとツールのメニューを表示します。
 
------
+[![デザイナーのツールバーのダイアグラム](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
-ウィジェットをさらに、コピーすることができます。 コピーを使用すると、ウィジェットをコピー、貼り付けをドラッグ アンド ドロップのキーを押しているときに既存のウィジェット、 <kbd>Ctrl</kbd>キー。
+**デザイナーのツールバー**次の機能へのアクセスを提供します。
 
+-   **代替レイアウト セレクター** &ndash;別のレイアウトのバージョンから選択することができます。
+
+-   **デバイス セレクター** &ndash;特定のデバイスに関連付けられている修飾子 (画面サイズ、解像度、キーボードの可用性など) のセットを定義します。 追加し、新しいデバイスを削除することもできます。
+
+-   **Android バージョン セレクター** &ndash;レイアウトが対象とする Android のバージョン。 デザイナーは、選択した Android バージョンに従ってレイアウトで表示されます。
+
+-   **テーマ セレクター** &ndash;レイアウトの UI テーマを選択します。
+
+-   **構成セレクター** &ndash;などのデバイスの構成を選択した*縦*または*ランドス ケープ*します。
+
+-   **リソース修飾子のオプション**&ndash;を選択するためのドロップダウン メニューを表示するダイアログが開きます*言語*、 *UI モード*、*ナイト モード*と*ラウンド画面*オプション。
+
+-   **アクション バーの設定**&ndash;レイアウトの操作バーの設定を構成します。
+
+-   **テーマ エディター** &ndash;開きます、*テーマ エディター*、選択したテーマの要素をカスタマイズするためにできるようにします。
+
+-   **素材のデザイン グリッド**&ndash;有効または無効に、*マテリアル デザイン グリッド*します。 マテリアル デザイン グリッドに隣接するドロップダウン メニュー項目には、グリッドをカスタマイズすることができるダイアログが開きます。
+
+これらの各機能は、これらのトピックで詳しく説明します。
+
+-   [リソース修飾子と視覚化オプション](~/android/user-interface/android-designer/resource-qualifiers.md)に関する詳細情報を提供します、**デバイス セレクター**、 **Android バージョン セレクター**、**テーマ セレクター**、**構成セレクター**、**リソース資格オプション**、および**アクション バーの設定**します。
+
+-   [代替レイアウト ビュー](~/android/user-interface/android-designer/alternative-layout-views.md)を使用する方法について説明します、**代替レイアウト セレクター**します。
+
+-   [Xamarin.Android デザイナー マテリアル デザイン機能](~/android/user-interface/android-designer/material-design-features.md)の包括的な概要、**テーマ エディター**と**マテリアル デザイン グリッド**します。
 
 ### <a name="context-menu-commands"></a>コンテキスト メニュー コマンド
 
-コンテキスト メニューでは、デザイン サーフェイスと ドキュメント アウトラインの両方があります。 このメニューには、選択されたウィジェットと容易 (にくいものが常に、デザイン サーフェイス上の選択) をコンテナーでの操作を実行するため、コンテナーで利用可能なコマンドが表示されます。 コンテキスト メニューの例を次に示します。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+コンテキスト メニューが表示の両方で、**デザイン サーフェイス**し、**ドキュメント アウトライン**します。 このメニューには、選択したウィジェットとコンテナー、コンテナーに対して操作を実行するための簡単で利用可能なコマンドが表示されます (常に簡単にで選択されていない、**デザイン サーフェイス**)。 コンテキスト メニューの例を次に示します。
 
 [![デザイン サーフェイスを右クリックしたときの例のコンテキスト メニュー](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
-この例では右クリックし、`TextView`いくつかのオプションを提供するコンテキスト メニューを開きます。
+この例で右クリックし、`TextView`いくつかのオプションを提供するショートカット メニューが開きます。
 
--   **LinearLayout** &ndash;を編集するためのサブメニューを開き、`LinearLayout`の親、`TextView`です。
+-   **LinearLayout** &ndash;を編集するためのサブメニューを開き、`LinearLayout`の親、`TextView`します。
 
--   **削除**、**コピー**、および**切り取り** &ndash; 、右クリックしたときに適用される操作`TextView`です。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![デザイン サーフェイスを右クリックしたときの例のコンテキスト メニュー](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
-
-この例では右クリックし、`TextView`いくつかのオプションを提供するコンテキスト メニューを開きます。
-
--   **[相対レイアウト]** &ndash;を編集するためのサブメニューを開き、`RelativeLayout`の親、`TextView`です。
-
--   **LinearLayout** &ndash;を編集するためのサブメニューを開き、`LinearLayout`の親、`TextView`です。
-
--   **削除**、**コピー**、および**切り取り** &ndash; 、右クリックしたときに適用される操作`TextView`です。
-
------
-
-この例では右クリックし、`TextView`いくつかのオプションを提供するコンテキスト メニューを開きます。
-
--   **LinearLayout** &ndash;を編集するためのサブメニューを開き、`LinearLayout`の親、`TextView`です。
-
--   **削除**、**コピー**、および**切り取り** &ndash; 、右クリックしたときに適用される操作`TextView`です。
-
+-   **削除**、**コピー**、および**切り取り** &ndash; 、右クリックしたときに適用される操作`TextView`します。
 
 
 ### <a name="zoom-controls"></a>ズーム コントロール
 
-ように、いくつかのコントロールを使用してズーム、デザイン画面をサポートします。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+**デザイン サーフェイス**に示すように、いくつかのコントロールを使用してズームをサポートしています。
 
 [![デザイン サーフェイスのズーム コントロールの図](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+これらのコントロールを簡単にデザイナーのユーザー インターフェイスの特定の領域を表示します。
 
-[![デザイン サーフェイスのズーム コントロールの図](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
+-   **コンテナーを強調表示**&ndash;でコンテナーを強調表示、**デザイン サーフェイス**拡大および縮小を特定しやすくなります。
 
------
-
-これらのコントロールをやすくデザイナーのユーザー インターフェイスの特定の領域を参照してください。
-
--   **コンテナーを強調表示**&ndash;が拡大および縮小するときに見つけやすくなるように、デザイン画面上のコンテナーを強調表示します。
-
--   **標準サイズ**&ndash;選択したデバイスの解像度でレイアウトがどのように表示されるかを認識できるようにレイアウトのピクセルをレンダリングします。
+-   **標準サイズ**&ndash;レイアウトのピクセルをレンダリングできるように、選択したデバイスの解像度でレイアウトを確認する方法を参照してください。
 
 -   **ウィンドウに合わせる**&ndash;全体のレイアウトがデザイン サーフェイスに表示されるように、ズーム レベルを設定します。
 
--   **ズーム イン**&ndash;ズームインします。 インクリメンタル クリックするたびに、レイアウトを拡大します。
+-   **ズーム イン**&ndash;レイアウトを拡大、たびに増分ズームインします。
 
--   **ズーム アウト**&ndash;増分ズームアウトしてクリックするたびに、デザイン サーフェイスに小さく表示され、レイアウトを作成します。
+-   **ズーム アウト**&ndash;増分ズームアウトするクリックするたびに、デザイン サーフェイスに小さく表示レイアウトを作成します。
 
-選択したズーム設定が実行時にアプリケーションのユーザー インターフェイスに影響を及ぼさないように注意してください。
+選択したズーム設定が実行時にアプリケーションのユーザー インターフェイスに影響しないことに注意してください。
+
+## <a name="switching-between-design-and-source-panes"></a>デザインおよびソース ペインの切り替え
+
+Center ストリップの間に、**デザイン**と**ソース**ペイン、変更に使用されるいくつかのボタンがある方法、**デザイン**と**ソース**ペインが表示されます。
+
+[![ウィンドウの表示 ボタンの場所](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
+
+これらのボタンを以下に示します。
+
+-   **デザイン**&ndash;この最上位のボタン**デザイン**、選択、**デザイン**ウィンドウ。 このボタンがクリックされたときに、**ツールボックス**と**プロパティ**ペインが有効になっていると、**テキスト エディター ツールバー**は表示されません。 ときに、**折りたたみ**(下記参照) をクリックした、**デザイン**せずペインが単独で表示されます、**ソース**ウィンドウ。
+
+-   **ペインの交換** &ndash; (これは、2 つの対立する矢印に似ています) は、このボタンを入れ替えます、**デザイン**と**ソース**ペインように、**ソース**ウィンドウ左と**デザイン**右側のペインが。 これらのウィンドウは、元の場所にバックアップをクリックすると、もう一度スワップします。
+
+-   **ソース** &ndash; (これは、2 つの対立山かっこに似ています) は、このボタンを選択、**ソース**ウィンドウ。 このボタンがクリックされたときに、**ツールボックス**と**プロパティ**ペインが無効になっていると、**テキスト エディター ツールバー** Visual Studio の上部に表示されます。 ときに、**折りたたみ**ボタンをクリックして (以下参照) をクリックすると、**ソース**ボタンが表示されます、**ソース**ペインの代わりに、**デザイン**ウィンドウです。
+
+-   **垂直分割** &ndash; (垂直バーに似ています) がこのボタンを表示する、**デザイン**と**ソース**ウィンドウによって並列です。 これは、既定の並べ替え方法です。
+
+-   **水平分割** &ndash; (水平のバーに似ています) がこのボタンを表示する、**デザイン**ペインの上、**ソース**ウィンドウ。 **ペインの交換**を配置するときにクリックして、**ソース**ペインの上、**デザイン**ウィンドウ。
+
+-   **ウィンドウを折りたたむ** &ndash; (これは、右上向きの 2 つの山かっこに似ています) は、このボタンのデュアル ペインの表示を「解除」**デザイン**と**ソース**のいずれかの 1 つのビューにこれらのウィンドウ。
+    このボタンになります、**ウィンドウの展開**(2 つ山かっこの左向きのような)、ボタン クリックすると、デュアル ウィンドウに戻り、ビューを返すことができます (**デザイン**と**ソース**) モードを表示します。
+
+ときに**ペインを折りたたむ**のみをクリックして、**デザイン**ウィンドウが表示されます。 ただし、クリックして、**ソース**代わりにのみを表示するボタン、**ソース**ウィンドウ。 をクリックして、**デザイン**に戻るにもう一度ボタン、**デザイン**ウィンドウ。
+
+## <a name="source-pane"></a>ソース ウィンドウ
+
+**ソース**ウィンドウに表示されるデザインを基になる XML ソースが表示されます、**デザイン サーフェイス**します。 同時に両方のビューが使用できるため、視覚的デザインと設計の基になる XML ソースの間を行き来して UI デザインを作成することは。
+
+[![[ソース] ウィンドウの例の XML ソース](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
+
+XML ソースに加えられた変更は即時にレンダリング、**デザイン サーフェイス**; に加えられた変更、**デザイン サーフェイス**に表示される、XML ソースが発生する、**ソース**ペインそれに応じて更新されます。 内の XML に変更を加える場合、**ソース**ペイン、オートコンプリートおよび IntelliSense の機能は次に説明したように、XML ベースの UI 開発の速度を使用できます。
+
+長い XML ファイルを使用する場合をナビゲーションより簡単、**ソース**ウィンドウは、(前のスクリーン ショットの右側に表示)、Visual Studio のスクロール バーをサポートしています。 スクロール バーの詳細については、次を参照してください。 [Scrollbar のカスタマイズによるコードの追跡方法](https://msdn.microsoft.com/library/dn237345.aspx)します。
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+### <a name="autocompletion"></a>オートコンプリート
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+ウィジェットの属性の名前を入力を開始するときに押す<kbd>CTRL + SPACE</kbd>候補の一覧を表示します。 入力した後に、たとえば、`android:lay`次の例 (」と入力してその後に<kbd>CTRL キーを押しながら SPACE キー</kbd>)、次の一覧が表示されます。
 
-## <a name="property-pad"></a>プロパティの埋め込み
+[![レイアウト属性のオートコンプリート](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
 
-デザイナーは、ウィジェットのプロパティの編集をサポートしている、**プロパティ パッド**です。 に応じて、ウィジェットがデザイナー画面で選択したプロパティ パッドの変更時に表示されるプロパティです。 ときに、`Button`前の例では、選択すると、そのプロパティ`Button`ウィジェットが表示されます。
+キーを押します<kbd>ENTER</kbd>を最初の一覧表示されている入力候補を受け入れるか、矢印キーを使用して、目的の補完とキーを押してスクロールする<kbd>ENTER</kbd>します。 または、マウスを使用するまでスクロールし、目的の完了 をクリックします。
 
-[![パッドのプロパティのスクリーン ショット](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
+### <a name="intellisense"></a>IntelliSense
 
------
+ウィジェットの新しい属性を入力します。 値の割り当てを開始して、後に、トリガーの文字を入力し、その属性に使用する有効な値の一覧を提供した後 IntelliSense が表示されます。 たとえば後の最初の二重引用符を入力`android:layout_width`次の例では、オートコンプリート セレクターが表示されますこの幅用に有効な選択肢の一覧を提供します。
+
+[![レイアウトの幅の IntelliSense の例](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
+
+このポップアップの下部には、2 つのボタンは (上記のスクリーン ショットで赤で説明されている) と同様です。 クリックすると、**プロジェクト リソース**左のボタンがクリックして、アプリ プロジェクトの一部であるリソースへの一覧を制限、**フレームワーク リソース**右側のボタン、リストを制限します。フレームワークから使用可能なリソースを表示します。
+これらのボタンがオンまたはオフを切り替える: フィルターの操作を無効にするには、もう一度クリックすることがそれぞれ用意されています。
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-## <a name="properties-window"></a>[プロパティ] ウィンドウ
+## <a name="properties-pane"></a>プロパティ ペイン
 
-デザイナーは、ウィジェットのプロパティの編集をサポートしている、**プロパティ ウィンドウ**します。 プロパティ、プロパティ ウィンドウの変更に応じてウィジェットが選択されているデザイン サーフェイスに表示します。
-ときに、`Button`前の例では、選択すると、そのプロパティ`Button`ウィジェットが表示されます。
+デザイナーがウィジェットのプロパティの編集をサポートする、**プロパティ**ウィンドウ。 
 
 ![[プロパティ] ウィンドウのスクリーン ショット](designer-basics-images/vs/08-property-pad.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+表示されるプロパティ、**プロパティ**ウィンドウの変更でウィジェットの選択に応じて、**デザイン サーフェイス**します。
 
-## <a name="property-pad-sections"></a>埋め込みのセクションではプロパティ
+### <a name="default-values"></a>既定の値
 
-プロパティのパッドは同様のプロパティをグループ化するいくつかのセクションに分かれています&ndash;これにより、目的のプロパティを見つけやすく。
+ほとんどのウィジェットのプロパティが空白になって、**プロパティ**ウィンドウの値が選択されている Android のテーマを継承するので。
+**プロパティ**ウィンドウは選択されたウィジェットで明示的に設定されている値のみが表示; テーマから継承された値は表示されません。
 
--   **ウィジェット**&ndash;ウィジェットのメイン プロパティなど`id`、 `visibility`、 `text`, などです。ウィジェットのコンテンツを管理するためのプロパティは通常は、ここに配置されます。
+### <a name="referencing-resources"></a>リソースを参照します。
 
--   **スタイル**&ndash;など、ウィジェットの外観を変更するプロパティ`font`、 `text color`、 `background`, などです。
+一部のプロパティは、レイアウト以外のファイルで定義されているリソースを参照できる **.axml**ファイル。 この型の最も一般的なケースは`string`と`drawable`リソース。 ただし、参照こともでき、その他のリソースのなど`Boolean`値とディメンション。 プロパティは、リソース参照をサポートするプロパティのテキスト入力の横にある [参照] アイコン (正方形) が表示されます。 このボタンがクリックされたときに、リソース セレクターを開きます。
 
--   **レイアウト**&ndash;ウィジェットのサイズと場所を設定するプロパティです。
+テキスト フィールドの右側にある暗くなった四角形をクリックしたときに次のスクリーン ショットが使用可能なオプションを表示するなど、`Text`ウィジェットで、**プロパティ**ウィンドウ。
+
+[![テキストのオプションの一覧の例](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
+
+ときに**リソース.** がクリックされた、**リソースの選択**ダイアログが表示されます。
+
+[![表示されているいくつかのリソースとリソースのスクリーン ショットの例](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
+
+この一覧から、そのウィジェット内のテキストをハードコーディングする代わりに使用するテキスト リソースを選択することができます、**プロパティ**ウィンドウ。 次の例では、リソースのセレクターを示しています、`Src`のプロパティ、 `ImageView`:
+
+[![リソースのセレクター、ImageView のアイコン リソースを一覧表示](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
+
+右側に空の四角形をクリックすると、`Src`プロパティが表示されます、**リソースの選択**ダイアログからまでの範囲の色 (前述のように) ドローアブル リソースの一覧にします。
+
+
+### <a name="boolean-property-references"></a>ブール型プロパティの参照
+
+*ブール*プロパティは通常、[プロパティ] ウィンドウでプロパティの横にあるチェック マークとして選択します。 指定することができます、`true`または`false`をオンまたはオフにするか、このチェック ボックスの値は、プロパティの右側に暗い塗りつぶした四角形をクリックしてプロパティの参照を選択できます。 次の例では、すべて大文字にテキストを変更 をクリックして、**すべて大文字のテキスト**ブール型プロパティの参照を選択した`TextView`:
+
+![ブール型プロパティを設定する例](designer-basics-images/vs/11-boolean.png)
+
+## <a name="editing-properties-inline"></a>インラインのプロパティの編集
+
+Android Designer で特定のプロパティを直接編集をサポートしている、**デザイン サーフェイス**(そのため、プロパティの一覧でこれらのプロパティを検索する必要はありません)。 直接編集できるプロパティには、テキスト、余白、およびサイズが含まれます。
+
+### <a name="text"></a>テキスト
+
+一部のウィジェットのテキストのプロパティ (など`Button`と`TextView`)、上で直接編集することができます、**デザイン サーフェイス**します。 ウィジェットをダブルクリックすると、入れて編集モードでは、次に示すよう。
+
+![こんにちは文字列テキスト リソース](designer-basics-images/vs/12-text-resource.png "テキスト リソース")
+
+新しいテキスト値を入力するか、新しいリソース文字列を入力することができます。 次の例では、`@string/hello`リソースは、テキストで置き換えられる`CLICK THIS BUTTON`:
+
+![Shift キーを押しながら、新しいリソースにテキストを自動的にリンクするには Enter](designer-basics-images/vs/13-shift-enter-resource.png)
+
+この変更は、ウィジェットの`text`プロパティに割り当てられた値は変更されません、`@string/hello`リソース。
+キーを押すことで新しいテキスト文字列を入力すると<kbd>Shift</kbd> +
+<kbd>」と入力</kbd>入力したテキストを新しいリソースを自動的にリンクします。
+
+### <a name="margin"></a>Margin
+
+ウィジェットを選択すると、デザイナーには、サイズまたはウィジェットの余白を対話的に変更するためのハンドルが表示されます。 余白の編集モードとサイズの編集モードの間を切り替えますが選択されているときに、ウィジェットをクリックします。
+
+最初に、ウィジェットをクリックすると、余白ハンドルが表示されます。 ハンドルのいずれかにマウスを移動する場合、デザイナーがハンドルを変更するプロパティを表示します (次に示すように、`layout_marginLeft`プロパティ)。
+
+![デザイナーでの余白を示すスクリーン ショットを処理します。](designer-basics-images/vs/15-margin-handles.png)
+
+余白はすでに設定されている場合、余白を占有する領域を示す点線が表示します。
+
+![ボタンの周囲の空白をマークする点線の例](designer-basics-images/vs/16-margins-set.png)
+
+### <a name="size"></a>サイズ
+
+前述のようは、既に選択されている状態のウィジェットをクリックして、サイズの編集モードを切り替えることができます。 指定された次元のサイズを設定する三角形のハンドルをクリックして`wrap_content`:
+
+![コンテンツをラップし、サイズ変更ハンドル](designer-basics-images/vs/17-wrap-content.png)
+
+クリックすると、**コンテンツのラップ**ハンドルが囲まれたコンテンツをラップするために必要な超えないように、そのディメンション内のウィジェットを縮小します。 この例では、ボタンのテキストが次のスクリーン ショットに示すように、水平方向に縮小されます。
+
+サイズの値を設定すると**コンテンツをラップ**、デザイナーには、逆方向にサイズを変更するを指す三角形のハンドルが表示されます`match_parent`:。
+
+![一致する親ハンドル](designer-basics-images/vs/18-match-parent.png)
+
+クリックすると、**一致親**ハンドルが親ウィジェットと同じことができるように、そのディメンションのサイズを復元します。
+
+また、ドラッグできます循環のサイズ変更ハンドル (上記のスクリーン ショットに示す) に任意にウィジェットのサイズを変更する`dp`値。 これを行うときに両方**コンテンツをラップ**と**一致親**そのディメンションのハンドルが表示されます。
+
+![循環のサイズ変更ハンドル](designer-basics-images/vs/19-resize-dp.png)
+
+すべてのコンテナーでは、編集、`Size`ウィジェットの。 たとえば、下のスクリーン ショットで注意、`LinearLayout`選択すると、サイズ変更ハンドルは表示されません。
+
+![サイズ変更ハンドルのないです。](designer-basics-images/vs/20-no-resize-handles.png)
+
+
+## <a name="document-outline"></a>[ドキュメント アウトライン]
+
+**ドキュメント アウトライン**レイアウトのウィジェット階層を表示します。
+次の例では、格納している`LinearLayout`ウィジェットを選択します。
+
+![ドキュメント アウトラインの例](designer-basics-images/vs/21-document-outline.png)
+
+選択されたウィジェットのアウトライン (ここで、 `LinearLayout`) で強調表示されても、**デザイン サーフェイス**。 ドキュメント アウトラインにある選択されたウィジェットの上の対応する同期まま、**デザイン サーフェイス**します。 これは簡単で選択するとは限らない グループの表示を選択するために役立ちます、**デザイン サーフェイス**します。
+
+**ドキュメント アウトライン**サポート コピーや貼り付け、ドラッグ アンド ドロップできます。 ドラッグ アンド ドロップはサポートされて、**ドキュメント アウトライン**を**デザイン サーフェイス**だけでなく、**デザイン サーフェイス**を**ドキュメント アウトライン**. また、内の項目を右クリックして、**ドキュメント アウトライン**その項目のコンテキスト メニューが表示されます (その同じウィジェットを右クリックしたときに表示される同じコンテキスト メニュー、**デザイン サーフェイス**)。
+
+
+
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+## <a name="launching-the-designer"></a>デザイナーを起動します。
+
+レイアウトを作成すると、または既存の .axml ファイルをダブルクリックして起動できるときに、デザイナーが自動的に起動します。 たとえばをダブルクリックすると**Main.axml**で、**リソース > レイアウト**フォルダーは、次に示すよう、デザイナーに読み込まれます。
+
+[![Visual Studio for Mac でのデザイナー画面](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
+
+同様を右クリックして新しいレイアウトを追加することができます、**レイアウト**フォルダーで、 **Solution Pad**選択**追加 > 新しいファイル > Android > レイアウト**:
+
+[![新しいファイル ダイアログ ボックスを追加します。](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
+
+これにより、新しい .axml ファイルを作成し、デザイン サーフェイスに読み込みます。
+
+## <a name="designer-features"></a>デザイナーの機能
+
+デザイナーは、次のスクリーン ショットに示すようにいくつかのセクションでは、さまざまな機能をサポートするので構成されます。
+
+[![デザイナーのペインのダイアグラム](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
+
+デザイナーでレイアウトを編集するときに、設計の図形を作成し、次の機能を使用します。
+
+-   **デザイン画面**&ndash;デバイスでのレイアウトの表示方法の編集可能な表現を提供することで、ユーザー インターフェイスのビジュアルの構築を容易にします。
+
+-   **ツールバー** &ndash;セレクターの一覧を表示します:**デバイス**、**バージョン**、**テーマ**レイアウトの構成、およびアクション バーの設定。 ツールバーには、テーマ エディターを起動して、素材のデザイン グリッドを有効にするためのアイコンも含まれています。
+
+-   **ツールボックス**&ndash;ウィジェットとドラッグして、デザイン画面にドロップできるレイアウトの一覧を示します。
+
+-   **プロパティ パッド**&ndash;表示および編集用に選択されたウィジェットのプロパティを一覧表示されます。
+
+-   **ドキュメント アウトライン**&ndash;レイアウトを構成するためのウィジェットのツリーを表示します。 デザイナーで選択すること、ツリー内の項目をクリックすることができます。 また、ツリー内の項目をクリックすると、プロパティ パッドにアイテムのプロパティを読み込みます。
+
+## <a name="toolbar"></a>ツール バー
+
+ツールバー (デザイン サーフェイスの上に配置) には、構成セレクターとツールのメニューが表示されます。
+
+[![デザイナーのツールバーのダイアグラム](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
+
+ツールバーは、次の機能へのアクセスを提供します。
+
+-   **代替レイアウト セレクター** &ndash;別のレイアウトのバージョンから選択することができます。
+
+-   **デバイス セレクター** &ndash;画面サイズ、解像度、キーボードの可用性などの特定のデバイスに関連付けられている修飾子のセットを定義します。 追加し、新しいデバイスを削除することもできます。
+
+-   **Android バージョン セレクター** &ndash;レイアウトが対象とする Android のバージョン。 デザイナーは、選択した Android バージョンに従ってレイアウトで表示されます。
+
+-   **テーマ セレクター** &ndash;レイアウトの UI テーマを選択します。
+
+-   **構成セレクター** &ndash;などのデバイスの構成を選択した*縦*または*ランドス ケープ*します。
+
+-   **リソース修飾子のオプション**&ndash;を選択するためのドロップダウン メニューを表示するダイアログが開きます*言語*、 *UI モード*、*ナイト モード*と*ラウンド画面*オプション。
+
+-   **アクション バーの設定**&ndash;レイアウトの操作バーの設定を構成します。
+
+-   **テーマ エディター** &ndash;開きます、*テーマ エディター*、選択したテーマの要素をカスタマイズするためにできるようにします。
+
+-   **素材のデザイン グリッド**&ndash;有効または無効に、*マテリアル デザイン グリッド*します。 マテリアル デザイン グリッドに隣接するドロップダウン メニュー項目には、グリッドをカスタマイズすることができるダイアログが開きます。
+
+これらの各機能は、これらのトピックで詳しく説明します。
+
+[リソース修飾子と視覚化オプション](~/android/user-interface/android-designer/resource-qualifiers.md)に関する詳細情報を提供します、**デバイス セレクター**、 **Android バージョン セレクター**、**テーマ セレクター**、**構成セレクター**、**リソース資格オプション**、および**アクション バーの設定**します。
+
+[代替レイアウト ビュー](~/android/user-interface/android-designer/alternative-layout-views.md)を使用する方法について説明します、**代替レイアウト セレクター**します。
+
+[素材のデザイン機能](~/android/user-interface/android-designer/material-design-features.md)の包括的な概要、**テーマ エディター**と**マテリアル デザイン グリッド**します。
+
+## <a name="design-surface"></a>デザイン サーフェイス
+
+デザイナーでは、ドラッグし、ツールボックスからデザイン画面にウィジェットを削除することが可能です。 (新しいウィジェットを追加するか、既存の位置を変更) をデザイナーでウィジェットを操作する際は、使用可能な挿入ポイントをマークする垂直および水平の線が表示されます。 次の例では、新しい`Button`ウィジェットは、デザイン画面にドラッグされています。
+
+[![デザイン サーフェイス上の挿入行の例](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
+
+さらに、ウィジェットをコピーすることができます。 コピーを使用すると、ウィジェットをコピー、貼り付けをドラッグ アンド ドロップのキーを押しながら、既存のウィジェット、 <kbd>Ctrl</kbd>キー。
+
+### <a name="context-menu-commands"></a>コンテキスト メニュー コマンド
+
+コンテキスト メニューでは、デザイン画面と ドキュメント アウトラインの両方があります。 このメニューには、選択したウィジェットとそのコンテナーは、(これは常に簡単にデザイン画面で選択) のコンテナーの操作を実行するための簡単で利用可能なコマンドが表示されます。 コンテキスト メニューの例を次に示します。
+
+[![デザイン サーフェイスを右クリックしたときの例のコンテキスト メニュー](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
+
+この例で右クリックし、`Button`いくつかのオプションを提供するショートカット メニューが開きます。
+
+-   **LinearLayout** &ndash;を編集するためのサブメニューを開き、`LinearLayout`の親、`Button`します。
+
+-   **切り取り**、**コピー**、および**削除** &ndash; 、右クリックしたときに適用される操作`Button`します。
+
+### <a name="zoom-controls"></a>ズーム コントロール
+
+デザイン画面に示すように、いくつかのコントロールを使用してズームをサポートします。
+
+[![デザイン サーフェイスのズーム コントロールの図](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
+
+これらのコントロールを簡単にデザイナーのユーザー インターフェイスの特定の領域を表示します。
+
+-   **コンテナーを強調表示**&ndash;拡大および縮小を特定しやすいように、デザイン サーフェイス上のコンテナーが強調表示されます。
+
+-   **標準サイズ**&ndash;レイアウトのピクセルをレンダリングできるように、選択したデバイスの解像度でレイアウトを確認する方法を参照してください。
+
+-   **ウィンドウに合わせる**&ndash;全体のレイアウトがデザイン サーフェイスに表示されるように、ズーム レベルを設定します。
+
+-   **ズーム イン**&ndash;レイアウトを拡大、たびに増分ズームインします。
+
+-   **ズーム アウト**&ndash;増分ズームアウトするクリックするたびに、デザイン サーフェイスに小さく表示レイアウトを作成します。
+
+選択したズーム設定が実行時にアプリケーションのユーザー インターフェイスに影響しないことに注意してください。
+
+## <a name="property-pad"></a>プロパティ パッド
+
+デザイナーがウィジェットのプロパティの編集をサポートする、**プロパティ パッド**します。 に応じて、ウィジェットがデザイナー画面で選択したプロパティ パッドの変更に示したプロパティ。 ときに、`Button`前の例では、選択したプロパティを`Button`ウィジェットが表示されます。
+
+[![プロパティ パッドのスクリーン ショット](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
+
+## <a name="property-pad-sections"></a>プロパティ パッド セクション
+
+プロパティ パッドが類似のプロパティをグループ化するいくつかのセクションに分かれています&ndash;この目的のプロパティが探しやすくなります。
+
+-   **ウィジェット** &ndash; 、ウィジェットのメイン プロパティなど`id`、 `visibility`、`text`など。ウィジェットのコンテンツを管理するためのプロパティは通常は、ここに配置されます。
+
+-   **スタイル** &ndash; 、ウィジェットの外観を変更します。 プロパティ`font`、 `text color`、`background`など。
+
+-   **レイアウト**&ndash;ウィジェットのサイズと場所を設定するプロパティ。
 
 -   **スクロール**&ndash;プロパティをスクロールします。
 
 -   **動作**&ndash;ウィジェットの動作を設定するフラグ。
 
------
+### <a name="default-values"></a>既定の値
 
+ほとんどのウィジェットのプロパティが空白になって、**プロパティ パッド**その値が選択されている Android のテーマを継承するので。 **プロパティ パッド**に選択されたウィジェットで明示的に設定されている値のみが表示されます。 テーマから継承された値は表示されません。
 
+### <a name="referencing-resources"></a>リソースを参照します。
 
-### <a name="default-values"></a>既定値
+一部のプロパティは、レイアウト以外のファイルで定義されているリソースを参照できる **.axml**ファイル。 この型の最も一般的なケースは`string`と`drawable`リソース。 ただし、参照こともでき、その他のリソースのなど`Boolean`値とディメンション。
+プロパティがリソース参照では、[参照] アイコンをサポートする場合 (省略記号を&hellip;) プロパティに入力したテキストの横に表示されます。
+クリックすると、このボタンは、リソースのセレクターを開きます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+たとえば、次のスクリーン ショットを示しています使用可能なリソースのテキスト フィールドの右側にある省略記号をクリックすると、`Button`ウィジェットで、**プロパティ パッド**:
 
-ほとんどのウィジェットのプロパティが空白になって、**プロパティ**ウィンドウの値が選択されている Android テーマから継承するためです。
-**プロパティ**ウィンドウは、選択されたウィジェットを明示的に設定されている値にのみ表示されます。 テーマから継承されている値は表示されません。
+[![表示されている 2 つのリソースとリソースのスクリーン ショットの例](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+次の例では、リソースのセレクターを示しています、`Src`のプロパティ、 `ImageView`:
 
-ほとんどのウィジェットのプロパティが空白になって、**プロパティ パッド**それらの値が選択されている Android テーマから継承するためです。 **プロパティ パッド**選択したウィジェットの明示的に設定されている値のみが表示されます。 テーマから継承されている値は表示されません。
-
------
-
-
-### <a name="referencing-resources"></a>リソースの参照
-
-一部のプロパティは、レイアウト以外のファイルで定義されているリソースを参照できます **.axml**ファイル。 この型の場合、最も一般的な状況が`string`と`drawable`リソース。 ただし、参照も使用できますの他のリソースなど`Boolean`値およびディメンションです。
-リソース参照、[参照] アイコンのときに対応するプロパティ (省略記号を&hellip;) プロパティに入力したテキストの横に表示されます。
-このボタンは、クリックされたときに、リソース セレクターを開きます。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-たとえば、次のスクリーン ショットを示しています使用可能なリソースのテキスト フィールドの右側にある省略記号をクリックすると、`Button`でウィジェット、**プロパティ**ウィンドウ。
-
-[![例に示す 2 つのリソースのリソース スクリーン ショット](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-たとえば、次のスクリーン ショットを示しています使用可能なリソースのテキスト フィールドの右側にある省略記号をクリックすると、`Button`でウィジェット、**プロパティ パッド**:
-
-[![例に示す 2 つのリソースのリソース スクリーン ショット](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
-
------
-
-次の例のリソースのセレクターを示しています、`Src`のプロパティ、 `ImageView`:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![リソースのセレクター、ImageView のアイコン リソースを一覧表示します。](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![リソースのセレクター、ImageView のアイコン リソースを一覧表示します。](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
-
------
-
-
+[![リソースのセレクター、ImageView のアイコン リソースを一覧表示](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 ### <a name="boolean-property-references"></a>ブール型プロパティの参照
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-*ブール*プロパティは、通常、プロパティ ウィンドウでプルダウン メニューから選択します。 選択することができます、`true`または`false`値、またはをクリックしてプロパティの参照を選択できます**リソースを選択しています.**.など、値を入力することができますも直接`true`または`false`です。
-
-![ブール型プロパティを設定する例](designer-basics-images/vs/11-boolean.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-*ブール*プロパティが通常プロパティ パッドでチェック ボックスとして表示されます。 ときに、`Boolean`プロパティは、リソースの参照をサポートしている、プロパティの横に小さな チェック ボックスが表示されます。 チェックされたチェック ボックスを意味`true`および空のボックスの手段を`false`です。 など、値を入力することができますも直接`true`または`false`です。 マウスを動かすと、入力、小さいテキスト フィールドのアイコンが表示されます。 次の値を手動で入力する場合は、それをクリックすることができます。
+*ブール*プロパティが通常プロパティ パッドでチェック ボックスとして表示されます。 ときに、`Boolean`リソース参照をサポートするプロパティ、プロパティの横にある小さなチェック ボックスが表示されます。 チェックされたチェック ボックスを意味`true`空のボックスの意味と`false`します。 など、値を入力することができますも直接`true`または`false`します。 入力の上にマウス ポインターを合わせると、小規模なテキスト フィールドのアイコンが表示されます。 値を手動で入力する場合をクリックできます。
 
 [![ブール型プロパティを設定する例](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
 
 ## <a name="grouped-properties"></a>グループ化されたプロパティ
 
-一部のウィジェットがグループ化する複数値プロパティがあります (など`Padding`など)。 これらのプロパティ値は、「、**プロパティ パッド**、展開可能な 1 つの行にします。 これらのプロパティの一部で編集できます直接、グループ化された行など、`Padding`次に示すプロパティ。
+一部のウィジェットは一緒にグループ化は複数値プロパティがあります (など`Padding`など)。 これらのプロパティ値が記載されて、**プロパティ パッド**、展開可能な 1 つの行にします。 これらのプロパティの一部で編集できます直接グループ化された行など、`Padding`の下に表示されるプロパティ。
 
 [![Padding プロパティの設定の例](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
------
+## <a name="editing-properties-inline"></a>インラインのプロパティの編集
 
-
-## <a name="editing-properties-inline"></a>プロパティをインラインの編集
-
-Android デザイナーは、直接編集するデザイン サーフェイス上の特定のプロパティ (ため、これらのプロパティのプロパティの一覧で検索する必要はありません) をサポートします。 直接編集可能なプロパティには、テキスト、余白、およびサイズが含まれます。
+Android Designer では、(そのため、プロパティの一覧でこれらのプロパティを検索する必要はありません)、デザイン サーフェイス上の特定のプロパティを直接編集をサポートします。 直接編集できるプロパティには、テキスト、余白、およびサイズが含まれます。
 
 ### <a name="text"></a>テキスト
 
-一部のウィジェットのテキストのプロパティ (など`Button`と`TextView`)、デザイン サーフェイスで直接編集できます。 ウィジェットをダブルクリックすると、入れて、編集モードでは、次のように。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![こんにちは文字列のテキスト リソース](designer-basics-images/vs/12-text-resource.png "テキスト リソース")
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+一部のウィジェットのテキストのプロパティ (など`Button`と`TextView`)、デザイン サーフェイスで直接編集できます。 ウィジェットをダブルクリックすると、入れて編集モードでは、次に示すよう。
 
 [![こんにちは文字列のテキストのリソース](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
------
+新しいテキスト値を入力するか、新しいリソース文字列を入力することができます。 次の例では、`@string/hello`リソースは、テキストで置き換えられる`CLICK THIS BUTTON`:
 
-新しいテキスト値を入力するか、新しいリソース文字列を入力することができます。 次の例で、`@string/hello`テキストで、置き換えられるリソース`CLICK THIS BUTTON`:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![Shift キーを押しながら、新しいリソースにテキストを自動的にリンクを入力してください。](designer-basics-images/vs/13-shift-enter-resource.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![Shift キーを押しながら、新しいリソースにテキストを自動的にリンクを入力してください。](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
-
------
+[![Shift キーを押しながら、新しいリソースにテキストを自動的にリンクするには Enter](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 この変更は、ウィジェットの`text`プロパティに割り当てられた値は変更されません、`@string/hello`リソース。
-新しいテキスト文字列を入力するキーを押すと<kbd>shift キーを押し</kbd> +
-<kbd>Enter</kbd>入力したテキストと、新しいリソースに自動的にリンクします。
-
+キーを押すことで新しいテキスト文字列を入力すると<kbd>Shift</kbd> +
+<kbd>」と入力</kbd>入力したテキストを新しいリソースを自動的にリンクします。
 
 ### <a name="margin"></a>Margin
 
-ウィジェットを選択すると、デザイナーには、サイズまたはウィジェットの余白を対話的に変更するためのハンドルが表示されます。 クリックすると、ウィジェットが選択されているときに切り替わります余白編集モード サイズ編集モードです。
+ウィジェットを選択すると、デザイナーには、サイズまたはウィジェットの余白を対話的に変更するためのハンドルが表示されます。 余白の編集モードとサイズの編集モードの間を切り替えますが選択されているときに、ウィジェットをクリックします。
 
-ウィジェットを初めてクリックすると、余白ハンドルが表示されます。 デザイナーがハンドルを変更するプロパティを表示、ハンドルのいずれかにマウスを移動する場合 (次に示すように、`layout_marginLeft`プロパティ)。
+最初に、ウィジェットをクリックすると、余白ハンドルが表示されます。 ハンドルのいずれかにマウスを移動する場合、デザイナーがハンドルを変更するプロパティを表示します (次に示すように、`layout_marginLeft`プロパティ)。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[![デザイナーでの余白を示すスクリーン ショットを処理します。](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
-![デザイナーで処理する余白を示すスクリーン ショット](designer-basics-images/vs/15-margin-handles.png)
+余白はすでに設定されている場合、余白を占有する領域を示す点線が表示します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![デザイナーで処理する余白を示すスクリーン ショット](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
-
------
-
-余白は既に設定されて、点線が表示されます、余白を占有する領域を示します。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![ボタンの周囲のスペースをマーキング点線の例](designer-basics-images/vs/16-margins-set.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![ボタンの周囲のスペースをマーキング点線の例](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
-
------
-
-
+[![ボタンの周囲の空白をマークする点線の例](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 ### <a name="size"></a>サイズ
 
-前述のようにが既に選択されているときに、ウィジェットをクリックして、サイズ編集モードに切り替えることができます。 指定された次元のサイズを設定する三角形のハンドルをクリックして`wrap_content`:
+前述のようは、既に選択されている状態のウィジェットをクリックして、サイズの編集モードを切り替えることができます。 指定された次元のサイズを設定する三角形のハンドルをクリックして`wrap_content`:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[![コンテンツをラップし、サイズ変更ハンドル](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
-![ラップのコンテンツおよびサイズ変更ハンドル](designer-basics-images/vs/17-wrap-content.png)
+クリックすると、**コンテンツのラップ**ハンドルは、そのディメンションができるのでを超える囲まれたコンテンツをラップするために必要なウィジェットを縮小します。 この例では、ボタンのテキストが次のスクリーン ショットに示すように、水平方向に縮小されます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![ラップのコンテンツおよびサイズ変更ハンドル](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
-
------
-
-クリックすると、**コンテンツのラップ**ハンドルがようにを超える囲まれたコンテンツをラップするために必要なディメンションにウィジェットを縮小します。 この例では、ボタンのテキストは次のスクリーン ショットに示すように水平方向に縮小されます。
-
-サイズの値を設定すると**コンテンツをラップ**、デザイナーには、逆の方向にサイズを変更するポイント三角形のハンドルが表示されます`match_parent`:。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![一致する親ハンドル](designer-basics-images/vs/18-match-parent.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+サイズの値を設定すると**コンテンツをラップ**、デザイナーには、逆方向にサイズを変更するを指す三角形のハンドルが表示されます`match_parent`:。
 
 [![一致する親ハンドル](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
------
+クリックすると、**一致親**ハンドルが親ウィジェットと同じことができるように、そのディメンションのサイズを復元します。
 
-クリックすると、**一致親**ハンドルができるように、同じ親ウィジェットでは、その次元のサイズを復元します。
+また、ドラッグできます循環のサイズ変更ハンドル (上記のスクリーン ショットに示す) に任意にウィジェットのサイズを変更する`dp`値。 これを行うときに両方**コンテンツをラップ**と**一致親**そのディメンションのハンドルが表示されます。
 
-また、ドラッグできます循環サイズ変更ハンドルに示すように、上記のスクリーン ショット) ウィジェットに任意のサイズを変更する`dp`値。 こうと、両方とも**コンテンツをラップ**と**一致親**そのディメンションのハンドルが表示されます。
+[![循環のサイズ変更ハンドル](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![循環サイズ変更ハンドル](designer-basics-images/vs/19-resize-dp.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![循環サイズ変更ハンドル](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
-
------
-
-編集することはないすべてのコンテナー、`Size`ウィジェットのです。 たとえば、いることを確認では、次のスクリーン ショット、`LinearLayout`選択すると、サイズ変更ハンドルは表示されません。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![サイズ変更ハンドルのないです。](designer-basics-images/vs/20-no-resize-handles.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+すべてのコンテナーでは、編集、`Size`ウィジェットの。 たとえば、下のスクリーン ショットで注意、`LinearLayout`選択すると、サイズ変更ハンドルは表示されません。
 
 [![サイズ変更ハンドルのないです。](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
------
-
-
-
 ## <a name="document-outline"></a>[ドキュメント アウトライン]
 
-**ドキュメント アウトライン**レイアウトのウィジェットの階層を表示します。
-次の例では、含まれている`LinearLayout`ウィジェットが選択されています。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![ドキュメント アウトライン](designer-basics-images/vs/21-document-outline.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+**ドキュメント アウトライン**レイアウトのウィジェット階層を表示します。
+次の例では、格納している`LinearLayout`ウィジェットを選択します。
 
 [![ドキュメント アウトライン](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
+選択されたウィジェットのアウトライン (ここで、 `LinearLayout`) がデザイン画面でも強調表示されます。 ドキュメント アウトラインにある選択されたウィジェットのデザイン画面上の対応する同期が維持されます。 これは常に、デザイン サーフェイスに簡単ではない グループの表示を選択するために役立ちます。
+
+ドキュメント アウトラインは、コピーと貼り付けをサポートしています。 または、使用して、ドラッグ アンド ドロップすることができます。 およびドキュメント アウトラインをデザイン画面をデザイン画面に ドキュメント アウトラインからドラッグ アンド ドロップはサポートされています。 また、ドキュメント アウトラインにある項目を右クリックしてには、そのアイテム (その同じウィジェット、デザイン サーフェイスを右クリックしたときに表示されるコンテキスト メニュー) のコンテキスト メニューが表示されます。
+
 -----
-
-選択されているウィジェットのアウトライン (ここで、 `LinearLayout`) がデザイン画面でも強調表示されます。 ドキュメント アウトラインで選択したウィジェットがデザイン サーフェイス上の対応する同期します。 これは、グループの表示、常に簡単にデザイン サーフェイス上の選択ではないを選択するため便利です。
-
-ドキュメント アウトラインは、コピーと貼り付けをサポートしています。 または、ドラッグ アンド ドロップすることができます。 およびドキュメント アウトラインにデザイン画面をデザイン画面に ドキュメント アウトラインからのドラッグ アンド ドロップはサポートされています。 また、ドキュメント アウトラインの項目を右クリックしてには、その項目 (その同じウィジェット、デザイン サーフェイスを右クリックしたときに表示されるコンテキスト メニュー) のコンテキスト メニューが表示されます。

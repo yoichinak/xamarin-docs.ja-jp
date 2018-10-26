@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 9bac53f71178ac321dea162d346295556a8f7adb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 070602f05170f7d37a38b184ecd3dbb7864ac73d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998756"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118761"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms のプラットフォーム機能
 
@@ -60,11 +60,11 @@ Xamarin.Forms アプリを拡張するには、Github、Nuget、および Xamari
 
 ## <a name="tizentizenmd"></a>[Tizen](tizen.md)
 
-Tizen .NET では、Xamarin.Forms と Tizen .NET framework での .NET アプリケーションをビルドすることができます。
+Tizen .NET では、Xamarin.Forms と Tizen .NET Framework での .NET アプリケーションをビルドすることができます。
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms では、Windows 10 ユニバーサル Windows プラットフォーム (UWP) をサポートしています。 この記事は、追加する方法を説明します、既存の Xamarin.Forms ソリューションに UWP プロジェクト。
+Xamarin.Forms では、Windows 10 ユニバーサル Windows プラットフォーム (UWP) をサポートしています。 この記事では、既存の Xamarin.Forms ソリューションに UWP プロジェクトを追加する方法について説明します。
 
 ## <a name="wpfwpfmd"></a>[WPF](wpf.md)
 

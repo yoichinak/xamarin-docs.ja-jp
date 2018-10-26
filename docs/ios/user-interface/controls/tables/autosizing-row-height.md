@@ -1,71 +1,71 @@
 ---
-title: Xamarin.iOS の自動サイズ変更行の高さ
-description: このドキュメントでは、テーブル ビューの行の高さの変化に基づいてコンテンツ Xamarin.iOS アプリに追加する方法について説明します。 これには、iOS デザイナー内のセルのレイアウトと有効にすると自動サイズ変更の高さがについて説明します。
+title: Xamarin.iOS での自動サイズ変更行の高さ
+description: このドキュメントでは、テーブル ビューの行の高さの変化に基づいてコンテンツを Xamarin.iOS アプリに追加する方法について説明します。 IOS Designer のセルのレイアウトと有効にすると自動サイズ変更の高さがについて説明します。
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 3c6beb112947f5423de200fd5c8957ef28dd48f9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e4446abc73817eb0672cd10a69ff6f738de0c1e1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789968"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116473"
 ---
-# <a name="auto-sizing-row-height-in-xamarinios"></a>Xamarin.iOS の自動サイズ変更行の高さ
+# <a name="auto-sizing-row-height-in-xamarinios"></a>Xamarin.iOS での自動サイズ変更行の高さ
 
-Apple iOS 8 以降、テーブル ビューを作成する機能を追加 (`UITableView`) を自動的に拡大して自動レイアウト、サイズのクラスおよび制約を使用して、コンテンツのサイズに基づいて、特定の行の高さを縮小します。
+Apple iOS 8 以降、テーブル ビューを作成する機能を追加 (`UITableView`) を自動的に拡大して自動レイアウトやサイズ クラスの制約を使用してそのコンテンツのサイズに基づいて、特定の行の高さを縮小します。
 
-iOS 11 では、自動的に展開する行の機能を追加しました。 ヘッダー、フッター、およびセル今すぐに自動的にサイズ設定できる内容に基づきます。 ただし、iOS デザイナー、インターフェイスのビルダーで、テーブルが作成された場合、または行の高さを固定にする必要があります手動で有効にする、セルのサイズ変更 self このガイドの説明に従って。
+iOS 11 では、自動的に展開する行の機能を追加しました。 ヘッダー、フッター、およびセル今すぐ自動的にサイズ設定できるコンテンツに基づいています。 をで iOS Designer、Interface Builder では、テーブルが作成された場合、または行の高さを固定にする必要があります手動で有効にする self、セルのサイズ変更このガイドで説明します。
 
-## <a name="cell-layout-in-the-ios-designer"></a>IOS デザイナー内のセルのレイアウト
+## <a name="cell-layout-in-the-ios-designer"></a>IOS Designer のセルのレイアウト
 
-開いている行の自動サイズ変更用 iOS デザイナーでテーブル ビューのストーリー ボードのセルを選択の*プロトタイプ*セルのレイアウトをデザインします。 例えば:
+IOS Designer での行の自動サイズ変更用にするテーブル ビューのストーリー ボード選択セルの開いている*プロトタイプ*とセルのレイアウトを設計します。 例えば:
 
 [![](autosizing-row-height-images/table01.png "セルのプロトタイプのデザイン")](autosizing-row-height-images/table01.png#lightbox)
 
-プロトタイプに各要素に対して回転または別の iOS デバイスの画面サイズのテーブル ビューのサイズが変更されると、正しい位置に要素を保持する制約を追加します。 たとえば、ピン留め、`Title`セルの右と左上に*コンテンツ ビュー*:
+プロトタイプの各要素に対して、回転または別の iOS デバイスの画面サイズのテーブル ビューのサイズが変更されると、正しい位置に要素を保持する制約を追加します。 たとえば、ピン留め、`Title`上、左のセルの右側と*コンテンツ ビュー*:
 
-[![](autosizing-row-height-images/table02.png "Top、left、セルのコンテンツ ビューの右側にタイトルをピン留め")](autosizing-row-height-images/table02.png#lightbox)
+[![](autosizing-row-height-images/table02.png "タイトルを上、左および右のセルのコンテンツ ビューをピン留め")](autosizing-row-height-images/table02.png#lightbox)
 
-この例のテーブルを小さな場合`Label`(下にある、 `Title`) は、フィールドを行の高さを増減させて拡大および縮小できます。 この効果を実現するには、左、右、上部と下部のラベルをピン留めする次の制約を追加します。
+この例のテーブル、小さい場合`Label`(下、 `Title`) フィールドを行の高さを増減する拡大および縮小できます。 この効果を実現するには、左、右、上、ラベルの下にピン留めする、次の制約を追加します。
 
-[![](autosizing-row-height-images/table03.png "これらの制約を左、右、上部と下部のラベルをピン留めするには")](autosizing-row-height-images/table03.png#lightbox)
+[![](autosizing-row-height-images/table03.png "これらの制約、左、右、上、ラベルの下にピン留めするには")](autosizing-row-height-images/table03.png#lightbox)
 
-なったので、セル内の要素を完全に拘束おのどの要素を拡大するかを明確にする必要があります。 これを行うには、次のように設定します。、**コンテンツ Hugging の優先度**と**コンテンツ圧縮の耐性を確保する優先順位**で必要に応じて、**レイアウト**パッドのプロパティのセクション。
+できたので、セル内の要素を完全に拘束いますが、のどの要素を拡大するかを明確にする必要があります。 これを行うには、次のように設定します。、 **Hugging コンテンツの優先順位**と**コンテンツの圧縮の抵抗の優先順位**で必要に応じて、**レイアウト**Properties Pad のセクション。
 
-[![](autosizing-row-height-images/table03a.png "プロパティのパッドのレイアウト セクション")](autosizing-row-height-images/table03a.png#lightbox)
+[![](autosizing-row-height-images/table03a.png "Properties Pad のレイアウト セクション")](autosizing-row-height-images/table03a.png#lightbox)
 
-拡張する要素の設定、**低い**Hugging 優先度の値、および**低い**圧縮耐性を確保する優先度の値。
+拡張する要素の設定、**低い**Hugging の優先順位の値と**低い**圧縮抵抗の優先度の値。
 
-次に、セル プロトタイプを選択し、一意なを指定する必要があります**識別子**:
+次に、セルのプロトタイプを選択し、一意必要があります**識別子**:
 
-[![](autosizing-row-height-images/table04.png "セルのプロトタイプの一意の識別子を与える")](autosizing-row-height-images/table04.png#lightbox)
+[![](autosizing-row-height-images/table04.png "セルのプロトタイプの一意識別子を提供")](autosizing-row-height-images/table04.png#lightbox)
 
-この例の場合`GrowCell`です。 後で、テーブルの作成時にこの値が使用されます。
+この例の場合`GrowCell`します。 いますが、テーブルを作成するときに後でこの値を使用します。
 
 > [!IMPORTANT]
-> テーブルには、1 つ以上のセルの種類が含まれている場合 (**プロトタイプ**)、種類ごとに独自の一意なことを確認する必要があります`Identifier`の自動動作する行がサイズ変更します。
+> テーブルには、1 つ以上のセルの種類が含まれている場合 (**プロトタイプ**)、各種類には、独自の一意なことを確認する必要がある`Identifier`自動させる行のサイズ変更します。
 
-このセルのプロトタイプの各要素に対して割り当てる、**名前**c# コードに公開します。 例えば:
+を、セルのプロトタイプの各要素に割り当てる、**名前**にこれを公開するC#コード。 例えば:
 
-[![](autosizing-row-height-images/table05.png "C# コードに公開する名前を割り当てる")](autosizing-row-height-images/table05.png#lightbox)
+[![](autosizing-row-height-images/table05.png "公開するための名前を割り当てるC#コード")](autosizing-row-height-images/table05.png#lightbox)
 
 カスタム クラスを次に、追加、 `UITableViewController`、`UITableView`と`UITableCell`(プロトタイプ)。 例えば: 
 
-[![](autosizing-row-height-images/table06.png "UITableViewController や、UITableView、UITableCell カスタム クラスを追加します。")](autosizing-row-height-images/table06.png#lightbox)
+[![](autosizing-row-height-images/table06.png "UITableViewController、UITableView および、UITableCell カスタム クラスの追加")](autosizing-row-height-images/table06.png#lightbox)
 
-最後に、必要なすべてのコンテンツのラベルに表示されることを確認、設定、**行**プロパティを`0`:
+最後に、必要なすべてのコンテンツは、ラベルに表示されることを確認する次のように設定します、**行**プロパティを`0`:。
 
-[![](autosizing-row-height-images/table06.png "行のプロパティが 0 に設定")](autosizing-row-height-images/table06a.png#lightbox)
+[![](autosizing-row-height-images/table06.png "線のプロパティが 0 に設定")](autosizing-row-height-images/table06a.png#lightbox)
 
 UI が定義されているを使用した自動行の高さのサイズ変更を有効にするコードを追加してみましょう。
 
 ## <a name="enabling-auto-resizing-height"></a>高さの自動サイズ変更を有効にします。
 
-いずれかで、テーブル ビューのデータ ソース (`UITableViewDatasource`) またはソース (`UITableViewSource`) を使用する必要がありますのセルをデキューおときに、`Identifier`デザイナーで選択しました。 例えば:
+いずれかで、テーブル ビューのデータ ソース (`UITableViewDatasource`) またはソース (`UITableViewSource`) を使用する必要があります。 セルをデキューしましたときに、、 `Identifier` 、デザイナーで定義しました。 例えば:
 
 ```csharp
 public string CellID {
@@ -87,7 +87,7 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 }
 ```
 
-既定では、テーブル ビューを自動サイズ変更行の高さに設定されます。 これには、ことを確認する、`RowHeight`プロパティに設定する必要があります`UITableView.AutomaticDimension`です。 設定する必要があります、`EstimatedRowHeight`プロパティに、`UITableViewController`です。 例えば:
+既定では、テーブル ビューは、行の高さの自動サイズ変更に設定されます。 これは、確実に、`RowHeight`にプロパティを設定する必要があります`UITableView.AutomaticDimension`します。 設定する必要があります、`EstimatedRowHeight`プロパティ、`UITableViewController`します。 例えば:
 
 ```csharp
 public override void ViewWillAppear (bool animated)
@@ -103,9 +103,9 @@ public override void ViewWillAppear (bool animated)
 }
 ```
 
-この推定値は正確である必要はありませんテーブル ビューの各行の高さの平均値の概算だけです。
+この見積もりは、正確ではありません、テーブル ビューの各行の高さの平均値の大まかな推定だけです。
 
-場所でこのコードでは、アプリを実行すると、各行は圧縮し、セルのプロトタイプの最後のラベルの高さに基づいて、拡張されます。 例えば:
+配置でこのコードでは、アプリを実行すると、各行の圧縮をセル プロトタイプで最後のラベルの高さに基づいて、拡張します。 例えば:
 
 [![](autosizing-row-height-images/table07.png "実行のサンプル テーブル")](autosizing-row-height-images/table07.png#lightbox)
 

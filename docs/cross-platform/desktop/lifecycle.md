@@ -1,16 +1,16 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
 title: WPF とします。Xamarin.Forms アプリのライフ サイクル
-description: このドキュメントの比較と Xamarin.Forms と WPF アプリケーションのアプリケーションのライフ サイクルの間の相違点。 ビジュアル ツリー、グラフィックス、リソース、およびスタイルにも見えます。
+description: このドキュメントの類似点と Xamarin.Forms と WPF アプリケーションのアプリケーションのライフ サイクルの違いを比較します。 ビジュアル ツリー、グラフィックス、リソース、およびスタイルにも見えます。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: a59f257d1e6285fa2d899271a1aae9778b04d985
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: cf25cf956fbf9fd566520d9067f0d98a9a7624aa
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251088"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107122"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF とします。Xamarin.Forms アプリのライフ サイクル
 

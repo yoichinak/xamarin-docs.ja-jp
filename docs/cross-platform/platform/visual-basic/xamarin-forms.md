@@ -6,12 +6,12 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 256d5c81475be095c8fa0ab0408cbcf673c6b301
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f397cf595a9ae151c5f105341733b2c57023fe99
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997085"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109719"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Visual basic.net を使用して Xamarin.Forms
 
@@ -79,7 +79,7 @@ Visual Basic を使用する単純な Xamarin.Forms プロジェクトを作成�
     ```
 
 9. 新しい Visual Basic プロジェクトで、iOS と Android プロジェクトをポイントする必要があります。
-右クリックし、**参照**iOS および Android プロジェクトを開く ノード、**参照マネージャー**します。 チェック マークの解除、c# ポータブル ライブラリとティック VB ポータブル ライブラリ (しないもご活用ください、これは iOS と Android プロジェクトの両方の操作を行います)。
+右クリックし、**参照**iOS および Android プロジェクトを開く ノード、**参照マネージャー**します。 チェック マークの解除、C#ポータブル ライブラリと VB のポータブル ライブラリ (しないもご活用ください、これは iOS と Android プロジェクトの両方の操作を行います)。
 
    [![](xamarin-forms-images/add-vb-8-sml.png "古いプロジェクト参照を削除する、Visual Basic リファレンスの追加")](xamarin-forms-images/add-vb-8.png#lightbox)
 

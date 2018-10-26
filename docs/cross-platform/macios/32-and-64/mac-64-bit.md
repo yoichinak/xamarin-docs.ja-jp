@@ -1,44 +1,44 @@
 ---
-title: 64 ビットに Xamarin.Mac 統合アプリケーションの更新
-description: このガイドでは、64 ビットのターゲットに Xamarin.Mac アプリケーションを更新する方法について説明します。 この変更を行うときに検出される可能性があるエラーの種類の例も提供します。
+title: Xamarin.Mac 統合アプリケーションを 64 ビットの更新
+description: このガイドでは、64 ビットをターゲットに Xamarin.Mac アプリケーションを更新する方法について説明します。 この変更を行うときに発生する可能性があるエラーの種類の例も提供します。
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
-author: bradumbaugh
-ms.author: brumbaug
+author: conceptdev
+ms.author: crdun
 ms.date: 02/22/2018
-ms.openlocfilehash: aa97f9a68ea4acc4234233a22d10c99cde3e6d6c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3667f129cb566f71e9afd2969af13fe5b9682882
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780699"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109381"
 ---
-# <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>64 ビットに Xamarin.Mac 統合アプリケーションの更新
+# <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>Xamarin.Mac 統合アプリケーションを 64 ビットの更新
 
-年 2018年 1 月時点で Apple が必要です新しい[Mac アプリ ストアへの送信が 64 ビットを対象](https://developer.apple.com/news/?id=06282017a)です。 Mac App Store で既に使用可能なアプリは、年 2018年 6 月によって 64 ビットのターゲットを更新する必要があります。
+2018 年 1 月の時点で Apple は、要求を新しい[Mac アプリ ストアへの送信対象の 64 ビット](https://developer.apple.com/news/?id=06282017a)します。 Mac App Store で既に利用可能なアプリは、2018 年 6 月によって 64 ビットのターゲットを更新する必要があります。
 
-**ファイル** > **新規**のための最後に作成されたすべてのアプリが 64 ビット互換では既にされ、変更する必要はありません、Xamarin.Mac プロジェクト テンプレートが既定では、64 ビット アプリケーションを作成します。
+**ファイル** > **新規**最近作成されたすべてのアプリが 64 ビット互換であるし、変更する必要はありませんので、Xamarin.Mac プロジェクト テンプレートが既定では、64 ビット アプリケーションを作成します。
 
 ## <a name="targeting-64-bit"></a>64 ビットを対象とします。
 
-1. 開く、**プロジェクト オプション**ウィンドウいる Xamarin.Mac アプリ。
+1. 開く、**プロジェクト オプション**ウィンドウは、Xamarin.Mac アプリをしています。
 
    ![プロジェクトのコンテキスト メニュー](mac-64-bit-images/1-contextual_menu-vsmac.png "プロジェクトのコンテキスト メニュー")
 
-2. 選択**Mac をビルド**設定と**サポートされているアーキテクチャ**に**x86\_64**:
+2. 選択**Mac ビルド**設定と**サポートされているアーキテクチャ**に**x86\_64**:
 
    [![サポートされているアーキテクチャに x86_64 設定](mac-64-bit-images/2-project_options-vsmac.png "x86_64 にサポートされているアーキテクチャの設定")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
 
-3. アプリにネイティブ参照、またはバインド プロジェクトなど、外部の依存関係がある場合は、64 ビットのターゲットを更新します。
+3. アプリにネイティブ参照またはバインド プロジェクトなどの外部依存関係がある場合は、64 ビットのターゲットを更新します。
 
 ### <a name="errors"></a>エラー
 
-初めてビルドまたは 64 ビット サポートで、アプリケーションを実行する clang または実行時に問題からのリンク エラーが発生する可能性があります。 サード パーティ製の場合、これらのエラーが発生する可能性が依存関係: たとえば、ネイティブ参照、Xamarin.Mac バインド プロジェクト、またはシステム全体のフレームワークを手動で読み込む — 64 ビットに更新されていません。
+最初にビルドまたは 64 ビット サポートにより、アプリケーションを実行する clang やランタイムの問題からリンク エラーが発生する可能性があります。 サード パーティ製の場合、これらのエラーが発生する可能性が依存関係-ネイティブ参照など、Xamarin.Mac またはバインド プロジェクト、またはシステム全体のフレームワークを手動で読み込む-64 ビットに更新されていません。
 
 > [!TIP]
-> プロジェクトを 64 ビットに変換する大きな変更は、さまざまなプログラミング エラーが直接明らかです。 具体的には、サイズとデータ構造体に影響を与える p/呼び出す署名と、プロジェクトのリンクされたネイティブ コードの配置には変更できます。 指定されたすべてのビルド警告を確認することを検討してください、アプリケーションとテストかもしれない後で潜在的な問題を検出します。
+> プロジェクトを 64 ビットに変換する大きな変更し、さまざまなプログラミング エラーが直接明らかです。 特にの p/invoke シグネチャと、プロジェクトにリンクされたネイティブ コードに影響するデータの構造体の配置とサイズを変更こと可能性があります。 指定されたすべてのビルド警告を確認してくださいし、アプリケーションをテストするかもしれない後で潜在的な問題を検出します。
 
-#### <a name="example-error-resulting-from-a-dynamically-linked-third-party-dependency-that-does-not-target-64-bit"></a>動的にリンクされているサードパーティの依存関係が 64 ビットを対象としないによるエラーの例:
+#### <a name="example-error-resulting-from-a-dynamically-linked-third-party-dependency-that-does-not-target-64-bit"></a>64 ビットを使用しない動的リンクのサードパーティの依存関係の結果エラーの例:
 
 ```console
 ld : warning : ignoring file PATH/ThirdPartyLibrary.framework/ThirdPartyLibrary, 
@@ -46,9 +46,9 @@ file was built for i386 which is not the architecture being linked (x86_64):
 PATH/ThirdPartyLibrary.framework/ThirdPartyLibrary 
 ```
 
-によって実行時にこのエラーを続けてでした`dlopen`を返す`IntPtr.Zero`予想されるハンドルの代わりにします。
+実行時にこのエラーの後にでした`dlopen`返す`IntPtr.Zero`ハンドルが予想される代わりにします。
 
-#### <a name="example-error-resulting-from-a-statically-linked-third-party-dependency-that-does-not-target-64-bit"></a>静的にリンクされているサードパーティの依存関係が 64 ビットを対象としないによるエラーの例:
+#### <a name="example-error-resulting-from-a-statically-linked-third-party-dependency-that-does-not-target-64-bit"></a>64 ビットを使用しない静的リンクのサードパーティの依存関係の結果エラーの例:
 
 ```console
 Undefined symbols for architecture x86_64:
@@ -57,5 +57,5 @@ Undefined symbols for architecture x86_64:
 ld: symbol(s) not found for architecture x86_64 
 ```
 
-ビルドが正常に実行し、するには、64 ビットにこれらの依存関係を更新し、アプリを再コンパイルします。
+ビルドが正常に実行し、するには、これらの依存関係を 64 ビットに更新し、アプリを再コンパイルします。
 

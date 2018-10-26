@@ -1,4 +1,4 @@
-﻿---
+---
 title: Xamarin.Forms CarouselPage
 description: Xamarin.Forms CarouselPage には、ギャラリーなどのコンテンツのページ間を移動するユーザーが左右にスワイプできるページです。 この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。
 ms.prod: xamarin
@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: bce3a60f3647a537906cfa11fc1dcfcc6f5cf365
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 48c009b836ac109e0d54cd2fdb036c46e17c4387
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998610"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121504"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms CarouselPage
 
@@ -22,7 +22,7 @@ _Xamarin.Forms CarouselPage には、ギャラリーなどのコンテンツの�
 
 次のスクリーン ショットに示す、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)各プラットフォームで。
 
-![](carousel-page-images/thirdpage.png "CarouselPage 毎時項目")
+![](carousel-page-images/thirdpage.png "CarouselPage サード項目")
 
 レイアウトを[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)は各プラットフォームで同じです。 ページは、左から右のコレクションを後方に移動する方向のスワイプ操作と、コレクション内のページへの移動を右左から方向のスワイプ操作によって、移動ことができます。 次のスクリーン ショットでは、最初のページを表示する、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)インスタンス。
 

@@ -1,45 +1,45 @@
 ---
-title: MonoGame を使用したゲームの開発の概要
-description: このマルチパートのチュートリアルでは、MonoGame を使用して単純な 2D アプリケーションを作成する方法を示します。  一般的なゲーム内容は入力ですが、グラフィックなどのプログラミングの概念と、エンティティ、および物理学のゲームです。
+title: MonoGame を使用したゲーム開発の概要
+description: このマルチパート チュートリアルでは、MonoGame を使用して、単純な 2D アプリケーションを作成する方法を示します。  一般的なゲームでは、入力、グラフィックスなどのプログラミングの概念エンティティ、および物理学のゲームです。
 ms.prod: xamarin
 ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 46cc3a7e3bb6c58e04626c9d2cc9437c16ba19f5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 4ab98d59bc74672f9531f4dbd3c33a6270582612
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 10/25/2018
 ms.locfileid: "33920807"
 ---
-# <a name="introduction-to-game-development-with-monogame"></a>MonoGame を使用したゲームの開発の概要
+# <a name="introduction-to-game-development-with-monogame"></a>MonoGame を使用したゲーム開発の概要
 
-_このマルチパートのチュートリアルでは、MonoGame を使用して単純な 2D アプリケーションを作成する方法を示します。一般的なゲーム内容は入力ですが、グラフィックなどのプログラミングの概念と、エンティティ、および物理学のゲームです。_
+_このマルチパート チュートリアルでは、MonoGame を使用して、単純な 2D アプリケーションを作成する方法を示します。一般的なゲームでは、入力、グラフィックスなどのプログラミングの概念エンティティ、および物理学のゲームです。_
 
-この記事では、クロスプラット フォームのゲームを行うための MonoGame API テクノロジについて説明します。 プラットフォームの一覧については、次を参照してください。、 [MonoGame web サイト](http://www.monogame.net/)です。 このチュートリアルは使用 (C#) コード サンプル、MonoGame はも f# で完全に機能します。
+この記事では、クロス プラットフォーム ゲームを行うための MonoGame API テクノロジについて説明します。 プラットフォームの一覧については、次を参照してください。、 [MonoGame の web サイト](http://www.monogame.net/)します。 このチュートリアルでは使用C#コード サンプル、MonoGame が完全に機能をF#もします。
 
-MonoGame はプラットフォーム間で、ハードウェア アクセラレーション資産をインポートするため、画像、オーディオ、ゲームの状態管理、入力、およびコンテンツのパイプラインを提供する API。 ほとんどのゲーム エンジンとは異なり MonoGame やは提供しません、パターン、またはプロジェクトの構造を強制します。  つまり、開発者は自由に好きなように、コードの編成、中にセットアップ コードのビットが最初に、新しいプロジェクトを開始するときに必要であることも意味します。
+MonoGame はクロス プラットフォームで、ハードウェア資産をインポートするためのグラフィック、オーディオ、ゲームの状態管理、入力、およびコンテンツ パイプラインを提供する API を高速です。 ほとんどのゲーム エンジンとは異なり MonoGame やは提供しません、パターンまたはプロジェクトの構造を強制します。  これにより、開発者は自由に好きなように、コードを整理、一方のセットアップ コードが最初に新しいプロジェクトを開始するときに必要であることも意味します。
 
 このチュートリアルの最初のセクションでは、空のプロジェクトの設定について説明します。 最後のセクションでは、ゲーム ロジックとコンテンツ – 最もうちはクロス プラットフォームのすべての書き込みについて説明します。
 
-このチュートリアルの目的が作成されました簡単なゲーム、プレーヤーがタッチ入力のアニメーションの文字を制御できます。  これは技術的には、完全ゲームがあるため win または条件が失われるなし) にではありませんが、さまざまなゲーム開発の概念を示していて、さまざまな種類のゲームの基盤として使用できます。 
+このチュートリアルの目的は、単純なゲーム プレイヤーがタッチ入力のアニメーションの文字を制御できます作りされます。  これは完全なゲームがあるため獲得したり、条件が失われるなし) に技術的ではありませんが、多くのゲーム開発の概念を示し、さまざまな種類のゲームの基盤として使用できます。 
 
 このチュートリアルの結果を次に示します。
 
-![サンプル ゲーム文字のマウスを次のアニメーション](images/image1.gif)
+![次のマウス サンプル ゲーム キャラクターのアニメーション](images/image1.gif)
 
 ## <a name="monogame-and-xna"></a>Monogame および XNA
 
-MonoGame ライブラリは、構文と機能の両方に Microsoft の XNA ライブラリを模倣するために対象としています。  まま変更せずに MonoGame で使用されるほとんどの XNA のコードを許可する – Microsoft.Xna 名前空間 MonoGame のすべてのオブジェクトに存在します。 
+MonoGame ライブラリは、構文と機能の両方で Microsoft の XNA ライブラリを模倣するものです。  MonoGame のまま変更せずに使用するほとんどの XNA コード – Microsoft.Xna 名前空間の下 MonoGame のすべてのオブジェクトが存在します。 
 
-XNA に慣れている開発者に既に習熟 MonoGame の構文と MonoGame の操作に関する追加情報を探している開発者は既存のオンライン XNA チュートリアル、API のドキュメント、およびディスカッションを参照することになります。
+XNA に慣れている開発者を MonoGame の構文に精通することが既にと MonoGame を使用した作業に関する追加情報を探している開発者は既存のオンライン XNA チュートリアル、API のドキュメント、およびディスカッションを参照できます。
 
 
 ## <a name="walkthrough-parts"></a>チュートリアルのパーツ
 
-- [クロス プラットフォーム MonoGame プロジェクトを作成する – 第 1 部](~/graphics-games/monogame/introduction/part1.md)
-- [パート 2 –、WalkingGame を実装します。](~/graphics-games/monogame/introduction/part2.md)
+- [パート 1-クロスプラット フォーム MonoGame プロジェクトを作成します。](~/graphics-games/monogame/introduction/part1.md)
+- [パート 2-Walkinggame の実装](~/graphics-games/monogame/introduction/part2.md)
 
 ## <a name="related-links"></a>関連リンク
 
@@ -47,5 +47,5 @@ XNA に慣れている開発者に既に習熟 MonoGame の構文と MonoGame �
 - [XNB フォント iOS](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
 - [XNB フォント Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
 - [NuGet で MonoGame Android](https://www.nuget.org/packages/MonoGame.Framework.Android/)
-- [NuGet で MonoGame iOS](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
+- [NuGet での iOS の MonoGame](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [MonoGame API ドキュメント](http://www.monogame.net/documentation/?page=main)

@@ -1,79 +1,79 @@
 ---
-title: CCAction をアニメーション化します。
-description: CCAction クラスでは、追加のアニメーション CocosSharp ゲームを簡略化します。 機能を実装したり、ポーランド語を追加する、これらのアニメーションを使用できます。
+title: CCAction によるアニメーション
+description: CCAction クラスは、CocosSharp ゲームに追加するアニメーションを簡素化します。 ポーランド語を追加するまたは機能を実装するために、これらのアニメーションを使用できます。
 ms.prod: xamarin
 ms.assetid: 74DBD02A-6F10-4104-A61B-08CB49B733FB
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: b6209816f741423f40945a0fe4391fe921cb35de
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c486bb2e78579360e0f935219cd82958fedee34b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921788"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120971"
 ---
-# <a name="animating-with-ccaction"></a>CCAction をアニメーション化します。
+# <a name="animating-with-ccaction"></a>CCAction によるアニメーション
 
-_CCAction クラスでは、追加のアニメーション CocosSharp ゲームを簡略化します。機能を実装したり、ポーランド語を追加する、これらのアニメーションを使用できます。_
+_CCAction クラスは、CocosSharp ゲームに追加するアニメーションを簡素化します。ポーランド語を追加するまたは機能を実装するために、これらのアニメーションを使用できます。_
 
-`CCAction` CocosSharp オブジェクトをアニメーション化するために使用する基本クラスです。 このガイドには、組み込みがについて説明します`CCAction`配置、スケーリング、および回転などの一般的なタスクの実装です。 継承することによってカスタム実装を作成する方法についても説明`CCAction`です。
+`CCAction` CocosSharp オブジェクトをアニメーション化するために使用できる基本クラスです。 このガイドは、組み込み`CCAction`配置、スケーリング、および回転などの一般的なタスクを実装します。 継承することによってカスタム実装を作成する方法についても説明`CCAction`します。
 
-このガイドでは、プロジェクトと呼ばれる**ActionProject**を[でダウンロードできます](https://developer.xamarin.com/samples/mobile/CCAction)です。 このガイドでは、`CCDrawNode`については、クラス、 [CCDrawNode で描画 Geometry](~/graphics-games/cocossharp/ccdrawnode.md)ガイドです。
+このガイドでは、プロジェクトと呼ばれる**ActionProject**を[でダウンロードできます](https://developer.xamarin.com/samples/mobile/CCAction)します。 このガイドでは、`CCDrawNode`については、クラス、 [CCDrawNode によるジオメトリ描画 Geometry](~/graphics-games/cocossharp/ccdrawnode.md)ガイド。
 
 
 ## <a name="running-the-actionproject"></a>ActionProject を実行しています。
 
-**ActionProject** CocosSharp ソリューションが iOS および Android 用構築されたことができます。 両方の使用方法のコード サンプルとして機能し、`CCAction`クラスと共通のリアルタイムのデモとして`CCAction`実装します。
+**ActionProject**は iOS と Android 向けにビルドできる CocosSharp ソリューションです。 機能を使用する方法のサンプル コードであると、`CCAction`クラスと共通のリアルタイム デモとして`CCAction`実装します。
 
-を実行する場合は 3 つの ActionProject が表示されます`CCLabel`画面および 2 で描画されたビジュアル オブジェクトの左側にインスタンス`CCDrawNode`さまざまなアクションを表示するためのインスタンス。
+を実行している場合は 3 つの ActionProject が表示されます`CCLabel`画面と 2 つで描画されるビジュアル オブジェクトの左上のインスタンス`CCDrawNode`さまざまなアクションを表示するためのインスタンス。
 
-![](ccaction-images/image1.png "ActionProject 画面と 2 つの CCDrawNode インスタンスによって作成されます。 さまざまなアクションを表示するためのビジュアル オブジェクトの左側に 3 つの表すローカライズされたインスタンスが表示されます。")
+![](ccaction-images/image1.png "ActionProject 画面とさまざまなアクションを表示するための 2 つの CCDrawNode インスタンスによって描画されるビジュアル オブジェクトの左側に 3 つの表すローカライズされたインスタンスを表示します")
 
-左のラベルの種類を示す`CCAction`画面上をタップすると作成されます。 既定では、**位置**値を選択すると、その結果、`CCMove`アクションが作成され、赤い円に適用されています。
+左のラベルの種類を示す`CCAction`画面をタップするときに作成されます。 既定で、**位置**値を選択すると、その結果、`CCMove`アクションが作成され、赤い円の部分に適用されています。
 
-![](ccaction-images/image2.gif "位置の値を選択すると、その結果、CCMove アクションの作成され、赤い円に適用")
+![](ccaction-images/image2.gif "位置の値を選択すると、作成し、赤い円の部分に適用される CCMove アクション中の結果")
 
-左のラベルをクリックすると変更の種類の`CCAction`円でを実行します。 たとえばをクリックすると、**位置**ラベルが順番に異なる値を変更できます。
+どの種類の左側にラベルをクリックすると変更`CCAction`円で実行されます。 たとえばをクリックすると、**位置**ラベルを順を変更できる、さまざまな値。
 
-![](ccaction-images/image3.gif "位置のラベルをクリックするとが順番に異なる値を変更できます。")
+![](ccaction-images/image3.gif "変更可能なさまざまな値を循環位置のラベルをクリックします。")
 
-## <a name="common-variable-changing-ccaction-classes"></a>共通の変数を変更する CCAction クラス
+## <a name="common-variable-changing-ccaction-classes"></a>一般的な CCAction クラスの変数を変更します。
 
-**ActionProject** 、次を使用して`CCAction`-CocosSharp の一部となっているクラスを継承します。
+**ActionProject** 、次を使用して`CCAction`-CocosSharp の一部のクラスを継承します。
 
- - `CCMoveTo` – 変更、`CCNode`インスタンスの`Position`プロパティ
- - `CCScaleTo` – 変更、`CCNode`インスタンスの`Scale`プロパティ
- - `CCRotateTo` – 変更、`CCNode`インスタンスの`Rotation`プロパティ
+ - `CCMoveTo` – 変更を`CCNode`インスタンスの`Position`プロパティ
+ - `CCScaleTo` – 変更を`CCNode`インスタンスの`Scale`プロパティ
+ - `CCRotateTo` – 変更を`CCNode`インスタンスの`Rotation`プロパティ
 
-このガイドでは、これらのアクションとして*変数を変更する*の変数に直接影響することを意味する、`CCNode`に追加されます。 その他の種類のアクションと呼びます*イージング*アクションは、このガイドの後半で説明します。
+このガイドでは、これらのアクションとして*変数を変更する*の変数に直接影響することを意味する、`CCNode`に追加されます。 その他の種類のアクションと呼びます*イージング*アクションは、このガイドで後で説明されます。
 
-**ActionProject**これらのアクションの目的は、時間の経過と共に、変数を変更することを示します。 具体的には、これら`CCActions`コンス トラクターは、2 つの引数を受け取る: 有効にして代入する値の長さ。 次のコードは、次の 3 つの種類のアクションを作成する方法を示しています。
+**ActionProject**これらのアクションの目的は、時間の経過と共に、変数を変更することを示します。 具体的には、これら`CCActions`コンス トラクターは、2 つの引数を受け取る: までの時間がかかると代入する値の長さ。 次のコードは、次の 3 つの種類のアクションを作成する方法を示しています。
 
 
 ```csharp
-switch (VariableOptions [currentVariableIndex])
+switch (VariableOptions [currentVariableIndex])
 {
-    case "Position":
-        coreAction = new CCMoveTo(timeToTake, touch.Location);
+    case "Position":
+        coreAction = new CCMoveTo(timeToTake, touch.Location);
 
-        break;
-    case "Scale":
-        var distance = CCPoint.Distance (touch.Location, drawNodeRoot.Position);
-        var desiredScale = distance / DefaultCircleRadius;
-        coreAction = new CCScaleTo(timeToTake, desiredScale);
+        break;
+    case "Scale":
+        var distance = CCPoint.Distance (touch.Location, drawNodeRoot.Position);
+        var desiredScale = distance / DefaultCircleRadius;
+        coreAction = new CCScaleTo(timeToTake, desiredScale);
 
-        break;
-    case "Rotation":
-        float differenceY = touch.Location.Y - drawNodeRoot.PositionY;
-        float differenceX = touch.Location.X - drawNodeRoot.PositionX;
+        break;
+    case "Rotation":
+        float differenceY = touch.Location.Y - drawNodeRoot.PositionY;
+        float differenceX = touch.Location.X - drawNodeRoot.PositionX;
 
-        float angleInDegrees = -1 * CCMathHelper.ToDegrees(
-            (float)System.Math.Atan2(differenceY, differenceX));
+        float angleInDegrees = -1 * CCMathHelper.ToDegrees(
+            (float)System.Math.Atan2(differenceY, differenceX));
 
-        coreAction = new CCRotateTo (timeToTake, angleInDegrees);
+        coreAction = new CCRotateTo (timeToTake, angleInDegrees);
 
-        break; 
+        break; 
 ...
 }
 ```
@@ -82,172 +82,172 @@ switch (VariableOptions [currentVariableIndex])
 
 
 ```csharp
-nodeToAddTo.AddAction (coreAction); 
+nodeToAddTo.AddAction (coreAction); 
 ```
 
-`AddAction` 開始、`CCAction`インスタンスの動作、およびそれが自動的に実行、ロジックの後に、フレームが完了するまでです。
+`AddAction` 開始、`CCAction`インスタンスの動作、およびそれが自動的に実行のロジックの後のフレームが完了するまでです。
 
-という単語で終わる上の各種類の一覧に*に*を意味する、`CCAction`は、変更、`CCNode`引数の値が、アクションが完了すると、最終的な状態を表すようにします。 などを作成する、 `CCMoveTo` X の位置 = 100 と Y = 200 の結果で、`CCNode`インスタンスの`Position`X に設定されている = 100、Y = 200 に関係なく、指定した時間の終了時刻、`CCNode`インスタンスの場所を開始します。
+単語で終わるを上記の各種類*に*つまり、`CCAction`が変更されます、`CCNode`アクションが完了すると、引数の値が最終的な状態を表すようにします。 などの作成、 `CCMoveTo` = 100 と Y の X 位置の = 200 の結果で、`CCNode`インスタンスの`Position`X に設定されています = 100、Y = 200 に関係なく、指定した時間の終了時刻、`CCNode`インスタンスの開始位置。
 
-各"To"クラスも「によって」、バージョンを持っての現在の値には引数の値が追加されます、`CCNode`です。 などの作成、 `CCMoveBy` X の位置 = 100 と Y = 200 になります、`CCNode`アクションが開始されたときでは位置から右側 100 単位に、200 の単位を移動するインスタンス。
+各"クラスの To"も「によって」、バージョンを持っての現在の値に、引数の値が追加されます、`CCNode`します。 などを作成する、 `CCMoveBy` = 100 と Y の X 位置の = 200 なります、`CCNode`アクションが開始されたときに位置から右側 100 単位と 200 ユニットに移行中のインスタンス。
 
 
-## <a name="easing-actions"></a>アクションの簡略化
+## <a name="easing-actions"></a>操作を簡略化
 
-変数を変更するアクションを実行する既定では、*線形補間*– アクションが一定の割合で目的の値の方向に移動します。 補間する場合*位置*の速度はそのまま、アクションを実行し、直線的に移動するオブジェクトがすぐに開始され先頭と、操作の最後に移動は停止します。 
+変数を変更するアクションを実行する既定では、*線形補間*– アクションが一定の率で目的の値の方向に移動します。 補間する場合*位置*アクションの実行時の速度が一定に保たと線形に移動するオブジェクトすぐに開始および停止アクションの前後に移動します。 
 
-非線形補間では、小さい少し目障りな感じがし、CocosSharp さまざまな変数を変更するアクションを変更するために使用するアクションを簡略化を提供するために、ポーランド語の要素を追加します。
+非線形補間は、小さい少し目障りな感じ CocosSharp さまざまな変数を変更するアクションを変更するために使用できる操作を簡略化を提供するために、ポーランド語の要素を追加します。
 
-**ActionProject**サンプルについては、この種類の 2 番目のラベルをクリックしてイージング操作の間で切り替えるおできます (既定値**<None>**)。
+**ActionProject**サンプルでは、このような 2 番目のラベルをクリックしてイージング アクション間で切り替えることができます (既定では**<None>**)。
 
-![](ccaction-images/image4.gif "ユーザーは、この種類の 2 番目のラベルをクリックしてイージング操作を切り替えることができます。")
+![](ccaction-images/image4.gif "ユーザーがこのような 2 番目のラベルをクリックしてイージング アクション間で切り替えることができます。")
 
-イージング アクションは、どの特定の変数設定アクションに関連付けられていないために、特に強力です。 これは、位置、回転、小数点以下桁数、またはカスタム動作を割り当てる (このガイドの後半で表示されます) と同じイージング アクションを使用できることを意味します。
+イージング アクションは、どの特定の変数設定アクションに関連付けられていないため、特に強力です。 これは、位置、回転、スケール、またはカスタム動作を割り当てる (このガイドの後半に表示されます) と同じイージング アクションを使用できることを意味します。
 
-変数設定の操作をラップするイージング アクション (変数設定アクションを継承から限り`CCFiniteTimeAction`)、コンス トラクターの引数として変数設定アクションを受け入れることによりします。
+イージング アクション変数設定の操作をラップする (変数設定のアクションを継承する限り`CCFiniteTimeAction`)、コンス トラクターの引数として変数設定のアクションをそのまま使用しています。
 
-たとえば、ラベルが設定されている場合**位置**、 **CCEaseElastic**タッチが検出されたときに、次のコードが実行されます (該当する行を強調表示するコードが省略されているに注意してください)。
+たとえば、ラベルが設定されている場合**位置**、 **CCEaseElastic**タッチが検出されたときに、次のコードが実行されます (該当する行を強調表示するコードが省略されていることに注意してください)。
 
 
 ```csharp
-CCFiniteTimeAction coreAction = null; 
+CCFiniteTimeAction coreAction = null; 
 ...
-coreAction = new CCMoveTo(timeToTake, touch.Location); 
+coreAction = new CCMoveTo(timeToTake, touch.Location); 
 ...
-CCAction easing = null; 
+CCAction easing = null; 
 ...
-easing = new CCEaseSineOut (coreAction); 
+easing = new CCEaseSineOut (coreAction); 
 ...
-nodeToAddTo.AddAction (easing); 
+nodeToAddTo.AddAction (easing); 
 ```
 
-アプリケーションによってように、正確な同じイージングに適用できるその他の変数設定アクションなど`CCRotateTo`:
+ように、アプリケーションによって、正確な同じイージングに適用できるその他の変数設定のアクションなど`CCRotateTo`:
 
-![](ccaction-images/image5.gif "CCRotateTo などの他の変数設定アクションに正確な同じイージングを適用できます。")
+![](ccaction-images/image5.gif "CCRotateTo などの他の変数設定操作に適用できる正確な同じイージング")
 
 
-## <a name="easing-in-out-and-inout"></a>イージング In、Out、および InOut
+## <a name="easing-in-out-and-inout"></a>、Out および InOut を簡略化
 
-すべてのアクションをイージングが`In`、 `Out`、または`InOut`イージング型に追加されます。 イージングが適用されるときは、これらの用語を参照:`In`イージングは開始時に、適用することを意味`Out`終了時に、ことを意味し、`InOut`先頭と末尾の両方を意味します。
+すべてのイージング アクションが`In`、 `Out`、または`InOut`イージングの種類に追加されます。 これらの用語を参照してください、イージングを適用すると:`In`意味を先頭に適用されるイージング`Out`最後に、意味と`InOut`先頭と末尾の両方を意味します。
 
-`In`全体の補間 (両方の先頭と末尾に)、全体で変数が適用される方法に影響がアクションを簡略化いますが、通常最もわかりやすい特性イージング アクションの先頭に配置します。 同様に、`Out`イージング アクションは、補間の終了時の動作によって特徴付けられます。 たとえば、`CCEaseBounceOut`アクションの終了時バウンス オブジェクトになります。
+`In`全体 (両方の先頭と末尾に)、全体の補間で変数が適用される方法に影響が軽減のアクションがイージング アクションの最も顕著な特性は通常、最初に発生しますが、します。 同様に、`Out`イージング アクションは、補間の最後に、その動作によって特徴付けられます。 たとえば、`CCEaseBounceOut`アクションの最後にバウンス オブジェクトになります。
 
 
 ### <a name="out"></a>Out
 
-`Out` 一般に容易には、補間の最後に最も大きな変更が適用されます。 たとえば、`CCEaseExponentialOut`対象の値に近づくにつれて、変化する変数の変化率が低下します。
+`Out` 通常、イージング、補間の end で最も顕著な変更が適用されます。 たとえば、`CCEaseExponentialOut`対象の値に近づくにつれて変化する変数の変化率が低下します。
 
 ![](ccaction-images/image6.gif "対象の値に近づくにつれて、CCEaseExponentialOut の変化する変数の変化率が低下します。")
 
 
 ### <a name="in"></a>イン
 
-`In` 通常の簡略化すると、補間の先頭に最も大きな変更が適用されます。 たとえば、`CCEaseExponentialIn`より遅くなりアクションの先頭に移動されます。
+`In` 通常、イージング、補間の先頭に最も大きな変更が適用されます。 たとえば、`CCEaseExponentialIn`より緩やかに変化、アクションの先頭に移動されます。
 
-![](ccaction-images/image7.gif "アクションの先頭に CCEaseExponentialIn はより遅くなり移動します。")
+![](ccaction-images/image7.gif "アクションの先頭に CCEaseExponentialIn がより緩やかに変化移動します。")
 
 
 ### <a name="inout"></a>InOut
 
-`InOut` 通常の先頭と末尾の両方で最も顕著な変更を適用します。 `InOut` イージングは通常対称です。 たとえば、`CCEaseExponentialInOut`先頭と、操作の最後に、緩やかに変化が移動します。
+`InOut` 通常、先頭と末尾の両方の最も顕著な変更が適用されます。 `InOut` 簡略化は、通常は対称です。 たとえば、`CCEaseExponentialInOut`先頭とアクションの最後に、緩やかに変化が移動します。
 
-![](ccaction-images/image8.gif "先頭と末尾のアクションで CCEaseExponentialInOut が緩やかに変化移動します。")
+![](ccaction-images/image8.gif "CCEaseExponentialInOut は先頭とアクションの最後にゆっくり")
 
 
 ## <a name="implementing-a-custom-ccaction"></a>カスタム CCAction を実装します。
 
-CocosSharp 一般的な機能を提供するには、すべてのこれまでに説明したクラスが含まれます。 カスタム`CCAction`の実装がさらに高い柔軟性を提供します。 たとえば、`CCAction`エクスペリエンス バーの塗りつぶしの比率を制御することできますエクスペリエンス バーは、ユーザー エクスペリエンスが加算されるたびに滑らかに拡大できるようにします。
+CocosSharp 一般的な機能を提供するには、すべてのこれまでに説明したクラスが含まれます。 カスタム`CCAction`実装がさらに高い柔軟性を提供します。 たとえば、`CCAction`エクスペリエンス バーの塗りつぶされた比率を制御することができます、ユーザー エクスペリエンスを獲得するたびに、操作バーが滑らかに拡大されるようにします。
 
-`CCAction` 実装には、通常、2 つのクラスが必要です。
+`CCAction` 通常、実装には、2 つのクラスが必要です。
 
- - `CCFiniteTimeAction` 実装: 有限時間アクション クラスは、操作を開始するためです。 インスタンス化するクラスに直接追加するか、`CCNode`またはイージング アクションにします。 インスタンスを作成およびを返す必要があります、 `CCFiniteTimeActionState`、更新プログラムが実行されます。
- - `CCFiniteTimeActionState` 実装 – 有限時間アクション状態クラスをアクションに関連する変数を更新します。 時刻の値に基づいてターゲットの値を割り当てます更新関数を実装してする必要があります。 このクラスは明示的に外部で参照されていません、`CCFiniteTimeAction`作成します。 「舞台裏」単に動作します。
+ - `CCFiniteTimeAction` アクションを開始するため、有限の時間操作クラスは実装です。 これは、クラスがインスタンス化してに直接追加するか、`CCNode`またはイージング アクションにします。 インスタンス化し、返す必要がありますが、 `CCFiniteTimeActionState`、これには、更新を実行します。
+ - `CCFiniteTimeActionState` アクションに関連する変数を更新するため、有限の時間操作状態クラスは実装です。 時間の値に基づいてターゲットの値を代入する更新関数、実装する必要がある必要があります。 このクラスは明示的に外部で参照されていません、`CCFiniteTimeAction`が作成されます。 「舞台裏」単に動作します。
 
-**ActionProject** 、カスタムの提供`CCFiniteTimeAction`と呼ばれる実装`LineWidthAction,`黄色の赤い円の上に描画される線の幅の調整に使用されます。 その唯一の役割のインスタンスを作成して返す、`LineWidthState`インスタンス。
+**ActionProject**提供カスタム`CCFiniteTimeAction`という実装`LineWidthAction,`黄色の赤い円の上に描画される線の幅の調整に使用します。 その唯一の仕事がのインスタンスを作成して返すには、`LineWidthState`インスタンス。
 
 
 ```csharp
-public class LineWidthAction : CCFiniteTimeAction
+public class LineWidthAction : CCFiniteTimeAction
 {
-    float endWidth;
+    float endWidth;
 
-    public LineWidthAction (float duration, float width) : base(duration)
-    {
-        endWidth = width;
-    }
+    public LineWidthAction (float duration, float width) : base(duration)
+    {
+        endWidth = width;
+    }
 
-    public override CCFiniteTimeAction Reverse ()
-    {
-        throw new NotImplementedException ();
-    }
+    public override CCFiniteTimeAction Reverse ()
+    {
+        throw new NotImplementedException ();
+    }
 
-    protected override CCActionState StartAction (CCNode target)
-    {
-        return new LineWidthState (this, target, endWidth);
-    }
+    protected override CCActionState StartAction (CCNode target)
+    {
+        return new LineWidthState (this, target, endWidth);
+    }
 }
 ```
 
-、上記のように、`LineWidthState`線の割り当ての作業を行う`Width`量に基づきプロパティ`time`経過します。
+、上記のとおり、`LineWidthState`の線の割り当てのしくみを示す`Width`量に従ってプロパティ`time`経過します。
 
 
 ```csharp
-public class LineWidthState : CCFiniteTimeActionState
+public class LineWidthState : CCFiniteTimeActionState
 {
-    float deltaWidth;
-    float startWidth;
+    float deltaWidth;
+    float startWidth;
 
-    LineNode castedTarget;
+    LineNode castedTarget;
 
-    public LineWidthState(LineWidthAction action, CCNode target, float endWidth) : base(action, target)
-    {
-        castedTarget = target as LineNode;
+    public LineWidthState(LineWidthAction action, CCNode target, float endWidth) : base(action, target)
+    {
+        castedTarget = target as LineNode;
 
-        if (castedTarget == null)
-        {
-            throw new InvalidOperationException ("The argument target must be a LineNode");
-        }
+        if (castedTarget == null)
+        {
+            throw new InvalidOperationException ("The argument target must be a LineNode");
+        }
 
-        startWidth = castedTarget.Width;
-        deltaWidth = endWidth - startWidth;
-    }
+        startWidth = castedTarget.Width;
+        deltaWidth = endWidth - startWidth;
+    }
 
-    public override void Update (float time)
-    {
-        castedTarget.Width = startWidth + deltaWidth * time;
-    }
+    public override void Update (float time)
+    {
+        castedTarget.Width = startWidth + deltaWidth * time;
+    }
 } 
 ```
 
-次のアニメーションに示すように、さまざまな方法で線幅を変更するイージング操作で、LineWidthAction を結合できます。
+次のアニメーションで示すように、さまざまな方法で線の幅を変更するイージング操作で、LineWidthAction を結合できます。
 
-![](ccaction-images/image9.gif "このアニメーションで示すようには、さまざまな方法で線幅を変更するイージングのアクション、LineWidthAction を結合できます。")
+![](ccaction-images/image9.gif "このアニメーションで示すように、イージング アクションをさまざまな方法で線の幅を変更すると、LineWidthAction を組み合わせることができます。")
 
 
 ### <a name="interpolation-and-the-update-method"></a>補間と、Update メソッド
 
-上記のクラス内の値を格納する場合を除いて、唯一のロジックが住んでいる、`LineWidthState.Update`メソッドです。 `startWidth`変数がターゲットの幅を格納`LineNode`、アクションの開始時と`deltaWidth`変数がどの程度の値は、操作の過程で変更を保存します。
+別に、上記のクラスで値を格納する、唯一のロジックに在住、`LineWidthState.Update`メソッド。 `startWidth`変数、ターゲットの幅を格納する`LineNode`、アクションの開始時と`deltaWidth`変数がどの程度の値は、操作の過程で変更を格納します。
 
-置き換えることによって、 `time` 0 の値を持つ変数、ことが分かりますターゲット`LineNode`の開始位置になります。
-
-
-```csharp
-castedTarget.Width = startWidth + deltaWidth * 0; 
-```
-
-同様に、ことが分かりますターゲット`LineNode`時間変数を 1 の値に置き換えることによってその送信先になります。
+置き換えることによって、`time`変数値が 0 で、ことを確認できますターゲット`LineNode`の開始位置になります。
 
 
 ```csharp
-castedTarget.Width = startWidth + deltaWidth * 1; 
+castedTarget.Width = startWidth + deltaWidth * 0; 
 ```
 
-`time`値は 0 ~ 1 - で通常は常にではありません - と`Update`実装は、これらの境界を想定しないでください。 一部のイージング メソッド (など`CCEaseBackIn`と`CCEaseBackOut`) 0 ~ 1 の範囲外での時刻値を指定します。
+同様に、ことを確認できますターゲット`LineNode`時間変数を 1 の値を代入することによって、転送先になります。
+
+
+```csharp
+castedTarget.Width = startWidth + deltaWidth * 1; 
+```
+
+`time`値は 0 と 1 の間に通常なりますが、常にではありません - と`Update`実装は、これらの境界を想定しないでください。 いくつかのイージング メソッド (など`CCEaseBackIn`と`CCEaseBackOut`)、0 ~ 1 の範囲外の時間値を指定します。
 
 
 ## <a name="conclusion"></a>まとめ
 
-補間とイージング、光沢のあるゲームを作成するユーザー インターフェイスを作成するときに特に重要な部分です。 このガイドを使用する方法を説明する`CCActions`位置と回転などの標準の値だけでなくカスタム値を補間します。 `LineWidthState`と`LineWidthAction`クラスは、カスタム アクションを実装する方法を示します。
+補間し、イージング、光沢のあるゲームを作成するユーザー インターフェイスを作成するときに特に重要な部分です。 このガイドは、使用する方法を説明します。`CCActions`位置や回転などの標準値およびカスタム値を補間します。 `LineWidthState`と`LineWidthAction`クラスがカスタム動作を実装する方法を示します。
 
 ## <a name="related-links"></a>関連リンク
 

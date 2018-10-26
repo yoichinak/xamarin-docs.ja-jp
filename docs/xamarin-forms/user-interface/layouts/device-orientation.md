@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 7f0e1c27f7d6a62dc43ac447c4f796d685a6cd91
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: a008b270d4ff670a03f18318186ca038c5c0348d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241212"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118878"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -28,7 +28,7 @@ Xamarin.Forms を使用する場合、デバイスの向きを制御するため
 
 Ios では、デバイスの向きを使用してアプリケーション用に構成された、 **Info.plist**ファイル。 アプリは、ターゲットとして含まれている場合、このファイルは iPhone と iPod の向きの設定と iPad の設定を含まれます。 お使いの IDE に固有の手順を次に示します。 このドキュメントの上部にある IDE オプションを使用すると、表示するにはどの手順を選択します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio で iOS プロジェクトを開き、開く**Info.plist**します。 以降、iPhone 展開情報 タブで、構成パネルにファイルが開きます。
 
@@ -38,7 +38,7 @@ IPad の向きを構成するには、選択、 **iPad 展開情報**の左、�
 
 ![Visual Studio でサポートされているデバイスの向き](device-orientation-images/orientation-vs-ipad.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual studio for Mac、iOS プロジェクトを開き、開く**Info.plist**します。 で、**アプリケーション** タブのセクションでは印刷の向きを設定を利用できなくなります。
 

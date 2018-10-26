@@ -1,24 +1,24 @@
 ---
-title: Xamarin.iOS でユーザー インターフェイス オブジェクトを作成します。
-description: このドキュメントでは、Xamarin.iOS でユーザー インターフェイスを作成する方法の概要を説明します。 これは、iOS デザイナー、Xcode インターフェイス ビルダー、c#、およびストーリー ボードについて説明します。
+title: Xamarin.iOS でのユーザー インターフェイス オブジェクトの作成
+description: このドキュメントでは、Xamarin.iOS でのユーザー インターフェイスを作成する方法の概要を示します。 IOS Designer、Xcode の Interface Builder をについて説明してC#とストーリー ボード。
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c688dcdf7498b0a2860d1878d893beae4f5cf8fc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790153"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121920"
 ---
-# <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin.iOS でユーザー インターフェイス オブジェクトを作成します。
+# <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイス オブジェクトの作成
 
-機能と同じで Xamarin.iOS 名前空間の「フレームワーク」を使用する Apple のグループの関連部分です。 `UIKit` iOS 用のすべてのユーザー インターフェイス コントロールを含む名前空間がします。
+Apple のグループに関連の Xamarin.iOS の名前空間と同等の「フレームワーク」に機能します。 `UIKit` iOS 用のすべてのユーザー インターフェイス コントロールを含む名前空間です。
 
-コードは、ラベル、ボタンなどのユーザー インターフェイス コントロールを参照する必要があるとき、次のとおりに注意してください。 ステートメントを使用します。
+コードは、ラベルやボタンなどのユーザー インターフェイス コントロールを参照する必要があるたびに、以下に注意してください。 ステートメントを使用します。
 
 ```csharp
 using UIKit;
@@ -26,49 +26,49 @@ using UIKit;
 
 UIKit 名前空間にこの章で説明されているすべてのコントロールがあり、各ユーザー コントロールのクラス名が、`UI`プレフィックス。
 
-UI コントロールと 3 つの方法でのレイアウトを編集できます。
+UI コントロールと 3 つの方法でレイアウトを編集することができます。
 
--  **[Xamarin iOS デザイナー](~/ios/user-interface/designer/index.md)**  – を使用して Xamarin の組み込みのレイアウトのデザイナー画面をデザインします。 ストーリー ボードまたは組み込みのデザイナーで編集する XIB ファイルをダブルクリックします。
--  **Xcode インターフェイス ビルダー** – インターフェイスのビルダーを使用して画面のレイアウトにコントロールをドラッグします。 内のファイルを右クリックして、Xcode でストーリー ボードまたは XIB ファイルを開く、**ソリューション パッド**を選択して**ファイルを開く > Xcode インターフェイス ビルダー**です。
--  **C# を使用して**– コントロールもプログラム コードで作成してビュー階層に追加します。
+-  **[Xamarin iOS Designer](~/ios/user-interface/designer/index.md)**  – 使用して Xamarin の組み込みのレイアウトのデザイナー画面をデザインします。 ストーリー ボードまたは組み込みのデザイナーで編集する XIB ファイルをダブルクリックします。
+-  **Xcode の Interface Builder** – インターフェイス ビルダーでは、画面のレイアウトにコントロールをドラッグします。 ファイルを右クリックして、Xcode でストーリー ボードまたは XIB ファイルを開く、 **Solution Pad**を選択して**プログラムから開く > Xcode の Interface Builder**します。
+-  **使用してC#**  – コントロールもプログラムでコードを使用して構築でき、ビュー階層に追加します。
 
-IOS プロジェクトを右クリックして を選択して新しいストーリー ボードおよび XIB ファイルを追加することができます**追加 > 新しいファイル.**.
+IOS プロジェクトを右クリックして新しいストーリー ボードと XIB ファイルを追加できる**追加 > 新しいファイル.**.
 
-どちらの方法を使用すると、コントロールのプロパティとイベントを操作できます c# を使用して、アプリケーション ロジックです。
+どちらの方法を使用すると、コントロールのプロパティおよびイベント操作は可能でC#アプリケーション ロジックにします。
 
 ## <a name="using-xamarin-ios-designer"></a>Xamarin iOS デザイナーを使用してください。
 
-IOS デザイナーで、ユーザー インターフェイスの作成を開始するには、ストーリー ボード ファイルをダブルクリックします。 デザイン サーフェイスにコントロールをドラッグすることができます、**ツールボックス**下図のようにします。
+IOS Designer のユーザー インターフェイスの作成を開始するには、ストーリー ボード ファイルをダブルクリックします。 デザイン サーフェイスにコントロールをドラッグすることができます、**ツールボックス**下図のようにします。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  [![](creating-ui-objects-images/image2b.png "ツールボックス パッド")](creating-ui-objects-images/image2b.png#lightbox)
  
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  [![](creating-ui-objects-images/image2b-vs.png "ツールボックス パッド - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
  
 -----
 
-デザイン画面でコントロールを選択すると、**プロパティ パッド**そのコントロールの属性が表示されます。 **ウィジェット > Identity > 名前**としてフィールドには、次のスクリーン ショットの設定を使用、*コンセント*名。 C# でのコントロールを参照する方法を示します。
+デザイン サーフェイスにコントロールを選択すると、 **Properties Pad**そのコントロールの属性が表示されます。 **ウィジェット > Identity > 名前**としてフィールドには、次のスクリーン ショットで設定されますが、提供される、*アウトレット*名。 これで、コントロールを参照する方法は、 C#:
 
  [![](creating-ui-objects-images/image3b.png "プロパティのウィジェット パッド")](creating-ui-objects-images/image3b.png#lightbox)
 
-さらに詳しく知り iOS デザイナーを使用して、参照してください、 [iOS デザイナーの概要](~/ios/user-interface/designer/introduction.md)ガイドです。
+IOS designer の使用について詳しくを参照してください、 [iOS Designer の概要](~/ios/user-interface/designer/introduction.md)ガイド。
 
-## <a name="using-xcode-interface-builder"></a>Xcode インターフェイスのビルダーを使用します。
+## <a name="using-xcode-interface-builder"></a>Xcode の Interface Builder を使用します。
 
-インターフェイスのビルダーを使用してに慣れていない場合は、Apple を参照してください[インターフェイス ビルダー](https://developer.apple.com/xcode/interface-builder/)ドキュメント。
+Interface Builder の使用に慣れていない場合は、Apple を参照してください[Interface Builder](https://developer.apple.com/xcode/interface-builder/)ドキュメント。
 
-Xcode でストーリー ボードを開き、右クリックして、ストーリー ボード ファイルのコンテキスト メニューにアクセスしてでを開く、 **Xcode インターフェイス ビルダー**:
+Xcode で開くストーリー ボードには、右クリックしてストーリー ボード ファイルのコンテキスト メニューにアクセスしてでを開く、 **Xcode の Interface Builder**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "ストーリー ボードのコンテキスト メニュー - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![](creating-ui-objects-images/imagexcode.png "Xcode のストーリー ボード コンテキスト メニュー")](creating-ui-objects-images/imagexcode.png#lightbox)
  
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "ストーリー ボードのコンテキスト メニュー - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![](creating-ui-objects-images/imagexcode-vs.png "Xcode のストーリー ボード コンテキスト メニュー")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
@@ -76,30 +76,30 @@ Xcode でストーリー ボードを開き、右クリックして、ストー�
 
  [![](creating-ui-objects-images/image5a.png "Xcode オブジェクト ライブラリ")](creating-ui-objects-images/image5a.png#lightbox)
 
-インターフェイスのビルダーを作成する必要がありますで UI を設計する際、**コンセント**c# で参照する各コントロールです。 これは、オンで、**アシスタント エディター**センターを使用して**エディター** Xcode ツール バー ボタンのボタン。
+作成する必要があります、Interface Builder で UI をデザインするとき、**アウトレット**で参照する各コントロールのC#します。 これは、オンで、**アシスタント エディター**センターを使用して**エディター** Xcode ツール バー ボタンのボタン。
 
  [![](creating-ui-objects-images/image6a.png "アシスタント エディター ボタン")](creating-ui-objects-images/image6a.png#lightbox)
 
-ユーザー インターフェイス オブジェクト; をクリックします。**コントロールのドラッグ**.h ファイルにします。 * * コントロール ドラッグ * *、コントロールのキーを押しながらクリックし、ユーザー インターフェイス オブジェクト上に置くのコンセント (またはアクション) を作成しています。 保持コントロール キーを押しながら、ヘッダー ファイルにドラッグします。 [完了] の下にドラッグして、`@interface`定義します。 青い線は、次のスクリーン ショットに示すように、キャプション コンセントを挿入またはコンセント コレクションで表示されます。
+ユーザー インターフェイス オブジェクトでは; をクリックします。**コントロールのドラッグ**.h ファイルにします。 * * コントロール ドラッグ * コントロール キーを押しながら をクリックし、ユーザー インターフェイス オブジェクト上でのコンセント (またはアクション) を作成します。 保持コントロール キーを押しながらヘッダー ファイルにドラッグします。 [完了] の下にドラッグ、`@interface`定義します。 青い線は、次のスクリーン ショットに示すように、キャプションの挿入のコンセントまたはコンセントのコレクションで表示されます。
 
-クリックを解放する場合は、コードで参照できる c# プロパティを作成するために使用すると、出口の名前を指定するよう求められます。
+作成するために使用すると、出口の名前を指定するメッセージが表示されます をクリックをリリースするときに、C#プロパティをコードで参照できます。
 
- [![](creating-ui-objects-images/image8a.png "コンセントを作成します。")](creating-ui-objects-images/image8a.png#lightbox)
+ [![](creating-ui-objects-images/image8a.png "アウトレットを作成します。")](creating-ui-objects-images/image8a.png#lightbox)
 
-Mac 用 Xcode のインターフェイスのビルダーを Visual Studio と統合する方法の詳細についてを参照してください、 [Xib コード生成](~/ios/internals/xib-code-generation.md#generated)ドキュメント。
+Visual Studio と Mac の Xcode の Interface Builder の統合の詳細についてを参照してください、 [Xib コードの生成](~/ios/internals/xib-code-generation.md#generated)ドキュメント。
 
-##  <a name="using-c"></a>C# を使用してください。
+##  <a name="using-c"></a>使用してください。C#
 
-(ビューや例については、ビューのコント ローラー) で c# を使用して、ユーザー インターフェイス オブジェクトをプログラムで作成する場合は、次の手順に従います。
+プログラムで使用するユーザー インターフェイス オブジェクトを作成する場合C#(でビューや例については、ビュー コント ローラー)、次の手順に従います。
 
--  ユーザー インターフェイス オブジェクトのクラス レベル フィールドを宣言します。 コントロール自体の作成に 1 回、`ViewDidLoad`例を示します。 オブジェクトを参照するビューのコント ローラー (のライフ サイクル メソッド
+-  ユーザー インターフェイス オブジェクトのクラス レベルのフィールドを宣言します。 コントロール自体の作成に 1 回、`ViewDidLoad`など。 オブジェクトのビュー コント ローラー (例: ライフ サイクル メソッド全体で参照できます。
 `ViewWillAppear`)
--  作成、`CGRect`コントロール (の X 座標と Y 座標の画面で、だけでなく、幅と高さに) のフレームを定義します。 あるかどうかを確認する必要があります、`using CoreGraphics`このディレクティブです。
--  作成して、コントロールを割り当てるコンス トラクターを呼び出します。
+-  作成、`CGRect`コントロール (その X 座標と Y 座標で、画面だけでなく、幅と高さ) のフレームを定義します。 あるかどうかを確認する必要があります、`using CoreGraphics`このディレクティブ。
+-  作成し、コントロールを割り当てるコンス トラクターを呼び出します。
 -  プロパティまたはイベント ハンドラーを設定します。
 -  呼び出す`Add()`ビュー階層にコントロールを追加します。
 
-ここで作成する単純な例を示します、`UILabel`ビュー コント ローラーを使用して C# の場合。
+作成する簡単な例を次に示します、`UILabel`ビュー コント ローラーを使用して、 C#:
 
 ```csharp
 UILabel label1;
@@ -114,15 +114,15 @@ public override void ViewDidLoad () {
 
 <a name="partial_classes" />
 
-## <a name="using-c-and-storyboards"></a>C# とストーリー ボードを使用します。
+## <a name="using-c-and-storyboards"></a>使用してC#とストーリー ボード
 
-コント ローラーの表示がデザイン画面に追加されると、c# の 2 つの対応するファイルがプロジェクトに作成されます。 この例では`ControlsViewController.cs`と`ControlsViewController.designer.cs`自動的に作成されています。
+ビュー コント ローラーが、対応する 2 つデザイン サーフェイスに追加されたときC#ファイル、プロジェクトに作成されます。 この例で`ControlsViewController.cs`と`ControlsViewController.designer.cs`自動的に作成されています。
 
  [![](creating-ui-objects-images/image9b.png "ViewController 部分クラス")](creating-ui-objects-images/image9b.png#lightbox)
 
-`MainViewController.cs`ファイルはもの*コード*です。 ここには、`View`などのライフ サイクル メソッド`ViewDidLoad`と`ViewWillAppear`実装される独自のプロパティ、フィールドおよびメソッドを追加したりできます。
+`MainViewController.cs`ファイルは、*コード*します。 これは、ような場合、`View`などのライフ サイクル メソッド`ViewDidLoad`と`ViewWillAppear`実装は、独自のプロパティ、フィールドおよびメソッドを追加できます。
 
-`ControlsViewController.designer.cs`を含む部分クラスを生成されたコードです。 設計上のコントロールに名前が for Mac を Visual Studio で画面を Xcode は、対応するプロパティ、または部分メソッド出口またはアクションを作成したりデザイナー (designer.cs) ファイルに追加されます。 次のコードもが、ボタンのいずれかの場所という 2 つのボタンとテキスト ビューに対して生成されたコードの例を示します、`TouchUpInside`イベント。
+`ControlsViewController.designer.cs`生成されたコードは、部分クラスを含むです。 設計上のコントロールに名前が for Mac、Visual Studio の画面を Xcode では、対応するプロパティ、または部分メソッド、コンセントまたはアクションを作成したり、デザイナー (designer.cs) ファイルに追加されます。 次のコードは、ボタンの 1 つもがある 2 つのボタンとテキスト ビューでは、生成されたコードの例を示します、`TouchUpInside`イベント。
 
 部分クラスのこれらの要素には、コントロールを参照し、デザイン画面で宣言されているアクションに応答するようにコードが有効にします。
 
@@ -165,9 +165,9 @@ public override void ViewDidLoad () {
 }
 ```
 
-`designer.cs`ファイルを手動で編集しないで – はストーリー ボードと同期しておくために、IDE (Mac または Visual Studio の Visual Studio) があります。
+`designer.cs`ファイルを手動で編集しないでください: ストーリー ボードと同期を維持するため、IDE (Visual Studio for Mac または Visual Studio) が担当します。
 
-ユーザー インターフェイス オブジェクトがプログラムに追加されたときに、`View`または`ViewController`のインスタンスを作成し、自分でのオブジェクト参照を管理するためのデザイナー ファイルを必要としません。
+ユーザー インターフェイス オブジェクトがプログラムに追加されたときに、`View`または`ViewController`、インスタンス化し、自分では、オブジェクト参照を管理する、したがってデザイナー ファイルは必要ありません。
 
 
 

@@ -4,15 +4,15 @@ description: この記事では、非アフィン変換を使用して 3D 空間
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: 84ebdd007d17eaf0bcfc1be119cb4130299503bc
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 750f357819a85077b3f272a7a10cbd3928186681
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615666"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110291"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の 3D 回転
 
@@ -24,7 +24,7 @@ _非アフィン変換を使用して、3 D 空間で 2D オブジェクトを�
 
 このジョブは、3 次元の回転を使用し、派生し、非アフィン`SKMatrix`これらの 3D 回転を実行する変換。
 
-これを開発するが難しい`SKMatrix`変換の 2 つのディメンション内でのみ動作します。 この 3-3 で行列は 3D グラフィックスで使用される 4-4 で行列から派生したときに、ジョブははるかに簡単になります。 SkiaSharp が含まれています、 [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/) 、この目的は 3D グラフィックスでいくつかのバック グラウンドのクラスは 3D 回転と 4-4 での変換行列を理解するために必要です。
+これを開発するが難しい`SKMatrix`変換の 2 つのディメンション内でのみ動作します。 この 3-3 で行列は 3D グラフィックスで使用される 4-4 で行列から派生したときに、ジョブははるかに簡単になります。 SkiaSharp が含まれています、 [ `SKMatrix44` ](xref:SkiaSharp.SKMatrix44) 、この目的は 3D グラフィックスでいくつかのバック グラウンドのクラスは 3D 回転と 4-4 での変換行列を理解するために必要です。
 
 Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念的には z までという 3 つ目の軸が追加されます。 3 次元空間で座標の点が 3 つの数値で示されます。 (x, y, z)。 X の値を増やすと、この記事で使用される座標系は 3D の右側にし、Y の値が、2 つのディメンションと同じように移動します。 画面から出て正の Z 値が増加します。 原点は、左上隅の 2D グラフィックと同様です。 画面は、この平面に直角に交わって Z 軸を XY 平面として考えることができます。
 
@@ -48,7 +48,7 @@ Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念
 |  M41  M42  M43  M44  |
 </pre>
 
-ただし、SkiaSharp`Matrix44`クラスは少し異なります。 個々 のセルの値を取得または設定する唯一の方法`SKMatrix44`を使用して、 [ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/)インデクサーです。 行と列のインデックスは 0 から始まるではなく 1 から始まるし、行と列がスワップされます。 上の図では、セル M14 にインデクサーを使用してアクセス`[3, 0]`で、`SKMatrix44`オブジェクト。
+ただし、SkiaSharp`Matrix44`クラスは少し異なります。 個々 のセルの値を取得または設定する唯一の方法`SKMatrix44`を使用して、 [ `Item` ](xref:SkiaSharp.SKMatrix44.Item(System.Int32,System.Int32))インデクサーです。 行と列のインデックスは 0 から始まるではなく 1 から始まるし、行と列がスワップされます。 上の図では、セル M14 にインデクサーを使用してアクセス`[3, 0]`で、`SKMatrix44`オブジェクト。
 
 3D グラフィックス システムで 3D の点 (x, y, z) は、4-4 での変換行列を掛けることの 1 ~ 4 をマトリックスに変換されます。
 
@@ -112,7 +112,7 @@ Z 軸の周りの回転は 2D グラフィックスと同じです。
 
 回転の方向がの座標システムの処理によって暗黙的に指定します。 左手のシステムでは、これはつまみの左側にある特定の軸の値の増加方向をポイントする場合、X 軸を中心とする回転の右側に Z 軸の周りの回転の回転を Y 軸を中心とするダウン-の曲線では、yoその他の指では、正の角度の回転の方向を示します。
 
-`SKMatrix44` 静的に一般化が[ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/)と[ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/)となる、回転が行われる軸を指定するためのメソッド。
+`SKMatrix44` 静的に一般化が[ `CreateRotation` ](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single))と[ `CreateRotationDegrees` ](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single))となる、回転が行われる軸を指定するためのメソッド。
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
@@ -220,7 +220,7 @@ x"= cos (α) ·x/((sin (α)/深さ) ·x + 1)
 
 X の値が負の値の中にバック グラウンドに遠ざかります 2D オブジェクトが Y 軸を中心、正の値は正の角度で回転したときに、前景色を取得する X 値。 X の値は、遠い Y 軸の座標として (これは、コサイン値によって制御されます)、Y 軸に近づけるが小さいまたはビューアーから移動すると拡大になったり、ビューアーに近いようです。
 
-使用する場合`SKMatrix44`、さまざまな乗算することによって、すべての 3D 回転とパースペクティブの操作を実行する`SKMatrix44`値。 4、4 から 3-3、2 次元行列を抽出することができますし、マトリックスを使用して、 [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/)のプロパティ、`SKMatrix44`クラス。 このプロパティは、使い慣れたを返します`SKMatrix`値。
+使用する場合`SKMatrix44`、さまざまな乗算することによって、すべての 3D 回転とパースペクティブの操作を実行する`SKMatrix44`値。 4、4 から 3-3、2 次元行列を抽出することができますし、マトリックスを使用して、 [ `Matrix` ](xref:SkiaSharp.SKMatrix44.Matrix)のプロパティ、`SKMatrix44`クラス。 このプロパティは、使い慣れたを返します`SKMatrix`値。
 
 **回転 3D**ページの 3D 回転を試すことができます。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)ファイルには、X、Y、および Z 軸の周りの回転を設定して、深さの値を設定する 4 つのスライダーがインスタンス化します。
 
@@ -441,7 +441,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`オーバーライドは、次の 3 つの Xamarin.Forms を定義します。`Animation`アニメーション化するオブジェクト、 `xRotationDegrees`、 `yRotationDegrees`、および`zRotationDegrees`異なるレートでフィールド。 これらのアニメーションの期間が数を素数に設定されていることを確認: 7 秒、および 11 秒、5 秒間 — ため、全体的な組み合わせは、すべて 385 の秒数または 10 分以上にのみ繰り返されます。
+`OnAppearing`オーバーライドは、次の 3 つの Xamarin.Forms を定義します。`Animation`アニメーション化するオブジェクト、 `xRotationDegrees`、 `yRotationDegrees`、および`zRotationDegrees`異なるレートでフィールド。 通知に事前通知するこれらのアニメーションの期間が設定されているため、全体的な組み合わせは、すべて 385 の秒数または 10 分以上にのみ繰り返されます (5 秒、7 秒、および 11 秒) の数値します。
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -536,5 +536,5 @@ public class AnimatedRotation3DPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

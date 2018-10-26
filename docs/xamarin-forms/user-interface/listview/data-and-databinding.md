@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 4f80682c5d8c4f5231fbdd2e081fdcf7962aa969
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351497"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103726"
 ---
 # <a name="listview-data-sources"></a>ListView のデータ ソース
 
@@ -89,7 +89,7 @@ employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
 データ バインディングの詳細については、次を参照してください。[データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)4 つの一部では、[記事シリーズを Xamarin.Forms XAML の基礎](~/xamarin-forms/xaml/xaml-basics/index.md)します。
 
 ### <a name="binding-cells"></a>セルのバインド
-内のオブジェクトのプロパティにバインドできるプロパティのセル (セルの子)、`ItemsSource`します。 など、ListView を使用して、イメージを持つ従業員の一覧を提供する可能性があります。
+内のオブジェクトのプロパティにバインドできるプロパティのセル (セルの子)、`ItemsSource`します。 たとえば、ListView を使用して、従業員の一覧を提供する可能性があります。
 
 Employee クラス:
 

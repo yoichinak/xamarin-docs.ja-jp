@@ -4,15 +4,15 @@ description: このチュートリアルでは、Xamarin.Android アプリケー
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 36ac1be1274ff90d573aa53e5c86ae0a97709505
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: de0e2c5ff10de9136c4cb5987c80ce22c7b18c4d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514428"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105546"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート通知 firebase Cloud Messaging
 
@@ -34,7 +34,7 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 
 このチュートリアルでは、機能を段階的に追加されます**FCMClient**し、デバイスまたは FCM と対話する方法を理解するためのエミュレーターで実行します。 ライブ アプリ トランザクションが、FCM サーバーとミラーリング監視サーバーにログ記録を使用して、Firebase コンソール通知 GUI に入力した FCM メッセージから通知を生成する方法がわかります。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 理解するおくと役、[さまざまな種類のメッセージの](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)Firebase Cloud Messaging で送信することができます。 メッセージのペイロードは、クライアント アプリを受信およびメッセージの処理方法が決まります。
@@ -42,7 +42,7 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#setup_fcm)します。
 具体的には、ダウンロードする必要があります、 **google-services.json**このチュートリアルで説明するコード例で使用するファイル。 かどうかはまだ作成していないプロジェクトで、Firebase コンソール (まだダウンロードしていない場合や、 **google-services.json**ファイル) を参照してください[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。
 
-例のアプリを実行するには、テストの Android デバイスまたは firebase の互換性のあるエミュレーターを必要があります。 Firebase Cloud Messaging で Android 4.0 以降を実行しているクライアントをサポートしているし、これらのデバイスが必要、インストールされている Google Play ストア アプリ (Google Play Services 9.2.1 または以降が必要です)。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、次を参照してください。、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードしてインストールします。 または、テスト デバイス (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません) の代わりにインストールされている Google play 開発者サービスで、Android SDK エミュレーターを使用できます。
+例のアプリを実行するには、テストの Android デバイスまたは firebase の互換性のあるエミュレーターを必要があります。 Firebase Cloud Messaging で Android 4.0 以降を実行しているクライアントをサポートしているし、これらのデバイスには、Google Play ストア アプリがインストールされている必要があります (Google Play Services 9.2.1 または以降が必要です)。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、次を参照してください。、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードしてインストールします。 または、テスト デバイス (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません) の代わりにインストールされている Google play 開発者サービスで、Android SDK エミュレーターを使用できます。
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
@@ -53,7 +53,7 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 
 [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)、FCM 対応アプリのパッケージ名を指定します。 このパッケージ名としても機能、 [*アプリケーション ID* ](./firebase-cloud-messaging.md#fcm-in-action-app-id)関連付けられている、 [API キー](firebase-cloud-messaging.md#fcm-in-action-api-key)します。 このパッケージ名を使用するアプリを構成します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  プロパティを開き、 **FCMClient**プロジェクト。
 
@@ -65,7 +65,7 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 
 更新する際、 **Android マニフェスト**、ことを確認のチェックも、`Internet`アクセス許可を有効にします。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  プロパティを開き、 **FCMClient**プロジェクト。
 
@@ -86,7 +86,7 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 
 Firebase Cloud Messaging、Google play 開発者サービス、依存しているため、 [Xamarin Google play 開発者サービスのベース](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Base/)Xamarin.Android プロジェクトに NuGet パッケージを追加する必要があります。 バージョン 29.0.0.2 必要がありますまたはそれ以降。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.**.
 
@@ -96,7 +96,7 @@ Firebase Cloud Messaging、Google play 開発者サービス、依存してい�
 
     [![Google Play Services ベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.**.
 
@@ -123,7 +123,7 @@ using Android.Gms.Common;
 
 FCM からメッセージを受信する、[メッセージング - Xamarin Firebase](https://www.nuget.org/packages/Xamarin.Firebase.Messaging/)アプリ プロジェクトに NuGet パッケージを追加する必要があります。 このパッケージは、Android アプリケーションは FCM サーバーからのメッセージを受信できません。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.**.
 
@@ -133,7 +133,7 @@ FCM からメッセージを受信する、[メッセージング - Xamarin Fire
 
     [![Xamarin Firebase のメッセージングをインストールします。](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.**.
 
@@ -161,7 +161,7 @@ using Android.Util;
 
 次の手順が追加するには、 **google-services.json**ファイルをプロジェクトのルート ディレクトリ。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  コピー **google-services.json**プロジェクト フォルダーにします。
 
@@ -169,11 +169,14 @@ using Android.Util;
 
 3.  選択**google-services.json**で、**ソリューション エクスプ ローラー**ウィンドウ。
 
-4.  **プロパティ**ペインで、設定、**ビルド アクション**に**GoogleServicesJson** (場合、 **GoogleServicesJson**ビルド アクションが表示されませんが、保存し、ソリューションを閉じ、再び開いて)。
+4.  **プロパティ**ペインで、設定、**ビルド アクション**に**GoogleServicesJson**:
 
     [![ビルド アクションを GoogleServicesJson に設定します。](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+    > [!NOTE] 
+    > 場合、 **GoogleServicesJson**ビルド アクションが示されていません、保存、ソリューションを閉じ、再度開きます。
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  コピー **google-services.json**プロジェクト フォルダーにします。
 
@@ -273,7 +276,7 @@ void CreateNotificationChannel()
         return;
     }
 
-    var channel = new NotificationChannel(MyFirebaseMessagingService.CHANNEL_ID,
+    var channel = new NotificationChannel(CHANNEL_ID,
                                           "FCM Notifications",
                                           NotificationImportance.Default)
                   {
@@ -419,7 +422,7 @@ void SendRegistrationToAppServer (string token)
 
 [![ログ アプリの画面に追加トークン ボタン](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
-### <a name="log-tokes"></a>ログ ユーザ用のトークン
+### <a name="log-tokens"></a>ログのトークン
 
 デモの目的でのみこの手順で追加したコードは、&ndash;運用環境のクライアント アプリは登録トークンを記録する必要がありません。 編集**Resources/layout/Main.axml**し、以下の追加`Button`宣言の直後に、`TextView`要素。
 
@@ -432,7 +435,7 @@ void SendRegistrationToAppServer (string token)
   android:text="Log Token" />
 ```
 
-末尾に次のコードを追加、`MainActivity.OnCreate`メソッド。
+`MainActivity.OnCreate` メソッドの末尾に次のコードを追加します。
 
 ```csharp
 var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
@@ -774,7 +777,7 @@ FCM 完全デバイスの登録を解除するには、呼び出すことによ�
 FirebaseInstanceId.Instance.DeleteInstanceId();
 ```
 
-このメソッドの呼び出しによって削除され、インスタンス ID と関連付けられているデータ。 その結果、デバイスに FCM データの定期的な送信は停止します。
+このメソッドの呼び出しでは、インスタンス ID と関連付けられているデータを削除します。 その結果、デバイスに FCM データの定期的な送信は停止します。
 
 
 ## <a name="troubleshooting"></a>トラブルシューティング

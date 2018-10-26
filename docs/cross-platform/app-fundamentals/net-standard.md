@@ -5,13 +5,14 @@ ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: conceptdev
 ms.author: crdun
+ms.custom: video
 ms.date: 07/18/2018
-ms.openlocfilehash: 65ba1915a2a968a14f0ce21bcada76e1b83531b0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d07b248b36feee909db9c863eb17f1a900f58e60
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270661"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105832"
 ---
 # <a name="net-standard-library-code-sharing"></a>.NET standard ライブラリ コードの共有
 
@@ -27,7 +28,7 @@ ms.locfileid: "39270661"
 
 ### <a name="creating-a-net-standard-library"></a>.NET Standard ライブラリの作成
 
-.NET Standard ライブラリをソリューションに追加するのは、比較的簡単です。
+.NET Standard Library は、次の手順でソリューションに追加できます。
 
 1. **新しいプロジェクトの追加**ダイアログ ボックスで、 **.NET Core**カテゴリと、選択 **.NET Standard Library**:
 
@@ -45,7 +46,7 @@ ms.locfileid: "39270661"
 
 #### <a name="editing-net-standard-library-settings"></a>.NET Standard Library の設定の編集
 
-.NET Standardライブラリの設定は、このスクリーン ショットで示されているように、プロジェクトを右クリックして`Options`を選択すことによって表示および変更できます。
+.NET Standard ライブラリの設定は、このスクリーンショットで示されているように、プロジェクトを右クリックし、`Options` を選択することによって表示および変更できます。
 
 ![プロジェクト オプションでの .NET Standard のターゲット フレームワークを編集](net-standard-images/vsm03-m157.png "プロジェクト オプションで .NET Standard ターゲット フレームワークのバージョンの編集")
 
@@ -86,6 +87,10 @@ ms.locfileid: "39270661"
 ![.NET 標準ライブラリを参照する](net-standard-images/vs04.png "Visual Studio で参照ノードを右クリックし、[参照の追加...] のように、ソリューションのプロジェクトタブに切り替えます")
 
 -----
+
+## <a name="net-standard-and-xamarinforms-for-the-net-developer-video"></a>.NET standard と .NET の開発者 (ビデオ) の Xamarin.Forms
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/NET-Standard-and-XamarinForms-for-the-NET-Developer/player]
 
 ## <a name="related-links"></a>関連リンク
 

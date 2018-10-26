@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 65bb3fa070c082fa6c6c489e326a870a80fb9502
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 04d435b29f6f2f577df5025995fcc074ba5d9d9d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997524"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122752"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin Native プロジェクトで Xamarin.Forms
 
@@ -33,7 +33,7 @@ Xamarin.Forms を呼び出すことによって初期化する必要がありま
 > [!NOTE]
 > **NativeForms**サンプル アプリケーション ソリューションには、Xamarin.Forms プロジェクトが含まれていません。 代わりに、Xamarin.iOS プロジェクトを Xamarin.Android プロジェクトの場合、および UWP プロジェクトで構成されます。 各プロジェクトは、使用するネイティブのフォームを使用するネイティブ プロジェクト[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-ページを派生します。 ただし、ネイティブのプロジェクトで利用できませんでした理由理由はありません`ContentPage`-.NET Standard ライブラリ プロジェクトまたは共有プロジェクトからページを派生します。
 
-ネイティブ数字形式を使用して、Xamarin.Forms などの機能[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)、 [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)、およびデータ バインディング エンジンで、すべて引き続き使用します。
+ネイティブ数字形式を使用して、Xamarin.Forms などの機能[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)、 [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)、およびデータ バインディング エンジンで、すべて引き続き使用します。 ただし、ページ ナビゲーションは、ネイティブ ナビゲーション API を使用して実行する必要があります。
 
 ## <a name="ios"></a>iOS
 

@@ -4,15 +4,15 @@ description: この記事では、パースペクティブとテーパ効果、�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: 13f2a1160d012a6b7720bd84340a1cdd0f991535
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: da5306ed9c301a7229d2fc5e913a4217e844bbba
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615653"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116148"
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
@@ -61,6 +61,8 @@ z"z ='/z' = 1
 この数式でたくない z の値 ' 0 になります。
 
 z' Persp0·x + Persp1·y Persp2 を =
+
+その結果、これらの値には、いくつか実際的な制限があります。 
 
 `Persp2`かに、セルに 0 または 0 を指定できます。 場合`Persp2`が 0、z' ポイント (0, 0) のゼロおよびするが、通常、望ましくない点が 2 次元グラフィックスで非常に一般的なためです。 場合`Persp2`場合、汎用性の損失はありませんが、0 と等しくない`Persp2`1 に固定されます。 たとえば、あると判断した場合`Persp2`することだけです、マトリックス内のすべてのセルで除算 5、これにより、5、する必要があります`Persp2`を 1 に等しくなり、結果は同じになります。
 
@@ -360,8 +362,8 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     canvas.Clear();
 
-    TaperSide taperSide = (TaperSide)taperSidePicker.SelectedIndex;
-    TaperCorner taperCorner = (TaperCorner)taperCornerPicker.SelectedIndex;
+    TaperSide taperSide = (TaperSide)taperSidePicker.SelectedItem;
+    TaperCorner taperCorner = (TaperCorner)taperCornerPicker.SelectedItem;
     float taperFraction = (float)taperFractionSlider.Value;
 
     SKMatrix taperMatrix =
@@ -392,9 +394,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](non-affine-images/tapertransform-small.png "テーパ変換ページのスクリーン ショットをトリプル")](non-affine-images/tapertransform-large.png#lightbox "テーパ変換ページの 3 倍になるスクリーン ショット")
 
-別の種類の汎用化された非アフィン変換は、3 D の回転は、次の記事で示されていますが、 [3D 回転](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)します。
+別の種類の汎用化された非アフィン変換は、3 D の回転は、次の記事で示されていますが、 [ **3D 回転**](3d-rotation.md)します。
 
-非アフィン変換では、任意の凸四角形に四角形を変換できます。 これを示します、**非アフィン行列を表示する**ページ。 非常に似ています、**アフィン行列を表示する**ページから、[行列変換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md)点が異なりますがある、4 つ目の記事`TouchPoint`ビットマップの 4 番目の隅を操作するオブジェクト。
+非アフィン変換では、任意の凸四角形に四角形を変換できます。 これを示します、**非アフィン行列を表示する**ページ。 よく似ていますが、**アフィン行列を表示する**ページから、 [**行列変換**](matrix.md)点が異なりますがある、4 つ目の記事`TouchPoint`オブジェクトを 4 つ目の操作ビットマップの隅。
 
 [![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列を表示するページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png#lightbox "非アフィン行列を表示するページの 3 倍になるスクリーン ショット")
 
@@ -459,14 +461,14 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 
 右側にある最後の座標は、4 つの 4 つのタッチ ポイントに関連付けられている点です。 これらは、最終的なビットマップの四隅の座標です。
 
-幅と高さ、幅とビットマップの高さを表します。 最初の変換 (`S`) 単純に 1 ピクセルの正方形にビットマップをスケールします。 2 番目の変換が非アフィン変換`N`、3 番目はアフィン変換`A`します。 先ほどアフィンようでは、アフィン変換が 3 つの点に基づくは[ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)メソッドと 4 番目の行が関与しないと、(a、b) ポイント。
+幅と高さ、幅とビットマップの高さを表します。 最初の変換`S`単に 1 ピクセルの正方形にビットマップをスケールします。 2 番目の変換が非アフィン変換`N`、3 番目はアフィン変換`A`します。 先ほどアフィンようでは、アフィン変換が 3 つの点に基づくは[ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)メソッドと 4 番目の行が関与しないと、(a、b) ポイント。
 
 `a`と`b`3 番目の変換がアフィン変換できるように、値が計算されます。 コードでは、アフィン変換の逆元を取得し、を使用して、右下隅にマップします。 (A、b) のポイントです。
 
-非アフィン変換の別の使用は、3 次元グラフィックスを模倣するためです。 次の記事で[3D 回転](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)3D 空間で 2 次元グラフィックを回転させる方法を参照してください。
+非アフィン変換の別の使用は、3 次元グラフィックスを模倣するためです。 次の記事で[ **3D 回転**](3d-rotation.md) 3D 空間で 2 次元グラフィックを回転させる方法を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

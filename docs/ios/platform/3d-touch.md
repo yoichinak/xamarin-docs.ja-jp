@@ -1,49 +1,49 @@
 ---
-title: Introduction to Xamarin.iOS で 3 D Touch
-description: IPhone 6 s および iPhone 6 s で導入された 3D のタッチ ジェスチャを使用する方法を説明するとします。 筆圧対応機能、ピーク、pop、これらのジェスチャを有効にしてクイック アクション。
+title: Xamarin.iOS で 3D Touch の概要
+description: この記事は、iPhone 6 s と iPhone 6 s で導入された 3D のタッチ ジェスチャを使用する方法を説明しますとします。 筆圧対応機能、ピークと pop、これらのジェスチャを有効にしてクイック アクション。
 ms.prod: xamarin
 ms.assetid: 806D051E-3791-40F7-9776-4E4D3E56F7F3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f6eb71409317661cdd571c708db062e06e63ff55
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2bbc61c7fe843fd020093ab7080f38e6e7b180f9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786584"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107808"
 ---
-# <a name="introduction-to-3d-touch-in-xamarinios"></a>Introduction to Xamarin.iOS で 3 D Touch
+# <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS で 3D Touch の概要
 
-_この記事で説明、new を使用して、アプリで iPhone 6 s と iPhone 6 s Plus 3D タッチ ジェスチャします。_
+_この記事では、新しいを使用してでは、アプリで iPhone 6 s と iPhone 6 s Plus 3D Touch のジェスチャします。_
 
-[![](3d-touch-images/info01.png "3 D Touch の例には、アプリが有効になっています。")](3d-touch-images/info01.png#lightbox)
+[![](3d-touch-images/info01.png "3D Touch の例には、アプリが有効になっています。")](3d-touch-images/info01.png#lightbox)
 
-この記事とで実行されている新しい iPhone 6 s および iPhone 6 s Xamarin.iOS アプリに不足機密性の高いジェスチャを追加する新しい 3 D Touch Api の使用の概要のデバイスとします。
+この記事では説明し、6 s と iPhone 6 s 新しい iPhone で実行されている Xamarin.iOS アプリに負荷の機密性の高いジェスチャを追加する新しい 3D タッチ Api の使用の概要についてさらにデバイス。
 
-3D のタッチで iPhone アプリは今すぐをだけでなく、ユーザーが exerting 量不足を検出することができますが、ユーザーはデバイスの画面に触れることを確認し、別の圧迫度に応答できます。
+3D Touch は、iPhone アプリはだけでなく、ユーザーが exerting 筆圧を理解することができますが、ユーザーのデバイスの画面では触れることを確認し、異なる圧力レベルに対応することができますようになりました。
 
-3 D Touch は、アプリには、次の機能を提供します。
+3D Touch は、アプリには、次の機能を提供します。
 
-- [小文字の区別を圧迫](#Pressure-Sensitivity)- アプリがどの程度厳密測定できるようになりましたかライト、ユーザーはその情報の画面と take 利点に触れることです。
-  たとえば、ペイント アプリは太くまたは薄型画面をユーザーがどの程度厳密に触れることに基づいて線になります。
-- [ここに表示およびポップ](#Peek-and-Pop)-アプリが、現在のコンテキスト外に移動することがなく、データとやり取りするようになりました。 キーを押して、画面には、(メッセージのプレビュー) と同様の関心のある項目をピークすることができます。 困難を押して、アイテムに表示されることができます。
-- [クイック アクション](#Quick-Actions)-と考えるのクイック操作をするポップ アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのようにします。
-  クイック操作を使用して、するショートカットを追加できます関数アプリのホーム画面で、アプリ アイコンから直接です。
-- [シミュレーターで、3 D Touch をテスト](#Testing-3D-Touch-in-the-Simulator)-正しい Mac のハードウェアでは、iOS シミュレーターで 3D のタッチを有効になっているアプリをテストできます。
+- [感度への負荷が](#Pressure-Sensitivity)- アプリがどの程度難しい測定できるようになりましたか光、ユーザーがその情報の画面を利用触れることができます。
+  たとえば、描画アプリでは、太くや薄型にユーザーがどの程度難しいが画面に触れるに基づいて行を作成できます。
+- [ここに表示し、ポップ](#Peek-and-Pop)-アプリが、ユーザーが、現在のコンテキストから離れることがなく、データと対話できますようになりました。 キーを押して、画面には、(メッセージのプレビュー) のように対象の項目に、ピークできます。 困難を押して、アイテムをポップアップ表示ことができます。
+- [クイック アクション](#Quick-Actions)-と考えるのクイック アクションをするポップ アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのようにします。
+  クイック アクションを使用することができますショートカットを追加する関数に、アプリのホーム画面でアプリのアイコンから直接。
+- [シミュレーターで 3D タッチをテスト](#Testing-3D-Touch-in-the-Simulator)-正しい Mac ハードウェアでは、iOS シミュレーターで 3D タッチを有効になっているアプリをテストすることができます。
 
 <a name="Pressure-Sensitivity" />
 
 ## <a name="pressure-sensitivity"></a>筆圧対応機能
 
-新しいプロパティを使用して前に、述べたよう、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)クラス、ユーザーが iOS デバイスの画面に適用する負荷の量を測定して、ユーザー インターフェイスでこの情報を使用します。 たとえば、ブラシ ストロークより透明または不透明なベースで早い負荷の量。
+新しいプロパティを使用して、前述のよう、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)クラス、ユーザーが iOS デバイスの画面に適用する圧力の量を測定し、ユーザー インターフェイスでこの情報を使用します。 たとえば、ブラシのストロークより透明または不透明ベースで早い圧力の量。
 
-[![](3d-touch-images/pressure01.png "レンダリングより透明または不透明ブラシ ストロークは、負荷の量に基づく")](3d-touch-images/pressure01.png#lightbox)
+[![](3d-touch-images/pressure01.png "圧力の量に基づいて、ブラシのストロークがより透明または不透明にレンダリングされます。")](3d-touch-images/pressure01.png#lightbox)
 
-3 D Touch は、結果として、アプリが iOS 9 (またはそれ以上) で実行されると、iOS デバイスがサポートの 3 D Touch をできるプレッシャ内の変更により、`TouchesMoved`イベントが発生します。
+3D Touch は、結果として、アプリが iOS 9 (またはそれ以上) で実行されていると、iOS デバイスがな 3D タッチをサポートできる場合の負荷の変更により、`TouchesMoved`イベントが発生します。
 
-たとえば、監視するときに、`TouchesMoved`のイベント、 [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)ユーザーが画面に適用する現在の負荷を取得する次のコードを使用することができます。
+たとえば、監視するとき、`TouchesMoved`のイベントを[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)、次のコードを使用するには、ユーザーが画面に適用する現在の負荷を取得します。
 
 ```csharp
 public override void TouchesMoved (NSSet touches, UIEvent evt)
@@ -62,31 +62,31 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 }
 ```
 
-`MaximumPossibleForce`の最大値を返します、`Force`のプロパティ、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)でアプリが実行されている iOS デバイスに基づいたです。
+`MaximumPossibleForce`プロパティの最大値を返します、`Force`のプロパティ、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)でアプリが実行されている iOS デバイスに基づきます。
 
 > [!IMPORTANT]
-> プレッシャ内で変更が発生、`TouchesMoved`イベントが発生する場合でも、X Y 座標値が変更されていない/です。 この動作の変更のために iOS アプリを準備する必要があります、`TouchesMoved`より多くの場合、X に呼び出されるイベント Y 座標、最後と同じであるを/`TouchesMoved`呼び出します。
+> 負荷の変更が発生、`TouchesMoved`イベントが発生する場合でも、X Y 座標が変更されていない/。 この動作の変更のために iOS アプリを準備する必要があります、`TouchesMoved`より多くの場合と、x に呼び出されるイベントを最後のと同じである Y を調整/`TouchesMoved`呼び出し。
 
 
 
 
-詳細については、Apple を参照してください[TouchCanvas: UITouch を使用して、効率的かつ効果的に](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)サンプル アプリおよび[UITouch クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)です。
+詳細については、Apple を参照してください[TouchCanvas: UITouch を使用して、効率的かつ効果的に](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)サンプル アプリと[UITouch クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)します。
 
 <a name="Peek-and-Pop" />
 
-## <a name="peek-and-pop"></a>ピークおよびポップ
+## <a name="peek-and-pop"></a>Peek と Pop
 
-3 D Touch には、現在の場所から移動しなくても、これまでよりも高速のアプリ内の情報と対話するユーザーの新しい方法が用意されています。
+3D Touch には、ユーザーが、現在の場所から移動することがなく、これまでよりも高速アプリ内の情報にアクセスする新しい方法が用意されています。
 
-たとえば、アプリは、メッセージの表を表示するが、ユーザー キーを押しますアイテムを重ねて表示には、その内容のプレビューでハード (Apple を参照すると、*ピーク*)。
+など、アプリがメッセージのテーブルを表示している場合、ユーザーが押すオーバーレイのビューでは、そのコンテンツをプレビューする項目でハード (Apple として参照する、*ピーク*)。
 
-[![](3d-touch-images/peekandpop01.png "コンテンツにピークの例")](3d-touch-images/peekandpop01.png#lightbox)
+[![](3d-touch-images/peekandpop01.png "コンテンツには、ピークの例")](3d-touch-images/peekandpop01.png#lightbox)
 
-通常のメッセージ ビューを入力することが困難としたときに、ユーザーが押すと、(これと呼ば*Pop*-ビューに ping)。
+困難としたときに、ユーザーが押すと、通常のメッセージ ビューは入力します (これと呼ば*ポップ*-をビューに ping)。
 
-### <a name="checking-for-3d-touch-availability"></a>3 D Touch 可用性のチェック
+### <a name="checking-for-3d-touch-availability"></a>3D Touch 可用性のチェック
 
-使用する場合、 [UIViewController]()でアプリが実行されている iOS デバイスが 3 D Touch をサポートしているかを表示する次のコードを使用することができます。
+使用する場合、 [UIViewController]()でアプリが実行されている iOS デバイスに 3D タッチでサポートされているかどうかに、次のコードを使用することができます。
 
 ```csharp
 public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
@@ -101,11 +101,11 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
         ...
 ```
 
-このメソッドは、前に呼び出すことができます*後または*`ViewDidLoad()`です。 
+前に、このメソッドを呼び出すことができます*後または*`ViewDidLoad()`します。 
 
-### <a name="handling-peek-and-pop"></a>処理のピークおよびポップ
+### <a name="handling-peek-and-pop"></a>処理のピークと Pop
 
-インスタンスを使用して、3 D Touch を処理できる iOS デバイスで、`UIViewControllerPreviewingDelegate`の表示を処理するクラス**ピーク**と**Pop**項目の詳細。 などがある発生しました場合テーブル ビュー コント ローラーと呼ばれる`MasterViewController `サポートするために次のコードを使用でした**ピーク**と**Pop**:。
+3D タッチを処理できる iOS デバイスでは、インスタンスを使用できます、`UIViewControllerPreviewingDelegate`クラスの表示を処理する**ピーク**と**ポップ**項目の詳細。 などがある場合、テーブル ビュー コント ローラーが呼び出されます`MasterViewController `をサポートする次のコードを使用してでした**ピーク**と**ポップ**:。
 
 ```csharp
 using System;
@@ -173,13 +173,13 @@ namespace DTouch
 }
 ```
 
-`GetViewControllerForPreview`メソッドを使用して、実行、**ピーク**操作します。 テーブルのセルとバックアップ データにアクセスして、ロード、`DetailViewController`現在のストーリー ボードからです。 設定して、`PreferredContentSize`を (0, 0) に質問する、既定の**ピーク**サイズを表示します。 最後に、すべてのセルに示されていますが、ぼかしお`previewingContext.SourceRect = cell.Frame`し、表示するための新しいビューを返します。
+`GetViewControllerForPreview`メソッドを使用して、実行、**ピーク**操作。 テーブルのセル、バックアップ データにアクセスし、ロード、`DetailViewController`現在のストーリー ボードから。 設定して、 `PreferredContentSize` (0, 0) を確認していること、既定の**ピーク**サイズを表示します。 最後に、すべてを表示するにはセルがぼかし`previewingContext.SourceRect = cell.Frame`し、表示するための新しいビューが返されます。
 
-`CommitViewController`で作成したビューを再利用、**ピーク**の**Pop**を押すことが困難を表示します。
+`CommitViewController`で作成したビューを再利用、**ピーク**の**ポップ**表示、ユーザーが難しくなります。
 
-### <a name="registering-for-peek-and-pop"></a>ピークおよびポップの登録
+### <a name="registering-for-peek-and-pop"></a>Peek と Pop の登録
 
-ユーザーに許可するビュー、コント ローラーから**ピーク**と**Pop**から項目をこのサービスに登録する必要があります。 テーブル ビュー コント ローラーの上記の例 (`MasterViewController`)、次のコードを使用します。
+ユーザーに許可する必要があるビュー コント ローラーから**ピーク**と**ポップ**項目から、このサービスに登録する必要があります。 テーブル ビュー コント ローラーの上記の例 (`MasterViewController`)、次のコードを使用します。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -196,24 +196,24 @@ public override void ViewDidLoad ()
 }
 ```
 
-ここで呼び出しには、`RegisterForPreviewingWithDelegate`メソッドのインスタンスを`PreviewingDelegate`上で作成しました。 3 D Touch をサポートする iOS デバイスでキーを押すことでアイテムのピークをハードです。 標準にアイテムが表示される場合も難しいキーを押して、ビューを表示します。
+ここで呼び出している、`RegisterForPreviewingWithDelegate`メソッドのインスタンスを`PreviewingDelegate`上で作成しました。 3D タッチをサポートする iOS デバイスでは、ユーザーがそれには、ピークに項目をハードが押します。 場合も難しいキーを押して、項目が表示されますに標準的なビューを表示します。
 
-詳細についてを参照してください、 [iOS 9 ApplicationShortcuts サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)と Apple の[ViewControllerPreviews: Api のプレビュー UIViewController を使用して](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html)サンプル アプリ[UIPreviewAction クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)、 [UIPreviewActionGroup クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)と[UIPreviewActionItem Protocol Reference](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)です。
+詳細についてを参照してください、 [iOS 9 ApplicationShortcuts サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)と Apple の[ViewControllerPreviews: Api のプレビューの UIViewController を使用して](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html)サンプル アプリで[UIPreviewAction クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)、 [UIPreviewActionGroup クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)と[UIPreviewActionItem プロトコル リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)します。
 
 <a name="Quick-Actions" />
 
 ## <a name="quick-actions"></a>クイック アクション
 
-3D のタッチとクイック操作を使用して、追加できます共通、迅速かつ簡単な関数へのアクセスのショートカットをアプリで、ホーム画面アイコンから iOS デバイスで。
+3D タッチとクイック アクションを使用して追加できます一般的な迅速かつ簡単には、関数へのアクセスのショートカット、アプリで、iOS デバイスのホーム画面アイコンから。
 
-前述のようをするポップ アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのように、クイック操作の考えることができます。 クイック アクションを使用すると、最も一般的な関数や、アプリの機能へのショートカットを提供するのに必要があります。
+前述のようがポップされます。 アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのように、クイック アクションを考えることができます。 クイック アクションを使用すると、最も一般的な関数やアプリの機能へのショートカットを提供するのに必要があります。
 
 [![](3d-touch-images/quickactions01.png "クイック アクション メニューの例")](3d-touch-images/quickactions01.png#lightbox)
 
 
 ### <a name="defining-static-quick-actions"></a>静的なクイック アクションを定義します。
 
-アプリので定義できる場合は 1 つ以上のアプリで必要なクイック アクションは静的、変更する必要はありません`Info.plist`ファイル。 外部エディターでこのファイルを編集し、次のキーを追加します。
+アプリの定義できる場合は 1 つまたは複数のアプリで必要なクイック アクションは静的および変更する必要はありません、`Info.plist`ファイル。 外部エディターでこのファイルを編集し、次のキーを追加します。
 
 ```xml
 <key>UIApplicationShortcutItems</key>
@@ -241,7 +241,7 @@ public override void ViewDidLoad ()
 </array>
 ```
 
-ここで 2 つの静的なクイック アクション項目の定義に次のキーおは。
+ここで 2 つの静的なクイック アクション項目を定義すると、次のキーでは。
 
 - `UIApplicationShortcutItemIconType` -クイック アクション項目で、次の値の 1 つとして表示されるアイコンを定義します。
   - `UIApplicationShortcutIconTypeAdd`
@@ -276,12 +276,12 @@ public override void ViewDidLoad ()
 
         ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
 
-* `UIApplicationShortcutItemSubtitle` 項目の字幕を定義します。
-* `UIApplicationShortcutItemTitle` 項目のタイトルを定義します。
-* `UIApplicationShortcutItemType` は、アプリケーション内で項目の識別に使用する文字列値です。 詳細については、以下のセクションを参照してください。
+* `UIApplicationShortcutItemSubtitle` -項目の字幕を定義します。
+* `UIApplicationShortcutItemTitle` -項目のタイトルを定義します。
+* `UIApplicationShortcutItemType` -このアプリ内の項目を識別するために使用する文字列値です。 詳細については、以下のセクションを参照してください。
 
 > [!IMPORTANT]
-> 設定されている、クイック アクション ショートカット項目、`Info.plist`でファイルにアクセスできない、`Application.ShortcutItems`プロパティです。 内に渡されるだけ、`HandleShortcutItem`イベント ハンドラー。 
+> 設定されている、クイック アクション ショートカット項目、`Info.plist`でファイルにアクセスできない、`Application.ShortcutItems`プロパティ。 のみにで渡される、`HandleShortcutItem`イベント ハンドラー。 
 
 
 
@@ -289,9 +289,9 @@ public override void ViewDidLoad ()
 
 ### <a name="identifying-quick-action-items"></a>クイック アクション項目を識別します。
 
-上記のとおり、する定義されている場合、クイック アクション項目で、アプリの`Info.plist`、文字列値が割り当てられて、`UIApplicationShortcutItemType`識別するためのキー。
+上記のとおり、定義したとき、クイック アクション項目で、アプリの`Info.plist`、文字列値が割り当てられて、`UIApplicationShortcutItemType`それらを識別するキー。
 
-これらの識別子をコードで作業をしやすくすると呼ばれるクラスを追加`ShortcutIdentifier`をアプリのプロジェクトし、次のように表示します。
+これらの識別子をコードで処理しやすくするには、クラスを追加すると呼ばれる`ShortcutIdentifier`アプリのプロジェクトし、次のようになります。
 
 ```csharp
 using System;
@@ -312,7 +312,7 @@ namespace AppSearch
 
 ### <a name="handling-a-quick-action"></a>クイック アクションの処理
 
-アプリの変更を加える必要がある次に、`AppDelegate.cs`クイック アクション項目のホーム画面で、アプリのアイコンをクリックするユーザーを処理するファイル。
+次に、アプリを変更する必要があります`AppDelegate.cs`ホーム画面で、アプリのアイコンから、クイック アクション項目を選択すると、ユーザーを処理するファイル。
 
 次の編集を行います。
 
@@ -381,16 +381,16 @@ public override void PerformActionForShortcutItem (UIApplication application, UI
 }
 ```
 
-最初に、パブリック定義`LaunchedShortcutItem`ユーザーが選択されているクイック アクションの最後の項目を追跡するプロパティです。 次に、オーバーライド、`FinishedLaunching`メソッドを参照してください場合`launchOptions`が渡されましたクイック アクション項目が含まれている場合。 クイック操作の場合は、格納、`LaunchedShortcutItem`プロパティです。
+まず、パブリックを定義します`LaunchedShortcutItem`ユーザーが選択されている最後のクイック アクション項目を追跡するプロパティ。 無効にし、`FinishedLaunching`メソッドを参照してください場合`launchOptions`が渡されたとクイック アクション項目が含まれている場合。 クイック アクションの場合は、格納、`LaunchedShortcutItem`プロパティ。
 
-次に、オーバーライド、`OnActivated`メソッドとクイック起動項目を選択したパス、`HandleShortcutItem`に対応するメソッド。 現在メッセージを書き込みのみ、**コンソール**です。 実際のアプリでは、いままでアクションが必要なを処理します。 アクションが実行された後、`LaunchedShortcutItem`プロパティをクリアします。
+次に、私たちのオーバーライド、`OnActivated`メソッドとパスのいずれかを選択する項目のクイック起動、`HandleShortcutItem`で処理するメソッド。 現在メッセージを書き込みのみ、**コンソール**します。 実際のアプリでのなあらゆるアクションが必要な処理とします。 この操作が実行された後、`LaunchedShortcutItem`プロパティがオフになっています。
 
-最後に、アプリが既に実行されている場合、`PerformActionForShortcutItem`をこのメソッドをオーバーライドし、呼び出す必要がありますので、クイック アクション項目を処理するメソッドが呼び出されます、`HandleShortcutItem`メソッドもします。
+最後に、アプリが既に実行されている場合、`PerformActionForShortcutItem`をオーバーライドして呼び出す必要があります、クイック アクション項目を処理するメソッドが呼び出されます、`HandleShortcutItem`メソッドも。
 
 
 ### <a name="creating-dynamic-quick-action-items"></a>動的なクイック アクション項目を作成します。
 
-静的なクイック アクションを定義するだけでなく、アプリの 項目`Info.plist`ファイル、ダイナミックの場でクイック操作を作成することができます。 2 つの新しい動的なクイック アクションを定義するのには、編集、`AppDelegate.cs`ファイルを再び、および変更、`FinishedLaunching`など、次のメソッドを検索します。
+アプリの項目を静的なクイック アクションを定義するだけでなく`Info.plist`ファイル、動的にその場でクイック アクションを作成することができます。 2 つの新しい動的なクイック アクションを定義するには、編集、`AppDelegate.cs`ファイルを再びおよび変更、`FinishedLaunching`メソッドを次のようにします。
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -423,29 +423,29 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-これで、かどうかをチェック、`application`既にのセットを含む動的に作成された`ShortcutItems`されていない場合を作成した 2 つの新しい`UIMutableApplicationShortcutItem`に追加して、新しい項目を定義するオブジェクト、`ShortcutItems`配列。
+かどうかを確認していますので、`application`既にのセットが含まれていますが動的に作成`ShortcutItems`開かない場合は、新しい作成 2`UIMutableApplicationShortcutItem`に追加して、新しい項目を定義するオブジェクト、`ShortcutItems`配列。
 
-コードは既に追加で、[クイック アクションを処理](#Handling-a-Quick-Action)前のセクションでは、静的なものと同じようにこれらの動的のクイック アクションを処理します。
+コードは、追加済みで、[処理クイック アクション](#Handling-a-Quick-Action)前のセクションは、静的なものと同様の動的これらクイック アクションを処理します。
 
-静的および動的のクイック アクション項目の組み合わせを作成するには、(ここで行っている) と、どちらか一方に限定されないことに注意してください。
+静的および動的のクイック アクション項目の組み合わせを作成するには、(ここで行っている) よう、どちらか一方に限定されないことに注意する必要があります。
 
-詳細については、次のようにしてください、 [iOS 9 ViewControllerPreview サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)と Apple の[ApplicationShortcuts: を使用して UIApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/)サンプル アプリ[。UIApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)、 [UIMutableApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)と[UIApplicationShortcutIcon クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)です。
+詳細については、次のようにしてください、 [iOS 9 ViewControllerPreview サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)して Apple の[ApplicationShortcuts: を使用して UIApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/)サンプル アプリで[。UIApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)、 [UIMutableApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)と[UIApplicationShortcutIcon クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)します。
 
 <a name="Testing-3D-Touch-in-the-Simulator" />
 
-## <a name="testing-3d-touch-in-the-simulator"></a>シミュレーターでのテストの 3 D Touch
+## <a name="testing-3d-touch-in-the-simulator"></a>シミュレーターでの 3D タッチのテスト
 
-Force タッチと互換性のある Mac で Xcode および iOS Simulator の最新バージョンを使用するには、トラック パッドが有効に、する場合は、シミュレーターで 3D タッチ機能をテストすることができます。
+Force Touch で互換性のある Mac で Xcode と iOS シミュレーターの最新バージョンを使用して、トラック パッドが有効にする、シミュレーターで 3D タッチ機能をテストできます。
 
-この機能を有効にするには、3 D Touch をサポートする iPhone のシミュレートされたハードウェアですべてのアプリを実行 (iPhone 6 s およびそれ以降)。 次に、選択、**ハードウェア**、ios シミュレーターと有効化 メニュー、 **3D タッチのトラック パッド強制**メニュー項目。
+この機能を有効にするには、3D タッチをサポートしている iPhone のシミュレートされたハードウェアですべてのアプリを実行 (iPhone 6 s 以降)。 次に、選択、**ハードウェア**iOS シミュレーターと有効にする メニュー、 **3D タッチを使用してトラック パッド Force**メニュー項目。
 
-[![](3d-touch-images/simulator01.png "IOS シミュレーターで、[ハードウェア] メニューを選択し、3 D touch メニュー項目を使用してトラック パッド強制を有効にします。")](3d-touch-images/simulator01.png#lightbox)
+[![](3d-touch-images/simulator01.png "IOS シミュレーターで、[ハードウェア] メニューを選択し、3D touch メニュー項目を使用してトラック パッド強制を有効にします。")](3d-touch-images/simulator01.png#lightbox)
 
-この機能を使用するアクティブなをキーが困難になりますを Mac のトラック パッドを実際の iPhone ハードウェア上と同様、3 D Touch を有効にします。
+アクティブなこの機能をキー困難を Mac のトラック パッドすると、実際の iPhone ハードウェア上と同じように 3D タッチを有効にします。
 
 ## <a name="summary"></a>まとめ
 
-この記事の内容が新しい 3 D Touch Api iOS 9 iPhone 6 s および iPhone 6 s で利用できるを導入されたとします。 アプリへの追加の筆圧対応機能を説明しましたピークおよびポップを使用してすばやくナビゲーション; せず、現在のコンテキストからのアプリ内の情報を表示するには機能を最もよく使用クイック操作を使用したアプリへのショートカットを提供します。
+この記事では加えられて、新しい 3D タッチ Api iOS 9 iPhone 6 s と iPhone 6 s で利用できるとします。 アプリに追加の筆圧対応機能を説明しましたPeek と Pop を使用して、ナビゲーション; せず、現在のコンテキストからのアプリ内の情報をすばやく表示するには機能を最もよく使用クイック アクションを使用して、アプリへのショートカットを提供します。
 
 
 
@@ -453,6 +453,6 @@ Force タッチと互換性のある Mac で Xcode および iOS Simulator の�
 
 - [iOS 9 ViewControllerPreview サンプル](https://developer.xamarin.com/samples/monotouch/ios9/ViewControllerPreview/)
 - [iOS 9 ApplicationShortcuts サンプル](https://developer.xamarin.com/samples/monotouch/ios9/ApplicationShortcuts/)
-- [開発者向けの iOS 9](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [3D タッチの iPhone アプリを準備します。](https://developer.apple.com/ios/3d-touch/)
+- [3D Touch 用 iPhone アプリを準備します。](https://developer.apple.com/ios/3d-touch/)

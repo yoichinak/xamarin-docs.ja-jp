@@ -1,62 +1,62 @@
 ---
-title: watchOS Xamarin で複雑な問題
-description: このドキュメントでは、Xamarin で watchOS 複雑さの一部を操作する方法について説明します。 コンプリケーション、テンプレートを作成、問題を追加する方法について説明し、サンプル コードを提供します。
+title: watchOS で Xamarin には、複雑な問題
+description: このドキュメントでは、Xamarin で watchOS コンプリケーションを操作する方法について説明します。 コンプリケーション、テンプレートの記述、厄介に追加する方法について説明し、サンプル コードを提供します。
 ms.prod: xamarin
 ms.assetid: 7ACD9A2B-CF69-46EA-B0C8-10E7D81216E8
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/03/2017
-ms.openlocfilehash: 3c69f65091e7d6c83afe34c6d8c06477cc5d133b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 85b0c9b0688e9fb310a8f427018a02fe629404bb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791840"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117747"
 ---
-# <a name="watchos-complications-in-xamarin"></a>watchOS Xamarin で複雑な問題
+# <a name="watchos-complications-in-xamarin"></a>watchOS で Xamarin には、複雑な問題
 
-_watchOS により、開発者はウォッチ面のカスタム複雑さの一部を記述するには_
+_watchOS により、開発者はカスタム コンプリケーションの腕時計型インターフェイスを記述するには_
 
-このページでは、異なる種類の使用可能な複雑な問題および watchOS 3 アプリに問題を追加する方法について説明します。
+このページには、さまざまな種類の使用可能な複雑な問題と、コンプリケーションを 3 watchOS アプリを追加する方法について説明します。
 
-各 watchOS アプリケーションがコンプリケーションの 1 つを持てることに注意してください。
+WatchOS アプリケーションごとに 1 つコンプリケーションはしかことに注意してください。
 
-参照して[Apple のドキュメント](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)をアプリは問題に適しているかどうかを判断します。 5 がある`CLKComplicationFamily`種類の表示を選択します。
+まず[Apple のドキュメント](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)アプリが厄介に適しているかどうかを判断します。 5 は`CLKComplicationFamily`から選択するためにディスプレイの種類。
 
-[![](complications-images/all-complications-sml.png "使用可能な 5 CLKComplicationFamily 型: 循環小さな、小さなモジュール型、モジュール、大規模な実用的小さな実用的大きな")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "使用できる 5 CLKComplicationFamily 型: 循環小さな、小さなモジュール、モジュールの大きな、実利小さな、実利大規模")](complications-images/all-complications.png#lightbox)
 
-アプリには、1 つのスタイル、または 5 つすべてを表示するデータに応じてを実装できます。
-過去または将来の時刻の値を提供するように、ユーザーがデジタル クラウンをオンに、タイム トラベルをサポートすることもできます。
+1 つだけのスタイル、または 5 つすべて、表示されているデータに応じて、アプリを実装できます。
+過去または将来の時刻の値を提供するように、ユーザーがデジタル クラウンのタイム トラベルもサポートできます。
 
 <a name="adding" />
 
-## <a name="adding-a-complication"></a>問題を追加します。
+## <a name="adding-a-complication"></a>コンプリケーションの追加
 
 ### <a name="configuration"></a>構成
 
-複雑さの一部は、既存のソリューションに手動で追加または作成中に、watch アプリを追加できます。
+複雑な問題の作成時に、watch アプリに追加または既存のソリューションに手動で追加できます。
 
 ### <a name="add-new-project"></a>新しいプロジェクトを追加してください.
 
-**新しいプロジェクトを追加しています.** ウィザードに自動的にコンプリケーション コント ローラー クラスを作成および構成する チェック ボックスが含まれています、 **Info.plist**ファイル。
+**新しいプロジェクトを追加しています.** ウィザードには自動的にコンプリケーション コント ローラー クラスを作成および構成する チェック ボックスが含まれています、 **Info.plist**ファイル。
 
-![](complications-images/file-new-project-sml.png "含めるコンプリケーションのチェック ボックス")
+![](complications-images/file-new-project-sml.png "コンプリケーションを含めるチェック ボックス")
 
 ### <a name="existing-projects"></a>既存のプロジェクト
 
-問題を既存のプロジェクトに追加します。
+コンプリケーションを既存のプロジェクトに追加します。
 
-1. 新しい**ComplicationController.cs**クラス ファイルおよび実装`CLKComplicationDataSource`です。
-2. アプリの構成**Info.plist**コンプリケーション、およびどのコンプリケーション ファミリがサポートされている id を公開します。
+1. 新規作成**ComplicationController.cs**クラス ファイル、および実装`CLKComplicationDataSource`します。
+2. アプリの構成**Info.plist**複雑な作業とどのコンプリケーション ファミリがサポートされている id を公開します。
 
-次の手順についてで詳しく説明します。
+次の手順については、以下で詳しく説明します。
 
 <a name="clkcomplicationcontroller" />
 
 ### <a name="clkcomplicationdatasource-class"></a>CLKComplicationDataSource クラス
 
-次の c# テンプレートには、実装する場合は、最低限必要なメソッドが含まれています、`CLKComplicationDataSource`です。
+次C#テンプレートには、実装するために必要な最低限の方法が含まれています、`CLKComplicationDataSource`します。
 
 ```csharp
 [Register ("ComplicationController")]
@@ -77,45 +77,45 @@ public class ComplicationController : CLKComplicationDataSource
 }
 ```
 
-以下の[、コンプリケーションの書き込み](#writing)をこのクラスにコードを追加する手順。
+に従って、[記述を合わせる](#writing)手順については、このクラスにコードを追加します。
 
 ### <a name="infoplist"></a>Info.plist
 
-ウォッチ拡張機能の**Info.plist**ファイルの名前を指定する必要があります、`CLKComplicationDataSource`サポートするどのコンプリケーションのファミリとします。
+ウォッチ拡張機能の**Info.plist**ファイルの名前を指定する必要があります、`CLKComplicationDataSource`コンプリケーションのファミリをサポートするために削除します。
 
-[![](complications-images/complications-config-sml.png "コンプリケーションのファミリ型")](complications-images/complications-config.png#lightbox)
+[![](complications-images/complications-config-sml.png "コンプリケーションのファミリの種類")](complications-images/complications-config.png#lightbox)
 
-**データ ソース クラス**エントリの一覧はそのサブクラスにクラス名に表示`CLKComplicationDataSource`複雑なロジックを含むサブクラスです。
+**データ ソース クラス**エントリの一覧がサブクラスであるにはクラス名の表示は`CLKComplicationDataSource`複雑なロジックを含むサブクラスです。
 
 ## <a name="clkcomplicationdatasource"></a>CLKComplicationDataSource
 
-すべてのコンプリケーション機能は実装からメソッドをオーバーライドする 1 つのクラス、`CLKComplicationDataSource`抽象クラス (を実装する、`ICLKComplicationDataSource`インターフェイス)。
+コンプリケーションのすべての機能がからメソッドをオーバーライドする、1 つのクラスで実装されている、`CLKComplicationDataSource`抽象クラス (実装する、`ICLKComplicationDataSource`インターフェイス)。
 
 ### <a name="required-methods"></a>必要なメソッド
 
-実行するコンプリケーションの次のメソッドを実装する必要があります。
+実行する複雑なは、次のメソッドを実装する必要があります。
 
-- `GetPlaceholderTemplate` 構成時に、または、アプリは、値を指定できないときに使用する静的表示を返します。
-- `GetCurrentTimelineEntry` -、コンプリケーションが実行されているときに、適切なディスプレイを計算します。
-- `GetSupportedTimeTravelDirections` -からオプションを返します`CLKComplicationTimeTravelDirections`など`None`、 `Forward`、 `Backward`、または`Forward | Backward`です。
+- `GetPlaceholderTemplate` -構成のアプリは、値を指定できない場合、または使用する静的な表示を返します。
+- `GetCurrentTimelineEntry` -コンプリケーションを実行するときに、適切なディスプレイを計算します。
+- `GetSupportedTimeTravelDirections` -からオプションを返します`CLKComplicationTimeTravelDirections`など`None`、 `Forward`、 `Backward`、または`Forward | Backward`します。
 
 ### <a name="privacy"></a>プライバシー
 
-個人のデータを表示する複雑な問題
+個人データを表示する複雑な問題
 
 * `GetPrivacyBehavior` - `CLKComplicationPrivacyBehavior.ShowOnLockScreen` または `HideOnLockScreen`
 
-このメソッドが戻る場合`HideOnLockScreen`いずれかのアイコン、アプリケーション名、およびデータは表示されません)、問題が表示されます、ウォッチがロックされている場合。
+このメソッドが戻る場合`HideOnLockScreen`コンプリケーションと表示されますか、アイコン、またはアプリケーション名 (データは表示されません)、ウォッチがロックされている場合。
 
 ### <a name="updates"></a>更新
 
-- `GetNextRequestedUpdateDate` -クエリする場合、オペレーティング システムを次にコンプリケーションの更新されたデータを表示するようにアプリケーション時間を返します。
+- `GetNextRequestedUpdateDate` 場合、オペレーティング システムにする必要がありますコンプリケーションの更新されたデータを表示するようにアプリケーション クエリ次に時刻を返します。
 
-IOS アプリからの更新を強制することもできます。
+IOS アプリから更新プログラムを強制することもできます。
 
 ### <a name="supporting-time-travel"></a>タイム トラベルのサポート
 
-省略可能とによって制御される時間の旅行のサポートを`GetSupportedTimeTravelDirections`メソッドです。 返された場合`Forward`、 `Backward`、または`Forward | Backward`し、次のメソッドを実装する必要があります
+省略可能なとによって制御される時間の移動のサポートを`GetSupportedTimeTravelDirections`メソッド。 返された場合`Forward`、 `Backward`、または`Forward | Backward`し、次のメソッドを実装する必要があります
 
 - `GetTimelineStartDate`
 - `GetTimelineEndDate`
@@ -124,9 +124,9 @@ IOS アプリからの更新を強制することもできます。
 
 <a name="writing" />
 
-## <a name="writing-a-complication"></a>問題の記述
+## <a name="writing-a-complication"></a>書き込みを合わせる
 
-単純なデータの範囲は複雑さの一部は、複雑なイメージとタイム トラベル サポート データの表示を表示します。 次のコードでは、単純、単一テンプレート コンプリケーションをビルドする方法を示します。
+単純なデータから複雑な問題の範囲は、タイム トラベルのサポートを使用したデータのレンダリング、複雑なイメージを表示します。 次のコードでは、単純な単一テンプレート コンプリケーションを構築する方法を示します。
 
 <!--
 The [sample]() for this article supports more template styles.
@@ -134,7 +134,7 @@ The [sample]() for this article supports more template styles.
 
 ## <a name="sample-code"></a>サンプル コード
 
-この例のみをサポート、`UtilitarianLarge`テンプレート、コンプリケーションの種類をサポートする特定のウォッチ面でのみ選択できるようにします。 ときに*を選択すると*複雑さの一部が表示されます、ウォッチ上**マイ コンプリケーション**とタイミング*を実行している*、テキストが表示**分_時間_**  (時間の一部) にします。
+この例のみをサポート、`UtilitarianLarge`テンプレート、コンプリケーションの種類をサポートする特定の腕時計型インターフェイスにのみ選択できるようにします。 ときに*選択*複雑な問題が表示されます、時計の**マイ コンプリケーション**とタイミング*を実行している*、テキストが表示されます**分_時間_**  (と時間の部分)。
 
 ```csharp
 [Register ("ComplicationController")]
@@ -184,56 +184,56 @@ public class ComplicationController : CLKComplicationDataSource
 
 ## <a name="complication-templates"></a>コンプリケーションのテンプレート
 
-さまざまなテンプレートの数はコンプリケーション スタイルごとに使用できます。
+多数のさまざまなテンプレートはコンプリケーション スタイルごとに使用できます。
 **リング**テンプレートを使用して、進行状況やその他の値をグラフィカルに表示するために使用すると、コンプリケーションの周りのスタイルの進行状況リングを表示できます。
 
 [Apple の CLKComplicationTemplate docs](https://developer.apple.com/reference/clockkit/clkcomplicationtemplate)
 
-### <a name="circular-small"></a>循環小
+### <a name="circular-small"></a>円形-小
 
-これらのテンプレート クラス名は、すべて先頭に付きます`CLKComplicationTemplateCircularSmall`:
+これらのテンプレート クラス名はすべてを先頭`CLKComplicationTemplateCircularSmall`:
 
-- **RingImage**の周りの進行状況リングを持つ、単一のイメージを表示します。
-- **RingText** -単一の行の周りの進行状況リングでのテキストを表示します。
-- **SimpleImage** -1 つの小さな画像を表示するだけです。
+- **RingImage** -その周りの進行状況リングを持つ、単一のイメージを表示します。
+- **RingText** -単一の周囲の進行状況リングでのテキストを表示します。
+- **SimpleImage** -小規模な 1 つのイメージを表示するだけです。
 - **SimpleText** -テキストの小さなスニペットを表示するだけです。
-- **StackImage** -イメージおよびテキストは、上下の行を表示
+- **StackImage** -イメージとテキストは、上、もう 1 つの行を表示
 - **StackText** -2 つの行のテキストを表示します。
 
-### <a name="modular-small"></a>モジュール式の小さな
+### <a name="modular-small"></a>モジュラー (小)
 
-これらのテンプレート クラス名は、すべて先頭に付きます`CLKComplicationTemplateModularSmall`:
+これらのテンプレート クラス名はすべてを先頭`CLKComplicationTemplateModularSmall`:
 
-- **ColumnsText** -テキスト値 (2 行と 2 つの列) の小さなグリッドを表示します。
-- **RingImage**の周りの進行状況リングを持つ、単一のイメージを表示します。
-- **RingText** -単一の行の周りの進行状況リングでのテキストを表示します。
-- **SimpleImage** -1 つの小さな画像を表示するだけです。
+- **ColumnsText** -テキストの値 (2 つの行と 2 つの列) の小さなグリッドを表示します。
+- **RingImage** -その周りの進行状況リングを持つ、単一のイメージを表示します。
+- **RingText** -単一の周囲の進行状況リングでのテキストを表示します。
+- **SimpleImage** -小規模な 1 つのイメージを表示するだけです。
 - **SimpleText** -テキストの小さなスニペットを表示するだけです。
-- **StackImage** -イメージおよびテキストは、上下の行を表示
+- **StackImage** -イメージとテキストは、上、もう 1 つの行を表示
 - **StackText** -2 つの行のテキストを表示します。
 
-### <a name="modular-large"></a>大規模なモジュール
+### <a name="modular-large"></a>モジュラー (大)
 
-これらのテンプレート クラス名は、すべて先頭に付きます`CLKComplicationTemplateModularLarge`:
+これらのテンプレート クラス名はすべてを先頭`CLKComplicationTemplateModularLarge`:
 
-- **列**-各行の左側にイメージを含めることも、2 つの列を持つ 3 つの行のグリッドを表示します。
-- **StandardBody** -プレーン テキストの 2 つの行での太字ヘッダー文字列を表示します。 ヘッダーは、左側のイメージを必要に応じて表示できます。
-- **テーブル**の下にあるテキストの 2 × 2 のグリッドでの太字ヘッダー文字列を表示します。 ヘッダーは、左側のイメージを必要に応じて表示できます。
-- **TallBody** -大きなフォントの単一行の下にあるテキストでの太字ヘッダー文字列を表示します。
+- **列**-必要に応じて各行の左側にイメージを含む 2 つの列を持つ 3 つの行のグリッドを表示します。
+- **StandardBody** -太字ヘッダー文字列、プレーン テキストの 2 つの行を表示します。 オプションで、ヘッダーは、左側のイメージを表示できます。
+- **テーブル**-太字ヘッダー文字列、2 x 2 のグリッドの下にあるテキストを表示します。 オプションで、ヘッダーは、左側のイメージを表示できます。
+- **TallBody** -太字ヘッダー文字列より大きなフォントの 1 行の下のテキストを表示します。
 
-### <a name="utilitarian-small"></a>実用的小
+### <a name="utilitarian-small"></a>実利小
 
-これらのテンプレート クラス名は、すべて先頭に付きます`CLKComplicationTemplateUtilitarianSmall`:
+これらのテンプレート クラス名はすべてを先頭`CLKComplicationTemplateUtilitarianSmall`:
 
-- **フラット**-(テキストは、短い必要があります) は 1 行で、イメージといくつかのテキストが表示されます。
-- **RingImage**の周りの進行状況リングを持つ、単一のイメージを表示します。
-- **RingText** -単一の行の周りの進行状況リングでのテキストを表示します。
-- **正方形**-(40 px または 44px、38 mm または 42 mm Apple Watch それぞれの四角形) 正方形イメージを表示します。
+- **フラット**-イメージとテキスト (テキストは短くする必要があります) を 1 行を表示します。
+- **RingImage** -その周りの進行状況リングを持つ、単一のイメージを表示します。
+- **RingText** -単一の周囲の進行状況リングでのテキストを表示します。
+- **正方形**-(40 px または 44px、38 mm または 42 mm Apple Watch それぞれの正方形)、正方形イメージを表示します。
 
-### <a name="utilitarian-large"></a>大規模な実用的
+### <a name="utilitarian-large"></a>大規模な実利
 
-このコンプリケーション スタイルのテンプレートが 1 つだけ:`CLKComplicationTemplateUtilitarianLargeFlat`です。
-すべて 1 つの行に単一のイメージといくつかのテキストが表示されます。
+この複合スタイルのテンプレートが 1 つだけ:`CLKComplicationTemplateUtilitarianLargeFlat`します。
+1 つの行で、1 つのイメージとテキストの一部を表示します。
 
 
 

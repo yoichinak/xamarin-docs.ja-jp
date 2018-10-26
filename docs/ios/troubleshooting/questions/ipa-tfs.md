@@ -1,22 +1,22 @@
 ---
-title: IPA 出力ファイルを TFS のドロップ フォルダーにコピーする方法は?
+title: IPA 出力ファイルを TFS 格納フォルダーにコピーする方法はありますか
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 087a20ea3b573595e6cbd2b40d77de649676391e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 74e2f2219dcb0908edce7f109844932639038b25
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31883710"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113041"
 ---
-# <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>IPA 出力ファイルを TFS のドロップ フォルダーにコピーする方法は?
+# <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>IPA 出力ファイルを TFS 格納フォルダーにコピーする方法はありますか
 
-開く、`.csproj`をテキスト エディターで、iOS アプリのプロジェクトのファイルし、最後に次の行を追加 (終了する直前に`</Project>`タグ)。
+開く、`.csproj`テキスト エディターでの iOS アプリ プロジェクトのファイルを開き、最後に、次の行を追加 (終了する直前に`</Project>`タグ)。
 
 ```xml
 <PropertyGroup>
@@ -40,18 +40,16 @@ ms.locfileid: "31883710"
 
 ## <a name="notes"></a>メモ
 
--   この同じ一般的な手法で説明した[IPA ファイルの出力パスを変更できますか。](~/ios/troubleshooting/questions/ipa-output-path.md)です。 設定する、2 つの重要な点は、`$(TF_BUILD_BINARIESDIRECTORY)`ため追加の条件を追加して保存先フォルダーとして`CopyIpa`TFS ビルド向けにのみ実行されます。
+- これに記載されている同じ一般的な手法[IPA ファイルの出力パスを変更できますか?](~/ios/troubleshooting/questions/ipa-output-path.md)します。 2 つの重要なポイントが設定するのには`$(TF_BUILD_BINARIESDIRECTORY)`ため追加の条件を追加して移動先フォルダーとして`CopyIpa`は TFS のビルドの場合にのみ実行します。
 
--   詳細については`TF_BUILD_BINARIESDIRECTORY`を参照してください[ https://msdn.microsoft.com/library/hh850448.aspx](https://msdn.microsoft.com/library/hh850448.aspx)です。
+- 説明については`TF_BUILD_BINARIESDIRECTORY`を参照してください[ビルド変数の定義済み](https://docs.microsoft.com/azure/devops/pipelines/build/variables)します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照
 
-- [Xamarin を使用する TFS のインストールに関するドキュメント](https://docs.microsoft.com/vsts/tfvc/overview)
-- [TFS のビルド タスク: Xamarin.Android](https://docs.microsoft.com/vsts/build-release/tasks/build/xamarin-android)
-- [TFS のビルド タスク: Xamarin.iOS](https://docs.microsoft.com/vsts/build-release/tasks/build/xamarin-ios)
+- [Xamarin で使用するための TFS のインストールに関するドキュメント](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)
+- [Azure DevOps のビルド タスク: Xamarin.Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
+- [Azure DevOps のビルド タスク: Xamarin.iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
 
 ### <a name="next-steps"></a>次の手順
-このドキュメントは、Visual Studio の Xamarin 3.11.666 時点で現在の動作をについて説明し、Xamarin.iOS 8.10.3 Mac 上では、ホストをビルドします。 詳細については、問い合わせ先、または、上記の情報を使用した後もこの問題が残っている場合を参照してください[どのようなサポート オプションは、Xamarin を使用しますか?](~/cross-platform/troubleshooting/support-options.md)推奨事項は、の連絡先のオプションについて方法だけでなく必要な場合は、新しいバグをファイルです。 
 
-
-
+このドキュメントでは、Visual Studio の Xamarin 3.11.666 時点では、現在の動作がについて説明し、ビルド ホストの Mac で Xamarin.iOS 8.10.3 します。 問い合わせ、または上記の情報を使用した後でもこの問題が残っている場合を参照してください、詳細については[Xamarin のどのようなサポート オプションを使用しますか?](~/cross-platform/troubleshooting/support-options.md)連絡先オプション、推奨事項は、についてする方法についても必要な場合は、新しいバグをファイルします。

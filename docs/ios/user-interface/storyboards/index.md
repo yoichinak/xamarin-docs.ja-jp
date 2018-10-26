@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS でストーリー ボ
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: bd8fee1b8f1941203bb0e6f00e261cbfbbccc9a7
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242343"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106885"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
@@ -129,7 +129,7 @@ if (callHistoryContoller != null) {
 
 場合によっては、以前ストーリー ボード ファイルにストーリー ボードを追加する必要があります。 次の手順に従って 1 回でこれを行う Visual Studio for Mac を効率化されることができます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 参照して新しいストーリー ボード ファイルを作成**ファイル > 新規ファイル > iOS > ストーリー ボード**以下に示すように。 
     
@@ -148,7 +148,7 @@ if (callHistoryContoller != null) {
             set;
             }
             
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 新しいストーリー ボード ファイルを作成するプロジェクトを右クリックして**追加 > 新しいファイル > iOS > の空の Storyboard**以下に示すように。 
     

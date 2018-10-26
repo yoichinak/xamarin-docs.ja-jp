@@ -4,19 +4,19 @@ description: SkiaSharp のビットマップを作成し、それらに基づく
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: c8ddf8c0829cea319dd93dd9c3686b94ed8eb89e
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: acdee7d34f913b125887f021dab39220c9560191
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615591"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109238"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
 
-どのアプリケーション ビットマップをロードできます、Web、アプリケーション リソース、およびユーザーのフォト ライブラリから見てきました。 アプリケーション内で新しいビットマップを作成することもできます。 最も簡単な方法では、1 つのコンス トラクターの[ `SKBitmap` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKBitmap.SKBitmap/p/System.Int32/System.Int32/System.Boolean/):
+どのアプリケーション ビットマップをロードできます、Web、アプリケーション リソース、およびユーザーのフォト ライブラリから見てきました。 アプリケーション内で新しいビットマップを作成することもできます。 最も簡単な方法では、1 つのコンス トラクターの[ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
 ```csharp
 SKBitmap bitmap = new SKBitmap(width, height);
@@ -37,7 +37,7 @@ SKBitmap bitmap = new SKBitmap(width, height);
 
 ## <a name="drawing-on-the-bitmap"></a>ビットマップの描画
 
-ビットマップの表面に描画すると、ビデオ ディスプレイ上に描画と同じです。 取得するビデオ ディスプレイ上で描画する、`SKCanvas`オブジェクトから、`PaintSurface`イベント引数。 作成するビットマップの描画、するために、`SKCanvas`オブジェクトを使用して、 [ `SKCanvas` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKCanvas.SKCanvas/p/SkiaSharp.SKBitmap/)コンス トラクター。
+ビットマップの表面に描画すると、ビデオ ディスプレイ上に描画と同じです。 取得するビデオ ディスプレイ上で描画する、`SKCanvas`オブジェクトから、`PaintSurface`イベント引数。 作成するビットマップの描画、するために、`SKCanvas`オブジェクトを使用して、 [ `SKCanvas` ](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap))コンス トラクター。
 
 ```csharp
 SKCanvas canvas = new SKCanvas(bitmap);
@@ -123,9 +123,9 @@ public partial class HelloBitmapPage : ContentPage
 
 `Clear` 2 つのバージョンに存在します。 
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear/p/SkiaSharp.SKColor/)メソッドを`SKColor`パラメーターは、その色のピクセルを使用して、表示画面のピクセルを置き換えます。
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))メソッドを`SKColor`パラメーターは、その色のピクセルを使用して、表示画面のピクセルを置き換えます。
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear()/)パラメーターなしのメソッドは、ピクセルを置き換える、 [ `SKColors.Empty` ](https://developer.xamarin.com/api/property/SkiaSharp.SKColors.Empty/)は 0 に設定されます (赤、緑、青、およびアルファ) コンポーネントのすべての色の色。 この色は、「透明な黒」と呼ばれることがあります。
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear)パラメーターなしのメソッドは、ピクセルを置き換える、 [ `SKColors.Empty` ](xref:SkiaSharp.SKColors.Empty)は 0 に設定されます (赤、緑、青、およびアルファ) コンポーネントのすべての色の色。 この色は、「透明な黒」と呼ばれることがあります。
 
 呼び出す`Clear`新しいビットマップを引数なしで完全に透過的にするビットマップ全体を初期化します。 非透過または部分的に非透過的なビットマップの描画後何も通常なります。
 
@@ -151,7 +151,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 ## <a name="bitmap-color-types"></a>ビットマップの色の種類
 
-最も単純な`SKBitmap`コンス トラクターでは、ビットマップの高さとピクセル幅の整数を指定できます。 その他の`SKBitmap`コンス トラクターは複雑になります。 これらのコンス トラクターの 2 つの列挙型の引数が必要: [ `SKColorType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKColorType/)と[ `SKAlphaType`](https://developer.xamarin.com/api/type/SkiaSharp.SKAlphaType/)します。 他のコンス トラクターを使用して、 [ `SKImageInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/)構造体は、この情報を統合します。
+最も単純な`SKBitmap`コンス トラクターでは、ビットマップの高さとピクセル幅の整数を指定できます。 その他の`SKBitmap`コンス トラクターは複雑になります。 これらのコンス トラクターの 2 つの列挙型の引数が必要: [ `SKColorType` ](xref:SkiaSharp.SKColorType)と[ `SKAlphaType`](xref:SkiaSharp.SKAlphaType)します。 他のコンス トラクターを使用して、 [ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo)構造体は、この情報を統合します。
 
 `SKColorType`列挙体には 9 のメンバー。 各メンバーには、特定のビットマップのピクセルを格納する方法について説明します。
 
@@ -161,7 +161,7 @@ Color = new SKColor(0, 0, 0, 0)
 - `Argb4444` &mdash; 各ピクセルはアルファ、赤、緑、および青の 4 つの 16 ビットです。
 - `Rgba8888` &mdash; 各ピクセルが 32 ビット、赤、緑、青、およびアルファの 8 各
 - `Bgra8888` &mdash; 各ピクセルが 32 ビット、青、緑、赤、およびアルファの 8 各
-- `Index8` &mdash; 各ピクセルは 8 ビットでありへのインデックスを表す、 [`SKColorTable`](https://developer.xamarin.com/api/type/SkiaSharp.SKColorTable/)
+- `Index8` &mdash; 各ピクセルは 8 ビットでありへのインデックスを表す、 [`SKColorTable`](xref:SkiaSharp.SKColorTable)
 - `Gray8` &mdash; 各ピクセルは白、黒から灰色の網かけを表す 8 ビットです。
 - `RgbaF16` &mdash; 各ピクセルは赤、緑、青、および 16 ビットの浮動小数点形式でアルファとの 64 ビットです。
 
@@ -596,5 +596,5 @@ Monkey のシャツで反転レタリングからわかる、反転の回転と�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

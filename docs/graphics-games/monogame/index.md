@@ -1,34 +1,34 @@
 ---
-title: Monogame フレームワーク
-description: 'このドキュメントにリンク MonoGame を使用したゲームの開発を記述するさまざまなガイド: 概要については、3 D グラフィックス、ゲーム パッドに関するディスカッションおよびプラットフォーム固有の考慮事項を確認します。'
+title: フレームワークの Monogame
+description: 'このドキュメントにリンク MonoGame を使用したゲーム開発について説明するさまざまなガイド: 概要については、3 D グラフィックス、ゲーム パッドに関するディスカッションとプラットフォーム固有の考慮事項を参照してください。'
 ms.prod: xamarin
 ms.assetid: 35EC29CE-538B-4844-BACC-E51823EFF3B5
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 1c398b7d20a8c28001c2f3371dd792ed4b017a5f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b51bba3491af593b4378cbd5aaf42043927ab68
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783124"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122882"
 ---
-# <a name="monogame-framework"></a>Monogame フレームワーク
+# <a name="monogame-framework"></a>フレームワークの Monogame
 
-MonoGame は、2D および 3D ゲーム開発のための効率的な柔軟なクロスプラット フォーム API です。 クロスプラット フォームの多くのゲーム エンジンの基礎を提供しているが、ゲームのエンジンでラップされることがなくゲーム内で直接使用することができます。
+MonoGame の 2D および 3D ゲームを開発するため、効率、柔軟性の高い、クロスプラット フォーム対応 API です。 多くのクロス プラットフォーム ゲーム エンジンの基盤を提供しますが、ゲーム エンジンでラップされない限りゲームで直接使用することができます。
 
-## <a name="introduction-to-game-development-with-monogamegraphics-gamesmonogameintroductionindexmd"></a>[MonoGame を使用したゲームの開発の概要](~/graphics-games/monogame/introduction/index.md)
+## <a name="introduction-to-game-development-with-monogamegraphics-gamesmonogameintroductionindexmd"></a>[MonoGame を使用したゲーム開発の概要](~/graphics-games/monogame/introduction/index.md)
 
-MonoGame はプラットフォーム間で、ハードウェア アクセラレーション資産をインポートするため、画像、オーディオ、ゲームの状態管理、入力、およびコンテンツのパイプラインを提供する API。
+MonoGame はクロス プラットフォームで、ハードウェア資産をインポートするためのグラフィック、オーディオ、ゲームの状態管理、入力、およびコンテンツ パイプラインを提供する API を高速です。
 
-## <a name="3d-graphics-with-monogamegraphics-gamesmonogame3dindexmd"></a>[MonoGame と 3D グラフィック](~/graphics-games/monogame/3d/index.md)
+## <a name="3d-graphics-with-monogamegraphics-gamesmonogame3dindexmd"></a>[MonoGame を使用した 3D グラフィック](~/graphics-games/monogame/3d/index.md)
 
-MonoGame は、リアルタイムの 3D グラフィックを表示するための柔軟で効率的な API を提供します。 下位レベルのグラフィックス リソースへのアクセスもおよび表示するための上位レベルの構造を含みます。
+MonoGame には、リアルタイムの 3D グラフィックスを表示するための柔軟で効率的な API が提供しています。 下位レベルのグラフィックス リソースへのアクセスもおよびレンダリングの高度なコンストラクトを含みます。
 
-## <a name="monogame-gamepad-referencegraphics-gamesmonogameinputmd"></a>[MonoGame ゲーム パッドなどの参照](~/graphics-games/monogame/input.md)
+## <a name="monogame-gamepad-referencegraphics-gamesmonogameinputmd"></a>[MonoGame GamePad リファレンス](~/graphics-games/monogame/input.md)
 
-ゲーム パッドは、MonoGame で入力デバイスにアクセスするための標準、クロスプラット フォームのクラスです。
+GamePad は、MonoGame の入力デバイスにアクセスするための標準的なクロス プラットフォームのクラスです。
 
 ## <a name="monogame-platform-specific-considerationsgraphics-gamesmonogameplatformsindexmd"></a>[MonoGame プラットフォーム固有の考慮事項](~/graphics-games/monogame/platforms/index.md)
 
-MonoGame は、さまざまなプラットフォームでサポートされます。 このセクションでは、それぞれのプラットフォームに固有のトピックについて説明します。
+MonoGame は、さまざまなプラットフォームでサポートされます。 このセクションでは、各プラットフォームに固有のトピックについて説明します。

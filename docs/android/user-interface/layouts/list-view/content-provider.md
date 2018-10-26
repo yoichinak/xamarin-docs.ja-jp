@@ -1,24 +1,24 @@
 ---
-title: 使用して、ContentProvider
+title: Contentprovider の使用
 ms.prod: xamarin
 ms.assetid: 251F7557-328D-0132-F39D-595920A28B87
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: b9b6340d4aaf386c7b4be8ebf366589582771be2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1ec628de3481820f320a5a8e6ef88fcbaab75a6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763294"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122115"
 ---
-# <a name="using-a-contentprovider"></a>使用して、ContentProvider
+# <a name="using-a-contentprovider"></a>Contentprovider の使用
 
-CursorAdapters は、ContentProvider からデータを表示することもできます。
-他のアプリケーションによって公開されているデータにアクセスすることは ContentProviders (連絡先のように Android のシステム データを含むメディアと予定表の情報)。
+CursorAdapters が、ContentProvider のデータを表示することもできます。
+ContentProviders では、他のアプリケーションによって公開されているデータにアクセスできます (連絡先のように Android のシステム データを含むメディアと予定表の情報)。
 
-LoaderManager を使用して CursorLoader では、ContentProvider にアクセスすることをお勧めします。 LoaderManager は、メイン スレッドをブロックしているタスクを移動する Android の 3.0 (API レベル 11、Honeycomb) で導入されましたでき、CursorLoader を使用して、データを表示するための ListView にバインドされる前に、スレッドに読み込まれます。
+ContentProvider にアクセスすることをお勧めは、LoaderManager を使用する CursorLoader とは。 LoaderManager はメインのスレッドをブロックしているタスクを移動する Android 3.0 (API レベル 11、Honeycomb) で導入され、CursorLoader を使う前に、表示するための ListView にバインドされているスレッドに読み込まれるデータ。
 
 参照してください[ContentProviders 入門](~/android/platform/content-providers/index.md)詳細についてはします。
 

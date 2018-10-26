@@ -1,31 +1,31 @@
 ---
-title: データで ListView を設定します。
+title: データの ListView の設定
 ms.prod: xamarin
 ms.assetid: AC4F95C8-EC3F-D960-7D44-8D55D0E4F1B6
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: 83b398faf4fd634b7d492d372524b5fdd00163d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 57c69223a01074ed15714026b7e9ec4e995808e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774851"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103180"
 ---
-# <a name="populating-a-listview-with-data"></a>データで ListView を設定します。
+# <a name="populating-a-listview-with-data"></a>データの ListView の設定
 
 
 ## <a name="overview"></a>概要
 
-行を追加する、`ListView`レイアウトや実装に追加する必要があります、`IListAdapter`メソッドを使用する、`ListView`呼び出し自体を設定します。 Android には、組み込みが含まれています。`ListActivity`と`ArrayAdapter`クラスを、XML のカスタム レイアウトやコードを定義することなく使用できます。 `ListActivity`クラスが自動的に作成、`ListView`を公開し、`ListAdapter`アダプターを経由して表示する行のビューを指定するプロパティです。
+行を追加する、 `ListView` 、レイアウトと実装に追加する必要がある、`IListAdapter`メソッドを`ListView`呼び出し自体を設定します。 Android には、組み込みが含まれています。`ListActivity`と`ArrayAdapter`、カスタム レイアウト XML やコードを定義することなく使用できるクラス。 `ListActivity`クラスが自動的に作成、`ListView`し、公開、`ListAdapter`アダプターを使用して表示する行ビューを指定するプロパティ。
 
-組み込みアダプターは、行ごとに使用されるパラメーターとしてビュー リソース ID を取得します。 などの組み込みのリソースを使用できる`Android.Resource.Layout`なくてできるように書き込む独自です。
+組み込みのアダプターは、行ごとに使用されるパラメーターとして、ビューのリソース ID を受け取ります。 などの組み込みのリソースを使用する`Android.Resource.Layout`ため必要はありません書き込む独自にです。
 
 
-## <a name="using-listactivity-and-arrayadapterltstringgt"></a>ListActivity および ArrayAdapter を使用して&lt;文字列&gt;
+## <a name="using-listactivity-and-arrayadapterltstringgt"></a>ListActivity と ArrayAdapter を使用して&lt;文字列&gt;
 
-例では、 **BasicTable/HomeScreen.cs**をこれらのクラスを使用して表示する方法を示します、`ListView`のみ数行のコードで。
+例では、 **BasicTable/HomeScreen.cs**これらのクラスを使用して表示する方法を示します、`ListView`のみ、わずか数行のコードで。
 
 ```csharp
 [Activity(Label = "BasicTable", MainLauncher = true, Icon = "@drawable/icon")]
@@ -44,7 +44,7 @@ public class HomeScreen : ListActivity {
 
 ### <a name="handling-row-clicks"></a>クリックした行の処理
 
-通常、`ListView`も (、曲の再生の問い合わせ、または別の画面を表示) などのいくつかの操作を実行する行をタッチするユーザーに許可します。 応答するユーザー仕上げのいずれかを指定する必要が複数のメソッドとして実装された、 `ListActivity` &ndash; `OnListItemClick` &ndash;次のようにします。
+通常、`ListView`も (、曲の再生または連絡先を呼び出すことや、別の画面を表示) アクションを実行する行をタッチするユーザーに許可します。 対応するユーザーの仕上げのいずれかを指定する必要があります複数メソッドで実装される、 `ListActivity` &ndash; `OnListItemClick` &ndash;次のようにします。
 
 [![SimpleListItem のスクリーン ショット](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
@@ -56,26 +56,26 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 }
 ```
 
-これで、ユーザーが行をタッチしたりしても、`Toast`警告が表示されます。
+ユーザーが行をタッチし、`Toast`警告が表示されます。
 
-[![スクリーン ショットのトースト行が影響を受けるときに表示されます。](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
+[![スクリーン ショットのトースト行が処理されたときに表示されます。](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
 
 ## <a name="implementing-a-listadapter"></a>ListAdapter を実装します。
 
-`ArrayAdapter<string>` 優れたためその簡潔さが非常に制限します。 ただし、多くの場合があるバインドするだけの文字列ではなく、ビジネス エンティティのコレクション。
-たとえば、Employee クラスのコレクションの場合、データは、だけ各従業員の名前を表示するリストをする可能性があります。 動作をカスタマイズする、`ListView`を表示するデータを制御するのサブクラスを実装する必要があります`BaseAdapter`次の 4 つの項目をオーバーライドします。
+`ArrayAdapter<string>` 便利ですが、その単純さがため非常に制限されています。 ただし、多くの場合にバインドする単なる文字列ではなく、ビジネス エンティティのコレクションがあります。
+たとえば、単に一覧が必要な場合がありますし、従業員のクラスのコレクションのデータが構成されている場合は、各従業員の名前を表示します。 動作をカスタマイズする、`ListView`どのようなデータの表示を制御するのサブクラスを実装する必要があります`BaseAdapter`次の 4 つの項目をオーバーライドします。
 
 -   **カウント**&ndash;への行の数が、データをコントロールに通知します。
 
--   **GetView** &ndash;各行のビューが返されるデータを設定します。
-    このメソッドのパラメーターには、`ListView`を再利用のため、未使用の既存の行に渡します。
+-   **GetView** &ndash;行ごとのビューが返されるデータを設定します。
+    このメソッドはパラメーターを持つ、`ListView`を再利用のため、未使用の既存の行を渡します。
 
--   **GetItemId** &ndash;行識別子を返す (通常、行番号を long 型の値ができます)。
+-   **GetItemId** &ndash;行識別子を返します (通常、行番号を long 型の値があります)。
 
 -   **この [int]** インデクサー&ndash;特定の行番号に関連付けられているデータを返します。
 
-コード例**BasicTableAdapter/HomeScreenAdapter.cs**示しますサブクラス`BaseAdapter`:
+コード例で**BasicTableAdapter/HomeScreenAdapter.cs**示しますサブクラス`BaseAdapter`:
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<string> {
@@ -109,20 +109,20 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 
 ### <a name="using-a-custom-adapter"></a>カスタム アダプターを使用します。
 
-組み込みに似ていますが、カスタム アダプターを使用して`ArrayAdapter`を渡して、`context`と`string[]`の値を表示します。
+組み込みに似ていますが、カスタム アダプターを使用して`ArrayAdapter`で渡し、 `context` 、`string[]`の値を表示します。
 
 ```csharp
 ListAdapter = new HomeScreenAdapter(this, items);
 ```
 
-この例は、同じ行のレイアウトを使用しているため (`SimpleListItem1`)、生成されたアプリケーションは、前の例と同じになります。
+この例は、同じ行のレイアウトを使用するため (`SimpleListItem1`)、作成されたアプリケーションは、前の例と同じになります。
 
 
 ### <a name="row-view-re-use"></a>行ビューを再利用
 
-この例では、6 つのみ項目があります。 画面には、8 を満たすことはできませんから行を再利用は必要ありません。 数百または数千行を表示するときに、ことが数百または数千を作成するメモリの無駄使い`View`8 個の場合、オブジェクトが、時に画面に収まるです。 行がそのビューが再利用するためのキューに格納される、画面から消えますときは、このような状況を回避します。 ユーザーがスクロールしても、`ListView`呼び出し`GetView`を表示する新しいビューを要求する&ndash;使用可能な渡されます未使用のビューで、`convertView`パラメーター。 コードは、新しいビュー インスタンスを作成する必要がありますし、この値が null 場合は、それ以外の場合そのオブジェクトのプロパティを再設定して再利用します。
+この例では、6 項目だけがあります。 画面は、8 に合わせてから行を再利用は必要ありません。 数百または数千行を表示するとき、ことが数百または何千もを作成するメモリの無駄使い`View`と 8 個のオブジェクトは、一度に画面に収まります。 行がそのビューが再利用のためのキューに格納する画面から消えますときは、このような状況を回避します。 ユーザーがスクロールすると、`ListView`呼び出し`GetView`表示する新しいビューを要求する&ndash;利用が渡されますに未使用のビュー、`convertView`パラメーター。 コードは、ビューの新しいインスタンスを作成する必要がありますし、この値が null 場合は、それ以外の場合、そのオブジェクトのプロパティを再設定できで再利用できます。
 
-`GetView`メソッドは行のビューを再利用するこのパターンに従う必要があります。
+`GetView`メソッドは行ビューを再利用するこのパターンに従う必要があります。
 
 ```csharp
 public override View GetView(int position, View convertView, ViewGroup parent)
@@ -137,18 +137,18 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-カスタム アダプター実装する必要があります*常に*再利用、`convertView`長い一覧を表示するときにメモリが不足して実行されないことを確認する新しいビューを作成する前にオブジェクト。
+カスタム アダプター実装する必要があります*常に*再利用、`convertView`長い一覧を表示するときにメモリ不足実行されないことを確認する新しいビューを作成する前にオブジェクト。
 
-一部のアダプター実装 (など、 `CursorAdapter`) がない、`GetView`メソッド、2 つの方法が必要ではなく`NewView`と`BindView`の役割を分離することにより行が再利用を強制する`GetView`を 2 つにメソッド。 `CursorAdapter`ドキュメントの後半の例です。
+一部のアダプター実装 (など、 `CursorAdapter`) がない、`GetView`メソッド、2 つの方法が必要ではなく`NewView`と`BindView`の責任を分離することで行を再使用を強制する`GetView`を 2 つにメソッド。 `CursorAdapter`ドキュメントで後述する例。
 
 
 ## <a name="enabling-fast-scrolling"></a>高速スクロールを有効にします。
 
-スクロールの高速では、ユーザーが、追加 'のハンドル' リストの一部に直接アクセスするスクロール バーとして機能することにより長い一覧をスクロールするのに役立ちます。 このスクリーン ショットは、高速スクロール ハンドルを示しています。
+高速スクロールにより、ユーザーが、追加 'ハンドル' リストの一部に直接アクセスするスクロール バーとして機能するを提供することで長いリストをスクロールします。 このスクリーン ショットは、高速スクロール ハンドルを示しています。
 
-[![スクロールのハンドルを高速スクロールのスクリーン ショット](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
+[![スクロールのハンドルを持つ高速スクロールのスクリーン ショット](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
-設定などの単純な原因で、高速スクロールへのハンドルが表示されますが、`FastScrollEnabled`プロパティを`true`:
+設定と同じくらい簡単に表示される場合は、高速スクロール ハンドルの原因は、`FastScrollEnabled`プロパティを`true`:
 
 ```csharp
 ListView.FastScrollEnabled = true;
@@ -157,20 +157,20 @@ ListView.FastScrollEnabled = true;
 
 ### <a name="adding-a-section-index"></a>セクションのインデックスを追加します。
 
-セクション インデックスは、長いリストを速くスクロールされるときにユーザーの追加のフィードバックを提供&ndash;どの 'section' にスクロールしてそれらを示しています。 アダプターのサブクラスを実装する必要がありますを表示するセクションのインデックスが発生する、`ISectionIndexer`によっては表示されている行のインデックスのテキストを指定するインターフェイス。
+セクションのインデックスが長いリストを高速スクロールされるときに、ユーザーの追加のフィードバックを提供&ndash;にスクロールして、'' セクションが表示されます。 アダプターのサブクラスを実装する必要がありますを表示するセクションのインデックスが発生する、`ISectionIndexer`によって表示されている行のインデックスのテキストを指定するインターフェイス。
 
-[![H で始まるセクションの上に表示される H のスクリーン ショット](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
+[![H で始まるセクションの上に表示 H のスクリーン ショット](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 実装する`ISectionIndexer`アダプターに次の 3 つのメソッドを追加する必要があります。
 
--   **GetSections** &ndash;セクションの完全な一覧に表示される可能性がありますのあるインデックスのタイトルを提供します。 このメソッドに Java オブジェクトの配列が必要な場合、コードを作成する必要がありますので、 `Java.Lang.Object[]` .NET コレクションから。 この例では、リストの先頭の文字の一覧を返します`Java.Lang.String`です。
+-   **GetSections** &ndash;表示可能なインデックスのタイトルのセクションの完全な一覧を提供します。 このメソッドに Java オブジェクトの配列が必要な場合、コードを作成する必要がありますので、 `Java.Lang.Object[]` .NET コレクション。 この例でとしてリストの先頭の文字の一覧を返します`Java.Lang.String`します。
 
 -   **GetPositionForSection** &ndash;指定したセクション インデックスの最初の行位置を返します。
 
--   **GetSectionForPosition** &ndash;特定の行を表示するセクションのインデックスを返します。
+-   **GetSectionForPosition** &ndash;特定の行に対して表示されるセクションのインデックスを返します。
 
 
-例では、`SectionIndex/HomeScreenAdapter.cs`ファイル コンス トラクターで、これらのメソッドと追加のコードを実装します。 コンス トラクターは、すべての行をループし、(アイテム並べ替える必要が既にありますこれを行う)、タイトルの最初の文字を抽出したセクション インデックスを構築します。
+例では、`SectionIndex/HomeScreenAdapter.cs`ファイルは、コンス トラクターで、これらのメソッドと追加のコードを実装します。 コンス トラクターは、すべての行をループし、(項目並べ替える必要が既にありますこれが機能する) のタイトルの最初の文字を抽出してセクション インデックスを構築します。
 
 ```csharp
 alphaIndex = new Dictionary<string, int>();
@@ -215,13 +215,13 @@ public int GetSectionForPosition(int position)
 }
 ```
 
-セクション インデックス タイトル実際のセクションでは、1:1 にマップする必要はありません。 その理由は、`GetPositionForSection`メソッドが存在します。
-`GetPositionForSection` 営業案件にどのようなインデックスは、リスト ビューにはどのようなセクションがインデックス リストに、マップできます。 たとえば、"z"は、インデックスにする必要がありますが、すべて状のテーブル セクションがない可能性があります、25、または 24、または任意のセクションのインデックス"z"にマップする必要がありますに 26 へのマッピングを"z"、代わりにマップされるようにします。
+タイトル セクション インデックスは、実際のセクションでは、1 対 1 にマップする必要はありません。 これは、ため、`GetPositionForSection`メソッドが存在します。
+`GetPositionForSection` 営業案件にどのようなインデックスは、任意のセクションでは、リスト ビューではインデックス リストにはマップできます。 例:"z"は、インデックスにする必要がありますが、テーブル セクションのすべての文字がない可能性があります、25、または 24、または任意のセクションのインデックス"z"にマップする必要がありますに 26 へのマッピングを"z"、代わりにマップされるようにします。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/BasicTableAndroid/)
+- [BasicTableAndroid (サンプル)](https://developer.xamarin.com/samples/BasicTableAndroid/)
 - [BasicTableAdapter (サンプル)](https://developer.xamarin.com/samples/BasicTableAdapter/)
 - [FastScroll (サンプル)](https://developer.xamarin.com/samples/FastScroll/)

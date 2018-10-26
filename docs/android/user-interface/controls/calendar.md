@@ -3,50 +3,50 @@ title: 予定表
 ms.prod: xamarin
 ms.assetid: 78666541-CA14-4CD8-A94A-A9621C57813E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: d48af16f50c5a4482342d323b5c73b9c237cc83a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d3cba67f27d5b7de7bdcbfa5439061067f759890
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767977"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112534"
 ---
 # <a name="calendar"></a>予定表
 
 
 ## <a name="calendar-api"></a>予定表 API
 
-新しい予定表 Android 4 で導入された Api のセットは、予定表のプロバイダーにデータを読み書きするように設計されたアプリケーションをサポートします。 これらの Api は、さまざまなイベント、出席者とリマインダーを読み書きする機能など、カレンダー データの相互作用オプションをサポートします。 カレンダーのプロバイダーを使用すると、アプリケーションで、API を通じて追加したデータは、Android 4 に付属する組み込みの予定表アプリに表示されます。
+Android 4 で導入された Api のカレンダーの新しいセットは、予定表のプロバイダーにデータを読み書きできるように設計されたアプリケーションをサポートします。 これらの Api は、豊富なイベント、出席者、およびアラームを読み書きする機能など、予定表のデータとの相互作用オプションをサポートします。 予定表のプロバイダーを使用すると、アプリケーションで、API を通じて追加したデータは、Android 4 に付属する組み込みの予定表アプリに表示されます。
 
 
-## <a name="adding-permissions"></a>アクセス許可を追加します。
+## <a name="adding-permissions"></a>アクセス許可を追加
 
-アプリケーションで新しい予定表 Api を使用する場合は、Android マニフェストに適切なアクセス許可を追加は、まず行う必要があります。 追加する必要があります。 アクセス許可は`android.permisson.READ_CALENDAR`と`android.permission.WRITE_CALENDAR`かどうかを読み取ることが、予定表データの書き込みやするに応じて、します。
-
-
-## <a name="using-the-calendar-contract"></a>カレンダーのコントラクトの使用方法
-
-使用して、予定表のデータと対話できるアクセス許可を設定すると、`CalendarContract`クラスです。 このクラスは、アプリケーションがカレンダー プロバイダーとやり取りするときに使用するデータ モデルを提供します。 `CalendarContract`により、アプリケーションは、カレンダーとイベントなどの予定表のエンティティに Uri を解決するのには。 エンティティごとに、カレンダーの名前と ID、またはイベントの開始と終了日などのさまざまなフィールドとやり取りする方法も提供します。
-
-予定表 API を使用する例を見てみましょう。 この例ではあります、カレンダーとそのイベントを列挙する方法だけでなく、予定表に、新しいイベントを追加する方法を確認します。
+アプリケーションで新しい予定表 Api を使用する場合は、Android マニフェストを適切なアクセス許可の追加はまず行う必要があります。 追加する必要があるアクセス許可は`android.permisson.READ_CALENDAR`と`android.permission.WRITE_CALENDAR`予定表データの書き込みおよび読み取りをかどうかに応じて、します。
 
 
-## <a name="listing-calendars"></a>予定表の一覧を表示します。
+## <a name="using-the-calendar-contract"></a>予定表のコントラクトの使用方法
 
-最初に、予定表アプリで登録されているカレンダーを列挙する方法を調べてみましょう。 これを行うには、インスタンス化できる、`CursorLoader`です。 Android 3.0 (API 11) で導入された`CursorLoader`が使用することをお勧め、`ContentProvider`です。 少なくとも、予定表と; を返す必要がある列のコンテンツ Uri を指定する必要があります。この列の仕様と呼ばれる、_プロジェクション_です。
+使用して予定表のデータとやり取りすることができます、アクセス許可を設定すると、`CalendarContract`クラス。 このクラスは、アプリケーションは、予定表のプロバイダーとやり取りしているときに使用できるデータ モデルを提供します。 `CalendarContract`イベント カレンダーなど、予定表のエンティティに Uri を解決するのにはアプリケーションを使用します。 また、エンティティごとに、カレンダーの名前と ID、またはイベントの開始および終了日などのさまざまなフィールドと対話することもできます。
 
-呼び出す、`CursorLoader.LoadInBackground`メソッドにより、カレンダー プロバイダーなど、データのコンテンツ プロバイダーを照会します。
+予定表 API を使用する例を見てみましょう。 この例では、私たちにカレンダーと、そのイベントを列挙する方法と、カレンダーに新しいイベントを追加する方法について説明します。
+
+
+## <a name="listing-calendars"></a>予定表を一覧表示します。
+
+最初に、予定表アプリで登録されているカレンダーを列挙する方法を調べてみましょう。 これを行うには、インスタンス化できる、`CursorLoader`します。 Android 3.0 (API 11) で導入された`CursorLoader`が使用することをお勧め、`ContentProvider`します。 少なくとも、予定表と; を返す必要がある列のコンテンツ Uri を指定する必要があります。この列の指定と呼ばれる、_プロジェクション_します。
+
+呼び出す、`CursorLoader.LoadInBackground`メソッドでは、カレンダー プロバイダーなどのデータのコンテンツ プロバイダーのクエリを実行できます。
 `LoadInBackground` 実際の読み込み操作を実行し、返します、`Cursor`クエリの結果。
 
-`CalendarContract`両方のコンテンツを指定するために役立ちます us`Uri`投影とします。 コンテンツを取得する`Uri`予定表のクエリを実行するには、おだけで使用できます、`CalendarContract.Calendars.ContentUri`次のようなプロパティ。
+`CalendarContract`私たちを使用するには、両方のコンテンツを指定することで`Uri`と投影します。 コンテンツを取得する`Uri`の予定表のクエリを実行するには、単に使用できます、`CalendarContract.Calendars.ContentUri`このようなプロパティ。
 
 ```csharp
 var calendarsUri = CalendarContract.Calendars.ContentUri;
 ```
 
-使用して、`CalendarContract`カレンダーを指定する必要がある列は均等に単純です。 内のフィールドを追加するだけ、`CalendarContract.Calendars.InterfaceConsts`配列へのクラスです。 たとえば、次のコードには、予定表の ID が含まれます。、表示名、およびアカウント名。
+使用して、`CalendarContract`カレンダーを指定する必要がある列は実に単純な。 内のフィールドを追加するだけ、`CalendarContract.Calendars.InterfaceConsts`クラスを配列にします。 たとえば、次のコードには、予定表の ID が含まれます。、表示名、アカウント名。
 
 ```csharp
 string[] calendarsProjection = {
@@ -56,7 +56,7 @@ string[] calendarsProjection = {
 };
 ```
 
-`Id`が使用する場合は、重要な`SimpleCursorAdapter`UI ですぐに表示される同じデータをバインドします。 コンテンツの Uri および投影を使用してインスタンス化、`CursorLoader`を呼び出すと、`CursorLoader.LoadInBackground`を次に示すように、予定表のデータを使用してカーソルを返すメソッド。
+`Id`必ず使用している場合、`SimpleCursorAdapter`ようにすぐにわかりますが、UI にデータをバインドします。 コンテンツの Uri と投影があれば、インスタンス化、`CursorLoader`を呼び出すと、`CursorLoader.LoadInBackground`メソッドを次に示すように、予定表データを使用してカーソルを返します。
 
 ```csharp
 var loader = new CursorLoader(this, calendarsUri, calendarsProjection, null, null, null);
@@ -64,7 +64,7 @@ var cursor = (ICursor)loader.LoadInBackground();
 
 ```
 
-この例の UI が含まれています、 `ListView`、1 つのカレンダーを表すリスト内の各項目にします。 次の XML を含むマークアップを示しています、 `ListView`:
+この例では、UI が含まれています、 `ListView`、1 つのカレンダーを表すリストの各項目にします。 次の XML を含むマークアップを示しています、 `ListView`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -79,7 +79,7 @@ android:layout_height="fill_parent">
 </LinearLayout>
 ```
 
-また、別の XML ファイルに次のように配置したリスト項目ごとの UI を指定する必要があります。
+また、各リスト項目は、次のように個別の XML ファイルに配置するための UI を指定する必要があります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -98,7 +98,7 @@ android:layout_height="wrap_content">
 </LinearLayout>
 ```
 
-この時点から、カーソル位置から、データを UI にバインドするだけの通常の Android コードを勧めします。 使用して、`SimpleCursorAdapter`次のようにします。
+この時点から、カーソルからデータを UI にバインドするごく普通の Android コードです。 使用して、`SimpleCursorAdapter`次のようにします。
 
 ```csharp
 string[] sourceColumns = {
@@ -114,18 +114,18 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter (this,
 ListAdapter = adapter;
 ```
 
-上記のコードで、アダプターがで指定された列を受け取り、`sourceColumns`配列し、それらのユーザー インターフェイス要素を書き込みます、`targetResources`カーソル内の各予定表エントリの配列。 ここで使用する、アクティビティのサブクラスは、 `ListActivity`; が含まれている、`ListAdapter`プロパティ、アダプターを設定します。
+上記のコードで、アダプターがで指定された列を受け取り、`sourceColumns`配列し、ユーザー インターフェイス要素に書き込む、`targetResources`カーソルでは、各予定表エントリの配列。 ここで使用するアクティビティのサブクラスは、 `ListActivity`; が含まれています、`ListAdapter`プロパティをアダプターを設定します。
 
-表示されるカレンダー情報を含む最終結果を示すスクリーン ショットをここでは、 `ListView`:
+ここに表示されるカレンダー情報を含む結果を示すスクリーン ショット、 `ListView`:
 
-[![2 つの予定表エントリを表示する、エミュレーターで実行されている CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
+[![予定表の 2 つのエントリを表示するエミュレーターで実行されている CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
 
 ## <a name="listing-calendar-events"></a>カレンダー イベントの一覧
 
-[次へ] を指定した暦のイベントを列挙する方法を見てみましょう。
-上記の例に基づいて構築、予定表のいずれかを選択すると、イベントの一覧を提示おです。 したがって、前のコードで項目の選択を処理する必要があります。
+[次へ] を指定したカレンダーのイベントを列挙する方法を見てみましょう。
+上記の例の基に構築、ご予定表のいずれかを選択すると、イベントの一覧を紹介します。 そのため、上記のコードで項目の選択を処理する必要があります。
 
 ```csharp
 ListView.ItemClick += (sender, e) => {
@@ -141,13 +141,13 @@ ListView.ItemClick += (sender, e) => {
 };
 ```
 
-このコードでは、インテントを開くには型のアクティビティを作成している`EventListActivity`目的の予定表の ID を渡すことです。 イベントのクエリをどのカレンダーを認識している ID は必要があります。 `EventListActivity`の`OnCreate`メソッドから ID を取得できます、`Intent`次のようにします。
+このコードでは、型のアクティビティを開く、インテントを作成しています`EventListActivity`意図の予定表の ID を渡します。 予定表イベントを照会するために ID を必要になります。 `EventListActivity`の`OnCreate`メソッドから ID を取得できます、`Intent`次に示すよう。
 
 ```csharp
 _calId = Intent.GetIntExtra ("calId", -1);
 ```
 
-これで、このクエリのイベントの id カレンダーみましょう。 イベントをクエリするプロセスは、前の予定表の一覧を照会したのと同様の操作を行います。 このときにだけ、`CalendarContract.Events`クラスです。 次のコードでは、イベントを取得するクエリを作成します。
+これで、このクエリのイベントの id カレンダーしましょう。 イベントを照会するプロセスは、前のカレンダーの一覧についてはクエリを実行するように操作を行います。 この時点でのみ、`CalendarContract.Events`クラス。 次のコードでは、イベントを取得するクエリを作成します。
 
 ```csharp
 var eventsUri = CalendarContract.Events.ContentUri;
@@ -163,10 +163,10 @@ var loader = new CursorLoader(this, eventsUri, eventsProjection,
 var cursor = (ICursor)loader.LoadInBackground();
 ```
 
-このコードでは最初にコンテンツを取得します`Uri`からのイベントに対して、`CalendarContract.Events.ContentUri`プロパティです。 次で eventsProjection 配列を取得する必要があるイベント列を指定します。
-最後に、インスタンス化、 `CursorLoader` 、この情報と、ローダーを呼び出し`LoadInBackground`を返すメソッドを`Cursor`イベント データを使用します。
+このコードで最初に取得コンテンツ`Uri`からのイベント、`CalendarContract.Events.ContentUri`プロパティ。 次で eventsProjection 配列を取得する必要があるイベント列を指定します。
+最後に、インスタンス化、`CursorLoader`この情報と、ローダーを呼び出し`LoadInBackground`を返すメソッドを`Cursor`をイベント データ。
 
-UI でイベント データを表示するには、マークアップおよびコードの予定表の一覧を表示する前に行ったのと同じように使用できます。 使用して、もう一度`SimpleCursorAdapter`にデータをバインドする、`ListView`次のコードに示すようにします。
+UI でイベント データを表示するには、マークアップと予定表の一覧を表示する前に行ったのと同じようにコードを使用できます。 使用して、もう一度`SimpleCursorAdapter`にデータをバインドする、`ListView`次のコードに示すようにします。
 
 ```csharp
 string[] sourceColumns = {
@@ -184,13 +184,13 @@ adapter.ViewBinder = new ViewBinder ();
 ListAdapter = adapter;
 ```
 
-このコードと使用して、前に、予定表の一覧を表示するコードの主な違いは、使用、`ViewBinder`行に設定されています。
+このコードとカレンダーの一覧を表示する、以前使用したコードの主な違いは、使用、`ViewBinder`行に設定されています。
 
 ```csharp
 adapter.ViewBinder = new ViewBinder ();
 ```
 
-`ViewBinder`クラスにより、さらに制御をビューに値をバインドします。 ここを使用してイベントの開始時刻をミリ秒単位から日付の文字列に変換する、次の実装で示すようにします。
+`ViewBinder`クラスでは、さらに制御をビューに値をバインドできます。 この場合、使用しますが (ミリ秒) からのイベントの開始時刻を日付の文字列に変換する実装を次に示すように。
 
 ```csharp
 class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
@@ -214,23 +214,23 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 }
 ```
 
-次のように、イベントの一覧が表示されます。
+次に示す、イベントの一覧が表示されます。
 
-[![次の 3 つのカレンダー イベントを表示する例のアプリのスクリーン ショット](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
+[![次の 3 つのカレンダー イベントを表示するアプリの例のスクリーン ショット](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
 
 ## <a name="adding-a-calendar-event"></a>予定表イベントを追加します。
 
-予定表のデータを読み取る方法を説明しました。 これで、カレンダーにイベントを追加する方法について説明します。 これを行うには、必ず、`android.permission.WRITE_CALENDAR`前述のアクセス許可。 カレンダーにイベントを追加するには。
+予定表のデータを読み取る方法を説明しました。 これで、カレンダーにイベントを追加する方法を見てみましょう。 これを機能させるには、必ず、`android.permission.WRITE_CALENDAR`アクセス許可は既に説明しました。 カレンダーにイベントを追加することをご紹介します。
 
 1.  作成、`ContentValues`インスタンス。
-1.  キーを使用して、`CalendarContract.Events.InterfaceConsts`を設定するクラス、`ContentValues`インスタンス。
+1.  キーを使用する、`CalendarContract.Events.InterfaceConsts`を設定するクラス、`ContentValues`インスタンス。
 1.  イベントの開始のタイム ゾーンを設定して、終了時刻。
 1.  使用して、`ContentResolver`カレンダーにイベント データを挿入します。
 
 
-次のコードでは、次の手順を示します。
+次のコードは、次の手順を示しています。
 
 ```csharp
 ContentValues eventValues = new ContentValues ();
@@ -255,7 +255,7 @@ var uri = ContentResolver.Insert (CalendarContract.Events.ContentUri,
     eventValues);
 ```
 
-されている場合、タイム ゾーン、型の例外を設定しないでくださいお`Java.Lang.IllegalArgumentException`がスローされます。 イベントの時刻の値は、エポック以降のミリ秒単位で表さ必要があります、ためにの作成、`GetDateTimeMS`メソッド (で`EventListActivity`)、日付の仕様をミリ秒形式に変換します。
+されている場合、タイム ゾーンを型の例外を設定しないでください`Java.Lang.IllegalArgumentException`がスローされます。 イベント時刻の値は、エポック以降ミリ秒単位で表す必要があります、ため、作成、`GetDateTimeMS`メソッド (で`EventListActivity`)、日付の仕様をミリ秒形式に変換します。
 
 ```csharp
 long GetDateTimeMS (int yr, int month, int day, int hr, int min)
@@ -272,19 +272,19 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 }
 ```
 
-イベント一覧 UI にボタンを追加すると、上記のコードを実行ボタンの click イベント ハンドラー、イベントが、予定表に追加し、次に示すように、一覧で更新します。
+イベント一覧の UI にボタンを追加すると、上記のコードを実行ボタンの click イベント ハンドラー、イベントがカレンダーに追加され、次に示すように、一覧で更新します。
 
-[![サンプル イベントの追加 ボタンを続けてカレンダー イベントの例のアプリのスクリーン ショット](calendar-images/13.png)](calendar-images/13.png#lightbox)
+[![サンプル イベントの追加 ボタンの後にカレンダー イベントとアプリの例のスクリーン ショット](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
-予定表アプリを開くこと、お、表示、イベントを書き込むことがありますもされます。
+予定表アプリを開く場合、わかること、イベントは、そこに書き込まれても。
 
-[![選択したイベントを表示する予定表アプリのスクリーン ショット](calendar-images/14.png)](calendar-images/14.png#lightbox)
+[![選択したカレンダーのイベントを表示する予定表アプリのスクリーン ショット](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
-ご覧のように、Android はできるため、予定表の機能にシームレスに統合するアプリケーションを取得し、予定表のデータを保持する強力かつ簡単のアクセスを許可します。
+ご覧のように、Android は、アプリケーションの予定表機能にシームレスに統合可能を取得し、予定表のデータを永続化強力かつ簡単のアクセスを許可します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [カレンダーのデモ (サンプル)](https://developer.xamarin.com/samples/CalendarDemo/)
-- [アイスクリーム サンドイッチの概要](http://www.android.com/about/ice-cream-sandwich/)
+- [予定表のデモ (サンプル)](https://developer.xamarin.com/samples/CalendarDemo/)
+- [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](http://developer.android.com/sdk/android-4.0.html)

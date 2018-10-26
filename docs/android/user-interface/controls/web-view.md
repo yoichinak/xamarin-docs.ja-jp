@@ -3,19 +3,20 @@ title: Web ビュー
 ms.prod: xamarin
 ms.assetid: 807F214A-166D-B342-0BBA-525517577F6B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 8d7b0e1abc8eb11bf812a111764b9cccfb41e041
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: ae0b67de5856e6baef9a4989a93e65ead2854a62
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241176"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110083"
 ---
 # <a name="web-view"></a>Web ビュー
 
-[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) web ページを表示するための独自のウィンドウを作成します (または完全なブラウザーを開発しても) することができます。 このチュートリアルでは、単純なを作成します[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)を表示して、web ページを移動することができます。
+[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) web ページを表示するための独自のウィンドウを作成します (または完全なブラウザーを開発しても) することができます。 このチュートリアルでは、単純なを作成します [`Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)
+表示して、web ページの移動をできます。
 
 という名前の新しいプロジェクトを作成する**HelloWebView**します。
 
@@ -74,7 +75,8 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-次に、次のコードを使用して、 [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))メソッド。
+次に、次のコードを使用して、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
+方法:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -118,7 +120,8 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 }
 ```
 
-これは、 [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent))アクティビティの実行中にボタンが押されたときにコールバック メソッドが呼び出されます。 内部使用条件、 [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) 、キーが押されたかどうかを確認するのには、**戻る**ボタンかどうかと、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)が実際にできます。戻る (ある場合、履歴) を移動します。 どちらにも該当する場合、 [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/)メソッドが呼び出される 1 つ戻りますの手順を移動しますが、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)履歴。 返す`true`イベントが処理されたことを示します。 この条件が満たされていない場合は、イベントがシステムに送信されます。
+これ [`OnKeyDown(int, KeyEvent)`](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent))
+アクティビティの実行中にボタンが押されたときに、コールバック メソッドが呼び出されます。 内部使用条件、 [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) 、キーが押されたかどうかを確認するのには、**戻る**ボタンかどうかと、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)が実際にできます。戻る (ある場合、履歴) を移動します。 どちらにも該当する場合、 [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/)メソッドが呼び出される 1 つ戻りますの手順を移動しますが、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)履歴。 返す`true`イベントが処理されたことを示します。 この条件が満たされていない場合は、イベントがシステムに送信されます。
 
 アプリケーションをもう一度実行します。 リンクをたどるし、ページの履歴を後方に移動できるようになりましたに。
 

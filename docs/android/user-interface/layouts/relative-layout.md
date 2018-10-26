@@ -4,21 +4,24 @@ description: '[相対レイアウト] を Xamarin.Android アプリケーショ�
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: af8d37775a798fc6019106a66df75843a951c108
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.openlocfilehash: af2972ecc92435836a75013e6203ba47c2c04627
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403417"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113151"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)子を表示する[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)相対的な位置の要素。 位置を[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) (左のか、または特定の要素の下など) の兄弟要素に対して相対的に指定できるまたは配置からの相対、 [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)領域 (など配置された、センターの左下)。
+[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)子を表示します。 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+相対的な位置の要素。 位置を[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) (左のか、または特定の要素の下など) の兄弟要素に対して相対的に指定できるまたは配置からの相対、 [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)
+(このような配置されているので、一番下の左 center) の領域。
 
-A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)入れ子になったユーザー インターフェイスのデザインを排除できるので非常に強力なユーティリティは、 [ `ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)秒。 自分で検索する場合のいくつかを使用して入れ子になった[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)グループ、ことができます、1 つに置き換える[ `RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)します。
+A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)入れ子になったユーザー インターフェイスのデザインを排除できるので非常に強力なユーティリティは、 [ `ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)秒。 入れ子になったいくつか使用して自分で検索する場合 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+グループ、ことができます、1 つに置き換える[ `RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)します。
 
 という名前の新しいプロジェクトを開始**HelloRelativeLayout**します。
 
@@ -62,7 +65,8 @@ A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.Rel
 
 定義されているすべての利用可能なレイアウト属性は[ `RelativeLayout.LayoutParams`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/)します。
 
-このレイアウトでの負荷になっていることを確認、 [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)メソッド。
+このレイアウトでの負荷になっていることを確認します [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
+方法:
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)

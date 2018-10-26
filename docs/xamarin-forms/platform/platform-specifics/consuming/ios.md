@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/06/2018
-ms.openlocfilehash: 98d4ce241c01bd09c68d86c583f12fdc7a11db0f
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/01/2018
+ms.openlocfilehash: 69f754db0fd9661fb317f43c7cda546b0b510265
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39175191"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119415"
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
@@ -378,6 +378,7 @@ Xamarin.Forms のページは、次のプラットフォーム固有の機能が
 - ナビゲーションバーでページタイトルを大タイトルとして表示するかどうかを制御します。 詳細については、「[大タイトルの表示](#large_title)」を参照してください。
 - [`Page`](xref:Xamarin.Forms.Page) のステータス バーの可視性を設定します。 詳細については、「[Page でのステータスバーの可視性の設定](#set_status_bar_visibility)」を参照してください。
 - すべての iOS デバイスの安全である画面の領域には、そのページの内容の確認が配置されています。 詳細については、「[セーフ エリア レイアウト ガイドの有効化](#safe_area_layout)」を参照してください。
+- IPad でのモーダル ページ表示スタイルを設定します。 詳細については、次を参照してください。 [iPad でモーダル ページ表示スタイルを設定](#modal-page-presentation-style)します。
 
 <a name="navigationpage-hideseparatorbar" />
 
@@ -684,6 +685,51 @@ protected override void OnAppearing()
     Padding = safeInsets;
 }
 ```
+
+<a name="modal-page-presentation-style" />
+
+### <a name="setting-the-modal-page-presentation-style-on-an-ipad"></a>IPad でモーダル ページ表示スタイルを設定します。
+
+IPad でモーダル ページの表示スタイルを設定する、プラットフォーム固有が使用されます。 XAML で設定して使用される、`Page.ModalPresentationStyle`バインド可能なプロパティを`UIModalPresentationStyle`列挙値。
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.ModalPresentationStyle="FormSheet">
+    ...
+</ContentPage>
+```
+
+代わりに、fluent API を使用して c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+public class iOSModalFormSheetPageCS : ContentPage
+{
+    public iOSModalFormSheetPageCS()
+    {
+        On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+        ...
+    }
+}
+```
+
+`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  `Page.SetModalPresentationStyle`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)でモーダル プレゼンテーションのスタイルを設定する名前空間が使用される、 [ `Page` ](xref:Xamarin.Forms.Page) 、次のいずれかを指定することによって`UIModalPresentationStyle`列挙型値:
+
+- `FullScreen`、画面全体を網羅するモーダル表示スタイルを設定します。 既定では、このプレゼンテーションのスタイルを使用してモーダル ページが表示されます。
+- `FormSheet`、モーダル プレゼンテーションのスタイルを中心とした、画面より小さいを設定します。
+
+さらに、`GetModalPresentationStyle`の現在の値を取得するメソッドを使用することができます、`UIModalPresentationStyle`列挙型に適用される、 [ `Page`](xref:Xamarin.Forms.Page)します。
+
+その結果にモーダル プレゼンテーション スタイル、 [ `Page` ](xref:Xamarin.Forms.Page)設定することができます。
+
+[![](ios-images/modal-presentation-style-small.png "IPad でのモーダル スタイル")](ios-images/modal-presentation-style-large.png#lightbox "iPad でモーダルの表示スタイル")
+
+> [!NOTE]
+> モーダルの表示スタイルを設定するプラットフォームに固有のこのを使用するページには、モーダル ナビゲーションを使用する必要があります。 詳細については、次を参照してください。 [Xamarin.Forms のモーダル ページ](~/xamarin-forms/app-fundamentals/navigation/modal.md)します。
 
 ## <a name="layouts"></a>レイアウト
 

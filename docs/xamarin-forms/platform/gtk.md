@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 34fb58f44e3f341fa34eef512d61f20f5d035a9b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 132f31f4c9426dfceeef38f464231d1545f4db50
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998205"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115173"
 ---
 # <a name="gtk-platform-setup"></a>GTK # プラットフォームのセットアップ
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-Xamarin.Forms では、GTK # アプリのプレビューをサポートできるようになりました。 GTK # は、グラフィカル ユーザー インターフェイス ツールキット GTK + toolkit とさまざまな GNOME ライブラリをリンクする Mono と .NET を使用して完全にネイティブの「なしグラフィックス アプリの開発を許可します。 この記事では、GTK # プロジェクトを Xamarin.Forms ソリューションに追加する方法を示します。
+Xamarin.Forms では、GTK # アプリのプレビューをサポートできるようになりました。 GTK # は、グラフィカル ユーザー インターフェイス ツールキット GTK + toolkit とさまざまな GNOME ライブラリをリンクする Mono と .NET を使用して、グラフィックス アプリへの GNOME を完全にネイティブの開発を許可します。 この記事では、GTK # プロジェクトを Xamarin.Forms ソリューションに追加する方法を示します。
 
 開始、新しい Xamarin.Forms ソリューションを作成または既存の Xamarin.Forms ソリューションを使用して、たとえば、前に[ **GameOfLife**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/)します。
 
@@ -29,7 +29,7 @@ Xamarin.Forms では、GTK # アプリのプレビューをサポートできる
 
 GTK # の macOS および Linux がの一部としてインストールされている[Mono](http://www.mono-project.com/download/stable/)します。 GTK # for .NET をインストールできるで Windows、 [GTK # インストーラー](http://www.mono-project.com/download/stable/#download-win)します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Windows デスクトップで実行される GTK # アプリを追加するこれらの手順に従います。
 
@@ -110,7 +110,7 @@ Windows デスクトップで実行される GTK # アプリを追加するこ�
 
     ![GTK # の耐用年数のゲーム](gtk-images/win/gtk-gameoflife.png "GTK # の耐用年数のゲーム")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Mac のデスクトップで実行される GTK # アプリを追加するこれらの手順に従います。
 

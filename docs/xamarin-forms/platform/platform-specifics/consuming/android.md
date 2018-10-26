@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/03/2018
-ms.openlocfilehash: c422b9ac5af9417523f349537fda1bb0c01aa7bc
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/01/2018
+ms.openlocfilehash: 50c7b05261cf3f07ea37373cdcdcc8f250243647
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39175178"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108978"
 ---
 # <a name="android-platform-specifics"></a>Android プラットフォーム仕様
 
@@ -310,6 +310,7 @@ webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 Xamarin.Forms のページは、次のプラットフォーム固有の機能が android では、用意されています。
 
 - 上のナビゲーション バーの高さを設定、 [ `NavigationPage`](xref:Xamarin.Forms.NavigationPage)します。 詳細については、次を参照してください。 [NavigationPage のナビゲーション バーの高さを設定](#navigationpage-barheight)します。
+- 内のページ間を移動するときに、遷移アニメーションを無効にすると、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 詳細については、次を参照してください。[で、TabbedPage ページ遷移アニメーションを無効にすると](#tabbedpage-transition-animations)します。
 - [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)でのページ間のスワイプ操作の有効化。 詳細については、[TabbedPage でのページ間のスワイプ操作の有効化](#enable_swipe_paging)を参照してください。
 - ツールバーの配置と色を設定、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 詳細については、次を参照してください。 [TabbedPage ツールバーの配置の設定と色](#tabbedpage-toolbar)します。
 
@@ -348,6 +349,36 @@ public class AndroidNavigationPageCS : Xamarin.Forms.NavigationPage
 その結果、ナビゲーション バーの高さを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)設定できます。
 
 ![](android-images/navigationpage-barheight.png "NavigationPage のナビゲーション バーの高さ")
+
+<a name="tabbedpage-transition-animations" />
+
+### <a name="disabling-page-transition-animations-in-a-tabbedpage"></a>TabbedPage ページ遷移アニメーションを無効にします。
+
+このプラットフォームに固有の使用の移動時にページを使用するかプログラムで、または、タブ バーを使用する場合は、遷移アニメーションを無効にする、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 XAML で設定して使用される、`TabbedPage.IsSmoothScrollEnabled`バインド可能なプロパティを`false`:
+
+```xaml
+<TabbedPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.IsSmoothScrollEnabled="false">
+    ...
+</TabbedPage>
+```
+
+代わりに、fluent API を使用して c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+On<Android>().SetIsSmoothScrollEnabled(false);
+```
+
+`TabbedPage.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。 `TabbedPage.SetIsSmoothScrollEnabled`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)でページ間を移動するときに、遷移のアニメーションが表示されるかどうか、名前空間を使用して、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 さらに、`TabbedPage`クラス、`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`名前空間は、次の方法もあります。
+
+- `IsSmoothScrollEnabled`、ページ間を移動するときに、遷移のアニメーションが表示されるかどうかを取得に使用される、`TabbedPage`します。
+- `EnableSmoothScroll`、ページ間で移動すると、遷移アニメーションを有効にするに使用される、`TabbedPage`します。
+- `DisableSmoothScroll`、でページ間を移動する場合は、遷移アニメーションを無効にするため、`TabbedPage`します。
 
 <a name="enable_swipe_paging" />
 

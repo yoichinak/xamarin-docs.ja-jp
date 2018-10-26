@@ -3,15 +3,15 @@ title: Android と ADO.NET を使用します。
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 9e0c1be2e37355242db2fb70857d90127c3b5259
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 4b22b15cfe5aaa836b65fc75f847b88c8e00e80b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242213"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107002"
 ---
 # <a name="using-adonet-with-android"></a>Android と ADO.NET を使用します。
 
@@ -21,11 +21,11 @@ Xamarin は、Android で使用できるは、使い慣れた ADO.NET に似た�
 
 アクセスする必要がありますを追加する ADO.NET を使用して SQLite を使用する`System.Data`と`Mono.Data.Sqlite`次に示すように、Android プロジェクトに参照します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin) 
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows) 
 
 ![Visual Studio での android のリファレンス](using-adonet-images/image7.png "Visual Studio で Android の参照") 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac) 
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos) 
 
 ![Visual Studio for Mac での android のリファレンス](using-adonet-images/image5.png "Mac 用の Visual Studio で Android を参照") 
 

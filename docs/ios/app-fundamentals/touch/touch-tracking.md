@@ -1,28 +1,28 @@
 ---
-title: マルチタッチ指 Xamarin.iOS での追跡
-description: このドキュメントでは、Xamarin.iOS アプリでマルチタッチ ジェスチャで個々 の指を追跡する方法について説明します。 これは、finger-painting アプリの例を中心として展開します。
+title: マルチタッチ指が Xamarin.iOS での追跡
+description: このドキュメントでは、Xamarin.iOS アプリで、マルチタッチ ジェスチャで個々 の指を追跡する方法について説明します。 これは、フィンガーペインティング アプリの例を中心として展開します。
 ms.prod: xamarin
 ms.assetid: 48E8B20D-0833-43D2-976A-0605DDB386E3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 85dbd3c158408026f4ecef5fb2b01c265747140e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a1ddcda84d51b5a8a9220558ddaf9476a2321ee8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784404"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105052"
 ---
-# <a name="multi-touch-finger-tracking-in-xamarinios"></a>マルチタッチ指 Xamarin.iOS での追跡
+# <a name="multi-touch-finger-tracking-in-xamarinios"></a>マルチタッチ指が Xamarin.iOS での追跡
 
-_このドキュメントが複数の指からタッチ イベントを追跡する方法を示します_
+_このドキュメントは、複数の指のタッチ イベントを追跡する方法を示します_
 
-マルチタッチ アプリケーションが画面に同時に移動する個々 の本の指を追跡する必要がある場合もあります。 1 つの一般的なアプリケーションは、finger-paint プログラムです。 ユーザー 1 本の指を使用して描画するが、一度に複数の指を使用して描画するかどうかをできるようにします。 プログラムでは、複数のタッチ イベントを処理、指がこれらを区別する必要があります。
+マルチタッチ アプリケーションが同時に画面に移動する場合に、個々 の本の指を追跡する必要がある場合もあります。 1 つの一般的なアプリケーションは、finger-paint プログラムです。 1 本の指を描くには、一度に複数の指で描画するためにもできるようにユーザーを必要とします。 プログラムでは、複数のタッチ イベントを処理するこの本の指を区別する必要があります。
 
-指では、画面が最初に、iOS 作成、 [ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/)その指のオブジェクト。 このオブジェクトは、同じように、指が画面上の移動し、画面で、この時点で、オブジェクトが破棄されてから離したです。 指を入力するプログラムが格納しないようにこの`UITouch`オブジェクトに直接できます。 代わりに、使用できる、 [ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)型のプロパティ`IntPtr`これらを一意に識別する`UITouch`オブジェクト。
+指で画面が最初に iOS 作成、 [ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/)その本の指のオブジェクト。 このオブジェクトでは、指が画面上を移動および動かした後、画面で、この時点で、オブジェクトが破棄されたと同じままです。 これを格納する本の指を追跡するため、プログラムが避ける必要があります`UITouch`オブジェクトに直接します。 代わりに、使用できる、 [ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)型のプロパティ`IntPtr`これらを一意に識別する`UITouch`オブジェクト。
 
-ほとんどの場合、個々 の本の指を追跡するプログラムは追跡タッチのディクショナリを保持します。 IOS プログラムのディクショナリのキーは、`Handle`特定指を識別する値。 ディクショナリの値は、アプリケーションによって異なります。 [フィンガー ペイント](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)プログラム (から解放するタッチ) 各本の指ストロークは、その指で描画される直線を表示するために必要なすべての情報を格納しているオブジェクトに関連付けられています。 プログラム定義の小さな`FingerPaintPolyline`この目的のためのクラス。
+ほぼ常に、個々 の本の指を追跡するプログラムは、タッチの追跡のためのディクショナリを保持します。 ディクショナリ キーは、iOS プログラムの場合、`Handle`を特定の指を識別する値。 ディクショナリの値は、アプリケーションによって異なります。 [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)プログラム、(リリースへのタッチ) から各本の指のストロークはその指で描画される直線を表示するために必要なすべての情報を格納しているオブジェクトに関連付けられています。 プログラム定義の小さな`FingerPaintPolyline`この目的のためのクラス。
 
 ```csharp
 class FingerPaintPolyline
@@ -40,24 +40,24 @@ class FingerPaintPolyline
 }
 ```
 
-各多角形は、色、線の幅、および iOS グラフィックス[ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/)蓄積してが描画中に、行の複数のポイントを描画するオブジェクト。
+各ポリラインが、色、線の幅、および、iOS のグラフィックス[ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/)を蓄積し、描画されている行の複数のポイントをレンダリングするオブジェクト。
 
 
-次のコードのすべての残りの部分が含まれている、`UIView`という名前から派生した`FingerPaintCanvasView`です。 クラスは型のオブジェクトのディクショナリを保持する`FingerPaintPolyline`時の 1 つまたは複数の指で描画されるがアクティブにします。
+次のコードのすべての残りの部分が含まれている、`UIView`という名前の導関数`FingerPaintCanvasView`します。 クラスは型のオブジェクトのディクショナリを保持する`FingerPaintPolyline`1 つ以上の指で積極的に描画されているは時間内に。
 
 ```csharp
 Dictionary<IntPtr, FingerPaintPolyline> inProgressPolylines = new Dictionary<IntPtr, FingerPaintPolyline>();
 ```
 
-このディクショナリを迅速に取得するビューを使うと、`FingerPaintPolyline`各本の指で関連付けられている情報に基づいて、`Handle`のプロパティ、`UITouch`オブジェクト。
+このディクショナリをすばやく取得するビューを使うと、`FingerPaintPolyline`それぞれの指に関連付けられている情報に基づいて、`Handle`のプロパティ、`UITouch`オブジェクト。
 
-`FingerPaintCanvasView`クラスも保持、`List`完了している多角形のオブジェクト。
+`FingerPaintCanvasView`クラスも保持しています、`List`完成したポリラインのオブジェクト。
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 ```
 
-このオブジェクト`List`が描画された同じ順序で。
+このオブジェクト`List`が描画されたことと同じ順序で。
 
 `FingerPaintCanvasView` によって定義された 5 つのメソッドをオーバーライド`View`:
 
@@ -67,9 +67,9 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 - [`TouchesCancelled`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesCancelled/p/Foundation.NSSet/UIKit.UIEvent/)
 - [`Draw`](https://developer.xamarin.com/api/member/UIKit.UIView.Draw/p/CoreGraphics.CGRect/)
 
-さまざまな`Touches`上書きは、多角形を構成する点を蓄積します。
+さまざまな`Touches`上書きをポリラインを形成する点を蓄積します。
 
-[`Draw`] の上書きは、完了した多角形とし、実行中の多角形を描画します。
+[`Draw`] の上書きが完了したポリラインとし、実行中のポリラインを描画します。
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -103,7 +103,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-各、`Touches`上書き可能性のある 1 つまたは複数によって示される、複数の指のアクションを報告`UITouch`オブジェクトに格納されている、`touches`メソッドの引数。 `TouchesBegan`これらのオブジェクトをループ処理をオーバーライドします。 各`UITouch`オブジェクト、メソッドを作成して、新しい初期化`FingerPaintPolyline`オブジェクトから取得した指の初期位置を格納するなど、`LocationInView`メソッドです。 これは、`FingerPaintPolyline`にオブジェクトが追加、`InProgressPolylines`ディクショナリを使用して、`Handle`のプロパティ、`UITouch`辞書のキーとしてオブジェクト。
+各、`Touches`上書き可能性のある 1 つまたは複数によって示される、複数の指のアクションを報告`UITouch`オブジェクトに格納されている、`touches`メソッドの引数。 `TouchesBegan`これらのオブジェクトをループ処理をオーバーライドします。 各`UITouch`オブジェクト、メソッドを作成し、新しい初期化`FingerPaintPolyline`などから取得した本の指の初期位置を格納するオブジェクト、`LocationInView`メソッド。 これは、`FingerPaintPolyline`オブジェクトに追加されます、`InProgressPolylines`ディクショナリを使用して、`Handle`のプロパティ、`UITouch`ディクショナリ キーとしてのオブジェクト。
 
 ```csharp
 public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -126,9 +126,9 @@ public override void TouchesBegan(NSSet touches, UIEvent evt)
 }
 ```
 
-メソッドを呼び出すことによって終了`SetNeedsDisplay`への呼び出しを生成する、`Draw`をオーバーライドし、画面を更新します。
+メソッドは最後に呼び出すことによって`SetNeedsDisplay`への呼び出しを生成する、`Draw`をオーバーライドし、画面を更新します。
 
-本の指または指が画面で、移動したとき、`View`が複数の呼び出しを取得、`TouchesMoved`をオーバーライドします。 このオーバーライドが同様にループ、`UITouch`オブジェクトに格納されている、`touches`引数グラフィックス パスを本の指の現在の場所を追加。
+指や本の指が画面で、移動、`View`複数の呼び出しを取得します。 その`TouchesMoved`をオーバーライドします。 この上書きを同様にループ、`UITouch`オブジェクトに格納されている、`touches`引数グラフィック パスに、本の指の現在の場所を追加します。
 
 ```csharp
 public override void TouchesMoved(NSSet touches, UIEvent evt)
@@ -144,9 +144,9 @@ public override void TouchesMoved(NSSet touches, UIEvent evt)
 }
 ```
 
-`touches`コレクションにはのみが含まれます`UITouch`オブジェクト、最後の呼び出し以降に移行された本の指の`TouchesBegan`または`TouchesMoved`です。 必要が生じた場合`UITouch`オブジェクトに対応する*すべて*指が画面に現在接続には、その情報があるを通じて、`AllTouches`のプロパティ、`UIEvent`メソッドの引数。
+`touches`コレクションに含まれるもののみ`UITouch`オブジェクトの最後の呼び出しから移動した本の指`TouchesBegan`または`TouchesMoved`します。 必要が生じた場合`UITouch`オブジェクトに対応する*すべて*現在画面と指、その情報を利用、`AllTouches`のプロパティ、`UIEvent`メソッドの引数。
 
-`TouchesEnded`オーバーライドが 2 つのジョブです。 グラフィックス パス、および転送に、最後のポイントを追加する必要があります、`FingerPaintPolyline`オブジェクトから、`inProgressPolylines`辞書、`completedPolylines`一覧。
+`TouchesEnded`上書きが 2 つのジョブ。 グラフィックス パス、および転送を最後のポイントを追加する必要がありますが、`FingerPaintPolyline`オブジェクトから、`inProgressPolylines`するディクショナリ、`completedPolylines`一覧。
 
 ```csharp
 public override void TouchesEnded(NSSet touches, UIEvent evt)
@@ -167,7 +167,7 @@ public override void TouchesEnded(NSSet touches, UIEvent evt)
 }
 ```
 
-`TouchesCancelled`上書きは単純に放棄によって処理される、`FingerPaintPolyline`ディクショナリ内のオブジェクト。
+`TouchesCancelled`オーバーライドは単に破棄によって処理される、`FingerPaintPolyline`ディクショナリ内のオブジェクト。
 
 ```csharp
 public override void TouchesCancelled(NSSet touches, UIEvent evt)
@@ -182,15 +182,15 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 }
 ```
 
-この処理により、完全に、[フィンガー ペイント](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)プログラムを個々 の本の指を追跡し、画面に結果を描画します。
+この処理では、完全に、 [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)プログラムを個々 の本の指を追跡し、結果を画面に描画します。
 
-[![](touch-tracking-images/image01.png "個々 の本の指の追跡と画面に結果の絵")](touch-tracking-images/image01.png#lightbox)
+[![](touch-tracking-images/image01.png "個々 の本の指を追跡し、結果を画面の描画")](touch-tracking-images/image01.png#lightbox)
 
-画面上の個々 の本の指を追跡し、それらを区別する方法を見てきましたようになりました。
+これで、画面上の個々 の本の指を追跡し、それらを区別する方法を見てきました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [等価の Xamarin Android ガイド](~/android/app-fundamentals/touch/touch-tracking.md)
-- [フィンガー ペイント (サンプル)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)
+- [同等の Xamarin Android ガイド](~/android/app-fundamentals/touch/touch-tracking.md)
+- [FingerPaint (サンプル)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)

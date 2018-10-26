@@ -1,93 +1,93 @@
 ---
-title: 追加 watchOS 3 フレームワークの変更
-description: このドキュメントでは、さまざまなフレームワーク ³ ' êaƒaƒhƒœƒx watchOS 3、および Xamarin に処理する方法について説明します。 基本データ、コア モーション、Foundation、HealthKit、HomeKit、PassKit、および UIKit がについて説明します。
+title: 追加の watchOS 3 フレームワークの変更
+description: このドキュメントでは、watchOS 3、および Xamarin で操作する方法で導入されたさまざまなフレームワークの変更について説明します。 Core Data、Core モーション、Foundation、HealthKit、HomeKit、PassKit、および UIKit がについて説明します。
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: af44096928c5e543ac99df3faec9f2e9215f666d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 745c39dab1f73870ce036791434ed9a0b05d681b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791516"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122622"
 ---
-# <a name="additional-watchos-3-frameworks-changes"></a>追加 watchOS 3 フレームワークの変更
+# <a name="additional-watchos-3-frameworks-changes"></a>追加の watchOS 3 フレームワークの変更
 
-_この記事では、追加、マイナーの変更または watchOS 3 の既存のフレームワークの機能強化について説明します。_
+_この記事では、追加、マイナー変更や watchOS 3 用の既存のフレームワークの機能強化について説明します。_
 
-IOS に主要な変更だけでなく Apple が行われた変更を行うと既存のフレームワークをいくつかの機能強化 watchOS 3 でします。
+IOS の大幅な変更を加え Apple は、watchOS 3 での変更と既存のフレームワークをいくつかの機能強化を行ったが。
 
 
-## <a name="core-data"></a>コア データ
+## <a name="core-data"></a>Core Data
 
-ウォッチ OS 3 のコア データ フレームワークには、次の機能強化が加えします。
+ウォッチ 3 の OS の Core Data framework に、次のように強化します。
 
-- ルート[NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)オブジェクトには、同時実行エラーが発生とシリアル化せずフェッチがサポートしています。
-- [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator)クラス SQLite データ ストアのプールが保持されます。
-- [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) WAL ジャーナル モードのサポート、新しいクエリの生成に SQLite データ ストア オブジェクトの機能で管理されているオブジェクトのコンテキスト (MOC) ピン留めできます将来をフェッチするための特定のデータベース バージョンにし、。トランザクション エラーが発生します。
-- 使用して、高度な`NSPersistenceContainer`参照に、 `NSPersistentStoreCoordinator`、 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel)およびその他のコア データの構成リソース。
+- ルート[NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)オブジェクトは、同時実行のエラーとシリアル化せずフェッチをサポートしています。
+- [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator)クラスには、SQLite のデータ ストアのプールが管理されます。
+- [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) WAL ジャーナルのモードのサポート、新しいクエリの生成にデータ ストアを SQLite オブジェクト機能の管理オブジェクトのコンテキスト (MOC) を将来をフェッチするための特定のデータベース バージョンに固定でき、トランザクションのエラーが発生します。
+- 高レベルを使用して`NSPersistenceContainer`参照に、 `NSPersistentStoreCoordinator`、 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel)およびその他のコア データの構成リソース。
 - いくつかの新しい便利なメソッドに追加された`NSManagedObject`フェッチを実行し、サブクラスを作成しやすきます。
 
-詳細については、Apple を参照してください[コア データ フレームワーク参照](https://developer.apple.com/reference/coredata)です。
+詳細については、Apple を参照してください[コア データ フレームワーク参照](https://developer.apple.com/reference/coredata)します。
 
 
-## <a name="core-motion"></a>コア モーション
+## <a name="core-motion"></a>コア アニメーション
 
-次の機能強化は、ウォッチ OS 3 のコア モーション フレームワークにいます。
+Core モーション framework ウォッチ 3 の OS の次のように強化します。
 
-- 新しい/device Motion イベントは、加速度計、ジャイロスコープを使用して、運動と印刷の向きの更新プログラムを提供します。 更新 (最大 100 Hz の速度) このアプリのアプリを登録できます。
-- 新しい Pedometer イベントによって、高速、リアルタイムの通知ユーザーを置いたときに実行を再開します。 使用して、 [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)フォア グラウンドまたはバック グラウンドの pedometer イベントを登録します。
+- 新しいデバイス モーション イベントは、加速度計、ジャイロスコープなどがありますを使用して、モーション センサーと印刷の向きの更新プログラムを提供します。 更新 (最大 100 Hz の料金) このアプリのアプリを登録できます。
+- 新しい歩数計イベントは高速なユーザーを置いたときにリアルタイムで通知と実行を再開します。 使用して、 [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)フォア グラウンドまたはバック グラウンドの歩数計イベントを登録します。
 
 
 ## <a name="foundation"></a>Foundation
 
-次の機能強化は、ウォッチ OS 3 の Foundation フレームワークにいます。
+Foundation framework ウォッチ OS 3 の次のように強化します。
 
-- 使用して、新しい[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)の間隔を比較して、間隔の交差部分のテストの期間などの日付と時刻の間隔の計算を作成するクラス。
-- いくつかの新しいプロパティが追加されて、 [NSLocal](https://developer.apple.com/reference/foundation/nslocale)クラスをローカルの情報と使用可能な表示形式を取得します。
-- 使用して、新しい[NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement)間でさまざまなユニットのメジャー (出荷単位) を変換するか、異なる UOMs 内の値に対して計算を実行するクラス。
-- 使用して、新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスをエンドユーザーに表示するローカライズされた測定値の書式を設定します。
-- 使用して、新しい[NSUnit](https://developer.apple.com/reference/foundation/nsunit)と[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)特定 UOMs を表すクラス。
+- 使用して、新しい[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)間隔を比較して、間隔の交差部分のテストのための期間などの日付と時刻の間隔の計算を行うクラス。
+- いくつかの新しいプロパティが追加されて、 [NSLocal](https://developer.apple.com/reference/foundation/nslocale)ローカル情報と使用可能な表示形式を取得するクラス。
+- 使用して、新しい[NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement)間さまざまなユニットの測定 (UOM) を変換または異なる UOMs 内の値に対して計算を実行するクラス。
+- 使用して、新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスは、エンドユーザーに表示するためのローカライズされた測定値の書式を設定します。
+- 使用して、新しい[NSUnit](https://developer.apple.com/reference/foundation/nsunit)と[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)特定 UOMs を表すためのクラス。
 
 
 ## <a name="healthkit"></a>HealthKit
 
-次の機能強化は、ウォッチ OS 3 の HealthKit フレームワークにいます。
+HealthKit framework ウォッチ OS 3 の次のように強化します。
 
-- 使用して、新しい[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)クラスを指定する、`ActivityType`と`LocationType`トレーニングのです。
-- 新しい[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)と`WheelchairUse`のメソッド、 [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)手押し車を操作するためのクラスが追加されましたに関連したヘルス データ。
-- 天気の種類の新しいメタデータ キーが追加されました (など`HKWeatherConditionClear`と`HKWeatherConditionCloudy`) とトレーニング型 (など`HKWorkoutActivityTypeFlexibility`と`HKWorkoutActivityTypeWheelchairRunPace`) が追加されました。
+- 使用して、新しい[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)クラスを指定する、`ActivityType`と`LocationType`トレーニングの。
+- 新しい[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)と`WheelchairUse`のメソッド、 [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)手押し車を操作するためのクラスが追加されました正常性データに関連します。
+- 天気の種類の新しいメタデータのキーが追加されています (など`HKWeatherConditionClear`と`HKWeatherConditionCloudy`) とトレーニングの種類 (など`HKWorkoutActivityTypeFlexibility`と`HKWorkoutActivityTypeWheelchairRunPace`) が追加されています。
 
 
 ## <a name="homekit"></a>HomeKit
 
-次の機能強化は、ウォッチ OS 3 の HomeKit フレームワークにいます。
+Watch OS 3 の HomeKit フレームワークに、次のように強化します。
 
-- IP を接続する HomeKit の表示および操作する機能を追加カメラ。
+- 接続の IP を HomeKit の表示および操作する機能を追加するカメラ。
 - いくつかの新しいサービスや特性を追加します。
-- 複数のコンテキストと主要なサービスとサービスのリンクのアクセサリの構成を追加します。
+- コンテキストと主要なサービスとリンク サービスのアクセサリの構成の詳細を追加します。
 
 
 ## <a name="passkit"></a>PassKit
 
-次の機能強化は、ウォッチ OS 3 の PassKit フレームワークにいます。
+PassKit framework ウォッチ OS 3 の次のように強化します。
 
-- 物理的な商品およびサービスの両方の Apple Watch でセキュリティで保護された、アプリ内の支払いをサポートするようフレームワークを拡張します。
+- 物理的な商品およびサービスの両方の Apple Watch でセキュリティで保護されたアプリでの支払いをサポートするフレームワークを展開します。
 - 次のクラスが使用できるようになりました: [PKPayment](https://developer.apple.com/reference/passkit/pkpayment)、 [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)、 [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)と[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
 
 ## <a name="uikit"></a>UIKit
 
-UIKit framework ウォッチ OS 3 の次のように強化します。
+Watch OS 3 の UIKit フレームワークに、次のように強化します。
 
-- ラベルの動的な型をサポートするためにテキスト フィールドとテキスト ボックスを使用して、新しい`PreferredFontForTextStyle`のメソッド、`UIFont`クラスです。
-- `ColorWithDisplayP3`広色をサポートするためにメソッドが追加されました。
+- ラベルで動的な型をサポートするためにテキスト フィールドとテキスト ボックスを使用して、新しい`PreferredFontForTextStyle`のメソッド、`UIFont`クラス。
+- `ColorWithDisplayP3`メソッドは、色をサポートするために追加されました。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [作業の開始 (サンプル)](https://developer.xamarin.com/samples/monotouch/WatchKit/)
-- [WatchOS 3 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)
+- [WatchOS 3 の新機能新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

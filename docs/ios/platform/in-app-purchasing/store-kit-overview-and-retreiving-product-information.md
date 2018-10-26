@@ -1,113 +1,113 @@
 ---
-title: StoreKit 概要と Xamarin.iOS で製品情報を取得します。
-description: このドキュメントでは、StoreKit の概要を説明します。 StoreKit、StoreKit 相互作用をテスト、製品売上を表示する、処理、無効な製品および表示するローカライズされた価格で使用されるクラスがについて説明します。
+title: StoreKit の概要と Xamarin.iOS で製品情報を取得します。
+description: このドキュメントでは、StoreKit の概要を示します。 Storekit や、storekit や相互作用をテスト、販売製品を表示する、無効な製品は、処理、およびローカライズされた価格を表示すると共に使用するクラスがについて説明します。
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 964b97e82db8e79cb32598d0c955fac3ab122314
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0dcda2e4fd1ca7773668a0a6fdf46e01f2f0841d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787225"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118527"
 ---
-# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 概要と Xamarin.iOS で製品情報を取得します。
+# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit の概要と Xamarin.iOS で製品情報を取得します。
 
-アプリ内購入のユーザー インターフェイスは、次のスクリーン ショットに表示されます。
-任意のトランザクションの実行前にアプリケーションは、製品の価格と表示の説明を取得する必要があります。 ユーザーが押したときに、**購入**アプリケーションが要求を送信、確認のダイアログ ボックスと Apple ID でのログインを管理する StoreKit です。 トランザクションは、成功すると、StoreKit 通知、アプリケーション コードと仮定するとトランザクションの結果を格納の購入へのアクセスをユーザーに提供し、する必要があります。   
+次のスクリーン ショットは、アプリ内購入物のユーザー インターフェイスに表示されます。
+任意のトランザクションの実行前に、アプリケーションは、製品の価格と表示の説明を取得する必要があります。 ユーザーが押したときに、**購入**アプリケーション、確認のダイアログ ボックスと Apple ID でのログインを管理する StoreKit への要求。 Storekit や、アプリケーション コードに通知し、トランザクションが成功したと仮定するとトランザクションの結果を格納の購入へのアクセスをユーザーに提供し、する必要があります。   
 
    
- [![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 通知、アプリケーション コードは、トランザクションの結果を格納しの購入へのアクセスをユーザーに提供する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image14.png "Storekit や通知、アプリケーション コードは、トランザクションの結果を格納しの購入へのアクセスをユーザーに提供する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
 ## <a name="classes"></a>クラス
 
-アプリ内購入を実装するには、StoreKit フレームワークから次のクラスが必要です。   
+アプリ内購入を実装するには、storekit やフレームワークから次のクラスが必要です。   
    
- **SKProductsRequest** – (App Store) を販売するために承認されている製品の StoreKit を要求します。 製品 Id の数で構成できます。
+ **SKProductsRequest** – StoreKit へ (App Store) を販売する承認済みの商品の要求。 製品 Id の数が構成できます。
 
 -   **SKProductsRequestDelegate** – 製品要求と応答を処理するメソッドを宣言します。 
 -   **SKProductsResponse** – StoreKit (App Store) から代理人に送信します。 Id が要求と共に送信される製品に一致する SKProducts が含まれています。 
--   **SKProduct** – (つまり iTunes Connect で構成した) StoreKit から製品を取得します。 など、製品 ID、タイトル、説明、価格、製品に関する情報が含まれています。 
--   **SKPayment** – 製品 ID を作成され、注文書を実行する支払キューに追加します。 
--   **SKPaymentQueue** – Apple に送信する支払要求をキューに登録済みです。 通知が各支払いを処理中の結果として実行されます。 
--   **SKPaymentTransaction** : 完了したトランザクション (App Store で処理および StoreKit 経由でのアプリケーションに送信されている発注要求) を表します。 トランザクションは、Purchased、復元された、または失敗した可能性があります。 
--   **SKPaymentTransactionObserver** – StoreKit 支払キューによって生成されたイベントに応答するカスタム サブクラスです。 
--   **StoreKit 操作は非同期**-、SKProductRequest が開始されてか、SKPayment が、キューに追加されるコードに制御が返されます。 StoreKit は Apple のサーバーからデータを受け取ると、SKProductsRequestDelegate または SKPaymentTransactionObserver サブクラスでメソッドが呼び出すされます。 
+-   **SKProduct** – (を iTunes Connect で構成した) StoreKit から製品を取得します。 製品 ID、タイトル、説明、価格など、製品についての情報が含まれています。 
+-   **SKPayment** – 製品 id を作成し、購入を実行する支払キューに追加します。 
+-   **SKPaymentQueue** – Apple に送信される支払い要求をキューに登録済みです。 支払いが処理されている各結果は、通知がトリガーされます。 
+-   **SKPaymentTransaction** – 完了したトランザクション (App Store によって処理および storekit や経由でのアプリケーションに送信された発注要求) を表します。 トランザクションは、Purchased、復元済みまたは失敗した可能性があります。 
+-   **SKPaymentTransactionObserver** – storekit や支払いのキューによって生成されたイベントに応答するカスタム サブクラスです。 
+-   **StoreKit の操作は非同期**-、SKProductRequest が開始または、SKPayment がキューに追加されて、コードに制御が返されます。 StoreKit が Apple のサーバーからデータを受信したときは、SKProductsRequestDelegate または SKPaymentTransactionObserver サブクラスでメソッドを呼び出します。 
 
 
-次の図は、(アプリケーションでは抽象クラスを実装する必要があります)、さまざまな StoreKit クラス間の関係を示しています。   
+次の図は、(抽象クラスは、アプリケーションで実装する必要があります)、さまざまな storekit やクラス間の関係を示しています。   
    
    
    
- [![](store-kit-overview-and-retreiving-product-information-images/image15.png "アプリでさまざまな StoreKit クラスの抽象クラス間の関係を実装する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image15.png "アプリでさまざまな storekit やクラスの抽象クラス間の関係を実装する必要があります。")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
    
    
    
  これらのクラスは、このドキュメントの後半で詳しく説明します。
 
-## <a name="testing"></a>テスト中
+## <a name="testing"></a>テスト
 
-ほとんどの StoreKit 操作では、テストの実際のデバイスが必要です。 (Ie 製品の情報の取得。 価格&amp;説明) は、シミュレーターが購入で動作し、復元操作には、エラーが返されます (FailedTransaction コードなど 5002 = 不明なエラーが発生しました)。
+StoreKit のほとんどの操作では、テストの実際のデバイスが必要です。 (つまり製品の情報の取得 価格&amp;説明) は、シミュレーターが発注機能および復元操作はエラーを返します (FailedTransaction コードなど 5002 を = 不明なエラーが発生しました)。
 
 注: StoreKit は、iOS シミュレーターでは動作しません。 IOS シミュレーターでアプリケーションを実行して、支払キューを取得しようとすると、アプリケーション、StoreKit は警告を記録します。 ストアのテストは、実際のデバイスで行う必要があります。   
    
    
    
- 重要: 署名しない設定 でテスト アカウントを使用します。 既存の Apple ID アカウントがサインイン設定アプリケーションを使用することができますし、入力を求めるに待機する必要があります*アプリ内購入シーケンス内で*Apple id テストを使用してログイン。   
+ 重要: に署名しない設定 で、テスト アカウントでサインインします。 すべての既存の Apple ID アカウントからの署名を設定アプリケーションを使用することができますし、ダイアログを表示するまで待機する必要があります*アプリ内購入するシーケンス内で*テスト Apple ID を使用してログインするには   
    
    
    
 
-テスト アカウントを使用して実際のストアにサインインしようとすると、自動的に変換されます、実際の Apple ID を そのアカウントは、テストに使用できるされなくなります。
+テスト アカウントを使用して実際のストアにサインインを試みると、自動的に変換されます実際の Apple id そのアカウントは、テストに使用できるされなくなります。
 
-StoreKit コードをテストするには、は、正規 iTunes テスト アカウントとログインのログアウトをテストのストアにリンクされている特殊なテスト アカウント (iTunes Connect で作成される) が必要です。 現在のアカウントのアクセスからサインアウト**設定 > iTunes と App Store**次のように。
+Storekit やコードをテストするには、テスト ストアにリンクされている (iTunes Connect で作成された) 特別なテスト アカウントで、通常の iTunes テスト アカウントとログインのログアウトがあります。 現在のアカウントのアクセスからサインアウト**設定 > iTunes アプリ ストア**次のように。
 
- [![](store-kit-overview-and-retreiving-product-information-images/image16.png "現在のアカウントのアクセス設定 iTunes と App Store からサインアウトするには")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image16.png "現在のアカウントのアクセス設定の iTunes とアプリ ストアからサインアウトするには")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
  
-テスト用のアカウントでサインインし*StoreKit によって要求されると、アプリ内で*:
+テスト アカウントでサインイン*storekit や、アプリ内での要求時*:
 
 
 
-作成するテスト ユーザー iTunes Connect でをクリックして**ユーザーおよびロール**メイン ページで、します。
+作成する iTunes Connect でのテスト ユーザーのクリックしてで**ユーザーおよびロール**のメイン ページ。
 
- [![](store-kit-overview-and-retreiving-product-information-images/image17.png "ITunes でテスト ユーザーを作成するには、接続をクリックしてユーザーおよびロールのメイン ページで、")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image17.png "ITunes でテスト ユーザーを作成するには、接続 をクリックしてユーザーおよびロールのメイン ページで、")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
 
-選択**サンド ボックスのテスト担当者**
+選択**サンド ボックス テスト担当者**
 
- [![](store-kit-overview-and-retreiving-product-information-images/image18.png "サンド ボックスのテスト担当者を選択します。")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image18.png "サンド ボックス テスト担当者を選択します。")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
 
-既存のユーザーの一覧が表示されます。 新しいユーザーを追加したり、既存のレコードを削除することができます。 ポータルがしません (現在) を表示または編集既存ため (特に、パスワードを割り当てる) を作成した各テスト ユーザーの適切なレコードを保持することをお勧めのテスト ユーザーを使用します。 テスト ユーザーを削除すると、電子メール アドレスが別のテスト アカウント用に再利用することはできません。  
+既存のユーザーの一覧が表示されます。 新しいユーザーを追加したり、既存のレコードを削除することができます。 ポータルはありません (現在) の表示または編集既存のテスト ユーザーをため (特に割り当てたパスワード) に作成される各テスト ユーザーの適切なレコードを保持することをお勧めすることができるようにします。 テスト ユーザーを削除すると、電子メール アドレスが別のテスト アカウントの再利用することはできません。  
    
  [![](store-kit-overview-and-retreiving-product-information-images/image19.png "既存のユーザーの一覧が表示されます。")](store-kit-overview-and-retreiving-product-information-images/image19.png#lightbox)   
    
- テスト用の新しいユーザーには、実際の Apple ID (名前、パスワード、秘密の質問および答え) などのような属性を持ちます。 ここに入力したすべての詳細のレコードを保持します。 **ITunes ストアの選択**フィールドは通貨を決定し、アプリ内購入言語には、ときに使用されますそのユーザーとしてのログに記録します。
+ 新しいテスト ユーザーでは、(名、パスワード、秘密の質問と回答) などの Apple ID を実際に類似する属性があります。 ここに入力したすべての詳細を記録します。 **ITunes ストアの選択**フィールドは通貨を判断し、言語、アプリ内購入には、ときに使用されますとしてそのユーザーでログインします。
 
- [![](store-kit-overview-and-retreiving-product-information-images/image20.png "ユーザーの通貨とアプリ内購入金額の言語、iTunes ストアの選択フィールドが決定されます。")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image20.png "ユーザーの通貨と言語のアプリ内購入を iTunes ストアの選択フィールドが決まります")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
 
 ## <a name="retrieving-product-information"></a>製品情報の取得
 
-アプリ内購入製品を販売している最初の手順で表示する: 表示するため、アプリ ストアから現在の価格と説明を取得します。   
+アプリ内購入製品を販売する最初の手順が表示する: 表示のアプリ ストアから現在の価格と説明を取得します。   
    
    
    
- 製品の種類のアプリを販売して (使用できる、サブスクリプションの種類、または非が使用できる) に関係なく、表示の製品情報を取得するプロセスは同じです。 この記事に付属している InAppPurchaseSample コードには、という名前のプロジェクトが含まれています。*消耗*を表示するための運用情報を取得する方法を示しています。 表示する方法。
+ 製品の種類のアプリを販売して (使用できる、非コンシューマブルまたはサブスクリプションの種類) に関係なく、表示するための製品情報を取得するプロセスは同じです。 この記事に付属する InAppPurchaseSample コードには、という名前のプロジェクトが含まれています。*消耗品*表示に関する運用情報を取得する方法を示します。 表示する方法。
 
--  実装を作成する`SKProductsRequestDelegate`を実装し、`ReceivedResponse`抽象メソッドです。 コード例では、これを呼んで、`InAppPurchaseManager`クラスです。 
--  支払いが許可されているかどうかを表示する StoreKit に確認 (を使用して`SKPaymentQueue.CanMakePayments`)。 
--  インスタンスを作成、 `SKProductsRequest` iTunes Connect で定義されている製品の Id を使用します。 これは、例の`InAppPurchaseManager.RequestProductData`メソッドです。 
--  Start メソッドを呼び出して、`SKProductsRequest`です。 これは、App Store サーバーへの非同期呼び出しをトリガーします。 デリゲート ( `InAppPurchaseManager` ) 結果と呼ばれるバックになります。 
--  デリゲートの ( `InAppPurchaseManager` )`ReceivedResponse`メソッドが (製品の価格と説明については、または無効な製品に関するメッセージ) のアプリ ストアから返されたデータで UI を更新します。 
+-  実装を作成`SKProductsRequestDelegate`を実装し、`ReceivedResponse`抽象メソッド。 コード例はこれを呼び出す、`InAppPurchaseManager`クラス。 
+-  Storekit や支払いを許可するかどうかを確認すると確認 (を使用して`SKPaymentQueue.CanMakePayments`)。 
+-  インスタンスを作成、 `SKProductsRequest` iTunes Connect で定義されている製品 Id を持つ。 これを行う例の`InAppPurchaseManager.RequestProductData`メソッド。 
+-  Start メソッドを呼び出す、`SKProductsRequest`します。 これは、アプリ ストア サーバーへの非同期呼び出しをトリガーします。 デリゲート ( `InAppPurchaseManager` ) と呼ばれるバックを結果になります。 
+-  デリゲートの ( `InAppPurchaseManager` )`ReceivedResponse`メソッドは、(製品の価格と説明については、または無効な製品についてのメッセージ) は、アプリ ストアから返されたデータで UI を更新します。 
 
-全体の相互作用が次のよう ( **StoreKit**は iOS に組み込まれて、 **App Store** Apple のサーバーを表します)。
+次のような全体的な相互作用 ( **StoreKit**が iOS に組み込まれて、 **App Store** Apple のサーバーを表します)。
 
  [![](store-kit-overview-and-retreiving-product-information-images/image21.png "グラフの製品情報を取得します。")](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
 
-### <a name="displaying-product-information-example"></a>製品の情報の例を表示します。
+### <a name="displaying-product-information-example"></a>製品情報の例を表示します。
 
-[InAppPurchaseSample](https://developer.xamarin.com/samples/monotouch/StoreKit/) *消耗*サンプル コードでは、製品情報を取得する方法を示しています。 サンプルのメイン画面には、アプリ ストアから取得される 2 つの製品情報が表示されます。   
+[InAppPurchaseSample](https://developer.xamarin.com/samples/monotouch/StoreKit/) *消耗品*サンプル コードでは、製品情報を取得する方法を示しています。 サンプルのメイン画面には、アプリ ストアから取得した 2 つの製品情報が表示されます。   
    
    
    
@@ -115,12 +115,12 @@ StoreKit コードをテストするには、は、正規 iTunes テスト ア�
    
    
    
- 取得し、製品情報を表示するには、サンプル コードについてで詳しく説明します。
+ 取得し、製品情報を表示するには、サンプル コードについては、以下で詳しく説明します。
 
 
 #### <a name="viewcontroller-methods"></a>ViewController メソッド
 
-`ConsumableViewController`クラスは、製品 Id がハードコードされたクラスの 2 つの製品の価格の表示を管理します。
+`ConsumableViewController`クラスは、製品 Id がクラスにハードコーディングされた 2 つの製品の価格の表示を管理します。
 
 ```csharp
 public static string Buy5ProductId = "com.xamarin.storekit.testing.consume5credits",
@@ -135,13 +135,13 @@ public ConsumableViewController () : base()
 }
 ```
 
-セットアップに使用されるレベルもあります、NSObject を宣言するクラス、`NSNotificationCenter`オブザーバー。
+セットアップに使用されるレベルもあります、NSObject を宣言するクラスを`NSNotificationCenter`オブザーバー。
 
 ```csharp
 NSObject priceObserver;
 ```
 
-ViewWillAppear メソッドで、オブザーバーが作成され、既定の通知センターを使用して割り当てます。
+ViewWillAppear メソッドでは、オブザーバーが作成され、既定の通知センターを使用して割り当てられています。
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
@@ -153,13 +153,13 @@ priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
 
    
    
- 最後に、`ViewWillAppear`メソッドを呼び出し、 `RequestProductData` StoreKit 要求を開始するメソッド。 この要求が確立されると、StoreKit は非同期的に、情報を取得し、アプリにフィード Apple のサーバーに問い合わせてください。 これを実現、`SKProductsRequestDelegate`サブクラス ( `InAppPurchaseManager`)」を次のセクションで説明されています。
+ 最後に、`ViewWillAppear`メソッドを呼び出し、 `RequestProductData` storekit や要求を開始するメソッド。 この要求が確立されると、StoreKit は非同期的に、情報を取得し、アプリケーションにフィード、Apple のサーバーに問い合わせてください。 これによって、`SKProductsRequestDelegate`サブクラス ( `InAppPurchaseManager`) [次へ] のセクションで説明します。
 
 ```csharp
 iap.RequestProductData(products);
 ```
 
-価格と説明を表示するコードは、単に、SKProduct から情報を取得し、UIKit コントロールに割り当てられます (表示通知、`LocalizedTitle`と`LocalizedDescription`– StoreKit 正しいテキストとに基づいて料金を自動的に解決します。ユーザーのアカウントの設定)。 次のコードは、上で作成した通知に属します。
+価格と説明を表示するコードは、単に、SKProduct から情報が取得され、UIKit コントロールに割り当てられます (表示通知、`LocalizedTitle`と`LocalizedDescription`– storekit や、正しいテキストとに基づいて価格を自動的に解決します。ユーザーのアカウント設定)。 次のコードは、上記で作成した通知が属しています。
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
@@ -177,7 +177,7 @@ priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
 }
 ```
 
-最後に、`ViewWillDisappear`メソッドでは、オブザーバーは削除を確認する必要があります。
+最後に、`ViewWillDisappear`メソッドでは、オブザーバーを削除を確認する必要があります。
 
 ```csharp
 NSNotificationCenter.DefaultCenter.RemoveObserver (priceObserver);
@@ -185,7 +185,7 @@ NSNotificationCenter.DefaultCenter.RemoveObserver (priceObserver);
 
 #### <a name="skproductrequestdelegate-inapppurchasemanager-methods"></a>SKProductRequestDelegate (InAppPurchaseManager) メソッド
 
-`RequestProductData`メソッドが呼び出されてアプリケーションが製品の価格とその他の情報を取得しようとします。 正しいデータ型に製品 Id のコレクションを解析してそれを作成し、`SKProductsRequest`情報を使用します。 Start メソッドを呼び出すには、Apple のサーバーに対するネットワーク要求とが発生します。 要求は非同期に実行され、呼び出し、`ReceivedResponse`が正常に完了したときに、デリゲートのメソッドです。
+`RequestProductData`メソッドは、アプリケーションが製品価格やその他の情報を取得する必要があるときに呼び出されます。 正しいデータ型に製品 Id のコレクションを解析します。 その後で作成、`SKProductsRequest`その情報を使用します。 Start メソッドを呼び出すには、Apple のサーバーに対するネットワーク要求とが発生します。 要求は非同期的に実行され、呼び出し、`ReceivedResponse`が正常に完了したときに、デリゲートのメソッド。
 
 ```csharp
 public void RequestProductData (List<string> productIds)
@@ -201,11 +201,11 @@ public void RequestProductData (List<string> productIds)
 }
 ```
 
-iOS が自動的に要求をルーティングする – アプリケーションが実行されているどのようなプロビジョニング プロファイルによって、アプリ ストアの 'サンド ボックス' または '運用' のバージョンにため、開発したり、アプリをテストするとき、要求はすべての製品へのアクセスiTunes Connect (でも送信または Apple によって承認されていないもの) で構成されます。 アプリケーションは、実稼働環境では場合、StoreKit 要求の情報を返しますのみ**Approved**製品です。   
+iOS は自動的に要求をルーティングする – アプリケーションが実行されているプロビジョニング プロファイルによって、アプリ ストアの 'サンド ボックス' または 'production' のバージョンに、要求がすべての製品にアクセスを持つアプリのテストまたは開発するとき、iTunes Connect (も送信または Apple によって承認されていないもの) で構成されます。 アプリケーションは、実稼働環境では、ときに storekit や要求がのみの情報を返す**Approved**製品です。   
    
    
    
- `ReceivedResponse` Apple のサーバーがデータに応答した後、オーバーライドされたメソッドが呼び出されます。 これが呼び出されるため、バック グラウンドで、コードは有効なデータを解析し、製品情報、ViewControllers 'をリッスンする' 通知を送信する通知を使用する必要があります。 有効な製品情報を収集し、通知を送信するコードを次に示します。
+ `ReceivedResponse`データを Apple のサーバーが応答した後、オーバーライドされたメソッドが呼び出されます。 これは、バック グラウンドで呼び出される、ためコードは有効なデータを解析し、製品情報をすべて ViewControllers 'をリッスンする ' 通知を送信する通知を使用する必要があります。 有効な製品情報を収集し、通知を送信するコードは、以下に示します。
 
 ```csharp
 public override void ReceivedResponse (SKProductsRequest request, SKProductsResponse response)
@@ -225,7 +225,7 @@ public override void ReceivedResponse (SKProductsRequest request, SKProductsResp
 }
 ```
 
-図に示されていませんが、 `RequestFailed` App Store サーバーが到達できない (またはその他のエラーが発生する) 場合に、ユーザーにフィードバックを提供できるように、メソッドをオーバーライドも必要があります。 コード例は、コンソール、単に書き込みますが、実際のアプリケーションは、クエリを実行することもできます`error.Code`(ユーザーに警告) などのプロパティと実装のカスタム動作。
+図では、示されていませんが、`RequestFailed`メソッドは、App Store のサーバーに到達できない (またはその他のエラーが発生した) 場合は、ユーザーにフィードバックを提供できるようにもオーバーライドする必要があります。 コード例は、コンソール、単に書き込みますが、実際のアプリケーションは、クエリを実行することもできます`error.Code`(ユーザーに警告) などのプロパティと実装のカスタム動作。
 
 ```csharp
 public override void RequestFailed (SKRequest request, NSError error)
@@ -234,29 +234,29 @@ public override void RequestFailed (SKRequest request, NSError error)
 }
 ```
 
-このスクリーン ショットは、読み込み (製品情報を使用できない場合) の直後に、サンプル アプリケーションを示しています。
+このスクリーン ショットでは、(使用可能な製品情報がありませんが) 場合の読み込み直後にサンプル アプリケーションを示します。
 
- [![](store-kit-overview-and-retreiving-product-information-images/image24.png "製品情報が利用できない場合の読み込み直後のサンプル アプリ")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image24.png "製品情報が利用できない場合の読み込み直後に、サンプル アプリ")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
 
 ## <a name="invalid-products"></a>無効な製品
 
-`SKProductsRequest`無効な製品 Id の一覧を返すも可能性があります。 通常、無効な製品は、次のいずれかが原因返されます。   
+`SKProductsRequest`無効な製品 Id の一覧を返すも可能性があります。 無効な製品は通常、次のいずれかにより返されます。   
    
    
    
  **製品 ID の誤りがある**– 有効な製品 Id のみが受け入れられます。   
    
- **製品が承認されていない**– によって返されるすべての製品売上をオフになっているのテスト中に、 `SKProductsRequest`; が、実稼働環境では、承認済みの製品のみが返されます。   
+ **製品が承認されていない**– からテストの間の販売がオフになっているすべての製品が返される、`SKProductsRequest`が運用環境では、承認済みの製品のみが返されます。   
    
- **アプリ ID は明示的な**– (アスタリスク) のワイルドカード アプリ Id はアプリ内購入を許可していません。   
+ **アプリ ID は明示的な**– (アスタリスク) をワイルドカード アプリ Id はアプリ内購入を許可していません。   
    
- **プロビジョニング プロファイルが正しくない**– を再生成して、アプリをビルドする際に、適切なプロビジョニング プロファイルを使用してください (たとえば、アプリ内購入をする)、プロビジョニング ポータルでアプリケーション構成の変更を加えた場合。   
+ **プロビジョニング プロファイルが正しくない**– を再生成し、正しいプロビジョニング プロファイルを使用して、アプリを構築するときに注意してください (などを有効にするアプリ内購入)、プロビジョニング ポータルで、アプリケーションの構成を変更する場合。   
    
- **iOS アプリケーションの有料のコントラクトが設定されていない**– Apple 開発者アカウントの有効なコントラクトがない限り、StoreKit 機能はまったく動作しません。   
+ **iOS アプリケーションの有料のコントラクトが設定されていない**– Apple 開発者アカウントの有効な契約がない限り、storekit や機能はまったく動作しません。   
    
- **拒否済みの状態では、バイナリ**– 場合がありますが、以前に送信したバイナリ拒否済みの状態で (またはのいずれかでは、App Store チームの開発者によって) StoreKit 機能が機能しません。
+ **バイナリが拒否状態**– にある場合、以前に送信したバイナリ (または、App Store チームが開発者によって) 拒否状態 storekit や機能は機能しません。
 
-`ReceivedResponse`のサンプル コードにメソッドがコンソールに無効な製品を出力します。
+`ReceivedResponse`サンプル コードでメソッドの出力をコンソールに無効な製品。
 
 ```csharp
 public override void ReceivedResponse (SKProductsRequest request, SKProductsResponse response)
@@ -270,7 +270,7 @@ public override void ReceivedResponse (SKProductsRequest request, SKProductsResp
 
 ## <a name="displaying-localized-prices"></a>ローカライズされた価格を表示します。
 
-価格レベルは、国際対応のすべてのアプリ ストア間の各製品の特定の価格を指定します。 価格は通貨ごとに正しく表示されるためには、次の拡張メソッドを使用して (で定義されている`SKProductExtension.cs`) それぞれの価格プロパティではなく`SKProduct`:
+価格レベルは、国際対応のすべてのアプリ ストアの間で、各製品の特定の価格を指定します。 各通貨の価格が正しく表示させるには、次の拡張メソッドを使用して、(で定義されている`SKProductExtension.cs`) それぞれの価格のプロパティではなく`SKProduct`:
 
 ```csharp
 public static class SKProductExtension {
@@ -286,7 +286,7 @@ public static class SKProductExtension {
 }
 ```
 
-ボタンのタイトルを設定するコードは、次のように、拡張メソッドを使用します。
+ボタンのタイトルを設定するコードは、このような拡張メソッドを使用します。
 
 ```csharp
 string Buy = "Buy {0}"; // or a localizable string
@@ -297,13 +297,13 @@ buy5Button.SetTitle(String.Format(Buy, product.LocalizedPrice()), UIControlState
    
    
    
- [![](store-kit-overview-and-retreiving-product-information-images/image25.png "2 つの異なる iTunes 言語の特定の結果を表示してアカウントをテストします。")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image25.png "2 つの異なる iTunes 言語の特定の結果を表示するアカウントをテストします。")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
    
    
    
- ストアが製品の情報と価格の通貨の中に、デバイスの言語設定に影響を与えるラベルとその他のローカライズされたコンテンツが利用される言語に影響することを確認します。   
+ ストアが製品の情報と価格の通貨、デバイスの言語設定は、ラベルとその他のローカライズされたコンテンツに影響します。 中に使用される言語に影響することを確認します。   
    
    
    
- テストする必要がありますアカウントが、別のストアを使用することに注意してください**サイン アウト**で、**設定 > iTunes と App Store**別のアカウントでサインインするアプリケーションを再起動しています。 移動する、デバイスの言語を変更する**設定 > [全般] > 国際 > 言語**します。
+ アカウントにする必要がありますをテストするさまざまなストアを使用することを思い出してください**サインアウト**で、**設定 > iTunes アプリ ストア**して別のアカウントでサインインするアプリケーションを再起動します。 移動するデバイスの言語を変更する**設定 > [全般] > 国際 > 言語**します。
 

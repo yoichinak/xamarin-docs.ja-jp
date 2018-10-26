@@ -1,32 +1,32 @@
 ---
 title: Xamarin.iOS および Xamarin.Mac NSString
-description: このドキュメントでは、Xamarin.iOS 透過的に変換する方法 NSString オブジェクト、オブジェクトの文字列 (C#) にこれが発生しない場合について説明します。
+description: このドキュメントでは、Xamarin.iOS が透過的を NSString オブジェクトを変換する方法について説明しますC#そうでないときに、オブジェクトの文字列します。
 ms.prod: xamarin
 ms.assetid: 785744B3-42E2-4590-8F41-435325E609B9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: baf36700ab4d608296a9a67e234ce613da9ca077
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: cc9e3f992642f3cdc3d16fe6f829b6a6c06b50fc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786091"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115036"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin.iOS および Xamarin.Mac NSString
 
-ネイティブ .NET 文字列型の公開 API を使用して呼び出す Xamarin.iOS と Xamarin.Mac の両方の設計`string`、c# での文字列操作や他の .NET プログラミング言語におよび、ではなくAPIによって公開されるデータ型として文字列を公開するには`NSString`データ型。
+API を使用して、ネイティブの .NET の文字列型の公開するために Xamarin.iOS および Xamarin.Mac の両方の設計`string`での文字列操作のC#とプログラミング言語、他の .NET との代わりに、API によって公開されるデータ型として文字列を公開するには `NSString` データ型。
 
-これは意味を開発者は、Xamarin.iOS と Xamarin.Mac API (統合) を呼び出すことに使用するためのものでは、文字列を保持する必要がありますいない特殊な種類の (`Foundation.NSString`) を使用してモノラルを保持できます`System.String`のすべての操作をときにいつ当社の API バインドはマーシャ リング、情報の処理、Xamarin.iOS または Xamarin.Mac API に文字列が必要です。
+つまり、こと、開発者は、Xamarin.iOS および Xamarin.Mac API (統合) を呼び出すことに使用することを意図した文字列を保持する必要はありません、特殊な種類の (`Foundation.NSString`) を使用して Mono を保持できます`System.String`のすべての操作、や、常にXamarin.iOS、Xamarin.Mac の API には、文字列が必要です。 は、マーシャ リング、情報の当社の API バインドを行います。
 
-たとえば、OBJECTIVE-C"text"のプロパティ、`UILabel`型の`NSString`が次のように宣言されています。
+Objective C"text"プロパティなど、`UILabel`型の`NSString`、ように宣言します。
 
 ```objc
 @property(nonatomic, copy) NSString *text
 ```
 
-これは、として Xamarin.iOS で公開されています。
+これは、として Xamarin.iOS で公開されます。
 
 ```csharp
 class UILabel {
@@ -34,28 +34,28 @@ class UILabel {
 }
 ```
 
-背後では、このプロパティの実装に c# の文字列をマーシャ リング、`NSString`を呼び出すと、 `objc_msgSend` Objective C と同じ方法でメソッドです。
+背後では、このプロパティの実装をマーシャ リング、C#文字列に、`NSString`を呼び出すと、 `objc_msgSend` Objective C と同じ方法でメソッド。
 
-いくつかのサード パーティ製 Objective C Api を使用しませんが、`NSString`は代わりに、C の文字列を使用 (、"*char*") です。 ような場合は、c# の文字列データ型も使用できますが、使用する必要があります、 [[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)属性としてこの文字列をマーシャ リングする必要がありますいないバインド ジェネレーターを通知するために、 `NSString`、ですが、C の文字列として代わりにします。
+いくつかのサード パーティ製の Objective C Api を使用しない、`NSString`が代わりに、C の文字列を使用 (、"*char*")。 ような場合、引き続き使用できます、C#文字列データ型では、使用する必要がありますが、 [[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)属性としてこの文字列をマーシャ リングしないバインド ジェネレーターを通知するために、 `NSString`、C 文字列として代わりにします。
 
  <a name="Exceptions_to_the_Rule" />
 
-## <a name="exceptions-to-the-rule"></a>規則の例外
+## <a name="exceptions-to-the-rule"></a>ルールの例外
 
-Xamarin.iOS と Xamarin.Mac の両方では、この規則の例外を行いました。 公開おとの間で意思決定`string`s を作成する場合と、except および公開`NSString`場合、s が行われます、`NSString`メソッドが、コンテンツの比較ではなくポインターの比較を行うことができます。
+Xamarin.iOS および Xamarin.Mac では、この規則の例外を行いました。 公開との間での意思決定 `string`s を作成する場合と、except、および公開 `NSString`場合、s が行われます、 `NSString` メソッドが、コンテンツの比較ではなくポインターの比較を行うことができます。
 
-これは、OBJECTIVE-C Api がパブリックで使用する場合に発生する可能性があります`NSString`を文字列の実際の内容の比較ではなく、いくつかの操作を表すトークンとして定数。
+これは、Objective C Api がパブリックで使用する場合に発生する可能性があります `NSString` 定数として文字列の実際の内容を比較する代わりに、何らかのアクションを表すトークン。
 
-ような場合、 `NSString` Api が公開され、このを持つ Api の少数派があります。 NSString プロパティがいくつかのクラスで公開されることもわかります。 もの`NSString`通知などの項目のプロパティが公開されます。 それらはプロパティは、通常次のようになります。
+その場合、 `NSString`  Api が公開され、少数の Api をこれがあります。 NSString プロパティがいくつかのクラスで公開されることもわかります。 これは、`NSString`通知などの項目のプロパティが公開されます。 これらはプロパティが通常ようになります。
 
 ```csharp
 class Foo {
      public NSString FooNotification { get; }
 }
 ```
-通知は、キーに使用される、`NSNotification`クラスに、ランタイムによって配信している特定のイベントを登録するときにします。
+通知に使用されるキーでは、`NSNotification`クラスのランタイムで配信している特定のイベントに登録する場合。
 
-キーでは、次のような通常なります。
+キーを使用して、このようなものは、通常なります。
 
 ```csharp
 class Foo {
@@ -63,4 +63,4 @@ class Foo {
 }
 ```
 
-別の場所で`NSString`で公開されている s、API は、iOS での特定の Api または OS X を受け取るパラメーターとして使用されるトークンとして`NSDictionary`パラメーターとしてオブジェクト。 ディクショナリに通常含まれる`NSString`キー。 Xamarin.iOS、規則では、名前、静的`NSString`「キー」名を追加してプロパティです。
+別の場所、`NSString`で s が公開されている API はトークンを受け取る iOS で特定の Api または OS X をパラメーターとして使用されると、`NSDictionary`パラメーターとしてのオブジェクト。 ディクショナリに通常含まれる`NSString`キー。 Xamarin.iOS では、慣例により、名前、静的`NSString`「キー」の名前を追加することでプロパティ。

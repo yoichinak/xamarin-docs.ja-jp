@@ -1,53 +1,53 @@
 ---
-title: ライブ アプリケーションの検査
-description: このドキュメントでは、Xamarin インスペクターを使用してアプリケーションを検査する方法について説明します。 Xamarin Inspector ツールの制限事項についても説明します。
+title: Live アプリケーションの検査
+description: このドキュメントでは、Xamarin Inspector を使用してアプリケーションを検査する方法について説明します。 Xamarin Inspector ツールの制限事項についても説明します。
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 67cc6b42901521226322d964514f19b4b639148b
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268824"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103643"
 ---
-# <a name="inspecting-live-applications"></a>ライブ アプリケーションの検査
+# <a name="inspecting-live-applications"></a>Live アプリケーションの検査
 
-ライブ アプリ検査は、企業ユーザーが利用できます。
+ライブ アプリの検査は企業のお客様に使用できます。
 
-1. いずれかを開いて[アプリ プロジェクトはサポートされて](~/tools/inspector/install.md#supported-platforms)Mac または Visual Studio の Visual Studio でします。
+1. いずれかを開く[アプリ プロジェクトがサポートされている](~/tools/inspector/install.md#supported-platforms)Visual Studio for Mac または Visual Studio でします。
 1. デバッグ モードでアプリケーションを実行します。
 1. をクリックして、**検査**IDE ツールバーのボタン (Visual Studio で、**検査現在アプリ...** から使用可能なメニュー項目も、**ツール**または**デバッグ**メニュー)。
 
-[![](inspect-images/mac-heres-the-button.png "IDE、ツールバーの [検査] ボタンをクリックします。")](inspect-images/mac-heres-the-button.png#lightbox)
+[![](inspect-images/mac-heres-the-button.png "IDE ツールバーで [検査] ボタンをクリックします。")](inspect-images/mac-heres-the-button.png#lightbox)
 
-新しい Xamarin インスペクター クライアント ウィンドウが開き、新しい REPL プロンプトされます。
+新しい Xamarin Inspector クライアント ウィンドウが開き、新しい REPL プロンプトされます。
 
-[![](inspect-images/inspector-0.7.0-map-inspect-small.png "新しい Xamarin インスペクター クライアント ウィンドウが開き、新しい REPL プロンプト")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "新しい REPL プロンプトで、新しい Xamarin Inspector クライアント ウィンドウが開きます")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
-このウィンドウが表示されたら、対話的な c# プロンプトを実行し、C# の場合は、ステートメントよぶ式の評価に使用できる必要があります。 どうしてこんなことが一意では、コードがターゲット プロセスのコンテキストで評価されることです。 この場合、表示される iOS アプリケーションに対して実行されているコードを示します。
+対話型があるこのウィンドウが表示されたら、C#プロンプトを実行し、評価に使用できるC#ステートメントと式。 この一意では、コードがターゲット プロセスのコンテキストで評価されることです。 この場合、コードに対して表示される iOS アプリケーションを実行して表示されます。
 
-アプリケーションの状態に対して行った変更がターゲット プロセスで実際に起こっているか、使用できるように C# の場合、アプリケーションを変更する live、またはライブ アプリケーションの状態を検査することができます。
+アプリケーションの状態に対して行った変更が実際に発生しているターゲット プロセスで使用できるようにC#変更するのには、アプリケーションが live、またはライブ アプリケーションの状態を検査することができます。
 
-たとえば、iOS で (多数のアプリケーションの状態を格納お場所) で主要なドライバーは、UIApplication デリゲート クラスを検索するします可能性があります。
+たとえば、ios では、(多くのアプリケーションの状態を保存しました、)、メイン ドライバーは、UIApplication デリゲート クラスを見つけたい可能性があります。
 
     var del = (MyApp.AppDelegate) UIApplication.SharedApplication.Delegate
     del.Database.GetAllCustomers ()
     ...
     del.Database.AddCustomer (...)
 
-(複数行のエディターで、各送信が発生することに注意してください。 `Shift + Enter` 新しい行を作成および`Cmd + Enter`(`Ctrl + Enter` on Windows) 評価のためのコードが送信されます。 `Enter` 自動的に送信セーフであるとします。)
+(複数行のエディターで、各送信が発生することに注意してください。 `Shift + Enter` 新しい行を作成し、 `Cmd + Enter` (`Ctrl + Enter` Windows 上) 評価のためのコードが送信されます。 `Enter` 自動的に送信する安全なタイミングです。)
 
-アプリケーションのビジュアル要素を取得する方が便利な方法は、「検査」ボタンを使用してです。 これをクリックすると、アプリケーションをクリックすると、UI 要素を選択できます。 変数`selectedView`が画面上の実際の要素をポイントに割り当てられます。 上記のスクリーン ショットでは、アクセス方法と、編集を確認できます`selectedView.BarTintColor`上、`UISearchBar`選択しました。
+アプリケーションのビジュアル要素を取得するより便利な方法は、「検査」ボタンを使用してです。 これをクリックすると、アプリケーションをクリックして、UI 要素を選択できます。 変数`selectedView`が画面上の実際の要素をポイントに割り当てられます。 上記のスクリーン ショットでは、アクセスおよび編集する方法を確認できます`selectedView.BarTintColor`上、`UISearchBar`を選択しました。
 
-ライブ ビジュアル ツリーも非常に役立ちます。 ビュー階層の現在のスナップショットを表します。 設定する行を選択できます`selectedView`REPL では、ビューのプロパティの値が表示されます。 Mac では、複数層のビューの 3D 分割視覚エフェクトと対話できます。 Windows では、視覚的にビューのプロパティの値を編集することができます。
+ライブ ビジュアル ツリーも非常に役立ちます。 ビュー階層の現在のスナップショットを表します。 設定する行を選択できる`selectedView`REPL では、ビューのプロパティの値を確認します。 Mac では、階層型ビューの 3D 分解された視覚エフェクトを操作できます。 Windows では、ビューのプロパティの値を視覚的に編集できます。
 
 ## <a name="known-limitations"></a>既知の制限事項
 
  - ビューの選択は、メイン ディスプレイにのみサポートされます。
- - プロパティ グリッドの編集を使用できない Mac での Windows では、いくつかのデータ型に制限されます。 強力な編集のために REPL を使用します。
- - インスペクター アドインと拡張機能がインストールされ、IDE で有効になっている、限りは、デバッグ モードで起動するたびに、アプリにコードを挿入おはします。 アプリでの すべての奇妙な動作に注意してください場合はお試しに無効にすると、インスペクター アドインと拡張機能をアンインストールまたは、IDE の再起動、および再確認にしてください。 してください[バグ報告](~/tools/inspector/install.md#reporting-bugs)知らせ!。
- - UI 要素を調べることでを変更するか、発生すると、次のようにしてください。[知らせ](~/tools/inspector/install.md#reporting-bugs)、これは、バグを示している可能性があります。
+ - プロパティ グリッドの編集 for Mac ではないし、Windows では、いくつかのデータ型に制限されます。 強力な編集のためには、REPL を使用します。
+ - Inspector addin/拡張機能がインストールされ、お使いの IDE で有効になって、限りをアプリにコードを挿入して、デバッグ モードで起動するたびには。 アプリで動作する場合は、お試しに無効にすると、インスペクター addin/拡張機能をアンインストールまたは IDE を再起動、および再確認してください。 してください[バグ報告](~/tools/inspector/install.md#reporting-bugs)知らせです。
+ - UI 要素を検査すると、そのままで変更、ください[お知らせ](~/tools/inspector/install.md#reporting-bugs)バグを示す可能性があります。
 

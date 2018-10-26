@@ -4,15 +4,15 @@ description: このガイドでは、食品、エンターテイメント、ア�
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: f2a38a4305aa11c78f3e4e35265a86dc71642777
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: b971029ff3b2b1e8f5e63233d1d754c44b0e3309
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351666"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110096"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin.iOS で Apple Pay
 
@@ -20,7 +20,7 @@ _このガイドでは、食品、エンターテイメント、アプリを使�
 
 Apple Pay が導入されましたと共に iOS 8、食品、エンターテイメント、自分の iOS デバイスを使用してメンバーシップなどの物理的な商品の支払いにユーザーを有効にします。 IPhone 6 および iPhone 6 では利用また、ストア内での購入の Apple Watch とペアにもなりますが。 IPhone で使用すると、確認し、ユーザーのクレジット_カードまたはデビット カードにトランザクションを承認する方法として Touch ID を使用します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Apple Pay、のみ内での iOS 8 以降を使用し、したがって Xcode 6 の最小値が必要です。
 

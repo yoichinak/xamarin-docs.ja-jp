@@ -1,69 +1,69 @@
 ---
-title: Xamarin.iOS で Web マークアップでの検索
-description: このドキュメントでは、Xamarin.iOS アプリにリンクする web ベースの検索結果を作成する方法について説明します。 これには、インデックス作成、探索可能なスマート アプリ バナー、汎用のリンクを使用して、アプリの web サイトを作成、web コンテンツを有効にする方法について説明します。
+title: Xamarin.iOS での Web マークアップの検索
+description: このドキュメントでは、Xamarin.iOS アプリにリンクされる web ベースの検索結果を作成する方法について説明します。 これには、インデックス作成、アプリの web サイトを探索、スマート アプリ バナーやユニバーサル リンクを使用して可能にする web コンテンツを有効にする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 438a65de3eb78f849493e3478bce5522a325d0cd
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 243408ce6e2236b75ea35dfd17633a9a24493c1b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787995"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102803"
 ---
-# <a name="search-with-web-markup-in-xamarinios"></a>Xamarin.iOS で Web マークアップでの検索
+# <a name="search-with-web-markup-in-xamarinios"></a>Xamarin.iOS での Web マークアップの検索
 
-Web サイトを使用して、コンテンツへのアクセスを提供するアプリ (からだけでなく、アプリ内で)、web コンテンツは、Apple によってクロールされ、ユーザーの iOS 9 デバイス上のアプリにディープ リンクを提供できる特別なリンクでマークできます。
+Web サイト経由でそのコンテンツへのアクセスを提供するアプリ (からだけでなく、アプリ内で)、web コンテンツを Apple によってクロールして、ユーザーの iOS 9 デバイス上のアプリにディープ リンクを提供できる特別なリンクでマークすることができます。
 
-IOS アプリが既にモバイル ディープ リンクをサポートしており、web サイトには、アプリ内で、Apple のコンテンツへのディープ リンクが表示される場合_Applebot_の web クローラーがこのコンテンツのインデックスし、自動的にそのクラウド インデックスに追加します。
+IOS アプリが既にモバイル ディープ リンクをサポートしている web サイトには、アプリ内で、Apple のコンテンツへのディープ リンクが表示される場合_Applebot_ web クローラーがこのコンテンツのインデックスし、そのクラウド インデックスに自動的に追加します。
 
 [![](web-markup-images/webmarkup01.png "クラウドのインデックスの概要")](web-markup-images/webmarkup01.png#lightbox)
 
-Apple は、Spotlight 検索で、Safari の検索結果にこれらの結果が表面化します。
-ユーザーはタップ操作でこれらのいずれかが (と、インストールされているアプリがある) に、アプリのコンテンツが行われます。
+Apple では、スポット ライト検索と Safari の検索結果にこれらの結果を提示します。
+ユーザーがタップした場合これらのいずれかの結果 (およびがインストールされているアプリ) し、アプリのコンテンツが表示されます。
 
-[![](web-markup-images/webmarkup02.png "詳細な検索結果での web サイトからのリンク")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "ディープ検索結果での web サイトからのリンク")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Web コンテンツのインデックス作成を有効にします。
 
-アプリのコンテンツを検索できるように Web マークアップを使用するために必要な 4 つの手順があります。
+4 つの手順をするアプリのコンテンツを検索できるように Web マークアップを使用する必要があります。
 
-1. Apple が検出およびとして定義することで、アプリの web サイトのインデックスを作成できるよう、**サポート**または**マーケティング**iTunes Connect で web サイトです。
-2. アプリの web サイトにモバイル ディープ リンクを実装するように必要なマークアップが含まれていることを確認します。 詳細については、次のセクションを参照してください。
+1. Apple が検出およびとして定義することで、アプリの web サイトのインデックスを作成できるよう、**サポート**または**マーケティング**iTunes Connect での web サイト。
+2. アプリの web サイトにモバイル ディープ リンクを実装するために必要なマークアップが含まれていることを確認します。 詳細については、以下のセクションを参照してください。
 3. IOS アプリでの処理のディープ リンクを有効にします。
-4. 多機能かつ魅力的な結果をエンドユーザーに提供するため、アプリの web サイトによって公開される構造化データ用のマークアップを追加します。 この手順は必須ではありませんが、Apple によって強くお勧めします。
+4. リッチで魅力的な結果をエンドユーザーに提供する、アプリの web サイトで表示される構造化データ用のマークアップを追加します。 この手順は必須ではありませんが、Apple によってが強く勧めします。
 
-次のセクションでは、次の手順を詳しく見ていきます。
+次のセクションでは、これらの手順を詳しく見ていきます。
 
-## <a name="make-your-apps-website-discoverable"></a>アプリの web サイトを検出できるように
+## <a name="make-your-apps-website-discoverable"></a>アプリの web サイトを探索可能に
 
-Apple のアプリの web サイトを検索する最も簡単な方法がいずれかとして使用するには、**サポート**または**マーケティング**iTunes Connect 経由でアプリを Apple に送信するときに web サイトです。
+Apple のアプリの web サイトを検索する最も簡単な方法がいずれかとして使用するには、**サポート**または**マーケティング**iTunes Connect 経由で Apple にアプリを送信するときに、web サイト。
 
 ## <a name="using-smart-app-banners"></a>スマート アプリ バナーを使用します。
 
-アプリにクリア リンクを表示する web サイトでスマート アプリ バナーを提供します。 アプリがインストールされていない場合は、Safari は自動的にアプリをインストールするユーザーを求められます。 使用することができます をタップそれ以外の場合、**ビュー** web サイトからアプリを起動するリンクです。 たとえば、スマート アプリ バナーを作成するには、次のコードを使用することができます。
+アプリにクリアのリンクを表示するには、web サイト上のスマート アプリ バナーを提供します。 アプリがインストールされていない場合は、Safari は自動的にアプリをインストールするユーザーを求められます。 それ以外の場合、使用してをタップできます、**ビュー** web サイトからアプリを起動するリンク。 たとえば、スマート アプリ バナーを作成するには、次のコードを使用できます。
 
 ```xml
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
-詳細については、Apple を参照してください[スマート アプリ バナーを使用してアプリを昇格させる](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html)ドキュメント。
+詳細については、Apple を参照してください[スマート アプリ バナーでアプリを昇格させる](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html)ドキュメント。
 
-## <a name="using-universal-links"></a>汎用のリンクを使用します。
+## <a name="using-universal-links"></a>ユニバーサル リンクを使用します。
 
-新しい iOS 9 にユニバーサル リンクは、次を提供することでスマート アプリ バナーまたは既存のカスタム URL スキームがより優れた代替を提供します。
+新しいを iOS 9 の場合は、ユニバーサル リンクは、次を提供することでスマート アプリ バナー、または既存のカスタム URL スキームに代替を提供します。
 
-- **一意な**– 同じ URL を複数の web サイトが付くことはできません。
-- **セキュリティで保護された**– にリンクされている web サイトで、かつ有効で、web サイトが所有することを確認する署名入り証明書が必要、アプリ。
-- **柔軟な**– エンドユーザーが URL が、web サイトまたはアプリケーションを起動するかどうかを制御することができます。
-- **ユニバーサル**– web サイトのと、アプリのコンテンツの両方を定義する、同じ URL を使用できます。
+- **一意**– 1 つ以上の web サイトで同じ URL を要求することはできません。
+- **セキュリティで保護された**– に確実に自分でお持ちのお客様と、web サイトが所有する web サイトにリンクされているは、署名証明書が必要です、アプリ。
+- **柔軟な**– エンドユーザーは、URL が、web サイトまたはアプリを起動するかどうかを制御できます。
+- **ユニバーサル**– web サイトのと、アプリの両方のコンテンツを定義するのと同じ URL を使用できます。
 
 ## <a name="using-twitter-cards"></a>Twitter のカードを使用します。
 
-Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを提供できます。 例えば:
+Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例えば:
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -71,11 +71,11 @@ Twitter のカードを使用して、アプリのコンテンツへのディー
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-詳細についてを参照してください Twitter の[カード プロトコルの Twitter](http://dev.twitter.com/cards/mobile)ドキュメント。
+詳細については、Twitter を参照してください[カード プロトコルの Twitter](http://dev.twitter.com/cards/mobile)ドキュメント。
 
-## <a name="using-facebook-app-links"></a>Facebook アプリのリンクを使用します。
+## <a name="using-facebook-app-links"></a>Facebook アプリへのリンクを使用します。
 
-Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを提供できます。 例えば:
+Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例えば:
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -83,11 +83,11 @@ Facebook アプリのリンクを使用して、アプリのコンテンツへ�
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-詳細については、Facebook を参照してください[アプリへのリンク](http://applinks.org)ドキュメント。
+詳細については、Facebook を参照してください[アプリ リンク](http://applinks.org)ドキュメント。
 
 ## <a name="opening-deep-links"></a>ディープ リンクを開く
 
-開くおよび Xamarin.iOS アプリのディープ リンクを表示するためのサポートを追加する必要があります。 編集、 **<code>appdelegate.cs</code>** ファイルし、オーバーライド、`OpenURL`カスタム URL の形式を処理するメソッド。 例えば:
+開くと、Xamarin.iOS アプリでのディープ リンクの表示のサポートを追加する必要があります。 編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`OpenURL`カスタムの URL 形式を処理するメソッド。 例えば:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,15 +113,15 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-上記のコードで探しているを含む URL`/appname`の値を渡すと`query`(`123`この例では)、ユーザーに要求されたコンテンツを表示したり、アプリケーション内でカスタム ビュー コント ローラーにします。
+上記のコードを探しています、URL を含む`/appname`の値を渡すと`query`(`123`この例では) ユーザーに要求されたコンテンツを表示するようアプリのカスタム ビュー コント ローラーにします。
 
-## <a name="providing-rich-results-with-structured-data"></a>構造化データを提供する豊富な結果
+## <a name="providing-rich-results-with-structured-data"></a>構造化データを豊富な結果を提供します。
 
-構造化データのマークアップを含めることで、タイトルと説明だけ以外にも、エンドユーザーに多機能な検索結果を提供できます。 イメージ、アプリ固有のデータ (評価など) と構造化データのマークアップを使用して、結果のアクションが含まれます。
+構造化データのマークアップを含めることによって単純にタイトルと説明だけでなくエンドユーザーに高度な検索結果を行うことができます。 イメージ、アプリ (評価など) の特定のデータおよび構造化データのマークアップを使用して結果にアクションが含まれます。
 
-リッチ結果詳細関与するされ、改善おびき寄せますより多くのユーザーが対話機能を使用して、クラウドで、順位付けが検索インデックスをベースです。
+豊富な結果の詳細魅力的なと向上に役立つ、順位付け、クラウド内でより多くのユーザー対話機能を使用する魅力的な検索インデックスのベースします。
 
-構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用します。 例えば:
+構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用することです。 例えば:
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -129,9 +129,9 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-詳細についてを参照してください、 [Open Graph](http://ogp.me) web サイトです。
+詳細についてを参照してください、 [Open Graph](http://ogp.me) web サイト。
 
-構造化データ マークアップの他の一般的な形式は、schema.org のマイクロ データ形式です。 例えば:
+構造化データのマークアップのもう 1 つの一般的な形式は、schema.org のアフター形式です。 例えば:
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -152,29 +152,29 @@ Schema.org の %ld 個の JSON 形式では、同じ情報を表示すること�
 </script>
 ```
 
-多機能な検索結果をエンドユーザーに提供する web サイトからのメタデータの例を次に示します。
+エンドユーザーに高度な検索結果を提供する web サイトからのメタデータの例を次に示します。
 
-[![](web-markup-images/deeplink01.png "豊富な構造化データのマークアップを使用して結果を検索します。")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "豊富なデータの構造化されたマークアップを使用して結果を検索します。")](web-markup-images/deeplink01.png#lightbox)
 
-Apple には、現在 schema.org から次のスキーマ型がサポートされています。
+Apple は、現在 schema.org 次のスキーマの種類をサポートします。
 
  - AggregateRating
  - ImageObject
  - InteractionCount
- - します。
+ - 提供しています
  - 組織
  - PriceRange
  - レシピ
  - SearchAction
 
-これらのパターンの種類の詳細についてを参照してください[schema.org](http://schema.org)です。
+これらのスキームの種類の詳細についてを参照してください[schema.org](http://schema.org)します。
 
-## <a name="providing-actions-with-structured-data"></a>構造化データを使って操作を提供します。
+## <a name="providing-actions-with-structured-data"></a>構造化データをアクションを提供します。
 
-特定の種類の構造化データのエンドユーザーが操作可能である検索結果が許可されます。 現在、次の操作がサポートされています。
+特定の種類の構造化データには、エンドユーザーが対処できる検索結果をことができます。 現在、次の操作がサポートされています。
 
  - 電話番号をダイヤルします。
- - 指定したアドレスにマップの方向を取得します。
+ - 指定されたアドレスにマップの方向を取得します。
  - オーディオまたはビデオ ファイルを再生します。
 
 たとえば、電話番号をダイヤルするアクションを定義するは、次のようになります可能性があります。
@@ -186,7 +186,7 @@ Apple には、現在 schema.org から次のスキーマ型がサポートさ�
 
 ```
 
-この検索結果がエンドユーザーに表示されたら、スマート フォンの小さなアイコンが結果に表示されます。 ユーザーは、アイコンをタップした、指定した数値が呼び出されます。
+この検索結果には、エンドユーザーに表示されたら、スマート フォンの小さなアイコンが結果に表示されます。 アイコンをタップすると、指定した数値が呼び出されます。
 
 次の HTML では、検索結果からオーディオ ファイルを再生するアクションを追加します。
 
@@ -209,13 +209,13 @@ Apple には、現在 schema.org から次のスキーマ型がサポートさ�
 
 ```
 
-詳細については、Apple を参照してください[アプリ検索開発者向けサイト](http://developer.apple.com/ios/search/)です。
+詳細については、Apple を参照してください[アプリ検索開発者向けサイト](http://developer.apple.com/ios/search/)します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [開発者向けの iOS 9](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [アプリの検索プログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [アプリの検索のプログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

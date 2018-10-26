@@ -1,40 +1,40 @@
 ---
 title: C の概要
-description: このドキュメントでは、.NET の埋め込みを使用して C アプリケーションで .NET コードを埋め込む方法について説明します。 .NET の Visual Studio 2017 および Visual Studio の両方で埋め込み for mac を使用する方法についても説明します。
+description: このドキュメントでは、.NET の埋め込みを使用して C# アプリケーションで .NET コードを埋め込む方法について説明します。 .NET の Visual Studio 2017 と Visual Studio の両方で埋め込み for mac を使用する方法について説明します
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 04/19/2018
-ms.openlocfilehash: 248d44f23495e45d9d35b34622de0f3b85ca3e8d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a16821e83dc169d7800162e1eaf45c4be661185a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794099"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106807"
 ---
 # <a name="getting-started-with-c"></a>C の概要
 
 ## <a name="requirements"></a>必要条件
 
-C では、.NET の埋め込みを使用するには、Mac または Windows 実行するコンピューターを必要があります。
+C では、.NET の埋め込みを使用するには、Mac または Windows マシンの実行を必要があります。
 
 ### <a name="macos"></a>macOS
 
-* macOS 10.12 (Sierra) 以降
-* Xcode 8.3.2 以降
+* macOS 10.12 (Sierra) またはそれ以降
+* Xcode 8.3.2 またはそれ以降
 * [Mono](http://www.mono-project.com/download/)
 
 ### <a name="windows"></a>Windows
 
-* Windows 7、8、10、またはそれ以降
-* Visual Studio 2015 以降
+* Windows 7、8、10 以降
+* Visual Studio 2015 またはそれ以降
 
-## <a name="installing-net-embedding-from-nuget"></a>.NET は NuGet から埋め込みをインストールします。
+## <a name="installing-net-embedding-from-nuget"></a>.NET の埋め込み NuGet からインストールします。
 
 手順に従います。[指示](~/tools/dotnet-embedding/get-started/install/install.md)をインストールして、プロジェクトの .NET の埋め込みを構成します。
 
-構成する必要がありますコマンドの呼び出しを (場合によって異なるバージョン番号とパス) のようになります。
+コマンドの呼び出しを構成する必要がありますを (場合によって別のバージョン番号とパス) でのようになります。
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -52,7 +52,7 @@ $(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe -
 
 ### <a name="output-files"></a>出力ファイル
 
-場合はすべてうまく行けば、次の出力が表示されます。
+すべてうまくいけば場合、次の出力が表示されます。
 
 ```shell
 Parsing assemblies...
@@ -71,12 +71,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-以降、`--compile`フラグは、ツールに渡された、.NET を埋め込む必要がありますも出力ファイルにコンパイルして見つけることができます、生成されたファイルの横にある、共有ライブラリ、 **libmanaged.dylib** macOS などとファイルを**managed.dll** windows です。
+以降、`--compile`フラグは、ツールに渡された、.NET を埋め込む必要がありますもが、出力ファイルにコンパイル共有ライブラリが含まれ、生成されたファイルの横にあるを検索する、 **libmanaged.dylib**ファイルに macOS、および**managed.dll** Windows にします。
 
-共有ライブラリを使用するには追加、 **managed.h** C ヘッダー ファイルは、それぞれに対応する C 宣言は、マネージ ライブラリ Api と、前述のリンクは、共有ライブラリをコンパイルします。
+共有ライブラリを使用するには、含めることができます、 **managed.h** C ヘッダー ファイルをそれぞれに対応する C の宣言を提供するマネージ ライブラリ Api と、前述のリンクは、共有ライブラリをコンパイルします。
 
 ## <a name="further-reading"></a>関連項目
 
 * [.NET の埋め込みの制限事項](~/tools/dotnet-embedding/limitations.md)
-* [オープン ソース プロジェクトに貢献しています。](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+* [オープン ソース プロジェクトに貢献します。](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [エラー コードと説明](~/tools/dotnet-embedding/errors.md)

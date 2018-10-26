@@ -1,48 +1,49 @@
 ---
-title: Xamarin.Android でリスト ビューの使用
-description: ListView が Android アプリケーションの重要な UI 要素です。使用されます everywhere メニュー オプションの短い一覧から連絡先またはインターネットのお気に入りの長い一覧です。 いずれかの組み込みスタイルで書式設定したりできる広範なカスタマイズされた行のスクロール ボックスの一覧を表示する簡単な方法を提供します。
+title: Xamarin.Android で、ListView を使用します。
+description: ListView は、Android アプリケーションの重要な UI コンポーネント使用されます everywhere メニュー オプションの短いリストから連絡先またはインターネットのお気に入りの長い一覧です。 いずれかを組み込みスタイルで書式設定したりできる広範なカスタマイズが行のスクロール リストに表示する簡単な方法を提供します。
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: c5c8222df16b265f3b44f3ee3fcd9053d827cf6a
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: a30256722647bbea482970d0c4a751954810d99e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32437104"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122648"
 ---
 # <a name="listview"></a>ListView
 
-_ListView が Android アプリケーションの重要な UI 要素です。使用されます everywhere メニュー オプションの短い一覧から連絡先またはインターネットのお気に入りの長い一覧です。いずれかの組み込みスタイルで書式設定したりできる広範なカスタマイズされた行のスクロール ボックスの一覧を表示する簡単な方法を提供します。_
+_ListView は、Android アプリケーションの重要な UI コンポーネント使用されます everywhere メニュー オプションの短いリストから連絡先またはインターネットのお気に入りの長い一覧です。いずれかを組み込みスタイルで書式設定したりできる広範なカスタマイズが行のスクロール リストに表示する簡単な方法を提供します。_
 
 
 ## <a name="overview"></a>概要
 
-Android アプリケーションの最も基本的なビルド ブロックでは、リスト ビューおよびアダプターが含まれています。 `ListView`クラスは、短いメニューや長いスクロール リストであるかどうかに柔軟なデータの表示方法を提供します。 スクロール、高速のインデックスと mobile に適したユーザー インターフェイスをアプリケーションを構築するための 1 つまたは複数選択のような操作性機能を提供します。 `ListView` インスタンスでは、行ビューに含まれているデータをフィードするための *Adapter* が必要です。
+Android アプリケーションの最も基本的な構成要素には、リスト ビュー、アダプターが含まれます。 `ListView`クラスは短いメニューまたは時間の長いスクロール リストかどうかに存在するデータを柔軟な方法を提供します。 スクロール、高速のインデックスとモバイル フレンドリ ユーザー インターフェイスをアプリケーションを構築するための 1 つまたは複数選択のような操作性機能を提供します。 `ListView` インスタンスでは、行ビューに含まれているデータをフィードするための *Adapter* が必要です。
 
-このガイドを実装する方法について説明`ListView`と、さまざまな`Adapter`Xamarin.Android 内のクラスです。 外観をカスタマイズする方法も示します、`ListView`行は、メモリ使用量を削減する再利用の重要性について説明しています。 アクティビティのライフ サイクルへの影響についてもあります`ListView`と`Adapter`を使用します。 Xamarin.iOS を使用してクロスプラット フォーム アプリケーションで作業している場合、`ListView`コントロールは、iOS に構造が似ている`UITableView`(および、Android`Adapter`に似ていますが、 `UITableViewSource`)。
+このガイドを実装する方法について説明`ListView`とさまざまな`Adapter`Xamarin.Android でのクラス。 外観をカスタマイズする方法も示します、`ListView`行は、メモリ消費量を削減する再利用の重要性について説明しています。 アクティビティのライフ サイクルのしくみについていくつかはも`ListView`と`Adapter`を使用します。 Xamarin.iOS でクロスプラット フォーム対応のアプリケーションで作業している場合、`ListView`コントロールが ios の構造が似て`UITableView`(と、Android`Adapter`に似ていますが、 `UITableViewSource`)。
 
-最初に、簡単なチュートリアルが導入されています、`ListView`の基本的なコード例とします。 使用するためにより高度なトピックへのリンクを提供する次に、`ListView`現実世界のアプリでします。
+まず、簡単なチュートリアルが導入されています、`ListView`の基本的なコード例とします。 高度なトピックへのリンクを提供するを使用するための次に、`ListView`現実世界のアプリでします。
 
 
 > [!NOTE]
-> `RecyclerView`ウィジェットより高度で柔軟なバージョンの`ListView`します。 `RecyclerView`に代わるものであるように設計された`ListView`(および`GridView`) を使用することをお勧め`RecyclerView`なく`ListView`新規のアプリ開発します。 詳細については、次を参照してください。 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)です。
+> `RecyclerView`ウィジェットより高度で柔軟性のあるバージョンの`ListView`します。 `RecyclerView`後継は、 `ListView` (と`GridView`)、使用することをお勧めします。`RecyclerView`なく`ListView`新しいアプリの開発。 詳細については、次を参照してください。 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)します。
 
 
 
 ## <a name="listview-tutorial"></a>ListView のチュートリアル
 
-[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)スクロール可能な項目のリストを作成します。 使用して、一覧に、リスト項目が自動的に挿入、 [ `IListAdapter`](https://developer.xamarin.com/api/type/Android.Widget.IListAdapter/)です。
+[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) は、 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
+スクロール可能な項目の一覧を作成するとします。 リスト項目が自動的に挿入を使用して、一覧に、 [ `IListAdapter`](https://developer.xamarin.com/api/type/Android.Widget.IListAdapter/)します。
 
-このチュートリアルでは、文字列の配列から読み取られる国名のスクロール可能な一覧を作成します。 リスト項目を選択すると、トースト メッセージが表示されます、アイテムの位置一覧。
+このチュートリアルでは、文字列の配列から読み取られる国名のスクロール可能なリストを作成します。 リスト項目を選択すると、トースト メッセージは、一覧で項目の位置に表示されます。
 
 
-という名前の新しいプロジェクトを開始**HelloListView**です。
+という名前の新しいプロジェクトを開始**HelloListView**します。
 
-という XML ファイルを作成する**list_item.xml**内で保存し、 **リソース/レイアウト/** フォルダーです。 次に挿入します。
+という名前の XML ファイルを作成**list_item.xml**内で保存し、 **リソース/レイアウト/** フォルダー。 次を挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -54,7 +55,7 @@ Android アプリケーションの最も基本的なビルド ブロックで�
 </TextView>
 ```
 
-このファイルに配置される各項目のレイアウトを定義する、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)です。
+このファイル内に配置される各項目のレイアウトを定義する、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)します。
 
 開いている`MainActivity.cs`を拡張するクラスを変更および[ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (の代わりに[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/))。
 
@@ -63,7 +64,8 @@ public class MainActivity : ListActivity
 {
 ```
 
-次のコードを挿入、 [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))メソッド。
+次のコードを挿入します [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
+方法:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -81,17 +83,26 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-これを読み込みませんレイアウト ファイル アクティビティに注意してください (これが通常の[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32)))。
-代わりに、設定、 [ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)プロパティが自動的に追加、 [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)の画面全体を[ `ListActivity`](https://developer.xamarin.com/api/type/Android.App.ListActivity/)です。
-このメソッドは、 [ `ArrayAdapter<T>` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)、配置先リスト項目の配列を管理する、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)です。
-[ `ArrayAdapter<T>` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)コンス トラクターは、アプリケーション[ `Context` ](https://developer.xamarin.com/api/type/Android.Content.Context/)、(前の手順で作成される) の各リスト項目のレイアウトの説明と`T[]`または[`Java.Util.IList<T>` ](https://developer.xamarin.com/api/type/Java.Util.IList/)に挿入するオブジェクトの配列、 [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) (次に定義されます)。
+これを読み込みませんレイアウト ファイルをアクティビティに注目してください (通常の扱いが[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32)))。
+代わりに、設定、 [`ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)
+プロパティが自動的に追加します。 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
+画面全体を[ `ListActivity`](https://developer.xamarin.com/api/type/Android.App.ListActivity/)します。
+このメソッドは、 [ `ArrayAdapter<T>`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)には、リスト項目の配列を管理、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)します。
+、 [`ArrayAdapter<T>`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)
+コンス トラクターは、アプリケーション[ `Context` ](https://developer.xamarin.com/api/type/Android.Content.Context/)、(前の手順で作成された) の各リスト項目のレイアウトの説明と`T[]`または [`Java.Util.IList<T>`](https://developer.xamarin.com/api/type/Java.Util.IList/)
+挿入するオブジェクトの配列、 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
+(定義されている次)。
 
-[ `TextFilterEnabled` ](https://developer.xamarin.com/api/property/Android.Widget.AbsListView.TextFilterEnabled/)プロパティをオンにテキストのフィルタ リング、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)ユーザーの入力開始時に、リストはフィルター処理されるようにします。
+、 [`TextFilterEnabled`](https://developer.xamarin.com/api/property/Android.Widget.AbsListView.TextFilterEnabled/)
+プロパティは、テキストのフィルタ リング、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)一覧をフィルター処理は、ユーザーの入力開始時にするようにします。
 
-[ `ItemClick` ](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)クリック ハンドラーをサブスクライブするイベントを使用できます。 場合内の項目、 [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)は、ハンドラーが呼び出されるとクリックすると、および[ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/)クリックした項目のテキストを使用して、メッセージが表示されます。
+、 [`ItemClick`](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)
+イベントを使用して、数回のクリック ハンドラーをサブスクライブします。 内の項目のときに、 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
+クリックされると、ハンドラーが呼び出されると、 [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
+クリックされた項目からテキストを使用して、メッセージが表示されます。
 
-独自のレイアウト ファイルを定義する代わりに、プラットフォームによって提供されるリスト項目の設計を使用することができます、 [ `ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)です。
-たとえば、を使用してみてください`Android.Resource.Layout.SimpleListItem1`の代わりに`Resource.Layout.list_item`です。
+独自のレイアウト ファイルを定義する代わりに、プラットフォームによって提供されるリスト項目の設計を使用することができます、 [ `ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)します。
+たとえば、を使用してお試しください`Android.Resource.Layout.SimpleListItem1`の代わりに`Resource.Layout.list_item`します。
 
 次の追加`using`ステートメント。
 
@@ -146,13 +157,14 @@ static readonly string[] countries = new String[] {
   };
 ```
 
-これは、配置先の文字列の配列、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)です。
+これには、文字列の配列、 [ `ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)します。
 
-アプリケーションを実行します。 一覧をスクロールし、入力をフィルター処理、またはメッセージを表示する項目をクリックすることができます。 次のように表示されます。
+アプリケーションを実行します。 一覧をスクロールまたは、フィルター処理する入力し、メッセージを表示する項目をクリックできます。 次のように表示されます。
 
 [![国の名前を持つ ListView の例のスクリーン ショット](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
-ただし、ハード コーディングされた文字列配列を使用して、デザインのベスト プラクティスではありません。 いずれかを示すためにわかりやすくするため、このチュートリアルを使用は、 [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)ウィジェット。 参照によって定義されている外部のリソースなどの文字列配列にすることをお勧め、`string-array`プロジェクトのリソース**Resources/Values/Strings.xml**ファイル。 例えば:
+ただし、ハード コーディングされた文字列の配列を使用して、デザインのベスト プラクティスではありません。 示すためにわかりやすくするため、このチュートリアルで使用される 1 つ、 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
+ウィジェット。 によって定義されている外部のリソースなどの文字列配列を参照することをお勧め、`string-array`プロジェクトのリソース**Resources/Values/Strings.xml**ファイル。 例えば:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -170,7 +182,8 @@ static readonly string[] countries = new String[] {
 </resources>
 ```
 
-これらのリソース文字列を使用する、 [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)、置換元[ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)を次の行。
+これらのリソースの文字列を使用する、 [ `ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)元の置換 [`ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)
+次のコマンドライン:
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
@@ -178,29 +191,29 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 ```
 アプリケーションを実行します。 次のように表示されます。
 
-[![小規模なリストを ListView の例のスクリーン ショット](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
+[![小さいリスト名の ListView の例のスクリーン ショット](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
 
-## <a name="going-further-with-listview"></a>ListView に進む
+## <a name="going-further-with-listview"></a>ListView を進める
 
-(下記のリンク) の残りのトピックを見て包括的な操作、`ListView`クラスとさまざまな種類のアダプターの種類と使用することができます。 構造は、次のとおりです。
+(下記のリンク) の残りのトピックについて見て包括的な操作、`ListView`クラスと、さまざまな種類のアダプターの種類と使用することができます。 構造は、次のとおりです。
 
--   **視覚的な外観**&ndash;の部分、`ListView`コントロールとその動作します。
+-   **視覚的な外観**&ndash;の部分、`ListView`コントロールとどのように動作します。
 
--   **クラス**&ndash;表示に使用されるクラスの概要、`ListView`です。
+-   **クラス**&ndash;表示に使用されるクラスの概要、`ListView`します。
 
--   **ListView でデータを表示する**&ndash;データの単純なリストを表示する方法以外を実装する方法の場合は`ListView's`操作性機能以外の場合はさまざまな組み込みの行のレイアウトを使用する方法と再行ビューを使用してアダプターがメモリを節約します。
+-   **データ、ListView で表示する**&ndash;データの単純なリストを表示する方法を実装する方法`ListView's`便利な機能はさまざまな組み込みの行のレイアウトを使用する方法と再行ビューを使用して、アダプターがメモリを節約する方法。
 
--   **カスタムの外観**&ndash;のスタイルを変更する、`ListView`カスタム レイアウト、フォントおよび色を使用します。
+-   **カスタムの外観**&ndash;のスタイルを変更する、`ListView`カスタム レイアウト、フォントおよび色。
 
--   **SQLite を使用して** &ndash; SQLite データベースからデータを表示する方法、`CursorAdapter`です。
+-   **SQLite を使った**&ndash;と SQLite データベースからデータを表示する方法、`CursorAdapter`します。
 
--   **アクティビティのライフ サイクル**&ndash;を実装する場合、設計に関する考慮事項`ListView`ライフ サイクルにおけるする必要がありますしてデータを入力リソースを解放する時期を含むアクティビティです。
+-   **アクティビティのライフ サイクル**&ndash;設計に関する考慮事項を実装するときに`ListView`アクティビティ、場所、ライフ サイクルにする必要がありますしてデータを入力、リソースを解放する場合などです。
 
-概要が (6 つの部分に分割) ディスカッションを開始、`ListView`クラス自体の使用方法の段階的に複雑な例を導入する前にします。
+(6 つの部分に分割) についての概要から始まり、`ListView`の使用方法の段階的に複雑な例を紹介する前にクラス自体。
 
 -   [ListView のパーツと機能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
--   [データで ListView を設定します。](~/android/user-interface/layouts/list-view/populating.md)
+-   [データの ListView の設定](~/android/user-interface/layouts/list-view/populating.md)
 -   [ListView の外観のカスタマイズ](~/android/user-interface/layouts/list-view/customizing-appearance.md)
 -   [CursorAdapters の使用](~/android/user-interface/layouts/list-view/cursor-adapters.md)
 -   [ContentProvider の使用](~/android/user-interface/layouts/list-view/content-provider.md)
@@ -209,7 +222,7 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="summary"></a>まとめ
 
-この一連の導入トピック`ListView`の組み込み機能を使用する方法の例をいくつかを指定し、`ListActivity`です。 カスタム実装が説明されている`ListView`カラフルなレイアウトで許可されているし、SQLite データベースを使用して、アクティビティのライフ サイクルの関連性のに触れること、`ListView`実装します。
+この一連の導入トピック`ListView`の組み込み機能を使用する方法の例をいくつか提供されていると、`ListActivity`します。 カスタム実装が説明されている`ListView`カラフルなレイアウトの許可されているし、SQLite データベースを使用して、アクティビティのライフ サイクルの関連性のに触れること、`ListView`実装します。
 
 
 ## <a name="related-links"></a>関連リンク
@@ -224,7 +237,7 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 - [SimpleCursorTableAdapter (サンプル)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
 - [CursorTableAdapter (サンプル)](https://developer.xamarin.com/samples/CursorTableAdapter/)
 - [アクティビティ ライフ サイクルのチュートリアル](~/android/app-fundamentals/activity-lifecycle/index.md)
-- [テーブルとのセル (Xamarin.iOS) の操作](~/ios/user-interface/controls/tables/index.md)
+- [テーブルおよびセル (Xamarin.iOS) の使用](~/ios/user-interface/controls/tables/index.md)
 - [ListView クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
 - [ListActivity クラスのリファレンス](https://developer.xamarin.com/api/type/Android.App.ListActivity/)
 - [BaseAdapter クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)

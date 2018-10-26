@@ -4,15 +4,15 @@ description: この記事では、Xamarin.iOS アプリと c# コードを使用
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 4b2bddeb6b04b5c5288f501fce0d6bb03e0b6584
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: b29820cb69702f7570e10a555ebe9e3e0824653f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40250986"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104155"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Xamarin.iOS でのイメージの表示
 
@@ -22,7 +22,7 @@ _この記事では、Xamarin.iOS アプリと c# コードを使用するか、
 
 開発者が使用して Xamarin.iOS アプリで使用するイメージを追加するときに、_資産カタログ_すべての iOS デバイスとアプリで必要な解像度をサポートするためにします。
 
-IOS 7 で追加された**資産カタログの画像セット**すべてのバージョンまたはさまざまなデバイスをサポートし、スケール ファクターをアプリに必要なイメージの表現が含まれています。 イメージの資産ファイル名ではなく (を参照してください[解像度の独立したイメージとイメージの用語体系](~/ios/app-fundamentals/images-icons/displaying-an-image.md))、**画像セット**Json ファイルを使用して、どのデバイスと解像度にどのイメージが属しているを指定するには. これは、管理および iOS (iOS 9 以降) からのイメージをサポートすることをお勧めします。
+IOS 7 で追加された**資産カタログの画像セット**すべてのバージョンまたはさまざまなデバイスをサポートし、スケール ファクターをアプリに必要なイメージの表現が含まれています。 イメージの資産ファイル名ではなく**画像セット**Json ファイルを使用して、どのデバイスと解像度にどのイメージが属しているを指定します。 これは、管理および iOS (iOS 9 以降) からのイメージをサポートすることをお勧めします。
 
 ## <a name="adding-images-to-an-asset-catalog-image-set"></a>資産カタログ イメージへのイメージの追加設定
 
@@ -30,7 +30,7 @@ IOS 7 で追加された**資産カタログの画像セット**すべてのバ�
 
 新しいイメージ セットを作成し、イメージを追加して、次の操作を行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **ソリューション エクスプ ローラー**、ダブルクリックして、`Assets.xcassets`ファイルを開き、編集します。
 
@@ -48,7 +48,7 @@ IOS 7 で追加された**資産カタログの画像セット**すべてのバ�
 
 ![](displaying-an-image-images/imageset06.png "ドロップダウン リストからイメージ セットの名前を選択します。")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 資産カタログを開く、**ソリューション エクスプ ローラー**、左上隅でをクリックし、 **Plus**ボタン。
 
@@ -88,11 +88,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 IOS 8、特別な時点で**ベクター**クラスに追加された**画像セット**、開発者ができる、 **PDF**形式の代わりに含むカセットでベクター イメージさまざまな解像度で個々 のビットマップ ファイル。 1 つのベクトル ファイルを指定して、このメソッドを使用して、 `@1x` (ベクターの PDF ファイル形式) の解決と`@2x`と`@3x`ファイルのバージョンがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](displaying-an-image-images/imageset05.png "資産カタログ エディターでベクター イメージ")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](displaying-an-image-images/asset8.png "資産カタログ エディターでベクター イメージ")
 
@@ -116,11 +116,11 @@ IOS アプリの設計に基づきがあります、開発者がアイコンま�
 
 この効果を簡単に実現するには、スイッチ、_レンダリング モード_イメージ資産の**テンプレート イメージ**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](displaying-an-image-images/templateimage01.png "テンプレート イメージに設定されている表示モード")](displaying-an-image-images/templateimage01.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](displaying-an-image-images/templateimage01vs.png "表示モード テンプレートに設定")](displaying-an-image-images/templateimage01vs.png#lightbox)
 
@@ -128,11 +128,11 @@ IOS アプリの設計に基づきがあります、開発者がアイコンま�
 
 IOS Designer では、UI コントロールにイメージの資産を割り当てるし、設定、**濃淡**イメージを色分けして表示します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](displaying-an-image-images/templateimage03.png "イメージの色分けに濃淡を設定します。")](displaying-an-image-images/templateimage03.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](displaying-an-image-images/templateimage03vs.png "イメージの色分けに濃淡を設定します。")](displaying-an-image-images/templateimage03vs.png#lightbox)
 
@@ -169,14 +169,14 @@ if (MyIcon.Image != null) {
 
 プロジェクトに新しいアセット カタログを追加するには
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 右クリックし、**プロジェクト名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**
 2. 選択**iOS** > **資産カタログ**、入力、**名前**コレクションをクリックして、**新規**ボタン。
 
     ![](displaying-an-image-images/asset01.png "新しいアセット カタログを作成します。")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ソリューション エクスプ ローラーで右クリック**資産カタログ**フォルダー、および選択**追加 > 新しいアセット カタログ**します。
 2. 名前を付け、**追加**:
@@ -219,7 +219,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 簡単にすることができます、イメージは、資産カタログを使用して Xamarin.iOS プロジェクトに追加されると、ストーリー ボードを使用して、表示される、 `UIImageView` iOS Designer でします。 たとえば、次のイメージ アセットが追加されている場合。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](displaying-an-image-images/display01.png "サンプル イメージ アセットが追加されました")
 
@@ -242,7 +242,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 7. 各辺の"T"の形をしたハンドルをドラッグ、 **Image View**両側に画像を「ピン留め」画面の対応する側にします。 この方法で、 **Image View**画面のサイズを拡大および縮小されます。
 8. ストーリー ボードに変更を保存します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](displaying-an-image-images/display01vs.png "サンプル イメージ アセットが追加されました")
 

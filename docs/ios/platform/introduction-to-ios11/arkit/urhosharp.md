@@ -4,15 +4,15 @@ description: 検出方法平面のこのドキュメントは、Xamarin.iOS で 
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/01/2017
-ms.openlocfilehash: 728082eb27684c2176feb2038b7948986ce6a694
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 435ca560eee4f8f44443816c2a4ccec195ba5395
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351692"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103895"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin.iOS で UrhoSharp を ARKit を使用します。
 
@@ -25,7 +25,7 @@ ms.locfileid: "39351692"
 
 ## <a name="the-basics"></a>基本事項
 
-IPhone から見た、世界の上に存在する 3D コンテンツが実行します。   考え方としては、3 D コンテンツに、電話のカメラからコンテンツを調和させるのには、電話のユーザーがいることを確認する部屋が移動がその部屋の一部では、3 D オブジェクトの動作 - これは、この世界にオブジェクトをアンカーで。
+IPhone または iPad に表示されるよう、世界の上に存在する 3D コンテンツが実行します。   考え方としては、3 D コンテンツに、デバイスのカメラからコンテンツを調和させるのにはおよびがその部屋の一部では、3 D オブジェクトの動作 - これは、この世界にオブジェクトをアンカーでのデバイスのユーザーがいることを確認する部屋が移動します。
 
 ![ARKit でアニメーション化された図](urhosharp-images/image1.gif)
 

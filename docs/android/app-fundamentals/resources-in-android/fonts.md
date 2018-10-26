@@ -3,30 +3,30 @@ title: フォント
 ms.prod: xamarin
 ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
-ms.date: 04/13/2018
-ms.openlocfilehash: 086576ea7d806bb0768fbe4563df7fca99244ccb
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+author: conceptdev
+ms.author: crdun
+ms.date: 09/0/2018
+ms.openlocfilehash: fb0e1c42efc6bb51dcd899c7e6017007a82d5c7f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31044822"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105936"
 ---
 # <a name="fonts"></a>フォント
 
 ## <a name="overview"></a>概要
 
-API レベル 26 以降、Android SDK により、レイアウトと同じように、リソースとして扱われるフォントまたはドロウアブルです。 [Android のサポート ライブラリ 26 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/26.1.0.1)新しいフォントの API の API レベルを 14 以上を対象とするそれらのアプリを移植をされます。
+API レベル 26 以降、Android SDK により、レイアウトと同じように、リソースとして扱う場合にフォントまたはドローアブルします。 [Android サポート ライブラリ 26 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/26.1.0.1) API レベル 14 以上を対象とするこれらのアプリに新しいフォントの API のバックポートをされます。
 
-を対象とする API 26 または Android のサポート ライブラリ v26 をインストールした後は、Android アプリケーションで複数のフォントを使用する 2 つの方法があります。
+ターゲット API 26 または Android サポート ライブラリ v26 をインストールした後は、Android アプリケーションでフォントを使用する 2 つの方法があります。
 
-1. **Android のリソースとしてフォントをパッケージ化**&ndash;こうこと、フォントは常に、アプリケーションで使用できる、APK のサイズが増えます。 
-2. **フォントをダウンロード** &ndash; Android サポートからフォントをダウンロード、_フォント プロバイダー_です。 フォントのプロバイダーは、フォントが既にデバイス上のかどうかを確認します。 必要に応じて、フォントをダウンロードして、デバイス上でキャッシュします。 このフォントは、複数のアプリケーション間で共有できます。
+1. **Android のリソースとしてフォントをパッケージ化**&ndash;これにより、フォントは、アプリケーションが常には、APK のサイズが増えます。 
+2. **フォントをダウンロード**&ndash;も Android ではダウンロードからフォントをサポートしています、_フォント プロバイダー_します。 フォントが既にデバイスのかどうか、フォントのプロバイダーを確認します。 必要に応じて、フォントがダウンロードされ、デバイス上でキャッシュします。 このフォントは、複数のアプリケーション間で共有できます。
 
-類似のフォント (または複数の異なるスタイルを持たない可能性のあるフォント) にグループ化する_フォント ファミリ_です。 これにより開発者はフォントの太さなどの特定の属性を指定して、Android では適切なフォントをフォント ファミリから自動的に選択されます。
+類似のフォント (または複数の異なるスタイルを持たない可能性のあるフォント) がグループ化することがあります_フォント ファミリ_します。 これにより開発者は、フォントの太さなどの特定の属性を指定して、Android がフォント ファミリから適切なフォントを自動的に選択されます。
 
-Android のサポート ライブラリ v26 は、API レベル 26 にフォントのサポートを移植します。 古い API レベルを対象にする場合、宣言する必要が、 `app` XML 名前空間を使用してさまざまなフォント属性の名前を付けると、`android:`名前空間および`app:`名前空間。 だけの場合、`android:`名前空間を使用し、フォントには、25 個以下に、API レベルを実行している表示されているデバイスはできません。 たとえば、この XML スニペットを新しい宣言[_フォント ファミリ_](#font_families) 14 以降の API レベルで機能するリソース。
+Android サポート ライブラリ v26 は、API レベル 26 にフォントのバックポート サポートされます。 以前の API レベルを対象とする場合、宣言する必要が、 `app` XML 名前空間と名前を使用して、さまざまなフォント属性を`android:`名前空間と`app:`名前空間。 だけの場合、`android:`名前空間を使用すると、その後、フォントには、API レベル 25 以下を実行している表示されているデバイスはできません。 たとえば、この XML スニペットを新しい宣言[_フォント ファミリ_](#font_families) API レベル 14 以上で作業するリソース。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -44,7 +44,7 @@ Android のサポート ライブラリ v26 は、API レベル 26 にフォン�
 </font-family>
 ```
 
-フォントは、適切な方法で Android のアプリケーションに用意されて、限り、それらに適用できる UI ウィジェットを設定して、 [ `fontFamily`属性](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)です。 たとえば、次のスニペットは、TextView にフォントを表示する方法を示しています。
+フォントは、適切な方法で Android アプリケーションに用意されて、限りそれらに適用できる UI ウィジェットを設定して、 [ `fontFamily`属性](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)します。 たとえば、次のスニペットでは、TextView にフォントを表示する方法を示しています。
 
 ```xml
 <TextView
@@ -56,26 +56,26 @@ Android のサポート ライブラリ v26 は、API レベル 26 にフォン�
     android:layout_height="wrap_content" />
 ```
 
-このガイドは、Android のリソースとしてフォントを使用する方法について説明し、その後、実行時にフォントをダウンロードする方法について説明します。
+このガイドは、Android のリソースとしてフォントを使用する方法について説明し、実行時にフォントをダウンロードする方法について説明に移ります。
 
-## <a name="fonts-as-a-resource"></a>フォント リソースとして
+## <a name="fonts-as-a-resource"></a>リソースとしてフォント
 
-Android APK にフォントをパッケージ化とは、アプリケーションで使用できるが常にすることを確認します。 フォント ファイルは、(どちらか、します。TTF またはします。OTF ファイル) は、ファイルをサブディレクトリにコピーして、他のリソースと同じように Xamarin.Android アプリケーションに追加は、**リソース**Xamarin.Android プロジェクトのフォルダーです。 フォント リソースが保持されており、**フォント**のサブディレクトリ、**リソース**プロジェクトのフォルダーです。 
+Android APK にフォントをパッケージ化とは、アプリケーションで使用できるが常にすることを確認します。 フォント ファイル (いずれかをします。TTF またはします。OTF ファイル) がファイルをサブディレクトリにコピーして、他のリソースと同様、Xamarin.Android アプリケーションに追加、**リソース**Xamarin.Android プロジェクトのフォルダー。 フォント リソースを**フォント**のサブディレクトリ、**リソース**プロジェクトのフォルダー。 
 
 > [!NOTE]
-> フォントが必要、**ビルド アクション**の**AndroidResource**最終的な APK にパッケージ化されませんされますか。 ビルド アクションは、IDE によって自動的に設定する必要があります。
+> フォントがあります、**ビルド アクション**の**AndroidResource**または、これらは、最終的な APK をパッケージ化されません。 ビルド アクションは、IDE によって自動的に設定する必要があります。
 
-多くの類似したフォント ファイル (たとえば、異なる重みまたはスタイルと同じフォント) がある場合は、フォント ファミリにグループ化することができます。
+多くの類似したフォント ファイル (たとえば、さまざまな重みやスタイルで同じフォント) がある場合に、フォント ファミリにグループ化することができます。
 
 <a name="font_families" />
 
 ### <a name="font-families"></a>フォント ファミリ
 
-フォント ファミリは、異なる重みとスタイルを持つフォントのセットです。 たとえば、太字や斜体のフォントの別のフォント ファイルが存在する可能性があります。 フォント ファミリがによって定義された`font`で保持されている XML ファイル内の要素、**リソース/フォント**ディレクトリ。 各フォント ファミリには、独自の XML ファイルです。
+フォント ファミリは、さまざまな重みとスタイルを持つフォントのセットです。 たとえば、太字や斜体のフォントの個別のフォント ファイルがあります。 フォント ファミリがによって定義されている`font`を保持する XML ファイル内の要素、**リソース/フォント**ディレクトリ。 各フォント ファミリ、独自の XML ファイルが必要です。
 
-作成する、フォント ファミリでは、最初にすべてのフォントを追加、**リソース/フォント**フォルダーです。 [フォント ファミリのフォント] フォルダーで、新しい XML ファイルを作成します。 XML ファイルの名前がありませんアフィニティまたはリレーションシップです。 参照されているフォントにリソース ファイルには、任意の有効な Android リソース ファイル名を指定できます。 この XML ファイルは、ルートが`font-family`を 1 つまたは複数を含む要素`font`要素。 各`font`要素は、フォントの属性を宣言します。
+フォント ファミリを作成するには、最初にすべてのフォントを追加、**リソース/フォント**フォルダー。 [フォント ファミリのフォント] フォルダーで新しい XML ファイルを作成します。 XML ファイルの名前がありませんアフィニティまたはリレーションシップです。 参照されているフォントにリソース ファイルには、任意の有効な Android のリソース ファイル名を指定できます。 この XML ファイルは、ルートが`font-family`要素を 1 つまたは複数を含む`font`要素。 各`font`要素のフォント属性を宣言します。
 
-次の XML のフォント ファミリの例では、_ソース San Pro_多数の異なるフォント重みを定義するフォントです。 これは内のファイルとして保存、**リソース/フォント**という名前のフォルダー **sourcesanspro.xml**:
+次の XML のフォント ファミリの例に示します、_ソース San Pro_多くの異なるフォントの太さを定義するフォント。 これでファイルとして保存されますが、**リソース/フォント**という名前のフォルダー **sourcesanspro.xml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,19 +107,19 @@ Android APK にフォントをパッケージ化とは、アプリケーショ�
 * **通常**&ndash;通常フォント
 * **斜体**&ndash;斜体のフォント
 
-`fontWeight`属性は CSS に対応`font-weight`属性し、フォントの太さを指します。 これは、100 ~ 900 の範囲内の値です。 次の一覧には、共通のフォントの太さ値とその名前がについて説明します。
+`fontWeight`属性は、CSS に対応`font-weight`属性、フォントの太さを指しています。 これは、100 ~ 900 の範囲内の値です。 次の一覧には、共通のフォントの太さ値とその名前がについて説明します。
 
 * **シン** &ndash; 100
-* **余分なライト** &ndash; 200
-* **ライト** &ndash; 300
+* **余分な明るい** &ndash; 200
+* **Light** &ndash; 300
 * **標準** &ndash; 400
 * **Medium** &ndash; 500
-* **太字 semi** &ndash; 600
+* **太字の半** &ndash; 600
 * **太字** &ndash; 700
 * **極太字** &ndash; 800
 * **黒** &ndash; 900
 
-フォント ファミリを定義すると、使用できます宣言を設定して、 `fontFamily`、 `textStyle`、および`fontWeight`レイアウト ファイル内の属性です。  たとえば次の XML スニペットには、400 の太さのフォント (標準) と斜体スタイルが設定します。
+フォント ファミリを定義した後、これで使用できる宣言によって設定、 `fontFamily`、 `textStyle`、および`fontWeight`レイアウト ファイル内の属性。  たとえば、次の XML スニペットは、600 の太さのフォント (通常) と斜体のテキスト スタイルを設定します。
 
 ```xml
 <TextView
@@ -136,7 +136,7 @@ Android APK にフォントをパッケージ化とは、アプリケーショ�
 
 ### <a name="programmatically-assigning-fonts"></a>プログラムでフォントを割り当てる
 
-使用して、フォントをプログラムで設定することができます、 [ `Resources.GetFont` ](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))を取得する方法、 [ `Typeface` ](https://developer.android.com/reference/android/graphics/Typeface.html)オブジェクト。 多くのビューが、`TypeFace`ウィジェットに割り当て、フォントに使用できるプロパティです。 このコード スニペットは、プログラムによって、TextView 上のフォントを設定する方法を示しています。
+使用して、フォントをプログラムで設定できる、 [ `Resources.GetFont` ](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))を取得するメソッド、 [ `Typeface` ](https://developer.android.com/reference/android/graphics/Typeface.html)オブジェクト。 多くのビューが、`TypeFace`プロパティが、ウィジェットを割り当て、フォントを使用できます。 このコード スニペットでは、プログラムで、TextView のフォントを設定する方法を示します。
 
 ```csharp
 Android.Graphics.Typeface typeface = this.Resources.GetFont(Resource.Font.caveat_regular);
@@ -144,7 +144,7 @@ textView1.Typeface = typeface;
 textView1.Text = "Changed the font";
 ```
 
-`GetFont`メソッドは自動的に読み込ま、フォント ファミリ内の最初のフォント。  特定のスタイルに一致するフォントを読み込むを使用して、`Typeface.Create`メソッドです。 このメソッドは、指定したスタイルと一致するフォントをロードしようとします。 例として、このスニペットを太字読み込んでみます`Typeface`オブジェクトで定義されているフォント ファミリから**リソース]、[フォント**:
+`GetFont`メソッドは、フォント ファミリ内の最初のフォントを自動的にロードします。  特定のスタイルに一致するフォントを読み込むには、使用、`Typeface.Create`メソッド。 このメソッドは、指定したスタイルに一致するフォントをロードしようとします。 たとえば、このスニペットを太字読み込んでみます`Typeface`オブジェクトで定義されているフォント ファミリから**リソース]、[フォント**:
 
 ```csharp
 var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceStyle.Bold);
@@ -153,20 +153,20 @@ textView1.Typeface = typeface;
 
 ## <a name="downloading-fonts"></a>フォントをダウンロードします。
 
-アプリケーション リソースとしてのフォントをパッケージ化、代わりに Android は、リモート ソースからフォントをダウンロードすることができます。 APK のサイズを小さくすることをお勧めの効果があります。 
+アプリケーション リソースとしてのフォントのパッケージングではなく Android は、リモート ソースからフォントをダウンロードすることができます。 APK のサイズを縮小するが望ましい効果があります。 
 
-フォントをダウンロードするの支援を受けて、_フォント プロバイダー_です。 これは、ダウンロードと、デバイス上のすべてのアプリケーションにフォントのキャッシュを管理する特殊なコンテンツ プロバイダーです。 Android 8.0 にからフォントをダウンロードするフォントのプロバイダーが含まれています、 [Google フォント リポジトリ](http://fonts.google.com)です。 この既定のフォントのプロバイダーは、Android のサポート ライブラリ v26 と API レベル 14 には移植です。
+フォントのダウンロードの支援を得て、_フォント プロバイダー_します。 これは、デバイス上のすべてのアプリケーションにフォントのダウンロード、およびキャッシュを管理する特殊なコンテンツ プロバイダーです。 Android 8.0 にはからフォントをダウンロードするフォントのプロバイダーが含まれています、 [Google フォント リポジトリ](http://fonts.google.com)します。 この既定のフォントのプロバイダーは、Android サポート ライブラリ v26 と API レベル 14 に移植します。
 
-要求すると、アプリのフォント、フォント プロバイダーが最初に確認する、フォントが既にデバイス上のかどうか。 それ以外の場合は、フォントのダウンロードを試みます。 ダウンロードした、し、Android、フォントができない場合は、既定のシステム フォントに使用されます。 フォントをダウンロードすると、使用可能になる最初の要求を行ったアプリだけでなく、デバイス上のすべてのアプリケーションにします。
+アプリが要求を行うと、フォントのフォントのプロバイダーはまず フォントは、デバイスで既にかどうかを確認します。 それ以外の場合は、フォントをダウンロードするのには試みます。 ダウンロードした、Android、フォントができない場合は、既定のシステム フォントを使用します。 フォントがダウンロードされるは、最初の要求を作成したアプリだけでなく、デバイス上のすべてのアプリケーションで使用できます。
 
-フォントをダウンロードする要求が行われると、アプリは、フォントのプロバイダーを直接照会できません。 アプリがのインスタンスを使用する代わりに、 [ `FontsContract` ](https://developer.android.com/reference/android/provider/FontsContract.html) API (または[ `FontsContractCompat` ](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)サポート ライブラリ 26 が使用されている場合)。  
+フォントをダウンロードする要求が行われると、アプリは、フォントのプロバイダーを直接照会できません。 アプリがのインスタンスを使用する代わりに、 [ `FontsContract` ](https://developer.android.com/reference/android/provider/FontsContract.html) API (または[ `FontsContractCompat` ](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)サポート ライブラリの 26 が使用されている場合)。  
 
-Android 8.0 では、2 つの方法でダウンロードのフォントをサポートします。
+Android 8.0 では、2 つの方法でフォントのダウンロードをサポートします。
 
-1. **ダウンロード可能なフォント リソースとしてを宣言**&ndash;アプリが Android XML リソース ファイル形式でダウンロード可能なフォントを宣言できます。 これらのファイルは、すべての Android が非同期的に、アプリを起動し、デバイスにキャッシュし、フォントをダウンロードする必要があるメタ データが格納されます。
-2. **プログラムによって** &ndash; Android API レベル 26 の Api は、アプリケーションの実行中にプログラムでは、フォントをダウンロードするアプリケーションを使用します。 アプリの作成は、`FontRequest`特定のフォントのオブジェクトをこのオブジェクトに渡す、`FontsContract`クラスです。 `FontsContract`受け取り、`FontRequest`からフォントを取得し、_フォント プロバイダー_です。 Android には、同期的にフォントがダウンロードされます。 作成する例を`FontRequest`このガイドの後半で表示されます。
+1. **ダウンロード可能なフォント リソースとして宣言**&ndash;アプリは、XML リソース ファイルを使用して Android へのダウンロード可能なフォントを宣言できます。 これらのファイルは、すべての Android が非同期的にフォントをアプリが開始され、デバイス上のキャッシュにダウンロードする必要があるメタ データが格納されます。
+2. **プログラムで** &ndash; 26 の Android API レベルでの Api を使用すると、アプリケーションの実行中にプログラムでは、フォントをダウンロードします。 アプリを作成、`FontRequest`特定のフォントのオブジェクトし、するには、このオブジェクトを渡す、`FontsContract`クラス。 `FontsContract`は、`FontRequest`からフォントを取得し、_フォント プロバイダー_します。 Android は、フォントを同期的にダウンロードされます。 作成する例を`FontRequest`このガイドの後半で表示されます。
 
-どの方法を使用するに関係なくフォントの前に、Xamarin.Android アプリケーションに追加する必要がありますのリソース ファイルをダウンロードできます。 XML ファイルで最初に、フォントを宣言する必要があります、**リソース/フォント**フォント ファミリの一部としてのディレクトリ。 このスニペットはからフォントをダウンロードする方法の例、 [Google フォントのオープン ソース コレクション](https://fonts.google.com)Android 8.0 (またはサポート ライブラリ v26) に付属している既定のフォントのプロバイダーを使用します。
+どちらのアプローチを使用するに関係なく、フォントの前に、Xamarin.Android アプリケーションに追加する必要がありますリソース ファイルをダウンロードできます。 最初に、フォントで XML ファイルで宣言する必要があります、**リソース/フォント**フォント ファミリの一部としてのディレクトリ。 このスニペットはからフォントをダウンロードする方法の例、 [Google フォントのオープン ソースのコレクション](https://fonts.google.com)Android 8.0 (またはサポート ライブラリ v26) に付属する既定のフォントのプロバイダーを使用します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -184,20 +184,20 @@ Android 8.0 では、2 つの方法でダウンロードのフォントをサポ
 </font-family>
 ```
 
-`font-family`要素には、Android がフォントをダウンロードする必要がある情報を宣言する次の属性が含まれています。
+`font-family`要素には、Android がフォントのダウンロードが必要な情報を宣言する次の属性が含まれています。
 
-1. **fontProviderAuthority** &ndash;要求に使用するフォントのプロバイダーの機関です。
-2. **fontPackage** &ndash;要求に使用するフォントのプロバイダーのパッケージです。 プロバイダーの id の検証に使用されます。
-3. **fontQuery** &ndash;フォント プロバイダーが要求されたフォントを検索できる文字列です。 フォントのクエリの詳細については、フォントのプロバイダーに固有です。 [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs)クラス内で、[ダウンロード可能なフォント](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/)サンプル アプリいくつかの情報を提供クエリ形式でフォントから Google フォントのオープン ソース コレクション。
-4. **fontProviderCerts** &ndash;プロバイダーを使用して署名する必要があります、証明書のハッシュのセットの一覧を持つリソース配列。
+1. **fontProviderAuthority** &ndash;要求に使用するフォントのプロバイダーの機関。
+2. **fontPackage** &ndash;要求に使用するフォントのプロバイダーのパッケージ。 これは、プロバイダーの id の検証に使用されます。
+3. **fontQuery** &ndash;フォント プロバイダーが要求されたフォントの検索に役立つ文字列です。 フォントのクエリの詳細については、フォントのプロバイダーに固有です。 [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs)クラス、[ダウンロード可能なフォント](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/)サンプル アプリは、いくつかの情報、クエリの形式でフォント Google フォントのオープン ソースのコレクションから。
+4. **fontProviderCerts** &ndash;のプロバイダーを使用して署名する必要があります証明書のハッシュ セットの一覧を持つリソース配列。
 
-フォントを定義すると、に関する情報を提供する必要あります、_フォント証明書_ダウンロードに含まれています。
+フォントが定義した後の情報を提供する必要あります、_フォントの証明書_ダウンロードに含まれています。
 
 ### <a name="font-certificates"></a>証明書のフォント
 
-フォントのプロバイダーが、デバイスにプリインストールされていませんか、アプリが使用されている場合、`Xamarin.Android.Support.Compat`ライブラリ、Android には、フォントのプロバイダーのセキュリティ証明書が必要です。 これらの証明書を保持する配列のリソース ファイルに一覧表示されます**リソース/値**ディレクトリ。 
+フォントのプロバイダーが、デバイスにプレインストールされていない場合、またはアプリが使用されている場合、`Xamarin.Android.Support.Compat`ライブラリを Android には、フォントのプロバイダーのセキュリティ証明書が必要です。 これらの証明書を保持する配列リソース ファイル内に表示されます**リソース/値**ディレクトリ。 
 
-たとえば、次の XML が名前付き**Resources/values/fonts_cert.xml**し、Google フォント プロバイダーの証明書を格納します。 
+たとえば、次の XML の名前は**Resources/values/fonts_cert.xml**し、Google のフォントのプロバイダーの証明書を格納します。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -219,11 +219,11 @@ Android 8.0 では、2 つの方法でダウンロードのフォントをサポ
 </resources>
 ```
 
-これらのリソース ファイルの場所で、アプリは、フォントをダウンロードできます。
+これらの場所にリソース ファイル、アプリは、フォントをダウンロードするの。
 
 ### <a name="declaring-downloadable-fonts-as-resources"></a>ダウンロード可能なフォントをリソースとして宣言します。
 
-ダウンロード可能なフォントをリストすることによって、 **AndroidManifest.XML**Android に非同期的にフォントをダウンロード、アプリが初めて起動したとき。 自体のフォントの配列のリソース ファイルに、このような一覧表示されます。 
+ダウンロード可能なフォントの一覧を表示して、 **AndroidManifest.XML**、初回起動時に、アプリは、Android にフォントはダウンロード非同期的にします。 自体のフォントの配列のリソース ファイルに、このような一覧表示されます。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -234,37 +234,37 @@ Android 8.0 では、2 つの方法でダウンロードのフォントをサポ
 </resources>
 ```
 
-宣言するが、これらのフォントをダウンロードする**AndroidManifest.XML**を追加して`meta-data`の子として、`application`要素。 たとえば、ダウンロード可能なフォントがリソース ファイルで宣言されている場合**Resources/values/downloadable_fonts.xml**、このスニペットは、マニフェストに追加する必要があります。 
+宣言するが、これらのフォントをダウンロードするには、 **AndroidManifest.XML**を追加して`meta-data`の子として、`application`要素。 リソース ファイルにダウンロード可能なフォントが宣言されている場合など、 **Resources/values/downloadable_fonts.xml**、このスニペットは、マニフェストに追加する必要があります。 
 
 ```xml
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
 
-### <a name="downloading-a-font-with-the-font-apis"></a>フォントの Api を使用したフォントをダウンロードします。
+### <a name="downloading-a-font-with-the-font-apis"></a>フォントの Api を使用したフォントをダウンロード
 
-プログラムによってインスタンス化して、フォントをダウンロードすることは、 [ `FontRequest` ](https://developer.android.com/reference/android/support/v4/provider/FontRequest.html)オブジェクトを渡すことを`FontContractCompat.RequestFont`メソッドです。 `FontContractCompat.RequestFont`メソッドは、フォントが、デバイス上に存在するかを確認してし、し、必要な場合は非同期的にクエリ、フォント プロバイダーしようとして、アプリのフォントをダウンロードします。 場合`FontRequest`Android が既定のシステム フォントを使用して、フォントをダウンロードすることができます。 
+プログラムでインスタンス化して、フォントをダウンロードすることができます、 [ `FontRequest` ](https://developer.android.com/reference/android/support/v4/provider/FontRequest.html)オブジェクトとを渡して、`FontContractCompat.RequestFont`メソッド。 `FontContractCompat.RequestFont`メソッドは、フォントが、デバイス上に存在するかを確認して、し、必要な場合は非同期的にクエリ、フォントのプロバイダーとアプリのフォントをダウンロードしてください。 場合`FontRequest`は Android では、既定のシステム フォントを使用して、フォントをダウンロードできません。 
 
-A`FontRequest`オブジェクトを探して、フォントをダウンロード フォント プロバイダーによって使用される情報を格納します。 A `FontRequest` 4 つの情報が必要です。
+A`FontRequest`オブジェクトに特定して、フォントをダウンロードするフォントのプロバイダーによって使用される情報が含まれています。 A `FontRequest` 4 つの情報が必要です。
 
-1. **フォント プロバイダー機関**&ndash;要求に使用するフォントのプロバイダーの機関です。
-2. **フォント パッケージ**&ndash;要求に使用するフォントのプロバイダーのパッケージです。 プロバイダーの id の検証に使用されます。
-3. **フォント クエリ**&ndash;フォント プロバイダーが要求されたフォントを検索できる文字列です。 フォントのクエリの詳細については、フォントのプロバイダーに固有です。 文字列の詳細については、フォントのプロバイダーに固有です。 [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs)クラス内で、[ダウンロード可能なフォント](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/)サンプル アプリいくつかの情報を提供クエリ形式でフォントから Google フォントのオープン ソース コレクション。
-4. **フォントのプロバイダーの証明書**&ndash;でプロバイダーを署名する必要があります、証明書のハッシュのセットの一覧を持つリソース配列。 
+1. **フォント プロバイダー機関**&ndash;要求に使用するフォントのプロバイダーの機関。
+2. **フォント パッケージ**&ndash;要求に使用するフォントのプロバイダーのパッケージ。 これは、プロバイダーの id の検証に使用されます。
+3. **フォント クエリ**&ndash;フォント プロバイダーが要求されたフォントの検索に役立つ文字列です。 フォントのクエリの詳細については、フォントのプロバイダーに固有です。 文字列の詳細については、フォントのプロバイダーに固有です。 [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs)クラス、[ダウンロード可能なフォント](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/)サンプル アプリは、いくつかの情報、クエリの形式でフォント Google フォントのオープン ソースのコレクションから。
+4. **フォントのプロバイダーの証明書**&ndash;でプロバイダーを署名する必要があります証明書のハッシュのセットの一覧を持つリソース配列。 
 
-このスニペットは、新しいをインスタンス化した例`FontRequest`オブジェクト。
+このスニペットのような新しいをインスタンス化した`FontRequest`オブジェクト。
 
 ```csharp
 FontRequest request = new FontRequest("com.google.android.gms.fonts", "com.google.android.gms", <FontToDownload>, Resource.Array.com_google_android_gms_fonts_certs);
 ```
 
-前のスニペットに`FontToDownload`Google フォントのオープン ソースのコレクションからフォントを支援するクエリです。 
+前のスニペットで`FontToDownload`は Google のフォントのオープン ソースのコレクションから、フォントに役立つクエリです。 
 
-渡される前に、`FontRequest`を`FontContractCompat.RequestFont`メソッドを作成する必要がある 2 つのオブジェクトは。
+渡される前に、`FontRequest`を`FontContractCompat.RequestFont`メソッド、2 つのオブジェクトが作成する必要があります。
 
-* **`FontsContractCompat.FontRequestCallback`** &ndash; これは、抽象クラスを拡張する必要があります。 なるコールバックであるときに呼び出されました`RequestFont`が終了します。 Xamarin.Android アプリにサブクラス化する必要があります`FontsContractCompat.FontRequestCallback`をオーバーライドし、`OnTypefaceRequestFailed`と`OnTypefaceRetrieved`ダウンロードが失敗したか、それぞれが成功したときに実行されるアクションを提供します。
-* **`Handler`** &ndash; これは、`Handler`によって使用される`RequestFont`を必要な場合、スレッド上のフォントをダウンロードします。 フォントにする必要があります**いない**UI スレッドにダウンロードします。
+* **`FontsContractCompat.FontRequestCallback`** &ndash; これは、クラスは抽象クラスを拡張する必要があります。 できるコールバックされると呼び出されます`RequestFont`が終了します。 Xamarin.Android アプリにサブクラス化する必要があります`FontsContractCompat.FontRequestCallback`をオーバーライドし、`OnTypefaceRequestFailed`と`OnTypefaceRetrieved`ダウンロードが失敗したか、それぞれが成功したときに実行されるアクションを提供します。
+* **`Handler`** &ndash; これは、`Handler`によって使用される`RequestFont`必要な場合に、スレッド上のフォントをダウンロードします。 フォントにする必要があります**いない**UI スレッドにダウンロードされます。
 
-このスニペットは、Google のフォントのオープン ソースのコレクションからフォントをダウンロードして非同期的に c# クラスの例を示します。 実装する、`FontRequestCallback`インターフェイス、および c# イベントを発生させるときに`FontRequest`が完了します。 
+このスニペットの例に示します、C#クラスは、Google のフォントのオープン ソースのコレクションからフォントをダウンロードして非同期的にです。 実装、`FontRequestCallback`インターフェイス、および発生させる、C#イベントと`FontRequest`が完了します。 
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
@@ -341,7 +341,7 @@ fontHelper.DownloadFonts(this); // this is an Android Context instance.
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、ダウンロード可能なフォントとフォントをリソースとしてをサポートするために Android 8.0 での新しい Api について説明します。 これは、方法、APK で既存のフォントを埋め込むと、レイアウトで使用する方法について説明します。 Android 8.0 の仕組みダウンロードのフォント、フォント プロバイダーから、プログラム、またはリソース ファイル内のフォントのメタ データを宣言することによっても説明します。
+このガイドでは、ダウンロード可能なフォントおよびリソースとしてフォントをサポートするために Android 8.0 を使用して、新しい Api について説明します。 これは、APK で既存のフォントを埋め込むと、レイアウトで使用する方法を説明します。 また、プログラム、またはリソース ファイルでフォントのメタ データを宣言することでの Android 8.0 におけるフォント プロバイダーからのダウンロードのフォントのサポートについても説明します。
 
 ## <a name="related-links"></a>関連リンク
 
@@ -351,7 +351,7 @@ fontHelper.DownloadFonts(this); // this is an Android Context instance.
 - [FontsContractCompat](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)
 - [Resources.GetFont](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))
 - [タイプフェイス](https://developer.android.com/reference/android/graphics/Typeface.html)
-- [Android のサポート ライブラリ 26 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)
+- [Android サポート ライブラリ 26 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)
 - [Android でのフォントを使用します。](https://www.youtube.com/watch?v=TfB-TsLFJdM)
 - [CSS のフォントの太さの仕様](https://www.w3.org/TR/css-fonts-3/#font-weight-numeric-values)
 - [Google のフォントのオープン ソースのコレクション](https://fonts.google.com/)

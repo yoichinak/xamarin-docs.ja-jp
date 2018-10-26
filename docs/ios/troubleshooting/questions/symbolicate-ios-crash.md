@@ -1,24 +1,24 @@
 ---
-title: IOS クラッシュ ログを symbolicate .dSYM ファイルはどこで入手できますか。
+title: IOS クラッシュ ログのシンボル名を付加する .dSYM ファイルはどこで確認できますか。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CB8607B9-FFDA-4617-8210-8E43EC512588
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/09/2018
-ms.openlocfilehash: 60d897be8739ff5b78a322bc4ea3f43011785bb5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 0b8f3aa736cba6e70fbf346766499c23a9bbe270
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33920658"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114068"
 ---
-# <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>IOS クラッシュ ログを symbolicate .dSYM ファイルはどこで入手できますか。
+# <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>IOS クラッシュ ログのシンボル名を付加する .dSYM ファイルはどこで確認できますか。
 
-Mac または Visual Studio 2017 の Visual Studio で iOS アプリを構築するときにクラッシュ レポートを symbolicate に必要な .dSYM ファイルは、アプリのプロジェクト ファイル (.csproj) と同じディレクトリ階層に配置されます。 正確な場所は、プロジェクトのビルド設定によって異なります。
+Mac または Visual Studio 2017 の Visual Studio での iOS アプリを構築する際にクラッシュ レポートのシンボル名を付加するために必要な .dSYM ファイルは、アプリのプロジェクト ファイル (.csproj) と同じディレクトリ階層に配置されます。 正確な場所は、プロジェクトのビルド設定によって異なります。
 
-- デバイスに固有のビルドを有効にした場合、次のディレクトリに、.dSYM が見つかりません。
+- デバイス固有のビルドを有効にした場合、次のディレクトリに、.dSYM を検出できます。
 
     **&lt;プロジェクト ディレクトリ&gt;/bin/&lt;プラットフォーム&gt;/&lt;構成&gt;/device-builds/&lt;デバイス&gt;- &lt;os バージョン&gt;/**
 
@@ -26,7 +26,7 @@ Mac または Visual Studio 2017 の Visual Studio で iOS アプリを構築す
   
     **TestApp/bin/iPhone/Release/device-builds/iphone8.4-11.3.1/**
 
-- デバイスに固有のビルドを有効にできません、.dSYM 部分は、次のディレクトリで見つかります。
+- デバイス固有のビルドを有効にしなかった、.dSYM 部分は次のディレクトリにあります。
 
     **&lt;プロジェクト ディレクトリ&gt;/bin/&lt;プラットフォーム&gt;/&lt;構成&gt;/**
 
@@ -35,10 +35,10 @@ Mac または Visual Studio 2017 の Visual Studio で iOS アプリを構築す
     **TestApp、bin、iPhone/リリース/**
 
 > [!NOTE]
-> ビルド プロセスの一環としては、Visual Studio 2017 は、Windows、Mac ビルド ホストから .dSYM ファイルをコピーします。 Windows 上の .dSYM ファイルが表示されない場合、アプリのビルド設定を構成したことを確認する[.ipa ファイルを作成する](~/ios/deploy-test/app-distribution/ipa-support.md)です。
+> ビルド プロセスの一環として、Visual Studio 2017 は、Windows、Mac ビルド ホストから .dSYM ファイルをコピーします。 Windows 上の .dSYM ファイルが表示されない場合は、アプリのビルド設定を構成したことを確認する[.ipa ファイルを作成する](~/ios/deploy-test/app-distribution/ipa-support.md)します。
 
 ## <a name="see-also"></a>関連項目
 
-- [IOS クラッシュ ファイル (Xamarin.iOS) を symbolicating](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
-- [IOS アプリケーションのクラッシュ ログを demystifying](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
+- [IOS クラッシュ ファイル (Xamarin.iOS) symbolicating](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
+- [IOS アプリケーションのクラッシュ ログの分かりやすい解説](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
 

@@ -1,61 +1,61 @@
 ---
-title: Xamarin.iOS で SpriteKit
-description: このドキュメントでは、SpriteKit、Apple の 2 次元グラフィックス フレームワーク SceneKit との統合、物理計算とアニメーションが組み込まれており、光源と、網掛けのサポートが含まれていますをについて説明します。 2 D ゲームを作成する SpriteKit を使用できます。
+title: Xamarin.iOS である SpriteKit
+description: このドキュメントには、ある SpriteKit を Apple の 2D グラフィックス フレームワークである SceneKit を統合、物理運動とアニメーションが組み込まれて、照明と、網掛けのサポートが含まれていますがについて説明します。 2D ゲームを作成するのには、SpriteKit を使用できます。
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: b74b5a722aab240b55ed96bea2a33b162d7817eb
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ef1e9a98b76166f4ee5638d1ab9762896d1e3bc8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786770"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121647"
 ---
-# <a name="spritekit-in-xamarinios"></a>Xamarin.iOS で SpriteKit
+# <a name="spritekit-in-xamarinios"></a>Xamarin.iOS である SpriteKit
 
-SpriteKit、Apple から 2D グラフィックス フレームワークには、iOS 8 および OS X Yosemite のいくつか興味深いの新機能があります。 SceneKit、シェーダーのサポート、光源、影、制約、法線マップの生成、および物理学の拡張機能との統合が含まれます。 具体的には、物理的な特性の新機能を使用すると、非常に簡単にゲームに現実的な効果を追加します。
+SpriteKit、apple の 2D グラフィックス フレームワークでは、いくつかの興味深い新機能では、iOS 8 および OS X Yosemite が。 SceneKit、シェーダーのサポート、照明、影、制約、法線マップの生成、および物理学の機能強化との統合が含まれます。 具体的には、物理運動の新機能を使用すると、非常に簡単にゲームにリアルな効果を追加します。
 
-## <a name="physics-bodies"></a>物理本文
+## <a name="physics-bodies"></a>物理運動の本文
 
-SpriteKit には、2 D、固定された本文物理 API が含まれています。 各スプライトが関連付けられている物理本文 (`SKPhysicsBody`) 物理世界で大容量摩擦と本文の geometry などの物理プロパティを定義します。
+SpriteKit には、2 D、剛体物理運動 API が含まれています。 すべてのスプライトが関連付けられている物理学の本文を (`SKPhysicsBody`) 物理学の世界で大容量や摩擦、本文のジオメトリなどの物理運動プロパティを定義します。
 
-## <a name="creating-a-physics-body-from-a-texture"></a>テクスチャから物理本文を作成します。
-SpriteKit では、そのテクスチャからスプライトの物理学の本の派生をサポートしています。 これにより、簡単に競合がより自然な検索を実装します。
+## <a name="creating-a-physics-body-from-a-texture"></a>テクスチャから物理学の本文を作成します。
+SpriteKit は、そのテクスチャからスプライトの物理運動の本文を派生できるようになりました。 これにより、簡単に競合がより自然な検索を実装できます。
 
-たとえばに注意してください以下の競合の各イメージの表面にほぼバナナとサルの競合します。
+たとえばに注意してください、次の競合で monkey、banana の各イメージの表面にほとんどの競合します。
  
-![](spritekit-images/image13.png "各イメージの表面にほぼバナナとサルが競合します。")
+![](spritekit-images/image13.png "各イメージの表面にほぼ monkey、banana の競合します。")
 
-SpriteKit により、このような物理本文を作成する 1 行のコードで実行できます。 呼び出すだけ`SKPhysicsBody.Create`テクスチャ サイズと: スプライトします。PhysicsBody = SKPhysicsBody.Create (スプライトです。テクスチャ、スプライトします。サイズ)。
+SpriteKit により、このような物理学本文を作成する 1 行のコードでできること。 呼び出すだけで`SKPhysicsBody.Create`テクスチャとサイズを使用します。 スプライト。PhysicsBody = SKPhysicsBody.Create (スプライトです。テクスチャ、スプライトします。サイズ)。
 
 ## <a name="alpha-threshold"></a>アルファのしきい値
 
-だけを設定するだけでなく、`PhysicsBody`プロパティ テクスチャから派生したジオメトリを直接、アプリケーションに設定できるとアルファのしきい値をジオメトリの派生方法を制御します。 
+だけを設定するだけでなく、`PhysicsBody`プロパティ、テクスチャから派生したジオメトリを直接、アプリケーションを設定できますと、geometry の派生方法を制御するアルファのしきい値。 
 
-アルファのしきい値は、ピクセルが、結果として得られる物理本文に含まれる必要最低限のアルファ値を定義します。 たとえば、次のコードは、若干異なる物理本文が得られます。
+アルファのしきい値は、結果として得られる物理学の本文に含まれるピクセル必要があります最小アルファ値を定義します。 たとえば、次のコードは若干異なる物理学の本文で返さ。
 
 ```chsarp
 sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 ```
 
-次のようなアルファのしきい値の調整による効果は、バナナと重複しているときに、サルが経由で分類するように、前の競合を fine-tunes:
+このようなアルファのしきい値の調整による効果は、前の競合を fine-tunes、banana 衝突させるときに、monkey が経由であるように。
 
-![](spritekit-images/image14.png "バナナと重複しているときに、サルが経由で分類します。")
+![](spritekit-images/image14.png "Banana 衝突させるときに、monkey が経由であります。")
  
-## <a name="physics-fields"></a>物理フィールド
+## <a name="physics-fields"></a>物理運動のフィールド
 
-別優れた SpriteKit には、値が、新しい物理計算フィールドをサポートします。 Vortex フィールドなどを追加することはこれら放射状重力フィールドといくつかの名前を付けるスプリング フィールドです。
+SpriteKit をもう 1 つの優れた追加は、新しいフィールドの物理運動のサポートです。 など、渦流形フィールドを追加することを許可するこれら放射状重力フィールドと spring フィールドに、いくつかの名前します。
 
-同じように、他のシーンに追加されている SKFieldNode クラスを使用して物理フィールドが作成された`SKNode`です。 さまざまなファクトリ メソッドがある`SKFieldNode`異なる物理計算フィールドを作成します。 スプリング フィールドを作成するには呼び出すことによって`SKFieldNode.CreateSpringField()`、呼び出すことによって放射状重力フィールド`SKFieldNode.CreateRadialGravityField()`のようにします。
+その他の同様のシーンに追加される SKFieldNode クラスを使用して物理学のフィールドが作成された`SKNode`します。 さまざまなファクトリ メソッドがある`SKFieldNode`さまざまな物理運動のフィールドを作成します。 Spring フィールドを作成するには呼び出すことによって`SKFieldNode.CreateSpringField()`、呼び出すことによって放射状重力フィールド`SKFieldNode.CreateRadialGravityField()`など。
 
-`SKFieldNode` フィールドの強度、フィールド領域、およびフィールド フォースの減衰などのフィールドの属性を制御するプロパティもあります。
+`SKFieldNode` フィールドの強度、フィールドの領域、およびフィールド フォースの減衰などのフィールドの属性を制御するプロパティもあります。
 
-## <a name="spring-field"></a>スプリング フィールド
+## <a name="spring-field"></a>Spring フィールド
 
-たとえば、次のコードはスプリング フィールドを作成し、シーンに追加します。
+たとえば、次のコードでは、spring フィールドを作成し、シーンに追加します。
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateSpringField ();
@@ -66,7 +66,7 @@ fieldNode.Region = new SKRegion(Frame.Size);
 AddChild (fieldNode);
 ```
 
-スプライトを追加し、設定できます、`PhysicsBody`プロパティとして、次のコードは、ユーザーが画面をタッチすると、物理計算フィールドのスプライトが影響するように、します。
+スプライトを追加し、設定、`PhysicsBody`プロパティとして、次のコードは、ユーザーが画面をタッチすると、物理運動のフィールドのスプライトが影響するように。
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -83,13 +83,13 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-これにより、フィールド ノードの周囲のスプリングなどが変化するバナナをします。
+これにより、フィールドのノードの周囲の spring のように変化する bananas をします。
 
-![](spritekit-images/image15.png "フィールド ノードの周囲のスプリングと同様に、バナナが揺れる")
+![](spritekit-images/image15.png "フィールド ノードの周囲の spring のように、bananas に振動します。")
  
 ## <a name="radial-gravity-field"></a>放射状重力フィールド
 
-別のフィールドを追加することは似ています。 たとえば、次のコードでは、放射状重力フィールドを作成します。
+別のフィールドを追加することは似ています。 たとえば、次のコードでは、放射状重力フィールドが作成されます。
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateRadialGravityField ();
@@ -99,6 +99,6 @@ fieldNode.Strength = 10.0f;
 fieldNode.Falloff = 1.0f;
 ```
 
-これは、結果は、ここで、バナナ引き出されます放射状フィールドに関する別の force フィールドになります。
+これは、結果、異なる force フィールドをフィールドについて、bananas を放射状取得された場所。
 
-![](spritekit-images/image16.png "バナナは、フィールドの周囲放射状プルします。")
+![](spritekit-images/image16.png "放射状、フィールドの周囲、bananas はプルします。")

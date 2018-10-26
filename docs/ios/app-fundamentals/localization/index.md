@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS のローカリゼーション
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 2a6096efc18f40d18ea37573e77d93796e812cc2
-ms.sourcegitcommit: 4cc17681ee4164bdf2f5da52ac1f2ae99c391d1d
+ms.openlocfilehash: 0c52db61689dd640332fb1e02e2260dda08e4686
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39387441"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115927"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin.iOS でのローカライズ
 
@@ -70,8 +70,6 @@ Xamarin を使用した両方の Apple の iOS クラスへのアクセスがあ
 
 iOS の生成、`NSCurrentLocaleDidChangeNotification`ユーザーがそのロケールを更新したとき。 アプリケーションは、それらを実行しているし、UI に適切な変更を加えるときにこの通知をリッスンできます。
 
-<a name="basics" />
-
 ## <a name="localization-basics-in-ios"></a>IOS でのローカライズの基本事項
 
 IOS の次の機能は、ユーザーに表示するローカライズされたリソースを提供する Xamarin で簡単に活用されます。 参照してください、 [TaskyL10n サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)にこれらのアイデアを実装する方法を参照してください。
@@ -120,13 +118,13 @@ Xamarin.iOS アプリを .resx ファイルは、これらを指定する必要�
 
 ### <a name="getlocalizedstring-method"></a>GetLocalizedString メソッド
 
-`NSBundle.MainBundle.GetLocalizedString`メソッドに格納されているローカライズされたテキストを検索 **.strings**プロジェクト内のファイル。 これらのファイルは、特別に指定されたディレクトリでの言語で分類された、 **.lproj**サフィックス。
+`NSBundle.MainBundle.GetLocalizedString`メソッドに格納されているローカライズされたテキストを検索 **.strings**プロジェクト内のファイル。 これらのファイルは、特別に指定されたディレクトリでの言語で分類された、 **.lproj**サフィックス (拡張機能の最初の文字が小文字の"L"に注意してください)。
 
 #### <a name="strings-file-locations"></a>.strings ファイルの場所
 
 - **Base.lproj**は既定の言語のリソースが含まれるディレクトリです。
   プロジェクトのルートにある多くの場合、(にも配置できますが、**リソース**フォルダー)。
-- **<language>.lproj**ディレクトリは、サポートされている各言語の通常で作成された、**リソース**フォルダー。
+- **&lt;言語&gt;.lproj**ディレクトリは、サポートされている各言語の通常で作成された、**リソース**フォルダー。
 
 さまざまなできる **.strings**各言語ディレクトリ内のファイル。
 
@@ -147,9 +145,9 @@ Xamarin.iOS アプリを .resx ファイルは、これらを指定する必要�
 
 文字列では、次の文字をエスケープする必要があります。
 
-* `\"`  見積もり
-* `\\`  円記号
-* `\n`  改行
+* `\"` 見積もり
+* `\\` 円記号
+* `\n` 改行
 
 これは、例では**es/Localizable.strings** (ie します。サンプルからのファイルをスペイン語):
 
@@ -171,16 +169,15 @@ IOS でイメージをローカライズするには。
 
 1. たとえば、コードでは、イメージを参照してください。
 
-  ```csharp
-  UIImage.FromBundle("flag");
-  ```
+    ```csharp
+    UIImage.FromBundle("flag");
+    ```
 
 2. 既定のイメージ ファイルを配置**flag.png**で**Base.lproj** (ネイティブ開発言語ディレクトリ)。
 
 3. 内のイメージのローカライズされたバージョンを必要に応じて配置 **.lproj** (例: 各言語のフォルダー **es.lproj**、 **ja.lproj**)。 同じファイル名を使用して、 **flag.png**各言語ディレクトリにします。
 
 イメージが特定の言語の存在しない場合は、iOS が既定のネイティブ言語フォルダーに戻るし、そこからイメージを読み込みます。
-
 
 #### <a name="launch-images"></a>起動画像
 
@@ -251,10 +248,10 @@ Apple を参照してください[日付フォーマッタ](https://developer.ap
 
 iOS では、さまざまな右から左に対応するアプリの構築を支援する機能が用意されています。
 
-* 自動レイアウトの`leading`と`trailing`(を英語を左側と右側に対応していますが、RTL 言語には逆に) 制御揃えの属性。
+- 自動レイアウトの`leading`と`trailing`(を英語を左側と右側に対応していますが、RTL 言語には逆に) 制御揃えの属性。
   [ `UIStackView` ](~/ios/user-interface/controls/uistackview.md)コントロールが右から左に対応するコントロールをレイアウトするために特に便利です。
-* 使用`TextAlignment = UITextAlignment.Natural`のテキストの配置 (これは多くの言語が右から左に残ります)。
-* `UINavigationController` 自動的に [戻る] ボタンを反転し、スワイプ方向を反転させます。
+- 使用`TextAlignment = UITextAlignment.Natural`のテキストの配置 (これは多くの言語が右から左に残ります)。
+- `UINavigationController` 自動的に [戻る] ボタンを反転し、スワイプ方向を反転させます。
 
 次のスクリーン ショットに示す、 [Tasky サンプルのローカライズされた](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)アラビア語やヘブライ語で (ただし、英語は、フィールドに入力された)。
 
@@ -322,8 +319,8 @@ someControl.Text = localizedString;
 
 作成すると、ストーリー ボードでのコントロールの編集、各コントロールを選択し、ローカリゼーションに使用する ID を確認してください。
 
-* 場所で Visual Studio for Mac では、 **Properties Pad**と呼びます**ローカリゼーション ID**します。
-* Xcode で呼び出されます**オブジェクト ID**します。
+- 場所で Visual Studio for Mac では、 **Properties Pad**と呼びます**ローカリゼーション ID**します。
+- Xcode で呼び出されます**オブジェクト ID**します。
 
 この文字列値では、次のスクリーン ショットに示すように"NF3-h8-xmR"などのフォームが多くの場合があります。
 

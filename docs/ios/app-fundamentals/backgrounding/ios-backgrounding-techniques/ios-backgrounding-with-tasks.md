@@ -4,15 +4,15 @@ description: このドキュメントでは、バック グラウンド タス�
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 9d304ee64e7716413febc475e721f5eb39043109
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 48859afe2c988c1afe67d5c4350cef734f879fdf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351539"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120997"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS のタスクをバック グラウンド処理
 
@@ -20,7 +20,7 @@ Ios バック グラウンド処理を実行する最も簡単な方法では、
 
 バック グラウンド タスクは、次の 3 つのカテゴリに分けることができます。
 
-1.  **バック グラウンド セーフ タスク**: 任意の場所で呼び出されます、タスクがあるアプリケーションが中断された場合、アプリケーションがバック グラウンドを入力する必要がありますをしたくないです。
+1.  **バック グラウンド セーフ タスク**- 呼び出された任意の場所、タスクがあるアプリケーションでしない中断された、アプリケーションがバック グラウンドを入力する必要があります。
 1.  **DidEnterBackground タスク**: 中に呼び出されます、`DidEnterBackground`クリーンアップと状態の保存を支援するアプリケーションのライフ サイクル メソッド。
 1.  **転送 (iOS 7 以降) をバック グラウンド**-iOS 7 でネットワーク転送を実行する、特殊なバック グラウンド タスクのために使用します。 通常のタスクとは異なりバック グラウンド転送に事前に決められた時間制限はありません。
 

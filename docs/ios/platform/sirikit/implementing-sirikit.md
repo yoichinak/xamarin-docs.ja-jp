@@ -1,77 +1,77 @@
 ---
-title: Xamarin.iOS で SiriKit を実装します。
-description: このドキュメントでは、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。 これは、インテント UI と目的の拡張機能について説明します。
+title: Xamarin.iOS で SiriKit の実装
+description: このドキュメントでは、Xamarin.iOS アプリで SiriKit のサポートを実装するために必要な手順について説明します。 Intents の拡張機能および Intents UI 拡張機能について説明します。
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: f0e5e05828305bd3656d70105b6e2ad06f9fdc81
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ea037aaaac97d9f326f1a2fbcb28d97c9d8a9b45
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788850"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110252"
 ---
-# <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit を実装します。
+# <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit の実装
 
-_この記事では、Xamarin.iOS アプリで SiriKit サポートを実装するための手順について説明します。_
+_この記事では、Xamarin.iOS アプリで SiriKit のサポートを実装するために必要な手順について説明します。_
 
-新しい 10、iOS に SiriKit が iOS デバイスで Siri とマップのアプリを使用してユーザーがアクセスできるサービスを提供する Xamarin.iOS アプリを許可します。 この記事では、Xamarin.iOS アプリで、必要なインテント拡張子インテント UI 拡張機能およびボキャブラリを追加することによって SiriKit サポートを実装するための手順について説明します。
+新しい ios 10 では、SiriKit により、Xamarin.iOS アプリを iOS デバイスで Siri とマップ アプリを使用してユーザーにアクセスできるサービスを提供します。 この記事では、必要な Intents 拡張機能、Intents UI 拡張機能およびボキャブラリを追加することで Xamarin.iOS アプリで SiriKit のサポートを実装するために必要な手順について説明します。
 
-Siri の動作の概念を**ドメイン**のグループが関連するタスクの操作を把握します。 Siri とされているアプリの各相互作用がとおりの既知のサービスのドメインのいずれかに分類する必要があります。
+Siri の動作の概念を**ドメイン**のグループが関連するタスクの操作を把握します。 Siri アプリに含まれる各操作は必要がありますには、次のようにその既知のサービスのドメインのいずれかに分類されます。
 
-- オーディオまたはビデオ通話です。
+- オーディオまたはビデオ通話。
 - 素敵を予約します。
-- ワークアウトを管理します。
-- メッセージングです。
-- 写真を検索しています。
-- 送信または受信支払いを処理します。
+- トレーニングを管理します。
+- メッセージング。
+- 写真を検索します。
+- 送信または支払いを受信します。
 
-ユーザーは、1 つのアプリ拡張機能のサービスに関連する Siri の要求を行う、SiriKit 送信、拡張機能、**インテント**サポート データと共に、ユーザーの要求を記述するオブジェクト。 アプリ拡張機能は、適切な生成**応答**オブジェクトを指定された**インテント**、拡張機能が、要求を処理する方法の詳細を示すです。
+SiriKit 送信、拡張機能で、ユーザーがアプリの拡張機能のサービスのいずれかに関連する siri 要求を行うと、**インテント**の関連データと共に、ユーザーの要求を記述するオブジェクト。 アプリ拡張機能は、適切な生成**応答**オブジェクトを指定された**インテント**、拡張機能が要求を処理する方法の詳細を示します。
 
-このガイドでは、既存のアプリに SiriKit サポートなどのわかりやすい例を提示します。 この例で使用する、偽の MonkeyChat アプリ。
+このガイドでは、既存のアプリケーションを SiriKit のサポートなどの簡単な例を紹介します。 この例で使用する偽 MonkeyChat アプリ。
 
 [![](implementing-sirikit-images/monkeychat01.png "MonkeyChat アイコン")](implementing-sirikit-images/monkeychat01.png#lightbox)
 
-MonkeyChat がユーザーの友人の連絡先独自書籍を維持、それぞれ (Bobo など) のような画面名に関連付けられているユーザーの画面名が各友人にテキスト チャットを送信することができます。
+MonkeyChat ユーザーの友人の連絡先独自書籍を保持する、各 (Bobo など) のような画面の名前に関連付けられたを画面の名前で各友人にテキストのチャットを送信できます。
 
-## <a name="extending-the-app-with-sirikit"></a>SiriKit を使用してアプリを拡張します。
+## <a name="extending-the-app-with-sirikit"></a>SiriKit のアプリを拡張します。
 
-ように、 [SiriKit 概念について](~/ios/platform/sirikit/understanding-sirikit.md)ガイドは、次の 3 つの主要な部分に含まれている SiriKit でアプリを拡張します。
+ように、 [SiriKit の概念について](~/ios/platform/sirikit/understanding-sirikit.md)ガイド、SiriKit を使用してアプリを拡張に関連する 3 つの主な部分があります。
 
-[![](implementing-sirikit-images/elements01.png "SiriKit ダイアグラムを使用してアプリを拡張します。")](implementing-sirikit-images/elements01.png#lightbox)
+[![](implementing-sirikit-images/elements01.png "SiriKit のダイアグラムを含むアプリを拡張します。")](implementing-sirikit-images/elements01.png#lightbox)
 
 次の設定があります。
 
-1. **インテント拡張子**-ユーザーの応答を検証、アプリが、要求を処理し、実際には、タスクを実行して、ユーザーの要求を満たすためのことを確認します。
-2. **UI 拡張機能のインテント** - *オプション*、Siri 環境で応答するためのカスタム UI を提供をユーザーのエクスペリエンスを強化する Siri にブランド化およびしてアプリの UI に取り込むことができます。
-3. **アプリ**-Siri 作業を支援するために特定のボキャブラリをユーザーにアプリを提供します。 
+1. **Intents の拡張機能**-ユーザーの応答を検証、ことを確認、アプリは、要求を処理でき、実際には、ユーザーの要求を満たすためにタスクを実行します。
+2. **Intents UI 拡張機能** - *(省略可能)*、Siri 環境で応答するためのカスタム UI を提供します。 ユーザーのエクスペリエンスを強化するための Siri にブランド化およびとアプリの UI を取り込むことができます。
+3. **アプリ**-Siri が作業を支援するために特定のボキャブラリをユーザーにアプリを提供します。 
 
-すべてのこれらの要素と、アプリに追加する手順は、以下のセクションで詳しく説明されます。
+すべてのこれらの要素と、アプリに含める手順は、以下のセクションで詳しく説明されます。
 
 
 ## <a name="preparing-the-app"></a>アプリを準備します。
 
-拡張機能をベースに構築 SiriKit、ただし、すべての拡張機能をアプリに追加する前に、いくつか、開発者がの導入により、SiriKit のために実行する必要があります。
+SiriKit は拡張機能に基づいて、ただし、すべての拡張機能をアプリに追加する前に、いくつか SiriKit の導入を支援するために、開発者が必要があります。
 
-### <a name="moving-common-shared-code"></a>一般的な共有コードの移動 
+### <a name="moving-common-shared-code"></a>共通の共有コードの移動 
 
-最初に、開発者は、共有される共通のコードの一部間で移動できますアプリとその拡張機能に_共有プロジェクト_、_ポータブル クラス ライブラリ (Pcl)_ または_ネイティブライブラリ_です。
+最初に、開発者が共有される共通のコードの一部間で移動できますアプリと拡張機能に_共有プロジェクト_、_ポータブル クラス ライブラリ (Pcl)_ または_ネイティブライブラリ_します。
 
-拡張機能は、すべてのアプリは、処理を実行できるようにする必要があります。 サンプル MonkeyChat アプリ、新規の連絡先を追加する連絡先を検索するなどの用語では、メッセージを送信し、メッセージの履歴を取得します。
+拡張機能は、すべてのアプリは、の操作を実行できるようにする必要があります。 サンプル MonkeyChat アプリで新しい連絡先を追加する連絡先の検索などの用語では、メッセージを送信し、メッセージの履歴を取得します。
 
-この一般的なコードを共有プロジェクト、PCL またはネイティブ ライブラリに移動することによっては、1 つの一般的な場所でそのコードを保守しやすいし、により、こと、拡張機能と親アプリ uniform エクスペリエンスと機能であり、ユーザーに提供します。
+共有プロジェクト、PCL、またはネイティブ ライブラリに、この一般的なコードを移動することは、簡単に 1 つの一般的な場所でそのコードを維持することと、により、拡張機能と親アプリケーションを提供統一されたエクスペリエンスと機能のユーザー。
 
-例のアプリ MonkeyChat の場合に、データ モデルやネットワークとデータベースへのアクセスなどの処理コードをネイティブ ライブラリに移動される予定です。
+MonkeyChat 例アプリの場合に、データ モデルとネットワークおよびデータベース アクセスなどの処理コードをネイティブ ライブラリに移動するされます。
 
 次の手順で行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Mac 用 Visual Studio を起動し、MonkeyChat アプリを開きます。
-2. ソリューション名を右クリックし、**ソリューション パッド**選択**追加** > **新しいプロジェクト.**: 
+1. Mac の Visual Studio を起動し、MonkeyChat アプリを開きます。
+2. ソリューション名を右クリックし、 **Solution Pad**選択**追加** > **新しいプロジェクト.**: 
 
     [![](implementing-sirikit-images/prep01.png "新しいプロジェクトを追加します。")](implementing-sirikit-images/prep01.png#lightbox)
 3. 選択**iOS** > **ライブラリ** > **クラス ライブラリ** をクリックし、**次**ボタン。 
@@ -79,32 +79,32 @@ MonkeyChat がユーザーの友人の連絡先独自書籍を維持、それぞ
     [![](implementing-sirikit-images/prep02.png "クラス ライブラリを選択します。")](implementing-sirikit-images/prep02.png#lightbox)
 4. 入力`MonkeyChatCommon`の**名前** をクリックし、**作成**ボタン。 
 
-    [![](implementing-sirikit-images/prep03.png "MonkeyChatCommon を名を入力します。")](implementing-sirikit-images/prep03.png#lightbox)
-5. 右クリックし、**参照**でメインのアプリのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.**.チェック、 **MonkeyChatCommon**プロジェクトし、をクリックして、 **OK**ボタン。 
+    [![](implementing-sirikit-images/prep03.png "名前の MonkeyChatCommon を入力します。")](implementing-sirikit-images/prep03.png#lightbox)
+5. 右クリックし、**参照**でメイン アプリケーションのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.**.チェック、 **MonkeyChatCommon**プロジェクトをクリックして、 **OK**ボタン。 
 
-    [![](implementing-sirikit-images/prep05.png "MonkeyChatCommon プロジェクトをチェック アウトします。")](implementing-sirikit-images/prep05.png#lightbox)
+    [![](implementing-sirikit-images/prep05.png "MonkeyChatCommon プロジェクトを確認してください。")](implementing-sirikit-images/prep05.png#lightbox)
 6. **ソリューション エクスプ ローラー**、共通の共有コードをメイン アプリケーションからネイティブ ライブラリにドラッグします。
-7. MonkeyChat の場合は、ドラッグ、 **DataModels**と**プロセッサ**ネイティブ ライブラリにメインのアプリからフォルダー。 
+7. MonkeyChat の場合は、ドラッグ、 **DataModels**と**プロセッサ**ネイティブ ライブラリには、メインのアプリケーション フォルダー。 
 
     [![](implementing-sirikit-images/prep06.png "ソリューション エクスプ ローラーで、DataModels とプロセッサのフォルダー")](implementing-sirikit-images/prep06.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio を起動し、MonkeyChat アプリを開きます。
 2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクト.**.
-3. 選択**Visual c#** > **共有プロジェクト** をクリックし、**次**ボタン。 
+3. 選択**Visual C#**   > **共有プロジェクト** をクリックし、**次**ボタン。 
 
     [![](implementing-sirikit-images/prep02.w157-sml.png "クラス ライブラリを選択します。")](implementing-sirikit-images/prep02.w157.png#lightbox)
-4. 入力`MonkeyChatCommon`の**名** をクリックし、**作成**ボタンをクリックします。
-5. 右クリックし、**参照**でメインのアプリのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.**.チェック、 **MonkeyChatCommon**プロジェクトし、をクリックして、 **OK**ボタン。 
+4. 入力`MonkeyChatCommon`の**名前** をクリックし、**作成**ボタン。
+5. 右クリックし、**参照**でメイン アプリケーションのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.**.チェック、 **MonkeyChatCommon**プロジェクトをクリックして、 **OK**ボタン。 
 
-    [![](implementing-sirikit-images/prep05w.png "MonkeyChatCommon プロジェクトをチェック アウトします。")](implementing-sirikit-images/prep05w.png#lightbox)
-6. **ソリューション エクスプ ローラー**、メインのアプリから共有プロジェクトに共通の共有コードをドラッグします。
-7. MonkeyChat の場合は、ドラッグ、 **DataModels**と**プロセッサ**ネイティブ ライブラリにメインのアプリからのフォルダーです。
+    [![](implementing-sirikit-images/prep05w.png "MonkeyChatCommon プロジェクトを確認してください。")](implementing-sirikit-images/prep05w.png#lightbox)
+6. **ソリューション エクスプ ローラー**、共通の共有コードをメイン アプリケーションから共有プロジェクトにドラッグします。
+7. MonkeyChat の場合は、ドラッグ、 **DataModels**と**プロセッサ**ネイティブ ライブラリには、メインのアプリケーションのフォルダー。
 
 -----
 
-すべてのネイティブ ライブラリに移動されたファイルを編集し、ライブラリの一致するように名前空間を変更します。 たとえば、変更`MonkeyChat`に`MonkeyChatCommon`:
+ネイティブ ライブラリに移動されたファイルのいずれかを編集し、ライブラリの一致するように名前空間を変更します。 たとえば、変更`MonkeyChat`に`MonkeyChatCommon`:
 
 ```csharp
 using System;
@@ -123,7 +123,7 @@ namespace MonkeyChatCommon
 }
 ```
 
-次に、メイン アプリケーションに戻るし、追加、`using`ステートメント ネイティブ ライブラリの名前空間の任意の場所、アプリは使用して移動されたクラスのいずれか。
+次に、メイン アプリケーションに戻るし、追加、`using`ステートメント ネイティブ ライブラリの名前空間の任意の場所、アプリで使用して移動されたクラスのいずれか。
 
 ```csharp
 using System;
@@ -145,52 +145,52 @@ namespace MonkeyChat
 }
 ```
 
-### <a name="architecting-the-app-for-extensions"></a>拡張機能のアプリの設計
+### <a name="architecting-the-app-for-extensions"></a>アプリの拡張機能の設計
 
-通常、アプリは複数のインテントにサインアップし、開発者は、アプリが適切な数の目的とした拡張機能用に設計されていることを確認する必要があります。
+通常、アプリは複数のインテントにサインアップし、開発者が目的とした拡張機能の適切な数のアプリを設計することを確認する必要があります。
 
-開発者ではで、アプリが 1 つ以上の目的が必要な場合、1 つの目的とした拡張機能に配置することで、すべてのインテント処理のまたは各インテントの別個の目的とした拡張機能の作成のオプションがあります。
+開発者では、アプリが 1 つ以上のインテントを必要とする場合、すべてそのインテントの処理の 1 つの目的とした拡張機能を配置するか、各インテントの別個の目的とした拡張機能の作成のオプションがあります。
 
-各目的別の目的とした拡張機能を作成する場合、開発者可能性があります最終的に大量の各拡張機能での定型的なコードを複製して、大量のプロセッサとメモリのオーバーヘッドを作成します。
+各インテントの別個の目的とした拡張機能を作成する場合、開発者は最終的に大量の各拡張機能の定型コードを複製し、大量のプロセッサとメモリのオーバーヘッドを作成可能性があります。
 
-2 つのオプションを選択する際かどうか、インテントのいずれかの必然的に互いを参照してください。 たとえば、オーディオおよびビデオの呼び出しを行っているアプリ両方を含めるにそれらのインテントの単一の目的とした拡張機能で同様のタスクを処理するようおよびほとんどのコードの再利用を提供します。
+2 つのオプションを選択するには、かどうか、インテントの必然的に属するを参照してください。 たとえば、オーディオとビデオの呼び出しを行っているアプリは同様のタスクを処理するように、単一目的の拡張機能でこれらのインテントの両方を追加したいし、ほとんどのコードの再利用を提供できます。
 
-任意の目的または既存のグループに収まらないの目的のグループを使用して、それらを格納する、アプリのソリューション内の目的の新しい拡張機能を作成します。
+任意の目的または既存のグループに収まらないインテントのグループを使用して、それらを格納する、アプリのソリューションで目的の新しい拡張機能を作成します。
 
 
 ### <a name="setting-the-required-entitlements"></a>必要な権利の設定
 
-SiriKit との統合、Xamarin.iOS アプリ、する必要がありますが、正しい権利設定。 開発者は必要な権利を正しく設定しない場合は開けなくなるインストールまたは実際の iOS 10 (またはそれ以上)、ハードウェアは、iOS 10 以降に必須でアプリをテストするシミュレーター SiriKit をサポートしていません。
+SiriKit の統合を含むすべての Xamarin.iOS アプリする必要がありますが適切な権利を設定します。 開発者はこれらの必要な権利を正しく設定されていない場合、できなくインストールまたはハードウェア上で実際の iOS 10 (またはそれ以上)、これは iOS 10 以降の要件でもアプリをテストするシミュレーター SiriKit をサポートしていません。
 
 次の手順で行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. ダブルクリックして、`Entitlements.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-2. 切り替えて、**ソース**タブです。
+1. ダブルクリックして、`Entitlements.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
+2. 切り替えて、**ソース**タブ。
 3. 追加、 `com.apple.developer.siri` **プロパティ**、設定、**型**に`Boolean`と**値**に`Yes`: 
 
     [![](implementing-sirikit-images/setup01.png "Com.apple.developer.siri プロパティを追加します。")](implementing-sirikit-images/setup01.png#lightbox)
 4. 変更内容をファイルに保存します。
 5. ダブルクリックして、**プロジェクト ファイル**で、**ソリューション エクスプ ローラー**編集用に開きます。
-6. 選択**iOS バンドル署名 *** ことを確認して、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールド。 
+6. 選択**iOS バンドル署名**いることを確認し、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールド。 
 
-    [![](implementing-sirikit-images/setup02.png "カスタム権利フィールドで Entitlements.plist ファイルを選択します。")](implementing-sirikit-images/setup02.png#lightbox)
+    [![](implementing-sirikit-images/setup02.png "カスタム権利フィールド Entitlements.plist ファイルを選択します。")](implementing-sirikit-images/setup02.png#lightbox)
 7. **[OK]** ボタンをクリックして、変更を保存します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. ダブルクリックして、`Entitlements.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
+1. ダブルクリックして、`Entitlements.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
 3. 追加、 `com.apple.developer.siri` **プロパティ**、設定、**型**に`Boolean`と**値**に`Yes`: 
 
     [![](implementing-sirikit-images/setup01w.png "Com.apple.developer.siri プロパティを追加します。")](implementing-sirikit-images/setup01w.png#lightbox)
 4. 変更内容をファイルに保存します。
 5. ダブルクリックして、**プロジェクト ファイル**で、**ソリューション エクスプ ローラー**編集用に開きます。
-6. 選択**iOS バンドル署名 *** ことを確認して、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールドです。
+6. 選択**iOS バンドル署名**いることを確認し、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールド。
 
 -----
 
-完了したら、アプリの`Entitlements.plist`ファイルは次のようになります (の外部エディターで開く)。
+完了したら、アプリの`Entitlements.plist`ファイルは次のようになります (で外部のエディターで開く)。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,68 +203,68 @@ SiriKit との統合、Xamarin.iOS アプリ、する必要がありますが、
 </plist>
 ```
 
-### <a name="correctly-provisioning-the-app"></a>アプリを正しくプロビジョニング
+### <a name="correctly-provisioning-the-app"></a>アプリが正しくプロビジョニング
 
-Apple が SiriKit framework、SiriKit を実装する任意の Xamarin.iOS アプリの周囲に配置される厳密なセキュリティのため_必要があります_正しいアプリ ID と権利 (前のセクションを参照してください) があり、適切なで署名する必要がありますプロファイルをプロビジョニングします。
+Apple は、SiriKit のフレームワーク、SiriKit を実装するすべての Xamarin.iOS アプリの周囲に配置が厳密なセキュリティのため_する必要があります_適切なアプリ ID と (前のセクションを参照してください) の利用資格があるし、適切なで署名する必要がありますプロビジョニング プロファイル。
 
-Mac で、次の操作を行います。
+Mac では、次の操作を行います。
 
-1. Web ブラウザーでに移動[ http://developer.apple.com ](http://developer.apple.com)と自分のアカウントにログインします。
-2. をクリックして**証明書**、**識別子**と**プロファイル**です。
-3. 選択**プロビジョニング プロファイル**を選択し、**のアプリ Id**、をクリックして、 **+** ボタンをクリックします。
-4. 入力、**名前**新しいプロファイルのです。
-5. 入力、**バンドル ID**推奨設定の名前付け Apple の後です。
-6. 下方向にスクロール、 **App Services**セクションで、 **SiriKit**  をクリックし、**続行**ボタン。 
+1. Web ブラウザーでに移動します。 [ http://developer.apple.com ](http://developer.apple.com)と自分のアカウントにログインします。
+2. をクリックして**証明書**、**識別子**と**プロファイル**します。
+3. 選択**Provisioning Profiles**選択と**アプリ Id**、順にクリックして、 **+** ボタン。
+4. 入力、**名前**新しいプロファイルの。
+5. 入力、**バンドル ID**推奨事項の名前付けに従って Apple します。
+6. 下へスクロールして、 **App Services**セクションで、 **SiriKit**  をクリックし、**続行**ボタン。 
 
     [![](implementing-sirikit-images/setup03.png "SiriKit を選択します。")](implementing-sirikit-images/setup03.png#lightbox)
 7. すべての設定、し確認**送信**アプリ id。
-8. 選択**プロビジョニング プロファイル** > **開発**をクリックして、 **+** ボタン、、 **Apple ID**、をクリックして**続行**です。
-9. [選択] をクリックして**すべて**をクリックし、**続行**です。
-10. をクリックして**すべて選択**再度 をクリックし、**続行**です。
-11. 入力、**プロファイル名**Apple を使用すると、推奨事項の名前付け、をクリックして**続行**です。
+8. 選択**Provisioning Profiles** > **開発**、クリックして、 **+** ボタンを選択、 **Apple ID**、クリックして**続行**します。
+9. 選択 をクリックして**すべて**、 をクリックし、**続行**。
+10. をクリックして**すべて選択**再度 をクリックし、**続行**します。
+11. 入力、**プロファイル名**Apple を使用すると、推奨事項の名前付け、をクリックし、**続行**します。
 12. Xcode を起動します。
-13. Xcode メニューから選択**設定しています.**
-14. 選択**アカウント**をクリックし、**の詳細を表示しています.** ボタンをクリックします。 
+13. Xcode メニュー から選択**設定しています.**
+14. 選択**アカウント**、 をクリックし、**の詳細を表示しています.** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/setup04.png "アカウントを選択します。")](implementing-sirikit-images/setup04.png#lightbox)
-15. をクリックして、**すべてのプロファイルをダウンロード**左下隅のボタンをクリックします。 
+15. をクリックして、**すべてのプロファイルのダウンロード**左下隅のボタンをクリックします。 
 
     [![](implementing-sirikit-images/setup05.png "すべてのプロファイルをダウンロードします。")](implementing-sirikit-images/setup05.png#lightbox)
 16. いることを確認、**プロビジョニング プロファイル**作成以降がインストールされている Xcode でします。
-17. Visual studio for mac SiriKit サポートを追加するプロジェクトを開く
-18. ダブルクリックして、`Info.plist`ファイルで、**ソリューション エクスプ ローラー**です。
-18. いることを確認、**バンドル Id** Apple の開発者ポータル上で作成されたものと一致します。 
+17. Visual studio for mac。 SiriKit サポートを追加するプロジェクトを開く
+18. ダブルクリックして、`Info.plist`ファイル、**ソリューション エクスプ ローラー**します。
+18. いることを確認、**バンドル識別子**上記の Apple の開発者ポータルで作成したものと一致します。 
 
-    [![](implementing-sirikit-images/setup06.png "バンドル Id")](implementing-sirikit-images/setup06.png#lightbox)
-18. **ソリューション エクスプ ローラー**、select、**プロジェクト**です。
-19. プロジェクトを右クリックし **オプション**です。
-21. 選択**iOS バンドル署名 *** を選択、**署名 Identity**と**プロビジョニング プロファイル**上記で作成されました。 
+    [![](implementing-sirikit-images/setup06.png "バンドル識別子")](implementing-sirikit-images/setup06.png#lightbox)
+18. **ソリューション エクスプ ローラー**を選択、**プロジェクト**します。
+19. プロジェクトを右クリックして**オプション**します。
+21. 選択**iOS バンドル署名**を選択、**署名 Id**と**プロビジョニング プロファイル**上記で作成しました。 
 
     [![](implementing-sirikit-images/setup07.png "署名 Id とプロビジョニング プロファイルを選択します。")](implementing-sirikit-images/setup07.png#lightbox)
 22. **[OK]** ボタンをクリックして、変更を保存します。
 
 > [!IMPORTANT]
-> テスト SiriKit でのみ機能実際 iOS 10 のハードウェア デバイス、iOS 10 ではなくシミュレーター。 Xamarin.iOS アプリを実際のハードウェアが有効な問題、SiriKit をインストールする場合は、必要な権限、アプリ ID、識別子の署名とプロビジョニング プロファイルが構成されている正しく Apple の開発者ポータルと Visual Studio の両方で for mac を確認してください。
+> SiriKit のテストでのみ機能し、実際の iOS 10 のハードウェア デバイス、iOS 10 ではなくシミュレーター。 Xamarin.iOS アプリを実際のハードウェアが有効な問題、SiriKit をインストールする場合は、必要な権利をアプリ ID、識別子の署名とプロビジョニング プロファイルが構成されている正しく Apple の開発者ポータルと Visual Studio の両方で for mac。 ことを確認します。
 
 ### <a name="requesting-siri-authorization"></a>Siri の承認を要求します。
 
-を、アプリが任意のユーザーの特定のボキャブラリを追加または Siri にインテント拡張機能が接続する前に承認 Siri にアクセスするユーザーから要求する必要があります。
+アプリは、ユーザーの特定の語彙を追加または Siri に接続する Intents 拡張機能を前に Siri にアクセスするユーザーから承認を要求する必要があります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-アプリの編集`Info.plist`ファイルに切り替え、**ソース**表示し、追加、 `NSSiriUsageDescription` Siri と新機能のアプリの使用方法を説明する文字列値を持つキーの種類のデータが送信されます。 たとえば、MonkeyChat アプリでは、「MonkeyChat 連絡先は Siri に送信する」と可能性があります。
+アプリの編集`Info.plist`に切り替え、ファイル、**ソース**表示し、追加、 `NSSiriUsageDescription` Siri と何のアプリの使用方法を説明する文字列値を持つキーの種類のデータが送信されます。 たとえば、MonkeyChat アプリでは、「MonkeyChat 連絡先は Siri に送信する」と可能性があります。
 
 [![](implementing-sirikit-images/request01.png "Info.plist エディターで NSSiriUsageDescription")](implementing-sirikit-images/request01.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-アプリの編集`Info.plist`ファイルを追加、 `NSSiriUsageDescription` Siri と新機能のアプリの使用方法を説明する文字列値とキーの種類のデータが送信されます。 たとえば、MonkeyChat アプリでは、「MonkeyChat 連絡先は Siri に送信する」と可能性があります。
+アプリの編集`Info.plist`追加ファイルを開き、 `NSSiriUsageDescription` Siri と何のアプリの使用方法を説明する文字列値を持つキーの種類のデータが送信されます。 たとえば、MonkeyChat アプリでは、「MonkeyChat 連絡先は Siri に送信する」と可能性があります。
 
 [![](implementing-sirikit-images/request01w.png "Info.plist エディターで NSSiriUsageDescription")](implementing-sirikit-images/request01w.png#lightbox)
 
 -----
 
-呼び出す、`RequestSiriAuthorization`のメソッド、`INPreferences`アプリが初めて起動したときのクラスです。 編集、`AppDelegate.cs`クラスし、作成、`FinishedLaunching`次のようなメソッドの検索。
+呼び出す、`RequestSiriAuthorization`のメソッド、`INPreferences`クラスのアプリを初めて起動したとき。 編集、`AppDelegate.cs`クラスを作成、`FinishedLaunching`メソッドの次のようになります。
 
 
 ```csharp
@@ -294,13 +294,13 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-初めてこのメソッドが呼び出されたとき、アラートは、アプリケーションに Siri のアクセスを許可するユーザー入力を求める表示します。 メッセージに、開発者が追加される、`NSSiriUsageDescription`上、このアラートに表示されます。 使用できるユーザーには、最初に、アクセスが拒否された場合、**設定**アプリケーションへのアクセスを許可するアプリです。
+このメソッドが呼び出されると、最初に、アプリケーションに Siri のアクセスを許可するように求めるアラートは表示します。 メッセージに、開発者が追加、`NSSiriUsageDescription`上、このアラートに表示されます。 使用できる、ユーザーには、最初に、アクセスが拒否された場合、**設定**アプリへのアクセスを許可するアプリです。
 
-いつでも、アプリが Siri を呼び出すことによってアクセスするアプリの機能を確認できます、`SiriAuthorizationStatus`のメソッド、`INPreferences`クラスです。
+アプリが Siri を呼び出すことによってアクセスするアプリの機能の確認時に、いつでも、`SiriAuthorizationStatus`のメソッド、`INPreferences`クラス。
 
 ### <a name="localization-and-siri"></a>ローカリゼーションと Siri
 
-IOS デバイス、ユーザーは Siri とは異なる、システムの既定の言語を選択することです。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、`INPreferences`クラス Siri から言語コードを取得します。 例えば:
+IOS デバイスで、ユーザーは Siri とは異なるシステムの既定の言語を選択できます。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、 `INPreferences` Siri から言語のコードを取得するクラス。 例えば:
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -311,20 +311,20 @@ if (language == "en-US") {
 }
 ```
 
-### <a name="adding-user-specific-vocabulary"></a>ユーザー固有のボキャブラリの追加
+### <a name="adding-user-specific-vocabulary"></a>特定の語彙のユーザーを追加します。
 
-ボキャブラリを特定のユーザーがアプリの個々 のユーザーに固有の語句を提供しようとしています。 これらは、実行時にメインのアプリ (アプリ拡張機能) から、一覧の先頭に最も重要な条件を持つ、ユーザーの最も重要な使用の優先度に並べ替え用語の順序付きセットとして提供されます。
+特定の語彙をユーザーがアプリの個々 のユーザーに固有の語句を提供しようとしています。 これらは、メイン アプリ (アプリ拡張機能) から実行時に、リストの先頭にある最も重要な用語を持つ、ユーザーの最も重要な使用の優先度で順序付け、用語の順序付けされたセットとして提供されます。
 
-ユーザー固有のボキャブラリは、次のカテゴリのいずれかに属する必要があります。
+特定の語彙のユーザーは、次のカテゴリのいずれかに属する必要があります。
 
-- 名前 (つまり、アドレス帳フレームワークで管理されていない) に問い合わせてください。
+- 名前 (つまり、連絡先のフレームワークで管理されていない) にお問い合わせください。
 - 写真のタグ。
-- フォト アルバムの名前です。
-- トレーニングの名前です。
+- フォト アルバムの名前。
+- トレーニングの名前。
 
-カスタム ボキャブラリとして登録する用語を選択する場合は、用語のみを選択して、アプリに慣れていないユーザーをとなります。 決してレジスタ一般的な用語「My トレーニング」または「My アルバム」などです。 たとえば、MonkeyChat アプリは、ユーザーのアドレス帳に連絡先ごとに関連付けられているニックネームを登録します。
+カスタム語彙として登録する用語を選択する場合は、用語のみを選択して、アプリに慣れていないユーザーを誤解される可能性があります。 決して登録する一般的な用語「My トレーニング」または「My アルバム」など。 たとえば、MonkeyChat アプリは、各連絡先ユーザーのアドレス帳に関連付けられているニックネームを登録します。
 
-呼び出して、アプリがユーザーの特定のボキャブラリを提供、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡すと、`NSOrderedSet`メインのアプリからのコレクション。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいジョブを追加する前に、既存の用語を削除します。 例えば:
+アプリが呼び出すことによってユーザーの特定の語彙を提供します、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡して、`NSOrderedSet`メイン アプリから収集します。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいものを追加する前に、既存の用語を削除します。 例えば:
 
 ```csharp
 using System;
@@ -378,7 +378,7 @@ namespace MonkeyChatCommon
 }
 ```
 
-配置でこのコードでは、その可能性があるように呼び出されます。
+このコードで可能性があります呼び出すことが、次のように。
 
 ```csharp
 using System;
@@ -430,208 +430,208 @@ namespace MonkeyChat
 ```
 
 > [!IMPORTANT]
-> Siri を使用して、ヒントとしてカスタム ボキャブラリを見なし、できるだけ用語の大半が組み込まれます。 ただし、領域のカスタムのボキャブラリは登録する重要なことが限定されて_のみ_登録されている用語の合計数を最小限に抑えるため、複雑になる可能性がある用語。
+> Siri は、ヒントとしてカスタム語彙を処理し、可能な限り用語の多くが組み込まれます。 ただし、カスタム語彙がように登録する重要な制限のための領域_のみ_登録されている用語の合計数を最小限に抑えるため、複雑になる可能性がある用語。
 
-詳細についてを参照してください、[ユーザー固有のボキャブラリ リファレンス](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム ボキャブラリの参照を指定する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)です。
+詳細についてを参照してください、[ユーザー固有のボキャブラリ リファレンス](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム ボキャブラリの参照を指定する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)します。
 
-### <a name="adding-app-specific-vocabulary"></a>アプリ固有の仕様のボキャブラリの追加
+### <a name="adding-app-specific-vocabulary"></a>アプリ固有のボキャブラリの追加
 
-アプリ固有のボキャブラリは、すべての車両のタイプまたはトレーニング名などのアプリのユーザーに、特定の単語と語句を認識するを定義します。 定義されているこれらは、アプリケーションの一部であるため、`AppIntentVocabulary.plist`メインのアプリ バンドルの一部としてファイル。 さらに、これらの単語や語句をローカライズする必要があります。
+アプリの特定のボキャブラリは、すべての車両のタイプやトレーニングの名前など、アプリのユーザーに、特定の単語や語句を認識するを定義します。 定義されているこれらは、アプリケーションの一部であるため、`AppIntentVocabulary.plist`メイン アプリ バンドルの一環としてファイル。 さらに、これらの単語や語句をローカライズする必要があります。
 
-特定のアプリな用語は、次のカテゴリのいずれかに属する必要があります。
+アプリ固有の用語は、次のカテゴリのいずれかに属する必要があります。
 
 - オプションをオーバーライドします。
-- トレーニングの名前です。
+- トレーニングの名前。
 
-アプリの特定ボキャブラリ ファイルには、2 つのルート レベル キーが含まれています。
+アプリの特定の語彙ファイルには、2 つのルート レベルのキーが含まれています。
 
-- `ParameterVocabularies` **必要な**-アプリのカスタムの条項およびに適用される目的としたパラメーターを定義します。
-- `IntentPhrases` **省略可能な**-例語句で定義されているカスタムの条項を使用してが含まれています、`ParameterVocabularies`です。
+- `ParameterVocabularies` **必要な**-アプリのカスタムの条項とに適用される目的のパラメーターを定義します。
+- `IntentPhrases` **省略可能な**-で定義されているカスタムの用語を使用して例のフレーズを含む、`ParameterVocabularies`します。
 
-内の各エントリ、 `ParameterVocabularies` ID 文字列、用語に適用されるという用語は、目的を指定する必要があります。 さらに、1 つの用語は、複数の意図的に適用可能性があります。
+各エントリで、 `ParameterVocabularies` ID 文字列、用語と用語が適用される目的を指定する必要があります。 さらに、1 つの用語は、複数のインテントに適用可能性があります。
 
-許容される値と必要なファイルの構造の一覧については、Apple を参照してください[アプリ ボキャブラリ ファイル形式のリファレンス](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CustomVocabularyKeys.html#//apple_ref/doc/uid/TP40016875-CH10-SW1)です。
+使用可能な値と必要なファイル構造の一覧については、Apple を参照してください[アプリ ボキャブラリ ファイル形式のリファレンス](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CustomVocabularyKeys.html#//apple_ref/doc/uid/TP40016875-CH10-SW1)します。
 
-追加する、`AppIntentVocabulary.plist`アプリ プロジェクトへのファイルで、次の操作します。
+追加する、`AppIntentVocabulary.plist`アプリ プロジェクトにファイルで、次の操作を行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. プロジェクト名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**  >  **iOS**:
 
     [![](implementing-sirikit-images/plist01.png "プロパティ リストを追加します。")](implementing-sirikit-images/plist01.png#lightbox)
-2. ダブルクリックして、`AppIntentVocabulary.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、 **+** キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
+2. ダブルクリックして、`AppIntentVocabulary.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
+3. をクリックして、 **+** キーを追加するには、設定、**名前**に`ParameterVocabularies`と**型**に`Array`:
 
     [![](implementing-sirikit-images/plist02.png "ParameterVocabularies と配列の型に名前を設定します。")](implementing-sirikit-images/plist02.png#lightbox)
 4. 展開`ParameterVocabularies` をクリックし、 **+** ボタンをクリックし、設定、**型**に`Dictionary`:
 
-    [![](implementing-sirikit-images/plist03.png "型をディクショナリに設定します。")](implementing-sirikit-images/plist03.png#lightbox)
-5. クリックして、 **+** を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
+    [![](implementing-sirikit-images/plist03.png "ディクショナリに、型を設定します。")](implementing-sirikit-images/plist03.png#lightbox)
+5. をクリックして、 **+** 新しいキーを追加するには、設定、**名前**に`ParameterNames`と**型**に`Array`:
 
     [![](implementing-sirikit-images/plist04.png "ParameterNames と配列の型に名前を設定します。")](implementing-sirikit-images/plist04.png#lightbox)
-6. クリックして、 **+** を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
+6. をクリックして、 **+** を持つ新しいキーを追加する、**型**の`String`と利用可能なパラメーターの名前の 1 つとして値。 たとえば、 `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName キー")](implementing-sirikit-images/plist05.png#lightbox)
 7. 追加、`ParameterVocabulary`キーを`ParameterVocabularies`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist06.png "配列の型を持つ ParameterVocabularies キーに ParameterVocabulary キーを追加します。")](implementing-sirikit-images/plist06.png#lightbox)
+    [![](implementing-sirikit-images/plist06.png "ParameterVocabulary キー型の配列で ParameterVocabularies キーを追加します。")](implementing-sirikit-images/plist06.png#lightbox)
 8. 新しいキーを追加、**型**の`Dictionary`:
 
-    [![](implementing-sirikit-images/plist07.png "型のディクショナリに新しいキーを追加します。")](implementing-sirikit-images/plist07.png#lightbox)
-9. 追加、`VocabularyItemIdentifier`キーを**型**の`String`し、用語の一意の ID を指定します。
+    [![](implementing-sirikit-images/plist07.png "ディクショナリの型を持つ新しいキーを追加します。")](implementing-sirikit-images/plist07.png#lightbox)
+9. 追加、`VocabularyItemIdentifier`キーを**型**の`String`用語の一意の ID を指定。
 
-    [![](implementing-sirikit-images/plist08.png "VocabularyItemIdentifier キー文字列型を追加し、一意の ID を指定")](implementing-sirikit-images/plist08.png#lightbox)
+    [![](implementing-sirikit-images/plist08.png "VocabularyItemIdentifier キー文字列の型を追加し、一意の ID を指定")](implementing-sirikit-images/plist08.png#lightbox)
 10. 追加、`VocabularyItemSynonyms`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist09.png "型の配列の VocabularyItemSynonyms キーを追加します。")](implementing-sirikit-images/plist09.png#lightbox)
+    [![](implementing-sirikit-images/plist09.png "VocabularyItemSynonyms キー型の配列を追加します。")](implementing-sirikit-images/plist09.png#lightbox)
 11. 新しいキーを追加、**型**の`Dictionary`:
 
-    [![](implementing-sirikit-images/plist10.png "型のディクショナリに新しいキーを追加します。")](implementing-sirikit-images/plist10.png#lightbox)
-12. 追加、`VocabularyItemPhrase`キーを**型**の`String`という用語は、アプリを定義するとします。
+    [![](implementing-sirikit-images/plist10.png "ディクショナリの型を持つ新しいキーを追加します。")](implementing-sirikit-images/plist10.png#lightbox)
+12. 追加、`VocabularyItemPhrase`キーを**型**の`String`と、アプリの定義は、用語。
 
-    [![](implementing-sirikit-images/plist11.png "文字列型と、アプリを定義する用語の VocabularyItemPhrase キーを追加します。")](implementing-sirikit-images/plist11.png#lightbox)
-13. 追加、`VocabularyItemPronunciation`キーを**型**の`String`と用語の音声発音。
+    [![](implementing-sirikit-images/plist11.png "VocabularyItemPhrase キー文字列の型と、アプリを定義する用語を追加します。")](implementing-sirikit-images/plist11.png#lightbox)
+13. 追加、`VocabularyItemPronunciation`キーを**型**の`String`と用語のふりがな。
 
-    [![](implementing-sirikit-images/plist12.png "文字列型と用語の音声発音 VocabularyItemPronunciation キーを追加します。")](implementing-sirikit-images/plist12.png#lightbox)
+    [![](implementing-sirikit-images/plist12.png "文字列型と、用語のふりがな VocabularyItemPronunciation キーを追加します。")](implementing-sirikit-images/plist12.png#lightbox)
 14. 追加、`VocabularyItemExamples`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist13.png "型の配列の VocabularyItemExamples キーを追加します。")](implementing-sirikit-images/plist13.png#lightbox)
-15. いくつかの追加`String`用語の使用例を使用してキー。
+    [![](implementing-sirikit-images/plist13.png "VocabularyItemExamples キー型の配列を追加します。")](implementing-sirikit-images/plist13.png#lightbox)
+15. いくつかの追加`String`という用語の使用例を使用してキー。
 
-    [![](implementing-sirikit-images/plist14.png "用語の使用例をいくつかの文字列のキーを追加します。")](implementing-sirikit-images/plist14.png#lightbox)
-16. 任意の他のカスタムの条項を定義する必要があります、アプリを上記の手順を繰り返します。
+    [![](implementing-sirikit-images/plist14.png "用語の使用例をいくつかの文字列キーを追加します。")](implementing-sirikit-images/plist14.png#lightbox)
+16. 上記の手順を定義する必要があるアプリのカスタム条件を繰り返します。
 17. 折りたたみ、`ParameterVocabularies`キー。
 18. 追加、`IntentPhrases`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist15.png "型の配列の IntentPhrases キーを追加します。")](implementing-sirikit-images/plist15.png#lightbox)
+    [![](implementing-sirikit-images/plist15.png "IntentPhrases キー型の配列を追加します。")](implementing-sirikit-images/plist15.png#lightbox)
 19. 新しいキーを追加、**型**の`Dictionary`:
 
-    [![](implementing-sirikit-images/plist16.png "型のディクショナリに新しいキーを追加します。")](implementing-sirikit-images/plist16.png#lightbox)
-20. 追加、`IntentName`キーを**型**の`String`例では、インテントとします。
+    [![](implementing-sirikit-images/plist16.png "ディクショナリの型を持つ新しいキーを追加します。")](implementing-sirikit-images/plist16.png#lightbox)
+20. 追加、`IntentName`キーを**型**の`String`の例では、インテントと。
 
-    [![](implementing-sirikit-images/plist17.png "たとえば、型の文字列と目的で IntentName キーを追加します。")](implementing-sirikit-images/plist17.png#lightbox)
+    [![](implementing-sirikit-images/plist17.png "例では、型の文字列と目的の IntentName キーを追加します。")](implementing-sirikit-images/plist17.png#lightbox)
 21. 追加、`IntentExamples`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist18.png "型の配列の IntentExamples キーを追加します。")](implementing-sirikit-images/plist18.png#lightbox)
-22. いくつかの追加`String`用語の使用例を使用してキー。
+    [![](implementing-sirikit-images/plist18.png "IntentExamples キー型の配列を追加します。")](implementing-sirikit-images/plist18.png#lightbox)
+22. いくつかの追加`String`という用語の使用例を使用してキー。
 
-    [![](implementing-sirikit-images/plist19.png "用語の使用例をいくつかの文字列のキーを追加します。")](implementing-sirikit-images/plist19.png#lightbox)
-23. アプリでの使用例を提供する必要があります、インテントを上記の手順を繰り返します。
+    [![](implementing-sirikit-images/plist19.png "用語の使用例をいくつかの文字列キーを追加します。")](implementing-sirikit-images/plist19.png#lightbox)
+23. 上記の手順、アプリの使用例を提供する必要は任意のインテントを繰り返します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. プロジェクト名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しい項目 > Apple > プロパティの一覧 > Info.plist**:
+1. プロジェクト名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しい項目... > Apple > プロパティの一覧 > Info.plist**:
 
     [![](implementing-sirikit-images/plist01.w157-sml.png "新しい Info.plist を追加します。")](implementing-sirikit-images/plist01.w157.png#lightbox)
 
-2. ダブルクリックして、`AppIntentVocabulary.plist`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。
-3. クリックして、 **+** キーを追加するには、次のように設定します、**名前**に`ParameterVocabularies`と**型**に`Array`:。
+2. ダブルクリックして、`AppIntentVocabulary.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
+3. をクリックして、 **+** キーを追加するには、設定、**名前**に`ParameterVocabularies`と**型**に`Array`:
 
     [![](implementing-sirikit-images/plist02w.png "ParameterVocabularies と配列の型に名前を設定します。")](implementing-sirikit-images/plist02w.png#lightbox)
 4. 展開`ParameterVocabularies` をクリックし、 **+** ボタンをクリックし、設定、**型**に`Dictionary`:
 
-    [![](implementing-sirikit-images/plist03w.png "型をディクショナリに設定します。")](implementing-sirikit-images/plist03w.png#lightbox)
-5. クリックして、 **+** を新しいキーを追加するには、次のように設定します、**名**に`ParameterNames`と**型**に`Array`:。
+    [![](implementing-sirikit-images/plist03w.png "ディクショナリに、型を設定します。")](implementing-sirikit-images/plist03w.png#lightbox)
+5. をクリックして、 **+** 新しいキーを追加するには、設定、**名前**に`ParameterNames`と**型**に`Array`:
 
     [![](implementing-sirikit-images/plist04w.png "ParameterNames と配列の型に名前を設定します。")](implementing-sirikit-images/plist04w.png#lightbox)
-6. クリックして、 **+** を持つ新しいキーを追加する、**型**の`String`ととして利用可能なパラメーター名のいずれかの値。 たとえば、 `INStartWorkoutIntent.workoutName`:
+6. をクリックして、 **+** を持つ新しいキーを追加する、**型**の`String`と利用可能なパラメーターの名前の 1 つとして値。 たとえば、 `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName キー")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 追加、`ParameterVocabulary`キーを`ParameterVocabularies`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist06w.png "配列の型を持つ ParameterVocabularies キーに ParameterVocabulary キーを追加します。")](implementing-sirikit-images/plist06w.png#lightbox)
+    [![](implementing-sirikit-images/plist06w.png "ParameterVocabulary キー型の配列で ParameterVocabularies キーを追加します。")](implementing-sirikit-images/plist06w.png#lightbox)
 8. 新しいキーを追加、**型**の`Dictionary`:
 
-    [![](implementing-sirikit-images/plist07w.png "型のディクショナリに新しいキーを追加します。")](implementing-sirikit-images/plist07w.png#lightbox)
-9. 追加、`VocabularyItemIdentifier`キーを**型**の`String`し、用語の一意の ID を指定します。
+    [![](implementing-sirikit-images/plist07w.png "ディクショナリの型を持つ新しいキーを追加します。")](implementing-sirikit-images/plist07w.png#lightbox)
+9. 追加、`VocabularyItemIdentifier`キーを**型**の`String`用語の一意の ID を指定。
 
-    [![](implementing-sirikit-images/plist08w.png "文字列型で VocabularyItemIdentifier キーを追加して、用語の一意の ID を指定")](implementing-sirikit-images/plist08w.png#lightbox)
+    [![](implementing-sirikit-images/plist08w.png "VocabularyItemIdentifier キー文字列の型を追加して、用語の一意の ID を指定")](implementing-sirikit-images/plist08w.png#lightbox)
 10. 追加、`VocabularyItemSynonyms`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist09w.png "型の配列の VocabularyItemSynonyms キーを追加します。")](implementing-sirikit-images/plist09w.png#lightbox)
+    [![](implementing-sirikit-images/plist09w.png "VocabularyItemSynonyms キー型の配列を追加します。")](implementing-sirikit-images/plist09w.png#lightbox)
 11. 新しいキーを追加、**型**の`Dictionary`:
 
-    [![](implementing-sirikit-images/plist10w.png "型のディクショナリに新しいキーを追加します。")](implementing-sirikit-images/plist10w.png#lightbox)
-12. 追加、`VocabularyItemPhrase`キーを**型**の`String`という用語は、アプリを定義するとします。
+    [![](implementing-sirikit-images/plist10w.png "ディクショナリの型を持つ新しいキーを追加します。")](implementing-sirikit-images/plist10w.png#lightbox)
+12. 追加、`VocabularyItemPhrase`キーを**型**の`String`と、アプリの定義は、用語。
 
-    [![](implementing-sirikit-images/plist11w.png "文字列型と、アプリを定義する用語の VocabularyItemPhrase キーを追加します。")](implementing-sirikit-images/plist11w.png#lightbox)
-13. 追加、`VocabularyItemPronunciation`キーを**型**の`String`と用語の音声発音。
+    [![](implementing-sirikit-images/plist11w.png "VocabularyItemPhrase キー文字列の型と、アプリを定義する用語を追加します。")](implementing-sirikit-images/plist11w.png#lightbox)
+13. 追加、`VocabularyItemPronunciation`キーを**型**の`String`と用語のふりがな。
 
-    [![](implementing-sirikit-images/plist12w.png "文字列型と用語の音声発音 VocabularyItemPronunciation キーを追加します。")](implementing-sirikit-images/plist12w.png#lightbox)
+    [![](implementing-sirikit-images/plist12w.png "文字列型と、用語のふりがな VocabularyItemPronunciation キーを追加します。")](implementing-sirikit-images/plist12w.png#lightbox)
 14. 追加、`VocabularyItemExamples`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist13w.png "型の配列の VocabularyItemExamples キーを追加します。")](implementing-sirikit-images/plist13w.png#lightbox)
-15. いくつかの追加`String`用語の使用例を使用してキー。
+    [![](implementing-sirikit-images/plist13w.png "VocabularyItemExamples キー型の配列を追加します。")](implementing-sirikit-images/plist13w.png#lightbox)
+15. いくつかの追加`String`という用語の使用例を使用してキー。
 
-    [![](implementing-sirikit-images/plist14w.png "用語の使用例をいくつかの文字列のキーを追加します。")](implementing-sirikit-images/plist14w.png#lightbox)
-16. 任意の他のカスタムの条項を定義する必要があります、アプリを上記の手順を繰り返します。
+    [![](implementing-sirikit-images/plist14w.png "用語の使用例をいくつかの文字列キーを追加します。")](implementing-sirikit-images/plist14w.png#lightbox)
+16. 上記の手順を定義する必要があるアプリのカスタム条件を繰り返します。
 17. 折りたたみ、`ParameterVocabularies`キー。
 18. 追加、`IntentPhrases`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist15w.png "型の配列の IntentPhrases キーを追加します。")](implementing-sirikit-images/plist15w.png#lightbox)
+    [![](implementing-sirikit-images/plist15w.png "IntentPhrases キー型の配列を追加します。")](implementing-sirikit-images/plist15w.png#lightbox)
 19. 新しいキーを追加、**型**の`Dictionary`:
 
-    [![](implementing-sirikit-images/plist16w.png "型のディクショナリに新しいキーを追加します。")](implementing-sirikit-images/plist16w.png#lightbox)
-20. 追加、`IntentName`キーを**型**の`String`例では、インテントとします。
+    [![](implementing-sirikit-images/plist16w.png "ディクショナリの型を持つ新しいキーを追加します。")](implementing-sirikit-images/plist16w.png#lightbox)
+20. 追加、`IntentName`キーを**型**の`String`の例では、インテントと。
 
-    [![](implementing-sirikit-images/plist17w.png "たとえば、型の文字列と目的で IntentName キーを追加します。")](implementing-sirikit-images/plist17w.png#lightbox)
+    [![](implementing-sirikit-images/plist17w.png "例では、型の文字列と目的の IntentName キーを追加します。")](implementing-sirikit-images/plist17w.png#lightbox)
 21. 追加、`IntentExamples`キーを**型**の`Array`:
 
-    [![](implementing-sirikit-images/plist18w.png "型の配列の IntentExamples キーを追加します。")](implementing-sirikit-images/plist18w.png#lightbox)
-22. いくつかの追加`String`用語の使用例を使用してキー。
+    [![](implementing-sirikit-images/plist18w.png "IntentExamples キー型の配列を追加します。")](implementing-sirikit-images/plist18w.png#lightbox)
+22. いくつかの追加`String`という用語の使用例を使用してキー。
 
-    [![](implementing-sirikit-images/plist19w.png "用語の使用例をいくつかの文字列のキーを追加します。")](implementing-sirikit-images/plist19w.png#lightbox)
-23. アプリでの使用例を提供する必要があります、インテントを上記の手順を繰り返します。
+    [![](implementing-sirikit-images/plist19w.png "用語の使用例をいくつかの文字列キーを追加します。")](implementing-sirikit-images/plist19w.png#lightbox)
+23. 上記の手順、アプリの使用例を提供する必要は任意のインテントを繰り返します。
 
 -----
 
 > [!IMPORTANT]
-> `AppIntentVocabulary.plist`が登録される開発中にデバイスでテストに Siri をカスタムのボキャブラリを組み込む Siri の時間がかかる可能性があります。 その結果、テスト担当者が更新されたときに、アプリ固有のボキャブラリをテストする前に数分間待機する必要があります。
+> `AppIntentVocabulary.plist`登録は、開発中にデバイスのテストで Siri とカスタム語彙を反映するための Siri の時間がかかる場合があります。 その結果、テスト担当者が更新されたときに、アプリの特定の語彙をテストする前に数分間待機する必要があります。
 
-詳細についてを参照してください、[アプリ ボキャブラリ リファレンス](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム ボキャブラリの参照を指定する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)です。
+詳細についてを参照してください、[アプリ固有のボキャブラリ リファレンス](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム ボキャブラリの参照を指定する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)します。
 
-## <a name="adding-an-intents-extension"></a>インテント拡張機能を追加
+## <a name="adding-an-intents-extension"></a>Intents の拡張機能を追加します。
 
-これで、アプリが SiriKit を採用する準備されて、開発者が Siri 統合に必要な変換を処理するソリューションに 1 つ (以上) の目的の拡張機能を追加する必要があります。
+SiriKit を採用するアプリケーションが準備できたので、開発者は Siri の統合に必要なインテントを処理するためにソリューションに 1 つ (以上) の Intents 拡張機能を追加する必要があります。
 
-それぞれの目的は、必要な拡張機能、次の操作を行います。
+Intents 拡張機能が必要な各、次の操作を行います。
 
-- Xamarin.iOS アプリ ソリューションには、目的の拡張機能プロジェクトを追加します。
-- 目的の拡張機能の構成`Info.plist`ファイル。
-- インテントの拡張機能の主なクラスを変更します。
+- Intents の拡張機能プロジェクトを Xamarin.iOS アプリのソリューションに追加します。
+- Intents の拡張機能を構成する`Info.plist`ファイル。
+- Intents の拡張機能の主なクラスを変更します。
 
-詳細についてを参照してください、[インテント拡張子 Reference](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[インテントの拡張機能の参照を作成する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW1)です。
+詳細についてを参照してください、 [、Intents 拡張機能の参照](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[Intents の拡張機能の参照を作成する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW1)します。
 
 ### <a name="creating-the-extension"></a>拡張機能を作成します。
 
-ソリューションにインテント拡張機能を追加するには、次の操作を行います。
+Intents の拡張機能をソリューションに追加するには、次の操作を行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右クリックし、**ソリューション名**で、**ソリューション パッド**選択**追加** > **新しいプロジェクトの追加.**.
+1. 右クリックし、**ソリューション名**で、 **Solution Pad**選択**追加** > **新しいプロジェクトの追加.**.
 2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **目的とした拡張機能** をクリックし、**次**ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents05.png "インテントの拡張機能を選択します。")](implementing-sirikit-images/intents05.png#lightbox)
-3. 次を入力、**名前**目的とした拡張機能とクリック、**次**ボタン。 
+3. 次を入力、**名前**目的とした拡張機能をクリックして、**次**ボタン。 
 
     [![](implementing-sirikit-images/intents06.png "インテントの拡張機能の名前を入力します。")](implementing-sirikit-images/intents06.png#lightbox)
-4. 最後をクリックして、**作成**アプリ ソリューションを目的とした拡張機能を追加する。 
+4. 最後に、クリックして、**作成**アプリ ソリューションに、目的の拡張機能を追加するボタン。 
 
-    [![](implementing-sirikit-images/intents07.png "アプリ ソリューションを目的とした拡張機能を追加します。")](implementing-sirikit-images/intents07.png#lightbox)
-5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成された目的とした拡張機能のフォルダーです。 (つまり、アプリは、上記で作成) 共通の共有コード ライブラリのプロジェクトの名前を確認し、をクリックして、 **OK**ボタンをクリックします。 
+    [![](implementing-sirikit-images/intents07.png "目的の拡張機能をアプリ ソリューションに追加します。")](implementing-sirikit-images/intents07.png#lightbox)
+5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成した目的の拡張機能のフォルダー。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタン。 
 
-    [![](implementing-sirikit-images/intents08.png "共通の共有コード ライブラリのプロジェクトの名前を選択します。")](implementing-sirikit-images/intents08.png#lightbox)
+    [![](implementing-sirikit-images/intents08.png "共通の共有コード ライブラリ プロジェクトの名前を選択します。")](implementing-sirikit-images/intents08.png#lightbox)
     
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 右クリックし、**ソリューション名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加.**.
-2. ダイアログ ボックスから選択**Visual c# > iOS の拡張機能 > 目的とした拡張機能** をクリックし、**次**ボタン。
+2. ダイアログ ボックスから選択**Visual C# > iOS 拡張機能 > 目的の拡張機能** をクリックし、 **次へ**ボタン。
 
     [![](implementing-sirikit-images/intents05.w157-sml.png "インテントの拡張機能を選択します。")](implementing-sirikit-images/intents05.w157.png#lightbox)
-3. 次を入力、**名前**目的とした拡張機能とをクリックして、 **[ok]** ボタンをクリックします。
-1. **ソリューション エクスプ ローラー**を右クリックし、**参照**インテントの新しく作成された拡張機能のフォルダーを選択して**追加 > 参照**です。 (つまり、アプリは、上記で作成) 共通の共有コード ライブラリのプロジェクトの名前を確認し、をクリックして、 **OK**ボタンをクリックします。
+3. 次を入力、**名前**目的とした拡張機能をクリックして、 **OK**ボタン。
+1. **ソリューション エクスプ ローラー**を右クリックし、**参照**フォルダーを新しく作成された Intents 拡張機能の選択と**追加 > 参照**。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタン。
 
-    [![](implementing-sirikit-images/intents08w.png "共通の共有コード ライブラリのプロジェクトの名前を選択します。")](implementing-sirikit-images/intents08w.png#lightbox)
+    [![](implementing-sirikit-images/intents08w.png "共通の共有コード ライブラリ プロジェクトの名前を選択します。")](implementing-sirikit-images/intents08w.png#lightbox)
     
 -----
 
@@ -639,57 +639,57 @@ namespace MonkeyChat
 
 ### <a name="configuring-the-infoplist"></a>Info.plist の構成
 
-アプリのソリューションに追加した目的の拡張機能のそれぞれについてで構成する必要があります、`Info.plist`アプリを使用するファイル。
+アプリのソリューションに追加する Intents 拡張機能のそれぞれについてで構成する必要があります、`Info.plist`ファイルをアプリで動作します。
 
-アプリがの既存のキーを持つ、一般的なアプリの拡張と同じように`NSExtension`と`NSExtensionAttributes`です。 インテント拡張では、構成する必要がある 2 つの新しい属性があります。
+一般的なアプリ拡張機能と同じようにアプリの既存のキーには`NSExtension`と`NSExtensionAttributes`します。 Intents の拡張機能には、構成する必要がある 2 つの新しい属性があります。
 
-[![](implementing-sirikit-images/intents01.png "構成する必要がある 2 つの新しい属性")](implementing-sirikit-images/intents01.png#lightbox)
+[![](implementing-sirikit-images/intents01.png "2 つの新しい属性を構成する必要があります。")](implementing-sirikit-images/intents01.png#lightbox)
 
-- **IntentsSupported** : は必須であり、アプリが目的とした拡張機能をサポートする目的のクラス名の配列で構成されます。
-- **IntentsRestrictedWhileLocked** -アプリ拡張機能のロック画面の動作を指定するため、省略可能なキーです。 アプリが目的とした拡張機能から使用する場合にログインするユーザーが要求する目的のクラス名の配列で構成されます。
+- **IntentsSupported** - は必須であり、アプリが目的とした拡張機能をサポートする目的のクラス名の配列で構成されます。
+- **IntentsRestrictedWhileLocked** -拡張機能のロック画面の動作を指定する、アプリの省略可能なキーします。 目的とした拡張機能から使用する場合にログインするユーザーを必要とするアプリの必要を目的としたクラス名の配列で構成されます。
 
-目的とした拡張機能の構成に`Info.plist`ファイルをダブルクリック、**ソリューション エクスプ ローラー**編集用に開きます。 次に、スイッチ、**ソース**を表示し、展開、`NSExtension`と`NSExtensionAttributes`エディター内のキー。
+目的の拡張機能の構成に`Info.plist`ファイルをダブルクリックします、**ソリューション エクスプ ローラー**編集用に開きます。 次に、切り替える、**ソース**を表示し、展開、`NSExtension`と`NSExtensionAttributes`エディター内のキー。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](implementing-sirikit-images/intents02.png "エディターで NSExtension と NSExtensionAttributes キー")](implementing-sirikit-images/intents02.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](implementing-sirikit-images/intents02w.png "エディターで NSExtension と NSExtensionAttributes キー")](implementing-sirikit-images/intents02w.png#lightbox)
 
 -----
 
-展開して、`IntentsSupported`キーし、この拡張機能がサポートする任意の目的としたクラスの名前を追加します。 例の MonkeyChat アプリのサポート、 `INSendMessageIntent`:
+展開、`IntentsSupported`キーし、はこの拡張機能をサポートする任意の目的としたクラスの名前を追加します。 例 MonkeyChat アプリでは、サポート、 `INSendMessageIntent`:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](implementing-sirikit-images/intents09.png "INSendMessageIntent キー")](implementing-sirikit-images/intents09.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](implementing-sirikit-images/intents09w.png "INSendMessageIntent キー")](implementing-sirikit-images/intents09w.png#lightbox)
 
 -----
 
-必要に応じて、アプリでは、ユーザーが特定の目的を使用して、展開するデバイスにログオンする必要がある場合、`IntentRestrictedWhileLocked`キーし、アクセスが制限の目的のクラス名を追加します。 例 MonkeyChat アプリのユーザー ログインする必要ありますが追加されましたので、チャット メッセージを送信する`INSendMessageIntent`:
+必要に応じて、アプリでは、ユーザーが特定の目的を使用して、展開するデバイスにログオンする必要がある場合、`IntentRestrictedWhileLocked`キーし、アクセスが制限されたインテントのクラス名を追加します。 例 MonkeyChat アプリでは、ユーザーでログインするありますが追加されましたので、チャット メッセージを送信する`INSendMessageIntent`:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](implementing-sirikit-images/intents10.png "追加した INSendMessageIntent キー")](implementing-sirikit-images/intents10.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](implementing-sirikit-images/intents10w.png "追加した INSendMessageIntent キー")](implementing-sirikit-images/intents10w.png#lightbox)
 
 -----
 
 
-使用可能な目的としたドメインの完全な一覧を参照してください Apple の[ドメインの参照を目的とした](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)です。
+目的の使用可能なドメインの一覧は、Apple を参照してください[ドメインの参照を目的とした](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)します。
 
-### <a name="configuring-the-main-class"></a>メインのクラスを構成します。
+### <a name="configuring-the-main-class"></a>メイン クラスを構成します。
 
-次に、開発者は、Siri を目的とした拡張機能のメイン エントリ ポイントとして機能する主要なクラスを構成する必要があります。 サブクラスである必要があります、`INExtension`に準拠している、`IINIntentHandler`を委任します。 例えば:
+次に、開発者は Siri を目的とした拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成する必要があります。 サブクラス化する必要があります`INExtension`に準拠している`IINIntentHandler`を委任します。 例えば:
 
 ```csharp
 using System;
@@ -724,25 +724,25 @@ namespace MonkeyChatIntents
 }
 ```
 
-アプリを目的とした拡張機能のメイン クラスに実装する必要がある 1 つの単独のメソッドが、`GetHandler`メソッドです。 このメソッドは渡しインテント SiriKit であり、アプリを返す必要があります、**インテント ハンドラー**特定の目的の型に一致します。
+アプリを目的とした拡張機能の主なクラスで実装する必要があります 1 つの群れメソッドは、`GetHandler`メソッド。 このメソッドは、SiriKit によってインテントを渡され、アプリに返す必要があります、**インテント ハンドラー**目的は、特定の種類に対応します。
 
-例の MonkeyChat アプリは、1 つの目的のみを処理するためにそれ自体を返している、`GetHandler`メソッドです。 場合は、拡張機能には、1 つ以上の目的が処理される、開発者はインテント種類ごとにクラスを追加し、ここに基づいてインスタンスを返す、`Intent`メソッドに渡されます。
+MonkeyChat アプリの例は、1 つのインテントのみを処理するためにそれ自体を返している、`GetHandler`メソッド。 開発者はインテントの種類ごとにクラスを追加およびここに基づいてインスタンスを返す場合は、拡張機能は、1 つ以上のインテントを処理、`Intent`メソッドに渡されます。
 
-### <a name="handling-the-resolve-stage"></a>解決ステージの処理
+### <a name="handling-the-resolve-stage"></a>解決の段階の処理
 
-解決ステージは目的とした拡張機能が明確にし、パラメーターを検証する場所から渡された Siri とユーザーのメッセージ交換を使用して設定されています。
+解決ステージが目的とした拡張機能が明確にし、パラメーターを検証する場所で渡され Siri から、ユーザーのメッセージ交換を使用して設定されています。
 
-Siri から送信された各パラメーターの場合は、`Resolve`メソッドです。 アプリは、アプリがユーザーから正しい答えを取得する Siri のヘルプを必要がありますすべてのパラメーターに対してこのメソッドを実装する必要があります。
+Siri から送信される各パラメーターには、`Resolve`メソッド。 アプリは、アプリが、ユーザーから正しい解答を取得する Siri のヘルプを必要がありますすべてのパラメーターに対してこのメソッドを実装する必要があります。
 
-例の MonkeyChat アプリの場合は、目的とした拡張機能は、メッセージを送信する 1 つまたは複数の受信者を必要となります。 各受信者一覧にするには、拡張機能は、次の結果を持つことができる連絡先の検索を行う必要があります。
+例 MonkeyChat アプリの場合、目的とした拡張機能は、メッセージを送信する 1 つまたは複数の受信者を必要となります。 各受信者の一覧で、拡張機能は、次の結果を持つことができますが連絡先の検索を実行する必要があります。
 
-- 1 つだけの一致する連絡先が見つかりました。
+- 1 つだけ一致する連絡先が見つかりました。
 - 2 つ以上の一致する連絡先が見つかりました。
 - 一致する連絡先が見つかりませんでした。
 
-さらに、MonkeyChat では、メッセージの本文のコンテンツが必要です。 ユーザーが指定されていないこのコンテンツのユーザー入力を求める Siri 必要があります。
+さらに、MonkeyChat では、メッセージの本文のコンテンツが必要です。 場合は、ユーザーが指定されていないこの Siri をコンテンツのユーザーに確認する必要があります。
 
-目的とした拡張機能は、これらの各ケースに対処する必要があります。
+目的の拡張機能は、これらの各ケースを適切に処理する必要があります。
 
 
 ```csharp
@@ -786,11 +786,11 @@ public void ResolveContent (INSendMessageIntent intent, Action<INStringResolutio
 }
 ```
 
-詳細についてを参照してください、[解決ステージ Reference](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[処理の目的の参照の解決と](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ResolvingandHandlingIntents.html#//apple_ref/doc/uid/TP40016875-CH5-SW1)です。
+詳細についてを参照してください、[解決ステージの参照を](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[インテントの処理の参照の解決と](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ResolvingandHandlingIntents.html#//apple_ref/doc/uid/TP40016875-CH5-SW1)します。
 
 ### <a name="handling-the-confirm-stage"></a>確認段階の処理
 
-確認段階では、すべてのユーザーの要求を満たすために情報を持っていることが確認の目的とした拡張機能のチェック場所です。 アプリがに沿って確認はすべて、サポートの詳細についてはについて発生 Siri をことを確認できるユーザーを使用して目的のアクションであることを送信しようとするとします。
+確認段階は、目的の拡張機能がすべてのユーザーの要求を満たすために情報を持っていることを確認します。 アプリがに沿って確認は、内容の補足詳細情報をすべてが行われる Siri をことを確認できるユーザーと目的のアクションは、このようにを送信しようとするとします。
 
 ```csharp
 [Export ("confirmSendMessage:completion:")]
@@ -805,11 +805,11 @@ public void ConfirmSendMessage (INSendMessageIntent intent, Action<INSendMessage
 }
 ```
 
-詳細についてを参照してください、[確認ステージ Reference](~/ios/platform/sirikit/understanding-sirikit.md)です。
+詳細についてを参照してください、[確認段階の参照を](~/ios/platform/sirikit/understanding-sirikit.md)します。
 
 ### <a name="processing-the-intent"></a>目的の処理
 
-これは、ここで、目的とした拡張機能実際には、タスクを実行して、ユーザーの要求を満たすため、ユーザーに通知することができますので、Siri に結果を渡しますポイントです。
+これは、目的とした拡張機能をユーザーの要求を満たすため、ユーザーの情報を把握できるように、Siri に結果を渡すタスクが実行します実際にはポイントです。
 
 
 ```csharp
@@ -850,92 +850,92 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 }
 ```
 
-詳細についてを参照してください、[処理ステージ Reference](~/ios/platform/sirikit/understanding-sirikit.md)です。
+詳細についてを参照してください、[処理ステージの参照を](~/ios/platform/sirikit/understanding-sirikit.md)します。
 
-## <a name="adding-an-intents-ui-extension"></a>インテント UI 拡張機能を追加
+## <a name="adding-an-intents-ui-extension"></a>Intents UI 拡張機能を追加します。
 
-省略可能なインテント UI 拡張機能では、アプリの UI と Siri エクスペリエンスにブランド化する機会を表示され、アプリに接続されていると思われるユーザーを作成します。 この拡張機能では、アプリは、ブランドだけでなく、トラン スクリプトにビジュアルと他の情報を表示できます。
+省略可能な Intents UI 拡張機能は、アプリの UI と Siri エクスペリエンスにブランド化する機会を表示します。 してアプリに接続されていると感じるユーザーです。 この拡張機能では、アプリはブランドとトラン スクリプトにビジュアルと他の情報を表示できます。
 
-[![](implementing-sirikit-images/intentsui01.png "UI 拡張機能の目的の出力例")](implementing-sirikit-images/intentsui01.png#lightbox)
+[![](implementing-sirikit-images/intentsui01.png "Intents UI 拡張機能の出力例")](implementing-sirikit-images/intentsui01.png#lightbox)
 
-目的の拡張機能と同じように、開発者はインテント UI 拡張機能の次の手順を行います。
+Intents の拡張機能と同様、開発者は、Intents UI 拡張機能を次の手順を実行します。
 
-- Xamarin.iOS アプリ ソリューションにインテント UI 拡張機能プロジェクトを追加します。
-- インテント UI 拡張機能の構成`Info.plist`ファイル。
-- インテント UI 拡張機能の主なクラスを変更します。
+- Intents UI 拡張機能プロジェクトを Xamarin.iOS アプリのソリューションに追加します。
+- Intents UI 拡張機能を構成する`Info.plist`ファイル。
+- Intents UI 拡張機能の主なクラスを変更します。
 
-詳細についてを参照してください、 [、インテント UI 拡張機能の参照](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム インターフェイス リファレンスを提供する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ProvidingaCustomInterface.html#//apple_ref/doc/uid/TP40016875-CH7-SW1)です。
+詳細についてを参照してください、 [Intents UI 拡張機能の参照を](~/ios/platform/sirikit/understanding-sirikit.md)と Apple の[カスタム インターフェイスのリファレンスを提供する](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ProvidingaCustomInterface.html#//apple_ref/doc/uid/TP40016875-CH7-SW1)します。
 
 ### <a name="creating-the-extension"></a>拡張機能を作成します。
 
-ソリューションにインテント UI 拡張機能を追加するには、次の操作を行います。
+Intents UI 拡張機能をソリューションに追加するには、次の操作を行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右クリックし、**ソリューション名**で、**ソリューション パッド**選択**追加** > **新しいプロジェクトの追加.**.
-2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **UI 拡張機能の目的とした** をクリックし、**次**ボタンをクリックします。 
+1. 右クリックし、**ソリューション名**で、 **Solution Pad**選択**追加** > **新しいプロジェクトの追加.**.
+2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **UI 拡張機能を目的とした** をクリックし、 **次へ**ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents11.png "インテント UI 拡張機能を選択します。")](implementing-sirikit-images/intents11.png#lightbox)
-3. 次を入力、**名前**目的とした拡張機能とクリック、**次**ボタン。 
+3. 次を入力、**名前**目的とした拡張機能をクリックして、**次**ボタン。 
 
     [![](implementing-sirikit-images/intents12.png "インテントの拡張機能の名前を入力します。")](implementing-sirikit-images/intents12.png#lightbox)
-4. 最後をクリックして、**作成**アプリ ソリューションを目的とした拡張機能を追加する。 
+4. 最後に、クリックして、**作成**アプリ ソリューションに、目的の拡張機能を追加するボタン。 
 
-    [![](implementing-sirikit-images/intents13.png "アプリ ソリューションを目的とした拡張機能を追加します。")](implementing-sirikit-images/intents13.png#lightbox)
-5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成された目的とした拡張機能のフォルダーです。 (つまり、アプリは、上記で作成) 共通の共有コード ライブラリのプロジェクトの名前を確認し、をクリックして、 **OK**ボタンをクリックします。 
+    [![](implementing-sirikit-images/intents13.png "目的の拡張機能をアプリ ソリューションに追加します。")](implementing-sirikit-images/intents13.png#lightbox)
+5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成した目的の拡張機能のフォルダー。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタン。 
 
-    [![](implementing-sirikit-images/intents14.png "共通の共有コード ライブラリのプロジェクトの名前を選択します。")](implementing-sirikit-images/intents14.png#lightbox)
+    [![](implementing-sirikit-images/intents14.png "共通の共有コード ライブラリ プロジェクトの名前を選択します。")](implementing-sirikit-images/intents14.png#lightbox)
     
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 右クリックし、**ソリューション名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加.**
-2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **UI 拡張機能の目的とした** をクリックし、**次**ボタンをクリックします。
-3. 次を入力、**名前**目的とした拡張機能とをクリックして、 **[ok]** ボタンをクリックします。
-5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成された目的とした拡張機能のフォルダーです。 (アプリは、上記で作成) を共通の共有コード ライブラリのプロジェクトの名前を確認し、 **OK**ボタンをクリックします。
+2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **UI 拡張機能を目的とした** をクリックし、 **次へ**ボタンをクリックします。
+3. 次を入力、**名前**目的とした拡張機能をクリックして、 **OK**ボタン。
+5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成した目的の拡張機能のフォルダー。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタンをクリックします。
     
 -----
 
 ### <a name="configuring-the-infoplist"></a>Info.plist の構成
 
-インテント UI 拡張機能の構成`Info.plist`アプリを操作するファイル。
+Intents UI 拡張機能の構成`Info.plist`ファイルをアプリで動作します。
 
-アプリがの既存のキーを持つ、一般的なアプリの拡張と同じように`NSExtension`と`NSExtensionAttributes`です。 インテント拡張では、1 つの新しい属性を構成する必要があります。
+一般的なアプリ拡張機能と同じようにアプリの既存のキーには`NSExtension`と`NSExtensionAttributes`します。 Intents の拡張機能を構成する必要がある 1 つの新しい属性があります。
 
-[![](implementing-sirikit-images/intents03.png "構成する必要がある 1 つの新しい属性")](implementing-sirikit-images/intents03.png#lightbox)
+[![](implementing-sirikit-images/intents03.png "1 つの新しい属性を構成する必要があります。")](implementing-sirikit-images/intents03.png#lightbox)
 
 **IntentsSupported**は必須であり、アプリが目的とした拡張機能をサポートする目的のクラス名の配列で構成されます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-目的の UI 拡張機能の構成に`Info.plist`ファイルをダブルクリック、**ソリューション エクスプ ローラー**編集用に開きます。 次に、スイッチ、**ソース**を表示し、展開、`NSExtension`と`NSExtensionAttributes`エディター内のキー。
+目的の UI 拡張機能の構成に`Info.plist`ファイルをダブルクリックします、**ソリューション エクスプ ローラー**編集用に開きます。 次に、切り替える、**ソース**を表示し、展開、`NSExtension`と`NSExtensionAttributes`エディター内のキー。
 
 [![](implementing-sirikit-images/intents04.png "エディターで NSExtension と NSExtensionAttributes キー")](implementing-sirikit-images/intents04.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-目的の UI 拡張機能の構成に`Info.plist`ファイルをダブルクリック、**ソリューション エクスプ ローラー**編集用に開きます。 展開して、`NSExtension`と`NSExtensionAttributes`エディター内のキー。
+目的の UI 拡張機能の構成に`Info.plist`ファイルをダブルクリックします、**ソリューション エクスプ ローラー**編集用に開きます。 展開、`NSExtension`と`NSExtensionAttributes`エディター内のキー。
 
-[![](implementing-sirikit-images/intents04w.png "エディター内の %t NSExtension と NSExtensionAttributes キー")](implementing-sirikit-images/intents04w.png#lightbox)
+[![](implementing-sirikit-images/intents04w.png "エディターで %t NSExtension と NSExtensionAttributes キー")](implementing-sirikit-images/intents04w.png#lightbox)
 
 -----
 
-展開して、`IntentsSupported`キーし、この拡張機能がサポートする任意の目的としたクラスの名前を追加します。 例の MonkeyChat アプリのサポート、 `INSendMessageIntent`:
+展開、`IntentsSupported`キーし、はこの拡張機能をサポートする任意の目的としたクラスの名前を追加します。 例 MonkeyChat アプリでは、サポート、 `INSendMessageIntent`:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](implementing-sirikit-images/intents15.png "INSendMessageIntent キー")](implementing-sirikit-images/intents15.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](implementing-sirikit-images/intents15w.png "INSendMessageIntent キー")](implementing-sirikit-images/intents15w.png#lightbox)
 
 -----
 
-使用可能な目的としたドメインの完全な一覧を参照してください Apple の[ドメインの参照を目的とした](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)です。
+目的の使用可能なドメインの一覧は、Apple を参照してください[ドメインの参照を目的とした](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)します。
 
-### <a name="configuring-the-main-class"></a>メインのクラスを構成します。
+### <a name="configuring-the-main-class"></a>メイン クラスを構成します。
 
-Siri を目的とした UI 拡張機能のメイン エントリ ポイントとして機能する主要なクラスを構成します。 サブクラスである必要があります、`UIViewController`に準拠している`IINUIHostedViewController`インターフェイスです。 例えば:
+Siri を目的とした UI の拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成します。 サブクラス化する必要があります`UIViewController`に準拠している`IINUIHostedViewController`インターフェイス。 例えば:
 
 ```csharp
 using System;
@@ -993,30 +993,30 @@ namespace MonkeyChatIntentsUI
 }
 ```
 
-Siri が合格、`INInteraction`クラスのインスタンス、`Configure`のメソッド、`UIViewController`インテント UI 拡張機能内でインスタンス。
+Siri を渡す、`INInteraction`クラスのインスタンス、`Configure`のメソッド、`UIViewController`インテント UI 拡張機能内のインスタンス。
 
-`INInteraction`オブジェクトは、次の 3 つの重要な情報を拡張機能を提供します。
+`INInteraction`オブジェクトは 3 つの重要な拡張機能に情報を提供します。
 
-1. 処理中のインテント オブジェクト。
-2. 目的とした応答オブジェクトから、`Confirm`と`Handle`目的とした拡張機能のメソッドです。
-3. アプリと Siri 間の相互作用の状態を定義する対話状態です。
+1. 処理対象のインテント オブジェクト。
+2. 目的の応答オブジェクトから、`Confirm`と`Handle`目的とした拡張機能のメソッド。
+3. アプリと Siri の間の対話の状態を定義する対話状態。
 
-`UIViewController`インスタンスが Siri との相互作用の原則クラスから継承しているため、 `UIViewController`UIKit の機能をすべてにアクセスします。
+`UIViewController`インスタンスは Siri と対話するための原則クラスから継承するため、 `UIViewController`、すべての UIKit の機能にアクセスします。
 
-Siri が呼び出されると、`Configure`のメソッド、`UIViewController`ビュー コント ローラーが Siri Snippit またはマップのカードでホストするかされることを示すビュー コンテキストを渡します。
+Siri を呼び出すと、`Configure`のメソッド、 `UIViewController` Snippit の Siri または Maps のカードでビュー コント ローラーのアプリケーションがホストされるか、ことを示すビュー コンテキストを渡します。
 
-Siri が、アプリがアプリでは、その構成が終了した後に、ビューの目的のサイズを返す必要がある完了ハンドラーに渡すこともできます。
+Siri は、アプリがアプリの構成が完了すると、ビューの目的のサイズを返す必要がある完了ハンドラーに渡すこともできます。
 
-### <a name="design-the-ui-in-ios-designer"></a>IOS デザイナーで、UI を設計します。
+### <a name="design-the-ui-in-ios-designer"></a>IOS Designer の UI の設計
 
-IOS デザイナーで目的の UI 拡張機能のユーザー インターフェイスをレイアウトします。 ダブルクリックして、拡張機能の`MainInterface.storyboard`ファイルで、**ソリューション エクスプ ローラー**編集用に開きます。 すべてのユーザー インターフェイスを構築し、変更を保存する必須の UI 要素にドラッグします。
+IOS Designer で Intents UI 拡張機能のユーザー インターフェイスのレイアウト。 拡張機能のダブルクリック`MainInterface.storyboard`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。 すべてのユーザー インターフェイスを構築し、変更を保存する必要な UI 要素にドラッグします。
 
 > [!IMPORTANT]
-> などの対話型要素を追加することができますが`UIButtons`または`UITextFields`を目的とした UI 拡張機能の`UIViewController`非対話型の目的とした UI と禁じこれら、およびユーザーでは、対話機能を使用できません。
+> などの対話型要素を追加することはできますが`UIButtons`または`UITextFields`を目的とした UI 拡張機能の`UIViewController`、非対話型で目的の UI として禁じこれらと、ユーザーは、対話機能を使用できません。
 
-### <a name="wire-up-the-user-interface"></a>ネットワーク上のユーザー インターフェイス
+### <a name="wire-up-the-user-interface"></a>ユーザー インターフェイスに接続
 
-インテント UI 拡張機能のユーザー インターフェイスが iOS デザイナーで作成、編集、`UIViewController`サブクラスと上書き、`Configure`次のようにメソッド。
+Intents UI 拡張機能のユーザー インターフェイスを iOS Designer で作成、編集、`UIViewController`サブクラス化とオーバーライド、`Configure`メソッドとして、次のとおりです。
 
 ```csharp
 [Export ("configureWithInteraction:context:completion:")]
@@ -1039,13 +1039,13 @@ public CGSize DesiredSize ()
 
 ### <a name="overriding-the-default-siri-ui"></a>既定の Siri UI をオーバーライドします。
 
-インテント UI 拡張機能が常にする、アプリのアイコンと、UI の上部にある名などの他の Siri 内容と共に表示または、目的に基づいて、(送信やキャンセル) などのボタンが下部に表示されます。
+Intents UI 拡張機能は常にする UI の上部にある名前とアプリのアイコンなどの他の Siri コンテンツと共に表示されますかに基づく目的、下部にある (送信またはキャンセル) などのボタンが表示されます。
 
-アプリが Siri が既定では、メッセージングなどのユーザーに表示されている情報や、アプリがアプリに合わせて調整いずれかの既定のエクスペリエンスを置き換えることができます場所マップに置き換えることができます、いくつかのインスタンスが生じます。
+アプリケーションが Siri が既定では、メッセージングなど、ユーザーに表示されている情報や、アプリがアプリに合わせていずれかの既定のエクスペリエンスを置き換えることができます、マップに置き換えることがいくつかのインスタンスがあります。
 
-インテント UI 拡張機能が既定の Siri UI の要素をオーバーライドする必要がある場合、`UIViewController`サブクラスを実装する必要があります、`IINUIHostedViewSiriProviding`インターフェイスと、特定のインターフェイス要素の表示にオプトインします。
+Intents UI 拡張機能は、既定の Siri の UI の要素をオーバーライドする必要がある場合、`UIViewController`サブクラスを実装する必要があります、`IINUIHostedViewSiriProviding`インターフェイスと特定のインターフェイス要素を表示するときにオプトインします。
 
-次のコードを追加、`UIViewController`サブクラス Siri インテント UI 拡張機能が既にメッセージの内容を表示することを確認します。
+次のコードを追加、 `UIViewController` Siri インテント UI 拡張機能が既にメッセージの内容を表示することを通知するサブクラスです。
 
 ```csharp
 public bool DisplaysMessage {
@@ -1055,15 +1055,15 @@ public bool DisplaysMessage {
 
 ### <a name="considerations"></a>注意事項
 
-Apple では、開発者がデザインと目的の UI 拡張機能を実装するときに、次の点を考慮することを示しています。
+Apple では、開発者が設計と目的の UI 拡張機能を実装するときに、以下の点を実行することを示しています。
 
-- **重視のメモリ使用量をする**- ためのインテント UI 拡張機能は一時的なものとシステムによる制限より完全アプリとも緊密なメモリの制約がだけで、短い形式の時刻を表示します。
-- **最小値と最大サイズの表示の検討**-インテント UI 拡張機能がすべての iOS デバイスの種類、サイズと方向に良いことを確認してください。 さらに、アプリが Siri に送り返す必要なサイズできないことがありますを許可します。
-- **柔軟でアダプティブ レイアウト パターンを使用して**再び、UI がないすべてのデバイスに優れたいることを確認します。
+- **意識のメモリ使用量をする**- ため、目的の UI 拡張機能は一時的なものと、システムより完全なアプリとも緊密なメモリの制約では、しばらくの間、表示のみ。
+- **最小値と最大のビューのサイズを検討してください**-目的の UI 拡張機能がすべての iOS デバイスの種類、サイズと向きを気に入ったことを確認します。 さらに、目的のサイズ、アプリから Siri に返される可能性がありますを許可することができません。
+- **優れた柔軟性とアダプティブのレイアウトのパターンを使用して、** - もう一度、UI がないすべてのデバイスで優れたいることを確認します。
 
 ## <a name="summary"></a>まとめ
 
-この記事は、SiriKit をカバーし、iOS デバイスで Siri とマップのアプリを使用してユーザーがアクセスできるサービスを提供する Xamarin.iOS アプリに追加する方法を示すは。
+この記事では、SiriKit をカバーし、iOS デバイスで Siri とマップ アプリを使用してユーザーがアクセスできるサービスを提供する Xamarin.iOS アプリに追加する方法を示すは。
 
 
 
@@ -1071,7 +1071,7 @@ Apple では、開発者がデザインと目的の UI 拡張機能を実装す�
 ## <a name="related-links"></a>関連リンク
 
 - [ElizaChat サンプル](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
-- [SiriKit プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
-- [インテント Framework リファレンス](https://developer.apple.com/reference/intents)
-- [目的の UI フレームワークのリファレンス](https://developer.apple.com/reference/intentsui)
-- [目的のドメインの参照](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)
+- [SiriKit のプログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
+- [インテントのフレームワーク参照](https://developer.apple.com/reference/intents)
+- [Intents UI フレームワークの参照](https://developer.apple.com/reference/intentsui)
+- [インテントのドメインの参照](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)

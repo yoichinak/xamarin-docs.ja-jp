@@ -3,22 +3,24 @@ title: RadioButton
 ms.prod: xamarin
 ms.assetid: 3C32EA3F-D917-C988-72C5-A17354DA791E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 1267491f2d9b7519f76651df059722420fa8e1eb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: be473580b24dba6b4f08384771e2097d368f8dc8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763115"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123597"
 ---
 # <a name="radiobutton"></a>RadioButton
 
-このセクションでは作成する (有効にする 1 つの無効化、他の) 2 つの相互に排他的なラジオ ボタンを使用して、 [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)と[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)ウィジェット。 いずれかのラジオ ボタンが押されたときに通知メッセージが表示されます。
+このセクションでは作成する (有効にする 1 つを使うと、他の無効に) 2 つの相互に排他的なラジオ ボタンを使用して、 [`RadioGroup`](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)
+そして [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
+ウィジェット。 いずれかのラジオ ボタンが押されたときに、トースト メッセージが表示されます。
 
 
-開く、 **Resources/layout/Main.axml**ファイルし、2 つ追加[ `RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)で入れ子にされた、s、 [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (内部、 [ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+開く、 **Resources/layout/Main.axml**ファイルし、2 つ追加[ `RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)で入れ子になった、s、 [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (内で、 [ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
 
 ```xml
 <RadioGroup
@@ -36,9 +38,10 @@ ms.locfileid: "30763115"
 </RadioGroup>
 ```
 
-重要です、 [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s はグループ化によって、 [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)要素、一度に 1 つ選択できるようにします。 このロジックは、Android のシステムによって自動的に処理されます。 ときに 1 つ[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)内でグループを選択すると、他はすべて自動的に解除します。
+重要ですが、 [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s をによってグループ化、 [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)要素、一度に 1 つ選択できるようにします。 このロジックは、Android のシステムによって自動的に処理されます。 1 つの場合 [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
+内でグループを選択すると、その他すべてが自動的に選択が解除されます。
 
-何かを行うときに各[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)は選択すると、私たちは、イベント ハンドラーを記述する必要があります。
+作業を行うときに各[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)は選択すると、私たちは、イベント ハンドラーを記述する必要があります。
 
 ```csharp
 private void RadioButtonClick (object sender, EventArgs e)
@@ -49,9 +52,11 @@ private void RadioButtonClick (object sender, EventArgs e)
 ```
 
 最初に、渡される送信者は、RadioButton にキャストされます。
-[ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/)メッセージには、選択したオプション ボタンのテキストが表示されます。
+、 [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
+メッセージには、選択したラジオ ボタンのテキストが表示されます。
 
-ここで、下部、 [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)メソッド、次の追加。
+ここで、下部にある、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
+メソッドは、以下を追加します。
 
 ```csharp
 RadioButton radio_red = FindViewById<RadioButton>(Resource.Id.radio_red);
@@ -61,11 +66,13 @@ radio_red.Click += RadioButtonClick;
 radio_blue.Click += RadioButtonClick;
 ```
 
-これは、それぞれのキャプチャ、 [ `RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)レイアウトから s し、新しく作成されたイベント handlerto を追加します。
+各キャプチャ、 [ `RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)レイアウトから新しく作成されたイベント handlerto を追加します。
 
 アプリケーションを実行します。
 
-**ヒント:** 状態を変更する必要がある場合 (場合など、保存された読み込み[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))、使用、 [ `Checked` ](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)プロパティ set アクセス操作子または[ `Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)メソッドです。
+**ヒント:** 自分で状態を変更する必要がある場合 (場合など、保存された読み込み[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)) を使用して、 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
+プロパティ set アクセス操作子または [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+メソッドをオーバーライドします。
 
-*このページの部分は変更を作成し、Android のオープン ソース プロジェクトで共有しての条項に従って使用作業に基づく、*
-[*クリエイティブ コモンズ 2.5 Attribution ライセンス*](http://creativecommons.org/licenses/by/2.5/). 
+*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
+[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/). 

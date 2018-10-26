@@ -1,22 +1,22 @@
 ---
 title: TvOS 10 のトラブルシューティング、Xamarin でビルドされたアプリ
-description: この記事は、tvOS 10 での Xamarin アプリを操作するためのいくつかのトラブルシューティングのヒントを提供します。 これには、App Store、および関連するバイナリの互換性、CFNetwork HttpProtocol、CloudKit、Core のイメージ、NSUserActivity、UIKit 問題について説明します。
+description: この記事では、Xamarin アプリでの tvOS 10 の操作のトラブルシューティングのヒントをいくつかを示します。 これには、App Store、および関連するバイナリの互換性、CFNetwork HttpProtocol、CloudKit、Core のイメージ、NSUserActivity、UIKit 問題について説明します。
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 4332caca2804da52bb565fe382932af691c39dab
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3815790cfb73f93f399c14d3da44aa3210725388
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788811"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119997"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>TvOS 10 のトラブルシューティング、Xamarin でビルドされたアプリ
 
-次のセクションでは、Xamarin とそれらの問題の解決策で tvOS 10 を使用する場合に発生する可能性がある既知の問題を一覧表示します。
+次のセクションでは、Xamarin とそれらの問題の解決策で tvOS 10 を使用するときに発生する既知の問題を一覧表示します。
 
 - [App Store](#App-Store)
 - [バイナリの互換性](#Binary-Compatibility)
@@ -32,8 +32,8 @@ ms.locfileid: "34788811"
 
 既知の問題:
 
- - サンド ボックス環境でアプリ内購入をテストするときに、認証ダイアログが 2 回表示さ可能性があります。
- - サンド ボックス環境でホストされているコンテンツをアプリ内購入をテストするときに、コンテンツのダウンロードが完了するまで、アプリが前面に表示になるたびにパスワード ダイアログ ボックスが表示されます。
+ - サンド ボックス環境でアプリ内購入をテストするときに認証ダイアログ ボックスが 2 回表示されます。
+ - サンド ボックス環境でホストされているコンテンツをアプリ内購入をテストするときに、コンテンツのダウンロードが完了するまで、アプリがフォア グラウンドに移動するたびにパスワード ダイアログ ボックスが表示されます。
 
 <a name="Binary-Compatibility" />
 
@@ -44,8 +44,8 @@ ms.locfileid: "34788811"
  - 呼び出す`NSObject.ValueForKey`は、`null`キー、例外が発生します。
  - 呼び出すときに、フォントを名前で参照する`UIFont.WithName`クラッシュが発生します。
  - 両方`NSURLSession`と NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http://' Url。
- - いずれかで、スーパー ビューのジオメトリを変更する場合、アプリはハングする可能性が、`ViewWillLayoutSubviews`または`LayoutSubviews`メソッドです。
- - すべての SSL/TLS 接続の RC4 対称暗号は既定では無効になります。 さらをできるだけ早く SHA 1 および 3 des 暗号化を使用して、アプリを停止することをお勧め、セキュリティで保護されたトランスポート API が不要になった SSLv3 をサポートします。
+ - いずれかでスーパー ビューのジオメトリを変更した場合、アプリがハング、`ViewWillLayoutSubviews`または`LayoutSubviews`メソッド。
+ - すべての SSL/TLS 接続の RC4 対称暗号は既定で無効になりました。 さらに、トランスポートのセキュリティで保護された API が SSLv3 がサポートされなくされ、アプリでは、SHA 1 および 3 des 暗号化を使用して、できるだけ早く停止するをお勧めします。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
@@ -57,19 +57,19 @@ ms.locfileid: "34788811"
 
 ## <a name="cloudkit"></a>CloudKit
 
-長時間実行される処理が返されます、 _「ファイルを保存するアクセス許可がありません」。_ エラーがあります。
+長時間実行される操作を返します、 _「ファイルを保存するためのアクセス許可がありません」。_ エラーがあります。
 
 <a name="CoreImage" />
 
 ## <a name="core-image"></a>Core イメージ
 
-`CIImageProcessor` API が、任意の入力 image の数になりました。 `CIImageProcessor` TvOS 10 ベータ 1 に含まれている API は削除されます。
+`CIImageProcessor` API で、任意の入力イメージ数をサポートします。 `CIImageProcessor` TvOS 10 beta 1 に含まれている API は削除されます。
 
 <a name="NSUserActivity" />
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-ハンドオフ操作後に、`UserInfo`のプロパティ、`NSUserActivity`オブジェクトを空にすることがあります。 明示的に呼び出す`BecomeCurrent`NSUserActivity' 問題を回避する現在のオブジェクト。
+ハンドオフ操作後に、`UserInfo`のプロパティを`NSUserActivity`オブジェクトを空にすることがあります。 明示的に呼び出す`BecomeCurrent`NSUserActivity' 問題を回避する現在のオブジェクト。
 
 <a name="UIKit" />
 
@@ -77,14 +77,14 @@ ms.locfileid: "34788811"
 
 既知の問題:
 
- - 背景の外観に、変更`UINavigationBar`、`UITabBar`または`UIToolBar`新しい外観を解決するのにはレイアウト パスの場合があります。 内のこれらの外観を変更しようとする`LayoutSubviews`、 `UpdateConstraints`、`WillLayoutSubviews`または`DidUpdateSubviews`イベントは、レイアウトが無限ループに陥ることができます。
- - TvOS 10 では、呼び出すことで、`RemoveGestureRecognizer`のメソッド、`UIView`オブジェクトが、実行中のジェスチャ レコグナイザーを明示的にキャンセルします。
- - 提示されたコント ローラーの表示、ステータス バーの外観を変更できます。
- - tvOS 10 を呼び出す開発者が要求`base.AwakeFromNib`をサブクラス化する`UIViewController`をオーバーライドして、`AwakeFromNib`メソッドです。
- - カスタム アプリ`UIView`オーバーライド サブクラス`LayoutSubviews`呼び出す前に、レイアウトをダーティと`base.LayoutSubviews`tvOS 10 内のレイアウトが無限ループをトリガーする可能性があります。
- - 割り当てられたときの回転方向固有または flippable イメージ資産を入れません`UIButton`オブジェクト。
+ - 背景の外観を変更`UINavigationBar`、`UITabBar`または`UIToolBar`新しい外観を解決するのには、レイアウト パスがあります。 内のこれらの外観を変更しようとして、 `LayoutSubviews`、 `UpdateConstraints`、`WillLayoutSubviews`または`DidUpdateSubviews`イベントがループに無限のレイアウトになることができます。
+ - TvOS 10、呼び出すことで、`RemoveGestureRecognizer`のメソッドを`UIView`オブジェクトが明示的に任意の実行中のジェスチャ レコグナイザーを取り消します。
+ - ビュー コント ローラーが表示されるステータス バーの外観を変更できます。
+ - tvOS 10 を呼び出す開発者を要求する`base.AwakeFromNib`をサブクラス化する`UIViewController`をオーバーライドして、`AwakeFromNib`メソッド。
+ - ユーザー設定を使用したアプリ`UIView`オーバーライド サブクラス`LayoutSubviews`呼び出す前にレイアウトをダーティと`base.LayoutSubviews`tvOS 10 で、レイアウトの無限ループをトリガーする可能性があります。
+ - 割り当てられたときの回転を要求している特定の方向または flippable イメージ資産はありません`UIButton`オブジェクト。
 
 ## <a name="related-links"></a>関連リンク
 
 - [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
-- [TvOS 10 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)
+- [TvOS 10 の新機能新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

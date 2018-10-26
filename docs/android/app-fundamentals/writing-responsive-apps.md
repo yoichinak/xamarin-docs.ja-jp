@@ -3,19 +3,19 @@ title: 応答性の高いアプリケーションの作成
 ms.prod: xamarin
 ms.assetid: 452DF940-6331-55F0-D130-002822BBED55
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b8c113b67b3fbfa57ca86c72e11ddeb0e4e1a9ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a1642c4cbb790cf09d2a31e629408afc61d5b7ab
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763502"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121777"
 ---
 # <a name="writing-responsive-applications"></a>応答性の高いアプリケーションの作成
 
-GUI がブロックされるため、バック グラウンド スレッドで時間のかかるタスクを行う応答性の GUI を維持するために、キーの 1 つです。 値は 5 秒間を計算することが、ユーザーに表示する値を計算したいとします。
+GUI がブロックされるように、バック グラウンド スレッドで実行時間の長いタスクを実行すると応答性の高い GUI を維持するために、キーの 1 つです。 その値を計算する 5 秒間には、ユーザーに表示する値を計算したいとします。
 
 ```csharp
 public class ThreadDemo : Activity
@@ -43,7 +43,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-これは、機能しますが、アプリケーションは「ハング」5 秒の値を計算中にします。 この期間中に、アプリは任意のユーザーとの対話に応答しません。 この問題を回避するため、バック グラウンド スレッドで、計算を実行します。
+これは機能が、アプリケーションが「ハング」5 秒の値を計算中にします。 この期間中、アプリは、ユーザーの操作に応答しません。 この問題を回避するには、バック グラウンド スレッドで、計算を実行します。
 
 ```csharp
 public class ThreadDemo : Activity
@@ -71,7 +71,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-今すぐお値を計算しますバック グラウンド スレッドで GUI はまだ計算中に応答するようにします。 ただし、計算が完了すると、アプリのクラッシュ、ログのままにしておきます。
+今すぐバック グラウンド スレッドで値を計算します、計算中に、GUI が応答性が維持するため。 ただし、計算が完了したら、アプリがクラッシュしたログのこのままになります。
 
 ```shell
 E/mono    (11207): EXCEPTION handling: Android.Util.AndroidRuntimeException: Exception of type 'Android.Util.AndroidRuntimeException' was thrown.
@@ -82,7 +82,7 @@ E/mono    (11207):   at Android.Widget.TextView.set_Text (IEnumerable`1 value)
 E/mono    (11207):   at MonoDroidDebugging.Activity1.SlowMethod ()
 ```
 
-これは、GUI のスレッドから GUI を更新する必要があるためです。 このコードは、スレッド プールのスレッドから、アプリのクラッシュの原因のフル インストールを更新します。 バック グラウンド スレッドで、値の計算がで処理されて GUI のスレッドで、更新を行う必要があります[Activity.RunOnUIThread](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action)):
+これは、GUI スレッドから GUI を更新する必要があります。 コードでは、スレッド プールのスレッドから GUI をアプリのクラッシュの原因を更新します。 バック グラウンド スレッドで、値を計算し、更新プログラムで処理されますが、GUI スレッドで操作を行いますたい[Activity.RunOnUIThread](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action)):
 
 ```csharp
 public class ThreadDemo : Activity
@@ -110,6 +110,6 @@ public class ThreadDemo : Activity
 }
 ```
 
-このコードは、期待どおりに動作します。 この GUI では、応答性の高いままになるし、計算が特殊したら適切に更新を取得します。
+このコードは、期待どおりに動作します。 この GUI では、応答性が維持し、計算が完了したら適切に更新を取得します。
 
-負荷の高い値を計算するのには、この手法は使用されませんだけに注意してください。 Web サービスの呼び出しまたはインターネットのデータをダウンロードするように、バック グラウンドで実行できる実行時間の長いタスクに対して使用できます。
+コストの値を計算するのには、この手法は使用されませんだけに注意してください。 これは、web サービスの呼び出しまたはインターネットのデータをダウンロードするように、バック グラウンドで実行できる任意の実行時間の長いタスクを使用できます。

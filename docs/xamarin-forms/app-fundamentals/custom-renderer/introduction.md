@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 180a196e0b95854815c8a74ef1d2df63407dd04f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2b2b5726f4ca28ae37f027a700abdd688aa0b1d7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998005"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108432"
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
 
@@ -52,7 +52,7 @@ public class MyEntry : Entry
 `local`名前空間プレフィックスは任意に指定できます。 ただし、`namespace`と`assembly`値は、カスタム コントロールの詳細と一致する必要があります。 名前空間が宣言されると、プレフィックスを使用して、カスタム コントロールを参照します。
 
 > [!NOTE]
-> 定義する、`xmlns`共有プロジェクトよりも、.NET Standard ライブラリ プロジェクトではるかに簡単です。 .NET Standard ライブラリがアセンブリにコンパイルされるため、何かを判断するは簡単、`assembly=CustomRenderer`値にする必要があります。 (、XAML を含む) すべての共有資産が各参照元のプロジェクトは、iOS、Android、および UWP つまりにコンパイルされた共有プロジェクトを使用する場合のプロジェクトがある独自*アセンブリ名*ことはできませんを記述するには`xmlns`宣言、値は、アプリケーションごとに異なる必要があるためです。 共有プロジェクトの XAML でカスタム コントロールは、すべてのアプリケーション プロジェクトに同じアセンブリ名で構成する必要があります。
+> 定義する、`xmlns`共有プロジェクトよりも、.NET Standard ライブラリ プロジェクトではるかに簡単です。 .NET Standard ライブラリがアセンブリにコンパイルされるため、何かを判断するは簡単、`assembly=CustomRenderer`値にする必要があります。 (、XAML を含む) すべての共有資産が各参照元のプロジェクトは、iOS、Android、および UWP つまりにコンパイルされた共有プロジェクトを使用する場合のプロジェクトがある独自*アセンブリ名*記述することはできません`xmlns`宣言、値は、アプリケーションごとに異なる必要があるためです。 共有プロジェクトの XAML でカスタム コントロールは、すべてのアプリケーション プロジェクトに同じアセンブリ名で構成する必要があります。
 
 `MyEntry`カスタム コントロールは上に表示される各プラットフォームで、灰色の背景では、次のスクリーン ショットに示すようにします。
 

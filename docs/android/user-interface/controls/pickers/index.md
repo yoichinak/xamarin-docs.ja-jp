@@ -1,28 +1,28 @@
 ---
 title: ピッカー
-description: 組み込みの Android ダイアログを使用して、日付と時刻のユーザーを照会するには
+description: Android の組み込みダイアログを使用して日付と時刻をユーザーを照会するには
 ms.prod: xamarin
 ms.assetid: 57C86933-3F04-47DD-9839-72D522D73330
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: de9c77cd1ea96727f5fbf10d11ff99c0aec5fe74
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: af6e71e83f90be720db75887553e24a99966720c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762757"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119858"
 ---
 # <a name="pickers"></a>ピッカー
 
 
-*ピッカー* UI 要素では、Android によって提供されるダイアログを使用して、日付や時刻を取得するユーザーを許可します。
+*ピッカー*ユーザーが Android によって提供されるダイアログ ボックスを使用して、日付や時刻を選択できるようにする UI 要素を示します。
 
--   [日付選択カレンダー](~/android/user-interface/controls/pickers/date-picker.md)日付 (年、月、および日) を選択するために使用します。
+-   [日付ピッカー](~/android/user-interface/controls/pickers/date-picker.md)日付 (年、月、日) を選択するために使用します。
 
     ![例の日付の選択](images/date-picker.png)
 
--   [時刻のピッカー](~/android/user-interface/controls/pickers/time-picker.md)時刻 (時、分、および AM/PM) を選択するために使用します。
+-   [時刻のピッカー](~/android/user-interface/controls/pickers/time-picker.md)時間 (時間、分、および AM/PM) を選択するために使用します。
 
     ![例の時刻の選択](images/time-picker.png)

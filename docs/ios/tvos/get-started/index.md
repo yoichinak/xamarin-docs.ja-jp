@@ -1,32 +1,32 @@
 ---
 title: Xamarin で tvOS の概要
-description: このドキュメントでは、Xamarin を使用した tvOS アプリの構築を開始する方法について説明します。 インストール ガイドとクイック スタート ガイドにリンクします。
+description: このドキュメントでは、Xamarin で tvOS アプリを構築する方法について説明します。 インストール ガイドとクイック スタート ガイドにリンクします。
 ms.prod: xamarin
 ms.assetid: 1A3D8211-A689-41D9-BCFE-AF8398992031
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: f794562f4113517c8b5e768b264a6dd11f088390
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 84de9d042295aee8ca07ce3372f2e19bdec9f599
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788759"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118137"
 ---
 # <a name="getting-started-with-tvos-in-xamarin"></a>Xamarin で tvOS の概要
 
-Xamarin.tvOS、tvOS のネイティブ アプリを作成するため、柔軟性と最新の c# 言語の簡潔さ、.NET 基本クラス ライブラリ (BCL) および Visual Studio のパワー Mac または Visual Studio 2015 または 2017 on Windows できます。
+Xamarin.tvOS により、ネイティブの tvOS アプリを作成するための柔軟性と洗練さ、最新のC#言語、.NET 基本クラス ライブラリ (BCL) と Windows の場合は、Visual Studio for Mac または Visual Studio 2015 または 2017 の機能です。
 
-この系列には、Xamarin.tvOS 開発の基礎が導入されています。 以降、設計、コーディング、およびアプリを実行する tvOS のサポートのインストールからに戻ります。 その過程では、スキルと Xamarin.tvOS アプリで作業する必要がありますツールセットことで説明します。
+このシリーズでは、Xamarin.tvOS 開発の基礎について説明します。 開始、設計、コーディングとアプリを実行している tvOS のサポートのインストールからなります。 その過程で、スキルとツールセット、Xamarin.tvOS アプリで作業する必要がありますを説明します。
 
 ## <a name="installing-tvos-supportiostvosget-startedinstallationmd"></a>[tvOS のインストールのサポート](~/ios/tvos/get-started/installation.md)
 
-Xamarin を使用した tvOS アプリをビルドするには、tvOS 11 および watchOS 4 をサポートする Xamarin.iOS の最新の安定したバージョンをインストールします。
+Xamarin で tvOS アプリをビルドするには、Xamarin.iOS、tvOS 11、watchOS 4 をサポートする最新の安定バージョンをインストールします。
 
 ## <a name="hello-tvos-quick-start-guideiostvosget-startedhello-tvosmd"></a>[はじめての tvOS クイック スタート ガイド](~/ios/tvos/get-started/hello-tvos.md)
 
-この記事では、単純な「こんにちは, tvOS」アプリを作成することで、tvOS 向けのアプリを開発するクイック スタートを提供します。 TvOS デバイスのプロビジョニング、インターフェイスの作成、tvOS のコーディングとテストの両方、tvOS シミュレーターで実際 tvOS ハードウェア上の基礎を説明します。
+この記事では、単純な「こんにちは, tvOS」アプリを作成して tvOS 用のアプリを開発するクイック スタートを提供します。 TvOS デバイス インターフェイスの作成、プロビジョニング、tvOS のコーディングおよび tvOS シミュレーターと実際の tvOS ハードウェアのテストの基本を説明します。
 
 
 ## <a name="related-links"></a>関連リンク
@@ -34,5 +34,5 @@ Xamarin を使用した tvOS アプリをビルドするには、tvOS 11 およ�
 - [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [TvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
-- [Xamarin (ビデオ) を使用した tvOS 用アプリの構築](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
+- [TvOS 用のアプリのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [(ビデオ) Xamarin で tvOS のアプリの構築](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

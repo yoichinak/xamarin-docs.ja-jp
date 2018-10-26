@@ -1,25 +1,25 @@
 ---
-title: CryptoObject を作成します。
+title: CryptoObject の作成
 ms.prod: xamarin
 ms.assetid: 4D159B80-FFF4-4136-A7F0-F8A5C6B86838
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: f7a8ab7a43c0a3258cf6e737b0d235cbe7a1c747
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1658934bedce11a42701eb023a42fc9e617b654d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765715"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113769"
 ---
-# <a name="creating-a-cryptoobject"></a>CryptoObject を作成します。
+# <a name="creating-a-cryptoobject"></a>CryptoObject の作成
 
-指紋認証結果の整合性に問題がアプリケーションに重要な&ndash;アプリケーションがユーザーの本人性を確認する方法をお勧めします。 サード パーティ製マルウェアをインターセプトし、指紋スキャナーによって返される結果を改ざんすることは理論的には。 このセクションでは、指紋結果の有効性を保持するための 1 つの方法を説明します。 
+指紋認証の結果の整合性がアプリケーションに重要な&ndash;アプリケーションがユーザーの本人性を確認する方法をお勧めします。 理論的には、サード パーティ製マルウェアをインターセプトし、指紋スキャナーによって返される結果を改ざんすることができます。 このセクションでは、指紋結果の有効性を保持する機能の 1 つの方法について説明します。 
 
-`FingerprintManager.CryptoObject` Java cryptography Api をラップするラッパーで使用される、`FingerprintManager`認証要求の整合性を保護します。 通常、`Javax.Crypto.Cipher`オブジェクトは、指紋スキャナーの結果を暗号化するためのメカニズムです。 `Cipher`オブジェクト自体では、Android キーストア Api を使用するアプリケーションによって作成されるキーを使用します。
+`FingerprintManager.CryptoObject` Java cryptography Api のラッパーを使って、`FingerprintManager`認証要求の整合性を保護します。 通常、`Javax.Crypto.Cipher`オブジェクトは、指紋スキャナーの結果を暗号化するためのメカニズムです。 `Cipher`オブジェクト自体は、Android キーストアの Api を使用して、アプリケーションによって作成されるキーを使用します。
 
-これらすべてのクラスの動作を理解するには、まずを見てみましょう、次のコードを作成する方法を示します、 `CryptoObject`、し、さらに詳しく説明します。
+これらのクラスはすべて連携させる方法については、まずを見てみましょうを作成する方法については、次のコードを`CryptoObject`、し、さらに詳しく説明します。
 
 ```csharp
 public class CryptoObjectHelper
@@ -99,40 +99,40 @@ public class CryptoObjectHelper
 }
 ```
 
-新しいサンプル コードが作成されます`Cipher`各`CryptoObject`、アプリケーションによって作成されたキーを使用します。 キーが識別される、`KEY_NAME`の先頭で設定されている変数、`CryptoObjectHelper`クラスです。 メソッド`GetKey`Android キーストア Api を使用して、キーの取得し、なります。 キーが存在しないかどうか、メソッド`CreateKey`アプリケーションの新しいキーが作成されます。
+新しいサンプル コードが作成されます`Cipher`各`CryptoObject`、アプリケーションによって作成されたキーを使用します。 キーがで識別される、`KEY_NAME`の先頭で設定された変数、`CryptoObjectHelper`クラス。 メソッド`GetKey`Android キーストアの Api を使用してキーの取得し、なります。 キーが存在しないかどうか、メソッド`CreateKey`アプリケーション用の新しいキーが作成されます。
 
-暗号への呼び出しによってインスタンス化`Cipher.GetInstance`、取得、_変換_(暗号文の暗号化し、データの暗号化を解除する方法を示す文字列値)。 呼び出し`Cipher.Init`アプリケーションからのキーを入力して暗号の初期化を完了します。 
+呼び出しがインスタンス化する暗号文`Cipher.GetInstance`を受け入れて、_変換_(暗号の暗号化し、データの暗号化を解除する方法を指示する文字列値)。 呼び出し`Cipher.Init`アプリケーションからキーを提供することで、暗号の初期化を完了します。 
 
-これは、状況によっては、Android が無効になるキーがあることに注意。 
+状況によっては、Android が無効になるキーがあることを理解する必要があります。 
 
-* 新しい指紋がデバイスに登録されています。
+* 新しいフィンガー プリントは、デバイスに登録されています。
 * デバイスに登録されている指紋はありません。
 * ユーザーは画面のロックを無効にします。
 * ユーザーが画面のロック (、screenlock または使用する PIN/パターンの種類) を変更します。
 
-この場合、`Cipher.Init`がスローされます、 [ `KeyPermanentlyInvalidatedException`](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)です。 上記のサンプル コードは例外をトラップ、キーを削除し、新しく作成します。
+この場合、`Cipher.Init`がスローされます、 [ `KeyPermanentlyInvalidatedException`](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)します。 上記のサンプル コードは例外をトラップ、キーを削除し、新しいものを作成します。
 
-次のセクションでは、キーを作成し、デバイスに保存する方法を説明します。
+次のセクションには、キーを作成し、デバイスに保存する方法について説明します。
 
 ## <a name="creating-a-secret-key"></a>秘密キーを作成します。
 
-`CryptoObjectHelper`クラスは、Android を使用して[ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)にキーを作成し、デバイスに保存します。 `KeyGenerator`クラスを作成できる、キーが、一部に関するメタデータは、キーの種類を作成します。 インスタンスでこの情報が提供される、 [ `KeyGenParameterSpec` ](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)クラスです。 
+`CryptoObjectHelper`クラスは、Android を使用して[ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)キーを作成し、デバイスに保存します。 `KeyGenerator`クラス キーを作成、必要があるいくつかに関するメタデータを作成するキーの種類。 この情報がのインスタンスによって提供される、 [ `KeyGenParameterSpec` ](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)クラス。 
 
-A`KeyGenerator`を使用してインスタンス化される、`GetInstance`ファクトリ メソッド。 サンプル コードを使用して、 [ _Advanced Encryption Standard_ ](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (_AES_)、暗号化アルゴリズムとして。 AES は、固定サイズのブロックにデータを分割し、それらのブロックのそれぞれを暗号化します。
+A`KeyGenerator`を使用してインスタンス化される、`GetInstance`ファクトリ メソッド。 サンプル コードを使用して、 [ _Advanced Encryption Standard_ ](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (_AES_) 暗号化アルゴリズムとして。 AES は固定サイズのブロックにデータを分割し、それらのブロックの暗号化します。
 
-次に、`KeyGenParameterSpec`を使用して作成されて、`KeyGenParameterSpec.Builder`です。 `KeyGenParameterSpec.Builder`が作成されるキーに関する次の情報をラップします。
+次に、`KeyGenParameterSpec`を使用して作成されて、`KeyGenParameterSpec.Builder`します。 `KeyGenParameterSpec.Builder`が作成されるキーの詳細については、次の情報をラップします。
 
 * キー名。
-* キーを暗号化および暗号化解除の両方に対して有効にする必要があります。
-* サンプル コード、`BLOCK_MODE`に設定されている_暗号ブロック チェーン_(`KeyProperties.BlockModeCbc`)、各ブロックが (各ブロック間の依存関係を作成する)、前のブロックと Xor ことを意味します。 
-* `CryptoObjectHelper`使用[ _Public Key Cryptography Standard #7_ ](https://tools.ietf.org/html/rfc2315) (_PKCS7_) は、それらがすべて同じサイズであることを確認するブロック埋めるされるバイト数を生成するには.
-* `SetUserAuthenticationRequired(true)` キーを使用する前に、ユーザー認証が必要なことを意味します。
+* キーは、暗号化と復号化の両方に対して有効である必要があります。
+* サンプル コードで、`BLOCK_MODE`に設定されている_暗号ブロック連鎖_(`KeyProperties.BlockModeCbc`)、各ブロックは、前のブロック (各ブロック間の依存関係を作成する) で、xor を実行したことを意味します。 
+* `CryptoObjectHelper`使用[_公開キー暗号化標準 #7_ ](https://tools.ietf.org/html/rfc2315) (_PKCS7_) 保つにはすべて同じサイズのブロックが埋め込まれますされるバイト数を生成するには.
+* `SetUserAuthenticationRequired(true)` キーを使用する前に、そのユーザーの認証が必要です。
 
-1 回、`KeyGenParameterSpec`が作成されると、初期化に使用されて、`KeyGenerator`は、キーを生成し、デバイス上に安全に保存します。 
+1 回、`KeyGenParameterSpec`が作成されると、初期化に使用されます、`KeyGenerator`キーを生成し、デバイスに安全に保存するされます。 
 
-## <a name="using-the-cryptoobjecthelper"></a>使用して、CryptoObjectHelper
+## <a name="using-the-cryptoobjecthelper"></a>CryptoObjectHelper を使用します。
 
-これで、サンプル コードは、ロジックを作成するための多くをカプセル化されたが、`CryptoWrapper`に、`CryptoObjectHelper`クラス、みましょうこのガイドの先頭からコードを再確認しを使用して、`CryptoObjectHelper`暗号を作成して指紋スキャナーを開始します。 
+これでサンプル コードは、ロジックを作成するための多くをカプセル化されたが、`CryptoWrapper`に、`CryptoObjectHelper`クラスこのガイドの先頭からコードを再確認してみましょう使用、`CryptoObjectHelper`暗号を作成し、指紋スキャナーを起動します。 
 
 ```csharp
 protected void FingerPrintAuthenticationExample()
@@ -153,13 +153,13 @@ protected void FingerPrintAuthenticationExample()
 }
 ```
 
-作成する方法を説明しました、`CryptoObject`を参照してくださいに進むことができます、`FingerprintManager.AuthenticationCallbacks`指紋スキャナーのサービスの結果を Android アプリケーションに転送するために使用します。
+作成する方法を学習しました、`CryptoObject`を参照してくださいに進むことができます、`FingerprintManager.AuthenticationCallbacks`指紋スキャナーのサービスの結果を Android アプリケーションに転送するために使用します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Cipher](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
+- [暗号](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
 - [FingerprintManager.CryptoObject](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
 - [FingerprintManagerCompat.CryptoObject](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
 - [KeyGenerator](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)

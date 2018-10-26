@@ -4,21 +4,21 @@ description: この記事では、既存の OBJECTIVE-C ライブラリ、InfCol
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 8285a82920f0d95a88855c5257535048c6de41d5
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: a4cdb76ac1ecea3ee21e7b74314b6d3bfae09719
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854858"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118995"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS OBJECTIVE-C ライブラリのバインド
 
 _この記事では、既存の OBJECTIVE-C ライブラリ、InfColorPicker の Xamarin.iOS バインディングを作成する実践的なチュートリアルを示します。静的 OBJECTIVE-C ライブラリのコンパイル、バインドすることで、Xamarin.iOS アプリケーションでバインドを使用してなどのトピックについて説明します。_
 
-IOS での作業時に、サード パーティ製の Objective C ライブラリを使用する必要がある場合があります。 これらの状況で、Xamarin.iOS を使用することができます_バインド プロジェクト_を作成する、 [c# バインディング](~/cross-platform/macios/binding/overview.md)ことができます、Xamarin.iOS アプリケーションでライブラリを使用します。
+IOS での作業時に、サード パーティ製の Objective C ライブラリを使用する必要がある場合があります。 これらの状況で、Xamarin.iOS を使用することができます_バインド プロジェクト_を作成する、 [ C#バインド](~/cross-platform/macios/binding/overview.md)ことができます、Xamarin.iOS アプリケーションでライブラリを使用します。
 
 一般に、iOS のエコシステムで、ライブラリを見つけるの 3 種類があります。
 
@@ -39,7 +39,7 @@ Xamarin.iOS でこの特定の Objective C API を使用するすべての必要
 - 目的の油性がいくつか (ただしすべてでは、) を自動的に生成することによって、ワークロードを軽減する方法を次に、表示の Xamarin.iOS バインディングに必要なために必要な API 定義します。
 - 最後に、そのバインドが使用する Xamarin.iOS アプリケーションを作成します。
 
-サンプル アプリケーションでは、強力なデリゲートを InfColorPicker API と c# コード間の通信に使用する方法を示します。 強力なデリゲートを使用する方法を説明し、脆弱なデリゲートを使用して同じタスクを実行する方法について説明します。
+サンプル アプリケーションは InfColorPicker API 間の通信用の強力なデリゲートを使用する方法を紹介し、C#コード。 強力なデリゲートを使用する方法を説明し、脆弱なデリゲートを使用して同じタスクを実行する方法について説明します。
 
 ## <a name="requirements"></a>必要条件
 
@@ -54,13 +54,13 @@ Xamarin.iOS でこの特定の Objective C API を使用するすべての必要
 
 ## <a name="installing-the-xcode-command-line-tools"></a>Xcode コマンド ライン ツールをインストールします。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
 前述のように、使用する Xcode コマンド ライン ツール (具体的には`make`と`lipo`) このチュートリアルでします。 `make`コマンドは、非常に一般的な Unix ユーティリティを使用して実行可能プログラムとライブラリのコンパイルを自動化する、_メイクファイル_プログラムを構築する方法を指定します。 `lipo`コマンドは、マルチ アーキテクチャのファイルを作成するため、OS X コマンド ライン ユーティリティは、複数を組み合わせることは`.a`ファイルをすべてのハードウェア アーキテクチャで使用できる 1 つのファイルにします。
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
 前述のように、使用する Xcode コマンド ライン ツールで、 **Mac Build Host** (具体的には`make`と`lipo`) このチュートリアルでします。 `make`コマンドは、非常に一般的な Unix ユーティリティを使用して実行可能プログラムとライブラリのコンパイルを自動化する、_メイクファイル_にプログラムをビルドする方法を指定します。 `lipo`コマンドは、マルチ アーキテクチャのファイルを作成するため、OS X コマンド ライン ユーティリティは、複数を組み合わせることは`.a`ファイルをすべてのハードウェア アーキテクチャで使用できる 1 つのファイルにします。
@@ -81,11 +81,11 @@ Xamarin.iOS でこの特定の Objective C API を使用するすべての必要
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - コマンド ライン ツールをインストールする 求め、**インストール**ボタン: [ ![ ](walkthrough-images/xcode01.png "コマンド ライン ツールをインストールします。")](walkthrough-images/xcode01.png#lightbox)
+    - コマンド ライン ツールをインストールする 求め、**インストール**ボタン: [ ![](walkthrough-images/xcode01.png "コマンド ライン ツールをインストールします。")](walkthrough-images/xcode01.png#lightbox)
 
-    - ツールがダウンロードされ、Apple のサーバーからインストール: [ ![ ](walkthrough-images/xcode02.png "ツールのダウンロード")](walkthrough-images/xcode02.png#lightbox)
+    - ツールがダウンロードされ、Apple のサーバーからインストール: [ ![](walkthrough-images/xcode02.png "ツールのダウンロード")](walkthrough-images/xcode02.png#lightbox)
 
-- **Apple の開発者向けダウンロード**-コマンド ライン ツールのパッケージが使用可能な[Apple の開発者向けダウンロード]()web ページ。 Apple ID を使用してログインし、検索およびコマンド ライン ツールをダウンロード: [ ![ ](walkthrough-images/xcode03.png "コマンド ライン ツールを見つける")](walkthrough-images/xcode03.png#lightbox)
+- **Apple の開発者向けダウンロード**-コマンド ライン ツールのパッケージが使用可能な[Apple の開発者向けダウンロード]()web ページ。 Apple ID を使用してログインし、検索およびコマンド ライン ツールをダウンロード: [ ![](walkthrough-images/xcode03.png "コマンド ライン ツールを見つける")](walkthrough-images/xcode03.png#lightbox)
 
 インストールされているコマンド ライン ツール、チュートリアルを続行する準備ができました。
 
@@ -94,7 +94,7 @@ Xamarin.iOS でこの特定の Objective C API を使用するすべての必要
 このチュートリアルで、次の手順について説明します。
 
 - **[スタティック ライブラリを作成](#Creating_A_Static_Library)** -この手順では、スタティック ライブラリを作成、 **InfColorPicker** Objective C コード。 スタティック ライブラリが必要があります、`.a`ファイル拡張子、およびライブラリ プロジェクトの .NET アセンブリに埋め込まれます。
-- **[Xamarin.iOS のバインド プロジェクトを作成する](#Create_a_Xamarin.iOS_Binding_Project)** -スタティック ライブラリを取得したらを Xamarin.iOS バインド プロジェクトの作成に使用します。 バインド プロジェクトは、先ほど作成した、スタティック ライブラリと Objective C API の使用方法について説明する c# コードの形式でメタデータで構成されます。 このメタデータは、API 定義とも呼ばれます。 使用して**[目標油性](#Using_Objective_Sharpie)** にご協力に API 定義を作成します。
+- **[Xamarin.iOS のバインド プロジェクトを作成する](#Create_a_Xamarin.iOS_Binding_Project)** -スタティック ライブラリを取得したらを Xamarin.iOS バインド プロジェクトの作成に使用します。 バインド プロジェクトは、先ほど作成した、スタティック ライブラリおよびの形式でメタデータC#Objective C API の使用方法について説明するコードです。 このメタデータは、API 定義とも呼ばれます。 使用して**[目標油性](#Using_Objective_Sharpie)** にご協力に API 定義を作成します。
 - **[API 定義を正規化](#Normalize_the_API_Definitions)** - 目標油性のうえ、良い仕事をするは、すべてを行うことはできません。 使用する API 定義をする必要があるいくつかの変更について説明します。
 - **[バインド ライブラリを使用して](#Using_the_Binding)** -最後に、新しく作成したバインド プロジェクトを使用する方法について説明 Xamarin.iOS アプリケーションを作成します。
 
@@ -245,11 +245,11 @@ Xcode と、Xcode コマンド ライン ツールを使用してスタティッ
 
 ## <a name="create-a-xamarinios-binding-project"></a>プロジェクトをバインドする Xamarin.iOS を作成します。
 
-使用する前に**目標油性**API 定義を格納するための Xamarin.iOS バインディング プロジェクトの作成に必要なバインド プロセスを自動化する (を使用する**目標油性**にご協力ください[ビルド]) を c# バインディングを作成するとします。
+使用する前に**目標油性**API 定義を格納するための Xamarin.iOS バインディング プロジェクトの作成に必要なバインド プロセスを自動化する (を使用する**目標油性**にご協力くださいビルド) を作成し、C#をバインドします。
 
 それでは、次の操作を行います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for mac の起動
 1. **ファイル**メニューの **新規** > **ソリューション.**:
@@ -271,7 +271,7 @@ Xcode と、Xcode コマンド ライン ツールを使用してスタティッ
 ![](walkthrough-images/bind03.png "ソリューション エクスプ ローラーでソリューションの構造")
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
 1. Visual Studio を起動します。
@@ -280,7 +280,7 @@ Xcode と、Xcode コマンド ライン ツールを使用してスタティッ
 
     ![新しいプロジェクトを開始](walkthrough-images/bind01vs.png "新しいプロジェクトを開始")
 
-1. 新しいプロジェクト ダイアログ ボックスで次のように選択します**Visual c# > iPhone と iPad > iOS バインド ライブラリ (Xamarin)**:。
+1. 新しいプロジェクト ダイアログ ボックスで次のように選択します**Visual C# > iPhone と iPad > iOS バインド ライブラリ (Xamarin)**:。
 
     [![IOS バインド ライブラリを選択します。](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
@@ -292,7 +292,7 @@ Xcode と、Xcode コマンド ライン ツールを使用してスタティッ
 
 -----
 
-- **ApiDefinition.cs** -このファイルには、c# での Objective C API をラップする方法を定義するコントラクトにが含まれます。
+- **ApiDefinition.cs** -このファイルの Objective C API をラップする方法を定義するコントラクトを含むC#します。
 - **Structs.cs** - このファイルは、構造を保持する、または列挙値によってインターフェイスおよびデリゲートが必要です。
 
 チュートリアルの後半でこれら 2 つのファイルを操作します。 まず、InfColorPicker ライブラリ バインド プロジェクトを追加する必要があります。
@@ -303,7 +303,7 @@ Fat バイナリを上記で作成したライブラリを追加する必要が�
 
 ライブラリを追加するこれらの手順に従います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 右クリックし、**ネイティブ参照**フォルダーをクリックし、Solution Pad で**ネイティブ参照の追加**:
 
@@ -316,7 +316,7 @@ Fat バイナリを上記で作成したライブラリを追加する必要が�
 
     ![](walkthrough-images/bind04.png "ファイルを含む")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. コピー、`libInfColorPickerSDK.a`から、 **Mac Build Host**バインド プロジェクトに貼り付けます。
 
@@ -352,16 +352,16 @@ InfColorPicker プロジェクトの API 定義を作成するを行う必要が
 
 ## <a name="using-objective-sharpie"></a>目標油性を使用します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
-目標油性はコマンド ライン ツール (Xamarin によって提供される) サード パーティ製の Objective C ライブラリを c# にバインドするために必要な定義の作成に利用できます。 このセクションで目的の油性の作成に使用初期**ApiDefinition.cs** InfColorPicker プロジェクト。
+目標油性はコマンド ライン ツール (Xamarin によって提供される) にサード パーティ製の Objective C ライブラリにバインドするために必要な定義を作成する際のC#します。 このセクションで目的の油性の作成に使用初期**ApiDefinition.cs** InfColorPicker プロジェクト。
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-目標油性はコマンド ライン ツール (Xamarin によって提供される) サード パーティ製の Objective C ライブラリを c# にバインドするために必要な定義の作成に利用できます。 このセクションで使用します油性の目的上、 **Mac Build Host**初期を作成する**ApiDefinition.cs** InfColorPicker プロジェクト。
+目標油性はコマンド ライン ツール (Xamarin によって提供される) にサード パーティ製の Objective C ライブラリにバインドするために必要な定義を作成する際のC#します。 このセクションで使用します油性の目的上、 **Mac Build Host**初期を作成する**ApiDefinition.cs** InfColorPicker プロジェクト。
 
 
 -----
@@ -423,7 +423,7 @@ sdk: watchos2.2      arch: armv7
 
 上記からわかりますがあること、 `iphoneos9.3` SDK は、コンピューターにインストールされています。 この記事を使用する準備が整いました InfColorPicker プロジェクトの解析`.h`、最初にファイルを**ApiDefinition.cs**と`StructsAndEnums.cs`InfColorPicker プロジェクト。
 
-次のコマンドを入力して、ターミナル アプリ。
+ターミナル アプリでは、次のコマンドを入力します。
 
 ```bash
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
@@ -462,7 +462,7 @@ Europa:Resources kmullins$
 
 [![](walkthrough-images/os06.png "InfColorPicker.enums.cs と InfColorPicker.cs ファイル")](walkthrough-images/os06.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
 前に作成したバインド プロジェクトでは、これらのファイルを開きます。 内容をコピー、 **InfColorPicker.cs**貼り付けますファイルを開き、 **ApiDefinition.cs**ファイルを置き換えて、既存`namespace ...`コード ブロックの内容を**InfColorPicker.cs**ファイル (まま、`using`ステートメントをそのまま)。
@@ -470,7 +470,7 @@ Europa:Resources kmullins$
 ![](walkthrough-images/os07.png "InfColorPickerControllerDelegate ファイル")
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
 前に作成したバインド プロジェクトでは、これらのファイルを開きます。 内容をコピー、 **InfColorPicker.cs**ファイル (から、 **Mac Build Host**) に貼り付けます、 **ApiDefinition.cs**ファイルを置き換えて、既存`namespace ...`コード ブロックの内容を**InfColorPicker.cs**ファイル (まま、`using`ステートメントをそのまま)。
@@ -498,7 +498,7 @@ Europa:Resources kmullins$
 
 目標油性がによるバインディング注釈を付けることもあります`[Verify]`属性。 これらの属性を示す目的油性が (これが提供する、バインド宣言の上にコメントで) 元の C/Objective C 宣言とのバインドを比較することによって、正しいことをでしたを確認する必要があります。 バインドを確認した後は、検証属性を削除する必要があります。 詳細についてを参照してください、[確認](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)ガイド。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
 この時点では、完全でビルドできるように、バインド プロジェクトがあります。 みましょうバインド プロジェクトをビルドし、エラーなしでして終了するかどうかを確認します。
@@ -506,7 +506,7 @@ Europa:Resources kmullins$
 [バインド プロジェクトをビルドし、エラーがないかどうかを確認](walkthrough-images/os12.png)
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
 この時点では、完全でビルドできるように、バインド プロジェクトがあります。 みましょうバインド プロジェクトをビルドし、エラーなしでして終了するかどうかを確認します。
@@ -520,7 +520,7 @@ Europa:Resources kmullins$
 
 上記のバインドのライブラリで作成した iOS の使用を iPhone サンプル アプリケーションを作成する次の手順に従います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Xamarin.iOS プロジェクトを作成する**-と呼ばれる新しい Xamarin.iOS プロジェクトに追加**InfColorPickerSample**を次のスクリーン ショットに示すように、ソリューションに。
 
@@ -542,7 +542,7 @@ Europa:Resources kmullins$
 
 1. メッセージが表示されたら、コピー、 **.xib**ファイルをプロジェクトにします。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. **Xamarin.iOS プロジェクトを作成する**-という名前の新しい Xamarin.iOS プロジェクトを追加**InfColorPickerSample**を使用して、**単一ビュー アプリ**テンプレート。
 
@@ -562,11 +562,11 @@ Europa:Resources kmullins$
 
 -----
 
-次に、OBJECTIVE-C およびバインドと c# コードで処理にどのプロトコルを簡単に見てをみましょう。
+次に、OBJECTIVE-C およびバインドの処理にどのプロトコルを簡単に見てをみましょうとC#コード。
 
 ### <a name="protocols-and-xamarinios"></a>プロトコルと Xamarin.iOS
 
-メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 概念的には、c# でのインターフェイスとよく似ています。 Objective C、プロトコルと c# インターフェイスの 1 つの大きな違いは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、次を参照してください。[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)します。
+メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 内のインターフェイスとよく似ている概念的には、C#します。 1 つの主な違い、OBJECTIVE-C プロトコルとC#インターフェイスは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、次を参照してください。[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)します。
 
 **InfColorPickerController**が次のコード スニペットに示すように、このような 1 つのプロトコル。
 
@@ -603,7 +603,7 @@ Xamarin.iOS がという抽象基本クラスを作成するバインド ライ�
 
 Xamarin.iOS アプリケーションでこのインターフェイスを実装できる 2 つの方法はあります。
 
-- **強力な委任**-そのサブクラスの c# クラスを作成するには強力なデリゲートを使用して`InfColorPickerControllerDelegate`し、適切なメソッドをオーバーライドします。 **InfColorPickerController**そのクライアントとの通信にこのクラスのインスタンスを使用します。
+- **強力な委任**-作成するには強力なデリゲートを使用して、C#クラスをサブクラスとして持つ`InfColorPickerControllerDelegate`し、適切なメソッドをオーバーライドします。 **InfColorPickerController**そのクライアントとの通信にこのクラスのインスタンスを使用します。
 - **弱い委任**-弱い委任は少し異なる手法をいくつかのクラスのパブリック メソッドを作成する必要があります (など`InfColorPickerSampleViewController`) し、そのメソッドを公開して、`InfColorPickerDelegate`プロトコルを使用して、`Export`属性。
 
 強力なデリゲートでは、Intellisense、タイプ セーフ、および優れたカプセル化を提供します。 これらの理由には行うことができます、脆弱なデリゲートではなく強力なデリゲート使用する必要があります。
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**処理、colorPickerControllerDidFinish: メッセージ**:、`ViewController`が完了したら、iOS は、メッセージを送信は`colorPickerControllerDidFinish:`を`WeakDelegate`。 このメッセージを処理できる c# メソッドを作成する必要があります。 これを行うには、c# のメソッドを作成し、それを装飾する、`ExportAttribute`します。 編集`ViewController`クラスに次のメソッドを追加します。
+**処理、colorPickerControllerDidFinish: メッセージ**:、`ViewController`が完了したら、iOS は、メッセージを送信は`colorPickerControllerDidFinish:`を`WeakDelegate`。 作成する必要があります、C#このメッセージを処理できるメソッド。 これを行うには、作成、C#メソッドでそれを装飾して、`ExportAttribute`します。 編集`ViewController`クラスに次のメソッドを追加します。
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]

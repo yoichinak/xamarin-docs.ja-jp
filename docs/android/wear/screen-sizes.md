@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Android とウェア OS で画面のサイズの使用
+title: Xamarin.Android と Wear の OS の画面サイズの使用
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 40e7850ffe239b0ede43e4d0cd3c6da08bce3a40
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 9fc22a3c08b60a8474b006f1c9225155b9705507
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436077"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113119"
 ---
 # <a name="working-with-screen-sizes"></a>画面サイズの使用
 
-Android の消耗デバイスには、四角形またはさまざまなサイズを指定できますもラウンドの表示のいずれかを持つことができます。
+四角形またはラウンドの表示、さまざまなサイズにすることもできますが、android Wear デバイスを持つことができます。
 
-![四角形と円形の消耗のスクリーン ショットが表示されます。](screen-sizes-images/moyeu-wear.png)
+![四角形と円形 Wear のスクリーン ショットを表示します](screen-sizes-images/moyeu-wear.png)
 
 ## <a name="identifying-screen-type"></a>画面の種類を識別します。
 
-消耗サポート ライブラリを提供するのに役立ついくつかのコントロールを検出しなどのさまざまな画面の図形に適応させる`WatchViewStub`と`BoxInsetLayout`です。
+Wear サポート ライブラリを提供する際に役立ついくつかのコントロールを検出およびなど、さまざまな画面の図形に適応`WatchViewStub`と`BoxInsetLayout`します。
 
-ライブラリのコントロールをサポートして、他のいくつかのことに注意してください (など`GridViewPager`)*自動的に*自体画面の図形を検出し、次のコントロールの子のように追加することはできません。
+ライブラリ コントロールをサポートしてその他のことに注意してください (など`GridViewPager`)*自動的に*自体の画面の図形を検出し、コントロールの子が以下に示すように追加することはできません。
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
 参照してください、 [WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)サンプルを画面の種類を検出し、種類ごとに異なるレイアウトを表示する方法を参照してください。
 
-メインのレイアウト ファイルが含まれています、`android.support.wearable.view.WatchViewStub`を参照する各種レイアウトの四角形と円形の画面を使用して、`app:rectLayout`と`app:roundLayout`属性。
+メインのレイアウト ファイルが含まれています、`android.support.wearable.view.WatchViewStub`を使用して四角形と円形の画面のさまざまなレイアウトを参照する、`app:rectLayout`と`app:roundLayout`属性。
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -41,23 +41,23 @@ Android の消耗デバイスには、四角形またはさまざまなサイズ
   app:roundLayout="@layout/round_layout" />
 ```
 
-ソリューションには、実行時に選択されますが、各スタイルに対してさまざまなレイアウトが含まれています。
+ソリューションには、実行時に選択されますが、各スタイルのさまざまなレイアウトが含まれています。
 
 ![ファイル リソース/レイアウトの下に表示](screen-sizes-images/solution.png)
 
 
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
-各画面の種類ごとに異なるレイアウトを構築するのではなく、四角形または round の画面に合わせて調整する 1 つのビューを作成することもできます。
+各画面の種類ごとに異なるレイアウトを構築するのではなく四角形またはラウンド画面に適応できる単一のビューも作成できます。
 
-これは、 [Google 例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)を使用する方法を示します、`BoxInsetLayout`四角形と円形の両方の画面で、同じレイアウトを使用します。
+これは、 [Google 例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)を使用する方法を示しています、`BoxInsetLayout`四角形と円形の両方の画面で、同じレイアウトを使用します。
 
 
-## <a name="wear-ui-designer"></a>デザイナーの UI を着用します。
+## <a name="wear-ui-designer"></a>Wear UI デザイナー
 
-Xamarin Android デザイナーには、四角形と円形の両方の画面がサポートされています。
+Xamarin Android Designer には、四角形と円形の両方の画面がサポートされています。
 
-![Xamarin Android デザイナーで、Android 消耗正方形の画面を選択します。](screen-sizes-images/design-screen-type.png)
+![Xamarin Android Designer で Android Wear の正方形の画面を選択します。](screen-sizes-images/design-screen-type.png)
 
 四角形のスタイルでデザイン画面を次に示します。
 
@@ -68,21 +68,21 @@ Round スタイルでデザイン画面を次に示します。
 ![Round スタイルでデザイン画面](screen-sizes-images/design-round.png)
 
 
-## <a name="wear-simulator"></a>シミュレーターを着用します。
+## <a name="wear-simulator"></a>Wear シミュレーター
 
-**Google エミュレーター マネージャー**両方の画面の種類のデバイスの定義が含まれています。 アプリをテストする四角形と円形のエミュレーターを作成することができます。
+**Google エミュレーター マネージャー**画面の種類の両方のデバイスの定義が含まれています。 アプリをテストする四角形と円形のエミュレーターを作成することができます。
 
-![Google エミュレーター マネージャーでデバイスの定義を着用します。](screen-sizes-images/emulator-devices.png)
+![Wear デバイス定義の Google エミュレーター マネージャーで表示されます。](screen-sizes-images/emulator-devices.png)
 
-エミュレーターは、次のように、四角形の画面の描画されます。
+エミュレーターは、次のように四角形の画面にレンダリングされます。
 
-![エミュレーター四角形の画面の表示](screen-sizes-images/recipe-2.png) 
+![エミュレーターの四角形の画面の表示](screen-sizes-images/recipe-2.png) 
 
-これは、round、画面の次のように描画されます。
+このようなラウンド画面にレンダリングされます。
 
-![エミュレーター round 画面の表示](screen-sizes-images/recipe-2-round.png)
+![エミュレーター ラウンド画面の表示](screen-sizes-images/recipe-2-round.png)
 
 ## <a name="video"></a>ビデオ
 
-[Android の消耗の全画面アプリ](https://www.youtube.com/watch?v=naf_WbtFAlY)から[developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)です。
+[Android Wear 用アプリを全画面表示](https://www.youtube.com/watch?v=naf_WbtFAlY)から[developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)します。
 

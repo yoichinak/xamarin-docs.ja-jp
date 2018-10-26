@@ -3,44 +3,44 @@ title: Android ビーム
 ms.prod: xamarin
 ms.assetid: 4172A798-89EC-444D-BC0C-0A7DD67EF98C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 89e668b8936db9a05fca2353b334b630b8363a74
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 13a0a0d9c6a9d1d5f49020b1a8096f5e054d415c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762751"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114926"
 ---
 # <a name="android-beam"></a>Android ビーム
 
-Android のビームは、情報を共有するときに、近接 NFC 経由でアプリケーションを使用する Android 4.0 で導入された近距離通信 (NFC) テクノロジです。
+Android ビームは、NFC の近くにあるときに情報を共有するアプリケーションを使用する Android 4.0 で導入された近距離通信 (NFC) テクノロジです。
 
-[![情報の共有の近くに 2 つのデバイスを示すダイアグラム](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[![情報の共有の近くに 2 つのデバイスを示す図](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
-Android のビームは、2 つのデバイスが範囲内にある場合は、NFC 経由でメッセージをプッシュして動作します。 デバイス互いから約 4 cm では、Android ビームを使用してデータを共有できます。 1 つのデバイス上でアクティビティがメッセージを作成し、アクティビティ (アクティビティ) を指定します、プッシュを処理することができます。 フォア グラウンドでは、指定されたアクティビティと、デバイスが範囲内では、Android ビームは、メッセージを 2 番目のデバイスにプッシュされます。 受信側のデバイスでは、メッセージ データを含むインテントが呼び出されます。
+Android ビームは、2 つのデバイスが範囲内にあるときに、NFC 経由でメッセージをプッシュすることによって機能します。 デバイスから他の約 4 cm には、Android ビームを使用してデータを共有できます。 アクティビティを 1 つのデバイスがメッセージを作成し、アクティビティ (またはアクティビティ) を指定します。 プッシュを処理することができます。 指定されたアクティビティがフォア グラウンドと、デバイスが範囲内にある、Android ビームは 2 つ目のデバイスにメッセージをプッシュします。 受信側のデバイスでは、メッセージ データを含む、インテントが呼び出されます。
 
-Android には、Android ビーム設定メッセージの 2 つの方法がサポートされています。
+Android では、Android ビーム設定メッセージの 2 つの方法がサポートされています。
 
--   `SetNdefPushMessage` -Android ビームを開始する前に、アプリケーションは、NdefMessage NFC、およびプッシュは、アクティビティをプッシュするを指定する SetNdefPushMessage を呼び出すことができます。 アプリケーションの使用中にメッセージを変更しないと、このメカニズムは適しています。
+-   `SetNdefPushMessage` -Android ビームが開始されると、前に、アプリケーションは、NdefMessage NFC、およびそれをプッシュしているアクティビティをプッシュするを指定する SetNdefPushMessage を呼び出すことができます。 アプリケーションを使用中に、メッセージは変更されないときに、このメカニズムは適しています。
 
--   `SetNdefPushMessageCallback` -Android ビームが開始されると、アプリケーションは、NdefMessage を作成するコールバックを処理できます。 このメカニズムは、デバイスが範囲になるまで遅延するメッセージを作成できます。 アプリケーションで何が起こっているかに基づいて、メッセージが異なる場合がありますシナリオをサポートします。
+-   `SetNdefPushMessageCallback` -Android ビームが開始されるとき、アプリケーションは、NdefMessage を作成するコールバックを処理できます。 このメカニズムにより、デバイスが範囲内にあるまでが遅延するメッセージの作成。 アプリケーションで何が起こっているかに基づいて、メッセージが異なる場合がありますシナリオをサポートします。
 
 
-どちらの場合、Android のビームを使用してデータを送信するアプリケーションに送信される、 `NdefMessage`、いくつかのデータをパッケージ化`NdefRecords`です。 Android ビームをトリガーして前に対処する必要がありますのキー_ポイントで見てをみましょう。 最初に、操作を行います。 作成のコールバック スタイル、`NdefMessage`です。
+いずれの場合も、Android ビームを使用してデータを送信するアプリケーションに送信される、 `NdefMessage`、いくつかのデータをパッケージ化`NdefRecords`します。 Android ビームをトリガーした前に対処しなければならない重要な点を見ていきましょう。 作成するコールバック スタイルを使用して操作を行います。 まず、、`NdefMessage`します。
 
 
 ## <a name="creating-a-message"></a>メッセージを作成します。
 
-ここでコールバックを登録することができます、`NfcAdapter`アクティビティの`OnCreate`メソッドです。 たとえばと仮定した場合、`NfcAdapter`という`mNfcAdapter`アクティビティで、クラス変数として宣言は、メッセージを構築するコールバックを作成する次のコードを記述できます。
+使用したコールバックを登録することができます、 `NfcAdapter` 、アクティビティの`OnCreate`メソッド。 たとえば、`NfcAdapter`という名前`mNfcAdapter`アクティビティでは、クラス変数として宣言は、メッセージを構築するコールバックを作成する次のコードを記述します。
 
 ```csharp
 mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
 mNfcAdapter.SetNdefPushMessageCallback (this, this);
 ```
 
-実装すると、アクティビティ`NfcAdapter.ICreateNdefMessageCallback`に渡される、`SetNdefPushMessageCallback`上記のメソッドです。 Android ビームが開始されると、システムが呼び出す`CreateNdefMessage`からアクティビティを構築できます、`NdefMessage`次のようにします。
+実装すると、アクティビティ`NfcAdapter.ICreateNdefMessageCallback`に渡される、`SetNdefPushMessageCallback`上記のメソッド。 Android ビームが開始されると、システムが呼び出さ`CreateNdefMessage`、アクティビティを構築できますから、`NdefMessage`次に示します。
 
 ```csharp
 public NdefMessage CreateNdefMessage (NfcEvent evt)
@@ -68,14 +68,14 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 
 ## <a name="receiving-a-message"></a>メッセージの受信
 
-システム側では、受信側で目的が呼び出される、`ActionNdefDiscovered`抽出元とすること、NdefMessage 次のように、アクション。
+受信側では、システムには、インテントが呼び出される、`ActionNdefDiscovered`元を抽出できます、NdefMessage 次のように、アクション。
 
 ```csharp
 IParcelable [] rawMsgs = intent.GetParcelableArrayExtra (NfcAdapter.ExtraNdefMessages);
 NdefMessage msg = (NdefMessage) rawMsgs [0];
 ```
 
-以下のスクリーン ショットで実行されている Android のビームを使用する完全なコード例については、 [Android ビーム デモ](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)サンプル ギャラリーにします。
+、次のスクリーン ショットで実行されている Android ビームを使用する完全なコード例については、 [Android ビーム デモ](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)サンプル ギャラリーにします。
 
 [![Android ビーム デモの例のスクリーン ショット](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
@@ -84,5 +84,5 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 ## <a name="related-links"></a>関連リンク
 
 - [Android ビーム デモ (サンプル)](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)
-- [アイスクリーム サンドイッチの概要](http://www.android.com/about/ice-cream-sandwich/)
+- [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](http://developer.android.com/sdk/android-4.0.html)

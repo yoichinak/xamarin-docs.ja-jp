@@ -1,26 +1,26 @@
 ---
-title: 自分の Android SDK の場所を設定できるのですか。
+title: Android SDK の場所はどこで設定できますか。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6A9DE6E9-3E27-4DD2-87D2-34E95E5D401C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 11/16/2017
-ms.openlocfilehash: e7af6635aeec72a9a0e0c01eeb6eb0a77d2a1d7b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c004fb7717f78750e7ac1e8dc1856a32ba808638
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764009"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119489"
 ---
-# <a name="where-can-i-set-my-android-sdk-locations"></a>自分の Android SDK の場所を設定できるのですか。
+# <a name="where-can-i-set-my-android-sdk-locations"></a>Android SDK の場所はどこで設定できますか。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio に移動**ツール > オプション > Xamarin > Android 設定**を表示し、Android SDK の場所を設定します。
+Visual Studio に移動します。**ツール > オプション > Xamarin > Android 設定**表示し、Android SDK の場所を設定します。
 
-[![環境設定の例の場所 タブ](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
+[![例の基本設定の場所 タブ](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
 
 各パスの既定の場所は次のとおりです。
 
@@ -32,20 +32,20 @@ Visual Studio に移動**ツール > オプション > Xamarin > Android 設定*
 
     **C:\\Program Files (x86)\\Android\\android-sdk**
 
-- Android NDK 場所: 
+- Android NDK の場所: 
 
-    **C:\\ProgramData\\Microsoft\\AndroidNDK64\\android-ndk-r13b**
+    **C:\\ProgramData\\Microsoft\\AndroidNDK64\\r13b-android の ndk**
 
-NDK のバージョン番号が異なる場合がありますに注意してください。 たとえばの代わりに**android ndk-r13b**、以前のバージョンをなどある可能性があります**android ndk-r10e**です。
+NDK のバージョン番号が異なる場合がありますに注意してください。 例については、代わりに**r13b-android の ndk**、以前のバージョンをなどある可能性があります**r10e-android の ndk**します。
 
-Android SDK の場所を設定するに Android SDK ディレクトリの完全なパスを入力してください、 **Android SDK の場所**ボックス。 ファイル エクスプ ローラーで Android SDK の場所に移動し、アドレス バーからパスをコピーおよびにこのパスを貼り付け、 **Android SDK の場所**ボックス。
-例では、Android SDK の場所がある場合、 **c:\\ユーザー\\username\\AppData\\ローカル\\Android\\Sdk**、で古いパスをクリア**Android SDK の場所**ボックス、このパスの貼り付け をクリックして**OK**です。
+Android SDK の場所を設定するに Android SDK ディレクトリの完全なパスを入力、 **Android SDK の場所**ボックス。 ファイル エクスプ ローラーで Android SDK の場所に移動します、アドレス バーから、パスをコピーおよびにこのパスを貼り付けて、 **Android SDK の場所**ボックス。
+たとえば、Android SDK の場所がある場合**c:\\ユーザー\\username\\AppData\\ローカル\\Android\\Sdk**、で古いパスをクリア**Android SDK の場所**ボックス、このパスの貼り付け をクリックして**OK**します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Mac 用 Visual Studio に移動**設定 > プロジェクト > SDK の場所 > Android**です。 **Android**  ページで、をクリックして、**場所** タブを表示し、SDK の場所を設定します。
+Visual studio for Mac に移動します。**設定 > プロジェクト > SDK の場所 > Android**します。 **Android**  ページで、をクリックして、**場所**表示し、SDK の場所の設定 タブ。
 
-[![環境設定の例の場所 タブ](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
+[![例の基本設定の場所 タブ](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
 各パスの既定の場所は次のとおりです。
 
@@ -53,7 +53,7 @@ Mac 用 Visual Studio に移動**設定 > プロジェクト > SDK の場所 > A
 
     **~/Library/Developer/Xamarin/android-sdk-macosx**
 
-- Android NDK 場所: 
+- Android NDK の場所: 
 
     **~/Library/Developer/Xamarin/android-ndk/android-ndk-r14b**
 
@@ -61,8 +61,8 @@ Mac 用 Visual Studio に移動**設定 > プロジェクト > SDK の場所 > A
 
     **/usr**
 
-NDK のバージョン番号が異なる場合がありますに注意してください。 たとえばの代わりに**android ndk-r14b**、以前のバージョンをなどある可能性があります**android ndk-r10e**です。
+NDK のバージョン番号が異なる場合がありますに注意してください。 例については、代わりに**r14b-android の ndk**、以前のバージョンをなどある可能性があります**r10e-android の ndk**します。
 
-Android SDK の場所を設定するに Android SDK ディレクトリの完全なパスを入力してください、 **Android SDK の場所**ボックス。 Android SDK フォルダーを選択するにはキーを押して、Finder で**CTRL +&#8984;+ I**フォルダー情報を表示するをクリックし、パスの右側にドラッグ**場所:**、コピー、し、貼り付けます、 **Android SDK場所**ボックスに、**場所**タブです。例では、Android SDK の場所がある場合、 **~/Library/Developer/Android/Sdk**で古いパスをクリア、 **Android SDK の場所**ボックス、このパスの貼り付け をクリックして**OK**.
+Android SDK の場所を設定するに Android SDK ディレクトリの完全なパスを入力、 **Android SDK の場所**ボックス。 Finder で、キーを押して、Android SDK フォルダーを選択できる**CTRL +&#8984;+ I**フォルダー情報を表示する をクリックし、パスの右側にドラッグ**場所:** をコピーし、それを、 **Android SDK場所**ボックスに、**場所**タブ。たとえば、Android SDK の場所がある場合 **~/Library/Developer/Android/Sdk**で古いパスをクリア、 **Android SDK の場所**ボックス、このパスの貼り付け をクリックして**OK**.
 
 -----

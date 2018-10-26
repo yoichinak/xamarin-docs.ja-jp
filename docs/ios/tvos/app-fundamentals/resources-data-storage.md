@@ -1,41 +1,41 @@
 ---
-title: tvOS リソースと Xamarin 内のデータ ストレージ
-description: この記事では、リソースと Xamarin でビルドされた tvOS アプリ内の永続的なデータ ストレージを操作する方法について説明します。 ICloud データ ストレージとのオンデマンド リソースについても説明します。
+title: tvOS リソースと Xamarin でのデータ ストレージ
+description: この記事では、リソースと Xamarin でビルドされた tvOS アプリでの永続的なデータ ストレージを操作する方法について説明します。 ICloud のデータ ストレージと、オンデマンドのリソースがについて説明します。
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: aa14ac08763a48b5f4f9a9522e8b10c652e513c4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8f8ecc115738fb97f71b4ea6b2cdcc5c2714372d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788837"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108185"
 ---
-# <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvOS リソースと Xamarin 内のデータ ストレージ
+# <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvOS リソースと Xamarin でのデータ ストレージ
 
-_この記事では、リソースと Xamarin.tvOS アプリ内の永続的なデータ ストレージの操作について説明します。_
+_この記事では、リソースと Xamarin.tvOS アプリでの永続的なデータ記憶域の使用について説明します。_
 
 <a name="tvOS-Resource-Limitations" />
 
 ## <a name="tvos-resource-limitations"></a>tvOS リソースの制限事項
 
-IOS デバイスとは異なりは、新しい Apple TV は、tvOS アプリやデータのごく限られた範囲の永続的でローカル ストレージを提供します。 (ユーザー設定) などの非常に小さいアイテムに対して、tvOS アプリがまだへのアクセス`NSUserDefaults`で、 [500 KB のデータの上限](https://forums.developer.apple.com/message/50696#50696)です。 ただし、Xamarin.tvOS アプリは、大量の情報を保持する必要がある場合、必要がありますを格納し、データを取得するから[iCloud](#iCloud-Data-Storage)です。
+IOS デバイスとは異なり、新しい Apple TV は tvOS アプリまたはデータの非常に限られた永続的なローカル ストレージを提供します。 (ユーザー設定) などの非常に小さいアイテムの tvOS アプリがまだへのアクセス`NSUserDefaults`で、 [500 KB のデータの上限](https://forums.developer.apple.com/message/50696#50696)します。 ただし、Xamarin.tvOS アプリは、大量の情報を保持する必要がある場合、する必要がありますを格納し、そのデータを取得[iCloud](#iCloud-Data-Storage)します。
 
-さらに、tvOS は 200 MB を Apple TV アプリのサイズを制限します。 アプリは、このサイズよりもリソースを必要とする場合に、必要があります。 パッケージ化され、を使用して読み込む[オンデマンド リソース](#On-Demand-Resources)(最大 2 GB の追加) します。 これらの制限を指定するには、それを正しくときに、アプリのユーザーに最適なエクスペリエンスを提供するその他の資産のダウンロードが重要です。 詳細については、Apple を参照してください[のオンデマンド リソース ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)です。
+さらに、tvOS では、Apple TV にアプリを 200 MB のサイズが制限されます。 必要なアプリは、このサイズを超えるリソースを必要とする場合はパッケージ化しを使用して読み込む[オンデマンド リソース](#On-Demand-Resources)(最大 2 GB の追加) します。 これらの制限を指定するには、ことが重要する正しくときに、アプリのユーザーに最適なエクスペリエンスを提供するその他のアセットをダウンロードします。 詳細については、Apple を参照してください[オンデマンド リソース ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)します。
 
 <a name="Non-Persistent-Downloads" />
 
-## <a name="non-persistent-downloads"></a>非持続のダウンロード
+## <a name="non-persistent-downloads"></a>非永続的なダウンロード
 
-各 tvOS アプリには、その他のリソースに、資産にダウンロードされている一時的なキャッシュ ディレクトリは提供されます。 このディレクトリは、アプリがまだ実行されている限り保持されます。 ただし、Apple TV は、他のアプリやシステムの使用量の領域を解放する必要がある、このキャッシュを削除することができます。
+TvOS アプリごとに、その他のリソースやアセットをダウンロードする一時的なキャッシュ ディレクトリは提供されます。 アプリがまだ実行されている限り、このディレクトリが保持されます。 ただし、Apple TV では、他のアプリやシステムの使用量の領域を解放する必要がある、このキャッシュを削除することができます。
 
-その結果、アプリは、以前にダウンロードしたコンテンツを利用可能な次回起動時に依存できません。 Xamarin.tvOS アプリを常に必要なリソースの有無を確認し、必要に応じてそれらをダウンロードします。
+その結果、アプリは、次回の起動を利用できない以前にダウンロードしたコンテンツを使用できません。 Xamarin.tvOS アプリを常に必要なリソースの存在を確認し、必要に応じてダウンロードします。
 
 > [!IMPORTANT]
-> 他の資産および必要に応じてリソースをダウンロードすることがありますが、予期しない結果になることができます、に対してすべてのアプリのキャッシュ内の領域を消費して Apple に警告します。
+> その他の資産および必要に応じてリソースをダウンロードする機能がありますが、Apple は、予期しない結果につながりますに対してすべてのアプリのキャッシュ内の領域を消費してに警告します。
 
 
 
@@ -44,18 +44,18 @@ IOS デバイスとは異なりは、新しい Apple TV は、tvOS アプリや�
 
 ## <a name="managing-resources"></a>リソースの管理
 
-、限定されるため、tvOS アプリに使用できる情報の非永続的なストレージを前述のようこれらの制限では、慎重に計画 Xamarin.tvOS アプリの優れたユーザー エクスペリエンスを作成する必要があります。
+これらの制限では、制限されているのため、tvOS アプリに使用できる情報の非永続的ストレージを前述のよう、Xamarin.tvOS アプリの優れたユーザー エクスペリエンスを作成する場合は注意が必要ですが必要です。
 
 <a name="iCloud-Data-Storage" />
 
 ### <a name="icloud-data-storage"></a>iCloud データ ストレージ
 
-Apple TV の記憶域が限られているためだけでなく、非常に限定された永続的なローカル記憶域、アプリがありません以前にダウンロードしたすべての情報が利用できる、次回実行されるという保証します。
+Apple TV 上の記憶域が限られているためだけでなく、非常に限られた永続的なローカル記憶域、アプリがない以前にダウンロードしたすべての情報を表示する、次回に実行される保証します。
 
-その結果、Xamarin.tvOS アプリでは、データ ストアを iCloud に任意のユーザー データを格納する必要があります。 Apple は、tvOS アプリ用の 2 つの iCloud ベースのデータ記憶域オプションを提供します。
+その結果、Xamarin.tvOS アプリは、iCloud データ ストアでユーザー データを格納する必要があります。 Apple では、tvOS アプリの 2 つの iCloud ベースのデータ ストレージ オプションが用意されています。
 
-- **iCloud キーと値ストレージ (KVS)** - は小規模な情報 (1 MB 未満) アプリ必要があること (ユーザーの設定など) のような iCloud KVS 記憶域を使用することができます。 iCloud KVS データが、クラウドと、同じアプリを実行しているユーザーのデバイスのすべてに自動的に同期します。 詳細情報を参照してください、[キーと値の記憶域](~/ios/data-cloud/introduction-to-icloud.md)のセクション、 [iCloud 概要](~/ios/data-cloud/introduction-to-icloud.md)ドキュメントや Apple の[iCloud にキーと値のデータの設計](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7)ドキュメントです。
-- **CloudKit** : (1 MB より大きい)、情報の大きな部分の記憶域は、Apple の CloudKit フレームワークを使用します。 ICloud KVS 記憶域とは異なり CloudKit データはアプリ (だけでなく、単一のユーザーにプライベート) のすべてのユーザー間で共有できます。 フォームの詳細についてを参照してください、 [CloudKit 概要](~/ios/data-cloud/intro-to-cloudkit.md)ドキュメントや Apple の[CloudKit クイック スタート](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)です。
+- **iCloud Key-value ストレージ (KVS)** - 小規模な (1 MB 未満) をアプリが必要な情報 (ユーザー設定) のような iCloud KVS ストレージを使用することができます。 iCloud KVS データは、クラウドと同じアプリを実行しているユーザーのデバイスのすべてに自動的に同期されます。 詳細情報を参照してください、 [Key-value ストレージ](~/ios/data-cloud/introduction-to-icloud.md)のセクション、 [iCloud の概要](~/ios/data-cloud/introduction-to-icloud.md)ドキュメントや Apple の[iCloud のキーと値のデータの設計](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7)ドキュメントです。
+- **CloudKit** - (1 MB より大きい)、情報の大きいピースの記憶域が CloudKit の Apple のフレームワークを使用します。 ICloud KVS ストレージとは異なり CloudKit のデータは、アプリと同様に 1 人のユーザーにプライベート) のすべてのユーザーの間で共有できます。 フォームの詳細についてを参照してください、 [CloudKit の概要](~/ios/data-cloud/intro-to-cloudkit.md)ドキュメントや Apple の[CloudKit のクイック スタート](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)します。
 
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
@@ -64,16 +64,16 @@ Apple TV の記憶域が限られているためだけでなく、非常に限�
 
 ### <a name="on-demand-resources"></a>オンデマンド リソース
 
-オンデマンドでのリソースは、アプリのコンテンツやアプリ ストアでホストされ、アプリで必要に応じてダウンロードする (アプリのバンドルから個別)、資産を提供します。 データの追加の 2 GB まで処理のオンデマンド リソースの使用します。 小さくなるように、最初のアプリのダウンロードを有効にする (tvOS アプリは、200 MB の最大数に制限は、) 必要に応じて豊富な資産を提供しながらです。
+オンデマンド リソースは、アプリのコンテンツと、アプリ ストアでホストされ、アプリからの要求としてダウンロードする (アプリのバンドルから独立した) 資産を提供します。 データの追加の 2 GB まで提供できます、オンデマンド リソースを使用します。 小さくなるように、最初のアプリのダウンロードを有効にする (tvOS アプリは、200 MB の最大数に制限されていますが、) 必要に応じて豊富な資産を提供しながらします。
 
-TvOS アプリでは、オンデマンドでリソースを要求するときに、システムは、ダウンロードして、アプリのキャッシュ ディレクトリにこのコンテンツの記憶域を自動的に管理します。 アプリは、このコンテンツをダウンロードし、続行する前に使用できるを待つ必要があります。
+TvOS アプリを要求すると、オンデマンドでリソースをダウンロードし、アプリのキャッシュ ディレクトリには、このコンテンツの記憶域システムが自動的に管理します。 アプリは、このコンテンツをダウンロードし、続行する前に、利用を待つ必要があります。
 
-これらのリソースを複数起動し、アプリのための高速化起動サイクル全体で Apple TV にキャッシュされる続行できます。 ただし、アプリは、次回起動時にも使用できない、以前にダウンロードしたコンテンツに依存できません。 参照してください、 [Non-persistent ダウンロード](#Non-Persistent-Downloads)の詳細については、上記「します。
+これらのリソースは、高速化起動サイクルではそのため、アプリの複数の起動で Apple TV でキャッシュを続行できます。 ただし、アプリは、次回の起動を利用できない、以前ダウンロードしたコンテンツを使用できません。 参照してください、[非永続的なダウンロード](#Non-Persistent-Downloads)詳細については、前述の「します。
 
-付与リソース タグに関連付けられている関連コンテンツ (ゲーム レベル 2 のすべての資産) などのバンドルを作成するのにには、Xcode を使用します。 後で、アプリでは、このリソースのタグを指定することで、オンデマンド リソースを要求します。 アプリは、そのコンテンツのというユーザーに UI を提示する必要がありますのダウンロード中です。 詳細については、Apple を参照してください[のオンデマンド リソース ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)です。
+Xcode を使用すると、特定のリソース タグに関連付けられている関連コンテンツ (すべての資産のゲーム レベル 2) などのバンドルを作成できます。 後で、アプリはこのリソースのタグを指定することで、オンデマンド リソースを要求します。 アプリは、そのコンテンツのことを通知する UI を提示する必要がありますがダウンロードされています。 詳細については、Apple を参照してください[オンデマンド リソース ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)します。
 
 > [!IMPORTANT]
-> アプリには、オンデマンドのリソースをダウンロードする回数を超えると、個別のダウンロードのサイズの適正なバランスをとろうと注意する必要があります。 新しいコンテンツをダウンロードするゲームを常に中断された場合、または単一のダウンロード時間がかかりすぎる場合、ユーザーはアプリに不満をしまいます。
+> アプリがオンデマンドでリソースをダウンロードする回数と個別のダウンロードのサイズの適正なバランスを取るように注意する必要があります。 ユーザーは、新しいコンテンツをダウンロードするがゲームプレイを常に中断された場合、または 1 つのダウンロード時間がかかりすぎる場合に、アプリに不満を感じるになる可能性があります。
 
 
 
@@ -82,7 +82,7 @@ TvOS アプリでは、オンデマンドでリソースを要求するときに
 
 ## <a name="summary"></a>まとめ
 
-この記事では、tvOS システムで Xamarin.tvOS アプリに加えられたサイズ、リソース、データ ストレージの制限について説明しました。 これには、これらの制限事項と、アプリの優れたユーザー エクスペリエンスを作成する推奨事項を回避するオプションが表示されます。
+この記事では、tvOS システムによって Xamarin.tvOS アプリ上に配置のサイズ、リソース、データ ストレージの制限をについて説明します。 これには、これらの制限事項と、アプリの優れたユーザー エクスペリエンスを作成する推奨事項を回避するためのオプションが表示されます。
 
 
 
@@ -91,4 +91,4 @@ TvOS アプリでは、オンデマンドでリソースを要求するときに
 - [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [TvOS のアプリケーション プログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [TvOS 用のアプリのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: a6c1b0a4e0df1c25f595ca4eb53079c74b84972e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 49a0d1dd67959c5949ebe500036b849180795660
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998584"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108744"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -486,7 +486,7 @@ iOS のスクリーンショットでは、すべての子は上揃えになっ�
 
 [![The Experiment Page: Align Content](flex-layout-images/ExperimentAlignContent.png "The Experiment Page - Align Content")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
-iOS のスクリーンショットでは、すべての行は上部にあります。Android のスクリーンショットでは、中央にあります。そして UWP のスクリーンショットでは、下部にあります。 行自体もさまざまな方法で配置することができます。
+両方の行は、iOS のスクリーン ショット。 上部にあります。center; にあればの Android のスクリーン ショット下部にある UWP のスクリーン ショットになるとします。 行自体もさまざまな方法で配置することができます。
 
 [![The Experiment Page:  Align Content 2](flex-layout-images/ExperimentAlignContent2.png "The Experiment Page - Align Content 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
@@ -606,7 +606,7 @@ XAML では、デバイス非依存単位のサイズの数値を使用できま
 
 [![The Shrink Experiment Page](flex-layout-images/ShrinkExperiment.png "The Shrink Experiment Page")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-Android のスクリーンショットでは、2 番目の `Label` の `Shrink` 値に 0 が設定され、その `Label` はフルサイズで表示されています。 また、4 番目の `Label` には `Shrink` に 1 より大きい値が与えられ、それは収縮しています。 UWP のスクリーンショットは、両方の `Label` 要素に `Shrink` 値 0 が与えられ、可能であれば、それらをフルサイズで表示できることを示しています。
+Android のスクリーン ショットで、`Shrink`値、2 番目の`Label`0 に設定されている`Label`がその幅いっぱいに表示されます。 また、4 番目の `Label` には `Shrink` に 1 より大きい値が与えられ、それは収縮しています。 UWP のスクリーンショットは、両方の `Label` 要素に `Shrink` 値 0 が与えられ、可能であれば、それらをフルサイズで表示できることを示しています。
 
 子の合計サイズが `FlexLayout` のサイズより小さくなったり大きくなったりすることがあるような状況に対応するために、`Grow` と `Shrink` 値を両方設定することができます。
 

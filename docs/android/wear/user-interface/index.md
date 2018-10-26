@@ -1,23 +1,23 @@
 ---
-title: Xamarin.Androi で消耗 OS 用ユーザー インターフェイスの作成
-description: ユーザー インターフェイスの作成を着用 OS アプリ
+title: Xamarin.Androi で Wear OS のユーザー インターフェイスの作成
+description: ユーザー インターフェイスの作成 Wear OS アプリ
 ms.prod: xamarin
 ms.assetid: 092A6E08-FB07-4AC2-A5BD-8A9D4E6268D8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: e315bd23aad1cde55081d165a6fcc73cf765ec83
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ff78b04ced9f0d62531dbfb022b73b928ce373ff
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436090"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118020"
 ---
 # <a name="user-interface"></a>ユーザー インターフェイス
 
-次のセクションでは、さまざまなツールおよび Android を着用アプリ内のユーザー インターフェイスの作成に使用する構成要素について説明します。
+次のセクションでは、さまざまなツールと Android Wear アプリでのユーザー インターフェイスの作成に使用されるビルド ブロックについて説明します。
  
 ##  <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[コントロール](~/android/wear/user-interface/controls/index.md)
 
-Android の消耗固有が制御し、これらのコントロールを使用する方法を示すサンプルへのリンクを提供について説明します。
+Android Wear 固有が制御し、これらのコントロールを使用する方法を示すサンプルへのリンクを提供するについて説明します。

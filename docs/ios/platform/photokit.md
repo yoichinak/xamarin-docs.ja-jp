@@ -1,35 +1,35 @@
 ---
 title: Xamarin.iOS で PhotoKit
-description: このドキュメントには、モデル オブジェクトについてのディスカッション PhotoKit がについて説明方法モデル データのクエリ、および写真ライブラリへの変更を保存します。
+description: このドキュメントには、そのモデル オブジェクトについてのディスカッション PhotoKit がについて説明する方法、モデル データのクエリへとフォト ライブラリへの変更を保存します。
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 4aeeec5b96e24c654407ad672930c0cb78592450
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d59cac9403a244ce553d84e0590b8a9c3d4d2f30
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787898"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102712"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin.iOS で PhotoKit
 
-PhotoKit は、イメージ ライブラリがシステムのクエリを表示およびその内容を変更するカスタム ユーザー インターフェイスを作成するアプリケーションを使用する新しいフレームワークです。 画像とビデオの資産だけでなくアルバムやフォルダーなどの資産のコレクションを表すクラスの数が含まれています。
+PhotoKit は、アプリケーションをシステムのイメージのライブラリを照会し、その内容を表示したり、カスタム ユーザー インターフェイスを作成できる新しいフレームワークです。 これには、多数アルバムやフォルダーなどの資産のコレクションだけでなく、イメージおよびビデオ資産を表すクラスにはが含まれます。
 
 ## <a name="model-objects"></a>モデル オブジェクト
 
-PhotoKit では、モデル オブジェクトにこれらのアセットを表します。 写真やビデオ自体を表すモデル オブジェクトは型の`PHAsset`です。 A`PHAsset`資産のメディアの種類の作成日などのメタデータが含まれています。
-同様に、`PHAssetCollection`と`PHCollectionList`クラスには資産コレクションおよびコレクションのリストについてのメタデータがそれぞれ含まれます。 資産のコレクションは、すべての写真と特定の年のビデオなどの資産のグループです。 同様に、コレクションのリストは、資産のコレクション、写真やビデオの年度別にグループ化などのグループです。
+PhotoKit では、モデル オブジェクトにこれらの資産を表します。 写真やビデオ自体を表すモデル オブジェクトは型`PHAsset`します。 A`PHAsset`資産のメディアの種類とその作成日などのメタデータが含まれています。
+同様に、`PHAssetCollection`と`PHCollectionList`クラスには資産のコレクションおよびコレクションのリストについてのメタデータがそれぞれ含まれます。 資産のコレクションは、すべての写真やビデオ、特定の年度などのアセットのグループです。 同様に、コレクションのリストは、写真やビデオの年別にグループ化などの資産のコレクションのグループです。
 
 ## <a name="querying-model-data"></a>モデル データのクエリ
 
-PhotoKit 簡単モデル データをクエリするさまざまなフェッチ方法を使用できます。 たとえば、すべてのイメージを取得する呼び出して`PFAsset.Fetch`渡す、`PHAssetMediaType.Image`メディアの種類。
+PhotoKit 簡単にクエリ モデルのデータのさまざまなフェッチ方法を使用します。 たとえば、すべてのイメージを取得するが呼び出す`PFAsset.Fetch`を渡して、`PHAssetMediaType.Image`メディアの種類。
 
     PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 
-`PHFetchResult`インスタンスが含まれ、すべて、`PFAsset`イメージを表すインスタンス。 イメージ自体を取得するには、使用して、 `PHImageManager` (またはキャッシュのバージョンでは、 `PHCachingImageManager`) を呼び出して、イメージの要求を行い、`RequestImageForAsset`です。 たとえば、次のコードが各資産のイメージを取得、`PHFetchResult`コレクション ビューのセルに表示します。
+`PHFetchResult`インスタンスはすべてを格納し、`PFAsset`イメージを表すインスタンス。 使用するイメージ自体を取得する、 `PHImageManager` (またはキャッシュのバージョンでは、 `PHCachingImageManager`) 呼び出すことによって、イメージの要求を行い、`RequestImageForAsset`します。 次のコードが各資産でのイメージを取得するなど、 `PHFetchResult` collection view cell をで表示します。
 
 
     public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -42,13 +42,13 @@ PhotoKit 簡単モデル データをクエリするさまざまなフェッチ�
         return imageCell;
     }
 
-これは、結果は、次に示すようにイメージのグリッドになります。
+これは、次に示すようにイメージのグリッドが得られます。
 
 ![](photokit-images/image4.png "実行中のアプリのイメージのグリッドを表示します。")
  
-## <a name="saving-changes-to-the-photo-library"></a>フォト ライブラリに変更を保存
+## <a name="saving-changes-to-the-photo-library"></a>フォト ライブラリへの変更の保存
 
-クエリを実行して、データの読み取りを処理する方法です。 ライブラリに、変更を戻す記述することもできます。 複数の対象アプリケーションでシステム フォト ライブラリと対話することがあるため、PhotoLibraryObserver を使用して変更の通知を受信するオブザーバーを登録できます。 次に、変更には、アプリケーションがそれに応じて更新できます。 たとえば、上記のコレクション ビューを再読み込みする単純な実装を次に示します。
+クエリを実行して、データの読み取りを処理する方法です。 変更は、ライブラリに戻る記述することもできます。 複数の対象アプリケーションは、システムのフォト ライブラリを操作することであるため、PhotoLibraryObserver を使用して変更の通知を受け取るオブザーバーを登録できます。 次に、変更には、アプリケーションがそれに応じて更新できます。 たとえば、上記のコレクション ビューを再読み込みする単純な実装を示します。
 
     class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
     {
@@ -69,13 +69,13 @@ PhotoKit 簡単モデル データをクエリするさまざまなフェッチ�
         }
     }
     
-アプリケーションからの変更を戻す書き込む実際には、するには、変更要求を作成します。 モデル クラスのそれぞれで、関連付けられている変更要求クラスがあります。 たとえば、PHAsset を変更するには、PHAssetChangeRequest を作成します。 フォト ライブラリに書き戻さされ、上記のようなオブザーバーに送信される変更を実行する手順は次のとおりです。
+アプリケーションからの変更を戻す書き込む実際には、するには、変更要求を作成します。 各モデル クラスには、関連付けられている変更要求クラス。 たとえば、PHAsset を変更するを PHAssetChangeRequest を作成します。 フォト ライブラリに書き戻されるされ、上記のようなオブザーバーに送信される変更を実行する手順は次のとおりです。
 
 -   編集操作を実行します。
 -   PHContentEditingOutput インスタンスにフィルター選択された画像データを保存します。
 -   変更のフォームの編集の出力を発行する変更要求を行います。
 
-Core イメージ noir フィルターを適用するイメージの変更を書き込む例を次に示します。
+コア イメージ noir フィルターが適用されるイメージへの変更を書き込む例を次に示します。
 
     void ApplyNoirFilter (object sender, EventArgs e)
     {
@@ -110,10 +110,10 @@ Core イメージ noir フィルターを適用するイメージの変更を書
       });
     }
     
-ユーザーがボタンを選択すると、フィルターが適用されます。
+ユーザーは、ボタンを選択するときに、フィルターが適用されます。
 
 ![](photokit-images/image5.png "適用されるフィルターの例")
  
-PHPhotoLibraryChangeObserver 感謝、変更が反映されますコレクション ビューに戻るときに。
+ユーザーが戻るときは、変更をコレクション ビューに反映するよう、PHPhotoLibraryChangeObserver に協力してくれた。
 
-![](photokit-images/image6.png "戻るときに、コレクション ビューに、変更が反映されます。")
+![](photokit-images/image6.png "ユーザーが戻るときに、コレクション ビューで、変更が反映されます。")

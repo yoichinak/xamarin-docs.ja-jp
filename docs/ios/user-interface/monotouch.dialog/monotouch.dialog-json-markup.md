@@ -1,23 +1,23 @@
 ---
 title: MonoTouch.Dialog Json マークアップ
-description: このドキュメントでは、使用できる MonoTouch.Dialog を使用して、Xamarin.iOS ユーザー インターフェイスを構築する JSON の構文について説明します。
+description: このドキュメントでは、MonoTouch.Dialog を使用して Xamarin.iOS ユーザー インターフェイスを構築するために使用する JSON 構文について説明します。
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: dc3f4ea87bbd381a4a1767fb9179fb1bcf0c56d8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: d084094ab52e317fbb42f6b8c8c553d9d6158251
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790758"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106872"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
-このページで説明 MonoTouch.Dialog のによって受け入れられる Json マークアップ[JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
+このページの説明の MonoTouch.Dialog で受け入れられる Json マークアップ[JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
 
-例を使用して開始しましょう。 JsonElement に渡すことができる完全な Json ファイルを次に示します。
+例を使用して開始しましょう。 次は JsonElement に渡すことができる完全な Json ファイルです。
 
 ```csharp
 {     
@@ -74,11 +74,11 @@ ms.locfileid: "34790758"
 }
 ```
 
-上記のマークアップは、次の UI を生成します。
+上記のマークアップでは、次の UI が生成されます。
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "指定されたマークアップで作成される UI")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "特定のマークアップで作成される UI")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
-ツリー内のすべての要素は、プロパティを含めることができます`"id"`です。 可能であれば実行時に個別のセクションまたは JsonElement インデクサーを使用して要素を参照します。 以下に例を示します。
+ツリー内のすべての要素は、プロパティを含めることができます`"id"`します。 個々 のセクションまたは JsonElement インデクサーを使用して要素を参照する実行時にことができます。 以下に例を示します。
 
 ```csharp
 var jsonElement = JsonElement.FromFile ("demo.json");
@@ -99,21 +99,21 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 -  `sections` (省略可能)
 
 
-ルート要素は、セクション内に入れ子になったコント ローラーを作成する、要素として表示できます。 その場合、余分なプロパティ`"type"`に設定する必要があります `"root"`
+ルート要素は、セクション内で入れ子になったコント ローラーを作成する要素として表示できます。 その場合、追加のプロパティで`"type"`に設定する必要があります `"root"`
 
  <a name="url" />
 
 
 ### <a name="url"></a>url
 
-場合、`"url"`プロパティを設定する場合は、ユーザーをこの RootElement タップ、コード ファイルを指定した url から要求は内容、新しい情報が表示されます。 これを使用して、作成することができます、ユーザーはタップ操作内容に基づいて、サーバーから、ユーザー インターフェイスを拡張します。
+場合、`"url"`プロパティを設定する場合はこの RootElement をタップ、コード ファイルを指定した url から要求は、内容、新しい情報が表示されます。 作成に使用することができます、ユーザーがタップに基づいて、サーバーからユーザー インターフェイスを拡張します。
 
  <a name="group" />
 
 
 ### <a name="group"></a>グループ
 
-かどうか設定すると、この設定は groupname、ルート要素です。 グループ名は、要素の入れ子になった要素の 1 つのルート要素の値として表示される概要の取得に使用されます。 これは、チェック ボックスの値またはラジオ ボタンの値のいずれかです。
+かどうか設定すると、この設定のルート要素のグループ名。 グループの名前は、要素の入れ子になった要素の 1 つのルート要素の値として表示される概要の選択に使用されます。 これは、チェック ボックスの値またはラジオ ボタンの値のいずれか。
 
  <a name="radioselected" />
 
@@ -127,28 +127,28 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="title"></a>タイトル
 
-存在する場合がなります、RootElement に使用されるタイトル
+存在する場合、RootElement を使用するタイトルがあります。
 
  <a name="type" />
 
 
 ### <a name="type"></a>型
 
-設定する必要があります`"root"`とき (これは、コント ローラーを入れ子に使用される) セクションでは表示されます。
+設定する必要があります`"root"`とき (これは入れ子にコント ローラーを使用) セクションに表示されます。
 
  <a name="sections" />
 
 
 ### <a name="sections"></a>sections
 
-これは個別のセクションを含む Json 配列です。
+これは、個々 のセクションでは、Json 配列
 
  <a name="Section_Syntax" />
 
 
 ## <a name="section-syntax"></a>セクションの構文
 
-セクションが含まれています。
+セクションが含まれます。
 
 -  `header` (省略可能)
 -  `footer` (省略可能)
@@ -160,36 +160,36 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="header"></a>ヘッダー
 
-存在する場合、ヘッダーのテキストは、セクションのキャプションとして表示されます。
+存在する場合、ヘッダーのテキストが、セクションのキャプションとして表示されます。
 
  <a name="footer" />
 
 
-### <a name="footer"></a>ページ フッター
+### <a name="footer"></a>フッター
 
-存在する場合は、セクションの下部にあるフッターが表示されます。
+存在する場合は、セクションの下部にフッターが表示されます。
 
  <a name="elements" />
 
 
 ### <a name="elements"></a>要素
 
-これは、要素の配列です。 各要素が少なくとも 1 つのキーを含める必要があります、`"type"`に作成する要素の種類の識別に使用されるキー。
-要素の一部がのようないくつかの一般的なプロパティを共有`"caption"`と`"value"`です。 サポートされている要素の一覧を次に示します。
+これは、要素の配列です。 各要素が少なくとも 1 つのキーを含める必要があります、`"type"`を作成する要素の種類を識別するために使用されるキー。
+一部の要素のようないくつかの一般的なプロパティを共有`"caption"`と`"value"`します。 サポートされている要素の一覧を次に示します。
 
--  `string` 要素 (の両方とスタイルなし)
--  `entry` 線 (標準またはパスワード)
--  `boolean` (スイッチまたはイメージを使用して) 値
+-  `string` (どちらも、スタイル設定なしで) 要素
+-  `entry` 行 (標準またはパスワード)
+-  `boolean` 値 (スイッチまたはイメージを使用)
 
 
-文字列の要素として使用できますボタン メソッドを提供することで、セルと、アクセサーのいずれかで、ユーザーがタップしたときに呼び出される
+文字列の要素として使用できますボタン メソッドを提供することで、セルと、アクセサリのいずれかで、ユーザーがタップしたときに呼び出される
 
  <a name="Rendering_Elements" />
 
 
 ## <a name="rendering-elements"></a>レンダリング要素
 
-レンダリング要素は、c# StringElement とに基づいて StyledStringElement と、さまざまな方法で情報を表示することができ、さまざまな方法でそれらをレンダリングすることがします。 最も単純な要素は、次のように作成できます。
+レンダリング要素がに基づいて、 C# StringElement と StyledStringElement およびそれらがさまざまな方法で情報を表示し、さまざまな方法でそれらをレンダリングすることができます。 最も単純な要素は、次のように作成できます。
 
 ```csharp
 {
@@ -198,7 +198,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 }
 ```
 
-すべての既定値の単純な文字列が表示されます: フォント、背景、テキストの色および装飾します。 これらの要素へのアクションをフックし、ボタンのような動作を設定してそれらをすることは、`"ontap"`プロパティまたは`"onaccessorytap"`プロパティ。
+これで、既定値のすべての単純な文字列が表示されます。 フォント、背景、テキストの色と飾り。 これらの要素への操作をフックし、設定してボタンのように動作できるようにすることは、`"ontap"`プロパティまたは`"onaccessorytap"`プロパティ。
 
 ```csharp
 {
@@ -208,7 +208,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 }
 ```
 
-上記はクラス"Acme.PhotoLibrary"で"ShowPhotos"メソッドを呼び出します。 `"onaccessorytap"`は似ていますが、ユーザーがセルをタップする代わりのアクセサリをタップした場合は呼び出さのみが、します。 これには、アクセサーを設定することも必要があります。
+上記はクラス"Acme.PhotoLibrary"の"ShowPhotos"メソッドを呼び出します。 `"onaccessorytap"`も同様ですが、ユーザーがセルをタップする代わりのアクセサリをタップした場合のみ呼び出されます。 これを有効にするには、アクセサリを設定することも必要があります。
 
 ```csharp
 {
@@ -220,7 +220,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 }
 ```
 
-要素を表示できる 2 つの文字列を一度に表示、1、キャプション、他にも値です。 これらの文字列が表示される方法は、スタイルに依存して、設定できるを使用して、`"style"`プロパティです。 既定値は、左側と右側の値にキャプションが表示されます。 詳細については、スタイル、セクションを参照してください。 色は、赤、緑、青、おそらくアルファ値の値を表す 16 進数の数字が続く '#' 記号を使用してエンコードされます。 内容は、RGB または RGBA のいずれかの値を表す短い形式 (3 または 4 16 進数字) でエンコードすることができます。 または RGB または RGBA のいずれかの値を表す長いフォーム (6 または 8 桁) です。 短い形式は、16 進数字の同じを 2 回作成するためのショートハンドです。 "#1bc"定数は、red としてなど、パターン、緑を = = 0 xbb です青 0xcc を = です。 アルファ値が存在しない場合、色は非透過的です。 以下に、いくつかの例を示します。
+要素をレンダリングできる 2 つの文字列を一度に表示、1 つは、キャプション、およびもう 1 つは、値。 これらの文字列がレンダリングされる方法スタイルに依存して設定できる、これを使用して、`"style"`プロパティ。 既定で、左側と右側の値、キャプションが表示されます。 詳細については、スタイル セクションを参照してください。 色は、'#' 記号の後に赤、緑、青、おそらくアルファ値の値を表す 16 進数でエンコードされます。 RGB または RGBA のいずれかの値を表す短い形式 (3 または 4 16 進数です) では、内容をエンコードすることができます。 または RGB または RGBA のいずれかの値を表す long フォーム (6 か月または 8 桁) です。 短いバージョンは、同じの 16 進数字を 2 回記述する短縮形です。 "#1bc"定数が red としてなどでは、パターン、緑の = = 0 xbb です青 = 0 xcc します。 アルファ値が存在しない場合はカラーが不透明にします。 以下に、いくつかの例を示します。
 
 ```csharp
 "background": "#f00"
@@ -232,33 +232,33 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="accessory"></a>アクセサリ
 
-指定できる値は、レンダリング要素内に表示されるアクセサリの種類を決定します。
+指定できる値は、表示要素内に表示されるアクセサリの種類を決定します。
 
 -  `checkmark`
 -  `detail-disclosure`
 -  `disclosure-indicator`
 
 
-値が存在しない場合は、付属品が何も表示します。
+値が存在しない場合は、付属品は表示されません。
 
  <a name="background" />
 
 
 ### <a name="background"></a>バックグラウンド
 
-バック グラウンド プロパティは、セルの背景色を設定します。 値は、イメージへの URL (この場合、呼び出される非同期のイメージ ダウンローダーとイメージがダウンロードされると、背景が更新されます) または色の構文を使用して指定された色を指定できます。
+背景のプロパティは、セルの背景色を設定します。 値がイメージへの URL (ここでは、非同期のイメージのダウンローダーが呼び出され、イメージがダウンロードされると、バック グラウンドが更新されます) か、または色の構文を使用して指定された色があることができます。
 
  <a name="caption" />
 
 
 ### <a name="caption"></a>キャプション
 
-レンダリング要素上に表示されるメインの文字列です。 フォントと色を設定してカスタマイズすることができます、`"textcolor"`と`"font"`プロパティです。 表示スタイルはによって決定されます、`"style"`プロパティです。
+レンダリング要素上に表示される主な文字列。 フォントと色を設定してカスタマイズできます、`"textcolor"`と`"font"`プロパティ。 描画スタイルが続く、`"style"`プロパティ。
 
  <a name="color_and_detailcolor" />
 
 
-### <a name="color-and-detailcolor"></a>色および detailcolor
+### <a name="color-and-detailcolor"></a>色と detailcolor
 
 メイン テキストや詳細テキストに使用する色です。
 
@@ -267,8 +267,8 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="detailfont-and-font"></a>detailfont とフォント
 
-キャプションまたは詳細テキストに使用するフォントです。 フォントの仕様の形式は、必要に応じてダッシュと続くポイントのサイズ、フォント名です。
-有効なフォントの仕様を次に示します。
+キャプションまたは詳細なテキストに使用するフォントです。 フォントの仕様の形式は、必要に応じてその後にダッシュとポイントのサイズ、フォント名です。
+次に、有効なフォントの仕様を示します。
 
 -  「Helvetica」
 -  「Helvetica 14」
@@ -279,7 +279,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="linebreak"></a>改行
 
-行の分割を決定します。 次の値を指定できます。
+行を分割する方法を決定します。 次の値を指定できます。
 
 -  `character-wrap`
 -  `clip`
@@ -289,7 +289,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 -  `word-wrap`
 
 
-両方`character-wrap`と`word-wrap`と組み合わせて使用することができます、`"lines"`プロパティ要素内の複数行にレンダリング要素を有効にするのには 0 に設定します。
+両方`character-wrap`と`word-wrap`と組み合わせて使用することができます、`"lines"`プロパティが複数行の要素にレンダリング要素を有効にする 0 に設定します。
 
  <a name="ontap_and_onaccessorytap" />
 
@@ -318,20 +318,20 @@ class Foo {
 
 ### <a name="lines"></a>線
 
-これは、0 に設定されている場合は、含まれる文字列の内容に応じた要素の自動サイズこととなります。 これを行うには、設定する必要も、`"linebreak"`プロパティを`"character-wrap"`または`"word-wrap"`です。
+これは、0 に設定されている場合、要素の自動サイズに含まれている文字列の内容に応じたがなります。 これを機能させるには、設定する必要も、`"linebreak"`プロパティを`"character-wrap"`または`"word-wrap"`します。
 
  <a name="style" />
 
 
 ### <a name="style"></a>style
 
-スタイルは、コンテンツを表示するために使用されるセルのスタイルの種類を決定 UITableViewCellStyle 列挙値に対応しているとします。
+スタイルは、コンテンツを表示するために使用されるセル スタイルの種類を決定 UITableViewCellStyle 列挙値に対応しています。
 次の値を指定できます。
 
 -  `"default"`
 -  `"value1"`
 -  `"value2"`
--  `"subtitle"` : サブタイトルを含むテキスト。
+-  `"subtitle"` : サブタイトルのテキスト。
 
 
  <a name="subtitle" />
@@ -339,7 +339,7 @@ class Foo {
 
 ### <a name="subtitle"></a>サブタイトル
 
-字幕を使用する値。 これは、スタイルを設定ショートカット キーは`"subtitle"`設定と、`"value"`プロパティを文字列にします。
+字幕に使用する値。 これは、ショートカット スタイルを設定する`"subtitle"`設定と、`"value"`プロパティを文字列にします。
 これは、1 つのエントリがどちらもします。
 
  <a name="textcolor" />
@@ -354,14 +354,14 @@ class Foo {
 
 ### <a name="value"></a>値
 
-レンダリング要素上に表示されるセカンダリ値です。 このレイアウトの影響を受ける、`"style"`設定します。 フォントと色を設定してカスタマイズすることができます、`"detailfont"`と`"detailcolor"`です。
+レンダリング要素上に表示されるセカンダリの値。 このレイアウトを受ける、`"style"`設定します。 フォントと色を設定してカスタマイズできます、`"detailfont"`と`"detailcolor"`します。
 
  <a name="Boolean_Elements" />
 
 
-## <a name="boolean-elements"></a>ブール型の要素
+## <a name="boolean-elements"></a>ブール型要素
 
-ブール型の要素は、種類を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、`"value"`に true または false に設定します。 場合、`"on"`と`"off"`プロパティが設定されて、イメージをしたと見なされます。 イメージは、アプリケーションの現在の作業ディレクトリに対して相対的に解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドルのディレクトリを表すへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれている favorite.png になります。 例えば:
+ブール型要素に型を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、 `"value"` true または false に設定されます。 場合、`"on"`と`"off"`プロパティを設定、イメージをしたと見なされます。 イメージは、アプリケーションでは、現在の作業ディレクトリを基準として解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドル ディレクトリ表してへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれる favorite.png になります。 例えば:
 
 ```csharp
 { 
@@ -384,14 +384,14 @@ class Foo {
 
 ### <a name="type"></a>型
 
-種類はどちらかに設定できます`"boolean"`または`"checkbox"`です。 かどうかはブール値に設定、またはを使用して、UISlider イメージ (両方`"on"`と`"off"`設定されます)。 かどうかはチェック ボックスをオンに設定すると、これはチェック ボックスを使用します。 `"group"`プロパティは、特定のグループに属しているというブール型の要素のタグを使用できます。 含むルートもある場合に役立ちます。 これは、`"group"`ルートとしてのプロパティは、同じグループに属しているすべてのブール値 (または対応するチェック ボックス) の数を持つ結果を集計します。
+種類はいずれかに設定できます`"boolean"`または`"checkbox"`します。 かどうかはブール値に設定はまたはを使用して、UISlider イメージ (両方`"on"`と`"off"`設定されます)。 かどうかはチェック ボックスをオンに設定すると、それはチェック ボックスを使用します。 `"group"`プロパティは、特定のグループに属するものとしてブール型の要素のタグを使用できます。 コンテナーのルートもある場合に役立ちます。 これは、`"group"`ルートとしてのプロパティは、同じグループに属しているすべてのブール値 (またはチェック ボックス) の数は、結果を集計します。
 
  <a name="Entry_Elements" />
 
 
-## <a name="entry-elements"></a>Entry 要素
+## <a name="entry-elements"></a>エントリ要素
 
-データを入力するのにユーザーを許可するのにには、入力要素を使用します。 Entry 要素の型はいずれかの`"entry"`または`"password"`です。 `"caption"`プロパティが、右側に表示するテキストに設定され、`"value"`エントリを設定する初期値に設定されています。 `"placeholder"` (表示されなかったり薄く) 空のエントリのユーザーにヒントを表示するために使用します。 次にいくつかの例を示します。
+データを入力するのにユーザーを許可するのにには、エントリの要素を使用します。 エントリの要素の型は`"entry"`または`"password"`します。 `"caption"`プロパティは、右側に表示するテキストに設定し、`"value"`エントリを設定する初期値に設定されています。 `"placeholder"` (灰色に表示されます) 空のエントリをユーザーにヒントを表示するために使用します。 次にいくつかの例を示します。
 
 ```csharp
 {
@@ -423,7 +423,7 @@ class Foo {
  <a name="autocorrect" />
 
 
-### <a name="autocorrect"></a>オート コレクト
+### <a name="autocorrect"></a>オート コレクトする
 
 エントリを使用する自動修正のスタイルを決定します。 使用可能な値は true または false (または文字列`"yes"`と`"no"`)。
 
@@ -432,7 +432,7 @@ class Foo {
 
 ### <a name="capitalization"></a>大文字使用
 
-エントリの使用に大文字のスタイル。 次の値を指定できます。
+大文字のスタイル、エントリに使用します。 次の値を指定できます。
 
 -  `all`
 -  `none`
@@ -470,14 +470,14 @@ class Foo {
 
 ### <a name="placeholder"></a>プレース ホルダー
 
-エントリが空の値を持つ場合に表示されるヒント テキストです。
+エントリに空の値がある場合に表示されるヒント テキスト。
 
  <a name="return-key" />
 
 
-### <a name="return-key"></a>戻り値のキー
+### <a name="return-key"></a>return キー
 
-戻り値のキーを使用するラベル。 次の値を指定できます。
+戻り値のキーに使用するラベル。 次の値を指定できます。
 
 -  `default`
 -  `done`
@@ -504,15 +504,15 @@ class Foo {
 
 ## <a name="radio-elements"></a>ラジオ要素
 
-ラジオ要素型である`"radio"`です。 選択されている項目を選択、`radioselected`そのコンテナーのルート要素のプロパティです。
-さらの値が設定されている場合、`"group"`プロパティ、このオプション ボタンは、そのグループに属しています。
+ラジオ要素型である`"radio"`します。 選択されている項目を選択、`radioselected`そのコンテナーのルート要素プロパティ。
+さらの値が設定されている場合、`"group"`プロパティ、そのグループに属するをこのラジオ ボタンをクリックします。
 
  <a name="Date_and_Time_Elements" />
 
 
 ## <a name="date-and-time-elements"></a>日付と時刻の要素
 
-要素の型`"datetime"`、`"date"`と`"time"`時刻と日付、日付または時刻を表示するために使用します。 これらの要素は、キャプションと、値パラメーターとして取得します。 値は、.NET DateTime.Parse 関数でサポートされている任意の形式で記述できます。 例:
+要素の型`"datetime"`、`"date"`と`"time"`時刻と日付、日付または時刻を表示するために使用します。 これらの要素は、キャプションと値をパラメーターとして取得します。 値は、.NET DateTime.Parse 関数でサポートされている任意の形式で記述できます。 例:
 
 ```csharp
 "header": "Dates and Times",
@@ -538,7 +538,7 @@ class Foo {
 
 ## <a name="htmlweb-element"></a>Html または Web 要素
 
-作成、セルをタップされたときに、指定された URL の内容を表示する UIWebView を埋め込むを使用してローカルまたはリモート、`"html"`型です。 この要素の 2 つのプロパティは`"caption"`と`"url"`:
+セルを作成できますがタップされたときに、指定した URL のコンテンツをレンダリングする UIWebView の埋め込みがローカルまたはリモートのいずれかを使用して、`"html"`型。 この要素の 2 つのプロパティは`"caption"`と`"url"`:
 
 ```csharp
 {

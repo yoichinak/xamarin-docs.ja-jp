@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: a89bce4f35a73d0b881fd38b2ae246d2eb86ef7b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/17/2018
+ms.openlocfilehash: 62e170558fc908b0ec13669b60eb08495c183b09
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996822"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104954"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
 
@@ -44,11 +44,11 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
-`DatePicker`により、ユーザーが、指定した範囲内の日付を選択します。 プログラムが実行される特定のプラットフォームでサポートされている日付の選択を使用して実装されます。
+`DatePicker`により、ユーザーが、指定した範囲内の日付を選択します。 アプリケーションが実行される特定のプラットフォームでサポートされている日付の選択を使用して実装されます。
 
-## <a name="graphicsgraphicsindexmd"></a>[グラフィックス](graphics/index.md)
+## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[SkiaSharp を使用したグラフィック](graphics/skiasharp/index.md)
 
-グラフィックスとゲーム エンジンのビジュアルを Xamarin.Forms アプリケーションに組み込む方法。
+SkiaSharp を使用した Xamarin.Forms アプリケーションにグラフィックスを組み込む方法。
 
 ## <a name="imagesimagesmd"></a>[イメージ](images.md)
 
@@ -74,6 +74,10 @@ Xamarin.Forms は、スクロール行のデータを表示するリスト ビ�
 
 `Slider`を継続的な範囲から数値を選択できます。
 
+## <a name="steppersteppermd"></a>[ステッパ](stepper.md)
+
+`Stepper`により、ユーザーが値の範囲から数値を選択します。 ラベルが付いた 2 つのボタンで構成されますマイナス、プラス記号。 2 つのボタンの操作、選択した値を増分変更します。
+
 ## <a name="stylesstylesindexmd"></a>[スタイル](styles/index.md)
 
 フォント、色、およびその他の属性は、コントロール、レイアウト、または ResourceDictionaries を使用してアプリケーション全体で共有できるスタイルにグループ化することができます。
@@ -89,6 +93,10 @@ Xamarin.Forms は、いくつかのビューの表示とテキストを受信し
 ## <a name="themesthemesindexmd"></a>[テーマ](themes/index.md)
 
 Xamarin.Forms のテーマは、標準のコントロールの特定の外観を定義します。 アプリケーションのリソース ディクショナリにテーマを追加すると、標準のコントロールの外観が変更されます。
+
+## <a name="timepickertimepickermd"></a>[TimePicker](timepicker.md)
+
+`TimePicker`時刻を選択できます。 アプリケーションが実行される特定のプラットフォームでサポートされている時間ピッカーを使用して実装されます。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 

@@ -4,23 +4,23 @@ description: この記事では、SkiaSharp を使用して曲線を描画し、
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: 4eb56a8728607c4d6744a2b5584c8880a95ce49a
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 91cf14f531b527054b46779e571dae6eacebe765
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615093"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123428"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp の曲線とパス
 
 _SkiaSharp を使用して曲線を描画し、パスの機能を使用する方法について説明します_
 
-探索[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)から始まったメソッドとプロパティ、 [SkiaSharp の線とパス](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md)記事。 こちらの記事を続行する曲線を追加するメソッド、`SKPath`オブジェクト、およびその他のパスの強力な機能を活用します。 簡潔な文字列のパス全体を指定する方法、パスの効果を使用する方法、およびパスの内部を詳しく調査する方法を確認します。
+探索[ `SKPath` ](xref:SkiaSharp.SKPath)から始まったメソッドとプロパティ、 [ **SkiaSharp の線とパス**](../paths/index.md)記事。 こちらの記事を続行する曲線を追加するメソッド、`SKPath`オブジェクト、およびその他のパスの強力な機能を活用します。 簡潔な文字列のパス全体を指定する方法、パスの効果を使用する方法、およびパスの内部を詳しく調査する方法を確認します。
 
-このセクションでは、すべてのサンプル プログラムが、見出しの下に表示**曲線とパスより**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)ソリューションのフォルダー。
+このセクションでは、すべてのサンプル プログラムが記載されて、 **SkiaSharp の曲線とパス**のページ、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [ **曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)ソリューションのフォルダー。
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[円弧を描画する 3 つの方法](arcs.md)
 
@@ -53,5 +53,5 @@ SkiaSharp を使用して、円錐、二次方程式、3 次ベジエ曲線を�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

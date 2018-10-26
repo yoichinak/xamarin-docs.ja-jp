@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS アプリケーショ�
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 83f6059c405b2156270f4359cbba33177861af02
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 9314e1b69df4a5965dfd045d0b4ca3e44f1b9de6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241239"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122297"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Xamarin.iOS で ADO.NET を使用します。
 
@@ -22,11 +22,11 @@ Xamarin は、iOS、使い慣れた ADO.NET に似た構文を使用して公開
 
 アクセスする必要がありますを追加する ADO.NET を使用して SQLite を使用する`System.Data`と`Mono.Data.Sqlite`(Visual Studio for Mac と Visual Studio でのサンプル) についてはここで示すように、iOS プロジェクトへの参照します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  ![](using-adonet-images/image4.png "Visual Studio for Mac でのアセンブリ参照")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
   ![](using-adonet-images/image6.png "Visual Studio でアセンブリ参照")
 

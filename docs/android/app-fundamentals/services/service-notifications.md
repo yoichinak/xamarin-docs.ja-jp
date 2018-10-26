@@ -1,27 +1,27 @@
 ---
 title: サービスの通知
-description: このガイドでは、Android のサービスが、ユーザーに情報をディスパッチするローカルの通知を使用可能性がある方法について説明します。
+description: このガイドでは、ユーザーに情報をディスパッチするローカル通知を Android サービスで使用可能性がある方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6C06FDE7-6385-40EF-AC7C-8EFB54E29F45
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 65ccb94bd4fac1f3818b4f08eb34ecf73d6c52e4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d56f67254a9eae334fa8ac3f08d3ef270800c309
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762634"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103251"
 ---
 # <a name="service-notifications"></a>サービスの通知
 
-_このガイドでは、Android のサービスが、ユーザーに情報をディスパッチするローカルの通知を使用可能性がある方法について説明します。_
+_このガイドでは、ユーザーに情報をディスパッチするローカル通知を Android サービスで使用可能性がある方法について説明します。_
 
 
-## <a name="service-notifications-overview"></a>サービスの通知の概要
+## <a name="service-notifications-overview"></a>サービス通知の概要
 
-サービス通知は、Android アプリケーションがフォア グラウンドでない場合でも、ユーザーに情報を表示するアプリを許可します。 通知のアプリケーションからアクティビティを表示するなど、ユーザーのアクションを提供することができます。 次のコード サンプルでは、サービスがありますユーザーに通知をディスパッチする方法を示しています。
+サービスの通知は、Android アプリケーションがフォア グラウンドにない場合でも、ユーザーに情報を表示するアプリを許可します。 通知のアプリケーションからアクティビティを表示するなど、ユーザーの操作を提供することができます。 次のコード サンプルでは、サービスがありますユーザーに通知をディスパッチする方法を示しています。
 
 ```csharp
 [Service]
@@ -46,18 +46,18 @@ public class MyService: Service
 }
 ```
 
-このスクリーン ショットは、表示される通知の例を示します。
+このスクリーン ショットでは、表示される通知の例を示します。
 
-[![ステータス バーに表示されている通知アイコン](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
+[![ステータス バーに表示される通知アイコン](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
 
-ユーザーのスライド上、通知の画面上部から下、全体の通知が表示されます。
+ユーザーのスライドは、通知画面上部から下、完全な通知が表示されます。
 
-![通知のトレイに表示されます。](service-notifications-images/02-fullnotification.png)
+![通知トレイに表示されます。](service-notifications-images/02-fullnotification.png)
 
 
-## <a name="updating-a-notification"></a>通知の更新
+## <a name="updating-a-notification"></a>通知を更新しています
 
-更新するには、通知サービスが同じ通知 ID を使用して通知を再発行します。 Android を表示または必要に応じて、ステータス バーの通知を更新します。
+サービスが同じ通知 ID を使用して通知を再発行通知を更新するには Android を表示または必要に応じて、ステータス バーの通知を更新します。
 
 ```csharp 
 void UpdateNotification(string content)
@@ -79,9 +79,9 @@ Notification GetNotification(string content, PendingIntent intent)
 }
 ```
 
-通知の詳細についてで使用できる、[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)のセクションで、 [Android 通知](~/android/app-fundamentals/notifications/index.md)ガイドです。
+通知の詳細についてで使用できる、[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)のセクション、 [Android の通知](~/android/app-fundamentals/notifications/index.md)ガイド。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android でのローカルの通知](~/android/app-fundamentals/notifications/local-notifications.md)
+- [Android でのローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)

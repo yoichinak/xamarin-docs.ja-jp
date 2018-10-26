@@ -4,15 +4,15 @@ description: この記事では、キーと値のコーディングと観察の 
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0adb8cda71ca8803c535679da2aecf00f3fa46a5
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 4a391160f2102fd1f069a45eb7c16aec91dfd7e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251192"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110382"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>データ バインディングとキー値は、Xamarin.Mac でコーディング
 
@@ -334,7 +334,7 @@ public NSArray People {
 ここで注意する 2 つは、
 
 1. 使用して、`NSMutableArray`標準の c# の配列またはコレクションのため、これは、AppKit コントロールにデータをバインドする要件などではなく**テーブル ビュー**、**アウトライン ビュー**と**コレクション**.
-2. キャストして従業員の配列を公開しました、`NSArray`書式指定済みの名前のデータ バインディングのため、変更するには、c# `People`、データ バインディングが想定する 1 つに`personModelArray`形式で **{class_name} 配列**(注意してください最初の文字が行われたこと小文字を区別)。
+2. キャストして従業員の配列を公開しました、`NSArray`データのバインドを目的し、変更されたそのC#名、書式設定された`People`、データ バインディングが想定する 1 つに`personModelArray`形式で **{class_name} 配列**(最初の文字に小文字に変換が行われたことに注意してください)。
 
 次に、いくつか特別な名前のパブリック メソッドをサポートするを追加する必要があります**配列コント ローラー**と**コント ローラーのツリー**:
 

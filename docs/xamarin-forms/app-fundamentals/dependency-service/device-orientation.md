@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 620404a217b2e8a31192ae6613dcec023ac366cd
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 52b82033cbd6fe0e1a44f5729c815074852230bf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995642"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115420"
 ---
 # <a name="checking-device-orientation"></a>デバイスの向きの確認
 
@@ -29,7 +29,7 @@ ms.locfileid: "38995642"
 ![](device-orientation-images/orientation-diagram.png "DependencyService アプリケーション構造")
 
 > [!NOTE]
-> 説明するようデバイスの共有コードは、縦または横方向があるかどうかを検出することがでの [デバイス Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation)。 この記事で説明されているメソッドでは、向き、デバイスが上下かどうかなどの詳細を取得するのにネイティブ機能を使用します。
+> 説明するようデバイスの共有コードは、縦または横方向があるかどうかを検出することは[デバイスの向き](~/xamarin-forms/user-interface/layouts/device-orientation.md#Reacting_to_Changes_in_Orientation)します。 この記事で説明されているメソッドでは、向き、デバイスが上下かどうかなどの詳細を取得するのにネイティブ機能を使用します。
 
 <a name="Creating_the_Interface" />
 
@@ -215,7 +215,7 @@ public MainPage ()
 }
 ```
 
-IOS、Android、または Windows プラットフォームでこのアプリケーションを実行し、ボタンを押すが、デバイスの向きを更新するボタンのテキスト。
+IOS、Android、または Windows プラットフォームでこのアプリケーションを実行していると、ボタンを押すと、ボタンのテキストの方向の場合、デバイスの更新が発生します。
 
 ![](device-orientation-images/orientation.png "デバイスの向きのサンプル")
 
