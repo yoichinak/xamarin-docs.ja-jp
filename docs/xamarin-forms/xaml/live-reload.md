@@ -1,31 +1,26 @@
 ---
-title: ライブの再読み込み
+title: Xamarin のライブの再読み込み (プレビュー)
 description: XAML への変更はもう 1 つのコンパイルを必要とせず、ライブ、反映を確認し、デプロイします。
 ms.prod: xamarin
 ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 05/11/2018
-ms.openlocfilehash: f05b79e58a9fa87e13aeb45af2dbb46139051005
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+robots: noindex
+ms.date: 10/26/2018
+ms.openlocfilehash: bb30f9264cb5f3b762088e3523223b2bff8416b9
+ms.sourcegitcommit: ebc0b3838836ee5cf9e54d58866d23916664a43d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109992"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50142337"
 ---
-# <a name="xamarin-live-reload"></a>Xamarin のライブの再読み込み
-
-![[プレビュー]](~/media/shared/preview.png)
-
-Xamarin Live の再読み込みを使用する **、XAML に変更を加えると別のコンパイルを必要とせず、ライブ、反映それらを表示してデプロイ**します。 XAML に加えられた変更が再デプロイで保存し、配置ターゲットに反映されます。
-
-ライブの再読み込みを使用する場合は、アプリがコンパイルされているために、すべてのライブラリおよびサード パーティ製のコントロールでは動作します。 Xamarin.Forms は、Android、iOS、および UWP などをサポートしているし、シミュレーター、エミュレーター、および物理デバイスを含むすべての有効な配置ターゲット上で動作のすべてのプラットフォームでの再読み込み動作を live です。
+# <a name="xamarin-live-reload-preview"></a>Xamarin のライブの再読み込み (プレビュー)
 
 > [!NOTE]
-> [再読み込みのライブ プレビューが終了しました](https://github.com/xamarin/Xamarin.Forms/issues/4155#issuecomment-431596130)
->
-> これについてのディスカッションが[![でチャットに参加 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> Xamarin Live Reload のプレビューが終了しの意見やフィードバックは、すべてのユーザーに感謝いたします。 通してください、[ロードマップ](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs-roadmap)の詳細については、Xamarin.Forms に取り組んでいますが、新しい生産性機能は Visual Studio 2019 します。 この拡張機能では、Visual Studio 2017 で利用可能な残りますが、今後の更新プログラムを受信するされません。
+
+Xamarin Live の再読み込みを使用する **、XAML に変更を加えると別のコンパイルを必要とせず、ライブ、反映それらを表示してデプロイ**します。 XAML に加えられた変更が再デプロイで保存し、配置ターゲットに反映されます。
 
 ## <a name="requirements"></a>必要条件
 
@@ -86,7 +81,7 @@ public partial class App : Application
 ## <a name="frequently-asked-questions"></a>よく寄せられる質問 
 ### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Mac の Xamarin Live Reload Visual Studio で使用できるは、ですか。 
 
-Xamarin Live Reload の初期プレビュー リリースには、Visual Studio 2017 のできるだけです。 For Visual Studio for Mac のサポートは今後のリリースで予定されています。
+いいえ、Xamarin Live Reload のプレビュー リリースは、Visual Studio 2017 のできるだけです。
 
 ### <a name="does-this-work-with-all-libraries-such-as-prism"></a>これで、Prism など、すべてのライブラリは動作はしますか。 
 
@@ -94,7 +89,7 @@ Xamarin Live Reload の初期プレビュー リリースには、Visual Studio 
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>ライブの再読み込みに再デプロイの変更点 
 
-ライブの再読み込みには、XAML や CSS に加えられた変更のみ適用されます。 C# ファイルを変更する場合、再コンパイルが必要になります。 C# の再読み込みのサポートは今後のリリースで予定です。
+ライブの再読み込みには、XAML や CSS に加えられた変更のみ適用されます。 C# ファイルを変更する場合、再コンパイルが必要になります。 
 
 ### <a name="what-platforms-are-supported"></a>どのようなプラットフォームがサポートされますか。 
 
@@ -121,8 +116,8 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 
 * Visual Studio でのみサポートされます。
 * 設定する必要がありますリンク**リンクしない**または**リンク フレームワーク Sdk のみ** 
-* アプリ全体にわたるリソースを再読み込み (つまり**App.xaml**またはリソース ディクショナリの共有)、アプリのナビゲーションをリセットします。 これは、次のプレビュー リリースで修正されます。
-* 現在 ContentView の再読み込みするには、格納されているページを再読み込みする必要があります。 これは、次のプレビュー リリースで修正されます。
+* アプリ全体にわたるリソースを再読み込み (つまり**App.xaml**またはリソース ディクショナリの共有)、アプリのナビゲーションをリセットします。 
+* 現在 ContentView の再読み込みするには、格納されているページを再読み込みする必要があります。
 * AutomationId を含む要素の再読み込みエラーが発生する可能性があります。
 * ランタイム クラッシュが発生する可能性があります UWP のデバッグ中には、XAML を編集します。 回避策: 使用 **(Ctrl + F5) をデバッグなしで開始**の代わりに**デバッグ (F5) で開始**します。
 
