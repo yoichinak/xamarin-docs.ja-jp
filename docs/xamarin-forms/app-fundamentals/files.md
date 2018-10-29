@@ -86,7 +86,7 @@ using (var reader = new System.IO.StreamReader (stream)) {
 }
 ```
 
-`text` 変数は、テキストの表示やコード内で使用することができます。この [サンプル アプリ](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) のスクリーンショットは、`Label` コントロールでのテキスト表示を示しています。
+`text` 変数は、テキストの表示やコード内で使用することができます。この [サンプル アプリ](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) スクリーンショットは、`Label` コントロールでのテキスト表示を示しています。
 
  [![PCLに埋め込まれたテキストファイル](files-images/pcltext-sml.png "PCLに埋め込まれたテキストファイルをアプリに表示")](files-images/pcltext.png#lightbox "PCLに埋め込まれたテキストファイルをアプリに表示")
 
