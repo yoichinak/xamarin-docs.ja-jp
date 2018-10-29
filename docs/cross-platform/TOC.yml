@@ -1,0 +1,198 @@
+items:
+- name: Cross-Platform
+  href: index.yml
+  items:
+  - name: 開始するには
+    href: get-started/index.md
+    items:
+    - name: 必要条件
+      displayName: System requirements
+      href: get-started/requirements.md
+    - name: インストール
+      href: get-started/installation/index.md
+      items:
+      - name: Windows での Xamarin のインストール
+        href: get-started/installation/windows.md
+        items:
+        - name: Xamarin のインストールのプレビュー (Windows)
+          href: get-started/installation/windows-preview.md
+      - name: Visual Studio for Mac のインストール
+        href: /visualstudio/mac/installation/
+        items:
+        - name: Xamarin のインストールのプレビュー (Mac)
+          href: /visualstudio/mac/update/
+      - name: Xamarin ファイアウォールの構成手順
+        href: get-started/installation/firewall.md
+      - name: Xamarin のアンインストール
+        href: get-started/installation/uninstalling-xamarin.md
+    - name: モバイル開発の概要
+      href: get-started/introduction-to-mobile-development.md
+    - name: モバイル SDLC の概要
+      href: get-started/introduction-to-mobile-sdlc.md
+    - name: クロスプラットフォーム アプリケーションの構築
+      href: app-fundamentals/building-cross-platform-applications/index.md
+      items:
+      - name: 概要
+        href: app-fundamentals/building-cross-platform-applications/overview.md
+      - name: パート 1 - Xamarin モバイル プラットフォームの概要
+        href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
+      - name: パート 2 - アーキテクチャ
+        href: app-fundamentals/building-cross-platform-applications/architecture.md
+      - name: パート 3 - Xamarin クロスプラットフォーム ソリューションのセットアップ
+        href: app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md
+      - name: パート 4 - 複数のプラットフォームを処理する
+        href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
+      - name: パート 5 - 実践的なコード共有戦略
+        href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
+      - name: パート 6 - テストと App Store の承認
+        href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
+      - name: 'ケース スタディ: Tasky'
+        href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
+    expanded: true
+  - name: コードの共有
+    href: app-fundamentals/index.md
+    items:
+    - name: 概要
+      href: app-fundamentals/code-sharing.md
+    - name: .NET Standard
+      href: app-fundamentals/net-standard.md
+    - name: 共有プロジェクト
+      href: app-fundamentals/shared-projects.md
+    - name: ポータブル クラス ライブラリ (PCL)
+      href: app-fundamentals/pcl.md
+    - name: NuGet マルチプラットフォーム ライブラリ プロジェクト
+      displayName: Nugetizer 3000
+      href: app-fundamentals/nuget-multiplatform-libraries/index.md
+      items:
+      - name: 既存のライブラリ プロジェクト
+        href: app-fundamentals/nuget-multiplatform-libraries/existing-library.md
+      - name: 新しいマルチプラットフォーム ライブラリ
+        href: app-fundamentals/nuget-multiplatform-libraries/single-codebase.md
+      - name: 新しいプラットフォーム固有のライブラリ
+        href: app-fundamentals/nuget-multiplatform-libraries/platform-specific.md
+      - name: メタデータ ガイド
+        href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
+    - name: NuGet パッケージ (手動)
+      href: app-fundamentals/nuget-manual.md
+  - name: 言語サポート
+    href: platform/index.md
+    items:
+    - name: C#
+      items:
+      - name: 非同期サポートの概要
+        href: platform/async.md
+      - name: C# 6 の言語機能
+        href: platform/csharp-six.md
+    - name: F#
+      href: platform/fsharp/index.md
+      items:
+      - name: 作業の開始
+        href: platform/fsharp/overview.md
+      - name: F# のサンプル
+        href: platform/fsharp/samples.md
+    - name: Visual Basic.NET
+      href: platform/visual-basic/index.md
+      items:
+      - name: Xamarin iOS と Android
+        href: platform/visual-basic/native-apps.md
+      - name: Xamarin.Forms
+        href: platform/visual-basic/xamarin-forms.md
+    - name: Razor HTML のテンプレート
+      href: platform/razor-html-templates/index.md
+  - name: パフォーマンスとセキュリティ
+    href: deploy-test/performance.md
+    items:
+    - name: パフォーマンス
+      href: deploy-test/memory-perf-best-practices.md
+      items:
+      - name: Android のパフォーマンス
+        href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: iOS のパフォーマンス
+        href: ~/ios/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: Mac のパフォーマンス
+        href: ~/mac/deploy-test/performance.md?context=xamarin/cross-platform
+    - name: トランスポート層セキュリティ (TLS)
+      href: app-fundamentals/transport-layer-security.md
+      items:
+      - name: Android
+        href: ~/android/app-fundamentals/http-stack.md?context=xamarin/cross-platform
+      - name: iOS と Mac
+        href: ~/cross-platform/macios/http-stack.md?context=xamarin/cross-platform
+  - name: 配置とデバッグ
+    href: deploy-test/index.md
+    items:
+    - name: カスタム リンカーの構成
+      href: deploy-test/linker.md
+    - name: NuGet を使用する NUnit 2.6.4 のインストール
+      href: deploy-test/installing-nunit-using-nuget.md
+    - name: マルチ プロセスのデバッグ
+      href: deploy-test/multi-process-debugging.md
+  - name: デスクトップ開発者
+    displayName: Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers
+    href: desktop/index.md
+    items:
+    - name: アプリのライフサイクルの比較
+      href: desktop/lifecycle.md
+    - name: UI コントロールの比較
+      href: desktop/controls/index.md
+      items:
+      - name: WPF と Xamarin.Forms の比較
+        href: desktop/controls/wpf.md
+    - name: 移植のガイダンス
+      href: desktop/porting.md
+    - name: サンプル
+      href: desktop/samples.md
+  - name: トラブルシューティング
+    href: troubleshooting/index.md
+    items:
+    - name: よく寄せられる質問
+      displayName: FAQ
+      href: troubleshooting/questions/index.md
+      items:
+      - name: PCL でサポートされているライブラリを確認する方法を教えてください
+        href: troubleshooting/questions/pcl-support-libraries.md
+      - name: PCL のリフレクション API
+        href: troubleshooting/questions/pcl-reflection.md
+      - name: 'PCL のケース スタディ: Microsoft TPL Dataflow NuGet パッケージの System.Diagnostics.Tracing に関連する問題の解決方法'
+        href: troubleshooting/questions/pcl-case-study.md
+      - name: NuGet の更新方法を教えてください
+        href: troubleshooting/questions/nuget-update.md
+      - name: NuGet パッケージをダウングレードする方法を教えてください
+        href: troubleshooting/questions/nuget-package-downgrade.md
+      - name: Nuget パッケージを更新した後の不足しているパッケージのエラー
+        href: troubleshooting/questions/nuget-packages-missing.md
+      - name: Google Play 開発者サービス コンポーネントと NuGet の統合
+        href: troubleshooting/questions/gps-components-nuget.md
+      - name: コンポーネントはマシンのどこに保存されていますか
+        href: troubleshooting/questions/component-storage.md
+      - name: バージョン情報とログはどこにありますか
+        href: troubleshooting/questions/version-logs.md
+      - name: バグを報告する場合と方法を教えてください
+        href: troubleshooting/questions/howto-file-bug.md
+      - name: Xenarin が Jenkins をサポートしていないのはなぜですか
+        href: troubleshooting/questions/xamarin-jenkins.md
+      - name: デバッガーに必要なプロジェクト設定を教えてください
+        href: troubleshooting/questions/debugger-settings.md
+    - name: Visual Studio に関する質問
+      items:
+      - name: 構成マネージャーで無効になっているチェック ボックスを配置する
+        href: troubleshooting/questions/deploy-checkboxes.md
+      - name: インストール後に見つからない Visual Studio の拡張機能がある
+        href: troubleshooting/questions/missing-vs-extensions.md
+      - name: Xamarin for Visual Studio の完全なアンインストールを実行するにはどうすればいいですか
+        href: troubleshooting/questions/uninstall-xamarin-vs.md
+      - name: Visual Studio のプロセスの現在の呼び出し履歴はどのようにして収集しますか
+        href: troubleshooting/questions/vs-callstack.md
+      - name: Visual Studio に自分のビルドの参照先ライブラリ プロジェクトが含まれないのはなぜですか
+        href: troubleshooting/questions/vs-config-manager.md
+    - name: NuGet へのコンポーネント参照の更新
+      href: troubleshooting/component-nuget.md
+  - name: サンプル
+    href: samples/index.yml
+  expanded: true
+ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130242"

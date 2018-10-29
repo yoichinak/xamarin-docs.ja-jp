@@ -6,12 +6,12 @@ description: Xamarin を使用すると、.NET のコードとプラットフォ
 ms.date: 08/08/2018
 featureFlags:
 - clicktale
-ms.openlocfilehash: d8a93775e448a9cbb12f7aafc1ca51f37107305f
-ms.sourcegitcommit: 00a3505a73ce2213ba35bc85c06738edd1155060
+ms.openlocfilehash: 79bf14362d142c5db4c590cc547bfafdd3100682
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "43780479"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121222"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -91,11 +91,11 @@ ms.locfileid: "43780479"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>作業の開始</h3>
+                                                    <h3>開始するには</h3>
                                                     <p>すぐに Xamarin.Forms を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。</p>
                                                 </div>
                                             </div>
@@ -115,7 +115,7 @@ ms.locfileid: "43780479"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>アプリケーションの基礎</h3>
-                                                    <p>ファイル、画像、データベースの扱いなど、アプリを構築するために必要なすべての情報を説明します。</p>
+                                                    <p>ファイル、イメージ、データベースの操作など、アプリの構築で必要な知識をすべて説明します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -256,25 +256,6 @@ ms.locfileid: "43780479"
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/samples/index.yml">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>サンプル アプリ</h3>
-                                                    <p>Android、iOS、Windows 上で動作する Xamarin.Forms のさまざまなアプリとコード デモを紹介します。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -312,6 +293,44 @@ ms.locfileid: "43780479"
                                     </div>
                                 </a>
                             </li>
+                            <li>
+                                <a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="SkiaSharp Graphics in Xamarin.Forms" src="~/media/index/xamarin-graphics-skia.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>SkiaSharp のグラフィックスの電子ブック</h3>
+                                                    <p>SkiaSharp を使ったクロスプラットフォームのベクター グラフィックスとアニメーションを紹介します。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/samples/index.yml">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>サンプル アプリ</h3>
+                                                    <p>Android、iOS、Windows 上で動作する Xamarin.Forms のさまざまなアプリとコード デモを紹介します。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -324,11 +343,11 @@ ms.locfileid: "43780479"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-android-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-android-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Android の作業の開始</h3>
+                                                    <h3>Android の概要</h3>
                                                     <p>すぐに Xamarin.Android を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。</p>
                                                 </div>
                                             </div>
@@ -348,7 +367,7 @@ ms.locfileid: "43780479"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>アプリケーションの基礎</h3>
-                                                    <p>ファイル、画像、データベースの扱いなど、アプリを構築するために必要なすべての情報を説明します。</p>
+                                                    <p>ファイル、イメージ、データベースの操作など、アプリの構築で必要な知識をすべて説明します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -519,11 +538,11 @@ ms.locfileid: "43780479"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-ios-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-ios-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>iOS の概要</h3>
+                                                    <h3>iOS の使用を開始する</h3>
                                                     <p>すぐに Xamarin.iOS を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。</p>
                                                 </div>
                                             </div>
@@ -543,7 +562,7 @@ ms.locfileid: "43780479"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>アプリケーションの基礎</h3>
-                                                    <p>ファイル、画像、データベースの扱いなど、アプリを構築するために必要なすべての情報を説明します。</p>
+                                                    <p>ファイル、イメージ、データベースの操作など、アプリの構築で必要な知識をすべて説明します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -733,11 +752,11 @@ ms.locfileid: "43780479"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-mac-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-mac-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Mac の概要</h3>
+                                                    <h3>Mac の使用を開始する</h3>
                                                     <p>すぐに Xamarin.Mac を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初のアプリを構築してみましょう。</p>
                                                 </div>
                                             </div>
@@ -757,7 +776,7 @@ ms.locfileid: "43780479"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>アプリケーションの基礎</h3>
-                                                    <p>ファイル、画像、データベースの扱いなど、アプリを構築するために必要なすべての情報を説明します。</p>
+                                                    <p>ファイル、イメージ、データベースの操作など、アプリの構築で必要な知識をすべて説明します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -871,11 +890,11 @@ ms.locfileid: "43780479"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>作業の開始</h3>
+                                                    <h3>開始するには</h3>
                                                     <p>Xamarin for Android、iOS、macOS、UWP などを使用して、デスクトップおよびモバイル プラットフォーム用のクロスプラットフォーム アプリを構築できます。</p>
                                                 </div>
                                             </div>
@@ -1008,7 +1027,7 @@ ms.locfileid: "43780479"
                         <a href="#architecture1"></a>
                         <ul id="architecture1" class="cardsC">
                             <li>
-                                <a href="~/graphics-games/skiasharp/index.md">
+                                <a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -1094,7 +1113,7 @@ ms.locfileid: "43780479"
                         <a href="#architecture1"></a>
                         <ul id="architecture1" class="cardsC">
                             <li>
-                                <a href="~/tools/ios-simulator.md">
+                                <a href="~/tools/ios-simulator/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

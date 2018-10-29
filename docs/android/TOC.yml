@@ -1,0 +1,665 @@
+items:
+- name: Xamarin.Android
+  href: index.yml
+  items:
+  - name: 開始するには
+    href: get-started/index.md
+    items:
+    - name: セットアップとインストール
+      href: get-started/installation/index.md
+      items:
+      - name: Windows のインストール
+        href: get-started/installation/windows.md
+      - name: Android SDK セットアップ
+        href: get-started/installation/android-sdk.md
+      - name: Android Emulator のセットアップ
+        href: get-started/installation/android-emulator/index.md
+        items:
+        - name: ハードウェアの高速化 (Hyper-V と HAXM)
+          href: get-started/installation/android-emulator/hardware-acceleration.md
+        - name: デバイス マネージャー
+          href: get-started/installation/android-emulator/device-manager.md
+        - name: デバイスのプロパティ
+          href: get-started/installation/android-emulator/device-properties.md
+        - name: トラブルシューティング
+          href: get-started/installation/android-emulator/troubleshooting.md
+      - name: Android デバイスのセットアップ
+        href: get-started/installation/set-up-device-for-development.md
+      - name: Microsoft Mobile OpenJDK のプレビュー
+        href: get-started/installation/openjdk.md
+    - name: Hello, Android
+      href: get-started/hello-android/index.md
+      items:
+      - name: 'パート 1: クイック スタート'
+        href: get-started/hello-android/hello-android-quickstart.md
+      - name: 'パート 2: 深い分析'
+        href: get-started/hello-android/hello-android-deepdive.md
+    - name: Hello Android のマルチスクリーン
+      href: get-started/hello-android-multiscreen/index.md
+      items:
+      - name: 'パート 1: クイック スタート'
+        href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
+      - name: 'パート 2: 深い分析'
+        href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
+    - name: Java 開発者向け Xamarin
+      href: get-started/java-developers.md
+    expanded: true
+  - name: アプリケーションの基礎
+    href: app-fundamentals/index.md
+    items:
+    - name: ユーザー補助
+      href: app-fundamentals/accessibility.md
+    - name: Android API レベル
+      href: app-fundamentals/android-api-levels.md
+    - name: Android リソース
+      href: app-fundamentals/resources-in-android/index.md
+      items:
+      - name: Android リソースの基本
+        href: app-fundamentals/resources-in-android/android-resource-basics.md
+      - name: 既定のリソース
+        href: app-fundamentals/resources-in-android/default-resources.md
+      - name: 代替リソース
+        href: app-fundamentals/resources-in-android/alternate-resources.md
+      - name: さまざまな画面のリソース作成
+        href: app-fundamentals/resources-in-android/resources-for-varying-screens.md
+      - name: アプリケーションのローカライズと文字列リソース
+        href: app-fundamentals/resources-in-android/application-localization.md
+      - name: Android アセットの使用
+        href: app-fundamentals/resources-in-android/android-assets.md
+      - name: フォント
+        href: app-fundamentals/resources-in-android/fonts.md
+    - name: アクティビティのライフサイクル
+      href: app-fundamentals/activity-lifecycle/index.md
+      items:
+      - name: チュートリアル - アクティビティの状態を保存する
+        href: app-fundamentals/activity-lifecycle/saving-state.md
+    - name: Android サービス
+      href: app-fundamentals/services/index.md
+      items:
+      - name: サービスの作成
+        href: app-fundamentals/services/creating-a-service/index.md
+        items:
+        - name: バインドされたサービス
+          href: app-fundamentals/services/creating-a-service/bound-services.md
+        - name: インテント サービス
+          href: app-fundamentals/services/creating-a-service/intent-services.md
+        - name: 開始されるサービス
+          href: app-fundamentals/services/creating-a-service/started-services.md
+      - name: フォアグラウンド サービス
+        href: app-fundamentals/services/foreground-services.md
+      - name: プロセス以外のサービス
+        href: app-fundamentals/services/out-of-process-services.md
+      - name: サービスの通知
+        href: app-fundamentals/services/service-notifications.md
+    - name: ブロードキャスト レシーバー
+      href: app-fundamentals/broadcast-receivers.md
+    - name: ローカリゼーション
+      href: app-fundamentals/localization.md
+    - name: アクセス許可
+      href: app-fundamentals/permissions.md
+    - name: グラフィックスとアニメーション
+      href: app-fundamentals/graphics-and-animation.md
+    - name: CPU アーキテクチャ
+      href: app-fundamentals/cpu-architectures.md
+    - name: 回転の処理
+      href: app-fundamentals/handling-rotation.md
+    - name: オーディオ
+      href: app-fundamentals/android-audio.md
+    - name: 通知
+      href: app-fundamentals/notifications/index.md
+      items:
+      - name: ローカル通知
+        href: app-fundamentals/notifications/local-notifications.md
+      - name: ローカル通知のチュートリアル
+        href: app-fundamentals/notifications/local-notifications-walkthrough.md
+    - name: タッチ
+      href: app-fundamentals/touch/index.md
+      items:
+      - name: Android でのタッチ
+        href: app-fundamentals/touch/touch-in-android.md
+      - name: チュートリアル – Android でタッチを使用する
+        href: app-fundamentals/touch/android-touch-walkthrough.md
+      - name: マルチタッチ追跡
+        href: app-fundamentals/touch/touch-tracking.md
+    - name: HttpClient スタックと SSL/TLS
+      href: app-fundamentals/http-stack.md
+    - name: 応答性の高いアプリの作成
+      href: app-fundamentals/writing-responsive-apps.md
+  - name: ユーザー インターフェイス
+    href: user-interface/index.md
+    items:
+    - name: Android Designer
+      href: user-interface/android-designer/index.md
+      items:
+      - name: Android Designer の使用
+        href: user-interface/android-designer/designer-walkthrough.md
+      - name: Designer の基本
+        href: user-interface/android-designer/designer-basics.md
+      - name: リソース修飾子と視覚化のオプション
+        href: user-interface/android-designer/resource-qualifiers.md
+      - name: 代替レイアウト ビュー
+        href: user-interface/android-designer/alternative-layout-views.md
+      - name: 素材のデザイン機能
+        href: user-interface/android-designer/material-design-features.md
+    - name: 素材のテーマ
+      href: user-interface/material-theme.md
+    - name: ユーザー プロファイル
+      href: user-interface/user-profile.md
+    - name: スプラッシュ スクリーン
+      href: user-interface/splash-screen.md
+    - name: レイアウト
+      href: user-interface/layouts/index.md
+      items:
+      - name: LinearLayout
+        href: user-interface/layouts/linear-layout.md
+      - name: RelativeLayout
+        href: user-interface/layouts/relative-layout.md
+      - name: TableLayout
+        href: user-interface/layouts/table-layout.md
+      - name: RecyclerView
+        href: user-interface/layouts/recycler-view/index.md
+        items:
+        - name: パーツと機能
+          href: user-interface/layouts/recycler-view/parts-and-functionality.md
+        - name: RecyclerView の例
+          href: user-interface/layouts/recycler-view/recyclerview-example.md
+        - name: 例の拡張
+          href: user-interface/layouts/recycler-view/extending-the-example.md
+      - name: ListView
+        href: user-interface/layouts/list-view/index.md
+        items:
+        - name: ListView のパーツと機能
+          href: user-interface/layouts/list-view/parts-and-functionality.md
+        - name: ListView にデータを読み込む
+          href: user-interface/layouts/list-view/populating.md
+        - name: ListView の外観のカスタマイズ
+          href: user-interface/layouts/list-view/customizing-appearance.md
+        - name: CursorAdapters の使用
+          href: user-interface/layouts/list-view/cursor-adapters.md
+        - name: ContentProvider の使用
+          href: user-interface/layouts/list-view/content-provider.md
+        - name: ListView とアクティビティのライフサイクル
+          href: user-interface/layouts/list-view/activity-lifecycle.md
+      - name: GridView
+        href: user-interface/layouts/grid-view.md
+      - name: GridLayout
+        href: user-interface/layouts/grid-layout.md
+      - name: タブ付きレイアウト
+        href: user-interface/layouts/tab-layout/index.md
+        items:
+        - name: ActionBar 付きのナビゲーション タブ
+          href: user-interface/layouts/tab-layout/with-action-bar.md
+    - name: コントロール
+      href: user-interface/controls/index.md
+      items:
+      - name: ActionBar
+        href: user-interface/controls/action-bar.md
+      - name: オートコンプリート
+        href: user-interface/controls/auto-complete.md
+      - name: ボタン
+        href: user-interface/controls/buttons/index.md
+        items:
+        - name: オプション ボタン
+          href: user-interface/controls/buttons/radio-button.md
+        - name: トグル ボタン
+          href: user-interface/controls/buttons/toggle-button.md
+        - name: CheckBox
+          href: user-interface/controls/buttons/check-box.md
+        - name: カスタム ボタン
+          href: user-interface/controls/buttons/custom-button.md
+      - name: 予定表
+        href: user-interface/controls/calendar.md
+      - name: CardView
+        href: user-interface/controls/card-view.md
+      - name: EditText
+        href: user-interface/controls/edit-text.md
+      - name: Gallery
+        href: user-interface/controls/gallery.md
+      - name: ナビゲーション バー
+        href: user-interface/controls/navigation-bar.md
+      - name: 選択
+        href: user-interface/controls/pickers/index.md
+        items:
+        - name: 日付の選択
+          href: user-interface/controls/pickers/date-picker.md
+        - name: 時刻の選択
+          href: user-interface/controls/pickers/time-picker.md
+      - name: ポップアップ メニュー
+        href: user-interface/controls/popup-menu.md
+      - name: RatingBar
+        href: user-interface/controls/ratingbar.md
+      - name: Spinner
+        href: user-interface/controls/spinner.md
+      - name: 切り替え
+        href: user-interface/controls/switch.md
+      - name: TextureView
+        href: user-interface/controls/texture-view.md
+      - name: ツール バー
+        href: user-interface/controls/tool-bar/index.md
+        items:
+        - name: 操作バーの置き換え
+          href: user-interface/controls/tool-bar/replacing-the-action-bar.md
+        - name: 2 番目のツール バーの追加
+          href: user-interface/controls/tool-bar/adding-a-second-toolbar.md
+        - name: ツール バーの互換性
+          href: user-interface/controls/tool-bar/toolbar-compatibility.md
+      - name: ViewPager
+        href: user-interface/controls/view-pager/index.md
+        items:
+        - name: ViewPager とビュー
+          href: user-interface/controls/view-pager/viewpager-and-views.md
+        - name: ViewPager とフラグメント
+          href: user-interface/controls/view-pager/viewpager-and-fragments.md
+      - name: WebView
+        href: user-interface/controls/web-view.md
+  - name: プラットフォーム機能
+    href: platform/index.md
+    items:
+    - name: Android ビーム
+      href: platform/android-beam.md
+    - name: Android マニフェスト
+      href: platform/android-manifest.md
+    - name: Xamarin.Android でのファイル アクセス
+      href: platform/files/index.md
+      items:
+      - name: 外部ストレージ
+        href: platform/files/external-storage.md
+    - name: 指紋認証
+      href: platform/fingerprint-authentication/index.md
+      items:
+      - name: 作業の開始
+        href: platform/fingerprint-authentication/get-started.md
+      - name: 指紋のスキャン
+        href: platform/fingerprint-authentication/scanning.md
+      - name: CryptoObject の作成
+        href: platform/fingerprint-authentication/creating-a-cryptoobject.md
+      - name: 認証コールバックへの応答
+        href: platform/fingerprint-authentication/fingerprint-authentication-callbacks.md
+      - name: ガイダンスと概要
+        href: platform/fingerprint-authentication/summary.md
+      - name: 指紋の登録
+        href: platform/fingerprint-authentication/enrolling-fingerprint.md
+    - name: Android ジョブのスケジューラ
+      href: platform/android-job-scheduler.md
+    - name: Firebase ジョブ ディスパッチャー
+      href: platform/firebase-job-dispatcher.md
+    - name: フラグメント
+      href: platform/fragments/index.md
+      items:
+      - name: フラグメントの実装
+        href: platform/fragments/implementing-with-fragments/index.md
+        items:
+        - name: フラグメントのチュートリアル - パート 1
+          href: platform/fragments/implementing-with-fragments/walkthrough.md
+        - name: フラグメントのチュートリアル - パート 2
+          href: platform/fragments/implementing-with-fragments/walkthrough-landscape.md
+      - name: フラグメントの作成
+        href: platform/fragments/creating-a-fragment.md
+      - name: フラグメントの管理
+        href: platform/fragments/managing-fragments.md
+      - name: 特殊なフラグメント クラス
+        href: platform/fragments/specialized-fragment-classes.md
+      - name: 下位互換性の実現
+        href: platform/fragments/providing-backwards-compatibility.md
+    - name: アプリのリンク
+      href: platform/app-linking.md
+    - name: Android 9 Pie
+      href: platform/pie.md
+    - name: Android 8 Oreo
+      href: platform/oreo.md
+    - name: Android 7 Nougat
+      href: platform/nougat.md
+    - name: Android 6 Marshmallow
+      href: platform/marshmallow.md
+    - name: Android 5 Lollipop
+      href: platform/lollipop.md
+    - name: Android 4.4 KitKat
+      href: platform/kitkat.md
+    - name: Android 4.1 Jelly Bean
+      href: platform/jelly-bean.md
+    - name: Android 4.0 Ice Cream Sandwich
+      href: platform/ice-cream-sandwich.md
+    - name: コンテンツ プロバイダー
+      href: platform/content-providers/index.md
+      items:
+      - name: しくみ
+        href: platform/content-providers/how-it-works.md
+      - name: 連絡先の ContentProvider の使用
+        href: platform/content-providers/contacts-contentprovider.md
+      - name: カスタム ContentProvider の作成
+        href: platform/content-providers/custom-contentprovider.md
+    - name: マップと場所
+      href: platform/maps-and-location/index.md
+      items:
+      - name: 場所
+        href: platform/maps-and-location/location.md
+      - name: マップ
+        href: platform/maps-and-location/maps/index.md
+        items:
+        - name: マップ アプリケーション
+          href: platform/maps-and-location/maps/maps-application.md
+        - name: Maps API
+          href: platform/maps-and-location/maps/maps-api.md
+        - name: Google マップ API キーを取得する
+          href: platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md
+    - name: Android.Speech の使用
+      href: platform/speech.md
+    - name: Java の統合
+      href: platform/java-integration/index.md
+      items:
+      - name: Android 呼び出し可能ラッパー
+        href: platform/java-integration/android-callable-wrappers.md
+      - name: JNI の使用
+        href: platform/java-integration/working-with-jni.md
+      - name: Java から C# への移植
+        href: platform/java-integration/porting-java-to-csharp.md
+    - name: Java ライブラリのバインド
+      href: platform/binding-java-library/index.md
+      items:
+      - name: .JAR のバインド
+        href: platform/binding-java-library/binding-a-jar.md
+      - name: .AAR のバインド
+        href: platform/binding-java-library/binding-an-aar.md
+      - name: Eclipse ライブラリ プロジェクトのバインド
+        href: platform/binding-java-library/binding-a-library-project.md
+      - name: バインドのカスタマイズ
+        href: platform/binding-java-library/customizing-bindings/index.md
+        items:
+        - name: Java バインド メタデータ
+          href: platform/binding-java-library/customizing-bindings/java-bindings-metadata.md
+        - name: Javadoc でパラメーターに名前を付ける
+          href: platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md
+      - name: バインドのトラブルシューティング
+        href: platform/binding-java-library/troubleshooting-bindings.md
+    - name: ネイティブ ライブラリの使用
+      href: platform/native-libraries.md
+    - name: Renderscript
+      href: platform/renderscript.md
+  - name: Xamarin.Essentials
+    href: ~/essentials/index.md?context=xamarin/android
+    items:
+    - name: 作業の開始
+      href: ~/essentials/get-started.md?context=xamarin/android
+    - name: 加速度計
+      href: ~/essentials/accelerometer.md?context=xamarin/android
+    - name: アプリ情報
+      href: ~/essentials/app-information.md?context=xamarin/android
+    - name: バロメーター
+      href: ~/essentials/barometer.md?context=xamarin/android
+    - name: バッテリ
+      href: ~/essentials/battery.md?context=xamarin/android
+    - name: クリップボードのトピック
+      href: ~/essentials/clipboard.md?context=xamarin/android
+    - name: コンパス
+      href: ~/essentials/compass.md?context=xamarin/android
+    - name: 接続
+      href: ~/essentials/connectivity.md?context=xamarin/android
+    - name: データ転送
+      href: ~/essentials/data-transfer.md?context=xamarin/android
+    - name: デバイス ディスプレイ情報
+      href: ~/essentials/device-display.md?context=xamarin/android
+    - name: デバイス情報
+      href: ~/essentials/device-information.md?context=xamarin/android
+    - name: 電子メール
+      href: ~/essentials/email.md?context=xamarin/android
+    - name: ファイル システム ヘルパー
+      href: ~/essentials/file-system-helpers.md?context=xamarin/android
+    - name: 懐中電灯
+      href: ~/essentials/flashlight.md?context=xamarin/android
+    - name: ジオコーディング
+      href: ~/essentials/geocoding.md?context=xamarin/android
+    - name: 位置情報
+      href: ~/essentials/geolocation.md?context=xamarin/android
+    - name: ジャイロスコープ
+      href: ~/essentials/gyroscope.md?context=xamarin/android
+    - name: ランチャー
+      href: ~/essentials/launcher.md?context=xamarin/android
+    - name: 磁力計
+      href: ~/essentials/magnetometer.md?context=xamarin/android
+    - name: メイン スレッド
+      href: ~/essentials/main-thread.md?context=xamarin/android
+    - name: マップ
+      href: ~/essentials/maps.md?context=xamarin/android
+    - name: ブラウザーを開く
+      href: ~/essentials/open-browser.md?context=xamarin/android
+    - name: 向きセンサー
+      href: ~/essentials/orientation-sensor.md?context=xamarin/android
+    - name: ダイヤラー
+      href: ~/essentials/phone-dialer.md?context=xamarin/android
+    - name: 電源
+      href: ~/essentials/power.md?context=xamarin/android
+    - name: '[Preferences]'
+      href: ~/essentials/preferences.md?context=xamarin/android
+    - name: 画面のロック
+      href: ~/essentials/screen-lock.md?context=xamarin/android
+    - name: セキュリティで保護されたストレージ
+      href: ~/essentials/secure-storage.md?context=xamarin/android
+    - name: SMS
+      href: ~/essentials/sms.md?context=xamarin/android
+    - name: 音声合成
+      href: ~/essentials/text-to-speech.md?context=xamarin/android
+    - name: バージョンの追跡
+      href: ~/essentials/version-tracking.md?context=xamarin/android
+    - name: バイブレーション
+      href: ~/essentials/vibrate.md?context=xamarin/android
+    - name: トラブルシューティング
+      href: ~/essentials/troubleshooting.md?context=xamarin/android
+  - name: データとクラウド サービス
+    href: data-cloud/index.md
+    items:
+    - name: Azure Active Directory
+      href: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android
+      items:
+      - name: 作業の開始
+        href: ~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android
+        items:
+        - name: 手順 1. 登録
+          href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android
+        - name: 手順 2. 構成
+          href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/android
+      - name: Graph API へのアクセス
+        href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/android
+    - name: Azure Mobile Apps
+      href: ~/cross-platform/data-cloud/mobile-apps.md?context=xamarin/android
+    - name: データ アクセス
+      href: data-cloud/data-access/index.md
+      items:
+      - name: はじめに
+        href: data-cloud/data-access/introduction.md
+      - name: 構成
+        href: data-cloud/data-access/configuration.md
+      - name: SQLite.NET ORM の使用
+        href: data-cloud/data-access/using-sqlite-orm.md
+      - name: ADO.NET の使用
+        href: data-cloud/data-access/using-adonet.md
+      - name: アプリでのデータの使用
+        href: data-cloud/data-access/using-data-in-an-app.md
+    - name: Google Messaging
+      href: data-cloud/google-messaging/index.md
+      items:
+      - name: Firebase Cloud Messaging
+        href: data-cloud/google-messaging/firebase-cloud-messaging.md
+      - name: FCM 通知のチュートリアル
+        href: data-cloud/google-messaging/remote-notifications-with-fcm.md
+      - name: Google Cloud Messaging
+        href: data-cloud/google-messaging/google-cloud-messaging.md
+      - name: GCM 通知のチュートリアル
+        href: data-cloud/google-messaging/remote-notifications-with-gcm.md
+    - name: Web サービス
+      href: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/android
+      items:
+      - name: 'チュートリアル: WCF の使用'
+        href: ~/cross-platform/data-cloud/web-services/walkthrough-working-with-wcf.md?context=xamarin/android
+  - name: 配置とテスト
+    href: deploy-test/index.md
+    items:
+    - name: アプリ パッケージ サイズ
+      href: deploy-test/app-package-size.md
+    - name: アプリのビルド
+      href: deploy-test/building-apps/index.md
+      items:
+      - name: ビルド プロセス
+        href: deploy-test/building-apps/build-process.md
+      - name: ABI 固有の APK のビルド
+        href: deploy-test/building-apps/abi-specific-apks.md
+    - name: コマンド ライン エミュレーター
+      href: deploy-test/command-line-emulator.md
+    - name: デバッグ
+      href: deploy-test/debugging/index.md
+      items:
+      - name: エミュレーターでのデバッグ
+        href: deploy-test/debugging/debug-on-emulator.md
+      - name: デバイスでのデバッグ
+        href: deploy-test/debugging/debug-on-device.md
+      - name: Android のデバッグ ログ
+        href: deploy-test/debugging/android-debug-log.md
+    - name: デバッグ可能な属性
+      href: deploy-test/debuggable-attribute.md
+    - name: 環境
+      href: deploy-test/environment.md
+    - name: GDB
+      href: deploy-test/gdb.md
+    - name: カスタム リンカー設定
+      href: deploy-test/linker.md
+    - name: マルチコア デバイス
+      href: deploy-test/multicore-devices.md
+    - name: パフォーマンス
+      href: deploy-test/performance.md
+    - name: プロファイル
+      href: deploy-test/profiling.md
+    - name: リリースの準備
+      href: deploy-test/release-prep/index.md
+      items:
+      - name: ProGuard
+        href: deploy-test/release-prep/proguard.md
+    - name: APK に署名する
+      href: deploy-test/signing/index.md
+      items:
+      - name: APK に手動で署名する
+        href: deploy-test/signing/manually-signing-the-apk.md
+      - name: キーストアの署名の検索
+        href: deploy-test/signing/keystore-signature.md
+    - name: アプリの発行
+      href: deploy-test/publishing/index.md
+      items:
+      - name: GooglePlay に公開する
+        href: deploy-test/publishing/publishing-to-google-play/index.md
+        items:
+        - name: Google ライセンス サービス
+          href: deploy-test/publishing/publishing-to-google-play/google-licensing-services.md
+        - name: APK 拡張ファイル
+          href: deploy-test/publishing/publishing-to-google-play/apk-expansion-files.md
+        - name: APK を手動でアップロードする
+          href: deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md
+      - name: Amazon への発行
+        href: deploy-test/publishing/publishing-to-amazon.md
+      - name: 個別公開
+        href: deploy-test/publishing/publishing-independently.md
+    - name: システム アプリとしてインストールする
+      href: deploy-test/install-system-app.md
+  - name: 高度な概念と内部構造
+    href: internals/index.md
+    items:
+    - name: アーキテクチャ
+      href: internals/architecture.md
+    - name: 使用できるアセンブリ
+      href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
+    - name: API の設計
+      href: internals/api-design.md
+    - name: ガベージ コレクション
+      href: internals/garbage-collection.md
+    - name: 制限事項
+      href: internals/limitations.md
+  - name: トラブルシューティング
+    href: troubleshooting/index.md
+    items:
+    - name: トラブルシューティングのヒント
+      href: troubleshooting/troubleshooting.md
+    - name: よく寄せられる質問
+      href: troubleshooting/questions/index.md
+      items:
+      - name: インストールする必要がある Android SDK パッケージを教えてください
+        href: troubleshooting/questions/install-android-sdk-packages.md
+      - name: Android SDK の場所はどこで設定できますか
+        href: troubleshooting/questions/android-sdk-location.md
+      - name: Java Development Kit (JDK) のバージョンの更新方法を教えてください
+        href: troubleshooting/questions/update-jdk.md
+      - name: Java Development Kit (JDK) バージョン 9 以降は使用できますか
+        href: troubleshooting/questions/jdk9-errors.md
+      - name: Xamarin.Android.Support パッケージに必要な Android サポート ライブラリを手動でインストールする方法を教えてください
+        href: troubleshooting/questions/install-android-support-library.md
+      - name: Windows 上で Android をデバッグするために必要な USB ドライバーを教えてください
+        href: troubleshooting/questions/android-drivers-debug-windows.md
+      - name: Windows VM から Mac 上で動作する Android エミュレーターに接続できますか
+        href: troubleshooting/questions/connect-android-emulator-mac-windows.md
+      - name: Android NUnit テスト プロジェクトを自動化する方法を教えてください
+        href: troubleshooting/questions/automate-android-nunit-test.md
+      - name: Android の .axml ファイルで Intellisense を有効にする方法を教えてください
+        href: troubleshooting/questions/enable-axml-intellisense.md
+      - name: Android のリリース ビルドがインターネットに接続できないのはなぜですか
+        href: troubleshooting/questions/android-internet.md
+      - name: より高度な Xamarin Android サポート v4/v13 NuGet パッケージ
+        href: troubleshooting/questions/android-support-v4v13-libraries.md
+      - name: PathTooLongException を解決する方法
+        href: troubleshooting/questions/path-too-long-exception.md
+      - name: Lollipop のサポートが追加された Xamarin.Android のバージョンを教えてください
+        href: troubleshooting/questions/xa-lollipop.md
+      - name: "Android.Support.v7.AppCompat - 指定された名前: 属性 'android:actionModeShareDrawable' と一致するリソースが見つかりません"
+        href: troubleshooting/questions/missing-action-mode-share-drawable.md
+      - name: Android Designer の Java メモリ パラメーターの調整
+        href: troubleshooting/questions/android-designer-java-memory.md
+      - name: Android Resource.designer.cs ファイルが更新されない
+        href: troubleshooting/questions/resource-designer-wont-update.md
+    - name: ライブラリ インストール エラーの解決
+      href: troubleshooting/resolving-library-installation-errors.md
+    - name: Android SDK ツールへの変更
+      href: troubleshooting/sdk-cli-tooling-changes.md
+    - name: Xamarin.Android エラー リファレンス
+      href: troubleshooting/errors.md
+  - name: Wear
+    href: wear/index.md
+    items:
+    - name: 開始するには
+      href: wear/get-started/index.md
+      items:
+      - name: Android Wear の概要
+        href: wear/get-started/intro-to-wear.md
+      - name: セットアップとインストール
+        href: wear/get-started/installation.md
+      - name: Wear の基本
+        href: wear/get-started/hello-wear.md
+    - name: ユーザー インターフェイス
+      href: wear/user-interface/index.md
+      items:
+      - name: コントロール
+        href: wear/user-interface/controls/index.md
+        items:
+        - name: GridViewPager
+          href: wear/user-interface/controls/gridviewpager.md
+    - name: プラットフォーム機能
+      href: wear/platform/index.md
+      items:
+      - name: ウォッチの文字盤を作成する
+        href: wear/platform/creating-a-watchface.md
+    - name: 画面サイズ
+      href: wear/screen-sizes.md
+    - name: 配置とテスト
+      href: wear/deploy-test/index.md
+      items:
+      - name: エミュレーターでのデバッグ
+        href: wear/deploy-test/debug-on-emulator.md
+      - name: Wear デバイスでのデバッグ
+        href: wear/deploy-test/debug-on-device.md
+      - name: パッケージ化
+        href: wear/deploy-test/packaging.md
+  - name: リリース ノート
+    href: https://developer.xamarin.com/releases/android/
+  - name: サンプル
+    href: samples/index.yml
+  expanded: true
+ms.openlocfilehash: 2ca84f556d0822272c8d2b680835322056b0d7bd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130229"
