@@ -1,4 +1,4 @@
----
+﻿---
 title: Xamarin.Forms でのファイルの処理
 description: ファイルの処理を Xamarin.Forms では、.NET Standard ライブラリ、または埋め込みリソースを使用してコードを使用して実現できます。
 ms.prod: xamarin
@@ -21,6 +21,7 @@ _ファイルの処理を Xamarin.Forms では、.NET Standard ライブラリ�
 ## <a name="overview"></a>概要
 
 Xamarin.Forms コードは複数のプラットフォームで実行されますが、各プラットフォームには独自のファイルシステムがあります。 以前は、ことファイルの読み書きが最も簡単に実行されたこと各プラットフォームでネイティブ ファイル Api を使用してこれを意味します。 また、埋め込みリソースは、アプリとデータ ファイルを配布する簡単なソリューションです。 ただし、.NET Standard 2.0 と .NET Standard ライブラリでファイルへのアクセス コードを共有することは。
+また、埋め込みリソースは、アプリと一緒にデータファイルを配布するより簡単な方法です。 しかし、.NET Standard 2.0 を使えば、 .NET Standard ライブラリでファイルへアクセスするコードを共有することができます。
 
 イメージ ファイルの処理方法の詳細についてを参照してください、[イメージを操作](~/xamarin-forms/user-interface/images.md)ページ。
 
@@ -60,7 +61,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
-## <a name="loading-files-embedded-as-resources"></a>リソースとして埋め込まれているファイルの読み込み
+## <a name="loading-files-embedded-as-resources"></a>埋め込みリソースファイルの読み込み
 
 ファイルを埋め込むには、 **.NET Standard** 、アセンブリを作成またはファイルを追加し、いることを確認**ビルド アクション: EmbeddedResource**します。
 
@@ -107,7 +108,7 @@ listView.ItemsSource = monkeys;
 
 <a name="Embedding_in_Shared_Projects" />
 
-### <a name="embedding-in-shared-projects"></a>共有プロジェクトに埋め込む
+### <a name="embedding-in-shared-projects"></a>Shared プロジェクトでの埋め込み
 
 共有プロジェクトが、ファイル リソースの Id を変更することができますが使用されるプレフィックスに埋め込まれて参照元のプロジェクトには、共有プロジェクトの内容がコンパイルされているために、ファイルを埋め込みリソースとしてこともできます。 つまり、埋め込まれた各ファイルのリソース ID は、プラットフォームごとに異なる可能性があります。
 
