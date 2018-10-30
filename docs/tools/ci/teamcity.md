@@ -81,13 +81,13 @@ TeamCity のコンパイルとテスト クラウドにモバイル アプリケ
 
 ビルド スクリプトは (Windows) で Powershell ファイルまたは (OS X) 上の bash スクリプトとして簡単にできます。 ビルド スクリプトを作成する場合は、スクリプト言語のいくつかの選択肢があります。
 
-- [**Rake** ](https://github.com/jimweirich/rake) – Ruby に基づいてプロジェクトを構築するためのドメイン固有言語 (DSL) になります。 Rake は、人気の利点とライブラリの豊富なエコシステムがあります。
+- [**rake** ](https://github.com/jimweirich/rake) – Ruby に基づいてプロジェクトを構築するためのドメイン固有言語 (DSL) になります。 rake は、人気の利点とライブラリの豊富なエコシステムがあります。
 
 - [**psake** ](https://github.com/psake/psake) – これは、ソフトウェアを構築するための Windows Powershell ライブラリ
 
-- [**フェイク**](http://fsharp.github.io/FAKE/) – これは、ベースの DSLF#に必要な場合は、既存の .NET ライブラリを利用できるようにします。
+- [**FAKE**](http://fsharp.github.io/FAKE/) – これは、ベースの DSLF#に必要な場合は、既存の .NET ライブラリを利用できるようにします。
 
-どのスクリプト言語が使用されるは、ユーザー設定や要件によって異なります。 [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)例にはとして、Rake を使用する例が含まれています、[ビルド スクリプト](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)します。
+どのスクリプト言語が使用されるは、ユーザー設定や要件によって異なります。 [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)例にはとして、rake を使用する例が含まれています、[ビルド スクリプト](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)します。
 
 > [!NOTE]
 > 表現力とソフトウェアの構築には専用の DSL の保守容易性、MSBuild または NAnt がこれらの不足などの XML ベース ビルド システムを使用することになります。
