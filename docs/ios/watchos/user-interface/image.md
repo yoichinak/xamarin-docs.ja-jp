@@ -22,7 +22,7 @@ watchOS の提供、 [ `WKInterfaceImage` ](https://developer.xamarin.com/api/ty
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 資産カタログのイメージを使用すると、ウォッチ キット アプリにイメージを追加できます。
-のみ**@2x** Retina ディスプレイ デバイスをすべて見るために、バージョンが必要です。
+のみ **@2x** Retina ディスプレイ デバイスをすべて見るために、バージョンが必要です。
 
 ![](image-images/asset-universal-sml.png "Retina ディスプレイ デバイスをすべて見るために 2 つだけの x バージョンが必要です。")
 
