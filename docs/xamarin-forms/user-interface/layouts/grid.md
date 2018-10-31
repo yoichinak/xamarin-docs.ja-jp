@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 392a0e6c76357ce106477ec4d5037673e5702b43
+ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994503"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50301241"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms のグリッド
 
@@ -22,12 +22,12 @@ ms.locfileid: "38994503"
 
 この記事では説明します。
 
-- **[目的](#Purpose)** &ndash;の一般的な使用`Grid`します。
-- **[使用状況](#Usage)** &ndash;を使用する`Grid`目的の設計を実現するためにします。
-  - **[行と列](#Rows_and_Columns)** &ndash;行と列の指定、`Grid`します。
-  - **[ビューを配置する](#Placing_Views)** &ndash;ビューを特定の行と列のグリッドに追加します。
-  - **[間隔](#Spacing)** &ndash;行と列の間のスペースを構成します。
-  - **[スパン](#Spans)** &ndash;複数の行または列にまたがるように要素を構成します。
+- **[目的](#purpose)** &ndash;の一般的な使用`Grid`します。
+- **[使用状況](#usage)** &ndash;を使用する`Grid`目的の設計を実現するためにします。
+  - **[行と列](#rows-and-columns)** &ndash;行と列の指定、`Grid`します。
+  - **[ビューを配置する](#placing-views-in-a-grid)** &ndash;ビューを特定の行と列のグリッドに追加します。
+  - **[間隔](#spacing)** &ndash;行と列の間のスペースを構成します。
+  - **[スパン](#spans)** &ndash;複数の行または列にまたがるように要素を構成します。
 
 ![](grid-images/grid.png "グリッド探索")
 
@@ -42,8 +42,6 @@ ms.locfileid: "38994503"
 ## <a name="usage"></a>使用法
 
 従来のテーブルとは異なり`Grid`コンテンツから行と列のサイズと数を推論することはありません。 代わりに、`Grid`が`RowDefinitions`と`ColumnDefinitions`コレクション。 これらは、行と列の数がレイアウトの定義を保持します。ビューに追加されます`Grid`行と列でビューを配置する必要がありますを識別する指定された行および列のインデックスを使用します。
-
-<a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>行と列
 
@@ -83,8 +81,6 @@ grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUni
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
 grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
 ```
-
-<a name="Placing_Views" />
 
 ### <a name="placing-views-in-a-grid"></a>グリッド ビューを配置します。
 
