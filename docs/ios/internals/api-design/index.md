@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cd25e5c78885f53902c577a900958b842a70219c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116954"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235052"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
@@ -107,7 +107,7 @@ Api のバインドの詳細については、次を参照してください。�
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)型はすべて、OBJECTIVE-C のバインドの基盤です。 Xamarin.iOS 型 iOS CocoaTouch Api からの型の 2 つのクラスをミラー化: C の型 (通常と呼ばれる CoreFoundation 型) と OBJECTIVE-C の種類 (これらの NSObject クラスから派生しています)。
+[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)型はすべて、OBJECTIVE-C のバインドの基盤です。 Xamarin.iOS 型 iOS CocoaTouch Api からの型の 2 つのクラスをミラー化: (CoreFoundation 型と通常呼ばれる) C の型と OBJECTIVE-C の種類 (これらの NSObject クラスから派生しています)。
 
 アンマネージ型をミラー化される型ごとを使用してネイティブ オブジェクトを取得することは、[処理](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)プロパティ。
 

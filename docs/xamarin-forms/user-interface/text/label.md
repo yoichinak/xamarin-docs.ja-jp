@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/04/2018
-ms.openlocfilehash: c98dcc30ac89e3df0338df02e14a32575c0dc847
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: a6c0cd057082a6fa4793ca3de18cefd00243e9e3
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39203037"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235065"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms のラベル
 
@@ -22,13 +22,13 @@ _Xamarin.Forms にテキストを表示_
 
 ## <a name="text-decorations"></a>文字装飾
 
-下線、取り消し線テキスト装飾に適用できる[ `Label` ](xref:Xamarin.Forms.Label)インスタンスを設定して、`Label.TextDecoration`プロパティを 1 つまたは複数`TextDecoration`列挙型メンバー。
+下線、取り消し線テキスト装飾に適用できる[ `Label` ](xref:Xamarin.Forms.Label)インスタンスを設定して、`Label.TextDecorations`プロパティを 1 つまたは複数`TextDecorations`列挙型メンバー。
 
 - `None`
 - `Underline`
 - `Strikethrough`
 
-次の XAML の例は、設定を示して、`Label.TextDecoration`プロパティ。
+次の XAML の例は、設定を示して、`Label.TextDecorations`プロパティ。
 
 ```xaml
 <Label Text="This is underlined text." TextDecorations="Underline"  />
@@ -44,7 +44,7 @@ var strikethroughLabel = new Label { Text = "This is text with strikethrough.", 
 var bothLabel = new Label { Text = "This is underlined text with strikethrough.", TextDecorations = TextDecorations.Underline | TextDecorations.Strikethrough };
 ```
 
-次のスクリーン ショットに示す、`TextDecoration`列挙型のメンバーに適用される[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。
+次のスクリーン ショットに示す、`TextDecorations`列挙型のメンバーに適用される[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。
 
 ![](label-images/label-textdecorations.png "文字装飾を使用してラベル")
 
@@ -158,7 +158,7 @@ var label =
 - [`Style`](xref:Xamarin.Forms.Span.Style) – スパンに適用するスタイル。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – スパンのテキスト。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) -範囲内のテキストの色。
-- `TextDecoration` -範囲内のテキストに適用する装飾。 詳細については、次を参照してください。[装飾](#text-decorations)します。
+- `TextDecorations` -範囲内のテキストに適用する装飾。 詳細については、次を参照してください。[装飾](#text-decorations)します。
 
 さらに、 [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)のジェスチャに応答するジェスチャ レコグナイザーのコレクションを定義するプロパティを使用できます、 [ `Span`](xref:Xamarin.Forms.Span)します。
 
