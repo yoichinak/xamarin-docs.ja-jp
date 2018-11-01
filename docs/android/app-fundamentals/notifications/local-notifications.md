@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: a4ffae0bde39450778b340b4a4c4da8fe90d0bec
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63f0d4d7ce5f056d8e1db6bc297258c6bc070086
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117682"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675550"
 ---
 <a name="compatibility"></a>
 
@@ -747,7 +747,7 @@ builder.SetStyle (textStyle);
 Android、where の以前のバージョンをサポートするために`SetCategory`が利用できない、コードは実行時に条件付きで呼び出す API レベルを確認できます`SetCategory`Android 5.0 (API レベル 21) 以上の API レベルの場合します。
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetCategory (Notification.CategoryEmail);
 }
 ```
@@ -760,7 +760,7 @@ if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
 Android では、Android 5.0 (API レベル 21) の前にロック画面の通知をサポートしていないため、`NotificationCompat.Builder`はサポートしていません、`SetVisibility`メソッド。 前述のように`SetCategory`、コードが実行時と呼び出し API レベルを確認できます`SetVisiblity`が使用可能な。
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= 21) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetVisibility (Notification.Public);
 }
 ```

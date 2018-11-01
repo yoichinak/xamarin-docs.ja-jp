@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 34e923e4df76680ad8d0be5f2844ef56b32af4db
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 625564eebf83b3075f61b1a25bde1a78abe1ca2e
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38985992"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674913"
 ---
 # <a name="creating-a-custom-xamarinforms-theme"></a>Xamarin.Forms のカスタム テーマの作成
 
@@ -26,7 +26,8 @@ Nuget パッケージからテーマを追加するだけでなく (など、 [L
 
 これらの機能については、次のマークアップに直接追加することも、同等のスタイルを作成、 **App.xaml**します。
 
-注、`Class`属性`Style`(ではなく、 [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) Xamarin.Forms の以前のバージョンで使用可能な属性)。
+注、`Class`属性`Style`(ではなく、 [`x:Key`](~/xamarin-forms/user-interface/styles/inheritance.md)
+属性の Xamarin.Forms の以前のバージョンで使用できます)。
 
 ```xml
 <ResourceDictionary>
@@ -200,7 +201,7 @@ namespace ThemesDemo.Droid
 
         protected override bool CanBeApplied()
         {
-            return Container != null && (int)Android.OS.Build.VERSION.SdkInt >= 21;
+            return Container != null && Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop;
         }
 
         protected override void OnAttachedInternal()

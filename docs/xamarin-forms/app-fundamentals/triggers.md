@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 954a0967e034e0321964e12ca0725ae2a85e3bc6
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: e9ec9288e2b8ea991ef8d41f9b601d0897631b9d
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995538"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675212"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -85,7 +85,8 @@ XAML、純粋に表現できる簡単なトリガーを追加、`Trigger`要素�
 
 データ トリガーが発生する別のコントロールを監視するデータ バインドを使用して、`Setter`に呼び出されます。 代わりに、`Property`プロパティ トリガー属性は、設定、`Binding`属性を指定した値を監視します。
 
-次の例は、データ バインディング構文を使用して`{Binding Source={x:Reference entry}, Path=Text.Length}`はどのように別のコントロールのプロパティを参照してください。 ときの長さ、 `entry` 0 の場合は、トリガーがアクティブ化します。 このサンプルでは、トリガーは、入力が空の場合に、ボタンを無効にします。
+次の例は、データ バインディング構文を使用します。 `{Binding Source={x:Reference entry}, Path=Text.Length}`
+これは、方法もう 1 つのコントロールのプロパティを参照してください。 ときの長さ、 `entry` 0 の場合は、トリガーがアクティブ化します。 このサンプルでは、トリガーは、入力が空の場合に、ボタンを無効にします。
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -164,7 +165,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 
 内のトリガーを共有する場合は注意を`ResourceDictionary`コントロール間での 1 つのインスタンスの共有はため、1 回構成されている任意の状態は、それらすべてに適用されます。
 
-イベント トリガーがサポートしていないことに注意してください。`EnterActions`と`ExitActions`[以下に示す](#enterexit)します。    
+イベント トリガーがサポートしていないことに注意してください。`EnterActions`と`ExitActions`[以下に示す](#enterexit)します。
 
 <a name="multi" />
 
@@ -202,7 +203,6 @@ A`MultiTrigger`次のような`Trigger`または`DataTrigger`点を除いては�
 
 これで、`IValueConverter`します。 変換の下のコンバーター コード、`Text.Length`にバインドを`bool`かフィールドが空かどうかを示します。
 
-
 ```csharp
 public class MultiTriggerConverter : IValueConverter
 {
@@ -234,7 +234,7 @@ public class MultiTriggerConverter : IValueConverter
 XAML は、以下に示します。 最初の複数のトリガーの例から次の相違点に注意してください。
 
 * ボタンには、`IsEnabled="false"`既定で設定します。
-* 複数のトリガーの条件では、コンバーターを使用して、`Text.Length`にブール値。
+* 複数のトリガーの条件では、コンバーターを使用して、`Text.Length`値に、`boolean`します。
 * すべての条件の場合に`true`、setter は、ボタンの`IsEnabled`プロパティ`true`します。
 
 ```xaml
@@ -266,7 +266,6 @@ XAML は、以下に示します。 最初の複数のトリガーの例から�
 
 これらのスクリーン ショットでは、上記 2 つの複数のトリガー例の違いを示します。 テキスト入力、画面の上部には、1 つだけで`Entry`が有効にするのに十分な**保存**ボタンをクリックします。
 画面の下部に、**ログイン**まで、両方のフィールドがデータを含むボタンを非アクティブなままです。
-
 
 ![](triggers-images/multi-requireall.png "MultiTrigger 例")
 

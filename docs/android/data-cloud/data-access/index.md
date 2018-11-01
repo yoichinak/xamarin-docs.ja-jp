@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 19a2842fa7d29ed40052166b880bf4b26dc09e9c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120698"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674770"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 
@@ -20,18 +20,18 @@ _ほとんどのアプリケーションでは、デバイスにローカルに�
 
 ## <a name="data-access-overview"></a>データ アクセスの概要
 
-ほとんどのアプリケーションでは、デバイスにローカルにデータを保存するには、いくつか要件があります。 データの量が普通に小規模でない限り、通常が必要です、データベースとデータベースへのアクセスを管理するアプリケーションでのデータ層。 Android の両方が「組み込み」Sqlite データベース エンジンと、SQLite のデータ プロバイダーに付属する Xamarin のプラットフォームによって、データへのアクセスが簡略化します。
+ほとんどのアプリケーションでは、デバイスにローカルにデータを保存するには、いくつか要件があります。 データの量が普通に小規模でない限り、通常が必要です、データベースとデータベースへのアクセスを管理するアプリケーションでのデータ層。 Android の両方が「組み込み」SQLite データベース エンジンと、SQLite のデータ プロバイダーに付属する Xamarin のプラットフォームによって、データへのアクセスが簡略化します。
 
 Xamarin.Android などのデータベース アクセス Api をサポートします。
 
--  ADO.NET フレームワークです。
--  SQLite NET サード パーティのライブラリ。
+- ADO.NET フレームワークです。
+- SQLite NET サード パーティのライブラリ。
 
 このセクションでは、コードの大部分は、クロス プラットフォームの完全には、され、変更しなくても iOS または Android で実行されます。 説明した 2 つのサンプル アプリがあります。
 
--  [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash;単純なデータ操作が、結果をテキスト コントロールの表示を書き込みます
+- [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash;単純なデータ操作が、結果をテキスト コントロールの表示を書き込みます
 
--  [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash;一覧が表示され、単純なデータ構造の編集作業アプリケーションを小さなデータ操作に統合します。
+- [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash;一覧が表示され、単純なデータ構造の編集作業アプリケーションを小さなデータ操作に統合します。
 
 両方のサンプル ソリューションには、iOS と Android のサンプル アプリケーションのプロジェクトが含まれます。
 

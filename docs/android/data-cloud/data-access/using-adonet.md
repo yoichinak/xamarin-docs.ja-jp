@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 4b22b15cfe5aaa836b65fc75f847b88c8e00e80b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7ecf7244fb2ccbe0e4163c89941f9de5138ba713
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107002"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674952"
 ---
 # <a name="using-adonet-with-android"></a>Android と ADO.NET を使用します。
 
@@ -38,7 +38,7 @@ Xamarin は、Android で使用できるは、使い慣れた ADO.NET に似た�
 
 使用、`Mono.Data.Sqlite.SqliteConnection`空のデータベース ファイルを作成するクラスをインスタンス化にし、`SqliteCommand`オブジェクト、データベースに対して SQL 命令の実行に使用することができます。
 
-**空のデータベースを作成する**&ndash;呼び出し、`CreateFile`有効なメソッド (ie。 書き込み可能な) ファイルのパス。 このメソッドを呼び出す前に、ファイルが既に存在するかどうか、新しい (空) のデータベースが作成して、古いものの上にそれ以外の場合と、古いファイル内のデータは失われますをチェックする必要があります。
+**空のデータベースを作成する**&ndash;呼び出し、`CreateFile`有効な (つまり書き込み可能な) ファイルのパスを持つメソッド。 このメソッドを呼び出す前に、ファイルが既に存在するかどうか、新しい (空) のデータベースが作成して、古いものの上にそれ以外の場合と、古いファイル内のデータは失われますをチェックする必要があります。
 `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);` `dbPath`変数は、このドキュメントで前述したルールに従って決定する必要があります。
 
 **データベース接続を作成する** &ndash; SQLite データベースのファイルが作成された後は、データにアクセスする接続オブジェクトを作成することができます。 接続が接続文字列の形式で構築された`Data Source=file_path`ここに示すように。
@@ -143,7 +143,7 @@ public static string DoSomeDataAccess ()
 
 ## <a name="more-complex-queries"></a>複雑なクエリ
 
-SQLite は、任意の SQL コマンドのデータに対して実行することで、あるため、すべてを実行できます`CREATE`、 `INSERT`、 `UPDATE`、 `DELETE`、または`SELECT`たいステートメント。 Sqlite の web サイトでは SQLite でサポートする SQL コマンドの詳細について確認できます。 3 つのメソッドのいずれかを使用して SQL ステートメントを実行する`SqliteCommand`オブジェクト。
+SQLite は、任意の SQL コマンドのデータに対して実行することで、あるため、すべてを実行できます`CREATE`、 `INSERT`、 `UPDATE`、 `DELETE`、または`SELECT`たいステートメント。 SQLite の web サイトでは SQLite でサポートする SQL コマンドの詳細について確認できます。 3 つのメソッドのいずれかを使用して SQL ステートメントを実行する`SqliteCommand`オブジェクト。
 
 -   **ExecuteNonQuery** &ndash;通常、テーブルの作成やデータの挿入に使用します。 一部の操作の戻り値は影響を受ける行の数、それ以外の場合は-1。
 

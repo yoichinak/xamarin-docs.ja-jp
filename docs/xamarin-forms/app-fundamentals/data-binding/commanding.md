@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b18d042e34146a72b488da9017648a430c9cd353
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 68c7869254ae861cef8307431d925368082be921
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996374"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675256"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
@@ -22,7 +22,7 @@ ms.locfileid: "38996374"
 
 間のデータ バインディングを許可する、 `Button` 、ViewModel、 `Button` 2 つのプロパティを定義します。
 
-- [`Command`](xref:Xamarin.Forms.Button.Command) 型の <xref:System.Windows.Input.ICommand>
+- [`Command`](xref:Xamarin.Forms.Button.Command) 型の [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
 - [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) 型の `Object`
 
 対象とするデータ バインドを定義するコマンド インターフェイスを使用する、`Command`のプロパティ、`Button`型の ViewModel のプロパティのソースの`ICommand`します。 ビューモデルには、関連するコードが含まれています。`ICommand`ボタンがクリックされたときに実行されるプロパティ。 設定できる`CommandParameter`すべてしている場合、複数のボタンを区別するために任意のデータを同じバインド`ICommand`ビューモデルのプロパティ。
@@ -39,7 +39,7 @@ ms.locfileid: "38996374"
 
 ## <a name="the-icommand-interface"></a>ICommand インターフェイス
 
-<xref:System.Windows.Input.ICommand>インターフェイスは、Xamarin.Forms の一部ではありません。 代わりに定義されている、 [System.Windows.Input](xref:System.Windows.Input)名前空間には、2 つのメソッドと 1 つのイベントで構成されます。
+[ `System.Windows.Input.ICommand` ](xref:System.Windows.Input.ICommand)インターフェイスは、Xamarin.Forms の一部ではありません。 代わりに定義されている、 [System.Windows.Input](xref:System.Windows.Input)名前空間には、2 つのメソッドと 1 つのイベントで構成されます。
 
 ```csharp
 public interface ICommand
@@ -76,7 +76,7 @@ public ICommand MyCommand { private set; get; }
 
 ## <a name="the-command-class"></a>コマンド クラス
 
-自分の ViewModel がの型のプロパティを定義する場合`ICommand`、ビューモデルが含まれても、または実装するクラスを参照する必要があります、`ICommand`インターフェイス。 このクラスは、含むまたは参照する必要があります、`Execute`と`CanExecute`メソッド、および火災、`CanExecuteChanged`イベントたびに、`CanExecute`メソッドは、別の値を返す可能性があります。
+自分の ViewModel が型のプロパティを定義する場合`ICommand`、ビューモデルが含まれても、または実装するクラスを参照する必要があります、`ICommand`インターフェイス。 このクラスは、含むまたは参照する必要があります、`Execute`と`CanExecute`メソッド、および火災、`CanExecuteChanged`イベントたびに、`CanExecute`メソッドは、別の値を返す可能性があります。
 
 このようなクラスを自分で記述できます。 または他のユーザーが記述するクラスを使用することができます。 `ICommand`一部の Microsoft Windows では、使用された Windows MVVM アプリケーションの年。 実装する Windows クラスを使用して`ICommand`Windows アプリケーションと Xamarin.Forms アプリケーションの間、ViewModels を共有することができます。
 
@@ -378,7 +378,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 `execute`関数**送信**からプロパティ変更ハンドラーを削除します、`PersonViewModel`にオブジェクトを追加、`Persons`コレクション、初期条件をすべて返します。
 
-`execute`関数を**キャンセル**ボタンはすべて、**送信**ボタンは execept オブジェクトをコレクションに追加します。
+`execute`関数を**キャンセル**ボタンはすべて、**送信**ボタンは除くオブジェクトをコレクションに追加。
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -693,7 +693,6 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 などのナビゲーション メニューを実装するための便利なコマンドの実行は、 [**データ バインディング デモ**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)自体をプログラムします。 一部を次に示します**MainPage.xaml**:
 
-
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -763,8 +762,6 @@ public partial class MainPage : ContentPage
 両方を設定`NavigateCommand`と`BindingContext`(で任意の順序) を呼び出す前`InitializeComponent`は、XAML パーサーは、バインド定義を検出したときに、バインドの両方のコンポーネントが設定されているためです。
 
 データ バインドが複雑になることができる場合がありますが、この一連の記事で説明したように、強力で用途が広く、ユーザー インターフェイスから基になるロジックを分離することで、コードを整理する助けにします。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

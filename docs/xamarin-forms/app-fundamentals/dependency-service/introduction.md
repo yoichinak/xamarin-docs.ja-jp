@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/15/2018
-ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 3c8cc31c21f354b60001cefb919b51bf4d42da9f
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38995415"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675017"
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService の概要
 
@@ -42,7 +42,7 @@ Xamarin.Forms アプリが 4 つのコンポーネントを使用する必要が
 
 ### <a name="interface"></a>Interface
 
-インターフェイスを設計するには、プラットフォーム固有の機能と対話する方法を定義します。 コンポーネントまたは Nuget パッケージとして共有されるコンポーネントを開発している場合は注意します。 API の設計では、作成したり、パッケージを中断することができます。 次の例では、読み上げられる、単語を指定するときに柔軟性が各プラットフォーム用にカスタマイズを実装するテキストの読み上げのシンプルなインターフェイスを指定します。
+インターフェイスを設計するには、プラットフォーム固有の機能と対話する方法を定義します。 コンポーネントまたは NuGet パッケージとして共有されるコンポーネントを開発している場合は注意します。 API の設計では、作成したり、パッケージを中断することができます。 次の例では、読み上げられる、単語を指定するときに柔軟性が各プラットフォーム用にカスタマイズを実装するテキストの読み上げのシンプルなインターフェイスを指定します。
 
 ```csharp
 public interface ITextToSpeech {

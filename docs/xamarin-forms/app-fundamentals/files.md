@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: ddffb45b8cd8d47371e4ab57f30a467cea45b27d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e31bb46569ed96d514ec87eacaf9f3912dcf3237
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117773"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675160"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms でのファイルの処理
 
@@ -107,7 +107,7 @@ listView.ItemsSource = monkeys;
 
 <a name="Embedding_in_Shared_Projects" />
 
-### <a name="embedding-in-shared-projects"></a>Shared プロジェクトでの埋め込み
+## <a name="embedding-in-shared-projects"></a>Shared プロジェクトでの埋め込み
 
 共有プロジェクトが、ファイル リソースの Id を変更することができますが使用されるプレフィックスに埋め込まれて参照元のプロジェクトには、共有プロジェクトの内容がコンパイルされているために、ファイルを埋め込みリソースとしてこともできます。 つまり、埋め込まれた各ファイルのリソース ID は、プラットフォームごとに異なる可能性があります。
 
