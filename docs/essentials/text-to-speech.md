@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: 音声合成'
-description: アプリケーションをデバイスからと、エンジンがサポートできる使用可能な言語のクエリにも、バックのテキストを読み上げる音声合成エンジンで、組み込み利用 Xamarin.Essentials で TextToSpeech クラスです。
+description: Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用して、デバイスからテキストを読み上げたり、エンジンがサポートしている利用可能な言語を照会したりすることができます。
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: ba822870edafce44140caa66b01f4da242fb7779
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.date: 08/30/2018
+ms.openlocfilehash: 29eab430ae3d42934cedfdbd36d7be08e55b5d54
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353614"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675368"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: 音声合成
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**TextToSpeech**クラスは、デバイスからと、エンジンがサポートできる使用可能な言語のクエリにも、バックのテキストを読み上げる音声合成エンジンで、ビルドを利用するアプリケーションを使用できます。
+**TextToSpeech** クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用して、デバイスからテキストを読み上げたり、エンジンがサポートしている利用可能な言語を照会したりすることができます。
 
-## <a name="using-text-to-speech"></a>音声合成を使用
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-text-to-speech"></a>音声合成の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-音声合成機能が呼び出すことによって、`SpeakAsync`メソッドでは、テキストと省略可能なパラメーター、発話が完了した後に返します。 
+音声合成は、テキストと省略可能なパラメーターと共に `SpeakAsync` メソッドを呼び出すことで動作し、発話が終了すると戻ります。
 
 ```csharp
 public async Task SpeakNowDefaultSettings()
@@ -46,7 +50,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-このメソッドは、省略可能な`CancellationToken`を起動した場合、発話を停止します。
+このメソッドは、開始した後で発話を停止するために、オプションの `CancellationToken` を受け取ります。
 
 ```csharp
 CancellationTokenSource cts;
@@ -67,7 +71,7 @@ public void CancelSpeech()
 }
 ```
 
-音声合成では、同じスレッドからの音声要求を自動的にキューされます。
+音声合成は、同じスレッドからの音声の要求を自動的にキューに登録します。
 
 ```csharp
 bool isBusy = false;
@@ -91,9 +95,9 @@ public void SpeakMultiple()
 }
 ```
 
-### <a name="speech-settings"></a>音声認識の設定
+### <a name="speech-settings"></a>音声の設定
 
-オーディオがどのように話されているかをより細かく制御して、バックアップ`SpeakSettings`ボリューム、ピッチ、およびロケールを設定することができます。
+ボリューム、ピッチ、ロケールの設定を可能にする `SpeakSettings` を使用して、オーディオがどのように話されるのかをより細かく制御します。
 
 ```csharp
 public async Task SpeakNow()
@@ -108,7 +112,7 @@ public async Task SpeakNow()
 }
 ```
 
-次に、これらのパラメーターのサポートされている値を示します。
+これらのパラメーターに使用できる値は次のとおりです。
 
 | パラメーター | 最小要件 | 最大 |
 | --- | :---: | :---: |
@@ -117,7 +121,7 @@ public async Task SpeakNow()
 
 ### <a name="speech-locales"></a>音声のロケール
 
-各プラットフォームでは、複数の言語とアクセントのバックのテキストを読み上げるロケールを提供します。 各プラットフォームにさまざまなコードとは、これを指定する方法は Essentials は、クロス プラットフォームを提供します。`Locale`クラスと、使用してクエリを実行する方法`GetLocalesAsync`します。
+テキストをさまざまな言語およびアクセントで読み上げるために、各プラットフォームではさまざまなロケールがサポートされています。 プラットフォームにはロケールを指定するためのさまざまなコードや方法があります。そのため、Xamarin.Essentials には、クロスプラットフォームの `Locale` クラスや、`GetLocalesAsync` でそれらを照会する方法が用意されています。
 
 ```csharp
 public async Task SpeakNow()
@@ -140,10 +144,10 @@ public async Task SpeakNow()
 
 ## <a name="limitations"></a>制限事項
 
-- 複数のスレッドで呼び出された場合は、発話のキューは保証されません。
-- バック グラウンド オーディオ再生は公式にサポートされていません。
+- 複数のスレッドから呼び出された場合、発話のキューは保証されません。
+- バックグラウンドでのオーディオ再生は、公式にはサポートされていません。
 
 ## <a name="api"></a>API
 
-- [TextToSpeech ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
+- [TextToSpeech のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API ドキュメント](xref:Xamarin.Essentials.TextToSpeech)

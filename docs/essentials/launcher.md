@@ -1,32 +1,32 @@
 ---
 title: Xamarin.Essentials ランチャー
-description: Xamarin.Essentials でランチャー クラスは、システムによって、URI を開くためのアプリケーションを使用できます。
+description: Xamarin.Essentials の Launcher クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/25/2018
-ms.openlocfilehash: 252bb873c1494265aafb2285057490ca29ce7419
-ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
-ms.translationtype: MT
+ms.openlocfilehash: 8f5ef8ef97999e9e85944d9fa9d4e57660779a48
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39573634"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115784"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: ランチャー
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**ランチャー**クラスは、システムによって、URI を開くためのアプリケーションを使用できます。 これは、ディープ リンクを別のアプリケーションのカスタム URI スキームに設定するときに多くの場合、使用されます。 Web サイトにブラウザーを起動しようとするかどうかを参照してください、 **[ブラウザー](open-browser.md)**  API。
+**Launcher** クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。 これは多くの場合、他のアプリケーションのカスタム URI スキームへのディープ リンクを設定するときに使用されます。 ブラウザーで Web サイトを開く場合は、**[Browser](open-browser.md)** API を参照する必要があります。
 
-## <a name="using-launcher"></a>ランチャーを使用してください。
+## <a name="using-launcher"></a>ランチャーの使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-ランチャー機能の呼び出しを使用する、`OpenAsync`メソッドを渡します、`string`または`Uri`を開きます。 必要に応じて、`CanOpenAsync`メソッドを使用して、デバイス上のアプリケーションで URI のスキーマを処理できるかどうかを確認します。
+ランチャーの機能を使用するには、`OpenAsync` メソッドを呼び出し、開く `string` または `Uri` を渡します。 必要に応じて、デバイス上のアプリケーションで URI スキーマを処理できるかどうかを確認するために `CanOpenAsync` メソッドを使用できます。
 
 ```csharp
 public class LauncherTest
@@ -40,7 +40,27 @@ public class LauncherTest
 }
 ```
 
+## <a name="platform-differences"></a>プラットフォームの差異
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+`CanOpenAsync` から返されたタスクはすぐに完了します。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+自分のアプリケーションから `OpenAsync` でこのデバイス上の目的のアプリケーションを開いたことがない場合、iOS によって、ユーザーは一度、自分のアプリがそれを開くことを許可するよう求められます。
+
+`CanOpenAsync` から返されたタスクはすぐに完了します。
+
+iOS の実装について詳しくは、[こちら](https://developer.xamarin.com/api/member/UIKit.UIApplication.CanOpenUrl/p/Foundation.NSUrl/)をご覧ください。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+プラットフォームの差異はありません。
+
+-----
+
 ## <a name="api"></a>API
 
-- [ランチャーのソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
-- [ランチャー API ドキュメント](xref:Xamarin.Essentials.Launcher)
+- [Launcher のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
+- [Launcher API ドキュメント](xref:Xamarin.Essentials.Launcher)

@@ -1,60 +1,60 @@
 ---
 title: 'Xamarin.Essentials: 接続'
-description: Xamarin.Essentials で接続クラスでは、デバイスのネットワークの状態の変更を監視、現在のネットワーク アクセスと現在の接続方法を確認できます。
+description: Xamarin.Essentials の Connectivity クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 96b4ee0487034c651bec1dfb168fed7567b63c96
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: b0d5f28aca5d836608bc5a3423f3dc234a551ca0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353699"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112001"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: 接続
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**接続**クラスでは、デバイスのネットワークの状態の変化を監視できますが、現在のネットワーク アクセスと現在の接続方法を確認します。
+**Connectivity** クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。
 
 ## <a name="getting-started"></a>作業の開始
 
-アクセスする、**接続**次のプラットフォーム固有設定の機能が必要です。
+**接続**の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`AccessNetworkState`アクセス許可は必須であり、Android プロジェクトで構成する必要があります。 これは、次の方法で追加できます。
+`AccessNetworkState` アクセス許可が必要です。Android プロジェクト内で構成する必要があります。 これは次の方法で追加できます。
 
-開く、 **AssemblyInfo.cs**ファイル、**プロパティ**フォルダーを追加。
+**[プロパティ]** フォルダーにある **AssemblyInfo.cs** ファイルを開き、以下を追加します。
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
 ```
 
-または、Android マニフェストを更新します。
+または、Android マニフェストを追加します。
 
-開く、 **AndroidManifest.xml**ファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、**manifest** ノードの内部に以下を追加します。
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**ネットワークのアクセス状態**権限。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**[Access Network State]\(ネットワーク アクセスの状態\)** アクセス許可を確認します。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-追加の設定が必要です。
+追加の設定は必要ありません。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-追加の設定が必要です。
+追加の設定は必要ありません。
 
 -----
 
 ## <a name="using-connectivity"></a>接続の使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -71,15 +71,15 @@ if (current == NetworkAccess.Internet)
 }
 ```
 
-[ネットワーク アクセス](xref:Xamarin.Essentials.NetworkAccess)は、次のカテゴリに分類されます。
+[ネットワーク アクセス](xref:Xamarin.Essentials.NetworkAccess)は次のカテゴリに分けられます。
 
-* **インターネット**– ローカルとインターネットのアクセス。
-* **ConstrainedInternet** – インターネットへのアクセスを制限します。 Captive portal の接続、web ポータルへのローカル アクセスが提供されているが、インターネットへのアクセスは、特定の資格情報は、ポータル経由で提供されることが必要ですことを示します。
-* **ローカル**– ローカル ネットワークのみにアクセスします。
+* **Internet** – ローカルとインターネットのアクセス。
+* **ConstrainedInternet** – 制限付きインターネット アクセスです。 Web ポータルへのローカル接続が提供されている、キャプティブ ポータルの接続を示しています。ただし、インターネットにアクセスするにはポータル経由で特定の資格情報を提供する必要があります。
+* **local** – ローカル ネットワークのみにアクセスします。
 * **None** – 使用できる接続がありません。
-* **不明な**: インターネット接続を確認できません。
+* **Unknown** – インターネット接続を確認できません。
 
-種類をチェックする[接続プロファイル](xref:Xamarin.Essentials.ConnectionProfile)デバイスが実際に使用します。
+デバイスが実際に使用している[接続プロファイル](xref:Xamarin.Essentials.ConnectionProfile)の種類を確認できます。
 
 ```csharp
 var profiles = Connectivity.Profiles;
@@ -89,7 +89,7 @@ if (profiles.Contains(ConnectionProfile.WiFi))
 }
 ```
 
-接続プロファイルまたはネットワーク アクセスの変更されるたびにトリガーされたときにイベントを受信できます。
+接続プロファイルまたはネットワーク アクセスが変更されるたびに、トリガーされたイベントを受信できます。
 
 ```csharp
 public class ConnectivityTest
@@ -100,7 +100,7 @@ public class ConnectivityTest
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
-    void Connectivity_ConnectivityChanged(ConnectivityChangedEventArgs  e)
+    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs  e)
     {
         var access = e.NetworkAccess;
         var profiles = e.Profiles;
@@ -110,9 +110,9 @@ public class ConnectivityTest
 
 ## <a name="limitations"></a>制限事項
 
-考えられる点に注意することが重要する`Internet`によって報告される`NetworkAccess`が web へのフル アクセスでは使用できません。 接続が各プラットフォームでどのように動作するしくみにより、接続を使用できるを保証ことできますだけです。 たとえば、デバイスは、Wi-fi ネットワークに接続する可能性がありますが、ルーターが、インターネットから切断されています。 このインスタンスで、インターネットが報告されるが、アクティブな接続は使用できません。
+`NetworkAccess` によって `Internet` が報告されるが、Web へのフル アクセスは利用できないという場合があることに注意する必要があります。 各プラットフォーム上での接続の動作方法によってのみ、接続が使用可能であることを保証できます。 たとえば、デバイスは Wi-Fi ネットワークに接続されているが、ルーターがインターネットから切断されている可能性があります。 この例ではインターネットが報告される場合がありますが、実際には接続を使用できません。
 
 ## <a name="api"></a>API
 
-* [接続のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
-* [接続 API ドキュメント](xref:Xamarin.Essentials.Connectivity)
+* [Connectivity のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Connectivity API ドキュメント](xref:Xamarin.Essentials.Connectivity)

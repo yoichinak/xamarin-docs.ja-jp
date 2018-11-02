@@ -5,18 +5,18 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 53e7ca70184270662d27043387da836ad44432fe
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 98793d82e553ffe45bf3cd37314a6fe70d856f2f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40184429"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102673"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: 加速度計
 
 ![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**加速度計**クラスでは、デバイスの加速を 3 つの次元空間で示す、デバイスの加速度計センサーを監視できます。
+**Accelerometer** クラスでは、デバイスの加速度を 3 次元空間で示す、デバイスの加速度計センサーを監視できます。
 
 ## <a name="using-accelerometer"></a>加速度計の使用
 
@@ -77,11 +77,11 @@ X 軸は水平方向で右に、Y 軸は垂直方向で上に、Z 軸は画面�
 
 次に例を示します。
 
-* テーブルの上に水平に置いたデバイスを、左側から右側に向かって押した場合、X の加速値は正の値になります。
+- テーブルの上に水平に置いたデバイスを、左側から右側に向かって押した場合、X の加速値は正の値になります。
 
-* デバイスがテーブルの上に水平に置かれている場合、加速値は +1.00 G または (+9.81 m/s^2) になります。これは、デバイスの加速 (0 m/s^2) から重力 (-9.81 m/s^2) を引き、G の単位で正規化したものに相当します。
+- デバイスがテーブルの上に水平に置かれている場合、加速値は +1.00 G または (+9.81 m/s^2) になります。これは、デバイスの加速 (0 m/s^2) から重力 (-9.81 m/s^2) を引き、G の単位で正規化したものに相当します。
 
-* テーブルの上に水平に置いたデバイスを加速 A m/s^2 で上に持ち上げた場合、加速値は A+9.81 と同等になります。これは、デバイスの加速 (+A m/s^2) から重力 (-9.81 m/s^2) を引き、G の単位で正規化したものに相当します。
+- テーブルの上に水平に置いたデバイスを加速度 A m/s^2 で上に持ち上げた場合、加速度の値は A+9.81 と等しくなります。これは、デバイスの加速度 (+A m/s^2) から重力 (-9.81 m/s^2) を引き、G の単位で正規化したものに相当します。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

@@ -1,47 +1,47 @@
 ---
-title: 'Xamarin.Essentials: 電源エネルギー省の状態'
-description: 電源クラスは、デバイスが省電力モードで動作しているかを判断するエネルギーを節約の状態を取得するプログラムを使用できます。
+title: 'Xamarin.Essentials: 電源の省電力の状態'
+description: Power クラスを使用すると、プログラムで省電力の状態を取得して、デバイスが低電力モードで動作しているかどうかを判断できます。
 ms.assetid: C176D177-8B77-4A9C-9F3B-27852A8DCD5F
-author: charlespetzold
-ms.author: chape
+author: jamesmontemagno
+ms.author: jamont
 ms.date: 06/27/2018
-ms.openlocfilehash: 760a305280269734034a817182a8c2a07894ca2b
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 5a89dba16a93b007c5d7312221d8d33e00c7404a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353491"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110005"
 ---
-# <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials: 電源エネルギー省の状態
+# <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials: 電源の省電力の状態
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**Power**クラスを示す、デバイスが省電力モードで実行されているかどうか、デバイスの電力を節約状態に関する情報を提供します。 デバイスの電力を節約の状態がある場合、アプリケーションはバック グラウンド処理を避ける必要があります。
+**Power** クラスでは、デバイスの省電力の状態に関する情報を取得できます。これはデバイスが低電力モードで実行されているかどうかを示します。 デバイスの省電力状態がオンになっている場合、アプリケーションはバックグラウンド処理を避ける必要があります。
 
 ## <a name="background"></a>背景
 
-バッテリで実行するデバイスは、スクリーン セーバーのエネルギー省電力モードに配置できます。 場合がありますデバイスはモードに切り替えるこの自動的には、たとえば、バッテリ容量が 20% を下回ると。 オペレーティング システムは、バッテリが消費されます傾向があるアクティビティを減らすことで、エネルギー節約機能モードに応答します。 エネルギー省のモードがオンの場合は、バック グラウンド処理または変量の他のアクティビティを回避することでアプリケーションに役立ちます。
+バッテリで動作するデバイスは、低電力の省電力モードに切り替えることができます。 デバイスが自動的にこのモードに切り替わる場合があります。たとえば、バッテリ残量が 20% を下回ったときなどです。 オペレーティング システムは、バッテリを消耗させる傾向があるアクティビティを減らすことで、省電力モードに対応します。 アプリケーションでは、バックグラウンド処理やその他の電力消費の大きいアクティビティを回避することで、省電力モードがオンになった場合をサポートできます。
 
-Android デバイスで、 **Power**クラスは、以降の Android バージョン 5.0 (Lollipop) にのみ意味のある情報を返します。
+Android デバイスの場合、**Power** クラスによって意味のある情報が返されるのは、バージョン 5.0 (Lollipop) 以降の Android のみです。
 
-## <a name="using-the-power-class"></a>電源クラスを使用します。
+## <a name="using-the-power-class"></a>Power クラスの使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-静的なを使用してデバイスの現在のエネルギーを節約状態を取得`Power.EnergySaverStatus`プロパティ。
+静的プロパティ `Power.EnergySaverStatus` を使用して、デバイスの現在の省電力状態を取得します。
 
 ```csharp
 // Get energy saver status
 var status = Power.EnergySaverStatus;
 ```
 
-このプロパティのメンバーを返します、`EnergySaverStatus`列挙型であるか、 `On`、 `Off`、または`Unknown`します。 プロパティを返す場合`On`アプリケーションは、バック グラウンド処理または大量の電力を消費する可能性がある他のアクティビティを避ける必要があります。
+このプロパティは `EnergySaverStatus` 列挙型のメンバーを返します。それは `On`、`Off`、または `Unknown` です。 プロパティが `On` を返す場合、アプリケーションでは、バックグラウンド処理やその他の電力消費の大きいアクティビティを回避する必要があります。
 
-アプリケーションは、イベント ハンドラーをインストールする必要があります。 **Power**クラスは、エネルギーを節約の状態が変更されたときにトリガーされるイベントを公開します。
+アプリケーションでは、イベント ハンドラーもインストールする必要があります。 **Power** クラスでは、省電力の状態が変更されたときにトリガーされるイベントが公開されています。
 
 ```csharp
 public class EnergySaverTest
@@ -60,9 +60,9 @@ public class EnergySaverTest
 }
 ```
 
-エネルギー省の状態に変わる場合`On`アプリケーションがバック グラウンド処理の実行を停止する必要があります。 状態に変わる場合`Unknown`または`Off`アプリケーションがバック グラウンド処理を再開できます。
+省電力の状態が `On` に変わった場合、アプリケーションはバックグラウンド処理の実行を停止させる必要があります。 状態が `Unknown` または `Off` に変わった場合、アプリケーションはバックグラウンド処理を再開することができます。
 
 ## <a name="api"></a>API
 
-- [電源のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Power)
+- [Power のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Power)
 - [Power API ドキュメント](xref:Xamarin.Essentials.Power)

@@ -1,32 +1,36 @@
 ---
-title: Xamarin.Essentials 開くブラウザー
-description: Xamarin.Essentials でブラウザー クラスは、最適化されたシステムの推奨されるブラウザーや外部のブラウザーで web リンクを開くためのアプリケーションを使用できます。
+title: Xamarin.Essentials ブラウザーを開く
+description: Xamarin.Essentials の Browser クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使って、アプリケーションで Web リンクを開くことができます。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 7e58d439f5a6eaafe9b1b5e7ca874a986e468cb9
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: a68837ac4447dabcf52a1d1b27913adf80b4cbd7
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353283"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675394"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials: ブラウザー
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**ブラウザー**クラスは、最適化されたシステムの推奨されるブラウザーや外部のブラウザーで web リンクを開くためのアプリケーションを使用できます。
+**Browser** クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使って、アプリケーションで Web リンクを開くことができます。
 
-## <a name="using-browser"></a>ブラウザーを使用してください。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-browser"></a>ブラウザーの使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-ブラウザーの機能を呼び出すことで機能、`OpenAsync`メソッドを`Uri`と`BrowserLaunchMode`します。
+ブラウザー機能を動作させるには、`Uri`、`BrowserLaunchMode` と共に `OpenAsync` メソッドを呼び出します。
 
 ```csharp
 
@@ -43,33 +47,33 @@ public class BrowserTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-起動モードは、ブラウザーを起動する方法を決定します。
+起動モードによってブラウザーを起動する方法が決定されます。
 
-## <a name="system-preferred"></a>優先システム
+## <a name="system-preferred"></a>システム推奨
 
-[Chrome のカスタム タブ](https://developer.chrome.com/multidevice/android/customtabs)使用しようとしましたが、Uri を読み込み、ナビゲーションの認識を保持します。
+[Chrome Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs) を使用して URI を読み込み、ナビゲーション認識を保持することが試みられます。
 
 ## <a name="external"></a>外部
 
-`Intent`システムの通常のブラウザーで開く、Uri を要求するために使用されます。
+`Intent` を使用して、システムの通常のブラウザーで URI を開くよう要求します。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-## <a name="system-preferred"></a>優先システム
+## <a name="system-preferred"></a>システム推奨
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)に Uri を読み込み、ナビゲーションの認識の保持に使用します。
+[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) を使用して、URI を読み込み、ナビゲーション認識を保持します。
 
 ## <a name="external"></a>外部
 
-標準`OpenUrl`メイン アプリケーションでは、アプリケーションの外部で既定のブラウザーの起動を使用します。
+メイン アプリケーションの標準の `OpenUrl` を使用して、アプリケーションの外部で既定のブラウザーを起動します。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-ユーザーの既定のブラウザーに関係なく常に起動する、`BrowserLaunchMode`します。
+`BrowserLaunchMode` に関係なく、常にユーザーの既定のブラウザーが起動します。
 
 --------------
 
 ## <a name="api"></a>API
 
-- [ブラウザーのソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
-- [ブラウザー API ドキュメント](xref:Xamarin.Essentials.Browser)
+- [Browser のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Browser API ドキュメント](xref:Xamarin.Essentials.Browser)

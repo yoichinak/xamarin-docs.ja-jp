@@ -1,80 +1,85 @@
 ---
-title: Xamarin.Essentials を概要します。
-description: Xamarin.Essentials、iOS、Android、または UWP で動作する 1 つのクロス プラットフォーム API を提供するアプリケーションからアクセスできるユーザー インターフェイスを作成する方法に関係なく、コードを共有します。
+title: Xamarin.Essentials の概要
+description: Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: c72c1c66a465075770ce739270cb4b1f2c6fba7a
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.custom: video
+ms.date: 08/08/2018
+ms.openlocfilehash: dd48d917b669e5f83eaafa2f1ba5af5d9a19a342
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353777"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107223"
 ---
-# <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials を概要します。
+# <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の概要
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-Xamarin.Essentials、iOS、Android、または UWP で動作する 1 つのクロス プラットフォーム API を提供するアプリケーションからアクセスできるユーザー インターフェイスを作成する方法に関係なく、コードを共有します。
+Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。
 
 ## <a name="platform-support"></a>プラットフォームのサポート
 
-Xamarin.Essentials には、次のプラットフォームとオペレーティング システムがサポートされています。
+Xamarin.Essentials では、次のプラットフォームとオペレーティング システムがサポートされています。
 
 | プラットフォーム | Version |
 | --- | --- |
-| Android | 4.4 (API 19) またはそれ以降 |
+| Android | 4.4 (API 19) 以上 |
 | iOS |10.0 以上 |
-| UWP | 10.0.16299.0 以降 |
+| UWP | 10.0.16299.0 以上 |
 
 ## <a name="installation"></a>インストール
 
-Xamarin.Essentials は Visual Studio を使用して既存または新規のプロジェクトに追加できる NuGet パッケージとして入手できます。
+Xamarin.Essentials は NuGet パッケージとして入手可能で、Visual Studio を使用して既存または新規の任意のプロジェクトに追加できます。
 
-1. ダウンロードしてインストール[Visual Studio](http://visualstudio.com)で、 [Visual Studio tools for Xamarin](~/cross-platform/get-started/installation/index.md)します。
+1. [Xamarin 用の Visual Studio ツール](~/cross-platform/get-started/installation/index.md)と共に、[Visual Studio](http://visualstudio.com) をダウンロードしてインストールします。
 
-2. 既存のプロジェクトを開くか、下の空のアプリ テンプレートを使用して新しいプロジェクトを作成する**Visual Studio c#** (Android、iPhone と iPad、またはクロス プラットフォーム)。 **重要な**: UWP プロジェクトに追加することがビルド 16299 以降、プロジェクトのプロパティが設定されているようにします。
+2. 既存のプロジェクトを開くか、**Visual Studio C#** (Android、iPhone と iPad、またはクロスプラットフォーム) の下の空のアプリ テンプレートを使用して新しいプロジェクトを作成します。 **重要**: UWP プロジェクトに追加する場合、プロジェクトのプロパティにビルド 16299 以上が設定されていることを確認します。
 
-3. 追加、 **Xamarin.Essentials**の各プロジェクトに NuGet パッケージ。
+3. 各プロジェクトに **Xamarin.Essentials** の NuGet パッケージを追加します。
 
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    ソリューション エクスプ ローラー パネルで、ソリューション名を右クリックし、選択**NuGet パッケージの管理**します。 検索**Xamarin.Essentials**にパッケージをインストールおよび**すべて**Android、iOS、UWP、および .NET Standard ライブラリを含むプロジェクト。
+    ソリューション エクスプローラー パネルでソリューション名を右クリックし、**[NuGet パッケージの管理]** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、UWP、.NET Standard ライブラリなど、**すべての**プロジェクトにパッケージをインストールします。
 
     > [!TIP]
-    > チェック、**プレリリースを含める**ボックス中に、 [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials)はプレビュー段階です。
+    > [**Xamarin.Essentials** の NuGet](https://www.nuget.org/packages/Xamarin.Essentials) がプレビュー段階である間は、**[プレリリースを含める]** ボックスをオンにしてください。
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    ソリューション エクスプ ローラー パネルで、プロジェクト名を右クリックし、選択**追加 > NuGet パッケージを追加しています.**.検索**Xamarin.Essentials**にパッケージをインストールおよび**すべて**Android、iOS、および .NET Standard ライブラリを含むプロジェクト。
+    ソリューション エクスプローラー パネルでプロジェクト名を右クリックし、**[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** を選択します。**Xamarin.Essentials** を検索し、Android、iOS、.NET Standard ライブラリなど、**すべての**プロジェクトにパッケージをインストールします。
 
     > [!TIP]
-    > チェック、**プレリリース パッケージを表示する**ボックス中に、 [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials)はプレビュー段階です。
+    > [**Xamarin.Essentials** の NuGet](https://www.nuget.org/packages/Xamarin.Essentials) がプレビュー段階である間は、**[プレリリース パッケージを表示する]** ボックスをオンにしてください。
 
     -----
 
-4. Api を参照するすべての c# クラスで Xamarin.Essentials への参照を追加します。
+4. Xamarin.Essentials への参照を任意の C# クラスに追加して、API を参照します。
 
     ```csharp
     using Xamarin.Essentials;
     ```
 
-5. Xamarin.Essentials では、プラットフォーム固有のセットアップが必要です。
+5. Xamarin.Essentials では、プラットフォーム固有の設定が必要です。
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-    Xamarin.Essentials が最小の Android バージョン 4.4、API レベル 19 に対応するをサポートしていますが、コンパイルのターゲット Android バージョンは、8.1 である必要があります、API レベル 27 に対応します。 (Visual Studio でのこれら 2 つのバージョンが、Android マニフェスト タブで、Android プロジェクトのプロジェクトのプロパティ ダイアログで設定されます。Visual studio for Mac では、これらいるに設定、Android アプリケーション タブで、Android プロジェクトのプロジェクト オプション ダイアログ。) 
+    Xamarin.Essentials では最小の Android バージョン 4.4 (API レベル 19 に対応) がサポートされていますが、コンパイルのターゲットの Android バージョンは 8.1 (API レベル 27 に対応) である必要があります。 (Visual Studio では、これらの 2 つのバージョンは、[Android マニフェスト] タブ内の、Android プロジェクトの [プロジェクトのプロパティ] ダイアログで設定されます。Visual Studio for Mac では、これらは [Android アプリケーション] タブ内の、Android プロジェクトの [プロジェクト オプション] ダイアログで設定されます。) 
     
-    Xamarin.Essentials には、必要な xamarin.android.support についてライブラリのバージョン 27.0.2.1 がインストールされます。 アプリケーションを必要とする他の Xamarin.Android.Support ライブラリは、NuGet パッケージ マネージャーを使用して 27.0.2.1 のバージョンにも更新されます。 アプリケーションで使用されるすべての Xamarin.Android.Support ライブラリは同じである必要があり、以上である必要があります 27.0.2.1 のバージョン。 参照してください、[トラブルシューティング ページ](troubleshooting.md)Xamarin.Essentials NuGet を追加または更新して、ソリューションで Nuget の問題がある場合。
+    Xamarin.Essentials では、必要なバージョン 27.0.2.1 の Xamarin.Android.Support ライブラリがインストールされます。 アプリケーションで必要となるその他の Xamarin.Android.Support ライブラリも、NuGet パッケージ マネージャーを使用してバージョン 27.0.2.1 に更新する必要があります。 アプリケーションで使用される Xamarin.Android.Support ライブラリはすべて同じであり、かつ少なくともバージョン 27.0.2.1 以上である必要があります。 Xamarin.Essentials の NuGet の追加、またはソリューションでの NuGet の更新に関して問題が発生した場合は、[トラブルシューティングのページ](troubleshooting.md)を参照してください。
 
-    Android プロジェクトの`MainLauncher`または any`Activity`つまりで起動した Xamarin.Essentials を初期化する必要があります、`OnCreate`メソッド。
+    Android プロジェクトの `MainLauncher`、または起動されるすべての `Activity` では、`OnCreate` メソッド内で Xamarin.Essentials を初期化する必要があります。
 
     ```csharp
-    Xamarin.Essentials.Platform.Init(this, bundle);
+    protected override void OnCreate(Bundle savedInstanceState) {
+        //...
+        base.OnCreate(savedInstanceState);
+        Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code
+        //...
     ```
 
-    Android ランタイムのアクセス許可を処理する Xamarin.Essentials 受け取る必要がありますすべて`OnRequestPermissionsResult`します。 次のコードをすべて追加`Activity`クラス。
+    Android 上で実行時のアクセス許可を処理するには、Xamarin.Essentials がすべての `OnRequestPermissionsResult` を受け取る必要があります。 すべての `Activity` クラスに次のコードを追加します。
 
     ```csharp
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -87,20 +92,24 @@ Xamarin.Essentials は Visual Studio を使用して既存または新規のプ�
 
     # <a name="iostabios"></a>[iOS](#tab/ios)
 
-    追加の設定が必要です。
+    追加の設定は必要ありません。
 
     # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-    追加の設定が必要です。
+    追加の設定は必要ありません。
 
     -----
 
-6. に従って、 [Xamarin.Essentials ガイド](index.md)をコピーして各機能のコード スニペットを貼り付けることができます。
+6. [Xamarin.Essentials のガイド](index.md)に従ってください。各機能に対するコード スニペットをコピーして貼り付けることができます。
+
+## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - モバイル アプリ用クロスプラットフォーム API (ビデオ)
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-XamarinEssentials-Cross-Platform-APIs-for-Mobile-Apps/player]
 
 ## <a name="other-resources"></a>その他の参照情報
 
-新しい Xamarin 訪問する開発者をお勧め[Xamarin 開発を開始する](~/cross-platform/getting-started/index.md)します。
+Xamarin を使用したことがない開発者は、[Xamarin 開発の概要](~/cross-platform/getting-started/index.md)に関するページを参照することをお勧めします。
 
-参照してください、 [Xamarin.Essentials GitHub リポジトリ](http://github.com/xamarin/Essentials)して、現在のソース コード、今後の次に、サンプルを実行して、リポジトリを閉じます。 コミュニティへの投稿も歓迎します!
+現在のソース コード、今後の内容、サンプルの実行、リポジトリの複製について確認するには、[Xamarin.Essentials の GitHub リポジトリ](http://github.com/xamarin/Essentials)をご覧ください。 コミュニティへの投稿も歓迎します。
 
-どうぞ、 [API ドキュメント](xref:Xamarin.Essentials)Xamarin.Essentials のすべての機能です。
+Xamarin.Essentials のすべての機能の [API ドキュメント](xref:Xamarin.Essentials)を参照します。

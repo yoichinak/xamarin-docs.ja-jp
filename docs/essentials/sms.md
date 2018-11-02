@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: SMS'
-description: Xamarin.Essentials で Sms クラスは、指定されたメッセージの受信者に送信すると、既定の SMS アプリケーションを開くためのアプリケーションを使用できます。
+description: Xamarin.Essentials の SMS クラスを使用すると、受信者に送信する特定のメッセージと共に、既定の SMS アプリケーションをアプリケーションで開くことができます。
 ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a93a67b83ea8f435a5e3ad5d26e1d6cbbb7092f7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: fa55a17e99a11861b98c4d515df882ed3af58a0b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815598"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102738"
 ---
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials: SMS
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**Sms**クラスは、指定されたメッセージの受信者に送信すると、既定の SMS アプリケーションを開くためのアプリケーションを使用できます。
+**SMS** クラスを使用すると、受信者に送信する特定のメッセージと共に、既定の SMS アプリケーションをアプリケーションで開くことができます。
 
-## <a name="using-sms"></a>Sms を使用します。
+## <a name="using-sms"></a>SMS の使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-SMS 機能が呼び出すことによって、`ComposeAsync`メソッド、`SmsMessage`メッセージの受信者と、どちらも省略可能なメッセージの本文を格納しています。
+SMS 機能を動作させるには、`ComposeAsync` メソッドを呼び出します。`SmsMessage` にはメッセージの受信者とメッセージの本文 (どちらも省略可能) が含まれます。
 
 ```csharp
 public class SmsTest
@@ -50,7 +50,31 @@ public class SmsTest
 }
 ```
 
+さらに、`SmsMessage` に複数の受信者を渡すことができます。
+
+```csharp
+public class SmsTest
+{
+    public async Task SendSms(string messageText, string[] recipients)
+    {
+        try
+        {
+            var message = new SmsMessage(messageText, recipients);
+            await Sms.ComposeAsync(message);
+        }
+        catch (FeatureNotSupportedException ex)
+        {
+            // Sms is not supported on this device.
+        }
+        catch (Exception ex)
+        {
+            // Other error has occurred.
+        }
+    }
+}
+```
+
 ## <a name="api"></a>API
 
-- [Sms ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Sms)
-- [Sms API ドキュメント](xref:Xamarin.Essentials.Sms)
+- [SMS のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Sms)
+- [SMS API ドキュメント](xref:Xamarin.Essentials.Sms)

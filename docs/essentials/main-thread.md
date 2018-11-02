@@ -1,38 +1,38 @@
 ---
 title: 'Xamarin.Essentials: MainThread'
-description: MainThread クラスは、メインの実行スレッドでコードを実行するアプリケーションを使用できます。
+description: MainThread クラスを使用すると、アプリケーションでコードをメインの実行スレッドで実行させることができます。
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
-author: charlespetzold
-ms.author: chape
+author: jamesmontemagno
+ms.author: jamont
 ms.date: 06/26/2018
-ms.openlocfilehash: e07d36d3e9a5492e6e170b62dbacb36be44dbfa9
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 608cd00a2134e6e3fee89c7ae25bf4627d8b23be
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831426"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112315"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**MainThread**クラスにより、アプリケーションの実行のメイン スレッドでコードを実行して場合、特定のコード ブロックを決定するのには、メイン スレッドで現在実行中です。
+**MainThread** クラスを使用すると、アプリケーションでコードを実行のメイン スレッドで実行させたり、コードの特定のブロックがメイン スレッドで現在実行中であるかどうかを調べたりすることができます。
 
 ## <a name="background"></a>背景
 
-ほとんどのオペレーティング システム: iOS、Android、およびユニバーサル Windows プラットフォームを含む、ユーザー インターフェイスに関連するコードにシングル スレッド モデルを使用します。 このモデルは、タッチ入力、および正しくキーストロークを含む、ユーザー インターフェイスのイベントをシリアル化する必要があります。 このスレッドが多くの場合と呼ばれる、_メイン スレッド_または_ユーザー インターフェイス スレッド_または_UI スレッド_します。 このモデルの欠点には、アプリケーションのメイン スレッドでのユーザー インターフェイス要素にアクセスするすべてのコードを実行する必要があります。 
+ほとんどのオペレーティング システム — iOS、Android、ユニバーサル Windows プラットフォームなど — では、ユーザー インターフェイスに関連するコードのためにシングル スレッド モデルが使用されます。 このモデルは、ユーザー インターフェイスのイベント (キーストローク、タッチ入力など) をシリアル化するために必要です。 多くの場合、このスレッドは_メイン スレッド_、_ユーザー インターフェイス スレッド_、または _UI スレッド_と呼ばれます。 このモデルの欠点は、ユーザー インターフェイス要素にアクセスするすべてのコードを、アプリケーションのメイン スレッドで実行させなければならないという点です。 
 
-アプリケーションは、実行のセカンダリ スレッドでイベント ハンドラーを呼び出してイベントを使用する必要があります。 (Xamarin.Essentials クラス[ `Accelerometer` ](accelerometer.md)、 [ `Compass` ](compass.md)、 [ `Gyroscope` ](gyroscope.md)、 [ `Magnetometer`](magnetometer.md)と[ `OrientationSensor` ](orientation-sensor.md)高速で使用する場合、セカンダリ スレッド情報を返す可能性があります)。をイベント ハンドラーがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行があります。 **MainThread**クラスは、メイン スレッドでこのコードを実行するアプリケーションを使用できます。
+アプリケーションでは、イベント ハンドラーを実行のセカンダリ スレッドで呼び出すイベントを使用することが必要な場合があります。 (Xamarin.Essentials のクラス [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md)、[`OrientationSensor`](orientation-sensor.md) はすべて、高速で使用すると、セカンダリ スレッドに関する情報を返す可能性があります。)イベント ハンドラーがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行させる必要があります。 **MainThread** クラスを使用すると、アプリケーションでこのコードをメイン スレッドで実行させることができます。
 
-## <a name="running-code-on-the-main-thread"></a>メイン スレッドでコードを実行します。
+## <a name="running-code-on-the-main-thread"></a>メイン スレッドでのコードの実行
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-静的なを呼び出すコードをメイン スレッドで実行する`MainThread.BeginInvokeOnMainThread`メソッド。 引数が、 [ `Action` ](xref:System.Action)引数と戻り値のないメソッドだけであるオブジェクト。
+メイン スレッドでコードを実行するには、静的メソッド `MainThread.BeginInvokeOnMainThread` を呼び出します。 引数は [`Action`](xref:System.Action) オブジェクトです。これは単に、引数も戻り値も持たないメソッドです。
 
 ```csharp
 MainThread.BeginInvokeOnMainThread(() =>
@@ -41,7 +41,7 @@ MainThread.BeginInvokeOnMainThread(() =>
 });
 ```
 
-メイン スレッドで実行する必要があるコードの別のメソッドを定義することです。
+また、メイン スレッドで実行させる必要があるコード用に、個別のメソッドを定義することもできます。
 
 ```csharp
 void MyMainThreadCode()
@@ -50,18 +50,19 @@ void MyMainThreadCode()
 }
 ```
 
-参照することで、メイン スレッドでこのメソッドを実行することができますし、`BeginInvokeOnMainThread`メソッド。
+こうすると、`BeginInvokeOnMainThread` メソッド内でこのメソッドを参照することで、これをメイン スレッドで実行させることができます。
 
 ```csharp
 MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Xamarin.Forms が呼び出されるメソッド[ `Device.BeginInvokeOnMainThread(Action)` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread)と同じ処理を行うこと`MainThread.BeginInvokeOnMainThread(Action)`します。 いずれかの方法を使用するには、Xamarin.Forms アプリで、呼び出し元のコードが Xamarin.Forms の依存関係の他の必要性を持っているかどうかを検討してください。 ない場合は、`MainThread.BeginInvokeOnMainThread(Action)`より適切なオプションは、可能性があります。
+> Xamarin.Forms には [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) と呼ばれるメソッドがあります。
+> これは `MainThread.BeginInvokeOnMainThread(Action)` と同じ処理を行います。 Xamarin.Forms アプリではどちらのメソッドも使用できますが、呼び出し元のコードが他にも Xamarin.Forms に依存する必要があるかどうかを検討してください。 ない場合は、`MainThread.BeginInvokeOnMainThread(Action)` が適切な選択であると考えられます。
 
-## <a name="determining-if-code-is-running-on-the-main-thread"></a>コードがメイン スレッドで実行されているかどうかを決定します。
+## <a name="determining-if-code-is-running-on-the-main-thread"></a>コードがメイン スレッドで実行されているかどうかの判断
 
-`MainThread`クラスは、特定のコード ブロックがメイン スレッドで実行されているかどうかを判断するアプリケーションも使用できます。 `IsMainThread`プロパティが返す`true`プロパティを呼び出すコードがメイン スレッドで実行されている場合。 プログラムは、このプロパティを使用して、メイン スレッド、またはセカンダリ スレッドのさまざまなコードを実行することができます。
+`MainThread` クラスを使用すると、アプリケーションで、コードの特定のブロックがメイン スレッドで実行中であるかどうかを調べることもできます。 `IsMainThread` プロパティを呼び出すコードがメイン スレッドで実行されている場合、プロパティは `true` を返します。 プログラムでこのプロパティを使用して、メイン スレッド用またはセカンダリ スレッド用に別のコードを実行させることができます。
 
 ```csharp
 if (MainThread.IsMainThread)
@@ -74,7 +75,7 @@ else
 }
 ```
 
-かどうかは、呼び出す前にセカンダリ スレッドでコードが実行されているかどうかをチェックする必要があります疑問に思うかもしれません`BeginInvokeOnMainThread`、たとえば、次のようにします。
+`BeginInvokeOnMainThread` を呼び出す前に、コードがセカンダリ スレッドで実行されているかどうかをチェックする必要があるか疑問に思うかもしれません。たとえば、次のような場合です。
 
 ```csharp
 if (MainThread.IsMainThread)
@@ -87,11 +88,11 @@ else
 }
 ```
 
-コードのブロックが既にメイン スレッドで実行されている場合に、このチェックがパフォーマンスを向上可能性がありますが疑われる場合があります。
+コードのブロックが既にメイン スレッドで実行されている場合、このチェックによってパフォーマンスが向上するのではないかと思うかもしれません。
 
-_ただし、このチェックは必要はありません。_ プラットフォームの実装の`BeginInvokeOnMainThread`メイン スレッドで呼び出しが行われたかどうか自体を確認します。 呼び出す場合はごくわずかなパフォーマンスの低下`BeginInvokeOnMainThread`と本当に必要はありません。
+_しかし、このチェックは必要ではありません。_ プラットフォームによる `BeginInvokeOnMainThread` の実装自体によって、呼び出しがメイン スレッドで行われたかどうかが確認されます。 不要な `BeginInvokeOnMainThread` を呼び出す場合のパフォーマンスの低下はごくわずかです。
 
 ## <a name="api"></a>API
 
-- [MainThread ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
+- [MainThread のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
 - [MainThread API ドキュメント](xref:Xamarin.Essentials.MainThread)

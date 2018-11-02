@@ -1,54 +1,91 @@
 ---
 title: 'Xamarin.Essentials: セキュリティで保護されたストレージ'
-description: このドキュメントでは、Xamarin.Essentials で、単純なキー/値ペアを安全に格納できるで SecureStorage クラスについて説明します。 これには、クラス、プラットフォームの実装の詳細、および制限事項を使用する方法について説明します。
+description: このドキュメントでは Xamarin.Essentials の SecureStorage クラスについて説明します。これは単純なキーと値のペアを安全に格納するのに役立ちます。 ここでは、クラスの使用方法、プラットフォームの実装の詳細、および制限事項について説明します。
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
-author: redth
-ms.author: jodick
+author: jamesmontemagno
+ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2dfdb7051b269e73c68290a557849b9ae606c165
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: a5b5385af991ff988902bb3ed9670cd71d421bc6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353296"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116031"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: セキュリティで保護されたストレージ
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**SecureStorage**クラスは、単純なキー/値ペアを安全に保存します。
+**SecureStorage** クラスは、単純なキーと値のペアを安全に格納するのに役立ちます。
 
 ## <a name="getting-started"></a>作業の開始
 
-アクセスする、 **SecureStorage**機能では、次のプラットフォームに固有の設定が必要です。
+**SecureStorage** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-追加の設定が必要です。
+> [!TIP]
+> [アプリの自動バックアップ](https://developer.android.com/guide/topics/data/autobackup)は Android 6.0 (API レベル 23) 以降の機能です。ユーザーのアプリ データ (共有の設定、アプリの内部ストレージ内のファイル、その他の特定のファイル) がバックアップされます。 アプリが新しいデバイスに再インストールまたはインストールされると、データが復元されます。 これは、バックアップされ、復元するときに暗号化解除できない共有の設定を利用する `SecureStorage` に影響を与えます。 Xamarin.Essentials では、リセットできるようにキーを削除することで自動的にこのケースを処理しますが、自動バックアップを無効にすることで追加の手順を実行できます。
+
+### <a name="enable-or-disable-backup"></a>バックアップを有効または無効にする
+`AndroidManifest.xml` ファイルの `android:allowBackup` 設定を false に設定することで、アプリケーション全体の自動バックアップを無効にすることができます。 この方法が推奨されるのは、データを復元する別の方法を計画する場合のみです。
+
+```xml
+<manifest ... >
+    ...
+    <application android:allowBackup="false" ... >
+        ...
+    </application>
+</manifest>
+```
+
+### <a name="selective-backup"></a>選択的バックアップ
+自動バックアップを構成して、特定のコンテンツのバックアップを無効にすることができます。 カスタム規則セットを作成して、バックアップ対象から `SecureStore` 項目を除外することができます。
+
+1. **AndroidManifest.xml** で `android:fullBackupContent` 属性を設定します。
+
+    ```xml
+    <application ...
+        android:fullBackupContent="@xml/auto_backup_rules">
+    </application>
+    ```
+
+2. **auto_backup_rules.xml** という名前の新しい XML ファイルを **Resources/xml** ディレクトリに作成します。 次に、`SecureStorage` を除くすべての共有の設定を含める次の内容を設定します。
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <full-backup-content>
+        <include domain="sharedpref" path="."/>
+        <exclude domain="sharedpref" path="${applicationId}.xamarinessentials.xml"/>
+    </full-backup-content>
+    ```
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-IOS シミュレーターで開発する場合に有効にする、**キーチェーン**権利し、アプリケーションのバンドル識別子のキーチェーン アクセス グループを追加します。
+**iOS シミュレーター**上で開発している場合は、**キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。 
 
-開く、 **Entitlements.plist**で iOS プロジェクトを見つけて、**キーチェーン**権利を有効にします。 アプリケーションの識別子をグループとして自動的に追加されます。
+iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェーン** エンタイトルメントを見つけて有効にします。 これで、アプリケーションの ID がグループとして自動的に追加されます。
 
-プロジェクトのプロパティで  **iOS バンドル署名**設定、**カスタム権利**に**Entitlements.plist**します。
+プロジェクトのプロパティの **[iOS バンドル署名]** で、**[カスタムの権利]** を **Entitlements.plist** に設定します。
+
+> [!TIP]
+> iOS デバイスに展開する場合は、このエンタイトルメントは不要であり、削除する必要があります。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-追加の設定が必要です。
+追加の設定は必要ありません。
 
 -----
 
-## <a name="using-secure-storage"></a>セキュリティで保護されたストレージを使用します。
+## <a name="using-secure-storage"></a>セキュリティで保護されたストレージの使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-値を保存する、指定された_キー_でセキュリティで保護された記憶域。
+指定された_キー_に対する値をセキュリティで保護されたストレージに保存するには:
 
 ```csharp
 try
@@ -61,7 +98,7 @@ catch (Exception ex)
 }
 ```
 
-セキュリティで保護された記憶域から値を取得します。
+セキュリティで保護されたストレージから値を取得するには:
 
 ```csharp
 try
@@ -75,15 +112,15 @@ catch (Exception ex)
 ```
 
 > [!NOTE]
-> 要求されたキーに関連付けられている値がない場合`GetAsync`戻ります`null`します。
+> 要求されたキーに関連付けられている値が存在しない場合、`GetAsync` は `null` を返します。
 
-特定のキーを削除するには、次のように呼び出します。
+特定のキーを削除するには、次を呼び出します。
 
 ```csharp
 SecureStorage.Remove("oauth_token");
 ```
 
-すべてのキーを削除するには、次のように呼び出します。
+すべてのキーを削除するには、次を呼び出します。
 
 ```csharp
 SecureStorage.RemoveAll();
@@ -94,39 +131,39 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android キーストア](https://developer.android.com/training/articles/keystore.html)に保存されるまで、値の暗号化に使用される暗号キーを格納するために使用、[共有設定](https://developer.android.com/training/data-storage/shared-preferences.html)のファイル名を持つ **[YOUR-アプリのパッケージの ID] .xamarinessentials**.  共有設定ファイルで使用されるキーは、 _MD5 ハッシュ_に渡されたキーの`SecureStorage`Api。
+[Android キーストア](https://developer.android.com/training/articles/keystore.html)は、[共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキーは、`SecureStorage` API に渡されるキーの _MD5 Hash_ です。
 
 ## <a name="api-level-23-and-higher"></a>API レベル 23 以上
 
-新しい API レベルで、 **AES**キーが、Android キーストアから取得したし、は併用、 **AES/GCM/NoPadding**共有設定ファイルに格納されているが、前に、値を暗号化する暗号。
+新しい API レベルでは、Android キーストアから **AES** キーを取得し、**AES/GCM/NoPadding** 暗号と共に使用して、共有の設定ファイルに格納する前に値を暗号化します。
 
-## <a name="api-level-22-and-lower"></a>API レベル 22 と下限
+## <a name="api-level-22-and-lower"></a>API レベル 22 以下
 
-以前の API レベルで、Android キーストアのみをサポートを格納する**RSA**と共に使用される、キー、 **RSA/ECB/PKCS1Padding**を暗号化する暗号、 **AES** (ランダムにキー実行時に生成)、キーの下で、共有設定ファイルに格納されていると_SecureStorageKey_、1 つ既に生成されていない場合。
+古い API レベルでは、Android キーストアは **RSA** キーの格納のみをサポートしています。これは **RSA/ECB/PKCS1Padding** 暗号と共に使用され、**AES** キー (実行時にランダムで生成されます) を暗号化し、キー _SecureStorageKey_ の下で共有の設定ファイルに格納されます (まだ作成されていない場合)。
 
-**SecureStorage**を使用して、[設定](preferences.md)API と同じデータの永続化に記載されている次のように、[設定](preferences.md#persistence)ドキュメント。 この種類の暗号化によって、アプリをアンインストールしない限り、使用は引き続き場合は、デバイスは、API レベル 22 またはそれ以下の API レベル 23 以上にアップグレード、または**RemoveAll**が呼び出されます。
+**SecureStorage** は [Preferences](preferences.md) API を使用し、[Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。 デバイスが API レベル 22 以下から API レベル 23 以上にアップグレードされる場合、アプリをアンインストールするか **RemoveAll** を呼び出さない限り、この種類の暗号化が使用され続けます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[キーチェーン](https://developer.xamarin.com/api/type/Security.SecKeyChain/)iOS デバイスで安全に値を格納するために使用します。  `SecRecord`値を格納するために使用が、`Service`値に設定 **[YOUR-アプリのバンドルの ID] .xamarinessentials**します。
+iOS デバイスに値を安全に格納するために、[キーチェーン](https://developer.xamarin.com/api/type/Security.SecKeyChain/)が使用されます。  値を格納するために使用される `SecRecord` は、**[アプリのバンドル ID].xamarinessentials** に設定された `Service` 値を持ちます。
 
-場合によってはキーチェーン データが iCloud と同期され、アプリケーションのアンインストール削除ことはできません、セキュリティで保護された値から iCloud やその他のユーザーのデバイス。
+場合によっては、キーチェーン データが iCloud と同期され、アプリケーションをアンインストールしても iCloud やユーザーのその他のデバイスからセキュリティで保護された値が削除されない場合があります。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) UWP デバイスで安全に暗号化された値を使用します。
+暗号化された値に対して、UWP デバイス上で [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) が安全に使用されます。
 
-暗号化された値が格納されている`ApplicationData.Current.LocalSettings`、という名前のコンテナーの内部 **[YOUR APP ID] .xamarinessentials**します。
+暗号化された値は、`ApplicationData.Current.LocalSettings` の、**[アプリの ID].xamarinessentials** という名前のコンテナーの内部に格納されます。
 
-**SecureStorage**を使用して、[設定](preferences.md)API と同じデータの永続化に記載されている次のように、[設定](preferences.md#persistence)ドキュメント。
+**SecureStorage** は [Preferences](preferences.md) API を使用し、[Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。
 
 -----
 
 ## <a name="limitations"></a>制限事項
 
-この API は、少量のテキストを格納するものです。  パフォーマンスは、大量のテキストの格納に使用しようとする場合は低速可能性があります。
+この API は、少量のテキストを格納することを想定しています。  大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。
 
 ## <a name="api"></a>API
 
-- [SecureStorage ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
+- [SecureStorage のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API ドキュメント](xref:Xamarin.Essentials.SecureStorage)
