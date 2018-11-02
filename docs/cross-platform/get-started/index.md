@@ -7,14 +7,14 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 35c7605f9682bef9e93fb4f25404659662126a9d
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 3b1769dec78f65544e8996e21cb8ae003e4af198
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242028"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111331"
 ---
-# <a name="getting-started-with-xamarin"></a>Xamarin の概要
+# <a name="get-started-with-xamarin"></a>Xamarin の概要
 
 作業を開始する前に、[システム要件](requirements.md)と[インストール手順](installation/index.md)を確認し、すべて準備が整っていることを確認してください。
 
@@ -27,7 +27,6 @@ ms.locfileid: "39242028"
 
 - [Android のクイック スタート](~/android/get-started/hello-android/hello-android-quickstart.md)
 - [iOS のクイック スタート](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-- [Mac の概要](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>モバイル開発入門
 

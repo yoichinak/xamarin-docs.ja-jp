@@ -1,20 +1,20 @@
 ---
-title: fastlane for iOS – sigh
+title: fastlane for iOS – sigh
 description: このドキュメントでは fastlane の sigh コマンドについて説明します。このコマンドは、すべての Xamarin.iOS ビルド構成用のプロビジョニング プロファイルを作成、更新、および修復するために使用します。
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 8eedc86807035887cade48c42868649b362b7cb2
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 88cc4899956b03d7236d7aa5c2bd30a5f6880507
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785503"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119515"
 ---
-# <a name="fastlane-for-ios--sigh"></a>fastlane for iOS – sigh
+# <a name="fastlane-for-ios-sigh"></a>fastlane for iOS – sigh
 
 > [!IMPORTANT]
 > fastlane では、プロビジョニング プロファイルの作成および維持に [`match`](~/ios/deploy-test/provisioning/fastlane/match.md) の使用を推奨しています。 フル コントロールが必要で、コード署名について十分に理解している場合にのみ、sigh を直接使用します。

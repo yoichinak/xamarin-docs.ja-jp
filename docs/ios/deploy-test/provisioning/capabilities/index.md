@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: c897b1f5fbdf950e6858d7b73ebed60049f60e8e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f051becad7b6ef329d57417214eb976589386970
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785558"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120945"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
@@ -73,7 +73,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 ## <a name="using-the-ide"></a>IDE の使用
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 機能は、Visual Studio for Mac の **Entitlements.plist** に追加されます。 機能を追加するには次の手順に従います。
 
@@ -93,7 +93,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
     ![entitlements.plist ファイルに機能を追加する](images/image18.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 機能は **Entitlements.plist** に追加されます。 Visual Studio 2017 の場合、次の手順で機能を追加します。
 
@@ -206,12 +206,12 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 
 以下のリストでは、アプリ サービスが有効なアプリを開発する際に障害となる可能性のある最も一般的な問題についていくつか詳しく説明します。
 
--   Apple のデベロッパー ポータルの **[Certificates, IDs & Profiles]\(証明書、ID、およびプロファイル\)** セクションで正しい ID が正しく作成され、登録されていることを確認します。
--   サービスがアプリ (または拡張機能) の ID に追加されており、Apple のデベロッパー ポータルの **[Certificates, IDs & Profiles]\(証明書、ID、およびプロファイル\)** で作成されたアプリ グループ/マーチャント ID/コンテナーを使用するように構成されていることを確認します。
--   プロビジョニング プロファイルとアプリ ID がインストールされており、アプリの **Info.plist** (Xamarin プロジェクト内にある) で構成済みのアプリ ID のいずれかが使用されていることを確認します。
--   アプリの **Entitlements.plist** ファイル (Xamarin プロジェクト内にある) で正しいサービスが有効になっていることを確認します。
+-   Apple Developer ポータルの  **[Certificates, IDs & Profiles]\(証明書、ID、およびプロファイル\)** セクションで確実に正しい ID が正しく作成され、登録されているようにします。
+-   サービスが確実にアプリ (または拡張機能) の ID に追加されており、Apple Developer ポータルの  **[Certificates, IDs & Profiles]\(証明書、ID、およびプロファイル\)** で作成されたアプリ グループ/マーチャント ID/コンテナーを使用するように構成されているようにします。
+-   確実にプロビジョニング プロファイルとアプリ ID がインストールされていて、アプリの  **Info.plist** (Xamarin プロジェクト内にある) で構成済みのアプリ ID のいずれかが使用されているようにします。
+-   アプリの  **Entitlements.plist** ファイル (Xamarin プロジェクト内にある) で確実に正しいサービスが有効になっているようにします。
 -   適切な秘密キーが info.plist に設定されていることを確認します。
--   アプリの **[iOS バンドル署名]** で、**[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では_ありません_。
+-   アプリの  **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に確実に設定されているようにします。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _"ありません"_ 。
 
 <a name="summary" />
 

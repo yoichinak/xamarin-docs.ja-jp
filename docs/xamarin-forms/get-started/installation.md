@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2018
-ms.openlocfilehash: 75e6d25f95a0a3f18c83fe73f67ad4a7797f0924
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.openlocfilehash: 504f20f6575e559d7c4965643b74b407d5e84de8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34470331"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112363"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -25,7 +25,7 @@ _Xamarin.Forms のプラットフォームと開発システムの要件_
 Xamarin.Forms アプリケーションは次のオペレーティング システム用として記述できます。
 
 - iOS 8 以上
-- Android 4.0.3 (API 15) 以上 ([詳細](#android))
+- Android 4.4 (API 19) 以上 ([詳細](#android))
 - Windows 10 ユニバーサル Windows プラットフォーム ([詳細](#windows10))
 
 開発者が [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)に関する知識を持っていることを前提としています。
@@ -50,15 +50,15 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 
 最新の Android SDK Tools と Android API プラットフォームをインストールしておく必要があります。 [Android SDK Manager](~/android/get-started/installation/android-sdk.md) を利用して最新版に更新できます。
 
-また、Android プロジェクトのターゲット/コンパイル バージョンを*インストールされている最新のプラットフォームを使用するように*設定する**必要があります**。 ただし、Android 4.0.3 以降を使用するデバイスを引き続きサポートできるように、最小バージョンを API 15 に設定できます。 値は**プロジェクト オプション**で設定されます。
+また、Android プロジェクトのターゲット/コンパイル バージョンを*インストールされている最新のプラットフォームを使用するように*設定する**必要があります**。 ただし、Android 4.4 以降を使用するデバイスを引き続きサポートできるように、最小バージョンを API 19 に設定できます。 値は**プロジェクト オプション**で設定されます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 **[プロジェクト オプション]、[アプリケーション]、[アプリケーション プロパティ]**
 
 ![](installation-images/options-android-vs-sml.png "Visual Studio の Android 編集オプション")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 **[ビルド]、[全般]**
 

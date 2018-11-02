@@ -4,15 +4,15 @@ description: デバッグ ログを使用して Xamarin.Android アプリケー�
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 442606f456e6f42ee178cd93253883a1d9de52c4
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 8cf6c11675f0f3ddca0d5aea69e5e07160ef8454
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935218"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114783"
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
 
@@ -33,7 +33,7 @@ ms.locfileid: "36935218"
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Visual Studio からデバッグ ログにアクセスする
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 **デバイス ログ** ツールを開くには、ツール バーの **[デバイス ログ (logcat)]** アイコンをクリックします。
 
@@ -68,7 +68,7 @@ ms.locfileid: "36935218"
 デバイスを選択すると、**デバイス ログ** ツールは実行中のアプリからのログ エントリを自動的に追加します。これらのログ エントリは、ログ エントリのテーブルに表示されます。 デバイスを切り替えると、デバイスのログはいったん停止してから開始します。 デバイス セレクターにデバイスが表示されるためには、先に Android プロジェクトを読み込む必要があることに注意してください。 デバイスがデバイス セレクターに表示されない場合は、Visual Studio の **[開始]** ボタンの横にあるデバイス ドロップダウン メニューでデバイスが使用できることを確認します。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 **デバイス ログ**を開くには、**[表示] > [パッド] > [デバイス ログ]** の順にクリックします。
 
@@ -107,7 +107,7 @@ ms.locfileid: "36935218"
 
 ## <a name="accessing-from-the-command-line"></a>コマンド ラインからのアクセス
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 デバッグ ログを表示するには、コマンド ラインを使う方法もあります。 コマンド プロンプト ウィンドウを開き、Android SDK の platform-tools フォルダーに移動します (SDK platform-tools フォルダーの通常の位置: **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools**)。
 
@@ -117,7 +117,7 @@ ms.locfileid: "36935218"
 $ adb logcat
 ```
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 デバッグ ログを表示するには、コマンド ラインを使う方法もあります。 ターミナル ウィンドウを開き、Android SDK の platform-tools フォルダーに移動します (SDK platform-tools フォルダーの通常の位置: **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
 

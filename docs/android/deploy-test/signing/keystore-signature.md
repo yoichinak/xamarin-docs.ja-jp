@@ -3,15 +3,15 @@ title: キーストアの署名の検索
 ms.prod: xamarin
 ms.assetid: 1b511fec-e6f6-453e-89c8-810aafb02b77
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 46b43e6689f751c4fac1e8668234fce7f953521e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d32b2a20fee6b2bb007ee620e0ae4203e950bb98
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764639"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112465"
 ---
 # <a name="finding-your-keystores-signature"></a>キーストアの署名の検索
 
@@ -21,7 +21,7 @@ Xamarin.Android アプリの MD5 または SHA1 署名は、APK の署名に使�
 
 Xamarin.Android は同じ **debug.keystore** ファイルですべてのデバッグ ビルドに署名します。 このファイルは Xamarin.Android が最初にインストールされたときに生成されます。以下の手順で、既定の Xamarin.Android **debug.keystore** ファイルの MD5 または SHA1 署名を探すプロセスについて説明します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 アプリの署名に利用された Xamarin **debug.keystore** ファイルを見つけます。 既定では、Xamarin.Android アプリケーションのデバッグ バージョンの署名に利用されたキーストアは次の場所にあります。
 
@@ -60,7 +60,7 @@ Certificate fingerprints:
 ```
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 アプリの署名に利用された Xamarin **debug.keystore** ファイルを見つけます。 既定では、Xamarin.Android アプリケーションのデバッグ バージョンの署名に利用されたキーストアは次の場所にあります。
 
@@ -114,20 +114,20 @@ KeyIdentifier [
 
 カスタム **.keystore** ファイルで署名されたリリース ビルドのプロセスは上と同じですが、リリース **.keystore** ファイルが Xamarin.Android で使用される **debug.keystore** ファイルに代わります。 リリース キーストア ファイルの作成時のキーストア パスワードとエイリアス名を独自の値に変更します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio の **[配布]** ウィザードで Xamarin.Android アプリに署名すると、キーストアは次の場所に置かれます。
 
-**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\alias\\alias.keystore**
+**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\*別名*\\*別名*.keystore**
 
 たとえば、「[新しい証明書の作成](~/android/deploy-test/signing/index.md#newcertvs)」の手順で新しい署名キーを作成した場合、キーストアは次の場所に置かれます。
 
-**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
+**C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
 Xamarin.Android アプリに署名する方法については、「[Android アプリケーション パッケージに署名する](~/android/deploy-test/signing/index.md)」を参照してください。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac の **[署名と配布...]** ウィザードでアプリに署名すると、結果のキーストアは次の場所に置かれます。
 

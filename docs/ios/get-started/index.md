@@ -5,17 +5,17 @@ ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 11/23/2016
-ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: f1b28c000fbc77a524097ce5a9e7d85d32a40230
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785602"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109342"
 ---
-# <a name="getting-started-with-xamarinios"></a>Xamarin.iOS の概要
+# <a name="get-started-with-xamarinios"></a>Xamarin.iOS の概要
 
 Xamarin.iOS を使用すると、開発者は Objective-C と Xcode で使用できるのと同じ UI コントロール (最新の言語 (C#) の高い柔軟性と洗練さ、NET Base Class Library (BCL) のパワー、2 つのファーストクラス IDE (Visual Studio for Mac と Visual Studio) を活用する場合を除く) を使用して、ネイティブの iOS アプリケーションを作成することができます。 このシリーズでは、Xamarin.iOS のセットアップとインストール方法を紹介し、Xamarin.iOS 開発の基本に取り組みます。
 
@@ -23,27 +23,27 @@ Xamarin.iOS を使用すると、開発者は Objective-C と Xcode で使用で
 
 Xamarin.iOS をビルドするには、以下のコンポーネントが必要です。
 
--    最新の iOS SDK。
--    最新バージョンの Xcode。
--    macOS Sierra (10.12) 以降。
+- 最新の iOS SDK
+- 最新バージョンの Xcode
+- macOS Sierra (10.13) 以上
 
 Xcode の最新バージョンは、[iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (ログインが必要) から、または Mac App Store を通じてダウンロードできます。
 
 ## <a name="getting-started-series"></a>概要シリーズ
 
-###  <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[セットアップとインストール](~/ios/get-started/installation/index.md)
+### <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[セットアップとインストール](~/ios/get-started/installation/index.md)
 
 Xamarin.iOS をセットアップして、Visual Studio for Mac または Visual Studio で実行します。 このセクションでは、ダウンロード、Xamarin インストーラーを使用したインストール、Microsoft アカウントを使用したサインイン、一般的なトラブルシューティングの項目、デバイスのプロビジョニングなどについて説明します。
 
-###  <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
+### <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
 
 この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して初めて Xamarin.iOS アプリケーションを作成する方法を説明し、Xamarin での iOS アプリケーション開発の基礎について説明します。 このガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念、手順も紹介します。
 
-###  <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[Hello, iOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)
+### <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[Hello, iOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)
 
 この 2 部構成のガイドは、2 つ目の画面を処理するために、「Hello, iOS」ガイドで作成されたアプリケーションの展開を探究します。 モデル ビュー コントローラー設計パターンなどの概念について紹介し、iOS ナビゲーションを実装し、iOS アプリケーションの構造と機能について理解を深めます。
 
-##  <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[Objective-C 開発者向けの Xamarin](objective-c-developers/index.md)
+## <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[Objective-C 開発者向けの Xamarin](objective-c-developers/index.md)
 
 Xamarin プラットフォームに移行している Objective-C 開発者向けの情報を提供します。
 

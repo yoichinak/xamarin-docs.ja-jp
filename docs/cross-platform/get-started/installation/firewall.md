@@ -5,12 +5,12 @@ ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: asb3993
 ms.author: amburns
-ms.date: 12/02/2016
-ms.openlocfilehash: dab4aeccd58da22736aea3139f11cbdff259ef7b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 10/05/2018
+ms.openlocfilehash: 68689ce7d92a038d0724e1441f68fddcb1d0bba8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "34781092"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin ファイアウォールの構成手順
@@ -25,35 +25,31 @@ Xamarin 製品をインストールし、製品が正常に動作するには、
 
 最新リリースの Xamarin インストーラーを使用するときにソフトウェアを適切にインストールするには、次の既知のアドレスを追加する必要があります。
 
--  xamarin.com (インストーラーのマニフェスト)
--  dl.xamarin.com (パッケージのダウンロード場所)
--  dl.google.com (Android SDK をダウンロードする場合)
--  download.oracle.com (JDK)
--  visualstudio.com (セットアップ パッケージのダウンロード場所)
--  go.microsoft.com (セットアップ URL の解決)
--  aka.ms (セットアップ URL の解決)
+- xamarin.com (インストーラーのマニフェスト)
+- dl.xamarin.com (パッケージのダウンロード場所)
+- dl.google.com (Android SDK をダウンロードする場合)
+- download.oracle.com (JDK)
+- visualstudio.com (セットアップ パッケージのダウンロード場所)
+- go.microsoft.com (セットアップ URL の解決)
+- aka.ms (セットアップ URL の解決)
 
 Mac を使用していて Xamarin.Android のインストールの問題が発生している場合は、macOS が Java をダウンロードできることを確認してください。
 
+### <a name="nuget-including-xamarinforms"></a>NuGet (Xamarin.Forms を含む)
 
-### <a name="components-store-and-nuget-including-xamarinforms"></a>Components Store と NuGet (Xamarin.Forms を含む)
+NuGet にアクセスするには、次のアドレスを追加する必要があります (Xamarin.Forms は NuGet としてパッケージ化されています)。
 
-Xamarin Components Store または NuGet にアクセスするには、次のアドレスを追加する必要があります (Xamarin.Forms は NuGet としてパッケージ化されています)。
-
--  components.xamarin.com (Xamarin Components Store を使用する場合)
--  xampubdl.blob.core.windows.net (Components Store ダウンロードをホスト)
--  www\.nuget.org (NuGet にアクセスする場合)
--  az320820.vo.msecnd.net (NuGet のダウンロード)
--  dl-ssl.google.com (Google コンポーネント)
-
+- www\.nuget.org (NuGet にアクセスする場合)
+- az320820.vo.msecnd.net (NuGet のダウンロード)
+- dl-ssl.google.com (Android および Xamarin.Forms 用 Google コンポーネント)
 
 ### <a name="software-updates"></a>ソフトウェア更新プログラム
 
 ソフトウェア更新プログラムを適切にダウンロードするには、次のアドレスを追加する必要があります。
 
--  software.xamarin.com (更新機能サービス)
--  download.visualstudio.microsoft.com
--  dl.xamarin.com
+- software.xamarin.com (更新機能サービス)
+- download.visualstudio.microsoft.com
+- dl.xamarin.com
 
 ## <a name="xamarin-mac-agent"></a>Xamarin Mac エージェント
 

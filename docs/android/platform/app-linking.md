@@ -47,7 +47,7 @@ Android 6.0 は、自動リンクの処理を使用してこのが向上しま�
 Android 6.0 でのアプリ リンクの設定には、2 つの主要な手順が含まれます。
 
 1. **Web サイトの URI の 1 つまたは複数インテント フィルターを追加する**&ndash;インテント フィルターは、モバイル ブラウザーで URL をクリックを処理する方法で Android をガイドします。
-2. **発行、*デジタル資産へのリンクの JSON* 、web サイト上のファイル**&ndash;は web サイトにアップロードされ、Android によってモバイル アプリと web サイトのドメイン間のリレーションシップを確認するために使用するファイルです。 これを行わない Android アプリをインストールできません既定ハンドルとしての URI の;ユーザーは手動で行ってください。
+2. **発行、 *デジタル資産へのリンクの JSON* 、web サイト上のファイル** &ndash;は web サイトにアップロードされ、Android によってモバイル アプリと web サイトのドメイン間のリレーションシップを確認するために使用するファイルです。 これを行わない Android アプリをインストールできません既定ハンドルとしての URI の;ユーザーは手動で行ってください。
 
 <a name="configure-intent-filter" />
 
@@ -56,7 +56,7 @@ Android 6.0 でのアプリ リンクの設定には、2 つの主要な手順�
 Web サイトから URI (または可能な Uri のセット) を Android アプリケーションのアクティビティにマップされるインテント フィルターを構成する必要があります。 アクティビティを装飾して Xamarin.Android では、この関係が確立されている、 [IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)します。 インテント フィルターには、次の情報を宣言する必要があります。
 
 * **`Intent.ActionView`** &ndash; これは情報を表示する要求に応答するインテント フィルターを登録します。
-* **`Categories`** &ndash;  インテント フィルターは、両方を登録する必要があります**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** と**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** ができなければ正しくweb の URI を処理します。
+* **`Categories`** &ndash;  インテント フィルターは、両方を登録する必要があります **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** と **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** ができなければ正しくweb の URI を処理します。
 * **`DataScheme`** &ndash; インテント フィルターを宣言する必要があります`http`や`https`します。 これらは、2 つだけ有効なスキームです。
 * **`DataHost`** &ndash; これは、ドメインから発信されます。 Uri です。
 * **`DataPathPrefix`** &ndash; これは、web サイト上のリソースへのオプションのパスです。

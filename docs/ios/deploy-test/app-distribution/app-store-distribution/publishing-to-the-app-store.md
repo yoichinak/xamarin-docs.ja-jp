@@ -4,15 +4,15 @@ description: このドキュメントでは、App Store で配布する Xamarin.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 7560f66acc3a3ea683e75be2ae85f908036e008c
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: 944b10c579abd3fa6e68a2c0497602600af4f4c1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43780535"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111435"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store への Xamarin.iOS アプリの公開
 
@@ -89,7 +89,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 新しい Xamarin.iOS プロジェクトでは、**デバッグ**および**リリース** _ビルド構成_が自動的に設定されます。 **リリース** ビルドを正しく構成するには、次の手順に従います。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Solution Pad** から、**Info.plist** を開きます。 **[手動プロビジョニング]** を選択します。 ファイルを保存して閉じます。
 2. **Solution Pad** で **[プロジェクト名]** を右クリックし、**[オプション]** を選択して **[iOS ビルド]** タブに移動します。
@@ -119,7 +119,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 15. **[OK]** をクリックして、プロジェクト プロパティへの変更を保存します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. **ソリューション エクスプローラー**で **[プロジェクト名]** を右クリックし、**[プロパティ]** を選択します。
@@ -171,7 +171,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 ビルド設定が正しく構成され、iTunes Connect が提出待ちの状態になったら、アプリをビルドして Apple に提出することができます。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac で、**[リリース]** ビルド構成とビルド対象のデバイス (シミュレーターではない) を選択します。
 
@@ -230,7 +230,7 @@ App Store プロビジョニング プロファイルを作成してインスト
     >
     > このエラーの回避策については、[Xamarin フォーラムのこちらの投稿](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)を参照してください。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!NOTE]
 > Visual Studio 2017 では、現在、Visual Studio for Mac で検出される**発行のためのアーカイブ** ワークフローはサポートされていません。
@@ -247,12 +247,12 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 4. Windows コンピューター上の .ipa ファイルを検索するには、Visual Studio 2017 の**ソリューション エクスプローラー**で Xamarin.iOS プロジェクト名を右クリックし、**[エクスプローラーでフォルダーを開く]** を選択します。 次に、開いた Windows の**エクスプローラー**で、**bin/iPhone/Release** サブディレクトリに移動します。 [.ipa ファイルの出力場所をカスタマイズ](#customize-the-ipa-location)していない限り、このディレクトリにあります。
 5. 代わりに Mac ビルド ホスト上の .ipa ファイルを表示するには、Visual Studio 2017 の**ソリューション エクスプローラー** (Windows 上) で Xamarin.iOS プロジェクト名を右クリックし、**[ビルド サーバーに IPA ファイルを表示]** を選択します。 これで、Mac ビルド ホストに、.ipa ファイルが選択された状態で **Finder** ウィンドウが開きます。
-6. Mac ビルド ホストで、**アプリケーション ランチャー**を開きます。 Xcode で、**[Xcode]、[開発者ツールを開く]、[アプリケーション ランチャー]** の順に選択します。
+6. Mac ビルド ホストで、**Application Loader** を開きます。 Xcode で、**[Xcode]、[開発者ツールを開く]、[Application Loader]** の順に選択します。
 
     > [!NOTE]
     > ツールの詳細については、[Application Loader に関する Apple のドキュメント](https://help.apple.com/itc/apploader/#/apdS673accdb)を参照してください。
 
-7. アプリケーション ランチャーにログインします (Apple ID 用の[アプリ固有のパスワードを作成する](https://support.apple.com/ht204397)必要があることに注意してください)。
+7. Application Loader にログインします (Apple ID 用の[アプリ固有のパスワードを作成する](https://support.apple.com/ht204397)必要があることに注意してください)。
 8. **[Deliver Your App]\(アプリの配信\)** を選択して、**[選択]** ボタンをクリックします。
 
     ![[Deliver Your App]\(アプリの配信\) の選択 ](publishing-to-the-app-store-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) の選択")

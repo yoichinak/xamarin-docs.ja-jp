@@ -4,15 +4,15 @@ description: このガイドでは、アプリの時間を調整する方法と�
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4145368281c2967bd1311389e5e1b1432af2c9b8
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: 602a530e1c185ffeda2c6ac80a96f7795cec4cae
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43780522"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104844"
 ---
 # <a name="ios-build-mechanics"></a>iOS ビルドのしくみ
 
@@ -27,7 +27,7 @@ Xamarin ビルドのスピードは、パフォーマンスに影響を与える
 
 ## <a name="timing-apps"></a>アプリの時間を調整する
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac 内で診断用 MSBuild 出力を有効にするには:
 
@@ -40,7 +40,7 @@ Visual Studio for Mac 内で診断用 MSBuild 出力を有効にするには:
 7. [ビルド出力] ボタンをクリックし、エラー パッド内で診断出力を表示します ([表示]、[パッド]、[エラー])。
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio 内で診断 MSBuild 出力を有効にするには:
 
@@ -69,7 +69,7 @@ Total time: 1554 ms
 
 Xamarin ツールは技術的には、OS X 10.10 Yosemite 以降を実行できるあらゆる Mac で動作します。 ただし、Mac の性能によってはビルドに時間がかかり、開発が遅れることがあります。
 
-接続のない状態では、Windows の Visual Studio は C# 段階のみを実行し、リンクも AOT コンパイルも実行せず、アプリを _.app_ バンドルにパッケージ化せず、アプリ バンドルに署名しません。 (C# コンパイル段階がパフォーマンス上のボトルネックになることはまれです。)Visual Studio for Mac の Mac ビルド ホストで直接ビルドし、ビルドが遅くなっているパイプラインの場所を特定します。
+接続のない状態では、Windows の Visual Studio は C# 段階のみを実行し、リンクも AOT コンパイルも実行せず、アプリを  _.app_  バンドルにパッケージ化せず、アプリ バンドルに署名しません。 (C# コンパイル段階がパフォーマンス上のボトルネックになることはまれです。)Visual Studio for Mac の Mac ビルド ホストで直接ビルドし、ビルドが遅くなっているパイプラインの場所を特定します。
 
 
 また、動作を遅くする一般的な原因の 1 つに、Windows コンピューターと Mac ビルド ホストの間のネットワーク接続があります。 この原因には、ネットワーク上の物理的妨害、無線接続の使用、飽和状態のコンピューターを通過すること (Mac-in-the-cloud サービスなど) などが挙げられます。
@@ -131,7 +131,7 @@ iOS アプリを配置するとき、さまざまなビルド構成が与えら�
   - 1 つのアーキテクチャ (ARM64 など) のビルドは FAT バイナリ (ARMv7 + ARM64 など) より速くなります。
   - デバッグ時は PNG ファイルの最適化を避けます。
   - すべてのアセンブリをリンクすることを検討します。 すべてのアセンブリを最適化します。 
-  - `--dsym=false` を利用し、デバッグ シンボルの作成を無効にします。 ただし、これを無効にすると、アプリをビルドしたそのコンピューターでのみ、かつ、アプリが取り除かれなかった場合にのみ、クラッシュ レポートにシンボル名を付加できます。
+  -  `--dsym=false` を利用し、デバッグ シンボルの作成を無効にします。 ただし、これを無効にすると、アプリをビルドしたそのコンピューターでのみ、かつ、アプリが取り除かれなかった場合にのみ、クラッシュ レポートにシンボル名を付加できます。
 
  
 避けるべきこと:

@@ -1,72 +1,72 @@
 ---
 title: 'Hello, Android: 詳細説明'
 description: このガイドは 2 つに分かれています。最初に、Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。
+zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/07/2018
-ms.openlocfilehash: 3aa70469c5916a22a22d7857c62a4b46c1637124
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+author: conceptdev
+ms.author: crdun
+ms.date: 10/05/2018
+ms.openlocfilehash: cdd0a792a76fa411fdc010c3d662a3d1acc2f373
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242421"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108815"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: 詳細説明
 
 _このガイドは 2 つに分かれています。最初に、Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。_
 
-## <a name="hello-android-deep-dive"></a>Hello, Android: 詳細説明
-
 「[Hello, Android Quickstart](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)」 (Hello, Android クイック スタート) では、最初の Xamarin.Android アプリケーションをビルドして実行しました。 次は、より複雑なプログラムをビルドできるように、Android アプリケーションのしくみの理解を深めます。 このガイドでは、実行した作業の内容を理解し、Android アプリケーションの開発の基礎について詳しく理解できるように、Hello, Android で実行したステップを確認します。
 
 このガイドでは、次のトピックについて説明します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
--   **Visual Studio の概要** &ndash;Visual Studio の概要と新しい Xamarin.Android アプリケーションの作成。
+- **Visual Studio の概要** &ndash; Visual Studio の概要と新しい Xamarin.Android アプリケーションの作成。
 
--   **Xamarin.Android アプリケーションの構造** Xamarin.Android アプリケーションの重要なパーツの説明。
+- **Xamarin.Android アプリケーションの構造** Xamarin.Android アプリケーションの重要なパーツの説明。
 
--   **アプリケーションの基本とアーキテクチャの基礎**&ndash;アクティビティ、Android マニフェスト、および Android の開発の一般的なフレーバーの概要。
+- **アプリケーションの基本とアーキテクチャの基礎** &ndash; アクティビティ、Android マニフェスト、および Android の開発の一般的なフレーバーの概要。
 
--   **ユーザー インターフェイス (UI)**&ndash;Android Designer を使用したユーザー インターフェイスの作成。
+- **ユーザー インターフェイス (UI)** &ndash; Android Designer を使用したユーザー インターフェイスの作成。
 
--   **アクティビティとアクティビティのライフ サイクル**&ndash;アクティビティのライフ サイクルの概要と、コード内でのユーザー インターフェイスの作成。
+- **アクティビティとアクティビティのライフ サイクル** &ndash; アクティビティのライフ サイクルの概要と、コード内でのユーザー インターフェイスの作成。
 
--   **テスト、展開、仕上げ** &ndash;テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成。
+- **テスト、展開、しあげ** &ndash; テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
--   **Visual Studio for Mac の概要** &ndash;Xamarin Studio の概要と新しい Xamarin.Android アプリケーションの作成。
+- **Visual Studio for Mac の概要** &ndash; Visual Studio for Mac の概要と新しい Xamarin.Android アプリケーションの作成。
 
--   **Xamarin.Android アプリケーションの構造** &ndash;Xamarin.Android アプリケーションの重要なパーツの説明。
+- **Xamarin.Android アプリケーションの構造** &ndash; Xamarin.Android アプリケーションの重要なパーツの説明。
 
--   **アプリケーションの基本とアーキテクチャの基礎**&ndash;アクティビティ、Android マニフェスト、および Android の開発の一般的なフレーバーの概要。
+- **アプリケーションの基本とアーキテクチャの基礎** &ndash; アクティビティ、Android マニフェスト、および Android の開発の一般的なフレーバーの概要。
 
--   **ユーザー インターフェイス (UI)**&ndash;Android Designer を使用したユーザー インターフェイスの作成。
+- **ユーザー インターフェイス (UI)** &ndash; Android Designer を使用したユーザー インターフェイスの作成。
 
--   **アクティビティとアクティビティのライフ サイクル**&ndash;アクティビティのライフ サイクルの概要と、コード内でのユーザー インターフェイスの作成。
+- **アクティビティとアクティビティのライフ サイクル** &ndash; アクティビティのライフ サイクルの概要と、コード内でのユーザー インターフェイスの作成。
 
--   **テスト、展開、仕上げ** &ndash;テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成。
+- **テスト、展開、しあげ** &ndash;テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成。
 
------
-
+::: zone-end
 
 このガイドでは、1 つの画面の Android アプリケーションのビルドに必要なスキルと知識を開発できます。 作業した後、Xamarin.Android アプリケーションのさまざまな部分とそれらをまとめる方法を理解できます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 ## <a name="introduction-to-visual-studio"></a>Visual Studio の概要
 
 Visual Studio は Microsoft 製の強力な IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、Xamarin プラグインと基本的な Visual Studio 機能の使用方法について学習します。
 
-Visual Studio は、コードを_ソリューション_と_プロジェクト_に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。 
+Visual Studio は、コードを_ソリューション_と_プロジェクト_に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
@@ -74,38 +74,38 @@ Visual Studio for Mac は、Visual Studio と類似した無料のオープン �
 
 Visual Studio for Mac は、コードを_ソリューション_と_プロジェクト_に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
 
------
+::: zone-end
 
 <a name="anatomy" />
 
 ## <a name="anatomy-of-a-xamarinandroid-application"></a>Xamarin.Android アプリケーションの構造
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 次のスクリーン ショットは、ソリューションの内容を一覧表示します。 これは、ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含むソリューション エクスプローラーです。
 
 [![ソリューション エクスプローラー](hello-android-deepdive-images/vs/02-solution-structure-sml.png)](hello-android-deepdive-images/vs/02-solution-structure.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 次のスクリーン ショットは、ソリューションの内容を一覧表示します。 これは、ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含む Solution Pad です。
 
 [![Solution Pad](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
 
------
+::: zone-end
 
 **Phoneword** と呼ばれるソリューションが作成され、Android プロジェクト **Phoneword** がその内部に配置されました。
 
 プロジェクト内の各アイテムを見て、各フォルダーとその目的を確認します。
 
--   **Properties** &ndash;名前、バージョン番号、アクセス許可を含む Xamarin.Android アプリケーションのすべての要件を記述する [AndroidManifest.xml](~/android/platform/android-manifest.md) ファイルを含んでいます。 **Properties** フォルダーには、.NET アセンブリ メタデータ ファイルである [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo) も含まれています。 このファイルには、アプリケーションに関する基本的な情報を入力しておくことをお勧めします。
+- **Properties** &ndash;名前、バージョン番号、アクセス許可を含む Xamarin.Android アプリケーションのすべての要件を記述する [AndroidManifest.xml](~/android/platform/android-manifest.md) ファイルを含んでいます。 **Properties** フォルダーには、.NET アセンブリ メタデータ ファイルである [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo) も含まれています。 このファイルには、アプリケーションに関する基本的な情報を入力しておくことをお勧めします。
 
--   **References**&ndash; アプリケーションのビルドと実行に必要なアセンブリが含まれています。 References ディレクトリを展開すると、[System](xref:System)、System.Core、[System.Xml](xref:System.Xml) などの .NET アセンブリ、および Xamarin の Mono.Android アセンブリへの参照が表示されます。
+- **References**&ndash; アプリケーションのビルドと実行に必要なアセンブリが含まれています。 References ディレクトリを展開すると、[System](xref:System)、System.Core、[System.Xml](xref:System.Xml) などの .NET アセンブリ、および Xamarin の Mono.Android アセンブリへの参照が表示されます。
 
+- **Assets**&ndash; フォント、ローカル データ ファイル、テキスト ファイルなどのアプリケーションで実行する必要があるファイルが含まれています。 ここに含まれるファイルは、生成された `Assets` クラスを介してアクセスできます。 Android の資産の詳細については、Xamarin の「[Using Android Assets](~/android/app-fundamentals/resources-in-android/android-assets.md)」 (Android 資産の使用) ガイドを参照してください。
 
--   **Assets**&ndash; フォント、ローカル データ ファイル、テキスト ファイルなどのアプリケーションで実行する必要があるファイルが含まれています。 ここに含まれるファイルは、生成された `Assets` クラスを介してアクセスできます。 Android の資産の詳細については、Xamarin の「[Using Android Assets](~/android/app-fundamentals/resources-in-android/android-assets.md)」 (Android 資産の使用) ガイドを参照してください。
-
--   **Resources** &ndash;文字列、イメージ、およびレイアウトなどのアプリケーション リソースが含まれています。 生成された `Resource` クラスを介してコード内でこれらのリソースにアクセスすることができます。 [Android リソース](~/android/app-fundamentals/resources-in-android/index.md) ガイドには、**Resources** ディレクトリに関する詳細が記載されています。 アプリケーション テンプレートには、**AboutResources.txt** ファイル内のリソースに簡潔なガイドも含まれています。
+- **Resources** &ndash;文字列、イメージ、およびレイアウトなどのアプリケーション リソースが含まれています。 生成された `Resource` クラスを介してコード内でこれらのリソースにアクセスすることができます。 [Android リソース](~/android/app-fundamentals/resources-in-android/index.md) ガイドには、**Resources** ディレクトリに関する詳細が記載されています。 アプリケーション テンプレートには、**AboutResources.txt** ファイル内のリソースに簡潔なガイドも含まれています。
 
 ### <a name="resources"></a>リソース
 
@@ -113,24 +113,31 @@ Visual Studio for Mac は、コードを_ソリューション_と_プロジェ�
 
 下の表に項目をまとめます。
 
--   **drawable** &ndash;drawable ディレクトリには、画像やビットマップなどの[ドローアブル リソース](http://developer.android.com/guide/topics/resources/drawable-resource.html)が含まれています。
+- **drawable** &ndash; drawable ディレクトリには、画像やビットマップなどの[ドローアブル リソース](http://developer.android.com/guide/topics/resources/drawable-resource.html)が含まれています。
 
--   **mipmap** &ndash;mipmap ディレクトリには、密度が異なる起動アイコンのドローアブル ファイルが含まれています。 既定のテンプレートでは、drawable ディレクトリにはアプリケーション アイコン ファイル **Icon.png** が含まれています。
+- **mipmap** &ndash;mipmap ディレクトリには、密度が異なる起動アイコンのドローアブル ファイルが含まれています。 既定のテンプレートでは、drawable ディレクトリにはアプリケーション アイコン ファイル **Icon.png** が含まれています。
 
 
--   **layout** &ndash; layout ディレクトリには、各画面またはアクティビティのユーザーインターフェイスを定義する _Android Designer ファイル_ (.axml) が含まれています。 テンプレートは、**Main.axml** という名前に既定値のレイアウトを作成します。
+::: zone pivot="windows"
 
--   **values**&ndash; このディレクトリは、文字列、整数、色などの単純な値を格納する XML ファイルを格納します。 テンプレートは、**Strings.xml** という文字列値を格納するファイルを作成します。
+- **layout** &ndash; layout ディレクトリには、各画面またはアクティビティのユーザーインターフェイスを定義する _Android Designer ファイル_ (.axml) が含まれています。 テンプレートは、**activity_main.axml** という名前に既定値のレイアウトを作成します。
 
--   **Resource.designer.cs** &ndash; `Resource`クラスとも呼ばれるこのファイルは、各リソースに割り当てられている一意の ID を保持する部分クラスです。 Xamarin.Android ツールによって自動的に作成され、必要に応じて再生成されます。 Xamarin.Android が手動で加えられた変更をすべて上書きするので、このファイルを手動で編集しないでください。
+::: zone-end
+::: zone pivot="macos"
 
+- **layout** &ndash; layout ディレクトリには、各画面またはアクティビティのユーザーインターフェイスを定義する _Android Designer ファイル_ (.axml) が含まれています。 テンプレートは、**Main.axml** という名前に既定値のレイアウトを作成します。
+
+::: zone-end
+
+- **values**&ndash; このディレクトリは、文字列、整数、色などの単純な値を格納する XML ファイルを格納します。 テンプレートは、**Strings.xml** という文字列値を格納するファイルを作成します。
+
+- **Resource.designer.cs** &ndash; `Resource`クラスとも呼ばれるこのファイルは、各リソースに割り当てられている一意の ID を保持する部分クラスです。 Xamarin.Android ツールによって自動的に作成され、必要に応じて再生成されます。 Xamarin.Android が手動で加えられた変更をすべて上書きするので、このファイルを手動で編集しないでください。
 
 ## <a name="app-fundamentals-and-architecture-basics"></a>アプリケーションの基本とアーキテクチャの基礎
 
 Android アプリケーションには、1 つのエントリ ポイントはありません。つまり、オペレーティング システムがアプリケーションを起動するために呼び出す 1 行のコードがアプリケーション内にありません。 代わりに、Android がいずれかのクラスをインスタンス化するときにアプリケーションが起動し、そのときに Android がアプリケーションのプロセス全体をメモリ内に読み込みます。
 
 Android のこの固有の機能は、複雑なアプリケーションの設計時や Android オペレーティング システムとの相互作用のときに特に便利です。 ただし、これらのオプションは、**Phoneword** アプリケーションのような基本的なシナリオを扱うときに Android を複雑にすることもあります。 このため、Android のアーキテクチャの探索は 2 つに分割されます。 このガイドは、Android アプリの最も一般的なエントリ ポイントを使用するアプリケーションをあげて詳しく説明します (最初の画面)。 「[Hello Android のマルチスクリーン](~/android/get-started/hello-android-multiscreen/index.md)」では、アプリケーションを起動するさまざまな方法を説明することで、Android アーキテクチャのすべての複雑さについて説明します。
-
 
 ### <a name="phoneword-scenario---starting-with-an-activity"></a>Phoneword シナリオ - アクティビティの開始
 
@@ -144,61 +151,57 @@ Android アプリケーションは直線的に進行しないため (いくつ�
 
 次のいくつかのセクションでは、**Phoneword** アプリケーションのさまざまなパーツ間の関係について詳しく説明します。これにより、上記の図の理解を深めることができます。 最初に、ユーザー インターフェイスについて説明し、Android デザイナーとレイアウト ファイルについて説明します。
 
-
 ## <a name="user-interface"></a>ユーザー インターフェイス
 
-`Main.axml` は、アプリケーションの最初の画面のユーザー インターフェイスのレイアウト ファイルです。 .axml は、これが Android デザイナー ファイルであることを示します (AXML は *Android XML* を意味します)。 *Main* という名前は、Android の観点から見ると任意であり、&ndash;レイアウト ファイルには別の名前を付けることもできます。 IDE で **Main.axml** を開くと、*Android Designer* と呼ばれる Android レイアウト ファイルのビジュアル エディターが起動します。
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+**activity_main.axml** は、アプリケーションの最初の画面に対応するユーザー インターフェイスのレイアウト ファイルです。 .axml は、これが Android デザイナー ファイルであることを示します (AXML は *Android XML* を意味します)。 *Main* という名前は、Android の観点から見ると任意であり、&ndash;レイアウト ファイルには別の名前を付けることもできます。 IDE で **activity_main.axml** を開くと、*Android Designer* と呼ばれる Android レイアウト ファイルのビジュアル エディターが起動します。
 
 [![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![Android Designer](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
-
------
-
 **Phoneword** アプリで、**TranslateButton** の ID は、`@+id/TranslateButton` に設定されます。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 [![TranslateButton ID の設定](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton ID の設定")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
+
+**Main.axml** は、アプリケーションの最初の画面に対応するユーザー インターフェイスのレイアウト ファイルです。 .axml は、これが Android デザイナー ファイルであることを示します (AXML は *Android XML* を意味します)。 *Main* という名前は、Android の観点から見ると任意であり、&ndash;レイアウト ファイルには別の名前を付けることもできます。 IDE で **Main.axml** を開くと、*Android Designer* と呼ばれる Android レイアウト ファイルのビジュアル エディターが起動します。
+
+[![Android Designer](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
+
+**Phoneword** アプリで、**TranslateButton** の ID は、`@+id/TranslateButton` に設定されます。
 
 [![TranslateButton ID の設定](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png#lightbox)
 
------
+::: zone-end
 
 **TranslateButton** の `id` プロパティを設定すると、Android Designer によって **TranslateButton** コントロールが `Resource` クラスにマッピングされ、`TranslateButton` の*リソース ID* が割り当てられます。 視覚的なコントロールのクラスへのマッピングによって、アプリのコード内で **TranslateButton** や他のコントロールを見つけて使用できるようになります。 これは、コントロールを稼働させるコードを分解するときに、詳しく説明されます。 ここで知っておく必要があるのは、コントロールのコード表現が、`id` プロパティを介してデザイナーでコントロールの視覚的な表現にリンクされるということです。
-
 
 ### <a name="source-view"></a>ソース ビュー
 
 デザイン サーフェイスで定義されているすべてのものは、Xamarin.Android で使用するための XML に変換されます。 Android Designer では、ビジュアル デザイナーから生成された XML を含むソース ビューを提供します。 この XML を表示するには、下のスクリーンショットに示すように、デザイナー ビューの左下のパネルで **[ソース]** パネルに切り替えます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 [![Designer のソース ビュー](hello-android-deepdive-images/vs/05-source-view-sml.png "Designer のソース ビュー")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 [![Designer のソース ビュー](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
 
------
+::: zone-end
 
 この XML ソース コードには、**Text (Large)**、**Plain Text**、および 2 つの **Button** 要素が含まれている必要があります。 Android Designer の詳細については、Xamarin Android の「[Designer Overview](~/android/user-interface/android-designer/index.md)」 (Designer の概要) ガイドを参照してください。
 
 ユーザー インターフェイスの視覚的な部分の背後にあるツールと概念について説明しました。 次に、アクティビティとアクティビティのライフサイクルを調べることで、ユーザー インターフェイスを稼働させるコードについて見てみましょう。
-
 
 ## <a name="activities-and-the-activity-lifecycle"></a>アクティビティとアクティビティのライフサイクル
 
 `Activity` クラスには、ユーザー インターフェイスを稼働させるコードが含まれています。
 Activity は、ユーザーとの対話に応答して動的なユーザー エクスペリエンスを作成します。
 ここでは、`Activity` クラス、アクティビティのライフ サイクルについて説明し、**Phoneword** アプリケーションでユーザー インターフェイスを稼働させるコードを詳しく説明します。
-
 
 ### <a name="activity-class"></a>Activity クラス
 
@@ -228,17 +231,15 @@ Android では、アクティビティは、ユーザーとの対話に応じて
 
 `Activity` ライフサイクル メソッドをオーバーライドすることで、アクティビティを読み込む方法、ユーザーに反応する方法、さらにデバイスの画面に表示されなくなった後の動作まで制御できます。 たとえば、上の図でライフサイクル メソッドをオーバーライドして、いくつかの重要なタスクを実行することができます。
 
--   **OnCreate** &ndash;ビューを作成し、変数を初期化し、ユーザーがアクティビティを表示する前に行う必要があるその他の準備作業を実行します。 このメソッドは、アクティビティがメモリに読み込まれるときに 1 回だけ呼び出されます。 
+- **OnCreate** &ndash;ビューを作成し、変数を初期化し、ユーザーがアクティビティを表示する前に行う必要があるその他の準備作業を実行します。 このメソッドは、アクティビティがメモリに読み込まれるときに 1 回だけ呼び出されます。 
 
--   **OnResume** &ndash;アクティビティがデバイスの画面に戻るたびに発生する必要があるタスクを実行します。 
+- **OnResume** &ndash; アクティビティがデバイスの画面に戻るたびに発生する必要があるタスクを実行します。
 
--   **OnPause** &ndash;アクティビティがデバイスの画面から消えるたびに発生する必要があるタスクを実行します。
+- **OnPause** &ndash; アクティビティがデバイスの画面から消えるたびに発生する必要があるタスクを実行します。
 
-
-`Activity` でライフサイクル メソッドにカスタム コードを追加する場合、そのライフサイクル メソッドの*基本の実装*を*オーバーライド*します。 既存のライフサイクルメソッド (既にいくつかのコードがアタッチされています) にアクセスし、独自のコードでそのメソッドを拡張します。 メソッドの内部から基本の実装を呼び出し、新しいコードの前に元のコードが実行されるようにします。 次のセクションでこの例を示します。 
+`Activity` でライフサイクル メソッドにカスタム コードを追加する場合、そのライフサイクル メソッドの*基本の実装*を*オーバーライド*します。 既存のライフサイクルメソッド (既にいくつかのコードがアタッチされています) にアクセスし、独自のコードでそのメソッドを拡張します。 メソッドの内部から基本の実装を呼び出し、新しいコードの前に元のコードが実行されるようにします。 次のセクションでこの例を示します。
 
 アクティビティのライフサイクルは、Android の重要かつ複雑な部分です。 _作業の開始_シリーズが終了した後にアクティビティの詳細について学習したい場合は、「[アクティビティのライフ サイクル](~/android/app-fundamentals/activity-lifecycle/index.md)」ガイドを参照してください。 このガイドでは、アクティビティのライフサイクルの最初の段階である `OnCreate` を中心に説明しています。
-
 
 ### <a name="oncreate"></a>OnCreate
 
@@ -255,13 +256,28 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-**Phoneword** アプリで、`OnCreate` で最初に実行する操作は、Android Designer で作成されたユーザー インターフェイスを読み込むことです。 UI を読み込むには、`SetContentView` を呼び出し、レイアウト ファイル (`Main.axml`) の*リソース レイアウト名*を渡します。 レイアウトは `Resource.Layout.Main` に置かれています。
+::: zone pivot="windows"
+
+**Phoneword** アプリで、`OnCreate` で最初に実行する操作は、Android Designer で作成されたユーザー インターフェイスを読み込むことです。 UI を読み込むには、`SetContentView` を呼び出し、レイアウト ファイル (**activity_main.axml**) の*リソース レイアウト名*を渡します。 レイアウトは `Resource.Layout.activity_main` に置かれています。
+
+```csharp
+SetContentView (Resource.Layout.activity_main);
+```
+
+`MainActivity` は、起動すると、**activity_main.axml** ファイルのコンテンツに基づいてビューを作成します。
+
+::: zone-end
+::: zone pivot="macos"
+
+**Phoneword** アプリで、`OnCreate` で最初に実行する操作は、Android Designer で作成されたユーザー インターフェイスを読み込むことです。 UI を読み込むには、`SetContentView` を呼び出し、レイアウト ファイル (**Main.axml**) の*リソース レイアウト名*を渡します。 レイアウトは `Resource.Layout.Main` に置かれています。
 
 ```csharp
 SetContentView (Resource.Layout.Main);
 ```
 
 `MainActivity` は、起動すると、**Main.axml** ファイルのコンテンツに基づいてビューを作成します。 レイアウト ファイル名は、アクティビティ名に一致することに注意してください。&ndash; *Main*.axml は、*Main* アクティビティのレイアウトです。 Android の観点から見るとこれは必須ではありませんが、他の画面をアプリケーションに追加し始めると、この名前付け規則のおかげで、レイアウト ファイルにコード ファイルを簡単に一致させることができることがわかります。
+
+::: zone-end
 
 レイアウト ファイルを準備した後で、コントロールの検索を開始することができます。
 コントロールを検索するには、`FindViewById` を呼び出してコントロールのリソース ID を渡します。
@@ -273,7 +289,6 @@ TextView translatedPhoneWord = FindViewById<TextView>(Resource.Id.TranslatedPhon
 ```
 
 これでレイアウト ファイルにコントロールへの参照があるので、ユーザーの操作に応答するようにプログラミングを開始できます。
-
 
 ### <a name="responding-to-user-interaction"></a>ユーザー操作に対する応答
 
@@ -299,36 +314,34 @@ translateButton.Click += (sender, e) =>
 
 Visual Studio for Mac と Visual Studio のいずれも、アプリケーションをテストおよび展開するためのオプションを多数用意しています。 このセクションでは、デバッグ オプションについて説明し、デバイスでのアプリケーションのテストのデモンストレーションを示し、さまざまな画面密度に対応するカスタム アプリ アイコンを作成するためのツールを紹介します。
 
-
 ### <a name="debugging-tools"></a>デバッグ ツール
 
 アプリケーション コード内の問題の診断は困難なことがあります。 複雑なコードの問題の診断に役立てるために、[ブレークポイントを設定する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)、[コードのステップを実行する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)、または[ログ ウィンドウに情報を出力する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)ことができます。
 
-
-### <a name="deploy-to-a-device"></a>デバイスを展開する
+### <a name="deploy-to-a-device"></a>デバイスに展開する
 
 エミュレーターは、アプリケーションの展開およびテストの有効な出発点ですが、ユーザーは、最終的なアプリをエミュレーターで使用できません。 早い段階で頻繁に実際のデバイスでアプリケーションをテストすることをお勧めします。
 
 Android デバイスを使用してアプリケーションをテストできるようにする前に、開発用に構成する必要があります。 「[Set Up Device for Development](~/android/get-started/installation/set-up-device-for-development.md)」(開発用デバイスの設定) ガイドでは、開発用デバイスを準備する詳細な手順を説明しています。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 デバイスを構成した後で、デバイスをプラグインし、**[デバイスの選択]** ダイアログからデバイスを選択し、アプリケーションを開始することでデバイスを展開できます。
 
 ![デバッグ デバイスの選択](hello-android-deepdive-images/vs/06-select-device.png "デバッグ デバイスの選択")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 デバイスを構成した後で、デバイスをプラグインし、**[開始 (再生)]** を押してから、**[デバイスの選択]** ダイアログからデバイスを選択し、**[OK]** を押してデバイスを展開できます。
 
 [![デバッグ デバイスの選択](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
------
+::: zone-end
 
 これにより、デバイス上のアプリケーションを起動します。
 
 [![Phoneword の入力](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
-
 
 ### <a name="set-icons-for-different-screen-densities"></a>さまざまな画面密度のアイコンを設定する
 
@@ -338,15 +351,16 @@ Android デバイスにはさまざまな画面サイズと解像度があり、
 
 これに対応するには、さまざまな種類の解像度のアイコンを **Resources** フォルダーに追加することをお勧めします。 Android では、異なる密度の起動アイコンを処理するためのさまざまなバージョンの **mipmap** フォルダーが用意されています。これには、中密度の画面用の *mdpi*、高密度用の *hdpi*、非常に高密度用の *xhdpi*、*xxhdpi*、*xxxhdpi* が含まれます。 さまざまなサイズのアイコンが、適切な **mipmap-** フォルダーに格納されます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 ![mipmap フォルダー](hello-android-deepdive-images/vs/07-mipmap-folders.png "mipmap フォルダー")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="windows"
 
 [![mipmap フォルダー](hello-android-deepdive-images/xs/07-mipmap-folders-sml.png)](hello-android-deepdive-images/xs/07-mipmap-folders.png#lightbox)
 
------
+::: zone-end
 
 Android では、適切な密度のアイコンを取得します。
 
@@ -356,37 +370,36 @@ Android では、適切な密度のアイコンを取得します。
 
 誰もが、デザイナーを使用してカスタム アイコンを作成し、アプリで目立つようにする必要がある画像を起動できるわけではありません。カスタム アプリのアートワークを生成するためのいくつかの代替の方法を次に示します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
--   [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
+- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
 
--   Visual Studio &ndash; これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
+- Visual Studio &ndash; これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
 
--   [Glyphish](http://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
+- [Glyphish](http://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 
--   [Fiverr](http://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [Fiverr](http://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
--   [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
+- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
 
--   [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で約 80 ドルで入手できます。 無料の [Sketch Tool](http://bohemiancoding.com/sketch/tool/) を試すこともできます。
+- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で約 80 ドルで入手できます。 無料の [Sketch Tool](http://bohemiancoding.com/sketch/tool/) を試すこともできます。
 
--   [Pixelmator](http://www.pixelmator.com/) &ndash; 約 30 ドルの Mac 用の多様な画像編集アプリです。
+- [Pixelmator](http://www.pixelmator.com/) &ndash; 約 30 ドルの Mac 用の多様な画像編集アプリです。
 
--   [Glyphish](http://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
+- [Glyphish](http://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 
--   [Fiverr](http://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [Fiverr](http://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
------
+::: zone-end
 
 アイコンのサイズと要件に関する詳細については、[Android リソース](~/android/app-fundamentals/resources-in-android/index.md) ガイドを参照してください。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="macos"
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="adding-google-play-services-packages"></a>Google Play Services パッケージを追加する
+### <a name="adding-google-play-services-packages"></a>Google Play 開発者サービス パッケージを追加する
 
 _Google Play Services_ は、アドオン ライブラリのセットであり、これを使用して、Android 開発者が、Google マップ、Google Cloud Messaging、アプリ内の課金サービスなどの Google からの最新の機能を利用することができます。
 以前は、Google Play 開発者サービスのすべてのライブラリへのバインドは、Xamarin によって、1 つのパッケージの形式で支給されていました &ndash; Visual Studio for Mac 以降、アプリに含める Google Play 開発者サービス パッケージを選択するための新しいプロジェクト ダイアログを利用できます。
@@ -403,7 +416,7 @@ _Google Play Services_ は、アドオン ライブラリのセットであり�
 
 [![ライセンスの同意](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
------
+::: zone-end
 
 ## <a name="summary"></a>まとめ
 

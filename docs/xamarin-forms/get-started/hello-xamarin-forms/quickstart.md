@@ -1,19 +1,20 @@
 ---
 title: Xamarin.Forms のクイック スタート
 description: この記事では、英数字の電話番号 (ユーザーが入力) を数字の電話番号に変換してから、その番号に電話をかけるアプリケーションを作成する方法を説明します。
+zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/13/2018
-ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.date: 09/13/2018
+ms.openlocfilehash: fd9b3032166470a960e97f1754d2133a5ef22631
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242434"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109368"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms のクイック スタート
 
@@ -21,9 +22,9 @@ ms.locfileid: "39242434"
 
 [![](quickstart-images/intro-app-examples-sml.png "Phoneword アプリケーション")](quickstart-images/intro-app-examples.png#lightbox "Phoneword アプリケーション")
 
-Phoneword アプリケーションは次のように作成します。
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+## <a name="get-started-with-visual-studio"></a>Visual Studio 入門
 
 1. **[スタート]** 画面で、Visual Studio を起動します。 スタート ページが開きます。
 
@@ -38,7 +39,8 @@ Phoneword アプリケーションは次のように作成します。
     ![](quickstart-images/vs/new-project.w157.png "クロスプラットフォームのプロジェクト テンプレート")
 
     > [!NOTE]
-    > ソリューションに **Phoneword** という名前を付けないと、多くのビルド エラーが発生します。
+    > このクイックスタートの C# および XAML スニペットでは、**Phoneword** という名前のソリューションが必要です。
+    > 別のソリューション名を使用すると、これらの手順からプロジェクトにコードをコピーするときに多数のビルド エラーが発生します。
 
 4. **[新しいクロスプラットフォーム アプリ]** ダイアログで、**[空のアプリケーション]** をクリックして、コード共有方法として **[.NET Standard]** を選択し、**[OK]** ボタンをクリックします。
 
@@ -64,7 +66,7 @@ Phoneword アプリケーションは次のように作成します。
         <StackLayout>
           <Label Text="Enter a Phoneword:" />
           <Entry x:Name="phoneNumberText" Text="1-855-XAMARIN" />
-          <Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
+          <Button Text="Translate" Clicked="OnTranslate" />
           <Button x:Name="callButton" Text="Call" IsEnabled="false" Clicked="OnCall" />
         </StackLayout>
     </ContentPage>
@@ -349,105 +351,19 @@ Phoneword アプリケーションは次のように作成します。
 
     **CTRL + S** を押し、マニフェストに変更内容を保存してから、ファイルを閉じます。
 
-24. **ソリューション エクスプローラー**で **Phoneword.UWP** プロジェクトを右クリックし、**[追加]、[新しい項目]** を選択します。
+24. Android アプリケーション プロジェクトを右クリックし、**[スタートアップ プロジェクトに設定]** をクリックします。
 
-    ![](quickstart-images/vs/add-new-item-uwp.png "新しい項目の追加")
+25. "緑の矢印" のツールバー ボタンを使用するか、メニューから **[デバッグ]、[デバッグ開始]** の順に選択して、Android アプリを実行します。
 
-25. **[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[クラス]** の順に選択し、新しいファイルに **PhoneDialer** という名前を付け、**[追加]** ボタンをクリックします。
+    > [!WARNING]
+    > 電話呼び出しは機能しないことがあるため、すべてのシミュレーターでサポートされているとは限りません。
 
-    ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "新しいクラスの追加")
+26. iOS デバイスがあり、Xamarin.Forms での開発のための Mac システム要件が揃っている場合、同様の手法を使用して、iOS デバイスにアプリを展開します。 または、アプリを [iOS リモート シミュレーター](~/tools/ios-simulator/index.md)に展開します。
 
-26. **PhoneDialer.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。 このコードにより、ユニバーサル Windows プラットフォームが変換された電話番号をダイヤルする `Dial` メソッドとヘルパー メソッドが作成されます。
+::: zone-end
+::: zone pivot="macos"
 
-    ```csharp
-    using Phoneword.UWP;
-    using System;
-    using System.Threading.Tasks;
-    using Windows.ApplicationModel.Calls;
-    using Windows.UI.Popups;
-    using Xamarin.Forms;
-
-    [assembly: Dependency(typeof(PhoneDialer))]
-    namespace Phoneword.UWP
-    {
-        public class PhoneDialer : IDialer
-        {
-            bool dialled = false;
-
-            public bool Dial(string number)
-            {
-                DialNumber(number);
-                return dialled;
-            }
-
-            async Task DialNumber(string number)
-            {
-                var phoneLine = await GetDefaultPhoneLineAsync();
-                if (phoneLine != null)
-                {
-                    phoneLine.Dial(number, number);
-                    dialled = true;
-                }
-                else
-                {
-                    var dialog = new MessageDialog("No line found to place the call");
-                    await dialog.ShowAsync();
-                    dialled = false;
-                }
-            }
-
-            async Task<PhoneLine> GetDefaultPhoneLineAsync()
-            {
-                var phoneCallStore = await PhoneCallManager.RequestStoreAsync();
-                var lineId = await phoneCallStore.GetDefaultLineAsync();
-                return await PhoneLine.FromIdAsync(lineId);
-            }
-        }
-    }
-    ```
-
-    **CTRL + S** を押し、**PhoneDialer.cs** への変更内容を保存してから、ファイルを閉じます。
-
-27. **ソリューション エクスプローラー**の **Phoneword.UWP** プロジェクトで、**[参照]** を右クリックし、**[参照の追加]** をクリックします。
-
-    ![](quickstart-images/vs/uwp-add-reference.png "参照の追加")
-
-28. **[参照マネージャー]** ダイアログで、**[Universal Windows]\(ユニバーサル Windows\)、[Extensions]\(拡張機能\)、[Windows Mobile Extensions for UWP]\(UWP 用 Windows モバイル拡張機能\)** をクリックし、**[OK]** ボタンをクリックします。
-
-    ![](quickstart-images/vs/uwp-add-reference-extensions.png "Windows Mobile Extensions for UWP の追加")
-
-29. **ソリューション エクスプローラー**の **Phoneword.UWP** プロジェクトで、**Package.appxmanifest** をダブルクリックします。
-
-    ![](quickstart-images/vs/uwp-manifest.png "UWP マニフェストを開く")
-
-30. **[機能]** ページで、**[電話呼び出し]** 機能を有効にします。 これによって、アプリケーションに電話をかけるアクセス許可が与えられます。
-
-    ![](quickstart-images/vs/uwp-manifest-changed.png "[電話呼び出し] 機能を有効にする")
-
-    **CTRL + S** を押し、マニフェストに変更内容を保存してから、ファイルを閉じます。
-
-31. Visual Studio で、**[ビルド]、[ソリューションのビルド]** メニュー項目を選択します (または **CTRL + SHIFT + B** を押します)。 アプリケーションがビルドされ、Visual Studio のステータス バーに成功のメッセージが表示されます。
-
-    ![](quickstart-images/vs/build-successful.png "ビルドに成功しました")
-
-    エラーがある場合は、アプリケーションが正常にビルドされるまで、前の手順を実行し、誤りを修正します。
-
-32. **ソリューション エクスプローラー**で **Phoneword.UWP** プロジェクトを右クリックし、**[スタートアップ プロジェクトに設定]** を選択します。
-
-    ![](quickstart-images/vs/uwp-set-as-startup-project.png "スタートアップ プロジェクトに設定")
-
-33. Visual Studio ツールバーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、アプリケーションを起動します。
-
-    ![](quickstart-images/vs/start.png "Visual Studio ツールバー")
-    ![](quickstart-images/vs/phone-result-uwp.png "Phoneword アプリケーション UWP")
-
-34. **ソリューション エクスプローラー**で **Phoneword.Android** プロジェクトを右クリックし、**[スタートアップ プロジェクトに設定]** を選択します。
-35. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、Android エミュレーター内にアプリケーションを起動します。
-36. iOS デバイスがあり、Xamarin.Forms での開発のための Mac システム要件が揃っている場合、同様の手法を使用して、iOS デバイスにアプリを展開します。 または、アプリを [iOS リモート シミュレーター](~/tools/ios-simulator.md)に展開します。
-
-    注: すべてのシミュレーターで電話呼び出しはサポートされていません。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+## <a name="get-started-with-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
 1. Visual Studio for Mac を起動し、スタート ページで **[新しいプロジェクト]** をクリックして新しいプロジェクトを作成します。
 
@@ -466,7 +382,8 @@ Phoneword アプリケーションは次のように作成します。
     ![](quickstart-images/xs/configure-project.png "フォーム プロジェクトの構成")
 
     > [!NOTE]
-    > ソリューションとプロジェクトに **Phoneword** という名前を付けないと、多くのビルド エラーが発生します。
+    > このクイックスタートの C# および XAML スニペットでは、**Phoneword** という名前のソリューションが必要です。
+    > 別のソリューション名を使用すると、これらの手順からプロジェクトにコードをコピーするときに多数のビルド エラーが発生します。
 
 5. **Solution Pad** で、**MainPage.xaml** をダブルクリックして開きます。
 
@@ -488,7 +405,7 @@ Phoneword アプリケーションは次のように作成します。
         <StackLayout>
           <Label Text="Enter a Phoneword:" />
           <Entry x:Name="phoneNumberText" Text="1-855-XAMARIN" />
-          <Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
+          <Button Text="Translate" Clicked="OnTranslate" />
           <Button x:Name="callButton" Text="Call" IsEnabled="false" Clicked="OnCall" />
         </StackLayout>
     </ContentPage>
@@ -792,12 +709,12 @@ Phoneword アプリケーションは次のように作成します。
 
     ![](quickstart-images/xs/phoneword-result-android.png "Android エミュレーター")
 
-    注: Android シミュレーターでは電話呼び出しはサポートされていません。
+    > [!WARNING]
+    > Android エミュレーターでは電話呼び出しはサポートされていません。
 
------
+::: zone-end
 
 Xamarin.Forms アプリケーションの完成おつかれさまでした。 このガイドの「[次のトピック](~/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md)」では、Xamarin.Forms 使用したアプリケーション開発の基本を理解するために、このチュートリアルで実行した手順を再確認します。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -4,15 +4,15 @@ description: Android Emulator は、さまざまなデバイスをシミュレ�
 ms.prod: xamarin
 ms.assetid: 889963B7-F4DA-41D9-9B8D-B733BB71A329
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 06/22/2018
-ms.openlocfilehash: f281227ae6ee17548e9c4653d52c7ae6d2bfff2d
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+author: conceptdev
+ms.author: crdun
+ms.date: 08/27/2018
+ms.openlocfilehash: 6ce8f633cdc0fd4616673eb047d640a8703b3a30
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935036"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102530"
 ---
 # <a name="android-emulator-setup"></a>Android Emulator のセットアップ
 
@@ -29,8 +29,7 @@ Android Emulator は、さまざまなデバイスをシミュレートするた
 
 ### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[エミュレーター パフォーマンスのためのハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
-Android Emulator のパフォーマンスを最大にするためにコンピューターを準備する方法。
-Android Emulator はハードウェアの高速化なしでは非常に低速なため、このエミュレーターを使用する前に、お使いのコンピューターでハードウェア アクセラレータを有効にすることをお勧めします。
+Hyper-V または HAXM 仮想化テクノロジを使用して、Android Emulator のパフォーマンスを最大にするためにコンピューターを準備する方法。 Android Emulator はハードウェアの高速化なしでは非常に低速なため、このエミュレーターを使用する前に、お使いのコンピューターでハードウェア アクセラレータを有効にすることをお勧めします。
 
 ### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)
 

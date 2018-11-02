@@ -1,32 +1,30 @@
 ---
 title: 'Hello, Android マルチスクリーン: クイック スタート'
 description: この 2 部構成のガイドでは、Phoneword アプリケーションを拡張して 2 番目の画面を処理します。 その過程で、基本的な Android アプリケーションの構成要素と Android アーキテクチャの詳細を紹介します。
+zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 04/30/2018
-ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+author: conceptdev
+ms.author: crdun
+ms.date: 10/05/2018
+ms.openlocfilehash: 774661b36a41e4791207a54892663af13de3b3d3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436932"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120490"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android マルチスクリーン: クイック スタート
 
 _この 2 部構成のガイドでは、Phoneword アプリケーションを拡張して 2 番目の画面を処理します。その過程で、基本的な Android アプリケーションの構成要素と Android アーキテクチャの詳細を紹介します。_
-
-## <a name="hello-android-multiscreen-quickstart"></a>Hello, Android マルチスクリーンのクイック スタート
 
 このガイドのチュートリアル部分では、[Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) アプリケーションに 2 つ目の画面を追加して、アプリを使用して変換した番号の履歴を追跡し続けます。 [最終的なアプリケーション](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/)には、右のスクリーンショットのように、"変換された" 番号を表示する 2 つ目の画面が表示されます。
 
 [![例のアプリのスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 付随する[深い分析](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)では、ビルドされたものを確認し、アーキテクチャ、ナビゲーション、およびその過程で発生したその他の新しい Android 概念について説明します。
-
 
 ## <a name="requirements"></a>必要条件
 
@@ -37,13 +35,13 @@ _この 2 部構成のガイドでは、Phoneword アプリケーションを拡
 
 このチュートリアルでは、**Phoneword** アプリケーションに**変換履歴**画面を追加します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 まず、Visual Studio で **Phoneword** アプリケーションを開き、**ソリューション エクスプローラー**で **Main.axml** ファイルを編集します。
 
 ### <a name="updating-the-layout"></a>レイアウトの更新
 
-**[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[TranslatedPhoneWord]** TextView の下に配置します。 **[プロパティ]** ウィンドウで、ボタン **ID** を `@+id/TranslationHistoryButton` に変更します。 
+**[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[TranslatedPhoneWord]** TextView の下に配置します。 **[プロパティ]** ウィンドウで、ボタン **ID** を `@+id/TranslationHistoryButton` に変更します。
 
 [![新しいボタンをドラッグ](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
@@ -107,7 +105,7 @@ namespace Phoneword
 
 このクラスでは、プログラムによって `ListActivity` が作成されるため、このアクティビティ用に新しいレイアウト ファイルを作成する必要はありません。 これについては、「[Hello, Android マルチスクリーンの詳細](~/android/get-started/hello-android/hello-android-deepdive.md)」で詳しく説明しています。
 
-### <a name="adding-translation-history-code"></a>変換履歴コードの追加
+### <a name="adding-a-list"></a>リストの追加
 
 このアプリは (最初の画面でユーザーが変換した) 電話番号を収集し、2 番目の画面に渡します。 電話番号は、文字列のリストとして格納されます。 一覧 (と後に使用される意図) をサポートするには、次の `using` ディレクティブを **MainActivity.cs** の一番上に追加します。
 
@@ -169,19 +167,20 @@ translateButton.Click += (sender, e) =>
 
 アプリケーションを保存してビルドし、エラーがないことを確認します。
 
-### <a name="running-the-app"></a>アプリの実行
+### <a name="running-the-app"></a>アプリケーションの実行
 
 エミュレーターまたはデバイスにアプリケーションを展開します。 次のスクリーンショットは、実行中の **Phoneword** アプリケーションを示しています。
 
 [![例のスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 まず、Visual Studio for Mac で **Phoneword** プロジェクトを開き、**Solution Pad** で **Main.axml** ファイルを編集します。
 
 ### <a name="updating-the-layout"></a>レイアウトの更新
 
-**[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[TranslatedPhoneWord]** TextView の下に配置します。 **[プロパティ]** パッドで、ボタン **ID** を `@+id/TranslationHistoryButton` に変更します。 
+**[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[TranslatedPhoneWord]** TextView の下に配置します。 **Properties** Pad で、ボタン **ID** を `@+id/TranslationHistoryButton` に変更します。
 
 [![新しいボタンをドラッグ](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
@@ -189,11 +188,9 @@ translateButton.Click += (sender, e) =>
 
 [![変換履歴ボタンのテキストを設定する](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png#lightbox)
 
-
 **Solution Pad** で **[リソース]** フォルダーの下の**値**ノードを展開し、文字列リソース ファイル **Strings.xml** をダブルクリックします。
 
 [![文字列を開く](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png#lightbox)
-
 
 `translationHistory` 文字列の名前と値を **Strings.xml** ファイルに追加して保存します。
 
@@ -246,7 +243,7 @@ namespace Phoneword
 
 このクラスでは、プログラムによって `ListActivity` が作成されるため、このアクティビティ用に新しいレイアウト ファイルを作成する必要はありません。 これについては、「[Hello, Android マルチスクリーンの詳細](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)」で詳しく説明しています。
 
-### <a name="adding-translation-history-code"></a>変換履歴コードの追加
+### <a name="adding-a-list"></a>リストの追加
 
 このアプリは (最初の画面でユーザーが変換した) 電話番号を収集し、2 番目の画面に渡します。 電話番号は、文字列のリストとして格納されます。 一覧 (と後に使用される意図) をサポートするには、次の `using` ディレクティブを **MainActivity.cs** の一番上に追加します。
 
@@ -303,16 +300,15 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-### <a name="running-the-app"></a>アプリの実行
+### <a name="running-the-app"></a>アプリケーションの実行
 
 エミュレーターまたはデバイスにアプリケーションを展開します。 次のスクリーンショットは、実行中の **Phoneword** アプリケーションを示しています。
 
 [![例のスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
------
+::: zone-end
 
 おつかれさまでした。これで最初のマルチスクリーン Xamarin.Android アプリケーションが完成しました。 次は、学習したツールとスキルを詳しく分析します &ndash; [Hello, Android マルチスクリーンの詳細](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
-
 
 ## <a name="related-links"></a>関連リンク
 

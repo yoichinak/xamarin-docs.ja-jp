@@ -4,15 +4,15 @@ description: 権利は特殊なアプリの機能およびセキュリティの�
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: 7e5ace306b580ba76986e89367de84e5bfd9cc40
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 08/13/2018
+ms.openlocfilehash: 6e45f87b3c64abb9de22e09150935e3e5065fea4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785305"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103414"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
@@ -20,12 +20,11 @@ _権利は特殊なアプリの機能およびセキュリティのアクセス�
 
 iOS では、アプリは_サンドボックス_で実行されます。このサンドボックスでは、アプリケーションと特定のシステム リソースまたはユーザー データ間のアクセスを制限する一連の規則が提供されます。 _権利_は、アプリに追加機能を提供するためにシステムでサンドボックスを拡張することを要求する場合に使用されます。
 
-アプリの機能を拡張するには、アプリの Entitlements.plist ファイルで権利を指定する必要があります。 特定の機能のみを拡張することができ、これらの機能については、「[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)」ガイドにリストされており、[以下](#keyreference)で説明します。 権利はキー/値ペアとしてシステムに渡され、通常は機能ごとに 1 つだけ必要になります。 特定のキーと値については、このガイドの後述の「[権利キー参照](#keyreference)」で説明します。
+アプリの機能を拡張するには、アプリの Entitlements.plist ファイルで権利を指定する必要があります。 特定の機能のみを拡張することができ、これらの機能については、「[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)」ガイドにリストされており、[以下](#entitlement-key-reference)で説明します。 権利はキー/値ペアとしてシステムに渡され、通常は機能ごとに 1 つだけ必要になります。 特定のキーと値については、このガイドの後述の「[権利キー参照](#entitlement-key-reference)」で説明します。
 Visual Studio for Mac と Visual Studio では、Entitlements.plist エディターを介して Xamarin.iOS アプリで権利を追加するためのわかりやすいインターフェイスが提供されます。
 このガイドでは、Entitlements.plist エディターおよびその使用方法を紹介します。 また、機能ごとに iOS プロジェクトに追加可能なすべての権利の参照も提供します。
 
 ## <a name="entitlements-and-provisioning"></a>権利とプロビジョニング
-
 
 Entitlements.plist ファイルは権利の指定と、アプリケーション バンドルへの署名の際に使用されます。
 
@@ -38,7 +37,7 @@ Entitlements.plist ファイルは権利の指定と、アプリケーション 
 
 アプリ ID を定義する際に必要なアプリケーション サービスを選択して構成するだけでなく、権利を Xamarin.iOS プロジェクトで構成する必要もあります。その場合は、**Info.plist** ファイルと **Entitlements.plist** ファイルを編集します。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac で権利を構成するには、次の操作を行います。
 
@@ -55,7 +54,7 @@ Visual Studio for Mac で権利を構成するには、次の操作を行いま�
 5. Xamarin.iOS アプリケーションに必要な権利を選択して構成し、アプリ ID が作成されたときに定義された設定と一致するようにします。
 6. 変更内容を **Entitlements.plist** ファイルに保存します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio で権利を構成するには、次の操作を行います。
 
@@ -74,10 +73,7 @@ Visual Studio で権利を構成するには、次の操作を行います。
 5. Xamarin.iOS アプリケーションに必要な権利を選択して構成し、アプリ ID が作成されたときに定義された設定と一致するようにします。
 6. 変更内容を **Entitlements.plist** ファイルに保存します。
 
-
 -----
-
-<a name="add-new" />
 
 ## <a name="adding-a-new-entitlementsplist-file"></a>新しい Entitlements.plist ファイルの追加
 
@@ -91,8 +87,6 @@ Xamarin.iOS に Entitlements.plist ファイルを追加するには、次の操
 2.  [新しいファイル] ダイアログで、**[iOS]、[プロパティ一覧]** の順に選択し、Entitlements という名前を付けます。
 
     ![[新しいファイル] ダイアログ](entitlements-images/image2.png)
-
-<a name="keyreference" />
 
 ## <a name="entitlement-key-reference"></a>権利キー参照
 
@@ -150,7 +144,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 ### <a name="push-notifications"></a>プッシュ通知
 
 - **キー**: aps-environment
-- **文字列**: `production` または `development`
+- **文字列**: `development` または `production`
 
 ### <a name="siri"></a>Siri
 
@@ -203,6 +197,12 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 - **説明**: Wireless Accessory Configuration を使用すると、アプリケーションで MFi Wi-Fi アクセサリを構成できます。
     - **キー**: com.apple.external-accessory.wireless-configuration
     - **ブール値**: YES
+
+### <a name="classkit"></a>ClassKit
+
+- **説明**: ClassKit を使用すると、教師はアプリで割り当てられた活動に対する学生の進捗状況を表示できます。
+    - **キー**: com.apple.developer.ClassKit-environment
+    - **文字列**: `development` または `production`
 
 ## <a name="summary"></a>まとめ
 

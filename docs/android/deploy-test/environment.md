@@ -3,15 +3,15 @@ title: Xamarin.Android Environment
 ms.prod: xamarin
 ms.assetid: 67BFD4E1-276C-4B9F-9BD8-A5218D2BD529
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: ebac7bfe826388de83fedc4be5f268773ca2526b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f0ad51738e0bbe785773f653b06fe5f582527f0b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30766323"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120880"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -30,13 +30,13 @@ adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
 Android システムのプロパティは、ターゲット デバイス上のすべてのプロセスに対して設定されます。
 
-Xamarin.Android 4.6 以降、*環境ファイル* をプロジェクトに追加することで、アプリケーションごとにシステム プロパティと環境変数の両方を設定するか、上書きすることができるようになりました。 環境ファイルは、[`AndroidEnvironment` の**ビルド アクション**](~/android/deploy-test/building-apps/build-process.md)を含む Unix 形式のプレーンテキスト ファイルです。
+Xamarin.Android 4.6 以降、*環境ファイル* をプロジェクトに追加することで、アプリケーションごとにシステム プロパティと環境変数の両方を設定するか、オーバーライドすることができるようになりました。 環境ファイルは、[`AndroidEnvironment` の**ビルド アクション**](~/android/deploy-test/building-apps/build-process.md)を含む Unix 形式のプレーンテキスト ファイルです。
 環境ファイルには、*キー = 値*形式の行が含まれています。
 コメントは `#` で始まる行です。 空白行は無視されます。
 
 *キー* が大文字で始まる場合、*キー* は環境変数として扱われます。**setenv** (3) は、プロセスの起動時に環境変数を指定された*値*に設定するために使用されます。
 
-"*キー*" が小文字で始まる場合、"*キー*" は Android のシステム プロパティとして扱われます。"*値*" は "*既定値*" です。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値を上書きできるようにするためです。
+"*キー*" が小文字で始まる場合、"*キー*" は Android のシステム プロパティとして扱われます。"*値*" は "*既定値*" です。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値をオーバーライドできるようにするためです。
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android の環境変数
 
@@ -49,7 +49,8 @@ Xamarin.Android は `XA_HTTP_CLIENT_HANDLER_TYPE` 変数をサポートしてい
 
 Xamarin.Android 6.1 では、この環境変数は既定では設定されておらず、[HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) が使用されます。
 
-代わりに、ネットワーク アクセスに [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) を使用する値 `Xamarin.Android.Net.AndroidClientHandler` を指定することもできます。この設定で、Android がサポートしている場合に TLS 1.2 の使用が*許可されることがあります*。
+または、値 `Xamarin.Android.Net.AndroidClientHandler` でネットワーク アクセスに [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) を使用するよう指定できます。
+これでは、Android がサポートする場合、TLS 1.2 の使用を許可している*場合があります*。
 
 Xamarin.Android 6.1 で追加されました。
 
@@ -103,7 +104,7 @@ Xamarin.Android が `adb logcat` にログを記録する追加情報を制御�
 ### `debug.mono.max_grefc`
 
 `debug.mono.max_grefc` システム プロパティの値は整数です。
-この値で、ターゲット デバイスの既定の検出された最大 GREF カウントが*上書き*されます。
+この値で、ターゲット デバイスの既定の検出された最大 GREF カウントが*オーバーライド*されます。
 
 *注:* **environment.txt** ファイルで適時に値を取得できないので、`adb shell setprop
 debug.mono.max_grefc` でのみ使用できます。
@@ -128,7 +129,7 @@ debug.mono.max_grefc` でのみ使用できます。
 
 ### `debug.mono.wref`
 
-`debug.mono.wref` システム プロパティを使用すると、既定で検出された JNI の弱い参照メカニズムを上書きすることができます。 サポートされている値は次の 2 つです。
+`debug.mono.wref` システム プロパティを使用すると、既定で検出された JNI の弱い参照メカニズムをオーバーライドすることができます。 サポートされている値は次の 2 つです。
 
 * `jni`: `JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
 * `java`: `java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。

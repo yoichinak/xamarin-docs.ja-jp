@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS アプリケーショ�
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: caf35ab601d20e1cb235ab9ebb131e6dffc614fc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514464"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108880"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
@@ -101,7 +101,9 @@ container.AddSubview (new MyView (container));
 
 ここで、含まれるオブジェクトでは、親が維持されません。 ただし、親では、`container.AddSubView` を呼び出すことで子が維持されます。
 
-デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) プロパティまたは [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) を [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) クラスで設定するときなどに、ピア クラスに実装が含まれます。
+デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 
+プロパティまたは [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) を 
+[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) クラスで設定するときなどに、ピア クラスに実装が含まれます。
 
 プロトコルを実装するためだけに作成されたクラスの場合 ([`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/) など) にできることは、サブクラスの作成ではなく、クラスにインターフェイスを実装し、メソッドをオーバーライドし、`DataSource` プロパティを `this` に割り当てることです。
 

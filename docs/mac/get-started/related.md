@@ -4,17 +4,17 @@ description: このドキュメントには、Xamarin.Mac 開発者向けのド�
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 1bef756d89a92d082bd5ee29e18047bc4bed2498
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ae1ac9b40a0e6a62076a6143e64fa8beb82df6c5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792529"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107317"
 ---
-# <a name="xamarinmac--related-documentation"></a>Xamarin.Mac – 関連ドキュメント
+# <a name="xamarinmac-related-documentation"></a>Xamarin.Mac – 関連ドキュメント
 
 Xamarin.Mac に関する質問の資料は、[developer.xamarin.com](~/mac/get-started/index.md) の Mac セクション以外にも、次の 3 か所にあります。
 

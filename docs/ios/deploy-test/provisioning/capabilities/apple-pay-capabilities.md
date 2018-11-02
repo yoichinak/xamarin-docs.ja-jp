@@ -4,15 +4,15 @@ description: アプリケーションに機能を追加するには、多くの�
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: a3d2e6179dde1583e0fd4d175c46582bed9a2e07
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c7a2d347970d4edfe713edab264647fb644ff74a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785071"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112351"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS の Apple Pay 機能
 
@@ -40,11 +40,11 @@ Developer Center から新しいアプリをプロビジョニングするとき
 
 2.  **[Identifiers]\(ID\)** の下で **[Merchant IDs]\(マーチャント ID\)** を選択し、**+** を選択して新しいコンテナーを作成します。  
 
-3.  次に示すように、フォームに新しい説明と識別子を記入します。 説明は、ID を特定しやすいものにします。これは後で変更することができます。 識別子は、一意である必要があり、文字列 `merchant` で始まる必要があります。 Apple では、識別子を次の形式にすることを推奨しています。`merchant.com.[Your-App-Name]`:
+3.  次に示すように、フォームに新しい説明と識別子を記入します。 説明は、ID を特定しやすいものにします。これは後で変更することができます。 識別子は、一意である必要があり、文字列  `merchant` で始まる必要があります。 Apple では、識別子を次の形式にすることを推奨しています。`merchant.com.[Your-App-Name]`:
    
     ![新しいマーチャント ID の詳細](apple-pay-capabilities-images/image58.png)
 
-4.  詳細を確認し、ID を**登録**します。 
+4.  詳細を確認し、ID を **登録** します。 
     
     ![マーチャント ID の確認](apple-pay-capabilities-images/image59.png)
 
@@ -154,6 +154,6 @@ Apple Pay の使用に関する詳細は、次のガイドを参照してくだ�
 
 * アプリでフレームワークの名前空間を使用します。
 * アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドを参照してください。
-* アプリの **[iOS バンドル署名]** で、**[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では_ありません_。
+* アプリの  **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に確実に設定されているようにします。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _"ありません"_ 。
 
 App Services で問題が発生した場合は、メイン ガイドの[トラブルシューティング](~/ios/deploy-test/provisioning/capabilities/index.md)のセクションを参照してください。

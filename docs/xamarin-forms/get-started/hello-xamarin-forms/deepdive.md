@@ -1,6 +1,7 @@
 ---
 title: Xamarin.Forms の詳細
 description: この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。 たとえば、Xamarin.Forms アプリケーションの構造、アプリケーションのアーキテクチャ、と基礎、ユーザー インターフェイスについて説明しました。
+zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
@@ -8,22 +9,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 7eff7f4413b533caadcf2aa8b5eed8c4ab65449d
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: def4ecccf92c47a5cc7c08e2821e5f3387fb752f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242226"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118709"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms の詳細
 
 「[Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)」(Xamarin.Forms クイックスタート) では、設定アプリケーションを構築しました。 この記事では、Xamarin.Forms アプリケーションのしくみの基礎を理解するために、構築された内容を確認します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 ## <a name="introduction-to-visual-studio"></a>Visual Studio の概要
-
-Visual Studio は Microsoft 製の強力な IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 この記事では、主に Visual Studio の基本的な機能の一部と Xamarin プラグインを使用します。
 
 Visual Studio は、コードを*ソリューション*と*プロジェクト*に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Phoneword アプリケーションは、次のスクリーンショットのように、4 つのプロジェクトを含む 1 つのソリューションで構成されています。
 
@@ -32,7 +31,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 プロジェクトの内容:
 
 - Phoneword - このプロジェクトは、すべての共有コードと共有 UI を保持する .NET Standard ライブラリ プロジェクトです。
-- Phoneword.Android - このプロジェクトは、Android 固有のコードを保持します。Android アプリケーションのエントリ ポイントです。
+- Phoneword.Android: このプロジェクトは、Android 固有のコードを保持します。Android アプリケーションのエントリ ポイントです。
 - Phoneword.iOS: このプロジェクトは、iOS 固有のコードを保持します。iOS アプリケーションのエントリ ポイントです。
 - Phoneword.UWP: このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持します。UWP アプリケーションのエントリ ポイントです。
 
@@ -42,15 +41,17 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 ![](deepdive-images/vs/net-standard-project.png "Phoneword .NET Standard プロジェクトの内容")
 
-このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。 **NuGet** ノードには、プロジェクトに追加された Xamarin.Forms NuGet パッケージが含まれています。**SDK** ノードには .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージが含まれています。
+このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+- **NuGet** &ndash; プロジェクトに追加された Xamarin.Forms NuGet パッケージです。
+- **SDK** &ndash; .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージです。
+
+::: zone-end
+::: zone pivot="macos"
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
-Visual Studio for Mac は、Visual Studio と類似した無料のオープン ソース IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 Visual Studio for Mac の詳細については、[Visual Studio for Mac の概要](/visualstudio/mac/)のページをご覧ください。
-
-Visual Studio for Mac は、コードを*ソリューション*と*プロジェクト*に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Phoneword アプリケーションは、次のスクリーンショットのように、3 つのプロジェクトを含む 1 つのソリューションで構成されています。
+[Visual Studio for Mac ](/visualstudio/mac/)は、コードを*ソリューション*と*プロジェクト*に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Phoneword アプリケーションは、次のスクリーンショットのように、3 つのプロジェクトを含む 1 つのソリューションで構成されています。
 
 ![](deepdive-images/xs/solution.png "Visual Studio for Mac ソリューション ウィンドウ")
 
@@ -66,9 +67,12 @@ Visual Studio for Mac は、コードを*ソリューション*と*プロジェ�
 
 ![](deepdive-images/xs/library-project.png "Phoneword .NET Standard ライブラリ プロジェクトの内容")
 
-このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。 **NuGet** ノードには、プロジェクトに追加された Xamarin.Forms NuGet パッケージが含まれています。**SDK** ノードには .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージが含まれています。
+このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
------
+- **NuGet** &ndash; プロジェクトに追加された Xamarin.Forms NuGet パッケージです。
+- **SDK** &ndash; .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージです。
+
+::: zone-end
 
 このプロジェクトには、以下の複数のファイルも含まれています。
 
@@ -83,19 +87,20 @@ Xamarin.iOS アプリケーションの構造については、「[Anatomy of a 
 
 ## <a name="architecture-and-application-fundamentals"></a>アーキテクチャとアプリケーションの基礎
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 Xamarin.Forms アプリケーションは、従来のクロスプラットフォーム アプリケーションと同じ方法で設計されています。 通常、共有コードは .NET Standard ライブラリに配置され、プラットフォーム固有のアプリケーションは共有コードを使用します。 次の図は、Phoneword アプリケーションのこの関係の概要を示しています。
 
 ![](deepdive-images/vs/architecture.png "Phoneword アーキテクチャ")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 Xamarin.Forms アプリケーションは、従来のクロスプラットフォーム アプリケーションと同じ方法で設計されています。 通常、共有コードは .NET Standard ライブラリに配置され、プラットフォーム固有のアプリケーションは共有コードを使用します。 次の図は、Phoneword アプリケーションのこの関係の概要を示しています。
 
 ![](deepdive-images/xs/architecture.png "Phoneword アーキテクチャ")
 
------
+::: zone-end
 
 スタートアップ コードを最大限に再利用するために、Xamarin.Forms アプリケーションは `App` という 1 つのクラスがあります。このクラスは、各プラットフォーム上のアプリケーションが表示する最初のページのインスタンス化を担当しています。次にコード例を示します。
 
@@ -176,6 +181,8 @@ namespace Phoneword.Droid
 
 `OnCreate` オーバーライドは、`Init` メソッドを呼び出して Xamarin.Forms のフレームワークを初期化します。 その結果、Xamarin.Forms の Android 固有の実装がアプリケーションに読み込まれ、次に Xamarin.Forms アプリケーションが読み込まれます。 さらに、`MainActivity` クラスは自身への参照を `Instance` プロパティに格納します。 `Instance` プロパティはローカル コンテキストと呼ばれ、`PhoneDialer` クラスから参照されます。
 
+::: zone pivot="windows"
+
 ## <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
 ユニバーサル Windows プラットフォーム (UWP) アプリケーションでは、Xamarin.Forms フレームワークを初期化する `Init` メソッドが `App` から呼び出されます。
@@ -210,12 +217,14 @@ Xamarin.Forms アプリケーションは `LoadApplication` メソッドを使�
 > [!NOTE]
 > ユニバーサル Windows プラットフォーム (UWP) アプリは Xamarin.Forms を使用して構築できますが、Windows で Visual Studio を使用している必要があります。
 
+::: zone-end
+
 ## <a name="user-interface"></a>ユーザー インターフェイス
 
 Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するために、主に 4 つのコントロール グループが使用されます。
 
 1. **ページ**: Xamarin.Forms のページは、クロスプラットフォーム モバイル アプリケーション画面を表しています。 Phoneword アプリケーションは、1 つの画面を表示するために [`ContentPage`](xref:Xamarin.Forms.ContentPage) クラスを使用します。 ページの詳細については、「[Xamarin.Forms Pages](~/xamarin-forms/user-interface/controls/pages.md)」(Xamarin.Forms のページ) を参照してください。
-1. **レイアウト**: Xamarin.Forms のレイアウトは、ビューを論理構造にまとめるために使用されるコンテナーです。 Phoneword アプリケーションは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスを使用して水平方向のスタックにコントロールを整列します。 レイアウトの詳細については、「[Xamarin.Forms Layouts](~/xamarin-forms/user-interface/controls/layouts.md)」(Xamarin.Forms のレイアウト) を参照してください。
+1. **レイアウト**: Xamarin.Forms のレイアウトは、ビューを論理構造にまとめるために使用されるコンテナーです。 Phoneword アプリケーションは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスを使用して水平方向のスタックの配置をコントロールしています。 レイアウトの詳細については、「[Xamarin.Forms Layouts](~/xamarin-forms/user-interface/controls/layouts.md)」(Xamarin.Forms のレイアウト) を参照してください。
 1. **ビュー**: Xamarin.Forms のビューは、ユーザー インターフェイスに表示されるコントロールです。たとえば、ラベル、ボタン、テキスト入力ボックスなどです。 Phoneword アプリケーションは、[`Label`](xref:Xamarin.Forms.Label)、[`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button) コントロールを使用します。 ビューの詳細については、「[Xamarin.Forms Views](~/xamarin-forms/user-interface/controls/views.md)」(Xamarin.Forms のビュー) を参照してください。
 1. **セル**: Xamarin.Forms セルは、一覧内の項目に使用される特殊な要素です。一覧内の各項目を描画する方法を示しています。 Phoneword アプリケーションはセルを利用していません。 セルの詳細については、「[Xamarin.Forms Cells](~/xamarin-forms/user-interface/controls/cells.md)」(Xamarin.Forms のセル) を参照してください。
 
@@ -232,7 +241,7 @@ Xamarin.Forms アプリケーションのユーザー インターフェイス�
         <StackLayout>
             <Label Text="Enter a Phoneword:" />
             <Entry x:Name="phoneNumberText" Text="1-855-XAMARIN" />
-            <Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
+            <Button x:Name="translateButton" Text="Translate" Clicked="OnTranslate" />
             <Button x:Name="callButton" Text="Call" IsEnabled="false" Clicked="OnCall" />
         </StackLayout>
 </ContentPage>
@@ -265,7 +274,7 @@ void OnTranslate(object sender, EventArgs e)
 変換ボタンから `OnTranslate` メソッドに接続する処理は、`MainPage` クラスの XAML マークアップで発生します。
 
 ```xaml
-<Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
+<Button x:Name="translateButton" Text="Translate" Clicked="OnTranslate" />
 ```
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword で導入されているその他の概念

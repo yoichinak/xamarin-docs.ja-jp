@@ -4,15 +4,15 @@ description: このガイドでは、Windows で Visual Studio 用の Xamarin.An
 ms.prod: xamarin
 ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 1eb8d4ec9ad60f0f9e81676920df4d950a875088
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: c208bae61f425ccdb69e0543c7686891a7add358
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066443"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113184"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -80,13 +80,13 @@ Xamarin Android SDK Manager の使用の詳細については、「[Android SDK 
 
 x86 基盤のコンピューターで開発するとき、x86 アーキテクチャに合わせて最適化された特別なエミュレーター イメージと次の 2 つの仮想化テクノロジのいずれかを利用することでパフォーマンスが大幅に改善されます。
 
-1. Microsoft の Hyper-V &ndash; Windows 10 の 4 月更新を実行しているコンピューターで利用できます。
+1. Microsoft の Hyper-V &ndash; Windows 10 の 2018 年 4 月更新以降を実行しているコンピューターで利用できます。
 2. Intel の Hardware Accelerated Execution Manager (HAXM) &ndash; OS X、macOS、古いバージョンの Windows を実行している x86 コンピューターで利用できます。
 
 Android Emulator、Hyper-V、HAXM の詳細については、「[エミュレーター パフォーマンスのためのハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)」ガイドを参照してください。
 
 > [!NOTE]
-> 古いバージョンの Windows では、HAXM と Hyper-V の間に互換性がありません。 この場合、[Hyper-V を無効にする](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv)か、x86 最適化のない、遅いエミュレーター イメージを使用する必要があります。
+> Windows 10 の 2018 年 4 月更新より前のバージョンでは、HAXM は Hyper-V と互換性がありません。 この場合、[Hyper-V を無効にする](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv)か、x86 最適化のない、遅いエミュレーター イメージを使用する必要があります。
 
 
 <a name="device" />

@@ -1,18 +1,19 @@
 ---
 title: App Center で Xamarin.Forms テストを自動化する
 description: Xamarin の UITest コンポーネントを Xamarin.Forms で使用して、数百台のデバイスを対象にクラウドで実行する UI テストを作成できます。
+zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: dc43d8b5623b83be16d437e30290bc8b059be4bb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cd46aac653d6477f3fc8240e4f193ec1c4a7bb4c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35242948"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122440"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>App Center で Xamarin.Forms テストを自動化する
 
@@ -76,19 +77,20 @@ Xamarin.Calabash.Start();
 Calabash アセンブリは非公開の Apple API を使用します。この API により、アプリは App Store に却下されます。 しかしながら、明示的にコードから参照されていないのであれば、Xamarin.iOS リンカーが最終 IPA から Calabash アセンブリを削除します。
 
 > [!NOTE]
->  リリース ビルドには `ENABLE_TEST_CLOUD` コンパイラ変数がありません。Calabash アセンブリがアプリ バンドルから取り除かれます。 しかしながら、デバッグ ビルドにはコンパイラ ディレクティブが定義されており、リンカーがアセンブリを削除するのを防ぎます。
+> リリース ビルドには `ENABLE_TEST_CLOUD` コンパイラ変数がありません。Calabash アセンブリがアプリ バンドルから取り除かれます。 しかしながら、デバッグ ビルドにはコンパイラ ディレクティブが定義されており、リンカーがアセンブリを削除するのを防ぎます。
 
 次のスクリーンショットでは、デバッグ ビルドに設定されている `ENABLE_TEST_CLOUD` コンパイラ変数を確認できます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 ![](uitest-and-test-cloud-images/12-compiler-directive-vs.png "ビルド オプション")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 ![](uitest-and-test-cloud-images/11-compiler-directive-xs.png "コンパイラ オプション")
 
------
+::: zone-end
 
 ### <a name="android-application-project"></a>Android アプリケーション プロジェクト
 
@@ -101,20 +103,6 @@ UITests を記述する方法については、[UITest ドキュメント](/appc
 ### <a name="use-automationid-in-the-xamarinforms-ui"></a>Xamarin.Forms UI の AutomationId を使用する
 
 UITests を記述するには、Xamarin.Forms アプリケーション ユーザー インターフェイスをスクリプト実行可能にする必要があります。 テスト コードで参照できるように、ユーザー インターフェイスのすべてのコントロールに `AutomationId` を与えます。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="adding-a-uitest-project-to-a-new-solution"></a>UITest プロジェクトを新しいソリューションに追加する
-
-Visual Studio for Mac を利用して新しい Xamarin.Forms プロジェクトを作成するとき、**[Xamarin Test Cloud: 自動 UI テスト プロジェクトを追加します]** を選択し、新しい UITest プロジェクトをソリューションに追加できます。
-
-![](uitest-and-test-cloud-images/01-new-solution-xs.png "新しいプロジェクトを構成します")
-
-Xamarin.Forms アプリケーションに対して Xamarin.UITest を実行するように、新しいソリューションが自動的に構成されます。
-
------
 
 #### <a name="referring-to-the-automationid-in-uitests"></a>UITests の AutomationId を参照する
 
@@ -133,18 +121,18 @@ app.Query(c=>c.Marked("MyButton"))
 
 ### <a name="adding-a-uitest-project-to-an-existing-solution"></a>既存のソリューションに UITest プロジェクトを追加する
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 Visual Studio には、Xamarin.UITest プロジェクトを既存の Xamarin.Forms ソリューションに追加するためのテンプレートがあります。
 
 1. ソリューションを右クリックし、**[ファイル]、[新しいプロジェクト]** の順に選択します。
 1. **Visual C#** テンプレートから、**テスト** カテゴリを選択します。 **[UI テスト アプリ]、[クロスプラットフォーム]** テンプレートの順に選択します。
 
-    ![](uitest-and-test-cloud-images/08-new-uitest-project-vs.png "新しいプロジェクトを追加します")
+    ![新しいプロジェクトの追加](uitest-and-test-cloud-images/08-new-uitest-project-vs.png "新しいプロジェクトの追加")
 
     これで **NUnit**、**Xamarin.UITest**、**NUnitTestAdapter** NuGet パッケージを含む新しいプロジェクトがソリューションに追加されます。
 
-    ![](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "NuGet パッケージ マネージャー")
+    ![NuGet パッケージ マネージャー](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "NuGet パッケージ マネージャー")
 
     **NUnitTestAdapter** は、Visual Studio から NUnit テストを実行することを可能にするサードパーティ製のテスト ランナーです。
 
@@ -152,31 +140,32 @@ Visual Studio には、Xamarin.UITest プロジェクトを既存の Xamarin.For
 
 1. UITest プロジェクトから Xamarin.Android プロジェクトにプロジェクト参照を追加します。
 
-    ![](uitest-and-test-cloud-images/10-test-apps-vs.png "プロジェクト参照マネージャー")
+    ![プロジェクト参照マネージャー](uitest-and-test-cloud-images/10-test-apps-vs.png "プロジェクト参照マネージャー")
 
     これで **NUnitTestAdapter** は Visual Studio から Android アプリの UITests を実行できるようになります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 既存のソリューションに新しい Xamarin.UITest プロジェクトを手動で追加できます。
 
 1. 最初に新しいプロジェクトを追加します。ソリューションを選択し、**[ファイル]、[新しいプロジェクトの追加]** の順にクリックします。 **[新しいプロジェクト]** ダイアログで、**[クロスプラットフォーム]、[テスト]、[Xamarin Test Cloud]、[UI テスト アプリ]** を選択します。
 
-    ![](uitest-and-test-cloud-images/02-new-uitest-project-xs.png "テンプレートを選択します")
+    ![テンプレートの選択](uitest-and-test-cloud-images/02-new-uitest-project-xs.png "テンプレートの選択")
 
     これで **NUnit** と **Xamarin.UITest** NuGet のパッケージがソリューションに既に含まれる新しいプロジェクトが追加されます。
 
-    ![](uitest-and-test-cloud-images/03-new-uitest-project-xs.png "Xamarin UITest NuGet パッケージ")
+    ![Xamarin UITest NuGet パッケージ](uitest-and-test-cloud-images/03-new-uitest-project-xs.png "Xamarin UITest NuGet パッケージ")
 
     新しいプロジェクトには 2 つのクラスも含まれています。 **AppInitializer** には、テストを初期化し、セットアップするコードが含まれています。 もう 1 つのクラスである **Tests** は、UITests を起動させるスケルトン コードが含まれています。
 
 1. **[表示]、[パッド]、[単体テスト]** の順に選択し、単体テスト パッドを表示します。 **[UsingUITest]、[UsingUITest.UITests]、[アプリのテスト]** の順に展開します。
 
-    ![](uitest-and-test-cloud-images/04-unit-test-pad-xs.png "単体テスト パッド")
+    ![単体テスト パッド](uitest-and-test-cloud-images/04-unit-test-pad-xs.png "単体テスト パッド")
 
 1. **[アプリのテスト]** を右クリックし、**[アプリ プロジェクトの追加]** をクリックし、表示されたダイアログで iOS プロジェクトと Android プロジェクトを選択します。
 
-    ![](uitest-and-test-cloud-images/05-add-test-apps-xs.png "[アプリのテスト] ダイアログ")
+    ![[アプリのテスト] ダイアログ](uitest-and-test-cloud-images/05-add-test-apps-xs.png "[アプリのテスト] ダイアログ")
 
     **単体テスト** パッドに、iOS プロジェクトと Android プロジェクトの参照が含まれているはずです。 これで Visual Studio for Mac のテスト ランナーは 2 つの Xamarin.Forms プロジェクトに対して UITests をローカル実行できます。
 
@@ -186,26 +175,26 @@ Xamarin.UITest を機能させるには、いくつかの点で iOS をさらに
 
 1. **Xamarin Test Cloud Agent** NuGet パッケージを追加します。 **[パッケージ]** を右クリックし、**[パッケージの追加]** を選択し、NuGet で **Xamarin Test Cloud Agent** を検索し、それを Xamarin.iOS プロジェクトに追加します。
 
-    ![](uitest-and-test-cloud-images/07-add-test-cloud-agent-xs.png "NuGet パッケージを追加します")
+    ![NuGet パッケージの追加](uitest-and-test-cloud-images/07-add-test-cloud-agent-xs.png "NuGet パッケージの追加")
 
 1. iOS アプリケーションの起動時に Xamarin Test Cloud Agent を初期化し、ビューの `AutomationId` プロパティを設定するように、**AppDelegate** クラスの `FinishedLaunching` メソッドを編集します。 `FinishedLaunching` メソッドは次のコード例のようになります。
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
-        #if ENABLE_TEST_CLOUD
-        Xamarin.Calabash.Start();
-        #endif
+    #if ENABLE_TEST_CLOUD
+    Xamarin.Calabash.Start();
+    #endif
 
-        global::Xamarin.Forms.Forms.Init();
+    global::Xamarin.Forms.Forms.Init();
 
-        LoadApplication(new App());
+    LoadApplication(new App());
 
-        return base.FinishedLaunching(app, options);
+    return base.FinishedLaunching(app, options);
 }
 ```
 
------
+::: zone-end
 
 Xamarin.UITest を Xamarin.Forms ソリューションに追加した後、UITests を作成し、ローカルで実行し、Xamarin Test Cloud に送信できます。
 
@@ -214,7 +203,6 @@ Xamarin.UITest を Xamarin.Forms ソリューションに追加した後、UITes
 Xamarin.Forms アプリケーションは、テスト自動化のための一意の表示 ID として `AutomationId` を公開する単純なメカニズムを利用し、**Xamarin.UITest** で簡単にテストできます。 UITest プロジェクトを Xamarin.Forms に追加すると、Xamarin.Forms アプリケーションのテストを記述し、実行するための手順が Xamarin.Android または Xamarin.iOS アプリケーションの場合と同じになります。
 
 テストを App Center Test に送信する方法については、[UITests の送信](/appcenter/test-cloud/preparing-for-upload/uitest/)に関するページを参照してください。 UITest の詳細については、[App Center Test のドキュメント](/appcenter/test-cloud/)を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

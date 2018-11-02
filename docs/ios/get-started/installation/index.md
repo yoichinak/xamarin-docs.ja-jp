@@ -4,15 +4,15 @@ description: このドキュメントは、Mac と Windows で Xamarin.iOS を�
 ms.prod: xamarin
 ms.assetid: E5A29963-C8BD-465B-BFC1-7FAC9CC64BD3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 12/02/2016
-ms.openlocfilehash: 58eb2c348530e6ed3caa04c5a367e01d3b98beaa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 5ce074e3659d4c380bd02537ef2cb8ac5734aede
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785939"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112027"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS のインストール
 
@@ -20,9 +20,9 @@ ms.locfileid: "34785939"
 
 Xamarin.iOS をビルドするには、以下のコンポーネントが必要です。
 
--    最新の iOS SDK。
--    最新バージョンの Xcode。
--    Mac OS X Sierra (10.12) 以降。
+- 最新の iOS SDK
+- 最新バージョンの Xcode
+- macOS Sierra (10.13) 以上
 
 Xcode の最新バージョンは、[iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (ログインが必要) から、または Mac App Store を通じてダウンロードできます。
 

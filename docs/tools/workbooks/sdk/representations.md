@@ -25,7 +25,7 @@ Xamarin Workbooks は、すべてのエージェントと結果のリッチな�
 
 ## <a name="external-representations"></a>外部表現
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する[ `RepresentationProvider` ] [repp]統合が、任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらに依存しない形式を実装する必要があります、 [ `ISerializableObject` ] [ serobj]インターフェイス。
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する[`RepresentationProvider`][repp]統合が、任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらに依存しない形式を実装する必要があります、 [`ISerializableObject`][serobj]インターフェイス。
 
 実装する、`ISerializableObject`インターフェイス オブジェクトをシリアル化する方法を正確に制御する Serialize メソッドを追加します。 `Serialize`メソッドは、シリアル化するプロパティがあり、最終的な名前がなります、開発者が正確に指定ことが必要です。 見て、`Person`オブジェクトで、[`KitchenSink`サンプル] [サンプル] にこのしくみがわかります。
 
@@ -71,7 +71,7 @@ public sealed class Person : ISerializableObject
 
 レンダラーは JavaScript で実装され、JavaScript を使用して表されるオブジェクトのバージョンにアクセスできるよう`ISerializableObject`します。 JavaScript のコピーがあります、 `$type` string プロパティは、.NET 型名を示します。
 
-TypeScript を使用してクライアント統合コード、もちろん vanilla JavaScript にコンパイルされることをお勧めします。 どちらの方法でも、SDK が提供[typings] [ typings]は TypeScript によって直接参照または単に場合にのみ参照を手動で vanilla JavaScript をお勧めを記述できます。
+TypeScript を使用してクライアント統合コード、もちろん vanilla JavaScript にコンパイルされることをお勧めします。 どちらの方法でも、SDK が提供[typings][typings]は TypeScript によって直接参照または単に場合にのみ参照を手動で vanilla JavaScript をお勧めを記述できます。
 
 レンダリングの主な統合ポイントは`xamarin.interactive.RendererRegistry`:
 
@@ -85,7 +85,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-ここでは、`PersonRenderer`実装、`Renderer`インターフェイス。 参照してください、 [typings] [ typings]の詳細。
+ここでは、`PersonRenderer`実装、`Renderer`インターフェイス。 参照してください、 [typings][typings]の詳細。
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
 [xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
