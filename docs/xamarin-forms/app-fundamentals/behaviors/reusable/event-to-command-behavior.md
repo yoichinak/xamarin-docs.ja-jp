@@ -1,22 +1,22 @@
 ---
 title: 再利用可能な EventToCommandBehavior
-description: 動作をしないコマンドと対話するように設計されたコントロールにコマンドを関連付けることができます。 この記事では、Xamarin.Forms の動作を使用して、イベント発生時にコマンドを呼び出すを示します。
+description: 動作をしないコマンドと対話するように設計されたコントロールにコマンドを関連付けることができます。 この記事では、作成および使用イベントが発生したときにコマンドを呼び出す Xamarin.Forms の動作を示します。
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 3cc568298ba3710f7d4f092acbb2139bebe5976b
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 2609ce4ea677c6b03021a919599c250abff663a3
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675290"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911555"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>再利用可能な EventToCommandBehavior
 
-_動作をしないコマンドと対話するように設計されたコントロールにコマンドを関連付けることができます。この記事では、Xamarin.Forms の動作を使用して、イベント発生時にコマンドを呼び出すを示します。_
+_動作をしないコマンドと対話するように設計されたコントロールにコマンドを関連付けることができます。この記事では、作成および使用イベントが発生したときにコマンドを呼び出す Xamarin.Forms の動作を示します。_
 
 ## <a name="overview"></a>概要
 
@@ -31,6 +31,9 @@ _動作をしないコマンドと対話するように設計されたコント�
 
 - **CommandParameter** 、–`object`コマンドに渡すことです。
 - **コンバーター** 、– [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter)実装間で渡されるイベント引数のデータの形式を変更する*ソース*と*ターゲット*、バインディング エンジン。
+
+> [!NOTE]
+> `EventToCommandBehavior`カスタム クラスに配置することですが、 [EventToCommand 動作のサンプル](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)Xamarin.Forms の一部でないとします。
 
 ## <a name="creating-the-behavior"></a>動作を作成します。
 

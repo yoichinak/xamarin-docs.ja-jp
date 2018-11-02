@@ -1,22 +1,22 @@
 ---
 title: 再利用可能な EffectBehavior
-description: ビヘイビアーとは、処理の分離コード ファイルからコード ボイラー プレート効果を削除するコントロールに効果を追加するために役立つアプローチです。 この記事では、コントロールに効果を追加する Xamarin.Forms の動作を使用してを示します。
+description: ビヘイビアーとは、処理の分離コード ファイルからコード ボイラー プレート効果を削除するコントロールに効果を追加するために役立つアプローチです。 この記事では、作成および使用をコントロールに効果を追加する Xamarin.Forms の動作を示します。
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 1ce7eda6f556041cbffc3793b00e8e2cba44d3d0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2696f0103ce1aa969039c982fb9b82f89b37811e
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995782"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911594"
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
-_ビヘイビアーとは、処理の分離コード ファイルからコード ボイラー プレート効果を削除するコントロールに効果を追加するために役立つアプローチです。この記事では、コントロールに効果を追加する Xamarin.Forms の動作を使用してを示します。_
+_ビヘイビアーとは、処理の分離コード ファイルからコード ボイラー プレート効果を削除するコントロールに効果を追加するために役立つアプローチです。この記事では、作成および使用をコントロールに効果を追加する Xamarin.Forms の動作を示します。_
 
 ## <a name="overview"></a>概要
 
@@ -28,6 +28,9 @@ _ビヘイビアーとは、処理の分離コード ファイルからコード
 - **名前**– の値、 [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)効果クラスの属性。
 
 影響の詳細については、次を参照してください。[効果](~/xamarin-forms/app-fundamentals/effects/index.md)します。
+
+> [!NOTE]
+> `EffectBehavior`カスタム クラスに配置することですが、[効果の動作のサンプル](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)Xamarin.Forms の一部でないとします。
 
 ## <a name="creating-the-behavior"></a>動作を作成します。
 
