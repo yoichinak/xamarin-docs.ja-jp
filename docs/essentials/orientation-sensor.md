@@ -5,12 +5,12 @@ ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/21/2018
-ms.openlocfilehash: 4ea6ebbb85510b5d7262cde73248af9df975b867
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5d31ae10120c8b8f2c5e824d336c231e69fc97c7
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112066"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674710"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
@@ -20,6 +20,10 @@ ms.locfileid: "50112066"
 
 > [!NOTE]
 > これは、3D 空間内のデバイスの向きを決定するためのクラスです。 デバイスのビデオ ディスプレイが縦向きモードか横向きモードかを判断する必要がある場合は、[`DeviceDisplay`](device-display.md) クラスから利用できる `ScreenMetrics` オブジェクトの `Orientation` プロパティを使用します。
+
+## <a name="get-started"></a>作業開始
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-orientationsensor"></a>OrientationSensor の使用
 

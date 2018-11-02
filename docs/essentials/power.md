@@ -5,12 +5,12 @@ ms.assetid: C176D177-8B77-4A9C-9F3B-27852A8DCD5F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 06/27/2018
-ms.openlocfilehash: 5a89dba16a93b007c5d7312221d8d33e00c7404a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 96b4aef3a8df571392d43836d46b03b025c80888
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110005"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675381"
 ---
 # <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials: 電源の省電力の状態
 
@@ -23,6 +23,10 @@ ms.locfileid: "50110005"
 バッテリで動作するデバイスは、低電力の省電力モードに切り替えることができます。 デバイスが自動的にこのモードに切り替わる場合があります。たとえば、バッテリ残量が 20% を下回ったときなどです。 オペレーティング システムは、バッテリを消耗させる傾向があるアクティビティを減らすことで、省電力モードに対応します。 アプリケーションでは、バックグラウンド処理やその他の電力消費の大きいアクティビティを回避することで、省電力モードがオンになった場合をサポートできます。
 
 Android デバイスの場合、**Power** クラスによって意味のある情報が返されるのは、バージョン 5.0 (Lollipop) 以降の Android のみです。
+
+## <a name="get-started"></a>作業開始
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-the-power-class"></a>Power クラスの使用
 
