@@ -25,7 +25,7 @@ Xamarin Workbooks は、すべてのエージェントと結果のリッチな�
 
 ## <a name="external-representations"></a>外部表現
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する[`RepresentationProvider`][repp]統合が、任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらに依存しない形式を実装する必要があります、 [`ISerializableObject`][serobj]インターフェイス。
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する [`RepresentationProvider`][repp] 統合が、任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらに依存しない形式を実装する必要があります、 [`ISerializableObject`][serobj] インターフェイス。
 
 実装する、`ISerializableObject`インターフェイス オブジェクトをシリアル化する方法を正確に制御する Serialize メソッドを追加します。 `Serialize`メソッドは、シリアル化するプロパティがあり、最終的な名前がなります、開発者が正確に指定ことが必要です。 見て、`Person`オブジェクトで、[`KitchenSink`サンプル] [サンプル] にこのしくみがわかります。
 

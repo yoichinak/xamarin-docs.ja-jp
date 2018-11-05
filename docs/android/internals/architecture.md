@@ -33,7 +33,7 @@ Android のクラスが Android ランタイム クラスを通信する方法�
 
 Android アプリケーション パッケージは ZIP コンテナーで、 *.apk*ファイル拡張子。 Xamarin.Android アプリケーション パッケージに加え、次の標準の Android パッケージの構造とレイアウトが同じであります。
 
--   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダー。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()* プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アセンブリは、実行前に抽出する必要はありません、アプリの起動時間の短縮、します。 - *注:* などのアセンブリの場所情報[Assembly.Location](xref:System.Reflection.Assembly.Location)と [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+-   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダー。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()* プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アセンブリは、実行前に抽出する必要はありません、アプリの起動時間の短縮、します。 -  *注:* などのアセンブリの場所情報[Assembly.Location](xref:System.Reflection.Assembly.Location)と [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
     *に依存できません* リリース構築します。 個別のファイル システムのエントリとして存在していないされ、使用可能な場所がありません。
 
 
