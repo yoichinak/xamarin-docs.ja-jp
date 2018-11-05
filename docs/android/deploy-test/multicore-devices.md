@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: c4fba219b7fbfef9930539f0e25fda74ae1299b1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1a2739d1a3848303b3086c23c0a28a889250ee2e
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105741"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675511"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>マルチコア デバイスと Xamarin.Android
 
 _Android は、複数の異なるコンピューター アーキテクチャで実行できます。このドキュメントでは、Xamarin.Android アプリケーションに利用できるさまざまな CPU アーキテクチャについて説明します。このドキュメントでは、さまざまな CPU アーキテクチャをサポートするために Android アプリケーションがどのようにパッケージ化されているかについても説明します。アプリケーション バイナリ インターフェイス (ABI) が導入され、Xamarin.Android アプリケーションで使用する ABI に関するガイダンスが提供される予定です。_
-
 
 ## <a name="overview"></a>概要
 
@@ -25,19 +24,17 @@ Android では、"FAT バイナリ" を作成することができます。こ�
 
 具体的には、各 Android アプリケーションは 1 つ以上の*埋め込みアプリケーション バイナリ インターフェイス* (EABI) をサポートします。 EABI とは、埋め込みソフトウェア プログラムに固有の規則です。 一般的な EABI は次のようなことを記述します。
 
--   MMX 命令セット。
+- MMX 命令セット。
 
--   実行時に格納および読み込むメモリのエンディアン。
+- 実行時に格納および読み込むメモリのエンディアン。
 
--   オブジェクト ファイルとプログラム ライブラリのバイナリ形式、およびこれらのファイルとライブラリで許可またはサポートされるコンテンツの種類。
+- オブジェクト ファイルとプログラム ライブラリのバイナリ形式、およびこれらのファイルとライブラリで許可またはサポートされるコンテンツの種類。
 
--   アプリケーション コードとシステム間でデータを渡すために使用されるさまざまな規則 (例: 関数が呼び出されるときのレジスタまたはスタックの使用方法、配置制約など)。
+- アプリケーション コードとシステム間でデータを渡すために使用されるさまざまな規則 (例: 関数が呼び出されるときのレジスタまたはスタックの使用方法、配置制約など)。
 
--   列挙型、構造体、フィールド、および配列の配置とサイズの制約。
+- 列挙型、構造体、フィールド、および配列の配置とサイズの制約。
 
--   実行時にマシン コードに使用できる (通常は、非常に厳選されたライブラリのセットからの) 関数シンボルの一覧。
-
-
+- 実行時にマシン コードで使用できる (通常は厳選されたライブラリのセットからの) 関数シンボルの一覧。
 
 ### <a name="armeabi-and-thread-safety"></a>armeabi とスレッド セーフ
 
@@ -48,12 +45,9 @@ Android 4.0.0、4.0.1、4.0.2、および 4.0.3 のバグにより、`armeabi-v7
 > [!NOTE]
 > Xamarin.Android では、`.so` が正しい順序で APK に追加されます。 このバグは Xamarin.Android のユーザーにとっては問題にはなりません。
 
-
 ### <a name="abi-descriptions"></a>ABI の説明
 
 Android でサポートされている各 ABI は、一意の名前で識別されます。
-
-
 
 #### <a name="armeabi"></a>armeabi
 
@@ -61,48 +55,36 @@ Android でサポートされている各 ABI は、一意の名前で識別さ�
 
 **注:** Xamarin.Android の `armeabi` コードはスレッド セーフではなく、マルチ CPU の `armeabi-v7a` デバイスでは使用しないでください (以下で説明)。 シングル コアの `armeabi-v7a` デバイスで `aremabi` コードを使用するのは安全です。
 
-
-
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
 これは、上記で説明した `armeabi` EABI を拡張する別の ARM ベースの CPU 命令セットです。 `armeabi-v7a` EABI は、ハードウェアの浮動小数点演算と複数の CPU (SMP) デバイスをサポートしています。 `armeabi-v7a` EABI を使用するアプリケーションは、`armeabi` を使用するアプリケーションに比べて大幅なパフォーマンスの向上が期待できます。
 
 **注:** `armeabi-v7a` マシン コードは、ARMv5 デバイスでは実行できません。
 
-
-
 #### <a name="arm64-v8a"></a>arm64-v8a
 
 これは、ARMv8 CPU アーキテクチャに基づく 64 ビット命令セットです。 このアーキテクチャは、*Nexus 9* で使用されています。
 Xamarin.Android 5.1 では、このアーキテクチャの実験的なサポートを提供しています (詳細については、[試験的機能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)に関するトピックを参照してください)。
 
-
-
 #### <a name="x86"></a>x86
 
 これは、一般的な *x86* または *IA-32* という名前の命令セットをサポートする CPU の ABI の名前です。 この ABI は、Pentium Pro 命令セット (MMX、SSE、SSE2、および SSE3 の命令セットを含む) の命令に対応します。 次のような、その他のオプションの IA-32 命令セットの拡張機能は含まれません。
 
--  MOVBE 命令。
--  追加の SSE3 拡張機能 (SSSE3)。
--  SSE4 の任意のバリアント。
+- MOVBE 命令。
+- 追加の SSE3 拡張機能 (SSSE3)。
+- SSE4 の任意のバリアント。
 
-
-**注:** Google TV は x86 上で実行されていますが、Android の NDK または
-
-
+**注:** Google TV は x86 上で実行されますが、Android の NDK ではサポートされていません。
 
 #### <a name="x8664"></a>x86_64
 
 これは、64 ビット x86 命令セット (*x64* または *AMD64* とも呼ばれます) をサポートする CPU の ABI の名前です。 Xamarin.Android 5.1 では、このアーキテクチャの実験的なサポートを提供しています (詳細については、[試験的機能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)に関するトピックを参照してください)。
-
 
 #### <a name="mips"></a>mips
 
 これは、最低限 `MIPS32r1` 命令セットをサポートする MIPS ベースの CPU の ABI の名前です。 MIPS 16 も `micromips` も Android ではサポートされていません。
 
 **注:** MIPS デバイスは、Xamarin.Android では現在サポートされていませんが、将来のリリースでサポートされる予定です。
-
-
 
 #### <a name="apk-file-format"></a>APK ファイル形式
 
@@ -112,42 +94,36 @@ Android アプリケーション パッケージは、Android のアプリケー
 
 `.apk` ファイルのコンテンツを簡単に説明します。
 
--   **AndroidManifest.xml** &ndash; バイナリ XML 形式の `AndroidManifest.xml` ファイルです。
+- **AndroidManifest.xml** &ndash; バイナリ XML 形式の `AndroidManifest.xml` ファイルです。
 
--   **classes.dex** &ndash; Android ランタイム VM によって使用される `dex` ファイル形式にコンパイルされたアプリケーション コードが含まれます。
+- **classes.dex** &ndash; Android ランタイム VM によって使用される `dex` ファイル形式にコンパイルされたアプリケーション コードが含まれます。
 
--   **resources.arsc** &ndash; このファイルには、アプリケーションのプリコンパイル済みリソースがすべて含まれています。
+- **resources.arsc** &ndash; このファイルには、アプリケーションのプリコンパイル済みリソースがすべて含まれています。
 
--   **lib** &ndash; このディレクトリには、各 ABI のコンパイル済みコードが保持されています。 前のセクションで説明した各 ABI に対して 1 つのサブフォルダーが格納されます。 上記のスクリーンショットでは、該当する `.apk` には `armeabi-v7a` と `x86` の両方のネイティブ ライブラリがあります。
+- **lib** &ndash; このディレクトリには、各 ABI のコンパイル済みコードが保持されています。 前のセクションで説明した各 ABI に対して 1 つのサブフォルダーが格納されます。 上記のスクリーンショットでは、該当する `.apk` には `armeabi-v7a` と `x86` の両方のネイティブ ライブラリがあります。
 
--   **META-INF** &ndash; このディレクトリ (存在する場合) は、署名情報、パッケージ、および拡張機能の構成データを格納するために使用されます。
+- **META-INF** &ndash; このディレクトリ (存在する場合) は、署名情報、パッケージ、および拡張機能の構成データを格納するために使用されます。
 
--   **res** &ndash; このディレクトリには、`resources.arsc` にコンパイルされなかったリソースが保持されます。
+- **res** &ndash; このディレクトリには、`resources.arsc` にコンパイルされなかったリソースが保持されます。
 
 > [!NOTE]
 > ファイル `libmonodroid.so` は、すべての Xamarin.Android アプリケーションで必要なネイティブ ライブラリです。
-
-
 
 #### <a name="android-device-abi-support"></a>Android デバイスの ABI のサポート
 
 各 Android デバイスは、最大 2 つの ABI でネイティブ コードの実行をサポートします。
 
--   **"プライマリ" ABI** &ndash; これは、システム イメージで使用されるマシン コードに対応します。
+- **"プライマリ" ABI** &ndash; これは、システム イメージで使用されるマシン コードに対応します。
 
--   **"セカンダリ" ABI** &ndash; これは、システム イメージでもサポートされるオプションの ABI です。
-
+- **"セカンダリ" ABI** &ndash; これも、システム イメージでサポートされるオプションの ABI です。
 
 たとえば、典型的な ARMv5TE デバイスでは、`armeabi` のプライマリ ABI しかないのに対し、ARMv7 デバイスでは、`armeabi-v7a` のプライマリ ABI と `armeabi` のセカンダリ ABI を指定します。 典型的な x86 デバイスでは、`x86` のプライマリ ABI のみを指定します。
-
 
 ### <a name="android-native-library-installation"></a>Android のネイティブ ライブラリのインストール
 
 パッケージのインストール時に、`.apk` 内のネイティブ ライブラリがアプリのネイティブ ライブラリのディレクトリに抽出されます。このディレクトリは、通常、`/data/data/<package-name>/lib` で、以降は `$APP/lib` とします。
 
 Android のネイティブ ライブラリのインストール動作は、Android のバージョンによって大幅に異なります。
-
-
 
 #### <a name="installing-native-libraries-pre-android-40"></a>ネイティブ ライブラリのインストール: Android 4.0 より前のバージョン
 
@@ -178,15 +154,13 @@ lib/armeabi-v7a/libone.so
 lib/armeabi-v7a/libtwo.so
 ```
 
-
 #### <a name="installing-native-libraries-android-40-ndash-android-403"></a>ネイティブ ライブラリのインストール: Android 4.0 &ndash; Android 4.0.3
 
 Android 4.0 Ice Cream Sandwich では抽出ロジックが変更されています。 すべてのネイティブ ライブラリが列挙され、ファイルのベース名が既に抽出されているかどうか、および次の両方の条件が満たされているかどうかを確認してから、ライブラリが抽出されます。
 
--   まだ抽出されていない。
+- まだ抽出されていない。
 
--   ネイティブ ライブラリの ABI がターゲットのプライマリまたはセカンダリ ABI と一致している。
-
+- ネイティブ ライブラリの ABI がターゲットのプライマリまたはセカンダリ ABI と一致している。
 
 これらの条件を満たすと、"マージ" 動作が可能になります。つまり、`.apk` と次のコンテンツがある場合、
 
@@ -239,26 +213,23 @@ $APP/lib/libone.so # from armeabi
 $APP/lib/libtwo.so # from armeabi-v7a
 ```
 
-
 ### <a name="xamarinandroid-and-abis"></a>Xamarin.Android と ABI
 
 Xamarin.Android では、次のアーキテクチャがサポートされています。
 
--  `armeabi`
--  `armeabi-v7a`
--  `x86`
+- `armeabi`
+- `armeabi-v7a`
+- `x86`
 
 Xamarin.Android では、次のアーキテクチャの実験的なサポートが提供されています。
 
--  `arm64-v8a`
--  `x86_64`
+- `arm64-v8a`
+- `x86_64`
 
-
-64 ビットのデバイスでアプリを実行するために、64 ビット ランタイムは必要*ありません*。 Xamarin.Android 5.1 の試験的機能の詳細については、[試験的機能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)に関するトピックを参照してください。
+> [!NOTE]
+> 2018 年 8 月から、新しいアプリは API レベル 26 をターゲットにすることが必須となります。また、2019 年 8 月から、アプリは 32 ビット バージョンに加えて [64 ビット バージョンを提供することが必須となります](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
 
 Xamarin.Android では現在、`mips` をサポートしていません。
-
-
 
 ### <a name="declaring-supported-abis"></a>サポートされる ABI の宣言
 
@@ -273,17 +244,14 @@ Visual Studio for Mac では、次のスクリーンショットで示すよう�
 
 状況によっては、追加の ABI のサポートを宣言する必要があります。たとえば次のような状況が考えられます。
 
--   アプリケーションを `x86` デバイスに展開する。
+- アプリケーションを `x86` デバイスに展開する。
 
--   スレッド セーフを保証するためにアプリケーションを `armeabi-v7a` デバイスに展開する。
-
-
+- スレッド セーフを保証するためにアプリケーションを `armeabi-v7a` デバイスに展開する。
 
 ## <a name="summary"></a>まとめ
 
 このドキュメントでは、Android アプリケーションを実行できるさまざまな CPU アーキテクチャについて説明しました。 アプリケーション バイナリ インターフェイスと、それが異なる CPU アーキテクチャをサポートするために Android でどのように使用されているかについて説明しました。
 また、Xamarin.Android アプリケーションでの ABI サポートを指定する方法について説明し、Xamarin.Android アプリケーションを `armeabi` のみを対象とした `armeabi-v7a` デバイスで使用するときに発生する問題を明らかにしました。
-
 
 ## <a name="related-links"></a>関連リンク
 
