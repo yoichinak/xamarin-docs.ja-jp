@@ -6,12 +6,12 @@ ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: fdc57e7028d3a16f9a9d2504caf1f2414d0ac94f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102985"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983602"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>MonoGame パイプライン ツールを使用します。
 
@@ -69,9 +69,9 @@ MonoGame パイプライン ツールを実行すると、コンテンツとゲ�
 
 ## <a name="creating-a-content-project"></a>コンテンツのプロジェクトを作成します。
 
-ゲームのプロジェクトが作成できた MonoGame パイプライン プロジェクトを作成できます。 MonoGame パイプライン ツールの選択で**ファイル > 新規.** プロジェクトのコンテンツのフォルダーに移動します。 Android では、フォルダーにある **[プロジェクトの root]\BouncingGame.Android\Assets\Content\\**します。 Ios の場合は、フォルダーがである **[プロジェクトの root]\BouncingGame.iOS\Content\\**します。
+ゲームのプロジェクトが作成できた MonoGame パイプライン プロジェクトを作成できます。 MonoGame パイプライン ツールの選択で**ファイル > 新規.** プロジェクトのコンテンツのフォルダーに移動します。 Android では、フォルダーにある **[プロジェクトの root]\BouncingGame.Android\Assets\Content\\** します。 Ios の場合は、フォルダーがである **[プロジェクトの root]\BouncingGame.iOS\Content\\** します。
 
-変更、**ファイル名**に**ContentProject**  をクリックし、**保存**ボタン。
+変更、 **ファイル名** に **ContentProject**  をクリックし、 **保存** ボタン。
 
 ![](walkthrough-images/image8.png "ContentProject にファイル名を変更し、[保存] ボタンをクリックします。")
 
@@ -84,7 +84,7 @@ MonoGame のパイプライン ツールで、プロジェクトに関する情�
 
 ### <a name="output-folder"></a>出力フォルダー
 
-これは、(コンテンツ プロジェクト自体) への相対フォルダーで出力 **.xnb**ファイルが保存されます。 簡単に、同じフォルダー、入力を保持して、出力ファイルを使用します。 つまりは変更し、**出力フォルダー**する **.\** :
+これは、(コンテンツ プロジェクト自体) への相対フォルダーで出力 **.xnb**ファイルが保存されます。 簡単に、同じフォルダー、入力を保持して、出力ファイルを使用します。 つまりは変更し、**出力フォルダー**する **.\\** :
 
 ![](walkthrough-images/image10.png "")
 

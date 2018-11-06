@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d161a267c8ffa5040327db8e6e4f867a324b04f2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105808"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983615"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>IOS Designer のテーブルの操作
 
@@ -73,7 +73,7 @@ Visual Studio を使用して新しいソリューションを作成 **(作成) 
 
 1.  ビュー コント ローラーの下部にあるバーを選択し、それを削除します。
 2.  ドラッグ、**ナビゲーション コント ローラー**と**テーブル ビュー コント ローラー**ツールボックスからストーリー ボード上にします。 
-3.  追加されたテーブル ビューの 2 番目のコント ローラーをルート ビュー コント ローラーからのセグエを作成します。 セグエ、コントロールの作成 + ドラッグ*詳細セルから*UITableViewController を新たに追加します。 オプションを選択**表示*** **セグエ選択**します。 
+3.  追加されたテーブル ビューの 2 番目のコント ローラーをルート ビュー コント ローラーからのセグエを作成します。 セグエ、コントロールの作成 + ドラッグ*詳細セルから*UITableViewController を新たに追加します。 オプションを選択**表示****セグエ選択**します。 
 4.  選択して、新しい作成したセグエし、参照をコードでこのセグエに識別子を取得します。 セグエをクリックし、入力`TaskSegue`の**識別子**で、 **Properties Pad**、次のように。    
   [![名前付けプロパティ パネルのセグエ](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 

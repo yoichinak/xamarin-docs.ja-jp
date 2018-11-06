@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: a89211e4576b8d22b45bb4f675241d47c49270e6
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: fb7d18e6434e32941531d2c37cd8b938ec21ba90
+ms.sourcegitcommit: 28dbb5fa2fbcc7e66cd09c1d0077496fcdefac56
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235039"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51027328"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>アプリケーションで Google マップ API の使用
 
@@ -40,7 +40,7 @@ Xamarin.Android アプリは Google Maps Android API を使用することは前
 
 ### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Google マップ API キーを入手します。
 
-最後の手順では、Google マップ API キー (従来の Google Maps v1 API から API キーを再利用できないことに注意してください) を取得します。 取得して、Xamarin.Android で API キーを使用する方法については、次を参照してください。 [A Google マップ API のキーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)します。
+最初の手順では、Google マップ API キー (従来の Google Maps v1 API から API キーを再利用できないことに注意してください) を取得します。 取得して、Xamarin.Android で API キーを使用する方法については、次を参照してください。 [A Google マップ API のキーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)します。
  
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Google Play Services SDK をインストールします。
@@ -183,7 +183,7 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
               class="com.google.android.gms.maps.MapFragment" />
     ```
 
--   **Programmaatically** -`MapFragment`を使用してプログラムでインスタンス化できる、 [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance())メソッド アクティビティに追加します。 このスニペットは、インスタンス化する最も簡単な方法を示しています、`MapFragment`オブジェクトし、アクティビティを追加します。
+-   **プログラムで**-`MapFragment`を使用してプログラムでインスタンス化できる、 [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance())メソッド アクティビティに追加します。 このスニペットは、インスタンス化する最も簡単な方法を示しています、`MapFragment`オブジェクトし、アクティビティを追加します。
     
     ```csharp
         var mapFrag = MapFragment.NewInstance();
