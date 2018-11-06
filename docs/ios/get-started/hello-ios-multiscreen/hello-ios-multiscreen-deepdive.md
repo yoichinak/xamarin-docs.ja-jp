@@ -1,6 +1,6 @@
 ---
 title: Hello, iOS マルチスクリーン – 詳細
-description: このドキュメントでは、Phoneword アプリケーションの拡張についてさらに詳しく取り上げています。モデル ビュー コントローラー、iOS ナビゲーション、他の iOS 開発概念についても考察しています。
+description: このドキュメントでは、Phoneword アプリケーションの拡張についてさらに詳しく説明し、モデル ビュー コントローラー、iOS ナビゲーション、その他の iOS 開発概念について詳しく考察します。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: d698cd1511e82116180a8af46891973f5f90343b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 61a90632849787e28526f83d53247a0491148148
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118969"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235091"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
