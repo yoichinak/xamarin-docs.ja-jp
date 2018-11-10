@@ -1,27 +1,27 @@
 ---
-title: Xamarin.Forms ローカリゼーション
-description: 組み込みの .NET のローカリゼーション フレームワークは、Xamarin.Forms を使用したクロスプラット フォームの多言語アプリケーションの構築に使用できます。 テキストとイメージをローカライズすることができます、およびアプリケーションは、右から左へのフローの方向をサポートできます。
+title: Xamarin.Forms のローカライズ
+description: Xamarin.Forms によるクロスプラット フォームで多言語アプリケーションを構築する、組み込みの .NET ローカライズ フレームワークを使用できます。 テキストとイメージをローカライズすることができ、アプリケーションが右から左にフローの方向をサポートします。
 ms.prod: xamarin
 ms.assetid: 97BF843B-BDAA-4CEA-8189-6DB54B291D7F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/13/2018
-ms.openlocfilehash: 78731924324a1ddd34c0d197070699e2998c1513
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 11/07/2018
+ms.openlocfilehash: 71033e935a2d3a4be88dbcc5d975938771484640
+ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240594"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51285574"
 ---
-# <a name="xamarinforms-localization"></a>Xamarin.Forms ローカリゼーション
+# <a name="xamarinforms-localization"></a>Xamarin.Forms のローカライズ
 
-_組み込みの .NET のローカリゼーション フレームワークは、Xamarin.Forms を使用したクロスプラット フォームの多言語アプリケーションの構築に使用できます。_
+_Xamarin.Forms によるクロスプラット フォームで多言語アプリケーションを構築する、組み込みの .NET ローカライズ フレームワークを使用できます。_
 
 ## <a name="string-and-image-localizationtextmd"></a>[文字列とイメージのローカライズ](text.md)
 
-.NET アプリケーションの使用をローカライズするための組み込みメカニズム[RESX ファイル](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)と、クラス、`System.Resources`と`System.Globalization`名前空間。 翻訳された文字列を含む RESX ファイルは、コンパイラによって生成されたクラス、翻訳を厳密に型指定されたアクセスを提供すると共に、Xamarin.Forms アセンブリに埋め込まれます。 翻訳されたテキストは、コードで取得できます。
+.NET アプリケーションの使用をローカライズするための組み込みメカニズム[RESX ファイル](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps#resources-in-resx-files)クラスとクラスの`System.Resources`と`System.Globalization`名前空間。 翻訳された文字列を含む RESX ファイルは、コンパイラによって生成されたクラスの翻訳を厳密に型指定されたアクセスを提供すると共に、Xamarin.Forms アセンブリに埋め込まれます。 翻訳されたテキストは、コードで取得できます。
 
 ## <a name="right-to-left-localizationright-to-leftmd"></a>[右から左へのローカライズ](right-to-left.md)
 
-フロー方向とは、ページ上の UI 要素が目によってスキャンされる方向です。 右から左へのローカライズでは、Xamarin.Forms アプリケーションを右から左へのフローの方向のサポートを追加します。
+フローの方向とは、目で、ページの UI 要素をスキャンする方向です。 右から左のローカリゼーションでは、Xamarin.Forms アプリケーションを右から左方向のサポートを追加します。

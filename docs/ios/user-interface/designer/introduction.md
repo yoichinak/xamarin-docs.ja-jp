@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: e9c2a42b9108c04f18252a410d40dbc03013f6dd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8622c40e41071d6c05b05abbe2d5d8a8a844ebde
+ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123753"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51285587"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -459,6 +459,14 @@ IOS デザイナーと Xcode の Interface Builder を同じ意味で使用す�
 Xcode の Interface Builder での編集を行った後ファイルを保存し、Visual studio for mac を返す 変更は、Xamarin.iOS プロジェクトに同期されます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+## <a name="revert-to-xcode"></a>Xcode を元に戻す
+
+同じ意味では、iOS デザイナーと Xcode の Interface Builder を使用することが、Xcode の Interface Builder は、mac 上で使用可能なのみ Mac で Xcode の Interface Builder のストーリー ボードまたは .xib ファイルを開くで Xamarin.iOS プロジェクトを含むソリューションを開きます[Visual Studio for Mac](/visualstudio/mac/)ファイルを右クリックし、選択、**ファイルを開く > Xcode インターフェイスビルダー**次のスクリーン ショットに示すようにします。
+
+[![Xcode の Interface Builder のストーリー ボードを開く](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Xcode の Interface Builder のストーリー ボードを開く")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+
+Xcode の Interface Builder での編集を行った後ファイルを保存し、Visual studio for mac を返す 変更は、Xamarin.iOS プロジェクトに同期されます。
 
 -----
 

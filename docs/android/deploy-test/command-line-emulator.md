@@ -5,16 +5,15 @@ ms.assetid: E592AA32-5E83-B7E5-1753-12416551B23C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 03/09/2018
-ms.openlocfilehash: 513b06749d1616e9fd10f04d22259810c0b4d265
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/05/2018
+ms.openlocfilehash: 995b0783604f752915daaa77a8362899ac61e174
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120724"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983589"
 ---
 # <a name="command-line-emulator"></a>コマンド ライン エミュレーター
-
 
 ## <a name="running-the-android-emulator-from-the-command-line"></a>コマンド ラインからの Android Emulator の実行
 
@@ -36,4 +35,4 @@ macOS の場合
 
 パーティション サイズを必要とする理由は、既定ではエミュレーターのサイズが小さいため、エミュレーターに Xamarin.Android プラットフォームをインストールするのに十分なスペースをエミュレーターで確保できるようにするためです。
 
-その他のパラメーターの詳細については、こちらの Android のサイトで確認することができます - [http://developer.android.com/guide/developing/tools/emulator.html](http://developer.android.com/guide/developing/tools/emulator.html)
+その他のパラメーターの詳細については、こちらの Android のサイトで確認することができます - [https://developer.android.com/studio/run/emulator-commandline](https://developer.android.com/studio/run/emulator-commandline)
