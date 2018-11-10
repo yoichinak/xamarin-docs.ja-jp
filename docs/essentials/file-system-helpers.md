@@ -1,44 +1,48 @@
 ---
 title: 'Xamarin.Essentials: ファイル システム ヘルパー'
-description: Xamarin.Essentials でファイルシステム クラスには、一連アプリ パッケージ内のファイルを開き、アプリケーションのキャッシュおよびデータ ディレクトリを検索するヘルパーにはが含まれています。
+description: Xamarin.Essentials の FileSystem クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 13293ec05261cbdc1e70fd278002d1af18654851
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 74c2066f673d27cf23af139380b45cd4223b1f30
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815619"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675485"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: ファイル システム ヘルパー
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**FileSystem**クラスには、一連アプリ パッケージ内のファイルを開き、アプリケーションのキャッシュおよびデータ ディレクトリを検索するヘルパーにはが含まれています。
+**FileSystem** クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
 
-## <a name="using-file-system-helpers"></a>ファイル システム ヘルパーの使用
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-file-system-helpers"></a>FileSystem の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-格納するアプリケーションのディレクトリを取得する**データ キャッシュ**します。 一時的なデータよりも長く保持する必要がありますが、正しく動作するのには必要なデータをすることはできませんのデータのキャッシュ データを使用できます。
+**キャッシュ データ**を格納するアプリケーションのディレクトリを取得するには、次のようにします。 キャッシュ データは、一時的なデータより長く保持する必要があるデータに対して使用できますが、正しく動作する必要のあるデータには使用できません。
 
 ```csharp
 var cacheDir = FileSystem.CacheDirectory;
 ```
 
-ユーザー データ ファイルではないすべてのファイルのアプリケーションの最上位レベルのディレクトリを取得します。 これらのファイルは、同期フレームワーク、オペレーティング システムでバックアップされます。 プラットフォームの実装における次を参照してください。
+ユーザー データ ファイルではないファイルに対するアプリケーションの最上位ディレクトリを取得するには、次のようにします。 これらのファイルは、オペレーティング システムの同期フレームワークでバックアップされます。 以下のプラットフォームの実装の詳細をご覧ください。
 
 ```csharp
 var mainDir = FileSystem.AppDataDirectory;
 ```
 
-アプリケーション パッケージにバンドルされているファイルを開く。
+アプリケーション パッケージにバンドルされているファイルを開くには:
 
 ```csharp
  using (var stream = await FileSystem.OpenAppPackageFileAsync(templateFileName))
@@ -54,28 +58,28 @@ var mainDir = FileSystem.AppDataDirectory;
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-- **CacheDirectory** – 返します、 [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir)の現在のコンテキスト。
-- **AppDataDirectory** – 返します、 [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir)は、現在のコンテキストのバックアップを使用して[自動バックアップ](https://developer.android.com/guide/topics/data/autobackup.html)API 23 以降に開始します。
+- **CacheDirectory** – 現在のコンテキストの [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) を返します。
+- **AppDataDirectory** – 現在のコンテキストの [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) を返します。API 23 以降では、[自動バックアップ](https://developer.android.com/guide/topics/data/autobackup.html)を使用してバックアップされます。
 
-ファイルに追加して、**資産**フォルダーは、android プロジェクトし、ビルド アクションとしてのマーク**AndroidAsset**と共に使用する`OpenAppPackageFileAsync`します。
+ファイルを Android プロジェクトの **Assets** フォルダーに追加し、`OpenAppPackageFileAsync` で使用されるようにビルド アクションを **AndroidAsset** としてマークします。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-- **CacheDirectory** – 返します、[ライブラリ/キャッシュ](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)ディレクトリ。
-- **AppDataDirectory** – 返します、[ライブラリ](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)iTunes と iCloud でバックアップされるディレクトリ。
+- **CacheDirectory** – [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) ディレクトリを返します。
+- **AppDataDirectory** – iTunes と iCloud でバックアップされる [Library](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) ディレクトリを返します。
 
-ファイルに追加して、**リソース**フォルダーで、iOS プロジェクトし、ビルド アクションとしてのマーク**BundledResource**と共に使用する`OpenAppPackageFileAsync`します。
+ファイルを iOS プロジェクトの **Resources** フォルダーに追加し、`OpenAppPackageFileAsync` で使用されるようにビルド アクションを **BundledResource** としてマークします。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-- **CacheDirectory** – 返します、 [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder)ディレクトリ.
-- **AppDataDirectory** – 返します、 [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder)ディレクトリをクラウドにバックアップします。
+- **CacheDirectory** – [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) ディレクトリを返します.
+- **AppDataDirectory** – クラウドにバックアップされる [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) ディレクトリを返します。
 
-UWP プロジェクトのルートに任意のファイルを追加し、ビルド アクションとしてのマーク**コンテンツ**と共に使用する`OpenAppPackageFileAsync`します。
+UWP プロジェクトのルートにファイルを追加し、`OpenAppPackageFileAsync` で使用されるようにビルド アクションを **Content** としてマークします。
 
 --------------
 
 ## <a name="api"></a>API
 
-- [ファイル システム ヘルパーのソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
-- [ファイル システム API ドキュメント](xref:Xamarin.Essentials.FileSystem)
+- [FileSystem のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [FileSystem API のドキュメント](xref:Xamarin.Essentials.FileSystem)

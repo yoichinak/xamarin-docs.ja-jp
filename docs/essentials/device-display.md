@@ -1,26 +1,30 @@
 ---
-title: 'Xamarin.Essentials: デバイス情報の表示'
-description: このドキュメントでは、アプリケーションが実行されているデバイスの画面のメトリックを提供する、Xamarin.Essentials で DeviceDisplay クラスについて説明します。
+title: 'Xamarin.Essentials: デバイス ディスプレイ情報'
+description: このドキュメントでは、アプリケーションが実行されているデバイスの画面のメトリックを提供する Xamarin.Essentials の DeviceDisplay クラスについて説明します。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: cb42da4c8c2d0e381a5b00f7e60da6f427d19c66
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: ebe97cf7fbb78bff17196110e835bd35ff76b826
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353829"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674887"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: デバイス情報の表示
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: デバイス ディスプレイ情報
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**DeviceDisplay**クラスで、アプリケーションが実行されているデバイスの画面のメトリックについての情報を提供します。
+**DeviceDisplay** クラスでは、アプリケーションが実行されているデバイスの画面のメトリックに関する情報が提供されます。
 
-## <a name="using-devicedisplay"></a>DeviceDisplay を使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-devicedisplay"></a>DeviceDisplay の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -28,7 +32,7 @@ using Xamarin.Essentials;
 
 ## <a name="screen-metrics"></a>画面のメトリック
 
-デバイスの基本情報に加えて、 **DeviceDisplay**クラスには、デバイスの画面と印刷の向きに関する情報が含まれています。
+デバイスの基本情報に加えて、**DeviceDisplay** クラスには、デバイスの画面と向きに関する情報が含まれています。
 
 ```csharp
 // Get Metrics
@@ -50,7 +54,7 @@ var height = metrics.Height;
 var density = metrics.Density;
 ```
 
-**DeviceDisplay**クラスでは、画面のいずれかのメトリック値を変更するたびにトリガーされるイベントをサブスクライブすることができますも公開します。
+**DeviceDisplay** クラスでは、画面のメトリックが変化すると常にトリガーされるイベントも公開されており、サブスクライブすることができます。
 
 ```csharp
 public class ScreenMetricsTest
@@ -69,7 +73,24 @@ public class ScreenMetricsTest
 }
 ```
 
+## <a name="platform-differences"></a>プラットフォームによる違い
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+違いはありません。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* `ScreenMetrics` へのアクセスは UI スレッドで行う必要があります。そうしないと、例外がスローされます。 [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) メソッドを使用して、UI スレッドでそのコードを実行できます。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+違いはありません。
+
+--------------
+
+
 ## <a name="api"></a>API
 
-- [DeviceDisplay ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
-- [DeviceDisplay API ドキュメント](xref:Xamarin.Essentials.DeviceDisplay)
+- [DeviceDisplay のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
+- [DeviceDisplay API のドキュメント](xref:Xamarin.Essentials.DeviceDisplay)

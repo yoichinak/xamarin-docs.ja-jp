@@ -1,66 +1,68 @@
 ---
-title: 'Xamarin.Essentials: 振動'
-description: このドキュメントを起動し、必要な時間のバイブレーション機能を停止することができる Xamarin.Essentials の振動クラスについて説明します。
+title: 'Xamarin.Essentials: バイブレーション'
+description: このドキュメントでは、バイブレーション機能を開始して一定時間後に停止することができる Xamarin.Essentials の Vibration クラスについて説明します。
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 622689342dd961a63318a88f098dea4d1a60e277
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: ff2e718953d86eb59b28fcaa8640e04f6bf422f3
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353868"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675303"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: 振動
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: バイブレーション
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**振動**クラスを起動し、必要な時間のバイブレーション機能を停止することができます。
+**Vibration** クラスを使用すると、バイブレーション機能を開始して一定時間後に停止することができます。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="get-started"></a>作業開始
 
-アクセスする、**振動**次のプラットフォーム固有設定の機能が必要です。
+[!include[](~/essentials/includes/get-started.md)]
+
+**Vibration** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-バイブレーション アクセス許可が必要ですし、Android プロジェクトで構成する必要があります。 これは、次の方法で追加できます。
+Vibrate アクセス許可が必要です。Android プロジェクト内で構成する必要があります。 これは次の方法で追加できます。
 
-開く、 **AssemblyInfo.cs**ファイル、**プロパティ**フォルダーを追加。
+**[プロパティ]** フォルダーにある **AssemblyInfo.cs** ファイルを開き、以下を追加します。
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
 ```
 
-または、Android マニフェストを更新します。
+または、Android マニフェストを追加します。
 
-開く、 **AndroidManifest.xml**ファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、**manifest** ノードの内部に以下を追加します。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、**バイブレーション**権限。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**VIBRATE** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-追加の設定が必要です。
+追加の設定は必要ありません。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-プラットフォームの違いはありません。
+プラットフォームによる違いはありません。
 
 -----
 
-## <a name="using-vibration"></a>振動を使用します。
+## <a name="using-vibration"></a>Vibration の使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-振動機能は、一定の時間または 500 ミリ秒の既定値を要求できます。
+Vibration 機能では、有効にする時間を要求でき、既定値は 500 ミリ秒です。
 
 ```csharp
 try
@@ -82,7 +84,7 @@ catch (Exception ex)
 }
 ```
 
-指定するとデバイスの振動の取り消し、`Cancel`メソッド。
+デバイスのバイブレーションの取り消しは、`Cancel` メソッドで要求できます。
 
 ```csharp
 try
@@ -99,25 +101,25 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-differences"></a>プラットフォームの違い
+## <a name="platform-differences"></a>プラットフォームによる違い
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-プラットフォームの違いはありません。
+プラットフォームによる違いはありません。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* 「バイブレーション リング」を設定すると、デバイスを振動のみです。
-* 常に 500 ミリ秒の振動します。
-* 振動をキャンセルすることはできません。
+* デバイスが "着信時にバイブレーション" に設定されているときにのみバイブレーションします。
+* 常に 500 ミリ秒だけバイブレーションします。
+* バイブレーションを取り消すことはできません。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-プラットフォームの違いはありません。
+プラットフォームによる違いはありません。
 
 -----
 
 ## <a name="api"></a>API
 
-- [振動のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
-- [振動 API ドキュメント](xref:Xamarin.Essentials.Vibration)
+- [Vibration のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
+- [Vibration API のドキュメント](xref:Xamarin.Essentials.Vibration)

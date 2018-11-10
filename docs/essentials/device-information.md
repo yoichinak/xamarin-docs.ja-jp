@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: デバイス情報'
-description: このドキュメントでアプリケーションが実行されているデバイスに関する情報を提供する、Xamarin.Essentials で DeviceInfo クラスについて説明します。
+description: このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する Xamarin.Essentials の DeviceInfo クラスについて説明します。
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 18fe081372cc190e5ead2045f36d63652f8702c3
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 530b04446703d78452357b2c9f9089e59ebf6e6c
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353803"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674814"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: デバイス情報
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**DeviceInfo**クラスで、アプリケーションが実行されているデバイスに関する情報を提供します。
+**DeviceInfo** クラスでは、アプリケーションが実行されているデバイスに関する情報が提供されます。
 
-## <a name="using-deviceinfo"></a>DeviceInfo を使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-deviceinfo"></a>DeviceInfo の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-次の情報は、API を介して公開されます。
+API では次の情報が公開されます。
 
 ```csharp
 // Device Model (SMG-950U, iPhone10,6)
@@ -53,36 +57,36 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[プラットフォーム](xref:Xamarin.Essentials.DeviceInfo.Platforms)
 
-`DeviceInfo.Platform` オペレーティング システムにマップされる定数文字列を相互に関連付けます。 値を確認できます、`Platforms`クラス。
+`DeviceInfo.Platform` は、オペレーティング システムにマップされる定数文字列に対応します。 値は `Platforms` クラスで確認できます。
 
 - **DeviceInfo.Platforms.iOS** – iOS
 - **DeviceInfo.Platforms.Android** – Android
 - **DeviceInfo.Platforms.UWP** – UWP
-- **DeviceInfo.Platforms.Unsupported** – サポートされていません。
+- **DeviceInfo.Platforms.Unsupported** – 非サポート
 
-## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[表現方法](xref:Xamarin.Essentials.DeviceInfo.Idioms)
+## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[表示形式](xref:Xamarin.Essentials.DeviceInfo.Idioms)
 
-`DeviceInfo.Idiom` correlates アプリケーションをデバイスの種類にマップされる文字列定数がで実行されています。 値を確認できます、`Idioms`クラス。
+`DeviceInfo.Idiom` は、アプリケーションが実行されているデバイスの種類にマップされる文字列定数に対応します。 値は `Idioms` クラスで確認できます。
 
 - **DeviceInfo.Idioms.Phone** – 電話
 - **DeviceInfo.Idioms.Tablet** – タブレット
 - **DeviceInfo.Idioms.Desktop** – デスクトップ
 - **DeviceInfo.Idioms.TV** – テレビ
-- **DeviceInfo.Idioms.Unsupported** – サポートされていません。
+- **DeviceInfo.Idioms.Unsupported** – 非サポート
 
 ## <a name="device-type"></a>デバイスの種類
 
-`DeviceInfo.DeviceType` アプリケーションが、物理または仮想デバイスで実行されているかどうかを決定する列挙体を関連付けます。 仮想デバイスは、シミュレーターやエミュレーターです。
+`DeviceInfo.DeviceType` は、アプリケーションが物理デバイスまたは仮想デバイスのどちらで実行されているかを示す列挙型に対応します。 仮想デバイスは、シミュレーターやエミュレーターです。
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-iOS では、開発者が特定の iOS デバイスの名前を取得するための API を公開しません。 などのハードウェア識別子が返される代わりに_iPhone10、6_ iPhone X を指します。これらの識別子のマッピングが Apple によって指定されていないがご覧[iPhone Wiki](https://www.theiphonewiki.com/wiki/Models) (非公式ソース ソース)。
+iOS では、特定の iOS デバイスの名前を取得するための API は開発者に対して公開されていません。 代わりに、iPhone X を示す _iPhone10,6_ のようなハードウェア識別子が返されます。これらの識別子のマッピングは Apple では提供されていませんが、[iPhone Wiki](https://www.theiphonewiki.com/wiki/Models) (非公式ソース) で確認できます。
 
 --------------
 
 ## <a name="api"></a>API
 
-- [DeviceInfo ソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
-- [DeviceInfo API ドキュメント](xref:Xamarin.Essentials.DeviceInfo)
+- [DeviceInfo のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
+- [DeviceInfo API のドキュメント](xref:Xamarin.Essentials.DeviceInfo)

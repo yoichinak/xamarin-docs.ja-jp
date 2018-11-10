@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: 磁力計'
-description: Xamarin.Essentials で磁力計クラスでは、地球の磁場の基準としたデバイスの向きを示すデバイスの磁力計センサーを監視できます。
+description: Xamarin.Essentials の Magnetometer クラスを使用すると、地球の磁場を基準にしてデバイスの向きを示すデバイスの磁力計センサーを監視できます。
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3827b9a57ec2667a8716f5b56bfb4631b979d43a
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 2fe610195f881f3d20ecc327c02dd2dfbced35ce
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353790"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675056"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: 磁力計
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**磁力計**クラスでは、地球の磁場の基準としたデバイスの向きを示すデバイスの磁力計センサーを監視することができます。
+**Magnetometer** クラスを使用すると、地球の磁場を基準にしてデバイスの向きを示すデバイスの磁力計センサーを監視できます。
 
-## <a name="using-magnetometer"></a>磁力計を使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-magnetometer"></a>Magnetometer の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-磁力計機能が呼び出すことによって、`Start`と`Stop`磁力計への変更をリッスンするメソッド。 加えた変更は通過して送信、`ReadingChanged`イベント。 使用例を次に示します。
+Magnetometer の機能は、磁力計の変化をリッスンする `Start` および `Stop` メソッドを呼び出すことで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
 
 ```csharp
 
@@ -69,11 +73,11 @@ public class MagnetometerTest
 }
 ```
 
-Microteslas では、すべてのデータが返されます。
+すべてのデータはマイクロテスラ単位で返されます。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
-- [磁力計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
-- [磁力計 API ドキュメント](xref:Xamarin.Essentials.Magnetometer)
+- [Magnetometer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
+- [Magnetometer API のドキュメント](xref:Xamarin.Essentials.Magnetometer)

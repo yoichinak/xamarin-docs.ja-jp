@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: ダイヤラー'
-description: Xamarin.Essentials で PhoneDialer クラスは、ダイヤラーに電話番号を開くためのアプリケーションを使用できます。
+description: Xamarin.Essentials の PhoneDialer クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます。
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 34a6c80836d8cb42b1f8fd95718fe248d4701c0f
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
-ms.translationtype: MT
+ms.openlocfilehash: bccc76e1602c475a5e4cc9a95d498d11f9a379b1
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130794"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675420"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: ダイヤラー
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**PhoneDialer**クラス ダイヤラーに電話番号を開くためのアプリケーションを使用できます。
+**PhoneDialer** クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます。
 
-## <a name="using-phone-dialer"></a>ダイヤラを使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-phone-dialer"></a>PhoneDialer の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-ダイヤラー機能が呼び出すことによって、`Open`を開くとダイヤラーの電話番号を持つメソッド。 ときに`Open`API は、数値が指定されている場合は、国コードに基づいて自動的に試行を要求します。
+PhoneDialer 機能を使用するには、ダイヤラーで開く電話番号を指定して `Open` メソッドを呼び出します。 `Open` が要求されると、API は国番号が指定されている場合はそれに基づいて自動的に番号の書式設定を試みます。
 
 ```csharp
 public class PhoneDialerTest
@@ -55,5 +59,5 @@ public class PhoneDialerTest
 
 ## <a name="api"></a>API
 
-- [ソース コードをダイヤラーします。](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
-- [電話のダイヤラー API ドキュメント](xref:Xamarin.Essentials.PhoneDialer)
+- [PhoneDialer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
+- [PhoneDialer API のドキュメント](xref:Xamarin.Essentials.PhoneDialer)

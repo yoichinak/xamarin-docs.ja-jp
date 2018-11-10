@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: ジャイロスコープなどがあります'
-description: Xamarin.Essentials のジャイロスコープ クラスを使用して、デバイスの 3 つのプライマリ軸の周りの回転角度を測定するデバイスのジャイロスコープ センサーを監視できます。
+title: 'Xamarin.Essentials: ジャイロスコープ'
+description: Xamarin.Essentials の Gyroscope クラスを使用すると、デバイスの 3 つの主軸の周りの回転角度を測定するデバイスのジャイロスコープ センサーを監視できます。
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f1e1199ae32158889ec569eb5f7e9742f37d45d4
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 1d42658160855e260e0d159c58a1f95e7a8c7d4c
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353627"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674732"
 ---
-# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: ジャイロスコープなどがあります
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: ジャイロスコープ
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**ジャイロスコープ**クラスを使用して、デバイスの 3 つのプライマリ軸の周りの回転は、デバイスのジャイロスコープ センサーを監視できます。
+**Gyroscope** クラスを使用すると、デバイスの 3 つの主軸の周りの回転角度であるデバイスのジャイロスコープ センサーを監視できます。
 
-## <a name="using-gyroscope"></a>ジャイロスコープを使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-gyroscope"></a>Gyroscope の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-ジャイロスコープ機能が呼び出すことによって、`Start`と`Stop`ジャイロスコープへの変更をリッスンするメソッド。 加えた変更は通過して送信、`ReadingChanged`イベント。 使用例を次に示します。
+Gyroscope の機能は、ジャイロスコープの変化をリッスンする `Start` および `Stop` メソッドを呼び出すことで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
 
 ```csharp
 
@@ -73,5 +77,5 @@ public class GyroscopeTest
 
 ## <a name="api"></a>API
 
-- [ソース コードのジャイロスコープなどがあります。](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
-- [ジャイロスコープ API ドキュメント](xref:Xamarin.Essentials.Gyroscope)
+- [Gyroscope のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
+- [Gyroscope API のドキュメント](xref:Xamarin.Essentials.Gyroscope)

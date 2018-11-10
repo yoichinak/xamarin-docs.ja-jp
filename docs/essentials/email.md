@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: 電子メール'
-description: Xamarin.Essentials で電子メール クラスは、件名、本文、および受信者 (TO、CC、BCC) を含む指定した情報で、既定の電子メール アプリケーションを開くためのアプリケーションを使用できます。
+description: アプリケーションで Xamarin.Essentials の Email クラスを使用すると、件名、本文、受信者 (TO、CC、BCC) などの情報を指定して既定のメール アプリケーションを開くことができます。
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f113cebfebf4238fd4b75ad8ab248e2abf61efea
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: c8d4a83caf6832f911193067324915fd6226b380
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353907"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674965"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: 電子メール
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**電子メール**クラスは、件名、本文、および受信者 (TO、CC、BCC) を含む指定した情報で、既定の電子メール アプリケーションを開くためのアプリケーションを使用できます。
+アプリケーションで **Email** クラスを使用すると、件名、本文、受信者 (TO、CC、BCC) などの情報を指定して既定のメール アプリケーションを開くことができます。
 
-## <a name="using-email"></a>電子メールを使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-email"></a>Email の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-電子メール機能を呼び出すことで機能、`ComposeAsync`メソッド、`EmailMessage`電子メールに関する情報を格納します。
+Email の機能を使用するには、電子メールに関する情報を含む `EmailMessage` を指定して `ComposeAsync` メソッドを呼び出します。
 
 ```csharp
 public class EmailTest
@@ -59,5 +63,5 @@ public class EmailTest
 
 ## <a name="api"></a>API
 
-- [電子メールのソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
-- [メール API ドキュメント](xref:Xamarin.Essentials.Email)
+- [Email のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
+- [Email API のドキュメント](xref:Xamarin.Essentials.Email)

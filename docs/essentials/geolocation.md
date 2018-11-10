@@ -1,32 +1,34 @@
 ---
-title: 'Xamarin.Essentials: 地理的位置情報'
-description: このドキュメントでは、デバイスの現在の地理座標を取得する Api を提供する、Xamarin.Essentials で地理的位置情報クラスについて説明します。
+title: 'Xamarin.Essentials: 位置情報'
+description: このドキュメントでは、デバイスの現在の位置座標を取得する API を提供する Xamarin.Essentials の Geolocation クラスについて説明します。
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0aeb2ed96e6c21def69eb2e6f305b26e2e478825
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 533620fbfca9f2a7a235fe65e038b6dd89aa95a9
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353855"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674901"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: 地理的位置情報
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: 位置情報
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**地理的位置情報**クラスには、デバイスの現在の地理座標を取得する Api が用意されています。
+**Geolocation** クラスには、デバイスの現在の位置座標を取得する API が用意されています。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="get-started"></a>作業開始
 
-アクセスする、**地理的位置情報**機能では、次のプラットフォームに固有の設定が必要です。
+[!include[](~/essentials/includes/get-started.md)]
+
+**Geolocation** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-粗いと問題の場所のアクセス許可は、必要な Android プロジェクトで構成する必要があります。 さらに、アプリの対象が Android 5.0 (API レベル 21) または取引以降に宣言する必要があります、アプリによってマニフェスト ファイルでハードウェア機能が使用されます。 これは、次の方法で追加できます。
+Coarse および Fine Location アクセス許可が必要であり、Android プロジェクトで構成する必要があります。 さらに、アプリの対象が Android 5.0 (API レベル 21) 以降である場合は、アプリがマニフェスト ファイルのハードウェア機能を使用することを宣言する必要があります。 これは次の方法で追加できます。
 
-開く、 **AssemblyInfo.cs**ファイル、**プロパティ**フォルダーを追加。
+**[プロパティ]** フォルダーにある **AssemblyInfo.cs** ファイルを開き、以下を追加します。
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
@@ -38,7 +40,7 @@ ms.locfileid: "39353855"
 
 または、Android マニフェストを更新します。
 
-開く、 **AndroidManifest.xml**ファイル、**プロパティ**フォルダー内の次の追加と、**マニフェスト**ノード。
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、**manifest** ノードの内部に以下を追加します。
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -48,15 +50,15 @@ ms.locfileid: "39353855"
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **Android マニフェスト**検索、**ために必要なアクセス許可:** 領域とチェック、 **ACCESS_COARSE_LOCATION**と**ACCESS_FINE_LOCATION**アクセス許可。 これは自動的に更新、 **AndroidManifest.xml**ファイル。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**[ACCESS_COARSE_LOCATION]** および **[ACCESS_FINE_LOCATION]** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-アプリの**Info.plist**含める必要があります、`NSLocationWhenInUseUsageDescription`デバイスの場所にアクセスするためにキー。
+デバイスの位置情報にアクセスするには、アプリの **Info.plist** に `NSLocationWhenInUseUsageDescription` キーが含まれる必要があります。
 
-Plist エディターを開き、追加、**プライバシー - 場所ときに使用して利用状況の説明**プロパティと、ユーザーを表示する値を入力します。
+plist エディターを開き、**[プライバシー - 位置情報 (使用時) の利用状況の説明]** プロパティを追加して、ユーザーに表示する値を入力します。
 
-または手動でファイルを編集し、以下を追加します。
+または、ファイルを手動で編集して、次の内容を追加します。
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -65,21 +67,21 @@ Plist エディターを開き、追加、**プライバシー - 場所ときに
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-設定する必要があります、`Location`アプリケーションのアクセスを許可します。 これを行うを開く、 **Package.appxmanifest**を選択して、**機能** タブとチェック**場所**します。
+アプリケーションに `Location` アクセス許可を設定する必要があります。 これは、**Package.appxmanifest** を開き、**[機能]** タブを選択して **[場所]** をオンにすることによって行うことができます。
 
 -----
 
-## <a name="using-geolocation"></a>地理的位置情報を使用します。
+## <a name="using-geolocation"></a>Geolocation の使用
 
-クラスで Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Geoloation API は、ユーザーに必要な場合のアクセス許可も求められます。
+Geoloation API では、必要に応じてユーザーにアクセス許可も求められます。
 
-前回正常に取得できます[場所](xref:Xamarin.Essentials.Location)呼び出すことによって、デバイスの`GetLastKnownLocationAsync`メソッド。 これにより、完全なクエリの実行速度は多くの場合は、精度が低下することができます。
+`GetLastKnownLocationAsync` メソッドを呼び出すことにより、デバイスの最後の既知の[場所](xref:Xamarin.Essentials.Location)を取得できます。 多くの場合、この方が完全なクエリを行うより速くわかりますが、精度が低下することがあります。
 
 ```csharp
 try
@@ -105,9 +107,9 @@ catch (Exception ex)
 }
 ```
 
-高度は常に使用できません。 使用できない場合、`Altitude`プロパティがあります`null`または値を 0 にすることがあります。 高度を使用できる場合、値は海面上のメートル単位では。 
+高度は常に使用できるとは限りません。 使用できない場合、`Altitude` プロパティは `null` または 0 になることがあります。 高度を使用できる場合、値は海抜メートル単位です。 
 
-現在のデバイスを照会する[場所](xref:Xamarin.Essentials.Location)、座標、`GetLocationAsync`ことができます。 完全に渡すことをお勧め`GeolocationRequest`と`CancellationToken`のため、デバイスの場所を取得するまでに時間がかかる場合があります。
+現在のデバイスの[場所](xref:Xamarin.Essentials.Location)の座標を照会するには、`GetLocationAsync` を使用できます。 デバイスの場所を取得するには時間がかかる場合があるので、完全な `GeolocationRequest` と `CancellationToken` を渡すのが最善です。
 
 ```csharp
 try
@@ -134,55 +136,55 @@ catch (Exception ex)
 }
 ```
 
-## <a name="geolocation-accuracy"></a>地理的位置情報の精度
+## <a name="geolocation-accuracy"></a>Geolocation の精度
 
 次の表では、プラットフォームごとの精度を示します。
 
 ### <a name="lowest"></a>最低
 
-| プラットフォーム | メートル単位で距離 |
+| プラットフォーム | 距離 (メートル単位) |
 | --- | --- |
 | Android | 500 |
 | iOS | 3000 |
-| UWP | 1000 ~ 5000 |
+| UWP | 1000 ～ 5000 |
 
 ### <a name="low"></a>Low
 
-| プラットフォーム | メートル単位で距離 |
+| プラットフォーム | 距離 (メートル単位) |
 | --- | --- |
 | Android | 500 |
 | iOS | 1000 |
-| UWP | 300-3000 |
+| UWP | 300 ～ 3000 |
 
-### <a name="medium-default"></a>Medium (既定値)
+### <a name="medium-default"></a>中 (既定値)
 
-| プラットフォーム | メートル単位で距離 |
+| プラットフォーム | 距離 (メートル単位) |
 | --- | --- |
-| Android | 100 ~ 500 |
+| Android | 100 ～ 500 |
 | iOS | 100 |
-| UWP | 30 ~ 500 |
+| UWP | 30 ～ 500 |
 
 ### <a name="high"></a>High
 
-| プラットフォーム | メートル単位で距離 |
+| プラットフォーム | 距離 (メートル単位) |
 | --- | --- |
-| Android | 0 - 100 |
+| Android | 0 ～ 100 |
 | iOS | 10 |
-| UWP | < = 10 |
+| UWP | 10 以下 |
 
 ### <a name="best"></a>最高
 
-| プラットフォーム | メートル単位で距離 |
+| プラットフォーム | 距離 (メートル単位) |
 | --- | --- |
-| Android | 0 - 100 |
+| Android | 0 ～ 100 |
 | iOS | ~0 |
-| UWP | < = 10 |
+| UWP | 10 以下 |
 
 <a name="calculate-distance" />
 
 ## <a name="distance-between-two-locations"></a>2 つの場所の間の距離
 
-[ `Location` ](xref:Xamarin.Essentials.Location)と[ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions)クラス定義`CalculateDistance`2 つの地理的場所間の距離を計算するためのメソッド。 距離は考慮されません道路またはその他の経路、とも呼ばれる、地球の表面上、2 つのポイント間の最短距離だけでは、この計算される、_大圏距離_話題、または、crow 飛行の"と"距離
+[`Location`](xref:Xamarin.Essentials.Location) クラスおよび [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) クラスでは、2 つの地理的な場所の間の距離を計算できる `CalculateDistance` メソッドが定義されています。 この計算では道路またはその他の経路は考慮されず、あくまでも地球の表面に沿った 2 点間の最短距離なので、"_大圏距離_" または "直線距離" とも呼ばれます。
 
 次に例を示します。
 
@@ -192,9 +194,9 @@ Location sanFrancisco = new Location(37.783333, -122.416667);
 double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
 ```
 
-`Location`コンス トラクターでは、緯度と経度の引数を持つその順序で。 緯度の値は、赤道より北、子午線の正の値の経度の値は、正の値。 最後の引数を使用して、`CalculateDistance`マイルまたはキロメートル単位を指定します。 `Location`クラスも定義`KilometersToMiles`と`MilesToKilometers`を 2 つのユニット間で変換するメソッド。
+`Location` コンストラクターは、緯度引数と経度引数をこの順序で受け取ります。 正の緯度値は北半球を示し、正の緯度値は東半球を示します。 マイルまたはキロメートルを指定するには、`CalculateDistance` に対する最後の引数を使用します。 `Location` クラスでは、2 つの単位の間で変換を行う `KilometersToMiles` および `MilesToKilometers` メソッドも定義されています。
 
 ## <a name="api"></a>API
 
-- [地理的位置情報のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
-- [地理的位置情報 API のドキュメント](xref:Xamarin.Essentials.Geolocation)
+- [Geolocation のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
+- [Geolocation API のドキュメント](xref:Xamarin.Essentials.Geolocation)

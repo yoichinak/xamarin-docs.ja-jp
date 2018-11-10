@@ -6,13 +6,13 @@ ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 47cd79611cfeaf48c0422772d8f3e75eb57ba771
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/04/2018
+ms.openlocfilehash: b8e851e735fa39d015e22ce511c39ad825bc97c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996054"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119996"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
@@ -210,13 +210,73 @@ Content = table;
 上記 C# は多くのことを行っています。 分割してみましょう。
 
 - `TableView`のルート要素は、`TableRoot`です。
-- `TableSection`のすぐ下に`TableRoot`があります。
+- `TableRoot`のすぐ下に`TableSection`があります。
 - `ViewCell`は`TableSection`の直下で定義されています。 `ListView`とは異なり、 `TableView`ではカスタムセル (またはそのいずれか) が`ItemTemplate`で定義されている必要はありません。
 - StackLayout を使用して、カスタムのセルのレイアウトを管理できます。 任意のレイアウトは、ここで使用できます。
 
 カスタムのセルのクラスが定義されていないことに注意してください。 代わりに、`ViewCell`のビューのプロパティは、`ViewCell`の特定のインスタンスに対して設定されています。
 
+## <a name="row-height"></a>行の高さ
 
+[ `TableView` ](xref:Xamarin.Forms.TableView)クラスには 2 つのプロパティのセルの行の高さを変更するために使用できます。
+
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) – に各行の高さを設定、`int`します。
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) – 行である高さが異なる場合に設定`true`します。 このプロパティを設定する場合は注意`true`行の高さが自動的に計算および Xamarin.Forms で適用します。
+
+ときにセル内のコンテンツの高さを[ `TableView` ](xref:Xamarin.Forms.TableView)が変更されると、行の高さは、Android、ユニバーサル Windows プラットフォーム (UWP) で暗黙的に更新されます。 ただし、iOS でその必要があります設定を更新する、 [ `HasUnevenRows` ](xref:Xamarin.Forms.TableView.HasUnevenRows)プロパティを`true`と呼び出すことによって、 [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize)メソッド。
+
+次の XAML の例は、 [ `TableView` ](xref:Xamarin.Forms.TableView)を格納している、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell):
+
+```xaml
+<ContentPage ...>
+    <TableView ...
+               HasUnevenRows="true">
+        <TableRoot>
+            ...
+            <TableSection ...>
+                ...
+                <ViewCell x:Name="_viewCell"
+                          Tapped="OnViewCellTapped">
+                    <Grid Margin="15,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Tap this cell." />
+                        <Label x:Name="_target"
+                               Grid.Row="1"
+                               Text="The cell has changed size."
+                               IsVisible="false" />
+                    </Grid>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
+```
+
+ときに、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)がタップされた、`OnViewCellTapped`イベント ハンドラーが実行されます。
+
+```csharp
+void OnViewCellTapped(object sender, EventArgs e)
+{
+    _target.IsVisible = !_target.IsVisible;
+    _viewCell.ForceUpdateSize();
+}
+```
+
+`OnViewCellTapped`イベント ハンドラー表示と、2 つ目の非表示[ `Label` ](xref:Xamarin.Forms.Label)で、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)、明示的に呼び出すことによって、セルのサイズを更新し、 [ `Cell.ForceUpdateSize`](xref:Xamarin.Forms.Cell.ForceUpdateSize)メソッド。
+
+次のスクリーン ショットは、時に消費する前に、セルを表示します。
+
+![](tableview-images/cell-beforeresize.png "ViewCell のサイズ変更する前に")
+
+次のスクリーン ショットでは、タップすると後にセルを表示します。
+
+![](tableview-images/cell-afterresize.png "ViewCell のサイズ変更した後")
+
+> [!IMPORTANT]
+> 強力なパフォーマンスの低下の可能性がある場合、この機能が過剰です。
 
 ## <a name="related-links"></a>関連リンク
 

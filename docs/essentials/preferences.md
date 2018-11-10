@@ -1,60 +1,64 @@
 ---
-title: 'Xamarin.Essentials: 基本設定'
-description: このドキュメントでは、Xamarin.Essentials、キー/値ストアでアプリケーションの設定を保存します。 これで設定クラスについて説明します。 これには、クラスと、格納できるデータの種類を使用する方法について説明します。
+title: 'Xamarin.Essentials: ユーザー設定'
+description: このドキュメントで説明する Xamarin.Essentials の Preferences クラスでは、アプリケーションのユーザー設定がキー/値ストアに保存されます。 クラスの使用方法と、格納できるデータの種類について説明します。
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 3562ec840f824f6a8aeed1a61c7b27985a5ddf72
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353751"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675472"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: 基本設定
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: ユーザー設定
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**設定**キー/値ストアでアプリケーションの設定を格納するクラスを使用します。
+**Preferences** クラスを使用すると、アプリケーションのユーザー設定をキー/値ストアに保存できます。
 
-## <a name="using-preferences"></a>基本設定の使用
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-preferences"></a>Preferences の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-値を保存する、指定された_キー_の基本設定。
+特定の "_キー_" の値をユーザー設定に保存するには:
 
 ```csharp
 Preferences.Set("my_key", "my_value");
 ```
 
-設定されていない場合、設定や、既定値から値を取得します。
+ユーザー設定の値、または設定されていない場合は既定値を取得するには:
 
 ```csharp
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-削除する、_キー_設定から。
+ユーザー設定から "_キー_" を削除するには:
 
 ```csharp
 Preferences.Remove("my_key");
 ```
 
-すべての環境設定を削除するには。
+すべてのユーザー設定を削除するには:
 
 ```csharp
 Preferences.Clear();
 ```
 
-これらのメソッドだけでなく、省略可能な各実行`sharedName` 基本設定の追加のコンテナーの作成に使用できます。 以下のプラットフォームの実装の詳細を参照してください。
+これらのメソッドだけでなく、省略可能な `sharedName` を使用してユーザー設定用の追加コンテナーを作成できます。 以下のプラットフォームの実装の詳細をご覧ください。
 
-## <a name="supported-data-types"></a>サポートされるデータ型
+## <a name="supported-data-types"></a>サポートされているデータ型
 
-次のデータ型はサポート**設定**:
+**Preferences** では次のデータ型がサポートされています。
 
 - **bool**
 - **double**
@@ -66,33 +70,33 @@ Preferences.Clear();
 
 ## <a name="implementation-details"></a>実装の詳細
 
-値`DateTime`によって定義された 2 つのメソッドを使用して 64 ビットのバイナリ (長整数) 形式で格納されます、`DateTime`クラス: [ `ToBinary` ](xref:System.DateTime.ToBinary)メソッドのエンコードが使用される、`DateTime`値、および、 [ `FromBinary` ](xref:System.DateTime.FromBinary(System.Int64))メソッドが値をデコードします。 値がデコードに行われる可能性の調整でこれらのメソッドのドキュメントを参照してください、`DateTime`は世界協定時刻 (UTC) の値ではなくで格納されています。
+`DateTime` の値は、`DateTime` クラスによって定義されている 2 つのメソッドを使用して 64 ビット バイナリ (長整数) 形式で格納されます。`DateTime` 値のエンコードには [`ToBinary`](xref:System.DateTime.ToBinary) メソッドが使用され、値のデコードには [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) メソッドが使用されます。 世界協定時刻 (UTC) 値ではない `DateTime` が格納されているときに値をデコードするために行われる可能性がある調整については、これらのメソッドのドキュメントをご覧ください。
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-すべてのデータが格納されている[共有設定](https://developer.android.com/training/data-storage/shared-preferences.html)します。 ない場合は`sharedName`が、共有の既定の設定が使用される、取得する名前を使用するそれ以外の場合に指定されて、**プライベート**指定した名前の基本設定を共有します。
+すべてのデータは[共有ユーザー設定](https://developer.android.com/training/data-storage/shared-preferences.html)に格納されます。 `sharedName` が指定されていない場合は既定の共有ユーザー設定が使用され、指定されている場合はその名前を使用して**プライベート**共有ユーザー設定が取得されます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) iOS デバイスの値を格納するために使用します。 ない場合は`sharedName`が指定されて、`StandardUserDefaults`は、それ以外の場合、名前が使用を新しく作成する`NSUserDefaults`に使用される指定した名前で、`NSUserDefaultsType.SuiteName`します。
+iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) が使用されます。 `sharedName` が指定されていない場合は、`StandardUserDefaults` が使用されます。指定されている場合は、`NSUserDefaultsType.SuiteName` に対して使用される指定された名前で新しい `NSUserDefaults` が作成されます。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer)デバイス上の値を格納するために使用します。 ない場合は`sharedName`が指定されて、`LocalSettings`は、それ以外の場合、名前が使用中の新しいコンテナーを作成する`LocalSettings`します。
+デバイスに値を格納するには [ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) が使用されます。 `sharedName` が指定されていない場合は、`LocalSettings` が使用されます。指定されている場合は、その名前を使用して `LocalSettings` 内に新しいコンテナーが作成されます。
 
 --------------
 
 ## <a name="persistence"></a>永続性
 
-アプリケーションをアンインストールすると、すべて_設定_を削除します。 これが対象として、Android 6.0 (API レベル 23) 以降を実行するアプリを使用している 1 つの例外がある[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)します。 この機能は既定で、アプリなど、データが保持されます__共有基本設定__、何である、**設定**API を利用します。 これを無効に、次の Google によってできます[ドキュメント](https://developer.android.com/guide/topics/data/autobackup)します。
+アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。 これには例外が 1 つあり、Android 6.0 (API レベル 23) 以降で実行されていて[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)を使用しているアプリの場合です。 この機能は既定で有効にされて、__共有ユーザー設定__などのアプリ データを保持し、**Preferences** API はそれを利用します。 この機能は、Google の[ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
 
 ## <a name="limitations"></a>制限事項
 
-文字列を格納するときに、この API は、少量のテキストを格納するものです。  パフォーマンスは、大量のテキストの格納に使用しようとする場合は程遠いものでした可能性があります。
+文字列を格納するとき、この API では少量のテキストを格納することが想定されています。  大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。
 
 ## <a name="api"></a>API
 
-- [基本設定のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
-- [API の基本設定のドキュメント](xref:Xamarin.Essentials.Preferences)
+- [Preferences のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [Preferences API のドキュメント](xref:Xamarin.Essentials.Preferences)

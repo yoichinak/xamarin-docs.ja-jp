@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: 画面のロック'
-description: このドキュメントでは、アプリケーションを実行するときにスリープ状態の画面を要求できる Xamarin.Essentials で ScreenLock クラスについて説明します。
+title: 'Xamarin.Essentials: 画面ロック'
+description: このドキュメントでは、アプリケーションの実行中に画面がスリープ状態にならないように要求できる Xamarin.Essentials の ScreenLock クラスについて説明します。
 ms.assetid: 6B67C114-315E-4199-AA72-3F90E85A4909
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3c8110b7abc86fe1d12485579f134997718540e6
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 3bf8c949650cf9f039a5a516366a90e717dc944b
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38848571"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675316"
 ---
-# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials: 画面のロック
+# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials: 画面ロック
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**ScreenLock**クラスは、アプリケーションが実行されているときにスリープ状態の画面を要求できます。
+**ScreenLock** クラスでは、アプリケーションの実行中に画面がスリープ状態にならないように要求できます。
 
-## <a name="using-screenlock"></a>ScreenLock を使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-screenlock"></a>ScreenLock の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-画面のロック機能を呼び出すことで機能、`RequestActive`と`RequestRelease`からオフにすると、画面を要求するメソッド。
+画面ロック機能を使用するには、`RequestActive` および `RequestRelease` メソッドを使用して、画面のロックを有効または無効にします。
 
 ```csharp
 public class ScreenLockTest
@@ -43,5 +47,5 @@ public class ScreenLockTest
 
 ## <a name="api"></a>API
 
-- [画面のロックのソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/ScreenLock)
-- [画面のロックの API ドキュメント](xref:Xamarin.Essentials.ScreenLock)
+- [ScreenLock のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/ScreenLock)
+- [ScreenLock API のドキュメント](xref:Xamarin.Essentials.ScreenLock)

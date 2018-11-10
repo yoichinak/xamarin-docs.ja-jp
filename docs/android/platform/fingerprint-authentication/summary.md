@@ -1,44 +1,44 @@
 ---
-title: 指紋認証ガイダンス
+title: 指紋認証のガイダンス
 ms.prod: xamarin
 ms.assetid: B40332CC-8123-4150-B47E-996214388842
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2b66c3660f6d8af9217089a7615784957fcc6ed7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3baaaef22916354a6fab28b0b0c6358c9bc25c91
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763307"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114913"
 ---
-# <a name="fingerprint-authentication-guidance"></a>指紋認証ガイダンス
+# <a name="fingerprint-authentication-guidance"></a>指紋認証のガイダンス
 
-## <a name="fingerprint-authentication-guidance"></a>指紋認証ガイダンス
+## <a name="fingerprint-authentication-guidance"></a>指紋認証のガイダンス
 
-概念は、これまで見てきたし、Android 6.0 を囲む Api 指紋認証、指紋 Api を使用するための一般的なアドバイスについて説明します。
+概念きましたし、Android 6.0 を囲む Api 指紋認証、指紋 Api を使用するための一般的なアドバイスについて説明します。
 
-1. **Android のサポート ライブラリ v4 互換性 Api を使用して**&ndash;これをコードから API チェックを削除することで、アプリケーション コードを簡略化し、最も可能性のデバイスを対象とするアプリケーションを許可します。
-2. **代替手段指紋認証を提供**&ndash;指紋認証は、アプリケーションのユーザーを認証するための優れた、クイック方法、ただし、それを想定できないことには常に作業したり利用可能にします。 か可能性こと指紋スキャナーが失敗する可能性があります、レンズはおそらくダーティで、ユーザーに指紋認証を使用するデバイスを構成ことがない可能性があります、指紋が不足しているのでがなった。 ユーザーがアプリケーションを使用して、指紋認証を使用する希望可能性がありますしないこともできます。 これらの理由から、Android アプリケーションは、ユーザー名やパスワードなどの代替の認証プロセスを提供する必要があります。
-3. **Google の指紋アイコンを使用して**&ndash;すべてのアプリケーションが Google から提供される同じ指紋アイコンを使用する必要があります。 標準的なアイコンを使用できるようになります Android ユーザー アプリで指紋認証が使用される場所を認識します。 
+1. **Android サポート ライブラリ v4 互換性 Api を使用して** &ndash; API チェックをコードから削除することで、アプリケーション コードを簡略化され、最も可能性のデバイスを対象とするアプリケーションが許可されます。
+2. **指紋認証に代わる手段を提供**&ndash;指紋認証がユーザーを認証するアプリケーションの優れた、簡単な方法で、ただし、その想定できない、または常に作業ができることです。 いる指紋スキャナーが失敗する可能性があります、レンズかもしれませんダーティ、ユーザーに指紋認証を使用するデバイスを構成ことがない可能性があります、指紋のため不明になったことができます。 ユーザーがアプリケーションで指紋認証を使用するに行わないこともできます。 これらの理由から、Android アプリケーションは、ユーザー名とパスワードなど、代替の認証プロセスを提供する必要があります。
+3. **Google の指紋アイコンを使用して**&ndash;すべてのアプリケーションが Google から提供される同じ指紋アイコンを使用する必要があります。 標準的なアイコンの使用を簡単にアプリで指紋認証が使用されていることを認識する Android ユーザー向け。 
     
     ![Android の指紋アイコン](summary-images/ic-fp-40px.png)
     
-4. **ユーザーに通知する**&ndash;アプリケーションは、いくつかの種類の指紋スキャナーがアクティブであるユーザーに通知を表示する必要がありますとタッチまたはスワイプを待機します。 
+4. **ユーザーに通知する**&ndash;アプリケーションは、ある種の指紋スキャナーがアクティブであるユーザーに通知を表示する必要があり、タッチまたはスワイプを待機しています。 
 
 ## <a name="summary"></a>まとめ
 
-指紋認証は、アプリ内購入など、機密性の高い機能と対話するユーザーに容易にユーザーをすばやく検証 Xamarin.Android アプリケーションを許可する優れた方法です。 このガイドでは、概念と API が Xamarin.Android アプリケーションでの Android 6.0 指紋を組み込むために必要なコードについて説明します。
+指紋認証は、ユーザー、アプリ内購入など、機密性の高い機能との対話をユーザーに、簡単に迅速に確認の Xamarin.Android アプリケーションを許可する優れた方法です。 このガイドでは、概念と API は、Xamarin.Android アプリケーションでの Android 6.0 フィンガー プリントを組み込むために必要なコードについて説明します。
 
-API の自体には、指紋を説明した最初`FingerprintManager`(および`FingerprintManagerCompat`)。 について説明しましたが、どのように`FingerprintManager.AuthenticationCallbacks`抽象クラスは、アプリケーションによって拡張し、指紋ハードウェアと、アプリケーション自体の間の媒介として使用する必要があります。 Java を使用して指紋スキャナーの結果の整合性を確認する方法について説明しましたし、`Cipher`オブジェクト。 最後に、触れたもう少しデバイスで指紋を登録する方法を説明しを使用して、テストで**adb**をエミュレーターで指紋スワイプをシミュレートします。 
+API の自体、指紋を説明した最初`FingerprintManager`(と`FingerprintManagerCompat`)。 調べる方法、`FingerprintManager.AuthenticationCallbacks`抽象クラスは、アプリケーションによって拡張および指紋ハードウェアとアプリケーション自体の間の仲介役として使用する必要があります。 Java を使用して指紋スキャナーの結果の整合性を検証する方法について確認しましたし`Cipher`オブジェクト。 最後に、説明したビットを使用して、デバイスで指紋を登録する方法を説明するテスト**adb**をエミュレーターで指紋スワイプをシミュレートします。 
 
-完了していない場合かを確認、[サンプル アプリケーション](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)このガイドに付属しています。 [指紋ダイアログ サンプル](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)Xamarin.Android に Java から移植されたし、指紋認証 Android アプリケーションを追加する方法の別の例を提供します。
+まだ行っていない、する必要がありますを調べて、[サンプル アプリケーション](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)このガイドに付属します。 [指紋ダイアログ サンプル](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)Java から Xamarin.Android に移植されていますが、Android アプリケーションに指紋認証を追加する方法の別の例を提供します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [指紋ガイド サンプル アプリ](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)
+- [指紋のガイド サンプル アプリ](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)
 - [指紋ダイアログのサンプル](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
-- [指紋アイコン](https://developer.android.comhttps://developer.xamarin.com/samples/FingerprintDialog/res/drawable-hdpi/ic_fp_40px.html)
+- [指紋アイコン](https://developer.android.com https://developer.xamarin.com/samples/FingerprintDialog/res/drawable-hdpi/ic_fp_40px.html)

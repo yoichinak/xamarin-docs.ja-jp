@@ -1,38 +1,42 @@
 ---
-title: 'Xamarin.Essentials: バージョン管理'
-description: Xamarin.Essentials で VersionTracking クラスでは、アプリケーションのバージョンを確認することができ、ビルド番号が、最初にある場合、このような追加情報を表示すると共に、アプリケーションの起動をこれまでの時間または、現在のバージョンでは、前回のビルドを取得については、その他
+title: 'Xamarin.Essentials: バージョン追跡'
+description: Xamarin.Essentials の VersionTracking クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、アプリケーションの初めての起動か現在のバージョンかや、前回のビルドの情報などの追加情報を見ることができます。
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 81dc67fa5a4975f31d0fbf9f7219637596a827ce
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 1eae0bf7c21dd7efa7655633896bdb2897f9d782
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353660"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674861"
 ---
-# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: バージョン管理
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: バージョン追跡
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**VersionTracking**クラスでは、アプリケーションのバージョンを確認することができ、これまでに起動するアプリケーションまたは現在のバージョンの取得前が最初にある場合、このような追加情報を表示すると共に、ビルド番号ビルド情報など。
+**VersionTracking** クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、今まで一度も起動されたことのないアプリケーションの初めての起動か、現在のバージョンの起動か、前回のビルドの情報などの追加情報を見ることができます。
 
-## <a name="using-version-tracking"></a>バージョンの追跡を使用
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-version-tracking"></a>VersionTracking の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-初めて使用する、 **VersionTracking**クラスの現在のバージョンの追跡を開始します。 呼び出す必要があります`Track`が読み込まれた現在のバージョン情報が追跡されるたびに、アプリケーションにのみ。
+**VersionTracking** クラスを初めて使用すると、最初に現在のバージョンが追跡されます。 アプリケーションが読み込まれるたびにのみ早く `Track` を呼び出して現在のバージョン情報が追跡されるようにする必要があります。
 
 ```csharp
 VersionTracking.Track();
 ```
 
-初期後`Track`と呼びますバージョン情報を読み取ることができます。
+最初に `Track` を呼びした後は、次のバージョン情報を読み取ることができます。
 
 ```csharp
 
@@ -72,9 +76,9 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-使用してすべてのバージョン情報を格納、[設定](preferences.md)Xamarin.Essentials で API のファイル名では **[YOUR-アプリのパッケージの ID].xamarinessentials.versiontracking**に従って同じ記載されているデータの永続化、[設定](preferences.md#persistence)ドキュメント。
+すべてのバージョン情報は Xamarin.Essentials の [Preferences](preferences.md) API を使用して格納され、**<アプリ パッケージ ID>.xamarinessentials.versiontracking** というファイル名で保存され、「[ユーザー設定](preferences.md#persistence)」で説明されているのと同じデータ永続化に従います。
 
 ## <a name="api"></a>API
 
-- [バージョンの追跡のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
-- [バージョンの追跡の API ドキュメント](xref:Xamarin.Essentials.VersionTracking)
+- [VersionTracking のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [VersionTracking API のドキュメント](xref:Xamarin.Essentials.VersionTracking)

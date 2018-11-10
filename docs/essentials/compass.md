@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: Compass'
-description: このドキュメントでは、Xamarin.Essentials で、デバイスの方位は磁北見出しを監視することができます、コンパス クラスについて説明します。
+title: 'Xamarin.Essentials: コンパス'
+description: このドキュメントで説明する Xamarin.Essentials の Compass クラスを使用すると、デバイスの磁北方位を監視することができます。
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: c3fe98c384a87bdc08ce94e7537d1a6343767561
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 51812f9b4f88d77bf553a26ef3a6802239e338e0
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353884"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675498"
 ---
-# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: コンパス
 
-![NuGet にプレリリースします。](~/media/shared/pre-release.png)
+![プレリリースの NuGet](~/media/shared/pre-release.png)
 
-**Compass**クラスを使用して、デバイスの方位は磁北見出しを監視できます。
+**Compass** クラスを使用すると、デバイスの磁北方位を監視することができます。
 
-## <a name="using-compass"></a>Compass を使用します。
+## <a name="get-started"></a>作業開始
 
-クラスで Xamarin.Essentials への参照を追加します。
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-compass"></a>Compass の使用
+
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Compass 機能が呼び出すことによって、`Start`と`Stop`コンパスへの変更をリッスンするメソッド。 加えた変更は通過して送信、`ReadingChanged`イベント。 次に例を示します。
+Compass の機能は、ジコンパスの変化をリッスンする `Start` および `Stop` メソッドを呼び出すことで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 次に例を示します。
 
 ```csharp
 public class CompassTest
@@ -74,25 +78,25 @@ public class CompassTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android では、コンパスを取得するため、API は提供されません。 Google によって推奨されている方位は磁北見出しを計算する磁力計、加速度計を利用します。
+Android には、コンパスの方位を取得するための API はありません。 Google の推奨に従い、加速度計と磁気探知器を利用して磁北方位を計算します。
 
-まれに、おそらく結果が表示一貫性のない、センサーを調整する必要があるため図 8 を描くように、デバイスを移動する処理も行われます。 Google マップを開きのドットを現在の場所をタップして選択にこれは最善の方法で行う**調整 compass**します。
+まれに、8 の字を描くようにデバイスを動かしたときなど、センサーの調整が必要なために、一貫性のない結果が表示されることがあります。 これを行う最善の方法は、Google マップを開き、場所のドットをタップして、**[Calibrate compass]\(場所の調整\)** を選択します。
 
-センサー速度の調整を同時に、アプリから複数のセンサーを実行している可能性がありますに注意します。
+アプリから同時に複数のセンサーを実行すると、センサーの速度が調整される場合があることに注意してください。
 
-## <a name="low-pass-filter"></a>低域フィルター
+## <a name="low-pass-filter"></a>ローパス フィルター
 
-方法のため Android コンパスの値が更新され、計算値を滑らかにする必要がある可能性があります。 A_低渡すフィルター_適用できる角度の正弦と余弦の値の平均値を設定してオンにできます、`ApplyLowPassFilter`プロパティを`Compass`クラス。
+Android コンパスの値が更新および計算される方法のため、値の平滑化が必要な場合があります。 角度のサイン値とコサイン値の平均を計算する "_ローパス フィルター_" を適用でき、`Compass` クラスの `ApplyLowPassFilter` プロパティを設定してオンにできます。
 
 ```csharp
 Compass.ApplyLowPassFilter = true;
 ```
 
-これは、Android プラットフォームでのみ適用されます。 詳細についてが読み取れる[ここ](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860)。
+これは、Android プラットフォームでのみ適用されます。 詳しくは、[こちら](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860)をご覧ください。
 
 --------------
 
 ## <a name="api"></a>API
 
-- [コンパスのソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
-- [コンパスの API ドキュメント](xref:Xamarin.Essentials.Compass)
+- [Compass のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Compass API のドキュメント](xref:Xamarin.Essentials.Compass)

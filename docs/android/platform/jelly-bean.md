@@ -1,42 +1,42 @@
 ---
-title: ゼリー Bean の機能
-description: 'このドキュメントでは、Android 4.1 で導入された開発者向けの新機能の高レベルの概要を説明します。 これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。'
+title: Jelly Bean の機能
+description: 'このドキュメントでは、Android 4.1 で導入された開発者向け新機能の概要を説明します。 これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。'
 ms.prod: xamarin
 ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1d8068ccfc8d0f159a88704370261ec5f20d8b7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e83c9a8c1e2740596a981598cafbbfb65e2caf2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771552"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119242"
 ---
-# <a name="jelly-bean-features"></a>ゼリー Bean の機能
+# <a name="jelly-bean-features"></a>Jelly Bean の機能
 
-_このドキュメントでは、Android 4.1 で導入された開発者向けの新機能の高レベルの概要を説明します。これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。_
+_このドキュメントでは、Android 4.1 で導入された開発者向け新機能の概要を説明します。これらの機能が含まれます: Android ビーム マルチ メディア、ピア ツー ピア ネットワーク探索、アニメーション、新しいアクセス許可の更新プログラム、大きなファイルを共有する更新プログラムの通知を強化します。_
 
 
 
 ## <a name="overview"></a>概要
 
-Android 4.1 (API レベル 16、)、ゼリー Bean"とも呼ばれる"が、2012 年 7 月 9 日にリリースしました。 この記事では、Android 4.1 の新機能のいくつかに高レベルな概要を Xamarin.Android を使用する開発者に提供します。 導入されたこれらの新機能の一部は、アクティビティ、カメラ、新しいサウンドとアプリケーション スタックのナビゲーションのサポートの改善を起動するためのアニメーションの機能強化です。 切り取りし、意図的での貼り付けをすることは今すぐです。
+Android 4.1 (API レベル 16、)、Jelly Bean"とも呼ばれます"は、2012 年 7 月 9 日にリリースしました。 この記事では、開発者が Xamarin.Android を使用して高レベルな概要については、Android 4.1 の新機能の一部に提供されます。 導入されたこれらの新機能の一部は、アクティビティ、カメラの場合は、新しいサウンドとアプリケーション スタックのナビゲーションのサポートの強化を起動するためのアニメーションの機能強化です。 切り取ってインテントに貼り付けることはようになりました。
 
-Android アプリケーションの安定性が不安定なコンテンツ プロバイダーへの依存関係を分離する機能を向上します。 サービスもあります分離は、それらを開始するアクティビティによってのみアクセスできるようにします。
+Android アプリケーションの安定性が不安定なコンテンツ プロバイダーへの依存関係を分離する機能を向上します。 サービスは、それらを開始したアクティビティによってのみアクセスできるように分離あります。
 
-サポートが追加されましたネットワーク探索を使用してサービスの Bonjour、UPnP、またはマルチキャスト DNS ベースのサービスです。 可能であれば今すぐテキスト、アクション ボタンと大きいイメージの形式が豊富に通知します。
+サポートは、Bonjour、UPnP、またはマルチキャストの DNS ベースのサービスのネットワーク サービスの検出を使用して追加がされました。 高度な通知に書式設定されたテキスト、アクション ボタンおよびサイズの大きなイメージをなる可能性が生まれます。
 
 最後に Android 4.1 では、いくつかの新しいアクセス許可が追加されました。
 
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-Xamarin.Android アプリケーションの開発に使用するゼリー Bean 必要 Xamarin.Android 4.2.6 または高い値と Android 4.1 (API レベル 16) は、次のスクリーン ショットに示すように、Android SDK Manager を使用してにインストールします。
+必要があります Xamarin.Android を Jelly Bean を使用して Xamarin.Android アプリケーションを開発する 4.2.6 または高い、Android 4.1 (API レベル 16) は、次のスクリーン ショットに示すように、Android SDK Manager を使用してにインストールします。
 
-[![Android SDK Manager で Android 4.1 の選択](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
+[![Android SDK Manager での Android 4.1 の選択](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
 
 
@@ -46,11 +46,11 @@ Xamarin.Android アプリケーションの開発に使用するゼリー Bean �
 
 ### <a name="animations"></a>Animations
 
-使用してズーム アニメーションまたはカスタム アニメーションのいずれかを使用してアクティビティを起動する可能性があります、`ActivityOptions`クラスです。 これらのアニメーションをサポートするためには、次の新しいメソッドが用意されています。
+使用してズーム アニメーションまたはカスタム アニメーションのいずれかを使用してアクティビティを起動する可能性があります、`ActivityOptions`クラス。 これらのアニメーションをサポートするためには、次の新しいメソッドが用意されています。
 
--   `MakeScaleUpAnimation` – これは、開始位置と、画面上のサイズから、[アクティビティ] ウィンドウを拡大縮小するアニメーションで作成されます。
--   `MakeThumbnailScaleUpAnimation` – これは、画面上の指定位置からサムネイル イメージからに応じてスケール アップするアニメーションを作成します。
--   `MakeCustomAnimation` – これは、アプリケーションのリソースからアニメーションを作成します。 アクティビティが起動したときに 1 つのアニメーションと別のアクティビティを停止する場合があります。
+-   `MakeScaleUpAnimation` – これにより、開始位置とサイズ、画面上のアクティビティ ウィンドウを拡大/縮小するアニメーションが作成されます。
+-   `MakeThumbnailScaleUpAnimation` – これにより、画面上の指定した位置からサムネイル イメージからスケール アップするアニメーションが作成されます。
+-   `MakeCustomAnimation` – これは、アプリケーション内のリソースからアニメーションを作成します。 アクティビティが開かれたときの 1 つのアニメーションと別のアクティビティが停止したときがあります。
 
 
 新しい`TimeAnimator`クラス インターフェイスを提供する`TimeAnimator.ITimeListener`アニメーションのフレームが変更されるたびにアプリケーションに通知することができます。 たとえば、次の実装の`TimeAnimator.ITimeListener`:
@@ -65,7 +65,7 @@ class MyTimeListener : Java.Lang.Object,  TimeAnimator.ITimeListener
 }
 ```
 
-クラスのインスタンスを使用して今すぐ`TimeAnimator`が作成され、リスナーを設定。
+次に、クラスのインスタンスを使用する`TimeAnimator`が作成され、リスナーが設定されます。
 
 ```csharp
 var animator = new TimeAnimator();
@@ -73,31 +73,31 @@ animator.SetTimeListener(new MyTimeListener());
 animator.Start();
 ```
 
-として、`TimeAnimator`インスタンスが実行されているを呼び出す`ITimeAnimator.ITimeListener`方法がログインし、長いアニメーターされました実行時間それ以来、最後に、メソッドとして呼び出されています。
+として、`TimeAnimator`インスタンスが実行されているを呼び出す`ITimeAnimator.ITimeListener`方法がログインし、アニメーターが長い間実行し、どのくらいの期間にように、前回以来、メソッドが呼び出されたでした。
 
 
 
 ### <a name="application-stack-navigation"></a>アプリケーション スタックのナビゲーション
 
-Android 4.1 は、Android 3.0 で導入されたアプリケーション スタックのナビゲーションを向上します。 指定して、`ParentName`のプロパティ、 `ActivityAttribute`、Android は、ユーザーが押すと、適切な親アクティビティを開くことができます、 [ ボタン](http://developer.android.com/design/patterns/navigation.html#up-vs-back)Android 操作バーで、で指定されたアクティビティがインスタンス化され`ParentName`プロパティです。 これにより、特定のタスクを構成するアクティビティの階層を保持するためにアプリケーションです。
+Android 4.1 の Android 3.0 で導入されたアプリケーション スタックのナビゲーションが向上します。 指定することによって、`ParentName`のプロパティ、 `ActivityAttribute`、Android は、ユーザーが押したときに適切な親アクティビティを開くことができます、[上方向ボタン](http://developer.android.com/design/patterns/navigation.html#up-vs-back)Android には、操作バーの上、で指定されたアクティビティがインスタンス化`ParentName`プロパティ。 これにより、特定のタスクを構成するアクティビティの階層を保持するアプリケーション。
 
-ほとんどのアプリケーションの設定、`ParentName`アクティビティではアプリケーション スタックを移動するため、正しい動作を提供する Android 用の十分な情報Android では、インテントの親アクティビティごとの系列を作成することで、必要なバック スタックを合成するされます。 ただし、これは、架空のアプリケーション スタックであるため、各代理の活動は、自然なアクティビティが、保存された状態がありません。 アクティビティはオーバーライド代理親アクティビティに保存された状態を提供する、`OnPrepareNavigationUpTaskStack`メソッドです。 このメソッドは受信、 `TaskStackBuilder` Android の使用は、バック スタックを作成することを目的のコレクションを持つインスタンスのオブジェクトします。 アクティビティは代理の活動が作成されると、適切な状態情報を受信するため、これらの意図的に変更できます。
+ほとんどのアプリケーション設定、`ParentName`アクティビティには、アプリケーション スタックを移動するための正しい動作を提供する Android 用の十分な情報Android は親アクティビティごとに一連のインテントを作成して、必要に応じてバック スタックを合成します。 ただし、これは人為的なアプリケーション スタックであるため、各代理の活動は自然なアクティビティが、保存された状態がありません。 アクティビティはオーバーライドの代理の親アクティビティに保存された状態を提供する、`OnPrepareNavigationUpTaskStack`メソッド。 このメソッドは受信、 `TaskStackBuilder` Android が戻るスタックの作成に使用することを目的のコレクションを持つインスタンスのオブジェクトします。 アクティビティは、代理の活動が作成されると、適切な状態情報を受信するため、これらのインテントを変更できます。
 
-複雑なシナリオにはナビゲーションの動作の処理し、バック スタックを構築するために使用するアクティビティ クラスに新しいメソッドがあります。
+複雑なシナリオは、ナビゲーションの動作を処理し、戻るスタックを構築するために使用するアクティビティ クラスに新しいメソッドがあります。
 
--   `OnNavigateUp` – このメソッドをオーバーライドすることが、カスタム アクションを実行するときに、<span class="ui">を</span>ボタンが押されました。
--   `NavigateUpTo` – このメソッドを呼び出すと、特定の目的で指定されたアクティビティに、現在のアクティビティから移動するアプリケーションが発生します。
--   `ParentActivityIntent` – これは、現在のアクティビティの親アクティビティを起動する目的の取得に使用します。
--   `ShouldUpRecreateTask` – この方法は、使用して照会かどうかは合成バック スタックを作成して、親アクティビティに移動する必要があります。 返します`true`場合は、合成のスタックを作成する必要があります。 
--   `FinishAffinity` – このメソッドを呼び出すと、現在の活動と活動をすべて下にある現在のタスクを同じタスクのアフィニティを持つが完了します。
--   `OnCreateNavigateUpTaskStack` – この方法は、合成のスタックを作成する方法を完全に制御する必要がある場合はオーバーライドされます。
+-   `OnNavigateUp` – このメソッドをオーバーライドしてカスタム アクションを実行することはときに、<span class="ui">を</span>ボタンが押されました。
+-   `NavigateUpTo` – このメソッドを呼び出すと、現在のアクティビティから特定の目的で指定されたアクティビティに移動するアプリケーションが発生します。
+-   `ParentActivityIntent` – これを使用して、現在のアクティビティの親アクティビティを起動するインテントを取得できます。
+-   `ShouldUpRecreateTask` – このメソッドは、クエリ、親アクティビティまで移動する代理戻るスタックを作成する必要があるかどうかに使用されます。 返します`true`場合は、合成のスタックを作成する必要があります。 
+-   `FinishAffinity` – 現在のアクティビティとすべてのアクティビティ下にある現在のタスクを同じタスクのアフィニティを持つ、このメソッドの呼び出しが完了します。
+-   `OnCreateNavigateUpTaskStack` – このメソッドは、合成のスタックを作成する方法を完全に制御する必要がある場合にオーバーライドされます。
 
 
 
 
 ### <a name="camera"></a>カメラ
 
-新しいインターフェイスがある`Camera.IAutoFocusMoveCallback`、自動フォーカスが開始または移動を停止したときを検出するために使用できます。 この新しいインターフェイスの例は、次のスニペットで参照できます。
+新しいインターフェイス、 `Camera.IAutoFocusMoveCallback`、自動フォーカスが開始または停止を移動するときに検出するために使用できます。 この新しいインターフェイスの例は、次のスニペットで確認できます。
 
 ```csharp
 public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
@@ -118,15 +118,15 @@ public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
 }
 ```
 
-新しいクラス`MediaActionSound`さまざまなメディアのアクションのサウンドを生成するための API のセットを提供します。 これらは、列挙型によって定義されます、カメラで発生することがいくつかの操作`Android.Media.MediaActionSoundType`:
+新しいクラス`MediaActionSound`音のさまざまなメディアの操作を生成するための API のセットを提供します。 これらは列挙型で定義されているカメラで発生することがいくつかの操作`Android.Media.MediaActionSoundType`:
 
--   `MediaActionSoundType.FocusComplete` – この再生されるサウンドをフォーカス設定が完了するとします。
--   `MediaActionSoundType.ShutterClick` – 静止画像写真を撮るときに、このサウンドが再生されます。
--   `MediaActionSoundType.StartVideoRecording` – このサウンドが使用するビデオ記録の開始を示します。
+-   `MediaActionSoundType.FocusComplete` – 重点を置くことが完了したときに再生されるサウンドこのにします。
+-   `MediaActionSoundType.ShutterClick` – このサウンドは、静止画像写真の作成時に再生されます。
+-   `MediaActionSoundType.StartVideoRecording` – このサウンドが使用されるビデオ記録の開始を示します。
 -   `MediaActionSoundType.StopVideoRecording` – ビデオ記録の終了を示すこのサウンドが再生されます。
 
 
-使用する方法の例、`MediaActionSound`クラスは、次のスニペットで参照できます。
+使用する方法の例、`MediaActionSound`クラスは、次のスニペットで確認できます。
 
 ```csharp
 var mediaActionPlayer = new MediaActionSound();
@@ -151,111 +151,111 @@ mediaActionPlayer.Release();
 
 #### <a name="android-beam"></a>Android ビーム
 
-Android のビームは、互いに通信するために 2 つの Android デバイスでできる NFC ベース テクノロジです。 Android 4.1 では、大きなファイルの転送を適切にサポートを提供します。 新しいメソッドを使用して`NfcAdapter.SetBeamPushUris()`Android 切り替えることは代替のトランスポート機構 (Bluetooth) など、高速転送速度を実現するためにします。
+Android ビームは、互いに通信する 2 つの Android デバイスを許可する NFC ベース テクノロジです。 Android 4.1 では、大きなファイルの転送のサポートの向上を提供します。 新しいメソッドを使用して`NfcAdapter.SetBeamPushUris()`Android は高速転送速度を達成するために代替トランスポート機構 (Bluetooth) などの間で切り替わります。
 
 
 
 #### <a name="network-services-discovery"></a>ネットワーク サービスの検出
 
-Android 4.1 には、DNS ベースのマルチキャスト サービス検出用の新しい API が含まれています。
-これにより、アプリケーションを検出し、プリンター、カメラ、およびメディア デバイスなどの他のデバイスに Wi-fi 経由で接続できます。 これらの新しい API は、`Android.Net.Nsd`パッケージです。
+Android 4.1 には、マルチキャストの DNS ベースのサービスの検出の新しい API が含まれています。
+これにより、アプリケーションを検出し、プリンター、カメラ、メディア デバイスなどの他のデバイスに Wi-fi 経由で接続できます。 これらの新しい API は、`Android.Net.Nsd`パッケージ。
 
-他のサービスが消費されるサービスを作成する、`NsdServiceInfo`クラスは、サービスのプロパティを定義するオブジェクトを作成するために使用します。 このオブジェクトは提供され、`NsdManager.RegisterService()`の実装と共に`NsdManager.ResolveListener`です。 実装`NsdManager.ResolveListener`登録の成功を通知して、サービスの登録を解除に使用されます。
+その他のサービスで使用できるサービスを作成する、`NsdServiceInfo`クラスは、サービスのプロパティを定義するオブジェクトの作成に使用します。 このオブジェクトは提供され、`NsdManager.RegisterService()`の実装と共に`NsdManager.ResolveListener`します。 実装`NsdManager.ResolveListener`は正常に登録されるを通知して、サービスの登録を解除するために使用します。
 
-実装と、ネットワーク上のサービスを検出する`Nsd.DiscoveryListener`に渡される`NsdManager.discoverServices()`です。
+ネットワークの実装上のサービスを検出する`Nsd.DiscoveryListener`に渡される`NsdManager.discoverServices()`します。
 
 
 
 #### <a name="network-usage"></a>ネットワーク使用率
 
-新しいメソッド`ConnectivityManager.IsActiveNetworkMetered`デバイスを従量制ネットワークに接続されているかどうかを確認できます。 このメソッドは、正確にユーザーに通知するデータの操作の負荷の高い料金が存在する可能性がありますでデータの使用状況を管理するために使用できます。
+新しいメソッド、`ConnectivityManager.IsActiveNetworkMetered`デバイスを従量制ネットワークに接続されているかどうかを確認できます。 このメソッドは、データ操作の負荷の高い料金が存在する可能性をユーザーに正確に通知してデータの使用状況を管理するために使用できます。
 
 
 
 #### <a name="wifi-direct-service-discovery"></a>WiFi ダイレクト サービスの検出
 
-`WifiP2pManager`クラスがサポートするために Android 4.0 で導入された*zeroconf*です。 Zeroconf (0 はネットワークを構成する) は、人間のネットワーク オペレーター、または特別な構成サーバーの操作でデバイス (コンピューター、プリンター、携帯電話) に自動的には、ネットワークに接続できるようにする一連の技法がします。
+`WifiP2pManager`クラスがサポートするために Android 4.0 で導入された*zeroconf*します。 Zeroconf (0 はネットワークを構成する) は、人間のネットワーク オペレーター、または特別な構成サーバーの操作でのデバイス (コンピューター、プリンター、スマート フォン) を自動的には、ネットワークに接続を許可する手法のセットです。
 
-ゼリー Bean の`WifiP2pManager`最寄りのいずれかを使用してデバイスを検出できる*Bonjour*または*Upnp*です。 Bonjour は、zeroconf の Apple の実装です。 Upnp は zeroconf をサポートするネットワーク プロトコルの設定されています。 次のメソッドに追加された、 `WiFiP2pManager` Wi-fi サービス検出をサポートします。
+Jelly Bean で`WifiP2pManager`近くのいずれかを使用してデバイスを検出できる*Bonjour*または*Upnp*します。 Bonjour は、zeroconf の Apple の実装です。 Upnp は zeroconf をサポートするネットワーク プロトコルのセットです。 次のメソッドに追加、 `WiFiP2pManager` Wi-fi サービス検出をサポートします。
 
--   `AddLocalService()` このメソッドは、使用のピアで検出、Wi-fi 経由でサービスとしてアプリケーションを発表します。
--   `AddServiceRequest(` ) – この方法は、フレームワークにサービス探索要求を送信します。 Wi-fi サービスの検出を初期化するために使用されます。
--   `SetDnsSdResponseListeners()` – この方法は Bonjour から検出要求に対する応答を受け取ると呼び出されるコールバックを登録するために使用します。
--   `SetUpnpServiceResponseListener()` – この方法は検出要求 Upnp への応答を受け取ると呼び出されるコールバックを登録するために使用します。
+-   `AddLocalService()` – このメソッドが使用されるピア検出 Wi-fi 経由でサービスとしてアプリケーションを発表します。
+-   `AddServiceRequest(` ) – この方法は、フレームワークにサービス探索要求を送信します。 Wi-fi のサービスの検出を初期化するために使用されます。
+-   `SetDnsSdResponseListeners()` – このメソッドは、Bonjour から検出要求に対する応答を受け取ると呼び出されるコールバックを登録に使用されます。
+-   `SetUpnpServiceResponseListener()` – このメソッドは、Upnp の検出要求に対する応答を受け取ると呼び出されるコールバックを登録に使用されます。
 
 
 
 
 ### <a name="content-providers"></a>コンテンツ プロバイダー
 
-`ContentResolver`クラスの新しいメソッドが受信した`AcquireUnstableContentProvider`です。 このメソッドは、「不安定」のコンテンツ プロバイダーを取得するアプリケーションを使用します。 通常、クラッシュしたアプリケーションが、コンテンツ プロバイダーとそのコンテンツ プロバイダーを獲得する場合、アプリケーションもロールバックされます。 このメソッドの呼び出しでは、コンテンツ プロバイダーがクラッシュした場合場合にいない、アプリケーションがクラッシュします。 代わりに、`Android.OS.DeadObjectionException`コンテンツ プロバイダーがなくなったアプリケーションを通知するために、コンテンツ プロバイダーの呼び出しからスローされます。 「不安定」のコンテンツ プロバイダーは、他のアプリケーションからのコンテンツ プロバイダーと対話するときに役立ちます: 別のアプリケーションからのバグのあるコードが別のアプリケーションに影響することはあまり考えられません。
+`ContentResolver`クラスには、新しいメソッドが受信した`AcquireUnstableContentProvider`します。 このメソッドは、「不安定」のコンテンツ プロバイダーを取得するアプリケーションを使用します。 通常、クラッシュ、アプリケーションがコンテンツ プロバイダー、およびそのコンテンツ プロバイダーを獲得する場合、する際に、アプリケーション。 このメソッドの呼び出しで、コンテンツ プロバイダーがクラッシュした場合、アプリケーションがクラッシュしません。 代わりに、`Android.OS.DeadObjectionException`コンテンツ プロバイダーがなくなったアプリケーションを通知するために、コンテンツ プロバイダーの呼び出しからスローされます。 「不安定」のコンテンツ プロバイダーは、他のアプリケーションからコンテンツ プロバイダーとやり取りするときに便利です – 別のアプリケーションからのバグのあるコードが別のアプリケーションに影響する可能性が低くなります。
 
 
 
-### <a name="copy-and-paste-with-intents"></a>コピーと貼り付けの目的で
+### <a name="copy-and-paste-with-intents"></a>コピーと貼り付けのインテント
 
-`Intent`クラスが持つができるようになりました、`ClipData`オブジェクトを使用してそれに関連付けられている、`Intent.ClipData`プロパティです。 このメソッドは、クリップボードから余分なデータの目的で転送することができます。 インスタンス`ClipData`1 つ以上含めることができます`ClipData.Item`です。 `ClipData.Item`次の種類のアイテムであります。
+`Intent`クラスを指定できます、`ClipData`経由でそれに関連付けられているオブジェクト、`Intent.ClipData`プロパティ。 このメソッドは、クリップボードから余分なデータの目的で送信できます。 インスタンス`ClipData`1 つまたは複数含めることができます`ClipData.Item`します。 `ClipData.Item`次の種類のアイテムには。
 
--   **テキスト**– これは、任意の文字列のいずれかの HTML または組み込み Android スタイルでフォーマットがサポートされている任意の文字列にまたがるです。
+-   **テキスト**– これは、任意の文字列のいずれかの HTML または組み込みの Android スタイルによって形式がサポートされている任意の文字列にまたがます。
 -  **インテント**: 任意`Intent`オブジェクト。
--   **Uri** – HTTP ブックマークやコンテンツ プロバイダーへの URI などの任意の URI を指定できます。
+-   **Uri** – HTTP のブックマークをやコンテンツ プロバイダーへの URI など、任意の URI を指定できます。
 
 
 
 
 ### <a name="isolated-services"></a>分離サービス
 
-分離のサービスは、ですが、独自の特殊なプロセスで実行して、独自のアクセス許可を持たないサービスです。 場合にのみ、サービスとの通信は、サービスを開始し、サービス API を使用してバインドします。 プロパティを設定して、サービスを分離としてを宣言することは`IsolatedProcess="true"`で、`ServiceAttribute`サービス クラスを adorns です。
+独立したサービスは、サービスを独自の特別なプロセスで実行され、独自のアクセス許可がありません。 サービスとのみ通信は、ときにサービスを開始して、サービス API を使用してバインドします。 プロパティを設定して、サービスを分離としてを宣言することは`IsolatedProcess="true"`で、`ServiceAttribute`サービス クラスのものです。
 
 
 ### <a name="media"></a>メディア
 
-新しい`Android.Media.MediaCodec`クラスは低レベルの media コーデックの API を提供します。 アプリケーションでは、デバイスにどのような低レベルのコーデックは、システムを照会できます。
+新しい`Android.Media.MediaCodec`クラスには、低レベルの media コーデックの API が用意されています。 アプリケーションでは、どのような低レベルのコーデックは、デバイスで使用可能なシステムをクエリできます。
 
-新しい`Android.Media.Audiofx.AudioEffect`サブクラスが処理前のキャプチャされたオーディオの他のオーディオをサポートするために追加されました。
+新しい`Android.Media.Audiofx.AudioEffect`処理前のキャプチャされたオーディオの追加のオーディオをサポートするサブクラスが追加されています。
 
--   `Android.Media.Audiofx.AcousticEchoCanceler` このクラスはキャプチャされたオーディオ信号からリモート パーティからの信号を削除するオーディオを事前処理するために使用されます。 たとえば、音声通信アプリケーションからエコーを削除しています。
--   `Android.Media.Audiofx.AutomaticGainControl` このクラスは、ブースティングまたは出力信号が定数になるように入力信号を下げることによってキャプチャされた信号を正規化する使用されます。
--   `Android.Media.Audiofx.NoiseSuppressor` このクラスは、キャプチャされた信号からバック グラウンド ノイズを除去します。
+-   `Android.Media.Audiofx.AcousticEchoCanceler` -このクラスは、キャプチャしたオーディオ信号からリモート パーティからの信号を削除するオーディオを事前処理するために使用されます。 たとえば、音声通信のアプリケーションからエコーを削除しています。
+-   `Android.Media.Audiofx.AutomaticGainControl` -このクラスは、出力シグナルが定数のように入力信号を下げるかコレクション ブースティングによってキャプチャされた信号を正規化に使用されます。
+-   `Android.Media.Audiofx.NoiseSuppressor` – このクラスは、キャプチャされた信号からバック グラウンド ノイズを除去します。
 
 
-すべてのデバイスでは、これらの効果をサポートします。 メソッド`AudioEffect.IsAvailable`オーディオ効果の問題が、アプリケーションを実行しているデバイスでサポートされているかどうかのアプリケーションによって呼び出す必要があります。
+すべてのデバイスでは、これらの効果をサポートします。 メソッド`AudioEffect.IsAvailable`アプリケーションを実行しているデバイスの問題のオーディオ効果がサポートされているかどうかに、アプリケーションで呼び出す必要があります。
 
-`MediaPlayer`クラスようになりましたで再生するすきまがなく、`SetNextMediaPlayer()`メソッドです。 この新しいメソッドは、現在 media player の再生を終了するときに開始する次の media Player を指定します。
+`MediaPlayer`クラスようになりましたで再生をすきまがなく、`SetNextMediaPlayer()`メソッド。 この新しいメソッドでは、現在、media player の再生を終了するときに開始する次の MediaPlayer を指定します。
 
-次の新しいクラスは、メディアの再生位置を選択するための標準メカニズムおよび UI を提供します。
+次の新しいクラスは、メディアを再生するかを選択するための標準的なメカニズムと UI を提供します。
 
--   `MediaRouter` このクラスは、外部のスピーカーにデバイスまたはその他のデバイスからのメディア チャネルのルーティングを制御するアプリケーションを使用できます。
--   `MediaRouterActionProvider` および`MediaRouteButton`– これらのクラスにより、一貫性のある UI を選択し、メディアを再生します。
+-   `MediaRouter` -このクラスは、外部のスピーカーにデバイスまたはその他のデバイスからメディア チャネルのルーティングを制御するアプリケーションを使用できます。
+-   `MediaRouterActionProvider` `MediaRouteButton` – これらのクラスを選択して、メディアの再生の一貫性のある UI を提供するのに役立ちます。
 
 
 
 
 ### <a name="notifications"></a>通知
 
-アプリケーションは、android 4.1 が柔軟性が向上し通知を表示するコントロールにできます。 アプリケーションは、ユーザーにより良くより大きな通知を表示することができますようになりました。 新しいメソッド`NotificationBuilder.SetStyle()`では、新しい 3 つの新しいスタイルのいずれかの通知を設定します。
+Android 4.1 では、柔軟性とコントロール通知の表示、アプリケーションができます。 アプリケーションでは、ユーザーにより大きく、性能の通知を表示できます。 新しいメソッド、`NotificationBuilder.SetStyle()`通知に設定するための新しい 3 つの新しいスタイルのいずれか。
 
--   `Notification.BigPictureStyle` – これは、それらのイメージを持っている通知を生成するヘルパー クラスです。 次の図は、大規模なイメージでの通知の例を示します。
-
-
- [![BigPictureStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
-
--   `Notification.BigTextStyle` – これは、テキスト、電子メールなどの複数の行がある通知を生成するヘルパー クラスです。 この新しい通知形式の例は、次のスクリーン ショットに表示できます。
+-   `Notification.BigPictureStyle` – これは、それらのイメージが通知を生成するヘルパー クラスです。 次の図は、大きなイメージを使用して、通知の例を示します。
 
 
- [![BigTextStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
+ [![BigPictureStyle 通知の例のスクリーン ショット](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
--   `Notification.InboxStyle` – これは、このスクリーン ショットに示すように、電子メール メッセージからスニペットなど、文字列のリストを含む通知を生成するヘルパー クラスです。
+-   `Notification.BigTextStyle` – これは、テキスト、電子メールなどの複数の行がある通知を生成するヘルパー クラスです。 この新しい通知スタイルの例は、次のスクリーン ショットで確認できます。
 
 
- [![Notification.InboxStyle 通知のサンプルのスクリーン ショット](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
+ [![BigTextStyle 通知の例のスクリーン ショット](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
-これは通常以上のスタイルを使用しているとき、通知、通知メッセージの下部に最大 2 つのアクション ボタンを追加することです。
-この例は、アクション ボタンが、通知の下部に表示されている、次のスクリーン ショットに表示されることができます。
+-   `Notification.InboxStyle` – これは、このスクリーン ショットで示すように、電子メール メッセージからのスニペットなどの文字列のリストを含めることが通知を生成するヘルパー クラスです。
 
- [![通知メッセージの下に表示されるアクション ボタンの例のスクリーン ショット](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
-`Notification`クラスが、開発者に通知を 5 つの優先度レベルのいずれかを指定できるようにする新しい定数を受信します。 これらを使用して通知に対して設定できる、`Priority`プロパティです。
+ [![Notification.InboxStyle 通知の例のスクリーン ショット](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
+
+通知が通常以上のスタイルを使用する場合、通知メッセージの下部にある最大 2 つのアクション ボタンを追加することになります。
+この例は、アクション ボタンが、通知の下部に表示する、次のスクリーン ショットで確認できます。
+
+ [![通知メッセージの下に表示されるアクション ボタンのスクリーン ショットの例](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
+
+`Notification`クラスが通知の 5 つの優先度レベルのいずれかを指定できるようにする新しい定数を受信します。 使用して通知を設定するには、`Priority`プロパティ。
 
 
 
@@ -263,27 +263,27 @@ Android 4.1 には、DNS ベースのマルチキャスト サービス検出用
 
 次の新しいアクセス許可が追加されました。
 
--   `READ_EXTERNAL_STORAGE` -アプリケーションでは、外部ストレージに読み取り専用アクセスが必要です。 現在のすべてのアプリケーションが既定では、読み取りアクセス権があるが、Android の将来のリリースのアプリケーションは、読み取りアクセスを明示的に要求が必要になります。
--   `READ_USER_DICTIONARY` -ユーザーの word ディクショナリへの読み取りアクセスを許可します。
--   `READ_CALL_LOG` -アプリケーションの呼び出しのログの読み取りで受信および送信呼び出しに関する情報を取得できます。
--   `WRITE_CALL_LOG` -電話の呼び出しのログに書き込むアプリケーションをできます。
--   `WRITE_USER_DICTIONARY` -アプリケーションにユーザーの word ディクショナリへの書き込みを許可します。
+-   `READ_EXTERNAL_STORAGE` -アプリケーションには、外部ストレージに読み取り専用アクセスが必要です。 現在のすべてのアプリケーションが既定では、読み取りアクセス権があるが、今後のリリースの Android アプリケーションは、読み取りアクセスを明示的に要求が必要になります。
+-   `READ_USER_DICTIONARY` -ユーザーの word の辞書への読み取りアクセスを許可します。
+-   `READ_CALL_LOG` -呼び出しのログの読み取り、着信および発信呼び出しに関する情報を取得するアプリケーションを許可します。
+-   `WRITE_CALL_LOG` -携帯電話の呼び出しのログに書き込むアプリケーションを許可します。
+-   `WRITE_USER_DICTIONARY` -ユーザーの word の辞書に書き込むアプリケーションを許可します。
 
 
-注意する重要な変更`READ_EXTERNAL_STORAGE`– Android によってこのアクセス許可を自動的に付与されています。 Android の将来のバージョンは、権限を許可する前にこのアクセス許可を要求するアプリケーションを必要があります。
+重要な変更に注意してください`READ_EXTERNAL_STORAGE`– Android でこのアクセス許可を自動的に付与されています。 Android の将来のバージョンは、アクセス許可を付与する前にこのアクセス許可を要求するアプリケーションを必要があります。
 
 
 
 ## <a name="summary"></a>まとめ
 
-この記事では、いくつかの新しい API の Android 4.1 (API レベル 16) で使用可能な導入されました。 アニメーション、および、アクティビティの起動をアニメーション化の変更の一部を強調表示されているし、新しい API の Bonjour、UPnP などのプロトコルを使用して他のデバイスのネットワーク探索が導入されました。 API への他の変更が強調表示されている同様に、切り取りと貼り付けインテントを使用してデータを分離されたサービスまたは「不安定」のコンテンツ プロバイダーを使用できる機能などです。
+この記事では、いくつか、新しい API の Android 4.1 (API レベル 16) で利用できるので導入されました。 アニメーションと、アクティビティの起動をアニメーション化の変更の一部を強調表示し、新しい API の Bonjour、UPnP などのプロトコルを使用して他のデバイスのネットワーク探索を導入します。 API への他の変更はされた独立したサービスまたは「不安定」のコンテンツ プロバイダーを使用する機能、インテントを使用してデータをコピー アンド ペーストを機能なども強調表示されます。
 
-この記事に通知を更新プログラムを導入したし、Android 4.1 で導入された新しいアクセス許可の説明
+この記事では、しに通知を更新プログラムを導入するが発生し、Android 4.1 で導入された新しいアクセス許可の説明
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Time アニメーションの例 (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
+- [時間のアニメーション例 (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
 - [Android 4.1 Api](http://developer.android.com/about/versions/android-4.1.html)
 - [タスク ウィンドウとバック スタック](http://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [[戻る] と アップによるナビゲーション](http://developer.android.com/design/patterns/navigation.html)
+- [戻る と アップによるナビゲーション](http://developer.android.com/design/patterns/navigation.html)
