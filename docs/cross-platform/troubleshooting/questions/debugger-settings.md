@@ -1,19 +1,19 @@
 ---
-title: デバッガーに必要なプロジェクト設定をしますか。
+title: デバッガーに必要なプロジェクト設定を教えてください
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
-ms.openlocfilehash: 646ef7f708be2de6a851ace25d69a7c2f0b18a83
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 9a18c97ba227615ae42529424b5c22b5e144f5e5
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350808"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526705"
 ---
-# <a name="what-project-settings-are-required-for-the-debugger"></a>デバッガーに必要なプロジェクト設定をしますか。
+# <a name="what-project-settings-are-required-for-the-debugger"></a>デバッガーに必要なプロジェクト設定を教えてください
 
 デバッガー (ブレークポイントのヒット、デバッグ ログの表示など) が期待どおりに動作するためには、開発者のインストルメンテーションとデバッグ情報の表示する必要がありますどちらも有効にします。
 
@@ -24,7 +24,7 @@ ms.locfileid: "39350808"
 2. 移動して**ビルド > 高度な.** デバッグ情報を設定**完全**
 3. 各プラットフォームの設定:
    - 移動して**Android オプション > デバッグ オプション**します。 ティック、**開発者のインストルメンテーションを有効にする**ボックス。
-   - 移動して**iOS ビルド > デバッグ オプション**します。 ティック、**デバッグを有効にする**ボックス。
+   - 移動して**iOS デバッグ > デバッグとインストルメンテーション**します。 ティック、**デバッグを有効にする**ボックス。
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 1. プロジェクトのオプションを開く

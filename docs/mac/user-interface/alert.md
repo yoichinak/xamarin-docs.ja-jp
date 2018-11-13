@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8f84b688998251db52c8c2be71949e1a2e665dc0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6545b1423b809e42293302baf3eba9521848edc1
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103960"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526411"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin.Mac のアラート
 
 _この記事では、Xamarin.Mac アプリケーションでのアラートの操作について説明します。作成してからのアラートを表示する説明C#コードとユーザーの操作に応答します。_
 
-使用する場合C#へのアクセスがある、Xamarin.Mac アプリケーションで .NET、および作業する開発者で、同じアラートを*Objective C*と*Xcode*は。 
+使用する場合C#へのアクセスがある .NET では、Xamarin.Mac アプリケーションと作業する開発者で、同じアラートを*Objective C*と*Xcode*は。 
 
 警告は、特殊な種類 (エラー) など、深刻な問題が発生したときに表示されるダイアログ ボックスのまたは (ファイルを削除する準備をしています) などの警告として。 アラートは、ダイアログ ボックスであるためも必要です、ユーザーの応答を閉じる前にします。
 

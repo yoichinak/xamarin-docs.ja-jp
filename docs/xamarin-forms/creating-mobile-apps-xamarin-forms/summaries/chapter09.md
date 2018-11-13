@@ -4,15 +4,15 @@ description: 'Xamarin.Forms によるモバイル アプリの作成: 第 9 章�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: e7b2eea22758155db7d79fa26f3376e16cf16a45
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 89056bac86116161512ad32721c5d877850d75f2
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39157017"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563226"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章の概要です。 プラットフォーム固有の API 呼び出し
 

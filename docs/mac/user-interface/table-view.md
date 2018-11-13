@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a8c55c8b4ff3fbd515aad8bf45c52a0b549af9f
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
-ms.translationtype: MT
+ms.openlocfilehash: 0d89fff81d1d13baa578068bcaef11dd5af00e14
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285600"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527054"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin.Mac のテーブル ビュー
 
 _この記事では、Xamarin.Mac アプリケーションでのテーブル ビューの使用について説明します。これには、Xcode と Interface Builder とコードで操作するテーブル ビューの作成について説明します。_
 
-同じへのアクセス、Xamarin.Mac アプリケーションで c# と .NET を使用する場合があるテーブルをビューで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成およびテーブル ビューを維持 (または必要に応じて c# コードで直接作成する)。
+使用する場合C#へのアクセス権を持って、Xamarin.Mac アプリケーションで .NET では、同じテーブル ビューで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成およびテーブル ビューを維持 (または必要に応じて c# コードで直接作成する)。
 
 テーブル ビューでは、複数の行の情報の 1 つまたは複数の列を含む表形式でデータを表示します。 作成されるテーブル ビューの種類に基づいて、ユーザーの列で並べ替える、列の再編成、追加列、列を削除または編集できますテーブル内に含まれるデータ。
 

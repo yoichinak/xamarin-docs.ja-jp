@@ -4,15 +4,15 @@ description: 'Xamarin.Forms によるモバイル アプリの作成: 第 23 章
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 83a445555f9f184f735c105370de20665ad704a3
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 4bfa2bed7061e031c55ccbdb7f576aa02c17581a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156757"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563993"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章の概要です。 トリガーと動作
 
@@ -152,7 +152,7 @@ ms.locfileid: "39156757"
 
 [ **FormattedTextToggle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/FormattedTextToggle)サンプルでは、2 つの間で切り替えることによってこの概念が拡張され`FormattedString`オブジェクト。
 
-[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs)クラス、 **Xamarin.FormsBook.Toolkit**から派生したライブラリ`ContentView`、定義、`IsToggled`プロパティが組み込まれていると、`ToggleBehavior`トグル ボタンロジック。 こうこと、XAML でのトグル ボタンの定義を簡単に示すように、 [ **TranditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox)サンプル。
+[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs)クラス、 **Xamarin.FormsBook.Toolkit**から派生したライブラリ`ContentView`、定義、`IsToggled`プロパティが組み込まれていると、`ToggleBehavior`トグル ボタンロジック。 こうこと、XAML でのトグル ボタンの定義を簡単に示すように、 [ **TraditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox)サンプル。
 
 [ **SwitchCloneDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo)が含まれています、 [ `SwitchClone` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs)クラスから派生した`ToggleBase`を使用して、 [ `TranslateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs)、Xamarin.Forms のような切り替えボタンを作成するにはクラス`Switch`します。
 

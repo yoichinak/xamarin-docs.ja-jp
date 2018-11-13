@@ -7,18 +7,18 @@ ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/19/2018
-ms.openlocfilehash: 8ee169d15c4b5060f2a7696bfebd314ed7029570
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
-ms.translationtype: MT
+ms.openlocfilehash: 55168f8f401cca711422dc49027b2b055fba5f1f
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156942"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526755"
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 章の概要です。 スタイル
 
 Xamarin.Forms では、スタイルは、プロパティの設定のコレクションを共有する複数のビューを許可します。 これは、マークアップが削減され、一貫性のあるビジュアル テーマを維持できるようにします。
 
-スタイルはほぼ常に定義されているし、マークアップで使用します。 型のオブジェクト[ `Style` ](xref:Xamarin.Forms.Style)リソース ディクショナリでインスタンス化し、設定は、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)のビジュアル要素を使用して、プロパティ、`StaticResource`または`DyanamicResource`マークアップ拡張機能。
+スタイルはほぼ常に定義されているし、マークアップで使用します。 型のオブジェクト[ `Style` ](xref:Xamarin.Forms.Style)リソース ディクショナリでインスタンス化し、設定は、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)のビジュアル要素を使用して、プロパティ、`StaticResource`または`DynamicResource`マークアップ拡張機能。
 
 ## <a name="the-basic-style"></a>基本のスタイル
 
@@ -40,7 +40,7 @@ XAML で、`Property`設定は、CLR プロパティの名前 (など、`Text`�
 
 ## <a name="styles-in-code"></a>コード内のスタイル
 
-一般的ではありませんが、インスタンス化し、初期化`Style`コード内のオブジェクト。 これを示します、 [ **BasicStyleCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode)サンプル。
+一般的ではありませんが、インスタンス化および初期化`Style`コード内のオブジェクト。 これを示します、 [ **BasicStyleCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode)サンプル。
 
 ## <a name="style-inheritance"></a>スタイル継承
 

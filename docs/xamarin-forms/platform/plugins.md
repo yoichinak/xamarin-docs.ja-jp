@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/05/2018
-ms.openlocfilehash: 4d121c2dfcca380e1735da1a4ca47c42d1957b8a
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: ac8e5323a2a2e05ac03294bb6919e8dfadc93655
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854741"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526521"
 ---
 # <a name="consuming-and-creating-xamarinforms-plugins"></a>使用し、Xamarin.Forms のプラグインを作成します。
 
@@ -53,7 +53,7 @@ NuGet パッケージを設計するための特定の要件はありません�
 
 読み取り James Montemagno 氏[ブログの投稿](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/)Xamarin プラグインを作成するための手順について説明します。
 
-最近では、プラグインが単一のターゲットが複数のプラットフォームで作成することがことができます。 このアプローチは、James Montemagno 氏で説明[ブログの投稿](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/)します。 この方法は、上のリンクから James Montemagno 氏のプラグインで使用して、形式にも使用**Xamarin.Essentials**します。
+最近では、プラグインは、1 つのターゲットが複数のプラットフォームで作成できます。 このアプローチは、James Montemagno 氏で説明[ブログの投稿](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/)します。 この方法は、上のリンクから James Montemagno 氏のプラグインで使用して、形式にも使用**Xamarin.Essentials**します。
 
 Xamarin.Forms をプラグインから直接参照しないようにする方が望ましいです。
 バージョン競合の問題は、他の開発者が、プラグインを使用しようとしています。 ときにこの作成できます。 代わりに、任意の Xamarin または .NET アプリケーションで使用できるように、API を設計するみてください。

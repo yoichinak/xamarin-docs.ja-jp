@@ -1,41 +1,41 @@
 ---
-title: パート 5 です。 MVVM へのデータ バインディング
-description: 'MVVM パターンは、次の 3 つのソフトウェア レイヤー間の分離を強制: ビューと呼ばれる、XAML ユーザー インターフェイスは、モデルと呼ばれる、基になるデータされ、ビューと、モデル間の媒介には、ViewModel が呼び出されます。'
+title: パート 5 です。 MVVM へのデータ バインディングから
+description: MVVM パターンは次の 3 つのソフトウェア レイヤーを分離を強制-ビューと呼ばれる、XAML ユーザー インターフェイスモデルと呼ばれる、基になるデータされ、ビューと、モデルの中間には、ViewModel が呼び出されます。
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e83f8a585c4badc31bffaea53bb2f183e7b11fc9
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 2376ff986db985c3764c90c3af76ea74c2936a29
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268863"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563148"
 ---
-# <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディング
+# <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディングから
 
-_モデル View-viewmodel (MVVM) アーキテクチャ パターンは、注意を XAML 考案されました。パターンは、次の 3 つのソフトウェア レイヤー間の分離を強制: ビューと呼ばれる、XAML ユーザー インターフェイスは、モデルと呼ばれる、基になるデータされ、ビューと、モデル間の媒介には、ViewModel が呼び出されます。ビューと、ViewModel は、多くの場合、XAML ファイルで定義されているデータ バインディングを通じて接続されます。BindingContext のビューは、通常、ViewModel のインスタンスです。_
+_モデル-ビュー-ビューモデル (MVVM) アーキテクチャ パターンは、XAML で念頭考案されました。パターンが 3 つのソフトウェア レイヤー間の分離を強制-ビューと呼ばれる、XAML ユーザー インターフェイスモデルと呼ばれる、基になるデータされ、ビューと、モデルの中間には、ViewModel が呼び出されます。ビューとビューモデルは、多くの場合、XAML ファイルで定義されているデータ バインドを通じて接続されます。ビューの BindingContext は、通常、ViewModel のインスタンスです。_
 
 ## <a name="a-simple-viewmodel"></a>単純な ViewModel
 
-として ViewModels の概要については、まずを見てみましょう 1 つもないプログラム。
-以前クラスを参照する他のアセンブリ内の XAML ファイルを許可する新しい XML 名前空間宣言を定義する方法を説明します。 ここでは、プログラムの XML 名前空間宣言を定義する、`System`名前空間。
+として Viewmodel の概要については、最初に見てみましょうせず 1 つのプログラム。
+以前に他のアセンブリ参照クラスの XAML ファイルを許可する新しい XML 名前空間宣言を定義する方法を説明しました。 XML 名前空間宣言を定義するプログラムを次に示します、`System`名前空間。
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-プログラムで使用できる`x:Static`静的から現在の日付と時刻を取得する`DateTime.Now`プロパティを設定し、`DateTime`値を`BindingContext`で、 `StackLayout`:
+プログラムで使用できます`x:Static`、静的なから現在の日付と時刻を取得する`DateTime.Now`プロパティを設定し、`DateTime`値を`BindingContext`で、 `StackLayout`:
 
 ```xaml
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` 非常に特殊なプロパティ: 設定すると、`BindingContext`要素、その要素のすべての子から継承されます。 つまり、すべての子、`StackLayout`この同じである`BindingContext`、そのオブジェクトのプロパティへの単純なバインドがあるとします。
+`BindingContext` 非常に特殊なプロパティです。 設定すると、`BindingContext`その要素のすべての子要素に継承されます。 つまり、すべての子、`StackLayout`これと同じある`BindingContext`、し、そのオブジェクトのプロパティへの単純なバインドを含めることができます。
 
-**One-Shot DateTime**子の 2 つのプログラムのプロパティへのバインドを保持する`DateTime`値が他の 2 つの子は、バインド パスが見つからないのバインドを保持します。 つまり、`DateTime`値自体はの使用、 `StringFormat`:
+**One-Shot DateTime**プログラムは、2 つの子のプロパティへのバインドを保持する`DateTime`バインディング パスが見つからないと思われるバインドを含めることの値はその他の 2 つの子。 つまり、`DateTime`自体の値が使用される、 `StringFormat`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -57,17 +57,17 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-もちろん、大きな問題は日付と時刻が、ページを最初にビルド後のセットと決して変更。
+もちろん、大きな問題は、日付と時刻が、ページが最初にビルドされたら、セットとしない変更です。
 
 [![](data-bindings-to-mvvm-images/oneshotdatetime.png "日付と時刻を表示するビュー")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "日付と時刻を表示するビュー")
 
-XAML ファイルは、現在の時刻が常に表示される時計を表示できますが、一部のコードを使用すればが必要があります。ときに MVVM、モデルおよび ViewModel の観点から考えることには、すべてコードで記述されたクラスです。 ビューは、データ バインディングによって、ViewModel で定義されたプロパティを参照する XAML ファイルでは多くの場合です。
+XAML ファイルが現在の時刻は常に表示される時計を表示できますが、いくつかのコードをサポートすることが必要があります。考えると、MVVM、モデルおよびビューモデルは全体をコードで記述されたクラスです。 このビューは、データ バインディングによって、ビューモデルで定義されたプロパティを参照する XAML ファイルでは多くの場合です。
 
-適切なモデルでは、ViewModel を意識し、適切な ViewModel はビューを意識します。 ただし、ほとんどの場合、プログラマが調整を特定のユーザー インターフェイスに関連付けられているデータ型に ViewModel によって公開されるデータ型。 たとえば、モデルでは、8 ビット文字の ASCII 文字列を格納しているデータベースにアクセスは場合、ViewModel 必要がありますにそれらの文字列に排他的に使用するユーザー インターフェイスで Unicode に対応する Unicode 文字列に変換します。
+適切なモデルでは、ViewModel を意識し、適切な ViewModel はビューを意識しません。 ただし、非常に多くの場合、プログラマにより変わりますが、特定のユーザー インターフェイスに関連付けられているデータ型に ViewModel で公開されるデータ型。 たとえば、モデルが 8 ビット文字の ASCII 文字列を格納しているデータベースにアクセスする場合、ViewModel 必要がありますを排他的に使用するユーザー インターフェイスで Unicode に対応する Unicode 文字列にそれらの文字列に変換します。
 
-(ここに示すもの) などの MVVM の単純な例で多くの場合、モデルはありませんすべてのビューだけでは、パターンとデータ バインディングにリンクされている ViewModel です。
+(ここで示すもの) などの MVVM の単純な例で多くの場合、モデルがない、すべてのパターンでは、ビューだけと ViewModel は、データ バインディングにリンクされています。
 
-プロパティだけを 1 つという名前のクロックの ViewModel を次に示します`DateTime`、する更新プログラムがあるが、`DateTime`毎秒のプロパティ。
+ここでは、という名前の 1 つのプロパティだけで、クロックの ViewModel `DateTime`、する更新プログラムが`DateTime`プロパティ毎秒。
 
 ```csharp
 using System;
@@ -116,9 +116,9 @@ namespace XamlSamples
 }
 ```
 
-一般に ViewModels を実装、`INotifyPropertyChanged`インターフェイスで、クラスが発生することを意味、`PropertyChanged`イベントのプロパティの 1 つが変更されるたびにします。 Xamarin.Forms で、データ バインディング機構では、これにハンドラーをアタッチ`PropertyChanged`イベント プロパティが変更されたときに通知できるように行い、新しい値で更新対象を保持します。
+一般に Viewmodel を実装、`INotifyPropertyChanged`クラスが発生することを意味するインターフェイスを`PropertyChanged`そのプロパティの 1 つが変更されるたびにイベント。 Xamarin.Forms でのデータ バインド メカニズムでは、これにハンドラーをアタッチ`PropertyChanged`イベント プロパティが変更されたときに通知できるようにして、ターゲットが新しい値で更新します。
 
-この ViewModel に基づいてクロックはこれと同じくらい簡単にできます。
+このビューモデルに基づいてクロックはようにシンプルになります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -138,11 +138,11 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-通知方法、`ClockViewModel`に設定されている、`BindingContext`の`Label`プロパティ要素タグを使用します。 代わりに、インスタンスを作成できる、`ClockViewModel`で、`Resources`コレクションに設定し、`BindingContext`を介して、`StaticResource`マークアップ拡張機能です。 または、分離コード ファイルには、ViewModel をインスタンス化します。
+通知方法、`ClockViewModel`に設定されている、`BindingContext`の`Label`プロパティ要素タグを使用します。 または、インスタンス化できます、`ClockViewModel`で、`Resources`コレクションに設定し、`BindingContext`を使用して、`StaticResource`マークアップ拡張機能。 または、分離コード ファイルには、ViewModel がインスタンス化できます。
 
-`Binding`でマークアップ拡張機能、`Text`のプロパティ、`Label`形式、`DateTime`プロパティです。 表示を次に示します。
+`Binding`でマークアップ拡張機能、`Text`のプロパティ、`Label`形式、`DateTime`プロパティ。 表示を次に示します。
 
-[![](data-bindings-to-mvvm-images/clock.png "ViewModel を介しての日時を表示するビュー")](data-bindings-to-mvvm-images/clock-large.png#lightbox "ViewModel を介しての日時を表示するビュー")
+[![](data-bindings-to-mvvm-images/clock.png "ViewModel を使用して日時を表示するビュー")](data-bindings-to-mvvm-images/clock-large.png#lightbox "ViewModel を使用して日時を表示するビュー")
 
 個々 のプロパティにアクセスすることも、`DateTime`プロパティをピリオドで区切って ViewModel のプロパティ。
 
@@ -150,11 +150,11 @@ namespace XamlSamples
 <Label Text="{Binding DateTime.Second, StringFormat='{0}'}" … >
 ```
 
-## <a name="interactive-mvvm"></a>対話型 MVVM
+## <a name="interactive-mvvm"></a>対話型の MVVM
 
-MVVM には、基になるデータ モデルに基づく対話型ビューの双方向データ バインドはよく使用されます。
+MVVM は双方向データ バインドを基になるデータ モデルに基づく対話型表示で非常によく使用されます。
 
-という名前のクラスを次に示します`HslViewModel`変換する、`Color`値に`Hue`、 `Saturation`、および`Luminosity`値、およびその逆の場合。
+という名前のクラスを次に示します`HslViewModel`に変換する、`Color`値に`Hue`、 `Saturation`、および`Luminosity`値、およびその逆の場合。
 
 ```csharp
 using System;
@@ -254,9 +254,9 @@ namespace XamlSamples
 }
 ```
 
-変更、 `Hue`、 `Saturation`、および`Luminosity`プロパティ原因、`Color`を変更するプロパティが変更され`Color`により、他の 3 つのプロパティを変更します。 これは、見えますが、無限ループ クラスが起動しないことを除き、`PropertyChanged`イベント プロパティが実際に変更された場合を除き、します。 これにより、end が、それ以外の場合制御不能フィードバック ループに追加します。
+変更、 `Hue`、`Saturation`と`Luminosity`プロパティ原因、`Color`プロパティを変更して変更`Color`とその他の 3 つのプロパティを変更します。 クラスが起動しないことを除いて、無限ループのように見えるかもしれません、`PropertyChanged`イベント、プロパティが実際に変更された場合を除き、します。 これにより、それ以外の場合に制御不能のフィードバック ループします。
 
-次の XAML ファイルが含まれています、`BoxView`が`Color`プロパティにバインド、 `Color` 、ViewModel と 3 つのプロパティ`Slider`3`Label`にバインドされているビュー、 `Hue`、 `Saturation`、および`Luminosity`プロパティ。
+次の XAML ファイルが含まれています、`BoxView`が`Color`プロパティにバインドする、`Color`ビューモデル、および 3 つのプロパティ`Slider`と 3 つ`Label`にバインドされたビュー、 `Hue`、 `Saturation`、および`Luminosity`プロパティ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -290,32 +290,32 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-各バインド`Label`既定値は、`OneWay`です。 のみ値を表示する必要があります。 各バインディングが、`Slider`は`TwoWay`します。 これにより、 `Slider` ViewModel から初期化されるようにします。 注意して、`Color`プロパティに設定されている`Aqua`ViewModel がインスタンス化されるときです。 変更は、`Slider`で新しい色を計算すると、ViewModel プロパティの新しい値を設定する必要もあります。
+各バインド`Label`既定`OneWay`します。 のみ、値を表示する必要があります。 各バインド`Slider`は`TwoWay`します。 これにより、 `Slider` ViewModel から初期化します。 注意、`Color`プロパティに設定されて`Aqua`ビューモデルがインスタンス化されます。 変更は、`Slider`も新しい色を計算し、ViewModel のプロパティの新しい値を設定する必要があります。
 
-[![](data-bindings-to-mvvm-images/hslcolorscroll.png "双方向データ バインドを使用して MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM 双方向データ バインディングの使用")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "双方向データ バインドを使用して MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "双方向データ バインドを使用して MVVM")
 
-## <a name="commanding-with-viewmodels"></a>ViewModels とコマンド実行
+## <a name="commanding-with-viewmodels"></a>Viewmodel のコマンド実行
 
-多くの場合、MVVM パターンはデータ項目の操作に制限: ビューのユーザー インターフェイス オブジェクトの並列、ViewModel 内のデータ オブジェクト。
+多くの場合、MVVM パターンはデータ項目の操作に制限されています: ビュー内のユーザー インターフェイス オブジェクトの並列ビューモデル内のデータ オブジェクト。
 
-ただし、必要があります、ビュー、ViewModel でさまざまなアクションをトリガーするボタンが含まれています。 ViewModel には必要がありますが含まれていませんが、`Clicked`ハンドラー ボタンに対して、特定のユーザー インターフェイスのパラダイムに ViewModel を関連付けることがあるためです。
+ただし、必要があります、ビュー、ビューモデルでさまざまなアクションをトリガーするボタンが含まれます。 ViewModel が含めることはできませんが、`Clicked`ボタンのハンドラーが特定のユーザー インターフェイスのパラダイムに ViewModel を占有するので。
 
-特定のユーザー インターフェイス オブジェクトの依存関係のないが、まだ、ViewModel 内で呼び出されるメソッドを許可する ViewModels を許可する、*コマンド*インターフェイスが存在します。 このコマンド インターフェイスは、Xamarin.Forms では、次の要素によってサポートされます。
+ビューモデルには、特定のユーザー インターフェイス オブジェクトの詳細独立しても、ビューモデル内で呼び出されるメソッドを許可を許可する、*コマンド*インターフェイスが存在します。 このコマンドのインターフェイスは Xamarin.Forms では、次の要素でサポートされています。
 
 -  `Button`
 -  `MenuItem`
 -  `ToolbarItem`
 -  `SearchBar`
--  `TextCell` (したがっても`ImageCell`)
+-  `TextCell` (つまりも`ImageCell`)
 -  `ListView`
 -  `TapGestureRecognizer`
 
-例外を除いて、`SearchBar`と`ListView`要素、これらの要素が 2 つのプロパティを定義します。
+例外です、`SearchBar`と`ListView`要素、これらの要素が 2 つのプロパティを定義します。
 
 -  `Command` 型の  `System.Windows.Input.ICommand`
 -  `CommandParameter` 型の  `Object`
 
-`SearchBar`定義`SearchCommand`と`SearchCommandParameter`プロパティ中、`ListView`を定義、`RefreshCommand`型のプロパティ`ICommand`です。
+`SearchBar`定義`SearchCommand`と`SearchCommandParameter`プロパティ、中に、`ListView`定義、`RefreshCommand`型のプロパティ`ICommand`します。
 
 `ICommand`インターフェイスは、2 つのメソッドと 1 つのイベントを定義します。
 
@@ -323,13 +323,13 @@ namespace XamlSamples
 -  `bool CanExecute(object arg)`
 -  `event EventHandler CanExecuteChanged`
 
-型のプロパティを定義できます、ViewModel`ICommand`です。 これらのプロパティをバインドできます、`Command`の各プロパティ`Button`またはその他の要素、またはこのインターフェイスを実装するカスタム ビューなどです。 必要に応じて設定することができます、`CommandParameter`個々 に識別するプロパティ`Button`オブジェクト (またはその他の要素) この ViewModel プロパティにバインドされます。 内部的には、`Button`呼び出し、`Execute`メソッド、ユーザーがタップするたびに、`Button`に渡す、`Execute`メソッドその`CommandParameter`です。
+ViewModel 型のプロパティを定義できます`ICommand`します。 これらのプロパティをバインドすることができますし、`Command`の各プロパティ`Button`またはその他の要素、またはこのインターフェイスを実装するカスタム ビューなど。 必要に応じて設定することができます、`CommandParameter`個々 に識別するためにプロパティ`Button`オブジェクト (またはその他の要素) この ViewModel のプロパティにバインドします。 内部的には、`Button`呼び出し、`Execute`メソッド、ユーザーがタップするたびに、`Button`に渡し、`Execute`メソッドその`CommandParameter`します。
 
-`CanExecute`メソッドおよび`CanExecuteChanged`場合にイベントを使用場所、 `Button` tap できない可能性があります、現在有効な場合、`Button`自体を無効にする必要があります。 `Button`呼び出し`CanExecute`ときに、`Command`プロパティが最初に設定されているとするたびに、`CanExecuteChanged`イベントが発生します。 場合`CanExecute`返します`false`、`Button`自体が無効になり、生成しない`Execute`呼び出しです。
+`CanExecute`メソッドと`CanExecuteChanged`場合にイベントを使用場所、`Button`タップできない可能性があります、現在有効な場合、`Button`自体が無効にする必要があります。 `Button`呼び出し`CanExecute`ときに、`Command`プロパティの最初の設定や、常に、`CanExecuteChanged`イベントが発生します。 場合`CanExecute`返します`false`、`Button`自体を無効にしが生成されない`Execute`呼び出し。
 
-実装する 2 つのクラスを定義する Xamarin.Forms ヘルプについては、ViewModels にコマンドを追加することで、 `ICommand`:`Command`と`Command<T>`場所`T`への引数の型は、`Execute`と`CanExecute`です。 これら 2 つのクラス定義の複数のコンス トラクターと`ChangeCanExecute`、ViewModel が強制的に呼び出すことができるメソッド、`Command`発生させるオブジェクト、`CanExecuteChanged`イベント。
+Viewmodel にコマンド実行の追加については、Xamarin.Forms を実装する 2 つのクラスを定義します`ICommand`:`Command`と`Command<T>`場所`T`への引数の型は、`Execute`と`CanExecute`します。 これら 2 つのクラスがいくつかのコンス トラクターを定義および`ChangeCanExecute`ビューモデルが強制的に呼び出すことができるメソッド、`Command`させるオブジェクト、`CanExecuteChanged`イベント。
 
-ここでは、電話番号を入力するためのものでは、単純なキーパッドの ViewModel です。 注意して、`Execute`と`CanExecute`メソッドは、コンス トラクターでのラムダ関数右として定義されます。
+電話番号を入力することが想定されている単純なキーパッドの ViewModel を次に示します。 注意、`Execute`と`CanExecute`メソッドは、ラムダ関数のコンス トラクター内で直接として定義されます。
 
 ```csharp
 using System;
@@ -437,11 +437,11 @@ namespace XamlSamples
 }
 ```
 
-この ViewModel が想定する、`AddCharCommand`プロパティにバインドされる、`Command`によって識別されるそれぞれのいくつかのボタン (またはそれ以外のコマンド インターフェイスを持つ) のプロパティ、`CommandParameter`です。 これらのボタンを追加する文字、`InputString`の電話番号として書式設定し、プロパティ、`DisplayText`プロパティです。
+このビューモデルを前提としていますが、`AddCharCommand`プロパティにバインドする、`Command`で識別されるそれぞれのいくつかのボタン (またはその他のコマンド インターフェイスを持つ) のプロパティ、`CommandParameter`します。 これらのボタンに追加する文字、`InputString`の電話番号として書式設定し、プロパティ、`DisplayText`プロパティ。
 
-型の 2 番目のプロパティも`ICommand`という`DeleteCharCommand`です。 これは、バック スペース ボタンにバインドが、削除する文字がない場合に、ボタンを無効にする必要があります。
+型の 2 番目のプロパティも`ICommand`という`DeleteCharCommand`します。 これは、バック スペース ボタンにバインドしますが、削除する文字がない場合に、ボタンを無効にする必要があります。
 
-次のキーパッドがいないと視覚的に、高度ながあります。 代わりに、マークアップは、さらに明確に、コマンド インターフェイスの使用を示すために最低限に削減されました。
+次キーパッドがいないと視覚的に高度なとして可能性があります。 代わりに、マークアップがコマンド インターフェイスの使用より明確に示すために最小限に削減されました。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -551,19 +551,19 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-`Command`最初の`Button`これに表示されるマークアップにバインドされて、 `DeleteCharCommand`; に残りの部分がバインドされて、`AddCharCommand`で、`CommandParameter`は、文字と同じに表示される、`Button`面。 アクションで、プログラムを次に示します。
+`Command`最初の`Button`これに表示されるマークアップにバインドされて、 `DeleteCharCommand`; に残りの部分がバインドされて、`AddCharCommand`で、`CommandParameter`に表示される文字とは同じ、`Button`顔。 アクションで、プログラムを示します。
 
-[![](data-bindings-to-mvvm-images/keypad.png "MVVM とコマンドを使用して、電卓")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "MVVM とコマンドを使用して、電卓")
+[![](data-bindings-to-mvvm-images/keypad.png "MVVM とコマンドを使用して電卓")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "MVVM とコマンドを使用して計算ツール")
 
 ### <a name="invoking-asynchronous-methods"></a>非同期メソッドの呼び出し
 
-コマンドでは、非同期メソッドを呼び出すことができますも。 使用してこれは、`async`と`await`キーワードを指定する場合、`Execute`メソッド。
+コマンドは、非同期メソッドを呼び出すこともできます。 使用してこれは、`async`と`await`キーワードを指定するとき、`Execute`メソッド。
 
 ```csharp
-DownloadCommand = new Command (async () => await DownloadAsync ());
+DownloadCommand = new Command (async () => await DownloadAsync ());
 ```
 
-これが示す、`DownloadAsync`メソッドは、`Task`れ、待機する必要があります。
+これが示す、`DownloadAsync`メソッドは、`Task`待機する必要があります。
 
 ```csharp
 async Task DownloadAsync ()
@@ -579,7 +579,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>ナビゲーション メニューの実装
 
-[XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)この一連の記事内のすべてのソース コードを含むプログラムはそのホーム ページの ViewModel を使用します。 この ViewModel が短いという 3 つのプロパティを持つクラスの定義`Type`、 `Title`、および`Description`サンプル ページ、タイトル、および短い説明のそれぞれの型が含まれています。 また、という名前の静的プロパティの定義、ViewModel`All`プログラム内のすべてのページのコレクションであります。
+[XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)この一連の記事内のすべてのソース コードを含むプログラムがそのホーム ページの ViewModel を使用します。 このビューモデルが短いという名前の 3 つのプロパティを持つクラスの定義を`Type`、 `Title`、および`Description`サンプル ページ、タイトル、および簡単な説明のそれぞれの型が含まれています。 さらに、ViewModel はという名前の静的プロパティを定義します。`All`プログラム内のすべてのページのコレクションには。
 
 ```csharp
 public class PageDataViewModel
@@ -654,7 +654,7 @@ public class PageDataViewModel
 }
 ```
 
-XAML ファイル`MainPage`定義、`ListBox`が`ItemsSource`プロパティに設定されて`All`プロパティとが含まれている、`TextCell`を表示するため、`Title`と`Description`各ページのプロパティ。
+XAML ファイル`MainPage`定義、`ListBox`が`ItemsSource`プロパティに設定されて`All`プロパティとが含まれています、`TextCell`を表示するため、`Title`と`Description`各ページのプロパティ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -676,11 +676,11 @@ XAML ファイル`MainPage`定義、`ListBox`が`ItemsSource`プロパティに�
 </ContentPage>
 ```
 
-ページは、スクロール可能な一覧に表示されます。
+スクロール可能な一覧には、ページを表示します。
 
 [![](data-bindings-to-mvvm-images/mainpage.png "ページの一覧をスクロール可能な")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "ページのスクロール可能な一覧")
 
-ユーザーが項目を選択したときに、分離コード ファイル内のハンドラーがトリガーされます。 ハンドラーを設定、`SelectedItem`のプロパティ、`ListBox`に`null`選択したページをインスタンス化して、移動しました。
+ユーザーが項目を選択すると、分離コード ファイル内のハンドラーがトリガーされます。 ハンドラーのセット、`SelectedItem`のプロパティ、`ListBox`に`null`選択したページをインスタンス化して、それに移動します。
 
 ```csharp
 private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -700,11 +700,11 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin.Forms およびプリズムで簡単に行う Xamarin では、2016 を発展: MVVM**
+**Xamarin.Forms と Prism で簡単に行う Xamarin Evolve 2016 です: MVVM**
 
 ## <a name="summary"></a>まとめ
 
-XAML は、Xamarin.Forms アプリケーションは、特にデータ バインディングでユーザー インターフェイスを定義するための強力なツールおよび MVVM を使用します。 すべてのバック グラウンド サポート コードでのユーザー インターフェイスのクリーン、洗練され、潜在的に使いやすい形式になります。
+XAML は、データ バインディング時に特に、Xamarin.Forms アプリケーションでユーザー インターフェイスを定義するための強力なツールと、MVVM を使用します。 結果はクリーン、洗練された、および潜在的に理解できる使いやすいユーザー インターフェイスのすべてのバック グラウンド サポート コードで表したものです。
 
 
 ## <a name="related-links"></a>関連リンク

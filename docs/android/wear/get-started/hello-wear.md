@@ -162,7 +162,7 @@ Android Wear デバイスは、デバイスのプルダウン メニューに表
 
 [![Wear アプリの最初の画面](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
-タップして、 ** をクリックします。** ボタン表面 Wear デバイスと各をタップしてカウントの増加を参照してください。
+タップして、 **をクリックします** 。 ボタン表面 Wear デバイスと各をタップしてカウントの増加を参照してください。
 
 [![3 回のクリック後のスクリーン ショットの Wear アプリ](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 

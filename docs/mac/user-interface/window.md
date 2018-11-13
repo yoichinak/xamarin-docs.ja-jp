@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 2d129c72366224cedca26df6fa1499f65d04e92d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106976"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526976"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac での Windows
 
 _この記事では、ウィンドウとパネルは、Xamarin.Mac アプリケーションでの操作について説明します。作成のウィンドウとパネルで、Xcode と Interface Builder、ストーリー ボードと .xib ファイルから読み込むと、それらをプログラムで操作がについて説明します。_
 
-同じ Windows にアクセスし、で作業する開発者のパネルを Xamarin.Mac アプリケーションで c# と .NET を使用する場合*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、Windows とパネルを維持 (またはに応じて c# コードで直接作成する)。
+使用する場合C#および .NET、Xamarin.Mac アプリケーションで同じ Windows へのアクセスし、で作業する開発者のパネルを*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、Windows とパネルを維持 (またはに応じて c# コードで直接作成する)。
 
 その目的に基づき、Xamarin.Mac アプリケーションは、管理および情報を表示し、連携を調整する画面に 1 つまたは複数の Windows に表示できます。 ウィンドウのプリンシパルの関数は次のとおりです。
 
@@ -284,7 +284,7 @@ public override void ViewWillAppear ()
 MyWindow.PerformClose(this);
 ```
 
-終了しようとして、 `MyWindow` `NSWindow`インスタンス。 成功した場合、ウィンドウは閉じられます、それ以外の場合警告音が出力され、は開いたままです。
+終了しようとして、 `MyWindow` `NSWindow`インスタンス。 ウィンドウは閉じられますが成功した場合は、それ以外の場合、警告音が出力されるは開いたままにします。
 
 <a name="Close" />
 
@@ -377,7 +377,7 @@ namespace SourceWriter
                 alert.AddButton ("Cancel");
                 var result = alert.RunSheetModal (Window);
 
-                // Take action based on resu;t
+                // Take action based on result
                 switch (result) {
                 case 1000:
                     // Grab controller
@@ -758,7 +758,7 @@ void OpenDialog (NSObject sender)
 3. **[名前]** に「`DocumentPanel`」と入力し、**[新規]** ボタンをクリックします。
 4. ダブルクリックして、`DocumentPanel.xib`ファイルを開き、Interface Builder での編集します。 
 
-    [![](window-images/new02.png "Pannel の編集")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "編集パネル")](window-images/new02.png#lightbox)
 5. 既存のウィンドウを削除してからパネルをドラッグして、**ライブラリ インスペクター**で、**インターフェイス エディター**: 
 
     [![](window-images/panels01.png "既存のウィンドウを削除します。")](window-images/panels01.png#lightbox)

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: a519af9e4bddb949b6e0547387d804f1437deb21
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0d5bfa83bee74a799398912f77f21cba10c7be45
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104610"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526315"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>TvOS Xamarin を使用したユーザー インターフェイスの構築
 
 _Xamarin.tvOS で使用する場合は、ユーザー インターフェイス (UI) コントロールなどの一般的なユーザー エクスペリエンス (UX) カバレッジ Xcode の Interface Builder と UX デザインの原則を使用します。_
 
-使用する場合C#Xamarin 基盤の tvOS で .NET では、OBJECTIVE-C または Swift および Xcode 内で作業する開発者は同じユーザー インターフェイス コントロールへのアクセス権があるとします。 Xcode の Interface Builder は、作成して、ユーザー インターフェイスを管理するために使用できます (必要に応じてで直接作成またはC#コード)。
+使用する場合C#Xamarin 基盤の tvOS で .NET では、開発者は OBJECTIVE-C または Swift および Xcode での作業はいるのと同じユーザー インターフェイス コントロールへのアクセスがあるとします。 Xcode の Interface Builder は、作成して、ユーザー インターフェイスを管理するために使用できます (必要に応じてで直接作成またはC#コード)。
 
 以下のガイドでは、Xamarin.tvOS アプリでの tvOS UI 要素の使用に関する詳細情報を提供します。 作業することを強くお勧め、[はじめての tvOS クイック スタート ガイド](~/ios/tvos/get-started/hello-tvos.md)最初に、主要な概念とすべての記事で使用する方法について説明します。
 

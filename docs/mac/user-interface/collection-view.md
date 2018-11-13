@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: 904db0b97a8b21fd51722b70a63386a53e3f5347
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82dd175222289676c3dacd80522c55e71ba12180
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104038"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526834"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin.Mac でコレクション ビュー
 
 _この記事では、Xamarin.Mac アプリでのコレクション ビューの使用について説明します。作成および Xcode と Interface Builder でのコレクション ビューを維持し、それらをプログラムで操作を説明します。_
 
-C# と .NET Xamarin.Mac アプリケーションでは、開発者の操作がある同じへのアクセス時に AppKit コレクション ビュー コントロールで作業する開発者*Objective C*と*Xcode*は。 開発者が Xcode を使用するため、Xamarin.Mac は直接 Xcode と統合、 _Interface Builder_を作成し、コレクション ビューを維持します。
+使用する場合C#Xamarin.Mac アプリで .NET では、開発者がへのアクセスと同じ AppKit コレクション ビュー コントロールで作業する開発者*Objective C*と*Xcode*は。 開発者が Xcode を使用するため、Xamarin.Mac は直接 Xcode と統合、 _Interface Builder_を作成し、コレクション ビューを維持します。
 
 A`NSCollectionView`サブビューを使用して整理のグリッドを表示、`NSCollectionViewLayout`します。 グリッドで各サブビューがによって表される、`NSCollectionViewItem`からビューのコンテンツの読み込みを管理、`.xib`ファイル。
 

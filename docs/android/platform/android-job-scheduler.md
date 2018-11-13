@@ -1,5 +1,5 @@
 ---
-title: Android ジョブ スケジューラ
+title: Android ジョブのスケジューラ
 description: このガイドでは、Android のジョブ スケジューラ API を使用してバック グラウンド作業をスケジュールする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 673BB8C3-C5CC-43EC-BA8F-758F15D986C9
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 4bbb217fa8a3192905d016763b961e182224aa67
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0f638afbf044a2e3e6f309839cb22137cf95912
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108770"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527015"
 ---
-# <a name="android-job-scheduler"></a>Android ジョブ スケジューラ
+# <a name="android-job-scheduler"></a>Android ジョブのスケジューラ
 
 _Android 5.0 (API レベル 21) を実行している Android デバイスで使用できるは Android ジョブ スケジューラ API を使用してバック グラウンド作業をスケジュールする方法について説明しより高い。_
 
@@ -42,7 +42,7 @@ Android のジョブ スケジューラは、スケジュールのバック グ�
 * `Android.App.Job.JobService`は、アプリケーションのメイン スレッドで、ジョブを実行するロジックを使用して拡張する必要がある抽象クラスです。 つまり、`JobService`は非同期的に実行する作業が責任を負います。
 * `Android.App.Job.JobInfo`オブジェクトは、ジョブを実行するときに、Android をガイドする基準を保持します。
 
-Android のジョブ スケジューラで作業をスケジュールするを拡張するクラスのコードで Xamarin.Android アプリケーションによってカプセル化する必要があります、`JobService`クラス。 `JobService` 次の 3 つのライフ サイクル メソッドが用意されているジョブの有効期間中に呼び出すことができます。
+Android のジョブ スケジューラで作業をスケジュールするを拡張するクラスのコードで Xamarin.Android アプリケーションによってカプセル化する必要があります、`JobService`クラス。 `JobService` ジョブの有効期間中に呼び出すことができる 3 つのライフ サイクルの方法があります。
 
 * **bool OnStartJob (JobParameters パラメーター)** &ndash;このメソッドを呼び出して、`JobScheduler`作業、およびアプリケーションのメイン スレッドで実行を実行します。 役割です、`JobService`非同期的に作業を実行して`true`がある場合の動作の残りまたは`false`場合は、作業が行われます。
     
@@ -130,10 +130,10 @@ public static class JobSchedulerHelpers
     }
 }
 
-// Sample usage - creates a JobBuilder for a DownloadJob andsets the Job ID to 1.
+// Sample usage - creates a JobBuilder for a DownloadJob and sets the Job ID to 1.
 var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1);
 
-var jobInfo = jobBuilder.Build();  // creats a JobInfo object.
+var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 ```
 
 Android のジョブ スケジューラの強力な機能と、ジョブを実行または条件、ジョブが実行を制御する機能があります。 次の表は、メソッドの一部をについて説明します`JobInfo.Builder`アプリに影響するは、ジョブを実行できるようにします。  
@@ -186,7 +186,7 @@ public override bool OnStartJob(JobParameters jobParameters)
 
 ジョブをスケジュールするには、Xamarin.Android アプリケーションがへの参照を取得、 `JobScheduler` system サービスと呼び出し、`JobScheduler.Schedule`メソッドを`JobInfo`前の手順で作成されたオブジェクト。 `JobScheduler.Schedule` 2 つの整数値のいずれかですぐに返されます。
 
-* **JobScheduler.ResultSuccess** &ndash;ジョブが正常にスケジュールします。 
+* **JobScheduler.ResultSuccess** &ndash;ジョブが正常にスケジュールされています。 
 * **JobScheduler.ResultFailure** &ndash;ジョブをスケジュールできませんでした。 これは通常の競合が原因`JobInfo`パラメーター。
 
 このコードは、ジョブのスケジュールとスケジュールの試行の結果のユーザーに通知の例を示します。
@@ -211,7 +211,7 @@ else
 
 ```csharp
 // Cancel all jobs
-jobSchduler.CancelAll(); 
+jobScheduler.CancelAll(); 
 
 // to cancel a job with jobID = 1
 jobScheduler.Cancel(1)

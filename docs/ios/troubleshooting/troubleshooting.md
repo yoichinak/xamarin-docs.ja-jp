@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 80f37e1753362ec0503b70e49a2206684c0fedb5
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
+ms.openlocfilehash: 4d887d5a57aa3a632bd2f6795052c5b38f66a75a
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "50675329"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527171"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin.iOS のトラブルシューティングのヒント 
 
@@ -187,7 +187,7 @@ Stacktrace:
 
 ## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>(JIT コンパイル Foo[]:System.Collections.Generic.ICollection'1.get_Count) メソッド (マネージからマネージ ラッパー) しようとして System.ExecutionEngineException:
 
-[サフィックスは、ことか、クラス ライブラリ メソッドを呼び出す IEnumerable <>、ICollection <> IList <> などのジェネリック コレクションを配列のことを示します。 この問題を回避するには、自分でメソッドを呼び出すことによってこのようなメソッドを含める AOT コンパイラを明示的に強制でき、ことを確認することによって、例外をトリガーした呼び出しの前にこのコードを実行します。 この場合は、次のように記述する可能性があります。
+[サフィックスは、ことか、クラス ライブラリ メソッドを呼び出す IEnumerable <>、ICollection <> IList <> などのジェネリック コレクションを配列のことを示します。 この問題を回避するを自分でメソッドを呼び出すことによってこのようなメソッドを含める AOT コンパイラを明示的に強制することができ、ことを確認することによって、例外をトリガーした呼び出しの前にこのコードを実行します。 この場合は、次のように記述する可能性があります。
 
 ```csharp
 Foo [] array = null;
@@ -354,11 +354,11 @@ actionSheet.Clicked += delegate (sender, args){
 
 ## <a name="project-always-runs-in-the-ipad-simulator"></a>プロジェクト常に実行 iPad シミュレーター内
 
-IPhone SDK 4.0 インストーラーには、2 つの Sdk - iPad 専用のアプリを構築するため、3.2、SDK と文書の iPhone とユニバーサル アプリ SDK 4.0 がインストールされます。 3.2 シミュレーターが含まれ、iPad のみをシミュレートし、iPhone または iPhone 4 をシミュレートする 4.0 シミュレーターもインストールされます。 古い Sdk とシミュレーターのすべてが削除されます。
+IPhone SDK 4.0 インストーラーには、-iPad 専用のアプリを構築するため、3.2、SDK と 4.0 の SDK では、iPhone とユニバーサル アプリを構築するための 2 つの Sdk がインストールされます。 3.2 シミュレーターが含まれ、iPad のみをシミュレートし、iPhone または iPhone 4 をシミュレートする 4.0 シミュレーターもインストールされます。 古い Sdk とシミュレーターのすべてが削除されます。
 
 Visual Studio for Mac iPhone プロジェクトのビルド オプションでは、アプリのビルドで使用される SDK バージョンの設定が含まれます。 この設定が記載されて**プロジェクト オプション]、ビルドを [iPhone ビルド]-> [** します。
 
-Visual Studio for Mac で新しいプロジェクトの既定の SDK 設定として、最も古いインストールされている SDK を使用して、Visual Studio for Mac が最も近いアプリケーションを作成することを参照して使用して指定されている SDK が存在しない場合。 これは、プロジェクトが requre 最新の SDK では常にではありませんようにに行われました。 ただし、この現在結果、3.2、SDK が使用されている iPad シミュレーターで結果を使用します。
+Visual Studio for Mac で新しいプロジェクトの既定の SDK 設定として、最も古いインストールされている SDK を使用して、Visual Studio for Mac が最も近いアプリケーションを作成することを参照して使用して指定されている SDK が存在しない場合。 これは、プロジェクトは常に必要としないように、最新の SDK で行われました。 ただし、この現在結果、3.2、SDK が使用されている iPad シミュレーターで結果を使用します。
 
 4.0 の SDK を使用してこれを解決するには**プロジェクト オプション]、ビルドを [iPhone ビルド]-> [**> SDK 値をドロップダウン ボックスを使用して「4.0」に変更します。 これは、構成およびアクセス パネルの上部にあるドロップダウン リストを使用して、プラットフォームの組み合わせごとに行う必要があります。
 

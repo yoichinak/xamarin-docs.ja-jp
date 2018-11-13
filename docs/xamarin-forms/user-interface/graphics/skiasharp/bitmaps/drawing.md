@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: acdee7d34f913b125887f021dab39220c9560191
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a4fbf2bc38726ad50a07744ed4c2512efbb615bc
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109238"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527249"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
 
@@ -494,7 +494,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 ビットマップに一般的に実行される別の操作が呼び出された_反転_します。 概念的には、ビットマップが 3 次元垂直軸またはビットマップの中心を通るの水平軸の周りで回転します。 垂直方向の反転ミラー イメージを作成します。
 
-**ビットマップ フリッパー**ページで、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーション demonstates これらのプロセス。 XAML ファイルが含まれています、`SKCanvasView`と垂直方向および水平方向に反転の 2 つのボタン。
+**ビットマップ フリッパー**ページで、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションはこれらのプロセスを示しています。 XAML ファイルが含まれています、`SKCanvasView`と垂直方向および水平方向に反転の 2 つのボタン。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

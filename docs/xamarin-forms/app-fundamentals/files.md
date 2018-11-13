@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: e31bb46569ed96d514ec87eacaf9f3912dcf3237
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 87084a0ccc2970f56e7ef7a6d2f4c59c49032aa0
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675160"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527366"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms でのファイルの処理
 
@@ -20,7 +20,7 @@ _ファイルの処理を Xamarin.Forms では、.NET Standard ライブラリ�
 
 ## <a name="overview"></a>概要
 
-Xamarin.Forms コードは複数のプラットフォームで実行されますが、各プラットフォームには独自のファイルシステムがあります。 以前は、ことファイルの読み書きが最も簡単に実行されたこと各プラットフォームでネイティブ ファイル Api を使用してこれを意味します。 また、埋め込みリソースは、アプリとデータ ファイルを配布する簡単なソリューションです。 ただし、.NET Standard 2.0 と .NET Standard ライブラリでファイルへのアクセス コードを共有することは。
+Xamarin.Forms コードはマルチプラットフォームで実行されますが、各プラットフォームには独自のファイルシステムがあります。 以前は、ファイルの読み書きが最も簡単に実行されたこと各プラットフォームでネイティブ ファイル Api を使用してこれを意味します。 また、埋め込みリソースは、アプリと一緒にデータファイルを配布するより簡単な方法です。 しかし、.NET Standard 2.0 を使えば、 .NET Standard ライブラリでファイルへアクセスするコードを共有することができます。
 
 イメージ ファイルの処理方法の詳細についてを参照してください、[イメージを操作](~/xamarin-forms/user-interface/images.md)ページ。
 

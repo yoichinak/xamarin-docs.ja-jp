@@ -4,15 +4,15 @@ description: 'Xamarin.Forms によるモバイル アプリの作成: 第 1 章�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: abf30f2cd828d67ef6fb04f809fce6235e1add9b
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: dfe2d81673804e2f77694a794ef82931eb88357d
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156484"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563915"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要です。 Xamarin.Forms はどのように適合するでしょうか。
 

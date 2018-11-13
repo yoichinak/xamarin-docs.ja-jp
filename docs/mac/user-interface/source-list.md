@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7fa6b128572490ce1fe330b722181e33bbad1ffd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82e4dfb9add7002fd7d3568d0ec946ea38dfd530
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122050"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526410"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin.Mac でソース リスト
 
 _この記事では、Xamarin.Mac アプリケーションでのソース リストを使用した作業について説明します。作成および Xcode と Interface Builder でのソース リストを維持し、c# コードで操作することについて説明します。_
 
-同じへのアクセス、Xamarin.Mac アプリケーションで c# と .NET を使用する場合があるソースをリストで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ソース リストを維持 (またはに応じて c# コードで直接作成する)。
+使用する場合C#へのアクセス権を持って、Xamarin.Mac アプリケーションで .NET では、同じソース リストで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ソース リストを維持 (またはに応じて c# コードで直接作成する)。
 
 ソースの一覧は、特殊な種類のアウトライン ビューの Finder または iTunes でサイド バーなどの操作のソースを表示するために使用します。
 

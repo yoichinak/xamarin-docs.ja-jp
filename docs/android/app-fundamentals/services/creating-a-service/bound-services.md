@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: 420fabf7b1f4c5bf4cacdeaf10823ae3233f5bd0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113236"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528560"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin.Android でのサービスをバインドします。
 
@@ -234,7 +234,7 @@ Android を呼び出し、バインド プロセスの一部として、`OnServi
 
 * **`Intent`**  &ndash;インテントがへの接続にサービスを明示的に識別する必要があります。
 * **`IServiceConnection`オブジェクト**&ndash;このオブジェクトがバインドされているサービスが開始および停止時にクライアントに通知するコールバック メソッドを提供する媒介手段です。
-* **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/) 列挙型**&ndash;フラグのセットがこのパラメーターは、オブジェクトをバインドする場合に、システムで使用されます。 最もよく使用される値は[ `Bind.AutoCreate` ](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/)、既に実行されていない場合を自動的にサービスが開始されます。
+* **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/) 列挙型**&ndash;このパラメーターは、フラグのセットは、オブジェクトをバインドする場合に、システムで使用します。 最もよく使用される値は[ `Bind.AutoCreate` ](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/)、既に実行されていない場合を自動的にサービスが開始されます。
 
 次のコード スニペットでは、明示的なインテントを使用して、アクティビティにバインドされているサービスを開始する方法の例を示します。
 

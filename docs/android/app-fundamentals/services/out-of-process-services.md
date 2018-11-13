@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8514d3b2c423e524d03a800f5f56359f3aee4b75
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.openlocfilehash: db312c4c102feb98791109af19185762bb25856e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737194"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528846"
 ---
 # <a name="running-android-services-in-remote-processes"></a>リモート プロセスで実行されている Android サービス
 
@@ -76,7 +76,7 @@ Android を呼び出すクライアントは、リモート サービスにバ�
 
 1. `Exported` &ndash; このプロパティに設定する必要があります`true`他のアプリケーション サービスとの対話を可能にします。 このプロパティの既定値は `false` です。
 2. `Process` &ndash; このプロパティを設定する必要があります。 サービスで実行されるプロセスの名前を指定に使用されます。
-3. `IsolatedProcess` &ndash; このプロパティは、追加のセキュリティ、システムの残りの部分と iteract する最小限の権限を持つ分離のサンド ボックス内でサービスを実行する Android の通知を有効になります。 参照してください[Bugzilla 51940 - サービスの独立したプロセスとアプリケーションのカスタム クラスがオーバー ロードを正しく解決失敗](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)します。
+3. `IsolatedProcess` &ndash; このプロパティは、追加のセキュリティ、システムの残りの部分と対話する最小限のアクセス許可を持つ分離のサンド ボックスで、サービスを実行する Android の通知を有効になります。 参照してください[Bugzilla 51940 - サービスの独立したプロセスとアプリケーションのカスタム クラスがオーバー ロードを正しく解決失敗](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)します。
 4. `Permission` &ndash; アクセス許可を要求する必要があります (および付与) クライアントを指定して、サービスへのクライアント アクセスを制御することになります。
 
 独自のプロセスでは、サービスの実行に、`Process`プロパティを`ServiceAttribute`サービスの名前に設定する必要があります。 外部のアプリケーションと対話する、`Exported`にプロパティを設定する必要があります`true`します。 場合`Exported`は`false`、同じ APK (つまり、同じアプリケーション) 内のクライアントのみと同じプロセスで実行中は、サービスと対話することになります。
@@ -129,7 +129,7 @@ Android を呼び出すクライアントは、リモート サービスにバ�
 
 ### <a name="implementing-a-handler"></a>ハンドラーを実装します。
 
-クライアント要求を処理するには、サービスを実装する必要があります、`Handler`をオーバーライドし、 `HandleMessage` methodThis はメソッドは、`Message`インスタンスがどのクライアントからメソッドの呼び出しをカプセル化し、何らかのアクションには、その呼び出しを変換しますまたは。サービスを実行するタスク。 `Message`オブジェクトと呼ばれるプロパティを公開する`What`は整数値の意味は、クライアントとサービス間で共有し、サービスがクライアントを実行するにはいくつかのタスクに関連しています。
+クライアント要求を処理するには、サービスを実装する必要があります、`Handler`をオーバーライドし、 `HandleMessage` methodThis はメソッドは、`Message`インスタンスに、クライアントからメソッドの呼び出しをカプセル化し、タスクやアクションには、その呼び出しを変換します。サービスが実行されます。 `Message`オブジェクトと呼ばれるプロパティを公開する`What`は整数値の意味は、クライアントとサービス間で共有し、サービスがクライアントを実行するにはいくつかのタスクに関連しています。
 
 サンプル アプリケーションから次のコード スニペットは、1 つの例を示しています。`HandleMessage`します。 この例では、サービスのクライアントが要求できる 2 つのアクションがあります。
 
@@ -153,7 +153,7 @@ public class TimestampRequestHandler : Android.OS.Handler
                 break;
 
             case Constants.GET_UTC_TIMESTAMP:
-                // Call methods on the service to retrive a timestamp message.
+                // Call methods on the service to retrieve a timestamp message.
                 break;
             default:
                 Log.Warn(TAG, $"Unknown messageType, ignoring the value {messageType}.");
@@ -168,7 +168,7 @@ public class TimestampRequestHandler : Android.OS.Handler
 
 ### <a name="instantiating-the-messenger"></a>Messenger をインスタンス化します。
 
-前述した、逆シリアル化、`Message`オブジェクトと呼び出し`Handler.HandleMessage`はの responsibilty、`Messenger`オブジェクト。 `Messenger`クラスも用意されています。、`IBinder`サービスにメッセージを送信するクライアントが使用するオブジェクト。  
+前述した、逆シリアル化、`Message`オブジェクトと呼び出し`Handler.HandleMessage`の責任において、`Messenger`オブジェクト。 `Messenger`クラスも用意されています。、`IBinder`サービスにメッセージを送信するクライアントが使用するオブジェクト。  
 
 サービスの開始時にインスタンス化するため、`Messenger`を挿入し、`Handler`します。 この初期化を実行する適切な場所は、`OnCreate`サービスのメソッド。 このコード スニペットはそれ自体を初期化するサービスの 1 つの例`Handler`と`Messenger`:
 
@@ -296,7 +296,7 @@ catch (RemoteException ex)
 
 いくつかの異なる形式としては、`Message.Obtain`メソッド。 前の例では、 [ `Message.Obtain(Handler h, Int32 what)`](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/)します。 これは、プロセス外のサービスへの非同期要求なのでサービスからの応答ことはありませんので、`Handler`に設定されている`null`します。 2 番目のパラメーターでは、`Int32 what`に格納されます、`.What`のプロパティ、`Message`オブジェクト。 `.What`プロパティは、サービスでメソッドを呼び出すサービス プロセス内のコードによって使用されます。
 
-`Message`クラスには、recipent に可能性のある 2 つの追加プロパティも公開します:`Arg1`と`Arg2`します。 これら 2 つのプロパティは、可能性のあるいくつかの特別な合意がクライアントとサービスの間の意味を持つ値の整数値です。 たとえば、`Arg1`顧客 ID を保持する可能性がありますと`Arg2`その顧客の注文書番号を保持する可能性があります。 [ `Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/) 2 つのプロパティを設定するために使用するときに、`Message`が作成されます。 これら 2 つの値を設定する別の方法が設定するのには、`.Arg`と`.Arg2`プロパティで直接、`Message`が作成された後のオブジェクトします。
+`Message`クラスでは、受信者に使用する必要があります、2 つのプロパティも公開します:`Arg1`と`Arg2`します。 これら 2 つのプロパティは、可能性のあるいくつかの特別な合意がクライアントとサービスの間の意味を持つ値の整数値です。 たとえば、`Arg1`顧客 ID を保持する可能性がありますと`Arg2`その顧客の注文書番号を保持する可能性があります。 [ `Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/) 2 つのプロパティを設定するために使用するときに、`Message`が作成されます。 これら 2 つの値を設定する別の方法が設定するのには、`.Arg`と`.Arg2`プロパティで直接、`Message`が作成された後のオブジェクトします。
 
 ### <a name="passing-additional-values-to-the-service"></a>サービスに追加の値を渡す
 

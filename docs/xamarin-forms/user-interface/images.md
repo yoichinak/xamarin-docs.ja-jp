@@ -88,7 +88,7 @@ iOS、Android、および UWP には、オペレーティング システムが�
 
 IOS 9 以降のイメージの管理の推奨される方法は、適切な資産カタログの画像セットに必要な各解像度のイメージをドラッグすることです。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
-Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、**リソース**フォルダー - 2 と 3 回の解像度、 **@2x**または**@3x**(例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
+Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
 Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](http://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
 

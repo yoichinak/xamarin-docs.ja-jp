@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f787adcba78a13f6d4cad3fb446350a65e960aca
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cfa450c977ac9f1d6370f40d27f5d704cc774767
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123610"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526677"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -36,7 +36,7 @@ Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ
 
 ## <a name="maps-initialization"></a>マップの初期化
 
-Xamarin.Forms アプリケーションにマップを追加するときに**Xamarin.Forms.Maps**は、別の NuGet パッケージ、ソリューション内のすべてのプロジェクトに追加する必要があります。
+Xamarin.Forms アプリケーションにマップを追加するときに**Xamarin.Forms.Maps**個別の NuGet パッケージ、ソリューション内のすべてのプロジェクトに追加する必要があります。
 Android では、これもに依存している Xamarin.Forms.Maps を追加するときに自動的にダウンロードされる GooglePlayServices (別の NuGet)。
 
 各アプリケーション プロジェクトで NuGet パッケージをインストールすると、初期化コードが必要な*後*、`Xamarin.Forms.Forms.Init`メソッドの呼び出し。 IOS 用には、次のコードを使用します。
@@ -141,7 +141,7 @@ Android プロジェクトを右クリックして適切なアクセス許可を
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>マップを使用します。
+## <a name="using-maps"></a>マップの使用
 
 参照してください、 [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM サンプル コードで、マップ コントロールの使用方法の例についてはします。 単純な`MapPage`クラスは、この通知のようになりますが、新しい`MapSpan`マップのビューを配置が作成されます。
 
@@ -183,7 +183,7 @@ map.MapType == MapType.Street;
 上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンス トラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
 
 -  **MapSpan.FromCenterAndRadius()** -からのスパンを作成する静的メソッド、`Position`を指定して、`Distance`します。
--  **新しい MapSpan ()** -コンス トラクターを使用する、`Position`の緯度と経度を表示する degress とします。
+-  **新しい MapSpan ()** -コンス トラクターを使用する、`Position`と緯度と経度を表示する角度。
 
 
 場所を変更することがなく、マップのズーム レベルを変更するには、新しい作成`MapSpan`から現在の場所を使用して、`VisibleRegion.Center`マップ コントロールのプロパティ。 A `Slider` (ただし、マップ コントロールに直接ズーム スライダーの値を更新できません現在) は、このようなマップのズームを制御するされる可能性があります。

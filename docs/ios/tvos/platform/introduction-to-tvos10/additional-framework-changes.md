@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8f7094cebf284f301e08faae8d94c99a73964d55
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ca9856251d35a741d496b6e8b45b07e851e0e89
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114289"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528612"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>追加の tvOS 10 フレームワークの変更
 
@@ -85,7 +85,7 @@ TvOS 10 の Foundation フレームワークには、次の機能強化が施さ
 
  - 使用して、新しい[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)間隔を比較して、間隔の交差部分のテストのための期間などの日付と時刻の間隔の計算を行うクラス。
  - いくつかの新しいプロパティが追加されて、 [NSLocal](https://developer.apple.com/reference/foundation/nslocale)ローカル情報と使用可能な表示形式を取得するクラス。
- - 使用して、新しい[NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement)間さまざまなユニットの測定 (UOM) を変換または異なる UOMs 内の値に対して計算を実行するクラス。
+ - 使用して、新しい[NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)間さまざまなユニットの測定 (UOM) を変換または異なる UOMs 内の値に対して計算を実行するクラス。
  - 使用して、新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスは、エンドユーザーに表示するためのローカライズされた測定値の書式を設定します。
  - 使用して、新しい[NSUnit](https://developer.apple.com/reference/foundation/nsunit)と[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)特定 UOMs を表すためのクラス。
 
@@ -182,7 +182,7 @@ TvOS 10 の UIKit フレームワークには、次の機能強化が施され�
  - 新しい`UIGraphicsRender`クラスは UIKit レンダリングまたは Core Graphics からビットマップまたは Pdf の作成、オブジェクト指向のメソッドを提供し、非推奨が置き換えられます`UIGraphicsBeginImageContext`メソッド。
  - `UIUserInterfaceStyle` (暗色または明色) ユーザー インターフェイス テーマが現在アクティブなを判断するクラスが追加されました。
  - 新しいアニメーションを完全にインタラクティブなオブジェクトに基づく、割り込み可能なサポートが追加されました van ジェスチャにリンクします。 Pleas を参照してください Apple の[UIViewAnimating プロトコル リファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator クラス参照](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider プロトコル リファレンス](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters)と[UISpringTimingParameter クラス参照](https://developer.apple.com/reference/uikit/uispringtimingparameters)詳細についてはします。
- - 新しい`UIPreviewInteraction`と`UIPreviewInteractionDelegate`ピークと pop 操作のためのカスタム インターフェイスを提供するアプリを許可します。
+ - 新しい`UIPreviewInteraction`と`UIPreviewInteractionDelegate`アプリがピークと pop 操作のためのカスタム インターフェイスを提供できるようにします。
  - 新しい`UIAccessibilityCustomRotor`クラス経由で音声などの支援技術にカスタムのコンテキストに固有の機能を提供するアプリを使用できます。
  - 使用して、`UIAccessibilityIsAssistiveTouchRunning`と`UIAccessibilityAssistiveTouchStatusDidChangeNotification`AssistiveTouch が有効になっているかどうかを判断するシンボル。
  - 使用して、`UIAccessibilityHearingDevicePairedEar`と`UIAccessibilityHearingDevicePairedEarDidChangeNotification`いずれかの状態を取得するシンボル ペア MFi 皆さまの支援になっています。

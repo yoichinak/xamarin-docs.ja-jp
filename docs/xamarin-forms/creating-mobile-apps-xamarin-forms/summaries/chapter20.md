@@ -4,15 +4,15 @@ description: 'Xamarin.Forms によるモバイル アプリの作成: 第 20 章
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 527ecfa03adb78d8b97e95d0b6b81ceb12f0a107
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156731"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563772"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章の概要です。 非同期およびファイル I/O
 
@@ -28,7 +28,7 @@ ms.locfileid: "39156731"
 > [!NOTE]
 > Xamarin.Forms のプログラムを使用する必要があります[ `HttpClient` ](xref:System.Net.Http.HttpClient)なく[ `WebRequest` ](xref:System.Net.WebRequest)インターネット経由でファイルにアクセスするためです。 `HttpClient` 非同期操作をサポートしています。
 
-非同期処理するための最新のアプローチは .NET と c# で使用できます。 これは、ためには、 [ `Task` ](xref:System.Threading.Tasks.Task)と[ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1)クラス、およびその他の種類で、 [ `System.Threading` ](xref:System.Threading)と[ `System.Threading.Tasks` ](xref:System.Threading.Tasks)名前空間には、c# 5.0 と`async`と`await`キーワード。 この章の説明です。
+非同期処理するための最新のアプローチは .NET と c# で使用できます。 これは、ためには、 [ `Task` ](xref:System.Threading.Tasks.Task)と[ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1)クラス、およびその他の種類で、 [ `System.Threading` ](xref:System.Threading)と[ `System.Threading.Tasks` ](xref:System.Threading.Tasks) 、名前空間だけでなくC#5.0`async`と`await`キーワード。 この章の説明です。
 
 ## <a name="from-callbacks-to-await"></a>Await にコールバックから
 

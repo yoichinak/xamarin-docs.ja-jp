@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
-ms.openlocfilehash: 4105193ea69eaf369ae62632090a281e641303f7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110369"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528820"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS Xamarin でのバック グラウンド タスク
 
@@ -691,7 +691,7 @@ Apple では、次の推奨事項があります。
 - WatchOS シミュレーターでアプリをテストするときに適切に機能をテストするために必要な限りアプリを更新できるようにタスク予算のいずれも適用されます。
 - 実際の Apple Watch のハードウェアを iTunes Connect に、アプリを過去のパブリッシュする前に、予算が実行されていることを確認するを常にテストします。
 - Apple では、テストおよびデバッグ中に電池を Apple Watch を維持することをお勧めします。
-- コールド両方を起動して、アプリの再開はテストかもしれないことを確認します。
+- コールド両方を起動して、アプリの再開が十分にテストしていることを確認します。
 - アプリのすべてのタスクが完了することを確認します。
 - 最高と最低値の両方をテストするドッキング ステーションにピン留めされているアプリの数を変更するケース シナリオです。
 

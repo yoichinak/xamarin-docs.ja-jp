@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: e3cfc9a345c8ab92b35ad428b550ec42de6312e5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bc7da76084075b03ca346949b7bb764ae1313c2a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120295"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563512"
 ---
 # <a name="location-services"></a>位置情報サービス
 
@@ -190,7 +190,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
 
 場所の融合型プロバイダーを呼び出す場所の更新の Xamarin.Android アプリケーションを通知する、`LocationCallBack.OnLocationResult(LocationResult result)`します。 `Android.Gms.Location.LocationResult`パラメーター更新場所情報が含まれます。
 
-呼び出すことが融合型場所プロバイダーは、場所データの可用性の変更を検出すると、`LocationProvider.OnLocationAvaibility(LocationAvailability
+呼び出すことが融合型場所プロバイダーは、場所データの可用性の変更を検出すると、`LocationProvider.OnLocationAvailability(LocationAvailability
 locationAvailability)`メソッド。 場合、`LocationAvailability.IsLocationAvailable`プロパティが返す`true`、によってデバイスの場所の結果が報告されたことが想定することができますし、`OnLocationResult`は正確でと、最新の状態によって必要に応じて、`LocationRequest`します。 場合`IsLocationAvailable`が false の場合、場所の結果はありませんで返される`OnLocationResult`します。
 
 このコード スニペットは、サンプルの実装の`LocationCallback`オブジェクト。
@@ -253,9 +253,9 @@ LocationManager locationManager = (LocationManager) GetSystemService(Context.Loc
 
 ### <a name="request-location-updates-from-the-locationmanager"></a>要求の場所の更新プログラム、LocationManager から
 
-アプリケーションがへの参照を持つ、 `LocationManager`、確認する必要がある、`LocationManager`場所情報の種類が必要であり、その情報を更新するのにはどのくらいの頻度。 これを呼び出すことによって行います`RequestionLocationUpdates`上、`LocationManager`オブジェクト、およびいくつかの条件の更新プログラムおよび場所の更新プログラムを受信するコールバックを渡すことです。 このコールバックは型を実装する必要があります、`ILocationListener`インターフェイス (このガイドの後半で詳しく説明します)。
+アプリケーションがへの参照を持つ、 `LocationManager`、確認する必要がある、`LocationManager`場所情報の種類が必要であり、その情報を更新するのにはどのくらいの頻度。 これを呼び出すことによって行います`RequestLocationUpdates`上、`LocationManager`オブジェクト、およびいくつかの条件の更新プログラムおよび場所の更新プログラムを受信するコールバックを渡すことです。 このコールバックは型を実装する必要があります、`ILocationListener`インターフェイス (このガイドの後半で詳しく説明します)。
 
-`RequestionLocationUpdates`メソッドは、受信場所の更新を開始する、アプリケーションが希望をシステムの場所のサービスに指示します。 このメソッドでは、プロバイダーと、時間との距離のしきい値の更新頻度を制御するを指定できます。 たとえば、以下の要求の場所の下のメソッドを更新の GPS 場所プロバイダーから 2000 ミリ秒ごとに、場所が 1 メートル以上に変更されたときにのみとします。
+`RequestLocationUpdates`メソッドは、受信場所の更新を開始する、アプリケーションが希望をシステムの場所のサービスに指示します。 このメソッドでは、プロバイダーと、時間との距離のしきい値の更新頻度を制御するを指定できます。 たとえば、以下のメソッドは 2000 ミリ秒ごとに、GPS の場所プロバイダーから更新プログラムの場所を要求し、場所が 1 メートル以上に変更されたときにのみ。
 
 ```csharp
 // For this example, this method is part of a class that implements ILocationListener, described below

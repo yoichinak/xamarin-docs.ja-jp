@@ -4,15 +4,15 @@ description: 'Xamarin.Forms によるモバイル アプリの作成: 第 2 章�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: fcb832e851d7467679d979841dad60d117240b59
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156685"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563880"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要です。 アプリの詳細
 
@@ -203,5 +203,5 @@ IOS と Android の間のカットオフの`Tablet`と`Phone`は 600 ユニッ�
 
 - [第 2 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
 - [第 2 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
-- [第 2 章 f# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
+- [第 2 章F#サンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Xamarin.Forms の概要](~/xamarin-forms/get-started/index.md)

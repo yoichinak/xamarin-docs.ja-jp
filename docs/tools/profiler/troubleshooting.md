@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
-ms.openlocfilehash: 34406ce8d4276ba36ab2ddd49e73681ff2fef773
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103752"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563343"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler のトラブルシューティング
 
@@ -79,7 +79,7 @@ Visual Studio で、プロファイラーの使用時にこのエラーのボッ
 
 #### <a name="to-watch-a-specific-thread"></a>特定のスレッドを監視するには
 
-具体的には監視に必要なスレッドがあれば、get 取得できるように、その作成の非常に最初のスレッドに名前を付ける理想的ななります`ThreadName`の代わりに`0x0`します。 UI としてスレッド名を設定する例では、次のコードを使用できます。
+具体的には監視に必要なスレッドがある場合に名前を取得するには、その作成の最初に、スレッドの最適ななります`ThreadName`の代わりに`0x0`します。 たとえば、スレッド名を設定する`UI`、次のコードを使用できます。
 
 ```csharp
 RunOnUiThread (() => {

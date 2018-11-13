@@ -4,15 +4,15 @@ description: 'Xamarin.Forms によるモバイル アプリの作成: 第 6 章�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 464fbdb043ac35eba7a4cc2d9ec76b78cc91ac5b
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 0f1da94031e658d42205e6346d41b02c5822d992
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156513"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563681"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>第 6 章の概要です。 ボタンのクリック
 
@@ -61,7 +61,7 @@ ms.locfileid: "39156513"
 多くのアプリケーションでは、プログラムが終了したときにデータを保存して、プログラムをもう一度起動するときに、そのデータを再読み込みする必要があります。 [ `Application` ](xref:Xamarin.Forms.Application)クラスは、プログラムを保存し、一時的なデータの復元に役立ついくつかのメンバーを定義します。
 
 - [ `Properties` ](xref:Xamarin.Forms.Application.Properties)プロパティが使用してディクショナリを`string`キーと`object`項目。 ディクショナリの内容は自動的にプログラムの終了前にアプリケーションのローカル ストレージに保存され、プログラムを起動するときに再度読み込まれます。
-- `Application`クラスは、プログラムの標準的なこと、3 つの保護された仮想メソッドを定義します`App`オーバーライド: [ `OnStart` ](xref:Xamarin.Forms.Application.OnStart)、 [ `OnSleep` ](xref:Xamarin.Forms.Application.OnSleep)、および[ `OnResume` ](xref:Xamarin.Forms.Application.OnResume). これらを参照してください*アプリケーションのライフ サイクル*イベント。
+- `Application`クラスは、プログラムの標準的なこと、3 つの保護された仮想メソッドを定義します`App`オーバーライド: [ `OnStart` ](xref:Xamarin.Forms.Application.OnStart)、 [ `OnSleep` ](xref:Xamarin.Forms.Application.OnSleep)、および[ `OnResume` ](xref:Xamarin.Forms.Application.OnResume)。 これらを参照してください*アプリケーションのライフ サイクル*イベント。
 - [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync)メソッドは、ディクショナリの内容を保存します。
 
 呼び出す必要はありません`SavePropertiesAsync`します。 ディクショナリの内容は自動的にプログラムの終了前に保存され、プログラムの起動する前に取得します。 プログラムがクラッシュした場合は、データを保存するプログラムがテスト中に便利です。
@@ -87,5 +87,5 @@ ms.locfileid: "39156513"
 
 - [第 6 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [第 6 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
-- [第 6 章 f# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [第 6 章F#サンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
 - [Xamarin.Forms のボタン](~/xamarin-forms/user-interface/button.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 2bbc61c7fe843fd020093ab7080f38e6e7b180f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 08edd3166df8392a5f3e7485a6572f0c94a38f62
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107808"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563657"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS で 3D Touch の概要
 
@@ -78,7 +78,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 3D Touch には、ユーザーが、現在の場所から移動することがなく、これまでよりも高速アプリ内の情報にアクセスする新しい方法が用意されています。
 
-など、アプリがメッセージのテーブルを表示している場合、ユーザーが押すオーバーレイのビューでは、そのコンテンツをプレビューする項目でハード (Apple として参照する、*ピーク*)。
+など、アプリがメッセージのテーブルを表示している場合、ユーザーが押すオーバーレイのビューでは、そのコンテンツをプレビューする項目をハード (Apple として参照する、*ピーク*)。
 
 [![](3d-touch-images/peekandpop01.png "コンテンツには、ピークの例")](3d-touch-images/peekandpop01.png#lightbox)
 
@@ -188,7 +188,7 @@ public override void ViewDidLoad ()
 
     // Check to see if 3D Touch is available
     if (TraitCollection.ForceTouchCapability == UIForceTouchCapability.Available) {
-        // Regiser for Peek and Pop
+        // Register for Peek and Pop
         RegisterForPreviewingWithDelegate(new PreviewingDelegate(this), View);
     }
     ...

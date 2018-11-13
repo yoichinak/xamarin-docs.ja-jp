@@ -8,18 +8,18 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: e4f0138c0177c046c1e967a3d3625604f73327d6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0c5e048dd3f3496691b83eb10d377d012efedc72
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103193"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528768"
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
 _最新バージョンの Android のアプリを開発する Xamarin.Android の使用を開始する方法。_
 
-[Android 8.0 Oreo](https://developer.android.com/index.html)は最新バージョンの Android の Google から使用できます。 Android Oreo では、Xamarin.Android 開発者にとって関心のある多くの新機能を提供します。 これらの機能には、XML、ダウンロード可能なフォント、オートコンプリート、および画像 (PIP) の画像で通知チャネル、通知のバッジ、カスタム フォントが含まれます。 Android Oreo はこれらの新機能による、用の新しい Api を含み、これらの Api は、Xamarin.Android 8.0 を使用すると、Xamarin.Android アプリで使用できる以降。
+[Android 8.0 Oreo](https://developer.android.com/index.html)は最新バージョンの Android の Google から使用できます。 Android Oreo では、Xamarin.Android 開発者にとって関心のある多くの新機能を提供します。 これらの機能には、XML、ダウンロード可能なフォント、オートコンプリート、および画像 (PIP) の画像で通知チャネル、通知のバッジ、カスタム フォントが含まれます。 Android Oreo には、これらの新機能の新しい Api が含まれており、これらの Api は、Xamarin.Android 8.0 を使用すると、Xamarin.Android アプリで使用できる以降。
 
 [![Android Oreo ヒーローのイメージ](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
 
@@ -66,7 +66,7 @@ Visual Studio には、Android Oreo のサポートを追加するには、次�
 
     2. 使用して、 [SDK Manager](~/android/get-started/installation/android-sdk.md) API レベル 26.0 以降をインストールします。
 
--   SDK Tools を 25 にダウン グレードして、使用をお勧めします、Visual Studio 2015 を使用している場合、古い Google エミュレーター マネージャー GUI です。 25 の SDK ツールは、API 26、27 日以降と共に使用でき、新しいプラットフォームの開発に影響しません。 こうインターフェイスとの古いバージョンの Android SDK を管理するためです。
+-   Visual Studio 2015 を使用している場合は、25 古い Google エミュレーター マネージャー GUI を使用して SDK Tools の昇格を勧めします。 25 の SDK ツールは、API 26、27 日以降と共に使用でき、新しいプラットフォームの開発に影響しません。 こうインターフェイスとの古いバージョンの Android SDK を管理するためです。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

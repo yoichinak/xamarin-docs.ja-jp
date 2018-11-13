@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: d3e5da19bacf5a6847bf6226c3fdd2b1e0e46ab2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 83f9651fa7fd20709c620258833ae4a152ffd0eb
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111065"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563668"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>イベント、プロトコル、Xamarin.iOS でのデリゲート
 
@@ -52,7 +52,7 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-上記のコードのワイヤード (有線)、 `ViewDidLoad` UIViewContoller のメソッド。 `aButton`変数を参照して、ボタンは、iOS デザイナーまたはコードを追加できます。 次の図は、iOS Designer に追加されているボタンを示しています。
+上記のコードのワイヤード (有線)、`ViewDidLoad`の UIViewController のメソッド。 `aButton`変数を参照して、ボタンは、iOS デザイナーまたはコードを追加できます。 次の図は、iOS Designer に追加されているボタンを示しています。
 
 [![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "IOS Designer で追加ボタン")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 

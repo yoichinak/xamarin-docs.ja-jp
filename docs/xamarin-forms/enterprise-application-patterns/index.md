@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ecfe99f66e16eafabc3117036ff065e3a35259c3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f972a32f8daf920f2121e5aa56923c0f3a7f808a
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994349"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528443"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Xamarin.Forms 電子ブックを使用してエンタープライズ アプリケーション パターン
 
@@ -54,7 +54,7 @@ Xamarin.Forms には、ページ ナビゲーションは、通常、UI を使�
 
 ユーザーからの入力を受け取るすべてのアプリでは、入力が有効なことを確認してください。 検証なしでは、ユーザーは、アプリが失敗する原因となったデータを指定できます。 検証は、ビジネス ルールを強制し、攻撃者が悪意のあるデータを挿入することを防止します。
 
-モデルのビューモデル (MVVM) のコンテキストでのパターンをビュー モデルまたはモデルは、データの検証を実行し、ユーザーは、それを解決できるように、ビューに検証エラーを通知する多くの場合、必要があります。
+モデル-ビュー-ビューモデル (MVVM) のコンテキストでのパターンをビュー モデルまたはモデルがデータ検証を実行し、ユーザーは、それを解決できるように、ビューに検証エラーを通知する必要な多くの場合は。
 
 ## <a name="configuration-managementconfiguration-managementmd"></a>[構成管理](configuration-management.md)
 

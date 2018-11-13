@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 0c52db61689dd640332fb1e02e2260dda08e4686
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 906489aa3947df24662cbbd0473333caccc032c7
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115927"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527262"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin.iOS でのローカライズ
 
@@ -248,7 +248,7 @@ Apple を参照してください[日付フォーマッタ](https://developer.ap
 
 iOS では、さまざまな右から左に対応するアプリの構築を支援する機能が用意されています。
 
-- 自動レイアウトの`leading`と`trailing`(を英語を左側と右側に対応していますが、RTL 言語には逆に) 制御揃えの属性。
+- 自動レイアウトの`leading`と`trailing`(を英語を左側と右側に対応していますが、RTL 言語には逆に) コントロールの配置の属性。
   [ `UIStackView` ](~/ios/user-interface/controls/uistackview.md)コントロールが右から左に対応するコントロールをレイアウトするために特に便利です。
 - 使用`TextAlignment = UITextAlignment.Natural`のテキストの配置 (これは多くの言語が右から左に残ります)。
 - `UINavigationController` 自動的に [戻る] ボタンを反転し、スワイプ方向を反転させます。

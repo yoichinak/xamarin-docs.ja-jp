@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 51bd3dd4c27dce19344f7660c31a0d4e741e1ad4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a411d4d85877c9868ec49f92b53ca8d7a81f9959
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121140"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528534"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android でブロードキャスト レシーバー
 
@@ -97,7 +97,7 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Android 8.0 (API レベル 26) を対象とするアプリ以降に静的に登録できません暗黙のブロードキャストまたはします。 アプリは、明示的なブロードキャストも静的を登録することがあります。 この制限から除外される暗黙のブロードキャストの小規模なリストがあります。 これらの例外が記載されて、[ブロードキャストの暗黙的な例外](https://developer.android.com/guide/components/broadcast-exceptions.html)Android ドキュメントのガイド。 暗黙的なブロードキャストに関心のあるアプリを使用して動的に行う必要があります、`RegisterReceiver`メソッド。 これは次に説明します。
+Android 8.0 (API レベル 26) を対象とするアプリ以降に静的に登録できません暗黙のブロードキャストまたはします。 アプリは、明示的なブロードキャストも静的を登録することがあります。 この制限から除外される暗黙的なブロードキャストの小規模なリストがあります。 これらの例外が記載されて、[ブロードキャストの暗黙的な例外](https://developer.android.com/guide/components/broadcast-exceptions.html)Android ドキュメントのガイド。 暗黙的なブロードキャストに関心のあるアプリを使用して動的に行う必要があります、`RegisterReceiver`メソッド。 これは次に説明します。
 
 ### <a name="context-registering-a-broadcast-receiver"></a>ブロードキャスト レシーバーのコンテキストの登録
 

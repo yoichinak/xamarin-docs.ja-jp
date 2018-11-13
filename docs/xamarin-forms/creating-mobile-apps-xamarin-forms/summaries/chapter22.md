@@ -7,12 +7,12 @@ ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c4d92784654db8e566b41c8270dbe2095bd28b94
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
-ms.translationtype: MT
+ms.openlocfilehash: 354338aedf67a02918858cbab71d866e5cd8ec9d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156601"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527145"
 ---
 # <a name="summary-of-chapter-22-animation"></a>第 22 章の概要です。 アニメーション
 
@@ -48,7 +48,7 @@ Xamarin.Forms のタイマーを使用して、独自のアニメーションを
 
 ### <a name="composite-animations"></a>複合のアニメーション
 
-複合のアニメーションを作成して非待機の待機中のアニメーションを混在させることができます。 これらのアニメーションは、`ViewExtensions`を対象とする、 `TranslatonX`、 `TranslationY`、および`Scale`変換のプロパティ。
+複合のアニメーションを作成して非待機の待機中のアニメーションを混在させることができます。 これらのアニメーションは、`ViewExtensions`を対象とする、 `TranslationX`、 `TranslationY`、および`Scale`変換のプロパティ。
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))
 - [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))
@@ -134,7 +134,7 @@ Xamarin.Forms のタイマーを使用して、独自のアニメーションを
 
 ## <a name="deeper-into-animations"></a>アニメーションを深く
 
-Xamarin.Forms のアニメーション システムは少し混乱することはできます。 加え、`Easing`クラス、アニメーション システムを構成、 `ViewExtensions`、 `Animation`、および`AnimationExtension`classses します。
+Xamarin.Forms のアニメーション システムは少し混乱することはできます。 加え、`Easing`クラス、アニメーション システムを構成、 `ViewExtensions`、 `Animation`、および`AnimationExtension`クラス。
 
 ### <a name="viewextensions-class"></a>ViewExtensions クラス
 
@@ -144,7 +144,7 @@ Xamarin.Forms のアニメーション システムは少し混乱すること�
 
 [ `Animation` ](xref:Xamarin.Forms.AnimationExtensions)クラスには、[コンス トラクター](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action))コールバックと完成したメソッド、およびアニメーションのパラメーターを定義する 5 つの引数を使用します。
 
-子アニメーションを使用して追加することができます[ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))、 [ `Insert` ](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))、 [ `WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))とのオーバー ロードと[ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)).
+子アニメーションを使用して追加することができます[ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))、 [ `Insert` ](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))、 [ `WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))のオーバー ロードと[ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)).
 
 アニメーション オブジェクトが、呼び出しで開始し、 [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))メソッド。
 
@@ -162,7 +162,7 @@ Xamarin.Forms のアニメーション システムは少し混乱すること�
 
 ### <a name="beyond-the-high-level-animation-methods"></a>高度なアニメーション方法
 
-[ **ConcurrentAnimations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)サンプルだけでなく、プロパティのターゲットとなるアニメーションを実行する方法も示します、`ViewExtensions`メソッド。 1 つの例では、一連の期間表示長い;別の例では、`BackgroundColor`プロパティをアニメーション化します。
+[ **ConcurrentAnimations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)を対象となるプロパティを上回るアニメーションを実行する方法も示します、`ViewExtensions`メソッド。 1 つの例では、一連の期間表示長い;別の例では、`BackgroundColor`プロパティをアニメーション化します。
 
 ### <a name="more-of-your-own-awaitable-methods"></a>待機可能な方法の詳細
 

@@ -1,26 +1,26 @@
 ---
-title: Configuration Manager で無効になっているチェック ボックスを展開します。
+title: 構成マネージャーで無効になっているチェック ボックスを配置する
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: aaf675cd-d885-4dac-9754-77dbcaea3be9
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: ab825ba4d28ca8768e5c633fc3779828638a498d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 35efb00a721062ad3217300f7e3a5430b1bd1560
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919515"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528144"
 ---
-# <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>Configuration Manager で無効になっているチェック ボックスを展開します。
+# <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>構成マネージャーで無効になっているチェック ボックスを配置する
 
-Xamarin 3.5 以降 Xamarin.iOS プロジェクトは配置に自動的にキーを押すたびに、**開始**ツール バー ボタンまたは選択、**デバッグ > [デバッグ開始]** メニュー項目。 目的の Xamarin.iOS アプリ プロジェクトとして設定する必要があります、**スタートアップ プロジェクト**前に実行する前にこれらのいずれかのコマンドします。
+Xamarin の 3.5 から Xamarin.iOS プロジェクトを展開に自動的にキーを押すたびに、**開始**ツール バー ボタンや選択、**デバッグ > [デバッグ開始]** メニュー項目。 目的の Xamarin.iOS アプリ プロジェクトとして設定する必要があります、**スタートアップ プロジェクト**これらのコマンドのいずれかを実行する前にします。
 
-このため、**展開**のチェック ボックスは Xamarin.iOS プロジェクトの Visual Studio 構成マネージャーで意図的に無効になります。
+このため、**デプロイ**のチェック ボックスが Xamarin.iOS プロジェクト用 Visual Studio 構成マネージャーで意図的に無効になります。
 
-![](deploy-checkboxes-images/configuration.png "Visual Studio の Configuration Manager Xamarin 3.5 では、Xamarin.iOS プロジェクトに対して無効になって '配置' のチェック ボックスを表示")
+![](deploy-checkboxes-images/configuration.png "Visual Studio 構成マネージャーが Xamarin 3.5 で Xamarin.iOS プロジェクトに対して無効です「デプロイ」のチェック ボックスを表示")
 
-この変更を展開する Xamarin.iOS アプリ プロジェクトが設定されていない場合に、Xamarin (3.3 およびそれ以前のバージョン) の旧バージョンで使用可能なエラーを排除できます。
+この変更により、エラーを展開する Xamarin.iOS アプリ プロジェクトが設定されていない場合、Xamarin (バージョン 3.3 以前) の旧バージョンで表示される可能性があります。
 
-![](deploy-checkboxes-images/error.png "エラー ダイアログ ボックス: プロジェクト iPhoneApp1 を起動する前に配置する必要があります。ソリューション構成マネージャーで配置するプロジェクトが選択されていることを確認します。")
+![](deploy-checkboxes-images/error.png "エラー ダイアログ ボックス: プロジェクト iPhoneApp1 を開始する前に配置する必要があります。ソリューションの Configuration Manager でデプロイするプロジェクトが選択されていることを確認します。")

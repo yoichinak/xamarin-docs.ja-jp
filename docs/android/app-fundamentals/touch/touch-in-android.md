@@ -1,19 +1,19 @@
 ---
-title: Android でのタッチします。
+title: Android でのタッチ
 ms.prod: xamarin
 ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9a6f7f5c82808b6430ba1aa6178a543945ae2634
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a25a1c3be8c952536c0ef40b7f7c4a64f5748516
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104909"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527236"
 ---
-# <a name="touch-in-android"></a>Android でのタッチします。
+# <a name="touch-in-android"></a>Android でのタッチ
 
 はるかなど、iOS、Android 作成、ユーザーの物理的な画面操作に関するデータを保持するオブジェクト&ndash;、`Android.View.MotionEvent`オブジェクト。 このオブジェクトがどのようなアクションの実行などのデータを保持して、タッチが、配置、圧力の量が適用されたなど。A`MotionEvent`オブジェクトが次の値への移動を分割します。
 
@@ -80,7 +80,7 @@ public override bool OnTouchEvent(MotionEvent e)
 -  *OnSingleTapUp* -1 回のタップが発生したときに呼び出されます。
 
 
-多くの場合に、ジェスチャのサブセットでアプリケーションを利用することがありますのみです。 ここでは、アプリケーションが GestureDetector.SimpleOnGestureListener クラスを拡張し、イベントに対応するメソッドをオーバーライドする必要がありますで関心のあること。
+多くの場合に、ジェスチャのサブセットでアプリケーションを利用することがありますのみです。 この場合、アプリケーションは GestureDetector.SimpleOnGestureListener クラスを拡張しで関心のあるイベントに対応するメソッドをオーバーライドする必要があります。
 
 ## <a name="custom-gestures"></a>カスタムのジェスチャ
 
@@ -134,7 +134,7 @@ SetContentView(gestureOverlayView);
     android:layout_height="match_parent" />
 ```
 
-`GestureOverlayView`は、ジェスチャの描画の処理中に発生するいくつかのイベントがあります。 最も注目すべきイベントが`GesturePeformed`します。 ユーザーに、ジェスチャの描画が完了したときに、このイベントが発生します。
+`GestureOverlayView`は、ジェスチャの描画の処理中に発生するいくつかのイベントがあります。 最も注目すべきイベントが`GesturePerformed`します。 ユーザーに、ジェスチャの描画が完了したときに、このイベントが発生します。
 
 このイベントが発生したときに、アクティビティの確認、`GestureLibrary`を試して、ジェスチャ ツールによって、ジェスチャ、ジェスチャのいずれかのユーザーの作成と一致します。 `GestureLibrary` 予測のオブジェクトの一覧が返されます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: b29820cb69702f7570e10a555ebe9e3e0824653f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 325f4e99e70f88ccf642253720f4229142a169ec
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104155"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526561"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Xamarin.iOS でのイメージの表示
 
@@ -41,7 +41,7 @@ IOS 7 で追加された**資産カタログの画像セット**すべてのバ�
 3. 新しいイメージ セットを選択し、エディターが表示されます。
 
     ![](displaying-an-image-images/imageset03.png "セットのイメージ エディター")
-4. ここでは、さまざまなデバイスの各イメージにドラッグしと解決策が必要です。 
+4. ここでは、さまざまなデバイスと必要な解像度の各イメージにドラッグします。 
 5. 新しいイメージ セットをダブルクリックして**名前**で、 **Assets リスト**編集する: ![](displaying-an-image-images/imageset04.png "新しいイメージ セットの名前を編集")
 
 使用する場合、**セット イメージ**で iOS Designer では、プロパティ エディターでのドロップダウン リストから単純にセットの名前を選択します。
@@ -54,7 +54,7 @@ IOS 7 で追加された**資産カタログの画像セット**すべてのバ�
 
     ![](displaying-an-image-images/asset5.png "プラス記号をクリックします ボタン")
 
-2. 選択**イメージ セットの追加**と新しいイメージ セットのセットのイメージ エディターが表示されます。 ここでは、さまざまなデバイスの各イメージにドラッグしと解決策が必要です。 
+2. 選択**イメージ セットの追加**と新しいイメージ セットのセットのイメージ エディターが表示されます。 ここでは、さまざまなデバイスと必要な解像度の各イメージにドラッグします。 
 
     ![](displaying-an-image-images/asset7.png "イメージ エディターの設定")
 

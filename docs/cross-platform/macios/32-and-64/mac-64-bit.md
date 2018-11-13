@@ -6,12 +6,12 @@ ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
 author: conceptdev
 ms.author: crdun
 ms.date: 02/22/2018
-ms.openlocfilehash: 3667f129cb566f71e9afd2969af13fe5b9682882
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bd70fec5d6d3bbbc4855980e1542bd4e486acaa
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109381"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528521"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>Xamarin.Mac 統合アプリケーションを 64 ビットの更新
 
@@ -21,7 +21,7 @@ ms.locfileid: "50109381"
 
 ## <a name="targeting-64-bit"></a>64 ビットを対象とします。
 
-1. 開く、**プロジェクト オプション**ウィンドウは、Xamarin.Mac アプリをしています。
+1. 開く、**プロジェクト オプション**Xamarin.Mac アプリのウィンドウ。
 
    ![プロジェクトのコンテキスト メニュー](mac-64-bit-images/1-contextual_menu-vsmac.png "プロジェクトのコンテキスト メニュー")
 
@@ -36,7 +36,7 @@ ms.locfileid: "50109381"
 最初にビルドまたは 64 ビット サポートにより、アプリケーションを実行する clang やランタイムの問題からリンク エラーが発生する可能性があります。 サード パーティ製の場合、これらのエラーが発生する可能性が依存関係-ネイティブ参照など、Xamarin.Mac またはバインド プロジェクト、またはシステム全体のフレームワークを手動で読み込む-64 ビットに更新されていません。
 
 > [!TIP]
-> プロジェクトを 64 ビットに変換する大きな変更し、さまざまなプログラミング エラーが直接明らかです。 特にの p/invoke シグネチャと、プロジェクトにリンクされたネイティブ コードに影響するデータの構造体の配置とサイズを変更こと可能性があります。 指定されたすべてのビルド警告を確認してくださいし、アプリケーションをテストするかもしれない後で潜在的な問題を検出します。
+> プロジェクトを 64 ビットに変換する大きな変更し、さまざまなプログラミング エラーが直接明らかです。 特にの p/invoke シグネチャと、プロジェクトにリンクされたネイティブ コードに影響するデータの構造体の配置とサイズを変更こと可能性があります。 すべてのビルド警告を確認してください、アプリケーションを徹底的にテストして潜在的な問題を検出するには、その後です。
 
 #### <a name="example-error-resulting-from-a-dynamically-linked-third-party-dependency-that-does-not-target-64-bit"></a>64 ビットを使用しない動的リンクのサードパーティの依存関係の結果エラーの例:
 

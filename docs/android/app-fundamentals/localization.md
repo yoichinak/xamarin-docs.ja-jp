@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f50efb7b78db67b310ccddec3eb94bfe4d2e521
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
-ms.translationtype: MT
+ms.openlocfilehash: 833bdc0fd087fcf8dbb8cce3b8b23f427302f5e7
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301254"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526872"
 ---
 # <a name="android-localization"></a>Android のローカライズ
 
@@ -225,7 +225,7 @@ Android 4.2 には、サポートが導入されました。[右から左 (RTL) 
 
 Android 4.2 以降では、RTL レイアウトで詳しく説明の完全なサポート、[右から左へのネイティブ サポート ブログ](http://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html)します。
 
-Android 4.2 (API レベル 17) を使用する場合とで値を指定できる新しい、揃え`start`と`end`の代わりに`left`と`right`(たとえば`android:paddingStart`)。 ような新しい Api もあります`LayoutDirection`、`TextDirection`と`TextAlignment`に適応する画面を右から左へのリーダーの構築を支援します。
+Android 4.2 (API レベル 17) を使用する場合とで値を指定できる、新しい配置`start`と`end`の代わりに`left`と`right`(たとえば`android:paddingStart`)。 ような新しい Api もあります`LayoutDirection`、`TextDirection`と`TextAlignment`に適応する画面を右から左へのリーダーの構築を支援します。
 
 次のスクリーン ショット、[ローカライズ**Tasky**サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)アラビア語。
 

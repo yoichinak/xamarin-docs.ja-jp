@@ -5,12 +5,12 @@ description: このドキュメントの類似点と Xamarin.Forms と WPF ア�
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: cf25cf956fbf9fd566520d9067f0d98a9a7624aa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 653e2f849a74948d3636f594eae91cdeabfae138
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107122"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526794"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF とします。Xamarin.Forms アプリのライフ サイクル
 
@@ -53,7 +53,7 @@ WPF を使用して、`Window`任意の最上位のビジュアル要素のル�
 
 ### <a name="views"></a>Views
 
-どちらのフレームワークのビジュアルの階層は似ています。 WPF は WYSIWYG ドキュメントのサポートのためもう少し深くです。
+どちらのフレームワークの階層をビジュアルに似ています。 WPF では、WYSIWYG ドキュメントのサポートのためもう少し深くです。
 
 **WPF**
 
@@ -83,7 +83,7 @@ Xamarin.Forms は、モバイルのシナリオを中心指向は主にします
 |--- |--- |--- |
 |最初のアクティブ化|ctor + Window.OnLoaded|ctor + Page.OnStart|
 |表示されます。|Window.IsVisibleChanged|Page.Appearing|
-|非表示|Window.IsVisibleChanged|Page.Disapearing|
+|非表示|Window.IsVisibleChanged|Page.Disappearing|
 |中断/Lost フォーカス|Window.OnDeactivated|Page.OnSleep|
 |アクティブ化/Got フォーカス|Window.OnActivated|Page.OnResume|
 |Closed|Window.OnClosing + Window.OnClosed|N/A|
@@ -179,11 +179,11 @@ WPF と Xamarin.Forms 両方のリソースとリソース ディクショナリ
 
 ## <a name="styles"></a>スタイル
 
-スタイルは、Xamarin.Forms でも完全にサポートし、は、その UI を起動する Xamarin.Forms の要素をテーマに使用します。 トリガー (プロパティ、イベントおよびデータ) の継承を通じてサポート`BasedOn`と値のリソースの参照。 要素にスタイルが適用を明示的にいずれか、`Style`プロパティ、または暗黙で、WPF と同様のリソース キーを指定していません。
+スタイルは、Xamarin.Forms でも完全にサポートし、は、その UI を起動する Xamarin.Forms の要素をテーマに使用します。 トリガー (プロパティ、イベントおよびデータ) の継承を通じてサポート`BasedOn`と値のリソースの参照。 スタイルがいずれかの要素に適用されてから明示的に、`Style`プロパティ、または WPF と同様のリソース キーを指定していないによる暗黙的な。
 
 ### <a name="device-styles"></a>デバイスのスタイル
 
-WPF が一連の定義済みプロパティ (など、一連の静的クラスで静的な値として格納されている`SystemColors`) システム カラー、フォント、およびメトリックの値とリソース キーの形式でを指定します。 Xamarin.Forms は似ていますが、一連の定義[デバイス スタイル](~/xamarin-forms/user-interface/styles/device.md)を同じものを表します。 これらのスタイルは、frameowrk によって提供され、ランタイム環境 (例: ユーザー補助) に基づく値に設定します。
+WPF が一連の定義済みプロパティ (など、一連の静的クラスで静的な値として格納されている`SystemColors`) システム カラー、フォント、およびメトリックの値とリソース キーの形式でを指定します。 Xamarin.Forms は似ていますが、一連の定義[デバイス スタイル](~/xamarin-forms/user-interface/styles/device.md)を同じものを表します。 これらのスタイルは、framework によって提供され、ランタイム環境 (例: ユーザー補助) に基づく値に設定します。
 
 **WPF**
 

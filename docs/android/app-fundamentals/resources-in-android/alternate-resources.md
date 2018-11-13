@@ -1,19 +1,19 @@
 ---
-title: 代替のリソース
+title: 代替リソース
 ms.prod: xamarin
 ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 0384d96ddc96f8d0b16a42f691305f26ea25881d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 16ef0d5a309281767f0fff27436dd5bec322169d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108757"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527392"
 ---
-# <a name="alternate-resources"></a>代替のリソース
+# <a name="alternate-resources"></a>代替リソース
 
 代替のリソースは、特定のデバイスまたは現在の言語や特定の画面サイズ、ピクセル密度などの実行時構成を対象とします。 Android は、既定のリソースよりも、特定のデバイスまたは構成の固有のリソースと一致できる場合、は、そのリソースを代わりに使用されます。 現在の構成と一致する代替のリソースが見つからない場合は、既定のリソースが読み込まれます。 リソースの場所のセクションでは、以下の詳細で、アプリケーションで使用されるどのようなリソースを説明は Android の決定方法
 
@@ -54,10 +54,10 @@ ms.locfileid: "50108757"
 
 - **使用可能な幅**&ndash;形式 w では、画面の最小幅*N*dp、場所*N*に依存しないピクセル密度の幅は、します。
   ユーザーがデバイスを回転すると、この値は変わる可能性があります。 詳細については、「[画面のさまざまなリソースを作成する](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)します。 
-  使用できる API レベル 13 (Android 3.2) 以降。 例: 修飾子 w720dp は幅が最小 720dp のデバイスを対象に使用されます。
+  以上で利用できる API レベル 13 (Android 3.2)。 例: 修飾子 w720dp は幅が最小 720dp のデバイスを対象に使用されます。
 
 - **使用可能な高さ**&ndash;形式 h での画面の高さの最小値*N*dp、場所*N*は配布ポイントの高さです。 ユーザーがデバイスを回転すると、この値は変わる可能性があります。 詳細については、「[画面のさまざまなリソースを作成する](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)します。 
-  使用できる API レベル 13 (Android 3.2) 以降。 720dp の最小の高さのあるデバイスを対象に修飾子 h720dp を使用する例。
+  以上で利用できる API レベル 13 (Android 3.2)。 720dp の最小の高さのあるデバイスを対象に修飾子 h720dp を使用する例。
 
 - **画面サイズ**&ndash;この修飾子は、これらのリソースは画面のサイズの汎化します。 詳細については説明[画面のさまざまなリソースを作成する](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)します。 
   指定できる値は、`small`、`normal`、`large`、および `xlarge` です。 API レベル 9 (で、Android 2.3/Android 2.3.1/Android 2.3.2) の追加

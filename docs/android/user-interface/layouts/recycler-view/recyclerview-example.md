@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: 67bf38c11fd6e82e05b2a10704973ca10de03083
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d71c4f0f3221d06c22876329a5933273d8d6f92d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108653"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526768"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的な RecyclerView の例
 
@@ -118,7 +118,7 @@ mRecyclerView.SetLayoutManager (mLayoutManager);
 
 このコードは、メイン アクティビティの存在`OnCreate`メソッド。 レイアウト マネージャーにコンス トラクターが必要です、*コンテキスト*であり、`MainActivity`を使用して渡される`this`上記のようです。
 
-Predefind を使用する代わりに`LinearLayoutManager`、2 つを表示するカスタム レイアウト マネージャーをプラグインできる`CardView`項目をサイド バイ サイド、写真のコレクションをスキャンするページめくりのアニメーション効果を実装します。 このガイドで後で別のレイアウト マネージャーとスワップしてレイアウトを変更する方法の例が表示されます。
+定義済みの使用ではなく`LinearLayoutManager`、2 つを表示するカスタム レイアウト マネージャーをプラグインできる`CardView`項目をサイド バイ サイド、写真のコレクションをスキャンするページめくりのアニメーション効果を実装します。 このガイドで後で別のレイアウト マネージャーとスワップしてレイアウトを変更する方法の例が表示されます。
 
 <a name="view-holder" />
 
@@ -391,7 +391,7 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 
 [![グリッド内の写真の水平方向にスクロールしたアプリのスクリーン ショットの例](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
-コードの 1 行のみを変更するは異なる動作を別のレイアウトを使用するフォト ビューアー アプリを変更することができます。
+コードの 1 行のみを変更すると、異なる動作を別のレイアウトを使用するフォト ビューアー アプリを変更することもなります。
 レイアウト スタイルを変更するために変更する必要があるアダプター コードもレイアウト XML でもないことに注意してください。 
 
 次のトピックで[RecyclerView の例を拡張](~/android/user-interface/layouts/recycler-view/extending-the-example.md)、この基本的なサンプル アプリの拡張項目のクリック イベントを処理し、更新`RecyclerView`基になるデータ ソースの変更。

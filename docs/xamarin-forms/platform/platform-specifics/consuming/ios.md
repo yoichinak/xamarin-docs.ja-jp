@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 69f754db0fd9661fb317f43c7cda546b0b510265
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119415"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527080"
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
@@ -333,7 +333,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 その結果、[`Picker`](xref:Xamarin.Forms.Picker)に指定された`UpdateMode`が適用され、アイテム選択が発生するタイミングを制御します。
 
-[![](ios-images/picker-updatemode.png "Picker UpdateMode のプラットフォーム仕様")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "ピッカー UpdateMode プラットフォーム固有")](ios-images/picker-updatemode-large.png#lightbox "ピッカー UpdateMode プラットフォームに固有")
 
 <a name="slider-updateontap" />
 
@@ -724,7 +724,7 @@ public class iOSModalFormSheetPageCS : ContentPage
 
 さらに、`GetModalPresentationStyle`の現在の値を取得するメソッドを使用することができます、`UIModalPresentationStyle`列挙型に適用される、 [ `Page`](xref:Xamarin.Forms.Page)します。
 
-その結果にモーダル プレゼンテーション スタイル、 [ `Page` ](xref:Xamarin.Forms.Page)設定することができます。
+その結果にモーダル プレゼンテーション スタイル、 [ `Page` ](xref:Xamarin.Forms.Page)設定できます。
 
 [![](ios-images/modal-presentation-style-small.png "IPad でのモーダル スタイル")](ios-images/modal-presentation-style-large.png#lightbox "iPad でモーダルの表示スタイル")
 
@@ -780,7 +780,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 その結果は、 [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)はコンテンツのタッチを受けるときの遅延は無効にできます。そのためこのシナリオでは、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) ではなく[`Slider`](xref:Xamarin.Forms.Slider) がジェスチャーを受け取ります。
 
-[![](ios-images/scrollview-delay-content-touches.png "ScrollView でのコンテンツ タッチの遅延のプラットフォーム仕様")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "ScrollView 遅延コンテンツのプラットフォームに固有の接触")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView 遅延コンテンツのプラットフォームに固有の接触")
 
 ## <a name="application"></a>アプリケーション
 

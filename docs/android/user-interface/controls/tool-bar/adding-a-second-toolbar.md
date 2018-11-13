@@ -1,24 +1,24 @@
 ---
-title: 2 番目のツールバーを追加します。
+title: 2 番目のツール バーの追加
 ms.prod: xamarin
 ms.assetid: FCE0AD27-8B6B-47C6-AD19-2B1C12E1BBBF
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b8da13afb7fd8d7198e8bfe7476b40a5cd09769a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fc95c05c1945464cd9cac8565d8a11ff1b4c7e1d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112553"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527288"
 ---
-# <a name="adding-a-second-toolbar"></a>2 番目のツールバーを追加します。
+# <a name="adding-a-second-toolbar"></a>2 番目のツール バーの追加
 
 
 ## <a name="overview"></a>概要 
 
-`Toolbar`アクション バーには置換を超えることができます&ndash;アクティビティ内で複数回を使用することできます、ことができますが、画面の任意の場所に配置用にカスタマイズし、画面の部分の幅のみをまたがるするように構成できます。 次の例は、1 秒あたりに作成する方法を示しています。`Toolbar`し、画面の下部に配置します。 これは、`Toolbar`実装**コピー**、**切り取り**、および**貼り付け**メニュー項目。 
+`Toolbar`アクション バーには置換を超えることができます&ndash;アクティビティ内で複数回を使用することできますや、画面の任意の場所に配置してカスタマイズする画面の部分の幅のみにまたがるように構成できます。 次の例は、1 秒あたりに作成する方法を示しています。`Toolbar`し、画面の下部に配置します。 これは、`Toolbar`実装**コピー**、**切り取り**、および**貼り付け**メニュー項目。 
 
 
 ## <a name="define-the-second-toolbar"></a>2 番目のツールバーを定義します。 

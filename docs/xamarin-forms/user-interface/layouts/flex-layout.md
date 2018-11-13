@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 49a0d1dd67959c5949ebe500036b849180795660
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 44d75322f151850b11e4da90486168c04496eca7
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108744"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564019"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -385,7 +385,7 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 ## <a name="the-bindable-properties-in-detail"></a>バインド可能なプロパティの詳細
 
 `FlexLayout` のいくつかの一般的なアプリケーションを見てきた今なら、`FlexLayout` のプロパティをより詳しく調査できるはずです。 
-`FlexLayout` には、XAML またはコードのどちらかで `FlexLayout` 自身に設定する 6 つのバインド可能なプロパティが定義されており、方向や整列を制御します。 （これらのプロパティの1つに [`Position`](xref:Xamarin.Forms.FlexLayout.Position) がありますが、これはこの記事では説明しません。）
+`FlexLayout` 設定された 6 つのバインド可能なプロパティを定義、`FlexLayout`自体であるため、コードまたは XAML でコントロールの向きを配置します。 （これらのプロパティの1つに [`Position`](xref:Xamarin.Forms.FlexLayout.Position) がありますが、これはこの記事では説明しません。）
 
 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル の **Experiment** ページ を使って、残り 5 つのバインド可能なプロパティを試すことができます。 このページは、`FlexLayout` から子を追加・削除したり、5 つのバインド可能なプロパティの組み合わせを設定したりすることができます。 `FlexLayout` の全ての子は、様々な色やサイズの `Label` view で、`Text` プロパティには `Children` コレクションの位置に対応する番号がセットされます。
 
@@ -584,7 +584,7 @@ XAML では、デバイス非依存単位のサイズの数値を使用できま
 
 [`Grow`](xref:Xamarin.Forms.FlexLayout.GrowProperty)添付プロパティは `int` 型です。 規定値は 0 でこの値は 0以上でなければなりません。
 
-`Grow` プロパティは、`Wrap` プロパティに `NoWrap` が設定されていて、1行の子の合計幅が `FlexLayout` の幅より小さい場合、または1列の子の合計の高さが `FlexLayout` の高さより低い場合に機能します。 `Grow` プロパティは子に余った領域を分配する方法を示します。
+`Grow`プロパティは、役割を果たすときに、`Wrap`プロパティに設定されて`NoWrap`子の行には、幅より小さい、幅の合計、 `FlexLayout`、または子の列がよりも短い高さ、 `FlexLayout`。 `Grow` プロパティは子に余った領域を分配する方法を示します。
 
 **Grow Experiment** ページでは、交互に異なる色の 5 つの `Label`要素が列に配置されています。そして 2 つの `Slider` で 2 番目と 4 番目の `Label` の `Grow` プロパティを調整できます。 一番左の iOS のスクリーンショットは、`Grow` プロパティが 0 であるデフォルトの状態を示しています。
 
@@ -608,7 +608,7 @@ XAML では、デバイス非依存単位のサイズの数値を使用できま
 
 Android のスクリーン ショットで、`Shrink`値、2 番目の`Label`0 に設定されている`Label`がその幅いっぱいに表示されます。 また、4 番目の `Label` には `Shrink` に 1 より大きい値が与えられ、それは収縮しています。 UWP のスクリーンショットは、両方の `Label` 要素に `Shrink` 値 0 が与えられ、可能であれば、それらをフルサイズで表示できることを示しています。
 
-子の合計サイズが `FlexLayout` のサイズより小さくなったり大きくなったりすることがあるような状況に対応するために、`Grow` と `Shrink` 値を両方設定することができます。
+両方を設定することができます、`Grow`と`Shrink`値、子の集計サイズなる可能性がのサイズよりも大きいか小さい場合に備えて、`FlexLayout`します。
 
 ## <a name="css-styling-with-flexlayout"></a>FlexLayout を使った CSS スタイル
 

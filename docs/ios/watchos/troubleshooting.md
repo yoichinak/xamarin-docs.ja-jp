@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: feaa0c3547c01490a8ada82b17b4c7a824e03b0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7bfb0cad8bbc025bc5dba39abe3699ae77ee83ba
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114653"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526482"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS トラブルシューティング
 
@@ -35,7 +35,7 @@ ms.locfileid: "50114653"
 
 <a name="deploy" />
 
-- 以前のリリースの Visual Studio for Mac が正しく示されるしないのいずれかの、 **AppleCompanionSettings**アイコン 88 x 88 ピクセルですその結果として、**アイコン エラーのない**をアプリに送信しようとした場合。ストア。
+- 以前のリリースの Visual Studio for Mac が正しく示されるしないのいずれか、 **AppleCompanionSettings**アイコン 88 x 88 ピクセルです。 その結果として、**アイコン エラーのない**App Store に送信しようとした場合。
     このアイコンは 87 x 87 ピクセルである必要があります (29 単位**@3x** Retina 画面)。 Visual studio for Mac の Xcode 内のイメージ アセットを編集、これを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
 - 場合ウォッチ拡張機能プロジェクトの**Info.plist > WKApp バンドル ID**でない[正しく設定されている](~/ios/watchos/get-started/project-references.md)Watch アプリの一致するように**バンドル ID**デバッガーは、接続に失敗し、VisualStudio for Mac は、メッセージを待機 *「デバッガーの接続を待機している」* します。

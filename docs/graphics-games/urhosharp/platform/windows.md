@@ -1,21 +1,21 @@
 ---
 title: UrhoSharp の Windows のサポート
-description: このドキュメントでは、Windows UrhoSharp のサポートについて説明します。 プロジェクトを作成、構成する方法を説明し、および Urho を起動し、WPF との統合、UWP と統合します。
+description: このドキュメントでは、Windows UrhoSharp のサポートについて説明します。 これには、プロジェクトを作成、構成、Urho を起動および wpf では、統合、および UWP と統合する方法について説明します。
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 8aca028ec1015616a9884cd09b7ffa5e04f2e43d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 471029375d8a61a6c48d94a66d7836807e0da22f
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119606"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526807"
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp の Windows のサポート
 
-Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします.
+Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします。
 
 以下のページにある`MyGame`のサブクラスには、`Application`クラス。
 

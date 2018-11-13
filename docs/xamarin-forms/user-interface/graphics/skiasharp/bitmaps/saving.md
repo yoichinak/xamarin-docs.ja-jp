@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 7f34bd5bbab4accaa30c22266dacd30692bf9ccc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 876594440c28fb0f30e0438f2ef02ae7fe89040c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107574"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526508"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp のビットマップをファイルに保存します。
 
@@ -54,13 +54,13 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 このメソッドはすぐについて詳しく説明します。 エンコードされたビットマップは、書き込み可能なストリームに書き込まれます。 (で 'W' `SKWStream` 「書き込み」の略します)。2 番目と 3 番目の引数は、ファイル形式を指定し、(データ損失の形式) の 0 から 100 まで必要な品質。
 
-さらに、 [ `SKImage` ](xref:SkiaSharp.SKImage)と[ `SKPixmap` ](xref:SkiaSharp.SKPixmap)クラスも定義`Encode`メソッドより用途が広くにあるとすることをお勧めします。 簡単に作成することができます、`SKImage`オブジェクトから、`SKBitmap`オブジェクト、静的なを使用して[ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap))メソッド。 取得することができます、`SKPixmap`オブジェクトから、`SKBitmp`オブジェクトを使用して、 [ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels)メソッド。
+さらに、 [ `SKImage` ](xref:SkiaSharp.SKImage)と[ `SKPixmap` ](xref:SkiaSharp.SKPixmap)クラスも定義`Encode`メソッドより用途が広くにあるとすることをお勧めします。 簡単に作成することができます、`SKImage`オブジェクトから、`SKBitmap`オブジェクト、静的なを使用して[ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap))メソッド。 取得することができます、`SKPixmap`オブジェクトから、`SKBitmap`オブジェクトを使用して、 [ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels)メソッド。
 
 1 つ、 [ `Encode` ](xref:SkiaSharp.SKImage.Encode)によって定義されたメソッド`SKImage`パラメーターを持たないおよび PNG 形式に自動的に保存します。 パラメーターなしのメソッドが非常に簡単に使用します。
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>ビットマップ ファイルを保存するためのプラットフォーム固有のコード
 
-エンコードするとき、`SKBitmap`オブジェクトを特定のファイルに書式設定、一般になります、何らかのストリーム オブジェクト、またはデータの配列になっています。 いくつかの`Encode`メソッド (によって定義されたパラメーターのない 1 つを含む`SKImage`) を返す、 [ `SKData` ](xref:SkiaSharp.SKData)オブジェクトを使用しているバイトの配列に変換できる、 [ `ToArray` ](xref:SkiaSharp.SKData.ToArray)メソッド。 このデータをファイルに保存しする必要があります。 
+エンコードするとき、`SKBitmap`オブジェクトを特定のファイルに書式設定、通常、何らかのストリーム オブジェクト、またはデータの配列に残されます。 いくつかの`Encode`メソッド (によって定義されたパラメーターのない 1 つを含む`SKImage`) を返す、 [ `SKData` ](xref:SkiaSharp.SKData)オブジェクトを使用しているバイトの配列に変換できる、 [ `ToArray` ](xref:SkiaSharp.SKData.ToArray)メソッド。 このデータをファイルに保存しする必要があります。 
 
 標準を使用できるため、アプリケーションのローカル ストレージ内のファイルへの保存は非常に簡単`System.IO`クラスと、このタスクのメソッド。 この手法の説明については、記事の[ **SkiaSharp ビットマップをアニメーション化**](animating.md#bitmap-animation)マンデルブロ集合のビットマップの一連のアニメーション化に関連します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a008b270d4ff670a03f18318186ca038c5c0348d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 881b465643b576f5d3f4fc8121c5a873087a876c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118878"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527338"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -96,7 +96,7 @@ Xamarin.Forms は、アプリの共有コードで向きの変更を通知する
 > [!NOTE]
 > 共有コードで向きの変更の通知を受信するため、既存の無料の NuGet パッケージがあります。 参照してください、 [GitHub リポジトリ](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
 
-代わりに、オーバーライドすることは、 [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*)メソッドを`Page`、任意のレイアウトを挿入するロジックがありますを変更します。 `OnSizeAllocated`メソッドが呼び出されるたびに、`Page`新しいサイズをデバイスを回転 whenver の動作が割り当てられます。 注意の基本実装`OnSizeAllocated`オーバーライド時に基本の実装を呼び出すには、ので、重要なレイアウト機能を実行します。
+代わりに、オーバーライドすることは、 [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*)メソッドを`Page`、任意のレイアウトを挿入するロジックがありますを変更します。 `OnSizeAllocated`メソッドが呼び出されるたびに、`Page`場合は、デバイスを回転するたびに、新しいサイズが割り当てられます。 注意の基本実装`OnSizeAllocated`オーバーライド時に基本の実装を呼び出すには、ので、重要なレイアウト機能を実行します。
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)

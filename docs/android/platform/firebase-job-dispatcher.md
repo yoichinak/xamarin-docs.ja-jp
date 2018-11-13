@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 4ae1fb71209f8116b17ee7e2cb44318ef790d831
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 91bafbbdaee805ad128766bf0a770cb711597a85
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116176"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526924"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
@@ -44,9 +44,9 @@ Firebase ジョブ ディスパッチャーは、スケジュールのバック 
 * A`Firebase.JobDispatcher.RetryStrategy`適切に動作する、ジョブが失敗した場合の処理に関する情報を格納します。 再試行戦略は、ジョブを再実行する前に待機する期間を指定します。 
 * A`Firebase.JobDispatcher.Constraint`を満たす必要があるジョブを実行する前に、デバイスが unmetered のネットワーク上など、条件を示す省略可能な値は、または充電中です。
 * `Firebase.JobDispatcher.Job` 、--作業単位でスケジュールできるの以前の Api を統一する api、`JobDispatcher`します。 `Job.Builder`クラスがインスタンス化に使用する`Job`します。
-* A`Firebasee.JobDispatcher.JobDispatcher`前の 3 つの Api を使用して、オペレーティング システムで作業をスケジュールし、必要な場合に、ジョブを取り消す方法を提供します。
+* A`Firebase.JobDispatcher.JobDispatcher`前の 3 つの Api を使用して、オペレーティング システムで作業をスケジュールし、必要な場合に、ジョブを取り消す方法を提供します。
 
-Firebase ジョブ ディスパッチャーと作業をスケジュールするには、コードを拡張する型で Xamarin.Android アプリケーションによってカプセル化する必要があります、`JobService`クラス。 `JobService` 次の 3 つのライフ サイクル メソッドが用意されているジョブの有効期間中に呼び出すことができます。
+Firebase ジョブ ディスパッチャーと作業をスケジュールするには、コードを拡張する型で Xamarin.Android アプリケーションによってカプセル化する必要があります、`JobService`クラス。 `JobService` ジョブの有効期間中に呼び出すことができる 3 つのライフ サイクルの方法があります。
 
 * **`bool OnStartJob(IJobParameters parameters)`** &ndash; このメソッドは、作業が発生し、常に実装する必要があります。 メイン スレッドで実行されます。 このメソッドは`true`がある場合の動作の残りまたは`false`場合の処理を実行します。 
 * **`bool OnStopJob(IJobParameters parameters)`** &ndash; これは、何らかの理由により、ジョブが停止したときに呼び出されます。 返されます`true`場合は、ジョブを後で再スケジュールする必要があります。
@@ -177,7 +177,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-jarameters-to-a-job"></a>ジョブに渡す jarameters
+#### <a name="passing-parameters-to-a-job"></a>ジョブにパラメーターの引き渡し
 
 作成して、ジョブに渡されるパラメーターを`Bundle`と共に渡される、`Job.Builder.SetExtras`メソッド。
 
@@ -252,7 +252,7 @@ Job myJob = dispatcher.NewJobBuilder()
 カスタムを定義することは`RetryStrategy`で、`FirebaseJobDispatcher.NewRetryStrategy`メソッド。 次の 3 つのパラメーターを受け取ります。
 
 1. `int policy` &ndash; _ポリシー_は、前の 1 つ`RetryStrategy`値、 `RetryStrategy.RetryPolicyLinear`、または`RetryStrategy.RetryPolicyExponential`します。
-2. `int intialBackoffSeconds` &ndash; _初期バックオフ_ジョブを再実行する前に必要な遅延を秒単位。 この既定値は 30 秒です。 
+2. `int initialBackoffSeconds` &ndash; _初期バックオフ_ジョブを再実行する前に必要な遅延を秒単位。 この既定値は 30 秒です。 
 3. `int maximumBackoffSeconds` &ndash; _最大バックオフ_値はジョブを再実行する前に待機する秒の最大数を宣言します。 既定値は、3,600 秒です。 
 
 ```csharp

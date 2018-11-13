@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7fde60d48c23bc48ce1602a0643a3af8ad492ec6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 015c1e315b6070777542a8f8c5871c00cf336b5c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104012"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527067"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin.Mac でカスタム コントロールの作成
 
-同じへのアクセス、Xamarin.Mac アプリケーションで c# と .NET を使用する場合があるユーザー コントロールで作業する開発者*Objective C*、 *Swift*と*Xcode*は. Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ユーザー コントロールを維持 (または必要に応じて c# コードで直接作成) します。
+使用する場合C#へのアクセス権を持って、Xamarin.Mac アプリケーションで .NET では、同じユーザー コントロールで作業する開発者*Objective C*、 *Swift*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ユーザー コントロールを維持 (または必要に応じて c# コードで直接作成) します。
 
 MacOS には豊富な組み込みのユーザー コントロール、機能がサポートされていませんボックスの提供する、または (ゲームのインターフェイス) などのカスタム UI テーマと一致するカスタム コントロールを作成する必要がある回である可能性があります。
 
@@ -221,7 +221,7 @@ public override void DrawRect (CGRect dirtyRect)
 
 #### <a name="handling-user-input-with-override-methods"></a>オーバーライド メソッドでユーザー入力の処理
 
-継承されるオブジェクト`NSControl`(または`NSView`) があるいくつかのマウスの処理メソッドをオーバーライド入力やキーボード入力します。 間の切り替えの状態を反転する、コントロールの例の**で**と**オフ**ユーザーがコントロール上でマウスの左ボタンがクリックするとします。 次にメソッドのオーバーライドを追加、`NSFliwSwitch`これを処理するクラス。
+継承されるオブジェクト`NSControl`(または`NSView`) があるいくつかのマウスの処理メソッドをオーバーライド入力やキーボード入力します。 間の切り替えの状態を反転する、コントロールの例の**で**と**オフ**ユーザーがコントロール上でマウスの左ボタンがクリックするとします。 次にメソッドのオーバーライドを追加、`NSFlipSwitch`これを処理するクラス。
 
 ```csharp
 #region Mouse Handling Methods
@@ -344,7 +344,7 @@ Interface Builder を使用して、コントロールを追加するには、�
 
 [![](custom-controls-images/custom04.png "設定すると、ビューのクラス")](custom-controls-images/custom04.png#lightbox)
 
-切り替えて、**アシスタント エディター**を作成し、**アウトレット**カスタム コントロールの (でバインドすることを確認、`ViewControler.h`ファイルおよび not、`.m`ファイル)。
+切り替えて、**アシスタント エディター**を作成し、**アウトレット**カスタム コントロールの (でバインドすることを確認、`ViewController.h`ファイルおよび not、`.m`ファイル)。
 
 [![](custom-controls-images/custom05.png "新しいアウトレットを構成します。")](custom-controls-images/custom05.png#lightbox)
 

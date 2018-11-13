@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 106357e9442d51fdd31bb30b4f0342e2b59f67fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118488"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526664"
 ---
 # <a name="ios-app-architecture"></a>iOS アプリのアーキテクチャ
 
@@ -118,7 +118,7 @@ IOS Xamarin.iOS で使用される型の登録システムの詳細について�
 
 ## <a name="generator"></a>ジェネレーター
 
-Xamarin.iOS には、すべて 1 つの iOS API の定義が含まれています。 これらのいずれかを参照できます、 [MaciOS github リポジトリ](https://github.com/xamarin/xamarin-macios/tree/master/src)します。 これらの定義には、インターフェイス、属性を持つだけでなく、必要なメソッドとプロパティが含まれます。 たとえば、次のコードは、UIKit で、UIToolbar を定義するために使用[名前空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)します。 メソッドとプロパティの数がインターフェイスであることを確認します。
+Xamarin.iOS には、すべて 1 つの iOS API の定義が含まれています。 これらのいずれかを参照できます、 [MaciOS github リポジトリ](https://github.com/xamarin/xamarin-macios/tree/master/src)します。 これらの定義には、インターフェイス、属性を持つだけでなく、必要なメソッドとプロパティが含まれます。 UIKit、UIToolbar を定義する次のコードを使用するなど、[名前空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)します。 メソッドとプロパティの数がインターフェイスであることを確認します。
 
 ```csharp
 [BaseType (typeof (UIView))]

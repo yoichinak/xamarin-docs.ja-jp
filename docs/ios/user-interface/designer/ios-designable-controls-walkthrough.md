@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d24d62bf190a2cb078bf82d7a8676f302e740762
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0401c2c05677c719bbe4914cc7e008b650fdd198
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115589"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526242"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>IOS Designer でカスタム コントロールの使用
 
@@ -25,7 +25,7 @@ IOS 用の Xamarin デザイナーは、Windows の場合は、Visual Studio for
 ## <a name="walkthrough"></a>チュートリアル
 
 > [!IMPORTANT]
-> Xamarin.Studio 5.5 以降、カスタム コントロールを作成する方法は、以前のバージョンと若干異なります。 か、カスタム コントロールを作成する、 `IComponent` (関連付けられている実装メソッド) を使用して必要なインターフェイスまたはクラスであることができますで注釈を付ける`[DesignTimeVisible(true)]`します。 後者の方法は、チュートリアルの次の例で使用されています。
+> Xamarin.Studio 5.5 以降、カスタム コントロールを作成する方法は、以前のバージョンと若干異なります。 か、カスタム コントロールを作成する、`IComponent`インターフェイスは、(関連する実装メソッド) を使用して必要またはクラスの注釈として付ける`[DesignTimeVisible(true)]`します。 後者の方法は、チュートリアルの次の例で使用されています。
 
 
 1. 新しいソリューションを作成、 **iOS > アプリ > 単一ビュー アプリケーション > c#** テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。

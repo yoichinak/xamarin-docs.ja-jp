@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 469ae19021ae524c302b8a9920aaa64bb4a681f4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 61d598f90747cf47b613012328f77b4bd8953a41
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117292"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528459"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Xamarin.Mac でストーリー ボードの使用
 
@@ -150,7 +150,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-必要に応じて、オーバーライドすることができます、`ShouldPerfromSegue`メソッドとコントロールを使用して、セグエを実際に実行するかどうかC#コード。 手動で表示されるビュー コント ローラーを呼び出して、`DismissController`不要になったときに、それらを表示から削除するメソッド。
+必要に応じて、オーバーライドすることができます、`ShouldPerformSegue`メソッドとコントロールを使用して、セグエを実際に実行するかどうかC#コード。 手動で表示されるビュー コント ローラーを呼び出して、`DismissController`不要になったときに、それらを表示から削除するメソッド。
 
 <a name="Creating-Custom-Segues" />
 
@@ -227,7 +227,7 @@ namespace OnCardMac
 2. `Storyboard`プロパティが読み込まれているウィンドウ コント ローラーから、それ以外の場合、ストーリー ボードを含む`null`ストーリー ボードから読み込まれていない場合。
 3. 呼び出すことができます、`DismissController`メソッドを指定されたウィンドウを閉じるし、ビューから削除します。
 
-ビュー コント ローラーのようなウィンドウのコント ローラーの実装、 `PerformSegue`、`PrepareForSegue`と`ShouldPerfromSegue`メソッド セグエ操作のソースとして使用できます。
+ビュー コント ローラーのようなウィンドウのコント ローラーの実装、 `PerformSegue`、`PrepareForSegue`と`ShouldPerformSegue`メソッド セグエ操作のソースとして使用できます。
 
 ウィンドウ コント ローラーは macOS アプリの次の機能を担当します。
 
@@ -259,7 +259,7 @@ MacOS 用のジェスチャ レコグナイザーは iOS の対応するとほ�
 
 ## <a name="using-storyboard-references"></a>ストーリー ボードの参照の使用
 
-ストーリー ボードの参照を使用すると、大規模で複雑なストーリー ボードのデザインを受け取り、元の参照を取得するより小さなストーリー ボードに分割して、したがって削除の複雑さを削除して、その結果を個別に行うストーリー ボード簡単にデザインして維持します。
+ストーリー ボードの参照を使用すると、大規模で複雑なストーリー ボードのデザインを受け取り、小さいストーリー ボード、元の参照を取得するため複雑さを削除して、結果として得られる個別のストーリー ボードを簡単に設計および管理に分割することができます。
 
 また、ストーリー ボードの参照を提供できます、_アンカー_同じストーリー ボードまたは別の特定のシーン内の別のシーンにします。
 

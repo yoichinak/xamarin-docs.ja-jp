@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a202dd32bcde5cf91cce3f597c9ea7c17f4adbcd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fd97dbbe102c5a755c4a8974cf1a952c0050ac7c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113576"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527184"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Xamarin.Mac のアウトライン ビュー
 
 _この記事では、Xamarin.Mac アプリケーションでのアウトライン ビューの使用について説明します。作成および Xcode と Interface Builder でのアウトライン ビューを維持し、それらをプログラムで操作がについて説明します。_
 
-同じアクセス権がある、Xamarin.Mac アプリケーションで c# と .NET を使用する場合のアウトライン ビューで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、アウトライン ビューの管理 (または必要に応じて c# コードで直接作成) します。
+使用する場合C#へのアクセス権を持って、Xamarin.Mac アプリケーションで .NET では、同じのアウトライン ビューで作業する開発者*Objective C*と*Xcode*は。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、アウトライン ビューの管理 (または必要に応じて c# コードで直接作成) します。
 
 アウトライン表示は、ユーザーができるテーブルの種類の展開または階層データの行を折りたたむには。 テーブル ビューでは、ように、アウトライン ビューには、個々 のアイテムとそれらの項目の属性を表す列を表す行を含む、一連の関連するアイテムのデータが表示されます。 テーブル ビューとは異なり、アウトライン表示で項目がフラット リストに含まれていない、ハード ドライブのファイルとフォルダーのように、階層で構成されます。
 

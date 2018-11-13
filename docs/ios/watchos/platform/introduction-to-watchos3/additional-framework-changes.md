@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 745c39dab1f73870ce036791434ed9a0b05d681b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e3eb4e3454aeab08d1333c5dbc3d4808fa4d676c
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122622"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528405"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>追加の watchOS 3 フレームワークの変更
 
@@ -38,7 +38,7 @@ IOS の大幅な変更を加え Apple は、watchOS 3 での変更と既存の�
 
 Core モーション framework ウォッチ 3 の OS の次のように強化します。
 
-- 新しいデバイス モーション イベントは、加速度計、ジャイロスコープなどがありますを使用して、モーション センサーと印刷の向きの更新プログラムを提供します。 更新 (最大 100 Hz の料金) このアプリのアプリを登録できます。
+- 新しいデバイス モーション イベントは、加速度計、ジャイロスコープなどがありますを使用して、モーション センサーと印刷の向きの更新プログラムを提供します。 この更新プログラム (最大 100 Hz の料金) でのアプリを登録できます。
 - 新しい歩数計イベントは高速なユーザーを置いたときにリアルタイムで通知と実行を再開します。 使用して、 [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)フォア グラウンドまたはバック グラウンドの歩数計イベントを登録します。
 
 
@@ -48,7 +48,7 @@ Foundation framework ウォッチ OS 3 の次のように強化します。
 
 - 使用して、新しい[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)間隔を比較して、間隔の交差部分のテストのための期間などの日付と時刻の間隔の計算を行うクラス。
 - いくつかの新しいプロパティが追加されて、 [NSLocal](https://developer.apple.com/reference/foundation/nslocale)ローカル情報と使用可能な表示形式を取得するクラス。
-- 使用して、新しい[NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement)間さまざまなユニットの測定 (UOM) を変換または異なる UOMs 内の値に対して計算を実行するクラス。
+- 使用して、新しい[NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)間さまざまなユニットの測定 (UOM) を変換または異なる UOMs 内の値に対して計算を実行するクラス。
 - 使用して、新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスは、エンドユーザーに表示するためのローカライズされた測定値の書式を設定します。
 - 使用して、新しい[NSUnit](https://developer.apple.com/reference/foundation/nsunit)と[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)特定 UOMs を表すためのクラス。
 

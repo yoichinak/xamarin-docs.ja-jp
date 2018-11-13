@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b62943fce8a1137c3bde1c629cc4cee9b2b44f3f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b1ea26afff1477d762d106db004be82010a2d557
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103310"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527333"
 ---
 # <a name="kitkat-features"></a>KitKat 機能
 
@@ -215,7 +215,7 @@ public class MainActivity : Activity
 </merge>
 ```
 
-使用して上記の例`merge`を短いコードの表示を行い、ビュー階層を簡素化します。 詳細をご覧ください`merge`レイアウト[ここ](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)します。
+使用して上記の例`merge`を短いコードの表示を作成し、階層の表示を簡略化します。 詳細をご覧ください`merge`レイアウト[ここ](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)します。
 
 シーンが呼び出すことによって作成された[ `Scene.GetSceneForLayout`](https://developer.xamarin.com/api/member/Android.Transitions.Scene.GetSceneForLayout/p/Android.Views.ViewGroup/System.Int32/Android.Content.Context/)コンテナー オブジェクト、シーンのレイアウトのファイルと現在のリソース ID を渡して、`Context`次のコード例に示しますように。
 
@@ -282,7 +282,7 @@ TransitionManager.Go (scene1, transition);
 
 ### <a name="translucent-ui"></a>半透明の UI
 
-KitKat をより細かく制御テーマ transclucent の省略可能な状態とナビゲーション バーを使用してアプリを示しています。 使用して、Android のテーマを定義する、同じ XML ファイル内のシステム UI 要素の透明度を変更することができます。 KitKat には、次のプロパティが導入されています。
+KitKat をより細かく制御テーマ オプションの半透明の状態とナビゲーション バーを使用してアプリを示しています。 使用して、Android のテーマを定義する、同じ XML ファイル内のシステム UI 要素の透明度を変更することができます。 KitKat には、次のプロパティが導入されています。
 
 -  `windowTranslucentStatus` -に設定すると true は、上部のステータス バー半透明です。
 
@@ -322,7 +322,7 @@ KitKat をより細かく制御テーマ transclucent の省略可能な状態�
 
 ストレージ アクセス フレームワーク (SAF) は、イメージ、ビデオ、ドキュメントなどの格納されているコンテンツと対話するユーザーの新しい方法です。 コンテンツを処理するためにアプリケーションを選択するダイアログ ボックスでユーザーを表示するのではなく KitKat は、データ集計の 1 つの場所にアクセスするユーザーを許可する新しい UI が開きます。 コンテンツが選択されているし、ユーザーは、コンテンツを要求したアプリケーションに戻りますアプリ エクスペリエンスを通常どおりに続行されます。
 
-この変更には、開発者側で 2 つのアクションが必要です: 最初に、プロバイダーからのコンテンツを必要とするアプリを reqesting コンテンツの新しい方法を更新する必要があります。 データを書き込む、2 つ目のアプリケーション、`ContentProvider`新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオは、新しいに依存します。 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
+この変更には、開発者側で 2 つのアクションが必要です。 プロバイダーからのコンテンツを必要とするアプリが最初に、要求元のコンテンツの新しい方法を更新する必要があります。 データを書き込む、2 つ目のアプリケーション、`ContentProvider`新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオは、新しいに依存します。 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
 API です。
 
 #### <a name="documentsprovider"></a>DocumentsProvider
@@ -344,7 +344,7 @@ StartActivityForResult (intent, save_request_code);
 
 呼び出す`StartActivityForResult`ユーザー イメージの選択を参照できます、SAF UI を起動します。
 
-[![参照イメージをする際の記憶域アクセス フレームワークを使用してアプリのスクリーン ショットの例](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
+[![ストレージ アクセス フレームワーク イメージへの参照を使用するアプリのスクリーン ショットの例](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 ユーザーが、イメージを選択後`OnActivityResult`を返します、`Android.Net.Uri`の選択したファイル。 次のコード例では、ユーザーのイメージの選択が表示されます。
 
@@ -424,7 +424,7 @@ KitKat は自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xam
 アクティビティの通常表示される印刷オプション[オプション メニュー](http://developer.android.com/guide/topics/ui/menus.html#options-menu)します。
 [オプション] メニューを使用して、アクティビティに対して操作を実行できます。 画面の右上隅にあると、次のような。
 
-[![印刷メニュー項目いないことを示す、画面の右上隅での例のスクリーン ショット](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[![画面の右上隅に表示される印刷メニュー項目の例のスクリーン ショット](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
 追加のメニュー項目を定義することができます、*メニュー*ディレクトリ*リソース*します。 次のコード サンプル メニュー項目を定義する[印刷](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
@@ -547,7 +547,7 @@ HCE サービスも、アプリケーションのマニフェストを登録し�
 ```csharp
 [Service(Exported=true, Permission="android.permissions.BIND_NFC_SERVICE"),
     IntentFilter(new[] {"android.nfc.cardemulation.HOST_APDU_SERVICE"}),
-    MetaData("andorid.nfc.cardemulation.host.apdu_service",
+    MetaData("android.nfc.cardemulation.host.apdu_service",
     Resource="@xml/hceservice")]
 
 class HceService : HostApduService
@@ -599,7 +599,7 @@ KitKat も付属して 2 つの新しい種類のセンサーのユーザーの�
 
 [![手順のカウンターを表示する SensorsActivity アプリのスクリーン ショット](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
-作成することができます、`SensorManager`呼び出して`GetSystemService(SensorService)`として結果をキャストし、 `SensorManager`。 手順のカウンターを使用する呼び出し`GetDeafultSensor`上、`SensorManager`します。 センサーを登録およびのカウントのステップで変更をリッスンする、 [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
+作成することができます、`SensorManager`呼び出して`GetSystemService(SensorService)`として結果をキャストし、 `SensorManager`。 手順のカウンターを使用する呼び出し`GetDefaultSensor`上、`SensorManager`します。 センサーを登録およびのカウントのステップで変更をリッスンする、 [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
 次のコード例に示すようには、インターフェイス:
 
 ```csharp
@@ -689,7 +689,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 -  *アニメーションを一時停止*-一時停止と再開のアニメーションを使用して作成します [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
    クラスの新しいインスタンスを初期化します。
 
--  *動的に変更するテキストの読み取り*-新しい「ライブ リージョン」として、新しいテキストに動的に更新する UI の部分を示す [ `accesibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+-  *動的に変更するテキストの読み取り*-新しい「ライブ リージョン」として、新しいテキストに動的に更新する UI の部分を示す [ `accessibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    新しいテキストはアクセシビリティ モードで自動的に読み取るための属性です。
 
 -  *オーディオのエクスペリエンスの向上*-Make トラック音は、 [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)
@@ -703,7 +703,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 -  *リモート コントロール*-ハードウェアとソフトウェアの両方の側でのいくつかの変更により、KitKat を使用すると、リモート_コントロールを使用してに IR の送信機能であり、デバイスを有効にする、 `ConsumerIrService`、および新しい周辺機器の対話 [`RemoteController`](https://developer.xamarin.com/api/type/Android.Media.RemoteController/)
    Api。
 
-上記の API の変更点の詳細についてを参照してください、Google [Android 4.4 Api](http://developer.android.com/about/versions/android-4.4.html)の概要。
+上記の API の変更点の詳細については、Google を参照してください[Android 4.4 Api](http://developer.android.com/about/versions/android-4.4.html)の概要。
 
 
 ## <a name="summary"></a>まとめ

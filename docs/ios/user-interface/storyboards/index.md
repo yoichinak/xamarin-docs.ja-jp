@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106885"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564006"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
@@ -100,11 +100,11 @@ NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController 
+    var callHistoryController = segue.DestinationViewController 
                                   as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 }
 ```
@@ -112,14 +112,14 @@ NSObject sender)
 この例で、`PrepareForSegue`セグエは、ユーザーによってトリガーされたときにメソッドが呼び出されます。 まず、'受信' のビュー コント ローラーのインスタンスを作成し、これをセグエの対象ビュー コント ローラーとして設定する必要があります。 これは、次のコード行で行います。
 
 ```csharp
-var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 メソッドには、プロパティを設定する機能、`DestinationViewController`します。 この例と呼ばれるリストを渡すことでこの方法の利点を思い出させて`PhoneNumbers`を`CallHistoryController`と同じ名前のオブジェクトに割り当てます。
 
 ```csharp
-if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 ```
 
@@ -368,7 +368,7 @@ Storyboards.Conditional ソリューションを参照してください、[手�
 
 ## <a name="using-storyboard-references"></a>ストーリー ボードの参照の使用
 
-ストーリー ボードの参照を使用すると、大規模で複雑なストーリー ボードのデザインを受け取り、元の参照を取得するより小さなストーリー ボードに分割して、したがって削除の複雑さを削除して、その結果を個別に行うストーリー ボード簡単にデザインして維持します。
+ストーリー ボードの参照を使用すると、大規模で複雑なストーリー ボードのデザインを受け取り、小さいストーリー ボード、元の参照を取得するため複雑さを削除して、結果として得られる個別のストーリー ボードを簡単に設計および管理に分割することができます。
 
 また、ストーリー ボードの参照を提供できます、_アンカー_同じストーリー ボードまたは別の特定のシーン内の別のシーンにします。
 

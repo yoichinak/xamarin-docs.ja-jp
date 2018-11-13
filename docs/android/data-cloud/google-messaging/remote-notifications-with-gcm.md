@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: e361444f2c717ff44e0771710836f156f90cfcb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118891"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528807"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging を使用したリモート通知
 
@@ -91,7 +91,7 @@ Android アプリケーションでは、Google Cloud Messaging から通知を�
 -   `com.google.android.c2dm.permission.RECEIVE` &ndash; アプリを登録し、Google Cloud Messaging からメッセージを受信するアクセス許可を付与します。 (何`c2dm`という意味ですか? これの略_クラウド デバイス メッセージング_、これは、GCM、現時点で非推奨の先行します。 
     GCM を使用して引き続き`c2dm`そのアクセス許可文字列の多くでします)。 
 
--   `android.permission.WAKE_LOCK` &ndash; (省略可能)デバイスからの CPU をできないように、メッセージのリッスン中にスリープ状態にします。 
+-   `android.permission.WAKE_LOCK` &ndash; (省略可能)デバイスの CPU がメッセージのリッスン中にスリープ状態にするを防ぎます。 
 
 -   `android.permission.INTERNET` &ndash; クライアント アプリケーションが GCM と通信できるように、インターネットへのアクセスを許可します。 
 
@@ -649,7 +649,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 さらに、通知トレイで新しい通知アイコンが表示されているかを確認する必要があります。 
 
-[![デバイスで Notiication アイコンが表示されます。](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
+[![デバイスに通知アイコンが表示されます。](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 通知を表示する通知トレイを開くと、リモート通知が表示されます。
 
@@ -657,7 +657,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 これで、アプリがその最初のリモート通知を受信しました。
 
-アプリが強制的に停止した場合 GCM メッセージを受信する不要になったことに注意してください。 通知は、強制停止後再開、アプリは、手動再起動する必要があります。 この Android ポリシーの詳細については、次を参照してください。[停止状態のアプリケーション上のコントロールを起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)と[スタック オーバーフロー post](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)します。 
+アプリが強制的に停止した場合 GCM メッセージを受信する不要になったことに注意してください。 通知を強制停止後に再開するには、アプリを手動で再起動する必要があります。 この Android ポリシーの詳細については、次を参照してください。[停止状態のアプリケーション上のコントロールを起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)と[スタック オーバーフロー post](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)します。 
 
  
 ## <a name="summary"></a>まとめ

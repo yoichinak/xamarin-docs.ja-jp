@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: def46f69b139ef52bb6e65a1c415b9c899e63897
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b6e1c8ce91eaad46e779527c5ba12e2187cad24
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109420"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528430"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager とフラグメント
 
@@ -21,7 +21,7 @@ _ViewPager は、レイアウト マネージャー ジェスチャー ナビゲ
  
 ## <a name="overview"></a>概要
 
-`ViewPager` 内の各ページのライフ サイクルを管理しやすいように、フラグメントと組み合わせて使用されて多くの場合、`ViewPager`します。 このチュートリアルで`ViewPager`を作成するために使用するというアプリ**FlashCardPager**フラッシュ カードに一連の数学の問題を表示します。 各フラッシュ カードは、フラグメントとして実装されます。 ユーザーは、フラッシュ カードを左右にスワイプして、応答を表示する数学の問題をタップします。 このアプリを作成、`Fragment`アダプターから派生した各フラッシュ カードと実装のインスタンス`FragmentPagerAdapter`します。 [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)でほとんどの作業が行われていた`MainActivity`ライフ サイクル メソッド。 **FlashCardPager**、作業のほとんどは、によって行われます、`Fragment`そのライフ サイクル メソッドのいずれかでします。 
+`ViewPager` 内の各ページのライフ サイクルを管理しやすいように、フラグメントと組み合わせて使用されて多くの場合、`ViewPager`します。 このチュートリアルで`ViewPager`というアプリを作成するために使用**FlashCardPager**フラッシュ カードに一連の数学の問題を表示します。 各フラッシュ カードは、フラグメントとして実装されます。 ユーザーは、フラッシュ カードを左右にスワイプして、応答を表示する数学の問題をタップします。 このアプリを作成、`Fragment`アダプターから派生した各フラッシュ カードと実装のインスタンス`FragmentPagerAdapter`します。 [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)でほとんどの作業が行われていた`MainActivity`ライフ サイクル メソッド。 **FlashCardPager**、作業のほとんどは、によって行われます、`Fragment`そのライフ サイクル メソッドのいずれかでします。 
 
 このガイドでは、フラグメントの基礎については説明しません&ndash;Xamarin.Android でフラグメント知識がない場合は、次を参照してください。[フラグメント](~/android/platform/fragments/index.md)フラグメントを使用できます。 
 

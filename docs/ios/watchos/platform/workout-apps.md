@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: d755160043191f93247fd09e99f23eb85831fa8b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fd677aa802adf32ac81396f81c67264d88639967
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113899"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528781"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>watchOS で Xamarin トレーニング アプリ
 
@@ -469,7 +469,7 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 また新しい watchOS 3 には、アニメーションが一時停止 (`HKWorkoutEventType.MotionPaused`) モーションの再開 (`HKWorkoutEventType.MotionResumed`) イベント。 これらのイベント発生自動的に HealthKit によって実行中のトレーニング中に、ユーザーが開始され、移動を停止します。
 
-アプリがモーションが一時停止イベントを受け取るときに、ユーザーは、モーションを再開して、モーションが再開されるイベントを受信するまでデータの収集を停止する必要があります。 アプリのアプリには、モーションの一時停止しているイベントに応答トレーニング セッションが一時停止する必要があります。
+アプリがモーションが一時停止イベントを受け取るときに、ユーザーは、モーションを再開して、モーションが再開されるイベントを受信するまでデータの収集を停止する必要があります。 アプリには、アニメーションが一時停止イベントに応答トレーニング セッションが一時停止する必要があります。
 
 > [!IMPORTANT]
 > アニメーションが一時停止とモーション再開イベントは RunningWorkout アクティビティの種類にのみサポートされます (`HKWorkoutActivityType.Running`)。
