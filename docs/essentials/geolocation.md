@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 533620fbfca9f2a7a235fe65e038b6dd89aa95a9
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 55d33181b2a0de1f939ebd28b83a67a9af64716e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674901"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528495"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: 位置情報
 
@@ -79,7 +79,7 @@ plist エディターを開き、**[プライバシー - 位置情報 (使用時
 using Xamarin.Essentials;
 ```
 
-Geoloation API では、必要に応じてユーザーにアクセス許可も求められます。
+Geolocation API では、必要に応じてユーザーにアクセス許可も求められます。
 
 `GetLastKnownLocationAsync` メソッドを呼び出すことにより、デバイスの最後の既知の[場所](xref:Xamarin.Essentials.Location)を取得できます。 多くの場合、この方が完全なクエリを行うより速くわかりますが、精度が低下することがあります。
 

@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 958ca967764b4547d6bdf64452e372d3ea4abd1e
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 7d0ccfeaa85e74b15f1d1bf2feae8e4404b36813
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39351523"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617346"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -57,7 +57,7 @@ sections:
     - href: ~/xamarin-forms/get-started/index.md
       html: すぐに Xamarin.Forms を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Xamarin.Forms アプリを構築してみましょう。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/xamarin-forms/get-started/index.md
       title: 作業の開始
     - href: ~/xamarin-forms/xaml/
@@ -87,7 +87,7 @@ sections:
     - href: ~/essentials/index.md?context=xamarin/xamarin-forms
       html: ファイル アクセス、デバイス情報、ハードウェア機能のような一般的なタスクのためのクロスプラットフォーム API。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
         href: ~/essentials/index.md?context=xamarin/xamarin-forms
       title: Xamarin.Essentials
     - href: ~/xamarin-forms/data-cloud/
@@ -105,7 +105,7 @@ sections:
     - href: ~/xamarin-forms/internals/
       html: Xamarin.Forms の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
         href: ~/xamarin-forms/internals/
       title: 高度な概念と内部構造
 - title: 参照

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 911101d44e3ae401910b35b93d85ba3f79ddd35a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 08fa9000a1fd9c97f7881a4a13c15fabfa6dda47
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103986"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617671"
 ---
 # <a name="time-picker"></a>時刻の選択
 
@@ -279,7 +279,7 @@ is24HourFormat = true;
 
 [![24 時間形式で TimePicker ダイアログ](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
-ハンドラーが呼び出すため[DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx)アクティビティの時間を印刷する`TextView`時間はまだ既定の 12 時間 AM/PM 形式で印刷します。
+ハンドラーが呼び出すため[DateTime.ToShortTimeString](xref:System.DateTime.ToShortDateString*)アクティビティの時間を印刷する`TextView`時間はまだ既定の 12 時間 AM/PM 形式で印刷します。
 
 
 

@@ -7,12 +7,12 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 527ecfa03adb78d8b97e95d0b6b81ceb12f0a107
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a795b382b9bcc727b0b0872d29d30a501cfed0a6
+ms.sourcegitcommit: f3f28722198e172d81c16bdeab0cb0a581a08dd0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563772"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598900"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章の概要です。 非同期およびファイル I/O
 
@@ -23,7 +23,7 @@ ms.locfileid: "51563772"
 
 ユーザーは、グラフィカル ユーザー インターフェイスが応答を期待します。 つまり、プログラムの処理でユーザー入力イベントがすばやく処理する必要があります。 方法が使用できない場合にセカンダリ スレッド処理を移行する必要があります。
 
-この本でいくつかのサンプル プログラムが使用される、 [ `WebRequest` ](xref:System.Net.WebRequest)クラス。 このクラスで、 [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))メソッドは、これが完了すると、コールバック関数を呼び出すワーカー スレッドを開始します。 ただし、そのコールバック関数で実行されるワーカー スレッド、ため、プログラムを呼び出す必要があります[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))ユーザー インターフェイスにアクセスするメソッド。
+この本でいくつかのサンプル プログラムが使用される、 [ `WebRequest` ](xref:System.Net.WebRequest)クラス。 このクラスで、 [ `BeginGetResponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))メソッドは、これが完了すると、コールバック関数を呼び出すワーカー スレッドを開始します。 ただし、そのコールバック関数で実行されるワーカー スレッド、ため、プログラムを呼び出す必要があります[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))ユーザー インターフェイスにアクセスするメソッド。
 
 > [!NOTE]
 > Xamarin.Forms のプログラムを使用する必要があります[ `HttpClient` ](xref:System.Net.Http.HttpClient)なく[ `WebRequest` ](xref:System.Net.WebRequest)インターネット経由でファイルにアクセスするためです。 `HttpClient` 非同期操作をサポートしています。

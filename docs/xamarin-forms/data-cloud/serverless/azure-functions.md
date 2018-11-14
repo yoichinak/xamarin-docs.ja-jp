@@ -7,12 +7,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 08/08/2018
-ms.openlocfilehash: 3c7f3558557c5ecf4df961b58c2dd147a6f89691
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d8dd6927daab563b4331e9e87c7b069d84078f66
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111615"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617437"
 ---
 # <a name="get-started-with-azure-functions"></a>Azure Functions を概要します。
 
@@ -22,17 +22,17 @@ _初めての Azure 関数と対話する Xamarin.Forms での構築を開始し
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Creating-Cloud-Connected-Mobile-Apps-with-Azure-Functions-and-Visual-Studio-2017/player]
 
-## <a name="step-by-step-instructions"></a>詳細な手順
+## <a name="step-by-step-instructions"></a>ステップ バイ ステップの指示
 
-に加えて、ビデオでは、次の手順を利用できる[Visual Studio 2017 を使用した初めての関数をビルド](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio)します。
+に加えて、ビデオでは、次の手順を利用できる[Visual Studio 2017 を使用した初めての関数をビルド](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)します。
 
 ## <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Creating-Cloud-Connected-Mobile-Apps-with-Azure-Functions-and-Visual-Studio-for-Mac/player]
 
-## <a name="step-by-step-instructions"></a>詳細な手順
+## <a name="step-by-step-instructions"></a>ステップ バイ ステップの指示
 
-このビデオでは、だけでなくが、[ステップ バイ ステップ チュートリアル](https://docs.microsoft.com/en-us/visualstudio/mac/azure-functions-lab)作成および for mac Visual Studio 内での Azure Functions をデバッグする方法を示す。
+このビデオでは、だけでなくが、[ステップ バイ ステップ チュートリアル](https://docs.microsoft.com/visualstudio/mac/azure-functions-lab)作成および for mac Visual Studio 内での Azure Functions をデバッグする方法を示す。
 
 -----
 

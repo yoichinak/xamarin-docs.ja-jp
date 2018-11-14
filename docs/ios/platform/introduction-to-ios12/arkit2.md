@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 008fc22d654478df3151706101ef07bc0a23acb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4d5319005b28c5afa0906c44cfa59f0cad40de76
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111568"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617619"
 ---
 # <a name="arkit-2-in-xamarinios"></a>Xamarin.iOS で ARKit 2
 
@@ -373,7 +373,7 @@ ARKit 2 の見出し行の最終的な機能は、Apple の導入の Pixar の[�
 
 ARKit でリソースを手動で管理するために重要です。 こうすれば、高のフレーム レート、実際にはだけでなく_必要_混乱を招く「画面のフリーズ」を回避するために ARKit フレームワークが新しいカメラ フレームの指定に関する遅延 ([`ARSession.CurrentFrame`](https://developer.xamarin.com/api/property/ARKit.ARSession.CurrentFrame/))。 現在まで[ `ARFrame` ](https://developer.xamarin.com/api/type/ARKit.ARFrame/)しました`Dispose()`で呼び出されると、ARKit が供給されない新しいフレーム。 これにより、「固定」場合でも、アプリの残りの部分が応答するビデオです。 解決するには常にアクセスする`ARSession.CurrentFrame`で、`using`ブロックまたは手動で呼び出す`Dispose()`にします。
 
-派生したすべてのオブジェクト`NSObject`は`IDisposable`と`NSObject`実装、 [Dispose パターン](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/dispose-pattern)で一般的に実行する必要があるため、[を実装するためには、このパターン`Dispose`の派生クラス](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose)します。
+派生したすべてのオブジェクト`NSObject`は`IDisposable`と`NSObject`実装、 [Dispose パターン](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern)で一般的に実行する必要があるため、[を実装するためには、このパターン`Dispose`の派生クラス](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose)します。
 
 ### <a name="manipulating-transform-matrices"></a>変換行列を操作します。
 

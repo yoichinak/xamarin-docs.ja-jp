@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: f9034799355d01a3ade20a78540d6ecac43d9cc8
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 38e71914d9f7f6bb46ebeee8d548968c207d3b16
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526898"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617762"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin.iOS で Siri ショートカット
 
@@ -695,7 +695,7 @@ Visual Studio for Mac または Visual Studio 2017 では。
 
 ### <a name="automatic-provisioning"></a>自動プロビジョニング
 
-使用できる注[自動プロビジョニング](https://docs.microsoft.com/en-us/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning)プロビジョニング タスクを IDE で直接これらの多くを実行します。
+使用できる注[自動プロビジョニング](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning)プロビジョニング タスクを IDE で直接これらの多くを実行します。
 ただし、アプリ グループを自動プロビジョニングは設定されません。 手動で構成する必要があります、 **Entitlements.plist**を使用するアプリのグループの名前のファイルは、アプリ グループを作成するには、自動で作成されたアプリ ID ごとにそのアプリ グループを割り当てる Apple Developer Portal を参照してください。プロビジョニングするには、(アプリ、Intents の拡張機能、Intents UI 拡張機能)、新しく作成されたアプリ グループを含めると、ダウンロードしてインストールするには、プロビジョニング プロファイルを再生成します。
 
 ## <a name="related-links"></a>関連リンク

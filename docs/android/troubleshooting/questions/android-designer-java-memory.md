@@ -1,5 +1,5 @@
 ---
-title: Android designer の Java メモリ パラメーターを調整します。
+title: Android Designer の Java メモリ パラメーターの調整
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: cf0df42ba398944a99cc4179b94f0d3cb8ba503e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118059"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617242"
 ---
-# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Android designer の Java メモリ パラメーターを調整します。
+# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Android Designer の Java メモリ パラメーターの調整
 
 開始するときに使用される既定のメモリ パラメーター、`java`プロセスでは、Android designer がいくつかのシステム構成と互換性がない可能性があります。
 
@@ -35,7 +35,7 @@ Xamarin Studio 5.7.2.7 (および以降では、Visual Studio for Mac) を開始
 
 1.  Visual Studio でソリューションを開きます。
 
-2.  ソリューション エクスプ ローラーで 1 つずつ Android プロジェクトを選択し、をクリックして[すべてのファイル](https://msdn.microsoft.com/en-us/library/4afxey9h.aspx)プロジェクトごとに 2 回クリックします。 いずれか含まれていないプロジェクトをスキップする`.axml`レイアウト ファイルです。 この手順は、各プロジェクトのディレクトリが含まれていることを確認、`.csproj.user`ファイル。
+2.  ソリューション エクスプ ローラーで 1 つずつ Android プロジェクトを選択し、をクリックして[すべてのファイル](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))プロジェクトごとに 2 回クリックします。 いずれか含まれていないプロジェクトをスキップする`.axml`レイアウト ファイルです。 この手順は、各プロジェクトのディレクトリが含まれていることを確認、`.csproj.user`ファイル。
 
 3.  Visual Studio を終了します。
 

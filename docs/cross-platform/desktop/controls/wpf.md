@@ -5,12 +5,12 @@ description: このドキュメントでは、比較し、Xamarin.Forms の WPF 
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 43eadacebf7ed877dfa28381ad77117d5988ca4b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d3e772c270f6003d01e3e7b487f69f682fec2d61
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119850"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617593"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF とします。Xamarin.Forms: 類似点と相違点
 
@@ -60,7 +60,7 @@ Xamarin.Forms は、カスタム マークアップ拡張機能だけでなく�
 
 ## <a name="binding-infrastructure"></a>バインド インフラストラクチャ
 
-引き継がコア概念の 1 つは、.NET のデータ プロパティにビジュアルのプロパティを接続するデータ バインド インフラストラクチャです。 これにより、アーキテクチャのパターンを MVVM などができます。 基本のデザインは同じです - バインド可能な基底クラスを含んだりする[BindableObject](xref:Xamarin.Forms.BindableObject)、これは、WPF では、 [DependencyObject](https://msdn.microsoft.com/en-us/library/system.windows.dependencyobject(v=vs.110).aspx)クラス。 この基本クラスは、データ バインディングのターゲットとして参加するすべてのオブジェクトの先祖をルートとして使用されます。 派生クラスを公開し、 [BindableProperty](xref:Xamarin.Forms.BindableProperty)プロパティ値のバックアップ用ストレージとして機能するオブジェクト (として定義される[DependencyProperty](https://msdn.microsoft.com/library/system.windows.dependencyproperty(v=vs.110).aspx) WPF 内のオブジェクト)。
+引き継がコア概念の 1 つは、.NET のデータ プロパティにビジュアルのプロパティを接続するデータ バインド インフラストラクチャです。 これにより、アーキテクチャのパターンを MVVM などができます。 基本のデザインは同じです - バインド可能な基底クラスを含んだりする[BindableObject](xref:Xamarin.Forms.BindableObject)、これは、WPF では、 [DependencyObject](xref:System.Windows.DependencyObject)クラス。 この基本クラスは、データ バインディングのターゲットとして参加するすべてのオブジェクトの先祖をルートとして使用されます。 派生クラスを公開し、 [BindableProperty](xref:Xamarin.Forms.BindableProperty)プロパティ値のバックアップ用ストレージとして機能するオブジェクト (として定義される[DependencyProperty](xref:System.Windows.DependencyProperty) WPF 内のオブジェクト)。
 
 ### <a name="defining-bindable-properties"></a>バインド可能なプロパティを定義します。
 
