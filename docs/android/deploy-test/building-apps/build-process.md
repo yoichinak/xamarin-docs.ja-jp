@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2018
-ms.openlocfilehash: 63e86ef89c8d736640e7677fee6147feacc87bdc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b63efb3f9bfa432f15415e652cd5d59f929c4488
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108926"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617788"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -195,7 +195,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **AndroidTlsProvider** &ndash; アプリケーションで使用する必要がある TLS プロバイダーを指定する文字列値。 指定できる値は次のとおりです。
 
-    - `btls`: [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx) との TLS 通信に [BoringSSL](https://boringssl.googlesource.com/boringssl) を使用します。
+    - `btls`: [HttpWebRequest](xref:System.Net.HttpWebRequest) との TLS 通信に [BoringSSL](https://boringssl.googlesource.com/boringssl) を使用します。
       これにより、Android のすべてのバージョンで TLS 1.2 を使用できます。
 
     - `legacy`: ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 61a90632849787e28526f83d53247a0491148148
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: e8b3881db99d569008ce1290f81891f1b3b183d7
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235091"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563811"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
@@ -125,13 +125,13 @@ iOS は、切り替えが発生する直前に `PrepareForSegue` を呼び出し
 この時点で、セグエの対象ビュー コントローラーを手動で設定する必要があります。 次のコードでは、対象ビュー コントローラーへのハンドルを取得し、適切なクラス (ここでは CallHistoryController) にキャストします。
 
 ```csharp
-CallHistoryController callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+CallHistoryController callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 最後に、`CallHistoryController` の `PhoneHistory` プロパティを詳細な電話番号の一覧に設定することで、`ViewController` の電話番号の一覧 (モデル) を `CallHistoryController` に渡します。
 
 ```csharp
-callHistoryContoller.PhoneNumbers = PhoneNumbers;
+callHistoryController.PhoneNumbers = PhoneNumbers;
 ```
 
 セグエを使用してデータを渡す完全なコードは次のとおりです。
@@ -141,10 +141,10 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+    var callHistoryController = segue.DestinationViewController as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-         callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+         callHistoryController.PhoneNumbers = PhoneNumbers;
     }
  }
 ```

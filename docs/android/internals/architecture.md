@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 815e3ddf44ae94b6b26a325599de1f4c1f6714a8
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121127"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681541"
 ---
 # <a name="architecture"></a>アーキテクチャ
 
@@ -33,8 +33,9 @@ Android のクラスが Android ランタイム クラスを通信する方法�
 
 Android アプリケーション パッケージは ZIP コンテナーで、 *.apk*ファイル拡張子。 Xamarin.Android アプリケーション パッケージに加え、次の標準の Android パッケージの構造とレイアウトが同じであります。
 
--   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダー。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()* プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アセンブリは、実行前に抽出する必要はありません、アプリの起動時間の短縮、します。 -  *注:* などのアセンブリの場所情報[Assembly.Location](xref:System.Reflection.Assembly.Location)と [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
-    *に依存できません* リリース構築します。 個別のファイル システムのエントリとして存在していないされ、使用可能な場所がありません。
+-   (IL を含む)、アプリケーション アセンブリが*格納*内で圧縮されていない、*アセンブリ*フォルダー。 リリースでのスタートアップがビルド プロセス中に、 *.apk*は*mmap()* プロセスと、アセンブリに ed はメモリから読み込まれます。 これにより、アセンブリは、実行前に抽出する必要はありません、アプリの起動時間の短縮、します。  
+-   *注:* などのアセンブリの場所情報[Assembly.Location](xref:System.Reflection.Assembly.Location)と[Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+    *に依存できません*リリース構築します。 個別のファイル システムのエントリとして存在していないされ、使用可能な場所がありません。
 
 
 -   Mono ランタイムを含むネイティブ ライブラリが存在する、 *.apk*します。 Xamarin.Android アプリケーションなどで必要な対象となる Android アーキテクチャのネイティブ ライブラリを含める必要があります*armeabi* 、 *armeabi v7a* 、 *x86*します。 Xamarin.Android アプリケーションは、適切なランタイム ライブラリが含まれている場合を除き、プラットフォームで実行できません。

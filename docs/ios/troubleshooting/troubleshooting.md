@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 4d887d5a57aa3a632bd2f6795052c5b38f66a75a
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 4ab6b217190ea633611a9c869ec7e93befcc3c56
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527171"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681567"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin.iOS のトラブルシューティングのヒント 
 
@@ -46,9 +46,10 @@ Apple を参照することもできます。[アウトレット](https://develo
 
 メンバーは、リンカーによって削除された可能性があり、そのため、実行時にアセンブリに存在しません。  このソリューションをいくつかあります。
 
--  追加、 [[保持]](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)属性のメンバーにします。  これは、ため、リンカーは削除されなくなります。
--  呼び出すときに[mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)を使用して、 **- nolink**または **- linksdkonly**オプション。 -    **-nolink**すべてのリンクを無効にします。
--    **-linksdkonly** 、Xamarin.iOS で提供されるアセンブリをなどリンクのみ*monotouch.dll*または xamarin.ios.dll します。
+- 追加、 [ `[Preserve]` ](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)属性のメンバーにします。  これは、ため、リンカーは削除されなくなります。
+- 呼び出すときに[ **mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)を使用して、 **- nolink**または **- linksdkonly**オプション。
+  - **-nolink**すべてのリンクを無効にします。
+  - **-linksdkonly** 、Xamarin.iOS で提供されるアセンブリをなどリンクのみ**xamarin.ios.dll**ユーザーが作成したアセンブリ内のすべての型を維持しながら (つまり。 アプリ プロジェクト)。
 
 アセンブリがリンクされているため、結果として得られる実行可能ファイルが小さことに注意してください。したがって、リンクを無効にすることがありますが望ましいよりも大きな実行可能。
 

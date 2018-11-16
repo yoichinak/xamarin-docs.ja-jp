@@ -6,13 +6,13 @@ ms.assetid: C1727F0C-82B1-D085-D46F-C6383FF04B16
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 03/22/2017
-ms.openlocfilehash: 0dd9832a2e4dd0803f92d6e3923fe178252211f4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/15/2018
+ms.openlocfilehash: 86055932edf82f04e11c9ae8dd684a3d77c3d830
+ms.sourcegitcommit: da2260a882dbda02732e21cad5cc9a9dd35e27e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103570"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51709229"
 ---
 # <a name="appearance-api-in-xamarinios"></a>Xamarin.iOS で外観 API
 
@@ -32,11 +32,10 @@ iOS では、標準的なコントロールをアプリケーションに適用�
 
 外観のサンプル アプリケーションではこれらのスクリーン ショットに示すようにすべての 3 つの方法を示しています。
 
- [![](introduction-to-the-appearance-api-images/appearance01.png "外観のサンプル アプリケーションは、次の 3 つすべての方法を示しています。")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
+[![](introduction-to-the-appearance-api-images/appearance01-sml.png "外観のサンプル アプリケーションは、次の 3 つすべての方法を示しています。")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 IOS 8 の時点で外観のプロキシは TraitCollections に拡張されました。
  `AppearanceForTraitCollection` 特定の特徴であるコレクションの既定の外観を設定するために使用します。 詳細については、これには、[ストーリー ボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)ガイド。
-
 
 ## <a name="setting-appearance-properties"></a>外観のプロパティの設定
 
@@ -72,7 +71,6 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 外観 API されます[iOS アプリのスタイル設定](~/xamarin-forms/platform/ios/theme.md#uiappearance)Xamarin.Forms ソリューションです。 いくつかの行で、`AppDelegate`を作成しなくても、特定のカラー スキームを実装するクラスが役立つことができます、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)します。
 
-
 ### <a name="custom-themes-and-uiappearance"></a>カスタム テーマと UIAppearance
 
 により、ユーザーの多くの視覚属性「テーマ」を使用することのインターフェイス コントロール、iOS、 *UIAppearance*同じ外観にする特定のコントロールのすべてのインスタンスを強制する Api。 これは、多くのユーザー インターフェイス コントロール クラスでは、コントロールの個々 のインスタンスではなく、外観プロパティとして公開されます。 静的に表示プロパティを設定`Appearance`プロパティが、アプリケーションでは、その型のすべてのコントロールに影響します。
@@ -91,7 +89,7 @@ sg1.TintColor = UIColor.Magenta;
 
 次の図は、'sg1' という名前のコントロールのみで、濃淡設定ことを示しています。
 
- [![](introduction-to-the-appearance-api-images/image53.png "個々 のコントロールの濃淡の設定")](introduction-to-the-appearance-api-images/image53.png#lightbox)
+[![](introduction-to-the-appearance-api-images/image53.png "個々 のコントロールの濃淡の設定")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 この方法で多くのコントロールを設定するのには効率的ではありません完全に静的な代わりにセットアップできるように`Appearance`クラス自体のプロパティ。 これは、次のコードに示されます。
 
@@ -101,16 +99,14 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 次の図は、マゼンタに設定の外観のようになりました両方のセグメント化されたコントロールを示します。
 
- [![](introduction-to-the-appearance-api-images/image54.png "外観の制御濃淡の設定")](introduction-to-the-appearance-api-images/image54.png#lightbox)
+[![](introduction-to-the-appearance-api-images/image54.png "外観の制御濃淡の設定")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance` プロパティは、アプリケーションのライフ サイクルの早い段階でなどで設定 AppDelegate の`FinishedLaunching`イベント、または影響を受けるコントロールを表示する前に、ViewController でします。
 
-
 参照してください、[外観 API の概要について](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)詳細な情報。
-
 
 ## <a name="related-links"></a>関連リンク
 
-- [外観 (サンプル)](https://developer.xamarin.com/samples/monotouch/IntroToAppearance/)
+- [外観 (サンプル)](https://developer.xamarin.com/samples/monotouch/Appearance/)
 - [UIAppearance プロトコルのリファレンス](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
 - [Xamarin.Forms での外観](~/xamarin-forms/platform/ios/theme.md#uiappearance)

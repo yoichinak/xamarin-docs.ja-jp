@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: lobrien
 ms.author: laobri
-ms.date: 05/11/2018
-ms.openlocfilehash: c923a62916959c74b8cd753d25361afee68e75fe
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/14/2018
+ms.openlocfilehash: 21229bc9d56865d6365f8ddfe4dd2046fbabc03d
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131533"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681528"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator for Windows
 
@@ -33,10 +33,10 @@ Windows 用のリモートの iOS シミュレーターは、Visual Studio 2017 
 シミュレーターのウィンドウの上部にあるツールバーには、さまざまな便利なボタンが含まれています。
 
 - **ホーム**– iOS デバイスで [ホーム] ボタンをシミュレートします。
-- **ロック**– シミュレーター (ロックを解除するのにはスワイプ) をロック
-- **スクリーン ショット**– シミュレーターのスクリーン ショットを保存します。
-- [**設定**](#settings) – キーボード、場所、およびその他の設定を表示します。
-- [**その他のオプション**](#other-options) – 回転とシェイク ジェスチャなどのさまざまなシミュレーター オプションが表示されます
+- **ロック**– シミュレーター (ロックを解除するのにはスワイプ) をロックします。
+- **スクリーン ショット**– シミュレーターのスクリーン ショットを保存します (に格納されている **Pictures\Xamarin\iOS シミュレーター\**)。
+- [**設定**](#settings) – キーボード、場所、およびその他の設定が表示されます。
+- [**その他のオプション**](#other-options) – 回転、シェイク ジェスチャ、タッチ ID などのさまざまなシミュレーター オプションが表示されます
 
     [![](images/maps-app-sml.png "iOS シミュレーターの使用例をマップします。")](images/maps-app.png#lightbox)
 
