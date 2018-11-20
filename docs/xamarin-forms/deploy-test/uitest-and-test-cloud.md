@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: cd46aac653d6477f3fc8240e4f193ec1c4a7bb4c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 215aa88b7e97a67242bd991dde0e66c445b47b0a
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122440"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526424"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>App Center で Xamarin.Forms テストを自動化する
 
@@ -28,7 +28,7 @@ _Xamarin の UITest コンポーネントを Xamarin.Forms で使用して、数
 - [App Center Test の概要](/appcenter/test-cloud/)
 - [UITest の概要](/appcenter/test-cloud/preparing-for-upload/uitest/)
 
-UITest プロジェクトを Xamarin.Forms に追加すると、Xamarin.Forms アプリケーションのテストを記述し、実行するための手順が Xamarin.Android または Xamarin.iOS アプリケーションの場合と同じになります。
+UITest プロジェクトを Xamarin.Forms ソリューションに追加すると、Xamarin.Forms アプリケーションのテストを記述し、実行するための手順が Xamarin.Android または Xamarin.iOS アプリケーションの場合と同じになります。
 
 ## <a name="requirements"></a>必要条件
 
@@ -200,7 +200,7 @@ Xamarin.UITest を Xamarin.Forms ソリューションに追加した後、UITes
 
 ## <a name="summary"></a>まとめ
 
-Xamarin.Forms アプリケーションは、テスト自動化のための一意の表示 ID として `AutomationId` を公開する単純なメカニズムを利用し、**Xamarin.UITest** で簡単にテストできます。 UITest プロジェクトを Xamarin.Forms に追加すると、Xamarin.Forms アプリケーションのテストを記述し、実行するための手順が Xamarin.Android または Xamarin.iOS アプリケーションの場合と同じになります。
+Xamarin.Forms アプリケーションは、テスト自動化のための一意の表示 ID として `AutomationId` を公開する単純なメカニズムを利用し、**Xamarin.UITest** で簡単にテストできます。 UITest プロジェクトを Xamarin.Forms ソリューションに追加すると、Xamarin.Forms アプリケーションのテストを記述し、実行するための手順が Xamarin.Android または Xamarin.iOS アプリケーションの場合と同じになります。
 
 テストを App Center Test に送信する方法については、[UITests の送信](/appcenter/test-cloud/preparing-for-upload/uitest/)に関するページを参照してください。 UITest の詳細については、[App Center Test のドキュメント](/appcenter/test-cloud/)を参照してください。
 
