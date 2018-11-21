@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: fa375720730630065609e328b343e16578c6f1df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131593"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171600"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms のバインドのフォールバック
 
@@ -44,7 +44,7 @@ ms.locfileid: "50131593"
 > [!NOTE]
 > 設定することはできません、`FallbackValue`バインディング式を持つプロパティです。
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 ![FallbackValue バインド](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue バインド")
 
@@ -93,7 +93,7 @@ ms.locfileid: "50131593"
 > [!NOTE]
 > 設定することはできません、`TargetNullValue`バインディング式を持つプロパティです。
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![TargetNullValue バインド](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue バインド")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue バインド")
 

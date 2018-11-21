@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b928c55f447d68b8adfedaa031fd85750ee71267
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: e11f7c95ccc65371ec5d844505682103025cd8af
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563707"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172237"
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張機能の作成
 
@@ -141,8 +141,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
         }
 
         string assemblyName = GetType().GetTypeInfo().Assembly.GetName().Name;
-
-        return ImageSource.FromResource(assemblyName + "." + Source);
+        return ImageSource.FromResource(assemblyName + "." + Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
     }
 
     object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
@@ -152,7 +151,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` XAML ファイルは、.NET Standard ライブラリ プロジェクト内の埋め込みリソースとして格納されているイメージ ファイルにアクセスする必要がある場合に役立ちます。 使用して、`Source`プロパティを呼び出す静的`ImageSource.FromResource`メソッド。 このメソッドでは、完全修飾リソース名、アセンブリ名、フォルダー名とピリオドで区切られたファイル名で構成される必要があります。 `ImageResourceExtension`しない必要があります、アセンブリ名の部分、リフレクションを使用して、アセンブリ名を取得し、前に付加するため、`Source`プロパティ。 いずれにせよ、`ImageSource.FromResource`イメージはライブラリでもない限り、この XAML リソース拡張機能に外部ライブラリの一部をすることはできませんが、ビットマップを格納しているアセンブリから呼び出す必要があります。 (を参照してください、 [**埋め込み画像**](~/xamarin-forms/user-interface/images.md#embedded-images)埋め込みリソースとして格納されているビットマップへのアクセスの詳細については資料)。
+`ImageResourceExtension` XAML ファイルは、.NET Standard ライブラリ プロジェクト内の埋め込みリソースとして格納されているイメージ ファイルにアクセスする必要がある場合に役立ちます。 使用して、`Source`プロパティを呼び出す静的`ImageSource.FromResource`メソッド。 このメソッドでは、完全修飾リソース名、アセンブリ名、フォルダー名とピリオドで区切られたファイル名で構成される必要があります。 2 番目の引数、`ImageSource.FromResource`メソッド、アセンブリ名を提供し、のみが UWP のリリースのビルドに必要な。 いずれにせよ、`ImageSource.FromResource`イメージはライブラリでもない限り、この XAML リソース拡張機能に外部ライブラリの一部をすることはできませんが、ビットマップを格納しているアセンブリから呼び出す必要があります。 (を参照してください、 [**埋め込み画像**](~/xamarin-forms/user-interface/images.md#embedded-images)埋め込みリソースとして格納されているビットマップへのアクセスの詳細については資料)。
 
 `ImageResourceExtension`が必要です、`Source`プロパティを設定する、`Source`プロパティは、クラスの content プロパティとして属性で示されます。 つまり、`Source=`中かっこで式の一部を省略できます。 **イメージ リソースのデモ** ページで、`Image`要素は、フォルダー名とピリオドで区切られたファイル名を使用して 2 つのイメージを取得します。
 
@@ -178,7 +177,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 </ContentPage>
 ```
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![イメージのリソースのデモ](creating-images/imageresourcedemo-small.png "イメージ リソース デモ")](creating-images/imageresourcedemo-large.png#lightbox "イメージ リソースのデモ")
 
@@ -199,7 +198,6 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 ## <a name="conclusion"></a>まとめ
 
 XAML マークアップ拡張機能では、さまざまなソースからの属性を設定する機能を拡張することによって、XAML で重要な役割を果たします。 さらに、必要な既存の XAML マークアップ拡張機能が提供されない場合、記述することも、独自です。
-
 
 ## <a name="related-links"></a>関連リンク
 

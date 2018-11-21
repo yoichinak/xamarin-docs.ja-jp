@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: a4fbf2bc38726ad50a07744ed4c2512efbb615bc
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 02ee84560b29fa95d0a16259d5bbbd6bc0144063
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527249"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171210"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
 
@@ -169,7 +169,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 最近は、プログラマほぼ常にフルカラー ビットマップを使用して、およびその他の形式を使用する必要はありません。 例外は、`RgbaF16`形式で、色の解像度でもフルカラー形式よりも大きいを許可します。 ただし、この形式は医用画像などの特殊な目的で使用され、標準の完全なカラー ディスプレイを使用すると、あまり意味します。
 
-自体には、制限するこの一連の記事、`SKBitmap`色の既定ではない場合に使用される形式`SKColorType`メンバーが指定されました。 この既定の形式は、基になるプラットフォームに基づきます。 Xamarin.Forms でサポートされるプラットフォーム、既定の色の種類は次のとおりです。
+自体には、制限するこの一連の記事、`SKBitmap`色の既定ではない場合に使用される形式`SKColorType`メンバーを指定します。 この既定の形式は、基になるプラットフォームに基づきます。 Xamarin.Forms でサポートされるプラットフォーム、既定の色の種類は次のとおりです。
 
 - `Rgba8888` iOS および Android 用
 - `Bgra8888` UWP の

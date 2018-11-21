@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
-ms.openlocfilehash: f46e0d27a39c7734e63bf5603ef2e47cd5fa7aa9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 067a39838fbfe3f1b33ac0d30b5069366b11e407
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105533"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172003"
 ---
-# <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成します。
+# <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成する
 
 _このガイドでは、Android Wear 1.0 用のカスタム ウォッチ face サービスを実装する方法について説明します。詳細な手順については、アナログ スタイル ウォッチの文字盤を作成するためのコードを続けて、デジタル ウォッチ face サービスを停止、削除を構築するために提供されます。_
 
@@ -302,7 +302,7 @@ public override void OnTimeTick()
 
 3.  宣言と呼ばれる描画可能なイメージ`preview`ウォッチ ピッカーの選択 画面で表示されます。
 
-4.  含まれています、`intent-filter`を知っています。 Android`MyWatchFaceSevice`ウォッチの文字盤を表示します。
+4.  含まれています、`intent-filter`を知っています。 Android`MyWatchFaceService`ウォッチの文字盤を表示します。
 
 Basic の場合、コードは完成`WatchFace`例。 次の手順では、必要なリソースを追加します。
 

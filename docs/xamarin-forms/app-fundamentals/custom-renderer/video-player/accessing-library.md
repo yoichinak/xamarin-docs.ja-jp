@@ -1,28 +1,28 @@
 ---
 title: デバイスのビデオ ライブラリへのアクセス
-description: この記事では、デバイスのビデオ ライブラリ Xamarin.Forms を使用して、ビデオ プレーヤー アプリケーションにアクセスする方法について説明します。
+description: この記事では、ビデオ プレーヤー アプリケーションでは、Xamarin.Forms を使用して、デバイスのビデオ ライブラリにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 7e9f7ad93ae8828155847b923cb2779b3146f63e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 619469e4c4fd3901491c20d6215ec0a25c49f69d
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240701"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171184"
 ---
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
 
-最近のほとんどのモバイル デバイスとデスクトップ コンピューター、デバイスのカメラを使用してレコードのビデオ機能があります。 ユーザーを作成するビデオは、デバイス上のファイルとして保存されます。 これらのファイルをイメージ ライブラリから取得されで再生されることができます、`VideoPlayer`その他のビデオと同じようにクラスです。
+ほとんどの最新のモバイル デバイスとデスクトップ コンピューター、デバイスのカメラを使用してレコードのビデオ機能があります。 ユーザーが作成するビデオは、デバイス上のファイルとして保存されます。 これらのファイルをイメージ ライブラリから取得され、によって実行される、`VideoPlayer`クラスがその他のビデオと同じようにします。
 
-## <a name="the-photo-picker-dependency-service"></a>フォト ピッカーの依存関係サービス
+## <a name="the-photo-picker-dependency-service"></a>写真の選択の依存関係サービス
 
-各プラットフォームの 3 つには、デバイスのイメージのライブラリから写真やビデオを選択するユーザーを許可する機能が含まれています。 デバイスのイメージのライブラリからビデオを再生する最初の手順は各プラットフォームのイメージの選択を起動する依存関係サービスを作成しています。 以下に示す依存関係サービスは非常にいずれかのように定義されている、 [**画像ライブラリから写真をピッキング**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)記事、ビデオの選択、ではなく、ファイル名を返す点を除いて`Stream`オブジェクト。
+各プラットフォームには、デバイスのイメージのライブラリから写真やビデオを選択するユーザーを許可する機能が含まれています。 デバイスのイメージのライブラリからビデオを再生する最初の手順では、各プラットフォームで、イメージのピッカーを起動する依存関係サービスを作成します。 次に示す依存関係サービスで定義されているいずれかによく似ています、 [**画像ライブラリから写真を選択**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)記事、ビデオのピッカーをではなくファイル名を返す点が`Stream`オブジェクト。
 
-という名前のインターフェイスを定義する .NET 標準のライブラリ プロジェクト`IVideoPicker`の依存関係サービス。
+.NET Standard ライブラリ プロジェクトは、という名前のインターフェイスを定義します。`IVideoPicker`の依存関係サービス。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -34,11 +34,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-という名前のクラスを含む 3 つのプラットフォームの各`VideoPicker`このインターフェイスを実装します。
+という名前のクラスを含む、各プラットフォーム`VideoPicker`このインターフェイスを実装します。
 
-### <a name="the-ios-video-picker"></a>IOS ビデオ ピッカー
+### <a name="the-ios-video-picker"></a>IOS のビデオ ピッカー
 
-IOS `VideoPicker` iOS を使用して[ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)されるべきである、iOS でのビデオ (「映画」と呼ばれる) に制限を指定する、イメージのライブラリへのアクセス`MediaType`プロパティです。 注意して`VideoPicker`を明示的に実装、`IVideoPicker`インターフェイスです。 また、`Dependency`依存関係サービスとしてこのクラスを識別する属性。 プラットフォームのプロジェクトの依存関係サービスを検索する Xamarin.Forms を許可する 2 つの要件を次に示します。
+IOS `VideoPicker` iOS を使用して[ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)されるべきである、iOS でのビデオ ("movies"と呼ばれます) に制限を指定する、イメージ ライブラリへのアクセス`MediaType`プロパティ。 注意`VideoPicker`明示的に実装、`IVideoPicker`インターフェイス。 また、`Dependency`依存関係サービスとしてこのクラスを識別する属性。 これらは、Xamarin.Forms プラットフォーム プロジェクトでの依存関係サービスの検索を許可する 2 つの要件です。
 
 ```csharp
 using System;
@@ -100,9 +100,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-### <a name="the-android-video-picker"></a>Android ビデオ ピッカー
+### <a name="the-android-video-picker"></a>Android のビデオの選択
 
-Android 実装`IVideoPicker`コールバック メソッドは、アプリケーションのアクティビティの一部である必要があります。 そのため、`MainActivity`クラスは、2 つのプロパティ、フィールド、およびコールバック メソッドを定義します。
+Android の実装の`IVideoPicker`コールバック メソッドは、アプリケーションのアクティビティの一部である必要があります。 そのため、`MainActivity`クラスは、2 つのプロパティ、フィールド、およびコールバック メソッドを定義します。
 
 ```csharp
 namespace VideoPlayerDemos.Droid
@@ -144,7 +144,7 @@ namespace VideoPlayerDemos.Droid
 }
 ```
 
-`OnCreate`メソッド`MainActivity`、静的に独自のインスタンスを格納`Current`プロパティです。 これによりの実装`IVideoPicker`を取得する、`MainActivity`インスタンスを開始するため、**選択ビデオ**の選択。
+`OnCreate`メソッド`MainActivity`独自のインスタンスに静的な格納`Current`プロパティ。 これにより、実装の`IVideoPicker`を取得する、`MainActivity`インスタンスを開始するため、**ビデオの選択**の選択。
 
 ```csharp
 using System;
@@ -186,11 +186,11 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-追加、`MainActivity`オブジェクトは、コード内にのみ、 [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)通常アプリケーション コードがサポートするために変更する必要があるソリューション、`FormsVideoLibrary`クラスです。
+追加、`MainActivity`オブジェクトが唯一のコードで、 [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)ソリューションをサポートするために通常のアプリケーション コードが必要な`FormsVideoLibrary`クラス。
 
 ### <a name="the-uwp-video-picker"></a>UWP ビデオ ピッカー
 
-UWP 実装、`IVideoPicker`インターフェイスは、UWP [ `FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)です。 画像ライブラリにファイルの検索を開始し、MP4 および WMV (Windows Media Video) へのファイルの種類を制限します。
+UWP 実装、`IVideoPicker`インターフェイスは、UWP を使用して[ `FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)します。 画像ライブラリ ファイルの検索を開始し、MP4 および WMV (Windows Media ビデオ) へのファイルの種類の制限します。
 
 ```csharp
 using System;
@@ -225,9 +225,9 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="invoking-the-dependency-service"></a>依存関係サービスを呼び出す
+## <a name="invoking-the-dependency-service"></a>依存関係サービスの呼び出し
 
-**ライブラリのビデオの再生**のページ、 [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)プログラムは、ビデオ ピッカーの依存関係サービスを使用する方法を示します。 XAML ファイルに含まれる、`VideoPlayer`インスタンスおよび`Button`というラベルの付いた**ビデオ ライブラリを表示**:
+**ライブラリのビデオの再生**のページ、 [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)プログラムは、ビデオの選択の依存関係サービスを使用する方法を示します。 XAML ファイルが含まれています、`VideoPlayer`インスタンスと`Button`というラベルの付いた**表示のビデオ ライブラリ**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -247,7 +247,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-分離コード ファイルが含まれています、`Clicked`のハンドラーは、`Button`です。 依存関係サービスを呼び出すへの呼び出しが必要です。`DependencyService.Get`の実装を取得する、`IVideoPicker`プラットフォーム プロジェクトでのインターフェイスです。 `GetVideoFileAsync`メソッドがそのインスタンスで呼び出されます。
+分離コード ファイルが含まれています、`Clicked`のハンドラー、`Button`します。 呼び出しの依存関係サービスを呼び出す必要があります`DependencyService.Get`の実装を取得する、`IVideoPicker`プラットフォーム プロジェクトのインターフェイス。 `GetVideoFileAsync`メソッドがそのインスタンスで呼び出されます。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -280,13 +280,13 @@ namespace VideoPlayerDemos
 }
 ```
 
-`Clicked`ハンドラーを使用して、そのファイル名を作成、`FileVideoSource`オブジェクトに設定して、`Source`のプロパティ、`VideoPlayer`です。
+`Clicked`ハンドラーを使用して、そのファイル名を作成、`FileVideoSource`オブジェクトに設定して、`Source`のプロパティ、`VideoPlayer`します。
 
-各、`VideoPlayerRenderer`クラスには、コードが含まれています。 その`SetSource`型のオブジェクトのメソッド`FileVideoSource`です。 これらを次に示します。
+各、`VideoPlayerRenderer`クラスには、コードが含まれています。 その`SetSource`型のオブジェクトのメソッド`FileVideoSource`します。 これらは、以下に示します。
 
 ### <a name="handling-ios-files"></a>IOS ファイルの処理
 
-IOS のバージョンの`VideoPlayerRenderer`プロセス`FileVideoSource`、静的なを使用して、オブジェクト`Asset.FromUrl`ファイル名を持つメソッドです。 これにより、作成、`AVAsset`デバイスのイメージのライブラリ内のファイルを表すオブジェクト。
+IOS のバージョンの`VideoPlayerRenderer`プロセス`FileVideoSource`、静的なを使用してオブジェクト`Asset.FromUrl`ファイル名を持つメソッド。 これにより、作成、`AVAsset`デバイスのイメージ ライブラリにあるファイルを表すオブジェクト。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -316,7 +316,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="handling-android-files"></a>Android のファイルの処理
 
-型のオブジェクトを処理するときに`FileVideoSource`、Android の実装の`VideoPlayerRenderer`を使用して、`SetVideoPath`メソッドの`VideoView`デバイスのイメージのライブラリにファイルを指定します。
+型のオブジェクトを処理するときに`FileVideoSource`、Android の実装の`VideoPlayerRenderer`を使用して、`SetVideoPath`メソッドの`VideoView`デバイスのイメージ ライブラリにあるファイルを指定します。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -346,9 +346,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="handling-uwp-files"></a>UWP ファイルの処理
+### <a name="handling-uwp-files"></a>UWP のファイルの処理
 
-型のオブジェクトを処理するときに`FileVideoSource`の UWP 実装、`SetSource`メソッドを作成する必要があります、`StorageFile`オブジェクト、そのファイルを開けません、およびストリーム オブジェクトを`SetSource`のメソッド、 `MediaElement`:
+型のオブジェクトを処理するときに`FileVideoSource`の UWP 実装、`SetSource`メソッドを作成する必要があります、`StorageFile`オブジェクト、読み取りについては、そのファイルを開き、ストリーム オブジェクトを渡す、`SetSource`のメソッド、 `MediaElement`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -382,7 +382,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-ビデオのビデオの後にほぼ即座に再生が開始、3 つすべてのプラットフォームのファイルがデバイスにダウンロードする必要があるために、ソースを設定します。
+ビデオのほぼすぐ後に、ビデオ再生が開始、各プラットフォームのファイルは、デバイスで、ダウンロードする必要があるために、ソースを設定します。
 
 
 

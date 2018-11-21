@@ -6,13 +6,13 @@ ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.date: 10/24/2018
+ms.openlocfilehash: ab5315d169615430f5f5a733c0fa8c2ca9caa4b0
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203086"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172302"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
@@ -422,9 +422,10 @@ protected override MarkerOptions CreateMarker(Pin pin)
 }
 ```
 
-このメソッドは、新しい作成`MarkerOption`インスタンスごとに`Pin`インスタンス。 アイコンを設定する位置、ラベル、およびマーカーのアドレスを設定した後、`SetIcon`メソッド。 このメソッドは、`BitmapDescriptor`で、アイコンを表示するために必要なデータを格納しているオブジェクト、`BitmapDescriptorFactory`の作成を簡略化のヘルパー メソッドを提供するクラス、`BitmapDescriptor`します。
+このメソッドは、新しい作成`MarkerOption`インスタンスごとに`Pin`インスタンス。 アイコンを設定する位置、ラベル、およびマーカーのアドレスを設定した後、`SetIcon`メソッド。 このメソッドは、`BitmapDescriptor`で、アイコンを表示するために必要なデータを格納しているオブジェクト、`BitmapDescriptorFactory`の作成を簡略化のヘルパー メソッドを提供するクラス、`BitmapDescriptor`します。 使用しての詳細については、`BitmapDescriptorFactory`マーカーをカスタマイズするを参照してくださいクラス[マーカーをカスタマイズする](~/android/platform/maps-and-location/maps/maps-api.md)します。
 
-使用しての詳細については、`BitmapDescriptorFactory`マーカーをカスタマイズするを参照してくださいクラス[マーカーをカスタマイズする](~/android/platform/maps-and-location/maps/maps-api.md)します。
+> [!NOTE]
+> 必要な場合、`GetMarkerForPin`メソッドを起動するには、マップのレンダラーを取得するには、`Marker`から、`Pin`します。
 
 <a name="Customizing_the_Info_Window" />
 

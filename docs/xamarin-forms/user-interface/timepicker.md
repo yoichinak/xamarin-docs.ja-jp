@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
-ms.openlocfilehash: 9a534c39d514fec9a0de4bc810f33c972453baa2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f5fdaa55f91656d8560fb9ad2eb2b938d5c9a02f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111656"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171847"
 ---
 # <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
@@ -158,7 +158,7 @@ public partial class MainPage : ContentPage
 
 タイマー刻みの実行、毎秒、`OnTimerTick`メソッドをチェックするかどうか、 [ `Switch` ](xref:Xamarin.Forms.Switch)がかどうかと、現在の時刻がより大きいまたはタイマーの時間をします。 タイマーの時間が発生したときに、 [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)メソッドは、アラームとしてユーザーにアラート ダイアログを表示します。
 
-サンプルを最初に実行時に、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)ビューは、午前 11 時に初期化されます。 タップすると、`TimePicker`プラットフォーム時刻の選択を呼び出します。 3 つのプラットフォームは、非常にさまざまな方法で時刻の選択を実装しますが、それぞれのアプローチは、そのプラットフォームのユーザーにとって馴染み深い。
+サンプルを最初に実行時に、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)ビューは、午前 11 時に初期化されます。 タップすると、`TimePicker`プラットフォーム時刻の選択を呼び出します。 プラットフォームは、非常にさまざまな方法で時刻の選択を実装しますが、それぞれのアプローチは、そのプラットフォームのユーザーにとって馴染み深い。
 
 [![日時選択](timepicker-images/timepicker-open.png "時刻を選択")](timepicker-images/timepicker-open-large.png#lightbox "時刻を選択します")
 

@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e0ad67db0671996e594f9c5d48b329a5d676fc1d
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: aa576e4af5d804eb5b8d78643ffa762b8a15c6dc
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563434"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171769"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
@@ -327,7 +327,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 </ContentPage>
 ```
 
-使用に注意してください`OnPlatform`のサイズを定義する、`BoxView`との高さ、`ListView`行。 3 つすべてのプラットフォームの値が同じですが、マークアップが表示を微調整するその他の値に作り変える簡単に可能性があります。
+使用に注意してください`OnPlatform`のサイズを定義する、`BoxView`との高さ、`ListView`行。 すべてのプラットフォームの値は、同じですが、マークアップが表示を微調整するその他の値に作り変える簡単に可能性があります。
 
 ## <a name="binding-value-converters"></a>値コンバーターのバインディング
 

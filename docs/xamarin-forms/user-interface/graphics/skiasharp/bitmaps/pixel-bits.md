@@ -7,12 +7,12 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 6d223dd051dccf7af84e4e6c35238f4ad026b00a
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: eebfe40bca6db92bae1f2fdcc9cbff3173dc4e51
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615627"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172016"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp のビットマップのピクセル ビットへのアクセス
 
@@ -35,7 +35,7 @@ SkiaSharp は、ビットマップのピクセル ビットにアクセスする
 
 最初の 2 つの手法として「概要」と「低レベル」として 2 つ目の 2 つを考えることができます。 その他のいくつかのメソッドとプロパティを使用することができますが、これらは最も重要です。
 
-パフォーマンスの違い、これらの手法を確認できるように、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)アプリケーションには、という名前のページが含まれている**グラデーション ビットマップ**をグラデーションを作成する赤、青の網掛けを結合するピクセルのビットマップを作成します。 プログラムは 8 つの異なるコピーを作成、このビットマップのすべてを使用してさまざまな手法のビットマップのピクセルを設定します。 この手法の簡単な説明を設定し、すべてのピクセルを設定するために必要な時間を計算する個別のメソッドで各これら 8 つのビットマップが作成されます。 各メソッドをループ処理ピクセル設定ロジック 100 倍のパフォーマンスをより正確に予測を取得します。 
+パフォーマンスの違い、これらの手法を確認できるように、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)アプリケーションには、という名前のページが含まれている**グラデーション ビットマップ**をグラデーションを作成する赤、青の網掛けを結合するピクセルのビットマップを作成します。 プログラムは 8 つの異なるコピーを作成、このビットマップのすべてを使用してさまざまな手法のビットマップのピクセルを設定します。 この手法の簡単な説明を設定し、すべてのピクセルを設定するために必要な時間を計算する個別のメソッドで各これら 8 つのビットマップが作成されます。 各メソッドをループ処理ピクセル設定ロジック 100 倍のパフォーマンスをより正確に予測を取得します。
 
 ### <a name="the-setpixel-method"></a>SetPixel メソッド
 
@@ -55,7 +55,7 @@ SKColor color = bitmap.GetPixel(col, row);
 public class GradientBitmapPage : ContentPage
 {
     const int REPS = 100;
-        
+
     Stopwatch stopwatch = new Stopwatch();
     ···
     SKBitmap FillBitmapSetPixel(out string description, out int milliseconds)
@@ -107,7 +107,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
     stopwatch.Restart();
 
-    SKColor[] pixels = new SKColor[256 * 256]; 
+    SKColor[] pixels = new SKColor[256 * 256];
 
     for (int rep = 0; rep < REPS; rep++)
         for (int row = 0; row < 256; row++)
@@ -135,7 +135,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 IntPtr pixelsAddr = bitmap.GetPixels();
 ```
 
-.NET [ `IntPtr` ](xref:System.IntPtr)型のポインターを表します。 呼び出された`IntPtr`ネイティブ プログラムを実行する、通常、32 ビットまたは 64 ビットのいずれかの長さ、マシンのプロセッサの整数の長さがあるためです。 `IntPtr`を`GetPixels`がビットマップ オブジェクトを使用してそのピクセルを格納するメモリの実際のブロックのアドレスを返します。 
+.NET [ `IntPtr` ](xref:System.IntPtr)型のポインターを表します。 呼び出された`IntPtr`ネイティブ プログラムを実行する、通常、32 ビットまたは 64 ビットのいずれかの長さ、マシンのプロセッサの整数の長さがあるためです。 `IntPtr`を`GetPixels`がビットマップ オブジェクトを使用してそのピクセルを格納するメモリの実際のブロックのアドレスを返します。
 
 変換することができます、 `IntPtr` c# ポインター型を使用して、、 [ `ToPointer` ](xref:System.IntPtr.ToPointer)メソッド。 C# ポインターの構文は、C および C++ として同じです。
 
@@ -313,7 +313,7 @@ SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
                 buffer[row, col, 2] = (byte)row;   // blue
                 buffer[row, col, 3] = 0xFF;        // alpha
             }
-    
+
     unsafe
     {
         fixed (byte* ptr = buffer)
@@ -459,7 +459,7 @@ public class GradientBitmapPage : ContentPage
 
     void Display(SKCanvas canvas, int index, SKRect rect)
     {
-        string text = String.Format("{0}: {1:F1} msec", descriptions[index], 
+        string text = String.Format("{0}: {1:F1} msec", descriptions[index],
                                     (double)elapsedTimes[index] / REPS);
 
         SKRect bounds = new SKRect();
@@ -497,7 +497,7 @@ public class GradientBitmapPage : ContentPage
 
 予想どおり、呼び出す`SetPixel`65,536 回はビットマップのピクセルを設定する最小限の effeicient 方法。 入力、`SKColor`配列と設定、`Pixels`プロパティの一部のよりも有利な比較でも、`GetPixels`と`SetPixels`手法です。 操作`uint`ピクセル値は、一般に、個別の設定よりも高速`byte`コンポーネント、および変換する、`SKColor`を符号なし整数値をプロセスにいくつかのオーバーヘッドを追加します。
 
-さまざまなグラデーションを比較する興味深いはも: 3 つすべてのプラットフォームの上位の行が同じで、グラデーションが表示されています。 つまり、`SetPixel`メソッドと`Pixels`プロパティが基になるピクセル形式に関係なく色からピクセルを正しく作成します。
+さまざまなグラデーションを比較する興味深いはも: プラットフォームごとの上位の行が同じで、グラデーションが表示されています。 つまり、`SetPixel`メソッドと`Pixels`プロパティが基になるピクセル形式に関係なく色からピクセルを正しく作成します。
 
 IOS と Android のスクリーン ショットの次の 2 つの行も同じことを確認する、小さな`MakePixel`、既定のメソッドが正しく定義されている`Rgba8888`これらのプラットフォームのピクセル形式。
 
@@ -511,13 +511,13 @@ BB GG RR AA
 
 これは、`Bgra8888`順序ではなく、`Rgba8888`順序付けします。 `Brga8888`形式はそのスクリーン ショットの最後の行にグラデーションは、最初の行と同じ理由であるユニバーサル Windows プラットフォームの既定値。 中間の 2 つの行が正しくないため、これらのビットマップを作成するコードと見なされますが、`Rgba8888`順序付けします。
 
-3 つすべてのプラットフォーム上のピクセル ビットにアクセスするため、同じコードを使用する場合は、明示的に作成、`SKBitmap`いずれかを使用して、`Rgba8888`または`Bgra8888`形式。 キャストする場合`SKColor`にビットマップのピクセル値を使用して、`Bgra8888`します。
+明示的に作成できますを各プラットフォームでのピクセル ビットにアクセスするため、同じコードを使用する場合、`SKBitmap`いずれかを使用して、`Rgba8888`または`Bgra8888`形式。 キャストする場合`SKColor`にビットマップのピクセル値を使用して、`Bgra8888`します。
 
 ## <a name="random-access-of-pixels"></a>ピクセルのランダム アクセス
 
-`FillBitmapBytePtr`と`FillBitmapUintPtr`メソッド、**グラデーション ビットマップ**ページの使用例を確認`for`ループの一番下の行と左から右への行はごとの上位行から順番にビットマップを入力するように設計します。 ポインターのインクリメント、同じステートメントでは、ピクセルを設定できます。 
+`FillBitmapBytePtr`と`FillBitmapUintPtr`メソッド、**グラデーション ビットマップ**ページの使用例を確認`for`ループの一番下の行と左から右への行はごとの上位行から順番にビットマップを入力するように設計します。 ポインターのインクリメント、同じステートメントでは、ピクセルを設定できます。
 
-ピクセルを順番にではなくランダムにアクセスするために必要な場合があります。 使用している場合、`GetPixels`アプローチでは、行と列に基づくポインターを計算する必要があります。 これは、方法については、**虹サイン**ページで、正弦曲線の 1 つのサイクルの形式で、レインボーを示すビットマップを作成します。 
+ピクセルを順番にではなくランダムにアクセスするために必要な場合があります。 使用している場合、`GetPixels`アプローチでは、行と列に基づくポインターを計算する必要があります。 これは、方法については、**虹サイン**ページで、正弦曲線の 1 つのサイクルの形式で、レインボーを示すビットマップを作成します。
 
 背景色は、HSL (色相、彩度、光度) の色のモデルを使用して作成する最も簡単です。 `SKColor.FromHsl`メソッドを作成、`SKColor`値の範囲は 0 ~ 360 (などが、円、赤、緑、青、赤にしてからの角度)、色相値を使用して、彩度、光度の値が 0 から 100 までです。 虹の色、鮮やかさを最大 100、および明るさを 50 の中間点に設定する必要があります。
 
@@ -617,7 +617,7 @@ uint* ptr = basePtr + bitmap.Width * row + col;
 
 各ピクセルの色の最初の`Slider`値を 0 から 360、hue に追加しますを使用して、モジュロ 0 ~ 360 の間の結果を保持する演算子、効果的にシフト スペクトルに沿って色など、UWP のスクリーン ショットを示します)。 2 番目の`Slider`0.5 になり、鮮やかさ、および 3 番目に適用する 2 の間の乗算要素を選択することができます`Slider`Android スクリーン ショットに示すようには、光度のと同じです。
 
-プログラムは、元のソース ビットマップという名前の 2 つのビットマップを保持`srcBitmap`という名前の調整済みのコピー先ビットマップと`dstBitmap`します。 毎回、`Slider`移動すると、プログラムのすべての新しいピクセルが計算`dstBitmap`します。 もちろん、ユーザーが移動することによって実験は、`Slider`ビューの非常に高速、最適なパフォーマンスを管理できるようにします。 これは、ためには、`GetPixels`ビットマップのソースと宛先の両方のメソッド。 
+プログラムは、元のソース ビットマップという名前の 2 つのビットマップを保持`srcBitmap`という名前の調整済みのコピー先ビットマップと`dstBitmap`します。 毎回、`Slider`移動すると、プログラムのすべての新しいピクセルが計算`dstBitmap`します。 もちろん、ユーザーが移動することによって実験は、`Slider`ビューの非常に高速、最適なパフォーマンスを管理できるようにします。 これは、ためには、`GetPixels`ビットマップのソースと宛先の両方のメソッド。
 
 **ドライバーによる色補正**ページがソースと変換先のビットマップの色の書式を制御します。 代わりに、若干異なるロジックを含まれている`SKColorType.Rgba8888`と`SKColorType.Bgra8888`形式。 ソースと変換先は、さまざまな形式を指定でき、プログラムは引き続き動作します。
 
@@ -764,7 +764,7 @@ public class PosterizePage : ContentPage
 
             for (int i = 0; i < pixelCount; i++)
             {
-                *ptr++ &= 0xE0E0E0FF; 
+                *ptr++ &= 0xE0E0E0FF;
             }
         }
 

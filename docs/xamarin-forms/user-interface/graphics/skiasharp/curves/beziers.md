@@ -1,5 +1,5 @@
 ---
-title: 次の 3 つの種類のベジエ曲線
+title: 3 つの種類のベジエ曲線
 description: この記事では、SkiaSharp を使用して、Xamarin.Forms アプリケーションでの立方、二次方程式、および円錐のベジエ曲線をレンダリングする方法を説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,14 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 1da0ee6155548a38057e4c7bf49ae5b90d445d79
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 60024be0c39bd215a828acfd8a4ac6294eeac9d8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615341"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172354"
 ---
-# <a name="three-types-of-bzier-curves"></a>次の 3 つの種類のベジエ曲線
+# <a name="three-types-of-bzier-curves"></a>3 つの種類のベジエ曲線
 
 _SkiaSharp を使用して、円錐、二次方程式、3 次ベジエ曲線をレンダリングする方法を詳細します。_
 
@@ -89,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-ここで 3 つすべてのプラットフォームで実行されています。
+ここでは、実行します。
 
 [![](beziers-images/beziercurve-small.png "ベジエ曲線のページのスクリーン ショットをトリプル")](beziers-images/beziercurve-large.png#lightbox "ベジエ曲線のページの 3 倍になるスクリーン ショット")
 
@@ -207,7 +207,7 @@ float Magnitude(SKPoint v)
 
 始点と終点 (`point0`と`point3`)、円の通常のパラメーターの式に基づいて計算されます。 円の中央にあるため (0, 0)、これらのポイントもとして処理できる放射状のベクトルの円の中心から円周をします。 コントロール ポイントは、これらの放射状ベクトルに直角に交わっているので、円のタンジェントである行には。 右の山を別のベクトルとは、元のベクター スワップ X および Y 座標と負の値に加えられたうち 1 つだけです。
 
-次の 3 つの異なる角度の 3 つのプラットフォームで実行されているプログラムを次に示します。
+さまざまな角度の実行中のプログラムを次に示します。
 
 [![](beziers-images/beziercirculararc-small.png "円弧をベジエ ページのスクリーン ショットをトリプル")](beziers-images/beziercirculararc-large.png#lightbox "円弧をベジエ ページの 3 倍になるスクリーン ショット")
 
@@ -289,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Sinusoidally 不安定な値に基づいて、ポイントが補間`t`します。 挿入ポイントは、一連の 4 つの接続されたベジエ曲線を作成し、使用されます。 四角形に円から進行状況を示す 3 つのプラットフォームで実行されているアニメーションを次に示します。
+Sinusoidally 不安定な値に基づいて、ポイントが補間`t`します。 挿入ポイントは、一連の 4 つの接続されたベジエ曲線を作成し、使用されます。 アニメーションの実行を次に示します。
 
 [![](beziers-images/squaringthecircle-small.png "Squaring の 3 倍になるスクリーン ショット円ページ")](beziers-images/squaringthecircle-large.png#lightbox "Squaring の 3 倍になるスクリーン ショット、[円] ページ")
 
@@ -338,7 +338,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 関係を表示するグラフ用紙にこれらの座標をプロットする良い練習が考えられます。 無限大記号の中心点 (0, 0) と 2 つのループのセンターがある (–150, 0) と (150, 0) と 100 の半径。 一連の`CubicTo`コマンドで確認できます –95 と –205 の値の制御点の座標 X (これらの値はプラス記号とマイナス 55 –150)、205 と 95 (150 プラス記号とマイナス 55) だけでなく 250 –250 右辺と左辺をします。 無限大記号はセンターが超えたときに、例外です。 その場合は、コントロール ポイントでは、中心に近い曲線をまっすぐに 50 と –50 の組み合わせで座標があります。
 
-次の 3 つすべてのプラットフォームで無限大記号を示します。
+無限大記号を次に示します。
 
 [![](beziers-images/bezierinfinity-small.png "ベジエ無限大ページのスクリーン ショットをトリプル")](beziers-images/bezierinfinity-large.png#lightbox "ベジエ無限大ページの 3 倍になるスクリーン ショット")
 
@@ -401,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-ここで 3 つすべてのプラットフォームで実行されています。
+ここで実行しています。
 
 [![](beziers-images/quadraticcurve-small.png "二次曲線ページのスクリーン ショットをトリプル")](beziers-images/quadraticcurve-large.png#lightbox "二次曲線ページの 3 倍になるスクリーン ショット")
 
@@ -479,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-ここで 3 つすべてのプラットフォームで実行されています。
+ここでは、実行します。
 
 [![](beziers-images/coniccurve-small.png "曲線の円錐のページのスクリーン ショットをトリプル")](beziers-images/coniccurve-large.png#lightbox "円錐曲線ページの 3 倍になるスクリーン ショット")
 

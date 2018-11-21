@@ -6,13 +6,13 @@ ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2017
-ms.openlocfilehash: 3eb978780222da2050fc91dfa41c68ef4bd3b6f4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/24/2018
+ms.openlocfilehash: 85a6bce8a1021c75064ba06f3a5daf69b7fe3e57
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996296"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171379"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms のタブ付きページ
 
@@ -32,13 +32,13 @@ _Xamarin.Forms TabbedPage は、詳細領域にコンテンツを読み込む各
 
 - Ios では、タブの一覧が、画面の下部に表示し、詳細エリアがその上。 各タブは 30x の透明度が通常の解決の PNG を 30、60 x 60 の高解像度、および 90 x 90 iPhone 6 用として使用するアイコン イメージもがさらに解決します。 複数の 5 つのタブがある場合、*詳細* タブが表示され、使用できる追加のタブにアクセスします。 Xamarin.Forms アプリケーションでイメージの読み込みの詳細については、次を参照してください。[イメージを操作](~/xamarin-forms/user-interface/images.md)します。 アイコンの要件の詳細については、次を参照してください。[タブ付きアプリケーションを作成する](~/ios/user-interface/controls/creating-tabbed-applications.md)します。
 
-    > [!NOTE]
+  > [!NOTE]
   > なお、 `TabbedRenderer` iOS が、オーバーライド可能な`GetIcon`メソッドをタブのアイコンを指定したソースから読み込むために使用できます。 このオーバーライドでは、上のアイコンとして SVG イメージを使用すること、`TabbedPage`します。 さらに、アイコンの選択と選択されていないバージョンを指定することができます。
 
 - Android では、既定では、画面の上部にあるタブの一覧が表示され、詳細エリアが未満です。 ただし、タブの一覧は、プラットフォーム固有の画面の下部に移動できます。 詳細については、次を参照してください。 [TabbedPage ツールバーの配置の設定と色](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-toolbar)します。
 
-    > [!NOTE]
-  > Android では、AppCompat を使用して、各タブもアイコンが表示されます、注意してください。 さらに、 `TabbedPageRenderer` Android AppCompat が、オーバーライド可能な`SetTabIcon`カスタムからタブのアイコンの読み込みに使用できるメソッド`Drawable`します。 このオーバーライドでは、上のアイコンとして SVG イメージを使用すること、`TabbedPage`します。
+  > [!NOTE]
+  > Android では、AppCompat を使用して、各タブもアイコンが表示されます、注意してください。 さらに、 `TabbedPageRenderer` Android AppCompat が、オーバーライド可能な`GetIconDrawable`カスタムからタブのアイコンの読み込みに使用できるメソッド`Drawable`します。 このオーバーライドでは、上のアイコンとして SVG イメージを使用すること、`TabbedPage`と上位およびタブ バーを下部の両方で動作します。 代わりに、オーバーライド`SetTabIcon`メソッドを使用して、カスタム タブのアイコンを読み込む`Drawable`上部タブ バー。
 
 - Windows タブレット フォーム ファクター、上のタブが表示されない常に、ユーザーがスワイプ ダウンする必要があります (または右クリックし、マウスが取り付けられている場合)、タブを表示する、 `TabbedPage` (次に示す)。
 
@@ -122,7 +122,7 @@ async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
 }
 ```
 
-これにより、`UpcomingAppointmentsPage` インスタンスがナビゲーション スタックにプッシュされるようになり、そこがアクティブ ページとなります。 これは、次のスクリーン ショットに示されます。
+これにより、`UpcomingAppointmentsPage` インスタンスがナビゲーション スタックにプッシュされるようになり、そこがアクティブ ページとなります。 この様子は、次のスクリーンショットで示しています。
 
 ![](tabbed-page-images/navigationpage.png "タブ内のナビゲーション")
 

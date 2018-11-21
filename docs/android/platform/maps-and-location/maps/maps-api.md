@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: fb7d18e6434e32941531d2c37cd8b938ec21ba90
-ms.sourcegitcommit: 28dbb5fa2fbcc7e66cd09c1d0077496fcdefac56
+ms.openlocfilehash: 8df8a4f5e59675164e7d06b682c61094078edc4f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51027328"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171041"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>アプリケーションで Google マップ API の使用
 
@@ -223,7 +223,7 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
 
 Google マップ API から使用可能な 5 つの異なる種類のマップは。
 
--  **標準**-これは、既定のマップの種類。 道路と (建物ブリッジなど) 関心のある artifical 点と共に、重要なの自然な機能が表示されます。
+-  **標準**-これは、既定のマップの種類。 道路と (建物ブリッジなど) 関心のある人為的なポイントとの重要な自然な機能が表示されます。
 
 -  **サテライト**-このマップには、衛星写真が表示されます。
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 44d75322f151850b11e4da90486168c04496eca7
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 731eb8cbcf062556e4c37b444376825527f662df
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564019"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171561"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -31,7 +31,7 @@ Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) は Xamarin.Forms 3.
 
 ## <a name="common-usage-scenarios"></a>一般的な使用シナリオ
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプルプログラムは、 `FlexLayout` のいくつかの一般的な用途をデモする様々なページを含み、 `FlexLayout` のプロパティを試すことができます。
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル プログラムにはの一般的な使用方法を説明するいくつかのページが含まれています`FlexLayout`し、そのプロパティを実験することができます。
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>単純なスタックで FlexLayout を使用する
 
@@ -187,7 +187,7 @@ public partial class PhotoWrappingPage : ContentPage
 }
 ```
 
-次に 3 つのプラットフォームで実行されたプログラムを示します。これは上から下に段階的にスクロールします。
+下にスクロールされる上から実行されている、段階的にプログラムを次に示します。
 
 [![Photo Wrapping ページ](flex-layout-images/PhotoWrapping.png "Photo Wrapping ページ")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
@@ -242,7 +242,7 @@ public partial class PhotoWrappingPage : ContentPage
 </ContentPage>
 ```
 
-ここで、次の 3 つのプラットフォームでの動作を示します。
+ここでは、実行します。
 
 [![Holy Grail Layout ページ](flex-layout-images/HolyGrailLayout.png "Holy Grail Layout ページ")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
@@ -384,7 +384,7 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 
 ## <a name="the-bindable-properties-in-detail"></a>バインド可能なプロパティの詳細
 
-`FlexLayout` のいくつかの一般的なアプリケーションを見てきた今なら、`FlexLayout` のプロパティをより詳しく調査できるはずです。 
+`FlexLayout` のいくつかの一般的なアプリケーションを見てきた今なら、`FlexLayout` のプロパティをより詳しく調査できるはずです。
 `FlexLayout` 設定された 6 つのバインド可能なプロパティを定義、`FlexLayout`自体であるため、コードまたは XAML でコントロールの向きを配置します。 （これらのプロパティの1つに [`Position`](xref:Xamarin.Forms.FlexLayout.Position) がありますが、これはこの記事では説明しません。）
 
 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** サンプル の **Experiment** ページ を使って、残り 5 つのバインド可能なプロパティを試すことができます。 このページは、`FlexLayout` から子を追加・削除したり、5 つのバインド可能なプロパティの組み合わせを設定したりすることができます。 `FlexLayout` の全ての子は、様々な色やサイズの `Label` view で、`Text` プロパティには `Children` コレクションの位置に対応する番号がセットされます。
@@ -532,7 +532,7 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 ### <a name="the-basis-property"></a>Basis プロパティ
 
-[`Basis`](xref:Xamarin.Forms.FlexLayout.BasisProperty) 添付プロパティは、主軸上で `FlexLayout` の子に割り当てられている領域の量を示します。 `Basis` プロパティによって指定されたサイズは、親の `FlexLayout` の主軸に沿ったサイズです。 したがって、`Basis` は、行に子が配置された時の子の幅、または列に子が配置された時の高さを示します。
+[`Basis`](xref:Xamarin.Forms.FlexLayout.BasisProperty) 添付プロパティは、主軸上で `FlexLayout` の子に割り当てられている領域の量を示します。 指定したサイズ、`Basis`プロパティは、メインの親の軸に沿ったサイズ`FlexLayout`します。 したがって、`Basis` は、行に子が配置された時の子の幅、または列に子が配置された時の高さを示します。
 
 `Basis`プロパティは、[`FlexBasis`](xref:Xamarin.Forms.FlexBasis) 型の構造体です。 サイズはデバイスに依存しない単位、または `FlexLayout` のサイズの割合のどちらかで指定することができます。 `Basis` プロパティの規定値は、静的プロパティの `FlexBasis.Auto` で、これは子に要求した幅や高さが使用されることを意味します。 
 
@@ -735,7 +735,7 @@ button {
 
 様々な `FlexLayout` の添付プロパティがここを参照しています。 `label.empty`セレクタでは、`flex-grow` 属性が確認できますが、これは `Button` の上の空白を埋めるために空の `Label` をスタイルしています。 `image`セレクタは、`order`属性と `align-self` 属性を含んでおり、その両方が `FlexLayout` の添付プロパティに対応しています。
 
-これまで `FlexLayout` 上に直接プロパティを設定できることと、`FlexLayout` の子に添付プロパティを設定できること、 またこれらのプロパティに従来の XAML に基づくスタイルや CSS スタイルを使って間接的に設定できることを見てきました 重要なことはこれらのプロパティを知って理解することです。 これらのプロパティは `FlexLayout` を真に柔軟にさせます。 
+これまで `FlexLayout` 上に直接プロパティを設定できることと、`FlexLayout` の子に添付プロパティを設定できること、 またこれらのプロパティに従来の XAML に基づくスタイルや CSS スタイルを使って間接的に設定できることを見てきました 重要なことはこれらのプロパティを知って理解することです。 これらのプロパティは `FlexLayout` を真に柔軟にさせます。
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>Xamarin.University で FlexLayout
 

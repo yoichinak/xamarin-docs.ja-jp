@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 985ca3b34b4b85ef234f12fe3f25edd1d1556e23
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 0c7e0d01a75d72204ca086fc1b0639d584220651
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563239"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171574"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
 
@@ -251,7 +251,7 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 
 `Grid.Row`と`Grid.Column`0 の設定は必要ありませんが、わかりやすくするための目的で一般的に含まれます。
 
-どのような 3 つすべてのプラットフォームで次に示します。
+次のような見た目に示します。
 
 [![](essential-xaml-syntax-images/griddemo.png "グリッド レイアウト")](essential-xaml-syntax-images/griddemo-large.png#lightbox "グリッド レイアウト")
 

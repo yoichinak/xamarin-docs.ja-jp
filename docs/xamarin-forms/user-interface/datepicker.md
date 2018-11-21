@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 104985a4221cc6e5e6aa56420c1a41ee4c736b8d
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: b5d01aa451c9ab9be081b666e8c7ce51f58a3096
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563694"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172315"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
@@ -181,7 +181,7 @@ public partial class MainPage : ContentPage
 
 [![開始の日付間の日数](datepicker-images/DaysBetweenDatesStart.png "開始の日付間の日数")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "開始の日付間の日数")
 
-いずれかをタップすると、`DatePicker`が表示されますが、プラットフォームの日付の選択を呼び出します。 3 つのプラットフォームで非常にさまざまな方法は、この日付の選択の実装が、それぞれのアプローチは、そのプラットフォームのユーザーにとって馴染み深い。
+いずれかをタップすると、`DatePicker`が表示されますが、プラットフォームの日付の選択を呼び出します。 プラットフォームは、非常にさまざまな方法でこの日付の選択を実装しますが、それぞれのアプローチは、そのプラットフォームのユーザーにとって馴染み深い。
 
 [![日付間の日数を選択](datepicker-images/DaysBetweenDatesSelect.png "の日付間の日数を選択")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "の日付間の日数を選択します")
 

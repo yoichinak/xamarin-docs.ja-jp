@@ -7,16 +7,16 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: dfe2d81673804e2f77694a794ef82931eb88357d
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: aa5f42596b6f92285b8b8bed40452928e3c494b1
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563915"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170924"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要です。 Xamarin.Forms はどのように適合するでしょうか。
 
-> [!NOTE] 
+> [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 そのプラットフォームが異なるプログラミング言語に関係する場合に特に、1 つのプラットフォームから基本コードの移植プログラミングで最も不快なジョブの 1 つです。 同様に、リファクタリング、コードを移植するときは衝動が場合は並列で両方のプラットフォームを維持する必要がありますし、2 つのコード ベースの違い、将来のメンテナンスより難しくなります。
@@ -25,7 +25,7 @@ ms.locfileid: "51563915"
 
 モバイル プラットフォームを対象とする場合、この問題が一般的です。 現時点では、存在する 2 つの主要なモバイル プラットフォーム、Apple Iphone と Ipad の iOS オペレーティング システムでは、およびさまざまな携帯電話とタブレットで実行されている Android オペレーティング システムを実行しているファミリ。 もう 1 つの重要なプラットフォームは、マイクロソフトのユニバーサル Windows プラットフォーム (UWP)、1 つのプログラムを Windows 10 および Windows 10 Mobile の両方を対象にできます。
 
-別のユーザー インターフェイスのパラダイム、3 つのさまざまな開発環境、3 つの異なるプログラミング インターフェイスを処理する必要がこれら 3 つのプラットフォームを対象にしようとしているソフトウェア ベンダーと&mdash;おそらく最も転び&mdash;次の 3 つの異なるプログラミング言語: OBJECTIVE-C で iPhone と iPad、android、Java と c# の Windows 用。
+別のユーザー インターフェイスのパラダイム、3 つのさまざまな開発環境、3 つの異なるプログラミング インターフェイスを処理する必要がこれらのプラットフォームを対象とすることを希望するソフトウェア ベンダーと&mdash;おそらく最も転び&mdash;3 つさまざまなプログラミング言語: iPhone と iPad、android、Java 用の OBJECTIVE-C およびC#Windows 用。
 
 ## <a name="the-c-and-net-solution"></a>C# と .NET ソリューション
 
@@ -35,7 +35,7 @@ OBJECTIVE-C、Java、および C# の場合はすべて、C プログラミン�
 
 開発者は、Xamarin プラットフォームを使用して、そのターゲット Mac、iOS、または Android で c# アプリケーションを記述することができます。 非常に役立ちますが、ターゲット プラットフォーム間でコードの一部を共有する複数のプラットフォームを対象とすると、作成します。 これは、プラットフォームに依存しないコードは、一般に、基本の .NET framework のみが必要です (通常はユーザー インターフェイスを含む)、プラットフォームに依存するコードに、プログラムを分ける必要があります。 このプラットフォームに依存しないコードは、ポータブル クラス ライブラリ (PCL)、または多くの場合、共有アセット プロジェクトや SAP と呼ばれる共有プロジェクト内に配置できますか。
 
-> [!NOTE] 
+> [!NOTE]
 > ポータブル クラス ライブラリが .NET Standard ライブラリに置き換えられました。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
 
 ## <a name="introducing-xamarinforms"></a>Xamarin.Forms の概要
@@ -48,18 +48,18 @@ OBJECTIVE-C、Java、および C# の場合はすべて、C プログラミン�
 - Windows 8.1 の Windows ランタイム API
 - Windows Phone 8.1 の Windows ランタイム API
 
-> [!NOTE] 
+> [!NOTE]
 > Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。 プレビュー サポートされても、 [Mac](~/xamarin-forms/platform/mac.md)、 [WPF](~/xamarin-forms/platform/wpf.md)、 [GTK #](~/xamarin-forms/platform/gtk.md)、および[Tizen](/xamarin-forms/platform/tizen.md)プラットフォーム。
 
-Xamarin.Forms のプログラムの大部分は、ライブラリや、SAP に存在します。 この共有コードを呼び出す小さなアプリケーション スタブの各プラットフォームで構成されます。 
+Xamarin.Forms のプログラムの大部分は、ライブラリや、SAP に存在します。 この共有コードを呼び出す小さなアプリケーション スタブの各プラットフォームで構成されます。
 
 Xamarin.Forms Api は、各プラットフォームは、その特性のルック アンド フィールを維持するために、各プラットフォームのネイティブ コントロールにマップされます。
 
 [![プラットフォームのビジュアルの共有の 3 倍になるスクリーン ショット](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png#lightbox "Xamarin.Forms Controls on Each Platform")
 
-左から右にスクリーン ショットでは、iPhone、Android フォン、および Windows 10 Mobile のスマート フォンを表示します。 
+左から右にスクリーン ショットでは、iPhone、Android フォン、および Windows 10 Mobile のスマート フォンを表示します。
 
-> [!NOTE] 
+> [!NOTE]
 > Xamarin.Forms は、Windows 10 Mobile をサポートしていません。
 
 各画面で、このページには、Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label)テキストを表示するため、 [ `Button` ](xref:Xamarin.Forms.Button) 、操作を開始するため、 [ `Switch` ](xref:Xamarin.Forms.Switch)のオン/オフ値を選択して、 [ `Slider` ](xref:Xamarin.Forms.Slider)継続的な範囲内の値を指定するためです。 これらのビューの 4 つすべての子である、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)上、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)します。

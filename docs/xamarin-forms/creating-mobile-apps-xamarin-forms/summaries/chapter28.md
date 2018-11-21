@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1e42fdfdf7f90a4efb639ce8ca94f45a49f59c35
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: eaee5d7921b99ea5e14cca9f03e33699a74b06f3
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563980"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172250"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要です。 場所とマップ
 
-> [!NOTE] 
+> [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms のサポート、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)から派生した要素`View`します。 マップの使用に関連する特殊なプラットフォームの要件のために別のアセンブリに実装されます**Xamarin.Forms.Maps**を別の名前空間が含まれる:`Xamarin.Forms.Maps`します。
@@ -194,7 +194,7 @@ Ios の場合、 **info.plist**ファイルは、そのユーザーの場所の�
 
 ### <a name="the-phones-location"></a>スマート フォンの場所
 
-[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser)プロパティの`Map`動作は少し異なる方法でとして 3 つのプラットフォームで、 [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)ファイルを示します。
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser)プロパティの`Map`動作としてのプラットフォームごとに異なる方法で少し、 [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)ファイルを示します。
 
 - Ios では、青い点が、電話の場所を示しますが、ある手動で移動する必要があります。
 - Android では、アイコンが表示されるときにプッシュ移動、電話の場所へのマップ

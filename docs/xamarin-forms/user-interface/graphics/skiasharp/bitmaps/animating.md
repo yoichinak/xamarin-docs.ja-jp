@@ -7,12 +7,12 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 78fcbae8db70a83d7d0a643e0b27f575152e9515
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6eacc7f2688a563f9facf651b0a6da85bd75360f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112558"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171353"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>SkiaSharp のビットマップをアニメーション化
 
@@ -20,7 +20,7 @@ SkiaSharp のグラフィックスを一般にアニメーション化するア�
 
 ただし、グラフィックスが 16 ミリ秒で表示するには複雑すぎる場合は、アニメーションはちらつきのようになります。 プログラマが 30 倍、または 15 分、秒、リフレッシュ レートを削減することもできますが、さえでは不十分です。 グラフィックスことが単にレンダリングできませんをリアルタイムで複雑になる場合もあります。
 
-1 つのソリューションでは、一連のビットマップのアニメーションの個別のフレームをレンダリングすることにより、アニメーションの事前準備します。 アニメーションを表示するには、順番に 1 秒あたり 60 回でこれらのビットマップを表示する必要はのみです。 
+1 つのソリューションでは、一連のビットマップのアニメーションの個別のフレームをレンダリングすることにより、アニメーションの事前準備します。 アニメーションを表示するには、順番に 1 秒あたり 60 回でこれらのビットマップを表示する必要はのみです。
 
 もちろん、ビットマップの多くは可能性がありますが大きな-予算の 3D をアニメーション化されたムービーを作成します。 3D グラフィックはリアルタイムで表示するより複雑です。 各フレームを表示するために多くの処理時間が必要です。 一連のビットマップは基本的には、ビデオを視聴するときに表示します。
 
@@ -34,7 +34,7 @@ SkiaSharp と似たことを行うことができます。 この記事では、
 
 マンデルブロ集合とは、魅力的な視覚的が時間のかかる computionally です。 (マンデルブロ集合とここで使用する数学の詳細については、次を参照してください。[の第 20 章_を Xamarin.Forms での Mobile Apps の作成_](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 666 ページで開始します。 次の説明を想定その背景知識。)
 
-[**マンデルブロ アニメーション**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)サンプルでは、ビットマップのアニメーションを使用して、マンデルブロ集合に固定小数点の継続的な拡大をシミュレートします。 ズーム アウト、後で拡大され、状態のままか、プログラムを終了するまで、サイクルが繰り返されます。 
+[**マンデルブロ アニメーション**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)サンプルでは、ビットマップのアニメーションを使用して、マンデルブロ集合に固定小数点の継続的な拡大をシミュレートします。 ズーム アウト、後で拡大され、状態のままか、プログラムを終了するまで、サイクルが繰り返されます。
 
 プログラムは、このアニメーションのまでアプリケーションのローカル ストレージに格納された 50 のビットマップを作成して準備します。 各ビットマップには、前のビットマップとしての半分の幅と複素平面の高さが含まれます。 (プログラムでは、これらのビットマップが整数型を表すと言います_ズーム レベル_。)。シーケンス内のビットマップが表示されます。 ビットマップごとのスケーリングは別に 1 つのビットマップからスムーズな進行を提供するアニメーション化します。
 
@@ -150,7 +150,7 @@ class BitmapInfo
 
             <Button x:Name="deleteButton"
                     Text="Delete All"
-                    HorizontalOptions="EndAndExpand" 
+                    HorizontalOptions="EndAndExpand"
                     Clicked="OnDeleteButtonClicked" />
         </StackLayout>
     </StackLayout>
@@ -179,7 +179,7 @@ public partial class MainPage : ContentPage
 
 ある時点でおそらくたい変更、`COUNT`値を 50 に、アニメーションの完全な範囲を参照してください。 50 を超える値は便利です。 48 などのズーム レベルに倍精度浮動小数点数の解像度になります、マンデルブロ集合の計算が不足しています。 この問題の 684 ページで説明した_を Xamarin.Forms での Mobile Apps の作成_です。
 
-`center`値が非常に重要です。 これは、アニメーションのズームのフォーカスです。 ファイルの 3 つの値を使用しての第 20 章の 3 つの最終的なスクリーン ショットで使用されている_を Xamarin.Forms での Mobile Apps の作成_ ページで、684 が独自の値のいずれかを考案するには、その章でプログラムを試すことができます。 
+`center`値が非常に重要です。 これは、アニメーションのズームのフォーカスです。 ファイルの 3 つの値を使用しての第 20 章の 3 つの最終的なスクリーン ショットで使用されている_を Xamarin.Forms での Mobile Apps の作成_ ページで、684 が独自の値のいずれかを考案するには、その章でプログラムを試すことができます。
 
 **マンデルブロ アニメーション**サンプルでは、これらを格納`COUNT`ローカル アプリケーション記憶域のビットマップ。 50 のビットマップをこれらのビットマップが占有しているストレージの量を知りたい場合がありますのでお使いのデバイス上の記憶域の 20 のメガバイト数以上を必要とし、ある時点でそれらすべてを削除する可能性があります。 これら 2 つのメソッドの下部の目的は、`MainPage`クラス。
 
@@ -222,10 +222,10 @@ public partial class MainPage : ContentPage
 {
     ···
     // File path for storing each bitmap in local storage
-    string FolderPath() => 
+    string FolderPath() =>
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-    string FilePath(int zoomLevel) => 
+    string FilePath(int zoomLevel) =>
         Path.Combine(FolderPath(),
                      String.Format("R{0}I{1}Z{2:D2}.png", center.Real, center.Imaginary, zoomLevel));
 
@@ -292,7 +292,7 @@ public partial class MainPage : ContentPage
 
                 CancellationToken cancelToken = cancelTokenSource.Token;
 
-                // Do the (generally lengthy) Mandelbrot calculation 
+                // Do the (generally lengthy) Mandelbrot calculation
                 BitmapInfo bitmapInfo =
                     await Mandelbrot.CalculateAsync(center,
                                                     4 / Math.Pow(2, zoomLevel),
@@ -376,7 +376,7 @@ public partial class MainPage : ContentPage
 
 すべてのビットマップを作成またはメモリに読み込まれた後、メソッドは、開始、`Stopwatch`オブジェクトと呼び出し`Device.StartTimer`します。 `OnTimerTick`メソッドは 16 ミリ秒ごとに呼び出されます。
 
-`OnTimerTick` 計算を`time`0 ~ 6000 の時間範囲の値 (ミリ秒単位) `COUNT`、6 秒の各ビットマップの表示を apportions をします。 `progress`値の使用、`Math.Sin`として、最後に低速の方向が反転プロパティと値は、サイクルの先頭に遅くなります振幅のアニメーションを作成します。 
+`OnTimerTick` 計算を`time`0 ~ 6000 の時間範囲の値 (ミリ秒単位) `COUNT`、6 秒の各ビットマップの表示を apportions をします。 `progress`値の使用、`Math.Sin`として、最後に低速の方向が反転プロパティと値は、サイクルの先頭に遅くなります振幅のアニメーションを作成します。
 
 `progress`値の範囲は 0 ~`COUNT`します。 こうすることの整数部`progress`へのインデックス、`bitmaps`の小数部の中に、配列`progress`が特定のビットマップのズーム レベルを示します。 これらの値が格納されている、`bitmapIndex`と`bitmapProgress`フィールド、およびによって表示される、`Label`と`Slider`XAML ファイルにします。 `SKCanvasView`ビットマップの表示を更新するのには無効になります。
 
@@ -448,7 +448,7 @@ public partial class MainPage : ContentPage
             SKBitmap bitmap = bitmaps[bitmapIndex];
             int width = bitmap.Width;
             int height = bitmap.Height;
-            SKRect sourceRect = new SKRect(fraction * width, fraction * height, 
+            SKRect sourceRect = new SKRect(fraction * width, fraction * height,
                                            (1 - fraction) * width, (1 - fraction) * height);
 
             // Display the bitmap
@@ -459,7 +459,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![マンデルブロ アニメーション](animating-images/MandelbrotAnimation.png "マンデルブロ アニメーション")](animating-images/MandelbrotAnimation-Large.png#lightbox)
 
@@ -482,7 +482,7 @@ public partial class MainPage : ContentPage
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <skia:SKCanvasView x:Name="canvasView" 
+        <skia:SKCanvasView x:Name="canvasView"
                            Grid.Row="0"
                            PaintSurface="OnCanvasViewPaintSurface" />
 
@@ -494,11 +494,11 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-分離コード ファイルは、アニメーション GIF ファイルを再生する汎用化されていません。 具体的には使用可能な情報の一部は無視されますが繰り返し数と再生をループ内でアニメーション GIF だけです。 
+分離コード ファイルは、アニメーション GIF ファイルを再生する汎用化されていません。 具体的には使用可能な情報の一部は無視されますが繰り返し数と再生をループ内でアニメーション GIF だけです。
 
 アニメーション GIF ファイルのフレームを抽出する SkisSharp の使用はしていない、任意の場所を文書化するため、次のコードの記述が通常よりも詳細。
 
-アニメーション GIF ファイルのデコードがページのコンス トラクターで発生しする必要があります、`Stream`ビットマップを参照するオブジェクトを作成するために使用する`SKManagedStream`オブジェクトをクリックし、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)オブジェクト。 [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount)プロパティは、アニメーションを構成するフレームの数を示します。 
+アニメーション GIF ファイルのデコードがページのコンス トラクターで発生しする必要があります、`Stream`ビットマップを参照するオブジェクトを作成するために使用する`SKManagedStream`オブジェクトをクリックし、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)オブジェクト。 [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount)プロパティは、アニメーションを構成するフレームの数を示します。
 
 コンス トラクターを使用して、これらのフレームは個々 のビットマップとして保存最終的には`FrameCount`型の配列を割り当てる`SKBitmap`と 2 つ`int`累積 (アニメーションのロジックが容易になります) を各フレームの期間の配列期間。
 
@@ -562,10 +562,10 @@ public partial class AnimatedGifPage : ContentPage
                 totalDuration += durations[frame];
             }
 
-            // Calculate the accumulated durations 
+            // Calculate the accumulated durations
             for (int frame = 0; frame < durations.Length; frame++)
             {
-                accumulatedDurations[frame] = durations[frame] + 
+                accumulatedDurations[frame] = durations[frame] +
                     (frame == 0 ? 0 : accumulatedDurations[frame - 1]);
             }
         }
@@ -641,7 +641,7 @@ public partial class AnimatedGifPage : ContentPage
         SKCanvas canvas = surface.Canvas;
 
         canvas.Clear(SKColors.Black);
-            
+
         // Get the bitmap and center it
         SKBitmap bitmap = bitmaps[currentFrame];
         canvas.DrawBitmap(bitmap,info.Rect, BitmapStretch.Uniform);

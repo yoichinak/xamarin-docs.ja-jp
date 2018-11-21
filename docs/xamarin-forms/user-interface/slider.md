@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 12a97989ac675d2504a2c626da73ebccb596b99b
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: d83b2f249bb0afe4257544d6da731dbc9ac3e317
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563564"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170937"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms のスライダー
 
@@ -109,7 +109,7 @@ public class BasicSliderCodePage : ContentPage
 
 [![基本的なスライダー コード](slider-images/BasicSliderCode.png "スライダーの基本的なコード")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-2 番目の`Label`まで「(初期化されていない)」のテキストが表示されます、`Slider`操作は、これにより、最初`ValueChanged`イベントが。 表示される小数点以下桁数が 3 つのプラットフォームのさまざまなことに注意してください。 これらの違いに関連するプラットフォームの実装の`Slider`セクションでは、この記事の後半で説明[プラットフォームの実装の違い](#implementations)します。
+2 番目の`Label`まで「(初期化されていない)」のテキストが表示されます、`Slider`操作は、これにより、最初`ValueChanged`イベントが。 表示される小数点以下桁数はプラットフォームごとに異なることに注意してください。 これらの違いに関連するプラットフォームの実装の`Slider`セクションでは、この記事の後半で説明[プラットフォームの実装の違い](#implementations)します。
 
 ### <a name="creating-a-slider-in-xaml"></a>XAML でスライダーの作成
 

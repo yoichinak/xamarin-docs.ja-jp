@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: ecb0adb09c7d6b8bca2f1ee228b8cbdaad1d0314
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 2ab7381baefc6ca013b6c8a5c9f7bf7b5cae8b10
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563954"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171717"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
@@ -137,7 +137,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </Label>
 ```
 
-3 つすべてのプラットフォームで実行されているサンプルを次に示します。
+サンプルの実行を次に示します。
 
 [![X:static デモ](consuming-images/staticdemo-small.png "X:static デモ")](consuming-images/staticdemo-large.png#lightbox "X:static デモ")
 
@@ -181,7 +181,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-両方`x:Reference`式の短縮形を使用して、`ReferenceExtension`クラス名と、削除、`Name=`式の一部です。 最初の例では、`x:Reference`にマークアップ拡張機能が埋め込まれた、`Binding`マークアップ拡張機能。 なお、`Source`と`StringFormat`設定は、コンマで区切られます。 3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+両方`x:Reference`式の短縮形を使用して、`ReferenceExtension`クラス名と、削除、`Name=`式の一部です。 最初の例では、`x:Reference`にマークアップ拡張機能が埋め込まれた、`Binding`マークアップ拡張機能。 なお、`Source`と`StringFormat`設定は、コンマで区切られます。 実行中のプログラムを次に示します。
 
 [![X:reference デモ](consuming-images/referencedemo-small.png "X:reference デモ")](consuming-images/referencedemo-large.png#lightbox "X:reference デモ")
 
@@ -449,7 +449,7 @@ public partial class TypeDemoPage : ContentPage
 
 いずれかのことがわかり、`Label`要素、暗黙ですべてのプロパティ設定する`Style`を除き、`FontFamily`既定値を指定します。 別に定義することが`Style`目的のために、簡単な方法には単に設定することです、 `FontFamily` 、特定のプロパティ`Label`に`x:Null`センターで示すように、`Label`します。
 
-次の 3 つのプラットフォームで実行されるプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![X:null デモ](consuming-images/nulldemo-small.png "X:null デモ")](consuming-images/nulldemo-large.png#lightbox "X:null デモ")
 
@@ -493,7 +493,7 @@ public partial class TypeDemoPage : ContentPage
 
 この例では、3 つすべて`OnPlatform`式の短縮形を使用して、`OnPlatformExtension`クラス名。 3 つ`OnPlatform`マークアップ拡張機能セット、 [ `Color` ](xref:Xamarin.Forms.BoxView.Color)、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)、および[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)のプロパティ、 [`BoxView` ](xref:Xamarin.Forms.BoxView)を iOS、Android、UWP での値。 マークアップ拡張機能を排除しながら、指定されていないプラットフォームでこれらのプロパティの既定値を提供することも、`Default=`式の一部です。 設定されているマークアップ拡張機能プロパティがコンマで区切られたことに注意してください。
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![OnPlatform デモ](consuming-images/onplatformdemo-small.png "OnPlatform デモ")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform デモ")
 
@@ -531,7 +531,7 @@ public partial class TypeDemoPage : ContentPage
 
 この例では、3 つすべて`OnIdiom`式の短縮形を使用して、`OnIdiomExtension`クラス名。 3 つ`OnIdiom`マークアップ拡張機能セット、 [ `Color` ](xref:Xamarin.Forms.BoxView.Color)、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)、および[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)のプロパティ、 [`BoxView` ](xref:Xamarin.Forms.BoxView)電話、タブレット、およびデスクトップの表現方法でさまざまな値にします。 マークアップ拡張機能を排除しながら、指定されていない手法でこれらのプロパティの既定値を提供することも、`Default=`式の一部です。 設定されているマークアップ拡張機能プロパティがコンマで区切られたことに注意してください。
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![OnIdiom デモ](consuming-images/onidiomdemo-small.png "OnIdiom デモ")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom デモ")
 

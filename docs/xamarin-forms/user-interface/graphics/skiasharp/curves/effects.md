@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: bd865471e3efe42c44a8996a8e364b1c478b69e7
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 8354539288613353dcb7a792ace335daa5dc8f27
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615679"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171145"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp のパスの効果
 
@@ -923,7 +923,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-この効果を使用するには、線の描画またはに基づいていっぱいになると、`Style`のプロパティ、`SKPaint`オブジェクト。 ここでは 3 つすべてのプラットフォームには。
+この効果を使用するには、線の描画またはに基づいていっぱいになると、`Style`のプロパティ、`SKPaint`オブジェクト。 ここでは、実行します。
 
 [![](effects-images/anotherroundedheptagon-small.png "別の丸め七角形ページのスクリーン ショットをトリプル")](effects-images/anotherroundedheptagon-large.png#lightbox "別の丸め七角形ページの 3 倍になるスクリーン ショット")
 
@@ -1068,7 +1068,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-ここで 3 つすべてのプラットフォームで横モードで実行されています。
+ここで横モードで実行されています。
 
 [![](effects-images/jittertext-small.png "トリプル ジッターのテキスト ページのスクリーン ショット")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 

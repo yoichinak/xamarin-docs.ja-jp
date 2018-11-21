@@ -6,13 +6,13 @@ ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/26/2018
-ms.openlocfilehash: cdff3e721aa91733e995e95ead533a3ad7b41a77
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.date: 11/19/2018
+ms.openlocfilehash: fbdb611df558c547a2470a8c8a9d7848ef7aa31f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563928"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171392"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms のボタン
 
@@ -422,7 +422,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) テキストのサイズは、します。
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) テキストが斜体または太字のかどうかを示します
 - [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 罫線の幅は、します。
-- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) 角を丸める
+- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) 角の半径は、 `Button`
 
 > [!NOTE]
 > `Button`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と[ `Padding` ](xref:Xamarin.Forms.Button.Padding)のレイアウト動作を制御するプロパティ、`Button`します。 詳細については、次を参照してください。[余白やパディング](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)します。
@@ -543,6 +543,40 @@ public partial class PressAndReleaseButtonPage : ContentPage
 Ios では、大規模な境界線の幅がの内部に重なることを確認します、`Button`と干渉するテキストを表示します。 IOS の枠線を使用するように選択したかどうかは`Button`を開始および終了する便利、`Text`プロパティにスペースをその可視性を保持します。
 
 UWP でを選択すると、`CornerRadius`の高さの半分を超えている、`Button`例外を発生させます。
+
+## <a name="button-visual-states"></a>ボタンのビジュアル状態
+
+[`Button`](xref:Xamarin.Forms.Button) `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)を視覚的な変更の開始に使用できる、`Button`が有効になっている、ユーザーによって押されたときにします。
+
+次の XAML の例のビジュアル状態を定義する方法を示しています、`Pressed`状態。
+
+```xaml
+<Button Text="Click me!"
+        ...>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+            <VisualState x:Name="Normal">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="1" />
+                </VisualState.Setters>
+            </VisualState>
+
+            <VisualState x:Name="Pressed">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="0.8" />
+                </VisualState.Setters>
+            </VisualState>
+
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</ImageButton>
+```
+
+`Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)される場合、 [ `Button` ](xref:Xamarin.Forms.Button)を押すと、その[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)からプロパティを変更する、1 に 0.8 の既定値。 `Normal` `VisualState`される場合、`Button`通常の状態では、その`Scale`プロパティを 1 に設定されます。 そのため、全体の効果では、ときに、`Button`を押すと、これは再スケーリング、若干小さいとタイミングを`Button`がリリースされると、これは再スケーリングの既定のサイズにします。
+
+表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)します。
 
 ## <a name="creating-a-toggle-button"></a>トグル ボタンを作成します。
 
@@ -774,7 +808,7 @@ XAML では、列挙型のメンバーまたは間隔を指定する必要があ
         ContentLayout="Right, 20" />
 ```
 
-**イメージ ボタン デモ**ページ使用`OnPlatform`を iOS、Android、および UWP のビットマップ ファイルの異なるファイル名を指定します。 同じファイル名を使用して、次の 3 つすべてのプラットフォームの使用を回避したい場合`OnPlatform`プロジェクトのルート ディレクトリに UWP ビットマップを格納する必要があります。
+**イメージ ボタン デモ**ページ使用`OnPlatform`を iOS、Android、および UWP のビットマップ ファイルの異なるファイル名を指定します。 プラットフォームごとに同じファイル名を使用して、使用しないようにしたい場合`OnPlatform`プロジェクトのルート ディレクトリに UWP ビットマップを格納する必要があります。
 
 最初の`Button`上、**イメージ ボタン デモ**ページ セット、`Image`プロパティが、`Text`プロパティ。
 

@@ -1,5 +1,5 @@
 ---
-title: ピクセルとデバイスに依存しない単位
+title: ピクセル、およびデバイスに依存しない単位
 description: この記事では、SkiaSharp 座標と Xamarin.Forms の座標間の違いについて説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,14 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: 9da46f128eeb502e0f40e5861f3d04c66491565b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: d4c890853cb6db334416fc31feb2205a203faa4a
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615302"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171925"
 ---
-# <a name="pixels-and-device-independent-units"></a>ピクセルとデバイスに依存しない単位
+# <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
 _SkiaSharp の座標と Xamarin.Forms の座標間の違いを詳細します。_
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 メソッドは、(左側にある小さな余白) の場合は 20 の X 座標と Y 座標のテキストの最初の行をまず`fontSpacing`は画面の上部にあるテキストの最初の行の最大の高さを表示するために必要なものよりも、もう少しであります。 各呼び出しの後`DrawText`、Y 座標の 1 つまたは 2 つずつ増加`fontSpacing`します。
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![](pixels-images/surfacesize-small.png "画面のサイズのページのスクリーン ショットをトリプル")](pixels-images/surfacesize-large.png#lightbox "画面サイズのページの 3 倍になるスクリーン ショット")
 
@@ -140,7 +140,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-ここで、次の 3 つのプラットフォームでの動作を示します。
+ここでは、実行します。
 
 [![](pixels-images/ellipsefill-small.png "画面のサイズのページのスクリーン ショットをトリプル")](pixels-images/ellipsefill-large.png#lightbox "画面サイズのページの 3 倍になるスクリーン ショット")
 

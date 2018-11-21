@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: a876e81c67b6ec61a2cb29143cb001a7d6160032
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8efd93204b848113e0ed95c8066a5506eb517ac6
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998148"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170950"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 文字列の書式設定
 
@@ -119,7 +119,7 @@ XAML ファイルで次のセクションは、`StackLayout`で、`BindingContex
 
 最後のセクションの設定、`BindingContext`の値に`Math.PI`され、既定の書式設定、数値の書式設定の 2 つのさまざまな種類と表示されます。
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![文字列の書式設定](string-formatting-images/stringformatting-small.png "文字列の書式設定")](string-formatting-images/stringformatting-large.png#lightbox "文字列の書式設定")
 

@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: 3249a9706ba96ec3690a3a3a6b80a5eb261625e4
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 11/19/2018
+ms.openlocfilehash: 5de5899b01965a33025c8af0c1ae6c09ac60dc9b
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527275"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171288"
 ---
 # <a name="android-platform-specifics"></a>Android プラットフォーム仕様
 
@@ -143,6 +143,7 @@ Xamarin.Forms のビューは、次のプラットフォーム固有の機能が
 
 - 既定のパディングと Android のボタンの影の値を使用します。 詳細については、次を参照してください。 [Android ボタンを使用して](#button-padding-shadow)します。
 - 入力方式のソフト キーボードのエディター オプションの設定、 [ `Entry`](xref:Xamarin.Forms.Entry)します。 詳細については、次を参照してください。[設定エントリ入力方式エディター オプション](#entry-imeoptions)します。
+- ドロップ シャドウを有効にすると、`ImageButton`します。 詳細については、次を参照してください。 [、ImageButton にドロップ シャドウを有効にする](#imagebutton-drop-shadow)します。
 - [`ListView`](xref:Xamarin.Forms.ListView)での高速スクロールの有効化。詳細については、[ListView での高速スクロールの有効化(#fastscroll)](#fastscroll)を参照してください。
 - 制御するかどうかを[ `WebView` ](xref:Xamarin.Forms.WebView)混合コンテンツを表示できます。 詳細については、次を参照してください。[混合コンテンツ、WebView 内で有効にする](#webview-mixed-content)します。
 
@@ -227,6 +228,67 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 結果は、指定されたを[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)のソフト キーボードを適用する値、 [ `Entry` ](xref:Xamarin.Forms.Entry)、入力方式エディターのオプションを設定します。
 
 [![エントリは、エディターのプラットフォームに固有のメソッドを入力](android-images/entry-imeoptions.png "エントリ エディターのプラットフォームに固有のメソッドの入力")](android-images/entry-imeoptions-large.png#lightbox "エントリ エディターのプラットフォームに固有のメソッドの入力")
+
+<a name="imagebutton-drop-shadow" />
+
+### <a name="enabling-a-drop-shadow-on-a-imagebutton"></a>ドロップ シャドウ、ImageButton で有効にします。
+
+このプラットフォームに固有の使用をドロップ シャドウを有効にする、`ImageButton`します。 XAML で設定して使用される、`ImageButton.IsShadowEnabled`バインド可能なプロパティを`true`、と共にさまざまなドロップ シャドウを制御する追加の省略可能なバインド可能なプロパティ。
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+       <ImageButton ...
+                    Source="XamarinLogo.png"
+                    BackgroundColor="GhostWhite"
+                    android:ImageButton.IsShadowEnabled="true"
+                    android:ImageButton.ShadowColor="Gray"
+                    android:ImageButton.ShadowRadius="12">
+            <android:ImageButton.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </android:ImageButton.ShadowOffset>
+        </ImageButton>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+代わりに、fluent API を使用して c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+var imageButton = new Xamarin.Forms.ImageButton { Source = "XamarinLogo.png", BackgroundColor = Color.GhostWhite, ... };
+imageButton.On<Android>()
+           .SetIsShadowEnabled(true)
+           .SetShadowColor(Color.Gray)
+           .SetShadowOffset(new Size(10, 10))
+           .SetShadowRadius(12);
+```
+
+> [!IMPORTANT]
+> 一部としてドロップ シャドウを描画、`ImageButton`場合にバック グラウンド、および背景が描画されるのみ、`BackgroundColor`プロパティを設定します。 そのため、ドロップ シャドウがいない描画される場合、`ImageButton.BackgroundColor`プロパティが設定されていません。
+
+`ImageButton.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。 `ImageButton.SetIsShadowEnabled`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)にドロップ シャドウが有効になっているかどうか、名前空間を使用して、`ImageButton`します。 さらに、ドロップ シャドウを制御する、次のメソッドを呼び出すことができます。
+
+- `SetShadowColor` – ドロップ シャドウの色を設定します。 既定の色は[ `Color.Default`](xref:Xamarin.Forms.Color.Default*)します。
+- `SetShadowOffset` –、影のオフセットを設定します。 影がキャストされますとしてを指定して方向を変更して、オフセット、 [ `Size` ](xref:Xamarin.Forms.Size)値。 `Size`までの距離 (負の値) の左または右 (正の値)、最初の値と上記の距離をされている 2 番目の値 (負の値) または (正の値) の下、構造体の値は、デバイスに依存しない単位で表されます. このプロパティの既定値は (0.0, 0.0) のすべての面にキャスト、影がその結果、`ImageButton`します。
+- `SetShadowRadius`– ドロップ シャドウを表示するために使用するぼかしの半径を設定します。 既定の半径の値には 10.0 です。
+
+> [!NOTE]
+> ドロップ シャドウの状態は呼び出すことによってクエリを実行できる、 `GetIsShadowEnabled`、 `GetShadowColor`、 `GetShadowOffset`、および`GetShadowRadius`メソッド。
+
+結果は、ドロップ シャドウの有効になっている、 `ImageButton`:
+
+![](android-images/imagebutton-drop-shadow.png "ドロップ シャドウを伴って ImageButton")
 
 <a name="fastscroll" />
 

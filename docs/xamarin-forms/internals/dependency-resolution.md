@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 9226e1d26dcc49b6ec82b71f7757eb0e22cd66ec
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351585"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171977"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
 
@@ -149,7 +149,7 @@ public VideoPlayerRenderer(ILogger logger)
 }
 ```
 
-により、3 つすべてのプラットフォームに依存関係の注入コンテナーでの型の登録が実行される、`RegisterTypes`メソッドを使用してアプリケーションを読み込み、プラットフォームの前に呼び出される、`LoadApplication(new App())`メソッド。 次の例は、 `RegisterTypes` iOS プラットフォームでのメソッド。
+により、すべてのプラットフォームで依存関係の注入コンテナーの種類の登録が実行される、`RegisterTypes`メソッドを使用してアプリケーションを読み込み、プラットフォームの前に呼び出される、`LoadApplication(new App())`メソッド。 次の例は、 `RegisterTypes` iOS プラットフォームでのメソッド。
 
 ```csharp
 void RegisterTypes()
@@ -196,7 +196,7 @@ boxView.Effects.Add(touchEffect);
 
 `TouchEffect`クラスは、 [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)によって各プラットフォームで実装される、`TouchEffect`クラスですが、 `PlatformEffect`。 プラットフォーム`TouchEffect`クラスをドラッグする機能を提供、`BoxView`ページの周りにします。 これらのエフェクト クラスの詳細については、次を参照してください。[効果からイベントを呼び出す](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)します。
 
-次の 3 つすべてのプラットフォームで、`TouchEffect`クラスに必要と次のコンス トラクター、`ILogger`引数。
+すべてのプラットフォームで、`TouchEffect`クラスに必要と次のコンス トラクター、`ILogger`引数。
 
 ```csharp
 public TouchEffect(ILogger logger)
@@ -205,7 +205,7 @@ public TouchEffect(ILogger logger)
 }
 ```
 
-により、3 つすべてのプラットフォームに依存関係の注入コンテナーでの型の登録が実行される、`RegisterTypes`メソッドを使用してアプリケーションを読み込み、プラットフォームの前に呼び出される、`LoadApplication(new App())`メソッド。 次の例は、`RegisterTypes`メソッドは、Android プラットフォーム。
+により、すべてのプラットフォームで依存関係の注入コンテナーの種類の登録が実行される、`RegisterTypes`メソッドを使用してアプリケーションを読み込み、プラットフォームの前に呼び出される、`LoadApplication(new App())`メソッド。 次の例は、`RegisterTypes`メソッドは、Android プラットフォーム。
 
 ```csharp
 void RegisterTypes()
@@ -240,7 +240,7 @@ public PhotoPicker(ILogger logger)
 }
 ```
 
-により、3 つすべてのプラットフォームに依存関係の注入コンテナーでの型の登録が実行される、`RegisterTypes`メソッドを使用してアプリケーションを読み込み、プラットフォームの前に呼び出される、`LoadApplication(new App())`メソッド。 次の例は、 `RegisterTypes` UWP のメソッド。
+により、すべてのプラットフォームで依存関係の注入コンテナーの種類の登録が実行される、`RegisterTypes`メソッドを使用してアプリケーションを読み込み、プラットフォームの前に呼び出される、`LoadApplication(new App())`メソッド。 次の例は、 `RegisterTypes` UWP のメソッド。
 
 ```csharp
 void RegisterTypes()

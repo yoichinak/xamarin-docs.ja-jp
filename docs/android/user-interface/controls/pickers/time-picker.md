@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 08fa9000a1fd9c97f7881a4a13c15fabfa6dda47
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: faf2c35b49b0b02b9f3b16e19494d2e447361d84
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617671"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171652"
 ---
 # <a name="time-picker"></a>時刻の選択
 
@@ -45,7 +45,7 @@ ms.locfileid: "51617671"
 `TimePickerDialog`、時刻を選択およびクリックすると、 **[ok]** 原因のボタン、`TimePickerDialog`メソッドを呼び出す[IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/)します。
 このインターフェイスは、ホストによって実装`DialogFragment`(`TimePickerFragment`以下を参照)。 クリックすると、**キャンセル**ボタンをクリックすると、フラグメントとダイアログ ボックスを破棄します。
 
-`DialogFragment` 選択した時間を 3 つの方法のいずれかでホスティング Actvity に返します。
+`DialogFragment` 3 つの方法の 1 つのホスティングのアクティビティには、選択した時間を返します。
 
 1. **メソッドの呼び出しまたはプロパティを設定する**&ndash;アクティビティは、プロパティまたは具体的には、この値を設定するためのメソッドを提供できます。
 

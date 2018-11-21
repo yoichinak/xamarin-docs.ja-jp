@@ -7,12 +7,12 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: b55067f7b4df66ccce23a7409281f4b8bbc4e9e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d4029cbd4100b3ad83343b3bee73868b385a02e5
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111643"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171821"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp の画像のフィルター
 
@@ -29,8 +29,8 @@ ms.locfileid: "50111643"
 によって作成されたぼかし効果、 [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)静的メソッドでぼかしメソッドに優る大きな利点が、 [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)クラス: イメージ フィルターは、ビットマップ全体をぼかすことができます。 メソッドでは、次の構文があります。
 
 ```csharp
-public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY, 
-                                                  SKImageFilter input = null, 
+public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
+                                                  SKImageFilter input = null,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -44,7 +44,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="SkiaSharpFormsDemos.Effects.ImageBlurExperimentPage"
              Title="Image Blur Experiment">
-    
+
     <StackLayout>
         <skia:SKCanvasView x:Name="canvasView"
                            VerticalOptions="FillAndExpand"
@@ -59,7 +59,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
                               Path=Value,
                               StringFormat='Sigma X = {0:F1}'}"
                HorizontalTextAlignment="Center" />
-        
+
         <Slider x:Name="sigmaYSlider"
                 Maximum="10"
                 Margin="10, 0"
@@ -145,11 +145,11 @@ public partial class ImageBlurExperimentPage : ContentPage
 [ `SKImageFilter.CreateDropShadow` ](xref:SkiaSharp.SKImageFilter.CreateDropShadow*)静的メソッドを作成、`SKImageFilter`ドロップ シャドウのオブジェクト。
 
 ```csharp
-public static SKImageFilter CreateDropShadow (float dx, float dy, 
-                                              float sigmaX, float sigmaY, 
-                                              SKColor color, 
-                                              SKDropShadowImageFilterShadowMode shadowMode, 
-                                              SKImageFilter input = null, 
+public static SKImageFilter CreateDropShadow (float dx, float dy,
+                                              float sigmaX, float sigmaY,
+                                              SKColor color,
+                                              SKDropShadowImageFilterShadowMode shadowMode,
+                                              SKImageFilter input = null,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -159,7 +159,7 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
 
 `sigmaX`と`sigmaY`パラメーターは要素がドロップ シャドウのぼかし効果が。
 
-`color`パラメーターがドロップ シャドウの色。 これは、`SKColor`値は、透明度を含めることができます。 色の値の 1 つの方法としては`SKColors.Black.WithAlpha(0x80)`を任意の背景の色を暗くします。 
+`color`パラメーターがドロップ シャドウの色。 これは、`SKColor`値は、透明度を含めることができます。 色の値の 1 つの方法としては`SKColors.Black.WithAlpha(0x80)`を任意の背景の色を暗くします。
 
 最後の 2 つのパラメーターは省略可能です。
 
@@ -265,7 +265,7 @@ public partial class DropShadowExperimentPage : ContentPage
                                     sigmaX,
                                     sigmaY,
                                     SKColors.Red,
-                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground); 
+                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground);
 
             SKRect textBounds = new SKRect();
             paint.MeasureText(TEXT, ref textBounds);
@@ -280,7 +280,7 @@ public partial class DropShadowExperimentPage : ContentPage
 }
 ```
 
-3 つすべてのプラットフォームで実行されているプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![ドロップ シャドウ実験](image-filters-images/DropShadowExperiment.png "ドロップ シャドウの実験")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
@@ -299,22 +299,22 @@ public partial class DropShadowExperimentPage : ContentPage
 
 これらのメソッドは、3 次元サーフェスにさまざまな種類の光の効果を模倣するイメージのフィルターを作成します。 結果のイメージのフィルターでは、または 3D 空間を管理者特権またはくぼんだを表示するこれらのオブジェクトが発生することができます、鏡面ハイライトが存在している場合、2 次元のオブジェクトが点灯します。
 
-`Distant`ライト メソッドでは、光が遠距離から取得されると仮定します。 わかりやすいオブジェクトは、するために、ライトが地球の小さい領域での Sun と同様に、3 D 空間で一貫性のある 1 つの方向と見なされます。 `Point`ライト メソッドは、すべての方向に光を放射 3 D 空間で電球を模倣します。 `Spot`ライトの位置と方向を懐中電灯と同様の両方。 
+`Distant`ライト メソッドでは、光が遠距離から取得されると仮定します。 わかりやすいオブジェクトは、するために、ライトが地球の小さい領域での Sun と同様に、3 D 空間で一貫性のある 1 つの方向と見なされます。 `Point`ライト メソッドは、すべての方向に光を放射 3 D 空間で電球を模倣します。 `Spot`ライトの位置と方向を懐中電灯と同様の両方。
 
-場所と 3 次元空間で指示の両方の値を指定、 [ `SKPoint3` ](xref:SkiaSharp.SKPoint3)のような構造体は、`SKPoint`がという名前の 3 つのプロパティを持つ`X`、`Y`と`Z`します。 
+場所と 3 次元空間で指示の両方の値を指定、 [ `SKPoint3` ](xref:SkiaSharp.SKPoint3)のような構造体は、`SKPoint`がという名前の 3 つのプロパティを持つ`X`、`Y`と`Z`します。
 
 これらのメソッドのパラメーターの複雑さと数ことに実験を困難です。 を開始するため、**離れた光実験**ページへのパラメーターを試すことができます、`CreateDistantLightDiffuse`メソッド。
 
 ```csharp
-public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction, 
-                                                     SKColor lightColor, 
-                                                     float surfaceScale, 
-                                                     float kd, 
-                                                     SKImageFilter input = null, 
+public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
+                                                     SKColor lightColor,
+                                                     float surfaceScale,
+                                                     float kd,
+                                                     SKImageFilter input = null,
                                                      SKImageFilter.CropRect cropRect = null);
 ```
 
-ページには、最後の 2 つの省略可能なパラメーターを使用しません。 
+ページには、最後の 2 つの省略可能なパラメーターを使用しません。
 
 次の 3 つ`Slider`、XAML でビュー ファイルを選択するように、`Z`の座標、`SKPoint3`値、`surfaceScale`パラメーター、および`kd`「拡散光定数」として、API のドキュメントで定義されているパラメーター。
 
@@ -331,7 +331,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                            PaintSurface="OnCanvasViewPaintSurface"
                            VerticalOptions="FillAndExpand" />
 
-        <Slider x:Name="zSlider" 
+        <Slider x:Name="zSlider"
                 Minimum="-10"
                 Maximum="10"
                 Margin="10, 0"
@@ -342,7 +342,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                               StringFormat='Z = {0:F0}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="surfaceScaleSlider" 
+        <Slider x:Name="surfaceScaleSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"
@@ -353,7 +353,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                               StringFormat='Surface Scale = {0:F1}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="lightConstantSlider" 
+        <Slider x:Name="lightConstantSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"

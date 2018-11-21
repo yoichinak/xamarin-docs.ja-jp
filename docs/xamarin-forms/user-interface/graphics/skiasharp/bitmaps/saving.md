@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 876594440c28fb0f30e0438f2ef02ae7fe89040c
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: cd91f145d41d5e3bbb2f8061e04d87fdc495f1aa
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526508"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171054"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp のビットマップをファイルに保存します。
 
@@ -44,7 +44,7 @@ SkiaSharp アプリケーションを作成または変更ビットマップが�
 
 さらに、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)クラスという 2 つのメソッドには`Create`作成できる、`SKCodec`圧縮ソースからオブジェクトし、デコードの処理でより複雑なを取得するアプリケーションを許可します。 (、`SKCodec`クラスは、記事に記載[ **SkiaSharp ビットマップをアニメーション化**](animating.md#gif-animation)アニメーション GIF ファイルのデコードに関連します)。
 
-ビットマップをエンコードするときに詳細が必要です。 エンコーダーは、アプリケーションが (JPEG または PNG、または別のもの) を使用する、特定のファイル形式を知る必要があります。 データ損失の形式を使用する場合は、エンコードは、必要な品質レベルも知る必要があります。 
+ビットマップをエンコードするときに詳細が必要です。 エンコーダーは、アプリケーションが (JPEG または PNG、または別のもの) を使用する、特定のファイル形式を知る必要があります。 データ損失の形式を使用する場合は、エンコードは、必要な品質レベルも知る必要があります。
 
 `SKBitmap`クラスは、1 つ定義[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))メソッドで次の構文。
 
@@ -60,7 +60,7 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>ビットマップ ファイルを保存するためのプラットフォーム固有のコード
 
-エンコードするとき、`SKBitmap`オブジェクトを特定のファイルに書式設定、通常、何らかのストリーム オブジェクト、またはデータの配列に残されます。 いくつかの`Encode`メソッド (によって定義されたパラメーターのない 1 つを含む`SKImage`) を返す、 [ `SKData` ](xref:SkiaSharp.SKData)オブジェクトを使用しているバイトの配列に変換できる、 [ `ToArray` ](xref:SkiaSharp.SKData.ToArray)メソッド。 このデータをファイルに保存しする必要があります。 
+エンコードするとき、`SKBitmap`オブジェクトを特定のファイルに書式設定、通常、何らかのストリーム オブジェクト、またはデータの配列に残されます。 いくつかの`Encode`メソッド (によって定義されたパラメーターのない 1 つを含む`SKImage`) を返す、 [ `SKData` ](xref:SkiaSharp.SKData)オブジェクトを使用しているバイトの配列に変換できる、 [ `ToArray` ](xref:SkiaSharp.SKData.ToArray)メソッド。 このデータをファイルに保存しする必要があります。
 
 標準を使用できるため、アプリケーションのローカル ストレージ内のファイルへの保存は非常に簡単`System.IO`クラスと、このタスクのメソッド。 この手法の説明については、記事の[ **SkiaSharp ビットマップをアニメーション化**](animating.md#bitmap-animation)マンデルブロ集合のビットマップの一連のアニメーション化に関連します。
 
@@ -81,7 +81,7 @@ public interface IPhotoLibrary
 
 `SavePhotoAsync`、最初の引数が既に JPEG または PNG などの特定のファイル形式にエンコードされたビットマップを含むバイト配列。 アプリケーションがファイル名を続けて、次のパラメーターで指定された特定のフォルダーに作成しますすべてのビットマップを分離することができます。 メソッドは、成功をかどうかを示すブール値を返します。
 
-ここではどのように`SavePhotoAsync`は、3 つのプラットフォームに実装します。
+以下のセクションでどのように`SavePhotoAsync`各プラットフォームで実装されます。
 
 ### <a name="the-ios-implementation"></a>IOS の実装
 
@@ -107,7 +107,7 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-残念ながら、ファイル名またはイメージのフォルダーを指定する方法はありません。 
+残念ながら、ファイル名またはイメージのフォルダーを指定する方法はありません。
 
 **Info.plist** iOS プロジェクトのファイルには、フォト ライブラリにイメージが追加されることを示すキーが必要です。
 
@@ -276,7 +276,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 }
 ```
 
-`SKManagedWStream`クラスから派生`SKWStream`(「書き込み可能なストリーム」の略)。 `Encode`メソッドは、そのストリームにエンコードされたビットマップ ファイルを書き込みます。 そのコード内のコメントは、エラー チェックを実行する必要がありますを参照してください。 
+`SKManagedWStream`クラスから派生`SKWStream`(「書き込み可能なストリーム」の略)。 `Encode`メソッドは、そのストリームにエンコードされたビットマップ ファイルを書き込みます。 そのコード内のコメントは、エラー チェックを実行する必要がありますを参照してください。
 
 **ファイル形式の保存**ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)アプリケーションでは、同様のコードを使用して、さまざまな形式で、ビットマップの保存に実験できます。
 
@@ -341,7 +341,7 @@ XAML ファイルが含まれています、`SKCanvasView`ビットマップを�
                    HorizontalOptions="FillAndExpand" />
         </StackLayout>
 
-        <Button Text="Save" 
+        <Button Text="Save"
                 Clicked="OnButtonClicked">
             <Button.Triggers>
                 <DataTrigger TargetType="Button"
@@ -435,9 +435,9 @@ public partial class SaveFileFormatsPage : ContentPage
 
 `Clicked`のハンドラー、`Button`はすべて、実際の動作します。 2 つの引数を取得`Encode`から、`Picker`と`Slider`、しを作成する前に示したコードを使用して、`SKManagedWStream`の`Encode`メソッド。 2 つ`Entry`ビューのフォルダーとファイル名を提供する、`SavePhotoAsync`メソッド。
 
-問題やエラーの処理には、このメソッドのほとんどを占めています。 場合`Encode`空の配列を作成します。 特定のファイル形式がサポートされないことを意味します。 場合`SavePhotoAsync`返します`false`、ファイルが正常に保存されませんでした。 
+問題やエラーの処理には、このメソッドのほとんどを占めています。 場合`Encode`空の配列を作成します。 特定のファイル形式がサポートされないことを意味します。 場合`SavePhotoAsync`返します`false`、ファイルが正常に保存されませんでした。
 
-次の 3 つのプラットフォームで実行されるプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![ファイル形式を保存](saving-images/SaveFileFormats.png "ファイル形式の保存")](saving-images/SaveFileFormats-Large.png#lightbox)
 
@@ -688,7 +688,7 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-**保存** ボタンのハンドラーを使用して、簡略化された[ `Encode` ](xref:SkiaSharp.SKImage.Encode)メソッドから`SKImage`します。 このメソッドは、PNG 形式を使用してエンコードします。 `SKImage`に基づいてオブジェクトを作成`saveBitmap`、および`SKData`オブジェクトには、エンコード済みの PNG ファイルが含まれています。 
+**保存** ボタンのハンドラーを使用して、簡略化された[ `Encode` ](xref:SkiaSharp.SKImage.Encode)メソッドから`SKImage`します。 このメソッドは、PNG 形式を使用してエンコードします。 `SKImage`に基づいてオブジェクトを作成`saveBitmap`、および`SKData`オブジェクトには、エンコード済みの PNG ファイルが含まれています。
 
 `ToArray`メソッドの`SKData`バイトの配列を取得します。 これに渡される内容が、`SavePhotoAsync`メソッドと固定のフォルダー名では、および現在の日付と時刻から構築された一意のファイル名。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b1ea26afff1477d762d106db004be82010a2d557
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 7b7fa2ea99a58b875bc1dc579455511aa9bf72d1
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527333"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172094"
 ---
 # <a name="kitkat-features"></a>KitKat 機能
 
@@ -413,7 +413,7 @@ KitKat を自動的に付属するほとんどのデバイスが Google クラ�
 
 #### <a name="printing-html-content"></a>HTML コンテンツの印刷
 
-KitKat は自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) web ビューを`WebView.CreatePrintDocumentAdapter`します。 Web コンテンツを印刷が連携して業務を[ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/) HTML コンテンツを読み込むを待機し、により、印刷オプションを [オプション] メニューで使用できるように、アクティビティ、および、Actvity は、ユーザーが待機します。[印刷] オプションと呼び出しを選択`Print`上、`PrintManager`します。 ここでは、画面上を印刷するために必要な基本的なセットアップの HTML コンテンツ。
+KitKat は自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) web ビューを`WebView.CreatePrintDocumentAdapter`します。 Web コンテンツを印刷が連携して業務を[ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/)する HTML コンテンツを読み込むを待機し、印刷オプションを [オプション] メニューで使用できるようにする、アクティビティと、アクティビティは、ユーザーが待機することができます[印刷] オプションと呼び出しを選択`Print`上、`PrintManager`します。 ここでは、画面上を印刷するために必要な基本的なセットアップの HTML コンテンツ。
 
 読み込みと web コンテンツの印刷がインターネット アクセス許可が必要であることを確認してください。
 

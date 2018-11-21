@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 566f056bd616c918ce274b9c7406d94fdc265ea2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f40d0d11fc932121b4ff7789969bbb1e354024c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994560"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172211"
 ---
 # <a name="playing-a-web-video"></a>Web ビデオを再生します。
 
@@ -465,7 +465,7 @@ namespace FormsVideoLibrary.UWP
 
 [![Web ビデオを再生する](web-videos-images/playwebvideo-small.png "Web ビデオを再生する")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオを再生します。")
 
-各 3 つのプラットフォームで、トランスポート コントロールをフェードアウトする場合、これらの使用に慣れていないが、ビデオをタップして表示状態に復元できます。
+各プラットフォームでトランスポート コントロールをフェードアウトする場合、これらの使用に慣れていないが、ビデオをタップして表示状態に復元できます。
 
 ビデオを防ぐ設定を自動的に開始することができます、`AutoPlay`プロパティを`false`:
 

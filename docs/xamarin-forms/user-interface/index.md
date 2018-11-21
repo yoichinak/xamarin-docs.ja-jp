@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/17/2018
-ms.openlocfilehash: 62e170558fc908b0ec13669b60eb08495c183b09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/14/2018
+ms.openlocfilehash: 452596d3eda9daae4b985490929c1e920a9d936e
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104954"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170911"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
 
@@ -46,13 +46,17 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 
 `DatePicker`により、ユーザーが、指定した範囲内の日付を選択します。 アプリケーションが実行される特定のプラットフォームでサポートされている日付の選択を使用して実装されます。
 
-## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[SkiaSharp を使用したグラフィック](graphics/skiasharp/index.md)
+## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[SkiaSharp を使用したグラフィックス](graphics/skiasharp/index.md)
 
 SkiaSharp を使用した Xamarin.Forms アプリケーションにグラフィックスを組み込む方法。
 
 ## <a name="imagesimagesmd"></a>[イメージ](images.md)
 
 イメージは、Xamarin.Forms のプラットフォームで共有できる、具体的には、各プラットフォーム用に読み込むことができるまたは表示をダウンロードすることができます。
+
+## <a name="imagebutonimagebuttonmd"></a>[ImageButon](imagebutton.md)
+
+`ImageButton`イメージを表示し、タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。
 
 ## <a name="layoutslayoutsindexmd"></a>[レイアウト](layouts/index.md)
 

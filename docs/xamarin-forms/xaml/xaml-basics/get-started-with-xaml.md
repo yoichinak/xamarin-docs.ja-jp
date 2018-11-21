@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 7ee701c659e0051f5509934dbf0d86e9b3890c9a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 150818379a31fe7b22c1f04a49aba146df84c11c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563881"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171119"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -26,7 +26,7 @@ _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-、Windows で Visual Studio を使用して**ファイル > 新規 > プロジェクト** メニューから。 **新しいプロジェクト**ダイアログ ボックスで、 **Visual C# > クロス プラットフォーム**、左側にあるし、**モバイル アプリ (Xamarin.Forms)** センターの一覧から。 
+、Windows で Visual Studio を使用して**ファイル > 新規 > プロジェクト** メニューから。 **新しいプロジェクト**ダイアログ ボックスで、 **Visual C# > クロス プラットフォーム**、左側にあるし、**モバイル アプリ (Xamarin.Forms)** センターの一覧から。
 
 ![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新しいプロジェクト ダイアログ ボックス")
 
@@ -36,7 +36,7 @@ _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を�
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "新しいアプリのダイアログ")
 
-**[OK]** を押します。 
+**[OK]** を押します。
 
 4 つのプロジェクトがソリューションに作成されます。 **XamlSamples** .NET Standard ライブラリは、 **XamlSamples.Android**、 **XamlSamples.iOS**、およびユニバーサル Windows プラットフォームソリューション、 **XamlSamples.UWP**します。
 
@@ -52,7 +52,7 @@ Visual studio for Mac では、次のように選択します。**ファイル >
 
 ![](get-started-with-xaml-images/mac/newprojectdialog2.png "新しいプロジェクト ダイアログ ボックス 2")
 
-キーを押して**次**します。 
+キーを押して**次**します。
 
 次のダイアログ ボックスで、プロジェクトの場所を選択できます。
 
@@ -60,7 +60,7 @@ Visual studio for Mac では、次のように選択します。**ファイル >
 
 キーを押して**作成**
 
-3 つのプロジェクトがソリューションに作成されます。 **XamlSamples** .NET Standard ライブラリは、 **XamlSamples.Android**、および**XamlSamples.iOS**します。 
+3 つのプロジェクトがソリューションに作成されます。 **XamlSamples** .NET Standard ライブラリは、 **XamlSamples.Android**、および**XamlSamples.iOS**します。
 
 -----
 
@@ -75,7 +75,7 @@ Visual studio for Mac では、次のように選択します。**ファイル >
 - **App.xaml**、XAML ファイルと
 - **App.xaml.cs**、 C# *コード ビハインド*XAML ファイルに関連付けられているファイル。
 
-次に、矢印をクリックする必要があります**App.xaml**に分離コード ファイルを参照してください。 
+次に、矢印をクリックする必要があります**App.xaml**に分離コード ファイルを参照してください。
 
 両方**App.xaml**と**App.xaml.cs**という名前のクラスに寄与`App`から派生した`Application`します。 派生したクラスを XAML ファイルとその他のほとんどのクラスが投稿`ContentPage`。 それらのファイルでは、XAML を使用して、ページ全体の視覚的内容を定義します。 これは、他の 2 つのファイルの場合は true、 **XamlSamples**プロジェクト。
 
@@ -92,8 +92,8 @@ Visual studio for Mac では、次のように選択します。**ファイル >
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin Forms!" 
-               VerticalOptions="Center" 
+        <Label Text="Welcome to Xamarin Forms!"
+               VerticalOptions="Center"
                HorizontalOptions="Center" />
     </StackLayout>
 
@@ -129,7 +129,7 @@ namespace XamlSamples
 }
 ```
 
-`MainPage`クラスから派生`ContentPage`、ただし、`partial`クラスの定義。 これは示しての別の部分クラス定義が存在する必要があります`MainPage`、それがでしょうか。 新機能および`InitializeComponent`メソッドでしょうか。 
+`MainPage`クラスから派生`ContentPage`、ただし、`partial`クラスの定義。 これは示しての別の部分クラス定義が存在する必要があります`MainPage`、それがでしょうか。 新機能および`InitializeComponent`メソッドでしょうか。
 
 Visual Studio では、プロジェクトをビルド、生成する XAML ファイルを解析するC#コード ファイル。 検索する場合、 **XamlSamples\XamlSamples\obj\Debug**ディレクトリ、という名前のファイルを検索します**XamlSamples.MainPage.xaml.g.cs**します。 "G"は、生成されるを意味します。 これは、その他の部分クラス定義の`MainPage`の定義を格納している、`InitializeComponent`から呼び出されるメソッド、`MainPage`コンス トラクター。 これら 2 つの部分`MainPage`まとめてクラス定義はコンパイルされます。 によって、XAML がコンパイルされたかどうか、XAML ファイルまたは XAML ファイルのバイナリ形式のいずれかが実行可能ファイルに埋め込まれます。
 
@@ -137,7 +137,7 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 通常は、生成されるコード ファイルで多くの時間を費やす必要はありませんが場合がありますランタイム例外が発生しますのコード生成されたファイルのため、これらに精通しておく必要があります。
 
-コンパイルして、このプログラムを実行するときに、`Label`が示すように、XAML 要素は、ページの中央に表示されます。 左から右への 3 つのプラットフォームは、iOS、Android、および UWP には。
+コンパイルして、このプログラムを実行するときに、`Label`が示すように、XAML 要素は、ページの中央に表示されます。
 
 [![](get-started-with-xaml-images/xamlsamples.png "既定の Xamarin.Forms 表示")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms の既定の表示")
 
@@ -159,7 +159,7 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 -----
 
-2 つのファイルがプロジェクトに追加された**HelloXamlPage.xaml**と分離コード ファイル**HelloXamlPage.xaml.cs**します。 
+2 つのファイルがプロジェクトに追加された**HelloXamlPage.xaml**と分離コード ファイル**HelloXamlPage.xaml.cs**します。
 
 ## <a name="setting-page-content"></a>ページのコンテンツの設定
 
@@ -170,7 +170,7 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamlSamples.HelloXamlPage">
     <ContentPage.Content>
-        
+
     </ContentPage.Content>
 </ContentPage>
 ```

@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 2bb5729ff369abb6e432bfd72ab240c0ce07f28a
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 49b2ee9cf9c8fbdb2f850461241459126750b123
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615406"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172224"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -412,7 +412,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-ここでは、**タンジェント円弧**3 つすべてのプラットフォームで実行されているページ。
+ここでは、**タンジェント円弧**実行されているページ。
 
 [![](arcs-images/tangentarc-small.png "タンジェント円弧ページのスクリーン ショットをトリプル")](arcs-images/tangentarc-large.png#lightbox "タンジェント円弧ページの 3 倍になるスクリーン ショット")
 
@@ -487,7 +487,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-次の 3 つのプラットフォームで実行されるプログラムを次に示します。
+実行中のプログラムを次に示します。
 
 [![](arcs-images/roundedheptagon-small.png "丸め七角形ページのスクリーン ショットをトリプル")](arcs-images/roundedheptagon-large.png#lightbox "丸め七角形ページの 3 倍になるスクリーン ショット")
 
@@ -582,7 +582,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-ここで、次の 3 つのプラットフォームでの動作を示します。
+ここでは、実行します。
 
 [![](arcs-images/ellipticalarc-small.png "楕円の円弧のページのスクリーン ショットをトリプル")](arcs-images/ellipticalarc-large.png#lightbox "楕円の円弧のページの 3 倍になるスクリーン ショット")
 

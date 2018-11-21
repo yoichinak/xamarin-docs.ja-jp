@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: bd8973b59853a4898336ba153de4835bad46e232
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 75b78f27fd6b3a726de9075ce36364168401ec60
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113054"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171473"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -51,7 +51,7 @@ Android デベロッパー サイトがなど Wear の Api キーの詳細情報
 |サンプル|説明|スクリーン ショット|
 |--- |--- |--- |
 |[SkeletonWear](https://developer.xamarin.com/samples/SkeletonWear/)|GridViewPager や対話型通知など、ウェアラブルのプロジェクトの基本の単純な例です。|![Skeletonwear のスクリーン ショット](images/skeleton.png)|
-|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|画面の図形を検出し、適切なレイアウトを自動的に読み込まれます WatchViewStub コントロールの簡単なデモします。  WatchViewStub がでどのように動作するかを参照してください、 **Resources/layout/main_actvity.xml**レイアウト。|![WatchViewStub のスクリーン ショット](images/watchview.png)|
+|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|画面の図形を検出し、適切なレイアウトを自動的に読み込まれます WatchViewStub コントロールの簡単なデモします。  WatchViewStub がでどのように動作するかを参照してください、 **Resources/layout/main_activity.xml**レイアウト。|![WatchViewStub のスクリーン ショット](images/watchview.png)|
 |[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|Wear 通知ページでは、レシピの手順の形式でのデモです。 通知は、RecipeService.cs に作成されます。|![RecipeAssistant のスクリーン ショット](images/recipeassist.png)|
 |[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|「パーソナル アシスタント」との対話の楽しいサンプルには、Wear 対話型通知を使用して定義された応答を使用してメッセージ交換を作成する、Eliza が呼び出されます。|![ElizaChat のスクリーン ショット](images/eliza.png)|
 |[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager は、ユーザーが垂直方向にスワイプ、2D ナビゲーション パターンを実装し、オプションやコンテンツ内を移動するには、水平方向にします。|![GridViewPager のスクリーン ショット](images/gridviewpager.png)|
