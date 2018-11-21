@@ -134,6 +134,7 @@
 ### [DatePicker](user-interface/datepicker.md)
 ### [SkiaSharp を使用したグラフィックス](user-interface/graphics/skiasharp/index.md)
 ### [イメージ](user-interface/images.md)
+### [ImageButton](user-interface/imagebutton.md)
 ### [レイアウト](user-interface/layouts/index.md)
 #### [StackLayout](user-interface/layouts/stack-layout.md)
 #### [AbsoluteLayout](user-interface/layouts/absolute-layout.md)
