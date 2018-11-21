@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 18/10/2018
-ms.openlocfilehash: a51a3bb7726baa9142579a518767dc722870ee06
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 13/11/2018
+ms.openlocfilehash: b14cb6fd96bb5da1ba2f8612daa51b2db4242630
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107528"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172341"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -43,7 +43,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 | [`BoxView`](xref:Xamarin.Forms.BoxView) ごとに色分けされて実線の四角形が表示されます、 [ `Color` ](xref:Xamarin.Forms.BoxView.Color)プロパティ。 `BoxView` 40 x 40 の既定サイズの要求があります。 他のサイズを割り当てる、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.BoxView) / [ガイド](~/xamarin-forms/user-interface/boxview.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)、 [2](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)、 [3](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)、 [4](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)、 [5](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)、および[6](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock) | [![BoxView 例](views-images/BoxView.png "BoxView 例")](views-images/BoxView-Large.png#lightbox "BoxView 例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/BoxViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/BoxViewDemoPage.xaml) |
 |     |     |
 
-### <a name="webview"></a>Web ビュー
+### <a name="webview"></a>WebView
 
 |     |     |
 | --- | --- |
@@ -71,6 +71,13 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 |     |     |
 | --- | --- |
 | [`Button`](xref:Xamarin.Forms.Button) テキストを表示する四角形のオブジェクトは、発生して、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)が押されたときにイベント。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Button) / [ガイド](~/xamarin-forms/user-interface/button.md) / [サンプル](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![例のボタン](views-images/Button.png "例のボタン")](views-images/Button-Large.png#lightbox "ボタンの例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+|     |     |
+
+### <a name="imagebutton"></a>ImageButton
+
+|     |     |
+| --- | --- |
+| `ImageButton` 四角形オブジェクトのイメージを表示して起動される、`Clicked`が押されたときにイベント。<br /><br /> [ガイド](~/xamarin-forms/user-interface/imagebutton.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/) | [![ImageButton 例](views-images/ImageButton.png "ImageButton 例")](views-images/ImageButton-Large.png#lightbox "ImageButton 例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar

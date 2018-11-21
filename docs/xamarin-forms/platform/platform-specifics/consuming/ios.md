@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 10/24/2018
+ms.openlocfilehash: 12fd9e477e24058d36128e52b7b5dd9074598be8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527080"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171795"
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
 
@@ -671,7 +671,7 @@ On<iOS>().SetUseSafeArea(true);
 [![](ios-images/safe-area-layout.png "セーフ エリア レイアウト ガイド")](ios-images/safe-area-layout-large.png#lightbox "セーフ エリア レイアウト ガイド")
 
 > [!NOTE]
-> Apple によって定義されたセーフ エリアは、Xamarin.Forms では[`Page.Padding`](xref:Xamarin.Forms.Page.Padding)プロパティを設定するために使用され、このプロパティの設定済みのすべての値は上書きされます。
+>  Apple によって定義されたセーフ エリアは、Xamarin.Forms では[`Page.Padding`](xref:Xamarin.Forms.Page.Padding)プロパティを設定するために使用され、このプロパティの設定済みのすべての値は上書きされます。
 
 セーフ エリアは[`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間の `Page.SafeAreaInsets` メソッドを使って、その [`Thickness`](xref:Xamarin.Forms.Thickness)の値を変更することでカスタマイズが可能です。 取得した値を必要に応じて変更し、ページのコンストラクタまたは[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)のオーバーライドで、 `Padding` プロパティに再割り当てすることができます。
 
@@ -786,7 +786,34 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 Xamarin.Forms の ios では、次のプラットフォーム固有の機能が提供されている[ `Application` ](xref:Xamarin.Forms.Application)クラス。
 
+- コントロールのレイアウトを有効にして、メイン スレッドで実行される更新プログラムを表示します。 詳細については、次を参照してください。[コントロール更新プログラムにメイン スレッドで処理](#update-on-main-thread)します。
 - 有効にすると、 [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)でスクロールして表示をキャプチャし、スクロール ビューとパン ジェスチャを共有します。 詳細については、次を参照してください。[同時パン ジェスチャ認識を有効にする](#simultaneous-pan-gesture)します。
+
+<a name="update-on-main-thread" />
+
+### <a name="handling-control-updates-on-the-main-thread"></a>処理、メイン スレッドでの更新プログラムの制御
+
+このプラットフォームに固有では、コントロールのレイアウトとレンダリング、バック グラウンド スレッドで実行されているのではなく、メイン スレッドで実行される更新プログラムを使用できます。 ほとんど必要する必要がありますが、場合によってはクラッシュができない可能性があります。 設定してそので消費された XAML、`Application.HandleControlUpdatesOnMainThread`バインド可能なプロパティを`true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.HandleControlUpdatesOnMainThread="true">
+    ...
+</Application>
+```
+
+代わりに、fluent API を使用して c# から使用できます。
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(true);
+```
+
+`Application.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  `Application.SetHandleControlUpdatesOnMainThread`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用してコントロールのレイアウトとレンダリングの更新プログラムがバック グラウンド スレッドで実行されているのではなく、メイン スレッドで実行されるかどうか。 さらに、`Application.GetHandleControlUpdatesOnMainThread`をコントロールのレイアウトとレンダリングの更新プログラムをメイン スレッドで実行されているかどうかを返すメソッドを使用できます。
 
 <a name="simultaneous-pan-gesture" />
 
