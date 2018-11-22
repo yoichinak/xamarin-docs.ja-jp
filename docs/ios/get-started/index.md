@@ -29,7 +29,7 @@ Xamarin.iOS をビルドするには、以下のコンポーネントが必要�
 
 Xcode の最新バージョンは、[iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (ログインが必要) から、または Mac App Store を通じてダウンロードできます。
 
-## <a name="getting-started-series"></a>Getting Started
+## <a name="getting-started-series"></a>概要シリーズ
 
 ### <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[セットアップとインストール](~/ios/get-started/installation/index.md)
 
@@ -37,11 +37,11 @@ Xamarin.iOS をセットアップして、Visual Studio for Mac または Visual
 
 ### <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
 
-この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して、初めて Xamarin.iOS アプリケーションを作成する方法および、Xamarin での iOS アプリケーション開発の基礎について説明します。 また、このガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念および手順も紹介します。
+この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して、初めて Xamarin.iOS アプリケーションを作成する方法および Xamarin での iOS アプリケーション開発の基礎について説明します。 また、このガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念および手順も紹介します。
 
 ### <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[Hello, iOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)
 
-この 2 部構成のガイドでは、「Hello, iOS」ガイドで作成されたアプリケーションの2つ目の画面を処理するための機能拡張について説明します。 また、 Model-View-Controller設計パターンなどの概念について紹介し、iOS ナビゲーションを実装し、iOS アプリケーションの構造と機能について理解を深めます。
+この 2 部構成のガイドでは、「Hello, iOS」ガイドで作成されたアプリケーションの2つ目の画面を処理するための機能拡張について説明します。 また、 Model-View-Controller 設計パターン、iOS ナビゲーションの実装、および iOS アプリケーションの構造と機能についての理解を深めるための概念を紹介します。
 
 ## <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[Objective-C 開発者向けの Xamarin](objective-c-developers/index.md)
 
