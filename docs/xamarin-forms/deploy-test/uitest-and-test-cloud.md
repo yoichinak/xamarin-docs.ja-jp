@@ -7,13 +7,13 @@ ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/31/2016
-ms.openlocfilehash: 215aa88b7e97a67242bd991dde0e66c445b47b0a
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 10/24/2018
+ms.openlocfilehash: a4a3a1d35b675091319646a03fb0362e4d250b0e
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526424"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171886"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>App Center で Xamarin.Forms テストを自動化する
 
@@ -38,7 +38,7 @@ UITest プロジェクトを Xamarin.Forms ソリューションに追加する�
 
 UITest はユーザー インターフェイスを自動化します。画面上のコントロールを起動し、ユーザーが通常、そのアプリケーションと対話するあらゆる場所で入力を実行します。 *ボタンを押す*か、*ボックスにテキストを入力する*テストを有効にするには、画面上のコントロールを特定する方法をテスト コードに与える必要があります。
 
-コントロールを参照する UITest コードを有効にするには、各コントロールに一意の識別子を与える必要があります。 Xamarin.Forms では、この識別子を設定する推奨方法は、下の画像のように `AutomationId` プロパティを使用することです。
+コントロールを参照する UITest コードを有効にするには、各コントロールに一意の識別子を与える必要があります。 Xamarin.Forms では、この識別子を設定する推奨方法は、下の画像のように [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) プロパティを使用することです。
 
 ```csharp
 var b = new Button {
@@ -51,17 +51,19 @@ var l = new Label {
 };
 ```
 
-`AutomationId` プロパティも XAML に設定できます。
+[`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) プロパティも XAML に設定できます。
 
 ```xaml
 <Button x:Name="b" AutomationId="MyButton" Text="Click me"/>
 <Label x:Name="l" AutomationId="MyLabel" Text="Hello, Xamarin.Forms!" />
 ```
 
-テストに必要なあらゆるコントロールを一意の `AutomationId` に追加してください (ボタン、テキスト エントリ、値を問い合わせる可能性があるラベルなど)。
-
 > [!NOTE]
-> `Element` の `AutomationId` プロパティを複数回設定しようとすると、`InvalidOperationException` がスローされます。
+> [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) は [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) であり、バインディング式と設定することもできます。
+
+テストに必要なあらゆるコントロールを一意の [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) に追加してください (ボタン、テキスト エントリ、値を問い合わせる可能性があるラベルなど)。
+
+> [!WARN] [`Element`](xref:Xamarin.Forms.Element) の [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) プロパティを複数回設定しようとすると、`InvalidOperationException` がスローされます。
 
 ### <a name="ios-application-project"></a>iOS アプリケーション プロジェクト
 
@@ -102,16 +104,16 @@ UITests を記述する方法については、[UITest ドキュメント](/appc
 
 ### <a name="use-automationid-in-the-xamarinforms-ui"></a>Xamarin.Forms UI の AutomationId を使用する
 
-UITests を記述するには、Xamarin.Forms アプリケーション ユーザー インターフェイスをスクリプト実行可能にする必要があります。 テスト コードで参照できるように、ユーザー インターフェイスのすべてのコントロールに `AutomationId` を与えます。
+UITests を記述するには、Xamarin.Forms アプリケーション ユーザー インターフェイスをスクリプト実行可能にする必要があります。 テスト コードで参照できるように、ユーザー インターフェイスのすべてのコントロールに [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) を与えます。
 
 #### <a name="referring-to-the-automationid-in-uitests"></a>UITests の AutomationId を参照する
 
-UITests を記述するとき、`AutomationId` 値はプラットフォームごとに異なる方法で公開されます。
+UITests を記述するとき、[`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) 値はプラットフォームごとに異なる方法で公開されます。
 
 - **iOS** は `id` フィールドを使用します。
 - **Android** は `label` フィールドを使用します。
 
-iOS と Android の両方で `AutomationId` を見つけるプラットフォーム非依存 UITests を記述するには、`Marked` テスト クエリを使用します。
+iOS と Android の両方で [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) を見つけるプラットフォーム非依存 UITests を記述するには、`Marked` テスト クエリを使用します。
 
 ```csharp
 app.Query(c=>c.Marked("MyButton"))
@@ -200,7 +202,7 @@ Xamarin.UITest を Xamarin.Forms ソリューションに追加した後、UITes
 
 ## <a name="summary"></a>まとめ
 
-Xamarin.Forms アプリケーションは、テスト自動化のための一意の表示 ID として `AutomationId` を公開する単純なメカニズムを利用し、**Xamarin.UITest** で簡単にテストできます。 UITest プロジェクトを Xamarin.Forms ソリューションに追加すると、Xamarin.Forms アプリケーションのテストを記述し、実行するための手順が Xamarin.Android または Xamarin.iOS アプリケーションの場合と同じになります。
+Xamarin.Forms アプリケーションは、テスト自動化のための一意の表示 ID として [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) を公開する単純なメカニズムを利用し、**Xamarin.UITest** で簡単にテストできます。 UITest プロジェクトを Xamarin.Forms に追加すると、Xamarin.Forms アプリケーションのテストを記述し、実行するための手順が Xamarin.Android または Xamarin.iOS アプリケーションの場合と同じになります。
 
 テストを App Center Test に送信する方法については、[UITests の送信](/appcenter/test-cloud/preparing-for-upload/uitest/)に関するページを参照してください。 UITest の詳細については、[App Center Test のドキュメント](/appcenter/test-cloud/)を参照してください。
 

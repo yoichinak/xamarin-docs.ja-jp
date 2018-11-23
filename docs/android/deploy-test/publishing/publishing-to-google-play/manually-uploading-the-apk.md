@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: df6ef208957d8dae229ebb8aee2304444b7d18fe
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4f0378f7e2fe29a5d11c2cbc02fc736adf12577c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111285"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171730"
 ---
 # <a name="manually-uploading-the-apk"></a>APK を手動でアップロードする
 
@@ -169,7 +169,7 @@ Google Play Web サイトでアプリケーションを参照するときは、�
 
 -   [uses-feature](http://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; このマニフェスト要素は、アプリケーションが機能するためにデバイスが備えている必要のあるハードウェアまたはソフトウェアの機能を宣言します。 この属性は情報提供のみです。 Google Play は、このフィルターを満たしていないデバイスにアプリケーションを表示しません。 それでも、他の方法 (手動やダウンロード) でアプリケーションをインストールすることはできます。 この要素は、**AndroidManifest.xml** に手動で追加する必要があります。 
 
--   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; この要素は、特定の共有ライブラリ (Google Maps など) がデバイス上に存在する必要があることを指定します。 この要素は、`Android.App.UsesLibaryAttribute` で指定することもできます。 例: 
+-   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; この要素は、特定の共有ライブラリ (Google Maps など) がデバイス上に存在する必要があることを指定します。 この要素は、`Android.App.UsesLibraryAttribute` で指定することもできます。 例: 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
