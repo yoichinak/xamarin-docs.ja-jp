@@ -24,9 +24,9 @@ _Xamarin.Forms アプリケーションのパフォーマンスを高めるた�
 
 ## <a name="overview"></a>概要
 
-低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
+アプリケーションのパフォーマンスの低さは、さまざまな形でアプリケーション自身に現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が減ったりすることがあります。 ただし、パフォーマンスを最適化するには、効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
-Xamarin.Forms アプリケーションのパフォーマンスとユーザーの体感パフォーマンスを高めるための方法は多数あります。 Windows コモン コントロールには以下が含まれます。
+Xamarin.Forms アプリケーションのパフォーマンスとユーザーの体感パフォーマンスを高めるための方法は多数あります。 それには以下が含まれます。
 
 - [XAML コンパイラを有効にする](#xamlc)
 - [適切なレイアウトを選択する](#correctlayout)
@@ -85,7 +85,7 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 </ContentPage>
 ```
 
-また、他のレイアウトを組み合わせ、特定のレイアウトの外観を再現することはお控えください。不要なレイアウト計算が実行されます。 たとえば、[`StackLayout`](xref:Xamarin.Forms.StackLayout) インスタンスを組み合わせ、[`Grid`](xref:Xamarin.Forms.Grid) レイアウトを再現することはお止めください。 次のコード例は、この悪い行為の見本です。
+また、他のレイアウトを組み合わせて特定のレイアウトの外観を再現することはお控えください。不要なレイアウト計算が実行されます。 たとえば、[`StackLayout`](xref:Xamarin.Forms.StackLayout) インスタンスを組み合わせて、[`Grid`](xref:Xamarin.Forms.Grid) レイアウトを再現することはお止めください。 次のコード例は、この悪い行為の見本です。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,7 +115,7 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 </ContentPage>
 ```
 
-不要なレイアウト計算が行われるため、不経済です。 代わりに、次のコード例のように、[`Grid`](xref:Xamarin.Forms.Grid) を利用すれば望ましいレイアウトが作られます。
+不要なレイアウト計算が行われるため、不経済です。 代わりに、次のコード例のように、[`Grid`](xref:Xamarin.Forms.Grid) を利用すれば望ましいレイアウトを実現できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -169,15 +169,15 @@ XAMLC は下位互換性のために既定で無効になっています。 た�
 
 ## <a name="optimize-layout-performance"></a>レイアウト パフォーマンスを最適化する
 
-Xamarin.Forms 2 では、最適化されたレイアウト エンジンが導入されました。これでレイアウト更新が変わります。 可能な限り最高のレイアウト パフォーマンスを得るために、次のガイドラインに従ってください。
+Xamarin.Forms 2 では、レイアウトの更新に影響する最適化されたレイアウト エンジンが導入されました。 可能な限り最高のレイアウト パフォーマンスを得るために、次のガイドラインに従ってください。
 
-- [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティ値を指定し、レイアウト階層の深さを減らし、ビューの重なりが少ないレイアウトを作成できます。 詳細については「[余白とスペース](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
-- [`Grid`](xref:Xamarin.Forms.Grid) を使用するとき、[`Auto`](xref:Xamarin.Forms.GridLength.Auto) サイズに設定する行と列を可能な限り減らしてください。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させます。 可能であれば、固定サイズの行と列を使用してください。 あるいは、親のツリーがこのレイアウト ガイドラインに従うのであれば、[`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) 列挙値を利用し、ある比率の領域を占めるように行と列を設定します。
-- 必要でない限り、レイアウトの [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティと [`HorizontalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティは設定しないでください。 既定値の [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) と [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) でレイアウトの最適化が可能になります。 このプロパティの変更にはコストがあり、メモリを使います。既定値に設定した場合でも同じです。
+- [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティの値を指定して、レイアウト階層の深さを減らし、ビューのネストが少ないレイアウトを生成できるようにします。 詳細については「[Margin と Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
+- [`Grid`](xref:Xamarin.Forms.Grid) を使用するときは、[`Auto`](xref:Xamarin.Forms.GridLength.Auto) サイズに設定する行と列を可能な限り減らしてください。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させることになります。 その代わりに可能であれば、固定サイズの行と列を使用してください。 あるいは、親のツリーがこのレイアウト ガイドラインに従うのであれば、[`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) 列挙値を利用し、比率によって領域を占めるように行と列を設定します。
+- 必要でない限り、レイアウトの [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) と [`HorizontalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティは設定しないでください。 既定値の [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) と [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) で、レイアウトの最適化が最大になります。 このプロパティの変更にはコストがあり、メモリを消費します。これは、既定値を再設定した場合でも同じです。
 - 可能であれば、[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) は使用しないでください。 CPU で相当な量の作業を実行しなければならなくなります。
 - [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) を使用するときは、可能な限り、[`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) プロパティを使用しないでください。
 - [`StackLayout`](xref:Xamarin.Forms.StackLayout) を使用するときは、[`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) に設定する子を 1 つだけにしてください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
-- [`Layout`](xref:Xamarin.Forms.Layout) クラスのメソッドは呼び出さないでください。高くつくレイアウト計算が実行されることになります。 望ましいレイアウト動作は、[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) プロパティと [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) プロパティを設定することで得られる場合が多いです。 あるいは、[`Layout<View>`](xref:Xamarin.Forms.Layout`1) クラスをサブクラスにして望ましいレイアウト動作を得ます。
+- [`Layout`](xref:Xamarin.Forms.Layout) クラスのメソッドは呼び出さないでください。高いレイアウト計算が実行されることになります。 望ましいレイアウト動作は、[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) プロパティと [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) プロパティを設定することで得られる場合が多いです。 あるいは、[`Layout<View>`](xref:Xamarin.Forms.Layout`1) クラスをサブクラスにして望ましいレイアウト動作を得ます。
 - [`Label`](xref:Xamarin.Forms.Label) インスタンスは不必要に更新しないでください。ラベルのサイズを変更すると、画面レイアウト全体が再計算されることがあります。
 - 必要でない限り、[`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) プロパティは設定しないでください。
 - 可能であれば、[`Label`](xref:Xamarin.Forms.Label) インスタンスの [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) を [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap) に設定してください。
@@ -186,7 +186,7 @@ Xamarin.Forms 2 では、最適化されたレイアウト エンジンが導入
 
 ## <a name="optimize-listview-performance"></a>ListView パフォーマンスを最適化する
 
-[`ListView`](xref:Xamarin.Forms.ListView) コントロールを使用するとき、さまざまなユーザー エクスペリエンスを最適化する必要があります。
+[`ListView`](xref:Xamarin.Forms.ListView) コントロールを使用する場合、最適化が必要なさまざまなユーザー エクスペリエンスがあります。
 
 - **初期化** – コントロールが作成されたときに始まり、項目が画面に表示されたときに終わる時間間隔。
 - **スクロール** – 一覧をスクロール表示し、UI がタッチ ジェスチャに遅れないようにする機能。
@@ -244,7 +244,7 @@ Xamarin.Forms 2 では、最適化されたレイアウト エンジンが導入
 
 ## <a name="reduce-the-application-resource-dictionary-size"></a>アプリケーション リソース ディクショナリのサイズを減らす
 
-アプリケーション全体で使用されるリソースは、重複を回避するために、アプリケーションのリソース ディクショナリに保存してください。 アプリケーション全体で解析しなければならない XAML の量を減らすことができます。 次のコード例では、`HeadingLabelStyle` リソースを確認できます。このリソースはアプリケーション全体で使用され、そのようにアプリケーションのリソース ディクショナリに定義されています。
+アプリケーション全体で使用されるリソースは、重複を回避するために、アプリケーションのリソース ディクショナリに保存してください。 アプリケーション全体で解析しなければならない XAML の量を減らすことができます。 次のコード例では、`HeadingLabelStyle` リソースを確認できます。このリソースはアプリケーション全体で使用されるため、アプリケーションのリソース ディクショナリに定義されています。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -262,7 +262,7 @@ Xamarin.Forms 2 では、最適化されたレイアウト エンジンが導入
 </Application>
 ```
 
-ただし、リソースは、ページが必要とするときではなく、アプリケーションの起動時に解析されるため、あるページに固有の XAML はアプリのリソース ディクショナリに含めないでください。 あるリソースが起動ページではないページで使用される場合、そのページのリソース ディクショナリに置いてください。アプリケーションの起動時に解析される XAML が減ります。 次のコード例では、`HeadingLabelStyle` リソースを確認できます。このリソースは 1 つのページのみにあり、そのようにアプリケーションのリソース ディクショナリに定義されています。
+ただし、あるページに固有の XAML は、アプリのリソース ディクショナリに含めるべきではありません。アプリのリソースは、ページが必要とするときではなく、アプリケーションの起動時に解析されるためです。リソースが起動ページではないページで使用される場合、そのページのリソース ディクショナリに置いてください。これにより、アプリケーションの起動時に解析される XAML が減ります。 次のコード例では、`HeadingLabelStyle` リソースを確認できます。このリソースは 1 つのページだけに存在するので、ページのリソース ディクショナリに定義されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -314,7 +314,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーをサブスクライブします。 同様に、レンダラーが関連付けられている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーを登録解除します。 この手法を採用すると、カスタム レンダラーが効率的に実行され、メモリ リークが発生しません。
+新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーを購読します。 同様に、レンダラーが関連付けられている要素が変わるときにのみ、購読していたイベント ハンドラーを解除します。 この手法を採用すると、カスタム レンダラーが効率的に実行され、メモリ リークが発生しません。
 
 カスタム レンダラーに関する詳細については、「[Customizing Controls on Each Platform](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」 (各プラットフォームのコントロールをカスタマイズする) を参照してください。
 
