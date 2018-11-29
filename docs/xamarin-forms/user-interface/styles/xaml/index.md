@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 5145572b30302e58c36250fff40e8b637fcd221f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2607298bdc0842f60a1d1a3299bed61bbea925a1
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995076"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459864"
 ---
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>XAML スタイルを使用して Xamarin.Forms アプリのスタイル設定
 
 ## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
 
-Xamarin.Forms アプリケーションには、複数のコントロール同一の外観を持つには多くの場合が含まれます。 個々 のコントロールの外観の設定は繰り返し発生することがあります、エラーが発生します。 代わりに、スタイルを作成できますコントロールの外観をカスタマイズしてグループ化とコントロールの種類に使用できる設定プロパティ。
+Xamarin.Forms アプリケーションには、複数のコントロール同一の外観を持つには多くの場合が含まれます。 個々 のコントロールの外観の設定は繰り返し発生することがあります、エラーが発生します。 代わりに、スタイルを作成できますで、コントロールの外観をカスタマイズするには、グループ化とコントロールの種類に使用可能なプロパティを設定します。
 
 ## <a name="explicit-stylesexplicitmd"></a>[明示的なスタイル](explicit.md)
 

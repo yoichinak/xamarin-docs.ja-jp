@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 5165d8f61973b82105c1b2e39d8bf316d0c2b42b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61ed731f22122637963c28c42f44b84ec7fa9f4
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121426"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459955"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>モバイル ソリューションを提供するコンサルティング パートナーの認定
 
@@ -290,7 +290,7 @@ _プライマリの場所で表示されている、多くのパートナーは�
 
 | Partner | 場所 | 説明 |
 | --- | --- | --- |
-|[ソフトウェアの高の表示](http://www.highviewsoft.com)|北京, 中国|クロス プラットフォーム アプリとクラウド ベースのサービス プログラムの設計、開発、実装、テクニカル トレーニング、および他のコンサルティング サービスを提供することに重点を置いては Visionsoft ソフトウェア|
+|[ソフトウェアの高の表示](http://www.highviewsoft.com)|北京, 中国|クロス プラットフォーム アプリとクラウド ベースのサービス プログラムの設計、開発、実装、テクニカル トレーニング、および他のコンサルティング サービスを提供することに重点を置いてが高いソフトウェアを表示します。|
 
 
 ## <a name="colombia"></a>コロンビア

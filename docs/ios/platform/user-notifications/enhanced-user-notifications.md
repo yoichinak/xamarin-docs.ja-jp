@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: d1b1a59b432315532844f8fca3b613ff3392a7b5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bfbb8c2b189defeb6efb07388ea34425c239c061
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108250"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459890"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin.iOS で強化されたユーザー通知
 
@@ -58,7 +58,7 @@ IOS アプリを送信できるローカル通知は、次の機能と属性が�
 - アラームのアラート
 - 場所の認識トリガー
 
-詳細については、Apple を参照してください[ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)ドキュメント。
+詳細については、Apple を参照してください[ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/documentation/usernotifications)ドキュメント。
 
 ### <a name="about-remote-notifications"></a>リモート通知について
 
@@ -80,7 +80,7 @@ IOS アプリを送信できるリモート通知は、次の機能と属性が�
 - **ユーザー向け**-デバイス上のユーザーに表示されます。
 - **サイレント更新**-バック グラウンドでの iOS アプリの内容を更新するためのメカニズムを提供します。 サイレント更新プログラムが受信したときに、アプリは最新のコンテンツを削除サーバー プルに連絡できます。
 
-詳細については、Apple を参照してください[ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)ドキュメント。
+詳細については、Apple を参照してください[ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/documentation/usernotifications)ドキュメント。
 
 ### <a name="about-the-existing-notifications-api"></a>既存の通知 API について
 
@@ -202,7 +202,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 トークンを連結、通知とアプリを開くか、通知に応答するために使用するキーとして機能します。
 
-詳細については、Apple を参照してください[ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)ドキュメント。
+詳細については、Apple を参照してください[ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/documentation/usernotifications)ドキュメント。
 
 ## <a name="notification-delivery"></a>通知の配信
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>フォア グラウンド アプリの通知の処理
 
-新しい ios 10 では、アプリ通知を処理できる異なる方法で、フォア グラウンドであり、通知がトリガーされた場合にします。 提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッドでは、アプリ引き継ぐことができます、通知を表示するための責任です。 例えば:
+新しい ios 10 では、アプリ通知を処理できる異なる方法で、フォア グラウンドであり、通知がトリガーされた場合にします。 提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッドでは、アプリ引き継ぐことができます、通知を表示するための責任です。 例:
 
 ```csharp
 using System;
@@ -431,7 +431,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 
 一連のカスタム動作とカテゴリを作成し、システムに登録されていますは、ローカルまたはリモート通知から表示できます。
 
-リモート通知は、設定、`category`上記で作成したカテゴリのいずれかに一致するリモートの通知ペイロードでします。 例えば:
+リモート通知は、設定、`category`上記で作成したカテゴリのいずれかに一致するリモートの通知ペイロードでします。 例:
 
 ```csharp
 {
@@ -442,7 +442,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-ローカル通知は、設定、`CategoryIdentifier`のプロパティ、`UNMutableNotificationContent`オブジェクト。 例えば:
+ローカル通知は、設定、`CategoryIdentifier`のプロパティ、`UNMutableNotificationContent`オブジェクト。 例:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -458,7 +458,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>処理操作を無視します。
 
-前述のように、ユーザーが通知を閉じるときに無視操作は、アプリに送信できます。 これは標準のアクションではないため、オプションは、カテゴリの作成時に設定する必要があります。 例えば:
+前述のように、ユーザーが通知を閉じるときに無視操作は、アプリに送信できます。 これは標準のアクションではないため、オプションは、カテゴリの作成時に設定する必要があります。 例:
 
 ```csharp
 var categoryID = "message";
@@ -471,7 +471,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>アクションの応答を処理します。
 
-カスタム アクションとカテゴリの上に作成された、ユーザーが、アプリは要求されたタスクを実行するために必要があります。 これは、提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッド。 例えば:
+カスタム アクションとカテゴリの上に作成された、ユーザーが、アプリは要求されたタスクを実行するために必要があります。 これは、提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッド。 例:
 
 ```csharp
 using System;
@@ -561,7 +561,7 @@ Xamarin.iOS アプリでサービスの拡張機能を実装するには、次�
 > [!IMPORTANT]
 > サービス拡張機能のバンドル識別子がでメイン アプリケーションのバンドル識別子と一致する必要があります`.appnameserviceextension`末尾に追加されます。 たとえば、メイン アプリケーションがある、バンドル識別子が`com.xamarin.monkeynotify`、サービス拡張機能のバンドル識別子が必要`com.xamarin.monkeynotify.monkeynotifyserviceextension`します。 これは自動的に、ソリューションに、拡張機能が追加されたときに設定する必要があります。 
 
-必要な機能を提供するように変更する必要のある Notification Service 拡張機能では、1 つのメイン クラスです。 例えば:
+必要な機能を提供するように変更する必要のある Notification Service 拡張機能では、1 つのメイン クラスです。 例:
 
 ```csharp
 using System;
@@ -616,7 +616,7 @@ namespace MonkeyChatServiceExtension
 
 ### <a name="triggering-a-service-extension"></a>サービスの拡張機能をトリガーします。
 
-作成され、アプリで提供されるサービスの拡張子を持つデバイスに送信されるリモート通知ペイロードを変更することでトリガーできます。 例えば:
+作成され、アプリで提供されるサービスの拡張子を持つデバイスに送信されるリモート通知ペイロードを変更することでトリガーできます。 例:
 
 ```csharp
 {
@@ -672,4 +672,4 @@ namespace myApp {
 - [iOS 10 のサンプル](https://developer.xamarin.com/samples/ios/iOS10/)
 - [UserNotifications フレームワーク参照](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [ローカルとリモート通知プログラミング ガイド](https://developer.apple.com/documentation/usernotifications)

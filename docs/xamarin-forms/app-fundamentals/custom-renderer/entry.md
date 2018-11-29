@@ -6,13 +6,13 @@ ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 30326b8d52f39268015bdcbee1b84b9d9e5516b9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 11/26/2018
+ms.openlocfilehash: 7fea736b0a04a69fd64100ae1d6bcd42c244359f
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998961"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459851"
 ---
 # <a name="customizing-an-entry"></a>エントリのカスタマイズ
 
@@ -31,6 +31,9 @@ _Xamarin.Forms のエントリのコントロールは、1 行の編集対象の
 1. [作成](#Creating_the_Custom_Renderer_on_each_Platform)各プラットフォームでコントロールのカスタム レンダラーです。
 
 各項目が実装するためにさらに、説明するようになりましたが、 [ `Entry` ](xref:Xamarin.Forms.Entry)を各プラットフォームで別の背景色を持つコントロール。
+
+> [!IMPORTANT]
+> この記事では、単純なカスタム レンダラーを作成する方法について説明します。 ただし、実装するためにカスタム レンダラーを作成する必要はありません、`Entry`各プラットフォームに対する異なる背景色を持っています。 これでより簡単に実行することができます、 [ `Device` ](xref:Xamarin.Forms.Device)クラス、または`OnPlatform`プラットフォーム固有の値を提供する、マークアップ拡張機能。 詳細については、次を参照してください。[プラットフォーム固有の値を提供する](~/xamarin-forms/platform/device.md#providing-platform-specific-values)と[OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)します。
 
 <a name="Creating_the_Custom_Entry_Control" />
 

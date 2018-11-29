@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: e41f19c1a2d02537f300ae82b7f3d45bc6571e1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 076c6464359a58c2b36d157d9620673b0644cd4a
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112466"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459838"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>Xamarin.Mac で.storyboard/.xib-less ユーザー インターフェイスの設計
 
@@ -34,7 +34,7 @@ _この記事から直接、Xamarin.Mac アプリケーションのユーザー 
 
 アプリケーションの Xibless ウィンドウに切り替えるには、次の操作を行います。
 
-1. 使用を停止したいアプリケーションを開く`.stroyboard`または .xib ファイルで Visual Studio for mac ユーザー インターフェイスを定義するには
+1. 使用を停止したいアプリケーションを開く`.storyboard`または .xib ファイルで Visual Studio for mac ユーザー インターフェイスを定義するには
 2. **Solution Pad**を右クリックし、 **Main.storyboard**または**MainWindow.xib**ファイルおよび選択**削除**: 
 
     ![メインのストーリー ボードまたはウィンドウを削除する](xibless-ui-images/switch01.png "メインのストーリー ボードまたはウィンドウを削除します。")
@@ -299,7 +299,7 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>コード内のウィンドウに UI 要素を追加します。
 
-ウィンドウをコードで作成または .storyboard または .xib ファイルから読み込まれた、かどうかがあります、ウィンドウをコードから UI 要素を追加します。 例えば:
+ウィンドウをコードで作成または .storyboard または .xib ファイルから読み込まれた、かどうかがあります、ウィンドウをコードから UI 要素を追加します。 例:
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){
