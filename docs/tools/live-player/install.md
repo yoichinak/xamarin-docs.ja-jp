@@ -83,7 +83,7 @@ Xamarin Live Player が必要です。
 2. 移動して**Visual Studio > の基本設定.** を選択し、**プロジェクト > Xamarin Live Player (プレビュー)** タブ。
 3. ティック**Xamarin Live Player を有効にする**:
 
-    [![チェック オプション] ウィンドウで、[Xamarin Live Player を有効にするボックス](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
+    [![Xamarin Live Player を有効にするボックス](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
 4. 作成するか、Xamarin プロジェクトを開きます (または[サンプル](~/tools/live-player/samples.md))。
 5. 選択**Live Player**デバイスの一覧にします。
