@@ -1,5 +1,5 @@
 ---
-title: Android の 9 円
+title: Android 9 Pie
 description: Xamarin.Android を使用して Android の 9 円用アプリの開発を開始する方法。
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: c353341af8899960b12437d55602415a02953cbc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cd1c374fa68420e1923ef4dee0bb37a4665f3535
+ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111676"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710024"
 ---
 # <a name="android-pie-features"></a>Android の円グラフの機能
 
@@ -24,9 +24,7 @@ _Xamarin.Android を使用して Android の 9 円用アプリの開発を開始
 
 この記事では、Android の円の Xamarin.Android アプリの開発を開始するために構成されます。 これには、必要な更新プログラムをインストール、SDK を構成およびエミュレーターまたはデバイスのテスト用に準備する方法について説明します。 Android の円の新機能の概要を説明し、主な Android の円グラフ機能の一部を使用する方法を示しています。 ソース コードの例を提供します。
 
-![[プレビュー]](~/media/shared/preview.png)
-
-Xamarin.Android 9.0 では、Android の円グラフのプレビュー サポートを提供します。 Android の円の Xamarin.Android のサポートの詳細については、次を参照してください。、 [Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1)リリース ノート。
+Xamarin.Android 9.0 では、Android の円のサポートを提供します。 Android の円の Xamarin.Android のサポートの詳細については、次を参照してください。、 [Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1)リリース ノート。
 
 ## <a name="requirements"></a>必要条件
 
@@ -142,7 +140,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 デバイスで、素材の領域に関する詳細情報が必要な場合、新しい使える[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)クラス。 `DisplayCutout` コンテンツを表示するために使用できない表示の領域を表します。 この情報を使用すると、アプリがこの非機能的な領域の内容を表示しないように、素材の形状と場所を取得します。
 
-Android の P で素材の新機能についての詳細については、次を参照してください。[ディスプレイ素材サポート](https://developer.android.com/preview/features#cutout)します。
+Android の P で素材の新機能についての詳細については、次を参照してください。[ディスプレイ素材サポート](https://developer.android.com/about/versions/pie/android-9.0#cutout)します。
 
 
 
@@ -175,7 +173,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
     ```
 
 2. 作成、`Notification.MessagingStyle.Message`を新しいイメージを渡すことを送信するイメージを含む[Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)メソッド。
-   例えば:
+   例:
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -184,14 +182,14 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
             .SetData("image/", imageUri);
     ```
 
-3. メッセージを追加、`Notification.MessagingStyle`オブジェクト。 例えば:
+3. メッセージを追加、`Notification.MessagingStyle`オブジェクト。 例:
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. 通知のビルダーには、このスタイルを接続します。 例えば:
+4. 通知のビルダーには、このスタイルを接続します。 例:
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -202,7 +200,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. 通知を発行します。 例えば:
+5. 通知を発行します。 例:
 
     ```csharp
     const int notificationId = 1000;
@@ -223,12 +221,12 @@ Android の円は、IEEE 802.11mc のサポートを提供します (とも呼�
 
 ### <a name="multi-camera-support"></a>複数のカメラのサポート
 
-多くの新しい Android デバイスでは、ステレオ ビジョン、強化された視覚効果、および向上のズーム機能などの機能の有用なデュアル前面またはデュアル背面カメラがあります。 Android P が導入されていますが、新しい[マルチ カメラ](https://developer.android.com/preview/features#camera)API アプリが使用できるようにする、*論理カメラ*(または*論理マルチ カメラ*) は、2 つ以上でサポートします。物理的な cameras します。
+多くの新しい Android デバイスでは、ステレオ ビジョン、強化された視覚効果、および向上のズーム機能などの機能の有用なデュアル前面またはデュアル背面カメラがあります。 Android P が導入されていますが、新しい[マルチ カメラ](https://developer.android.com/about/versions/pie/android-9.0#camera)API アプリが使用できるようにする、*論理カメラ*(または*論理マルチ カメラ*) は、2 つ以上でサポートします。物理的な cameras します。
 デバイスは、論理マルチ カメラをサポートする場合にサポートされているか、デバイスで各カメラの機能を表示できるかを判断する[RequestAvailableCapabilitiesLogicalMultiCamera](https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_LOGICAL_MULTI_CAMERA)します。
 
 Android の円も含まれています、新しい[セッション構成](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html)初期キャプチャ中に遅延を減らすことやを起動し、カメラのストリームを開始する必要性を排除するために使用できるクラス。
 
-複数のカメラの詳細については、Android P でサポートを参照してください[マルチ カメラのサポートとカメラの更新プログラム](https://developer.android.com/preview/features#camera)します。
+複数のカメラの詳細については、Android P でサポートを参照してください[マルチ カメラのサポートとカメラの更新プログラム](https://developer.android.com/about/versions/pie/android-9.0#camera)します。
 
 
 ### <a name="other-features"></a>その他の機能
@@ -256,7 +254,7 @@ Android の円の最新の機能の詳細については、次を参照してく
 
 -  直接パスで別のアプリのデータ ディレクトリへのアクセスはもう行えません。
 
-Android の P を対象とするアプリの動作の変更の詳細については、次を参照してください。[動作の変更](https://developer.android.com/preview/behavior-changes.html#p-apps)します。
+Android の P を対象とするアプリの動作の変更の詳細については、次を参照してください。[動作の変更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)します。
 
 
 ## <a name="sample-code"></a>サンプル コード

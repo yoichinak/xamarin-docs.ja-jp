@@ -1,23 +1,23 @@
 ---
 title: アプリケーションのインデックス作成とディープ リンク
-description: この記事では、アプリケーションのインデックスを使用する方法と、Xamarin.Forms アプリケーションのコンテンツを iOS および Android デバイスで検索できるようにするディープ リンクを示します。
+description: この記事では、アプリケーションのインデックスを使用する方法と、Xamarin.Forms アプリケーションのコンテンツを iOS および Android デバイスで検索できるようにするディープ リンクについて説明します。
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/11/2016
-ms.openlocfilehash: 7a102765a3633b8abaf01b3f090d8253230bc16b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 11/28/2018
+ms.openlocfilehash: f73760e2dc2310a9c1cd7a63a03ead37283a415f
+ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996097"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710011"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーションのインデックス作成とディープ リンク
 
-_アプリケーションがインデックス作成により、いくつかを使用して、検索結果に表示して、最新の後、忘れてそれ以外の場合はアプリケーションです。ディープ リンクから参照されているページに移動して、通常、アプリケーションのデータを含む検索結果に応答するアプリケーションは、ディープ リンクできます。この記事では、アプリケーションのインデックスを使用する方法と、Xamarin.Forms アプリケーションのコンテンツを iOS および Android デバイスで検索できるようにするディープ リンクを示します。_
+_アプリケーションがインデックス作成により、いくつかを使用して、検索結果に表示して、最新の後、忘れてそれ以外の場合はアプリケーションです。ディープ リンクから参照されているページに移動して、通常、アプリケーションのデータを含む検索結果に応答するアプリケーションは、ディープ リンクできます。この記事では、アプリケーションのインデックスを使用する方法と、Xamarin.Forms アプリケーションのコンテンツを iOS および Android デバイスで検索できるようにするディープ リンクについて説明します。_
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
@@ -32,10 +32,10 @@ Xamarin.Forms アプリケーションのインデックス作成とディープ
 
 各`TodoItem`ユーザーによって作成されたインスタンスのインデックスを作成します。 プラットフォーム固有の検索は、インデックス付きのデータ、アプリケーションを配置に使用できます。 ユーザーがアプリケーションの検索結果の項目をタップする、アプリケーションを起動する、`TodoItemPage`への移動が、`TodoItem`ディープから参照されているリンクが表示されます。
 
-詳細については、SQLite データベースを使用して、次を参照してください。[ローカル Database](~/xamarin-forms/app-fundamentals/databases.md)。
+詳細については、SQLite データベースを使用して、次を参照してください。 [Xamarin.Forms のローカル データベース](~/xamarin-forms/app-fundamentals/databases.md)します。
 
 > [!NOTE]
-> Xamarin.Forms アプリケーションのインデックス作成しディープ リンクの機能は、iOS と Android のプラットフォームでのみ使用し、iOS 9 と API 23 をそれぞれが必要です。
+> Xamarin.Forms アプリケーションのインデックス作成しディープ リンクの機能は、iOS と Android のプラットフォームでのみ使用し、iOS 9 デバイスと API 23 の最小値をそれぞれが必要です。
 
 ## <a name="setup"></a>セットアップ
 
@@ -43,7 +43,15 @@ Xamarin.Forms アプリケーションのインデックス作成とディープ
 
 ### <a name="ios"></a>iOS
 
-IOS プラットフォームでは、この機能を使用するために必要な追加の設定はありません。
+IOS プラットフォームでは、iOS プラットフォーム プロジェクトを設定することを確認、 **Entitlements.plist**バンドルに署名するためのカスタムの権利ファイル。
+
+IOS ユニバーサル リンクを使用します。
+
+1. アプリに関連付けられているドメイン分の権利を追加、`applinks`キー、すべてのドメインを含む、アプリがサポートされます。
+1. Web サイトに、Apple App サイトの関連ファイルを追加します。
+1. 追加、 `applinks` Apple アプリ サイト関連付けファイルにキー。
+
+詳細については、次を参照してください。[許可するアプリや web サイトのコンテンツへのリンクを](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content)developer.apple.com にします。
 
 ### <a name="android"></a>Android
 
@@ -56,12 +64,20 @@ Android のプラットフォームでは、さまざまなアプリケーショ
 これらの前提条件が満たされると、Xamarin.Forms アプリケーションのインデックス作成と、Android プラットフォームでのディープ リンクを使用する次の追加のセットアップが必要です。
 
 1. インストール、 [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) Android アプリケーション プロジェクトに NuGet パッケージ。
-1. `MainActivity.cs`ファイルで、インポート、`Xamarin.Forms.Platform.Android.AppLinks`名前空間。
+1. **MainActivity.cs**ファイルを使用する宣言を追加、`Xamarin.Forms.Platform.Android.AppLinks`名前空間。
+1. **MainActivity.cs**ファイルを使用する宣言を追加、`Firebase`名前空間。
+1. Web ブラウザーでを使用して新しいプロジェクトを作成、 [Firebase Console](https://console.firebase.google.com/)します。
+1. Firebase コンソールで Android アプリに Firebase を追加し、必要なデータを入力します。
+1. 結果のダウンロード**google-services.json**ファイル。
+1. 追加、 **google-services.json** Android のプロジェクトのルート ディレクトリにファイルし、設定、**ビルド アクション**に**GoogleServicesJson**します。
 1. `MainActivity.OnCreate`下にあるコードの次の行を追加、オーバーライド`Forms.Init(this, bundle)`:
 
 ```csharp
-AndroidAppLinks.Init (this);
+FirebaseApp.InitializeApp(this);
+AndroidAppLinks.Init(this);
 ```
+
+ときに**google-services.json** 、プロジェクトに追加されます (および*GoogleServicesJson** ビルド アクションが設定されている)、ビルド プロセスがクライアント ID と API キーを抽出し、これらの資格情報を追加し、マニフェスト ファイルが生成されます。
 
 詳細については、次を参照してください。[ディープ リンク コンテンツを Xamarin.Forms での URL ナビゲーション](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/)Xamarin ブログ。
 
@@ -75,29 +91,33 @@ AndroidAppLinks.Init (this);
 次のコード例は、作成する方法を示します、 [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry)インスタンス。
 
 ```csharp
-AppLinkEntry GetAppLink (TodoItem item)
+AppLinkEntry GetAppLink(TodoItem item)
 {
-  var pageType = GetType ().ToString ();
-  var pageLink = new AppLinkEntry {
-    Title = item.Name,
-    Description = item.Notes,
-    AppLinkUri = new Uri (string.Format ("http://{0}/{1}?id={2}",
-      App.AppName, pageType, WebUtility.UrlEncode (item.ID)), UriKind.RelativeOrAbsolute),
-    IsLinkActive = true,
-    Thumbnail = ImageSource.FromFile ("monkey.png")
-  };
+    var pageType = GetType().ToString();
+    var pageLink = new AppLinkEntry
+    {
+        Title = item.Name,
+        Description = item.Notes,
+        AppLinkUri = new Uri($"http://{App.AppName}/{pageType}?id={item.ID}", UriKind.RelativeOrAbsolute),
+        IsLinkActive = true,
+        Thumbnail = ImageSource.FromFile("monkey.png")
+    };
 
-  return pageLink;
+    pageLink.KeyValues.Add("contentType", "TodoItemPage");
+    pageLink.KeyValues.Add("appName", App.AppName);
+    pageLink.KeyValues.Add("companyName", "Xamarin");
+
+    return pageLink;
 }
 ```
 
 [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry)インスタンスには、さまざまな値を持つが、ページのインデックスし、ディープ リンクの作成に必要なプロパティが含まれています。 [ `Title` ](xref:Xamarin.Forms.IAppLinkEntry.Title)、 [ `Description` ](xref:Xamarin.Forms.IAppLinkEntry.Description)、および[ `Thumbnail` ](xref:Xamarin.Forms.IAppLinkEntry.Thumbnail)プロパティは、検索結果に表示されるときに、インデックス付きコンテンツを識別するために使用されます。 [ `IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive)プロパティに設定されて`true`をインデックス付けされたコンテンツが現在表示されていることを示します。 [ `AppLinkUri` ](xref:Xamarin.Forms.IAppLinkEntry.AppLinkUri)プロパティは、 `Uri` 、現在のページに戻り、現在の表示に必要な情報を格納している`TodoItem`します。 次の例は、例を示しています。`Uri`サンプル アプリケーションについて。
 
 ```csharp
-http://deeplinking/DeepLinking.TodoItemPage?id=ec38ebd1-811e-4809-8a55-0d028fce7819
+http://deeplinking/DeepLinking.TodoItemPage?id=2
 ```
 
-これは、`Uri`起動に必要なすべての情報が含まれています、`deeplinking`アプリに移動します、 `DeepLinking.TodoItemPage`、し、表示、`TodoItem`を持つ、`ID`の`ec38ebd1-811e-4809-8a55-0d028fce7819`します。
+これは、`Uri`起動に必要なすべての情報が含まれています、`deeplinking`アプリに移動します、 `DeepLinking.TodoItemPage`、し、表示、`TodoItem`を持つ、 `ID` 2 の。
 
 ## <a name="registering-content-for-indexing"></a>コンテンツをインデックス用の登録
 
@@ -138,30 +158,28 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 ```csharp
 public class App : Application
 {
-  ...
+    ...
+    protected override async void OnAppLinkRequestReceived(Uri uri)
+    {
+        string appDomain = "http://" + App.AppName.ToLowerInvariant() + "/";
+        if (!uri.ToString().ToLowerInvariant().StartsWith(appDomain, StringComparison.Ordinal))
+            return;
 
-  protected override async void OnAppLinkRequestReceived (Uri uri)
-  {
-    string appDomain = "http://" + App.AppName.ToLowerInvariant () + "/";
-    if (!uri.ToString ().ToLowerInvariant ().StartsWith (appDomain)) {
-      return;
+        string pageUrl = uri.ToString().Replace(appDomain, string.Empty).Trim();
+        var parts = pageUrl.Split('?');
+        string page = parts[0];
+        string pageParameter = parts[1].Replace("id=", string.Empty);
+
+        var formsPage = Activator.CreateInstance(Type.GetType(page));
+        var todoItemPage = formsPage as TodoItemPage;
+        if (todoItemPage != null)
+        {
+            var todoItem = await App.Database.GetItemAsync(int.Parse(pageParameter));
+            todoItemPage.BindingContext = todoItem;
+            await MainPage.Navigation.PushAsync(formsPage as Page);
+        }
+        base.OnAppLinkRequestReceived(uri);
     }
-
-    string pageUrl = uri.ToString ().Replace (appDomain, string.Empty).Trim ();
-    var parts = pageUrl.Split ('?');
-    string page = parts [0];
-    string pageParameter = parts [1].Replace ("id=", string.Empty);
-
-    var formsPage = Activator.CreateInstance (Type.GetType (page));
-    var todoItemPage = formsPage as TodoItemPage;
-    if (todoItemPage != null) {
-      var todoItem = App.Database.Find (pageParameter);
-      todoItemPage.BindingContext = todoItem;
-      await MainPage.Navigation.PushAsync (formsPage as Page);
-    }
-
-    base.OnAppLinkRequestReceived (uri);
-  }
 }
 ```
 
@@ -174,23 +192,25 @@ public class App : Application
 次のコード例は、設定を示します、 [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive)プロパティを`true`で、 [ `Page.OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)をオーバーライドします。
 
 ```csharp
-protected override void OnAppearing ()
+protected override void OnAppearing()
 {
-  appLink = GetAppLink (BindingContext as TodoItem);
-  if (appLink != null) {
-    appLink.IsLinkActive = true;
-  }
+    appLink = GetAppLink(BindingContext as TodoItem);
+    if (appLink != null)
+    {
+        appLink.IsLinkActive = true;
+    }
 }
 ```
 
 同様に、ときにディープ リンクによって表されるページから移動、 [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive)にプロパティを設定することができます`false`します。 IOS と Android でこれを停止、 [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry)インスタンスが提供されている検索インデックス作成、および iOS のみ、it も停止広告、`AppLinkEntry`ハンドオフのインスタンス。 これを実現できます、 [ `Page.OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)の次のコード例に示すをオーバーライドします。
 
 ```csharp
-protected override void OnDisappearing ()
+protected override void OnDisappearing()
 {
-  if (appLink != null) {
-    appLink.IsLinkActive = false;
-  }
+    if (appLink != null)
+    {
+        appLink.IsLinkActive = false;
+    }
 }
 ```
 
@@ -199,8 +219,9 @@ protected override void OnDisappearing ()
 Ios では、ページのインデックスを作成するとき、アプリケーション固有のデータを格納できます。 これは、データを追加することによって実現されます、 [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues)は、コレクション、`Dictionary<string, string>`ハンドオフに使われるキーと値のペアを格納するためです。 ハンドオフは、ユーザーが自分のデバイスのいずれかでアクティビティを起動し、(ユーザーの iCloud アカウントによって識別される) とは、自分のデバイスのもう 1 つでそのアクティビティを継続するための方法です。 次のコードでは、アプリケーション固有のキー/値ペアを格納する例を示します。
 
 ```csharp
-var pageLink = new AppLinkEntry {
-  ...  
+var pageLink = new AppLinkEntry
+{
+    ...
 };
 pageLink.KeyValues.Add("appName", App.AppName);
 pageLink.KeyValues.Add("companyName", "Xamarin");
@@ -221,8 +242,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 ## <a name="summary"></a>まとめ
 
-この記事では、アプリケーションのインデックスを使用する方法および Xamarin.Forms アプリケーションのコンテンツを iOS および Android デバイスで検索できるようにするディープ リンクを紹介します。 アプリケーションがインデックス作成により、いくつかを使用した後、について忘れてそれ以外の場合は検索結果に表示して、最新のアプリケーションです。
-
+この記事では、アプリケーションのインデックスを使用する方法と、Xamarin.Forms アプリケーションのコンテンツを iOS および Android デバイスで検索できるようにするディープ リンクについて説明します。 アプリケーションがインデックス作成により、いくつかを使用した後、について忘れてそれ以外の場合は検索結果に表示して、最新のアプリケーションです。
 
 ## <a name="related-links"></a>関連リンク
 
