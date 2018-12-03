@@ -26,7 +26,7 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 ## <a name="configure-a-new-app-group"></a>新しいアプリ グループを構成する
 
-共有の場所は、 [アプリ グループ](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)を使用して構成します。アプリ グループは、Apple Developer Center [](https://developer.apple.com/account/)の **[Certificates, Identifiers & Profiles]** \(証明書、ID、プロファイル\) セクションで構成します。  また、この値は、各プロジェクトの各 Entitlements.plist で参照する必要があります。
+共有の場所は、 [アプリ グループ](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)を使用して構成します。アプリ グループは、  [Apple Developer Center](https://developer.apple.com/account/)の **[Certificates, Identifiers & Profiles]** \(証明書、ID、プロファイル\) セクションで構成します。 また、この値は、各プロジェクトの各 Entitlements.plist で参照する必要があります。
 
 アプリ グループには識別子があります。通常、この識別子は、group. プレフィックスを含むバンドル ID です。 たとえば、バンドル ID `com.xamarin.WatchSettings` のアプリ グループは `group.com.xamarin.WatchSettings`です。
 
@@ -34,12 +34,12 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 1.  Apple の [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、 **[アカウント]**  を開きログインします。
 2.  **[Certificates, IDs & Profiles]** \(証明書、ID、およびプロファイル\) を選択します。
-3.   **[Identifiers]** \(識別子\) の下で  **[App Groups]** \(アプリ グループ\) を選択し、 **+** ボタンをクリックして、新しいグループを作成します。
+3.   **[Identifiers]** \(識別子\) の下で  **[App Groups]** \(アプリ グループ\) を選択し、  **+**  ボタンをクリックして、新しいグループを作成します。
 4.  新しいグループ用に  **[名前]** と  **[Identifier]** \(識別子\) を入力し、 **[続ける]** ボタンをクリックします。 
    
     ![アプリ グループの追加の詳細](app-groups-capabilities-images/image52.png)
 
-5.   **[登録]** ボタンをクリックしてグループを作成し、 **[完了]** をクリックして登録されたアプリ グループの一覧に戻ります。
+5.   **[登録]**  ボタンをクリックしてグループを作成し、  **[完了]**  をクリックして登録されたアプリ グループの一覧に戻ります。
 
 ## <a name="configure-an-app-to-use-app-groups"></a>アプリ グループを使用するアプリを構成する
 
@@ -49,14 +49,14 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 1.  Apple の  [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、Apple Developer アカウントでログインします。
 2.   **[Program Resources]** \(プログラム リソース\) メニューから **[Certificates, IDs & Profiles]** \(証明書、ID、およびプロファイル\) を選択します。
-3.   **[Identifiers]** \(識別子\) の下で  **[App IDs]** \(アプリ ID\) を選択し、 **+** ボタンをクリックして、新しい ID を作成します。
+3.   **[Identifiers]** \(識別子\) の下で  **[App IDs]** \(アプリ ID\) を選択し、  **+**  ボタンをクリックして、新しい ID を作成します。
 4.  App ID の [Name]\(名前\) を入力し、[Explicit App ID]\(明示的な App ID\) を指定します。
-5.   **[App Services]** \(アプリ サービス\) で  **[App Groups]** \(アプリ グループ\) を有効にして [続ける] ボタンをクリックします。
+5.   **[App Services]** \(アプリ サービス\) で   **[App Groups]** \(アプリ グループ\) を有効にして [続ける] ボタンをクリックします。
 
     ![アプリ グループの App Services を追加する](app-groups-capabilities-images/image53.png)
 
 6.  設定を確認し、 **[登録]** ボタンをクリックしてアプリ ID を作成します。
-7.   **[完了]** ボタンをクリックして登録したアプリ ID の一覧に戻ります。
+7.   **[完了]**  ボタンをクリックして登録したアプリ ID の一覧に戻ります。
 8.  新しく作成したアプリ ID を一覧から選択し、 **[編集]** ボタンをクリックします。
 
     ![一覧からアプリ ID を選択する](app-groups-capabilities-images/image54.png)
@@ -69,7 +69,7 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
     ![アプリ グループを追加する](app-groups-capabilities-images/image56.png)
 
-11.  **[Assign]** \(割り当て\) ボタン、 **[完了]** ボタンの順にクリックし、登録したアプリ ID の一覧に戻ります。
+11.  **[Assign]** \(割り当て\) ボタン、 **[完了]**  ボタンの順にクリックし、登録したアプリ ID の一覧に戻ります。
 12. アプリ グループを使用するすべてのアプリ (または拡張機能) についてこれらの手順を繰り返します。
 
 ## <a name="next-steps"></a>次の手順

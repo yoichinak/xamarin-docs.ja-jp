@@ -34,7 +34,7 @@ _バインドされているサービスは、(Android アクティビティ) �
 
 ![サービス コンポーネントが相互に関連付ける方法を示す図](bound-services-images/bound-services-02.png "サービス コンポーネントが相互に関連付ける方法を示す図。")
 
-このガイドは、拡張する方法を説明する、`Service`バインドされているサービスを実装するクラス。 実装も含まれます`IServiceConnection`と拡張`Binder`クライアントがサービスと通信できるようにします。 サンプル アプリと呼ばれる 1 つの Xamarin.Android プロジェクトとソリューションを含むをこのガイドに付属**[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** します。 これは、非常に基本的なアプリケーションをサービスを実装する方法とアクティビティを連結する方法を示します。 バインドされているサービスが 1 つのメソッドで非常に単純な API`GetFormattedTimestamp`サービスが開始されたときに、ユーザーに指示する文字列とどのくらいの時間実行されたが返されます。 アプリでは、手動でバインドを解除し、サービスにバインドするユーザーもできます。
+このガイドは、拡張する方法を説明する、`Service`バインドされているサービスを実装するクラス。 実装も含まれます`IServiceConnection`と拡張`Binder`クライアントがサービスと通信できるようにします。 サンプル アプリと呼ばれる 1 つの Xamarin.Android プロジェクトとソリューションを含むをこのガイドに付属 **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** します。 これは、非常に基本的なアプリケーションをサービスを実装する方法とアクティビティを連結する方法を示します。 バインドされているサービスが 1 つのメソッドで非常に単純な API`GetFormattedTimestamp`サービスが開始されたときに、ユーザーに指示する文字列とどのくらいの時間実行されたが返されます。 アプリでは、手動でバインドを解除し、サービスにバインドするユーザーもできます。
 
 [![Android フォンで実行されているアプリケーションのスクリーン ショット](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
