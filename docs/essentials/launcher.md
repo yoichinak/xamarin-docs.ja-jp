@@ -44,7 +44,7 @@ public class LauncherTest
 }
 ```
 
-## <a name="platform-differences"></a>プラットフォームの差異
+## <a name="platform-differences"></a>プラットフォームによる違い
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -60,7 +60,7 @@ iOS の実装について詳しくは、[こちら](https://developer.xamarin.co
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-プラットフォームの差異はありません。
+プラットフォームによる違いはありません。
 
 -----
 
