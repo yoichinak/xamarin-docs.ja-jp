@@ -1,6 +1,6 @@
 ---
-title: ビデオ プレーヤーを実装します。
-description: この記事では、Xamarin.Forms を使用してビデオ プレーヤー アプリケーションを実装する方法について説明します。
+title: ビデオ プレーヤーの実装
+description: この記事では、Xamarin.Forms を使ってビデオ プレーヤー アプリケーションを実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
@@ -9,60 +9,60 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 00697ca0adf3a34abec90c2f96d9fd9c273d06bb
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35239785"
 ---
-# <a name="implementing-a-video-player"></a>ビデオ プレーヤーを実装します。
+# <a name="implementing-a-video-player"></a>ビデオ プレーヤーの実装
 
-Xamarin.Forms のアプリケーションでのビデオ ファイルを再生することが望ましい場合があります。 この一連の記事を iOS、Android、および Xamarin.Forms クラスという名前のユニバーサル Windows プラットフォーム (UWP) 用のカスタム レンダラーを記述する方法を説明する`VideoPlayer`です。
+Xamarin.Forms アプリケーション内でビデオ ファイルを再生することが望ましい場合があります。 この一連の記事では、`VideoPlayer` という名前の Xamarin.Forms クラスに向けて、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 用のカスタム レンダラーを記述する方法について説明します。
 
-[ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)を実装し、サポートするすべてのファイルのサンプル`VideoPlayer`という名前のフォルダーには`FormsVideoLibrary`され、名前空間で識別`FormsVideoLibrary`または名前空間開始される`FormsVideoLibrary`です。 この組織と名前付けを簡単にファイルをコピーする、ビデオ プレーヤーを Xamarin.Forms ソリューションです。
+[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) のサンプルでは、`VideoPlayer` を実装およびサポートするすべてのファイルが `FormsVideoLibrary` という名前のフォルダーに置かれ、`FormsVideoLibrary` という名前空間または `FormsVideoLibrary` で始まる名前空間を使って識別されました。 この機構と名前付けによって、ビデオ プレーヤー ファイルをご自身の Xamarin.Forms ソリューションにコピーしやすくなります。
 
-`VideoPlayer` 3 種類のソースからのビデオ ファイルを再生できます。
+`VideoPlayer` では、3 種類のソースからビデオ ファイルを再生できます。
 
-- URL を使用して、インターネット
-- プラットフォームのアプリケーションに埋め込まれたリソース
+- インターネット (URL を使用)
+- プラットフォーム アプリケーションに埋め込まれたリソース
 - デバイスのビデオ ライブラリ
 
-ビデオ プレーヤーを必要と*トランスポート コントロール*を再生したり、ビデオを一時停止するためのボタンは、ビデオを使用して進行状況を示しています、バーを配置、および別の場所に迅速にスキップすることができます。 `VideoPlayer` トランスポート コントロールを使用し、カスタム トランスポート コントロールとバーを配置するか (以下の手順に従って、プラットフォームによって提供される位置のバーを提供します。 IOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
+ビデオ プレーヤーには、"*トランスポート コントロール*" (ビデオを再生および一時停止するためのボタン) と、ビデオの進行状況を表示したりユーザーが別の場所にすばやくスキップできたりする位置バーが必要です。 `VideoPlayer` では、プラットフォームによって提供されるトランスポート コントロールと位置バーのどちらかを使えます (以下を参照)。または、ご自身でカスタムのトランスポート コントロールと位置バーを提供できます。 iOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
 
-[![Web のビデオの再生](web-videos-images/playwebvideo-small.png "Web ビデオの再生")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオの再生")
+[![Web ビデオを再生する](web-videos-images/playwebvideo-small.png "Web ビデオを再生する")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオを再生する")
 
-もちろん、拡大表示の電話を横向きにすることができます。
+もちろん、電話を横向きにして拡大表示させることが可能です。
 
-高度なビデオ プレーヤーは、ボリューム コントロールやは、電話の呼び出し時にビデオを中断するためのメカニズムの再生中にアクティブな画面を維持する方法など、いくつかの機能があります。
+より洗練されたビデオ プレーヤーには、ボリューム コントロールや、電話がかかってきたときにビデオを中断するしくみ、再生中に画面をアクティブ状態に保つ方法など、いくつかの追加機能が備わっています。
 
-次の一連の記事の段階的に、プラットフォームのレンダラーとサポート クラスを構築する方法を示しています。
+次の一連の記事では、プラットフォーム レンダラーとサポート クラスの構築方法を段階的に説明していきます。
 
-## <a name="creating-the-platform-video-playersplayer-creationmd"></a>[プラットフォームのビデオ プレーヤーを作成します。](player-creation.md)
+## <a name="creating-the-platform-video-playersplayer-creationmd"></a>[プラットフォーム ビデオ プレーヤーの作成](player-creation.md)
 
-各プラットフォームの要件、`VideoPlayerRenderer`作成し、プラットフォームでサポートされているビデオ プレーヤーの制御を維持するクラス。 この記事は、クラス、および、プレーヤーの作成方法のレンダラーの構造を示しています。
+各プラットフォームには、プラットフォームによってサポートされているビデオ プレーヤーのコントロールを作成および管理する `VideoPlayerRenderer` クラスが必要です。 この記事では、レンダラー クラスの構造と、プレーヤーの作成方法について説明します。
 
-## <a name="playing-a-web-videoweb-videosmd"></a>[Web ビデオを再生します。](web-videos.md)
+## <a name="playing-a-web-videoweb-videosmd"></a>[Web ビデオの再生](web-videos.md)
 
-おそらく、ビデオ プレーヤー向けのビデオの最も一般的なソースは、インターネットです。 この記事では、Web ビデオを参照されているし、ビデオ プレーヤーのソースとして使用する方法について説明します。
+おそらく、ビデオ プレーヤー用のビデオのソースとして最も一般的なものは、インターネットです。 この記事では、Web ビデオを参照し、ビデオ プレーヤーのソースとして使う方法について説明します。
 
 ## <a name="binding-video-sources-to-the-playersource-bindingsmd"></a>[プレーヤーへのビデオ ソースのバインド](source-bindings.md)
 
-この記事では、`ListView`を再生するビデオのコレクションを表示します。 1 つのプログラムが、分離コード ファイルが、ビデオ プレーヤーのビデオ ソースを設定する方法を示していますが、別のプログラムは、データの間のバインディングを使用する方法を示しています、`ListView`と、ビデオ プレーヤー。
+この記事では `ListView` を使って、再生するビデオのコレクションを表現します。 1 つのプログラムでは分離コード ファイルを使ってビデオ プレーヤーのビデオ ソースを設定する方法が示されていますが、2 つ目のプログラムでは `ListView` とビデオ プレーヤーの間でデータ バインディングを使う方法が示されています。
 
-## <a name="loading-application-resource-videosloading-resourcesmd"></a>[アプリケーション リソースのビデオの読み込み](loading-resources.md)
+## <a name="loading-application-resource-videosloading-resourcesmd"></a>[アプリケーション リソース ビデオの読み込み](loading-resources.md)
 
-ビデオは、プラットフォームのプロジェクトにリソースとして埋め込むことができます。 この記事では、それらのリソースを格納し、後で、ビデオ プレーヤーで再生できるように、プログラムに読み込むにする方法を示します。
+ビデオはリソースとしてプラットフォーム プロジェクトに埋め込むことができます。 この記事では、それらのリソースを格納して、ビデオ プレーヤーで再生するために後でプログラムに読み込む方法を示します。
 
 ## <a name="accessing-the-devices-video-libraryaccessing-librarymd"></a>[デバイスのビデオ ライブラリへのアクセス](accessing-library.md)
 
-ビデオを作成すると、デバイスのカメラを使用して、ビデオ ファイルは、デバイスのイメージのライブラリに格納されます。 この記事では、ビデオを選択し、再生、ビデオ プレーヤーを使用して、デバイスのイメージの選択にアクセスする方法を示します。
+デバイスのカメラを使用してビデオを作成した場合、そのビデオ ファイルはデバイスのイメージ ライブラリに格納されます。 この記事では、デバイスのイメージ ピッカーを使ってビデオを選択し、それをビデオ プレイヤーを使って再生する方法について説明します。
 
 ## <a name="custom-video-transport-controlscustom-transportmd"></a>[カスタムのビデオ トランスポート コントロール](custom-transport.md)
 
-各プラットフォームでのビデオ プレーヤー用のボタンの形式で、独自のトランスポート コントロールを提供します**再生**と**Pause**、これらのボタンの表示を抑制して、独自に提供します。 方法は、この記事で説明します。
+各プラットフォーム上のビデオ プレーヤーには、**[再生]** や **[一時停止]** ボタンという形でそれぞれのトランスポート コントロールが備わっていますが、そのボタンを表示させないようにしてご自身のものを指定できます。 この記事ではその方法を説明します。
 
-## <a name="custom-video-positioningcustom-positioningmd"></a>[ビデオのカスタムの配置](custom-positioning.md)
+## <a name="custom-video-positioningcustom-positioningmd"></a>[ビデオのカスタム配置](custom-positioning.md)
 
-ビデオの進行状況を表示し、特定の位置に進んでいるか遅れてをスキップすることができます位置バーを持つ各プラットフォームのビデオ プレーヤーのとします。 この記事では、カスタム コントロールと位置バーに置き換える方法を示します。
+各プラットフォームのビデオ プレーヤーには、ビデオの進行状況を示し、特定の位置まで前後にスキップできる位置バーが備わっています。 この記事では、その位置バーをカスタム コントロールで置き換える方法を示します。
 
 
 
@@ -70,4 +70,4 @@ Xamarin.Forms のアプリケーションでのビデオ ファイルを再生�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms のローカライズ
-description: Xamarin.Forms によるクロスプラット フォームで多言語アプリケーションを構築する、組み込みの .NET ローカライズ フレームワークを使用できます。 テキストとイメージをローカライズすることができ、アプリケーションが右から左にフローの方向をサポートします。
+description: 組み込みの .NET ローカライズ フレームワークを使って、Xamarin.Forms を使ったクロスプラットフォームの多言語アプリケーションを構築できます。 テキストと画像をローカライズすることができ、アプリケーションのフロー方向を右から左にすることができます。
 ms.prod: xamarin
 ms.assetid: 97BF843B-BDAA-4CEA-8189-6DB54B291D7F
 ms.technology: xamarin-forms
@@ -9,19 +9,19 @@ ms.author: dabritch
 ms.date: 11/07/2018
 ms.openlocfilehash: 71033e935a2d3a4be88dbcc5d975938771484640
 ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/08/2018
 ms.locfileid: "51285574"
 ---
 # <a name="xamarinforms-localization"></a>Xamarin.Forms のローカライズ
 
-_Xamarin.Forms によるクロスプラット フォームで多言語アプリケーションを構築する、組み込みの .NET ローカライズ フレームワークを使用できます。_
+_組み込みの .NET ローカライズ フレームワークを使って、Xamarin.Forms を使ったクロスプラットフォームの多言語アプリケーションを構築できます。_
 
 ## <a name="string-and-image-localizationtextmd"></a>[文字列とイメージのローカライズ](text.md)
 
-.NET アプリケーションの使用をローカライズするための組み込みメカニズム[RESX ファイル](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps#resources-in-resx-files)クラスとクラスの`System.Resources`と`System.Globalization`名前空間。 翻訳された文字列を含む RESX ファイルは、コンパイラによって生成されたクラスの翻訳を厳密に型指定されたアクセスを提供すると共に、Xamarin.Forms アセンブリに埋め込まれます。 翻訳されたテキストは、コードで取得できます。
+.NET アプリケーションをローカライズするための組み込みメカニズムでは、`System.Resources` および `System.Globalization` 名前空間にある [RESX ファイル](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps#resources-in-resx-files)とクラスが使われます。 翻訳された文字列を含む RESX ファイルは、厳密に型指定された翻訳へのアクセスを提供するコンパイラ生成のクラスと共に、Xamarin.Forms アセンブリに埋め込まれます。 その後、コードから翻訳されたテキストを取得できます。
 
 ## <a name="right-to-left-localizationright-to-leftmd"></a>[右から左へのローカライズ](right-to-left.md)
 
-フローの方向とは、目で、ページの UI 要素をスキャンする方向です。 右から左のローカリゼーションでは、Xamarin.Forms アプリケーションを右から左方向のサポートを追加します。
+フロー方向とは、ページ上の UI 要素を視覚でスキャンしていく方向のことです。 右から左へのローカライズでは、右から左へのフロー方向のサポートが Xamarin.Forms アプリケーションに追加されます。

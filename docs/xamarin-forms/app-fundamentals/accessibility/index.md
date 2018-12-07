@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms のアクセシビリティ
-description: アプリケーションのニーズとエクスペリエンスの範囲で、ユーザー インターフェイスのアプローチの方で使用できるようにユーザー補助対応のアプリケーションを構築します。
+description: アクセシビリティを備えたアプリケーションを構築することで、一定範囲のニーズとエクスペリエンスでユーザー インターフェイスを使用するユーザーがアプリケーションを使用できるようになります。
 ms.prod: xamarin
 ms.assetid: 99B8A8E8-6F5E-46BC-9639-1C4A6D301049
 ms.technology: xamarin-forms
@@ -9,35 +9,35 @@ ms.author: dabritch
 ms.date: 10/15/2018
 ms.openlocfilehash: ac0ffbdce6b0c55e8ad9d774d80e3d9b8bf84089
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50116447"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms のアクセシビリティ
 
-_アプリケーションのニーズとエクスペリエンスの範囲で、ユーザー インターフェイスのアプローチの方で使用できるようにユーザー補助対応のアプリケーションを構築します。_
+_アクセシビリティを備えたアプリケーションを構築することで、一定範囲のニーズとエクスペリエンスでユーザー インターフェイスを使用するユーザーがアプリケーションを使用できるようになります。_
 
-Xamarin.Forms アプリケーションにアクセスできるようにには、レイアウトと多くのユーザー インターフェイス要素のデザインについて考えることを意味します。 考慮すべき問題のガイドラインについては、次を参照してください。、[アクセシビリティ チェックリスト](~/cross-platform/app-fundamentals/accessibility.md)します。 大きなフォント サイズ、および適切な色とコントラストの設定などの多くのアクセシビリティに関する問題は、Xamarin.Forms の Api を既に対処できます。
+Xamarin.Forms アプリケーションにアクセシビリティを備えるということは、多くのユーザー インターフェイス要素のレイアウトとデザインについて考えることを意味します。 考慮すべき問題に関するガイドラインについては、[アクセシビリティのチェックリスト](~/cross-platform/app-fundamentals/accessibility.md)をご覧ください。 大きなフォント サイズや、適切な色とコントラストの設定など、アクセシビリティに関する問題の多くは、Xamarin.Forms の API で既に対処されている場合があります。
 
-[Android のアクセシビリティ](~/android/app-fundamentals/accessibility.md)と[iOS アクセシビリティ](~/ios/app-fundamentals/accessibility.md)ガイドには、Xamarin によって公開されるネイティブ Api の詳細が含まれて、 [MSDN の UWP アクセシビリティ ガイド](https://msdn.microsoft.com/windows/uwp/accessibility/basic-accessibility-information)について説明します、プラットフォームでネイティブなアプローチです。 これらの Api は、各プラットフォームで完全にアクセス可能なアプリケーションを実装するために使用されます。
+[Android のアクセシビリティ](~/android/app-fundamentals/accessibility.md)と [iOS のアクセシビリティ](~/ios/app-fundamentals/accessibility.md)に関するガイドには、Xamarin によって公開されているネイティブ API の詳細が含まれています。また、[MSDN 上の UWP アクセシビリティ ガイド](https://msdn.microsoft.com/windows/uwp/accessibility/basic-accessibility-information)では、そのプラットフォームでのネイティブなアプローチについて説明しています。 これらの API は、各プラットフォーム上にアクセシビリティを備えたアプリケーションを完全に実装するために使われます。
 
-Xamarin.Forms が現在持っていない*組み込み*のすべてのユーザー補助の基になるプラットフォームで利用可能な Api をサポートします。 ただしはサポート オートメーションのプロパティの設定画面リーダーおよびナビゲーションの支援ツールをサポートするためにユーザー インターフェイス要素にアクセスできるアプリケーションの構築の最も重要な部分の 1 つです。 詳細については、次を参照してください。[のオートメーション プロパティ](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)します。
+現在、Xamarin.Forms には、基になる各プラットフォーム上で使用できるアクセシビリティ API のすべてに対する "*組み込み*" のサポートが含まれているわけではありません。 ただし、ユーザー インターフェイス要素上でのオートメーション プロパティの設定がサポートされ、スクリーン リーダーとナビゲーション支援ツールがサポートされます。これは、アクセシビリティを備えたアプリケーション構築における最も重要な部分の 1 つです。 詳細については、[オートメーション プロパティ](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)に関するページをご覧ください。
 
-Xamarin.Forms アプリケーションでは、指定されたコントロールのタブ オーダーはこともできます。 詳細については、次を参照してください。[キーボード ナビゲーション](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)します。
+Xamarin.Forms アプリケーションでは、コントロールのタブ オーダーを指定することもできます。 詳細については、[キーボード ナビゲーション](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)に関するページをご覧ください。
 
-その他のユーザー補助 Api (など[ios PostNotification](~/ios/app-fundamentals/accessibility.md)) するほうが適している可能性があります、 [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)または[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)実装します。 これらは、このガイドでは説明しません。
+その他のアクセシビリティ API ([iOS での PostNotification](~/ios/app-fundamentals/accessibility.md) など) については、[`DependencyService`](~/xamarin-forms/app-fundamentals/dependency-service/index.md) または [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)の実装の方が適している可能性があります。 これらについては、このガイドでは説明しません。
 
-## <a name="testing-accessibility"></a>ユーザー補助のテスト
+## <a name="testing-accessibility"></a>アクセシビリティのテスト
 
-Xamarin.Forms アプリケーションには、プラットフォームに応じて、ユーザー補助機能をテストすることを意味する複数のプラットフォームでは、通常ターゲットします。 各プラットフォームでのアクセシビリティをテストする方法については、これらのリンクに従います。
+通常、Xamarin.Forms アプリケーションは複数のプラットフォームを対象とします。これは、プラットフォームに応じてアクセシビリティ機能をテストすることを意味しています。 次のリンクに従って、各プラットフォーム上でアクセシビリティをテストする方法について学習します。
 
-- [**iOS テスト**](~/ios/app-fundamentals/accessibility.md)
+- [**iOS のテスト**](~/ios/app-fundamentals/accessibility.md)
 - [**Android のテスト**](~/android/app-fundamentals/accessibility.md)
 - [**Windows AccScope (MSDN)**](https://msdn.microsoft.com/library/windows/desktop/dn433239)
 
 ## <a name="related-links"></a>関連リンク
 
-- [クロス プラットフォームのユーザー補助機能](~/cross-platform/app-fundamentals/accessibility.md)
+- [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
 - [オートメーションのプロパティ](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)
-- [キーボードのアクセシビリティ](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)
+- [キーボード アクセシビリティ](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)
