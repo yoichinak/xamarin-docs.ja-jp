@@ -1,69 +1,71 @@
 ---
-title: このサンプルを理解します。
-description: このトピックでは、別の web サービスと通信する方法については、Xamarin.Forms サンプル アプリケーションのチュートリアルを提供します。 各 web サービスは、別個のサンプル アプリケーションを使用するときに、機能的によく似た、一般的なクラスを共有します。
+title: サンプルについて理解します。
+description: このトピックでは、別の web サービスと通信する方法について説明する Xamarin.Forms のサンプル アプリケーションのチュートリアルを示します。 別のサンプル アプリケーションを使用すると、各 web サービスが機能的に似ており共通クラスを共有します。
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: d10bdc605fca199a4d0286ce662a27094b5b98f4
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: bfd7330fa1eee5f80a9043341d9760058d99d48b
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847567"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053452"
 ---
-# <a name="understanding-the-sample"></a>このサンプルを理解します。
+# <a name="understanding-the-sample"></a>サンプルについて理解します。
 
-_このトピックでは、別の web サービスと通信する方法については、Xamarin.Forms サンプル アプリケーションのチュートリアルを提供します。各 web サービスは、別個のサンプル アプリケーションを使用するときに、機能的によく似た、一般的なクラスを共有します。_
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
 
-以下に示すサンプルの to do リスト アプリケーションは、Xamarin.Forms を使用した web サービスのバックエンドのさまざまな種類にアクセスする方法を示すために使用されます。 機能を提供します。
+_このトピックでは、別の web サービスと通信する方法について説明する Xamarin.Forms のサンプル アプリケーションのチュートリアルを示します。別のサンプル アプリケーションを使用すると、各 web サービスが機能的に似ており共通クラスを共有します。_
+
+以下に示すサンプルの to-do list アプリケーションを使用してを Xamarin.Forms での web サービスのバックエンドのさまざまな種類にアクセスする方法を示します。 機能を提供します。
 
 - タスクの一覧を表示します。
 - 追加、編集、およびタスクを削除します。
-- 'Done' に、タスクの状態を設定します。
-- タスクの名前とメモ フィールドを話します。
+- タスクの状態 'done' に設定します。
+- タスクの名前とメモ フィールドを読み上げます。
 
-すべての場合、タスクは、web サービスからアクセスするバックエンドに格納されます。
+すべてのケースで、タスクは、web サービス経由でアクセスするバックエンドに格納されます。
 
-アプリケーションを起動すると、web サービスから取得したすべてのタスクを一覧表示して、新しいタスクを作成するユーザーをできるように、ページが表示されます。 タスクをクリックすると、2 番目のページを使用している場所タスクでく編集、保存、削除、および読み上げにアプリケーションが移動します。 最終的なアプリケーションは、次のとおりです。
+アプリケーションが起動され、web サービスから取得したすべてのタスク一覧が表示され、新しいタスクを作成するユーザーは、ページが表示されます。 タスクをクリックすると、アプリケーションを 2 番目のページでタスクことができますが編集、保存、削除され、音声が移動します。 最終的なアプリケーションは、次のとおりです。
 
-![](walkthrough-images/app-example-1.png "Todo アプリケーション - 最初のページ")
-![](walkthrough-images/app-example-2.png "Todo アプリケーション - 2 ページ目")
+![](walkthrough-images/app-example-1.png "Todo アプリケーションの最初のページ")
+![](walkthrough-images/app-example-2.png "Todo アプリケーションの 2 番目のページ")
 
-このガイドの各トピックを提供するダウンロード リンク、*異なる*を web サービスのバックエンドの特定の種類を示すアプリケーションのバージョン。 各 web サービス スタイルに関連するページに関連するサンプル コードをダウンロードします。
+このガイド内の各トピックへのダウンロード リンクを提供する、*異なる*web サービスのバックエンドの特定の種類を示す、アプリケーションのバージョン。 各 web サービス スタイルに関連するページに関連するサンプル コードをダウンロードします。
 
-## <a name="understanding-the-application-anatomy"></a>アプリケーション構造を理解します。
+## <a name="understanding-the-application-anatomy"></a>アプリケーションの構造を理解します。
 
-各サンプル アプリケーションについては、PCL プロジェクトは、次の 3 つのメイン フォルダーで構成されます。
+3 つのメイン フォルダーの各サンプル アプリケーションについては、PCL プロジェクトで構成されます。
 
 |フォルダー|目的|
 |--- |--- |
-|データ|データ項目を管理し、web サービスとの通信に使用するインターフェイスとクラスが含まれています。 少なくとも、これが含まれています、`TodoItemManager`のプロパティによって公開されるクラス、 `App` web サービス操作の呼び出しにクラスです。|
-|モデル|アプリケーションのデータ モデル クラスを含みます。 少なくとも、これが含まれています、`TodoItem`クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、ユーザー データのモデルで使用されるその他のクラスも指定できます。|
-|Views|アプリケーション ページが含まれます。 通常から成る、`TodoListPage`と`TodoItemPage`クラス、および認証の目的で使用されるその他のクラスです。|
+|データ|クラスとデータ項目を管理し、web サービスと通信するために使用するインターフェイスが含まれています。 ここには、少なくとも、`TodoItemManager`クラスのプロパティによって公開される、 `App` web サービスの操作を呼び出すクラス。|
+|モデル|アプリケーションのデータ モデル クラスが含まれています。 ここには、少なくとも、`TodoItem`クラスは、アプリケーションによって使用されるデータの 1 つの項目をモデル化します。 フォルダーは、ユーザー データのモデリングに使用されるその他のクラスも含めることができます。|
+|Views|アプリケーションのページが含まれています。 通常から成る、`TodoListPage`と`TodoItemPage`クラス、および認証のために使用されるその他のクラス。|
 
-重要なファイルの数もアプリケーションごとに PCL プロジェクトの構成します。
+アプリケーションごとに、PCL プロジェクトも、多数の重要なファイルで構成されます。
 
 |ファイル|目的|
 |--- |--- |
-|Constants.cs|`Constants`クラスは、web サービスと通信するために、アプリケーションで使用される任意の定数を指定します。 これらの定数は、プロバイダーに対して作成された個人のバックエンド サービスにアクセスする更新が必要です。|
-|ITextToSpeech.cs|`ITextToSpeech`ことを指定するインターフェイス、`Speak`メソッドを実装する任意のクラスによって提供される必要があります。|
-|Todo.cs|`App`を各プラットフォームでのアプリケーションによって表示される両方の最初のページをインスタンス化するクラスと`TodoItemManager`web サービス操作の呼び出しに使用されるクラスです。|
+|Constants.cs|`Constants`クラスは、web サービスと通信するために、アプリケーションで使用される任意の定数を指定します。 これらの定数は、プロバイダー上に作成、個人のバックエンド サービスにアクセスする更新が必要です。|
+|ITextToSpeech.cs|`ITextToSpeech`インターフェイスでは、ことを指定します、`Speak`メソッドを実装するクラスによって提供される必要があります。|
+|Todo.cs|`App`は、各プラットフォームでアプリケーションによって表示される両方の最初のページをインスタンス化を担当するクラスと`TodoItemManager`web サービス操作の呼び出しに使用されるクラスです。|
 
 ### <a name="viewing-pages"></a>ページの表示
 
 サンプル アプリケーションの大部分には、少なくとも 2 つのページが含まれています。
 
-- **TodoListPage** – このページの一覧を表示する`TodoItem`インスタンス、およびのチェック マーク アイコン場合、`TodoItem.Done`プロパティは`true`します。 移動するアイテムをクリックすると、`TodoItemPage`です。 新しい項目を作成してをクリックするとさらに、 *+* シンボル。
-- **TodoItemPage** – このページには、選択した詳細が表示されます。 `TodoItem`、し、編集、保存、削除、および読み上げすることができます。
+- **TodoListPage** – このページの一覧を表示する`TodoItem`インスタンス、およびのチェック マーク アイコン場合、`TodoItem.Done`プロパティは`true`します。 移動する項目をクリックすると、`TodoItemPage`します。 新しい項目を作成してをクリックしてさらに、 *+* シンボル。
+- **TodoItemPage** – このページには、選択した詳細が表示されます。 `TodoItem`、し、編集、保存、削除、および話されるようになります。
 
-さらに、いくつかのサンプル アプリケーションは、ユーザーの認証プロセスの管理に使用される追加のページを含んでいます。
+さらに、一部のサンプル アプリケーションには、ユーザーの認証プロセスの管理に使用される追加のページが含まれます。
 
-### <a name="modeling-the-data"></a>データをモデリング
+### <a name="modeling-the-data"></a>データのモデリング
 
-各サンプル アプリケーションを使用して、`TodoItem`表示され、記憶域用の web サービスに送信されるデータをモデル化するクラス。 次に示すのは、`TodoItem` クラスのコード例です。
+各サンプル アプリケーションを使用して、`TodoItem`を表示し、記憶域の web サービスに送信されるデータをモデル化するクラス。 次に示すのは、`TodoItem` クラスのコード例です。
 
 ```csharp
 public class TodoItem
@@ -75,23 +77,23 @@ public class TodoItem
 }
 ```
 
-`ID`プロパティを使用して、それぞれを一意に識別`TodoItem`、インスタンス化し、各 web サービスによって更新または削除するデータを識別するために使用します。
+`ID`プロパティは、それぞれを一意に識別するために使用`TodoItem`インスタンス、および更新または削除するデータを識別するために各 web サービスによって使用されます。
 
 ### <a name="invoking-web-service-operations"></a>Web サービスの操作を呼び出す
 
-Web サービス操作にはを通じてアクセス、`TodoItemManager`クラス、およびクラスのインスタンスを通じてアクセスできる、`App.TodoManager`プロパティです。 `TodoItemManager`クラスは、web サービス操作の呼び出しに次のメソッドを提供します。
+Web サービスの操作を使用してアクセスされる、`TodoItemManager`クラスやクラスのインスタンスにアクセスできる、`App.TodoManager`プロパティ。 `TodoItemManager`クラスは、web サービスの操作を呼び出す次のメソッドを提供します。
 
-- **GetTasksAsync** – このメソッドは、設定に使用されます、`ListView`の control 権限、`TodoListPage`で、 `TodoItem` web サービスからインスタンスを取得します。
-- **SaveTaskAsync** – このメソッドを作成または更新に使用、 `TodoItem` web サービスのインスタンス。
+- **GetTasksAsync** – このメソッドを使用して設定を`ListView`の control 権限、`TodoListPage`で、`TodoItem`インスタンスは、web サービスから取得します。
+- **SaveTaskAsync** – このメソッドを使用して作成または更新を`TodoItem`web サービスのインスタンス。
 - **DeleteTaskAsync** – このメソッドを使用して、削除、 `TodoItem` web サービスのインスタンス。
 
-さらに、サンプル アプリケーションに含める追加のメソッド、`TodoItemManager`クラスは、ユーザーの認証プロセスを管理するために使用します。
+さらに、一部のサンプル アプリケーションに含める追加のメソッドで、`TodoItemManager`クラスは、ユーザーの認証プロセスを管理するために使用します。
 
-Web サービスの操作を直接呼び出すのではなく、`TodoItemManager`メソッドに組み込まれている依存クラスのメソッドを呼び出し、`TodoItemManager`コンス トラクターです。 たとえば、1 つのサンプル アプリケーションでは挿入、`RestService`にクラス、`TodoItemManager`データにアクセスする REST Api を使用する実装を提供するコンス トラクターです。
+Web サービスの操作を直接呼び出すのではなく、`TodoItemManager`メソッドに挿入される依存クラスのメソッドを呼び出し、`TodoItemManager`コンス トラクター。 たとえば、1 つのサンプル アプリケーションを挿入、`RestService`にクラス、 `TodoItemManager` REST Api を使用して、データにアクセスする実装を提供するコンス トラクター。
 
-### <a name="translating-text-to-speech"></a>Text to Speech を変換します。
+### <a name="translating-text-to-speech"></a>テキストを音声に変換します。
 
-サンプル アプリケーションの大部分には、値を話すに音声合成 (TTS) 機能が含まれて、`TodoItem.Name`と`TodoItem.Notes`プロパティです。 これは、`OnSpeakActivated`内のイベント ハンドラー、`TodoItemPage`クラスに、次のコード例に示すようにします。
+サンプル アプリケーションの大部分は、音声合成 (TTS) 機能を聞くの値を含めることが、`TodoItem.Name`と`TodoItem.Notes`プロパティ。 これは、`OnSpeakActivated`内のイベント ハンドラー、`TodoItemPage`クラスに、次のコード例に示すようにします。
 
 ```csharp
 void OnSpeakActivated (object sender, EventArgs e)
@@ -101,11 +103,11 @@ void OnSpeakActivated (object sender, EventArgs e)
 }
 ```
 
-このメソッドを呼び出すだけ、`Speak`プラットフォーム固有の仕様によって実装されるメソッド`Speech`クラスです。 各`Speech`クラスが実装する、`ITextToSpeech`インターフェイス、プラットフォーム固有のスタートアップ コードは、のインスタンスを作成し、`Speech`経由でアクセスできるクラス、`App.Speech`プロパティです。
+このメソッドを呼び出すだけ、`Speak`プラットフォーム固有によって実装されるメソッド`Speech`クラス。 各`Speech`クラスが実装する、`ITextToSpeech`インターフェイス、プラットフォーム固有のスタートアップ コードのインスタンスを作成して、`Speech`クラス経由でアクセスできる、`App.Speech`プロパティ。
 
 ## <a name="summary"></a>まとめ
 
-このトピックでは、別の web サービスと通信する方法を示すために使用される Xamarin.Forms サンプル アプリケーションのチュートリアルが用意されています。 各 web サービスで別のサンプル アプリケーションを使用して、すべてに基づいている同じユーザー インターフェイスとビジネス ロジック前述 - web サービス データ ストレージ機構のみが異なる。
+このトピックでは、別の web サービスと通信する方法について説明するために使用する Xamarin.Forms のサンプル アプリケーションのチュートリアルが用意されています。 別のサンプル アプリケーションを使用すると、各 web サービスすべてに基づいている同じユーザー インターフェイスとビジネス ロジック上に示したで web サービスのデータ ストレージ機構のみが異なります。
 
 
 ## <a name="related-links"></a>関連リンク
@@ -113,4 +115,4 @@ void OnSpeakActivated (object sender, EventArgs e)
 - [ASMX バージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX)
 - [WCF のバージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
 - [REST バージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
-- [Azure のバージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure)
+- [Azure バージョン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure)

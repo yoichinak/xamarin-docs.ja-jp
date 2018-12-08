@@ -7,14 +7,16 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: eebfe40bca6db92bae1f2fdcc9cbff3173dc4e51
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172016"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059205"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp のビットマップのピクセル ビットへのアクセス
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 この記事で示した[**保存 SkiaSharp ビットマップ ファイルを**](saving.md)ビットマップは一般に JPEG または PNG などの圧縮形式でファイルに格納されています。 異なり、メモリに格納されている SkiaSharp ビットマップは圧縮されません。 ピクセルの連番として格納されます。 この非圧縮形式には、ビットマップの表示サーフェイスへの転送が容易になります。
 

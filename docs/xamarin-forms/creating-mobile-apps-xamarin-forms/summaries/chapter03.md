@@ -7,14 +7,16 @@ ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 609b0066e033b48be55056d459e818a9acc9625c
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: db1ab31249cc40d3496770877e492d652bcfc517
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563330"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052596"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要です。 テキストに進む
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
 
 この章の説明、 [ `Label` ](xref:Xamarin.Forms.Label)色、フォント、書式設定など、詳しく表示されます。
 

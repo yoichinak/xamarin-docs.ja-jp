@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 9226e1d26dcc49b6ec82b71f7757eb0e22cd66ec
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 56e50f0c3dffd54fe3d95f4cd140883613c9206f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171977"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052716"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 
 _この記事では、アプリケーションの依存関係注入コンテナーがある作成およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。この記事のコード例がから取得した、[コンテナーを使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)サンプル。_
 
@@ -301,6 +303,6 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 - [コンテナー (サンプル) を使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 - [依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
-- [ビデオ プレーヤーを実装します。](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
+- [ビデオ プレーヤーの実装](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [効果からのイベントの呼び出し](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
 - [画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

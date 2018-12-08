@@ -7,14 +7,16 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: d90bef4da589215247f412450905a5db541b0444
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 764a148ffffc2c69dbab5aeca872e2d10ce9f159
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563161"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052742"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要です。 ページのナビゲーション
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 
 多くのアプリケーションは、ユーザーが移動する複数のページで構成されます。 アプリケーションは常には、*メイン*ページまたは*ホーム* ページで、し、そこから、ユーザーの移動に他のページに戻るためのスタックに保持されます。 追加のナビゲーション オプションは、「 [**第 25 章です。さまざまなページ**](chapter25.md)します。
 

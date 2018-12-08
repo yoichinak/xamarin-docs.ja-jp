@@ -1,44 +1,46 @@
 ---
 title: Xamarin.Forms [相対レイアウト]
-description: この記事では、Xamarin.Forms [相対レイアウト] クラスを使用して、任意の画面サイズに合わせてスケール アウトする Ui を作成する方法について説明します。
+description: この記事では、Xamarin.Forms [相対レイアウト] クラスを使用して、任意の画面サイズに合わせて Ui を作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 712092e58a7a7358ba1fa808614822c7988e6105
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 4bd4524f4bf84327571609c8fb43dec164c9db56
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245056"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061228"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.Forms [相対レイアウト]
 
-`RelativeLayout` 位置とサイズ ビュー レイアウトまたは兄弟のビューのプロパティに対して相対的に使用されます。 異なり`AbsoluteLayout`、`RelativeLayout`移動アンカーの概念はありませんし、下または右のエッジのレイアウトの基準とした要素の配置機能はありません。 `RelativeLayout` 独自の境界の外部での位置の要素をサポートします。
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
-[![](relative-layout-images/layouts-sml.png "Xamarin.Forms レイアウト")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
+`RelativeLayout` 位置とサイズのビュー レイアウトまたは兄弟のビューのプロパティを基準に使用されます。 異なり`AbsoluteLayout`、`RelativeLayout`移動アンカーの概念はありませんし、下または右揃えのレイアウトの関連要素を配置するための機能はありません。 `RelativeLayout` 独自の境界の外部での位置の要素をサポートします。
+
+[![](relative-layout-images/layouts-sml.png "Xamarin.Forms のレイアウト")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
 
 ## <a name="purpose"></a>目的
 
-`RelativeLayout` 画面レイアウト全体の基準とした、または他のビューでビューを配置するために使用します。
+`RelativeLayout` 全体的なレイアウトを基準とした、または他のビューに画面上でビューを配置するために使用します。
 
-![](relative-layout-images/flag.png "[相対レイアウト] 探索")
+![](relative-layout-images/flag.png "[相対レイアウト] の探索")
 
 ## <a name="usage"></a>使用法
 
-### <a name="understanding-constraints"></a>Understanding 制約
+### <a name="understanding-constraints"></a>制約を理解します。
 
-配置や内でビューをサイズ変更、`RelativeLayout`制約を使用して行われます。 制約式には、次の情報を含めることができます。
+位置およびサイズ内にビューを`RelativeLayout`は制約で行われます。 制約式には、次の情報を含めることができます。
 
-- **型**&ndash;かどうかは、制約、または別のビューに、親への相対します。
-- **プロパティ**&ndash;制約の基礎として使用するプロパティです。
-- **係数**&ndash;プロパティの値に適用する場合の係数。
-- **定数**&ndash;オフセットの値として使用する値。
-- **ElementName** &ndash;に対して相対的な制約があるビューの名前。
+- **型**&ndash;制約は、親に対する相対的なまたは別のビューに、かどうか。
+- **プロパティ**&ndash;制約の基礎として使用するプロパティ。
+- **係数**&ndash;プロパティの値に適用する係数。
+- **定数**&ndash;値のオフセットとして使用する値。
+- **ElementName** &ndash;に関連する制約があるビューの名前。
 
-XAML では、制約がで表される`ConstraintExpression`s。 次に例を示します。
+表される制約では、XAML、`ConstraintExpression`秒。 次に例を示します。
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"
@@ -54,7 +56,7 @@ XAML では、制約がで表される`ConstraintExpression`s。 次に例を示
                              Constant=-100}" />
 ```
 
-C# の場合は、制約は少し異なる方法では、使用して表されます関数には、式ではなく、ビューにします。 制約がレイアウトへの引数として指定された`Add`メソッド。
+C#、制約はビューの式ではなく、関数を使用して、少し異なる方法で表されます。 制約がレイアウトへの引数として指定された`Add`メソッド。
 
 ```csharp
 layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
@@ -68,19 +70,19 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
     Constraint.Constant(50), Constraint.Constant(50));
 ```
 
-上記のレイアウトの次の点に注意してください。
+上記のレイアウトの以下の点に注意してください。
 
-- `x`と`y`制約は、独自の制約で指定します。
-- C# の場合は、相対的な制約は、関数として定義されます。 などの概念`Factor`、そこではありませんが、手動で実装することができます。
-- ボックスの`x`座標は、親、-100 の半分の幅として定義します。
-- ボックスの`y`-100、親の高さの半分と座標を定義します。
+- `x`と`y`独自の制約で制約を指定します。
+- C#、相対的な制約は、関数として定義されます。 などの概念`Factor`ないが手動で実装することができます。
+- ボックスの`x`座標は親、-100 の半分の幅として定義されます。
+- ボックスの`y`座標は親、-100 の高さの半分として定義されます。
 
 > [!NOTE]
-> 制約が定義されているため、c# XAML で指定できるよりも複雑なレイアウトを作成することができます。
+> 制約が定義されているためより複雑なレイアウトを作成することはC#よりも、XAML で指定できます。
 
-制約として上記の例の両方を定義する`RelativeToParent`&ndash;その値は、親要素に対する相対パスは、します。 別のビューに対して相対的に制約を定義することもできます。 これによりより直観的 (開発者) にレイアウトによりし、レイアウト コードの意図をより容易に明らかに行うことができます。
+上記の例の両方の定義の制約として`RelativeToParent`&ndash;親要素を基準とはその値。 別のビューに対して相対的に制約を定義することもできます。 これにより、(開発者) より直感的なレイアウトでは、およびことレイアウト コードの意図をより簡単に判断することができます。
 
-1 つの要素が他よりも低い 20 ピクセルを指定する必要があるレイアウトを検討してください。 定数値には、両方の要素が定義されている、低い可能性がその`Y`20 ピクセルよりも大きい値である定数として定義されている制約、`Y`上位の要素の制約。 アプローチ遅れを上位の要素が配置されている場合、縦横比を使用できるように、ピクセルのサイズが認識されていません。 その場合は、別の要素の位置に基づいて要素の制約より堅牢です。
+1 つの要素が他よりも低い 20 ピクセルを指定する必要があるレイアウトを検討してください。 定数値を持つは、両方の要素が定義されている、低い可能性がその`Y`20 ピクセルよりも大きい値である定数として定義された制約、`Y`上位の要素の制約。 このアプローチでは、上位の要素が配置されている場合、縦横比を使用して、ピクセル サイズがわからないようにが不十分です。 その場合は、別の要素の位置に基づいて要素を制限することがより堅牢です。
 
 ```xaml
 <RelativeLayout>
@@ -103,7 +105,7 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
 </RelativeLayout>
 ```
 
-C# では、同じレイアウトを実行します。
+同じレイアウトを実行するC#:
 
 ```csharp
 layout.Children.Add (redBox, Constraint.RelativeToParent ((parent) => {
@@ -126,9 +128,9 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
     }));
 ```
 
-これには、次の決定の青いボックスの位置と、出力が生成されます_相対_赤いボックスの位置に。
+次の決定は青のボックスの位置で、出力が生成されます_相対_赤いボックスの位置。
 
-![](relative-layout-images/red-blue-box.png "赤と青の BoxViews と [相対レイアウト]")
+![](relative-layout-images/red-blue-box.png "赤、青の BoxViews で [相対レイアウト]")
 
 ### <a name="sizing"></a>サイズ変更
 
@@ -137,12 +139,12 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
 - `HeightRequest & WidthRequest`
 - `RelativeLayout.WidthConstraint` & `RelativeLayout.HeightConstraint`
 
-`HeightRequest` および`WidthRequest`目的の高さと幅、ビューの指定が必要なレイアウトによってオーバーライドできます。 `WidthConstraint` および`HeightConstraint`レイアウトのまたは別のビューのプロパティで、基準とした値、または定数値として高さと幅の設定をサポートします。
+`HeightRequest` `WidthRequest`目的の高さと幅、ビューの指定しますが、必要なレイアウトでオーバーライドされる可能性があります。 `WidthConstraint` `HeightConstraint`レイアウトのまたは別のビューのプロパティで、基準とした値、または定数値として、高さと幅の設定をサポートします。
 
-## <a name="exploring-a-complex-layout"></a>複雑なレイアウトを調べる
-レイアウトの各は、特定のレイアウトを作成するの長所と短所があります。 この一連のレイアウトの記事では、全体で同じページ レイアウトを次の 3 つの異なるレイアウトを使用して実装されているサンプル アプリケーションが作成されました。
+## <a name="exploring-a-complex-layout"></a>複雑なレイアウトの調査
+レイアウトの各は、特定のレイアウトを作成する長所と短所があります。 この一連のレイアウトの記事では、全体で同じページ レイアウトを次の 3 つの異なるレイアウトを使用して実装されているサンプル アプリが作成されました。
 
-次の XAML を考慮してください。
+次の XAML を検討してください。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -223,7 +225,7 @@ Title="RelativeLayout">
 
 ![](relative-layout-images/relative.png "複雑な [相対レイアウト]")
 
-注意して`RelativeLayouts`s が入れ子になった場合によってはレイアウトを入れ子が許容されるので、同じレイアウト内のすべての要素を表示するよりも簡単です。 いくつかの要素があることを確認も`RelativeToView`ビュー間のリレーションシップに従って、配置時に簡単になりより直感的なレイアウトのできるため、します。
+注意`RelativeLayouts`s が入れ子になった場合によってはレイアウトを入れ子できるので、同じレイアウト内のすべての要素を表示するよりも簡単です。 一部の要素が通知も`RelativeToView`ビュー間のリレーションシップに従って配置時に、簡単かつより直感的なレイアウトにできるようにするためです。
 
 
 ## <a name="related-links"></a>関連リンク

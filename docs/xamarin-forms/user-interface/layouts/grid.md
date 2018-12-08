@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: ff485774b8e9ee47aae4808701e8b9d20c308e03
-ms.sourcegitcommit: 676c5a6795ab4896ccd1b288424bf2040b1208aa
+ms.openlocfilehash: 25c5077b3637c54370fa1a42a9b652ef211c0ed9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52280479"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059341"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms のグリッド
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
 [`Grid`](xref:Xamarin.Forms.Grid) ビューの行と列に配置をサポートします。 比例サイズや絶対サイズを持つ行と列を設定できます。 `Grid`レイアウトは、従来のテーブルに混同しない必要があり、表形式のデータを提示するものではありません。 `Grid` 行、列またはセルの書式の概念はありません。 HTML のテーブルとは異なり`Grid`コンテンツをレイアウトするためのものが純粋です。
 

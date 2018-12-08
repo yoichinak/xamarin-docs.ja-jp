@@ -7,14 +7,16 @@ ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 99378a2974891ec78977b29adc99350395b5ad14
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: db837ac8bfa1b7a946ee606e9481f9feb2a8a31f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563304"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050126"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要です。 MVVM
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 呼ばれます、基になる、コードからのユーザー インターフェイスを分離することで、アプリケーションを構築する最善の方法の 1 つは、*ビジネス ロジック*します。 いくつかの手法が存在するが、XAML ベースの環境用に調整されているがモデル-ビュー-ビューモデルまたは MVVM と呼ばれます。
 

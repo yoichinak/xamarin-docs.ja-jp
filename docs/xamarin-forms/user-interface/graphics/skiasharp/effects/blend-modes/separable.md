@@ -7,14 +7,16 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: c064b7fd5e436092593a194aee5d7498aef6c057
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 594e98230d4f4bd8aca27f92f4544f8c59b5f0a2
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131765"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061456"
 ---
 # <a name="the-separable-blend-modes"></a>Blend の分離モード
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 この記事で示した[ **SkiaSharp の Porter Duff ブレンド モード**](porter-duff.md)、Porter Duff blend モードは、一般にクリッピングの操作を実行します。 Blend の分離モードは異なります。 分離モードでは、イメージの個々 の赤、緑、および青の色のコンポーネントを変更します。 Blend の分離モードでは、赤、緑、青の組み合わせが本当に白いことを示すための色を混在させることが。
 

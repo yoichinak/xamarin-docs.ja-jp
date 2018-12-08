@@ -1,131 +1,133 @@
 ---
-title: 格納して、Azure ストレージ内のデータにアクセスします。
-description: Azure ストレージは、非構造化、および構造化データを格納するために使用するスケーラブルなクラウド記憶域ソリューションです。 この記事では、Xamarin.Forms を使用して、Azure ストレージ内のテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。
+title: Azure Storage 内のデータ格納とアクセス
+description: Azure Storage とは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド ストレージ ソリューションです。 この記事では、Xamarin.Forms を使用して Azure Storage にテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 63afeec81eff350b034e8dd3a13da52801937826
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1f920eb36eab3e451b20aa91734f00cee5ba6485
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30789873"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059221"
 ---
-# <a name="storing-and-accessing-data-in-azure-storage"></a>格納して、Azure ストレージ内のデータにアクセスします。
+# <a name="storing-and-accessing-data-in-azure-storage"></a>Azure Storage 内のデータ格納とアクセス
 
-_Azure ストレージは、非構造化、および構造化データを格納するために使用するスケーラブルなクラウド記憶域ソリューションです。この記事では、Xamarin.Forms を使用して、Azure ストレージ内のテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。_
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
+
+_Azure Storage とは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド ストレージ ソリューションです。この記事では、Xamarin.Forms を使用して Azure Storage にテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。_
 
 ## <a name="overview"></a>概要
 
-Azure ストレージでは、次の 4 つの記憶域サービスを提供します。
+Azure Storage では、4 つのストレージ サービスを提供します。
 
-- Blob ストレージです。 Blob には、バックアップ、仮想マシン、メディア ファイルやドキュメントなどのテキストまたはバイナリ データを指定できます。
-- テーブル ストレージは、NoSQL キー属性ストアです。
-- キュー ストレージは、ワークフローの処理およびクラウド サービス間の通信のメッセージング サービスです。
-- ファイル記憶域は、SMB プロトコルを使用して共有記憶域を提供します。
+- Blob Storage。 Blob は、バックアップ、仮想マシン、メディア ファイルやドキュメントなどのテキストまたはバイナリのデータを指定できます。
+- Table Storage は、NoSQL キー属性ストアです。
+- Queue Storage とは、ワークフロー処理およびクラウド サービス間通信のためのメッセージング サービスです。
+- File Storage は SMB プロトコルを使用して共有記憶域を提供します。
 
-ストレージ アカウントの 2 つの種類があります。
+2 つの種類のストレージ アカウントがあります。
 
-- 汎用的なストレージ アカウントは、1 つのアカウントから Azure ストレージ サービスへのアクセスを提供します。
-- Blob ストレージ アカウントとは、blob を格納するための特殊なストレージ アカウントです。 のみ blob のデータを格納する必要がある場合は、このアカウントの種類を使用することをお勧めします。
+- 汎用ストレージ アカウントは、1 つのアカウントから Azure Storage サービスにアクセスを提供します。
+- Blob ストレージ アカウントは、blob を格納するための特殊なストレージ アカウントです。 のみ blob のデータを格納する必要がある場合は、このアカウントの種類を使用することをお勧めします。
 
-この記事と付属のサンプル アプリケーションは、blob ストレージ、およびそれらをダウンロードする画像およびテキスト ファイルのアップロードを示します。 さらに、これは、blob ストレージからファイルの一覧を取得し、ファイルを削除するにも示します。
+この記事と付属のサンプル アプリケーションでは、blob storage、およびそれらをダウンロードするイメージとテキスト ファイルのアップロードを示します。 さらに、これは、blob storage からファイルの一覧を取得して、ファイルの削除にも示します。
 
-Azure Storage の詳細については、次を参照してください。[ストレージの概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)です。
+Azure Storage の詳細については、次を参照してください。 [Storage の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)します。
 
-## <a name="introduction-to-blob-storage"></a>Blob ストレージの概要
+## <a name="introduction-to-blob-storage"></a>Blob Storage の概要
 
 Blob ストレージは、次の図に示されている 3 つのコンポーネントで構成されます。
 
-![](azure-storage-images/blob-storage.png "Blob ストレージの概念")
+![](azure-storage-images/blob-storage.png "Blob Storage の概念")
 
-Azure ストレージに対するすべてのアクセスでは、ストレージ アカウントを使用します。 ストレージ アカウントは、コンテナーの無制限の数を含めることができ、コンテナーがストレージ アカウントの容量の上限に達するまで、blob の数は無制限に格納できます。
+Azure Storage にアクセスするでは、ストレージ アカウントを使用します。 ストレージ アカウントは、コンテナーの無制限の数を含めることができ、コンテナーがストレージ アカウントの容量の上限に達するまで、blob の無制限の数を格納します。
 
-Blob は、任意の型とサイズのファイルです。 Azure ストレージには、次の 3 つの別の blob の種類がサポートされます。
+Blob は、任意の種類とサイズのファイルです。 Azure Storage には、次の 3 つの異なる blob の種類がサポートされています。
 
-- ブロック blob はストリーミングとクラウド オブジェクトを格納するために最適化された、バックアップ、メディア ファイル、ドキュメントなどを格納するための適切な選択です。ブロック blob には 195 Gb までのサイズを指定できます。
-- 追加 blob はブロック blob に似ていますが、用に最適化されたログ記録などの操作を追加します。 追加 blob は 195 Gb までのサイズを指定できます。
-- ページ blob では、頻繁に行われる読み取り/書き込み操作用に最適化され、は、通常、仮想マシンとそれにディスクを格納するために使用します。 ページ blob には、最大 1 Tb のサイズを指定できます。
+- ブロック blob はストリーミングとクラウド オブジェクトの格納用に最適化された、バックアップ、メディア ファイル、ドキュメントなどを格納するための適切な選択です。ブロック blob は最大 195 Gb のサイズを指定できます。
+- 追加 blob はブロック blob に似ていますが、用に最適化されたログ記録などの操作を追加します。 追加 blob は最大 195 Gb のサイズを指定できます。
+- ページ blob は、頻繁に読み取り/書き込み操作用に最適化され、仮想マシン、およびそれらのディスクを格納するために通常使用されます。 ページ blob は最大 1 Tb のサイズを指定できます。
 
 > [!NOTE]
-> Blob ストレージ アカウントはブロックをサポートして、追加 blob はページ blob ではなくことに注意してください。
+> Blob ストレージ アカウントがブロックのサポートし、追加 blob、ページ blob ではなくことに注意してください。
 
-Blob は Azure Storage にアップロードされ、バイトのストリームとしての Azure ストレージからダウンロードします。 そのため、ファイルをアップロードおよびダウンロード後に、元の形式に変換後のバックアップより前のバイトのストリームに変換する必要があります。
+Blob は、Azure Storage にアップロードし、バイトのストリームとして、Azure Storage からダウンロードします。 そのため、ファイルをアップロードおよびダウンロード後に、元の形式に変換されたバックする前にバイトのストリームに変換する必要があります。
 
-Azure ストレージに格納されているすべてのオブジェクトは、一意の URL アドレスを含んでいます。 ストレージ アカウント名は、そのアドレスとサブドメインとドメイン名の形式の組み合わせのサブドメインを形成、*エンドポイント*ストレージ アカウント。 たとえば、ストレージ アカウントの名前は*mystorageaccount*、ストレージ アカウントの既定の blob エンドポイント`https://mystorageaccount.blob.core.windows.net`です。
+Azure Storage に格納されているすべてのオブジェクトには、一意の URL アドレスがあります。 ストレージ アカウント名には、そのアドレスでは、およびサブドメインとドメイン名の形式の組み合わせのサブドメインを*エンドポイント*のストレージ アカウント。 たとえば、ストレージ アカウントの名前は*mystorageaccount*、ストレージ アカウントの既定の blob エンドポイントは`https://mystorageaccount.blob.core.windows.net`します。
 
-ストレージ アカウント内のオブジェクトにアクセスするための URL は、エンドポイントへのストレージ アカウント内のオブジェクトの場所を追加することによって作成されています。 たとえば、blob アドレスの形式がある`https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`です。
+ストレージ アカウント内のオブジェクトにアクセスするための URL は、ストレージ アカウント内のオブジェクトの場所をエンドポイントに追加することによって構築されます。 たとえば、blob のアドレスは形式である`https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`します。
 
 ## <a name="setup"></a>セットアップ
 
-Xamarin.Forms アプリケーションに、Azure ストレージ アカウントを統合するためのプロセスは次のとおりです。
+Xamarin.Forms アプリケーションに Azure Storage アカウントを統合するためのプロセスは次のとおりです。
 
 1. ストレージ アカウントを作成します。 詳細については、次を参照してください。[ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)です。
-1. 追加、 [Azure ストレージ クライアント ライブラリ](https://www.nuget.org/packages/WindowsAzure.Storage/)Xamarin.Forms アプリケーションにします。
-1. ストレージ接続文字列を構成します。 詳細については、次を参照してください。 [Azure ストレージに接続する](#connecting)です。
-1. 追加`using`のディレクティブを`Microsoft.WindowsAzure.Storage`と`Microsoft.WindowsAzure.Storage.Blob`名前空間の Azure ストレージにアクセスするクラス。
+1. 追加、 [Azure Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) Xamarin.Forms アプリケーションにします。
+1. ストレージ接続文字列を構成します。 詳細については、次を参照してください。 [Azure Storage に接続する](#connecting)します。
+1. 追加`using`ディレクティブを`Microsoft.WindowsAzure.Storage`と`Microsoft.WindowsAzure.Storage.Blob`名前空間を Azure Storage にアクセスするクラス。
 
 > [!NOTE]
-> このサンプルでは、共有アクセス プロジェクトでは、Azure ストレージ クライアント ライブラリ今すぐもサポート ポータブル クラス ライブラリ (PCL) プロジェクトから使用します。
+> このサンプルでは、アクセス、共有プロジェクトでは、Azure Storage クライアント ライブラリようになりましたもサポートしています、ポータブル クラス ライブラリ (PCL) プロジェクトから使用されています。
 
 <a name="connecting" />
 
-## <a name="connecting-to-azure-storage"></a>Azure ストレージへの接続
+## <a name="connecting-to-azure-storage"></a>Azure Storage への接続
 
-ストレージ アカウント リソースに対して行われたすべての要求を認証する必要があります。 Blob は、匿名認証をサポートするために構成できますは、アプリケーションは、ストレージ アカウントを認証に使用できる 2 つの主な方法があります。
+ストレージ アカウントのリソースに対して行われたすべての要求を認証する必要があります。 Blob は、匿名認証をサポートするように構成できるは、アプリケーションがストレージ アカウントに対する認証を使用できます 2 つの主な方法があります。
 
-- 共有キー。 このアプローチは、記憶域サービスへのアクセスの Azure ストレージ アカウント名とアカウント キーを使用します。 ストレージ アカウントには、共有キー認証を使用できる作成時に 2 つの秘密キーが割り当てられます。
-- 共有アクセス署名です。 これはトークンを記憶域リソースへの委任されたアクセスを有効にする URL に追加することができますが、アクセス許可を持つことを指定します、有効である期間。
+- 共有キー。 この方法は、記憶域サービスのアクセスを Azure Storage アカウント名とアカウント キーを使用します。 ストレージ アカウントには、共有キー認証を使用できる作成時に 2 つの秘密キーが割り当てられます。
+- 共有アクセス署名です。 これは、ストレージ リソースへの委任アクセスできるようにする URL に追加できるトークン、アクセス許可を持つことを指定します、有効期間。
 
-接続文字列を指定するには、アプリケーションから Azure のストレージ リソースにアクセスするために必要な認証情報が含まれています。 さらに、Visual Studio から Azure ストレージ エミュレーターに接続する接続文字列を構成することができます。
+アプリケーションから Azure Storage リソースへのアクセスに必要な認証情報が含まれる接続文字列を指定できます。 さらに、Visual Studio から Azure ストレージ エミュレーターに接続する接続文字列を構成できます。
 
 > [!NOTE]
-> Azure ストレージは、接続文字列で、HTTP および HTTPS をサポートします。 ただし、HTTPS を使用することをお勧めします。
+> Azure Storage は、接続文字列で、HTTP および HTTPS をサポートしています。 ただし、HTTPS を使用することをお勧めします。
 
-### <a name="connecting-to-the-azure-storage-emulator"></a>Azure ストレージ エミュレーターへの接続
+### <a name="connecting-to-the-azure-storage-emulator"></a>Azure ストレージ エミュレーターに接続します。
 
-Azure ストレージ エミュレーターは、Azure blob、キュー、および開発の目的のテーブル サービスをエミュレートするローカル環境を提供します。
+Azure ストレージ エミュレーターでは、Azure blob、キュー、および table service を開発用にエミュレートするローカル環境を提供します。
 
-次の接続文字列は、Azure ストレージ エミュレーターへの接続に使用する必要があります。
+次の接続文字列は、Azure ストレージ エミュレーターに接続するために使用する必要があります。
 
 ```csharp
 UseDevelopmentStorage=true
 ```
 
-Azure のストレージ エミュレーターの詳細については、次を参照してください。 [Azure のストレージ エミュレーターを使用して開発とテスト](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)です。
+Azure ストレージ エミュレーターの詳細については、次を参照してください。[開発およびテスト用の Azure ストレージ エミュレーターを使用して](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)します。
 
-### <a name="connecting-to-azure-storage-using-a-shared-key"></a>共有キーを使用して Azure ストレージへの接続
+### <a name="connecting-to-azure-storage-using-a-shared-key"></a>共有キーを使用して Azure Storage への接続
 
-共有キーを持つ Azure ストレージに接続するには、次の接続文字列の形式を使用してください。
+共有キーを使用して Azure Storage に接続するには、次の接続文字列の形式を使用してください。
 
 ```csharp
 DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 ```
 
-`myAccountName` ストレージ アカウントの名前に置き換える必要がありますと`myAccountKey`2 つのアカウント アクセス キーのいずれかで置き換える必要があります。
+`myAccountName` ストレージ アカウントの名前で置き換える必要がありますと`myAccountKey`2 つのアカウント アクセス キーのいずれかで置き換える必要があります。
 
 > [!NOTE]
-> キー認証、アカウント名とアカウント キーは、共有を使用する場合は、ストレージ アカウントへの完全な読み取り/書き込みアクセスを提供するアプリケーションを使用する各ユーザーに配布されます。 そのため、テスト目的でのみ、共有キー認証を使用し、決してを他のユーザー キーを配布します。
+> キー認証、アカウント名とアカウント キーは、共有を使用する場合は、ストレージ アカウントへの完全な読み取り/書き込みアクセスを提供するアプリケーションを使用するユーザーごとに分散されます。 したがって、テスト目的でのみ、共有キー認証を使用して、他のユーザーにキーを配布しません。
 
-### <a name="connecting-to-azure-storage-using-a-shared-access-signature"></a>共有アクセス署名を使用して Azure ストレージへの接続
+### <a name="connecting-to-azure-storage-using-a-shared-access-signature"></a>Shared Access Signature を使用して Azure Storage への接続
 
-Azure ストレージで、SAS に接続するには、次の接続文字列の形式を使用してください。
+SAS を使用して Azure Storage に接続するには、次の接続文字列の形式を使用してください。
 
 `BlobEndpoint=myBlobEndpoint;SharedAccessSignature=mySharedAccessSignature`
 
-`myBlobEndpoint` blob エンドポイントの URL を置き換える必要がありますと`mySharedAccessSignature`SAS に置き換える必要があります。 SAS は、プロトコル、サービス エンドポイント、およびリソースへのアクセス資格情報を提供します。
+`myBlobEndpoint` blob エンドポイントの URL で置き換える必要がありますと`mySharedAccessSignature`SAS で置き換える必要があります。 SAS は、プロトコル、サービス エンドポイント、およびリソースへのアクセス資格情報を提供します。
 
 > [!NOTE]
-> 実稼働アプリケーションには、SAS 認証を使用することをお勧めします。 ただし、実稼働アプリケーションでは、SAS をアプリケーションにバンドルされているのではなく、バックエンド サービス、オンデマンドでから取得する必要があります。
+> 実稼働アプリケーションには、SAS 認証を使用することをお勧めします。 ただし、運用アプリケーションでは、SAS をアプリケーションにバンドルされているのではなく、バックエンド サービス、オンデマンドでから取得する必要があります。
 
-共有アクセス署名の詳細については、次を参照してください。[を使用して共有アクセス署名 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)です。
+Shared Access Signature の詳細については、次を参照してください。 [Shared Access Signature (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)します。
 
-## <a name="creating-a-container"></a>コンテナーを作成します。
+## <a name="creating-a-container"></a>コンテナーの作成
 
-`GetContainer`コンテナーから blob を取得するかをコンテナーに blob を追加し、使用できる名前付きコンテナーへの参照を取得するメソッドを使用します。 次のコード例は、`GetContainer`メソッド。
+`GetContainer`コンテナーから blob を取得するか、コンテナーに blob を追加するに使用できる名前付きコンテナーへの参照を取得するメソッドを使用します。 次のコード例は、`GetContainer`メソッド。
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -136,28 +138,28 @@ static CloudBlobContainer GetContainer(ContainerType containerType)
 }
 ```
 
-`CloudStorageAccount.Parse`メソッドは、接続文字列を解析しを返します、`CloudStorageAccount`をストレージ アカウントを表すインスタンス。 A`CloudBlobClient`で使用する場合は、コンテナーと blob を取得する、インスタンスが作成されます、`CreateCloudBlobClient`メソッドです。 `GetContainerReference`メソッドとして、指定されたコンテナーの取得、`CloudBlobContainer`インスタンス、呼び出し元のメソッドに返される前にします。 この例ではコンテナー名は、`ContainerType`列挙値、小文字の文字列に変換します。
+`CloudStorageAccount.Parse`メソッドは、接続文字列を解析しを返します、`CloudStorageAccount`ストレージ アカウントを表すインスタンス。 A`CloudBlobClient`のコンテナーと blob の取得に使用されているインスタンスがによって作成された後、`CreateCloudBlobClient`メソッド。 `GetContainerReference`メソッドとして、指定されたコンテナーの取得、`CloudBlobContainer`インスタンス、呼び出し元のメソッドから返されます。 この例では、コンテナー名は、`ContainerType`列挙値、小文字の文字列に変換します。
 
 > [!NOTE]
-> コンテナー名は小文字である必要があり、アルファベットまたは数字で始める必要があります。 さらに、文字、数字、およびダッシュ文字のみを含めることができます、3 ~ 63 文字の間である必要があります。
+> コンテナー名は、小文字にする必要があり、文字または数字で開始する必要があります。 さらに、文字、数字、およびダッシュ文字のみ含めることができますが、3 から 63 文字で指定する必要があります。
 
-`GetContainer`メソッドが次のように呼び出されます。
+`GetContainer`メソッドは次のように呼び出されます。
 
 ```csharp
 var container = GetContainer(containerType);
 ```
 
-`CloudBlobContainer`インスタンスが存在しない場合、コンテナーの作成に使用できます。
+`CloudBlobContainer`インスタンスは、存在しない場合は、コンテナーを作成し、使用できます。
 
 ```csharp
 await container.CreateIfNotExistsAsync();
 ```
 
-既定では、新しく作成されたコンテナーはプライベートです。 つまり、コンテナーから blob を取得するストレージ アクセス キーを指定する必要があります。 パブリック コンテナー内の blob を行う方法については、次を参照してください。[コンテナーを作成する](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)です。
+既定では、新しく作成されたコンテナーはプライベートです。 つまり、コンテナーから blob を取得する、ストレージ アクセス キーを指定する必要があります。 パブリック コンテナー内の blob を作成する方法については、次を参照してください。[コンテナーを作成する](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)します。
 
-## <a name="uploading-data-to-a-container"></a>コンテナーへのデータのアップロード
+## <a name="uploading-data-to-a-container"></a>コンテナーにデータをアップロードします。
 
-`UploadFileAsync`メソッドは、バイトへのデータ blob ストレージ、ストリームをアップロードするために使用し、次のコード例に示します。
+`UploadFileAsync`メソッドは、blob storage にデータをバイトのストリームをアップロードするために使用し、次のコード例に示した。
 
 ```csharp
 public static async Task<string> UploadFileAsync(ContainerType containerType, Stream stream)
@@ -173,20 +175,20 @@ public static async Task<string> UploadFileAsync(ContainerType containerType, St
 }
 ```
 
-コンテナーの参照を取得後に、メソッドは、存在しない場合にコンテナーを作成します。 新しい`Guid`として一意の blob の名前では、機能を作成して、として blob のブロック参照を取得し、`CloudBlockBlob`インスタンス。 データのストリームを使用して blob にアップロードし、`UploadFromStreamAsync`メソッドで、存在する場合は、それを上書きまたはが既に存在しない場合、blob を作成します。
+コンテナーの参照を取得した後は、メソッドは、存在しない場合に、コンテナーを作成します。 新しい`Guid`として一意の blob 名では、機能を作成して、ブロック blob の参照として取得し、`CloudBlockBlob`インスタンス。 データのストリームを使用して blob をアップロードし、`UploadFromStreamAsync`メソッドで、存在する場合は上書きされますかが既に存在しない場合は、blob を作成します。
 
-ファイルは、このメソッドを使用して、ストレージの blob にアップロードすることができます、前に、バイト ストリームに最初に変換する必要があります。 これを次のコード例に示します。
+ファイルをアップロードすると、blob ストレージにこのメソッドを使用して、前に、バイト ストリームに最初に変換する必要があります。 これは、次のコード例について説明します。
 
 ```csharp
 var byteData = Encoding.UTF8.GetBytes(text);
 uploadedFilename = await AzureStorage.UploadFileAsync(ContainerType.Text, new MemoryStream(byteData));
 ```
 
-`text`データに渡されるストリームとしてラップしをバイト配列に変換されます、`UploadFileAsync`メソッドです。
+`text`データに渡されるストリームとしてラップし、バイト配列に変換されます、`UploadFileAsync`メソッド。
 
-## <a name="downloading-data-from-a-container"></a>コンテナーからデータをダウンロードします。
+## <a name="downloading-data-from-a-container"></a>コンテナーからデータをダウンロード
 
-`GetFileAsync`メソッドから Azure Storage の blob データのダウンロードに使用され、次のコード例に示します。
+`GetFileAsync`メソッドは、Azure Storage から blob データをダウンロードするために使用し、次のコード例に示した。
 
 ```csharp
 public static async Task<byte[]> GetFileAsync(ContainerType containerType, string name)
@@ -206,20 +208,20 @@ public static async Task<byte[]> GetFileAsync(ContainerType containerType, strin
 }
 ```
 
-コンテナーの参照を取得した後は、メソッドは、格納されたデータの blob 参照を取得します。 そのプロパティが取得された blob が存在する場合、`FetchAttributesAsync`メソッドです。 適切なサイズのバイト配列が作成され、呼び出し元のメソッドに返されるを取得するバイト配列として blob をダウンロードします。
+コンテナーの参照を取得した後は、メソッドは、格納されたデータの blob の参照を取得します。 によって、そのプロパティを取得、blob が存在する場合、`FetchAttributesAsync`メソッド。 適切なサイズのバイト配列が作成され、呼び出し元のメソッドに返されるバイト配列として、blob がダウンロードされます。
 
-Blob のバイトのデータをダウンロードした後、元の形式に変換する必要があります。 これを次のコード例に示します。
+Blob のバイトのデータをダウンロードした後、元の形式に変換する必要があります。 これは、次のコード例について説明します。
 
 ```csharp
 var byteData = await AzureStorage.GetFileAsync(ContainerType.Text, uploadedFilename);
 string text = Encoding.UTF8.GetString(byteData);
 ```
 
-Azure ストレージからバイトの配列を取得、 `GetFileAsync` UTF8 に変換する前に、メソッドにエンコードされた文字列。
+バイトの配列が、Azure Storage から取得した、`GetFileAsync`を UTF8 に変換する前に、メソッドでエンコードされた文字列。
 
 ## <a name="listing-data-in-a-container"></a>コンテナー内のデータを一覧表示します。
 
-`GetFilesListAsync`メソッドは、コンテナーに格納された blob の一覧を取得するために使用し、次のコード例に示します。
+`GetFilesListAsync`メソッドは、コンテナーに格納された blob の一覧を取得するために使用し、次のコード例に示した。
 
 ```csharp
 public static async Task<IList<string>> GetFilesListAsync(ContainerType containerType)
@@ -244,11 +246,11 @@ public static async Task<IList<string>> GetFilesListAsync(ContainerType containe
 }
 ```
 
-コンテナーの参照を取得後に、メソッドは、コンテナーを使用`ListBlobsSegmentedAsync`コンテナー内の blob への参照を取得します。 によって返される結果、`ListBlobsSegmentedAsync`メソッドを列挙中に、`BlobContinuationToken`インスタンスではありません`null`です。 各 blob はキャストから返された`IListBlobItem`を`CloudBlockBlob`順序アクセスで、`Name`に値が前に、blob のプロパティが追加、`allBlobsList`コレクション。 1 回、`BlobContinuationToken`インスタンスが`null`、最後の blob 名が返された、および実行は、ループを終了します。
+メソッドは、コンテナーの参照を取得した後、コンテナーの使用`ListBlobsSegmentedAsync`コンテナー内の blob への参照を取得します。 によって返される結果、`ListBlobsSegmentedAsync`メソッドを列挙中に、`BlobContinuationToken`インスタンスがない`null`します。 各 blob がキャストから返された`IListBlobItem`を`CloudBlockBlob`アクセスの順序で、`Name`値が前に、blob のプロパティに追加されます、`allBlobsList`コレクション。 1 回、`BlobContinuationToken`インスタンスが`null`、最後の blob 名が返された、および実行がループを終了します。
 
 ## <a name="deleting-data-from-a-container"></a>コンテナーからデータを削除します。
 
-`DeleteFileAsync`メソッドをコンテナーから blob を削除するために使用し、次のコード例に示します。
+`DeleteFileAsync`メソッドは、コンテナーから blob を削除するために使用し、次のコード例に示した。
 
 ```csharp
 public static async Task<bool> DeleteFileAsync(ContainerType containerType, string name)
@@ -259,17 +261,17 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 }
 ```
 
-コンテナーの参照を取得した後は、メソッドは、指定された blob の blob 参照を取得します。 Blob が一緒に削除し、`DeleteIfExistsAsync`メソッドです。
+コンテナーの参照を取得した後は、メソッドは、指定された blob の blob の参照を取得します。 Blob は削除し、`DeleteIfExistsAsync`メソッド。
 
 ## <a name="summary"></a>まとめ
 
-この記事には、Xamarin.Forms を使用して、Azure ストレージ内のテキストおよびバイナリ データを格納する方法と、データにアクセスする方法が示されています。 Azure ストレージは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド記憶域ソリューションです。
+この記事では、Xamarin.Forms を使用して Azure Storage にテキストおよびバイナリ データを格納する方法およびデータにアクセスする方法を紹介します。 Azure Storage とは、非構造化、および構造化データを格納するために使用できるスケーラブルなクラウド ストレージ ソリューションです。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Azure ストレージ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
-- [記憶域の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)
-- [Xamarin から Blob ストレージを使用する方法](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
-- [共有アクセス署名 (SAS) を使用します。](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
+- [Azure Storage (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
+- [Storage の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)
+- [Xamarin から Blob Storage を使用する方法](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
+- [Shared Access Signature (SAS) を使用します。](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 - [Windows Azure ストレージ](https://www.nuget.org/packages/WindowsAzure.Storage/)

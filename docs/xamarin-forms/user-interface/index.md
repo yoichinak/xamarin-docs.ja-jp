@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: 452596d3eda9daae4b985490929c1e920a9d936e
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: ecf8a1e6d7c248c7141039844324d45d28700854
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170911"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049344"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/FormsGallery/)
 
 _では、Xamarin.Forms が提供されているビューを使用する方法_
 
@@ -29,6 +31,10 @@ Xamarin.Forms には、複雑なアニメーションを作成するのに十分
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
 `Button`タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。
+
+## <a name="collectionviewcollectionviewmd"></a>[CollectionView](collectionview.md)
+
+`CollectionView`は別のレイアウトの仕様を使用してデータのリストを表示するための柔軟性とパフォーマンスの高いビューです。
 
 ## <a name="colorscolorsmd"></a>[色](colors.md)
 
@@ -54,7 +60,7 @@ SkiaSharp を使用した Xamarin.Forms アプリケーションにグラフィ�
 
 イメージは、Xamarin.Forms のプラットフォームで共有できる、具体的には、各プラットフォーム用に読み込むことができるまたは表示をダウンロードすることができます。
 
-## <a name="imagebutonimagebuttonmd"></a>[ImageButon](imagebutton.md)
+## <a name="imagebuttonimagebuttonmd"></a>[ImageButton](imagebutton.md)
 
 `ImageButton`イメージを表示し、タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。
 
@@ -102,6 +108,10 @@ Xamarin.Forms のテーマは、標準のコントロールの特定の外観を
 
 `TimePicker`時刻を選択できます。 アプリケーションが実行される特定のプラットフォームでサポートされている時間ピッカーを使用して実装されます。
 
+## <a name="visualvisualmd"></a>[ビジュアル](visual.md)
+
+この記事では、Xamarin.Forms のビジュアルは、iOS および Android 上の同じ、またはほぼ同じビューの表示について説明します。
+
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
 Visual State Manager は、コードでは、デバイスの向きまたはサイズ変更に対応するレイアウトを含む、ユーザー インターフェイスの変更をトリガーする構造化された方法を提供します。
@@ -109,7 +119,6 @@ Visual State Manager は、コードでは、デバイスの向きまたはサ�
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 
 Xamarin.Forms は、各プラットフォームでネイティブの web ブラウザー コントロールを使用して、web サイト、ローカル リソースは、生成された Html 文字列を表示できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

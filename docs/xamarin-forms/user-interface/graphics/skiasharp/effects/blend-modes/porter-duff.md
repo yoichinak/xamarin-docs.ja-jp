@@ -7,14 +7,16 @@ ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: ebd4db28b2c20bd2b9e1d93e03dd101ebc5da663
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131682"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055038"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter Duff ブレンド モード
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Thomas Porter と Tom Duff、Lucasfilm に作業している複合の代数を開発した後、Porter Duff blend モードと呼びます。 その用紙[_合成デジタル画像_](https://graphics.pixar.com/library/Compositing/paper.pdf) 1984 年 7 月号の発行された_コンピューター_グラフィックス_253 を 259 ページします。 これらの描画モード複合シーンにさまざまなイメージまとめての複合に不可欠です。
 

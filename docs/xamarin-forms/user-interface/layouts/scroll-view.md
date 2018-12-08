@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 54fdec74a6e1d0aee71ec0ca6809a5b40680de9f
-ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
+ms.openlocfilehash: 34339b9ca3a15c7f7f24edee5401c542fd09ba74
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39360813"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048988"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
 [`ScrollView`](xref:Xamarin.Forms.ScrollView) レイアウトを含み、オフスクリーン スクロールを有効になります。 `ScrollView` キーボードを表示するときに、画面の表示部分に自動的に移動するビューを許可するも使用されます。
 

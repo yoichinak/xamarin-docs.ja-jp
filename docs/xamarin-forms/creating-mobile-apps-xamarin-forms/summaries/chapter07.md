@@ -7,16 +7,18 @@ ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1dc4fe12d3ca23a9ca87c3be7819c970683db469
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: ce4dde3716176daf826678809339afb84c25d84a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563499"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052570"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章の概要です。 コードと XAML
 
-> [!NOTE] 
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
+
+> [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms では、Extensible Application Markup Language と呼ばれる XML ベースのマークアップ言語または XAML (「ザムル」) をサポートしています。 XAML では、c# する代わりに、Xamarin.Forms アプリケーションのユーザー インターフェイスのレイアウトの定義とユーザー インターフェイス要素間のバインドを定義して、基になるデータを提供します。
@@ -39,7 +41,7 @@ XAML では、クラスとそこから作成されたオブジェクトは、XML
 
 Xamarin.Forms ポータブル クラス ライブラリは、これが最初に作成、または既存のプロジェクトに XAML ページを追加するときに、XAML ページを含めることができます。 新しい項目を追加するダイアログ ボックスで、XAML ページを参照する項目を選択または`ContentPage`と XAML。 (いない、 `ContentView`)。
 
-> [!NOTE] 
+> [!NOTE]
 > この章が書き込まれるために、visual Studio のオプションが変わりました。
 
 2 つのファイルが作成されます。 ファイル名拡張子 .xaml、XAML ファイルと、拡張機能の c# ファイル。 xaml.cs。 C# ファイルと呼ばれる多くの場合、*コード ビハインド*XAML ファイルの。 分離コード ファイルは、部分クラス定義から派生した`ContentPage`します。 ビルド時に、XAML が解析され、同じクラスに対して別の部分クラス定義が生成されます。 この生成されたクラスには、という名前のメソッドが含まれています。`InitializeComponent`分離コード ファイルのコンス トラクターから呼び出されます。

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: d694d58b994309f26264459a69517c2bc3b526e2
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a1458d53cb6e57b73317bce77ebdfd5aea64acca
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563636"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061947"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms book で Mobile Apps を作成します。
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples)
 
 <p><img src="images/cover-sml.png" title="Xamarin.Forms Book でモバイル アプリの作成" align="left" />この書籍<i>を Xamarin.Forms での Mobile Apps の作成</i>Xamarin.Forms アプリケーションを作成する方法を学習するためのガイドは、Charles Petzold 著。 唯一の前提条件は、サポート技術情報のC#プログラミング言語。 この書籍は、Xamarin.Forms のユーザー インターフェイスに広範な探索を示し、アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタム レンダラーでは、およびその他についても説明します。 
 

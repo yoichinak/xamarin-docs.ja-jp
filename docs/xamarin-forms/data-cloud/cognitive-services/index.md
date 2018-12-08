@@ -1,86 +1,88 @@
 ---
-title: 認識サービスとインテリジェンスを追加します。
-description: この記事では、マイクロソフトの知的サービス Api の一部を呼び出す方法を示すサンプル アプリケーションに紹介します。
+title: Cognitive Services とインテリジェンスの追加
+description: この記事では、いくつかの Microsoft Cognitive Service Api を呼び出す方法を示すサンプル アプリケーションを紹介します。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c577aaf1991082baaf34248ee31899902f692d0b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0c09063b55a14f9f22feb91d2a6f9d3f9417ecee
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241524"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052479"
 ---
-# <a name="adding-intelligence-with-cognitive-services"></a>認識サービスとインテリジェンスを追加します。
+# <a name="adding-intelligence-with-cognitive-services"></a>Cognitive Services とインテリジェンスの追加
 
-_マイクロソフトの知的サービスでは、Api、Sdk、および開発者は、顔認識、音声認識、および言語理解などの機能を追加することで、アプリケーションをより高度な利用できるサービスのセットです。この記事では、Microsoft 認知サービス Api の一部を呼び出す方法を説明するサンプル アプリケーションに紹介します。_
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+
+_Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔認識、音声認識、および言語の理解などの機能を追加することで、アプリケーションをよりインテリジェントに利用可能なサービスのセットです。この記事では、いくつかの Microsoft Cognitive Service Api を呼び出す方法を示すサンプル アプリケーションを紹介します。_
 
 ## <a name="overview"></a>概要
 
-付属するサンプルは、機能を提供する todo リスト アプリケーションです。
+付属のサンプルでは、機能を提供する todo リスト アプリケーションを示します。
 
 - タスクの一覧を表示します。
-- 追加し、ソフト キーボード、または Microsoft Speech API で音声認識を実行することによってタスクを編集します。 音声認識を実行する方法の詳細については、次を参照してください。 [Microsoft Speech API を使用する音声認識](speech-recognition.md)です。
-- スペルをチェック タスクの Bing スペル チェック API を使用します。 詳細については、次を参照してください。[スペル チェック Bing スペル チェック API を使用して](spell-check.md)です。
-- 変換 API を使用してドイツ語に英語からタスクを変換します。 詳細については、次を参照してください。[トランスレーター API を使用してテキストの翻訳](text-translation.md)です。
+- 追加し、ソフト キーボード、または Microsoft Speech API を使用した音声認識を実行することによって、タスクを編集します。 音声認識の実行の詳細については、次を参照してください。 [Microsoft Speech API を使用して、音声認識](speech-recognition.md)します。
+- スペルをチェック タスクの Bing Spell Check API を使用します。 詳細については、次を参照してください。[スペル チェック、Bing Spell Check API を使用して](spell-check.md)します。
+- Translator API を使用してドイツ語、英語からタスクを変換します。 詳細については、次を参照してください。 [Translator API を使用してテキストの翻訳](text-translation.md)します。
 - タスクを削除します。
-- 'Done' に、タスクの状態を設定します。
-- Face API を使用して、emotion 認識を使用してアプリケーションを評価します。 詳細については、次を参照してください。 [Face API を使用して Emotion 認識](emotion-recognition.md)です。
+- タスクの状態 'done' に設定します。
+- Face API を使用して、感情認識を使用してアプリケーションを評価します。 詳細については、次を参照してください。 [Face API を使用して、感情認識](emotion-recognition.md)します。
 
-タスクは、ローカル SQLite データベースに格納されます。 詳細については、SQLite ローカル データベースを使用して、次を参照してください。[ローカル データベースで作業](~/xamarin-forms/app-fundamentals/databases.md)です。
+タスクは、ローカルの SQLite データベースに格納されます。 詳細については、ローカルの SQLite データベースを使用して、次を参照してください。[ローカル Database](~/xamarin-forms/app-fundamentals/databases.md)。
 
-`TodoListPage`が、アプリケーションを起動するときに表示されます。 このページは、ローカル データベースに格納されているすべてのタスクの一覧を表示し、ユーザーまたはアプリケーションを評価する新しいタスクを作成することができます。
+`TodoListPage`が、アプリケーションを起動するときに表示されます。 このページは、ローカルのデータベースに格納されているすべてのタスクの一覧を表示し、により、新しいタスクを作成したり、アプリケーションの評価。
 
 ![](images/sample-application-1.png "TodoListPage")
 
-をクリックして新しい項目を作成することができます、 *+* に移動するボタン、`TodoItemPage`です。 このページは、タスクを選択してに移動することもできます。
+クリックして新しい項目を作成することができます、 *+* ボタンに移動するため、`TodoItemPage`します。 このページはタスクを選択してに移動することもできます。
 
 ![](images/sample-application-2.png "TodoItemPage")
 
-`TodoItemPage`変換、保存すると、および削除にタスクを作成、編集、スペル チェックを実行できます。 作成または編集するタスクは、音声認識を使用できます。 これは、ボタンを押して、マイクを録音の開始とボタンを押して、同じ 2 つ目の時間、記録を停止する Bing Speech 認識 API に、記録を送信します。
+`TodoItemPage`タスクを作成、編集、スペル チェックを翻訳、保存、および削除できます。 作成または編集するタスクは、音声認識を使用できます。 これは、ボタンを押して、同じをもう一度、記録を停止して、記録を開始するには、あるマイク ボタンを押して、Bing Speech Recognition API に、記録を送信します。
 
-の顔文字 ボタンをクリックして、`TodoListPage`に移動、 `RateAppPage`、顔の式のイメージに対して emotion 認識を実行に使用されます。
+顔文字 ボタンをクリックすると、`TodoListPage`に移動、`RateAppPage`表情のイメージの感情認識の実行に使用します。
 
 ![](images/sample-application-3.png "RateAppPage")
 
-`RateAppPage`写真の面では、表示されている、返された感情を Face API に送信されるを実行することができます。
+`RateAppPage`の面では、表示されている、返された emotion で Face API に送信されるの写真を撮影できます。
 
-## <a name="understanding-the-application-anatomy"></a>アプリケーション構造を理解します。
+## <a name="understanding-the-application-anatomy"></a>アプリケーションの構造を理解します。
 
-5 つのメイン フォルダーのサンプル アプリケーションについては、ポータブル クラス ライブラリ (PCL) プロジェクトで構成されます。
+サンプル アプリケーションについては、ポータブル クラス ライブラリ (PCL) プロジェクトは、5 つのメイン フォルダーで構成されます。
 
 |フォルダー|目的|
 |--- |--- |
-|モデル|アプリケーションのデータ モデル クラスを含みます。 これが含まれています、`TodoItem`クラスは、アプリケーションによって使用されるデータの単一の項目をモデル化します。 フォルダーには、別の Microsoft 認知サービス Api から返されたモデルの JSON 応答に使用されるクラスも含まれています。|
-|リポジトリ|含まれています、`ITodoItemRepository`インターフェイスと`TodoItemRepository`データベース操作を実行に使用されるクラスです。|
-|Services|Api にアクセスするさまざまな Microsoft 認知サービスで使用されるインターフェイスと一緒に使用されるクラスとインターフェイスが含まれています、`DependencyService`プラットフォーム プロジェクトでは、インターフェイスを実装するクラスを検索対象のクラスです。|
-|ユーティリティ|含まれています、`Timer`によって使用されるクラス、 `AuthenticationService` 9 分ごと、JWT アクセス トークンを更新するクラス。|
-|Views|アプリケーション ページが含まれます。|
+|モデル|アプリケーションのデータ モデル クラスが含まれています。 これが含まれています、`TodoItem`クラスは、アプリケーションによって使用されるデータの 1 つの項目をモデル化します。 フォルダーには、別の Microsoft Cognitive Service Api から返される JSON 応答をモデルに使用されるクラスも含まれています。|
+|リポジトリ|含まれています、`ITodoItemRepository`インターフェイスと`TodoItemRepository`データベース操作の実行に使用されるクラス。|
+|Services|インターフェイスとさまざまな Microsoft Cognitive Service Api で使用されるインターフェイスと共にへのアクセスに使用されるクラスが含まれています、`DependencyService`プラットフォーム プロジェクトにインターフェイスを実装するクラスを検索するクラス。|
+|Utils|含まれています、`Timer`クラスで使用される、 `AuthenticationService` 9 分ごとに、JWT アクセス トークンを更新するクラス。|
+|Views|アプリケーションのページが含まれています。|
 
 PCL プロジェクトには、いくつかの重要なファイルも含まれています。
 
 |ファイル|目的|
 |--- |--- |
-|Constants.cs|`Constants`クラスは、呼び出される Microsoft 認知サービス Api の API キーとエンドポイントを指定します。 API キー定数は、さまざまな認知サービス Api にアクセスする更新が必要です。|
-|App.xaml.cs|`App`クラスは、各プラットフォームでのアプリケーションによって表示される両方の最初のページをインスタンス化して、`TodoManager`データベース操作の呼び出しに使用されるクラスです。|
+|Constants.cs|`Constants`クラスは、呼び出される Microsoft Cognitive Service Api の API キーとエンドポイントを指定します。 API キーの定数は、さまざまな Cognitive Service Api にアクセスする更新が必要です。|
+|App.xaml.cs|`App`クラスは、各プラットフォームでアプリケーションによって表示される両方の最初のページをインスタンス化を担当し、`TodoManager`データベース操作の呼び出しに使用されるクラスです。|
 
 ### <a name="nuget-packages"></a>NuGet パッケージ
 
-サンプル アプリケーションは、次の NuGet パッケージを使用します。
+サンプル アプリケーションでは、次の NuGet パッケージを使用します。
 
-- `Newtonsoft.Json` – .NET の JSON フレームワークを提供します。
-- `PCLStorage` – クロスプラット フォームのローカル ファイル IO Api のセットを提供します。
-- `sqlite-net-pcl` – SQLite データベース ストレージを提供します。
-- `Xam.Plugin.Media` – クロスプラット フォームの写真の作成と Api の取得を提供します。
+- `Newtonsoft.Json` – .NET 用の JSON フレームワークを提供します。
+- `PCLStorage` -クロス プラットフォームのローカル ファイル IO Api のセットを提供します。
+- `sqlite-net-pcl` -SQLite データベース ストレージを提供します。
+- `Xam.Plugin.Media` -クロス プラットフォームの写真の取得と Api の選択を提供します。
 
 さらに、これらの NuGet パッケージは、独自の依存関係もインストールします。
 
-### <a name="modeling-the-data"></a>データをモデリング
+### <a name="modeling-the-data"></a>データのモデリング
 
-サンプル アプリケーションを使用して、`TodoItem`表示され、ローカル SQLite データベースに格納されるデータをモデル化するクラス。 次に示すのは、`TodoItem` クラスのコード例です。
+サンプル アプリケーションを使用して、`TodoItem`を表示し、ローカルの SQLite データベースに格納されるデータをモデル化するクラス。 次に示すのは、`TodoItem` クラスのコード例です。
 
 ```csharp
 public class TodoItem
@@ -92,35 +94,35 @@ public class TodoItem
 }
 ```
 
-`ID`をそれぞれを一意に識別するプロパティを使用`TodoItem`インスタンス、およびデータベースで自動インクリメントの主キーのプロパティを構成する SQLite 属性で装飾されています。
+`ID`プロパティは、それぞれを一意に識別するために使用`TodoItem`インスタンスし、は、プロパティを自動インクリメントの主キー、データベースに SQLite 属性で修飾されます。
 
-### <a name="invoking-database-operations"></a>呼び出し元のデータベース操作
+### <a name="invoking-database-operations"></a>データベース操作を呼び出す
 
-`TodoItemRepository`クラスは、データベース操作を実装し、クラスのインスタンスからアクセスできます、`App.TodoManager`プロパティです。 `TodoItemRepository`クラスは、データベース操作の呼び出しに次のメソッドを提供します。
+`TodoItemRepository`クラスは、データベース操作を実装し、クラスのインスタンスを介してアクセスできる、`App.TodoManager`プロパティ。 `TodoItemRepository`クラスは、データベース操作を呼び出す次のメソッドを提供します。
 
-- **GetAllItemsAsync** – ローカル SQLite データベースからすべての項目を取得します。
-- **GetItemAsync** – ローカル SQLite データベースから、指定した項目を取得します。
+- **GetAllItemsAsync** – ローカルの SQLite データベースからすべての項目を取得します。
+- **GetItemAsync** – ローカルの SQLite データベースから指定した項目を取得します。
 - **SaveItemAsync** – 作成するか、ローカルの SQLite データベース内の項目を更新します。
-- **DeleteItemAsync** – 指定した項目をローカルの SQLite データベースから削除します。
+- **DeleteItemAsync** – ローカルの SQLite データベースから指定した項目を削除します。
 
-### <a name="platform-project-implementations"></a>プラットフォームのプロジェクトの実装
+### <a name="platform-project-implementations"></a>プラットフォーム プロジェクトの実装
 
-`Services` PCL プロジェクト フォルダーに含まれています、`IFileHelper`と`IAudioRecorderService`によって使用されているインターフェイス、`DependencyService`プラットフォーム プロジェクトでは、インターフェイスを実装するクラスを検索対象のクラスです。
+`Services` PCL プロジェクトのフォルダーが含まれています、`IFileHelper`と`IAudioRecorderService`インターフェイスで使用される、`DependencyService`プラットフォーム プロジェクトにインターフェイスを実装するクラスを検索するクラス。
 
-`IFileHelper`インターフェイスは、`FileHelper`各プラットフォームのプロジェクト内のクラスです。 このクラスは、1 つのメソッドの`GetLocalFilePath`、SQLite データベースを格納するためのローカル ファイル パスが返されます。
+`IFileHelper`インターフェイスによって実装されます、`FileHelper`各プラットフォーム プロジェクトにクラス。 このクラスは、1 つのメソッドの`GetLocalFilePath`、SQLite データベースを格納するためのローカル ファイル パスが返されます。
 
-`IAudioRecorderService`インターフェイスは、`AudioRecorderService`各プラットフォームのプロジェクト内のクラスです。 このクラスから成ります`StartRecording`、 `StopRecording`、プラットフォーム Api を使用して、デバイスのマイクからオーディオを録音をおよび、wav ファイルとして保存する方法をサポートするとします。 Ios の場合、`AudioRecorderService`を使用して、`AVFoundation`オーディオを録音する API。 Android で、`AudioRecordService`を使用して、`AudioRecord`オーディオを録音する API。 ユニバーサル Windows プラットフォーム (UWP) に、`AudioRecorderService`を使用して、`AudioGraph`オーディオを録音する API。
+`IAudioRecorderService`インターフェイスによって実装されます、`AudioRecorderService`各プラットフォーム プロジェクトにクラス。 このクラスから成る`StartRecording`、 `StopRecording`、プラットフォーム Api を使用して、デバイスのマイクからオーディオを録音し、wav ファイルとして保存するには、メソッドをサポートしているとします。 Ios では、`AudioRecorderService`を使用して、`AVFoundation`オーディオを録音する API。 Android の場合、`AudioRecordService`を使用して、`AudioRecord`オーディオを録音する API。 ユニバーサル Windows プラットフォーム (UWP) で、`AudioRecorderService`を使用して、`AudioGraph`オーディオを録音する API。
 
-### <a name="invoking-cognitive-services"></a>認知サービスを呼び出す
+### <a name="invoking-cognitive-services"></a>Cognitive Services を呼び出す
 
-サンプル アプリケーションは、次の Microsoft 認知サービスを呼び出します。
+サンプル アプリケーションは、次の Microsoft Cognitive Services を呼び出します。
 
-- Microsoft Speech API です。 詳細については、次を参照してください。 [Microsoft Speech API を使用する音声認識](speech-recognition.md)です。
-- Bing のスペル チェック API です。 詳細については、次を参照してください。[スペル チェック Bing スペル チェック API を使用して](spell-check.md)です。
-- API を変換します。 詳細については、次を参照してください。[トランスレーター API を使用してテキストの翻訳](text-translation.md)です。
-- Face API です。 詳細については、次を参照してください。 [Face API を使用して Emotion 認識](emotion-recognition.md)です。
+- Microsoft Speech API。 詳細については、次を参照してください。 [Microsoft Speech API を使用して、音声認識](speech-recognition.md)します。
+- Bing Spell Check API。 詳細については、次を参照してください。[スペル チェック、Bing Spell Check API を使用して](spell-check.md)します。
+- API を変換します。 詳細については、次を参照してください。 [Translator API を使用してテキストの翻訳](text-translation.md)します。
+- Face API。 詳細については、次を参照してください。 [Face API を使用して、感情認識](emotion-recognition.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Microsoft 認知 Services のドキュメント](https://www.microsoft.com/cognitive-services/documentation)
-- [Todo 認知サービス (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Microsoft Cognitive Services のドキュメント](https://www.microsoft.com/cognitive-services/documentation)
+- [Todo Cognitive Services (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
