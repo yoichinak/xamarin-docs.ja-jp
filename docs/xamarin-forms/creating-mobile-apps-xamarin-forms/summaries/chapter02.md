@@ -7,16 +7,18 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: fcb832e851d7467679d979841dad60d117240b59
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 948d25ce379944691053a5ff76ba3b2284385251
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563880"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052638"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要です。 アプリの詳細
 
-> [!NOTE] 
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+
+> [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms アプリケーションで画面上の空き領域オブジェクトと呼ばれる*ビジュアル要素*、によってカプセル化された、 [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラス。 ビジュアル要素は、これらのクラスに対応する 3 つのカテゴリに分割できます。
@@ -31,9 +33,9 @@ A`Page`派生物が画面全体、または画面全体ではほぼを占有し�
 
 ## <a name="say-hello"></a>開始します。
 
-インストールされている、Xamarin プラットフォームで作成新しい Xamarin.Forms ソリューションを Visual Studio または Visual Studio for mac。 [**こんにちは**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello)ソリューションでは、共通のコードにポータブル クラス ライブラリを使用します。 
+インストールされている、Xamarin プラットフォームで作成新しい Xamarin.Forms ソリューションを Visual Studio または Visual Studio for mac。 [**こんにちは**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello)ソリューションでは、共通のコードにポータブル クラス ライブラリを使用します。
 
-> [!NOTE] 
+> [!NOTE]
 > ポータブル クラス ライブラリが .NET Standard ライブラリに置き換えられました。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
 
 このサンプルでは、変更なしで Visual Studio で作成された Xamarin.Forms ソリューションを示します。 ソリューションは、6 つのプロジェクトで構成されます。
@@ -45,8 +47,8 @@ A`Page`派生物が画面全体、または画面全体ではほぼを占有し�
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows)、Windows 8.1 のアプリケーション プロジェクト
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone)、Windows Phone 8.1 用アプリケーション プロジェクト
 
-> [!NOTE] 
-> Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。 
+> [!NOTE]
+> Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。
 
 これらのアプリケーション プロジェクトのいずれかのスタートアップ プロジェクトを作成しのビルド/デバイスまたはシミュレーターで、プログラムを実行します。
 
@@ -56,7 +58,7 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 
 によって表示されるビジュアル、**こんにちは**プログラムが、コンス トラクターで定義されている、 [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs)クラス。 `App` Xamarin.Forms クラスから派生した[ `Application`](xref:Xamarin.Forms.Application)します。
 
-> [!NOTE] 
+> [!NOTE]
 > Xamarin.Forms 用の Visual Studio のソリューション テンプレートは、XAML ファイルを使用して、ページを作成します。 XAML は、まで、この本では説明しません[第 7 章](chapter07.md)します。
 
 **参照**のセクション、**こんにちは**PCL プロジェクトには、次の Xamarin.Forms アセンブリが含まれています。
@@ -74,8 +76,8 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
-> [!NOTE] 
-> **参照**セクションでは、これらのプロジェクトが不要になった、アセンブリを一覧表示します。 代わりに、プロジェクト ファイルには、 **PackageReference** Xamarin.Forms NuGet パッケージを参照するタグ。 **参照**セクションでは、Visual Studio のリスト、 **Xamarin.Forms** Xamarin.Forms アセンブリではなくパッケージ化します。 
+> [!NOTE]
+> **参照**セクションでは、これらのプロジェクトが不要になった、アセンブリを一覧表示します。 代わりに、プロジェクト ファイルには、 **PackageReference** Xamarin.Forms NuGet パッケージを参照するタグ。 **参照**セクションでは、Visual Studio のリスト、 **Xamarin.Forms** Xamarin.Forms アセンブリではなくパッケージ化します。
 
 静的な呼び出しを含むアプリケーション プロジェクトの各`Forms.Init`メソッドで、`Xamarin.Forms`名前空間。 これには、Xamarin.Forms ライブラリを初期化します。 別のバージョンの`Forms.Init`プラットフォームごとに定義されます。 このメソッドの呼び出しは、次のクラスを参照してください。
 
@@ -95,7 +97,7 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 
 ポータブル クラス ライブラリ (PCL) または共有資産プロジェクト (SAP) のいずれかの一般的なコードで Xamarin.Forms ソリューションを作成することになります。 SAP ソリューションを作成するには、Visual Studio で共有オプションを選択します。 [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap)ソリューションは変更なしでの SAP テンプレートを示します。
 
-> [!NOTE] 
+> [!NOTE]
 > ポータブル クラス ライブラリは .NET Standard ライブラリによって置き換えられました。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。 それ以外の場合、PCL および .NET Standard ライブラリは、概念的には非常に似ています。
 
 プラットフォームのアプリケーション プロジェクトによって参照されるライブラリ プロジェクト内のすべての一般的なコード ライブラリ アプローチ バンドルします。 SAP アプローチでは、共通のコードは効果的にプラットフォームのすべてのアプリケーション プロジェクト内に存在して、それらの間で共有されます。

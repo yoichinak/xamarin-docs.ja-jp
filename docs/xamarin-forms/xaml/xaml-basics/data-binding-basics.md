@@ -7,14 +7,16 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: aa576e4af5d804eb5b8d78643ffa762b8a15c6dc
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: bd13163b513ea1f6b0381e99e65d0bd727f97735
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171769"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055729"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _データ バインドでは、ニォュォケォネェャ変ェ、他のいずれかが変更されるようにリンクする 2 つのオブジェクトのプロパティを許可します。これは非常に貴重なツールでは、およびショートカットと利便性全体をコードでは、データ バインドを定義できます、XAML を提供します。その結果、Xamarin.Forms で最も重要なマークアップ拡張機能の 1 つはバインドです。_
 

@@ -7,14 +7,16 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 3/27/2018
-ms.openlocfilehash: bffddfdb67238287b868b01edad88bc8d43e5bb1
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a93503762528885dfc7d3b5400bf4ec716ea9fab
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563837"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056216"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部です。 XAML マークアップ拡張機能
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _XAML マークアップ拡張機能は、オブジェクトまたはその他のソースから直接参照されている値に設定するプロパティを XAML で重要な機能を構成します。XAML マークアップ拡張機能は、オブジェクトの共有と、アプリケーション全体で使用される定数を参照するにとって特に重要ですが、データ バインドで、最大のユーティリティを検索します。_
 
@@ -103,7 +105,7 @@ _XAML マークアップ拡張機能は、オブジェクトまたはその他�
 </ContentPage>
 ```
 
-今すぐオブジェクトとさまざまな種類の値は、リソース ディクショナリに追加できます。 これらの型をインスタンス化可能にする必要があります。 抽象クラスをたとえばすることはできません。 これらの型は、パブリック コンス トラクターも必要です。 各項目で指定されたディクショナリのキーが必要です、`x:Key`属性。 例えば:
+今すぐオブジェクトとさまざまな種類の値は、リソース ディクショナリに追加できます。 これらの型をインスタンス化可能にする必要があります。 抽象クラスをたとえばすることはできません。 これらの型は、パブリック コンス トラクターも必要です。 各項目で指定されたディクショナリのキーが必要です、`x:Key`属性。 例:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

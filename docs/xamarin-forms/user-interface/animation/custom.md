@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 519368031384e72a2d2e0a7c99053be44ea4cffc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 157e044fd96cdeff87d8fb56029fe625b7312bf4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995222"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056241"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>Xamarin.Forms でのカスタム アニメーション
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
 
 _アニメーション クラスは、1 つまたは複数のアニメーション オブジェクトを作成する ViewExtensions クラスで拡張メソッドで、すべての Xamarin.Forms のアニメーションのビルディング ブロックです。この記事では、アニメーション クラスを使用して作成、アニメーションを取り消すと、複数のアニメーションを同期するには、既存のアニメーションの方法でアニメーション化するプロパティをアニメーション化するカスタムのアニメーションを作成する方法を示します。_
 

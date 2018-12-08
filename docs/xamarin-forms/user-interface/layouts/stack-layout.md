@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms StackLayout
+title: Xamarin.Forms の StackLayout
 description: この記事では、Xamarin.Forms StackLayout クラスを使用して、1 つのディメンション上のビューのコレクションを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
@@ -7,30 +7,32 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 6e278c466c352ad19575cd3a84d6e38e14ec2587
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: bdc03721569682cd5b4f72908fcab1e4a567b83c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244598"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055803"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
+# <a name="xamarinforms-stacklayout"></a>Xamarin.Forms の StackLayout
 
-`StackLayout` 水平方向または垂直方向には、1 次元の行 (「スタック」) 内のビューを整理します。 ビューで、`StackLayout`レイアウト オプションを使用して、レイアウト内の領域に基づくサイズことができます。 配置は、ビューは、レイアウトや、ビューのレイアウト オプションに追加された順序によって決まります。
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
-[![](stack-layout-images/layouts-sml.png "Xamarin.Forms レイアウト")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms レイアウト")
+`StackLayout` 水平方向または垂直方向には、1 次元の行 (「スタック」) でビューを整理します。 ビューで、`StackLayout`レイアウト オプションを使用して、レイアウト領域に基づくサイズ設定することができます。 配置は、ビューは、レイアウトとビューのレイアウト オプションに追加された順序によって決まります。
+
+[![](stack-layout-images/layouts-sml.png "Xamarin.Forms のレイアウト")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
 
 ## <a name="purpose"></a>目的
 
-`StackLayout` 他のビューよりも簡単です。 ビューを追加するだけで線形の単純なインターフェイスを作成することができます、 `StackLayout`、および複雑なインターフェイスを入れ子にして作成します。
+`StackLayout` 他のビューよりも簡単です。 ビューを追加するだけで線形の単純なインターフェイスを作成することができます、 `StackLayout`、および入れ子にして作成されたより複雑なインターフェイスです。
 
 ## <a name="usage--behavior"></a>使用状況と動作
 
 ### <a name="spacing"></a>スペース
 
-既定では、`StackLayout`ビュー間 6px 余白を追加します。 制御または設定の余白がないように設定するには、この、 `Spacing` StackLayout プロパティです。 間隔とさまざまな間隔のオプションの効果を設定する方法を次に示します。
+既定では、`StackLayout`ビュー間 6px 余白が追加されます。 制御または設定の余白がないように設定するには、この、 `Spacing` StackLayout プロパティ。 次に、空白文字とスペースのさまざまなオプションの効果を設定する方法を示しています。
 
-XAML:
+で XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -80,35 +82,35 @@ public class StackLayoutCode : ContentPage
 
 間隔 = 0。
 
-![](stack-layout-images/spacing-zero.png "StackLayout 間隔に 0 を =")
+![](stack-layout-images/spacing-zero.png "StackLayout を間隔 = 0")
 
-10 の間隔:
+10 個の空白文字:
 
-![](stack-layout-images/spacing-ten.png "間隔と StackLayout 10 を =")
+![](stack-layout-images/spacing-ten.png "StackLayout 間隔で 10 を =")
 
 ### <a name="sizing"></a>サイズ変更
 
-StackLayout のビューのサイズは、高さと幅の要求とレイアウト オプションの両方によって異なります。 `StackLayout` 埋め込みが適用されます。 次`LayoutOption`s がレイアウトから使用できる多くの領域を占有するビューになります。
+StackLayout 内でビューのサイズは、高さと幅の要求とレイアウト オプションの両方に依存します。 `StackLayout` 埋め込みが適用されます。 次`LayoutOption`s がレイアウトから使用可能な限り多くの領域を占有するビューになります。
 
-- **CenterAndExpand** &ndash;レイアウト内でビューの中心し、レイアウトを付けますの領域を使用して展開します。
-- **EndAndExpand** &ndash;レイアウト (下部または一番右側の境界) の末尾に、ビューを配置し、レイアウトを付けますの領域を使用して展開します。
-- **FillAndExpand** &ndash;をパディングを持たず、レイアウトを付けますの領域が占有されるように、ビューを配置します。
-- **StartAndExpand** &ndash;レイアウトの開始時にビューを配置し、親は、の領域を占有します。
+- **CenterAndExpand** &ndash;レイアウト内でビューの中心し、レイアウトが指定されます限り多くの領域を占有に展開されます。
+- **EndAndExpand** &ndash;レイアウト (下部または右端の境界) の最後に、ビューを配置し、レイアウトが指定されます限り多くの領域を占有に展開します。
+- **FillAndExpand** &ndash;余白がありませんし、レイアウトが指定されます限り多くの領域を占有するように、ビューを配置します。
+- **StartAndExpand** &ndash;レイアウトの開始時、ビューを配置し、親は、限り多くの領域を占有します。
 
-詳細については、次を参照してください。[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)です。
+詳細については、次を参照してください。[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)します。
 
 ### <a name="positioning"></a>配置
 
-ビューで、StackLayout 配置でき、サイズを使用して`LayoutOptions`です。 それぞれのビューを得ることができます`VerticalOptions`と`HorizontalOptions`、どのビューは位置の自体、レイアウトを定義します。 次の定義済み`LayoutOptions`を利用できます。
+StackLayout 内でビューが配置できを使用してサイズ`LayoutOptions`します。 それぞれのビューを得ることができます`VerticalOptions`と`HorizontalOptions`ビューは配置方法自体、レイアウトを基準を定義します。 次の定義済み`LayoutOptions`利用できます。
 
 - **Center** &ndash;レイアウト内でビューの中心です。
-- **終了**&ndash;レイアウト (下部または一番右側の境界) の末尾に、ビューを配置します。
-- **塗りつぶし**&ndash;パディングを持たないようにビューを配置します。
-- **開始**&ndash;レイアウトの開始時にビューを配置します。
+- **終了**&ndash;レイアウト (下部または右端の境界) の最後に、ビューを配置します。
+- **入力**&ndash;パディングを持たないように、ビューを配置します。
+- **開始**&ndash;レイアウトの開始時、ビューを配置します。
 
-次のコードでは、レイアウト オプションの設定を示します。
+次のコードでは、レイアウト オプションの設定を示しています。
 
-XAML:
+で XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -154,13 +156,13 @@ public class StackLayoutCode : ContentPage
 }
 ```
 
-詳細については、次を参照してください。[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)です。
+詳細については、次を参照してください。[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)します。
 
-## <a name="exploring-a-complex-layout"></a>複雑なレイアウトを調べる
+## <a name="exploring-a-complex-layout"></a>複雑なレイアウトの調査
 
-レイアウトの各は、特定のレイアウトを作成するの長所と短所があります。 この一連のレイアウトの記事では、全体で同じページ レイアウトを次の 3 つの異なるレイアウトを使用して実装されているサンプル アプリケーションが作成されました。
+レイアウトの各は、特定のレイアウトを作成する長所と短所があります。 この一連のレイアウトの記事では、全体で同じページ レイアウトを次の 3 つの異なるレイアウトを使用して実装されているサンプル アプリが作成されました。
 
-次の XAML を考慮してください。
+次の XAML を検討してください。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -217,7 +219,7 @@ Title="StackLayouts">
 
 ![](stack-layout-images/stack.png "複雑な StackLayout")
 
-注意して`StackLayouts`s が入れ子になった場合によってはレイアウトを入れ子が許容されるので、同じレイアウト内のすべての要素を表示するよりも簡単です。 またことに注意して、ため`StackLayout`をサポートしていないアイテムの重なり、ページがレイアウトすてきな発見の他のレイアウト ページでします。
+注意`StackLayouts`s が入れ子になった場合によってはレイアウトを入れ子できるので、同じレイアウト内のすべての要素を表示するよりも簡単です。 またため、いることを確認`StackLayout`ページがいくつかのレイアウト盛り込んでいますを見つけた他のレイアウトのページで、アイテムの重なりをサポートしません。
 
 
 

@@ -7,14 +7,16 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 6eacc7f2688a563f9facf651b0a6da85bd75360f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: de27e151a475856f0789285dddc1526613e0b828
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171353"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053146"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>SkiaSharp のビットマップをアニメーション化
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 SkiaSharp のグラフィックスを一般にアニメーション化するアプリケーションを呼び出す`InvalidateSurface`上、 `SKCanvasView` 16 ミリ秒ごとに多くの場合、固定の率でします。 呼び出しをトリガーする、画面を無効化、`PaintSurface`画面を再描画するハンドラー。 ビジュアルは、1 秒あたり 60 回再描画される、スムーズにアニメーション化に表示されます。
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 7aa8b47a6d851ea67de7817ecd1f0e924822bfb0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 9a149711b52b0ea7a6548c2070b20d708e747174
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994988"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050674"
 ---
 # <a name="controls-reference"></a>コントロールのリファレンス
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms アプリケーションの構築に使用されるすべてのビジュアル要素の説明。_
 

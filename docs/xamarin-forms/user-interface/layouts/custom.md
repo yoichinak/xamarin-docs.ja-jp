@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0c16fd3930926a05ed7796391962d0fc8996dc96
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a1027b1fd738c80cf5917effc66957f77a337ecf
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995376"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054568"
 ---
 # <a name="creating-a-custom-layout"></a>カスタム レイアウトの作成
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CustomLayout/WrapLayout/)
 
 _Xamarin.Forms – StackLayout、AbsoluteLayout、[相対レイアウト]、およびグリッドの 4 つのレイアウト クラスを定義し、別の方法でその子を配置それぞれします。ただし、場合によっては必要 Xamarin.Forms が提供していないレイアウトを使用してページのコンテンツを整理します。この記事では、カスタム レイアウト クラスを作成する方法と、ページ間で、その子を水平方向に整列し、追加の行に後続の子の表示をラップし、印刷の向きを区別する. WrapLayout クラスを説明します。_
 

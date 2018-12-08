@@ -7,14 +7,16 @@ ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 91a5b65836f21fac22ee2f32af3abdf538b197f8
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 15bdfe43a84927f60300539bce9c27d12b87d19e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615380"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054961"
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 描画の基礎
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _SkiaSharp のグラフィックの概念と座標の基礎を学習します_
 

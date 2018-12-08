@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: 1d9f07a089eabedf07bef49c9815fe7e93128f09
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3f68b7c1ef9603d4a6d21e0c00a4cc8f4f7d818a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997257"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058530"
 ---
 # <a name="creating-platform-specifics"></a>Platform Specific の作成
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)
 
 _ベンダーは Effects を使って、独自の platform-specifics を作成することができます。特定の機能を Effect で提供し、それを platform-specific を通して公開します。その結果、 Effect は、 XAML や C# の fluent API を通して、より簡単に使えるようになります。この記事では platform-specific を通して Effect を公開する方法を説明します。_
 

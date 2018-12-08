@@ -1,36 +1,38 @@
 ---
-title: Face API を使用して emotion 認識
-description: Face API は、画像は入力としての顔の式を取得し、信頼度のレベルを含む一連の図の各面感情の間でデータを返します。 この記事では、Xamarin.Forms アプリケーションを評価する、感情を認識するように、Face API を使用する方法について説明します。
+title: Face API を使用して、感情認識
+description: Face API は、入力として画像の顔の式を受け取りし、一連のイメージ内の顔ごとの感情の信頼レベルを含むデータを返します。 この記事では、Face API を使用して、Xamarin.Forms アプリケーションを評価する、感情を認識する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 4dc04cb077b894b255eb496b2cb2983626573897
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d703de90378991d262a4b056b9ebc98d183e3fb8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34049767"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056491"
 ---
-# <a name="emotion-recognition-using-the-face-api"></a>Face API を使用して emotion 認識
+# <a name="emotion-recognition-using-the-face-api"></a>Face API を使用して、感情認識
 
-_Face API は、画像は入力としての顔の式を取得し、信頼度のレベルを含む一連の図の各面感情の間でデータを返します。この記事では、Xamarin.Forms アプリケーションを評価する、感情を認識するように、Face API を使用する方法について説明します。_
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+
+_Face API は、入力として画像の顔の式を受け取りし、一連のイメージ内の顔ごとの感情の信頼レベルを含むデータを返します。この記事では、Face API を使用して、Xamarin.Forms アプリケーションを評価する、感情を認識する方法について説明します。_
 
 ## <a name="overview"></a>概要
 
-Face API では、顔の式で emotion 検出怒り、contempt、こう言い放ちました、心配、幸せ、ニュートラルを検出するために、悲しみ、および不測の事態を実行できます。 これらの感情は、同じ基本的な顔の式を使用してユニバーサルと数少ない伝達されます。 式の顔の感情結果を返す、だけでなく Face API こともできますを返します。 検出された面の境界ボックス。 Face API を使用して API キーを取得する必要がありますに注意してください。 これはに[認知サービスの再試行](https://azure.microsoft.com/try/cognitive-services/?api=face-api)です。
+Face API は、顔の式で、怒り、軽蔑、嫌悪感、恐怖、喜び、中立を検出するために、感情の検出、悲しみ、驚きを実行できます。 これらの感情は、同じ基本的な表情を使用してユニバーサルおよび交わさ伝達されます。 表情、emotion 結果を返すと、Face API こともできますを返します。 検出された顔の境界ボックス。 Face API を使用して、API キーを取得する必要がありますに注意してください。 これから入手できる[Cognitive Services をお試しください](https://azure.microsoft.com/try/cognitive-services/?api=face-api)します。
 
-クライアント ライブラリを使用して、REST API を使用して、emotion 認識を実行できます。 この記事は、REST API を介して emotion 認識を実行する方法について説明します。 REST API の詳細については、次を参照してください。[フェイス REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)です。
+クライアント ライブラリ、および REST API を使用して、感情認識を実行できます。 この記事では、REST API 経由での感情認識を実行する方法について説明します。 REST API の詳細については、次を参照してください。 [Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)します。
 
-Face API は、ビデオでは、ユーザーの顔の式を認識するためにも使用して、感情の概要を返すことができます。 詳細については、次を参照してください。[リアルタイムでビデオを分析する方法](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)です。
+Face API では、ビデオでは、人物の表情を認識するためにも使用して、感情の概要を返すことができます。 詳細については、次を参照してください。[リアルタイムでビデオを分析する方法](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)します。
 
-Face API の詳細については、次を参照してください。 [Face API](/azure/cognitive-services/face/overview/)です。
+Face API の詳細については、次を参照してください。 [Face API](/azure/cognitive-services/face/overview/)します。
 
 ## <a name="authentication"></a>認証
 
-Face API に加えられたすべての要求の値として指定する必要がある API キーが必要です、`Ocp-Apim-Subscription-Key`ヘッダー。 次のコード例は、API キーを追加する方法を示します、`Ocp-Apim-Subscription-Key`要求のヘッダー。
+Face API に加えられたすべての要求が API キーの値として指定する必要があります、`Ocp-Apim-Subscription-Key`ヘッダー。 次のコード例は、API キーを追加する方法を示しています、`Ocp-Apim-Subscription-Key`要求のヘッダー。
 
 ```csharp
 public FaceRecognitionService()
@@ -40,28 +42,28 @@ public FaceRecognitionService()
 }
 ```
 
-Face API に有効な API キーを渡すエラー 401 応答エラーが発生します。
+Face API に有効な API キーを渡すの失敗は、401 の応答、エラーが発生されます。
 
 ## <a name="performing-emotion-recognition"></a>感情認識を実行します。
 
-感情認識は、イメージを含む POST 要求を行うことによって実行、 `detect` API`https://[location].api.cognitive.microsoft.com/face/v1.0`ここで、 `[location]]` API キーの取得に使用される領域です。 省略可能な要求のパラメーターは次のとおりです。
+イメージを含む POST 要求を行って感情の認識が実行される、`detect`で API を`https://[location].api.cognitive.microsoft.com/face/v1.0`ここで、`[location]]`は API キーを取得するために使用する領域です。 省略可能な要求のパラメーターは次のとおりです。
 
-- `returnFaceId` – 検出された面の faceIds を返すかどうか。 既定値は `true` です。
-- `returnFaceLandmarks` – 検出された面の面目印を返すかどうか。 既定値は `false` です。
-- `returnFaceAttributes` – を分析し、指定された 1 つ以上を返すかどうかの属性に直面しています。 サポートされているフェイス属性には、 `age`、 `gender`、 `headPose`、 `smile`、 `facialHair`、 `glasses`、 `emotion`、 `hair`、 `makeup`、 `occlusion`、 `accessories`、 `blur`、 `exposure`、および`noise`です。 フェイス属性分析に追加の計算と時間のコストに注意してください。
+- `returnFaceId` – 検出された顔の faceIds を返すかどうか。 既定値は `true` です。
+- `returnFaceLandmarks` – 検出された顔の顔の目印を返すかどうか。 既定値は `false` です。
+- `returnFaceAttributes` – 属性が顔を分析し、指定された 1 つ以上を返すかどうか。 サポートされている顔の特徴を含める`age`、 `gender`、 `headPose`、 `smile`、 `facialHair`、 `glasses`、 `emotion`、 `hair`、 `makeup`、 `occlusion`、 `accessories`、 `blur`、 `exposure`、および`noise`します。 顔属性の分析に追加のコンピューティングおよび時間コストに注意してください。
 
 イメージのコンテンツは、URL、またはバイナリ データとして POST 要求の本体に配置する必要があります。
 
 > [!NOTE]
-> サポートされているイメージ ファイルの形式は、JPEG、PNG、GIF、BMP、および、許可されているファイル サイズは 1 KB から 4 MB にします。
+> サポートされているイメージ ファイル形式は JPEG、PNG、GIF、BMP、および、許可されているファイルのサイズが 1 KB から 4 MB には.
 
-サンプル アプリケーションでは、emotion 認識プロセスが呼び出すことによって呼び出されます、`DetectAsync`メソッド。
+サンプル アプリケーションでは、感情の認識プロセスが呼び出すことによって呼び出される、`DetectAsync`メソッド。
 
 ```csharp
 Face[] faces = await _faceRecognitionService.DetectAsync(photoStream, true, false, new FaceAttributeType[] { FaceAttributeType.Emotion });
 ```
 
-このメソッドの呼び出しでは、faceIds 返される、フェイス目印を返すことはありませんとイメージの感情を分析する必要があります、イメージ データを含むストリームを指定します。 配列として、結果が返されることも指定`Face`オブジェクト。 さらに、`DetectAsync`メソッドを呼び出して、 `detect` emotion 認識を実行する REST API:
+このメソッドの呼び出しでは、顔を返すべきではないことと、イメージの感情を分析すること、faceIds を返す必要が、イメージ データを含むストリームを指定します。 配列として、結果が返されることも指定`Face`オブジェクト。 さらに、`DetectAsync`メソッドを呼び出す、`detect`感情認識を実行する REST API:
 
 ```csharp
 public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, bool returnFaceLandmarks, IEnumerable<FaceAttributeType> returnFaceAttributes)
@@ -74,14 +76,14 @@ public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, boo
 }
 ```
 
-このメソッドは、要求 URI を生成し、後に要求を送信、 `detect` API を使用して、`SendRequestAsync`メソッドです。
+このメソッドは要求 URI を生成しする要求を送信し、 `detect` API を使用して、`SendRequestAsync`メソッド。
 
 > [!NOTE]
-> サブスクリプション キーを取得するために使用すると、Face API 呼び出しでは、同じリージョンを使用する必要があります。 サブスクリプション キーを取得した場合など、`westus`領域、顔の検出エンドポイントがされます`https://westus.api.cognitive.microsoft.com/face/v1.0/detect`です。
+> サブスクリプション キーを取得するために使用すると、Face API の呼び出しでは、同じリージョンを使用する必要があります。 サブスクリプション キーを取得した場合など、`westus`リージョン、顔の検出エンドポイントになります`https://westus.api.cognitive.microsoft.com/face/v1.0/detect`します。
 
 ### <a name="sending-the-request"></a>要求を送信します。
 
-`SendRequestAsync`メソッド Face API に POST 要求を出すし、結果として返します、`Face`配列。
+`SendRequestAsync`メソッド Face API に POST 要求を出すし、その結果、`Face`配列。
 
 ```csharp
 async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMethod, string requestUrl, TRequest requestBody)
@@ -124,15 +126,15 @@ async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMetho
 }
 ```
 
-メソッドが POST 要求で画像ストリームをラップすることによってビルド ストリームを使用して、イメージを指定する場合、`StreamContent`ストリームに基づいて HTTP コンテンツを提供するインスタンス。 代わりに、URL を使用して、イメージを指定する場合、メソッドが作成 POST 要求の URL をラップすることによって、`StringContent`インスタンスで、文字列に基く HTTP コンテンツを提供します。
+イメージのストリームをラップすることによってメソッドが POST 要求をビルド イメージは、ストリームを使用して指定した場合、`StreamContent`インスタンスで、ストリームに基づく HTTP コンテンツを提供します。 代わりに、イメージは、URL 経由で指定した場合、メソッドが構築 POST 要求で URL をラップすることによって、`StringContent`インスタンスで、文字列に基づく HTTP コンテンツを提供します。
 
-POST 要求に送信し、 `detect` API です。 応答が読み取り、逆シリアル化し、呼び出し元のメソッドに返されます。
+POST 要求に送信し、 `detect` API。 応答は、読み取られ、逆シリアル化、呼び出し元のメソッドが返されます。
 
-`detect` API は、要求が有効である、要求が成功したことを示すことと、要求された情報が応答で提供される、応答の HTTP ステータス コード 200 (OK) を送信します。 考えられるエラーの応答の一覧は、次を参照してください。[フェイス REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)です。
+`detect` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、次を参照してください。 [Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)します。
 
 ### <a name="processing-the-response"></a>応答の処理
 
-API 応答は、JSON 形式で返されます。 次の JSON データをサンプル アプリケーションで要求されたデータを提供する標準的な成功の応答メッセージを示しています。
+API 応答は JSON 形式で返されます。 次の JSON データには、サンプル アプリケーションによって要求されたデータを提供する標準的な成功の応答メッセージが表示されます。
 
 ```json
 [  
@@ -160,24 +162,24 @@ API 応答は、JSON 形式で返されます。 次の JSON データをサン�
 ]
 ```
 
-正常な応答メッセージは、降順で、空の応答に顔の検出されたことを示しないフェイス四角形のサイズで順位付けされたフェイス エントリの配列で構成されます。 フェイスには、一連によって指定される面が省略可能な属性にはが含まれています。 各認識、`returnFaceAttributes`への引数、`DetectAsync`メソッドです。
+正常な応答メッセージは、降順に並べ替え、空の応答が検出された顔を示しません間での顔四角形のサイズによってランク付けされた顔エントリの配列で構成されます。 顔には、一連省略可能な顔の特徴は、によって指定されますにはが含まれています。 各認識、`returnFaceAttributes`への引数、`DetectAsync`メソッド。
 
-配列に、サンプル アプリケーションで JSON 応答が逆シリアル化`Face`オブジェクト。 スコアは正規化と検出された emotion、スコアが最も高い emotion として解釈するか、Face API からの結果を解釈する場合に 1 つに合計します。 そのため、サンプル アプリケーションは、イメージの最大検出された表面のスコアが最も高いと認識されている感情を表示します。 次のコードでこれを実現します。
+配列にサンプル アプリケーションで JSON 応答が逆シリアル化`Face`オブジェクト。 スコアが正規化されるように、検出された感情をスコアが最も高い emotion として解釈する Face API の結果を解釈するときに 1 つを合計します。 そのため、サンプル アプリケーションでは、画像のスコアが最も高い、最大の検出された顔の認識された感情が表示されます。 これは、次のコードで実現されます。
 
 ```csharp
 emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRankedList().FirstOrDefault().Key;
 ```
 
-次のスクリーン ショットは、サンプル アプリケーションでは感情認識プロセスの結果を示しています。
+次のスクリーン ショットは、サンプル アプリケーションでは、感情の認識プロセスの結果を示しています。
 
 ![](emotion-recognition-images/emotion-recognition.png "感情認識")
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.Forms アプリケーションを評価する、感情を認識するように、Face API を使用する方法について説明します。 Face API は、画像は入力としての顔の式を取得し、一連の図の各面感情の間で信頼度を含むデータを返します。
+この記事では、Face API を使用して、Xamarin.Forms アプリケーションを評価する、感情を認識する方法について説明します。 Face API は、入力として画像の顔の式を受け取りし、一連のイメージ内の顔ごとの感情の信頼度を含むデータを返します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [API に直面](/azure/cognitive-services/face/overview/)です。
-- [Todo 認知サービス (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
-- [フェイス REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+- [Face API](/azure/cognitive-services/face/overview/)します。
+- [Todo Cognitive Services (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Face API の REST](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

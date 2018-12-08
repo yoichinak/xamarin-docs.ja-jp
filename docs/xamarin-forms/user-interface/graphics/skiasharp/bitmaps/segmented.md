@@ -7,14 +7,16 @@ ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be2d998916c81cb2216251e2112ff8ca2af5d87a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119229"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061369"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp のビットマップのセグメント化された表示
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 SkiaSharp、`SKCanvas`オブジェクトという名前のメソッドを定義する`DrawBitmapNinePatch`という 2 つのメソッドと`DrawBitmapLattice`非常に類似しています。 両方は、これらのメソッドは、先の四角形のサイズにビットマップをレンダリングがビットマップを一様に拡大するには、代わりにそのピクセル寸法で、ビットマップの部分を表示に四角形に収まるように、ビットマップの他の部分を拡張します。
 

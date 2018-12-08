@@ -7,14 +7,16 @@ ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 4bfa2bed7061e031c55ccbdb7f576aa02c17581a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: ddbb96836fa1aa9611701bd7d645d9e85ad28027
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563993"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058637"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章の概要です。 トリガーと動作
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 
 トリガーと動作と同様に、両方のものをデータのバインドの使用を超える要素の相互作用を簡素化し、XAML 要素の機能を拡張する XAML ファイルで使用します。 トリガーと動作の両方は、ほぼ常に視覚的ユーザー インターフェイス オブジェクトに使用されます。
 

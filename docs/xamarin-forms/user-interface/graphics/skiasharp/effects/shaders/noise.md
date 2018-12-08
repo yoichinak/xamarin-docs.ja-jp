@@ -7,14 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 3c0ee238e0fc72aaea2f73e11317fea7b7a63fb7
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171496"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052052"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp のノイズやを作成します。
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 単純なベクター グラフィックスは、不自然に傾向があります。 直線、滑らかな曲線、および純色のない現実世界のオブジェクトの不完全ようになります。 1982 ムービーのコンピューターで生成されたグラフィックスに取り組んでいる_トロン_、コンピューター科学者 Ken Perlin がこれらのイメージをより現実的なテクスチャに与えるためにランダムなプロセスを使用するアルゴリズムの開発を開始します。 1997 年、Ken Perlin Academy に対して賞技術的知識を習得します。 パーリン ノイズと呼ばれる作業が来たし、SkiaSharp ではサポートされてです。 次に例を示します。
 

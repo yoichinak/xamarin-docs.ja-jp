@@ -1,5 +1,5 @@
 ---
-title: パスおよび領域でクリッピング
+title: パスおよび領域でのクリッピング
 description: この記事では、特定の領域にクリップのグラフィックスを SkiaSharp パスを使用して、領域を作成する方法について説明し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,16 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 87f1ad3956bdb43c82a7ab57ea9171e9a28dd558
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 4f8b6b7ea0db8d46886c3391f1aef3ba20a5be44
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615289"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057445"
 ---
-# <a name="clipping-with-paths-and-regions"></a>パスおよび領域でクリッピング
+# <a name="clipping-with-paths-and-regions"></a>パスおよび領域でのクリッピング
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _クリップ グラフィックスへのパスを使用して、特定の領域を領域を作成するには_
 

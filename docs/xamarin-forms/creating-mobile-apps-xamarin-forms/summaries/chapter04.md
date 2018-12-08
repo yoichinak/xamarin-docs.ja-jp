@@ -7,14 +7,16 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: daa2c2f3b43633fd9b3359763b9d740b0def9144
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563082"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052039"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要です。 スタックをスクロール
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
 この章は主の概念を導入する有用なデータ*レイアウト*、クラスおよび Xamarin.Forms を使用して、ページ上の複数のビューの表示画面を整理する方法の全体的な用語であります。
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 7a0f55b6d8a61f52f4ef137d83c56d86149bc3c9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7c19cc0f2d1f72706926d640bb7fad9323a9e17f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996257"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049457"
 ---
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観をカスタマイズします。
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 
 ListView はスクロール可能なリストは、使用してカスタマイズできる`ViewCell`秒。 `ViewCells` テキストとイメージを表示、true または false の状態を示すおよびユーザー入力を受け取るのために使用できます。
 
@@ -73,7 +75,7 @@ ListView セルから希望の外観を取得する 2 つの方法はありま�
 ## <a name="custom-cells"></a>カスタムのセル
 組み込みのセルが、必要なレイアウトを指定しなかった場合、カスタム セルは、必要なレイアウトを実装します。 たとえば、2 つのラベルを持つ同じ重み付けをセルに表示したい場合があります。 A`TextCell`ための十分なできなくなるため、`TextCell`が小さく、1 つのラベル。 ほとんどのセルのカスタマイズは、(追加ラベル、画像やその他の情報を表示) 読み取り専用データを追加します。
 
-カスタムのすべてのセルがから派生する必要があります[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)、組み込みのセルのすべての型を使用する同じ基本クラス。
+全てのカスタムセルは、すべての組み込みのセルが使用する基本クラスである[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)から派生する必要があります。
 
 Xamarin.Forms 2 に導入された新しい[キャッシュ動作](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)上、`ListView`コントロール カスタム セルの種類によってスクロールのパフォーマンスを向上させるために設定することができます。
 
@@ -82,7 +84,7 @@ Xamarin.Forms 2 に導入された新しい[キャッシュ動作](~/xamarin-for
 ![](customizing-cell-appearance-images/custom-cell.png "カスタムのセルの例")
 
 ### <a name="xaml"></a>XAML
-上記のレイアウトを作成する XAML 次に示します。
+上記のレイアウトを作成する XAML を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,7 +115,7 @@ x:Class="demoListView.ImageCellPage">
 </ContentPage>
 ```
 
-上記の XAML はよく行っています。 分割してみましょう。
+上記の XAML は多くのことを行っています。 分割してみましょう。
 
 - カスタムのセルが入れ子になっている、 `DataTemplate`、内である`ListView.ItemTemplate`します。 これは、その他のセルを使用する場合と同じプロセスです。
 - `ViewCell` カスタムのセルの種類です。 子、`DataTemplate`要素でまたは型から派生する必要があります`ViewCell`します。

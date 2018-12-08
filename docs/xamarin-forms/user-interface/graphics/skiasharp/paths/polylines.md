@@ -7,14 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: d5896a9d4f1aac2ea90d544d638e4adf68d24140
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: c6328135e0310c7b10b89bf2e32ce62869b15cfb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615796"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059987"
 ---
 # <a name="polylines-and-parametric-equations"></a>多角形やパラメーターの式
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _SkiaSharp を使用して、パラメーターの式を定義できる任意の行をレンダリングするには_
 

@@ -7,14 +7,16 @@ ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 89056bac86116161512ad32721c5d877850d75f2
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 3aec84ec6598a45bb989d4bbc1705fd797382755
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563226"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057010"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章の概要です。 プラットフォーム固有の API 呼び出し
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)
 
 > [!NOTE] 
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。

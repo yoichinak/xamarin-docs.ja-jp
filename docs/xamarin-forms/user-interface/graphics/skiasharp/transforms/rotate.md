@@ -1,5 +1,5 @@
 ---
-title: 回転の変換
+title: 回転変換
 description: この記事では、効果とアニメーション SkiaSharp、回転変換でできることについて検討し、サンプル コードを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,16 @@ ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 3726a93ccf43fd9a2afdc2c46bb63e0f6ef7ad51
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 399f19ba4ec1ed8494e8269fc4cd0682b466a31a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615250"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056556"
 ---
-# <a name="the-rotate-transform"></a>回転の変換
+# <a name="the-rotate-transform"></a>回転変換
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _効果とアニメーション SkiaSharp 回転変換でできることを確認します。_
 

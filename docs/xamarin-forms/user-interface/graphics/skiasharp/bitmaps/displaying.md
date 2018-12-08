@@ -7,14 +7,16 @@ ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: f4cc13a5e8794eb5f2f883f35d6a0e4d34788507
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 73fdccf1f6ccee4f6610c1078f5aab14c2be3d78
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615315"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054921"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>SkiaSharp のビットマップの表示
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 SkiaSharp のビットマップのサブジェクトが、情報の記事で導入された **[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** します。 その記事では、負荷のビットマップに 3 つの方法とビットマップを表示する 3 つの方法を示しました。 この記事では、ビットマップを読み込む方法を確認しより深いがの使用になる、`DrawBitmap`メソッドの`SKCanvas`します。
 
@@ -126,7 +128,7 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 これら 2 つの方法では、機能的に同じです。 指定したポイントでは、ビットマップをキャンバスの左上隅の場所を示します。 モバイル デバイスのピクセルの解像度は非常に高いため、小さいビットマップは通常、これらのデバイスでは非常に狭かった表示されます。
 
-省略可能な`SKPaint`パラメーターでは、透明度を使用してビットマップを表示することができます。 これを行うには、作成、`SKPaint`オブジェクトし、設定、`Color`プロパティにいずれか`SKColor`値、アルファ チャネルの 1 より小さい。 例えば:
+省略可能な`SKPaint`パラメーターでは、透明度を使用してビットマップを表示することができます。 これを行うには、作成、`SKPaint`オブジェクトし、設定、`Color`プロパティにいずれか`SKColor`値、アルファ チャネルの 1 より小さい。 例:
 
 ```csharp
 paint.Color = new SKColor(0, 0, 0, 0x80);

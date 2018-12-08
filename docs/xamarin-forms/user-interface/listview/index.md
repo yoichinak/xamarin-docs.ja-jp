@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: dc039a7a984fae9bd856a9e7147ad899f86f0592
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 9da3bd65dfb5cc6f9ca6bd0e2930003e6ac3d182
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "35245001"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059260"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
-ListView は、特に長い一覧をスクロールを必要とするデータのリストを表示するためのビューです。 このガイドでは、ListView を使用する方法を示します。
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/WorkingWithListview)
+
+ビューは、特に長い一覧をスクロールを必要とするデータの一覧を表示するためのビューです。 このガイドでは、ListView を使用する方法を示します。
 
 1. **[データ ソース](data-and-databinding.md)** &ndash;データ、データ バインディングの有無の ListView を設定します。
 2. **[セルの外観](customizing-cell-appearance.md)** &ndash;組み込みのセルの外観をカスタマイズまたは独自のカスタムのセルを作成します。

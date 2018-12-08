@@ -7,14 +7,18 @@ ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 5bd063f82cc1d09c6b2e9100429889a23a2eda7f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24c33c61002130fe645bba54c307394bbc2e0656
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111586"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060379"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp のビットマップのタイル
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
 
 2 つの以前の記事で説明したように、 [ `SKShader` ](xref:SkiaSharp.SKShader)クラスは、線形または円形グラデーションを作成できます。 この記事の重点、`SKShader`領域をタイルにビットマップを使用するオブジェクト。 水平および垂直に、ビットマップを繰り返すことが元の方向のいずれかであるかまたは水平方向および垂直方向を反転します。 タイルの間の不連続性を回避、反転します。
 
