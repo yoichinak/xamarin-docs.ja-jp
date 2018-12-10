@@ -4,17 +4,15 @@ description: このドキュメントでは、アプリケーションが実行�
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 530b04446703d78452357b2c9f9089e59ebf6e6c
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: b78c04d30871552f9b1e18a42c871e24464c4802
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674814"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898954"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: デバイス情報
-
-![プレリリースの NuGet](~/media/shared/pre-release.png)
 
 **DeviceInfo** クラスでは、アプリケーションが実行されているデバイスに関する情報が提供されます。
 
@@ -57,22 +55,23 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[プラットフォーム](xref:Xamarin.Essentials.DeviceInfo.Platforms)
 
-`DeviceInfo.Platform` は、オペレーティング システムにマップされる定数文字列に対応します。 値は `Platforms` クラスで確認できます。
+`DeviceInfo.Platform` は、オペレーティング システムにマップされる定数文字列に対応します。 値は次の `DevicePlatform` 構造体で確認できます。
 
-- **DeviceInfo.Platforms.iOS** – iOS
-- **DeviceInfo.Platforms.Android** – Android
-- **DeviceInfo.Platforms.UWP** – UWP
-- **DeviceInfo.Platforms.Unsupported** – 非サポート
+- **DevicePlatform.iOS** – iOS
+- **DevicePlatform.Android** – Android
+- **DevicePlatform.UWP** – UWP
+- **DevicePlatform.Unknown** – 不明
 
 ## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[表示形式](xref:Xamarin.Essentials.DeviceInfo.Idioms)
 
-`DeviceInfo.Idiom` は、アプリケーションが実行されているデバイスの種類にマップされる文字列定数に対応します。 値は `Idioms` クラスで確認できます。
+`DeviceInfo.Idiom` は、アプリケーションが実行されているデバイスの種類にマップされる文字列定数に対応します。 値は次の `DeviceIdiom` 構造体で確認できます。
 
-- **DeviceInfo.Idioms.Phone** – 電話
-- **DeviceInfo.Idioms.Tablet** – タブレット
-- **DeviceInfo.Idioms.Desktop** – デスクトップ
-- **DeviceInfo.Idioms.TV** – テレビ
-- **DeviceInfo.Idioms.Unsupported** – 非サポート
+- **DeviceIdiom.Phone** – 電話
+- **DeviceIdiom.Tablet** – タブレット
+- **DeviceIdiom.Desktop** – デスクトップ
+- **DeviceIdiom.TV** – テレビ
+- **DeviceIdiom.Watch** – 腕時計
+- **DeviceIdiom.Unknown** – 不明
 
 ## <a name="device-type"></a>デバイスの種類
 

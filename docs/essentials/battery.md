@@ -4,19 +4,17 @@ description: このドキュメントで説明する Xamarin.Essentials の Batt
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 6a14c939064538a405a1fe64061e0bb2e903fedd
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 5c457bb8ad9796396f24264e27f6762569ea542c
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675433"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898860"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: バッテリ
 
-![プレリリースの NuGet](~/media/shared/pre-release.png)
-
-**Battery** クラスを使用すると、デバイスのバッテリに関する情報を確認し、変化を監視できます。
+**Battery** クラスでは、デバイスのバッテリ情報を確認し、変更を監視し、デバイスが省電力モードで実行されているかどうかを示す、デバイスの省電力状態に関する情報を提供できます。 デバイスの省電力状態がオンになっている場合、アプリケーションはバックグラウンド処理を避ける必要があります。
 
 ## <a name="get-started"></a>作業開始
 
@@ -65,7 +63,7 @@ using Xamarin.Essentials;
 現在のバッテリに関する情報を確認します。
 
 ```csharp
-var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
+var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
 
 var state = Battery.State;
 
@@ -121,7 +119,7 @@ public class BatteryTest
         Battery.BatteryChanged += Battery_BatteryChanged;
     }
 
-    void Battery_BatteryChanged(object sender, BatteryChangedEventArgs   e)
+    void Battery_BatteryChanged(object sender, BatteryInfoChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -130,6 +128,39 @@ public class BatteryTest
     }
 }
 ```
+
+バッテリで動作するデバイスは、低電力の省電力モードに切り替えることができます。 デバイスが自動的にこのモードに切り替わる場合があります。たとえば、バッテリ残量が 20% を下回ったときなどです。 オペレーティング システムは、バッテリを消耗させる傾向があるアクティビティを減らすことで、省電力モードに対応します。 アプリケーションでは、バックグラウンド処理やその他の電力消費の大きいアクティビティを回避することで、省電力モードがオンになった場合をサポートできます。
+
+静的プロパティ `Battery.EnergySaverStatus` を使用して、デバイスの現在の省電力状態を取得することもできます。
+
+```csharp
+// Get energy saver status
+var status = Battery.EnergySaverStatus;
+```
+
+このプロパティは `EnergySaverStatus` 列挙型のメンバーを返します。それは `On`、`Off`、または `Unknown` です。 プロパティが `On` を返す場合、アプリケーションでは、バックグラウンド処理やその他の電力消費の大きいアクティビティを回避する必要があります。
+
+アプリケーションでは、イベント ハンドラーもインストールする必要があります。 **Battery** クラスでは、省電力状態が変更されたときにトリガーされるイベントが公開されています。
+
+```csharp
+public class EnergySaverTest
+{
+    public EnergySaverTest()
+    {
+        // Subscribe to changes of energy-saver status
+        Batter.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
+    }
+
+    private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
+    {
+        // Process change
+        var status = e.EnergySaverStatus;
+    }
+}
+```
+
+省電力の状態が `On` に変わった場合、アプリケーションはバックグラウンド処理の実行を停止させる必要があります。 状態が `Unknown` または `Off` に変わった場合、アプリケーションはバックグラウンド処理を再開することができます。
+
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 

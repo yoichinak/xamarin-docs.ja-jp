@@ -1,28 +1,26 @@
 ---
-title: Xamarin.Essentials マップ
-description: Xamarin.Essentials の Maps クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
+title: Xamarin.Essentials の Map
+description: Xamarin.Essentials の Map クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/25/2018
-ms.openlocfilehash: fb4cbc2fd334d574abc57a3359fa346bc6795408
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 9797244a9f89d0658b65b132eaf541ed763be97b
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674775"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898967"
 ---
-# <a name="xamarinessentials-maps"></a>Xamarin.Essentials: マップ
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials: Map
 
-![プレリリースの NuGet](~/media/shared/pre-release.png)
-
-**Maps** クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
+**Map** クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
 
 ## <a name="get-started"></a>作業開始
 
 [!include[](~/essentials/includes/get-started.md)]
 
-## <a name="using-maps"></a>マップの使用
+## <a name="using-map"></a>Map の使用
 
 自分のクラスの Xamarin.Essentials に参照を追加します。
 
@@ -30,17 +28,17 @@ ms.locfileid: "50674775"
 using Xamarin.Essentials;
 ```
 
-マップの機能は、`OpenAsync` メソッドを、開く `Location` または `Placemark` と省略可能な `MapsLaunchOptions` と共に呼び出すことで動作します。
+Map 機能は、`OpenAsync` メソッドを、開く `Location` または `Placemark` と省略可能な `MapLaunchOptions` と共に呼び出すことで動作します。
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
     public async Task NavigateToBuilding25()
     {
         var location = new Location(47.645160, -122.1306032);
-        var options =  new MapsLaunchOptions { Name = "Microsoft Building 25" };
+        var options =  new MapLaunchOptions { Name = "Microsoft Building 25" };
 
-        await Maps.OpenAsync(location, options);
+        await Map.OpenAsync(location, options);
     }
 }
 ```
@@ -53,7 +51,7 @@ public class MapsTest
 - `Locality`
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
     public async Task NavigateToBuilding25()
     {
@@ -64,40 +62,40 @@ public class MapsTest
                 Thoroughfare = "Microsoft Building 25",
                 Locality = "Redmond"
             };
-        var options =  new MapsLaunchOptions { Name = "Microsoft Building 25" };
+        var options =  new MapLaunchOptions { Name = "Microsoft Building 25" };
 
-        await Maps.OpenAsync(placemark, options);
+        await Map.OpenAsync(placemark, options);
     }
 }
 ```
 
 ## <a name="extension-methods"></a>拡張メソッド
 
-`Location` または `Placemark` への参照が既にある場合は、省略可能な `MapsLaunchOptions` と共に組み込みの拡張メソッド `OpenMapsAsync` を使用することができます。
+`Location` または `Placemark` への参照が既にある場合は、省略可能な `MapLaunchOptions` と共に組み込みの拡張メソッド `OpenMapAsync` を使用することができます。
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
-    public async Task OpenPlacemarkOnMaps(Placemark placemark)
+    public async Task OpenPlacemarkOnMap(Placemark placemark)
     {
-        await placemark.OpenMapsAsync();
+        await placemark.OpenMapAsync();
     }
 }
 ```
 
 ## <a name="directions-mode"></a>ルート案内
 
-`MapsLaunchOptions` なしで `OpenMapsAsync` を呼び出した場合、指定した場所でマップが起動します。 必要に応じて、デバイスの現在位置から計算されるナビゲーション ルートを取得することができます。 これは、`MapsLaunchOptions` の `MapDirectionsMode` を設定することによって行います。
+`MapLaunchOptions` なしで `OpenMapAsync` を呼び出した場合、指定した場所でマップが起動します。 必要に応じて、デバイスの現在位置から計算されるナビゲーション ルートを取得することができます。 これは、`MapLaunchOptions` の `NavigationMode` を設定することによって行います。
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
     public async Task NavigateToBuilding25()
     {
         var location = new Location(47.645160, -122.1306032);
-        var options =  new MapsLaunchOptions { MapDirectionsMode = MapDirectionsMode.Driving };
+        var options =  new MapLaunchOptions { NavigationMode = NavigationMode.Driving };
 
-        await Maps.OpenAsync(location, options);
+        await Map.OpenAsync(location, options);
     }
 }
 ```
@@ -106,15 +104,15 @@ public class MapsTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-- `MapDirectionsMode` ではサイクリング、ドライビング、徒歩がサポートされています。
+- `NavigationMode` ではサイクリング、ドライビング、徒歩がサポートされています。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-- `MapDirectionsMode` ではドライビング、路線、徒歩がサポートされています。
+- `NavigationMode` ではドライビング、路線、徒歩がサポートされています。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-- `MapDirectionsMode` ではドライビング、路線、徒歩がサポートされています。
+- `NavigationMode` ではドライビング、路線、徒歩がサポートされています。
 
 --------------
 
@@ -136,5 +134,5 @@ Android では、URI スキーム `geo:` を使用してデバイス上のマッ
 
 ## <a name="api"></a>API
 
-- [Maps のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Maps)
-- [Maps API ドキュメント](xref:Xamarin.Essentials.Maps)
+- [Map のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
+- [Map API のドキュメント](xref:Xamarin.Essentials.Map)

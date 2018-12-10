@@ -4,17 +4,15 @@ description: Xamarin.Essentials の Geocoding クラスでは、placemark を位
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 3202d4ace85c68042425ca5f23641ca7a76a6c7e
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.date: 11/04/2018
+ms.openlocfilehash: 0f44f179588c564ac9fa46d42ec18de6d303e239
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528391"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898980"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: ジオコーディング
-
-![プレリリースの NuGet](~/media/shared/pre-release.png)
 
 **Geocoding** クラスでは、placemark を位置座標にジオコーディングするための API と、逆に座標を placemark にジオコーディングする API が提供されています。
 
@@ -36,10 +34,10 @@ ms.locfileid: "51528391"
 
 ジオコーディング機能を使用するには、Bing Maps API キーが必要です。 無料の [Bing Maps](https://www.bingmapsportal.com/) アカウントにサインアップします。 **[My account]\(マイ アカウント\) > [My keys]\(マイ キー\)** で、新しいキーを作成し、アプリケーションの種類に基づいて情報を入力します (UWP アプリの場合は、**[Public Windows App (UWP, 8.x, and earlier)]\(パブリック Windows アプリ (UWP、8.x 以前向け)\)** にする必要があります)。
 
-**Geocoding** のメソッドを呼び出す前のアプリケーションのライフサイクルの早い段階で、API キーを設定します。
+**Geocoding** のメソッドを呼び出す前のアプリケーションのライフサイクルの早い段階で、API キーを設定します (UWP でのみ可能です)。
 
 ```csharp
-Geocoding.MapKey = "YOUR-KEY-HERE";
+Platform.MapServiceToken = "YOUR-KEY-HERE";
 ```
 
 -----

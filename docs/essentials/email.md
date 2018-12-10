@@ -4,17 +4,15 @@ description: アプリケーションで Xamarin.Essentials の Email クラス�
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 3c2958cc4572c2f87c46c9edc5fc194284658f24
-ms.sourcegitcommit: 704d4cfd418c17b0e85a20c33a16d2419db0be71
+ms.date: 11/04/2018
+ms.openlocfilehash: d7d2536fca32fe3ae9f9692031645c42edb4ea61
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51691751"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898666"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: 電子メール
-
-![プレリリースの NuGet](~/media/shared/pre-release.png)
 
 アプリケーションで **Email** クラスを使用すると、件名、本文、受信者 (TO、CC、BCC) などの情報を指定して既定のメール アプリケーションを開くことができます。
 
@@ -66,7 +64,7 @@ public class EmailTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-プラットフォームによる違いはありません。
+Android の一部のメール クライアントは `Html` を検出する手段がなく、これをサポートしていないため、メールを送信するときは `PlainText` を使用することをお勧めします。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

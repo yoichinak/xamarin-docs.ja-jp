@@ -4,17 +4,15 @@ description: Xamarin.Essentials の Gyroscope クラスを使用すると、デ�
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 1d42658160855e260e0d159c58a1f95e7a8c7d4c
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 1e19585e238d66568364be7ccdbdb52d22b04066
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674732"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898512"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: ジャイロスコープ
-
-![プレリリースの NuGet](~/media/shared/pre-release.png)
 
 **Gyroscope** クラスを使用すると、デバイスの 3 つの主軸の周りの回転角度であるデバイスのジャイロスコープ センサーを監視できます。
 
@@ -30,7 +28,7 @@ ms.locfileid: "50674732"
 using Xamarin.Essentials;
 ```
 
-Gyroscope の機能は、ジャイロスコープの変化をリッスンする `Start` および `Stop` メソッドを呼び出すことで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
+Gyroscope の機能は、ジャイロスコープの変化をリッスンする `Start` および `Stop` メソッドを呼び出すことで動作します。 すべての変更は `ReadingChanged` イベントを通じて rad/秒単位で戻されます。 以下がサンプルの使用方法です。
 
 ```csharp
 
@@ -48,7 +46,7 @@ public class GyroscopeTest
     void Gyroscope_ReadingChanged(object sender, GyroscopeChangedEventArgs e)
     {
         var data = e.Reading;
-        // Process Angular Velocity X, Y, and Z
+        // Process Angular Velocity X, Y, and Z reported in rad/s
         Console.WriteLine($"Reading: X: {data.AngularVelocity.X}, Y: {data.AngularVelocity.Y}, Z: {data.AngularVelocity.Z}");
     }
 

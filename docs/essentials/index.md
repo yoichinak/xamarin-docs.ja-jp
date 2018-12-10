@@ -4,17 +4,15 @@ description: このドキュメントは、Xamarin.Essentials について説明
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/30/2018
-ms.openlocfilehash: b81102c6c0e0d65aaa46b2d32e34db536ab58e03
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.date: 11/04/2018
+ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "39361003"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898642"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
-
-![プレリリースの NuGet](~/media/shared/pre-release.png)
 
 Xamarin.Essentials には、モバイル アプリケーション開発用のクロスプラットフォーム API が用意されています。
 
@@ -35,7 +33,6 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [クリップボード](clipboard.md?context=xamarin/xamarin-forms) – クリップボード上のテキストをすばやく簡単に設定したり読み取ったりします。
 * [コンパス](compass.md?context=xamarin/xamarin-forms) – 変化のコンパスを監視します。
 * [接続](connectivity.md?context=xamarin/xamarin-forms) – 接続状態を確認し、変更を検出します。
-* [データ転送](data-transfer.md?context=xamarin/xamarin-forms) – 他のアプリにテキストや Web サイトの URI を送信します。
 * [デバイス ディスプレイ情報](device-display.md?context=xamarin/xamarin-forms) – デバイスの画面のメトリックと向きを取得します。
 * [デバイス情報](device-information.md?context=xamarin/xamarin-forms) – デバイスの詳細を簡単に確認します。
 * [電子メール](email.md?context=xamarin/xamarin-forms) – 電子メール メッセージを簡単に送信します。
@@ -51,10 +48,9 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [ブラウザーを開く](open-browser.md?context=xamarin/xamarin-forms) – ブラウザーで特定の Web サイトをすばやく簡単に開きます。
 * [向きセンサー](orientation-sensor.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの向きを取得します。
 * [ダイヤラー](phone-dialer.md?context=xamarin/xamarin-forms) – ダイヤラーを開きます。
-* [電源](power.md?context=xamarin/xamarin-forms) – デバイスの省電力の状態を取得します。
 * [ユーザー設定](preferences.md?context=xamarin/xamarin-forms) – 永続的なユーザー設定をすばやく簡単に追加します。
-* [画面のロック](screen-lock.md?context=xamarin/xamarin-forms) – デバイスの画面を起動状態のままにします。
 * [セキュリティで保護されたストレージ](secure-storage.md?context=xamarin/xamarin-forms) – データを安全に格納します。
+* [Share](share.md?context=xamarin/xamarin-forms) – 他のアプリにテキストや Web サイトの URI を送信します。
 * [SMS](sms.md?context=xamarin/xamarin-forms) – 送信用の SMS メッセージを作成します。
 * [音声合成](text-to-speech.md?context=xamarin/xamarin-forms) – デバイス上のテキストを音声化します。
 * [バージョンの追跡](version-tracking.md?context=xamarin/xamarin-forms) – アプリケーションのバージョンとビルド番号を追跡します。
