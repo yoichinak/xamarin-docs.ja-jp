@@ -42,7 +42,7 @@ Xamarin Live Player が必要です。
 2. 移動して**ツール > オプション.** を選択し、 **Xamarin > その他の**タブ。
 3. ティック**Xamarin Live Player を有効にする**:
 
-    ![チェック オプション] ウィンドウで、[Xamarin Live Player を有効にするボックス](install-images/vs2017-options.png)
+    ![チェック オプション ウィンドウで、Xamarin Live Player を有効にするボックス](install-images/vs2017-options.png)
 
 4. 作成するか、Xamarin プロジェクトを開きます (または[サンプル](~/tools/live-player/samples.md))。
 5. 選択**Live Player**デバイスの一覧で。
