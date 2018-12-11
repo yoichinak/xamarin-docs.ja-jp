@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2018
-ms.openlocfilehash: 21229bc9d56865d6365f8ddfe4dd2046fbabc03d
-ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
+ms.openlocfilehash: 4a45d4fb7aaad504c7bb5628f1e521a39463b06f
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51681528"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899071"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator for Windows
 
@@ -34,7 +34,7 @@ Windows 用のリモートの iOS シミュレーターは、Visual Studio 2017 
 
 - **ホーム**– iOS デバイスで [ホーム] ボタンをシミュレートします。
 - **ロック**– シミュレーター (ロックを解除するのにはスワイプ) をロックします。
-- **スクリーン ショット**– シミュレーターのスクリーン ショットを保存します (に格納されている **Pictures\Xamarin\iOS シミュレーター\**)。
+- **スクリーン ショット**– シミュレーターのスクリーン ショットを保存します (に格納されている**Pictures\Xamarin\iOS シミュレーター\\**)。
 - [**設定**](#settings) – キーボード、場所、およびその他の設定が表示されます。
 - [**その他のオプション**](#other-options) – 回転、シェイク ジェスチャ、タッチ ID などのさまざまなシミュレーター オプションが表示されます
 
