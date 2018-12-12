@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 12fd9e477e24058d36128e52b7b5dd9074598be8
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 749ed2876881f1c2005226e17a84bcb3a44425f8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171795"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056747"
 ---
 # <a name="ios-platform-specifics"></a>iOS プラットフォーム仕様
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 _プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。この記事では Xamarin.Forms に組み込まれている iOS のプラットフォーム仕様の使い方を説明します。_
 

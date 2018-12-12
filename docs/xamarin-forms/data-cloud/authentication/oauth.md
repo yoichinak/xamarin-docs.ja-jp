@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 504b2789ef61b0339d1c32e92c852a779a193b52
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 786f1503fcc0cc07f76a7cdc55731d341607429f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854767"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053198"
 ---
 # <a name="authenticating-users-with-an-identity-provider"></a>Id プロバイダーでユーザーを認証します。
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 
 _Xamarin.Auth は、ユーザーを認証し、自分のアカウントを格納するをクロス プラットフォーム SDK です。これには、Google、Microsoft、Facebook、Twitter などの id プロバイダーを使用するためのサポートを提供する OAuth 認証子が含まれます。この記事では、Xamarin.Auth を使用して、Xamarin.Forms アプリケーションの認証プロセスを管理する方法について説明します。_
 
@@ -50,7 +52,7 @@ Xamarin.Auth には、id プロバイダーの承認エンドポイントと対�
 
 ![](oauth-images/google-auth.png "Xamarin.Auth を使用して Google による認証するには")
 
-Google を使用する認証要求は、アプリケーションは、`OAuth2Authenticator`クラス。 後のサインイン] ページで、アクセス トークンを含む、ユーザーが正常に認証で Google 認証の応答が返されます。 次に、アプリケーションは、要求を Google を使用して、基本的なユーザー データの作成、`OAuth2Request`クラスは、要求に含まれるアクセス トークンを使用します。
+Google を使用する認証要求は、アプリケーションは、`OAuth2Authenticator`クラス。 後のサインイン ページで、アクセス トークンを含む、ユーザーが正常に認証で Google 認証の応答が返されます。 次に、アプリケーションは、要求を Google を使用して、基本的なユーザー データの作成、`OAuth2Request`クラスは、要求に含まれるアクセス トークンを使用します。
 
 ### <a name="setup"></a>セットアップ
 

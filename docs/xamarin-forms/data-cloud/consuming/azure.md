@@ -7,20 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 73d74b59ef6e59028eec7cad19feec21908b6329
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 1ac68992d36627eb5d6aee0d4d19564ce63a3936
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269045"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052136"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Azure Mobile Appsの使用
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure/)
 
 _Azure Mobile Appsでは、モバイル認証、オフライン同期、およびプッシュ通知のサポートにより、Azure App Serviceでホストされているスケーラブルなバックエンドでアプリを開発できます。この記事は、Azure Mobile AppsでNode.jsバックエンドを使用する場合にのみ適用され、Azure Mobile Appsインスタンスのテーブルに格納されたデータのクエリ、挿入、更新、および削除方法について説明しています。_ 
 
 
 > [!NOTE]
-> 6 月 30 日以降は、すべての新しい Azure Mobile Apps 作成されます TLS 1.2 を既定では。 さらに、それがもお勧め既存 Azure Mobile Apps TLS 1.2 を使用するように再構成します。 Azure のモバイル アプリでの TLS 1.2 を適用する方法については、次を参照してください。 [TLS 1.2 の強制](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112)です。 TLS 1.2 を使用する Xamarin のプロジェクトを構成する方法については、次を参照してください。[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)です。
+> 6 月 30 日以降は、すべての新しい Azure モバイル アプリが作成されます TLS 1.2 を既定では。 さらもをお勧めする既存の Azure Mobile Apps TLS 1.2 を使用するように再構成します。 Azure モバイル アプリで TLS 1.2 を適用する方法については、次を参照してください。 [TLS 1.2 を適用する](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112)します。 TLS 1.2 を使用する Xamarin プロジェクトを構成する方法については、次を参照してください。[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)します。
 
 Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。 これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます。`Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続します。
 
@@ -29,10 +31,10 @@ Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成�
 Azure Mobile Apps へのアクセスは、 [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) を介して行われ、Xamarin.FormsサンプルアプリケーションからAzureへのすべての接続はHTTPS経由で行われます。
 
 > [!NOTE]
-> iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-> 使用することがない場合のうち ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 アプリケーションを更新することによってこれを行う**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)です。
+> iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。   ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
 
-## <a name="consuming-an-azure-mobile-app-instance"></a>Azure のモバイル アプリ インスタンスの使用
+## <a name="consuming-an-azure-mobile-app-instance"></a>Azure Mobile App インスタンスの使用
 
 [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)が提供する`MobileServiceClient`クラスは、次のコード例に示すように Azure Mobile Apps インスタンスへのアクセスするために Xamarin.Forms アプリケーションによって使用されます。
 
@@ -47,13 +49,13 @@ public TodoItemManager ()
 }
 ```
 
-ときに、`MobileServiceClient`インスタンスが作成されると、Azure Mobile Apps インスタンスを識別する、アプリケーションの URL を指定する必要があります。 モバイル アプリのダッシュ ボードからこの値を取得できます、 [Microsoft Azure ポータル](https://portal.azure.com/)です。
+ときに、`MobileServiceClient`インスタンスが作成されると、Azure Mobile Apps のインスタンスを識別するために、アプリケーションの URL を指定する必要があります。 モバイル アプリのダッシュ ボードからこの値を取得することができます、 [Microsoft Azure Portal](https://portal.azure.com/)します。
 
-参照、`TodoItem`そのテーブルで操作を実行する前に、Azure Mobile Apps インスタンスに格納されているテーブルを取得する必要があります。 これは、呼び出すことによって実現、`GetTable`メソッドを`MobileServiceClient`インスタンスを返す、`IMobileServiceTable<TodoItem>`参照します。
+参照、`TodoItem`そのテーブルに対して操作を実行できるされる前に、Azure Mobile Apps インスタンスに格納されているテーブルを取得する必要があります。 これは、呼び出すことによって実現されます、`GetTable`メソッドを`MobileServiceClient`インスタンスを返す、`IMobileServiceTable<TodoItem>`参照。
 
 ### <a name="querying-data"></a>データのクエリ
 
-テーブルの内容を呼び出すことによって取得できます、`IMobileServiceTable.ToEnumerableAsync`メソッドを非同期的にクエリを評価し、結果を返します。 データを含めることによってサーバー側をフィルター処理、`Where`クエリ内の句。 `Where`句は、次のコード例に示すように行フィルター、テーブルに対するクエリに述語を適用します。
+テーブルの内容を呼び出すことによって取得できます、`IMobileServiceTable.ToEnumerableAsync`メソッドを非同期的にクエリを評価し、結果が返されます。 データを含めることによってサーバー側をフィルター処理、`Where`クエリ内の句。 `Where`次のコード例に示すように、句が、行のフィルタ リング、テーブルに対するクエリに述語を適用します。
 
 ```csharp
 public async Task<ObservableCollection<TodoItem>> GetTodoItemsAsync (bool syncItems = false)
@@ -67,11 +69,11 @@ public async Task<ObservableCollection<TodoItem>> GetTodoItemsAsync (bool syncIt
 }
 ```
 
-このクエリからのすべての項目を返します、`TodoItem`テーブルです`Done`プロパティと等しい`false`です。 クエリの結果は、後に配置されます、`ObservableCollection`表示用です。
+このクエリからすべての項目を返します、`TodoItem`テーブルです`Done`プロパティは等しく`false`します。 クエリの結果に配置し、`ObservableCollection`表示用です。
 
 ### <a name="inserting-data"></a>データの挿入
 
-Azure Mobile Apps インスタンスでデータを挿入するときに新しい列が自動的に生成する必要に応じて、テーブルでの提供、Azure Mobile Apps インスタンスでその動的スキーマが有効にします。 `IMobileServiceTable.InsertAsync`次のコード例に示すように、指定したテーブルに新しいデータの行を挿入するメソッドを使用します。
+Azure Mobile Apps のインスタンスでデータを挿入するときに新しい列が自動的に生成する必要に応じて、テーブル内の提供、Azure Mobile Apps のインスタンスでその動的スキーマが有効にします。 `IMobileServiceTable.InsertAsync`の次のコード例に示すように、指定したテーブルに新しいデータの行を挿入するメソッドを使用します。
 
 ```csharp
 public async Task SaveTaskAsync (TodoItem item)
@@ -84,11 +86,11 @@ public async Task SaveTaskAsync (TodoItem item)
 
 挿入リクエストを行うときに、ID を Azure Mobile Apps インスタンスに渡されるデータで指定されている必要があります。  挿入リクエストには、ID が含まれている場合、`MobileServiceInvalidOperationException`がスローされます。
 
-後に、`InsertAsync`メソッドが完了すると、Azure Mobile Apps インスタンス内のデータの ID に設定されます、 `TodoItem` Xamarin.Forms アプリケーション内のインスタンス。
+後に、`InsertAsync`メソッドが完了するで Azure Mobile Apps のインスタンス内のデータの ID が設定されて、 `TodoItem` Xamarin.Forms アプリケーションのインスタンス。
 
 ### <a name="updating-data"></a>データの更新
 
-Azure Mobile Apps インスタンス内のデータを更新するときに新しい列が自動的に生成されます必要に応じて、テーブルでの提供、Azure Mobile Apps インスタンスでその動的スキーマが有効にします。 `IMobileServiceTable.UpdateAsync`次のコード例に示すように、新しい情報で既存のデータを更新するメソッドを使用します。
+Azure Mobile Apps のインスタンス内のデータを更新するときに新しい列が自動的に生成する必要に応じて、テーブル内の提供、Azure Mobile Apps のインスタンスでその動的スキーマが有効にします。 `IMobileServiceTable.UpdateAsync`の次のコード例に示すように、新しい情報で既存のデータを更新するメソッドを使用します。
 
 ```csharp
 public async Task SaveTaskAsync (TodoItem item)
@@ -99,11 +101,11 @@ public async Task SaveTaskAsync (TodoItem item)
 }
 ```
 
-更新リクエストを行うときは、Azure Mobile Apps インスタンスは、更新するデータを識別できるように ID を指定してください。 この ID の値が格納されている、`TodoItem.ID`プロパティです。 更新のリクエストが含まれていない ID には更新するには、Azure Mobile Apps インスタンス データを決定する方法はありません、そのため、`MobileServiceInvalidOperationException`がスローされます。
+更新リクエストを行うときは、Azure Mobile Apps インスタンスは、更新するデータを識別できるように ID を指定してください。 この ID の値が格納されている、`TodoItem.ID`プロパティです。  更新のリクエストが含まれていない ID には更新するには、Azure Mobile Apps インスタンス データを決定する方法はありません、そのため、`MobileServiceInvalidOperationException`がスローされます。
 
 ### <a name="deleting-data"></a>データの削除
 
-`IMobileServiceTable.DeleteAsync`次のコード例に示すように、Azure Mobile Apps テーブルからデータを削除するメソッドを使用します。
+`IMobileServiceTable.DeleteAsync`の次のコード例に示すように、Azure Mobile Apps テーブルからデータを削除するメソッドを使用します。
 
 ```csharp
 public async Task DeleteTaskAsync (TodoItem item)
@@ -125,5 +127,5 @@ public async Task DeleteTaskAsync (TodoItem item)
 
 - [TodoAzure (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure/)
 - [Xamarin.Forms アプリを作成します。](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/)
-- [Azure のモバイル クライアント SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
 - [MobileServiceClient](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx)

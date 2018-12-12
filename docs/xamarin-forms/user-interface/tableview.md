@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/04/2018
-ms.openlocfilehash: b8e851e735fa39d015e22ce511c39ad825bc97c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0561c2a08aa96755d6d6caa9a3c683a5ce83ae10
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119996"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053987"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
-[テーブル](xref:Xamarin.Forms.TableView)データやスクロール可能な選択肢の一覧を表示するビューに同じテンプレートを共有しない行がある場合 [ListView](~/xamarin-forms/user-interface/listview/index.md)と異なり、テーブルには`ItemsSource`の概念が無いため、項目を子として手動で追加する必要があります。
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView)
+
+[テーブル](xref:Xamarin.Forms.TableView)データやスクロール可能な選択肢の一覧を表示するビューに同じテンプレートを共有しない行がある場合  [ListView](~/xamarin-forms/user-interface/listview/index.md)と異なり、テーブルには`ItemsSource`の概念が無いため、項目を子として手動で追加する必要があります。
 
 このガイドでは、次のセクションで構成されます。
 

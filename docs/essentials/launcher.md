@@ -4,17 +4,15 @@ description: Xamarin.Essentials の Launcher クラスを使用すると、ア�
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/25/2018
-ms.openlocfilehash: b9dc211a8b8b007e6975448a6c6c35f870021cc6
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 502ccaf8ef4fbeadb4b46f47668ac11f2747b89d
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674796"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898273"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: ランチャー
-
-![プレリリースの NuGet](~/media/shared/pre-release.png)
 
 **Launcher** クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。 これは多くの場合、他のアプリケーションのカスタム URI スキームへのディープ リンクを設定するときに使用されます。 ブラウザーで Web サイトを開く場合は、**[Browser](open-browser.md)** API を参照する必要があります。
 

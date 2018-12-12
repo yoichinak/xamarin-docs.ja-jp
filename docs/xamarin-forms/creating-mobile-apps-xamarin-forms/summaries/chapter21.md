@@ -7,14 +7,16 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6c666329664ad7dfaa8439068a60b6135d59d229
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563057"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048818"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章の概要です。 変換
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
 
 Xamarin.Forms のビューは、場所とこれは一般に、その親によって決定されるサイズで画面に表示、`Layout`または`Layout<View>`から派生します。 *変換*Xamarin.Forms 機能であり、その場所、サイズ、または偶数の向きを変更できます。
 
@@ -45,7 +47,7 @@ Xamarin.Forms では、スケーリング アイソトロ ピック; は幅と�
 
 値が 0 以外の場合、 [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)と[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)プロパティは、水平方向または垂直方向に要素をシフトします。
 
-[ **TranslationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TranslationDemo)プログラムでは、これらの 2 つのプロパティを実験できます`Slider`を制御する要素、`TranslationX`と`TranslationY`プロパティ、の`Frame`。 変換にも影響するすべての子`Frame`します。
+[ **TranslationDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TranslationDemo)プログラムでは、これらの 2 つのプロパティを実験できます`Slider`を制御する要素、`TranslationX`と`TranslationY`プロパティ、の`Frame`. 変換にも影響するすべての子`Frame`します。
 
 ### <a name="text-effects"></a>テキスト効果
 

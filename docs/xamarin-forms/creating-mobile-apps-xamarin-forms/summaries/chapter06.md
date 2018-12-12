@@ -7,14 +7,16 @@ ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 0f1da94031e658d42205e6346d41b02c5822d992
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 12c8cdc19f9e6765ca25ade97bcfdbffb7b60381
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563681"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057601"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>第 6 章の概要です。 ボタンのクリック
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 
 [ `Button` ](xref:Xamarin.Forms.Button)コマンドを開始するユーザーのビューです。 A`Button`テキストによって識別されます (とで示した必要に応じてイメージ[第 13 章、ビットマップ](chapter13.md))。 その結果、`Button`と同じプロパティを多数定義しています`Label`:
 
@@ -61,7 +63,7 @@ ms.locfileid: "51563681"
 多くのアプリケーションでは、プログラムが終了したときにデータを保存して、プログラムをもう一度起動するときに、そのデータを再読み込みする必要があります。 [ `Application` ](xref:Xamarin.Forms.Application)クラスは、プログラムを保存し、一時的なデータの復元に役立ついくつかのメンバーを定義します。
 
 - [ `Properties` ](xref:Xamarin.Forms.Application.Properties)プロパティが使用してディクショナリを`string`キーと`object`項目。 ディクショナリの内容は自動的にプログラムの終了前にアプリケーションのローカル ストレージに保存され、プログラムを起動するときに再度読み込まれます。
-- `Application`クラスは、プログラムの標準的なこと、3 つの保護された仮想メソッドを定義します`App`オーバーライド: [ `OnStart` ](xref:Xamarin.Forms.Application.OnStart)、 [ `OnSleep` ](xref:Xamarin.Forms.Application.OnSleep)、および[ `OnResume` ](xref:Xamarin.Forms.Application.OnResume)。 これらを参照してください*アプリケーションのライフ サイクル*イベント。
+- `Application`クラスは、プログラムの標準的なこと、3 つの保護された仮想メソッドを定義します`App`オーバーライド: [ `OnStart` ](xref:Xamarin.Forms.Application.OnStart)、 [ `OnSleep` ](xref:Xamarin.Forms.Application.OnSleep)、および[ `OnResume` ](xref:Xamarin.Forms.Application.OnResume). これらを参照してください*アプリケーションのライフ サイクル*イベント。
 - [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync)メソッドは、ディクショナリの内容を保存します。
 
 呼び出す必要はありません`SavePropertiesAsync`します。 ディクショナリの内容は自動的にプログラムの終了前に保存され、プログラムの起動する前に取得します。 プログラムがクラッシュした場合は、データを保存するプログラムがテスト中に便利です。

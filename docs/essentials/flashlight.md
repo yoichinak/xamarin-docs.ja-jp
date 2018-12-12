@@ -4,17 +4,15 @@ description: このドキュメントでは、デバイスのカメラのフラ�
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: dcc90e21fd3ba84019fddd345fbec561871e1408
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.date: 11/04/2018
+ms.openlocfilehash: 3f8e9e2e8608467367af6523c8b89bd8f757d491
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617464"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899058"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: 懐中電灯
-
-![プレリリースの NuGet](~/media/shared/pre-release.png)
 
 **Flashlight** クラスを使用すると、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできます。
 
