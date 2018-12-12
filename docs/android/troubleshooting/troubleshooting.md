@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 140307dbfe55d5445c329ea83eafedd467fe58fa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ccf5d97ff553fd304c4a3af158085d490bb665b7
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109355"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267600"
 ---
 # <a name="troubleshooting-tips"></a>トラブルシューティングのヒント
 
@@ -66,7 +66,7 @@ Visual Studio 内でデバイスのデプロイ ログを有効にします。
 4.  ログ メッセージは、デスクトップ上の monodroid.log ファイルに書き込まれます。
 
 
-Visual Studio for Mac は、常にデバイスのデプロイ ログを書き込みます。 それらを見つけるには少し困難です。*AndroidUtils*すべて日 + など、展開が発生したときのログ ファイルが作成されます: **AndroidTools-2012-10-24_12-35-45.log**します。
+Visual Studio for Mac は、常にデバイスのデプロイ ログを書き込みます。 それらを見つけるには少し困難です。*AndroidUtils*すべて日 + など、展開が発生したときのログ ファイルが作成されます。**AndroidTools-2012-10-24_12-35-45.log**します。
 
 -  Windows のログ ファイルが書き込まれます`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`します。
 -  OS X 上にログ ファイルの書き込み`$HOME/Library/Logs/XamarinStudio-{VERSION}`します。
@@ -91,28 +91,28 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 
 Xamarin.Android には、次のシステム プロパティがサポートされています。
 
--   *debug.mono.debug*: これと同じ場合、空でない文字列`*mono-debug*`します。
+-   *debug.mono.debug*:これと同じ場合、空でない文字列`*mono-debug*`します。
 
--   *debug.mono.env*: パイプで区切られた ('*|*')、アプリケーションの起動時にエクスポートする環境変数の一覧*する前に*mono は初期化されています。 これにより、環境変数を設定するには、そのコントロールの mono ログ記録できます。
+-   *debug.mono.env*:パイプで区切られた ('*|*')、アプリケーションの起動時にエクスポートする環境変数の一覧*する前に*mono は初期化されています。 これにより、環境変数を設定するには、そのコントロールの mono ログ記録できます。
 
-    - *注*: 値があるため '*|*'-、区切られた値は、引用符で囲むのレベルをいる必要がありますとして、 \` *adb シェル*\`コマンドが削除されます、引用符のセット。
+    - *注*:値があるため '*|*' に、区切られた値は、引用符で囲むのレベルをいる必要がありますとして、 \` *adb シェル*\`コマンド引用符のセットが削除されます。
 
-    - *注*: Android のシステム プロパティの値は 92 文字より長くすることができます。
+    - *注*:Android のシステム プロパティの値は 92 文字以内にすることはできます。
 
     - 例:
 
             adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
--   *debug.mono.log*: コンマ区切り ('*、*')、Android のデバッグ ログに関連するメッセージを印刷する必要があるコンポーネントの一覧。 既定では、何も設定されます。 コンポーネントは次のとおりです。
+-   *debug.mono.log*:コンマ区切り ('*、*')、Android のデバッグ ログに関連するメッセージを印刷する必要があるコンポーネントの一覧。 既定では、何も設定されます。 コンポーネントは次のとおりです。
 
-    -   *すべて*: すべてのメッセージの出力
-    -   *gc*: 印刷 GC に関連するメッセージ。
-    -   *gref*: (脆弱なグローバル) の参照の割り当てと解放メッセージを出力します。
-    -   *lref*: ローカル参照の割り当てと解放メッセージを出力します。
+    -   *すべて*:すべてのメッセージを出力します。
+    -   *gc*:GC に関連するメッセージを印刷します。
+    -   *gref*:(脆弱なグローバル) の参照の割り当てと解放メッセージを印刷します。
+    -   *lref*:ローカル参照の割り当てと解放メッセージを印刷します。
 
     *注*: これらは*非常に*詳細。 本当にする必要がある場合を除きを有効にしないでください。
 
--   *debug.mono.trace*: に設定できる、 [mono--トレース](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定します。
+-   *debug.mono.trace*:設定できる、 [mono--トレース](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定します。
 
 
 
@@ -250,63 +250,6 @@ Android 4.0 では、ただし、移動、コレクターがし、不要にな�
 
 
 
-## <a name="offline-activation"></a>オフラインのライセンス認証
-
-、Windows で Xamarin.Android をアクティブにできませんまたは Mac OS X で、フル バージョンの Xamarin.Android をインストールできない場合は、参照してください、[オフライン アクティベーション](~/android/get-started/installation/index.md)ページ。
-
-
-
-## <a name="cant-upgrade-to-indiebusiness-from-trial-account"></a>試用版アカウントからインディーズ/ビジネスにアップグレードできません。
-
-Xamarin.Android を最近購入し、Xamarin.Android 試用版を開始した場合は、Mac または Visual Studio の Visual Studio によってピックアップこのライセンスの変更を取得する次の手順を完了する必要があります。
-
--  Mac または Visual Studio の Visual Studio を閉じる
--  Mac で ~/Library/MonoAndroid または %PROGRAMDATA%\Mono から Android\License\ の Windows のすべてのファイルを削除します。
--  Visual Studio for Mac または Visual Studio を開いたりして、Xamarin.Android プロジェクトをビルド
-
-
-起動して実行するこの取得する必要があります。 問題がある場合は、お試したい、[オフラインのライセンス認証](~/android/get-started/installation/index.md)ワークステーションのアクティブ化を完了します。
-
-
-
-## <a name="receiving-activation-incomplete-error-message"></a>受信 ' アクティベーション不完全なエラー メッセージ
-
-この問題は、Xamarin.Android を Visual Studio を使用する場合に発生する可能性があります。 この問題を解決するには、次の場所からください、ログの送信先 *contact@xamarin.com*します。
-
--  ログの場所: **%localappdata%\\Xamarin\\ログ**
-
-
-
-
-## <a name="receiving-error-retrieving-update-information-error-message"></a>'の更新情報の取得エラー' にエラー メッセージ
-
-ときどき、更新プログラムは更新プログラムを確認するときに発生する多くの場合はこの次のエラーで失敗します。
-
-ほとんどの場合に、自分の Xamarin アカウントからログアウトするだけでこのエラーを解決することができ、もう一度ログ記録します。
-
-これを実現するにはの下の他のプラットフォームを検索して、手順を実行してくださいします。
-
-**Mac の場合:**
-1. Visual Studio for Mac を開く
-2. Visual Studio を Mac の選択 > アカウント.
-3. ログアウトをクリックします。
-4. ログをクリックします。
-5. 資格情報を入力します。
-6. 更新プログラムの確認
-
-**PC では、Visual Studo を使用します。**
-1. Visual Studio を開く
-2. ツールの選択 > Xamarin アカウント
-3. ログアウトをクリックします。
-4. ログをクリックします。
-5. 資格情報を入力します。
-6. 更新プログラムの確認
-
-このエラー メッセージが引き続き表示される場合は、電子メール **contact@xamarin.com**します。
-
-
-
-
 ## <a name="android-debug-logs"></a>Android のデバッグ ログ
 
 [Android デバッグ ログ](~/android/deploy-test/debugging/android-debug-log.md)すれば、ランタイム エラーに関する追加のコンテキストを提供することがあります。
@@ -365,7 +308,7 @@ HTC 同期ソフトウェアができない可能性があります**adb 開始�
 
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid.exe または aresgen.exe コード 1 で終了しました
 
-この問題をデバッグ、Visual Studio に、MSBuild 詳細レベルのように変更する方法を選択します:**ツール > オプション > プロジェクト**と**ソリューション > ビルド**と**実行 >MSBuild プロジェクト ビルドの出力詳細**にこの値を設定および**標準**します。
+この問題をデバッグし、Visual Studio にして、これを行うに、MSBuild の詳細度レベルを変更するには、次を選択します。**ツール > オプション > プロジェクト**と**ソリューション > ビルド**と**実行 > MSBuild プロジェクト ビルド出力の詳細**にこの値を設定および**標準**します。
 
 再構築して、完全なエラーが含まれている Visual Studio の出力ウィンドウを確認します。
 

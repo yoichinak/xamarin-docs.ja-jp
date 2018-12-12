@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: cbec49844d34ab8ad04282b383de15093ecdd891
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ada563fee78e579906e7f765a0120d8bfff67402
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118282"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267509"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Xamarin で tvOS の概要
 
@@ -64,11 +64,11 @@ TvOS の詳細についてを参照してください、 [Getting Started](~/ios
 
 さらに、Apple は、トランス コードされた c# tvOS アプリ用の Xamarin のサポートを使用するには、次のサンプル アプリを提供します。
 
-- [DemoBots: SpriteKit と GameplayKit クロス プラットフォーム ゲームを構築します。](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
+- [DemoBots:SpriteKit と GameplayKit クロス プラットフォーム ゲームの作成](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
 
 ## <a name="known-issues-and-troubleshooting"></a>既知の問題とトラブルシューティング
 
-Xamarin で tvOS の構築の問題が発生した場合は、確認、[リリース ノート](http://releases.xamarin.com/)、 [Xamarin.iOS フォーラム](https://forums.xamarin.com/categories/ios)、 [Xamarin Bugzilla トラッカー](https://bugzilla.xamarin.com/query.cgi?product=iOS)、および[GitHub](https://github.com/xamarin/xamarin-macios/issues)の既存の問題。
+Xamarin で tvOS の構築の問題が発生した場合は、確認、[リリース ノート](https://docs.microsoft.com/xamarin/ios/release-notes/)、 [Xamarin.iOS フォーラム](https://forums.xamarin.com/categories/ios)、 [Xamarin Bugzilla トラッカー](https://bugzilla.xamarin.com/query.cgi?product=iOS)、および[GitHub](https://github.com/xamarin/xamarin-macios/issues)の既存の問題。
 
 新しい問題や提案を報告[github](https://github.com/xamarin/xamarin-macios/issues)します。
 

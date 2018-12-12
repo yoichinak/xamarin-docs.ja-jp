@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: ca9c4ed0871b91bed82f746ccb36af9fb32816c0
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 765494b5d9a55aedd9c9b3f0ea29ea389346ae3c
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171782"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267626"
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -74,7 +74,7 @@ Visual Studio には、Android Oreo のサポートを追加するには、次�
 
 -----
 
-Android Oreo 用の Xamarin サポートの詳細については、次を参照してください。、 [Xamarin.Android 8.0 リリース ノート](https://developer.xamarin.com/releases/android/xamarin.android_8/xamarin.android_8.0/)します。
+Android Oreo 用の Xamarin サポートの詳細については、次を参照してください。、 [Xamarin.Android 8.0 リリース ノート](https://docs.microsoft.com/xamarin/android/release-notes/8/8.0/)します。
 
 
 

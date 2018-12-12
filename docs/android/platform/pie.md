@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: cd1c374fa68420e1923ef4dee0bb37a4665f3535
-ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
+ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52710024"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267639"
 ---
 # <a name="android-pie-features"></a>Android の円グラフの機能
 
@@ -24,7 +24,7 @@ _Xamarin.Android を使用して Android の 9 円用アプリの開発を開始
 
 この記事では、Android の円の Xamarin.Android アプリの開発を開始するために構成されます。 これには、必要な更新プログラムをインストール、SDK を構成およびエミュレーターまたはデバイスのテスト用に準備する方法について説明します。 Android の円の新機能の概要を説明し、主な Android の円グラフ機能の一部を使用する方法を示しています。 ソース コードの例を提供します。
 
-Xamarin.Android 9.0 では、Android の円のサポートを提供します。 Android の円の Xamarin.Android のサポートの詳細については、次を参照してください。、 [Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1)リリース ノート。
+Xamarin.Android 9.0 では、Android の円のサポートを提供します。 Android の円の Xamarin.Android のサポートの詳細については、次を参照してください。、 [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1)リリース ノート。
 
 ## <a name="requirements"></a>必要条件
 

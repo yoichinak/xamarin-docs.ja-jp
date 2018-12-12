@@ -1,5 +1,5 @@
 ---
-title: MacOS Mojave の概要
+title: macOS Mojave の概要
 description: このドキュメントは、macOS Mojave で新規および更新された機能の概要の大まかな説明します。
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
@@ -7,14 +7,14 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: ce293a7c97a2cb4975baef807ded9a8fd0a90476
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: a9975eeec445ac59dc71a44a1156804835795982
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615835"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267405"
 ---
-# <a name="introduction-to-macos-mojave"></a>MacOS Mojave の概要
+# <a name="introduction-to-macos-mojave"></a>macOS Mojave の概要
 
 このドキュメントは、macOS Mojave で新規および更新された機能の概要の大まかな説明します。
 
@@ -48,4 +48,4 @@ OpenGL ES と OpenCL、macOS Mojave で Apple が非推奨が[開発者](https:/
 
 - [Xamarin.Mac サンプル](https://developer.xamarin.com/samples/mac/)
 - [macOS-Apple の開発者](https://developer.apple.com/macos/)
-- [Xamarin.Mac 5.0 リリース ノート](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)
+- [Xamarin.Mac 5.0 リリース ノート](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
