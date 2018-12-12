@@ -24,7 +24,7 @@ IOS アプリのユーザー インターフェイスは、ネット ショッ�
 
 [![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間のリレーションシップを示しています。")](ios-code-only-images/image9.png#lightbox)
 
-使用してこれらのビュー階層を構築することができます、 [iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md) Visual Studio で、ただし便利なは全体をコードで操作する方法の基本を理解します。 この記事では、いくつかの基本的なポイント取得するとコードのみのユーザー インターフェイスの開発と実行について説明します。
+Visual Studio では、[iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md)　を使用してこれらのビュー階層を構築することができますが、全てをコードで操作する方法を根本的に理解しておくとよいでしょう。  この記事では、コードのみのユーザー インターフェイス開発を始めるためのいくつかの基本的なポイントについて説明します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -32,7 +32,7 @@ IOS アプリのユーザー インターフェイスは、ネット ショッ�
 
 [![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間のリレーションシップを示しています。")](ios-code-only-images/image9.png#lightbox)
 
-使用してこれらのビュー階層を構築することができます、 [iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md) Visual studio for Mac では、ただし便利なは全体をコードで操作する方法の基本を理解します。 この記事では、いくつかの基本的なポイント取得するとコードのみのユーザー インターフェイスの開発と実行について説明します。
+Visual studio for Mac では、[iOS 用の Xamarin デザイナー](~/ios/user-interface/designer/index.md) を使用してこれらのビュー階層を構築することができますが、全てをコードで操作する方法を根本的に理解しておくとよいでしょう。 この記事では、コードのみのユーザー インターフェイス開発を始めるためのいくつかの基本的なポイントについて説明します。
 
 -----
 
