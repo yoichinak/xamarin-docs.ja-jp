@@ -146,7 +146,7 @@ items:
         href: ~/cross-platform/macios/unified/update-binding.md?context=xamarin/mac
       - name: コードを Unified API に更新する場合のヒント
         href: ~/cross-platform/macios/unified/updating-tips.md?context=xamarin/mac
-    - name: Objective-C のバインド
+    - name: Objective-C のバインディング
       href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
       items:
       - name: 概要
@@ -222,13 +222,13 @@ items:
     - name: エラー メッセージ (mmp)
       href: troubleshooting/mmp-errors.md
   - name: リリース ノート
-    href: https://developer.xamarin.com/releases/mac/
+    href: https://docs.microsoft.com/xamarin/mac/release-notes/
   - name: サンプル
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: ea86a8d1b392acc1a27902c6c95a4b6ed763ecd8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: eccff6d2397c1b85bf5b17d71d13dbfa27f94277
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110430"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267496"
