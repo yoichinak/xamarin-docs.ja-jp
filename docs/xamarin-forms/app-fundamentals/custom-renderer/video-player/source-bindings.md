@@ -1,6 +1,6 @@
 ---
 title: プレーヤーへのビデオ ソースのバインド
-description: この記事では、Xamarin.Forms を使用して、ビデオ プレーヤーをビデオ ソースをバインドする方法について説明します。
+description: この記事では、Xamarin.Forms を使用してビデオ ソースをビデオ プレーヤーにバインドする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928
 ms.technology: xamarin-forms
@@ -9,14 +9,14 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: b0efdc1a20f52231f15b7a08eb86962e2079c678
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35240031"
 ---
 # <a name="binding-video-sources-to-the-player"></a>プレーヤーへのビデオ ソースのバインド
 
-ときに、`Source`のプロパティ、`VideoPlayer`ビューが新しいビデオ ファイルに設定されている、既存のビデオの再生が停止および新しいビデオを開始します。 示されるこれは、 **Web ビデオの選択**のページ、 [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)サンプルです。 ページが含まれています、`ListView`から参照されている 3 つのビデオのタイトルと、 **App.xaml**ファイル。
+`VideoPlayer` ビューの `Source` プロパティが新しいビデオ ファイルに設定されると、既存のビデオの再生が停止し、新しいビデオが開始されます。 この実例は、[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) サンプルの **[Select Web Video]\(Web ビデオの選択\)** ページで示されています。 このページには、**App.xaml** ファイルから参照された 3 つのビデオのタイトルを示す `ListView` が含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ ms.locfileid: "35240031"
 </ContentPage>
 ```
 
-ビデオを選択すると、`ItemSelected`分離コード ファイル内のイベント ハンドラーを実行します。 ハンドラーは、任意の空白とアポストロフィ タイトルから削除しで定義されているリソースのいずれかを取得するキーとして使用する、 **App.xaml**ファイル。 ある`UriVideoSource`オブジェクトに設定し、`Source`のプロパティ、`VideoPlayer`です。
+ビデオが選択されると、分離コード ファイルの `ItemSelected` イベント ハンドラーが実行されます。 ハンドラーによってタイトルから空白とアポストロフィが削除され、それがキーとして使用され、**App.xaml** ファイルに定義されているリソースの 1 つが取得されます。 その `UriVideoSource` オブジェクトは `VideoPlayer` の `Source` プロパティに設定されます。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -71,11 +71,11 @@ namespace VideoPlayerDemos
 }
 ```
 
-内の項目が選択されていないページが初めて読み込まれるときに、`ListView`ので、再生を開始するビデオのいずれかを選択する必要があります。
+ページが初めて読み込まれたときには `ListView` で項目が選択されていないため、ビデオの再生を開始するためにいずれかを選択する必要があります。
 
-[![Web のビデオを選択して](source-bindings-images/selectwebvideo-small.png "Web ビデオを選択して")](source-bindings-images/selectwebvideo-large.png#lightbox "Web ビデオ を選択")
+[![Web ビデオの選択](source-bindings-images/selectwebvideo-small.png "Web ビデオの選択")](source-bindings-images/selectwebvideo-large.png#lightbox "Web ビデオの選択")
 
-`Source`プロパティ`VideoPlayer`バインド可能なプロパティは、データ バインディングのターゲットができることを意味によってサポートされます。 示されるこれは、 **VideoPlayer にバインド**ページ。 内のマークアップ、 **BindToVideoPlayer.xaml**ファイルは、次のビデオとそれに対応するタイトルをカプセル化するクラスでサポートされて`VideoSource`オブジェクト。
+`VideoPlayer` の `Source` プロパティはバインド可能なプロパティによってサポートされています。つまり、データ バインディングのターゲットにすることができます。 この実例は、**[Bind to VideoPlayer]\(VideoPlayer へのバインド\)** ページで示されています。 **BindToVideoPlayer.xaml** ファイルのマークアップは、ビデオのタイトルと対応する `VideoSource` オブジェクトをカプセル化する次のクラスによってサポートされています。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -94,7 +94,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-`ListView`で、 **BindToVideoPlayer.xaml**ファイルには、これらの配列が含まれています`VideoInfo`オブジェクト、各ビデオのタイトルを使用して初期化し、`UriVideoSource`オブジェクト内のリソース ディクショナリから **。App.xaml**:
+ **BindToVideoPlayer.xaml** ファイルの `ListView` には、これらの `VideoInfo` オブジェクトの配列が含まれており、それぞれ、ビデオ タイトルと、**App.xaml** のリソース ディレクトリの `UriVideoSource` オブジェクトを使用して初期化されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,9 +133,9 @@ namespace VideoPlayerDemos
 </ContentPage>
 ```
 
-`Source`のプロパティ、`VideoPlayer`にバインドされて、`ListView`です。 `Path`として指定されたバインディングの`SelectedItem.VideoSource`、2 つのプロパティで構成される複合パスは:`SelectedItem`のプロパティは、`ListView`です。 選択した項目の型は`VideoInfo`を持つ、`VideoSource`プロパティです。
+`VideoPlayer` の `Source` プロパティは `ListView` にバインドされています。 バインドの `Path` は `SelectedItem.VideoSource` として指定されます。これは、2 つのプロパティから構成される複合パスです。`SelectedItem` は `ListView` のプロパティです。 選択されている項目は、種類が `VideoInfo` でプロパティが `VideoSource` です。
 
-最初と同様**Web ビデオの選択** ページで、項目が最初に選択されていないから、`ListView`ので、再生を開始する前に、ビデオのいずれかを選択する必要があります。
+最初の **[Select Web Video]\(Web ビデオの選択\)** ページと同様に、最初は `ListView` から項目が選択されていないため、再生を開始する前にいずれかのビデオを選択する必要があります。
 
 
 ## <a name="related-links"></a>関連リンク
