@@ -16,7 +16,7 @@ ms.locfileid: "51526664"
 ---
 # <a name="ios-app-architecture"></a>iOS アプリのアーキテクチャ
 
-Xamarin.iOS アプリケーションの Mono 実行環境内で実行および完全な事前の Time (AOT) コンパイルを使用してコンパイルするC#ARM アセンブリ言語コード。 サイド バイ サイドで実行を[OBJECTIVE-C ランタイム](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)します。 両方のランタイム環境を具体的には、UNIX のようなカーネル上で実行[XNU](https://en.wikipedia.org/wiki/XNU)、および基になるネイティブまたはマネージ システムにアクセスでき、ユーザー コードにさまざまな Api を公開します。
+Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、C#　コードを　ARM　アセンブリ言語コードにコンパイルするために完全な事前コンパイル (AOT) を使用します。 これは、[OBJECTIVE-C ランタイム](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)とサイド バイ サイドで実行されます。 両方のランタイム環境は、UNIX風のカーネル（具体的には[XNU](https://en.wikipedia.org/wiki/XNU)）の上で実行され、基になるネイティブまたはマネージ システムに開発者がアクセスできるように、ユーザー コードにさまざまな API を公開します。
 
 次の図は、このアーキテクチャの基本的な概要を示します。
 
