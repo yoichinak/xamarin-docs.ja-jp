@@ -1,6 +1,6 @@
 ---
-title: タップ ジェスチャ認識エンジンを追加します。
-description: この記事では、Xamarin.Forms アプリケーションでのタップ検出のタップ ジェスチャを使用する方法について説明します。 Tap の検出は、TapGestureRecognizer クラスで実装されます。
+title: タップ ジェスチャ認識エンジンの追加
+description: この記事では、Xamarin.Forms アプリケーションでタップ検出にタップ ジェスチャを使用する方法について説明します。 タップ検出は TapGestureRecognizer クラスで実装されています。
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994855"
 ---
-# <a name="adding-a-tap-gesture-recognizer"></a>タップ ジェスチャ認識エンジンを追加します。
+# <a name="adding-a-tap-gesture-recognizer"></a>タップ ジェスチャ認識エンジンの追加
 
-_タップ ジェスチャでは、tap の検出に使用し、TapGestureRecognizer クラスを使用して実装されます。_
+_タップ ジェスチャはタップ検出に使用され、TapGestureRecognizer クラスで実装されています。_
 
-ユーザー インターフェイス要素をタップ ジェスチャでクリック可能にするために、作成、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)インスタンスを処理、 [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)イベントに新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ユーザー インターフェイスの要素のコレクション。 次のコード例は、`TapGestureRecognizer`にアタッチされている、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
+ユーザー インターフェース要素をタップ ジェスチャを使用してクリックできるようにするには、[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) インスタンスを作成し、[`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) イベントを処理し、新しいジェスチャ認識エンジンをユーザー インターフェイス要素の [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 [`Image`](xref:Xamarin.Forms.Image) 要素にアタッチされている `TapGestureRecognizer` のコード例を次に示します。
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -28,19 +28,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-既定では、イメージを 1 つタップに応答します。 設定、 [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired)ダブルタップします (または複数回のタップに必要な場合) を待機するプロパティ。
+既定で、画像は 1 回のタップに応答します。 ダブルタップ (または必要に応じてより多くのタップ) を待機するように [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) プロパティを設定します。
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-ときに[ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired)設定は、1 を超えるイベント ハンドラーのみ場合に実行される、タップは、一定の時間 (この期間は構成できません) 内で発生します。 2 番目 (またはそれ以降) のタップは、その期間内は発生しない場合は、それらは実質的に無視され、タップ数を再起動します。
+[`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) を 1 を超える値に設定すると、設定された期間内にタップが発生した場合にのみ、イベント ハンドラーが実行されます (この期間は構成できません)。 2 回目 (またはそれ以降の) タップがその期間内に発生しない場合は、実質的に無視され、'タップのカウント' が再開されます。
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>Xaml を使用してください。
+## <a name="using-xaml"></a>Xaml を使用する
 
-ジェスチャ レコグナイザーは、添付プロパティを使用して、Xaml でコントロールに追加できます。 追加するための構文を[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)イメージを以下に示します (ここで定義する、*ダブルタップ*イベント)。
+ジェスチャ認識エンジンは、添付プロパティを使用して Xaml のコントロールに追加できます。 画像に [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) を追加する構文を以下に示します (この例では、*ダブル タップ* イベントを定義します)。
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -52,7 +52,7 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 </Image>
 ```
 
-(サンプル) のイベント ハンドラーのコードは、カウンターをインクリメントして、色からイメージを黒に変更&amp;白。
+(このサンプルの) イベント ハンドラーのコードでは、カウンターをインクリメントし、画像をカラーからモノクロに変更します。
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -68,9 +68,9 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 }
 ```
 
-## <a name="using-icommand"></a>ICommand を使用します。
+## <a name="using-icommand"></a>ICommand の使用
 
-通常、モデル-ビュー-ビューモデル (MVVM) パターンを使用するアプリケーションを使用して、`ICommand`イベント ハンドラーを直接接続ではなく。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)簡単にサポートできる`ICommand`をコードでバインディングを設定します。
+Model-View-ViewModel (MVVM) パターンを使用するアプリケーションでは、通常、イベント ハンドラーを直接接続するのではなく、`ICommand` を使用します。 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) で `ICommand` を簡単にサポートするには、次のようにコードにバインドを設定するか、
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -78,7 +78,7 @@ tapGestureRecognizer.SetBinding (TapGestureRecognizer.CommandProperty, "TapComma
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-または、Xaml を使用します。
+次のように Xaml を使用するします。
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -90,7 +90,7 @@ image.GestureRecognizers.Add(tapGestureRecognizer);
 </Image>
 ```
 
-このサンプルでは、このビュー モデルの完全なコードを確認できます。 関連する`Command`実装の詳細を以下に示します。
+このビュー モデルの完成したコードについては、サンプルを参照してください。 関連する `Command` 実装の詳細を以下に示します。
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged

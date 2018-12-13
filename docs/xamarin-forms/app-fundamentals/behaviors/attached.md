@@ -1,6 +1,6 @@
 ---
-title: 関連付けられた動作
-description: 関連付けられた動作とは、1 つまたは複数の添付プロパティを持つ静的クラスです。 この記事では、作成および関連付けられた動作を使用する方法を示します。
+title: アタッチされたビヘイビアー
+description: アタッチされたビヘイビアーは、1 つ以上のプロパティがアタッチされた静的クラスです。 この記事では、アタッチされたビヘイビアーを作成して使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
 ms.technology: xamarin-forms
@@ -9,29 +9,29 @@ ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 2c9bd9ad4e7572b9eae6f0073da8a2c8f1e7c9fc
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38995347"
 ---
-# <a name="attached-behaviors"></a>関連付けられた動作
+# <a name="attached-behaviors"></a>アタッチされたビヘイビアー
 
-_関連付けられた動作とは、1 つまたは複数の添付プロパティを持つ静的クラスです。この記事では、作成および関連付けられた動作を使用する方法を示します。_
+_アタッチされたビヘイビアーは、1 つ以上のプロパティがアタッチされた静的クラスです。この記事では、アタッチされたビヘイビアーを作成して使用する方法を示します。_
 
 ## <a name="overview"></a>概要
 
-添付プロパティは、特殊な種類のバインド可能なプロパティです。 1 つのクラスで定義されているが、他のオブジェクトにアタッチされていると、クラスとピリオドで区切ったプロパティ名が含まれている属性としては XAML で認識されます。
+添付プロパティは、特殊な種類のバインド可能プロパティです。 1 つのクラスで定義される一方で他のオブジェクトにアタッチされ、XAML 内でピリオドで区切られたクラスとプロパティ名が含まれる属性として認識されます。
 
-添付プロパティを定義できますを`propertyChanged`など、コントロールのプロパティを設定すると、プロパティの値が変更されたときに実行されるデリゲート。 ときに、`propertyChanged`デリゲートの実行への参照をアタッチされる、コントロールとプロパティの新旧の値が含まれているパラメーターに成功します。 このデリゲートは、プロパティは、次のように渡される参照を操作することによってに関連付けられているコントロールに新しい機能を追加できます。
+添付プロパティでは、プロパティがコントロールに設定されたときなど、プロパティの値が変更されたときに実行される `propertyChanged` のデリゲートを定義できます。 `propertyChanged` のデリゲートが実行されると、アタッチされているコントロールへの参照と、プロパティの古い値と新しい値を含むパラメーターが渡されます。 このデリゲートを使用すると、次のように、渡された参照を操作することで、プロパティがアタッチされているコントロールに新しい機能を追加できます。
 
-1. `propertyChanged`デリゲートとして受信されるコントロールの参照にキャスト、 [ `BindableObject`](xref:Xamarin.Forms.BindableObject)動作はコントロールの種類を強化するために設計されています。
-1. `propertyChanged`デリゲートの動作のコア機能を実装するために、コントロールによって公開されるイベントのコントロール、またはレジスタ イベント ハンドラーのメソッドを呼び出す、コントロールのプロパティを変更します。
+1. `propertyChanged` のデリゲートによって、[`BindableObject`](xref:Xamarin.Forms.BindableObject) として受け取られるコントロールの参照が、ビヘイビアーが強化されるように設計されたコントロールの種類にキャストされます。
+1. `propertyChanged` のデリゲートによってコントロールのプロパティ変更、コントロールのメソッド呼び出し、またはコントロールで公開されているイベントに対するイベント ハンドラーの登録が行われ、コア ビヘイビアー機能が実装されます。
 
-関連付けられた動作の問題で定義されていること、`static`クラスと`static`プロパティとメソッド。 状態にある関連付けられた動作の作成を困難になります。 さらに、Xamarin.Forms の動作が動作の構築に推奨されるアプローチとして、関連付けられた動作が置き換えられています。 Xamarin.Forms の動作の詳細については、次を参照してください。 [Xamarin.Forms の動作](~/xamarin-forms/app-fundamentals/behaviors/creating.md)と[再利用可能なビヘイビアー](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)します。
+アタッチされたビヘイビアーに関する問題は、`static` プロパティおよびメソッドを使用して `static` クラスで定義されている点です。 そのため、状態があるアタッチされたビヘイビアーを作成することは困難です。 さらに、ビヘイビアー構築の推奨されるアプローチとして、Xamarin.Forms ビヘイビアーによって、アタッチされたビヘイビアーが置き換えられます。 Xamarin.Forms ビヘイビアーの詳細については、「[Xamarin.Forms Behaviors](~/xamarin-forms/app-fundamentals/behaviors/creating.md)」(Xamarin.Forms ビヘイビアー) と「[再利用可能なビヘイビアー](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)」を参照してください。
 
-## <a name="creating-an-attached-behavior"></a>接続の動作を作成します。
+## <a name="creating-an-attached-behavior"></a>アタッチされたビヘイビアーを作成する
 
-サンプル アプリケーションでは、`NumericValidationBehavior`にユーザーが入力した値が強調表示する、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールを赤でない場合、`double`します。 動作は、次のコード例に示されます。
+サンプル アプリケーションでは、`NumericValidationBehavior` の例を示しています。ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) コントロールに入力した値が `double` でない場合に、その値は赤色で強調表示されます。 このビヘイビアーを次のコード例に示します。
 
 ```csharp
 public static class NumericValidationBehavior
@@ -78,11 +78,11 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior`クラスには、という名前の添付プロパティが含まれています。`AttachBehavior`で、 `static` getter および setter を追加または削除のアタッチはコントロールの動作を制御します。 この添付プロパティに、プロパティの値が変更された時に実行される `OnAttachBehaviorChanged` メソッドを登録します。 このメソッドを登録またはのイベント ハンドラーを登録解除、 [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged)の値に基づく、イベント、`AttachBehavior`添付プロパティ。 動作のコア機能によって提供されます、`OnEntryTextChanged`メソッドに入力された値を[ `Entry` ](xref:Xamarin.Forms.Entry)ユーザー、およびセットによって、`TextColor`プロパティ値がない場合は赤、`double`します。
+`NumericValidationBehavior` クラスには、`static` ゲッターとセッターがある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それがアタッチされるコントロールのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されるときに実行される `OnAttachBehaviorChanged` メソッドが登録されます。 このメソッドによって、`AttachBehavior` 添付プロパティの値に基づいて [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントのイベント ハンドラーが登録または登録解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) に入力した値が解析され、その値が `double` でなければ `TextColor` プロパティが赤に設定されます。
 
-## <a name="consuming-an-attached-behavior"></a>添付の動作の使用
+## <a name="consuming-an-attached-behavior"></a>アタッチされたビヘイビアーを使用する
 
-`NumericValidationBehavior`クラスを追加することで使用できる、`AttachBehavior`添付プロパティを[ `Entry` ](xref:Xamarin.Forms.Entry)コントロールが次の XAML コード例に示されています。
+`NumericValidationBehavior` クラスを使用するには、次の XAML コード例に示すように、`AttachBehavior` 添付プロパティを [`Entry`](xref:Xamarin.Forms.Entry) コントロールに追加します。
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:WorkingWithBehaviors;assembly=WorkingWithBehaviors" ...>
@@ -92,42 +92,42 @@ public static class NumericValidationBehavior
 </ContentPage>
 ```
 
-相当[ `Entry` ](xref:Xamarin.Forms.Entry) c# では次のコード例で示すようにします。
+C# での同等の [`Entry`](xref:Xamarin.Forms.Entry) を次のコード例に示します。
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, true);
 ```
 
-、実行時に、動作は動作の実装に応じて、コントロールとの対話に応答します。 次のスクリーン ショットは、無効な入力に応答して接続されている動作を示しています。
+実行時、ビヘイビアーは、ビヘイビアーの実装に従って、コントロールとのやりとりに応答します。 次のスクリーン ショットは、無効な入力に応答しているアタッチされたビヘイビアーを示しています。
 
-[![](attached-images/screenshots-sml.png "サンプル アプリケーションが接続されている動作で")](attached-images/screenshots.png#lightbox "サンプル アプリケーションで接続されている動作")
+[![](attached-images/screenshots-sml.png "アタッチされたビヘイビアーを使用するサンプル アプリケーション")](attached-images/screenshots.png#lightbox "アタッチされたビヘイビアーを使用するサンプル アプリケーション")
 
 > [!NOTE]
-> 関連付けられた動作は特定のコントロール型 (または多くのコントロールに適用できるスーパークラス) に書き込まれ、互換性のあるコントロールにのみ追加する必要があります。 原因不明の動作が発生、互換性のないコントロールに動作をアタッチしようとして、動作の実装に依存します。
+> アタッチされたビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、不明なビヘイビアーになり、結果はビヘイビアーの実装によって変わります。
 
-### <a name="removing-an-attached-behavior-from-a-control"></a>コントロールから、接続されている動作を削除します。
+### <a name="removing-an-attached-behavior-from-a-control"></a>アタッチされたビヘイビアーをコントロールから削除する
 
-`NumericValidationBehavior`クラスは、設定によってコントロールから削除することができます、`AttachBehavior`添付プロパティを`false`XAML コードの例を次に示すように、します。
+次の XAML コード例に示すように、`NumericValidationBehavior` クラスをコントロールから削除するには `AttachBehavior` 添付プロパティを `false` に設定します。
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" local:NumericValidationBehavior.AttachBehavior="false" />
 ```
 
-相当[ `Entry` ](xref:Xamarin.Forms.Entry) c# では次のコード例で示すようにします。
+C# での同等の [`Entry`](xref:Xamarin.Forms.Entry) を次のコード例に示します。
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-実行時に、`OnAttachBehaviorChanged`メソッドになる時に実行の値、`AttachBehavior`添付プロパティに設定されて`false`します。 `OnAttachBehaviorChanged`メソッドは、登録を解除のイベント ハンドラー、 [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged)イベント、ユーザーがコントロールと対話するので、動作が実行されない場合はことを確認します。
+実行時に、`AttachBehavior` 添付プロパティの値が `false` に設定されていると、`OnAttachBehaviorChanged` メソッドが実行されます。 `OnAttachBehaviorChanged` メソッドによって [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントのイベント ハンドラーの登録が解除され、ユーザーがコントロールを操作してもその動作が実行されなくなります。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、作成および関連付けられた動作を使用する方法を示しました。 関連付けられた動作が`static`1 つまたは複数の添付プロパティを持つクラス。
+この記事では、アタッチされたビヘイビアーを作成して使用する方法を説明しました。 アタッチされたビヘイビアーは、1 つ以上のプロパティがアタッチされた `static` クラスです。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [関連付けられた動作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)
+- [アタッチされた動作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)

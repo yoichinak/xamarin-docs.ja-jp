@@ -1,6 +1,6 @@
 ---
 title: 音声合成の実装
-description: この記事では、各プラットフォームのネイティブの音声合成 API を呼び出して Xamarin.Forms DependencyService クラスを使用する方法について説明します。
+description: この記事では、Xamarin.Forms の DependencyService クラスを使用して、各プラットフォームのネイティブな Text to Speech API の呼び出しを行う方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
 ms.technology: xamarin-forms
@@ -9,30 +9,30 @@ ms.author: dabritch
 ms.date: 09/18/2017
 ms.openlocfilehash: 6d1948214b97a1b536b07b6420c32e4d27124518
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38997544"
 ---
 # <a name="implementing-text-to-speech"></a>音声合成の実装
 
-この記事で使用するクロス プラットフォーム アプリを作成するようにガイドするには[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)ネイティブの音声合成 Api にアクセスします。
+この記事では、ネイティブな Text to Speech API にアクセスするために [`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用するクロスプラットフォーム アプリを作成する方法を示します。
 
-- **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;共有コードで、インターフェイスを作成する方法を理解します。
-- **[iOS 実装](#iOS_Implementation)** &ndash; iOS のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[Android の実装](#Android_Implementation)** &ndash; Android のネイティブ コードでインターフェイスを実装する方法について説明します。
-- **[UWP 実装](#WindowsImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードでインターフェイスを実装する方法について説明します。
-- **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法について説明します`DependencyService`共有コードからネイティブの実装を呼び出す。
+- **[インターフェイスの作成](#Creating_the_Interface)** &ndash; 共有コード内にインターフェイスを作成する方法を理解します。
+- **[iOS での実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
+- **[Android での実装](#Android_Implementation)** &ndash; Android 用のネイティブ コードでインターフェイスを実装する方法を学習します。
+- **[UWP での実装](#WindowsImplementation)** &ndash; ユニバーサル Windows プラットフォーム (UWP) 用のネイティブ コードでインターフェイスを実装する方法を学習します。
+- **[共有コードでの実装](#Implementing_in_Shared_Code)** &ndash; `DependencyService` を使用して共有コードからネイティブ実装を呼び出す方法を学習します。
 
-アプリケーションを使用して、`DependencyService`次の構造になります。
+`DependencyService` を使用するアプリケーションは次のような構造になります。
 
-![](text-to-speech-images/tts-diagram.png "DependencyService アプリケーション構造")
+![](text-to-speech-images/tts-diagram.png "DependencyService アプリケーションの構造")
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
-最初に、共有コードを実装する予定の機能を表すインターフェイスを作成します。 この例では、インターフェイスには 1 つのメソッド、 `Speak`:
+最初に、実装する機能を表すインターフェイスを共有コードで作成します。 この例では、インターフェイスには単一のメソッド `Speak` が含まれます。
 
 ```csharp
 public interface ITextToSpeech
@@ -41,16 +41,16 @@ public interface ITextToSpeech
 }
 ```
 
-共有コードでは、このインターフェイスに対するコーディングで、各プラットフォームで音声認識 Api にアクセスする Xamarin.Forms アプリを許可します。
+共有コード内でこのインターフェイスに対してコーディングすると、Xamarin.Forms アプリから各プラットフォーム上の Speech API にアクセスできます。
 
 > [!NOTE]
-> インターフェイスを実装するクラスには、パラメーターなしのコンス トラクターを使用する必要があります、`DependencyService`します。
+> インターフェイスを実装するクラスで `DependencyService` を使用するには、パラメーターのないコンストラクターが必要です。
 
 <a name="iOS_Implementation" />
 
-## <a name="ios-implementation"></a>iOS の実装
+## <a name="ios-implementation"></a>iOS での実装
 
-各プラットフォームに固有のアプリケーション プロジェクトでインターフェイスを実装する必要があります。 クラスは、パラメーターなしのコンス トラクターを`DependencyService`新しいインスタンスを作成できます。
+各プラットフォームに固有のアプリケーション プロジェクト内に、インターフェイスを実装する必要があります。 `DependencyService` で新しいインスタンスを作成できるよう、クラスにパラメーターなしのコンストラクターがあることに注意してください。
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -78,13 +78,13 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-`[assembly]`属性の実装としてクラスを登録する、`ITextToSpeech`インターフェイス、つまり`DependencyService.Get<ITextToSpeech>()`そのインスタンスを作成する共有コードで使用できます。
+`[assembly]` 属性では、クラスが `ITextToSpeech` インターフェイスの実装として登録されます。つまり、共有コードで `DependencyService.Get<ITextToSpeech>()` を使用してそのインスタンスを作成できます。
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android の実装
+## <a name="android-implementation"></a>Android での実装
 
-Android のコードは、iOS のバージョンよりも複雑: Android 固有の継承を実装するクラスに要する`Java.Lang.Object`を実装して、`IOnInitListener`インターフェイスも。 現在のコンテキストで公開される Android へのアクセスも必要です、`MainActivity.Instance`プロパティ。
+Android のコードは、iOS バージョンよりも複雑です。Android 固有の `Java.Lang.Object` から継承すると共に、`IOnInitListener` インターフェイスを実装するために、クラスを実装する必要があります。 また、`MainActivity.Instance` プロパティによって公開される、現在の Android コンテキストへのアクセスも必要になります。
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -119,13 +119,13 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-`[assembly]`属性の実装としてクラスを登録する、`ITextToSpeech`インターフェイス、つまり`DependencyService.Get<ITextToSpeech>()`そのインスタンスを作成する共有コードで使用できます。
+`[assembly]` 属性は、クラスを `ITextToSpeech` インターフェイスの実装として登録します。つまり、共有コードで `DependencyService.Get<ITextToSpeech>()` を使用してそのインスタンスを作成できます。
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームの実装
+## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームでの実装
 
-ユニバーサル Windows プラットフォームがで speech API、`Windows.Media.SpeechSynthesis`名前空間。 唯一の注意事項をオンにしておく、**マイク**Api がブロックされている音声へのアクセスそれ以外の場合をマニフェストで機能します。
+ユニバーサル Windows プラットフォームでは、`Windows.Media.SpeechSynthesis` 名前空間に Speech API があります。 注意点は、忘れずにマニフェスト内の**マイク**機能を作動させることだけです。そうしないと、Speech API へのアクセスがブロックされます。
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -143,13 +143,13 @@ public class TextToSpeechImplementation : ITextToSpeech
 }
 ```
 
-`[assembly]`属性の実装としてクラスを登録する、`ITextToSpeech`インターフェイス、つまり`DependencyService.Get<ITextToSpeech>()`そのインスタンスを作成する共有コードで使用できます。
+`[assembly]` 属性は、クラスを `ITextToSpeech` インターフェイスの実装として登録します。つまり、共有コードで `DependencyService.Get<ITextToSpeech>()` を使用してそのインスタンスを作成できます。
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>共有コードで実装します。
+## <a name="implementing-in-shared-code"></a>共有コードでの実装
 
-ここで記述し、音声合成のインターフェイスにアクセスする共有コードをテストすることができます。 この単純なページには、音声認識機能をトリガーするボタンが含まれています。 使用して、`DependencyService`のインスタンスを取得する、`ITextToSpeech`インターフェイス&ndash;実行時にこのインスタンスは、ネイティブ SDK へのフル アクセスのあるプラットフォーム固有の実装になります。
+これで、音声合成インターフェイスにアクセスする共有コードを記述してテストできます。 このシンプルなページには、音声機能をトリガーするボタンがあります。 `DependencyService` を使用して、`ITextToSpeech` インターフェイスのインスタンスを取得します &ndash; 実行時には、このインスタンスは、ネイティブ SDK にフル アクセスできるプラットフォーム固有の実装になります。
 
 ```csharp
 public MainPage ()
@@ -166,13 +166,13 @@ public MainPage ()
 }
 ```
 
-IOS、Android、または UWP でこのアプリケーションを実行し をクリックすると、各プラットフォームでネイティブ speech SDK を使用して自動的に言うと、アプリケーションが作成されます。
+iOS、Android、または UWP 上でこのアプリケーションを実行してボタンを押すと、各プラットフォーム上のネイティブな音声 SDK を使用して、アプリケーションによる読み上げが行われます。
 
- ![iOS と Android の音声合成ボタン](text-to-speech-images/running.png "テキスト読み上げサンプル")
+ ![iOS と Android の音声合成ボタン](text-to-speech-images/running.png "音声合成のサンプル")
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [DependencyService (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+- [DependencyService の使用 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample/)
 

@@ -1,6 +1,6 @@
 ---
 title: バッテリの状態の確認
-description: この記事では、Xamarin.Forms DependencyService クラスを使用して、各プラットフォームのネイティブ バッテリ情報にアクセスする方法について説明します。
+description: この記事では、Xamarin.Forms の DependencyService クラスを使用して、各プラットフォームのバッテリ情報にネイティブにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
@@ -9,32 +9,32 @@ ms.author: dabritch
 ms.date: 08/09/2016
 ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998398"
 ---
 # <a name="checking-battery-status"></a>バッテリの状態の確認
 
-この記事では、バッテリの状態を確認するアプリケーションの作成手順について説明します。 この記事では、James Montemagno してバッテリ プラグインに基づきます。 詳細については、次を参照してください。、 [GitHub リポジトリ](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)します。
+この記事では、バッテリの状態を確認するアプリケーションの作成手順について説明します。 この記事は、James Montemagno によるバッテリ プラグインに基づいています。 詳しくは、[GitHub リポジトリ](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)をご覧ください。
 
-このアプリケーションを使用する必要がある Xamarin.Forms に現在のバッテリの状態を確認するための機能が含まれていないため[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)ネイティブ Api を活用するためにします。  この記事では、次の手順を使用するために取り上げる`DependencyService`:
+Xamarin.Forms には現在のバッテリの状態を確認するための機能が含まれていないため、このアプリケーションでは [`DependencyService` ](xref:Xamarin.Forms.DependencyService) を使用して、ネイティブ API を活用する必要があります。  この記事では、`DependencyService` を使用するための以下の手順について説明します。
 
-- **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;共有コードで、インターフェイスを作成する方法を理解します。
-- **[iOS 実装](#iOS_Implementation)** &ndash; iOS のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[Android の実装](#Android_Implementation)** &ndash; Android のネイティブ コードでインターフェイスを実装する方法について説明します。
-- **[ユニバーサル Windows プラットフォームの実装](#UWPImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードでインターフェイスを実装する方法について説明します。
-- **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法について説明します`DependencyService`共有コードからネイティブの実装を呼び出す。
+- **[インターフェイスの作成](#Creating_the_Interface)** &ndash; 共有コード内にインターフェイスを作成する方法を理解します。
+- **[iOS での実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
+- **[Android での実装](#Android_Implementation)** &ndash; Android 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
+- **[ユニバーサル Windows プラットフォームでの実装](#UWPImplementation)** &ndash; ユニバーサル Windows プラットフォーム (UWP) 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
+- **[共有コード内への実装](#Implementing_in_Shared_Code)** &ndash; `DependencyService` を使用して共有コードからネイティブ実装を呼び出す方法を学習します。
 
-完了したら、アプリケーションを使用して、`DependencyService`次の構造になります。
+完了すると、`DependencyService` を使用するアプリケーションは次のような構造になります。
 
-![](battery-info-images/battery-diagram.png "DependencyService アプリケーション構造")
+![](battery-info-images/battery-diagram.png "DependencyService アプリケーションの構造")
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
-最初に、目的の機能を表す共有コードでインターフェイスを作成します。 アプリケーションのチェック、バッテリの場合は、関連の情報は、デバイスが充電か、およびデバイスでは次の方法で電力が供給されているかどうかにバッテリ残量の割合は。
+最初に、目的の機能を表すインターフェイスを共有コード内に作成します。 バッテリ チェック アプリケーションの場合、関連する情報は、バッテリの残量の割合、デバイスが充電中かどうか、およびデバイスへの電力の供給方法です。
 
 ```csharp
 namespace DependencyServiceSample
@@ -66,16 +66,16 @@ namespace DependencyServiceSample
 }
 ```
 
-共有コードでは、このインターフェイスに対するコーディングで、各プラットフォームで電源管理 Api にアクセスする Xamarin.Forms アプリを許可します。
+共有コード内でこのインターフェイスに対してコーディングすると、Xamarin.Forms アプリから各プラットフォーム上の電源管理 API にアクセスできます。
 
 > [!NOTE]
-> インターフェイスを実装するクラスには、パラメーターなしのコンス トラクターを使用する必要があります、`DependencyService`します。 インターフェイスでは、コンス トラクターを定義することはできません。
+> このインターフェイスを実装するクラスで `DependencyService` を使用するには、パラメーターのないコンストラクターが必要です。 インターフェイスによってコンストラクターを定義することはできません。
 
 <a name="iOS_Implementation" />
 
-## <a name="ios-implementation"></a>iOS の実装
+## <a name="ios-implementation"></a>iOS での実装
 
-`IBattery`各プラットフォームに固有のアプリケーション プロジェクトでインターフェイスを実装する必要があります。 IOS のカスタム実装がネイティブを使用して[ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/)バッテリ情報にアクセスする Api。 パラメーターなしのコンス トラクターは、次のクラスを`DependencyService`新しいインスタンスを作成できます。
+各プラットフォームに固有のアプリケーション プロジェクト内に、`IBattery` インターフェイスを実装する必要があります。 iOS での実装では、ネイティブの [`UIDevice`](https://developer.xamarin.com/api/type/UIKit.UIDevice/) API を使用して、バッテリ情報にアクセスします。 `DependencyService` で新しいインスタンスを作成できるように、次のクラスにはパラメーターなしのコンストラクターがあることに注意してください。
 
 ```csharp
 using UIKit;
@@ -138,7 +138,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-最後に、この追加`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
+最後に、必要なすべての `using` ステートメントと共に、次の `[assembly]` 属性をクラスの上 (そして、定義されているすべての名前空間の外側) に追加します。
 
 ```csharp
 using UIKit;
@@ -152,13 +152,13 @@ namespace DependencyServiceSample.iOS
     ...
 ```
 
-この属性の実装としてクラスを登録する、`IBattery`インターフェイス、つまり`DependencyService.Get<IBattery>`そのインスタンスを作成する共有コードで使用できます。
+この属性により、クラスが `IBattery` インターフェイスの実装として登録されます。つまり、共有コード内で `DependencyService.Get<IBattery>` を使用してそのインスタンスを作成できます。
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android の実装
+## <a name="android-implementation"></a>Android での実装
 
-Android の実装を使用して、 [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API。 この実装は、バッテリのアクセス許可の不足を処理するためのチェックを必要とする、iOS のバージョンよりも複雑です。
+Android での実装では、[`Android.OS.BatteryManager`](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API が使用されます。 この実装では、バッテリへのアクセス許可の欠如を処理するためのチェックが必要であるため、iOS 版よりも複雑になります。
 
 ```csharp
 using System;
@@ -295,7 +295,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-この追加`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
+必要なすべての `using` ステートメントと共に、次の `[assembly]` 属性をクラスの上 (そして、定義されているすべての名前空間の外側) に追加します。
 
 ```csharp
 ...
@@ -309,13 +309,13 @@ namespace DependencyServiceSample.Droid
     ...
 ```
 
-この属性の実装としてクラスを登録する、`IBattery`インターフェイス、つまり`DependencyService.Get<IBattery>`で使用できる共有コードは、そのインスタンスを作成できます。
+この属性により、クラスが `IBattery` インターフェイスの実装として登録されます。つまり、共有コード内で `DependencyService.Get<IBattery>` を使用してそのインスタンスを作成できます。
 
 <a name="UWPImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームの実装
+## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームでの実装
 
-UWP の実装を使用して、`Windows.Devices.Power`バッテリの状態情報を取得するための Api:
+UWP の実装では、`Windows.Devices.Power` API を使用して、バッテリの状態情報を取得します。
 
 ```csharp
 using DependencyServiceSample.UWP;
@@ -409,13 +409,13 @@ namespace DependencyServiceSample.UWP
 }
 ```
 
-`[assembly]`名前空間の宣言の上の属性の実装としてクラスを登録する、`IBattery`インターフェイス、つまり`DependencyService.Get<IBattery>`そのインスタンスを作成する共有コードで使用できます。
+名前空間の宣言の上にある `[assembly]` 属性により、クラスが `IBattery` インターフェイスの実装として登録されます。つまり、共有コード内で `DependencyService.Get<IBattery>`を使用してそのインスタンスを作成できます。
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>共有コードで実装します。
+## <a name="implementing-in-shared-code"></a>共有コードでの実装
 
-これで、各プラットフォームのインターフェイスが実装されている、活用するために、共有アプリケーションを記述できます。 アプリケーションではときに、ボタンを含むページの更新プログラムがタップされたテキストを現在のバッテリの状態。 使用して、`DependencyService`のインスタンスを取得する、`IBattery`インターフェイス。 このインスタンスは、実行時に、ネイティブ SDK へのフル アクセスのあるプラットフォーム固有の実装になります。
+各プラットフォーム用のインターフェイスが実装されたので、それを利用する共有アプリケーションを記述できます。 このアプリケーションは、タップされたときにテキストを現在のバッテリの状態に更新するボタンがあるページで構成されます。 それは、`DependencyService` を使用して、`IBattery` インターフェイスのインスタンスを取得します。 実行時に、このインスタンスがネイティブ SDK にフル アクセスできるプラットフォーム固有の実装になります。
 
 ```csharp
 public MainPage ()
@@ -469,13 +469,13 @@ public MainPage ()
 }
 ```
 
-このアプリケーションを実行して、ios、Android、または UWP およびボタンを押してになります、デバイスの現在の電源の状態を反映するように更新ボタンのテキスト。
+iOS、Android、または UWP プラットフォーム上でこのアプリケーションを実行してボタンを押すと、ボタンのテキストがデバイスの現在の電源の状態に更新されます。
 
-![](battery-info-images/battery.png "バッテリの状態のサンプル")
+![](battery-info-images/battery.png "バッテリの状態の例")
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [DependencyService (サンプル)](https://developer.xamarin.com/samples/DependencyService)
-- [DependencyService (サンプル) を使用します。](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [DependencyService の使用 (サンプル)](https://developer.xamarin.com/samples/UsingDependencyService/)
 - [Xamarin.Forms のサンプル](https://github.com/xamarin/xamarin-forms-samples)

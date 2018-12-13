@@ -1,6 +1,6 @@
 ---
-title: ビデオのカスタムの配置
-description: この記事では、Xamarin.Forms を使用して、ビデオ プレーヤー アプリケーションにカスタムの位置のバーを実装する方法について説明します。
+title: カスタムのビデオ位置
+description: この記事では、Xamarin.Forms を使用してビデオ プレーヤー アプリケーションのカスタムの位置バーを実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
 ms.technology: xamarin-forms
@@ -9,20 +9,20 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: b5f3c9dcbaa6ba1a9e86568ccabe38416cc653f2
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35241911"
 ---
-# <a name="custom-video-positioning"></a>ビデオのカスタムの配置
+# <a name="custom-video-positioning"></a>カスタムのビデオ位置
 
-各プラットフォームによって実装されるトランスポート コントロールには、位置バーが含まれます。 このバーは、スクロール バーのスライダーに似ていて、その合計の時間内でビデオの現在の場所を示します。 さらに、ユーザーは、ビデオ内の新しい位置に前方または後方に移動する位置バーを操作できます。
+各プラットフォームで実装されているトランスポート コントロールには、位置バーが含まれます。 このバーはスライダーまたはスクロール バーに似ており、ビデオの合計時間内の現在の位置を示します。 さらに、ユーザーは位置バーを操作して、ビデオ内の新しい位置へと前後に移動することができます。
 
-この記事では、独自のカスタム位置バーを実装する方法を示します。
+この記事では、独自のカスタムの位置バーを実装する方法について説明します。
 
 ## <a name="the-duration-property"></a>Duration プロパティ
 
-情報の 1 つの項目を`VideoPlayer`カスタムをサポートする必要があるバーの位置は、ビデオの期間。 `VideoPlayer`読み取り専用に定義`Duration`型のプロパティ`TimeSpan`:
+`VideoPlayer` でカスタムの位置バーをサポートするために必要な情報の 1 つは、ビデオの再生時間です。 `VideoPlayer` には、種類が `TimeSpan` の読み取り専用の `Duration` プロパティが定義されています。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -52,7 +52,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-同様に、`Status`で説明されているプロパティ、[前の記事](custom-transport.md)、この`Duration`プロパティは読み取り専用です。 プライベートで定義されて`BindablePropertyKey`参照することによってのみ設定でき、`IVideoPlayerController`インターフェイスで、これが含まれています`Duration`プロパティ。
+[前の記事](custom-transport.md)で説明した `Status` プロパティと同様に、この `Duration` プロパティは読み取り専用です。 プライベート `BindablePropertyKey` を使用して定義されており、設定するには、この `Duration` プロパティを含む `IVideoPlayerController` インターフェイスを参照する必要があります。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -66,15 +66,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-また、プロパティ変更ハンドラーをという名前のメソッドを呼び出すことを確認`SetTimeToEnd`この記事の後半に記載されています。
+この記事で後述する `SetTimeToEnd` というメソッドを呼び出すプロパティ変更ハンドラーにも注意してください。
 
-ビデオの期間は*いない*後すぐに利用可能な`Source`プロパティの`VideoPlayer`設定されています。 基になる、ビデオ プレーヤーはその期間を特定できる前に、ビデオ ファイルを部分的にダウンロードする必要があります。
+`VideoPlayer` の `Source` プロパティが設定された直後には、ビデオの再生時間を*取得できません*。 基となるビデオ プレーヤーで再生時間が決定されるには、ビデオ ファイルの一部がダウンロードされる必要があります。
 
-ビデオの期間を取得する各プラットフォームのレンダラーの方法を次に示します。
+ここでは、各プラットフォーム レンダラーがビデオの再生時間を取得する方法について説明します。
 
-### <a name="video-duration-in-ios"></a>IOS でのビデオの期間
+### <a name="video-duration-in-ios"></a>iOS のビデオの再生時間
 
-Ios では、ビデオの期間がから取得した、`Duration`のプロパティ`AVPlayerItem`、した直後には、`AVPlayerItem`が作成します。 IOS オブザーバーを設定することは、`Duration`プロパティ、ですが、`VideoPlayerRenderer`期間の長さを取得、`UpdateStatus`秒間に 10 回呼び出されるメソッド。
+iOS では、ビデオの再生時間は `AVPlayerItem` の `Duration` プロパティから取得されますが、`AVPlayerItem` の作成直後は取得されません。 `Duration` プロパティの iOS オブザーバーを設定できますが、`VideoPlayerRenderer` では、1 秒に 10 回呼び出される `UpdateStatus` メソッドで再生時間が取得されます。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -102,11 +102,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`ConvertTime`メソッドに変換する`CMTime`オブジェクトを`TimeSpan`値。
+`ConvertTime` メソッドによって `CMTime` オブジェクトが `TimeSpan` 値に変換されます。
 
-### <a name="video-duration-in-android"></a>Android でのビデオの期間
+### <a name="video-duration-in-android"></a>Android のビデオの再生時間
 
-`Duration` 、Android のプロパティ`VideoView`(ミリ秒単位) の有効期間を報告時に、`Prepared`のイベント`VideoView`が発生します。 Android`VideoPlayerRenderer`クラスでは、そのハンドラーを使用して、取得、`Duration`プロパティ。
+Android の `VideoView` の `Duration` プロパティでは、`VideoView` の `Prepared` イベントが発生したときに有効な再生時間がミリ秒単位で報告されます。 Android の `VideoPlayerRenderer` クラスでは、そのハンドラーを使用して `Duration` プロパティが取得されます。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -124,9 +124,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="video-duration-in-uwp"></a>UWP でビデオの期間
+### <a name="video-duration-in-uwp"></a>UWP のビデオの再生時間
 
-`NaturalDuration`プロパティ`MediaElement`は、`TimeSpan`値になり、有効な場合に`MediaElement`発生、`MediaOpened`イベント。
+`MediaElement` の `NaturalDuration` プロパティは `TimeSpan` 値であり、`MediaElement` によって `MediaOpened` イベントを発生したときに有効になります。
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -143,9 +143,9 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="the-position-property"></a>位置プロパティ
+## <a name="the-position-property"></a>Position プロパティ
 
-`VideoPlayer` 必要があります、`Position`プロパティ値が 0 ~ 増加`Duration`ビデオの再生中にします。 `VideoPlayer` 同様に、このプロパティを実装、 `Position` 、UWP でプロパティ`MediaElement`、これは通常のバインド可能なプロパティのパブリック`set`と`get`アクセサー。
+`VideoPlayer` には、ビデオの再生時に 0 から `Duration` まで増加する `Position` プロパティも必要です。 `VideoPlayer` では、UWP `MediaElement` の `Position` プロパティと同様にこのプロパティが実装されています。これは、パブリック `set` および `get` アクセサーとの通常のバインドが可能なプロパティです。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -168,15 +168,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-`get`アクセサーは、再生、ビデオの現在の位置を返しますが、`set`アクセサーが前後ビデオの位置に移動して、位置バーのユーザーの操作に応答する対象としています。
+`get` アクセサーからは、再生されているビデオの現在の位置が返されますが、`set` アクセサーは、ユーザーの位置バー操作に対してビデオ位置を前後に動かして応答するためのものです。
 
-IOS および Android では、現在の位置を取得するプロパティにのみ、`get`アクセサー、および`Seek`メソッドは、この 2 つ目のタスクの実行に使用します。 個別であることを考慮する場合`Seek`メソッドは、1 つよりもより実用的なアプローチ`Position`プロパティです。 1 つ`Position`プロパティに固有の問題: ビデオの再生中、`Position`プロパティを新しい位置を反映する継続的に更新する必要があります。 ほとんどの変更をするようにすることが、`Position`ビデオ内の新しい位置に移動するビデオ プレーヤーが発生するプロパティです。 かどうかが発生すると、ビデオ プレーヤーでは、最後の値を取得することで応答、`Position`プロパティ、およびビデオを進めるはありません。
+iOS と Android では、現在の位置を取得するプロパティには `get` アクセサーしかありません。また、`Seek` メソッドを使用して、この 2 つ目のタスクを実行できます。 この点について考えると、別の `Seek` メソッドの方が、単一の `Position` プロパティよりも実用的なアプローチのようです。 単一の `Position` プロパティには固有の問題があります。ビデオを再生する場合、新しい位置を反映するために `Position` プロパティを継続的に更新する必要があります。 ただし、ほとんどの場合、`Position` プロパティの変更によって、ビデオ プレーヤーでビデオの新しい位置に移動することは望ましくありません。 このような処理の結果、ビデオ プレーヤーは `Position` プロパティの最後の値までシークする処理で応答するので、ビデオは進みません。
 
-実装するの困難であるにもかかわらず、`Position`を持つプロパティ`set`と`get`アクセサー、UWP と一致しているために、この方法を選択した`MediaElement`、データ バインディングで、大きな利点があり、: `Position`プロパティ、`VideoPlayer`の新しい位置に位置を表示してシークの両方に使用される、スライダーをバインドできます。 ただし、予防策を講じるは、必要に応じてこれを実装するときに`Position`フィードバック ループを避けるためのプロパティです。
+`set` および `get` アクセサーを使用して `Position` プロパティを実装することは困難ですが、このアプローチは、UWP `MediaElement` と一貫性があり、データ バインディングに関する大きな利点があります。つまり、`VideoPlayer` の `Position` プロパティは、位置の表示と新しい位置のシークの両方に使用されるスライダーにバインドすることができます。 ただし、この `Position` プロパティを実装する場合は、フィードバック ループを避けるためにいくつかの事前の注意が必要です。
 
-### <a name="setting-and-getting-ios-position"></a>設定または iOS の位置を取得します。
+### <a name="setting-and-getting-ios-position"></a>iOS の位置の設定と取得
 
-IOS、`CurrentTime`のプロパティ、`AVPlayerItem`オブジェクトは、ビデオの再生の現在位置を示します。 IOS`VideoPlayerRenderer`設定、`Position`プロパティに、`UpdateStatus`ハンドラーに設定する、同時に、`Duration`プロパティ。
+iOS では、`AVPlayerItem` オブジェクトの `CurrentTime` プロパティは再生中のビデオの現在の位置を示します。 iOS の `VideoPlayerRenderer` では、`Duration` プロパティの設定と同時に、`UpdateStatus` ハンドラーの `Position` プロパティを設定します。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -198,7 +198,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-レンダラーを検出したときに、`Position`プロパティから設定`VideoPlayer`で変更された、`OnElementPropertyChanged`を上書きして、その新しい値を使用して呼び出す、`Seek`メソッドを`AVPlayer`オブジェクト。
+レンダラーによって、`VideoPlayer` から設定された `Position` プロパティが `OnElementPropertyChanged` のオーバーライドで変更されたときが検出され、その新しい値を使用して `AVPlayer` オブジェクトに対して `Seek` メソッドが呼び出されます。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -224,13 +224,13 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-考慮するたびに、`Position`プロパティ`VideoPlayer`から設定されている、`OnUpdateStatus`ハンドラー、`Position`プロパティ発生、`PropertyChanged`で検出されるイベント、`OnElementPropertyChanged`をオーバーライドします。 これらの変更のほとんどの`OnElementPropertyChanged`メソッドには、何もしない必要があります。 それ以外の場合、ビデオの位置が変わるたびに、これに移動するだけに達すると同じ位置!
+`VideoPlayer` の `Position` プロパティが `OnUpdateStatus` ハンドラーから設定されるたびに、`Position` プロパティから `PropertyChanged` イベントが発生され、`OnElementPropertyChanged` のオーバーライドで検出される点に留意してください。 このような変更のほとんどの場合、`OnElementPropertyChanged` メソッドで何も実行する必要はありません。 それ以外の場合は、ビデオの位置が変更されるたびに、到達していた同じ位置まで移動されます。
 
-このフィードバック ループを回避する、`OnElementPropertyChanged`のみメソッドを呼び出して`Seek`ときの違い、`Position`プロパティとの現在の位置、`AVPlayer`が 1 秒より大きい。
+このフィードバック ループを避けるために、`Position` プロパティと `AVPlayer` の現在の位置との違いが 1 秒を超える場合にのみ、`OnElementPropertyChanged` メソッドから `Seek` が呼び出されます。
 
-### <a name="setting-and-getting-android-position"></a>設定または Android の位置を取得します。
+### <a name="setting-and-getting-android-position"></a>Android の位置の設定と取得
 
-Android、iOS レンダラーのように`VideoPlayerRenderer`の新しい値を設定、`Position`プロパティに、`OnUpdateStatus`ハンドラー。 `CurrentPosition`プロパティ`VideoView`単位で時間をミリ秒単位の新しい位置が含まれています。
+iOS レンダラーと同様に、Android の `VideoPlayerRenderer` では、`OnUpdateStatus` ハンドラーで `Position` プロパティの新しい値を設定します。 `VideoView` の `CurrentPosition` プロパティには、新しい位置がミリ秒単位で設定されています。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -249,7 +249,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-また、iOS レンダラーの場合と同様に、Android のレンダラーでは、呼び出し、`SeekTo`メソッドの`VideoView`ときに、`Position`プロパティが変更が加えられた変更が 1 秒以上と異なる場合にのみ、`CurrentPosition`の値`VideoView`:
+また、iOS レンダラーの場合と同様に、Android レンダラーでは、`Position` プロパティが変更され、さらに、`VideoView` の `CurrentPosition` 値との違いが 1 秒を超える変更の場合にのみ、`VideoView` の `SeekTo` メソッドが呼び出されます。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -273,9 +273,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="setting-and-getting-uwp-position"></a>設定または UWP 位置を取得します。
+### <a name="setting-and-getting-uwp-position"></a>UWP の位置の設定と取得
 
-UWP`VideoPlayerRenderer`ハンドル、 `Position` iOS および Android のレンダラーと同じようにするので、 `Position` UWP のプロパティ`MediaElement`も、`TimeSpan`値の変換は必要ありません。
+UWP の `VideoPlayerRenderer` では、iOS や Android のレンダラーと同じ方法で `Position` が処理されますが、UWP の `MediaElement` の `Position` プロパティも `TimeSpan` 値なので、変換は必要ありません。
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -304,11 +304,11 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="calculating-a-timetoend-property"></a>TimeToEnd プロパティを計算します。
+## <a name="calculating-a-timetoend-property"></a>TimeToEnd プロパティの計算
 
-場合によってビデオ プレーヤーは、ビデオの残りの期間を表示します。 この値は、ビデオの期間、ビデオの開始時とビデオの終了時に 0 まで減少で開始されます。
+ビデオ プレーヤーにビデオの残り時間が表示されることがあります。 この値は、ビデオの開始時にはビデオの再生時間から始まり、ビデオの終了時には 0 まで減少します。
 
-`VideoPlayer` 読み取り専用が含まれています`TimeToEnd`クラス内に完全に処理されるプロパティが変更に基づき、`Duration`と`Position`プロパティ。
+`VideoPlayer` には読み取り専用の `TimeToEnd` プロパティがあります。これは、`Duration` および `Position` プロパティの変更に基づいて完全にクラス内で処理されます。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -336,11 +336,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-`SetTimeToEnd`両方のプロパティ変更ハンドラーからメソッドを呼び出した`Duration`と`Position`です。
+`SetTimeToEnd` メソッドは、`Duration` と `Position` の両方のプロパティ変更ハンドラーから呼び出されます。
 
 ## <a name="a-custom-slider-for-video"></a>ビデオのカスタム スライダー
 
-位置バーのカスタム コントロールを作成するか、Xamarin.Forms を使用する可能性が`Slider`から派生したクラスまたは`Slider`、次のよう`PositionSlider`クラスです。 クラスはという 2 つの新しいプロパティを定義`Duration`と`Position`型の`TimeSpan`をするデータ バインドで同じ名前の 2 つのプロパティには、`VideoPlayer`です。 既定のモードのバインディングに注意してください、`Position`プロパティが双方向。
+位置バーのカスタム コントロールを記述することや、Xamarin.Forms の `Slider`、または `Slider` から派生するクラス (たとえば、次の `PositionSlider` クラスなど) を使用することができます。 このクラスでは、種類が `TimeSpan` の `Duration` および `Position` という 2 つの新しいプロパティを定義します。これらは、`VideoPlayer` の同じ名前の 2 つのプロパティにデータをバインドすることを目的としたプロパティです。 `Position` プロパティの既定のバインド モードは双方向である点に注意してください。
 
 ```csharp
 namespace FormsVideoLibrary
@@ -395,11 +395,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-プロパティ変更のハンドラーを`Duration`プロパティ セット、 `Maximum` 、基になるプロパティ`Slider`を`TotalSeconds`のプロパティ、`TimeSpan`値。 同様に、プロパティ変更のハンドラーは、`Position`設定、`Value`のプロパティ、`Slider`です。 これにより、基になる`Slider`の位置を追跡、`PositionSlider`です。
+`Duration` プロパティのプロパティ変更ハンドラーによって、基となる `Slider` の `Maximum` プロパティが `TimeSpan` 値の `TotalSeconds` プロパティに設定されます。 同様に、`Position` のプロパティ変更ハンドラーによって、`Slider` の `Value` プロパティが設定されます。 このようにして、基となる `Slider` で `PositionSlider` の位置が追跡されます。
 
-`PositionSlider`は、基になるから更新`Slider`インスタンス 1 つだけで: ユーザーが操作するときに、`Slider`ビデオを高度なするか、新しい位置に元に戻すことを示すためにします。 これは、検出で、`PropertyChanged`のコンス トラクターでハンドラー、`PositionSlider`です。 ハンドラーでの変化を確認、`Value`プロパティとは異なる場合、`Position`プロパティ、`Position`プロパティが設定されてから、`Value`プロパティです。
+`PositionSlider` は、ある場合にのみ、基となる `Slider` から更新されます。つまり、ユーザーが `Slider` を操作して、ビデオを新しい位置に進めるか戻るかを示すときです。 これは、`PositionSlider` のコンストラクターの `PropertyChanged` ハンドラーで検出されます。 このハンドラーでは `Value` プロパティの変更が確認され、`Position` プロパティと異なる場合は、`Position` プロパティが `Value` プロパティから設定されます。
 
-理論上は、内部`if`ステートメントは、次のように記述できます。
+理論的には、内部の `if` ステートメントは次のように記述することができます。
 
 ```csharp
 if (newPosition.Seconds != Position.Seconds)
@@ -408,15 +408,15 @@ if (newPosition.Seconds != Position.Seconds)
 }
 ```
 
-ただしの Android 実装`Slider`に関係なく 1,000 件を超える個別の手順があります、`Minimum`と`Maximum`設定します。 ビデオの長さは 1,000 (秒単位) を 2 つの異なる超えた`Position`値と同じに対応して`Value`の設定、 `Slider`、され、この`if`偽陽性のユーザー操作のステートメントをトリガー`Slider`です。 代わりに、新しい位置と既存の位置が全体の期間の 1/100 より大きいことを確認することができます。
+ただし、Android の `Slider` の実装には、`Minimum` と `Maximum` の設定に関係なく、個別の 1,000 個のステップのみが含まれています。 ビデオの長さが 1,000 秒を超えると、2 つの異なる `Position` の値が `Slider` の同じ `Value` 設定に対応し、この `if` ステートメントによって `Slider` のユーザー操作に対して偽陽性がトリガーされます。 代わりに、新しい位置と既存の位置が全体の再生時間の 100 分の 1 を超えているかどうかを確認する方が安全です。
 
-## <a name="using-the-positionslider"></a>使用して、PositionSlider
+## <a name="using-the-positionslider"></a>PositionSlider の使用
 
-UWP について[ `MediaElement` ](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)へのバインドに関する注意事項について、`Position`プロパティ、プロパティが頻繁に更新されるためです。 ドキュメントでは、タイマーを使用することをお勧めするクエリ、`Position`プロパティです。
+UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) に関するドキュメントでは、プロパティの更新頻度が高くなるため、`Position` プロパティへのバインドについて警告しています。 ドキュメントでは、`Position` プロパティのクエリにタイマーを使用することを推奨しています。
 
-3 つが、適切な推奨事項`VideoPlayerRenderer`クラスは、既に間接的に使用して、タイマーを更新する、`Position`プロパティです。 `Position`のハンドラーのプロパティが変更された、`UpdateStatus`秒間に 10 回だけ発生するイベントです。
+これは適切な推奨事項ですが、3 つの `VideoPlayerRenderer` クラスは、`Position` プロパティを更新するために、既にタイマーを間接的に使用しています。 `Position` プロパティは、`UpdateStatus` イベントのハンドラーで変更されます。このイベントの発生は 1 秒に 10 回のみです。
 
-したがって、`Position`のプロパティ、`VideoPlayer`にバインドすることができます、`Position`のプロパティ、`PositionSlider`せずで示したように、パフォーマンスの問題、**カスタム位置バー**ページ。
+そのため、**[Custom Position Bar]\(カスタムの位置バー\)** ページに示されているように、パフォーマンスの問題を起こすことなく `VideoPlayer` の `Position` プロパティを `PositionSlider` の `Position` プロパティにバインドできます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -471,11 +471,11 @@ UWP について[ `MediaElement` ](/uwp/api/Windows.UI.Xaml.Controls.MediaElemen
 </ContentPage>
 ```
 
-最初の省略記号ボタン (···) を非表示に、 `ActivityIndicator`; は、前のものと同じ**カスタム トランスポート**ページ。 2 つのことを確認`Label`要素を表示する、`Position`と`TimeToEnd`プロパティです。 これら 2 つの間で、省略記号`Label`要素には、2 つが非表示に`Button`に表示される要素、**カスタム トランスポート**ページの再生、一時停止、および停止します。 分離コード ロジックと同じではまた、**カスタム トランスポート**ページ。
+最初の省略記号 (...) には `ActivityIndicator` が隠れています。以前の **[Custom Transport]\(カスタム トランスポート\)** ページと同じです。 2 つの `Label` 要素は、`Position` および `TimeToEnd` プロパティを示している点に注意してください。 これら 2 つの `Label` 要素の間にある省略記号には、再生、一時停止、および停止に関する **[Custom Transport]\(カスタム トランスポート\)** ページに表示される 2 つの `Button` 要素が隠れています。 コードビハインド ロジックは、**[Custom Transport]\(カスタム トランスポート\)** ページと同じです。
 
-[![カスタム配置](custom-positioning-images/custompositioning-small.png "カスタム配置")](custom-positioning-images/custompositioning-large.png#lightbox "カスタム配置")
+[![カスタムの位置設定](custom-positioning-images/custompositioning-small.png "カスタムの位置設定")](custom-positioning-images/custompositioning-large.png#lightbox "カスタムの位置設定")
 
-説明は、この時点で、`VideoPlayer`です。
+以上で `VideoPlayer` の説明は終了です。
 
 ## <a name="related-links"></a>関連リンク
 

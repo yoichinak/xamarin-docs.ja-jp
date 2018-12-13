@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms データ テンプレートの概要
-description: Xamarin.Forms データ テンプレートは、サポートされているコントロールのデータのプレゼンテーションを定義する機能を提供します。 この記事では、必要とされる理由を調べて、データ テンプレートの概要を提供します。
+description: Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義することができます。 この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 129ce7a04b93bfb3cb1b9a1639aee61cd56d09d5
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998919"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
 
-_Xamarin.Forms データ テンプレートは、サポートされているコントロールのデータのプレゼンテーションを定義する機能を提供します。この記事では、必要とされる理由を調べて、データ テンプレートの概要を提供します。_
+_Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義することができます。この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。_
 
-検討してください、 [ `ListView` ](xref:Xamarin.Forms.ListView)のコレクションを表示する`Person`オブジェクト。 次のコード例の定義を示しています、`Person`クラス。
+`Person` オブジェクトのコレクションを表示する [`ListView`](xref:Xamarin.Forms.ListView) について検討します。 次のコード例は、`Person` クラスの定義を示しています。
 
 ```csharp
 public class Person
@@ -29,7 +29,7 @@ public class Person
 }
 ```
 
-`Person`クラスを定義`Name`、`Age`と`Location`プロパティで、ときに設定できる、`Person`オブジェクトが作成されます。 [ `ListView` ](xref:Xamarin.Forms.ListView)のコレクションを表示するために使用`Person`オブジェクトの場合、次の XAML コード例に示すようにします。
+`Person` クラスでは、`Name`、`Age`、および `Location` のプロパティを定義します。これらのプロパティは、`Person` オブジェクトの作成時に設定できます。 次の XAML コード例に示すように、[`ListView`](xref:Xamarin.Forms.ListView) は `Person` オブジェクトのコレクションを表示するために使用されます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -54,12 +54,12 @@ public class Person
 </ContentPage>
 ```
 
-項目を追加、 [ `ListView` ](xref:Xamarin.Forms.ListView)初期化することにより XAML で、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティの配列から`Person`インスタンス。
+項目を XAML の [`ListView`](xref:Xamarin.Forms.ListView) に追加するには、`Person` インスタンスの配列の [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを初期化します。
 
 > [!NOTE]
-> なお、`x:Array`要素が必要です、`Type`配列内の項目の種類を示す属性です。
+> `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
 
-初期化する次のコード例で、同等の c# のページが表示、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティを`List`の`Person`インスタンス。
+C# での同等のページを次のコード例に示します。この例では、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Person` インスタンスの `List` に初期化します。
 
 ```csharp
 public WithoutDataTemplatePageCS()
@@ -86,11 +86,11 @@ public WithoutDataTemplatePageCS()
 }
 ```
 
-[ `ListView` ](xref:Xamarin.Forms.ListView)呼び出し`ToString`コレクション内のオブジェクトを表示するときにします。 存在しない`Person.ToString`オーバーライド、`ToString`の次のスクリーン ショットに示すように、各オブジェクトの型名を返します。
+コレクション内のオブジェクトを表示するときに、[`ListView`](xref:Xamarin.Forms.ListView) によって `ToString` が呼び出されます。 次のスクリーンショットに示すように、`Person.ToString` のオーバーライドがないため、`ToString` から各オブジェクトの型名が返されます。
 
-![](introduction-images/no-data-template.png "データ テンプレートを使用せずに ListView")
+![](introduction-images/no-data-template.png "データ テンプレートを使用しない ListView")
 
-`Person`オブジェクトを上書きできます、`ToString`メソッドの次のコード例に示すように、意味のあるデータを表示します。
+次のコード例に示すように、意味のあるデータを表示するために `Person` オブジェクトによって `ToString` メソッドをオーバーライドできます。
 
 ```csharp
 public class Person
@@ -103,34 +103,34 @@ public class Person
 }
 ```
 
-これは、結果、 [ `ListView` ](xref:Xamarin.Forms.ListView)を表示する、`Person.Name`次のスクリーン ショットに示すように、コレクション内の各オブジェクトのプロパティの値。
+この結果、次のスクリーンショットに示すように、[`ListView`](xref:Xamarin.Forms.ListView) でコレクション内の各オブジェクトの `Person.Name` プロパティ値が表示されます。
 
-![](introduction-images/override-tostring.png "データ テンプレートを使用して ListView")
+![](introduction-images/override-tostring.png "データ テンプレートを使用する ListView")
 
-`Person.ToString`上書きで構成される書式設定された文字列を返すことができます、 `Name`、 `Age`、および`Location`プロパティ。 ただし、このアプローチは、データの各アイテムの外観の管理は制限を提供します。 柔軟性を高めるため、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)作成できるデータの外観を定義します。
+`Person.ToString` のオーバーライドから、`Name`、`Age`、および `Location` プロパティで構成される書式設定された文字列が返される可能性があります。 ただし、このアプローチでは、各データ項目の外観に対して制限されたコントロールのみが提供されます。 柔軟性を高めるために、データの外観を定義する [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を作成することができます。
 
-## <a name="creating-a-datatemplate"></a>DataTemplate を作成します。
+## <a name="creating-a-datatemplate"></a>DataTemplate を作成する
 
-A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)データの外観を指定するために使用して、通常データ バインドを使用してデータを表示します。 その一般的な使用シナリオは、オブジェクトのコレクションからデータを表示するときに、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 たとえばときに、`ListView`のコレクションにバインドされて`Person`オブジェクト、`ListView.ItemTemplate`プロパティ設定されます、`DataTemplate`それぞれの外観を定義する`Person`オブジェクトに、`ListView`します。 `DataTemplate`の各プロパティの値をバインド要素を含む`Person`オブジェクト。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) はデータの外観を指定するために使用され、通常はデータを表示するためにデータ バインディングが使用されます。 一般的な使用シナリオは、[`ListView`](xref:Xamarin.Forms.ListView) でオブジェクトのコレクションのデータを表示する場合です。 たとえば、`ListView` が `Person` オブジェクトのコレクションにバインドされている場合、`ListView.ItemTemplate` プロパティは `ListView` 内の各 `Person` オブジェクトの外観を定義する `DataTemplate` に設定されます。 `DataTemplate` には、各 `Person` オブジェクトのプロパティ値にバインドされる要素が含まれます。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
-A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)次のプロパティの値として使用できます。
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、次のプロパティの値として使用できます。
 
 - [`ListView.HeaderTemplate`](xref:Xamarin.Forms.ListView.HeaderTemplate)
 - [`ListView.FooterTemplate`](xref:Xamarin.Forms.ListView.FooterTemplate)
 - [`ListView.GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate)
-- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)、継承によって[ `ListView`](xref:Xamarin.Forms.ListView)します。
-- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1)、継承によって[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)、および[ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。
+- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)。これは [`ListView`](xref:Xamarin.Forms.ListView) によって継承されます。
+- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1)。これは [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) によって継承されます。
 
 > [!NOTE]
-> [ `TableView` ](xref:Xamarin.Forms.TableView)使用[ `Cell` ](xref:Xamarin.Forms.Cell)オブジェクトを使用していない、 [ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。 これは、データ バインドは常に直接設定ため`Cell`オブジェクト。
+> [`TableView`](xref:Xamarin.Forms.TableView) は [`Cell`](xref:Xamarin.Forms.Cell) オブジェクトを利用しますが、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は使用しない点に注意してください。 これは、データ バインディングは常に `Cell` オブジェクトに直接設定されるためです。
 
-A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)上に示したプロパティの直接の子と呼ばれるように配置するが、*インライン テンプレート*します。 または、`DataTemplate`制御レベル、ページ レベル、またはアプリケーション レベルのリソースとして定義することができます。 定義する場所を選択する、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)に及ぼす影響を使用できます。
+前述のプロパティの直接の子として配置された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、*インライン テンプレート*と呼ばれます。 また、`DataTemplate` は、コントロールレベル、ページレベル、またはアプリケーションレベルのリソースとして定義できます。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を定義する場所の選択は、使用できる場所に影響があります。
 
-- A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)定義されているコントロールのレベルのみに適用できますコントロール。
-- A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)定義ページで、ページ上の複数の有効なコントロールにレベルを適用できます。
-- A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アプリケーション レベルで定義されているアプリケーション全体で有効に適用されるコントロールを指定できます。
+- コントロール レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、コントロールにのみ適用できます。
+- ページ レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、ページ上の複数の有効なコントロールに適用できます。
+- アプリケーション レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、アプリケーション全体の有効なコントロールに適用できます。
 
-データ テンプレートのビュー階層の下位に共有するときに、アップ以上定義されているよりも優先`x:Key`属性。 たとえば、ページ レベルのデータ テンプレートで、テンプレートをアプリケーション レベルのデータは上書きされ、ページ レベルのデータ テンプレートはコントロール レベルのデータ テンプレート、またはインライン データ テンプレートによって上書きされます。
+`x:Key` 属性を共有する場合、ビュー階層で下位にあるデータ テンプレートは、上位の定義済みコントロール テンプレートよりも優先されます。 たとえば、アプリケーションレベルのデータ テンプレートはページレベルのデータ テンプレートでオーバーライドされ、ページレベルのデータ テンプレートはコントロールレベルのデータ テンプレートまたはインライン データ テンプレートによってオーバーライドされます。
 
 
 ## <a name="related-links"></a>関連リンク

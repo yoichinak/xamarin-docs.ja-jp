@@ -1,6 +1,6 @@
 ---
 title: ControlTemplate の作成
-description: アプリケーション レベルまたはページ レベルでは、コントロール テンプレートを定義できます。 この記事では、作成およびコントロール テンプレートを使用する方法を示します。
+description: コントロール テンプレートは、アプリケーション レベルまたはページ レベルで定義できます。 この記事では、コントロール テンプレートを作成して使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
@@ -9,18 +9,18 @@ ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: b83668f6836b1d5d98f67592bf3e2b01e7319edc
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998190"
 ---
 # <a name="creating-a-controltemplate"></a>ControlTemplate の作成
 
-_アプリケーション レベルまたはページ レベルでは、コントロール テンプレートを定義できます。この記事では、作成およびコントロール テンプレートを使用する方法を示します。_
+"_コントロール テンプレートは、アプリケーション レベルまたはページ レベルで定義できます。この記事では、コントロール テンプレートを作成して使用する方法を示します。_"
 
-## <a name="creating-a-controltemplate-in-xaml"></a>XAML の ControlTemplate の作成
+## <a name="creating-a-controltemplate-in-xaml"></a>XAML を使用した ControlTemplate の作成
 
-定義する、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)アプリケーション レベル、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)に追加する必要があります、`App`クラス。 既定では、テンプレートから作成したすべての Xamarin.Forms アプリケーションを使用して、**アプリ**を実装するクラス、 [ `Application` ](xref:Xamarin.Forms.Application)サブクラスです。 宣言する、`ControlTemplate`アプリケーションのアプリケーション レベルで`ResourceDictionary`XAML、既定値を使用して**アプリ**クラスは、XAML で置き換える必要がある**アプリ**クラスと関連付けられているコード ビハインド、として次のコード例に示します。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) をアプリケーション レベルで定義するには、[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) を `App` クラスに追加する必要があります。 既定では、テンプレートから作成したすべての Xamarin.Forms アプリケーションでは、**App** クラスを使用して [`Application`](xref:Xamarin.Forms.Application) サブクラスが実装されます。 `ControlTemplate` をアプリケーション レベルで宣言するには、次のコード例に示すように、XAML を使用するアプリケーションの `ResourceDictionary` 内で、既定の **App** クラスを XAML の **App** クラスとそれに関連する分離コードに置き換える必要があります。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.App">
@@ -48,9 +48,9 @@ _アプリケーション レベルまたはページ レベルでは、コン�
 </Application>
 ```
 
-各[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)で再利用可能なオブジェクトとしてインスタンスを作成、 [ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。  これは、一意の各宣言指定することにより実現されます`x:Key`、属性のわかりやすいキーで利用可能になる、`ResourceDictionary`します。
+再利用可能オブジェクトとして、[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 内に各 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) インスタンスが作成されます。  これは、`ResourceDictionary` 内に説明的なキーを提供する一意の `x:Key` 属性が各宣言に指定されることによって実現されます。
 
-次のコード例を示しています、関連付けられている`App`分離コード。
+次のコード例で、関連する `App` 分離コードを示します。
 
 ```csharp
 public partial class App : Application
@@ -63,9 +63,9 @@ public partial class App : Application
 }
 ```
 
-設定と、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティ、分離コードを呼び出す必要がありますも、`InitializeComponent`読み込み、関連付けられている XAML を解析するメソッド。
+[`MainPage`](xref:Xamarin.Forms.Application.MainPage) プロパティの設定だけでなく、分離コードで `InitializeComponent` メソッドを呼び出して、関連付けられている XAML を読み込んで解析する必要があります。
 
-次のコード例は、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)適用、`TealTemplate`を[ `ContentView` ](xref:Xamarin.Forms.ContentView):
+次のコード例で、`TealTemplate` を [`ContentView`](xref:Xamarin.Forms.ContentView) に適用する[`ContentPage`](xref:Xamarin.Forms.ContentPage) を示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -79,13 +79,13 @@ public partial class App : Application
 </ContentPage>
 ```
 
-`TealTemplate`に割り当てられている、 [ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate)プロパティを使用して、`StaticResource`マークアップ拡張機能。 [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティに設定されて、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)に表示するコンテンツを定義する、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)します。 このコンテンツによって表示される、 [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter)に含まれている、`TealTemplate`します。 次のスクリーン ショットに示すように外観が発生します。
+`StaticResource` マークアップ拡張を使用して、`TealTemplate` が [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティに割り当てられます。 [`ContentView.Content`[`ContentPage`](xref:Xamarin.Forms.ContentPage) に表示されるコンテンツを定義する [`StackLayout`](xref:Xamarin.Forms.StackLayout) に、](xref:Xamarin.Forms.ContentView.Content) プロパティが設定されます。 `TealTemplate` に含まれている [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) によって、このコンテンツが表示されます。 この結果、次のスクリーンショットに示すような外観が表示されます。
 
 ![](creating-images/teal-theme.png "青緑コントロール テンプレート")
 
-### <a name="re-theming-an-application-at-runtime"></a>実行時にアプリケーションを再テーマ
+### <a name="re-theming-an-application-at-runtime"></a>実行時のアプリケーションのテーマ変更
 
-クリックすると、**テーマを変更する**ボタンの実行、`OnButtonClicked`メソッドは、次のコード例に示されています。
+**[テーマの変更]** ボタンをクリックすると、次のコード例に示す `OnButtonClicked` メソッドが実行されます。
 
 ```csharp
 void OnButtonClicked (object sender, EventArgs e)
@@ -95,16 +95,16 @@ void OnButtonClicked (object sender, EventArgs e)
 }
 ```
 
-このメソッドは、アクティブなを置き換える[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) 、代替手段でインスタンス`ControlTemplate`インスタンス、その結果、次のスクリーン ショット。
+このメソッドで、アクティブな [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) インスタンスが別の `ControlTemplate` インスタンスに置き替えられ、次のスクリーンショットに示す結果になります。
 
-![](creating-images/aqua-theme.png "水色のコントロール テンプレート")
+![](creating-images/aqua-theme.png "水色コントロール テンプレート")
 
 > [!NOTE]
-> `ContentPage`、`Content`プロパティを割り当てることができる、`ControlTemplate`プロパティを設定することもできます。 ときにこれが発生した場合、`ControlTemplate`が含まれています、`ContentPresenter`インスタンスに割り当てられているコンテンツ、`Content`によってプロパティが表示されます、`ContentPresenter`内、`ControlTemplate`します。
+> `ContentPage` に `Content` プロパティを割り当てることができ、さらに `ControlTemplate` プロパティも割り当てることができます。 これが発生するときに、`ControlTemplate` に `ContentPresenter` インスタンスが含まれている場合は、`ControlTemplate` 内の `ContentPresenter` によって `Content` プロパティに割り当てられたコンテンツが表示されます。
 
-### <a name="setting-a-controltemplate-with-a-style"></a>ControlTemplate のスタイルを設定
+### <a name="setting-a-controltemplate-with-a-style"></a>スタイルを使用する ControlTemplate の設定
 
-A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)を使用して適用することも、 [ `Style` ](xref:Xamarin.Forms.Style)テーマ機能をさらに展開します。 作成してこれを実現する、*暗黙的な*または*明示的な*で対象のビューのスタイルを[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、および設定、`ControlTemplate`ターゲットのプロパティ表示、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンス。 次のコード例は、*暗黙的な*はアプリケーション レベルに追加されたスタイル[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
+テーマの能力をさらに拡張するために、[`Style`](xref:Xamarin.Forms.Style) を使用して [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を適用することもできます。 これは、[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 内にターゲット ビュー用の "*暗黙的*" または "*明示的*" なスタイルを作成し、ターゲット ビューの `ControlTemplate` プロパティを [`Style`](xref:Xamarin.Forms.Style) インスタンス内に設定することで実現できます。 次のコード例で、アプリケーション レベルの [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加されている "*暗黙的な*" スタイルを示します。
 
 ```xaml
 <Style TargetType="ContentView">
@@ -112,7 +112,7 @@ A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)を使用して適用
 </Style>
 ```
 
-[ `Style` ](xref:Xamarin.Forms.Style)インスタンスが*暗黙的な*がすべてに適用`ContentView`アプリケーション内のインスタンス。 そのため、設定する必要はなくなりました、 [ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate)プロパティは、次のコード例で示した。
+[`Style`](xref:Xamarin.Forms.Style) インスタンスが "*暗黙的*" であるため、それはアプリケーション内のすべての `ContentView` インスタンスに適用されます。 そのため、次のコード例に示すように、[`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティを設定する必要はなくなりました。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -122,11 +122,11 @@ A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)を使用して適用
 </ContentPage>
 ```
 
-スタイルの詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/styles/index.md)します。
+スタイルについて詳しくは、[スタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事をご覧ください。
 
-### <a name="creating-a-controltemplate-at-page-level"></a>ページ レベルで ControlTemplate の作成
+### <a name="creating-a-controltemplate-at-page-level"></a>ページ レベルでの ControlTemplate の作成
 
-作成するだけでなく[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)アプリケーション レベルのインスタンスが作成することも、ページ レベルで次のコード例に示すようにします。
+アプリケーション レベルの [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) インスタンスの作成に加え、次のコード例に示すように、ページ レベルでもそれらを作成できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -146,11 +146,11 @@ A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)を使用して適用
 </ContentPage>
 ```
 
-追加するときに、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)ページ レベル、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)に追加されます、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)をクリックし、`ControlTemplate`インスタンスが含まれています`ResourceDictionary`します。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) をページ レベルで追加すると、[`ContentPage`](xref:Xamarin.Forms.ContentPage) に [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) が 追加され、`ResourceDictionary` 内に `ControlTemplate` インスタンスが含まれます。
 
-## <a name="creating-a-controltemplate-in-c35"></a>C で ControlTemplate の作成&#35;
+## <a name="creating-a-controltemplate-in-c35"></a>C&#35; を使用した ControlTemplate の作成
 
-定義する、 [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)アプリケーション レベル、`class`を表すを作成する必要があります、`ControlTemplate`します。 クラスを派生する必要があります、[レイアウト](~/xamarin-forms/user-interface/layouts/index.md)テンプレートについては、次のコード例で示すように使用されています。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) をアプリケーション レベルで定義するには、`ControlTemplate` を表わす `class` クラスを作成する必要があります。 次のコード例に示すように、テンプレート用に使用される[レイアウト](~/xamarin-forms/user-interface/layouts/index.md)からこのクラスを派生させる必要があります。
 
 ```csharp
 class TealTemplate : Grid
@@ -171,9 +171,9 @@ class AquaTemplate : Grid
 }
 ```
 
-`AquaTemplate`クラスのと同じですが、`TealTemplate`クラスの異なる色が使用する点を除いて、 [ `BoxView.Color` ](xref:Xamarin.Forms.BoxView.Color)と[ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor)プロパティ。
+`AquaTemplate` クラスと `TealTemplate` クラスは、[`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) プロパティと [`Label.TextColor`](xref:Xamarin.Forms.Label.TextColor) プロパティで使用されている色が異なっていること以外は同一です。
 
-次のコード例は、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)適用、`TealTemplate`を[ `ContentView` ](xref:Xamarin.Forms.ContentView):
+次のコード例で、`TealTemplate` を [`ContentView`](xref:Xamarin.Forms.ContentView) に適用する[`ContentPage`](xref:Xamarin.Forms.ContentPage) を示します。
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -202,13 +202,13 @@ public class HomePageCS : ContentPage
 }
 ```
 
-[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)で、コントロール テンプレートを定義するクラスの種類を指定してインスタンスを作成、`ControlTemplate`コンス トラクター。
+コントロール テンプレートを定義するクラスの種類を `ControlTemplate` コンストラクター内に指定することで、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) インスタンスを作成します。
 
-[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティに設定されて、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)に表示するコンテンツを定義する、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)します。 このコンテンツによって表示される、 [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter)に含まれている、`TealTemplate`します。 記載されている、同じメカニズムを使用する実行時にテーマを変更するして以前、`AquaTheme`します。
+[`ContentView.Content`[`ContentPage`](xref:Xamarin.Forms.ContentPage) に表示されるコンテンツを定義する [`StackLayout`](xref:Xamarin.Forms.StackLayout) に、](xref:Xamarin.Forms.ContentView.Content) プロパティが設定されます。 `TealTemplate` に含まれている [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) によって、このコンテンツが表示されます。 前に説明したのと同じメカニズムを使用して、実行時にテーマを `AquaTheme` に変更します。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、作成し、コントロール テンプレートを使用する方法を示しました。 アプリケーション レベルまたはページ レベルでは、コントロール テンプレートを定義できます。
+この記事では、コントロール テンプレートを作成して使用する方法を示しました。 コントロール テンプレートは、アプリケーション レベルまたはページ レベルで定義できます。
 
 
 ## <a name="related-links"></a>関連リンク

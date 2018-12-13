@@ -1,6 +1,6 @@
 ---
 title: 階層ナビゲーション
-description: この記事では、NavigationPage クラスを使用して、後入れ先出し (LIFO) のページのスタックでナビゲーションを実行する方法を示します。
+description: この記事では、NavigationPage クラスを使用して後入れ先出し (LIFO) ページのスタックでナビゲーションを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
@@ -9,45 +9,45 @@ ms.author: dabritch
 ms.date: 08/14/2018
 ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
 ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994677"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
-_NavigationPage クラスでは、ユーザーが forwards と backwards、必要に応じて、ページを移動できる階層ナビゲーション エクスペリエンスを提供します。クラスは、ページのオブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを実装します。この記事では、NavigationPage クラスを使用して、ページのスタックでナビゲーションを実行する方法を示します。_
+_NavigationPage クラスは、ユーザーが前後を希望どおりにページを移動することができる階層ナビゲーション エクスペリエンスを提供します。このクラスは、Page オブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを提供します。この記事では、NavigationPage クラスを使用してページのスタックでナビゲーションを実行する方法について説明します。_
 
-別に 1 つのページから移動するに、アプリケーションはそこでなるアクティブなページで、次の図に示すようをナビゲーション スタックに新しいページにプッシュします。
+1 つのページから別のページに移動するには、次の図に示すように、アプリケーションは新しいページを、そこでアクティブなページとなるナビゲーション スタックにプッシュします。
 
-![](hierarchical-images/pushing.png "ページをナビゲーション スタックにプッシュ")
+![](hierarchical-images/pushing.png "ナビゲーション スタックにページをプッシュする")
 
-前のページに戻るに、アプリケーションは、ナビゲーション スタックから現在のページをポップし、次の図に示すように、新しい最上位のページがアクティブ ページ。
+次の図に示すように、前のページに戻るには、アプリケーションは現在のページをナビゲーション スタックからポップします。そして新しい最上位のページがアクティブ ページになります。
 
-![](hierarchical-images/popping.png "ページをナビゲーション スタックからポップ")
+![](hierarchical-images/popping.png "ナビゲーション スタックからページをポップする")
 
-ナビゲーション メソッドは、によって公開される、 [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)任意プロパティ[ `Page` ](xref:Xamarin.Forms.Page)派生型。 これらのメソッドは、ナビゲーション スタックにページをナビゲーション スタックからポップのページにプッシュし、スタック操作を実行する機能を提供します。
+ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティによって公開されます。 これらのメソッドには、ページをナビゲーション スタックにプッシュし、ナビゲーション スタックからページをポップし、スタック操作を実行する機能があります。
 
 <a name="Performing_Navigation" />
 
-## <a name="performing-navigation"></a>ナビゲーションを実行します。
+## <a name="performing-navigation"></a>ナビゲーションを実行する
 
-階層ナビゲーションでは、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) クラスは [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトのスタック間をナビゲートするために使用されます。 次のスクリーン ショットの主要なコンポーネント、`NavigationPage`各プラットフォームで。
+階層ナビゲーションでは、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) クラスは [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトのスタック間をナビゲートするために使用されます。 次のスクリーンショットは、各プラットフォームでの `NavigationPage` のメイン コンポーネントを示します。
 
 ![](hierarchical-images/navigationpage-components.png "NavigationPage コンポーネント")
 
-レイアウトを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)はプラットフォームに依存します。
+[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のレイアウトは、プラットフォームによって異なります。
 
-- Ios では、ナビゲーション バーは、タイトルを表示しを持つページの上部にある存在、*戻る*を返す前のページにボタンをクリックします。
-- Android では、ナビゲーション バーは、アイコン、タイトルを表示するページの上部にあると*戻る*を返す前のページにボタンをクリックします。 アイコンが定義されている、`[Activity]`を装飾する属性、 `MainActivity` Android のプラットフォーム固有プロジェクト内のクラス。
-- ユニバーサル Windows プラットフォームでは、ナビゲーション バーは、タイトルを表示するページの上部にある存在します。
+- iOS では、ナビゲーション バーがページの上部にあり、タイトルが表示され、前のページに戻る *[戻る]* ボタンがあります。
+- Android では、ナビゲーション バーがページの上部にあり、タイトル、アイコンと、前のページに戻る *[戻る]* ボタンが表示されています。 Android プラットフォーム固有プロジェクトでは、アイコンは `MainActivity` クラスを修飾する `[Activity]` 属性で定義されています。
+- ユニバーサル Windows プラットフォームでは、ナビゲーション バーはページの上部にあり、タイトルが表示されています。
 
-すべてのプラットフォームの値で、 [ `Page.Title` ](xref:Xamarin.Forms.Page.Title)プロパティがページのタイトルとして表示されます。
+いずれのプラットフォームでも、[`Page.Title`](xref:Xamarin.Forms.Page.Title) プロパティの値がページ タイトルとして表示されます。
 
 > [!NOTE]
-> お勧めしますが、`NavigationPage`を代入するか`ContentPage`インスタンスのみです。
+> `NavigationPage` を `ContentPage` インスタンスのみで作成することをお勧めします。
 
-### <a name="creating-the-root-page"></a>ルート ページの作成
+### <a name="creating-the-root-page"></a>ルート ページを作成する
 
 ナビゲーション スタックに追加された最初のページは、アプリケーションの*ルート* ページとなります。次のコード例に、これを実現する方法を示しています。
 
@@ -58,16 +58,16 @@ public App ()
 }
 ```
 
-これにより、 `Page1Xaml` [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)がアクティブ ページおよびアプリケーションのルート ページ、ナビゲーション スタックにプッシュされるインスタンス。 これは、次のスクリーン ショットに示されます。
+これにより、`Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスがナビゲーション スタックにプッシュされるようになります。そこがアクティブ ページであり、アプリケーションのルート ページとなります。 これを次のスクリーンショットに示します。
 
 ![](hierarchical-images/mainpage.png "ナビゲーション スタックのルート ページ")
 
 > [!NOTE]
-> [ `RootPage` ](xref:Xamarin.Forms.NavigationPage.RootPage)のプロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)インスタンスがナビゲーション スタックの最初のページへのアクセスを提供します。
+> [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスの [`RootPage`](xref:Xamarin.Forms.NavigationPage.RootPage) プロパティを使用すると、ナビゲーション スタック内の最初のページにアクセスできます。
 
-### <a name="pushing-pages-to-the-navigation-stack"></a>ページをナビゲーション スタックにプッシュ
+### <a name="pushing-pages-to-the-navigation-stack"></a>ナビゲーション スタックにページをプッシュする
 
-移動する`Page2Xaml`を呼び出す必要がある、 [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*)メソッドを[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)のコード例を次のとおり、現在のページのプロパティ。
+`Page2Xaml` にナビゲートするには、次のコード例で示すように、現在のページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティで [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドを起動する必要があります。
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -76,22 +76,22 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-これにより、`Page2Xaml` インスタンスがナビゲーション スタックにプッシュされるようになり、そこがアクティブ ページとなります。 これは、次のスクリーン ショットに示されます。
+これにより、`Page2Xaml` インスタンスがナビゲーション スタックにプッシュされるようになり、そこがアクティブ ページとなります。 これを次のスクリーンショットに示します。
 
-![](hierarchical-images/secondpage.png "ページがナビゲーション スタックにプッシュされます。")
+![](hierarchical-images/secondpage.png "ナビゲーション スタックにプッシュされるページ")
 
-ときに、 [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*)メソッドが呼び出される、次のイベントが発生します。
+[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドが呼び出されると、次のイベントが発生します。
 
-- 呼び出し元ページ`PushAsync`がその[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)オーバーライドが呼び出されます。
-- 移動先ページがその[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)オーバーライドが呼び出されます。
-- `PushAsync`タスクが完了します。
+- `PushAsync` を呼び出すページでは、[`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) のオーバーライドが呼び出されます。
+- ナビゲート先のページでは、[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) のオーバーライドが呼び出されます。
+- `PushAsync` タスクが完了します。
 
-ただし、これらのイベントが発生する正確な順序は、プラットフォームに依存します。 詳細については、次を参照してください。[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold の Xamarin.Forms book の。
+ただし、これらのイベントが発生する正確な順序はプラットフォームによって異なります。 詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)を参照してください。
 
 > [!NOTE]
-> 呼び出し、 [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)と[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)上書きは、ページ ナビゲーションの保証がないとして扱うことはできません。 たとえば、iOS、上、`OnDisappearing`アプリケーションの終了時に、アクティブなページ オーバーライドが呼び出されます。
+> [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) および [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) のオーバーライドの呼び出しは、ページ ナビゲーションを示す保証として扱うことはできません。 たとえば、iOS では、アプリケーションの終了時にアクティブ ページで `OnDisappearing` のオーバーライドが呼び出されます。
 
-### <a name="popping-pages-from-the-navigation-stack"></a>ナビゲーション スタックからポップをそれぞれのページ
+### <a name="popping-pages-from-the-navigation-stack"></a>ナビゲーション スタックからページをポップする
 
 アクティブ ページは、これが物理的なボタンであるか画面上のボタンであるかどうかにかかわらず、デバイスの *[戻る]* ボタンを押すことによってナビゲーション スタックからポップすることができます。
 
@@ -104,15 +104,15 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-これにより、ナビゲーション スタックから `Page2Xaml` インスタンスが削除され、新しい最上位のページがアクティブ ページとなります。 ときに、 [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync)メソッドが呼び出される、次のイベントが発生します。
+これにより、ナビゲーション スタックから `Page2Xaml` インスタンスが削除され、新しい最上位のページがアクティブ ページとなります。 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) メソッドが呼び出されると、次のイベントが発生します。
 
-- 呼び出し元ページ`PopAsync`がその[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)オーバーライドが呼び出されます。
-- 返されるページがその[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)オーバーライドが呼び出されます。
-- `PopAsync`タスクを返します。
+- `PopAsync` を呼び出すページでは、[`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) のオーバーライドが呼び出されます。
+- 戻り先のページでは、[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) のオーバーライドが呼び出されます。
+- `PopAsync` タスクが復帰します。
 
-ただし、これらのイベントが発生する正確な順序は、プラットフォームに依存します。 詳細については、次を参照してください。[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold の Xamarin.Forms book の。
+ただし、これらのイベントが発生する正確な順序はプラットフォームによって異なります。 詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)を参照してください。
 
-だけでなく[ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*)と[ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) 、メソッド、 [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)各ページのプロパティも用意されています、 [ `PopToRootAsync` 。](xref:Xamarin.Forms.NavigationPage.PopToRootAsync)メソッドは、次のコード例に示されています。
+各ページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティには、[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) および [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) メソッドだけでなく、次のコード例に示すように、[`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) メソッドも用意されています。
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -121,11 +121,11 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-このメソッドは、ルートを除くすべてポップ[ `Page` ](xref:Xamarin.Forms.Page)ナビゲーション スタックからアプリケーションのアクティブなページのルート ページにそのため、します。
+このメソッドは、ルート [`Page`](xref:Xamarin.Forms.Page) 以外のすべてをナビゲーション スタックからポップします。そのため、アプリケーションのルート ページがアクティブ ページになります。
 
-### <a name="animating-page-transitions"></a>ページの切り替え効果をアニメーション化
+### <a name="animating-page-transitions"></a>ページ遷移をアニメーション化する
 
-[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)各ページのプロパティは、オーバーライドされたプッシュおよびポップ メソッドが含まれているにも提供します、`boolean`に次のコードに示すように、ナビゲーション中にページのアニメーションを表示するかどうかを制御するパラメーター例:
+各ページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティには、次のコード例に示すように、ナビゲーション中にページ アニメーションを表示するかどうかを制御する `boolean` パラメーターを含むオーバーライドされたプッシュおよびポップ メソッドも用意されています。
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -147,17 +147,17 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-設定、`boolean`パラメーターを`false`パラメータを設定するときに、ページ遷移アニメーションを無効にします。`true`基になるプラットフォームでサポートされている、ページ遷移アニメーションを使用します。 ただし、このパラメーターを持たない push および pop メソッドは、既定では、アニメーションを有効にします。
+`boolean` パラメーターを `false` に設定すると、ページ遷移アニメーションが無効になります。また、パラメーターを `true` に設定すると、基となるプラットフォームでサポートされている場合はページ遷移アニメーションが有効になります。 ただし、プッシュとポップのメソッドでこのパラメーターが指定されていない場合は、既定でアニメーションが有効になります。
 
 <a name="Passing_Data_when_Navigating" />
 
-## <a name="passing-data-when-navigating"></a>移動するときにデータの受け渡し
+## <a name="passing-data-when-navigating"></a>ナビゲーション時にデータを渡す
 
-ページの移動中に別のページにデータを渡すために必要な場合があります。 これを行うために 2 つの手法は、ページのコンス トラクター、および、新しいページを設定してデータを渡している[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)データにします。 さらに説明するようになりましたが。
+場合によっては、ナビゲーション中に、あるページから別のページにデータを渡す必要があります。 これを実現する 2 つの手法では、ページ コンストラクターを介してデータを渡し、新しいページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) をデータに設定しています。 これから、それぞれについて順番に説明します。
 
-### <a name="passing-data-through-a-page-constructor"></a>ページのコンス トラクターを通じてデータの受け渡し
+### <a name="passing-data-through-a-page-constructor"></a>ページ コンストラクターを介してデータを渡す
 
-別のページへの移動中にデータを渡すための最も単純な手法は、次のコード例に示されているページのコンス トラクターのパラメーターでは。
+ナビゲーション中に別のページにデータを渡す最も簡単な手法は、次のコード例で示すように、ページ コンストラクター パラメーターを使用することです。
 
 ```csharp
 public App ()
@@ -166,9 +166,9 @@ public App ()
 }
 ```
 
-このコードを作成、`MainPage`にラップされて、現在の日付と時刻 ISO8601 形式で渡すことで、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)インスタンス。
+このコードでは、現在の日付と時刻を ISO8601 形式で渡す `MainPage` インスタンスを作成します。これは [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスでラップされています。
 
-`MainPage`インスタンスが次のコード例に示すように、コンス トラクターのパラメーターを使用してデータを受信します。
+`MainPage` インスタンスは、次のコード例に示すように、コンストラクター パラメーターを使用してデータを受け取ります。
 
 ```csharp
 public MainPage (string date)
@@ -178,13 +178,13 @@ public MainPage (string date)
 }
 ```
 
-データが設定ページに表示し、 [ `Label.Text` ](xref:Xamarin.Forms.Label.Text)プロパティは、次のスクリーン ショットに示すようにします。
+次のスクリーンショットに示すように、[`Label.Text`](xref:Xamarin.Forms.Label.Text) プロパティを設定することでデータがページに表示されます。
 
-![](hierarchical-images/passing-data-constructor.png "ページのコンス トラクターを通じて渡されるデータ")
+![](hierarchical-images/passing-data-constructor.png "ページ コンストラクターを介して渡されるデータ")
 
-### <a name="passing-data-through-a-bindingcontext"></a>BindingContext を通じたデータの受け渡し
+### <a name="passing-data-through-a-bindingcontext"></a>BindingContext を介してデータを渡す
 
-別のページへの移動中にデータを渡すための別のアプローチは、新しいページを設定して、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)データの次のコード例に示すようにします。
+ナビゲーション中に別のページにデータを渡すもう 1 つの方法は、次のコード例に示すように、新しいページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) をデータに設定することです。
 
 ```csharp
 async void OnNavigateButtonClicked (object sender, EventArgs e)
@@ -202,9 +202,9 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 }
 ```
 
-このコードを設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`SecondPage`インスタンスを`Contact`インスタンス、およびに移動し、`SecondPage`します。
+このコードでは、`SecondPage` インスタンスの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) を `Contact` インスタンスに設定し、`SecondPage` にナビゲートします。
 
-`SecondPage`データ バインディングを使用して、表示、`Contact`の XAML コードの例を次に示すように、データをインスタンスします。
+次の XAML コード例に示すように、`SecondPage` ではデータ バインディングを使用して `Contact` インスタンス データを表示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,7 +224,7 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 </ContentPage>
 ```
 
-次のコード例では、データ バインディングを実現 (C#) する方法を示します。
+次のコード例は、C# でデータ バインディングを実行する方法を示しています。
 
 ```csharp
 public class SecondPageCS : ContentPage
@@ -264,27 +264,27 @@ public class SecondPageCS : ContentPage
 }
 ```
 
-データが、一連のページに表示し、 [ `Label` ](xref:Xamarin.Forms.Label)コントロール、次のスクリーン ショットに示すようにします。
+次のスクリーンショットに示すように、一連の [`Label`](xref:Xamarin.Forms.Label) コントロールによってデータがページに表示されます。
 
-![](hierarchical-images/passing-data-bindingcontext.png "BindingContext を通じて渡されるデータ")
+![](hierarchical-images/passing-data-bindingcontext.png "BindingContext を介して渡されるデータ")
 
 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
 <a name="Manipulating_the_Navigation_Stack" />
 
-## <a name="manipulating-the-navigation-stack"></a>ナビゲーション スタックを操作します。
+## <a name="manipulating-the-navigation-stack"></a>ナビゲーション スタックの操作
 
-[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)プロパティが公開、 [ `NavigationStack` ](xref:Xamarin.Forms.INavigation.NavigationStack)プロパティ、ナビゲーション スタック内のページを取得できます。 Xamarin.Forms の維持、ナビゲーション スタックへのアクセス中に、`Navigation`プロパティは、提供、 [ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*)と[ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*)を挿入することで、スタックを操作するメソッドページまたはそれらを削除します。
+[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティは、ナビゲーション スタックのページを取得する [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) プロパティを公開します。 Xamarin.Forms はナビゲーション スタックへのアクセスを維持していますが、`Navigation` プロパティには、ページを挿入または削除することでスタックを操作するための [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) および [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) メソッドが用意されています。
 
-[ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*)メソッドは、次の図に示すように既存の指定 ページの前に、ナビゲーション スタックで指定したページを挿入します。
+次の図に示すように、[`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) メソッドによって、ナビゲーション スタック内の指定されたページが既存の指定されたページの前に挿入されます。
 
-![](hierarchical-images/insert-page-before.png "ナビゲーション スタックにページを挿入します。")
+![](hierarchical-images/insert-page-before.png "ナビゲーション スタックにページを挿入する")
 
-[ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*)メソッドは、次の図に示すように、ナビゲーション スタックから指定したページを削除します。
+次の図に示すように、[`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) メソッドによって、指定されたページがナビゲーション スタックから削除されます。
 
-![](hierarchical-images/remove-page.png "ページをナビゲーション スタックから削除します。")
+![](hierarchical-images/remove-page.png "ナビゲーション スタックからページを削除する")
 
-これらのメソッドは、新しいページで、次のログインに成功すると、ログイン ページを置き換えるなどのカスタム ナビゲーション エクスペリエンスを有効にします。 次のコード例では、このシナリオを示しています。
+これらのメソッドを使用すると、ログインに成功した後に、ログイン ページを新しいページに置き換えるなど、カスタムのナビゲーション エクスペリエンスを実現できます。 次のコード例はこのシナリオを示しています。
 
 ```csharp
 async void OnLoginButtonClicked (object sender, EventArgs e)
@@ -302,13 +302,13 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ```
 
-ユーザーの資格情報が正しいこと、`MainPage`インスタンスが現在のページの前に、ナビゲーション スタックに挿入されます。 [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync)メソッドをナビゲーション スタックから現在のページを削除し、`MainPage`インスタンスがアクティブ ページになることです。
+ユーザーの資格情報が正しい場合、`MainPage` インスタンスは、ナビゲーション スタック内の現在のページの前に挿入されます。 次に [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) メソッドによってナビゲーション スタックから現在のページが削除され、`MainPage` インスタンスがアクティブ ページになります。
 
-## <a name="displaying-views-in-the-navigation-bar"></a>ナビゲーション バーでビューを表示します。
+## <a name="displaying-views-in-the-navigation-bar"></a>ナビゲーション バーにビューを表示する
 
-すべての Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View)のナビゲーション バーに表示されることができます、 [ `NavigationPage`](xref:Xamarin.Forms.NavigationPage)します。 これは、設定によって実現されます、 [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)添付プロパティを`View`します。 いずれかでこの添付プロパティを設定できます[ `Page` ](xref:Xamarin.Forms.Page)、いつ、`Page`にプッシュされます、 `NavigationPage`、`NavigationPage`プロパティの値が反映されます。
+すべての Xamarin.Forms [`View`](xref:Xamarin.Forms.View) は、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに表示できます。 これを実現するには、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを `View` に設定します。 この添付プロパティは任意の [`Page`](xref:Xamarin.Forms.Page) に設定できます。また、`Page` が `NavigationPage` にプッシュされると、`NavigationPage` ではプロパティの値が反映されます。
 
-取得した次の例で、[タイトル ビュー サンプル](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)を設定する方法を示しています、 [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)添付プロパティを XAML から。
+[タイトル ビュー サンプル](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)から取り上げた次の例は、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを XAML から設定する方法を示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -321,7 +321,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 </ContentPage>
 ```
 
-ここでは、相当C#コード。
+C# での同等のコードを次に示します。
 
 ```csharp
 public class TitleViewPage : ContentPage
@@ -335,35 +335,35 @@ public class TitleViewPage : ContentPage
 }
 ```
 
-これは、結果、 [ `Slider` ](xref:Xamarin.Forms.Slider)のナビゲーション バーに表示されている、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+この結果、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) でナビゲーション バーに [`Slider`](xref:Xamarin.Forms.Slider) が表示されます:
 
-[![スライダー TitleView](hierarchical-images/titleview-small.png "スライダー TitleView")](hierarchical-images/titleview-large.png#lightbox "スライダー TitleView")
+[![スライダーの TitleView](hierarchical-images/titleview-small.png "スライダーの TitleView")](hierarchical-images/titleview-large.png#lightbox "スライダーの TitleView")
 
 > [!IMPORTANT]
-> ビューのサイズを指定しない場合、ナビゲーション バーに複数のビューは表示されません、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティ。 ビューにラップする代わりに、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)で、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)適切な値に設定します。
+> ビューのサイズが [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) および[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) のプロパティで指定されていない場合、多くのビューはナビゲーション バーに表示されません。 または、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) および [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティを適切な値に設定してビューを [`StackLayout`](xref:Xamarin.Forms.StackLayout) にラップすることができます。
 
-に、注意してください、 [ `Layout` ](xref:Xamarin.Forms.Layout)クラスから派生、 [ `View` ](xref:Xamarin.Forms.View)クラス、 [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)レイアウトを表示する添付プロパティを設定することができます複数のビューを含むクラスです。 IOS、ユニバーサル Windows プラットフォーム (UWP) で、変更できないナビゲーション バーの高さとナビゲーション バーに表示されるビューがナビゲーション バーの既定のサイズより大きい場合にクリッピングが発生するようにします。 ただし、android では、ナビゲーション バーの高さは設定して、 [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)バインド可能なプロパティを`double`新しい高さを表します。 詳細については、次を参照してください。 [NavigationPage のナビゲーション バーの高さを設定](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight)します。
+[`Layout`](xref:Xamarin.Forms.Layout) クラスは [`View`](xref:Xamarin.Forms.View) クラスから派生しているため、複数のビューを含むレイアウト クラスを表示するように [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを設定することができます。 iOS およびユニバーサル Windows プラットフォーム (UWP) では、ナビゲーション バーの高さを変更できないため、ナビゲーション バーに表示されるビューがナビゲーション バーの既定サイズより大きい場合、クリップが発生します。 一方 Android では、[`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) バインディング可能プロパティを新しい高さを表す `double` に設定することで、ナビゲーション バーの高さを変更できます。 詳細については、「[Setting the Navigation Bar Height on a NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight)」(NavigationPage でナビゲーション バーの高さを設定する) を参照してください。
 
-または、上部のナビゲーション バーにする色に一致するページのコンテンツ ビューでのナビゲーション バーで、コンテンツの一部とを配置することで、拡張のナビゲーション バーを推奨します。 さらに、iOS で、区切り線とナビゲーション バーの下部にあるシャドウを取り外せるを設定して、 [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty)バインド可能なプロパティを`true`します。 詳細については、次を参照してください。 [NavigationPage のナビゲーション バーの区切り記号を非表示](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar)します。
+また、ナビゲーション バーにコンテンツの一部を配置し、ナビゲーション バーと色を合わせたビューの一部をページ コンテンツの上部に配置して、拡張ナビゲーション バーを提案することもできます。 さらに、iOS では、[`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) バインド可能プロパティを `true` に設定することで、ナビゲーション バーの下部にあるセパレーターと影を削除できます。 詳細については、「[Hiding the Navigation Bar Separator on a NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar)」(NavigationPage でナビゲーション バーのセパレーターを非表示にする) を参照してください。
 
 > [!NOTE]
-> [ `BackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty)、 [ `Title` ](xref:Xamarin.Forms.Page.Title)、 [ `TitleIcon` ](xref:Xamarin.Forms.NavigationPage.TitleIconProperty)、および[ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)プロパティを定義できますナビゲーション バー上の空き領域の値。 ナビゲーション バーのサイズは、プラットフォームや画面サイズによって異なります、中で利用できる限られたスペースに起因する競合が発生これらすべてのプロパティを設定します。 これらのプロパティの組み合わせを使用しようとすると、代わりにのみ設定して、目的のナビゲーション バーのデザインをより実現できますを見つけることがあります、`TitleView`プロパティ。
+> [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty)、[`Title`](xref:Xamarin.Forms.Page.Title)、[`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty)、[`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) のプロパティのいずれでも、ナビゲーション バー上の領域を占める値を定義できます。 ナビゲーション バーのサイズはプラットフォームや画面サイズによって変わりますが、これらのプロパティをすべて設定すると、領域が限られているために競合が発生します。 これらのプロパティの組み合わせを使用するのではなく、`TitleView` プロパティのみ設定して目的のナビゲーション バーのデザインを改善することをお勧めします。
 
 ### <a name="limitations"></a>制限事項
 
-表示するときに注意すべき制限事項がいくつか、 [ `View` ](xref:Xamarin.Forms.View)のナビゲーション バーで、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに [`View`](xref:Xamarin.Forms.View) を表示するときに注意が必要な制限事項がいくつかあります。
 
-- Ios では、ビューの配置のナビゲーション バーで、`NavigationPage`大きいタイトルが有効になっているかどうかによって別の位置に表示されます。 大規模なタイトルを有効にする方法の詳細については、次を参照してください。[大きいタイトルを表示する](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title)します。
-- Android でのナビゲーション バーでビューを配置する、`NavigationPage`アプリケーション互換性を使用するアプリでのみ実行できます。
-- など、大規模で複雑なビューを配置することは推奨されません[ `ListView` ](xref:Xamarin.Forms.ListView)と[ `TableView`](xref:Xamarin.Forms.TableView)のナビゲーション バーで、`NavigationPage`します。
+- iOS では、`NavigationPage` のナビゲーション バーに配置されるビューは、大きなタイトルが有効かどうかによって表示される位置が変わります。 大きなタイトルを有効にする方法については、「[Displaying Large Titles](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title)」(大きなタイトルの表示) を参照してください。
+- Android では、`NavigationPage` のナビゲーション バーにビューを配置することは、app-compat を使用するアプリでのみ実現できます。
+- [`ListView`](xref:Xamarin.Forms.ListView) や [`TableView`](xref:Xamarin.Forms.TableView) などの大きくて複雑なビューを `NavigationPage` のナビゲーション バーに配置することはお勧めしません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [ページ ナビゲーション](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
+- [ページのナビゲーション](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
 - [階層 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
 - [TitleView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
-- [Xamarin.Forms (Xamarin University のビデオ) サンプルでは画面のフローで、記号を作成する方法](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
-- [Xamarin.Forms (Xamarin University のビデオ) でフローを画面で、記号を作成する方法](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
+- [Xamarin.Forms でサインイン画面のフローを作成する方法 (Xamarin University ビデオ) のサンプル](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
+- [Xamarin.Forms でサインイン画面のフローを作成する方法 (Xamarin University ビデオ)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

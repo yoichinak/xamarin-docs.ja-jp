@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms のモーダル ページ
-description: Xamarin.Forms はモーダル ページをサポートしています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダル ページに移動する方法を示します。
+title: Xamarin.Forms モーダル ページ
+description: Xamarin.Forms はモーダル ページをサポートしています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダル ページに移動する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
@@ -9,46 +9,46 @@ ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 44aee8500c7de2ae56b59049368d6025ec49cc5e
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38994829"
 ---
-# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms のモーダル ページ
+# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
 
-_Xamarin.Forms はモーダル ページのサポートを提供します。モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。この記事では、モーダル ページに移動する方法を示します。_
+_Xamarin.Forms はモーダル ページをサポートしています。モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。この記事では、モーダル ページに移動する方法について説明します。_
 
 この記事では、次のトピックについて説明します。
 
-- [ナビゲーションを実行する](#Performing_Navigation)モーダル スタック、モーダル スタックからポップをそれぞれのページにページをプッシュ –、[戻る] ボタンを無効にして、ページの切り替え効果をアニメーション化します。
-- [移動するときにデータを渡す](#Passing_Data_when_Navigating)– を使用してページのコンス トラクターでは、データを渡す、`BindingContext`します。
+- [ナビゲーションを実行する](#Performing_Navigation): モーダル スタックにページをプッシュし、モーダル スタックからページをポップし、戻るボタンを無効にし、ページ遷移をアニメーション化します。
+- [ナビゲーション時にデータを渡す](#Passing_Data_when_Navigating): ページ コンストラクターと `BindingContext` を介してデータを渡します。
 
 ## <a name="overview"></a>概要
 
-モーダル ページには、いずれかを指定できる、[ページ](~/xamarin-forms/user-interface/controls/pages.md)Xamarin.Forms でサポートされる型。 モーダル ページを表示するには、アプリケーションは、スタックにプッシュ モーダル、そこでなるアクティブなページで、次の図に示すようにします。
+モーダル ページは、Xamarin.Forms でサポートされている任意の [Page](~/xamarin-forms/user-interface/controls/pages.md) の種類にすることができます。 次の図に示すように、モーダル ページを表示するために、アプリケーションからモーダル スタックにプッシュされ、アクティブ ページになります。
 
-![](modal-images/pushing.png "ページのモーダル スタックにプッシュ")
+![](modal-images/pushing.png "ページをモーダル スタックにプッシュする")
 
-返される前のページに、アプリケーションは、モーダル スタックから現在のページをポップし、新しい最上位のページがアクティブなページで、次の図に示すように。
+次の図に示すように、前のページに戻るために、アプリケーションでは現在のページがモーダル スタックからポップされ、新しい最上位のページがアクティブ ページになります。
 
-![](modal-images/popping.png "ページをモーダル スタックからポップ")
+![](modal-images/popping.png "モーダル スタックからページをポップする")
 
 <a name="Performing_Navigation" />
 
-## <a name="performing-navigation"></a>ナビゲーションを実行します。
+## <a name="performing-navigation"></a>ナビゲーションを実行する
 
-モーダル ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティによって公開されます。 これらのメソッドを行う[モーダル ページをプッシュ](#Pushing_Pages_to_the_Modal_Stack)モーダル スタックと[モーダル ページをポップ](#Popping_Pages_from_the_Modal_Stack)モーダル スタックから。
+モーダル ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティによって公開されます。 これらのメソッドは、モーダル スタックに[モーダル ページをプッシュし](#Pushing_Pages_to_the_Modal_Stack)、モーダル スタックから[モーダル ページをポップする](#Popping_Pages_from_the_Modal_Stack)機能を提供します。
 
-[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)プロパティも公開、 [ `ModalStack` ](xref:Xamarin.Forms.INavigation.ModalStack)プロパティは、モーダル スタックのモーダル ページを取得できます。 ただし、モーダル スタックの操作を実行したり、モーダル ナビゲーションで、ルート ページにポップしたりする概念はありません。 これは、これらの操作が基になるプラットフォームで一般にサポートされていないためです。
+[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティでは、モーダル スタック内のモーダル ページを取得する [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) プロパティも公開されています。 ただし、モーダル スタックの操作を実行したり、モーダル ナビゲーションで、ルート ページにポップしたりする概念はありません。 これは、これらの操作が基になるプラットフォームで一般にサポートされていないためです。
 
 > [!NOTE]
 > [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスは、モーダル ページ ナビゲーションの実行には不要です。
 
 <a name="Pushing_Pages_to_the_Modal_Stack" />
 
-### <a name="pushing-pages-to-the-modal-stack"></a>モーダル スタックにプッシュ ページ
+### <a name="pushing-pages-to-the-modal-stack"></a>モーダル スタックにページをプッシュする
 
-移動する、`ModalPage`を呼び出す必要がある、 [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*)メソッドを[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)のコード例を次のとおり、現在のページのプロパティ。
+`ModalPage` にナビゲートするには、次のコード例で示すように、現在のページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティで [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) メソッドを起動する必要があります。
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -61,26 +61,26 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-これにより、`ModalPage`で項目が選択されているアクティブなページが、モーダル スタックにプッシュされるインスタンスが提供される、 [ `ListView` ](xref:Xamarin.Forms.ListView)上、`MainPage`インスタンス。 `ModalPage`インスタンスは、次のスクリーン ショットで示されます。
+これにより、`MainPage` インスタンス上の [`ListView`](xref:Xamarin.Forms.ListView) で項目が選択されている場合は、`ModalPage` インスタンスがモーダル スタックにプッシュされ、アクティブ ページになります。 次のスクリーンショットに `ModalPage` インスタンスを示します。
 
 ![](modal-images/modalpage.png "モーダル ページの例")
 
-ときに[ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*)呼び出されると、次のイベントが発生します。
+[`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) が呼び出されると、次のイベントが発生します。
 
-- 呼び出し元ページ`PushModalAsync`がその[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)オーバーライドされるとき、基になるプラットフォームのない Android 呼び出されます。
-- 移動先ページがその[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)オーバーライドが呼び出されます。
-- `PushAsync`タスクが完了します。
+- 基となるプラットフォームが Android ではない場合、`PushModalAsync` を呼び出すページでは、[`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) のオーバーライドが呼び出されます。
+- ナビゲート先のページでは、[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) のオーバーライドが呼び出されます。
+- `PushAsync` タスクが完了します。
 
-ただし、これらのイベントが発生する正確な順序は、プラットフォームに依存します。 詳細については、次を参照してください。[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold の Xamarin.Forms book の。
+ただし、これらのイベントが発生する正確な順序はプラットフォームによって異なります。 詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)を参照してください。
 
 > [!NOTE]
-> 呼び出し、 [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)と[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)上書きは、ページ ナビゲーションの保証がないとして扱うことはできません。 たとえば、iOS、上、`OnDisappearing`アプリケーションの終了時に、アクティブなページ オーバーライドが呼び出されます。
+> [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) および [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) のオーバーライドの呼び出しは、ページ ナビゲーションを示す保証として扱うことはできません。 たとえば、iOS では、アプリケーションの終了時にアクティブ ページで `OnDisappearing` のオーバーライドが呼び出されます。
 
 <a name="Popping_Pages_from_the_Modal_Stack" />
 
-### <a name="popping-pages-from-the-modal-stack"></a>モーダル スタックからポップをそれぞれのページ
+### <a name="popping-pages-from-the-modal-stack"></a>モーダル スタックからページをポップする
 
-アクティブなページは、キーを押して、モーダル スタックからポップできます、*戻る*に関係なく、デバイスのボタンではこれは、デバイス上の物理ボタンであるかどうか、または画面上のボタンします。
+アクティブ ページは、これが物理的なボタンであるか画面上のボタンであるかどうかにかかわらず、デバイスの *[戻る]* ボタンを押すことによってモーダル スタックからポップすることができます。
 
 元のページにプログラムを使用して戻るには、`ModalPage` インスタンスが、次のコード例のとおり [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync) メソッドを起動する必要があります。
 
@@ -91,21 +91,21 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-これにより、`ModalPage`アクティブ ページになる新しい最上位のページで、モーダル スタックから削除するインスタンス。 ときに[ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync)呼び出されると、次のイベントが発生します。
+これにより、モーダル スタックから `ModalPage` インスタンスが削除され、新しい最上位のページがアクティブ ページとなります。 [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync) が呼び出されると、次のイベントが発生します。
 
-- 呼び出し元ページ`PopModalAsync`がその[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)オーバーライドが呼び出されます。
-- 返されるページがその[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)オーバーライドされるとき、基になるプラットフォームのない Android 呼び出されます。
-- `PopModalAsync`タスクを返します。
+- `PopModalAsync` を呼び出すページでは、[`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) のオーバーライドが呼び出されます。
+- 基となるプラットフォームが Android ではない場合、戻り先のページでは、[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) のオーバーライドが呼び出されます。
+- `PopModalAsync` タスクが復帰します。
 
-ただし、これらのイベントが発生する正確な順序は、プラットフォームに依存します。 詳細については、次を参照してください。[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold の Xamarin.Forms book の。
+ただし、これらのイベントが発生する正確な順序はプラットフォームによって異なります。 詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)を参照してください。
 
-### <a name="disabling-the-back-button"></a>[戻る] ボタンを無効にします。
+### <a name="disabling-the-back-button"></a>[戻る] ボタンを無効にする
 
-Android では、ユーザー常に押して戻ることが前のページに、標準*戻る*デバイス上のボタンをクリックします。 モーダル ページは、ページを終了する前に、自己完結型のタスクを完了するユーザーを必要とする場合、アプリケーションを無効にする必要があります、*戻る*ボタンをクリックします。 これは、オーバーライドすることで実現できます、 [ `Page.OnBackButtonPressed` ](xref:Xamarin.Forms.Page.OnBackButtonPressed)モーダル ページ上のメソッド。 詳細については、次を参照してください。[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold の Xamarin.Forms book の。
+Android では、デバイスの標準の *[戻る]* ボタンを押して、いつでも前のページに戻ることができます。 モーダル ページで、ユーザーがページから離れる前に自己完結型タスクを完了する必要がある場合は、アプリケーションで *[戻る]* ボタンを無効にする必要があります。 これを実現するには、モーダル ページの [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed) メソッドをオーバーライドします。 詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)を参照してください。
 
-### <a name="animating-page-transitions"></a>ページの切り替え効果をアニメーション化
+### <a name="animating-page-transitions"></a>ページ遷移をアニメーション化する
 
-[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)各ページのプロパティは、オーバーライドされたプッシュおよびポップ メソッドが含まれているにも提供します、`boolean`に次のコードに示すように、ナビゲーション中にページのアニメーションを表示するかどうかを制御するパラメーター例:
+各ページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティには、次のコード例に示すように、ナビゲーション中にページ アニメーションを表示するかどうかを制御する `boolean` パラメーターを含むオーバーライドされたプッシュおよびポップ メソッドも用意されています。
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -121,17 +121,17 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-設定、`boolean`パラメーターを`false`パラメータを設定するときに、ページ遷移アニメーションを無効にします。`true`基になるプラットフォームでサポートされている、ページ遷移アニメーションを使用します。 ただし、このパラメーターを持たない push および pop メソッドは、既定では、アニメーションを有効にします。
+`boolean` パラメーターを `false` に設定すると、ページ遷移アニメーションが無効になります。また、パラメーターを `true` に設定すると、基となるプラットフォームでサポートされている場合はページ遷移アニメーションが有効になります。 ただし、プッシュとポップのメソッドでこのパラメーターが指定されていない場合は、既定でアニメーションが有効になります。
 
 <a name="Passing_Data_when_Navigating" />
 
-## <a name="passing-data-when-navigating"></a>移動するときにデータの受け渡し
+## <a name="passing-data-when-navigating"></a>ナビゲーション時にデータを渡す
 
-ページの移動中に別のページにデータを渡すために必要な場合があります。 これを行うために 2 つの手法は、新しいページの設定とページのコンス トラクターでは、データを渡すことによって[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)データにします。 さらに説明するようになりましたが。
+場合によっては、ナビゲーション中に、あるページから別のページにデータを渡す必要があります。 これを実現する 2 つの手法では、ページ コンストラクターを介してデータを渡し、新しいページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) をデータに設定しています。 これから、それぞれについて順番に説明します。
 
-### <a name="passing-data-through-a-page-constructor"></a>ページのコンス トラクターを通じてデータの受け渡し
+### <a name="passing-data-through-a-page-constructor"></a>ページ コンストラクターを介してデータを渡す
 
-別のページへの移動中にデータを渡すための最も単純な手法は、次のコード例に示されているページのコンス トラクターのパラメーターでは。
+ナビゲーション中に別のページにデータを渡す最も簡単な手法は、次のコード例で示すように、ページ コンストラクター パラメーターを使用することです。
 
 ```csharp
 public App ()
@@ -140,9 +140,9 @@ public App ()
 }
 ```
 
-このコードを作成、`MainPage`インスタンス、現在の日付と時刻 ISO8601 形式で渡します。
+このコードでは、現在の日付と時刻を ISO8601 形式で渡す `MainPage` インスタンスを作成します。
 
-`MainPage`インスタンスが次のコード例に示すように、コンス トラクターのパラメーターを使用してデータを受信します。
+`MainPage` インスタンスは、次のコード例に示すように、コンストラクター パラメーターを使用してデータを受け取ります。
 
 ```csharp
 public MainPage (string date)
@@ -152,11 +152,11 @@ public MainPage (string date)
 }
 ```
 
-データが設定ページに表示し、 [ `Label.Text` ](xref:Xamarin.Forms.Label.Text)プロパティ。
+データは、[`Label.Text`](xref:Xamarin.Forms.Label.Text) プロパティを設定することでページに表示されます。
 
-### <a name="passing-data-through-a-bindingcontext"></a>BindingContext を通じたデータの受け渡し
+### <a name="passing-data-through-a-bindingcontext"></a>BindingContext を介してデータを渡す
 
-別のページへの移動中にデータを渡すための別のアプローチは、新しいページを設定して、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)データの次のコード例に示すようにします。
+ナビゲーション中に別のページにデータを渡すもう 1 つの方法は、次のコード例に示すように、新しいページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) をデータに設定することです。
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -170,9 +170,9 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-このコードを設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`DetailPage`インスタンスを`Contact`インスタンス、およびに移動し、`DetailPage`します。
+このコードでは、`DetailPage` インスタンスの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) を `Contact` インスタンスに設定し、`DetailPage` にナビゲートします。
 
-`DetailPage`データ バインディングを使用して、表示、`Contact`の XAML コードの例を次に示すように、データをインスタンスします。
+次の XAML コード例に示すように、`DetailPage` ではデータ バインディングを使用して `Contact` インスタンス データを表示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -196,7 +196,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 </ContentPage>
 ```
 
-次のコード例では、データ バインディングを実現 (C#) する方法を示します。
+次のコード例は、C# でデータ バインディングを実行する方法を示しています。
 
 ```csharp
 public class DetailPageCS : ContentPage
@@ -248,17 +248,17 @@ public class DetailPageCS : ContentPage
 }
 ```
 
-データが、一連のページに表示し、 [ `Label` ](xref:Xamarin.Forms.Label)コントロール。
+データは、一連の [`Label`](xref:Xamarin.Forms.Label) コントロールによってページに表示されます。
 
 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/index.md)」 (データ バインディングの基礎) を参照してください。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、モーダル ページに移動する方法を示しました。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。
+この記事では、モーダル ページに移動する方法について説明しました。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ページ ナビゲーション](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
+- [ページのナビゲーション](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
 - [モーダル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
 - [PassingData (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)

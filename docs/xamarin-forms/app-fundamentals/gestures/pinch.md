@@ -1,6 +1,6 @@
 ---
-title: ピンチ ジェスチャ認識エンジンを追加します。
-description: この記事では、ピンチ ジェスチャを使用して、対話型ズームのピンチ場所にイメージを実行する方法について説明します。
+title: ピンチ ジェスチャ認識エンジンの追加
+description: この記事では、ピンチ ジェスチャを使用して、ピンチ場所の画像に対して対話型のズームを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: f67cbb136c42a4bc476c1715ea6fd15255d71dc7
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998703"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ認識エンジンを追加します。
+# <a name="adding-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ認識エンジンの追加
 
-_ピンチ ジェスチャでは、対話型ズームを実行するために使用し、PinchGestureRecognizer クラスを使用して実装されます。ピンチ ジェスチャの一般的なシナリオでは、ピンチ場所にイメージの対話型ズームを実行します。これは、ビューポートのコンテンツをスケールすることによって実現され、、この記事で説明します。_
+"_ピンチ ジェスチャは対話型のズームを実行するために使用され、PinchGestureRecognizer クラスを使用して実装されます。ピンチ ジェスチャの一般的なシナリオは、ピンチ場所の画像に対して対話型のズームを実行することです。これは、ビューポートのコンテンツを拡大縮小することによって実現され、この記事でその方法について説明します。_"
 
-ピンチ ジェスチャとズーム可能なユーザー インターフェイス要素をように、作成、 [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer)インスタンスを処理、 [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated)イベントに新しいジェスチャ レコグナイザーを追加し、 [`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ユーザー インターフェイスの要素のコレクション。 次のコード例は、`PinchGestureRecognizer`にアタッチされている、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
+ユーザー インターフェース要素をピンチ ジェスチャを使用してズームできるようにするには、[`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) インスタンスを作成し、[`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) イベントを処理し、新しいジェスチャ認識エンジンをユーザー インターフェイス要素の [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 次に示すのは、[`Image`](xref:Xamarin.Forms.Image) 要素に関連付けられている `PinchGestureRecognizer` のコード例です。
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -28,7 +28,7 @@ pinchGesture.PinchUpdated += (s, e) => {
 image.GestureRecognizers.Add(pinchGesture);
 ```
 
-これ行うこともできます、XAML で次のコード例に示すようにします。
+次のコード例に示すように、XAML でもこれを実現できます。
 
 ```xaml
 <Image Source="waterfront.jpg">
@@ -38,7 +38,7 @@ image.GestureRecognizers.Add(pinchGesture);
 </Image>
 ```
 
-コードを`OnPinchUpdated`イベント ハンドラーは、分離コード ファイルに追加されます。
+`OnPinchUpdated` イベント ハンドラー用のコードが分離コード ファイルに追加されます。
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -47,9 +47,9 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-## <a name="creating-a-pinchtozoom-container"></a>PinchToZoom コンテナーを作成します。
+## <a name="creating-a-pinchtozoom-container"></a>PinchToZoom コンテナーの作成
 
-ズーム操作を実行するピンチ ジェスチャの処理には、ユーザー インターフェイスを変換するいくつかの計算が必要です。 このセクションには、対話形式で任意のユーザー インターフェイス要素を拡大するために使用できる計算を実行する汎用化されたヘルパー クラスが含まれています。 次に示すのは、`PinchToZoomContainer` クラスのコード例です。
+ズーム操作を実行するためのピンチ ジェスチャの処理では、ユーザー インターフェイスを変換するための多少の計算が必要です。 このセクションには、この計算を実行するための汎用化されたヘルパー クラスが含まれています。それを使用して、任意のユーザー インターフェイス要素を対話的にズームできます。 次に示すのは、`PinchToZoomContainer` クラスのコード例です。
 
 ```csharp
 public class PinchToZoomContainer : ContentView
@@ -70,7 +70,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-このクラスは、指をつまむジェスチャがラップされたユーザー インターフェイス要素を拡大表示するため、ユーザー インターフェイス要素を囲むラップできます。 次の XAML コード例は、`PinchToZoomContainer`の折り返し、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
+このクラスでユーザー インターフェイス要素をラップして、ラップされたユーザー インターフェイス要素がピンチ ジェスチャでズームされるようにすることができます。 次に示すのは、[`Image`](xref:Xamarin.Forms.Image) 要素をラップしている `PinchToZoomContainer` の XAML のコード例です。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +89,7 @@ public class PinchToZoomContainer : ContentView
 </ContentPage>
 ```
 
-次のコード例に示す方法、`PinchToZoomContainer`ラップ、 [ `Image` ](xref:Xamarin.Forms.Image) c# ページ内の要素。
+次に示すのは、`PinchToZoomContainer` で C# ページ内の [`Image`](xref:Xamarin.Forms.Image) 要素をラップする方法のコード例です。
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -108,7 +108,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-ときに、 [ `Image` ](xref:Xamarin.Forms.Image)要素は、指をつまむジェスチャを受け取る、表示されるイメージが拡大表示または無効です。ズームは、`PinchZoomContainer.OnPinchUpdated`メソッドは、次のコード例に示されています。
+[`Image`](xref:Xamarin.Forms.Image) 要素がピンチ ジェスチャを受け取ると、表示されている画像が拡大または縮小されます。次のコード例に示すように、`PinchZoomContainer.OnPinchUpdated` メソッドによってズームが実行されます。
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -158,7 +158,7 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-このメソッドは、ユーザーの指をつまむジェスチャに基づいてラップされたユーザー インターフェイス要素のズーム レベルを更新します。 値を使用してこれは、 [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale)、 [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin)と[ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status)のプロパティ、 [ `PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs)ピンチ ジェスチャの原点に適用されるスケール ファクターを計算するインスタンス。 設定して、ラップされたユーザーの要素が拡大ピンチ ジェスチャの原点を注視し、その[ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)、 [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)、および[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)プロパティの計算される値。
+このメソッドにより、ユーザーのピンチ ジェスチャに基づいて、ラップされたユーザー インターフェイス要素のズーム レベルが更新されます。 これは、[`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) インスタンスの [`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale)、[`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin)、および [`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) の各プロパティを使用して、ピンチ ジェスチャの原点に適用される倍率を計算することで実現されます。 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)、[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) および [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) の各プロパティが計算済みの値に設定されることで、ピンチ ジェスチャの原点にあるラップされたユーザー要素がズームされます。
 
 ## <a name="related-links"></a>関連リンク
 

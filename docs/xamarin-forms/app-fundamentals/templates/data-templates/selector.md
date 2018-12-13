@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms DataTemplateSelector を作成します。
-description: この記事では、作成し、データ バインド プロパティの値に基づいて実行時に、DataTemplate を選択するために使用できる、DataTemplateSelector を使用する方法を示します。
+title: Xamarin.Forms DataTemplateSelector の作成
+description: この記事では、DataTemplateSelector を作成および使用する方法について説明します。これを使用して、データバインド プロパティの値に基づいて、実行時に DataTemplate を選択することができます。
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
@@ -9,20 +9,20 @@ ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: a72777c7e51e96a8e123ecd85ad0aa24fc60fc6c
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38994518"
 ---
-# <a name="creating-a-xamarinforms-datatemplateselector"></a>Xamarin.Forms DataTemplateSelector を作成します。
+# <a name="creating-a-xamarinforms-datatemplateselector"></a>Xamarin.Forms DataTemplateSelector の作成
 
-_データ バインド プロパティの値に基づいて実行時に、DataTemplate を選択する、DataTemplateSelector を使用できます。これにより、特定のオブジェクトの外観をカスタマイズする、オブジェクトの同じ型に適用される複数の Datatemplate ができます。この記事では、作成し、DataTemplateSelector を使用する方法を示します。_
+_DataTemplateSelector を使用して、データバインド プロパティの値に基づいて、実行時に DataTemplate を選択できます。これにより、複数の DataTemplates を同じ種類のオブジェクトに適用し、特定のオブジェクトの外観をカスタマイズできます。この記事では、DataTemplateSelector を作成して使用する方法を示します。_
 
-データ テンプレート セレクターの行うシナリオを[ `ListView` ](xref:Xamarin.Forms.ListView) 、オブジェクトのコレクションへのバインドを内の各オブジェクトの外観、`ListView`データ テンプレート セレクターを返すことによって実行時に選択できます、特定[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。
+データ テンプレート セレクターによって、オブジェクトのコレクションにバインドされる [`ListView`](xref:Xamarin.Forms.ListView) などのシナリオが可能になります。この場合、`ListView` 内の各オブジェクトの外観は、特定の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を返すデータ テンプレート セレクターによって実行時に選択できます。
 
-## <a name="creating-a-datatemplateselector"></a>DataTemplateSelector を作成します。
+## <a name="creating-a-datatemplateselector"></a>DataTemplateSelector の作成
 
-継承するクラスを作成して、データ テンプレート セレクターが実装されている[ `DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)します。 `OnSelectTemplate`を返す特定のメソッドをオーバーライドして、 [ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)次のコード例のように。
+データ テンプレート セレクターを実装するには、[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) から継承するクラスを作成します。 次のコード例に示すように、`OnSelectTemplate` メソッドがオーバーライドされ、特定の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) が返されます。
 
 ```csharp
 public class PersonDataTemplateSelector : DataTemplateSelector
@@ -37,22 +37,22 @@ public class PersonDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`OnSelectTemplate`メソッドの値に基づいて適切なテンプレートを返します、`DateOfBirth`プロパティ。 値を返すテンプレートである、`ValidTemplate`プロパティまたは`InvalidTemplate`プロパティを使用するときに設定されている、`PersonDataTemplateSelector`します。
+`OnSelectTemplate` メソッドからは、`DateOfBirth` プロパティの値に基づいて適切なテンプレートが返されます。 返されるテンプレートは、`PersonDataTemplateSelector` の使用時に設定される `ValidTemplate` プロパティまたは `InvalidTemplate` プロパティの値です。
 
-データ テンプレート セレクターのクラスのインスタンスはなど、Xamarin.Forms コントロール プロパティに割り当てられますし[ `ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)します。 有効なプロパティの一覧は、次を参照してください。 [DataTemplate を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md)します。
+データ テンプレート セレクター クラスのインスタンスは、[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) などの Xamarin.Forms コントロール プロパティに割り当てることができます。 有効なプロパティの一覧については、[DataTemplate の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md)に関するページを参照してください。
 
 ### <a name="limitations"></a>制限事項
 
-[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) インスタンスには、次の制限があります。
+[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) インスタンスには次の制限事項があります。
 
-- `DataTemplateSelector`複数回のクエリを実行する場合、サブクラスは、同じテンプレートを同じデータを返す常に必要があります。
-- `DataTemplateSelector`サブクラス別返す必要がありますいない`DataTemplateSelector`サブクラスです。
-- `DataTemplateSelector`サブクラスはの新しいインスタンスを返す必要がありますいないを`DataTemplate`呼び出しのたびにします。 代わりに、同じインスタンスが返される必要があります。 そのためにはエラーでは、メモリ リークが作成され、仮想化を無効になります。
-- Android では、可能性があるあたり最大 20 個の異なるデータ テンプレート`ListView`します。
+- 複数回クエリが実行された場合、同じデータに対して `DataTemplateSelector` サブクラスからは常に同じテンプレートが返される必要があります。
+- `DataTemplateSelector` サブクラスから別の `DataTemplateSelector` サブクラスを返すことはできません。
+- 呼び出しごとに、`DataTemplateSelector` サブクラスから新しいインスタンスの `DataTemplate` を返すことはできません。 代わりに、同じインスタンスを返す必要があります。 そうしないと、メモリ リークが発生し、仮想化が無効になります。
+- Android では、`ListView` ごとに使用できるデータ テンプレートは 20 種類以下です。
 
 ## <a name="consuming-a-datatemplateselector-in-xaml"></a>XAML での DataTemplateSelector の使用
 
-XAML、`PersonDataTemplateSelector`次のコード例に示すように、リソースとして宣言することによってインスタンス化することができます。
+XAML で `PersonDataTemplateSelector` をインスタンス化するには、次のコード例のようにリソースとして宣言します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Selector;assembly=Selector" x:Class="Selector.HomePage">
@@ -77,25 +77,25 @@ XAML、`PersonDataTemplateSelector`次のコード例に示すように、リソ
 </ContentPage>
 ```
 
-このページ レベル[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) 2 つ定義する[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)インスタンスと`PersonDataTemplateSelector`インスタンス。 `PersonDataTemplateSelector`セットのインスタンス、`ValidTemplate`と`InvalidTemplate`プロパティを適切な`DataTemplate`インスタンスを使用して、`StaticResource`マークアップ拡張機能。 リソースは、ページので定義されていることに注目[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、コントロール レベルまたはアプリケーション レベルで定義することもできます。
+このページ レベルの [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) には、2 つの [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) インスタンスと 1 つの `PersonDataTemplateSelector` インスタンスが定義されています。 `PersonDataTemplateSelector` インスタンスでは、`StaticResource` マークアップ拡張を使用して、`ValidTemplate` および `InvalidTemplate` プロパティが適切な `DataTemplate` インスタンスに設定されます。 リソースはページの [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に定義されていますが、コントロール レベルまたはアプリケーション レベルで定義することもできる点に注意してください。
 
-`PersonDataTemplateSelector`に割り当てることでインスタンスが使用される、 [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1)プロパティは、次のコード例に示すようにします。
+`PersonDataTemplateSelector` インスタンスを使用するには、次のコード例に示すように、[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) プロパティに割り当てます。
 
 ```xaml
 <ListView x:Name="listView" ItemTemplate="{StaticResource personDataTemplateSelector}" />
 ```
 
-実行時に、 [ `ListView` ](xref:Xamarin.Forms.ListView)呼び出し、`PersonDataTemplateSelector.OnSelectTemplate`メソッド呼び出しとしてデータ オブジェクトを渡すことで、基になるコレクション内の項目ごと、`item`パラメーター。 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)によって返される、メソッドはそのオブジェクトに適用されます。
+実行時に、基となるコレクション内の項目ごとに、[`ListView`](xref:Xamarin.Forms.ListView) から `PersonDataTemplateSelector.OnSelectTemplate` メソッドが呼び出されます。このとき、呼び出しでデータ オブジェクトが `item` パラメーターとして渡されます。 このメソッドから返された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) はそのオブジェクトに適用されます。
 
-次のスクリーン ショットの結果を表示する、 [ `ListView` ](xref:Xamarin.Forms.ListView)適用、`PersonDataTemplateSelector`基になるコレクション内の各オブジェクトに。
+次のスクリーンショットは、[`ListView`](xref:Xamarin.Forms.ListView) によって、基となるコレクション内の各オブジェクトに対して `PersonDataTemplateSelector` が適用された結果を示しています。
 
-![](selector-images/data-template-selector.png "データ テンプレート セレクターを ListView")
+![](selector-images/data-template-selector.png "データ テンプレート セレクターを使用する ListView")
 
-すべて`Person`を持つオブジェクトを`DateOfBirth`1980年以上のプロパティの値が赤で表示されている残りのオブジェクトを緑色で表示します。
+`DateOfBirth` プロパティ値が 1980 以上のすべての `Person` オブジェクトは緑色で表示され、その他のオブジェクトは赤色で表示されます。
 
-## <a name="consuming-a-datatemplateselector-in-cnum"></a>C での DataTemplateSelector の使用&num;
+## <a name="consuming-a-datatemplateselector-in-cnum"></a>C&num; での DataTemplateSelector の使用
 
-C# で、`PersonDataTemplateSelector`インスタンスが作成されに割り当てられていることができます、 [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1)プロパティは、次のコード例に示すようにします。
+次のコード例に示すように、C# では、`PersonDataTemplateSelector` をインスタンス化して [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) プロパティに割り当てることができます。
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -126,11 +126,11 @@ public class HomePageCS : ContentPage
 }
 ```
 
-`PersonDataTemplateSelector`セットのインスタンス、`ValidTemplate`と`InvalidTemplate`プロパティを適切な[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)で作成されたインスタンス、`SetupDataTemplates`メソッド。 実行時に、 [ `ListView` ](xref:Xamarin.Forms.ListView)呼び出し、`PersonDataTemplateSelector.OnSelectTemplate`メソッド呼び出しとしてデータ オブジェクトを渡すことで、基になるコレクション内の項目ごと、`item`パラメーター。 `DataTemplate`によって返される、メソッドはそのオブジェクトに適用されます。
+`PersonDataTemplateSelector` インスタンスでは、`SetupDataTemplates` メソッドで作成された適切な [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) インスタンスに `ValidTemplate` および `InvalidTemplate` プロパティが設定されます。 実行時に、基となるコレクション内の項目ごとに、[`ListView`](xref:Xamarin.Forms.ListView) から `PersonDataTemplateSelector.OnSelectTemplate` メソッドが呼び出されます。このとき、呼び出しでデータ オブジェクトが `item` パラメーターとして渡されます。 このメソッドから返された `DataTemplate` はそのオブジェクトに適用されます。
 
 ## <a name="summary"></a>まとめ
 
-この記事を作成および使用する方法を示しましたが、 [ `DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)します。 A`DataTemplateSelector`選択に使用できる、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)データ バインド プロパティの値に基づいて実行時にします。 これにより、複数`DataTemplate`インスタンス オブジェクト、特定のオブジェクトの外観をカスタマイズするのと同じ型に適用します。
+この記事では、[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) を作成して使用する方法について説明しました。 `DataTemplateSelector` を使用すると、データバインド プロパティの値に基づいて実行時に [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を選択できます。 これにより、複数の `DataTemplate` インスタンスを同じ種類のオブジェクトに適用し、特定のオブジェクトの外観をカスタマイズできます。
 
 
 ## <a name="related-links"></a>関連リンク

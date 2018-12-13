@@ -1,6 +1,6 @@
 ---
-title: パン ジェスチャ認識エンジンを追加します。
-description: この記事では、イメージのサイズより小さいビューポートに表示されているすべてのイメージ コンテンツ表示できるように、水平方向にパン ジェスチャを使用して、イメージを垂直方向にパンする方法が説明します。
+title: パン ジェスチャ認識エンジンの追加
+description: この記事では、パン ジェスチャを使用してイメージを水平方向や垂直方向にパンし、イメージをそのイメージのディメンションより小さいビューポートで表示するときに、そのコンテンツがすべて表示されるようにする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: 59e9f4c61bda86faa5a55d70ef91411adb14da6d
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38996807"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンを追加します。
+# <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンの追加
 
-_パン ジェスチャが画面の周りの指の動きを検出し、コンテンツを移動操作を適用するためし、は実装されて、`PanGestureRecognizer`クラス。パン ジェスチャの一般的なシナリオは、イメージのサイズより小さいビューポートに表示されているすべてのイメージ コンテンツ表示できるように、イメージを水平および垂直にパンします。これは、ビューポート内のイメージを移動することによって実現されますであり、この記事で説明が。_
+_パン ジェスチャは、画面周辺の指の動きを検出し、その動きをコンテンツに適用するために使用され、`PanGestureRecognizer` クラスを使用して実装されます。パン ジェスチャの一般的なシナリオは、イメージを水平方向や垂直方向にパンし、イメージをそのイメージのディメンションより小さいビューポートで表示するときに、そのコンテンツがすべて表示されるようにすることです。これは、イメージをビューポート内で移動することによって実現され、この記事でその方法について説明します。_
 
-ユーザー インターフェイス要素をパン ジェスチャの移動を可能にするために、作成、 [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)インスタンス、処理、 [ `PanUpdated` ](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated)イベント、する新しいジェスチャ認識エンジンを追加し、 [`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ユーザー インターフェイスの要素のコレクション。 次のコード例は、`PanGestureRecognizer`にアタッチされている、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
+ユーザー インターフェース要素をパン ジェスチャを使用して移動できるようにするには、[`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) インスタンスを作成し、[`PanUpdated`](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated) イベントを処理し、新しいジェスチャ認識エンジンをユーザー インターフェイス要素の [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 次に示すのは、[`Image`](xref:Xamarin.Forms.Image) 要素に関連付けられている `PanGestureRecognizer` のコード例です。
 
 ```csharp
 var panGesture = new PanGestureRecognizer();
@@ -28,7 +28,7 @@ panGesture.PanUpdated += (s, e) => {
 image.GestureRecognizers.Add(panGesture);
 ```
 
-これ行うこともできます、XAML で次のコード例に示すようにします。
+次のコード例に示すように、XAML でもこれを実現できます。
 
 ```xaml
 <Image Source="MonoMonkey.jpg">
@@ -38,7 +38,7 @@ image.GestureRecognizers.Add(panGesture);
 </Image>
 ```
 
-コードを`OnPanUpdated`イベント ハンドラーは、分離コード ファイルに追加されます。
+`OnPanUpdated` イベント ハンドラー用のコードが分離コード ファイルに追加されます。
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -48,11 +48,11 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 ```
 
 > [!NOTE]
-> Android で正しいパンが必要です、 [Xamarin.Forms 2.1.0-pre1 NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1)には、少なくともします。
+> Android で正しくパンするには、少なくとも [Xamarin.Forms 2.1.0-pre1 NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1)が必要です。
 
-## <a name="creating-a-pan-container"></a>パン コンテナーを作成します。
+## <a name="creating-a-pan-container"></a>パン コンテナーの作成
 
-このセクションには通常、イメージまたはマップ内を移動するために適していますが、自由形式パンを実行する汎用化されたヘルパー クラスが含まれています。 この操作を実行するパン ジェスチャの処理には、ユーザー インターフェイスを変換するいくつかの計算が必要です。 この数式は、ラップされたユーザー インターフェイス要素の境界内のみのパン操作に使用されます。 次に示すのは、`PanContainer` クラスのコード例です。
+このセクションにはフリーフォームのパンを実行する汎用のへルパー メソッドが含まれており、一般的に画像内やマップ内の移動に適しています。 この操作を実行するためのパン ジェスチャの処理では、ユーザー インターフェイスを変換するための多少の計算が必要です。 この計算はラップされたユーザー インターフェイス要素の境界内のパンにのみ使用されます。 次に示すのは、`PanContainer` クラスのコード例です。
 
 ```csharp
 public class PanContainer : ContentView
@@ -75,7 +75,7 @@ public class PanContainer : ContentView
 }
 ```
 
-このクラスは、ジェスチャは、ラップされたユーザー インターフェイス要素をパンできるように、ユーザー インターフェイス要素を囲むラップできます。 次の XAML コード例は、`PanContainer`の折り返し、 [ `Image` ](xref:Xamarin.Forms.Image)要素。
+このクラスでユーザー インターフェイス要素をラップして、ラップされたユーザー インターフェイス要素がそのジェスチャでパンされるようにすることができます。 次に示すのは、[`Image`](xref:Xamarin.Forms.Image) 要素をラップしている `PanContainer` の XAML のコード例です。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ public class PanContainer : ContentView
 </ContentPage>
 ```
 
-次のコード例に示す方法、`PanContainer`ラップ、 [ `Image` ](xref:Xamarin.Forms.Image) c# ページ内の要素。
+次に示すのは、`PanContainer` で C# ページ内の [`Image`](xref:Xamarin.Forms.Image) 要素をラップする方法のコード例です。
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -115,9 +115,9 @@ public class HomePageCS : ContentPage
 }
 ```
 
-どちらの例で、 [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)と[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティが表示されるイメージの幅と高さの値に設定されます。
+両方の例で、[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) と [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) の各プロパティは表示されるイメージの高さと幅の値に設定されます。
 
-ときに、 [ `Image` ](xref:Xamarin.Forms.Image)要素は、パン ジェスチャを受け取り、表示されるイメージが方向のパンします。 パンが実行される、`PanContainer.OnPanUpdated`メソッドは、次のコード例に示されています。
+[`Image`](xref:Xamarin.Forms.Image) 要素がパン ジェスチャを受け取ると、表示されているイメージがパンされます。 次のコード例に示すように、`PanContainer.OnPanUpdated` メソッドによってパンが実行されます。
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -140,12 +140,12 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-このメソッドは、ユーザーのパン ジェスチャに基づき、ラップされたユーザー インターフェイス要素の表示可能なコンテンツを更新します。 値を使用してこれは、 [ `TotalX` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX)と[ `TotalY` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY)のプロパティ、 [ `PanUpdatedEventArgs` ](xref:Xamarin.Forms.PanUpdatedEventArgs)方向を計算するインスタンスとパンの距離です。 `App.ScreenWidth`と`App.ScreenHeight`プロパティは、ビューポートの幅と高さを提供し、それぞれのプラットフォーム固有プロジェクトで、画面の幅とデバイスの画面の高さの値に設定されます。 ラップされたユーザーの要素が設定でパンしその[ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)と[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)プロパティの値を計算します。
+このメソッドにより、ユーザーのパン ジェスチャに基づいて、ラップされたユーザー インターフェイス要素の表示可能コンテンツが更新されます。 これは、[`PanUpdatedEventArgs`](xref:Xamarin.Forms.PanUpdatedEventArgs) インスタンスの [`TotalX`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) と [`TotalY`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) の各プロパティを使用して、パンの方向と距離を計算します。 `App.ScreenWidth` と `App.ScreenHeight` の各プロパティはそのビューポートの高さと幅を提供し、プラットフォーム固有の各プロジェクトによってそのデバイスの画面の幅と高さの値に設定されます。 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) と [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) の各プロパティが計算済みの値に設定されることで、ラップされたユーザー要素がパンされます。
 
-ビューポートの幅と高さを要素から取得できますと全画面表示を占有しない要素のコンテンツをパン[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)と[ `Width` ](xref:Xamarin.Forms.VisualElement.Width)プロパティ。
+画面全体を占拠しない要素内でコンテンツをパンすると、そのビューポートの高さと幅はその要素の [`Height`](xref:Xamarin.Forms.VisualElement.Height) と [`Width`](xref:Xamarin.Forms.VisualElement.Width) の各プロパティから取得できます。
 
 > [!NOTE]
-> 高解像度のイメージを表示すると、アプリのメモリ フット プリントが大幅に向上します。 そのため、する必要がありますのみ作成する必要が必要し、不要になったアプリで必要とすぐに解放する必要があります。 詳細については、「[イメージ リソースを最適化する](~/xamarin-forms/deploy-test/performance.md#optimizeimages)」を参照してください。
+> 高解像度のイメージを表示すると、アプリのメモリの占有領域が大幅に増える場合があります。 そのため、必要な場合にのみ作成し、アプリで不要になったらすぐに解放する必要があります。 詳細については、「[イメージ リソースを最適化する](~/xamarin-forms/deploy-test/performance.md#optimizeimages)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

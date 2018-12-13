@@ -1,6 +1,6 @@
 ---
-title: マップ上の領域を強調表示
-description: この記事では、マップ上の領域を強調表示する、マップに多角形のオーバーレイを追加する方法について説明します。 多角形は、閉じた形状と、その内部を塗りつぶすに情報を入力します。
+title: マップ上での領域の強調表示
+description: この記事では、多角形のオーバーレイをマップに追加して、マップ上のある領域を強調表示する方法について説明します。 多角形は閉じた図形であり、その内側が塗りつぶされます。
 ms.prod: xamarin
 ms.assetid: E79EB2CF-8DD6-44A8-B47D-5F0A94FB0A63
 ms.technology: xamarin-forms
@@ -9,37 +9,37 @@ ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 0a11e9c25922531727ad2fee3bbed9c8d4e2b80c
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998135"
 ---
-# <a name="highlighting-a-region-on-a-map"></a>マップ上の領域を強調表示
+# <a name="highlighting-a-region-on-a-map"></a>マップ上での領域の強調表示
 
-_この記事では、マップ上の領域を強調表示する、マップに多角形のオーバーレイを追加する方法について説明します。多角形は、閉じた形状と、その内部を塗りつぶすに情報を入力します。_
+"_この記事では、多角形のオーバーレイをマップに追加して、マップ上のある領域を強調表示する方法について説明します。多角形は閉じた図形であり、その内側が塗りつぶされます。_"
 
 ## <a name="overview"></a>概要
 
-オーバーレイは、マップ上の複数層の図です。 オーバーレイに拡大されると、マップを使用して拡大/縮小するグラフィカル コンテンツを描画をサポートします。 次のスクリーン ショットは、マップに多角形のオーバーレイを追加した結果を表示します。
+オーバーレイは、マップ上に重ねて配置されるグラフィックです。 オーバーレイでは、マップが拡大縮小されたときに、マップと一緒に拡大縮小されるグラフィカル コンテンツの描画がサポートされます。 次のスクリーン ショットに、マップに多角形のオーバーレイを追加した結果を示します。
 
 ![](polygon-map-overlay-images/screenshots.png)
 
-ときに、 [ `Map` ](xref:Xamarin.Forms.Maps.Map) iOS での Xamarin.Forms アプリケーションでコントロールが表示される、`MapRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`MKMapView`コントロール。 Android のプラットフォームで、`MapRenderer`クラスのインスタンスを作成、ネイティブ`MapView`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`MapRenderer`クラスのインスタンスを作成、ネイティブ`MapControl`します。 レンダリング プロセスに実行できる活用用のカスタム レンダラーを作成してプラットフォーム固有のマップのカスタマイズを実装する`Map`各プラットフォームで。 これを行うためのプロセスは次のとおりです。
+Xamarin.Forms アプリケーションによって [`Map`](xref:Xamarin.Forms.Maps.Map) コントロールが レンダリングされると、iOS では `MapRenderer` クラスがインスタンス化され、それによってネイティブの `MKMapView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`MapRenderer` クラスによってネイティブの `MapView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`MapRenderer` クラスによってネイティブの `MapControl` がインスタンス化されます。 レンダリング プロセスを活用して各プラットフォーム上で `Map` 用のカスタム レンダラーを作成することで、プラットフォーム固有のマップのカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
-1. [作成](#Creating_the_Custom_Map)Xamarin.Forms のカスタム マップします。
-1. [消費](#Consuming_the_Custom_Map)Xamarin.Forms からカスタムのマップ。
-1. [カスタマイズ](#Customizing_the_Map)各プラットフォームで、マップのカスタム レンダラーを作成してマップします。
+1. Xamarin.Forms カスタム マップを[作成](#Creating_the_Custom_Map)します。
+1. Xamarin.Forms からカスタム マップを[使用](#Consuming_the_Custom_Map)します。
+1. 各プラットフォーム上でマップ用のカスタム レンダラーを作成することで、マップを[カスタマイズ](#Customizing_the_Map)します。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 初期化して使用する前に構成されている必要があります。 詳細については、「[`Maps Control`](~/xamarin-forms/user-interface/map.md)」を参照してください。
+> 使用する前に [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) を初期化して構成する必要があります。 詳細については、「[`Maps Control`](~/xamarin-forms/user-interface/map.md)」を参照してください。
 
-カスタム レンダラーを使用してマップをカスタマイズする方法については、次を参照してください。[マップ ピンのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)します。
+カスタム レンダラーを使用してマップをカスタマイズする方法については、「[Customizing a Map Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)」(マップ ピンのカスタマイズ) を参照してください。
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>カスタム マップを作成します。
+### <a name="creating-the-custom-map"></a>カスタム マップの作成
 
-サブクラスを作成、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)を追加するには、クラス、`ShapeCoordinates`プロパティ。
+`ShapeCoordinates` プロパティを追加する、[`Map`](xref:Xamarin.Forms.Maps.Map) のサブクラスを作成します。
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +53,13 @@ public class CustomMap : Map
 }
 ```
 
-`ShapeCoordinates`プロパティが強調表示する領域を定義する座標のコレクションを格納します。
+`ShapeCoordinates` プロパティには、強調表示される領域を定義する座標のコレクションが格納されます。
 
 <a name="Consuming_the_Custom_Map" />
 
 ### <a name="consuming-the-custom-map"></a>カスタム マップの使用
 
-使用、 `CustomMap` XAML ページのインスタンスでそのインスタンスを宣言することで制御します。
+XAML ページ インスタンス内にそのインスタンスを宣言することで、`CustomMap` コントロールを使用します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-または、使用、 `CustomMap` c# ページ インスタンスでそのインスタンスを宣言することによってコントロール。
+または、C# ページ インスタンス内にそのインスタンスを宣言することで、`CustomMap` コントロールを使用します。
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +90,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-初期化、`CustomMap`必要に応じて制御します。
+必要に応じて、`CustomMap` コントロールを初期化します。
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-この初期化は、一連の強調表示するマップの領域を定義する、緯度と経度の座標を指定します。 マップのビューを配置し、 [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*)メソッドを作成して、位置と、マップのズーム レベルを変更する、 [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)から、 [ `Position`](xref:Xamarin.Forms.Maps.Position)と[ `Distance`](xref:Xamarin.Forms.Maps.Distance)します。
+この初期化によって、強調表示されるマップの領域を定義する、一連の緯度と経度の座標が指定されます。 次に、[`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) メソッドを使用してマップのビューが位置付けられ、[`Position`](xref:Xamarin.Forms.Maps.Position) と [`Distance`](xref:Xamarin.Forms.Maps.Distance) から [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) を作成することでマップの位置とズーム レベルが変更されます。
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>マップのカスタマイズ
 
-カスタム レンダラーは、マップに多角形のオーバーレイを追加するには、各アプリケーション プロジェクトにようになりました追加する必要があります。
+次に、マップに多角形のオーバーレイを追加するために、各アプリケーション プロジェクトにカスタム レンダラーを追加する必要があります。
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>IOS でのカスタム レンダラーの作成
+#### <a name="creating-the-custom-renderer-on-ios"></a>iOS 上でのカスタム レンダラーの作成
 
-サブクラスを作成、`MapRenderer`クラスし、オーバーライドの`OnElementChanged`多角形のオーバーレイを追加する方法。
+`MapRenderer` クラスのサブクラスを作成し、その `OnElementChanged` メソッドをオーバーライドして、多角形のオーバーレイを追加します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -166,14 +166,14 @@ namespace MapOverlay.iOS
 
 ```
 
-このメソッドは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることに、次の構成を実行します。
+このメソッドでは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることを条件として、次の構成が実行されます。
 
-- `MKMapView.OverlayRenderer`プロパティが対応するデリゲートに設定します。
-- 緯度と経度の座標のコレクションから取得、`CustomMap.ShapeCoordinates`プロパティの配列として格納されていると`CLLocationCoordinate2D`インスタンス。
-- 多角形が、静的なを呼び出すことによって作成された`MKPolygon.FromCoordinates`メソッドで、各ポイントの経度と緯度を指定します。
-- 多角形は、呼び出すことによって、マップに追加されます、`MKMapView.AddOverlay`メソッド。 このメソッドは、最初と最後の点を結ぶ線を描画することで、多角形を自動的に閉じます。
+- `MKMapView.OverlayRenderer` プロパティが対応するデリゲートに設定されます。
+- `CustomMap.ShapeCoordinates` プロパティから緯度と経度の座標のコレクションが取得され、`CLLocationCoordinate2D` インスタンスの配列として格納されます。
+- 静的な `MKPolygon.FromCoordinates` メソッドを呼び出すことで多角形が作成され、各ポイントの経度と緯度が指定されます。
+- `MKMapView.AddOverlay` メソッドを呼び出すことで、多角形がマップに追加されます。 このメソッドにより最初と最後のポイントを結ぶ線が描画されることで、多角形が自動的に閉じられます。
 
-次に、実装、`GetOverlayRenderer`オーバーレイの表示をカスタマイズする方法。
+次に、`GetOverlayRenderer` メソッドを実行して、オーバーレイのレンダリングをカスタマイズします。
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -197,9 +197,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Android でのカスタム レンダラーの作成
+#### <a name="creating-the-custom-renderer-on-android"></a>Android 上でのカスタム レンダラーの作成
 
-サブクラスを作成、`MapRenderer`クラスし、オーバーライドの`OnElementChanged`と`OnMapReady`多角形のオーバーレイを追加する方法。
+`MapRenderer` クラスのサブクラスを作成し、その `OnElementChanged` メソッドと `OnMapReady` メソッドをオーバーライドして、多角形のオーバーレイを追加します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -249,11 +249,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged`メソッドからの緯度と経度の座標のコレクションを取得する、`CustomMap.ShapeCoordinates`プロパティとメンバー変数に保存します。 呼び出して、`MapView.GetMapAsync`メソッドは、基になる`GoogleMap`カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていること、ビューに関連付けられているです。 1 回、`GoogleMap`インスタンスが、使用可能な`OnMapReady`をインスタンス化して、多角形が作成されている、メソッドが呼び出されます、`PolygonOptions`緯度と経度の各ポイントを指定するオブジェクト。 多角形が呼び出すことによって、マップに追加し、`NativeMap.AddPolygon`メソッド。 このメソッドは、最初と最後の点を結ぶ線を描画することで、多角形を自動的に閉じます。
+`OnElementChanged` メソッドにより、`CustomMap.ShapeCoordinates` プロパティから緯度と経度の座標のコレクションが取得され、それらがメンバー変数に格納されます。 次に、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることを条件として、`MapView.GetMapAsync` メソッドが呼び出され、ビューに関連付けられている基の `GoogleMap` が取得されます。 `GoogleMap` インスタンスが使用可能になると、`OnMapReady` メソッドが呼び出され、各ポイントの緯度と経度を指定する `PolygonOptions` をインスタンス化することで、多角形が作成されます。 次に、`NativeMap.AddPolygon` メソッドを呼び出すことで、多角形がマップに追加されます。 このメソッドにより最初と最後のポイントを結ぶ線が描画されることで、多角形が自動的に閉じられます。
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>ユニバーサル Windows プラットフォームでのカスタム レンダラーの作成
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>ユニバーサル Windows プラットフォーム上でのカスタム レンダラーの作成
 
-サブクラスを作成、`MapRenderer`クラスし、オーバーライドの`OnElementChanged`多角形のオーバーレイを追加する方法。
+`MapRenderer` クラスのサブクラスを作成し、その `OnElementChanged` メソッドをオーバーライドして、多角形のオーバーレイを追加します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -293,19 +293,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-このメソッドは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることに、次の操作を実行します。
+このメソッドでは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることを条件として、次の操作が実行されます。
 
-- 緯度と経度の座標のコレクションから取得、`CustomMap.ShapeCoordinates`プロパティに変換し、`List`の`BasicGeoposition`座標。
-- 多角形がインスタンス化によって作成された、`MapPolygon`オブジェクト。 `MapPolygon`マルチポイント図形を設定して、マップに表示するクラスが使用されるその`Path`プロパティを`Geopath`図形の座標を格納しているオブジェクト。
-- 多角形は、マップ上に追加することによって表示される、`MapControl.MapElements`コレクション。 最初と最後の点を結ぶ線を描画することで、多角形が自動的に閉じられることに注意してください。
+- `CustomMap.ShapeCoordinates` プロパティから緯度と経度の座標のコレクションが取得され、`BasicGeoposition` 座標の `List` に変換されます。
+- `MapPolygon` オブジェクトをインスタンス化することで、多角形が作成されます。 `MapPolygon` クラスを使用して、その `Path` プロパティを図形の座標が含まれる `Geopath` オブジェクトに設定することで、マップ上にマルチポイント図形が表示されます。
+- `MapControl.MapElements` コレクションに追加することで、多角形がマップ上にレンダリングされます。 最初と最後のポイントを結ぶ線を描画することで、多角形が自動的に閉じられることに注意してください。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、マップの領域を強調表示する、マップに多角形のオーバーレイを追加する方法について説明します。 多角形は、閉じた形状と、その内部を塗りつぶすに情報を入力します。
+この記事では、多角形のオーバーレイをマップに追加して、マップ上のある領域を強調表示する方法について説明しました。 多角形は閉じた図形であり、その内側が塗りつぶされます。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [マップの多角形は (サンプル)"オーバーレイ"](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
+- [ポリゴン マップのオーバーレイ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
 - [マップ ピンのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms の動作
-description: Xamarin.Forms の動作が動作または動作から派生することによって作成された<T>クラス。 この記事では、作成および Xamarin.Forms の動作を使用する方法を示します。
+title: Xamarin.Forms のビヘイビアー
+description: Xamarin.Forms のビヘイビアーは、Behavior または Behavior<T> クラスから派生させることで作成されます。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
@@ -9,25 +9,25 @@ ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 7e057567ec0bb72e9bcc016d4a9fef3af78a3ea1
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998896"
 ---
-# <a name="xamarinforms-behaviors"></a>Xamarin.Forms の動作
+# <a name="xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアー
 
-_Xamarin.Forms の動作が動作または動作から派生することによって作成された<T>クラス。この記事では、作成および Xamarin.Forms の動作を使用する方法を示します。_
+"_Xamarin.Forms のビヘイビアーは、Behavior または Behavior<T> クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_"
 
 ## <a name="overview"></a>概要
 
-Xamarin.Forms の動作を作成するプロセスは次のとおりです。
+Xamarin.Forms のビヘイビアーを作成するプロセスは次のとおりです。
 
-1. 継承するクラスを作成、 [ `Behavior` ](xref:Xamarin.Forms.Behavior)または[ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)クラス、`T`動作を適用するコントロールの種類です。
-1. 上書き、 [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))特別な設定を実行するメソッド。
-1. 上書き、 [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))必要なクリーンアップを実行するメソッド。
-1. 動作のコア機能を実装します。
+1. [`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから継承されるクラスを作成します。`T` は、このビヘイビアーを適用するコントロールの種類です。
+1. 必要な設定を実行するように [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドをオーバーライドします。
+1. 必要なクリーンアップを実行するように [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドをオーバーライドします。
+1. ビヘイビアーのコア機能を実装します。
 
-これは、結果、次のコード例に示すように構造体。
+これで、次のコード例に示す構造になります。
 
 ```csharp
 public class CustomBehavior : Behavior<View>
@@ -48,15 +48,15 @@ public class CustomBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))動作がコントロールにアタッチされた後にすぐにメソッドが発生します。 このメソッドは、先がアタッチされている、イベント ハンドラーを登録またはその他の動作の機能をサポートするために必要なセットアップの実行に使用できるコントロールへの参照を受け取ります。 たとえば、コントロール上のイベントにサブスクライブする可能性があります。 動作の機能は、イベントのイベント ハンドラーで実装されます。
+ビヘイビアーがコントロールにアタッチされると、すぐに [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドが実行されます。 このメソッドがアタッチされているコントロールへの参照を受け取り、イベント ハンドラーの登録やビヘイビアー機能をサポートするために必要なその他の設定を実行するために使用できます。 たとえば、コントロールのイベントをサブスクライブできます。 その後、イベント用のイベント ハンドラー内にビヘイビアー機能を実装します。
 
-[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))メソッドは、動作がコントロールから削除されるときに発生します。 このメソッドは、先がアタッチされているし、必要なクリーンアップを実行するために使用コントロールへの参照を受け取ります。 たとえば、メモリ リークを防ぐためにコントロールのイベントの購読を解除する可能性があります。
+ビヘイビアーがコントロールから削除されると、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドが実行されます。 このメソッドがアタッチされているコントロールへの参照を受け取り、必要なクリーンアップを実行するために使用されます。 たとえば、メモリ リークを防ぐためにコントロールのイベントのサブスクライブを解除できます。
 
-動作をアタッチすることで使用できます、 [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors)適切なコントロールのコレクション。
+その後、適切なコントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションにアタッチすることで、ビヘイビアーを使用できます。
 
-## <a name="creating-a-xamarinforms-behavior"></a>Xamarin.Forms の動作を作成します。
+## <a name="creating-a-xamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの作成
 
-サンプル アプリケーションでは、`NumericValidationBehavior`にユーザーが入力した値が強調表示する、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールを赤でない場合、`double`します。 動作は、次のコード例に示されます。
+サンプル アプリケーションでは、`NumericValidationBehavior` を示します。ここでは、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) コントロールに入力した値が `double` でない場合に、その値を赤色で強調表示します。 このビヘイビアーを次のコード例に示します。
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -82,14 +82,14 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior`から派生した、 [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)クラス、場所`T`は、 [ `Entry`](xref:Xamarin.Forms.Entry)します。 [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))メソッドのイベント ハンドラーの登録、 [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged)イベントで、 [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) を登録解除メソッド`TextChanged`メモリを防ぐためにイベントのリークが発生します。 動作のコア機能によって提供されます、`OnEntryTextChanged`にユーザーが入力した値を解析するメソッド、 `Entry`、設定と、 [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)プロパティ値がない場合は赤、 `double`。
+`NumericValidationBehavior` は [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生します。`T` は [`Entry`](xref:Xamarin.Forms.Entry) です。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドにより、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベント用のイベント ハンドラーが登録され、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドにより、メモリ リークを防ぐために `TextChanged` の登録が解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが `Entry` に入力した値が解析され、その値が `double` でなければ [`TextColor`](xref:Xamarin.Forms.Entry.TextColor) プロパティが赤に設定されます。
 
 > [!NOTE]
-> Xamarin.Forms が設定されていない、`BindingContext`動作の動作を共有し、スタイルを介して複数のコントロールに適用されるためです。
+> ビヘイビアーはスタイルを利用して複数のコントロールに適用されできるため、Xamarin.Forms では、ビヘイビアーの `BindingContext` は設定されません。
 
-## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms の動作の使用
+## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの使用
 
-すべての Xamarin.Forms コントロールは、 [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors)追加先となる 1 つまたは複数の動作は、次の XAML コード例に示すようコレクション。
+次の XAML のコード例に示すように、すべての Xamarin.Forms コントロールには、1 つまたは複数のビヘイビアーを追加できる [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションがあります。
 
 ```xaml
 <Entry Placeholder="Enter a System.Double">
@@ -99,29 +99,29 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Entry>
 ```
 
-相当[ `Entry` ](xref:Xamarin.Forms.Entry) c# では次のコード例で示すようにします。
+C# での同等の [`Entry`](xref:Xamarin.Forms.Entry) を次のコード例に示します。
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 entry.Behaviors.Add (new NumericValidationBehavior ());
 ```
 
-実行時に、動作は動作の実装に応じて、コントロールとの対話に応答します。 次のスクリーン ショットは、無効な入力に応答して動作を示しています。
+実行時、ビヘイビアーは、ビヘイビアーの実装に従って、コントロールとのやりとりに応答します。 次のスクリーン ショットで、無効な入力に応答しているビヘイビアーを示します。
 
-[![](creating-images/screenshots-sml.png "Xamarin.Forms の動作でアプリケーションをサンプル")](creating-images/screenshots.png#lightbox "Xamarin.Forms の動作とアプリケーションのサンプル")
+[![](creating-images/screenshots-sml.png "Xamarin.Forms のビヘイビアーを使用しているサンプル アプリケーション")](creating-images/screenshots.png#lightbox "Xamarin.Forms のビヘイビアーを使用しているサンプル アプリケーション")
 
 > [!NOTE]
-> 動作は特定のコントロール型 (または多くのコントロールに適用できるスーパークラス) に書き込まれ、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールに動作をアタッチしようとして、スローされる例外が発生します。
+> ビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、例外がスローされます。
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>スタイルと Xamarin.Forms の動作の使用
+### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>スタイルによる Xamarin.Forms ビヘイビアーの使用
 
-動作は、明示的または暗黙的なスタイルによっても使用できます。 ただし、設定するスタイルを作成、 [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors)プロパティが読み取り専用であるために、コントロールのプロパティにことはできません。 ソリューションでは、動作クラスの追加と削除の動作を制御する添付プロパティを追加します。 プロセスは次のとおりです。
+明示的または暗黙的なスタイルによってビヘイビアーを使用することもできます。 ただし、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) プロパティは読み取り専用であるため、このプロパティを設定するスタイルを作成することはできません。 解決策は、ビヘイビアーの追加と削除を制御する添付プロパティをビヘイビアー クラスに追加することです。 プロセスは、次のとおりです。
 
-1. 添付プロパティを追加または削除がアタッチされている動作では、このコントロールの動作の制御に使用される動作のクラスに追加します。 添付プロパティを登録することを確認、`propertyChanged`プロパティの値が変更されたときに実行されるデリゲート。
-1. 作成、`static`添付プロパティのゲッターとセッター。
-1. 内のロジックを実装、`propertyChanged`デリゲートを追加して、動作を削除します。
+1. ビヘイビアーがアタッチされるコントロールへのビヘイビアーの追加または削除を制御するために使用するビヘイビアー クラスに添付プロパティを追加します。 この添付プロパティにより、プロパティの値が変更されたときに実行される `propertyChanged` デリゲートが確実に登録されるようにします。
+1. 添付プロパティの `static` ゲッターとセッターを作成します。
+1. `propertyChanged` デリゲートで、ビヘイビアーを追加または削除するロジックを実装します。
 
-次のコード例の追加と削除を制御する添付プロパティを示しています、 `NumericValidationBehavior`:
+次のコード例で、`NumericValidationBehavior` の追加と削除を制御する添付プロパティを示します。
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -160,9 +160,9 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior`クラスには、という名前の添付プロパティが含まれています。`AttachBehavior`で、 `static` getter および setter を追加または削除のアタッチはコントロールの動作を制御します。 この添付プロパティに、プロパティの値が変更された時に実行される `OnAttachBehaviorChanged` メソッドを登録します。 このメソッドを追加またはの値に基づいて、コントロールの動作を削除、`AttachBehavior`添付プロパティ。
+`NumericValidationBehavior` クラスには、`static` ゲッターとセッターがある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それが添付されるコントロールへのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されたときに実行される `OnAttachBehaviorChanged` デリゲートが登録されます。 このメソッドでは、`AttachBehavior` 添付プロパティの値に基づいて、ビヘイビアーの追加または削除が行われます。
 
-次のコード例は、*明示的な*のスタイル、`NumericValidationBehavior`を使用して、`AttachBehavior`添付プロパティ、およびに適用できる[ `Entry` ](xref:Xamarin.Forms.Entry)コントロール。
+次のコード例で、`AttachBehavior` 添付プロパティを使用する `NumericValidationBehavior` 用の "*明示的な*" スタイルで、[`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できるものを示します。
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">
@@ -172,20 +172,20 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Style>
 ```
 
-[ `Style` ](xref:Xamarin.Forms.Style)に適用できる、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールを設定してその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを`Style`インスタンスを使用して、`StaticResource`マークアップ拡張機能で、次のコード例で示した。
+次に示すように、`StaticResource` マークアップ拡張を使用して [`Style`](xref:Xamarin.Forms.VisualElement.Style) プロパティを `Style` インスタンスに設定することで、[`Style`](xref:Xamarin.Forms.Style) を [`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できます。
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}">
 ```
 
-スタイルの詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/styles/index.md)します。
+スタイルについて詳しくは、[スタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事をご覧ください。
 
 > [!NOTE]
-> 状態にあるバインド可能なプロパティが設定または作成した場合の動作を XAML でクエリを実行する動作を追加できますが、これらは共有できません内のコントロール間を`Style`で、`ResourceDictionary`します。
+> XAML で設定されているかクエリを実行するビヘイビアーにバインド可能プロパティを追加できますが、状態があるビヘイビアーを作成する場合は、`ResourceDictionary` の `Style` スタイルに含まれるコントロール間でそれらを共有しないでください。
 
-### <a name="removing-a-behavior-from-a-control"></a>コントロールから、動作を削除します。
+### <a name="removing-a-behavior-from-a-control"></a>コントロールからのビヘイビアーの削除
 
-[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))動作は、コントロールから削除され、メモリ リークを防ぐために、イベントからサブスクライブを解除するなど、必要なクリーンアップを実行するために使用すると、メソッドが発生します。 ただし、動作は暗黙的に削除されませんコントロールからしない限り、コントロールの[ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors)によってコレクションが変更された、`Remove`または`Clear`メソッド。 次のコード例を示してから、コントロールの特定の動作を削除する`Behaviors`コレクション。
+ビヘイビアーからコントロールが削除されると、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドが実行されます。これを使用して、メモリ リークを防ぐためのイベントのサブスクライブ解除などの必要なクリーンアップを実行します。 ただし、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションが `Remove` または `Clear` メソッドによって変更されない限り、ビヘイビアーがコントロールから暗黙的に削除されることはありません。 次のコード例で、コントロールの `Behaviors` コレクションから特定のビヘイビアーを削除する操作を示します。
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -194,22 +194,22 @@ if (toRemove != null) {
 }
 ```
 
-または、コントロールの[ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors)の次のコード例に示す、コレクションをクリアできます。
+または、次のコード例に示すように、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションをクリアすることもできます。
 
 ```csharp
 entry.Behaviors.Clear();
 ```
 
-さらに、ある動作は暗黙的に削除されませんコントロールからページがナビゲーション スタックからポップされます。 注意してください。 代わりに、明示的に削除するページのスコープを外れる前に。
+さらに、ナビゲーション スタックからページがポップアップする場合、ビヘイビアーがコントロールから暗黙的に削除されることはないことに注意してください。 代わりに、ページがスコープを外れる前に、明示的に削除する必要があります。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、作成し、Xamarin.Forms の動作を使用する方法を示しました。 Xamarin.Forms の動作がから派生することによって作成された、 [ `Behavior` ](xref:Xamarin.Forms.Behavior)または[ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)クラス。
+この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示しました。 Xamarin.Forms のビヘイビアーは、[`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生させて作成されます。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms の動作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
-- [Xamarin.Forms の動作をスタイル (サンプル) を適用](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
-- [動作](xref:Xamarin.Forms.Behavior)
-- [動作<T>](xref:Xamarin.Forms.Behavior`1)
+- [Xamarin.Forms のビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
+- [スタイルを使用して適用される Xamarin.Forms のビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
+- [Behavior](xref:Xamarin.Forms.Behavior)
+- [Behavior<T>](xref:Xamarin.Forms.Behavior`1)
