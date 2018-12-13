@@ -69,7 +69,7 @@ Xamarin では、.NET と Apple、させる必要がある 2 つの独立した�
  }
 ```
 
-**目的の c:**
+**Objective-C:**
 
 ```objectivec
 @interface MyViewController : UIViewController { }
