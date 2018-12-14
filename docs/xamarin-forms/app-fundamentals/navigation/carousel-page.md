@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms CarouselPage
-description: Xamarin.Forms CarouselPage には、ギャラリーなどのコンテンツのページ間を移動するユーザーが左右にスワイプできるページです。 この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。
+title: Xamarin.Forms のカルーセル ページ
+description: Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。 この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
@@ -9,53 +9,53 @@ ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 48c009b836ac109e0d54cd2fdb036c46e17c4387
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50121504"
 ---
-# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms CarouselPage
+# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms のカルーセル ページ
 
-_Xamarin.Forms CarouselPage には、ギャラリーなどのコンテンツのページ間を移動するユーザーが左右にスワイプできるページです。この記事では、ページのコレクションを移動する、CarouselPage を使用する方法を示します。_
+_Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。_
 
 ## <a name="overview"></a>概要
 
-次のスクリーン ショットに示す、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)各プラットフォームで。
+次のスクリーンショットは、各プラットフォームでの [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を示したものです。
 
-![](carousel-page-images/thirdpage.png "CarouselPage サード項目")
+![](carousel-page-images/thirdpage.png "CarouselPage の 3 番目の項目")
 
-レイアウトを[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)は各プラットフォームで同じです。 ページは、左から右のコレクションを後方に移動する方向のスワイプ操作と、コレクション内のページへの移動を右左から方向のスワイプ操作によって、移動ことができます。 次のスクリーン ショットでは、最初のページを表示する、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)インスタンス。
+[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) のレイアウトは、どのプラットフォームでも同じです。 右から左にスワイプするとコレクション内のページを前方に移動でき、左から右にスワイプするとコレクション内のページを後方に移動できます。 次のスクリーンショットは、[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) インスタンスの最初のページです。
 
-![](carousel-page-images/firstpage.png "CarouselPage 最初の項目")
+![](carousel-page-images/firstpage.png "CarouselPage の 1 番目の項目")
 
-次のスクリーン ショットに示すように 2 番目のページを右から左の移動にスワイプします。
+次のスクリーンショットのように、右から左にスワイプすると 2 番目のページに移動します。
 
-![](carousel-page-images/secondpage.png "CarouselPage 2 番目の項目")
+![](carousel-page-images/secondpage.png "CarouselPage の 2 番目の項目")
 
-前のページに返す左から右方向のスワイプ操作中に、3 番目のページに移動もう一度右から左にスワイプします。
+もう一度右から左にスワイプすると 3 番目のページに移動し、左から右にスワイプすると前のページに戻ります。
 
 <!--
 > [!NOTE]
 > The [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](xref:Xamarin.Forms.CarouselView) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
 -->
 
-## <a name="creating-a-carouselpage"></a>CarouselPage を作成します。
+## <a name="creating-a-carouselpage"></a>CarouselPage を作成する
 
-2 つの方法は、作成に使用できる、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage):
+[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を作成するには、2 つの方法を使用できます。
 
-- [設定](#Populating_a_CarouselPage_with_a_Page_Collection)、`CarouselPage`子のコレクションを持つ[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)インスタンス。
-- [割り当てる](#Populating_a_CarouselPage_with_a_Template)コレクション、 [ `ItemsSource` ](xref:Xamarin.Forms.MultiPage`1.ItemsSource)プロパティと割り当てを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)を[ `ItemTemplate` ](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 返されるプロパティ[`ContentPage` ](xref:Xamarin.Forms.ContentPage)コレクション内のオブジェクトのインスタンス。
+- 子 [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスのコレクションを `CarouselPage` に[設定](#Populating_a_CarouselPage_with_a_Page_Collection)します。
+- コレクションを [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティに[割り当て](#Populating_a_CarouselPage_with_a_Template)、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに割り当てて、コレクション内のオブジェクトに対する [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスを取得します。
 
-両方の方法で、`CarouselPage`でスワイプ操作が表示される次のページに移動し表示の各ページをさらは。
+どちらの方法でも、`CarouselPage` では各ページが順番に表示され、スワイプ操作によって次のページの表示に移動します。
 
 > [!NOTE]
-> A [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)でのみ設定できます[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)インスタンス、または`ContentPage`派生クラス。
+> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) に設定できるのは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスまたは `ContentPage` 派生クラスだけです。
 
 <a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
-### <a name="populating-a-carouselpage-with-a-page-collection"></a>ページのコレクションを使用して、CarouselPage の設定
+### <a name="populating-a-carouselpage-with-a-page-collection"></a>CarouselPage にページ コレクションを設定する
 
-次の XAML コード例は、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) 3 つを表示する[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)インスタンス。
+次の XAML コード例では、3 つの [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスを表示する [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を示します。
 
 ```xaml
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -81,7 +81,7 @@ _Xamarin.Forms CarouselPage には、ギャラリーなどのコンテンツの�
 </CarouselPage>
 ```
 
-次のコード例では、c# で同等の UI を示します。
+次に示すのは、C# での同等の UI のコード例です。
 
 ```csharp
 public class MainPageCS : CarouselPage
@@ -139,20 +139,20 @@ public class MainPageCS : CarouselPage
 }
 ```
 
-各[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)だけが表示されます、 [ `Label` ](xref:Xamarin.Forms.Label)の特定の色と[ `BoxView` ](xref:Xamarin.Forms.BoxView)その色の。
+各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) では、特定の色に対する [`Label`](xref:Xamarin.Forms.Label) と、その色の [`BoxView`](xref:Xamarin.Forms.BoxView) が単に表示されます。
 
 > [!NOTE]
-> [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) UI の仮想化をサポートしていません。 そのため場合、パフォーマンスに影響する可能性があります、`CarouselPage`が多すぎるの子要素が含まれています。
+> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) では、UI の仮想化はサポートされていません。 したがって、`CarouselPage` に含まれる子要素が多すぎると、パフォーマンスに影響する可能性があります。
 
-場合、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)に埋め込まれ、 [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail)のページ、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)、 [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty)プロパティに設定する必要があります`false`ジェスチャが競合を防ぐために、 `CarouselPage` 、`MasterDetailPage`します。
+[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) ページに埋め込む場合は、`CarouselPage` と `MasterDetailPage` の間でジェスチャが競合するのを防ぐため、[`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) プロパティを `false` に設定する必要があります。
 
-詳細については、 [ `CarouselPage`](xref:Xamarin.Forms.CarouselPage)を参照してください[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)Charles Petzold の Xamarin.Forms book の。
+[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) について詳しくは、Charles Petzold による Xamarin.Forms の本の[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)をご覧ください。
 
 <a name="Populating_a_CarouselPage_with_a_Template" />
 
-### <a name="populating-a-carouselpage-with-a-template"></a>テンプレートを使用して、CarouselPage の設定
+### <a name="populating-a-carouselpage-with-a-template"></a>CarouselPage にテンプレートを設定する
 
-次の XAML コード例は、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)を割り当てることによって構築された、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)を[ `ItemTemplate` ](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)プロパティのページを返すコレクション内のオブジェクト:
+次に示す XAML コードの例では、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに割り当ててコレクション内のオブジェクトに対するページを返すことによって、[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を作成しています。
 
 ```xaml
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -176,7 +176,7 @@ public class MainPageCS : CarouselPage
 </CarouselPage>
 ```
 
-[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)設定によってデータが読み込まれて、 [ `ItemsSource` ](xref:Xamarin.Forms.MultiPage`1.ItemsSource)分離コード ファイルのコンス トラクター内のプロパティ。
+分離コード ファイルのコンストラクターで [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティを設定することにより、[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) にデータを設定します。
 
 ```csharp
 public MainPage ()
@@ -186,7 +186,7 @@ public MainPage ()
 }
 ```
 
-次のコード例は、相当するものを示しています。 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) c# で作成します。
+次に示すのは、C# で作成された同等の [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) のコード例です。
 
 ```csharp
 public class MainPageCS : CarouselPage
@@ -236,23 +236,23 @@ public class MainPageCS : CarouselPage
 }
 ```
 
-各[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)だけが表示されます、 [ `Label` ](xref:Xamarin.Forms.Label)の特定の色と[ `BoxView` ](xref:Xamarin.Forms.BoxView)その色の。
+各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) では、特定の色に対する [`Label`](xref:Xamarin.Forms.Label) と、その色の [`BoxView`](xref:Xamarin.Forms.BoxView) が単に表示されます。
 
 > [!NOTE]
-> [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) UI の仮想化をサポートしていません。 そのため場合、パフォーマンスに影響する可能性があります、`CarouselPage`が多すぎるの子要素が含まれています。
+> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) では、UI の仮想化はサポートされていません。 したがって、`CarouselPage` に含まれる子要素が多すぎると、パフォーマンスに影響する可能性があります。
 
-場合、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)に埋め込まれ、 [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail)のページ、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)、 [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty)プロパティに設定する必要があります`false`ジェスチャが競合を防ぐために、 `CarouselPage` 、`MasterDetailPage`します。
+[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) ページに埋め込む場合は、`CarouselPage` と `MasterDetailPage` の間でジェスチャが競合するのを防ぐため、[`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) プロパティを `false` に設定する必要があります。
 
-詳細については、 [ `CarouselPage`](xref:Xamarin.Forms.CarouselPage)を参照してください[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)Charles Petzold の Xamarin.Forms book の。
+[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) について詳しくは、Charles Petzold による Xamarin.Forms の本の[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)をご覧ください。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、使用する方法を示しました、 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)内のページのコレクションを移動します。 `CarouselPage`はギャラリーと同様に、コンテンツのページ間を移動するユーザーが左右にスワイプできるページです。
+この記事では、[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を使用してページのコレクション内を移動する方法を示しました。 `CarouselPage` は、ギャラリーと同じように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ページの変数](~/xamarin-forms/user-interface/controls/pages.md)
+- [さまざまなページ](~/xamarin-forms/user-interface/controls/pages.md)
 - [CarouselPage (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPage/)
 - [CarouselPageTemplate (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPageTemplate/)
 - [CarouselPage](xref:Xamarin.Forms.CarouselPage)

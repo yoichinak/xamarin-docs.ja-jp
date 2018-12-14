@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms のマスター/詳細ページ
-description: Xamarin.Forms MasterDetailPage は、項目を表示するマスター ページとマスター ページの項目に関する詳細を表示するための詳細ページ、情報の 2 つの関連ページを管理するページです。 この記事では、MasterDetailPage を使用し、情報のページ間を移動する方法について説明します。
+title: Xamarin.Forms のマスター詳細ページ
+description: Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。 この記事では、MasterDetailPage を使用する方法と、情報ページ間を移動する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
 ms.technology: xamarin-forms
@@ -9,57 +9,57 @@ ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 25f6cf341fcf47d5dc5320f73855bb2a4e29a9e8
 ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
 ms.locfileid: "50675524"
 ---
-# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター/詳細ページ
+# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター詳細ページ
 
-_Xamarin.Forms MasterDetailPage は、項目を表示するマスター ページとマスター ページの項目に関する詳細を表示するための詳細ページ、情報の 2 つの関連ページを管理するページです。この記事では、MasterDetailPage を使用し、情報のページ間を移動する方法について説明します。_
+_Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。この記事では、MasterDetailPage を使用する方法と、情報ページ間を移動する方法について説明します。_
 
 ## <a name="overview"></a>概要
 
-通常、次のスクリーン ショットに示すように、同様に、マスター ページで項目の一覧が表示されます。
+通常、マスター ページには、次のスクリーンショットのように、項目の一覧が表示されます。
 
 [![](master-detail-page-images/masterpage-components.png "マスター ページのコンポーネント")](master-detail-page-images/masterpage-components-large.png#lightbox "マスター ページのコンポーネント")
 
-項目の一覧の場所は、各プラットフォームで同一と対応する詳細ページに移動しますが、項目のいずれかを選択します。 さらに、マスター ページは、アクティブな詳細ページに移動するのに使用できるボタンを含むナビゲーション バーも機能します。
+項目の一覧の場所は各プラットフォームで同じであり、いずれかの項目を選択すると対応する詳細ページに移動します。 さらに、マスター ページのナビゲーション バーに含まれるボタンを使用してアクティブな詳細ページに移動することもできます。
 
-- Ios では、ナビゲーション バーは、ページの上部にあるし、詳細ページに移動するボタンがあります。 さらに、アクティブな詳細ページは、マスター ページを左にスワイプするに移動できます。
-- Android では、ナビゲーション バーは、ページの上部にあるし、詳細ページにタイトル、アイコン、および移動するボタンが表示されます。 アイコンが定義されている、`[Activity]`を装飾する属性、 `MainActivity` Android のプラットフォーム固有プロジェクト内のクラス。 さらに、active の詳細ページに移動する、画面の右端にある詳細ページをタップして、タップしておよびマスター ページを左にスワイプすると、*戻る*画面の下部にあるボタン。
-- ユニバーサル Windows プラットフォーム (UWP) で、ナビゲーション バーは、ページの上部に存在して詳細ページに移動するボタンがあります。
+- iOS では、ナビゲーション バーはページの上部にあり、詳細ページに移動するボタンが含まれます。 さらに、マスター ページを左にスワイプすることで、アクティブな詳細ページに移動できます。
+- Android では、ナビゲーション バーはページの上部にあり、タイトル、アイコン、詳細ページに移動するボタンが表示されます。 アイコンは、Android プラットフォーム固有プロジェクトにおいて `MainActivity` クラスを修飾する `[Activity]` 属性で定義されています。 さらに、マスター ページを左にスワイプするか、画面右端の詳細ページをタップするか、画面の下部にある *[戻る]* ボタンをタップすることによって、アクティブな詳細ページに移動できます。
+- ユニバーサル Windows プラットフォーム (UWP) では、ナビゲーション バーはページの上部にあり、詳細ページに移動するボタンが含まれます。
 
-ページで、マスターで選択した項目に対応する詳細ページ表示データと、詳細ページの主要なコンポーネントの次のスクリーン ショットに表示されます。
+次のスクリーンショットのように、詳細ページには、マスター ページで選択されている項目に対応するデータと、詳細ページの主要コンポーネントが表示されます。
 
 ![](master-detail-page-images/detailpage-components.png "詳細ページのコンポーネント")
 
-詳細ページには、内容がプラットフォームに依存するは、ナビゲーション バーが含まれています。
+詳細ページにはナビゲーション バーが含まれ、その内容はプラットフォームによって異なります。
 
-- Ios では、ナビゲーション バーが存在、ページの上部にあると、タイトルを表示し、マスター ページに戻るボタンの詳細ページのインスタンスにラップされている、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)インスタンス。 さらに、マスター ページは、右側の詳細ページをスワイプするに返されることができます。
-- Android では、ナビゲーション バーは、ページの上部にあるし、タイトル、アイコン、およびマスター ページに戻るボタンが表示されます。 アイコンが定義されている、`[Activity]`を装飾する属性、 `MainActivity` Android のプラットフォーム固有プロジェクト内のクラス。
-- 、UWP では、ナビゲーション バーは、ページの上部にある、、タイトルを表示およびとマスター ページに戻るボタンがあります。
+- iOS では、ナビゲーション バーはページの上部に存在し、タイトルが表示されています。また、詳細ページのインスタンスが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスにラップされている場合は、マスター ページに戻るボタンがあります。 さらに、マスター ページには、詳細ページを右にスワイプすることによって戻ることができます。
+- Android では、ナビゲーション バーはページの上部にあり、タイトル、アイコン、マスター ページに戻るボタンが表示されます。 アイコンは、Android プラットフォーム固有プロジェクトにおいて `MainActivity` クラスを修飾する `[Activity]` 属性で定義されています。
+- UWP では、ナビゲーション バーはページの上部にあり、タイトルが表示され、マスター ページに戻るボタンがあります。
 
 ### <a name="navigation-behavior"></a>ナビゲーションの動作
 
-マスター/詳細ページ間のナビゲーションの操作の動作は、プラットフォームに依存します。
+マスター ページと詳細ページの間のナビゲーション エクスペリエンスの動作は、プラットフォームによって異なります。
 
-- Ios では、詳細ページ*スライド*左、および詳細の左の部分からマスター ページのスライドとして右側にページが表示されています。
-- 詳細とマスター ページは、android では、*オーバーレイ*相互にします。
-- 詳細とマスター ページは、UWP の*スワップ*します。
+- iOS では、マスター ページが左から "*スライド*" してくると、詳細ページは右にスライドしますが、詳細ページの左の部分はまだ表示されています。
+- Android では、詳細ページとマスター ページは相互に "*オーバーレイ*" されます。
+- UWP では、詳細ページとマスター ページは "*スワップ*" されます。
 
-同様の動作は、iOS と Android でマスター ページは、詳細ページの詳細が表示されますので縦モードの場合、マスター ページとしてのような幅にする点を除いて、横向きモードで実行されます。
+横モードでの動作も同様ですが、iOS と Android のマスター ページは縦モードのマスター ページと同じ幅なので、表示される詳細ページの部分が多くなります。
 
-ナビゲーションの動作を制御する方法の詳細については、次を参照してください。[詳細ページの表示動作を制御する](#Controlling_the_Detail_Page_Display_Behavior)します。
+ナビゲーション動作の制御について詳しくは、「[詳細ページの表示動作を制御する](#Controlling_the_Detail_Page_Display_Behavior)」をご覧ください。
 
-## <a name="creating-a-masterdetailpage"></a>MasterDetailPage を作成します。
+## <a name="creating-a-masterdetailpage"></a>MasterDetailPage を作成する
 
-A [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)を含む[ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master)と[ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail)型の両方がプロパティ[ `Page` ](xref:Xamarin.Forms.Page)を取得し、マスター/詳細ページをそれぞれ設定に使用されます。
+[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) には [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) プロパティと [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) プロパティ (どちらも [`Page`](xref:Xamarin.Forms.Page) 型) が含まれ、それぞれ、マスター ページと詳細ページの取得と設定に使用されます。
 
 > [!IMPORTANT]
-> A [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)ように、ルート ページを設計および使用するように他のページの種類の子ページが予期しない、一貫性のない動作になる可能性があります。 さらにすることが推奨のマスター ページ、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)は常に、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)インスタンス、および詳細ページを代入のみか[ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)、および`ContentPage`インスタンス。 これは、すべてのプラットフォームで一貫したユーザー エクスペリエンスを確保するのに役立ちます。
+> [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) はルート ページとして設計されており、他のページの種類の子ページとして使用すると、予期されていない一貫性のない動作が発生する可能性があります。 さらに、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のマスター ページは常に [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスにすること、および詳細ページは [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)、`ContentPage` のインスタンスのみで設定することをお勧めします。 これは、すべてのプラットフォームで一貫したユーザー エクスペリエンスにするのに役立ちます。
 
-次の XAML コード例は、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)設定、 [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master)と[ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail)プロパティ。
+次の XAML コード例では、[`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) プロパティと [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) プロパティを設定する [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) を示します。
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -79,7 +79,7 @@ A [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)を含む[ `Master`
 </MasterDetailPage>
 ```
 
-次のコード例は、相当するものを示しています。 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) c# で作成します。
+次に示すのは、C# で作成された同等の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のコード例です。
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -97,11 +97,11 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-[ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master)プロパティに設定されて、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)インスタンス。 [ `MasterDetailPage.Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail)プロパティに設定されて、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)を含む、`ContentPage`インスタンス。
+[`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master) プロパティには、[`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスが設定されます。 [`MasterDetailPage.Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) プロパティには、`ContentPage` インスタンスを含む [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) が設定されます。
 
-### <a name="creating-the-master-page"></a>マスター ページの作成
+### <a name="creating-the-master-page"></a>マスター ページを作成する
 
-XAML のコード例を次の宣言を示しています、`MasterPage`を通じて参照される、オブジェクト、 [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master)プロパティ。
+次に示す XAML のコード例は、`MasterPage` オブジェクトの宣言です。このオブジェクトは、[`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master) プロパティを通して参照されます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,16 +139,16 @@ XAML のコード例を次の宣言を示しています、`MasterPage`を通じ
 </ContentPage>
 ```
 
-ページから成る、 [ `ListView` ](xref:Xamarin.Forms.ListView)を設定して XAML でデータの設定をその[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティの配列を`MasterPageItem`インスタンス。 各`MasterPageItem`定義`Title`、 `IconSource`、および`TargetType`プロパティ。
+ページは、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティに `MasterPageItem` インスタンスの配列を設定することによって XAML のデータを設定された [`ListView`](xref:Xamarin.Forms.ListView) で構成されます。 各 `MasterPageItem` では、`Title`、`IconSource`、および `TargetType` プロパティが定義されています。
 
-A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)に割り当てられている、 [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)それぞれを表示するためのプロパティ`MasterPageItem`します。 `DataTemplate`が含まれています、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)で構成される、 [ `Image` ](xref:Xamarin.Forms.Image)と[ `Label`](xref:Xamarin.Forms.Label)します。 [ `Image` ](xref:Xamarin.Forms.Image)が表示されます、`IconSource`プロパティの値、および[ `Label` ](xref:Xamarin.Forms.Label)が表示されます、`Title`ごとのプロパティ値`MasterPageItem`します。
+各 `MasterPageItem` を表示するため、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) が [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) プロパティに割り当てられます。 `DataTemplate` には、[`Image`](xref:Xamarin.Forms.Image) と [`Label`](xref:Xamarin.Forms.Label) で構成される [`ViewCell`](xref:Xamarin.Forms.ViewCell) が含まれます。 各 `MasterPageItem` について、[`Image`](xref:Xamarin.Forms.Image) では `IconSource` プロパティの値が表示され、[`Label`](xref:Xamarin.Forms.Label) では `Title` プロパティの値が表示されます。
 
-ページがその[ `Title` ](xref:Xamarin.Forms.Page.Title)と[ `Icon` ](xref:Xamarin.Forms.Page.Icon)プロパティを設定します。 詳細ページのタイトル バーを持っていれば、[詳細] ページで、アイコンが表示されます。 これは iOS での詳細ページのインスタンスをラップすることによって有効にする必要があります、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)インスタンス。
+ページでは、[`Title`](xref:Xamarin.Forms.Page.Title) プロパティと [`Icon`](xref:Xamarin.Forms.Page.Icon) プロパティが設定されます。 詳細ページにタイトル バーがある場合は、アイコンが詳細ページに表示されます。 iOS では、詳細ページのインスタンスを [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスにラップすることによって、これを有効にする必要があります。
 
 > [!NOTE]
-> [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master)ページする必要がありますが、 [ `Title` ](xref:Xamarin.Forms.Page.Title)プロパティは、次の設定、または例外が発生します。
+> [`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master) ページではその [`Title`](xref:Xamarin.Forms.Page.Title) プロパティを設定する必要があります。設定しないと例外が発生します。
 
-次のコード例では、c# で作成した同等のページを示します。
+次に示すのは、C# で作成された同等のページのコード例です。
 
 ```csharp
 public class MasterPageCS : ContentPage
@@ -206,13 +206,13 @@ public class MasterPageCS : ContentPage
 }
 ```
 
-次のスクリーン ショットでは、各プラットフォームでマスター ページを表示します。
+次のスクリーンショットでは、各プラットフォームでのマスター ページを示します。
 
 ![](master-detail-page-images/masterpage.png "マスター ページの例")
 
-### <a name="creating-and-displaying-the-detail-page"></a>作成して、詳細ページを表示します。
+### <a name="creating-and-displaying-the-detail-page"></a>詳細ページを作成して表示する
 
-`MasterPage`インスタンスに含まれる、`ListView`を公開するプロパティの[ `ListView` ](xref:Xamarin.Forms.ListView)インスタンスように、 `MainPage` [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)インスタンスを登録できます、処理するイベント ハンドラー、 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)イベント。 これにより、`MainPage`を設定するインスタンス、 [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail)プロパティを表す、選択したページを`ListView`項目。 次のコード例では、イベント ハンドラーを示します。
+`MasterPage` インスタンスに含まれる `ListView` プロパティによって公開されるその [`ListView`](xref:Xamarin.Forms.ListView) インスタンスにより、`MainPage` の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) インスタンスは [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントを処理するためのイベント ハンドラーを登録できます。 これにより、`MainPage` のインスタンスは、[`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) プロパティに、選択された `ListView` 項目を表示するページを設定できます。 次に示すのは、イベント ハンドラーのコード例です。
 
 ```csharp
 public partial class MainPage : MasterDetailPage
@@ -235,29 +235,29 @@ public partial class MainPage : MasterDetailPage
 }
 ```
 
-`OnItemSelected`メソッドは、次の操作を実行します。
+`OnItemSelected` メソッドでは、次の操作が実行されます。
 
-- 取得、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)から、 [ `ListView` ](xref:Xamarin.Forms.ListView)インスタンスし、なっていないことを指定された`null`、詳細ページ、に格納されているページの種類の新しいインスタンスを設定`TargetType`のプロパティ、`MasterPageItem`します。 ページの型がラップされて、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)アイコンを通じて参照されていることを確認するインスタンス、 [ `Icon` ](xref:Xamarin.Forms.Page.Icon)プロパティを`MasterPage`iOS での詳細ページが表示されます。
-- 選択された項目、 [ `ListView` ](xref:Xamarin.Forms.ListView)に設定されている`null`なしのように、`ListView`項目が次回の選択、`MasterPage`が表示されます。
-- ユーザーに設定して詳細ページが表示されます、 [ `MasterDetailPage.IsPresented` ](xref:Xamarin.Forms.MasterDetailPage.IsPresented)プロパティを`false`します。 このプロパティは、マスターまたは詳細ページが表示されるかどうかを制御します。 設定する必要があります`true`、マスター ページを表示して`false`詳細ページを表示します。
+- [`ListView`](xref:Xamarin.Forms.ListView) のインスタンスから [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) を取得し、それが `null` でない場合は、詳細ページに、`MasterPageItem` の `TargetType` プロパティに格納されているページ種類の新しいインスタンスを設定します。 `MasterPage` の [`Icon`](xref:Xamarin.Forms.Page.Icon) プロパティを通して参照されているアイコンが iOS の詳細ページに表示されるように、ページの種類を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のインスタンス内にラップします。
+- 次に `MasterPage` が表示されるときにどの `ListView` 項目も選択されていないように、[`ListView`](xref:Xamarin.Forms.ListView) の選択済み項目を `null` に設定します。
+- [`MasterDetailPage.IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) プロパティを `false` に設定することにより、ユーザーに詳細ページを表示します。 このプロパティは、マスター ページまたは詳細ページが表示されるかどうかを制御します。 マスター ページを表示するには `true` に、詳細ページを表示するには `false` に、設定する必要があります。
 
-次のスクリーン ショットに示す、`ContactPage`詳細ページで、マスター ページで選択されているされた後に表示されています。
+次のスクリーンショットでは、`ContactPage` の詳細ページを示します。これは、マスター ページで選択された後に表示されます。
 
 ![](master-detail-page-images/detailpage.png "詳細ページの例")
 
 <a name="Controlling_the_Detail_Page_Display_Behavior" />
 
-### <a name="controlling-the-detail-page-display-behavior"></a>詳細ページの表示動作を制御します。
+### <a name="controlling-the-detail-page-display-behavior"></a>詳細ページの表示動作を制御する
 
-どの[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)マスター/詳細ページを管理、アプリケーションがスマート フォンまたはタブレット、デバイスの向きの値で実行するかどうかによって異なります、 [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)プロパティ。 このプロパティは、詳細ページの表示方法を決定します。 使用可能な値は次のとおりです。
+[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) によるマスター ページと詳細ページの管理方法は、アプリケーションがスマートフォンまたはタブレットのどちらで実行されているか、デバイスの向き、および [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) プロパティの値によって異なります。 このプロパティでは、詳細ページの表示方法が決まります。 次の値を指定できます。
 
-- **既定**– プラットフォームの既定値を使用して、ページが表示されます。
-- **ポップ オーバー** – 詳細ページでは、またはマスター ページを部分的にカバーします。
-- **分割**: マスター ページが左に表示し、詳細ページは、右にします。
-- **SplitOnLandscape** – デバイスが横方向の場合、分割画面を使用します。
-- **SplitOnPortrait** – デバイスが縦向きの場合、分割画面を使用します。
+- **Default** – ページは、プラットフォームの既定値を使用して表示されます。
+- **Popover** – 詳細ページがマスター ページをカバーまたは部分的にカバーします。
+- **Split** – マスター ページが左側に、詳細ページが右側に表示されます。
+- **SplitOnLandscape** – デバイスが横長の向きの場合は、分割画面が使用されます。
+- **SplitOnPortrait** – デバイスが縦長の向きの場合は、分割画面が使用されます。
 
-次の XAML コード例は、設定する方法を示します、 [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)プロパティを[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
+次の XAML コードの例では、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) で [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) プロパティを設定する方法を示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -269,7 +269,7 @@ public partial class MainPage : MasterDetailPage
 </MasterDetailPage>
 ```
 
-次のコード例は、相当するものを示しています。 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) c# で作成します。
+次に示すのは、C# で作成された同等の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のコード例です。
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -284,15 +284,15 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-ただしの値、 [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)プロパティでは、タブレットやデスクトップで実行されているアプリケーションのみに影響します。 常に、スマート フォンで実行されるアプリケーションが、*ポップ オーバー*動作します。
+ただし、[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) プロパティの値は、タブレットまたはデスクトップで実行されているアプリケーションのみに影響します。 スマートフォンで実行されているアプリケーションは、常に *Popover* 動作になります。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、使用する方法を示しました、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)し情報のページ間を移動します。 Xamarin.Forms`MasterDetailPage`は、項目を表示するマスター ページとマスター ページの項目に関する詳細を表示する詳細ページ 2 つのページの関連情報を管理するページです。
+この記事では、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) を使用する方法と、情報ページ間を移動する方法を示しました。 Xamarin.Forms の `MasterDetailPage` は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ページの変数](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [さまざまなページ](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [MasterDetailPage (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
 - [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

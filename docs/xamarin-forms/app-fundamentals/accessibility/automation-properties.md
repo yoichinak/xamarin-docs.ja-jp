@@ -1,6 +1,6 @@
 ---
 title: オートメーションのプロパティ
-description: この記事では、スクリーン リーダーは、ページの要素について発言できるように、Xamarin.Forms アプリケーションでのオートメーション プロパティ クラスを使用する方法について説明します。
+description: この記事では、スクリーン リーダーでページの要素について読み上げることができるように、Xamarin.Forms アプリケーションで AutomationProperties クラスを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
@@ -9,54 +9,54 @@ ms.author: dabritch
 ms.date: 10/24/2017
 ms.openlocfilehash: c720b9f38d2a34155face10b75f5f054f3313711
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50131515"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーション プロパティ
 
-_Xamarin.Forms では、ネイティブのアクセシビリティ値を設定する、AutomationProperties クラスから添付プロパティを使用してユーザー インターフェイス要素に設定するユーザー補助の値を許可します。この記事では、スクリーン リーダーは、ページの要素について発言できるように、AutomationProperties クラスを使用する方法について説明します。_
+_Xamarin.Forms では、AutomationProperties クラスの添付プロパティを使用して、ユーザー インターフェイス要素にアクセシビリティの値を設定できます。それによって、ネイティブなアクセシビリティ値が設定されます。この記事では、スクリーン リーダーでページの要素について読み上げることができるように、AutomationProperties クラスを使用する方法について説明します。_
 
-Xamarin.Forms は、次の添付プロパティを使用してユーザー インターフェイス要素に設定するオートメーション プロパティを使用できます。
+Xamarin.Forms では、次の添付プロパティを使用して、ユーザー インターフェイス要素にオートメーション プロパティを設定できます。
 
-- `AutomationProperties.IsInAccessibleTree` – 要素がアクセスできるアプリケーションで使用できるかどうかを示します。 詳細については、次を参照してください。 [AutomationProperties.IsInAccessibleTree](#isinaccessibletree)します。
-- `AutomationProperties.Name` – 要素の speakable 識別子として機能する要素の簡単な説明。 詳細については、次を参照してください。 [AutomationProperties.Name](#name)します。
-- `AutomationProperties.HelpText` – 要素に関連付けられているツールヒント テキストとして考えることができる要素の詳しい説明。 詳細については、次を参照してください。 [AutomationProperties.HelpText](#helptext)します。
-- `AutomationProperties.LabeledBy` – 現在の要素のアクセシビリティに関する情報を定義するもう 1 つの要素を許可します。 詳細については、次を参照してください。 [AutomationProperties.LabeledBy](#labeledby)します。
+- `AutomationProperties.IsInAccessibleTree` – 要素がアクセシビリティの高いアプリケーションで使用できるかどうかを示します。 詳しくは、「[AutomationProperties.IsInAccessibleTree](#isinaccessibletree)」をご覧ください。
+- `AutomationProperties.Name` – 要素の読み上げ可能な識別子として機能する、要素の簡単な説明です。 詳しくは、「[AutomationProperties.Name](#name)」をご覧ください。
+- `AutomationProperties.HelpText` – 要素の詳しい説明です。要素に関連付けられているヒント テキストと考えることができます。 詳しくは、「[AutomationProperties.HelpText](#helptext)」をご覧ください。
+- `AutomationProperties.LabeledBy` – 現在の要素に対するアクセシビリティ情報を、別の要素で定義できます。 詳しくは、「[AutomationProperties.LabeledBy](#labeledby)」をご覧ください。
 
-ネイティブのアクセシビリティ値の設定のプロパティは、スクリーン リーダーが要素について発言できるようにこれらアタッチ。 添付プロパティの詳細については、[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)を参照してください。
+これらの添付プロパティでは、スクリーン リーダーが要素について読み上げることができるように、ネイティブのアクセシビリティ値が設定されます。 添付プロパティについて詳しくは、「[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)」をご覧ください。
 
 > [!IMPORTANT]
-> 使用して、`AutomationProperties`添付プロパティの Android の UI テストの実行に影響を与える可能性があります。 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)、`AutomationProperties.Name`と`AutomationProperties.HelpText`プロパティはどちらも設定ネイティブ`ContentDescription`プロパティで、`AutomationProperties.Name`と`AutomationProperties.HelpText`プロパティ値の優先順位を引き継ぎ、 `AutomationId`値 (両方`AutomationProperties.Name`と`AutomationProperties.HelpText`設定、値が連結されます)。 つまり、すべてのテストを探して`AutomationId`場合は失敗`AutomationProperties.Name`または`AutomationProperties.HelpText`要素に設定されます。 このシナリオでは、値を検索する UI テストを変更する`AutomationProperties.Name`または`AutomationProperties.HelpText`、または両方を連結します。
+> `AutomationProperties` の添付プロパティを使用すると、Android での UI テストの実行に影響を与える可能性があります。 [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) と、`AutomationProperties.Name` および `AutomationProperties.HelpText` プロパティの両方で、ネイティブな `ContentDescription` プロパティが設定され、`AutomationProperties.Name` および `AutomationProperties.HelpText` プロパティの値の方が `AutomationId` の値より優先されます (`AutomationProperties.Name` と `AutomationProperties.HelpText` が両方とも設定されている場合は、値が連結されます)。 つまり、要素で `AutomationProperties.Name` または `AutomationProperties.HelpText` も設定されている場合、`AutomationId` を検索するテストは失敗ます。 このシナリオでは、代わりに `AutomationProperties.Name` または `AutomationProperties.HelpText`、あるいは両方を連結したものを検索するように、UI テストを変更する必要があります。
 
-各プラットフォームでは、アクセシビリティ値のナレーションをさまざまな画面リーダーがあります。
+アクセシビリティ値を読み上げるスクリーン リーダーは、プラットフォームごとに異なります。
 
-- iOS では、ボイス オーバーがあります。 詳細については、次を参照してください。 [VoiceOver のデバイスでのテスト ユーザー補助](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)developer.apple.com にします。
-- Android では、TalkBack が。 詳細については、次を参照してください。[テスト アプリケーションのユーザー補助](https://developer.android.com/training/accessibility/testing.html#talkback)developer.android.com にします。
-- Windows では、ナレーターがあります。 詳細については、次を参照してください。[ナレーターを使用して、メイン アプリケーションのシナリオを確認](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/)します。
+- iOS では VoiceOver が使用されます。 詳しくは、developer.apple.com の「[Test Accessibility on Your Device with VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)」(VoiceOver を使用するデバイスでのアクセシビリティをテストする) をご覧ください。
+- Android では TalkBack が使用されます。 詳しくは、「[Testing Your App's Accessibility](https://developer.android.com/training/accessibility/testing.html#talkback)」(アプリのアクセシビリティのテスト) をご覧ください。
+- Windows ではナレーターが使用されます。 詳しくは、「[ナレーターを使用してメイン アプリのシナリオを検証する](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/)」をご覧ください。
 
-ただし、スクリーン リーダーの正確な動作は、ソフトウェアおよびそのユーザーの構成によって異なります。 たとえば、ほとんどのスクリーン リーダー読み取りフォーカスを受け取ったときに、コントロールに関連付けられたテキスト自体、ページ上のコントロール間で移動するためにユーザーを有効にします。 スクリーン リーダーによってアプリケーション全体のユーザー インターフェイスを読み取ることも、ページが表示されたら、それを移動しようとする前にすべてのページの使用可能な情報のコンテンツを受信するユーザーを有効します。
+ただし、スクリーン リーダーの厳密な動作は、ソフトウェアおよびそのユーザー構成に依存します。 たとえば、ほとんどのスクリーン リーダーでは、フォーカスを受け取ったコントロールに関連付けられているテキストが読み上げられて、ユーザーはページ上のコントロール間を移動しながら自分がいる場所を知ることができます。 一部のスクリーン リーダーでは、ページが表示されたときにアプリケーションのユーザー インターフェイス全体も読み上げられ、ユーザーはページで使用可能なすべての情報コンテンツを受け取ってから、ナビゲートを試みることができます。
 
-また、スクリーン リーダーは、異なるアクセシビリティ値を読み取る。 サンプル アプリケーション。
+また、スクリーン リーダーで読み上げられるアクセシビリティ値も異なります。 サンプル アプリケーションでは次のようになります。
 
-- VoiceOver は読み取り、`Placeholder`の値、 `Entry`、その後に、コントロールの使用方法について説明します。
-- TalkBack は読み取り、`Placeholder`の値、 `Entry`、その後に、`AutomationProperties.HelpText`コントロールを使用するための手順に続く値。
-- ナレーターが読み上げる、`AutomationProperties.LabeledBy`の値、`Entry`コントロールを使用する手順、その後にします。
+- VoiceOver では、`Entry` の `Placeholder` の値、コントロールの使用方法の順に読み上げられます。
+- TalkBack では、`Entry` の `Placeholder` の値、`AutomationProperties.HelpText` の値、コントロールの使用方法の順に読み上げられます。
+- ナレーターでは、`Entry` の `AutomationProperties.LabeledBy` の値、コントロールの使用方法の順に読み上げられます。
 
-さらに、ナレーターは優先順位を付ける`AutomationProperties.Name`、 `AutomationProperties.LabeledBy`、し`AutomationProperties.HelpText`します。 Android では、TalkBack を組み合わせることも、`AutomationProperties.Name`と`AutomationProperties.HelpText`値。 そのため、ことを最適なエクスペリエンスを確認するには、各プラットフォームで実施徹底的なアクセシビリティのテストをお勧めします。
+さらに、ナレーターでは、`AutomationProperties.Name`、`AutomationProperties.LabeledBy`、`AutomationProperties.HelpText` の優先順位になります。 Android の TalkBack では、`AutomationProperties.Name` と `AutomationProperties.HelpText` の値が結合できます。 そのため、各プラットフォームでアクセシビリティのテストを十分に行い、最適なエクスペリエンスを確認することをお勧めします。
 
 <a name="isinaccessibletree" />
 
 ## <a name="automationpropertiesisinaccessibletree"></a>AutomationProperties.IsInAccessibleTree
 
-`AutomationProperties.IsInAccessibleTree`添付プロパティは、`boolean`要素にはアクセス可能で、スクリーン リーダーに、そのため表示される場合を決定します。 設定する必要がある`true`添付プロパティの他のユーザー補助機能を使用します。 これで実行できます XAML には、次のようにします。
+`AutomationProperties.IsInAccessibleTree` 添付プロパティは `boolean` であり、要素にアクセシビリティがあるかどうか、したがってスクリーン リーダーで認識できるかどうかが決定されます。 他のアクセシビリティ添付プロパティを使用するには、これが `true` に設定されている必要があります。 XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <Entry AutomationProperties.IsInAccessibleTree="true" />
 ```
 
-または、設定できます (C#) には、次のように。
+または、C# で次のようにして設定できます。
 
 ```csharp
 var entry = new Entry();
@@ -64,20 +64,20 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 ```
 
 > [!NOTE]
-> なお、 [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))メソッドが設定することもでき、`AutomationProperties.IsInAccessibleTree`添付プロパティ。 `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
+> [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを使用して `AutomationProperties.IsInAccessibleTree` 添付プロパティを設定することもできることに注意してください。`entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
 
 <a name="name" />
 
 ## <a name="automationpropertiesname"></a>AutomationProperties.Name
 
-`AutomationProperties.Name`添付プロパティの値は、スクリーン リーダーを使用して要素を発表する簡潔でわかりやすいテキスト文字列である必要があります。 このプロパティは、内容を理解、またはユーザー インターフェイスとの対話の重要な意味を持つ要素を設定する必要があります。 これで実行できます XAML には、次のようにします。
+`AutomationProperties.Name` 添付プロパティの値は、スクリーン リーダーで要素の読み上げに使用される簡潔でわかりやすいテキスト文字列である必要があります。 ユーザー インターフェイスの内容の理解や操作に重要な意味を持つ要素に対しては、このプロパティを設定する必要があります。 XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <ActivityIndicator AutomationProperties.IsInAccessibleTree="true"
                    AutomationProperties.Name="Progress indicator" />
 ```
 
-または、設定できます (C#) には、次のように。
+または、C# で次のようにして設定できます。
 
 ```csharp
 var activityIndicator = new ActivityIndicator();
@@ -86,13 +86,13 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 ```
 
 > [!NOTE]
-> なお、 [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))メソッドが設定することもでき、`AutomationProperties.Name`添付プロパティ。 `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
+> [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを使用して `AutomationProperties.Name` 添付プロパティを設定することもできることに注意してください。`activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
 
 <a name="helptext" />
 
 ## <a name="automationpropertieshelptext"></a>AutomationProperties.HelpText
 
-`AutomationProperties.HelpText`接続のプロパティは、ユーザー インターフェイス要素を説明するテキストに設定する必要があり、要素に関連付けられたツールヒントのテキストとしての検討することができます。 これで実行できます XAML には、次のようにします。
+`AutomationProperties.HelpText` 添付プロパティにはユーザー インターフェイス要素を説明するテキストを設定する必要があり、要素に関連付けられたヒント テキストと考えることができます。 XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <Button Text="Toggle ActivityIndicator"
@@ -100,7 +100,7 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
         AutomationProperties.HelpText="Tap to toggle the activity indicator" />
 ```
 
-または、設定できます (C#) には、次のように。
+または、C# で次のようにして設定できます。
 
 ```csharp
 var button = new Button { Text = "Toggle ActivityIndicator" };
@@ -109,15 +109,15 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 ```
 
 > [!NOTE]
-> なお、 [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))メソッドが設定することもでき、`AutomationProperties.HelpText`添付プロパティ。 `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
+> [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを使用して `AutomationProperties.HelpText` 添付プロパティを設定することもできることに注意してください。`button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
-一部のプラットフォームでの編集などのコントロール、 [ `Entry` ](xref:Xamarin.Forms.Entry)、`HelpText`プロパティはことがありますを省略すると、プレース ホルダー テキストに置き換えられます。 候補は、たとえば、「ここで、名前を入力」、 [ `Entry.Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder)プロパティの前に、ユーザーの実際の入力コントロールにテキストを配置します。
+一部のプラットフォームの [`Entry`](xref:Xamarin.Forms.Entry) などの編集コントロールでは、`HelpText` プロパティを省略し、プレースホルダー テキストに置き換えることができる場合があります。 たとえば、"ここに名前を入力します" などは、ユーザーが実際に入力する前にコントロールにテキストを配置する [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) プロパティに適した候補です。
 
 <a name="labeledby" />
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 
-`AutomationProperties.LabeledBy`添付プロパティが、現在の要素のアクセシビリティに関する情報を定義するもう 1 つの要素を許可します。 たとえば、 [ `Label` ](xref:Xamarin.Forms.Label) の横に、 [ `Entry` ](xref:Xamarin.Forms.Entry)新機能の記述に使用できる、`Entry`を表します。 これで実行できます XAML には、次のようにします。
+`AutomationProperties.LabeledBy` 添付プロパティを使用すると、現在の要素に対するアクセシビリティ情報を、別の要素で定義できます。 たとえば、[`Entry`](xref:Xamarin.Forms.Entry) の隣の [`Label`](xref:Xamarin.Forms.Label) を使用して、`Entry` の内容を説明できます。 XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <Label x:Name="label" Text="Enter your name: " />
@@ -125,7 +125,7 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
        AutomationProperties.LabeledBy="{x:Reference label}" />
 ```
 
-または、設定できます (C#) には、次のように。
+または、C# で次のようにして設定できます。
 
 ```csharp
 var nameLabel = new Label { Text = "Enter your name: " };
@@ -135,9 +135,9 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 ```
 
 > [!NOTE]
-> なお、 [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))メソッドが設定することもでき、`AutomationProperties.IsInAccessibleTree`添付プロパティ。 `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+> [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを使用して `AutomationProperties.IsInAccessibleTree` 添付プロパティを設定することもできることに注意してください。`entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
 
 ## <a name="related-links"></a>関連リンク
 
-- [添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)
-- [ユーザー補助 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+- [関連付けられたプロパティ](~/xamarin-forms/xaml/attached-properties.md)
+- [アクセシビリティ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)

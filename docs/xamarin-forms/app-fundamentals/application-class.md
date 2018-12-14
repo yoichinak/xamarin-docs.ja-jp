@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms アプリ クラス
-description: この記事では、アプリの最初のページを設定するプロパティが含まれている既定のアプリのクラスの機能を説明しの永続的なディクショナリは、状態変更のライフ サイクル全体での単純な値を格納します。
+title: Xamarin.Forms の App クラス
+description: この記事では、既定の App クラスの機能について説明します。このクラスには、アプリの最初のページを設定されるプロパティと、ライフサイクルの状態変化をまたいで格納されるシンプルな値のための永続ディクショナリが含まれます。
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
@@ -9,27 +9,27 @@ ms.author: dabritch
 ms.date: 02/19/2016
 ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
 ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
 ms.locfileid: "50675095"
 ---
-# <a name="xamarinforms-app-class"></a>Xamarin.Forms アプリ クラス
+# <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
-`Application`基底クラスは、既定のプロジェクトに公開されている次の機能を提供`App`サブクラスです。
+`Application` 基底クラスでは、プロジェクトの既定の `App` サブクラスで公開される次の機能が提供されています。
 
-* A`MainPage`プロパティで、アプリの最初のページを設定する場所です。
-* 永続的な[`Properties`ディクショナリ](#Properties_Dictionary)ライフ サイクルの状態の変更の間での単純な値を格納します。
-* 静的な`Current`プロパティを現在のアプリケーション オブジェクトへの参照が含まれています。
+* アプリの最初のページが設定される `MainPage` プロパティ。
+* ライフサイクルの状態変化をまたいでシンプルな値を格納するための永続的な [`Properties` ディクショナリ](#Properties_Dictionary)。
+* 現在のアプリケーション オブジェクトへの参照が含まれている静的な `Current` プロパティ。
 
-また、公開[ライフ サイクル メソッド](~/xamarin-forms/app-fundamentals/app-lifecycle.md)など`OnStart`、`OnSleep`と`OnResume`モーダル ナビゲーション イベントと。
+また、`OnStart`、`OnSleep`、`OnResume` などの[ライフサイクル メソッド](~/xamarin-forms/app-fundamentals/app-lifecycle.md)と、モーダル ナビゲーション イベントも公開されています。
 
-選択したテンプレートによっては、`App`クラスは、2 つの方法のいずれかで定義できます。
+選択するテンプレートに応じて、2 つの方法のいずれかで `App` クラスを定義できます。
 
-* **C#**、または
-* **XAML と C# のコード**
+* **C#**
+* **XAML と C#**
 
-作成する、**アプリ**クラスの XAML では、既定値を使用して**アプリ**クラスを XAML で置き換える必要があります**アプリ**クラスと関連付けられている分離コードを次のコード例に示すようにします。
+XAML を使用して **App** クラスを作成するには、次のコード例に示すように、既定の **App** クラスを、XAML の **App** クラスとそれに関連する分離コードに置き換える必要があります。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Photos.App">
@@ -51,15 +51,15 @@ public partial class App : Application
 }
 ```
 
-設定と、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティ、分離コードを呼び出す必要がありますも、`InitializeComponent`読み込み、関連付けられている XAML を解析するメソッド。
+[`MainPage`](xref:Xamarin.Forms.Application.MainPage) プロパティの設定だけでなく、分離コードで `InitializeComponent` メソッドを呼び出して、関連付けられている XAML を読み込んで解析する必要があります。
 
 ## <a name="mainpage-property"></a>MainPage プロパティ
 
-`MainPage`プロパティを`Application`クラスは、アプリケーションのルート ページを設定します。
+`Application` クラスの `MainPage` プロパティでは、アプリケーションのルート ページが設定されます。
 
-内のロジックを作成するなど、`App`かどうかにでユーザーがログインしているかどうかに応じてさまざまなページを表示するクラス。
+たとえば、ユーザーがログインしているかログアウトしているかに応じて異なるページを表示するためのロジックを、`App` クラス内に作成することができます。
 
-`MainPage`でプロパティを設定する必要があります、`App`コンス トラクター
+`MainPage` プロパティは、`App` のコンストラクターで設定する必要があります。
 
 ```csharp
 public class App : Xamarin.Forms.Application
@@ -73,19 +73,19 @@ public class App : Xamarin.Forms.Application
 
 <a name="Properties_Dictionary" />
 
-## <a name="properties-dictionary"></a>プロパティ ディクショナリ
+## <a name="properties-dictionary"></a>Properties ディクショナリ
 
-`Application`サブクラスには、静的な`Properties`ディクショナリで使用するため、特にデータの格納に使用できる、 `OnStart`、 `OnSleep`、および`OnResume`メソッド。 これは、Xamarin.Forms を使用してコードの任意の場所からアクセスできる`Application.Current.Properties`します。
+`Application` サブクラスには静的な `Properties` ディクショナリがあり、データの格納に使用できます。具体的には、`OnStart`、`OnSleep`、および `OnResume` メソッドで使用するためのデータです。 これには、`Application.Current.Properties` を使用して Xamarin.Forms コード内のどこからでもアクセスできます。
 
-`Properties`ディクショナリを使用して、`string`キーとストア、`object`値。
+`Properties` ディクショナリでは、`string` キーが使用され、`object` 値が格納されます。
 
-永続的な設定など`"id"`、コードの任意の場所でプロパティ (ページの項目を選択すると`OnDisappearing`メソッド、または、`OnSleep`メソッド) このような。
+たとえば、次のように、永続的な `"id"` プロパティをコードの任意の場所で設定できます (項目が選択されるとき、ページの `OnDisappearing` メソッド内、または `OnSleep` メソッド内)。
 
 ```csharp
 Application.Current.Properties ["id"] = someClass.ID;
 ```
 
-`OnStart`または`OnResume`メソッドをいくつかの方法でユーザーのエクスペリエンスを再作成し、この値を使用できます。 `Properties`ディクショナリ ストア`object`s ために使用する前にその値をキャストする必要があります。
+その後、`OnStart` または `OnResume` メソッドで、この値を使用して何らかの方法でユーザーのエクスペリエンスを再作成できます。 `Properties` ディクショナリには `object` が格納されるので、使用する前にその値をキャストする必要があります。
 
 ```csharp
 if (Application.Current.Properties.ContainsKey("id"))
@@ -95,27 +95,27 @@ if (Application.Current.Properties.ContainsKey("id"))
 }
 ```
 
-常に予期しないエラーを防ぐために、アクセスする前に、キーの存在を確認します。
+予期しないエラーを防ぐため、常に、アクセスする前にキーの存在を確認します。
 
 > [!NOTE]
-> `Properties`ディクショナリは、ストレージのプリミティブ型のみをシリアル化します。 その他の種類を格納しようとしています (など`List<string>`) サイレント モードで失敗することができます。
+> `Properties` ディクショナリでは、ストレージ用のプリミティブ型のみをシリアル化できます。 他の型 (`List<string>` など) を格納しようとすると、明示されずに失敗する可能性があります。
 
 <!-- bugzilla 28657 -->
 
 ### <a name="persistence"></a>永続性
 
-`Properties`ディクショナリは、デバイスに自動的に保存します。
-ディクショナリに追加されたデータは、アプリケーションがバック グラウンドから戻るときに、または再起動後も提供されます。
+`Properties` ディクショナリは、デバイスに自動的に保存されます。
+ディクショナリに追加されたデータは、アプリケーションがバックグラウンドから戻るときに、または再起動後でも利用できます。
 
-Xamarin.Forms 1.4 で追加のメソッドを導入された、`Application`クラス - `SavePropertiesAsync()` -事前に永続化を呼び出すことができ、`Properties`ディクショナリ。 これは、リスクのないシリアル化をクラッシュまたは OS によって強制終了中のためによりも重要な更新プログラムの後にプロパティを保存するようにします。
+Xamarin.Forms 1.4 では、`Application` クラスに追加メソッド `SavePropertiesAsync()` が導入されました。このメソッドを呼び出すと、`Properties` ディクショナリを事前に保存できます。 これにより、クラッシュまたは OS による強制終了のためにプロパティがシリアル化されないリスクなしに、重要な更新後にプロパティを保存できます。
 
-使用してへの参照を見つけることができます、`Properties`ディクショナリで、**を Xamarin.Forms での Mobile Apps の作成**書籍の章[6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、 [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)、および[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)、および関連付けられている[サンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)します。
+`Properties` ディクショナリの使用に関する参考資料については、「**Creating Mobile Apps with Xamarin.Forms**」(Xamarin.Forms でモバイル アプリを作成する) の第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)、[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章、および関連する[サンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)をご覧ください。
 
 
 
 ## <a name="the-application-class"></a>Application クラス
 
-完全な`Application`参照クラスの実装を次に示します。
+参考のため、完全な `Application` クラスの実装を次に示します。
 
 ```csharp
 public class App : Xamarin.Forms.Application
@@ -146,17 +146,17 @@ public class App : Xamarin.Forms.Application
 
 ```
 
-このクラスは、各プラットフォーム固有プロジェクトでインスタンス化されに渡される、`LoadApplication`されているメソッド、`MainPage`が読み込まれ、ユーザーに表示されます。
-次のセクションでは、各プラットフォームのコードに表示されます。 最新の Xamarin.Forms ソリューション テンプレートには、このアプリの構成済みのすべてのコードが含まれています。
+このクラスは、各プラットフォーム固有プロジェクトでインスタンス化されて、`LoadApplication` メソッドに渡されます。このメソッドでは、`MainPage` が読み込まれて、ユーザーに表示されます。
+以下のセクションでは、各プラットフォームのコードを示します。 最新の Xamarin.Forms ソリューション テンプレートには、アプリ用に事前構成されたこのすべてのコードが既に含まれます。
 
 
 ### <a name="ios-project"></a>iOS プロジェクト
 
-IOS`AppDelegate`クラスから継承`FormsApplicationDelegate`します。 必要があります。
+iOS の `AppDelegate` クラスは、`FormsApplicationDelegate` を継承します。 次のようになります。
 
-* 呼び出す`LoadApplication`のインスタンスと、`App`クラス。
+* `App` クラスのインスタンスを使用して `LoadApplication` を呼び出します。
 
-* 常に返す`base.FinishedLaunching (app, options);`します。
+* 常に `base.FinishedLaunching (app, options);` を返します。
 
 ```csharp
 [Register ("AppDelegate")]
@@ -176,7 +176,7 @@ public partial class AppDelegate :
 
 ### <a name="android-project"></a>Android プロジェクト
 
-Android`MainActivity`継承`FormsAppCompatActivity`します。 `OnCreate`オーバーライド、`LoadApplication`のインスタンス メソッドを呼び出すと、`App`クラス。
+Android の `MainActivity` は、`FormsAppCompatActivity` を継承します。 `OnCreate` のオーバーライド内で、`App` クラスのインスタンスを使用して `LoadApplication` メソッドが呼び出されます。
 
 ```csharp
 [Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true,
@@ -194,11 +194,11 @@ public class MainActivity : FormsAppCompatActivity
 }
 ```
 
-### <a name="universal-windows-project-uwp-for-windows-10"></a>Windows 10 のユニバーサル Windows プロジェクト (UWP)
+### <a name="universal-windows-project-uwp-for-windows-10"></a>Windows 10 用のユニバーサル Windows プロジェクト (UWP)
 
-参照してください[セットアップの Windows プロジェクト](~/xamarin-forms/platform/windows/installation/index.md)Xamarin.Forms での UWP サポートについてはします。
+Xamarin.Forms での UWP のサポートについては、「[Windows プロジェクトのセットアップ](~/xamarin-forms/platform/windows/installation/index.md)」をご覧ください。
 
-UWP プロジェクトのメイン ページを継承する必要があります`WindowsPage`:
+UWP プロジェクトのメイン ページでは、`WindowsPage` を継承する必要があります。
 
 ```xaml
 <forms:WindowsPage
@@ -208,7 +208,7 @@ UWP プロジェクトのメイン ページを継承する必要があります
 </forms:WindowsPage>
 ```
 
-C#構築の背後にあるコードを呼び出す必要があります`LoadApplication`、Xamarin.Forms のインスタンスを作成する`App`します。 明示的に修飾するために、アプリケーション名前空間を使用することをお勧めです、 `App` UWP アプリケーションもあるため、独自`App`Xamarin.Forms と無関係なクラスです。
+C# の分離コードの構築では、`LoadApplication` を呼び出して、Xamarin.Forms の `App` のインスタンスを作成する必要があります。 UWP アプリケーションにも Xamarin.Forms と関係のない独自の `App` クラスがあるため、アプリケーションの名前空間を使用して `App` を明示的に修飾するのがよい方法であることに注意してください。
 
 ```csharp
 public sealed partial class MainPage
@@ -222,4 +222,4 @@ public sealed partial class MainPage
  }
 ```
 
-なお`Forms.Init()`呼び出す必要があります**App.xaml.cs** 63 行目にします。
+**App.xaml.cs** の 63 行目あたりで `Forms.Init()` を呼び出す必要があることに注意してください。

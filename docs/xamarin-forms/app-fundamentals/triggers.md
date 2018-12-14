@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms のトリガー
-description: この記事では、Xamarin.Forms のトリガーを使用して、XAML でのユーザー インターフェイスの変更に応答する方法について説明します。 トリガーを使用すると、イベントまたはプロパティの変更に基づいてコントロールの外観を変更する操作を XAML で宣言できます。
+description: この記事では、Xamarin.Forms のトリガーを使用して、XAML でのユーザー インターフェイスの変更に応答する方法について説明します。 トリガーを使用すると、イベントまたはプロパティの変更に基づいてコントロールの外観を変更するアクションを XAML での宣言として表すことができます。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -9,33 +9,33 @@ ms.author: dabritch
 ms.date: 07/01/2016
 ms.openlocfilehash: e9ec9288e2b8ea991ef8d41f9b601d0897631b9d
 ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
 ms.locfileid: "50675212"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
-トリガーを使用すると、イベントまたはプロパティの変更に基づいてコントロールの外観を変更する操作を XAML で宣言できます。
+トリガーを使用すると、イベントまたはプロパティの変更に基づいてコントロールの外観を変更するアクションを XAML での宣言として表すことができます。
 
-トリガーをコントロールに直接を割り当てたり、複数のコントロールに適用されるページごとまたはアプリケーション レベルのリソース ディクショナリに追加できます。
+トリガーは、コントロールに直接割り当てることも、ページ レベルまたはアプリケーション レベルのリソース ディクショナリに追加して複数のコントロールに適用することもできます。
 
-トリガーの 4 つの種類があります。
+4 種類のトリガーがあります。
 
-* [プロパティ トリガー](#property) -コントロールのプロパティが特定の値に設定されている場合に発生します。
+* [プロパティ トリガー](#property) -コントロールのプロパティが特定の値に設定されると発生します。
 
-* [データ トリガー](#data) - 別のコントロールのプロパティに基づくトリガーへのバインドのデータを使用します。
+* [データ トリガー](#data) - データ バインディングを使用し、別のコントロールのプロパティに基づいてトリガーします。
 
-* [イベント トリガー](#event) -コントロールのイベントが発生したときに発生します。
+* [イベント トリガー](#event) -コントロールでイベントが発生すると発生します。
 
-* [複数のトリガー](#multi) -により、複数のトリガー条件、アクションが発生する前に設定します。
+* [マルチ トリガー](#multi) - アクションが発生する前に、複数のトリガー条件を設定できます。
 
 <a name="property" />
 
 ## <a name="property-triggers"></a>プロパティ トリガー
 
-XAML、純粋に表現できる簡単なトリガーを追加、`Trigger`要素をコントロールのコレクションをトリガーします。
-この例を変更するトリガーを`Entry`フォーカスを受け取ると、背景色。
+コントロールのトリガー コレクションに `Trigger` 要素を追加して、XAML 内だけでシンプルなトリガーを表現できます。
+次の例では、フォーカスが設定されると背景色を `Entry` に変更するトリガーを示します。
 
 ```xaml
 <Entry Placeholder="enter name">
@@ -50,19 +50,19 @@ XAML、純粋に表現できる簡単なトリガーを追加、`Trigger`要素�
 
 トリガーの宣言の重要な部分は次のとおりです。
 
-* **TargetType** -トリガーを適用するコントロールの種類。
+* **TargetType** - トリガーを適用するコントロールの種類です。
 
-* **プロパティ**-監視されているコントロールのプロパティ。
+* **Property** - コントロール上で監視するプロパティです。
 
-* **値**-の値、監視対象のプロパティの発生時に、トリガーをアクティブ化の原因となります。
+* **Value** - 監視対象のプロパティがこの値になったら、トリガーをアクティブにします。
 
-* **Set アクセス操作子**-一連の`Setter`要素を追加して、トリガー条件が満たされたとき。 指定する必要があります、`Property`と`Value`を設定します。
+* **Setter** - トリガー条件が満たされたときの `Setter` 要素のコレクションを追加できます。 設定するには、`Property` と `Value` を指定する必要があります。
 
-* **EnterActions と ExitActions** (非表示) - コードで記述されに加え (または instead of) に使用できる`Setter`要素。 [以下に示す](#enterexit)します。
+* **EnterActions と ExitActions** (示されていません) - コードで記述され、`Setter` 要素に加えて (または代えて) 使用できます。 これらについては、[後で説明します](#enterexit)。
 
-### <a name="applying-a-trigger-using-a-style"></a>スタイルを使用してトリガーを適用します。
+### <a name="applying-a-trigger-using-a-style"></a>スタイルを使用してトリガーを適用する
 
-トリガーを追加することも、`Style`ページ、またはアプリケーションで、コントロールの宣言`ResourceDictionary`します。 この例は、暗黙的なスタイルを宣言します (ie。 ありません`Key`設定されている) すべてに適用することを意味する`Entry`ページ上のコントロール。
+トリガーは、コントロール、ページ、またはアプリケーションの `ResourceDictionary` の `Style` 宣言に追加することもできます。 次の例では、暗黙のスタイルを宣言しています (つまり、`Key` が設定されていません)。これは、ページ上のすべての `Entry` コントロールに適用されることを意味します。
 
 ```xaml
 <ContentPage.Resources>
@@ -83,10 +83,10 @@ XAML、純粋に表現できる簡単なトリガーを追加、`Trigger`要素�
 
 ## <a name="data-triggers"></a>データ トリガー
 
-データ トリガーが発生する別のコントロールを監視するデータ バインドを使用して、`Setter`に呼び出されます。 代わりに、`Property`プロパティ トリガー属性は、設定、`Binding`属性を指定した値を監視します。
+データ トリガーでは、データ バインディングを使用して別のコントロールが監視され、`Setter` が呼び出されます。 プロパティ トリガーでの `Property` 属性の代わりに、指定した値を監視する `Binding` 属性を設定します。
 
-次の例は、データ バインディング構文を使用します。 `{Binding Source={x:Reference entry}, Path=Text.Length}`
-これは、方法もう 1 つのコントロールのプロパティを参照してください。 ときの長さ、 `entry` 0 の場合は、トリガーがアクティブ化します。 このサンプルでは、トリガーは、入力が空の場合に、ボタンを無効にします。
+次の例では、データ バインディング構文 `{Binding Source={x:Reference entry}, Path=Text.Length}` を使用しています
+これは、別のコントロールのプロパティを参照する方法です。 `entry` の長さが 0 の場合、トリガーがアクティブにされます。 このサンプルでは、入力が空の場合、トリガーでボタンが無効にされます。
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -109,15 +109,15 @@ XAML、純粋に表現できる簡単なトリガーを追加、`Trigger`要素�
 </Button>
 ```
 
-ヒント: 評価するときに`Path=Text.Length`(例: ターゲット プロパティの既定値を常に提供 `Text=""`) ので、そうでなければ`null`トリガーが予定どおりに動作しません。
+ヒント: `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例:  `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
 
-指定するだけでなく`Setter`s が提供することも[`EnterActions`と`ExitActions`](#enterexit)します。
+`Setter` を指定するだけでなく、[`EnterActions` と `ExitActions`](#enterexit) を提供することもできます。
 
 <a name="event" />
 
 ## <a name="event-triggers"></a>Event Triggers
 
-`EventTrigger`要素にのみが必要です、`Event`プロパティなど`"Clicked"`で次の例。
+次の例での `"Clicked"` のように、`EventTrigger` 要素では `Event` プロパティのみが必要です。
 
 ```xaml
 <EventTrigger Event="Clicked">
@@ -125,7 +125,7 @@ XAML、純粋に表現できる簡単なトリガーを追加、`Trigger`要素�
 </EventTrigger>
 ```
 
-あることに注意してくださいありません`Setter`要素がによって定義されたクラスへの参照ではなく`local:NumericValidationTriggerAction`必要があります、`xmlns:local`の XAML のページで宣言します。
+`Setter` 要素はなく、代わりにページの XAML で `xmlns:local` が宣言されている必要のある `local:NumericValidationTriggerAction` によって定義されたクラスへの参照があることに注意してください。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,15 +133,15 @@ XAML、純粋に表現できる簡単なトリガーを追加、`Trigger`要素�
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-クラス自体を実装して`TriggerAction`つまりのオーバーライドを提供する必要があります、`Invoke`トリガー イベントが発生するたびに呼び出されるメソッド。
+クラス自体では `TriggerAction` が実装されています。これは、トリガー イベントが発生するたびに呼び出される `Invoke` メソッドに対するオーバーライドを提供する必要があることを意味します。
 
-トリガー アクションの実装が必要です。
+トリガー アクションは次のように実装する必要があります。
 
-* ジェネリック実装`TriggerAction<T>`クラスは、トリガーに適用されるコントロールの種類に対応するジェネリック パラメーターを使用します。 スーパークラスをなど、使用できる`VisualElement`さまざまなコントロールを使用したり、コントロールの種類を指定するトリガー アクションを記述する`Entry`します。
+* トリガーの適用対象であるコントロールの種類に対応するジェネリック パラメーターを使用してジェネリック `TriggerAction<T>` クラスを実装します。 `VisualElement` のようなスーパークラスを使用してさまざまなコントロールで動作するトリガーを記述したり、`Entry` のようなコントロールの種類を指定したりできます。
 
-* 上書き、`Invoke`トリガーの条件が満たされるたびにこの呼び出されるメソッド。
+* `Invoke` メソッドをオーバーライドします。これは、トリガー条件が満たされるたびに呼び出されます。
 
-* 必要に応じて、トリガーが宣言されている場合は、XAML で設定できるプロパティを公開 (など`Anchor`、 `Scale`、および`Length`この例では)。
+* 必要に応じて、トリガーを宣言するときに XAML で設定できるプロパティを公開します (次の例の `Anchor`、`Scale`、`Length` など)。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -155,7 +155,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-トリガーの動作によって公開されるプロパティは、XAML の宣言で設定することができます。
+トリガー アクションによって公開されるプロパティは、次のように XAML の宣言で設定できます。
 
 ```xaml
 <EventTrigger Event="TextChanged">
@@ -163,17 +163,17 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 </EventTrigger>
 ```
 
-内のトリガーを共有する場合は注意を`ResourceDictionary`コントロール間での 1 つのインスタンスの共有はため、1 回構成されている任意の状態は、それらすべてに適用されます。
+`ResourceDictionary` でトリガーを共有する場合は注意が必要です。コントロール間で 1 つのインスタンスが共有されるので、1 つで構成された状態がすべてに適用されます。
 
-イベント トリガーがサポートしていないことに注意してください。`EnterActions`と`ExitActions`[以下に示す](#enterexit)します。
+イベント トリガーでは、[後で説明する](#enterexit) `EnterActions` と `ExitActions` がサポートされていないことに注意してください。
 
 <a name="multi" />
 
-## <a name="multi-triggers"></a>複数のトリガー
+## <a name="multi-triggers"></a>マルチ トリガー
 
-A`MultiTrigger`次のような`Trigger`または`DataTrigger`点を除いては、複数の条件があります。 すべての条件は、前に満たす必要があります、 `Setter`s がトリガーされます。
+`MultiTrigger` は `Trigger` や `DataTrigger` と似ていますが、複数の条件を使用できる点が異なります。 `Setter` がトリガーされるには、すべての条件が満たされる必要があります。
 
-2 つの異なる入力にバインドするボタンのトリガーの例を次に示します (`email`と`phone`)。
+2 つの異なる入力 (`email` と `phone`) にバインドされているボタンに対するトリガーの例を次に示します。
 
 ```xaml
 <MultiTrigger TargetType="Button">
@@ -191,17 +191,17 @@ A`MultiTrigger`次のような`Trigger`または`DataTrigger`点を除いては�
 </MultiTrigger>
 ```
 
-`Conditions`コレクションを含めたりも`PropertyCondition`要素には、このような。
+`Conditions` コレクションには、次のように `PropertyCondition` 要素を含めることもできます。
 
 ```xaml
 <PropertyCondition Property="Text" Value="OK" />
 ```
 
-### <a name="building-a-require-all-multi-trigger"></a>「すべてが必要です」マルチ トリガーの作成
+### <a name="building-a-require-all-multi-trigger"></a>"すべて必要" マルチ トリガーの作成
 
-複数のトリガーは、すべての条件に該当する場合のみ、コントロールを更新します。 必要条件があるため注意が必要ですが (すべての入力が完了する必要があります、ログイン ページ) などの「すべてのフィールドの長さが 0」テスト"で Text.Length > 0" ですが、これは、XAML で表現することはできません。
+マルチ トリガーでは、すべての条件が真のときにのみコントロールが更新されます。 "すべてのフィールドの長さが 0" であることをテストするのは (すべての入力が完了する必要のあるログイン ページなど)、簡単ではありません。"Text.Length > 0 の場合" という条件が必要ですが、XAML でこれを表現することができないためです。
 
-これで、`IValueConverter`します。 変換の下のコンバーター コード、`Text.Length`にバインドを`bool`かフィールドが空かどうかを示します。
+これは、`IValueConverter` を使用して行うことができます。 次のコンバーター コードでは、`Text.Length` のバインドが、フィールドが空かどうかを示す `bool` に変換されています。
 
 ```csharp
 public class MultiTriggerConverter : IValueConverter
@@ -223,7 +223,7 @@ public class MultiTriggerConverter : IValueConverter
 }
 ```
 
-このコンバーターを使用して、複数のトリガーを最初に追加、ページのリソース ディクショナリ (カスタムと共に`xmlns:local`名前空間の定義)。
+このコンバーターをマルチ トリガーで使用するには、最初に、ページのリソース ディクショナリに追加します (カスタム `xmlns:local` 名前空間の定義と共に)。
 
 ```xaml
 <ResourceDictionary>
@@ -231,11 +231,11 @@ public class MultiTriggerConverter : IValueConverter
 </ResourceDictionary>
 ```
 
-XAML は、以下に示します。 最初の複数のトリガーの例から次の相違点に注意してください。
+XAML を以下に示します。 最初のマルチ トリガーの例と次の点が異なることに注意してください。
 
-* ボタンには、`IsEnabled="false"`既定で設定します。
-* 複数のトリガーの条件では、コンバーターを使用して、`Text.Length`値に、`boolean`します。
-* すべての条件の場合に`true`、setter は、ボタンの`IsEnabled`プロパティ`true`します。
+* ボタンには、`IsEnabled="false"` が既定で設定されます。
+* マルチ トリガーの条件では、コンバーターを使用して `Text.Length` の値が `boolean` に変換されます。
+* すべての条件が `true` の場合、セッターはボタンの `IsEnabled` プロパティを `true` にします。
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />
@@ -264,18 +264,18 @@ XAML は、以下に示します。 最初の複数のトリガーの例から�
 </Button>
 ```
 
-これらのスクリーン ショットでは、上記 2 つの複数のトリガー例の違いを示します。 テキスト入力、画面の上部には、1 つだけで`Entry`が有効にするのに十分な**保存**ボタンをクリックします。
-画面の下部に、**ログイン**まで、両方のフィールドがデータを含むボタンを非アクティブなままです。
+次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、**[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
+画面の下部では、両方のフィールドにデータを入力するまで、**[Login]** ボタンはアクティブになりません。
 
-![](triggers-images/multi-requireall.png "MultiTrigger 例")
+![](triggers-images/multi-requireall.png "マルチ トリガーの例")
 
 <a name="enterexit" />
 
 ## <a name="enteractions-and-exitactions"></a>EnterActions と ExitActions
 
-追加することで、トリガーが発生したときに、変更を実装する別の方法は、`EnterActions`と`ExitActions`コレクションと指定する`TriggerAction<T>`実装します。
+トリガーが発生したときの変更を実装するもう 1 つの方法は、`EnterActions` および `ExitActions` コレクションを追加して、`TriggerAction<T>` の実装を指定することです。
 
-行うことができます*両方*`EnterActions`と`ExitActions`だけでなく`Setter`、トリガーでがありますに注意してくださいを`Setter`s はすぐと呼ばれます (を待たず、`EnterAction`または`ExitAction`に完了)。 または、コード内のすべてを実行し、使用しない`Setter`を同時にすべて。
+トリガーで `Setter` と共に `EnterActions` と `ExitActions` の "*両方*" を提供できますが、`Setter` はすぐに呼び出されることに注意してください (`EnterAction` または `ExitAction` が完了するのを待機しません)。 代わりに、コードですべてを実行し、`Setter` をまったく使用しないこともできます。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -295,7 +295,7 @@ XAML は、以下に示します。 最初の複数のトリガーの例から�
 </Entry>
 ```
 
-クラスが XAML で参照されているときに、常に、名前空間をなど、宣言する必要があります`xmlns:local`次のようにします。
+例のごとく、XAML でクラスを参照するときは、次のように `xmlns:local` などの名前空間を宣言する必要があります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -303,7 +303,7 @@ XAML は、以下に示します。 最初の複数のトリガーの例から�
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-`FadeTriggerAction`コードを次に示します。
+`FadeTriggerAction` のコードを次に示します。
 
 ```csharp
 public class FadeTriggerAction : TriggerAction<VisualElement>
@@ -325,7 +325,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-注:`EnterActions`と`ExitActions`では無視されます**イベント トリガー**します。
+注: `EnterActions` と `ExitActions` は、**イベント トリガー**では無視されます。
 
 
 

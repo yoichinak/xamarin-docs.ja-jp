@@ -1,6 +1,6 @@
 ---
 title: DependencyService の概要
-description: この記事では、ネイティブ プラットフォーム機能の利用の Xamarin.Forms DependencyService クラスのしくみについて説明します。
+description: この記事では、ネイティブ プラットフォームの機能にアクセスする Xamarin.Forms の DependencyService クラスのしくみについて説明します。
 ms.prod: xamarin
 ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
@@ -9,7 +9,7 @@ ms.author: dabritch
 ms.date: 09/15/2018
 ms.openlocfilehash: 3c8cc31c21f354b60001cefb919b51bf4d42da9f
 ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
 ms.locfileid: "50675017"
@@ -18,31 +18,31 @@ ms.locfileid: "50675017"
 
 ## <a name="overview"></a>概要
 
-[`DependencyService`](xref:Xamarin.Forms.DependencyService) 共有コードからプラットフォーム固有の機能を呼び出すアプリを許可します。 この機能により、ネイティブ アプリで実行できるも何もする Xamarin.Forms アプリです。
+[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用すると、アプリで共有コードからプラットフォーム固有の機能を呼び出すことができます。 この機能により、ネイティブ アプリでできるすべてのことを、Xamarin.Forms アプリで行うことができます。
 
-`DependencyService` サービス ロケーターです。 実際には、インターフェイスが定義されていると`DependencyService`さまざまなプラットフォームのプロジェクトからそのインターフェイスの適切な実装を検索します。
+`DependencyService` はサービス ロケーターです。 実際には、インターフェイスが定義されており、`DependencyService` ではさまざまなプラットフォームのプロジェクトからそのインターフェイスの適切な実装が検索されます。
 
 > [!NOTE]
-> 既定で、 [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)パラメーターなしのコンス トラクターがあるプラットフォームの実装を唯一の解決になります。 ただし、依存関係の解決方法は、Xamarin.Forms プラットフォームの実装を解決するのには、依存関係注入コンテナーまたはファクトリ メソッドを使用するに挿入することができます。 この方法は、パラメーターを持つコンス トラクターがあるプラットフォームの実装を解決するのには使用できます。 詳細については、次を参照してください。 [Xamarin.Forms での依存関係の解決](~/xamarin-forms/internals/dependency-resolution.md)します。
+> 既定では、パラメーターなしのコンストラクターがあるプラットフォームの実装だけが、[`DependencyService`](xref:Xamarin.Forms.DependencyService) によって解決されます。 ただし、依存関係挿入コンテナーまたはファクトリの方法を使用してプラットフォームの実装を解決する依存関係解決方法を、Xamarin.Forms に挿入することができます。 この方法を使用して、パラメーターがあるコンストラクターを持つプラットフォームの実装を解決できます。 詳しくは、「[Xamarin.Forms での依存関係の解決](~/xamarin-forms/internals/dependency-resolution.md)」をご覧ください。
 
 ## <a name="how-dependencyservice-works"></a>DependencyService のしくみ
 
-Xamarin.Forms アプリが 4 つのコンポーネントを使用する必要がある`DependencyService`:
+Xamarin.Forms アプリで `DependencyService` を使用するには、4 つのコンポーネントが必要です。
 
-- **インターフェイス**&ndash;必要な機能は、共有コードで、インターフェイスによって定義されます。
-- **プラットフォームごとの実装**&ndash;インターフェイスを実装するクラスは、各プラットフォーム プロジェクトに追加する必要があります。
-- **登録**&ndash;を実装する各クラスを登録する必要があります`DependencyService`メタデータ属性を使用しています。 登録有効`DependencyService`を実装するクラスを見つけて、実行時に、インターフェイスの代わりにそれを指定します。
-- **DependencyService を呼び出す**&ndash;を明示的に呼び出すコードの要件に共有`DependencyService`インターフェイスの実装を要求します。
+- **インターフェイス** &ndash; 必要な機能は、共有コード内のインターフェイスによって定義されます。
+- **プラットフォームごとの実装** &ndash; インターフェイスを実装するクラスを、各プラットフォーム プロジェクトに追加する必要があります。
+- **登録** &ndash; メタデータ属性を使用して、各実装クラスを `DependencyService` に登録する必要があります。 登録することにより、`DependencyService` で実装クラスを検出し、実行時にインターフェイスの代わりにそれを提供できるようになります。
+- **DependencyService の呼び出し** &ndash; 共有コードでは、`DependencyService` インターフェイスを明示的に呼び出して、インターフェイスの実装を要求する必要があります。
 
-ソリューション内の各プラットフォーム プロジェクトの実装を指定する必要がありますに注意してください。 実装を含まないプラットフォーム プロジェクトは、実行時に失敗します。
+ソリューション内の各プラットフォーム プロジェクトに対して実装を提供する必要があることに注意してください。 実装のないプラットフォーム プロジェクトは、実行時に失敗します。
 
-アプリケーションの構造は次の図で説明します。
+次の図はアプリケーションの構造を説明したものです。
 
-![](introduction-images/overview-diagram.png "DependencyService アプリケーション構造")
+![](introduction-images/overview-diagram.png "DependencyService アプリケーションの構造")
 
 ### <a name="interface"></a>Interface
 
-インターフェイスを設計するには、プラットフォーム固有の機能と対話する方法を定義します。 コンポーネントまたは NuGet パッケージとして共有されるコンポーネントを開発している場合は注意します。 API の設計では、作成したり、パッケージを中断することができます。 次の例では、読み上げられる、単語を指定するときに柔軟性が各プラットフォーム用にカスタマイズを実装するテキストの読み上げのシンプルなインターフェイスを指定します。
+設計するインターフェイスでは、プラットフォーム固有の機能とやり取りする方法を定義します。 コンポーネントまたは NuGet パッケージとして共有するコンポーネントを開発する場合は注意してください。 API の設計によってパッケージが作成されたり壊れたりする可能性があります。 次の例はテキストを読み上げるシンプルなインターフェイスですが、読み上げる単語を柔軟に指定できるようになっている一方で、実装はプラットフォームごとにカスタマイズできます。
 
 ```csharp
 public interface ITextToSpeech {
@@ -52,7 +52,7 @@ public interface ITextToSpeech {
 
 ### <a name="implementation-per-platform"></a>プラットフォームごとの実装
 
-適切なインターフェイスを設計すると後、は、対象とする各プラットフォーム用のプロジェクトでそのインターフェイスを実装する必要があります。 たとえば、次のクラス実装、 `ITextToSpeech` iOS 上のインターフェイス。
+適切なインターフェイスを設計した後は、対象となるプラットフォームごとのプロジェクトで、そのインターフェイスを実装する必要があります。 たとえば、次のクラスでは、iOS での `ITextToSpeech` インターフェイスが実装されています。
 
 ```csharp
 namespace UsingDependencyService.iOS
@@ -78,7 +78,7 @@ namespace UsingDependencyService.iOS
 
 ### <a name="registration"></a>登録
 
-登録する必要があるインターフェイスの各実装`DependencyService`メタデータ属性を持つ。 次のコードは、iOS の実装を登録します。
+インターフェイスの各実装を、メタデータ属性で `DependencyService` に登録する必要があります。 次のコードでは、iOS 用の実装が登録されます。
 
 ```csharp
 [assembly: Dependency (typeof (TextToSpeech_iOS))]
@@ -88,7 +88,7 @@ namespace UsingDependencyService.iOS
 }
 ```
 
-プラットフォーム固有の実装はすべてをまとめて、ようになります。
+まとめると、プラットフォーム固有の実装は次のようになります。
 
 ```csharp
 [assembly: Dependency (typeof (TextToSpeech_iOS))]
@@ -113,13 +113,13 @@ namespace UsingDependencyService.iOS
 }
 ```
 
-注: 登録をクラス レベルではなく、名前空間レベルで実行されます。
+注: 登録は、クラス レベルではなく名前空間レベルで実行されることに注意してください。
 
 #### <a name="universal-windows-platform-net-native-compilation"></a>ユニバーサル Windows プラットフォームの .NET ネイティブ コンパイル
 
-.NET ネイティブのコンパイル オプションを使用する UWP プロジェクトが従う必要があります、[若干異なる構成](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception)Xamarin.Forms を初期化するときにします。 .NET ネイティブのコンパイルには、依存サービスのための若干異なる登録も必要です。
+.NET ネイティブ コンパイル オプションを使用する UWP プロジェクトでは、Xamarin.Forms を初期化するときに[若干異なる構成](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception)に従う必要があります。 .NET ネイティブ コンパイルでは、依存関係サービスに対する若干異なる登録も必要です。
 
-**App.xaml.cs**ファイルを使用して UWP プロジェクトで定義された各依存関係サービスを手動で登録、`Register<T>`メソッドを次に示すよう。
+次に示すように、**App.xaml.cs** ファイルで `Register<T>` メソッドを使用して、UWP プロジェクトで定義されている各依存関係サービスを手動で登録します。
 
 ```csharp
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
@@ -127,26 +127,26 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 Xamarin.Forms.DependencyService.Register<TextToSpeechImplementation>();
 ```
 
-注: 手動で登録を使用して`Register<T>`リリースでのみ有効なビルド .NET ネイティブ コンパイルを使用します。 依存関係サービスを読み込むには、この行を省略すると、デバッグ ビルドは動作しますが、リリース ビルドは失敗します。
+注: `Register<T>` を使用する手動登録は、.NET ネイティブ コンパイルを使用したリリース ビルドでのみ有効です。 この行を省略した場合、デバッグ ビルドでも動作しますが、リリース ビルドでの依存関係サービスの読み込みが失敗します。
 
-### <a name="call-to-dependencyservice"></a>DependencyService への呼び出し
+### <a name="call-to-dependencyservice"></a>DependencyService を呼び出す
 
-共通のインターフェイスと実装の各プラットフォーム プロジェクトを設定すると、使用して`DependencyService`実行時に適切な実装を取得します。
+共通インターフェイスとプラットフォームごとの実装でプロジェクトを設定した後、実行時には `DependencyService` を使用して適切な実装を取得します。
 
 ```csharp
 DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 ```
 
-`DependencyService.Get<T>` 適切なインターフェイスの実装を見つける`T`します。
+`DependencyService.Get<T>` では、インターフェイス `T` の適切な実装が検索されます。
 
-### <a name="solution-structure"></a>ソリューション構造
+### <a name="solution-structure"></a>ソリューションの構造
 
-[サンプル UsingDependencyService ソリューション](https://developer.xamarin.com/samples/UsingDependencyService/)は iOS および Android 用の次に示す、上記で説明したコードの変更が強調表示されます。
+次に示すのは iOS および Android に対する[サンプルの UsingDependencyService ソリューション](https://developer.xamarin.com/samples/UsingDependencyService/)であり、上で説明したコードの変更が強調表示されています。
 
- [![iOS と Android ソリューション](introduction-images/solution-sml.png "DependencyService サンプルのソリューション構造")](introduction-images/solution.png#lightbox "DependencyService サンプル ソリューションの構造")
+ [![iOS と Android のソリューション](introduction-images/solution-sml.png "DependencyService サンプル ソリューションの構造")](introduction-images/solution.png#lightbox "DependencyService サンプル ソリューションの構造")
 
 > [!NOTE]
-> **する必要があります**プラットフォーム プロジェクトごとに実装を提供します。 インターフェイスの実装が登録されていない場合、`DependencyService`を解決することはできません、`Get<T>()`メソッド実行時にします。
+> すべてのプラットフォーム プロジェクトで実装を提供する**必要があります**。 インターフェイスの実装が登録されていない場合、`DependencyService` では実行時に `Get<T>()` メソッドを解決できません。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,6 +1,6 @@
 ---
-title: デバイスの向きの確認
-description: この記事では、Xamarin.Forms DependencyService クラスを使用して共有コードからデバイスの向きにアクセスする方法について説明します。
+title: デバイスの向きを確認する
+description: この記事では、Xamarin.Forms の DependencyService クラスを使用して、共有コードからデバイスの向きにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5F60975F-47DB-4361-B97C-2290D6F77D2F
 ms.technology: xamarin-forms
@@ -9,33 +9,33 @@ ms.author: dabritch
 ms.date: 08/09/2016
 ms.openlocfilehash: 52b82033cbd6fe0e1a44f5729c815074852230bf
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50115420"
 ---
-# <a name="checking-device-orientation"></a>デバイスの向きの確認
+# <a name="checking-device-orientation"></a>デバイスの向きを確認する
 
-この記事では使用することに送り[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)を各プラットフォームでネイティブ Api を使用して共有コードから、デバイスの方向を確認します。 このチュートリアルは、既存に基づいて`DeviceOrientation`Ali Özgür をプラグインします。 参照してください、 [GitHub リポジトリ](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。
+この記事では、各プラットフォームでネイティブ API を使用して共有コードからデバイスの向きを確認するために、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用する方法を説明します。 このチュートリアルは、Ali Özgür による既存の `DeviceOrientation` プラグインが基になっています。 詳しくは、[GitHub リポジトリ](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)をご覧ください。
 
-- **[インターフェイスを作成する](#Creating_the_Interface)** &ndash;を理解する方法、インターフェイスに共有コードに作成されます。
-- **[iOS 実装](#iOS_Implementation)** &ndash; iOS のネイティブ コードにインターフェイスを実装する方法について説明します。
-- **[Android の実装](#Android_Implementation)** &ndash; Android のネイティブ コードでインターフェイスを実装する方法について説明します。
-- **[UWP 実装](#WindowsImplementation)** &ndash;ユニバーサル Windows プラットフォーム (UWP) のネイティブ コードでインターフェイスを実装する方法について説明します。
-- **[共有コードで実装する](#Implementing_in_Shared_Code)** &ndash;を使用する方法について説明します`DependencyService`共有コードからネイティブの実装を呼び出す。
+- **[インターフェイスの作成](#Creating_the_Interface)** &ndash; 共有コードでインターフェイスを作成する方法を理解します。
+- **[iOS での実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コードでインターフェイスを実装する方法を学習します。
+- **[Android での実装](#Android_Implementation)** &ndash; Android 用のネイティブ コードでインターフェイスを実装する方法を学習します。
+- **[UWP での実装](#WindowsImplementation)** &ndash; ユニバーサル Windows プラットフォーム (UWP) 用のネイティブ コードでインターフェイスを実装する方法を学習します。
+- **[共有コードでの実装](#Implementing_in_Shared_Code)** &ndash; `DependencyService` を使用して共有コードからネイティブ実装を呼び出す方法を学習します。
 
-アプリケーションを使用して、`DependencyService`次の構造になります。
+`DependencyService` を使用するアプリケーションは次のような構造になります。
 
-![](device-orientation-images/orientation-diagram.png "DependencyService アプリケーション構造")
+![](device-orientation-images/orientation-diagram.png "DependencyService アプリケーションの構造")
 
 > [!NOTE]
-> 説明するようデバイスの共有コードは、縦または横方向があるかどうかを検出することは[デバイスの向き](~/xamarin-forms/user-interface/layouts/device-orientation.md#Reacting_to_Changes_in_Orientation)します。 この記事で説明されているメソッドでは、向き、デバイスが上下かどうかなどの詳細を取得するのにネイティブ機能を使用します。
+> 「[デバイスの向き](~/xamarin-forms/user-interface/layouts/device-orientation.md#Reacting_to_Changes_in_Orientation)」に示されているように、デバイスの向きが縦長または横長のどちらになっているかを、共有コードで検出することができます。 この記事で説明する方法では、ネイティブ機能を使用して、デバイスが上下逆かどうかなど、向きについての詳細な情報を取得します。
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
-最初に、共有コードを実装する予定の機能を表すインターフェイスを作成します。 この例では、インターフェイスには、1 つのメソッドが含まれています。
+最初に、実装する機能を表すインターフェイスを共有コードで作成します。 この例では、インターフェイスには 1 つのメソッドが含まれます。
 
 ```csharp
 namespace DependencyServiceSample.Abstractions
@@ -54,16 +54,16 @@ namespace DependencyServiceSample.Abstractions
 }
 ```
 
-共有コードでは、このインターフェイスに対するコーディングで、各プラットフォームでデバイスの向きの Api にアクセスする Xamarin.Forms アプリを許可します。
+共有コードでこのインターフェイスに対してコーディングすると、Xamarin.Forms アプリから各プラットフォームのデバイスの向き API にアクセスできます。
 
 > [!NOTE]
-> インターフェイスを実装するクラスには、パラメーターなしのコンス トラクターを使用する必要があります、`DependencyService`します。
+> インターフェイスを実装するクラスで `DependencyService` を使用するには、パラメーターのないコンストラクターが必要です。
 
 <a name="iOS_Implementation" />
 
-## <a name="ios-implementation"></a>iOS の実装
+## <a name="ios-implementation"></a>iOS での実装
 
-各プラットフォームに固有のアプリケーション プロジェクトでインターフェイスを実装する必要があります。 クラスは、パラメーターなしのコンス トラクターように、`DependencyService`新しいインスタンスを作成できます。
+各プラットフォームに固有のアプリケーション プロジェクトで、インターフェイスを実装する必要があります。 `DependencyService` で新しいインスタンスを作成できるよう、クラスにパラメーターなしのコンストラクターがあることに注意してください。
 
 ```csharp
 using UIKit;
@@ -87,7 +87,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-最後に、この追加`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
+最後に、必要なすべての `using` ステートメントと共に、次の `[assembly]` 属性をクラスの上 (そして、定義されているすべての名前空間の外側) に追加します。
 
 ```csharp
 using UIKit;
@@ -99,13 +99,13 @@ namespace DependencyServiceSample.iOS {
     ...
 ```
 
-この属性の実装としてクラスを登録する、`IDeviceOrientation`インターフェイス、つまり`DependencyService.Get<IDeviceOrientation>`そのインスタンスを作成する共有コードで使用できます。
+この属性では、クラスが `IDeviceOrientation` インターフェイスの実装として登録されます。つまり、共有コードで `DependencyService.Get<IDeviceOrientation>` を使用してそのインスタンスを作成できます。
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android の実装
+## <a name="android-implementation"></a>Android での実装
 
-次のコードで実装`IDeviceOrientation`Android で。
+Android では、次のコードで `IDeviceOrientation` を実装します。
 
 ```csharp
 using DependencyServiceSample.Droid;
@@ -131,7 +131,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-この追加`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
+必要なすべての `using` ステートメントと共に、次の `[assembly]` 属性をクラスの上 (そして、定義されているすべての名前空間の外側) に追加します。
 
 ```csharp
 using DependencyServiceSample.Droid; //enables registration outside of namespace
@@ -142,13 +142,13 @@ namespace DependencyServiceSample.Droid {
     ...
 ```
 
-この属性の実装としてクラスを登録する、`IDeviceOrientaiton`インターフェイス、つまり`DependencyService.Get<IDeviceOrientation>`で使用できる共有コードは、そのインスタンスを作成できます。
+この属性では、クラスが `IDeviceOrientaiton` インターフェイスの実装として登録されます。つまり、共有コードで `DependencyService.Get<IDeviceOrientation>` を使用してそのインスタンスを作成できます。
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームの実装
+## <a name="universal-windows-platform-implementation"></a>ユニバーサル Windows プラットフォームでの実装
 
-次のコードの実装、`IDeviceOrientation`ユニバーサル Windows プラットフォーム上のインターフェイス。
+ユニバーサル Windows プラットフォームでは、次のコードで `IDeviceOrientation` インターフェイスを実装します。
 
 ```csharp
 namespace DependencyServiceSample.WindowsPhone
@@ -171,7 +171,7 @@ namespace DependencyServiceSample.WindowsPhone
 }
 ```
 
-追加、`[assembly]`など必要な属性のクラスの上、定義されている任意の名前空間の外部)`using`ステートメント。
+必要なすべての `using` ステートメントと共に、`[assembly]` 属性をクラスの上 (そして、定義されているすべての名前空間の外側) に追加します。
 
 ```csharp
 using DependencyServiceSample.WindowsPhone; //enables registration outside of namespace
@@ -181,13 +181,13 @@ namespace DependencyServiceSample.WindowsPhone {
     ...
 ```
 
-この属性の実装としてクラスを登録する、`DeviceOrientationImplementation`インターフェイス、つまり`DependencyService.Get<IDeviceOrientation>`で使用できる共有コードは、そのインスタンスを作成できます。
+この属性では、クラスが `DeviceOrientationImplementation` インターフェイスの実装として登録されます。つまり、共有コードで `DependencyService.Get<IDeviceOrientation>` を使用してそのインスタンスを作成できます。
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>共有コードで実装します。
+## <a name="implementing-in-shared-code"></a>共有コードでの実装
 
-記述し、アクセスする共有コードをテストするので、`IDeviceOrientation`インターフェイス。 この単純なページには、デバイスの向きに基づいて、独自のテキストを更新するボタンが含まれています。 使用して、`DependencyService`のインスタンスを取得する、`IDeviceOrientation`インターフェイス&ndash;実行時にこのインスタンスは、ネイティブ SDK へのフル アクセスのあるプラットフォーム固有の実装になります。
+これで、`IDeviceOrientation` インターフェイスにアクセスする共有コードを記述してテストできます。 このシンプルなページには、デバイスの向きに基づいて、それ自体のテキストを更新するボタンが含まれます。 `DependencyService` を使用して、`IDeviceOrientation` インターフェイスのインスタンスを取得します。実行時には、このインスタンスは、ネイティブ SDK にフル アクセスできるプラットフォーム固有の実装になります。
 
 ```csharp
 public MainPage ()
@@ -215,13 +215,13 @@ public MainPage ()
 }
 ```
 
-IOS、Android、または Windows プラットフォームでこのアプリケーションを実行していると、ボタンを押すと、ボタンのテキストの方向の場合、デバイスの更新が発生します。
+iOS、Android、または Windows プラットフォームでこのアプリケーションを実行してボタンを押すと、ボタンのテキストがデバイスの向きで更新されます。
 
-![](device-orientation-images/orientation.png "デバイスの向きのサンプル")
+![](device-orientation-images/orientation.png "デバイスの向きサンプル")
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [DependencyService (サンプル) を使用します。](https://developer.xamarin.com/samples/UsingDependencyService)
+- [DependencyService の使用 (サンプル)](https://developer.xamarin.com/samples/UsingDependencyService)
 - [DependencyService (サンプル)](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/)
 - [Xamarin.Forms のサンプル](https://github.com/xamarin/xamarin-forms-samples)

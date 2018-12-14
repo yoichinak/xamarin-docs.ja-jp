@@ -1,6 +1,6 @@
 ---
-title: Hybridwebview の実装
-description: この記事では、JavaScript から呼び出される c# コードを許可するプラットフォームに固有の web コントロールを強化する方法については、HybridWebView カスタム コントロールのカスタム レンダラーを作成する方法を示します。
+title: HybridWebView の実装
+description: この記事では、HybridWebView カスタム コントロール用のカスタム レンダラーを作成する方法を示します。これにより、プラットフォームに固有の Web コントロールを強化して、JavaScript からの C# コードの呼び出しを実現する方法が示されます。
 ms.prod: xamarin
 ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
@@ -9,36 +9,36 @@ ms.author: dabritch
 ms.date: 10/19/2018
 ms.openlocfilehash: aa060bd16bc0220f6a6026106ff6c8d786daebc1
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50105039"
 ---
-# <a name="implementing-a-hybridwebview"></a>Hybridwebview の実装
+# <a name="implementing-a-hybridwebview"></a>HybridWebView の実装
 
-_Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、レイアウトと画面上のコントロールを配置するために使用するビュー クラスから派生する必要があります。この記事では、JavaScript から呼び出される c# コードを許可するプラットフォームに固有の web コントロールを強化する方法については、HybridWebView カスタム コントロールのカスタム レンダラーを作成する方法を示します。_
+_Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、View クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。この記事では、HybridWebView カスタム コントロール用のカスタム レンダラーを作成する方法を示します。これにより、プラットフォームに固有の Web コントロールを強化して、JavaScript からの C# コードの呼び出しを実現する方法が示されます。_
 
-すべての Xamarin.Forms のビューには、ネイティブ コントロールのインスタンスを作成する各プラットフォームの付属のレンダラーがあります。 ときに、 [ `View` ](xref:Xamarin.Forms.View)で iOS、Xamarin.Forms アプリケーションによって表示される、`ViewRenderer`クラスをインスタンス化がさらにインスタンス化をネイティブ`UIView`コントロール。 Android のプラットフォームで、`ViewRenderer`クラスをインスタンス化、`View`コントロール。 ユニバーサル Windows プラットフォーム (UWP) で、`ViewRenderer`クラスのインスタンスを作成、ネイティブ`FrameworkElement`コントロール。 レンダラーと Xamarin.Forms コントロールにマップするネイティブ コントロール クラスの詳細については、次を参照してください。[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)します。
+すべての Xamarin.Forms ビューには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 [`View`](xref:Xamarin.Forms.View) が Xamarin.Forms アプリケーションによってレンダリングされると、iOS で `ViewRenderer` クラスがインスタンス化され、それによってネイティブの `UIView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`ViewRenderer` クラスによって `View` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ViewRenderer` クラスによってネイティブの `FrameworkElement` コントロールがインスタンス化されます。 Xamarin.Forms コントロールがマップするレンダラーとネイティブ コントロール クラスの詳細については、「[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」を参照してください。
 
-次の図の間のリレーションシップを示しています、 [ `View` ](xref:Xamarin.Forms.View)およびそれを実装するネイティブ コントロールの対応します。
+次の図は、[`View`](xref:Xamarin.Forms.View) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](hybridwebview-images/view-classes.png "ビュー クラスとそのネイティブ クラスの実装間のリレーションシップ")
+![](hybridwebview-images/view-classes.png "View クラスとそれを実装するネイティブ クラス間の関係")
 
-レンダリング プロセスのカスタム レンダラーを作成してプラットフォーム固有のカスタマイズを実装するために使用できます、 [ `View` ](xref:Xamarin.Forms.View)各プラットフォームで。 これを行うためのプロセスは次のとおりです。
+レンダリング プロセスを使用して各プラットフォーム上の [`View`](xref:Xamarin.Forms.View) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
-1. [作成](#Creating_the_HybridWebView)、`HybridWebView`カスタム コントロール。
-1. [消費](#Consuming_the_HybridWebView)、 `HybridWebView`Xamarin.Forms から。
-1. [作成](#Creating_the_Custom_Renderer_on_each_Platform)用のカスタム レンダラー、`HybridWebView`各プラットフォームで。
+1. `HybridWebView` カスタム コントロールを[作成](#Creating_the_HybridWebView)します。
+1. Xamarin.Forms から `HybridWebView` を[使用](#Consuming_the_HybridWebView)します。
+1. 各プラットフォーム上で `HybridWebView` のカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
 
-各項目が実装するためにさらに説明するようになりましたが、`HybridWebView`レンダラーに JavaScript から呼び出される c# コードを許可するプラットフォームに固有の web コントロールを拡張します。 `HybridWebView`インスタンスは、ユーザーの名前を入力するかを確認する HTML ページを表示する使用されます。 次に、ユーザーには、HTML ボタンがクリックすると、JavaScript 関数を呼び出すが、c#`Action`ユーザー名を含むポップアップ ウィンドウを表示します。
+プラットフォーム固有の Web コントロールを強化して、JavaScript から C# コードを呼び出すことができる `HybridWebView` レンダラーを実装するために、各項目について順番に説明します。 `HybridWebView` インスタンスは、ユーザーに名前の入力を求める HTML ページを表示するために使用されます。 それからユーザーが HTML ボタンをクリックすると、JavaScript 関数によって、ユーザー名を含むポップアップを表示する C# `Action` が呼び出されます。
 
-JavaScript から C# で呼び出し元のプロセスに関する詳細については、次を参照してください。[を呼び出す c# から JavaScript](#Invoking_C_from_JavaScript)します。 HTML ページの詳細については、次を参照してください。 [Web ページを作成する](#Creating_the_Web_Page)します。
+JavaScript から C# を呼び出すプロセスの詳細については、「[JavaScript から C# を呼び出す](#Invoking_C_from_JavaScript)」を参照してください。 HTML ページの詳細については、「[Web ページの作成](#Creating_the_Web_Page)」を参照してください。
 
 <a name="Creating_the_HybridWebView" />
 
 ## <a name="creating-the-hybridwebview"></a>HybridWebView の作成
 
-`HybridWebView`をサブクラス化してカスタム コントロールを作成することができます、 [ `View` ](xref:Xamarin.Forms.View)クラスに、次のコード例に示すようにします。
+`HybridWebView` カスタム コントロールは、次のコード例のように、[`View`](xref:Xamarin.Forms.View) クラスをサブクラス化すると作成できます。
 
 ```csharp
 public class HybridWebView : View
@@ -75,18 +75,18 @@ public class HybridWebView : View
 }
 ```
 
-`HybridWebView`カスタム コントロールは、.NET Standard ライブラリ プロジェクトが作成され、コントロールの次の API を定義します。
+`HybridWebView` カスタム コントロールは、.NET Standard ライブラリ プロジェクトで作成され、コントロール用に次の API を定義します。
 
-- A`Uri`読み込まれる web ページのアドレスを指定するプロパティ。
-- A`RegisterAction`を登録するメソッド、`Action`コントロールを使用します。 登録されているアクションを使って参照する HTML ファイルに含まれている JavaScript から呼び出される、`Uri`プロパティ。
-- A`CleanUp`登録への参照を削除するメソッド`Action`します。
-- `InvokeAction`メソッドを呼び出す、登録済み`Action`します。 このメソッドは、各プラットフォーム固有プロジェクトでのカスタム レンダラーから呼び出すされます。
+- 読み込まれる Web ページのアドレスを指定する `Uri` プロパティ。
+- `Action` をコントロールに登録する `RegisterAction` メソッド。 登録済みのアクションは、`Uri` プロパティで参照される HTML ファイルに含まれる JavaScript から呼び出されます。
+- 登録済みの `Action` への参照を削除する `CleanUp` メソッド。
+- 登録済みの `Action` を呼び出す `InvokeAction` メソッド。 このメソッドは、各プラットフォーム固有のプロジェクトのカスタム レンダラーから呼び出されます。
 
 <a name="Consuming_the_HybridWebView" />
 
 ## <a name="consuming-the-hybridwebview"></a>HybridWebView の使用
 
-`HybridWebView`カスタム コントロールで参照できます XAML で .NET Standard ライブラリ プロジェクトの場所の名前空間の宣言して、カスタム コントロールに対する名前空間プレフィックスを使用します。 次のコード例に示す方法、 `HybridWebView` XAML ページで、カスタム コントロールを使用できます。
+`HybridWebView` カスタム コントロールは、その場所の名前空間を宣言し、カスタム コントロール上で名前空間プレフィックスを使用することで .NET Standard ライブラリ プロジェクトの XAML で参照することができます。 次のコード例は、XAML ページがどのように `HybridWebView` カスタム コントロールを使用できるかを示しています。
 
 ```xaml
 <ContentPage ...
@@ -100,9 +100,9 @@ public class HybridWebView : View
 </ContentPage>
 ```
 
-`local`何も名前空間プレフィックスを付けることができます。 ただし、`clr-namespace`と`assembly`値は、カスタム コントロールの詳細と一致する必要があります。 名前空間が宣言されると、プレフィックスを使用して、カスタム コントロールを参照します。
+`local` 名前空間プレフィックスには任意の名前を付けることができます。 ただし、`clr-namespace` と `assembly` の値は、カスタム コントロールの詳細と一致する必要があります。 名前空間が宣言されると、プレフィックスを使用してカスタム コントロールが参照されます。
 
-次のコード例に示す方法、 `HybridWebView` (C#) ページで、カスタム コントロールを使用できます。
+次のコード例は、C# ページがどのように `HybridWebView` カスタム コントロールを使用できるかを示しています。
 
 ```csharp
 public class HybridWebViewPageCS : ContentPage
@@ -121,9 +121,9 @@ public class HybridWebViewPageCS : ContentPage
 }
 ```
 
-`HybridWebView`インスタンスは、各プラットフォームでネイティブの web コントロールの表示に使用されます。 `Uri`プロパティが各プラットフォーム固有プロジェクトに格納されているとは、ネイティブの web コントロールによって表示される HTML ファイルに設定します。 レンダリングされる HTML、c# を呼び出す JavaScript 関数を使用した、名前を入力するユーザーに確認`Action`HTML ボタンのクリックに応答します。
+`HybridWebView` インスタンスは、各プラットフォーム上でネイティブ Web コントロールを表示するために使用されます。 `Uri` プロパティは、各プラットフォーム固有のプロジェクトに格納されている HTML ファイルに設定され、ネイティブの Web コントロールによって表示されます。 レンダリングされた HTML は、HTML ボタンのクリックに応答して C# `Action` を呼び出す JavaScript 関数を使用して、ユーザーに名前を入力するように求めます。
 
-`HybridWebViewPage`の次のコード例に示すように、JavaScript から呼び出されるアクションを登録します。
+`HybridWebViewPage` は、次のコード例に示すように、JavaScript から呼び出されるアクションを登録します。
 
 ```csharp
 public partial class HybridWebViewPage : ContentPage
@@ -136,36 +136,36 @@ public partial class HybridWebViewPage : ContentPage
 }
 ```
 
-この操作を呼び出す、 [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))によって表示される HTML ページで入力した名前を表示するモーダル ポップアップを表示するメソッド、`HybridWebView`インスタンス。
+このアクションから、モーダル ポップアップを表示する [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) メソッドが呼び出されます。このポップアップには、`HybridWebView` インスタンスによって表示される HTML ページに入力された名前が示されます。
 
-カスタム レンダラーは、c# コードを JavaScript から呼び出せるようにすることで、プラットフォーム固有の web コントロールを強化するためには、各アプリケーション プロジェクトを今すぐ追加できます。
+カスタム レンダラーを各アプリケーション プロジェクトに追加して、C# コードを JavaScript から呼び出すことで、プラットフォーム固有の Web コントロールを強化することができます。
 
 <a nane="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォームでのカスタム レンダラーの作成
+## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォーム上でのカスタム レンダラーの作成
 
 カスタム レンダラー クラスを作成するプロセスは次のとおりです。
 
-1. サブクラスを作成、`ViewRenderer<T1,T2>`カスタム コントロールをレンダリングするクラス。 最初の型引数は、この例では、レンダラーでは、カスタム コントロールをする必要があります`HybridWebView`します。 2 番目の型引数が、カスタム ビューを実装するネイティブ コントロールがあります。
-1. 上書き、`OnElementChanged`それをカスタマイズするカスタム コントロールと書き込みロジックをレンダリングするメソッド。 対応する、Xamarin.Forms カスタム コントロールが作成されたときに、このメソッドが呼び出されます。
-1. 追加、`ExportRenderer`属性をカスタム レンダラー クラスは、Xamarin.Forms カスタム コントロールを表示するために使用するように指定します。 この属性は、Xamarin.Forms でのカスタム レンダラーの登録に使用されます。
+1. カスタム コントロールをレンダリングする `ViewRenderer<T1,T2>` クラスのサブクラスを作成します。 最初の型引数は、レンダラーが使用するカスタム コントロール (この場合は `HybridWebView`) にする必要があります。 2 つ目の型引数は、カスタム ビューを実装するネイティブ コントロールにする必要があります。
+1. カスタム コントロールをレンダリングする `OnElementChanged` メソッドをオーバーライドして、ロジックを書き込んでカスタマイズします。 対応する Xamarin.Forms カスタム コントロールが作成されると、このメソッドが呼び出されます。
+1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加して、Xamarin.Forms カスタム コントロールのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用します。
 
 > [!NOTE]
-> ほとんどの Xamarin.Forms 要素では、各プラットフォーム プロジェクトにカスタム レンダラーを提供する省略可能です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、カスタム レンダラー必要は各プラットフォーム プロジェクトに表示するときに、[ビュー](xref:Xamarin.Forms.View)要素。
+> ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、[View](xref:Xamarin.Forms.View) 要素をレンダリングするときは、各プラットフォーム プロジェクトにカスタム レンダラーが必要です。
 
-次の図は、サンプル アプリケーションとそれらの間のリレーションシップ内の各プロジェクトの役割を示します。
+次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
 
-![](hybridwebview-images/solution-structure.png "HybridWebView のカスタム レンダラーのプロジェクトの責任")
+![](hybridwebview-images/solution-structure.png "HybridWebView カスタム レンダラーのプロジェクトの役割")
 
-`HybridWebView`でプラットフォーム固有のレンダラー クラスから派生するカスタム コントロールが表示される、`ViewRenderer`各プラットフォームのクラス。 これは、結果、各`HybridWebView`の次のスクリーン ショットに示すようにプラットフォーム固有の web コントロールと表示されるカスタム コントロール。
+`HybridWebView` カスタム コントロールはプラットフォーム固有のレンダラー クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `ViewRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有の Web コントロールを使用してそれぞれの `HybridWebView` カスタム コントロールがレンダリングされます。
 
-![](hybridwebview-images/screenshots.png "各プラットフォームで HybridWebView")
+![](hybridwebview-images/screenshots.png "各プラットフォーム上の HybridWebView")
 
-`ViewRenderer`クラスでは、`OnElementChanged`メソッドで、Xamarin.Forms カスタム コントロールが、対応するネイティブの web コントロールを表示するために作成されたときに呼び出されます。 このメソッドは、`ElementChangedEventArgs`パラメーターを含む`OldElement`と`NewElement`プロパティ。 これらのプロパティは、Xamarin.Forms 要素を表すをレンダラー*が*に接続されていると Xamarin.Forms 要素をレンダラー*は*に、それぞれに接続されています。 サンプル アプリケーションでは、`OldElement`プロパティになります`null`と`NewElement`プロパティへの参照には、`HybridWebView`インスタンス。
+`ViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ Web コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーが接続して*いた* Xamarin.Forms 要素と、レンダラーが現在接続して*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `HybridWebView` インスタンスへの参照が含まれます。
 
-オーバーライドされたバージョン、`OnElementChanged`各プラットフォームに固有のレンダラー クラスのメソッドは、ネイティブの web コントロールのインスタンス化とカスタマイズを実行する場所。 `SetNativeControl` 、ネイティブの web コントロールをインスタンス化するメソッドを使用する必要があり、このメソッドは、コントロールの参照を割り当てることも、`Control`プロパティ。 さらでレンダリングされている Xamarin.Forms コントロールへの参照を取得できます、`Element`プロパティ。
+各プラットフォーム固有のレンダラー クラス内にある `OnElementChanged` メソッドのオーバーライドされたバージョンは、ネイティブ Web コントロールのインスタンス化とカスタマイズを実行する場所です。 `SetNativeControl` メソッドはネイティブ Web コントロールのインスタンス化に使用されます。このメソッドはまた、コントロール参照を `Control` プロパティに割り当てます。 さらに、レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 
-状況によっては、`OnElementChanged`メソッドは、複数回呼び出すことができます。 そのため、メモリ リークを防ぐためには、注意が必要、新しいネイティブ コントロールをインスタンス化するとき。 カスタム レンダラーで新しいネイティブ コントロールをインスタンス化するときに使用する手法を次のコード例に示します。
+状況によっては、`OnElementChanged` メソッドが複数回呼び出されることがあります。 したがって、メモリ リークを防ぐため、新しいネイティブ コントロールをインスタンス化するときには慎重に行う必要があります。 カスタム レンダラーで新しいネイティブ コントロールをインスタンス化するときに使用する手法を次のコード例に示します。
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<NativeListView> e)
@@ -187,17 +187,17 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーをサブスクライブします。 同様に、レンダラーが関連付けられている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーを登録解除します。 このアプローチを採用すると、メモリ リークが発生しないパフォーマンスの高い、カスタム レンダラーを作成するのに役立ちます。
+新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーをサブスクライブします。 同様に、レンダラーが関連付けられている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーを登録解除します。 この手法を採用すると、メモリ リークが発生しない効率的なカスタム レンダラーを作成できます。
 
-各カスタム レンダラー クラスで修飾された、`ExportRenderer`レンダラーを Xamarin.Forms で登録される属性。 属性は、– 表示するには、Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの種類の名前の 2 つのパラメーターを受け取ります。 `assembly`属性にプレフィックスは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 属性は、レンダリングされている Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの型名の 2 つのパラメーターを取得します。 属性の `assembly` プレフィックスは、属性がアセンブリ全体に適用されることを指定します。
 
-次のセクションでは、各ネイティブ web コントロール、javascript、C# で呼び出し元のプロセス、および各プラットフォームに固有のカスタム レンダラー クラスの実装によって読み込まれた web ページの構造について説明します。
+以下のセクションでは、各ネイティブ Web コントロールによって読み込まれる Web ページの構造、JavaScript から C# を呼び出すプロセス、各プラットフォーム固有のカスタム レンダラー クラスでこれを実装する方法について説明します。
 
 <a name="Creating_the_Web_Page" />
 
-### <a name="creating-the-web-page"></a>Web ページを作成します。
+### <a name="creating-the-web-page"></a>Web ページの作成
 
-次のコード例で表示される web ページを示しています、`HybridWebView`カスタム コントロール。
+次のコード例は、`HybridWebView` カスタム コントロールによって表示される Web ページを示しています。
 
 ```html
 <html>
@@ -231,30 +231,30 @@ function invokeCSCode(data) {
 </html>
 ```
 
-Web ページでは、ユーザーに名前を入力する、`input`要素を示し、`button`がクリックされたときに c# コードを呼び出す要素。 これを実現するためのプロセスは次のとおりです。
+この Web ページでは、ユーザーは `input` 要素に名前を入力することができます。また、クリックすると C# コードを呼び出す`button` 要素が用意されています。 これを実現するプロセスは次のとおりです。
 
-- ユーザーがクリックしたときに、`button`要素、`invokeCSCode`の値を持つ JavaScript 関数を呼び出す、`input`関数に渡された要素。
-- `invokeCSCode`関数呼び出し、 `log` c# に送信するデータを表示する関数`Action`します。 呼び出して、`invokeCSharpAction`メソッドを呼び出すと、C#`Action`から受信したパラメーターを渡して、`input`要素。
+- ユーザーが `button` 要素をクリックすると、`invokeCSCode` JavaScript 関数が呼び出され、`input` 要素の値が関数に渡されます。
+- `invokeCSCode` 関数からは、C# `Action` に送信されているデータを表示する `log` 関数が呼び出されます。 次に、C# `Action` を呼び出す `invokeCSharpAction` メソッドが呼び出され、`input` 要素から受け取ったパラメーターが渡されます。
 
-`invokeCSharpAction`の JavaScript 関数は、web ページで定義されていないと、各カスタム レンダラーによってそこに挿入されます。
+`invokeCSharpAction` JavaScript 関数は Web ページで定義されておらず、各カスタム レンダラーによって挿入されます。
 
 <a name="Invoking_C_from_JavaScript" />
 
-### <a name="invoking-c-from-javascript"></a>C# JavaScript からの呼び出し
+### <a name="invoking-c-from-javascript"></a>JavaScript から C# を呼び出す
 
-JavaScript から C# で呼び出し元のプロセスは、各プラットフォームで同じです。
+JavaScript から C# を呼び出すプロセスは、各プラットフォームで同じです。
 
-- カスタム レンダラーがネイティブの web コントロールを作成しで指定された HTML ファイルを読み込み、`HybridWebView.Uri`プロパティ。
-- カスタム レンダラーを挿入します。 web ページが読み込まれると、 `invokeCSharpAction` web ページに JavaScript 関数。
-- ユーザーがその名前を入力し、HTML のクリックして`button`要素、`invokeCSCode`関数が呼び出される、順番に呼び出します`invokeCSharpAction`関数。
-- `invokeCSharpAction`関数が呼び出すのカスタムのレンダラーでメソッドを呼び出す、`HybridWebView.InvokeAction`メソッド。
-- `HybridWebView.InvokeAction`メソッドは、登録済み`Action`します。
+- カスタム レンダラーによってネイティブ Web コントロールが作成され、`HybridWebView.Uri` プロパティに指定された HTML ファイルが読み込まれます。
+- Web ページが読み込まれると、カスタム レンダラーによって `invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
+- ユーザーが名前を入力して HTML `button` 要素をクリックすると、`invokeCSCode` 関数が呼び出され、次に `invokeCSharpAction` 関数が呼び出されます。
+- `invokeCSharpAction` 関数によってカスタム レンダラーのメソッドが呼び出され、次に `HybridWebView.InvokeAction` メソッドが呼び出されます。
+- 登録済みの `Action` を呼び出す `HybridWebView.InvokeAction` メソッド。
 
-次のセクションでは、各プラットフォームでこのプロセスを実装する方法について説明します。
+以下のセクションでは、各プラットフォームでこのプロセスがどのように実装されるかについて説明します。
 
-### <a name="creating-the-custom-renderer-on-ios"></a>IOS でのカスタム レンダラーの作成
+### <a name="creating-the-custom-renderer-on-ios"></a>iOS 上でのカスタム レンダラーの作成
 
-次のコード例では、iOS プラットフォーム用のカスタム レンダラーを示します。
+次のコード例は、iOS プラットフォーム用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer (typeof(HybridWebView), typeof(HybridWebViewRenderer))]
@@ -299,28 +299,28 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`HybridWebViewRenderer`クラスで指定された web ページの読み込み、`HybridWebView.Uri`プロパティに、ネイティブ[ `WKWebView` ](https://developer.xamarin.com/api/type/WebKit.WKWebView/)コントロール、および`invokeCSharpAction`JavaScript 関数は、web ページに挿入されます。 ユーザーの名前を入力し、HTML をクリックすると`button`要素、 `invokeCSharpAction` JavaScript 関数が実行されると、 `DidReceiveScriptMessage` web ページから、メッセージを受信した後に呼び出されるメソッド。 さらに、このメソッドを呼び出す、`HybridWebView.InvokeAction`メソッドは、ポップアップ ウィンドウを表示する登録されているアクションを呼び出します。
+`HybridWebViewRenderer` クラスによって、`HybridWebView.Uri` プロパティに指定された Web ページがネイティブの [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) コントロールに読み込まれ、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。 ユーザーが名前を入力して HTML `button`要素をクリックすると、`invokeCSharpAction` JavaScript 関数が実行され、Web ページからメッセージが受信された後に `DidReceiveScriptMessage` メソッドが呼び出されます。 さらに、このメソッドによって `HybridWebView.InvokeAction` メソッドが呼び出され、ポップアップを表示する登録済みのアクションが呼び出されます。
 
-この機能は、次のように実現されます。
+この関数は、次のように実現されます。
 
-- されるとき、`Control`プロパティは`null`、次の操作が実行されます。
-  - A [ `WKUserContentController` ](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/)インスタンスを作成すると、メッセージを投稿して、web ページにユーザーのスクリプトを挿入することができます。
-  - A [ `WKUserScript` ](https://developer.xamarin.com/api/type/WebKit.WKUserScript/)インスタンスを作成すると、挿入、 `invokeCSharpAction` web ページが読み込まれた後に、web ページに JavaScript 関数。
-  - [ `WKUserContentController.AddScript` ](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/)メソッドを追加、 [ `WKUserScript` ](https://developer.xamarin.com/api/type/WebKit.WKUserScript/)コンテンツのコント ローラー インスタンス。
-  - [ `WKUserContentController.AddScriptMessageHandler` ](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/)メソッドは、という名前のスクリプト メッセージ ハンドラーを追加します`invokeAction`を、 [ `WKUserContentController` ](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/)により、JavaScript 関数のインスタンス`window.webkit.messageHandlers.invokeAction.postMessage(data)`すべてで定義するには。使用するすべての web ビュー内のフレーム、`WKUserContentController`インスタンス。
-  - A [ `WKWebViewConfiguration` ](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/)インスタンスが作成されると、 [ `WKUserContentController` ](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/)コンテンツのコント ローラーとして設定されているインスタンス。
-  - A [ `WKWebView` ](https://developer.xamarin.com/api/type/WebKit.WKWebView/)コントロールがインスタンス化と`SetNativeControl`メソッドが呼び出されへの参照を割り当てる、`WKWebView`への制御、`Control`プロパティ。
-- カスタム レンダラーが新しい Xamarin.Forms 要素に接続されている提供されています。
-  - [ `WKWebView.LoadRequest` ](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/)メソッドで指定された HTML ファイルの読み込み、`HybridWebView.Uri`プロパティ。 コードでは、ファイルに保存することを指定します、`Content`プロジェクトのフォルダー。 Web ページが表示されたら、 `invokeCSharpAction` JavaScript 関数は、web ページに挿入されます。
-- 要素は、レンダラーが変更にアタッチされている場合。
-  - リソースが解放されます。
+- `Control` プロパティが `null` の場合、次の操作が実行されます。
+  - [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) インスタンスが作成され、メッセージの投稿とユーザー スクリプトの Web ページへの挿入が可能になります。
+  - Web ページが読み込まれた後、`invokeCSharpAction` JavaScript 関数を Web ページに挿入する [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) インスタンスが作成されます。
+  - [`WKUserContentController.AddScript`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/) メソッドによって、コンテンツ コントローラーに [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) インスタンスが追加されます。
+  - [`WKUserContentController.AddScriptMessageHandler`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/) メソッドによって、[`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) インスタンスに `invokeAction` というスクリプト メッセージ ハンドラーが追加されます。その結果、`WKUserContentController` インスタンスを使用するすべての Web ビューのすべてのフレームで JavaScript 関数 `window.webkit.messageHandlers.invokeAction.postMessage(data)` が定義されます。
+  - [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) インスタンスがコンテンツ コントローラーとして設定されている [`WKWebViewConfiguration`](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/) インスタンスが作成されます。
+  - [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) コントロールがインスタンス化され、`WKWebView` コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
+- カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
+  - [`WKWebView.LoadRequest`](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/) メソッドによって、`HybridWebView.Uri` プロパティにより指定されている HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。 Web ページが表示されると、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
+- レンダラーがアタッチされている要素が変更された場合:
+  - リソースがリリースされます。
 
 > [!NOTE]
-> `WKWebView`クラスは iOS 8 以降でのみサポートされます。
+> `WKWebView` クラスは、iOS 8 以降でのみサポートされています。
 
-### <a name="creating-the-custom-renderer-on-android"></a>Android でのカスタム レンダラーの作成
+### <a name="creating-the-custom-renderer-on-android"></a>Android 上でのカスタム レンダラーの作成
 
-次のコード例では、Android プラットフォーム用のカスタム レンダラーを示します。
+次のコード例は、Android プラットフォーム用のカスタム レンダラーを示しています。
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
@@ -363,7 +363,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`HybridWebViewRenderer`クラスで指定された web ページの読み込み、`HybridWebView.Uri`プロパティに、ネイティブ[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)コントロール、および`invokeCSharpAction`後、web ページには、web ページに JavaScript 関数が挿入されます読み込み、完了、`OnPageFinished`で上書き、`JavascriptWebViewClient`クラス。
+`HybridWebViewRenderer` クラスによって、`HybridWebView.Uri` プロパティに指定された Web ページがネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) コントロールに読み込まれます。また、Web ページの読み込みが完了した後に、`JavascriptWebViewClient` クラスの `OnPageFinished` オーバーライドを使用して、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
 
 ```csharp
 public class JavascriptWebViewClient : WebViewClient
@@ -383,19 +383,19 @@ public class JavascriptWebViewClient : WebViewClient
 }
 ```
 
-ユーザーの名前を入力し、HTML のクリックして後`button`要素、 `invokeCSharpAction` JavaScript 関数を実行します。 この機能は、次のように実現されます。
+ユーザーが名前を入力して HTML `button` 要素をクリックすると、`invokeCSharpAction` JavaScript 関数が実行されます。 この関数は、次のように実現されます。
 
-- されるとき、`Control`プロパティは`null`、次の操作が実行されます。
-  - ネイティブ[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)インスタンスが作成されると、コントロールでは、JavaScript が有効になっていると、`JavascriptWebViewClient`の実装としてのインスタンスが設定されて`WebViewClient`します。
-  - `SetNativeControl`メソッドを呼び出して、ネイティブへの参照を代入する[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)への制御、`Control`プロパティ。
-- カスタム レンダラーが新しい Xamarin.Forms 要素に接続されている提供されています。
-  - [ `WebView.AddJavascriptInterface` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/)メソッドを挿入します。 新しい`JSBridge`WebView の JavaScript のコンテキスト、名前のメイン フレームにインスタンス`jsBridge`します。 これにより、メソッドで、 `JSBridge` JavaScript からアクセスするクラス。
-  - [ `WebView.LoadUrl` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/)メソッドで指定された HTML ファイルの読み込み、`HybridWebView.Uri`プロパティ。 コードでは、ファイルに保存することを指定します、`Content`プロジェクトのフォルダー。
-  - `JavascriptWebViewClient`クラス、 `invokeCSharpAction` JavaScript 関数は、ページの読み込みが完了すると、web ページに挿入されます。
-- 要素は、レンダラーが変更にアタッチされている場合。
-  - リソースが解放されます。
+- `Control` プロパティが `null` の場合、次の操作が実行されます。
+  - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) インスタンスが作成され、JavaScript がコントロールで有効になり、`JavascriptWebViewClient` インスタンスが `WebViewClient` の実装として設定されます。
+  - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
+- カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
+  - [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) メソッドによって、新しい `JSBridge` インスタンスが WebView の JavaScript コンテキストのメイン フレームに挿入され、`jsBridge` と名前が付けられます。 これにより、JavaScript から `JSBridge` クラスのメソッドにアクセスできるようになります。
+  - [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) メソッドによって、`HybridWebView.Uri` プロパティに指定された HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。
+  - `JavascriptWebViewClient` クラスでは、Web ページの読み込みが完了すると、`invokeCSharpAction` JavaScript 関数がページに挿入されます。
+- レンダラーがアタッチされている要素が変更された場合:
+  - リソースがリリースされます。
 
-ときに、 `invokeCSharpAction` JavaScript 関数が実行され、さらに呼び出す、`JSBridge.InvokeAction`メソッドは、次のコード例に示されています。
+`invokeCSharpAction` JavaScript 関数が実行されると、次に `JSBridge.InvokeAction` メソッドが呼び出されます。これを次のコード例に示します。
 
 ```csharp
 public class JSBridge : Java.Lang.Object
@@ -421,16 +421,16 @@ public class JSBridge : Java.Lang.Object
 }
 ```
 
-クラスを派生する必要があります`Java.Lang.Object`で修飾する必要がありますが、JavaScript に公開されるメソッドと、`[JavascriptInterface]`と`[Export]`属性。 したがって、ときに、`invokeCSharpAction`は呼び出すことが、JavaScript 関数が web ページには挿入され、実行、`JSBridge.InvokeAction`メソッドで修飾されているため、`[JavascriptInterface]`と`[Export("invokeAction")]`属性。 さらに、`InvokeAction`メソッドを呼び出す、`HybridWebView.InvokeAction`なるには、ポップアップ ウィンドウを表示する登録されているアクションが呼び出されたメソッド。
+このクラスは `Java.Lang.Object` から派生する必要があります。また、JavaScript に公開されるメソッドは `[JavascriptInterface]` および `[Export]` 属性で修飾する必要があります。 そのため、`invokeCSharpAction` JavaScript 関数が Web ページに挿入され、実行されると、`[JavascriptInterface]` および `[Export("invokeAction")]` 属性で修飾されているため、`JSBridge.InvokeAction` メソッドが呼び出されます。 さらに、`InvokeAction` メソッドによって `HybridWebView.InvokeAction` メソッドが呼び出され、ポップアップを表示する登録済みのアクションが呼び出されます。
 
 > [!NOTE]
-> 使用するプロジェクト、`[Export]`属性への参照を含める必要があります`Mono.Android.Export`、またはコンパイラ エラーが発生します。
+> `[Export]` 属性を使用するプロジェクトには、`Mono.Android.Export` への参照が含まれている必要があります。含まれていない場合は、コンパイラ エラーが発生します。
 
-なお、`JSBridge`クラスを保持、`WeakReference`を`HybridWebViewRenderer`クラス。 これは、2 つのクラス間の循環参照を作成しないようにします。 詳細については、次を参照してください。[弱い参照](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx)msdn です。
+`JSBridge` クラスは `WeakReference` を `HybridWebViewRenderer` クラスに保持する点に注意してください。 これは、2 つのクラス間に循環参照を作成しないようにするためです。 詳細については、MSDN の「[弱い参照](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx)」を参照してください。
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>UWP のカスタム レンダラーを作成します。
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP 上でのカスタム レンダラーの作成
 
-次のコード例では、UWP 用のカスタム レンダラーを示します。
+次のコード例は、UWP 用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
@@ -478,24 +478,24 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`HybridWebViewRenderer`クラスで指定された web ページの読み込み、`HybridWebView.Uri`プロパティをネイティブに`WebView`コントロール、および`invokeCSharpAction`JavaScript 関数は、web ページが読み込まれた後、web ページに挿入されますと、`WebView.InvokeScriptAsync`メソッド。 ユーザーの名前を入力し、HTML をクリックすると`button`要素、 `invokeCSharpAction` JavaScript 関数が実行されると、 `OnWebViewScriptNotify` web ページから通知を受信した後に呼び出されるメソッド。 さらに、このメソッドを呼び出す、`HybridWebView.InvokeAction`メソッドは、ポップアップ ウィンドウを表示する登録されているアクションを呼び出します。
+`HybridWebViewRenderer` クラスによって、`HybridWebView.Uri` プロパティに指定された Web ページがネイティブの `WebView` コントロールに読み込まれます。また、Web ページの読み込みが完了した後に、`WebView.InvokeScriptAsync` メソッドを使用して `invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。 ユーザーが名前を入力して HTML `button`要素をクリックすると、`invokeCSharpAction` JavaScript 関数が実行され、Web ページから通知が受信された後に `OnWebViewScriptNotify` メソッドが呼び出されます。 さらに、このメソッドによって `HybridWebView.InvokeAction` メソッドが呼び出され、ポップアップを表示する登録済みのアクションが呼び出されます。
 
-この機能は、次のように実現されます。
+この関数は、次のように実現されます。
 
-- されるとき、`Control`プロパティは`null`、次の操作が実行されます。
-  - `SetNativeControl`メソッドを呼び出して、新しいネイティブのインスタンスを作成する`WebView`制御し、そのにへの参照を割り当てる、`Control`プロパティ。
-- カスタム レンダラーが新しい Xamarin.Forms 要素に接続されている提供されています。
-  - イベント ハンドラー、`NavigationCompleted`と`ScriptNotify`イベントが登録されます。 `NavigationCompleted`イベントを発生させるときに、ネイティブ`WebView`コントロールでは、現在のコンテンツの読み込みが完了したか、ナビゲーションが失敗したかどうか。 `ScriptNotify`イベントを発生させるときに、ネイティブの内容は、`WebView`コントロールでは、JavaScript を使用して、アプリケーションに文字列を渡します。 Web ページが起動、`ScriptNotify`を呼び出してイベント`window.external.notify`渡す、`string`パラメーター。
-  - `WebView.Source`プロパティで指定された HTML ファイルの URI に設定されて、`HybridWebView.Uri`プロパティ。 コード ファイルに保存することを想定しています、`Content`プロジェクトのフォルダー。 Web ページが表示されたら、`NavigationCompleted`イベントが発生し、`OnWebViewNavigationCompleted`メソッドが呼び出されます。 `invokeCSharpAction`し、JavaScript 関数は、web ページに挿入される、`WebView.InvokeScriptAsync`メソッドを提供、ナビゲーションが正常に完了しました。
-- 要素は、レンダラーが変更にアタッチされている場合。
-  - イベントはのサブスクライブが解除されます。
+- `Control` プロパティが `null` の場合、次の操作が実行されます。
+  - `SetNativeControl` メソッドは、新しいネイティブの `WebView` コントロールをインスタンス化し、それに対する参照を `Control` プロパティに割り当てるために呼び出されます。
+- カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
+  - `NavigationCompleted` および `ScriptNotify` イベントのイベント ハンドラーが登録されています。 `NavigationCompleted` イベントは、ネイティブの `WebView` コントロールが現在のコンテンツの読み込みを完了したとき、またはナビゲーションが失敗したときに発生します。 `ScriptNotify`イベントは、ネイティブの `WebView` コントロールのコンテンツが JavaScript を使用して文字列をアプリケーションに渡したときに発生します。 Web ページは、`string` パラメーターを渡しながら `window.external.notify` を呼び出して `ScriptNotify` イベントを発生させます。
+  - `WebView.Source` プロパティは、`HybridWebView.Uri` プロパティに指定された HTML ファイルの URI に設定されます。 このコードでは、ファイルがプロジェクトの `Content` フォルダーに格納されることを想定しています。 Web ページが表示されると、`NavigationCompleted` イベントが発生し、`OnWebViewNavigationCompleted` メソッドが呼び出されます。 ナビゲーションが正常に完了した場合、`WebView.InvokeScriptAsync` メソッドを使用して `invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
+- レンダラーがアタッチされている要素が変更された場合:
+  - イベントの登録が解除されます。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、用のカスタム レンダラーを作成する方法を示しましたが、 `HybridWebView` JavaScript から呼び出される c# コードを許可するプラットフォームに固有の web コントロールを強化する方法については、カスタム コントロール。
+この記事では、`HybridWebView` カスタム コントロール用のカスタム レンダラーを作成する方法を説明し、プラットフォームに固有の Web コントロールを強化して、JavaScript からの C# コードの呼び出しを実現する方法を示しました。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [CustomRendererHybridWebView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
-- [JavaScript から呼び出す (C#)](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
+- [JavaScript から C# を呼び出す](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
