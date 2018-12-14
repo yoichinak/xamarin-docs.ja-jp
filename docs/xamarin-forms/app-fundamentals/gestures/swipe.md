@@ -1,6 +1,6 @@
 ---
-title: スワイプ ジェスチャ認識エンジンを追加します。
-description: この記事では、ビューで発生してスワイプ ジェスチャを認識する方法について説明します。
+title: スワイプ ジェスチャ認識エンジンの追加
+description: この記事では、ビューで発生したスワイプ ジェスチャを認識する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 08/14/2018
 ms.openlocfilehash: 95e95d8849824cd2dc31c2019627cc5adbbefeec
 ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50131526"
 ---
-# <a name="adding-a-swipe-gesture-recognizer"></a>スワイプ ジェスチャ認識エンジンを追加します。
+# <a name="adding-a-swipe-gesture-recognizer"></a>スワイプ ジェスチャ認識エンジンの追加
 
-_スワイプ ジェスチャでは、指を水平または垂直方向で画面に移動しは多くの場合、コンテンツ ナビゲーションを開始するために使用するときに発生します。この記事のコード例がから取得した、[スワイプ ジェスチャ](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/)サンプル。_
+_スワイプ ジェスチャが発生するのは、指が画面に沿って水平または垂直方向に動かされたときで、多くの場合コンテンツのナビゲーションを開始するために使われます。この記事のコード例は、[Swipe Gesture](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/SwipeGesture/) サンプルから取得されています。_
 
-させる、 [ `View` ](xref:Xamarin.Forms.View)をスワイプ ジェスチャを認識して、作成、 [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)インスタンスは、設定、 [ `Direction` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction)プロパティを[ `SwipeDirection`](xref:Xamarin.Forms.SwipeDirection)列挙値 (`Left`、 `Right`、 `Up`、または`Down`)、必要に応じて設定されて、 [ `Threshold` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold)プロパティ、ハンドル、 [ `Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)イベントに新しいジェスチャ レコグナイザーを追加し、 [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)ビューのコレクション。 次のコード例は、`SwipeGestureRecognizer`にアタッチされている、 [ `BoxView` ](xref:Xamarin.Forms.BoxView):
+[`View`](xref:Xamarin.Forms.View) にスワイプ ジェスチャを認識させるには、[`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) インスタンスを作成し、[`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) プロパティに [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 列挙値 (`Left`、`Right`、`Up`、または `Down`) を設定し、必要に応じて [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) プロパティを設定し、[`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) イベントを処理して、新しいジェスチャ認識エンジンをビューの [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 次に示すコード例は、[`BoxView`](xref:Xamarin.Forms.BoxView) に関連付けられている `SwipeGestureRecognizer` です。
 
 ```xaml
 <BoxView Color="Teal" ...>
@@ -28,7 +28,7 @@ _スワイプ ジェスチャでは、指を水平または垂直方向で画面
 </BoxView>
 ```
 
-ここでは、相当C#コード。
+次に示すのは、同等の C# コードです。
 
 ```csharp
 var boxView = new BoxView { Color = Color.Teal, ... };
@@ -38,23 +38,23 @@ leftSwipeGesture.Swiped += OnSwiped;
 boxView.GestureRecognizers.Add(leftSwipeGesture);
 ```
 
-[ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)クラスも含まれます、 [ `Threshold` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold)を必要に応じて設定できるプロパティ、`uint`達成する必要があります最小スワイプの距離を表す値をデバイスに依存しない単位で認識されるようにスワイプします。 このプロパティの既定値は、100、100 未満のデバイスに依存しない単位は無視されますが、任意のスワイプのといったことを意味します。
+[`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) クラスには [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) プロパティも含まれています。このプロパティには、必要に応じて、スワイプが認識されるために必要な最小スワイプ距離を表す、デバイスに依存しない単位の `uint` 値を設定できます。 このプロパティの既定値は 100 で、これはデバイスに依存しない単位で 100 未満のスワイプは無視されることを意味します。
 
-## <a name="recognizing-the-swipe-direction"></a>スワイプ方向を認識します。
+## <a name="recognizing-the-swipe-direction"></a>スワイプの方向を認識する
 
-上記の例では、 [ `Direction` ](xref:Xamarin.Forms.SwipedEventArgs.Direction)プロパティから値を 1 つに設定されて、 [ `SwipeDirection` ](xref:Xamarin.Forms.SwipeDirection)列挙体。 ただし、このプロパティから複数の値を設定することがも、`SwipeDirection`列挙型、ように、 [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)イベントが複数の一方向のスワイプへの応答で発生します。 ただしの制約は、1 つ[ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)同じ軸上のみ発生するカードを認識できます。 設定してそのため、水平軸上で発生するカードを認識できる、`Direction`プロパティを`Left`と`Right`:
+上の例では、[`Direction`](xref:Xamarin.Forms.SwipedEventArgs.Direction) プロパティに [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 列挙型の 1 つの値が設定されています。 ただし、このプロパティに `SwipeDirection` 列挙型の複数の値を設定し、複数の方向のスワイプに対して [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) イベントが生成されるようにすることもできます。 ただし、1 つの [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) では同じ軸上で発生するスワイプしか認識できないという制約があります。 したがって、水平軸上で発生するスワイプは、`Direction` プロパティに `Left` と `Right` を設定することによって認識できます。
 
 ```xaml
 <SwipeGestureRecognizer Direction="Left,Right" Swiped="OnSwiped"/>
 ```
 
-同様を設定して、垂直軸上で発生するカードを認識できる、 [ `Direction` ](xref:Xamarin.Forms.SwipedEventArgs.Direction)プロパティを`Up`と`Down`:
+同様に、垂直軸上で発生するスワイプは、[`Direction`](xref:Xamarin.Forms.SwipedEventArgs.Direction) プロパティに `Up` と `Down` を設定することによって認識できます。
 
 ```csharp
 var swipeGesture = new SwipeGestureRecognizer { Direction = SwipeDirection.Up | SwipeDirection.Down };
 ```
 
-または、 [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)を各方向にスワイプといったを認識する各スワイプの方向を作成することができます。
+または、各スワイプ方向に対する [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) を作成すると、すべての方向のスワイプを認識することができます。
 
 ```xaml
 <BoxView Color="Teal" ...>
@@ -67,7 +67,7 @@ var swipeGesture = new SwipeGestureRecognizer { Direction = SwipeDirection.Up | 
 </BoxView>
 ```
 
-ここでは、相当C#コード。
+次に示すのは、同等の C# コードです。
 
 ```csharp
 var boxView = new BoxView { Color = Color.Teal, ... };
@@ -87,11 +87,11 @@ boxView.GestureRecognizers.Add(downSwipeGesture);
 ```
 
 > [!NOTE]
-> 上記の例では、同じイベント ハンドラーに応答する、 [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)イベントの発生します。 ただし、各[ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)必要に応じて、インスタンスが別のイベント ハンドラーを使用できます。
+> 上の例では、[`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) イベントの発生に対して同じイベント ハンドラーが応答します。 ただし、各 [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) インスタンスでは、必要に応じて、異なるイベント ハンドラーを使用できます。
 
-## <a name="responding-to-the-swipe"></a>スワイプへの応答
+## <a name="responding-to-the-swipe"></a>スワイプに応答する
 
-イベント ハンドラー、 [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)イベントが次の例で示すようにします。
+次の例では、[`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) イベントに対するイベント ハンドラーを示します。
 
 ```csharp
 void OnSwiped(object sender, SwipedEventArgs e)
@@ -114,11 +114,11 @@ void OnSwiped(object sender, SwipedEventArgs e)
 }
 ```
 
-[ `SwipedEventArgs` ](xref:Xamarin.Forms.SwipedEventArgs)調べる必要に応じてスワイプに応答してカスタム ロジックを持つ、スワイプの方向を判断することができます。 スワイプの方向を取得できます、 [ `Direction` ](xref:Xamarin.Forms.SwipedEventArgs.Direction)プロパティの値のいずれかに設定されるイベント引数の[ `SwipeDirection` ](xref:Xamarin.Forms.SwipeDirection)列挙体。 さらに、イベントの引数もある、 [ `Parameter` ](xref:Xamarin.Forms.SwipedEventArgs.Parameter)プロパティの値に設定される、 [ `CommandParameter` ](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter)プロパティで定義されている場合。
+[`SwipedEventArgs`](xref:Xamarin.Forms.SwipedEventArgs) を調べることでスワイプの方向を特定し、必要に応じてカスタム ロジックでスワイプに応答できます。 スワイプの方向は、イベント引数の [`Direction`](xref:Xamarin.Forms.SwipedEventArgs.Direction) プロパティから取得できます。このプロパティには、[`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 列挙型の値のいずれかが設定されます。 さらに、イベント引数には [`Parameter`](xref:Xamarin.Forms.SwipedEventArgs.Parameter) プロパティもあり、[`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) プロパティ (定義されている場合) の値が設定されます。
 
-## <a name="using-commands"></a>コマンドを使用します。
+## <a name="using-commands"></a>コマンドを使用する
 
-[ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)クラスも含まれています。 [ `Command` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Command)と[ `CommandParameter` ](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter)プロパティ。 通常、これらのプロパティは、モデル-ビュー-ビューモデル (MVVM) パターンを使用するアプリケーションで使用されます。 `Command`プロパティを定義、`ICommand`スワイプ ジェスチャを認識すると、ときに呼び出されると、`CommandParameter`に渡されるオブジェクトを定義するプロパティ、`ICommand.`次のコード例は、バインドする方法を示しています、 `Command`プロパティを`ICommand`ページとして設定すると、インスタンスをビュー モデルで定義されている[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext):
+[`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) クラスには、[`Command`](xref:Xamarin.Forms.SwipeGestureRecognizer.Command) プロパティと [`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) プロパティも含まれています。 通常、これらのプロパティは、Model-View-ViewModel (MVVM) パターンを使用するアプリケーションで使用されます。 `Command` プロパティではスワイプ ジェスチャが認識されたときに呼び出される `ICommand` が定義されており、`CommandParameter` プロパティでは `ICommand.` プロパティに渡されるオブジェクトが定義されています。次のコード例では、インスタンスがページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) として設定されているビュー モデルで定義されている `ICommand` に `Command` プロパティをバインドする方法が示されています。
 
 ```csharp
 var boxView = new BoxView { Color = Color.Teal, ... };
@@ -127,7 +127,7 @@ leftSwipeGesture.SetBinding(SwipeGestureRecognizer.CommandProperty, "SwipeComman
 boxView.GestureRecognizers.Add(leftSwipeGesture);
 ```
 
-同等の XAML コードに示します。
+同等の XAML コードを次に示します。
 
 ```xaml
 <BoxView Color="Teal" ...>
@@ -137,11 +137,11 @@ boxView.GestureRecognizers.Add(leftSwipeGesture);
 </BoxView>
 ```
 
-`SwipeCommand` 型のプロパティは、`ICommand`ページとして設定されているビュー モデルのインスタンスで定義されている[ `BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)します。 スワイプ ジェスチャが認識される、`Execute`のメソッド、`SwipeCommand`オブジェクトが実行されます。 引数、`Execute`メソッドの値である、 [ `CommandParameter` ](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter)プロパティ。 コマンドの詳細については、次を参照してください。 [、のコマンド インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)します。
+`SwipeCommand` は、ページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) として設定されているビュー モデルのインスタンスで定義されている `ICommand` 型のプロパティです。 スワイプ ジェスチャが認識されると、`SwipeCommand` オブジェクトの `Execute` メソッドが実行されます。 `Execute` メソッドへの引数は、[`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) プロパティの値です。 コマンドについて詳しくは、[コマンド インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)に関するページをご覧ください。
 
-## <a name="creating-a-swipe-container"></a>スワイプ コンテナーを作成します。
+## <a name="creating-a-swipe-container"></a>スワイプ コンテナーを作成する
 
-`SwipeContainer` 、次のコード例に示すクラスは、ある一般化されたスワイプ認識クラスにラップされる、 [ `View` ](xref:Xamarin.Forms.View)スワイプ ジェスチャ認識を実行します。
+次のコード例で示されている `SwipeContainer` クラスは、スワイプ ジェスチャの認識を実行するために [`View`](xref:Xamarin.Forms.View) にラップされる一般化されたスワイプ認識クラスです。
 
 ```csharp
 public class SwipeContainer : ContentView
@@ -165,9 +165,9 @@ public class SwipeContainer : ContentView
 }
 ```
 
-`SwipeContainer`クラスを作成します[ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)オブジェクトに対するすべての 4 つのスワイプ方向とアタッチ`Swipe`イベント ハンドラー。 これらのイベント ハンドラーを呼び出す、`Swipe`によって定義されたイベント、`SwipeContainer`します。
+`SwipeContainer` クラスでは、4 つのスワイプ方向すべてに対して [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) オブジェクトが作成されて、`Swipe` イベント ハンドラーが関連付けられます。 これらのイベント ハンドラーでは、`SwipeContainer` によって定義されている `Swipe` イベントが呼び出されます。
 
-次の XAML コード例は、`SwipeContainer`クラスの折り返し、 [ `BoxView` ](xref:Xamarin.Forms.BoxView):
+次に示すのは、[`BoxView`](xref:Xamarin.Forms.BoxView) をラップしている `SwipeContainer` クラスの XAML コード例です。
 
 ```xaml
 <ContentPage ...>
@@ -179,7 +179,7 @@ public class SwipeContainer : ContentView
 </ContentPage>
 ```
 
-次のコード例に示す方法、`SwipeContainer`ラップ、 [ `BoxView` ](xref:Xamarin.Forms.BoxView)で、C#ページ。
+次に示すコードは、C# ページにおいて `SwipeContainer` で [`BoxView`](xref:Xamarin.Forms.BoxView) をラップする方法の例です。
 
 ```csharp
 public class SwipeContainerPageCS : ContentPage
@@ -201,7 +201,7 @@ public class SwipeContainerPageCS : ContentPage
 }
 ```
 
-ときに、 [ `BoxView` ](xref:Xamarin.Forms.BoxView) 、スワイプ ジェスチャを受け取る、 [ `Swiped` ](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped)内のイベント、 [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer)が発生します。 これによって処理されますが、`SwipeContainer`クラスは、独自に発生する`Swipe`イベント。 これは、`Swipe`ページでイベントを処理します。 [ `SwipedEventArgs` ](xref:Xamarin.Forms.SwipedEventArgs)必要に応じてスワイプに応答してカスタム ロジックを持つ、スワイプの方向を決定する、この方法を調査することができます。
+[`BoxView`](xref:Xamarin.Forms.BoxView) がスワイプ ジェスチャを受け取ると、[`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) で [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) イベントが生成されます。 これは `SwipeContainer` クラスによって処理され、クラスで独自の `Swipe` イベントが生成されます。 この `Swipe` イベントは、ページで処理されます。 その後、[`SwipedEventArgs`](xref:Xamarin.Forms.SwipedEventArgs) を調べることでスワイプの方向を特定し、必要に応じてカスタム ロジックでスワイプに応答できます。
 
 ## <a name="related-links"></a>関連リンク
 

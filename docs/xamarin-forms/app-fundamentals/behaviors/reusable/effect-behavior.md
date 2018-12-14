@@ -1,6 +1,6 @@
 ---
 title: 再利用可能な EffectBehavior
-description: ビヘイビアーとは、処理の分離コード ファイルからコード ボイラー プレート効果を削除するコントロールに効果を追加するために役立つアプローチです。 この記事では、作成および使用をコントロールに効果を追加する Xamarin.Forms の動作を示します。
+description: ビヘイビアーは、コントロールにエフェクトを追加するために役立つ方法です。エフェクトを処理する定型コードを分離コード ファイルから削除します。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、コントロールにエフェクトを追加する方法を示します。
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
@@ -9,36 +9,36 @@ ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 2696f0103ce1aa969039c982fb9b82f89b37811e
 ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
 ms.locfileid: "50911594"
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
-_ビヘイビアーとは、処理の分離コード ファイルからコード ボイラー プレート効果を削除するコントロールに効果を追加するために役立つアプローチです。この記事では、作成および使用をコントロールに効果を追加する Xamarin.Forms の動作を示します。_
+_ビヘイビアーは、コントロールにエフェクトを追加するために役立つ方法です。エフェクトを処理する定型コードを分離コード ファイルから削除します。この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、コントロールにエフェクトを追加する方法を示します。_
 
 ## <a name="overview"></a>概要
 
-`EffectBehavior`クラスは、再利用可能な Xamarin.Forms カスタム動作を追加する、 [ `Effect` ](xref:Xamarin.Forms.Effect)動作がコントロールにアタッチされているし、削除するときのコントロールのインスタンス、`Effect`インスタンスの場合、動作は、コントロールからデタッチします。
+`EffectBehavior` クラスは再利用可能な Xamarin.Forms カスタム ビヘイビアーであり、このビヘイビアーがコントロールにアタッチされるとき、コントロールに [`Effect`](xref:Xamarin.Forms.Effect) インスタンスを追加し、コントロールからデタッチされるとき、`Effect` インスタンスを削除します。
 
-動作を使用する次の動作のプロパティを設定する必要があります。
+ビヘイビアーを使用するには、次のビヘイビアー プロパティを設定する必要があります。
 
-- **グループ**– の値、 [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute)効果クラスの属性。
-- **名前**– の値、 [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)効果クラスの属性。
+- **グループ** – エフェクト クラスの [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性の値。
+- **名前** – エフェクト クラスの [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性の値。
 
-影響の詳細については、次を参照してください。[効果](~/xamarin-forms/app-fundamentals/effects/index.md)します。
+エフェクトの詳細については、[エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)に関するページを参照してください。
 
 > [!NOTE]
-> `EffectBehavior`カスタム クラスに配置することですが、[効果の動作のサンプル](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)Xamarin.Forms の一部でないとします。
+> `EffectBehavior` は、[エフェクト ビヘイビアー サンプル](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)に配置できるカスタム クラスであり、Xamarin.Forms の一部ではありません。
 
-## <a name="creating-the-behavior"></a>動作を作成します。
+## <a name="creating-the-behavior"></a>ビヘイビアーの作成
 
-`EffectBehavior`クラスから派生、 [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)クラス、`T`は、 [ `View`](xref:Xamarin.Forms.View)します。 つまり、`EffectBehavior`クラスは、Xamarin.Forms コントロールに関連付けることができます。
+`EffectBehavior` クラスは [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生します。`T` は [`View`](xref:Xamarin.Forms.View) です。 つまり、`EffectBehavior` クラスはあらゆる Xamarin.Forms コントロールにアタッチできます。
 
-### <a name="implementing-bindable-properties"></a>バインド可能なプロパティを実装します。
+### <a name="implementing-bindable-properties"></a>バインド可能プロパティの実装
 
-`EffectBehavior`クラスは、2 つ定義[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)インスタンスで、追加するために使用、 [ `Effect` ](xref:Xamarin.Forms.Effect)動作がコントロールに関連付けられている場合、コントロールにします。 これらのプロパティは次のコード例に示します。
+`EffectBehavior` クラスによって 2 つの [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) インスタンスが定義されます。これはビヘイビアーがコントロールにアタッチされるときにコントロールに [`Effect`](xref:Xamarin.Forms.Effect) を追加する目的で使用されます。 これらのプロパティを次のコード例に示します。
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -61,11 +61,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-ときに、`EffectBehavior`が使用されて、`Group`プロパティの値に設定する必要があります、 [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute)効果の属性。 さらに、`Name`プロパティの値に設定する必要があります、 [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)効果クラスの属性。
+`EffectBehavior` が使用されるとき、`Group` プロパティをエフェクトの [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性の値に設定する必要があります。 また、`Name` プロパティをエフェクト クラスの [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性の値に設定する必要があります。
 
-### <a name="implementing-the-overrides"></a>オーバーライドを実装します。
+### <a name="implementing-the-overrides"></a>オーバーライドの実装
 
-`EffectBehavior`オーバーライド、 [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))と[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))のメソッド、 [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)次のコードに示すように、クラス例:
+次のコード例に示すように、[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスの [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドと [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドは `EffectBehavior` クラスによってオーバーライドされます。
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -86,11 +86,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))メソッドを呼び出してセットアップを実行します、`AddEffect`メソッド パラメーターとして接続されているコントロール。 [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))メソッドを呼び出してクリーンアップを実行します、`RemoveEffect`メソッド パラメーターとして接続されているコントロール。
+[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドでは、`AddEffect` メソッドを呼び出してセットアップが実行され、アタッチされているコントロールがパラメーターとして渡されます。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`RemoveEffect` メソッドを呼び出してクリーンアップが実行され、アタッチされているコントロールがパラメーターとして渡されます。
 
-### <a name="implementing-the-behavior-functionality"></a>動作の機能を実装します。
+### <a name="implementing-the-behavior-functionality"></a>ビヘイビアー機能の実装
 
-動作の目的は、追加する、 [ `Effect` ](xref:Xamarin.Forms.Effect)で定義されている、`Group`と`Name`動作がコントロールに接続され、削除を制御するプロパティが、`Effect`動作の場合コントロールからデタッチします。 動作のコア機能は、次のコード例に示されます。
+ビヘイビアーの目的は、ビヘイビアーがコントロールにアタッチされるとき、`Group` プロパティと `Name` プロパティで定義されている [`Effect`](xref:Xamarin.Forms.Effect) をコントロールに追加し、ビヘイビアーがコントロールからデタッチされるとき、`Effect` を削除することです。 ビヘイビアーの主な機能を次のコード例に示します。
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -122,13 +122,13 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-`AddEffect`への応答でメソッドが実行される、`EffectBehavior`パラメーターとして接続されているコントロールを受信して、コントロールにアタッチされます。 メソッドは、コントロールの取得の効果を追加する、 [ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション。 `RemoveEffect`への応答でメソッドが実行される、`EffectBehavior`パラメーターとして接続されているコントロールを受け取ると、コントロールからデタッチされています。 メソッドは、コントロールから効果を削除する、 [ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション。
+コントロールにアタッチされている `EffectBehavior` に応答して `AddEffect` メソッドが実行されます。このメソッドでは、アタッチされているコントロールがパラメーターとして受け取られます。 次に、このメソッドによって、取得したエフェクトがコントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに追加されます。 コントロールからデタッチされている `EffectBehavior` に応答して `RemoveEffect` メソッドが実行されます。このメソッドでは、アタッチされているコントロールがパラメーターとして受け取られます。 次に、このメソッドによって、コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションからエフェクトが削除されます。
 
-`GetEffect`メソッドは、 [ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String))を取得するメソッド、 [ `Effect`](xref:Xamarin.Forms.Effect)します。 この効果の連結を使用して検索、`Group`と`Name`プロパティの値。 プラットフォームは、効果に備わっていない場合、`Effect.Resolve`メソッドは以外`null`値。
+`GetEffect` メソッドでは、[`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) メソッドを使用して [`Effect`](xref:Xamarin.Forms.Effect) が取得されます。 エフェクトは、`Group` プロパティ値と `Name` プロパティ値の連結によって配置されます。 プラットフォームでエフェクトが提供されない場合、`Effect.Resolve` メソッドでは、`null` 以外の値が返されます。
 
-## <a name="consuming-the-behavior"></a>動作の使用
+## <a name="consuming-the-behavior"></a>ビヘイビアーの使用
 
-`EffectBehavior`クラスに接続できる、 [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors)次の XAML コード例のように、コントロールのコレクション。
+次の XAML コード例に示すように、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションに `EffectBehavior` クラスをアタッチできます。
 
 ```xaml
 <Label Text="Label Shadow Effect" ...>
@@ -151,22 +151,22 @@ label.Behaviors.Add (new EffectBehavior {
 });
 ```
 
-`Group`と`Name`動作のプロパティの値に設定されます、 [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute)と[ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)効果クラスは、各プラットフォームに固有の属性プロジェクトです。
+ビヘイビアーの `Group` プロパティと `Name` プロパティは、プラットフォーム固有のプロジェクトごとに、エフェクト クラスの [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性と [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性の値に設定されます。
 
-動作が関連付けられている場合、実行時に、 [ `Label` ](xref:Xamarin.Forms.Label)コントロール、`Xamarin.LabelShadowEffect`をコントロールの追加は[ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション。 によって表示されるテキストに追加されるシャドウでこの結果、`Label`コントロールが次のスクリーン ショットに示すようにします。
+実行時、ビヘイビアーが [`Label`](xref:Xamarin.Forms.Label) コントロールにアタッチされていると、コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに `Xamarin.LabelShadowEffect` が追加されます。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストにシャドウが追加されます。
 
-![](effect-behavior-images/screenshots.png "EffectsBehavior でサンプル アプリケーション")
+![](effect-behavior-images/screenshots.png "EffectsBehavior を含むサンプル アプリケーション")
 
-この動作を追加およびコントロールから効果を削除するを使用する利点は、ボイラー プレート効果処理コードを分離コード ファイルから削除できることです。
+このビヘイビアーを使用してコントロールとの間でエフェクトを追加/削除することの長所は、エフェクトを処理する定型コードを分離コード ファイルから削除できることです。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、コントロールに効果を追加する動作を使用して示されています。 `EffectBehavior`クラスは、再利用可能な Xamarin.Forms カスタム動作を追加する、 [ `Effect` ](xref:Xamarin.Forms.Effect)動作がコントロールにアタッチされているし、削除するときのコントロールのインスタンス、`Effect`インスタンスの場合、動作は、コントロールからデタッチします。
+この記事では、ビヘイビアーを使用してエフェクトをコントロールに追加しました。 `EffectBehavior` クラスは再利用可能な Xamarin.Forms カスタム ビヘイビアーであり、このビヘイビアーがコントロールにアタッチされるとき、コントロールに [`Effect`](xref:Xamarin.Forms.Effect) インスタンスを追加し、コントロールからデタッチされるとき、`Effect` インスタンスを削除します。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [動作の効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
-- [動作](xref:Xamarin.Forms.Behavior)
-- [動作<T>](xref:Xamarin.Forms.Behavior`1)
+- [エフェクト ビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+- [Behavior](xref:Xamarin.Forms.Behavior)
+- [Behavior<T>](xref:Xamarin.Forms.Behavior`1)

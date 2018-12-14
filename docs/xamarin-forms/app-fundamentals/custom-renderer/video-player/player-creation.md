@@ -1,5 +1,5 @@
 ---
-title: Platform video player の作成
+title: プラットフォーム ビデオ プレーヤーの作成
 description: この記事では、Xamarin.Forms を使用して、各プラットフォームでビデオ プレーヤーのカスタム レンダラーを実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
@@ -9,18 +9,18 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 0090ec798e8d7b1dfb9bd8e25f09d71ec0353b45
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171912"
 ---
-# <a name="creating-the-platform-video-players"></a>Platform video player の作成
+# <a name="creating-the-platform-video-players"></a>プラットフォーム ビデオ プレーヤーの作成
 
-[ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)ソリューションには、Xamarin.Forms 用ビデオ プレーヤーを実装するすべてのコードが含まれています。 アプリケーション内で、ビデオ プレーヤーを使用する方法については、一連のページも含まれています。 すべての`VideoPlayer`コードとそのプラットフォーム レンダラーという名前のプロジェクト フォルダーに存在する`FormsVideoLibrary`、名前空間を使用しても、`FormsVideoLibrary`します。 これは、ため、簡単に独自のアプリケーションに、ファイルをコピーし、クラスを参照するする必要があります。
+[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) ソリューションには、Xamarin.Forms 用のビデオ プレーヤーを実装するためのコードが含まれます。 また、アプリケーション内でビデオ プレーヤーを使用する方法を示す一連のページも含まれます。 `VideoPlayer` コードとそのプラットフォーム レンダラーはすべて、`FormsVideoLibrary` という名前のプロジェクト フォルダー内にあり、名前空間 `FormsVideoLibrary` も使用します。 このため、自身のアプリケーションへのファイルのコピーも、クラスの参照も簡単に行うことができます。
 
 ## <a name="the-video-player"></a>ビデオ プレーヤー
 
-[ `VideoPlayer` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs)クラスの一部である、 **VideoPlayerDemos**プラットフォーム間で共有されている .NET Standard ライブラリ。 派生した`View`:
+[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) クラスは、プラットフォーム間で共有される **VideoPlayerDemos** .NET Standard ライブラリに含まれます。 これは、`View` から派生します。
 
 ```csharp
 using System;
@@ -35,15 +35,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-このクラスのメンバー (および`IVideoPlayerController`インターフェイス) は、次の記事の中で説明します。
+このクラスのメンバー (および `IVideoPlayerController` インターフェイス) については、この後の記事で説明します。
 
-という名前のクラスを含む、各プラットフォーム`VideoPlayerRenderer`ビデオ プレーヤーを実装するためにプラットフォーム固有のコードを格納しています。 このレンダラーの主要なタスクでは、そのプラットフォーム用のビデオ プレーヤーを作成します。
+各プラットフォームには、`VideoPlayerRenderer` という名前のクラスが含まれており、このクラスには、ビデオ プレーヤーを実装するためのプラットフォーム固有のコードが含まれています。 このレンダラーの主要なタスクは、そのプラットフォーム用のビデオ プレーヤーを作成することです。
 
-### <a name="the-ios-player-view-controller"></a>IOS プレーヤーのビュー コント ローラー
+### <a name="the-ios-player-view-controller"></a>iOS プレーヤーのビュー コント ローラー
 
-Ios ビデオ プレーヤーを実装するときに、いくつかのクラスが関わります。 アプリケーションを作成、 [ `AVPlayerViewController` ](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/)し、設定、 [ `Player` ](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.Player/)プロパティ型のオブジェクトを[ `AVPlayer`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayer/)します。 プレーヤーでビデオのソースが割り当てられている場合、追加のクラスが必要です。
+iOS でビデオ プレーヤーを実装する場合、関係のあるクラスがいくつかあります。 まず、アプリケーションは [`AVPlayerViewController`](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/) を作成し、[`AVPlayer`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayer/) 型のオブジェクトに [`Player`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.Player/) プロパティを設定します。 プレーヤーにビデオ ソースを割り当てる場合は、追加のクラスが必要です。
 
-などのすべてのレンダラーでは、iOS [ `VideoPlayerRenderer` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs)が含まれています、`ExportRenderer`を識別する属性、`VideoPlayer`レンダラーで表示します。
+すべてのレンダラーと同様、iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs)には、レンダラーで `VideoPlayer` ビューを識別する `ExportRenderer` 属性が含まれます。
 
 ```csharp
 using System;
@@ -71,9 +71,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-派生したプラットフォームの制御を設定するレンダラーの通常、 [ `ViewRenderer<View, NativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs)クラス、場所`View`、Xamarin.Forms は、`View`派生物 (この場合、 `VideoPlayer`) と`NativeView`iOS は、`UIView`レンダラー クラスの派生です。 このレンダラーでは、そのジェネリック引数が単に設定`UIView`、上の理由からすぐにわかります。
+通常、`View` が Xamarin.Forms `View` の派生物 (この場合は、`VideoPlayer`) で、`NativeView` がレンダラー クラス用の iOS `UIView` の派生物である場合、プラットフォーム コントロールを設定するレンダラーは、[`ViewRenderer<View, NativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs) クラスから派生します。 わかりやすくするために、このレンダラーでは、ジェネリック引数を `UIView` に設定しているだけです。
 
-レンダラーのに基づいてときに、`UIViewController`派生物 (この 1 つとしての)、クラスでオーバーライドする必要があります、`ViewController`プロパティとビュー コント ローラーで、この場合の戻り`AVPlayerViewController`します。 目的は、`_playerViewController`フィールド。
+レンダラーが (このレンダラーのように) `UIViewController` の派生物に基づく場合、クラスは、`ViewController` プロパティをオーバーライドして、ビュー コントローラー (この場合は、`AVPlayerViewController`) を返す必要があります。 それが、`_playerViewController` フィールドの目的です。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -112,13 +112,13 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-主な役割、`OnElementChanged`どうかを確認のオーバーライドは、`Control`プロパティは`null`とそうである場合は、プラットフォームのコントロールを作成に渡すと、`SetNativeControl`メソッド。 この場合、そのオブジェクトはから利用可能なのみ、`View`のプロパティ、`AVPlayerViewController`します。 ある`UIView`導関数がという名前のプライベート クラスである`AVPlayerView`がプライベートであるため、そのことはできません明示的に指定する 2 番目の汎用引数として`ViewRenderer`します。
+`OnElementChanged` オーバーライドの主な役割は、`Control` プロパティが `null` であるかどうかをチェックし、そうである場合はプラットフォーム コントロールを作成して、それを `SetNativeControl` メソッドに渡すことです。 この場合、`AVPlayerViewController` の `View` から使用できるのは、そのオブジェクトのみになります。 その `UIView`の派生物が `AVPlayerView` という名前のプライベート クラスである場合、プライベートであるため、それを `ViewRenderer` の 2 番目のジェネリック引数として明示的に指定することはできません。
 
-一般に、`Control`レンダラー クラスのプロパティは、その後を参照、 `UIView` 、レンダラーの実装に使用されるが、ここで、`Control`プロパティは他の場所で使用されません。
+通常、レンダラー クラスの `Control` プロパティは、その後、レンダラーの実装に使用される `UIView` を参照しますが、この場合、`Control` プロパティは他の場所で使用されません。
 
-### <a name="the-android-video-view"></a>Android のビデオの表示
+### <a name="the-android-video-view"></a>Android のビデオ ビュー
 
-Android のレンダラーの`VideoPlayer`Android に基づいて[ `VideoView` ](https://developer.xamarin.com/api/type/Android.Widget.VideoView/)クラス。 ただし場合、`VideoView`領域割り当てられたビデオの塗りつぶしの Xamarin.Forms アプリケーションでビデオを再生する単独で使用、`VideoPlayer`正しい縦横比を維持することがなく。 この (後述します) との理由で、 `VideoView` Android の子になって`RelativeLayout`します。 A`using`ディレクティブ定義`ARelativeLayout`Xamarin.Forms から区別するために`RelativeLayout`、2 番目の汎用引数は、 `ViewRenderer`:
+`VideoPlayer` 用の Android レンダラーは、Android [`VideoView`](https://developer.xamarin.com/api/type/Android.Widget.VideoView/) クラスに基づきます。 しかし、`VideoView` を単独で使用して、Xamarin.Forms アプリケーションでビデオを再生すると、ビデオは `VideoPlayer` 用に割り当てられた領域を塗りつぶし、正確な縦横比は保持されません。 このため、(後述するように) `VideoView` を Android `RelativeLayout` の子にします。 `using` ディレクティブは、それを Xamarin.Forms `RelativeLayout` と区別する `ARelativeLayout` を定義し、それが `ViewRenderer` の 2 番目のジェネリック引数になります。
 
 ```csharp
 using System;
@@ -149,9 +149,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Xamarin.Forms 2.5 以降、Android のレンダラーはコンス トラクターを含める必要があります、`Context`引数。
+Xamarin.Forms 2.5 以降、Android レンダラーには、`Context` 引数を持つコンストラクターが含まれるようになりました。
 
-`OnElementChanged`両方の上書きが作成され、`VideoView`と`RelativeLayout`のレイアウトのパラメーターを設定し、`VideoView`内で中央揃えに、`RelativeLayout`します。
+`OnElementChanged` オーバーライドは、`VideoView` と `RelativeLayout` の両方を作成し、`VideoView` を `RelativeLayout` の中央に配置するようにレイアウト パラメーターを設定します。
 
 
 ```csharp
@@ -214,13 +214,13 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-ハンドラーを`Prepared`イベントがこのメソッドでアタッチおよびデタッチで、`Dispose`メソッド。 このイベントが発生したときに、`VideoView`ビデオ ファイルの再生を開始するための十分な情報があります。
+`Prepared` イベントのハンドラーは、このメソッドでアタッチされ、`Dispose` メソッドでデタッチされます。 このイベントは、`VideoView` に、ビデオ ファイルの再生を開始するための情報が十分にある場合に起動されます。
 
 ### <a name="the-uwp-media-element"></a>UWP のメディア要素
 
-ユニバーサル Windows プラットフォーム (UWP) で、最も一般的なビデオ プレーヤーは[ `MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)します。 そのドキュメントの`MediaElement`ことを示します、 [ `MediaPlayerElement` ](/uwp/api/windows.ui.xaml.controls.mediaplayerelement/)のみのバージョンの Windows 10 ビルド 1607 以降をサポートするために必要なときは、代わりに使用する必要があります。
+ユニバーサル Windows プラットフォーム (UWP) で最も一般的なビデオ プレーヤーは、[`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) です。 `MediaElement` のドキュメントでは、ビルド 1607 以降のバージョンの Windows 10 をサポートするために必要な場合のみ、[`MediaPlayerElement`](/uwp/api/windows.ui.xaml.controls.mediaplayerelement/) を代わりに使用する必要があると説明されています。
 
-`OnElementChanged`上書きを作成する必要があります、 `MediaElement`、いくつかのイベントのハンドラーを設定して渡す、`MediaElement`オブジェクトを`SetNativeControl`:
+`OnElementChanged` オーバーライドは、`MediaElement` を作成し、いくつかのイベント ハンドラーを設定し、`MediaElement` オブジェクトを `SetNativeControl` に設定する必要があります。
 
 ```csharp
 using System;
@@ -275,13 +275,13 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-2 つのイベント ハンドラーがデタッチされて、`Dispose`レンダラー イベント。
+2 つのイベント ハンドラーは、レンダラー用の `Dispose` でデタッチされます。
 
-## <a name="showing-the-transport-controls"></a>トランスポート コントロールを表示
+## <a name="showing-the-transport-controls"></a>トランスポート コントロールの表示
 
-プラットフォームに含まれるすべてのビデオ プレーヤーは、再生および一時停止、および新しい位置に移動して、ビデオ内の現在位置を示すバー ボタンが含まれているトランスポート コントロールの既定のセットをサポートします。
+プラットフォームに含まれるすべてのビデオ プレーヤーは、既定のトランスポート コントロール セットをサポートします。このコントロール セットには、ビデオの再生ボタンと一時停止ボタン、ビデオ内の現在の位置を示し、新しい位置に移動できるバーが含まれます。
 
-`VideoPlayer`クラスという名前のプロパティを定義する`AreTransportControlsEnabled`既定値を設定および`true`:
+`VideoPlayer` クラスは、`AreTransportControlsEnabled` という名前のプロパティを定義し、既定値を `true` に設定します。
 
 
 ```csharp
@@ -304,19 +304,19 @@ namespace FormsVideoLibrary
 }
 ```
 
-このプロパティはどちらも`set`と`get`プロパティが設定されている場合にのみ、ケースを処理するために、アクセサー、レンダラーが。 `get`アクセサーが単純に、プロパティの現在の値を返します。
+このプロパティには、`set` と `get` の両方のアクセサーがありますが、レンダラーは、このプロパティが設定されている場合のみケースを処理する必要があります。 `get` アクセサーは、プロパティの現在値を返します。
 
-などのプロパティ`AreTransportControlsEnabled`プラットフォーム レンダラーが 2 つの方法で処理されます。
+`AreTransportControlsEnabled` などのプロパティは、プラットフォーム レンダラー内で次の 2 つの方法により処理されます。
 
-- 1 回目は Xamarin.Forms を作成するとき、`VideoPlayer`要素。 これで示されます、`OnElementChanged`レンダラーのオーバーライド時に、`NewElement`プロパティは`null`します。 現時点では、レンダラーを設定できるプロパティの初期値から独自のプラットフォームのビデオ プレーヤーで定義されている、 `VideoPlayer`。
+- 最初は、Xamarin.Forms で `VideoPlayer` 要素が作成されるときです。 これは、`NewElement` プロパティが `null` ではない場合にレンダラーの `OnElementChanged` オーバーライドで示されます。 この時点で、レンダラーは、`VideoPlayer` で定義されたプロパティの初期値から自身のプラットフォーム ビデオ プレーヤーを設定することができます。
 
-- 場合、プロパティで`VideoPlayer`後で変更されると、`OnElementPropertyChanged`レンダラーでメソッドが呼び出されます。 これにより、新しいプロパティの設定に基づいて、プラットフォームのビデオ プレーヤーを更新するレンダラーです。
+- この後、`VideoPlayer` 内のプロパティが変更されると、レンダラーの `OnElementPropertyChanged` メソッドが呼び出されます。 これにより、レンダラーは、新しいプロパティ設定に基づいてプラットフォーム ビデオ プレーヤーを更新することができます。
 
-次のセクションで説明する方法、`AreTransportControlsEnabled`プロパティは、各プラットフォームで処理されます。
+以降のセクションでは、各プラットフォームでの `AreTransportControlsEnabled` プロパティの処理方法について説明します。
 
 ### <a name="ios-playback-controls"></a>iOS の再生コントロール
 
-IOS のプロパティは、`AVPlayerViewController`表示を制御するコントロールは、トランスポートの[ `ShowsPlaybackControls`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.ShowsPlaybackControls/)します。 IOS でそのプロパティを設定する方法を次に示します`VideoViewRenderer`:
+トランスポート コントロールの表示を制御する iOS `AVPlayerViewController` のプロパティは、[`ShowsPlaybackControls`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.ShowsPlaybackControls/) です。 そのプロパティを iOS `VideoViewRenderer` で設定する方法を次に示します。
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -359,11 +359,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`Element`レンダラーのプロパティを指す、`VideoPlayer`クラス。
+レンダラーの `Element` プロパティは、`VideoPlayer` クラスを参照します。
 
-### <a name="the-android-media-controller"></a>Android のメディアのコント ローラー
+### <a name="the-android-media-controller"></a>Android のメディア コントローラー
 
-Android では、トランスポート コントロールを表示する必要がありますを作成する、 [ `MediaController` ](https://developer.xamarin.com/api/type/Android.Widget.MediaController/)オブジェクトと関連付けること、`VideoView`オブジェクト。 しくみがで示されています、`SetAreTransportControlsEnabled`メソッド。
+Android でトランスポート コントロールを表示するには、[`MediaController`](https://developer.xamarin.com/api/type/Android.Widget.MediaController/) オブジェクトを作成し、それを `VideoView` オブジェクトと関連付ける必要があります。 しくみは、`SetAreTransportControlsEnabled` メソッドで示されています。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -422,7 +422,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-transport-controls-property"></a>UWP のトランスポート コントロールのプロパティ
 
-UWP`MediaElement`という名前のプロパティを定義します。 [ `AreTransportControlsEnabled`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_AreTransportControlsEnabled)からプロパティを設定するように、 `VideoPlayer` 、同じ名前のプロパティ。
+UWP `MediaElement` は [`AreTransportControlsEnabled`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_AreTransportControlsEnabled) という名前のプロパティを定義するため、そのプロパティは、同じ名前の `VideoPlayer` プロパティから設定されます。
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -460,7 +460,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-1 つ以上のプロパティは、ビデオの再生を開始するために必要な: これは、重要な`Source`ビデオ ファイルを参照するプロパティ。 実装する、`Source`プロパティが次の記事で説明されている[Web ビデオの再生](web-videos.md)します。
+ビデオの再生を開始するには、1 つ以上のプロパティが必要です。これは、ビデオ ファイルを参照する重要な `Source` プロパティです。 次の記事「[Playing a Web Video](web-videos.md)」(Web ビデオの再生) では、`Source` プロパティの実装について説明します。
 
 
 ## <a name="related-links"></a>関連リンク

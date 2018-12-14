@@ -1,6 +1,6 @@
 ---
-title: 右から左のローカライズ
-description: 右から左のローカリゼーションでは、Xamarin.Forms アプリケーションを右から左方向のサポートを追加します。
+title: 右から左へのローカライズ
+description: 右から左へのローカライズでは、右から左へのフロー方向のサポートが Xamarin.Forms アプリケーションに追加されます。
 ms.prod: xamarin
 ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
 ms.technology: xamarin-forms
@@ -10,39 +10,39 @@ ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: 67b0d90290b18c7a5b55c5e3496b54970a8cfc38
 ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
 ms.locfileid: "51617606"
 ---
-# <a name="right-to-left-localization"></a>右から左のローカライズ
+# <a name="right-to-left-localization"></a>右から左へのローカライズ
 
-_右から左のローカリゼーションでは、Xamarin.Forms アプリケーションを右から左方向のサポートを追加します。_
+_右から左へのローカライズでは、右から左へのフロー方向のサポートが Xamarin.Forms アプリケーションに追加されます。_
 
 > [!NOTE]
-> 右から左のローカライズには、iOS 9 以降および Android で 17 以上の API の使用が必要です。
+> 右から左へのローカライズには、iOS 9 以上、および Android の API 17 以上を使用する必要があります。
 
-フローの方向とは、目で、ページの UI 要素をスキャンする方向です。 アラビア語やヘブライ語など、一部の言語では、UI 要素が右から左にフローの方向にレイアウトされることが必要です。 これは、設定で実現できる、 [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。 このプロパティを取得または、レイアウトを制御しのいずれかに設定する必要がある親要素内でどの UI 要素のフローの方向に設定、 [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection)列挙値。
+フロー方向とは、ページ上の UI 要素を視覚でスキャンしていく方向のことです。 アラビア語やヘブライ語などの一部の言語では、UI 要素が右から左へのフロー方向で配置される必要があります。 これは、[`VisualElement.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを設定することで実現できます。 このプロパティでは、レイアウトを制御する任意の親要素内での UI 要素のフロー方向が取得または設定され、次のいずれかの [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 列挙値に設定される必要があります。
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
 - [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-設定、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティを[ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft)要素からフローを右、右から左への読み取り順序、およびコントロールのレイアウトを通常の配置を設定右から左。
+要素の [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) に設定すると、一般的に配置が右に、読む順が右から左に、コントロールのレイアウトが右から左に設定されます。
 
-[![右から左方向にアラビア語 TodoItemPage](rtl-images/TodoItemPage-Arabic.png "右から左方向にアラビア語 TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "TodoItemPage 右から左方向にアラビア語")
-
-> [!TIP]
-> のみを設定する必要があります、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)初期レイアウトのプロパティ。 実行時にこの値を変更すると、パフォーマンスに影響を与える負荷の高いレイアウト プロセス。
-
-既定の[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)親のない要素のプロパティの値が[ `LeftToRight` ](xref:Xamarin.Forms.FlowDirection.LeftToRight)、既定値の中に`FlowDirection`親を持つ要素が[ `MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent). したがって、要素の継承、`FlowDirection`ビジュアル ツリーと任意の要素内の親からプロパティ値がその親から取得した値を上書きできます。
+[![右から左へのフロー方向のアラビア語の TodoItemPage](rtl-images/TodoItemPage-Arabic.png "右から左へのフロー方向のアラビア語の TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "右から左へのフロー方向のアラビア語の TodoItemPage")
 
 > [!TIP]
-> 右から左方向言語用のアプリをローカライズする場合は、設定、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)ページまたはルート レイアウトのプロパティ。 これにより、すべてのページ、またはフローの方向に適切に応答のルート レイアウト内に含まれる要素。
+> 初期レイアウトでは [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティのみを設定する必要があります。 実行時にこの値を変更すると、パフォーマンスに影響を与える負荷の高いレイアウト プロセスが発生します。
 
-## <a name="respecting-device-flow-direction"></a>デバイスのフロー方向を優先
+親のない要素の [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティの既定値は [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight) ですが、親のある要素の `FlowDirection` の既定値は [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) になります。 そのため、要素ではビジュアル ツリー内の親から `FlowDirection` プロパティ値を継承し、任意の要素でその親から取得した値をオーバーライドできます。
 
-選択した言語に基づくデバイスのフロー方向を考慮し、領域が、明示的な開発者の選択肢と、自動的に行われません。 設定で行うことができます、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) ページまたはルート レイアウト プロパティを`static` [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection)値。
+> [!TIP]
+> 右から左方向の言語用にアプリをローカライズする場合、ページ上またはルート レイアウトで [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを設定します。 これにより、そのフロー方向に適切に対応して、ページ (ルート レイアウト) 内に含まれるすべての要素が設定されます。
+
+## <a name="respecting-device-flow-direction"></a>デバイスのフロー方向を優先する
+
+選択した言語とリージョンに基づいてデバイスのフロー方向を優先するには、開発者が明示的に選択する必要があり、自動的に行われることはありません。 これは、ページ (ルート レイアウト) の [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを `static` [`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection) 値に設定することで実現できます。
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
@@ -52,15 +52,15 @@ _右から左のローカリゼーションでは、Xamarin.Forms アプリケ�
 this.FlowDirection = Device.FlowDirection;
 ```
 
-ページ、またはルート レイアウトでは、すべての子要素は既定では、継承、 [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection)値。
+その後、既定では、ページ (ルート レイアウト) の子要素はすべて、[`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection) 値を継承します。
 
-## <a name="platform-setup"></a>プラットフォームのセットアップ
+## <a name="platform-setup"></a>プラットフォームの設定
 
-右から左のロケールを有効にするには、特定のプラットフォームの設定が必要です。
+特定のプラットフォームの設定では、右から左のロケールを有効にする必要があります。
 
 ### <a name="ios"></a>iOS
 
-配列の項目を必要な右から左のロケールをサポートされている言語として追加する、`CFBundleLocalizations`キー **Info.plist**します。 次の例では、アラビア語の配列に追加されて、`CFBundleLocalizations`キー。
+**Info.plist** の `CFBundleLocalizations` キー用の配列項目に対してサポートされる言語として、必要な右から左のロケールを追加する必要があります。 次の例では、`CFBundleLocalizations` キーの配列に追加されているアラビア語を示しています。
 
 ```xml
 <key>CFBundleLocalizations</key>
@@ -70,18 +70,18 @@ this.FlowDirection = Device.FlowDirection;
 </array>
 ```
 
-![Info.plist がサポートされている言語](rtl-images/ios-locales.png "Info.plist でサポートされる言語")
+![Info.plist でサポートされている言語](rtl-images/ios-locales.png "Info.plist でサポートされている言語")
 
-詳細については、次を参照してください。 [iOS のローカリゼーション基本](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)します。
+詳細については、「[iOS でのローカライズの基本事項](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)」を参照してください。
 
-右から左のローカリゼーションで指定されたロケールが右から左に、言語と、デバイスまたはシミュレーター上の領域を変更することでテストできます**Info.plist**します。
+右から左へのローカライズは、デバイスまたはシミュレーター上の言語とリージョンを **Info.plist** で指定された右から左のロケールに変更することによって、テストできます。
 
 > [!WARNING]
-> Ios では、ロケールが右から左に任意の言語と地域を変更する場合に注意してください[ `DatePicker` ](xref:Xamarin.Forms.DatePicker)ビュー、ロケールに必要なリソースが含まれていない場合、例外がスローされます。 たとえば、アラビア語を持つアプリをテストするときに、 `DatePicker`、いることを確認**mideast**でが選択されている、**国際化**のセクション、 **iOS ビルド**ウィンドウ。
+> iOS で言語とリージョンを右から左のロケールに変更するときに、そのロケールに必要なリソースを含めていない場合、任意の [`DatePicker`](xref:Xamarin.Forms.DatePicker) ビューで例外がスローされることに注意してください。 たとえば、`DatePicker` を含むアラビア語のアプリをテストする場合、**[iOS ビルド]** ウィンドウの **[国際化]** セクションに **[mideast]** が選択されていることを確認します。
 
 ### <a name="android"></a>Android
 
-アプリの**AndroidManifest.xml**ファイルを更新する必要があるように、`<uses-sdk>`ノード セット、 `android:minSdkVersion` 17、属性、`<application>`ノード セット、`android:supportsRtl`属性を`true`:
+アプリの **AndroidManifest.xml** ファイルは更新されているため、`<uses-sdk>` ノードで `android:minSdkVersion` 属性は 17 に設定され、`<application>` ノードで `android:supportsRtl` 属性は `true` に設定されます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,11 +92,11 @@ this.FlowDirection = Device.FlowDirection;
 </manifest>
 ```
 
-デバイス/エミュレーターを使用して、右から左の言語を変更するか、有効にすると、右から左のローカライズをテストすることができますし、 **Force RTL レイアウトの方向**で**設定 > 開発者向けオプション**します。
+その後、デバイスまたはエミュレーターで右から左方向の言語を使用するように変更するか、または **[設定] > [開発者向けオプション]** で **[Force RTL layout direction]\(RTL レイアウト方向を使用\)** をオンにすることで、右から左へのローカライズをテストできます。
 
 ### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
-必要な言語リソースを指定する必要があります、`<Resources>`のノード、 **Package.appxmanifest**ファイル。 次の例では、アラビア語に追加されたことを示しています、`<Resources>`ノード。
+必要な言語リソースは、**Package.appxmanifest** ファイルの `<Resources>` ノードで指定する必要があります。 次の例では、`<Resources>` ノードに追加されているアラビア語を示します。
 
 ```xml
 <Resources>
@@ -106,7 +106,7 @@ this.FlowDirection = Device.FlowDirection;
 </Resources>
 ```
 
-さらに、UWP では、アプリの既定のカルチャが .NET Standard ライブラリに明示的に定義されている必要があります。 これを設定して実行できます、`NeutralResourcesLanguage`属性`AssemblyInfo.cs`、または既定のカルチャに別のクラス。
+さらに、UWP では、アプリの既定のカルチャが明示的に .NET Standard ライブラリで定義されている必要があります。 これは、`AssemblyInfo.cs` (別のクラス) の `NeutralResourcesLanguage` 属性を既定のカルチャに設定することで実現できます。
 
 ```csharp
 using System.Resources;
@@ -114,41 +114,41 @@ using System.Resources;
 [assembly: NeutralResourcesLanguage("en")]
 ```
 
-右から左のローカライズは、言語およびデバイス上の領域を右から左の適切なロケールに変更することでテストできます。
+右から左へのローカライズは、デバイス上の言語とリージョンを適切な右から左のロケールに変更するこでテストできます。
 
 ## <a name="limitations"></a>制限事項
 
-現在、Xamarin.Forms 右から左のローカライズには、いくつかの制限があります。
+現在、Xamarin.Forms の右から左へのローカライズには、いくつかの制限があります。
 
-- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ボタンの場所 ツールバーの項目の場所と遷移のアニメーションがデバイスのロケールによって制御されるのではなく[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
-- [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) スワイプ方向が反転しません。
-- [`Image`](xref:Xamarin.Forms.Image) ビジュアル コンテンツが反転しません。
-- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[]))向きがデバイスのロケールによって制御されるのではなく[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
-- [`WebView`](xref:Xamarin.Forms.WebView) コンテンツを優先しません、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
-- A`TextDirection`プロパティは、追加する、テキストの配置を制御する必要があります。
+- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のボタンの場所、ツール バー項目の場所、および切り替えアニメーションは、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
+- [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) のスワイプ方向は反転されません。
+- [`Image`](xref:Xamarin.Forms.Image) のビジュアル コンテンツは反転されません。
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) と [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) の向きは、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
+- [`WebView`](xref:Xamarin.Forms.WebView) のコンテンツでは [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを優先しません。
+- テキストの配置を制御するには、`TextDirection` プロパティを追加する必要があります。
 
 ### <a name="ios"></a>iOS
 
-- [`Stepper`](xref:Xamarin.Forms.Stepper) 印刷の向きがデバイスのロケールによって制御されるのではなく[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
-- [`EntryCell`](xref:Xamarin.Forms.EntryCell) テキストの配置は、デバイスのロケールによって制御ではなく、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) ジェスチャと配置は反転されません。
+- [`Stepper`](xref:Xamarin.Forms.Stepper) の向きは、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
+- [`EntryCell`](xref:Xamarin.Forms.EntryCell) のテキストの配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) のジェスチャと配置は反転されません。
 
 ### <a name="android"></a>Android
 
-- [`SearchBar`](xref:Xamarin.Forms.SearchBar) 印刷の向きがデバイスのロケールによって制御されるのではなく[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) デバイスのロケールで位置を制御ではなく、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
+- [`SearchBar`](xref:Xamarin.Forms.SearchBar) の向きは、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) の配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
 
 ### <a name="uwp"></a>UWP
 
-- [`Editor`](xref:Xamarin.Forms.Editor) テキストの配置は、デバイスのロケールによって制御ではなく、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
-- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) によってプロパティが継承されない[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)子。
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) テキストの配置は、デバイスのロケールによって制御ではなく、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティ。
+- [`Editor`](xref:Xamarin.Forms.Editor) のテキストの配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
+- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティは子の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) に継承されません。
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) のテキストの配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
 
-## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University 右左の言語からをサポート
+## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University での右から左方向の言語のサポート
 
 > [!VIDEO https://youtube.com/embed/f2lQ5yw3iiU]
 
-**Xamarin.Forms 3.0 右から左へサポートによって[Xamarin University](https://university.xamarin.com/)**
+**[Xamarin University](https://university.xamarin.com/) による Xamarin.Forms 3.0 の右から左のサポート**
 
 ## <a name="related-links"></a>関連リンク
 

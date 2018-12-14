@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms のバインドのフォールバック
-description: この記事では、バインドが失敗する場合に使用されるフォールバック値を定義することでより堅牢なバインドを作成する方法について説明します。
+description: この記事では、バインドが失敗した場合に使用されるフォールバック値を定義することでバインドをより堅牢にする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
 ms.technology: xamarin-forms
@@ -9,32 +9,32 @@ ms.author: dabritch
 ms.date: 08/16/2018
 ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171600"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms のバインドのフォールバック
 
-場合がありますデータ バインドまたは失敗する場合、バインディング ソースが、解決できないため、バインディングの成功が返されますので、`null`値。 値コンバーター、またはその他の追加のコードでは、これらのシナリオを処理することができます、データ バインドできるより堅牢なバインド プロセスが失敗した場合に使用するフォールバック値を定義することで。 これは、定義することで実現できます、 [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)と[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)バインド式でのプロパティ。 これらのプロパティが存在しているので、 [ `BindingBase` ](xref:Xamarin.Forms.BindingBase)クラス、コンパイル済みのバインドのバインドと使用することができます、`Binding`マークアップ拡張機能。
+バインディング ソースを解決できないため、またはバインドは成功しても `null` 値が返されるために、データ バインディングが失敗する場合があります。 これらのシナリオについては、値コンバーターまたは他の追加コードで対処できますが、バインド プロセスが失敗した場合に使用されるフォールバック値を定義することでデータ バインディングをより堅牢にすることができます。 このためには、バインド式で [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティと [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを定義します。 これらのプロパティは、[`BindingBase`](xref:Xamarin.Forms.BindingBase) クラス内にあるため、バインド、コンパイル済みのバインド、`Binding` マークアップ拡張で使用することができます。
 
 > [!NOTE]
-> 使用、 [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)と[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)バインド式でのプロパティは省略可能です。
+> バインド式での [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティと [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティの使用は任意です。
 
-## <a name="defining-a-fallback-value"></a>フォールバック値を定義します。
+## <a name="defining-a-fallback-value"></a>フォールバック値の定義
 
-[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)プロパティで使用されるフォールバック値を定義するときに、バインド*ソース*を解決できません。 このプロパティを設定するための一般的なシナリオでは、異機種混在型のバインドされたコレクション内のすべてのオブジェクトが存在しないソースのプロパティにバインドする場合です。
+[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティを使用すると、バインディング *ソース*を解決できない場合に使用されるフォールバック値を定義できます。 このプロパティを設定する一般的なシナリオは、バインドされた異種型コレクション内のすべてのオブジェクトに存在しない可能性のあるソース プロパティにバインドする場合です。
 
-**MonkeyDetail**ページ設定を示しています、 [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)プロパティ。
+次の **MonkeyDetail** ページは、[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティの設定例を示します。
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue='Population size unknown'}"
        ... />   
 ```
 
-バインディング、 [ `Label` ](xref:Xamarin.Forms.Label)定義、 [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)バインディング ソースを解決できない場合に、ターゲットの設定の値。 によって定義された値では、そのため、`FallbackValue`場合プロパティが表示されます、`Population`プロパティがバインドされたオブジェクトに対して存在しません。 ここで注意、`FallbackValue`プロパティの値は単一引用符 (アポストロフィ) 文字で区切られます。
+[`Label`](xref:Xamarin.Forms.Label) でのバインドは、バインディング ソースを解決できない場合にターゲットで設定される [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 値を定義します。 このため、`FallbackValue` プロパティで定義される値は、バインドされたオブジェクトに `Population` プロパティが存在しない場合に表示されます。 ここでは、`FallbackValue` プロパティ値が一重引用符 (アポストロフィ) 文字で区切られていることに注意してください。
 
-定義するのではなく[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)プロパティの値を行内、ことをお勧めのリソースとして定義する、 [ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。 このアプローチの利点は、このような値は 1 つの場所で定義された後がより簡単にローカライズ可能です。 使用して、リソースを取得することができますし、`StaticResource`マークアップ拡張機能。
+[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティ値をインラインで定義しないで、[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) でリソースとして定義することをお勧めします。 この方法を使用すると、このような値を 1 か所で 1 回定義するだけで済み、ローカライズがより簡単になるという利点があります。 リソースは、`StaticResource` マークアップ拡張を使用して取得することができます。
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue={StaticResource populationUnknown}}"
@@ -42,22 +42,22 @@ ms.locfileid: "52171600"
 ```
 
 > [!NOTE]
-> 設定することはできません、`FallbackValue`バインディング式を持つプロパティです。
+> バインド式を使用して `FallbackValue` を設定することはできません。
 
 実行中のプログラムを次に示します。
 
-![FallbackValue バインド](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue バインド")
+![FallbackValue のバインド](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue のバインド")
 
-ときに、`FallbackValue`バインド式とバインド パスのプロパティが設定されていないか、パスの一部が解決されていない[ `BindableProperty.DefaultValue` ](xref:Xamarin.Forms.BindableProperty.DefaultValue)ターゲットに設定されます。 ただし、`FallbackValue`プロパティが設定され、バインディング パスまたはパスの一部が解決されていないの値、`FallbackValue`ターゲット プロパティの値が設定されています。 そのため、上、 **MonkeyDetail**ページ、 [ `Label` ](xref:Xamarin.Forms.Label) 「母集団のサイズ不明な」が表示されますが、バインドされたオブジェクトがないため、`Population`プロパティ。
+バインド式に `FallbackValue` プロパティが設定されておらず、バインド パスまたはその一部が解決されない場合、ターゲットでは、[`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) が設定されます。 一方、バインド式に `FallbackValue` プロパティが設定されており、バインド パスまたはその一部が解決されない場合、ターゲットでは、`FallbackValue` 値プロパティの値が設定されます。 したがって、**MonkeyDetail** ページでは、バインドされたオブジェクトに `Population` プロパティがないため、[`Label`](xref:Xamarin.Forms.Label) により、"Population size unknown" (作成サイズが不明) が表示されます。
 
 > [!IMPORTANT]
-> 定義済みの値コンバーターは、バインド式では実行されないときに、 [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)プロパティを設定します。
+> [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティが設定されている場合、バインド式で、定義済みの値コンバーターは実行されません。
 
-## <a name="defining-a-null-replacement-value"></a>Null の置換値を定義します。
+## <a name="defining-a-null-replacement-value"></a>null の置換値の定義
 
-[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)プロパティで使用される置換値を定義するときに、バインド*ソース*が解決されるとが、値は`null`。 このプロパティを設定するための一般的なシナリオは、可能性のあるソースのプロパティにバインドするときに`null`でバインドのコレクション。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを使用すると、バインド *ソース*は解決できても値が `null` である場合に使用される置換値を定義できます。 このプロパティを設定する一般的なシナリオは、値が `null` である可能性のある、バインド コレクション内のソース プロパティにバインドする場合です。
 
-**猿**ページ設定を示しています、 [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)プロパティ。
+次の **Monkeys** ページは、[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティの設定例を示します。
 
 ```xaml
 <ListView ItemsSource="{Binding Monkeys}"
@@ -79,9 +79,9 @@ ms.locfileid: "52171600"
 </ListView>
 ```
 
-バインド、 [ `Image` ](xref:Xamarin.Forms.Image)と[ `Label` ](xref:Xamarin.Forms.Label)両方定義[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)バインディング パスがを返す場合に適用される値`null`. によって定義される値、そのため、`TargetNullValue`コレクション内の任意のオブジェクトのプロパティが表示されます場所、`ImageUrl`と`Location`プロパティが定義されていません。 ここで注意、`TargetNullValue`プロパティの値は単一引用符 (アポストロフィ) 文字で区切られます。
+[`Image`](xref:Xamarin.Forms.Image) および [`Label`](xref:Xamarin.Forms.Label) でのバインドは両方とも、バインド パスが `null` を返す場合に適用される [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 値を定義します。 このため、`ImageUrl` および `Location` が定義されていない場合、コレクション内のオブジェクトに対して `TargetNullValue` で定義された値が表示されます。 ここでは、`TargetNullValue` プロパティ値が一重引用符 (アポストロフィ) 文字で区切られていることに注意してください。
 
-定義するのではなく[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)プロパティの値を行内、ことをお勧めのリソースとして定義する、 [ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。 このアプローチの利点は、このような値は 1 つの場所で定義された後がより簡単にローカライズ可能です。 使用して、リソースを取得することができますし、`StaticResource`マークアップ拡張機能。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティ値をインラインで定義しないで、[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) でリソースとして定義することをお勧めします。 この方法を使用すると、このような値を 1 か所で 1 回定義するだけで済み、ローカライズがより簡単になるという利点があります。 リソースは、`StaticResource` マークアップ拡張を使用して取得することができます。
 
 ```xaml
 <Image Source="{Binding ImageUrl, TargetNullValue={StaticResource fallbackImageUrl}}"
@@ -91,17 +91,17 @@ ms.locfileid: "52171600"
 ```
 
 > [!NOTE]
-> 設定することはできません、`TargetNullValue`バインディング式を持つプロパティです。
+> バインド式を使用して `TargetNullValue` を設定することはできません。
 
 実行中のプログラムを次に示します。
 
-[![TargetNullValue バインド](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue バインド")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue バインド")
+[![TargetNullValue のバインド](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue のバインド")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue のバインド")
 
-ときに、`TargetNullValue`プロパティは、バインド式では、source の値に設定されていない`null`場合、値コンバーターが定義した場合、フォーマットに変換を`StringFormat`を定義し、結果は、ターゲットの設定。 ただし、`TargetNullValue`プロパティが設定のソース値`null`まだの場合、値コンバーターが定義されている場合に変換`null`の値を変換後、`TargetNullValue`プロパティが設定されて、ターゲット。
+バインド式に `TargetNullValue` プロパティが設定されていない場合、ソース値の `null` は、変換され (値コンバーターが定義されている場合)、書式設定された (`StringFormat` が定義されている場合) 後、その結果がターゲットで設定されます。 一方、`TargetNullValue` プロパティが設定されている場合、ソース値 `null` は、値コンバーターが定義されていれば変換されます。変換後も `null` のままであれば、ターゲットでは `TargetNullValue` プロパティの値が設定されます。
 
 > [!IMPORTANT]
-> バインディング式の文字列の書式設定が適用されないときに、`TargetNullValue`プロパティを設定します。
+> `TargetNullValue` プロパティが設定されている場合、バインド式で文字列の書式設定は適用されません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディング デモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [データ バインディングのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
