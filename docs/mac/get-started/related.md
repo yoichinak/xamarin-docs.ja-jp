@@ -22,7 +22,7 @@ Xamarin.Mac に関する質問の資料は、[developer.xamarin.com](~/mac/get-s
 
 - **Apple の [Mac Dev Center](https://developer.apple.com/devcenter/mac/)**: Objective-C での呼び出しに使用する API の例の多くは、簡単な方法で C# に変換できます。 これを行う方法については、「[Understanding Mac API](~/mac/app-fundamentals/mac-apis.md)」 (Mac の API を理解する) を参照してください。
 
-- [**Stack Overflow**](http://stackoverflow.com/): 「[How do I auto expand all nodes in an NSOutlineView](http://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes)」 (NSOutlineView でのすべてのノードの自動展開の方法) などの簡単な質問が充実しています。 これらの例は多くの場合 Objective-C 用で、C# に変換する必要がありますが、C# 用の回答も一部あります。
+- [**Stack Overflow**](http://stackoverflow.com/): 「[NSOutlineView でのすべてのノードの自動展開の方法](http://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes)」 などの簡単な質問が充実しています。 これらの例は多くの場合 Objective-C 用で、C# に変換する必要がありますが、C# 用の回答も一部あります。
 
 ## <a name="user-interface"></a>ユーザー インターフェイス
 

@@ -495,7 +495,7 @@ C# に変換したくない既存の Java 機能がある場合は、2 つの方
 
 MSDN の「[C# プログラミング ガイド](https://docs.microsoft.com/dotnet/csharp/programming-guide/)」は C# プログラミング言語の学習を始めるときに役立ちます。「[C# リファレンス](https://docs.microsoft.com/dotnet/csharp/language-reference/)」を使うと C# 言語の特定の機能を検索できます。
 
-Java の知識には、少なくとも Java 言語の知識と同程度の Java クラス ライブラリの知識が必要ですが、同様に C# の実用的な知識には、.NET Framework についての知識がある程度必要です。 Microsoft の「[Moving to C# and the .NET Framework, for Java Developers](https://www.microsoft.com/download/details.aspx?id=6073)」(Java 開発者のための、C# および .NET Framework への移行) 学習パケットは、Java の観点から (C# についてより深く理解しながら) .NET Framework を詳しく学習するのによい方法です。
+Java の知識には、少なくとも Java 言語の知識と同程度の Java クラス ライブラリの知識が必要ですが、同様に C# の実用的な知識には、.NET Framework についての知識がある程度必要です。 Microsoft の「[Java 開発者のための、C# および .NET Framework への移行](https://www.microsoft.com/download/details.aspx?id=6073)」 学習パケットは、Java の観点から (C# についてより深く理解しながら) .NET Framework を詳しく学習するのによい方法です。
 
 C# で最初の Xamarin.Android プロジェクトに取り組む準備ができたら、Microsoft の「[Hello, Android](~/android/get-started/hello-android/index.md)」シリーズが、初めての Xamarin.Android アプリケーションの作成と、Xamarin での Android アプリケーション開発に関する基本事項の理解のさらなる前進に役立ちます。
 
