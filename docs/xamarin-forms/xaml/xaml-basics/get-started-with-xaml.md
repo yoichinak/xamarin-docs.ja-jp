@@ -44,7 +44,7 @@ _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual studio for Mac では、次のように選択します。**ファイル > 新しいソリューション** メニューから。 **新しいプロジェクト**ダイアログ ボックスで、**マルチプラット フォーム > アプリ**、左側にあると**空白フォームのアプリ**(*いない***フォーム アプリ**) テンプレートの一覧から。
+Visual studio for Mac では、次のように選択します。**ファイル > 新しいソリューション** メニューから。 **新しいプロジェクト**ダイアログ ボックスで、**マルチプラット フォーム > アプリ**、左側にあると **空白フォームのアプリ** (*いない* **フォーム アプリ** ) テンプレートの一覧から。
 
 ![](get-started-with-xaml-images/mac/newprojectdialog1.png "新しいプロジェクト ダイアログ ボックス 1")
 
