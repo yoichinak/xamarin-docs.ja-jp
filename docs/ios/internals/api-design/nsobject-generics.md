@@ -1,5 +1,5 @@
 ---
-title: Xamarin.iOS で NSObject の
+title: Xamarin.iOS での NSObject のジェネリック サブクラス
 description: このドキュメントを作成する方法を説明します NSObject の汎用サブクラスを作成します。 ことができますとは実行できません、静的のレジストラーについて説明しますおよびパフォーマンス観察対象何を調査します。
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
@@ -14,11 +14,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
 ms.locfileid: "50106222"
 ---
-# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Xamarin.iOS で NSObject の
+# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Xamarin.iOS での NSObject のジェネリック サブクラス
 
 ## <a name="using-generics-with-nsobjects"></a>NSObjects でジェネリックを使用します。
 
-サブクラスでジェネリックを使用できる Xamarin.iOS 7.2.1 で始まる`NSObject`(たとえば[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/))。
+Xamarin.iOS 7.2.1 以降では、`NSObject` のサブクラス (たとえば [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)) でジェネリックを使用することができます。
 
 次のようなジェネリック クラスを作成できます。
 
