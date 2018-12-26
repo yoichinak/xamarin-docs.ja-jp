@@ -18,7 +18,7 @@ ms.locfileid: "50106222"
 
 ## <a name="using-generics-with-nsobjects"></a>NSObjects でジェネリックを使用します。
 
-Xamarin.iOS 7.2.1 以降では、`NSObject`のサブクラス(たとえば[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/))でジェネリックを使用することができます。
+Xamarin.iOS 7.2.1 以降では、`NSObject` のサブクラス (たとえば [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)) でジェネリックを使用することができます。
 
 次のようなジェネリック クラスを作成できます。
 
