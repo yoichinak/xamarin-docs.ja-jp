@@ -1,6 +1,6 @@
 ---
 title: 'Xamarin.Essentials: バロメーター'
-description: Xamarin.Essentials の Barometer クラスを使用すると、負荷を測定するデバイスのバロメーター センサーを監視できます。
+description: Xamarin.Essentials の Barometer クラスを使用すると、気圧を測定するデバイスのバロメーター センサーを監視できます。
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
@@ -14,7 +14,7 @@ ms.locfileid: "52899045"
 ---
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: バロメーター
 
-**Barometer** クラスを使用すると、負荷を測定するデバイスのバロメーター センサーを監視できます。
+**Barometer** クラスを使用すると、気圧を測定するデバイスのバロメーター センサーを監視できます。
 
 ## <a name="get-started"></a>作業開始
 
@@ -28,7 +28,7 @@ ms.locfileid: "52899045"
 using Xamarin.Essentials;
 ```
 
-バロメーターの機能は、`Start` および `Stop` メソッドを呼び出し、バロメーターの負荷の読み取り値の変化をヘクトパスカル単位でリッスンすることで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
+バロメーターの機能は、`Start` および `Stop` メソッドを呼び出し、バロメーターの気圧の読み取り値の変化をヘクトパスカル単位でリッスンすることで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
 
 ```csharp
 
