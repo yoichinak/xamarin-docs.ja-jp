@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: bd13163b513ea1f6b0381e99e65d0bd727f97735
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 65316bde1d1c709028eae39c19e5dc318821ff70
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055729"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746883"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
@@ -22,7 +22,7 @@ _データ バインドでは、ニォュォケォネェャ変ェ、他のいず
 
 ## <a name="data-bindings"></a>データ バインディング
 
-データ バインドと呼ばれる 2 つのオブジェクトのプロパティを接続、*ソース*と*ターゲット*します。 コードでは、2 つの手順が必要です。`BindingContext`ソース オブジェクトにターゲット オブジェクトのプロパティを設定する必要があります、`SetBinding`メソッド (と組み合わせて使用して多くの場合、`Binding`クラス) プロパティをバインドする対象のオブジェクトで呼び出す必要がありますソース オブジェクトのプロパティにオブジェクト。
+データ バインドと呼ばれる 2 つのオブジェクトのプロパティを接続、*ソース*と*ターゲット*します。 コードでは、2 つの手順が必要です。`BindingContext`ソース オブジェクトにターゲット オブジェクトのプロパティを設定する必要があります、`SetBinding`メソッド (と組み合わせて使用して多くの場合、`Binding`クラス)、ソースのプロパティにそのオブジェクトのプロパティをバインドする対象のオブジェクトで呼び出す必要がありますオブジェクト。
 
 ターゲット プロパティは、バインド可能なプロパティは、ターゲット オブジェクトをする必要がありますから派生させることである必要があります`BindableObject`します。 Xamarin.Forms のオンライン ドキュメントでは、どのプロパティは、バインド可能なプロパティを示します。 プロパティの`Label`など`Text`バインド可能なプロパティに関連付けられた`TextProperty`します。
 
@@ -71,7 +71,7 @@ _データ バインドでは、ニォュォケォネェャ変ェ、他のいず
 
 `x:Reference`という名前のプロパティを定義するバインド拡張機能`Name`ここで参照先の要素の名前に設定する`slider`します。 ただし、`ReferenceExtension`クラスを定義する、`x:Reference`マークアップ拡張機能にも定義されています、`ContentProperty`属性`Name`、明示的に必要ないことを意味します。 、さまざまな最初の`x:Reference`が含まれています"名前 ="しますが、2 つ目は使用できません。
 
-```csharp
+```xaml
 BindingContext="{x:Reference Name=slider}"
 …
 BindingContext="{x:Reference slider}"
@@ -79,7 +79,7 @@ BindingContext="{x:Reference slider}"
 
 `Binding`マークアップ拡張機能自体と同じようにいくつかのプロパティを持つことができます、`BindingBase`と`Binding`クラス。 `ContentProperty`の`Binding`は`Path`が、"パス ="パスが最初の項目である場合、マークアップ拡張機能の一部を省略できます、`Binding`マークアップ拡張機能。 最初の例では"パス ="しますが、2 番目の例で省略されます。
 
-```csharp
+```xaml
 Rotation="{Binding Path=Value}"
 …
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
@@ -87,7 +87,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 プロパティは、1 行で指定できます。 または複数行に分けられます。
 
-```csharp
+```xaml
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
@@ -96,7 +96,7 @@ Text="{Binding Value,
 
 通知、`StringFormat`プロパティの 1 秒間`Binding`マークアップ拡張機能。 Xamarin.Forms でのバインドは行いません、暗黙的な型変換と型コンバーターを提供または使用する必要がありますを文字列として文字列以外のオブジェクトを表示する必要がある場合`StringFormat`します。 背後では、静的な`String.Format`メソッドを実装するために使用`StringFormat`します。 .NET 書式設定の仕様はマークアップ拡張機能を区切るためにも使用すると、中かっこも含まれるので可能性のある問題です。 これには、XAML パーサーの混乱を招く危険性が作成されます。 これを避けるには、単一引用符で書式設定文字列全体を配置します。
 
-```csharp
+```xaml
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -117,7 +117,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 次のプログラムの 1 つの一般的な用途を示します、`OneWayToSource`と`TwoWay`バインディング モード。 4 つ`Slider`ビューは、コントロール、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティを`Label`します。 最初、見えますとしてこれら 4 つのプロパティの`Label`各によって設定されるため、データ バインドのターゲットがあります、`Slider`します。 ただし、`BindingContext`の`Label`は 1 つだけのオブジェクトとは異なる 4 つのスライダーがあります。
 
-そのため、すべてのバインディング設定一見下位方法:`BindingContext`の 4 つのスライダーのそれぞれに設定されて、`Label`とに、バインドが設定されて、`Value`スライダーのプロパティ。 使用して、`OneWayToSource`と`TwoWay`モードでは、これら`Value`プロパティは、ソースのプロパティを設定できます、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、 `Label`:
+そのため、すべてのバインディング設定一見下位方法。`BindingContext`の 4 つのスライダーの各設定は、`Label`とに、バインドが設定されて、`Value`スライダーのプロパティ。 使用して、`OneWayToSource`と`TwoWay`モードでは、これら`Value`プロパティは、ソースのプロパティを設定できます、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、 `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

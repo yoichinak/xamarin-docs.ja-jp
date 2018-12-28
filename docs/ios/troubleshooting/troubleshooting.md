@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 4ab6b217190ea633611a9c869ec7e93befcc3c56
-ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
+ms.openlocfilehash: 146b05cf7ca2bbd05e952ecc9064fbb9168d179a
+ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51681567"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53609936"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin.iOS のトラブルシューティングのヒント 
 
@@ -98,7 +98,7 @@ public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
-## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>: System.MissingMethodException コンス Foo.Bar::ctor(System.IntPtr) が見つかりませんでした
+## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>: System.MissingMethodExceptionFoo.Bar::ctor(System.IntPtr) のコンス トラクターがありません。
 
 コードが、インターフェイス ビルダー ファイルから参照されているクラスのインスタンスをインスタンス化を試みると、実行時にこのエラーが生成されます。 これは、1 つの IntPtr をパラメーターとして受け取るコンス トラクターを追加するを忘れてことを意味します。
 
@@ -123,13 +123,13 @@ public Bar (IntPtr handle) : base (handle) { }
 
 Namespace 設定は、プロジェクト オプション ダイアログにあります。 既定の名前空間がある、**全般にメインの設定]-> [** セクション。 空白の場合、プロジェクトの名前は、既定値として使用されます。 名前空間のより高度な設定が記載されて、**ソース コードに .NET の命名ポリシー]-> [** セクション。
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>アクションの警告: 'Foo' が使用されていません。 プライベート メソッド。 (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>アクションの警告:プライベート メソッド 'Foo' は使用されません。 (CS0169)
 
 インターフェイス ビルダー ファイルに対する操作は、この警告が予想されるため、実行時にリフレクションによって、ウィジェットに接続されます。
 
 "#Pragma warning disable 0169"を使用することができます"#pragma 警告の有効化 0169" 操作をこれらのメソッドだけにこの警告を抑制するか (not プロジェクト全体を無効にする場合は、コンパイラ オプションの「を無視する警告」のフィールドに 0169 を追加する場合推奨)。
 
-## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch は、次のメッセージで失敗しましたアセンブリを開くことができません '/path/to/yourproject.exe'。
+## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch は、次のメッセージで失敗しました。アセンブリを開くことができません '/path/to/yourproject.exe'
 
 このエラー メッセージを表示する場合は、一般に問題は、プロジェクトへの絶対パスにスペースが含まれています。 これは、Xamarin.iOS の将来のバージョンで修正されますが、スペースなしのフォルダーにプロジェクトを移動することによって問題を回避することができます。
 
@@ -144,7 +144,7 @@ Namespace 設定は、プロジェクト オプション ダイアログにあ�
 
 問題は、Mono は、OS X の集荷こと`libsqlite3.dylib`、いない iPhoneSimulator の`libsqlite3.dylib`ファイル。 アプリ*は*デバイスが、シミュレーターではないだけで動作します。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>System.Exception で失敗するデバイスに展開します AMDeviceInstallApplication 3892346901 が返されます。
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>System.Exception で失敗するデバイスに展開します。AMDeviceInstallApplication 3892346901 が返されます
 
 このエラーは、コード署名証明書/バンドル id の構成では、デバイスにインストールされているプロビジョニング プロファイルが一致しないことを意味します。  確認する、適切な証明書があるプロジェクトのオプションで選択されているバンドル署名 、iPhone]-> [し、プロジェクトのオプションで指定された正しいバンドル id が iPhone アプリケーション ->
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 プロジェクトに thumb コードでコンパイルされた静的ライブラリをリンクしていることを意味します。 3.1 (またはこの記事の執筆時に高い) に iPhone SDK のリリースの時点で非 Thumb コード (Xamarin.iOS) と Thumb コード (スタティック ライブラリ) をリンクするときに、Apple は、リンカーのバグを導入しました。この問題を軽減するスタティック ライブラリの Thumb 以外のバージョンとリンクする必要があります。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>(JIT コンパイル Foo[]:System.Collections.Generic.ICollection'1.get_Count) メソッド (マネージからマネージ ラッパー) しようとして System.ExecutionEngineException:
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException:しようとして (JIT コンパイル Foo[]:System.Collections.Generic.ICollection'1.get_Count) メソッド (ラッパーの管理が管理)
 
 [サフィックスは、ことか、クラス ライブラリ メソッドを呼び出す IEnumerable <>、ICollection <> IList <> などのジェネリック コレクションを配列のことを示します。 この問題を回避するを自分でメソッドを呼び出すことによってこのようなメソッドを含める AOT コンパイラを明示的に強制することができ、ことを確認することによって、例外をトリガーした呼び出しの前にこのコードを実行します。 この場合は、次のように記述する可能性があります。
 
@@ -212,7 +212,7 @@ Visual Studio for Mac ソース エディターなる非常に低速のハング
 
 XS のログを添付してください **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **AndroidTools-{のタイムスタンプ} .log**、および**コンポーネント-{のタイムスタンプ} .log**(XS/MonoDevelop の以前のバージョンでのみ送信 **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**)。
 
- **注: 上記の問題は、XS 2.2 最後で修正されました**
+ **注:上の問題は、XS 2.2 最後で修正されました**
 
 ## <a name="compiled-application-is-very-large"></a>コンパイルされたアプリケーションが非常に大きい
 
@@ -281,9 +281,9 @@ USB または WiFi のいずれかのモードが機能しないことができ�
 
 Visual Studio for Mac 2.2 は、問題があるため、コンマを含む配布証明書が検出されないようにします。 Mac 2.2.1 の Visual Studio を更新してください。
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>エラー"が返されます AFCFileRefWrite: 1"アップロード中
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>エラー"AFCFileRefWrite が返されます。1"アップロード中
 
-デバイスにアプリのアップロード中にエラーが表示される可能性があります"返される AFCFileRefWrite: 1"です。 これは、長さゼロのファイルがある場合に発生することができます。
+デバイスにアプリのアップロード中にエラーが表示される可能性があります"AFCFileRefWrite が返されます。1"とします。 これは、長さゼロのファイルがある場合に発生することができます。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>エラー"mtouch 出力なしで失敗しました"
 
@@ -317,7 +317,7 @@ Visual Studio for Mac にするには自動的に処理と、このキー ペア
 -  プロジェクトのカスタム Info.plist を作成しが 3.0 に MinimumOSVersion を明示的に設定します。   これにより、Xamarin.iOS で設定された MinimumOSVersion 3.2 値が上書きされます。   これを行わない場合、アプリは iPhone で実行することはできません。
 -  再構築、zip、およびアップロードを iTunes に接続します。
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未処理の例外: System.Exception: セレクター someSelector が見つかりませんでした: {type} の
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未処理の例外:System.Exception: セレクター someSelector が見つかりませんでした: {type} の
 
 この例外が発生して、次の 3 つのいずれかで。
 
@@ -398,7 +398,7 @@ IPhone ではないプロジェクトから iPhone UI を作成しようとす�
 
  *「、値は、名の任意の拡張子を含める必要がありますしない」です。- [http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
-## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>エラー:「0x43 カスタム属性の型はサポートされていません」.xib ファイルをダブルクリックしたとき
+## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>エラー :「0x43 カスタム属性の型がサポートされていません」.xib ファイルをダブルクリックしたとき
 
 これは、環境変数が正しく設定されていないときに、.xib ファイルを開くしようとして原因です。 Mac/Xamarin.iOS の Visual Studio の通常の使用は、この発生する必要がありますしないと、問題の解決/Applications から Mac に Visual Studio を再度開く必要があります。
 
@@ -411,28 +411,8 @@ IPhone ではないプロジェクトから iPhone UI を作成しようとす�
 ビルド アクションを確認するには、.xib ファイルを右クリックし、選択**ビルド アクション**します。
 
 
-## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: データは利用できません 437 のエンコード
+## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException:437 をエンコードできるデータがありません。
 
-Xamarin.iOS アプリでは、サード パーティ製ライブラリを含む、ときにフォームでエラーが発生する可能性があります"System.NotSupportedException: 437 をエンコードできるデータがありません"をコンパイルして、アプリを実行しようとするとき。 たとえば、ライブラリなど`Ionic.Zip.ZipFile`操作中にこの例外をスローする可能性があります。
+Xamarin.iOS アプリでは、サード パーティ製ライブラリを含む、ときにフォームでエラーが発生する可能性があります"System.NotSupportedException:エンコード 437"をコンパイルして、アプリを実行しようとするときはデータは有効ではありません。 たとえば、ライブラリなど`Ionic.Zip.ZipFile`操作中にこの例外をスローする可能性があります。
 
 これは、問題を Xamarin.iOS プロジェクトのオプションを開くことで解決できます**iOS ビルド** > **国際化**とチェック、**西部**国際化します。
-
-
-
-<a name="Can't_upgrade_to_Indie/Business_from_Trial_Account" />
-
-
-## <a name="cant-upgrade-to-indiebusiness-from-trial-account"></a>試用版アカウントからインディーズ/ビジネスにアップグレードできません。
-
-Xamarin.iOS を最近購入を既に Xamarin.iOS の試用版が開始された場合、は、Mac または Visual Studio の Visual Studio によってピックアップこのライセンスの変更を取得する次の手順を完了する必要があります。
-
--  Mac または Visual Studio の Visual Studio を閉じる
--  Mac で ~/Library/MonoTouch または %PROGRAMDATA%\MonoTouch\License\ から Windows のすべてのファイルを削除します。
--  Visual Studio for Mac または Visual Studio を開いたりして、Xamarin.iOS プロジェクトをビルド
-
-
-## <a name="receiving-activation-incomplete-error-message"></a>'不完全なアクティブ化' エラー メッセージを受信
-
-この問題は、Visual Studio の Xamarin.iOS を使用する場合に発生する可能性があります。 この問題を解決するには、次の場所からください、ログの送信先[ contact@xamarin.com](mailto:contact@xamarin.com)します。
-
--  ログの場所: %LocalAppData%/Xamarin/Logs

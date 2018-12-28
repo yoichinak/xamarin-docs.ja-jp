@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 7108b24f73d1f7389bf37fe8640061ae3e077300
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 250b3de2ef41ce488165f3149c72ce28c39e53a3
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054425"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746896"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms のボタン
 
@@ -409,7 +409,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![キーを押すし、ボタンを離します](button-images/PressAndReleaseButton.png "キーを押すし、ボタンのリリース")](button-images/PressAndReleaseButton-Large.png)
 
-このような動作がゲーム用のアプリケーション: 指で保持されている、 `Button` on 画面オブジェクトを特定の方向に移動を行う場合があります。
+このような動作では、ゲーム用のアプリケーションがあります。指で保持されている、 `Button` on 画面オブジェクトを特定の方向に移動を行う場合があります。
 
 <a name="button-appearance" />
 
@@ -573,7 +573,7 @@ UWP でを選択すると、`CornerRadius`の高さの半分を超えている�
 
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-</ImageButton>
+</Button>
 ```
 
 `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)される場合、 [ `Button` ](xref:Xamarin.Forms.Button)を押すと、その[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)からプロパティを変更する、1 に 0.8 の既定値。 `Normal` `VisualState`される場合、`Button`通常の状態では、その`Scale`プロパティを 1 に設定されます。 そのため、全体の効果では、ときに、`Button`を押すと、これは再スケーリング、若干小さいとタイミングを`Button`がリリースされると、これは再スケーリングの既定のサイズにします。
@@ -582,7 +582,7 @@ UWP でを選択すると、`CornerRadius`の高さの半分を超えている�
 
 ## <a name="creating-a-toggle-button"></a>トグル ボタンを作成します。
 
-サブクラス化することは`Button`オン/オフ スイッチのように動作するよう: 1 回のボタンをタップすると、ボタンをオンし、オフを切り替えるためには、もう一度タップします。
+サブクラス化することは`Button`オン/オフ スイッチのように正常に機能するようにします。ボタンをオンし、オフを切り替えるためにもう一度タップするには、1 回のボタンをタップします。
 
 次`ToggleButton`クラスから派生`Button`という名前の新しいイベントを定義および`Toggled`というブール型プロパティと`IsToggled`します。 これらは、Xamarin.Forms で定義された 2 つの同じプロパティ[ `Switch` ](xref:Xamarin.Forms.Switch):
 

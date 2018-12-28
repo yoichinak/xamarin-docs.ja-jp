@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c2c0e516c864ec4073d5bb54b77754f58064d6b0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f498aab5bfaffc08a22f62a318f8f9f73ab0afca
+ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116746"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53609910"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin.Mac のトラブルシューティングのヒント
 
@@ -77,7 +77,7 @@ ms.locfileid: "50116746"
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: データは利用できません 437 のエンコード
  
-Xamarin.Mac アプリでは、サード パーティ製ライブラリを含む、ときにフォームでエラーが発生する可能性があります"System.NotSupportedException: 437 をエンコードできるデータがありません"をコンパイルして、アプリを実行しようとするとき。 たとえば、ライブラリなど`Ionic.Zip.ZipFile`操作中にこの例外をスローする可能性があります。
+Xamarin.Mac アプリでは、サード パーティ製ライブラリを含む、ときにフォームでエラーが発生する可能性があります"System.NotSupportedException:エンコード 437"をコンパイルして、アプリを実行しようとするときはデータは有効ではありません。 たとえば、ライブラリなど`Ionic.Zip.ZipFile`操作中にこの例外をスローする可能性があります。
 
 これは、問題を Xamarin.Mac プロジェクトのオプションを開くことで解決できます**Mac ビルド** > **国際化**とチェック、**西部**国際化:
 
@@ -110,10 +110,6 @@ Visual Studio for Mac の最新バージョンからの権利のセクション�
 入力`Entitlements` をクリックして、**新規**ボタンをクリックします。 プロジェクトには、権利ファイルが含まれていた場合、は、新しいファイルを作成する代わりに、プロジェクトに追加するよう求められます。
 
 [![ファイルの上書きを確認する](troubleshooting-images/entitlements04.png "ファイルの上書きを確認しています")](troubleshooting-images/entitlements04-large.png#lightbox)
-
-## <a name="contacting-support-business-or-enterprise-licenses"></a>(Business または enterprise ライセンス) のサポートに連絡
-
-Business または enterprise ライセンスがある場合は、サポート チケットを使用して Xamarin エンジニアから直接ヘルプを要求する対象としています。 参照してください[xamarin.com/support](http://xamarin.com/support)詳細についてはします。
 
 ## <a name="community-support-on-the-forums"></a>フォーラムでコミュニティ サポート
 

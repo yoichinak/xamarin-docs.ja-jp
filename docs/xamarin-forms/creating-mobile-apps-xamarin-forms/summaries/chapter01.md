@@ -1,18 +1,18 @@
 ---
 title: 第 1 章の概要です。 Xamarin.Forms はどのように適合するでしょうか。
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 1 章の概要。 Xamarin.Forms はどのように適合するでしょうか。'
+description: Xamarin.Forms によるモバイル アプリの作成。第 1 章の概要です。 Xamarin.Forms はどのように適合するでしょうか。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 552cff71911b0f5ee118e15cb543e16bbfa19bd3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 40f319a67ecc2ca81243c8ac7c415266c1ea0b5c
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050966"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746857"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要です。 Xamarin.Forms はどのように適合するでしょうか。
 
@@ -25,9 +25,9 @@ ms.locfileid: "53050966"
 
 ## <a name="cross-platform-mobile-development"></a>クロス プラットフォームのモバイル開発
 
-モバイル プラットフォームを対象とする場合、この問題が一般的です。 現時点では、存在する 2 つの主要なモバイル プラットフォーム、Apple Iphone と Ipad の iOS オペレーティング システムでは、およびさまざまな携帯電話とタブレットで実行されている Android オペレーティング システムを実行しているファミリ。 もう 1 つの重要なプラットフォームは、マイクロソフトのユニバーサル Windows プラットフォーム (UWP)、1 つのプログラムを Windows 10 および Windows 10 Mobile の両方を対象にできます。
+モバイル プラットフォームを対象とする場合、この問題が一般的です。 現時点では、存在する 2 つの主要なモバイル プラットフォーム、Apple Iphone と Ipad の iOS オペレーティング システムでは、およびさまざまな携帯電話とタブレットで実行されている Android オペレーティング システムを実行しているファミリ。 もう 1 つの重要なプラットフォームは、マイクロソフトのユニバーサル Windows プラットフォーム (UWP)、1 つのプログラムの両方の Windows 10 を対象にできます。
 
-別のユーザー インターフェイスのパラダイム、3 つのさまざまな開発環境、3 つの異なるプログラミング インターフェイスを処理する必要がこれらのプラットフォームを対象とすることを希望するソフトウェア ベンダーと&mdash;おそらく最も転び&mdash;3 つさまざまなプログラミング言語: iPhone と iPad、android、Java 用の OBJECTIVE-C およびC#Windows 用。
+別のユーザー インターフェイスのパラダイム、3 つのさまざまな開発環境、3 つの異なるプログラミング インターフェイスを処理する必要がこれらのプラットフォームを対象とすることを希望するソフトウェア ベンダーと&mdash;おそらく最も転び&mdash;3 つさまざまなプログラミング言語:IPhone と iPad、android、Java 用の OBJECTIVE-C およびC#Windows 用。
 
 ## <a name="the-c-and-net-solution"></a>C# と .NET ソリューション
 
@@ -42,16 +42,14 @@ OBJECTIVE-C、Java、および C# の場合はすべて、C プログラミン�
 
 ## <a name="introducing-xamarinforms"></a>Xamarin.Forms の概要
 
-複数のモバイル プラットフォームを対象とする、Xamarin.Forms はさらに多くのコード共有が許可されます。 Xamarin.Forms 用に記述された 1 つのプログラムは、5 つの異なるプラットフォームを対象します。
+複数のモバイル プラットフォームを対象とする、Xamarin.Forms はさらに多くのコード共有が許可されます。 Xamarin.Forms 用に記述された 1 つのプログラムは、これらのプラットフォームを対象します。
 
 - iOS の iPhone、iPad、iPod touch 上で実行されるプログラム
 - Android 端末およびタブレットで実行されるプログラムの android
-- 対象の Windows 10 および Windows 10 Mobile にユニバーサル Windows プラットフォーム
-- Windows 8.1 の Windows ランタイム API
-- Windows Phone 8.1 の Windows ランタイム API
+- Windows 10 をターゲットのユニバーサル Windows プラットフォーム
 
 > [!NOTE]
-> Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。 プレビュー サポートされても、 [Mac](~/xamarin-forms/platform/mac.md)、 [WPF](~/xamarin-forms/platform/wpf.md)、 [GTK #](~/xamarin-forms/platform/gtk.md)、および[Tizen](/xamarin-forms/platform/tizen.md)プラットフォーム。
+> Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。 プレビュー サポートされても、 [Mac](~/xamarin-forms/platform/mac.md)、 [WPF](~/xamarin-forms/platform/wpf.md)、 [GTK #](~/xamarin-forms/platform/gtk.md)、および[Tizen](~/xamarin-forms/platform/tizen.md)プラットフォーム。
 
 Xamarin.Forms のプログラムの大部分は、ライブラリや、SAP に存在します。 この共有コードを呼び出す小さなアプリケーション スタブの各プラットフォームで構成されます。
 
@@ -59,10 +57,7 @@ Xamarin.Forms Api は、各プラットフォームは、その特性のルッ�
 
 [![プラットフォームのビジュアルの共有の 3 倍になるスクリーン ショット](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png#lightbox "Xamarin.Forms Controls on Each Platform")
 
-左から右にスクリーン ショットでは、iPhone、Android フォン、および Windows 10 Mobile のスマート フォンを表示します。
-
-> [!NOTE]
-> Xamarin.Forms は、Windows 10 Mobile をサポートしていません。
+左から右にスクリーン ショットでは、iPhone と Android フォンを示します。
 
 各画面で、このページには、Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label)テキストを表示するため、 [ `Button` ](xref:Xamarin.Forms.Button) 、操作を開始するため、 [ `Switch` ](xref:Xamarin.Forms.Switch)のオン/オフ値を選択して、 [ `Slider` ](xref:Xamarin.Forms.Slider)継続的な範囲内の値を指定するためです。 これらのビューの 4 つすべての子である、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)上、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)します。
 

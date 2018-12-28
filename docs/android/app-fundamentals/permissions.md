@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1a73896e4f98a6535bcd7ed66f478d168b01157f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 204dd903586164691d068a956e741c406df10b36
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526885"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746870"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Xamarin.Android でのアクセス許可
 
@@ -139,7 +139,7 @@ else
 
 アクセス許可が必要な理由、アプリケーションのアクセス許可を与える情報に基づいて判断できるようにしたり、ユーザーに通知することをお勧めします。 写真と geo タグを受け取るアプリの場合、この例にします。 カメラのアクセス許可が必要に応じてが、そのわかりにくい、アプリは、デバイスの場所も必要があります。 そのため、ユーザーには明らかです。 "The rationale"では、ユーザーの場所のアクセス許可は、望ましいことと、カメラのアクセス許可が必要である理由を理解するためにメッセージを表示する必要があります。
 
-`ActivityCompat.ShouldShowRequestPermissionRational` "The rationale"をユーザーに表示するかどうかを判断するメソッドを使用します。 このメソッドが返す`true`場合、指定されたアクセス許可の"the rationale"を表示する必要があります。 このスクリーン ショットでは、アプリがデバイスの場所を知る必要な理由を説明するアプリケーションによって表示される Snackbar の例を示します。
+`ActivityCompat.ShouldShowRequestPermissionRationale` "The rationale"をユーザーに表示するかどうかを判断するメソッドを使用します。 このメソッドが返す`true`場合、指定されたアクセス許可の"the rationale"を表示する必要があります。 このスクリーン ショットでは、アプリがデバイスの場所を知る必要な理由を説明するアプリケーションによって表示される Snackbar の例を示します。
 
 ![場所の論理的根拠](permissions-images/07-rationale-snackbar.png) 
 

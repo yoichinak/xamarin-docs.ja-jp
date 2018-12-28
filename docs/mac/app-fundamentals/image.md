@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 8df7e14088486d0eff9a6370303e83c5e69d4484
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8bc319b53e4a93d5cac35c4f8c3263b72dfe45e2
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119105"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746909"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin.Mac の画像
 
@@ -219,22 +219,23 @@ MyIcon.Image = NSImage.ImageNamed ("MessageIcon");
 ビュー コント ローラーには、次のパブリック関数を追加します。
 
 ```csharp
-public NSImage ImageTintedWithColor (NSImage image, NSColor tint)
-{
-    var tintedImage = image.Copy () as NSImage;
-    var frame = new CGRect (0, 0, image.Size.Width, image.Size.Height);
+public NSImage ImageTintedWithColor(NSImage sourceImage, NSColor tintColor)
+    => NSImage.ImageWithSize(sourceImage.Size, false, rect => {
+        // Draw the original source image
+        sourceImage.DrawInRect(rect, CGRect.Empty, NSCompositingOperation.SourceOver, 1f);
 
-    // Apply tint
-    tintedImage.LockFocus ();
-    tint.Set ();
-    NSGraphics.RectFill (frame, NSCompositingOperation.SourceAtop);
-    tintedImage.UnlockFocus ();
-    tintedImage.Template = false;
+        // Apply tint
+        tintColor.Set();
+        NSGraphics.RectFill(rect, NSCompositingOperation.SourceAtop);
 
-    // Return tinted image
-    return tintedImage;
-}
+        return true;
+    });
 ```
+
+> [!IMPORTANT]
+> MacOS Mojave のダーク モードの登場によって、特に、回避するために重要ですが、 `LockFocus` API の作成のカスタム レンダリングされるときに`NSImage`オブジェクト。 このようなイメージでは、静的になるし、外観やディスプレイの密度の変更のアカウントに自動的に更新されません。
+>
+> 上記のハンドラー ベースのメカニズムを採用して再表示に動的な条件を自動的に処理されるときに、`NSImage`でホストされているなど、`NSImageView`します。
 
 最後に、テンプレート イメージを付けるには、色分けして表示するイメージに対してこの関数を呼び出します。
 
@@ -246,7 +247,7 @@ MyIcon.Image = ImageTintedWithColor (MyIcon.Image, NSColor.Red);
 
 ## <a name="using-images-with-table-views"></a>テーブル ビューでのイメージの使用
 
-内のセルの一部としてイメージを含める、 `NSTableView`、によって、テーブル ビューのデータを返す方法を変更する必要があります`NSTableViewDelegate's``GetViewForItem`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例えば:
+内のセルの一部としてイメージを含める、 `NSTableView`、によって、テーブル ビューのデータを返す方法を変更する必要があります`NSTableViewDelegate's``GetViewForItem`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例:
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -344,7 +345,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 ## <a name="using-images-with-outline-views"></a>イメージを使用して、アウトライン ビューの使用
 
-内のセルの一部としてイメージを含める、 `NSOutlineView`、アウトライン ビューのデータを返す方法を変更する必要があります`NSTableViewDelegate's``GetView`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例えば:
+内のセルの一部としてイメージを含める、 `NSOutlineView`、アウトライン ビューのデータを返す方法を変更する必要があります`NSTableViewDelegate's``GetView`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
