@@ -24,7 +24,7 @@ Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、C#
 
 ## <a name="native-and-managed-code-an-explanation"></a>ネイティブおよびマネージ コード: の説明
 
-Xamarin の開発時に、用語*ネイティブおよびマネージ*コードはよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)によって管理される、実行があるコードでは、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)Xamarin の場合: Mono ランタイム。 これは、中間言語と呼ばれるものです。
+Xamarin で開発するときには、*ネイティブ コードとマネージ コード*という用語がよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、 または、 Xamarin の場合は Mono ランタイムによって実行が管理されるコードです。 これは、中間言語と呼ばれるものです。
 
 ネイティブ コードは、(たとえば、OBJECTIVE-C または、ARM チップでのも AOT コンパイル コード) は、特定のプラットフォームでネイティブに実行されるコードです。 このガイドは AOT がネイティブ コードに、マネージ コードをコンパイルする方法について説明しの使用、バインドを使用して Apple の iOS Api もことができますがへのアクセス方法、Xamarin.iOS アプリケーションの動作について説明します。NET の BCL となどの高度な言語C#します。
 
