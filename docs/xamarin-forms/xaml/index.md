@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2018
-ms.openlocfilehash: adebd5fe7e05d6698a7d69cef56a1d4035b6d8e7
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 9924e588808783fe35dbd830bbc9af288f37e7ea
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563076"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53813961"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -20,7 +20,7 @@ _XAML は、ユーザー インターフェイスの定義に使用できる宣�
 
 > [!VIDEO https://youtube.com/embed/H6UOrSyhTEE]
 
-**XAML のマスターになる evolve 2016。**
+**Evolve 2016。XAML のマスターになります。**
 
 > [!NOTE]
 > お試し、 [XAML Standard プレビュー](standard/index.md)
@@ -29,7 +29,7 @@ _XAML は、ユーザー インターフェイスの定義に使用できる宣�
 
 ## <a name="xaml-basicsxaml-basicsindexmd"></a>[XAML の基礎](xaml-basics/index.md)
 
-XAML では、コードではなく、マークアップを使用して、Xamarin.Forms アプリケーションのユーザー インターフェイスを定義できます。 Xamarin.Forms アプリケーションで XAML が必要なことはありませんが、理解できる使いやすい、あり方が視覚的に一貫性のあると同等のコードよりも簡潔です。 XAML は、一般的なモデル-ビュー-ビューモデル (MVVM) アプリケーションのアーキテクチャで使用するため特にに適しています。 XAML は、XAML ベースのデータ バインディングによって、ビューモデルのコードにリンクされているビューを定義します。
+XAML では、コードではなく、マークアップを使用して、Xamarin.Forms アプリケーションのユーザー インターフェイスを定義できます。 Xamarin.Forms アプリケーションで XAML が必要なことはありませんが、理解できる使いやすい、あり方が視覚的に一貫性のあると同等のコードよりも簡潔です。 XAML は、一般的なモデル-ビュー-ビューモデル (MVVM) アプリケーションのアーキテクチャで使用するため特に適しています。XAML では、XAML ベースのデータ バインディングによって、ビューモデルのコードにリンクされているビューを定義します。
 
 ## <a name="xaml-compilationxamlcmd"></a>[XAML のコンパイル](xamlc.md)
 
@@ -66,3 +66,7 @@ Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの�
 ## <a name="resource-dictionariesresource-dictionariesmd"></a>[リソース ディクショナリ](resource-dictionaries.md)
 
 XAML リソースは、2 回以上使用できるオブジェクトの定義です。 A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)リソースを 1 つの場所で定義されている、Xamarin.Forms アプリケーション全体で再利用を許可します。 この記事で作成および使用する方法を示します、 `ResourceDictionary`、いずれかのマージする方法と`ResourceDictionary`別にします。
+
+## <a name="loading-xaml-at-runtimeruntime-loadmd"></a>[実行時に XAML の読み込み](runtime-load.md)
+
+XAML の読み込みおよび実行時に解析できる、 [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)拡張メソッド。
