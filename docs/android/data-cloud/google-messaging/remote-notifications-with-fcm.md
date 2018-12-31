@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: de0e2c5ff10de9136c4cb5987c80ce22c7b18c4d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105546"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53814038"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート通知 firebase Cloud Messaging
 
@@ -137,7 +137,7 @@ FCM からメッセージを受信する、[メッセージング - Xamarin Fire
 
 1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.**.
 
-2.  確認**プレリリース パッケージを表示する**検索**Xamarin.Firebase.Messaging**します。
+2.  検索**Xamarin.Firebase.Messaging**します。
 
 3.  このパッケージをインストール、 **FCMClient**プロジェクト。
 
@@ -771,7 +771,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-FCM 完全デバイスの登録を解除するには、呼び出すことにより、インスタンス ID を削除、 [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラス。 例えば:
+FCM 完全デバイスの登録を解除するには、呼び出すことにより、インスタンス ID を削除、 [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラス。 例:
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();
@@ -793,8 +793,7 @@ Java.Lang.IllegalStateException: Default FirebaseApp is not initialized in this 
 Make sure to call FirebaseApp.initializeApp(Context) first.
 ```
 
-これは既知の問題、ソリューションをクリーニングし、プロジェクトを再構築を回避することです (**ビルド > ソリューションのクリーン**、**ビルド > ソリューションのリビルド**)。 詳細については、この参照してください。[フォーラム ディスカッション](https://forums.xamarin.com/discussion/96263/default-firebaseapp-is-not-initialized-in-this-process)します。
-
+これは既知の問題、ソリューションをクリーニングし、プロジェクトを再構築を回避することです (**ビルド > ソリューションのクリーン**、**ビルド > ソリューションのリビルド**)。
 
 ## <a name="summary"></a>まとめ
 
