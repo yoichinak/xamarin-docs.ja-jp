@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 132f31f4c9426dfceeef38f464231d1545f4db50
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dcfcf6c29b0a055c59501d6d95d4f97c16475bb3
+ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115173"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "53815231"
 ---
 # <a name="gtk-platform-setup"></a>GTK # プラットフォームのセットアップ
 
@@ -106,7 +106,7 @@ Windows デスクトップで実行される GTK # アプリを追加するこ�
 
     ![プロジェクト出力の種類を変更する](gtk-images/win/change-project-output-type.png "プロジェクト出力の種類を変更します。")
 
-13. **ソリューション エクスプ ローラー**を WPF プロジェクトを右クリックし、**スタートアップ プロジェクトとして設定**します。 F5 キーを押して、Windows デスクトップで、Visual Studio デバッガーでプログラムを実行します。
+13. **ソリューション エクスプ ローラー**GTK プロジェクトを右クリックし、選択、**スタートアップ プロジェクトとして設定**します。 F5 キーを押して、Windows デスクトップで、Visual Studio デバッガーでプログラムを実行します。
 
     ![GTK # の耐用年数のゲーム](gtk-images/win/gtk-gameoflife.png "GTK # の耐用年数のゲーム")
 
