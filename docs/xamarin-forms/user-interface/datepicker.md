@@ -183,7 +183,7 @@ public partial class MainPage : ContentPage
 
 [![開始の日付間の日数](datepicker-images/DaysBetweenDatesStart.png "開始の日付間の日数")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "開始の日付間の日数")
 
-いずれかをタップすると、`DatePicker`が表示されますが、プラットフォームの日付の選択を呼び出します。 プラットフォームは、非常にさまざまな方法でこの日付の選択を実装しますが、それぞれのアプローチは、そのプラットフォームのユーザーにとって馴染み深い。
+いずれかをタップすると、`DatePicker`が表示されますが、プラットフォームの日付の選択を呼び出します。 各プラットフォームは非常にさまざまな方法でこの日付の選択を実装していますが、これらはそのプラットフォームのユーザーにとって馴染み深いアプローチです。
 
 [![日付間の日数を選択](datepicker-images/DaysBetweenDatesSelect.png "の日付間の日数を選択")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "の日付間の日数を選択します")
 
