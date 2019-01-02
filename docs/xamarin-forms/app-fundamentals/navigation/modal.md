@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 44aee8500c7de2ae56b59049368d6025ec49cc5e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 32d0775baa75b70ebc118457945efc0f6c0acec2
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994829"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057062"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
 
 _Xamarin.Forms はモーダル ページをサポートしています。モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。この記事では、モーダル ページに移動する方法について説明します。_
 

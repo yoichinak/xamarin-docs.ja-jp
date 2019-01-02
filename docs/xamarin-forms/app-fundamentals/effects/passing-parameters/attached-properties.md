@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 9483e424a74a88ce3f0eb49624bb5315551f2062
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 642a4a63ca2c451c6a085f0e99cebd93babe078d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996452"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058757"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>効果のパラメーターを添付プロパティとして渡す
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
 
 _添付プロパティは、実行時のプロパティの変更に応答する効果のパラメーターの定義に使用できます。この記事では、添付プロパティを使用して効果にパラメーターを渡す方法と、実行時にパラメーターを変更する方法を示します。_
 
@@ -33,7 +35,7 @@ _添付プロパティは、実行時のプロパティの変更に応答する�
 
 サンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示します。 さらに、実行時に影の色を変更できます。 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
 
-![](attached-properties-images/shadow-effect.png "影効果プロジェクトの責任")
+![](attached-properties-images/shadow-effect.png "影効果プロジェクトの役割")
 
 `HomePage` 上の [`Label`](xref:Xamarin.Forms.Label) コントロールが、各プラットフォーム固有のプロジェクト内の `LabelShadowEffect` によってカスタマイズされます。 パラメーターは `ShadowEffect` クラス内の添付プロパティを通じて各 `LabelShadowEffect` に渡されます。 各プラットフォームの `PlatformEffect` クラスから、各 `LabelShadowEffect` クラスが派生します。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストに影が追加されます。
 
@@ -182,7 +184,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 
 ## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームでの効果の作成
 
-次のセクションで、`LabelShadowEffect` クラスのプラットフォーム固有の実装について説明します。
+以下のセクションでは、`LabelShadowEffect` クラスのプラットフォーム固有の実装について説明します。
 
 ### <a name="ios-project"></a>iOS プロジェクト
 

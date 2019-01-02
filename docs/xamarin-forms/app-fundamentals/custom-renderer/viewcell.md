@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 1e7a96b2f33d7dc89c4373ab612ac3d26692f64e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999000"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060460"
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell のカスタマイズ
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
 
 "_Xamarin.Forms の ViewCell は、ListView または TableView に追加できるセルであり、開発者が定義したビューを含みます。この記事では、Xamarin.Forms の ListView コントロールの内部でホストされる ViewCell 用のカスタム レンダラーを作成する方法を示します。これにより、ListView のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることが回避されます。_"
 
@@ -160,7 +162,7 @@ Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) コントロール�
 1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加し、それを使用して Xamarin.Forms のカスタム セルがレンダリングされることを指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
 
 > [!NOTE]
-> ほとんどの Xamarin.Forms 要素では、各プラットフォーム プロジェクトにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラス用の既定のレンダラーが使用されます。 ただし、[ViewCell](xref:Xamarin.Forms.ViewCell) 要素をレンダリングするときは、各プラットフォーム プロジェクト内にカスタム レンダラーが必要です。
+> ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラス用の既定のレンダラーが使用されます。 ただし、[ViewCell](xref:Xamarin.Forms.ViewCell) 要素をレンダリングするときは、各プラットフォーム プロジェクト内にカスタム レンダラーが必要です。
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
 

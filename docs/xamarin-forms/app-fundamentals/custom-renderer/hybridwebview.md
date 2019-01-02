@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/19/2018
-ms.openlocfilehash: aa060bd16bc0220f6a6026106ff6c8d786daebc1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3b8cf7ec8a42ed031699d8f5e02f32c6eb61458
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105039"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053868"
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView の実装
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
 
 _Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、View クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。この記事では、HybridWebView カスタム コントロール用のカスタム レンダラーを作成する方法を示します。これにより、プラットフォームに固有の Web コントロールを強化して、JavaScript からの C# コードの呼び出しを実現する方法が示されます。_
 
@@ -189,7 +191,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 
 新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーをサブスクライブします。 同様に、レンダラーが関連付けられている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーを登録解除します。 この手法を採用すると、メモリ リークが発生しない効率的なカスタム レンダラーを作成できます。
 
-各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 属性は、レンダリングされている Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの型名の 2 つのパラメーターを取得します。 属性の `assembly` プレフィックスは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの種類名と、カスタム レンダラーの種類名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスは、属性がアセンブリ全体に適用されることを指定します。
 
 以下のセクションでは、各ネイティブ Web コントロールによって読み込まれる Web ページの構造、JavaScript から C# を呼び出すプロセス、各プラットフォーム固有のカスタム レンダラー クラスでこれを実装する方法について説明します。
 

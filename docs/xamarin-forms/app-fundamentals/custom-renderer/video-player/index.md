@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 00697ca0adf3a34abec90c2f96d9fd9c273d06bb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1677f86379310ee6d5e0973108f85db2a328cd23
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239785"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048832"
 ---
 # <a name="implementing-a-video-player"></a>ビデオ プレーヤーの実装
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Xamarin.Forms アプリケーション内でビデオ ファイルを再生することが望ましい場合があります。 この一連の記事では、`VideoPlayer` という名前の Xamarin.Forms クラスに向けて、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 用のカスタム レンダラーを記述する方法について説明します。
 
@@ -70,4 +72,4 @@ Xamarin.Forms アプリケーション内でビデオ ファイルを再生す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Video Player Demos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: e2e5a71d7cddee66612c12bc6091c57426b3ed47
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38994855"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059961"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>タップ ジェスチャ認識エンジンの追加
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
 
 _タップ ジェスチャはタップ検出に使用され、TapGestureRecognizer クラスで実装されています。_
 

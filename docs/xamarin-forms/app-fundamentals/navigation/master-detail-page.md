@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 25f6cf341fcf47d5dc5320f73855bb2a4e29a9e8
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675524"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057666"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター詳細ページ
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
 
 _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。この記事では、MasterDetailPage を使用する方法と、情報ページ間を移動する方法について説明します。_
 

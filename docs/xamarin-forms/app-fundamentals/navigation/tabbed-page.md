@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 85a6bce8a1021c75064ba06f3a5daf69b7fe3e57
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: d19d8590171e585b6f65b2a63fc9847d7d672a56
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171379"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058416"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms のタブ付きページ
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
 
 _Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明します。_
 

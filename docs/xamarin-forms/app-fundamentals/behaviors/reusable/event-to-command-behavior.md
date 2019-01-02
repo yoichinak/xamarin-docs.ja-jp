@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 8bf8f86cf708806d1c17b3fe4eda0755f98fd646
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 1c2aea9a5dead1962cfd4bb71d1a1211e8b98ee9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563187"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056708"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>再利用可能な EventToCommandBehavior
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 
 _ビヘイビアーを使用すると、コマンドとやりとりするように設計されていないコントロールにコマンドを関連付けることができます。この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、イベントが発生したときにコマンドを呼び出す方法を示します。_
 

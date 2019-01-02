@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 505b5bfb9681e5bc30ff84aa90c8e148ed6db4b1
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171600"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058286"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms のバインドのフォールバック
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 バインディング ソースを解決できないため、またはバインドは成功しても `null` 値が返されるために、データ バインディングが失敗する場合があります。 これらのシナリオについては、値コンバーターまたは他の追加コードで対処できますが、バインド プロセスが失敗した場合に使用されるフォールバック値を定義することでデータ バインディングをより堅牢にすることができます。 このためには、バインド式で [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティと [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを定義します。 これらのプロパティは、[`BindingBase`](xref:Xamarin.Forms.BindingBase) クラス内にあるため、バインド、コンパイル済みのバインド、`Binding` マークアップ拡張で使用することができます。
 

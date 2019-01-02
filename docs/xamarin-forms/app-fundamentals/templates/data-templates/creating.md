@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 63f9bf82bc8e637aced1afa5d5699ac1e8dc3f8c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4eea0db32bcfae4dc2ecdec8c2e494989515ef00
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994616"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060227"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
 
 _データ テンプレートは、ResourceDictionary 内でインラインで作成したり、またはカスタム型や適切な Xamarin.Forms のセルの種類から作成したりできます。この記事では、各手法について説明します。_
 

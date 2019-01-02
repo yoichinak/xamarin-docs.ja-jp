@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 17e9e7061e4329431a0f34abdbbb616a1aff1b43
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 0fb9ed06ef58c4350f479021f0c18e48c693cf7f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171327"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059883"
 ---
 # <a name="loading-application-resource-videos"></a>アプリケーション リソース ビデオの読み込み
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 `VideoPlayer` ビュー用のカスタム レンダラーは、アプリケーション リソースとして個々のプラットフォーム プロジェクトに埋め込まれたビデオ ファイルを再生できます。 しかし、現在のバージョンの `VideoPlayer` は、.NET Standard ライブラリに埋め込まれたリソースにアクセスすることはできません。
 
@@ -64,7 +66,7 @@ namespace FormsVideoLibrary.iOS
             {
                 string path = (Element.Source as ResourceVideoSource).Path;
 
-                if (!String.IsNullOrWhitespace(path))
+                if (!String.IsNullOrWhiteSpace(path))
                 {
                     string directory = Path.GetDirectoryName(path);
                     string filename = Path.GetFileNameWithoutExtension(path);

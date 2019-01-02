@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38994677"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058991"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 
 _NavigationPage クラスは、ユーザーが前後を希望どおりにページを移動することができる階層ナビゲーション エクスペリエンスを提供します。このクラスは、Page オブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを提供します。この記事では、NavigationPage クラスを使用してページのスタックでナビゲーションを実行する方法について説明します。_
 

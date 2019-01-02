@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: a017cfaa6f96c95f4b501f189fe778fbd5ece3f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f07b26ed06e85e1b20a29459d2f8f0d2626a2855
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241626"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054869"
 ---
 # <a name="xamarinforms-dependencyservice"></a>Xamarin.Forms の DependencyService
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/UsingDependencyService)
 
 _開発者は Xamarin.Forms を使って、プラットフォーム固有のプロジェクトで動作を定義できます。その後、DependencyService によって適切なプラットフォームの実装が検索され、共有コードでネイティブ機能にアクセスできるようになります。_
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 6d1948214b97a1b536b07b6420c32e4d27124518
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 0351436259bb782e4f8e3a3405b9620c4e8b20bb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38997544"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050752"
 ---
 # <a name="implementing-text-to-speech"></a>音声合成の実装
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 
 この記事では、ネイティブな Text to Speech API にアクセスするために [`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用するクロスプラットフォーム アプリを作成する方法を示します。
 
@@ -175,4 +177,3 @@ iOS、Android、または UWP 上でこのアプリケーションを実行し�
 
 - [DependencyService の使用 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample/)
-

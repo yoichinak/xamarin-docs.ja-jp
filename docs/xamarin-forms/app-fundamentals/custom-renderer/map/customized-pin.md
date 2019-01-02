@@ -7,18 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: ab5315d169615430f5f5a733c0fa8c2ca9caa4b0
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 15cba21eed510ec13bfa3dc3f176fce30fb4ed68
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172302"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059380"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+
 _この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。_
 
-すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`Map`](xref:Xamarin.Forms.Maps.Map) がレンダリングされると、`MapRenderer` クラスがインスタンス化され、次に、ネイティブの `MKMapView` コントロールがインスタンス化されます。 Android プラットフォーム上では、`MapRenderer` クラスによってネイティブの `MapView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`MapRenderer` クラスによってネイティブの `MapControl` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」 (レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
+すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`Map`](xref:Xamarin.Forms.Maps.Map) がレンダリングされると、`MapRenderer` クラスがインスタンス化され、次に、ネイティブの `MKMapView` コントロールがインスタンス化されます。 Android プラットフォーム上では、`MapRenderer` クラスによってネイティブの `MapView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`MapRenderer` クラスによってネイティブの `MapControl` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスとネイティブ コントロール) を参照してください。
 
 次の図は、[`Map`](xref:Xamarin.Forms.Maps.Map) と、それを実装する、対応するネイティブ コントロールの関係を示しています。
 
@@ -146,7 +148,7 @@ public MapPage ()
 
 ![](customized-pin-images/screenshots.png "各プラットフォームの CustomMap")
 
-`MapRenderer` クラスでは `OnElementChanged` メソッドを公開します。このメソッドは、対応するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
+`MapRenderer` クラスでは `OnElementChanged` メソッドを公開します。このメソッドは、対応するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーが接続して*いた* Xamarin.Forms 要素と、レンダラーが現在接続して*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
 
 各プラットフォーム固有のレンダラー クラス内の、オーバーライドされたバージョンの `OnElementChanged` メソッドは、ネイティブ コントロールのカスタマイズを行う場所です。 プラットフォーム上で使用されているネイティブ コントロールへの型指定された参照には、`Control` プロパティを使用してアクセスすることができます。 さらに、レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 
@@ -169,7 +171,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされているときにのみ、ネイティブ コントロールを構成し、イベント ハンドラーをサブスクライブする必要があります。 同様に、レンダラーがアタッチされている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーのサブスクライブをすべて解除する必要があります。 この手法を採用することは、メモリ リークが発生しないカスタム レンダラーの作成に役立ちます。
 
-各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 属性では、レンダリングされている Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの型名の 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの種類名と、カスタム レンダラーの種類名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションで、各プラットフォーム固有のカスタム レンダラー クラスの実装について説明します。
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: b83668f6836b1d5d98f67592bf3e2b01e7319edc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: dc26084b94956ea9bc87384e5fdb79695bc8c2b5
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998190"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051783"
 ---
 # <a name="creating-a-controltemplate"></a>ControlTemplate の作成
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
 
 "_コントロール テンプレートは、アプリケーション レベルまたはページ レベルで定義できます。この記事では、コントロール テンプレートを作成して使用する方法を示します。_"
 
