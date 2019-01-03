@@ -30,6 +30,7 @@
 ### [リソース ディクショナリ](xaml/resource-dictionaries.md)
 ### [XAML Standard (プレビュー)](xaml/standard/index.md)
 #### [コントロール](xaml/standard/controls.md)
+### [実行時の XAML の読み込み](xaml/runtime-load.md)
 ## [アプリケーションの基礎](app-fundamentals/index.md)
 ### [ユーザー補助](app-fundamentals/accessibility/index.md)
 #### [オートメーションのプロパティ](app-fundamentals/accessibility/automation-properties.md)
