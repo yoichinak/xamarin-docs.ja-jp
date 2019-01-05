@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 8df8a4f5e59675164e7d06b682c61094078edc4f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: db442f45c615b680264e79262f62062eb6a6bfd5
+ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171041"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012296"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>アプリケーションで Google マップ API の使用
 
@@ -45,7 +45,7 @@ Xamarin.Android アプリは Google Maps Android API を使用することは前
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Google Play Services SDK をインストールします。
 
-Google play 開発者サービスは、Google +、アプリ内課金、およびマップなどのさまざまな Google 機能を活用するために Android アプリケーションを使用する Google からのテクノロジです。 含まれている f、バック グラウンド サービスとして、これらの機能は Android デバイスでアクセス可能な[Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)します。
+Google play 開発者サービスは、Google +、アプリ内課金、およびマップなどのさまざまな Google 機能を活用するために Android アプリケーションを使用する Google からのテクノロジです。 含まれているバック グラウンド サービスとして、これらの機能は Android デバイスでアクセス可能な[Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)します。
 
 Android アプリケーションは、Google play 開発者サービスのクライアント ライブラリを介した Google play 開発者サービスと対話します。 このライブラリには、インターフェイスと、個々 のサービス マップなどのクラスが含まれています。 次の図は、Android アプリケーションと Google play 開発者サービスの間のリレーションシップを示しています。
 
@@ -236,7 +236,7 @@ Google マップ API から使用可能な 5 つの異なる種類のマップ�
 
 次の図は、左から右 (通常、ハイブリッド、地形) から、マップのさまざまな種類のうち 3 つを示しています。
 
-[![3 つのマップの例のスクリーン ショット: 通常、ハイブリッド、および地形](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
+[![3 つのマップのスクリーン ショットの例。通常、ハイブリッド、および地形](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 `GoogleMap.MapType`プロパティを使用して設定または変更するマップの種類が表示されます。 次のコード スニペットでは、サテライト マップを表示する方法を示します。
 

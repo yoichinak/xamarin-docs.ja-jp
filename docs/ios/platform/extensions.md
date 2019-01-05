@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9c28cc892536ebe841fb28e8313cf380c7f051b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
+ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120425"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012283"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin.iOS での iOS 拡張機能
 
@@ -49,7 +49,7 @@ ms.locfileid: "50120425"
 - 拡張機能は、デバイスのカメラまたはマイク (ただし、既存のメディア ファイルにアクセスすることがあります)、アクセスできません。
 - 拡張機能は空気を削除するデータを受信できません (ただし、空気のドロップを使用してデータを送信することができます)
 - [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/)と["uialertview"](https://developer.xamarin.com/api/type/UIKit.UIAlertView/)が使用不可能です拡張機能を使用する必要があります[UIAlertController。](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- いくつかのメンバーの[UIApplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/)は使用できません: [UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)、 `UIApplication.OpenURL`、`UIApplication.BeginIgnoringInteractionEvents`と `UIApplication.EndIgnoringInteractionEvents`
+- いくつかのメンバーの[UIApplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/)は使用できません。[UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)、 `UIApplication.OpenURL`、`UIApplication.BeginIgnoringInteractionEvents`と `UIApplication.EndIgnoringInteractionEvents`
 - iOS では、今日の拡張機能で 16 MB のメモリ使用制限を適用します。
 - 既定では、キーボード拡張機能は、ネットワークへのアクセスを必要はありません。 これは (制限は、シミュレーターでは適用されません)、デバイスでのデバッグに影響 Xamarin.iOS では、デバッグを行うにネットワーク アクセスが必要なためです。 設定してネットワーク アクセスを要求することは、`Requests Open Access`値をプロジェクトの Info.plist で`Yes`します。 Apple を参照してください[カスタム キーボード ガイド](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)キーボード拡張機能の制限事項の詳細について。
 
