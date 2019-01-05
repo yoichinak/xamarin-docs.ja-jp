@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: f3b1f5c11a02710de8d0ffd09741acb3017f5cb6
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: cefcc7084b2abab4af61f07ef1f33a4f4c363f69
+ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "43780514"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "53815205"
 ---
 # <a name="introduction-to-mobile-development"></a>モバイル開発の概要
 
@@ -61,7 +61,7 @@ iOS では、Xamarin の *Ahead-of-Time* (*AOT*) コンパイラによって Xam
 
 Xamarin アプリケーションは、Xamarin モバイル プロファイルとして知られる .NET BCL のサブセットに対して構築されます。 このプロファイルはモバイル アプリケーションに特化して作成されており、MonoTouch.dll と Mono.Android.dll (それぞれ iOS と Android 向け) にパッケージ化されています。 これは Silverlight (および Moonlight) アプリケーションが Silverlight/Moonlight .NET プロファイルに対して構築される場合と非常に似ています。 実際、Xamarin モバイル プロファイルは BCL クラス群が追加されている Silverlight 4.0 プロファイルと同等です。
 
-使用可能なアセンブリとクラスの完全な一覧については、「[Xamarin.iOS アセンブリ一覧](~/cross-platform/internals/available-assemblies.md)」と「[Xamarin.Android アセンブリ一覧](~/cross-platform/internals/available-assemblies.md)」を参照してください
+使用可能なアセンブリとクラスの完全な一覧については、「[Xamarin.iOS アセンブリ一覧](~/cross-platform/internals/available-assemblies.md?context=xamarin/ios)」と「[Xamarin.Android アセンブリ一覧](~/cross-platform/internals/available-assemblies.md?context=xamarin/android)」を参照してください
 
 これらの .dll には、BCL に加えて、基になる SDK API を C# から直接呼び出せるようにする iOS SDK と Android SDK のほぼすべてに対するラッパーが含まれています。
 

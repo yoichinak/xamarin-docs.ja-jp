@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 03dbaa36cc1fa4a6a169f9456e0fd5b0fdc0d295
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 0e8b727fb520b6901bf397c9cfb67947897cbc8b
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563941"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056963"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 [前の記事](basic-bindings.md) では、**Alternative Code Binding** ページと **Alternative XAML Binding** ページに `Label` が備わっていて、その `Scale` プロパティは `Slider` の `Value` プロパティにバインドされていました。 `Slider` の初期値が 0 であるため、`Label` の `Scale` プロパティは 1 ではなく 0 に設定され、`Label` は非表示となりました。
 
@@ -562,7 +564,7 @@ public partial class App : Application
 
 アプリケーションのライフサイクル メソッドの詳細については、[**アプリのライフ サイクル**](~/xamarin-forms/app-fundamentals/app-lifecycle.md)に関する記事を参照してください。
 
-他のほぼすべてのことは、**SampleSettingsPage.xaml** ファイル内で処理されます。 ページの `BindingContext` は `Binding` マークアップ拡張を使用して設定されます: バインディング ソースは静的な `Application.Current` プロパティ (プロジェクト内の `App` クラスのインスタンス) です。`Path` は `Settings` プロパティ (`SampleSettingsViewModel` オブジェクト) に設定されます。
+他のほぼすべてのことは、**SampleSettingsPage.xaml** ファイル内で処理されます。 ページの `BindingContext` は `Binding` マークアップ拡張を使用して設定されます。バインディング ソースは静的な `Application.Current` プロパティ (プロジェクト内の `App` クラスのインスタンス) です。`Path` は `Settings` プロパティ (`SampleSettingsViewModel` オブジェクト) に設定されます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

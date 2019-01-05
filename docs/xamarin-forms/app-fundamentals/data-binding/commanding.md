@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 68c7869254ae861cef8307431d925368082be921
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 37fbc0107414521a87c263d327ffd9b8940384eb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675256"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053465"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms のコマンド インターフェイス
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Model-View-ViewModel アーキテクチャでは、データ バインディングは、ViewModel のプロパティ (一般に、`INotifyPropertyChanged` の派生クラスです) と、View のプロパティ (一般に、XAML ファイルです) の間で定義されます。 アプリケーションでは、ViewModel 内の何かに影響を与えるコマンドをユーザーが開始しなければならないようにすることで、これらのプロパティ バインディングを拡張することが必要な場合があります。 通常、このようなコマンドはボタンのクリックや指のタップによって通知され、従来は、`Button` の `Clicked` のイベントまたは `TapGestureRecognizer` の `Tapped` イベントに対するハンドラーの分離コード ファイル内で処理されます。
 

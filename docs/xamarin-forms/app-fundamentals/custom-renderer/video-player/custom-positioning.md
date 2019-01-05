@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b5f3c9dcbaa6ba1a9e86568ccabe38416cc653f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cf2de96022366165e726bc3e6447bb88f30a26bb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241911"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057140"
 ---
 # <a name="custom-video-positioning"></a>カスタムのビデオ位置
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 各プラットフォームで実装されているトランスポート コントロールには、位置バーが含まれます。 このバーはスライダーまたはスクロール バーに似ており、ビデオの合計時間内の現在の位置を示します。 さらに、ユーザーは位置バーを操作して、ビデオ内の新しい位置へと前後に移動することができます。
 

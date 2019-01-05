@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 87084a0ccc2970f56e7ef7a6d2f4c59c49032aa0
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 93218289cefe26c523bf14721202f7ec4743f022
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527366"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057614"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms でのファイル処理
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
 
 _Xamarin.Forms を使ったファイルの処理は、.NET Standard ライブラリにあるコードを使うか、埋め込みリソースを使うことで実現できます。_
 
@@ -62,7 +64,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 ## <a name="loading-files-embedded-as-resources"></a>リソースとして埋め込まれたファイルを読み込む
 
-**.NET Standard** アセンブリにファイルを埋め込むには、ファイルを作成するか追加し、**[ビルド アクション] が [EmbeddedResource]** になっていることを確認します。
+**.NET Standard** アセンブリにファイルを埋め込むには、ファイルを作成するか追加し、**[ビルド アクション] が[EmbeddedResource]** になっていることを確認します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

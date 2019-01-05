@@ -6,15 +6,17 @@ ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/01/2017
-ms.openlocfilehash: 0a5e2c1a7a7807da91fd98e617467ea251a25bc0
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 12/14/2018
+ms.openlocfilehash: 9b5150eff0290ef5858198459108699be9f9b273
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527405"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411766"
 ---
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
 
 _エフェクトではイベントを定義して呼び出すことができ、基礎ネイティブ ビューの変化を信号で送ります。この記事では、低レベルのマルチタッチ フィンガー トラッキングを実装する方法とタッチ操作を信号で送るイベントを生成する方法を紹介します。_
 
@@ -351,6 +353,9 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 ```
 
 この `TouchRecognizer` クラスの構造の大部分は Android `TouchEffect` クラスと似通っています。
+
+> [!IMPORTANT]
+> `UIKit` のビューの多くは、既定ではタッチが有効になっていません。 タッチを有効にするには、iOS プロジェクトの `TouchEffect` クラス内で `OnAttached` オーバーライドに `view.UserInteractionEnabled = true;` を追加します。 これは、効果が添付されている要素に対応する`UIView` が取得されてから行う必要があります。
 
 ## <a name="putting-the-touch-effect-to-work"></a>タッチ エフェクトを動かす
 

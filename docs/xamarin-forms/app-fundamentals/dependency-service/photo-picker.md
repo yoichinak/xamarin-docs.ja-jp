@@ -7,21 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 00308a6c7883d4ac6ce41592d4a0e18f9fb28d52
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3452c79621013690f967e065c7afaf0768a50c3f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113314"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057492"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
 
 この記事では、ユーザーが電話の画像ライブラリから写真を選択できるアプリケーションを作成する手順について説明します。 Xamarin.Forms にはこの機能は含まれていないため、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用して各プラットフォームのネイティブ API にアクセスする必要があります。  この記事では、このタスクのために `DependencyService` を使用する以下の手順について説明します。
 
 - **[インターフェイスの作成](#Creating_the_Interface)** &ndash; 共有コードでインターフェイスを作成する方法を理解します。
-- **[iOS での実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コードでインターフェイスを実装する方法を学習します。
-- **[Android での実装](#Android_Implementation)** &ndash; Android 用のネイティブ コードでインターフェイスを実装する方法を学習します。
-- **[ユニバーサル Windows プラットフォームでの実装](#UWP_Implementation)** &ndash; ユニバーサル Windows プラットフォーム (UWP) 用のネイティブ コードでインターフェイスを実装する方法を学習します。
+- **[iOS での実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
+- **[Android での実装](#Android_Implementation)** &ndash; Android 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
+- **[ユニバーサル Windows プラットフォームでの実装](#UWP_Implementation)** &ndash; ユニバーサル Windows プラットフォーム (UWP) 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
 - **[共有コードでの実装](#Implementing_in_Shared_Code)** &ndash; `DependencyService` を使用して共有コードからネイティブ実装を呼び出す方法を学習します。
 
 <a name="Creating_the_Interface" />

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 28892692133020de1fa5a6eb007bb3f9bcf2612b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4594da09d48a0888a88cbce9ab135a007eb6f4cd
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997485"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054332"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms バインディングの値コンバーター
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 データ バインディングでは通常、ソース プロパティからターゲット プロパティへ、または、場合によってはターゲット プロパティからソース プロパティへ、データを転送します。 ソース プロパティとターゲット プロパティの型が同じ場合、または、暗黙の型変換によって一方の型がもう一方の型に変換できる場合は、この転送はすみやかに進みます。 それ以外の場合は、型変換を行う必要があります。
 

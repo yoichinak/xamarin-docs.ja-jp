@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d7719f231a6d70594985a1158340104d68367ffe
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 347d0eebf7340bb8dc7234275d0f58acf7ab16c6
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998616"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061032"
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms のパフォーマンス
 
@@ -20,11 +20,11 @@ _Xamarin.Forms アプリケーションのパフォーマンスを高めるた�
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-**Evolve 2016: Xamarin.Forms でアプリのパフォーマンスを最適化する**
+**Evolve 2016:Xamarin.Forms でアプリのパフォーマンスを最適化する**
 
 ## <a name="overview"></a>概要
 
-アプリケーションのパフォーマンスの低さは、さまざまな形でアプリケーションに現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が減ったりすることがあります。 ただし、パフォーマンスを最適化するには、効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
+アプリケーションのパフォーマンスの低さは、さまざまな形でアプリケーションに現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が減ったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
 Xamarin.Forms アプリケーションのパフォーマンスとユーザーの体感パフォーマンスを高めるための方法は多数あります。 それには以下が含まれます。
 
@@ -177,7 +177,7 @@ Xamarin.Forms 2 では、レイアウトの更新に影響する最適化され�
 - 可能であれば、[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) は使用しないでください。 CPU で相当な量の作業を実行しなければならなくなります。
 - [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) を使用するときは、可能な限り、[`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) プロパティを使用しないでください。
 - [`StackLayout`](xref:Xamarin.Forms.StackLayout) を使用するときは、[`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) に設定する子を 1 つだけにしてください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
-- [`Layout`](xref:Xamarin.Forms.Layout) クラスのメソッドは呼び出さないでください。高いレイアウト計算が実行されることになります。 望ましいレイアウト動作は、[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) プロパティと [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) プロパティを設定することで得られる場合が多いです。 あるいは、[`Layout<View>`](xref:Xamarin.Forms.Layout`1) クラスをサブクラスにして望ましいレイアウト動作を得ます。
+- [`Layout`](xref:Xamarin.Forms.Layout) クラスのメソッドは呼び出さないでください。高くつくレイアウト計算が実行されることになります。 望ましいレイアウト動作は、[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) プロパティと [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) プロパティを設定することで得られる場合が多いです。 あるいは、[`Layout<View>`](xref:Xamarin.Forms.Layout`1) クラスをサブクラスにして望ましいレイアウト動作を得ます。
 - [`Label`](xref:Xamarin.Forms.Label) インスタンスは不必要に更新しないでください。ラベルのサイズを変更すると、画面レイアウト全体が再計算されることがあります。
 - 必要でない限り、[`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) プロパティは設定しないでください。
 - 可能であれば、[`Label`](xref:Xamarin.Forms.Label) インスタンスの [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) を [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap) に設定してください。
@@ -186,7 +186,7 @@ Xamarin.Forms 2 では、レイアウトの更新に影響する最適化され�
 
 ## <a name="optimize-listview-performance"></a>ListView パフォーマンスを最適化する
 
-[`ListView`](xref:Xamarin.Forms.ListView) コントロールを使用する場合、最適化が必要なさまざまなユーザー エクスペリエンスがあります。
+[`ListView`](xref:Xamarin.Forms.ListView) コントロールを使用するとき、さまざまなユーザー エクスペリエンスを最適化する必要があります。
 
 - **初期化** – コントロールが作成されたときに始まり、項目が画面に表示されたときに終わる時間間隔。
 - **スクロール** – 一覧をスクロール表示し、UI がタッチ ジェスチャに遅れないようにする機能。
@@ -262,7 +262,7 @@ Xamarin.Forms 2 では、レイアウトの更新に影響する最適化され�
 </Application>
 ```
 
-ただし、あるページに固有の XAML は、アプリのリソース ディクショナリに含めるべきではありません。アプリのリソースは、ページが必要とするときではなく、アプリケーションの起動時に解析されるためです。 リソースが起動ページではないページで使用される場合、そのページのリソース ディクショナリに置いてください。これにより、アプリケーションの起動時に解析される XAML が減ります。 次のコード例では、`HeadingLabelStyle` リソースを確認できます。このリソースは 1 つのページだけに存在するので、ページのリソース ディクショナリに定義されています。
+ただし、あるページに固有の XAML は、アプリのリソース ディクショナリに含めるべきではありません。アプリのリソースは、ページが必要とするときではなく、アプリケーションの起動時に解析されるためです。 リソースが起動ページではないページで使用される場合、そのページのリソース ディクショナリに置いてください。これにより、アプリケーションの起動時に解析される XAML が減ります。 次のコード例では、`HeadingLabelStyle` リソースを確認できます。このリソースは 1 つのページのみにあり、そのようにアプリケーションのリソース ディクショナリに定義されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -329,6 +329,5 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 - [ListView のパフォーマンス](~/xamarin-forms/user-interface/listview/performance.md)
 - [高速レンダラー](~/xamarin-forms/internals/fast-renderers.md)
 - [レイアウトの圧縮](~/xamarin-forms/user-interface/layouts/layout-compression.md)
-- [Xamarin.Forms イメージ拡大/縮小サンプル](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
 - [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
 - [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)

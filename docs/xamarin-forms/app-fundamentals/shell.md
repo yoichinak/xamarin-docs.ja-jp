@@ -6,13 +6,13 @@ ms.assetid: 1A674212-72DB-4AA4-B626-A4EC135AD1A0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2018
-ms.openlocfilehash: 933368f7ca1435ece4f20945b2f8e905f7584217
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 12/11/2018
+ms.openlocfilehash: 422311c766584cbd27d0ab0c42adee042e9aac3e
+ms.sourcegitcommit: 408b78dd6eded4696469e316af7922a5991f2211
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899385"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53246296"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
 
@@ -50,7 +50,7 @@ Xamarin.Forms シェルは、アプリケーションのコンテナーです。
 
 ## <a name="bootstrapping-a-shell-application"></a>シェル アプリケーションをブートストラップする
 
-`App` クラスの `MainPage` プロパティを新しい `Shell` インスタンスに設定することで、シェル アプリケーションがブートストラップされます。
+`App` クラスの `MainPage` プロパティをシェル ファイルのインスタンスに設定することで、シェル アプリケーションがブートストラップされます。
 
 ```csharp
 namespace TailwindTraders.Mobile
@@ -62,13 +62,13 @@ namespace TailwindTraders.Mobile
             InitializeComponent();
 
             Forms.SetFlags("Shell_Experimental");
-            MainPage = new Shell();
+            MainPage = new TheShell();
         }
     }
 }
 ```
 
-`Shell` クラスは、ご利用のアプリケーションの視覚的な構造を示す XAML ファイルです。
+`TheShell` クラスは、ご利用のアプリケーションの視覚的な構造を示す XAML ファイルです。
 
 > [!IMPORTANT]
 > 現在、シェルは試験段階であり、`Shell` インスタンスを作成する前にご使用の `App` クラスに、または、`Forms.Init` メソッドを呼び出す前にご利用のプラットフォーム プロジェクトに `Forms.SetFlags("Shell_Experimental");` を追加することによってのみ使用できます。
@@ -83,13 +83,13 @@ namespace TailwindTraders.Mobile
 
 これらの要素はどれもユーザー インターフェイスを表しませんが、アプリケーションの視覚的な構造の組織を表します。 シェルではこれらの要素を取得し、コンテンツにナビゲーション ユーザー インターフェイスを生成します。
 
-次の XAML では、`Shell` ファイルのシンプルな例を示しています。
+次の XAML では、シェル ファイルのシンプルな例を示しています。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -97,7 +97,7 @@ namespace TailwindTraders.Mobile
                 <local:HomePage />
             </ShellContent>
         </ShellSection>
-    <ShellItem>
+    </ShellItem>
 </Shell>
 ```
 
@@ -117,8 +117,8 @@ namespace TailwindTraders.Mobile
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -349,7 +349,7 @@ XAML スタイルを使用するか、カスタム レンダラーを指定す�
 
 シェルには、URI ベースのナビゲーション操作が含まれています。 URI では、ナビゲーション階層の設定に従うことなく、アプリケーション内の任意のページへの移動を許可する、強化されたナビゲーション操作が提供されます。 さらに、これにより、ナビゲーション スタックのすべてのページにアクセスすることなく、後方に移動する機能も提供されます。
 
-この URI ベースのナビゲーションは、アプリケーション内の移動に使用される URI セグメントであるルートで実現されます。 `Shell` ファイルでは、ルート スキーマ、ルート ホスト、およびルートを宣言する必要があります。
+この URI ベースのナビゲーションは、アプリケーション内の移動に使用される URI セグメントであるルートで実現されます。 シェル ファイルでは、ルート スキーマ、ルート ホスト、およびルートを宣言する必要があります。
 
 ```xaml
 <Shell ...
@@ -362,9 +362,9 @@ XAML スタイルを使用するか、カスタム レンダラーを指定す�
 
 組み合わせると、`app://www.microsoft.com/tailwindtraders` ルート URI からの `RouteScheme`、`RouteHost`、および `Route` プロパティ値になります。
 
-`Shell` クラスの各要素は、プログラムのナビゲーションで使用できるルート プロパティを定義することもできます。
+シェル ファイルの各要素は、プログラムのナビゲーションで使用できるルート プロパティを定義することもできます。
 
-`Shell` コンストラクター、またはルートが呼び出される前に実行されるその他の任意の場所では、追加のルートをシェル要素 (`MenuItem` インスタンスなど) によって表されていない任意のページに対して明示的に登録できます。
+シェル ファイル コンストラクター、またはルートが呼び出される前に実行されるその他の任意の場所では、追加のルートをシェル要素 (`MenuItem` インスタンスなど) によって表されていない任意のページに対して明示的に登録できます。
 
 ```csharp
 Routing.RegisterRoute("productcategory", typeof(ProductCategoryPage));

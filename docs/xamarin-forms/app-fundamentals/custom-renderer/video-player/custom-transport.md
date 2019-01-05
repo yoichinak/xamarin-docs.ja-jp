@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3397c931dcb23a29b0682699512a5b4c9018de38
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: b0d202ff7743361207795d342b29243130f4f056
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171067"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058731"
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 ビデオ プレーヤーのトランスポート コントロールには、**再生**、**一時停止**、および**停止**機能を実行するボタンが含まれています。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、**再生**と**一時停止**機能は一般的に、1 つのボタンに結合されています。
 
@@ -358,7 +360,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`AVPlayer` の 2 つのプロパティにアクセスする必要があります: `AVPlayerStatus`型の [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) プロパティと、`AVPlayerTimeControlStatus`. 型の [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) プロパティです。 `Element` プロパティ (`VideoPlayer`) は、`Status` プロパティを設定するために `IVideoPlayerController` へとキャストする必要があることに注意してください。
+`AVPlayer` の 2 つのプロパティにアクセスする必要があります:`AVPlayerStatus` 型の [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) プロパティと、`AVPlayerTimeControlStatus` 型の [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) プロパティです。 `Element` プロパティ (`VideoPlayer`) は、`Status` プロパティを設定するために `IVideoPlayerController` へとキャストする必要があることに注意してください。
 
 ### <a name="the-android-status-setting"></a>Android での状態の設定
 

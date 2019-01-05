@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e31cba5c61624b0bca03443262b95d7497564750
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 62dae2f85abb7327e133f008e27e2519ccdc2f68
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675199"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051984"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Xamarin.Forms のデータ バインディングでは、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間において、プロパティのペアをリンクします。 これら 2 つのオブジェクトは、"*ターゲット*" および "*ソース*" と呼ばれます。
 

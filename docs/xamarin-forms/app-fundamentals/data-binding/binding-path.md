@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 5ffc167b1e5695663dff6005f3d7e0ba0ea958db
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 0c63e33309802f0945ad94a858af45f6b29b2cc4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172107"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050780"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 これまでのすべてのデータ バインディング例では、`Binding` クラスの [`Path`](xref:Xamarin.Forms.Binding.Path) プロパティ (または `Binding` マークアップ拡張の [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) プロパティ) が単一のプロパティに設定されていました。 実際には、`Path` を*サブ プロパティ* (プロパティのプロパティ) またはコレクションのメンバーに設定することができます。
 

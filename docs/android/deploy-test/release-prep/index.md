@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: a8858839c51e519ac50dd59d223a6c15cee9e6bf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dff57b142745729d5d38db4cce892bb1d55796a6
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123454"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059731"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
-
 
 アプリケーションがコード化され、テストされたら、配信のためにパッケージを用意する必要があります。 このパッケージ準備における最初の作業は、リリース用のアプリケーションをビルドすることです。中心的な作業は、いくつかのアプリケーション属性を設定することです。
 
@@ -64,7 +63,6 @@ Visual Studio for Mac では、アプリケーション アイコンは、次の
 
 通常、`using Android.App` は **AssemblyInfo.cs** の先頭で宣言されています (`Application` 属性の名前空間は `Android.App`)。ただし、`using` ステートメントがまだ存在しない場合は、追加する必要があります。
 
-
 <a name="Versioning" />
 
 ## <a name="version-the-application"></a>アプリケーションのバージョン
@@ -100,9 +98,9 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 リリース モードでは、アプリケーションがランタイムで必要な Xamarin.Android の要素のみを送付するように、共有ランタイムはオフにし、リンクをオンにします。 Xamarin.Android の*リンカー*では、スタティック分析を使用して、Xamarin.Android アプリケーションによって使用または参照されるアセンブリ、型、および型メンバーを決定します。 次に、リンカーは、使用 (または参照) されないすべての未使用のアセンブリ、型、メンバーを破棄します。 この操作を行うと、パッケージ サイズが大幅に削減されます。 たとえば、[HelloWorld](~/android/deploy-test/linker.md) の例を検討します。この例では、APK の最終的なサイズが 83% 削減されます。 
 
--   構成: なし &ndash; Xamarin.Android 4.2.5 サイズ = 17.4 MB。
+-   構成:なし &ndash; Xamarin.Android 4.2.5 サイズ = 17.4 MB。
 
--   構成: SDK アセンブリのみ &ndash; Xamarin.Android 4.2.5 サイズ = 3.0 MB。
+-   構成:SDK アセンブリのみ &ndash; Xamarin.Android 4.2.5 サイズ = 3.0 MB。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -136,7 +134,6 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 -----
 
 リンクは意図しない副作用を起すことがあります。そのため、リリース モードで、かつ、物理デバイス上でアプリケーションを再テストすることが重要です。
-
 
 ### <a name="proguard"></a>ProGuard
 
@@ -184,7 +181,6 @@ Android マニフェストには、アプリケーションをデバッグする
 ```
 
 デバッグ ビルドでは、デバッグしやすいように、自動的にアクセス許可が設定されることに注意してください (**Internet**、**ReadExternalStorage** など)。 ただし、リリース ビルドでは、明示的に設定したアクセス許可のみを使用します。 リリース ビルドへの切り替えによって、使用しているアプリがデバッグ ビルドで使用可能であったアクセス許可を失う場合は、[アクセス許可](~/android/app-fundamentals/permissions.md)で示されているように、**必要なアクセス許可**リストのアクセス許可を明示的に有効にしていることを確認します。 
- 
 
 <a name="dotfuscator" id="dotfuscator" />
 
@@ -228,14 +224,13 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 **[AOT コンパイル]** オプションには、Enterprise 以上のライセンスが必要です。 **[AOT コンパイル]** は、プロジェクトがリリース モードで構成されていて、これが既定で無効になっている場合にのみ使用できます。 AOT コンパイルの詳細については、「[AOT](http://www.mono-project.com/docs/advanced/aot/)」を参照してください。
 
-
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最適化コンパイラ
 
 _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル済みコードを作成し、AOT コンパイルによるアセンブリをネイティブ コードに変換しますが、その分ビルド時間がかかります。 LLVM コンパイラは既定では無効です。 LLVM コンパイラを使用するには、最初に ([[パッケージング プロパティ]](#Set_Packaging_Properties) ページで) **[AOT コンパイル]** オプションを有効にする必要があります。
 
 
 > [!NOTE]
-> **LLVM 最適化コンパイラ** オプションには、ビジネス ライセンスが必要です。  
+> **LLVM 最適化コンパイラ** オプションには、エンタープライズ ライセンスが必要です。  
 
 <a name="Set_Packaging_Properties" />
 
@@ -257,16 +252,13 @@ _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル�
 
 **[共有ランタイムの使用]** や **[Fast Deployment の使用]** など、プロパティの多くはデバッグ モードを意図しています。 ただし、リリース モードのためにアプリケーションを構成するとき、[サイズと実行速度に関してアプリを最適化する](#shrink_apk)方法、[改ざんを防止する方法](#protect_app)、さまざまなアーキテクチャやサイズ制約に対応できるようにパッケージ化する方法を決定する設定が他にあります。
 
-
 ### <a name="specify-supported-architectures"></a>サポートされているアーキテクチャを指定する
 
 リリースに向けて Xamarin.Android アプリを準備しているときに、サポートされる CPU アーキテクチャを指定する必要があります。 1 つの APK に、複数の異なるアーキテクチャをサポートするためのマシン コードを含めることができます。 複数の CPU アーキテクチャのサポートに関する詳細については、「[CPU アーキテクチャ](~/android/app-fundamentals/cpu-architectures.md)」を参照してください。
 
-
 ### <a name="generate-one-package-apk-per-selected-abi"></a>選択した ABI ごとに 1 つのパッケージ (.APK) を生成する
 
 このオプションが有効になっていると、サポートされるすべての ABI を対象とする単一の大きな APK ではなく、サポートされるそれぞれの ABI (**[詳細設定]** タブで選択。「[CPU Architectures](~/android/app-fundamentals/cpu-architectures.md)」(CPU アーキテクチャ) に説明あり) に対して 1 つの APK が作成されます。 このオプションは、プロジェクトがリリース モードで構成されていて、これが既定で無効になっている場合にのみ使用できます。
-
 
 ### <a name="multi-dex"></a>Multi-Dex
 
@@ -292,7 +284,6 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 -----
 
-
 <a name="archive" />
 
 ## <a name="archive-for-publishing"></a>発行のためのアーカイブ
@@ -310,7 +301,6 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 アーカイブを作成する別の方法として、**ソリューション エクスプローラー**でソリューションを右クリックし、**[すべてアーカイブ]** を選択します。これにより、ソリューションがビルドされ、アーカイブを生成できるすべての Xamarin プロジェクトがアーカイブされます。
 
 [![すべてアーカイブ](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png#lightbox)
-
 
 **[アーカイブ]** と **[すべてアーカイブ]** のどちらも、**アーカイブ マネージャー**を自動的に起動します。 **アーカイブ マネージャー**を直接起動するには、**[ツール]、[アーカイブ マネージャー]** メニュー項目の順に選択します。
 
@@ -370,7 +360,6 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 [![署名と配布](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
-
 ここでは、配布チャンネルを選択することができます。
 
 -   **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの&ldquo;アドホック&rdquo; バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
@@ -380,7 +369,6 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
     引き続き「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進み、APK を署名して Google Play ストアに発行する方法について学習してください。
 
 -----
-
 
 ## <a name="related-links"></a>関連リンク
 

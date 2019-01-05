@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 4ce04f21a3e520fea9da5d538fb7cc0ac098ad31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56284f1d3c5fec479badf91852acba2bf538bddd
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119862"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411740"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS のアプリ グループ機能
 
@@ -34,12 +34,12 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 1.  Apple の [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、 **[アカウント]**  を開きログインします。
 2.  **[Certificates, IDs & Profiles]** \(証明書、ID、およびプロファイル\) を選択します。
-3.   **[Identifiers]** \(識別子\) の下で  **[App Groups]** \(アプリ グループ\) を選択し、  **+**  ボタンをクリックして、新しいグループを作成します。
+3.  **[Identifiers]** \(ID\) で **[App Groups]** \(アプリ グループ\) を選択し、**+** ボタンをクリックして新しいグループを作成します。
 4.  新しいグループ用に  **[名前]** と  **[Identifier]** \(識別子\) を入力し、 **[続ける]** ボタンをクリックします。 
    
     ![アプリ グループの追加の詳細](app-groups-capabilities-images/image52.png)
 
-5.   **[登録]**  ボタンをクリックしてグループを作成し、  **[完了]**  をクリックして登録されたアプリ グループの一覧に戻ります。
+5.  **[Register]** \(登録\) ボタンをクリックしてグループを作成し、**[Done]** \(完了\) をクリックして登録されたアプリ グループの一覧に戻ります。
 
 ## <a name="configure-an-app-to-use-app-groups"></a>アプリ グループを使用するアプリを構成する
 
@@ -48,15 +48,15 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 次の手順で行います。
 
 1.  Apple の  [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、Apple Developer アカウントでログインします。
-2.   **[Program Resources]** \(プログラム リソース\) メニューから **[Certificates, IDs & Profiles]** \(証明書、ID、およびプロファイル\) を選択します。
-3.   **[Identifiers]** \(識別子\) の下で  **[App IDs]** \(アプリ ID\) を選択し、  **+**  ボタンをクリックして、新しい ID を作成します。
+2.  **[Program Resources]** \(プログラム リソース\) メニューから **[Certificates, IDs & Profiles]** \(証明書、ID、およびプロファイル\) を選択します。
+3.  **[Identifiers]** \(ID\) で **[App ID]** \(アプリ ID\) を選択し、**+** ボタンをクリックして新しい ID を作成します。
 4.  App ID の [Name]\(名前\) を入力し、[Explicit App ID]\(明示的な App ID\) を指定します。
-5.   **[App Services]** \(アプリ サービス\) で   **[App Groups]** \(アプリ グループ\) を有効にして [続ける] ボタンをクリックします。
+5.  **[App Services]** で **[App Groups]** \(アプリ グループ\) を有効にして [Continue]\(続行\) ボタンをクリックします。
 
     ![アプリ グループの App Services を追加する](app-groups-capabilities-images/image53.png)
 
 6.  設定を確認し、 **[登録]** ボタンをクリックしてアプリ ID を作成します。
-7.   **[完了]**  ボタンをクリックして登録したアプリ ID の一覧に戻ります。
+7.  **[Done]** \(完了\) ボタンをクリックして登録したアプリ ID の一覧に戻ります。
 8.  新しく作成したアプリ ID を一覧から選択し、 **[編集]** ボタンをクリックします。
 
     ![一覧からアプリ ID を選択する](app-groups-capabilities-images/image54.png)
@@ -69,7 +69,7 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
     ![アプリ グループを追加する](app-groups-capabilities-images/image56.png)
 
-11.  **[Assign]** \(割り当て\) ボタン、 **[完了]**  ボタンの順にクリックし、登録したアプリ ID の一覧に戻ります。
+11. **[Assign]** \(割り当て\) ボタン、**[Done]** \(完了\) ボタンの順にクリックし、登録したアプリ ID の一覧に戻ります。
 12. アプリ グループを使用するすべてのアプリ (または拡張機能) についてこれらの手順を繰り返します。
 
 ## <a name="next-steps"></a>次の手順
