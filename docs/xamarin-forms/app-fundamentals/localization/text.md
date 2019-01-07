@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 09fe3587e4e435383822e50bd12616747b807f82
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7eea0a4eba201d7332c5e3e5222729bcb5e14a07
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108458"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054062"
 ---
 # <a name="localization"></a>ローカリゼーション
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
 
 _Xamarin.Forms アプリは、.NET リソース ファイルを使用してローカライズできます。_
 
@@ -73,7 +75,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 既定では、文字列への厳密に型指定された参照が生成されると、アセンブリに対して `internal` になります。 これは、RESX ファイルの既定のビルド ツールによって、`internal` プロパティを使用して **.designer.cs** ファイルが生成されるためです。
 
-**AppResources.resx** ファイルを選択し、**[プロパティ]** パッドを表示して、このビルド ツールが構成されている場所を確認します。 以下のスクリーンショットには、**カスタム ツールが ResXFileCodeGenerator** と示されています。
+**AppResources.resx** ファイルを選択し、**[プロパティ]** パッドを表示して、このビルド ツールが構成されている場所を確認します。 以下のスクリーンショットには、**カスタム ツールがResXFileCodeGenerator** と示されています。
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -86,7 +88,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 -----
 
-厳密に型指定された文字列プロパティを `public` にするには、以下のスクリーンショットに示すように、**カスタム ツールが PublicResXFileCodeGenerator** になるように構成を手動で変更する必要があります。
+厳密に型指定された文字列プロパティを `public` にするには、以下のスクリーンショットに示すように、**カスタム ツールがPublicResXFileCodeGenerator** になるように構成を手動で変更する必要があります。
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -154,7 +156,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 一般的なパターンでは、2 文字の言語コードを使用しますが、異なる形式が使用される例 (中国語など) がいくつかあり、また、4 文字のロケール識別子が必要な例 (ポルトガル語 (ブラジル) など) もあります。
 
-これらの言語固有のリソース ファイルでは **.designer.cs** 部分クラスを必要と*しない* ため、**ビルド アクションを EmbeddedResource** に設定し、通常の XML ファイルとして追加することができます。 次のスクリーンショットには、言語固有のリソース ファイルを含むソリューションが示されています。
+これらの言語固有のリソース ファイルでは **.designer.cs** 部分クラスを必要と*しない* ため、**ビルド アクションをEmbeddedResource** に設定し、通常の XML ファイルとして追加することができます。 次のスクリーンショットには、言語固有のリソース ファイルを含むソリューションが示されています。
 
 ![](text-images/appresources-langs.png "言語固有のリソース ファイル")
 
@@ -255,7 +257,7 @@ System.Resources.ResourceManager temp =
 
 * プロジェクトの既定の名前空間と、**AppResources.Designer.cs** ファイル内のルート名前空間が一致している。
 * **AppResources.resx** ファイルがサブディレクトリにある場合、そのサブディレクトリ名は、名前空間の一部であり、*かつ*、リソース識別子の一部である必要があります。
-* **AppResources.resx** ファイルの**ビルド アクションが EmbeddedResource** となっている。
+* **AppResources.resx** ファイルの**ビルド アクションがEmbeddedResource** となっている。
 * **[プロジェクト オプション] > [ソース コード] > [.NET の命名ポリシー] > [Use Visual Studio-style resources names]\(Visual Studio スタイルのリソース名を使用\)** がオンになっている。 必要に応じて、これをオフにしてもかまいませんが、RESX リソースの参照時に使用される名前空間をアプリ全体で更新する必要があります。
 
 #### <a name="doesnt-work-in-debug-mode-android-only"></a>デバッグ モードで動作しない (Android のみ)
