@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 60b981a764a2656210730ae0602ff32dc580cd0a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0f4d6bb042f8bc8d48b45d7148984a53e3ce3437
+ms.sourcegitcommit: e3e851080e6ea0b77e355487a61348d8e0419b09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117565"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54060071"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
 
-Xamarin.Mac 2.10 プレビューでは、複数の macOS の拡張ポイントのサポートが追加されました。
+Xamarin.Mac 2.10 で複数の macOS の拡張ポイントのサポートが追加されました。
 
 - ファインダー
 - 共有
@@ -59,10 +59,10 @@ Xamarin.Mac で拡張機能を使用する場合、次のヒントが役に立�
 
 ## <a name="summary"></a>まとめ
 
-この記事では、簡単に見て Xamarin.Max バージョン 2.10 (以降) のアプリでの拡張機能を使用しました。
+この記事では、Xamarin.Mac バージョン 2.10 (以降) のアプリでの拡張機能の使用方法を簡単に説明をしました。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
-- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [macOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)
