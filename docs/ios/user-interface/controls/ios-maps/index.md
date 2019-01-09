@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d83470db23b1376d18fa36c52c1daabaf68cfe0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61b5a8bd99afda5e8fbeea44e3362574fa7feea
+ms.sourcegitcommit: b18ceed35aa94999d13faf4a3e3177c0b9fc33b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117760"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084582"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin.iOS でのマップ
 
@@ -175,7 +175,7 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 ### <a name="overlays"></a>オーバーレイ
 
-マップ レイヤーのグラフィックスを別の方法では、オーバーレイを使用しています。 オーバーレイに拡大されると、マップを使用して拡大/縮小するグラフィカル コンテンツを描画をサポートします。 iOS では、いくつかの種類など、オーバーレイのサポートを提供します。
+マップ レイヤーのグラフィックスを別の方法では、オーバーレイを使用しています。 オーバーレイでは、マップが拡大縮小されたときに、マップと一緒に拡大縮小されるグラフィカル コンテンツの描画がサポートされます。 iOS では、いくつかの種類など、オーバーレイのサポートを提供します。
 
 -  多角形のマップ上のいくつかの領域を強調表示によく使用します。
 -  ポリライン - ルートを表示するときによく見られます。
@@ -267,23 +267,23 @@ DefinesPresentationContext = true;
 
 //Set the search bar in the navigation bar
 NavigationItem.TitleView = searchController.SearchBar;
+```
 
-```csharp
-Note that you are responsible for incorporating the search bar object into the user interface. In this example, we assigned it to the TitleView of the navigation bar, but if you do not use a navigation controller in your application you will have to find another place to display it.
+検索バーのオブジェクトをユーザー インターフェイスに組み込む担当していることに注意してください。 この例でのナビゲーション バーの TitleView を割り当てましたが、アプリケーションでナビゲーション コント ローラーを使用しないことを表示する別の場所を検索する必要があります。
 
-In this code snippet, we created another custom view controller – `searchResultsController` –  that displays the search results and then we used this object to create our search controller object. We also created a new search updater, which becomes active when the user interacts with the search bar. It receives notifications about searches with each keystroke and is responsible for updating the UI.
-We will take a look at how to implement both the `searchResultsController` and the `searchResultsUpdater` later in this guide.
+このコード スニペットで – 別のカスタム ビュー コント ローラーを作成しました`searchResultsController`– 検索結果を表示して、検索のコント ローラー オブジェクトを作成するこのオブジェクトを使用します。 検索バーで、ユーザーが操作したときにアクティブになった新しい検索 updater も作成しました。 キーストロークごとの検索に関する通知を受信し、UI の更新を担当します。
+両方を実装する方法を見てかかります、`searchResultsController`と`searchResultsUpdater`このガイドで後述します。
 
-This results in a search bar displayed over the map as shown below:
+これは、次に示すように、マップ上に表示される検索バーが得られます。
 
- ![](images/07-searchbar.png "A search bar displayed over the map")
+ ![](images/07-searchbar.png "マップ上に表示される検索バー")
  
 
 
-### Displaying the Search Results
+### <a name="displaying-the-search-results"></a>検索結果を表示します。
 
-To display search results, we need to create a custom View Controller; normally a `UITableViewController`. As shown above, the `searchResultsController` is passed to the constructor of the `searchController` when it is being created.
-The following code is an example of how to create this custom View Controller:
+カスタム ビュー コント ローラー; の作成に必要な検索結果を表示するには通常、`UITableViewController`します。 上記のよう、`searchResultsController`のコンス トラクターに渡される、`searchController`作成されるときにします。
+次のコードでは、このカスタム ビュー コント ローラーを作成する方法の例を示します。
 
 ```csharp
 public class SearchResultsViewController : UITableViewController
