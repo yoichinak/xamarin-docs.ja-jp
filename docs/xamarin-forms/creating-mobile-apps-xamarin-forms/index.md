@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: a1458d53cb6e57b73317bce77ebdfd5aea64acca
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5dae8f1907b9a61018e335a8fe19ad319d95741d
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061947"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207870"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms book で Mobile Apps を作成します。
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<p><img src="images/cover-sml.png" title="Xamarin.Forms Book でモバイル アプリの作成" align="left" />この書籍<i>を Xamarin.Forms での Mobile Apps の作成</i>Xamarin.Forms アプリケーションを作成する方法を学習するためのガイドは、Charles Petzold 著。 唯一の前提条件は、サポート技術情報のC#プログラミング言語。 この書籍は、Xamarin.Forms のユーザー インターフェイスに広範な探索を示し、アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタム レンダラーでは、およびその他についても説明します。 
+<p><img src="images/cover-sml.png" title="Xamarin.Forms Book でモバイル アプリの作成" align="left" />この書籍<i>を Xamarin.Forms での Mobile Apps の作成</i>Xamarin.Forms アプリケーションを作成する方法を学習するためのガイドは、Charles Petzold 著。 唯一の前提条件は、サポート技術情報のC#プログラミング言語。 この書籍は、Xamarin.Forms のユーザー インターフェイスに広範な探索を示し、アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタム レンダラーでは、およびその他についても説明します。
 
-書籍では、2016 年春に公開され、以来更新されていません。 そのままの価値あるが、いくつかは、書籍であまり、[マテリアルの期限が切れて](#ways-in-which-the-book-is-outdated)、いくつかのトピックが適切で完全も完全ではなく。 
+書籍では、2016 年春に公開され、以来更新されていません。 そのままの価値あるが、いくつかは、書籍であまり、[マテリアルの期限が切れて](#ways-in-which-the-book-is-outdated)、いくつかのトピックが適切で完全も完全ではなく。
 
 ## <a name="download-ebook-for-free"></a>電子ブックを無料でダウンロードします。
 
@@ -48,7 +48,7 @@ Microsoft Virtual Academy から、優先される電子ブックをダウンロ
 
 - 詳細な説明と Xamarin.Forms クラス、構造、プロパティ、列挙型、およびその他の API のドキュメントへのリンク
 
-このようにまとめた部分が」の章の内容がありますを指定しても[やや古い](#ways-in-which-the-book-is-outdated)します。 
+このようにまとめた部分が」の章の内容がありますを指定しても[やや古い](#ways-in-which-the-book-is-outdated)します。
 
 ## <a name="download-chapters-and-summaries"></a>ダウンロードの章と概要
 
@@ -85,13 +85,13 @@ Microsoft Virtual Academy から、優先される電子ブックをダウンロ
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>この書籍の古い方法
 
-以降のパブリケーション<i>を Xamarin.Forms での Mobile Apps の作成</i>Xamarin.Forms のいくつかの新しい機能が追加されました。 これらの新機能が個々 の記事で説明されている、 [Xamarin.Forms](/xamarin/)ドキュメント。 
+以降のパブリケーション<i>を Xamarin.Forms での Mobile Apps の作成</i>Xamarin.Forms のいくつかの新しい機能が追加されました。 これらの新機能が個々 の記事で説明されている、 [Xamarin.Forms](/xamarin/)ドキュメント。
 
 旧式である書籍の内容の一部が他の変更が発生しました。
 
 ### <a name="net-standard-20-libraries-have-replaced-portable-class-libraries"></a>.NET standard 2.0 ライブラリがポータブル クラス ライブラリに置き換えられました
 
-Xamarin.Forms アプリケーションは通常、異なるプラットフォーム間でコードを共有するのにライブラリを使用します。 当初、ポータブル クラス ライブラリ (PCL) でした。 書籍と章の概要全体を通じて Pcl に多くの参照があります。 
+Xamarin.Forms アプリケーションは通常、異なるプラットフォーム間でコードを共有するのにライブラリを使用します。 当初、ポータブル クラス ライブラリ (PCL) でした。 書籍と章の概要全体を通じて Pcl に多くの参照があります。
 
 資料」の説明に従って、.NET Standard 2.0 ライブラリで、ポータブル クラス ライブラリが置き換えられました[Xamarin.Forms での .NET Standard 2.0 サポート](~/xamarin-forms/internals/net-standard.md)します。 すべての[サンプル コード](https://github.com/xamarin/xamarin-forms-book-samples)帳から .NET Standard 2.0 ライブラリを使用する更新されました。
 
@@ -101,25 +101,25 @@ Xamarin.Forms アプリケーションは通常、異なるプラットフォー
 
 ### <a name="the-role-of-xaml-has-been-elevated"></a>XAML の役割が昇格されました
 
-<i>Xamarin.Forms によるモバイル アプリを作成する</i>まず c# を使用した Xamarin.Forms アプリケーションを作成する方法について説明します。 までに Extensible Application Markup Language (XAML) が導入されていない[第 7 章です。XAML 対コード](summaries/chapter07.md)します。 
+<i>Xamarin.Forms によるモバイル アプリを作成する</i>まず c# を使用した Xamarin.Forms アプリケーションを作成する方法について説明します。 までに Extensible Application Markup Language (XAML) が導入されていない[第 7 章です。XAML 対コード](summaries/chapter07.md)します。
 
 XAML で、Xamarin.Forms ではるかに大きな役割できるようになりました。 Visual Studio を使用した分散 Xamarin.Forms ソリューション テンプレートでは、ページの XAML ベースのファイルを作成します。 Xamarin.Forms を使用して、開発者は、できるだけ早く XAML で使い慣れたなります。 [EXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.md) Xamarin.Forms ドキュメントのセクションには、開始するための XAML のいくつかのアーティクルが含まれています。
 
-### <a name="supported-platforms"></a>サポートされているプラットフォーム 
+### <a name="supported-platforms"></a>サポートされているプラットフォーム
 
-Xamarin.Forms には、Windows 8.1 および Windows Phone 8.1 がサポートされていません。 
+Xamarin.Forms には、Windows 8.1 および Windows Phone 8.1 がサポートされていません。
 
 ブックへの参照になります、 _Windows ランタイム_します。 これは、いくつかのバージョンの Windows および Windows Phone で使用される Windows API を包含する用語です。 Xamarin.Forms のより新しいバージョンでは、Windows 10 Mobile と Windows 10 用の API は、ユニバーサル Windows プラットフォームをサポートする自体を制限します。
 
-.NET Standard 2.0 ライブラリは、Windows 10 Mobile の任意のバージョンをサポートしていません。 そのため、.NET Standard ライブラリを使用した Xamarin.Forms アプリケーションは、Windows 10 Mobile デバイスでは実行されません。 Xamarin.Forms アプリケーションは引き続き以降、Windows 10 のデスクトップ バージョン 10.0.16299.0 でを実行します。 
+.NET Standard 2.0 ライブラリは、Windows 10 Mobile の任意のバージョンをサポートしていません。 そのため、.NET Standard ライブラリを使用した Xamarin.Forms アプリケーションは、Windows 10 Mobile デバイスでは実行されません。 Xamarin.Forms アプリケーションは引き続き以降、Windows 10 のデスクトップ バージョン 10.0.16299.0 でを実行します。
 
-Xamarin.Forms がサポートするプレビュー、 [Mac](~/xamarin-forms/platform/mac.md)、 [WPF](~/xamarin-forms/platform/wpf.md)、 [GTK #](~/xamarin-forms/platform/gtk.md)、および[Tizen](/xamarin-forms/platform/tizen.md)プラットフォーム。
+Xamarin.Forms がサポートするプレビュー、 [Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xamarin-forms/platform/other/wpf.md)、 [GTK #](~/xamarin-forms/platform/other/gtk.md)、および[Tizen](/xamarin-forms/platform/other/tizen.md)プラットフォーム。
 
 ### <a name="chapter-summaries"></a>章の概要
 
 章の概要には、ブックが書き込まれるために、Xamarin.Forms での変更をに関する情報が含まれます。 これらは、ノートの形式で多くの場合は。
 
-> [!NOTE] 
+> [!NOTE]
 > 各ページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっているを指定します。
 
 ### <a name="samples"></a>サンプル

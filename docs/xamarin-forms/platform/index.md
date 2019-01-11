@@ -6,13 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/06/2018
-ms.openlocfilehash: 070602f05170f7d37a38b184ecd3dbb7864ac73d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 01/08/2018
+ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118761"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207727"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms のプラットフォーム機能
 
@@ -20,11 +20,7 @@ Xamarin.Forms は拡張可能なとを使用してプラットフォーム固有
 
 ## <a name="androidandroidindexmd"></a>[Android](android/index.md)
 
-このガイドでは、既存の Xamarin.Forms の Android アプリを更新してマテリアル デザインを実装する方法について説明します。
-
-## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[アプリケーション インデックス作成とディープ リンク作成](deep-linking.md)
-
-アプリケーションがインデックス作成により、いくつかを使用して、検索結果に表示して、最新の後、忘れてそれ以外の場合はアプリケーションです。 ディープ リンクから参照されているページに移動して、通常、アプリケーションのデータを含む検索結果に応答するアプリケーションは、ディープ リンクできます。
+このガイドでは、Xamarin.Forms、および既存の Xamarin.Forms の Android アプリを更新してマテリアル デザインを実装する方法によって提供される Android プラットフォームの詳細について説明します。
 
 ## <a name="device-classdevicemd"></a>[デバイス クラス](device.md)
 
@@ -32,15 +28,7 @@ Xamarin.Forms は拡張可能なとを使用してプラットフォーム固有
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 
-一部の iOS のスタイルを使用して実行できる**Info.plist**と`UIAppearance`API。 このガイドでは、コア スポット ライト検索含む Xamarin.Forms ソリューションの iOS アプリに iOS 9 の機能を含める方法の例を示します。
-
-## <a name="gtkgtkmd"></a>[GTK](gtk.md)
-
-Xamarin.Forms では、GTK # アプリのプレビューをサポートできるようになりました。
-
-## <a name="macmacmd"></a>[Mac](mac.md)
-
-Xamarin.Forms では、macOS アプリのプレビューをサポートできるようになりました。
+このガイドは、Xamarin.Forms、およびスタイルを使用して追加の iOS を実行する方法によって提供される iOS プラットフォームの詳細を記述します。 **Info.plist**と`UIAppearance`API。
 
 ## <a name="native-formsnative-formsmd"></a>[ネイティブ フォーム](native-forms.md)
 
@@ -52,20 +40,8 @@ IOS、Android、およびユニバーサル Windows プラットフォームか�
 
 ## <a name="platform-specificsplatform-specificsindexmd"></a>[プラットフォーム固有設定](platform-specifics/index.md)
 
-プラットフォーム固有設定を使用すると、カスタム レンダラーや特殊効果を必要とせず、特定のプラットフォームで利用可能なのみの機能を使用できます。
-
-## <a name="pluginspluginsmd"></a>[プラグイン](plugins.md)
-
-Xamarin.Forms アプリを拡張するには、Github、Nuget、および Xamarin コンポーネント ストアで使用できるさまざまなオープン ソース プラグインされます。
-
-## <a name="tizentizenmd"></a>[Tizen](tizen.md)
-
-Tizen .NET では、Xamarin.Forms と Tizen .NET Framework での .NET アプリケーションをビルドすることができます。
+プラットフォーム固有設定を使用すると、カスタム レンダラーや特殊効果を必要とせず、特定のプラットフォームで利用可能なのみの機能を使用できます。 さらに、ベンダーは、効果を使用した独自プラットフォーム固有設定を作成できます。
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms では、Windows 10 ユニバーサル Windows プラットフォーム (UWP) をサポートしています。 この記事では、既存の Xamarin.Forms ソリューションに UWP プロジェクトを追加する方法について説明します。
-
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms では、Windows Presentation Foundation (WPF) アプリのプレビューをサポートできるようになりました。
+このガイドでは、Xamarin.Forms、および UWP プロジェクトを既存の Xamarin.Forms ソリューションに追加する方法によって提供される Windows プラットフォームの詳細について説明します。

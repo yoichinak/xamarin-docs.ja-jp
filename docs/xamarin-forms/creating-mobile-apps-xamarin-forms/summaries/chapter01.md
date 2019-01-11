@@ -7,12 +7,12 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 40f319a67ecc2ca81243c8ac7c415266c1ea0b5c
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 58d3b3ae067913a85c3ada5f5b35e64511523ff8
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746857"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207909"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要です。 Xamarin.Forms はどのように適合するでしょうか。
 
@@ -49,7 +49,7 @@ OBJECTIVE-C、Java、および C# の場合はすべて、C プログラミン�
 - Windows 10 をターゲットのユニバーサル Windows プラットフォーム
 
 > [!NOTE]
-> Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。 プレビュー サポートされても、 [Mac](~/xamarin-forms/platform/mac.md)、 [WPF](~/xamarin-forms/platform/wpf.md)、 [GTK #](~/xamarin-forms/platform/gtk.md)、および[Tizen](~/xamarin-forms/platform/tizen.md)プラットフォーム。
+> Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。 プレビュー サポートされても、 [Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xamarin-forms/platform/other/wpf.md)、 [GTK #](~/xamarin-forms/platform/other/gtk.md)、および[Tizen](~/xamarin-forms/platform/other/tizen.md)プラットフォーム。
 
 Xamarin.Forms のプログラムの大部分は、ライブラリや、SAP に存在します。 この共有コードを呼び出す小さなアプリケーション スタブの各プラットフォームで構成されます。
 

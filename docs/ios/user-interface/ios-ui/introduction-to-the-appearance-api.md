@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/15/2018
-ms.openlocfilehash: 86055932edf82f04e11c9ae8dd684a3d77c3d830
-ms.sourcegitcommit: da2260a882dbda02732e21cad5cc9a9dd35e27e7
+ms.openlocfilehash: bfbc902b0912527fea6aaa58c6706ef5a0ccbf8e
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51709229"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207922"
 ---
 # <a name="appearance-api-in-xamarinios"></a>Xamarin.iOS で外観 API
 
@@ -69,7 +69,7 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>Xamarin.Forms で UIAppearance の使用
 
-外観 API されます[iOS アプリのスタイル設定](~/xamarin-forms/platform/ios/theme.md#uiappearance)Xamarin.Forms ソリューションです。 いくつかの行で、`AppDelegate`を作成しなくても、特定のカラー スキームを実装するクラスが役立つことができます、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)します。
+外観 API されます[iOS アプリのスタイル設定](~/xamarin-forms/platform/ios/formatting.md#uiappearance)Xamarin.Forms ソリューションです。 いくつかの行で、`AppDelegate`を作成しなくても、特定のカラー スキームを実装するクラスが役立つことができます、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)します。
 
 ### <a name="custom-themes-and-uiappearance"></a>カスタム テーマと UIAppearance
 
@@ -83,7 +83,7 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 sg1.TintColor = UIColor.Magenta;
 ```
 
-または、デザイナーの [プロパティ] タブで、値を設定します。 
+または、デザイナーの [プロパティ] タブで、値を設定します。
 
 [![](introduction-to-the-appearance-api-images/propertiespadtint.png "プロパティ パッド濃淡")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
@@ -109,4 +109,4 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 - [外観 (サンプル)](https://developer.xamarin.com/samples/monotouch/Appearance/)
 - [UIAppearance プロトコルのリファレンス](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
-- [Xamarin.Forms での外観](~/xamarin-forms/platform/ios/theme.md#uiappearance)
+- [Xamarin.Forms での外観](~/xamarin-forms/platform/ios/formatting.md#uiappearance)

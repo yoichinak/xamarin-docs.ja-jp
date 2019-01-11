@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 102ff15ea0e0002b783f993c59eb50d03a5ece63
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8e05a5f1c52183f29f22cbcd9655c26dc934e7d8
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051070"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207855"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
@@ -66,7 +66,7 @@ picker.ItemsSource = monkeyList;
 A [ `Picker` ](xref:Xamarin.Forms.Picker)が一度に 1 つの項目の選択をサポートします。 ユーザーが、項目を選択すると、 [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)イベントの起動、 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティの一覧で選択した項目のインデックスを表す整数が更新と[`SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)プロパティが更新され、`object`選択した項目を表します。 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティは、ユーザーが選択した項目を示す 0 から始まる番号。 項目が選択されていない場合ですが、ときに、 [ `Picker` ](xref:Xamarin.Forms.Picker)が最初に作成され、初期化、`SelectedIndex`は-1 になります。
 
 > [!NOTE]
-> 項目の選択動作を[ `Picker` ](xref:Xamarin.Forms.Picker)プラットフォーム固有の iOS 上でカスタマイズできます。 詳細については、「[Picker のアイテム選択の制御](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode)」を参照してください。
+> 項目の選択動作を[ `Picker` ](xref:Xamarin.Forms.Picker)プラットフォーム固有の iOS 上でカスタマイズできます。 詳細については、「[Picker のアイテム選択の制御](~/xamarin-forms/platform/ios/picker-selection.md)」を参照してください。
 
 次のコード例は、取得する方法を示します、 [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)プロパティの値から、 [ `Picker` ](xref:Xamarin.Forms.Picker) XAML で。
 
@@ -178,10 +178,9 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 [ `Picker` ](xref:Xamarin.Forms.Picker)ビューは、データの一覧から、テキスト項目を選択するコントロール。 この記事の説明を設定する方法、`Picker`にデータを設定、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティ、およびユーザーが項目の選択に応答する方法。 このアプローチでは、Xamarin.Forms 2.3.4 で導入されたが対話するための推奨される方法、`Picker`します。
 
-
 ## <a name="related-links"></a>関連リンク
 
 - [ピッカーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
 - [Monkey アプリ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 - [バインド可能なピッカー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
-- [ピッカー](xref:Xamarin.Forms.Picker)
+- [API の選択](xref:Xamarin.Forms.Picker)

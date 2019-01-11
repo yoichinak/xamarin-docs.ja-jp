@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110720"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207935"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android の API の設計原則
 
@@ -111,9 +111,9 @@ if (goodSource.Count != 4) // false
 
 Java のメソッドは、該当する場合のプロパティに変換されます。
 
--  Java のメソッド ペア`T getFoo()`と`void setFoo(T)`に変換されます、`Foo`プロパティ。 例: [Activity.Intent](https://developer.xamarin.com/api/property/Android.App.Activity.Intent/)します。
+-  Java のメソッド ペア`T getFoo()`と`void setFoo(T)`に変換されます、`Foo`プロパティ。 例:[Activity.Intent](https://developer.xamarin.com/api/property/Android.App.Activity.Intent/)します。
 
--  Java メソッド`getFoo()`読み取り専用 Foo プロパティに変換されます。 例: [Context.PackageName](https://developer.xamarin.com/api/property/Android.Content.Context.PackageName/)します。
+-  Java メソッド`getFoo()`読み取り専用 Foo プロパティに変換されます。 例:[Context.PackageName](https://developer.xamarin.com/api/property/Android.Content.Context.PackageName/)します。
 
 -  設定専用のプロパティは生成されません。
 
@@ -322,6 +322,6 @@ public class Resource {
 このような場合に、.NET 列挙に関連する定数をグループ化し、代わりに、列挙する方法を再マップするよう努めています。
 これにより、潜在的な値の IntelliSense の選択を提供できなくなっています。
 
-上記の例になります: [Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/))。
+上記の例になります。[Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/)します。
 
-これは、定数が属するを把握する非常に手動のプロセス、Api の定数を使用することに注意してください。 列挙体として表されたより適切になる API でのバグをどのように使用される定数を提出してください。
+これは、定数が属するを把握する非常に手動のプロセス、Api の定数を使用することに注意してください。 列挙体として表されたより適切になる API で使用される任意の定数のバグを報告してください。

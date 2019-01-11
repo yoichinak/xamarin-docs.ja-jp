@@ -6,39 +6,60 @@ ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/20/2017
-ms.openlocfilehash: 26511f6e3e0ba09830bb85d1ad6ec30072d53866
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 01/08/2018
+ms.openlocfilehash: b1ba6a9f2ee15cf078658b49124c1d9203a3f3d9
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242935"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207948"
 ---
 # <a name="windows-platform-features"></a>Windows プラットフォームの機能
 
-Windows プラットフォーム用の Xamarin.Forms アプリケーションを開発すると、Visual Studio が必要です。 [要件 ページ](~/xamarin-forms/get-started/installation.md)の詳細についてには、の前提条件が含まれています。
+Windows プラットフォーム用の Xamarin.Forms アプリケーションの開発には、Visual Studio が必要です。 [要件ページ](~/xamarin-forms/get-started/installation.md)の前提条件の詳細が含まれています。
 
-![](images/allhanselman.png "Windows で実行されている Xamarin.Forms アプリケーション")
+![](images/allhanselman.png "Windows で実行される Xamarin.Forms アプリケーション")
+
+## <a name="platform-specifics"></a>プラットフォーム固有設定
+
+プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
+
+Xamarin.Forms のビュー、ページ、およびユニバーサル Windows プラットフォーム (UWP) でのレイアウトを次のプラットフォーム固有の機能が提供されます。
+
+- アクセス キーの設定、 [ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。 [Windows のアクセス キーを VisualElement](#visualelement-accesskeys)します。
+- サポートされている従来のカラー モードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。 [VisualElement レガシ カラー モード Windows](#legacy-color-mode)します。
+
+UWP の Xamarin.Forms のビューでは、次のプラットフォームに固有の機能が提供されます。
+
+- 検出、テキスト コンテンツからの読み取り順序[ `Entry` ](xref:Xamarin.Forms.Entry)、 [ `Editor` ](xref:Xamarin.Forms.Editor)、および[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 詳細については、次を参照してください。 [Windows 上の読み取り順序を InputView](#inputview-readingorder)します。
+- タップ ジェスチャのサポートを有効にすると、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、次を参照してください。 [Windows 上の ListView SelectionMode](#listview-selectionmode)します。
+- 有効にすると、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)スペル チェック エンジンと対話します。 詳細については、次を参照してください。 [Windows で SearchBar Spell Check](#searchbar-spellcheck)します。
+- 有効にすると、 [ `WebView` ](xref:Xamarin.Forms.WebView) UWP メッセージ ダイアログ ボックスで、JavaScript のアラートを表示します。 詳細については、次を参照してください。 [Windows 上の web ビュー JavaScript アラート](#webview-javascript-alert)します。
+
+UWP の Xamarin.Forms のページでは、次のプラットフォームに固有の機能が提供されます。
+
+- 折りたたみ、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)ナビゲーション バー。 詳細については、次を参照してください。 [Windows 上のナビゲーション バーの MasterDetailPage](#collapsable_navigation_bar)します。
+- ツールバーの配置オプションを設定します。 詳細については、次を参照してください。 [Windows でページのツールバーの配置](#toolbar_placement)します。
+- 表示されるページのアイコンを有効にすると、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)ツールバー。 詳細については、次を参照してください。 [Windows 上のアイコンを TabbedPage](#tabbedpage-icons)します。
 
 ## <a name="platform-support"></a>プラットフォームのサポート
 
 Visual Studio で使用可能な Xamarin.Forms テンプレートには、ユニバーサル Windows プラットフォーム (UWP) プロジェクトが含まれます。
 
 > [!NOTE]
-> Xamarin.Forms 1.x、2.x サポート_Windows Phone 8 Silverlight_、 _Windows Phone 8.1_、および_Windows 8.1_アプリケーションの開発。 ただし、これらのプロジェクト タイプは廃止されました。
+> Xamarin.Forms の 1.x と 2.x のサポート_Windows Phone 8 Silverlight_、 _Windows Phone 8.1_、および_Windows 8.1_アプリケーション開発。 ただし、これらのプロジェクト タイプが推奨されていません。
 
 ## <a name="getting-started"></a>作業の開始
 
-移動して**ファイル > 新規 > プロジェクト**Visual Studio での 1 つを選択し、**クロスプラット フォーム > Blank App (Xamarin.Forms)** 作業を開始するテンプレートです。
+移動して**ファイル > 新規 > プロジェクト**Visual Studio でのいずれかを選択し、**クロス プラットフォーム > 空のアプリ (Xamarin.Forms)** を開始するテンプレート。
 
-以前の Xamarin.Forms ソリューションまたは macOS などで作成したものは必要ありません上に示したすべての Windows プロジェクト (手動で追加する必要があります)。
-Windows プラットフォームを対象とする中にない場合、ソリューションでは、アクセス、[セットアップ手順](installation/index.md)に必要な Windows プロジェクトの種類/秒を追加します。
+Xamarin.Forms ソリューションの古い、または macos で作成されたものがない上記のすべての Windows プロジェクト (ただし、手動で追加する必要があります)。 Windows プラットフォームを対象にするは、ソリューションでは、アクセスにいない場合は、[セットアップ手順](installation/index.md)目的の Windows プロジェクトの種類/秒を追加します。
 
 ## <a name="samples"></a>サンプル
 
-[すべてのサンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)Charles Petzold 帳簿の[ *Xamarin.Forms を使用したモバイル アプリを作成する*](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) (Windows 10) 用のユニバーサル Windows プラットフォームのプロジェクトが含まれます。
+[すべてのサンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)Charles Petzold の書籍の[*を Xamarin.Forms での Mobile Apps の作成*](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) (Windows 10) 用のユニバーサル Windows プラットフォーム プロジェクトが含まれます。
 
-["Scott Hanselman"デモ アプリ](https://github.com/jamesmontemagno/Hanselman.Forms)は個別に使用し、Apple Watch、Android を着用プロジェクトも含まれます (それぞれ、Xamarin.iOS および Xamarin.Android を使用して、Xamarin.Forms で稼働していないこれらのプラットフォーム)。
+["Scott Hanselman"デモ アプリ](https://github.com/jamesmontemagno/Hanselman.Forms)は個別に使用して、Apple Watch、Android Wear のプロジェクトも含まれます (Xamarin.iOS と Xamarin.Android のそれぞれを使用して、Xamarin.Forms で稼働していないこれらのプラットフォーム)。
 
 ## <a name="related-links"></a>関連リンク
 

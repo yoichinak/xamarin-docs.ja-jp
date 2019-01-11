@@ -1,18 +1,18 @@
 ---
 title: 第 3 章の概要です。 テキストに進む
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 3 章の概要。 テキストに進む'
+description: Xamarin.Forms によるモバイル アプリの作成。第 3 章の概要です。 テキストに進む
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: db1ab31249cc40d3496770877e492d652bcfc517
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052596"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207849"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要です。 テキストに進む
 
@@ -28,7 +28,7 @@ ms.locfileid: "53052596"
 
 ときに、`HorizontalOptions`と`VerticalOptions`プロパティが以外の値に設定されます`LayoutOptions.Fill`、サイズ、`Label`サイズのコンテナーが利用できるようにするまで、テキストのレンダリングに必要な領域に準拠するもの、 `Label`。 `Label`言います*制約のない*し、独自のサイズを決定します。
 
-(注: 条件*制約付き*と*制約のない*制約なしのビューは、制約付きのビューよりも概して小さいため、逆があります。 また、これらの用語は使用されません一貫した方法で書籍の前半の章。)
+(注。条件*制約付き*と*制約のない*制約なしのビューは、制約付きのビューよりも概して小さいため、逆があります。 また、これらの用語は使用されません一貫した方法で書籍の前半の章。)
 
 などのビューを`Label`1 つのディメンションでは制限し、制約、それ以外のことができます。 A`Label`水平方向に指定されている場合、複数の行にテキストを折り返すだけされます。
 
@@ -99,9 +99,9 @@ ms.locfileid: "53052596"
 
 `Color.Default` 目的は、プラットフォームの配色を適用して、さまざまなプラットフォームでさまざまなコンテキストで異なる意味を持ちます。 既定では、プラットフォームの配色がされます。
 
-- iOS: 明るい背景に濃いテキスト
-- Android: ライト (書籍) の暗い背景にテキストまたは明るい背景に濃いテキスト (マテリアル デザインに AppCompat 経由での**マスター**サンプル コード リポジトリのブランチ)
-- 明るい背景に濃いテキストを UWP:
+- iOS の場合:明るい背景に濃いテキスト
+- Android:(書籍) の暗い背景にテキストまたは明るい背景に濃いテキストのライト (マテリアル デザインに AppCompat 経由での**マスター**サンプル コード リポジトリのブランチ)
+- UWP:明るい背景に濃いテキスト
 
 `Color.Accent`暗色または明色の背景に表示されているプラットフォーム固有 (および場合によってユーザーが選択可能な) の色で結果の値します。
 
@@ -109,7 +109,7 @@ ms.locfileid: "53052596"
 
 さまざまなプラットフォームでは、上記の一覧で示すように既定の配色パターンがあります。
 
-Android を対象とする場合になっても Android.Manifest.xml ファイルまたはによって light テーマを指定することによって、軽量での dark スキームに切り替え[AppCompat の追加と材料設計](~/xamarin-forms/platform/android/appcompat.md)です。
+Android を対象とする場合になっても Android.Manifest.xml ファイルまたはによって light テーマを指定することによって、軽量での dark スキームに切り替え[AppCompat の追加と材料設計](~/xamarin-forms/platform/android/appcompat-material-design.md)です。
 
 追加することが、Windows プラットフォーム用の色のテーマは通常、ユーザーが選択、`RequestedTheme`いずれかに属性が設定`Light`または`Dark`プラットフォームの App.xaml ファイルにします。 既定では、UWP プロジェクトで、App.xaml ファイルを含む、`RequestedTheme`属性に設定`Light`します。
 
