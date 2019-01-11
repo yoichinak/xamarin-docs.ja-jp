@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058991"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207974"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -344,9 +344,9 @@ public class TitleViewPage : ContentPage
 > [!IMPORTANT]
 > ビューのサイズが [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) および[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) のプロパティで指定されていない場合、多くのビューはナビゲーション バーに表示されません。 または、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) および [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティを適切な値に設定してビューを [`StackLayout`](xref:Xamarin.Forms.StackLayout) にラップすることができます。
 
-[`Layout`](xref:Xamarin.Forms.Layout) クラスは [`View`](xref:Xamarin.Forms.View) クラスから派生しているため、複数のビューを含むレイアウト クラスを表示するように [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを設定することができます。 iOS およびユニバーサル Windows プラットフォーム (UWP) では、ナビゲーション バーの高さを変更できないため、ナビゲーション バーに表示されるビューがナビゲーション バーの既定サイズより大きい場合、クリップが発生します。 一方 Android では、[`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) バインディング可能プロパティを新しい高さを表す `double` に設定することで、ナビゲーション バーの高さを変更できます。 詳細については、「[Setting the Navigation Bar Height on a NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight)」(NavigationPage でナビゲーション バーの高さを設定する) を参照してください。
+[`Layout`](xref:Xamarin.Forms.Layout) クラスは [`View`](xref:Xamarin.Forms.View) クラスから派生しているため、複数のビューを含むレイアウト クラスを表示するように [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを設定することができます。 iOS およびユニバーサル Windows プラットフォーム (UWP) では、ナビゲーション バーの高さを変更できないため、ナビゲーション バーに表示されるビューがナビゲーション バーの既定サイズより大きい場合、クリップが発生します。 一方 Android では、[`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) バインディング可能プロパティを新しい高さを表す `double` に設定することで、ナビゲーション バーの高さを変更できます。 詳細については、「[Setting the Navigation Bar Height on a NavigationPage](~/xamarin-forms/platform/android/navigationpage-bar-height.md)」(NavigationPage でナビゲーション バーの高さを設定する) を参照してください。
 
-また、ナビゲーション バーにコンテンツの一部を配置し、ナビゲーション バーと色を合わせたビューの一部をページ コンテンツの上部に配置して、拡張ナビゲーション バーを提案することもできます。 さらに、iOS では、[`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) バインド可能プロパティを `true` に設定することで、ナビゲーション バーの下部にあるセパレーターと影を削除できます。 詳細については、「[Hiding the Navigation Bar Separator on a NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar)」(NavigationPage でナビゲーション バーのセパレーターを非表示にする) を参照してください。
+また、ナビゲーション バーにコンテンツの一部を配置し、ナビゲーション バーと色を合わせたビューの一部をページ コンテンツの上部に配置して、拡張ナビゲーション バーを提案することもできます。 さらに、iOS では、[`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) バインド可能プロパティを `true` に設定することで、ナビゲーション バーの下部にあるセパレーターと影を削除できます。 詳細については、「[Hiding the Navigation Bar Separator on a NavigationPage](~/xamarin-forms/platform/ios/navigation-bar-separator.md)」(NavigationPage でナビゲーション バーのセパレーターを非表示にする) を参照してください。
 
 > [!NOTE]
 > [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty)、[`Title`](xref:Xamarin.Forms.Page.Title)、[`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty)、[`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) のプロパティのいずれでも、ナビゲーション バー上の領域を占める値を定義できます。 ナビゲーション バーのサイズはプラットフォームや画面サイズによって変わりますが、これらのプロパティをすべて設定すると、領域が限られているために競合が発生します。 これらのプロパティの組み合わせを使用するのではなく、`TitleView` プロパティのみ設定して目的のナビゲーション バーのデザインを改善することをお勧めします。
@@ -355,7 +355,7 @@ public class TitleViewPage : ContentPage
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに [`View`](xref:Xamarin.Forms.View) を表示するときに注意が必要な制限事項がいくつかあります。
 
-- iOS では、`NavigationPage` のナビゲーション バーに配置されるビューは、大きなタイトルが有効かどうかによって表示される位置が変わります。 大きなタイトルを有効にする方法については、「[Displaying Large Titles](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title)」(大きなタイトルの表示) を参照してください。
+- iOS では、`NavigationPage` のナビゲーション バーに配置されるビューは、大きなタイトルが有効かどうかによって表示される位置が変わります。 大きなタイトルを有効にする方法については、「[Displaying Large Titles](~/xamarin-forms/platform/ios/page-large-title.md)」(大きなタイトルの表示) を参照してください。
 - Android では、`NavigationPage` のナビゲーション バーにビューを配置することは、app-compat を使用するアプリでのみ実現できます。
 - [`ListView`](xref:Xamarin.Forms.ListView) や [`TableView`](xref:Xamarin.Forms.TableView) などの大きくて複雑なビューを `NavigationPage` のナビゲーション バーに配置することはお勧めしません。
 

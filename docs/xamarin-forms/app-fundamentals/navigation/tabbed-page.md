@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: d19d8590171e585b6f65b2a63fc9847d7d672a56
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4e2d33276c865695d70abb2d8e00b3b80d446839
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058416"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207987"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms のタブ付きページ
 
@@ -37,7 +37,7 @@ _Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリア
   > [!NOTE]
   > iOS 用の `TabbedRenderer` には、指定されたソースからタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIcon` メソッドがあることに注意してください。 このオーバーライドにより、SVG イメージを `TabbedPage` のアイコンとして使用することができます。 さらに、アイコンの選択バージョンと未選択バージョンも提供することができます。
 
-- Android では、既定により、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されますが、 タブのリストは、プラットフォーム固有で画面の下部に移動できます。 詳細については、「[Setting TabbedPage Toolbar Placement and Color](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-toolbar)」(TabbedPage ツールバーの配置と色の設定) を参照してください。
+- Android では、既定により、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されますが、 タブのリストは、プラットフォーム固有で画面の下部に移動できます。 詳細については、「[Setting TabbedPage Toolbar Placement and Color](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)」(TabbedPage ツールバーの配置と色の設定) を参照してください。
 
   > [!NOTE]
   > Android で AppCompat を使用する場合、各タブにはアイコンも表示されることに注意してください。 また、Android AppCompat 用の `TabbedPageRenderer` には、カスタム `Drawable` からタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIconDrawable` メソッドがあることにも注意してください。 このオーバーライドは、SVG イメージを `TabbedPage` のアイコンとして使用できるようにし、上部のタブ バーと下部のタブ バーの両方で機能します。 また、オーバーライド可能な `SetTabIcon` メソッドは、上部のタブ バー用のカスタム `Drawable` からタブ アイコンを読み込むために使用することもできます。

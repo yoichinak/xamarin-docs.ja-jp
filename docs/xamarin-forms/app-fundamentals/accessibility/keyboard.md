@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/15/2018
-ms.openlocfilehash: 69fc1cd146227e464e70c347d3e28d250a7f1346
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3e3331489c3b437366f4bdcc6990fe282d213a6a
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050440"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207883"
 ---
 # <a name="keyboard-navigation-in-xamarinforms"></a>Xamarin.Forms でのキーボード ナビゲーション
 
@@ -58,7 +58,7 @@ ms.locfileid: "53050440"
 このタブ オーダーは行ベースであり、XAML でコントロールが列記されている順序です。 したがって、Tab キーを押すと、名の 2 つの [`Entry`](xref:Xamarin.Forms.Entry) インスタンス、姓の 2 つの `Entry` インスタンスの順に移動します。 しかし、列優先のタブ ナビゲーションを使用して、Tab キーを押すと名と姓のペアの順に移動するようにした方が、エクスペリエンスがわかりやすくなります。 これは、入力コントロールのタブ オーダーを指定することで実現できます。
 
 > [!NOTE]
-> ユニバーサル Windows プラットフォームでは、キーボード ショートカットを定義して、ユーザーがタッチやマウスではなくキーボードを使用してアプリケーションの表示されている UI 間をすばやく移動してやり取りするわかりやすい方法を提供することができます。 詳しくは、「[VisualElement アクセス キーの設定](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#visualelement-accesskeys)」をご覧ください。
+> ユニバーサル Windows プラットフォームでは、キーボード ショートカットを定義して、ユーザーがタッチやマウスではなくキーボードを使用してアプリケーションの表示されている UI 間をすばやく移動してやり取りするわかりやすい方法を提供することができます。 詳しくは、「[VisualElement アクセス キーの設定](~/xamarin-forms/platform/windows/visualelement-access-keys.md)」をご覧ください。
 
 ## <a name="setting-the-tab-order"></a>タブ オーダーを設定する
 
