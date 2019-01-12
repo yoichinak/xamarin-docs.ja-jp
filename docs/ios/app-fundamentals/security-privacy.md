@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1c88a5c16dbe5559f0b551a97a27ebb893991187
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 119fd478727a002622861c94462b93b75720a992
+ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120503"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249204"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS のセキュリティとプライバシーの機能
 
@@ -27,7 +27,7 @@ Apple は iOS 10 (以降) でのプライバシーとセキュリティの両方
 IOS 10 では、セキュリティとプライバシーに次の一般的な変更を加えられましたが。
 
 - 一般的なデータのセキュリティ アーキテクチャ (CDSA) API は非推奨し、非対称キーを生成する SecKey API で置き換える必要があります。
-- 新しい`NSAllowsArbitraryLoadsInWebContent`にキーを追加することができます、アプリの**Info.plist**ファイルし、web ページをアプリの残りの部分で、Apple Transport Security (ATS) の保護がまだ有効になっている、正しくロードできるようになります。 詳細についてを参照してください、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)ドキュメント。
+- 新しい`NSAllowsArbitraryLoadsInWebContent`にキーを追加できる、アプリの**Info.plist**ファイルし、web ページをアプリの残りの部分で、Apple Transport Security (ATS) の保護がまだ有効になっている、正しくロードできるようになります。 詳細についてを参照してください、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)ドキュメント。
 - IOS 10 デバイスと macOS で新しいクリップボード Sierra をコピーして貼り付けるデバイス間でユーザーが許可されているため、API は、特定のデバイスに制限して、特定の時点に自動的にオフにするタイムスタンプを記録するクリップボードを許可する拡張されました。 さらに、名前付きペーストはもう残っていませんし、共有ペースト ボード コンテナーに置き換える必要があります。
 - すべての SSL/TLS 接続の RC4 対称暗号は既定で無効になりました。 さらに、トランスポートのセキュリティで保護された API をサポートしていません SSLv3 と、開発者は、SHA 1 および 3 des 暗号化を使用して、できるだけ早く停止をお勧めします。
 
@@ -51,9 +51,9 @@ IOS 10 (以降) で実行されているアプリ内の 1 つまたは複数の�
 - **プライバシー - ヘルスケア更新の使用状況の説明**(`NSHealthUpdateUsageDescription`)-により、開発者は、アプリがユーザーの正常性データを編集する必要がある理由について説明します。 詳細については、Apple を参照してください[HKHealthStore クラス参照](https://developer.apple.com/reference/healthkit/hkhealthstore)します。
 - **プライバシー - HomeKit の利用状況の説明**(`NSHomeKitUsageDescription`)-により、開発者は、アプリがユーザーの HomeKit の構成データにアクセスしようとした理由について説明します。
 - **プライバシー - 位置の常に使用状況説明**(`NSLocationAlwaysUsageDescription`)-により、開発者は、アプリが常に、ユーザーの場所にアクセスしようとした理由について説明します。
-- [非推奨]**プライバシー - 位置の使用状況の説明**(`NSLocationUsageDescription`)-により、開発者は、アプリがユーザーの場所にアクセスしようとした理由について説明します。 *注: このキーは iOS 8 (以降) で廃止されました。使用`NSLocationAlwaysUsageDescription`または`NSLocationWhenInUseUsageDescription`代わりにします。*
+- [非推奨]**プライバシー - 位置の使用状況の説明**(`NSLocationUsageDescription`)-により、開発者は、アプリがユーザーの場所にアクセスしようとした理由について説明します。 *注:IOS 8 (以降) でこのキーは非推奨とされました。使用`NSLocationAlwaysUsageDescription`または`NSLocationWhenInUseUsageDescription`代わりにします。*
 - **プライバシー - 場所ときに使用して利用状況の説明**(`NSLocationWhenInUseUsageDescription`)-により、開発者は、アプリが実行されているユーザーの場所にアクセスしようとした理由について説明します。
-- [非推奨]**プライバシー - メディア ライブラリの使用状況の説明**-により、開発者は、アプリがユーザーのメディア ライブラリにアクセスしようとした理由について説明します。 *注: このキーは iOS 8 (以降) で廃止されました。使用`NSAppleMusicUsageDescription`代わりにします。*
+- [非推奨]**プライバシー - メディア ライブラリの使用状況の説明**-により、開発者は、アプリがユーザーのメディア ライブラリにアクセスしようとした理由について説明します。 *注:IOS 8 (以降) でこのキーは非推奨とされました。使用`NSAppleMusicUsageDescription`代わりにします。*
 - **プライバシー - マイクの利用状況の説明**(`NSMicrophoneUsageDescription`)-により、開発者は、アプリがデバイスのマイクにアクセスしようとした理由について説明します。
 - **プライバシー - モーションの使用方法の説明**(`NSMotionUsageDescription`)-により、開発者は、アプリがデバイスの加速度計にアクセスしようとした理由について説明します。
 - **プライバシー - フォト ライブラリの使用状況の説明**(`NSPhotoLibraryUsageDescription`)-により、開発者は、アプリがユーザーのフォト ライブラリにアクセスしようとした理由について説明します。

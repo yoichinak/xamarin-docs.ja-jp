@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2357003e3a855981f053c48a596b932d9ba36d90
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
+ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104961"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249191"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -52,7 +52,7 @@ ms.locfileid: "50104961"
 |アプリ プラットフォーム|IDE のサポート|メモ|
 |--- |--- |--- |
 |Mac|Visual studio for Mac のみサポート|
-|iOS|Visual Studio 2017 と Visual Studio for Mac のサポート| |
+|iOS|Visual Studio 2017 と Visual Studio for Mac のサポート| リンカーの動作に設定する必要があります**リンクしない**( **iOS ビルド**プロジェクト オプション) |
 |Android|Visual Studio 2017 と Visual Studio for Mac のサポート|Android をターゲットする必要があります > = 4.0.3、 **fastdev**を有効にします。<br />Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります。 Android 7 エミュレーターは、この時点での検査を許可しません。|
 |WPF|Visual Studio 2017 でのみサポートされています|
 
@@ -114,8 +114,8 @@ Android と iOS の場合は、検査するときでデバッグしているデ�
 
 - お使いの IDE で示すようにデバイスの名前
 - デバイスの OS バージョン
-- Android: は、x86 を使用していることを確認しますエミュレーター。
-- Android: どのようなエミュレーターのプラットフォームを使用していますか。 Google エミュレーターでしょうか。 Visual Studio Android Emulator でしょうか。 Xamarin Android Player でしょうか。
+- Android:X86 を使用していることを確認しますエミュレーター。
+- Android:どのようなエミュレーターのプラットフォームを使用していますか。 Google エミュレーターでしょうか。 Visual Studio Android Emulator でしょうか。 Xamarin Android Player でしょうか。
 - 適切にデバッグしているアプリが表示され、デバイスで機能しますか。
 - デバイスにはネットワーク接続 (web ブラウザーを使用してチェック) がありますか。
 
