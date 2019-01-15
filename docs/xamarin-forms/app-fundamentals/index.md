@@ -6,13 +6,13 @@ ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2018
-ms.openlocfilehash: 015a7dfa3d55b411e6626ae2ac70fd2930661e65
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/08/2018
+ms.openlocfilehash: a65946f21f8ced00e9ad64aec590df37acab1528
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898993"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207818"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms のアプリケーションの基礎
 
@@ -27,6 +27,10 @@ ms.locfileid: "52898993"
 ## <a name="app-lifecycleapp-lifecyclemd"></a>[アプリのライフサイクル](app-lifecycle.md)
 
 モーダル ナビゲーション イベント、および `Application` クラスの `OnStart`、`OnSleep`、`OnResume` メソッドを使うと、カスタム コードを使ってアプリケーションのライフサイクル イベントを処理できます。
+
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[アプリケーション インデックス作成とディープ リンク作成](deep-linking.md)
+
+アプリケーション インデックス作成を使用すると、何度か使用した後に忘れてしまいそうなアプリケーションを検索結果に表示することで、関連性を保つことができます。 ディープ リンクの設定を使用すると、アプリケーションのデータが含まれている検索結果にアプリケーションが応答するようにできます。通常の応答では、ディープ リンクから参照されているページに移動します。
 
 ## <a name="behaviorsbehaviorsindexmd"></a>[ビヘイビアー](behaviors/index.md)
 
@@ -46,7 +50,7 @@ ms.locfileid: "52898993"
 
 ## <a name="effectseffectsindexmd"></a>[エフェクト](effects/index.md)
 
-エフェクトを使うと、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。通常は、スタイルに関する小さな変更のために使います。
+効果を使用すると、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。通常は、小規模なスタイル変更のために使用します。
 
 ## <a name="filesfilesmd"></a>[ファイル](files.md)
 
@@ -66,7 +70,7 @@ Xamarin.Forms では、SQLite データベース エンジンを使ったデー�
 
 ## <a name="messaging-centermessaging-centermd"></a>[メッセージング センター](messaging-center.md)
 
-Xamarin.Forms の `MessagingCenter` を使うと、ビュー モデルとその他のコンポーネントの通信を、単純なメッセージ コントラクトを除いては相互について何も知る必要なく実現できます。
+Xamarin.Forms の `MessagingCenter` を使うと、ビュー モデルとその他のコンポーネントの通信を、シンプルなメッセージ コントラクト以外は、相互について何も知らなくても実現できます。
 
 ## <a name="navigationnavigationindexmd"></a>[ナビゲーション](navigation/index.md)
 
