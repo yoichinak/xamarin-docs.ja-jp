@@ -1,18 +1,19 @@
 ---
-title: 'Xamarin.Essentials: ユーザー設定'
+title: Xamarin.Essentials:[Preferences]
 description: このドキュメントで説明する Xamarin.Essentials の Preferences クラスでは、アプリケーションのユーザー設定がキー/値ストアに保存されます。 クラスの使用方法と、格納できるデータの種類について説明します。
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 0144cdd4e12d53e0ac82af24a932825491db9e41
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/15/2019
+ms.custom: video
+ms.openlocfilehash: 6d57b5ce9cb61363eef24b230f6cf71894f66198
+ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899085"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317883"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: ユーザー設定
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:[Preferences]
 
 **Preferences** クラスを使用すると、アプリケーションのユーザー設定をキー/値ストアに保存できます。
 
@@ -68,7 +69,7 @@ Preferences.Clear();
 
 ## <a name="implementation-details"></a>実装の詳細
 
-`DateTime` の値は、`DateTime` クラスによって定義されている 2 つのメソッドを使用して 64 ビット バイナリ (長整数) 形式で格納されます。`DateTime` 値のエンコードには [`ToBinary`](xref:System.DateTime.ToBinary) メソッドが使用され、値のデコードには [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) メソッドが使用されます。 世界協定時刻 (UTC) 値ではない `DateTime` が格納されているときに値をデコードするために行われる可能性がある調整については、これらのメソッドのドキュメントをご覧ください。
+`DateTime` の値は `DateTime` クラスによって定義された 2 つのメソッドを使用して 64 ビット バイナリ (long 型整数) 形式で格納されます。[`ToBinary`](xref:System.DateTime.ToBinary) メソッドを使用して `DateTime` の値がエンコードされ、[`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) メソッドが値をデコードします。 世界協定時刻 (UTC) 値ではない `DateTime` が格納されているときに値をデコードするために行われる可能性がある調整については、これらのメソッドのドキュメントをご覧ください。
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
@@ -98,3 +99,9 @@ iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.micr
 
 - [Preferences のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
 - [Preferences API のドキュメント](xref:Xamarin.Essentials.Preferences)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Preferences-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
