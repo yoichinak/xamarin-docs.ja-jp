@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: バッテリ'
+title: Xamarin.Essentials:バッテリ
 description: このドキュメントで説明する Xamarin.Essentials の Battery クラスを使用すると、デバイスのバッテリに関する情報を確認し、変化を監視できます。
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 3d69d082495f11c48273e9329bd2a4a61451b33f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4b3f361f2e97673c4121e81247f668eb0730199e
+ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058689"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317870"
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: バッテリ
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials:バッテリ
 
 **Battery** クラスでは、デバイスのバッテリ情報を確認し、変更を監視し、デバイスが省電力モードで実行されているかどうかを示す、デバイスの省電力状態に関する情報を提供できます。 デバイスの省電力状態がオンになっている場合、アプリケーションはバックグラウンド処理を避ける必要があります。
 
@@ -116,10 +116,10 @@ public class BatteryTest
     public BatteryTest()
     {
         // Register for battery changes, be sure to unsubscribe when needed
-        Battery.BatteryChanged += Battery_BatteryChanged;
+        Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
     }
 
-    void Battery_BatteryChanged(object sender, BatteryInfoChangedEventArgs   e)
+    void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -148,7 +148,7 @@ public class EnergySaverTest
     public EnergySaverTest()
     {
         // Subscribe to changes of energy-saver status
-        Batter.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
+        Battery.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
     }
 
     private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
