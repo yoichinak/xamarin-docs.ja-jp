@@ -28,7 +28,7 @@ ms.locfileid: "53059883"
 
 ### <a name="ios-video-resources"></a>iOS ビデオ リソース
 
-iOS プロジェクトでは、ビデオを**リソース** フォルダー、または**リソース** フォルダーのサブフォルダーに格納できます。 ビデオ ファイルには、`BundleResource` の `Build Action` が含まれている必要があります。 `ResourceVideoSource` の `Path` プロパティをファイル名に設定します。たとえば、**MyFile.mp4 (****リソース** フォルダー内のファイルの場合) や **MyFolder/MyFile.mp4** (ここで、**MyFolder** は、**リソース** フォルダーのサブフォルダー) などに設定します。
+iOS プロジェクトでは、ビデオを**リソース** フォルダー、または**リソース** フォルダーのサブフォルダーに格納できます。 ビデオ ファイルには、`BundleResource` の `Build Action` が含まれている必要があります。 `ResourceVideoSource` の `Path` プロパティをファイル名に設定します。たとえば、 **MyFile.mp4 (** **リソース** フォルダー内のファイルの場合) や **MyFolder/MyFile.mp4** (ここで、 **MyFolder** は、 **リソース** フォルダーのサブフォルダー) などに設定します。
 
 **VideoPlayerDemos** ソリューションでは、**VideoPlayerDemos.iOS** に、**Videos** という名前の**リソース** フォルダーのサブフォルダーが含まれ、このサブフォルダーには、**iOSApiVideo.mp4** という名前のファイルが含まれます。 これは、Xamarin Web サイトを使用して iOS `AVPlayerViewController` クラス用のドキュメントを検索する方法を示す短いビデオです。
 
