@@ -81,7 +81,7 @@ public partial class App : Application
 </ContentPage>
 ```
 
-`StaticResource` マークアップ拡張を使用して、`TealTemplate` が [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティに割り当てられます。 [`ContentView.Content`[`ContentPage`](xref:Xamarin.Forms.ContentPage) に表示されるコンテンツを定義する [`StackLayout`](xref:Xamarin.Forms.StackLayout) に、](xref:Xamarin.Forms.ContentView.Content) プロパティが設定されます。 `TealTemplate` に含まれている [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) によって、このコンテンツが表示されます。 この結果、次のスクリーンショットに示すような外観が表示されます。
+`StaticResource` マークアップ拡張を使用して、`TealTemplate` が [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティに割り当てられます。 [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content)[`StackLayout`](xref:Xamarin.Forms.StackLayout) に表示されるコンテンツを定義する [`ContentPage`](xref:Xamarin.Forms.ContentPage) に、 プロパティが設定されます。 `TealTemplate` に含まれている [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) によって、このコンテンツが表示されます。 この結果、次のスクリーンショットに示すような外観が表示されます。
 
 ![](creating-images/teal-theme.png "青緑コントロール テンプレート")
 
@@ -206,7 +206,7 @@ public class HomePageCS : ContentPage
 
 コントロール テンプレートを定義するクラスの種類を `ControlTemplate` コンストラクター内に指定することで、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) インスタンスを作成します。
 
-[`ContentView.Content`[`ContentPage`](xref:Xamarin.Forms.ContentPage) に表示されるコンテンツを定義する [`StackLayout`](xref:Xamarin.Forms.StackLayout) に、](xref:Xamarin.Forms.ContentView.Content) プロパティが設定されます。 `TealTemplate` に含まれている [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) によって、このコンテンツが表示されます。 前に説明したのと同じメカニズムを使用して、実行時にテーマを `AquaTheme` に変更します。
+[`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content)[`StackLayout`](xref:Xamarin.Forms.StackLayout) に表示されるコンテンツを定義する [`ContentPage`](xref:Xamarin.Forms.ContentPage) に、 プロパティが設定されます。 `TealTemplate` に含まれている [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) によって、このコンテンツが表示されます。 前に説明したのと同じメカニズムを使用して、実行時にテーマを `AquaTheme` に変更します。
 
 ## <a name="summary"></a>まとめ
 
