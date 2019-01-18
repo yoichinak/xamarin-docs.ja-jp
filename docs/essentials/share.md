@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Essentials: Share'
+title: 'Xamarin.Essentials: 共有'
 description: アプリケーションで Xamarin.Essentials の Share クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
@@ -20,7 +20,7 @@ ms.locfileid: "52899375"
 
 [!include[](~/essentials/includes/get-started.md)]
 
-## <a name="using-share"></a>Share の使用
+## <a name="using-share"></a>共有の使用
 
 自分のクラスの Xamarin.Essentials に参照を追加します。
 
@@ -28,7 +28,7 @@ ms.locfileid: "52899375"
 using Xamarin.Essentials;
 ```
 
-Share 機能は、他のアプリケーションと共有する情報が含まれているデータ要求ペイロードを指定して `RequestAsync` メソッドを呼び出すことにより動作します。 テキストと URI を混在させることができ、各プラットフォームはコンテンツに基づいてフィルターを処理します。
+共有機能は、他のアプリケーションと共有する情報が含まれているデータ要求ペイロードを指定して `RequestAsync` メソッドを呼び出すことにより動作します。 テキストと URI を混在させることができ、各プラットフォームはコンテンツに基づいてフィルターを処理します。
 
 ```csharp
 
