@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 741e18d84c25bb4479480949a271a5845e99daa1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c552d97f64b28ed47a9226047862bffcfa8c9e3
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118462"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418687"
 ---
 # <a name="using-sqlitenet-with-android"></a>Android での SQLite.NET の使用
 
@@ -22,7 +22,7 @@ SQLite.NET ライブラリを Xamarin アプリに含めるには、プロジェ
 
 - **パッケージ名:** sqlite-net-pcl
 - **作成者:** Frank A. Krueger
-- **Id:** sqlite-net-pcl
+- **ID:** sqlite-net-pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet パッケージ](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet パッケージ")](using-sqlite-orm-images/image1a.png#lightbox)
@@ -136,7 +136,7 @@ public static void DoSomeDataAccess () {
 -   **[MaxLength(value)]** &ndash;データベース挿入が試行されたときに、text プロパティの長さを制限します。 コードを使用すると、この属性は '' ときにだけチェック、データベースの insert または update 操作が試行されたオブジェクトを挿入する前にこれ検証する必要があります。
 
 -   **[無視]** &ndash;をこのプロパティを無視すると、SQLite.NET します。
-    これは、データベースに格納できない型を持つプロパティまたはプロパティが自動的に解決できないモデルのコレクションである SQLite に特に便利です。
+    これは、データベースに格納できない型を持つプロパティまたは SQLite では自動的に解決できないコレクションをモデル化するプロパティに特に便利です。
 
 -   **[Unique]** &ndash;により、基になるデータベース列の値が一意であります。
 
@@ -205,7 +205,7 @@ var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>複数のスレッドで SQLite.NET の使用
 
-SQLite は、次の 3 つの異なるスレッド処理モードをサポートしています:*シングル スレッド*、*マルチ スレッド*、および*シリアル化*します。 制限を適用せずに複数のスレッドからデータベースにアクセスする場合は、SQLite を使用するを構成することができます、**シリアル化**モードのスレッドを処理します。 アプリケーションの初期段階でこのモードを設定することが重要 (などの先頭に、`OnCreate`メソッド)。
+SQLite は、次の 3 つの異なるスレッド処理モードをサポートしています。*シングル スレッド*、*マルチ スレッド*、および*シリアル化*します。 制限を適用せずに複数のスレッドからデータベースにアクセスする場合は、SQLite を使用するを構成することができます、**シリアル化**モードのスレッドを処理します。 アプリケーションの初期段階でこのモードを設定することが重要 (などの先頭に、`OnCreate`メソッド)。
 
 スレッド処理モードを変更するには、呼び出す`SqliteConnection.SetConfig`します。 たとえば、SQLite for の構成のコード行**シリアル化**モード。 
 

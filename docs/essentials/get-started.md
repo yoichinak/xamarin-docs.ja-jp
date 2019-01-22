@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: c40762ad4d165c1e5a29bdf9dc6d3c0fdb8581f7
-ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
+ms.openlocfilehash: d2ce173740b6de1c628c34c3b5c1227ed0fbcd3c
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411727"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418648"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の概要
 
@@ -40,9 +40,6 @@ Xamarin.Essentials は NuGet パッケージとして入手可能で、Visual St
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
     ソリューション エクスプローラー パネルでソリューション名を右クリックし、**[NuGet パッケージの管理]** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、UWP、.NET Standard ライブラリなど、**すべての**プロジェクトにパッケージをインストールします。
-
-    > [!TIP]
-    > [**Xamarin.Essentials** の NuGet](https://www.nuget.org/packages/Xamarin.Essentials) がプレビュー段階である間は、**[プレリリースを含める]** ボックスをオンにしてください。
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
