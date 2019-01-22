@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Essentials: 共有'
+title: 'Xamarin.Essentials: Share'
 description: アプリケーションで Xamarin.Essentials の Share クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
