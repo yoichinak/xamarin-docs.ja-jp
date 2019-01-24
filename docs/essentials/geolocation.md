@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 88f973715f216f5d68eb2b3dc5582502cf5d605d
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 84e0a5d37b757d14750f6bd3119d8695b35d7544
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479733"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841368"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
@@ -95,7 +95,7 @@ catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
 }
-catch (FeatureNotEnableException fneEx)
+catch (FeatureNotEnabledException fneEx)
 {
     // Handle not enabled on device exception
 }
@@ -128,7 +128,7 @@ catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
 }
-catch (FeatureNotEnableException fneEx)
+catch (FeatureNotEnabledException fneEx)
 {
     // Handle not enabled on device exception
 }
@@ -197,10 +197,10 @@ catch (Exception ex)
 ```csharp
 Location boston = new Location(42.358056, -71.063611);
 Location sanFrancisco = new Location(37.783333, -122.416667);
-double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnit.Miles);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
 ```
 
-`Location` コンストラクターは、緯度引数と経度引数をこの順序で受け取ります。 正の緯度値は北半球を示し、正の緯度値は東半球を示します。 マイルまたはキロメートルを指定するには、`CalculateDistance` に対する最後の引数を使用します。 `Location` クラスでは、2 つの単位の間で変換を行う `KilometersToMiles` および `MilesToKilometers` メソッドも定義されています。
+`Location` コンストラクターは、緯度引数と経度引数をこの順序で受け取ります。 正の緯度値は北半球を示し、正の緯度値は東半球を示します。 マイルまたはキロメートルを指定するには、`CalculateDistance` に対する最後の引数を使用します。 `UnitConverters` クラスでは、2 つの単位の間で変換を行う `KilometersToMiles` および `MilesToKilometers` メソッドも定義されています。
 
 ## <a name="api"></a>API
 
