@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 8bc319b53e4a93d5cac35c4f8c3263b72dfe45e2
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 719efc87b8843d0d2fcd2643aab23aa6849d940a
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746909"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841381"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin.Mac の画像
 
@@ -82,7 +82,7 @@ Xamarin.Mac アプリケーションで使用するイメージを追加する�
 - PDF がコンパイル時と、最終的なアプリケーションに付属してビットマップ ビットマップにラスタライズになるベクトルの完全なサポートはありません。
 - アセット カタログに設定されていると、イメージのサイズを調整することはできません。 (またはコードに自動レイアウトとサイズ クラスを使用して) イメージのサイズを変更しようとした場合、イメージは他の任意のビットマップと同じようにゆがんで表示されます。
 
-使用する場合、**セット イメージ**で Xcode の Interface Builder では、単に選択セットの名前で、ドロップダウン リストから、**属性インスペクター**: * *
+使用する場合、**セット イメージ**で Xcode の Interface Builder では、単に選択セットの名前で、ドロップダウン リストから、**属性インスペクター**:
 
 ![Xcode の Interface Builder で設定するイメージを選択する](image-images/imageset06.png "Xcode の Interface Builder で設定するイメージを選択します。")
 
