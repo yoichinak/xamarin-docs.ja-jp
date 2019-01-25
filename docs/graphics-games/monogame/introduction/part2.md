@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c761f9f11e8053dcd0960129a28251ed6acf473c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120281"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479772"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>パート 2-Walkinggame の実装
 
@@ -398,7 +398,7 @@ public Rectangle CurrentRectangle
         AnimationFrame currentFrame = null;
 
         // See if we can find the frame
-        TimeSpan accumulatedTime;
+        TimeSpan accumulatedTime = new TimeSpan();
         foreach(var frame in frames)
         {
             if (accumulatedTime + frame.Duration >= timeIntoAnimation)
@@ -510,7 +510,7 @@ protected override void Update(GameTime gameTime)
 
 次を追加する予定の動きをタッチ コントロールを使用して、文字。 ユーザーが画面をタッチすると、文字を画面にタッチ点に向かって移動します。 タッチが検出されない場合、文字は、インプレース スタンドは。
 
-### <a name="defining-getdesiredvelocityfrominput"></a>GetDesiredVelocityFromInput を定義します。
+### <a name="defining-getdesiredvelocityfrominput"></a>Defining GetDesiredVelocityFromInput
 
 使用する MonoGame の`TouchPanel`クラスで、タッチ スクリーンの現在の状態に関する情報を提供します。 チェックするメソッドを追加してみましょう、`TouchPanel`戻って、文字の必要なベロシティ。
 
