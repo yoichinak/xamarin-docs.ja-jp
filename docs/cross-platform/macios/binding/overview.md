@@ -1,16 +1,17 @@
 ---
 title: OBJECTIVE-C バインディングの概要
-description: このドキュメントでは、c# コマンド ライン バインド、バインド プロジェクトの場合は、目的の油性など、Objective C コードのバインディングを作成するさまざまな方法の概要を示します。 また、バインドの動作方法も説明します。
+description: このドキュメントを作成するさまざまな方法の概要を説明するC#Objective C コード、コマンド ライン バインド、バインド プロジェクトの場合は、目的の油性などのバインド。 また、バインドの動作方法も説明します。
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 97d0c5b9f61d4dafe144d2b2f22df6d465cbbccb
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.date: 11/25/2015
+ms.openlocfilehash: 3f15eaf9171ac44b870239fb5ffa14edd6210360
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855274"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879304"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C バインディングの概要
 
@@ -18,14 +19,14 @@ _バインディング プロセスのしくみの詳細_
 
 Xamarin で使用するため、OBJECTIVE-C ライブラリのバインドは、3 つの手順は受け取ります。
 
-1. C#「API の定義」を記述する方法を説明するは、ネイティブの API は .NET、および基になる OBJECTIVE-C にマップする方法で公開 これは、ようなコンストラクトを使用すると標準的な c#`interface`とさまざまなバインド**属性**(この[簡単な例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API))。
+1. 書き込みをC#"API の定義"方法について説明するのには、ネイティブ API は .NET、および基になる OBJECTIVE-C にマップする方法で公開 これは、標準を使用してC#などのコンストラクト`interface`とさまざまなバインド**属性**(これを参照してください[簡単な例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API))。
 
-2. 1 回コンパイルすると、「バインド」のアセンブリを生成する c# の「API の定義」を記述しました。 これで実行することができます、 [**コマンドライン**](#commandline)またはを使用して、 [**バインド プロジェクト**](#bindingproject) Visual Studio for Mac または Visual Studio でします。
+2. 「API の定義」を作成するとC#、「バインド」アセンブリを生成するためにコンパイルします。 これで実行することができます、 [**コマンドライン**](#commandline)またはを使用して、 [**バインド プロジェクト**](#bindingproject) Visual Studio for Mac または Visual Studio でします。
 
 3. その「バインド」アセンブリは、定義した API を使用して、ネイティブ機能にアクセスできるように、Xamarin アプリケーション プロジェクトに追加されます。
   バインド プロジェクトは、アプリケーション プロジェクトから完全に分離します。
 
-**注:** 手順 1 のサポートで自動化できる[**目標油性**](#objectivesharpie)します。 Objective C API を確認し、提案された c#「API の定義」が生成されます。 目標油性によって作成されたファイルをカスタマイズして、バインド プロジェクト (または、コマンドラインで) 使用することができます、バインド アセンブリを作成します。 目標油性が単独でバインドを作成していないより大きなプロセスのオプションの一部だけです。
+**注:** 手順 1 のサポートで自動化できる[**目標油性**](#objectivesharpie)します。 Objective C API を確認し、提案された生成C#「API の定義」。 目標油性によって作成されたファイルをカスタマイズして、バインド プロジェクト (または、コマンドラインで) 使用することができます、バインド アセンブリを作成します。 目標油性が単独でバインドを作成していないより大きなプロセスのオプションの一部だけです。
 
 技術的な詳細を参照することもできます。[しくみ](#howitworks)、を理解できると、バインドを作成します。
 
@@ -33,7 +34,7 @@ Xamarin で使用するため、OBJECTIVE-C ライブラリのバインドは、
 
 ## <a name="command-line-bindings"></a>コマンド ライン バインド
 
-使用することができます、 `btouch-native` Xamarin.iOS 用 (または`bmac-native`Xamarin.Mac を使用している場合) に直接バインドを作成します。 手動で作成した c# API 定義を渡すことで機能します (または目標油性を使用して) コマンド ライン ツールに (`btouch-native` iOS 用または`bmac-native`for Mac)。
+使用することができます、 `btouch-native` Xamarin.iOS 用 (または`bmac-native`Xamarin.Mac を使用している場合) に直接バインドを作成します。 動作を渡すことによって、 C# API 定義を手動で作成した (または目標油性を使用して) コマンド ライン ツールに (`btouch-native` iOS 用または`bmac-native`for Mac)。
 
 
 これらのツールを起動するための一般的な構文です。
@@ -61,7 +62,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 <a name="objectivesharpie" />
 
-## <a name="objective-sharpie"></a>目標油性
+## <a name="objective-sharpie"></a>Objective Sharpie
 
 油性の目標は、バインディングの作成の初期の段階を支援する、独立した別のコマンド ライン ツールです。 単独で、バインドは作成されませんではなく、対象のネイティブ ライブラリの API 定義の生成の最初のステップを自動化します。
 
@@ -75,7 +76,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 最初に、バインドする型を検索します。 ディスカッションの目的 (とわかりやすくするため)、バインドします、 [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)型 (でバインド既に[Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); 以下の実装が目的では例だけ)。
 
-次に、c# の型を作成する必要があります。 名前空間に配置するこのたいします可能性があります。使用する必要があります Objective C が名前空間をサポートしていないため、 `[Register]` Xamarin.iOS は、OBJECTIVE-C ランタイムを登録する型名を変更する属性。 C# の型を継承する必要がありますも[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+次に、作成する必要があります、C#型。 名前空間に配置するこのたいします可能性があります。使用する必要があります Objective C が名前空間をサポートしていないため、 `[Register]` Xamarin.iOS は、OBJECTIVE-C ランタイムを登録する型名を変更する属性。 C#型を継承する必要がありますも[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
 
 ```csharp
 namespace Example.Binding {
@@ -188,5 +189,5 @@ namespace Example.Binding {
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
