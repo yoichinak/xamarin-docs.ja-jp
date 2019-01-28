@@ -7,13 +7,14 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 09/06/2018
-ms.openlocfilehash: 67ab5b9bd711cb10a20b1365effea1627d0f7688
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 5618f15d60a26d2ad3d84ff0e3674936c0c01ca3
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526989"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479785"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Android Device Manager による仮想デバイスの管理
 
@@ -32,7 +33,7 @@ _この記事では、Android Device Manager を使って、Android の物理デ
 [Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) で実行する _Android 仮想デバイス_ (AVD) を作成および構成するには、Android Device Manager を使います。
 各 AVD は、物理的な Android デバイスをシミュレートするエミュレーター構成です。 これにより、異なる物理 Android デバイスをシミュレートするさまざまな構成でアプリを実行してテストすることができます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Android Device Manager を使用するには、次の項目が必要です。
 
@@ -41,7 +42,7 @@ Android Device Manager を使用するには、次の項目が必要です。
 - Visual Studio Tools for Xamarin バージョン 4.9 以降。
 
 - Android SDK をインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照してください)。
-  Android SDK がまだインストールされていない場合は、既定の場所 (**C:\\Program Files (x86)\\Android\\android-sdk**) にインストールします。
+  Android SDK がまだインストールされていない場合は、その既定の場所にインストールします。**C:\\Program Files (x86)\\Android\\android-sdk**。
 
 - ([Android SDK Manager](~/android/get-started/installation/android-sdk.md) を使用して) 次のパッケージをインストールする必要があります。 
     - **Android SDK Tools バージョン 26.1.1** 以降
@@ -205,7 +206,7 @@ Xamarin Studio は Android Device Manager と互換性がありません。
 [Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) で実行する *Android 仮想デバイス* (AVD) を作成および構成するには、Android Device Manager を使います。
 各 AVD は、物理的な Android デバイスをシミュレートするエミュレーター構成です。 これにより、異なる物理 Android デバイスをシミュレートするさまざまな構成でアプリを実行してテストすることができます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Android Device Manager を使用するには、次の項目が必要です。
 
@@ -388,7 +389,7 @@ SDK がこの場所にインストールされていない場合、Android Devic
 
    ![Android Device Manager のログ ファイルの場所](device-manager-images/win/30-log-files.png)
 
-2. いずれかのログ ファイルをダブルクリックして開き、**構成ファイルのパス**を調べます。 例:
+2. いずれかのログ ファイルをダブルクリックして開き、**構成ファイルのパス**を調べます。 次に例を示します。
 
    [![ログ ファイルでの構成ファイルのパス](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -502,3 +503,9 @@ Android Oreo 用に構成された AVD で Wi-Fi アクセスをシミュレー�
 - [SDK Tools のリリース ノート (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/How-to-Create-and-Manage-Your-Own-Android-Emulators/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

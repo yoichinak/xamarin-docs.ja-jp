@@ -6,13 +6,14 @@ ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 02/09/2018
-ms.openlocfilehash: 6e63d60d12a80abb8f229b2daf0767ad54a83314
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 6d64acdcc84c16f33a1f543bf1c9506ae7c8e347
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118904"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479694"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS および tvOS アプリのワイヤレス展開
 
@@ -20,7 +21,7 @@ ms.locfileid: "50118904"
 
 このガイドでは、ネットワーク経由でデバイスとペアリングし、そのデバイスに展開する方法を詳しく説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 ワイヤレス展開は、Visual Studio for Mac と Visual Studio の両方の機能として利用できます。
 
@@ -58,7 +59,7 @@ Mac ビルド ホストでは、次のコンポーネントをインストール
 
 1. Xcode を開き、**[Window] > [Devices and Simulators]** に移動します。
 2. ライトニング ケーブルを使用して、iOS デバイスを Mac に接続します。 デバイスで **[このコンピューターを信頼する]** を選択する必要がある場合もあります。
-3. ご使用のデバイスを選択し、**[Connect via network]** チェックボックスを選択してデバイスをペアリングします: ![[Connect via network] オプションが表示されている [Device and Simulator] ウィンドウ](wireless-deployment-images/image2.png)
+3. ご使用のデバイスを選択し、**[Connect via network]** チェックボックスをオンにしてデバイスをペアリングします:![[Connect via network] オプションが表示されている [Device and Simulator] ウィンドウ](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>Apple TV と Xcode をペアリングする
 
@@ -105,3 +106,9 @@ iOS または tvOS デバイスに展開するには、次のステップを実�
 ## <a name="related-links"></a>関連リンク
 
 - [ワイヤレス デバイスと Xcode のペアリング](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Debug-to-iOS-Devices-Over-Wi-Fi/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
