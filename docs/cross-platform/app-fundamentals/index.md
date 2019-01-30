@@ -6,12 +6,12 @@ ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 3a2c3f98e3ba83db0794a68ff1d62a9845a111c0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: bfca620848bef174e78d9d34b6fdc497dda8f1de
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270190"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233225"
 ---
 # <a name="sharing-code-on-multiple-platforms"></a>複数のプラットフォームでコードの共有
 
@@ -33,10 +33,14 @@ Xamarin プロジェクトでは、.NET Standard ライブラリおよび共有�
 
 ポータブル クラス ライブラリ プロジェクトをビルドし、複数のプラットフォームで実行する共有コードが含まれているアセンブリを配布できます。 ポータブル クラス ライブラリ (または"の PCL") を作成するには、は、まずを対象とし、これらのプラットフォームに対して定義されているプロファイルで使用できる .NET Framework のサブセットに対してコードを記述するプラットフォームを選択します。 Pcl は、最新バージョンの Visual Studio; で非推奨となると見なされます開発者は、代わりに .NET Standard 2.0 を使用することが推奨されます。
 
-## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet プロジェクト: コードを共有するためのマルチプラット フォーム ライブラリ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet プロジェクト:コードを共有するためのマルチプラット フォーム ライブラリ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
 NuGet パッケージを PCL または .NET standard プロジェクトから自動的に生成できます。および共有プロジェクトを別の NuGet プロジェクトの種類を使用して、「おとり」NuGet パッケージにパッケージ化できます。 このセクションでは、各コード共有のシナリオ用の NuGet パッケージを作成する方法について説明します。
 
 ## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[Xamarin 用 NuGet パッケージを手動で作成します。](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 Xamarin プラットフォームで動作する NuGet パッケージの作成に関するヒント。
+
+## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[クロス プラットフォーム Xamarin プロジェクトで C/C++ ライブラリを使用します。](~/cross-platform/cpp/index.md)
+
+この手法を使用すると、C と C++ のライブラリが進化したものを切り離す、 C# NuGet、および Xamarin アプリケーションでバインドします。 機能、ネイティブ プラットフォームの C/C++ ライブラリによって提供されますが、すべてのプラットフォーム固有のコードはコードの重複を指定できる最大のパフォーマンスをできるように、Xamarin の最終的なアプリケーションから分離されます。 

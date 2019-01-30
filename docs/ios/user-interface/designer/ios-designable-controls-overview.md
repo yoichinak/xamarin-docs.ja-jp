@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 00bf7290d5f7165feb5b67cd91c15a96b7d3eaf8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c409fcc018379401c1ab40573495da12a8220c5a
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118371"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233667"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin のデザイナーでカスタム コントロール
 
@@ -24,8 +24,8 @@ IOS 用の Xamarin のデザイナーは、アプリケーションのユーザ�
 
 次のすべての要件を満たすコントロールをデザイン サーフェイスにレンダリングします。
 
-1.  直接または間接的なサブクラスが[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)または[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller)します。 その他の[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)サブクラスは、デザイン サーフェイス上のアイコンとして表示されます。
-2.  [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) OBJECTIVE-C に公開するには
+1.  直接または間接的なサブクラスが[UIView](xref:UIKit.UIView)または[UIViewController](xref:UIKit.UIViewController)します。 その他の[NSObject](xref:Foundation.NSObject)サブクラスは、デザイン サーフェイス上のアイコンとして表示されます。
+2.  [RegisterAttribute](xref:Foundation.RegisterAttribute) OBJECTIVE-C に公開するには
 3.  [必要な IntPtr コンス トラクター](~/ios/internals/api-design/index.md)します。
 4.  実装するか、 [IComponent](xref:System.ComponentModel.IComponent)インターフェイスまたはが、 [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute)を True に設定します。
 
@@ -38,17 +38,17 @@ IOS 用の Xamarin のデザイナーは、アプリケーションのユーザ�
 カスタム コントロールで宣言されたプロパティは、次の条件が満たされた場合、[プロパティ] パネルに表示されます。
 
 1.  プロパティには、パブリック ゲッターとセッターがあります。
-1.  プロパティは、 [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)と同様に、 [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)を True に設定します。
-1.  プロパティの型が数値型、列挙型、string、bool、 [SizeF](xref:System.Drawing.SizeF)、[示す UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)、または[UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/)します。 サポートされている型のこの一覧は、将来拡張可能性があります。
+1.  プロパティは、 [ExportAttribute](xref:Foundation.ExportAttribute)と同様に、 [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)を True に設定します。
+1.  プロパティの型が数値型、列挙型、string、bool、 [SizeF](xref:System.Drawing.SizeF)、[示す UIColor](xref:UIKit.UIColor)、または[UIImage](xref:UIKit.UIImage)します。 サポートされている型のこの一覧は、将来拡張可能性があります。
 
 
 プロパティで装飾できるはまた、 [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute)プロパティ パネルに表示されるラベルを指定します。
 
 ## <a name="initialization"></a>初期化
 
-`UIViewController`サブクラスを使用する必要がある、 [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/)デザイナーで作成したビューに依存するコードのメソッド。
+`UIViewController`サブクラスを使用する必要がある、 [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)デザイナーで作成したビューに依存するコードのメソッド。
 
-`UIView`およびその他の`NSObject`サブクラスを[AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/)メソッドは、レイアウト ファイルから読み込まれるカスタム コントロールの初期化の実行をお勧めします。 これは、コントロールのコンス トラクターを実行するが、前に設定する、ときに、[プロパティ] パネルで設定されたカスタム プロパティは設定されていないため`AwakeFromNib`が呼び出されます。
+`UIView`およびその他の`NSObject`サブクラスを[AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)メソッドは、レイアウト ファイルから読み込まれるカスタム コントロールの初期化の実行をお勧めします。 これは、コントロールのコンス トラクターを実行するが、前に設定する、ときに、[プロパティ] パネルで設定されたカスタム プロパティは設定されていないため`AwakeFromNib`が呼び出されます。
 
 
 ```csharp
@@ -138,7 +138,7 @@ public class CustomView : UIView {
 
 デザイン サーフェイスでは、カスタム コントロールは、いくつかの制限に従う必要があります。
 
--  デザイン モードでアプリ バンドルのリソースが利用できません。 イメージを経由で読み込まれたときに使用できます。 [UIImage メソッド](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM)します。
+-  デザイン モードでアプリ バンドルのリソースが利用できません。 イメージを経由で読み込まれたときに使用できます。 [UIImage メソッド](xref:UIKit.UIImage)します。
 -  デザイン モードで、web 要求などの非同期操作を実行しない必要があります。 デザイン画面は、アニメーションまたはコントロールの UI に、他の非同期更新をサポートしていません。
 
 

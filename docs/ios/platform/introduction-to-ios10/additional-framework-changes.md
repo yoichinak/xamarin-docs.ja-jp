@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 6ae08264218c8f959b351f059d73fc0aebfea39e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118085"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233901"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>追加の iOS 10 フレームワークの変更
 
@@ -156,7 +156,7 @@ IOS 10 で ReplayKit フレームワークには、次の機能強化が施さ�
 
 IOS 10 である SceneKit フレームワークには、次の機能強化が施されました。
 
-- [SCNCamera](https://developer.xamarin.com/api/type/SceneKit.SCNCamera/)クラスは HDR 機能と効果を使用して大きいリアリティを提供することができます。 アダプティブ露出を使用すると、自動効果または使用の周辺、カラーの縁取りおよび、ゲームに fillmatic 効果を追加するのに色が成績評価を作成します。
+- [SCNCamera](xref:SceneKit.SCNCamera)クラスは HDR 機能と効果を使用して大きいリアリティを提供することができます。 アダプティブ露出を使用すると、自動効果または使用の周辺、カラーの縁取りおよび、ゲームに fillmatic 効果を追加するのに色が成績評価を作成します。
 - SceneKit には、単純な資産の作成をより現実的な結果を新しい物理的にベースのレンダリング (PBR) システムが含まれています。
 - 使用して、新しい[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)網掛けモデルの製品に現実的な網かけのさまざまな 3 つだけの基本的なプロパティを必要とするときに (`Diffuse`、`Metalness`と`Roughness`)。
 - 環境ベースのライティング機能を最適なシェーディング PBR、以降を使用して、`LightingEnvironment`イメージ ベースの光源をシーン全体に割り当てるプロパティをします。
@@ -191,8 +191,8 @@ IOS 10.3 の ScrollView コントロールには、次の機能強化が施さ�
 
 IOS 10 の UIKit フレームワークには、次の機能強化が施されました。
 
-- 新しい[UIPasteboard](https://developer.xamarin.com/api/type/UIKit.UIPasteboard/) API (有効期間の制限事項) などの新しいオプションを提供し、共通のクラス型の互換性のあるコンテンツの種類を自動的に宣言されます。
-- 新しいアニメーションを完全にインタラクティブなオブジェクトに基づく、割り込み可能なサポートが追加され、ジェスチャにリンクすることができます。 Pleas を参照してください Apple の[UIViewAnimating プロトコル リファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator クラス参照](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider プロトコル リファレンス](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters)と[UISpringTimingParameter クラス参照](https://developer.apple.com/reference/uikit/uispringtimingparameters)詳細についてはします。
+- 新しい[UIPasteboard](xref:UIKit.UIPasteboard) API (有効期間の制限事項) などの新しいオプションを提供し、共通のクラス型の互換性のあるコンテンツの種類を自動的に宣言されます。
+- 新しいアニメーションを完全にインタラクティブなオブジェクトに基づく、割り込み可能なサポートが追加され、ジェスチャにリンクすることができます。 Apple を参照してください[UIViewAnimating プロトコル リファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator クラス参照](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider プロトコル リファレンス](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters)と[UISpringTimingParameter クラス参照](https://developer.apple.com/reference/uikit/uispringtimingparameters)詳細についてはします。
 - 新しい`UIPreviewInteraction`と`UIPreviewInteractionDelegate`開発者アプリがピークと pop 操作のためのカスタム インターフェイスを提供できるようにします。
 - 新しい`UIAccessibilityCustomRotor`クラス経由で音声などの支援技術にカスタムのコンテキストに固有の機能を提供するアプリを使用できます。
 - 使用して、`UIAccessibilityIsAssistiveTouchRunning`と`UIAccessibilityAssistiveTouchStatusDidChangeNotification`AssistiveTouch が有効になっているかどうかを判断するシンボル。

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: a7a3bb8f720f1c6a2370a2510659693bb28ea09b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 96fce269784ad0ac41fd1685ac7ac6b957932bd8
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111594"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233173"
 ---
 # <a name="notification-management-in-xamarinios"></a>Xamarin.iOS での通知の管理
 
 12、iOS オペレーティング システムには、通知センターからディープ リンクと、アプリの管理 画面で通知する設定アプリことができます。 この画面が参加をユーザーに許可する必要があり、さまざまな種類の通知からアプリを送信します。
 
-## <a name="sample-app-redgreennotifications"></a>サンプル アプリ: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプル アプリ:RedGreenNotifications
 
 通知の管理のしくみの例を確認するを参照してください、 [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)サンプル アプリです。
 
@@ -28,8 +28,8 @@ ms.locfileid: "50111594"
 
 ## <a name="notification-management-screen"></a>通知の管理 画面
 
-サンプル アプリで`ManageNotificationsViewController`ユーザーを個別に有効にし、赤の通知、緑色の通知を無効にできるユーザー インターフェイスを定義します。 これは標準 [`UIViewController`](https://developer.xamarin.com/api/type/UIKit.UIViewController/)
-含む、 [ `UISwitch` ](https://developer.xamarin.com/api/type/UIKit.UISwitch/)の各通知の種類。 通知のいずれかの種類のスイッチを切り替え保存すると、ユーザーの既定値、通知の種類、ユーザーの設定で。
+サンプル アプリで`ManageNotificationsViewController`ユーザーを個別に有効にし、赤の通知、緑色の通知を無効にできるユーザー インターフェイスを定義します。 これは標準 [`UIViewController`](xref:UIKit.UIViewController)
+含む、 [ `UISwitch` ](xref:UIKit.UISwitch)の各通知の種類。 通知のいずれかの種類のスイッチを切り替え保存すると、ユーザーの既定値、通知の種類、ユーザーの設定で。
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -41,7 +41,7 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 > [!NOTE]
 > 通知の管理 画面では、ユーザーがアプリに通知を完全に無効かどうかも確認します。 そうである場合、個々 の通知の種類の切り替えは非表示になります。 これは、通知の管理画面を行うには。
 >
-> - 呼び出し[ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync()/)され、検査、 [ `AuthorizationStatus` ](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationSettings.AuthorizationStatus/)プロパティ。
+> - 呼び出し[ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync)され、検査、 [ `AuthorizationStatus` ](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)プロパティ。
 > - 通知をアプリの完全に無効にされている場合は、個々 の通知の種類の切り替えを非表示にします。
 > - かどうかの通知が無効になっているアプリケーションは、のでユーザーできます有効/無効通知 iOS の設定でいつでも、前面に移動するたびに再チェックします。
 
@@ -61,7 +61,7 @@ partial void HandleTapRedNotificationButton(UIButton sender)
 iOS ディープ リンク アプリの通知の管理画面に通知センター、設定アプリでアプリの通知設定から。 そのため、アプリが必要です。
 
 - 渡すことによって、通知の管理 画面が使用可能なであることを示す`UNAuthorizationOptions.ProvidesAppNotificationSettings`アプリの通知の承認要求にします。
-- 実装、`OpenSettings`メソッドから[ `IUNUserNotificationCenterDelegate`](https://developer.xamarin.com/api/type/UserNotifications.IUNUserNotificationCenterDelegate/)します。
+- 実装、`OpenSettings`メソッドから[ `IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)します。
 
 ### <a name="authorization-request"></a>承認要求
 

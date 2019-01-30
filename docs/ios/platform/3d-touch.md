@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 08edd3166df8392a5f3e7485a6572f0c94a38f62
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 60751437b891579c97acee0e032defcca2b510f6
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563657"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233862"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS で 3D Touch の概要
 
@@ -37,13 +37,13 @@ _この記事では、新しいを使用してでは、アプリで iPhone 6 s �
 
 ## <a name="pressure-sensitivity"></a>筆圧対応機能
 
-新しいプロパティを使用して、前述のよう、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)クラス、ユーザーが iOS デバイスの画面に適用する圧力の量を測定し、ユーザー インターフェイスでこの情報を使用します。 たとえば、ブラシのストロークより透明または不透明ベースで早い圧力の量。
+新しいプロパティを使用して、前述のよう、 [UITouch](xref:UIKit.UITouch)クラス、ユーザーが iOS デバイスの画面に適用する圧力の量を測定し、ユーザー インターフェイスでこの情報を使用します。 たとえば、ブラシのストロークより透明または不透明ベースで早い圧力の量。
 
 [![](3d-touch-images/pressure01.png "圧力の量に基づいて、ブラシのストロークがより透明または不透明にレンダリングされます。")](3d-touch-images/pressure01.png#lightbox)
 
 3D Touch は、結果として、アプリが iOS 9 (またはそれ以上) で実行されていると、iOS デバイスがな 3D タッチをサポートできる場合の負荷の変更により、`TouchesMoved`イベントが発生します。
 
-たとえば、監視するとき、`TouchesMoved`のイベントを[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)、次のコードを使用するには、ユーザーが画面に適用する現在の負荷を取得します。
+たとえば、監視するとき、`TouchesMoved`のイベントを[UIView](xref:UIKit.UIView)、次のコードを使用するには、ユーザーが画面に適用する現在の負荷を取得します。
 
 ```csharp
 public override void TouchesMoved (NSSet touches, UIEvent evt)
@@ -62,7 +62,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 }
 ```
 
-`MaximumPossibleForce`プロパティの最大値を返します、`Force`のプロパティ、 [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)でアプリが実行されている iOS デバイスに基づきます。
+`MaximumPossibleForce`プロパティの最大値を返します、`Force`のプロパティ、 [UITouch](xref:UIKit.UITouch)でアプリが実行されている iOS デバイスに基づきます。
 
 > [!IMPORTANT]
 > 負荷の変更が発生、`TouchesMoved`イベントが発生する場合でも、X Y 座標が変更されていない/。 この動作の変更のために iOS アプリを準備する必要があります、`TouchesMoved`より多くの場合と、x に呼び出されるイベントを最後のと同じである Y を調整/`TouchesMoved`呼び出し。
@@ -70,7 +70,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 
 
-詳細については、Apple を参照してください[TouchCanvas: UITouch を使用して、効率的かつ効果的に](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)サンプル アプリと[UITouch クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)します。
+詳細については、Apple を参照してください[TouchCanvas:UITouch を使用して、効率的かつ効果的に](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)サンプル アプリと[UITouch クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)します。
 
 <a name="Peek-and-Pop" />
 
@@ -198,7 +198,7 @@ public override void ViewDidLoad ()
 
 ここで呼び出している、`RegisterForPreviewingWithDelegate`メソッドのインスタンスを`PreviewingDelegate`上で作成しました。 3D タッチをサポートする iOS デバイスでは、ユーザーがそれには、ピークに項目をハードが押します。 場合も難しいキーを押して、項目が表示されますに標準的なビューを表示します。
 
-詳細についてを参照してください、 [iOS 9 ApplicationShortcuts サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)と Apple の[ViewControllerPreviews: Api のプレビューの UIViewController を使用して](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html)サンプル アプリで[UIPreviewAction クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)、 [UIPreviewActionGroup クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)と[UIPreviewActionItem プロトコル リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)します。
+詳細についてを参照してください、 [iOS 9 ApplicationShortcuts サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)と Apple の[ViewControllerPreviews:Api のプレビューの UIViewController を使用して](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html)サンプル アプリで[UIPreviewAction クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)、 [UIPreviewActionGroup クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)と[UIPreviewActionItemプロトコルのリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)します。
 
 <a name="Quick-Actions" />
 
@@ -429,7 +429,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 静的および動的のクイック アクション項目の組み合わせを作成するには、(ここで行っている) よう、どちらか一方に限定されないことに注意する必要があります。
 
-詳細については、次のようにしてください、 [iOS 9 ViewControllerPreview サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)して Apple の[ApplicationShortcuts: を使用して UIApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/)サンプル アプリで[。UIApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)、 [UIMutableApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)と[UIApplicationShortcutIcon クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)します。
+詳細については、次のようにしてくださいこの[iOS 9 ViewControllerPreview サンプル](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)して Apple の[ApplicationShortcuts:。UIApplicationShortcutItem を使用して](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/)サンプル アプリで[UIApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)、 [UIMutableApplicationShortcutItem クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)と[UIApplicationShortcutIcon クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)します。
 
 <a name="Testing-3D-Touch-in-the-Simulator" />
 

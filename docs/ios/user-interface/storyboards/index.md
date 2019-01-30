@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564006"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233563"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
@@ -249,7 +249,7 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-IDE が自動的に追加されているデザイナーを使用してストーリー ボードを作成するときに、 [[登録]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)の上部にある属性、`designer.cs`クラスし、で指定されたストーリー ボード ID と同じですが、文字列の識別子を渡す、前の手順。 C# はリンクこのストーリー ボードに関連するシーンにします。
+IDE が自動的に追加されているデザイナーを使用してストーリー ボードを作成するときに、 [[登録]](xref:Foundation.RegisterAttribute)の上部にある属性、`designer.cs`クラスし、で指定されたストーリー ボード ID と同じですが、文字列の識別子を渡す、前の手順。 C# はリンクこのストーリー ボードに関連するシーンにします。
 
 ある時点であった既存のクラスを追加したい場合があります**いない**デザイナーで作成します。 ここではこのクラスを通常どおり登録。
 
@@ -320,13 +320,13 @@ public partial class MainViewController : UIViewController
 1. 次に、UI を構築して追加するには、追加のビュー、`MainViewController`次のスクリーン ショットのような外観にすること。
 
     - UITextField
-        - 名前: PasswordTextField
-        - シークレットのパスワードを入力してください ' をプレース ホルダー:
+        - 名前:PasswordTextField
+        - プレース ホルダー:' シークレットのパスワードを入力 '
     - UILabel
-        - テキスト: ' エラー: パスワードが正しくありません。 渡さないでください '。
-        - 色: 赤
-        - 配置: センター
-        - 行: 2
+        - テキスト:' エラー。間違ったパスワード。 渡さないでください '。
+        - 色：赤
+        - 配置:中央揃え
+        - 行:2
         - 'Hidden' チェック ボックスはオン 
         
     [![](images/passwordvc.png "中心線")](images/passwordvc.png#lightbox)

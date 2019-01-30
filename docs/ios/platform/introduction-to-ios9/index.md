@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 2f9cc72dcbe506d22c8a986bcf59ddaa6355f043
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103258"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233537"
 ---
 # <a name="introduction-to-ios-9"></a>IOS 9 の概要
 
@@ -38,7 +38,7 @@ IOS 9 と iPhone 6 s および iPhone 6 s 新しい 3D Touch さらに、iOS ア
 
 新しい App Transport Security (ATS) を iOS 9、インターネット リソース (アプリのバック エンド サーバーなど) と、アプリの間のセキュリティで保護された接続を強制します。 ATS により、すべてのインターネット通信がセキュリティで保護された接続のベスト プラクティスに準拠しているアプリまたはライブラリを消費するを通じて直接に機密情報の偶発的漏えいを防ぐします。
 
-ATS が iOS 9 および OS X 10.11 (El Capitan) を使用してすべての接続に開発されたアプリの既定で有効になっているため[NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)、 [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)または[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/)対象になります。ATS セキュリティ要件です。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+ATS が iOS 9 および OS X 10.11 (El Capitan) を使用してすべての接続に開発されたアプリの既定で有効になっているため[NSUrlConnection](xref:Foundation.NSUrlConnection)、 [CFUrl](xref:CoreFoundation.CFUrl)または[NSUrlSession](xref:Foundation.NSUrlSession)対象になります。ATS セキュリティ要件です。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 
 ATS に関する詳細については、次を参照してください、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)ガイド。
 
@@ -78,7 +78,7 @@ Apple iOS 9 の導入に伴い、2 つの新しいフレームワークをリリ
 
 ## <a name="new-stack-view"></a>新しいスタック ビュー
 
-スタック ビュー コントロール ([UIStackView](https://developer.xamarin.com/api/type/UIKit.UIStackView/)) iOS デバイスの向きや画面サイズに動的に応答する (水平方向または垂直方向に)、サブビューのスタックを管理するには、自動レイアウトとサイズ クラスの機能を利用しています。
+スタック ビュー コントロール ([UIStackView](xref:UIKit.UIStackView) iOS デバイスの向きや画面サイズに動的に応答する (水平方向または垂直方向に)、サブビューのスタックを管理するには、自動レイアウトとサイズ クラスの機能を利用しています。
 
 スタック ビュー コントロールを使用すると、作業量は、ユーザー インターフェイスが大幅に減少のレイアウトに必要です。 スタック ビューにアタッチされているすべてのサブビューのレイアウトは、軸、配布、配置、および間隔などの開発者は定義されたプロパティに基づいて自動的に管理されます。
 
@@ -87,7 +87,7 @@ Apple iOS 9 の導入に伴い、2 つの新しいフレームワークをリリ
 
 ## <a name="collection-view-changes"></a>コレクションの変更の表示
 
-IOS 9、コレクション ビューで ([UICollectionView](https://developer.xamarin.com/api/type/UIKit.UICollectionView/)) がサポートされますが、新しい既定のジェスチャ認識エンジンおよびいくつかの新しいサポート メソッドを追加することで、ボックスから項目を並べ替えをドラッグするようになりました。
+IOS 9、コレクション ビューで ([UICollectionView](xref:UIKit.UICollectionView)サポート ドラッグ、新しい既定ジェスチャ レコグナイザーおよびいくつかの新しいサポート メソッドを追加することで、ボックスから項目を並べ替えできるようになりました。
 
 これらの新しいメソッドを使用して、簡単に実装ドラッグの順序を変更する、コレクション ビューにして、順序変更プロセスのいずれかの段階中にアイテムの外観のカスタマイズのオプションがあります。
 
@@ -150,9 +150,9 @@ Ios 9 で Apple は、次のように、セキュリティで保護されたエ�
 
 Ios 9 の場合は、Apple が提示反転したユーザー インターフェイスよりも簡単にこれまでの右から左の言語の完全なサポートを提供することで行われます。 次に例を示します。
 
-- 標準[UIKit](https://developer.xamarin.com/api/namespace/UIKit/)コントロールを左右に - iOS デバイスのロケールと言語の設定に基づいて自動的に反転します。
-- [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)クラスは、指定されたビューの表示時期方法を定義するための属性は、右から左を反転します。
-- 使用してプログラムでイメージを反転する機能、 [FlipsForRightToLeftLayoutDirection](https://developer.xamarin.com/api/property/UIKit.UIImage.FlipsForRightToLeftLayoutDirection/)のプロパティ、 [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/)クラス。
+- 標準[UIKit](xref:UIKit)コントロールを左右に - iOS デバイスのロケールと言語の設定に基づいて自動的に反転します。
+- [UIView](xref:UIKit.UIView)クラスは、指定されたビューの表示時期方法を定義するための属性は、右から左を反転します。
+- 使用してプログラムでイメージを反転する機能、 [FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection)のプロパティ、 [UIImage](xref:UIKit.UIImage)クラス。
 
 詳細については、Apple を参照してください[言語のサポートを左右](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17)ドキュメント。
 
@@ -162,10 +162,10 @@ Ios 9 の場合は、Apple が提示反転したユーザー インターフェ�
 
 上を説明する主な変更を加え Apple が行った変更と iOS 9 の次のように既存のフレームワークをいくつかの機能強化。
 
-- AV Foundation フレームワーク
-- AVKit フレームワーク
-- CloudKit フレームワーク
-- Foundation フレームワーク
+- AV Foundation Framework
+- AVKit Framework
+- CloudKit Framework
+- Foundation Framework
 - ハンドオフ フレームワーク
 - HealthKit のフレームワーク
 - HomeKit フレームワーク

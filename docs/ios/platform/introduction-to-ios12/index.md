@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 81375e8c66e5504604d0d4cb3be34afd58f4269d
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615149"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233836"
 ---
 # <a name="introduction-to-ios-12"></a>12 iOS の概要
 
@@ -28,7 +28,7 @@ ARKit は、iOS に含まれている拡張現実のフレームワークです�
 
 Siri のショートカットには、Siri と、アプリケーションをより深く統合する開発者ができるようにします。 Siri のショートカット、ユーザーは、音声コマンドを使用して、コンテンツを開くか、バック グラウンド タスクを開始するまたは Siri をロック画面に示すショートカットを通じてこれらのタスクを開始することができます。
 
-## <a name="core-ml-2coremlmd"></a>[コア ML 2](coreml.md)
+## <a name="core-ml-2coremlmd"></a>[Core ML 2](coreml.md)
 
 Core ML 2 は、量子化のモデルと柔軟なモデルを通じてアプリケーションのサイズが小さくなり、により新しいバッチ予測 API、アプリケーションのパフォーマンスが向上し、machine learning での進歩をサポートするためにカスタム モデルを使用します。
 
@@ -80,7 +80,7 @@ Ios 12 でサード パーティ製アプリで配信できますマップと有
 Ios 12、Apple が非推奨とされます。
 
 - OpenGL ES[開発者](https://developer.apple.com/ios/whats-new/)メタルを採用します。
-- [`UIWebView`](https://developer.xamarin.com/api/type/UIKit.UIWebView/)、[簡素`WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)します。
+- [`UIWebView`](xref:UIKit.UIWebView)、[簡素`WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)します。
 
 ## <a name="related-links"></a>関連リンク
 

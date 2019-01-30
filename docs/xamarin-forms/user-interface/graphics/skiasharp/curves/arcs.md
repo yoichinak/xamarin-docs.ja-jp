@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: fc08824ba973f5d50dbe92950d57c4ea8ecc3147
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 020afef6b2eb3743fd17118b2922bac4d4c32239
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054013"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233992"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -38,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-これらのメソッドは、Android と同じ[ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/)と[ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/)メソッド。 IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)メソッドと似ていますが、円の円周を円弧に限定されますではなく楕円に一般化します。
+これらのメソッドは、Android と同じ[ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/)と[ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/)メソッド。 IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean))メソッドと似ていますが、円の円周を円弧に限定されますではなく楕円に一般化します。
 
 両方の方法が始まり、`SKRect`場所と楕円のサイズを定義する値。
 
@@ -58,7 +58,7 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 ![](arcs-images/anglearc.png "単独で角度円弧")
 
-`startAngle`または`sweepAngle`引数を負にすることができます: 円弧が時計回りの正の値の`sweepAngle`反時計回りの負の値にします。
+`startAngle`または`sweepAngle`引数を負にすることができます。円弧が時計回りの正の値の`sweepAngle`反時計回りの負の値にします。
 
 ただし、`AddArc`は*いない*クローズドの輪郭を定義します。 呼び出す場合`LineTo`後`AddArc`、内のポイントに円弧の終端から線を描画、`LineTo`メソッドと同じことが当てはまります`ArcTo`します。
 
@@ -226,7 +226,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-これは、`ArcTo`メソッドは、PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (ページ 532) 関数および iOS は、 [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)メソッド。
+これは、`ArcTo`メソッドは、PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (ページ 532) 関数および iOS は、 [ `AddArcToPoint` ](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat))メソッド。
 
 `ArcTo`メソッドが 3 つのポイントが含まれます。
 
@@ -521,7 +521,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 ![](arcs-images/ellipticalarcellipse1.png "楕円の円弧の最初のセット")
 
-これら 2 つの円弧を 2 つの方法で識別できます。 最上位の円弧が下部の円弧を超えると、下部円弧が反時計回りの方向に描画中に時計回りの方向に最上位の円弧が描画されるように左から右に円弧の描画、します。
+2 つの方法でこれら 2 つの円弧を識別できます。最上位の円弧が下部の円弧を超えると、下部円弧が反時計回りの方向に描画中に時計回りの方向に最上位の円弧が描画されるように左から右に円弧の描画。
 
 別の方法で 2 つのポイント間の楕円の適合することです。
 
@@ -535,10 +535,10 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 これら 4 つの円弧が 4 つの組み合わせによって識別されます、 [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)と[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)列挙体の型引数、`ArcTo`メソッド。
 
-- 赤: SKPathArcSize.Large と SKPathDirection.Clockwise
-- 緑: SKPathArcSize.Small と SKPathDirection.Clockwise
-- 青い: SKPathArcSize.Small と SKPathDirection.CounterClockwise
-- マゼンタ: SKPathArcSize.Large と SKPathDirection.CounterClockwise
+- 赤:SKPathArcSize.Large と SKPathDirection.Clockwise
+- 緑:SKPathArcSize.Small と SKPathDirection.Clockwise
+- 青。SKPathArcSize.Small と SKPathDirection.CounterClockwise
+- マゼンタ:SKPathArcSize.Large と SKPathDirection.CounterClockwise
 
 傾斜している省略記号がない場合、2 つの点の間に合わせて十分な大きさが十分な大きさになるまで一様拡大縮小し。 2 つの一意な円弧は、その場合は 2 つのポイントを接続します。 これらを区別することができます、`SKPathDirection`パラメーター。
 

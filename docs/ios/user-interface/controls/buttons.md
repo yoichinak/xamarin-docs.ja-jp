@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2018
-ms.openlocfilehash: 35fc743944c04dd1fdb8e035ba94ad6aeb6156ea
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: a98ddc2622682f2c105a6aff32e94bd92a5b11f2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38986005"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233251"
 ---
 # <a name="buttons-in-xamarinios"></a>Xamarin.iOS のボタン
 
@@ -75,7 +75,7 @@ button.TouchUpInside += (sender, e) => {
 ```
 
 > [!NOTE]
-> `TouchUpInside` 使用できる唯一のボタン イベントはありません。 `UIButton` 子クラスは、`UIControl`を定義する[さまざまなイベント](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/)します。
+> `TouchUpInside` 使用できる唯一のボタン イベントはありません。 `UIButton` 子クラスは、`UIControl`を定義する[さまざまなイベント](xref:UIKit.UIControlEvent)します。
 
 ### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>IOS Designer を使用して、ボタンのイベント ハンドラーを指定するには
 
@@ -90,7 +90,7 @@ button.TouchUpInside += (sender, e) => {
 `UIButton` コントロールができるさまざまな種類の状態で存在する各で指定された、`UIControlState`値 – `Normal`、 `Disabled`、 `Focused`、`Highlighted`など。各状態には、プログラムから、または iOS Designer で指定された一意のスタイルを指定できます。
 
 > [!NOTE]
-> すべての完全な一覧については`UIControlState`を値で見て、 [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> すべての完全な一覧については`UIControlState`を値で見て、 [`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
 > ドキュメントです。
 
 たとえば、タイトルの色と影の色を設定する`UIControlState.Normal`:
@@ -123,7 +123,7 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlStat
 次のイメージの 1 つとして表示するかどうかどうかは、ユーザーに触れると、ボタンには、によって (`UIControlState.Normal`、`UIControlState.Highlighted`と`UIControlState.Selected`状態、それぞれ)。
 
 ![UIControlState.Normal](buttons-images/image22.png "UIControlState.Normal")
-![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted") 
+![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted")
 ![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
 
 カスタム ボタンの使用方法の詳細についてを参照してください、[ボタンのイメージを使用して](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button)レシピです。

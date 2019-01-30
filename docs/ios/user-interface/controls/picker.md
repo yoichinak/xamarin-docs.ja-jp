@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 0ef33c2036b1ff2d5a7e2035ca5fa8af58672867
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 525ddf3c8cfc457738099c3afbb162fd3fb9239b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34789913"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233576"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin.iOS での選択コントロール
 
-A [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)ホイールに似たインターフェイスの個々 のコンポーネントをスクロールして一覧から値を選択することになります。
+A [ `UIPickerView` ](xref:UIKit.UIPickerView)ホイールに似たインターフェイスの個々 のコンポーネントをスクロールして一覧から値を選択することになります。
 
-ピッカーが頻繁に使用する日付と時刻を選択しますApple から提供されて、 [`UIDatePicker`](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)
+ピッカーが頻繁に使用する日付と時刻を選択しますApple から提供されて、 [`UIDatePicker`](xref:UIKit.UIDatePicker)
 この目的のクラスです。
 
 実装して使用する方法について説明します、`UIPickerView`と`UIDatePicker`コントロール。
@@ -59,8 +59,8 @@ public override void ViewDidLoad()
 }
 ```
 
-[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/)基本クラスは、2 つのインターフェイスを実装します。 [`IUIPickerDataSource`](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDataSource/)
-[ `IUIPickerViewDelegate`](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDelegate/)ピッカーのデータを指定するさまざまなメソッドを宣言して、対話を処理する方法。
+[ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel)基本クラスは、2 つのインターフェイスを実装します。 [`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
+[ `IUIPickerViewDelegate`](xref:UIKit.IUIPickerViewDelegate)ピッカーのデータを指定するさまざまなメソッドを宣言して、対話を処理する方法。
 
 ```csharp
 public class PeopleModel : UIPickerViewModel
@@ -126,13 +126,13 @@ public class PeopleModel : UIPickerViewModel
 
 ![2 つのコンポーネントでピッカー](picker-images/image3.png "2 つのコンポーネントの選択")
 
-選択では、コンポーネントの数を指定するには、使用、 [`GetComponentCount`](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetComponentCount/p/UIKit.UIPickerView/) 
+選択では、コンポーネントの数を指定するには、使用、 [`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView)) 
 メソッドをオーバーライドします。
 
 ### <a name="customizing-a-pickers-appearance"></a>選択コントロールの外観のカスタマイズ
 
 ピッカーの外観をカスタマイズする、 [`UIPickerView.UIPickerViewAppearance`](https://developer.xamarin.com/api/type/UIKit.UIPickerView+UIPickerViewAppearance/)
-クラスのオーバーライド、 [ `GetView` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetView/p/UIKit.UIPickerView/System.nint/System.nint/UIKit.UIView/)と[ `GetRowHeight` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetRowHeight/p/UIKit.UIPickerView/System.nint/)メソッド、`UIPickerViewModel`します。
+クラスのオーバーライド、 [ `GetView` ](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))と[ `GetRowHeight` ](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))メソッド、`UIPickerViewModel`します。
 
 ## <a name="uidatepicker"></a>UIDatePicker
 
@@ -161,7 +161,7 @@ UIPickerView pickerView = new UIPickerView(
 
 #### <a name="minimum-and-maximum-date"></a>最小値と日付の最大値
 
-[`MinimumDate`](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinimumDate/) [ `MaximumDate` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MaximumDate/)日付選択カレンダーで使用できる日付の範囲を制限します。 たとえば、次のコードは、存在の瞬間に至るまでの 60 年に日付の選択を制限します。
+[`MinimumDate`](xref:UIKit.UIDatePicker.MinimumDate) [ `MaximumDate` ](xref:UIKit.UIDatePicker.MaximumDate)日付選択カレンダーで使用できる日付の範囲を制限します。 たとえば、次のコードは、存在の瞬間に至るまでの 60 年に日付の選択を制限します。
 
 ```csharp
 var calendar = new NSCalendar(NSCalendarType.Gregorian);
@@ -182,7 +182,7 @@ datePickerView.MaximumDate = NSDate.Now;
 
 #### <a name="minute-interval"></a>分単位の間隔
 
-[ `MinuteInterval` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinuteInterval/)プロパティは、ピッカーが分を表示する間隔を設定します。
+[ `MinuteInterval` ](xref:UIKit.UIDatePicker.MinuteInterval)プロパティは、ピッカーが分を表示する間隔を設定します。
 
 ```csharp
 datePickerView.MinuteInterval = 10;
@@ -190,7 +190,7 @@ datePickerView.MinuteInterval = 10;
 
 #### <a name="mode"></a>モード
 
-日付の選択をサポートして 4 つ[モード](https://developer.xamarin.com/api/type/UIKit.UIDatePickerMode/)以下を参照します。
+日付の選択をサポートして 4 つ[モード](xref:UIKit.UIDatePickerMode)以下を参照します。
 
 ##### <a name="uidatepickermodetime"></a>UIDatePickerMode.Time
 
@@ -257,9 +257,9 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 #### <a name="nsdateformatter"></a>NSDateFormatter
 
-書式設定、`NSDate`を使用して、 [ `NSDateFormatter`](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/)します。
+書式設定、`NSDate`を使用して、 [ `NSDateFormatter`](xref:Foundation.NSDateFormatter)します。
 
-使用する、`NSDateFormatter`を呼び出してその[ `ToString` ](https://developer.xamarin.com/api/member/Foundation.NSDateFormatter.ToString/p/Foundation.NSDate/)メソッド。 例えば:
+使用する、`NSDateFormatter`を呼び出してその[ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))メソッド。 例:
 
 ```csharp
 var date = NSDate.Now;
@@ -272,7 +272,7 @@ var formattedDate = formatter.ToString(d);
 
 ##### <a name="dateformat"></a>DateFormat
 
-[ `DateFormat` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateFormat/)のプロパティ (文字列)、`NSDateFormatter`カスタマイズ可能な日付形式の仕様します。
+[ `DateFormat` ](xref:Foundation.NSDateFormatter.DateFormat)のプロパティ (文字列)、`NSDateFormatter`カスタマイズ可能な日付形式の仕様します。
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
@@ -281,7 +281,7 @@ dateFormat.DateFormat = "yyyy-MM-dd";
 
 ##### <a name="timestyle"></a>TimeStyle
 
-[ `TimeStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.TimeStyle/)プロパティ (、 [ `NSDateFormatterStyle` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatterStyle/)) の`NSDateFormatter`事前に定義されたスタイルに基づく時刻の書式設定を指定します。
+[ `TimeStyle` ](xref:Foundation.NSDateFormatter.TimeStyle)プロパティ (、 [ `NSDateFormatterStyle` ](xref:Foundation.NSDateFormatterStyle)の`NSDateFormatter`事前に定義されたスタイルに基づく時刻の書式設定を指定します。
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
@@ -290,14 +290,14 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 
 さまざまな`NSDateFormatterStyle`値時間が次のように表示されます。
 
-- `NSDateFormatterStyle.Full`: 午後 7時 46分: 00 東部夏時間
-- `NSDateFormatterStyle.Long`: 7時 47分: 00 PM EDT
-- `NSDateFormatterStyle.Medium`: 7時 47分: 00 PM
-- `NSDateFormatterSytle.Short`: 7時 47分 PM
+- `NSDateFormatterStyle.Full`:午後 7時 46分: 00 東部夏時間
+- `NSDateFormatterStyle.Long`:7時 47分: 00 PM EDT
+- `NSDateFormatterStyle.Medium`:7時 47分: 00 PM
+- `NSDateFormatterSytle.Short`:7時 47分 PM
 
 ##### <a name="datestyle"></a>DateStyle
 
-[ `DateStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateStyle/)プロパティ (、 `NSDateFormatterStyle`) の`NSDateFormatter`事前に定義されたスタイルに基づく日付の書式を指定します。
+[ `DateStyle` ](xref:Foundation.NSDateFormatter.DateStyle)プロパティ (、 `NSDateFormatterStyle`) の`NSDateFormatter`事前に定義されたスタイルに基づく日付の書式を指定します。
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();
@@ -306,10 +306,10 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 
 さまざまな`NSDateFormatterStyle`値が次のように日付を表示します。
 
-- `NSDateFormatterStyle.Full`日水曜日、2017 年 8 月 2日 7時 48分 pm
-- `NSDateFormatterStyle.Long`: 2017 年 8 月 2 日午後 7時 49分
-- `NSDateFormatterStyle.Medium`: 2017 8 月 2 日午後 7時 49分
-- `NSDateFormatterStyle.Short`: 8/2/17、午後 7時 50分
+- `NSDateFormatterStyle.Full`:水曜日、2017 年 8 月 2日 7時 48分 pm
+- `NSDateFormatterStyle.Long`:2017 年 8 月 2 日午後 7時 49分
+- `NSDateFormatterStyle.Medium`:2017 年 8 月 2 日午後 7時 49分
+- `NSDateFormatterStyle.Short`:8 月 2 日、午後 7時 50分
 
 > [!NOTE]
 > `DateFormat` `DateStyle` / `TimeStyle`日付と時刻の書式設定を指定するさまざまな方法を提供します。 最近プロパティを設定する日時フォーマッタの出力を決定します。

@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 42e357c0fbb4b858866e15d638177d6823de0f09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 33f27d2585f4fb4d65181cbfd9211ea87b837e73
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112677"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233888"
 ---
 # <a name="binding-objective-c-libraries"></a>OBJECTIVE-C ライブラリのバインド
 
@@ -49,7 +49,7 @@ IOS と Mac ライブラリの両方のバインドを構築できます。
 [![](objective-c-libraries-images/00vs-sml.png "iOS バインド ライブラリ iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
-> 注: バインド プロジェクトには**Xamarin.Mac** for mac Visual Studio でのみサポートされます。
+> メモ:バインドのプロジェクト**Xamarin.Mac** for mac Visual Studio でのみサポートされます。
 
 -----
 
@@ -214,7 +214,7 @@ string SetText ([NullAllowed] string text);
 および [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 属性。
 
-使用すると、 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)カバー btouch ネイティブの下で、プロパティの属性は、2 つのメソッドを実際にはバインド: getter と setter します。 エクスポートには、指定した名前、 **basename** 「セット」の最初の文字にすると、単語を付けることによって、setter を計算し、 **basename**大文字に変換したうえでかかるセレクターに、引数。 つまり`[Export ("label")]`に適用されるプロパティは、実際には"label"をバインドし、"setLabel:"OBJECTIVE-C メソッド。
+使用すると、 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)カバー btouch ネイティブの下で、プロパティの属性は、2 つのメソッドを実際にはバインド: getter と setter します。 エクスポートには、指定した名前、 **basename** 「セット」の最初の文字にすると、単語を付けることによって、setter を計算し、 **basename**大文字に変換したうえでかかるセレクターに、引数。 つまり、`[Export ("label")]`に適用されるプロパティは、実際には"label"をバインドし、"setLabel:"OBJECTIVE-C メソッド。
 
 Objective C プロパティは、上記で説明したパターンに従っていないと、名前は手動で上書きされる場合があります。 そのような場合は、バインディングを使用して生成する方法を制御できます、 [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 getter または setter の例では、属性:
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>引数リストを OBJECTIVE-C のバインド
 
-Objective C では、可変個引数をサポートします。 例えば:
+Objective C では、可変個引数をサポートします。 例:
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常これらのフィールドには、参照する必要がある文字列または整数の値が含まれます。 ディクショナリ内のキーと、特定の通知を表す文字列としてよく使用されます。
 
-フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加しを持つプロパティを装飾、 [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性。 この属性は 1 つのパラメーターを受け取ります。 参照するシンボルの C の名前。 例えば:
+フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加しを持つプロパティを装飾、 [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性。 この属性は 1 つのパラメーターを受け取ります。 参照するシンボルの C の名前。 例:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ interface MyType {
 装飾できるは、(戻り値) のメソッド、パラメーターおよびプロパティを[ `[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)します。 唯一の制限は、メンバー**は許可されません**内に、 [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 または[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)インターフェイス。
 
-例えば:
+例:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) 配列をサポートも`NSNumber``NSValue`と`NSString`(列挙型)。
 
-例えば:
+例:
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -674,7 +674,7 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 ### <a name="binding-notifications"></a>通知のバインド
 
-通知は、メッセージに送信できる、`NSNotificationCenter.DefaultCenter`を別のアプリケーションの 1 つの部分からメッセージをブロードキャストするメカニズムとして使用されます。 開発者は通常を使用して通知をサブスクライブ、 [NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)の[AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/)メソッド。 アプリケーションでは、通知センターにメッセージをポスト、ときに格納されているペイロードを格納、通常、 [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)ディクショナリ。 このディクショナリは弱く型指定された、ユーザーが通常どのキーがディクショナリとディクショナリに格納できる値の型で使用可能なドキュメントの読み取りが必要とエラーの原因は、その情報を取得します。 キーの存在もブール値として使用されます。
+通知は、メッセージに送信できる、`NSNotificationCenter.DefaultCenter`を別のアプリケーションの 1 つの部分からメッセージをブロードキャストするメカニズムとして使用されます。 開発者は通常を使用して通知をサブスクライブ、 [NSNotificationCenter](xref:Foundation.NSNotificationCenter)の[AddObserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification}))メソッド。 アプリケーションでは、通知センターにメッセージをポスト、ときに格納されているペイロードを格納、通常、 [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)ディクショナリ。 このディクショナリは弱く型指定された、ユーザーが通常どのキーがディクショナリとディクショナリに格納できる値の型で使用可能なドキュメントの読み取りが必要とエラーの原因は、その情報を取得します。 キーの存在もブール値として使用されます。
 
 Xamarin.iOS のバインディング ジェネレーターは、通知をバインドする開発者向けのサポートを提供します。 これには、設定、 [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
 されているプロパティの属性でタグ付けします。 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
@@ -682,7 +682,7 @@ Xamarin.iOS のバインディング ジェネレーターは、通知をバイ�
 
 通知ペイロードが保持されていませんで引数を指定せず、この属性を使用できますかを指定できます、 `System.Type` "EventArgs"で終わる名前を持つ API の定義で別のインターフェイスを通常参照します。 ジェネレーターに変換されます、インターフェイス、クラスをサブクラスとして持つ`EventArgs`されすべてのプロパティがそこに一覧が表示されます。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Objective C ディクショナリの値をフェッチする検索に使用するキーの名前を一覧表示する EventArgs クラスで属性を使用する必要があります。
 
-例えば:
+例:
 
 ```csharp
 interface MyClass {
@@ -703,7 +703,7 @@ public class MyClass {
 }
 ```
 
-コードのユーザーにポストされた通知を簡単にサブスクライブできますし、 [NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/)このようなコードを使用しています。
+コードのユーザーにポストされた通知を簡単にサブスクライブできますし、 [NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter)このようなコードを使用しています。
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -717,7 +717,7 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 token.Dispose ();
 ```
 
-呼び出すか、または[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/)トークンに渡します。 通知にパラメーターが含まれている場合は、ヘルパーを指定する必要があります`EventArgs`インターフェイスは、次のようにします。
+呼び出すか、または[NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))トークンに渡します。 通知にパラメーターが含まれている場合は、ヘルパーを指定する必要があります`EventArgs`インターフェイスは、次のようにします。
 
 ```csharp
 interface MyClass {
@@ -740,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-上記が生成されます、`MyScreenChangedEventArgs`クラス、`ScreenX`と`ScreenY`からデータをフェッチするプロパティ、 [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) "ScreenXKey"と"ScreenYKey"キーを使用してディクショナリそれぞれ適切な変換を適用します。 `[ProbePresence]`プローブ、キーが設定されている場合に、ジェネレーターに属性を使用、`UserInfo`値を抽出しようとしています。 代わりにします。 これは、キーの存在が (通常はブール値) の値である場合に使用されます。
+上記が生成されます、`MyScreenChangedEventArgs`クラス、`ScreenX`と`ScreenY`からデータをフェッチするプロパティ、 [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) "ScreenXKey"と"ScreenYKey"キーを使用してディクショナリそれぞれ適切な変換を適用します。 `[ProbePresence]`プローブ、キーが設定されている場合に、ジェネレーターに属性を使用、`UserInfo`値を抽出しようとしています。 代わりにします。 これは、キーの存在が (通常はブール値) の値である場合に使用されます。
 
 このようなコードを記述できます。
 
@@ -918,7 +918,7 @@ public class  XyzOptions {
 
 これを行うには、いくつかの操作を行いますが必要です。
 
-* サブクラスとして持つ、厳密に型指定されたクラスを作成[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)と各プロパティのさまざまな getter および setter を提供します。
+* サブクラスとして持つ、厳密に型指定されたクラスを作成[DictionaryContainer](xref:Foundation.DictionaryContainer)と各プロパティのさまざまな getter および setter を提供します。
 * 受け取るメソッド オーバー ロードを宣言`NSDictionary`新しい厳密に型指定されたバージョンを実行します。
 
 厳密に型指定されたクラスをか、手動で作成したり、ジェネレーターを使用するための作業を実行することができます。  まず、何が起こってを理解するように手動で行う方法と、自動のアプローチをについて説明します。
@@ -1337,7 +1337,7 @@ Xamarin.iOS ライブラリにリンクする方法を通知する必要があ�
 上記の例ではリンク`libMyLibrary.a`、`libSystemLibrary.dylib`と`CFNetwork`フレームワーク ライブラリ、最終的な実行可能ファイルにします。
 
 アセンブリ レベルの利用または[ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)、コントラクト ファイルに埋め込むことができますが (など`AssemblyInfo.cs`)。
-使用すると、 [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)、際に、バインド、ネイティブ ライブラリを埋め込むアプリケーションではこの時点で、ネイティブ ライブラリが存在する必要があります。 例えば:
+使用すると、 [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)、際に、バインド、ネイティブ ライブラリを埋め込むアプリケーションではこの時点で、ネイティブ ライブラリが存在する必要があります。 例:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1404,5 +1404,5 @@ Xamarin.iOS の v3.2 時点でサポートされていますが付いている�
 ## <a name="related-links"></a>関連リンク
 
 - [バインドのサンプル](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 38e71914d9f7f6bb46ebeee8d548968c207d3b16
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 8b3b9a5b110432f33e06edf7ab51c582681e4ea3
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617762"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233732"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin.iOS で Siri ショートカット
 
@@ -24,7 +24,7 @@ iOS 12 は、Siri ショートカット、Siri に機能を公開するアプリ
 
 ショートカットは、対象のアプリを開くこともなく多くの場合 – 一般的なタスクを実行するユーザーの能力を使用する必要があります。
 
-## <a name="sample-app-soup-chef"></a>サンプル アプリ: スープ Chef
+## <a name="sample-app-soup-chef"></a>サンプル アプリ:Chef の混乱状態
 
 Siri のショートカットをより深く理解するを参照してください、[スープ Chef](https://developer.xamarin.com/samples/monotouch/ios12/SoupChef/)サンプル アプリです。 スープ Chef、虚数部のスープ restaurant から注文を配置、自分の注文履歴を表示および Siri とやり取りして部品を注文するときに使用する語句を定義することができます。
 
@@ -72,9 +72,9 @@ Siri のショートカットをより深く理解するを参照してくださ
 </array>
 ```
 
-これは、`NSUserActivityTypes`キー/値ペアは、スープ Chef を処理する方法を知っていることを示します、 `OrderSoupIntent`、および[ `NSUserActivity` ](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)こと、 [ `ActivityType` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ActivityType/) "com.xamarin.SoupChef.viewMenu"のです。
+これは、`NSUserActivityTypes`キー/値ペアは、スープ Chef を処理する方法を知っていることを示します、 `OrderSoupIntent`、および[ `NSUserActivity` ](xref:Foundation.NSUserActivity)こと、 [ `ActivityType` ](xref:Foundation.NSUserActivity.ActivityType) "com.xamarin.SoupChef.viewMenu"のです。
 
-アクティビティと、その拡張機能ではなく、アプリ自体に渡されるカスタムのインテントの処理、 `AppDelegate` (、 [ `UIApplicationDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)) によって、 [ `ContinueUserActivity` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.ContinueUserActivity/)メソッド。
+アクティビティと、その拡張機能ではなく、アプリ自体に渡されるカスタムのインテントの処理、 `AppDelegate` (、 [ `UIApplicationDelegate` ](xref:UIKit.UIApplicationDelegate)によって、 [ `ContinueUserActivity` ](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)メソッド。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -89,7 +89,7 @@ Siri のショートカットをより深く理解するを参照してくださ
 <true/>
 ```
 
-この構成では、アプリは"group.com.xamarin.SoupChef"アプリ グループを使用することを示します。 **SoupChefIntents**アプリ拡張機能を共有する 2 つのプロジェクトは、この同じアプリ グループを使用します。 [`NSUserDefaults`](https://developer.xamarin.com/api/type/Foundation.NSUserDefaults/)
+この構成では、アプリは"group.com.xamarin.SoupChef"アプリ グループを使用することを示します。 **SoupChefIntents**アプリ拡張機能を共有する 2 つのプロジェクトは、この同じアプリ グループを使用します。 [`NSUserDefaults`](xref:Foundation.NSUserDefaults)
 データ。
 
 `com.apple.developer.siri`キーは、アプリが、Siri と対話することを示します。
@@ -103,7 +103,7 @@ Siri のショートカットをより深く理解するを参照してくださ
 
 ### <a name="setting-up-an-nsuseractivity"></a>設定する、NSUserActivity
 
-メニュー画面で、`SoupMenuViewController`作成、`NSUserActivity`ビュー コント ローラーに割り当てます[ `UserActivity` ](https://developer.xamarin.com/api/property/UIKit.UIResponder.UserActivity/)プロパティ。
+メニュー画面で、`SoupMenuViewController`作成、`NSUserActivity`ビュー コント ローラーに割り当てます[ `UserActivity` ](xref:UIKit.UIResponder.UserActivity)プロパティ。
 
 ```csharp
 public override void ViewDidLoad()
@@ -149,8 +149,8 @@ public static NSUserActivity ViewMenuActivity {
 以下に注意具体的には。
 
 - 設定`EligibleForPrediction`に`true`Siri がこのアクティビティを予測し、ショートカットとして画面にことを示します。
-- [ `ContentAttributeSet` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ContentAttributeSet/)配列は、標準[ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/)含めるために使用、 `NSUserActivity` iOS 検索結果にします。
-- [`SuggestedInvocationPhrase`](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.SuggestedInvocationPhrase/) Siri は、潜在的な選択肢としてショートカットに語句を割り当てる場合で、ユーザーに提案されます語句です。
+- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet)配列は、標準[ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/)含めるために使用、 `NSUserActivity` iOS 検索結果にします。
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) Siri は、潜在的な選択肢としてショートカットに語句を割り当てる場合で、ユーザーに提案されます語句です。
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>NSUserActivity ショートカットの処理
 
@@ -600,7 +600,7 @@ public void ConfigureView(
 
 スープ Chef は、Siri と部品を注文すること、各注文に音声ショートカットを割り当てるインターフェイスを提供します。 実際には、記録し、音声のショートカットを割り当てるに使用されるインターフェイスは iOS によって提供され、ほとんどのカスタム コードが必要 。
 
-`OrderDetailViewController`テーブルをタップすると、 **Siri を追加**行、 [ `RowSelected` ](https://developer.xamarin.com/api/member/UIKit.UITableViewSource.RowSelected/)メソッドは、追加するか、音声のショートカットを編集するための画面を表示します。
+`OrderDetailViewController`テーブルをタップすると、 **Siri を追加**行、 [ `RowSelected` ](xref:UIKit.UITableViewSource.RowSelected*)メソッドは、追加するか、音声のショートカットを編集するための画面を表示します。
 
 ```csharp
 public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -645,9 +645,9 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - スープ Chef アプリとその拡張機能の間でデータを共有するアプリ グループを作成します。 例: **group.com.yourcompanyname.SoupChef**
 
-- 次の 3 つのアプリ Id を作成する: アプリ自体の 1 つ、Intents の拡張機能の 1 つおよび Intents UI 拡張機能の 1 つ。 例えば:
+- 次の 3 つのアプリ Id を作成する: アプリ自体の 1 つ、Intents の拡張機能の 1 つおよび Intents UI 拡張機能の 1 つ。 例:
 
-    - アプリ: **com.yourcompanyname.SoupChef**
+    - App: **com.yourcompanyname.SoupChef**
         - このアプリ ID に割り当てる、SiriKit と**アプリ グループ**機能します。
 
     - Intents の拡張機能: **com.yourcompanyname.SoupChef.Intents**
@@ -668,7 +668,7 @@ Visual Studio for Mac または Visual Studio 2017 で、次の操作を行い�
 
 - さまざまな更新**Info.plist**ソリューション内のファイル。 アプリ、Intents の拡張機能、および Intents UI 拡張機能設定**バンドル識別子**上で定義したアプリ id:
 
-    - アプリ: **com.yourcompanyname.SoupChef**
+    - App: **com.yourcompanyname.SoupChef**
     - Intents の拡張機能: **com.yourcompanyname.SoupChef.Intents**
     - Intents UI 拡張機能: **com.yourcompanyname.SoupChef.Intentsui**
 

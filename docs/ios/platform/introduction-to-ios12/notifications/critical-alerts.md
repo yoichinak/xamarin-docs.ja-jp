@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 4f847a86f3f92bcf7168c2e104471e1ca052969c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 699d19228d2dee92f7a730bba4186a3aa5f21b04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131453"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233238"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>Xamarin.iOS で重大なアラート
 
@@ -28,8 +28,8 @@ Apple からこの権利を受け取り、それを使用するアプリを構�
 
 アプリの通知の承認要求は、アプリの通知を許可または拒否するユーザーに求めます。 通知の承認要求が重大なアラートを送信するアクセス許可を求める場合、アプリもユーザーをできるように重大なアラートを選択します。
 
-次のコードは、適切なを渡すことによって、重大なアラートと通知の標準とサウンドの両方を送信するアクセス許可を要求します。 [`UNAuthorizationOptions`](https://developer.xamarin.com/api/type/UserNotifications.UNAuthorizationOptions/)
-値を[ `RequestAuthorization` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/):
+次のコードは、適切なを渡すことによって、重大なアラートと通知の標準とサウンドの両方を送信するアクセス許可を要求します。 [`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
+値を[ `RequestAuthorization` ](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -45,7 +45,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ## <a name="local-critical-alerts"></a>ローカルの重大なアラート
 
-ローカルの重大なアラートを送信するには、作成します。 [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
+ローカルの重大なアラートを送信するには、作成します。 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
 設定とその`Sound`プロパティをいずれか。
 
 - `UNNotificationSound.DefaultCriticalSound`、既定の重要な通知サウンドが使用されます。

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 146b05cf7ca2bbd05e952ecc9064fbb9168d179a
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609936"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233953"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin.iOS のトラブルシューティングのヒント 
 
@@ -75,7 +75,7 @@ TypeName XXXX {
 
 上記の定義が自動的に生成 Visual Studio for Mac を Visual Studio for Mac で追加するすべての XIB ファイルに対して、`NAME_OF_YOUR_XIB_FILE.designer.xib.cs`ファイル。
 
-サブクラスである必要がありますさらに、上記のコードを含む型[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)します。  含んでいる型が名前空間内にある場合であることが、 [[登録]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) (Interface Builder では、型の名前空間をサポートしない) ために、名前空間のない型名を提供する属性。
+サブクラスである必要がありますさらに、上記のコードを含む型[NSObject](xref:Foundation.NSObject)します。  含んでいる型が名前空間内にある場合であることが、 [[登録]](xref:Foundation.RegisterAttribute) (Interface Builder では、型の名前空間をサポートしない) ために、名前空間のない型名を提供する属性。
 
 ```csharp
 namespace Samples.GLPaint {
@@ -186,7 +186,7 @@ Stacktrace:
 
 プロジェクトに thumb コードでコンパイルされた静的ライブラリをリンクしていることを意味します。 3.1 (またはこの記事の執筆時に高い) に iPhone SDK のリリースの時点で非 Thumb コード (Xamarin.iOS) と Thumb コード (スタティック ライブラリ) をリンクするときに、Apple は、リンカーのバグを導入しました。この問題を軽減するスタティック ライブラリの Thumb 以外のバージョンとリンクする必要があります。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException:しようとして (JIT コンパイル Foo[]:System.Collections.Generic.ICollection'1.get_Count) メソッド (ラッパーの管理が管理)
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException:Attempting to JIT compile method (wrapper managed-to-managed) Foo[]:System.Collections.Generic.ICollection`1.get_Count ()
 
 [サフィックスは、ことか、クラス ライブラリ メソッドを呼び出す IEnumerable <>、ICollection <> IList <> などのジェネリック コレクションを配列のことを示します。 この問題を回避するを自分でメソッドを呼び出すことによってこのようなメソッドを含める AOT コンパイラを明示的に強制することができ、ことを確認することによって、例外をトリガーした呼び出しの前にこのコードを実行します。 この場合は、次のように記述する可能性があります。
 
@@ -283,7 +283,7 @@ Visual Studio for Mac 2.2 は、問題があるため、コンマを含む配布
 
 ## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>エラー"AFCFileRefWrite が返されます。1"アップロード中
 
-デバイスにアプリのアップロード中にエラーが表示される可能性があります"AFCFileRefWrite が返されます。1"とします。 これは、長さゼロのファイルがある場合に発生することができます。
+デバイスにアプリのアップロード中にエラーが表示される可能性があります"AFCFileRefWrite が返されます。1". これは、長さゼロのファイルがある場合に発生することができます。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>エラー"mtouch 出力なしで失敗しました"
 

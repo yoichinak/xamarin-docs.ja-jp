@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: cb56af300444020a543c16afb0dfb48015fc2153
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d39170d0109d7f81d3f02ec36381ebcd46c0143d
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102595"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233524"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>進行状況と Xamarin.iOS でのアクティビティのインジケーター
 
 長時間実行するために、アプリがある可能性がありますを読み込んで、データと、この遅延が、UI の更新で遅延が発生する処理などのタスクを実行します。 この期間中には、常に、システムがビジー状態の作業を行うことをユーザーに安心して進行状況インジケーターを使用してください。 これにより、ユーザー コントロールは、その入力を待機していませんが、その要求でアプリが動作しているを待機するが、正確にどのくらいの期間の詳細を示す手段を提供できます。
 
-iOS アプリでこの進行状況の表示を提供する 2 つの主な方法を提供します。 アクティビティのインジケーター (など、特定_ネットワーク_アクティビティのインジケーター) と進行状況バー。
+iOS では、このアプリでの進行状況の表示を提供する 2 つの主な方法が用意されています。アクティビティのインジケーター (など、特定_ネットワーク_アクティビティのインジケーター) と進行状況バー。
 
 ## <a name="activity-indicator"></a>アクティビティのインジケーター
 
@@ -32,7 +32,7 @@ Apple では、アクティビティのインジケーターを操作するた�
 
 ### <a name="implementing-an-activity-indicator"></a>アクティビティのインジケーターを実装します。
 
-アクティビティのインジケーターは、によって実装、 [ `UIActivityIndictorView` ](https://developer.xamarin.com/api/type/UIKit.UIActivityIndicatorView/)ことを示す、`UIActivity`が行わします。
+アクティビティのインジケーターは、によって実装、 [ `UIActivityIndictorView` ](xref:UIKit.UIActivityIndicatorView)ことを示す、`UIActivity`が行わします。
 
 ### <a name="activity-indicators-and-storyboards"></a>アクティビティのインジケーターとストーリー ボード
 
@@ -68,7 +68,7 @@ Apple では、進行状況バーを操作するための次の推奨事項が�
 
 ### <a name="implementing-an-progress-bar"></a>進行状況バーが実装します。
 
-進行状況バーがインスタンス化によって作成された、 [`UIProgressView`](https://developer.xamarin.com/api/type/UIKit.UIProgressView/)
+進行状況バーがインスタンス化によって作成された、 [`UIProgressView`](xref:UIKit.UIProgressView)
 
 ### <a name="progress-bars-and-storyboards"></a>進行状況バーとストーリー ボード
 

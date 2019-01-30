@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 25b17dbebebf7bcae92ebdc294c798101d39b987
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121621"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233277"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイス コントロール
 
@@ -54,13 +54,13 @@ UIButton クラスは、iOS 画面のボタンのさまざまな異なるスタ�
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[進行状況とアクティビティのインジケーター](progress-activity-indicator.md)
 
-iOS アプリでの進行状況を示す 2 つの主な方法を提供します。 アクティビティのインジケーター (など、特定_ネットワーク_アクティビティのインジケーター) と進行状況バー。
+iOS では、アプリでの進行状況を示す 2 つの主な方法が用意されています。アクティビティのインジケーター (など、特定_ネットワーク_アクティビティのインジケーター) と進行状況バー。
 
 ## <a name="search-barssearchbarmd"></a>[検索バー](searchbar.md)
 
 値の一覧を検索して、UISearchBar です。 
 
-## <a name="sliders-steppers-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[スライダー、ステッパ、およびセグメント付きコントロール](slider-switch-segmented-controls.md)
+## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[スライダー、スイッチ、およびセグメント付きコントロール](slider-switch-segmented-controls.md)
 
 スライダー コントロールには、数値の範囲内の単純な選択ができるようにします。 iOS を使用して、`UISwitch`ブール値の入力で他のプラットフォームでラジオ ボタンを表すことができます。 セグメント化されたコントロールは、オプションの数が少ない対話をユーザーに許可する適切な手段です。
 

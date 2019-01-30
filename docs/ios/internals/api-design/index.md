@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 75904ad91df7795c538e736eabb6c6000847b449
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235052"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233654"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
@@ -92,11 +92,11 @@ Xamarin.iOS には構成するアセンブリの数値が含まれています�
 
 #### <a name="foundation"></a>Foundation
 
-[Foundation](https://developer.xamarin.com/api/namespace/Foundation/) Objective C Foundation フレームワークは、iOS の一部であると相互運用するように設計、基本データ型とオブジェクト指向の OBJECTIVE-C でのプログラミングの基本クラスが名前空間には
+[Foundation](xref:Foundation) Objective C Foundation フレームワークは、iOS の一部であると相互運用するように設計、基本データ型とオブジェクト指向の OBJECTIVE-C でのプログラミングの基本クラスが名前空間には
 
-C# から OBJECTIVE-C のクラスの階層にミラー化 Xamarin.iOS Objective C の基本クラスなど、 [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)を使用して c# から使用できるように[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)します。
+C# から OBJECTIVE-C のクラスの階層にミラー化 Xamarin.iOS Objective C の基本クラスなど、 [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)を使用して c# から使用できるように[Foundation.NSObject](xref:Foundation.NSObject)します。
 
-この名前空間には、基になる Objective C Foundation 型のバインドが用意されていますが、いくつかのケースでにマップされています基になる型の .NET 型です。 例えば:
+この名前空間には、基になる Objective C Foundation 型のバインドが用意されていますが、いくつかのケースでにマップされています基になる型の .NET 型です。 例:
 
 - 処理するのではなく[NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)、ランタイムはこれらとして c# が公開[文字列](xref:System.String)s の厳密に型指定された[配列](xref:System.Array)全体で sAPI です。
 
@@ -107,13 +107,13 @@ Api のバインドの詳細については、次を参照してください。�
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)型はすべて、OBJECTIVE-C のバインドの基盤です。 Xamarin.iOS 型 iOS CocoaTouch Api からの型の 2 つのクラスをミラー化: (CoreFoundation 型と通常呼ばれる) C の型と OBJECTIVE-C の種類 (これらの NSObject クラスから派生しています)。
+[NSObject](xref:Foundation.NSObject)型はすべて、OBJECTIVE-C のバインドの基盤です。 Xamarin.iOS 型 iOS CocoaTouch Api からの型の 2 つのクラスをミラー化: (CoreFoundation 型と通常呼ばれる) C の型と OBJECTIVE-C の種類 (これらの NSObject クラスから派生しています)。
 
-アンマネージ型をミラー化される型ごとを使用してネイティブ オブジェクトを取得することは、[処理](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)プロパティ。
+アンマネージ型をミラー化される型ごとを使用してネイティブ オブジェクトを取得することは、[処理](xref:Foundation.NSObject.Handle)プロパティ。
 
 Mono は、オブジェクトのすべてのガベージ コレクションを提供中に、`Foundation.NSObject`実装、 [System.IDisposable](xref:System.IDisposable)インターフェイス。 これは、ガベージ コレクターでは、開始を待機することがなく任意指定 NSObject のリソースを明示的に解放できることを意味します。 これは、機能は、負荷の高い NSObjects、大量のデータ ブロックへのポインターを保持する可能性があります UIImages などを使用しているときに重要です。
 
-を、型が確定的なファイナライズを実行する必要がある場合は、オーバーライド、 [NSObject.Dispose(bool) メソッド](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose)が Dispose にパラメーターが"bool disposing"、設定が true に場合ため、Dispose メソッドが呼び出されることと、ユーザーオブジェクトで明示的に呼び出す Dispose ()。 値が false の場合は、Dispose (bool disposing) メソッドがファイナライザーから、ファイナライザー スレッドで呼び出されることを意味します。 []()
+を、型が確定的なファイナライズを実行する必要がある場合は、オーバーライド、 [NSObject.Dispose(bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))が Dispose にパラメーターが"bool disposing"、設定が true に場合ため、Dispose メソッドが呼び出されることと、ユーザーオブジェクトで明示的に呼び出す Dispose ()。 値が false の場合は、Dispose (bool disposing) メソッドがファイナライザーから、ファイナライザー スレッドで呼び出されることを意味します。 []()
 
 
 ##### <a name="categories"></a>カテゴリ
@@ -198,7 +198,7 @@ PreserveAttribute は、そのサイズを小さくアプリケーションを�
 
 #### <a name="uikit"></a>UIKit
 
-[UIKit](https://developer.xamarin.com/api/namespace/UIKit/)名前空間には、すべての c# クラスの形式で CocoaTouch を構成する UI コンポーネントに一対一のマッピングが含まれています。 C# 言語で使用される規則に従う API が変更されました。
+[UIKit](xref:UIKit)名前空間には、すべての c# クラスの形式で CocoaTouch を構成する UI コンポーネントに一対一のマッピングが含まれています。 C# 言語で使用される規則に従う API が変更されました。
 
 C# のデリゲートは、一般的な操作向けに提供されます。 参照してください、[デリゲート](#Delegates)詳細についてはします。
 
@@ -283,7 +283,7 @@ Objective C の世界と CocoaTouch に関するオンライン表示されて�
 -  コントロールの動作を制御します。
 
 
-コントロールの動作を変更する派生クラスの作成を最小限に抑えるには、プログラミングのパターンは設計されています。 このソリューションは、長年にわたって行うが他のツールキットに似た: Gtk の信号を Qt スロット、イベントの Winforms、WPF と Silverlight のイベント、という具合です。 (アクションごとに 1 つ) インターフェイスの数が多く、または必要はありませんが多すぎるメソッドを実装する開発者を避けるため、OBJECTIVE-C では省略可能なメソッドの定義をサポートしています。 これは、c# インターフェイスを実装するすべてのメソッドを必要とするよりも異なります。
+コントロールの動作を変更する派生クラスの作成を最小限に抑えるには、プログラミングのパターンは設計されています。 このソリューションでは、長年にわたりその他のツールキットが行なわれている精神に似ています。Gtk の信号を Qt スロット、イベントの Winforms、WPF と Silverlight のイベントなど。 (アクションごとに 1 つ) インターフェイスの数が多く、または必要はありませんが多すぎるメソッドを実装する開発者を避けるため、OBJECTIVE-C では省略可能なメソッドの定義をサポートしています。 これは、c# インターフェイスを実装するすべてのメソッドを必要とするよりも異なります。
 
 OBJECTIVE-C のクラスでこのプログラミングのパターンを使用するクラスが、通常、という名前のプロパティを公開することを確認は`delegate`、これは、インターフェイスの必須部分と 0 個、または省略可能な複数の部分を実装するために必要です。
 
@@ -301,9 +301,9 @@ Xamarin.iOS でこれらのデリゲートにバインドする 3 つの相互�
 
 多くの種類では、Xamarin.iOS は自動的に作成、転送する適切なデリゲート、 `UIWebViewDelegate` c# イベントへの呼び出し。 `UIWebView`の場合:
 
--  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)をメソッドにマップされて、 [UIWebView.LoadStarted](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadStarted/)イベント。
--  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)をメソッドにマップされて、 [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/)イベント。
--  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)をメソッドにマップされて、 [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/)イベント。
+-  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)をメソッドにマップされて、 [UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted)イベント。
+-  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)をメソッドにマップされて、 [UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished)イベント。
+-  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)をメソッドにマップされて、 [UIWebView.LoadError](xref:UIKit.UIWebView.LoadError)イベント。
 
 たとえば、この単純なプログラムは、web の読み込みを表示するときに開始および終了時刻を記録します。
 
@@ -339,7 +339,7 @@ void SetupTextField (UITextField tf)
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>デリゲート プロパティを使用して厳密に型指定
 
-イベントを使用していない場合は、行うことができます独自[UIWebViewDelegate](https://developer.xamarin.com/api/type/UIKit.UIWebViewDelegate/)サブクラスに割り当てると、 [UIWebView.Delegate](https://developer.xamarin.com/api/property/UIKit.UIWebView.Delegate/)プロパティ。 UIWebView.Delegate、割り当てられているし、UIWebView イベントのディスパッチ メカニズムが機能しなく UIWebViewDelegate メソッドは、対応するイベントが発生したときに呼び出されます。
+イベントを使用していない場合は、行うことができます独自[UIWebViewDelegate](xref:UIKit.UIWebViewDelegate)サブクラスに割り当てると、 [UIWebView.Delegate](xref:UIKit.UIWebView.Delegate)プロパティ。 UIWebView.Delegate、割り当てられているし、UIWebView イベントのディスパッチ メカニズムが機能しなく UIWebViewDelegate メソッドは、対応するイベントが発生したときに呼び出されます。
 
 たとえば、この単純型は、web ビューの読み込みにかかる時間を記録します。
 
@@ -368,9 +368,9 @@ web.Delegate = new Notifier ();
 
 上記は、UIWebViewer を作成し、通知、メッセージに応答を作成したクラスのインスタンスにメッセージを送信するように指示します。
 
-UIWebView 場合は、たとえば特定のコントロールの動作を制御するこのパターンを使用しても、 [UIWebView.ShouldStartLoad](https://developer.xamarin.com/api/property/UIKit.UIWebView.ShouldStartLoad/)プロパティを使用、`UIWebView`コントロールのインスタンスかどうか、`UIWebView`ロードは、かどうかをページします。
+UIWebView 場合は、たとえば特定のコントロールの動作を制御するこのパターンを使用しても、 [UIWebView.ShouldStartLoad](xref:UIKit.UIWebView.ShouldStartLoad)プロパティを使用、`UIWebView`コントロールのインスタンスかどうか、`UIWebView`ロードは、かどうかをページします。
 
-パターンは、いくつかのコントロールのオンデマンドでデータを提供するも使用されます。 たとえば、 [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/)コントロールは、強力なテーブルの描画コントロール – と外観と内容の両方のインスタンスによって駆動、 [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
+パターンは、いくつかのコントロールのオンデマンドでデータを提供するも使用されます。 たとえば、 [UITableView](xref:UIKit.UITableView)コントロールは、強力なテーブルの描画コントロール – と外観と内容の両方のインスタンスによって駆動、 [UITableViewDataSource](xref:UIKit.UITableViewDataSource)
 
 <a name="WeakDelegate"/>
 
@@ -379,7 +379,7 @@ UIWebView 場合は、たとえば特定のコントロールの動作を制御�
 厳密に型指定のプロパティだけでなく、開発者に必要な場合は、モ ノを異なる方法でバインドを許可する弱い型指定されたデリゲートもあります。
 厳密に型指定されたすべての場所で`Delegate`での Xamarin.iOS のバインド、対応するプロパティが公開される`WeakDelegate`プロパティも公開されています。
 
-使用する場合、 `WeakDelegate`、正しくクラスを使用して、修飾することを担当、[エクスポート](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)セレクターを指定する属性。 例えば:
+使用する場合、 `WeakDelegate`、正しくクラスを使用して、修飾することを担当、[エクスポート](xref:Foundation.ExportAttribute)セレクターを指定する属性。 例:
 
 ```csharp
 class Notifier : NSObject  {
@@ -624,13 +624,13 @@ Mac および InterfaceBuilder 用 Visual Studio を使用する場合、これ�
 
 Objective C プログラミングの中核となる概念は、セレクターです。 セレクターを渡す必要がしたり、セレクターに応答するコードが必要ですが Api を遭遇する、多くの場合。
 
-C# での新しいセレクターを作成することは非常に簡単 – だけの新しいインスタンスを作成する、`ObjCRuntime.Selector`クラスを必要とする API での任意の場所で結果を使用します。 例えば:
+C# での新しいセレクターを作成することは非常に簡単 – だけの新しいインスタンスを作成する、`ObjCRuntime.Selector`クラスを必要とする API での任意の場所で結果を使用します。 例:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-用の c# メソッドに応答セレクターの呼び出しから継承する必要があります、`NSObject`セレクターの名前を使用して型と c# のメソッドを装飾する必要があります、`[Export]`属性。 例えば:
+用の c# メソッドに応答セレクターの呼び出しから継承する必要があります、`NSObject`セレクターの名前を使用して型と c# のメソッドを装飾する必要があります、`[Export]`属性。 例:
 
 ```csharp
 public class MyMath : NSObject {

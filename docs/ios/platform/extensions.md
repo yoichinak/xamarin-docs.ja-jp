@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
-ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
+ms.openlocfilehash: 10b692099bae6f444474394144eb7e8bb46d749f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012283"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233927"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin.iOS での iOS 拡張機能
 
@@ -30,7 +30,7 @@ ms.locfileid: "54012283"
 |型|説明|拡張ポイント|ホストのアプリ|
 |--- |--- |--- |--- |
 |アクション|特殊なエディターまたは特定のメディアの種類のビューアー|`com.apple.ui-services`|どれでも可|
-|ドキュメント プロバイダー|により、リモート ドキュメント ストアを使用するアプリ|`com.apple.fileprovider-ui`|使用してアプリを[UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|ドキュメント プロバイダー|により、リモート ドキュメント ストアを使用するアプリ|`com.apple.fileprovider-ui`|使用してアプリを[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
 |キーボード|代替キーボード|`com.apple.keyboard-service`|どれでも可|
 |写真の編集|写真の操作と編集|`com.apple.photo-editing`|Photos.app エディター|
 |共有|メッセージング サービスなどのソーシャル ネットワークとデータを共有します。|`com.apple.share-services`|どれでも可|
@@ -48,8 +48,8 @@ ms.locfileid: "54012283"
 - 拡張機能を使用できない[バック グラウンド モードを拡張](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - 拡張機能は、デバイスのカメラまたはマイク (ただし、既存のメディア ファイルにアクセスすることがあります)、アクセスできません。
 - 拡張機能は空気を削除するデータを受信できません (ただし、空気のドロップを使用してデータを送信することができます)
-- [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/)と["uialertview"](https://developer.xamarin.com/api/type/UIKit.UIAlertView/)が使用不可能です拡張機能を使用する必要があります[UIAlertController。](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- いくつかのメンバーの[UIApplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/)は使用できません。[UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)、 `UIApplication.OpenURL`、`UIApplication.BeginIgnoringInteractionEvents`と `UIApplication.EndIgnoringInteractionEvents`
+- [UIActionSheet](xref:UIKit.UIActionSheet)と["uialertview"](xref:UIKit.UIAlertView)が使用不可能です拡張機能を使用する必要があります[UIAlertController。](xref:UIKit.UIAlertController)
+- いくつかのメンバーの[UIApplication](xref:UIKit.UIApplication)は使用できません。[UIApplication.SharedApplication](xref:UIKit.UIApplication.SharedApplication)、 [UIApplication.OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))、 [UIApplication.BeginIgnoringInteractionEvents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents)と[UIApplication.EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - iOS では、今日の拡張機能で 16 MB のメモリ使用制限を適用します。
 - 既定では、キーボード拡張機能は、ネットワークへのアクセスを必要はありません。 これは (制限は、シミュレーターでは適用されません)、デバイスでのデバッグに影響 Xamarin.iOS では、デバッグを行うにネットワーク アクセスが必要なためです。 設定してネットワーク アクセスを要求することは、`Requests Open Access`値をプロジェクトの Info.plist で`Yes`します。 Apple を参照してください[カスタム キーボード ガイド](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)キーボード拡張機能の制限事項の詳細について。
 
@@ -65,11 +65,11 @@ ms.locfileid: "54012283"
 
 ## <a name="extension-lifecycle"></a>拡張機能のライフ サイクル
 
-拡張機能は、1 つの簡単な[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)または UI の複数の画面を提示するより複雑な拡張機能。 ユーザーが検出した場合、_拡張ポイント_(場合など、イメージの共有)、その拡張機能ポイントに登録されている拡張機能から選択する機会が。 
+拡張機能は、1 つの簡単な[UIViewController](xref:UIKit.UIViewController)または UI の複数の画面を提示するより複雑な拡張機能。 ユーザーが検出した場合、_拡張ポイント_(場合など、イメージの共有)、その拡張機能ポイントに登録されている拡張機能から選択する機会が。 
 
 アプリのいずれかを選択した場合の拡張機能では、その`UIViewController`がインスタンス化され、通常のビュー コント ローラーのライフ サイクルを開始します。 ただし、拡張機能は中断しているが、一般終了とやり取りするユーザーが終了したときに、通常のアプリとは異なり、読み込まれて、実行、および、繰り返しが終了しは。
 
-拡張機能を使用してアプリをホストと通信できる、 [NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)オブジェクト。 一部の拡張機能では、結果を使用した非同期のコールバックを受信する操作があります。 これらのコールバックがバック グラウンド スレッドで実行され、考慮します。 この拡張機能を考慮する必要があります。使用して、たとえば、 [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/)ユーザー インターフェイスを更新する場合。 参照してください、[ホスト アプリケーションと通信する](#Communicating-with-the-Host-App)詳細については後述します。
+拡張機能を使用してアプリをホストと通信できる、 [NSExtensionContext](xref:Foundation.NSExtensionContext)オブジェクト。 一部の拡張機能では、結果を使用した非同期のコールバックを受信する操作があります。 これらのコールバックがバック グラウンド スレッドで実行され、考慮します。 この拡張機能を考慮する必要があります。使用して、たとえば、 [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)ユーザー インターフェイスを更新する場合。 参照してください、[ホスト アプリケーションと通信する](#Communicating-with-the-Host-App)詳細については後述します。
 
 既定では、拡張機能とそのコンテナー アプリ通信可能でない、一緒にインストールされているにもかかわらずです。 場合によっては、コンテナー アプリは基本的に、空"shipping"コンテナーを目的とするが、拡張機能がインストールされると処理されます。 ただし、状況下で、必要である場合コンテナー アプリと拡張機能がリソースを共有一般的な領域から。 さらに、**拡張機能を今すぐ**の URL を開くには、そのコンテナー アプリを要求する場合があります。 この動作を示した、[進化 Countdown Widget](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)します。
 
@@ -264,11 +264,11 @@ IOS シミュレーターで、拡張機能をテストするには、実行、 
 
 ## <a name="communicating-with-the-host-app"></a>ホスト アプリケーションとの通信
 
-上記で作成した拡張機能今日の例は、そのホストのアプリとは通信しません (、**今日**画面)。 使用した場合、 [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)のプロパティ、`TodayViewController`または`CodeBasedViewController`クラス。 
+上記で作成した拡張機能今日の例は、そのホストのアプリとは通信しません (、**今日**画面)。 使用した場合、 [ExtensionContext](xref:Foundation.NSExtensionContext)のプロパティ、`TodayViewController`または`CodeBasedViewController`クラス。 
 
-そのアプリをホストからデータを受信する拡張機能、データの配列の形式で[NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/)オブジェクトに格納されている、 [InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/)のプロパティ、 [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)の拡張機能の`UIViewController`します。
+そのアプリをホストからデータを受信する拡張機能、データの配列の形式で[NSExtensionItem](xref:Foundation.NSExtensionItem)オブジェクトに格納されている、 [InputItems](xref:Foundation.NSExtensionContext.InputItems)のプロパティ、 [ExtensionContext](xref:Foundation.NSExtensionContext)の拡張機能の`UIViewController`します。
 
-写真編集拡張機能などの他の拡張機能は、完了またはキャンセルの使用状況、ユーザーの間で区別可能性があります。 これを使用してホスト アプリに通知される、 [CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/)と[CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/)メソッドの[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)プロパティ。
+写真編集拡張機能などの他の拡張機能は、完了またはキャンセルの使用状況、ユーザーの間で区別可能性があります。 これを使用してホスト アプリに通知される、 [CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*)と[CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*)メソッドの[ExtensionContext](xref:Foundation.NSExtensionContext)プロパティ。
 
 詳細については、Apple を参照してください[アプリ拡張機能のプログラミング ガイド](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1)します。
 

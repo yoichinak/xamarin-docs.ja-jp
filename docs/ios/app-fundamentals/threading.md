@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: b90c59f09217077262c3aced9ee9e5d07849c25c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2dc56d9c5b63d428663d98bae4c8687c1f621a04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106586"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233195"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin.iOS でのスレッド
 
@@ -35,7 +35,7 @@ Xamarin の使用を強く推奨、[タスク並列ライブラリ](http://msdn.
 
 ## <a name="developing-responsive-applications"></a>応答性の高いアプリケーションの開発
 
-UI 要素へのアクセスは、アプリケーションのメイン ループを実行している同じスレッドに制限する必要があります。 使用して、コードをキューがスレッドからの主要な UI を変更する場合は、 [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/)、次のようにします。
+UI 要素へのアクセスは、アプリケーションのメイン ループを実行している同じスレッドに制限する必要があります。 使用して、コードをキューがスレッドからの主要な UI を変更する場合は、 [NSObject.InvokeOnMainThread](xref:Foundation.NSObject)、次のようにします。
 
 ```csharp
 MyThreadedRoutine ()  
@@ -72,7 +72,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-注: Xamarin.iOS 5.2 以降されませんが、独自に提供する`NSAutoReleasePool`を自動的に 1 つ提供はできなくなります。
+メモ:Xamarin.iOS 5.2 以降は、独自に提供する必要はありません`NSAutoReleasePool`を自動的に 1 つ提供はできなくなります。
 
 
 ## <a name="related-links"></a>関連リンク

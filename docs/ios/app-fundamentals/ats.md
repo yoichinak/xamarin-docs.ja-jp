@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 0645b326576a68c97479bc5b59aabaa104f87ae2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9308d3a746a5a0a43cf47cc5ea809c0f82bbe7b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114263"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233823"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin.iOS でのアプリのトランスポート セキュリティ
 
@@ -27,11 +27,11 @@ _アプリケーション トランスポート セキュリティ (ATS) は、�
 
 既存のアプリでは、実装、`HTTPS`可能な限りプロトコルします。 新しい Xamarin.iOS アプリで使用する必要があります`HTTPS`インターネット リソースと通信するときに排他的です。 さらに、高度な API の通信は、前方の機密性と TLS バージョン 1.2 を使用して暗号化する必要があります。
 
-による接続[NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)、 [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)または[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/) iOS 9 および OS X 10.11 (El Capitan) 用に開発されたアプリの既定で ATS が使用されます。
+による接続[NSUrlConnection](xref:Foundation.NSUrlConnection)、 [CFUrl](xref:CoreFoundation.CFUrl)または[NSUrlSession](xref:Foundation.NSUrlSession) iOS 9 および OS X 10.11 (El Capitan) 用に開発されたアプリの既定で ATS が使用されます。
 
 ## <a name="default-ats-behavior"></a>既定の ATS 動作
 
-ATS が iOS 9 および OS X 10.11 (El Capitan) を使用してすべての接続に開発されたアプリの既定で有効になっているため[NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)、 [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)または[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/)対象になります。ATS セキュリティ要件です。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+ATS が iOS 9 および OS X 10.11 (El Capitan) を使用してすべての接続に開発されたアプリの既定で有効になっているため[NSUrlConnection](xref:Foundation.NSUrlConnection)、 [CFUrl](xref:CoreFoundation.CFUrl)または[NSUrlSession](xref:Foundation.NSUrlSession)対象になります。ATS セキュリティ要件です。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 
 ### <a name="ats-connection-requirements"></a>ATS 接続の要件
 

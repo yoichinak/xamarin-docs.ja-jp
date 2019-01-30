@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 8a2755de3dc43ccff88cbdf4dc9c4f9ba2d532c0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ddd3e1e6cc3a3a9b42ddb7a597ed2db0ee495d41
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111626"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233316"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Xamarin.iOS で動的に通知アクション ボタン
 
 Ios 12 で通知できます動的に追加、削除、およびが関連付けられているアクション ボタンを更新します。 このようなカスタマイズでは、通知のコンテンツとユーザーの対話に直接関連するアクションをユーザーに提供することです。
 
-## <a name="sample-app-redgreennotifications"></a>サンプル アプリ: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプル アプリ:RedGreenNotifications
 
 このガイドのコード スニペットに由来します[RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)サンプル アプリは、12 iOS の通知動作設定ボタンを使用する Xamarin.iOS を使用する方法を示します。
 
@@ -35,9 +35,9 @@ Ios 12 で通知できます動的に追加、削除、およびが関連付け�
 たとえば、[サンプル アプリ](#sample-app-redgreennotifications)、`FinishedLaunching`メソッドの`AppDelegate`は次の処理します。
 
 - 赤の通知の 1 つのカテゴリと緑の通知用に別を定義します。
-- 呼び出すことによってこれらのカテゴリを登録します [`SetNotificationCategories`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.SetNotificationCategories/)
+- 呼び出すことによってこれらのカテゴリを登録します [`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
 メソッド `UNUserNotificationCenter`
-- 1 つをアタッチします。 [`UNNotificationAction`](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationAction/)
+- 1 つをアタッチします。 [`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 各カテゴリに
 
 次のサンプル コードは、このしくみを示しています。
@@ -74,12 +74,12 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-このコードでは、任意の通知に基づく持つ [`Content.CategoryIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationContent.CategoryIdentifier/)
+このコードでは、任意の通知に基づく持つ [`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
 "red category"または「緑カテゴリ」は、既定で表示するには、 **20 ° 回転**アクション ボタンをクリックします。
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>通知アクション ボタンのアプリでの処理
 
-`UNUserNotificationCenter` `Delegate`型のプロパティ[ `IUNUserNotificationCenterDelegate`](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenterDelegate_Extensions/)します。
+`UNUserNotificationCenter` `Delegate`型のプロパティ[ `IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)します。
 
 サンプル アプリで`AppDelegate`内のユーザー通知センターのデリゲートとして設定`FinishedLaunching`:
 
@@ -95,7 +95,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-次に、`AppDelegate`実装 [`DidReceiveNotificationResponse`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse/)
+次に、`AppDelegate`実装 [`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
 アクション ボタンを処理するために次のようにタップします。
 
 ```csharp
@@ -125,7 +125,7 @@ public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNo
 
 Notification content の拡張機能には、通知のカスタム インターフェイスを定義するビュー コント ローラーが含まれています。
 
-このビュー コント ローラーを使用できる、`GetNotificationActions`と`SetNotificationActions`メソッドで、 [`ExtensionContext`](https://developer.xamarin.com/api/property/UIKit.UIViewController.ExtensionContext/)
+このビュー コント ローラーを使用できる、`GetNotificationActions`と`SetNotificationActions`メソッドで、 [`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
 プロパティにアクセスして変更通知の動作設定ボタン。
 
 サンプル アプリで、notification content 拡張機能のビュー コント ローラーは、既存のアクション ボタンのタップに応答する場合にのみ、動作設定ボタンを変更します。

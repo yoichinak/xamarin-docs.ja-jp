@@ -1,5 +1,5 @@
 ---
-title: Xamarin.iOS で ARKit 2
+title: ARKit 2 in Xamarin.iOS
 description: このドキュメントでは、iOS 12 で ARKit への更新について説明します。 重点的に検出するための参照オブジェクトとイメージを使用して、環境のテクスチャでは、コードを含むおよび ARKit プログラミングで一般的な問題について説明します。
 ms.prod: xamarin
 ms.assetid: af758092-1523-4ab7-aa53-c37a81fb156a
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 4d5319005b28c5afa0906c44cfa59f0cad40de76
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 7f3c196eafd71e8571ea49a17784e5290e7ef44e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617619"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233603"
 ---
-# <a name="arkit-2-in-xamarinios"></a>Xamarin.iOS で ARKit 2
+# <a name="arkit-2-in-xamarinios"></a>ARKit 2 in Xamarin.iOS
 
 ARKit が昨年 iOS 11 で導入されて以来大きく高まっています。 何よりもまず、今すぐを検出できます垂直および水平方向の平面が大幅に屋内拡張現実エクスペリエンスの実用性が向上します。 さらに、これには新しい機能があります。
 
@@ -25,17 +25,17 @@ ARKit が昨年 iOS 11 で導入されて以来大きく高まっています。
 
 ## <a name="recognizing-reference-objects"></a>参照オブジェクトを認識します。
 
-ARKit 2 ショーケース機能の 1 つは、参照イメージとオブジェクトを認識する機能です。 参照イメージは、通常のイメージ ファイルから読み込むことができます ([後述](#more-tracking-configurations))、開発者向けを使用してオブジェクトをスキャンする必要がありますの参照が[ `ARObjectScanningConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARObjectScanningConfiguration/)します。
+ARKit 2 ショーケース機能の 1 つは、参照イメージとオブジェクトを認識する機能です。 参照イメージは、通常のイメージ ファイルから読み込むことができます ([後述](#more-tracking-configurations))、開発者向けを使用してオブジェクトをスキャンする必要がありますの参照が[ `ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)します。
 
-### <a name="sample-app-scanning-and-detecting-3d-objects"></a>サンプル アプリ: スキャンおよび 3D オブジェクトを検出します。
+### <a name="sample-app-scanning-and-detecting-3d-objects"></a>サンプル アプリ:スキャンおよび 3D オブジェクトを検出します。
 
 [スキャン、3 D オブジェクトを検出して](https://developer.xamarin.com/samples/monotouch/ios12/ScanningAndDetecting3DObjects/)サンプルは、ポートが、 [Apple プロジェクト](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?language=objc)を示しています。
 
-* アプリケーションの状態管理を使用して[ `NSNotification` ](https://developer.xamarin.com/api/type/Foundation.NSNotification/)オブジェクト
+* アプリケーションの状態管理を使用して[ `NSNotification` ](xref:Foundation.NSNotification)オブジェクト
 * カスタム ビジュアル
 * 複雑なジェスチャ
 * オブジェクトのスキャン
-* 格納する、 [`ARReferenceObject`](https://developer.xamarin.com/api/type/ARKit.ARReferenceObject/)
+* 格納する、 [`ARReferenceObject`](xref:ARKit.ARReferenceObject)
 
 バッテリとプロセッサを集中的には参照オブジェクトをスキャンし、古いデバイスの安定性の追跡を実現するために問題がよくあります。
 
@@ -55,7 +55,7 @@ ARKit 2 ショーケース機能の 1 つは、参照イメージとオブジェ
 * `Scan.ScanState.Scanning`
 * `Scan.ScanState.AdjustingOrigin`
 
-アプリへの通知の状態遷移を投稿する事後対応型のアーキテクチャを使用して[ `NSNotificationCenter` ](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)これらの通知をサブスクライブしているとします。 このスニペットのようにこの設定は`ViewController.cs`:
+アプリへの通知の状態遷移を投稿する事後対応型のアーキテクチャを使用して[ `NSNotificationCenter` ](xref:Foundation.NSNotificationCenter)これらの通知をサブスクライブしているとします。 このスニペットのようにこの設定は`ViewController.cs`:
 
 ```csharp
 // Configure notifications for application state changes
@@ -119,11 +119,11 @@ internal void EnterStateTesting()
 
 検出された水平面に投影、低レベル「ポイント クラウド」オブジェクトの境界ボックス内に含まれるアプリに表示されます。
 
-このポイントのクラウドがで開発者が利用できる、 [ `ARFrame.RawFeaturePoints` ](https://developer.xamarin.com/api/property/ARKit.ARFrame.RawFeaturePoints/)プロパティ。 ポイント クラウドを効率的に視覚化する厄介な問題になります。 ポイントを反復しを作成して、ポイントごとに新しい SceneKit ノードを配置することは強制終了フレーム レート。 または、非同期的に完了すると場合、タイム ラグがあります。 サンプルは、3 つの部分を使用したパフォーマンスを維持します。
+このポイントのクラウドがで開発者が利用できる、 [ `ARFrame.RawFeaturePoints` ](xref:ARKit.ARFrame.RawFeaturePoints)プロパティ。 ポイント クラウドを効率的に視覚化する厄介な問題になります。 ポイントを反復しを作成して、ポイントごとに新しい SceneKit ノードを配置することは強制終了フレーム レート。 または、非同期的に完了すると場合、タイム ラグがあります。 サンプルは、3 つの部分を使用したパフォーマンスを維持します。
 
 * Pin 内のデータを配置し、バイトの生バッファーとしてのデータを解釈するアンセーフ コードを使用します。
-* その生のバッファーを変換する、 [ `SCNGeometrySource` ](https://developer.xamarin.com/api/type/SceneKit.SCNGeometrySource/) 「テンプレート」を作成および[ `SCNGeometryElement` ](https://developer.xamarin.com/api/type/SceneKit.SCNGeometryElement/)オブジェクト。
-* 迅速に「を合成すること」生のデータとテンプレートを使用して、 [`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](https://developer.xamarin.com/api/member/SceneKit.SCNGeometry.Create/p/SceneKit.SCNGeometrySource[]/SceneKit.SCNGeometryElement[]/)
+* その生のバッファーを変換する、 [ `SCNGeometrySource` ](xref:SceneKit.SCNGeometrySource) 「テンプレート」を作成および[ `SCNGeometryElement` ](xref:SceneKit.SCNGeometryElement)オブジェクト。
+* 迅速に「を合成すること」生のデータとテンプレートを使用して、 [`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
 
 ```csharp
 internal static SCNGeometry CreateVisualization(NVector3[] points, UIColor color, float size)
@@ -251,11 +251,11 @@ internal partial class ThresholdRotationGestureRecognizer : UIRotationGestureRec
 
 ここで、複合現実エクスペリエンスの基盤として、次のいずれかを使用することができます。
 
-* デバイスの加速のみ ([`AROrientationTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.AROrientationTrackingConfiguration/)、iOS 11)
-* 面 ([`ARFaceTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARFaceTrackingConfiguration/)、iOS 11)
-* イメージを参照 ([`ARImageTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARImageTrackingConfiguration/)、iOS 12)
-* 3D オブジェクトをスキャン ([`ARObjectScanningConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARObjectScanningConfiguration/)、iOS 12)
-* ビジュアルの慣性 odometry ([`ARWorldTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARWorldTrackingConfiguration/)iOS 12 でが改善され、)
+* デバイスの加速のみ ([`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration)、iOS 11)
+* 面 ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration)、iOS 11)
+* イメージを参照 ([`ARImageTrackingConfiguration`](xref:ARKit.ARImageTrackingConfiguration)、iOS 12)
+* 3D オブジェクトをスキャン ([`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)、iOS 12)
+* ビジュアルの慣性 odometry ([`ARWorldTrackingConfiguration`](xref:ARKit.ARWorldTrackingConfiguration)iOS 12 でが改善され、)
 
 `AROrientationTrackingConfiguration`、で説明した[このブログの投稿とF#サンプル](https://github.com/lobrien/FSharp_Face_AR)は最も限定的な、複合現実エクスペリエンスの低下は、デバイスを関連付けるし、画面にしようとしないで、デバイスの動き、関連オブジェクトをデジタルのみ配置現実の世界です。
 
@@ -299,8 +299,8 @@ ARKit 2 では、キャプチャしたイメージを使用して、照明の推
 
 環境のテクスチャを使用するには
 
-* [ `SCNMaterial` ](https://developer.xamarin.com/api/type/SceneKit.SCNMaterial/)オブジェクトを使用する必要があります[ `SCNLightingModel.PhysicallyBased` ](https://developer.xamarin.com/api/property/SceneKit.SCNLightingModel.PhysicallyBased/)の 0 ~ 1 の範囲内の値を割り当てると[ `Metalness.Contents` ](https://developer.xamarin.com/api/property/SceneKit.SCNMaterial.Metalness/)と[ `Roughness.Contents`](https://developer.xamarin.com/api/property/SceneKit.SCNMaterialProperty.Contents/)と
-* 追跡構成を設定する必要があります[ `EnvironmentTexturing` ](https://developer.xamarin.com/api/property/ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing/)  =  [AREnvironmentTexturing.Automatic'](https://developer.xamarin.com/api/field/ARKit.AREnvironmentTexturing.Automatic/) :
+* [ `SCNMaterial` ](xref:SceneKit.SCNMaterial)オブジェクトを使用する必要があります[ `SCNLightingModel.PhysicallyBased` ](xref:SceneKit.SCNLightingModel.PhysicallyBased)の 0 ~ 1 の範囲内の値を割り当てると[ `Metalness.Contents` ](xref:SceneKit.SCNMaterial.Metalness)と[ `Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents)と
+* 追跡構成を設定する必要があります[ `EnvironmentTexturing` ](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)  =  [AREnvironmentTexturing.Automatic'](xref:ARKit.AREnvironmentTexturing.Automatic) :
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);
@@ -323,7 +323,7 @@ var configuration = new ARWorldTrackingConfiguration
 
 ### <a name="shared-and-persistent-ar-experiences"></a>共有され、AR の永続的なエクスペリエンス
 
-ARKit 2 にもう 1 つの主要な機能として、 [ `ARWorldMap` ](https://developer.xamarin.com/api/type/ARKit.ARWorldMap/)クラスは、共有したり、世界中の追跡データを格納することができます。 現在の世界地図を取得する[ `ARSession.GetCurrentWorldMapAsync` ](https://developer.xamarin.com/api/member/ARKit.ARSession.GetCurrentWorldMapAsync()/)または[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](https://developer.xamarin.com/api/member/ARKit.ARSession.GetCurrentWorldMap/p/System.Action%7BARKit.ARWorldMap,Foundation.NSError%7D/) :
+ARKit 2 にもう 1 つの主要な機能として、 [ `ARWorldMap` ](xref:ARKit.ARWorldMap)クラスは、共有したり、世界中の追跡データを格納することができます。 現在の世界地図を取得する[ `ARSession.GetCurrentWorldMapAsync` ](xref:ARKit.ARSession.GetCurrentWorldMapAsync)または[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](xref:ARKit.ARSession.GetCurrentWorldMap(System.Action{ARKit.ARWorldMap,Foundation.NSError})) :
 
 ```csharp
 // Local storage
@@ -346,7 +346,7 @@ if (worldMap != null)
 
 1. ファイルからデータを読み込む
 2. 展開に、`ARWorldMap`オブジェクト
-3. 値として使用する、 [ `ARWorldTrackingConfiguration.InitialWorldMap` ](https://developer.xamarin.com/api/property/ARKit.ARWorldTrackingConfiguration.InitialWorldMap/)プロパティ。
+3. 値として使用する、 [ `ARWorldTrackingConfiguration.InitialWorldMap` ](xref:ARKit.ARWorldTrackingConfiguration.InitialWorldMap)プロパティ。
 
 ```csharp
 var data = NSData.FromArray(File.ReadAllBytes(PersistentWorldController.PersistenWorldPath));
@@ -361,7 +361,7 @@ var configuration = new ARWorldTrackingConfiguration
 };
 ```
 
-`ARWorldMap`のみ非表示の世界の追跡データが含まれる、 [ `ARAnchor` ](https://developer.xamarin.com/api/type/ARKit.ARAnchor/)オブジェクトの場合、これは_いない_デジタル資産が含まれて。 ジオメトリまたは画像を共有するには、ユース ケースに適切な独自の戦略を開発する必要があります (おそらく、場所と、ジオメトリの向きのみを格納/送信、静的に適用することによって`SCNGeometry`または格納/送信します。シリアル化されたオブジェクト)。 利点、`ARWorldMap`は、資産が 1 回、共有を基準に配置される`ARAnchor`、デバイスまたはセッションの間で一貫して表示されます。
+`ARWorldMap`のみ非表示の世界の追跡データが含まれる、 [ `ARAnchor` ](xref:ARKit.ARAnchor)オブジェクトの場合、これは_いない_デジタル資産が含まれて。 ジオメトリまたは画像を共有するには、ユース ケースに適切な独自の戦略を開発する必要があります (おそらく、場所と、ジオメトリの向きのみを格納/送信、静的に適用することによって`SCNGeometry`または格納/送信します。シリアル化されたオブジェクト)。 利点、`ARWorldMap`は、資産が 1 回、共有を基準に配置される`ARAnchor`、デバイスまたはセッションの間で一貫して表示されます。
 
 ### <a name="universal-scene-description-file-format"></a>ユニバーサルのシーンの記述ファイルの形式
 
@@ -371,15 +371,15 @@ ARKit 2 の見出し行の最終的な機能は、Apple の導入の Pixar の[�
 
 ### <a name="manual-resource-management"></a>リソースの手動管理
 
-ARKit でリソースを手動で管理するために重要です。 こうすれば、高のフレーム レート、実際にはだけでなく_必要_混乱を招く「画面のフリーズ」を回避するために ARKit フレームワークが新しいカメラ フレームの指定に関する遅延 ([`ARSession.CurrentFrame`](https://developer.xamarin.com/api/property/ARKit.ARSession.CurrentFrame/))。 現在まで[ `ARFrame` ](https://developer.xamarin.com/api/type/ARKit.ARFrame/)しました`Dispose()`で呼び出されると、ARKit が供給されない新しいフレーム。 これにより、「固定」場合でも、アプリの残りの部分が応答するビデオです。 解決するには常にアクセスする`ARSession.CurrentFrame`で、`using`ブロックまたは手動で呼び出す`Dispose()`にします。
+ARKit でリソースを手動で管理するために重要です。 こうすれば、高のフレーム レート、実際にはだけでなく_必要_混乱を招く「画面のフリーズ」を回避するために ARKit フレームワークが新しいカメラ フレームの指定に関する遅延 ([`ARSession.CurrentFrame`](xref:ARKit.ARSession.CurrentFrame)します。 現在まで[ `ARFrame` ](xref:ARKit.ARFrame)しました`Dispose()`で呼び出されると、ARKit が供給されない新しいフレーム。 これにより、「固定」場合でも、アプリの残りの部分が応答するビデオです。 解決するには常にアクセスする`ARSession.CurrentFrame`で、`using`ブロックまたは手動で呼び出す`Dispose()`にします。
 
 派生したすべてのオブジェクト`NSObject`は`IDisposable`と`NSObject`実装、 [Dispose パターン](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern)で一般的に実行する必要があるため、[を実装するためには、このパターン`Dispose`の派生クラス](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose)します。
 
 ### <a name="manipulating-transform-matrices"></a>変換行列を操作します。
 
-3D アプリケーションで、コンパクトに移動、回転、および 3 D 空間でオブジェクトを傾斜させる方法について説明する 4 x 4 変換行列を扱うしようとしています。 これらはである SceneKit を[ `SCNMatrix4` ](https://developer.xamarin.com/api/type/SceneKit.SCNMatrix4/)オブジェクト。  
+3D アプリケーションで、コンパクトに移動、回転、および 3 D 空間でオブジェクトを傾斜させる方法について説明する 4 x 4 変換行列を扱うしようとしています。 これらはである SceneKit を[ `SCNMatrix4` ](xref:SceneKit.SCNMatrix4)オブジェクト。  
 
-[ `SCNNode.Transform` ](https://developer.xamarin.com/api/property/SceneKit.SCNNode.Transform/)プロパティが返す、`SCNMatrix4`の変換行列、 [ `SCNNode` ](https://developer.xamarin.com/api/type/SceneKit.SCNNode/) _支えと_行優先`simdfloat4x4`型。 だから例えば：
+[ `SCNNode.Transform` ](xref:SceneKit.SCNNode.Transform)プロパティが返す、`SCNMatrix4`の変換行列、 [ `SCNNode` ](xref:SceneKit.SCNNode) _支えと_行優先`simdfloat4x4`型。 だから例えば：
 
 ```csharp
 var node = new SCNNode { Position = new SCNVector3(2, 3, 4) };  

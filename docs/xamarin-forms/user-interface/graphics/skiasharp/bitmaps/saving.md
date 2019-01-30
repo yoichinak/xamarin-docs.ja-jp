@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 428a8cbda43736c56b748374dc6f97649036302a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057127"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233706"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp のビットマップをファイルに保存します。
 
@@ -46,7 +46,7 @@ SkiaSharp アプリケーションを作成または変更ビットマップが�
 
 さらに、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)クラスという 2 つのメソッドには`Create`作成できる、`SKCodec`圧縮ソースからオブジェクトし、デコードの処理でより複雑なを取得するアプリケーションを許可します。 (、`SKCodec`クラスは、記事に記載[ **SkiaSharp ビットマップをアニメーション化**](animating.md#gif-animation)アニメーション GIF ファイルのデコードに関連します)。
 
-ビットマップをエンコードするときに詳細が必要です。 エンコーダーは、アプリケーションが (JPEG または PNG、または別のもの) を使用する、特定のファイル形式を知る必要があります。 データ損失の形式を使用する場合は、エンコードは、必要な品質レベルも知る必要があります。
+ビットマップをエンコードするときに詳細が必要です。エンコーダーは、特定のファイル形式、アプリケーションが (JPEG または PNG、または別のもの) を使用する必要があります。 データ損失の形式を使用する場合は、エンコードは、必要な品質レベルも知る必要があります。
 
 `SKBitmap`クラスは、1 つ定義[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))メソッドで次の構文。
 
@@ -87,7 +87,7 @@ public interface IPhotoLibrary
 
 ### <a name="the-ios-implementation"></a>IOS の実装
 
-IOS のカスタム実装の`SavePhotoAsync`を使用して、 [ `SaveToPhotosAlbum` ](https://developer.xamarin.com/api/member/UIKit.UIImage.SaveToPhotosAlbum/)メソッドの`UIImage`:
+IOS のカスタム実装の`SavePhotoAsync`を使用して、 [ `SaveToPhotosAlbum` ](xref:UIKit.UIImage.SaveToPhotosAlbum*)メソッドの`UIImage`:
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary

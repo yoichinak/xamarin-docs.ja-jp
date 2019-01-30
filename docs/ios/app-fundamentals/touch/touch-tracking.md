@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a1ddcda84d51b5a8a9220558ddaf9476a2321ee8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 09e895714cb4bbe241e4e14facaaee52079d55d9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105052"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233188"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>マルチタッチ指が Xamarin.iOS での追跡
 
@@ -20,7 +20,7 @@ _このドキュメントは、複数の指のタッチ イベントを追跡す
 
 マルチタッチ アプリケーションが同時に画面に移動する場合に、個々 の本の指を追跡する必要がある場合もあります。 1 つの一般的なアプリケーションは、finger-paint プログラムです。 1 本の指を描くには、一度に複数の指で描画するためにもできるようにユーザーを必要とします。 プログラムでは、複数のタッチ イベントを処理するこの本の指を区別する必要があります。
 
-指で画面が最初に iOS 作成、 [ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/)その本の指のオブジェクト。 このオブジェクトでは、指が画面上を移動および動かした後、画面で、この時点で、オブジェクトが破棄されたと同じままです。 これを格納する本の指を追跡するため、プログラムが避ける必要があります`UITouch`オブジェクトに直接します。 代わりに、使用できる、 [ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)型のプロパティ`IntPtr`これらを一意に識別する`UITouch`オブジェクト。
+指で画面が最初に iOS 作成、 [ `UITouch` ](xref:UIKit.UITouch)その本の指のオブジェクト。 このオブジェクトでは、指が画面上を移動および動かした後、画面で、この時点で、オブジェクトが破棄されたと同じままです。 これを格納する本の指を追跡するため、プログラムが避ける必要があります`UITouch`オブジェクトに直接します。 代わりに、使用できる、 [ `Handle` ](xref:Foundation.NSObject.Handle)型のプロパティ`IntPtr`これらを一意に識別する`UITouch`オブジェクト。
 
 ほぼ常に、個々 の本の指を追跡するプログラムは、タッチの追跡のためのディクショナリを保持します。 ディクショナリ キーは、iOS プログラムの場合、`Handle`を特定の指を識別する値。 ディクショナリの値は、アプリケーションによって異なります。 [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)プログラム、(リリースへのタッチ) から各本の指のストロークはその指で描画される直線を表示するために必要なすべての情報を格納しているオブジェクトに関連付けられています。 プログラム定義の小さな`FingerPaintPolyline`この目的のためのクラス。
 
@@ -40,7 +40,7 @@ class FingerPaintPolyline
 }
 ```
 
-各ポリラインが、色、線の幅、および、iOS のグラフィックス[ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/)を蓄積し、描画されている行の複数のポイントをレンダリングするオブジェクト。
+各ポリラインが、色、線の幅、および、iOS のグラフィックス[ `CGPath` ](xref:CoreGraphics.CGPath)を蓄積し、描画されている行の複数のポイントをレンダリングするオブジェクト。
 
 
 次のコードのすべての残りの部分が含まれている、`UIView`という名前の導関数`FingerPaintCanvasView`します。 クラスは型のオブジェクトのディクショナリを保持する`FingerPaintPolyline`1 つ以上の指で積極的に描画されているは時間内に。
@@ -61,11 +61,11 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 `FingerPaintCanvasView` によって定義された 5 つのメソッドをオーバーライド`View`:
 
-- [`TouchesBegan`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesBegan/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesMoved`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesMoved/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesEnded`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesEnded/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesCancelled`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesCancelled/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`Draw`](https://developer.xamarin.com/api/member/UIKit.UIView.Draw/p/CoreGraphics.CGRect/)
+- [`TouchesBegan`](xref:UIKit.UIResponder.TouchesBegan(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesMoved`](xref:UIKit.UIResponder.TouchesMoved(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesEnded`](xref:UIKit.UIResponder.TouchesEnded(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesCancelled`](xref:UIKit.UIResponder.TouchesCancelled(Foundation.NSSet,UIKit.UIEvent))
+- [`Draw`](xref:UIKit.UIView.Draw(CoreGraphics.CGRect))
 
 さまざまな`Touches`上書きをポリラインを形成する点を蓄積します。
 

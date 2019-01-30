@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 923eebc2674abdbbd66d9db11bebf9f503928569
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c46aa1244699671d46560b0029197981a86d005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107327"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233329"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin.iOS での検索バー
 
@@ -84,7 +84,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
 
 - **プロンプトのテキスト、プレース ホルダー、** – の提案し、ユーザーが検索バーを使用する方法を指示をこれらのプロパティを使用します。 たとえば、アプリ ストアの一覧を表示する場合はでした、prompt プロパティを使用する「を入力したり、市区町村、ストーリーの名前、または郵便番号/zip Code」ことをお勧め
 - **スタイルの検索**– であるか、検索バーを設定する**Prominent**または**最小限**します。 著名なを使用して、画面で、検索バー、検索バーに描画するフォーカスの原因を除く、他のすべてが付けるされます。 最小限のスタイルの検索バーは、周囲ブレンドします。
-- **機能**– これらのプロパティを有効にするのみ、UI 要素が表示されます。 詳述するように適切なイベントを発生させることによってこれらの機能を実装する必要があります、[検索バーの API ドキュメント](https://developer.xamarin.com/api/type/UIKit.UISearchBar/)
+- **機能**– これらのプロパティを有効にするのみ、UI 要素が表示されます。 詳述するように適切なイベントを発生させることによってこれらの機能を実装する必要があります、[検索バーの API ドキュメント](xref:UIKit.UISearchBar)
     - 検索結果が表示されます、ブックマーク ボタン-検索バーで検索結果やブックマーク アイコンを表示します。
     - ユーザーが検索機能を終了する – [キャンセル] ボタンを示しています。 これが選択されていることをお勧めします。
     - これにより、検索のスコープを制限するユーザーをスコープ バー – に表示されます。 たとえば、music アプリで検索するとき、ユーザーは Apple Music またはそのライブラリの特定の曲またはアーティストを検索するかどうかを選択できます。 さまざまなオプションを表示するには、タイトルの配列を追加、 **ScopeBarTitles**プロパティ。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 8/29/2018
-ms.openlocfilehash: cdd57095b03c24472abec5646ee3a70350770d7c
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: cd9e92e2c96d0a0696633e49869f2661e410d343
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "34786175"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233589"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin.iOS の種類のレジストラー
 
@@ -22,10 +22,10 @@ ms.locfileid: "34786175"
 
 起動時に、Xamarin.iOS は登録します。
 
-- クラスと、 [[登録]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Objective C のクラスと属性。
-- クラスと、 [[Category]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute) Objective C カテゴリとして属性。
-- 連動する、 [[Protocol]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/) OBJECTIVE-C プロトコルとして属性。
-- 持つメンバーを[[エクスポート]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)OBJECTIVE-C でそれらにアクセスできるようにします。
+- クラスと、 [[登録]](xref:Foundation.RegisterAttribute) Objective C のクラスと属性。
+- クラスと、 [[Category]](xref:ObjCRuntime.CategoryAttribute) Objective C カテゴリとして属性。
+- 連動する、 [[Protocol]](xref:Foundation.ProtocolAttribute) OBJECTIVE-C プロトコルとして属性。
+- 持つメンバーを[[エクスポート]](xref:Foundation.ExportAttribute)OBJECTIVE-C でそれらにアクセスできるようにします。
 
 たとえば、マネージ`Main`Xamarin.iOS アプリケーションで一般的なメソッド。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/20/2018
-ms.openlocfilehash: b0a5d3e75ebbcd70a60a3e4e76eebe166117d31c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0b3fb7d467ae64e2cbfdb61644b1537bc5ae1161
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131410"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233069"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>Xamarin.iOS で自然言語フレームワークを使用します。
 
@@ -20,9 +20,9 @@ IOS 12 で導入された、自然言語フレームワークにより、デバ�
 
 自然言語、フレームワークを分類し、特殊なコンテキストでのテキストをタグ付けもカスタムの Core ML モデルを使用できます。
 
-[NSLinguisticTagger](https://developer.xamarin.com/api/type/Foundation.NSLinguisticTagger/)クラスは引き続き使用できます。 ただし、自然言語、フレームワークは、自然言語処理に使用する推奨されるメカニズムです。
+[NSLinguisticTagger](xref:Foundation.NSLinguisticTagger)クラスは引き続き使用できます。 ただし、自然言語、フレームワークは、自然言語処理に使用する推奨されるメカニズムです。
 
-## <a name="sample-app-xamarinnl"></a>サンプル アプリ: XamarinNL
+## <a name="sample-app-xamarinnl"></a>サンプル アプリ:XamarinNL
 
 Xamarin.iOS で自然言語、フレームワークを使用する方法についてを参照してください、 [XamarinNL サンプル アプリ](https://developer.xamarin.com/samples/monotouch/iOS12/XamarinNL)します。
 このサンプル アプリでは、自然言語フレームワークを使用する方法を示します。
@@ -151,7 +151,7 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 タップして、**単語**または**文**トークンの一覧をフェッチするボタンをクリックします。 各トークンは、単語や文では、元のテキストに関連付けられます。
 
 `ShowTokens` 呼び出すことによって、ユーザーのトークンに入力を分割します [`GetTokens`](https://developer.xamarin.com/api/member/NaturalLanguage.NLTokenizer.GetTokens/)
-メソッド、`NLTokenizer`します。 このメソッドの配列を返します [`NSValue`](https://developer.xamarin.com/api/type/Foundation.NSValue/)
+メソッド、`NLTokenizer`します。 このメソッドの配列を返します [`NSValue`](xref:Foundation.NSValue)
 オブジェクトの場合、各折り返し、`NSRange`元のテキスト内のトークンに対応する値。
 
 ```csharp

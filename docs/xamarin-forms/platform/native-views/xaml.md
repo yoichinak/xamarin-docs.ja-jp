@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4b33d1d149d3ac85d01dfcbe0d144416fd953426
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052896"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233810"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
@@ -182,7 +182,7 @@ Android のウィジェットのコンス トラクターは通常、Android を
 </ContentPage>
 ```
 
-[ `UIFont.FromName` ](https://developer.xamarin.com/api/member/UIKit.UIFont.FromName/)ファクトリ メソッドを設定するため、 [ `UILabel.Font` ](https://developer.xamarin.com/api/property/UIKit.UILabel.Font/)プロパティを新しい[ `UIFont` ](https://developer.xamarin.com/api/type/UIKit.UIFont/) iOS でします。 `UIFont`名とサイズの子であるメソッドの引数で指定された、`x:Arguments`属性。
+[ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*)ファクトリ メソッドを設定するため、 [ `UILabel.Font` ](xref:UIKit.UILabel.Font)プロパティを新しい[ `UIFont` ](xref:UIKit.UIFont) iOS でします。 `UIFont`名とサイズの子であるメソッドの引数で指定された、`x:Arguments`属性。
 
 [ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/)ファクトリ メソッドを設定するため、 [ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/)プロパティを新しい[ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/) Android で。 `Typeface`ファミリ名とスタイルの子であるメソッドの引数によって指定されます、`x:Arguments`属性。
 
@@ -331,7 +331,7 @@ IOS と Android では、ネイティブの選択は、コントロールを設�
 
 ### <a name="ios"></a>iOS
 
-IOS の実装サブクラス、 [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)と XAML から簡単に使用できるイベントの表示、およびプロパティを公開します。
+IOS の実装サブクラス、 [ `UIPickerView` ](xref:UIKit.UIPickerView)と XAML から簡単に使用できるイベントの表示、およびプロパティを公開します。
 
 ```csharp
 public class MyUIPickerView : UIPickerView
@@ -376,7 +376,7 @@ public class MyUIPickerView : UIPickerView
 }
 ```
 
-`MyUIPickerView`クラスでは`ItemsSource`と`SelectedItem`プロパティ、および`SelectedItemChanged`イベント。 A [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)基になる必要があります[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/)によってアクセスされるデータ モデル、`MyUIPickerView`プロパティとイベント。 `UIPickerViewModel`データ モデルがによって提供される、`PickerModel`クラス。
+`MyUIPickerView`クラスでは`ItemsSource`と`SelectedItem`プロパティ、および`SelectedItemChanged`イベント。 A [ `UIPickerView` ](xref:UIKit.UIPickerView)基になる必要があります[ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel)によってアクセスされるデータ モデル、`MyUIPickerView`プロパティとイベント。 `UIPickerViewModel`データ モデルがによって提供される、`PickerModel`クラス。
 
 ```csharp
 class PickerModel : UIPickerViewModel
@@ -419,7 +419,7 @@ class PickerModel : UIPickerViewModel
 }
 ```
 
-`PickerModel`クラスを基になるストレージを提供する、`MyUIPickerView`クラスを使用して、`Items`プロパティ。 たびにで選択された項目、 `MyUIPickerView` 、変更、 [ `Selected` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.Selected/)メソッドを実行すると、更新される、選択されたインデックスと起動、`ItemChanged`イベント。 これにより、`SelectedItem`プロパティは常に、ユーザーによって選択された最後の項目を返します。 さらに、`PickerModel`クラスは、セットアップに使用されるメソッドをオーバーライド、`MyUIPickerView`インスタンス。
+`PickerModel`クラスを基になるストレージを提供する、`MyUIPickerView`クラスを使用して、`Items`プロパティ。 たびにで選択された項目、 `MyUIPickerView` 、変更、 [ `Selected` ](xref:UIKit.UIPickerViewModel.Selected*)メソッドを実行すると、更新される、選択されたインデックスと起動、`ItemChanged`イベント。 これにより、`SelectedItem`プロパティは常に、ユーザーによって選択された最後の項目を返します。 さらに、`PickerModel`クラスは、セットアップに使用されるメソッドをオーバーライド、`MyUIPickerView`インスタンス。
 
 ### <a name="android"></a>Android
 

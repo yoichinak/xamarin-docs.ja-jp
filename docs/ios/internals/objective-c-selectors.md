@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: b51ee6b547cc53761f23379e7233bb710090a61b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 5d3c8b6bd8f7f788a1de74feddf7fcb378fa5818
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39351731"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233641"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS での OBJECTIVE-C セレクター
 
@@ -36,9 +36,9 @@ Objective C でのメッセージの詳細については、Apple の参照し�
 この API には、次の特徴があります。
 
 - 戻り値の型は`CGSize`Unified api。
-- `font`パラメーターが、 [UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) ((直接) から派生した型しないと[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)) とにマップされます[System.IntPtr](xref:System.IntPtr)。
+- `font`パラメーターが、 [UIFont](xref:UIKit.UIFont) (型 () から間接的に派生と[NSObject](xref:Foundation.NSObject)にマップし、 [System.IntPtr](xref:System.IntPtr)。
 - `width`パラメーター、`CGFloat`にマップされて`nfloat`します。
-- `lineBreakMode`パラメーター、 [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)、として Xamarin.iOS で既にバインドされているが、 [`UILineBreakMode`](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/)
+- `lineBreakMode`パラメーター、 [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)、として Xamarin.iOS で既にバインドされているが、 [`UILineBreakMode`](xref:UIKit.UILineBreakMode)
 列挙体です。
 
 正規表現のまとめ、`objc_msgSend`宣言に一致する必要があります。
@@ -149,7 +149,7 @@ else
 
 ### <a name="calling-objcmsgsend"></a>Objc_msgSend を呼び出す
 
-`objc_msgSend` オブジェクトには、(セレクター) メッセージを送信します。 このファミリの関数は、少なくとも 2 つの必要な引数を受け取ります。 セレクターのターゲット (インスタンスまたはクラスの処理)、自体、セレクターとセレクターの必要な引数。 インスタンスとセレクター引数には、 `System.IntPtr`、し、残りのすべての引数は、セレクターが必要ですが、たとえば型と一致する必要があります、`nint`の`int`、または`System.IntPtr`すべて`NSObject`-派生型。 使用して、 [`NSObject.Handle`](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)
+`objc_msgSend` オブジェクトには、(セレクター) メッセージを送信します。 このファミリの関数は、少なくとも 2 つの必要な引数を受け取ります。 セレクターのターゲット (インスタンスまたはクラスの処理)、自体、セレクターとセレクターの必要な引数。 インスタンスとセレクター引数には、 `System.IntPtr`、し、残りのすべての引数は、セレクターが必要ですが、たとえば型と一致する必要があります、`nint`の`int`、または`System.IntPtr`すべて`NSObject`-派生型。 使用して、 [`NSObject.Handle`](xref:Foundation.NSObject.Handle)
 取得するプロパティ、 `IntPtr` Objective C 型のインスタンスにします。
 
 1 つ以上を使用する必要がある`objc_msgSend`関数。

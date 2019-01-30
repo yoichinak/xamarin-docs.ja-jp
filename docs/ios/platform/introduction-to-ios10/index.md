@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d1e0df95b2665f7e3b33a901271b11e1c243b1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f2a612eea39a3447cae03e2d7b675a46c47aad52
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123565"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233745"
 ---
 # <a name="introduction-to-ios-10"></a>IOS 10 の概要
 
@@ -135,7 +135,7 @@ iOS 10 では、事前に提示する役に立つ情報に自動的にユーザ�
 - Siri の相互作用
 - QuickType 提案 
 
-アプリなどのテクノロジのコレクションを使用して、システムには、この機能を公開[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)、コア スポット ライト、MapKit、Media Player、UIKit、web マークアップ。
+アプリなどのテクノロジのコレクションを使用して、システムには、この機能を公開[NSUserActivity](xref:Foundation.NSUserActivity)、コア スポット ライト、MapKit、Media Player、UIKit、web マークアップ。
 
 詳細については、次を参照してください、[プロアクティブな候補の概要](~/ios/platform/search/proactive-suggestions.md)ガイド。
 
@@ -198,11 +198,11 @@ iOS 10 には、アプリを継続的な音声認識をサポートし、議事�
 
 iOS 10 では、拡張範囲のピクセル形式とコア グラフィックス、Core のイメージ、金属製および AVFoundation などのフレームワークを含めて、システム全体で全体の色域スペースのサポートを拡張します。 ワイド カラー ディスプレイを使用したデバイスのサポートはさらに、全体のグラフィックス スタック全体でこの動作を提供することで緩和されました。
 
-さらに、 [UIKit](https://developer.xamarin.com/api/namespace/UIKit/)が変更されている、新しい機能を拡張**sRGB**大幅なパフォーマンス失わずワイド色域にカラーの混合をやすくするための色空間。
+さらに、 [UIKit](xref:UIKit)が変更されている、新しい機能を拡張**sRGB**大幅なパフォーマンス失わずワイド色域にカラーの混合をやすくするための色空間。
 
 Apple は、さまざまな色を使用する場合、次のベスト プラクティスを提供します。
 
-- [示す UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)これは、sRGB 色空間となることはありませんクランプする値、`0.0`に`1.0`範囲。 アプリは、以前のクランプ動作に依存する場合は、iOS 10 に変更する必要があります。
+- [示す UIColor](xref:UIKit.UIColor)これは、sRGB 色空間となることはありませんクランプする値、`0.0`に`1.0`範囲。 アプリは、以前のクランプ動作に依存する場合は、iOS 10 に変更する必要があります。
 - 描画の環境は、カスタムを実行するときに、sRGB 色空間の構成は`UIView`iPad Pro で描画します。
 - アプリでのカスタム レンダリングを実行する場合`UIImages`、使用して、新しい[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)拡張範囲または範囲の標準形式の使用を指定するクラス。
 - コア グラフィックスや金属などの低レベルの API を使用して、イメージの処理を提供する、開発者は、拡張の範囲の色領域とピクセル形式 16 ビット浮動小数点値をサポートするを使用する必要があります。 必要に応じて、開発者は、色コンポーネントの値を手動でクランプする必要があります。
@@ -229,7 +229,7 @@ IOS 10 では、次の Api が廃止されました。
 - `CKDiscoverAllContactsOperation`、 `CKDiscoveredUserInfo`、`CKDiscoverUserInfosOperation`と`CKFetchRecordChangesOperation`クラス CloudKit で iOS 10 の廃止されました。 使用して、 [CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)、 [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)と[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/)クラス (レコードの共有をサポート) を代わりにします。
 - いくつか[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) (ゾーンおよびクエリ ベース サブスクリプション) などの Api が非推奨とされました。 使用して、 [CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)と[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 代わりにします。
 - [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)ユビキタス コンテンツに関連するシンボルが非推奨とされました。
-- `ADBannerView`、`ADInterstitialAd`内のシンボルに関連し、 [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)クラスが推奨されていません。
+- `ADBannerView`、`ADInterstitialAd`内のシンボルに関連し、 [UIViewController](xref:UIKit.UIViewController)クラスが推奨されていません。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)浮動小数点値に関連するシンボルが非推奨とされました。
 - `UILocalNotification`、 `UIMutableUserNotificationAction`、 `UIMutableUserNotificationCategory`、 `UIUserNotificationAction`、`UIUserNotificationCategory`と`UIUserNotificationSettings`UIKit のクラスが非推奨とされました。 使用して、[ユーザー通知](#User-Notifications)framework 代わりにします。
 - `HandleActionForLocalNotification`、 `HandleActionForRemoteNotification`、`DidReceiveLocalNotification`と`DidReceiveRemoteNotification`WatchKit メソッドが非推奨とされました。 使用して、`HandleActionForNotification`と`DidReceiveNotification`メソッド代わりにします。
