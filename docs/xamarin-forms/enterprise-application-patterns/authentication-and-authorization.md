@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: beb9e8f351a1cecc6017a08345f7cfc5e207ba35
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 9db9902dfbf602ba21b353f3a17920dc37b03ee5
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996218"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55234005"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -53,17 +53,17 @@ EShopOnContainers のモバイル アプリは、id のマイクロ サービス
 
 ### <a name="adding-identityserver-to-a-web-application"></a>IdentityServer を Web アプリケーションに追加します。
 
-ASP.NET Core web アプリケーション IdentityServer 4 を使用するためには、web アプリケーションの Visual Studio ソリューションに追加する必要があります。 詳細については、次を参照してください。[セットアップと概要](https://identityserver4.readthedocs.io/en/release/quickstarts/0_overview.html)IdentityServer ドキュメント。
+ASP.NET Core web アプリケーション IdentityServer 4 を使用するためには、web アプリケーションの Visual Studio ソリューションに追加する必要があります。 詳細については、次を参照してください。[概要](https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html)IdentityServer ドキュメント。
 
 IdentityServer は、web アプリケーションの Visual Studio ソリューションに含まれると OpenID Connect と OAuth 2.0 エンドポイントへの要求を使用できるように処理パイプラインでは、web アプリケーションの HTTP 要求に追加する必要があります。 これは、`Configure`メソッドで、web アプリケーションの`Startup`クラスの次のコード例。
 
 ```csharp
-public void Configure(  
-    IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)  
+public void Configure(  
+    IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)  
 {  
-    ...  
-    app.UseIdentity();  
-    ...  
+    ...  
+    app.UseIdentity();  
+    ...  
 }
 ```
 
@@ -74,19 +74,19 @@ Web アプリケーションの HTTP 要求処理パイプラインで順序が�
 IdentityServer で構成する必要があります、 `ConfigureServices` web アプリのメソッドに`Startup`クラスを呼び出すことによって、`services.AddIdentityServer`メソッド、eShopOnContainers 参照アプリケーションから次のコード例で示した。
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)  
+public void ConfigureServices(IServiceCollection services)  
 {  
-    ...  
-    services.AddIdentityServer(x => x.IssuerUri = "null")  
-        .AddSigningCredential(Certificate.Get())                 
-        .AddAspNetIdentity<ApplicationUser>()  
-        .AddConfigurationStore(builder =>  
-            builder.UseSqlServer(connectionString, options =>  
-                options.MigrationsAssembly(migrationsAssembly)))  
-        .AddOperationalStore(builder =>  
-            builder.UseSqlServer(connectionString, options =>  
-                options.MigrationsAssembly(migrationsAssembly)))  
-        .Services.AddTransient<IProfileService, ProfileService>();  
+    ...  
+    services.AddIdentityServer(x => x.IssuerUri = "null")  
+        .AddSigningCredential(Certificate.Get())                 
+        .AddAspNetIdentity<ApplicationUser>()  
+        .AddConfigurationStore(builder =>  
+            builder.UseSqlServer(connectionString, options =>  
+                options.MigrationsAssembly(migrationsAssembly)))  
+        .AddOperationalStore(builder =>  
+            builder.UseSqlServer(connectionString, options =>  
+                options.MigrationsAssembly(migrationsAssembly)))  
+        .Services.AddTransient<IProfileService, ProfileService>();  
 }
 ```
 
@@ -97,39 +97,39 @@ public void ConfigureServices(IServiceCollection services)
 -   要求トークンに接続するクライアント。
 -   ASP.NET Core Identity です。
 
->💡 **ヒント:**: IdentityServer 4 の構成を動的に読み込みます。 IdentityServer 4 の Api では、構成オブジェクトのメモリ内のリストから IdentityServer を構成できます。 EShopOnContainers 参照アプリケーションで、これらのメモリ内コレクションは、アプリケーションにハードコーディングします。 ただし、運用環境シナリオでできる読み込まれて動的に構成ファイルから、またはデータベースからです。
+>💡 **ヒント:**:IdentityServer 4 構成を動的に読み込みます。 IdentityServer 4 の Api では、構成オブジェクトのメモリ内のリストから IdentityServer を構成できます。 EShopOnContainers 参照アプリケーションで、これらのメモリ内コレクションは、アプリケーションにハードコーディングします。 ただし、運用環境シナリオでできる読み込まれて動的に構成ファイルから、またはデータベースからです。
 
-ASP.NET Core Identity を使用する IdentityServer の構成方法の詳細については、次を参照してください。[を使用して ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/release/quickstarts/6_aspnet_identity.html) IdentityServer ドキュメント。
+ASP.NET Core Identity を使用する IdentityServer の構成方法の詳細については、次を参照してください。[を使用して ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html) IdentityServer ドキュメント。
 
 #### <a name="configuring-api-resources"></a>API のリソースの構成
 
 API のリソースを構成するときに、`AddInMemoryApiResources`メソッドが必要ですが、`IEnumerable<ApiResource>`コレクション。 次のコード例は、 `GetApis` eshoponcontainers には、このコレクションを提供するメソッドは、アプリケーションを参照します。
 
 ```csharp
-public static IEnumerable<ApiResource> GetApis()  
+public static IEnumerable<ApiResource> GetApis()  
 {  
-    return new List<ApiResource>  
-    {  
-        new ApiResource("orders", "Orders Service"),  
-        new ApiResource("basket", "Basket Service")  
-    };  
+    return new List<ApiResource>  
+    {  
+        new ApiResource("orders", "Orders Service"),  
+        new ApiResource("basket", "Basket Service")  
+    };  
 }
 ```
 
-このメソッドは、IdentityServer は、注文とバスケット Api 保護する必要がありますを指定します。 IdentityServer がアクセスを管理するため、これらの Api を呼び出す際、トークンが必要になります。 詳細については、`ApiResource`入力を参照してください[API リソース](https://identityserver4.readthedocs.io/en/release/reference/api_resource.html#refapiresource)IdentityServer 4 のドキュメント。
+このメソッドは、IdentityServer は、注文とバスケット Api 保護する必要がありますを指定します。 IdentityServer がアクセスを管理するため、これらの Api を呼び出す際、トークンが必要になります。 詳細については、`ApiResource`入力を参照してください[API リソース](https://identityserver4.readthedocs.io/en/latest/reference/api_resource.html)IdentityServer 4 のドキュメント。
 
 #### <a name="configuring-identity-resources"></a>Id リソースの構成
 
 Id のリソースを構成するときに、`AddInMemoryIdentityResources`メソッドが必要ですが、`IEnumerable<IdentityResource>`コレクション。 Id リソースは、ユーザー ID、名、または電子メール アドレスなどのデータです。 各 id リソースは一意の名前を備え、任意のクレームの種類に割り当て可能、これで、ユーザーの id トークンが含まれます。 次のコード例は、 `GetResources` eshoponcontainers には、このコレクションを提供するメソッドは、アプリケーションを参照します。
 
 ```csharp
-public static IEnumerable<IdentityResource> GetResources()  
+public static IEnumerable<IdentityResource> GetResources()  
 {  
-    return new List<IdentityResource>  
-    {  
-        new IdentityResources.OpenId(),  
-        new IdentityResources.Profile()  
-    };  
+    return new List<IdentityResource>  
+    {  
+        new IdentityResources.OpenId(),  
+        new IdentityResources.Profile()  
+    };  
 }
 ```
 
@@ -138,7 +138,7 @@ OpenID Connect の仕様では、いくつかを指定します[標準 id リソ
 > [!NOTE]
 > `IdentityResources`クラスは、OpenID Connect の仕様 (openid、電子メール、プロファイル、電話番号、およびアドレス) で定義されているスコープのすべてをサポートします。
 
-IdentityServer は、カスタム id リソースの定義もサポートします。 詳細については、次を参照してください。[カスタム id のリソースを定義する](https://identityserver4.readthedocs.io/en/release/topics/resources.html#defining-custom-identity-resources)IdentityServer ドキュメント。 詳細については、`IdentityResource`入力を参照してください[Id リソース](https://identityserver4.readthedocs.io/en/release/reference/identity_resource.html)IdentityServer 4 のドキュメント。
+IdentityServer は、カスタム id リソースの定義もサポートします。 詳細については、次を参照してください。[カスタム id のリソースを定義する](http://docs.identityserver.io/en/latest/topics/resources.html#defining-custom-identity-resources)IdentityServer ドキュメント。 詳細については、`IdentityResource`入力を参照してください[Id リソース](https://identityserver4.readthedocs.io/en/latest/reference/identity_resource.html)IdentityServer 4 のドキュメント。
 
 #### <a name="configuring-clients"></a>クライアントの構成
 
@@ -152,54 +152,54 @@ IdentityServer は、カスタム id リソースの定義もサポートしま�
 クライアントを構成するときに、`AddInMemoryClients`メソッドが必要ですが、`IEnumerable<Client>`コレクション。 次のコード例は、eShopOnContainers でモバイル アプリの構成を示しています。、 `GetClients` 、eshoponcontainers には、このコレクションを提供するメソッドは、アプリケーションを参照します。
 
 ```csharp
-public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUrl)
+public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUrl)
 {
-    return new List<Client>
-    {
-        ...
-        new Client
-        {
-            ClientId = "xamarin",
-            ClientName = "eShop Xamarin OpenId Client",
-            AllowedGrantTypes = GrantTypes.Hybrid,
-            ClientSecrets =
-            {
-                new Secret("secret".Sha256())
-            },
-            RedirectUris = { clientsUrl["Xamarin"] },
-            RequireConsent = false,
-            RequirePkce = true,
-            PostLogoutRedirectUris = { $"{clientsUrl["Xamarin"]}/Account/Redirecting" },
-            AllowedCorsOrigins = { "http://eshopxamarin" },
-            AllowedScopes = new List<string>
-            {
-                IdentityServerConstants.StandardScopes.OpenId,
-                IdentityServerConstants.StandardScopes.Profile,
-                IdentityServerConstants.StandardScopes.OfflineAccess,
-                "orders",
-                "basket"
-            },
-            AllowOfflineAccess = true,
-            AllowAccessTokensViaBrowser = true
-        },
-        ...
-    };
+    return new List<Client>
+    {
+        ...
+        new Client
+        {
+            ClientId = "xamarin",
+            ClientName = "eShop Xamarin OpenId Client",
+            AllowedGrantTypes = GrantTypes.Hybrid,
+            ClientSecrets =
+            {
+                new Secret("secret".Sha256())
+            },
+            RedirectUris = { clientsUrl["Xamarin"] },
+            RequireConsent = false,
+            RequirePkce = true,
+            PostLogoutRedirectUris = { $"{clientsUrl["Xamarin"]}/Account/Redirecting" },
+            AllowedCorsOrigins = { "http://eshopxamarin" },
+            AllowedScopes = new List<string>
+            {
+                IdentityServerConstants.StandardScopes.OpenId,
+                IdentityServerConstants.StandardScopes.Profile,
+                IdentityServerConstants.StandardScopes.OfflineAccess,
+                "orders",
+                "basket"
+            },
+            AllowOfflineAccess = true,
+            AllowAccessTokensViaBrowser = true
+        },
+        ...
+    };
 }
 ```
 
 この構成は、次のプロパティのデータを指定します。
 
--   `ClientId`: クライアントの一意の ID。
--   `ClientName`クライアントは、ログ記録と同意画面で使用される名前を表示します。
--   `AllowedGrantTypes`: クライアントが IdentityServer と対話しようとした方法を指定します。 詳細については、次を参照してください。[認証フローを構成する](#configuring_the_authentication_flow)します。
--   `ClientSecrets`: トークン エンドポイントからトークンを要求するときに使用されるクライアント シークレットの資格情報を指定します。
--   `RedirectUris`: 承認コードまたはトークンを返しますを許可されている Uri を指定します。
--   `RequireConsent`: 同意画面が必要かどうかを指定します。
--   `RequirePkce`: 承認コードを使用してクライアントが証明キーを送信する必要があるかどうかを指定します。
--   `PostLogoutRedirectUris`: ログアウト後にリダイレクトする許可された Uri を指定します。
--   `AllowedCorsOrigins`: IdentityServer が原点からのクロス オリジン呼び出しを許可できるように、クライアントの原点を指定します。
--   `AllowedScopes`: クライアントへのアクセスを持つリソースを指定します。 既定では、クライアントにはすべてのリソースへのアクセスがありません。
--   `AllowOfflineAccess`: クライアントが更新トークンを要求できるかどうかを指定します。
+-   `ClientId`:クライアントの一意の ID。
+-   `ClientName`:クライアントは、ログ記録と同意画面で使用される名前を表示します。
+-   `AllowedGrantTypes`:クライアントが IdentityServer と対話しようとした方法を指定します。 詳細については、次を参照してください。[認証フローを構成する](#configuring_the_authentication_flow)します。
+-   `ClientSecrets`:トークン エンドポイントからトークンを要求するときに使用されるクライアント シークレットの資格情報を指定します。
+-   `RedirectUris`:承認コードまたはトークンを返しますを許可されている Uri を指定します。
+-   `RequireConsent`:同意画面が必要かどうかを指定します。
+-   `RequirePkce`:認証コードを使用してクライアントが証明キーを送信する必要があるかどうかを指定します。
+-   `PostLogoutRedirectUris`:ログアウト後にリダイレクトする許可された Uri を指定します。
+-   `AllowedCorsOrigins`:IdentityServer が原点からのクロス オリジン呼び出しを許可できるように、クライアントの原点を指定します。
+-   `AllowedScopes`:クライアントへのアクセスを持つリソースを指定します。 既定では、クライアントにはすべてのリソースへのアクセスがありません。
+-   `AllowOfflineAccess`:クライアントが更新トークンを要求できるかどうかを指定します。
 
 <a name="configuring_the_authentication_flow" />
 
@@ -214,7 +214,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUr
 > [!TIP]
 > ハイブリッドの認証フローを使用します。 ハイブリッドの認証フローは、多くのブラウザーのチャネルに適用される攻撃を軽減する、ネイティブ アプリケーションのアクセス トークンの取得 (および更新トークンの可能性があります) にすることをお勧めのフローです。
 
-認証フローの詳細については、次を参照してください。[付与タイプ](https://identityserver4.readthedocs.io/en/release/topics/grant_types.html)IdentityServer 4 のドキュメント。
+認証フローの詳細については、次を参照してください。[付与タイプ](https://identityserver4.readthedocs.io/en/latest/topics/grant_types.html)IdentityServer 4 のドキュメント。
 
 ### <a name="performing-authentication"></a>認証を実行します。
 
@@ -238,48 +238,48 @@ IdentityServer との通信を行った eShopOnContainers のモバイル アプ
 
 #### <a name="signing-in"></a>サインイン
 
-ユーザーがタップしたときに、**ログイン**のボタンでは、 `LoginView`、`SignInCommand`で、`LoginViewModel`クラスを実行すると、順番に実行する、`SignInAsync`メソッド。 次のコード例では、このメソッドは示しています。
+ユーザーがタップしたときに、**ログイン**のボタンでは、 `LoginView`、`SignInCommand`で、`LoginViewModel`クラスを実行すると、順番に実行する、`SignInAsync`メソッド。 以下のコード例はこのメソッドを示しています。
 
 ```csharp
-private async Task SignInAsync()  
+private async Task SignInAsync()  
 {  
-    ...  
-    LoginUrl = _identityService.CreateAuthorizationRequest();  
-    IsLogin = true;  
-    ...  
+    ...  
+    LoginUrl = _identityService.CreateAuthorizationRequest();  
+    IsLogin = true;  
+    ...  
 }
 ```
 
 このメソッドは、`CreateAuthorizationRequest`メソッドで、`IdentityService`クラスは、次のコード例に示されています。
 
 ```csharp
-public string CreateAuthorizationRequest()
+public string CreateAuthorizationRequest()
 {
-    // Create URI to authorization endpoint
-    var authorizeRequest = new AuthorizeRequest(GlobalSetting.Instance.IdentityEndpoint);
+    // Create URI to authorization endpoint
+    var authorizeRequest = new AuthorizeRequest(GlobalSetting.Instance.IdentityEndpoint);
 
-    // Dictionary with values for the authorize request
-    var dic = new Dictionary<string, string>();
-    dic.Add("client_id", GlobalSetting.Instance.ClientId);
-    dic.Add("client_secret", GlobalSetting.Instance.ClientSecret); 
-    dic.Add("response_type", "code id_token");
-    dic.Add("scope", "openid profile basket orders locations marketing offline_access");
-    dic.Add("redirect_uri", GlobalSetting.Instance.IdentityCallback);
-    dic.Add("nonce", Guid.NewGuid().ToString("N"));
-    dic.Add("code_challenge", CreateCodeChallenge());
-    dic.Add("code_challenge_method", "S256");
+    // Dictionary with values for the authorize request
+    var dic = new Dictionary<string, string>();
+    dic.Add("client_id", GlobalSetting.Instance.ClientId);
+    dic.Add("client_secret", GlobalSetting.Instance.ClientSecret); 
+    dic.Add("response_type", "code id_token");
+    dic.Add("scope", "openid profile basket orders locations marketing offline_access");
+    dic.Add("redirect_uri", GlobalSetting.Instance.IdentityCallback);
+    dic.Add("nonce", Guid.NewGuid().ToString("N"));
+    dic.Add("code_challenge", CreateCodeChallenge());
+    dic.Add("code_challenge_method", "S256");
 
-    // Add CSRF token to protect against cross-site request forgery attacks.
-    var currentCSRFToken = Guid.NewGuid().ToString("N");
-    dic.Add("state", currentCSRFToken);
+    // Add CSRF token to protect against cross-site request forgery attacks.
+    var currentCSRFToken = Guid.NewGuid().ToString("N");
+    dic.Add("state", currentCSRFToken);
 
-    var authorizeUri = authorizeRequest.Create(dic); 
-    return authorizeUri;
+    var authorizeUri = authorizeRequest.Create(dic); 
+    return authorizeUri;
 }
 
 ```
 
-このメソッドは、IdentityServer の URI を作成します。[承認エンドポイント](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html)、必要なパラメーターを使用します。 承認エンドポイントが、 `/connect/authorize` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+このメソッドは、IdentityServer の URI を作成します。[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必要なパラメーターを使用します。 承認エンドポイントが、 `/connect/authorize` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
 > [!NOTE]
 > EShopOnContainers のモバイル アプリの攻撃対象領域を削減するには、OAuth コード Exchange (PKCE) 拡張機能の証明キーを実装します。 PKCE は、それが傍受された場合に使用されているから認証コードを保護します。 これは、うちハッシュが承認要求で渡されると、シークレットの検証コードを生成するクライアントによって、表示されているハッシュされていない認証コードを使用するときにです。 PKCE の詳細については、次を参照してください。 [OAuth パブリック クライアントでのコードの Exchange 用の Proof Key](https://tools.ietf.org/html/rfc7636) Internet Engineering Task Force の web サイト。
@@ -288,36 +288,36 @@ public string CreateAuthorizationRequest()
 
 ![](authentication-and-authorization-images/login.png "ログイン ページが WebView で表示されます。")
 
-**図 9-4:** web ビューで表示されるログイン ページ
+**図 9-4:** ログイン ページが WebView で表示されます。
 
 ログインが完了すると、 [ `WebView` ](xref:Xamarin.Forms.WebView)戻り値の URI にリダイレクトされます。 これは、`WebView`ナビゲーションが発生、`NavigateAsync`メソッドで、`LoginViewModel`次のコード例に示されているクラスを実行します。
 
 ```csharp
-private async Task NavigateAsync(string url)  
+private async Task NavigateAsync(string url)  
 {  
-    ...  
-    var authResponse = new AuthorizeResponse(url);  
-    if (!string.IsNullOrWhiteSpace(authResponse.Code))  
-    {  
-        var userToken = await _identityService.GetTokenAsync(authResponse.Code);  
-        string accessToken = userToken.AccessToken;  
+    ...  
+    var authResponse = new AuthorizeResponse(url);  
+    if (!string.IsNullOrWhiteSpace(authResponse.Code))  
+    {  
+        var userToken = await _identityService.GetTokenAsync(authResponse.Code);  
+        string accessToken = userToken.AccessToken;  
 
-        if (!string.IsNullOrWhiteSpace(accessToken))  
-        {  
-            Settings.AuthAccessToken = accessToken;  
-            Settings.AuthIdToken = authResponse.IdentityToken;  
+        if (!string.IsNullOrWhiteSpace(accessToken))  
+        {  
+            Settings.AuthAccessToken = accessToken;  
+            Settings.AuthIdToken = authResponse.IdentityToken;  
 
-            await NavigationService.NavigateToAsync<MainViewModel>();  
-            await NavigationService.RemoveLastFromBackStackAsync();  
-        }  
-    }  
-    ...  
+            await NavigationService.NavigateToAsync<MainViewModel>();  
+            await NavigationService.RemoveLastFromBackStackAsync();  
+        }  
+    }  
+    ...  
 }
 ```
 
-このメソッドは、戻り値の URI に含まれている認証の応答を解析し、IdentityServer には有効な承認コードが存在する、要求[トークン エンドポイント](https://identityserver4.readthedocs.io/en/release/endpoints/token.html)、認証コードを渡すこと、PKCE シークレットの検証方法、およびその他の必須パラメーターです。 トークン エンドポイントが、 `/connect/token` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+このメソッドは、戻り値の URI に含まれている認証の応答を解析し、IdentityServer には有効な承認コードが存在する、要求[トークン エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)、認証コードを渡すこと、PKCE シークレットの検証方法、およびその他の必須パラメーターです。 トークン エンドポイントが、 `/connect/token` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
->💡 **ヒント:**: 検証の Uri を返します。 ただし、eShopOnContainers のモバイル アプリでは、戻り値の URI を検証しませんは、戻り値の URI がオープン リダイレクト攻撃を防ぐための既知の場所を指すことを検証することをお勧めします。
+>💡 **ヒント:**:戻り値の Uri を検証します。 ただし、eShopOnContainers のモバイル アプリでは、戻り値の URI を検証しませんは、戻り値の URI がオープン リダイレクト攻撃を防ぐための既知の場所を指すことを検証することをお勧めします。
 
 トークン エンドポイントでは、有効な承認コードと PKCE シークレットの検証を受信する場合は、アクセス トークン、id トークン、更新トークンと応答します。 (これは、API リソースへのアクセスを許可するには) アクセス トークンと id トークンは、アプリケーション設定として格納し、ページ ナビゲーションを実行します。 そのため、これは eShopOnContainers のモバイル アプリでの全体的な結果: に移動されるときのユーザーが、IdentityServer で正常に認証することに、 `MainView`  ページで、これは、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)表示する、`CatalogView`として選択されているそのタブ。
 
@@ -333,52 +333,52 @@ private async Task NavigateAsync(string url)
 ビューが作成されに移動したときに、`InitializeAsync`ビューの関連するビュー モデルのメソッドを実行すると、実行し、`Logout`のメソッド、`LoginViewModel`クラスは、次のコード例に示されています。
 
 ```csharp
-private void Logout()  
+private void Logout()  
 {  
-    var authIdToken = Settings.AuthIdToken;  
-    var logoutRequest = _identityService.CreateLogoutRequest(authIdToken);  
+    var authIdToken = Settings.AuthIdToken;  
+    var logoutRequest = _identityService.CreateLogoutRequest(authIdToken);  
 
-    if (!string.IsNullOrEmpty(logoutRequest))  
-    {  
-        // Logout  
-        LoginUrl = logoutRequest;  
-    }  
-    ...  
+    if (!string.IsNullOrEmpty(logoutRequest))  
+    {  
+        // Logout  
+        LoginUrl = logoutRequest;  
+    }  
+    ...  
 }
 ```
 
-このメソッドは、`CreateLogoutRequest`メソッドで、`IdentityService`をパラメーターとして、クラス、id トークンを渡すことがアプリケーションの設定から取得します。 アプリケーション設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。 次のコード例は、`CreateLogoutRequest`メソッド。
+このメソッドは、`CreateLogoutRequest`メソッドで、`IdentityService`をパラメーターとして、クラス、id トークンを渡すことがアプリケーションの設定から取得します。 アプリケーション設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。 次のコード例は、`CreateLogoutRequest` メソッドを示しています。
 
 ```csharp
-public string CreateLogoutRequest(string token)  
+public string CreateLogoutRequest(string token)  
 {  
-    ...  
-    return string.Format("{0}?id_token_hint={1}&post_logout_redirect_uri={2}",   
-        GlobalSetting.Instance.LogoutEndpoint,  
-        token,  
-        GlobalSetting.Instance.LogoutCallback);  
+    ...  
+    return string.Format("{0}?id_token_hint={1}&post_logout_redirect_uri={2}",   
+        GlobalSetting.Instance.LogoutEndpoint,  
+        token,  
+        GlobalSetting.Instance.LogoutCallback);  
 }
 ```
 
-このメソッドは、IdentityServer の URI を作成します。[エンドポイントのセッションを終了](https://identityserver4.readthedocs.io/en/release/endpoints/endsession.html#refendsession)、必要なパラメーターを使用します。 エンドポイントのセッションが、 `/connect/endsession` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+このメソッドは、IdentityServer の URI を作成します。[エンドポイントのセッションを終了](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)、必要なパラメーターを使用します。 エンドポイントのセッションが、 `/connect/endsession` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
 返された URI が格納されている、`LoginUrl`のプロパティ、`LoginViewModel`クラス。 中に、`IsLogin`プロパティは`true`、 [ `WebView` ](xref:Xamarin.Forms.WebView)で、`LoginView`を表示します。 `WebView`データ バインド、 [ `Source` ](xref:Xamarin.Forms.WebView.Source)プロパティを`LoginUrl`のプロパティ、`LoginViewModel`クラス、およびサインアウト要求 IdentityServer になるときに、`LoginUrl`プロパティに設定IdentityServer の最後のセッションのエンドポイント。 IdentityServer は、ユーザーがサインインがこの要求を受け取り、サインアウトの処理が発生します。 認証は、ASP.NET Core から cookie 認証ミドルウェアによって管理される cookie で追跡されます。 そのため、IdentityServer からサインアウトは、認証 cookie を削除し、ログアウト後のリダイレクト URI がクライアントに送り返しますを送信します。
 
 モバイル アプリで、 [ `WebView` ](xref:Xamarin.Forms.WebView)ログアウトの後のリダイレクト URI にリダイレクトされます。 これは、`WebView`ナビゲーションが発生、`NavigateAsync`メソッドで、`LoginViewModel`次のコード例に示されているクラスを実行します。
 
 ```csharp
-private async Task NavigateAsync(string url)  
+private async Task NavigateAsync(string url)  
 {  
-    ...  
-    Settings.AuthAccessToken = string.Empty;  
-    Settings.AuthIdToken = string.Empty;  
-    IsLogin = false;  
-    LoginUrl = _identityService.CreateAuthorizationRequest();  
-    ...  
+    ...  
+    Settings.AuthAccessToken = string.Empty;  
+    Settings.AuthIdToken = string.Empty;  
+    IsLogin = false;  
+    LoginUrl = _identityService.CreateAuthorizationRequest();  
+    ...  
 }
 ```
 
-このメソッドは、id トークンとアプリケーションの設定 からアクセス トークンの両方をクリアし、設定、`IsLogin`プロパティを`false`、原因となる、 [ `WebView` ](xref:Xamarin.Forms.WebView)上、`LoginView`ページを非表示になります. 最後に、`LoginUrl`プロパティが、URI の IdentityServer の[承認エンドポイント](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html)、必須のパラメーターを使用して、次回に備えて、ユーザーが開始には、サインインします。
+このメソッドは、id トークンとアプリケーションの設定 からアクセス トークンの両方をクリアし、設定、`IsLogin`プロパティを`false`、原因となる、 [ `WebView` ](xref:Xamarin.Forms.WebView)上、`LoginView`ページを非表示になります。 最後に、`LoginUrl`プロパティが、URI の IdentityServer の[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必須のパラメーターを使用して、次回に備えて、ユーザーが開始には、サインインします。
 
 ページ ナビゲーションの詳細については、次を参照してください。[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)します。 方法については[ `WebView` ](xref:Xamarin.Forms.WebView)ナビゲーションとビュー モデルのメソッドを実行するを参照してください[ビヘイビアーを使用して呼び出すナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)します。 アプリケーションの設定については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
@@ -395,9 +395,9 @@ private async Task NavigateAsync(string url)
 
 ```csharp
 [Authorize]  
-public class BasketController : Controller  
+public class BasketController : Controller  
 {  
-    ...  
+    ...  
 }
 ```
 
@@ -419,16 +419,16 @@ EShopOnContainers のモバイル アプリでは、id マイクロ サービス
 IdentityServer による承認を実行するには、web アプリケーションの HTTP 要求パイプラインにその承認ミドルウェアを追加する必要があります。 ミドルウェアが追加された、`ConfigureAuth`メソッドで、web アプリケーションの`Startup`クラスから呼び出される、`Configure`メソッド、eShopOnContainers 参照アプリケーションから次のコード例に示すよう。
 
 ```csharp
-protected virtual void ConfigureAuth(IApplicationBuilder app)  
+protected virtual void ConfigureAuth(IApplicationBuilder app)  
 {  
-    var identityUrl = Configuration.GetValue<string>("IdentityUrl");  
-    app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions  
-    {  
-        Authority = identityUrl.ToString(),  
-        ScopeName = "basket",  
-        RequireHttpsMetadata = false  
-    });  
-} 
+    var identityUrl = Configuration.GetValue<string>("IdentityUrl");  
+    app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions  
+    {  
+        Authority = identityUrl.ToString(),  
+        ScopeName = "basket",  
+        RequireHttpsMetadata = false  
+    });  
+} 
 ```
 
 このメソッドにより、API は有効なアクセス トークンを使用してのみアクセスできます。 ミドルウェアは、信頼された発行者から送信されることを確認する受信トークンを検証し、トークンが受信する API で使用するは無効であることを検証します。 そのため、順序付けまたはバスケット コント ローラーへの参照には、401 (未承認) HTTP ステータス コードをアクセス トークンが必要であることを示すは返します。
@@ -441,8 +441,8 @@ protected virtual void ConfigureAuth(IApplicationBuilder app)
 次のコード例に示すように、要求するときに、順序付けと basket マイクロ サービス、アクセス トークンで、認証プロセス中、IdentityServer から取得したが、要求に含める必要があります。
 
 ```csharp
-var authToken = Settings.AuthAccessToken;  
-Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), authToken);
+var authToken = Settings.AuthAccessToken;  
+Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), authToken);
 ```
 
 アクセス トークンをプラットフォーム固有のストレージから取得されへの呼び出しに含まれてし、アプリケーション設定として格納されます、`GetOrderAsync`メソッドで、`OrderService`クラス。
@@ -450,12 +450,12 @@ Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), a
 同様に、アクセス トークンにする必要が含まれる API、IdentityServer は、データを送信する保護されている場合、次のコード例に示すように。
 
 ```csharp
-var authToken = Settings.AuthAccessToken;  
-await _basketService.UpdateBasketAsync(new CustomerBasket  
+var authToken = Settings.AuthAccessToken;  
+await _basketService.UpdateBasketAsync(new CustomerBasket  
 {  
-    BuyerId = userInfo.UserId,   
-    Items = BasketItems.ToList()  
-}, authToken);
+    BuyerId = userInfo.UserId,   
+    Items = BasketItems.ToList()  
+}, authToken);
 ```
 
 アクセス トークンがプラットフォーム固有の記憶域から取得されへの呼び出しに含まれる、`UpdateBasketAsync`メソッドで、`BasketService`クラス。
@@ -463,7 +463,7 @@ await _basketService.UpdateBasketAsync(new CustomerBasket
 `RequestProvider`クラス、eShopOnContainers のモバイル アプリでは使用して、 `HttpClient` eShopOnContainers 参照アプリケーションによって公開される RESTful Api に要求を行うクラス。 順序付けとバスケット、承認を必要とする Api に要求を行う場合、有効なアクセス トークンが要求に含まれる場合があります。 ヘッダーにアクセス トークンを追加することでこれは、`HttpClient`の次のコード例に示すように、インスタンスします。
 
 ```csharp
-httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 ```
 
 `DefaultRequestHeaders`のプロパティ、`HttpClient`クラスは、各要求と一緒に送信されるヘッダーを公開し、アクセス トークンに追加されます、`Authorization`ヘッダー文字列で始まる`Bearer`します。 値、RESTful API に要求が送信されると、`Authorization`ヘッダーが抽出され、信頼された発行者から送信されたことと、ユーザーが API を呼び出す権限を持っているかどうかを判断するために使用を受け取ることを確認するために検証します。

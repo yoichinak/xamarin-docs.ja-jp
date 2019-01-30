@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 369e1a37cc75bb4d10cc71d8f79ed1dd473378ba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119437"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55234031"
 ---
 # <a name="binding-types-reference-guide"></a>バインドの種類のリファレンス ガイド
 
@@ -114,7 +114,7 @@ public delegate bool UIScrollViewCondition (UIScrollView scrollView);
 
 バインディング ジェネレーターは、イベントとなどのクラスをリンクしているプロパティの生成をサポート`UIScrollView`でその`UIScrollViewDelegate`(もこれらのモデル クラス) を呼び出すこれは、注釈を付けることで、 [ `[BaseType]` ](#BaseTypeAttribute)定義を`Events`と`Delegates`パラメーター (後述)。 注釈を付けるだけでなく、 [ `[BaseType]` ](#BaseTypeAttribute)これらのパラメーターでは詳細のいくつかのコンポーネントのジェネレーターを通知するために必要です。
 
-1 つ以上のパラメーターを受け取るイベント (Objective C で、規則は、デリゲート クラスの最初のパラメーターは、送信元オブジェクトのインスタンスを)、生成されたの希望する名前を指定する必要があります`EventArgs`クラスを作成できます。 これは、 [ `[EventArgs]` ](#EventArgsAttribute)モデル クラス内のメソッド宣言の属性。 例えば:
+1 つ以上のパラメーターを受け取るイベント (Objective C で、規則は、デリゲート クラスの最初のパラメーターは、送信元オブジェクトのインスタンスを)、生成されたの希望する名前を指定する必要があります`EventArgs`クラスを作成できます。 これは、 [ `[EventArgs]` ](#EventArgsAttribute)モデル クラス内のメソッド宣言の属性。 例:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -299,7 +299,7 @@ interface FooObject_Extensions {
 }
 ```
 
-これが正しくないためにを使用する、`BoolMethod`拡張機能のインスタンスを必要`FooObject`、ObjC をバインドしているが、**静的**拡張機能では、これは方法のための副作用C#拡張メソッドが実装されています.
+これが正しくないためにを使用する、`BoolMethod`拡張機能のインスタンスを必要`FooObject`、ObjC をバインドしているが、**静的**拡張機能では、これは方法のための副作用C#拡張メソッドが実装されています。
 
 上記の定義を使用する唯一の方法は、厄介次のコードでは。
 
@@ -327,7 +327,7 @@ interface FooObject {
 
 静的クラスから派生していない 1 つが生成されますだけこの属性がクラスに適用される`NSObject`であり、 [ `[BaseType]` ](#BaseTypeAttribute)属性は無視されます。 静的クラスは、ホストに公開する C のパブリック変数に使用されます。
 
-例えば:
+例:
 
 ```csharp
 [Static]
@@ -503,7 +503,7 @@ public Func<NSAnimation, float, float> ComputeAnimationCurve { get; set; }
 
 1 つ以上のパラメーターを受け取るイベント (Objective C で、規則はデリゲート クラスの最初のパラメーターが送信元オブジェクトのインスタンス) に生成された EventArgs クラスの名前を指定する必要があります。 これは、`[EventArgs]`メソッド宣言で属性、`Model`クラス。
 
-例えば:
+例:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -795,7 +795,7 @@ interface NSUrlSession {
 
 装飾できるは、(戻り値) のメソッド、パラメーターおよびプロパティを`BindAs`します。 唯一の制限は、メンバー**は許可されません**内に、`[Protocol]`または[ `[Model]` ](#ModelAttribute)インターフェイス。
 
-例えば:
+例:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -906,7 +906,7 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 メソッドやプロパティの効果に使用される場合、`[Bind]`属性は、指定されたセレクターが呼び出すメソッドを生成します。 その結果、生成されたメソッドが修飾されていないが、 [ `[Export]` ](#ExportAttribute)属性には、メソッドのオーバーライドで参加できるしないことを意味します。 これは通常と組み合わせて使用、 `[Target]` Objective C の拡張メソッドを実装するための属性。
 
-例えば:
+例:
 
 ```csharp
 public interface UIView {
@@ -918,7 +918,7 @@ public interface UIView {
 Get アクセス操作子または set アクセス操作子を使用すると、`[Bind]`プロパティの getter および setter OBJECTIVE-C セレクター名を生成するときに、コード ジェネレーターによって推論される既定の設定を変更する属性を使用します。 名前のプロパティのフラグを設定すると、既定で`fooBar`、ジェネレーターを生成、 `fooBar` getter のエクスポートと`setFooBar:`setter 用。 いくつかの場合、OBJECTIVE-C に従わないこの規則、get アクセス操作子の名前を変更、通常は`isFooBar`します。
 この属性は、このジェネレーターの通知に使用されます。
 
-例えば:
+例:
 
 ```csharp
 // Default behavior
@@ -1017,7 +1017,7 @@ C: の目的でこのような 2 つのプロパティを次に示します
 
 以降、`Dispose`メソッドはによって自動的に生成、`bmac-native`と`btouch-native`ツールを使用する必要があります、`[Dispose]`に生成されたコードを挿入する属性`Dispose`メソッドの実装。
 
-例えば:
+例:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1106,7 +1106,7 @@ interface CameraEffects {
 
 通常メソッドまたはプロパティがこの属性を使用して非表示にはメソッドまたはプロパティにし、別の名前を指定のバインディングを設計するとき、C#補完的なサポート ファイルを公開する厳密に型指定されたラッパーを追加すると、基になる機能です。
 
-例えば:
+例:
 
 ```csharp
 [Internal]
@@ -1159,7 +1159,7 @@ public NSObject this [NSObject idx] {
 
 通知ペイロードが保持されていませんで引数を指定せず、この属性を使用できますかを指定できます、 `System.Type` "EventArgs"で終わる名前を持つ API の定義で別のインターフェイスを通常参照します。 ジェネレーターに変換されます、インターフェイス、クラスをサブクラスとして持つ`EventArgs`されすべてのプロパティがそこに一覧が表示されます。 [ `[Export]` ](#ExportAttribute)で属性を使用する必要があります、 `EventArgs` Objective C ディクショナリの値をフェッチする検索に使用するキーの名前を一覧表示するクラス。
 
-例えば:
+例:
 
 ```csharp
 interface MyClass {
@@ -1181,7 +1181,7 @@ public class MyClass {
 }
 ```
 
-コードのユーザーにポストされた通知を簡単にサブスクライブできますし、 [NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/)このようなコードを使用しています。
+コードのユーザーにポストされた通知を簡単にサブスクライブできますし、 [NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter)このようなコードを使用しています。
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -1203,7 +1203,7 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 token.Dispose ();
 ```
 
-呼び出すか、または[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject//)トークンに渡します。 通知にパラメーターが含まれている場合は、ヘルパーを指定する必要があります`EventArgs`インターフェイスは、次のようにします。
+呼び出すか、または[NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))トークンに渡します。 通知にパラメーターが含まれている場合は、ヘルパーを指定する必要があります`EventArgs`インターフェイスは、次のようにします。
 
 ```csharp
 interface MyClass {
@@ -1226,7 +1226,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-上記が生成されます、`MyScreenChangedEventArgs`クラス、`ScreenX`と`ScreenY`からデータをフェッチするプロパティ、 [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)ディクショナリのキーを使用して`ScreenXKey`と`ScreenYKey`それぞれ適切な変換を適用します。 `[ProbePresence]`プローブ、キーが設定されている場合に、ジェネレーターに属性を使用、`UserInfo`値を抽出しようとしています。 代わりにします。 これは、キーの存在が (通常はブール値) の値である場合に使用されます。
+上記が生成されます、`MyScreenChangedEventArgs`クラス、`ScreenX`と`ScreenY`からデータをフェッチするプロパティ、 [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)ディクショナリのキーを使用して`ScreenXKey`と`ScreenYKey`それぞれ適切な変換を適用します。 `[ProbePresence]`プローブ、キーが設定されている場合に、ジェネレーターに属性を使用、`UserInfo`値を抽出しようとしています。 代わりにします。 これは、キーの存在が (通常はブール値) の値である場合に使用されます。
 
 このようなコードを記述できます。
 
@@ -1273,7 +1273,7 @@ interface MyClass {
 
 バインディング ツールが OBJECTIVE-C に渡す前に割り当てられている値のチェックが生成され、スローするチェックが生成されます参照型がこの属性を持たない場合、`ArgumentNullException`割り当てられた値が場合`null`します。
 
-例えば:
+例:
 
 ```csharp
 // In properties
@@ -1456,7 +1456,7 @@ var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
-別の使用、`[Wrap]`属性は、厳密に型指定されたバージョンのメソッドをサポートします。  例えば:
+別の使用、`[Wrap]`属性は、厳密に型指定されたバージョンのメソッドをサポートします。  例:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1498,7 +1498,7 @@ interface FooExplorer {
 typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-参照してください: [CCallback](#CCallback)します。
+参照:[CCallback](#CCallback)します。
 
 <a name="CCallback" />
 
@@ -1512,7 +1512,7 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 typedef returnType (*SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-参照してください: [BlockCallback](#BlockCallback)します。
+参照:[BlockCallback](#BlockCallback)します。
 
 ### <a name="params"></a>params
 
@@ -1942,19 +1942,19 @@ interface MyBinding {
 
 Xamarin.iOS 8.0 でラップする厳密に型指定されたクラスを簡単に作成するためのサポートが導入`NSDictionaries`します。
 
-使用して常になったときに、 [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)と共に、手動の API のデータ型になったこれを行うにははるかに簡単です。  詳細については、次を参照してください。[厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)します。
+使用して常になったときに、 [DictionaryContainer](xref:Foundation.DictionaryContainer)と共に、手動の API のデータ型になったこれを行うにははるかに簡単です。  詳細については、次を参照してください。[厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)します。
 
 <a name="StrongDictionary" />
 
 ### <a name="strongdictionary"></a>StrongDictionary
 
-インターフェイスにこの属性が適用されると、ジェネレーターでは、クラスから派生するインターフェイスと同じ名前で、生成[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)を厳密に型指定に、インターフェイスで定義されている各プロパティをオンにし、get アクセス操作子およびディクショナリの set アクセス操作子。
+インターフェイスにこの属性が適用されると、ジェネレーターでは、クラスから派生するインターフェイスと同じ名前で、生成[DictionaryContainer](xref:Foundation.DictionaryContainer)を厳密に型指定に、インターフェイスで定義されている各プロパティをオンにし、get アクセス操作子およびディクショナリの set アクセス操作子。
 
 既存のインスタンス化できるクラスを自動的に生成この`NSDictionary`または新規作成されました。
 
 この属性は、1 つのパラメーター ディクショナリの要素へのアクセスに使用されるキーを含むクラスの名前です。   既定では、属性を持つインターフェイス内の各プロパティは「キー」サフィックスが付いた名前の指定した型のメンバーを検索します。
 
-例えば:
+例:
 
 ```csharp
 [StrongDictionary ("MyOptionKeys")]

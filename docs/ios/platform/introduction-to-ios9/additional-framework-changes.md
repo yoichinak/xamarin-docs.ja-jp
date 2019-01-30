@@ -6,12 +6,12 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: bdb401cd9fd3cfa1e33acec1252cfffbd8be3ebd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116642"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233914"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>追加の iOS 9 フレームワークの変更
 
@@ -64,7 +64,7 @@ CloudKit フレームワークでは、アプリケーションの開発に、�
 - [CloudKit のクイック スタート](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple の CloudKit の概要。
 - [CloudKit JS 参照](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359)-Apple の CloudKit JS ドキュメント。
 - [Web サービス参照の CloudKit](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240) -CloudKit の HTTP インターフェイスを記述する Apple の参照。
-- [CloudKit カタログ: An Introduction (Cocoa および JavaScript) CloudKit to](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -CloudKit と CloudKit JS を使用して Apple のサンプル アプリです。
+- [CloudKit カタログ:(Cocoa および JavaScript) CloudKit の概要](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-CloudKit と CloudKit JS を使用して Apple のサンプル アプリです。
 
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
@@ -75,7 +75,7 @@ Apple には、iOS 9 に Foundation フレームワークには、次の変更�
 
 ### <a name="changes-to-nsbundle"></a>NSBundle への変更
 
-次の変更を加え、 [NSBundle](https://developer.xamarin.com/api/type/Foundation.NSBundle/) iOS 9 のクラス。
+次の変更を加え、 [NSBundle](xref:Foundation.NSBundle) iOS 9 のクラス。
 
 * `GetPreservationPriorityForTag (NSString tag)` -特定のタグを持つリソースの現在の保持の優先順位を取得します。 有効な値が、範囲内にある`0.0`に`1.0`、優先度の低いリソースが最初に削除されます。
 * `SetPreservationPriorityForTag (double priority, NSSet tags)` -特定のタグによるリソースの現在の保持の優先順位を設定します。 有効な値が、範囲内にある`0.0`に`1.0`、優先度の低いリソースが最初に削除されます。
@@ -84,7 +84,7 @@ Apple には、iOS 9 に Foundation フレームワークには、次の変更�
 
 ### <a name="changes-to-nsprocessinfo"></a>NSProcessInfo への変更
 
-IOS デバイスで実行されている各プロセスが 1 つの_プロセス情報エージェント_(PIA)。 使用して、 [NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/) PIA とコントロールの現在の能力と、特定のプロセスの温度管理に関する情報を提供するクラス。
+IOS デバイスで実行されている各プロセスが 1 つの_プロセス情報エージェント_(PIA)。 使用して、 [NSProcessInfo](xref:Foundation.NSProcessInfo) PIA とコントロールの現在の能力と、特定のプロセスの温度管理に関する情報を提供するクラス。
 
 たとえば、プロセスの自動終了を制御するには、次のコードを使用することができます。
 
@@ -103,7 +103,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>省電力モードへの対応
 
-使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/)クラスで、アプリが実行されている iOS デバイスで、低電力モードが有効にされているかどうかを決定します。 例えば:
+使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](xref:Foundation.NSProcessInfo)クラスで、アプリが実行されている iOS デバイスで、低電力モードが有効にされているかどうかを決定します。 例:
 
 ```csharp
 // Is the device in low power mode?
@@ -175,7 +175,7 @@ Apple には、次の変更が含まれている、 [Safari サービス](https:
 
 - 使用できるように、新しい[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) Xamarin.iOS アプリ内で web コンテンツを表示するクラス。 Safari のアプリと web サイト データと cookie を共有する機能を提供し、いくつかのリーダーとオートコンプリート) などの Safari の機能が含まれています。 [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)機能、**完了**web コンテンツの表示が完了したら、アプリにユーザーが戻るボタン。
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)テーラード フィット クラスの 1 つの web コンテンツのページを表示する、いずれかを置換するために使用する必要があります[WKWebKit](https://developer.xamarin.com/api/type/WebKit.WKWebView/)または[UIWebView](https://developer.xamarin.com/api/type/UIKit.UIWebView/)、既存の Xamarin.iOS アプリ内のコントロール。
+[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)テーラード フィット クラスの 1 つの web コンテンツのページを表示する、いずれかを置換するために使用する必要があります[WKWebKit](xref:WebKit.WKWebView)または[UIWebView](xref:UIKit.UIWebView)、既存の Xamarin.iOS アプリ内のコントロール。
 
 ### <a name="displaying-a-website"></a>Web サイトを表示します。
 
@@ -191,7 +191,7 @@ PresentViewController(controller, true, null);
 
 ## <a name="uikit-framework-changes"></a>UIKit フレームワークの変更
 
-Apple での複数の要素に多くの機能強化が含まれている、 [UIKit](https://developer.xamarin.com/api/namespace/UIKit/) ios 9 フレームワーク。 次のセクションでは、これらの変更について詳しく説明します。
+Apple での複数の要素に多くの機能強化が含まれている、 [UIKit](xref:UIKit) ios 9 フレームワーク。 次のセクションでは、これらの変更について詳しく説明します。
 
 ### <a name="3d-touch-events"></a>3D タッチ イベント
 
@@ -203,7 +203,7 @@ IOS 9 と iPhone 6 s および iPhone 6 s 新しい 3D Touch さらに、iOS ア
 
 ### <a name="document-open-in-place-functionality"></a>ドキュメントを開くインプレース機能
 
-いずれかを使用して、`FinishedLaunching (application, launchOptions)`または`WillFinishLaunching (Application, launchOptions)`のメソッド、 [UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)クラス、ドキュメントを開くしてインプレース (作業コピー) ではなく変更することができますようになりました。
+いずれかを使用して、`FinishedLaunching (application, launchOptions)`または`WillFinishLaunching (Application, launchOptions)`のメソッド、 [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)クラス、ドキュメントを開くしてインプレース (作業コピー) ではなく変更することができますようになりました。
 
 新しいオープン インプレース機能をサポートするために追加、 `LSSupportsOpeningDocumentsInPlace` Xamarin.iOS アプリのキー **Info.plist**の値を持つファイル`YES`します。
 
@@ -221,7 +221,7 @@ Apple を参照してください[iOS 用のイベント処理ガイド](https:/
 
 ### <a name="new-layout-anchors"></a>新しいレイアウトのアンカー
 
-新しい`NSLayoutAnchor`と`NSLayoutDimension`レイアウト アンカー クラスの新しいアンカーのプロパティを使用、 [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)クラス (など`LeadingAnchor`と`WidthAnchor`) iOS 9 のレイアウトを容易にします。
+新しい`NSLayoutAnchor`と`NSLayoutDimension`レイアウト アンカー クラスの新しいアンカーのプロパティを使用、 [UIView](xref:UIKit.UIView)クラス (など`LeadingAnchor`と`WidthAnchor`) iOS 9 のレイアウトを容易にします。
 
 参照してください、 [Unified ストーリー ボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)オートとサイズ クラスで Xamarin.iOS アプリと Apple の操作の詳細についてはドキュメント[NSLayoutAnchor 参照](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)、 [NSLayoutDimension 参照](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)と[UIView 参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)詳細についてはします。
 
@@ -231,11 +231,11 @@ Apple を参照してください[iOS 用のイベント処理ガイド](https:/
 
 ### <a name="text-input-in-notifications-modifications"></a>変更の通知のテキスト入力
 
-[UIUserNotificationAction](https://developer.xamarin.com/api/type/UIKit.UIUserNotificationAction/)クラスには、新しい`Behavior`通知からのテキスト入力をサポートするために使用できるプロパティです。
+[UIUserNotificationAction](xref:UIKit.UIUserNotificationAction)クラスには、新しい`Behavior`通知からのテキスト入力をサポートするために使用できるプロパティです。
 
 ### <a name="uiapplicationdelegate-changes"></a>UIApplicationDelegate 変更
 
-すべての呼び出しを置き換える提案、Apple によっていない正式に非推奨、中に、`FinishedLaunching (UIApplication application)`のメソッド、 [UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)クラスを`FinishedLaunching (UIApplication application, NSDictionary launchOptions)`または`WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`メソッド。
+すべての呼び出しを置き換える提案、Apple によっていない正式に非推奨、中に、`FinishedLaunching (UIApplication application)`のメソッド、 [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)クラスを`FinishedLaunching (UIApplication application, NSDictionary launchOptions)`または`WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`メソッド。
 
 Apple を参照してください[UIApplicationDelegate 参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate)の詳細。
 
@@ -251,7 +251,7 @@ Apple を参照してください[UIAttachment 参照](https://developer.apple.c
 
 ### <a name="uipickerview-and-uidatepicker-changes"></a>UIPickerView と UIDatePicker の変更
 
-IOS 9 の前に、 [UIPickerView](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)と[UIDatePicker](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)コントロール、サイズを変更され、(通常は、幅、アプリが iOS デバイスのコンテナーの幅に合わせて自動的にサイズを変更実行されている)。
+IOS 9 の前に、 [UIPickerView](xref:UIKit.UIPickerView)と[UIDatePicker](xref:UIKit.UIDatePicker)コントロール、サイズを変更され、(通常は、幅、アプリが iOS デバイスのコンテナーの幅に合わせて自動的にサイズを変更実行されている)。
 
 Ios 9 でこの自動サイズ変更が発生しないことと、コントロールを画面のサイズと向きに関係なく、すべての iOS デバイスで 320 のポイントの幅にレンダリングされます。
 
