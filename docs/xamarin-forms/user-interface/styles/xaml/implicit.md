@@ -6,13 +6,13 @@ ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: c30e6c0060407720e0324a3327607100db3960d6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 01/30/2019
+ms.openlocfilehash: 67b8bac62cacb091323d084e1c7cec9accc30844
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056150"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291974"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>Xamarin.Forms での暗黙的なスタイル
 
@@ -20,7 +20,7 @@ ms.locfileid: "53056150"
 
 _暗黙的なスタイルは、いずれかのスタイルを参照するには、各コントロールを必要とせずに同じの TargetType のすべてのコントロールによって使用されます。_
 
-## <a name="creating-an-implicit-style-in-xaml"></a>XAML での暗黙的なスタイルの作成
+## <a name="create-an-implicit-style-in-xaml"></a>XAML での暗黙的なスタイルを作成します。
 
 宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)ページ レベル、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページと、1 つ以上を追加する必要があります`Style`に宣言を含めることができます、`ResourceDictionary`します。 A`Style`される*暗黙的な*されませんを指定して、`x:Key`属性。 一致するビジュアル要素に適用されるスタイル、`TargetType`正確から派生した要素へ、`TargetType`値。
 
@@ -57,7 +57,7 @@ _暗黙的なスタイルは、いずれかのスタイルを参照するには�
 
 さらに、4 番目[ `Entry` ](xref:Xamarin.Forms.Entry)オーバーライド、 [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)と[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)異なるする暗黙的なスタイルのプロパティ`Color`値。
 
-### <a name="creating-an-implicit-style-at-the-control-level"></a>コントロールでの暗黙的なスタイルを作成するレベル
+### <a name="create-an-implicit-style-at-the-control-level"></a>コントロールのレベルで暗黙的なスタイルを作成します。
 
 作成するだけでなく*暗黙的な*ページ レベルでスタイルを作成することも制御レベルでは、次のコード例に示すようにします。
 
@@ -84,7 +84,7 @@ _暗黙的なスタイルは、いずれかのスタイルを参照するには�
 
 アプリケーションのスタイルを作成する方法について[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を参照してください[グローバル スタイル](~/xamarin-forms/user-interface/styles/application.md)します。
 
-## <a name="creating-an-implicit-style-in-c35"></a>C での暗黙的なスタイルの作成&#35;
+## <a name="create-an-implicit-style-in-c35"></a>C での暗黙的なスタイルを作成します。&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) ページのインスタンスを追加することができます[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)新しいを作成して c# でのコレクション[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、追加してから、`Style`インスタンスを`ResourceDictionary`ように、次のコード例:
 
@@ -119,11 +119,40 @@ public class ImplicitStylesPageCS : ContentPage
 
 コンス トラクターは、1 つを定義します。*暗黙的な*をページの適用されるスタイル[ `Entry` ](xref:Xamarin.Forms.Entry)インスタンス。 `Style`も他の外観のオプションの設定中に、黄色の背景に青色のテキストを表示するために使用します。 `Style`をページの追加は[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を指定せず、`key`文字列。 そのため、`Style`すべてに適用される、`Entry`に合うように暗黙的にインスタンス、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)のプロパティ、`Style`正確にします。 ただし、`Style`に適用されない、`CustomEntry`インスタンスの場合、サブクラス化された`Entry`します。
 
-## <a name="summary"></a>まとめ
+## <a name="apply-a-style-to-derived-types"></a>派生型にスタイルを適用します。
 
-*暗黙的な*スタイルは、同一のすべてのビジュアル要素で使用される 1 つ[ `TargetType`](xref:Xamarin.Forms.Style.TargetType)スタイルを参照するには、各コントロールを必要とせずします。 A`Style`される*暗黙的な*されませんを指定して、`x:Key`属性。 代わりに、`x:Key`属性の値を自動的に、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティ。
+[ `Style.ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティによって参照される基本型から派生したコントロールに適用されるスタイルを使用する、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティ。 そのため、このプロパティを設定`true`型がで指定された基本型から派生されている複数の種類を対象とする 1 つのスタイルを有効、`TargetType`プロパティ。
 
+次の例では、暗黙的なスタイルの背景色を設定する[ `Button` ](xref:Xamarin.Forms.Button)赤インスタンス。
 
+```xaml
+<Style TargetType="Button"
+       ApplyToDerivedTypes="True">
+    <Setter Property="BackgroundColor"
+            Value="Red" />
+</Style>
+```
+
+ページごとにこのスタイルを配置する[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)すべてに適用されていることになります[ `Button` ](xref:Xamarin.Forms.Button)インスタンスページで、またから派生したコントロールに`Button`します。 ただし場合、 [ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティが設定を解除したまま、スタイルのみに適用される`Button`インスタンス。
+
+同等の c# コードに示します。
+
+```csharp
+var buttonStyle = new Style(typeof(Button))
+{
+    ApplyToDerivedTypes = true,
+    Setters =
+    {
+        new Setter
+        {
+            Property = VisualElement.BackgroundColorProperty,
+            Value = Color.Red
+        }
+    }
+};
+
+Resources = new ResourceDictionary { buttonStyle };
+```
 
 ## <a name="related-links"></a>関連リンク
 
