@@ -1,19 +1,19 @@
 ---
-title: パート 4 - 複数のプラットフォームを処理します。
+title: パート 4 - 複数のプラットフォームを処理する
 description: このドキュメントでは、プラットフォームや機能に基づくアプリケーションの相違を処理する方法について説明します。 これは、画面サイズ、ナビゲーションのメタファ、タッチとジェスチャ、プッシュ通知、およびリストやタブなどのインターフェイスのパラダイムについて説明します。
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ef224b7410565ae15da7613c04d11e7bd6a44dcb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f4558d5172d7dcbd2e14e6b74a347dd2f1e3a234
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117942"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292130"
 ---
-# <a name="part-4---dealing-with-multiple-platforms"></a>パート 4 - 複数のプラットフォームを処理します。
+# <a name="part-4---dealing-with-multiple-platforms"></a>パート 4 - 複数のプラットフォームを処理する
 
 ## <a name="handling-platform-divergence-amp-features"></a>処理プラットフォーム ダイバージェンス&amp;機能
 
@@ -95,7 +95,7 @@ ms.locfileid: "50117942"
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-参照してください、 [Xamarin.Forms](~/xamarin-forms/get-started/index.md)ドキュメント。
+参照してください、 [Xamarin.Forms](~/get-started/index.md)ドキュメント。
 
 ### <a name="other-cross-platform-libraries"></a>その他のクロス プラットフォーム ライブラリ
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 0f39eb78d46b6156231a165f950f4698e63fc073
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bd6013a0fc1d4f3dfc2d863860052310fed55e4d
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055742"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292143"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
-XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。 Xamarin.Forms のプログラムでは、XAML が必要なことはありませんが、方が簡潔なと同等のコードより視覚的に一貫性のある使いやすい可能性があります。 XAML、MVVM (モデル-ビュー-ビューモデル) アプリケーションの一般的なアーキテクチャで使用するため特に適しています。 XAML は、XAML ベースのデータ バインディングによって、ビューモデルのコードにリンクされているビューを定義します。
+XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。 Xamarin.Forms のプログラムでは、XAML が必要なことはありませんが、方が簡潔なと同等のコードより視覚的に一貫性のある使いやすい可能性があります。 XAML は、一般的な MVVM (モデル-ビュー-ビューモデル) アプリケーションのアーキテクチャで使用するため特に適しています。XAML では、XAML ベースのデータ バインディングによって、ビューモデルのコードにリンクされているビューを定義します。
 
 ## <a name="xaml-basics-contents"></a>XAML の基礎の内容
 
@@ -101,17 +101,12 @@ XAML は、XML では基本的に XAML が固有の構文の一部の機能で�
 
 ## <a name="requirements"></a>必要条件
 
-この記事では、Xamarin.Forms を熟知して作業を想定しています。 読み取り[An Introduction to Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)強くお勧めします。
-
-この記事には、いくつかの XML 名前空間の宣言、および用語を使用する方法を含む XML に関する知識も前提としています*要素*、*タグ*、および*属性*します。
+この記事では、Xamarin.Forms を熟知して作業を想定しています。 この記事には、いくつかの XML 名前空間の宣言、および用語を使用する方法を含む XML に関する知識も前提としています*要素*、*タグ*、および*属性*します。
 
 Xamarin.Forms と XML について理解したら、読み取りを開始[第 1 部です。XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [Xamarin.Forms の概要](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Mobile Apps のブックを作成します。](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)

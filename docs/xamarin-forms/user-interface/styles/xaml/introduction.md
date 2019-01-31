@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8f84c960f17f56fce2a1bba143a215ce930f6f4e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 6f5af5fde46676cf669e6c02fb83f4aac5d31c46
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996111"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292091"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms のスタイルの概要
 
@@ -45,7 +45,7 @@ Xamarin.Forms アプリケーションには、複数のコントロール同一
 </ContentPage>
 ```
 
-次のコード例では、c# で作成した同等のページを示します。
+次に示すのは、C# で作成された同等のページのコード例です。
 
 ```csharp
 public class NoStylesPageCS : ContentPage
@@ -82,13 +82,13 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-各[ `Label` ](xref:Xamarin.Forms.Label)インスタンスが同じプロパティ値によって表示されるテキストの外観を制御するため、`Label`します。 次のスクリーン ショットに示すように外観が発生します。
+各[ `Label` ](xref:Xamarin.Forms.Label)インスタンスが同じプロパティ値によって表示されるテキストの外観を制御するため、`Label`します。 これで、次のスクリーンショットのような結果になります。
 
 [![](introduction-images/no-styles.png "ラベルの外観のスタイルなし")](introduction-images/no-styles-large.png#lightbox "外観のスタイルなしのラベル")
 
 個々 のコントロールの外観の設定は繰り返し発生することがあります、エラーが発生します。 代わりに、スタイルを作成できる外観を定義し、必要なコントロールに適用されます。
 
-## <a name="creating-a-style"></a>スタイルを作成します。
+## <a name="create-a-style"></a>スタイルの作成
 
 [ `Style` ](xref:Xamarin.Forms.Style)クラスにグループ化し、複数のビジュアル要素のインスタンスに適用できる 1 つのオブジェクトにプロパティ値のコレクション。 これで、繰り返しのマークアップを削減し、アプリケーションの外観を変更するより簡単にできます。
 
@@ -97,7 +97,7 @@ public class NoStylesPageCS : ContentPage
 - [`Style`](xref:Xamarin.Forms.Style) XAML で作成されたインスタンスが通常で定義されている、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)に割り当てられている、 [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) 、コントロールのコレクションページで、または、 [ `Resources` ](xref:Xamarin.Forms.Application.Resources) 、アプリケーションのコレクション。
 - [`Style`](xref:Xamarin.Forms.Style) ページのクラス、またはグローバルにアクセスできるクラスで、c# で作成されたインスタンスが通常定義されます。
 
-定義する場所を選択する、 [ `Style` ](xref:Xamarin.Forms.Style)に及ぼす影響を使用できます。
+[`Style`](xref:Xamarin.Forms.Style) を定義する場所の選択は、使用できる場所に影響があります。
 
 - [`Style`](xref:Xamarin.Forms.Style) コントロールのレベルで定義されているインスタンスは、コントロールとその子にのみ適用できます。
 - [`Style`](xref:Xamarin.Forms.Style) ページ レベルで定義されているインスタンスは、ページとその子にのみ適用できます。
@@ -126,7 +126,7 @@ public class NoStylesPageCS : ContentPage
 <Label Text="Demonstrating an explicit style" Style="{StaticResource labelStyle}" />
 ```
 
-スタイルのビュー階層の下位には、アップ以上定義されているものよりも優先されます。 設定など、 [ `Style` ](xref:Xamarin.Forms.Style)設定[ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor)に`Red`アプリケーションでレベルを設定ページのレベルのスタイルによってオーバーライドされます`Label.TextColor`に`Green`. 同様に、ページ レベルのスタイルはコントロールのレベルのスタイルによってオーバーライドされます。 さらに場合、`Label.TextColor`が直接コントロール プロパティをこれよりも優先任意のスタイルを設定します。
+スタイルのビュー階層の下位には、アップ以上定義されているものよりも優先されます。 設定など、 [ `Style` ](xref:Xamarin.Forms.Style)設定[ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor)に`Red`アプリケーションでレベルを設定 ページのレベルのスタイルによってオーバーライドされます`Label.TextColor`に`Green`. 同様に、ページ レベルのスタイルはコントロールのレベルのスタイルによってオーバーライドされます。 さらに場合、`Label.TextColor`が直接コントロール プロパティをこれよりも優先任意のスタイルを設定します。
 
 このセクションの記事に説明し、作成して適用する方法について説明します*明示的な*と*暗黙的な*スタイル、スタイルの継承、グローバルなスタイルを作成する方法、実行時にスタイルの変更に応答する方法Xamarin.Forms で含まれている組み込みのスタイルを使用する方法とします。
 
@@ -134,11 +134,6 @@ public class NoStylesPageCS : ContentPage
 > **StyleId とは何ですか。**
 >
 > Xamarin.Forms 2.2 では、前に、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティは、UI テスト、およびテーマ エンジン Pixate などの識別用のアプリケーションの個々 の要素を識別するために使用されました。 ただし、Xamarin.Forms 2.2 が導入された、 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)は置き換えられて、プロパティ、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティ。 詳細については、次を参照してください。 [Xamarin.UITest と Test Cloud による Xamarin.Forms の自動化テスト](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md)します。
-
-## <a name="summary"></a>まとめ
-
-Xamarin.Forms アプリケーションには、複数のコントロール同一の外観を持つには多くの場合が含まれます。 個々 のコントロールの外観の設定は繰り返し発生することがあります、エラーが発生します。 代わりに、スタイルを作成できますコントロールの外観をカスタマイズしてグループ化とコントロールの種類に使用できる設定プロパティ。
-
 
 ## <a name="related-links"></a>関連リンク
 

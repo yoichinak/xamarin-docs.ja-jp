@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 05ec368fb0dd0e1adfac3eed88c5ddd50960f9ae
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056585"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291948"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>Xamarin.Forms でスタイル継承
 
@@ -154,11 +154,6 @@ public class StyleInheritancePageCS : ContentPage
 ```
 
 `baseStyle`ターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、および設定、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティ。 `baseStyle`がコントロール上で直接設定されていません。 代わりに、`labelStyle`と`buttonStyle`バインド可能な追加のプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`に適用される、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンスと[ `Button` ](xref:Xamarin.Forms.Button)を設定して、インスタンス、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティ。
-
-## <a name="summary"></a>まとめ
-
-スタイルは、重複を削減し、再利用を有効にするには、その他のスタイルを継承できます。 スタイルの継承を設定して実行、 [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)プロパティを既存[ `Style`](xref:Xamarin.Forms.Style)します。
-
 
 ## <a name="related-links"></a>関連リンク
 

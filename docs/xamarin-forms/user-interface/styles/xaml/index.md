@@ -6,13 +6,13 @@ ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: 2607298bdc0842f60a1d1a3299bed61bbea925a1
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.date: 01/30/2019
+ms.openlocfilehash: ec41955ac15ab23579a5e63b9e17eed61a74e86f
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459864"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291987"
 ---
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>XAML スタイルを使用して Xamarin.Forms アプリのスタイル設定
 
@@ -43,3 +43,7 @@ Xamarin.Forms アプリケーションには、複数のコントロール同一
 ## <a name="device-stylesdevicemd"></a>[デバイスのスタイル](device.md)
 
 Xamarin.Forms には、6 が含まれます*動的*と呼ばれるスタイル*デバイス*スタイル設定で、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。 6 つのすべてのスタイルを適用できる[ `Label` ](xref:Xamarin.Forms.Label)インスタンスのみです。
+
+## <a name="style-classesstyle-classmd"></a>[スタイル クラス](style-class.md)
+
+Xamarin.Forms のスタイル クラスには、スタイルの継承を使用しなくても、コントロールに適用する複数のスタイルが有効にします。
