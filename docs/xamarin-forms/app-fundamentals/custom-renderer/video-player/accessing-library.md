@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2754e135bee090ce47796dfa1ae39eed2b5f27c5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059588"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233511"
 ---
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
 
@@ -40,7 +40,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-video-picker"></a>iOS ビデオ ピッカー
 
-iOS `VideoPicker` では、iOS [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) を使用して、iOS `MediaType` プロパティでアクセスをビデオ (「ムービー」と呼ばれる) に制限することを指定し、イメージ ライブラリにアクセスします。 `VideoPicker` は、明示的に `IVideoPicker` インターフェイスを実装することに注意してください。 また、このクラスを依存関係サービスとして識別する `Dependency` 属性にも注意してください。 これらは、Xamarin.Forms でプラットフォーム プロジェクト内の依存関係サービスを検出できるようにするための 2 つの要件です。
+iOS `VideoPicker` では、iOS [`UIImagePickerController`](xref:UIKit.UIImagePickerController) を使用して、iOS `MediaType` プロパティでアクセスをビデオ (「ムービー」と呼ばれる) に制限することを指定し、イメージ ライブラリにアクセスします。 `VideoPicker` は、明示的に `IVideoPicker` インターフェイスを実装することに注意してください。 また、このクラスを依存関係サービスとして識別する `Dependency` 属性にも注意してください。 これらは、Xamarin.Forms でプラットフォーム プロジェクト内の依存関係サービスを検出できるようにするための 2 つの要件です。
 
 ```csharp
 using System;

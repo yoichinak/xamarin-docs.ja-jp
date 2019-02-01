@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 667c98d3140d460a6d4b3a26bd898f4c169d6d85
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 04f92988d4d367abd5e6e864d4450aee2e6c1df2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234883"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233797"
 ---
 # <a name="linking-xamarinios-apps"></a>Xamarin.iOS アプリをリンクする
 
@@ -147,7 +147,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 これは通常、ユーザーが自分のコードに `[Preserve]` 属性を手動で追加することを望まない場合に選択されます。  副作用は、サードパーティ ライブラリがリンクされないということです。サードパーティ ライブラリがリンカーにとって使い勝手がよいかどうかはわからないため、一般的にこれは初期設定として適切です。
 
-プロジェクトにライブラリがある場合、あるいは再利用可能なライブラリを開発するとき、アセンブリをリンク可能としてリンカーに処理させる場合、必要な作業は次のようにアセンブリレベルの属性 [`LinkerSafe`](https://developer.xamarin.com/api/type/Foundation.LinkerSafeAttribute/) を追加することだけです。
+プロジェクトにライブラリがある場合、あるいは再利用可能なライブラリを開発するとき、アセンブリをリンク可能としてリンカーに処理させる場合、必要な作業は次のようにアセンブリレベルの属性 [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute) を追加することだけです。
 
 ```csharp
 [assembly:LinkerSafe]

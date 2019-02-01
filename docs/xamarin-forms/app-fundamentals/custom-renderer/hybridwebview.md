@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/19/2018
-ms.openlocfilehash: f3b8cf7ec8a42ed031699d8f5e02f32c6eb61458
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 997b3e8a8f847ae08eea7e022e7b3424d0fddd8d
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053868"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233940"
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView の実装
 
@@ -301,19 +301,19 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`HybridWebViewRenderer` クラスによって、`HybridWebView.Uri` プロパティに指定された Web ページがネイティブの [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) コントロールに読み込まれ、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。 ユーザーが名前を入力して HTML `button`要素をクリックすると、`invokeCSharpAction` JavaScript 関数が実行され、Web ページからメッセージが受信された後に `DidReceiveScriptMessage` メソッドが呼び出されます。 さらに、このメソッドによって `HybridWebView.InvokeAction` メソッドが呼び出され、ポップアップを表示する登録済みのアクションが呼び出されます。
+`HybridWebViewRenderer` クラスによって、`HybridWebView.Uri` プロパティに指定された Web ページがネイティブの [`WKWebView`](xref:WebKit.WKWebView) コントロールに読み込まれ、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。 ユーザーが名前を入力して HTML `button`要素をクリックすると、`invokeCSharpAction` JavaScript 関数が実行され、Web ページからメッセージが受信された後に `DidReceiveScriptMessage` メソッドが呼び出されます。 さらに、このメソッドによって `HybridWebView.InvokeAction` メソッドが呼び出され、ポップアップを表示する登録済みのアクションが呼び出されます。
 
 この関数は、次のように実現されます。
 
 - `Control` プロパティが `null` の場合、次の操作が実行されます。
-  - [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) インスタンスが作成され、メッセージの投稿とユーザー スクリプトの Web ページへの挿入が可能になります。
-  - Web ページが読み込まれた後、`invokeCSharpAction` JavaScript 関数を Web ページに挿入する [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) インスタンスが作成されます。
-  - [`WKUserContentController.AddScript`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/) メソッドによって、コンテンツ コントローラーに [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) インスタンスが追加されます。
-  - [`WKUserContentController.AddScriptMessageHandler`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/) メソッドによって、[`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) インスタンスに `invokeAction` というスクリプト メッセージ ハンドラーが追加されます。その結果、`WKUserContentController` インスタンスを使用するすべての Web ビューのすべてのフレームで JavaScript 関数 `window.webkit.messageHandlers.invokeAction.postMessage(data)` が定義されます。
-  - [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) インスタンスがコンテンツ コントローラーとして設定されている [`WKWebViewConfiguration`](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/) インスタンスが作成されます。
-  - [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) コントロールがインスタンス化され、`WKWebView` コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
+  - [`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスが作成され、メッセージの投稿とユーザー スクリプトの Web ページへの挿入が可能になります。
+  - Web ページが読み込まれた後、`invokeCSharpAction` JavaScript 関数を Web ページに挿入する [`WKUserScript`](xref:WebKit.WKUserScript) インスタンスが作成されます。
+  - [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) メソッドによって、コンテンツ コントローラーに [`WKUserScript`](xref:WebKit.WKUserScript) インスタンスが追加されます。
+  - [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) メソッドによって、[`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスに `invokeAction` というスクリプト メッセージ ハンドラーが追加されます。その結果、`WKUserContentController` インスタンスを使用するすべての Web ビューのすべてのフレームで JavaScript 関数 `window.webkit.messageHandlers.invokeAction.postMessage(data)` が定義されます。
+  - [`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスがコンテンツ コントローラーとして設定されている [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration) インスタンスが作成されます。
+  - [`WKWebView`](xref:WebKit.WKWebView) コントロールがインスタンス化され、`WKWebView` コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
 - カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
-  - [`WKWebView.LoadRequest`](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/) メソッドによって、`HybridWebView.Uri` プロパティにより指定されている HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。 Web ページが表示されると、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
+  - [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) メソッドによって、`HybridWebView.Uri` プロパティにより指定されている HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。 Web ページが表示されると、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
 - レンダラーがアタッチされている要素が変更された場合:
   - リソースがリリースされます。
 

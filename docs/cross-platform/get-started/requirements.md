@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 422eb24b86ba14ff4e5362db8aeec5775fab5833
-ms.sourcegitcommit: aa16f267c59725cc88bd84b049544ecfbec297ac
+ms.openlocfilehash: 87c3a189851db66e630095eae31434a590050154
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43263507"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292273"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -78,7 +78,7 @@ macOS 用の最新の Xamarin リリースは、[xamarin.com/download](http://xa
 - [Xamarin.Android](~/android/get-started/installation/index.md)
 - [Xamarin.Mac](~/mac/get-started/installation.md)
 
-[Xamarin.Forms の要件とサポートされているプラットフォーム](~/xamarin-forms/get-started/installation.md)に関する追加情報もあります。
+[Xamarin.Forms の要件とサポートされているプラットフォーム](~/get-started/installation.md)に関する追加情報もあります。
 
 ## <a name="related-links"></a>関連リンク
 
