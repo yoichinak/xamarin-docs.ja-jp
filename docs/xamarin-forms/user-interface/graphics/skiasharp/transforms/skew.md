@@ -78,7 +78,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 変換式は次のとおりです。
 
-x' = x + xSkew 押しy
+x' = x + xSkew · y
 
 y' ySkew 押しを =x + y
 
