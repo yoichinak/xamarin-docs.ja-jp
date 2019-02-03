@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 2de21f19e2789c94c02b5d2e9c13fc06963e1a7f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293319"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668551"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
 
@@ -206,7 +206,7 @@ Resources = new ResourceDictionary
 ![](style-class-images/boxviews.png "BoxViews スタイル クラスのスタイル設定")
 
 > [!IMPORTANT]
-> コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)プロパティの型は`IList<string>`します。
+> コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)プロパティの型は`IList<string>`します。 この場合、一覧の順序の昇順でスタイル クラスが適用されます。 そのため、複数のスタイル クラスでは、同じプロパティを設定するときに最高のリストの位置にあるスタイル クラスでプロパティが優先されます。
 
 同等の c# コードに示します。
 

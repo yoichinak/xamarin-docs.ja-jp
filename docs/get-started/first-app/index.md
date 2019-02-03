@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 09/24/2018
-ms.openlocfilehash: d89488e3f6e42f84fc9519eedaa38c99b90ae068
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 02/02/2019
+ms.openlocfilehash: 8adf52d8e08dedeebae8362cf730e5dc3c7c93a9
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293354"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668564"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリのビルド
 
@@ -25,6 +25,8 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 上記のビデオと共に以下の手順に従います。
 
@@ -40,7 +42,7 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 4. デバッグ ボタン (または **[デバッグ]、[デバッグ開始]** メニュー項目) をクリックして、Android エミュレーターを起動します。
 
-5. **MainPage.xaml** を編集し、`</StackPanel>` の末尾の前にこの XAML を追加します。
+5. **MainPage.xaml** を編集し、`</StackLayout>` の末尾の前にこの XAML を追加します。
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
@@ -71,6 +73,8 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 ## <a name="step-by-step-instructions-for-mac"></a>Mac での手順の詳細
 
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+
 上記のビデオと共に以下の手順に従います。
 
 1. **[ファイル]、[新しいソリューション]** の順に選択するか、**[新しいプロジェクト]** ボタンをクリックし、**[マルチプラットフォーム]、[アプリ]、[空白フォームのアプリ]** の順に選択します。
@@ -87,7 +91,7 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 4. デバッグ ボタン (または **[実行]、[デバッグ開始]**) をクリックして、Android エミュレーターを起動します。
 
-5. **MainPage.xaml** を編集し、`</StackPanel>` の末尾の前にこの XAML を追加します。
+5. **MainPage.xaml** を編集し、`</StackLayout>` の末尾の前にこの XAML を追加します。
 
     ```xaml
     <Button Text="Click Me" Clicked="Handle_Clicked" />
