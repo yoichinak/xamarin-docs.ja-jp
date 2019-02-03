@@ -80,7 +80,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 x' = x + xSkew 押しy
 
-y' ySkew 押しを =x + y
+y' = ySkew · x + y
 
 たとえば、正`xSkew`値に変換された`x'`値が増えるにつれて`y`が増加します。 傾きの原因は何です。
 
