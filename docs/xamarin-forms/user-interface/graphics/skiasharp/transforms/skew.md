@@ -100,9 +100,9 @@ canvas.Translate(-px, -py);
 
 複合変換式は、次のとおりです。
 
-x' = x + xSkew 押し(y – py)
+x' = x + xSkew · (y – py)
 
-y' ySkew 押しを =(x – px) + y
+y' = ySkew · (x – px) + y
 
 場合`ySkew`0 の場合は、次に、`px`値は使用されません。 値が、関連して同様に`ySkew`と`py`します。
 
