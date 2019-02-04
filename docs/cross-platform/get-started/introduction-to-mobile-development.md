@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: cefcc7084b2abab4af61f07ef1f33a4f4c363f69
-ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
+ms.openlocfilehash: 5470a70570a431c1adc3053d9f8f389cec31cf85
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "53815205"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292078"
 ---
 # <a name="introduction-to-mobile-development"></a>モバイル開発の概要
 
@@ -65,13 +65,9 @@ Xamarin アプリケーションは、Xamarin モバイル プロファイルと
 
 これらの .dll には、BCL に加えて、基になる SDK API を C# から直接呼び出せるようにする iOS SDK と Android SDK のほぼすべてに対するラッパーが含まれています。
 
-
-
 ### <a name="application-output"></a>アプリケーションの出力
 
 Xamarin アプリケーションがコンパイルされると、iOS には .app ファイルの、Android には .apk ファイルのアプリケーション パッケージが生成されます。 これらのファイルはプラットフォームの既定の IDE で構築されたアプリケーション パッケージと区別がつかず、まったく同じ方法で展開することができます。
-
-
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -83,22 +79,15 @@ Xamarin のしくみの概要について説明したので、さらに詳しい
 
 ![](introduction-to-mobile-development-images/ios.png "Hello, iOS")
 
-
 * [**Android へようこそ**](~/android/get-started/hello-android/index.md)
 
 ![](introduction-to-mobile-development-images/android.png "Hello, Android")
 
-
-* [**Xamarin.Forms の概要**](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-
-
-
-
+* [**Xamarin.Forms の概要**](~/get-started/index.md)
 
 ## <a name="summary"></a>まとめ
 
-このドキュメントは、Xamarin プラットフォームの紹介にすぎません。 本当に面白くなるのは、初めてアプリを使い始めてからです。 「[Hello, iOS](~/ios/get-started/hello-ios/index.md)」、「[Android へようこそ](~/android/get-started/hello-android/index.md)」、「[Introduction to Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)」(Xamarin.Forms の概要) を参照して、始めましょう。
-
+このドキュメントは、Xamarin プラットフォームの紹介にすぎません。 本当に面白くなるのは、初めてアプリを使い始めてからです。 「[Hello, iOS](~/ios/get-started/hello-ios/index.md)」、「[Android へようこそ](~/android/get-started/hello-android/index.md)」、「[Xamarin.Forms の概要](~/get-started/index.md)」のガイドを参照して、始めましょう。
 
 ## <a name="related-links"></a>関連リンク
 

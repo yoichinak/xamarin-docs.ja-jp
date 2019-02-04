@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 4eea0db32bcfae4dc2ecdec8c2e494989515ef00
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0374d37027546c41305c8cd5f27de593c226fcaa
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060227"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233771"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
 
@@ -63,7 +63,7 @@ _データ テンプレートは、ResourceDictionary 内でインラインで�
 </ListView>
 ```
 
-インライン [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) の子は、種類が [`ViewCell`](xref:Xamarin.Forms.ViewCell) か、そこから派生している必要があります。 `ViewCell` 内のレイアウトは [`Grid`](xref:Xamarin.Forms.Grid) で管理されています。 `Grid` には 3 つの [`Label`](xref:Xamarin.Forms.Label) インスタンスが含まれており、その [`Text`](xref:Xamarin.Forms.Label.Text) プロパティをコレクション内の各 `Person` オブジェクトの適切なプロパティにバインドしています。
+インライン [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) の子は、種類が [`Cell`](xref:Xamarin.Forms.Cell) か、そこから派生している必要があります。 この例では、`Cell` から派生した [`ViewCell`](xref:Xamarin.Forms.ViewCell) が使われます。 `ViewCell` 内のレイアウトは [`Grid`](xref:Xamarin.Forms.Grid) で管理されています。 `Grid` には 3 つの [`Label`](xref:Xamarin.Forms.Label) インスタンスが含まれており、その [`Text`](xref:Xamarin.Forms.Label.Text) プロパティをコレクション内の各 `Person` オブジェクトの適切なプロパティにバインドしています。
 
 これと同じ C# コードの例は次のとおりです。
 

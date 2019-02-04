@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: f01074823f865b1717920d8364c67828453b6437
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 01c743b4b0eff81bbf4c41e1c2f387e0dc40c067
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617743"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233758"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
-低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。 
+アプリケーションのパフォーマンスの低さは、さまざまな形でアプリケーションに現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が減ったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。 
 
 このドキュメントでは、Xamarin.iOS アプリケーションでパフォーマンスとメモリ使用量を改善する手法について説明します。
 
@@ -25,7 +25,7 @@ ms.locfileid: "51617743"
 
 ## <a name="avoid-strong-circular-references"></a>強い循環参照を避ける
 
-場合によっては、ガベージ コレクターからオブジェクトのメモリが再要求されないように、強い参照循環を作成することがあります。 たとえば、[`NSObject`](https://developer.xamarin.com/api/type/Foundation.NSObject/) から派生するサブクラス ([`UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/) から継承されたクラスなど) は、次のコード例のように、`NSObject` から派生したコンテナーに追加され、Objective-C から強く参照されます。
+場合によっては、ガベージ コレクターからオブジェクトのメモリが再要求されないように、強い参照循環を作成することがあります。 たとえば、[`NSObject`](xref:Foundation.NSObject) から派生するサブクラス ([`UIView`](xref:UIKit.UIView) から継承されたクラスなど) は、次のコード例のように、`NSObject` から派生したコンテナーに追加され、Objective-C から強く参照されます。
 
 ```csharp
 class Container : UIView
@@ -56,7 +56,7 @@ container.AddSubview (new MyView (container));
 
 このコードで `Container` インスタンスを作成すると、C# オブジェクトは Objective-C オブジェクトに対して強い参照を持つことになります。 同様に、`MyView` インスタンスも、Objective-C オブジェクトへの強い参照を持つことになります。
 
-さらに、`container.AddSubview` を呼び出すと、アンマネージ インスタンス `MyView` の参照カウントが増えます。 このとき、Xamarin.iOS ランタイムは `GCHandle` インスタンスを作成することで、マネージド コードの `MyView` オブジェクトを維持し続けます。これは、マネージド オブジェクトが参照を維持し続ける保証がないためです。 マネージド コードの観点からは、`GCHandle` に対する [`AddSubview`](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/) の呼び出しではなくなった後に `MyView` オブジェクトは再要求されます。
+さらに、`container.AddSubview` を呼び出すと、アンマネージ インスタンス `MyView` の参照カウントが増えます。 このとき、Xamarin.iOS ランタイムは `GCHandle` インスタンスを作成することで、マネージド コードの `MyView` オブジェクトを維持し続けます。これは、マネージド オブジェクトが参照を維持し続ける保証がないためです。 マネージド コードの観点からは、`GCHandle` に対する [`AddSubview`](xref:UIKit.UIView.AddSubview(UIKit.UIView)) の呼び出しではなくなった後に `MyView` オブジェクトは再要求されます。
 
 アンマネージド `MyView` オブジェクトは、マネージド オブジェクトを示す `GCHandle` を持つことになります。これは*強いリンク*と呼ばれます。 マネージド オブジェクトには、`Container` インスタンスへの参照が含まれます。 そして `Container` インスタンスには `MyView` オブジェクトへのマネージド参照が含まれます。
 
@@ -103,7 +103,7 @@ container.AddSubview (new MyView (container));
 
 デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 
 プロパティまたは [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) を 
-[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) クラスで設定するときなどに、ピア クラスに実装が含まれます。
+[`UITableView`](xref:UIKit.UITableView) クラスで設定するときなどに、ピア クラスに実装が含まれます。
 
 プロトコルを実装するためだけに作成されたクラスの場合 ([`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/) など) にできることは、サブクラスの作成ではなく、クラスにインターフェイスを実装し、メソッドをオーバーライドし、`DataSource` プロパティを `this` に割り当てることです。
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 強い参照の解放の詳細については、「[Release IDisposable Resources](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)」(IDisposable リソースの解放) を参照してください。
-また、ブログの投稿「[Xamarin.iOS, the garbage collector and me](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)」(Xamarin.iOS とガベージ コレクターと私) の説明もお勧めします。
+また、ブログ記事「[Xamarin.iOS, the garbage collector and me (Xamarin.iOS とガベージ コレクターと私)](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)」の説明もお勧めします。
 
 ### <a name="more-information"></a>詳細情報
 
@@ -219,7 +219,7 @@ class MyChild : UIView
 
 ## <a name="optimize-table-views"></a>テーブル ビューを最適化する
 
-ユーザーは、[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、セルに深い入れ子のビュー階層が含まれる場合、またはセルに複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`UITableView` のパフォーマンス低下を回避するために使用できる手法があります。
+ユーザーは、[`UITableView`](xref:UIKit.UITableView) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、セルに深い入れ子のビュー階層が含まれる場合、またはセルに複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`UITableView` のパフォーマンス低下を回避するために使用できる手法があります。
 
 - セルを再利用する。 詳細については、「[Reuse Cells](#reusecells)」(セルの再利用) を参照してください。
 - サブビューの数を減らす。
@@ -228,11 +228,11 @@ class MyChild : UIView
 - セルと他のビューを非透過的にする。
 - イメージのスケーリングとグラデーションを避ける。
 
-これらの手法をすべて使用することで、[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) インスタンスのスクロールをスムーズに保つことができます。
+これらの手法をすべて使用することで、[`UITableView`](xref:UIKit.UITableView) インスタンスのスクロールをスムーズに保つことができます。
 
 ### <a name="reuse-cells"></a>セルを再利用する
 
-[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) で数百行を表示する場合、少数のみが 1 画面に表示されるなら、数百単位の [`UITableViewCell`](https://developer.xamarin.com/api/type/UIKit.UITableViewCell/) オブジェクトを作成するのはメモリの無駄です。 代わりに、画面に表示されるセルのみをメモリに読み込み、その再利用されるセルに**コンテンツ**を読み込むことができます。 こうすることで、数百単位の追加オブジェクトのインスタンス化を防ぎ、時間とメモリを節約することができます。
+[`UITableView`](xref:UIKit.UITableView) で数百行を表示する場合、少数のみが 1 画面に表示されるなら、数百単位の [`UITableViewCell`](xref:UIKit.UITableViewCell) オブジェクトを作成するのはメモリの無駄です。 代わりに、画面に表示されるセルのみをメモリに読み込み、その再利用されるセルに**コンテンツ**を読み込むことができます。 こうすることで、数百単位の追加オブジェクトのインスタンス化を防ぎ、時間とメモリを節約することができます。
 
 そのため、次のコード例のように、セルが画面から消えるときに、そのビューを再利用のためのキューに格納できます。
 
@@ -250,13 +250,13 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-ユーザーがスクロールすると、[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) は `GetCell` のオーバーライドを呼び出し、新しいビューの表示を要求します。 このオーバーライドは [`DequeueReusableCell`](https://developer.xamarin.com/api/member/UIKit.UITableView.DequeueReusableCell/p/Foundation.NSString/) メソッドを呼び出し、再利用できるセルがある場合はそのセルが返されます。
+ユーザーがスクロールすると、[`UITableView`](xref:UIKit.UITableView) は `GetCell` のオーバーライドを呼び出し、新しいビューの表示を要求します。 このオーバーライドは [`DequeueReusableCell`](xref:UIKit.UITableView.DequeueReusableCell(Foundation.NSString)) メソッドを呼び出し、再利用できるセルがある場合はそのセルが返されます。
 
 詳細については、「[Populating a Table with Data](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)」(データを使用したテーブルの設定) の「[Cell Reuse](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)」(セルの再利用) を参照してください。
 
 ## <a name="use-opaque-views"></a>非透過的なビューを使用する
 
-透過性が定義されていないビューには、[`Opaque`](https://developer.xamarin.com/api/property/UIKit.UIView.Opaque/) プロパティを設定するようにします。 こうすることで、描画システムはビューを最適にレンダリングします。 この方法は、ビューが [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/) に埋め込まれている場合、または複雑なアニメーションの一部の場合に特に重要です。 そうしないと、描画システムは他のコンテンツを含むビューを作成し、結果的にパフォーマンスが大きく低下する可能性があります。
+透過性が定義されていないビューには、[`Opaque`](xref:UIKit.UIView.Opaque) プロパティを設定するようにします。 こうすることで、描画システムはビューを最適にレンダリングします。 この方法は、ビューが [`UIScrollView`](xref:UIKit.UIScrollView) に埋め込まれている場合、または複雑なアニメーションの一部の場合に特に重要です。 そうしないと、描画システムは他のコンテンツを含むビューを作成し、結果的にパフォーマンスが大きく低下する可能性があります。
 
 ## <a name="avoid-fat-xibs"></a>FAT XIB を避ける
 
@@ -264,7 +264,7 @@ class MyTableSource : UITableViewSource
 
 ## <a name="optimize-image-resources"></a>イメージ リソースを最適化する
 
-アプリケーションが使用するリソースのうち最もコストが高いものとして画像があります。多くの場合、画像は高解像度でキャプチャされます。 そのため、[`UIImageView`](https://developer.xamarin.com/api/type/UIKit.UIImageView/) でアプリのバンドルから画像を表示する場合は、画像と `UIImageView` のサイズが同じになるようにします。 実行時に画像の拡大縮小を行うと、コストの高い操作になる可能性があります。`UIImageView` が [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/) に埋め込まれている場合は特にそうです。
+アプリケーションが使用するリソースのうち最もコストが高いものとして画像があります。多くの場合、画像は高解像度でキャプチャされます。 そのため、[`UIImageView`](xref:UIKit.UIImageView) でアプリのバンドルから画像を表示する場合は、画像と `UIImageView` のサイズが同じになるようにします。 実行時に画像の拡大縮小を行うと、コストの高い操作になる可能性があります。`UIImageView` が [`UIScrollView`](xref:UIKit.UIScrollView) に埋め込まれている場合は特にそうです。
 
 詳細については、「[Cross-Platform Performance](~/cross-platform/deploy-test/memory-perf-best-practices.md)」(クロスプラットフォーム パフォーマンス) ガイドの「[Optimize Image Resources](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)」(イメージ リソースの最適化) を参照してください。
 
