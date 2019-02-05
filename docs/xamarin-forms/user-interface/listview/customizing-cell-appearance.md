@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 7c19cc0f2d1f72706926d640bb7fad9323a9e17f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
+ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53049457"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712073"
 ---
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観をカスタマイズします。
 
@@ -120,6 +120,7 @@ x:Class="demoListView.ImageCellPage">
 - カスタムのセルが入れ子になっている、 `DataTemplate`、内である`ListView.ItemTemplate`します。 これは、その他のセルを使用する場合と同じプロセスです。
 - `ViewCell` カスタムのセルの種類です。 子、`DataTemplate`要素でまたは型から派生する必要があります`ViewCell`します。
 - その内部に注意してください、 `ViewCell`、レイアウトは、によって管理される、`StackLayout`します。 このレイアウトでは、背景色をカスタマイズできます。 注意してくださいの任意のプロパティ`StackLayout`はバインド可能なことができますが、ここで示されていませんが、カスタムのセルの内部にバインドします。
+- 内で、 `ViewCell`Xamarin.Forms のレイアウトでレイアウトを管理することができます。 
 
 ### <a name="cnum"></a>C&num;
 
