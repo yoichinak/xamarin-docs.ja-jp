@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: 53c5f17672cc46ef097e979154a8911f8cdaef63
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3fdb2a3853c1320b6bd0b8a02701acd6883bf226
+ms.sourcegitcommit: 999b9f254c56ff18ebd391fd0de2f0d6e95e35b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054127"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55748083"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
@@ -33,7 +33,7 @@ XAML マークアップ拡張機能を追加では、従来の他の XAML 実装
 - `StaticResource` &ndash; 記事の説明に従って、リソース ディクショナリからオブジェクトを参照[**リソース ディクショナリ**](~/xamarin-forms/xaml/resource-dictionaries.md)します。
 - `DynamicResource` &ndash; 記事の説明に従って、リソース ディクショナリ内のオブジェクトの変更に応答[**動的なスタイル**](~/xamarin-forms/user-interface/styles/dynamic.md)します。
 - `Binding` &ndash; 2 つのオブジェクトのプロパティ間のリンクを確立、記事の説明に従って[**データ バインディングの**](~/xamarin-forms/app-fundamentals/data-binding/index.md)します。
-- `TemplateBinding` &ndash; この記事で説明したようにコントロール テンプレートからデータ バインディングを実行します[**からコントロール テンプレートのバインド**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/)します。
+- `TemplateBinding` &ndash; この記事で説明したようにコントロール テンプレートからデータ バインディングを実行します[**からコントロール テンプレートのバインド**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding/)します。
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)レイアウト カスタム マークアップ拡張機能を利用[ `ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)します。 このマークアップ拡張機能が、情報の記事で説明されている[ **[相対レイアウト]**](~/xamarin-forms/user-interface/layouts/relative-layout.md)します。
 
@@ -84,7 +84,7 @@ XAML パーサーができます、`StaticExtension`のように短縮するに�
 </Label>
 ```
 
-これさらに、簡略化することができますが、変更がいくつかの新しい構文が導入されています。 配置することで構成されます、`StaticExtension`クラスとメンバーの中かっこで囲んで設定します。 結果として得られる式の設定に直接、`FontSize`属性。
+さらに、この簡略ことができますが、変更がいくつかの新しい構文が導入されています。配置することで構成されて、`StaticExtension`クラスとメンバーの中かっこで囲んで設定します。 結果として得られる式の設定に直接、`FontSize`属性。
 
 ```xaml
 <Label Text="Label No. 3"
