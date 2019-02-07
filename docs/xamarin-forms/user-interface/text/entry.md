@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 39af3b0e28bbbf9397ceece55adc330e364dcc3d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 303cca48defdadd69449edbd6c4c3f5e4410bbbb
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061786"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831964"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms のエントリ
 
@@ -44,6 +44,18 @@ var MyEntry = new Entry { Text = "I am an Entry" };
 var text = MyEntry.Text;
 ```
 
+### <a name="setting-placeholder-text"></a>プレース ホルダー テキストを設定
+
+[ `Entry` ](xref:Xamarin.Forms.Entry)プレース ホルダー テキストを表示するユーザー入力を格納するがない場合に設定することができます。 これは、設定によって実現されます、 [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder)プロパティを`string`は適切なコンテンツの種類を示すためによく使用して、 `Entry`。 さらに、プレース ホルダー テキストの色を設定して制御できます、 [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor)プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
+```
+
+```csharp
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
+```
+
 > [!NOTE]
 > 幅、`Entry`設定によってはその`WidthRequest`プロパティ。 幅に依存しない、`Entry`の値に基づいて定義されているその`Text`プロパティ。
 
@@ -60,6 +72,40 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)プロパティ値が 0 のでは、ある入力は許可されません、ことを示しますの値と`int.MaxValue`の既定値は、 [ `Entry` ](xref:Xamarin.Forms.Entry)、ことを示しますなし有効な入力可能性がありますの文字数制限。
+
+### <a name="password-fields"></a>パスワード フィールド
+
+`Entry` 提供、`IsPassword`プロパティ。 ときに`IsPassword`は`true`フィールドの内容が黒の円として表示されます。
+
+で XAML:
+
+```xaml
+<Entry IsPassword="true" />
+```
+
+C# の場合:
+
+```csharp
+var MyEntry = new Entry { IsPassword = true };
+```
+
+![](entry-images/password.png "エントリ IsPassword 例")
+
+インスタンスで使用できるプレース ホルダー`Entry`パスワード フィールドとして構成されています。
+
+で XAML:
+
+```xaml
+<Entry IsPassword="true" Placeholder="Password" />
+```
+
+C# の場合:
+
+```csharp
+var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
+```
+
+![](entry-images/passwordplaceholder.png "エントリ IsPassword およびプレース ホルダーの例")
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>カーソルの位置とテキスト選択範囲の長さの設定
 
@@ -207,52 +253,6 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 
 > [!NOTE]
 > ときに、 [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)プロパティに設定されて`false`、カスタムのキーボードがされていないと予測入力と自動的に使用されるテキストの修正が無効になっています。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)を無効にします。 テキストの予測が設定されている、`IsTextPredictionEnabled`プロパティは無視されます。 そのための予測の入力を有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
-
-### <a name="setting-placeholder-text"></a>プレース ホルダー テキストを設定
-
-[ `Entry` ](xref:Xamarin.Forms.Entry)プレース ホルダー テキストを表示するユーザー入力を格納するがない場合に設定することができます。 これは、設定によって実現されます、 [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder)プロパティを`string`は適切なコンテンツの種類を示すためによく使用して、 `Entry`。 さらに、プレース ホルダー テキストの色を設定して制御できます、 [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor)プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
-
-```xaml
-<Entry Placeholder="Username" PlaceholderColor="Olive" />
-```
-
-```csharp
-var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
-```
-
-### <a name="password-fields"></a>パスワード フィールド
-
-`Entry` 提供、`IsPassword`プロパティ。 ときに`IsPassword`は`true`フィールドの内容が黒の円として表示されます。
-
-で XAML:
-
-```xaml
-<Entry IsPassword="true" />
-```
-
-C# の場合:
-
-```csharp
-var MyEntry = new Entry { IsPassword = true };
-```
-
-![](entry-images/password.png "エントリ IsPassword 例")
-
-インスタンスで使用できるプレース ホルダー`Entry`パスワード フィールドとして構成されています。
-
-で XAML:
-
-```xaml
-<Entry IsPassword="true" Placeholder="Password" />
-```
-
-C# の場合:
-
-```csharp
-var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
-```
-
-![](entry-images/passwordplaceholder.png "エントリ IsPassword およびプレース ホルダーの例")
 
 ### <a name="colors"></a>色
 
