@@ -6,24 +6,19 @@ ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 8adac1711271324b70731a085088bd8805391d31
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059458"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831796"
 ---
 # <a name="customizing-listview-appearance"></a>ListView の外観のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 
-`ListView` 基になるだけでなく、全体的なリストの表示を制御するためのオプションがあります`ViewCell`秒。 次のオプションがあります。
-
-- [**グループ化**](#Grouping) &ndash;より簡単に移動し、強化された組織の ListView の項目をグループ化します。
-- [**ヘッダーとフッター** ](#Headers_and_Footers) &ndash;先頭と末尾の他の項目をスクロールするビューに情報を表示します。
-- [**行の区切り記号**](#Row_Separators) &ndash;表示を切り替えるアイテム間の区分線を非表示にします。
-- [**変数の高さ行**](#Row_Heights) &ndash;既定ですべての行には同じの高さが表示されるさまざまな高さを持つ行を許可する変更できます。
+[`ListView`](xref:Xamarin.Forms.ListView) ほかに、一覧の表示を制御する機能を持つ、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)一覧内の各行のインスタンス。
 
 <a name="Grouping" />
 
@@ -83,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-上記のコードで呼び出すこともできます`Add`の要素に`groups`、型のインスタンスである`PageTypeGroup`します。 これは、考えられるため、`PageTypeGroup`から継承`List<PageModel>`します。 これは、上記の一覧パターンの一覧の例です。
+上記のコードでも呼び出す`Add`の要素に`groups`、型のインスタンスである`PageTypeGroup`します。 これは、考えられるため、`PageTypeGroup`から継承`List<PageModel>`します。 これは、上記の一覧パターンの一覧の例です。
 
 グループ化された一覧を表示するための XAML を次に示します。
 
@@ -205,6 +200,14 @@ ListView HeaderList = new ListView() {
 ```
 
 ![](customizing-list-appearance-images/header-custom.png "カスタマイズされたヘッダーとフッターを ListView")
+
+## <a name="scrollbar-visibility"></a>スクロール バーの可視性
+
+[`ListView`](xref:Xamarin.Forms.ListView) `HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`を取得または設定するプロパティを[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) 、水平方向または垂直方向のスクロール バーが表示されているときを表す値です。 両方のプロパティは、次の値に設定できます。
+
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) プラットフォームのスクロール バーの既定動作を示しの既定値は、`HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`プロパティ。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) コンテンツ ビューに収まらない場合でも、スクロール バーが、表示されることを示します。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) スクロール バーが表示されないことを示すイベント ビューで、コンテンツが収まらない場合。
 
 <a name="Row_Separators" />
 

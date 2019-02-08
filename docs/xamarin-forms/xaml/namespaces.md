@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: 85b9297a62cfb90485be2cbd927abfdcfec2f13c
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563044"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831756"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms の XAML 名前空間
 
@@ -96,10 +96,11 @@ XAML では、名前空間の宣言は、子要素を親要素から継承しま
 </ListView>
 ```
 
+カスタムの名前空間のスキーマを定義する方法の詳細については、次を参照してください。 [XAML カスタム Namespace スキーマ](custom-namespace-schemas.md)します。
+
 ## <a name="summary"></a>まとめ
 
 この記事では、XAML 名前空間の構文を導入し、型にアクセスする XAML 名前空間を宣言する方法を示しました。 XAML を使用して、`xmlns`名前空間の宣言と型の XML 属性は、プレフィックスを持つ XAML 名前空間を宣言することにより XAML で参照できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -34,7 +34,7 @@ SQLite とは、オープン ソース データベースの実装です。 ソ�
 - **Windows** – を参照してください、[拡張機能のユニバーサル Windows プラットフォーム用 SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)します。
 
 
-すべてのプラットフォームで利用可能なデータベース エンジンでも、データベースにアクセスするネイティブなメソッドが異なります。 両方の iOS と Android からにアクセスするために使用できる SQLite Xamarin.iOS または Xamarin.Android の組み込みの Api を提供して、ただし、ネイティブ SDK メソッドを使用して (おそらく、SQL クエリ自体を文字列として格納されていると仮定した場合) 以外のコードを共有する機能はありません. 詳細については、ネイティブ データベース機能を探し`CoreData`で iOS または Android の`SQLiteOpenHelper`クラスは、このドキュメントの範囲を超えているため、これらのオプションは、クロス プラットフォームではありません。
+すべてのプラットフォームで利用可能なデータベース エンジンでも、データベースにアクセスするネイティブなメソッドが異なります。 両方の iOS と Android からにアクセスするために使用できる SQLite Xamarin.iOS または Xamarin.Android の組み込みの API を提供して、ただし、ネイティブ SDK メソッドを使用して (おそらく、SQL クエリ自体を文字列として格納されていると仮定した場合) 以外のコードを共有する機能はありません. 詳細については、ネイティブ データベース機能を探し`CoreData`で iOS または Android の`SQLiteOpenHelper`クラスは、このドキュメントの範囲を超えているため、これらのオプションは、クロス プラットフォームではありません。
 
 
 
@@ -157,7 +157,7 @@ Xamarin.iOS と Xamarin.Android の両方でクラスを使用してファイル
 -  iOS アプリケーションは、非常に制限されているファイル システム アクセス権を持つサンド ボックスで実行します。 さらに Apple では、バックアップを特定の場所 (およびその他のない) を指定することで、ファイル システムを使用する方法を決定します。 参照してください、 [Xamarin.iOS でのファイル システム操作](~/ios/app-fundamentals/file-system.md)詳細はガイド。
 -  Android は、アプリケーションに関連する特定のディレクトリにアクセスを制限することもが、外部メディア (例。 SD カード) および共有データへのアクセスします。
 -  Windows Phone 8 (Silverlight) は、ファイルに直接アクセスを許可しない – を使用してファイルを操作することができますのみ`IsolatedStorage`します。
--  WinRT の Windows 8.1 および Windows 10 UWP プロジェクトのみを使用して非同期のファイル操作を提供する`Windows.Storage`Api で、他のプラットフォームとは異なります。
+-  WinRT の Windows 8.1 および Windows 10 UWP プロジェクトのみを使用して非同期のファイル操作を提供する`Windows.Storage`API で、他のプラットフォームとは異なります。
 
 #### <a name="example-for-ios-and-android"></a>IOS および Android 用の例
 
@@ -181,7 +181,7 @@ Xamarin.iOS を参照してください[ファイル システム操作](~/ios/a
 *を Xamarin.Forms での Mobile Apps の作成*[帳](https://developer.xamarin.com/r/xamarin-forms/book/)
 [第 20 章です。Async およびファイル I/O](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)が含まれています[Windows 8.1 および Windows 10 用のサンプル](https://github.com/xamarin/xamarin-forms-book-preview-2/tree/master/Chapter20)します。
 
-使用して、 [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)サポートされている Api を使用してこれらのプラットフォーム上のファイルのファイルを読み書きすることは。
+使用して、 [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)サポートされている API を使用してこれらのプラットフォーム上のファイルのファイルを読み書きすることは。
 
 ```csharp
 StorageFolder localFolder = ApplicationData.Current.LocalFolder;
@@ -203,13 +203,13 @@ Xamarin.iOS および Xamarin.Android ファイル アクセスの一般的な�
 
 参照してください、[分離ストレージの概要の Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)詳細についてはします。
 
-分離ストレージ Api では使用できない[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)します。 PCL の代わり、[化できる PCLStorage NuGet](https://pclstorage.codeplex.com/)
+分離ストレージ API では使用できない[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)します。 PCL の代わり、[化できる PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
 
 
 ### <a name="cross-platform-file-access-in-pcls"></a>Pcl でクロスプラット フォームでファイル アクセス
 
-PCL と互換性のある Nuget – はも[PCLStorage](https://www.nuget.org/packages/PCLStorage/) – Xamarin でサポートされているプラットフォームと最新の Windows Api の施設クロスプラット フォームでファイルのアクセス。
+PCL と互換性のある Nuget – はも[PCLStorage](https://www.nuget.org/packages/PCLStorage/) – Xamarin でサポートされているプラットフォームと最新の Windows API の施設クロスプラット フォームでファイルのアクセス。
 
 
 ## <a name="network-operations"></a>ネットワーク操作
@@ -219,7 +219,7 @@ PCL と互換性のある Nuget – はも[PCLStorage](https://www.nuget.org/pac
 -  イメージをダウンロード、ビデオおよびオーディオ (例。 サムネイル、写真、音楽)。
 -  (例: ドキュメントのダウンロード HTML、PDF)。
 -  (写真やテキスト) などのユーザー データをアップロードしています。
--  Web サービスまたはサード パーティ (などの SOAP、XML または JSON) の Api にアクセスします。
+-  Web サービスまたはサード パーティ (などの SOAP、XML または JSON) の API にアクセスします。
 
 
 .NET Framework のネットワーク リソースにアクセスするため、いくつかの異なるクラスを提供します。 `HttpClient`、 `WebClient`、および`HttpWebRequest`します。

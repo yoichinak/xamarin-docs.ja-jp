@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 08ac86674e4f10d6bd17d765de2bcdf7c2d3f901
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 79b973784dd978bff15c7a706083c70df83ba1c8
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061760"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831847"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>スペル チェック、Bing Spell Check API を使用します。
 
@@ -154,6 +154,9 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 ![](spell-check-images/before-spell-check.png "スペル チェックする前に")
 
 ![](spell-check-images/after-spell-check.png "スペル チェックの後")
+
+> [!NOTE]
+> 使用して上記の例`Replace`間違ったトークンを置き換えることができますが、わかりやすくするため、大量のテキストの間で。 API は、提供、`offset`値の更新プログラムを実行するソース テキスト内の正しい場所を識別するために運用アプリで使用する必要があります。
 
 ## <a name="summary"></a>まとめ
 
