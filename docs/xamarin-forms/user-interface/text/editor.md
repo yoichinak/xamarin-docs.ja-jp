@@ -6,13 +6,13 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/31/2018
-ms.openlocfilehash: 2fe1ad168186740fd71d25814e68b1109e097597
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 4011863553935052c230def403f4ebc281c51d92
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052625"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831873"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
@@ -45,6 +45,18 @@ var MyEditor = new Editor { Text = "I am an Editor" };
 
 ```csharp
 var text = MyEditor.Text;
+```
+
+### <a name="setting-placeholder-text"></a>プレース ホルダー テキストを設定
+
+[ `Editor` ](xref:Xamarin.Forms.Editor)プレース ホルダー テキストを表示するユーザー入力を格納するがない場合に設定することができます。 これは、設定によって実現されます、 [ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)プロパティを`string`は適切なコンテンツの種類を示すためによく使用して、 `Editor`。 さらに、プレース ホルダー テキストの色を設定して制御できます、 [ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+```
+
+```csharp
+var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
 
 ### <a name="limiting-input-length"></a>入力の長さの制限
@@ -159,17 +171,22 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > ときに、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティに設定されて`false`、およびカスタムのキーボードが使用されていない、ネイティブのスペル チェックが無効になります。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)がされているセットをスペル チェックを無効にするチェックを行うなど[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`プロパティは無視されます。 そのため、スペル チェックを有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
 
-### <a name="setting-placeholder-text"></a>プレース ホルダー テキストを設定
+### <a name="enabling-and-disabling-text-prediction"></a>有効にして、予測入力を無効化
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)プレース ホルダー テキストを表示するユーザー入力を格納するがない場合に設定することができます。 これは、設定によって実現されます、 [ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)プロパティを`string`は適切なコンテンツの種類を示すためによく使用して、 `Editor`。 さらに、プレース ホルダー テキストの色を設定して制御できます、 [ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+`IsTextPredictionEnabled`プロパティ コントロールかどうか予測入力と自動テキストの修正を有効にします。 既定では、プロパティに設定が`true`します。 テキストを入力すると、word の予測が表示されます。
+
+ただし、テキスト エントリ シナリオによっては、ユーザー名、予測入力とテキストの自動入力など修正負のエクスペリエンスを提供しますを設定して無効にする必要があります、`IsTextPredictionEnabled`プロパティを`false`:。
 
 ```xaml
-<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+<Editor ... IsTextPredictionEnabled="false" />
 ```
 
 ```csharp
-var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
+var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
+
+> [!NOTE]
+> ときに、`IsTextPredictionEnabled`プロパティに設定されて`false`、カスタムのキーボードがされていないと予測入力と自動的に使用されるテキストの修正が無効になっています。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)を無効にします。 テキストの予測が設定されている、`IsTextPredictionEnabled`プロパティは無視されます。 そのための予測の入力を有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
 
 ### <a name="colors"></a>色
 

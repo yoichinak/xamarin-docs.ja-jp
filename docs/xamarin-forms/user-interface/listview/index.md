@@ -7,32 +7,26 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 9da3bd65dfb5cc6f9ca6bd0e2930003e6ac3d182
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 967d4ae65bdb47adf824f20f47c7b32e24211f9a
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059260"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831811"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/WorkingWithListview)
 
-ビューは、特に長い一覧をスクロールを必要とするデータの一覧を表示するためのビューです。 このガイドでは、ListView を使用する方法を示します。
-
-1. **[データ ソース](data-and-databinding.md)** &ndash;データ、データ バインディングの有無の ListView を設定します。
-2. **[セルの外観](customizing-cell-appearance.md)** &ndash;組み込みのセルの外観をカスタマイズまたは独自のカスタムのセルを作成します。
-3. **[外観を一覧表示](customizing-list-appearance.md)** &ndash; ListView の外観をカスタマイズします。 ヘッダーとフッターを追加、グループを有効にして行の高さを変更します。
-4. **[対話機能](interactivity.md)** &ndash;タップし、選択内容を処理し、プルして更新を実装し、コンテキスト アクションを追加します。
-5. **[パフォーマンス](performance.md)** &ndash;パフォーマンスの問題を回避します。
+[`ListView`](xref:Xamarin.Forms.ListView) 特に長い一覧をスクロールを必要とするデータの一覧を表示するためのビューです。
 
 ## <a name="use-cases"></a>ユース ケース
+
 ListView は、ニーズに応じて適切なコントロールを確認します。 ListView は、データのスクロール可能なリストを表示しているどのような状況で使用できます。 Listview は、コンテキスト アクションとデータ バインディングをサポートします。
 
 ListView と混同しない[テーブル](~/xamarin-forms/user-interface/tableview.md)します。 テーブル コントロールは、オプションまたはデータの非バインド リストがあるたびより優れたオプションです。 たとえば、オプションのほとんどの場合に定義済みセットを持つ、iOS 設定アプリは、ListView よりテーブルを使用する適しています。
 
 同種データも、ListView は、最適なが適しています&ndash;同じ型のすべてのデータは必ず、します。 これは、セルの 1 つだけの種類を一覧内の行ごとに使用されるためです。 ビューを混在させる必要がある場合より適切なオプションをされるため、TableViews は複数のセルの種類をサポートできます。
-
 
 ## <a name="components"></a>コンポーネント
 ListView が、さまざまなコンポーネントの各プラットフォームのネイティブ機能を実行するために使用できます。 これらの各コンポーネントは、以下について説明します。
@@ -62,7 +56,6 @@ ListView は、さまざまな相互作用のスタイル (など) をサポー�
 ![](images/context-default.png "コンテキスト アクションを含む ListView")
 
 ListView の対話機能の詳細については、次を参照してください。 [ListView の対話機能 (&)、アクション](interactivity.md)します。
-
 
 ## <a name="related-links"></a>関連リンク
 

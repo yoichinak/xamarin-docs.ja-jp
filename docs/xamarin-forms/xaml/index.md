@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2018
-ms.openlocfilehash: 9924e588808783fe35dbd830bbc9af288f37e7ea
-ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
+ms.openlocfilehash: 7195d56cfee91544f0626a8f89c886cde36752e5
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53813961"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831718"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -20,7 +20,7 @@ _XAML は、ユーザー インターフェイスの定義に使用できる宣�
 
 > [!VIDEO https://youtube.com/embed/H6UOrSyhTEE]
 
-**Evolve 2016。XAML のマスターになります。**
+**Evolve 2016:XAML のマスターになります。**
 
 > [!NOTE]
 > お試し、 [XAML Standard プレビュー](standard/index.md)
@@ -42,6 +42,10 @@ XAML は任意で、XAML コンパイラ (XAMLC) を利用し、中間言語 (IL
 ## <a name="xaml-namespacesnamespacesmd"></a>[XAML 名前空間](namespaces.md)
 
 XAML を使用して、 `xmlns` XML 名前空間宣言属性。 この記事では、XAML 名前空間の構文を紹介し、型にアクセスする XAML 名前空間を宣言する方法を示します。
+
+## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML Namespace カスタム スキーマ](custom-namespace-schemas.md)
+
+XAML 名前空間のカスタム スキーマを定義すること、`XmlnsDefinitionAttribute`クラスは、カスタムの URL と 1 つまたは複数の CLR 名前空間の間のマッピングを指定します。 カスタムの名前空間のスキーマは、XAML 名前空間の宣言で使用できます。
 
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML マークアップ拡張](markup-extensions/index.md)
 
@@ -67,6 +71,6 @@ Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの�
 
 XAML リソースは、2 回以上使用できるオブジェクトの定義です。 A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)リソースを 1 つの場所で定義されている、Xamarin.Forms アプリケーション全体で再利用を許可します。 この記事で作成および使用する方法を示します、 `ResourceDictionary`、いずれかのマージする方法と`ResourceDictionary`別にします。
 
-## <a name="loading-xaml-at-runtimeruntime-loadmd"></a>[実行時に XAML の読み込み](runtime-load.md)
+## <a name="loading-xaml-at-runtimeruntime-loadmd"></a>[実行時の XAML の読み込み](runtime-load.md)
 
 XAML の読み込みおよび実行時に解析できる、 [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)拡張メソッド。

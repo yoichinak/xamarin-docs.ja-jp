@@ -7,23 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
-ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
+ms.openlocfilehash: 1e57764dacf7ae0599df46f13bd4f5505c4cc4a2
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712073"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831782"
 ---
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観をカスタマイズします。
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 
-ListView はスクロール可能なリストは、使用してカスタマイズできる`ViewCell`秒。 `ViewCells` テキストとイメージを表示、true または false の状態を示すおよびユーザー入力を受け取るのために使用できます。
-
-ListView セルから希望の外観を取得する 2 つの方法はあります。
-
-- **[組み込みのセルのカスタマイズ](#Built_in_Cells)** &ndash;より簡単に実装し、カスタマイズ性を犠牲のパフォーマンスが向上します。
-- **[カスタムのセルを作成する](#customcells)** &ndash;より制御の結果が正しく実装されていない場合のパフォーマンスの問題の可能性があります。
+[`ListView`](xref:Xamarin.Forms.ListView) 使用してカスタマイズできるスクロール可能なリスト ボックスが表示`ViewCell`秒。 `ViewCells` テキストとイメージを表示、true または false の状態を示すおよびユーザー入力を受け取るのために使用できます。
 
 <a name="Built_in_Cells" />
 

@@ -6,23 +6,19 @@ ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/13/2018
-ms.openlocfilehash: f5b5a8a2d7adf207a583d71953ead1e0e7306b3f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/14/2018
+ms.openlocfilehash: 939df6cfd17de82e28958363cfa51cd199f928cb
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052317"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831692"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
 
-ListView では、次の方法ではデータとやり取りするサポートしています。
-
-- [**選択 & タップ**](#selectiontaps) &ndash;タップし、項目の選択/deselections に応答します。 有効または行の選択 (既定で有効) を無効にします。
-- [**コンテキスト アクション**](#Context_Actions) &ndash;公開機能など、アイテム単位、スワイプに、削除します。
-- [**プルして更新**](#Pull_to_Refresh) &ndash;ネイティブ エクスペリエンスから期待するユーザーが取得されているプルして更新という手法を実装します。
+[`ListView`](xref:Xamarin.Forms.ListView) 提示データと対話をサポートします。
 
 <a name="selectiontaps" />
 
@@ -66,6 +62,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>コンテキスト アクション
+
 多くの場合、ユーザーは、アクション内の項目を実行する必要が、`ListView`します。 たとえば、メール アプリで電子メールの一覧を検討してください。 Ios では、メッセージを削除するスワイプできます。
 
 ![](interactivity-images/context-default.png "コンテキスト アクションを含む ListView")
@@ -149,30 +146,47 @@ public void OnDelete (object sender, EventArgs e) {
 <a name="Pull_to_Refresh" />
 
 ## <a name="pull-to-refresh"></a>プルして更新.
-データの一覧をプルダウンと、その一覧は更新ことを期待するユーザーになっています。 `ListView` この出力の-使えるをサポートしています。 プルして更新機能を有効にするには設定`IsPullToRefreshEnabled`を true にします。
+
+データの一覧をプルダウンと、その一覧は更新ことを期待するユーザーになっています。 [`ListView`](xref:Xamarin.Forms.ListView) この出力の-使えるをサポートしています。 プルして更新機能を有効にするには設定[ `IsPullToRefreshEnabled` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled)に`true`:
+
+```xaml
+<ListView ...
+          IsPullToRefreshEnabled="true" />
+```
+
+同等の c# コードに示します。
 
 ```csharp
 listView.IsPullToRefreshEnabled = true;
 ```
 
-ユーザーとしての更新のプルを引いています。
+既定では黒であると、更新中に、スピン ボタンが表示されます。 ただし、スピナーの色は iOS と Android で設定して、`RefreshControlColor`プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<ListView ...
+          IsPullToRefreshEnabled="true"
+          RefreshControlColor="Red" />
+```
+
+同等の c# コードに示します。
+
+```csharp
+listView.RefreshControlColor = Color.Red;
+```
+
+次のスクリーン ショットは、ユーザーのプルとプルして更新を表示します。
 
 ![](interactivity-images/refresh-start.png "ListView のプルで進行状況を更新するには")
 
-ユーザーとプルは更新するには、プルがリリースされました。 これは、ユーザーがリストを更新している間に表示: ![](interactivity-images/refresh-in-progress.png "完了を更新する ListView のプル")
+次のスクリーン ショットは、ユーザーにはスピン ボックスが表示されていると、プルがリリースされた後にプルして更新を表示中に、 [ `ListView` ](xref:Xamarin.Forms.ListView)は更新しています。
 
-ListView は、プルして更新イベントに応答するためのいくつかのイベントを公開します。
+![](interactivity-images/refresh-in-progress.png "ListView 引っ張って更新が完了しました")
 
--  `RefreshCommand`が呼び出されると、`Refreshing`イベントと呼ばれます。 `IsRefreshing` 設定されます`true`します。
--  リスト ビュー、コマンドまたはイベントのいずれかの内容を更新するコードをすべてが必要ですが行う必要があります。
--  更新するときに完了したら、呼び出す`EndRefresh`設定または`IsRefreshing`に`false`したらリスト ビューを確認します。
+[`ListView`](xref:Xamarin.Forms.ListView) 起動、 [ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing) 、更新を開始するイベントと[ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing)プロパティに設定する`true`します。 どのようなコードの内容を更新する必要は、`ListView`のイベント ハンドラーによって実行される必要がありますし、`Refreshing`イベント、またはメソッドによって実行される、 [ `RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)します。 1 回、`ListView`は、更新、`IsRefreshing`にプロパティを設定する必要があります`false`、または[ `EndRefresh` ](xref:Xamarin.Forms.ListView.EndRefresh)を更新が完了したことを示すために、メソッドを呼び出す必要があります。
 
-`CanExecute`プロパティを適用すると、これを使用するコントロールにプルして更新コマンドを有効にするかどうか。
-
-
+> [!NOTE]
+> 定義するときに、 [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)、`CanExecute`コマンドのメソッドを有効または無効、コマンドに指定できます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [ListView の対話機能 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
-- [1.4 リリース ノート](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 リリース ノート](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

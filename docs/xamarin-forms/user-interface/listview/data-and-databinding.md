@@ -7,21 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 06cf5d2a862a5db2f94fca655b69c45d16375854
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4f69e88e0abff1236dc8365d88c8efbdf58b4031
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059153"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831705"
 ---
 # <a name="listview-data-sources"></a>ListView のデータ ソース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 
 A [ `ListView` ](xref:Xamarin.Forms.ListView)データのリストを表示するためです。 データ、私たちが選択した項目にバインドする方法と、ListView の設定について説明します。
-
-- **[設定の ItemsSource](#ItemsSource)**  &ndash;単純なリストまたは配列を使用します。
-- **[データ バインディング](#Data_Binding)** &ndash;モデルと、ListView の間の関係を確立します。 バインディングは、MVVM パターンに最適です。
 
 ## <a name="itemssource"></a>ItemsSource
 
