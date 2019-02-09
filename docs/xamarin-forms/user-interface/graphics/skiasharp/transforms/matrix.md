@@ -104,9 +104,9 @@ y' = y + ty
 
 変換式は次のとおりです。
 
-x' sx 押しを =x
+x' = x + xSkew ・ y
 
-y' sy 押しを =y
+y' = ySkew ・ x + y
 
 呼び出した後、変換行列`Skew`スケール ファクターの横にあるマトリックス セルに 2 つの引数が含まれています。
 
@@ -118,9 +118,9 @@ y' sy 押しを =y
 
 変換式は次のとおりです。
 
-x' = x + xSkew 押しy
+x' = x + xSkew ・ y
 
-y' ySkew 押しを =x + y
+y' = ySkew ・ x + y
 
 呼び出すのため`RotateDegrees`または`RotateRadians`α の角度の変換行列のとおりです。
 
@@ -132,9 +132,9 @@ y' ySkew 押しを =x + y
 
 変換式は、次に示します。
 
-x' cos(α) 押しを =x-sin(α) 押しy
+x' = cos(α) ・ x - sin(α) ・ y
 
-y' sin(α) 押しを =x-cos(α) 押しy
+y' = sin(α) ・ x - cos(α) ・ y
 
 Α が 0 度の場合は、恒等行列になります。 Α が 180 度と、変換行列のとおりです。
 
@@ -228,9 +228,9 @@ canvas.Translate(–px, –py);
               │ TransX  TransY  1 │
 </pre>
 
-x' ScaleX 押しを =x + SkewX 押しy + x 方向
+x' = ScaleX ・ x + SkewX ・ y + TransX
 
-y' SkewX 押しを =x + ScaleY 押しy + 直線移動
+y' = SkewX ・ x + ScaleY ・ y + TransY
 
 z' = 1
 
