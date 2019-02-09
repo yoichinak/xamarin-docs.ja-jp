@@ -107,9 +107,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 円弧を生成するには、この方法は簡単、アルゴリズムと円弧を記述するパラメーターの式を派生するは簡単です。楕円、および開始および掃引角度の場所とサイズを知ること、開始と円弧の始点と終点できますを計算する単純な三角関数の使用します。
 
-x 楕円を = です。MidX + (楕円。幅/2) * cos(angle)
+x = oval.MidX + (oval.Width / 2) * cos(angle)
 
-y 楕円を = です。MidY + (楕円。高さ/2) * sin(angle)
+y = oval.MidY + (oval.Height / 2) * sin(angle)
 
 `angle`値は、いずれかの`startAngle`または`startAngle + sweepAngle`します。
 
@@ -606,9 +606,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 接線の点の座標にはこの情報を使用して計算できます。
 
-x = 112·cos(41.8) = 83
+x = 112・cos(41.8) = 83
 
-y = 112·sin(41.8) 75 を =
+y = 112・sin(41.8) = 75
 
 4 つの接点は 100 の円の半径のあるポイント (0, 0) で中央揃え、無限大記号を描画するために必要なことです。
 
