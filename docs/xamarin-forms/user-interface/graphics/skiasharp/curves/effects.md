@@ -416,13 +416,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 チェーンまたは uniform 重みの配分のケーブル、catenary の形式でハングします。 反転されたコピーの catenary の形式で構築された、arch アーチの重み付けによる負荷を均等に配分からメリットがあります。 Catenary では、一見単純な数学的な説明があります。
 
-y を押しを =cosh(x/a)
+y = a ・ cosh(x / a)
 
 *Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、*。 Catenary の中心です。 ように、*コサイン*関数、 *cosh*と呼ばれます*でも*、ですつまり*cosh(–x)* equals *cosh(x)*。、正または負の値の引数を高めるための値を増やすとします。 これらの値には、曲線、catenary の面を形成するについて説明します。
 
 適切な値の検索 *、* に合わせて、電話のページの寸法を catenary を利用する直接計算はありません。 場合*w*と*h*の最適値、四角形の高さと幅は *、* 次の式を満たします。
 
-cosh (w/2/、) = 1 + h、/
+cosh(w / 2 / a) = 1 + h / a
 
 次のメソッド、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)クラスには、左側のおよびと等号の右側の 2 つの式を参照して、等しいかどうかが組み込まれています`left`と`right`します。 値が小さい *、*、`left`がより大きい`right`; の値が大きい *、*、`left`がより小さい`right`します。 `while`の最適な値でループを絞り込みます *、*:
 
