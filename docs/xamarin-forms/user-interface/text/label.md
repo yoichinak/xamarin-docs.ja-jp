@@ -408,7 +408,7 @@ public class HyperlinkSpan : Span
 
 ## <a name="styling-labels"></a>スタイル ラベル
 
-前のセクションでは、対象設定[ `Label` ](xref:Xamarin.Forms.Label)と[ `Span` ](xref:Xamarin.Forms.Span) -インスタンスごとのプロパティ。 ただし、プロパティのセットは、1 つまたは複数のビューに一貫して適用されるスタイルを 1 つにグループ化できます。 コードの読みやすさを向上でき設計の変更を簡単に実装できます。 詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/text/styles.md)します。
+前のセクションでは、インスタンスごとに[`Label`](xref:Xamarin.Forms.Label)と[`Span`](xref:Xamarin.Forms.Span) のプロパティを設定する方法について説明しました。 ただし、プロパティのセットは、1 つまたは複数のビューに一貫して適用されるように、1 つのスタイルにグループ化できます。 これによりコードの読みやすさを向上でき設計の変更を簡単に実装しやすくなります。 詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/text/styles.md)。
 
 ## <a name="related-links"></a>関連リンク
 
