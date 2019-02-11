@@ -6,13 +6,13 @@ ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/18/2018
+ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056163"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831990"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーション プロパティ
 
@@ -138,6 +138,43 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 > [!NOTE]
 > [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを使用して `AutomationProperties.IsInAccessibleTree` 添付プロパティを設定することもできることに注意してください。`entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+
+## <a name="accessibility-intricacies"></a>アクセシビリティの複雑な作業
+
+次のセクションには、特定のコントロール上でのアクセシビリティ値を設定するという複雑な作業について説明します。
+
+### <a name="navigationpage"></a>NavigationPage
+
+Android 上で、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のアクション バー内の [戻る] 矢印に対して、スクリーン リーダーが読み上げるテキストを設定するには、[`Page`](xref:Xamarin.Forms.Page) 上で `AutomationProperties.Name` プロパティと `AutomationProperties.HelpText` プロパティを設定します。 ただし、これにより OS の [戻る] ボタンには影響しない点に注意してください。
+
+### <a name="masterdetailpage"></a>MasterDetailPage
+
+iOS およびユニバーサル Windows プラットフォーム (UWP) 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、`MasterDetailPage` 上で `AutomationProperties.Name` プロパティおよび `AutomationProperties.HelpText` プロパティを設定するか、または `Master` ページの `Icon` プロパティ上でそれらのプロパティを設定します。
+
+Android 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、Android プロジェクトに次のように文字列リソースを追加します。
+
+```xml
+<resources>
+        <string name="app_name">Xamarin Forms Control Gallery</string>
+        <string name="btnMDPAutomationID_open">Open Side Menu message</string>
+        <string name="btnMDPAutomationID_close">Close Side Menu message</string>
+</resources>
+```
+
+次に、`Master` ページの `Icon` プロパティの `AutomationId` プロパティを設定します。
+
+```csharp
+var master = new ContentPage { ... };
+master.Icon.AutomationId = "btnMDPAutomationID";
+```
+
+### <a name="toolbaritem"></a>ToolbarItem
+
+iOS、Android、UWP 上では、`AutomationProperties.Name` 値または `AutomationProperties.HelpText` 値が定義されていない場合、[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) インスタンスの `Text` プロパティ値がスクリーン リーダーによって読み上げられます。
+
+iOS および UWP 上では、スクリーン リーダーによって読み上げられる `Text` プロパティの値が `AutomationProperties.Name` プロパティ値に置き換えられます。
+
+Android 上では、スクリーン リーダーによって表示されかつ読み上げられる `Text` プロパティ値が `AutomationProperties.Name` プロパティ値または `AutomationProperties.HelpText` プロパティ値に完全に置き換えられます。 これは API が 26 未満の場合の制限事項です。
 
 ## <a name="related-links"></a>関連リンク
 

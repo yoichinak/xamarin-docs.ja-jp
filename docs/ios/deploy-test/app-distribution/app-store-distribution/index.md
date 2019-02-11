@@ -7,19 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115134"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55832029"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
 Xamarin.iOS アプリの開発が完了したら、ソフトウェア開発ライフサイクルの次の手順は、iTunes App Store を使用してアプリをユーザーに配布することです。 これは、アプリケーションを配布する最も一般的な方法です。 Apple の App Store でアプリケーションを発行することにより、世界中のコンシューマーが使用できるようになります。
 
 > [!IMPORTANT]
-> Apple は、2018 年 7 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイをサポートする](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)必要があることを[通知しました](https://developer.apple.com/news/?id=05072018a)。
+> Apple は、2019 年 3 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 12.1 SDK (Xcode 10.1 以降に含まれている) でビルドされる必要があることを[通知しました](https://developer.apple.com/ios/submit/)。
+> アプリでは、iPhone XS および 12.9 インチ iPad Pro の画面サイズもサポートされる必要もあります。
 
 アプリケーションを配布するには、アプリケーションの開発の場合と同じように、適切な*プロビジョニング プロファイル*を使用してアプリケーションをプロビジョニングする必要があります。 プロビジョニング プロファイルは、コード署名情報だけでなく、アプリケーションの ID と使用する配布メカニズムも含むファイルです。 App Store 以外の配布では、アプリを展開できるデバイスに関する情報も含まれています。
 
@@ -63,11 +64,11 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 または、Xcode の [Preferences]\(環境設定\) ダイアログを使用して証明書を要求することができます。 この操作を行うには、次の手順に従います。
 
-1.   チームを選択し、**[Manage Certificates…]\(証明書の管理…\)** をクリックします。 [![](images/selectteam.png "チームの選択と詳細の表示")](images/selectteam.png#lightbox)
+1.   チームを選択し、**[証明書の管理...**] をクリックします。[![](images/selectteam.png "チームを選択して、詳細を表示する")](images/selectteam.png#lightbox)
 
-2.   次に、**[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。[![](images/selectcert.png "iOS 配布証明書の作成")](images/selectcert.png#lightbox)
+2.   次に、**[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。[![](images/selectcert.png "iOS 配布証明書を作成する")](images/selectcert.png#lightbox)
 
-3.   チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[![](images/generated.png "署名 ID が生成され、ダイアログが表示される")](images/generated.png#lightbox)
+3.   チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[![](images/generated.png "署名 ID が生成され、ダイアログが表示されます")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />

@@ -7,17 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 97b3e5323329d2df024e05f1829b12b239b37299
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 52cd8a15f1b5b232deef62a8e87910b092aad94c
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103050"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831951"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
 > [!IMPORTANT]
-> Apple は、2018 年 7 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 11 SDK でビルドされ、[iPhone X ディスプレイをサポートする](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)必要があることを[通知しました](https://developer.apple.com/news/?id=05072018a)。
+> Apple は、2019 年 3 月以降に App Store に提出されるすべてのアプリおよび更新プログラムが iOS 12.1 SDK (Xcode 10.1 以降に含まれている) でビルドされる必要があることを[通知しました](https://developer.apple.com/ios/submit/)。
+> アプリでは、iPhone XS および 12.9 インチ iPad Pro の画面サイズもサポートされる必要もあります。
 
 iTunes Connect は、特に App Store で iOS アプリケーションを管理するための Web ベースのツール群です。 Xamarin.iOS アプリケーションをレビューのために Apple に提出し、最終的に App Store で販売または無償アプリとしてリリースする前に、アプリケーションを正しく設定して、iTunes Connect で構成する必要があります。
 
@@ -116,7 +117,7 @@ Apple では、アプリケーションがサポートするすべての画面�
 7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 > [!NOTE]
-> 注: スクリーンショットまたはアプリのプレビュー ビデオがアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
+> メモ:スクリーンショットまたはアプリのプレビュー ビデオがアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
 
 <a name="metadata" />
 
@@ -188,7 +189,7 @@ Apple では、ユーザーのアプリケーションに関する問題や質�
 6. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 > [!IMPORTANT]
-> 注: 名前、説明、新機能、キーワード、または URL がアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
+> メモ:名前、説明、新機能、キーワード、または URL がアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
 
 <a name="general" />
 
@@ -233,7 +234,7 @@ App Store では、すべてのアプリケーションに評価を設定する�
 子供向けのアプリケーションを作成する場合、App Store には 11 歳以下の子供向けの特別なカテゴリがあります。 アプリケーションが特に子供を対象としたものでなくても、コンテンツの適切な評価を提供することで、顧客の選択に役立ちます。
 
 > [!IMPORTANT]
-> 注: わいせつ、ポルノ、有害または中傷的と認められたアプリケーションは、Apple によって提出が拒否されます。
+> メモ: わいせつ、ポルノ、有害または中傷的と認められたアプリケーションは、Apple によって提出が拒否されます。
 
 ### <a name="copyright-and-company-information"></a>著作権および企業情報
 
@@ -256,7 +257,7 @@ Apple では、アプリケーションの著作権情報を提供すること�
 6. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 > [!NOTE]
-> 注: カテゴリや評価がアプリケーションの現在の機能と一致しない場合は、Apple によって提出が拒否されます。
+> メモ: カテゴリまたは評価がアプリケーションの現在の機能と一致しない場合は、Apple によって提出が拒否されます。
 
 <a name="game-center" />
 
@@ -348,7 +349,7 @@ Xamarin.iOS アプリケーションでのアプリ内購入の使用に関す�
 
 ## <a name="viewing-application-reviews"></a>アプリケーションのレビューの表示
 
-App Store にアプリがリリースされると、アプリケーションを購入したユーザーまたは無料でダウンロードしたユーザーはアプリのレビューを記入し、星評価をすることができます。 このセクションを使用して、これらのレビューを表示します。 例:
+App Store にアプリがリリースされると、アプリケーションを購入したユーザーまたは無料でダウンロードしたユーザーはアプリのレビューを記入し、星評価をすることができます。 このセクションを使用して、これらのレビューを表示します。 次に例を示します。
 
 [![](itunesconnect-images/reviews01.png "アプリケーションのレビューの表示")](itunesconnect-images/reviews01.png#lightbox)
 
@@ -359,7 +360,7 @@ App Store にアプリがリリースされると、アプリケーションを�
 ## <a name="related-links"></a>関連リンク
 
 - [イメージの処理](~/ios/app-fundamentals/images-icons/index.md)
-- [iOS App Development Workflow Guide: Distributing Applications (iOS アプリの開発ワークフロー ガイド: アプリケーションの配布)](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
+- [iOS アプリ開発ワークフロー ガイド: アプリケーションの配布](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
 - [App Store への提出に関するヒント](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [App Store の審査に関するガイドライン](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [iTunes Connect 開発者ガイド](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1)
