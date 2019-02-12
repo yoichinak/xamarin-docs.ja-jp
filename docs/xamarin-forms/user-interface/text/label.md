@@ -93,7 +93,7 @@ public partial class LabelPage : ContentPage
 
 ![](label-images/textcolor.png "ラベル のTextColor 使用例")
 
-色の詳細については、次を参照してください。[色](~/xamarin-forms/user-interface/colors.md)します。
+色の詳細については、次を参照してください。[Xamarin.Formsでの色](~/xamarin-forms/user-interface/colors.md)。
 
 ## <a name="fonts"></a>フォント
 
@@ -103,12 +103,12 @@ public partial class LabelPage : ContentPage
 
 ## <a name="truncation-and-wrapping"></a>切り捨てと折り返し
 
-によって公開されているいくつかの方法のいずれかで 1 つの行に収まらないテキストを処理するためにラベルを設定することができます、`LineBreakMode`プロパティ。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) 次の値を持つ列挙型を示します。
+`LineBreakMode` プロパティによって公開されているいくつかの方法で、 1つの行に収まらないテキストを処理する設定をラベルに適用することができます。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) 次に列挙型の値を示します。
 
 - **HeadTruncation** &ndash;テキストの先頭を切り捨てて末尾を表示します。
 - **CharacterWrap** &ndash;テキストを文字の境界で改行します。
 - **MiddleTruncation** &ndash;テキストの先頭と末尾を表示し、中間を省略記号で置き換えます。
-- **NoWrap** &ndash;のみを表示するテキストを折り返しませんしたりできるだけ多くのテキストに合わせて 1 つの行にします。
+- **NoWrap** &ndash;テキストを折り返しません。１行で収まるテキストを表示します。
 - **TailTruncation** &ndash;テキストの先頭を表示して、末尾を切り捨てます。
 - **WordWrap** &ndash;テキストを単語の境目で折り返します。
 
@@ -116,8 +116,8 @@ public partial class LabelPage : ContentPage
 
 [ `Label` ](xref:Xamarin.Forms.Label)に表示される行数は、 `Label.MaxLines`プロパティに`int`値を指定して設定することができます。
 
-- ときに`MaxLines`0 の場合は、`Label`の値を尊重、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティを切り捨てられる可能性がある場合、1 つの行を表示するか、またはすべてのテキストを含むすべての行。
-- ときに`MaxLines`1 に設定されて、結果の設定と同じですが、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティを[ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode)、 [ `HeadTruncation` ](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation` ](xref:Xamarin.Forms.LineBreakMode)、または[ `TailTruncation`](xref:Xamarin.Forms.LineBreakMode)します。 ただし、`Label`の値を尊重、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)に関して該当する場合、省略記号の配置プロパティです。
+- `MaxLines`が 0 の場合は、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値を考慮して、１行だけ（場合によっては切り捨て）、または全てのテキストを含む全ての行を表示します。
+- `MaxLines`が 1 の場合は、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティを[ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode)、 [ `HeadTruncation` ](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation` ](xref:Xamarin.Forms.LineBreakMode)、または[ `TailTruncation`](xref:Xamarin.Forms.LineBreakMode)に設定するのと同じです。 ただし、省略記号の表示については、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)の値を尊重します。
 - `MaxLines`が 1 より大きい場合は、指定された行数を`Label`に表示しますが、省略記号の表示は必要に応じて [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値を考慮します。 ただし、`MaxLines`プロパティを 1 より大きい値にしている場合でも、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティに[ `NoWrap`](xref:Xamarin.Forms.LineBreakMode)が設定されている場合は効果がありません。
 
 次の XAML は、[ `Label` ](xref:Xamarin.Forms.Label)の`MaxLines`プロパティを設定する例です:
@@ -156,11 +156,11 @@ var label =
 - [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) -スパン内のテキストフォントが属するフォントファミリ。
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) -スパン内のテキストのフォントのサイズ。
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) -スパン内のテキストの色。 このプロパティは廃止されましたが、`TextColor`プロパティに置き換えられました。
-- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -範囲の既定の行の高さに適用する乗数。 詳細については、次を参照してください。[行の高さ](#line-height)します。
+- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -スパンの既定の行の高さに適用する乗数。 詳細については、次を参照してください。[行の高さ](#line-height)
 - [`Style`](xref:Xamarin.Forms.Span.Style) – スパンに適用するスタイル。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – スパンのテキスト。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) -スパン内のテキストの色。
-- `TextDecorations` -範囲内のテキストに適用する装飾。 詳細については、次を参照してください。[装飾](#text-decorations)します。
+- `TextDecorations` -スパン内のテキストに適用する装飾。 詳細については、次を参照してください。[文字装飾](#text-decorations)。
 
 さらに、 [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)プロパティを使用して、 [ `Span`](xref:Xamarin.Forms.Span)のジェスチャに応答するジェスチャ レコグナイザーのコレクションを使用することができます。
 
@@ -214,9 +214,9 @@ public class LabelPageCode : ContentPage
 ```
 
 > [!IMPORTANT]
-> [ `Text` ](xref:Xamarin.Forms.Span.Text)のプロパティを`Span`データ バインドを通じて設定できます。 詳細については、次を参照してください。[データ バインディングの](~/xamarin-forms/app-fundamentals/data-binding/index.md)します。
+> `Span`の[ `Text` ](xref:Xamarin.Forms.Span.Text)プロパティはデータバインディングを通じて設定できます。 詳細については、次を参照してください。[データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 
-なお、 [ `Span` ](xref:Xamarin.Forms.Span) 、span に追加されるすべてのジェスチャに応答できますも[ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)コレクション。 たとえば、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)が 2 番目に追加された`Span`上記のコード例でします。 そのため、この`Span`がタップされた、`TapGestureRecognizer`が実行することによって応答、`ICommand`によって定義された、 [ `Command` ](xref:Xamarin.Forms.TapGestureRecognizer.Command)プロパティ。 ジェスチャ レコグナイザーの詳細については、次を参照してください。 [Xamarin.Forms ジェスチャ](~/xamarin-forms/app-fundamentals/gestures/index.md)します。
+なお、 [ `Span` ](xref:Xamarin.Forms.Span)は 、span　の[ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)コレクション に追加されるすべてのジェスチャに応答できます。 たとえば、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)は、上記のコード例の 2 番目の`Span`に追加されています。 そのため、この`Span`がタップされると、`TapGestureRecognizer`は[ `Command` ](xref:Xamarin.Forms.TapGestureRecognizer.Command)プロパティで定義された`ICommand`を実行して応答します。 ジェスチャレコグナイザーの詳細については、次を参照してください。 [Xamarin.Forms のジェスチャ](~/xamarin-forms/app-fundamentals/gestures/index.md)
 
 次のスクリーンショットは、`FormattedString`プロパティを3つの`Span`インスタンスに設定した結果を示しています。
 
