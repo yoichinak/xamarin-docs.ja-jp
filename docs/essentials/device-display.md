@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: デバイス ディスプレイ情報'
+title: Xamarin.Essentials:デバイス ディスプレイ情報
 description: このドキュメントでは、アプリケーションが実行されているデバイスの画面のメトリックを提供する Xamarin.Essentials の DeviceDisplay クラスについて説明します。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: d3102f0a4ed5f16c77c4a4768feb4a1565f2dd1a
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 61d0a77d7a6a862ec5e06c7b693f8e23e4cdb975
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898892"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986238"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: デバイス ディスプレイ情報
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:デバイス ディスプレイ情報
 
 **DeviceDisplay** クラスは、アプリケーションが実行されているデバイスの画面のメトリックに関する情報を提供し、アプリケーションの実行中に画面がスリープ状態にならないように要求することができます。
 
@@ -63,7 +63,7 @@ public class DisplayInfoTest
         DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
     }
 
-    void OnMainDisplayInfoChanged(DisplayInfoChangedEventArgs  e)
+    void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs  e)
     {
         // Process changes
         var displayInfo = e.DisplayInfo;
