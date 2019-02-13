@@ -18,15 +18,15 @@ ms.locfileid: "50116929"
 
 _この記事では、任意の解像度と 1 つ Unified ストーリー ボードを使用して、向きで、すべての iOS デバイス用アプリの起動画面を作成する方法について説明します。_
 
-IOS 8 の場合は、前に iOS アプリの起動画面を作成すると、さまざまなデバイス フォーム ファクターと、アプリが実行される解像度の各イメージ資産を提供する、開発者が必要です。 IOS 8 のリリースでは、ただし、それ以来単一 Unified ストーリー ボードを使用して、次のすべてのケースで適切な起動画面を作成することです。
+iOS 8 の場合は、前に iOS アプリの起動画面を作成すると、さまざまなデバイス フォーム ファクターと、アプリが実行される解像度の各イメージ資産を提供する、開発者が必要です。 iOS 8 のリリースでは、ただし、それ以来単一 Unified ストーリー ボードを使用して、次のすべてのケースで適切な起動画面を作成することです。
 
-この簡単なチュートリアルでは、既定では、新しいプロジェクトで提供されるストーリーまたはストーリー ボードを既存のプロジェクトに手動で追加の起動画面を作成する方法について説明します。 IOS Designer を使用して、これらのビューに制約を設定して、ストーリー ボードがさまざまなデバイスや向きの正しいことを確認するストーリー ボードにイメージのビューとラベルを追加する方法を紹介します。
+この簡単なチュートリアルでは、既定では、新しいプロジェクトで提供されるストーリーまたはストーリー ボードを既存のプロジェクトに手動で追加の起動画面を作成する方法について説明します。 iOS Designer を使用して、これらのビューに制約を設定して、ストーリー ボードがさまざまなデバイスや向きの正しいことを確認するストーリー ボードにイメージのビューとラベルを追加する方法を紹介します。
 
 <a name="storyboard" />
 
 ## <a name="managing-launch-screens-with-storyboards"></a>ストーリー ボードの起動画面を管理します。
 
-Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメージを使用する代わりに起動画面を提供する特別な Unified ストーリー ボードを作成できます。 IOS Designer の起動のストーリー ボードを作成するときに、さまざまなディスプレイ環境ごとに異なるレイアウトを定義するのにクラスのサイズと自動レイアウトを使用します。 サイズ クラスおよび自動レイアウトを使用して、開発者はすべてのデバイス上で優れた外観を 1 つの起動画面を作成し、環境を表示できます。
+Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメージを使用する代わりに起動画面を提供する特別な Unified ストーリー ボードを作成できます。 iOS Designer の起動のストーリー ボードを作成するときに、さまざまなディスプレイ環境ごとに異なるレイアウトを定義するのにクラスのサイズと自動レイアウトを使用します。 サイズ クラスおよび自動レイアウトを使用して、開発者はすべてのデバイス上で優れた外観を 1 つの起動画面を作成し、環境を表示できます。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -37,7 +37,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
     - 既定では、新しいプロジェクトが含まれます、 **LaunchScreen.storyboard**起動画面のインターフェイスを定義するファイル。 
     - 代わりに起動画面ストーリー ボードを既存のプロジェクトに追加するでプロジェクト名を右クリックし、 **Solution Pad**選択**追加 > 新しいファイル.** 選び**起動画面**:
 
-    ![IOS の起動画面が選択されていると、新しいファイル ウィンドウ](launch-screens-images/launch01b.png)
+    ![iOS の起動画面が選択されていると、新しいファイル ウィンドウ](launch-screens-images/launch01b.png)
 
     - ファイルに名前を**LaunchScreen**または任意の別の名前。
 
@@ -97,7 +97,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 新しいプロジェクトを作成します。 Visual Studio で、次のように選択します**ファイル > 新規 > プロジェクト > Visual c# > iPhone と iPad > iOS アプリ (Xamarin)**:。
+1. 新しいプロジェクトを作成します。 Visual Studio で、次のように選択します**ファイル > 新規 > プロジェクト > Visual C# > iPhone と iPad > iOS アプリ (Xamarin)**:。
 
     ![新しいプロジェクト ウィンドウ、iOS アプリ (Xamarin) で選択されています。](launch-screens-images/launch01.w157.png)
 
@@ -191,7 +191,7 @@ Unified ストーリー ボードの起動画面の作成の詳細について�
 
 その起動画面のストーリー ボードを使用する既存のアプリを更新するときに右クリックして、**プロジェクト名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいファイル.**.選択**iOS** > **起動画面** をクリックし、**新規**ボタン。
 
-![](launch-screens-images/storyboard02.png "IOS の起動画面を選択します。")
+![](launch-screens-images/storyboard02.png "iOS の起動画面を選択します。")
 
 次をダブルクリック、`Info.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。 **起動画面**、上記で作成した新しいストーリー ボード ファイルを選択します。
 
@@ -230,5 +230,5 @@ Unified ストーリー ボードの起動画面の作成の詳細について�
 - [統合ストーリーボード](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS Designer の基本](~/ios/user-interface/designer/index.md)
 - [資産カタログ イメージに追加するイメージを設定します。](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
-- [IOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)
+- [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)
 - [起動画面のヒューマン インターフェイス ガイドライン:](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
