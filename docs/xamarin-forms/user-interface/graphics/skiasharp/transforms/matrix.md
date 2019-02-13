@@ -7,12 +7,12 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: dd38d91a808bed715c92c0fc7d98d6786fc43f67
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 192f0745874b54989ab9070014dae2a5e9e98110
+ms.sourcegitcommit: 605f7c480c3f7b5dd364fdb1bd4d983de8f7ed25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054649"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56213778"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp の行列変換
 
@@ -64,11 +64,11 @@ SkiaSharp のグラフィカル オブジェクトをレンダリングすると
 
 標準的な行列乗算を使用して、変換後のポイント次に示します。
 
-x' = x
+`x' = x`
 
-y' = y
+`y' = y`
 
-z' = 1
+`z' = 1`
 
 既定の変換です。
 
@@ -90,9 +90,9 @@ z' = 1
 
 変換式は、次に示します。
 
-x' = x + tx
+`x' = x + tx`
 
-y' = y + ty
+`y' = y + ty`
 
 スケール ファクターがある既定値は 1 です。 呼び出すと、`Scale`上の新しいメソッド`SKCanvas`オブジェクト、結果の変換マトリックスが含まれて、`sx`と`sy`対角線方向のセル内の引数。
 
@@ -104,9 +104,9 @@ y' = y + ty
 
 変換式は次のとおりです。
 
-x' = x + xSkew ・ y
+`x' = sx · x`
 
-y' = ySkew ・ x + y
+`y' = sy · y`
 
 呼び出した後、変換行列`Skew`スケール ファクターの横にあるマトリックス セルに 2 つの引数が含まれています。
 
@@ -118,9 +118,9 @@ y' = ySkew ・ x + y
 
 変換式は次のとおりです。
 
-x' = x + xSkew ・ y
+`x' = x + xSkew · y`
 
-y' = ySkew ・ x + y
+`y' = ySkew · x + y`
 
 呼び出すのため`RotateDegrees`または`RotateRadians`α の角度の変換行列のとおりです。
 
@@ -132,9 +132,9 @@ y' = ySkew ・ x + y
 
 変換式は、次に示します。
 
-x' = cos(α) ・ x - sin(α) ・ y
+`x' = cos(α) · x - sin(α) · y`
 
-y' = sin(α) ・ x - cos(α) ・ y
+`y' = sin(α) · x - cos(α) · y`
 
 Α が 0 度の場合は、恒等行列になります。 Α が 180 度と、変換行列のとおりです。
 
@@ -228,11 +228,11 @@ canvas.Translate(–px, –py);
               │ TransX  TransY  1 │
 </pre>
 
-x' = ScaleX ・ x + SkewX ・ y + TransX
+`x' = ScaleX · x + SkewX · y + TransX`
 
-y' = SkewX ・ x + ScaleY ・ y + TransY
+`y' = SkewX · x + ScaleY · y + TransY`
 
-z' = 1
+`z' = 1`
 
 これは、完全な 2 次元アフィン変換です。 アフィン変換では、四角形を平行四辺形以外のものに変換しないことを意味する、平行線を保持します。
 
@@ -259,7 +259,7 @@ SKMatrix.Concat(ref R, ref A, ref B);
 
 これらは、次の乗算を実行します。
 
-R = B × A
+`R = B × A`
 
 他の方法では、2 つのパラメーターがあります。 最初のパラメーターは変更済み、およびメソッドの呼び出しから返された場合は、2 つの行列の積を格納します。 2 つ`PostConcat`メソッドは次のように呼び出されます。
 
@@ -271,7 +271,7 @@ SKMatrix.PostConcat(ref A, ref B);
 
 これらの呼び出しでは、次の操作を実行します。
 
-A = × B
+`A = A × B`
 
 2 つ`PreConcat`メソッドは同様です。
 
@@ -283,7 +283,7 @@ SKMatrix.PreConcat(ref A, ref B);
 
 これらの呼び出しでは、次の操作を実行します。
 
-A = B × A
+`A = B × A`
 
 これらのメソッドでは、すべてのバージョン`ref`引数は、基になる実装を呼び出すことより若干効率的ですが、コードを読むとを含むものがあると仮定して、ユーザーが混乱を招くことが考えられます、`ref`で引数を変更メソッド。 さらに、いずれかの結果では引数を渡すと便利は多くの場合、`Make`メソッド、たとえば。
 
@@ -361,7 +361,7 @@ SKMatrix.PostConcat(ref A, C);
 
 これは、結果は次のように、一連の連続する乗算は、です。
 
-× B × C
+`A × B × C`
 
 連続する乗算は、各変換の動作を理解するうえで役立ちます。 スケール変換では、座標 –300 から 300 の範囲であるために、第 3 の倍数でパスの座標のサイズが大きくなります。 回転の変換では、星の原点の周囲を回転します。 平行移動変換を 300 ピクセル右と正の値になるすべての座標にこれが、シフトします。
 
