@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: c6328135e0310c7b10b89bf2e32ce62869b15cfb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e7327deead917f55d1e7ac8af5302b6dccf6fead
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059987"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240358"
 ---
 # <a name="polylines-and-parametric-equations"></a>多角形やパラメーターの式
 
@@ -26,21 +26,21 @@ _SkiaSharp を使用して、パラメーターの式を定義できる任意の
 
 通常、パラメーターの式のペアの観点から曲線を定義することをお勧めします。 これは、X および Y 座標の方程式とも呼ばれる 3 番目の変数に依存して`t`時間。 たとえば、次のパラメーターの式が 1 の中心点 (0, 0) の半径の円を定義の*t* 0 ~ 1。
 
-x = cos(2πt)
+`x = cos(2πt)`
 
-y = sin(2πt)
+`y = sin(2πt)`
 
  Radius を 1 より大きい、する場合は、半径の正弦と余弦の値を乗算し、center を別の場所に移動する必要がある場合は、これらの値を追加します。
 
-x = xCenter + radius·cos(2πt)
+`x = xCenter + radius·cos(2πt)`
 
-y = yCenter + radius·sin(2πt)
+`y = yCenter + radius·sin(2πt)`
 
 水平および垂直方向の軸平行に楕円の半径の 2 つが含まれます。
 
-x = xCenter + xRadius·cos(2πt)
+`x = xCenter + xRadius·cos(2πt)`
 
-y = yCenter + yRadius·sin(2πt)
+`y = yCenter + yRadius·sin(2πt)`
 
 SkiaSharp の同等のコードを配置して、ループをさまざまなポイントを計算し、それらをパスに追加します。 SkiaSharp の次のコード作成、`SKPath`楕円を表示画面を読み込むためのオブジェクト。 ループは、直接 360 度を循環します。 中心が半分の幅と、表示画面の高さと 2 つの半径をそのためには。
 

@@ -7,12 +7,12 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 7edb504a228612d7f1f1fee10a50a467fbb5fc6c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057101"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240319"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp の色フィルター
 
@@ -68,13 +68,13 @@ ms.locfileid: "53057101"
 
 R の別の数式をここでは '、G'、B' と A'。
 
-R' = M11・R + M12・G + M13・B + M14・A + M15 
+`R' = M11·R + M12·G + M13·B + M14·A + M15` 
 
-G' = M21・R + M22・G + M23・B + M24・A + M25 
+`G' = M21·R + M22·G + M23·B + M24·A + M25` 
 
-B' = M31・R + M32・G + M33・B + M34・A + M35 
+`B' = M31·R + M32·G + M33·B + M34·A + M35` 
 
-A' = M41・R + M42・G + M43・B + M44・A + M45 
+`A' = M41·R + M42·G + M43·B + M44·A + M45` 
 
 行列のほとんどは、通常 0 ~ 2 の範囲内にある乗法の要素で構成されます。 ただし、最後の列 (M15 M45 経由) は、数式で追加された値が含まれています。 これらの値は、一般に、255 0 範囲です。 結果は、値を 0 ~ 255 の範囲にクランプされます。
 
@@ -89,13 +89,13 @@ A' = M41・R + M42・G + M43・B + M44・A + M45
 
 これは、色を変化なし。 変換式は次のとおりです。
 
-R' = R 
+`R' = R` 
 
-G' = G
+`G' = G`
 
-B' = B
+`B' = B`
 
-A' = A
+`A' = A`
 
 不透明度を保持するので、M44 セルは非常に重要です。 おそらく、赤、緑、および青の値に基づいて、不透明度をしたくないため、M41、M42、および M43 はすべて 0 の場合、あるケースは一般的に。 M44 が 0、A の場合は ' は、0 になり、何が表示されます。
 
@@ -232,13 +232,13 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-常に、配列には、256 エントリが含まれます。 `CreateTable`赤、緑、青のコンポーネントの 1 つのテーブル、同じテーブルを持つメソッドを使用します。 これは、単純なルックアップ テーブル: 元の色 (R、G、B)、およびコピー先の色である場合 (R'、B'、G')、変換先コンポーネントは、インデックス作成で取得し、`table`ソース コンポーネントで。
+常に、配列には、256 エントリが含まれます。 `CreateTable`赤、緑、青のコンポーネントの 1 つのテーブル、同じテーブルを持つメソッドを使用します。 これは、単純なルックアップ テーブルです。元の色 (R、G、B)、およびコピー先の色である場合 (R'、B'、G')、変換先コンポーネントは、インデックス作成で取得し、`table`ソース コンポーネントで。
 
-R' = table[R]
+`R' = table[R]`
 
-G' = table[G]
+`G' = table[G]`
 
-B' = table[B]
+`B' = table[B]`
 
 2 番目のメソッドでの各色コンポーネントの 4 つは個別のカラー テーブル、または同じカラー テーブルは、2 つまたは複数のコンポーネント間で共有する可能性があります。
 

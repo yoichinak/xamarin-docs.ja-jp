@@ -7,12 +7,12 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 594e98230d4f4bd8aca27f92f4544f8c59b5f0a2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8c86782d5b8b8250049d0ae060ca7bd548c5a4ef
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061456"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240410"
 ---
 # <a name="the-separable-blend-modes"></a>Blend の分離モード
 
@@ -127,19 +127,21 @@ public partial class LightenAndDarkenPage : ContentPage
 
 [![明るくして、画面の](separable-images/LightenAndDarken.png "明るくし、暗くします。")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-このプログラムは、blend の分離モードが使用される標準の方法を示します。 コピー先ビットマップでは非常に多くの場合、何らかのイメージであります。 使用して表示される四角形は、ソースは、`SKPaint`オブジェクトをその`BlendMode`プロパティを分離できる blend モードに設定します。 四角形は、純色を指定できます (ここでは、)、またはグラデーションをします。 透過性は_いない_通常、blend の分離モードで使用します。
+このプログラムでは、通常の blend の分離モードを使用する方法を示しています。変換先は、何らかの非常に多くの場合、ビットマップのイメージです。 使用して表示される四角形は、ソースは、`SKPaint`オブジェクトをその`BlendMode`プロパティを分離できる blend モードに設定します。 四角形は、純色を指定できます (ここでは、)、またはグラデーションをします。 透過性は_いない_通常、blend の分離モードで使用します。
 
 このプログラムで実験するときこれら 2 つの blend のモードのされませんは明るくし、一様にイメージが暗く説明します。 代わりに、`Slider`に何らかのしきい値を設定します。 たとえば、するとして次のように向上します。、`Slider`の、`Lighten`モードでは、イメージの暗い部分の取得光最初明るい部分は同じままです。
 
 `Lighten`モード、対象のピクセルは RGB カラー値 (Dr, Dg, Db) と、出力は、ソース ピクセルが色 (Sr、Sg、Sb) の場合 (Or, Og, Ob) として計算されます。
 
- Or = max(Dr, Sr) Og = max(Dg, Sg) Ob = max(Db, Sb)
+ `Or = max(Dr, Sr)` `Og = max(Dg, Sg)`
+ `Ob = max(Db, Sb)`
 
 赤、緑、青のとは別に、結果が大きいの送信先と送信元です。 これには、最初に、変換先の暗い領域を明るくの効果が生成されます。
 
 `Darken`モードは、結果の送信先と送信元のうちの小さい方がある点が似ています。
 
- Or = min(Dr, Sr) Og = min(Dg, Sg) Ob = min(Db, Sb)
+ `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
+ `Ob = min(Db, Sb)`
 
 赤、緑、青のコンポーネントは、個別に処理がこれらの描画モードと呼ばれます、_分離_ブレンド モード。 このため、省略形**Dc**と**Sc**宛先と元の色に使用でき、計算が個別に適用する赤、緑、青のコンポーネントの各が認識されます。
 
@@ -147,9 +149,9 @@ public partial class LightenAndDarkenPage : ContentPage
 
 | ブレンド モード   | 変更なし | 操作 |
 | ------------ | --------- | --------- |
-| `Plus`       | 黒     | 色を追加することで明るく: Sc + Dc |
-| `Modulate`   | 白     | 色を乗算して暗く: Sc·Dc | 
-| `Screen`     | 黒     | 補完製品を補完するもの: Sc + Dc &ndash; Sc·Dc |
+| `Plus`       | 黒     | 色を追加することで明るくなります。Sc + Dc |
+| `Modulate`   | 白     | 色を乗算して暗くなります。Sc·Dc | 
+| `Screen`     | 黒     | 補完製品を補完するもの。Sc + Dc &ndash; Sc·Dc |
 | `Overlay`    | 灰色      | 逆関数 `HardLight` |
 | `Darken`     | 白     | 色の最小: min (Sc, Dc) |
 | `Lighten`    | 黒     | 色の最大: max (Sc、Dc) |
@@ -157,9 +159,9 @@ public partial class LightenAndDarkenPage : ContentPage
 | `ColorBurn`  | 白     | ソースに基づいて変換先を暗くなります。 | 
 | `HardLight`  | 灰色      | 同様に、過酷なスポット ライトの効果 |
 | `SoftLight`  | 灰色      | 論理的なスポット ライトの効果に似ています | 
-| `Difference` | 黒     | 濃い薄いから減算します Abs (Dc &ndash; Sc)。 | 
+| `Difference` | 黒     | 濃い薄いから減算します。Abs (Dc &ndash; Sc) | 
 | `Exclusion`  | 黒     | ような`Difference`がコントラストを下げる |
-| `Multiply`   | 白     | 色を乗算して暗く: Sc·Dc |
+| `Multiply`   | 白     | 色を乗算して暗くなります。Sc·Dc |
 
 詳細なアルゴリズムは、W3C で見つかる[**合成とレベル 1 のブレンド**](https://www.w3.org/TR/compositing-1/)仕様と、Skia [ **SkBlendMode 参照**](https://skia.org/user/api/SkBlendMode_Reference)これら 2 つのソースでの表記は同じはなりません。 注意`Plus`Porter Duff blend モードと見なされることがよくと`Modulate`W3C 仕様の一部ではありません。
 

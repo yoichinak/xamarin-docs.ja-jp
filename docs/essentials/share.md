@@ -1,18 +1,19 @@
 ---
-title: 'Xamarin.Essentials: 共有'
+title: Xamarin.Essentials:共有
 description: アプリケーションで Xamarin.Essentials の Share クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 6fd3fd90d1e2ada225dafdd855f8903688677660
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 02/12/2019
+ms.custom: video
+ms.openlocfilehash: 7e61041fa33557c4e1db3613b75b575e9d456231
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899375"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240423"
 ---
-# <a name="xamarinessentials-share"></a>Xamarin.Essentials: 共有
+# <a name="xamarinessentials-share"></a>Xamarin.Essentials:共有
 
 アプリケーションで **Share** クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。
 
@@ -20,7 +21,7 @@ ms.locfileid: "52899375"
 
 [!include[](~/essentials/includes/get-started.md)]
 
-## <a name="using-share"></a>共有の使用
+## <a name="using-share"></a>Share の使用
 
 自分のクラスの Xamarin.Essentials に参照を追加します。
 
@@ -28,7 +29,7 @@ ms.locfileid: "52899375"
 using Xamarin.Essentials;
 ```
 
-共有機能は、他のアプリケーションと共有する情報が含まれているデータ要求ペイロードを指定して `RequestAsync` メソッドを呼び出すことにより動作します。 テキストと URI を混在させることができ、各プラットフォームはコンテンツに基づいてフィルターを処理します。
+Share 機能は、他のアプリケーションと共有する情報が含まれているデータ要求ペイロードを指定して `RequestAsync` メソッドを呼び出すことにより動作します。 テキストと URI を混在させることができ、各プラットフォームはコンテンツに基づいてフィルターを処理します。
 
 ```csharp
 
@@ -80,3 +81,9 @@ public class ShareTest
 
 - [Share のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
 - [Share API のドキュメント](xref:Xamarin.Essentials.Share)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Share-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 020afef6b2eb3743fd17118b2922bac4d4c32239
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233992"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240436"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -107,9 +107,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 円弧を生成するには、この方法は簡単、アルゴリズムと円弧を記述するパラメーターの式を派生するは簡単です。楕円、および開始および掃引角度の場所とサイズを知ること、開始と円弧の始点と終点できますを計算する単純な三角関数の使用します。
 
-x = oval.MidX + (oval.Width / 2) * cos(angle)
+`x = oval.MidX + (oval.Width / 2) * cos(angle)`
 
-y = oval.MidY + (oval.Height / 2) * sin(angle)
+`y = oval.MidY + (oval.Height / 2) * sin(angle)`
 
 `angle`値は、いずれかの`startAngle`または`startAngle + sweepAngle`します。
 
@@ -606,9 +606,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 接線の点の座標にはこの情報を使用して計算できます。
 
-x = 112・cos(41.8) = 83
+`x = 112·cos(41.8) = 83`
 
-y = 112・sin(41.8) = 75
+`y = 112·sin(41.8) = 75`
 
 4 つの接点は 100 の円の半径のあるポイント (0, 0) で中央揃え、無限大記号を描画するために必要なことです。
 

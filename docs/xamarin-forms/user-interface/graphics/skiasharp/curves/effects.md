@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: 835663b2d9a9fa8557a31570f91492da95be7a9a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059192"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240397"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp のパスの効果
 
@@ -416,13 +416,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 チェーンまたは uniform 重みの配分のケーブル、catenary の形式でハングします。 反転されたコピーの catenary の形式で構築された、arch アーチの重み付けによる負荷を均等に配分からメリットがあります。 Catenary では、一見単純な数学的な説明があります。
 
-y = a ・ cosh(x / a)
+`y = a · cosh(x / a)`
 
 *Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、*。 Catenary の中心です。 ように、*コサイン*関数、 *cosh*と呼ばれます*でも*、ですつまり*cosh(–x)* equals *cosh(x)*。、正または負の値の引数を高めるための値を増やすとします。 これらの値には、曲線、catenary の面を形成するについて説明します。
 
 適切な値の検索 *、* に合わせて、電話のページの寸法を catenary を利用する直接計算はありません。 場合*w*と*h*の最適値、四角形の高さと幅は *、* 次の式を満たします。
 
-cosh(w / 2 / a) = 1 + h / a
+`cosh(w / 2 / a) = 1 + h / a`
 
 次のメソッド、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)クラスには、左側のおよびと等号の右側の 2 つの式を参照して、等しいかどうかが組み込まれています`left`と`right`します。 値が小さい *、*、`left`がより大きい`right`; の値が大きい *、*、`left`がより小さい`right`します。 `while`の最適な値でループを絞り込みます *、*:
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-結果を慎重に確認すると、赤、青のハッチ線を角丸四角形に正確に制限されないことが表示されます。 (これは一見、基になる Skia コードの特性。)別のアプローチが緑色で斜線行に対して表示される満足のいく場合: 角丸四角形はクリッピング パスとして使用され、ページ全体にハッチ線が描画されます。
+結果を慎重に確認すると、赤、青のハッチ線を角丸四角形に正確に制限されないことが表示されます。 (これは一見、基になる Skia コードの特性。)これがない場合は、緑色で斜線ハッチ線の別の方法が表示されます。角丸四角形はクリッピング パスとして使用され、ページ全体にハッチ線が描画されます。
 
 `PaintSurface`赤、青のハッチ線に不一致が確認できるように、角の丸い四角形を単にストロークを描画する呼び出しでハンドラーの終了します。
 
 [![](effects-images/hatchfill-small.png "ハッチの塗りつぶし ページのスクリーン ショットをトリプル")](effects-images/hatchfill-large.png#lightbox "ハッチの塗りつぶし ページの 3 倍になるスクリーン ショット")
 
-Android の画面がそのような検索しない実際: シン赤色の線とシン広くする一見赤色の線に統合するおよびより多くのスペースが原因のスクリーン ショットのスケーリングします。
+Android の画面はそのような検索実際には。赤の細い線と一見広い赤色の線に統合するシン スペースと広いスペースが原因のスクリーン ショットのスケーリングします。
 
 ## <a name="filling-with-a-path"></a>パスの入力
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 最初の 2 つの引数のみが必要です。 メソッドによって参照されているパスにアクセスする、`src`引数、ストロークのプロパティに基づいてパスのデータを変更する、`SKPaint`オブジェクト (など、`PathEffect`プロパティ)、しに結果を書き込みます、`dst`パス。 `resScale`パラメーターは、小規模な移行先パスを作成する桁数を減らすことができます、`cullRect`引数は、四角形の外側の輪郭を排除できます。
 
-このメソッドの 1 つの基本的な使用がパスの効果をまったく関係しない: 場合、`SKPaint`オブジェクトがその`Style`プロパティに設定`SKPaintStyle.Stroke`と*いない*がその`PathEffect`設定し、`GetFillPath`を作成、パスを表す、*アウトライン*ソース パスの描画したペイント プロパティであるかのようです。
+このメソッドの 1 つの基本的な使用では、パスの効果をまったく関与しません。場合、`SKPaint`オブジェクトがその`Style`プロパティに設定`SKPaintStyle.Stroke`と*いない*がその`PathEffect`設定し、`GetFillPath`を表すパスを作成、*アウトライン*ソース パスの描画したペイント プロパティであるかのようです。
 
 たとえば場合、`src`パスは、単純な円の半径、500 の`SKPaint`オブジェクトが 100 のストロークの幅を指定します、`dst`半径 550 の半径が 450 および、その他の 1 つ、2 つの同心円をパスになります。 メソッドは`GetFillPath`ため、この入力`dst`ストロークと同じパスでは、`src`パス。 ストロークを描画することができますもが、`dst`パス、パスのアウトラインを参照してください。
 
