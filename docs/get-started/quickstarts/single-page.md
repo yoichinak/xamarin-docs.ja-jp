@@ -42,7 +42,7 @@ ms.locfileid: "55293314"
 
 ## <a name="get-started-with-visual-studio"></a>Visual Studio 入門
 
-1. Visual Studio を起動して、スタート ページで次のようにクリックします**新しいプロジェクトの作成.。** 新しいプロジェクトを作成します。
+1. Visual Studio を起動して、スタート ページで次のようにクリックします**新しいプロジェクトの作成...** 新しいプロジェクトを作成します。
 
     ![](single-page-images/vs/new-solution.png "新しいプロジェクト")
 

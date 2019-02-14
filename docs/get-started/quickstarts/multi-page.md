@@ -592,7 +592,7 @@ ms.locfileid: "55293338"
 
     このコードは、名前空間宣言を追加、`System.IO`名前空間の静的な宣言を追加します。`FolderPath`型のプロパティ`string`。 `FolderPath`注データが格納されるデバイス上のパスを格納するプロパティが使用されます。 さらに、コードを初期化します、`FolderPath`プロパティ、`App`コンス トラクター、および初期化、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)をホストする、インスタンス`NotesPage`します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
 
-    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 14. **Solution Pad**の**ノート**プロジェクトを右クリックして**MainPage.xaml**を選択し、**削除**します。 キーを押して表示されるダイアログで、**削除**ハード_ディスクからファイルを削除するボタンをクリックします。
 
