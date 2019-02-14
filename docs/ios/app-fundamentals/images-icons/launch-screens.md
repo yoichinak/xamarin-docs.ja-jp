@@ -97,7 +97,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 新しいプロジェクトを作成します。 Visual Studio で、次のように選択します**ファイル > 新規 > プロジェクト > Visual C# > iPhone と iPad > iOS アプリ (Xamarin)**:。
+1. 新しいプロジェクトを作成します。 Visual Studio で、次のように選択します**ファイル > 新規 > プロジェクト > Visual c# > iPhone と iPad > iOS アプリ (Xamarin)**:。
 
     ![新しいプロジェクト ウィンドウ、iOS アプリ (Xamarin) で選択されています。](launch-screens-images/launch01.w157.png)
 
