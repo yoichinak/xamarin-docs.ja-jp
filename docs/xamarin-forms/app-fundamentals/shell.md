@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2018
-ms.openlocfilehash: 41530399bfc2210e7c3eda461688c12c6235ef79
-ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
+ms.openlocfilehash: dec1bb2f3f2eead3a1d50f37a0f1281523548b66
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2019
-ms.locfileid: "54418674"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986277"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
 
@@ -417,7 +417,7 @@ public ICommand ProductTypeCommand { get; } = new Command<string>(NavigateToProd
 
 static void NavigateToProductType(string typeId)
 {
-  (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"app:///tailwindtraders/productcategory?id={typeId}", true);
+  (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"app://tailwindtraders/productcategory?id={typeId}", true);
 }
 ```
 
@@ -475,7 +475,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 | プロパティ | 型 | 説明 |
 |---|---|---|
-| 現在 | `ShellNavigationState` | 現在のページの URI。 |
+| [現在] | `ShellNavigationState` | 現在のページの URI。 |
 | ソース | `ShellNavigationState` | ナビゲーションの発信元を表す URI。 |
 | ターゲット | `ShellNavigationSource`  | ナビゲーションの発信先を表す URI。 |
 | CanCancel  | `bool` | ナビゲーションをキャンセルできるかどうかを示す値。 |
@@ -487,7 +487,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 | プロパティ | 型 | 説明 |
 |---|---|---|
-| 現在 | `ShellNavigationState` | 現在のページの URI。 |
+| [現在] | `ShellNavigationState` | 現在のページの URI。 |
 | 前へ| `ShellNavigationState` | 前のページの URI。 |
 | ソース  | `ShellNavigationSource` | ナビゲーションの発信元を表す URI。 |
 
