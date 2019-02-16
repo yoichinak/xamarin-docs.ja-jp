@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a9e23f1bfa6099c64a0a60d78ecc3c6283a86a96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108092"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321130"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS Xamarin でのイメージ コントロール
 
-watchOS の提供、 [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/)イメージや単純なアニメーションを表示するコントロール。 一部のコントロール (ボタン、グループ、およびインターフェイス コント ローラー) などの背景画像をこともできます。
+watchOS の提供、 [ `WKInterfaceImage` ](xref:WatchKit.WKInterfaceImage)イメージや単純なアニメーションを表示するコントロール。 一部のコントロール (ボタン、グループ、およびインターフェイス コント ローラー) などの背景画像をこともできます。
 
 ![](image-images/image-walkway.png "Apple Watch の画像の表示") ![ ](image-images/image-animation.png "単純なアニメーションを使用して、Apple Watch")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
@@ -99,7 +99,7 @@ animatedImage.StopAnimating ();
 
 <a name="cache" />
 
-## <a name="appendix-caching-images-watchos-1"></a>付録: イメージ (watchOS 1) のキャッシュ
+## <a name="appendix-caching-images-watchos-1"></a>付録:イメージ (watchOS 1) のキャッシュ
 
 > [!IMPORTANT]
 > watchOS 3 のアプリをデバイスに完全に実行します。 次の情報は、watchOS 1 アプリのみです。

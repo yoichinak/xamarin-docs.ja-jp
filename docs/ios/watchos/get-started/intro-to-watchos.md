@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: ba5e7a24524f9371cbd810e18c11acc9e2e2a4cb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0b320955cae23b18444732c826849002d6375fe4
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055622"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321143"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS の概要
 
@@ -53,10 +53,10 @@ WatchOS 2 以降がウォッチ接続フレームワークが、親アプリと�
 
 ライフ サイクルを`WKInterfaceController`オブジェクトには、次の呼び出しが含まれます。
 
-- [起動状態](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.Awake/): このメソッドで、初期化のほとんどを実行する必要があります。
-- [WillActivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.WillActivate/) : Watch アプリはユーザーに表示する少し前に呼び出されます。 瞬間瞬間の最終初期化を実行、アニメーションなどを開始するには、このメソッドを使用します。
+- [起動状態](xref:WatchKit.WKInterfaceController.Awake*):このメソッドでは、初期化の大部分を行う必要があります。
+- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) :Watch アプリ直後に呼び出されますが、ユーザーに表示されます。 瞬間瞬間の最終初期化を実行、アニメーションなどを開始するには、このメソッドを使用します。
 - この時点では、Watch アプリが表示され、拡張機能がユーザー入力し、アプリケーション ロジックを Watch アプリの表示を更新する応答を開始します。
-- [DidDeactivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.DidDeactivate/) Watch 後のアプリがユーザーによって破棄されて、このメソッドが呼び出されます。 ユーザー インターフェイス コントロールは、次回まで変更できませんこのメソッドから制御が戻た後`WillActivate`が呼び出されます。 IPhone への接続が切断された場合、このメソッドを呼び出すこともされます。
+- [DidDeactivate](xref:WatchKit.WKInterfaceController.DidDeactivate) Watch 後のアプリがユーザーによって破棄されて、このメソッドが呼び出されます。 ユーザー インターフェイス コントロールは、次回まで変更できませんこのメソッドから制御が戻た後`WillActivate`が呼び出されます。 IPhone への接続が切断された場合、このメソッドを呼び出すこともされます。
 - 拡張機能が非アクティブ化された後に、プログラムにアクセスできません。 保留中の非同期関数**されません**呼び出せません。 ウォッチ キットの拡張機能は、バック グラウンド処理モードを使用しない可能性があります。 プログラムがユーザーによって再アクティブ化、オペレーティング システムによって、アプリが退職していない場合は、最初に呼び出されるメソッドになります`WillActivate`します。
 
 ![](intro-to-watchos-images/wkinterfacecontrollerlifecycle.png "アプリケーション ライフ サイクルの概要")
@@ -90,10 +90,10 @@ Notification イベントに対応するこれらのメソッドをオーバー�
 
 ## <a name="screen-sizes"></a>画面サイズ
 
-Apple Watch が 2 つの顔のサイズ: 38 mm および 42 mm、両方を 5:4 表示比率と Retina ディスプレイ。 使用可能なサイズは次のとおりです。
+Apple Watch では、2 つの顔のサイズがあります。38 mm および 42 mm は、5:4 表示比率、および、Retina の両方が表示されます。 使用可能なサイズは次のとおりです。
 
-- 38 mm: 136 x 170 論理ピクセル (272 x 340 物理ピクセル単位)
-- 42 mm: 156 x 195 論理ピクセル (312 x 390 物理ピクセル単位) です。
+- 38 mm:136 x 170 論理ピクセル (272 x 340 物理ピクセル単位)
+- 42 mm:156 x 195 論理ピクセル (312 x 390 物理ピクセル単位) です。
 
 使用`WKInterfaceDevice.ScreenBounds`をどのディスプレイ、Watch アプリが実行されているかを判断します。
 

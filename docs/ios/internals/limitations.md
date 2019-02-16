@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: 1ccbea1921b4e0c4189182696c8679d041eea60b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb8aec5a5054c28cf7862d14148e7f2000fa3a35
+ms.sourcegitcommit: c77f84a0686d16de6ac630271fccac719fd9eec4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113028"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56307919"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS の制限事項
 
-Xamarin.iOS を使用して iPhone 上のアプリケーションが静的コードにコンパイルされるため、実行時コード生成を必要とする機能を使用することはできません。
+Xamarin.iOS を使用してアプリケーションが静的コードにコンパイルされるため、実行時コード生成を必要とする機能を使用することはできません。
 
 これらは、Mono デスクトップに比べて Xamarin.iOS の制限事項です。
 
@@ -48,43 +48,12 @@ class Foo<T> : UIView {
 > NSObjects の汎用サブクラスが可能ですが、いくつかの制限があります。 読み取り、 [NSObject の](~/ios/internals/api-design/nsobject-generics.md)詳細については、ドキュメント
 
 
-
-### <a name="pinvokes-in-generic-types"></a>ジェネリック型の P/呼び出します
-
-ジェネリック クラスの P/invoke はサポートされていません。
-
-```csharp
-class GenericType<T> {
-    [DllImport ("System")]
-    public static extern int getpid ();
-}
-```
-
- <a name="Property.SetInfo_on_a_Nullable_Type_is_not_supported" />
-
-
-### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Property.SetInfo null 許容型ではサポートされていません
-
-リフレクションの Property.SetInfo を使用して、null 許容の値を設定する&lt;T&gt;は現在サポートされていません。
-
- <a name="Value_types_as_Dictionary_Keys" />
-
-
-### <a name="value-types-as-dictionary-keys"></a>Dictionary のキーと値の型
-
-値の型を使用して、ディクショナリとして&lt;TKey, TValue&gt;キーは、問題のある、既定値として、ディクショナリのコンス トラクターが EqualityComparer の使用を試みます&lt;TKey&gt;します。既定値です。 EqualityComparer&lt;TKey&gt;します。既定がさらに、リフレクションを使用して、IEqualityComparer を実装する新しい型をインスタンス化を試みる&lt;TKey&gt;インターフェイス。
-
-これは参照型の機能 (として、リフレクションを新規作成 + 型手順はスキップされます)、値がクラッシュの種類の場合と、デバイスで使用しようとしました。 後ではなく迅速に焼き付けます。
-
- **回避策**: 手動で実装、 [IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1)新しい型でインターフェイスを提供するには、その型のインスタンス、[ディクショナリ&lt;TKey、TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1)コンス トラクター。
-
-
  <a name="No_Dynamic_Code_Generation" />
 
 
 ## <a name="no-dynamic-code-generation"></a>動的なコードを生成しません。
 
-IPhone のカーネルにより、アプリケーション コードを動的に生成するため、Mono、iPhone では、何らかの動的なコード生成をサポートしていません。 次の設定があります。
+IOS カーネルにより、コードを動的に生成するアプリケーションであるために、Xamarin.iOS は、何らかの動的なコード生成をサポートしていません。 不足している機能には次が含まれます。
 
 -  System.Reflection.Emit は使用できません。
 -  System.Runtime.Remoting はサポートされていません。
@@ -105,7 +74,7 @@ System.Reflection の欠如。 **出力**ランタイム コードの生成に�
 -  リモート処理の TransparentProxy、またはその他のコードを動的に生成する実行時になるもの。 
 
 
- **重要:** と混同しないでください**Reflection.Emit**で**リフレクション**します。 Reflection.Emit はコードを動的に生成する詳細については、その jit 処理コードとネイティブにコンパイルされたコードがあります。 IPhone (JIT コンパイルなし) の制限があるためこれはサポートされていません。
+ **重要:** 混同しないでください**Reflection.Emit**で**リフレクション**します。 Reflection.Emit はコードを動的に生成する詳細については、その jit 処理コードとネイティブにコンパイルされたコードがあります。 IOS (JIT コンパイルなし) で制限があるためこれはサポートされていません。
 
 全体のリフレクション API など Type.GetType ("someClass") を一覧表示するメソッド、プロパティを一覧表示する属性と値をフェッチしていますが問題なく動作します。
 

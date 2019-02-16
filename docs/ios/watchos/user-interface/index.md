@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2016
-ms.openlocfilehash: a7be193cee60b40f70b3dd4a840e0a26ccb8c3b2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8ef76f24b017f5e3e6bec9d39534f3626e79147
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109004"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321104"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>ユーザー インターフェイス コントロールは、Xamarin で watchOS
 
@@ -38,10 +38,10 @@ ms.locfileid: "50109004"
 |[Menu](~/ios/watchos/user-interface/menu.md)|ストーリー ボードで force のキーを押してメニューを定義し、コードの各ボタンの操作を実装します。<br />[メニュー (Force Touch) コントロールのドキュメント](~/ios/watchos/user-interface/menu.md)<br />[コードをカタログします。](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ControllerDetailController.cs)|![](Images/controller.png)|
 |テキスト入力|使用`PresentTextInputController`と`WKTextInputMode`列挙体。<br />[テキスト入力のドキュメント](~/ios/watchos/user-interface/text-input.md)<br />[コードをカタログします。](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
 |デジタル クラウン|デジタル クラウンは、ピッカーでは、ドライブに使用できるまたはコードでの回転を追跡することができます。<br />[コードをカタログします。](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
-|ジェスチャ|シーンに追加できるジェスチャ認識の 4 つの種類があります。 Tap、スワイプ、パン、および LongPress します。<br />[コードをカタログします。](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
+|ジェスチャ|シーンに追加できるジェスチャ認識の 4 つの種類があります。Tap、スワイプ、パン、および LongPress します。<br />[コードをカタログします。](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [WatchKitCatalog (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [キットの API リファレンスをご覧ください。](https://developer.xamarin.com/api/namespace/WatchKit/)
+- [キットの API リファレンスをご覧ください。](xref:WatchKit)

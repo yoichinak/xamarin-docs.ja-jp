@@ -8,16 +8,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7bfb0cad8bbc025bc5dba39abe3699ae77ee83ba
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 70ef341c066c77e214761d75c173faef00266e4c
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526482"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321156"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS トラブルシューティング
 
-このページには、追加情報とその回避策まだ開発中の機能が含まれています。 これらの回避策の一部は、プレビュー リリースにのみ適用されます。
+このページには、追加情報と発生する問題の回避策が含まれています。
 
 - [既知の問題](#knownissues)
 
@@ -155,7 +155,7 @@ Mac OS X を使用してアルファ チャネルを削除するは簡単、**�
     }
     ```
     
-    ヒント: 行うことができます (省略可能) このファイルをもう一方にドラッグすることによって、最初のファイルの子ノードC#Mac Solution Pad の Visual Studio でのファイル。 次のように表示されます。
+    ヒント :このファイルをもう一方にドラッグすることによって、最初のファイルの子ノードを (オプション) することができますC#Mac Solution Pad の Visual Studio でのファイル。 次のように表示されます。
     
     ![](troubleshooting-images/add-5.png "Solution pad")
 
