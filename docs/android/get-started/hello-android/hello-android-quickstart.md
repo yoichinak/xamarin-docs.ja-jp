@@ -1,5 +1,5 @@
 ---
-title: 'Hello, Android: クイック スタート'
+title: Hello, Android:クイック スタート
 description: このガイドは 2 つに分かれています。最初に (Visual Studio または Visual Studio for Mac を使用して) Xamarin.Android アプリケーションを作成し、Xamarin での Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,16 +9,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: e359defee98ada74a76726673f6d3db21c0f4db3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 378861dfecb2109269677fe13ed4df629a09da67
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121582"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986264"
 ---
-# <a name="hello-android-quickstart"></a>Hello, Android: クイック スタート
+# <a name="hello-android-quickstart"></a>Hello, Android:クイック スタート
 
 _このガイドは 2 つに分かれています。最初に、Visual Studio を使用して Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。_
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/monodroid/Phoneword/)
 
 英数字の電話番号 (ユーザーが入力) を数字の電話番号に変換し、その番号をユーザーに表示するアプリケーションを作成します。 最終的にアプリケーションは次のようになります。
 
@@ -74,6 +76,12 @@ Visual Studio を起動します。 **[ファイル]、[新規]、[プロジェ�
 **activity_main.axml** をダブルクリックして、Android Designer で開きます。 アプリの画面の layout ファイルを以下に示します。
 
 [![アクティビティ axml ファイルを開く](hello-android-quickstart-images/vs/03-open-layout-w158-sml.png)](hello-android-quickstart-images/vs/03-open-layout-w158.png#lightbox)
+
+> [!TIP]
+> 新しいリリースの Visual Studio に含まれるアプリ テンプレートは一部が変わっています。
+>
+> 1. レイアウトは **activity_main.axml** ではなく **content_main.axml** 内にあります。
+> 2. 既定のレイアウトは `RelativeLayout` になります。 このページの残りの手順を実際に実行する場合は、`<RelativeLayout>` タグを `<LinearLayout>` に変更し、別の属性 `android:orientation="vertical"` を `LinearLayout` の開始タグに追加する必要があります。
 
 **[ツールボックス]** (左側の領域) の検索フィールドに「`text`」と入力し、デザイン サーフェイス (中央の領域) に **Text (Large)** ウィジェットをドラッグします。
 

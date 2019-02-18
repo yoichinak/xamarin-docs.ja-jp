@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
+ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675095"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56078421"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
@@ -149,7 +149,6 @@ public class App : Xamarin.Forms.Application
 このクラスは、各プラットフォーム固有プロジェクトでインスタンス化されて、`LoadApplication` メソッドに渡されます。このメソッドでは、`MainPage` が読み込まれて、ユーザーに表示されます。
 以下のセクションでは、各プラットフォームのコードを示します。 最新の Xamarin.Forms ソリューション テンプレートには、アプリ用に事前構成されたこのすべてのコードが既に含まれます。
 
-
 ### <a name="ios-project"></a>iOS プロジェクト
 
 iOS の `AppDelegate` クラスは、`FormsApplicationDelegate` を継承します。 次のようになります。
@@ -196,8 +195,6 @@ public class MainActivity : FormsAppCompatActivity
 
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>Windows 10 用のユニバーサル Windows プロジェクト (UWP)
 
-Xamarin.Forms での UWP のサポートについては、「[Windows プロジェクトのセットアップ](~/xamarin-forms/platform/windows/installation/index.md)」をご覧ください。
-
 UWP プロジェクトのメイン ページでは、`WindowsPage` を継承する必要があります。
 
 ```xaml
@@ -222,4 +219,6 @@ public sealed partial class MainPage
  }
 ```
 
-**App.xaml.cs** の 63 行目あたりで `Forms.Init()` を呼び出す必要があることに注意してください。
+UWP プロジェクトの **App.xaml.cs** から `Forms.Init()` を呼び出す必要があることに注意してください。
+
+詳細については、「[Setup Windows Projects](~/xamarin-forms/platform/windows/installation/index.md)」(Windows プロジェクトのセットアップ) を参照してください。UWP をターゲットにしていない既存の Xamarin.Forms ソリューションに UWP プロジェクトを追加する手順が説明されています。

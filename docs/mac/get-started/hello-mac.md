@@ -8,14 +8,14 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
-ms.openlocfilehash: f79a509e3122cbccbe6bf10040f8143432c9d66c
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 02e0484a417b5d42129fa4e7a6ab9576c1817d74
+ms.sourcegitcommit: 8e8f83da636b63d14d1305c43a99736a00b9f590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "43780520"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55969594"
 ---
-# <a name="hello-mac--walkthrough"></a>Hello, Mac – チュートリアル
+# <a name="hello-mac-walkthrough"></a>Hello, Mac - チュートリアル
 
 Xamarin.Mac を使うと、*Objective-C* または *Swift* で開発するときに使用するのと同じ macOS API を使用して、C# と .NET で完全にネイティブな Mac アプリを開発できます。 Xamarin.Mac は直接 Xcode と統合できるため、開発者は Xcode の _Interface Builder_ を使用して、アプリのユーザー インターフェイスを作成できます (または、必要に応じて C# コードで直接作成することも可能です)。
 
@@ -33,7 +33,7 @@ Xamarin.Mac を使うと、*Objective-C* または *Swift* で開発するとき
 - **Outlet と Action** – Outlet と Action を使用してユーザー インターフェイスのコントロールを接続する方法。
 - **配置/テスト** – Xamarin.Mac アプリを実行してテストする方法。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin.Mac アプリケーションの開発に必要な条件は次のとおりです。
 
