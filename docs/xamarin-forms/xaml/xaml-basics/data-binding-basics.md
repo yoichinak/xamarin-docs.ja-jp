@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 65316bde1d1c709028eae39c19e5dc318821ff70
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 4a24c8dbb9ab4e23afa03de4ae2dbc55ddfb5fa4
+ms.sourcegitcommit: e000cc0765857c1d7f49538df9e62e9d3aa60775
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746883"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56334567"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
@@ -114,6 +114,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` -値は、ソースからターゲットに転送されます
 - `OneWayToSource` -値は、ターゲットからソースに転送されます
 - `TwoWay` — ソースとターゲット間の値に両方の方法が転送されます。
+- `OneTime` — データがソースからターゲットが場合にのみが、`BindingContext`の変更
 
 次のプログラムの 1 つの一般的な用途を示します、`OneWayToSource`と`TwoWay`バインディング モード。 4 つ`Slider`ビューは、コントロール、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティを`Label`します。 最初、見えますとしてこれら 4 つのプロパティの`Label`各によって設定されるため、データ バインドのターゲットがあります、`Slider`します。 ただし、`BindingContext`の`Label`は 1 つだけのオブジェクトとは異なる 4 つのスライダーがあります。
 
