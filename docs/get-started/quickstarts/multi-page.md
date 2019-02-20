@@ -324,7 +324,7 @@ ms.locfileid: "55293338"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Visual Studio for Mac でアプリを更新する
 
-1. Visual Studio for Mac を起動します。 スタート ページで次のようにクリックします**オープンしています.。**、ダイアログ ボックスで、ノートのプロジェクトのソリューション ファイルを選択します。
+1. Visual Studio for Mac を起動します。 スタート ページで次のようにクリックします**オープンしています...**、ダイアログ ボックスで、ノートのプロジェクトのソリューション ファイルを選択します。
 
     ![](multi-page-images/vsmac/open-solution.png "ソリューションを開く")
 
