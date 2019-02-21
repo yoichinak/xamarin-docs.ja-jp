@@ -1,6 +1,6 @@
 ---
 title: 目標ペンを使わずリリース履歴
-description: このドキュメントでは、目標ペンを使わず、c# Objective C コードへのバインドの作成を自動化するためのツールのリリース履歴について説明します。
+description: このドキュメントでは、目標ペンを使わず、C# Objective C コードへのバインドの作成を自動化するためのツールのリリース履歴について説明します。
 ms.prod: xamarin
 ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: asb3993
