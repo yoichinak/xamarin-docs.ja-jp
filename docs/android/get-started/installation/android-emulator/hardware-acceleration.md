@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5c79ffd824033f528eb65d07581efefcf3895a9b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6f5a5512cef6ad870f60bca397404df450775de3
+ms.sourcegitcommit: ec99e64ee346adc3c338db13e93100bafee75460
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113223"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56331884"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -31,8 +31,8 @@ Android エミュレーターの高速化には、次の仮想化テクノロジ
 1. **Microsoft の Hyper-V と Hypervisor Platform**。
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) は Windows の仮想化技術の 1 つであり、物理的ホスト コンピューター上で、仮想化されたコンピューター システムを実行できます。
 
-2. **Intel の Hardware Accelerated Execution Manager (HAXM)**。 
-   [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) は Intel CPU を実行するコンピューターのための仮想化エンジンです。
+2. **Intel の Hardware Accelerated Execution Manager (HAXM)**。
+   HAXM は Intel CPU を実行するコンピューターのための仮想化エンジンです。
 
 最適なパフォーマンスのためには、Hyper-V を使用して Android エミュレーターを高速化することをお勧めします。 お使いのコンピューターで Hyper-V を使用できない場合は、HAXM を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
 
@@ -82,7 +82,7 @@ Hyper-V は Windows ハイパーバイザー プラットフォーム上で動�
 systeminfo
 ```
 
-表示されているすべての Hyper-V 要件の値が **[はい]** の場合、コンピューターは Hyper-V をサポートできます。 例:
+表示されているすべての Hyper-V 要件の値が **[はい]** の場合、コンピューターは Hyper-V をサポートできます。 次に例を示します。
 
 [![systeminfo の出力例](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -122,7 +122,7 @@ systeminfo
     sc query intelhaxm
     ```
 
-2. 出力で、HAXM プロセッサが実行されているかどうかを確認します。 この場合、出力に `intelhaxm` の状態は `RUNNING` と表示されます。 例:
+2. 出力で、HAXM プロセッサが実行されているかどうかを確認します。 この場合、出力に `intelhaxm` の状態は `RUNNING` と表示されます。 次に例を示します。
 
     ![HAXM を使用できる場合の sc クエリ コマンドの出力](hardware-acceleration-images/win/05-sc_query-w158.png)
 
