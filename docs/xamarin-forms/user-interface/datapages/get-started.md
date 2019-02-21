@@ -56,7 +56,7 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 
 ## <a name="3-add-a-xaml-page"></a>3.XAML ページを追加します。
 
-Xamarin.Forms アプリケーションに新しい XAML ページを追加し、*基本クラスを変更*から`ContentPage`に`Xamarin.Forms.Pages.ListDataPage`。 これは、c# と、XAML の両方で行う必要があります。
+Xamarin.Forms アプリケーションに新しい XAML ページを追加し、*基本クラスを変更*から`ContentPage`に`Xamarin.Forms.Pages.ListDataPage`。 これは、C# と、XAML の両方で行う必要があります。
 
 **C# ファイル**
 
@@ -168,7 +168,7 @@ JSON データの例、[デモ ソース](http://demo3143189.mockable.io/session
 
 [![](get-started-images/custom-sml.png "DataPages サンプル アプリケーション")](get-started-images/custom.png#lightbox "DataPages サンプル アプリケーション")
 
-ソース バインドを XAML に c# にはデータを作成できますを好む開発者も (を必ず含めて、`using Xamarin.Forms.Pages;`ステートメント)。
+ソース バインドを XAML に C# にはデータを作成できますを好む開発者も (を必ず含めて、`using Xamarin.Forms.Pages;`ステートメント)。
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
