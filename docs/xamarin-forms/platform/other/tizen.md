@@ -28,7 +28,7 @@ Tizen .NET プロジェクトを既存の Xamarin.Forms ソリューションに
 
 ## <a name="documentation"></a>ドキュメント
 
-- [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml) &ndash; c# と Xamarin.Forms のクロスプラット フォーム対応のアプリケーションを構築する方法。
+- [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml) &ndash; C# と Xamarin.Forms のクロスプラット フォーム対応のアプリケーションを構築する方法。
 - [**developer.tizen.org** ](https://developer.tizen.org/development) &ndash;ドキュメントおよびビデオを構築および Tizen アプリケーションをデプロイできます。
 
 ## <a name="samples"></a>サンプル
