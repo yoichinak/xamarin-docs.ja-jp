@@ -67,11 +67,11 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 ![](interactivity-images/context-default.png "コンテキスト アクションを含む ListView")
 
-コンテキスト アクションは、c# と XAML で実装できます。 以下が見つかりますごとのガイドの場合がまずみましょう両方のキーの実装の詳細について見ています。
+コンテキスト アクションは、C# と XAML で実装できます。 以下が見つかりますごとのガイドの場合がまずみましょう両方のキーの実装の詳細について見ています。
 
 使用して作成されるコンテキスト アクション`MenuItem`秒。 ListView ではない、MenuItem、自体では、MenuItems のタップ イベントが発生します。 これは、ListView がセルではなく、イベントが発生しているセルのタップ イベントを処理する方法が異なります。 ListView がイベントを発生させているため、イベント ハンドラーには、項目が選択またはタップするなど、重要な情報が与えられます。
 
-既定では、メニュー アイテムにはどのセルが属するを知る方法がありません。 `CommandParameter` 使用できるは`MenuItem`MenuItem の ViewCell の背後にあるオブジェクトなどのオブジェクトを格納します。 `CommandParameter` XAML と c# の両方で設定できます。
+既定では、メニュー アイテムにはどのセルが属するを知る方法がありません。 `CommandParameter` 使用できるは`MenuItem`MenuItem の ViewCell の背後にあるオブジェクトなどのオブジェクトを格納します。 `CommandParameter` XAML と C# の両方で設定できます。
 
 ### <a name="c"></a>C#  
 
@@ -154,7 +154,7 @@ public void OnDelete (object sender, EventArgs e) {
           IsPullToRefreshEnabled="true" />
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 listView.IsPullToRefreshEnabled = true;
@@ -168,7 +168,7 @@ listView.IsPullToRefreshEnabled = true;
           RefreshControlColor="Red" />
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 listView.RefreshControlColor = Color.Red;
