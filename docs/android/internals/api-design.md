@@ -18,9 +18,9 @@ ms.locfileid: "54207935"
 
 ## <a name="overview"></a>概要
 
-Mono の一部である基本クラス ライブラリのコアだけでなく Xamarin.Android Mono とネイティブ Android アプリケーションを作成するためにさまざまな Android Api のバインドに付属します。
+Mono の一部である基本クラス ライブラリのコアだけでなく Xamarin.Android Mono とネイティブ Android アプリケーションを作成するためにさまざまな Android API のバインドに付属します。
 
-Xamarin.Android のコアがありますが、相互運用機能のエンジン、Java の世界中でそのブリッジ、c# の世界と、c# または他の .NET 言語からの Java Api にアクセス権を持つ開発者。
+Xamarin.Android のコアがありますが、相互運用機能のエンジン、Java の世界中でそのブリッジ、C# の世界と、C# または他の .NET 言語からの Java API にアクセス権を持つ開発者。
 
 
 ## <a name="design-principles"></a>設計の原則
@@ -31,7 +31,7 @@ Xamarin.Android バインドのデザイン原則をいくつか
 
 -  開発者は Java クラスのサブクラスを使用できます。
 
--  サブクラスは、c# の標準的なコンストラクトで動作します。
+-  サブクラスは、C# の標準的なコンストラクトで動作します。
 
 -  既存のクラスから派生します。
 
@@ -53,11 +53,11 @@ Xamarin.Android バインドのデザイン原則をいくつか
 
     - IDE のポップアップのドキュメントではできます。
 
--  Api の IDE で探索をお勧めします。
+-  API の IDE で探索をお勧めします。
 
     - Java Classlib を最小限に抑える露出するフレームワークの代替手段を利用します。
 
-    - 適切なと該当する場合は、単一メソッドのインターフェイスではなく c# のデリゲート (ラムダ、匿名メソッドと System.Delegate) を公開します。
+    - 適切なと該当する場合は、単一メソッドのインターフェイスではなく C# のデリゲート (ラムダ、匿名メソッドと System.Delegate) を公開します。
 
     - 任意の Java ライブラリを呼び出すメカニズムを提供 ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/))。
 
@@ -74,7 +74,7 @@ Android のプラットフォームへのバインドに含まれる、`Mono.And
 
 ### <a name="collections"></a>コレクション
 
-Android の Api は、リスト、セット、およびマップを提供する広範な java.util コレクションを使用します。 使用してこれらの要素を公開しています、 [System.Collections.Generic](xref:System.Collections.Generic)バインディング内のインターフェイス。 基本的なマッピングは次のとおりです。
+Android の API は、リスト、セット、およびマップを提供する広範な java.util コレクションを使用します。 使用してこれらの要素を公開しています、 [System.Collections.Generic](xref:System.Collections.Generic)バインディング内のインターフェイス。 基本的なマッピングは次のとおりです。
 
 -   [java.util.Set<E> ](http://developer.android.com/reference/java/util/Set.html)システム型にマップされます[ICollection<T>](xref:System.Collections.Generic.ICollection`1)、ヘルパー クラス[Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/)します。
 
@@ -123,7 +123,7 @@ Java のメソッドは、該当する場合のプロパティに変換されま
 
 ### <a name="events-and-listeners"></a>リスナーとイベント
 
-Android Api は、Java の上に構築されており、そのコンポーネントがイベント リスナーをフックするための Java のパターンに従います。 このパターンは、ユーザーが匿名のクラスを作成し、オーバーライドするメソッドを宣言する必要がある面倒になる傾向があります、たとえば、これは Java と Android で処理を行うことが方法。
+Android API は、Java の上に構築されており、そのコンポーネントがイベント リスナーをフックするための Java のパターンに従います。 このパターンは、ユーザーが匿名のクラスを作成し、オーバーライドするメソッドを宣言する必要がある面倒になる傾向があります、たとえば、これは Java と Android で処理を行うことが方法。
 
 ```csharp
 final android.widget.Button button = new android.widget.Button(context);
@@ -136,7 +136,7 @@ button.setOnClickListener (new View.OnClickListener() {
 });
 ```
 
-イベントを使用して c# での同等のコードは次のようになります。
+イベントを使用して C# での同等のコードは次のようになります。
 
 ```csharp
 var button = new Android.Widget.Button (context) {
@@ -147,7 +147,7 @@ button.Click += (sender, e) => {
 };
 ```
 
-上記のメカニズムの両方が Xamarin.Android で使用可能なことに注意してください。 リスナー インターフェイスを実装し、View.SetOnClickListener でアタッチまたは Click イベントに通常の c# パラダイムのいずれかを使用して作成されたデリゲートをアタッチすることができます。
+上記のメカニズムの両方が Xamarin.Android で使用可能なことに注意してください。 リスナー インターフェイスを実装し、View.SetOnClickListener でアタッチまたは Click イベントに通常の C# パラダイムのいずれかを使用して作成されたデリゲートをアタッチすることができます。
 
 基づく API 要素を作成しますリスナー コールバック メソッドが void の戻り値の場合、 [EventHandler&lt;TEventArgs&gt; ](xref:System.EventHandler`1)を委任します。 これらのリスナーの種類は、上記の例のようなイベントが生成されます。 ただし、非 void a と非リスナー コールバックが返されます-**ブール**値、イベント、EventHandlers は使用されません。 私たちは代わりに、コールバックのシグネチャの特定のデリゲートを生成し、イベントの代わりにプロパティを追加します。 理由は、処理をデリゲートの呼び出しの順序で処理です。 このアプローチでは、Xamarin.iOS API をミラー化します。
 
@@ -165,7 +165,7 @@ button.Click += (sender, e) => {
 Android ではたとえば、 [View.setOnKeyListener()](https://developer.xamarin.com/api/member/Android.Views.View.SetOnKeyListener/p/Android.Views.View+IOnKeyListener/)メソッドは、 [View.OnKeyListener](https://developer.xamarin.com/api/type/Android.Views.View+IOnKeyListener)インターフェイス、および[View.OnKeyListener.onKey (ビュー、int、KeyEvent)](https://developer.xamarin.com/api/member/Android.Views.View+IOnKeyListener.OnKey/p/Android.Views.View/Android.Views.Keycode/Android.Views.KeyEvent/)メソッドでは、ブール型の戻り値の型があります。 Xamarin.Android の生成、対応する[View.KeyPress](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/)は、そのイベントを[EventHandler&lt;View.KeyEventArgs&gt;](https://developer.xamarin.com/api/type/Android.Views.View+KeyEventArgs/)します。
 *KeyEventArgs*クラスにはさらに、 [View.KeyEventArgs.Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/)の戻り値として使用されるプロパティ、 *View.OnKeyListener.onKey()* メソッド。
 
-他のメソッドとデリゲート ベースの接続を公開する ctors のオーバー ロードを追加する予定です。 また、複数のコールバックを持つリスナーには、いくつか追加の検査変換これら特定されるため、個々 のコールバックを実装する、妥当ながあるか判断が必要です。 対応するイベントがない場合は、リスナーは、c# で使用する必要がありますが、注目するデリゲートの使用量ができたと考えられるすべてを表示してください。 行った「リスナー」サフィックスが付いていないインターフェイスの一部の変換と、それらが、デリゲートの代替のメリットは明らかでした。
+他のメソッドとデリゲート ベースの接続を公開する ctors のオーバー ロードを追加する予定です。 また、複数のコールバックを持つリスナーには、いくつか追加の検査変換これら特定されるため、個々 のコールバックを実装する、妥当ながあるか判断が必要です。 対応するイベントがない場合は、リスナーは、C# で使用する必要がありますが、注目するデリゲートの使用量ができたと考えられるすべてを表示してください。 行った「リスナー」サフィックスが付いていないインターフェイスの一部の変換と、それらが、デリゲートの代替のメリットは明らかでした。
 
 すべてのリスナー インターフェイスを実装します [`Android.Runtime.IJavaObject`](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)
 リスナーのクラスは、このインターフェイスを実装する必要がありますので、バインドの実装の詳細のためのインターフェイスです。 これを行うのサブクラスで、リスナー インターフェイスを実装する[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)またはその他の Android アクティビティなどの Java オブジェクトをラップします。
@@ -176,7 +176,7 @@ Android ではたとえば、 [View.setOnKeyListener()](https://developer.xamari
 Java を使用して、 [java.lang.Runnable](https://developer.xamarin.com/api/type/Java.Lang.Runnable/)委任メカニズムを提供するインターフェイス。 [Java.lang.Thread](https://developer.xamarin.com/api/type/Java.Lang.Thread/)クラスは、このインターフェイスの注目すべきコンシューマー。 Android は、API にも同様のインターフェイスが使用されます。
 [Activity.runOnUiThread()](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/p/Java.Lang.IRunnable/)と[View.post()](https://developer.xamarin.com/api/member/Android.Views.View.Post/p/Java.Lang.IRunnable)注目すべき例があります。
 
-`Runnable`インターフェイスには、1 つの void メソッドが含まれています。 [run()](https://developer.xamarin.com/api/member/Java.Lang.Runnable.Run%28%29/)します。 そのために適していると c# でのバインディングを[System.Action](xref:System.Action)を委任します。 バインディングを受け入れるオーバー ロードが用意されています、`Action`パラメーターを使用するすべての API メンバーを`Runnable`ネイティブの API の例: [Activity.RunOnUiThread()](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action))と[View.Post()](https://developer.xamarin.com/api/member/Android.Views.View.Post/(System.Action)).
+`Runnable`インターフェイスには、1 つの void メソッドが含まれています。 [run()](https://developer.xamarin.com/api/member/Java.Lang.Runnable.Run%28%29/)します。 そのために適していると C# でのバインディングを[System.Action](xref:System.Action)を委任します。 バインディングを受け入れるオーバー ロードが用意されています、`Action`パラメーターを使用するすべての API メンバーを`Runnable`ネイティブの API の例: [Activity.RunOnUiThread()](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action))と[View.Post()](https://developer.xamarin.com/api/member/Android.Views.View.Post/(System.Action)).
 
 まま、 [IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/)いくつかの種類は、インターフェイスを実装し、そのため、それらを置き換えるのではなく位置でのオーバー ロードが直接の実行可能オブジェクトとして渡されます。
 
@@ -185,15 +185,15 @@ Java を使用して、 [java.lang.Runnable](https://developer.xamarin.com/api/t
 
 Java が 2 つのさまざまな種類の[クラスを入れ子になった](http://download.oracle.com/javase/tutorial/java/javaOO/nested.html): 静的クラスと非静的クラスを入れ子にします。
 
-Java の静的な入れ子になったクラスは、c# の入れ子になった型と同じです。
+Java の静的な入れ子になったクラスは、C# の入れ子になった型と同じです。
 
 非静的とも呼ばれるクラスが入れ子になった*内部クラス*、大幅に異なります。 その外側の型のインスタンスへの暗黙的な参照が含まれていて (この概要の範囲外の相違点) の間での静的メンバーを含めることはできません。
 
-バインドと c# を使用する際に、静的な入れ子になったクラスが入れ子になった、通常の型として扱われます。 内部のクラスには、2 つの大きな違いがある一方で。
+バインドと C# を使用する際に、静的な入れ子になったクラスが入れ子になった、通常の型として扱われます。 内部のクラスには、2 つの大きな違いがある一方で。
 
 1. コンテナーの型に暗黙の参照は、コンス トラクター パラメーターとして明示的に指定する必要があります。
 
-1. 内側のクラスと内部クラスから継承する場合*する必要があります*型の中で入れ子にする基本の内部クラスを含む型から継承して、派生型は、c# と同じ型のコンス トラクターを指定する必要がありますの種類を格納しています。
+1. 内側のクラスと内部クラスから継承する場合*する必要があります*型の中で入れ子にする基本の内部クラスを含む型から継承して、派生型は、C# と同じ型のコンス トラクターを指定する必要がありますの種類を格納しています。
 
 
 たとえば、 [Android.Service.Wallpaper.WallpaperService.Engine](https://developer.xamarin.com/api/type/Android.Service.Wallpaper.WallpaperService+Engine/)内部クラス。 内部のクラスであるため、 [WallpaperService.Engine() コンス トラクター](https://developer.xamarin.com/api/constructor/Android.Service.Wallpaper.WallpaperService+Engine.Engine/p/Android.Service.Wallpaper.WallpaperService/)への参照を受け取り、 [WallpaperService](https://developer.xamarin.com/api/type/Android.Service.Wallpaper.WallpaperService/)インスタンス (比較して、java [WallpaperService.Engine () コンス トラクター](https://developer.xamarin.com/api/type/Android.Service.Wallpaper.WallpaperService+Engine/)するパラメーターを受け取らない)。
@@ -221,7 +221,7 @@ class CubeWallpaper : WallpaperService {
 
 ### <a name="interfaces"></a>インターフェイス
 
-Java インターフェイスは、c# から問題が発生する 2 つのメンバーの 3 つのセットを含めることができます。
+Java インターフェイスは、C# から問題が発生する 2 つのメンバーの 3 つのセットを含めることができます。
 
 1. メソッド
 
@@ -260,7 +260,7 @@ Java インターフェイスは、2 つの型に変換されます。
 *Android.os.Parcelable*インターフェイス、つまりがここであること、 [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)定数を格納する型。 たとえば、 [Parcelable.CONTENTS_FILE_DESCRIPTOR](http://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)定数としてバインドされる、 [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) としての代わりに定数*ParcelableConsts.ContentsFileDescriptor*定数。
 
 定数を格納している他のインターフェイスを実装しているまだは定数を格納しているインターフェイスでは、すべての定数の和集合が生成されるようになりました。 たとえば、 [android.provider.MediaStore.Video.VideoColumns](http://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)インターフェイスの実装、 [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)インターフェイス。 1.9 より前、ただし、 [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型で宣言された定数にアクセスする方法を持たない[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)します。
-その結果、Java 式*MediaStore.Video.VideoColumns.TITLE* c# の式にバインドする必要がある*MediaStore.Video.MediaColumnsConsts.Title*は読まず見つけにくい多数の Java のドキュメント。 同等の c# 式がある、1.9 で[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)します。
+その結果、Java 式*MediaStore.Video.VideoColumns.TITLE* C# の式にバインドする必要がある*MediaStore.Video.MediaColumnsConsts.Title*は読まず見つけにくい多数の Java のドキュメント。 同等の C# 式がある、1.9 で[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)します。
 
 さらに、検討してください、 [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) 、Java の実装の種類*Parcelable*インターフェイス。 そのインターフェイスのすべての定数は例:「から」バンドルの種類、アクセスできる、インターフェイスを実装しているため*Bundle.CONTENTS_FILE_DESCRIPTOR* Java 式を完全に有効です。
 以前は、この式に移植するC#種類に実装されているすべてのインターフェイスを確認する必要があります、 *CONTENTS_FILE_DESCRIPTOR*から。 Xamarin.Android 1.9 以降、定数が含まれている Java インターフェイスを実装するクラスが入れ子になった*InterfaceConsts*型、継承されたインターフェイスのすべての定数が含まれます。 変換することにより、この*Bundle.CONTENTS_FILE_DESCRIPTOR*に[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)します。
@@ -271,7 +271,7 @@ Java インターフェイスは、2 つの型に変換されます。
 ## <a name="resources"></a>リソース
 
 として、アプリケーションでイメージ、レイアウトの説明、バイナリの blob および文字列の辞書を含めることが[リソース ファイル](http://developer.android.com/guide/topics/resources/providing-resources.html)します。
-さまざまな Android Api の設計において[リソース Id に対して](http://developer.android.com/guide/topics/resources/accessing-resources.html)イメージを処理する、代わりに文字列またはバイナリ blob 直接します。
+さまざまな Android API の設計において[リソース Id に対して](http://developer.android.com/guide/topics/resources/accessing-resources.html)イメージを処理する、代わりに文字列またはバイナリ blob 直接します。
 
 たとえば、サンプルする Android アプリケーションをユーザー インターフェイスのレイアウトが含まれています ( `main.axml`)、国際化テーブル文字列 ( `strings.xml`) と一部のアイコン ( `drawable-*/icon.png`) は、アプリケーションの"Resources"ディレクトリにそのリソースを保持します。
 
@@ -291,7 +291,7 @@ Java インターフェイスは、2 つの型に変換されます。
         values/
             strings.xml
 
-ネイティブ Android Api は、ファイル名を直接操作しないが、リソース Id の代わりに動作します。 リソースを使用する Android アプリケーションをコンパイルするときに、ビルド システムは配布用のリソースをパッケージ化しと呼ばれるクラスを生成`Resource`それぞれに含まれるリソースのトークンを格納しています。 たとえば、上記のリソース レイアウトのこれは、R クラスが公開されます。
+ネイティブ Android API は、ファイル名を直接操作しないが、リソース Id の代わりに動作します。 リソースを使用する Android アプリケーションをコンパイルするときに、ビルド システムは配布用のリソースをパッケージ化しと呼ばれるクラスを生成`Resource`それぞれに含まれるリソースのトークンを格納しています。 たとえば、上記のリソース レイアウトのこれは、R クラスが公開されます。
 
 ```csharp
 public class Resource {
@@ -315,7 +315,7 @@ public class Resource {
 
 ## <a name="constants-and-enumerations"></a>定数と列挙体
 
-ネイティブ Android Api がある多くのメソッドを返したり、int、int の意味を決定する定数フィールドにマップする必要があります。 これらのメソッドを使用するには、ユーザーは、定数が適切な値より小さいに最適なドキュメントを参照して必要があります。
+ネイティブ Android API がある多くのメソッドを返したり、int、int の意味を決定する定数フィールドにマップする必要があります。 これらのメソッドを使用するには、ユーザーは、定数が適切な値より小さいに最適なドキュメントを参照して必要があります。
 
 たとえば、 [Activity.requestWindowFeature (int featureID)](http://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int))します。
 
@@ -324,4 +324,4 @@ public class Resource {
 
 上記の例になります。[Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/)します。
 
-これは、定数が属するを把握する非常に手動のプロセス、Api の定数を使用することに注意してください。 列挙体として表されたより適切になる API で使用される任意の定数のバグを報告してください。
+これは、定数が属するを把握する非常に手動のプロセス、API の定数を使用することに注意してください。 列挙体として表されたより適切になる API で使用される任意の定数のバグを報告してください。
