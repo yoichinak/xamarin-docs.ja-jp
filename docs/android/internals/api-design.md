@@ -57,7 +57,7 @@ Xamarin.Android バインドのデザイン原則をいくつか
 
     - Java Classlib を最小限に抑える露出するフレームワークの代替手段を利用します。
 
-    - 適切なと該当する場合は、単一メソッドのインターフェイスではなく C# のデリゲート (ラムダ、匿名メソッドと System.Delegate) を公開します。
+    - 適切なと該当する場合は、単一メソッドのインターフェイスではなく c# のデリゲート (ラムダ、匿名メソッドと System.Delegate) を公開します。
 
     - 任意の Java ライブラリを呼び出すメカニズムを提供 ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/))。
 
@@ -176,7 +176,7 @@ Android ではたとえば、 [View.setOnKeyListener()](https://developer.xamari
 Java を使用して、 [java.lang.Runnable](https://developer.xamarin.com/api/type/Java.Lang.Runnable/)委任メカニズムを提供するインターフェイス。 [Java.lang.Thread](https://developer.xamarin.com/api/type/Java.Lang.Thread/)クラスは、このインターフェイスの注目すべきコンシューマー。 Android は、API にも同様のインターフェイスが使用されます。
 [Activity.runOnUiThread()](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/p/Java.Lang.IRunnable/)と[View.post()](https://developer.xamarin.com/api/member/Android.Views.View.Post/p/Java.Lang.IRunnable)注目すべき例があります。
 
-`Runnable`インターフェイスには、1 つの void メソッドが含まれています。 [run()](https://developer.xamarin.com/api/member/Java.Lang.Runnable.Run%28%29/)します。 そのために適していると C# でのバインディングを[System.Action](xref:System.Action)を委任します。 バインディングを受け入れるオーバー ロードが用意されています、`Action`パラメーターを使用するすべての API メンバーを`Runnable`ネイティブの API の例: [Activity.RunOnUiThread()](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action))と[View.Post()](https://developer.xamarin.com/api/member/Android.Views.View.Post/(System.Action)).
+`Runnable`インターフェイスには、1 つの void メソッドが含まれています。 [run()](https://developer.xamarin.com/api/member/Java.Lang.Runnable.Run%28%29/)します。 そのために適していると c# でのバインディングを[System.Action](xref:System.Action)を委任します。 バインディングを受け入れるオーバー ロードが用意されています、`Action`パラメーターを使用するすべての API メンバーを`Runnable`ネイティブの API の例: [Activity.RunOnUiThread()](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action))と[View.Post()](https://developer.xamarin.com/api/member/Android.Views.View.Post/(System.Action)).
 
 まま、 [IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/)いくつかの種類は、インターフェイスを実装し、そのため、それらを置き換えるのではなく位置でのオーバー ロードが直接の実行可能オブジェクトとして渡されます。
 
@@ -221,7 +221,7 @@ class CubeWallpaper : WallpaperService {
 
 ### <a name="interfaces"></a>インターフェイス
 
-Java インターフェイスは、C# から問題が発生する 2 つのメンバーの 3 つのセットを含めることができます。
+Java インターフェイスは、c# から問題が発生する 2 つのメンバーの 3 つのセットを含めることができます。
 
 1. メソッド
 
@@ -271,7 +271,7 @@ Java インターフェイスは、2 つの型に変換されます。
 ## <a name="resources"></a>リソース
 
 として、アプリケーションでイメージ、レイアウトの説明、バイナリの blob および文字列の辞書を含めることが[リソース ファイル](http://developer.android.com/guide/topics/resources/providing-resources.html)します。
-さまざまな Android API の設計において[リソース Id に対して](http://developer.android.com/guide/topics/resources/accessing-resources.html)イメージを処理する、代わりに文字列またはバイナリ blob 直接します。
+さまざまな Android Api の設計において[リソース Id に対して](http://developer.android.com/guide/topics/resources/accessing-resources.html)イメージを処理する、代わりに文字列またはバイナリ blob 直接します。
 
 たとえば、サンプルする Android アプリケーションをユーザー インターフェイスのレイアウトが含まれています ( `main.axml`)、国際化テーブル文字列 ( `strings.xml`) と一部のアイコン ( `drawable-*/icon.png`) は、アプリケーションの"Resources"ディレクトリにそのリソースを保持します。
 

@@ -1,18 +1,13 @@
 ---
 title: Razor テンプレートを使用して構築 HTML ビュー
-description: " 全画面表示の web ページを使用して HTML を表示するためには、web サイト プロジェクトから、HTML、Javascript と CSS が既にある場合に特にクロスプラット フォーム対応の方法で複雑な書式設定を表示するためにシンプルかつ効果的な方法です。"
+description: ' 全画面表示の web ページを使用して HTML を表示するためには、web サイト プロジェクトから、HTML、Javascript と CSS が既にある場合に特にクロスプラット フォーム対応の方法で複雑な書式設定を表示するためにシンプルかつ効果的な方法です。'
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270133"
 ---
+
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用して構築 HTML ビュー
 
 モバイル開発の世界で用語「ハイブリッド アプリ」は、通常、ホストされた web ビューアー コントロールの内部 HTML ページとしてその画面の一部 (またはすべて) を表示するアプリケーションを指します。
@@ -74,7 +69,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 
 #### <a name="ios"></a>iOS
 
-テンプレートの出力は次の C# コードでの iOS でレンダリングされます。
+テンプレートの出力は次の c# コードでの iOS でレンダリングされます。
 
 ```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
@@ -104,7 +99,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
  ![Android プロジェクトのビルド アクション: AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>HTML および Javascript からの C# の呼び出し
+### <a name="calling-c-from-html-and-javascript"></a>HTML および Javascript からの c# の呼び出し
 
 Web ビューに html ページが読み込まれると、ページがサーバーから読み込まれた場合と、リンクとフォームに扱います。 つまり、ユーザーがリンクをクリックしてまたはフォームを送信する場合、web ビューに指定したターゲットに移動しようとします。
 
@@ -298,7 +293,7 @@ var page = template.GenerateString ();
 
 #### <a name="c-statements"></a>C# のステートメント
 
-複雑な C# モデル プロパティの更新プログラムとこの例では、年齢の計算など、テンプレートに含めることができます。
+複雑な c# モデル プロパティの更新プログラムとこの例では、年齢の計算など、テンプレートに含めることができます。
 
 ```html
 @model Monkey
@@ -385,7 +380,7 @@ var page = template.GenerateString ();
 
  ![IPhone と Android のソリューションを作成します。](images/image13_1139x959.png)
 
-簡単に追加することに注意してください、 **.cshtml** Razor テンプレート*任意*の既存の Xamarin プロジェクト、その必要はありませんこれらのソリューション テンプレートを使用します。 iOS プロジェクトにはいずれも; Razor を使用するストーリー ボードは必要ありません。単にプログラムで UIWebView コントロールを任意のビューに追加し、C# コードで全体 Razor テンプレートをレンダリングすることができます。
+簡単に追加することに注意してください、 **.cshtml** Razor テンプレート*任意*の既存の Xamarin プロジェクト、その必要はありませんこれらのソリューション テンプレートを使用します。 iOS プロジェクトにはいずれも; Razor を使用するストーリー ボードは必要ありません。単にプログラムで UIWebView コントロールを任意のビューに追加し、c# コードで全体 Razor テンプレートをレンダリングすることができます。
 
 IPhone と Android プロジェクト用の既定テンプレート ソリューションの内容を次に示します。
 
