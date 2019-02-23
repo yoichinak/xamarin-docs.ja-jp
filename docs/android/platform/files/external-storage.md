@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116018"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666936"
 ---
 # <a name="external-storage"></a>外部ストレージ
 
@@ -53,16 +53,16 @@ SD カードなどのリムーバブル メディア上のディスク パーテ
 
 | `Android.OS.Environment` | ディレクトリ |
 |-|-|
-| DirectoryAlarms | **_プライベート\_外部\_ストレージ_アラーム/** |
+| DirectoryAlarms | **_PRIVATE\_EXTERNAL\_STORAGE_/Alarms** |
 | DirectoryDcim | **_プライベート\_外部\_ストレージ_/DCIM** |
 | DirectoryDownloads | **_プライベート\_外部\_ストレージ_  /ダウンロード** |
 | DirectoryDocuments | **_プライベート\_外部\_ストレージ_ドキュメント/** |
 | DirectoryMovies | **_プライベート\_外部\_ストレージ_/Movies** |
-| DirectoryMusic | **_プライベート\_外部\_ストレージ_/Music** |
-| DirectoryNotifications | **_プライベート\_外部\_ストレージ_/Notifications** |
-| DirectoryPodcasts | **_プライベート\_外部\_ストレージ_/Podcasts** |
+| DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
+| DirectoryNotifications | **_PRIVATE\_EXTERNAL\_STORAGE_/Notifications** |
+| DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
 | DirectoryRingtones | **_プライベート\_外部\_ストレージ_/Ringtones** |
-| DirectoryPictures | **_プライベート\_外部\_ストレージ_/pictures** |
+| DirectoryPictures | **_PRIVATE\_EXTERNAL\_STORAGE_/Pictures** |
 
 デバイスの外部記憶域の複数のパーティションがある場合、各パーティションは、プライベート ファイルが想定されているディレクトリがあります。 メソッド`Android.Content.Context.GetExternalFilesDirs(string type)`の配列を返す`Java.IO.Files`します。 各オブジェクトはプライベート アプリケーション固有のディレクトリを表す、所有するすべての共有/外部ストレージ デバイスをアプリケーションがファイルを配置できます。
 
@@ -80,7 +80,7 @@ SD カードなどのリムーバブル メディア上のディスク パーテ
 このドキュメントは外部のストレージとしてのパブリック ファイルのストレージ ディレクトリを参照してください_パブリック\_外部\_ストレージ_します。
 
 
-Android 上のアプリケーション ディレクトリの概念もサポートされます_パブリック\_外部\_ストレージ_します。 これらのディレクトリはまったくのアプリケーション diretories として同じ`_PRIVATE\_EXTERNAL\_STORAGE_`と前のセクションの表で説明します。 メソッド`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`が返されます、`Java.IO.File`パブリック アプリケーション ディレクトリに対応するオブジェクト。 `directoryType`パラメーターは必須パラメーターでありすることはできません`null`します。
+Android 上のアプリケーション ディレクトリの概念もサポートされます_パブリック\_外部\_ストレージ_します。 これらのディレクトリは、アプリケーション ディレクトリと同じではまったく`_PRIVATE\_EXTERNAL\_STORAGE_`と前のセクションの表で説明します。 メソッド`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`が返されます、`Java.IO.File`パブリック アプリケーション ディレクトリに対応するオブジェクト。 `directoryType`パラメーターは必須パラメーターでありすることはできません`null`します。
 
 たとえば、呼び出し`Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath`のようになります文字列が返されます。
 
@@ -172,7 +172,7 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>ファイルを削除します。
 
-など、外部のストレージからファイルを削除する (C#) Api を使用できる標準的な[ `System.IO.File.Delete`](xref:System.IO.File.Delete*)します。 コードの移植性を犠牲 Java Api を使用することもできます。 例えば:
+など、外部のストレージからファイルを削除する (C#) Api を使用できる標準的な[ `System.IO.File.Delete`](xref:System.IO.File.Delete*)します。 コードの移植性を犠牲 Java Api を使用することもできます。 例:
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");

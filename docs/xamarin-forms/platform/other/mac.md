@@ -8,19 +8,18 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: 1aa21a416f4abca0440e96e25aebe5f834a717ce
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 3a488b3a9f729da5d4bee8c1262190b15c2e9240
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209357"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666897"
 ---
 # <a name="mac-platform-setup"></a>Mac プラットフォームのセットアップ
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-開始する前に作成 (または、既存の使用) Xamarin.Forms プロジェクト。
-Visual Studio for mac を使用する Mac アプリを追加することができますのみ
+開始する前に作成 (または、既存の使用) Xamarin.Forms プロジェクト。 Visual Studio for mac を使用する Mac アプリを追加することができますのみ
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
@@ -38,13 +37,13 @@ MacOS Sierra および El Capitan を macOS で実行される Mac アプリを�
 
 4. 構成とキーを押して確認**作成**です。 次の手順で以下に示します。
 
-  ![Cocoa アプリを追加する方法を示すアニメーション化された手順](mac-images/add-macos-proj.gif)
+    ![Cocoa アプリを追加する方法を示すアニメーション化された手順](mac-images/add-macos-proj.gif)
 
-5. 右クリックし、Mac のプロジェクトで**パッケージ > パッケージを追加しています.** を追加する、 [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet です。 他のプロジェクトは、このバージョンにも更新する必要があります。
+5. 右クリックし、Mac のプロジェクトで**パッケージ > パッケージを追加しています.** を追加する、 [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) NuGet です。 Xamarin.Forms NuGet パッケージの同じバージョンを使用する他のプロジェクトを更新する必要があります。
 
 6. 右クリックし、Mac のプロジェクトで**参照**Xamarin.Forms プロジェクト (共有プロジェクトまたは .NET Standard ライブラリ プロジェクト) への参照を追加します。
 
-  ![Xamarin.Forms の共有コード プロジェクトへの参照を追加します。](mac-images/references-sml.png)
+    ![Xamarin.Forms の共有コード プロジェクトへの参照を追加します。](mac-images/references-sml.png)
 
 7. Update **Main.cs**初期化するために、 `AppDelegate`:
 
@@ -90,16 +89,16 @@ MacOS Sierra および El Capitan を macOS で実行される Mac アプリを�
         {
             Forms.Init();
             LoadApplication(new App());
-            base.DidFinishLaunching(notification); 
+            base.DidFinishLaunching(notification);
         }
     }
     ```
 
 9. ダブルクリック**Main.storyboard** Xcode で編集します。 選択、**ウィンドウ**と_をオフに_、**は最初のコント ローラー** (これは上記のコード ウィンドウを作成するため) チェック ボックス。
 
-  [![Xcode では、最初のコント ローラーのチェック ボックスをオフにします。](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
+    [![Xcode では、最初のコント ローラーのチェック ボックスをオフにします。](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
-  望ましくない項目を削除するストーリー ボードのメニュー システムを編集することができます。
+    望ましくない項目を削除するストーリー ボードのメニュー システムを編集することができます。
 
 10. 最後に、追加、ローカル リソースを (例。 イメージ ファイル) に必要な既存のプラットフォーム プロジェクトから。
 
@@ -137,26 +136,11 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ### <a name="not-all-nugets-are-ready-for-macos"></a>MacOS のすべての NuGets 準備が整いました
 
-パッケージは、macOS project で作業する"xamarinmac20"をターゲットする必要があります。 MacOS をまだサポートしていない一部のライブラリを使用することがわかります。
-
-この場合、追加するプロジェクトのメンテナンス ツールに要求を送信する必要があります。 サポートがインストールされるまでは、代わりとなるものを検索する必要があります。
+MacOS をまだサポートしていない一部のライブラリを使用することがわかります。 この場合、追加するプロジェクトのメンテナンス ツールに要求を送信する必要があります。 サポートがインストールされるまでは、代わりとなるものを検索する必要があります。
 
 ### <a name="missing-xamarinforms-features"></a>不足している Xamarin.Forms の機能
 
-Xamarin.Forms のすべての機能がこのプレビューで完了まだ実装されていない機能の一部を次に示します。
-
-* [フッター]
-* イメージの側面
-* ListView – ScrollTo、UnevenRows サポート、更新、SeparatorColor、SeparatorVisibility
-* MasterDetailPage – BackgroundColor
-* ナビゲーション: InsertPageBefore
-* OpenGLRenderer
-* ピッカー-Bindable/観測可能なオブジェクトの実装
-* TabbedPage – BarBackgroundColor、BarTextColor
-* テーブル-UnevenRows
-* ViewCell – IsEnabled ForceUpdateSize
-* WebView – ほとんど WebNavigationEvents
-
+Xamarin.Forms のすべての機能は、このプレビューで完了です。 詳細については、次を参照してください。[プラットフォームのサポートの macOS 状態](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support-macOS-Status)で、 [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) GitHub リポジトリ。
 
 ## <a name="related-links"></a>関連リンク
 
