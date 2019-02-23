@@ -69,7 +69,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 
 #### <a name="ios"></a>iOS
 
-テンプレートの出力は次の c# コードでの iOS でレンダリングされます。
+テンプレートの出力は次の C# コードでの iOS でレンダリングされます。
 
 ```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
@@ -293,7 +293,7 @@ var page = template.GenerateString ();
 
 #### <a name="c-statements"></a>C# のステートメント
 
-複雑な c# モデル プロパティの更新プログラムとこの例では、年齢の計算など、テンプレートに含めることができます。
+複雑な C# モデル プロパティの更新プログラムとこの例では、年齢の計算など、テンプレートに含めることができます。
 
 ```html
 @model Monkey
