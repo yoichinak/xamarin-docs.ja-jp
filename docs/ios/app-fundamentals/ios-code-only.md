@@ -75,7 +75,7 @@ Visual Studio for Mac では、空のテンプレートが提供されません�
     [![](ios-code-only-images/single-view-app.png "単一ビュー アプリ テンプレートを使用します。")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. `Main.Storyboard`と`ViewController.cs`ファイルを削除します。 `LaunchScreen.Storyboard`は削除**しません**。 このビュー コントローラーはストーリー ボードで作成されたビュー コントローラーのコードビハインドであるため、削除する必要があります。
-1. 選択することを確認**削除**ポップアップ ダイアログ ボックス。
+1. ポップアップ ダイアログ ボックスから**削除**を選択してください。
 
     [![](ios-code-only-images/delete.png "ポップアップ ダイアログ ボックスから削除 を選択します。")](ios-code-only-images/delete.png#lightbox)
 
