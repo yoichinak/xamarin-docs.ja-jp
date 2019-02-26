@@ -42,7 +42,7 @@ Visual studio for Mac では、[iOS 用の Xamarin デザイナー](~/ios/user-i
 
 ## <a name="ios-blank-project-template"></a>iOS の空のプロジェクト テンプレート
 
-最初に、Visual Studio を使用して、iOS プロジェクトを作成、**ファイル > 新しいプロジェクト > Visual C# > iPhone と iPad > iOS アプリ (Xamarin)** プロジェクトは、次に示します。
+最初に、Visual Studio を使用して、iOS プロジェクトを作成、**ファイル > 新しいプロジェクト > Visual c# > iPhone と iPad > iOS アプリ (Xamarin)** プロジェクトは、次に示します。
 
 [![新しいプロジェクト ダイアログ ボックス](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
