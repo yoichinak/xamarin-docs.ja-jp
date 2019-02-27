@@ -20,7 +20,7 @@ _このチュートリアルでは、Android から Xamarin.Android Java バイ�
 
 ## <a name="overview"></a>概要
 
-Android のコミュニティには、アプリで使用することがあります多くの Java ライブラリが用意されています。 これらの Java ライブラリで多くの場合、パッケージ化されます。JAR (Java アーカイブ) 形式では、パッケージ化します。JAR を*Java バインド ライブラリ*の機能が Xamarin.Android アプリで使用できるようにします。 Java バインド ライブラリの目的は、Api を作成する、します。JAR ファイルを使用可能なC#を通じて自動的に生成されたコード ラッパー コード。
+Android のコミュニティには、アプリで使用することがあります多くの Java ライブラリが用意されています。 これらの Java ライブラリで多くの場合、パッケージ化されます。JAR (Java アーカイブ) 形式では、パッケージ化します。JAR を*Java バインド ライブラリ*の機能が Xamarin.Android アプリで使用できるようにします。 Java バインド ライブラリの目的は、API を作成する、します。JAR ファイルを使用可能なC#を通じて自動的に生成されたコード ラッパー コード。
 
 Xamarin ツールは、1 つまたは複数の入力からバインド ライブラリを生成できます。JAR ファイル。 バインド ライブラリ (します。DLL アセンブリ) には、次のものが含まれています。 
 
@@ -48,7 +48,7 @@ MCW に生成されたコードでは、API の呼び出しを転送する JNI (
 
 5. バインド ライブラリをビルドします。
 
-バインド ライブラリを作成したら、バインド ライブラリ Api を呼び出すことを示す小規模な Android アプリを開発します。 この例でのメソッドにアクセスする**picasso-2.x.x.jar**:
+バインド ライブラリを作成したら、バインド ライブラリ API を呼び出すことを示す小規模な Android アプリを開発します。 この例でのメソッドにアクセスする**ピカソ 2.x.x.jar**:
 
 ```java
 package com.squareup.picasso
@@ -107,7 +107,7 @@ Picasso.With (this)
 
 [![EmbeddedJar ビルド アクションを選択します。](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
 
-次に、プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*します。 場合、します。JAR は、Android Api を使用して、API レベルにターゲット フレームワークを設定します。JAR が必要です。 開発者では通常、します。JAR ファイルはどの API レベル (レベル) を示しますが、します。JAR と互換性が。 (ターゲット フレームワークの設定と一般的な Android API レベルの詳細については、次を参照してください[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)。)。
+次に、プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*します。 場合、します。JAR は、Android API を使用して、API レベルにターゲット フレームワークを設定します。JAR が必要です。 開発者では通常、します。JAR ファイルはどの API レベル (レベル) を示しますが、します。JAR と互換性が。 (ターゲット フレームワークの設定と一般的な Android API レベルの詳細については、次を参照してください[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)。)。
 
 バインド ライブラリのターゲット API レベルの設定 (この例で使用している API レベル 19)。 
 
