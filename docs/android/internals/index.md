@@ -27,9 +27,9 @@ _このセクションには、アーキテクチャ、API の設計、および
 
 ##  <a name="api-designandroidinternalsapi-designmd"></a>[API の設計](~/android/internals/api-design.md)
 
-Mono の一部である基本クラス ライブラリのコアだけでなく Xamarin.Android Mono とネイティブ Android アプリケーションを作成するためにさまざまな Android Api のバインドに付属します。
+Mono の一部である基本クラス ライブラリのコアだけでなく Xamarin.Android Mono とネイティブ Android アプリケーションを作成するためにさまざまな Android API のバインドに付属します。
 
-Xamarin.Android のコアがありますが、相互運用機能のエンジン、Java の世界中でそのブリッジ、c# の世界と、c# または他の .NET 言語からの Java Api にアクセス権を持つ開発者。
+Xamarin.Android のコアがありますが、相互運用機能のエンジン、Java の世界中でそのブリッジ、C# の世界と、C# または他の .NET 言語からの Java Api にアクセス権を持つ開発者。
 
 
 
