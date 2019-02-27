@@ -99,7 +99,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
  ![Android プロジェクトのビルド アクション: AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>HTML および Javascript からの c# の呼び出し
+### <a name="calling-c-from-html-and-javascript"></a>HTML および Javascript からの C# の呼び出し
 
 Web ビューに html ページが読み込まれると、ページがサーバーから読み込まれた場合と、リンクとフォームに扱います。 つまり、ユーザーがリンクをクリックしてまたはフォームを送信する場合、web ビューに指定したターゲットに移動しようとします。
 
