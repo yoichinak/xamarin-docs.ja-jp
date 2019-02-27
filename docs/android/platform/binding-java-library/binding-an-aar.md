@@ -103,9 +103,9 @@ public class TextCounter
 
     [![LibraryProjectZip textanalyzer.aar ビルド アクションに設定](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
-6.  プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*します。 場合、します。AAR は Android Api を使用して、API レベルにターゲット フレームワークを設定します。AAR が必要です。 (ターゲット フレームワークの設定と一般的な Android API レベルの詳細については、次を参照してください[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)。)。
+6.  プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*します。 場合、します。AAR は Android API を使用して、API レベルにターゲット フレームワークを設定します。AAR が必要です。 (ターゲット フレームワークの設定と一般的な Android API レベルの詳細については、次を参照してください[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)。)。
 
-    バインド ライブラリのターゲット API レベルを設定します。 この例では自由にために API レベル (API レベル 23) の最新のプラットフォームを使用して、 **textanalyzer** Android Api に依存関係はありません。
+    バインド ライブラリのターゲット API レベルを設定します。 この例では自由にために API レベル (API レベル 23) の最新のプラットフォームを使用して、 **textanalyzer** Android API に依存関係はありません。
 
     [![ターゲット レベル API 23 を設定します。](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
