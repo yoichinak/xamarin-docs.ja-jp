@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/21/2018
-ms.openlocfilehash: f5844dd4340afa0596219a33ed1e479a0dbcfa76
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114172"
 ---
+
 # <a name="advanced-concepts-and-internals"></a>高度な概念と内部構造
 
 _このセクションには、アーキテクチャ、API の設計、および Xamarin.Android の制限事項を説明するトピックが含まれています。さらに、そのガベージ コレクションの実装と Xamarin.Android で使用可能なアセンブリを説明するトピックが含まれています。Xamarin.Android のため[オープン ソース](https://github.com/xamarin/xamarin-android)、そのソース コードを調べることで、Xamarin.Android の内部動作を理解することもできます。_
