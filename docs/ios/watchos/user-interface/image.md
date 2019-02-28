@@ -16,9 +16,9 @@ ms.locfileid: "56321130"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS Xamarin でのイメージ コントロール
 
-watchOS の提供、 [ `WKInterfaceImage` ](xref:WatchKit.WKInterfaceImage)イメージや単純なアニメーションを表示するコントロール。 一部のコントロール (ボタン、グループ、およびインターフェイス コント ローラー) などの背景画像をこともできます。
+watchOS の提供、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)イメージや単純なアニメーションを表示するコントロール。 一部のコントロール (ボタン、グループ、およびインターフェイス コント ローラー) などの背景画像をこともできます。
 
-![](image-images/image-walkway.png "Apple Watch の画像の表示") ![ ](image-images/image-animation.png "単純なアニメーションを使用して、Apple Watch")
+![](image-images/image-walkway.png "Apple Watch の画像の表示") ![](image-images/image-animation.png "単純なアニメーションを使用して、Apple Watch")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 資産カタログのイメージを使用すると、ウォッチ キット アプリにイメージを追加できます。
