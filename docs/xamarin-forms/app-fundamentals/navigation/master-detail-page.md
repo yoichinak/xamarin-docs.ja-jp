@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057666"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666910"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター詳細ページ
 
@@ -48,7 +48,7 @@ _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、
 
 - iOS では、マスター ページが左から "*スライド*" してくると、詳細ページは右にスライドしますが、詳細ページの左の部分はまだ表示されています。
 - Android では、詳細ページとマスター ページは相互に "*オーバーレイ*" されます。
-- UWP では、詳細ページとマスター ページは "*スワップ*" されます。
+- UWP では、マスター ページが左からスライドして詳細ページの一部を覆います。ただし、[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) プロパティが `Popover` に設定されている場合です。 詳細については、「[詳細ページの表示動作を制御する](#Controlling_the_Detail_Page_Display_Behavior)」をご覧ください。
 
 横モードでの動作も同様ですが、iOS と Android のマスター ページは縦モードのマスター ページと同じ幅なので、表示される詳細ページの部分が多くなります。
 
@@ -291,7 +291,6 @@ public class MainPageCS : MasterDetailPage
 ## <a name="summary"></a>まとめ
 
 この記事では、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) を使用する方法と、情報ページ間を移動する方法を示しました。 Xamarin.Forms の `MasterDetailPage` は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。
-
 
 ## <a name="related-links"></a>関連リンク
 
