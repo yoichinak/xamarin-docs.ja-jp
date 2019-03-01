@@ -66,7 +66,7 @@ Xamarin.Android バインドのデザイン原則をいくつか
 
 Xamarin.Android には形成するアセンブリの数値が含まれています、 *MonoMobile プロファイル*します。 [アセンブリ](~/cross-platform/internals/available-assemblies.md)ページには詳細についてはします。
 
-Android のプラットフォームへのバインドに含まれる、`Mono.Android.dll`アセンブリ。 このアセンブリには、使用の Android api 全体のバインドと Android ランタイム VM との通信が含まれています。
+Android のプラットフォームへのバインドに含まれる、`Mono.Android.dll`アセンブリ。 このアセンブリには、使用の Android API 全体のバインドと Android ランタイム VM との通信が含まれています。
 
 
 ## <a name="binding-design"></a>バインドのデザイン
