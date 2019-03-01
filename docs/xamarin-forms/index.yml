@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 00d8e1459501b4643dea12b1d36939534a66833f
-ms.sourcegitcommit: 5405a376fe1b1e08c834eb565aaa5b1849a0fcdc
+ms.openlocfilehash: ccd085c8b1cf824f24d4677ed2e44ebc54b690bd
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986488"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197174"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -35,7 +35,7 @@ sections:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
       text: セットアップ
-      href: ~/get-started/installation.md
+      href: ~/get-started/requirements.md
     - image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
       text: 最初のアプリ
@@ -62,18 +62,6 @@ sections:
     style: cards
     className: cardsB
     items:
-    - href: ~/get-started/index.md
-      html: すぐに Xamarin.Forms を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Xamarin.Forms アプリを構築してみましょう。
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/get-started/index.md
-      title: 作業の開始
-    - href: ~/xamarin-forms/xaml/
-      html: ユーザー インターフェイスを宣言によってビルドし、モバイルおよびデスクトップのプラットフォーム間で共有します。
-      image:
-        src: ~/media/icons/i_xaml-forms.svg
-        href: ~/xamarin-forms/xaml/
-      title: XAML
     - href: ~/xamarin-forms/app-fundamentals/
       html: ファイル、画像、データベースの扱いなど、Xamarin.Forms アプリを構築するために必要なすべての情報を説明します。
       image:
@@ -86,6 +74,12 @@ sections:
         src: ~/media/icons/i_user-interface.svg
         href: ~/xamarin-forms/user-interface/
       title: ユーザー インターフェイス
+    - href: ~/xamarin-forms/xaml/
+      html: ユーザー インターフェイスを宣言によってビルドし、モバイルおよびデスクトップのプラットフォーム間で共有します。
+      image:
+        src: ~/media/icons/i_xaml-forms.svg
+        href: ~/xamarin-forms/xaml/
+      title: XAML
     - href: ~/xamarin-forms/platform/
       html: カスタム レンダラーなど、Xamarin.Forms プラットフォームの機能と、各リリースのその他の重要な機能を使用します。
       image:
@@ -116,7 +110,7 @@ sections:
         src: https://docs.microsoft.com/media/common/i_config-tools.svg
         href: ~/xamarin-forms/internals/
       title: 高度な概念と内部構造
-- title: 参照
+- title: 関連項目
   items:
   - type: list
     style: cards
