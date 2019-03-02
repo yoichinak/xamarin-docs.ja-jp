@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: b027dd23b9144a865bc16b55ebac71855bae0725
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 552ad4d2de6e2560dc4301a9b5cc0ce6a5edb348
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292039"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197113"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android のビルド エラー – The LinkAssemblies タスクが予期せず失敗しました
 
-エラー メッセージが表示することがあります`The "LinkAssemblies" task failed unexpectedly`Xamarin.Android プロジェクトのビルドがフォームを使用している場合。 リンカーは、アクティブな場合 (通常で、*リリース*アプリ パッケージのサイズを小さくビルド); Android ターゲットが最新のフレームワークに更新されないために発生するとします。 (詳細については。[Android の要件の Xamarin.Forms](~/get-started/installation.md#android))
+エラー メッセージが表示することがあります`The "LinkAssemblies" task failed unexpectedly`Xamarin.Android プロジェクトのビルドがフォームを使用している場合。 リンカーは、アクティブな場合 (通常で、*リリース*アプリ パッケージのサイズを小さくビルド); Android ターゲットが最新のフレームワークに更新されないために発生するとします。 (詳細については。[Android の要件の Xamarin.Forms](~/get-started/requirements.md#android))
 
 この問題を解決最新サポート対象の Android SDK バージョンがあり、設定するかどうかを確認するには、**ターゲット フレームワーク**に**使用がインストールされている最新のプラットフォーム**します。 またに設定することをお勧め、**ターゲット Android バージョン**に**ターゲット フレームワーク バージョンを使用して**と**最小 Android バージョン**API 15 以降。 これは、サポートされる構成と見なされます。
 

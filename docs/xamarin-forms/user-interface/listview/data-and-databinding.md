@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 4f69e88e0abff1236dc8365d88c8efbdf58b4031
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: e53f6dce47dd7db60267d21c8d816ece554dc46c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831705"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197117"
 ---
 # <a name="listview-data-sources"></a>ListView のデータ ソース
 
@@ -71,11 +71,11 @@ listView.ItemsSource.Add("monochrome");
 `ItemsSource`コンテンツは、基になるリストまたは配列の変更としては更新されません、配列に送信されました。 使用する必要があります、ListView の項目が追加、削除、および基になるリストの変更に応じて自動的に更新する場合は、`ObservableCollection`します。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) 定義されている`System.Collections.ObjectModel`が同様と`List`に通知する点を除いて、`ListView`すべての変更。
 
 ```csharp
-ObservableCollection<Employees> employeeList = new ObservableCollection<Employess>();
-listView.ItemsSource = employeeList;
+ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+listView.ItemsSource = employees;
 
 //Mr. Mono will be added to the ListView because it uses an ObservableCollection
-employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
+employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 ```
 
 <a name="Data_Binding" />
@@ -93,7 +93,8 @@ employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
 Employee クラス:
 
 ```csharp
-public class Employee{
+public class Employee
+{
     public string DisplayName {get; set;}
 }
 ```
