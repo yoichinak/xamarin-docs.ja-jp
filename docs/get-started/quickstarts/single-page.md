@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 7696ece64da28f05bb15866214de4a7f1103d06f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dddd41f064be5e7840b6b86d86faec8045b476bf
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293314"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197226"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>ページの 1 つの Xamarin.Forms アプリケーションを作成します。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 
 このクイック スタートでは、学習する方法。
 
@@ -38,7 +38,7 @@ ms.locfileid: "55293314"
 - サポート技術情報のC#します。
 - (省略可能)Ios アプリケーションの構築にペアリングした Mac。
 
-これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/cross-platform/get-started/installation/index.md)します。 Visual Studio 2017 を Mac ビルド ホストに接続する方法については、次を参照してください。 [Xamarin.iOS 開発用 Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)します。
+これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/get-started/installation/index.md)します。 Visual Studio 2017 を Mac ビルド ホストに接続する方法については、次を参照してください。 [Xamarin.iOS 開発用 Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)します。
 
 ## <a name="get-started-with-visual-studio"></a>Visual Studio 入門
 
@@ -92,7 +92,7 @@ ms.locfileid: "55293314"
     </ContentPage>
     ```
 
-    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。このページは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、アプリケーションへのファイルの保存または削除の指示が出される 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、次を参照してください。[ユーザー インターフェイス](deepdive.md#user-interface)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Label` ](xref:Xamarin.Forms.Label)テキストを表示したり、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button`](xref:Xamarin.Forms.Button)保存またはファイルを削除するには、アプリケーション インスタンス。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、次を参照してください。[ユーザー インターフェイス](deepdive.md#user-interface)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
 
     **CTRL + S** を押し、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -188,7 +188,7 @@ ms.locfileid: "55293314"
 - Xcode (最新リリース)。
 - サポート技術情報のC#します。
 
-これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/cross-platform/get-started/installation/index.md)します。
+これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/get-started/installation/index.md)します。
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
@@ -246,7 +246,7 @@ ms.locfileid: "55293314"
     </ContentPage>
     ```
 
-    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。このページは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、アプリケーションへのファイルの保存または削除の指示が出される 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、次を参照してください。[ユーザー インターフェイス](deepdive.md#user-interface)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Label` ](xref:Xamarin.Forms.Label)テキストを表示したり、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button`](xref:Xamarin.Forms.Button)保存またはファイルを削除するには、アプリケーション インスタンス。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、次を参照してください。[ユーザー インターフェイス](deepdive.md#user-interface)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
