@@ -7,16 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: f14ea52e419ae5d639319f49ae4779de6a2eed31
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292182"
 ---
+
 # <a name="windows-platform-features"></a>Windows プラットフォームの機能
 
-Windows プラットフォーム用の Xamarin.Forms アプリケーションの開発には、Visual Studio が必要です。 [要件ページ](~/get-started/installation.md)の前提条件の詳細が含まれています。
+Windows プラットフォーム用の Xamarin.Forms アプリケーションの開発には、Visual Studio が必要です。 [要件ページ](~/get-started/requirements.md)の前提条件の詳細が含まれています。
 
 ![](images/allhanselman.png "Windows で実行される Xamarin.Forms アプリケーション")
 

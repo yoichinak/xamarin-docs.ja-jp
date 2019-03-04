@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 48b1c93afa22bf069a2b47b6c9a259641e8ed70f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293338"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197369"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでのナビゲーションを実行します。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 このクイック スタートでは、学習する方法。
 
@@ -114,7 +114,7 @@ ms.locfileid: "55293338"
       </ContentPage>
       ```
 
-      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンス、ファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
 
       変更を保存**NoteEntryPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
 
@@ -399,7 +399,7 @@ ms.locfileid: "55293338"
       </ContentPage>
       ```
 
-      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンス、ファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
 
       変更を保存**NoteEntryPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 

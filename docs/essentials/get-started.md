@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: d359ea6e56234f14f185ea578fca3a0346e0df50
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 7152e37c4035ac5f9a259fa48b91d5f29752d1f7
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233719"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197135"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の概要
 
@@ -31,7 +31,7 @@ Xamarin.Essentials では、次のプラットフォームとオペレーティ�
 
 Xamarin.Essentials は NuGet パッケージとして入手可能で、Visual Studio を使用して既存または新規の任意のプロジェクトに追加できます。
 
-1. [Xamarin 用の Visual Studio ツール](~/cross-platform/get-started/installation/index.md)と共に、[Visual Studio](http://visualstudio.com) をダウンロードしてインストールします。
+1. [Xamarin 用の Visual Studio ツール](~/get-started/installation/index.md)と共に、[Visual Studio](http://visualstudio.com) をダウンロードしてインストールします。
 
 2. 既存のプロジェクトを開くか、**Visual Studio C#** (Android、iPhone と iPad、またはクロスプラットフォーム) の下の空のアプリ テンプレートを使用して新しいプロジェクトを作成します。 **重要**: UWP プロジェクトに追加する場合、プロジェクトのプロパティにビルド 16299 以上が設定されていることを確認します。
 

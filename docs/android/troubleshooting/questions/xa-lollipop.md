@@ -45,8 +45,8 @@ Error 1 Could not find android.jar for API Level 21.
 
 3. Android API レベル 21"L"プレビュー [1] に一時的にダウン グレードします。
 
-    1.  削除、 **%localappdata%\\Android\\android sdk\\platforms\\android 21** 
-    2.  [1] に抽出**c:\\ユーザー\\<username>\\AppData\\ローカル\\Android\\android sdk\\プラットフォーム**を作成します。**android-l**フォルダー。
+    1.  削除、 **%localappdata%\\Android\\android sdk\\プラットフォーム\\android 21** 
+    2.  [1] を**c:\\Users\\\<username>\\AppData\\Local\\Android\\android-sdk\\platforms**に展開して、**android-l**フォルダーを作成します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

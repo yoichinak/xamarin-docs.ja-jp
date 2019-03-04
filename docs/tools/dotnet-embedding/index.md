@@ -17,7 +17,7 @@ ms.locfileid: "50107145"
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-.NET の埋め込みにより、既存の .NET コード (c#、f#、および他のユーザー) を他のプログラミング言語から、さまざまな異なる環境で使用します。
+.NET の埋め込みにより、既存の .NET コード (C#、F#、および他のユーザー) を他のプログラミング言語から、さまざまな異なる環境で使用します。
 
 つまり、既存の iOS アプリから使用する .NET ライブラリがあれば、行うことができます。   または、ネイティブの C++ ライブラリとリンクする場合は、行うこともできますです。   または、Java から .NET コードを使用します。
 
@@ -29,9 +29,9 @@ ms.locfileid: "50107145"
 
 ターゲット言語でコードの慣用として .NET コードが表示されるように、さまざまな言語のコンシューマーをサポートします。   これは、現時点ではサポートされている言語の一覧を示します。
 
-- [**Objective C** ](objective-c/index.md) – 慣用 Objective C Api への .NET のマッピング
-- [**Java** ](android/index.md) – 慣用 Java Api への .NET のマッピング
-- [**C** ](get-started/c.md) – C Api と同様のオブジェクト指向への .NET のマッピング
+- [**Objective C** ](objective-c/index.md) – 慣用 Objective-C API への .NET のマッピング
+- [**Java** ](android/index.md) – 慣用 Java API への .NET のマッピング
+- [**C** ](get-started/c.md) – C API と同様のオブジェクト指向への .NET のマッピング
 
 その他の言語は、後述します。
 

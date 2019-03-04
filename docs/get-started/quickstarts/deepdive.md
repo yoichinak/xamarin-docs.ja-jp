@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: aacc63af53d7408b61f01054d49fa2b436588fc7
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293346"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197551"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms のクイック スタートの詳細情報
 
-[Xamarin.Forms のクイック スタート](~/get-started/index.md)、Notes アプリケーションの構築します。 この記事では、Xamarin.Forms アプリケーションのしくみの基礎を理解するために、構築された内容を確認します。
+[Xamarin.Forms のクイック スタート](~/get-started/index.yml)、Notes アプリケーションの構築します。 この記事では、Xamarin.Forms アプリケーションのしくみの基礎を理解するために、構築された内容を確認します。
 
 ::: zone pivot="windows"
 
@@ -373,7 +373,7 @@ await Navigation.PopAsync();
 
 Xamarin.Forms アプリケーションがそのデータを表示し、相互作用するしくみを簡単にするためにデータ バインディングが使用されます。 データ バインディングはユーザー インターフェイスと基礎アプリケーションの間で接続を確立します。 [`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスには、データ バインディングをサポートするためのインフラストラクチャの大部分が含まれています。
 
-データ バインディングでは、*ソース*と*ターゲット*と呼ばれる 2 つのオブジェクトを接続します。 *ソース* オブジェクトはデータを提供します。 *ターゲット* オブジェクトは、ソース オブジェクトのデータを使用し (またしばしば表示し) ます。 たとえば、[`Editor`](xref:Xamarin.Forms.Editor) (*ターゲット* オブジェクト) は一般的にその [`Text`](xref:Xamarin.Forms.Editor.Text) プロパティを *ソース* オブジェクトのパブリックの `string` プロパティにバインドします。 次の図では、バインドの関係を示します。
+データ バインディングでは、*ソース*と*ターゲット*と呼ばれる 2 つのオブジェクトを接続します。 *ソース* オブジェクトはデータを提供します。 *ターゲット* オブジェクトは、ソース オブジェクトのデータを使用し (またしばしば表示し) ます。 など、 [ `Editor` ](xref:Xamarin.Forms.Editor) (*ターゲット*オブジェクト) バインドは通常その[ `Text` ](xref:Xamarin.Forms.Editor.Text)プロパティをパブリック`string`プロパティ*ソース*オブジェクト。 次の図では、バインドの関係を示します。
 
 ![](deepdive-images/data-binding.png "データ バインディング")
 
@@ -510,7 +510,7 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 この詳細情報には、Xamarin.Forms を使用したアプリケーション開発の基礎が調べします。 推奨される次の手順としては、次の機能の説明を読んでください。
 
 - Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するために、主に 4 つのコントロール グループが使用されます。 詳細については、次を参照してください。[コントロールのリファレンス](~/xamarin-forms/user-interface/controls/index.md)します。
-- データ バインディングは、1 つのプロパティの変更は、その他のプロパティに自動的に反映されるように、2 つのオブジェクトのプロパティをリンクするための手法です。 詳細については、次を参照してください。[データ バインディングの](~/xamarin-forms/app-fundamentals/data-binding/index.md)します。
+- データ バインディングは、1 つのプロパティの変更は、その他のプロパティに自動的に反映されるように、2 つのオブジェクトのプロパティをリンクするための手法です。 詳細については、次を参照してください。[データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - Xamarin.Forms は、さまざまな使用されているページの種類に応じて、別のページ ナビゲーション エクスペリエンスを提供します。 詳細については、「[ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/index.md)」を参照してください。
 - スタイルは、反復的なマークアップを削減し、アプリケーションの外観をより簡単に変更を許可するのに役立ちます。 詳細については、次を参照してください。 [Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/index.md)します。
 - XAML マークアップ拡張機能は、リテラル テキスト文字列以外のソースから設定する要素の属性を許可することで、電源と XAML の柔軟性を拡張します。 詳細については、次を参照してください。 [XAML マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/index.md)します。
