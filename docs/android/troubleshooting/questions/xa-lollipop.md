@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Android のバージョンでは、Lollipop のサポートを追加しますか。
+title: Lollipop のサポートが追加された Xamarin.Android のバージョンを教えてください
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 63B6E10C-098D-4C82-9253-07CA62EA85A5
@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ffae20f3e62d8f735e4645143f08a94fd04744b1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7e31f9ad46a04b648a6a1f24c075426f7d98a663
+ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105273"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57305608"
 ---
-# <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Xamarin.Android のバージョンでは、Lollipop のサポートを追加しますか。
+# <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Lollipop のサポートが追加された Xamarin.Android のバージョンを教えてください
 
-**注:** Android L プレビューでは、このガイドは書き込まれています。
+**注:** このガイドは、Android L プレビュー用に作成されたでした。
 
 -   [Xamarin.Android 4.17](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.17/) Android L プレビューのサポートが追加されました。
 -   [Xamarin.Android 4.20](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.20/) Android Lollipop のサポートが追加されました。
@@ -33,7 +33,7 @@ Xamarin には、現在の安定したリリースの Xamarin ツールのみア
 Error 1 Could not find android.jar for API Level 21.
 ```
 
-このメッセージは、API レベル 21 用、Android SDK プラットフォームがインストールされていないことを意味します。 Android SDK Manager をインストールするか (ツール > Android SDK マネージャーを開く...)、またはインストールされている API バージョンを対象とする Xamarin.Android プロジェクトを変更します。
+このメッセージは、API レベル 21 用、Android SDK プラットフォームがインストールされていないことを意味します。 Android SDK Manager をインストールするか (**ツール > Android SDK マネージャーを開く.**)、またはインストールされている API バージョンを対象とする Xamarin.Android プロジェクトを変更します。
 
 この問題のいくつかの回避策があります。
 
@@ -46,7 +46,7 @@ Error 1 Could not find android.jar for API Level 21.
 3. Android API レベル 21"L"プレビュー [1] に一時的にダウン グレードします。
 
     1.  削除、 **%localappdata%\\Android\\android sdk\\プラットフォーム\\android 21** 
-    2.  [1] を**c:\\Users\\\<username>\\AppData\\Local\\Android\\android-sdk\\platforms**に展開して、**android-l**フォルダーを作成します。
+    2.  [1] に抽出**c:\\ユーザー\\&lt;username&gt;\\AppData\\ローカル\\Android\\android sdk\\プラットフォーム**を作成する、 **android-l**フォルダー。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -69,7 +69,7 @@ Error: Could not find android.jar for API Level 21.**
 
 3. Android API レベル 21"L"プレビュー [1] に一時的にダウン グレードします。
 
-    1.  削除 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
+    1.  Delete **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
     2.  [1] に抽出 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx**を作成する、 **android-l**フォルダー。
 
 -----
