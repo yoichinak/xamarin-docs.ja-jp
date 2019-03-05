@@ -1,30 +1,13 @@
 items:
-- name: Cross-Platform
+- name: クロスプラットフォーム
   href: index.yml
   items:
-  - name: 開始するには
+  - name: モバイル アプリの構築
     href: get-started/index.md
     items:
     - name: 要件
       displayName: System requirements
       href: get-started/requirements.md
-    - name: インストール
-      href: get-started/installation/index.md
-      items:
-      - name: Windows での Xamarin のインストール
-        href: get-started/installation/windows.md
-        items:
-        - name: Xamarin のインストールのプレビュー (Windows)
-          href: get-started/installation/windows-preview.md
-      - name: Visual Studio for Mac のインストール
-        href: /visualstudio/mac/installation/
-        items:
-        - name: Xamarin のインストールのプレビュー (Mac)
-          href: /visualstudio/mac/update/
-      - name: Xamarin ファイアウォールの構成手順
-        href: get-started/installation/firewall.md
-      - name: Xamarin のアンインストール
-        href: get-started/installation/uninstalling-xamarin.md
     - name: モバイル開発の概要
       href: get-started/introduction-to-mobile-development.md
     - name: モバイル SDLC の概要
@@ -192,9 +175,9 @@ items:
   - name: サンプル
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
+ms.openlocfilehash: 083bc3dc1dbd392977b0d4902e37fe0f78513c29
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841329"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197330"

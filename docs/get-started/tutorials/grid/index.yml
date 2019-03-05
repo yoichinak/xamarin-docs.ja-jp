@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms Grid のチュートリアル
+metadata:
+  title: Xamarin.Forms Grid のチュートリアル
+  description: Xamarin.Forms グリッドを使用して、ビューを比例サイズと絶対サイズにできるように行と列に整理する方法について説明します。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 08/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 492e26b8488b615d4d50ee63f4fa4a9fa1f4c01e
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57197838"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: グリッドを作成する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 列と行を指定する
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/columns-rows.md)]
+- title: 複数の列または行にまたがる
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/span-columns-rows.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'
