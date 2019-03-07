@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
-ms.openlocfilehash: 5e7b8a3fb703d8857312b15f4884399ee951b2d4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118540"
 ---
+
 # <a name="installing-xamarinios-on-windows"></a>Windows に Xamarin.iOS をインストールする
 
 _この記事では、Xamarin.iOS の開発用に Windows コンピューターおよび Mac ビルド ホストをセットアップする方法について説明します。_
@@ -36,7 +31,7 @@ Visual Studio 2017 を Xamarin.iOS 開発用にセットアップするには、
 
     Xamarin.iOS は、スタンドアロン マシンまたは仮想マシン上の Visual Studio 2017 Community、Professional、Enterprise エディションで動作します。
     
-    - [Visual Studio 2017 をインストールします](~/cross-platform/get-started/installation/windows.md)。
+    - [Visual Studio 2017 をインストールします](~/get-started/installation/windows.md)。
 
 2. Mac をセットアップする (Xcode と Visual Studio for Mac をインストールする)
 

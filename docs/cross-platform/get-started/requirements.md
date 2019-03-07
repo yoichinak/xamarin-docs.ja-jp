@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 87c3a189851db66e630095eae31434a590050154
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 4ea9690812675c48524393576e5509ab37e26981
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292273"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197148"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -72,13 +72,13 @@ macOS 用の最新の Xamarin リリースは、[xamarin.com/download](http://xa
 
 現在の製品バージョンの完全なリストは、[現在のリリースのページ](http://developer.xamarin.com/releases/current/)で確認できます。 このページには、ベータおよびアルファ チャネルの個々の製品バージョンの概要 (およびリリース ノートへのリンク) も示されています。
 
-各プラットフォームの特定の[インストール](~/cross-platform/get-started/installation/index.md)手順については、以下を参照してください。
+各プラットフォームの特定の[インストール](~/get-started/installation/index.md)手順については、以下を参照してください。
 
 - [Xamarin.iOS](~/ios/get-started/installation/index.md)
 - [Xamarin.Android](~/android/get-started/installation/index.md)
 - [Xamarin.Mac](~/mac/get-started/installation.md)
 
-[Xamarin.Forms の要件とサポートされているプラットフォーム](~/get-started/installation.md)に関する追加情報もあります。
+[Xamarin.Forms の要件とサポートされているプラットフォーム](~/get-started/requirements.md)に関する追加情報もあります。
 
 ## <a name="related-links"></a>関連リンク
 

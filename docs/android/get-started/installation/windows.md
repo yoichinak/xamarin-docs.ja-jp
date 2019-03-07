@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: c208bae61f425ccdb69e0543c7686891a7add358
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113184"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197473"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -36,7 +36,7 @@ Xamarin は現在、追加料金なしで Visual Studio のすべてのエディ
 
 ## <a name="installation"></a>インストール
 
-Windows での Visual Studio を使用するための Xamarin のインストールについては、[Windows インストール](~/cross-platform/get-started/installation/windows.md)のガイドをご覧ください。
+Windows での Visual Studio を使用するための Xamarin のインストールについては、[Windows インストール](~/get-started/installation/windows.md)のガイドをご覧ください。
 
 
 ## <a name="configuration"></a>構成
@@ -119,7 +119,7 @@ Xamarin.Android をインストールしたので、Visual Studio を起動し�
 ## <a name="related-links"></a>関連リンク
 
 - [Visual Studio のダウンロード](https://visualstudio.microsoft.com/vs/)
-- [Visual Studio Tools for Xamarin のインストール](~/cross-platform/get-started/installation/windows.md)
+- [Visual Studio Tools for Xamarin のインストール](~/get-started/installation/windows.md)
 - [システム要件](~/cross-platform/get-started/requirements.md)
 - [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)
 - [Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)

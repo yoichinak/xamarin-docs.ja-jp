@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms ローカル データベースのチュートリアル
+metadata:
+  title: Xamarin.Forms ローカル データベースのチュートリアル
+  description: SQLite.NET NuGet パッケージを使用して、Xamarin.Forms アプリケーションにローカル データベース操作を組み込む方法について学習します。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 12/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: b4cd264d11df081fb190044000e73cf012092667
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198568"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: SQLite.NET を追加する
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/add-sqlite.md)]
+- title: データ アクセス クラスを作成する
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](includes/create-data-access-classes.md)]
+- title: データ アクセス クラスを使用する
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/consume-data-access-classes.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

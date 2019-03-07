@@ -1,0 +1,175 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 0910e5ad577aee8b9a46b64914bf06852cfd0160
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57198208"
+documentType: LandingData
+title: Xamarin の概要
+metadata:
+  title: Xamarin の概要
+  description: Visual Studio および Visual Studio for Mac を使用する Xamarin アプリケーションの開発に関する記事、クイックスタート、およびチュートリアル。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 0F440777-74A2-4AE5-AD1E-5B51EB8BD228
+  ms.technology: xamarin
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 02/15/2018
+abstract:
+  description: Xamarin.Forms は、iOS、Android、ユニバーサル Windows プラットフォーム アプリ間で共有可能なネイティブ ユーザー インターフェイス レイアウトを効率的に作成するための、開発者向けクロスプラットフォーム UI ツールキットです。 Xamarin.Forms の詳細なドキュメントについては、<a href="/xamarin/xamarin-forms/">Xamarin.Forms に関するドキュメント</a>を参照してください。
+sections:
+- title: 開始するには
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: requirements.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_tasks.svg
+      title: 要件
+    - href: installation/index.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_setup.svg
+      title: インストール
+    - href: first-app/index.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+      title: 最初のアプリをビルドする
+- title: クイックスタート
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: quickstarts/single-page.md
+      html: <p></p>
+      image:
+        src: ~/media/icons/i_xaml-forms.svg
+      title: 単一ページの Xamarin.Forms アプリケーションを作成する
+    - href: quickstarts/multi-page.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_class.svg
+      title: 複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
+    - href: quickstarts/database.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_generic-database.svg
+      title: ローカルの SQLite.NET データベースにデータを格納する
+    - href: quickstarts/styling.md
+      html: <p></p>
+      image:
+        src: ~/media/icons/i_user-interface.svg
+      title: クロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを設定する
+    - href: quickstarts/deepdive.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_overview.svg
+      title: クイック スタート Deep Dive
+- title: チュートリアル
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: tutorials/stacklayout/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_dashboard.svg
+      title: StackLayout
+    - href: tutorials/label/
+      html: <p></p>
+      image:
+        src: ~/media/icons/i_form-label.svg
+      title: group1
+    - href: tutorials/button/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_button.svg
+      title: ボタン
+    - href: tutorials/entry/
+      html: <p></p>
+      image:
+        src: ~/media/icons/i_form-entry.svg
+      title: 入力
+    - href: tutorials/editor/
+      html: <p></p>
+      image:
+        src: ~/media/icons/i_form-editor.svg
+      title: エディター
+    - href: tutorials/image/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_account-management.svg
+      title: イメージ
+    - href: /tutorials/grid/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_table.svg
+      title: グリッド
+    - href: tutorials/listview/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_sharepoint-list.svg
+      title: ListView
+    - href: tutorials/pop-ups/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_alert.svg
+      title: ポップアップ
+    - href: tutorials/app-lifecycle/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_agile.svg
+      title: アプリのライフサイクル
+    - href: tutorials/local-database/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_generic-database.svg
+      title: ローカル データベース
+    - href: tutorials/web-service/
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_server.svg
+      title: Web サービス
+- title: Xamarin について学習する
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: ~/cross-platform/get-started/introduction-to-mobile-development.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_xamarin.svg
+      title: ネイティブ アプリ
+    - href: ~/cross-platform/desktop/index.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_NET.svg
+      title: .NET 開発者
+    - href: ~/android/get-started/java-developers.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_java.svg
+      title: Java 開発者
+    - href: ~/ios/get-started/objective-c-developers/index.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_xcode.svg
+      title: Objective-C 開発者
+    - href: ~/xamarin-forms/data-cloud/index.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_azure.svg
+      title: Azure

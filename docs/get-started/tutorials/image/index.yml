@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms Image のチュートリアル
+metadata:
+  title: Xamarin.Forms Image のチュートリアル
+  description: Xamarin.Forms Image ビューを使用して、ページでイメージを表示する方法について学習します。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 05/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 77ad9afcc82f27c78973c279af70ab735dd067f6
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198388"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: イメージを作成する
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 外観をカスタマイズする
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/customize-appearance.md)]
+- title: ローカル イメージを表示する
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/local-file.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

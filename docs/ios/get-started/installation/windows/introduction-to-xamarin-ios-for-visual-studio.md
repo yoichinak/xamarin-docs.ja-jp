@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 396c6a19a86c3c8f5429d5da1251d69fc8d57309
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5f2617272cfdc84fa2b835ce44919d2599a1dce6
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114081"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197200"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
 
@@ -35,12 +35,12 @@ Visual Studio での iOS 向けの開発時に従う必要があるいくつか�
 いくつかの構成オプションを使用できるため、開発のニーズに最適なものを判断できます。 それらを以下に示します。
 
 -  メインの開発用コンピューターとして Mac を使用して、Visual Studio がインストールされている Windows 仮想マシンを実行します。 [Parallels](http://www.parallels.com/products/desktop/) や [VMWare](http://www.vmware.com/products/fusion/) などの VM ソフトウェアを使用することをお勧めします。
--  ビルド ホストと同じように Mac を使用します。 このシナリオでは、[必要な](~/cross-platform/get-started/installation/windows.md#installation)ツールがインストールされている Windows コンピューターと同じネットワークに接続されます。
+-  ビルド ホストと同じように Mac を使用します。 このシナリオでは、[必要な](~/get-started/installation/windows.md#installation)ツールがインストールされている Windows コンピューターと同じネットワークに接続されます。
 
 いずれの場合も、次の手順に従う必要があります。
 
 - [Visual Studio for Mac をインストールする](https://docs.microsoft.com/visualstudio/mac/installation)
-- [Windows に Xamarin ツールをインストールする](~/cross-platform/get-started/installation/windows.md)
+- [Windows に Xamarin ツールをインストールする](~/get-started/installation/windows.md)
 
 ## <a name="connecting-to-the-mac"></a>Mac への接続
 

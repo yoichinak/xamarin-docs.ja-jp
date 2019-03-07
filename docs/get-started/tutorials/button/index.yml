@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms Button のチュートリアル
+metadata:
+  title: Xamarin.Forms Button のチュートリアル
+  description: 特定のタスクを実行するようにアプリケーションに指示する、Xamarin.Forms Button のタップまたはクリックに応答する方法について学習します。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 01/30/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 034a4a8f2930a02edb0c9a796299eb32e849ea70
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57199038"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: ボタンを作成する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: クリックを処理する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/clicks.md)]
+- title: 外観を変更する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/appearance.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

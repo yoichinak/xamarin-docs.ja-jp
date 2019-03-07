@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 5470a70570a431c1adc3053d9f8f389cec31cf85
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 0062c5da4db206a9fe4dc0030a104ec034ab97f1
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292078"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197161"
 ---
 # <a name="introduction-to-mobile-development"></a>モバイル開発の概要
 
@@ -83,11 +83,11 @@ Xamarin のしくみの概要について説明したので、さらに詳しい
 
 ![](introduction-to-mobile-development-images/android.png "Hello, Android")
 
-* [**Xamarin.Forms の概要**](~/get-started/index.md)
+* [**Xamarin.Forms の概要**](~/get-started/index.yml)
 
 ## <a name="summary"></a>まとめ
 
-このドキュメントは、Xamarin プラットフォームの紹介にすぎません。 本当に面白くなるのは、初めてアプリを使い始めてからです。 「[Hello, iOS](~/ios/get-started/hello-ios/index.md)」、「[Android へようこそ](~/android/get-started/hello-android/index.md)」、「[Xamarin.Forms の概要](~/get-started/index.md)」のガイドを参照して、始めましょう。
+このドキュメントは、Xamarin プラットフォームの紹介にすぎません。 本当に面白くなるのは、初めてアプリを使い始めてからです。 「[Hello, iOS](~/ios/get-started/hello-ios/index.md)」、「[Android へようこそ](~/android/get-started/hello-android/index.md)」、「[Xamarin.Forms の概要](~/get-started/index.yml)」のガイドを参照して、始めましょう。
 
 ## <a name="related-links"></a>関連リンク
 

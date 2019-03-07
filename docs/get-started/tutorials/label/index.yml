@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms Label のチュートリアル
+metadata:
+  title: Xamarin.Forms Label のチュートリアル
+  description: Xamarin.Forms Label ビューを使用して、単一行と複数行の両方でテキストを表示する方法について学習します。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 01/31/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 6fa07fb712669607dad404cbe093001611f98a54
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198698"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: ラベルを作成する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 外観を変更する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/appearance.md)]
+- title: 書式設定されたテキストを表示する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/formatted-text.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'
