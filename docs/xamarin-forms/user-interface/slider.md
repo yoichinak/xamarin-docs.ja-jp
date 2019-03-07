@@ -6,13 +6,13 @@ ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: ac5ad85f7bdd08b0d071e7c333c959e94dcbc53f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 02/27/2019
+ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057491"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557309"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms のスライダー
 
@@ -38,6 +38,8 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)水平のバーを選択す
 `Slider` 定義、 [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)ときに発生するイベント、`Value`いずれかのユーザー操作によって、変更、`Slider`プログラムを設定した場合、または、`Value`プロパティを直接。 A`ValueChanged`イベントがときに発生することはまた、`Value`プロパティは、前の段落で説明したように強制変換されます。
 
 [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)に付属しているオブジェクト、`ValueChanged`イベントには 2 つのプロパティが両方の種類の`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)と[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 時にイベントが発生して、値の`NewValue`と同じ、`Value`のプロパティ、`Slider`オブジェクト。
+
+`Slider` 定義も`DragStarted`と`DragCompleted`先頭と、ドラッグ操作の最後に発生するイベントです。 異なり、 [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) 、イベント、`DragStarted`と`DragCompleted`のユーザー操作によってイベントが発生したのみ、`Slider`します。 ときに、`DragStarted`イベントの起動、 `DragStartedCommand`、型の`ICommand`を実行します。 同様に、`DragCompleted`イベントの起動、 `DragCompletedCommand`、型の`ICommand`を実行します。
 
 > [!WARNING]
 > 水平レイアウトの制約のないオプションを使用しない`Center`、 `Start`、または`End`で`Slider`します。 Android と、UWP の両方で、`Slider`バーの長さが 0、および ios では、バーに折りたたまれては非常に短いです。 既定値を保持`HorizontalOptions`設定`Fill`の幅を使用しないと`Auto`設定時に`Slider`で、`Grid`レイアウト。
@@ -203,7 +205,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`は、`Text`プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **スライダーの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから: ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、`ValueChanged`クラス コンス トラクターからイベント ハンドラーを呼び出すことによってイベント。
+`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`は、`Text`プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **スライダーの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから。ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、`ValueChanged`クラス コンス トラクターからイベント ハンドラーを呼び出すことによってイベント。
 
 <a name="precautions" />
 

@@ -6,14 +6,9 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2018
-ms.openlocfilehash: 7195d56cfee91544f0626a8f89c886cde36752e5
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831718"
+ms.date: 02/28/2019
 ---
+
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
 _XAML は、ユーザー インターフェイスの定義に使用できる宣言型マークアップ言語です。ユーザー インターフェイスは、実行時の動作が分離コード ファイルで定義されているときに、XAML 構文を使用して XML ファイルで定義されます。_
@@ -43,9 +38,13 @@ XAML は任意で、XAML コンパイラ (XAMLC) を利用し、中間言語 (IL
 
 XAML を使用して、 `xmlns` XML 名前空間宣言属性。 この記事では、XAML 名前空間の構文を紹介し、型にアクセスする XAML 名前空間を宣言する方法を示します。
 
-## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML Namespace カスタム スキーマ](custom-namespace-schemas.md)
+## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML カスタム名前空間スキーマ](custom-namespace-schemas.md)
 
 XAML 名前空間のカスタム スキーマを定義すること、`XmlnsDefinitionAttribute`クラスは、カスタムの URL と 1 つまたは複数の CLR 名前空間の間のマッピングを指定します。 カスタムの名前空間のスキーマは、XAML 名前空間の宣言で使用できます。
+
+## <a name="xaml-namespace-recommended-prefixescustom-prefixmd"></a>[XAML Namespace プレフィックスをお勧めします](custom-prefix.md)
+
+`XmlnsPrefixAttribute`クラスは、XAML の使用量の XAML 名前空間に関連付ける推奨プレフィックスを指定するコントロールの作成者によって使用できます。
 
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML マークアップ拡張](markup-extensions/index.md)
 

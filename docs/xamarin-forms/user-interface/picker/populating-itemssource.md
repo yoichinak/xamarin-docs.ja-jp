@@ -6,13 +6,13 @@ ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: 8e05a5f1c52183f29f22cbcd9655c26dc934e7d8
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 02/26/2019
+ms.openlocfilehash: 2c7daca80a207d0c060fc3a867b1eda03dd65258
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207855"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557078"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
@@ -27,7 +27,9 @@ Xamarin.Forms 2.3.4 が強化、 [ `Picker` ](xref:Xamarin.Forms.Picker)ビュ�
 A [ `Picker` ](xref:Xamarin.Forms.Picker)を設定してデータを設定することができます、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを`IList`コレクション。 コレクション内の各項目ので、または型から派生する必要があります`object`します。 初期化することにより XAML で項目を追加できる、`ItemsSource`項目の配列からのプロパティ。
 
 ```xaml
-<Picker x:Name="picker" Title="Select a monkey">
+<Picker x:Name="picker"
+        Title="Select a monkey"
+        TitleColor="Red">
   <Picker.ItemsSource>
     <x:Array Type="{x:Type x:String}">
       <x:String>Baboon</x:String>
@@ -57,7 +59,7 @@ monkeyList.Add("Golden Lion Tamarin");
 monkeyList.Add("Howler Monkey");
 monkeyList.Add("Japanese Macaque");
 
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.ItemsSource = monkeyList;
 ```
 
@@ -106,13 +108,16 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 A [ `Picker` ](xref:Xamarin.Forms.Picker)も設定できますデータにバインドするデータ バインディングを使用してその[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを`IList`コレクション。 XAML 内でこれは、 [ `Binding` ](xref:Xamarin.Forms.Xaml.BindingExtension)マークアップ拡張機能。
 
 ```xaml
-<Picker Title="Select a monkey" ItemsSource="{Binding Monkeys}" ItemDisplayBinding="{Binding Name}" />
+<Picker Title="Select a monkey"
+        TitleColor="Red"
+        ItemsSource="{Binding Monkeys}"
+        ItemDisplayBinding="{Binding Name}" />
 ```
 
 同等の c# コードは、以下に示します。
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
 picker.ItemDisplayBinding = new Binding("Name");
 ```
@@ -137,6 +142,7 @@ public class Monkey
 
 ```xaml
 <Picker Title="Select a monkey"
+        TitleColor="Red"
         ItemsSource="{Binding Monkeys}"
         ItemDisplayBinding="{Binding Name}"
         SelectedItem="{Binding SelectedMonkey}" />
@@ -149,7 +155,7 @@ public class Monkey
 同等の c# コードは、以下に示します。
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
 picker.SetBinding(Picker.SelectedItemProperty, "SelectedMonkey");
 picker.ItemDisplayBinding = new Binding("Name");
@@ -173,10 +179,6 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 > [!NOTE]
 > なお、 [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)と[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティの両方が既定で双方向のバインディングをサポートします。
-
-## <a name="summary"></a>まとめ
-
-[ `Picker` ](xref:Xamarin.Forms.Picker)ビューは、データの一覧から、テキスト項目を選択するコントロール。 この記事の説明を設定する方法、`Picker`にデータを設定、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティ、およびユーザーが項目の選択に応答する方法。 このアプローチでは、Xamarin.Forms 2.3.4 で導入されたが対話するための推奨される方法、`Picker`します。
 
 ## <a name="related-links"></a>関連リンク
 

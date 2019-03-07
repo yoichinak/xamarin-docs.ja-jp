@@ -6,13 +6,13 @@ ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/14/2018
-ms.openlocfilehash: 939df6cfd17de82e28958363cfa51cd199f928cb
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/27/2019
+ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831692"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557192"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
@@ -34,8 +34,10 @@ ms.locfileid: "55831692"
 - [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 新しい項目が選択されていると発生します。
 - [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 項目がタップされたときに発生します。
 
+同じ項目を 2 回タップすると 2 つが起動されます[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) 、イベントはのみ火災単一[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)イベント。
+
 > [!NOTE]
-> 同じ項目を 2 回タップすると 2 つが起動されます[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) 、イベントはのみ火災単一[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)イベント。
+> [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs)のイベント引数を保持しているクラス、 [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)イベント、 [ `Group` ](xref:Xamarin.Forms.ItemTappedEventArgs.Group)と[ `Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)プロパティ、および`ItemIndex`プロパティ内のインデックスを表す値を持つ、 [ `ListView` ](xref:Xamarin.Forms.ListView)タップされた項目の。 同様に、 [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs)のイベント引数を保持しているクラス、 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)イベントには、 [ `SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)プロパティ、および、 `SelectedItemIndex`プロパティ内のインデックスを表す値を持つ、`ListView`選択された項目の。
 
 ときに、 [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode)プロパティに設定されて[ `Single` ](xref:Xamarin.Forms.ListViewSelectionMode.Single)、項目を[ `ListView` ](xref:Xamarin.Forms.ListView)選択できる、 [ `ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)と[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)イベントは発生し、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティは、選択した項目の値に設定されます。
 

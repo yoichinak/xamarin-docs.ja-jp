@@ -6,7 +6,7 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2018
+ms.date: 02/22/2019
 ---
 
 # <a name="ios-platform-features"></a>iOS プラットフォーム機能
@@ -25,8 +25,11 @@ Xamarin.Forms のビュー、ページ、および iOS でのレイアウトを�
 
 IOS で Xamarin.Forms のビューでは、次のプラットフォームに固有の機能が提供されます。
 
+- 設定、 [ `Cell` ](xref:Xamarin.Forms.Cell)背景色。 詳細については、次を参照してください。 [iOS でのセルの背景色](cell-background-color.md)します。
 - フォントサイズを調整することで入力した文字が [`Entry`](xref:Xamarin.Forms.Entry)内に収まるようにします。 詳細については、次を参照してください。 [iOS でのエントリのフォント サイズ](entry-font-size.md)します。
 - カーソルの色の設定で、 [ `Entry`](xref:Xamarin.Forms.Entry)します。 詳細については、次を参照してください。[エントリ iOS でのカーソルの色](entry-cursor-color.md)します。
+- 制御するかどうか[ `ListView` ](xref:Xamarin.Forms.ListView)ヘッダー セルをスクロール中には float です。 詳細については、次を参照してください。 [iOS で ListView グループ ヘッダーのスタイル](listview-group-header-style.md)します。
+- 行のアニメーションが無効になっているかどうかを制御するときに、 [ `ListView` ](xref:Xamarin.Forms.ListView)項目のコレクションが更新されます。 詳細については、次を参照してください。 [iOS で ListView 行アニメーション](listview-row-animations.md)します。
 - 区切り記号のスタイルを設定、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、次を参照してください。 [iOS での ListView の区切り記号のスタイル](listview-separator-style.md)します。
 - [`Picker`](xref:Xamarin.Forms.Picker)でアイテムの選択が発生するタイミングを制御します。 詳細については、次を参照してください。 [iOS での選択項目の選択](picker-selection.md)します。
 - 有効にすると、 [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)の位置をタップして設定されるプロパティを[ `Slider` ](xref:Xamarin.Forms.Slider)をドラッグすることではなく、横棒グラフ、`Slider`つまみ。 詳細については、次を参照してください。[スライダー Thumb が iOS でタップ](slider-thumb.md)します。

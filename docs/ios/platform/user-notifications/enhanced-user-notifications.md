@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: bfbb8c2b189defeb6efb07388ea34425c239c061
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459890"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557322"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin.iOS で強化されたユーザー通知
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>フォア グラウンド アプリの通知の処理
 
-新しい ios 10 では、アプリ通知を処理できる異なる方法で、フォア グラウンドであり、通知がトリガーされた場合にします。 提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッドでは、アプリ引き継ぐことができます、通知を表示するための責任です。 例:
+新しい ios 10 では、アプリ通知を処理できる異なる方法で、フォア グラウンドであり、通知がトリガーされた場合にします。 提供することで、`UNUserNotificationCenterDelegate`を実装して、`WillPresentNotification`メソッドでは、アプリ引き継ぐことができます、通知を表示するための責任です。 例:
 
 ```csharp
 using System;
@@ -442,7 +442,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-ローカル通知は、設定、`CategoryIdentifier`のプロパティ、`UNMutableNotificationContent`オブジェクト。 例:
+ローカル通知は、設定、`CategoryIdentifier`のプロパティ、`UNMutableNotificationContent`オブジェクト。 例えば:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -458,7 +458,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>処理操作を無視します。
 
-前述のように、ユーザーが通知を閉じるときに無視操作は、アプリに送信できます。 これは標準のアクションではないため、オプションは、カテゴリの作成時に設定する必要があります。 例:
+前述のように、ユーザーが通知を閉じるときに無視操作は、アプリに送信できます。 これは標準のアクションではないため、オプションは、カテゴリの作成時に設定する必要があります。 例えば:
 
 ```csharp
 var categoryID = "message";
@@ -471,7 +471,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>アクションの応答を処理します。
 
-カスタム アクションとカテゴリの上に作成された、ユーザーが、アプリは要求されたタスクを実行するために必要があります。 これは、提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッド。 例:
+カスタム アクションとカテゴリの上に作成された、ユーザーが、アプリは要求されたタスクを実行するために必要があります。 これは、提供することで、`UNUserNotificationCenterDelegate`を実装して、`UserNotificationCenter`メソッド。 例えば:
 
 ```csharp
 using System;

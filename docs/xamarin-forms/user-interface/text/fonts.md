@@ -6,24 +6,23 @@ ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 9441522af53a1240707eeb21ff9f583501d2491d
-ms.sourcegitcommit: 16a42b69176a40cde71e177079b11e15d300d042
+ms.date: 03/04/2019
+ms.openlocfilehash: fc989ef73c9248bd359c9b1d35aaa9bdde846690
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56795447"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557054"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms でのフォント
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFonts/)
 
-この記事では、Xamarin.Forms を使用して、テキストを表示するコントロールにフォント属性（太さやサイズを含む）を指定する方法について説明します。 フォント情報は、[コードでフォントを指定する](#Setting_Font_in_Code)または[XAML でコードを指定する](#Setting_Font_in_Xaml)をご参照ください。
-[カスタム フォント](#Using_a_Custom_Font)を使用することもできます。
+この記事では、Xamarin.Forms を使用して、テキストを表示するコントロールにフォント属性（太さやサイズを含む）を指定する方法について説明します。 フォント情報は、[コードでフォントを指定する](#Setting_Font_in_Code)または[XAML でコードを指定する](#Setting_Font_in_Xaml)をご参照ください。 ' を使用することもできます、[カスタム フォント](#Using_a_Custom_Font)、および[フォント アイコンを表示](#display-font-icons)します。
 
 <a name="Setting_Font_in_Code" />
 
-## <a name="setting-font-in-code"></a>コードでのフォントの設定
+## <a name="set-the-font-in-code"></a>コードでフォントを設定します。
 
 テキストを表示するコントロールは、3 つのフォント関連プロパティを使用します。
 
@@ -43,7 +42,7 @@ var about = new Label {
 
 <a name="FontSize" />
 
-### <a name="font-size"></a>フォントサイズ
+### <a name="font-size"></a>Font Size
 
 `FontSize`プロパティは、たとえば double 値に設定できます。
 
@@ -80,7 +79,7 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="setting-font-info-per-platform"></a>プラットフォームごとのフォント情報の設定
+### <a name="set-font-info-per-platform"></a>プラットフォームごとのフォント情報のセット
 
 別の方法として、次のコードに示すように、`Device.RuntimePlatform`プロパティを使用して各プラットフォームに異なるフォント名を設定することもできます。
 
@@ -95,7 +94,7 @@ iOS 用のフォント情報の良い情報源は[iosfonts.com](http://iosfonts.
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="setting-the-font-in-xaml"></a>XAML でのフォントの設定
+## <a name="set-the-font-in-xaml"></a>XAML でフォントを設定します。
 
 テキストを表示する Xamarin.Forms コントロールはすべて XAML で設定できる`FontSize`プロパティを持ちます。 XAML でフォントを設定する最も簡単な方法は、次の例に示すように、名前付きサイズ列挙値を使用することです。
 
@@ -130,7 +129,7 @@ XAML には、すべてのフォント設定を文字列値として表現でき
 
 <a name="Using_a_Custom_Font" />
 
-## <a name="using-a-custom-font"></a>カスタム フォントを使用します。
+## <a name="use-a-custom-font"></a>カスタム フォントを使用します。
 
 組み込みの書体以外のフォントを使用するには、プラットフォーム固有のコーディングが必要です。 このスクリーンショットは、Xamarin.Forms を使用してレンダリングされた[Google のオープンソースのフォント](https://www.google.com/fonts)からのカスタムフォント**Lobster**を示しています。
 
@@ -200,15 +199,51 @@ XAML で[ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providin
 </Label>
 ```
 
-<a name="Summary" />
+## <a name="display-font-icons"></a>フォント アイコンを表示します。
 
-## <a name="summary"></a>まとめ
+フォント アイコンのデータを指定することで、Xamarin.Forms アプリケーションでフォント アイコンを表示することができます、`FontImageSource`オブジェクト。 このクラスから派生した、 [ `ImageSource` ](xref:Xamarin.Forms.ImageSource)クラスでは、次のプロパティ。
 
-Xamarin.Forms はサポートされているすべてのプラットフォームでテキストのサイズを簡単に設定できるようにシンプルなデフォルト設定を提供します。 さらに細かい制御が必要な場合は、フォントの種類やサイズを（プラットフォームごとに異なる場合も）指定できます。
+- `Glyph` – として指定された、[フォント] アイコンの unicode 文字値、`string`します。
+- `Size` –、`double`デバイス非依存単位、フォントが表示されるアイコンのサイズを示す値。 既定値は、30 です。
+- `FontFamily` –、 `string` [フォント] アイコンが所属するフォント ファミリを表します。
+- `Color` – 省略可能な[ `Color` ](xref:Xamarin.Forms.Color) [フォント] アイコンを表示するときに使用する値。
 
-フォント情報は、正しくフォーマットされたフォント属性を使用して XAML で指定することもできます。
+このデータを使用して表示できる任意のビューで表示できるよう、PNG、作成、`ImageSource`します。 このアプローチにより、絵文字などのフォントのアイコンなどのビューを表示する 1 つのテキストにフォント アイコンの表示を制限することではなく、複数のビューに表示する、 [ `Label`](xref:Xamarin.Forms.Label)します。
+
+> [!IMPORTANT]
+> フォント アイコンは、unicode 文字表現によって現在のみ指定できます。
+
+次の XAML の例がにより表示される 1 つのフォントのアイコン、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー。
+
+```xaml
+<Image BackgroundColor="#D1D1D1">
+    <Image.Source>
+        <FontImageSource Glyph="&#xf30c;"
+                         FontFamily="{OnPlatform iOS=Ionicons, Android=ionicons.ttf#}"
+                         Size="44" />
+    </Image.Source>
+</Image>
+```
+
+このコードで Ionicons フォント ファミリから、XBox アイコンが表示されます、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー。 Unicode 文字のこのアイコンは、のことに注目`\uf30c`、XAML でエスケープする必要があり、したがってようになります`&#xf30c;`します。 同等の C# コードに示します。
+
+```csharp
+Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };
+image.Source = new FontImageSource
+{
+    Glyph = "\uf30c",
+    FontFamily = Device.RuntimePlatform == Device.iOS ? "Ionicons" : "ionicons.ttf#",
+    Size = 44
+};
+```
+
+次のスクリーン ショットから、[バインド可能なレイアウト](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)サンプルは、バインド可能なレイアウトで表示されているいくつかのフォントのアイコンを表示します。
+
+![IOS と Android で、表示されているフォント アイコンのスクリーン ショット](fonts-images/font-image-source.png "イメージのビューに表示されているフォント アイコン")
 
 ## <a name="related-links"></a>関連リンク
 
 - [FontsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFonts/)
 - [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text/)
+- [バインド可能なレイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)
+- [バインド可能なレイアウト](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

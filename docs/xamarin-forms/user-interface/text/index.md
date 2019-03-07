@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 0563921a59bc698e2360a06b482c7f4994e56f6e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060013"
 ---
+
 # <a name="text-in-xamarinforms"></a>Xamarin.Forms でのテキスト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
@@ -66,7 +61,7 @@ Xamarin.Forms では、テキストを操作するための 3 つのプライマ
 
 ## <a name="fontsfontsmd"></a>[フォント](fonts.md)
 
-`Label`コントロールは、各プラットフォームまたはカスタムのフォントをアプリに含まれている組み込みのフォントを使用して別のフォント設定をサポートしています。 参照してください、[フォント](fonts.md)」の記事より詳細な情報。
+多くのコントロールは、各プラットフォーム、またはカスタムのフォントをアプリに含まれている組み込みのフォントを使用して別のフォント設定をサポートします。 参照してください、[フォント](fonts.md)」の記事より詳細な情報。
 
 <a name="Styles" />
 

@@ -6,13 +6,13 @@ ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: 6eb1e9a6f9c46fd7337003e05daa10d408fb5108
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 02/26/2019
+ms.openlocfilehash: 3bbea036efef44077ccbd28a16af06c97cd7026b
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208013"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557231"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>データ選択コントロールの項目のコレクションを追加します。
 
@@ -25,7 +25,8 @@ _ピッカーの表示は、データの一覧から、テキスト項目を選�
 Xamarin.Forms 2.3.4 を設定するためのプロセスの前に、 [ `Picker` ](xref:Xamarin.Forms.Picker)データが、読み取り専用に表示するデータを追加する[ `Items` ](xref:Xamarin.Forms.Picker.Items) 型のコレクション、`IList<string>`. コレクション内の各項目は、型でなければなりません`string`します。 初期化することにより XAML で項目を追加できる、`Items`プロパティの一覧を`x:String`項目。
 
 ```xaml
-<Picker Title="Select a monkey">
+<Picker Title="Select a monkey"
+        TitleColor="Red">
   <Picker.Items>
     <x:String>Baboon</x:String>
     <x:String>Capuchin Monkey</x:String>
@@ -41,7 +42,7 @@ Xamarin.Forms 2.3.4 を設定するためのプロセスの前に、 [ `Picker` 
 同等の c# コードは、以下に示します。
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.Items.Add("Baboon");
 picker.Items.Add("Capuchin Monkey");
 picker.Items.Add("Blue Monkey");
@@ -79,11 +80,6 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 
 > [!NOTE]
 > A [ `Picker` ](xref:Xamarin.Forms.Picker)設定して、特定のアイテムを表示する初期化することができます、 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティ。 ただし、`SelectedIndex`初期化した後にプロパティを設定する必要があります、 [ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション。
-
-## <a name="summary"></a>まとめ
-
-[ `Picker` ](xref:Xamarin.Forms.Picker)ビューは、データの一覧から、テキスト項目を選択するコントロール。 この記事の説明を設定する方法、`Picker`にデータに追加することを[ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション、およびユーザーが項目の選択に応答する方法。 これは、プロセスを使用するため、 `Picker` Xamarin.Forms 2.3.4 する前にします。
-
 
 ## <a name="related-links"></a>関連リンク
 

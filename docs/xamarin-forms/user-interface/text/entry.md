@@ -6,13 +6,13 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/27/2018
-ms.openlocfilehash: 303cca48defdadd69449edbd6c4c3f5e4410bbbb
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/26/2018
+ms.openlocfilehash: bc404986a83d0150c490486c20f780bf4e7f5a9e
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831964"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557205"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms のエントリ
 
@@ -58,6 +58,22 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 
 > [!NOTE]
 > 幅、`Entry`設定によってはその`WidthRequest`プロパティ。 幅に依存しない、`Entry`の値に基づいて定義されているその`Text`プロパティ。
+
+### <a name="preventing-text-entry"></a>テキスト入力の防止
+
+内のテキストを変更することを防止できるユーザー、 [ `Entry` ](xref:Xamarin.Forms.Entry)を設定して、`IsReadOnly`プロパティで、既定値を持つの`false`を`true`:
+
+```xaml
+<Entry Text="This is a read-only Entry"
+       IsReadOnly="true" />
+```
+
+```csharp
+var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true });
+```
+
+> [!NOTE]
+> `IsReadonly`プロパティの視覚的な外観は変更しません、 [ `Entry`](xref:Xamarin.Forms.Entry)とは異なり、`IsEnabled`もの視覚的な外観を変更するプロパティ、`Entry`灰色。
 
 ### <a name="limiting-input-length"></a>入力の長さの制限
 

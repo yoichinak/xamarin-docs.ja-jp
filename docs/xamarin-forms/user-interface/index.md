@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: c3759430ce40397418d2f47794e8ecc555ef3ed4
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292286"
 ---
+
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/FormsGallery/)
@@ -108,9 +103,9 @@ Xamarin.Forms のテーマは、標準のコントロールの特定の外観を
 
 `TimePicker`時刻を選択できます。 アプリケーションが実行される特定のプラットフォームでサポートされている時間ピッカーを使用して実装されます。
 
-## <a name="visualvisualmd"></a>[ビジュアル](visual.md)
+## <a name="visualvisualindexmd"></a>[ビジュアル](visual/index.md)
 
-この記事では、Xamarin.Forms のビジュアルは、iOS および Android 上の同じ、またはほぼ同じビューの表示について説明します。
+Xamarin.Forms Visual により、選択的に適用するレンダラー `VisualElement` Xamarin.Forms コントロールのサブクラス化することがなく、オブジェクト。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 

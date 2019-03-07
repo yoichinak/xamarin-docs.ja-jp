@@ -6,13 +6,13 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
-ms.openlocfilehash: ce1ba235a309e2388bd5eea7d70a1d72852fc615
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/26/2019
+ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831860"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557039"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms のラベル
 
@@ -148,7 +148,7 @@ var label =
 
 ラベルの公開、 [ `FormattedText` ](xref:Xamarin.Forms.Label.FormattedText)プロパティを複数のフォントとテキストの表示を許可し、同じビューでの色します。
 
-`FormattedText`プロパティの型は[ `FormattedString` ](xref:Xamarin.Forms.FormattedString)、1 つまたは複数で構成される[ `Span` ](xref:Xamarin.Forms.Span)設定を使用して、インスタンス、 [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans)プロパティ. 次`Span`を視覚的な外観を設定するプロパティを使用できます。
+`FormattedText`プロパティの型は[ `FormattedString` ](xref:Xamarin.Forms.FormattedString)、1 つまたは複数で構成される[ `Span` ](xref:Xamarin.Forms.Span)設定を使用して、インスタンス、 [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans)プロパティ. 外観を設定することができます。
 
 - [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) – スパンの背景色。
 - [`Font`](xref:Xamarin.Forms.Span.Font) -スパン内のテキストのフォント。
@@ -157,10 +157,13 @@ var label =
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) -スパン内のテキストのフォントのサイズ。
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) -スパン内のテキストの色。 このプロパティは廃止されましたが、`TextColor`プロパティに置き換えられました。
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -スパンの既定の行の高さに適用する乗数。 詳細については、次を参照してください。[行の高さ](#line-height)
-- [`Style`](xref:Xamarin.Forms.Span.Style) – スパンに適用するスタイル。
+- [`Text`](xref:Xamarin.Forms.Span.Text)  – スパンに適用するスタイル。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – スパンのテキスト。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) -スパン内のテキストの色。
 - `TextDecorations` -スパン内のテキストに適用する装飾。 詳細については、次を参照してください。[文字装飾](#text-decorations)。
+
+> [!NOTE]
+> [ `BackgroundColor` ](xref:Xamarin.Forms.Span.BackgroundColor)、 [ `Text` ](xref:Xamarin.Forms.Span.Text)、および[ `Text` ](xref:Xamarin.Forms.Span.Text)バインド可能なプロパティの既定のバインド モードがある[ `OneWay`](xref:Xamarin.Forms.BindingMode). このバインディング モードの詳細については、次を参照してください。 [、既定のバインド モード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)で、[バインド モード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)ガイド。
 
 さらに、 [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)プロパティを使用して、 [ `Span`](xref:Xamarin.Forms.Span)のジェスチャに応答するジェスチャ レコグナイザーのコレクションを使用することができます。
 
@@ -253,7 +256,7 @@ var label =
 
 ![](label-images/label-lineheight.png "ラベルの LineHeight プロパティの使用例")
 
-次の XAML は、 [ `LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)の[ `Span` ](xref:Xamarin.Forms.Span)プロパティ設定する例を示しています:
+次の XAML の例は、[ `Span` ](xref:Xamarin.Forms.Span)の [ `LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)プロパティを設定する方法を示しています:
 
 ```xaml
 <Label LineBreakMode="WordWrap">
@@ -289,7 +292,7 @@ var label = new Label
 };
 ```
 
-次のスクリーンショットは、[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)プロパティに 1.8 の値を設定した結果を示します。
+次のスクリーンショットは、[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) プロパティに 1.8 設定した結果を示しています。
 
 ![](label-images/span-lineheight.png "Sapn LineHeight の使用例")
 

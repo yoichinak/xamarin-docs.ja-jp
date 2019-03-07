@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/27/2016
-ms.openlocfilehash: 1d164c8593e358a97b21f42bf7116f64d0ac460d
-ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
+ms.date: 02/27/2018
+ms.openlocfilehash: edba18eea3ea2b7b843dba70ff0b4b67cbab1ab1
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "53815218"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557117"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -20,13 +20,8 @@ ms.locfileid: "53815218"
 
 _Xamarin.Forms は、各プラットフォームでネイティブ マップ Api を使用します。_
 
-Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ Api を使用します。 これにより、ユーザーは、マップの高速で使い慣れたエクスペリエンスを提供しますが、各プラットフォーム固有の API 要件に準拠するいくつかの構成手順が必要であることを意味します。
+Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ Api を使用します。 これにより、ユーザーは、マップの高速で使い慣れたエクスペリエンスを提供しますが、各プラットフォーム API の要件に準拠するいくつかの構成手順が必要であることを意味します。
 構成すると、`Map`共通コードでその他の Xamarin.Forms 要素と同様の動作を制御します。
-
-* [初期化のマップ](#Maps_Initialization)- を使用して`Map`起動時に追加の初期化コードが必要です。
-* [プラットフォーム構成](#Platform_Configuration)-各プラットフォームには、作業にマップの一部の構成が必要です。
-* [C# でマップを使用して](#Using_Maps)-マップの表示と c# を使用してピン留めします。
-* [XAML でマップを使用して](#Using_Xaml)-XAML を使用してマップを表示します。
 
 マップ コントロールが使用されて、 [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)サンプルは、次のとおりです。
 
@@ -101,7 +96,6 @@ IOS 11 以降をサポートするには、3 つのキーを含めることが�
 
 ![IOS 8 の Info.plist](map-images/ios8-map-permissions.png "Info.plist に必要なエントリを iOS 8")
 
-
 ### <a name="android"></a>Android
 
 使用する、 [Google マップ API v2](https://developers.google.com/maps/documentation/android/) Android で API キーを生成し、Android プロジェクトに追加する必要があります。
@@ -143,7 +137,7 @@ Android プロジェクトを右クリックして適切なアクセス許可を
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>マップの使用
+## <a name="using-maps"></a>マップを使用します。
 
 参照してください、 [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM サンプル コードで、マップ コントロールの使用方法の例についてはします。 単純な`MapPage`クラスは、この通知のようになりますが、新しい`MapSpan`マップのビューを配置が作成されます。
 
@@ -178,7 +172,6 @@ map.MapType == MapType.Street;
 -  ハイブリッド
 -  サテライト
 -  番地 (既定値)
-
 
 ### <a name="map-region-and-mapspan"></a>マップの領域と MapSpan
 
@@ -223,30 +216,31 @@ map.Pins.Add(pin);
 -  SavedPin
 -  SearchResult
 
-
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>Xaml を使用してください。
+## <a name="using-xaml"></a>XAML を使用します。
 
-このスニペットで示すように、マップを Xaml レイアウトの配置もできます。
+このスニペットで示すように、マップを XAML レイアウトの配置もできます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-    x:Class="MapDemo.MapPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="MapDemo.MapPage">
     <StackLayout VerticalOptions="StartAndExpand" Padding="30">
         <maps:Map WidthRequest="320" HeightRequest="200"
-            x:Name="MyMap"
-            IsShowingUser="true"
-            MapType="Hybrid"
-        />
+                  x:Name="MyMap"
+                  IsShowingUser="true"
+                  MapType="Hybrid" />
     </StackLayout>
 </ContentPage>
 ```
 
-`MapRegion`と`Pins`を使用してコードで設定できる、`MyMap`参照 (または、マップの名前は任意)。 なお、追加`xmlns`Xamarin.Forms.Maps コントロールを参照する名前空間の定義が必要です。
+> [!NOTE]
+> 追加`xmlns`Xamarin.Forms.Maps コントロールを参照する名前空間の定義が必要です。
+
+`MapRegion`と`Pins`を使用してコードで設定できる、`MyMap`参照 (または、マップの名前は任意)。
 
 ```csharp
 MyMap.MoveToRegion(
@@ -254,14 +248,44 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-<a name="Summary" />
+## <a name="populating-a-map-with-data-using-data-binding"></a>データ バインディングを使用してデータをマップを設定
 
-## <a name="summary"></a>まとめ
+[ `Map` ](xref:Xamarin.Forms.Maps.Map)クラスには、次のプロパティも公開します。
 
-Xamarin.Forms.Maps は、別個の NuGet Xamarin.Forms ソリューション内の各プロジェクトに追加する必要があります。 追加の初期化コードは、iOS、Android、および UWP 用やその構成手順として、必要があります。
+- `ItemsSource` – のコレクションを指定`IEnumerable`表示する項目。
+- `ItemTemplate` – を指定します、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)表示されている項目のコレクション内の各項目に適用します。
 
-1 回構成されたマップ API は、わずか数行のコードでピン留めするマーカーのマップを表示するために使用できます。 マップをさらに強調することができます、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)します。
+そのため、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)にバインドするデータ バインディングを使用してデータを設定することができます、`ItemsSource`プロパティを`IEnumerable`コレクション。
 
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="WorkingWithMaps.PinItemsSourcePage">
+    <Grid>
+        ...
+        <maps:Map x:Name="map"
+                  ItemsSource="{Binding Locations}">
+            <maps:Map.ItemTemplate>
+                <DataTemplate>
+                    <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding Description}" />
+                </DataTemplate>
+            </maps:Map.ItemTemplate>
+        </maps:Map>
+        ...
+    </Grid>
+</ContentPage>
+```
+
+`ItemsSource`プロパティ データにバインド、`Locations`を返す接続されているビュー モデルのプロパティ、`ObservableCollection`の`Location`、カスタム型であるオブジェクト。 各`Location`オブジェクトを定義します`Address`と`Description`型のプロパティ、 `string`、および`Position`型のプロパティ、 [ `Position` ](xref:Xamarin.Forms.Maps.Position)。
+
+内の各項目の外観、`IEnumerable`を設定してコレクションが定義されている、`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)を格納している、 [ `Pin` ](xref:Xamarin.Forms.Maps.Pin)オブジェクトにデータをバインドします。適切なプロパティです。
+
+次のスクリーン ショットに示す、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)を表示する、 [ `Pin` ](xref:Xamarin.Forms.Maps.Pin)データ バインディングを使用してコレクション。
+
+[![マップにデータのスクリーン ショットには、iOS と Android でのピンがバインドされている](map-images/pins-itemssource.png "ピンがバインドされたデータとマップ")](map-images/pins-itemssource-large.png#lightbox "ピンがバインドされたデータとマップ")
 
 ## <a name="related-links"></a>関連リンク
 
