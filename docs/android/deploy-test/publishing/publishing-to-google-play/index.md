@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e8b1fdd933d026875ae10e76894120c8c4504769
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123337"
 ---
+
 # <a name="publishing-to-google-play"></a>GooglePlay に公開する
 
 アプリケーション配布用のアプリ マーケットは数多くありますが、Google Play はほぼ間違いなく Android アプリ用のストアとして世界最大であり最も多くの訪問者があります。 Google Play は、Android アプリケーションの配布、広告、販売、および売上分析のための単一のプラットフォームを提供します。
@@ -20,7 +15,7 @@ ms.locfileid: "50123337"
 このセクションでは、パブリッシャーになるための登録、Google Play でのアプリケーションのプロモーションと広告に役立つアセットの収集、Google Play でのアプリケーションのレーティングのガイドライン、フィルターを使った特定のデバイスへのアプリケーションの展開の制限など、Google Play に固有のトピックについて説明します。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Google Play でアプリケーションを配布するには、開発者アカウントを作成する必要があります。 これは一度だけ行えばよく、25 米ドルの手数料が 1 回だけかかります。
 
@@ -143,7 +138,7 @@ Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公
 5. 証明書でアプリに署名します。
 6. 署名されたアプリを Google Play に公開します。
 
-「[発行のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)」では、**[配布チャネル]** ダイアログに 2 種類の配布方法 **[アドホック]** と **[Google Play]** が表示されました。 **[署名 ID]** ダイアログが代わりに表示される場合は、**[戻る]** をクリックして **[配布チャネル]** ダイアログに戻ります。 **[Google Play]** を選択して **[Next]\(次へ\)** をクリックします。
+[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、**[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。**[Ad Hoc]\(アドホック\)** と **[Google Play]** です。 **[署名 ID]** ダイアログが代わりに表示される場合は、**[戻る]** をクリックして **[配布チャネル]** ダイアログに戻ります。 **[Google Play]** を選択して **[Next]\(次へ\)** をクリックします。
 
 [![[配布チャネル] ダイアログ](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -163,7 +158,7 @@ Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac は、Google Play にアプリを公開するための統合ワークフローを備えています。 バージョン 5.9 より前の Xamarin Studio を使っている場合は、Google Play Developer Console を使って手動で APK をアップロードし、それ以降の APK の更新には **[Google Play に公開する]** ダイアログを使う必要があります。 また、**[Google Play に公開する]** を使うには、その前に少なくとも 1 つの APK をアップロードしておく必要があります。 最初の APK をまだアップロードしていない場合は、手動でアップロードする必要があります。 APK を手動でアップロードする方法については、「[APK を手動でアップロードする](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)」をご覧ください。
+Visual Studio for Mac は、Google Play にアプリを公開するための統合ワークフローを備えています。
 
 「[新しい証明書の作成](~/android/deploy-test/signing/index.md#newcert)」では、Android アプリに署名するための新しい証明書の作成について説明しました。 次の手順では、Google Play に Xamarin.Android アプリを公開する方法を説明します。
 

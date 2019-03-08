@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 0e8b727fb520b6901bf397c9cfb67947897cbc8b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 1a8611e5dd0be77eeef065d546f6a0642f384b00
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056963"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557283"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
 
@@ -101,10 +101,7 @@ Model-View-ViewModel (MVVM) アプリケーション アーキテクチャでデ
 
 ### <a name="one-time-bindings"></a>1 回限りのバインディング
 
-既定のバインディング モードが `OneTime` になっているプロパティがいくつかあります。 これらの数値は、次のとおりです。
-
-- `Entry` の `IsTextPredictionEnabled` プロパティ
-- `Span` の `Text`、`BackgroundColor`、および `Style` プロパティ。
+いくつかのプロパティには、`Entry` の `IsTextPredictionEnabled` プロパティなど、`OneTime` の既定のバインディング モードが含まれています。
 
 バインディング モードが `OneTime` であるターゲット プロパティは、バインディング コンテキストが変更された場合にのみ更新されます。 このようなターゲット プロパティでのバインディングの場合、ソース プロパティの変更を監視する必要がないため、バインディング インフラストラクチャは簡略化されます。
 

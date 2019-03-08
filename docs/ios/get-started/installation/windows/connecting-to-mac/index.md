@@ -1,19 +1,14 @@
 ---
 title: Xamarin.iOS 開発のために Mac とペアリングする
-description: このガイドでは、[Mac とペアリング] を使って Visual Studio 2017 を Mac ビルド ホストに接続する方法を説明します。 Mac のリモート ログオンを有効にする方法、Visual Studio 2017 から Mac に接続する方法、Mac ビルド ホストを Windows コンピューターに手動で追加する方法などについて説明します。
+description: 'このガイドでは、[Mac とペアリング] を使って Visual Studio 2017 を Mac ビルド ホストに接続する方法を説明します。 Mac のリモート ログオンを有効にする方法、Visual Studio 2017 から Mac に接続する方法、Mac ビルド ホストを Windows コンピューターに手動で追加する方法などについて説明します。'
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: 8e87a284e684dff14a2ea0fcfbf34158ed8adefa
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899136"
 ---
+
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
 _このガイドでは、[Mac とペアリング] を使って Visual Studio 2017 を Mac ビルド ホストに接続する方法を説明します。_
@@ -42,7 +37,7 @@ Visual Studio 2017 の [Mac とペアリング] 機能は、Windows ベースの
 > 
 > このガイドの手順の前に、次の手順を実行します。
 > 
-> - Windows コンピューターで、[Visual Studio 2017 をインストール](~/cross-platform/get-started/installation/windows.md)します
+> - Windows コンピューターで、[Visual Studio 2017 をインストール](~/get-started/installation/windows.md)します
 > - Mac で、[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) と [Visual Studio for Mac をインストール](https://docs.microsoft.com/visualstudio/mac/installation)します
 >    - 任意の追加コンポーネントを追加できるように、_インストール後に手動で Xcode を開く必要があります_。
 >
@@ -160,7 +155,7 @@ Mac とペアリングできない場合は、[Mac を手動で追加](#manually
 
 ## <a name="automatic-mac-provisioning"></a>Mac の自動プロビジョニング
 
-[Visual Studio 2017 バージョン 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 以降では、[Mac とペアリング] により、Xamarin.iOS アプリケーションのビルドに必要なソフトウェア (Mono、Xamarin.iOS (Visual Studio for Mac IDE ではないソフトウェア フレームワーク)、およびさまざまな Xcode 関連ツール (ただし、Xcode 自体は含まれません)) で Mac が自動的にプロビジョニングされます。
+[Visual Studio 2017 バージョン 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) より、[Mac とペアリング] によって、Xamarin.iOS アプリケーションを構築するために必要な、次のソフトウェアが Mac に自動的にプロビジョニングされます。Mono、Xamarin.iOS (ソフトウェア フレームワーク、Visual Studio for Mac の IDE ではない)、およびさまざまな Xcode 関連のツール (ただし、Xcode 自体ではない)。
 
 > [!IMPORTANT]
 > - [Mac とペアリング] は Xcode をインストールできません。手動で Mac ビルド ホストにインストールする必要があります。 これは Xamarin.iOS の開発に必要です。
@@ -202,7 +197,7 @@ Visual Studio 2017 が [Mac に接続している](#connect-to-the-mac-from-visu
 |---|---|---|
 |Xcode|[![Xcode がインストールされていない](images/xcode-missing.png "Xcode がインストールされていない")](images/xcode-missing-large.png#lightbox)|[![Xcode のライセンス](images/xcode-license.png "Xcode のライセンス")](images/xcode-license-large.png#lightbox)|
 
-さらに、[Mac とペアリング] は Xcode と共に配布されるさまざまなパッケージをインストールまたは更新します。 例:
+さらに、[Mac とペアリング] は Xcode と共に配布されるさまざまなパッケージをインストールまたは更新します。 次に例を示します。
 
 - **MobileDeviceDevelopment.pkg**
 - **XcodeExtensionSupport.pkg**
@@ -220,7 +215,7 @@ Mac の自動プロビジョニングを使用していて問題が発生した�
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>Windows コマンド ラインから iOS アプリをビルドする
 
-[Mac とペアリング] は、コマンド ラインからの Xamarin.iOS アプリケーションのビルドをサポートしています。 例:
+[Mac とペアリング] は、コマンド ラインからの Xamarin.iOS アプリケーションのビルドをサポートしています。 次に例を示します。
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
@@ -234,7 +229,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - `ServerPassword` – Mac ビルド ホストにログインするときに使用するパスワード。
 
 > [!NOTE]
-> Visual Studio 2017 では、`msbuild` がディレクトリ **C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin** に格納されます。
+> Visual Studio 2017 では次のディレクトリに `msbuild` を格納します。**C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin**
 
 [Mac とペアリング] は、Visual Studio 2017 またはコマンド ラインから特定の Mac ビルド ホストに初めてログインするときに、SSH キーを設定します。 これらのキーがあると、将来のログインではユーザー名またはパスワードは必要ありません。 新しく作成されたキーは、**%LOCALAPPDATA%\Xamarin\MonoTouch** に格納されます。
 
