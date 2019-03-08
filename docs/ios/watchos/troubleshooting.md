@@ -36,7 +36,7 @@ ms.locfileid: "56321156"
 <a name="deploy" />
 
 - 以前のリリースの Visual Studio for Mac が正しく示されるしないのいずれか、 **AppleCompanionSettings**アイコン 88 x 88 ピクセルです。 その結果として、**アイコン エラーのない**App Store に送信しようとした場合。
-    このアイコンは 87 x 87 ピクセルである必要があります (29 単位**@3x** Retina 画面)。 Visual studio for Mac の Xcode 内のイメージ アセットを編集、これを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
+    このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x** Retina 画面)。 Visual studio for Mac の Xcode 内のイメージ アセットを編集、これを修正または手動で編集することはできません、 **Contents.json**ファイル (一致するように[このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
 - 場合ウォッチ拡張機能プロジェクトの**Info.plist > WKApp バンドル ID**でない[正しく設定されている](~/ios/watchos/get-started/project-references.md)Watch アプリの一致するように**バンドル ID**デバッガーは、接続に失敗し、VisualStudio for Mac は、メッセージを待機 *「デバッガーの接続を待機している」* します。
 
