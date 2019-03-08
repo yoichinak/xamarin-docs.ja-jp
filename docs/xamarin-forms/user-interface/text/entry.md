@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: bc404986a83d0150c490486c20f780bf4e7f5a9e
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: c9be74bcc6e5d149856e06c98d3bef9a841d4bab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557205"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667309"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms のエントリ
 
@@ -321,6 +321,9 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 - [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) &ndash; エントリのテキストが変更されたときに発生します。 変更の前後にテキストを提供します。
 - [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; ユーザーには、キーボードの戻り値のキーを押して、入力が終了したときに発生します。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)元のクラス[ `Entry` ](xref:Xamarin.Forms.Entry)継承もが[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)と[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)イベント。
 
 ### <a name="completed"></a>完了
 
