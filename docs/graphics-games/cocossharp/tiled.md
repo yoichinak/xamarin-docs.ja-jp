@@ -6,12 +6,12 @@ ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 4582b59a8a441c9e22761d498126898e66db08c1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8e7ef890af264bb08827d86c635d555184f1ec00
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117929"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672509"
 ---
 # <a name="using-tiled-with-cocossharp"></a>CocosSharp によるタイル表示
 
@@ -35,7 +35,7 @@ _並べて表示された、強力な柔軟性が高くは、ゲームのマッ�
 
 ![](tiled-images/image2.png "今回のデモで使用されるタイルのセットをグリッドを追加することでタイルのセットを使用する方法の視覚化されたビュー")
 
-マップのタイルはタイルのセットから個々 のタイルを配置します。 各タイルのマップが、タイルの独自のコピーを格納する必要がないことに注意してください設定 – 代わりに、複数のマップのタイルを参照できます同じタイルのセット。 これは、タイルのセットとは別のマップのタイルが必要はほとんどのメモリを意味します。 これにより、多数のタイルのマップの作成など、大規模なゲーム プレイ領域の作成に使用している場合でも、[スクロール platformer](http://en.wikipedia.org/wiki/Platform_game)環境。 同じタイルのセットを使用可能な配置を次に示します。
+マップのタイルはタイルのセットから個々 のタイルを配置します。 各タイルのマップが、タイルの独自のコピーを格納する必要がないことに注意してください設定 – 代わりに、複数のマップのタイルを参照できます同じタイルのセット。 これは、タイルのセットとは別のマップのタイルが必要はほとんどのメモリを意味します。 これにより、多数のタイルのマップの作成など、大規模なゲーム プレイ領域の作成に使用している場合でも、[スクロール platformer](https://en.wikipedia.org/wiki/Platform_game)環境。 同じタイルのセットを使用可能な配置を次に示します。
 
 ![](tiled-images/image3.png "このイメージは、同じタイルのセットを使用可能な配置を示しています。")
 

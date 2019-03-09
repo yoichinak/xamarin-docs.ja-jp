@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233563"
 ---
+
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
 このガイドでは、どのようなストーリー ボードを説明しましたが、主要なコンポーネント – Segues などのいくつかを確認します。 ストーリー ボードを作成して、使用する方法について説明しますおよび開発者がどのような利点があります。
@@ -84,7 +79,7 @@ A*セグエ*、または*セグエ オブジェクト*シーンの間の遷移�
 
 |セグエ|説明|
 |--- |--- |
-|表示|非常に似ています、プッシュがセグエがアカウントに画面のコンテンツを取得します。|
+|[表示]|非常に似ています、プッシュがセグエがアカウントに画面のコンテンツを取得します。|
 |詳細の表示|アプリには、(たとえば、iPad で分割ビュー コント ローラー) でマスター/詳細ビューが表示されている場合、コンテンツは詳細の表示を置き換えます。 アプリでは、マスターまたは詳細を表示する場合、コンテンツはビュー コント ローラーのスタックの先頭を置き換えます。|
 |Presentation|これはモーダルのセグエに似ており、プレゼンテーションと遷移のスタイルを選択できるようにします。|
 |ポップ オーバー プレゼンテーション|コンテンツは、ポップ オーバーとして表示します|
@@ -492,5 +487,5 @@ Storyboards.Conditional ソリューションを参照してください、[手�
 
 - [手動のストーリー ボード (サンプル)](https://developer.xamarin.com/samples/ManualStoryboard/)
 - [IOS Designer の概要](~/ios/user-interface/designer/introduction.md)
-- [ストーリー ボードへの変換](http://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
+- [ストーリー ボードへの変換](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
 - [UIStoryboard クラスのリファレンス](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

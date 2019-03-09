@@ -6,13 +6,13 @@ ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 8/29/2018
-ms.openlocfilehash: cd9e92e2c96d0a0696633e49869f2661e410d343
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 08/29/2018
+ms.openlocfilehash: 83340ce2d5db145c29166d90d3a5180b1767d7ca
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233589"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672496"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin.iOS の種類のレジストラー
 
@@ -144,7 +144,7 @@ class MyClass : IMyProtocol
 
     ```csharp
     [Register]
-    class MyDemo : NSObject 
+    class MyDemo : NSObject
     {
         [Export ("foo:")]
         void Foo (NSString str);
@@ -178,7 +178,7 @@ class MyClass : IMyProtocol
 
 新しい登録者に関する留意点:
 
-- 新しい登録システムを使用するいくつかのサード パーティ製ライブラリを更新する必要があります。 参照してください[変更に必要な](#required_modifications)以下の詳細。
+- 新しい登録システムを使用するいくつかのサード パーティ製ライブラリを更新する必要があります。 参照してください[変更に必要な](#required-modifications)以下の詳細。
 
 - 短期的な欠点は、アカウントのフレームワークを使用する場合に Clang を使用する必要がありますも (これは Apple の**accounts.h**ヘッダーは Clang でのみコンパイルできます)。 追加`--compiler:clang`Xcode 4.6 以降を使用している場合は、Clang を使用するその他の mtouch 引数に (Xamarin.iOS は、Clang Xcode 5.0 以降を選択が自動的に)。
 
@@ -203,6 +203,8 @@ class MyClass : IMyProtocol
 - OBJECTIVE-C で同じシグネチャを持つ 2 つのメソッドをエクスポートする可能性があります。 さらにもう一度ランダムが OBJECTIVE-C からどれが呼び出されます (ただし実際にこのバグが発生する唯一の方法が不吉マネージ メソッドをオーバーライドするためにほとんどの場合は、前と一般的でこの問題がありませんでした)。
 - エクスポートされたメソッドのセットが、動的および静的なビルドの間で若干異なります。
 - 正しく機能しませんジェネリック クラスをエクスポートするときに (実行時に実行される正確などの一般的な実装がランダムになります、効果的に未定義の動作になります)。
+
+<a name="required-modifications" />
 
 ## <a name="new-registrar-required-changes-to-bindings"></a>新しいレジストラー: バインドへの変更が必要
 

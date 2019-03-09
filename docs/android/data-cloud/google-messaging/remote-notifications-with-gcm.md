@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528807"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668895"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging を使用したリモート通知
 
@@ -70,7 +70,7 @@ using Android.Util;
 
 これは、型で Google Play Services GMS パッケージを使用できるように、コードと GMS と、トランザクションを追跡するために使用するログ記録機能を追加します。 
 
-#### <a name="google-play-store"></a>Google Play ストア
+#### <a name="google-play-store"></a>Google Play Store
 
 GCM からメッセージを受信するには、デバイスに Google Play ストア アプリケーションをインストールする必要があります。 (Google Play のアプリケーションはデバイスにインストールするときに Google Play ストアもインストールため、テスト デバイスに既にインストールされている可能性があります。)Google Play を Android アプリケーションは GCM からのメッセージを受信できません。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、次を参照してください。、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードして Google Play をインストールします。 
 
@@ -405,7 +405,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>GCM 登録をテストします。
 
-みましょう完全に再構築し、アプリを実行します。 GCM から登録トークンを正常に受信した場合、登録トークンが、出力ウィンドウに表示されます。 例えば: 
+みましょう完全に再構築し、アプリを実行します。 GCM から登録トークンを正常に受信した場合、登録トークンが、出力ウィンドウに表示されます。 例: 
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2
@@ -617,7 +617,7 @@ GCM、さらに、クライアント アプリにこのメッセージを転送�
 
 ### <a name="try-it"></a>手順を次に示します。
 
-これで、クライアント アプリをテストする準備ができました。 エミュレーターを使用しているかどうか、または場合は、デバイスが Wi-fi 経由で GCM との通信、GCM メッセージ取得するためにファイアウォールで、次の TCP ポートを開く必要があります: 5228、5229、および 5230 します。
+これで、クライアント アプリをテストする準備ができました。 エミュレーターを使用している場合、または、デバイスは、GCM Wi-fi 経由で通信している場合は、GCM メッセージ取得するためにファイアウォールで、次の TCP ポートを開く必要があります。5228、5229、および 5230 です。
 
 クライアント アプリを起動し、出力ウィンドウをご覧ください。 後に、`RegistrationIntentService`登録が正常に受信 GCM からトークンを出力ウィンドウに表示する、トークンで、次のようなログ出力。
 
@@ -657,7 +657,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 これで、アプリがその最初のリモート通知を受信しました。
 
-アプリが強制的に停止した場合 GCM メッセージを受信する不要になったことに注意してください。 通知を強制停止後に再開するには、アプリを手動で再起動する必要があります。 この Android ポリシーの詳細については、次を参照してください。[停止状態のアプリケーション上のコントロールを起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)と[スタック オーバーフロー post](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)します。 
+アプリが強制的に停止した場合 GCM メッセージを受信する不要になったことに注意してください。 通知を強制停止後に再開するには、アプリを手動で再起動する必要があります。 この Android ポリシーの詳細については、次を参照してください。[停止状態のアプリケーション上のコントロールを起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)と[スタック オーバーフロー post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)します。 
 
  
 ## <a name="summary"></a>まとめ

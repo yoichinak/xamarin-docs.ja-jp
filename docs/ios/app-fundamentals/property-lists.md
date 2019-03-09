@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 7056f7beb623bee32c767a3f2827efa6eb2a6136
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 87015163eca9fdb2fb8cee35e74d5031314fd42e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118800"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670827"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Xamarin.iOS でプロパティ リストを使用します。
 
@@ -110,7 +110,7 @@ Info.plist ファイルのアイコン、イメージ、およびアートワー
 
 特定の種類のファイルを開くことがサポートするアプリケーションでは、iOS の提供、`CFBundleDocumentTypes`キー。 Pdf などの-特定の既知のファイル種類をサポートするためにする場合は、キーに PDF の値を追加しますが。 このセクションに格納されるデータを入力する便利な方法を提供する、`CFBundleDocumentTypes`キー、`Info.plist`ファイル。
 
-ドキュメントを参照して[ファイルの種類のアプリケーションがサポートを登録する](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)これらの値を構成する方法の詳細について。
+ドキュメントを参照して[ファイルの種類のアプリケーションがサポートを登録する](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)これらの値を構成する方法の詳細について。
 
 ## <a name="utis"></a>Uti
 
@@ -146,7 +146,7 @@ Visual Studio for Mac は、示すようにも、プロパティの型を検出�
 
  [![](property-lists-images/image33.png "使用可能なプロパティの型")](property-lists-images/image33.png#lightbox)
 
-Apple の確認[アプリの関連リソース](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)省略可能なプロパティの詳細については、リンクします。
+Apple の確認[アプリの関連リソース](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)省略可能なプロパティの詳細については、リンクします。
 
  <a name="Entitlements" />
 
@@ -158,7 +158,7 @@ Apple の確認[アプリの関連リソース](http://developer.apple.com/libra
 ## <a name="related-links"></a>関連リンク
 
 - [IDE](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide)
-- [アプリの関連リソース](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
-- [ファイルを登録、アプリケーションがサポートを種類します。](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
+- [アプリの関連リソース](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
+- [ファイルを登録、アプリケーションがサポートを種類します。](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
 - [カスタムの URL スキームを実装します。](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
 - [資産カタログ形式のリファレンス](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)

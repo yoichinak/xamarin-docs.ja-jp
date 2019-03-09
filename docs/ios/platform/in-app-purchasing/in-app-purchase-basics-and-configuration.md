@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4d79988fc2900f1fe58774657344f19fab90f3e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105091"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671985"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>アプリ内購入の基本と Xamarin.iOS での構成
 
@@ -46,7 +46,7 @@ Apple は、上と販売 – 名前、説明になったし、'product' のス�
 
 ## <a name="configuration"></a>構成
 
-アプリ内購入コードを記述する前に、iTunes Connect では、いくつかセットアップ作業を行う必要があります ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) および iOS プロビジョニング ポータル ( [developer.apple.com/iOS](http://developer.apple.com/iOS))。
+アプリ内購入コードを記述する前に、iTunes Connect では、いくつかセットアップ作業を行う必要があります ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) および iOS プロビジョニング ポータル ( [developer.apple.com/iOS](https://developer.apple.com/iOS))。
 
 これら 3 つの手順は、コードを記述する前に完了する必要があります。
 
@@ -109,8 +109,8 @@ Apple は、上と販売 – 名前、説明になったし、'product' のス�
 
 新しい製品を追加するプロセスでは、2 つの手順があります。
 
-1.   製品の種類を選択します[![](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類の選択。")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   製品の属性、製品 Id を含む、価格レベルとローカライズされた説明を入力: [![](in-app-purchase-basics-and-configuration-images/image9.png "製品属性を入力します。")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   製品の種類を選択します。[![](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類を選択します。")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   製品の属性を製品 Id を含む、価格レベルとローカライズされた説明を入力します。[![](in-app-purchase-basics-and-configuration-images/image9.png "製品の属性を入力")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 各アプリ内購入製品に必要なフィールドを次に示します。
 

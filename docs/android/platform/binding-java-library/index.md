@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c41aecf5f8c65ad5bfba5361b77d7c7fc047cda4
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171613"
 ---
+
 # <a name="binding-a-java-library"></a>Java ライブラリのバインド
 
 _Android のコミュニティがアプリで使用することがあります多くの Java ライブラリこのガイドでは、バインド ライブラリを作成して、Xamarin.Android アプリケーションに Java ライブラリを組み込む方法について説明します。_
@@ -103,7 +98,7 @@ API のドキュメントが Java8、Java7 または (すべて別の形式で�
 
 ## <a name="including-a-native-library-in-a-binding"></a>バインディングのネイティブ ライブラリを含む
 
-含める必要があります、 **.so** Java ライブラリのバインドの一部として Xamarin.Android バインド プロジェクトのライブラリです。 Xamarin.Android は JNI の呼び出しと、エラー メッセージを失敗して、ラップされた Java コードの実行時に_java.lang.UnsatisfiedLinkError: ネイティブ メソッドが見つかりません:_ アプリケーションのアウト logcat に表示されます。
+含める必要があります、 **.so** Java ライブラリのバインドの一部として Xamarin.Android バインド プロジェクトのライブラリです。 Xamarin.Android は JNI の呼び出しと、エラー メッセージを失敗して、ラップされた Java コードの実行時に_java.lang.UnsatisfiedLinkError:ネイティブ メソッドが見つかりません:_ アプリケーションのアウト logcat に表示されます。
 
 この修正プログラムは、手動で読み込む、 **.so**ライブラリへの呼び出しで`Java.Lang.JavaSystem.LoadLibrary`します。 たとえば、Xamarin.Android プロジェクトに共有ライブラリがあると仮定すると**libpocketsphinx_jni.so**のビルド アクションを使用してプロジェクトをバインドに含まれる**EmbeddedNativeLibrary**、次のスニペット(共有ライブラリを使用する前に実行) が読み込まれます、 **.so**ライブラリ。
 
@@ -145,5 +140,5 @@ Xamarin.Android バインド ジェネレーターは、いくつかの Java の
 ## <a name="related-links"></a>関連リンク
 
 - [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
-- [GAPI メタデータ](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI メタデータ](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
 - [ネイティブ ライブラリの使用](~/android/platform/native-libraries.md)

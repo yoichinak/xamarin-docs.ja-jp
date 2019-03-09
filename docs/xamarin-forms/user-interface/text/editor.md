@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: ed49c1d11e30d19b2dc60066c3c35568ade43198
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 3131963efa3d4ba4de9ff63c741c276a62e9d12d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557104"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670416"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
@@ -258,6 +258,9 @@ public partial class EditorPage : ContentPage
 
 - [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash;エディターでテキストが変更されたときに発生します。 変更の前後にテキストを提供します。
 - [完了した](xref:Xamarin.Forms.Editor.Completed)&ndash;ユーザーには、キーボードの戻り値のキーを押して、入力が終了したときに発生します。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)元のクラス[ `Entry` ](xref:Xamarin.Forms.Entry)継承もが[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)と[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)イベント。
 
 ### <a name="completed"></a>完了
 

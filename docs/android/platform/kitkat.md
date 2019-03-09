@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 7b7fa2ea99a58b875bc1dc579455511aa9bf72d1
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172094"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669012"
 ---
 # <a name="kitkat-features"></a>KitKat 機能
 
@@ -96,7 +96,7 @@ KitKat は、ユーザーが選択した 1 つの既定のアプリケーショ�
 
 ### <a name="webview-apps"></a>WebView アプリ
 
-[WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) KitKat で、作り直しを取得します。 最大の変更にコンテンツを読み込むためのセキュリティを追加、`WebView`します。 以前の API バージョンを対象とするほとんどのアプリケーションが期待どおりに機能、中にテストを使用するアプリケーション、`WebView`クラスは強くお勧めします。 WebView の影響を受ける Api の詳細については、Android を参照してください[Android 4.4 内の web ビューへの移行](http://developer.android.com/guide/webapps/migrating.html)ドキュメント。
+[WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) KitKat で、作り直しを取得します。 最大の変更にコンテンツを読み込むためのセキュリティを追加、`WebView`します。 以前の API バージョンを対象とするほとんどのアプリケーションが期待どおりに機能、中にテストを使用するアプリケーション、`WebView`クラスは強くお勧めします。 WebView の影響を受ける Api の詳細については、Android を参照してください[Android 4.4 内の web ビューへの移行](https://developer.android.com/guide/webapps/migrating.html)ドキュメント。
 
 <a name="user_experience" />
 
@@ -259,7 +259,7 @@ sceneButton.Click += (o, e) => {
 
 [![リソースの移行/ディレクトリの下の transition.xml ファイルの場所](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
-次のコード サンプルは、5 秒間アニメーション化を使用して切り替えを定義、[インターポレーターをしまった](http://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
+次のコード サンプルは、5 秒間アニメーション化を使用して切り替えを定義、[インターポレーターをしまった](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
 ```xml
 <changeBounds
@@ -323,7 +323,7 @@ KitKat をより細かく制御テーマ オプションの半透明の状態と
 ストレージ アクセス フレームワーク (SAF) は、イメージ、ビデオ、ドキュメントなどの格納されているコンテンツと対話するユーザーの新しい方法です。 コンテンツを処理するためにアプリケーションを選択するダイアログ ボックスでユーザーを表示するのではなく KitKat は、データ集計の 1 つの場所にアクセスするユーザーを許可する新しい UI が開きます。 コンテンツが選択されているし、ユーザーは、コンテンツを要求したアプリケーションに戻りますアプリ エクスペリエンスを通常どおりに続行されます。
 
 この変更には、開発者側で 2 つのアクションが必要です。 プロバイダーからのコンテンツを必要とするアプリが最初に、要求元のコンテンツの新しい方法を更新する必要があります。 データを書き込む、2 つ目のアプリケーション、`ContentProvider`新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオは、新しいに依存します。 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
-API です。
+API.
 
 #### <a name="documentsprovider"></a>DocumentsProvider
 
@@ -396,7 +396,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 注意してください。 [`ContentResolver.OpenOutputStream(Android.Net.Uri)`](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.OpenOutputStream/(Android.Net.Uri))
 返します、`System.IO.Stream`ので、ストリーミング プロセス全体を .NET で記述できます。
 
-読み込みの詳細については、作成、およびストレージ アクセス フレームワークでのコンテンツの編集を参照してください、[ストレージ アクセス フレームワークの Android ドキュメント](http://developer.android.com/guide/topics/providers/document-provider.html)します。
+読み込みの詳細については、作成、およびストレージ アクセス フレームワークでのコンテンツの編集を参照してください、[ストレージ アクセス フレームワークの Android ドキュメント](https://developer.android.com/guide/topics/providers/document-provider.html)します。
 
 ### <a name="printing"></a>印刷
 
@@ -421,7 +421,7 @@ KitKat は自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xam
 
 ##### <a name="print-menu-item"></a>印刷メニュー項目
 
-アクティビティの通常表示される印刷オプション[オプション メニュー](http://developer.android.com/guide/topics/ui/menus.html#options-menu)します。
+アクティビティの通常表示される印刷オプション[オプション メニュー](https://developer.android.com/guide/topics/ui/menus.html#options-menu)します。
 [オプション] メニューを使用して、アクティビティに対して操作を実行できます。 画面の右上隅にあると、次のような。
 
 [![画面の右上隅に表示される印刷メニュー項目の例のスクリーン ショット](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
@@ -656,7 +656,7 @@ protected override void OnPause()
 
 ### <a name="screen-recording"></a>画面記録
 
-KitKat には、録音機能を開発者がアクションでアプリケーションを記録できるように新しい画面が含まれています。 画面記録を利用、 [Android Debug Bridge (ADB)](http://developer.android.com/tools/help/adb.html)クライアントで、Android SDK の一部としてダウンロードできます。
+KitKat には、録音機能を開発者がアクションでアプリケーションを記録できるように新しい画面が含まれています。 画面記録を利用、 [Android Debug Bridge (ADB)](https://developer.android.com/tools/help/adb.html)クライアントで、Android SDK の一部としてダウンロードできます。
 
 画面を記録するにはデバイスを接続します。次に、Android SDK のインストールを検索に移動し、**プラットフォーム ツール**ディレクトリと実行、 **adb**クライアント。
 
@@ -678,18 +678,18 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 上記の変更だけでなく KitKat ことができます。
 
--  *全画面表示を使用して、* -KitKat が導入されていますが、新しい[イマーシブ モード](http://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))のコンテンツを参照する、ゲーム、および全画面エクスペリエンスから利点がもたらされる他のアプリケーションを実行します。
+-  *全画面表示を使用して、* -KitKat が導入されていますが、新しい[イマーシブ モード](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))のコンテンツを参照する、ゲーム、および全画面エクスペリエンスから利点がもたらされる他のアプリケーションを実行します。
 
 -  *通知をカスタマイズする*-を使用したシステム通知に関する追加情報を取得します [`NotificationListenerService`](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/)
    . これにより、アプリ内の別の方法で情報を提供できます。
 
--  *描画可能なリソースをミラー化*-描画可能なリソースが新しいがあります。 [`autoMirrored`](http://developer.android.com/reference/android/R.attr.html#autoMirrored)
+-  *描画可能なリソースをミラー化*-描画可能なリソースが新しいがあります。 [`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
    システムに通知する属性は、左から右のレイアウトの反転を必要とするイメージのミラー化されたバージョンを作成します。
 
 -  *アニメーションを一時停止*-一時停止と再開のアニメーションを使用して作成します [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
    クラスの新しいインスタンスを初期化します。
 
--  *動的に変更するテキストの読み取り*-新しい「ライブ リージョン」として、新しいテキストに動的に更新する UI の部分を示す [ `accessibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+-  *動的に変更するテキストの読み取り*-新しい「ライブ リージョン」として、新しいテキストに動的に更新する UI の部分を示す [ `accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    新しいテキストはアクセシビリティ モードで自動的に読み取るための属性です。
 
 -  *オーディオのエクスペリエンスの向上*-Make トラック音は、 [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)
@@ -703,7 +703,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 -  *リモート コントロール*-ハードウェアとソフトウェアの両方の側でのいくつかの変更により、KitKat を使用すると、リモート_コントロールを使用してに IR の送信機能であり、デバイスを有効にする、 `ConsumerIrService`、および新しい周辺機器の対話 [`RemoteController`](https://developer.xamarin.com/api/type/Android.Media.RemoteController/)
    Api。
 
-上記の API の変更点の詳細については、Google を参照してください[Android 4.4 Api](http://developer.android.com/about/versions/android-4.4.html)の概要。
+上記の API の変更点の詳細については、Google を参照してください[Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)の概要。
 
 
 ## <a name="summary"></a>まとめ
@@ -714,5 +714,5 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 ## <a name="related-links"></a>関連リンク
 
 - [KitKat サンプル](https://developer.xamarin.com/samples/KitKat/)
-- [Android 4.4 Api](http://developer.android.com/about/versions/android-4.4.html)
-- [Android KitKat](http://developer.android.com/about/versions/kitkat.html)
+- [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)
+- [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

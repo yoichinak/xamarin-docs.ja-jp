@@ -6,19 +6,19 @@ ms.assetid: E3562E1B-E0EF-4C99-9F51-59DE22AFDE46
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: 5a3a737360f898c2638bc5431cb8f8fc4882f3b0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 09/04/2018
+ms.openlocfilehash: e6dc2f14b36c9d6f67f1df5ad3d118fa423e0d4d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131434"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669398"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイスの対話型通知
 
 [Notification content 拡張機能](~/ios/platform/user-notifications/advanced-user-notifications.md)、iOS 10 で導入された、使用して通知のカスタム ユーザー インターフェイスを作成できます。 IOS 12 以降では、通知のユーザー インターフェイスは、ボタンとスライダーなどの対話型の要素を含めることができます。
 
-## <a name="sample-app-redgreennotifications"></a>サンプル アプリ: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプル アプリ:RedGreenNotifications
 
 [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)サンプル アプリには、対話型ユーザー インターフェイスでの notification content 拡張機能が含まれています。
 

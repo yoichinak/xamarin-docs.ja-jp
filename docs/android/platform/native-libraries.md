@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 0df39dc51cf17e1b9ecfd2279d047020f0237cb6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1195685db9e85e7fba006272ef300e22d47d1fa6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123093"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666373"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
 
@@ -40,7 +40,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 </ItemGroup>
 ```
 
-ネイティブ ライブラリの使用に関する詳細については、次を参照してください。[ネイティブ ライブラリとの相互運用](http://www.mono-project.com/docs/advanced/pinvoke/)します。
+ネイティブ ライブラリの使用に関する詳細については、次を参照してください。[ネイティブ ライブラリとの相互運用](https://www.mono-project.com/docs/advanced/pinvoke/)します。
 
 ## <a name="debugging-native-code-with-visual-studio-2017"></a>Visual Studio 2017 でのネイティブ コードのデバッグ
 

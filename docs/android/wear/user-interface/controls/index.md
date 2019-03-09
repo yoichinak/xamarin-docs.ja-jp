@@ -6,18 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: f13b716e6ead8db8e0adafd180790c67bb82a6bc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112040"
 ---
+
 # <a name="android-wear-controls"></a>Android Wear コントロール
 
 Android Wear アプリ多く使用できますのと同じコントロールの既になど、標準の Android アプリの使用で`Button`、 `TextView`、余白とイメージのドローアブルします。 などのレイアウト コントロール`ScrollView`、 `LinearLayout`、および`RelativateLayout`こともできます。
 
-このページからの Android Wear 固有のコントロールにリンク、[ウェアラブルの UI ライブラリ](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary)経由での Xamarin プロジェクトで使用できる、[ウェアラブル サポート](http://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージ。 これらのコントロールを以下に示します。
+このページからの Android Wear 固有のコントロールにリンク、[ウェアラブルの UI ライブラリ](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary)経由での Xamarin プロジェクトで使用できる、[ウェアラブル サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージ。 これらのコントロールを以下に示します。
 
 -   **GridViewPager** &ndash;選択のため、ユーザーが左からをスクロールする、2 次元のナビゲーション インターフェイスを作成 (詳細については、次を参照してください。 [GridViewPager](~/android/wear/user-interface/controls/gridviewpager.md))。
 

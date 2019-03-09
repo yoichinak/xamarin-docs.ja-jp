@@ -6,20 +6,15 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 237ee1a39907f9ebf0eb88db9fff1fbdab691f5e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112599"
 ---
+
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
 _このガイドでは、Xamarin Profiler の主な機能について説明します。これにより、プロファイラーがプロファイリング、およびときに使用する必要があります、および標準的なワークフローが Xamarin アプリケーションのプロファイリングを探します。_
 
 アプリケーションの成功は、エンド ユーザー エクスペリエンスに依存します。 開発者として可能性がありますに実装したいくつかの非常に魅力的な機能、アプリが、アプリが動作の遅いまたはフル クラッシュの場合は、ユーザーは可能性がありますを取り除くことです。
 
-従来は、Mono が機能を備えた強力なコマンド ライン プロファイラーと呼ばれる、Mono ランタイムで実行されているプログラムに関する情報を収集、 [Mono ログ プロファイラー](http://www.mono-project.com/docs/debug+profile/profile/profiler/)します。 Xamarin Profiler Mono ログ プロファイラーでは、および Android、iOS、tvOS、および Mac、および Android、ios、Mac アプリケーションおよび Windows 上の tvOS アプリケーションのプロファイリングをサポートするためのグラフィカル インターフェイスです。
+従来は、Mono が機能を備えた強力なコマンド ライン プロファイラーと呼ばれる、Mono ランタイムで実行されているプログラムに関する情報を収集、 [Mono ログ プロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)します。 Xamarin Profiler Mono ログ プロファイラーでは、および Android、iOS、tvOS、および Mac、および Android、ios、Mac アプリケーションおよび Windows 上の tvOS アプリケーションのプロファイリングをサポートするためのグラフィカル インターフェイスです。
 
 Xamarin Profiler がプロファイリングの使用可能な instruments 数-割り当て、サイクル、および時間 Profiler します。 このガイドでは、これらのインストルメントで測定し、アプリケーションの分析方法について説明し、各画面に表示されるデータの意味を明確に。
 
@@ -53,11 +48,11 @@ Xamarin Profiler からアプリケーションをプロファイルする方法
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-現時点では、Xamarin Profiler を使用して、Mac (を使用して Visual Studio for Mac) で、Xamarin.iOS、Xamarin.Android、Xamarin.Mac アプリケーションをテストすることができます。 プロファイラーは、IDE から別のプロセスしから Visual Studio for Mac を起動、だけでなく、使えますスタンドアロン アプリケーションとして .exe を確認して`.mlpd`から生成されているファイル、 [mono ログ プロファイラー](http://www.mono-project.com/docs/debug+profile/profile/profiler/).
+現時点では、Xamarin Profiler を使用して、Mac (を使用して Visual Studio for Mac) で、Xamarin.iOS、Xamarin.Android、Xamarin.Mac アプリケーションをテストすることができます。 プロファイラーは、IDE から別のプロセスしから Visual Studio for Mac を起動、だけでなく、使えますスタンドアロン アプリケーションとして .exe を確認して`.mlpd`から生成されているファイル、 [mono ログ プロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-現時点では、Xamarin Profiler を使用して、(Visual Studio と Visual Studio for Mac) 経由での Windows で Xamarin.Android アプリをテストできます。 プロファイラーは、IDE から別のプロセスと、だけでなく、Visual Studio から起動できますスタンドアロン アプリケーションとして .exe を調べると`.mlpd`から生成されているファイル、 [mono ログ プロファイラー](http://www.mono-project.com/docs/debug+profile/profile/profiler/).
+現時点では、Xamarin Profiler を使用して、(Visual Studio と Visual Studio for Mac) 経由での Windows で Xamarin.Android アプリをテストできます。 プロファイラーは、IDE から別のプロセスと、だけでなく、Visual Studio から起動できますスタンドアロン アプリケーションとして .exe を調べると`.mlpd`から生成されているファイル、 [mono ログ プロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
 
 -----
 
@@ -196,7 +191,7 @@ Xamarin Profiler は、以下に示す 5 つのセクションで構成されま
 - **一覧をインストルメント化**– プロファイル セッションに読み込まれたすべての機器が一覧表示されます。
 - **グラフのプロット**– これらのグラフは、インストルメント化リストに関連する instruments に水平方向に関連します。 スケールを変更します (時間の Profiler の下に表示される) のスライダーを使用できます。
 - **詳細領域をインストルメント化**-現在のインストルメント化の選択したビューによって表示されているデータが含まれています。 これらのビューを以下のセクションで詳しく取り上げます。
-- **インスペクター ビュー** – セグメント付きコントロールで選択可能なセクションが含まれます。 セクションでは、選択すると、インストルメント化に依存してが含まれています。 構成設定、統計、スタック トレース情報、およびルートへのパス。
+- **インスペクター ビュー** – セグメント付きコントロールで選択可能なセクションが含まれます。 セクションは、選択すると、インストルメント化に依存するためが含まれています。構成設定、統計、スタック トレース情報、およびルートへのパス。
 
 ### <a name="allocations"></a>割り当て
 
@@ -323,7 +318,7 @@ Xamarin Profiler は、以下に示す 5 つのセクションで構成されま
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen ガベージ コレクターとプロファイリング
 
-[SGen](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/)ガベージ コレクターはすべての Xamarin プラットフォームを使用します。
+[SGen](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)ガベージ コレクターはすべての Xamarin プラットフォームを使用します。
 
 SGen 世代別の GC でアプリケーションを 3 つのヒープのオブジェクトによって割り当てられたは、新世代、メジャー ヒープと大きなオブジェクトの容量。 これにより、ガベージ コレクションの処理が高速に実行できます。 SGen は、Xamarin.Android 向けの既定の GC では現在と Xamarin.iOS Unified アプリケーション。
 

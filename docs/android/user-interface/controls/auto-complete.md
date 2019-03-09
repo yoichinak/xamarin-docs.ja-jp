@@ -1,19 +1,19 @@
 ---
-title: オート コンプリート
+title: オートコンプリート
 ms.prod: xamarin
 ms.assetid: D4C8CA49-8369-35B7-798D-B147FDC24185
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: 134b8e93279dd60f860e44a444e75e0200e66b99
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "30764451"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671899"
 ---
-# <a name="auto-complete"></a>オート コンプリート
+# <a name="auto-complete"></a>オートコンプリート
 
 `AutoCompleteTextView` ユーザーの入力中に自動的に入力候補を表示する編集可能なテキスト ビュー要素です。 入力候補の一覧は、ユーザーが編集ボックスのコンテンツを置換する項目を選択できるメニュー ドロップダウンで表示されます。
 
@@ -171,7 +171,7 @@ static string[] COUNTRIES = new string[] {
 ## <a name="more-information"></a>説明
 
 注意ハード コーディングされた文字列の配列を使用して、アプリケーション コードは、動作、コンテンツに注目する必要がありますので、推奨される設計手法ではありません。 文字列などのアプリケーションのコンテンツは、コンテンツへの変更を簡単にコンテンツのローカライズを容易にコードから外部化する必要があります。 ハードコーディングされた文字列は、このチュートリアルでは簡素化し、重点にのみ使用されます、 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-ウィジェット。 代わりに、アプリケーションでは、XML ファイルには、このような文字列配列を宣言する必要があります。 これで、`<string-array>`プロジェクトのリソース`res/values/strings.xml`ファイル。 例えば:
+ウィジェット。 代わりに、アプリケーションでは、XML ファイルには、このような文字列配列を宣言する必要があります。 これで、`<string-array>`プロジェクトのリソース`res/values/strings.xml`ファイル。 例:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -197,7 +197,7 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 ```
 
 
-### <a name="references"></a>参照
+### <a name="references"></a>関連項目
 
 -   [AutoCompleteTextView レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input)&ndash;用の Xamarin.Android サンプル プロジェクト、`AutoCompleteTextView`します。
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
@@ -205,5 +205,5 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 *このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、* 
  [ *Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/) *.このチュートリアルがに基づいて、* 
- [ *Android 自動の完全なチュートリアル*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+ [ *Android 自動の完全なチュートリアル*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
 *します。*

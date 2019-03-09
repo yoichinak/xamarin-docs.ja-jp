@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 5468495885e3af2afa2692ccad9191b669fa3328
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: f2db5f4acd57cbf887d9955d9ea61fce4427c1c3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066508"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672405"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的インテグレーションの概要
 
@@ -39,10 +39,6 @@ _継続的インテグレーションは、プロジェクトのバージョン�
 [App Center Test](https://docs.microsoft.com/appcenter/test-cloud)は、数百台の物理デバイス上でアプリを直接テストすることで、この特有の問題に対処します。 開発者は、自動受諾テストを記述し、強力な UI テストを可能にします。 これらのテストが App Center にアップロードされると、CI サーバーは、次のダイアグラム図に示すように CI プロセスの一部として自動的にそれらを実行することができます。
 
 [![](intro-to-ci-images/intro02-small.png "これらのテストが App Center にアップロードされると、CI サーバーは、この図が示すように CI のプロセスの一部として自動的にそれらを実行できます. ")](intro-to-ci-images/intro02.png#lightbox)
-
-# <a name="components-of-continuous-integration"></a>継続的インテグレーションの構成要素
-
-CI をサポートするように設計された商用およびオープンソースのツールによる豊富なエコシステムがあります。 このセクションでは、最も一般的ないくつかのツールについて説明します。
 
 ## <a name="version-control"></a>バージョン コントロール
 
@@ -92,8 +88,8 @@ Visual Studio Team Services では、ターゲットプラットフォームご�
 
 Team Foundation Server では、特定のターゲット プラットフォームに対して次のようにビルドマシンを構成します。
 
-- **Android および Windows:** Visual Studio と Xamarin ツール (Android および Windows 用両方) をインストールし、Xamarin ライセンスを設定します。 また Android SDK の場所を TFS ビルドエージェントが見つけられるサーバー上の共有の場所に移動する必要があります。 詳細については、[TFVC の構成](https://docs.microsoft.com/azure/devops/repos/tfvc/overview) を参照してください。
-- **iOS および Xamarin:** Visual Studio と Xamarin ツール を適切なライセンスを使って Windows server にインストールします。 そして、Visual Studio for Mac をネットワークアクセスが可能な Mac OS X マシンにインストールします。 これはビルドホストとして機能し、最終的なアプリのパッケージ (iOS の場合は IPS、OS X の場合は APP) を作成します。
+- **Android および Windows。**(Android および Windows 両方) の Visual Studio と Xamarin ツールをインストールし、Xamarin ライセンスを構成します。 また Android SDK の場所を TFS ビルドエージェントが見つけられるサーバー上の共有の場所に移動する必要があります。 詳細については、[TFVC の構成](https://docs.microsoft.com/azure/devops/repos/tfvc/overview) を参照してください。
+- **iOS、および Xamarin。** 適切なライセンスを持つ Windows server には、Visual Studio と Xamarin ツールをインストールします。 そして、Visual Studio for Mac をネットワークアクセスが可能な Mac OS X マシンにインストールします。 これはビルドホストとして機能し、最終的なアプリのパッケージ (iOS の場合は IPS、OS X の場合は APP) を作成します。
 
 次の図は、上記のトポロジを示しています。
 
@@ -115,7 +111,3 @@ Jenkins を使用して、アプリをビルドする場合は、Visual Studio T
 
 > [!IMPORTANT]
 > **Jenkins は[Microsoft でサポートされていない](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)します。**
-
-# <a name="summary"></a>まとめ
-
-このドキュメントでは、継続的インテグレーションの概念と、それがソフトウェア開発チームにもたらす利点を紹介しました。 バージョン管理の重要度は、その役割とビルドサーバーの責務と一緒に説明しました。 ドキュメントは次に、ソースコード管理とビルドサーバーに使用できるツールの一部について説明しました。 また、App Center Test についても紹介しました。これにより、開発者は、アプリの品質と機能を証明する自動テストを実行して、優れたアプリを発行しやすくなります。 App Center へのアプリとテストの送信に関するより詳細なドキュメントは [ここ](https://docs.microsoft.com/appcenter/test-cloud) で探すことができます。 最後に、これらすべてのツールとコンポーネントをどのように組み合わせたら良いかということを理解しやすくするために、私たちは、組織が継続的インテグレーションのために構築するであろうさまざまな異なる CI 環境の要点をまとめました。 Xamarin プロジェクトで Visual Studio Team Services と Team Foundation Server を使う場合の詳細については、[TFVC の構成](https://docs.microsoft.com/azure/devops/repos/tfvc/overview/) や こちらの [継続的インテグレーションの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer/) を参照してください。 同様に、Jenkinsを使用する場合は、継続的インテグレーションの設定方法の詳細について [Xamarin を使用して Jenkins](~/tools/ci/jenkins-walkthrough.md) を参照してください。

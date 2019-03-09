@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: c291a440a1937d2b0f1c229e3fa969caedba9ab9
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675459"
 ---
+
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>MonoTouch.Dialog Xamarin.iOS 用の概要
 
 MonoTouch.Dialog、山と呼ばれます略して、D は、開発者がアプリケーション画面とナビゲーション コント ローラーの表示、テーブルなどを作成する面倒な作業ではなく、情報を使用して構築できる、迅速な開発フォーム UI ツールキットです。そのため、UI の開発とコードの削減の大幅な簡略化したものを提供します。 たとえば、次のスクリーン ショットを考えてみます。
@@ -116,7 +111,7 @@ MonoTouch.Dialog プロセスを開始するには少なくとも 1 つ RootElem
 
  [![](images/image4.png "このスクリーン ショットは、左側のテーブルを右側のデザート、選択した砂漠の値と共に、詳細画面のタイトルを含むセルは")](images/image4.png#lightbox) [![](images/image5.png "これ次のスクリーン ショットには、右側のデザート、選択した砂漠の値と共に、詳細画面のタイトルを含むセルが左側のテーブルを示しています")](images/image5.png#lightbox)
 
-ルート要素こともできます内のセクションでは、新しい入れ子になった構成ページの読み込みをトリガーする上記のようです。 このモードで使用すると、指定されたキャプションはセクション内にレンダリング中に使用され、サブページのタイトルとしても使用されます。 例えば:
+ルート要素こともできます内のセクションでは、新しい入れ子になった構成ページの読み込みをトリガーする上記のようです。 このモードで使用すると、指定されたキャプションはセクション内にレンダリング中に使用され、サブページのタイトルとしても使用されます。 例:
 
 ```csharp
 var root = new RootElement ("Meals") {
@@ -393,7 +388,7 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
 `JsonElement`は、 `RootElement` 2 つの形式でインスタンス化することができます。 1 つのバージョンを作成、`RootElement`をオンデマンドで内容が読み込まれます。 これらを使用して作成されて、`JsonElement`を最後に、url からコンテンツを読み込めません余分な引数を受け取るコンス トラクター。
 
 ```csharp
-var je = new JsonElement ("Dynamic Data", "http://tirania.org/tmp/demo.json");
+var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
 その他のフォームからローカル ファイルまたは既存のデータを作成する`System.Json.JsonObject`ですが、既に解析済みします。
@@ -591,8 +586,8 @@ public override Source CreateSizingSource (bool unevenRows)
 - [スクリーン キャスト - MonoTouch.Dialog で iOS ユーザー インターフェイスを簡単に作成](http://youtu.be/j7OC5r8ZkYg)
 - [チュートリアル: 要素 API を使用したアプリケーションの作成](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [チュートリアル: リフレクション API を使用したアプリケーションの作成](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [チュートリアル: JSON 要素を使用したユーザー インターフェイスの作成](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
+- [チュートリアル: JSON 要素を使用して、ユーザー インターフェイスを作成するには](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [MonoTouch.Dialog JSON マークアップ](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [Github の MonoTouch ダイアログ](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [UITableViewController クラスのリファレンス](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController クラスのリファレンス](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController クラスのリファレンス](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController クラスのリファレンス](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

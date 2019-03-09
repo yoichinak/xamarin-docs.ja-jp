@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 22b6fd101c0b983fe7b4a7d0891dc4674a11a02a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121192"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672821"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin.iOS で HomeKit
 
@@ -39,7 +39,7 @@ HomeKit をホーム コレクションに指定された場所にすべての�
 ホームの構成データベースで自動的にバックアップと同期されたすべてのユーザーの iOS デバイスのホームのコレクションが格納されます。 HomeKit では、構成データベースを操作するため、次のクラスを提供します。
 
 - `HMHome` -これが最上位のコンテナーで 1 つの物理的な場所 (例: すべての情報とすべてのホーム オートメーション デバイス用の構成を保持します。 1 つのファミリの居住地)。 ユーザーのメイン ホームおよび休暇家などの 1 つ以上の住所があります。 または、さまざまな「家」で同じプロパティをメインの家やガレージの上のゲスト家などがあります。 いずれにしても、少なくとも 1 つ`HMHome`オブジェクト_する必要があります_セットアップし、その他 HomeKit の情報を入力する前に格納します。
-- `HMRoom` -While 省略可能で、`HMRoom`を家庭内の特定のルームを定義できます (`HMHome`) など: キッチン、バスルーム、ガレージまたはリビング ルーム。 ユーザーがグループのすべてのホーム オートメーション デバイスに自分の家で特定の場所に、`HMRoom`単位として操作とします。 たとえば、ガレージ ライトをオフにするための Siri を求めています。
+- `HMRoom` -While 省略可能な、`HMRoom`を家庭内の特定のルームを定義できます (`HMHome`) など。キッチン、バスルーム、ガレージまたはリビング ルーム。 ユーザーがグループのすべてのホーム オートメーション デバイスに自分の家で特定の場所に、`HMRoom`単位として操作とします。 たとえば、ガレージ ライトをオフにするための Siri を求めています。
 - `HMAccessory` -これは、個人を表します、物理 HomeKit には、オートメーション デバイス (スマート サーモスタット) など、ユーザーの居住地でインストールされているが有効になります。 各`HMAccessory`に割り当てられている、`HMRoom`します。 場合は、ユーザーが構成されていないすべてのルーム、HomeKit アクセサリ特別な既定のルームに割り当てます。
 - `HMService` -によって提供されるサービスを表す、指定された`HMAccessory`、ライトまたは (色の変更がサポートされている) 場合は、その色のオン/オフ状態など。 各`HMAccessory`ライトも含むガレージきっかけなど、複数のサービスを持つことができます。 さらを指定した`HMAccessory`ユーザー コントロール外にあるサービス、ファームウェアの更新などがあります。
 - `HMZone` -のコレクションをグループ化するユーザーを許可する`HMRoom`上、Downstairs 地下室などの論理ゾーン オブジェクト。 必須ではありません、これにより、Siri を求めるような相互作用オフ downstairs 光のすべてが有効にします。
@@ -52,7 +52,7 @@ HomeKit によるセキュリティ要件、により HomeKit フレームワー
 
 次の手順で行います。
 
-1. ログイン、 [Apple Developer Portal](http://developer.apple.com)します。
+1. ログイン、 [Apple Developer Portal](https://developer.apple.com)します。
 2. をクリックして**証明書, Identifiers & Profiles**します。
 3. これをいない場合は、をクリックして**識別子**アプリの ID を作成し、(例: `com.company.appname`)、それ以外の場合、既存の ID を編集
 4. いることを確認、 **HomeKit**サービスは、指定した ID のチェックが完了します。 
@@ -667,7 +667,7 @@ HomeKit アクセサリのシミュレーターでのライトの状態を変更
 この記事では、Xamarin.iOS アプリで HomeKit アクセサリを操作するために必要な基本的な機能について説明しました。 ただし、HomeKit の概要で取り上げられていないいくつかの高度な機能があります。
 
 - **ルーム**-有効になっている HomeKit アクセサリが、エンドユーザーがルームに整理できます必要に応じて。 これにより、ユーザーの理解し、作業を簡単な方法である [アクセサリ] を HomeKit です。 作成して、ルームを管理する方法の詳細については、Apple を参照してください[HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom)ドキュメント。
-- **ゾーン**-エンドユーザーがゾーンにルームが整理必要に応じてできます。 ゾーンは、ユーザーが 1 つの単位として扱うことがありますルームのコレクションを表します。 例: 上、Downstairs または地下室します。 ここでも、これにより、HomeKit 存在し、[アクセサリ]、エンドユーザーにとって意味のある方法で使用します。 作成して、ゾーンを管理する方法の詳細については、Apple を参照してください[HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)ドキュメント。
+- **ゾーン**-エンドユーザーがゾーンにルームが整理必要に応じてできます。 ゾーンは、ユーザーが 1 つの単位として扱うことがありますルームのコレクションを表します。 例:Downstairs または地下室上。 ここでも、これにより、HomeKit 存在し、[アクセサリ]、エンドユーザーにとって意味のある方法で使用します。 作成して、ゾーンを管理する方法の詳細については、Apple を参照してください[HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)ドキュメント。
 - **アクションおよびアクション設定**-アクションは、アクセサリのサービスの特性を変更して、セットにグループ化することができます。 アクションのセットは、[アクセサリ] のグループを制御し、そのアクションを調整するためのスクリプトとして機能します。 たとえば、「テレビ番組を見る」スクリプト可能性があります、ブラインド、dim ライト、閉じ、テレビとそのサウンド システムを有効にします。 作成して、アクションとアクションのセットを維持する方法の詳細については、Apple を参照してください[HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction)と[HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet)ドキュメント。
 - **トリガー** - いずれかのトリガーをアクティブ化または詳細アクション設定時に指定された一連の条件を満たしています。 など、portch 光を有効にし、外暗くときに、すべての外部のドアをロックします。 作成してトリガーを管理する方法の詳細については、Apple を参照してください[HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger)ドキュメント。
 
@@ -691,14 +691,14 @@ Apple が行われて、次の変更と追加 HomeKit を iOS 9。
 - **永続的な識別子**-HomeKit のすべての関連するクラスが追加されました、 `UniqueIdentifier` HomeKit の間で特定の項目を一意に識別するプロパティには、アプリ (または同じアプリのインスタンス) が有効になっています。
 - **ユーザー管理**-プライマリ ユーザーのホームで HomeKit デバイスへのアクセスを持つユーザーを経由でユーザーの管理を提供する組み込みビュー コント ローラーを追加します。
 - **ユーザー機能**- HomeKit のユーザーは、HomeKit で使用することはどのような機能を制御する特権のセットを今すぐになり、HomeKit アクセサリを有効にします。 アプリケーションでは、現在のユーザーに関連する機能を表示する必要がありますのみ。 など、管理者だけは、他のユーザーを管理できる必要があります。
-- **定義済みのシーン**-平均 HomeKit ユーザーに対して発生する次の 4 つの一般的なイベント用に定義済みのシーンが作成されました: 起動、ままにして、返す、ベッドに移動します。 これらの定義済みのシーンは、自宅から削除できません。
+- **定義済みのシーン**-平均 HomeKit ユーザーに対して発生する次の 4 つの一般的なイベント用に定義済みのシーンが作成されました。起動のままに、返すベッドに移動します。 これらの定義済みのシーンは、自宅から削除できません。
 - **シーンと Siri** -iOS 9 を内のシーン HomeKit で定義されている任意のシーンの名前を識別するため、Siri がサポートが強化されました。 ユーザーは、Siri にその名前を言うとするだけでシーンを実行できます。
 - **アクセサリ カテゴリ**-定義済みのカテゴリのセットをすべてについて、Accessories およびホームに追加されるアクセサリの種類を識別するのに役立ちますに追加または、アプリ内から作業します。 これらの新しいカテゴリは、付属品のセットアップ時に使用できます。
-- **Apple Watch サポート**- HomeKit は watchOS 可能になりましたし、Apple Watch が HomeKit がウォッチの近くにいる iPhone しないでデバイスを有効にすることになります。 WatchOS 向け HomeKit は、次の機能をサポートしています: 元の表示、アクセサリの制御およびシーンを実行します。
+- **Apple Watch サポート**- HomeKit は watchOS 可能になりましたし、Apple Watch が HomeKit がウォッチの近くにいる iPhone しないでデバイスを有効にすることになります。 HomeKit watchOS 向けには、次の機能がサポートされています。自宅、[アクセサリ] の制御とシーンの実行を表示します。
 - **新しいイベント トリガーの種類**- に加えて、iOS 8、iOS 9 をサポートしています (センサー データなど) のアクセサリ状態または地理的位置情報にイベント トリガーがベースに変更されましたでサポートされているタイマーの種類のトリガー。 イベント トリガーを使用して、`NSPredicates`でそれらの実行条件を設定します。
 - **リモート アクセス**-リモート アクセスと、ユーザーが制御できるようになりました、HomeKit は、リモートの場所で家から離れているときに、ホーム オートメーション アクセサリを有効になっています。 IOS 8 でこれがのみサポートされます、ユーザーは、次の第 3 世代自宅で Apple TV がある場合。 IOS 9 では、この制限は解除し、iCloud と HomeKit アクセサリ プロトコル (HAP) を使用してリモート アクセスをサポートします。
 - **Bluetooth Low Energy (BLE) の新機能**-HomeKit よう Bluetooth Low Energy (BLE) プロトコル経由で通信できるより多くの付属品の種類になりました。 HAP セキュア トンネリングを使用して、HomeKit アクセサリを公開できます別の Bluetooth アクセサリ Wi-fi 経由で (Bluetooth の範囲外の場合)。 Ios 9 で BLE アクセサリは通知およびメタデータの完全なサポートがあります。
-- **新しいアクセサリ カテゴリ**-Apple iOS 9 で、次の新しいアクセサリ カテゴリを追加する: 窓枠、電動式のドアと Windows、警報、センサー、およびプログラミング可能なスイッチです。
+- **新しいアクセサリ カテゴリ**-Apple は iOS 9 で、次の新しいアクセサリ カテゴリを追加します。窓枠、原動機付き扉と Windows、警報、センサー、プログラミング可能なスイッチです。
 
 IOS 9 で HomeKit の新機能の詳細については、Apple を参照してください[HomeKit インデックス](https://developer.apple.com/homekit/)と[HomeKit で新](https://developer.apple.com/videos/wwdc/2015/?id=210)ビデオ。
 

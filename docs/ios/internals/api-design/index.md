@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 75904ad91df7795c538e736eabb6c6000847b449
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233654"
 ---
+
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
 Core、Mono の一部である基本クラス ライブラリだけでなく[Xamarin.iOS](http://www.xamarin.com/iOS)さまざまな iOS 開発者は Mono とネイティブの iOS アプリケーションの作成を許可する Api のバインドが付属しています。
@@ -45,7 +40,7 @@ Objective C コードとの通信に低レベルのランタイムがで[MonoTou
   - 戻り値の型に対する IDE の IntelliSense を取得します。
   - IDE のポップアップのドキュメントでは、します。
 
-- Api の IDE で探索をお勧めします。
+- API の IDE で探索をお勧めします。
 
   - たとえば、次のように厳密に型指定の配列を公開するには: の代わりに
     
@@ -94,11 +89,11 @@ Xamarin.iOS には構成するアセンブリの数値が含まれています�
 
 [Foundation](xref:Foundation) Objective C Foundation フレームワークは、iOS の一部であると相互運用するように設計、基本データ型とオブジェクト指向の OBJECTIVE-C でのプログラミングの基本クラスが名前空間には
 
-C# から OBJECTIVE-C のクラスの階層にミラー化 Xamarin.iOS Objective C の基本クラスなど、 [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)を使用して c# から使用できるように[Foundation.NSObject](xref:Foundation.NSObject)します。
+C# から OBJECTIVE-C のクラスの階層にミラー化 Xamarin.iOS Objective C の基本クラスなど、 [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)を使用して c# から使用できるように[Foundation.NSObject](xref:Foundation.NSObject)します。
 
-この名前空間には、基になる Objective C Foundation 型のバインドが用意されていますが、いくつかのケースでにマップされています基になる型の .NET 型です。 例:
+この名前空間には、基になる Objective C Foundation 型のバインドが用意されていますが、いくつかのケースでにマップされています基になる型の .NET 型です。 例えば:
 
-- 処理するのではなく[NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)、ランタイムはこれらとして c# が公開[文字列](xref:System.String)s の厳密に型指定された[配列](xref:System.Array)全体で sAPI です。
+- 処理するのではなく[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)、ランタイムはこれらとして c# が公開[文字列](xref:System.String)s の厳密に型指定された[配列](xref:System.Array)全体で sAPI です。
 
 - さまざまなヘルパー Api は、開発者は Objective C Api、Api または Api Xamarin.iOS で現在バインドされていないその他の iOS のサード パーティのバインドを許可するのには、ここに公開されます。
 
@@ -293,7 +288,7 @@ Xamarin.iOS でこれらのデリゲートにバインドする 3 つの相互�
 2.  [使用して厳密に型指定された、`Delegate`プロパティ](#StrongDelegate)
 3.  [使用して緩く型指定された、`WeakDelegate`プロパティ](#WeakDelegate)
 
-たとえば、 [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)クラス。 これをディスパッチする、 [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)インスタンスに割り当てられる、[委任](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)プロパティ。
+たとえば、 [UIWebView](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)クラス。 これをディスパッチする、 [UIWebViewDelegate](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)インスタンスに割り当てられる、[委任](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)プロパティ。
 
 <a name="Via_Events" />
 
@@ -301,9 +296,9 @@ Xamarin.iOS でこれらのデリゲートにバインドする 3 つの相互�
 
 多くの種類では、Xamarin.iOS は自動的に作成、転送する適切なデリゲート、 `UIWebViewDelegate` c# イベントへの呼び出し。 `UIWebView`の場合:
 
--  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)をメソッドにマップされて、 [UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted)イベント。
--  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)をメソッドにマップされて、 [UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished)イベント。
--  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)をメソッドにマップされて、 [UIWebView.LoadError](xref:UIKit.UIWebView.LoadError)イベント。
+-  [WebViewDidStartLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)をメソッドにマップされて、 [UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted)イベント。
+-  [WebViewDidFinishLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)をメソッドにマップされて、 [UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished)イベント。
+-  [WebView:didFailLoadWithError](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)をメソッドにマップされて、 [UIWebView.LoadError](xref:UIKit.UIWebView.LoadError)イベント。
 
 たとえば、この単純なプログラムは、web の読み込みを表示するときに開始および終了時刻を記録します。
 
@@ -630,7 +625,7 @@ C# での新しいセレクターを作成することは非常に簡単 – だ
 var selector_add = new Selector ("add:plus:");
 ```
 
-用の c# メソッドに応答セレクターの呼び出しから継承する必要があります、`NSObject`セレクターの名前を使用して型と c# のメソッドを装飾する必要があります、`[Export]`属性。 例:
+用の c# メソッドに応答セレクターの呼び出しから継承する必要があります、`NSObject`セレクターの名前を使用して型と c# のメソッドを装飾する必要があります、`[Export]`属性。 例えば:
 
 ```csharp
 public class MyMath : NSObject {
@@ -674,7 +669,7 @@ public Foo (NSObjectFlag x)
 public Foo (NSCoder coder)
 ```
 
-NSCoding インスタンスから、オブジェクトは初期化されている場所の場合、このコンス トラクターが提供されます。 詳細については、Apple を参照してください。[アーカイブおよびシリアル化プログラミング ガイド。](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
+NSCoding インスタンスから、オブジェクトは初期化されている場所の場合、このコンス トラクターが提供されます。 詳細については、Apple を参照してください。[アーカイブおよびシリアル化プログラミング ガイド。](https://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
 
 #### <a name="exceptions"></a>例外
 
@@ -694,7 +689,7 @@ Xamarin.iOS には、ガベージ コレクターが使用されている不要�
 
 公開する、`IDisposable`インターフェイスが大きなメモリ ブロックをカプセル化するオブジェクトを解放するときに開発者を支援の便利な方法は、(たとえば、`UIImage`無害なポインターでは同じようになりますが、2 つメガバイトのイメージを指している可能性があります) とその他の重要であり、有限のリソース (ビデオのデコード バッファー) のようにします。
 
-NSObject が IDisposable インターフェイスを実装しても、 [.NET Dispose パターン](http://msdn.microsoft.com/library/fs2xkftw.aspx)します。 これにより、開発者は、サブクラスである NSObject を Dispose の動作をオーバーライドし、オンデマンドで独自のリソースを解放します。 たとえば、多数のイメージを保持するようにこのビュー コント ローラーがあるとします。
+NSObject が IDisposable インターフェイスを実装しても、 [.NET Dispose パターン](https://msdn.microsoft.com/library/fs2xkftw.aspx)します。 これにより、開発者は、サブクラスである NSObject を Dispose の動作をオーバーライドし、オンデマンドで独自のリソースを解放します。 たとえば、多数のイメージを保持するようにこのビュー コント ローラーがあるとします。
 
 ```csharp
 class MenuViewController : UIViewController {

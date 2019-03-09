@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2fa554264578ec626567ef7d28377ac80bde21d3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2b3ba0a0cf31ae2c2d631da8b595390c973957d6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060175"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670678"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS でのコードで iOS ユーザー インターフェイスの作成
 
@@ -20,7 +20,7 @@ iOS アプリのユーザー インターフェイスは、ガラス張りの店
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。 
+次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。
 
 [![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間のリレーションシップを示しています。")](ios-code-only-images/image9.png#lightbox)
 
@@ -28,7 +28,7 @@ Visual Studio では、[iOS 用の Xamarin デザイナー](~/ios/user-interface
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。 
+次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。
 
 [![](ios-code-only-images/image9.png "この図では、ウィンドウ、ビュー、サブビュー、およびビュー コント ローラー間のリレーションシップを示しています。")](ios-code-only-images/image9.png#lightbox)
 
@@ -65,9 +65,9 @@ Visual studio for Mac では、[iOS 用の Xamarin デザイナー](~/ios/user-i
 ## <a name="ios-templates"></a>iOS のテンプレート
 
 
-Visual Studio for Mac では、空のテンプレートが提供されません。 すべてのテンプレートが付属してストーリー ボードのサポートは、Apple は、UI を作成する主な方法としてお勧めします。 ただし、コードで完全に UI を作成することができます。 
+Visual Studio for Mac では、空のテンプレートが提供されません。 すべてのテンプレートが付属してストーリー ボードのサポートは、Apple は、UI を作成する主な方法としてお勧めします。 ただし、コードで完全に UI を作成することができます。
 
-次の手順に従って、アプリケーションからストーリー ボードを削除します。 
+次の手順に従って、アプリケーションからストーリー ボードを削除します。
 
 
 1. 新しい iOS プロジェクトを作成するのにには、単一ビュー アプリ テンプレートを使用します。
@@ -291,7 +291,7 @@ Window.RootViewController = navController;
 これで、アプリケーションが読み込まれたら、`CustomViewController`ナビゲーション コント ローラー内で読み込まれます。
 
  [![](ios-code-only-images/customvc.png "ナビゲーション コント ローラー内で、CustomViewController が読み込まれる")](ios-code-only-images/customvc.png#lightbox)
- 
+
 ボタンをクリックして_プッシュ_ナビゲーション スタックに新しいビュー コント ローラー。
 
 [![](ios-code-only-images/customvca.png "新しいビュー コント ローラーをナビゲーション スタックにプッシュ")](ios-code-only-images/customvca.png#lightbox)
@@ -306,7 +306,7 @@ iOS ユーザー インターフェイスは、ビュー階層で構成されま
 
 ### <a name="adding-the-text-fields"></a>テキスト フィールドを追加します。
 
-最初で追加したボタンをクリックし、イベント ハンドラーを削除、[ビューの初期化](#Initializing_the_View)セクション。 
+最初で追加したボタンをクリックし、イベント ハンドラーを削除、[ビューの初期化](#initializing-the-view)セクション。 
 
 ユーザー名のコントロールを追加するには、作成と初期化、`UITextField`追加ビュー階層を次に示すよう。
 
@@ -359,7 +359,7 @@ public class CustomViewController : UIViewController
             SecureTextEntry = true
         };
 
-      View.AddSubview(usernameField); 
+      View.AddSubview(usernameField);
       View.AddSubview(passwordField);
    }
 }
@@ -414,7 +414,7 @@ submitButton.Layer.CornerRadius = 5f;
 iOS を使用して、ビュー階層に複数のビューを追加する機能を提供する`AddSubviews`します。
 
 ```csharp
-View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton }); 
+View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 ```
 
 ## <a name="adding-button-functionality"></a>ボタンの機能を追加します。
@@ -610,12 +610,12 @@ Apple は、.xib またはストーリー ボード ファイルを使用して 
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>前の iOS の起動イメージ 8 アプリケーションを作成します。
 
-アプリケーションは iOS 8 より前のバージョンを対象とする場合、.xib またはストーリー ボードの起動画面だけでなく静的なイメージを使用できます。 
+アプリケーションは iOS 8 より前のバージョンを対象とする場合、.xib またはストーリー ボードの起動画面だけでなく静的なイメージを使用できます。
 
 この静的イメージは、Info.plist ファイル、または、アプリケーションでのアセット カタログ (iOS 7) を設定できます。 各デバイス サイズ (320 x 480、640 x 960、640 x 1136) で、アプリケーションを実行できる個別のイメージを提供する必要があります。 起動画面のサイズに関する詳細については、表示、[起動画面イメージ](~/ios/app-fundamentals/images-icons/launch-screens.md)ガイド。
 
 > [!IMPORTANT]
-> 起動画面アプリがない場合は、画面を十分に適合しないことに注意してください可能性があります。 大文字と小文字の場合は、含めるには、少なくとも、640 x 1136 イメージがという名前を確認する必要があります`Default-568@2x.png`Info.plist にします。 
+> 起動画面アプリがない場合は、画面を十分に適合しないことに注意してください可能性があります。 大文字と小文字の場合は、含めるには、少なくとも、640 x 1136 イメージがという名前を確認する必要があります`Default-568@2x.png`Info.plist にします。
 
 ## <a name="summary"></a>まとめ
 

@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: bc4441c7ee0c36af990297bad1b0c2f0e77123f3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113288"
 ---
+
 # <a name="fragments"></a>フラグメント
 
 _Android 3.0 には、携帯電話とタブレットで検出された多くのさまざまな画面サイズをより柔軟な設計をサポートする方法を示す、フラグメントが導入されました。この記事では、事前 Android 3.0 (API レベル 11) デバイス上のフラグメントをサポートする方法とフラグメントを使用して、Xamarin.Android アプリケーションを開発する方法について説明します。_
@@ -63,6 +58,6 @@ Android アクティビティを調整し、これらすべてのフラグメン
 ## <a name="related-links"></a>関連リンク
 
 - [Honeycomb ギャラリー (サンプル)](https://developer.xamarin.com/samples/monodroid/HoneycombGallery)
-- [フラグメント](http://developer.android.com/guide/topics/fundamentals/fragments.html)
-- [サポート パッケージ](http://developer.android.com/sdk/compatibility-library.html)
-- [MOTODEV ウェビナー: フラグメントの概要](http://motodev.adobeconnect.com/p9h1aqk3ttn/)
+- [フラグメント](https://developer.android.com/guide/topics/fundamentals/fragments.html)
+- [サポート パッケージ](https://developer.android.com/sdk/compatibility-library.html)
+- [MOTODEV ウェビナー:フラグメントの概要](http://motodev.adobeconnect.com/p9h1aqk3ttn/)

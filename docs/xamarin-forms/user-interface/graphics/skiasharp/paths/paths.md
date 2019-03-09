@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 006e4c2b2de56fef96c561e788992649f6582d24
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 833e24e91a37b92eb5025aacdc9509f092b823cd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054941"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672087"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp のパスの基礎
 
@@ -28,26 +28,26 @@ _接続された直線と曲線を結合するための SkiaSharp SKPath オブ�
 
 輪郭が通常の次のメソッドの呼び出しで開始`SKPath`:
 
-- [`MoveTo`](SkiaSharp.SKPath.MoveTo*) 新しい輪郭を開始するには
+- [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) 新しい輪郭を開始するには
 
 メソッドに引数が 1 つのポイントとして表すことができます、`SKPoint`値または個別 X と Y 座標します。 `MoveTo`の呼び出しによって確立輪郭と、初期の先頭にあるポイント*現在ポイント*します。 行または現在の新しい点となると、メソッドで指定したポイントに現在のポイントから曲線の輪郭を続行するのには、次のメソッドを呼び出すことができます。
 
-- [`LineTo`](SkiaSharp.SKPath.LineTo*) 直線をパスに追加するには
-- [`ArcTo`](SkiaSharp.SKPath.ArcTo*) 円または楕円の円周上の行には、円弧を追加します
-- [`CubicTo`](SkiaSharp.SKPath.CubicTo*) 3 次ベジエ スプラインを追加するには
-- [`QuadTo`](SkiaSharp.SKPath.QuadTo*) 2 次ベジエ スプラインを追加するには
-- [`ConicTo`](SkiaSharp.SKPath.ConicTo*) 円錐のセクションでは (省略記号、放物線、および hyperbolas) で表示できる正確に合理的な二次ベジエ スプラインを追加するには
+- [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) 直線をパスに追加するには
+- [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) 円または楕円の円周上の行には、円弧を追加します
+- [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo*) 3 次ベジエ スプラインを追加するには
+- [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo*) 2 次ベジエ スプラインを追加するには
+- [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo*) 円錐のセクションでは (省略記号、放物線、および hyperbolas) で表示できる正確に合理的な二次ベジエ スプラインを追加するには
 
 これら 5 つのメソッドのいずれには、直線または曲線を記述するために必要なすべての情報が含まれています。 これら 5 つのメソッドのそれぞれは、直前にあるメソッドの呼び出しによって確立された現在の点と組み合わせて動作します。 たとえば、`LineTo`メソッドに基づいて追加します直線輪郭を現在のポイントので、パラメーターを`LineTo`ポイントは 1 つのみです。
 
 `SKPath`クラスもこれら 6 つの方法としては、同じ名前を持つメソッドを定義、`R`先頭。
 
-- [`RMoveTo`]((SkiaSharp.SKPath.RMoveTo*))
-- [`RLineTo`](SkiaSharp.SKPath.RLineTo*)
-- [`RArcTo`](SkiaSharp.SKPath.RArcTo*)
-- [`RCubicTo`](SkiaSharp.SKPath.RCubicTo*)
-- [`RQuadTo`](SkiaSharp.SKPath.RQuadTo*)
-- [`RConicTo`](SkiaSharp.SKPath.RConicTo*)
+- [`RMoveTo`](xref:SkiaSharp.SKPath.RMoveTo*)
+- [`RLineTo`](xref:SkiaSharp.SKPath.RLineTo*)
+- [`RArcTo`](xref:SkiaSharp.SKPath.RArcTo*)
+- [`RCubicTo`](xref:SkiaSharp.SKPath.RCubicTo*)
+- [`RQuadTo`](xref:SkiaSharp.SKPath.RQuadTo*)
+- [`RConicTo`](xref:SkiaSharp.SKPath.RConicTo*)
 
 `R`略*相対*します。 これらのメソッドがあることがなく対応するメソッドと同じ構文、`R`は、現在の点を基準とします。 これらは、メソッドを複数回呼び出すことで、パスの類似した部分を描画するのに便利です。
 

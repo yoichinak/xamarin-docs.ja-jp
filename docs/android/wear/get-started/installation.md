@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ed6d3c1cfc14bd0dece5ffe494cc02fd8f608b1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: af9be54b4509f7202618d9d68210eb534f63ccbf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117279"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671638"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
@@ -28,9 +28,9 @@ Xamarin 基盤の Android Wear アプリを作成する、次が必要。
 
 -   **Android SDK** -Android SDK 5.0.1 (API 21) 以降、Android SDK Manager を使用してをインストールする必要があります。
 
--   **Java Developer Kit** &ndash; Xamarin Android 開発が必要です[JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)開発 API レベル 24 以上の場合 (JDK 1.8 もサポートしている API レベル 24 より前)。
+-   **Java Developer Kit** &ndash; Xamarin Android 開発が必要です[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)開発 API レベル 24 以上の場合 (JDK 1.8 もサポートしている API レベル 24 より前)。
 
-引き続き使用できます[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)またはそれ以前の API レベル 23 ののみで開発する場合。
+引き続き使用できます[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)またはそれ以前の API レベル 23 ののみで開発する場合。
 
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。

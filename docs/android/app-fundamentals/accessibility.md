@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3cce3270b9df2aad0037b1ab96f169cc4b564766
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: d004b753c89f3995e8dc511877bd115a894396fc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528131"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671625"
 ---
 # <a name="accessibility-on-android"></a>Android でのアクセシビリティ
 
@@ -172,14 +172,14 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 別のファイルにテキストを格納する利点は、アプリ、ファイルの複数の言語の翻訳を指定することができますです。 参照してください、 [Android ローカリゼーション ガイド](~/android/app-fundamentals/localization.md)については、アプリケーション プロジェクトにファイルのローカライズされた文字列を追加する方法。
 
 
-## <a name="testing-accessibility"></a>ユーザー補助のテスト
+## <a name="testing-accessibility"></a>アクセシビリティのテスト
 
-次の[手順](http://developer.android.com/training/accessibility/testing.html#how-to)Android デバイスでのアクセシビリティをテストするには、TalkBack とタッチして探索を有効にします。
+次の[手順](https://developer.android.com/training/accessibility/testing.html#how-to)Android デバイスでのアクセシビリティをテストするには、TalkBack とタッチして探索を有効にします。
 
 インストールする必要があります[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)が表示されない場合、Google Play から**設定 > ユーザー補助**します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [クロス プラットフォームのユーザー補助機能](~/cross-platform/app-fundamentals/accessibility.md)
-- [ユーザー補助の android Api](http://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
+- [ユーザー補助の android Api](https://developer.android.com/guide/topics/ui/accessibility/index.html)

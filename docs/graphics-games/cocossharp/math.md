@@ -6,12 +6,12 @@ ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 60386b3629e8ed9d2fd1ff165cd2c04d9571b51a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ac84d5b28b0f211dccb1697a4b3dbbc9cedf81e9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106235"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670165"
 ---
 # <a name="2d-math-with-cocossharp"></a>CocosSharp による 2 次元数値演算
 
@@ -24,7 +24,7 @@ _このガイドでは、ゲーム開発用の 2D 数学について説明しま
  - CocosSharp のオブジェクトを回転させる
  - 回転を使用して、velocity の使用
 
-開発者が厳密な数値演算バック グラウンドでは、ユーザーがないか、ユーザーが時間の長い忘れ、学校からこれらのトピックは、心配する必要はありません – このドキュメントは、概念を自作の部分に分割し、実用的な例を含む理論の説明を伴う、します。 この記事が昔からある数学学生という質問に回答が簡単に言えば、:「とは実際に必要がありますこれを使ってでしょうか」。
+開発者が厳密な数値演算バック グラウンドでは、ユーザーがないか、ユーザーが時間の長い忘れ、学校からこれらのトピックは、心配する必要はありません – このドキュメントは、概念を自作の部分に分割し、実用的な例を含む理論の説明を伴う、します。 つまり、この記事では昔からある数学学生という質問に回答は。「とは実際に必要がありますこれを使ってでしょうか。」
 
 
 ## <a name="requirements"></a>必要条件
@@ -266,7 +266,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, C
 
 上記のコード、Y パラメーター最初に、X パラメーターを渡しますを呼び出すときに注意してください、`Atan2`メソッド。 これは、X、Y は位置座標の順序には、通常から逆方向。 詳細については[Atan2 ドキュメントを参照してください。](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx)します。
 
-注目すべきもからの戻り値`Atan2`ラジアンは角度を測定するために使用もう 1 つの単位です。 このガイドはラジアン単位の詳細は説明しませんに注意してくださいを内のすべての三角関数、`System.Math`名前空間の値は、CocosSharp オブジェクトで使用する前に度に変換する必要があります (ラジアン単位) を使用します。 詳細については、ラジアンが見つかります[ラジアンの Wikipedia ページに](http://en.wikipedia.org/wiki/Radian)。
+注目すべきもからの戻り値`Atan2`ラジアンは角度を測定するために使用もう 1 つの単位です。 このガイドはラジアン単位の詳細は説明しませんに注意してくださいを内のすべての三角関数、`System.Math`名前空間の値は、CocosSharp オブジェクトで使用する前に度に変換する必要があります (ラジアン単位) を使用します。 詳細については、ラジアンが見つかります[ラジアンの Wikipedia ページに](https://en.wikipedia.org/wiki/Radian)。
 
 #### <a name="forward-angle"></a>順方向の角度
 

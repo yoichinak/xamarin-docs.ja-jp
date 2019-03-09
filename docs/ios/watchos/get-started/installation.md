@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: fc3a30473b4a38b21f89c5be201c8191658aae63
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 13fd84d8e23c18606696532b1c6e8db301b52f3c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050323"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668544"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>インストールして、Xamarin で watchOS の使用
 
@@ -178,7 +178,7 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 Xcode 6 を使用する場合、iPhone 5、iPhone 5 s、iPhone 6、および iPhone のみ 6 Plus は、いずれかの外付けディスプレイをアクティブ化できる**Apple Watch - 38 mm**または**Apple Watch - 42 mm** watch アプリケーションが表示されます表示されます。
 
-**注:** ウォッチ画面が表示されないことに自動的に iOS シミュレーターで Xcode 6 を使用する場合に注意してください。
+**注:** ウォッチの画面が表示されないことに自動的に iOS シミュレーターで Xcode 6 を使用する場合に注意してください。
 使用して、**ハードウェア > 外部ディスプレイ**ウォッチ画面を表示するメニュー。
 
 <a name="custommodes" />
@@ -232,5 +232,5 @@ WatchOS のテンプレート ファイル (など`InterfaceController`、 `Exte
 ## <a name="related-links"></a>関連リンク
 
 - [WatchKitCatalog (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Watch アプリの最初のビデオ](http://blog.xamarin.com/your-first-watch-kit-app/)
+- [Watch アプリの最初のビデオ](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple の WatchKit ヒント](https://developer.apple.com/watchkit/tips/)

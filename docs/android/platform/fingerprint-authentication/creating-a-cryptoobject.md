@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1658934bedce11a42701eb023a42fc9e617b654d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1305a8a1f39d34b5e91e478a769750911afb2b3e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113769"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669642"
 ---
 # <a name="creating-a-cryptoobject"></a>CryptoObject の作成
 
@@ -110,13 +110,13 @@ public class CryptoObjectHelper
 * ユーザーは画面のロックを無効にします。
 * ユーザーが画面のロック (、screenlock または使用する PIN/パターンの種類) を変更します。
 
-この場合、`Cipher.Init`がスローされます、 [ `KeyPermanentlyInvalidatedException`](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)します。 上記のサンプル コードは例外をトラップ、キーを削除し、新しいものを作成します。
+この場合、`Cipher.Init`がスローされます、 [ `KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)します。 上記のサンプル コードは例外をトラップ、キーを削除し、新しいものを作成します。
 
 次のセクションには、キーを作成し、デバイスに保存する方法について説明します。
 
 ## <a name="creating-a-secret-key"></a>秘密キーを作成します。
 
-`CryptoObjectHelper`クラスは、Android を使用して[ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)キーを作成し、デバイスに保存します。 `KeyGenerator`クラス キーを作成、必要があるいくつかに関するメタデータを作成するキーの種類。 この情報がのインスタンスによって提供される、 [ `KeyGenParameterSpec` ](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)クラス。 
+`CryptoObjectHelper`クラスは、Android を使用して[ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)キーを作成し、デバイスに保存します。 `KeyGenerator`クラス キーを作成、必要があるいくつかに関するメタデータを作成するキーの種類。 この情報がのインスタンスによって提供される、 [ `KeyGenParameterSpec` ](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)クラス。 
 
 A`KeyGenerator`を使用してインスタンス化される、`GetInstance`ファクトリ メソッド。 サンプル コードを使用して、 [ _Advanced Encryption Standard_ ](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (_AES_) 暗号化アルゴリズムとして。 AES は固定サイズのブロックにデータを分割し、それらのブロックの暗号化します。
 
@@ -160,12 +160,12 @@ protected void FingerPrintAuthenticationExample()
 ## <a name="related-links"></a>関連リンク
 
 - [暗号](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
-- [FingerprintManager.CryptoObject](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
-- [FingerprintManagerCompat.CryptoObject](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
+- [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
+- [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
 - [KeyGenerator](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)
-- [KeyGenParameterSpec](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
-- [KeyGenParameterSpec.Builder](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
-- [KeyPermanentlyInvalidatedException](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
-- [KeyProperties](http://developer.android.com/reference/android/security/keystore/KeyProperties.html)
+- [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
+- [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
+- [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
+- [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 - [RFC 2315 - PCKS #7](https://tools.ietf.org/html/rfc2315)

@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 16ef0d5a309281767f0fff27436dd5bec322169d
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e71e79b58d912ecb697576e92ae921a848f24f4c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527392"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671171"
 ---
 # <a name="alternate-resources"></a>代替リソース
 
 代替のリソースは、特定のデバイスまたは現在の言語や特定の画面サイズ、ピクセル密度などの実行時構成を対象とします。 Android は、既定のリソースよりも、特定のデバイスまたは構成の固有のリソースと一致できる場合、は、そのリソースを代わりに使用されます。 現在の構成と一致する代替のリソースが見つからない場合は、既定のリソースが読み込まれます。 リソースの場所のセクションでは、以下の詳細で、アプリケーションで使用されるどのようなリソースを説明は Android の決定方法
 
-代替のリソースは、既定のリソースと同様、リソースの種類に従ってリソース フォルダー内のサブディレクトリとして編成されます。 代替のリソースのサブディレクトリの名前は、フォーム: _ResourceType_-_修飾子_
+代替のリソースは、既定のリソースと同様、リソースの種類に従ってリソース フォルダー内のサブディレクトリとして編成されます。 代替のリソースのサブディレクトリの名前は、フォームには。_ResourceType_-_修飾子_
 
 *修飾子*特定のデバイス構成を識別する名前です。
 それぞれのダッシュで区切られた、名前の 1 つ以上の修飾子が可能性があります。 たとえば、次のスクリーン ショットは、ロケール、画面密度、画面サイズ、および印刷の向きなど、さまざまな構成を代替のリソースが含まれる単純なプロジェクトを示しています。
@@ -43,10 +43,10 @@ ms.locfileid: "51527392"
 
 可能な修飾子は、参照を以下に示します。
 
-- **MCC と mnc も** &ndash; 、[モバイルの国コード](http://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) と、必要に応じて、[モバイル ネットワーク コード](http://en.wikipedia.org/wiki/Mobile_Network_Code)(mnc も)。 SIM カードは、ネットワークにデバイスが接続されているが、mnc もを提供します、MCC を提供します。 ターゲット ロケールが、モバイルの国コードを使用することはできますが、推奨されるアプローチでは、以下で指定した言語修飾子を使用します。 たとえば、ドイツ、ターゲット リソースを修飾子になります`mcc262`します。 T モバイル米国内のターゲット リソースに、修飾子が`mcc310-mnc026`します。
+- **MCC と mnc も** &ndash; 、[モバイルの国コード](https://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) と、必要に応じて、[モバイル ネットワーク コード](https://en.wikipedia.org/wiki/Mobile_Network_Code)(mnc も)。 SIM カードは、ネットワークにデバイスが接続されているが、mnc もを提供します、MCC を提供します。 ターゲット ロケールが、モバイルの国コードを使用することはできますが、推奨されるアプローチでは、以下で指定した言語修飾子を使用します。 たとえば、ドイツ、ターゲット リソースを修飾子になります`mcc262`します。 T モバイル米国内のターゲット リソースに、修飾子が`mcc310-mnc026`します。
   モバイルの国コードとモバイル ネットワーク コードの完全な一覧については、次を参照してください。<http://mcc-mnc.com/>します。
 
-- **言語** &ndash; 2 文字[ISO 639-1 言語コード](http://en.wikipedia.org/wiki/ISO_639-1)し、必要に応じてその後に 2 文字[ISO 3166-alpha-2 地域コード](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)します。 
+- **言語** &ndash; 2 文字[ISO 639-1 言語コード](https://en.wikipedia.org/wiki/ISO_639-1)し、必要に応じてその後に 2 文字[ISO 3166-alpha-2 地域コード](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)します。 
   両方の修飾子を指定すると場合によって区切られます、`-r`します。 ターゲットのフランス語を話すロケールの修飾子をたとえば、`fr`使用されます。 カナダのロケールを対象に、`fr-rCA`は使用されます。 言語コードと地域コードの完全な一覧を参照してください。[言語のコードの表現の名前の](http://www.loc.gov/standards/iso639-2/php/English_list.php)と[国の名前とコード要素](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm)します。
 
 - **最小の幅**&ndash;アプリケーション上で実行するものでは最小の画面幅を指定します。 詳細については、「[画面のさまざまなリソースを作成する](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)します。 
@@ -123,7 +123,7 @@ ms.locfileid: "51527392"
 -  **プラットフォームのバージョン (API レベル)** &ndash; v の形式でのデバイスでサポートされる API レベル*N*ここで、 *N*対象となっている API レベルです。 たとえば、v11 が API レベル 11 (Android 3.0) を対象デバイス。
 
 
-詳細については、リソースは修飾子を参照してください[リソースを提供する](http://developer.android.com/guide/topics/resources/providing-resources.html)Android 開発者 web サイト。
+詳細については、リソースは修飾子を参照してください[リソースを提供する](https://developer.android.com/guide/topics/resources/providing-resources.html)Android 開発者 web サイト。
 
 
 ## <a name="how-android-determines-what-resources-to-use"></a>Android を使用するには、どのようなリソースを決定する方法
@@ -176,7 +176,7 @@ Android では、ルールの次のテストを反復して基本のリソース
     drawable-port-ldpi
     drawable-port-notouch-12key
 
-上記の修飾子のテーブルから最初の識別子を次に、選択します。 MCC と mnc もします。 MCC/mnc もコードは無視されますので、この修飾子を含むリソース ディレクトリはありません。
+次に、上記の修飾子のテーブルから最初の修飾子が選択されます。MCC と mnc もします。 MCC/mnc もコードは無視されますので、この修飾子を含むリソース ディレクトリはありません。
 
 次の修飾子を選択した言語であります。 言語コードに一致するリソースがあります。 言語コードと一致しないすべてのリソース ディレクトリ`en`は拒否され、リソースのリストができるようにします。
 

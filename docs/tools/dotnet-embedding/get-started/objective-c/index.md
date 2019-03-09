@@ -6,13 +6,8 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: c7bac0612679131383d3b89f24904c8083fa925b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103102"
 ---
+
 # <a name="getting-started-with-objective-c"></a>Objective C の概要
 
 これは、サポートされているすべてのプラットフォームの基礎を対象とする OBJECTIVE-C の作業の開始ページです。
@@ -23,7 +18,7 @@ Objective C では、.NET の埋め込みを使用するには、Mac を実行�
 
 * macOS 10.12 (Sierra) またはそれ以降
 * Xcode 8.3.2 またはそれ以降
-* [Mono 5.0](http://www.mono-project.com/download/)
+* [Mono 5.0](https://www.mono-project.com/download/)
 
 インストールすることができます[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)を編集およびコンパイル、C#コード。
 
@@ -45,7 +40,7 @@ OBJECTIVE-C では、macOS、iOS、tvOS、watchOS 向けのアプリケーショ
 
 [MacOS アプリケーションを作成する](~/tools/dotnet-embedding/get-started/objective-c/macos.md)が id、プロビジョニング プロファイル、シミュレーターおよびデバイスの設定など、追加の手順が多く必要としないために、最も簡単です。 IOS 用の 1 つの前に、macOS のドキュメントを開始することが推奨されます。
 
-### <a name="ios--tvos"></a>iOS と tvOS
+### <a name="ios--tvos"></a>iOS / tvOS
 
 既に設定して 1 つ作成される前に、iOS アプリケーションを開発することを確認してください。 埋め込みの .NET を使用します。 [手順に従って](~/tools/dotnet-embedding/get-started/objective-c/ios.md)既に正常にビルドしているコンピューターから iOS アプリケーションのデプロイを前提としています。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 7cf1dde6c65d2971cecd0a59a2e11d6c2d50ee2a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e60ed6cc49921fc7b6e8e2616a6b0bf6f8abb401
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119190"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670091"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>チュートリアル - Xamarin.Android でローカル通知の使用
 
@@ -255,7 +255,7 @@ namespace LocalNotifications
 
 [![2 番目のアクティビティのスクリーン ショット](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
-おめでとうございます! ローカル通知を Android チュートリアルを完了する時点でこのと実際のサンプルを参照できます。 通知の詳細はここでは、ここに表示がよりもので詳細については、する場合について見て多く[通知に関する Google のドキュメント](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)します。
+おめでとうございます! ローカル通知を Android チュートリアルを完了する時点でこのと実際のサンプルを参照できます。 通知の詳細はここでは、ここに表示がよりもので詳細については、する場合について見て多く[通知に関する Google のドキュメント](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)します。
 
 
 ## <a name="summary"></a>まとめ

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: cd80154602cc22668768fe217da7371b77ded003
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fa32783617fce99514560677184f17be904cd42d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112384"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670327"
 ---
 # <a name="launching-the-maps-application"></a>マップ アプリケーションの起動
 
@@ -42,7 +42,7 @@ StartActivity (mapIntent);
 
 -   `geo:latitude,longitude` &ndash; 中央に緯度/経度、マップ アプリを開きます。 
 
--   `geo:latitude,longitude?z=zoom` &ndash; アプリケーションは、緯度/経度の中心し、指定されたレベルに拡大されているマップを開きます。 ズーム レベルの範囲は 1 から 23: 1 の表示全体の地球と 23 は最も近いズーム レベル。
+-   `geo:latitude,longitude?z=zoom` &ndash; アプリケーションは、緯度/経度の中心し、指定されたレベルに拡大されているマップを開きます。 ズーム レベルの範囲は 1 ~ 23。1 は、地球全体を表示し、23 は最も近いズーム レベル。
 
 -   `geo:0,0?q=my+street+address` &ndash; 住所の場所に、マップ アプリを開きます。 
 
@@ -55,7 +55,7 @@ StartActivity (mapIntent);
 
 
 
-Geo の URI スキームの詳細については、次を参照してください。[マップ上の場所を表示する](http://developer.android.com/guide/components/intents-common.html#Maps)します。
+Geo の URI スキームの詳細については、次を参照してください。[マップ上の場所を表示する](https://developer.android.com/guide/components/intents-common.html#Maps)します。
 
 
 ## <a name="street-view"></a>番地のビュー

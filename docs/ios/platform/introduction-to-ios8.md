@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 8e95e674f52cb23be769473e27dc8eb785a77820
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116044"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668752"
 ---
 # <a name="introduction-to-ios-8"></a>IOS 8 の概要
 
@@ -151,7 +151,7 @@ Sprite Kit、apple の 2D ゲーム フレームワークでは、いくつか�
 ## <a name="other-changes"></a>その他の変更
 上記で説明した iOS 8 の主要な変更、および Apple は、既存の多くのフレームワークをさらに更新が。 これらを次に説明します。
 
-- **[Core イメージ](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** : Apple が四角形の領域の検出に対する優れたサポートを追加することで、イメージ処理のフレームワーク上に拡張し、イメージ内での QR コードします。 Mike Bluestein では、彼のブログ投稿の対象に、についての説明をします[iOS 8 でのイメージの検出](http://blog.xamarin.com/image-detection-in-ios-8/)
+- **[Core イメージ](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** : Apple が四角形の領域の検出に対する優れたサポートを追加することで、イメージ処理のフレームワーク上に拡張し、イメージ内での QR コードします。 Mike Bluestein では、彼のブログ投稿の対象に、についての説明をします[iOS 8 でのイメージの検出](https://blog.xamarin.com/image-detection-in-ios-8/)
 
 ## <a name="deprecated-apis"></a>非推奨の API
 IOS 8 で行われたすべての強化された多数の Api が非推奨とされます。 これらのいくつか記載しています。

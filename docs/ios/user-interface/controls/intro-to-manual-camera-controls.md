@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 84c4b699ba2c046eeb70963f3df71ca9a4760f3b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61b3fee9009afb86ccd3fd0e16d7812a8e90feb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104181"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672795"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Xamarin.iOS での手動カメラ コントロール
 
@@ -276,7 +276,7 @@ AV キャプチャ セッションでは、iOS デバイスのカメラからラ
 
 フォーカスのコントロールを直接実行するエンドユーザーを許可すると、アプリケーションは、取得したイメージに美的センスの高い制御を提供できます。
 
-プロ カメラマンが実現するためにイメージのフォーカスを和らげますなど、[ボケ効果](http://en.wikipedia.org/wiki/Bokeh):
+プロ カメラマンが実現するためにイメージのフォーカスを和らげますなど、[ボケ効果](https://en.wikipedia.org/wiki/Bokeh):
 
 [![](intro-to-manual-camera-controls-images/image2.png "ボケの効果")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
@@ -517,7 +517,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 危険度の制御を 3 つの基本的な要素は次のとおりです。
 
 -  **シャッター スピード**– これは、シャッターはカメラのセンサーに光を開いている時間の長さ。 短いシャッターを開くと、時間、小さいライトが、let と、鮮明な画像が (モーション不鮮明)。 シャッターが開いている長く、ぼかしに発生するがよりモーションとで多くの光ができるようにします。
--  **ISO マッピング**– これはフィルム写真からの借用語であり、光を映画では、化学薬品の感度を参照します。 少ない粒度と色の再現をさらに細かく; フィルムの短い ISO 値があります。デジタル センサーの ISO の不足値がある明るさを下げるがセンサー ノイズが軽減します。 ISO の値が大きいほど、イメージが明るくなりますが、多くのセンサー ノイズとします。 "ISO"デジタル センサーでは、メジャーの[電子ゲイン](http://en.wikipedia.org/wiki/Gain)、物理機能ではありません。 
+-  **ISO マッピング**– これはフィルム写真からの借用語であり、光を映画では、化学薬品の感度を参照します。 少ない粒度と色の再現をさらに細かく; フィルムの短い ISO 値があります。デジタル センサーの ISO の不足値がある明るさを下げるがセンサー ノイズが軽減します。 ISO の値が大きいほど、イメージが明るくなりますが、多くのセンサー ノイズとします。 "ISO"デジタル センサーでは、メジャーの[電子ゲイン](https://en.wikipedia.org/wiki/Gain)、物理機能ではありません。 
 -  **レンズの絞り**– これはレンズの開口部のサイズです。 すべての iOS デバイスのレンズの絞りは固定され、露出の調整に使用できる 2 つの値はシャッター スピードと ISO です。
 
 
@@ -817,7 +817,7 @@ CaptureDevice.UnlockForConfiguration();
 
 前に、IOS 8 アプリケーションのホワイト バランスを制御するための詳細について説明します。 白色の分散の動作を簡単に見てをみましょう。
 
-色の知覚の調査、 [CIE 1931 RGB 色空間と CIE 1931 XYZ 色空間](http://en.wikipedia.org/wiki/CIE_1931_color_space)は最初は数学的に色空間を定義します。 1931 で照明 (CIE) 国際委員会によって作成されました。
+色の知覚の調査、 [CIE 1931 RGB 色空間と CIE 1931 XYZ 色空間](https://en.wikipedia.org/wiki/CIE_1931_color_space)は最初は数学的に色空間を定義します。 1931 で照明 (CIE) 国際委員会によって作成されました。
 
 [![](intro-to-manual-camera-controls-images/image17.png "CIE 1931 RGB 色空間と CIE 1931 XYZ 色空間")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
@@ -825,7 +825,7 @@ CaptureDevice.UnlockForConfiguration();
 
 としてグラフに表示される、人間のビジョンの範囲外になるグラフにプロットできる X と Y の値があるし、その結果、これらの色は、カメラで再現できません。
 
-上記の表では、小規模な曲線と呼ばれる、 [Planckian たどった](http://en.wikipedia.org/wiki/Planckian_locus)、(暑)、青の側で大きな数値の度ケルビンの場合) の「色温度を表現する赤色の側 (冷却器) 番号が低い。 これらは、一般的なライティングの場合に便利です。
+上記の表では、小規模な曲線と呼ばれる、 [Planckian たどった](https://en.wikipedia.org/wiki/Planckian_locus)、(暑)、青の側で大きな数値の度ケルビンの場合) の「色温度を表現する赤色の側 (冷却器) 番号が低い。 これらは、一般的なライティングの場合に便利です。
 
 混合照明条件では、ホワイト バランス調整が必要な変更を行う Planckian たどったから逸脱する必要があります。 調整は必要があります。 このような場合に、緑のいずれかに移動または、CIE の赤/赤紫側スケールできます。
 

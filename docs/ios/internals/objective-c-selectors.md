@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: 5d3c8b6bd8f7f788a1de74feddf7fcb378fa5818
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cf39d548dc83fae67e8703d42e9387b8f19504e6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233641"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669754"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS での OBJECTIVE-C セレクター
 
 Objective C の言語がに基づいて*セレクター*します。 セレクターがオブジェクトに送信できるメッセージまたは*クラス*します。 [Xamarin.iOS](~/ios/internals/api-design/index.md)マップのインスタンス、インスタンス メソッドへのセレクターおよびクラスの静的メソッドへのセレクター。
 
-通常の C 関数とは異なり、C++ メンバー関数と同様に) 呼び出すことができません直接セレクターを使用して、 [P/invoke](http://www.mono-project.com/docs/advanced/pinvoke/)セレクターが代わりに、OBJECTIVE-C のクラスに送信されるか、インスタンスを使用して、 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
+通常の C 関数とは異なり、C++ メンバー関数と同様に) 呼び出すことができません直接セレクターを使用して、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)セレクターが代わりに、OBJECTIVE-C のクラスに送信されるか、インスタンスを使用して、 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 関数。
 
 Objective C でのメッセージの詳細については、Apple の参照してください[オブジェクトの操作](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイド。

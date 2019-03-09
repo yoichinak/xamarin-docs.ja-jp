@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 10b692099bae6f444474394144eb7e8bb46d749f
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233927"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667816"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin.iOS での iOS 拡張機能
 
@@ -45,7 +45,7 @@ ms.locfileid: "55233927"
 ユニバーサルの制限事項は次のとおりです。
 
 - [ヘルス キット](~/ios/platform/healthkit.md)と[イベント キット UI](~/ios/platform/eventkit.md)フレームワークを利用できません
-- 拡張機能を使用できない[バック グラウンド モードを拡張](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
+- 拡張機能を使用できない[バック グラウンド モードを拡張](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - 拡張機能は、デバイスのカメラまたはマイク (ただし、既存のメディア ファイルにアクセスすることがあります)、アクセスできません。
 - 拡張機能は空気を削除するデータを受信できません (ただし、空気のドロップを使用してデータを送信することができます)
 - [UIActionSheet](xref:UIKit.UIActionSheet)と["uialertview"](xref:UIKit.UIAlertView)が使用不可能です拡張機能を使用する必要があります[UIAlertController。](xref:UIKit.UIAlertController)
@@ -71,11 +71,11 @@ ms.locfileid: "55233927"
 
 拡張機能を使用してアプリをホストと通信できる、 [NSExtensionContext](xref:Foundation.NSExtensionContext)オブジェクト。 一部の拡張機能では、結果を使用した非同期のコールバックを受信する操作があります。 これらのコールバックがバック グラウンド スレッドで実行され、考慮します。 この拡張機能を考慮する必要があります。使用して、たとえば、 [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)ユーザー インターフェイスを更新する場合。 参照してください、[ホスト アプリケーションと通信する](#Communicating-with-the-Host-App)詳細については後述します。
 
-既定では、拡張機能とそのコンテナー アプリ通信可能でない、一緒にインストールされているにもかかわらずです。 場合によっては、コンテナー アプリは基本的に、空"shipping"コンテナーを目的とするが、拡張機能がインストールされると処理されます。 ただし、状況下で、必要である場合コンテナー アプリと拡張機能がリソースを共有一般的な領域から。 さらに、**拡張機能を今すぐ**の URL を開くには、そのコンテナー アプリを要求する場合があります。 この動作を示した、[進化 Countdown Widget](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)します。
+既定では、拡張機能とそのコンテナー アプリ通信可能でない、一緒にインストールされているにもかかわらずです。 場合によっては、コンテナー アプリは基本的に、空"shipping"コンテナーを目的とするが、拡張機能がインストールされると処理されます。 ただし、状況下で、必要である場合コンテナー アプリと拡張機能がリソースを共有一般的な領域から。 さらに、**拡張機能を今すぐ**の URL を開くには、そのコンテナー アプリを要求する場合があります。 この動作を示した、[進化 Countdown Widget](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)します。
 
 ## <a name="creating-an-extension"></a>拡張機能の作成
 
-拡張機能 (とそのコンテナー アプリ) は、64 ビット バイナリをする必要があり、Xamarin.iOS を使用して構築された[Unified Api](http://developer.xamarin.com/guides/cross-platform/macios/unified)します。 ソリューションが少なくとも 2 つのプロジェクトを含む拡張機能を開発する場合: コンテナー アプリとプロジェクトの各拡張機能のコンテナーを提供します。 
+拡張機能 (とそのコンテナー アプリ) は、64 ビット バイナリをする必要があり、Xamarin.iOS を使用して構築された[Unified Api](https://developer.xamarin.com/guides/cross-platform/macios/unified)します。 ソリューションが少なくとも 2 つのプロジェクトを含む拡張機能を開発する場合: コンテナー アプリとプロジェクトの各拡張機能のコンテナーを提供します。 
 
 ### <a name="container-app-project-requirements"></a>コンテナー アプリのプロジェクトの要件
 

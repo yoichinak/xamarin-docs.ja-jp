@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 42ec5ddb6846ccf733f2bf18812f43e7afd45f34
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058579"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672548"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Azure Mobile Apps からプッシュ通知を送信します。
 
@@ -58,7 +58,7 @@ Azure Notification Hubs の詳細については、次を参照してくださ�
 Azure Mobile Apps インスタンスに Azure Notification Hub を統合するためのプロセスは次のとおりです。
 
 1. Azure Mobile Apps インスタンスを作成します。 詳細については、[Azure Mobile App の使用](~/xamarin-forms/data-cloud/consuming/azure.md) を参照してください。
-1. 通知ハブを構成します。 詳細については、次を参照してください。[通知ハブを構成](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#create-hub)します。
+1. 通知ハブを構成します。 詳細については、次を参照してください。[通知ハブを構成](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-hub)します。
 1. プッシュ通知を送信する Azure Mobile Apps のインスタンスを更新します。 詳細については、次を参照してください。[プッシュ通知を送信するサーバー プロジェクトを更新](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications)します。
 1. 各 PNS に登録します。
 1. 各 PNS との通信に、通知ハブを構成します。

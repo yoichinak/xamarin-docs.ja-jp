@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: 7152e37c4035ac5f9a259fa48b91d5f29752d1f7
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 0ba748823f980f65d1a341d2b2c15610440bf05e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197135"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668297"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の概要
 
@@ -102,6 +102,6 @@ Xamarin.Essentials は NuGet パッケージとして入手可能で、Visual St
 
 Xamarin を使用したことがない開発者は、[Xamarin 開発の概要](~/cross-platform/getting-started/index.md)に関するページを参照することをお勧めします。
 
-現在のソース コード、今後の内容、サンプルの実行、リポジトリの複製について確認するには、[Xamarin.Essentials の GitHub リポジトリ](http://github.com/xamarin/Essentials)をご覧ください。 コミュニティへの投稿も歓迎します。
+現在のソース コード、今後の内容、サンプルの実行、リポジトリの複製について確認するには、[Xamarin.Essentials の GitHub リポジトリ](https://github.com/xamarin/Essentials)をご覧ください。 コミュニティへの投稿も歓迎します。
 
 Xamarin.Essentials のすべての機能の [API ドキュメント](xref:Xamarin.Essentials)を参照します。

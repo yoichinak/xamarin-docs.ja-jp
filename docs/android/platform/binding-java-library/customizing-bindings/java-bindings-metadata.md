@@ -1,5 +1,5 @@
 ---
-title: Java バインドメタ データ
+title: Java バインド メタデータ
 description: C#Xamarin.Android でのコードでは、バインドは、Java ネイティブ インターフェイス (JNI) で指定された低レベルの詳細を抽象化するメカニズムを Java ライブラリを呼び出します。 Xamarin.Android では、これらのバインドを生成するツールを提供します。 このツールには、開発者のコントロールにより、プロシージャは名前空間を変更して、メンバーの名前を変更するなどのメタデータを使用して、バインディングを作成する方法ことができます。 このドキュメントのメタデータの動作方法について説明します、メタデータを属性をまとめたものをサポートしているし、このメタデータの変更によるバインドの問題を解決する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 858f1e5c0bd2af85b419bb9a1cffb7d484f3f7e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113405"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669896"
 ---
-# <a name="java-bindings-metadata"></a>Java バインドメタ データ
+# <a name="java-bindings-metadata"></a>Java バインド メタデータ
 
 _C#Xamarin.Android でのコードでは、バインドは、Java ネイティブ インターフェイス (JNI) で指定された低レベルの詳細を抽象化するメカニズムを Java ライブラリを呼び出します。Xamarin.Android では、これらのバインドを生成するツールを提供します。このツールには、開発者のコントロールにより、プロシージャは名前空間を変更して、メンバーの名前を変更するなどのメタデータを使用して、バインディングを作成する方法ことができます。このドキュメントのメタデータの動作方法について説明します、メタデータを属性をまとめたものをサポートしているし、このメタデータの変更によるバインドの問題を解決する方法について説明します。_
 
@@ -77,7 +77,7 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 ## <a name="metadataxml-transform-file"></a>Metadata.xml 変換ファイル
 
 既に学習した、ファイルと**Metadata.xml**バインド アセンブリの作成に影響するバインディング ジェネレーターによって使用されます。
-メタデータ形式を使用して[XPath](https://www.w3.org/TR/xpath/)構文とほぼ同一である、 *GAPI メタデータ*で説明されている[GAPI メタデータ](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)ガイド。 この実装では、XPath 1.0 のほぼ完全な実装ですし、したがって 1.0 標準で項目をサポートします。 このファイルは、変更、追加、非表示にする、または API ファイルで任意の要素または属性に移動する強力な XPath ベースのメカニズムです。 すべてのメタデータの仕様の規則要素には、ルールが適用されるノードを識別するパス属性が含まれます。 ルールは、次の順序で適用されます。
+メタデータ形式を使用して[XPath](https://www.w3.org/TR/xpath/)構文とほぼ同一である、 *GAPI メタデータ*で説明されている[GAPI メタデータ](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)ガイド。 この実装では、XPath 1.0 のほぼ完全な実装ですし、したがって 1.0 標準で項目をサポートします。 このファイルは、変更、追加、非表示にする、または API ファイルで任意の要素または属性に移動する強力な XPath ベースのメカニズムです。 すべてのメタデータの仕様の規則要素には、ルールが適用されるノードを識別するパス属性が含まれます。 ルールは、次の順序で適用されます。
 
 * **ノードの追加**&ndash;パス属性で指定されたノードに子ノードを追加します。
 * **attr** &ndash;パス属性で指定された要素の属性の値を設定します。
@@ -223,7 +223,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 `managedType` メソッドの戻り値の型の変更に使用されます。 状況によってはバインディング ジェネレーターが正しく推測、コンパイル時エラーになります、Java のメソッドの戻り値の型。 このような状況でソリューションの 1 つでは、メソッドの戻り値の型を変更します。
 
-たとえば、バインディング ジェネレーターは Java メソッド`de.neom.neoreadersdk.resolution.compareTo()`返す必要があります、 `int`、その結果は、エラー メッセージに**エラー CS0535: ' DE します。Neom.Neoreadersdk.Resolution' はインターフェイス メンバー 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)' を実装していない**します。 次のスニペットは、生成された戻り値の型を変更する方法を示しますC#からメソッド、`int`を`Java.Lang.Object`: 
+たとえば、バインディング ジェネレーターは Java メソッド`de.neom.neoreadersdk.resolution.compareTo()`返す必要があります、 `int`、その結果は、エラー メッセージに**エラー CS0535:' DE します。Neom.Neoreadersdk.Resolution' はインターフェイス メンバー 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)' を実装していない**します。 次のスニペットは、生成された戻り値の型を変更する方法を示しますC#からメソッド、`int`を`Java.Lang.Object`: 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -347,4 +347,4 @@ realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 
 - [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
 - [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)
-- [GAPI メタデータ](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI メタデータ](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)

@@ -1,5 +1,5 @@
 ---
-title: タブ付きレイ アウト
+title: タブ付きレイアウト
 description: Android でのタブ付きレイ アウトの概要
 ms.prod: xamarin
 ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
@@ -7,14 +7,9 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 5d88ffb44d12ee142314c74ca8e749164cbfe3b9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105962"
 ---
-# <a name="tabbed-layouts"></a>タブ付きレイ アウト
+
+# <a name="tabbed-layouts"></a>タブ付きレイアウト
 
 
 ## <a name="overview"></a>概要
@@ -34,6 +29,6 @@ ms.locfileid: "50105962"
 
 ## <a name="related-links"></a>関連リンク
 
-- [素材のデザインのタブ](https://material.io/guidelines/components/tabs.html)- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [素材のデザインのタブ](https://material.io/guidelines/components/tabs.html)- [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
 - [Android サポート ライブラリ v7 AppCompat NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
-- [v7 appcompat ライブラリ](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
+- [v7 appcompat ライブラリ](https://developer.android.com/tools/support-library/features.html#v7-appcompat)

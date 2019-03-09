@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
-ms.openlocfilehash: 18dac665eec1c5d3ac64065c37e73022670c1ba5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 48ef40ce8560fd9fbb842dde70622d968591ab98
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108848"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666906"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>旧バージョンと Android のサポート パッケージとの互換性を提供します。
 
-フラグメントの有用性になることがなく下位事前 Android 3.0 (API レベル 11) デバイスとの互換性に制限されています。 この機能を提供するには、Google が導入された、[サポート ライブラリ](http://developer.android.com/sdk/compatibility-library.html)(最初と呼ばれる、 *Android Compatibility Library*が解放されるときに) どの backports から新しいバージョンの Api の一部以前のバージョンの Android を android。 Android デバイスを Android 2.3.3 Android 1.6 (API レベル 4) を実行できるようにするサポート パッケージになります。 (API レベル 10)。
+フラグメントの有用性になることがなく下位事前 Android 3.0 (API レベル 11) デバイスとの互換性に制限されています。 この機能を提供するには、Google が導入された、[サポート ライブラリ](https://developer.android.com/sdk/compatibility-library.html)(最初と呼ばれる、 *Android Compatibility Library*が解放されるときに) どの backports から新しいバージョンの Api の一部以前のバージョンの Android を android。 Android デバイスを Android 2.3.3 Android 1.6 (API レベル 4) を実行できるようにするサポート パッケージになります。 (API レベル 10)。
 
 > [!NOTE]
 > のみ、`ListFragment`と`DialogFragment`は Android のサポート パッケージで利用できます。 など、サブクラスをフラグメントの他、 `PreferenceFragment,` Android サポート パッケージでサポートされます。 前の Android 3.0 アプリケーションでは機能しません。 

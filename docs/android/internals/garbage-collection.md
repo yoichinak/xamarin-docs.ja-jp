@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 347793934b01d26d22455189c12b0f1d5213a40b
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: c5a4247b2e10706014c9f92a487803e4a718c1a6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170976"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671978"
 ---
 # <a name="garbage-collection"></a>ガベージ コレクション
 
-Xamarin.Android で Mono を使用して[単純な世代別ガベージ コレクター](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/)します。 これは、2 つの世代にマーク アンド スイープ ガベージ コレクターと*ラージ オブジェクト スペース*、2 つの種類のコレクションで。 
+Xamarin.Android で Mono を使用して[単純な世代別ガベージ コレクター](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)します。 これは、2 つの世代にマーク アンド スイープ ガベージ コレクターと*ラージ オブジェクト スペース*、2 つの種類のコレクションで。 
 
 -   マイナー コレクション (収集 Gen0 ヒープ) 
 -   (収集 Gen1 およびラージ オブジェクト スペース ヒープ) の主要なコレクション。 
@@ -37,16 +37,16 @@ Xamarin.Android で Mono を使用して[単純な世代別ガベージ コレ�
 -   **マネージ オブジェクト**: 型は*いない*から継承[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) 、例: [System.String](xref:System.String)します。 
     これらは、GC によって通常収集されます。 
 
--   **Java オブジェクト**: Java の型が Android ランタイム VM 内に存在するが、Mono の VM には公開されません。 これらは、退屈であり、これ以上説明しません。 これらは、Android ランタイム VM によって通常収集されます。 
+-   **Java オブジェクト**:Java 型が Android ランタイム VM 内に存在するが、Mono の VM には公開されません。 これらは、退屈であり、これ以上説明しません。 これらは、Android ランタイム VM によって通常収集されます。 
 
 -   **ピア オブジェクト**: 実装する型[IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) 、例: すべて[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)と[Java.Lang.Throwable](https://developer.xamarin.com/api/type/Java.Lang.Throwable/)サブクラスです。 これらの型のインスタンスがある 2 つの"halfs"、*管理されているピア*と*ネイティブ ピア*します。 管理対象のピアのインスタンスである、C#クラス。 ネイティブのピアが Android ランタイム VM 内での Java クラスのインスタンスとC# [IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/)プロパティには、ネイティブのピアに JNI グローバル参照が含まれています。 
 
 
 ネイティブのピアの 2 種類あります。
 
--   **フレームワークのピア**: 例: xamarin.android を何もがわかっている"Normal"Java 型[android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)します。
+-   **フレームワークのピア**:例: xamarin.android を何もがわかっている Java 型を「正常」 [android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)します。
 
--   **ユーザーのピア**: [Android 呼び出し可能ラッパー](~/android/platform/java-integration/working-with-jni.md)ビルド時に、アプリケーション内に存在する各 Java.Lang.Object サブクラスが生成されます。
+-   **ユーザーのピア**:[Android 呼び出し可能ラッパー](~/android/platform/java-integration/working-with-jni.md)ビルド時に、アプリケーション内に存在する各 Java.Lang.Object サブクラスが生成されます。
 
 
 Xamarin.Android プロセス内で 2 つの Vm があるとは、ガベージ コレクションの 2 つの種類があります。
@@ -69,7 +69,7 @@ Mono のコレクションとは、楽しい作業が行われる場所です。
 
 ## <a name="object-cycles"></a>オブジェクトのサイクル
 
-ピア オブジェクトは、Android ランタイムおよび Mono VM の内部で論理的に存在します。 たとえば、 [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)ピアのマネージ インスタンスは、対応する必要が[android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework ピア Java インスタンス。 すべてのオブジェクトから継承する[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)ことが期待される両方の Vm 内の表現があります。 
+ピア オブジェクトは、Android ランタイムおよび Mono VM の内部で論理的に存在します。 たとえば、 [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)ピアのマネージ インスタンスは、対応する必要が[android.app.Activity](https://developer.android.com/reference/android/app/Activity.html) framework ピア Java インスタンス。 すべてのオブジェクトから継承する[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)ことが期待される両方の Vm 内の表現があります。 
 
 両方の Vm で表現するすべてのオブジェクトが 1 つの VM 内でのみ存在するオブジェクトと比較して、拡張の有効期間になります (など、 [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601))。 呼び出す[GC。収集](xref:System.GC.Collect)Xamarin.Android GC が収集する前にいずれかの VM で、オブジェクトが参照されていないことを確認する必要が必ずしも、これらのオブジェクトを収集しません。 
 
@@ -78,7 +78,7 @@ Mono のコレクションとは、楽しい作業が行われる場所です。
 
 ## <a name="automatic-collections"></a>自動コレクション
 
-以降で[リリース 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)、gref しきい値を超えたときに Xamarin.Android がフル GC に自動的に実行します。 このしきい値は 90% のプラットフォームの既知の最大 grefs: 1800 grefs エミュレーター (最大 2000) でと 46800 grefs ハードウェア (最大 52000)。 *注:* Xamarin.Android によって作成された grefs だけがカウント[Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)は、その他のプロセスで作成した grefs は認識していないとします。 これは、ヒューリスティック*のみ*します。 
+以降で[リリース 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)、gref しきい値を超えたときに Xamarin.Android がフル GC に自動的に実行します。 このしきい値は、プラットフォームの既知の最大 grefs の 90% を示します。エミュレーター (最大 2000) で 1800 grefs と 46800 grefs ハードウェア (最大 52000)。 *注:* Xamarin.Android によって作成された grefs だけがカウント[Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)は、その他のプロセスで作成した grefs は認識していないとします。 これは、ヒューリスティック*のみ*します。 
 
 自動のコレクションが実行されると、次のようなメッセージは、デバッグ ログを印刷します。
 
@@ -102,10 +102,10 @@ GC ブリッジは、Mono のガベージ コレクションとアウトされ�
 
 この複雑な処理が実現のサブクラス`Java.Lang.Object`任意のオブジェクトを自由に参照以外に Java でのオブジェクトをバインドできるすべての制限を削除しますC#します。 このような複雑さのためには、アプリケーションで顕著な一時停止する可能性が、ブリッジ処理を非常に高価なことができます。 アプリケーションで大きな一時停止が発生している場合は、次の 3 つの GC ブリッジ実装のいずれかを調べてみる価値は。 
 
--   **Tarjan** -GC ブリッジのまったく新しいデザインに基づいて[Robert Tarjan のアルゴリズムの伝達を逆参照と](http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)します。
+-   **Tarjan** -GC ブリッジのまったく新しいデザインに基づいて[Robert Tarjan のアルゴリズムの伝達を逆参照と](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)します。
     最適なパフォーマンス、シミュレートされたワークロードでは、は、実験用のコードの大きな共有もあります。 
 
--   **新しい**-二次動作の 2 つのインスタンスの修正がコア アルゴリズムを保持する、元のコードの主要な改訂 (に基づいて[Kosaraju のアルゴリズム](http://en.wikipedia.org/wiki/Kosaraju's_algorithm)コンポーネントが接続されている厳密に検索用)。 
+-   **新しい**-二次動作の 2 つのインスタンスの修正がコア アルゴリズムを保持する、元のコードの主要な改訂 (に基づいて[Kosaraju のアルゴリズム](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)コンポーネントが接続されている厳密に検索用)。 
 
 -   **古い**-元の実装 (3 つの最も安定したと見なされます)。 これは、アプリケーションで使用する場合のブリッジ、`GC_BRIDGE`一時停止が許容されます。 
 
@@ -166,7 +166,7 @@ using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-上記は安全なので、ピアを[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/)返しますはフレームワークのピアを参照してください*いない*User ピア。 `Dispose()`呼び出しの最後に、`using`ブロックは、管理対象の間のリレーションシップを解除[ディスプレイ](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)および framework[ディスプレイ](http://developer.android.com/reference/android/graphics/drawable/Drawable.html)Java インスタンスをインスタンスAndroid ランタイムをする必要があるとすぐに収集されます。 これが*いない*User ピアにピア インスタンスと呼ばれる場合は、安全では、ここに"external"の情報を使用して*知る*を`Drawable`User ピアを参照できませんので、`Dispose()`を呼び出す安全です。 
+上記は安全なので、ピアを[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/)返しますはフレームワークのピアを参照してください*いない*User ピア。 `Dispose()`呼び出しの最後に、`using`ブロックは、管理対象の間のリレーションシップを解除[ディスプレイ](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)および framework[ディスプレイ](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)Java インスタンスをインスタンスAndroid ランタイムをする必要があるとすぐに収集されます。 これが*いない*User ピアにピア インスタンスと呼ばれる場合は、安全では、ここに"external"の情報を使用して*知る*を`Drawable`User ピアを参照できませんので、`Dispose()`を呼び出す安全です。 
 
 
 #### <a name="disposing-other-types"></a>その他の種類の破棄 
@@ -351,16 +351,16 @@ class BetterActivity : Activity {
 
 `MONO_GC_PARAMS`環境変数は、次のパラメーターのコンマ区切りの一覧。 
 
--   `nursery-size` = *サイズ*: 新世代のサイズを設定します。 サイズはバイト単位で、2 の累乗である必要があります。 サフィックス`k`、`m`と`g`キロ、200万とギガバイトでそれぞれ指定するために使用できます。 新世代は、(2) の第 1 世代です。 大きい新世代では、プログラムの速度が通常より多くのメモリを明らかに使用されます。 既定の新世代のサイズを 512 kb です。 
+-   `nursery-size` = *サイズ*:新世代のサイズを設定します。 サイズはバイト単位で、2 の累乗である必要があります。 サフィックス`k`、`m`と`g`キロ、200万とギガバイトでそれぞれ指定するために使用できます。 新世代は、(2) の第 1 世代です。 大きい新世代では、プログラムの速度が通常より多くのメモリを明らかに使用されます。 既定の新世代のサイズを 512 kb です。 
 
--   `soft-heap-limit` = *サイズ*: ターゲットの最大は、アプリのメモリ使用量を管理します。 メモリ使用量が指定の値を下回ると、実行時間 (少ないコレクション) の GC が最適化されています。 
+-   `soft-heap-limit` = *サイズ*:ターゲットの最大では、アプリのメモリ使用量を管理します。 メモリ使用量が指定の値を下回ると、実行時間 (少ないコレクション) の GC が最適化されています。 
     メモリ使用量 (複数のコレクション) は、GC が、この上限を超えた最適化されています。 
 
--   `evacuation-threshold` = *しきい値*: % で退避のしきい値を設定します。 値は 0 ~ 100 の範囲の整数である必要があります。 既定値は 66 です。 コレクションのスイープのフェーズでは、特定のヒープ ブロック型の占有率がこの割合に達しなかったことが検出されるは、コピーする占有率を 100% に近くなってを復元できるため、次の主要なコレクションでそのブロック型のコレクションを行います。 値 0 は、退避をオフにします。 
+-   `evacuation-threshold` = *しきい値*:退避のしきい値を % に設定します。 値は 0 ~ 100 の範囲の整数である必要があります。 既定値は 66 です。 コレクションのスイープのフェーズでは、特定のヒープ ブロック型の占有率がこの割合に達しなかったことが検出されるは、コピーする占有率を 100% に近くなってを復元できるため、次の主要なコレクションでそのブロック型のコレクションを行います。 値 0 は、退避をオフにします。 
 
--   `bridge-implementation` = *実装をブリッジ*: GC ブリッジ アドレス GC パフォーマンスの問題のヘルプが設定されます。 3 つの値がある:*古い*、*新しい*、 *tarjan*します。
+-   `bridge-implementation` = *実装をブリッジ*:これにより、GC のパフォーマンスの問題に対処する GC ブリッジ オプションが設定されます。 3 つの値がある:*古い*、*新しい*、 *tarjan*します。
 
--   `bridge-require-precise-merge`ブリッジには引き起こす可能性があります、まれに、オブジェクトを最適化が含まれています: Tarjan では、まずガベージになった後に 1 つの GC が収集されます。 このオプションを含むより遅い可能性がありますより予測可能な Gc を行う、その最適化を無効にします。
+-   `bridge-require-precise-merge`:ブリッジが引き起こす可能性があります、まれに、オブジェクトを最適化を含む Tarjan では、まずガベージになった後に 1 つの GC が収集されます。 このオプションを含むより遅い可能性がありますより予測可能な Gc を行う、その最適化を無効にします。
 
 たとえば、128 MB のヒープ サイズの制限を GC で構成するを使用してプロジェクトを新しいファイルを追加、**ビルド アクション**の`AndroidEnvironment`内容。 
 

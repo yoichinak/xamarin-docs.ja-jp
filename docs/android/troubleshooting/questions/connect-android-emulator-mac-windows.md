@@ -1,5 +1,5 @@
 ---
-title: Windows VM から Mac で実行する Android エミュレーターに接続することはできますか中でしょうか。
+title: Windows VM から Mac 上で動作する Android エミュレーターに接続できますか
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: 6e66bf4edb4269aa0f3b765df4a08b78c128f763
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 35bfdb92ccfffe54f0ca10dc001d8919703a5bd8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115641"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668154"
 ---
-# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Windows VM から Mac で実行する Android エミュレーターに接続することはできますか中でしょうか。
+# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Windows VM から Mac 上で動作する Android エミュレーターに接続できますか
 
 Windows 仮想マシンから、Mac で実行されている Android エミュレーターに接続するには、次の手順を使用します。
 
@@ -35,9 +35,9 @@ Windows 仮想マシンから、Mac で実行されている Android エミュ�
     emulator6 94105 macuser   21u  IPv4 0xa8dacfb1d845a51f      0t0  TCP localhost:5554 (LISTEN)
     ```
 
-    奇数のポートに接続するために使用する 1 つは、`adb`します。 参照してください[ http://developer.android.com/tools/devices/emulator.html#emulatornetworking](http://developer.android.com/tools/devices/emulator.html#emulatornetworking)します。
+    奇数のポートに接続するために使用する 1 つは、`adb`します。 参照してください[ https://developer.android.com/tools/devices/emulator.html#emulatornetworking](https://developer.android.com/tools/devices/emulator.html#emulatornetworking)します。
 
-4.  _オプション 1_: 使用 [`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
+4.  _オプション 1_:使用 [`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
     受信 TCP パケットを転送する受信した外部ポート 5555 で (またはなどの他の任意のポート) のループバック インターフェイス上のポートを奇数に (**127.0.0.1 5555**この例では)、送信パケットを転送するには、再びの他の方法。
 
     ```bash
@@ -50,7 +50,7 @@ Windows 仮想マシンから、Mac で実行されている Android エミュ�
 
     (オプション 1 が、通常は、オプション 2 の場合より簡単場合に特に**システム環境設定 > プライバシーおよびセキュリティ > ファイアウォール**がオンにします)。 
 
-    _オプション 2_: 使用 [`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
+    _オプション 2_:使用 [`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
     ポートから TCP パケットをリダイレクトする`5555`(またはたいその他の任意のポート) で、[共有ネットワーク](http://kb.parallels.com/en/4948)のループバック インターフェイスに奇数ポートへのインターフェイス (`127.0.0.1:5555`この例では)。
 
     ```bash
@@ -95,7 +95,7 @@ Windows 仮想マシンから、Mac で実行されている Android エミュ�
 
 ### <a name="alternate-technique-using-adb--h-is-not-yet-supported"></a>代替手法を使用して`adb -H`はまだサポートされていません
 
-理論上は、使用する別の方法があります`adb`の組み込みの機能への接続に、`adb`リモート コンピューターで実行しているサーバー (例を参照してください[ http://stackoverflow.com/a/18551325 ](http://stackoverflow.com/a/18551325))。
+理論上は、使用する別の方法があります`adb`の組み込みの機能への接続に、`adb`リモート コンピューターで実行しているサーバー (例を参照してください[ https://stackoverflow.com/a/18551325 ](https://stackoverflow.com/a/18551325))。
 Xamarin.Android の IDE 拡張機能はそのオプションを構成する方法を現在提供していません。
 
 ## <a name="contact-information"></a>連絡先情報

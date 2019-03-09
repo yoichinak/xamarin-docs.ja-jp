@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: f3315563725da7c54febd852298c60003eb056a4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2ed14752cc5906b68d277b4f492875f7e281b053
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104896"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671456"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>スライダー、スイッチ、および Xamarin.iOS でセグメント付きコントロール
 
@@ -50,7 +50,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
  [![](slider-switch-segmented-controls-images/image27a.png "カスタムのスライダー")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 現時点では、[バグ](http://stackoverflow.com/a/19496179)原因、`ThumbTint`期待どおりに実行時に表示されません。 次のコード行を追加する**する前に**回避策としては、上記のコード。 [[ソース](http://stackoverflow.com/a/21396794)]。
+> 現時点では、[バグ](https://stackoverflow.com/a/19496179)原因、`ThumbTint`期待どおりに実行時に表示されません。 次のコード行を追加する**する前に**回避策としては、上記のコード。 [[ソース](https://stackoverflow.com/a/21396794)]。
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 

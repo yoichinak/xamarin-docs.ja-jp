@@ -6,12 +6,13 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 03/19/2017
+ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233914"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672574"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>追加の iOS 9 フレームワークの変更
 
@@ -103,7 +104,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>省電力モードへの対応
 
-使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](xref:Foundation.NSProcessInfo)クラスで、アプリが実行されている iOS デバイスで、低電力モードが有効にされているかどうかを決定します。 例:
+使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](xref:Foundation.NSProcessInfo)クラスで、アプリが実行されている iOS デバイスで、低電力モードが有効にされているかどうかを決定します。 例えば:
 
 ```csharp
 // Is the device in low power mode?
@@ -195,9 +196,9 @@ Apple での複数の要素に多くの機能強化が含まれている、 [UIK
 
 ### <a name="3d-touch-events"></a>3D タッチ イベント
 
-IOS 9 と iPhone 6 s および iPhone 6 s 新しい 3D Touch さらに、iOS アプリに負荷の機密性の高いジェスチャを追加します。 その結果、アプリが iOS 9 (またはそれ以上) で実行されている iOS デバイスが 3D タッチをサポートできる場合は、負荷の変更により、`TouchesMoved`イベントが発生します。 
+IOS 9 と iPhone 6 s および iPhone 6 s 新しい 3D Touch さらに、iOS アプリに負荷の機密性の高いジェスチャを追加します。 その結果、アプリが iOS 9 (またはそれ以上) で実行されている iOS デバイスが 3D タッチをサポートできる場合は、負荷の変更により、`TouchesMoved`イベントが発生します。
 
-この動作の変更のための iOS アプリを準備する必要があります、`TouchesMoved`より多くの場合、呼び出されるイベント場合でも、X Y 座標が変更されていない/。 
+この動作の変更のための iOS アプリを準備する必要があります、`TouchesMoved`より多くの場合、呼び出されるイベント場合でも、X Y 座標が変更されていない/。
 
 詳細についてを参照してください、 [3D Touch 概要](~/ios/platform/3d-touch.md)ガイド。
 

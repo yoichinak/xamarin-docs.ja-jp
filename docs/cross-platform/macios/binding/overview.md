@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: c68cdc443f11ec6709a9d6fdde8ce10cd9db6733
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 4f08468d08e12ad77cacbac66b55ad8fc6ead433
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233680"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667965"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C バインディングの概要
 
@@ -74,7 +74,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 使用することは、 [[登録]](xref:Foundation.RegisterAttribute)属性、 [[エクスポート]](xref:Foundation.ExportAttribute)属性、および[手動 OBJECTIVE-C セレクター呼び出し](~/ios/internals/objective-c-selectors.md)まとめて手動でバインドする新しい (以前Objective C 型のバインド解除) します。
 
-最初に、バインドする型を検索します。 ディスカッションの目的 (とわかりやすくするため)、バインドします、 [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)型 (でバインド既に[Foundation.NSEnumerator](xref:Foundation.NSEnumerator); 以下の実装が目的では例だけ)。
+最初に、バインドする型を検索します。 ディスカッションの目的 (とわかりやすくするため)、バインドします、 [NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)型 (でバインド既に[Foundation.NSEnumerator](xref:Foundation.NSEnumerator); 以下の実装が目的では例だけ)。
 
 次に、作成する必要があります、C#型。 名前空間に配置するこのたいします可能性があります。使用する必要があります Objective C が名前空間をサポートしていないため、 `[Register]` Xamarin.iOS は、OBJECTIVE-C ランタイムを登録する型名を変更する属性。 C#型を継承する必要がありますも[Foundation.NSObject](xref:Foundation.NSObject):
 

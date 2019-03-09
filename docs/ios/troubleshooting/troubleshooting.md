@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 1a98cf854ffdd1d4904981f85fd8e33ad486743c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233953"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672751"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin.iOS のトラブルシューティングのヒント 
 
@@ -396,7 +396,7 @@ IPhone ではないプロジェクトから iPhone UI を作成しようとす�
 これは、アプリケーション名が含まれる場合に発生することができます、'.'(ドット)、名前にします。
 これは、その他の多くの場合 (デバイス) のような動作を可能な場合でも、CFBundleExecutable - で実行可能ファイル名として禁止されています。
 
- *「、値は、名の任意の拡張子を含める必要がありますしない」です。- [http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ *「、値は、名の任意の拡張子を含める必要がありますしない」です。- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>エラー :「0x43 カスタム属性の型がサポートされていません」.xib ファイルをダブルクリックしたとき
 

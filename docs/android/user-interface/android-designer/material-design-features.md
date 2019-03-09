@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: eb636c3b7a41adbab9162e192ead65def377a1a0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5e6d7b4bdfdf7ea48d26537cb41c763656b050e0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118982"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669654"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android デザイナー マテリアル デザイン機能
 
@@ -20,7 +20,7 @@ _このトピックでは、素材の設計に準拠していませんレイア�
 
 > [!Video https://youtube.com/embed/E3_ZjIOzVzY]
 
-**Evolve 2016: すべてのユーザーを作成できます美しいアプリ マテリアル デザイン**
+**Evolve 2016:すべてのユーザーには、マテリアル デザイン美しいアプリを作成できます。**
 
 ## <a name="overview"></a>概要
 
@@ -90,7 +90,7 @@ Xamarin.Android のデザイナーには、マテリアル デザイン準拠の
 [![タブを継承します。](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
 
 この例で、**既定のテーマ**を使用するスタイルを継承`@color/background_material_light`でよりも優先されますが、`color/material_grey_50`のカラー コード値を持つ`#fffafafa`します。
-スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](http://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
+スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
 
 ### <a name="color-picker"></a>カラー ピッカー
 
@@ -271,7 +271,7 @@ Hue を選択すると、プロパティの色が選択されている hue に�
 [![タブを継承します。](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
 この例で、**既定のテーマ**を使用するスタイルを継承`@color/background_material_dark`でよりも優先されますが、`color/material_grey_850`のカラー コード値を持つ`#ff303030`します。
-スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](http://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
+スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
 
 ### <a name="color-picker"></a>カラー ピッカー
 

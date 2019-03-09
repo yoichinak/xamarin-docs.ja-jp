@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b20760d3e8d7e168b0f0508222d8ae0b743a9368
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9fbbe7d33428c1274d78ed882ced3985b8459072
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058913"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671482"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>パート 5 - 実践的なコード共有戦略
 
@@ -201,7 +201,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 Xamarin.iOS および Xamarin.Android ファイル アクセスの一般的なコードの許可に書き込まれるで実装されている Windows Phone (Silverlight) におけるファイル アクセスの既定のメカニズムです。 `System.IO.IsolatedStorage`で 3 つすべてのプラットフォーム間でクラスを参照できる、[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)します。
 
-参照してください、[分離ストレージの概要の Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)詳細についてはします。
+参照してください、[分離ストレージの概要の Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)詳細についてはします。
 
 分離ストレージ API では使用できない[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)します。 PCL の代わり、[化できる PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
@@ -295,7 +295,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 -  ネットワークを使用できる場合でも、他の要求を開始する前に、ターゲット サーバーとの接続を確認することをお勧めを勧めします。 アプリのネットワーク操作がタイムアウトを繰り返し防止されより多くの情報のエラー メッセージ、ユーザーに表示することもできます。
 
 
-[Xamarin.iOS サンプル](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)使用可能な (Apple のに基づいて[サンプル コードの到達可能性](http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) ネットワークの可用性を検出するためにします。
+[Xamarin.iOS サンプル](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)使用可能な (Apple のに基づいて[サンプル コードの到達可能性](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) ネットワークの可用性を検出するためにします。
 
 
 ## <a name="webservices"></a>WebServices
@@ -387,7 +387,7 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 IOS と Android の構文の両方には、使用できる、コードは、このオブジェクトを UI スレッドでコールバックを必要とする任意のメソッドに渡す必要があることを意味する 'context' クラスが必要です。
 
-共有コードでは、UI スレッドの呼び出しを行う、に従って、 [IDispatchOnUIThread 例](http://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net)(からの引用です[ @follesoe ](http://jonas.follesoe.no/))。 宣言し、プログラムを`IDispatchOnUIThread`共有コードでインターフェイスを次に示すようにプラットフォーム固有のクラスを実装します。
+共有コードでは、UI スレッドの呼び出しを行う、に従って、 [IDispatchOnUIThread 例](https://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net)(からの引用です[ @follesoe ](http://jonas.follesoe.no/))。 宣言し、プログラムを`IDispatchOnUIThread`共有コードでインターフェイスを次に示すようにプラットフォーム固有のクラスを実装します。
 
 ```csharp
 // program to the interface in shared code

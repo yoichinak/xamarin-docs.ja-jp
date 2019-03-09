@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: cade72aaad60c30993f6b11e98704addd218ffae
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209317"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667491"
 ---
 # <a name="adding-appcompat-and-material-design"></a>AppCompat と素材のデザインを追加します。
 
@@ -114,7 +114,7 @@ Android プロジェクトに次の 3 つのファイルを作成し、以下の
 ```
 
 タブの重力を含むタブについて、いくつかのプロパティが設定されて`fill`とするモード`fixed`します。
-多くのタブがある場合は、これを切り替えることがあるスクロール可能な - を通して、Android [TabLayout ドキュメント](http://developer.android.com/reference/android/support/design/widget/TabLayout.html)詳細。
+多くのタブがある場合は、これを切り替えることがあるスクロール可能な - を通して、Android [TabLayout ドキュメント](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)詳細。
 
 **Resources/layout/Toolbar.axml**
 

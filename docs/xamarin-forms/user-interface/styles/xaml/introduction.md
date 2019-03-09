@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6f5af5fde46676cf669e6c02fb83f4aac5d31c46
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 4048ec78d48b810b39d46fbcb7708860c478cce3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292091"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667205"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms のスタイルの概要
 
@@ -133,7 +133,7 @@ public class NoStylesPageCS : ContentPage
 > [!NOTE]
 > **StyleId とは何ですか。**
 >
-> Xamarin.Forms 2.2 では、前に、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティは、UI テスト、およびテーマ エンジン Pixate などの識別用のアプリケーションの個々 の要素を識別するために使用されました。 ただし、Xamarin.Forms 2.2 が導入された、 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)は置き換えられて、プロパティ、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティ。 詳細については、次を参照してください。 [Xamarin.UITest と Test Cloud による Xamarin.Forms の自動化テスト](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md)します。
+> Xamarin.Forms 2.2 では、前に、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティは、UI テスト、およびテーマ エンジン Pixate などの識別用のアプリケーションの個々 の要素を識別するために使用されました。 ただし、Xamarin.Forms 2.2 が導入された、 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)は置き換えられて、プロパティ、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティ。
 
 ## <a name="related-links"></a>関連リンク
 

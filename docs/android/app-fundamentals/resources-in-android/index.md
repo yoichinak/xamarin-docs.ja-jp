@@ -1,5 +1,5 @@
 ---
-title: Android のリソース
+title: Android リソース
 description: この記事では、Xamarin.Android で Android のリソースの概念を紹介し、その使用方法を文書化されます。 アプリケーションのローカライズ、およびさまざまな画面サイズおよび密度を含む複数のデバイスをサポートするために、Android アプリケーションでリソースを使用する方法を説明します。
 ms.prod: xamarin
 ms.assetid: C0DCC856-FA36-04CD-443F-68D26075649E
@@ -7,14 +7,9 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: d9cd6bf3ae51c6e27be88481e412995bd4113c17
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117263"
 ---
-# <a name="android-resources"></a>Android のリソース
+
+# <a name="android-resources"></a>Android リソース
 
 _この記事では、Xamarin.Android で Android のリソースの概念を紹介し、その使用方法を文書化されます。アプリケーションのローカライズ、およびさまざまな画面サイズおよび密度を含む複数のデバイスをサポートするために、Android アプリケーションでリソースを使用する方法を説明します。_
 
@@ -71,6 +66,6 @@ Xamarin.Android アプリケーションでこれらのリソースにアクセ�
 ## <a name="related-links"></a>関連リンク
 
 - [Android アセットの使用](~/android/app-fundamentals/resources-in-android/android-assets.md)
-- [アプリケーションの基礎](http://developer.android.com/guide/topics/fundamentals.html)
-- [アプリケーション リソース](http://developer.android.com/guide/topics/resources/index.html)
-- [複数の画面をサポートしています。](http://developer.android.com/guide/practices/screens_support.html)
+- [アプリケーションの基礎](https://developer.android.com/guide/topics/fundamentals.html)
+- [アプリケーション リソース](https://developer.android.com/guide/topics/resources/index.html)
+- [複数の画面をサポートしています。](https://developer.android.com/guide/practices/screens_support.html)

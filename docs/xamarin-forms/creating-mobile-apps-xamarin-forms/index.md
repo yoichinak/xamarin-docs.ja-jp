@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 5dae8f1907b9a61018e335a8fe19ad319d95741d
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207870"
 ---
+
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms book で Mobile Apps を作成します。
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples)
@@ -113,7 +108,7 @@ Xamarin.Forms には、Windows 8.1 および Windows Phone 8.1 がサポート�
 
 .NET Standard 2.0 ライブラリは、Windows 10 Mobile の任意のバージョンをサポートしていません。 そのため、.NET Standard ライブラリを使用した Xamarin.Forms アプリケーションは、Windows 10 Mobile デバイスでは実行されません。 Xamarin.Forms アプリケーションは引き続き以降、Windows 10 のデスクトップ バージョン 10.0.16299.0 でを実行します。
 
-Xamarin.Forms がサポートするプレビュー、 [Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xamarin-forms/platform/other/wpf.md)、 [GTK #](~/xamarin-forms/platform/other/gtk.md)、および[Tizen](/xamarin-forms/platform/other/tizen.md)プラットフォーム。
+Xamarin.Forms がサポートするプレビュー、 [Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xamarin-forms/platform/other/wpf.md)、 [GTK #](~/xamarin-forms/platform/other/gtk.md)、および[Tizen](~/xamarin-forms/platform/other/tizen.md)プラットフォーム。
 
 ### <a name="chapter-summaries"></a>章の概要
 

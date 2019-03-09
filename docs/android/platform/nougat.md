@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: bf2842679aded21c9677d9cef31910f273518acd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: de2b92a4007f085a14c16f0c1e8ca9e568df1aff
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119177"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668370"
 ---
 # <a name="nougat-features"></a>Nougat 機能
 
@@ -27,7 +27,7 @@ _Xamarin.Android を使用して Android Nougat 用アプリの開発を開始�
 
 [![Android タブレットと Android Nougat を実行している携帯電話のヒーローのイメージ](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
-Android 7.x Api の詳細については、次を参照してください。[開発者向けの Android 7.1](http://developer.android.com/preview/api-overview.html)します。
+Android 7.x Api の詳細については、次を参照してください。[開発者向けの Android 7.1](https://developer.android.com/preview/api-overview.html)します。
 Xamarin.Android 7.0 の既知の問題についてを参照してください、[リリース ノート](https://developer.xamarin.com/releases/android/xamarin.android_7/xamarin.android_7.0/)します。
 
 Android Nougat では、Xamarin.Android 開発者にとって関心のある多くの新機能を提供します。 これには次の機能があります。
@@ -53,7 +53,7 @@ Xamarin ベースのアプリで新しい Android Nougat 機能を使用する�
 
 -   **Android SDK** -Android SDK 7.0 (API 24) 以降、Android SDK Manager を使用してをインストールする必要があります。
 
--   **Java Developer Kit** &ndash; Xamarin Android 7.0 の開発が必要です[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)または以降の API レベル 24 開発している場合、または大きい (JDK 8 もサポートしている API レベル 24 より前)。 カスタム コントロールまたはフォーム プレビューアーを使用している場合、JDK 8 の 64 ビット バージョンが必要です。
+-   **Java Developer Kit** &ndash; Xamarin Android 7.0 の開発が必要です[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)または以降の API レベル 24 開発している場合、または大きい (JDK 8 もサポートしている API レベル 24 より前)。 カスタム コントロールまたはフォーム プレビューアーを使用している場合、JDK 8 の 64 ビット バージョンが必要です。
 
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。
@@ -123,8 +123,8 @@ Android プロジェクトを作成するときに、Android 7.0 以降をター
 
 エミュレーターを使用している場合は、Android AVD マネージャーを起動し、次の設定を使用して新しいデバイスを作成します。
 
--   デバイス: Nexus 5 Nexus 6、Nexus 6p、Nexus プレーヤー、Nexus 9、またはピクセル C. X
--   対象: Android 7.0 - API レベル 24
+-   デバイス:Nexus 5 Nexus 6、Nexus 6p、Nexus プレーヤー、Nexus 9、またはピクセル C. X
+-   ターゲット:Android 7.0 - API レベル 24
 -   ABI x86 または x86\_64。
 
 たとえば、Nexus 6 をエミュレートするためにこの仮想デバイスを構成します。
@@ -150,7 +150,7 @@ Android Nougat では、さまざまな新機能と、複数のウィンドウ�
 
 [![縦長と横長の両方でマルチ ウィンドウ モードで実行されているサンプル アプリ](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-Xamarin.Android アプリのアクティビティがマルチ ウィンドウ モードをサポートする方法を構成することができます。 たとえば、マルチ ウィンドウ モードでの最小サイズと、既定の高さと幅、アプリの設定属性を構成できます。 新たに使用することができます`Activity.IsInMultiWindowMode`プロパティがマルチ ウィンドウ モードで、アクティビティを判断します。 例えば:
+Xamarin.Android アプリのアクティビティがマルチ ウィンドウ モードをサポートする方法を構成することができます。 たとえば、マルチ ウィンドウ モードでの最小サイズと、既定の高さと幅、アプリの設定属性を構成できます。 新たに使用することができます`Activity.IsInMultiWindowMode`プロパティがマルチ ウィンドウ モードで、アクティビティを判断します。 例:
 
 ```csharp
 if (!IsInMultiWindowMode) {

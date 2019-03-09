@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: ea037aaaac97d9f326f1a2fbcb28d97c9d8a9b45
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110252"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669447"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit の実装
 
@@ -43,7 +43,7 @@ MonkeyChat ユーザーの友人の連絡先独自書籍を保持する、各 (B
 
 [![](implementing-sirikit-images/elements01.png "SiriKit のダイアグラムを含むアプリを拡張します。")](implementing-sirikit-images/elements01.png#lightbox)
 
-次の設定があります。
+不足している機能には次が含まれます。
 
 1. **Intents の拡張機能**-ユーザーの応答を検証、ことを確認、アプリは、要求を処理でき、実際には、ユーザーの要求を満たすためにタスクを実行します。
 2. **Intents UI 拡張機能** - *(省略可能)*、Siri 環境で応答するためのカスタム UI を提供します。 ユーザーのエクスペリエンスを強化するための Siri にブランド化およびとアプリの UI を取り込むことができます。
@@ -209,7 +209,7 @@ Apple は、SiriKit のフレームワーク、SiriKit を実装するすべて�
 
 Mac では、次の操作を行います。
 
-1. Web ブラウザーでに移動します。 [ http://developer.apple.com ](http://developer.apple.com)と自分のアカウントにログインします。
+1. Web ブラウザーでに移動します。 [ https://developer.apple.com ](https://developer.apple.com)と自分のアカウントにログインします。
 2. をクリックして**証明書**、**識別子**と**プロファイル**します。
 3. 選択**Provisioning Profiles**選択と**アプリ Id**、順にクリックして、 **+** ボタン。
 4. 入力、**名前**新しいプロファイルの。
@@ -300,7 +300,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 ### <a name="localization-and-siri"></a>ローカリゼーションと Siri
 
-IOS デバイスで、ユーザーは Siri とは異なるシステムの既定の言語を選択できます。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、 `INPreferences` Siri から言語のコードを取得するクラス。 例えば:
+IOS デバイスで、ユーザーは Siri とは異なるシステムの既定の言語を選択できます。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、 `INPreferences` Siri から言語のコードを取得するクラス。 例:
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -689,7 +689,7 @@ Intents の拡張機能をソリューションに追加するには、次の操
 
 ### <a name="configuring-the-main-class"></a>メイン クラスを構成します。
 
-次に、開発者は Siri を目的とした拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成する必要があります。 サブクラス化する必要があります`INExtension`に準拠している`IINIntentHandler`を委任します。 例えば:
+次に、開発者は Siri を目的とした拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成する必要があります。 サブクラス化する必要があります`INExtension`に準拠している`IINIntentHandler`を委任します。 例:
 
 ```csharp
 using System;

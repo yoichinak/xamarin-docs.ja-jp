@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 60751437b891579c97acee0e032defcca2b510f6
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 6a12d157b3de7c3841f5d69d209c01fbc612f79b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233862"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668739"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS で 3D Touch の概要
 
@@ -86,7 +86,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 ### <a name="checking-for-3d-touch-availability"></a>3D Touch 可用性のチェック
 
-使用する場合、 [UIViewController]()でアプリが実行されている iOS デバイスに 3D タッチでサポートされているかどうかに、次のコードを使用することができます。
+使用する場合、`UIViewController`でアプリが実行されている iOS デバイスに 3D タッチでサポートされているかどうかに、次のコードを使用することができます。
 
 ```csharp
 public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
@@ -101,7 +101,7 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
         ...
 ```
 
-前に、このメソッドを呼び出すことができます*後または*`ViewDidLoad()`します。 
+前に、このメソッドを呼び出すことができます*後または*`ViewDidLoad()`します。
 
 ### <a name="handling-peek-and-pop"></a>処理のピークと Pop
 
@@ -281,7 +281,7 @@ public override void ViewDidLoad ()
 * `UIApplicationShortcutItemType` -このアプリ内の項目を識別するために使用する文字列値です。 詳細については、以下のセクションを参照してください。
 
 > [!IMPORTANT]
-> 設定されている、クイック アクション ショートカット項目、`Info.plist`でファイルにアクセスできない、`Application.ShortcutItems`プロパティ。 のみにで渡される、`HandleShortcutItem`イベント ハンドラー。 
+> 設定されている、クイック アクション ショートカット項目、`Info.plist`でファイルにアクセスできない、`Application.ShortcutItems`プロパティ。 のみにで渡される、`HandleShortcutItem`イベント ハンドラー。
 
 
 

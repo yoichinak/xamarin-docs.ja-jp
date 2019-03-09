@@ -6,13 +6,8 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: d6e9fd03025e00da5cff5ed284bdc5f0f268a22b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122609"
 ---
+
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin を使用したゲーム開発の概要
 
 ゲームを開発できる非常に魅力的な特にモバイル プラットフォームでの作業を発行することが簡単であるかを指定します。 この記事では、概念を説明します。 し、目標は、ゲームやプログラムを楽しむのために、高品質の AAA を作成するかどうか、どのようにゲームの開発に関連するテクノロジが、ゲームを作成します。
@@ -25,12 +20,12 @@ ms.locfileid: "50122609"
 - **ゲームの開発テクノロジ**– ここで、ゲーム開発者として、生産性を向上させるためのクロス プラットフォーム テクノロジの一部を示します。
 
 
-# <a name="game-vs-non-game-programming-concepts"></a>ゲームと非ゲーム プログラミングの概念
+## <a name="game-vs-non-game-programming-concepts"></a>ゲームと非ゲーム プログラミングの概念
 
 新しい概念と開発パターンの多くの場合、プログラマのゲーム開発への移動が表示されます。 このセクションでは、これらの概念の概要を表示します。
 
 
-## <a name="the-game-loop"></a>ゲームのループ
+### <a name="the-game-loop"></a>ゲームのループ
 
 一般的なゲームでは、定数の動きや画面ユーザーの操作と自動のゲーム ロジックの両方への応答で発生するへの変更が必要です。 これは通常対極としてによって実現、*ゲーム ループ*します。 ゲームのループが何らかの種類のループ (while ループ) などのステートメント、30、60 などの非常に高い頻度で実行され*秒あたりのフレーム*します。
 
@@ -54,7 +49,7 @@ ms.locfileid: "50122609"
 多くのゲームではないアプリが発生したイベントに応答の状態を変更する傾向がありますに、多くの上に示したアクティビティ全体のアプリケーションの状態を変更できることに留意してください。
 
 
-## <a name="content-loading-and-unloading"></a>コンテンツの読み込みとアンロード
+### <a name="content-loading-and-unloading"></a>コンテンツの読み込みとアンロード
 
 手動で読み込みおよびアンロード (破棄) のコンテンツは開発で使用するテクノロジに応じて必要あります。 手動で読み込むと、資産のアンロードはさまざまな理由のために必要な可能性があります。
 
@@ -65,7 +60,7 @@ ms.locfileid: "50122609"
 カスタム ファイル形式は、読み込み時に処理がカスタムの読み込みコードを必要とする必要があります。
 
 
-## <a name="math"></a>数値演算
+### <a name="math"></a>数値演算
 
 多くのゲームでは、ゲーム以外のアプリケーションよりもより高度な数学が必要です。 もちろん、数学のレベルは、ゲームの複雑さによって異なります。 一般に 3D ゲームでは、2 D よりも複数の数値演算が必要です。 さいわいなことに単純なゲームで常に開始することができ、更に学びを深めることが可能です。 ゲーム開発は、数学を学習する優れた方法かもしれません。
 
@@ -82,14 +77,14 @@ ms.locfileid: "50122609"
 3D ゲームをすることを計画している場合は、線形代数 (回転、および 3 次元空間で移動) 用に (高速化を実装する) のいくつかの計算からの概念を理解する必要があります。
 
 
-## <a name="content-pipelines"></a>コンテンツ パイプライン
+### <a name="content-pipelines"></a>コンテンツ パイプライン
 
 用語*コンテンツ パイプライン*ゲームで使用すると、最終的な形式のファイル (.png 画像ファイルなど) を作成する際に、その形式から取得するまでにするプロセスを参照します。 終了の形式をコンテンツの種類が使用されているコンテンツの表示に使用されるテクノロジだけでなくによって異なります。
 
 一部のコンテンツ パイプラインは、非常に高速し、労力を必要としない可能性があります。 たとえば、ほとんどのゲーム エンジンと Api は、未処理の形式で、.png ファイル形式を読み込むことができます。 その一方で、読み込まれる前に別の形式に処理する必要があります (3 D モデル) などのより複雑な形式と、この処理は、資産のサイズと複雑さに応じて時間がかかることができます。
 
 
-# <a name="game-development-teams"></a>ゲームの開発チーム
+## <a name="game-development-teams"></a>ゲームの開発チーム
 
 ゲーム開発には、プロセスに関連する個人向けの新しい役割とタイトルが導入されています。 ほとんどのゲーム開発者は、さまざまな分野がいくつか存在するために、完全なゲームを解放するために必要なスキルを満たすことはできません。 これが開発 – 最も一般的な問題の一部の領域の完全な一覧ではないことに留意してください。
 
@@ -100,7 +95,7 @@ ms.locfileid: "50122609"
 - **デザイナーのサウンド**– サウンド デザイナーは、ゲームのオーディオ アセットを担当します。 チームによっては、小規模のチームが担当者のすべてのオーディオの 1 つあります。 中に、効果音や作曲者 の作成を担当する個人の区別可能性があります。
 
 
-# <a name="creating-a-game-idea"></a>ゲームのアイデアを作成します。
+## <a name="creating-a-game-idea"></a>ゲームのアイデアを作成します。
 
 ゲームの設計が表示される簡単 – すべての唯一の要件を行うには、"make 何かおもしろい" 残念ながら、多くの開発者にとって自体には開発を起動するアイデアを作成するとき。
 
@@ -115,12 +110,12 @@ ms.locfileid: "50122609"
 既存のゲームを作り変えても教育エクスペリエンスが、この完成品の商用の実行可能性を制限することができます。 正確な複製では、あるものも含めて、ゲームを作成するプロセスでは、貴重な教育エクスペリエンスを提供します。
 
 
-# <a name="game-development-technology"></a>ゲーム開発テクノロジ
+## <a name="game-development-technology"></a>ゲーム開発テクノロジ
 
 Xamarin.Android と Xamarin.iOS を使用している開発者があるさまざまなテクノロジを利用できるように、ゲーム開発を支援します。 このセクションではいくつかの最も人気のあるクロスプラット フォーム ソリューションについて説明します。
 
 
-## <a name="cocossharp"></a>CocosSharp
+### <a name="cocossharp"></a>CocosSharp
 
 CocosSharp は、Cocos 2D ゲーム エンジンのオープン ソースのクロスプラット フォーム対応バージョンです。 エンジンは、Android、iOS、Mac OS X、Windows デスクトップ、Windows RT および Windows Phone へのアクセスを提供します。
 
@@ -135,7 +130,7 @@ CocosSharp による開始をチェック アウト、 [CocosSharp ガイド](~/
 これをダウンロードして取得の詳細については、 [AngryNinjas Github ページ](https://github.com/xamarin/AngryNinjas)します。
 
 
-## <a name="monogame"></a>MonoGame
+### <a name="monogame"></a>MonoGame
 
 MonoGame は、オープン ソースのクロス プラットフォームのバージョンの Microsoft の XNA API です。 MonoGame を iOS、Android、Mac OS X、Linux、Windows、Windows RT、PS4、PSVita、Xbox One、およびスイッチ用のゲームを作成できます。
 
@@ -156,7 +151,7 @@ FEZ:
 MonoGame を使用した作業を開始するには に進み、 [MonoGame ガイド](~/graphics-games/monogame/index.md)します。
 
 
-## <a name="urhosharp"></a>UrhoSharp
+### <a name="urhosharp"></a>UrhoSharp
 
 UrhoSharp は、クロスプラット フォームで高度な 3D および 2D エンジンのジオメトリで素材、ライトとカメラを使用して、アプリケーションのアニメーションが 2D と 3D のシーンを作成するために使用できます。
 
@@ -164,18 +159,13 @@ UrhoSharp は、クロスプラット フォームで高度な 3D および 2D �
 
 チェック アウト、 [UrhoSharp ガイド](~/graphics-games/urhosharp/index.md)を開始します。
 
-## <a name="additional-technology"></a>その他のテクノロジ
+### <a name="additional-technology"></a>その他のテクノロジ
 
 上の強調表示されているテクノロジは、使用できるテクノロジのサンプルだけです。 注目すべきその他のテクノロジは次のとおりです。
 
-- **Sprite Kit** – Xamarin は、Apple の Sprite Kit ゲームのフレームワークのすべてのネイティブ API の機能にアクセスできるようサポートを提供します。 Sprite Kit は、Apple が作成したテクノロジであるため、iOS のエコシステムの残りの部分との統合を提供します。 もちろん、Sprite Kit はクロスプラット フォーム対応ため、Android では使用できません。 Sprite Kit の使用に関する詳細については、この投稿を参照してください。  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **シーンのキット**– Xamarin iOS アプリに 3D グラフィックの実装を簡素化、Apple のシーン キット framework のサポートも提供します。 シーンのキットは、統合とプラットフォーム固有の考慮事項の Sprite Kit を上記で説明したように、Apple によって提供されるテクノロジもです。 シーンのキットの詳細については、この投稿を参照してください。 [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **Sprite Kit** – Xamarin は、Apple の Sprite Kit ゲームのフレームワークのすべてのネイティブ API の機能にアクセスできるようサポートを提供します。 Sprite Kit は、Apple が作成したテクノロジであるため、iOS のエコシステムの残りの部分との統合を提供します。 もちろん、Sprite Kit はクロスプラット フォーム対応ため、Android では使用できません。 Sprite Kit の使用に関する詳細については、この投稿を参照してください。  [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **シーンのキット**– Xamarin iOS アプリに 3D グラフィックの実装を簡素化、Apple のシーン キット framework のサポートも提供します。 シーンのキットは、統合とプラットフォーム固有の考慮事項の Sprite Kit を上記で説明したように、Apple によって提供されるテクノロジもです。 シーンのキットの詳細については、この投稿を参照してください。 [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
 - **OpenTK –** OpenTK (が開いているツール キットの略) は、iOS、Apple、および Mac への低レベルの OpenGL アクセスを提供します。 ハードウェア。 OpenTK の詳細については、メイン ページを参照してください。  [http://www.opentk.com/](http://www.opentk.com/)
-
-
-# <a name="summary"></a>まとめ
-
-この記事では、ゲーム開発の主要な概念について説明し、初めてのゲームを作り始める方法について説明します。 この記事が終了したら、[次へ] の手順では、テクノロジを選択し、一連のチュートリアルの前の適切な説明のリンクされた作業を開始します。
 
 ## <a name="related-links"></a>関連リンク
 

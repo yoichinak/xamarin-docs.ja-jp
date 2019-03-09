@@ -6,12 +6,6 @@ ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 8a3663a6fb0e9bfe3970bcca5769181fca34ae43
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "33920521"
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp の 3D/2 D エンジン
 
@@ -19,7 +13,7 @@ _UrhoSharp は、クロスプラット フォームで高度な 3D および 2D 
 
 ![UrhoSharp のゲームをサンプルします。](images/video.gif)
 
-UrhoSharp は for Mac に Visual Studio または Visual Studio のいずれかでインストールできますし、次のプラットフォームのいずれかをターゲットに使用できる NuGet パッケージとして配布: Android、MacOS、iOS、tvOS、および Windows。
+UrhoSharp for Mac に Visual Studio または Visual Studio のいずれかでインストールできますし、次のプラットフォームのいずれかをターゲットに使用できる NuGet パッケージとして配布されます。Android、MacOS、iOS、tvOS、および Windows。
 
 ## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp の概要](~/graphics-games/urhosharp/introduction.md)
 
@@ -33,9 +27,9 @@ UrhoSharp は for Mac に Visual Studio または Visual Studio のいずれか�
 
 これらのガイドでは、各ターゲット プラットフォーム Urho のセットアップ手順を説明し、Urho を既存の Android や iOS アプリケーションと統合する方法について説明します。
 
-## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[F# による UrhoSharp のプログラミング](~/graphics-games/urhosharp/fsharp.md)
+## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[による UrhoSharp のプログラミングF#](~/graphics-games/urhosharp/fsharp.md)
 
-このガイドは、単純な「こんにちは, World!」の作成手順について説明します F# と Visual Studio for mac を使用する UrhoSharp ソリューション
+このガイドは、単純な「こんにちは, World!」の作成手順について説明します UrhoSharp のソリューションを使用してF#と Visual Studio for mac。
 
 ## <a name="api-documentationhttpsdeveloperxamarincomapirooturho"></a>[API ドキュメント](https://developer.xamarin.com/api/root/Urho/)
 
@@ -43,7 +37,7 @@ UrhoSharp は for Mac に Visual Studio または Visual Studio のいずれか�
 
 ## <a name="samples"></a>サンプル
 
-作成した[GitHub のサンプル](http://github.com/xamarin/urho-samples)UrhoSharp を使用する方法を説明します。
+作成した[GitHub のサンプル](https://github.com/xamarin/urho-samples)UrhoSharp を使用する方法を説明します。
 
 - **FeatureSamples** Urho の特定の機能を紹介する 40 以上の個々 のサンプルを示しています。
 

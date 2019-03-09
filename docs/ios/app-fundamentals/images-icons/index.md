@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 09afcac8dcecd5a1d05961c2981c0940fff00a01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102361"
 ---
+
 # <a name="images-and-icons-in-xamarinios"></a>イメージと Xamarin.iOS でのアイコン
 
 _このセクションには、コントロールとカスタム ドキュメントの種類のアイコンを提供することでアイコンとして使用するなど、Xamarin.iOS アプリでのイメージの操作に対応、画面を起動する記事のまたはそれらを含むさまざまなが含まれています。_
@@ -66,4 +61,4 @@ Apple には、そのアイコンを管理するアプリを許可する iOS 10.
 
 - [画像 (サンプル) の操作](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
-- [カスタム アイコンとイメージの作成のガイドライン](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [カスタム アイコンとイメージの作成のガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

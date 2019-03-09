@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: db442f45c615b680264e79262f62062eb6a6bfd5
-ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
+ms.openlocfilehash: 12ff6f615b30e53704fee6368c9d7f171f881df0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012296"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671066"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>アプリケーションで Google マップ API の使用
 
@@ -297,7 +297,7 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-マップの API を提供、 [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)するすべてのカメラの位置で使用できる値が集計されます。 このクラスのインスタンスに提供できる、 [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29)メソッドが返されます、`CameraUpdate`オブジェクト。 マップの API も含まれています、 [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html)クラスを作成するために、fluent API を提供する`CameraPosition`オブジェクト。
+マップの API を提供、 [CameraPosition](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)するすべてのカメラの位置で使用できる値が集計されます。 このクラスのインスタンスに提供できる、 [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29)メソッドが返されます、`CameraUpdate`オブジェクト。 マップの API も含まれています、 [CameraPosition.Builder](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html)クラスを作成するために、fluent API を提供する`CameraPosition`オブジェクト。
 次のコード スニペットを作成する例を示しています、`CameraUpdate`から、`CameraPosition`でカメラの位置を変更するを使用して、 `GoogleMap`:
 
 ```csharp
@@ -342,7 +342,7 @@ Android のマップ API では、マップに次の項目を描画するため�
 
 ##### <a name="adding-a-marker"></a>マーカーの追加
 
-マップにマーカーを追加する必要がありますを新規作成[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)オブジェクトを呼び出して、 [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29)メソッドを`GoogleMap`インスタンス。 このメソッドは、[マーカー](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker)オブジェクト。
+マップにマーカーを追加する必要がありますを新規作成[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)オブジェクトを呼び出して、 [AddMarker](https://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29)メソッドを`GoogleMap`インスタンス。 このメソッドは、[マーカー](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker)オブジェクト。
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -578,7 +578,7 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 - [SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo)
 - [Google play 開発者サービスします。](https://developers.google.com/android/guides/overview)
 - [Google Android API v2 をマップします。](https://developers.google.com/maps/documentation/android-sdk/intro)
-- [Google Play APK をサービスします。](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
+- [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [Google マップ API キーを取得します。](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [使用してライブラリ](https://developer.android.com/guide/topics/manifest/uses-library-element)
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element)
 - [使用して機能](https://developer.android.com/guide/topics/manifest/uses-feature-element)

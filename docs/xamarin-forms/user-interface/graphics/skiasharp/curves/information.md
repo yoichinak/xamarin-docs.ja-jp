@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: 98975d51c31b8e8c52d184c631194388cd6cfa87
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b5d32f486b45005534adc8929caf6158d1c62a4b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053901"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671404"
 ---
 # <a name="path-information-and-enumeration"></a>パス情報と列挙
 
@@ -24,7 +24,7 @@ _パスに関する情報を取得し、内容を列挙_
 
 すべての行とパスを構成する曲線の長さの合計を確認すると役立つ場合があります。 この長さを計算するタスクではありません、単純なアルゴリズム、という名前のクラス全体ように[ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure)を使用します。
 
-描画操作とパスを構成する点を取得する便利なことでがあります。 最初は、この機能は不要なかもしれません: プログラムが既に内容を認識している場合は、プログラムのパスが作成されます。 パスが作成することも、見た[パスの効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)と変換することで[パスへの文字列のテキスト](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)します。 描画操作とこれらのパスを構成するポイントを取得することもできます。 1 つの方法は、半球の周囲のテキストを折り返す、たとえば、すべてのポイントにアルゴリズムの変換を適用するには。
+描画操作とパスを構成する点を取得する便利なことでがあります。 最初は、この機能は不要に思うかもしれません。プログラムには、パスが作成された場合、プログラムは既に内容を認識します。 パスが作成することも、見た[パスの効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)と変換することで[パスへの文字列のテキスト](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)します。 描画操作とこれらのパスを構成するポイントを取得することもできます。 1 つの方法は、半球の周囲のテキストを折り返す、たとえば、すべてのポイントにアルゴリズムの変換を適用するには。
 
 ![](information-images/pathenumerationsample.png "半球でラップされたテキスト")
 
@@ -140,7 +140,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 [![](information-images/unicyclehalfpipe-small.png "一輪車半分パイプ ページのスクリーン ショットをトリプル")](information-images/unicyclehalfpipe-large.png#lightbox "一輪車半分パイプ ページの 3 倍になるスクリーン ショット")
 
-`SKPaint`半分パイプと、一輪車線の描画に使用されるオブジェクトがフィールドとして定義されている、 [ `UnicycleHalfPipePage` ]()クラス。 定義されていることも、`SKPath`一輪車のオブジェクト。
+`SKPaint`半分パイプと、一輪車線の描画に使用されるオブジェクトがフィールドとして定義されている、`UnicycleHalfPipePage`クラス。 定義されていることも、`SKPath`一輪車のオブジェクト。
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -253,7 +253,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 これらの文字のほとんどは、直線で構成されているまだこれらの直線を曲線にツイストが明らかされています。 設定できないのでしょうか。
 
-元の直線が一連の小さな直線に分類されていることが重要です。 これら個々 の小さな直線行は、曲線を形成するさまざまな方法で操作できます。 
+元の直線が一連の小さな直線に分類されていることが重要です。 これら個々 の小さな直線行は、曲線を形成するさまざまな方法で操作できます。
 
 このプロセスで利用できる、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプルには、静的な[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)クラス、`Interpolate`を細分化するメソッド、直線の長さ単位の 1 つだけである多数の短い行にします。 さらに、クラスには、一連の小さな直線、曲線を近似する 3 つの種類のベジエ曲線に変換するいくつかのメソッドが含まれています。 (パラメーターの数式は、情報の記事で表示された[**ベジエ曲線の型を次の 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md))。このプロセスが呼び出されます_フラット化_曲線。
 

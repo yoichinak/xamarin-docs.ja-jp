@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 24d73bfcc28601f6a7ebbecb71d8c0e9f6864ac3
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 07bcbfe046fd689e08eed4e64495b56d083ceeb8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675342"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671521"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>JSON を使用して Xamarin.iOS でのユーザー インターフェイスを作成するには
 
@@ -177,5 +177,5 @@ _rootElement = new RootElement ("Json Example"){
 - [リフレクション API のチュートリアル](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Github の MonoTouch ダイアログ](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation アプリケーション](https://github.com/migueldeicaza/TweetStation)
-- [UITableViewController クラスのリファレンス](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController クラスのリファレンス](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController クラスのリファレンス](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController クラスのリファレンス](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

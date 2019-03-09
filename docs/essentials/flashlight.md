@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: 懐中電灯'
+title: Xamarin.Essentials:懐中電灯
 description: このドキュメントでは、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできる Xamarin.Essentials の Flashlight クラスについて説明します。
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 3f8e9e2e8608467367af6523c8b89bd8f757d491
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: c2caf1583e3099903cb0b05628ed6b2984a954d9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899058"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671417"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: 懐中電灯
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:懐中電灯
 
 **Flashlight** クラスを使用すると、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできます。
 
@@ -44,7 +44,7 @@ Flashlight および Camera アクセス許可が必要であり、Android プ�
 
 または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**FLASHLIGHT** および **CAMERA** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
-これらのアクセス許可を追加すると、[Google Play では特定のハードウェアを持たないデバイスが自動的に除外されます](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)。 Android プロジェクトで AssemblyInfo.cs ファイルに以下を追加することにより、これを回避できます。
+これらのアクセス許可を追加すると、[Google Play では特定のハードウェアを持たないデバイスが自動的に除外されます](https://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)。 Android プロジェクトで AssemblyInfo.cs ファイルに以下を追加することにより、これを回避できます。
 
 ```csharp
 [assembly: UsesFeature("android.hardware.camera", Required = false)]

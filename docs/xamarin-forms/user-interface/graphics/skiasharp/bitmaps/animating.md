@@ -7,12 +7,12 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: de27e151a475856f0789285dddc1526613e0b828
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 604067ac853bd53707e059b7db4abf2cfade21ce
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053146"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668960"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>SkiaSharp のビットマップをアニメーション化
 
@@ -508,7 +508,7 @@ public partial class MainPage : ContentPage
 
 `SKCodec` という名前のプロパティを定義します[ `Info` ](xref:SkiaSharp.SKCodec.Info)型の[ `SKImageInfo`](xref:SkiaSharp.SKImageInfo)が、その`SKImageInfo`値を示します (少なくともこのイメージ) の色の種類がある`SKColorType.Index8`、です。 つまり。各ピクセルが、色の種類へのインデックス。 カラー テーブルを怠ってを避けるためには、プログラムを使用して、 [ `Width` ](xref:SkiaSharp.SKImageInfo.Width)と[ `Height` ](xref:SkiaSharp.SKImageInfo.Height)フルカラーを所有していることを構築するには、その構造から情報`ImageInfo`値。 各`SKBitmap`をから作成されます。
 
-`GetPixels`メソッドの`SKBitmap`を返します、`IntPtr`そのビットマップのピクセル ビットを参照します。 これらのピクセル ビットはまだ設定されていません。 ある`IntPtr`のいずれかに渡される、 [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))メソッドの`SKCodec`します。 そのメソッドが GIF ファイルからによって参照されるメモリ領域にフレームをコピー、`IntPtr`します。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions.%23ctor(System.Int32,System.Boolean))コンス トラクターは、フレームの数を示します。
+`GetPixels`メソッドの`SKBitmap`を返します、`IntPtr`そのビットマップのピクセル ビットを参照します。 これらのピクセル ビットはまだ設定されていません。 ある`IntPtr`のいずれかに渡される、 [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))メソッドの`SKCodec`します。 そのメソッドが GIF ファイルからによって参照されるメモリ領域にフレームをコピー、`IntPtr`します。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions)コンス トラクターは、フレームの数を示します。
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage

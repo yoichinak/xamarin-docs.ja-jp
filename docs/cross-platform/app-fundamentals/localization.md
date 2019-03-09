@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 85e4e98cfbc96936c19642a200885b54cf745aa4
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4799d6aaa095127e242c5e0750db686519d0c21d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617515"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670793"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -111,7 +111,7 @@ double.Parse("1,999.99", CultureInfo.InvariantCulture);
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-参照してください、[数値文字列の解析](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)と[解析の日付と時刻文字列](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)についての MSDN 記事。
+参照してください、[数値文字列の解析](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)と[解析の日付と時刻文字列](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)についての MSDN 記事。
 
 <a name="rtl" />
 
@@ -131,7 +131,7 @@ IOS と Android の両方は、右から左のレイアウト、および上記�
 
 さまざまな言語は、同じ文字セットを使用するときにも異なる方法で、アルファベットの並べ替え順序を定義します。
 
-参照してください、[文字列比較の詳細](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)で[、.NET Framework で文字列を使用するためのベスト プラクティス](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)例については、言語 (CultureInfo) が、並べ替え順序に影響します。
+参照してください、[文字列比較の詳細](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)で[、.NET Framework で文字列を使用するためのベスト プラクティス](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)例については、言語 (CultureInfo) が、並べ替え順序に影響します。
 
 言語固有の並べ替え順序、ビジネス ロジックの追加のコードを実装する必要がありますので、モバイル プラットフォームの組み込みのデータベース機能をサポート可能性が高いことはできません。
 
@@ -284,7 +284,7 @@ IOS と Android の両方は、右から左のレイアウト、および上記�
 テスト目的では開発時に、アプリでのローカライズされたテキストを含めることの多くのオンライン翻訳ツールのいずれかを使用できます。
 
 - [Bing 翻訳者](https://www.bing.com/translator/)
-- [Google Translate します。](http://translate.google.com/)
+- [Google Translate](http://translate.google.com/)
 
 他にも多く使用できます。 機械翻訳の品質通常見なさなかった十分にアプリケーションをリリースされず最初されるレビュー、プロの翻訳者またはネイティブ スピーカーでテストします。
 
@@ -312,5 +312,5 @@ IOS と Android の両方は、右から左のレイアウト、および上記�
 ## <a name="related-links"></a>関連リンク
 
 - [Apple のローカリゼーションの概要](https://developer.apple.com/internationalization/)
-- [Android のローカリゼーションのチェックリスト](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [国際対応アプリケーション (MSDN) を開発するためのベスト プラクティス](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)
+- [Android のローカリゼーションのチェックリスト](https://developer.android.com/distribute/tools/localization-checklist.html)
+- [国際対応アプリケーション (MSDN) を開発するためのベスト プラクティス](https://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

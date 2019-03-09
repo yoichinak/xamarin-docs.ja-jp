@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 019d89261687d1139ebced9400afbdf5eaf7a128
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109199"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670650"
 ---
 # <a name="cardview"></a>CardView
 
@@ -37,7 +37,7 @@ _Cardview ウィジェットは、カードのようにビューのテキスト�
 
 -  **Android SDK** &ndash; Android 5.0 (API 21) 以降、Android SDK Manager を使用してをインストールする必要があります。
 
--  **Java JDK 1.8** &ndash;ターゲット API レベル具体的には 23 およびそれ以前の場合、JDK 1.7 を使用できます。 JDK 1.8 は[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)します。
+-  **Java JDK 1.8** &ndash;ターゲット API レベル具体的には 23 およびそれ以前の場合、JDK 1.7 を使用できます。 JDK 1.8 は[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)します。
 
 アプリも含める必要があります、`Xamarin.Android.Support.v7.CardView`パッケージ。 追加する、 `Xamarin.Android.Support.v7.CardView` Visual Studio for Mac でのパッケージ。
 
@@ -56,7 +56,7 @@ _Cardview ウィジェットは、カードのようにビューのテキスト�
 3. ときに**Xamarin サポート ライブラリ v7 CardView**が表示されたら、クリックして**インストール**します。
 
 Android 5.0 アプリのプロジェクトを構成する方法についてを参照してください。[設定を、Android 5.0 プロジェクト](~/android/platform/lollipop.md)します。
-NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)します。
+NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル。NuGet をプロジェクトに含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)します。
 
 
 ## <a name="introducing-cardview"></a>CardView の概要

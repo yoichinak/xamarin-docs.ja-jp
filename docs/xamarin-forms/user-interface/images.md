@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1a08803930eaaa3c2c5c5f8b8aa9561a9a7b8d88
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557244"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670988"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
@@ -44,7 +44,7 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -縦横比を維持しながら、表示領域を塗りつぶすようにイメージをクリップ (ie。 ゆがむことなく)。
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -レター ボックス (必須) の場合は、イメージ全体のイメージが表示領域に収まるように空白かどうかに応じて境界線の上/下に追加で、イメージは幅または高さ。
 
-イメージを読み込むことが、[ローカルファイル](#Local_Images)、[埋め込みリソース](#embedded-images)、または[ダウンロード](#Downloading_Images)します。 フォント アイコンを表示してさらに、 [ `Image` ](xref:Xamarin.Forms.Image)ビューのフォント アイコン データを指定することによって、`FontImageSource`オブジェクト。 詳細については、次を参照してください。[フォント アイコン表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)で、[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド。
+イメージを読み込むことが、[ローカルファイル](#local-images)、[埋め込みリソース](#embedded-images)、または[ダウンロード](#downloading-images)します。 フォント アイコンを表示してさらに、 [ `Image` ](xref:Xamarin.Forms.Image)ビューのフォント アイコン データを指定することによって、`FontImageSource`オブジェクト。 詳細については、次を参照してください。[フォント アイコン表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)で、[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド。
 
 ## <a name="local-images"></a>ローカルのイメージ
 
@@ -92,7 +92,7 @@ IOS 9 以降のイメージの管理の推奨される方法は、適切な資�
 
 Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
-Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](http://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
+Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](https://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
 
 [![Android の複数の解像度のイメージの場所](images-images/xs-highdpisolution-sml.png "Android の複数の解像度のイメージの場所")](images-images/xs-highdpisolution.png#lightbox "Android の複数の解像度のイメージの場所")
 
@@ -296,7 +296,7 @@ webImage.Source = new UriImageSource
 
 ## <a name="icons"></a>アイコン
 
-参照してください、 [iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)、 [Google リモコン](http://developer.android.com/design/style/iconography.html)、および[タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)これらのアプリケーション リソースの作成の詳細についてはします。
+参照してください、 [iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)、 [Google リモコン](https://developer.android.com/design/style/iconography.html)、および[タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)これらのアプリケーション リソースの作成の詳細についてはします。
 
 フォント アイコンを表示してさらに、 [ `Image` ](xref:Xamarin.Forms.Image)ビューのフォント アイコン データを指定することによって、`FontImageSource`オブジェクト。 詳細については、次を参照してください。[フォント アイコン表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)で、[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド。
 
@@ -316,5 +316,5 @@ Xamarin.Forms には、さまざまなプラットフォーム間で使用する
 
 - [WorkingWithImages (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
 - [iOS 画像の操作](~/ios/app-fundamentals/images-icons/index.md)
-- [Android のアイコン](http://developer.android.com/design/style/iconography.html)
+- [Android のアイコン](https://developer.android.com/design/style/iconography.html)
 - [タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

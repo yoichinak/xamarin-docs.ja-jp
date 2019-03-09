@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: 83f9651fa7fd20709c620258833ae4a152ffd0eb
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 5ccefdb5e527e67338714896905734c74278d00a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563668"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671880"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>イベント、プロトコル、Xamarin.iOS でのデリゲート
 
@@ -64,7 +64,7 @@ Xamarin.iOS には、コントロールで発生する相互作用にコード�
 
 [![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "ボタンがクリックされたときにそのメッセージがコンソールに書き込まれます")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
-IOS ターゲット アクション パターンに関する詳細については、ターゲット操作 セクションを参照してください。 [ios アプリケーションのコア コンピテンシー](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) Apple の ios 開発者ライブラリ。
+IOS ターゲット アクション パターンに関する詳細については、ターゲット操作 セクションを参照してください。 [ios アプリケーションのコア コンピテンシー](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) Apple の ios 開発者ライブラリ。
 
 Xamarin.iOS で iOS Designer を使用する方法の詳細については、次を参照してください。、 [iOS デザイナーの概要](~/ios/user-interface/designer/index.md)ドキュメント。
 
@@ -388,6 +388,6 @@ map.DidSelectAnnotationView += (s,e) => {
 - [プロトコル、デリゲート、およびイベント (サンプル)](https://developer.xamarin.com/samples/Protocols_Delegates_Events/)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [OBJECTIVE-C のバインドの種類](~/ios/platform/binding-objective-c/index.md)
-- [Objective C のプログラミング言語](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
-- [Xcode 4 でのユーザー インターフェイスの設計](http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
-- [IOS 用の核となるアプリケーションの機能](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)
+- [Objective C のプログラミング言語](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+- [Xcode 4 でのユーザー インターフェイスの設計](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
+- [IOS 用の核となるアプリケーションの機能](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)

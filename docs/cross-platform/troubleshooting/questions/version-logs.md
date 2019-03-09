@@ -1,5 +1,5 @@
 ---
-title: バージョン情報とログを検索する場所は?
+title: バージョン情報とログはどこにありますか
 description: このドキュメントでは、Xamarin バージョン情報とログ検索を検索する場所について説明します。 この情報は、バグを送信またはサポートの問題を診断する場合に便利です。
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,16 +7,16 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2c3ded2233810ff4e903596d65f64097aa3b0445
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ee4b39aed64d7339bd561cccc49a2959a6daba5c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118228"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668310"
 ---
-# <a name="where-can-i-find-my-version-information-and-logs"></a>バージョン情報とログを検索する場所は?
+# <a name="where-can-i-find-my-version-information-and-logs"></a>バージョン情報とログはどこにありますか
 
-## <a name="outline"></a>アウトライン
+## <a name="outline"></a>外枠
 
 - [バージョン情報](#version-information)
     - Windows のバージョン情報
@@ -100,7 +100,7 @@ Android SDK Manager を開き、上部のスクリーン ショットは撮影**
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-参照:[コマンド ライン オプション](http://msdn.microsoft.com/library/aa367988.aspx)
+参照:[コマンド ライン オプション](https://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Visual Studio の起動、詳細ログ
 
@@ -108,7 +108,7 @@ msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-参照: [/Log (devenv.exe)](http://msdn.microsoft.com/library/ms241272.aspx)
+Reference: [/Log (devenv.exe)](https://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Mac ログ
 
@@ -145,8 +145,8 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 3.  消去し、プロジェクトをリビルドします。
 
 4.  コピーして、IDE からビルド出力をテキスト ファイルに貼り付けます。
-     - Visual Studio (Windows):**ビュー > 出力 > からの出力を表示: ビルド**
-     - Visual Studio for Mac:**ビュー > パッド > エラー > ビルドの出力 (タブ)**
+     - Visual Studio (Windows):**ビュー > 出力 > からの出力を表示します。ビルド**
+     - Visual Studio for Mac。**ビュー > パッド > エラー > ビルドの出力 (タブ)**
 
 ## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a><a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />Xamarin.Android と Xamarin.iOS アプリのログをデバッグします。
 
@@ -158,9 +158,9 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 ### <a name="visual-studio"></a>Visual Studio
 
-**ビュー > 出力 > からの出力を表示: デバッグ**
+**ビュー > 出力 > からの出力を表示します。デバッグ**
 
-### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](http://developer.android.com/tools/help/adb.html) logcat ログ
+### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](https://developer.android.com/tools/help/adb.html) logcat ログ
 
 実行後、`adb`コマンドをもう一度アタッチ、 **android_logcat.txt**デスクトップからファイル。 これらの手順では、1 つだけのデバイスを接続している前提としています。
 

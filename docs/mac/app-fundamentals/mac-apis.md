@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/02/2017
-ms.openlocfilehash: 209ce2b5fb2fbb357f23e6ccc9bb849fbfedc81d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c387bbead1ac56d7f4c4c05a79c430302e50aec1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115654"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668284"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>macOS Xamarin.Mac 開発者向けの Api
 
@@ -68,7 +68,7 @@ Objective C の定義を参照する必要する場合があります。 また�
 
 3. 使用することができます、 [Xamarin.Mac API のオンライン ドキュメント](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0)します。
 
-4. Miguel Xamarin.Mac Api の「ロゼッタ ストーン」ビューを提供する[ここ](http://tirania.org/tmp/rosetta.html)を指定の API を検索することができます。 API が AppKit または macOS 固有でない場合があります見つけることがあります。
+4. Miguel Xamarin.Mac Api の「ロゼッタ ストーン」ビューを提供する[ここ](https://tirania.org/tmp/rosetta.html)を指定の API を検索することができます。 API が AppKit または macOS 固有でない場合があります見つけることがあります。
 
 <!--
 Note: In some cases, the assembly browser can hit a bug where it will open but not jump to the right definition. Keep that tab open, switch back to your source code and try again.

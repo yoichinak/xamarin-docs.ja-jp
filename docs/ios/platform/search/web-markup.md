@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 243408ce6e2236b75ea35dfd17633a9a24493c1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102803"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672366"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Xamarin.iOS での Web マークアップの検索
 
@@ -63,7 +63,7 @@ Apple のアプリの web サイトを検索する最も簡単な方法がいず
 
 ## <a name="using-twitter-cards"></a>Twitter のカードを使用します。
 
-Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例えば:
+Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例:
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -75,7 +75,7 @@ Twitter のカードを使用して、アプリのコンテンツへのディー
 
 ## <a name="using-facebook-app-links"></a>Facebook アプリへのリンクを使用します。
 
-Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例えば:
+Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例:
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -121,7 +121,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 豊富な結果の詳細魅力的なと向上に役立つ、順位付け、クラウド内でより多くのユーザー対話機能を使用する魅力的な検索インデックスのベースします。
 
-構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用することです。 例えば:
+構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用することです。 例:
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -131,7 +131,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 詳細についてを参照してください、 [Open Graph](http://ogp.me) web サイト。
 
-構造化データのマークアップのもう 1 つの一般的な形式は、schema.org のアフター形式です。 例えば:
+構造化データのマークアップのもう 1 つの一般的な形式は、schema.org のアフター形式です。 例:
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -209,7 +209,7 @@ Apple は、現在 schema.org 次のスキーマの種類をサポートしま�
 
 ```
 
-詳細については、Apple を参照してください[アプリ検索開発者向けサイト](http://developer.apple.com/ios/search/)します。
+詳細については、Apple を参照してください[アプリ検索開発者向けサイト](https://developer.apple.com/ios/search/)します。
 
 
 

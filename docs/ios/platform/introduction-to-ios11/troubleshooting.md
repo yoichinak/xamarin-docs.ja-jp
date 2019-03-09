@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/31/2017
-ms.openlocfilehash: 61aa360e91c3881c77c4bc3776e2cfdc36efb61b
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: f7fbd6f19820b8cbefe1a75c148ca1d9ba1395f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267360"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670952"
 ---
 # <a name="troubleshooting-tips-for-ios-11-and-xamarinios"></a>IOS 11 と Xamarin.iOS のトラブルシューティングのヒント
 
@@ -26,4 +26,4 @@ Xamarin.iOS のバグを見つけた場合は、この問題を報告[github](ht
 
 ## <a name="forums-and-stackoverflow"></a>フォーラムと StackOverflow
 
-使用や、Xamarin、Xamarin.iOS での特定の iOS 11 の機能の実装についての特定の質問に対する回答[iOS フォーラム](http://forums.xamarin.com/categories/ios)豊富な情報を提供します。 [StackOverflow](http://stackoverflow.com/search?tab=newest&q=xamarin)別の適切なユーザーのユーザー支援の情報ソースです。
+使用や、Xamarin、Xamarin.iOS での特定の iOS 11 の機能の実装についての特定の質問に対する回答[iOS フォーラム](http://forums.xamarin.com/categories/ios)豊富な情報を提供します。 [StackOverflow](https://stackoverflow.com/search?tab=newest&q=xamarin)別の適切なユーザーのユーザー支援の情報ソースです。

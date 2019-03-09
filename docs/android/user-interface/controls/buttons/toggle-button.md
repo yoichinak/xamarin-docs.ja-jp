@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 22eb8f999450ed8fb46b1f7809c92540be13aa65
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 841a11f9cb48786a046802288ce05e7ae186688a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105923"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671717"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
@@ -54,5 +54,5 @@ togglebutton.Click += (o, e) => {
 
 ## <a name="related-links"></a>関連リンク
 
-- [トグル ボタン](http://developer.android.com/reference/android/widget/ToggleButton.html)
-- [スイッチ](http://developer.android.com/reference/android/widget/Switch.html)
+- [トグル ボタン](https://developer.android.com/reference/android/widget/ToggleButton.html)
+- [スイッチ](https://developer.android.com/reference/android/widget/Switch.html)

@@ -6,13 +6,8 @@ ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: 74146378d2ee534b357abd73ff7e1563a49a7e4a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121751"
 ---
+
 # <a name="getting-started-with-java"></a>Java の概要
 
 これは、java のサポートされているすべてのプラットフォームの基本について説明しますが、作業の開始ページです。
@@ -22,7 +17,7 @@ ms.locfileid: "50121751"
 Java での .NET の埋め込みを使用するには、必要があります。
 
 * Java 1.8 以降
-* [Mono 5.0](http://www.mono-project.com/download/)
+* [Mono 5.0](https://www.mono-project.com/download/)
 
 Mac の場合。
 

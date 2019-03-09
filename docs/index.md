@@ -3,6 +3,8 @@ layout: HubPage
 hide_bc: true
 title: Xamarin ドキュメント
 description: 'Xamarin を使用すると、.NET のコードとプラットフォームに固有のユーザー インターフェイスを使用して、Android、iOS、および macOS 用のネイティブ アプリを構築できます。 Xamarin.Forms を使用すると、C# または XAML で記述された共有 UI コードを使用してネイティブ アプリを構築できます。'
+author: conceptdev
+ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
   - clicktale
@@ -735,7 +737,7 @@ Mac</a>
         <h2>コミュニケーションを取るには</h2>
         <ul class="links">
            <li>
-                <a href="http://blog.xamarin.com/"> ブログ </a>
+                <a href="https://blog.xamarin.com/"> ブログ </a>
             </li>
             <li>
                 <a href="https://forums.xamarin.com/"> フォーラム</a>

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207935"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668492"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android の API の設計原則
 
@@ -76,13 +76,13 @@ Android のプラットフォームへのバインドに含まれる、`Mono.And
 
 Android の API は、リスト、セット、およびマップを提供する広範な java.util コレクションを使用します。 使用してこれらの要素を公開しています、 [System.Collections.Generic](xref:System.Collections.Generic)バインディング内のインターフェイス。 基本的なマッピングは次のとおりです。
 
--   [java.util.Set<E> ](http://developer.android.com/reference/java/util/Set.html)システム型にマップされます[ICollection<T>](xref:System.Collections.Generic.ICollection`1)、ヘルパー クラス[Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/)します。
+-   [java.util.Set<E> ](https://developer.android.com/reference/java/util/Set.html)システム型にマップされます[ICollection<T>](xref:System.Collections.Generic.ICollection`1)、ヘルパー クラス[Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/)します。
 
--   [java.util.List<E> ](http://developer.android.com/reference/java/util/List.html)システム型にマップされます[IList<T>](xref:System.Collections.Generic.IList`1)、ヘルパー クラス[Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/)します。
+-   [java.util.List<E> ](https://developer.android.com/reference/java/util/List.html)システム型にマップされます[IList<T>](xref:System.Collections.Generic.IList`1)、ヘルパー クラス[Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/)します。
 
--   [< K, V > java.util.Map](http://developer.android.com/reference/java/util/Map.html)システム型にマップされます[IDictionary < TKey, TValue >](xref:System.Collections.Generic.IDictionary`2)、ヘルパー クラス[Android.Runtime.JavaDictionary < K, V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/)します。
+-   [< K, V > java.util.Map](https://developer.android.com/reference/java/util/Map.html)システム型にマップされます[IDictionary < TKey, TValue >](xref:System.Collections.Generic.IDictionary`2)、ヘルパー クラス[Android.Runtime.JavaDictionary < K, V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/)します。
 
--   [java.util.Collection<E> ](http://developer.android.com/reference/java/util/Collection.html)システム型にマップされます[ICollection<T>](xref:System.Collections.Generic.ICollection`1)、ヘルパー クラス[Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/)します。
+-   [java.util.Collection<E> ](https://developer.android.com/reference/java/util/Collection.html)システム型にマップされます[ICollection<T>](xref:System.Collections.Generic.ICollection`1)、ヘルパー クラス[Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/)します。
 
 これらの型のマーシャ リングが高速 copyless を容易にするヘルパー クラスを用意しました。 などの可能な限り、これらのフレームワークが提供する実装ではなくコレクションを指定された使用をお勧め、 [ `List<T>` ](xref:System.Collections.Generic.List`1)または[ `Dictionary<TKey, TValue>`](xref:System.Collections.Generic.Dictionary`2)します。 [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/)実装がネイティブ Java コレクションを内部的に使用し、ので不要とネイティブのコレクションからの Android API のメンバーに渡すときにコピーします。
 
@@ -240,11 +240,11 @@ Java インターフェイスは、2 つの型に変換されます。
 
 たとえば、 [android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)インターフェイス。
 *Parcelable*インターフェイスには、メソッド、入れ子にされた型、および定数が含まれています。 *Parcelable*インターフェイス メソッドに格納され、 [Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/)インターフェイス。
-*Parcelable*インターフェイス定数がまとめて、 [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型。 入れ子になった[android.os.Parcelable.ClassLoaderCreator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)と[android.os.Parcelable.Creator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.Creator.html)型では現在ありませんは、ジェネリックのサポートの制限のためのバインドとして記述すると、それらがサポートされている場合、 *Android.OS.IParcelableClassLoaderCreator*と*Android.OS.IParcelableCreator*インターフェイス。 たとえば、入れ子になった[android.os.IBinder.DeathRecpient](http://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)インターフェイスとしてバインドされている、 [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)インターフェイス。
+*Parcelable*インターフェイス定数がまとめて、 [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型。 入れ子になった[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)と[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)型では現在ありませんは、ジェネリックのサポートの制限のためのバインドとして記述すると、それらがサポートされている場合、 *Android.OS.IParcelableClassLoaderCreator*と*Android.OS.IParcelableCreator*インターフェイス。 たとえば、入れ子になった[android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)インターフェイスとしてバインドされている、 [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)インターフェイス。
 
 
 > [!NOTE]
-> Java インターフェイスの定数は、Xamarin.Android 1.9 以降、<em>複製</em>Java の移植を簡略化するためにコードします。 これにより、依存している移植の Java コードを改良する[android プロバイダー](http://developer.android.com/reference/android/provider/package-summary.html)インターフェイスの定数。
+> Java インターフェイスの定数は、Xamarin.Android 1.9 以降、<em>複製</em>Java の移植を簡略化するためにコードします。 これにより、依存している移植の Java コードを改良する[android プロバイダー](https://developer.android.com/reference/android/provider/package-summary.html)インターフェイスの定数。
 
 上記の種類に加えて、さらに 4 つの変更があります。
 
@@ -257,9 +257,9 @@ Java インターフェイスは、2 つの型に変換されます。
 1. *Consts*タイプは廃止されました。
 
 
-*Android.os.Parcelable*インターフェイス、つまりがここであること、 [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)定数を格納する型。 たとえば、 [Parcelable.CONTENTS_FILE_DESCRIPTOR](http://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)定数としてバインドされる、 [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) としての代わりに定数*ParcelableConsts.ContentsFileDescriptor*定数。
+*Android.os.Parcelable*インターフェイス、つまりがここであること、 [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)定数を格納する型。 たとえば、 [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)定数としてバインドされる、 [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) としての代わりに定数*ParcelableConsts.ContentsFileDescriptor*定数。
 
-定数を格納している他のインターフェイスを実装しているまだは定数を格納しているインターフェイスでは、すべての定数の和集合が生成されるようになりました。 たとえば、 [android.provider.MediaStore.Video.VideoColumns](http://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)インターフェイスの実装、 [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)インターフェイス。 1.9 より前、ただし、 [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型で宣言された定数にアクセスする方法を持たない[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)します。
+定数を格納している他のインターフェイスを実装しているまだは定数を格納しているインターフェイスでは、すべての定数の和集合が生成されるようになりました。 たとえば、 [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)インターフェイスの実装、 [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)インターフェイス。 1.9 より前、ただし、 [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型で宣言された定数にアクセスする方法を持たない[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)します。
 その結果、Java 式*MediaStore.Video.VideoColumns.TITLE* C# の式にバインドする必要がある*MediaStore.Video.MediaColumnsConsts.Title*は読まず見つけにくい多数の Java のドキュメント。 同等の C# 式がある、1.9 で[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)します。
 
 さらに、検討してください、 [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) 、Java の実装の種類*Parcelable*インターフェイス。 そのインターフェイスのすべての定数は例:「から」バンドルの種類、アクセスできる、インターフェイスを実装しているため*Bundle.CONTENTS_FILE_DESCRIPTOR* Java 式を完全に有効です。
@@ -270,8 +270,8 @@ Java インターフェイスは、2 つの型に変換されます。
 
 ## <a name="resources"></a>リソース
 
-として、アプリケーションでイメージ、レイアウトの説明、バイナリの blob および文字列の辞書を含めることが[リソース ファイル](http://developer.android.com/guide/topics/resources/providing-resources.html)します。
-さまざまな Android API の設計において[リソース Id に対して](http://developer.android.com/guide/topics/resources/accessing-resources.html)イメージを処理する、代わりに文字列またはバイナリ blob 直接します。
+として、アプリケーションでイメージ、レイアウトの説明、バイナリの blob および文字列の辞書を含めることが[リソース ファイル](https://developer.android.com/guide/topics/resources/providing-resources.html)します。
+さまざまな Android API の設計において[リソース Id に対して](https://developer.android.com/guide/topics/resources/accessing-resources.html)イメージを処理する、代わりに文字列またはバイナリ blob 直接します。
 
 たとえば、サンプルする Android アプリケーションをユーザー インターフェイスのレイアウトが含まれています ( `main.axml`)、国際化テーブル文字列 ( `strings.xml`) と一部のアイコン ( `drawable-*/icon.png`) は、アプリケーションの"Resources"ディレクトリにそのリソースを保持します。
 
@@ -317,7 +317,7 @@ public class Resource {
 
 ネイティブ Android API がある多くのメソッドを返したり、int、int の意味を決定する定数フィールドにマップする必要があります。 これらのメソッドを使用するには、ユーザーは、定数が適切な値より小さいに最適なドキュメントを参照して必要があります。
 
-たとえば、 [Activity.requestWindowFeature (int featureID)](http://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int))します。
+たとえば、 [Activity.requestWindowFeature (int featureID)](https://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int))します。
 
 このような場合に、.NET 列挙に関連する定数をグループ化し、代わりに、列挙する方法を再マップするよう努めています。
 これにより、潜在的な値の IntelliSense の選択を提供できなくなっています。

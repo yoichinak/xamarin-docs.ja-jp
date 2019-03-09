@@ -1,19 +1,19 @@
 ---
-title: 使用可能なアセンブリ
+title: 使用できるアセンブリ
 description: このドキュメントには、Xamarin.iOS、Xamarin.Android、Xamarin.Mac で使用可能なアセンブリが一覧表示されます。 .NET Standard ライブラリとポータブル クラス ライブラリに関するドキュメントにもリンクします。
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: 213632ae26ae60797e39bc718a95057fb7238609
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8882a7cd36eab5e7905585f5de4d6585dfb53439
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113353"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672262"
 ---
-# <a name="available-assemblies"></a>使用可能なアセンブリ
+# <a name="available-assemblies"></a>使用できるアセンブリ
 
 Xamarin.iOS、Xamarin.Android、および Xamarin.Mac、十数個のアセンブリがすべて付属します。 同様、デスクトップの .NET アセンブリの拡張のサブセットを Silverlight には、Xamarin プラットフォーム、いくつかの Silverlight とデスクトップの .NET アセンブリの拡張のサブセットです。
 
@@ -37,7 +37,7 @@ Xamarin プロジェクトで利用可能も[.NET ポータブル クラス ラ�
 > |Assembly|API の互換性|Xamarin iOS|Xamarin Android|Xamarin Mac|
 > |--------|-----------------|-----------|---------------|-----------|
 > |FSharp.Core.dll| |✓|✓|✓|
-> |l18N.dll|CJK、まれで、他の MidEast を西部が含まれています|✓|✓|✓|
+> |l18N.dll|Includes CJK, MidEast, Other, Rare, West|✓|✓|✓|
 > |Microsoft.CSharp.dll| |✓|✓|✓|
 > |Mono.CSharp.dll| |✓|✓|✓|
 > |Mono.Data.Sqlite.dll|SQLite の ADO.NET プロバイダー制限事項を参照してください。|✓|✓|✓|
@@ -53,22 +53,22 @@ Xamarin プロジェクトで利用可能も[.NET ポータブル クラス ラ�
 > |System.&#8203;ComponentModel.&#8203;Composition.dll| |✓|✓|✓|
 > |System.&#8203;ComponentModel.&#8203;DataAnnotations.dll| |✓|✓|✓|
 > |System.Core.dll|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
-> |System.Data.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)で[一部の機能の削除](~/ios/data-cloud/system.data.md)します。|✓|✓|✓|
-> |System.Data します。&#8203;サービス。&#8203;Client.dll|完全な oData クライアント。|✓|✓|✓|
+> |System.Data.dll|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)で[一部の機能の削除](~/ios/data-cloud/system.data.md)します。|✓|✓|✓|
+> |System.Data.&#8203;Services.&#8203;Client.dll|完全な oData クライアント。|✓|✓|✓|
 > |System.IO.&#8203;Compression| |✓|✓|✓|
 > |System.IO.&#8203;Compression.&#8203;FileSystem| |✓|✓|✓|
-> |System.Json.dll|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
+> |System.Json.dll|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
 > |System.Net.&#8203;Http.dll| |✓|✓|✓|
 > |System.&#8203;Numerics.dll| |✓|✓|✓|
-> |System.Runtime.&#8203;Serialization.dll|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
-> |System.&#8203;ServiceModel.dll|WCF スタック内に存在として[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
+> |System.Runtime.&#8203;Serialization.dll|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
+> |System.&#8203;ServiceModel.dll|WCF スタック内に存在として[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
 > |System.&#8203;ServiceModel.&#8203;Internals.dll| |✓|✓|✓|
-> |System.&#8203;ServiceModel.&#8203;Web.dll|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)、さらに次の名前空間の型。 <br />システム<br />System.ServiceModel.Channels<br />System.ServiceModel.Description<br />System.ServiceModel.Web|✓|✓|✓|
-> |System.&#8203;Transactions.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx); の一部[System.Data](~/ios/data-cloud/system.data.md)をサポートします。|✓|✓|✓|
+> |System.&#8203;ServiceModel.&#8203;Web.dll|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)、さらに次の名前空間の型。 <br />システム<br />System.ServiceModel.Channels<br />System.ServiceModel.Description<br />System.ServiceModel.Web|✓|✓|✓|
+> |System.&#8203;Transactions.dll|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx); の一部[System.Data](~/ios/data-cloud/system.data.md)をサポートします。|✓|✓|✓|
 > |System.Web.&#8203;Services.dll|削除されたサーバーの機能で、.NET 3.5 プロファイルからの基本的な Web サービス。|✓|✓|✓|
 > |System.&#8203;Windows.dll| |✓|✓|✓|
-> |System.&#8203;Xml.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|✓|✓|✓|
-> |System.Xml.&#8203;Linq.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|✓|✓|✓|
+> |System.&#8203;Xml.dll|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|✓|✓|✓|
+> |System.Xml.&#8203;Linq.dll|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|✓|✓|✓|
 > |System.Xml.Serialization.dll| |✓|✓|✓|
 > |Xamarin.iOS.dll|このアセンブリには、CocoaTouch API に c# バインディングが含まれています。 これは、統一された iOS プロジェクトでのみ使用します。|✓| | |
 > |Java.Interop.dll| | |✓| |

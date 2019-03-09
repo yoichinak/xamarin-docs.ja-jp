@@ -6,12 +6,12 @@ ms.assetid: 1F71F3E8-2397-4C6A-8163-6731ECFB7E03
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: badd23ebb78e61e7d7650ff6d0973226359fd9d5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c1c03e0ec17ade57536b4ed121469e3ae2274e75
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117110"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668973"
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame GamePad リファレンス
 
@@ -30,7 +30,7 @@ _GamePad は、MonoGame の入力デバイスにアクセスするための標�
 - `GetState` – コント ローラーのボタン、アナログ スティックおよびパッドの現在の状態を返します。
 - `GetCapabilities` – ボタンまたは振動をサポートしているコント ローラーに特定できるかどうかなど、ハードウェアの機能に関する情報を返します。
 
-### <a name="example-moving-a-character"></a>例: 文字の移動
+### <a name="example-moving-a-character"></a>例:文字の移動
 
 次のコードは、左スティックを使用して設定して、文字を移動する方法を示しています。 その`XVelocity`と`YVelocity`プロパティ。 このコードで`characterInstance`を持つオブジェクトのインスタンスである`XVelocity`と`YVelocity`プロパティ。
 
@@ -42,9 +42,9 @@ characterInstance.XVelocity = gamePadState.ThumbSticks.Left.X * characterInstanc
 characterInstance.YVelocity = gamePadState.ThumbSticks.Left.Y * characterInstance.MaxSpeed;
 ```
 
-### <a name="example-detecting-pushes"></a>例: プッシュの検出
+### <a name="example-detecting-pushes"></a>例:プッシュの検出
 
-`GamePadState` 特定のボタンが押されたかどうかなど、コント ローラーの現在の状態に関する情報を提供します。 ジャンプ、文字などの特定のアクションでは、チェック ボタンがプッシュされた場合の要求 (最後のフレームをでしたがこのフレーム ダウン)、またはリリース (最後のフレームのダウンがこのフレーム ダウンできませんでした)。 
+`GamePadState` 特定のボタンが押されたかどうかなど、コント ローラーの現在の状態に関する情報を提供します。 ジャンプ、文字などの特定のアクションでは、チェック ボタンがプッシュされた場合の要求 (最後のフレームをでしたがこのフレーム ダウン)、またはリリース (最後のフレームのダウンがこのフレーム ダウンできませんでした)。
 
 この種のロジックでは、前のフレームを格納するローカル変数を実行する`GamePadState`と現在のフレームの`GamePadState`作成する必要があります。 次の例は、保存し、前のフレームを使用する方法を示しています。`GamePadState`ジャンプを実装します。
 
@@ -59,7 +59,7 @@ protected override void Update(GameTime gameTime)
     // store off the last state before reading the new one:
     lastFrameGamePadState = currentGamePadState;
     currentGamePadState = GamePad.GetState(PlayerIndex.One);
-    bool wasAButtonPushed = 
+    bool wasAButtonPushed =
 currentGamePadState.Buttons.A == ButtonState.Pressed
         && lastFrameGamePadState.Buttons.A == ButtonState.Released;
     if(wasAButtonPushed)
@@ -70,7 +70,7 @@ currentGamePadState.Buttons.A == ButtonState.Pressed
 }
 ```
 
-### <a name="example-checking-for-buttons"></a>例: は、ボタンのチェック
+### <a name="example-checking-for-buttons"></a>例:ボタンのチェック
 
 `GetCapabilities` かどうか、コント ローラーには、特定のボタンやアナログ スティックなどの特定のハードウェアを確認するために使用します。 次のコードでは、両方のボタンの存在を必要とするゲーム内のコント ローラー B と Y のボタンを確認する方法を示します。
 
@@ -89,7 +89,7 @@ if(!hasBButton || !hasXButton)
 iOS アプリでは、ワイヤレスのゲーム コント ローラーの入力をサポートします。
 
 > [!IMPORTANT]
-> MonoGame 3.5 用の NuGet パッケージでは、ワイヤレスのゲーム コント ローラーのサポートは含まれません。 IOS でゲームパッド クラスを使用するには、MonoGame 3.5 ソースからを構築または MonoGame 3.6 NuGet バイナリを使用する必要があります。 
+> MonoGame 3.5 用の NuGet パッケージでは、ワイヤレスのゲーム コント ローラーのサポートは含まれません。 IOS でゲームパッド クラスを使用するには、MonoGame 3.5 ソースからを構築または MonoGame 3.6 NuGet バイナリを使用する必要があります。
 
 ### <a name="ios-game-controller"></a>iOS ゲーム コント ローラー
 
@@ -105,7 +105,7 @@ Apple TV のゲームでは、入力の Siri のリモートまたはワイヤ�
 
 *Siri のリモート*ネイティブの入力デバイスを Apple TV にです。 Siri のリモートからの値はイベントを介して読み取ることができます (ように、 [Siri のリモートと Bluetooth コント ローラーのガイド](~/ios/tvos/platform/remote-bluetooth.md))、`GamePad`クラスは、Siri のリモートから値を返すことができます。
 
-注意`GamePad`のみ再生 ボタンから入力を読み取りし、画面をタッチすることができます。 
+注意`GamePad`のみ再生 ボタンから入力を読み取りし、画面をタッチすることができます。
 
 ![](input-images/image2.png "ゲームパッドの再生 ボタンから入力を読み取り、画面をタッチすることができますのみに注目してください。")
 
@@ -113,7 +113,7 @@ Surface の移動を読んで、タッチから、`DPad`プロパティの値が
 
 ### <a name="apple-tv-game-controller"></a>Apple TV のゲーム コント ローラー
 
-Apple TV のゲーム コント ローラーの動作は iOS アプリのゲーム コント ローラーに同じです。 詳細については、次を参照してください。、 [iOS ゲーム コント ローラー セクション](#iOS_Game_Controller)します。 
+Apple TV のゲーム コント ローラーの動作は iOS アプリのゲーム コント ローラーに同じです。 詳細については、次を参照してください。、 [iOS ゲーム コント ローラー セクション](#iOS-game-controller)します。 
 
 ## <a name="xbox-one"></a>Xbox One
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: c49b8855bccaf2eca825096746769d7f201736c5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7f4f7fd3af1e90307a84037f01ddf8e52b1ee030
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116889"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669051"
 ---
 # <a name="graphics-and-animation"></a>グラフィックスとアニメーション
 
@@ -25,7 +25,7 @@ _Android では、2 D グラフィックスとアニメーションをサポー�
 
 さいわい、最新のモバイル プラットフォームには使いやすさを維持しながら高度なアニメーションとカスタム グラフィックスを作成するための非常に強力なフレームワークがあります。 これにより、開発者はごくわずかな労力で高度な対話機能を追加できます。
 
-Android の UI API フレームワークは、2 つのカテゴリに分割する約できます: グラフィックスとアニメーション。
+Android の UI API フレームワークは、2 つのカテゴリに分割する約できます。グラフィックスとアニメーション。
 
 グラフィックスは、2 D および 3D グラフィックスを行うためのさまざまな方法をさらに分割されます。 3D グラフィックは、組み込み OpenGL ES (モバイル特定のバージョンの OpenGL) などのフレームワークと MonoGame (XNA toolkit を使用した互換性のあるクロスプラット フォームのツールキット) などのサードパーティ製フレームワークの数を利用します。 3D グラフィックスが、この記事の範囲内にありませんが、組み込みの 2D 描画技法を究明します。
 
@@ -57,7 +57,7 @@ Android は、2 D グラフィックスを作成するための 2 つの異な�
 
 アクセシビリティを念頭に設計されている場合は、アプリはこのような状況でより使いやすい: ヒントと、ユーザー インターフェイスでのナビゲーション支援を提供し、テキスト コンテンツまたは UI の視覚要素の説明があることを確認します。
 
-参照してください[Google のアクセシビリティ ガイド](http://developer.android.com/guide/topics/ui/accessibility/)Android のアクセシビリティの Api を利用する方法の詳細について。
+参照してください[Google のアクセシビリティ ガイド](https://developer.android.com/guide/topics/ui/accessibility/)Android のアクセシビリティの Api を利用する方法の詳細について。
 
 
 
@@ -76,23 +76,23 @@ Android は、2 D グラフィックスを作成するための 2 つの異な�
 時に、Android アプリケーションはこれらのリソースを読み込むし、これらの XML ファイルに含まれる指示を使用して 2D グラフィックスを作成します。
 Android では、いくつかの異なる種類の描画可能なリソースを定義します。
 
--   [ShapeDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape) &ndash;プリミティブの幾何学図形を描画し、限られたその図形にグラフィック効果を適用する描画可能なオブジェクトになります。 ボタンをカスタマイズまたはするテキスト ビューの背景を設定するなどの非常に便利です。 使用する方法の例が表示されます、`ShapeDrawable`この記事で後述します。
+-   [ShapeDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape) &ndash;プリミティブの幾何学図形を描画し、限られたその図形にグラフィック効果を適用する描画可能なオブジェクトになります。 ボタンをカスタマイズまたはするテキスト ビューの背景を設定するなどの非常に便利です。 使用する方法の例が表示されます、`ShapeDrawable`この記事で後述します。
 
--   [StateListDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#StateList) &ndash;ウィジェットとコントロールの状態に基づいて外観を変更する描画可能なリソースであります。 たとえば、ボタンは、かどうかが押されたかどうかに応じてには、その外観を変更する可能性があります。
+-   [StateListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList) &ndash;ウィジェットとコントロールの状態に基づいて外観を変更する描画可能なリソースであります。 たとえば、ボタンは、かどうかが押されたかどうかに応じてには、その外観を変更する可能性があります。
 
--   [LayerDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) &ndash;この描画可能なリソースに別の上に 1 つの他のいくつかのドローアブルをスタックします。 例を*LayerDrawable*次のスクリーン ショットに示します。
+-   [LayerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) &ndash;この描画可能なリソースに別の上に 1 つの他のいくつかのドローアブルをスタックします。 例を*LayerDrawable*次のスクリーン ショットに示します。
 
     ![LayerDrawable 例](graphics-and-animation-images/image1.png)
 
--   [TransitionDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Transition) &ndash;これは、 *LayerDrawable*が 1 つの違い。 A *TransitionDrawable*上示す別の 1 つの層をアニメーション化することができます。
+-   [TransitionDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition) &ndash;これは、 *LayerDrawable*が 1 つの違い。 A *TransitionDrawable*上示す別の 1 つの層をアニメーション化することができます。
 
--   [LevelListDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) &ndash;に非常に似ています、 *StateListDrawable*ことで、特定の条件に基づくイメージが表示されます。 ただしとは異なり、 *StateListDrawable*、 *LevelListDrawable*整数値に基づくイメージが表示されます。 例を*LevelListDrawable*は WiFi 信号の強度を表示することです。 WiFi のシグナルの変更の強度、として表示される drawable を変更します。
+-   [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) &ndash;に非常に似ています、 *StateListDrawable*ことで、特定の条件に基づくイメージが表示されます。 ただしとは異なり、 *StateListDrawable*、 *LevelListDrawable*整数値に基づくイメージが表示されます。 例を*LevelListDrawable*は WiFi 信号の強度を表示することです。 WiFi のシグナルの変更の強度、として表示される drawable を変更します。
 
--   [ScaleDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;スケーリングおよび機能をクリッピングこれらドローアブルの提示をその名のとおりです。 *ScaleDrawable*は別の描画可能な while、スケール、 *ClipDrawable*別のディスプレイをクリップします。
+-   [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;スケーリングおよび機能をクリッピングこれらドローアブルの提示をその名のとおりです。 *ScaleDrawable*は別の描画可能な while、スケール、 *ClipDrawable*別のディスプレイをクリップします。
 
--   [InsetDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash;この Drawable 適用インセット描画可能なリソースを別の側面にします。 ビューが背景の色をビューの実際の範囲より小さい必要がある場合に使用されます。
+-   [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash;この Drawable 適用インセット描画可能なリソースを別の側面にします。 ビューが背景の色をビューの実際の範囲より小さい必要がある場合に使用されます。
 
--   XML [BitmapDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;このファイルは実際のビットマップに対して実行するには XML では、命令のセット。 Android を実行できる一部の操作とは、タイル、ディザリング、およびアンチ エイリアスです。 レイアウトの背景にビットマップを並べて表示する非常に一般的な用途の 1 つです。
+-   XML [BitmapDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;このファイルは実際のビットマップに対して実行するには XML では、命令のセット。 Android を実行できる一部の操作とは、タイル、ディザリング、およびアンチ エイリアスです。 レイアウトの背景にビットマップを並べて表示する非常に一般的な用途の 1 つです。
 
 
 #### <a name="drawable-example"></a>描画可能な例
@@ -148,7 +148,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 ![角が丸い、グラデーションの描画可能なカスタム背景を持つ Textview](graphics-and-animation-images/image1.png)
 
-XML 要素と描画可能なリソースの構文の詳細についてを参照してください。 [Google のドキュメント](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)します。
+XML 要素と描画可能なリソースの構文の詳細についてを参照してください。 [Google のドキュメント](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)します。
 
 
 ### <a name="using-the-canvas-drawing-api"></a>キャンバス描画 API を使用します。
@@ -170,7 +170,7 @@ Canvas canvas = new Canvas(b);
 
 取得するその他の方法、`Canvas`し、オブジェクトが、 [OnDraw](https://developer.xamarin.com/api/member/Android.Views.View.OnDraw/)から提供されるコールバック メソッド、[ビュー](https://developer.xamarin.com/api/type/Android.Views.View/)基本クラス。 Android は、ビュー自体を描画する必要がありますを渡しますを決めるときにこのメソッドを呼び出して、`Canvas`を使用するビューのオブジェクト。
 
-キャンバスのクラスは、プログラムで描画の指示を提供するメソッドを公開します。 例えば:
+キャンバスのクラスは、プログラムで描画の指示を提供するメソッドを公開します。 例:
 
 -   [Canvas.DrawPaint](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawPaint/p/Android.Graphics.Paint/) &ndash;キャンバス全体のビットマップを指定の描画で塗りつぶします。
 
@@ -443,7 +443,7 @@ protected override void OnCreate(Bundle bundle)
 ## <a name="related-links"></a>関連リンク
 
 - [アニメーションのデモ (サンプル)](https://developer.xamarin.com/samples/monodroid/AnimationDemo)
-- [アニメーションとグラフィックス](http://developer.android.com/guide/topics/graphics/index.html)
+- [アニメーションとグラフィックス](https://developer.android.com/guide/topics/graphics/index.html)
 - [モバイル アプリに命をアニメーションを使用してください。](http://youtu.be/ikSk_ILg3d0)
 - [AnimationDrawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.AnimationDrawable/)
 - [Canvas](https://developer.xamarin.com/api/type/Android.Graphics.Canvas/)

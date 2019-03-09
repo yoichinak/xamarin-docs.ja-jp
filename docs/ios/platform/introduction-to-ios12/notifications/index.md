@@ -6,21 +6,15 @@ ms.assetid: 137C719D-6D97-4D5B-9877-F6F35BF85FF0
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: f4abc3c87a4c38da8863347fa08f198dece791a8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111633"
+ms.date: 09/04/2018
 ---
 # <a name="notifications-in-ios-12"></a>IOS 12 での通知
 
-## <a name="critical-alertscritical-alertsmd"></a>[重大なアラート](critical-alerts.md)
+## <a name="critical-alertscritical-alertsmd"></a>[重要なアラート](critical-alerts.md)
 
 iOS 12 では、重大なアラートを送信します。 重大なアラートは、応答不可が有効にするかどうかに関係なくサウンドを再生または着信音スイッチはオフです。
 
-## <a name="dynamic-notification-action-buttonsdynamic-actionsmd"></a>[動的の通知動作設定ボタン](dynamic-actions.md)
+## <a name="dynamic-notification-action-buttonsdynamic-actionsmd"></a>[動的な通知アクション ボタン](dynamic-actions.md)
 
 12、iOS で通知は実行時の動作設定ボタンを変更できますようになりました。
 これにより、通知とユーザーの対話のコンテンツに関連性の高いアクションを表示します。

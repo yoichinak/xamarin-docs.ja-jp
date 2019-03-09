@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a0778de5dcc7e21ba011fe144be703b3b83b8247
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114042"
 ---
+
 # <a name="notifications-in-xamarinandroid"></a>Xamarin.Android での通知
 
 
@@ -36,7 +31,7 @@ ms.locfileid: "50114042"
 
 [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase Cloud Messaging (FCM) はモバイル アプリとサーバー アプリケーション間のメッセージングを容易にするサービスです。 Xamarin.Android アプリケーションで、リモート通知が (プッシュ通知とも呼ばれます) を実装するして firebase Cloud Messaging を使用することができます。
 
-[通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; Android 開発者向けのトピックでは、Android の通知の完全なガイドです。 Android ユーザー インターフェイスのガイドラインに準拠するよう、通知をデザインするのに役立つに関する考慮事項」の設計が含まれています。 アクティビティを開始するときに、preserviing ナビゲーションに関する背景情報を提供し、ロック画面に通知し、コントロールのメディア再生の進行状況を表示する方法について説明します。 
+[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; Android 開発者向けのトピックでは、Android の通知の完全なガイドです。 Android ユーザー インターフェイスのガイドラインに準拠するよう、通知をデザインするのに役立つに関する考慮事項」の設計が含まれています。 アクティビティを開始するときに、preserviing ナビゲーションに関する背景情報を提供し、ロック画面に通知し、コントロールのメディア再生の進行状況を表示する方法について説明します。 
 
 [NotificationListenerService](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/) &ndash; Android ではこのサービスにより、アプリをリッスンし (操作) に、アプリが登録されている通知だけでなく、Android デバイスですべての通知が投稿された受信します。 ユーザーが、デバイスへの通知をリッスンできるようにするため、アプリへのアクセス許可を明示的に付ける必要がありますに注意してください。
 

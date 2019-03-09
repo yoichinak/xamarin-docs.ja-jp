@@ -1,5 +1,5 @@
 ---
-title: Java Development Kit (JDK) バージョンを更新する方法は?
+title: Java Development Kit (JDK) のバージョンの更新方法を教えてください
 description: この記事では、Windows とファルダに Java Development Kit (JDK) バージョンを更新する方法を示しています。
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -8,14 +8,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: aa04d944f803dded0e9448de27ed7d5ced2efb54
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 290a7deef4fdc10163bdb09881382f011b0dcd32
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109186"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670853"
 ---
-# <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Java Development Kit (JDK) バージョンを更新する方法は?
+# <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Java Development Kit (JDK) のバージョンの更新方法を教えてください
 
 _この記事では、Windows とファルダに Java Development Kit (JDK) バージョンを更新する方法を示しています。_
 
@@ -27,7 +27,7 @@ Microsoft Mobile openjdk を更新するを参照してください。 [Microsof
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  JDK 8 (1.8) をダウンロード、 [Oracle の web サイト](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
+1.  JDK 8 (1.8) をダウンロード、 [Oracle の web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
     ![JDK のスクリーン ショットは、Oracle web サイトのページをダウンロードします。](update-jdk-images/image1.png)
 
@@ -47,7 +47,7 @@ Microsoft Mobile openjdk を更新するを参照してください。 [Microsof
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  JDK 8 (1.8) をダウンロード、 [Oracle の web サイト](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
+1.  JDK 8 (1.8) をダウンロード、 [Oracle の web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
     ![JDK のスクリーン ショットは、Oracle web サイトのページをダウンロードします。](update-jdk-images/image1.png)
 

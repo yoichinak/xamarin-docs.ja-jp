@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 107877d0e92d3a46101812b78bc0b414c0fbb320
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e0430b8ed9c42030441021e71c3b08b1ddccc57
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105468"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670546"
 ---
 # <a name="managing-fragments"></a>フラグメントの管理
 
@@ -40,7 +40,7 @@ fragmentTx.Commit();
 
 場合は、トランザクションのコミット後`Activity.OnSaveInstanceState()`が呼び出されると、例外がスローされます。 これは、アクティビティの状態を保存、ときに Android もホストされているフラグメントの状態が保存されるために発生します。 この時点より後のフラグメントのトランザクションがコミットされた場合は、アクティビティが復元されるときにこれらのトランザクションの状態が失われます。
 
-アクティビティのフラグメントのトランザクションを保存することは[戻るスタック](http://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)を呼び出すことによって`FragmentTransaction.AddToBackStack()`します。 これにより、ユーザーによる下位に移動するフラグメントの場合に変更、**戻る**ボタンが押されました。 このメソッドを呼び出し、削除されたフラグメントが破棄されは、ユーザーがアクティビティでもう一度移動する場合は使用できません。
+アクティビティのフラグメントのトランザクションを保存することは[戻るスタック](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)を呼び出すことによって`FragmentTransaction.AddToBackStack()`します。 これにより、ユーザーによる下位に移動するフラグメントの場合に変更、**戻る**ボタンが押されました。 このメソッドを呼び出し、削除されたフラグメントが破棄されは、ユーザーがアクティビティでもう一度移動する場合は使用できません。
 
 次の例は、使用する方法を示します、`AddToBackStack`のメソッド、`FragmentTransaction`戻るスタックの最初のフラグメントの状態を維持しながら、1 つのフラグメントを置換します。
 

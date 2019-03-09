@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 81e6cbb39a522a471e739e7e9bbb8a0f451a38cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 640d50a45b4b7f61113b609fa6a5e4a04566b360
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052897"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667549"
 ---
 # <a name="searching-data-with-azure-search"></a>Azure Search を使用したデータを検索
 
@@ -156,7 +156,7 @@ static void UploadDataToSearchIndex()
 }
 ```
 
-としてインデックスにインポートするデータがパッケージ化、 `IndexBatch` 、オブジェクトのコレクションをカプセル化する`IndexAction`オブジェクト。 各`IndexAction`インスタンスには、ドキュメント、および Azure Search のドキュメントに対して実行する操作を指示するプロパティが含まれています。 上記のコード例で、`IndexAction.Upload`アクションを指定すると、その結果が、新規の場合、インデックスに挿入されるドキュメントまたは既に存在する場合に置き換えられます。 `IndexBatch`オブジェクトが呼び出すことによって、インデックスに送信し、`Documents.Index`メソッドを`SearchIndexClient`オブジェクト。 その他のインデックス作成操作の詳細については、次を参照してください。[どのインデックス作成アクションを使用するかを決める](/azure/search/search-import-data-dotnet#ii-decide-which-indexing-action-to-use)します。
+としてインデックスにインポートするデータがパッケージ化、 `IndexBatch` 、オブジェクトのコレクションをカプセル化する`IndexAction`オブジェクト。 各`IndexAction`インスタンスには、ドキュメント、および Azure Search のドキュメントに対して実行する操作を指示するプロパティが含まれています。 上記のコード例で、`IndexAction.Upload`アクションを指定すると、その結果が、新規の場合、インデックスに挿入されるドキュメントまたは既に存在する場合に置き換えられます。 `IndexBatch`オブジェクトが呼び出すことによって、インデックスに送信し、`Documents.Index`メソッドを`SearchIndexClient`オブジェクト。 その他のインデックス作成操作の詳細については、次を参照してください。[どのインデックス作成アクションを使用するかを決める](/azure/search/search-import-data-dotnet#decide-which-indexing-action-to-use)します。
 
 > [!NOTE]
 > 1000 個のドキュメントは、1 つのインデックス作成要求に含めることができます。

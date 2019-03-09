@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 7bef5de57b7ac709ebab4c39feedbec369e6bd14
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b1303f21225d3ae7b7d3a796e4845afbfe554a22
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122427"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667712"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Workbooks のインストールと要件
 
@@ -102,11 +102,11 @@ IOS または Android のブックの接続に問題があるため、既にオ�
 
 - 接続しようとしているデバイスの名前
 - デバイスの OS バージョン
-- Android: は、x86 を使用していることを確認しますエミュレーター。
-- Android: どのようなエミュレーターのプラットフォームを使用していますか。 Google エミュレーターでしょうか。
+- Android:X86 を使用していることを確認しますエミュレーター。
+- Android:どのようなエミュレーターのプラットフォームを使用していますか。 Google エミュレーターでしょうか。
   Visual Studio Android Emulator でしょうか。 Xamarin Android Player でしょうか。
-- Windows 上の iOS: Xamarin リモート iOS シミュレーターのバージョンはするがインストールされている (確認**プログラムの追加/削除**で**コントロール パネルの**)?
-- Windows 上の iOS: Mac ビルド ホストのプラットフォームのバージョン情報のも提供してください
+- Windows で iOS の場合:Xamarin リモート iOS シミュレーターのバージョンはインストールした (確認**プログラムの追加/削除**で**コントロール パネルの **) でしょうか。
+- Windows で iOS の場合:Mac ビルド ホストのプラットフォームのバージョン情報のも提供してください。
 - デバイスにはネットワーク接続 (web ブラウザーを使用してチェック) がありますか。
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
@@ -160,5 +160,5 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 1.4 または 1.3.2 に新しいまたは古いからダウン グレードします。
 
-1. [Workbooks と Inspector を手動でアンインストールします。](#macOS)
+1. [Workbooks と Inspector を手動でアンインストールします。](#uninstall-macos)
 2. 実行、1.3.2 以前`.pkg`インストーラー

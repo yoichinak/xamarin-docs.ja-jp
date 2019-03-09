@@ -1,17 +1,17 @@
 ---
-title: さまざまな画面のリソースの作成
+title: さまざまな画面のリソース作成
 ms.prod: xamarin
 ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: df8ee3da8a1341cd1dd879e8e70687d9fbd9957b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63cbe556783ffe22512ff5312817d522120bd15e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117435"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670572"
 ---
 # <a name="creating-resources-for-varying-screens"></a>さまざまな画面のリソースを作成します。
 
@@ -50,7 +50,7 @@ Android では、適切なサイズに実行時に、ドローアブルを拡大
 
 ### <a name="declare-the-supported-screen-size"></a>サポートされている画面のサイズを宣言します。
 
-画面のサイズを宣言することにより、サポートされているデバイスのみが、アプリケーションをダウンロードできます。 これは、設定によって実現されます、[サポート画面](http://developer.android.com/guide/topics/manifest/supports-screens-element.html)内の要素、 **AndroidManifest.xml**ファイル。 この要素は、アプリケーションでどのような画面サイズがサポートされている指定に使用されます。 特定の画面は、アプリケーションが画面には、そのレイアウトを配置できます正しくサポートと見なされます。 このマニフェスト要素を使用すると、アプリケーションは表示されませんで[ *Google Play* ](https://play.google.com/)画面仕様を満たしていないデバイス。 ただし、アプリケーションが、サポートされていない画面を備えたデバイスで実行されますが、レイアウトがぼやけてとピクセルです。
+画面のサイズを宣言することにより、サポートされているデバイスのみが、アプリケーションをダウンロードできます。 これは、設定によって実現されます、[サポート画面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)内の要素、 **AndroidManifest.xml**ファイル。 この要素は、アプリケーションでどのような画面サイズがサポートされている指定に使用されます。 特定の画面は、アプリケーションが画面には、そのレイアウトを配置できます正しくサポートと見なされます。 このマニフェスト要素を使用すると、アプリケーションは表示されませんで[ *Google Play* ](https://play.google.com/)画面仕様を満たしていないデバイス。 ただし、アプリケーションが、サポートされていない画面を備えたデバイスで実行されますが、レイアウトがぼやけてとピクセルです。
 
 サポートされている画面 sixes が宣言されている、 **Properites/AndroidManifest.xml**ソリューションのファイル。
 
@@ -64,7 +64,7 @@ Android では、適切なサイズに実行時に、ドローアブルを拡大
 
 -----
 
-編集**AndroidManifest.xml**に含める[サポート画面](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+編集**AndroidManifest.xml**に含める[サポート画面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -178,7 +178,7 @@ Android デバイスの必要に応じて、ビットマップのスケーラビ
 
 デバイスでは、さまざまなまごつくかもしれませんに android を実行し、画面サイズや画面解像度の組み合わせが多すぎると感じることができます。 さまざまなデバイスをサポートするために必要な労力を最小限に抑えるには、次のヒントが役立ちます。
 
-- **のみの設計および必要な開発**&ndash;があり、多くのさまざまなデバイスがあるが、まれなフォーム ファクターの設計と開発のかなりの労力がかかる場合がありますをいくつか存在します。 [**画面サイズおよび密度**](http://developer.android.com/resources/dashboard/screens.html)ダッシュ ボードは、データ、画面サイズ/画面密度マトリックスの内訳を提供する Google から提供されるページ。 この内訳は、画面のサポートで開発作業をする方法の洞察を提供します。
+- **のみの設計および必要な開発**&ndash;があり、多くのさまざまなデバイスがあるが、まれなフォーム ファクターの設計と開発のかなりの労力がかかる場合がありますをいくつか存在します。 [**画面サイズおよび密度**](https://developer.android.com/resources/dashboard/screens.html)ダッシュ ボードは、データ、画面サイズ/画面密度マトリックスの内訳を提供する Google から提供されるページ。 この内訳は、画面のサポートで開発作業をする方法の洞察を提供します。
 
 - **ピクセル単位ではなく、DPs 使用**-ピクセルが画面密度の変化に応じて厄介なものになります。 ピクセル値をハードコーディングしないでください。 配布ポイント (密度に依存しないピクセル単位) を優先してピクセルを避けてください。
 

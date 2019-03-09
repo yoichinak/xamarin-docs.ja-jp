@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 12a07be4adb32e8d9461a00e5fdea52d9b930848
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b8eafc3c9c85ba8067b5da7b568ed7c91c9e170c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117851"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666426"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>MonoGame UWP プロジェクトを作成します。
 
@@ -40,11 +40,11 @@ MonoGame の UWP アプリの開発が必要です。
 すべての必要なリソースがインストールされているし、Windows 10 コンピューターで開発者モードが有効になって、次の手順に従って Visual Studio を使用して、新しい MonoGame プロジェクトを作成できます。
 
 1. 選択**ファイル** > **新しい** > **プロジェクト.**
-1. 選択、**インストール** > **テンプレート** > **Visual C#**   >  **MonoGame**カテゴリ: 
+1. 選択、**インストール** > **テンプレート** > **Visual C#**   >  **MonoGame**カテゴリ:
 
     ![](uwp-images/image1.png "MonoGame カテゴリ")
 
-1. 選択、 **MonoGame Windows 10 のユニバーサル プロジェクト**オプション。 
+1. 選択、 **MonoGame Windows 10 のユニバーサル プロジェクト**オプション。
 
     ![](uwp-images/image2.png "MonoGame Windows 10 のユニバーサル プロジェクト オプションを選択します。")
 
@@ -76,7 +76,7 @@ UWP プロジェクトは、同じプロジェクトから任意の Windows 10 �
 
 ![](uwp-images/remote.png "リモート コンピューターへのターゲットの切り替えを Xbox の IP アドレスを入力することによって、UWP アプリを展開できます。")
 
-Xbox One では、白い境界線は、Tv の非セーフ領域を表します。 詳細については、次を参照してください。、[安全領域セクション](#Safe_Area_on_Xbox_One)します。
+Xbox One では、白い境界線は、Tv の非セーフ領域を表します。 詳細については、次を参照してください。、[安全領域セクション](#safe-area-on-xbox-one)します。
 
 ![](uwp-images/safearea.png "Xbox One で白い境界線が Tv の非セーフ領域を表します")
 
@@ -92,7 +92,7 @@ Xbox One の MonoGame テンプレートでは、安全領域が考慮され、�
 
 ファイルから直接または MonoGame プロジェクト内のコンテンツを参照することができます、 [MonoGame コンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md)します。 小さなゲーム プロジェクト ファイルからの読み込みの簡潔さが挙げられます。 大規模なプロジェクトは、コンテンツのサイズを小さくして読み込み時間を最適化するために、コンテンツ パイプラインを使用して得られます。 Xbox 360 に XNA とは異なり、`System.IO.File`クラスは Xbox の 1 つの UWP アプリで使用できます。
 
-コンテンツ パイプラインを使用してコンテンツを読み込む詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)します。 
+コンテンツ パイプラインを使用してコンテンツを読み込む詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)します。
 
 ### <a name="loading-content-from-file"></a>ファイルからコンテンツを読み込む
 

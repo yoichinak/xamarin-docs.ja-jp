@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: bb8aec5a5054c28cf7862d14148e7f2000fa3a35
-ms.sourcegitcommit: c77f84a0686d16de6ac630271fccac719fd9eec4
+ms.openlocfilehash: a6a4ef9fb36fde067fa58fec9a6206b1dbc1fbf0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56307919"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668349"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS の制限事項
 
@@ -27,7 +27,7 @@ Xamarin.iOS を使用してアプリケーションが静的コードにコン�
 
 Mono と .NET の従来とは異なり、iPhone 上のコードは前もって必要に応じて、JIT コンパイラでコンパイルされているのではなく静的にコンパイルされます。
 
-Mono の[AOT の完全な](http://www.mono-project.com/docs/advanced/aot/#full-aot)テクノロジ ジェネリックに関していくつかの制限には、これらはすべてジェネリック インスタンス化を事前コンパイル時に決定できるためが発生します。 コードのコンパイル時にコンパイラで、だけを使用して常に、通常の .NET または Mono ランタイムの問題はありません。 これにより、Xamarin.iOS のような静的コンパイラにとっての課題です。
+Mono の[AOT の完全な](https://www.mono-project.com/docs/advanced/aot/#full-aot)テクノロジ ジェネリックに関していくつかの制限には、これらはすべてジェネリック インスタンス化を事前コンパイル時に決定できるためが発生します。 コードのコンパイル時にコンパイラで、だけを使用して常に、通常の .NET または Mono ランタイムの問題はありません。 これにより、Xamarin.iOS のような静的コンパイラにとっての課題です。
 
 開発者が直面する一般的な問題のいくつか挙げます。
 

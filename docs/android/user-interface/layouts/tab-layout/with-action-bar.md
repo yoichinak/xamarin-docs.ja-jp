@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 01ff4426dfb4764b7d9ca22703aa2b1667a90454
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 6ce8099aa4230a11a12f4fe8aeffe850f9ef2ce9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528547"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671001"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Actionbar タブ付きレイ アウト
 
@@ -31,7 +31,7 @@ _このガイドでは、紹介し、ActionBar Api を使用して、Xamarin.And
 
 対象が API レベル 11 (Android 3.0) または高い ActionBar Api にアクセスするネイティブの Android Api の一部として Xamarin.Android アプリケーション。 
 
-API レベル 7 (Android 2.1) に戻る移植された ActionBar Api の一部と、経由で使用できるは、 [V7 AppCompat ライブラリ](http://developer.android.com/tools/support-library/features.html#v7-appcompat)、これを使用して Xamarin.Android アプリを使用できる、 [Xamarin Android サポート ライブラリ - v7 の詳細](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)パッケージ。
+API レベル 7 (Android 2.1) に戻る移植された ActionBar Api の一部と、経由で使用できるは、 [V7 AppCompat ライブラリ](https://developer.android.com/tools/support-library/features.html#v7-appcompat)、これを使用して Xamarin.Android アプリを使用できる、 [Xamarin Android サポート ライブラリ - v7 の詳細](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)パッケージ。
 
 
 
@@ -182,8 +182,8 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 - [ActionBarTabs (サンプル)](https://developer.xamarin.com/samples/monodroid/UserInterface/ActionBarTabs/)
 - [ツール バー](~/android/user-interface/controls/tool-bar/index.md)
 - [フラグメント](~/android/platform/fragments/index.md)
-- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
-- [ActionBarActivity](http://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
-- [アクション バーのパターン](http://developer.android.com/design/patterns/actionbar.html)
-- [Android v7 AppCompat](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
+- [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
+- [ActionBarActivity](https://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
+- [アクション バーのパターン](https://developer.android.com/design/patterns/actionbar.html)
+- [Android v7 AppCompat](https://developer.android.com/tools/support-library/features.html#v7-appcompat)
 - [Xamarin.Android サポート ライブラリ v7 AppCompat NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)

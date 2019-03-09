@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 16ee512395b2658b26bc7a489eabecec3656fa93
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d5478a09c461ec8f1bf51efaa7b4dc2f862d69b4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115758"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668941"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 の新機能の概要
 
@@ -46,12 +46,12 @@ _最新バージョンのC#言語 – バージョン 6 – は少ない定型�
 
 ## <a name="compiler"></a>コンパイラ
 
-Mono C# 6 のコンパイラは、これは Mono 4.0 以降に含まれている[無償でダウンロードできる](http://www.mono-project.com/download/)します。
+Mono C# 6 のコンパイラは、これは Mono 4.0 以降に含まれている[無償でダウンロードできる](https://www.mono-project.com/download/)します。
 Visual Studio for Mac は、システム上の Mono のインストールを自動的に更新します。
 
 Windows ユーザー必要があります[Visual Studio 2015 または 2017 ^](https://visualstudio.microsoft.com/)コンパイルにインストールされているC#6 コード (お使いの IDE として Xamarin Studio for Windows を選択する) 場合でもです。
 
-^ または*[Microsoft Build Tools 2015](http://www.microsoft.com/download/details.aspx?id=48159)* コマンド ライン コンパイルやビルド サーバー、たとえばします。
+^ または*[Microsoft Build Tools 2015](https://www.microsoft.com/download/details.aspx?id=48159)* コマンド ライン コンパイルやビルド サーバー、たとえばします。
 
 ## <a name="using-c-6"></a>使用してC#6
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: f21eca052ef13fd0e3d6efa261e1ff70b3b14372
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1a9856a5b6257c82b2072e9eb44be481373abfcf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120711"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671859"
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
@@ -52,7 +52,7 @@ Android アプリ開始する時間のかかる、特に最初の時間中に、
 
 スプラッシュ スクリーンは、アクティビティのスプラッシュ スクリーンの背景に描画可能な XML で表示されます。 イメージのビットマップ イメージ (PNG や JPG) を使用して表示する必要があります。
 
-このガイドでは使用して、[レイヤーの一覧](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)アプリケーションのスプラッシュ スクリーン イメージを中央にします。 次のスニペットの例に示します、`drawable`を使用してリソースを`layer-list`:
+このガイドでは使用して、[レイヤーの一覧](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)アプリケーションのスプラッシュ スクリーン イメージを中央にします。 次のスニペットの例に示します、`drawable`を使用してリソースを`layer-list`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,5 +229,5 @@ public class MainActivity : AppCompatActivity
 ## <a name="related-links"></a>関連リンク
 
 - [スプラッシュ スクリーン (サンプル)](https://developer.xamarin.com/samples/monodroid/SplashScreen)
-- [レイヤーの一覧のディスプレイ](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
+- [レイヤーの一覧のディスプレイ](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
 - [ 素材のデザイン パターン - 起動画面](https://material.io/design/communication/launch-screen.html#usage)

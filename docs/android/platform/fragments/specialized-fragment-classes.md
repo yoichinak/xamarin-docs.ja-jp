@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 1011d74be971a3acba33c8f2f811e8f89e20cfc4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 75d95d630415cdaa4c0c1ed3b8ddebb32b8e3c4d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108445"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670066"
 ---
 # <a name="specialized-fragment-classes"></a>特殊なフラグメント クラス
 
@@ -191,7 +191,7 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-基本設定を管理するには、フラグメント API を提供します、`PreferenceFragment`サブクラスです。 `PreferenceFragment`に似ていますが、 [PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash;フラグメント、ユーザーの基本設定の階層に表示されます。 ユーザーと対話の設定、として自動的に保存されますを[SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html)します。
+基本設定を管理するには、フラグメント API を提供します、`PreferenceFragment`サブクラスです。 `PreferenceFragment`に似ていますが、 [PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash;フラグメント、ユーザーの基本設定の階層に表示されます。 ユーザーと対話の設定、として自動的に保存されますを[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)します。
 Android 3.0 またはの高いアプリケーションでは、使用、`PreferenceFragment`アプリケーションの設定を処理します。 次の図の例を示します、 `PreferenceFragment`:
 
 [![インライン、ダイアログ ボックスで、起動設定して例 PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)

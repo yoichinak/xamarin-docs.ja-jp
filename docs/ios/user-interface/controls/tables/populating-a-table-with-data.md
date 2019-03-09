@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 859afcf6ab9f3acfb56104fa68683ba28d913ce4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5363e3a2210bdcf1efb870ac808ecb37584de6a7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117139"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668921"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Xamarin.iOS でのデータのテーブルの作成
 
@@ -34,7 +34,7 @@ A`UITableViewSource`サブクラスが割り当てられたにすべて`UITableV
 
 データを表示するテーブルの作成に必要な 2 つの必須の方法はあります。
 
--   **RowsInSection**戻り値 –、 [ `nint` ](http://developer.xamarin.com/guides/cross-platform/macios/nativetypes/)合計数の行のデータ テーブルを表示する必要があります。
+-   **RowsInSection**戻り値 –、 [ `nint` ](https://developer.xamarin.com/guides/cross-platform/macios/nativetypes/)合計数の行のデータ テーブルを表示する必要があります。
 -   **GetCell**戻り値 –、`UITableCellView`メソッドに渡される対応する行のインデックスのデータが設定されます。
 
 

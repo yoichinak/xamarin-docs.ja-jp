@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 48859afe2c988c1afe67d5c4350cef734f879fdf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120997"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669831"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS のタスクをバック グラウンド処理
 
@@ -67,7 +67,7 @@ public override void DidEnterBackground (UIApplication application) {
 まず、オーバーライドすることで、`DidEnterBackground`メソッドで、`AppDelegate`を使用して、タスクを登録しますが、`BeginBackgroundTask`前の例で行ったようします。 次に、新しいスレッドを起動し、実行時間の長いタスクを実行します。 なお、`EndBackgroundTask`今すぐから呼び出し、実行時間の長いタスク内で後、`DidEnterBackground`メソッドも返される、既にあります。
 
 > [!IMPORTANT]
-> iOS を使用して、[メカニズムのウォッチドッグ](http://developer.apple.com/library/ios/qa/qa1693/_index.html)アプリケーションの UI の応答性を確保します。 アプリケーションで多くの時間を費やす`DidEnterBackground`は UI に応答しなくなります。 により、バック グラウンドで実行するタスクの開始`DidEnterBackground`適時、UI の応答性を維持する方法と、ウォッチドッグがアプリケーションを強制終了するを防ぐに戻ります。
+> iOS を使用して、[メカニズムのウォッチドッグ](https://developer.apple.com/library/ios/qa/qa1693/_index.html)アプリケーションの UI の応答性を確保します。 アプリケーションで多くの時間を費やす`DidEnterBackground`は UI に応答しなくなります。 により、バック グラウンドで実行するタスクの開始`DidEnterBackground`適時、UI の応答性を維持する方法と、ウォッチドッグがアプリケーションを強制終了するを防ぐに戻ります。
 
 
 ## <a name="handling-background-task-time-limits"></a>バック グラウンド タスクの期限を処理

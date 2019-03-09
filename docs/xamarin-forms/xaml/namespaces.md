@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: d307c128826775e6d4f7129c79e17522e7e05d6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831756"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671573"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms の XAML 名前空間
 
@@ -50,6 +50,9 @@ XAML では、プレフィックスを使用して、名前空間内の型を参
 |`x:TypeArguments`|ジェネリック型のコンス トラクターにジェネリック型引数を指定します。|
 
 詳細については、`x:DataType`属性は、「[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)します。 詳細については、`x:FieldModifier`属性は、「[フィールド修飾子](~/xamarin-forms/xaml/field-modifiers.md)します。 詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)します。
+
+> [!NOTE]
+> 上記の名前空間属性の他 Xamarin.Forms も含まれていますマークアップ拡張機能で使用できる`x`名前空間プレフィックス。 詳細については、次を参照してください。 [XAML マークアップ拡張機能の使用](~/xamarin-forms/xaml/markup-extensions/consuming.md)します。
 
 XAML では、名前空間の宣言は、子要素を親要素から継承します。 そのため、XAML ファイルのルート要素で名前空間を定義するときにそのファイル内のすべての要素は、名前空間宣言を継承します。
 

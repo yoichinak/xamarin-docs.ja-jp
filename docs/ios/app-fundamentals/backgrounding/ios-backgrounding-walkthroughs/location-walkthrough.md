@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d6dac02ac82b74c9b0e33f5fff0b82223df1f47
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b857ee97951f0abfdf8e082ca9a826d5580d24ab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108679"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669194"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>チュートリアル - Xamarin.iOS でのバック グラウンド場所
 
@@ -103,7 +103,7 @@ ms.locfileid: "50108679"
 
     このメソッドで行われているいくつかの重要な点があります。 最初に、アプリケーションがデバイス上の場所のデータへのアクセスにはが含まれているのチェックを実行します。 これが呼び出すことによって確認`LocationServicesEnabled`上、`CLLocationManager`します。 このメソッドが返す**false**場合は、ユーザーがアプリケーションの位置情報へのアクセスを拒否します。
 
-1. 次に、更新するロケーション マネージャーをどのくらいの頻度を伝えます。 `CLLocationManager` フィルター処理および更新の頻度を含む、場所データを構成するためには、多くのオプションを提供します。 この例では、設定、`DesiredAccuracy`メーターによって場所が変更されるたびに更新します。 場所の更新の頻度およびその他の設定の構成の詳細についてを参照してください、 [CLLocationManager クラス参照](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)Apple のドキュメントで。
+1. 次に、更新するロケーション マネージャーをどのくらいの頻度を伝えます。 `CLLocationManager` フィルター処理および更新の頻度を含む、場所データを構成するためには、多くのオプションを提供します。 この例では、設定、`DesiredAccuracy`メーターによって場所が変更されるたびに更新します。 場所の更新の頻度およびその他の設定の構成の詳細についてを参照してください、 [CLLocationManager クラス参照](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)Apple のドキュメントで。
 
 1. 最後に、呼び出す`StartUpdatingLocation`上、`CLLocationManager`インスタンス。 これにより、location manager の更新プログラムの送信を開始して、現在の場所に初期の修正プログラムを取得するには
 

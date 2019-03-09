@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
-ms.openlocfilehash: 014de47660f2c0ac8295495e417b3d5def135470
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.openlocfilehash: e6df2d9d45eb2f898bb3c4957ec7960956a184e0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879317"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671781"
 ---
 # <a name="systemdata-in-xamarinios"></a>Xamarin.iOS で System.Data
 
@@ -108,7 +108,7 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> コードを受けやすくために、SQL コマンド文字列を埋め込むには不適切な手法は前述のように上記のコード サンプル、 [SQL インジェクション](http://en.wikipedia.org/wiki/SQL_injection)します。
+> コードを受けやすくために、SQL コマンド文字列を埋め込むには不適切な手法は前述のように上記のコード サンプル、 [SQL インジェクション](https://en.wikipedia.org/wiki/SQL_injection)します。
 
 
 ### <a name="using-command-parameters"></a>コマンド パラメーターの使用

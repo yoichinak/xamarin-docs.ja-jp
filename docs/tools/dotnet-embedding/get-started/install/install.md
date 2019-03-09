@@ -1,58 +1,58 @@
 ---
 title: .NET の埋め込みをインストールします。
-description: このドキュメントでは、.NET の埋め込みをインストールする方法について説明します。 手の形で、ツールを実行する方法についても説明のバインドを生成する方法をカスタムの MSBuild ターゲット、および必要なビルド後の手順を使用する方法、自動的にします。
+description: このドキュメントでは、.NET の埋め込みをインストールする方法について説明します。 一方で、ツールを実行する方法について説明しますバインドを生成する方法、カスタム MSBuild のターゲットとビルド後の必要な手順を使用する方法、自動的にします。
 ms.prod: xamarin
 ms.assetid: 47106AF3-AC6E-4A0E-B30B-9F73C116DDB3
 author: chamons
 ms.author: chhamo
-ms.date: 4/18/2018
-ms.openlocfilehash: 057a1f3f662b2dbe2f8aee277505e1d6e8798084
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 04/18/2018
+ms.openlocfilehash: 2a572748c21d2a640add3346d1162f4b6bdc8e99
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793796"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668440"
 ---
 # <a name="installing-net-embedding"></a>.NET の埋め込みをインストールします。
 
-## <a name="installing-net-embedding-from-nuget"></a>.NET は NuGet から埋め込みをインストールします。
+## <a name="installing-net-embedding-from-nuget"></a>.NET の埋め込み NuGet からインストールします。
 
-選択**追加 > NuGet パッケージを追加しています.** およびインストール**Embeddinator 4000** NuGet パッケージ マネージャーから。
+選択**追加 > NuGet パッケージを追加しています.** インストールと**Embeddinator 4000** NuGet パッケージ マネージャーから。
 
 ![NuGet パッケージ マネージャー](images/visualstudionuget.png)
 
 これがインストールされます**Embeddinator 4000.exe**と**objcgen**に、**パッケージ/Embeddinator-4000/ツール**ディレクトリ。
 
-一般をダウンロードする Embeddinator 4000 の最新のリリースを選択してください。 Objective C のサポートが必要です 0.4 またはそれ以降。
+一般に、ダウンロードの Embeddinator 4000 の最新リリースを選択してください。 Objective C のサポートには、0.4 が必要がありますまたはそれ以降。
 
-## <a name="running-manually"></a>手動で実行します。
+## <a name="running-manually"></a>手動で実行されています。
 
-NuGet をインストールすると、手動でツールを実行できます。
+できたので、NuGet がインストールされている場合、手動でツールを実行できます。
 
-- ターミナル (macOS) または (Windows) のコマンド プロンプトを開く
-- ソリューションは、ルート ディレクトリを変更します。
+- (MacOS) ターミナルまたはコマンド プロンプト (Windows) を開く
+- ソリューションのルートにディレクトリを変更
 - ツールにインストールされます。
-    - **。/パッケージ/Embeddinator-4000 です。[バージョン]/tools/objcgen** (Objective C)
-    - **。/パッケージ/Embeddinator-4000 です。[VERSION]/tools/Embeddinator-4000.exe** (Java/C) 
-- Macos、 **objcgen**直接実行することができます。 
-- Windows では、 **Embeddinator 4000.exe**直接実行することができます。
-- Macos、 **Embeddinator 4000.exe**と一緒に実行する必要がある**モノラル**: 
+    - **。/パッケージ/Embeddinator-4000 です。[バージョン]/tools/objcgen** (OBJECTIVE-C)
+    - **。/パッケージ/Embeddinator-4000 です。[VERSION]/tools/Embeddinator-4000.exe** (Java/C)
+- Macos で**objcgen**直接実行できます。
+- Windows で**Embeddinator 4000.exe**直接実行できます。
+- Macos で**Embeddinator 4000.exe**併用して実行する必要がある**mono**:
     - `mono ./packages/Embeddinator-4000.[VERSION]/tools/Embeddinator-4000.exe`
 
-コマンドの呼び出しのたびには、プラットフォーム固有のドキュメントに一覧表示のパラメーターの数が必要です。
+各コマンドの呼び出しには、さまざまなプラットフォーム固有のドキュメントに記載のパラメーターが必要です。
 
-## <a name="automatic-binding-generation"></a>自動バインド生成
+## <a name="automatic-binding-generation"></a>自動バインドの生成
 
 ビルド プロセスの一部の .NET の埋め込みを自動的に実行するための 2 つの方法はあります。
 
-- カスタムの MSBuild ターゲット
+- カスタム MSBuild のターゲット
 - ビルド後の手順
 
-このドキュメントでは、両方について説明、中に、カスタム MSBuild ターゲットを使用するが適しています。 ビルド ステップの post は必ずしも、コマンドラインからのビルド時に実行されません。
+このドキュメントでは、両方について説明しますが、中に、カスタム MSBuild ターゲットを使用するが適しています。 後のビルド手順は必ずしも、コマンドラインからのビルド時に実行されません。
 
-### <a name="custom-msbuild-targets"></a>カスタムの MSBuild ターゲット
+### <a name="custom-msbuild-targets"></a>カスタム MSBuild のターゲット
 
-MSbuild ターゲットを持つ、ビルドをカスタマイズするには、最初に作成、 **Embeddinator 4000.targets**の横にある次のような csproj ファイル。
+MSbuild ターゲットを持つビルドのカスタマイズをまず作成、 **Embeddinator 4000.targets** csproj に次のような横にあるファイル。
 
 ```xml
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -62,19 +62,19 @@ MSbuild ターゲットを持つ、ビルドをカスタマイズするには、
 </Project>
 ```
 
-ここでは、プラットフォーム固有のドキュメントに表示されている .NET の埋め込みの呼び出しのいずれかを使用して、コマンドのテキストを入力する必要があります。
+ここでは、.NET の埋め込み呼び出しがプラットフォーム固有のドキュメントに記載のいずれかを使用してコマンドのテキストを入力する必要があります。
 
 このターゲットを使用します。
 
-- Mac 用 Visual Studio 2017 または Visual Studio でプロジェクトを閉じる
-- ライブラリ csproj をテキスト エディターで開く
-- 最後の上の下部にあるこの行を追加`</Project>`行。
+- Mac を Visual Studio 2017 または Visual Studio でプロジェクトを閉じる
+- ライブラリの csproj をテキスト エディターで開く
+- 最後の上、一番下にこの行を追加`</Project>`行。
 
 ```xml
  <Import Project="Embeddinator-4000.targets" />
 ```
 
-- プロジェクトを閉じて再度開きます。
+- プロジェクトを再度開きます。
 
 ### <a name="post-build-steps"></a>ビルド後の手順
 
@@ -82,28 +82,28 @@ MSbuild ターゲットを持つ、ビルドをカスタマイズするには、
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-Mac 用 Visual Studio でに移動**プロジェクトのオプション > ビルド > カスタム コマンド**を追加し、**後にビルド**手順です。
+Visual Studio for Mac に移動**プロジェクト オプション > ビルド > カスタム コマンド**を追加し、**後構築**手順。
 
-プラットフォーム固有のドキュメントで説明されているコマンドを設定します。
+プラットフォーム固有のドキュメントの一覧にコマンドを設定します。
 
 > [!NOTE]
-> NuGet をインストールしたバージョン番号を使用することを確認します。
+> NuGet からインストールされているバージョン番号を使用することを確認します。
 
-C# プロジェクトの開発を継続的な操作を実行する場合は、追加することも、カスタム コマンドをクリーンアップするのには、**出力**.NET の埋め込みを実行する前にディレクトリ。
+進行中の開発を行うしようとしているかどうか、C#プロジェクトをクリーンアップするカスタム コマンドも追加可能性があります、**出力**.NET の埋め込みを実行する前にディレクトリ。
 
 ```shell
 rm -Rf '${SolutionDir}/output/'
 ```
 
-![カスタム ビルド アクション](images/visualstudiocustombuild.png)
+![カスタムのビルド アクション](images/visualstudiocustombuild.png)
 
 > [!NOTE]
-> 生成されたバインディングで指定されたディレクトリに配置されます、`--outdir`または`--out`パラメーター。 一部のプラットフォームではパッケージ名の制限事項と、生成されたバインディングの名前が異なる場合があります。
+> 指定されるディレクトリで、生成されたバインディングが配置される、`--outdir`または`--out`パラメーター。 一部のプラットフォームではパッケージ名の制限事項と、生成されたバインディング名が異なる場合があります。
 
 #### <a name="visual-studio-2017"></a>Visual Studio 2017
 
-同じを設定し、本質的にが、Visual Studio 2017 のメニューはわずかに異なります。 シェル コマンドも若干異なります。
+同じことを設定し、基本的には、Visual Studio 2017 でのメニューはわずかに異なります。 シェル コマンドも若干異なります。
 
-移動して**プロジェクトのオプション > ビルド イベント**にプラットフォーム固有のドキュメントで説明されているコマンドを入力し、**ビルド後に実行するコマンドライン**ボックス。 例えば:
+移動して**プロジェクト オプション > ビルド イベント**にプラットフォーム固有のドキュメントに記載のコマンドを入力し、**ビルド後に実行するコマンドライン**ボックス。 例:
 
 ![.NET Windows 上の埋め込み](images/visualstudiowindows.png)

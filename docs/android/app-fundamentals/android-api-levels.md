@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: aa522e5226d78c1b43bb52b97991b989491d251f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120061"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672587"
 ---
 # <a name="understanding-android-api-levels"></a>Android API レベルの理解
 
@@ -228,7 +228,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 
 この例では、アプリのターゲット フレームワークに設定されて**Android 5.0 (API レベル 21)** に設定されている最小 Android バージョンと**Android 4.1 (API レベル 16)** します。 `SetCategory` API レベルでは`Android.OS.BuildVersionCodes.Lollipop`と後で、次のコード例が呼び出されます`SetCategory`が実際に使用できる&ndash;は*いない*を呼び出そうとしました`SetCategory`と APIレベルは、16、17、18、19、または 20 です。 のみを正しく (ための種類で分類されない) と、通知の並べ替えは行われません、まだ、通知がユーザーに警告するまだ公開されてこれら以前 Android バージョンの機能が減少します。 アプリは引き続き機能しますが、その機能が若干低下します。
 
-一般に、ビルドのバージョン チェックでは、決定を行っている従来の方法と、新しい方法の間での実行時に、コードが役立ちます。 例えば:
+一般に、ビルドのバージョン チェックでは、決定を行っている従来の方法と、新しい方法の間での実行時に、コードが役立ちます。 例:
 
 ```csharp
 if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
@@ -281,5 +281,5 @@ Xamarin.Android ライブラリ プロジェクトを作成するときにない
 - [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)
 - [SDK の CLI ツールを変更します。](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [CompileSdkVersion、minSdkVersion、および [targetsdkversion] を選択](https://medium.com/google-developers/picking-your-compilesdkversion-minsdkversion-targetsdkversion-a098a0341ebd)
-- [API レベルとは何ですか。](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
+- [API レベルとは何ですか。](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
 - [含めて、タグ、およびビルド番号](https://source.android.com/source/build-numbers)

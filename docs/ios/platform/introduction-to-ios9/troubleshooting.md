@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 322bb630194f973d37d7ca27a0ca9fe1b548b240
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f8fae79af654339b54a8df0d2ea32eef38f34adb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107216"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668453"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9: トラブルシューティング
 
@@ -24,7 +24,7 @@ Xamarin iOS デザイナーは、Xcode 7 の機能をまだサポートしてい
 
 iOS Xcode 7 の機能のデザイナー サポートは、サイクル 6 機能の今後のリリースの対象にします。 サイクル 6 のプレビュー バージョンは、アルファ チャネルで現在使用できる新しい Xcode 7 の機能のサポートが限られています。
 
-Visual Studio for Mac の部分的な回避策: ストーリー ボードを右クリックし、**プログラムから開く** > **Xcode の Interface Builder**します。
+Visual Studio for Mac の部分的な回避策:ストーリー ボードを右クリックし、**プログラムから開く** > **Xcode の Interface Builder**します。
 
 ## <a name="where-are-the-ios-8-simulators"></a>IOS 8 シミュレーターか。
 
@@ -42,23 +42,23 @@ IOS 8 (および以前) では、ストーリー ボード内の UI 要素が両
 
 ストーリー ボードと同じで、iOS 9 を実行している場合、例外が次の形式になります。
 
-> キャッチされない例外 'NSInvalidArgumentException' のためのアプリを終了するには、理由: '*** + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: 制約を先頭または末尾の間にすることはできません属性と右/左属性。 先頭および末尾の両方またはどちらも使用します '。
+> キャッチされない例外 'NSInvalidArgumentException' のためのアプリを終了するには、理由: ' * * * + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]。制約は、先頭および末尾の属性と左/属性の間にことはできません。 先頭および末尾の両方またはどちらも使用します '。
 
 iOS 9 がいずれかを使用するレイアウトを適用**右** & **左**_または_**先頭** &  **末尾の**属性が*いない*両方。 この問題を解決するには、ストーリー ボード ファイル内で設定された同じ属性を使用するすべてのレイアウトの制約を変更します。
 
-詳細についてを参照してください、 [iOS 9 制約エラー](http://stackoverflow.com/questions/32692841/ios-9-constraint-error)スタック オーバーフローのディスカッション。
+詳細についてを参照してください、 [iOS 9 制約エラー](https://stackoverflow.com/questions/32692841/ios-9-constraint-error)スタック オーバーフローのディスカッション。
 
-## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>エラー ITMS-90535: 予期しない CFBundleExecutable キー
+## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>エラー ITMS-90535:予期しない CFBundleExecutable キー
 
 IOS 9 への切り替え後からアプリをコンパイルし、iTunes Connect の形式でエラーが発生することができますを新しいビルドを送信しようとするときに、iOS 8 (またはそれ以前) で実行するサード パーティ製コンポーネント (具体的には、既存 Google Maps コンポーネント) を使用します。
 
-> エラー ITMS-90535: 予期しない CFBundleExecutable キー。 'Payload/app-name.app/component.bundle' でバンドルにはバンドルの実行可能ファイルが含まれていない.
+> エラー ITMS-90535:予期しない CFBundleExecutable キー。 'Payload/app-name.app/component.bundle' でバンドルにはバンドルの実行可能ファイルが含まれていない.
 
 この問題を通常は、プロジェクト内の名前付きのバンドルの検索で解決して - エラー メッセージの指示のと同様の編集、`Info.plist`削除することで、バンドル内にある、`CFBundleExecutable`キー。 `CFBundlePackageType`にキーを設定する必要があります`BNDL`もします。
 
 これらの変更を行った後は、クリーンし、プロジェクト全体をリビルドします。 これらの変更を行った後、問題なく iTunes Connect に送信する必要があります。
 
-詳細についてを参照してください[Stack Overflow](http://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)について説明します。
+詳細についてを参照してください[Stack Overflow](https://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)について説明します。
 
 ## <a name="cfnetwork-sslhandshake-failed--9824-error"></a>CFNetwork SSLHandshake に失敗しました (-9824) エラー
 
@@ -90,7 +90,7 @@ ATS が iOS 9 および OS X 10.11 (El Capitan) を使用してすべての接�
 
 ## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell.ContentView はコンス トラクター内の Null
 
-**理由:** iOS 9 で、`initWithFrame:`コンス トラクターは、今すぐとして iOS 9 の動作の変更により、必要な[UICollectionView マニュアルの記載](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)します。 セルが現在呼び出すことによって初期化されて場合、指定した識別子のクラスを登録して、新しいセルを作成する必要があります、その`initWithFrame:`メソッド。
+**理由:** IOS 9 で、`initWithFrame:`コンス トラクターは、今すぐとして iOS 9 の動作の変更により、必要な[UICollectionView マニュアルの記載](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)します。 セルが現在呼び出すことによって初期化されて場合、指定した識別子のクラスを登録して、新しいセルを作成する必要があります、その`initWithFrame:`メソッド。
 
 **修正:** 追加、`initWithFrame:`このようなコンス トラクター。
 
@@ -102,15 +102,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-関連するサンプル: [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+関連サンプル:[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 <a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib" />
 
 ## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>Xib/Nib からビューの読み込み時にエンコーダーを使って UIView が失敗しました。
 
-**理由:** 、`initWithCoder:`コンス トラクターは 1 つのインターフェイス ビルダー Xib ファイルからビューを読み込むときに呼び出されます。 このコンス トラクターがエクスポートされない場合、アンマネージ コードは、管理対象バージョンを呼び出すことはできません。 以前 (例。 iOS 8) で、`IntPtr`ビューを初期化するコンス トラクターが呼び出されます。
+**理由:**`initWithCoder:`コンス トラクターは 1 つのインターフェイス ビルダー Xib ファイルからビューを読み込むときに呼び出されます。 このコンス トラクターがエクスポートされない場合、アンマネージ コードは、管理対象バージョンを呼び出すことはできません。 以前 (例。 iOS 8) で、`IntPtr`ビューを初期化するコンス トラクターが呼び出されます。
 
-**修正:** の作成とエクスポート、`initWithCoder:`このようなコンス トラクター。
+**修正:** 作成し、エクスポート、`initWithCoder:`このようなコンス トラクター。
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -120,9 +120,9 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-関連のサンプル:[チャット](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+関連サンプル:[チャット](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-## <a name="dyld-message-no-cache-image-with-name"></a>Dyld メッセージ: 名前を持つキャッシュ イメージしています.
+## <a name="dyld-message-no-cache-image-with-name"></a>Dyld メッセージ:名前のキャッシュはイメージがありません.
 
 ログに次の情報でクラッシュが発生する可能性があります。
 
@@ -131,13 +131,13 @@ Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**理由:** これは、パブリック、プライベートのフレームワークを行うときは、Apple のネイティブ リンカーのバグ (JavaScriptCore がパブリックになった iOS 7 で前に、プライベートのフレームワークが)、アプリのデプロイ ターゲットで、iOS 版、ときに、フレームワークは、プライベートでした。 ここで Apple のリンカーは、パブリック バージョンの代わりに、フレームワークのプライベート バージョンとリンクされます。
+**理由:** これは、パブリック、プライベートのフレームワークを行うときは、Apple のネイティブ リンカーのバグ (JavaScriptCore がパブリックになった iOS 7 で前に、プライベートのフレームワークが)、アプリのデプロイ ターゲットは、フレームワークがプライベートの場合、iOS 版は。 ここで Apple のリンカーは、パブリック バージョンの代わりに、フレームワークのプライベート バージョンとリンクされます。
 
-**修正:** ios 9 の場合、これは解決されますが、回避策が簡単であることをそれまでは自分で適用することができますが、: (iOS 7 をこの場合に試行することができます)、プロジェクトに後で iOS バージョンを対象にだけです。 他のフレームワークと同様の問題が発生する可能性があります、たとえば、WebKit framework は iOS 8 で公開された (およびため、このエラーの結果は iOS 7 を対象とする iOS アプリで WebKit を使用する 8 をターゲットする必要があります)。
+**修正:** Ios 9 の場合、これは解決されますが、回避策が簡単であることをそれまでは自分で適用することができます。 (iOS 7 をこの場合に試行することができます)、プロジェクトに後で iOS バージョンを対象にだけです。 他のフレームワークと同様の問題が発生する可能性があります、たとえば、WebKit framework は iOS 8 で公開された (およびため、このエラーの結果は iOS 7 を対象とする iOS アプリで WebKit を使用する 8 をターゲットする必要があります)。
 
 ## <a name="untrusted-enterprise-developer"></a>信頼されていないエンタープライズ開発
 
-実際の iOS のハードウェア上で iOS 9 のバージョンの Xamarin.iOS アプリを実行するときを開発者アカウントが、デバイスで信頼されていないことを示すメッセージを取得可能性があります。 例えば:
+実際の iOS のハードウェア上で iOS 9 のバージョンの Xamarin.iOS アプリを実行するときを開発者アカウントが、デバイスで信頼されていないことを示すメッセージを取得可能性があります。 例:
 
 [![](troubleshooting-images/untrusted01.png "信頼されていない企業の開発者のアラート")](troubleshooting-images/untrusted01.png#lightbox)
 
@@ -177,7 +177,7 @@ iOS 9 は、さまざまなインターフェイスの向きをサポートす�
 
 コンパイルして、iOS 9 の既存の Xamarin.iOS アプリを実行しているときに、フォームでエラーが発生する可能性があります。
 
-> Objective C 例外がスローされます。  名前: NSInternalInconsistencyException 理由: アプリケーションの起動の最後に、ルート ビュー コント ローラーに windows アプリケーションは必要
+> Objective C 例外がスローされます。  名前:NSInternalInconsistencyException 理由:ルート ビュー コント ローラーがあるアプリケーションの最後に起動するアプリケーションの windows が必要です。
 
 これは、エラーがそのアプリの Windows がアプリケーションの起動の最後のルート ビュー コント ローラーを使用して予測され、既存のアプリがあるために発生します。
 

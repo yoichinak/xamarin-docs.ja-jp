@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: dcfcf6c29b0a055c59501d6d95d4f97c16475bb3
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 6243f7d90b921207f4dd406a1f33f4d7af40ecfb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209227"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668369"
 ---
 # <a name="gtk-platform-setup"></a>GTK # プラットフォームのセットアップ
 
@@ -27,7 +27,7 @@ Xamarin.Forms では、GTK # アプリのプレビューをサポートできる
 
 ## <a name="adding-a-gtk-app"></a>GTK # アプリを追加します。
 
-GTK # の macOS および Linux がの一部としてインストールされている[Mono](http://www.mono-project.com/download/stable/)します。 GTK # for .NET をインストールできるで Windows、 [GTK # インストーラー](http://www.mono-project.com/download/stable/#download-win)します。
+GTK # の macOS および Linux がの一部としてインストールされている[Mono](https://www.mono-project.com/download/stable/)します。 GTK # for .NET をインストールできるで Windows、 [GTK # インストーラー](https://www.mono-project.com/download/stable/#download-win)します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -35,7 +35,7 @@ Windows デスクトップで実行される GTK # アプリを追加するこ�
 
 1. ソリューション名を右クリックし、Visual Studio 2017 で**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
-2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual C#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**クラス ライブラリ (.NET Framework)**、いることを確認し、 **Framework**ドロップダウンは、.NET Framework 4.7 の最小値に設定されます。
+2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual c#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**クラス ライブラリ (.NET Framework)**、いることを確認し、 **Framework**ドロップダウンは、.NET Framework 4.7 の最小値に設定されます。
 
 3. 使用してプロジェクトの名前を入力、 **GTK**拡張機能の例では、 **GameOfLife.GTK**します。 をクリックして、**参照**ボタン、その他のプラットフォームを含むフォルダーを選択してプロジェクト、およびキーを押して**フォルダーの選択**。 GTK プロジェクトをソリューション内の他のプロジェクトと同じディレクトリに、これには。
 
@@ -220,6 +220,6 @@ vbox.PackEnd(settingsView, true, true, 0);
 
 ネイティブ数字形式の詳細については、次を参照してください。[ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)します。
 
-## <a name="issues"></a>Issues
+## <a name="issues"></a>懸案事項
 
 これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 現在の実装の状態を参照してください。[状態](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)、および現在の既知の問題では、次を参照してください。[保留中と既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)します。

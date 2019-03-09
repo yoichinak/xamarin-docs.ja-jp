@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/17/2018
-ms.openlocfilehash: 05069272bfa25cc1f003d4aeb83e15bd223c2830
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 731aeaf0ad89a44211072962bf9891851a44ffcc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118475"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667725"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>指紋認証の概要
 
@@ -99,19 +99,19 @@ if (permissionResult == Android.Content.PM.Permission.Granted)
 else
 {
     // No permission. Go and ask for permissions and don't start the scanner. See
-    // http://developer.android.com/training/permissions/requesting.html
+    // https://developer.android.com/training/permissions/requesting.html
 }
 ```
 
 すべてのたびに、アプリケーションでは、認証オプションはにより、ユーザーは、最適なユーザー エクスペリエンスを取得します。 これらの条件を確認しています。 変更や、デバイスまたはオペレーティング システムへのアップグレードは、指紋認証の可用性に影響可能性があります。 これらのチェックのいずれかの結果をキャッシュすることを選択する場合は、アップグレード シナリオに対応するために確認します。
 
-Android 6.0 でのアクセス許可を要求する方法の詳細については、Android」ガイドを参照してください。[実行時にアクセス許可の要求](http://developer.android.com/training/permissions/requesting.html)します。
+Android 6.0 でのアクセス許可を要求する方法の詳細については、Android」ガイドを参照してください。[実行時にアクセス許可の要求](https://developer.android.com/training/permissions/requesting.html)します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [コンテキスト](https://developer.xamarin.com/api/type/Android.Content.Context/)
 - [ContextCompat](https://developer.xamarin.com/api/type/Android.Support.V4.Content.ContextCompat/)
 - [KeyguardManager](https://developer.xamarin.com/api/type/Android.App.KeyguardManager/)
-- [FingerprintManager](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html)
-- [FingerprintManagerCompat](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)
-- [実行時にアクセス許可の要求](http://developer.android.com/training/permissions/requesting.html)
+- [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html)
+- [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)
+- [実行時にアクセス許可の要求](https://developer.android.com/training/permissions/requesting.html)

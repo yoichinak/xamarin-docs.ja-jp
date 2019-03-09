@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 63f0d4d7ce5f056d8e1db6bc297258c6bc070086
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675550"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672750"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,7 @@ Android には、通知を並べ替えるし、適切に表示されるように
 
 -   **カテゴリ**&ndash;でデバイスの場合など、さまざまな状況で通知を処理する方法をシステムに通知*不可*モード。
 
-**注:** **可視性**と**カテゴリ**Android 5.0 およびそれ以前のバージョンの Android では使用できないで導入されました。 Android 8.0 以降[通知チャネル](#notif-chan)をユーザーに通知を表示する方法を制御するために使用します。
+**注:****可視性**と**カテゴリ**Android 5.0 およびそれ以前のバージョンの Android では使用できないで導入されました。 Android 8.0 以降[通知チャネル](#notif-chan)をユーザーに通知を表示する方法を制御するために使用します。
 
 
 ### <a name="expanded-layouts"></a>展開されたレイアウト
@@ -113,7 +113,7 @@ Android では、1 つのイベント通知の 3 つの展開のレイアウト 
 
 Android 8.0 (Oreo) 以降を使えば、*通知チャネル*を表示する通知の種類ごとにユーザーがカスタマイズできるチャネルを作成する機能。 通知チャネルでは、チャネルの展示に同じ動作にポストされたすべての通知できるように、グループの通知を使用します。 たとえば、即時の注意が必要な通知が想定されている通知チャネルと情報メッセージに使用される個別の「静か」チャネルがあります。
 
-**YouTube** Android Oreo でインストールされているアプリが通知の 2 つのカテゴリを一覧表示:**ダウンロードの通知**と**一般的な通知**:
+**YouTube** Android Oreo でインストールされているアプリは、2 つの通知のカテゴリを一覧表示されます。**ダウンロードの通知**と**一般的な通知**:
 
 [![Android Oreo で YouTube の通知画面](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
@@ -219,7 +219,7 @@ Android で通知を生成するには、次の手順を実行します。
 
 -   通知のテキスト
 
-次のコード例は、使用する方法を示しています。`NotificationCompat.Builder`基本的な通知を生成します。 注意して`NotificationCompat.Builder`メソッドをサポート[メソッド チェーン](http://en.wikipedia.org/wiki/Method_chaining); は、各オブジェクトを返します、ビルダーを呼び出す次のメソッド呼び出しの最後のメソッド呼び出しの結果を使用できるようにします。
+次のコード例は、使用する方法を示しています。`NotificationCompat.Builder`基本的な通知を生成します。 注意して`NotificationCompat.Builder`メソッドをサポート[メソッド チェーン](https://en.wikipedia.org/wiki/Method_chaining); は、各オブジェクトを返します、ビルダーを呼び出す次のメソッド呼び出しの最後のメソッド呼び出しの結果を使用できるようにします。
 
 ```csharp
 // Instantiate the builder and set notification elements:
@@ -303,7 +303,7 @@ notification.Defaults |= NotificationDefaults.Vibrate;
 
 ### <a name="updating-a-notification"></a>通知を更新しています
 
-公開された後、通知のコンテンツを更新する場合は、既存の再利用できる`NotificationCompat.Builder`オブジェクトの新しい通知オブジェクトを作成し、最後の通知の識別子では、この通知を発行します。 例えば:
+公開された後、通知のコンテンツを更新する場合は、既存の再利用できる`NotificationCompat.Builder`オブジェクトの新しい通知オブジェクトを作成し、最後の通知の識別子では、この通知を発行します。 例:
 
 ```csharp
 // Update the existing notification builder content:
@@ -332,7 +332,7 @@ notificationManager.Notify (notificationId, notification);
 
 -   アプリケーション呼び出し`NotificationManager.CancelAll`します。
 
-Android の通知の更新については、次を参照してください。[変更通知](http://developer.android.com/training/notify-user/managing.html#Updating)します。
+Android の通知の更新については、次を参照してください。[変更通知](https://developer.android.com/training/notify-user/managing.html#Updating)します。
 
 
 ### <a name="starting-an-activity-from-a-notification"></a>通知から、アクティビティの開始
@@ -375,7 +375,7 @@ notificationManager.Notify (notificationId, notification);
 
 元の活動に戻るユーザーは、この通知をタップします。
 
-実稼働アプリケーションでは、アプリが処理する必要があります、*戻るスタック*押されたとき、**戻る**通知アクティビティ内のボタン (Android のタスクと戻るスタックに慣れていない場合を参照してください[タスクと戻るスタック](http://developer.android.com/guide/components/tasks-and-back-stack.html))。
+実稼働アプリケーションでは、アプリが処理する必要があります、*戻るスタック*押されたとき、**戻る**通知アクティビティ内のボタン (Android のタスクと戻るスタックに慣れていない場合を参照してください[タスクと戻るスタック](https://developer.android.com/guide/components/tasks-and-back-stack.html))。
 ほとんどの場合、通知のアクティビティから後方移動をアプリからサインアウトし、ホーム画面に戻り、ユーザーが返す必要があります。 戻るスタックをアプリで使用を管理する、 [TaskStackBuilder](https://developer.xamarin.com/api/type/Android.App.TaskStackBuilder/)クラスを作成する、`PendingIntent`戻るスタックとします。
 
 実際の考慮事項としては、元のアクティビティは、通知のアクティビティにデータを送信する必要があります。 たとえば、通知は、テキスト メッセージが到着すると、その通知のアクティビティ (画面を表示するメッセージ) には、ユーザーにメッセージを表示するメッセージの ID が必要です。 可能性があります。 作成するアクティビティ、`PendingIntent`使用できる、 [Intent.PutExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.PutExtra/p/System.String/System.String/)インテントにこのデータは、通知のアクティビティに渡されるように、データ (たとえば、文字列) を追加するメソッド。
@@ -462,7 +462,7 @@ Android の通知は通常、(通知の左側にある) で元のアプリのア
 
 大きいアイコンでは、通知が表示されたらに、小さいアプリ アイコンが大きいアイコンの右下隅でバッジとして表示されることに注意してください。
 
-通知のビルダーを呼び出すことを通知では、大きいアイコンとしてイメージを使用する[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)メソッドと、イメージのビットマップを渡します。 異なり`SetSmallIcon`、`SetLargeIcon`ビットマップのみを受け入れます。 使用するビットマップにイメージ ファイルを変換する、 [BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)クラス。 例えば:
+通知のビルダーを呼び出すことを通知では、大きいアイコンとしてイメージを使用する[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)メソッドと、イメージのビットマップを渡します。 異なり`SetSmallIcon`、`SetLargeIcon`ビットマップのみを受け入れます。 使用するビットマップにイメージ ファイルを変換する、 [BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)クラス。 例:
 
 ```csharp
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
@@ -521,7 +521,7 @@ builder.SetStyle (textStyle);
 
 コンパクトな形式で、通知が表示される場合は、通知のテキスト表示ことに注意してください (通知のビルダーに渡されるテキスト`SetContentText`メソッドは、前述のように)。 ただし、通知を展開するには、イメージを表示すると、画像の上の概要のテキストが表示されます。
 
-作成する、*イメージ*インスタンス化、通知、`NotificationCompat.Builder`オブジェクトと同様に、作成し、挿入、 [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)オブジェクトを`NotificationCompat.Builder`オブジェクト。 例えば:
+作成する、*イメージ*インスタンス化、通知、`NotificationCompat.Builder`オブジェクトと同様に、作成し、挿入、 [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)オブジェクトを`NotificationCompat.Builder`オブジェクト。 例:
 
 ```csharp
 // Instantiate the Image (Big Picture) style:
@@ -632,7 +632,7 @@ Xamarin.Android では、通知の優先順位を設定するための次の列�
 
 -   `NotificationPriority.Min` &ndash; 背景情報については、ユーザー通知の場合にのみ、通知 (たとえば、場所、気象情報) を表示します。
 
-通知の優先順位を設定するには、呼び出し、 [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)のメソッド、`NotificationCompat.Builder`優先度レベルを渡して、オブジェクト。 例えば:
+通知の優先順位を設定するには、呼び出し、 [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)のメソッド、`NotificationCompat.Builder`優先度レベルを渡して、オブジェクト。 例:
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -711,7 +711,7 @@ Android 5.0 以降では、定義済みのカテゴリは、順位付けおよ�
 
 -   `Notification.CategoryStatus` &ndash; デバイスに関する情報。
 
-通知が並べ替えられる場合に、通知の優先順位が、そのカテゴリの設定よりも優先されます。 たとえば、優先度の高い通知はヘッドアップとして表示するのに属している場合でも、`Promo`カテゴリ。 呼び出すことの通知のカテゴリを設定する、`SetCategory`のメソッド、`NotificationCompat.Builder`カテゴリの設定を渡して、オブジェクト。 例えば:
+通知が並べ替えられる場合に、通知の優先順位が、そのカテゴリの設定よりも優先されます。 たとえば、優先度の高い通知はヘッドアップとして表示するのに属している場合でも、`Promo`カテゴリ。 呼び出すことの通知のカテゴリを設定する、`SetCategory`のメソッド、`NotificationCompat.Builder`カテゴリの設定を渡して、オブジェクト。 例:
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);
@@ -770,7 +770,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 この記事では、Android でのローカル通知を作成する方法について説明します。 通知の詳細を説明し、使用する方法について説明し`NotificationCompat.Builder`、通知を作成する大きなアイコンのスタイルの通知方法*大きなテキスト*、*イメージ*と*受信トレイ*形式、通知の優先度、可視性、およびカテゴリなどのメタデータの設定を設定する方法、および通知からアクティビティを起動する方法。 この記事でこれらの通知設定が新しいヘッドアップ、画面のロックを扱う方法についても説明し、*不可*Android 5.0 で導入された機能です。 最後に、使用する方法を学習しました`NotificationCompat.Builder`以前のバージョンの Android の通知の互換性を維持します。
 
-Android 用の通知の設計に関するガイドラインについては、次を参照してください。[通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)します。
+Android 用の通知の設計に関するガイドラインについては、次を参照してください。[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)します。
 
 
 ## <a name="related-links"></a>関連リンク
@@ -778,7 +778,7 @@ Android 用の通知の設計に関するガイドラインについては、次
 - [NotificationsLab (サンプル)](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications (サンプル)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [Android のチュートリアルでのローカル通知](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [ユーザーに通知します。](http://developer.android.com/training/notify-user/index.html)
+- [ユーザーに通知します。](https://developer.android.com/training/notify-user/index.html)
 - [通知](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)
 - [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)

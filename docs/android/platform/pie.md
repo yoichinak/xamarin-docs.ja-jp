@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: fa41affc57714254a12623f79da3dc1396ecd009
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267639"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670144"
 ---
 # <a name="android-pie-features"></a>Android の円グラフの機能
 
@@ -34,7 +34,7 @@ Android の円の機能を Xamarin ベースのアプリで使用する次の一
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 以降、Visual Studio をインストールする必要があります (Xamarin.Android がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード)。
 
--   **Java Developer Kit** &ndash; Xamarin Android 9.0 開発が必要です[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (または、Microsoft の配布のプレビューを試すことができます、 [OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード。
+-   **Java Developer Kit** &ndash; Xamarin Android 9.0 開発が必要です[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (または、Microsoft の配布のプレビューを試すことができます、 [OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード。
 
 -   **Android SDK** &ndash; 28 またはそれ以降の Android SDK API が、Android SDK Manager を使用してをインストールする必要があります。
 
@@ -173,7 +173,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
     ```
 
 2. 作成、`Notification.MessagingStyle.Message`を新しいイメージを渡すことを送信するイメージを含む[Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)メソッド。
-   例:
+   例えば:
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");

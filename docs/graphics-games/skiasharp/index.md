@@ -8,13 +8,8 @@ ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 95f259ce054b14a2301bb9549f809d5e4f407884
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109901"
 ---
+
 # <a name="2d-drawing-with-skiasharp"></a>2D で SkiaSharp 描画
 
 SkiaSharp 2D グラフィックスを行うための強力な c# API を提供します。 機能により、 [Google の Skia ライブラリ](http://skia.org)、Google Chrome、Firefox、および Android のグラフィックのスタックが作動するのと同じライブラリです。
@@ -43,4 +38,4 @@ SkiaSharp とサンプルの主要な概念の概要については、グラフ�
 
 SkiaSharp のコミュニティと共有している作業中です。 Skia API の重要な部分にバインドしましたが、中に実行する多くの作業が残っています。 Skia、側に表示される安定した C API を使用しているし、Api に完全なカバレッジを提供する Skia の C バインドへの投稿を続行する予定です。
 
-バインドの取り組みのガイド、後の問題としてコメントまたは提案を残してください GitHub リポジトリにご協力[ http://github.com/mono/SkiaSharp](http://github.com/mono/SkiaSharp)します。
+バインドの取り組みのガイド、後の問題としてコメントまたは提案を残してください GitHub リポジトリにご協力[ https://github.com/mono/SkiaSharp](https://github.com/mono/SkiaSharp)します。

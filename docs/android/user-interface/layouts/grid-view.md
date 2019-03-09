@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9ec27402aefd28ded4cf53e7e9fa52eedd2b86b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63164d90419f3a49d9eb52a52d02e05fbee43dbf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103012"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667621"
 ---
 # <a name="gridview"></a>GridView
 
@@ -22,7 +22,7 @@ ms.locfileid: "50103012"
 
 という名前の新しいプロジェクトを開始**HelloGridView**します。
 
-を使用するにはいくつかの写真を検索または[これらのサンプル イメージをダウンロード](http://developer.android.com/shareables/sample_images.zip)します。 イメージ ファイルをプロジェクトの追加**リソース/ディスプレイ**ディレクトリ。 **プロパティ**ごとにビルド アクション ウィンドウで、設定**AndroidResource**します。
+を使用するにはいくつかの写真を検索または[これらのサンプル イメージをダウンロード](https://developer.android.com/shareables/sample_images.zip)します。 イメージ ファイルをプロジェクトの追加**リソース/ディスプレイ**ディレクトリ。 **プロパティ**ごとにビルド アクション ウィンドウで、設定**AndroidResource**します。
 
 開く、 **Resources/Layout/Main.axml**ファイルを開き、次を挿入します。
 
@@ -161,7 +161,7 @@ public class ImageAdapter : BaseAdapter
 そのプロパティを調整することによって要素。 使用する代わりに、たとえば、 [ `LayoutParams` ](https://developer.xamarin.com/api/property/Android.Views.View.LayoutParameters/)を使用してお試しください[ `SetAdjustViewBounds()`](https://developer.xamarin.com/api/member/Android.Widget.ImageView.SetAdjustViewBounds/)します。
 
 
-## <a name="references"></a>参照
+## <a name="references"></a>関連項目
 
 -   [`GridView`](https://developer.xamarin.com/api/type/Android.Widget.GridView/) 
 -   [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)

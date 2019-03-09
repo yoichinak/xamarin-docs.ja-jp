@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: d8ee5f867c9a4d724c54c14b5afdd005f1b805d3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3d0394f6b2388918f728bd5a25e9e809a832ca6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115771"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670975"
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -126,11 +126,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 [![スクリーン ショット最初 LinearLayout が水平方向に配置されたアプリの 2 つ目の垂直方向に](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
-XML 属性が各ビューの動作を定義する方法に注意してください。 さまざまな値を試し、`android:layout_weight`の各要素のウエイトに基づいて、実際の画面に配布する方法を参照してください。 参照してください、[共通レイアウト オブジェクト](http://developer.android.com/guide/topics/ui/declaring-layout.html)方法の詳細についてのドキュメント [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+XML 属性が各ビューの動作を定義する方法に注意してください。 さまざまな値を試し、`android:layout_weight`の各要素のウエイトに基づいて、実際の画面に配布する方法を参照してください。 参照してください、[共通レイアウト オブジェクト](https://developer.android.com/guide/topics/ui/declaring-layout.html)方法の詳細についてのドキュメント [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
 ハンドル、`android:layout_weight`属性。
 
 
-## <a name="references"></a>参照
+## <a name="references"></a>関連項目
 
 -   [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) 
 -   [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/) 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: ccf5d97ff553fd304c4a3af158085d490bb665b7
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: b2f11bd09e1b1b3fd7af29a026229494a081ad11
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267600"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668557"
 ---
 # <a name="troubleshooting-tips"></a>トラブルシューティングのヒント
 
@@ -20,7 +20,7 @@ ms.locfileid: "53267600"
 ## <a name="getting-diagnostic-information"></a>診断情報の取得
 
 Xamarin.Android では、いくつかのバグを追跡するときに検索する場所がいくつかがあります。
-次の設定があります。
+不足している機能には次が含まれます。
 
 1.  診断 MSBuild 出力します。
 2.  デバイスのデプロイ ログ。
@@ -77,7 +77,7 @@ Visual Studio for Mac は、常にデバイスのデプロイ ログを書き込
 ## <a name="android-debug-log-output"></a>Android のデバッグ ログ出力
 
 Android に多数のメッセージを書き込み、 [Android デバッグ ログ](~/android/deploy-test/debugging/android-debug-log.md)します。
-Xamarin.Android で Android のシステム プロパティを使用して、Android のデバッグ ログに関連するメッセージの生成を制御します。 Android のシステム プロパティを使用して設定できます、 *setprop*コマンド内で、 [Android Debug Bridge (adb)](http://developer.android.com/guide/developing/tools/adb.html):
+Xamarin.Android で Android のシステム プロパティを使用して、Android のデバッグ ログに関連するメッセージの生成を制御します。 Android のシステム プロパティを使用して設定できます、 *setprop*コマンド内で、 [Android Debug Bridge (adb)](https://developer.android.com/guide/developing/tools/adb.html):
 
 ```shell
 adb shell setprop PROPERTY_NAME PROPERTY_VALUE

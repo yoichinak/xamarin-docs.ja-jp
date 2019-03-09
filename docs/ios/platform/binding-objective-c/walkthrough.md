@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル: iOS OBJECTIVE-C ライブラリのバインド'
+title: 'チュートリアル: IOS OBJECTIVE-C ライブラリのバインド'
 description: この記事では、既存の OBJECTIVE-C ライブラリ、InfColorPicker の Xamarin.iOS バインディングを作成する実践的なチュートリアルを示します。 静的 OBJECTIVE-C ライブラリのコンパイル、バインドすることで、Xamarin.iOS アプリケーションでバインドを使用してなどのトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: a4cdb76ac1ecea3ee21e7b74314b6d3bfae09719
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118995"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669272"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS OBJECTIVE-C ライブラリのバインド
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: IOS OBJECTIVE-C ライブラリのバインド
 
 _この記事では、既存の OBJECTIVE-C ライブラリ、InfColorPicker の Xamarin.iOS バインディングを作成する実践的なチュートリアルを示します。静的 OBJECTIVE-C ライブラリのコンパイル、バインドすることで、Xamarin.iOS アプリケーションでバインドを使用してなどのトピックについて説明します。_
 
@@ -81,11 +81,11 @@ Xamarin.iOS でこの特定の Objective C API を使用するすべての必要
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - コマンド ライン ツールをインストールする 求め、**インストール**ボタン: [ ![](walkthrough-images/xcode01.png "コマンド ライン ツールをインストールします。")](walkthrough-images/xcode01.png#lightbox)
+    - コマンド ライン ツールをインストールする 求め、**インストール**ボタンをクリックします。 [![](walkthrough-images/xcode01.png "コマンド ライン ツールをインストールします。")](walkthrough-images/xcode01.png#lightbox)
 
-    - ツールがダウンロードされ、Apple のサーバーからインストール: [ ![](walkthrough-images/xcode02.png "ツールのダウンロード")](walkthrough-images/xcode02.png#lightbox)
+    - ツールがダウンロードされ、Apple のサーバーからインストールします。 [![](walkthrough-images/xcode02.png "ツールのダウンロード")](walkthrough-images/xcode02.png#lightbox)
 
-- **Apple の開発者向けダウンロード**-コマンド ライン ツールのパッケージが使用可能な[Apple の開発者向けダウンロード]()web ページ。 Apple ID を使用してログインし、検索およびコマンド ライン ツールをダウンロード: [ ![](walkthrough-images/xcode03.png "コマンド ライン ツールを見つける")](walkthrough-images/xcode03.png#lightbox)
+- **Apple の開発者向けダウンロード**-コマンド ライン ツールのパッケージが使用可能な[Apple の開発者向けダウンロード](https://developer.apple.com/downloads/index.action)web ページ。 Apple ID を使用してログインを検索し、コマンド ライン ツールをダウンロードします。[![](walkthrough-images/xcode03.png "コマンド ライン ツールを見つける")](walkthrough-images/xcode03.png#lightbox)
 
 インストールされているコマンド ライン ツール、チュートリアルを続行する準備ができました。
 
@@ -184,7 +184,7 @@ Fat バイナリの作成は、次の 3 ステップ プロセスです。
 
 これら 3 つの手順は、比較的簡単な OBJECTIVE-C ライブラリの更新プログラムを受信するとき、またはバグの修正が必要な場合、後で繰り返す必要があります。 次の手順を自動化する場合は、将来のメンテナンスとバインドの iOS プロジェクトのサポートによって簡略化されます。
 
-シェル スクリプトでは、このようなタスクの自動化に使用できる多くのツールがある[rake](http://rake.rubyforge.org/)、 [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、および[ように](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)します。 ここには、Xcode コマンド ライン ツールがインストールされている、ときにして、このチュートリアルで使用されるビルド システムができるのでもインストールします。 ここでは、**メイクファイル**iOS デバイスと、任意のライブラリ用のシミュレーターで動作するマルチ アーキテクチャの共有ライブラリの作成に使用できます。
+シェル スクリプトでは、このようなタスクの自動化に使用できる多くのツールがある[rake](http://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、および[ように](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)します。 ここには、Xcode コマンド ライン ツールがインストールされている、ときにして、このチュートリアルで使用されるビルド システムができるのでもインストールします。 ここでは、**メイクファイル**iOS デバイスと、任意のライブラリ用のシミュレーターで動作するマルチ アーキテクチャの共有ライブラリの作成に使用できます。
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -326,7 +326,7 @@ Fat バイナリを上記で作成したライブラリを追加する必要が�
 
 1. 移動し、`libInfColorPickerSDK.a`キーを押すと、**追加**ボタン。
 
-    ![](walkthrough-images/bind05vs.png "LibInfColorPickerSDK.a を追加します。")
+    ![](walkthrough-images/bind05vs.png "Adding libInfColorPickerSDK.a")
 
 1. ファイルは、プロジェクトに含めるは。
 
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**処理、colorPickerControllerDidFinish: メッセージ**:、`ViewController`が完了したら、iOS は、メッセージを送信は`colorPickerControllerDidFinish:`を`WeakDelegate`。 作成する必要があります、C#このメッセージを処理できるメソッド。 これを行うには、作成、C#メソッドでそれを装飾して、`ExportAttribute`します。 編集`ViewController`クラスに次のメソッドを追加します。
+**ハンドル、colorPickerControllerDidFinish:メッセージ**:、`ViewController`が完了したら、iOS は、メッセージを送信は`colorPickerControllerDidFinish:`を`WeakDelegate`します。 作成する必要があります、C#このメッセージを処理できるメソッド。 これを行うには、作成、C#メソッドでそれを装飾して、`ExportAttribute`します。 編集`ViewController`クラスに次のメソッドを追加します。
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -733,6 +733,6 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [バインディングの詳細](~/cross-platform/macios/binding/overview.md)
 - [バインドの種類のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Objective-C 開発者向けの Xamarin](~/ios/get-started/objective-c-developers/index.md)
-- [フレームワーク デザインのガイドライン](http://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [フレームワーク デザインのガイドライン](https://msdn.microsoft.com/library/ms229042.aspx)
+- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: a94c70bb7068847ed1b410dd7eddc70921fdf307
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 42cf10e592a37f9a979d05d7784553059923646c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106040"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667322"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin.iOS でネイティブ ライブラリを参照します。
 
@@ -115,7 +115,7 @@ lipo -info /full/path/to/libraryname.a
 -  アプリケーションに付属するスタティック ライブラリ。
 
 
-使用するもののいずれかで定義されているメソッドにアクセスする[Mono の P/invoke 機能](http://www.mono-project.com/docs/advanced/pinvoke/)はほぼは .net では、使用するのと同じテクノロジであります。
+使用するもののいずれかで定義されているメソッドにアクセスする[Mono の P/invoke 機能](https://www.mono-project.com/docs/advanced/pinvoke/)はほぼは .net では、使用するのと同じテクノロジであります。
 
 -  C 関数を呼び出したいを決定します。
 -  その署名を確認します。

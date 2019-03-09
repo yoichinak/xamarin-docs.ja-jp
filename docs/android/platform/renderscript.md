@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 5369542552a41100443c5e91ceca9e110c5c7c3c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8364310d23739c05ff97ea8aa8fa4c56f89ea40c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108731"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670728"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript の概要
 
@@ -20,7 +20,7 @@ _このガイドでは、Renderscript を紹介し、組み込み Renderscript A
 
 ## <a name="overview"></a>概要
 
-Renderscript は、広範なコンピューティング リソースを必要とする Android アプリケーションのパフォーマンスを向上させるためには、Google によって作成されたプログラミング フレームワークです。 低レベルの高パフォーマンスに基づく API は[C99](http://en.wikipedia.org/wiki/C99)します。 低レベルの Cpu、Gpu、あるいは Dsp で実行される API であるため Renderscript は、次のいずれかを実行する必要がある Android アプリに適しています。
+Renderscript は、広範なコンピューティング リソースを必要とする Android アプリケーションのパフォーマンスを向上させるためには、Google によって作成されたプログラミング フレームワークです。 低レベルの高パフォーマンスに基づく API は[C99](https://en.wikipedia.org/wiki/C99)します。 低レベルの Cpu、Gpu、あるいは Dsp で実行される API であるため Renderscript は、次のいずれかを実行する必要がある Android アプリに適しています。
 
 * グラフィックス
 * 画像処理

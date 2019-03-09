@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 4105200c48e41b142fc71e3a524023790b683cdb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105988"
 ---
+
 # <a name="intro-to-contentproviders"></a>ContentProviders の概要
 
 _Android オペレーティング システムでは、コンテンツ プロバイダーを使用して、メディア ファイル、連絡先や予定表の情報などの共有データへのアクセスを容易にします。この記事を ContentProvider クラスについて説明し、その使用方法の 2 つの例を示します。_
@@ -47,7 +42,7 @@ A`ContentProvider`カスタム検索の候補を提供するアプリケーシ�
 
 - [ContactsAdapter デモ (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ContactsAdapterDemo/)
 - [SimpleContentProvider (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
-- [コンテンツ プロバイダーの開発者ガイド](http://developer.android.com/guide/topics/providers/content-providers.html)
+- [コンテンツ プロバイダーの開発者ガイド](https://developer.android.com/guide/topics/providers/content-providers.html)
 - [ContentProvider クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Content.ContentProvider/)
 - [ContentResolver クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Content.ContentResolver/)
 - [ListView クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Widget.ListView/)

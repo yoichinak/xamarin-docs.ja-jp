@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f54da980834b44bbca7dc8619943769f8f429a7a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0bb7cbb6160865af5b1e40d40c7b999a8bd5ebc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115290"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668518"
 ---
 # <a name="troubleshooting-bindings"></a>バインドのトラブルシューティング
 
@@ -74,12 +74,12 @@ Xamarin.Android バインド プロジェクトのビルドの一部、として
 このセクションでは、いくつかの一般的なエラー メッセージまたは現象は一覧を Android のライブラリをバインドしようとするときに発生します。
 
 
-### <a name="problem-java-version-mismatch"></a>問題: Java のバージョンが一致しません
+### <a name="problem-java-version-mismatch"></a>問題 : Java のバージョンが一致しません
 
 場合によって、型は生成されませんまたは新しいまたは古いバージョンでコンパイルされたライブラリと比較する Java のいずれかを使用しているために、予期しないクラッシュが発生する可能性があります。 同じバージョンの Xamarin.Android プロジェクトを使用している JDK と Android のライブラリを再コンパイルします。
 
 
-### <a name="problem-at-least-one-java-library-is-required"></a>問題: 少なくとも 1 つの Java ライブラリが必要です。
+### <a name="problem-at-least-one-java-library-is-required"></a>問題 : 少なくとも 1 つの Java ライブラリが必要です。
 
 エラーが発生した「少なくとも 1 つの Java ライブラリが必要な場合は、」場合でも、します。JAR が追加されました。
 
@@ -88,7 +88,7 @@ Xamarin.Android バインド プロジェクトのビルドの一部、として
 必ずビルド アクションに設定されて`EmbeddedJar`します。 複数のビルド アクションがあるためです。JAR ファイル (など`InputJar`、 `EmbeddedJar`、`ReferenceJar`と`EmbeddedReferenceJar`)、バインド ジェネレーターは、既定で使用するを推測できない自動的にします。 ビルド アクションの詳細については、次を参照してください。[構築アクション](~/android/platform/binding-java-library/index.md)します。
 
 
-### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題: を読み込むことができませんツールをバインドします。JAR ライブラリ
+### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題 : バインディング ツールを読み込むことはできません、します。JAR ライブラリ
 
 バインディング ライブラリ コード ジェネレーターの読み込みに失敗します。JAR ライブラリです。
 
@@ -98,7 +98,7 @@ Xamarin.Android バインド プロジェクトのビルドの一部、として
 
 
 
-### <a name="problem-missing-c-types-in-generated-output"></a>問題: 不足しているC#で生成された出力の種類。
+### <a name="problem-missing-c-types-in-generated-output"></a>問題 : 不足しているC#で生成された出力の種類。
 
 バインディング **.dll**ビルドしますが、一部の種類の Java または生成に失敗したC#ソースが不足している種類があることを示すエラーのために構築されません。
 
@@ -128,7 +128,7 @@ Xamarin.Android バインド プロジェクトのビルドの一部、として
         name="obfuscated">false</attr>
     ```
 
-### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題: 生成されたC#パラメーターの型が一致しないのためのソースを構築していません。
+### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題 : 生成されたC#パラメーターの型が一致しないのためのソースを構築していません。
 
 生成されたC#ソースをビルドしません。 型が一致しないメソッドのパラメーターをオーバーライドします。
 
@@ -136,7 +136,7 @@ Xamarin.Android バインド プロジェクトのビルドの一部、として
 
 Xamarin.Android には、さまざまなで列挙型にマップされている Java フィールドが含まれています、C#バインドします。 生成されたバインドで型の非互換性をによってことができます。 これを解決するには、バインディング ジェネレーターから作成されたメソッドのシグネチャは、列挙型を使用するように変更する必要があります。 詳細についてを参照してください[列挙型を修正する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)します。
 
-### <a name="problem-noclassdeffounderror-in-packaging"></a>パッケージ化の問題: NoClassDefFoundError
+### <a name="problem-noclassdeffounderror-in-packaging"></a>問題 : パッケージで NoClassDefFoundError
 
 `java.lang.NoClassDefFoundError` パッケージ化の手順でスローされます。
 
@@ -144,7 +144,7 @@ Xamarin.Android には、さまざまなで列挙型にマップされている 
 
 このエラーの最も可能性の高い理由は、必須の Java ライブラリは、アプリケーション プロジェクトに追加する必要があります (**.csproj**)。 .JAR ファイルは自動的に解決されません。 Java ライブラリのバインドは、常に、ターゲット デバイスまたはエミュレーターで存在しないユーザー アセンブリに対しては生成されません (Google Maps など**maps.jar**)。 これは Android ライブラリ プロジェクトのサポートの場合、ライブラリです。JAR は、ライブラリの dll に埋め込まれます。 例:[バグ 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
-### <a name="problem-duplicate-custom-eventargs-types"></a>問題: カスタムの EventArgs 型が重複しています
+### <a name="problem-duplicate-custom-eventargs-types"></a>問題 : カスタムの EventArgs 型が重複しています
 
 ビルドは、重複するカスタムの EventArgs 型のため失敗します。 このようなエラーが発生します。
 
@@ -182,7 +182,7 @@ public interface MediationInterstitialListener {
         name="argsType">DialogClickEventArgs</attr>
 ```
 
-### <a name="problem-class-does-not-implement-interface-method"></a>問題: クラスはインターフェイス メソッドを実装していません
+### <a name="problem-class-does-not-implement-interface-method"></a>問題 : クラスがインターフェイス メソッドを実装していません
 
 生成されたクラスが生成されたクラスを実装するインターフェイスに必要なメソッドを実装しないことを示すエラー メッセージが生成されます。 ただし、生成されたコードを見て確認できます、メソッドが実装されています。
 
@@ -222,7 +222,7 @@ return type of 'Java.Lang.Object'
     </attr>
     ```
 
-### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題点: 名前の内部クラスで競合の/プロパティ
+### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題 : 名前の内部クラスで競合/プロパティ
 
 継承されたオブジェクトの可視性を競合しています。
 
@@ -236,9 +236,9 @@ Java では、派生クラスにその親と同じ可視性があることを必
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>: 問題 **.so**バインドで必要なライブラリが読み込まれていません
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題 : A **.so**バインドで必要なライブラリが読み込まれていません
 
-一部のバインド プロジェクトによっても異なります機能、 **.so**ライブラリ。 Xamarin.Android は自動的に読み込まれませんことができます、 **.so**ライブラリ。 Xamarin.Android は JNI の呼び出しと、エラー メッセージを失敗して、ラップされた Java コードの実行時に_java.lang.UnsatisfiedLinkError: ネイティブ メソッドが見つかりません:_ アプリケーションのアウト logcat に表示されます。
+一部のバインド プロジェクトによっても異なります機能、 **.so**ライブラリ。 Xamarin.Android は自動的に読み込まれませんことができます、 **.so**ライブラリ。 Xamarin.Android は JNI の呼び出しと、エラー メッセージを失敗して、ラップされた Java コードの実行時に_java.lang.UnsatisfiedLinkError:ネイティブ メソッドが見つかりません:_ アプリケーションのアウト logcat に表示されます。
 
 この修正プログラムは、手動で読み込む、 **.so**ライブラリへの呼び出しで`Java.Lang.JavaSystem.LoadLibrary`します。 たとえば、Xamarin.Android プロジェクトに共有ライブラリがあると仮定すると**libpocketsphinx_jni.so**のビルド アクションを使用してプロジェクトをバインドに含まれる**EmbeddedNativeLibrary**、次のスニペット(共有ライブラリを使用する前に実行) が読み込まれます、 **.so**ライブラリ。
 
@@ -253,7 +253,7 @@ Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 
 ## <a name="related-links"></a>関連リンク
 
-- [ライブラリ プロジェクト](http://developer.android.com/tools/projects/index.html#LibraryProjects)
+- [ライブラリ プロジェクト](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
 - [診断出力を有効にします。](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
 - [Android 開発者向けの Xamarin](~/android/get-started/java-developers.md)

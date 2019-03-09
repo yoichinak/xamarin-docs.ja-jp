@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 906489aa3947df24662cbbd0473333caccc032c7
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527262"
 ---
+
 # <a name="localization-in-xamarinios"></a>Xamarin.iOS でのローカライズ
 
 _このドキュメントでは、iOS SDK のローカライズ機能と Xamarin を使用してアクセスする方法について説明します。_
@@ -22,11 +17,11 @@ _このドキュメントでは、iOS SDK のローカライズ機能と Xamarin
 
 ## <a name="ios-platform-features"></a>iOS プラットフォーム機能
 
-このセクションでは、iOS のローカライズ機能の一部について説明します。 スキップする、[次のセクション](#basics)に固有のコードと例を参照してください。
+このセクションでは、iOS のローカライズ機能の一部について説明します。 スキップする、[次のセクション](#Localization-basics-in-iOS)に固有のコードと例を参照してください。
 
 ### <a name="language"></a>言語
 
-ユーザーの言語での選択、**設定**アプリ。 この設定は、言語識別文字列と、オペレーティング システムおよびアプリで表示されるイメージに影響します。 
+ユーザーの言語での選択、**設定**アプリ。 この設定は、言語識別文字列と、オペレーティング システムおよびアプリで表示されるイメージに影響します。
 
 アプリで使用されている言語を判断するには、最初の要素を取得`NSBundle.MainBundle.PreferredLocalizations`:
 
@@ -59,7 +54,7 @@ Xamarin を使用した両方の Apple の iOS クラスへのアクセスがあ
 > [!NOTE]
 > Mono (Xamarin.iOS の基になる .NET ランタイム)、Apple の iOS Api はまったく同じ言語/地域の組み合わせのセットをサポートしていません。
 > このため、iOS で言語/地域の組み合わせを選択することは**設定**Mono で有効な値にマップされていないアプリです。 たとえば、iPhone の言語を英語にし、そのリージョンをスペインに設定には、異なる値を生成する次の Api が発生します。
-> 
+>
 > - `CurrentThead.CurrentCulture`: EN-US (Mono API)
 > - `CurrentThread.CurrentUICulture`: EN-US (Mono API)
 > - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple API)
@@ -76,14 +71,14 @@ IOS の次の機能は、ユーザーに表示するローカライズされた�
 
 ### <a name="specifying-default-and-supported-languages-in-infoplist"></a>既定値を指定して、Info.plist でサポートされる言語
 
-[テクニカル Q & A QA1828: iOS でのアプリの言語の決定方法](https://developer.apple.com/library/content/qa/qa1828/_index.html)Apple は iOS アプリで使用する言語を選択する方法について説明します。 次の要因に影響する言語が表示されます。
+[テクニカル Q &、QA1828:IOS でのアプリの言語の決定方法](https://developer.apple.com/library/content/qa/qa1828/_index.html)Apple は iOS アプリで使用する言語を選択する方法について説明します。 次の要因に影響する言語が表示されます。
 
 - ユーザーの言語を優先 (で見つかった、**設定**アプリ)
 - ローカライズ版のアプリ (.lproj フォルダー) にバンドルされています
 - `CFBundleDevelopmentRegion` (**Info.plist**アプリの既定の言語を指定する値)
 - `CFBundleLocalizations` (**Info.plist**配列はサポートされているすべてのローカライズ版を指定)
 
-技術的な Q & A に記載されている`CFBundleDevelopmentRegion`アプリの既定の地域と言語を表します。 アプリがユーザーの好みの言語のいずれかを明示的にサポートは、このフィールドで指定された言語が使用されます。 
+技術的な Q & A に記載されている`CFBundleDevelopmentRegion`アプリの既定の地域と言語を表します。 アプリがユーザーの好みの言語のいずれかを明示的にサポートは、このフィールドで指定された言語が使用されます。
 
 > [!IMPORTANT]
 > iOS 11 では、この言語の選択方法が、オペレーティング システムの以前のバージョンよりも厳密に適用されます。 このため、そのサポートされているローカライズ – .lproj フォルダーを含むかの値の設定のいずれかを明示的に宣言しないすべての iOS 11 アプリ`CFBundleLocalizations`– ios 10 と比べて、iOS 11 で別の言語を表示可能性があります。
@@ -255,7 +250,7 @@ iOS では、さまざまな右から左に対応するアプリの構築を支�
 
 次のスクリーン ショットに示す、 [Tasky サンプルのローカライズされた](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)アラビア語やヘブライ語で (ただし、英語は、フィールドに入力された)。
 
-[![](images/rtl-ar-sml.png "アラビア語のローカリゼーション")](images/rtl-ar.png#lightbox "Arabic") 
+[![](images/rtl-ar-sml.png "アラビア語のローカリゼーション")](images/rtl-ar.png#lightbox "Arabic")
 
 [![](images/rtl-he-sml.png "ヘブライ語のローカリゼーション")](images/rtl-he.png#lightbox "Hebrew")
 
@@ -345,8 +340,8 @@ someControl.Text = localizedString;
 ```
 
 > [!IMPORTANT]
-> サイズ クラスをストーリー ボードを使用すると、翻訳、アプリケーションで表示されない可能性があります。 [Apple の Xcode のリリース ノート](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)いるストーリー ボードまたは XIB がローカライズ正しく次の 3 つが該当する場合を示します。 サイズ クラスを使用して、基本のローカライズおよびビルド ターゲットがユニバーサル、に設定およびビルドには iOS 7.0 が対象とします。 修正プログラムは、2 つの同一ファイルに、文字列のストーリー ボード ファイルが重複しています: **MainStoryboard~iphone.strings**と**MainStoryboard~ipad.strings**の次のスクリーン ショットに示すようにします。
-> 
+> サイズ クラスをストーリー ボードを使用すると、翻訳、アプリケーションで表示されない可能性があります。 [Apple の Xcode のリリース ノート](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)いるストーリー ボードまたは XIB がローカライズ正しく次の 3 つが該当する場合を示します。 サイズ クラスを使用して、基本のローカライズおよびビルド ターゲットがユニバーサル、に設定およびビルドには iOS 7.0 が対象とします。 修正プログラムは、2 つの同一ファイルに、文字列のストーリー ボード ファイルが重複しています。**MainStoryboard~iphone.strings**と**MainStoryboard~ipad.strings**の次のスクリーン ショットに示すようにします。
+>
 > ![](images/xs-dup-strings.png "文字列のファイル")
 
 <a name="appstore" />

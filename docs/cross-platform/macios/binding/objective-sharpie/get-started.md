@@ -1,17 +1,17 @@
 ---
 title: 目標油性の概要
-description: このドキュメントでは、目標油性、c# OBJECTIVE-C コードへのバインドの作成を自動化するために使用するツールの概要を提供します。
+description: このドキュメントは、目標油性の作成を自動化するために使用するツールの概要を提供します。 C# Objective-c コードへのバインド。
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: da8c51c4ba4df74afac950bbff867221e7307d6e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854780"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670117"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>目標油性の概要
 
@@ -27,7 +27,7 @@ ms.locfileid: "37854780"
 油性の目標は、標準 OS X パッケージ インストーラーとしてダウンロードできます。
 インストーラーを実行し、次のいずれも、インストール ウィザードから画面の指示します。
 
-- **現在のバージョン: 3.4**
+- **現在のバージョン:3.4**
   - [最新リリースをダウンロードします。](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [フォーラムのお知らせ](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
@@ -36,7 +36,7 @@ ms.locfileid: "37854780"
 
 ## <a name="basic-walkthrough"></a>基本的なチュートリアル
 
-油性の目標は、サード パーティ製の Objective C ライブラリを c# にバインドする xamarin の作成に役立ちます定義が必要な指定のコマンド ライン ツールです。
+目標油性にサード パーティ製の Objective C ライブラリにバインドするために必要な定義の作成に役立つ Xamarin によって提供されるコマンド ライン ツールは、C#します。
 目的の油性、開発者が使用する場合でも*は*目標油性がツールによって自動的に処理できなかったすべての問題に対処が完了したら、生成されたファイルを変更する必要があります。
 
 目的の油性が Api の使用に疑問に正しくバインドする方法の注釈を設定が可能であれば、(あいまいなは、ネイティブ コードに多くの構成要素です)。
@@ -48,7 +48,7 @@ ms.locfileid: "37854780"
 > 目標油性に含まれています**メジャー**適切な使用方法のルール: を実行する必要があります絶対に渡す正しい clang コンパイラのコマンドライン引数適切な解析できるようにするためにします。 これは単にツールが解析フェーズの目標油性[clang libtooling API に対して実装される](http://clang.llvm.org/docs/LibTooling.html)します。
 
 これは、目標油性に Clang (実際にはバインドのネイティブ ライブラリをコンパイルする C/目的-C と C++ コンパイラ) とそのすべてのバインドのヘッダー ファイルの内部のナレッジの完全な電源が入っていることを意味します。
-解析済みの変換ではなく[AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree)オブジェクトのコードに目標油性 c# バインディング「スキャフォールディング」の入力に適したに AST を変換する、`bmac`と`btouch`Xamarin バインディング ツール。
+解析済みの変換ではなく[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)オブジェクトのコードに目標油性に AST を変換する、 C# 「スキャフォールディング」の入力に適したにバインド、`bmac`と`btouch`Xamarin バインディング ツール。
 
 解析中にエラーを目標油性、場合その clang アウト中にエラーが発生した AST を構築しようとしています。 その解析フェーズと理由を解明する必要があります。
 
@@ -61,5 +61,5 @@ CocoaPod としてライブラリに関心がある場合は、(従来は、ソ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

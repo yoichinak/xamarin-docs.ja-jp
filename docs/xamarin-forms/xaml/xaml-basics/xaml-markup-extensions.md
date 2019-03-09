@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
-ms.date: 3/27/2018
-ms.openlocfilehash: a93503762528885dfc7d3b5400bf4ec716ea9fab
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/27/2018
+ms.openlocfilehash: 86abe932e9c244e1a959042cfc995bc184f89cc9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056216"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671287"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部です。 XAML マークアップ拡張機能
 
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 注意キーワード`clr-namespace`コロンと .NET 名前空間名は、セミコロン、キーワードの後に続く`assembly`、等号 (=) と、アセンブリ名。
 
-はい、コロン`clr-namespace`等号が`assembly`します。 この意図定義された構文: 最も XML 名前空間宣言など、URI スキーム名を開始する URI を参照する`http`コロンが後に常にします。 `clr-namespace`その規則を模倣するためにこの文字列の一部が対象としています。
+はい、コロン`clr-namespace`等号が`assembly`します。 構文は、この意図定義されました。ほとんどの XML 名前空間宣言など、URI スキーム名を開始する URI を参照する`http`コロンが後に常にします。 `clr-namespace`その規則を模倣するためにこの文字列の一部が対象としています。
 
 これら両方の名前空間宣言が含まれている、 **StaticConstantsPage**サンプル。 注意、`BoxView`ディメンションに設定されます`Math.PI`と`Math.E`100 の倍数ではスケール。
 
@@ -547,7 +547,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-おそらく、マークアップ拡張機能の構文は、このサンプルから行う必要があります、最も重要なレッスンです。 引用符がマークアップ拡張機能の中かっこ内で表示する必要がありますされません。 XAML ファイルにマークアップ拡張機能を入力するときに、プロパティの値を引用符で囲みますする自然なです。 しないでください。
+おそらくこのサンプルから行う必要があります、最も重要なレッスンでは、マークアップ拡張機能の構文を示します。マークアップ拡張機能の中かっこ内で引用符はない必要があります。 XAML ファイルにマークアップ拡張機能を入力するときに、プロパティの値を引用符で囲みますする自然なです。 しないでください。
 
 実行中のプログラムを次に示します。
 

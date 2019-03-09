@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/04/2019
-ms.openlocfilehash: fc989ef73c9248bd359c9b1d35aaa9bdde846690
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557054"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669558"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms でのフォント
 
@@ -140,7 +140,7 @@ XAML には、すべてのフォント設定を文字列値として表現でき
 ### <a name="ios"></a>iOS
 
 カスタムフォントが最初に読み込まれ、Xamarin.Forms の`Font`メソッドを使用して名前参照できることを確認してください。
-[このブログの投稿](http://blog.xamarin.com/custom-fonts-in-ios/)の指示に従ってください:
+[このブログの投稿](https://blog.xamarin.com/custom-fonts-in-ios/)の指示に従ってください:
 
 1. フォント ファイルを追加**ビルド アクション。BundleResource**と
 2. **Info.plist**ファイル（**アプリケーションから提供されたフォント**、または`UIAppFonts`、キー）を更新し、

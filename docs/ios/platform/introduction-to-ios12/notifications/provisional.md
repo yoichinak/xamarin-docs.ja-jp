@@ -6,13 +6,13 @@ ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: 31b4c6e98945cd7b5dd4cea8be6f5e3857444f78
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 09/04/2018
+ms.openlocfilehash: 434dd2e2ee7a0064b706872a228070c5114078c4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131677"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667023"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Xamarin.iOS での一時的な通知
 
@@ -20,13 +20,13 @@ ms.locfileid: "50131677"
 
 通知センターでユーザーことができますかを指定ことアプリ provisional 通知の配信を停止、続行して仮、配信に目立つの配信を開始します。
 
-## <a name="sample-app-redgreennotifications"></a>サンプル アプリ: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプル アプリ:RedGreenNotifications
 
 見て、 [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)サンプル アプリは、一時的な通知を送信します。
 
 ## <a name="sending-provisional-notifications"></a>一時的な通知を送信します。
 
-一時的な通知を送信する提供`UNAuthorizationOptions.Provisional`にオプションとして、 [`RequestAuthorization`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/)
+一時的な通知を送信する提供`UNAuthorizationOptions.Provisional`にオプションとして、 [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
 メソッドの`UNUserNotificationCenter`:
 
 ```csharp

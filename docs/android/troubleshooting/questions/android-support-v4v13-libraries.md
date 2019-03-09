@@ -1,5 +1,5 @@
 ---
-title: スマートな Xamarin Android サポート v4/v13 NuGet パッケージ
+title: より高度な Xamarin Android サポート v4/v13 NuGet パッケージ
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: FE66A82A-6C05-4646-BC52-E806F5DC606C
@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 43627884c2f8bc4d9e5b5faa2c3af08f74487b65
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a990d933c258812b2b3d3374fb6435af06f729ea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114646"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671794"
 ---
-# <a name="smarter-xamarin-android-support-v4--v13-nuget-packages"></a>スマートな Xamarin Android サポート v4/v13 NuGet パッケージ
+# <a name="smarter-xamarin-android-support-v4--v13-nuget-packages"></a>より高度な Xamarin Android サポート v4/v13 NuGet パッケージ
 
 ## <a name="about-the-android-support-libraries"></a>Android サポート ライブラリについて
 
-Google では、新しい機能を以前のバージョンの Android を使用できるようにサポート ライブラリを作成しました。 一般に、サポート ライブラリは、その名前と互換性がある最小の Android API レベルでのバージョン番号を与えられます (例:: サポート v4 は、API レベル 4 以降にのみ使用できます。 詳細についてはこの[スタック オーバーフローのディスカッション](http://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13))。 
+Google では、新しい機能を以前のバージョンの Android を使用できるようにサポート ライブラリを作成しました。 一般に、サポート ライブラリは、その名前と互換性がある最小の Android API レベルでのバージョン番号を与えられます (例。サポート v4 は、API レベル 4 以降にのみ使用できます。 詳細についてはこの[スタック オーバーフローのディスカッション](https://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13))。 
 
 2 つのサポート ライブラリ:`Support-v4`と`Support-v13`は使用できませんまとめて、同じアプリでは、これらは相互に排他的です。 これは、ため`Support-v13`実際にすべての型およびの実装が含まれています`Support-v4`します。 しようとして、同じプロジェクト内の両方を参照する場合は、重複する型のエラーが発生します。
 

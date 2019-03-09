@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 325f4e99e70f88ccf642253720f4229142a169ec
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 69952b0bac884fe8b14edcbb87aa8fad47594880
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526561"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670703"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Xamarin.iOS でのイメージの表示
 
@@ -42,7 +42,7 @@ IOS 7 で追加された**資産カタログの画像セット**すべてのバ�
 
     ![](displaying-an-image-images/imageset03.png "セットのイメージ エディター")
 4. ここでは、さまざまなデバイスと必要な解像度の各イメージにドラッグします。 
-5. 新しいイメージ セットをダブルクリックして**名前**で、 **Assets リスト**編集する: ![](displaying-an-image-images/imageset04.png "新しいイメージ セットの名前を編集")
+5. 新しいイメージ セットをダブルクリックして**名前**で、 **Assets リスト**編集します。![](displaying-an-image-images/imageset04.png "新しいイメージ セットの名前を編集")
 
 使用する場合、**セット イメージ**で iOS Designer では、プロパティ エディターでのドロップダウン リストから単純にセットの名前を選択します。
 
@@ -213,7 +213,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage");
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 ```
 
-アイコンとイメージの詳細については、Apple のドキュメントを参照してください。[カスタム アイコンとイメージの作成ガイドライン](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)します。
+アイコンとイメージの詳細については、Apple のドキュメントを参照してください。[カスタム アイコンとイメージの作成ガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)します。
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>ストーリー ボードにイメージを表示
 

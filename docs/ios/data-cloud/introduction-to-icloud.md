@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: d40c932c560b3827cccacd4f9bafa155dcf26056
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 68375dfc5b7baa4726739d40eb77c1fcb7500fb4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113327"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668882"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Xamarin.iOS で iCloud の使用
 
@@ -45,7 +45,7 @@ IOS 5 で iCloud ストレージ API には、中央の場所にユーザーの�
 
 ICloud へのアクセスにアプリケーションを正しく構成するには。
 
--   **検索、別の子です**-へのログイン[developer.apple.com](http://developer.apple.com)しを参照してください、 **Member Center > アカウント > 開発者アカウントの概要**チーム ID (または開発者の 1 つの個別の ID を取得するには). 10 文字の文字列になりますが ( **A93A5CM278**など)-これが「コンテナーの識別子」の一部を形成します。
+-   **検索、別の子です**-へのログイン[developer.apple.com](https://developer.apple.com)しを参照してください、 **Member Center > アカウント > 開発者アカウントの概要**チーム ID (または開発者の 1 つの個別の ID を取得するには). 10 文字の文字列になりますが ( **A93A5CM278**など)-これが「コンテナーの識別子」の一部を形成します。
 
 -   **新しいアプリ ID を作成する**アプリ ID を作成に記載されている手順を[デバイス プロビジョニング ガイドのセクションをストア テクノロジのプロビジョニング](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)を必ず確認して**iCloud**として、サービスを使用できます。
 
@@ -144,7 +144,7 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 
 コードは、これらのローカル コピーを更新または新しい値で、UI の更新など、変更されたキーの一覧を何らかのアクションを実行できます。
 
-可能な変更の理由: ServerChange (0)、InitialSyncChange (1) または QuotaViolationChange (2)。 理由をアクセスし、必要に応じて、さまざまな処理を実行できます (一部の結果としてのキーを削除するなど、 *QuotaViolationChange*)。
+可能な変更の理由は次のとおりです。ServerChange (0)、InitialSyncChange (1) または QuotaViolationChange (2)。 理由をアクセスし、必要に応じて、さまざまな処理を実行できます (一部の結果としてのキーを削除するなど、 *QuotaViolationChange*)。
 
 ## <a name="document-storage"></a>ドキュメント ストレージ
 
@@ -417,7 +417,7 @@ ICloud を有効にしたアプリケーションを通知することと、そ�
 ## <a name="icloud-backup"></a>iCloud のバックアップ
 
 ICloud へのバックアップには、開発者が直接アクセスする機能はありませんが、アプリケーションを設計する方法は、ユーザー エクスペリエンスに影響します。
-Apple から提供されて[iOS データ ストレージのガイドライン](http://developer.apple.com/icloud/documentation/data-storage/)に従って、iOS アプリケーションの開発者向け。
+Apple から提供されて[iOS データ ストレージのガイドライン](https://developer.apple.com/icloud/documentation/data-storage/)に従って、iOS アプリケーションの開発者向け。
 
 最も重要な考慮事項が、アプリがユーザーが生成した (たとえば、問題ごとのコンテンツの hundred-plus メガバイト数を格納するマガジン リーダー アプリケーション) ではない大きなファイルを格納するかどうか。 Apple では、この種ののバックアップを iCloud にして、ユーザーの iCloud クォータを不必要に入力データを格納しないようにすることが優先されます。
 
@@ -437,6 +437,6 @@ Apple から提供されて[iOS データ ストレージのガイドライン](
 
 - [概要を iCloud (サンプル)](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
 - [iCloud セミナー サンプル コード](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
-- [iCloud セミナー スライド](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
+- [iCloud セミナー スライド](https://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
-- [iCloud ストレージ](http://support.apple.com/kb/HT4847)
+- [iCloud ストレージ](https://support.apple.com/kb/HT4847)
